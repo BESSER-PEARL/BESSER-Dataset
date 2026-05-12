@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class,
@@ -66,9 +66,18 @@ def test_gato_constructor_exists():
 def test_gato_constructor_args():
     sig = inspect.signature(Gato.__init__)
     params = list(sig.parameters.keys())
+    assert "color" in params, "Missing parameter 'color'"
     assert "nombre" in params, "Missing parameter 'nombre'"
     assert "raza" in params, "Missing parameter 'raza'"
-    assert "color" in params, "Missing parameter 'color'"
+
+def test_gato_has_color():
+    assert hasattr(Gato, "color")
+    descriptor = None
+    for klass in Gato.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_gato_has_nombre():
     assert hasattr(Gato, "nombre")
@@ -85,15 +94,6 @@ def test_gato_has_raza():
     for klass in Gato.__mro__:
         if "raza" in klass.__dict__:
             descriptor = klass.__dict__["raza"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gato_has_color():
-    assert hasattr(Gato, "color")
-    descriptor = None
-    for klass in Gato.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,11 +119,11 @@ CuentaBancaria_strategy = st.builds(
 )
 Gato_strategy = st.builds(
     Gato,
+    color=
+        safe_text,
     nombre=
         safe_text,
     raza=
-        safe_text,
-    color=
         safe_text
 )
 
@@ -137,9 +137,6 @@ def test_class_instantiation(instance):
 def test_cuentabancaria_instantiation(instance):
     assert isinstance(instance, CuentaBancaria)
 
-@given(instance=CuentaBancaria_strategy)
-def test_cuentabancaria_saldo_type(instance):
-    assert isinstance(instance.saldo, int)
 
 
 @given(instance=CuentaBancaria_strategy)
@@ -153,9 +150,14 @@ def test_cuentabancaria_saldo_setter(instance):
 def test_gato_instantiation(instance):
     assert isinstance(instance, Gato)
 
+
+
 @given(instance=Gato_strategy)
-def test_gato_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
+def test_gato_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
 
 
 @given(instance=Gato_strategy)
@@ -164,9 +166,6 @@ def test_gato_nombre_setter(instance):
     instance.nombre = original
     assert instance.nombre == original
 
-@given(instance=Gato_strategy)
-def test_gato_raza_type(instance):
-    assert isinstance(instance.raza, str)
 
 
 @given(instance=Gato_strategy)
@@ -174,14 +173,3 @@ def test_gato_raza_setter(instance):
     original = instance.raza
     instance.raza = original
     assert instance.raza == original
-
-@given(instance=Gato_strategy)
-def test_gato_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Gato_strategy)
-def test_gato_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original

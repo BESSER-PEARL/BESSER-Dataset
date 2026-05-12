@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trip::model::TripModel,
-    trip::model::Trip,
-    trip::model::location,
-    trip::model::Service,
+from python_code import (
+    trip_model_TripModel,
+    trip_model_Trip,
+    trip_model_location,
+    trip_model_Service,
     Service,
-    trip::model::TravelService,
-    trip::model::OtherService,
+    trip_model_TravelService,
+    trip_model_OtherService,
 )
 
 # =============================================================================
@@ -21,57 +21,81 @@ from classes import (
 
 
 
-def test_trip::model::tripmodel_is_not_abstract():
-    assert not inspect.isabstract(trip::model::TripModel)
+def test_trip_model_tripmodel_is_not_abstract():
+    assert not inspect.isabstract(trip_model_TripModel)
 
 
-def test_trip::model::tripmodel_constructor_exists():
-    assert callable(trip::model::TripModel.__init__)
+def test_trip_model_tripmodel_constructor_exists():
+    assert callable(trip_model_TripModel.__init__)
 
 
-def test_trip::model::tripmodel_constructor_args():
-    sig = inspect.signature(trip::model::TripModel.__init__)
+def test_trip_model_tripmodel_constructor_args():
+    sig = inspect.signature(trip_model_TripModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trip::model::trip_is_not_abstract():
-    assert not inspect.isabstract(trip::model::Trip)
+def test_trip_model_trip_is_not_abstract():
+    assert not inspect.isabstract(trip_model_Trip)
 
 
-def test_trip::model::trip_constructor_exists():
-    assert callable(trip::model::Trip.__init__)
+def test_trip_model_trip_constructor_exists():
+    assert callable(trip_model_Trip.__init__)
 
 
-def test_trip::model::trip_constructor_args():
-    sig = inspect.signature(trip::model::Trip.__init__)
+def test_trip_model_trip_constructor_args():
+    sig = inspect.signature(trip_model_Trip.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "Start" in params, "Missing parameter 'Start'"
     assert "End" in params, "Missing parameter 'End'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_trip::model::trip_has_Start():
-    assert hasattr(trip::model::Trip, "Start")
+def test_trip_model_trip_has_name():
+    assert hasattr(trip_model_Trip, "name")
     descriptor = None
-    for klass in trip::model::Trip.__mro__:
+    for klass in trip_model_Trip.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trip_model_trip_has_Start():
+    assert hasattr(trip_model_Trip, "Start")
+    descriptor = None
+    for klass in trip_model_Trip.__mro__:
         if "Start" in klass.__dict__:
             descriptor = klass.__dict__["Start"]
             break
     assert isinstance(descriptor, property)
 
-def test_trip::model::trip_has_End():
-    assert hasattr(trip::model::Trip, "End")
+def test_trip_model_trip_has_End():
+    assert hasattr(trip_model_Trip, "End")
     descriptor = None
-    for klass in trip::model::Trip.__mro__:
+    for klass in trip_model_Trip.__mro__:
         if "End" in klass.__dict__:
             descriptor = klass.__dict__["End"]
             break
     assert isinstance(descriptor, property)
 
-def test_trip::model::trip_has_name():
-    assert hasattr(trip::model::Trip, "name")
+
+
+def test_trip_model_location_is_not_abstract():
+    assert not inspect.isabstract(trip_model_location)
+
+
+def test_trip_model_location_constructor_exists():
+    assert callable(trip_model_location.__init__)
+
+
+def test_trip_model_location_constructor_args():
+    sig = inspect.signature(trip_model_location.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_trip_model_location_has_name():
+    assert hasattr(trip_model_location, "name")
     descriptor = None
-    for klass in trip::model::Trip.__mro__:
+    for klass in trip_model_location.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -79,89 +103,65 @@ def test_trip::model::trip_has_name():
 
 
 
-def test_trip::model::location_is_not_abstract():
-    assert not inspect.isabstract(trip::model::location)
+def test_trip_model_service_is_not_abstract():
+    assert not inspect.isabstract(trip_model_Service)
 
 
-def test_trip::model::location_constructor_exists():
-    assert callable(trip::model::location.__init__)
+def test_trip_model_service_constructor_exists():
+    assert callable(trip_model_Service.__init__)
 
 
-def test_trip::model::location_constructor_args():
-    sig = inspect.signature(trip::model::location.__init__)
+def test_trip_model_service_constructor_args():
+    sig = inspect.signature(trip_model_Service.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-
-def test_trip::model::location_has_name():
-    assert hasattr(trip::model::location, "name")
-    descriptor = None
-    for klass in trip::model::location.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_trip::model::service_is_not_abstract():
-    assert not inspect.isabstract(trip::model::Service)
-
-
-def test_trip::model::service_constructor_exists():
-    assert callable(trip::model::Service.__init__)
-
-
-def test_trip::model::service_constructor_args():
-    sig = inspect.signature(trip::model::Service.__init__)
-    params = list(sig.parameters.keys())
-    assert "Cost" in params, "Missing parameter 'Cost'"
-    assert "Type" in params, "Missing parameter 'Type'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "Duration" in params, "Missing parameter 'Duration'"
     assert "Rating" in params, "Missing parameter 'Rating'"
+    assert "Cost" in params, "Missing parameter 'Cost'"
+    assert "Duration" in params, "Missing parameter 'Duration'"
+    assert "Type" in params, "Missing parameter 'Type'"
 
-def test_trip::model::service_has_Cost():
-    assert hasattr(trip::model::Service, "Cost")
+def test_trip_model_service_has_name():
+    assert hasattr(trip_model_Service, "name")
     descriptor = None
-    for klass in trip::model::Service.__mro__:
+    for klass in trip_model_Service.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trip_model_service_has_Rating():
+    assert hasattr(trip_model_Service, "Rating")
+    descriptor = None
+    for klass in trip_model_Service.__mro__:
+        if "Rating" in klass.__dict__:
+            descriptor = klass.__dict__["Rating"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trip_model_service_has_Cost():
+    assert hasattr(trip_model_Service, "Cost")
+    descriptor = None
+    for klass in trip_model_Service.__mro__:
         if "Cost" in klass.__dict__:
             descriptor = klass.__dict__["Cost"]
             break
     assert isinstance(descriptor, property)
 
-def test_trip::model::service_has_Type():
-    assert hasattr(trip::model::Service, "Type")
+def test_trip_model_service_has_Duration():
+    assert hasattr(trip_model_Service, "Duration")
     descriptor = None
-    for klass in trip::model::Service.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trip::model::service_has_name():
-    assert hasattr(trip::model::Service, "name")
-    descriptor = None
-    for klass in trip::model::Service.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trip::model::service_has_Duration():
-    assert hasattr(trip::model::Service, "Duration")
-    descriptor = None
-    for klass in trip::model::Service.__mro__:
+    for klass in trip_model_Service.__mro__:
         if "Duration" in klass.__dict__:
             descriptor = klass.__dict__["Duration"]
             break
     assert isinstance(descriptor, property)
 
-def test_trip::model::service_has_Rating():
-    assert hasattr(trip::model::Service, "Rating")
+def test_trip_model_service_has_Type():
+    assert hasattr(trip_model_Service, "Type")
     descriptor = None
-    for klass in trip::model::Service.__mro__:
-        if "Rating" in klass.__dict__:
-            descriptor = klass.__dict__["Rating"]
+    for klass in trip_model_Service.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
             break
     assert isinstance(descriptor, property)
 
@@ -181,30 +181,30 @@ def test_service_constructor_args():
 
 
 
-def test_trip::model::travelservice_is_not_abstract():
-    assert not inspect.isabstract(trip::model::TravelService)
+def test_trip_model_travelservice_is_not_abstract():
+    assert not inspect.isabstract(trip_model_TravelService)
 
 
-def test_trip::model::travelservice_constructor_exists():
-    assert callable(trip::model::TravelService.__init__)
+def test_trip_model_travelservice_constructor_exists():
+    assert callable(trip_model_TravelService.__init__)
 
 
-def test_trip::model::travelservice_constructor_args():
-    sig = inspect.signature(trip::model::TravelService.__init__)
+def test_trip_model_travelservice_constructor_args():
+    sig = inspect.signature(trip_model_TravelService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trip::model::otherservice_is_not_abstract():
-    assert not inspect.isabstract(trip::model::OtherService)
+def test_trip_model_otherservice_is_not_abstract():
+    assert not inspect.isabstract(trip_model_OtherService)
 
 
-def test_trip::model::otherservice_constructor_exists():
-    assert callable(trip::model::OtherService.__init__)
+def test_trip_model_otherservice_constructor_exists():
+    assert callable(trip_model_OtherService.__init__)
 
 
-def test_trip::model::otherservice_constructor_args():
-    sig = inspect.signature(trip::model::OtherService.__init__)
+def test_trip_model_otherservice_constructor_args():
+    sig = inspect.signature(trip_model_OtherService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,176 +219,149 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trip::model::TripModel_strategy = st.builds(
-    trip::model::TripModel,
+trip_model_TripModel_strategy = st.builds(
+    trip_model_TripModel,
 )
-trip::model::Trip_strategy = st.builds(
-    trip::model::Trip,
+trip_model_Trip_strategy = st.builds(
+    trip_model_Trip,
+    name=
+        safe_text,
     Start=
         st.dates(),
     End=
-        st.dates(),
+        st.dates()
+)
+trip_model_location_strategy = st.builds(
+    trip_model_location,
     name=
         safe_text
 )
-trip::model::location_strategy = st.builds(
-    trip::model::location,
+trip_model_Service_strategy = st.builds(
+    trip_model_Service,
     name=
-        safe_text
-)
-trip::model::Service_strategy = st.builds(
-    trip::model::Service,
+        safe_text,
+    Rating=
+        st.integers(),
     Cost=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    Type=
-        safe_text,
-    name=
-        safe_text,
     Duration=
         st.integers(),
-    Rating=
-        st.integers()
+    Type=
+        safe_text
 )
 Service_strategy = st.builds(
     Service,
 )
-trip::model::TravelService_strategy = st.builds(
-    trip::model::TravelService,
+trip_model_TravelService_strategy = st.builds(
+    trip_model_TravelService,
 )
-trip::model::OtherService_strategy = st.builds(
-    trip::model::OtherService,
+trip_model_OtherService_strategy = st.builds(
+    trip_model_OtherService,
 )
 
-@given(instance=trip::model::TripModel_strategy)
+@given(instance=trip_model_TripModel_strategy)
 @settings(max_examples=50)
-def test_trip::model::tripmodel_instantiation(instance):
-    assert isinstance(instance, trip::model::TripModel)
+def test_trip_model_tripmodel_instantiation(instance):
+    assert isinstance(instance, trip_model_TripModel)
 
-@given(instance=trip::model::Trip_strategy)
+@given(instance=trip_model_Trip_strategy)
 @settings(max_examples=50)
-def test_trip::model::trip_instantiation(instance):
-    assert isinstance(instance, trip::model::Trip)
-
-@given(instance=trip::model::Trip_strategy)
-def test_trip::model::trip_Start_type(instance):
-    assert isinstance(instance.Start, date)
+def test_trip_model_trip_instantiation(instance):
+    assert isinstance(instance, trip_model_Trip)
 
 
-@given(instance=trip::model::Trip_strategy)
-def test_trip::model::trip_Start_setter(instance):
+
+@given(instance=trip_model_Trip_strategy)
+def test_trip_model_trip_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=trip_model_Trip_strategy)
+def test_trip_model_trip_Start_setter(instance):
     original = instance.Start
     instance.Start = original
     assert instance.Start == original
 
-@given(instance=trip::model::Trip_strategy)
-def test_trip::model::trip_End_type(instance):
-    assert isinstance(instance.End, date)
 
 
-@given(instance=trip::model::Trip_strategy)
-def test_trip::model::trip_End_setter(instance):
+@given(instance=trip_model_Trip_strategy)
+def test_trip_model_trip_End_setter(instance):
     original = instance.End
     instance.End = original
     assert instance.End == original
 
-@given(instance=trip::model::Trip_strategy)
-def test_trip::model::trip_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=trip_model_location_strategy)
+@settings(max_examples=50)
+def test_trip_model_location_instantiation(instance):
+    assert isinstance(instance, trip_model_location)
 
 
-@given(instance=trip::model::Trip_strategy)
-def test_trip::model::trip_name_setter(instance):
+
+@given(instance=trip_model_location_strategy)
+def test_trip_model_location_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=trip::model::location_strategy)
+@given(instance=trip_model_Service_strategy)
 @settings(max_examples=50)
-def test_trip::model::location_instantiation(instance):
-    assert isinstance(instance, trip::model::location)
-
-@given(instance=trip::model::location_strategy)
-def test_trip::model::location_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_trip_model_service_instantiation(instance):
+    assert isinstance(instance, trip_model_Service)
 
 
-@given(instance=trip::model::location_strategy)
-def test_trip::model::location_name_setter(instance):
+
+@given(instance=trip_model_Service_strategy)
+def test_trip_model_service_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=trip::model::Service_strategy)
-@settings(max_examples=50)
-def test_trip::model::service_instantiation(instance):
-    assert isinstance(instance, trip::model::Service)
-
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Cost_type(instance):
-    assert isinstance(instance.Cost, float)
 
 
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Cost_setter(instance):
+@given(instance=trip_model_Service_strategy)
+def test_trip_model_service_Rating_setter(instance):
+    original = instance.Rating
+    instance.Rating = original
+    assert instance.Rating == original
+
+
+
+@given(instance=trip_model_Service_strategy)
+def test_trip_model_service_Cost_setter(instance):
     original = instance.Cost
     instance.Cost = original
     assert instance.Cost == original
 
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Type_type(instance):
-    assert isinstance(instance.Type, str)
 
 
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
-
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Duration_type(instance):
-    assert isinstance(instance.Duration, int)
-
-
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Duration_setter(instance):
+@given(instance=trip_model_Service_strategy)
+def test_trip_model_service_Duration_setter(instance):
     original = instance.Duration
     instance.Duration = original
     assert instance.Duration == original
 
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Rating_type(instance):
-    assert isinstance(instance.Rating, int)
 
 
-@given(instance=trip::model::Service_strategy)
-def test_trip::model::service_Rating_setter(instance):
-    original = instance.Rating
-    instance.Rating = original
-    assert instance.Rating == original
+@given(instance=trip_model_Service_strategy)
+def test_trip_model_service_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
 
 @given(instance=Service_strategy)
 @settings(max_examples=50)
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=trip::model::TravelService_strategy)
+@given(instance=trip_model_TravelService_strategy)
 @settings(max_examples=50)
-def test_trip::model::travelservice_instantiation(instance):
-    assert isinstance(instance, trip::model::TravelService)
+def test_trip_model_travelservice_instantiation(instance):
+    assert isinstance(instance, trip_model_TravelService)
 
-@given(instance=trip::model::OtherService_strategy)
+@given(instance=trip_model_OtherService_strategy)
 @settings(max_examples=50)
-def test_trip::model::otherservice_instantiation(instance):
-    assert isinstance(instance, trip::model::OtherService)
+def test_trip_model_otherservice_instantiation(instance):
+    assert isinstance(instance, trip_model_OtherService)

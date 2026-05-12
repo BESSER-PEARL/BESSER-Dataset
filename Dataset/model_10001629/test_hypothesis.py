@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Caninos,
@@ -36,11 +36,11 @@ def test_caninos_constructor_args():
     sig = inspect.signature(Caninos.__init__)
     params = list(sig.parameters.keys())
     assert "raza" in params, "Missing parameter 'raza'"
-    assert "altura" in params, "Missing parameter 'altura'"
-    assert "edad" in params, "Missing parameter 'edad'"
-    assert "peso" in params, "Missing parameter 'peso'"
     assert "nombre" in params, "Missing parameter 'nombre'"
+    assert "edad" in params, "Missing parameter 'edad'"
     assert "observaciones" in params, "Missing parameter 'observaciones'"
+    assert "altura" in params, "Missing parameter 'altura'"
+    assert "peso" in params, "Missing parameter 'peso'"
 
 def test_caninos_has_raza():
     assert hasattr(Caninos, "raza")
@@ -48,33 +48,6 @@ def test_caninos_has_raza():
     for klass in Caninos.__mro__:
         if "raza" in klass.__dict__:
             descriptor = klass.__dict__["raza"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caninos_has_altura():
-    assert hasattr(Caninos, "altura")
-    descriptor = None
-    for klass in Caninos.__mro__:
-        if "altura" in klass.__dict__:
-            descriptor = klass.__dict__["altura"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caninos_has_edad():
-    assert hasattr(Caninos, "edad")
-    descriptor = None
-    for klass in Caninos.__mro__:
-        if "edad" in klass.__dict__:
-            descriptor = klass.__dict__["edad"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caninos_has_peso():
-    assert hasattr(Caninos, "peso")
-    descriptor = None
-    for klass in Caninos.__mro__:
-        if "peso" in klass.__dict__:
-            descriptor = klass.__dict__["peso"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,12 +60,39 @@ def test_caninos_has_nombre():
             break
     assert isinstance(descriptor, property)
 
+def test_caninos_has_edad():
+    assert hasattr(Caninos, "edad")
+    descriptor = None
+    for klass in Caninos.__mro__:
+        if "edad" in klass.__dict__:
+            descriptor = klass.__dict__["edad"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_caninos_has_observaciones():
     assert hasattr(Caninos, "observaciones")
     descriptor = None
     for klass in Caninos.__mro__:
         if "observaciones" in klass.__dict__:
             descriptor = klass.__dict__["observaciones"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caninos_has_altura():
+    assert hasattr(Caninos, "altura")
+    descriptor = None
+    for klass in Caninos.__mro__:
+        if "altura" in klass.__dict__:
+            descriptor = klass.__dict__["altura"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caninos_has_peso():
+    assert hasattr(Caninos, "peso")
+    descriptor = None
+    for klass in Caninos.__mro__:
+        if "peso" in klass.__dict__:
+            descriptor = klass.__dict__["peso"]
             break
     assert isinstance(descriptor, property)
 
@@ -238,15 +238,15 @@ Caninos_strategy = st.builds(
     Caninos,
     raza=
         safe_text,
-    altura=
+    nombre=
         safe_text,
     edad=
         safe_text,
-    peso=
-        safe_text,
-    nombre=
-        safe_text,
     observaciones=
+        safe_text,
+    altura=
+        safe_text,
+    peso=
         safe_text
 )
 Empresa_strategy = st.builds(
@@ -282,9 +282,6 @@ Usuario_Actor_strategy = st.builds(
 def test_caninos_instantiation(instance):
     assert isinstance(instance, Caninos)
 
-@given(instance=Caninos_strategy)
-def test_caninos_raza_type(instance):
-    assert isinstance(instance.raza, str)
 
 
 @given(instance=Caninos_strategy)
@@ -293,42 +290,6 @@ def test_caninos_raza_setter(instance):
     instance.raza = original
     assert instance.raza == original
 
-@given(instance=Caninos_strategy)
-def test_caninos_altura_type(instance):
-    assert isinstance(instance.altura, str)
-
-
-@given(instance=Caninos_strategy)
-def test_caninos_altura_setter(instance):
-    original = instance.altura
-    instance.altura = original
-    assert instance.altura == original
-
-@given(instance=Caninos_strategy)
-def test_caninos_edad_type(instance):
-    assert isinstance(instance.edad, str)
-
-
-@given(instance=Caninos_strategy)
-def test_caninos_edad_setter(instance):
-    original = instance.edad
-    instance.edad = original
-    assert instance.edad == original
-
-@given(instance=Caninos_strategy)
-def test_caninos_peso_type(instance):
-    assert isinstance(instance.peso, str)
-
-
-@given(instance=Caninos_strategy)
-def test_caninos_peso_setter(instance):
-    original = instance.peso
-    instance.peso = original
-    assert instance.peso == original
-
-@given(instance=Caninos_strategy)
-def test_caninos_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
 @given(instance=Caninos_strategy)
@@ -337,9 +298,14 @@ def test_caninos_nombre_setter(instance):
     instance.nombre = original
     assert instance.nombre == original
 
+
+
 @given(instance=Caninos_strategy)
-def test_caninos_observaciones_type(instance):
-    assert isinstance(instance.observaciones, str)
+def test_caninos_edad_setter(instance):
+    original = instance.edad
+    instance.edad = original
+    assert instance.edad == original
+
 
 
 @given(instance=Caninos_strategy)
@@ -347,6 +313,22 @@ def test_caninos_observaciones_setter(instance):
     original = instance.observaciones
     instance.observaciones = original
     assert instance.observaciones == original
+
+
+
+@given(instance=Caninos_strategy)
+def test_caninos_altura_setter(instance):
+    original = instance.altura
+    instance.altura = original
+    assert instance.altura == original
+
+
+
+@given(instance=Caninos_strategy)
+def test_caninos_peso_setter(instance):
+    original = instance.peso
+    instance.peso = original
+    assert instance.peso == original
 
 @given(instance=Empresa_strategy)
 @settings(max_examples=50)

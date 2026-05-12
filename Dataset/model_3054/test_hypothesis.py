@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hibernate::NamedElement,
+from python_code import (
+    hibernate_NamedElement,
     NamedElement,
-    hibernate::Package,
-    hibernate::Entity,
-    hibernate::Feature,
-    hibernate::Module,
+    hibernate_Package,
+    hibernate_Entity,
+    hibernate_Feature,
+    hibernate_Module,
     Feature,
-    hibernate::DataType,
-    hibernate::Reference,
+    hibernate_DataType,
+    hibernate_Reference,
     FetureAnnotation,
     DataTypes,
     EntityAnnotation,
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_hibernate::namedelement_is_not_abstract():
-    assert not inspect.isabstract(hibernate::NamedElement)
+def test_hibernate_namedelement_is_not_abstract():
+    assert not inspect.isabstract(hibernate_NamedElement)
 
 
-def test_hibernate::namedelement_constructor_exists():
-    assert callable(hibernate::NamedElement.__init__)
+def test_hibernate_namedelement_constructor_exists():
+    assert callable(hibernate_NamedElement.__init__)
 
 
-def test_hibernate::namedelement_constructor_args():
-    sig = inspect.signature(hibernate::NamedElement.__init__)
+def test_hibernate_namedelement_constructor_args():
+    sig = inspect.signature(hibernate_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hibernate::namedelement_has_name():
-    assert hasattr(hibernate::NamedElement, "name")
+def test_hibernate_namedelement_has_name():
+    assert hasattr(hibernate_NamedElement, "name")
     descriptor = None
-    for klass in hibernate::NamedElement.__mro__:
+    for klass in hibernate_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,37 +64,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_hibernate::package_is_not_abstract():
-    assert not inspect.isabstract(hibernate::Package)
+def test_hibernate_package_is_not_abstract():
+    assert not inspect.isabstract(hibernate_Package)
 
 
-def test_hibernate::package_constructor_exists():
-    assert callable(hibernate::Package.__init__)
+def test_hibernate_package_constructor_exists():
+    assert callable(hibernate_Package.__init__)
 
 
-def test_hibernate::package_constructor_args():
-    sig = inspect.signature(hibernate::Package.__init__)
+def test_hibernate_package_constructor_args():
+    sig = inspect.signature(hibernate_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hibernate::entity_is_not_abstract():
-    assert not inspect.isabstract(hibernate::Entity)
+def test_hibernate_entity_is_not_abstract():
+    assert not inspect.isabstract(hibernate_Entity)
 
 
-def test_hibernate::entity_constructor_exists():
-    assert callable(hibernate::Entity.__init__)
+def test_hibernate_entity_constructor_exists():
+    assert callable(hibernate_Entity.__init__)
 
 
-def test_hibernate::entity_constructor_args():
-    sig = inspect.signature(hibernate::Entity.__init__)
+def test_hibernate_entity_constructor_args():
+    sig = inspect.signature(hibernate_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "annotations" in params, "Missing parameter 'annotations'"
 
-def test_hibernate::entity_has_annotations():
-    assert hasattr(hibernate::Entity, "annotations")
+def test_hibernate_entity_has_annotations():
+    assert hasattr(hibernate_Entity, "annotations")
     descriptor = None
-    for klass in hibernate::Entity.__mro__:
+    for klass in hibernate_Entity.__mro__:
         if "annotations" in klass.__dict__:
             descriptor = klass.__dict__["annotations"]
             break
@@ -102,50 +102,50 @@ def test_hibernate::entity_has_annotations():
 
 
 
-def test_hibernate::feature_is_not_abstract():
-    assert not inspect.isabstract(hibernate::Feature)
+def test_hibernate_feature_is_not_abstract():
+    assert not inspect.isabstract(hibernate_Feature)
 
 
-def test_hibernate::feature_constructor_exists():
-    assert callable(hibernate::Feature.__init__)
+def test_hibernate_feature_constructor_exists():
+    assert callable(hibernate_Feature.__init__)
 
 
-def test_hibernate::feature_constructor_args():
-    sig = inspect.signature(hibernate::Feature.__init__)
+def test_hibernate_feature_constructor_args():
+    sig = inspect.signature(hibernate_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "many" in params, "Missing parameter 'many'"
     assert "annotations" in params, "Missing parameter 'annotations'"
+    assert "many" in params, "Missing parameter 'many'"
 
-def test_hibernate::feature_has_many():
-    assert hasattr(hibernate::Feature, "many")
+def test_hibernate_feature_has_annotations():
+    assert hasattr(hibernate_Feature, "annotations")
     descriptor = None
-    for klass in hibernate::Feature.__mro__:
+    for klass in hibernate_Feature.__mro__:
+        if "annotations" in klass.__dict__:
+            descriptor = klass.__dict__["annotations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hibernate_feature_has_many():
+    assert hasattr(hibernate_Feature, "many")
+    descriptor = None
+    for klass in hibernate_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_hibernate::feature_has_annotations():
-    assert hasattr(hibernate::Feature, "annotations")
-    descriptor = None
-    for klass in hibernate::Feature.__mro__:
-        if "annotations" in klass.__dict__:
-            descriptor = klass.__dict__["annotations"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_hibernate::module_is_not_abstract():
-    assert not inspect.isabstract(hibernate::Module)
-
-
-def test_hibernate::module_constructor_exists():
-    assert callable(hibernate::Module.__init__)
+def test_hibernate_module_is_not_abstract():
+    assert not inspect.isabstract(hibernate_Module)
 
 
-def test_hibernate::module_constructor_args():
-    sig = inspect.signature(hibernate::Module.__init__)
+def test_hibernate_module_constructor_exists():
+    assert callable(hibernate_Module.__init__)
+
+
+def test_hibernate_module_constructor_args():
+    sig = inspect.signature(hibernate_Module.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,23 +164,23 @@ def test_feature_constructor_args():
 
 
 
-def test_hibernate::datatype_is_not_abstract():
-    assert not inspect.isabstract(hibernate::DataType)
+def test_hibernate_datatype_is_not_abstract():
+    assert not inspect.isabstract(hibernate_DataType)
 
 
-def test_hibernate::datatype_constructor_exists():
-    assert callable(hibernate::DataType.__init__)
+def test_hibernate_datatype_constructor_exists():
+    assert callable(hibernate_DataType.__init__)
 
 
-def test_hibernate::datatype_constructor_args():
-    sig = inspect.signature(hibernate::DataType.__init__)
+def test_hibernate_datatype_constructor_args():
+    sig = inspect.signature(hibernate_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_hibernate::datatype_has_type():
-    assert hasattr(hibernate::DataType, "type")
+def test_hibernate_datatype_has_type():
+    assert hasattr(hibernate_DataType, "type")
     descriptor = None
-    for klass in hibernate::DataType.__mro__:
+    for klass in hibernate_DataType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -188,16 +188,16 @@ def test_hibernate::datatype_has_type():
 
 
 
-def test_hibernate::reference_is_not_abstract():
-    assert not inspect.isabstract(hibernate::Reference)
+def test_hibernate_reference_is_not_abstract():
+    assert not inspect.isabstract(hibernate_Reference)
 
 
-def test_hibernate::reference_constructor_exists():
-    assert callable(hibernate::Reference.__init__)
+def test_hibernate_reference_constructor_exists():
+    assert callable(hibernate_Reference.__init__)
 
 
-def test_hibernate::reference_constructor_args():
-    sig = inspect.signature(hibernate::Reference.__init__)
+def test_hibernate_reference_constructor_args():
+    sig = inspect.signature(hibernate_Reference.__init__)
     params = list(sig.parameters.keys())
 
 def test_fetureannotation_exists():
@@ -208,10 +208,10 @@ def test_fetureannotation_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FetureAnnotation]
     expected_literals = [
-        "Id",
-        "Index",
-        "Ignore",
         "Load",
+        "Id",
+        "Ignore",
+        "Index",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -227,10 +227,10 @@ def test_datatypes_has_all_literals():
     expected_literals = [
         "Long",
         "Object",
-        "Boolean",
         "Integer",
-        "Double",
+        "Boolean",
         "String",
+        "Double",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -262,56 +262,53 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hibernate::NamedElement_strategy = st.builds(
-    hibernate::NamedElement,
+hibernate_NamedElement_strategy = st.builds(
+    hibernate_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-hibernate::Package_strategy = st.builds(
-    hibernate::Package,
+hibernate_Package_strategy = st.builds(
+    hibernate_Package,
 )
-hibernate::Entity_strategy = st.builds(
-    hibernate::Entity,
+hibernate_Entity_strategy = st.builds(
+    hibernate_Entity,
     annotations=
         safe_text
 )
-hibernate::Feature_strategy = st.builds(
-    hibernate::Feature,
+hibernate_Feature_strategy = st.builds(
+    hibernate_Feature,
+    annotations=
+        safe_text,
     many=
-        st.booleans(),
-    annotations=
-        safe_text
+        st.booleans()
 )
-hibernate::Module_strategy = st.builds(
-    hibernate::Module,
+hibernate_Module_strategy = st.builds(
+    hibernate_Module,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-hibernate::DataType_strategy = st.builds(
-    hibernate::DataType,
+hibernate_DataType_strategy = st.builds(
+    hibernate_DataType,
     type=
         safe_text
 )
-hibernate::Reference_strategy = st.builds(
-    hibernate::Reference,
+hibernate_Reference_strategy = st.builds(
+    hibernate_Reference,
 )
 
-@given(instance=hibernate::NamedElement_strategy)
+@given(instance=hibernate_NamedElement_strategy)
 @settings(max_examples=50)
-def test_hibernate::namedelement_instantiation(instance):
-    assert isinstance(instance, hibernate::NamedElement)
-
-@given(instance=hibernate::NamedElement_strategy)
-def test_hibernate::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hibernate_namedelement_instantiation(instance):
+    assert isinstance(instance, hibernate_NamedElement)
 
 
-@given(instance=hibernate::NamedElement_strategy)
-def test_hibernate::namedelement_name_setter(instance):
+
+@given(instance=hibernate_NamedElement_strategy)
+def test_hibernate_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -321,81 +318,69 @@ def test_hibernate::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=hibernate::Package_strategy)
+@given(instance=hibernate_Package_strategy)
 @settings(max_examples=50)
-def test_hibernate::package_instantiation(instance):
-    assert isinstance(instance, hibernate::Package)
+def test_hibernate_package_instantiation(instance):
+    assert isinstance(instance, hibernate_Package)
 
-@given(instance=hibernate::Entity_strategy)
+@given(instance=hibernate_Entity_strategy)
 @settings(max_examples=50)
-def test_hibernate::entity_instantiation(instance):
-    assert isinstance(instance, hibernate::Entity)
-
-@given(instance=hibernate::Entity_strategy)
-def test_hibernate::entity_annotations_type(instance):
-    assert isinstance(instance.annotations, str)
+def test_hibernate_entity_instantiation(instance):
+    assert isinstance(instance, hibernate_Entity)
 
 
-@given(instance=hibernate::Entity_strategy)
-def test_hibernate::entity_annotations_setter(instance):
+
+@given(instance=hibernate_Entity_strategy)
+def test_hibernate_entity_annotations_setter(instance):
     original = instance.annotations
     instance.annotations = original
     assert instance.annotations == original
 
-@given(instance=hibernate::Feature_strategy)
+@given(instance=hibernate_Feature_strategy)
 @settings(max_examples=50)
-def test_hibernate::feature_instantiation(instance):
-    assert isinstance(instance, hibernate::Feature)
-
-@given(instance=hibernate::Feature_strategy)
-def test_hibernate::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_hibernate_feature_instantiation(instance):
+    assert isinstance(instance, hibernate_Feature)
 
 
-@given(instance=hibernate::Feature_strategy)
-def test_hibernate::feature_many_setter(instance):
+
+@given(instance=hibernate_Feature_strategy)
+def test_hibernate_feature_annotations_setter(instance):
+    original = instance.annotations
+    instance.annotations = original
+    assert instance.annotations == original
+
+
+
+@given(instance=hibernate_Feature_strategy)
+def test_hibernate_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=hibernate::Feature_strategy)
-def test_hibernate::feature_annotations_type(instance):
-    assert isinstance(instance.annotations, str)
-
-
-@given(instance=hibernate::Feature_strategy)
-def test_hibernate::feature_annotations_setter(instance):
-    original = instance.annotations
-    instance.annotations = original
-    assert instance.annotations == original
-
-@given(instance=hibernate::Module_strategy)
+@given(instance=hibernate_Module_strategy)
 @settings(max_examples=50)
-def test_hibernate::module_instantiation(instance):
-    assert isinstance(instance, hibernate::Module)
+def test_hibernate_module_instantiation(instance):
+    assert isinstance(instance, hibernate_Module)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=hibernate::DataType_strategy)
+@given(instance=hibernate_DataType_strategy)
 @settings(max_examples=50)
-def test_hibernate::datatype_instantiation(instance):
-    assert isinstance(instance, hibernate::DataType)
-
-@given(instance=hibernate::DataType_strategy)
-def test_hibernate::datatype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_hibernate_datatype_instantiation(instance):
+    assert isinstance(instance, hibernate_DataType)
 
 
-@given(instance=hibernate::DataType_strategy)
-def test_hibernate::datatype_type_setter(instance):
+
+@given(instance=hibernate_DataType_strategy)
+def test_hibernate_datatype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=hibernate::Reference_strategy)
+@given(instance=hibernate_Reference_strategy)
 @settings(max_examples=50)
-def test_hibernate::reference_instantiation(instance):
-    assert isinstance(instance, hibernate::Reference)
+def test_hibernate_reference_instantiation(instance):
+    assert isinstance(instance, hibernate_Reference)

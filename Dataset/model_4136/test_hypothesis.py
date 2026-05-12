@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    asso::Variable,
-    asso::Model,
+from python_code import (
+    asso_Variable,
+    asso_Model,
     Expression,
-    asso::Plus,
-    asso::Div,
-    asso::Mult,
-    asso::Minus,
-    asso::VariableRef,
-    asso::NegFloatConstant,
-    asso::FloatConstant,
-    asso::Expression,
-    asso::EvalExpression,
+    asso_Mult,
+    asso_NegFloatConstant,
+    asso_Div,
+    asso_Plus,
+    asso_Minus,
+    asso_VariableRef,
+    asso_FloatConstant,
+    asso_Expression,
+    asso_EvalExpression,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_asso::variable_is_not_abstract():
-    assert not inspect.isabstract(asso::Variable)
+def test_asso_variable_is_not_abstract():
+    assert not inspect.isabstract(asso_Variable)
 
 
-def test_asso::variable_constructor_exists():
-    assert callable(asso::Variable.__init__)
+def test_asso_variable_constructor_exists():
+    assert callable(asso_Variable.__init__)
 
 
-def test_asso::variable_constructor_args():
-    sig = inspect.signature(asso::Variable.__init__)
+def test_asso_variable_constructor_args():
+    sig = inspect.signature(asso_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asso::variable_has_name():
-    assert hasattr(asso::Variable, "name")
+def test_asso_variable_has_name():
+    assert hasattr(asso_Variable, "name")
     descriptor = None
-    for klass in asso::Variable.__mro__:
+    for klass in asso_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -50,16 +50,16 @@ def test_asso::variable_has_name():
 
 
 
-def test_asso::model_is_not_abstract():
-    assert not inspect.isabstract(asso::Model)
+def test_asso_model_is_not_abstract():
+    assert not inspect.isabstract(asso_Model)
 
 
-def test_asso::model_constructor_exists():
-    assert callable(asso::Model.__init__)
+def test_asso_model_constructor_exists():
+    assert callable(asso_Model.__init__)
 
 
-def test_asso::model_constructor_args():
-    sig = inspect.signature(asso::Model.__init__)
+def test_asso_model_constructor_args():
+    sig = inspect.signature(asso_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -78,93 +78,37 @@ def test_expression_constructor_args():
 
 
 
-def test_asso::plus_is_not_abstract():
-    assert not inspect.isabstract(asso::Plus)
+def test_asso_mult_is_not_abstract():
+    assert not inspect.isabstract(asso_Mult)
 
 
-def test_asso::plus_constructor_exists():
-    assert callable(asso::Plus.__init__)
+def test_asso_mult_constructor_exists():
+    assert callable(asso_Mult.__init__)
 
 
-def test_asso::plus_constructor_args():
-    sig = inspect.signature(asso::Plus.__init__)
+def test_asso_mult_constructor_args():
+    sig = inspect.signature(asso_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asso::div_is_not_abstract():
-    assert not inspect.isabstract(asso::Div)
+def test_asso_negfloatconstant_is_not_abstract():
+    assert not inspect.isabstract(asso_NegFloatConstant)
 
 
-def test_asso::div_constructor_exists():
-    assert callable(asso::Div.__init__)
+def test_asso_negfloatconstant_constructor_exists():
+    assert callable(asso_NegFloatConstant.__init__)
 
 
-def test_asso::div_constructor_args():
-    sig = inspect.signature(asso::Div.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asso::mult_is_not_abstract():
-    assert not inspect.isabstract(asso::Mult)
-
-
-def test_asso::mult_constructor_exists():
-    assert callable(asso::Mult.__init__)
-
-
-def test_asso::mult_constructor_args():
-    sig = inspect.signature(asso::Mult.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asso::minus_is_not_abstract():
-    assert not inspect.isabstract(asso::Minus)
-
-
-def test_asso::minus_constructor_exists():
-    assert callable(asso::Minus.__init__)
-
-
-def test_asso::minus_constructor_args():
-    sig = inspect.signature(asso::Minus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asso::variableref_is_not_abstract():
-    assert not inspect.isabstract(asso::VariableRef)
-
-
-def test_asso::variableref_constructor_exists():
-    assert callable(asso::VariableRef.__init__)
-
-
-def test_asso::variableref_constructor_args():
-    sig = inspect.signature(asso::VariableRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asso::negfloatconstant_is_not_abstract():
-    assert not inspect.isabstract(asso::NegFloatConstant)
-
-
-def test_asso::negfloatconstant_constructor_exists():
-    assert callable(asso::NegFloatConstant.__init__)
-
-
-def test_asso::negfloatconstant_constructor_args():
-    sig = inspect.signature(asso::NegFloatConstant.__init__)
+def test_asso_negfloatconstant_constructor_args():
+    sig = inspect.signature(asso_NegFloatConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_asso::negfloatconstant_has_value():
-    assert hasattr(asso::NegFloatConstant, "value")
+def test_asso_negfloatconstant_has_value():
+    assert hasattr(asso_NegFloatConstant, "value")
     descriptor = None
-    for klass in asso::NegFloatConstant.__mro__:
+    for klass in asso_NegFloatConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -172,23 +116,79 @@ def test_asso::negfloatconstant_has_value():
 
 
 
-def test_asso::floatconstant_is_not_abstract():
-    assert not inspect.isabstract(asso::FloatConstant)
+def test_asso_div_is_not_abstract():
+    assert not inspect.isabstract(asso_Div)
 
 
-def test_asso::floatconstant_constructor_exists():
-    assert callable(asso::FloatConstant.__init__)
+def test_asso_div_constructor_exists():
+    assert callable(asso_Div.__init__)
 
 
-def test_asso::floatconstant_constructor_args():
-    sig = inspect.signature(asso::FloatConstant.__init__)
+def test_asso_div_constructor_args():
+    sig = inspect.signature(asso_Div.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asso_plus_is_not_abstract():
+    assert not inspect.isabstract(asso_Plus)
+
+
+def test_asso_plus_constructor_exists():
+    assert callable(asso_Plus.__init__)
+
+
+def test_asso_plus_constructor_args():
+    sig = inspect.signature(asso_Plus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asso_minus_is_not_abstract():
+    assert not inspect.isabstract(asso_Minus)
+
+
+def test_asso_minus_constructor_exists():
+    assert callable(asso_Minus.__init__)
+
+
+def test_asso_minus_constructor_args():
+    sig = inspect.signature(asso_Minus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asso_variableref_is_not_abstract():
+    assert not inspect.isabstract(asso_VariableRef)
+
+
+def test_asso_variableref_constructor_exists():
+    assert callable(asso_VariableRef.__init__)
+
+
+def test_asso_variableref_constructor_args():
+    sig = inspect.signature(asso_VariableRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asso_floatconstant_is_not_abstract():
+    assert not inspect.isabstract(asso_FloatConstant)
+
+
+def test_asso_floatconstant_constructor_exists():
+    assert callable(asso_FloatConstant.__init__)
+
+
+def test_asso_floatconstant_constructor_args():
+    sig = inspect.signature(asso_FloatConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_asso::floatconstant_has_value():
-    assert hasattr(asso::FloatConstant, "value")
+def test_asso_floatconstant_has_value():
+    assert hasattr(asso_FloatConstant, "value")
     descriptor = None
-    for klass in asso::FloatConstant.__mro__:
+    for klass in asso_FloatConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -196,30 +196,30 @@ def test_asso::floatconstant_has_value():
 
 
 
-def test_asso::expression_is_not_abstract():
-    assert not inspect.isabstract(asso::Expression)
+def test_asso_expression_is_not_abstract():
+    assert not inspect.isabstract(asso_Expression)
 
 
-def test_asso::expression_constructor_exists():
-    assert callable(asso::Expression.__init__)
+def test_asso_expression_constructor_exists():
+    assert callable(asso_Expression.__init__)
 
 
-def test_asso::expression_constructor_args():
-    sig = inspect.signature(asso::Expression.__init__)
+def test_asso_expression_constructor_args():
+    sig = inspect.signature(asso_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asso::evalexpression_is_not_abstract():
-    assert not inspect.isabstract(asso::EvalExpression)
+def test_asso_evalexpression_is_not_abstract():
+    assert not inspect.isabstract(asso_EvalExpression)
 
 
-def test_asso::evalexpression_constructor_exists():
-    assert callable(asso::EvalExpression.__init__)
+def test_asso_evalexpression_constructor_exists():
+    assert callable(asso_EvalExpression.__init__)
 
 
-def test_asso::evalexpression_constructor_args():
-    sig = inspect.signature(asso::EvalExpression.__init__)
+def test_asso_evalexpression_constructor_args():
+    sig = inspect.signature(asso_EvalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -234,138 +234,129 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-asso::Variable_strategy = st.builds(
-    asso::Variable,
+asso_Variable_strategy = st.builds(
+    asso_Variable,
     name=
         safe_text
 )
-asso::Model_strategy = st.builds(
-    asso::Model,
+asso_Model_strategy = st.builds(
+    asso_Model,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-asso::Plus_strategy = st.builds(
-    asso::Plus,
+asso_Mult_strategy = st.builds(
+    asso_Mult,
 )
-asso::Div_strategy = st.builds(
-    asso::Div,
-)
-asso::Mult_strategy = st.builds(
-    asso::Mult,
-)
-asso::Minus_strategy = st.builds(
-    asso::Minus,
-)
-asso::VariableRef_strategy = st.builds(
-    asso::VariableRef,
-)
-asso::NegFloatConstant_strategy = st.builds(
-    asso::NegFloatConstant,
+asso_NegFloatConstant_strategy = st.builds(
+    asso_NegFloatConstant,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-asso::FloatConstant_strategy = st.builds(
-    asso::FloatConstant,
+asso_Div_strategy = st.builds(
+    asso_Div,
+)
+asso_Plus_strategy = st.builds(
+    asso_Plus,
+)
+asso_Minus_strategy = st.builds(
+    asso_Minus,
+)
+asso_VariableRef_strategy = st.builds(
+    asso_VariableRef,
+)
+asso_FloatConstant_strategy = st.builds(
+    asso_FloatConstant,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-asso::Expression_strategy = st.builds(
-    asso::Expression,
+asso_Expression_strategy = st.builds(
+    asso_Expression,
 )
-asso::EvalExpression_strategy = st.builds(
-    asso::EvalExpression,
+asso_EvalExpression_strategy = st.builds(
+    asso_EvalExpression,
 )
 
-@given(instance=asso::Variable_strategy)
+@given(instance=asso_Variable_strategy)
 @settings(max_examples=50)
-def test_asso::variable_instantiation(instance):
-    assert isinstance(instance, asso::Variable)
-
-@given(instance=asso::Variable_strategy)
-def test_asso::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asso_variable_instantiation(instance):
+    assert isinstance(instance, asso_Variable)
 
 
-@given(instance=asso::Variable_strategy)
-def test_asso::variable_name_setter(instance):
+
+@given(instance=asso_Variable_strategy)
+def test_asso_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=asso::Model_strategy)
+@given(instance=asso_Model_strategy)
 @settings(max_examples=50)
-def test_asso::model_instantiation(instance):
-    assert isinstance(instance, asso::Model)
+def test_asso_model_instantiation(instance):
+    assert isinstance(instance, asso_Model)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=asso::Plus_strategy)
+@given(instance=asso_Mult_strategy)
 @settings(max_examples=50)
-def test_asso::plus_instantiation(instance):
-    assert isinstance(instance, asso::Plus)
+def test_asso_mult_instantiation(instance):
+    assert isinstance(instance, asso_Mult)
 
-@given(instance=asso::Div_strategy)
+@given(instance=asso_NegFloatConstant_strategy)
 @settings(max_examples=50)
-def test_asso::div_instantiation(instance):
-    assert isinstance(instance, asso::Div)
-
-@given(instance=asso::Mult_strategy)
-@settings(max_examples=50)
-def test_asso::mult_instantiation(instance):
-    assert isinstance(instance, asso::Mult)
-
-@given(instance=asso::Minus_strategy)
-@settings(max_examples=50)
-def test_asso::minus_instantiation(instance):
-    assert isinstance(instance, asso::Minus)
-
-@given(instance=asso::VariableRef_strategy)
-@settings(max_examples=50)
-def test_asso::variableref_instantiation(instance):
-    assert isinstance(instance, asso::VariableRef)
-
-@given(instance=asso::NegFloatConstant_strategy)
-@settings(max_examples=50)
-def test_asso::negfloatconstant_instantiation(instance):
-    assert isinstance(instance, asso::NegFloatConstant)
-
-@given(instance=asso::NegFloatConstant_strategy)
-def test_asso::negfloatconstant_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_asso_negfloatconstant_instantiation(instance):
+    assert isinstance(instance, asso_NegFloatConstant)
 
 
-@given(instance=asso::NegFloatConstant_strategy)
-def test_asso::negfloatconstant_value_setter(instance):
+
+@given(instance=asso_NegFloatConstant_strategy)
+def test_asso_negfloatconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=asso::FloatConstant_strategy)
+@given(instance=asso_Div_strategy)
 @settings(max_examples=50)
-def test_asso::floatconstant_instantiation(instance):
-    assert isinstance(instance, asso::FloatConstant)
+def test_asso_div_instantiation(instance):
+    assert isinstance(instance, asso_Div)
 
-@given(instance=asso::FloatConstant_strategy)
-def test_asso::floatconstant_value_type(instance):
-    assert isinstance(instance.value, float)
+@given(instance=asso_Plus_strategy)
+@settings(max_examples=50)
+def test_asso_plus_instantiation(instance):
+    assert isinstance(instance, asso_Plus)
+
+@given(instance=asso_Minus_strategy)
+@settings(max_examples=50)
+def test_asso_minus_instantiation(instance):
+    assert isinstance(instance, asso_Minus)
+
+@given(instance=asso_VariableRef_strategy)
+@settings(max_examples=50)
+def test_asso_variableref_instantiation(instance):
+    assert isinstance(instance, asso_VariableRef)
+
+@given(instance=asso_FloatConstant_strategy)
+@settings(max_examples=50)
+def test_asso_floatconstant_instantiation(instance):
+    assert isinstance(instance, asso_FloatConstant)
 
 
-@given(instance=asso::FloatConstant_strategy)
-def test_asso::floatconstant_value_setter(instance):
+
+@given(instance=asso_FloatConstant_strategy)
+def test_asso_floatconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=asso::Expression_strategy)
+@given(instance=asso_Expression_strategy)
 @settings(max_examples=50)
-def test_asso::expression_instantiation(instance):
-    assert isinstance(instance, asso::Expression)
+def test_asso_expression_instantiation(instance):
+    assert isinstance(instance, asso_Expression)
 
-@given(instance=asso::EvalExpression_strategy)
+@given(instance=asso_EvalExpression_strategy)
 @settings(max_examples=50)
-def test_asso::evalexpression_instantiation(instance):
-    assert isinstance(instance, asso::EvalExpression)
+def test_asso_evalexpression_instantiation(instance):
+    assert isinstance(instance, asso_EvalExpression)

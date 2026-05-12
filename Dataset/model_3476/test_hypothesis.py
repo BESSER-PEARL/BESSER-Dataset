@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    feature::Annotation,
-    feature::Attribute,
+from python_code import (
+    feature_Annotation,
+    feature_Attribute,
     FeatureTreeNode,
-    feature::Group,
-    feature::FeatureTreeNode,
-    feature::FeatureModel,
-    feature::Feature,
-    feature::Constraint,
+    feature_Group,
+    feature_FeatureTreeNode,
+    feature_FeatureModel,
+    feature_Feature,
+    feature_Constraint,
 )
 
 # =============================================================================
@@ -22,59 +22,59 @@ from classes import (
 
 
 
-def test_feature::annotation_is_not_abstract():
-    assert not inspect.isabstract(feature::Annotation)
+def test_feature_annotation_is_not_abstract():
+    assert not inspect.isabstract(feature_Annotation)
 
 
-def test_feature::annotation_constructor_exists():
-    assert callable(feature::Annotation.__init__)
+def test_feature_annotation_constructor_exists():
+    assert callable(feature_Annotation.__init__)
 
 
-def test_feature::annotation_constructor_args():
-    sig = inspect.signature(feature::Annotation.__init__)
+def test_feature_annotation_constructor_args():
+    sig = inspect.signature(feature_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::attribute_is_not_abstract():
-    assert not inspect.isabstract(feature::Attribute)
+def test_feature_attribute_is_not_abstract():
+    assert not inspect.isabstract(feature_Attribute)
 
 
-def test_feature::attribute_constructor_exists():
-    assert callable(feature::Attribute.__init__)
+def test_feature_attribute_constructor_exists():
+    assert callable(feature_Attribute.__init__)
 
 
-def test_feature::attribute_constructor_args():
-    sig = inspect.signature(feature::Attribute.__init__)
+def test_feature_attribute_constructor_args():
+    sig = inspect.signature(feature_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_feature::attribute_has_name():
-    assert hasattr(feature::Attribute, "name")
+def test_feature_attribute_has_name():
+    assert hasattr(feature_Attribute, "name")
     descriptor = None
-    for klass in feature::Attribute.__mro__:
+    for klass in feature_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_feature::attribute_has_type():
-    assert hasattr(feature::Attribute, "type")
+def test_feature_attribute_has_value():
+    assert hasattr(feature_Attribute, "value")
     descriptor = None
-    for klass in feature::Attribute.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in feature_Attribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_feature::attribute_has_value():
-    assert hasattr(feature::Attribute, "value")
+def test_feature_attribute_has_type():
+    assert hasattr(feature_Attribute, "type")
     descriptor = None
-    for klass in feature::Attribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in feature_Attribute.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -94,71 +94,71 @@ def test_featuretreenode_constructor_args():
 
 
 
-def test_feature::group_is_not_abstract():
-    assert not inspect.isabstract(feature::Group)
+def test_feature_group_is_not_abstract():
+    assert not inspect.isabstract(feature_Group)
 
 
-def test_feature::group_constructor_exists():
-    assert callable(feature::Group.__init__)
+def test_feature_group_constructor_exists():
+    assert callable(feature_Group.__init__)
 
 
-def test_feature::group_constructor_args():
-    sig = inspect.signature(feature::Group.__init__)
+def test_feature_group_constructor_args():
+    sig = inspect.signature(feature_Group.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::featuretreenode_is_not_abstract():
-    assert not inspect.isabstract(feature::FeatureTreeNode)
+def test_feature_featuretreenode_is_not_abstract():
+    assert not inspect.isabstract(feature_FeatureTreeNode)
 
 
-def test_feature::featuretreenode_constructor_exists():
-    assert callable(feature::FeatureTreeNode.__init__)
+def test_feature_featuretreenode_constructor_exists():
+    assert callable(feature_FeatureTreeNode.__init__)
 
 
-def test_feature::featuretreenode_constructor_args():
-    sig = inspect.signature(feature::FeatureTreeNode.__init__)
+def test_feature_featuretreenode_constructor_args():
+    sig = inspect.signature(feature_FeatureTreeNode.__init__)
     params = list(sig.parameters.keys())
-    assert "minCardinality" in params, "Missing parameter 'minCardinality'"
     assert "maxCardinality" in params, "Missing parameter 'maxCardinality'"
+    assert "minCardinality" in params, "Missing parameter 'minCardinality'"
 
-def test_feature::featuretreenode_has_minCardinality():
-    assert hasattr(feature::FeatureTreeNode, "minCardinality")
+def test_feature_featuretreenode_has_maxCardinality():
+    assert hasattr(feature_FeatureTreeNode, "maxCardinality")
     descriptor = None
-    for klass in feature::FeatureTreeNode.__mro__:
-        if "minCardinality" in klass.__dict__:
-            descriptor = klass.__dict__["minCardinality"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_feature::featuretreenode_has_maxCardinality():
-    assert hasattr(feature::FeatureTreeNode, "maxCardinality")
-    descriptor = None
-    for klass in feature::FeatureTreeNode.__mro__:
+    for klass in feature_FeatureTreeNode.__mro__:
         if "maxCardinality" in klass.__dict__:
             descriptor = klass.__dict__["maxCardinality"]
             break
     assert isinstance(descriptor, property)
 
+def test_feature_featuretreenode_has_minCardinality():
+    assert hasattr(feature_FeatureTreeNode, "minCardinality")
+    descriptor = None
+    for klass in feature_FeatureTreeNode.__mro__:
+        if "minCardinality" in klass.__dict__:
+            descriptor = klass.__dict__["minCardinality"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_feature::featuremodel_is_not_abstract():
-    assert not inspect.isabstract(feature::FeatureModel)
+
+def test_feature_featuremodel_is_not_abstract():
+    assert not inspect.isabstract(feature_FeatureModel)
 
 
-def test_feature::featuremodel_constructor_exists():
-    assert callable(feature::FeatureModel.__init__)
+def test_feature_featuremodel_constructor_exists():
+    assert callable(feature_FeatureModel.__init__)
 
 
-def test_feature::featuremodel_constructor_args():
-    sig = inspect.signature(feature::FeatureModel.__init__)
+def test_feature_featuremodel_constructor_args():
+    sig = inspect.signature(feature_FeatureModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_feature::featuremodel_has_name():
-    assert hasattr(feature::FeatureModel, "name")
+def test_feature_featuremodel_has_name():
+    assert hasattr(feature_FeatureModel, "name")
     descriptor = None
-    for klass in feature::FeatureModel.__mro__:
+    for klass in feature_FeatureModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,23 +166,23 @@ def test_feature::featuremodel_has_name():
 
 
 
-def test_feature::feature_is_not_abstract():
-    assert not inspect.isabstract(feature::Feature)
+def test_feature_feature_is_not_abstract():
+    assert not inspect.isabstract(feature_Feature)
 
 
-def test_feature::feature_constructor_exists():
-    assert callable(feature::Feature.__init__)
+def test_feature_feature_constructor_exists():
+    assert callable(feature_Feature.__init__)
 
 
-def test_feature::feature_constructor_args():
-    sig = inspect.signature(feature::Feature.__init__)
+def test_feature_feature_constructor_args():
+    sig = inspect.signature(feature_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_feature::feature_has_name():
-    assert hasattr(feature::Feature, "name")
+def test_feature_feature_has_name():
+    assert hasattr(feature_Feature, "name")
     descriptor = None
-    for klass in feature::Feature.__mro__:
+    for klass in feature_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -190,33 +190,33 @@ def test_feature::feature_has_name():
 
 
 
-def test_feature::constraint_is_not_abstract():
-    assert not inspect.isabstract(feature::Constraint)
+def test_feature_constraint_is_not_abstract():
+    assert not inspect.isabstract(feature_Constraint)
 
 
-def test_feature::constraint_constructor_exists():
-    assert callable(feature::Constraint.__init__)
+def test_feature_constraint_constructor_exists():
+    assert callable(feature_Constraint.__init__)
 
 
-def test_feature::constraint_constructor_args():
-    sig = inspect.signature(feature::Constraint.__init__)
+def test_feature_constraint_constructor_args():
+    sig = inspect.signature(feature_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_feature::constraint_has_language():
-    assert hasattr(feature::Constraint, "language")
+def test_feature_constraint_has_language():
+    assert hasattr(feature_Constraint, "language")
     descriptor = None
-    for klass in feature::Constraint.__mro__:
+    for klass in feature_Constraint.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_feature::constraint_has_expression():
-    assert hasattr(feature::Constraint, "expression")
+def test_feature_constraint_has_expression():
+    assert hasattr(feature_Constraint, "expression")
     descriptor = None
-    for klass in feature::Constraint.__mro__:
+    for klass in feature_Constraint.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -234,157 +234,136 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-feature::Annotation_strategy = st.builds(
-    feature::Annotation,
+feature_Annotation_strategy = st.builds(
+    feature_Annotation,
 )
-feature::Attribute_strategy = st.builds(
-    feature::Attribute,
+feature_Attribute_strategy = st.builds(
+    feature_Attribute,
     name=
         safe_text,
-    type=
-        safe_text,
     value=
+        safe_text,
+    type=
         safe_text
 )
 FeatureTreeNode_strategy = st.builds(
     FeatureTreeNode,
 )
-feature::Group_strategy = st.builds(
-    feature::Group,
+feature_Group_strategy = st.builds(
+    feature_Group,
 )
-feature::FeatureTreeNode_strategy = st.builds(
-    feature::FeatureTreeNode,
-    minCardinality=
-        st.integers(),
+feature_FeatureTreeNode_strategy = st.builds(
+    feature_FeatureTreeNode,
     maxCardinality=
+        st.integers(),
+    minCardinality=
         st.integers()
 )
-feature::FeatureModel_strategy = st.builds(
-    feature::FeatureModel,
+feature_FeatureModel_strategy = st.builds(
+    feature_FeatureModel,
     name=
         safe_text
 )
-feature::Feature_strategy = st.builds(
-    feature::Feature,
+feature_Feature_strategy = st.builds(
+    feature_Feature,
     name=
         safe_text
 )
-feature::Constraint_strategy = st.builds(
-    feature::Constraint,
+feature_Constraint_strategy = st.builds(
+    feature_Constraint,
     language=
         safe_text,
     expression=
         safe_text
 )
 
-@given(instance=feature::Annotation_strategy)
+@given(instance=feature_Annotation_strategy)
 @settings(max_examples=50)
-def test_feature::annotation_instantiation(instance):
-    assert isinstance(instance, feature::Annotation)
+def test_feature_annotation_instantiation(instance):
+    assert isinstance(instance, feature_Annotation)
 
-@given(instance=feature::Attribute_strategy)
+@given(instance=feature_Attribute_strategy)
 @settings(max_examples=50)
-def test_feature::attribute_instantiation(instance):
-    assert isinstance(instance, feature::Attribute)
-
-@given(instance=feature::Attribute_strategy)
-def test_feature::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_feature_attribute_instantiation(instance):
+    assert isinstance(instance, feature_Attribute)
 
 
-@given(instance=feature::Attribute_strategy)
-def test_feature::attribute_name_setter(instance):
+
+@given(instance=feature_Attribute_strategy)
+def test_feature_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=feature::Attribute_strategy)
-def test_feature::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=feature::Attribute_strategy)
-def test_feature::attribute_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=feature::Attribute_strategy)
-def test_feature::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=feature::Attribute_strategy)
-def test_feature::attribute_value_setter(instance):
+@given(instance=feature_Attribute_strategy)
+def test_feature_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+
+
+@given(instance=feature_Attribute_strategy)
+def test_feature_attribute_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 @given(instance=FeatureTreeNode_strategy)
 @settings(max_examples=50)
 def test_featuretreenode_instantiation(instance):
     assert isinstance(instance, FeatureTreeNode)
 
-@given(instance=feature::Group_strategy)
+@given(instance=feature_Group_strategy)
 @settings(max_examples=50)
-def test_feature::group_instantiation(instance):
-    assert isinstance(instance, feature::Group)
+def test_feature_group_instantiation(instance):
+    assert isinstance(instance, feature_Group)
 
-@given(instance=feature::FeatureTreeNode_strategy)
+@given(instance=feature_FeatureTreeNode_strategy)
 @settings(max_examples=50)
-def test_feature::featuretreenode_instantiation(instance):
-    assert isinstance(instance, feature::FeatureTreeNode)
-
-@given(instance=feature::FeatureTreeNode_strategy)
-def test_feature::featuretreenode_minCardinality_type(instance):
-    assert isinstance(instance.minCardinality, int)
+def test_feature_featuretreenode_instantiation(instance):
+    assert isinstance(instance, feature_FeatureTreeNode)
 
 
-@given(instance=feature::FeatureTreeNode_strategy)
-def test_feature::featuretreenode_minCardinality_setter(instance):
-    original = instance.minCardinality
-    instance.minCardinality = original
-    assert instance.minCardinality == original
 
-@given(instance=feature::FeatureTreeNode_strategy)
-def test_feature::featuretreenode_maxCardinality_type(instance):
-    assert isinstance(instance.maxCardinality, int)
-
-
-@given(instance=feature::FeatureTreeNode_strategy)
-def test_feature::featuretreenode_maxCardinality_setter(instance):
+@given(instance=feature_FeatureTreeNode_strategy)
+def test_feature_featuretreenode_maxCardinality_setter(instance):
     original = instance.maxCardinality
     instance.maxCardinality = original
     assert instance.maxCardinality == original
 
-@given(instance=feature::FeatureModel_strategy)
+
+
+@given(instance=feature_FeatureTreeNode_strategy)
+def test_feature_featuretreenode_minCardinality_setter(instance):
+    original = instance.minCardinality
+    instance.minCardinality = original
+    assert instance.minCardinality == original
+
+@given(instance=feature_FeatureModel_strategy)
 @settings(max_examples=50)
-def test_feature::featuremodel_instantiation(instance):
-    assert isinstance(instance, feature::FeatureModel)
-
-@given(instance=feature::FeatureModel_strategy)
-def test_feature::featuremodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_feature_featuremodel_instantiation(instance):
+    assert isinstance(instance, feature_FeatureModel)
 
 
-@given(instance=feature::FeatureModel_strategy)
-def test_feature::featuremodel_name_setter(instance):
+
+@given(instance=feature_FeatureModel_strategy)
+def test_feature_featuremodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=feature::Feature_strategy)
+@given(instance=feature_Feature_strategy)
 @settings(max_examples=50)
-def test_feature::feature_instantiation(instance):
-    assert isinstance(instance, feature::Feature)
-
-@given(instance=feature::Feature_strategy)
-def test_feature::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_feature_feature_instantiation(instance):
+    assert isinstance(instance, feature_Feature)
 
 
-@given(instance=feature::Feature_strategy)
-def test_feature::feature_name_setter(instance):
+
+@given(instance=feature_Feature_strategy)
+def test_feature_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -395,9 +374,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=feature::Feature_strategy)
+@given(instance=feature_Feature_strategy)
 @settings(max_examples=30)
-def test_feature::feature_ismandatory_changes_state(instance):
+def test_feature_feature_ismandatory_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -409,38 +388,32 @@ def test_feature::feature_ismandatory_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMandatory' in feature::Feature is empty"
+        assert has_statements, f"Function 'isMandatory' in feature_Feature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMandatory' in feature::Feature did not change state; check implementation")
+            warnings.warn(f"Operation 'isMandatory' in feature_Feature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMandatory' in feature::Feature is not implemented or raised an error")
+        warnings.warn(f"Operation 'isMandatory' in feature_Feature is not implemented or raised an error")
 
-@given(instance=feature::Constraint_strategy)
+@given(instance=feature_Constraint_strategy)
 @settings(max_examples=50)
-def test_feature::constraint_instantiation(instance):
-    assert isinstance(instance, feature::Constraint)
-
-@given(instance=feature::Constraint_strategy)
-def test_feature::constraint_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_feature_constraint_instantiation(instance):
+    assert isinstance(instance, feature_Constraint)
 
 
-@given(instance=feature::Constraint_strategy)
-def test_feature::constraint_language_setter(instance):
+
+@given(instance=feature_Constraint_strategy)
+def test_feature_constraint_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=feature::Constraint_strategy)
-def test_feature::constraint_expression_type(instance):
-    assert isinstance(instance.expression, str)
 
 
-@given(instance=feature::Constraint_strategy)
-def test_feature::constraint_expression_setter(instance):
+@given(instance=feature_Constraint_strategy)
+def test_feature_constraint_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original

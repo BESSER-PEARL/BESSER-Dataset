@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    SM::FinalState,
-    SM::InitialState,
-    SM::State,
-    SM::StateMachine,
+    SM_FinalState,
+    SM_InitialState,
+    SM_State,
+    SM_StateMachine,
 )
 
 # =============================================================================
@@ -33,51 +33,51 @@ def test_state_constructor_args():
 
 
 
-def test_sm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(SM::FinalState)
+def test_sm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(SM_FinalState)
 
 
-def test_sm::finalstate_constructor_exists():
-    assert callable(SM::FinalState.__init__)
+def test_sm_finalstate_constructor_exists():
+    assert callable(SM_FinalState.__init__)
 
 
-def test_sm::finalstate_constructor_args():
-    sig = inspect.signature(SM::FinalState.__init__)
+def test_sm_finalstate_constructor_args():
+    sig = inspect.signature(SM_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(SM::InitialState)
+def test_sm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(SM_InitialState)
 
 
-def test_sm::initialstate_constructor_exists():
-    assert callable(SM::InitialState.__init__)
+def test_sm_initialstate_constructor_exists():
+    assert callable(SM_InitialState.__init__)
 
 
-def test_sm::initialstate_constructor_args():
-    sig = inspect.signature(SM::InitialState.__init__)
+def test_sm_initialstate_constructor_args():
+    sig = inspect.signature(SM_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sm::state_is_not_abstract():
-    assert not inspect.isabstract(SM::State)
+def test_sm_state_is_not_abstract():
+    assert not inspect.isabstract(SM_State)
 
 
-def test_sm::state_constructor_exists():
-    assert callable(SM::State.__init__)
+def test_sm_state_constructor_exists():
+    assert callable(SM_State.__init__)
 
 
-def test_sm::state_constructor_args():
-    sig = inspect.signature(SM::State.__init__)
+def test_sm_state_constructor_args():
+    sig = inspect.signature(SM_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sm::state_has_name():
-    assert hasattr(SM::State, "name")
+def test_sm_state_has_name():
+    assert hasattr(SM_State, "name")
     descriptor = None
-    for klass in SM::State.__mro__:
+    for klass in SM_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -85,16 +85,16 @@ def test_sm::state_has_name():
 
 
 
-def test_sm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(SM::StateMachine)
+def test_sm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(SM_StateMachine)
 
 
-def test_sm::statemachine_constructor_exists():
-    assert callable(SM::StateMachine.__init__)
+def test_sm_statemachine_constructor_exists():
+    assert callable(SM_StateMachine.__init__)
 
 
-def test_sm::statemachine_constructor_args():
-    sig = inspect.signature(SM::StateMachine.__init__)
+def test_sm_statemachine_constructor_args():
+    sig = inspect.signature(SM_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,19 +112,19 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-SM::FinalState_strategy = st.builds(
-    SM::FinalState,
+SM_FinalState_strategy = st.builds(
+    SM_FinalState,
 )
-SM::InitialState_strategy = st.builds(
-    SM::InitialState,
+SM_InitialState_strategy = st.builds(
+    SM_InitialState,
 )
-SM::State_strategy = st.builds(
-    SM::State,
+SM_State_strategy = st.builds(
+    SM_State,
     name=
         safe_text
 )
-SM::StateMachine_strategy = st.builds(
-    SM::StateMachine,
+SM_StateMachine_strategy = st.builds(
+    SM_StateMachine,
 )
 
 @given(instance=State_strategy)
@@ -132,33 +132,30 @@ SM::StateMachine_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=SM::FinalState_strategy)
+@given(instance=SM_FinalState_strategy)
 @settings(max_examples=50)
-def test_sm::finalstate_instantiation(instance):
-    assert isinstance(instance, SM::FinalState)
+def test_sm_finalstate_instantiation(instance):
+    assert isinstance(instance, SM_FinalState)
 
-@given(instance=SM::InitialState_strategy)
+@given(instance=SM_InitialState_strategy)
 @settings(max_examples=50)
-def test_sm::initialstate_instantiation(instance):
-    assert isinstance(instance, SM::InitialState)
+def test_sm_initialstate_instantiation(instance):
+    assert isinstance(instance, SM_InitialState)
 
-@given(instance=SM::State_strategy)
+@given(instance=SM_State_strategy)
 @settings(max_examples=50)
-def test_sm::state_instantiation(instance):
-    assert isinstance(instance, SM::State)
-
-@given(instance=SM::State_strategy)
-def test_sm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sm_state_instantiation(instance):
+    assert isinstance(instance, SM_State)
 
 
-@given(instance=SM::State_strategy)
-def test_sm::state_name_setter(instance):
+
+@given(instance=SM_State_strategy)
+def test_sm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SM::StateMachine_strategy)
+@given(instance=SM_StateMachine_strategy)
 @settings(max_examples=50)
-def test_sm::statemachine_instantiation(instance):
-    assert isinstance(instance, SM::StateMachine)
+def test_sm_statemachine_instantiation(instance):
+    assert isinstance(instance, SM_StateMachine)

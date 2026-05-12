@@ -3,61 +3,61 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Label,
-    ptnet::Attribute,
+    ptnet_Attribute,
     TransitionNode,
-    ptnet::Transition,
-    ptnet::Capacity,
+    ptnet_Transition,
+    ptnet_Capacity,
     PlaceNode,
-    ptnet::RefTransition,
-    ptnet::RefPlace,
+    ptnet_RefTransition,
+    ptnet_RefPlace,
     Node,
-    ptnet::TransitionNode,
-    ptnet::PlaceNode,
-    ptnet::ArcNature,
-    ptnet::Annotation,
-    ptnet::Font,
+    ptnet_TransitionNode,
+    ptnet_PlaceNode,
+    ptnet_ArcNature,
+    ptnet_Annotation,
+    ptnet_Font,
     Graphics,
-    ptnet::AnnotationGraphics,
-    ptnet::ArcGraphics,
+    ptnet_AnnotationGraphics,
+    ptnet_ArcGraphics,
     Coordinate,
-    ptnet::Offset,
-    ptnet::Position,
-    ptnet::Dimension,
-    ptnet::Coordinate,
-    ptnet::Graphics,
-    ptnet::Line,
-    ptnet::Fill,
-    ptnet::AnyObject,
-    ptnet::Label,
-    ptnet::NodeGraphics,
-    ptnet::PnObject,
+    ptnet_Offset,
+    ptnet_Position,
+    ptnet_Dimension,
+    ptnet_Coordinate,
+    ptnet_Graphics,
+    ptnet_Line,
+    ptnet_Fill,
+    ptnet_AnyObject,
+    ptnet_Label,
+    ptnet_NodeGraphics,
+    ptnet_PnObject,
     PnObject,
-    ptnet::Page,
-    ptnet::Node,
-    ptnet::ToolInfo,
-    ptnet::PetriNet,
-    ptnet::PetriNetDoc,
-    ptnet::Arc,
-    ptnet::Place,
+    ptnet_Node,
+    ptnet_Page,
+    ptnet_ToolInfo,
+    ptnet_PetriNet,
+    ptnet_PetriNetDoc,
+    ptnet_Arc,
+    ptnet_Place,
     Annotation,
-    ptnet::PTArcAnnotation,
-    ptnet::Name,
-    ptnet::PTMarking,
-    LineShape,
-    CSS2FontFamily,
+    ptnet_PTArcAnnotation,
+    ptnet_PTMarking,
+    ptnet_Name,
+    FontDecoration,
     FontAlign,
-    PNType,
-    CSS2FontWeight,
+    LineShape,
     CSS2FontStyle,
     LineStyle,
-    FontDecoration,
+    PNType,
+    CSS2FontFamily,
     CSS2FontSize,
-    CSS2Color,
     Gradient,
+    CSS2FontWeight,
+    CSS2Color,
 )
 
 # =============================================================================
@@ -80,16 +80,16 @@ def test_label_constructor_args():
 
 
 
-def test_ptnet::attribute_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Attribute)
+def test_ptnet_attribute_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Attribute)
 
 
-def test_ptnet::attribute_constructor_exists():
-    assert callable(ptnet::Attribute.__init__)
+def test_ptnet_attribute_constructor_exists():
+    assert callable(ptnet_Attribute.__init__)
 
 
-def test_ptnet::attribute_constructor_args():
-    sig = inspect.signature(ptnet::Attribute.__init__)
+def test_ptnet_attribute_constructor_args():
+    sig = inspect.signature(ptnet_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,30 +108,30 @@ def test_transitionnode_constructor_args():
 
 
 
-def test_ptnet::transition_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Transition)
+def test_ptnet_transition_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Transition)
 
 
-def test_ptnet::transition_constructor_exists():
-    assert callable(ptnet::Transition.__init__)
+def test_ptnet_transition_constructor_exists():
+    assert callable(ptnet_Transition.__init__)
 
 
-def test_ptnet::transition_constructor_args():
-    sig = inspect.signature(ptnet::Transition.__init__)
+def test_ptnet_transition_constructor_args():
+    sig = inspect.signature(ptnet_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::capacity_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Capacity)
+def test_ptnet_capacity_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Capacity)
 
 
-def test_ptnet::capacity_constructor_exists():
-    assert callable(ptnet::Capacity.__init__)
+def test_ptnet_capacity_constructor_exists():
+    assert callable(ptnet_Capacity.__init__)
 
 
-def test_ptnet::capacity_constructor_args():
-    sig = inspect.signature(ptnet::Capacity.__init__)
+def test_ptnet_capacity_constructor_args():
+    sig = inspect.signature(ptnet_Capacity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -150,30 +150,30 @@ def test_placenode_constructor_args():
 
 
 
-def test_ptnet::reftransition_is_not_abstract():
-    assert not inspect.isabstract(ptnet::RefTransition)
+def test_ptnet_reftransition_is_not_abstract():
+    assert not inspect.isabstract(ptnet_RefTransition)
 
 
-def test_ptnet::reftransition_constructor_exists():
-    assert callable(ptnet::RefTransition.__init__)
+def test_ptnet_reftransition_constructor_exists():
+    assert callable(ptnet_RefTransition.__init__)
 
 
-def test_ptnet::reftransition_constructor_args():
-    sig = inspect.signature(ptnet::RefTransition.__init__)
+def test_ptnet_reftransition_constructor_args():
+    sig = inspect.signature(ptnet_RefTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::refplace_is_not_abstract():
-    assert not inspect.isabstract(ptnet::RefPlace)
+def test_ptnet_refplace_is_not_abstract():
+    assert not inspect.isabstract(ptnet_RefPlace)
 
 
-def test_ptnet::refplace_constructor_exists():
-    assert callable(ptnet::RefPlace.__init__)
+def test_ptnet_refplace_constructor_exists():
+    assert callable(ptnet_RefPlace.__init__)
 
 
-def test_ptnet::refplace_constructor_args():
-    sig = inspect.signature(ptnet::RefPlace.__init__)
+def test_ptnet_refplace_constructor_args():
+    sig = inspect.signature(ptnet_RefPlace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,141 +192,141 @@ def test_node_constructor_args():
 
 
 
-def test_ptnet::transitionnode_is_not_abstract():
-    assert not inspect.isabstract(ptnet::TransitionNode)
+def test_ptnet_transitionnode_is_not_abstract():
+    assert not inspect.isabstract(ptnet_TransitionNode)
 
 
-def test_ptnet::transitionnode_constructor_exists():
-    assert callable(ptnet::TransitionNode.__init__)
+def test_ptnet_transitionnode_constructor_exists():
+    assert callable(ptnet_TransitionNode.__init__)
 
 
-def test_ptnet::transitionnode_constructor_args():
-    sig = inspect.signature(ptnet::TransitionNode.__init__)
+def test_ptnet_transitionnode_constructor_args():
+    sig = inspect.signature(ptnet_TransitionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::placenode_is_not_abstract():
-    assert not inspect.isabstract(ptnet::PlaceNode)
+def test_ptnet_placenode_is_not_abstract():
+    assert not inspect.isabstract(ptnet_PlaceNode)
 
 
-def test_ptnet::placenode_constructor_exists():
-    assert callable(ptnet::PlaceNode.__init__)
+def test_ptnet_placenode_constructor_exists():
+    assert callable(ptnet_PlaceNode.__init__)
 
 
-def test_ptnet::placenode_constructor_args():
-    sig = inspect.signature(ptnet::PlaceNode.__init__)
+def test_ptnet_placenode_constructor_args():
+    sig = inspect.signature(ptnet_PlaceNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::arcnature_is_not_abstract():
-    assert not inspect.isabstract(ptnet::ArcNature)
+def test_ptnet_arcnature_is_not_abstract():
+    assert not inspect.isabstract(ptnet_ArcNature)
 
 
-def test_ptnet::arcnature_constructor_exists():
-    assert callable(ptnet::ArcNature.__init__)
+def test_ptnet_arcnature_constructor_exists():
+    assert callable(ptnet_ArcNature.__init__)
 
 
-def test_ptnet::arcnature_constructor_args():
-    sig = inspect.signature(ptnet::ArcNature.__init__)
+def test_ptnet_arcnature_constructor_args():
+    sig = inspect.signature(ptnet_ArcNature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::annotation_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Annotation)
+def test_ptnet_annotation_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Annotation)
 
 
-def test_ptnet::annotation_constructor_exists():
-    assert callable(ptnet::Annotation.__init__)
+def test_ptnet_annotation_constructor_exists():
+    assert callable(ptnet_Annotation.__init__)
 
 
-def test_ptnet::annotation_constructor_args():
-    sig = inspect.signature(ptnet::Annotation.__init__)
+def test_ptnet_annotation_constructor_args():
+    sig = inspect.signature(ptnet_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::font_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Font)
+def test_ptnet_font_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Font)
 
 
-def test_ptnet::font_constructor_exists():
-    assert callable(ptnet::Font.__init__)
+def test_ptnet_font_constructor_exists():
+    assert callable(ptnet_Font.__init__)
 
 
-def test_ptnet::font_constructor_args():
-    sig = inspect.signature(ptnet::Font.__init__)
+def test_ptnet_font_constructor_args():
+    sig = inspect.signature(ptnet_Font.__init__)
     params = list(sig.parameters.keys())
-    assert "rotation" in params, "Missing parameter 'rotation'"
-    assert "decoration" in params, "Missing parameter 'decoration'"
-    assert "weight" in params, "Missing parameter 'weight'"
     assert "family" in params, "Missing parameter 'family'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "size" in params, "Missing parameter 'size'"
+    assert "weight" in params, "Missing parameter 'weight'"
+    assert "rotation" in params, "Missing parameter 'rotation'"
     assert "align" in params, "Missing parameter 'align'"
+    assert "size" in params, "Missing parameter 'size'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "decoration" in params, "Missing parameter 'decoration'"
 
-def test_ptnet::font_has_rotation():
-    assert hasattr(ptnet::Font, "rotation")
+def test_ptnet_font_has_family():
+    assert hasattr(ptnet_Font, "family")
     descriptor = None
-    for klass in ptnet::Font.__mro__:
-        if "rotation" in klass.__dict__:
-            descriptor = klass.__dict__["rotation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::font_has_decoration():
-    assert hasattr(ptnet::Font, "decoration")
-    descriptor = None
-    for klass in ptnet::Font.__mro__:
-        if "decoration" in klass.__dict__:
-            descriptor = klass.__dict__["decoration"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::font_has_weight():
-    assert hasattr(ptnet::Font, "weight")
-    descriptor = None
-    for klass in ptnet::Font.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::font_has_family():
-    assert hasattr(ptnet::Font, "family")
-    descriptor = None
-    for klass in ptnet::Font.__mro__:
+    for klass in ptnet_Font.__mro__:
         if "family" in klass.__dict__:
             descriptor = klass.__dict__["family"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::font_has_style():
-    assert hasattr(ptnet::Font, "style")
+def test_ptnet_font_has_weight():
+    assert hasattr(ptnet_Font, "weight")
     descriptor = None
-    for klass in ptnet::Font.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
+    for klass in ptnet_Font.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::font_has_size():
-    assert hasattr(ptnet::Font, "size")
+def test_ptnet_font_has_rotation():
+    assert hasattr(ptnet_Font, "rotation")
     descriptor = None
-    for klass in ptnet::Font.__mro__:
+    for klass in ptnet_Font.__mro__:
+        if "rotation" in klass.__dict__:
+            descriptor = klass.__dict__["rotation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_font_has_align():
+    assert hasattr(ptnet_Font, "align")
+    descriptor = None
+    for klass in ptnet_Font.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_font_has_size():
+    assert hasattr(ptnet_Font, "size")
+    descriptor = None
+    for klass in ptnet_Font.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::font_has_align():
-    assert hasattr(ptnet::Font, "align")
+def test_ptnet_font_has_style():
+    assert hasattr(ptnet_Font, "style")
     descriptor = None
-    for klass in ptnet::Font.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
+    for klass in ptnet_Font.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_font_has_decoration():
+    assert hasattr(ptnet_Font, "decoration")
+    descriptor = None
+    for klass in ptnet_Font.__mro__:
+        if "decoration" in klass.__dict__:
+            descriptor = klass.__dict__["decoration"]
             break
     assert isinstance(descriptor, property)
 
@@ -346,30 +346,30 @@ def test_graphics_constructor_args():
 
 
 
-def test_ptnet::annotationgraphics_is_not_abstract():
-    assert not inspect.isabstract(ptnet::AnnotationGraphics)
+def test_ptnet_annotationgraphics_is_not_abstract():
+    assert not inspect.isabstract(ptnet_AnnotationGraphics)
 
 
-def test_ptnet::annotationgraphics_constructor_exists():
-    assert callable(ptnet::AnnotationGraphics.__init__)
+def test_ptnet_annotationgraphics_constructor_exists():
+    assert callable(ptnet_AnnotationGraphics.__init__)
 
 
-def test_ptnet::annotationgraphics_constructor_args():
-    sig = inspect.signature(ptnet::AnnotationGraphics.__init__)
+def test_ptnet_annotationgraphics_constructor_args():
+    sig = inspect.signature(ptnet_AnnotationGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::arcgraphics_is_not_abstract():
-    assert not inspect.isabstract(ptnet::ArcGraphics)
+def test_ptnet_arcgraphics_is_not_abstract():
+    assert not inspect.isabstract(ptnet_ArcGraphics)
 
 
-def test_ptnet::arcgraphics_constructor_exists():
-    assert callable(ptnet::ArcGraphics.__init__)
+def test_ptnet_arcgraphics_constructor_exists():
+    assert callable(ptnet_ArcGraphics.__init__)
 
 
-def test_ptnet::arcgraphics_constructor_args():
-    sig = inspect.signature(ptnet::ArcGraphics.__init__)
+def test_ptnet_arcgraphics_constructor_args():
+    sig = inspect.signature(ptnet_ArcGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -388,75 +388,75 @@ def test_coordinate_constructor_args():
 
 
 
-def test_ptnet::offset_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Offset)
+def test_ptnet_offset_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Offset)
 
 
-def test_ptnet::offset_constructor_exists():
-    assert callable(ptnet::Offset.__init__)
+def test_ptnet_offset_constructor_exists():
+    assert callable(ptnet_Offset.__init__)
 
 
-def test_ptnet::offset_constructor_args():
-    sig = inspect.signature(ptnet::Offset.__init__)
+def test_ptnet_offset_constructor_args():
+    sig = inspect.signature(ptnet_Offset.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::position_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Position)
+def test_ptnet_position_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Position)
 
 
-def test_ptnet::position_constructor_exists():
-    assert callable(ptnet::Position.__init__)
+def test_ptnet_position_constructor_exists():
+    assert callable(ptnet_Position.__init__)
 
 
-def test_ptnet::position_constructor_args():
-    sig = inspect.signature(ptnet::Position.__init__)
+def test_ptnet_position_constructor_args():
+    sig = inspect.signature(ptnet_Position.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::dimension_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Dimension)
+def test_ptnet_dimension_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Dimension)
 
 
-def test_ptnet::dimension_constructor_exists():
-    assert callable(ptnet::Dimension.__init__)
+def test_ptnet_dimension_constructor_exists():
+    assert callable(ptnet_Dimension.__init__)
 
 
-def test_ptnet::dimension_constructor_args():
-    sig = inspect.signature(ptnet::Dimension.__init__)
+def test_ptnet_dimension_constructor_args():
+    sig = inspect.signature(ptnet_Dimension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::coordinate_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Coordinate)
+def test_ptnet_coordinate_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Coordinate)
 
 
-def test_ptnet::coordinate_constructor_exists():
-    assert callable(ptnet::Coordinate.__init__)
+def test_ptnet_coordinate_constructor_exists():
+    assert callable(ptnet_Coordinate.__init__)
 
 
-def test_ptnet::coordinate_constructor_args():
-    sig = inspect.signature(ptnet::Coordinate.__init__)
+def test_ptnet_coordinate_constructor_args():
+    sig = inspect.signature(ptnet_Coordinate.__init__)
     params = list(sig.parameters.keys())
     assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
 
-def test_ptnet::coordinate_has_x():
-    assert hasattr(ptnet::Coordinate, "x")
+def test_ptnet_coordinate_has_x():
+    assert hasattr(ptnet_Coordinate, "x")
     descriptor = None
-    for klass in ptnet::Coordinate.__mro__:
+    for klass in ptnet_Coordinate.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::coordinate_has_y():
-    assert hasattr(ptnet::Coordinate, "y")
+def test_ptnet_coordinate_has_y():
+    assert hasattr(ptnet_Coordinate, "y")
     descriptor = None
-    for klass in ptnet::Coordinate.__mro__:
+    for klass in ptnet_Coordinate.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
@@ -464,187 +464,187 @@ def test_ptnet::coordinate_has_y():
 
 
 
-def test_ptnet::graphics_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Graphics)
+def test_ptnet_graphics_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Graphics)
 
 
-def test_ptnet::graphics_constructor_exists():
-    assert callable(ptnet::Graphics.__init__)
+def test_ptnet_graphics_constructor_exists():
+    assert callable(ptnet_Graphics.__init__)
 
 
-def test_ptnet::graphics_constructor_args():
-    sig = inspect.signature(ptnet::Graphics.__init__)
+def test_ptnet_graphics_constructor_args():
+    sig = inspect.signature(ptnet_Graphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::line_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Line)
+def test_ptnet_line_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Line)
 
 
-def test_ptnet::line_constructor_exists():
-    assert callable(ptnet::Line.__init__)
+def test_ptnet_line_constructor_exists():
+    assert callable(ptnet_Line.__init__)
 
 
-def test_ptnet::line_constructor_args():
-    sig = inspect.signature(ptnet::Line.__init__)
+def test_ptnet_line_constructor_args():
+    sig = inspect.signature(ptnet_Line.__init__)
     params = list(sig.parameters.keys())
-    assert "shape" in params, "Missing parameter 'shape'"
+    assert "style" in params, "Missing parameter 'style'"
     assert "color" in params, "Missing parameter 'color'"
     assert "width" in params, "Missing parameter 'width'"
-    assert "style" in params, "Missing parameter 'style'"
+    assert "shape" in params, "Missing parameter 'shape'"
 
-def test_ptnet::line_has_shape():
-    assert hasattr(ptnet::Line, "shape")
+def test_ptnet_line_has_style():
+    assert hasattr(ptnet_Line, "style")
     descriptor = None
-    for klass in ptnet::Line.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::line_has_color():
-    assert hasattr(ptnet::Line, "color")
-    descriptor = None
-    for klass in ptnet::Line.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::line_has_width():
-    assert hasattr(ptnet::Line, "width")
-    descriptor = None
-    for klass in ptnet::Line.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::line_has_style():
-    assert hasattr(ptnet::Line, "style")
-    descriptor = None
-    for klass in ptnet::Line.__mro__:
+    for klass in ptnet_Line.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ptnet::fill_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Fill)
-
-
-def test_ptnet::fill_constructor_exists():
-    assert callable(ptnet::Fill.__init__)
-
-
-def test_ptnet::fill_constructor_args():
-    sig = inspect.signature(ptnet::Fill.__init__)
-    params = list(sig.parameters.keys())
-    assert "gradientcolor" in params, "Missing parameter 'gradientcolor'"
-    assert "color" in params, "Missing parameter 'color'"
-    assert "image" in params, "Missing parameter 'image'"
-    assert "gradientrotation" in params, "Missing parameter 'gradientrotation'"
-
-def test_ptnet::fill_has_gradientcolor():
-    assert hasattr(ptnet::Fill, "gradientcolor")
+def test_ptnet_line_has_color():
+    assert hasattr(ptnet_Line, "color")
     descriptor = None
-    for klass in ptnet::Fill.__mro__:
-        if "gradientcolor" in klass.__dict__:
-            descriptor = klass.__dict__["gradientcolor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::fill_has_color():
-    assert hasattr(ptnet::Fill, "color")
-    descriptor = None
-    for klass in ptnet::Fill.__mro__:
+    for klass in ptnet_Line.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::fill_has_image():
-    assert hasattr(ptnet::Fill, "image")
+def test_ptnet_line_has_width():
+    assert hasattr(ptnet_Line, "width")
     descriptor = None
-    for klass in ptnet::Fill.__mro__:
-        if "image" in klass.__dict__:
-            descriptor = klass.__dict__["image"]
+    for klass in ptnet_Line.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::fill_has_gradientrotation():
-    assert hasattr(ptnet::Fill, "gradientrotation")
+def test_ptnet_line_has_shape():
+    assert hasattr(ptnet_Line, "shape")
     descriptor = None
-    for klass in ptnet::Fill.__mro__:
+    for klass in ptnet_Line.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ptnet_fill_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Fill)
+
+
+def test_ptnet_fill_constructor_exists():
+    assert callable(ptnet_Fill.__init__)
+
+
+def test_ptnet_fill_constructor_args():
+    sig = inspect.signature(ptnet_Fill.__init__)
+    params = list(sig.parameters.keys())
+    assert "gradientrotation" in params, "Missing parameter 'gradientrotation'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "image" in params, "Missing parameter 'image'"
+    assert "gradientcolor" in params, "Missing parameter 'gradientcolor'"
+
+def test_ptnet_fill_has_gradientrotation():
+    assert hasattr(ptnet_Fill, "gradientrotation")
+    descriptor = None
+    for klass in ptnet_Fill.__mro__:
         if "gradientrotation" in klass.__dict__:
             descriptor = klass.__dict__["gradientrotation"]
             break
     assert isinstance(descriptor, property)
 
+def test_ptnet_fill_has_color():
+    assert hasattr(ptnet_Fill, "color")
+    descriptor = None
+    for klass in ptnet_Fill.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_fill_has_image():
+    assert hasattr(ptnet_Fill, "image")
+    descriptor = None
+    for klass in ptnet_Fill.__mro__:
+        if "image" in klass.__dict__:
+            descriptor = klass.__dict__["image"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_fill_has_gradientcolor():
+    assert hasattr(ptnet_Fill, "gradientcolor")
+    descriptor = None
+    for klass in ptnet_Fill.__mro__:
+        if "gradientcolor" in klass.__dict__:
+            descriptor = klass.__dict__["gradientcolor"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ptnet::anyobject_is_not_abstract():
-    assert not inspect.isabstract(ptnet::AnyObject)
+
+def test_ptnet_anyobject_is_not_abstract():
+    assert not inspect.isabstract(ptnet_AnyObject)
 
 
-def test_ptnet::anyobject_constructor_exists():
-    assert callable(ptnet::AnyObject.__init__)
+def test_ptnet_anyobject_constructor_exists():
+    assert callable(ptnet_AnyObject.__init__)
 
 
-def test_ptnet::anyobject_constructor_args():
-    sig = inspect.signature(ptnet::AnyObject.__init__)
+def test_ptnet_anyobject_constructor_args():
+    sig = inspect.signature(ptnet_AnyObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::label_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Label)
+def test_ptnet_label_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Label)
 
 
-def test_ptnet::label_constructor_exists():
-    assert callable(ptnet::Label.__init__)
+def test_ptnet_label_constructor_exists():
+    assert callable(ptnet_Label.__init__)
 
 
-def test_ptnet::label_constructor_args():
-    sig = inspect.signature(ptnet::Label.__init__)
+def test_ptnet_label_constructor_args():
+    sig = inspect.signature(ptnet_Label.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::nodegraphics_is_not_abstract():
-    assert not inspect.isabstract(ptnet::NodeGraphics)
+def test_ptnet_nodegraphics_is_not_abstract():
+    assert not inspect.isabstract(ptnet_NodeGraphics)
 
 
-def test_ptnet::nodegraphics_constructor_exists():
-    assert callable(ptnet::NodeGraphics.__init__)
+def test_ptnet_nodegraphics_constructor_exists():
+    assert callable(ptnet_NodeGraphics.__init__)
 
 
-def test_ptnet::nodegraphics_constructor_args():
-    sig = inspect.signature(ptnet::NodeGraphics.__init__)
+def test_ptnet_nodegraphics_constructor_args():
+    sig = inspect.signature(ptnet_NodeGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::pnobject_is_not_abstract():
-    assert not inspect.isabstract(ptnet::PnObject)
+def test_ptnet_pnobject_is_not_abstract():
+    assert not inspect.isabstract(ptnet_PnObject)
 
 
-def test_ptnet::pnobject_constructor_exists():
-    assert callable(ptnet::PnObject.__init__)
+def test_ptnet_pnobject_constructor_exists():
+    assert callable(ptnet_PnObject.__init__)
 
 
-def test_ptnet::pnobject_constructor_args():
-    sig = inspect.signature(ptnet::PnObject.__init__)
+def test_ptnet_pnobject_constructor_args():
+    sig = inspect.signature(ptnet_PnObject.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ptnet::pnobject_has_id():
-    assert hasattr(ptnet::PnObject, "id")
+def test_ptnet_pnobject_has_id():
+    assert hasattr(ptnet_PnObject, "id")
     descriptor = None
-    for klass in ptnet::PnObject.__mro__:
+    for klass in ptnet_PnObject.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -666,115 +666,115 @@ def test_pnobject_constructor_args():
 
 
 
-def test_ptnet::page_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Page)
+def test_ptnet_node_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Node)
 
 
-def test_ptnet::page_constructor_exists():
-    assert callable(ptnet::Page.__init__)
+def test_ptnet_node_constructor_exists():
+    assert callable(ptnet_Node.__init__)
 
 
-def test_ptnet::page_constructor_args():
-    sig = inspect.signature(ptnet::Page.__init__)
+def test_ptnet_node_constructor_args():
+    sig = inspect.signature(ptnet_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::node_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Node)
+def test_ptnet_page_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Page)
 
 
-def test_ptnet::node_constructor_exists():
-    assert callable(ptnet::Node.__init__)
+def test_ptnet_page_constructor_exists():
+    assert callable(ptnet_Page.__init__)
 
 
-def test_ptnet::node_constructor_args():
-    sig = inspect.signature(ptnet::Node.__init__)
+def test_ptnet_page_constructor_args():
+    sig = inspect.signature(ptnet_Page.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::toolinfo_is_not_abstract():
-    assert not inspect.isabstract(ptnet::ToolInfo)
+def test_ptnet_toolinfo_is_not_abstract():
+    assert not inspect.isabstract(ptnet_ToolInfo)
 
 
-def test_ptnet::toolinfo_constructor_exists():
-    assert callable(ptnet::ToolInfo.__init__)
+def test_ptnet_toolinfo_constructor_exists():
+    assert callable(ptnet_ToolInfo.__init__)
 
 
-def test_ptnet::toolinfo_constructor_args():
-    sig = inspect.signature(ptnet::ToolInfo.__init__)
+def test_ptnet_toolinfo_constructor_args():
+    sig = inspect.signature(ptnet_ToolInfo.__init__)
     params = list(sig.parameters.keys())
-    assert "formattedXMLBuffer" in params, "Missing parameter 'formattedXMLBuffer'"
-    assert "version" in params, "Missing parameter 'version'"
-    assert "toolInfoGrammarURI" in params, "Missing parameter 'toolInfoGrammarURI'"
     assert "tool" in params, "Missing parameter 'tool'"
+    assert "formattedXMLBuffer" in params, "Missing parameter 'formattedXMLBuffer'"
+    assert "toolInfoGrammarURI" in params, "Missing parameter 'toolInfoGrammarURI'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_ptnet::toolinfo_has_formattedXMLBuffer():
-    assert hasattr(ptnet::ToolInfo, "formattedXMLBuffer")
+def test_ptnet_toolinfo_has_tool():
+    assert hasattr(ptnet_ToolInfo, "tool")
     descriptor = None
-    for klass in ptnet::ToolInfo.__mro__:
-        if "formattedXMLBuffer" in klass.__dict__:
-            descriptor = klass.__dict__["formattedXMLBuffer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::toolinfo_has_version():
-    assert hasattr(ptnet::ToolInfo, "version")
-    descriptor = None
-    for klass in ptnet::ToolInfo.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::toolinfo_has_toolInfoGrammarURI():
-    assert hasattr(ptnet::ToolInfo, "toolInfoGrammarURI")
-    descriptor = None
-    for klass in ptnet::ToolInfo.__mro__:
-        if "toolInfoGrammarURI" in klass.__dict__:
-            descriptor = klass.__dict__["toolInfoGrammarURI"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ptnet::toolinfo_has_tool():
-    assert hasattr(ptnet::ToolInfo, "tool")
-    descriptor = None
-    for klass in ptnet::ToolInfo.__mro__:
+    for klass in ptnet_ToolInfo.__mro__:
         if "tool" in klass.__dict__:
             descriptor = klass.__dict__["tool"]
             break
     assert isinstance(descriptor, property)
 
+def test_ptnet_toolinfo_has_formattedXMLBuffer():
+    assert hasattr(ptnet_ToolInfo, "formattedXMLBuffer")
+    descriptor = None
+    for klass in ptnet_ToolInfo.__mro__:
+        if "formattedXMLBuffer" in klass.__dict__:
+            descriptor = klass.__dict__["formattedXMLBuffer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_toolinfo_has_toolInfoGrammarURI():
+    assert hasattr(ptnet_ToolInfo, "toolInfoGrammarURI")
+    descriptor = None
+    for klass in ptnet_ToolInfo.__mro__:
+        if "toolInfoGrammarURI" in klass.__dict__:
+            descriptor = klass.__dict__["toolInfoGrammarURI"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ptnet_toolinfo_has_version():
+    assert hasattr(ptnet_ToolInfo, "version")
+    descriptor = None
+    for klass in ptnet_ToolInfo.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ptnet::petrinet_is_not_abstract():
-    assert not inspect.isabstract(ptnet::PetriNet)
+
+def test_ptnet_petrinet_is_not_abstract():
+    assert not inspect.isabstract(ptnet_PetriNet)
 
 
-def test_ptnet::petrinet_constructor_exists():
-    assert callable(ptnet::PetriNet.__init__)
+def test_ptnet_petrinet_constructor_exists():
+    assert callable(ptnet_PetriNet.__init__)
 
 
-def test_ptnet::petrinet_constructor_args():
-    sig = inspect.signature(ptnet::PetriNet.__init__)
+def test_ptnet_petrinet_constructor_args():
+    sig = inspect.signature(ptnet_PetriNet.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ptnet::petrinet_has_type():
-    assert hasattr(ptnet::PetriNet, "type")
+def test_ptnet_petrinet_has_type():
+    assert hasattr(ptnet_PetriNet, "type")
     descriptor = None
-    for klass in ptnet::PetriNet.__mro__:
+    for klass in ptnet_PetriNet.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ptnet::petrinet_has_id():
-    assert hasattr(ptnet::PetriNet, "id")
+def test_ptnet_petrinet_has_id():
+    assert hasattr(ptnet_PetriNet, "id")
     descriptor = None
-    for klass in ptnet::PetriNet.__mro__:
+    for klass in ptnet_PetriNet.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -782,23 +782,23 @@ def test_ptnet::petrinet_has_id():
 
 
 
-def test_ptnet::petrinetdoc_is_not_abstract():
-    assert not inspect.isabstract(ptnet::PetriNetDoc)
+def test_ptnet_petrinetdoc_is_not_abstract():
+    assert not inspect.isabstract(ptnet_PetriNetDoc)
 
 
-def test_ptnet::petrinetdoc_constructor_exists():
-    assert callable(ptnet::PetriNetDoc.__init__)
+def test_ptnet_petrinetdoc_constructor_exists():
+    assert callable(ptnet_PetriNetDoc.__init__)
 
 
-def test_ptnet::petrinetdoc_constructor_args():
-    sig = inspect.signature(ptnet::PetriNetDoc.__init__)
+def test_ptnet_petrinetdoc_constructor_args():
+    sig = inspect.signature(ptnet_PetriNetDoc.__init__)
     params = list(sig.parameters.keys())
     assert "xmlns" in params, "Missing parameter 'xmlns'"
 
-def test_ptnet::petrinetdoc_has_xmlns():
-    assert hasattr(ptnet::PetriNetDoc, "xmlns")
+def test_ptnet_petrinetdoc_has_xmlns():
+    assert hasattr(ptnet_PetriNetDoc, "xmlns")
     descriptor = None
-    for klass in ptnet::PetriNetDoc.__mro__:
+    for klass in ptnet_PetriNetDoc.__mro__:
         if "xmlns" in klass.__dict__:
             descriptor = klass.__dict__["xmlns"]
             break
@@ -806,30 +806,30 @@ def test_ptnet::petrinetdoc_has_xmlns():
 
 
 
-def test_ptnet::arc_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Arc)
+def test_ptnet_arc_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Arc)
 
 
-def test_ptnet::arc_constructor_exists():
-    assert callable(ptnet::Arc.__init__)
+def test_ptnet_arc_constructor_exists():
+    assert callable(ptnet_Arc.__init__)
 
 
-def test_ptnet::arc_constructor_args():
-    sig = inspect.signature(ptnet::Arc.__init__)
+def test_ptnet_arc_constructor_args():
+    sig = inspect.signature(ptnet_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptnet::place_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Place)
+def test_ptnet_place_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Place)
 
 
-def test_ptnet::place_constructor_exists():
-    assert callable(ptnet::Place.__init__)
+def test_ptnet_place_constructor_exists():
+    assert callable(ptnet_Place.__init__)
 
 
-def test_ptnet::place_constructor_args():
-    sig = inspect.signature(ptnet::Place.__init__)
+def test_ptnet_place_constructor_args():
+    sig = inspect.signature(ptnet_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -848,23 +848,23 @@ def test_annotation_constructor_args():
 
 
 
-def test_ptnet::ptarcannotation_is_not_abstract():
-    assert not inspect.isabstract(ptnet::PTArcAnnotation)
+def test_ptnet_ptarcannotation_is_not_abstract():
+    assert not inspect.isabstract(ptnet_PTArcAnnotation)
 
 
-def test_ptnet::ptarcannotation_constructor_exists():
-    assert callable(ptnet::PTArcAnnotation.__init__)
+def test_ptnet_ptarcannotation_constructor_exists():
+    assert callable(ptnet_PTArcAnnotation.__init__)
 
 
-def test_ptnet::ptarcannotation_constructor_args():
-    sig = inspect.signature(ptnet::PTArcAnnotation.__init__)
+def test_ptnet_ptarcannotation_constructor_args():
+    sig = inspect.signature(ptnet_PTArcAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ptnet::ptarcannotation_has_text():
-    assert hasattr(ptnet::PTArcAnnotation, "text")
+def test_ptnet_ptarcannotation_has_text():
+    assert hasattr(ptnet_PTArcAnnotation, "text")
     descriptor = None
-    for klass in ptnet::PTArcAnnotation.__mro__:
+    for klass in ptnet_PTArcAnnotation.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -872,23 +872,23 @@ def test_ptnet::ptarcannotation_has_text():
 
 
 
-def test_ptnet::name_is_not_abstract():
-    assert not inspect.isabstract(ptnet::Name)
+def test_ptnet_ptmarking_is_not_abstract():
+    assert not inspect.isabstract(ptnet_PTMarking)
 
 
-def test_ptnet::name_constructor_exists():
-    assert callable(ptnet::Name.__init__)
+def test_ptnet_ptmarking_constructor_exists():
+    assert callable(ptnet_PTMarking.__init__)
 
 
-def test_ptnet::name_constructor_args():
-    sig = inspect.signature(ptnet::Name.__init__)
+def test_ptnet_ptmarking_constructor_args():
+    sig = inspect.signature(ptnet_PTMarking.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ptnet::name_has_text():
-    assert hasattr(ptnet::Name, "text")
+def test_ptnet_ptmarking_has_text():
+    assert hasattr(ptnet_PTMarking, "text")
     descriptor = None
-    for klass in ptnet::Name.__mro__:
+    for klass in ptnet_PTMarking.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -896,142 +896,27 @@ def test_ptnet::name_has_text():
 
 
 
-def test_ptnet::ptmarking_is_not_abstract():
-    assert not inspect.isabstract(ptnet::PTMarking)
+def test_ptnet_name_is_not_abstract():
+    assert not inspect.isabstract(ptnet_Name)
 
 
-def test_ptnet::ptmarking_constructor_exists():
-    assert callable(ptnet::PTMarking.__init__)
+def test_ptnet_name_constructor_exists():
+    assert callable(ptnet_Name.__init__)
 
 
-def test_ptnet::ptmarking_constructor_args():
-    sig = inspect.signature(ptnet::PTMarking.__init__)
+def test_ptnet_name_constructor_args():
+    sig = inspect.signature(ptnet_Name.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ptnet::ptmarking_has_text():
-    assert hasattr(ptnet::PTMarking, "text")
+def test_ptnet_name_has_text():
+    assert hasattr(ptnet_Name, "text")
     descriptor = None
-    for klass in ptnet::PTMarking.__mro__:
+    for klass in ptnet_Name.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
-
-def test_lineshape_exists():
-    # Check that the Enumeration exists
-    assert LineShape is not None
-
-def test_lineshape_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LineShape]
-    expected_literals = [
-        "CURVE",
-        "LINE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LineShape"
-
-def test_css2fontfamily_exists():
-    # Check that the Enumeration exists
-    assert CSS2FontFamily is not None
-
-def test_css2fontfamily_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CSS2FontFamily]
-    expected_literals = [
-        "TREBUCHET",
-        "TIMES",
-        "VERDANA",
-        "GEORGIA",
-        "ARIAL",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CSS2FontFamily"
-
-def test_fontalign_exists():
-    # Check that the Enumeration exists
-    assert FontAlign is not None
-
-def test_fontalign_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FontAlign]
-    expected_literals = [
-        "LEFT",
-        "CENTER",
-        "RIGHT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FontAlign"
-
-def test_pntype_exists():
-    # Check that the Enumeration exists
-    assert PNType is not None
-
-def test_pntype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PNType]
-    expected_literals = [
-        "PTNET",
-        "HLPN",
-        "COREMODEL",
-        "SYMNET",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PNType"
-
-def test_css2fontweight_exists():
-    # Check that the Enumeration exists
-    assert CSS2FontWeight is not None
-
-def test_css2fontweight_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CSS2FontWeight]
-    expected_literals = [
-        "BOLD",
-        "NORMAL",
-        "LIGHTER",
-        "BOLDER",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CSS2FontWeight"
-
-def test_css2fontstyle_exists():
-    # Check that the Enumeration exists
-    assert CSS2FontStyle is not None
-
-def test_css2fontstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CSS2FontStyle]
-    expected_literals = [
-        "OBLIQUE",
-        "NORMAL",
-        "ITALIC",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CSS2FontStyle"
-
-def test_linestyle_exists():
-    # Check that the Enumeration exists
-    assert LineStyle is not None
-
-def test_linestyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LineStyle]
-    expected_literals = [
-        "SOLID",
-        "DASH",
-        "DOT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
 
 def test_fontdecoration_exists():
     # Check that the Enumeration exists
@@ -1049,6 +934,104 @@ def test_fontdecoration_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FontDecoration"
 
+def test_fontalign_exists():
+    # Check that the Enumeration exists
+    assert FontAlign is not None
+
+def test_fontalign_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FontAlign]
+    expected_literals = [
+        "LEFT",
+        "RIGHT",
+        "CENTER",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FontAlign"
+
+def test_lineshape_exists():
+    # Check that the Enumeration exists
+    assert LineShape is not None
+
+def test_lineshape_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LineShape]
+    expected_literals = [
+        "LINE",
+        "CURVE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LineShape"
+
+def test_css2fontstyle_exists():
+    # Check that the Enumeration exists
+    assert CSS2FontStyle is not None
+
+def test_css2fontstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CSS2FontStyle]
+    expected_literals = [
+        "NORMAL",
+        "OBLIQUE",
+        "ITALIC",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CSS2FontStyle"
+
+def test_linestyle_exists():
+    # Check that the Enumeration exists
+    assert LineStyle is not None
+
+def test_linestyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LineStyle]
+    expected_literals = [
+        "DASH",
+        "DOT",
+        "SOLID",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
+
+def test_pntype_exists():
+    # Check that the Enumeration exists
+    assert PNType is not None
+
+def test_pntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PNType]
+    expected_literals = [
+        "SYMNET",
+        "COREMODEL",
+        "PTNET",
+        "HLPN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PNType"
+
+def test_css2fontfamily_exists():
+    # Check that the Enumeration exists
+    assert CSS2FontFamily is not None
+
+def test_css2fontfamily_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CSS2FontFamily]
+    expected_literals = [
+        "TREBUCHET",
+        "ARIAL",
+        "TIMES",
+        "GEORGIA",
+        "VERDANA",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CSS2FontFamily"
+
 def test_css2fontsize_exists():
     # Check that the Enumeration exists
     assert CSS2FontSize is not None
@@ -1057,47 +1040,17 @@ def test_css2fontsize_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CSS2FontSize]
     expected_literals = [
-        "LARGE",
-        "MEDIUM",
         "XXLARGE",
-        "XXSMALL",
         "SMALL",
-        "XLARGE",
+        "XXSMALL",
+        "LARGE",
         "XSMALL",
+        "XLARGE",
+        "MEDIUM",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CSS2FontSize"
-
-def test_css2color_exists():
-    # Check that the Enumeration exists
-    assert CSS2Color is not None
-
-def test_css2color_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CSS2Color]
-    expected_literals = [
-        "PURPLE",
-        "ORANGE",
-        "WHITE",
-        "YELLOW",
-        "BLUE",
-        "GREEN",
-        "NAVY",
-        "OLIVE",
-        "GRAY",
-        "SILVER",
-        "AQUA",
-        "TEAL",
-        "MAROON",
-        "FUCHSIA",
-        "LIME",
-        "BLACK",
-        "RED",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CSS2Color"
 
 def test_gradient_exists():
     # Check that the Enumeration exists
@@ -1115,6 +1068,53 @@ def test_gradient_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Gradient"
 
+def test_css2fontweight_exists():
+    # Check that the Enumeration exists
+    assert CSS2FontWeight is not None
+
+def test_css2fontweight_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CSS2FontWeight]
+    expected_literals = [
+        "LIGHTER",
+        "BOLDER",
+        "BOLD",
+        "NORMAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CSS2FontWeight"
+
+def test_css2color_exists():
+    # Check that the Enumeration exists
+    assert CSS2Color is not None
+
+def test_css2color_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CSS2Color]
+    expected_literals = [
+        "RED",
+        "GRAY",
+        "OLIVE",
+        "WHITE",
+        "GREEN",
+        "YELLOW",
+        "FUCHSIA",
+        "LIME",
+        "AQUA",
+        "NAVY",
+        "PURPLE",
+        "SILVER",
+        "TEAL",
+        "BLACK",
+        "ORANGE",
+        "MAROON",
+        "BLUE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CSS2Color"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1130,179 +1130,179 @@ safe_text = st.text(
 Label_strategy = st.builds(
     Label,
 )
-ptnet::Attribute_strategy = st.builds(
-    ptnet::Attribute,
+ptnet_Attribute_strategy = st.builds(
+    ptnet_Attribute,
 )
 TransitionNode_strategy = st.builds(
     TransitionNode,
 )
-ptnet::Transition_strategy = st.builds(
-    ptnet::Transition,
+ptnet_Transition_strategy = st.builds(
+    ptnet_Transition,
 )
-ptnet::Capacity_strategy = st.builds(
-    ptnet::Capacity,
+ptnet_Capacity_strategy = st.builds(
+    ptnet_Capacity,
 )
 PlaceNode_strategy = st.builds(
     PlaceNode,
 )
-ptnet::RefTransition_strategy = st.builds(
-    ptnet::RefTransition,
+ptnet_RefTransition_strategy = st.builds(
+    ptnet_RefTransition,
 )
-ptnet::RefPlace_strategy = st.builds(
-    ptnet::RefPlace,
+ptnet_RefPlace_strategy = st.builds(
+    ptnet_RefPlace,
 )
 Node_strategy = st.builds(
     Node,
 )
-ptnet::TransitionNode_strategy = st.builds(
-    ptnet::TransitionNode,
+ptnet_TransitionNode_strategy = st.builds(
+    ptnet_TransitionNode,
 )
-ptnet::PlaceNode_strategy = st.builds(
-    ptnet::PlaceNode,
+ptnet_PlaceNode_strategy = st.builds(
+    ptnet_PlaceNode,
 )
-ptnet::ArcNature_strategy = st.builds(
-    ptnet::ArcNature,
+ptnet_ArcNature_strategy = st.builds(
+    ptnet_ArcNature,
 )
-ptnet::Annotation_strategy = st.builds(
-    ptnet::Annotation,
+ptnet_Annotation_strategy = st.builds(
+    ptnet_Annotation,
 )
-ptnet::Font_strategy = st.builds(
-    ptnet::Font,
-    rotation=
-        safe_text,
-    decoration=
+ptnet_Font_strategy = st.builds(
+    ptnet_Font,
+    family=
         safe_text,
     weight=
         safe_text,
-    family=
+    rotation=
         safe_text,
-    style=
+    align=
         safe_text,
     size=
         safe_text,
-    align=
+    style=
+        safe_text,
+    decoration=
         safe_text
 )
 Graphics_strategy = st.builds(
     Graphics,
 )
-ptnet::AnnotationGraphics_strategy = st.builds(
-    ptnet::AnnotationGraphics,
+ptnet_AnnotationGraphics_strategy = st.builds(
+    ptnet_AnnotationGraphics,
 )
-ptnet::ArcGraphics_strategy = st.builds(
-    ptnet::ArcGraphics,
+ptnet_ArcGraphics_strategy = st.builds(
+    ptnet_ArcGraphics,
 )
 Coordinate_strategy = st.builds(
     Coordinate,
 )
-ptnet::Offset_strategy = st.builds(
-    ptnet::Offset,
+ptnet_Offset_strategy = st.builds(
+    ptnet_Offset,
 )
-ptnet::Position_strategy = st.builds(
-    ptnet::Position,
+ptnet_Position_strategy = st.builds(
+    ptnet_Position,
 )
-ptnet::Dimension_strategy = st.builds(
-    ptnet::Dimension,
+ptnet_Dimension_strategy = st.builds(
+    ptnet_Dimension,
 )
-ptnet::Coordinate_strategy = st.builds(
-    ptnet::Coordinate,
+ptnet_Coordinate_strategy = st.builds(
+    ptnet_Coordinate,
     x=
         safe_text,
     y=
         safe_text
 )
-ptnet::Graphics_strategy = st.builds(
-    ptnet::Graphics,
+ptnet_Graphics_strategy = st.builds(
+    ptnet_Graphics,
 )
-ptnet::Line_strategy = st.builds(
-    ptnet::Line,
-    shape=
+ptnet_Line_strategy = st.builds(
+    ptnet_Line,
+    style=
         safe_text,
     color=
         safe_text,
     width=
         safe_text,
-    style=
+    shape=
         safe_text
 )
-ptnet::Fill_strategy = st.builds(
-    ptnet::Fill,
-    gradientcolor=
+ptnet_Fill_strategy = st.builds(
+    ptnet_Fill,
+    gradientrotation=
         safe_text,
     color=
         safe_text,
     image=
         safe_text,
-    gradientrotation=
+    gradientcolor=
         safe_text
 )
-ptnet::AnyObject_strategy = st.builds(
-    ptnet::AnyObject,
+ptnet_AnyObject_strategy = st.builds(
+    ptnet_AnyObject,
 )
-ptnet::Label_strategy = st.builds(
-    ptnet::Label,
+ptnet_Label_strategy = st.builds(
+    ptnet_Label,
 )
-ptnet::NodeGraphics_strategy = st.builds(
-    ptnet::NodeGraphics,
+ptnet_NodeGraphics_strategy = st.builds(
+    ptnet_NodeGraphics,
 )
-ptnet::PnObject_strategy = st.builds(
-    ptnet::PnObject,
+ptnet_PnObject_strategy = st.builds(
+    ptnet_PnObject,
     id=
         safe_text
 )
 PnObject_strategy = st.builds(
     PnObject,
 )
-ptnet::Page_strategy = st.builds(
-    ptnet::Page,
+ptnet_Node_strategy = st.builds(
+    ptnet_Node,
 )
-ptnet::Node_strategy = st.builds(
-    ptnet::Node,
+ptnet_Page_strategy = st.builds(
+    ptnet_Page,
 )
-ptnet::ToolInfo_strategy = st.builds(
-    ptnet::ToolInfo,
-    formattedXMLBuffer=
+ptnet_ToolInfo_strategy = st.builds(
+    ptnet_ToolInfo,
+    tool=
         safe_text,
-    version=
+    formattedXMLBuffer=
         safe_text,
     toolInfoGrammarURI=
         safe_text,
-    tool=
+    version=
         safe_text
 )
-ptnet::PetriNet_strategy = st.builds(
-    ptnet::PetriNet,
+ptnet_PetriNet_strategy = st.builds(
+    ptnet_PetriNet,
     type=
         safe_text,
     id=
         safe_text
 )
-ptnet::PetriNetDoc_strategy = st.builds(
-    ptnet::PetriNetDoc,
+ptnet_PetriNetDoc_strategy = st.builds(
+    ptnet_PetriNetDoc,
     xmlns=
         safe_text
 )
-ptnet::Arc_strategy = st.builds(
-    ptnet::Arc,
+ptnet_Arc_strategy = st.builds(
+    ptnet_Arc,
 )
-ptnet::Place_strategy = st.builds(
-    ptnet::Place,
+ptnet_Place_strategy = st.builds(
+    ptnet_Place,
 )
 Annotation_strategy = st.builds(
     Annotation,
 )
-ptnet::PTArcAnnotation_strategy = st.builds(
-    ptnet::PTArcAnnotation,
+ptnet_PTArcAnnotation_strategy = st.builds(
+    ptnet_PTArcAnnotation,
     text=
         safe_text
 )
-ptnet::Name_strategy = st.builds(
-    ptnet::Name,
+ptnet_PTMarking_strategy = st.builds(
+    ptnet_PTMarking,
     text=
         safe_text
 )
-ptnet::PTMarking_strategy = st.builds(
-    ptnet::PTMarking,
+ptnet_Name_strategy = st.builds(
+    ptnet_Name,
     text=
         safe_text
 )
@@ -1312,340 +1312,286 @@ ptnet::PTMarking_strategy = st.builds(
 def test_label_instantiation(instance):
     assert isinstance(instance, Label)
 
-@given(instance=ptnet::Attribute_strategy)
+@given(instance=ptnet_Attribute_strategy)
 @settings(max_examples=50)
-def test_ptnet::attribute_instantiation(instance):
-    assert isinstance(instance, ptnet::Attribute)
+def test_ptnet_attribute_instantiation(instance):
+    assert isinstance(instance, ptnet_Attribute)
 
 @given(instance=TransitionNode_strategy)
 @settings(max_examples=50)
 def test_transitionnode_instantiation(instance):
     assert isinstance(instance, TransitionNode)
 
-@given(instance=ptnet::Transition_strategy)
+@given(instance=ptnet_Transition_strategy)
 @settings(max_examples=50)
-def test_ptnet::transition_instantiation(instance):
-    assert isinstance(instance, ptnet::Transition)
+def test_ptnet_transition_instantiation(instance):
+    assert isinstance(instance, ptnet_Transition)
 
-@given(instance=ptnet::Capacity_strategy)
+@given(instance=ptnet_Capacity_strategy)
 @settings(max_examples=50)
-def test_ptnet::capacity_instantiation(instance):
-    assert isinstance(instance, ptnet::Capacity)
+def test_ptnet_capacity_instantiation(instance):
+    assert isinstance(instance, ptnet_Capacity)
 
 @given(instance=PlaceNode_strategy)
 @settings(max_examples=50)
 def test_placenode_instantiation(instance):
     assert isinstance(instance, PlaceNode)
 
-@given(instance=ptnet::RefTransition_strategy)
+@given(instance=ptnet_RefTransition_strategy)
 @settings(max_examples=50)
-def test_ptnet::reftransition_instantiation(instance):
-    assert isinstance(instance, ptnet::RefTransition)
+def test_ptnet_reftransition_instantiation(instance):
+    assert isinstance(instance, ptnet_RefTransition)
 
-@given(instance=ptnet::RefPlace_strategy)
+@given(instance=ptnet_RefPlace_strategy)
 @settings(max_examples=50)
-def test_ptnet::refplace_instantiation(instance):
-    assert isinstance(instance, ptnet::RefPlace)
+def test_ptnet_refplace_instantiation(instance):
+    assert isinstance(instance, ptnet_RefPlace)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=ptnet::TransitionNode_strategy)
+@given(instance=ptnet_TransitionNode_strategy)
 @settings(max_examples=50)
-def test_ptnet::transitionnode_instantiation(instance):
-    assert isinstance(instance, ptnet::TransitionNode)
+def test_ptnet_transitionnode_instantiation(instance):
+    assert isinstance(instance, ptnet_TransitionNode)
 
-@given(instance=ptnet::PlaceNode_strategy)
+@given(instance=ptnet_PlaceNode_strategy)
 @settings(max_examples=50)
-def test_ptnet::placenode_instantiation(instance):
-    assert isinstance(instance, ptnet::PlaceNode)
+def test_ptnet_placenode_instantiation(instance):
+    assert isinstance(instance, ptnet_PlaceNode)
 
-@given(instance=ptnet::ArcNature_strategy)
+@given(instance=ptnet_ArcNature_strategy)
 @settings(max_examples=50)
-def test_ptnet::arcnature_instantiation(instance):
-    assert isinstance(instance, ptnet::ArcNature)
+def test_ptnet_arcnature_instantiation(instance):
+    assert isinstance(instance, ptnet_ArcNature)
 
-@given(instance=ptnet::Annotation_strategy)
+@given(instance=ptnet_Annotation_strategy)
 @settings(max_examples=50)
-def test_ptnet::annotation_instantiation(instance):
-    assert isinstance(instance, ptnet::Annotation)
+def test_ptnet_annotation_instantiation(instance):
+    assert isinstance(instance, ptnet_Annotation)
 
-@given(instance=ptnet::Font_strategy)
+@given(instance=ptnet_Font_strategy)
 @settings(max_examples=50)
-def test_ptnet::font_instantiation(instance):
-    assert isinstance(instance, ptnet::Font)
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
+def test_ptnet_font_instantiation(instance):
+    assert isinstance(instance, ptnet_Font)
 
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_rotation_setter(instance):
-    original = instance.rotation
-    instance.rotation = original
-    assert instance.rotation == original
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_decoration_type(instance):
-    assert isinstance(instance.decoration, str)
-
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_decoration_setter(instance):
-    original = instance.decoration
-    instance.decoration = original
-    assert instance.decoration == original
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_weight_type(instance):
-    assert isinstance(instance.weight, str)
-
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_family_type(instance):
-    assert isinstance(instance.family, str)
-
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_family_setter(instance):
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_family_setter(instance):
     original = instance.family
     instance.family = original
     assert instance.family == original
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_size_type(instance):
-    assert isinstance(instance.size, str)
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
 
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_size_setter(instance):
+
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_rotation_setter(instance):
+    original = instance.rotation
+    instance.rotation = original
+    assert instance.rotation == original
+
+
+
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_align_type(instance):
-    assert isinstance(instance.align, str)
 
 
-@given(instance=ptnet::Font_strategy)
-def test_ptnet::font_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=ptnet_Font_strategy)
+def test_ptnet_font_decoration_setter(instance):
+    original = instance.decoration
+    instance.decoration = original
+    assert instance.decoration == original
 
 @given(instance=Graphics_strategy)
 @settings(max_examples=50)
 def test_graphics_instantiation(instance):
     assert isinstance(instance, Graphics)
 
-@given(instance=ptnet::AnnotationGraphics_strategy)
+@given(instance=ptnet_AnnotationGraphics_strategy)
 @settings(max_examples=50)
-def test_ptnet::annotationgraphics_instantiation(instance):
-    assert isinstance(instance, ptnet::AnnotationGraphics)
+def test_ptnet_annotationgraphics_instantiation(instance):
+    assert isinstance(instance, ptnet_AnnotationGraphics)
 
-@given(instance=ptnet::ArcGraphics_strategy)
+@given(instance=ptnet_ArcGraphics_strategy)
 @settings(max_examples=50)
-def test_ptnet::arcgraphics_instantiation(instance):
-    assert isinstance(instance, ptnet::ArcGraphics)
+def test_ptnet_arcgraphics_instantiation(instance):
+    assert isinstance(instance, ptnet_ArcGraphics)
 
 @given(instance=Coordinate_strategy)
 @settings(max_examples=50)
 def test_coordinate_instantiation(instance):
     assert isinstance(instance, Coordinate)
 
-@given(instance=ptnet::Offset_strategy)
+@given(instance=ptnet_Offset_strategy)
 @settings(max_examples=50)
-def test_ptnet::offset_instantiation(instance):
-    assert isinstance(instance, ptnet::Offset)
+def test_ptnet_offset_instantiation(instance):
+    assert isinstance(instance, ptnet_Offset)
 
-@given(instance=ptnet::Position_strategy)
+@given(instance=ptnet_Position_strategy)
 @settings(max_examples=50)
-def test_ptnet::position_instantiation(instance):
-    assert isinstance(instance, ptnet::Position)
+def test_ptnet_position_instantiation(instance):
+    assert isinstance(instance, ptnet_Position)
 
-@given(instance=ptnet::Dimension_strategy)
+@given(instance=ptnet_Dimension_strategy)
 @settings(max_examples=50)
-def test_ptnet::dimension_instantiation(instance):
-    assert isinstance(instance, ptnet::Dimension)
+def test_ptnet_dimension_instantiation(instance):
+    assert isinstance(instance, ptnet_Dimension)
 
-@given(instance=ptnet::Coordinate_strategy)
+@given(instance=ptnet_Coordinate_strategy)
 @settings(max_examples=50)
-def test_ptnet::coordinate_instantiation(instance):
-    assert isinstance(instance, ptnet::Coordinate)
-
-@given(instance=ptnet::Coordinate_strategy)
-def test_ptnet::coordinate_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_ptnet_coordinate_instantiation(instance):
+    assert isinstance(instance, ptnet_Coordinate)
 
 
-@given(instance=ptnet::Coordinate_strategy)
-def test_ptnet::coordinate_x_setter(instance):
+
+@given(instance=ptnet_Coordinate_strategy)
+def test_ptnet_coordinate_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=ptnet::Coordinate_strategy)
-def test_ptnet::coordinate_y_type(instance):
-    assert isinstance(instance.y, str)
 
 
-@given(instance=ptnet::Coordinate_strategy)
-def test_ptnet::coordinate_y_setter(instance):
+@given(instance=ptnet_Coordinate_strategy)
+def test_ptnet_coordinate_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=ptnet::Graphics_strategy)
+@given(instance=ptnet_Graphics_strategy)
 @settings(max_examples=50)
-def test_ptnet::graphics_instantiation(instance):
-    assert isinstance(instance, ptnet::Graphics)
+def test_ptnet_graphics_instantiation(instance):
+    assert isinstance(instance, ptnet_Graphics)
 
-@given(instance=ptnet::Line_strategy)
+@given(instance=ptnet_Line_strategy)
 @settings(max_examples=50)
-def test_ptnet::line_instantiation(instance):
-    assert isinstance(instance, ptnet::Line)
-
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_shape_type(instance):
-    assert isinstance(instance.shape, str)
+def test_ptnet_line_instantiation(instance):
+    assert isinstance(instance, ptnet_Line)
 
 
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
 
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=ptnet::Line_strategy)
-def test_ptnet::line_style_setter(instance):
+@given(instance=ptnet_Line_strategy)
+def test_ptnet_line_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=ptnet::Fill_strategy)
-@settings(max_examples=50)
-def test_ptnet::fill_instantiation(instance):
-    assert isinstance(instance, ptnet::Fill)
-
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_gradientcolor_type(instance):
-    assert isinstance(instance.gradientcolor, str)
 
 
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_gradientcolor_setter(instance):
-    original = instance.gradientcolor
-    instance.gradientcolor = original
-    assert instance.gradientcolor == original
-
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_color_setter(instance):
+@given(instance=ptnet_Line_strategy)
+def test_ptnet_line_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_image_type(instance):
-    assert isinstance(instance.image, str)
 
 
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_image_setter(instance):
-    original = instance.image
-    instance.image = original
-    assert instance.image == original
-
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_gradientrotation_type(instance):
-    assert isinstance(instance.gradientrotation, str)
+@given(instance=ptnet_Line_strategy)
+def test_ptnet_line_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
 
 
-@given(instance=ptnet::Fill_strategy)
-def test_ptnet::fill_gradientrotation_setter(instance):
+
+@given(instance=ptnet_Line_strategy)
+def test_ptnet_line_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+@given(instance=ptnet_Fill_strategy)
+@settings(max_examples=50)
+def test_ptnet_fill_instantiation(instance):
+    assert isinstance(instance, ptnet_Fill)
+
+
+
+@given(instance=ptnet_Fill_strategy)
+def test_ptnet_fill_gradientrotation_setter(instance):
     original = instance.gradientrotation
     instance.gradientrotation = original
     assert instance.gradientrotation == original
 
-@given(instance=ptnet::AnyObject_strategy)
+
+
+@given(instance=ptnet_Fill_strategy)
+def test_ptnet_fill_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=ptnet_Fill_strategy)
+def test_ptnet_fill_image_setter(instance):
+    original = instance.image
+    instance.image = original
+    assert instance.image == original
+
+
+
+@given(instance=ptnet_Fill_strategy)
+def test_ptnet_fill_gradientcolor_setter(instance):
+    original = instance.gradientcolor
+    instance.gradientcolor = original
+    assert instance.gradientcolor == original
+
+@given(instance=ptnet_AnyObject_strategy)
 @settings(max_examples=50)
-def test_ptnet::anyobject_instantiation(instance):
-    assert isinstance(instance, ptnet::AnyObject)
+def test_ptnet_anyobject_instantiation(instance):
+    assert isinstance(instance, ptnet_AnyObject)
 
-@given(instance=ptnet::Label_strategy)
+@given(instance=ptnet_Label_strategy)
 @settings(max_examples=50)
-def test_ptnet::label_instantiation(instance):
-    assert isinstance(instance, ptnet::Label)
+def test_ptnet_label_instantiation(instance):
+    assert isinstance(instance, ptnet_Label)
 
-@given(instance=ptnet::NodeGraphics_strategy)
+@given(instance=ptnet_NodeGraphics_strategy)
 @settings(max_examples=50)
-def test_ptnet::nodegraphics_instantiation(instance):
-    assert isinstance(instance, ptnet::NodeGraphics)
+def test_ptnet_nodegraphics_instantiation(instance):
+    assert isinstance(instance, ptnet_NodeGraphics)
 
-@given(instance=ptnet::PnObject_strategy)
+@given(instance=ptnet_PnObject_strategy)
 @settings(max_examples=50)
-def test_ptnet::pnobject_instantiation(instance):
-    assert isinstance(instance, ptnet::PnObject)
-
-@given(instance=ptnet::PnObject_strategy)
-def test_ptnet::pnobject_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_ptnet_pnobject_instantiation(instance):
+    assert isinstance(instance, ptnet_PnObject)
 
 
-@given(instance=ptnet::PnObject_strategy)
-def test_ptnet::pnobject_id_setter(instance):
+
+@given(instance=ptnet_PnObject_strategy)
+def test_ptnet_pnobject_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -1655,167 +1601,137 @@ def test_ptnet::pnobject_id_setter(instance):
 def test_pnobject_instantiation(instance):
     assert isinstance(instance, PnObject)
 
-@given(instance=ptnet::Page_strategy)
+@given(instance=ptnet_Node_strategy)
 @settings(max_examples=50)
-def test_ptnet::page_instantiation(instance):
-    assert isinstance(instance, ptnet::Page)
+def test_ptnet_node_instantiation(instance):
+    assert isinstance(instance, ptnet_Node)
 
-@given(instance=ptnet::Node_strategy)
+@given(instance=ptnet_Page_strategy)
 @settings(max_examples=50)
-def test_ptnet::node_instantiation(instance):
-    assert isinstance(instance, ptnet::Node)
+def test_ptnet_page_instantiation(instance):
+    assert isinstance(instance, ptnet_Page)
 
-@given(instance=ptnet::ToolInfo_strategy)
+@given(instance=ptnet_ToolInfo_strategy)
 @settings(max_examples=50)
-def test_ptnet::toolinfo_instantiation(instance):
-    assert isinstance(instance, ptnet::ToolInfo)
-
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_formattedXMLBuffer_type(instance):
-    assert isinstance(instance.formattedXMLBuffer, str)
+def test_ptnet_toolinfo_instantiation(instance):
+    assert isinstance(instance, ptnet_ToolInfo)
 
 
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_formattedXMLBuffer_setter(instance):
-    original = instance.formattedXMLBuffer
-    instance.formattedXMLBuffer = original
-    assert instance.formattedXMLBuffer == original
 
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_toolInfoGrammarURI_type(instance):
-    assert isinstance(instance.toolInfoGrammarURI, str)
-
-
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_toolInfoGrammarURI_setter(instance):
-    original = instance.toolInfoGrammarURI
-    instance.toolInfoGrammarURI = original
-    assert instance.toolInfoGrammarURI == original
-
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_tool_type(instance):
-    assert isinstance(instance.tool, str)
-
-
-@given(instance=ptnet::ToolInfo_strategy)
-def test_ptnet::toolinfo_tool_setter(instance):
+@given(instance=ptnet_ToolInfo_strategy)
+def test_ptnet_toolinfo_tool_setter(instance):
     original = instance.tool
     instance.tool = original
     assert instance.tool == original
 
-@given(instance=ptnet::PetriNet_strategy)
+
+
+@given(instance=ptnet_ToolInfo_strategy)
+def test_ptnet_toolinfo_formattedXMLBuffer_setter(instance):
+    original = instance.formattedXMLBuffer
+    instance.formattedXMLBuffer = original
+    assert instance.formattedXMLBuffer == original
+
+
+
+@given(instance=ptnet_ToolInfo_strategy)
+def test_ptnet_toolinfo_toolInfoGrammarURI_setter(instance):
+    original = instance.toolInfoGrammarURI
+    instance.toolInfoGrammarURI = original
+    assert instance.toolInfoGrammarURI == original
+
+
+
+@given(instance=ptnet_ToolInfo_strategy)
+def test_ptnet_toolinfo_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=ptnet_PetriNet_strategy)
 @settings(max_examples=50)
-def test_ptnet::petrinet_instantiation(instance):
-    assert isinstance(instance, ptnet::PetriNet)
-
-@given(instance=ptnet::PetriNet_strategy)
-def test_ptnet::petrinet_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_ptnet_petrinet_instantiation(instance):
+    assert isinstance(instance, ptnet_PetriNet)
 
 
-@given(instance=ptnet::PetriNet_strategy)
-def test_ptnet::petrinet_type_setter(instance):
+
+@given(instance=ptnet_PetriNet_strategy)
+def test_ptnet_petrinet_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ptnet::PetriNet_strategy)
-def test_ptnet::petrinet_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=ptnet::PetriNet_strategy)
-def test_ptnet::petrinet_id_setter(instance):
+@given(instance=ptnet_PetriNet_strategy)
+def test_ptnet_petrinet_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ptnet::PetriNetDoc_strategy)
+@given(instance=ptnet_PetriNetDoc_strategy)
 @settings(max_examples=50)
-def test_ptnet::petrinetdoc_instantiation(instance):
-    assert isinstance(instance, ptnet::PetriNetDoc)
-
-@given(instance=ptnet::PetriNetDoc_strategy)
-def test_ptnet::petrinetdoc_xmlns_type(instance):
-    assert isinstance(instance.xmlns, str)
+def test_ptnet_petrinetdoc_instantiation(instance):
+    assert isinstance(instance, ptnet_PetriNetDoc)
 
 
-@given(instance=ptnet::PetriNetDoc_strategy)
-def test_ptnet::petrinetdoc_xmlns_setter(instance):
+
+@given(instance=ptnet_PetriNetDoc_strategy)
+def test_ptnet_petrinetdoc_xmlns_setter(instance):
     original = instance.xmlns
     instance.xmlns = original
     assert instance.xmlns == original
 
-@given(instance=ptnet::Arc_strategy)
+@given(instance=ptnet_Arc_strategy)
 @settings(max_examples=50)
-def test_ptnet::arc_instantiation(instance):
-    assert isinstance(instance, ptnet::Arc)
+def test_ptnet_arc_instantiation(instance):
+    assert isinstance(instance, ptnet_Arc)
 
-@given(instance=ptnet::Place_strategy)
+@given(instance=ptnet_Place_strategy)
 @settings(max_examples=50)
-def test_ptnet::place_instantiation(instance):
-    assert isinstance(instance, ptnet::Place)
+def test_ptnet_place_instantiation(instance):
+    assert isinstance(instance, ptnet_Place)
 
 @given(instance=Annotation_strategy)
 @settings(max_examples=50)
 def test_annotation_instantiation(instance):
     assert isinstance(instance, Annotation)
 
-@given(instance=ptnet::PTArcAnnotation_strategy)
+@given(instance=ptnet_PTArcAnnotation_strategy)
 @settings(max_examples=50)
-def test_ptnet::ptarcannotation_instantiation(instance):
-    assert isinstance(instance, ptnet::PTArcAnnotation)
-
-@given(instance=ptnet::PTArcAnnotation_strategy)
-def test_ptnet::ptarcannotation_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ptnet_ptarcannotation_instantiation(instance):
+    assert isinstance(instance, ptnet_PTArcAnnotation)
 
 
-@given(instance=ptnet::PTArcAnnotation_strategy)
-def test_ptnet::ptarcannotation_text_setter(instance):
+
+@given(instance=ptnet_PTArcAnnotation_strategy)
+def test_ptnet_ptarcannotation_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=ptnet::Name_strategy)
+@given(instance=ptnet_PTMarking_strategy)
 @settings(max_examples=50)
-def test_ptnet::name_instantiation(instance):
-    assert isinstance(instance, ptnet::Name)
-
-@given(instance=ptnet::Name_strategy)
-def test_ptnet::name_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ptnet_ptmarking_instantiation(instance):
+    assert isinstance(instance, ptnet_PTMarking)
 
 
-@given(instance=ptnet::Name_strategy)
-def test_ptnet::name_text_setter(instance):
+
+@given(instance=ptnet_PTMarking_strategy)
+def test_ptnet_ptmarking_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=ptnet::PTMarking_strategy)
+@given(instance=ptnet_Name_strategy)
 @settings(max_examples=50)
-def test_ptnet::ptmarking_instantiation(instance):
-    assert isinstance(instance, ptnet::PTMarking)
-
-@given(instance=ptnet::PTMarking_strategy)
-def test_ptnet::ptmarking_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ptnet_name_instantiation(instance):
+    assert isinstance(instance, ptnet_Name)
 
 
-@given(instance=ptnet::PTMarking_strategy)
-def test_ptnet::ptmarking_text_setter(instance):
+
+@given(instance=ptnet_Name_strategy)
+def test_ptnet_name_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original

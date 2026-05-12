@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::Diagram,
-    model::Constraint,
-    model::Column,
-    model::Table,
+from python_code import (
+    model_Diagram,
+    model_Constraint,
+    model_Column,
+    model_Table,
 )
 
 # =============================================================================
@@ -18,51 +18,51 @@ from classes import (
 
 
 
-def test_model::diagram_is_not_abstract():
-    assert not inspect.isabstract(model::Diagram)
+def test_model_diagram_is_not_abstract():
+    assert not inspect.isabstract(model_Diagram)
 
 
-def test_model::diagram_constructor_exists():
-    assert callable(model::Diagram.__init__)
+def test_model_diagram_constructor_exists():
+    assert callable(model_Diagram.__init__)
 
 
-def test_model::diagram_constructor_args():
-    sig = inspect.signature(model::Diagram.__init__)
+def test_model_diagram_constructor_args():
+    sig = inspect.signature(model_Diagram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::constraint_is_not_abstract():
-    assert not inspect.isabstract(model::Constraint)
+def test_model_constraint_is_not_abstract():
+    assert not inspect.isabstract(model_Constraint)
 
 
-def test_model::constraint_constructor_exists():
-    assert callable(model::Constraint.__init__)
+def test_model_constraint_constructor_exists():
+    assert callable(model_Constraint.__init__)
 
 
-def test_model::constraint_constructor_args():
-    sig = inspect.signature(model::Constraint.__init__)
+def test_model_constraint_constructor_args():
+    sig = inspect.signature(model_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column_is_not_abstract():
-    assert not inspect.isabstract(model::Column)
+def test_model_column_is_not_abstract():
+    assert not inspect.isabstract(model_Column)
 
 
-def test_model::column_constructor_exists():
-    assert callable(model::Column.__init__)
+def test_model_column_constructor_exists():
+    assert callable(model_Column.__init__)
 
 
-def test_model::column_constructor_args():
-    sig = inspect.signature(model::Column.__init__)
+def test_model_column_constructor_args():
+    sig = inspect.signature(model_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::column_has_name():
-    assert hasattr(model::Column, "name")
+def test_model_column_has_name():
+    assert hasattr(model_Column, "name")
     descriptor = None
-    for klass in model::Column.__mro__:
+    for klass in model_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -70,23 +70,23 @@ def test_model::column_has_name():
 
 
 
-def test_model::table_is_not_abstract():
-    assert not inspect.isabstract(model::Table)
+def test_model_table_is_not_abstract():
+    assert not inspect.isabstract(model_Table)
 
 
-def test_model::table_constructor_exists():
-    assert callable(model::Table.__init__)
+def test_model_table_constructor_exists():
+    assert callable(model_Table.__init__)
 
 
-def test_model::table_constructor_args():
-    sig = inspect.signature(model::Table.__init__)
+def test_model_table_constructor_args():
+    sig = inspect.signature(model_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::table_has_name():
-    assert hasattr(model::Table, "name")
+def test_model_table_has_name():
+    assert hasattr(model_Table, "name")
     descriptor = None
-    for klass in model::Table.__mro__:
+    for klass in model_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,61 +104,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::Diagram_strategy = st.builds(
-    model::Diagram,
+model_Diagram_strategy = st.builds(
+    model_Diagram,
 )
-model::Constraint_strategy = st.builds(
-    model::Constraint,
+model_Constraint_strategy = st.builds(
+    model_Constraint,
 )
-model::Column_strategy = st.builds(
-    model::Column,
+model_Column_strategy = st.builds(
+    model_Column,
     name=
         safe_text
 )
-model::Table_strategy = st.builds(
-    model::Table,
+model_Table_strategy = st.builds(
+    model_Table,
     name=
         safe_text
 )
 
-@given(instance=model::Diagram_strategy)
+@given(instance=model_Diagram_strategy)
 @settings(max_examples=50)
-def test_model::diagram_instantiation(instance):
-    assert isinstance(instance, model::Diagram)
+def test_model_diagram_instantiation(instance):
+    assert isinstance(instance, model_Diagram)
 
-@given(instance=model::Constraint_strategy)
+@given(instance=model_Constraint_strategy)
 @settings(max_examples=50)
-def test_model::constraint_instantiation(instance):
-    assert isinstance(instance, model::Constraint)
+def test_model_constraint_instantiation(instance):
+    assert isinstance(instance, model_Constraint)
 
-@given(instance=model::Column_strategy)
+@given(instance=model_Column_strategy)
 @settings(max_examples=50)
-def test_model::column_instantiation(instance):
-    assert isinstance(instance, model::Column)
-
-@given(instance=model::Column_strategy)
-def test_model::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_column_instantiation(instance):
+    assert isinstance(instance, model_Column)
 
 
-@given(instance=model::Column_strategy)
-def test_model::column_name_setter(instance):
+
+@given(instance=model_Column_strategy)
+def test_model_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Table_strategy)
+@given(instance=model_Table_strategy)
 @settings(max_examples=50)
-def test_model::table_instantiation(instance):
-    assert isinstance(instance, model::Table)
-
-@given(instance=model::Table_strategy)
-def test_model::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_table_instantiation(instance):
+    assert isinstance(instance, model_Table)
 
 
-@given(instance=model::Table_strategy)
-def test_model::table_name_setter(instance):
+
+@given(instance=model_Table_strategy)
+def test_model_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

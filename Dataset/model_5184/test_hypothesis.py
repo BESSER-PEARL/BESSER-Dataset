@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
     A,
-    MultipleInheritance::C,
+    MultipleInheritance_C,
     Object,
-    MultipleInheritance::D,
-    MultipleInheritance::B,
-    MultipleInheritance::A,
-    MultipleInheritance::Object,
-    MultipleInheritance::Model,
+    MultipleInheritance_D,
+    MultipleInheritance_B,
+    MultipleInheritance_A,
+    MultipleInheritance_Object,
+    MultipleInheritance_Model,
 )
 
 # =============================================================================
@@ -51,16 +51,16 @@ def test_a_constructor_args():
 
 
 
-def test_multipleinheritance::c_is_not_abstract():
-    assert not inspect.isabstract(MultipleInheritance::C)
+def test_multipleinheritance_c_is_not_abstract():
+    assert not inspect.isabstract(MultipleInheritance_C)
 
 
-def test_multipleinheritance::c_constructor_exists():
-    assert callable(MultipleInheritance::C.__init__)
+def test_multipleinheritance_c_constructor_exists():
+    assert callable(MultipleInheritance_C.__init__)
 
 
-def test_multipleinheritance::c_constructor_args():
-    sig = inspect.signature(MultipleInheritance::C.__init__)
+def test_multipleinheritance_c_constructor_args():
+    sig = inspect.signature(MultipleInheritance_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,72 +79,72 @@ def test_object_constructor_args():
 
 
 
-def test_multipleinheritance::d_is_not_abstract():
-    assert not inspect.isabstract(MultipleInheritance::D)
+def test_multipleinheritance_d_is_not_abstract():
+    assert not inspect.isabstract(MultipleInheritance_D)
 
 
-def test_multipleinheritance::d_constructor_exists():
-    assert callable(MultipleInheritance::D.__init__)
+def test_multipleinheritance_d_constructor_exists():
+    assert callable(MultipleInheritance_D.__init__)
 
 
-def test_multipleinheritance::d_constructor_args():
-    sig = inspect.signature(MultipleInheritance::D.__init__)
+def test_multipleinheritance_d_constructor_args():
+    sig = inspect.signature(MultipleInheritance_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multipleinheritance::b_is_not_abstract():
-    assert not inspect.isabstract(MultipleInheritance::B)
+def test_multipleinheritance_b_is_not_abstract():
+    assert not inspect.isabstract(MultipleInheritance_B)
 
 
-def test_multipleinheritance::b_constructor_exists():
-    assert callable(MultipleInheritance::B.__init__)
+def test_multipleinheritance_b_constructor_exists():
+    assert callable(MultipleInheritance_B.__init__)
 
 
-def test_multipleinheritance::b_constructor_args():
-    sig = inspect.signature(MultipleInheritance::B.__init__)
+def test_multipleinheritance_b_constructor_args():
+    sig = inspect.signature(MultipleInheritance_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multipleinheritance::a_is_not_abstract():
-    assert not inspect.isabstract(MultipleInheritance::A)
+def test_multipleinheritance_a_is_not_abstract():
+    assert not inspect.isabstract(MultipleInheritance_A)
 
 
-def test_multipleinheritance::a_constructor_exists():
-    assert callable(MultipleInheritance::A.__init__)
+def test_multipleinheritance_a_constructor_exists():
+    assert callable(MultipleInheritance_A.__init__)
 
 
-def test_multipleinheritance::a_constructor_args():
-    sig = inspect.signature(MultipleInheritance::A.__init__)
+def test_multipleinheritance_a_constructor_args():
+    sig = inspect.signature(MultipleInheritance_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multipleinheritance::object_is_not_abstract():
-    assert not inspect.isabstract(MultipleInheritance::Object)
+def test_multipleinheritance_object_is_not_abstract():
+    assert not inspect.isabstract(MultipleInheritance_Object)
 
 
-def test_multipleinheritance::object_constructor_exists():
-    assert callable(MultipleInheritance::Object.__init__)
+def test_multipleinheritance_object_constructor_exists():
+    assert callable(MultipleInheritance_Object.__init__)
 
 
-def test_multipleinheritance::object_constructor_args():
-    sig = inspect.signature(MultipleInheritance::Object.__init__)
+def test_multipleinheritance_object_constructor_args():
+    sig = inspect.signature(MultipleInheritance_Object.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multipleinheritance::model_is_not_abstract():
-    assert not inspect.isabstract(MultipleInheritance::Model)
+def test_multipleinheritance_model_is_not_abstract():
+    assert not inspect.isabstract(MultipleInheritance_Model)
 
 
-def test_multipleinheritance::model_constructor_exists():
-    assert callable(MultipleInheritance::Model.__init__)
+def test_multipleinheritance_model_constructor_exists():
+    assert callable(MultipleInheritance_Model.__init__)
 
 
-def test_multipleinheritance::model_constructor_args():
-    sig = inspect.signature(MultipleInheritance::Model.__init__)
+def test_multipleinheritance_model_constructor_args():
+    sig = inspect.signature(MultipleInheritance_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -165,26 +165,26 @@ B_strategy = st.builds(
 A_strategy = st.builds(
     A,
 )
-MultipleInheritance::C_strategy = st.builds(
-    MultipleInheritance::C,
+MultipleInheritance_C_strategy = st.builds(
+    MultipleInheritance_C,
 )
 Object_strategy = st.builds(
     Object,
 )
-MultipleInheritance::D_strategy = st.builds(
-    MultipleInheritance::D,
+MultipleInheritance_D_strategy = st.builds(
+    MultipleInheritance_D,
 )
-MultipleInheritance::B_strategy = st.builds(
-    MultipleInheritance::B,
+MultipleInheritance_B_strategy = st.builds(
+    MultipleInheritance_B,
 )
-MultipleInheritance::A_strategy = st.builds(
-    MultipleInheritance::A,
+MultipleInheritance_A_strategy = st.builds(
+    MultipleInheritance_A,
 )
-MultipleInheritance::Object_strategy = st.builds(
-    MultipleInheritance::Object,
+MultipleInheritance_Object_strategy = st.builds(
+    MultipleInheritance_Object,
 )
-MultipleInheritance::Model_strategy = st.builds(
-    MultipleInheritance::Model,
+MultipleInheritance_Model_strategy = st.builds(
+    MultipleInheritance_Model,
 )
 
 @given(instance=B_strategy)
@@ -197,37 +197,37 @@ def test_b_instantiation(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=MultipleInheritance::C_strategy)
+@given(instance=MultipleInheritance_C_strategy)
 @settings(max_examples=50)
-def test_multipleinheritance::c_instantiation(instance):
-    assert isinstance(instance, MultipleInheritance::C)
+def test_multipleinheritance_c_instantiation(instance):
+    assert isinstance(instance, MultipleInheritance_C)
 
 @given(instance=Object_strategy)
 @settings(max_examples=50)
 def test_object_instantiation(instance):
     assert isinstance(instance, Object)
 
-@given(instance=MultipleInheritance::D_strategy)
+@given(instance=MultipleInheritance_D_strategy)
 @settings(max_examples=50)
-def test_multipleinheritance::d_instantiation(instance):
-    assert isinstance(instance, MultipleInheritance::D)
+def test_multipleinheritance_d_instantiation(instance):
+    assert isinstance(instance, MultipleInheritance_D)
 
-@given(instance=MultipleInheritance::B_strategy)
+@given(instance=MultipleInheritance_B_strategy)
 @settings(max_examples=50)
-def test_multipleinheritance::b_instantiation(instance):
-    assert isinstance(instance, MultipleInheritance::B)
+def test_multipleinheritance_b_instantiation(instance):
+    assert isinstance(instance, MultipleInheritance_B)
 
-@given(instance=MultipleInheritance::A_strategy)
+@given(instance=MultipleInheritance_A_strategy)
 @settings(max_examples=50)
-def test_multipleinheritance::a_instantiation(instance):
-    assert isinstance(instance, MultipleInheritance::A)
+def test_multipleinheritance_a_instantiation(instance):
+    assert isinstance(instance, MultipleInheritance_A)
 
-@given(instance=MultipleInheritance::Object_strategy)
+@given(instance=MultipleInheritance_Object_strategy)
 @settings(max_examples=50)
-def test_multipleinheritance::object_instantiation(instance):
-    assert isinstance(instance, MultipleInheritance::Object)
+def test_multipleinheritance_object_instantiation(instance):
+    assert isinstance(instance, MultipleInheritance_Object)
 
-@given(instance=MultipleInheritance::Model_strategy)
+@given(instance=MultipleInheritance_Model_strategy)
 @settings(max_examples=50)
-def test_multipleinheritance::model_instantiation(instance):
-    assert isinstance(instance, MultipleInheritance::Model)
+def test_multipleinheritance_model_instantiation(instance):
+    assert isinstance(instance, MultipleInheritance_Model)

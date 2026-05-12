@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mydsl::Transition,
-    mydsl::State,
-    mydsl::FSM,
+from python_code import (
+    mydsl_Transition,
+    mydsl_State,
+    mydsl_FSM,
     State,
-    mydsl::Final,
-    mydsl::Initial,
+    mydsl_Final,
+    mydsl_Initial,
 )
 
 # =============================================================================
@@ -20,57 +20,33 @@ from classes import (
 
 
 
-def test_mydsl::transition_is_not_abstract():
-    assert not inspect.isabstract(mydsl::Transition)
+def test_mydsl_transition_is_not_abstract():
+    assert not inspect.isabstract(mydsl_Transition)
 
 
-def test_mydsl::transition_constructor_exists():
-    assert callable(mydsl::Transition.__init__)
+def test_mydsl_transition_constructor_exists():
+    assert callable(mydsl_Transition.__init__)
 
 
-def test_mydsl::transition_constructor_args():
-    sig = inspect.signature(mydsl::Transition.__init__)
+def test_mydsl_transition_constructor_args():
+    sig = inspect.signature(mydsl_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "trigger" in params, "Missing parameter 'trigger'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::transition_has_name():
-    assert hasattr(mydsl::Transition, "name")
+def test_mydsl_transition_has_trigger():
+    assert hasattr(mydsl_Transition, "trigger")
     descriptor = None
-    for klass in mydsl::Transition.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mydsl::transition_has_trigger():
-    assert hasattr(mydsl::Transition, "trigger")
-    descriptor = None
-    for klass in mydsl::Transition.__mro__:
+    for klass in mydsl_Transition.__mro__:
         if "trigger" in klass.__dict__:
             descriptor = klass.__dict__["trigger"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mydsl::state_is_not_abstract():
-    assert not inspect.isabstract(mydsl::State)
-
-
-def test_mydsl::state_constructor_exists():
-    assert callable(mydsl::State.__init__)
-
-
-def test_mydsl::state_constructor_args():
-    sig = inspect.signature(mydsl::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mydsl::state_has_name():
-    assert hasattr(mydsl::State, "name")
+def test_mydsl_transition_has_name():
+    assert hasattr(mydsl_Transition, "name")
     descriptor = None
-    for klass in mydsl::State.__mro__:
+    for klass in mydsl_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -78,23 +54,47 @@ def test_mydsl::state_has_name():
 
 
 
-def test_mydsl::fsm_is_not_abstract():
-    assert not inspect.isabstract(mydsl::FSM)
+def test_mydsl_state_is_not_abstract():
+    assert not inspect.isabstract(mydsl_State)
 
 
-def test_mydsl::fsm_constructor_exists():
-    assert callable(mydsl::FSM.__init__)
+def test_mydsl_state_constructor_exists():
+    assert callable(mydsl_State.__init__)
 
 
-def test_mydsl::fsm_constructor_args():
-    sig = inspect.signature(mydsl::FSM.__init__)
+def test_mydsl_state_constructor_args():
+    sig = inspect.signature(mydsl_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::fsm_has_name():
-    assert hasattr(mydsl::FSM, "name")
+def test_mydsl_state_has_name():
+    assert hasattr(mydsl_State, "name")
     descriptor = None
-    for klass in mydsl::FSM.__mro__:
+    for klass in mydsl_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mydsl_fsm_is_not_abstract():
+    assert not inspect.isabstract(mydsl_FSM)
+
+
+def test_mydsl_fsm_constructor_exists():
+    assert callable(mydsl_FSM.__init__)
+
+
+def test_mydsl_fsm_constructor_args():
+    sig = inspect.signature(mydsl_FSM.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mydsl_fsm_has_name():
+    assert hasattr(mydsl_FSM, "name")
+    descriptor = None
+    for klass in mydsl_FSM.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -116,30 +116,30 @@ def test_state_constructor_args():
 
 
 
-def test_mydsl::final_is_not_abstract():
-    assert not inspect.isabstract(mydsl::Final)
+def test_mydsl_final_is_not_abstract():
+    assert not inspect.isabstract(mydsl_Final)
 
 
-def test_mydsl::final_constructor_exists():
-    assert callable(mydsl::Final.__init__)
+def test_mydsl_final_constructor_exists():
+    assert callable(mydsl_Final.__init__)
 
 
-def test_mydsl::final_constructor_args():
-    sig = inspect.signature(mydsl::Final.__init__)
+def test_mydsl_final_constructor_args():
+    sig = inspect.signature(mydsl_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::initial_is_not_abstract():
-    assert not inspect.isabstract(mydsl::Initial)
+def test_mydsl_initial_is_not_abstract():
+    assert not inspect.isabstract(mydsl_Initial)
 
 
-def test_mydsl::initial_constructor_exists():
-    assert callable(mydsl::Initial.__init__)
+def test_mydsl_initial_constructor_exists():
+    assert callable(mydsl_Initial.__init__)
 
 
-def test_mydsl::initial_constructor_args():
-    sig = inspect.signature(mydsl::Initial.__init__)
+def test_mydsl_initial_constructor_args():
+    sig = inspect.signature(mydsl_Initial.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,88 +154,76 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mydsl::Transition_strategy = st.builds(
-    mydsl::Transition,
-    name=
-        safe_text,
+mydsl_Transition_strategy = st.builds(
+    mydsl_Transition,
     trigger=
-        safe_text
-)
-mydsl::State_strategy = st.builds(
-    mydsl::State,
+        safe_text,
     name=
         safe_text
 )
-mydsl::FSM_strategy = st.builds(
-    mydsl::FSM,
+mydsl_State_strategy = st.builds(
+    mydsl_State,
+    name=
+        safe_text
+)
+mydsl_FSM_strategy = st.builds(
+    mydsl_FSM,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-mydsl::Final_strategy = st.builds(
-    mydsl::Final,
+mydsl_Final_strategy = st.builds(
+    mydsl_Final,
 )
-mydsl::Initial_strategy = st.builds(
-    mydsl::Initial,
+mydsl_Initial_strategy = st.builds(
+    mydsl_Initial,
 )
 
-@given(instance=mydsl::Transition_strategy)
+@given(instance=mydsl_Transition_strategy)
 @settings(max_examples=50)
-def test_mydsl::transition_instantiation(instance):
-    assert isinstance(instance, mydsl::Transition)
-
-@given(instance=mydsl::Transition_strategy)
-def test_mydsl::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_transition_instantiation(instance):
+    assert isinstance(instance, mydsl_Transition)
 
 
-@given(instance=mydsl::Transition_strategy)
-def test_mydsl::transition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=mydsl::Transition_strategy)
-def test_mydsl::transition_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
-
-
-@given(instance=mydsl::Transition_strategy)
-def test_mydsl::transition_trigger_setter(instance):
+@given(instance=mydsl_Transition_strategy)
+def test_mydsl_transition_trigger_setter(instance):
     original = instance.trigger
     instance.trigger = original
     assert instance.trigger == original
 
-@given(instance=mydsl::State_strategy)
-@settings(max_examples=50)
-def test_mydsl::state_instantiation(instance):
-    assert isinstance(instance, mydsl::State)
-
-@given(instance=mydsl::State_strategy)
-def test_mydsl::state_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mydsl::State_strategy)
-def test_mydsl::state_name_setter(instance):
+@given(instance=mydsl_Transition_strategy)
+def test_mydsl_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mydsl::FSM_strategy)
+@given(instance=mydsl_State_strategy)
 @settings(max_examples=50)
-def test_mydsl::fsm_instantiation(instance):
-    assert isinstance(instance, mydsl::FSM)
-
-@given(instance=mydsl::FSM_strategy)
-def test_mydsl::fsm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_state_instantiation(instance):
+    assert isinstance(instance, mydsl_State)
 
 
-@given(instance=mydsl::FSM_strategy)
-def test_mydsl::fsm_name_setter(instance):
+
+@given(instance=mydsl_State_strategy)
+def test_mydsl_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mydsl_FSM_strategy)
+@settings(max_examples=50)
+def test_mydsl_fsm_instantiation(instance):
+    assert isinstance(instance, mydsl_FSM)
+
+
+
+@given(instance=mydsl_FSM_strategy)
+def test_mydsl_fsm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -245,12 +233,12 @@ def test_mydsl::fsm_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=mydsl::Final_strategy)
+@given(instance=mydsl_Final_strategy)
 @settings(max_examples=50)
-def test_mydsl::final_instantiation(instance):
-    assert isinstance(instance, mydsl::Final)
+def test_mydsl_final_instantiation(instance):
+    assert isinstance(instance, mydsl_Final)
 
-@given(instance=mydsl::Initial_strategy)
+@given(instance=mydsl_Initial_strategy)
 @settings(max_examples=50)
-def test_mydsl::initial_instantiation(instance):
-    assert isinstance(instance, mydsl::Initial)
+def test_mydsl_initial_instantiation(instance):
+    assert isinstance(instance, mydsl_Initial)

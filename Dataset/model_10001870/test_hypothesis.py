@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Comparable_Patient__Interface,
@@ -194,19 +194,10 @@ def test_hw3_passenger_constructor_exists():
 def test_hw3_passenger_constructor_args():
     sig = inspect.signature(hw3_Passenger.__init__)
     params = list(sig.parameters.keys())
-    assert "currentFloor" in params, "Missing parameter 'currentFloor'"
     assert "id" in params, "Missing parameter 'id'"
     assert "UNDEFINED_FLOOR" in params, "Missing parameter 'UNDEFINED_FLOOR'"
+    assert "currentFloor" in params, "Missing parameter 'currentFloor'"
     assert "destinationFloor" in params, "Missing parameter 'destinationFloor'"
-
-def test_hw3_passenger_has_currentFloor():
-    assert hasattr(hw3_Passenger, "currentFloor")
-    descriptor = None
-    for klass in hw3_Passenger.__mro__:
-        if "currentFloor" in klass.__dict__:
-            descriptor = klass.__dict__["currentFloor"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_hw3_passenger_has_id():
     assert hasattr(hw3_Passenger, "id")
@@ -223,6 +214,15 @@ def test_hw3_passenger_has_UNDEFINED_FLOOR():
     for klass in hw3_Passenger.__mro__:
         if "UNDEFINED_FLOOR" in klass.__dict__:
             descriptor = klass.__dict__["UNDEFINED_FLOOR"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hw3_passenger_has_currentFloor():
+    assert hasattr(hw3_Passenger, "currentFloor")
+    descriptor = None
+    for klass in hw3_Passenger.__mro__:
+        if "currentFloor" in klass.__dict__:
+            descriptor = klass.__dict__["currentFloor"]
             break
     assert isinstance(descriptor, property)
 
@@ -296,39 +296,12 @@ def test_hw3_elevator_constructor_exists():
 def test_hw3_elevator_constructor_args():
     sig = inspect.signature(hw3_Elevator.__init__)
     params = list(sig.parameters.keys())
-    assert "currentFloorIndex" in params, "Missing parameter 'currentFloorIndex'"
-    assert "isGoingUp" in params, "Missing parameter 'isGoingUp'"
-    assert "CAPACITY" in params, "Missing parameter 'CAPACITY'"
     assert "passengersToFloor" in params, "Missing parameter 'passengersToFloor'"
     assert "numOfPassengers" in params, "Missing parameter 'numOfPassengers'"
+    assert "currentFloorIndex" in params, "Missing parameter 'currentFloorIndex'"
     assert "NUMBER_OF_FLOORS" in params, "Missing parameter 'NUMBER_OF_FLOORS'"
-
-def test_hw3_elevator_has_currentFloorIndex():
-    assert hasattr(hw3_Elevator, "currentFloorIndex")
-    descriptor = None
-    for klass in hw3_Elevator.__mro__:
-        if "currentFloorIndex" in klass.__dict__:
-            descriptor = klass.__dict__["currentFloorIndex"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hw3_elevator_has_isGoingUp():
-    assert hasattr(hw3_Elevator, "isGoingUp")
-    descriptor = None
-    for klass in hw3_Elevator.__mro__:
-        if "isGoingUp" in klass.__dict__:
-            descriptor = klass.__dict__["isGoingUp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hw3_elevator_has_CAPACITY():
-    assert hasattr(hw3_Elevator, "CAPACITY")
-    descriptor = None
-    for klass in hw3_Elevator.__mro__:
-        if "CAPACITY" in klass.__dict__:
-            descriptor = klass.__dict__["CAPACITY"]
-            break
-    assert isinstance(descriptor, property)
+    assert "isGoingUp" in params, "Missing parameter 'isGoingUp'"
+    assert "CAPACITY" in params, "Missing parameter 'CAPACITY'"
 
 def test_hw3_elevator_has_passengersToFloor():
     assert hasattr(hw3_Elevator, "passengersToFloor")
@@ -348,12 +321,39 @@ def test_hw3_elevator_has_numOfPassengers():
             break
     assert isinstance(descriptor, property)
 
+def test_hw3_elevator_has_currentFloorIndex():
+    assert hasattr(hw3_Elevator, "currentFloorIndex")
+    descriptor = None
+    for klass in hw3_Elevator.__mro__:
+        if "currentFloorIndex" in klass.__dict__:
+            descriptor = klass.__dict__["currentFloorIndex"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_hw3_elevator_has_NUMBER_OF_FLOORS():
     assert hasattr(hw3_Elevator, "NUMBER_OF_FLOORS")
     descriptor = None
     for klass in hw3_Elevator.__mro__:
         if "NUMBER_OF_FLOORS" in klass.__dict__:
             descriptor = klass.__dict__["NUMBER_OF_FLOORS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hw3_elevator_has_isGoingUp():
+    assert hasattr(hw3_Elevator, "isGoingUp")
+    descriptor = None
+    for klass in hw3_Elevator.__mro__:
+        if "isGoingUp" in klass.__dict__:
+            descriptor = klass.__dict__["isGoingUp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hw3_elevator_has_CAPACITY():
+    assert hasattr(hw3_Elevator, "CAPACITY")
+    descriptor = None
+    for klass in hw3_Elevator.__mro__:
+        if "CAPACITY" in klass.__dict__:
+            descriptor = klass.__dict__["CAPACITY"]
             break
     assert isinstance(descriptor, property)
 
@@ -456,19 +456,28 @@ def test_hw2_elevator_constructor_exists():
 def test_hw2_elevator_constructor_args():
     sig = inspect.signature(hw2_Elevator.__init__)
     params = list(sig.parameters.keys())
-    assert "passengersToFloor" in params, "Missing parameter 'passengersToFloor'"
-    assert "currentFloorIndex" in params, "Missing parameter 'currentFloorIndex'"
     assert "isGoingUp" in params, "Missing parameter 'isGoingUp'"
-    assert "CAPACITY" in params, "Missing parameter 'CAPACITY'"
-    assert "numOfPassengers" in params, "Missing parameter 'numOfPassengers'"
     assert "NUMBER_OF_FLOORS" in params, "Missing parameter 'NUMBER_OF_FLOORS'"
+    assert "currentFloorIndex" in params, "Missing parameter 'currentFloorIndex'"
+    assert "numOfPassengers" in params, "Missing parameter 'numOfPassengers'"
+    assert "passengersToFloor" in params, "Missing parameter 'passengersToFloor'"
+    assert "CAPACITY" in params, "Missing parameter 'CAPACITY'"
 
-def test_hw2_elevator_has_passengersToFloor():
-    assert hasattr(hw2_Elevator, "passengersToFloor")
+def test_hw2_elevator_has_isGoingUp():
+    assert hasattr(hw2_Elevator, "isGoingUp")
     descriptor = None
     for klass in hw2_Elevator.__mro__:
-        if "passengersToFloor" in klass.__dict__:
-            descriptor = klass.__dict__["passengersToFloor"]
+        if "isGoingUp" in klass.__dict__:
+            descriptor = klass.__dict__["isGoingUp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hw2_elevator_has_NUMBER_OF_FLOORS():
+    assert hasattr(hw2_Elevator, "NUMBER_OF_FLOORS")
+    descriptor = None
+    for klass in hw2_Elevator.__mro__:
+        if "NUMBER_OF_FLOORS" in klass.__dict__:
+            descriptor = klass.__dict__["NUMBER_OF_FLOORS"]
             break
     assert isinstance(descriptor, property)
 
@@ -481,24 +490,6 @@ def test_hw2_elevator_has_currentFloorIndex():
             break
     assert isinstance(descriptor, property)
 
-def test_hw2_elevator_has_isGoingUp():
-    assert hasattr(hw2_Elevator, "isGoingUp")
-    descriptor = None
-    for klass in hw2_Elevator.__mro__:
-        if "isGoingUp" in klass.__dict__:
-            descriptor = klass.__dict__["isGoingUp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hw2_elevator_has_CAPACITY():
-    assert hasattr(hw2_Elevator, "CAPACITY")
-    descriptor = None
-    for klass in hw2_Elevator.__mro__:
-        if "CAPACITY" in klass.__dict__:
-            descriptor = klass.__dict__["CAPACITY"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_hw2_elevator_has_numOfPassengers():
     assert hasattr(hw2_Elevator, "numOfPassengers")
     descriptor = None
@@ -508,12 +499,21 @@ def test_hw2_elevator_has_numOfPassengers():
             break
     assert isinstance(descriptor, property)
 
-def test_hw2_elevator_has_NUMBER_OF_FLOORS():
-    assert hasattr(hw2_Elevator, "NUMBER_OF_FLOORS")
+def test_hw2_elevator_has_passengersToFloor():
+    assert hasattr(hw2_Elevator, "passengersToFloor")
     descriptor = None
     for klass in hw2_Elevator.__mro__:
-        if "NUMBER_OF_FLOORS" in klass.__dict__:
-            descriptor = klass.__dict__["NUMBER_OF_FLOORS"]
+        if "passengersToFloor" in klass.__dict__:
+            descriptor = klass.__dict__["passengersToFloor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hw2_elevator_has_CAPACITY():
+    assert hasattr(hw2_Elevator, "CAPACITY")
+    descriptor = None
+    for klass in hw2_Elevator.__mro__:
+        if "CAPACITY" in klass.__dict__:
+            descriptor = klass.__dict__["CAPACITY"]
             break
     assert isinstance(descriptor, property)
 
@@ -530,17 +530,8 @@ def test_hw2_building_constructor_exists():
 def test_hw2_building_constructor_args():
     sig = inspect.signature(hw2_Building.__init__)
     params = list(sig.parameters.keys())
-    assert "floors" in params, "Missing parameter 'floors'"
     assert "FLOORS" in params, "Missing parameter 'FLOORS'"
-
-def test_hw2_building_has_floors():
-    assert hasattr(hw2_Building, "floors")
-    descriptor = None
-    for klass in hw2_Building.__mro__:
-        if "floors" in klass.__dict__:
-            descriptor = klass.__dict__["floors"]
-            break
-    assert isinstance(descriptor, property)
+    assert "floors" in params, "Missing parameter 'floors'"
 
 def test_hw2_building_has_FLOORS():
     assert hasattr(hw2_Building, "FLOORS")
@@ -548,6 +539,15 @@ def test_hw2_building_has_FLOORS():
     for klass in hw2_Building.__mro__:
         if "FLOORS" in klass.__dict__:
             descriptor = klass.__dict__["FLOORS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hw2_building_has_floors():
+    assert hasattr(hw2_Building, "floors")
+    descriptor = None
+    for klass in hw2_Building.__mro__:
+        if "floors" in klass.__dict__:
+            descriptor = klass.__dict__["floors"]
             break
     assert isinstance(descriptor, property)
 
@@ -626,20 +626,11 @@ def test_elevator_elevator_constructor_exists():
 def test_elevator_elevator_constructor_args():
     sig = inspect.signature(elevator_Elevator.__init__)
     params = list(sig.parameters.keys())
-    assert "NUMBER_OF_FLOORS" in params, "Missing parameter 'NUMBER_OF_FLOORS'"
     assert "passengersToFloor" in params, "Missing parameter 'passengersToFloor'"
-    assert "isGoingUp" in params, "Missing parameter 'isGoingUp'"
-    assert "currentFloor" in params, "Missing parameter 'currentFloor'"
     assert "numOfPassengers" in params, "Missing parameter 'numOfPassengers'"
-
-def test_elevator_elevator_has_NUMBER_OF_FLOORS():
-    assert hasattr(elevator_Elevator, "NUMBER_OF_FLOORS")
-    descriptor = None
-    for klass in elevator_Elevator.__mro__:
-        if "NUMBER_OF_FLOORS" in klass.__dict__:
-            descriptor = klass.__dict__["NUMBER_OF_FLOORS"]
-            break
-    assert isinstance(descriptor, property)
+    assert "currentFloor" in params, "Missing parameter 'currentFloor'"
+    assert "NUMBER_OF_FLOORS" in params, "Missing parameter 'NUMBER_OF_FLOORS'"
+    assert "isGoingUp" in params, "Missing parameter 'isGoingUp'"
 
 def test_elevator_elevator_has_passengersToFloor():
     assert hasattr(elevator_Elevator, "passengersToFloor")
@@ -650,12 +641,12 @@ def test_elevator_elevator_has_passengersToFloor():
             break
     assert isinstance(descriptor, property)
 
-def test_elevator_elevator_has_isGoingUp():
-    assert hasattr(elevator_Elevator, "isGoingUp")
+def test_elevator_elevator_has_numOfPassengers():
+    assert hasattr(elevator_Elevator, "numOfPassengers")
     descriptor = None
     for klass in elevator_Elevator.__mro__:
-        if "isGoingUp" in klass.__dict__:
-            descriptor = klass.__dict__["isGoingUp"]
+        if "numOfPassengers" in klass.__dict__:
+            descriptor = klass.__dict__["numOfPassengers"]
             break
     assert isinstance(descriptor, property)
 
@@ -668,12 +659,21 @@ def test_elevator_elevator_has_currentFloor():
             break
     assert isinstance(descriptor, property)
 
-def test_elevator_elevator_has_numOfPassengers():
-    assert hasattr(elevator_Elevator, "numOfPassengers")
+def test_elevator_elevator_has_NUMBER_OF_FLOORS():
+    assert hasattr(elevator_Elevator, "NUMBER_OF_FLOORS")
     descriptor = None
     for klass in elevator_Elevator.__mro__:
-        if "numOfPassengers" in klass.__dict__:
-            descriptor = klass.__dict__["numOfPassengers"]
+        if "NUMBER_OF_FLOORS" in klass.__dict__:
+            descriptor = klass.__dict__["NUMBER_OF_FLOORS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_elevator_elevator_has_isGoingUp():
+    assert hasattr(elevator_Elevator, "isGoingUp")
+    descriptor = None
+    for klass in elevator_Elevator.__mro__:
+        if "isGoingUp" in klass.__dict__:
+            descriptor = klass.__dict__["isGoingUp"]
             break
     assert isinstance(descriptor, property)
 
@@ -722,11 +722,11 @@ hw3test_HW3ElevatorSimulationTest_strategy = st.builds(
 )
 hw3_Passenger_strategy = st.builds(
     hw3_Passenger,
-    currentFloor=
-        st.integers(),
     id=
         st.integers(),
     UNDEFINED_FLOOR=
+        st.integers(),
+    currentFloor=
         st.integers(),
     destinationFloor=
         st.integers()
@@ -743,17 +743,17 @@ hw3_ElevatorFullException_strategy = st.builds(
 )
 hw3_Elevator_strategy = st.builds(
     hw3_Elevator,
-    currentFloorIndex=
-        st.integers(),
-    isGoingUp=
-        st.booleans(),
-    CAPACITY=
-        st.integers(),
     passengersToFloor=
         safe_text,
     numOfPassengers=
         st.integers(),
+    currentFloorIndex=
+        st.integers(),
     NUMBER_OF_FLOORS=
+        st.integers(),
+    isGoingUp=
+        st.booleans(),
+    CAPACITY=
         st.integers()
 )
 hw3_Building_strategy = st.builds(
@@ -776,25 +776,25 @@ hw2_ElevatorFullException_strategy = st.builds(
 )
 hw2_Elevator_strategy = st.builds(
     hw2_Elevator,
-    passengersToFloor=
-        safe_text,
-    currentFloorIndex=
-        st.integers(),
     isGoingUp=
         st.booleans(),
-    CAPACITY=
+    NUMBER_OF_FLOORS=
+        st.integers(),
+    currentFloorIndex=
         st.integers(),
     numOfPassengers=
         st.integers(),
-    NUMBER_OF_FLOORS=
+    passengersToFloor=
+        safe_text,
+    CAPACITY=
         st.integers()
 )
 hw2_Building_strategy = st.builds(
     hw2_Building,
-    floors=
-        safe_text,
     FLOORS=
-        st.integers()
+        st.integers(),
+    floors=
+        safe_text
 )
 elevatortest_Patient_strategy = st.builds(
     elevatortest_Patient,
@@ -811,16 +811,16 @@ elevatortest_ElevatorTest_strategy = st.builds(
 )
 elevator_Elevator_strategy = st.builds(
     elevator_Elevator,
-    NUMBER_OF_FLOORS=
-        st.integers(),
     passengersToFloor=
         safe_text,
-    isGoingUp=
-        st.booleans(),
+    numOfPassengers=
+        st.integers(),
     currentFloor=
         st.integers(),
-    numOfPassengers=
-        st.integers()
+    NUMBER_OF_FLOORS=
+        st.integers(),
+    isGoingUp=
+        st.booleans()
 )
 
 @given(instance=Comparable_Patient__Interface_strategy)
@@ -853,9 +853,6 @@ def test_genmymodelreverse_java_lang_comparable_interface_instantiation(instance
 def test_sec05_patient_instantiation(instance):
     assert isinstance(instance, sec05_Patient)
 
-@given(instance=sec05_Patient_strategy)
-def test_sec05_patient_urgencyIndex_type(instance):
-    assert isinstance(instance.urgencyIndex, int)
 
 
 @given(instance=sec05_Patient_strategy)
@@ -869,9 +866,6 @@ def test_sec05_patient_urgencyIndex_setter(instance):
 def test_sec05_person_instantiation(instance):
     assert isinstance(instance, sec05_Person)
 
-@given(instance=sec05_Person_strategy)
-def test_sec05_person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=sec05_Person_strategy)
@@ -895,20 +889,6 @@ def test_hw3test_hw3elevatorsimulationtest_instantiation(instance):
 def test_hw3_passenger_instantiation(instance):
     assert isinstance(instance, hw3_Passenger)
 
-@given(instance=hw3_Passenger_strategy)
-def test_hw3_passenger_currentFloor_type(instance):
-    assert isinstance(instance.currentFloor, int)
-
-
-@given(instance=hw3_Passenger_strategy)
-def test_hw3_passenger_currentFloor_setter(instance):
-    original = instance.currentFloor
-    instance.currentFloor = original
-    assert instance.currentFloor == original
-
-@given(instance=hw3_Passenger_strategy)
-def test_hw3_passenger_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=hw3_Passenger_strategy)
@@ -917,9 +897,6 @@ def test_hw3_passenger_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=hw3_Passenger_strategy)
-def test_hw3_passenger_UNDEFINED_FLOOR_type(instance):
-    assert isinstance(instance.UNDEFINED_FLOOR, int)
 
 
 @given(instance=hw3_Passenger_strategy)
@@ -928,9 +905,14 @@ def test_hw3_passenger_UNDEFINED_FLOOR_setter(instance):
     instance.UNDEFINED_FLOOR = original
     assert instance.UNDEFINED_FLOOR == original
 
+
+
 @given(instance=hw3_Passenger_strategy)
-def test_hw3_passenger_destinationFloor_type(instance):
-    assert isinstance(instance.destinationFloor, int)
+def test_hw3_passenger_currentFloor_setter(instance):
+    original = instance.currentFloor
+    instance.currentFloor = original
+    assert instance.currentFloor == original
+
 
 
 @given(instance=hw3_Passenger_strategy)
@@ -944,9 +926,6 @@ def test_hw3_passenger_destinationFloor_setter(instance):
 def test_hw3_floor_instantiation(instance):
     assert isinstance(instance, hw3_Floor)
 
-@given(instance=hw3_Floor_strategy)
-def test_hw3_floor_passengersWaiting_type(instance):
-    assert isinstance(instance.passengersWaiting, int)
 
 
 @given(instance=hw3_Floor_strategy)
@@ -955,9 +934,6 @@ def test_hw3_floor_passengersWaiting_setter(instance):
     instance.passengersWaiting = original
     assert instance.passengersWaiting == original
 
-@given(instance=hw3_Floor_strategy)
-def test_hw3_floor_myFloorNumber_type(instance):
-    assert isinstance(instance.myFloorNumber, int)
 
 
 @given(instance=hw3_Floor_strategy)
@@ -976,42 +952,6 @@ def test_hw3_elevatorfullexception_instantiation(instance):
 def test_hw3_elevator_instantiation(instance):
     assert isinstance(instance, hw3_Elevator)
 
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_currentFloorIndex_type(instance):
-    assert isinstance(instance.currentFloorIndex, int)
-
-
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_currentFloorIndex_setter(instance):
-    original = instance.currentFloorIndex
-    instance.currentFloorIndex = original
-    assert instance.currentFloorIndex == original
-
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_isGoingUp_type(instance):
-    assert isinstance(instance.isGoingUp, bool)
-
-
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_isGoingUp_setter(instance):
-    original = instance.isGoingUp
-    instance.isGoingUp = original
-    assert instance.isGoingUp == original
-
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_CAPACITY_type(instance):
-    assert isinstance(instance.CAPACITY, int)
-
-
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_CAPACITY_setter(instance):
-    original = instance.CAPACITY
-    instance.CAPACITY = original
-    assert instance.CAPACITY == original
-
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_passengersToFloor_type(instance):
-    assert isinstance(instance.passengersToFloor, str)
 
 
 @given(instance=hw3_Elevator_strategy)
@@ -1020,9 +960,6 @@ def test_hw3_elevator_passengersToFloor_setter(instance):
     instance.passengersToFloor = original
     assert instance.passengersToFloor == original
 
-@given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_numOfPassengers_type(instance):
-    assert isinstance(instance.numOfPassengers, int)
 
 
 @given(instance=hw3_Elevator_strategy)
@@ -1031,9 +968,14 @@ def test_hw3_elevator_numOfPassengers_setter(instance):
     instance.numOfPassengers = original
     assert instance.numOfPassengers == original
 
+
+
 @given(instance=hw3_Elevator_strategy)
-def test_hw3_elevator_NUMBER_OF_FLOORS_type(instance):
-    assert isinstance(instance.NUMBER_OF_FLOORS, int)
+def test_hw3_elevator_currentFloorIndex_setter(instance):
+    original = instance.currentFloorIndex
+    instance.currentFloorIndex = original
+    assert instance.currentFloorIndex == original
+
 
 
 @given(instance=hw3_Elevator_strategy)
@@ -1042,14 +984,27 @@ def test_hw3_elevator_NUMBER_OF_FLOORS_setter(instance):
     instance.NUMBER_OF_FLOORS = original
     assert instance.NUMBER_OF_FLOORS == original
 
+
+
+@given(instance=hw3_Elevator_strategy)
+def test_hw3_elevator_isGoingUp_setter(instance):
+    original = instance.isGoingUp
+    instance.isGoingUp = original
+    assert instance.isGoingUp == original
+
+
+
+@given(instance=hw3_Elevator_strategy)
+def test_hw3_elevator_CAPACITY_setter(instance):
+    original = instance.CAPACITY
+    instance.CAPACITY = original
+    assert instance.CAPACITY == original
+
 @given(instance=hw3_Building_strategy)
 @settings(max_examples=50)
 def test_hw3_building_instantiation(instance):
     assert isinstance(instance, hw3_Building)
 
-@given(instance=hw3_Building_strategy)
-def test_hw3_building_floors_type(instance):
-    assert isinstance(instance.floors, str)
 
 
 @given(instance=hw3_Building_strategy)
@@ -1058,9 +1013,6 @@ def test_hw3_building_floors_setter(instance):
     instance.floors = original
     assert instance.floors == original
 
-@given(instance=hw3_Building_strategy)
-def test_hw3_building_FLOORS_type(instance):
-    assert isinstance(instance.FLOORS, int)
 
 
 @given(instance=hw3_Building_strategy)
@@ -1079,9 +1031,6 @@ def test_hw2test_hw2elevatorsimulationtest_instantiation(instance):
 def test_hw2_floor_instantiation(instance):
     assert isinstance(instance, hw2_Floor)
 
-@given(instance=hw2_Floor_strategy)
-def test_hw2_floor_passengersWaiting_type(instance):
-    assert isinstance(instance.passengersWaiting, int)
 
 
 @given(instance=hw2_Floor_strategy)
@@ -1100,31 +1049,6 @@ def test_hw2_elevatorfullexception_instantiation(instance):
 def test_hw2_elevator_instantiation(instance):
     assert isinstance(instance, hw2_Elevator)
 
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_passengersToFloor_type(instance):
-    assert isinstance(instance.passengersToFloor, str)
-
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_passengersToFloor_setter(instance):
-    original = instance.passengersToFloor
-    instance.passengersToFloor = original
-    assert instance.passengersToFloor == original
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_currentFloorIndex_type(instance):
-    assert isinstance(instance.currentFloorIndex, int)
-
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_currentFloorIndex_setter(instance):
-    original = instance.currentFloorIndex
-    instance.currentFloorIndex = original
-    assert instance.currentFloorIndex == original
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_isGoingUp_type(instance):
-    assert isinstance(instance.isGoingUp, bool)
 
 
 @given(instance=hw2_Elevator_strategy)
@@ -1133,31 +1057,6 @@ def test_hw2_elevator_isGoingUp_setter(instance):
     instance.isGoingUp = original
     assert instance.isGoingUp == original
 
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_CAPACITY_type(instance):
-    assert isinstance(instance.CAPACITY, int)
-
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_CAPACITY_setter(instance):
-    original = instance.CAPACITY
-    instance.CAPACITY = original
-    assert instance.CAPACITY == original
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_numOfPassengers_type(instance):
-    assert isinstance(instance.numOfPassengers, int)
-
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_numOfPassengers_setter(instance):
-    original = instance.numOfPassengers
-    instance.numOfPassengers = original
-    assert instance.numOfPassengers == original
-
-@given(instance=hw2_Elevator_strategy)
-def test_hw2_elevator_NUMBER_OF_FLOORS_type(instance):
-    assert isinstance(instance.NUMBER_OF_FLOORS, int)
 
 
 @given(instance=hw2_Elevator_strategy)
@@ -1166,25 +1065,43 @@ def test_hw2_elevator_NUMBER_OF_FLOORS_setter(instance):
     instance.NUMBER_OF_FLOORS = original
     assert instance.NUMBER_OF_FLOORS == original
 
+
+
+@given(instance=hw2_Elevator_strategy)
+def test_hw2_elevator_currentFloorIndex_setter(instance):
+    original = instance.currentFloorIndex
+    instance.currentFloorIndex = original
+    assert instance.currentFloorIndex == original
+
+
+
+@given(instance=hw2_Elevator_strategy)
+def test_hw2_elevator_numOfPassengers_setter(instance):
+    original = instance.numOfPassengers
+    instance.numOfPassengers = original
+    assert instance.numOfPassengers == original
+
+
+
+@given(instance=hw2_Elevator_strategy)
+def test_hw2_elevator_passengersToFloor_setter(instance):
+    original = instance.passengersToFloor
+    instance.passengersToFloor = original
+    assert instance.passengersToFloor == original
+
+
+
+@given(instance=hw2_Elevator_strategy)
+def test_hw2_elevator_CAPACITY_setter(instance):
+    original = instance.CAPACITY
+    instance.CAPACITY = original
+    assert instance.CAPACITY == original
+
 @given(instance=hw2_Building_strategy)
 @settings(max_examples=50)
 def test_hw2_building_instantiation(instance):
     assert isinstance(instance, hw2_Building)
 
-@given(instance=hw2_Building_strategy)
-def test_hw2_building_floors_type(instance):
-    assert isinstance(instance.floors, str)
-
-
-@given(instance=hw2_Building_strategy)
-def test_hw2_building_floors_setter(instance):
-    original = instance.floors
-    instance.floors = original
-    assert instance.floors == original
-
-@given(instance=hw2_Building_strategy)
-def test_hw2_building_FLOORS_type(instance):
-    assert isinstance(instance.FLOORS, int)
 
 
 @given(instance=hw2_Building_strategy)
@@ -1193,14 +1110,19 @@ def test_hw2_building_FLOORS_setter(instance):
     instance.FLOORS = original
     assert instance.FLOORS == original
 
+
+
+@given(instance=hw2_Building_strategy)
+def test_hw2_building_floors_setter(instance):
+    original = instance.floors
+    instance.floors = original
+    assert instance.floors == original
+
 @given(instance=elevatortest_Patient_strategy)
 @settings(max_examples=50)
 def test_elevatortest_patient_instantiation(instance):
     assert isinstance(instance, elevatortest_Patient)
 
-@given(instance=elevatortest_Patient_strategy)
-def test_elevatortest_patient_urgencyIndex_type(instance):
-    assert isinstance(instance.urgencyIndex, int)
 
 
 @given(instance=elevatortest_Patient_strategy)
@@ -1214,9 +1136,6 @@ def test_elevatortest_patient_urgencyIndex_setter(instance):
 def test_elevatortest_person_instantiation(instance):
     assert isinstance(instance, elevatortest_Person)
 
-@given(instance=elevatortest_Person_strategy)
-def test_elevatortest_person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=elevatortest_Person_strategy)
@@ -1235,20 +1154,6 @@ def test_elevatortest_elevatortest_instantiation(instance):
 def test_elevator_elevator_instantiation(instance):
     assert isinstance(instance, elevator_Elevator)
 
-@given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_NUMBER_OF_FLOORS_type(instance):
-    assert isinstance(instance.NUMBER_OF_FLOORS, int)
-
-
-@given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_NUMBER_OF_FLOORS_setter(instance):
-    original = instance.NUMBER_OF_FLOORS
-    instance.NUMBER_OF_FLOORS = original
-    assert instance.NUMBER_OF_FLOORS == original
-
-@given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_passengersToFloor_type(instance):
-    assert isinstance(instance.passengersToFloor, str)
 
 
 @given(instance=elevator_Elevator_strategy)
@@ -1257,20 +1162,14 @@ def test_elevator_elevator_passengersToFloor_setter(instance):
     instance.passengersToFloor = original
     assert instance.passengersToFloor == original
 
-@given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_isGoingUp_type(instance):
-    assert isinstance(instance.isGoingUp, bool)
 
 
 @given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_isGoingUp_setter(instance):
-    original = instance.isGoingUp
-    instance.isGoingUp = original
-    assert instance.isGoingUp == original
+def test_elevator_elevator_numOfPassengers_setter(instance):
+    original = instance.numOfPassengers
+    instance.numOfPassengers = original
+    assert instance.numOfPassengers == original
 
-@given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_currentFloor_type(instance):
-    assert isinstance(instance.currentFloor, int)
 
 
 @given(instance=elevator_Elevator_strategy)
@@ -1279,13 +1178,18 @@ def test_elevator_elevator_currentFloor_setter(instance):
     instance.currentFloor = original
     assert instance.currentFloor == original
 
-@given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_numOfPassengers_type(instance):
-    assert isinstance(instance.numOfPassengers, int)
 
 
 @given(instance=elevator_Elevator_strategy)
-def test_elevator_elevator_numOfPassengers_setter(instance):
-    original = instance.numOfPassengers
-    instance.numOfPassengers = original
-    assert instance.numOfPassengers == original
+def test_elevator_elevator_NUMBER_OF_FLOORS_setter(instance):
+    original = instance.NUMBER_OF_FLOORS
+    instance.NUMBER_OF_FLOORS = original
+    assert instance.NUMBER_OF_FLOORS == original
+
+
+
+@given(instance=elevator_Elevator_strategy)
+def test_elevator_elevator_isGoingUp_setter(instance):
+    original = instance.isGoingUp
+    instance.isGoingUp = original
+    assert instance.isGoingUp == original

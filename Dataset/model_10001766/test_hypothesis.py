@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Eliminar_Contacto_external,
@@ -135,18 +135,9 @@ def test_telefono_constructor_exists():
 def test_telefono_constructor_args():
     sig = inspect.signature(TELEFONO.__init__)
     params = list(sig.parameters.keys())
-    assert "CODIGO_DE__AREA" in params, "Missing parameter 'CODIGO_DE__AREA'"
     assert "PREFIJO" in params, "Missing parameter 'PREFIJO'"
+    assert "CODIGO_DE__AREA" in params, "Missing parameter 'CODIGO_DE__AREA'"
     assert "NUMBER" in params, "Missing parameter 'NUMBER'"
-
-def test_telefono_has_CODIGO_DE__AREA():
-    assert hasattr(TELEFONO, "CODIGO_DE__AREA")
-    descriptor = None
-    for klass in TELEFONO.__mro__:
-        if "CODIGO_DE__AREA" in klass.__dict__:
-            descriptor = klass.__dict__["CODIGO_DE__AREA"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_telefono_has_PREFIJO():
     assert hasattr(TELEFONO, "PREFIJO")
@@ -154,6 +145,15 @@ def test_telefono_has_PREFIJO():
     for klass in TELEFONO.__mro__:
         if "PREFIJO" in klass.__dict__:
             descriptor = klass.__dict__["PREFIJO"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_telefono_has_CODIGO_DE__AREA():
+    assert hasattr(TELEFONO, "CODIGO_DE__AREA")
+    descriptor = None
+    for klass in TELEFONO.__mro__:
+        if "CODIGO_DE__AREA" in klass.__dict__:
+            descriptor = klass.__dict__["CODIGO_DE__AREA"]
             break
     assert isinstance(descriptor, property)
 
@@ -179,19 +179,10 @@ def test_direccion_constructor_exists():
 def test_direccion_constructor_args():
     sig = inspect.signature(DIRECCION.__init__)
     params = list(sig.parameters.keys())
-    assert "ESTADO" in params, "Missing parameter 'ESTADO'"
     assert "CODIGO_POSTAL" in params, "Missing parameter 'CODIGO_POSTAL'"
-    assert "NOMBRE" in params, "Missing parameter 'NOMBRE'"
     assert "CIUDAD" in params, "Missing parameter 'CIUDAD'"
-
-def test_direccion_has_ESTADO():
-    assert hasattr(DIRECCION, "ESTADO")
-    descriptor = None
-    for klass in DIRECCION.__mro__:
-        if "ESTADO" in klass.__dict__:
-            descriptor = klass.__dict__["ESTADO"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ESTADO" in params, "Missing parameter 'ESTADO'"
+    assert "NOMBRE" in params, "Missing parameter 'NOMBRE'"
 
 def test_direccion_has_CODIGO_POSTAL():
     assert hasattr(DIRECCION, "CODIGO_POSTAL")
@@ -202,21 +193,30 @@ def test_direccion_has_CODIGO_POSTAL():
             break
     assert isinstance(descriptor, property)
 
-def test_direccion_has_NOMBRE():
-    assert hasattr(DIRECCION, "NOMBRE")
-    descriptor = None
-    for klass in DIRECCION.__mro__:
-        if "NOMBRE" in klass.__dict__:
-            descriptor = klass.__dict__["NOMBRE"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_direccion_has_CIUDAD():
     assert hasattr(DIRECCION, "CIUDAD")
     descriptor = None
     for klass in DIRECCION.__mro__:
         if "CIUDAD" in klass.__dict__:
             descriptor = klass.__dict__["CIUDAD"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_direccion_has_ESTADO():
+    assert hasattr(DIRECCION, "ESTADO")
+    descriptor = None
+    for klass in DIRECCION.__mro__:
+        if "ESTADO" in klass.__dict__:
+            descriptor = klass.__dict__["ESTADO"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_direccion_has_NOMBRE():
+    assert hasattr(DIRECCION, "NOMBRE")
+    descriptor = None
+    for klass in DIRECCION.__mro__:
+        if "NOMBRE" in klass.__dict__:
+            descriptor = klass.__dict__["NOMBRE"]
             break
     assert isinstance(descriptor, property)
 
@@ -233,17 +233,8 @@ def test_contacto_constructor_exists():
 def test_contacto_constructor_args():
     sig = inspect.signature(CONTACTO.__init__)
     params = list(sig.parameters.keys())
-    assert "CORREO" in params, "Missing parameter 'CORREO'"
     assert "NOMBRE" in params, "Missing parameter 'NOMBRE'"
-
-def test_contacto_has_CORREO():
-    assert hasattr(CONTACTO, "CORREO")
-    descriptor = None
-    for klass in CONTACTO.__mro__:
-        if "CORREO" in klass.__dict__:
-            descriptor = klass.__dict__["CORREO"]
-            break
-    assert isinstance(descriptor, property)
+    assert "CORREO" in params, "Missing parameter 'CORREO'"
 
 def test_contacto_has_NOMBRE():
     assert hasattr(CONTACTO, "NOMBRE")
@@ -251,6 +242,15 @@ def test_contacto_has_NOMBRE():
     for klass in CONTACTO.__mro__:
         if "NOMBRE" in klass.__dict__:
             descriptor = klass.__dict__["NOMBRE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_contacto_has_CORREO():
+    assert hasattr(CONTACTO, "CORREO")
+    descriptor = None
+    for klass in CONTACTO.__mro__:
+        if "CORREO" in klass.__dict__:
+            descriptor = klass.__dict__["CORREO"]
             break
     assert isinstance(descriptor, property)
 
@@ -347,29 +347,29 @@ Actor_Actor_strategy = st.builds(
 )
 TELEFONO_strategy = st.builds(
     TELEFONO,
-    CODIGO_DE__AREA=
-        safe_text,
     PREFIJO=
         st.integers(),
+    CODIGO_DE__AREA=
+        safe_text,
     NUMBER=
         st.integers()
 )
 DIRECCION_strategy = st.builds(
     DIRECCION,
-    ESTADO=
-        safe_text,
     CODIGO_POSTAL=
         safe_text,
-    NOMBRE=
-        safe_text,
     CIUDAD=
+        safe_text,
+    ESTADO=
+        safe_text,
+    NOMBRE=
         safe_text
 )
 CONTACTO_strategy = st.builds(
     CONTACTO,
-    CORREO=
-        safe_text,
     NOMBRE=
+        safe_text,
+    CORREO=
         safe_text
 )
 LIBRO_DE__DIRECCIONES_strategy = st.builds(
@@ -425,20 +425,6 @@ def test_actor_actor_instantiation(instance):
 def test_telefono_instantiation(instance):
     assert isinstance(instance, TELEFONO)
 
-@given(instance=TELEFONO_strategy)
-def test_telefono_CODIGO_DE__AREA_type(instance):
-    assert isinstance(instance.CODIGO_DE__AREA, str)
-
-
-@given(instance=TELEFONO_strategy)
-def test_telefono_CODIGO_DE__AREA_setter(instance):
-    original = instance.CODIGO_DE__AREA
-    instance.CODIGO_DE__AREA = original
-    assert instance.CODIGO_DE__AREA == original
-
-@given(instance=TELEFONO_strategy)
-def test_telefono_PREFIJO_type(instance):
-    assert isinstance(instance.PREFIJO, int)
 
 
 @given(instance=TELEFONO_strategy)
@@ -447,9 +433,14 @@ def test_telefono_PREFIJO_setter(instance):
     instance.PREFIJO = original
     assert instance.PREFIJO == original
 
+
+
 @given(instance=TELEFONO_strategy)
-def test_telefono_NUMBER_type(instance):
-    assert isinstance(instance.NUMBER, int)
+def test_telefono_CODIGO_DE__AREA_setter(instance):
+    original = instance.CODIGO_DE__AREA
+    instance.CODIGO_DE__AREA = original
+    assert instance.CODIGO_DE__AREA == original
+
 
 
 @given(instance=TELEFONO_strategy)
@@ -463,20 +454,6 @@ def test_telefono_NUMBER_setter(instance):
 def test_direccion_instantiation(instance):
     assert isinstance(instance, DIRECCION)
 
-@given(instance=DIRECCION_strategy)
-def test_direccion_ESTADO_type(instance):
-    assert isinstance(instance.ESTADO, str)
-
-
-@given(instance=DIRECCION_strategy)
-def test_direccion_ESTADO_setter(instance):
-    original = instance.ESTADO
-    instance.ESTADO = original
-    assert instance.ESTADO == original
-
-@given(instance=DIRECCION_strategy)
-def test_direccion_CODIGO_POSTAL_type(instance):
-    assert isinstance(instance.CODIGO_POSTAL, str)
 
 
 @given(instance=DIRECCION_strategy)
@@ -485,20 +462,6 @@ def test_direccion_CODIGO_POSTAL_setter(instance):
     instance.CODIGO_POSTAL = original
     assert instance.CODIGO_POSTAL == original
 
-@given(instance=DIRECCION_strategy)
-def test_direccion_NOMBRE_type(instance):
-    assert isinstance(instance.NOMBRE, str)
-
-
-@given(instance=DIRECCION_strategy)
-def test_direccion_NOMBRE_setter(instance):
-    original = instance.NOMBRE
-    instance.NOMBRE = original
-    assert instance.NOMBRE == original
-
-@given(instance=DIRECCION_strategy)
-def test_direccion_CIUDAD_type(instance):
-    assert isinstance(instance.CIUDAD, str)
 
 
 @given(instance=DIRECCION_strategy)
@@ -507,25 +470,27 @@ def test_direccion_CIUDAD_setter(instance):
     instance.CIUDAD = original
     assert instance.CIUDAD == original
 
+
+
+@given(instance=DIRECCION_strategy)
+def test_direccion_ESTADO_setter(instance):
+    original = instance.ESTADO
+    instance.ESTADO = original
+    assert instance.ESTADO == original
+
+
+
+@given(instance=DIRECCION_strategy)
+def test_direccion_NOMBRE_setter(instance):
+    original = instance.NOMBRE
+    instance.NOMBRE = original
+    assert instance.NOMBRE == original
+
 @given(instance=CONTACTO_strategy)
 @settings(max_examples=50)
 def test_contacto_instantiation(instance):
     assert isinstance(instance, CONTACTO)
 
-@given(instance=CONTACTO_strategy)
-def test_contacto_CORREO_type(instance):
-    assert isinstance(instance.CORREO, str)
-
-
-@given(instance=CONTACTO_strategy)
-def test_contacto_CORREO_setter(instance):
-    original = instance.CORREO
-    instance.CORREO = original
-    assert instance.CORREO == original
-
-@given(instance=CONTACTO_strategy)
-def test_contacto_NOMBRE_type(instance):
-    assert isinstance(instance.NOMBRE, str)
 
 
 @given(instance=CONTACTO_strategy)
@@ -534,14 +499,19 @@ def test_contacto_NOMBRE_setter(instance):
     instance.NOMBRE = original
     assert instance.NOMBRE == original
 
+
+
+@given(instance=CONTACTO_strategy)
+def test_contacto_CORREO_setter(instance):
+    original = instance.CORREO
+    instance.CORREO = original
+    assert instance.CORREO == original
+
 @given(instance=LIBRO_DE__DIRECCIONES_strategy)
 @settings(max_examples=50)
 def test_libro_de__direcciones_instantiation(instance):
     assert isinstance(instance, LIBRO_DE__DIRECCIONES)
 
-@given(instance=LIBRO_DE__DIRECCIONES_strategy)
-def test_libro_de__direcciones_INTRODUCCION_type(instance):
-    assert isinstance(instance.INTRODUCCION, str)
 
 
 @given(instance=LIBRO_DE__DIRECCIONES_strategy)
@@ -555,9 +525,6 @@ def test_libro_de__direcciones_INTRODUCCION_setter(instance):
 def test_foto_instantiation(instance):
     assert isinstance(instance, FOTO)
 
-@given(instance=FOTO_strategy)
-def test_foto_ANCHO_type(instance):
-    assert isinstance(instance.ANCHO, int)
 
 
 @given(instance=FOTO_strategy)
@@ -566,9 +533,6 @@ def test_foto_ANCHO_setter(instance):
     instance.ANCHO = original
     assert instance.ANCHO == original
 
-@given(instance=FOTO_strategy)
-def test_foto_ALTURA_type(instance):
-    assert isinstance(instance.ALTURA, int)
 
 
 @given(instance=FOTO_strategy)

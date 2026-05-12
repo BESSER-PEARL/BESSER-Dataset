@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    edatatypeColumn::Book,
+from python_code import (
+    edatatypeColumn_Book,
 )
 
 # =============================================================================
@@ -15,55 +15,55 @@ from classes import (
 
 
 
-def test_edatatypecolumn::book_is_not_abstract():
-    assert not inspect.isabstract(edatatypeColumn::Book)
+def test_edatatypecolumn_book_is_not_abstract():
+    assert not inspect.isabstract(edatatypeColumn_Book)
 
 
-def test_edatatypecolumn::book_constructor_exists():
-    assert callable(edatatypeColumn::Book.__init__)
+def test_edatatypecolumn_book_constructor_exists():
+    assert callable(edatatypeColumn_Book.__init__)
 
 
-def test_edatatypecolumn::book_constructor_args():
-    sig = inspect.signature(edatatypeColumn::Book.__init__)
+def test_edatatypecolumn_book_constructor_args():
+    sig = inspect.signature(edatatypeColumn_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "weight" in params, "Missing parameter 'weight'"
     assert "author" in params, "Missing parameter 'author'"
-    assert "pages" in params, "Missing parameter 'pages'"
+    assert "weight" in params, "Missing parameter 'weight'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "pages" in params, "Missing parameter 'pages'"
 
-def test_edatatypecolumn::book_has_weight():
-    assert hasattr(edatatypeColumn::Book, "weight")
+def test_edatatypecolumn_book_has_author():
+    assert hasattr(edatatypeColumn_Book, "author")
     descriptor = None
-    for klass in edatatypeColumn::Book.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_edatatypecolumn::book_has_author():
-    assert hasattr(edatatypeColumn::Book, "author")
-    descriptor = None
-    for klass in edatatypeColumn::Book.__mro__:
+    for klass in edatatypeColumn_Book.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_edatatypecolumn::book_has_pages():
-    assert hasattr(edatatypeColumn::Book, "pages")
+def test_edatatypecolumn_book_has_weight():
+    assert hasattr(edatatypeColumn_Book, "weight")
     descriptor = None
-    for klass in edatatypeColumn::Book.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
+    for klass in edatatypeColumn_Book.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
             break
     assert isinstance(descriptor, property)
 
-def test_edatatypecolumn::book_has_title():
-    assert hasattr(edatatypeColumn::Book, "title")
+def test_edatatypecolumn_book_has_title():
+    assert hasattr(edatatypeColumn_Book, "title")
     descriptor = None
-    for klass in edatatypeColumn::Book.__mro__:
+    for klass in edatatypeColumn_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_edatatypecolumn_book_has_pages():
+    assert hasattr(edatatypeColumn_Book, "pages")
+    descriptor = None
+    for klass in edatatypeColumn_Book.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
             break
     assert isinstance(descriptor, property)
 
@@ -79,63 +79,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-edatatypeColumn::Book_strategy = st.builds(
-    edatatypeColumn::Book,
-    weight=
-        safe_text,
+edatatypeColumn_Book_strategy = st.builds(
+    edatatypeColumn_Book,
     author=
         safe_text,
-    pages=
+    weight=
         safe_text,
     title=
+        safe_text,
+    pages=
         safe_text
 )
 
-@given(instance=edatatypeColumn::Book_strategy)
+@given(instance=edatatypeColumn_Book_strategy)
 @settings(max_examples=50)
-def test_edatatypecolumn::book_instantiation(instance):
-    assert isinstance(instance, edatatypeColumn::Book)
-
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_weight_type(instance):
-    assert isinstance(instance.weight, str)
+def test_edatatypecolumn_book_instantiation(instance):
+    assert isinstance(instance, edatatypeColumn_Book)
 
 
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
 
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_author_setter(instance):
+@given(instance=edatatypeColumn_Book_strategy)
+def test_edatatypecolumn_book_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_pages_type(instance):
-    assert isinstance(instance.pages, str)
 
 
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_title_type(instance):
-    assert isinstance(instance.title, str)
+@given(instance=edatatypeColumn_Book_strategy)
+def test_edatatypecolumn_book_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
 
 
-@given(instance=edatatypeColumn::Book_strategy)
-def test_edatatypecolumn::book_title_setter(instance):
+
+@given(instance=edatatypeColumn_Book_strategy)
+def test_edatatypecolumn_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
+
+
+
+@given(instance=edatatypeColumn_Book_strategy)
+def test_edatatypecolumn_book_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original

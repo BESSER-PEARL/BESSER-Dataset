@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    GraphOperations::EIntContainer,
-    GraphOperations::ConstantUtils,
+from python_code import (
+    GraphOperations_EIntContainer,
+    GraphOperations_ConstantUtils,
     Element,
-    GraphOperations::Edge,
-    GraphOperations::Triangle,
-    GraphOperations::Element,
-    GraphOperations::Graph,
-    GraphOperations::Node,
+    GraphOperations_Edge,
+    GraphOperations_Triangle,
+    GraphOperations_Element,
+    GraphOperations_Graph,
+    GraphOperations_Node,
     EdgeState,
 )
 
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_graphoperations::eintcontainer_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::EIntContainer)
+def test_graphoperations_eintcontainer_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_EIntContainer)
 
 
-def test_graphoperations::eintcontainer_constructor_exists():
-    assert callable(GraphOperations::EIntContainer.__init__)
+def test_graphoperations_eintcontainer_constructor_exists():
+    assert callable(GraphOperations_EIntContainer.__init__)
 
 
-def test_graphoperations::eintcontainer_constructor_args():
-    sig = inspect.signature(GraphOperations::EIntContainer.__init__)
+def test_graphoperations_eintcontainer_constructor_args():
+    sig = inspect.signature(GraphOperations_EIntContainer.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graphoperations::eintcontainer_has_value():
-    assert hasattr(GraphOperations::EIntContainer, "value")
+def test_graphoperations_eintcontainer_has_value():
+    assert hasattr(GraphOperations_EIntContainer, "value")
     descriptor = None
-    for klass in GraphOperations::EIntContainer.__mro__:
+    for klass in GraphOperations_EIntContainer.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -47,16 +47,16 @@ def test_graphoperations::eintcontainer_has_value():
 
 
 
-def test_graphoperations::constantutils_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::ConstantUtils)
+def test_graphoperations_constantutils_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_ConstantUtils)
 
 
-def test_graphoperations::constantutils_constructor_exists():
-    assert callable(GraphOperations::ConstantUtils.__init__)
+def test_graphoperations_constantutils_constructor_exists():
+    assert callable(GraphOperations_ConstantUtils.__init__)
 
 
-def test_graphoperations::constantutils_constructor_args():
-    sig = inspect.signature(GraphOperations::ConstantUtils.__init__)
+def test_graphoperations_constantutils_constructor_args():
+    sig = inspect.signature(GraphOperations_ConstantUtils.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -75,71 +75,71 @@ def test_element_constructor_args():
 
 
 
-def test_graphoperations::edge_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::Edge)
+def test_graphoperations_edge_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_Edge)
 
 
-def test_graphoperations::edge_constructor_exists():
-    assert callable(GraphOperations::Edge.__init__)
+def test_graphoperations_edge_constructor_exists():
+    assert callable(GraphOperations_Edge.__init__)
 
 
-def test_graphoperations::edge_constructor_args():
-    sig = inspect.signature(GraphOperations::Edge.__init__)
+def test_graphoperations_edge_constructor_args():
+    sig = inspect.signature(GraphOperations_Edge.__init__)
     params = list(sig.parameters.keys())
-    assert "weight" in params, "Missing parameter 'weight'"
     assert "state" in params, "Missing parameter 'state'"
+    assert "weight" in params, "Missing parameter 'weight'"
 
-def test_graphoperations::edge_has_weight():
-    assert hasattr(GraphOperations::Edge, "weight")
+def test_graphoperations_edge_has_state():
+    assert hasattr(GraphOperations_Edge, "state")
     descriptor = None
-    for klass in GraphOperations::Edge.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphoperations::edge_has_state():
-    assert hasattr(GraphOperations::Edge, "state")
-    descriptor = None
-    for klass in GraphOperations::Edge.__mro__:
+    for klass in GraphOperations_Edge.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
     assert isinstance(descriptor, property)
 
+def test_graphoperations_edge_has_weight():
+    assert hasattr(GraphOperations_Edge, "weight")
+    descriptor = None
+    for klass in GraphOperations_Edge.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graphoperations::triangle_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::Triangle)
+
+def test_graphoperations_triangle_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_Triangle)
 
 
-def test_graphoperations::triangle_constructor_exists():
-    assert callable(GraphOperations::Triangle.__init__)
+def test_graphoperations_triangle_constructor_exists():
+    assert callable(GraphOperations_Triangle.__init__)
 
 
-def test_graphoperations::triangle_constructor_args():
-    sig = inspect.signature(GraphOperations::Triangle.__init__)
+def test_graphoperations_triangle_constructor_args():
+    sig = inspect.signature(GraphOperations_Triangle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphoperations::element_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::Element)
+def test_graphoperations_element_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_Element)
 
 
-def test_graphoperations::element_constructor_exists():
-    assert callable(GraphOperations::Element.__init__)
+def test_graphoperations_element_constructor_exists():
+    assert callable(GraphOperations_Element.__init__)
 
 
-def test_graphoperations::element_constructor_args():
-    sig = inspect.signature(GraphOperations::Element.__init__)
+def test_graphoperations_element_constructor_args():
+    sig = inspect.signature(GraphOperations_Element.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_graphoperations::element_has_id():
-    assert hasattr(GraphOperations::Element, "id")
+def test_graphoperations_element_has_id():
+    assert hasattr(GraphOperations_Element, "id")
     descriptor = None
-    for klass in GraphOperations::Element.__mro__:
+    for klass in GraphOperations_Element.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -147,47 +147,47 @@ def test_graphoperations::element_has_id():
 
 
 
-def test_graphoperations::graph_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::Graph)
+def test_graphoperations_graph_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_Graph)
 
 
-def test_graphoperations::graph_constructor_exists():
-    assert callable(GraphOperations::Graph.__init__)
+def test_graphoperations_graph_constructor_exists():
+    assert callable(GraphOperations_Graph.__init__)
 
 
-def test_graphoperations::graph_constructor_args():
-    sig = inspect.signature(GraphOperations::Graph.__init__)
+def test_graphoperations_graph_constructor_args():
+    sig = inspect.signature(GraphOperations_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphoperations::node_is_not_abstract():
-    assert not inspect.isabstract(GraphOperations::Node)
+def test_graphoperations_node_is_not_abstract():
+    assert not inspect.isabstract(GraphOperations_Node)
 
 
-def test_graphoperations::node_constructor_exists():
-    assert callable(GraphOperations::Node.__init__)
+def test_graphoperations_node_constructor_exists():
+    assert callable(GraphOperations_Node.__init__)
 
 
-def test_graphoperations::node_constructor_args():
-    sig = inspect.signature(GraphOperations::Node.__init__)
+def test_graphoperations_node_constructor_args():
+    sig = inspect.signature(GraphOperations_Node.__init__)
     params = list(sig.parameters.keys())
     assert "degree" in params, "Missing parameter 'degree'"
     assert "depth" in params, "Missing parameter 'depth'"
 
-def test_graphoperations::node_has_degree():
-    assert hasattr(GraphOperations::Node, "degree")
+def test_graphoperations_node_has_degree():
+    assert hasattr(GraphOperations_Node, "degree")
     descriptor = None
-    for klass in GraphOperations::Node.__mro__:
+    for klass in GraphOperations_Node.__mro__:
         if "degree" in klass.__dict__:
             descriptor = klass.__dict__["degree"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphoperations::node_has_depth():
-    assert hasattr(GraphOperations::Node, "depth")
+def test_graphoperations_node_has_depth():
+    assert hasattr(GraphOperations_Node, "depth")
     descriptor = None
-    for klass in GraphOperations::Node.__mro__:
+    for klass in GraphOperations_Node.__mro__:
         if "depth" in klass.__dict__:
             descriptor = klass.__dict__["depth"]
             break
@@ -201,8 +201,8 @@ def test_edgestate_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EdgeState]
     expected_literals = [
-        "INACTIVE",
         "ACTIVE",
+        "INACTIVE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -220,55 +220,52 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-GraphOperations::EIntContainer_strategy = st.builds(
-    GraphOperations::EIntContainer,
+GraphOperations_EIntContainer_strategy = st.builds(
+    GraphOperations_EIntContainer,
     value=
         st.integers()
 )
-GraphOperations::ConstantUtils_strategy = st.builds(
-    GraphOperations::ConstantUtils,
+GraphOperations_ConstantUtils_strategy = st.builds(
+    GraphOperations_ConstantUtils,
 )
 Element_strategy = st.builds(
     Element,
 )
-GraphOperations::Edge_strategy = st.builds(
-    GraphOperations::Edge,
-    weight=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+GraphOperations_Edge_strategy = st.builds(
+    GraphOperations_Edge,
     state=
-        safe_text
+        safe_text,
+    weight=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-GraphOperations::Triangle_strategy = st.builds(
-    GraphOperations::Triangle,
+GraphOperations_Triangle_strategy = st.builds(
+    GraphOperations_Triangle,
 )
-GraphOperations::Element_strategy = st.builds(
-    GraphOperations::Element,
+GraphOperations_Element_strategy = st.builds(
+    GraphOperations_Element,
     id=
         safe_text
 )
-GraphOperations::Graph_strategy = st.builds(
-    GraphOperations::Graph,
+GraphOperations_Graph_strategy = st.builds(
+    GraphOperations_Graph,
 )
-GraphOperations::Node_strategy = st.builds(
-    GraphOperations::Node,
+GraphOperations_Node_strategy = st.builds(
+    GraphOperations_Node,
     degree=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     depth=
         st.integers()
 )
 
-@given(instance=GraphOperations::EIntContainer_strategy)
+@given(instance=GraphOperations_EIntContainer_strategy)
 @settings(max_examples=50)
-def test_graphoperations::eintcontainer_instantiation(instance):
-    assert isinstance(instance, GraphOperations::EIntContainer)
-
-@given(instance=GraphOperations::EIntContainer_strategy)
-def test_graphoperations::eintcontainer_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_graphoperations_eintcontainer_instantiation(instance):
+    assert isinstance(instance, GraphOperations_EIntContainer)
 
 
-@given(instance=GraphOperations::EIntContainer_strategy)
-def test_graphoperations::eintcontainer_value_setter(instance):
+
+@given(instance=GraphOperations_EIntContainer_strategy)
+def test_graphoperations_eintcontainer_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -279,9 +276,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::EIntContainer_strategy)
+@given(instance=GraphOperations_EIntContainer_strategy)
 @settings(max_examples=30)
-def test_graphoperations::eintcontainer_incrementby_changes_state(instance):
+def test_graphoperations_eintcontainer_incrementby_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -295,14 +292,14 @@ def test_graphoperations::eintcontainer_incrementby_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'incrementBy' in GraphOperations::EIntContainer is empty"
+        assert has_statements, f"Function 'incrementBy' in GraphOperations_EIntContainer is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'incrementBy' in GraphOperations::EIntContainer did not change state; check implementation")
+            warnings.warn(f"Operation 'incrementBy' in GraphOperations_EIntContainer did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'incrementBy' in GraphOperations::EIntContainer is not implemented or raised an error")
+        warnings.warn(f"Operation 'incrementBy' in GraphOperations_EIntContainer is not implemented or raised an error")
 
 import warnings
 import copy
@@ -310,9 +307,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::EIntContainer_strategy)
+@given(instance=GraphOperations_EIntContainer_strategy)
 @settings(max_examples=30)
-def test_graphoperations::eintcontainer_increment_changes_state(instance):
+def test_graphoperations_eintcontainer_increment_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -324,77 +321,68 @@ def test_graphoperations::eintcontainer_increment_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'increment' in GraphOperations::EIntContainer is empty"
+        assert has_statements, f"Function 'increment' in GraphOperations_EIntContainer is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'increment' in GraphOperations::EIntContainer did not change state; check implementation")
+            warnings.warn(f"Operation 'increment' in GraphOperations_EIntContainer did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'increment' in GraphOperations::EIntContainer is not implemented or raised an error")
+        warnings.warn(f"Operation 'increment' in GraphOperations_EIntContainer is not implemented or raised an error")
 
-@given(instance=GraphOperations::ConstantUtils_strategy)
+@given(instance=GraphOperations_ConstantUtils_strategy)
 @settings(max_examples=50)
-def test_graphoperations::constantutils_instantiation(instance):
-    assert isinstance(instance, GraphOperations::ConstantUtils)
+def test_graphoperations_constantutils_instantiation(instance):
+    assert isinstance(instance, GraphOperations_ConstantUtils)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=GraphOperations::Edge_strategy)
+@given(instance=GraphOperations_Edge_strategy)
 @settings(max_examples=50)
-def test_graphoperations::edge_instantiation(instance):
-    assert isinstance(instance, GraphOperations::Edge)
-
-@given(instance=GraphOperations::Edge_strategy)
-def test_graphoperations::edge_weight_type(instance):
-    assert isinstance(instance.weight, float)
+def test_graphoperations_edge_instantiation(instance):
+    assert isinstance(instance, GraphOperations_Edge)
 
 
-@given(instance=GraphOperations::Edge_strategy)
-def test_graphoperations::edge_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
 
-@given(instance=GraphOperations::Edge_strategy)
-def test_graphoperations::edge_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=GraphOperations::Edge_strategy)
-def test_graphoperations::edge_state_setter(instance):
+@given(instance=GraphOperations_Edge_strategy)
+def test_graphoperations_edge_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
 
-@given(instance=GraphOperations::Triangle_strategy)
+
+
+@given(instance=GraphOperations_Edge_strategy)
+def test_graphoperations_edge_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+@given(instance=GraphOperations_Triangle_strategy)
 @settings(max_examples=50)
-def test_graphoperations::triangle_instantiation(instance):
-    assert isinstance(instance, GraphOperations::Triangle)
+def test_graphoperations_triangle_instantiation(instance):
+    assert isinstance(instance, GraphOperations_Triangle)
 
-@given(instance=GraphOperations::Element_strategy)
+@given(instance=GraphOperations_Element_strategy)
 @settings(max_examples=50)
-def test_graphoperations::element_instantiation(instance):
-    assert isinstance(instance, GraphOperations::Element)
-
-@given(instance=GraphOperations::Element_strategy)
-def test_graphoperations::element_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_graphoperations_element_instantiation(instance):
+    assert isinstance(instance, GraphOperations_Element)
 
 
-@given(instance=GraphOperations::Element_strategy)
-def test_graphoperations::element_id_setter(instance):
+
+@given(instance=GraphOperations_Element_strategy)
+def test_graphoperations_element_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=GraphOperations::Graph_strategy)
+@given(instance=GraphOperations_Graph_strategy)
 @settings(max_examples=50)
-def test_graphoperations::graph_instantiation(instance):
-    assert isinstance(instance, GraphOperations::Graph)
+def test_graphoperations_graph_instantiation(instance):
+    assert isinstance(instance, GraphOperations_Graph)
 
 import warnings
 import copy
@@ -402,9 +390,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::Graph_strategy)
+@given(instance=GraphOperations_Graph_strategy)
 @settings(max_examples=30)
-def test_graphoperations::graph_addedgewithincidentnodes_changes_state(instance):
+def test_graphoperations_graph_addedgewithincidentnodes_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -420,14 +408,14 @@ def test_graphoperations::graph_addedgewithincidentnodes_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addEdgeWithIncidentNodes' in GraphOperations::Graph is empty"
+        assert has_statements, f"Function 'addEdgeWithIncidentNodes' in GraphOperations_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addEdgeWithIncidentNodes' in GraphOperations::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'addEdgeWithIncidentNodes' in GraphOperations_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addEdgeWithIncidentNodes' in GraphOperations::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'addEdgeWithIncidentNodes' in GraphOperations_Graph is not implemented or raised an error")
 
 import warnings
 import copy
@@ -435,98 +423,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::Graph_strategy)
+@given(instance=GraphOperations_Graph_strategy)
 @settings(max_examples=30)
-def test_graphoperations::graph_addnode_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addNode(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addNode).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addNode' in GraphOperations::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addNode' in GraphOperations::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addNode' in GraphOperations::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=GraphOperations::Graph_strategy)
-@settings(max_examples=30)
-def test_graphoperations::graph_emptyoperation_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.emptyOperation()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.emptyOperation).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'emptyOperation' in GraphOperations::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'emptyOperation' in GraphOperations::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'emptyOperation' in GraphOperations::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=GraphOperations::Graph_strategy)
-@settings(max_examples=30)
-def test_graphoperations::graph_addnodewithfixedid_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addNodeWithFixedId()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addNodeWithFixedId).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addNodeWithFixedId' in GraphOperations::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addNodeWithFixedId' in GraphOperations::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addNodeWithFixedId' in GraphOperations::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=GraphOperations::Graph_strategy)
-@settings(max_examples=30)
-def test_graphoperations::graph_addgivennode_changes_state(instance):
+def test_graphoperations_graph_addgivennode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -540,14 +439,14 @@ def test_graphoperations::graph_addgivennode_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addGivenNode' in GraphOperations::Graph is empty"
+        assert has_statements, f"Function 'addGivenNode' in GraphOperations_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addGivenNode' in GraphOperations::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'addGivenNode' in GraphOperations_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addGivenNode' in GraphOperations::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'addGivenNode' in GraphOperations_Graph is not implemented or raised an error")
 
 import warnings
 import copy
@@ -555,67 +454,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::Graph_strategy)
+@given(instance=GraphOperations_Graph_strategy)
 @settings(max_examples=30)
-def test_graphoperations::graph_calculatenodecount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.calculateNodeCount()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.calculateNodeCount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'calculateNodeCount' in GraphOperations::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'calculateNodeCount' in GraphOperations::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'calculateNodeCount' in GraphOperations::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=GraphOperations::Graph_strategy)
-@settings(max_examples=30)
-def test_graphoperations::graph_clear_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.clear()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.clear).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clear' in GraphOperations::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clear' in GraphOperations::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clear' in GraphOperations::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=GraphOperations::Graph_strategy)
-@settings(max_examples=30)
-def test_graphoperations::graph_removeedge_changes_state(instance):
+def test_graphoperations_graph_removeedge_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -629,14 +470,14 @@ def test_graphoperations::graph_removeedge_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEdge' in GraphOperations::Graph is empty"
+        assert has_statements, f"Function 'removeEdge' in GraphOperations_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEdge' in GraphOperations::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'removeEdge' in GraphOperations_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEdge' in GraphOperations::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeEdge' in GraphOperations_Graph is not implemented or raised an error")
 
 import warnings
 import copy
@@ -644,9 +485,96 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::Graph_strategy)
+@given(instance=GraphOperations_Graph_strategy)
 @settings(max_examples=30)
-def test_graphoperations::graph_calculatedoublenodecount_changes_state(instance):
+def test_graphoperations_graph_clear_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.clear()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.clear).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'clear' in GraphOperations_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'clear' in GraphOperations_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'clear' in GraphOperations_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=GraphOperations_Graph_strategy)
+@settings(max_examples=30)
+def test_graphoperations_graph_emptyoperation_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.emptyOperation()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.emptyOperation).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'emptyOperation' in GraphOperations_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'emptyOperation' in GraphOperations_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'emptyOperation' in GraphOperations_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=GraphOperations_Graph_strategy)
+@settings(max_examples=30)
+def test_graphoperations_graph_addnodewithfixedid_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addNodeWithFixedId()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addNodeWithFixedId).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addNodeWithFixedId' in GraphOperations_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addNodeWithFixedId' in GraphOperations_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addNodeWithFixedId' in GraphOperations_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=GraphOperations_Graph_strategy)
+@settings(max_examples=30)
+def test_graphoperations_graph_calculatedoublenodecount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -658,14 +586,14 @@ def test_graphoperations::graph_calculatedoublenodecount_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'calculateDoubleNodeCount' in GraphOperations::Graph is empty"
+        assert has_statements, f"Function 'calculateDoubleNodeCount' in GraphOperations_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'calculateDoubleNodeCount' in GraphOperations::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'calculateDoubleNodeCount' in GraphOperations_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'calculateDoubleNodeCount' in GraphOperations::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'calculateDoubleNodeCount' in GraphOperations_Graph is not implemented or raised an error")
 
 import warnings
 import copy
@@ -673,9 +601,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::Graph_strategy)
+@given(instance=GraphOperations_Graph_strategy)
 @settings(max_examples=30)
-def test_graphoperations::graph_isnode_changes_state(instance):
+def test_graphoperations_graph_isnode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -689,38 +617,92 @@ def test_graphoperations::graph_isnode_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isNode' in GraphOperations::Graph is empty"
+        assert has_statements, f"Function 'isNode' in GraphOperations_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isNode' in GraphOperations::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'isNode' in GraphOperations_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isNode' in GraphOperations::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'isNode' in GraphOperations_Graph is not implemented or raised an error")
 
-@given(instance=GraphOperations::Node_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=GraphOperations_Graph_strategy)
+@settings(max_examples=30)
+def test_graphoperations_graph_addnode_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addNode(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addNode).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addNode' in GraphOperations_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addNode' in GraphOperations_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addNode' in GraphOperations_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=GraphOperations_Graph_strategy)
+@settings(max_examples=30)
+def test_graphoperations_graph_calculatenodecount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.calculateNodeCount()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.calculateNodeCount).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'calculateNodeCount' in GraphOperations_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'calculateNodeCount' in GraphOperations_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'calculateNodeCount' in GraphOperations_Graph is not implemented or raised an error")
+
+@given(instance=GraphOperations_Node_strategy)
 @settings(max_examples=50)
-def test_graphoperations::node_instantiation(instance):
-    assert isinstance(instance, GraphOperations::Node)
-
-@given(instance=GraphOperations::Node_strategy)
-def test_graphoperations::node_degree_type(instance):
-    assert isinstance(instance.degree, float)
+def test_graphoperations_node_instantiation(instance):
+    assert isinstance(instance, GraphOperations_Node)
 
 
-@given(instance=GraphOperations::Node_strategy)
-def test_graphoperations::node_degree_setter(instance):
+
+@given(instance=GraphOperations_Node_strategy)
+def test_graphoperations_node_degree_setter(instance):
     original = instance.degree
     instance.degree = original
     assert instance.degree == original
 
-@given(instance=GraphOperations::Node_strategy)
-def test_graphoperations::node_depth_type(instance):
-    assert isinstance(instance.depth, int)
 
 
-@given(instance=GraphOperations::Node_strategy)
-def test_graphoperations::node_depth_setter(instance):
+@given(instance=GraphOperations_Node_strategy)
+def test_graphoperations_node_depth_setter(instance):
     original = instance.depth
     instance.depth = original
     assert instance.depth == original
@@ -731,38 +713,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=GraphOperations::Node_strategy)
+@given(instance=GraphOperations_Node_strategy)
 @settings(max_examples=30)
-def test_graphoperations::node_assignidcac_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.assignIdCAC()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.assignIdCAC).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'assignIdCAC' in GraphOperations::Node is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'assignIdCAC' in GraphOperations::Node did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'assignIdCAC' in GraphOperations::Node is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=GraphOperations::Node_strategy)
-@settings(max_examples=30)
-def test_graphoperations::node_calculatedegree_changes_state(instance):
+def test_graphoperations_node_calculatedegree_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -774,11 +727,40 @@ def test_graphoperations::node_calculatedegree_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'calculateDegree' in GraphOperations::Node is empty"
+        assert has_statements, f"Function 'calculateDegree' in GraphOperations_Node is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'calculateDegree' in GraphOperations::Node did not change state; check implementation")
+            warnings.warn(f"Operation 'calculateDegree' in GraphOperations_Node did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'calculateDegree' in GraphOperations::Node is not implemented or raised an error")
+        warnings.warn(f"Operation 'calculateDegree' in GraphOperations_Node is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=GraphOperations_Node_strategy)
+@settings(max_examples=30)
+def test_graphoperations_node_assignidcac_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.assignIdCAC()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.assignIdCAC).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'assignIdCAC' in GraphOperations_Node is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'assignIdCAC' in GraphOperations_Node did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'assignIdCAC' in GraphOperations_Node is not implemented or raised an error")

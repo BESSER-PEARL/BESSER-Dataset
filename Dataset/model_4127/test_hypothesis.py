@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Primary,
-    mathInterpeter::Number,
-    mathInterpeter::Parenthesis,
+    mathInterpeter_Number,
+    mathInterpeter_Parenthesis,
     Exp,
-    mathInterpeter::Plus,
-    mathInterpeter::Div,
-    mathInterpeter::Minus,
-    mathInterpeter::Mult,
-    mathInterpeter::Primary,
-    mathInterpeter::Exp,
-    mathInterpeter::MathExp,
+    mathInterpeter_Plus,
+    mathInterpeter_Div,
+    mathInterpeter_Minus,
+    mathInterpeter_Mult,
+    mathInterpeter_Primary,
+    mathInterpeter_Exp,
+    mathInterpeter_MathExp,
 )
 
 # =============================================================================
@@ -39,23 +39,23 @@ def test_primary_constructor_args():
 
 
 
-def test_mathinterpeter::number_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Number)
+def test_mathinterpeter_number_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Number)
 
 
-def test_mathinterpeter::number_constructor_exists():
-    assert callable(mathInterpeter::Number.__init__)
+def test_mathinterpeter_number_constructor_exists():
+    assert callable(mathInterpeter_Number.__init__)
 
 
-def test_mathinterpeter::number_constructor_args():
-    sig = inspect.signature(mathInterpeter::Number.__init__)
+def test_mathinterpeter_number_constructor_args():
+    sig = inspect.signature(mathInterpeter_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mathinterpeter::number_has_value():
-    assert hasattr(mathInterpeter::Number, "value")
+def test_mathinterpeter_number_has_value():
+    assert hasattr(mathInterpeter_Number, "value")
     descriptor = None
-    for klass in mathInterpeter::Number.__mro__:
+    for klass in mathInterpeter_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -63,16 +63,16 @@ def test_mathinterpeter::number_has_value():
 
 
 
-def test_mathinterpeter::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Parenthesis)
+def test_mathinterpeter_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Parenthesis)
 
 
-def test_mathinterpeter::parenthesis_constructor_exists():
-    assert callable(mathInterpeter::Parenthesis.__init__)
+def test_mathinterpeter_parenthesis_constructor_exists():
+    assert callable(mathInterpeter_Parenthesis.__init__)
 
 
-def test_mathinterpeter::parenthesis_constructor_args():
-    sig = inspect.signature(mathInterpeter::Parenthesis.__init__)
+def test_mathinterpeter_parenthesis_constructor_args():
+    sig = inspect.signature(mathInterpeter_Parenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -91,100 +91,100 @@ def test_exp_constructor_args():
 
 
 
-def test_mathinterpeter::plus_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Plus)
+def test_mathinterpeter_plus_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Plus)
 
 
-def test_mathinterpeter::plus_constructor_exists():
-    assert callable(mathInterpeter::Plus.__init__)
+def test_mathinterpeter_plus_constructor_exists():
+    assert callable(mathInterpeter_Plus.__init__)
 
 
-def test_mathinterpeter::plus_constructor_args():
-    sig = inspect.signature(mathInterpeter::Plus.__init__)
+def test_mathinterpeter_plus_constructor_args():
+    sig = inspect.signature(mathInterpeter_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpeter::div_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Div)
+def test_mathinterpeter_div_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Div)
 
 
-def test_mathinterpeter::div_constructor_exists():
-    assert callable(mathInterpeter::Div.__init__)
+def test_mathinterpeter_div_constructor_exists():
+    assert callable(mathInterpeter_Div.__init__)
 
 
-def test_mathinterpeter::div_constructor_args():
-    sig = inspect.signature(mathInterpeter::Div.__init__)
+def test_mathinterpeter_div_constructor_args():
+    sig = inspect.signature(mathInterpeter_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpeter::minus_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Minus)
+def test_mathinterpeter_minus_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Minus)
 
 
-def test_mathinterpeter::minus_constructor_exists():
-    assert callable(mathInterpeter::Minus.__init__)
+def test_mathinterpeter_minus_constructor_exists():
+    assert callable(mathInterpeter_Minus.__init__)
 
 
-def test_mathinterpeter::minus_constructor_args():
-    sig = inspect.signature(mathInterpeter::Minus.__init__)
+def test_mathinterpeter_minus_constructor_args():
+    sig = inspect.signature(mathInterpeter_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpeter::mult_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Mult)
+def test_mathinterpeter_mult_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Mult)
 
 
-def test_mathinterpeter::mult_constructor_exists():
-    assert callable(mathInterpeter::Mult.__init__)
+def test_mathinterpeter_mult_constructor_exists():
+    assert callable(mathInterpeter_Mult.__init__)
 
 
-def test_mathinterpeter::mult_constructor_args():
-    sig = inspect.signature(mathInterpeter::Mult.__init__)
+def test_mathinterpeter_mult_constructor_args():
+    sig = inspect.signature(mathInterpeter_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpeter::primary_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Primary)
+def test_mathinterpeter_primary_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Primary)
 
 
-def test_mathinterpeter::primary_constructor_exists():
-    assert callable(mathInterpeter::Primary.__init__)
+def test_mathinterpeter_primary_constructor_exists():
+    assert callable(mathInterpeter_Primary.__init__)
 
 
-def test_mathinterpeter::primary_constructor_args():
-    sig = inspect.signature(mathInterpeter::Primary.__init__)
+def test_mathinterpeter_primary_constructor_args():
+    sig = inspect.signature(mathInterpeter_Primary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpeter::exp_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::Exp)
+def test_mathinterpeter_exp_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_Exp)
 
 
-def test_mathinterpeter::exp_constructor_exists():
-    assert callable(mathInterpeter::Exp.__init__)
+def test_mathinterpeter_exp_constructor_exists():
+    assert callable(mathInterpeter_Exp.__init__)
 
 
-def test_mathinterpeter::exp_constructor_args():
-    sig = inspect.signature(mathInterpeter::Exp.__init__)
+def test_mathinterpeter_exp_constructor_args():
+    sig = inspect.signature(mathInterpeter_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpeter::mathexp_is_not_abstract():
-    assert not inspect.isabstract(mathInterpeter::MathExp)
+def test_mathinterpeter_mathexp_is_not_abstract():
+    assert not inspect.isabstract(mathInterpeter_MathExp)
 
 
-def test_mathinterpeter::mathexp_constructor_exists():
-    assert callable(mathInterpeter::MathExp.__init__)
+def test_mathinterpeter_mathexp_constructor_exists():
+    assert callable(mathInterpeter_MathExp.__init__)
 
 
-def test_mathinterpeter::mathexp_constructor_args():
-    sig = inspect.signature(mathInterpeter::MathExp.__init__)
+def test_mathinterpeter_mathexp_constructor_args():
+    sig = inspect.signature(mathInterpeter_MathExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -202,37 +202,37 @@ safe_text = st.text(
 Primary_strategy = st.builds(
     Primary,
 )
-mathInterpeter::Number_strategy = st.builds(
-    mathInterpeter::Number,
+mathInterpeter_Number_strategy = st.builds(
+    mathInterpeter_Number,
     value=
         st.integers()
 )
-mathInterpeter::Parenthesis_strategy = st.builds(
-    mathInterpeter::Parenthesis,
+mathInterpeter_Parenthesis_strategy = st.builds(
+    mathInterpeter_Parenthesis,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-mathInterpeter::Plus_strategy = st.builds(
-    mathInterpeter::Plus,
+mathInterpeter_Plus_strategy = st.builds(
+    mathInterpeter_Plus,
 )
-mathInterpeter::Div_strategy = st.builds(
-    mathInterpeter::Div,
+mathInterpeter_Div_strategy = st.builds(
+    mathInterpeter_Div,
 )
-mathInterpeter::Minus_strategy = st.builds(
-    mathInterpeter::Minus,
+mathInterpeter_Minus_strategy = st.builds(
+    mathInterpeter_Minus,
 )
-mathInterpeter::Mult_strategy = st.builds(
-    mathInterpeter::Mult,
+mathInterpeter_Mult_strategy = st.builds(
+    mathInterpeter_Mult,
 )
-mathInterpeter::Primary_strategy = st.builds(
-    mathInterpeter::Primary,
+mathInterpeter_Primary_strategy = st.builds(
+    mathInterpeter_Primary,
 )
-mathInterpeter::Exp_strategy = st.builds(
-    mathInterpeter::Exp,
+mathInterpeter_Exp_strategy = st.builds(
+    mathInterpeter_Exp,
 )
-mathInterpeter::MathExp_strategy = st.builds(
-    mathInterpeter::MathExp,
+mathInterpeter_MathExp_strategy = st.builds(
+    mathInterpeter_MathExp,
 )
 
 @given(instance=Primary_strategy)
@@ -240,63 +240,60 @@ mathInterpeter::MathExp_strategy = st.builds(
 def test_primary_instantiation(instance):
     assert isinstance(instance, Primary)
 
-@given(instance=mathInterpeter::Number_strategy)
+@given(instance=mathInterpeter_Number_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::number_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Number)
-
-@given(instance=mathInterpeter::Number_strategy)
-def test_mathinterpeter::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_mathinterpeter_number_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Number)
 
 
-@given(instance=mathInterpeter::Number_strategy)
-def test_mathinterpeter::number_value_setter(instance):
+
+@given(instance=mathInterpeter_Number_strategy)
+def test_mathinterpeter_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mathInterpeter::Parenthesis_strategy)
+@given(instance=mathInterpeter_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::parenthesis_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Parenthesis)
+def test_mathinterpeter_parenthesis_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Parenthesis)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=mathInterpeter::Plus_strategy)
+@given(instance=mathInterpeter_Plus_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::plus_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Plus)
+def test_mathinterpeter_plus_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Plus)
 
-@given(instance=mathInterpeter::Div_strategy)
+@given(instance=mathInterpeter_Div_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::div_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Div)
+def test_mathinterpeter_div_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Div)
 
-@given(instance=mathInterpeter::Minus_strategy)
+@given(instance=mathInterpeter_Minus_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::minus_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Minus)
+def test_mathinterpeter_minus_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Minus)
 
-@given(instance=mathInterpeter::Mult_strategy)
+@given(instance=mathInterpeter_Mult_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::mult_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Mult)
+def test_mathinterpeter_mult_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Mult)
 
-@given(instance=mathInterpeter::Primary_strategy)
+@given(instance=mathInterpeter_Primary_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::primary_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Primary)
+def test_mathinterpeter_primary_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Primary)
 
-@given(instance=mathInterpeter::Exp_strategy)
+@given(instance=mathInterpeter_Exp_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::exp_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::Exp)
+def test_mathinterpeter_exp_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_Exp)
 
-@given(instance=mathInterpeter::MathExp_strategy)
+@given(instance=mathInterpeter_MathExp_strategy)
 @settings(max_examples=50)
-def test_mathinterpeter::mathexp_instantiation(instance):
-    assert isinstance(instance, mathInterpeter::MathExp)
+def test_mathinterpeter_mathexp_instantiation(instance):
+    assert isinstance(instance, mathInterpeter_MathExp)

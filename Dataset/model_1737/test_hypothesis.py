@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Ent,
-    bookstore::Book,
-    bookstore::Cd,
-    bookstore::Magazine,
-    bookstore::Dvd,
-    bookstore::Person,
-    bookstore::Ent,
-    bookstore::Model,
+    bookstore_Dvd,
+    bookstore_Cd,
+    bookstore_Magazine,
+    bookstore_Book,
+    bookstore_Person,
+    bookstore_Ent,
+    bookstore_Model,
 )
 
 # =============================================================================
@@ -36,67 +36,57 @@ def test_ent_constructor_args():
 
 
 
-def test_bookstore::book_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Book)
+def test_bookstore_dvd_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Dvd)
 
 
-def test_bookstore::book_constructor_exists():
-    assert callable(bookstore::Book.__init__)
+def test_bookstore_dvd_constructor_exists():
+    assert callable(bookstore_Dvd.__init__)
 
 
-def test_bookstore::book_constructor_args():
-    sig = inspect.signature(bookstore::Book.__init__)
+def test_bookstore_dvd_constructor_args():
+    sig = inspect.signature(bookstore_Dvd.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
-    assert "pages" in params, "Missing parameter 'pages'"
 
-def test_bookstore::book_has_title():
-    assert hasattr(bookstore::Book, "title")
+def test_bookstore_dvd_has_title():
+    assert hasattr(bookstore_Dvd, "title")
     descriptor = None
-    for klass in bookstore::Book.__mro__:
+    for klass in bookstore_Dvd.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_bookstore::book_has_pages():
-    assert hasattr(bookstore::Book, "pages")
-    descriptor = None
-    for klass in bookstore::Book.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_bookstore::cd_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Cd)
-
-
-def test_bookstore::cd_constructor_exists():
-    assert callable(bookstore::Cd.__init__)
+def test_bookstore_cd_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Cd)
 
 
-def test_bookstore::cd_constructor_args():
-    sig = inspect.signature(bookstore::Cd.__init__)
+def test_bookstore_cd_constructor_exists():
+    assert callable(bookstore_Cd.__init__)
+
+
+def test_bookstore_cd_constructor_args():
+    sig = inspect.signature(bookstore_Cd.__init__)
     params = list(sig.parameters.keys())
     assert "albumName" in params, "Missing parameter 'albumName'"
     assert "bandArtist" in params, "Missing parameter 'bandArtist'"
 
-def test_bookstore::cd_has_albumName():
-    assert hasattr(bookstore::Cd, "albumName")
+def test_bookstore_cd_has_albumName():
+    assert hasattr(bookstore_Cd, "albumName")
     descriptor = None
-    for klass in bookstore::Cd.__mro__:
+    for klass in bookstore_Cd.__mro__:
         if "albumName" in klass.__dict__:
             descriptor = klass.__dict__["albumName"]
             break
     assert isinstance(descriptor, property)
 
-def test_bookstore::cd_has_bandArtist():
-    assert hasattr(bookstore::Cd, "bandArtist")
+def test_bookstore_cd_has_bandArtist():
+    assert hasattr(bookstore_Cd, "bandArtist")
     descriptor = None
-    for klass in bookstore::Cd.__mro__:
+    for klass in bookstore_Cd.__mro__:
         if "bandArtist" in klass.__dict__:
             descriptor = klass.__dict__["bandArtist"]
             break
@@ -104,125 +94,135 @@ def test_bookstore::cd_has_bandArtist():
 
 
 
-def test_bookstore::magazine_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Magazine)
+def test_bookstore_magazine_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Magazine)
 
 
-def test_bookstore::magazine_constructor_exists():
-    assert callable(bookstore::Magazine.__init__)
+def test_bookstore_magazine_constructor_exists():
+    assert callable(bookstore_Magazine.__init__)
 
 
-def test_bookstore::magazine_constructor_args():
-    sig = inspect.signature(bookstore::Magazine.__init__)
+def test_bookstore_magazine_constructor_args():
+    sig = inspect.signature(bookstore_Magazine.__init__)
     params = list(sig.parameters.keys())
-    assert "pages" in params, "Missing parameter 'pages'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "version" in params, "Missing parameter 'version'"
+    assert "pages" in params, "Missing parameter 'pages'"
 
-def test_bookstore::magazine_has_pages():
-    assert hasattr(bookstore::Magazine, "pages")
+def test_bookstore_magazine_has_title():
+    assert hasattr(bookstore_Magazine, "title")
     descriptor = None
-    for klass in bookstore::Magazine.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
+    for klass in bookstore_Magazine.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_bookstore::magazine_has_version():
-    assert hasattr(bookstore::Magazine, "version")
+def test_bookstore_magazine_has_version():
+    assert hasattr(bookstore_Magazine, "version")
     descriptor = None
-    for klass in bookstore::Magazine.__mro__:
+    for klass in bookstore_Magazine.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_bookstore::magazine_has_title():
-    assert hasattr(bookstore::Magazine, "title")
+def test_bookstore_magazine_has_pages():
+    assert hasattr(bookstore_Magazine, "pages")
     descriptor = None
-    for klass in bookstore::Magazine.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
+    for klass in bookstore_Magazine.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_bookstore::dvd_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Dvd)
+def test_bookstore_book_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Book)
 
 
-def test_bookstore::dvd_constructor_exists():
-    assert callable(bookstore::Dvd.__init__)
+def test_bookstore_book_constructor_exists():
+    assert callable(bookstore_Book.__init__)
 
 
-def test_bookstore::dvd_constructor_args():
-    sig = inspect.signature(bookstore::Dvd.__init__)
+def test_bookstore_book_constructor_args():
+    sig = inspect.signature(bookstore_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
+    assert "pages" in params, "Missing parameter 'pages'"
 
-def test_bookstore::dvd_has_title():
-    assert hasattr(bookstore::Dvd, "title")
+def test_bookstore_book_has_title():
+    assert hasattr(bookstore_Book, "title")
     descriptor = None
-    for klass in bookstore::Dvd.__mro__:
+    for klass in bookstore_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_bookstore::person_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Person)
-
-
-def test_bookstore::person_constructor_exists():
-    assert callable(bookstore::Person.__init__)
-
-
-def test_bookstore::person_constructor_args():
-    sig = inspect.signature(bookstore::Person.__init__)
-    params = list(sig.parameters.keys())
-    assert "achternaam" in params, "Missing parameter 'achternaam'"
-    assert "voornaam" in params, "Missing parameter 'voornaam'"
-
-def test_bookstore::person_has_achternaam():
-    assert hasattr(bookstore::Person, "achternaam")
+def test_bookstore_book_has_pages():
+    assert hasattr(bookstore_Book, "pages")
     descriptor = None
-    for klass in bookstore::Person.__mro__:
-        if "achternaam" in klass.__dict__:
-            descriptor = klass.__dict__["achternaam"]
+    for klass in bookstore_Book.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
             break
     assert isinstance(descriptor, property)
 
-def test_bookstore::person_has_voornaam():
-    assert hasattr(bookstore::Person, "voornaam")
+
+
+def test_bookstore_person_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Person)
+
+
+def test_bookstore_person_constructor_exists():
+    assert callable(bookstore_Person.__init__)
+
+
+def test_bookstore_person_constructor_args():
+    sig = inspect.signature(bookstore_Person.__init__)
+    params = list(sig.parameters.keys())
+    assert "voornaam" in params, "Missing parameter 'voornaam'"
+    assert "achternaam" in params, "Missing parameter 'achternaam'"
+
+def test_bookstore_person_has_voornaam():
+    assert hasattr(bookstore_Person, "voornaam")
     descriptor = None
-    for klass in bookstore::Person.__mro__:
+    for klass in bookstore_Person.__mro__:
         if "voornaam" in klass.__dict__:
             descriptor = klass.__dict__["voornaam"]
             break
     assert isinstance(descriptor, property)
 
+def test_bookstore_person_has_achternaam():
+    assert hasattr(bookstore_Person, "achternaam")
+    descriptor = None
+    for klass in bookstore_Person.__mro__:
+        if "achternaam" in klass.__dict__:
+            descriptor = klass.__dict__["achternaam"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_bookstore::ent_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Ent)
+
+def test_bookstore_ent_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Ent)
 
 
-def test_bookstore::ent_constructor_exists():
-    assert callable(bookstore::Ent.__init__)
+def test_bookstore_ent_constructor_exists():
+    assert callable(bookstore_Ent.__init__)
 
 
-def test_bookstore::ent_constructor_args():
-    sig = inspect.signature(bookstore::Ent.__init__)
+def test_bookstore_ent_constructor_args():
+    sig = inspect.signature(bookstore_Ent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_bookstore::ent_has_name():
-    assert hasattr(bookstore::Ent, "name")
+def test_bookstore_ent_has_name():
+    assert hasattr(bookstore_Ent, "name")
     descriptor = None
-    for klass in bookstore::Ent.__mro__:
+    for klass in bookstore_Ent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -230,16 +230,16 @@ def test_bookstore::ent_has_name():
 
 
 
-def test_bookstore::model_is_not_abstract():
-    assert not inspect.isabstract(bookstore::Model)
+def test_bookstore_model_is_not_abstract():
+    assert not inspect.isabstract(bookstore_Model)
 
 
-def test_bookstore::model_constructor_exists():
-    assert callable(bookstore::Model.__init__)
+def test_bookstore_model_constructor_exists():
+    assert callable(bookstore_Model.__init__)
 
 
-def test_bookstore::model_constructor_args():
-    sig = inspect.signature(bookstore::Model.__init__)
+def test_bookstore_model_constructor_args():
+    sig = inspect.signature(bookstore_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,48 +257,48 @@ safe_text = st.text(
 Ent_strategy = st.builds(
     Ent,
 )
-bookstore::Book_strategy = st.builds(
-    bookstore::Book,
+bookstore_Dvd_strategy = st.builds(
+    bookstore_Dvd,
     title=
-        safe_text,
-    pages=
-        st.integers()
+        safe_text
 )
-bookstore::Cd_strategy = st.builds(
-    bookstore::Cd,
+bookstore_Cd_strategy = st.builds(
+    bookstore_Cd,
     albumName=
         safe_text,
     bandArtist=
         safe_text
 )
-bookstore::Magazine_strategy = st.builds(
-    bookstore::Magazine,
-    pages=
-        st.integers(),
+bookstore_Magazine_strategy = st.builds(
+    bookstore_Magazine,
+    title=
+        safe_text,
     version=
         safe_text,
-    title=
-        safe_text
+    pages=
+        st.integers()
 )
-bookstore::Dvd_strategy = st.builds(
-    bookstore::Dvd,
+bookstore_Book_strategy = st.builds(
+    bookstore_Book,
     title=
-        safe_text
-)
-bookstore::Person_strategy = st.builds(
-    bookstore::Person,
-    achternaam=
         safe_text,
+    pages=
+        st.integers()
+)
+bookstore_Person_strategy = st.builds(
+    bookstore_Person,
     voornaam=
+        safe_text,
+    achternaam=
         safe_text
 )
-bookstore::Ent_strategy = st.builds(
-    bookstore::Ent,
+bookstore_Ent_strategy = st.builds(
+    bookstore_Ent,
     name=
         safe_text
 )
-bookstore::Model_strategy = st.builds(
-    bookstore::Model,
+bookstore_Model_strategy = st.builds(
+    bookstore_Model,
 )
 
 @given(instance=Ent_strategy)
@@ -306,158 +306,125 @@ bookstore::Model_strategy = st.builds(
 def test_ent_instantiation(instance):
     assert isinstance(instance, Ent)
 
-@given(instance=bookstore::Book_strategy)
+@given(instance=bookstore_Dvd_strategy)
 @settings(max_examples=50)
-def test_bookstore::book_instantiation(instance):
-    assert isinstance(instance, bookstore::Book)
-
-@given(instance=bookstore::Book_strategy)
-def test_bookstore::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bookstore_dvd_instantiation(instance):
+    assert isinstance(instance, bookstore_Dvd)
 
 
-@given(instance=bookstore::Book_strategy)
-def test_bookstore::book_title_setter(instance):
+
+@given(instance=bookstore_Dvd_strategy)
+def test_bookstore_dvd_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=bookstore::Book_strategy)
-def test_bookstore::book_pages_type(instance):
-    assert isinstance(instance.pages, int)
-
-
-@given(instance=bookstore::Book_strategy)
-def test_bookstore::book_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=bookstore::Cd_strategy)
+@given(instance=bookstore_Cd_strategy)
 @settings(max_examples=50)
-def test_bookstore::cd_instantiation(instance):
-    assert isinstance(instance, bookstore::Cd)
-
-@given(instance=bookstore::Cd_strategy)
-def test_bookstore::cd_albumName_type(instance):
-    assert isinstance(instance.albumName, str)
+def test_bookstore_cd_instantiation(instance):
+    assert isinstance(instance, bookstore_Cd)
 
 
-@given(instance=bookstore::Cd_strategy)
-def test_bookstore::cd_albumName_setter(instance):
+
+@given(instance=bookstore_Cd_strategy)
+def test_bookstore_cd_albumName_setter(instance):
     original = instance.albumName
     instance.albumName = original
     assert instance.albumName == original
 
-@given(instance=bookstore::Cd_strategy)
-def test_bookstore::cd_bandArtist_type(instance):
-    assert isinstance(instance.bandArtist, str)
 
 
-@given(instance=bookstore::Cd_strategy)
-def test_bookstore::cd_bandArtist_setter(instance):
+@given(instance=bookstore_Cd_strategy)
+def test_bookstore_cd_bandArtist_setter(instance):
     original = instance.bandArtist
     instance.bandArtist = original
     assert instance.bandArtist == original
 
-@given(instance=bookstore::Magazine_strategy)
+@given(instance=bookstore_Magazine_strategy)
 @settings(max_examples=50)
-def test_bookstore::magazine_instantiation(instance):
-    assert isinstance(instance, bookstore::Magazine)
-
-@given(instance=bookstore::Magazine_strategy)
-def test_bookstore::magazine_pages_type(instance):
-    assert isinstance(instance.pages, int)
+def test_bookstore_magazine_instantiation(instance):
+    assert isinstance(instance, bookstore_Magazine)
 
 
-@given(instance=bookstore::Magazine_strategy)
-def test_bookstore::magazine_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
 
-@given(instance=bookstore::Magazine_strategy)
-def test_bookstore::magazine_version_type(instance):
-    assert isinstance(instance.version, str)
+@given(instance=bookstore_Magazine_strategy)
+def test_bookstore_magazine_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
 
 
-@given(instance=bookstore::Magazine_strategy)
-def test_bookstore::magazine_version_setter(instance):
+
+@given(instance=bookstore_Magazine_strategy)
+def test_bookstore_magazine_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=bookstore::Magazine_strategy)
-def test_bookstore::magazine_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=bookstore::Magazine_strategy)
-def test_bookstore::magazine_title_setter(instance):
+@given(instance=bookstore_Magazine_strategy)
+def test_bookstore_magazine_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+@given(instance=bookstore_Book_strategy)
+@settings(max_examples=50)
+def test_bookstore_book_instantiation(instance):
+    assert isinstance(instance, bookstore_Book)
+
+
+
+@given(instance=bookstore_Book_strategy)
+def test_bookstore_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=bookstore::Dvd_strategy)
+
+
+@given(instance=bookstore_Book_strategy)
+def test_bookstore_book_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+@given(instance=bookstore_Person_strategy)
 @settings(max_examples=50)
-def test_bookstore::dvd_instantiation(instance):
-    assert isinstance(instance, bookstore::Dvd)
-
-@given(instance=bookstore::Dvd_strategy)
-def test_bookstore::dvd_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bookstore_person_instantiation(instance):
+    assert isinstance(instance, bookstore_Person)
 
 
-@given(instance=bookstore::Dvd_strategy)
-def test_bookstore::dvd_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=bookstore::Person_strategy)
-@settings(max_examples=50)
-def test_bookstore::person_instantiation(instance):
-    assert isinstance(instance, bookstore::Person)
-
-@given(instance=bookstore::Person_strategy)
-def test_bookstore::person_achternaam_type(instance):
-    assert isinstance(instance.achternaam, str)
-
-
-@given(instance=bookstore::Person_strategy)
-def test_bookstore::person_achternaam_setter(instance):
-    original = instance.achternaam
-    instance.achternaam = original
-    assert instance.achternaam == original
-
-@given(instance=bookstore::Person_strategy)
-def test_bookstore::person_voornaam_type(instance):
-    assert isinstance(instance.voornaam, str)
-
-
-@given(instance=bookstore::Person_strategy)
-def test_bookstore::person_voornaam_setter(instance):
+@given(instance=bookstore_Person_strategy)
+def test_bookstore_person_voornaam_setter(instance):
     original = instance.voornaam
     instance.voornaam = original
     assert instance.voornaam == original
 
-@given(instance=bookstore::Ent_strategy)
+
+
+@given(instance=bookstore_Person_strategy)
+def test_bookstore_person_achternaam_setter(instance):
+    original = instance.achternaam
+    instance.achternaam = original
+    assert instance.achternaam == original
+
+@given(instance=bookstore_Ent_strategy)
 @settings(max_examples=50)
-def test_bookstore::ent_instantiation(instance):
-    assert isinstance(instance, bookstore::Ent)
-
-@given(instance=bookstore::Ent_strategy)
-def test_bookstore::ent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_bookstore_ent_instantiation(instance):
+    assert isinstance(instance, bookstore_Ent)
 
 
-@given(instance=bookstore::Ent_strategy)
-def test_bookstore::ent_name_setter(instance):
+
+@given(instance=bookstore_Ent_strategy)
+def test_bookstore_ent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=bookstore::Model_strategy)
+@given(instance=bookstore_Model_strategy)
 @settings(max_examples=50)
-def test_bookstore::model_instantiation(instance):
-    assert isinstance(instance, bookstore::Model)
+def test_bookstore_model_instantiation(instance):
+    assert isinstance(instance, bookstore_Model)

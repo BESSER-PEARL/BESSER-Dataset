@@ -3,70 +3,70 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ocl::type::ESignal,
+from python_code import (
+    ocl_type_ESignal,
     ECollectionType,
-    ocl::type::ESetType,
-    ocl::type::ESequenceType,
-    ocl::type::EBagType,
-    ocl::type::EOrderedSetType,
+    ocl_type_ESetType,
+    ocl_type_ESequenceType,
+    ocl_type_EBagType,
+    ocl_type_EOrderedSetType,
     EDataType,
-    ocl::type::ETupleType,
-    ocl::type::EPrimitiveType,
-    ocl::type::ECollectionType,
+    ocl_type_ETupleType,
+    ocl_type_EPrimitiveType,
+    ocl_type_ECollectionType,
     ESignal,
-    ocl::type::EClassifier,
+    ocl_type_EClassifier,
     EFeatureCallExp,
-    ocl::exp::EOperationCallExp,
-    ocl::exp::ENavigationCallExp,
+    ocl_exp_EOperationCallExp,
+    ocl_exp_ENavigationCallExp,
     ELiteralExp,
-    ocl::exp::EPrimitiveType,
+    ocl_exp_EPrimitiveType,
     ENumericLiteralExp,
-    ocl::exp::EIntegerLiteralExp,
+    ocl_exp_EIntegerLiteralExp,
     EOperationCallExp,
     EIfExp,
     EIterateExp,
     ELoopExp,
-    ocl::exp::EIterateExp,
-    ocl::exp::EVariable,
+    ocl_exp_EIterateExp,
+    ocl_exp_EVariable,
     EPrimitiveType,
-    ocl::exp::EStringLiteralExp,
-    ocl::exp::EBooleanLiteralExp,
-    ocl::exp::ENumericLiteralExp,
+    ocl_exp_EBooleanLiteralExp,
+    ocl_exp_EStringLiteralExp,
+    ocl_exp_ENumericLiteralExp,
     ENavigationCallExp,
-    ocl::exp::EAssociationClassCallExp,
+    ocl_exp_EAssociationClassCallExp,
     ECallExp,
-    ocl::exp::EFeatureCallExp,
-    ocl::exp::ELoopExp,
+    ocl_exp_EFeatureCallExp,
+    ocl_exp_ELoopExp,
     EVariable,
     EOclExpression,
-    ocl::exp::EMessageExp,
-    ocl::exp::ELiteralExp,
-    ocl::exp::ECallExp,
-    ocl::exp::EIfExp,
-    ocl::exp::EStateExp,
-    ocl::exp::ETypeExp,
-    ocl::exp::EVariableExp,
-    ocl::exp::EOclExpression,
-    ocl::exp::EIteratorExp,
-    ocl::exp::EPropertyCallExp,
-    ocl::dm::EAttribute,
-    ocl::dm::EDataModel,
+    ocl_exp_ELiteralExp,
+    ocl_exp_EIfExp,
+    ocl_exp_EStateExp,
+    ocl_exp_EMessageExp,
+    ocl_exp_ETypeExp,
+    ocl_exp_ECallExp,
+    ocl_exp_EVariableExp,
+    ocl_exp_EOclExpression,
+    ocl_exp_EIteratorExp,
+    ocl_exp_EPropertyCallExp,
+    ocl_dm_EAttribute,
+    ocl_dm_EDataModel,
     EEntity,
-    ocl::dm::EAssociationEnd,
+    ocl_dm_EAssociationEnd,
     EAttribute,
     EAssociationEnd,
     EClassifier,
-    ocl::type::EVoidType,
-    ocl::type::EMessageType,
-    ocl::type::EAnyType,
-    ocl::type::EDataType,
-    ocl::type::EInvalidType,
-    ocl::dm::EEntity,
-    EOperator,
+    ocl_type_EVoidType,
+    ocl_type_EMessageType,
+    ocl_type_EAnyType,
+    ocl_type_EDataType,
+    ocl_type_EInvalidType,
+    ocl_dm_EEntity,
     EIteratorKind,
+    EOperator,
     EMultiplicity,
 )
 
@@ -76,16 +76,16 @@ from classes import (
 
 
 
-def test_ocl::type::esignal_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::ESignal)
+def test_ocl_type_esignal_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_ESignal)
 
 
-def test_ocl::type::esignal_constructor_exists():
-    assert callable(ocl::type::ESignal.__init__)
+def test_ocl_type_esignal_constructor_exists():
+    assert callable(ocl_type_ESignal.__init__)
 
 
-def test_ocl::type::esignal_constructor_args():
-    sig = inspect.signature(ocl::type::ESignal.__init__)
+def test_ocl_type_esignal_constructor_args():
+    sig = inspect.signature(ocl_type_ESignal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -104,58 +104,58 @@ def test_ecollectiontype_constructor_args():
 
 
 
-def test_ocl::type::esettype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::ESetType)
+def test_ocl_type_esettype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_ESetType)
 
 
-def test_ocl::type::esettype_constructor_exists():
-    assert callable(ocl::type::ESetType.__init__)
+def test_ocl_type_esettype_constructor_exists():
+    assert callable(ocl_type_ESetType.__init__)
 
 
-def test_ocl::type::esettype_constructor_args():
-    sig = inspect.signature(ocl::type::ESetType.__init__)
+def test_ocl_type_esettype_constructor_args():
+    sig = inspect.signature(ocl_type_ESetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::esequencetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::ESequenceType)
+def test_ocl_type_esequencetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_ESequenceType)
 
 
-def test_ocl::type::esequencetype_constructor_exists():
-    assert callable(ocl::type::ESequenceType.__init__)
+def test_ocl_type_esequencetype_constructor_exists():
+    assert callable(ocl_type_ESequenceType.__init__)
 
 
-def test_ocl::type::esequencetype_constructor_args():
-    sig = inspect.signature(ocl::type::ESequenceType.__init__)
+def test_ocl_type_esequencetype_constructor_args():
+    sig = inspect.signature(ocl_type_ESequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::ebagtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EBagType)
+def test_ocl_type_ebagtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EBagType)
 
 
-def test_ocl::type::ebagtype_constructor_exists():
-    assert callable(ocl::type::EBagType.__init__)
+def test_ocl_type_ebagtype_constructor_exists():
+    assert callable(ocl_type_EBagType.__init__)
 
 
-def test_ocl::type::ebagtype_constructor_args():
-    sig = inspect.signature(ocl::type::EBagType.__init__)
+def test_ocl_type_ebagtype_constructor_args():
+    sig = inspect.signature(ocl_type_EBagType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::eorderedsettype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EOrderedSetType)
+def test_ocl_type_eorderedsettype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EOrderedSetType)
 
 
-def test_ocl::type::eorderedsettype_constructor_exists():
-    assert callable(ocl::type::EOrderedSetType.__init__)
+def test_ocl_type_eorderedsettype_constructor_exists():
+    assert callable(ocl_type_EOrderedSetType.__init__)
 
 
-def test_ocl::type::eorderedsettype_constructor_args():
-    sig = inspect.signature(ocl::type::EOrderedSetType.__init__)
+def test_ocl_type_eorderedsettype_constructor_args():
+    sig = inspect.signature(ocl_type_EOrderedSetType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,44 +174,44 @@ def test_edatatype_constructor_args():
 
 
 
-def test_ocl::type::etupletype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::ETupleType)
+def test_ocl_type_etupletype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_ETupleType)
 
 
-def test_ocl::type::etupletype_constructor_exists():
-    assert callable(ocl::type::ETupleType.__init__)
+def test_ocl_type_etupletype_constructor_exists():
+    assert callable(ocl_type_ETupleType.__init__)
 
 
-def test_ocl::type::etupletype_constructor_args():
-    sig = inspect.signature(ocl::type::ETupleType.__init__)
+def test_ocl_type_etupletype_constructor_args():
+    sig = inspect.signature(ocl_type_ETupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::eprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EPrimitiveType)
+def test_ocl_type_eprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EPrimitiveType)
 
 
-def test_ocl::type::eprimitivetype_constructor_exists():
-    assert callable(ocl::type::EPrimitiveType.__init__)
+def test_ocl_type_eprimitivetype_constructor_exists():
+    assert callable(ocl_type_EPrimitiveType.__init__)
 
 
-def test_ocl::type::eprimitivetype_constructor_args():
-    sig = inspect.signature(ocl::type::EPrimitiveType.__init__)
+def test_ocl_type_eprimitivetype_constructor_args():
+    sig = inspect.signature(ocl_type_EPrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::ecollectiontype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::ECollectionType)
+def test_ocl_type_ecollectiontype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_ECollectionType)
 
 
-def test_ocl::type::ecollectiontype_constructor_exists():
-    assert callable(ocl::type::ECollectionType.__init__)
+def test_ocl_type_ecollectiontype_constructor_exists():
+    assert callable(ocl_type_ECollectionType.__init__)
 
 
-def test_ocl::type::ecollectiontype_constructor_args():
-    sig = inspect.signature(ocl::type::ECollectionType.__init__)
+def test_ocl_type_ecollectiontype_constructor_args():
+    sig = inspect.signature(ocl_type_ECollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -230,16 +230,16 @@ def test_esignal_constructor_args():
 
 
 
-def test_ocl::type::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EClassifier)
+def test_ocl_type_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EClassifier)
 
 
-def test_ocl::type::eclassifier_constructor_exists():
-    assert callable(ocl::type::EClassifier.__init__)
+def test_ocl_type_eclassifier_constructor_exists():
+    assert callable(ocl_type_EClassifier.__init__)
 
 
-def test_ocl::type::eclassifier_constructor_args():
-    sig = inspect.signature(ocl::type::EClassifier.__init__)
+def test_ocl_type_eclassifier_constructor_args():
+    sig = inspect.signature(ocl_type_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -258,23 +258,23 @@ def test_efeaturecallexp_constructor_args():
 
 
 
-def test_ocl::exp::eoperationcallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EOperationCallExp)
+def test_ocl_exp_eoperationcallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EOperationCallExp)
 
 
-def test_ocl::exp::eoperationcallexp_constructor_exists():
-    assert callable(ocl::exp::EOperationCallExp.__init__)
+def test_ocl_exp_eoperationcallexp_constructor_exists():
+    assert callable(ocl_exp_EOperationCallExp.__init__)
 
 
-def test_ocl::exp::eoperationcallexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EOperationCallExp.__init__)
+def test_ocl_exp_eoperationcallexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EOperationCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "referredOperation" in params, "Missing parameter 'referredOperation'"
 
-def test_ocl::exp::eoperationcallexp_has_referredOperation():
-    assert hasattr(ocl::exp::EOperationCallExp, "referredOperation")
+def test_ocl_exp_eoperationcallexp_has_referredOperation():
+    assert hasattr(ocl_exp_EOperationCallExp, "referredOperation")
     descriptor = None
-    for klass in ocl::exp::EOperationCallExp.__mro__:
+    for klass in ocl_exp_EOperationCallExp.__mro__:
         if "referredOperation" in klass.__dict__:
             descriptor = klass.__dict__["referredOperation"]
             break
@@ -282,16 +282,16 @@ def test_ocl::exp::eoperationcallexp_has_referredOperation():
 
 
 
-def test_ocl::exp::enavigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::ENavigationCallExp)
+def test_ocl_exp_enavigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_ENavigationCallExp)
 
 
-def test_ocl::exp::enavigationcallexp_constructor_exists():
-    assert callable(ocl::exp::ENavigationCallExp.__init__)
+def test_ocl_exp_enavigationcallexp_constructor_exists():
+    assert callable(ocl_exp_ENavigationCallExp.__init__)
 
 
-def test_ocl::exp::enavigationcallexp_constructor_args():
-    sig = inspect.signature(ocl::exp::ENavigationCallExp.__init__)
+def test_ocl_exp_enavigationcallexp_constructor_args():
+    sig = inspect.signature(ocl_exp_ENavigationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -310,16 +310,16 @@ def test_eliteralexp_constructor_args():
 
 
 
-def test_ocl::exp::eprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EPrimitiveType)
+def test_ocl_exp_eprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EPrimitiveType)
 
 
-def test_ocl::exp::eprimitivetype_constructor_exists():
-    assert callable(ocl::exp::EPrimitiveType.__init__)
+def test_ocl_exp_eprimitivetype_constructor_exists():
+    assert callable(ocl_exp_EPrimitiveType.__init__)
 
 
-def test_ocl::exp::eprimitivetype_constructor_args():
-    sig = inspect.signature(ocl::exp::EPrimitiveType.__init__)
+def test_ocl_exp_eprimitivetype_constructor_args():
+    sig = inspect.signature(ocl_exp_EPrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -338,23 +338,23 @@ def test_enumericliteralexp_constructor_args():
 
 
 
-def test_ocl::exp::eintegerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EIntegerLiteralExp)
+def test_ocl_exp_eintegerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EIntegerLiteralExp)
 
 
-def test_ocl::exp::eintegerliteralexp_constructor_exists():
-    assert callable(ocl::exp::EIntegerLiteralExp.__init__)
+def test_ocl_exp_eintegerliteralexp_constructor_exists():
+    assert callable(ocl_exp_EIntegerLiteralExp.__init__)
 
 
-def test_ocl::exp::eintegerliteralexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EIntegerLiteralExp.__init__)
+def test_ocl_exp_eintegerliteralexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EIntegerLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "integerValue" in params, "Missing parameter 'integerValue'"
 
-def test_ocl::exp::eintegerliteralexp_has_integerValue():
-    assert hasattr(ocl::exp::EIntegerLiteralExp, "integerValue")
+def test_ocl_exp_eintegerliteralexp_has_integerValue():
+    assert hasattr(ocl_exp_EIntegerLiteralExp, "integerValue")
     descriptor = None
-    for klass in ocl::exp::EIntegerLiteralExp.__mro__:
+    for klass in ocl_exp_EIntegerLiteralExp.__mro__:
         if "integerValue" in klass.__dict__:
             descriptor = klass.__dict__["integerValue"]
             break
@@ -418,37 +418,37 @@ def test_eloopexp_constructor_args():
 
 
 
-def test_ocl::exp::eiterateexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EIterateExp)
+def test_ocl_exp_eiterateexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EIterateExp)
 
 
-def test_ocl::exp::eiterateexp_constructor_exists():
-    assert callable(ocl::exp::EIterateExp.__init__)
+def test_ocl_exp_eiterateexp_constructor_exists():
+    assert callable(ocl_exp_EIterateExp.__init__)
 
 
-def test_ocl::exp::eiterateexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EIterateExp.__init__)
+def test_ocl_exp_eiterateexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EIterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::evariable_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EVariable)
+def test_ocl_exp_evariable_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EVariable)
 
 
-def test_ocl::exp::evariable_constructor_exists():
-    assert callable(ocl::exp::EVariable.__init__)
+def test_ocl_exp_evariable_constructor_exists():
+    assert callable(ocl_exp_EVariable.__init__)
 
 
-def test_ocl::exp::evariable_constructor_args():
-    sig = inspect.signature(ocl::exp::EVariable.__init__)
+def test_ocl_exp_evariable_constructor_args():
+    sig = inspect.signature(ocl_exp_EVariable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ocl::exp::evariable_has_name():
-    assert hasattr(ocl::exp::EVariable, "name")
+def test_ocl_exp_evariable_has_name():
+    assert hasattr(ocl_exp_EVariable, "name")
     descriptor = None
-    for klass in ocl::exp::EVariable.__mro__:
+    for klass in ocl_exp_EVariable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -470,47 +470,23 @@ def test_eprimitivetype_constructor_args():
 
 
 
-def test_ocl::exp::estringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EStringLiteralExp)
+def test_ocl_exp_ebooleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EBooleanLiteralExp)
 
 
-def test_ocl::exp::estringliteralexp_constructor_exists():
-    assert callable(ocl::exp::EStringLiteralExp.__init__)
+def test_ocl_exp_ebooleanliteralexp_constructor_exists():
+    assert callable(ocl_exp_EBooleanLiteralExp.__init__)
 
 
-def test_ocl::exp::estringliteralexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EStringLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "stringValue" in params, "Missing parameter 'stringValue'"
-
-def test_ocl::exp::estringliteralexp_has_stringValue():
-    assert hasattr(ocl::exp::EStringLiteralExp, "stringValue")
-    descriptor = None
-    for klass in ocl::exp::EStringLiteralExp.__mro__:
-        if "stringValue" in klass.__dict__:
-            descriptor = klass.__dict__["stringValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::exp::ebooleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EBooleanLiteralExp)
-
-
-def test_ocl::exp::ebooleanliteralexp_constructor_exists():
-    assert callable(ocl::exp::EBooleanLiteralExp.__init__)
-
-
-def test_ocl::exp::ebooleanliteralexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EBooleanLiteralExp.__init__)
+def test_ocl_exp_ebooleanliteralexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EBooleanLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanValue" in params, "Missing parameter 'booleanValue'"
 
-def test_ocl::exp::ebooleanliteralexp_has_booleanValue():
-    assert hasattr(ocl::exp::EBooleanLiteralExp, "booleanValue")
+def test_ocl_exp_ebooleanliteralexp_has_booleanValue():
+    assert hasattr(ocl_exp_EBooleanLiteralExp, "booleanValue")
     descriptor = None
-    for klass in ocl::exp::EBooleanLiteralExp.__mro__:
+    for klass in ocl_exp_EBooleanLiteralExp.__mro__:
         if "booleanValue" in klass.__dict__:
             descriptor = klass.__dict__["booleanValue"]
             break
@@ -518,16 +494,40 @@ def test_ocl::exp::ebooleanliteralexp_has_booleanValue():
 
 
 
-def test_ocl::exp::enumericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::ENumericLiteralExp)
+def test_ocl_exp_estringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EStringLiteralExp)
 
 
-def test_ocl::exp::enumericliteralexp_constructor_exists():
-    assert callable(ocl::exp::ENumericLiteralExp.__init__)
+def test_ocl_exp_estringliteralexp_constructor_exists():
+    assert callable(ocl_exp_EStringLiteralExp.__init__)
 
 
-def test_ocl::exp::enumericliteralexp_constructor_args():
-    sig = inspect.signature(ocl::exp::ENumericLiteralExp.__init__)
+def test_ocl_exp_estringliteralexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EStringLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "stringValue" in params, "Missing parameter 'stringValue'"
+
+def test_ocl_exp_estringliteralexp_has_stringValue():
+    assert hasattr(ocl_exp_EStringLiteralExp, "stringValue")
+    descriptor = None
+    for klass in ocl_exp_EStringLiteralExp.__mro__:
+        if "stringValue" in klass.__dict__:
+            descriptor = klass.__dict__["stringValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_exp_enumericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_ENumericLiteralExp)
+
+
+def test_ocl_exp_enumericliteralexp_constructor_exists():
+    assert callable(ocl_exp_ENumericLiteralExp.__init__)
+
+
+def test_ocl_exp_enumericliteralexp_constructor_args():
+    sig = inspect.signature(ocl_exp_ENumericLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -546,16 +546,16 @@ def test_enavigationcallexp_constructor_args():
 
 
 
-def test_ocl::exp::eassociationclasscallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EAssociationClassCallExp)
+def test_ocl_exp_eassociationclasscallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EAssociationClassCallExp)
 
 
-def test_ocl::exp::eassociationclasscallexp_constructor_exists():
-    assert callable(ocl::exp::EAssociationClassCallExp.__init__)
+def test_ocl_exp_eassociationclasscallexp_constructor_exists():
+    assert callable(ocl_exp_EAssociationClassCallExp.__init__)
 
 
-def test_ocl::exp::eassociationclasscallexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EAssociationClassCallExp.__init__)
+def test_ocl_exp_eassociationclasscallexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EAssociationClassCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -574,30 +574,30 @@ def test_ecallexp_constructor_args():
 
 
 
-def test_ocl::exp::efeaturecallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EFeatureCallExp)
+def test_ocl_exp_efeaturecallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EFeatureCallExp)
 
 
-def test_ocl::exp::efeaturecallexp_constructor_exists():
-    assert callable(ocl::exp::EFeatureCallExp.__init__)
+def test_ocl_exp_efeaturecallexp_constructor_exists():
+    assert callable(ocl_exp_EFeatureCallExp.__init__)
 
 
-def test_ocl::exp::efeaturecallexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EFeatureCallExp.__init__)
+def test_ocl_exp_efeaturecallexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EFeatureCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::eloopexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::ELoopExp)
+def test_ocl_exp_eloopexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_ELoopExp)
 
 
-def test_ocl::exp::eloopexp_constructor_exists():
-    assert callable(ocl::exp::ELoopExp.__init__)
+def test_ocl_exp_eloopexp_constructor_exists():
+    assert callable(ocl_exp_ELoopExp.__init__)
 
 
-def test_ocl::exp::eloopexp_constructor_args():
-    sig = inspect.signature(ocl::exp::ELoopExp.__init__)
+def test_ocl_exp_eloopexp_constructor_args():
+    sig = inspect.signature(ocl_exp_ELoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -630,135 +630,135 @@ def test_eoclexpression_constructor_args():
 
 
 
-def test_ocl::exp::emessageexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EMessageExp)
+def test_ocl_exp_eliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_ELiteralExp)
 
 
-def test_ocl::exp::emessageexp_constructor_exists():
-    assert callable(ocl::exp::EMessageExp.__init__)
+def test_ocl_exp_eliteralexp_constructor_exists():
+    assert callable(ocl_exp_ELiteralExp.__init__)
 
 
-def test_ocl::exp::emessageexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EMessageExp.__init__)
+def test_ocl_exp_eliteralexp_constructor_args():
+    sig = inspect.signature(ocl_exp_ELiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::eliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::ELiteralExp)
+def test_ocl_exp_eifexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EIfExp)
 
 
-def test_ocl::exp::eliteralexp_constructor_exists():
-    assert callable(ocl::exp::ELiteralExp.__init__)
+def test_ocl_exp_eifexp_constructor_exists():
+    assert callable(ocl_exp_EIfExp.__init__)
 
 
-def test_ocl::exp::eliteralexp_constructor_args():
-    sig = inspect.signature(ocl::exp::ELiteralExp.__init__)
+def test_ocl_exp_eifexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EIfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::ecallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::ECallExp)
+def test_ocl_exp_estateexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EStateExp)
 
 
-def test_ocl::exp::ecallexp_constructor_exists():
-    assert callable(ocl::exp::ECallExp.__init__)
+def test_ocl_exp_estateexp_constructor_exists():
+    assert callable(ocl_exp_EStateExp.__init__)
 
 
-def test_ocl::exp::ecallexp_constructor_args():
-    sig = inspect.signature(ocl::exp::ECallExp.__init__)
+def test_ocl_exp_estateexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EStateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::eifexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EIfExp)
+def test_ocl_exp_emessageexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EMessageExp)
 
 
-def test_ocl::exp::eifexp_constructor_exists():
-    assert callable(ocl::exp::EIfExp.__init__)
+def test_ocl_exp_emessageexp_constructor_exists():
+    assert callable(ocl_exp_EMessageExp.__init__)
 
 
-def test_ocl::exp::eifexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EIfExp.__init__)
+def test_ocl_exp_emessageexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EMessageExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::estateexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EStateExp)
+def test_ocl_exp_etypeexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_ETypeExp)
 
 
-def test_ocl::exp::estateexp_constructor_exists():
-    assert callable(ocl::exp::EStateExp.__init__)
+def test_ocl_exp_etypeexp_constructor_exists():
+    assert callable(ocl_exp_ETypeExp.__init__)
 
 
-def test_ocl::exp::estateexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EStateExp.__init__)
+def test_ocl_exp_etypeexp_constructor_args():
+    sig = inspect.signature(ocl_exp_ETypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::etypeexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::ETypeExp)
+def test_ocl_exp_ecallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_ECallExp)
 
 
-def test_ocl::exp::etypeexp_constructor_exists():
-    assert callable(ocl::exp::ETypeExp.__init__)
+def test_ocl_exp_ecallexp_constructor_exists():
+    assert callable(ocl_exp_ECallExp.__init__)
 
 
-def test_ocl::exp::etypeexp_constructor_args():
-    sig = inspect.signature(ocl::exp::ETypeExp.__init__)
+def test_ocl_exp_ecallexp_constructor_args():
+    sig = inspect.signature(ocl_exp_ECallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::evariableexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EVariableExp)
+def test_ocl_exp_evariableexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EVariableExp)
 
 
-def test_ocl::exp::evariableexp_constructor_exists():
-    assert callable(ocl::exp::EVariableExp.__init__)
+def test_ocl_exp_evariableexp_constructor_exists():
+    assert callable(ocl_exp_EVariableExp.__init__)
 
 
-def test_ocl::exp::evariableexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EVariableExp.__init__)
+def test_ocl_exp_evariableexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EVariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::eoclexpression_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EOclExpression)
+def test_ocl_exp_eoclexpression_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EOclExpression)
 
 
-def test_ocl::exp::eoclexpression_constructor_exists():
-    assert callable(ocl::exp::EOclExpression.__init__)
+def test_ocl_exp_eoclexpression_constructor_exists():
+    assert callable(ocl_exp_EOclExpression.__init__)
 
 
-def test_ocl::exp::eoclexpression_constructor_args():
-    sig = inspect.signature(ocl::exp::EOclExpression.__init__)
+def test_ocl_exp_eoclexpression_constructor_args():
+    sig = inspect.signature(ocl_exp_EOclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::exp::eiteratorexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EIteratorExp)
+def test_ocl_exp_eiteratorexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EIteratorExp)
 
 
-def test_ocl::exp::eiteratorexp_constructor_exists():
-    assert callable(ocl::exp::EIteratorExp.__init__)
+def test_ocl_exp_eiteratorexp_constructor_exists():
+    assert callable(ocl_exp_EIteratorExp.__init__)
 
 
-def test_ocl::exp::eiteratorexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EIteratorExp.__init__)
+def test_ocl_exp_eiteratorexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EIteratorExp.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_ocl::exp::eiteratorexp_has_kind():
-    assert hasattr(ocl::exp::EIteratorExp, "kind")
+def test_ocl_exp_eiteratorexp_has_kind():
+    assert hasattr(ocl_exp_EIteratorExp, "kind")
     descriptor = None
-    for klass in ocl::exp::EIteratorExp.__mro__:
+    for klass in ocl_exp_EIteratorExp.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -766,47 +766,47 @@ def test_ocl::exp::eiteratorexp_has_kind():
 
 
 
-def test_ocl::exp::epropertycallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::exp::EPropertyCallExp)
+def test_ocl_exp_epropertycallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_exp_EPropertyCallExp)
 
 
-def test_ocl::exp::epropertycallexp_constructor_exists():
-    assert callable(ocl::exp::EPropertyCallExp.__init__)
+def test_ocl_exp_epropertycallexp_constructor_exists():
+    assert callable(ocl_exp_EPropertyCallExp.__init__)
 
 
-def test_ocl::exp::epropertycallexp_constructor_args():
-    sig = inspect.signature(ocl::exp::EPropertyCallExp.__init__)
+def test_ocl_exp_epropertycallexp_constructor_args():
+    sig = inspect.signature(ocl_exp_EPropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::dm::eattribute_is_not_abstract():
-    assert not inspect.isabstract(ocl::dm::EAttribute)
+def test_ocl_dm_eattribute_is_not_abstract():
+    assert not inspect.isabstract(ocl_dm_EAttribute)
 
 
-def test_ocl::dm::eattribute_constructor_exists():
-    assert callable(ocl::dm::EAttribute.__init__)
+def test_ocl_dm_eattribute_constructor_exists():
+    assert callable(ocl_dm_EAttribute.__init__)
 
 
-def test_ocl::dm::eattribute_constructor_args():
-    sig = inspect.signature(ocl::dm::EAttribute.__init__)
+def test_ocl_dm_eattribute_constructor_args():
+    sig = inspect.signature(ocl_dm_EAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ocl::dm::eattribute_has_type():
-    assert hasattr(ocl::dm::EAttribute, "type")
+def test_ocl_dm_eattribute_has_type():
+    assert hasattr(ocl_dm_EAttribute, "type")
     descriptor = None
-    for klass in ocl::dm::EAttribute.__mro__:
+    for klass in ocl_dm_EAttribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::dm::eattribute_has_name():
-    assert hasattr(ocl::dm::EAttribute, "name")
+def test_ocl_dm_eattribute_has_name():
+    assert hasattr(ocl_dm_EAttribute, "name")
     descriptor = None
-    for klass in ocl::dm::EAttribute.__mro__:
+    for klass in ocl_dm_EAttribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -814,16 +814,16 @@ def test_ocl::dm::eattribute_has_name():
 
 
 
-def test_ocl::dm::edatamodel_is_not_abstract():
-    assert not inspect.isabstract(ocl::dm::EDataModel)
+def test_ocl_dm_edatamodel_is_not_abstract():
+    assert not inspect.isabstract(ocl_dm_EDataModel)
 
 
-def test_ocl::dm::edatamodel_constructor_exists():
-    assert callable(ocl::dm::EDataModel.__init__)
+def test_ocl_dm_edatamodel_constructor_exists():
+    assert callable(ocl_dm_EDataModel.__init__)
 
 
-def test_ocl::dm::edatamodel_constructor_args():
-    sig = inspect.signature(ocl::dm::EDataModel.__init__)
+def test_ocl_dm_edatamodel_constructor_args():
+    sig = inspect.signature(ocl_dm_EDataModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -842,45 +842,45 @@ def test_eentity_constructor_args():
 
 
 
-def test_ocl::dm::eassociationend_is_not_abstract():
-    assert not inspect.isabstract(ocl::dm::EAssociationEnd)
+def test_ocl_dm_eassociationend_is_not_abstract():
+    assert not inspect.isabstract(ocl_dm_EAssociationEnd)
 
 
-def test_ocl::dm::eassociationend_constructor_exists():
-    assert callable(ocl::dm::EAssociationEnd.__init__)
+def test_ocl_dm_eassociationend_constructor_exists():
+    assert callable(ocl_dm_EAssociationEnd.__init__)
 
 
-def test_ocl::dm::eassociationend_constructor_args():
-    sig = inspect.signature(ocl::dm::EAssociationEnd.__init__)
+def test_ocl_dm_eassociationend_constructor_args():
+    sig = inspect.signature(ocl_dm_EAssociationEnd.__init__)
     params = list(sig.parameters.keys())
-    assert "mult" in params, "Missing parameter 'mult'"
-    assert "opp" in params, "Missing parameter 'opp'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "opp" in params, "Missing parameter 'opp'"
+    assert "mult" in params, "Missing parameter 'mult'"
 
-def test_ocl::dm::eassociationend_has_mult():
-    assert hasattr(ocl::dm::EAssociationEnd, "mult")
+def test_ocl_dm_eassociationend_has_name():
+    assert hasattr(ocl_dm_EAssociationEnd, "name")
     descriptor = None
-    for klass in ocl::dm::EAssociationEnd.__mro__:
-        if "mult" in klass.__dict__:
-            descriptor = klass.__dict__["mult"]
+    for klass in ocl_dm_EAssociationEnd.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::dm::eassociationend_has_opp():
-    assert hasattr(ocl::dm::EAssociationEnd, "opp")
+def test_ocl_dm_eassociationend_has_opp():
+    assert hasattr(ocl_dm_EAssociationEnd, "opp")
     descriptor = None
-    for klass in ocl::dm::EAssociationEnd.__mro__:
+    for klass in ocl_dm_EAssociationEnd.__mro__:
         if "opp" in klass.__dict__:
             descriptor = klass.__dict__["opp"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::dm::eassociationend_has_name():
-    assert hasattr(ocl::dm::EAssociationEnd, "name")
+def test_ocl_dm_eassociationend_has_mult():
+    assert hasattr(ocl_dm_EAssociationEnd, "mult")
     descriptor = None
-    for klass in ocl::dm::EAssociationEnd.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in ocl_dm_EAssociationEnd.__mro__:
+        if "mult" in klass.__dict__:
+            descriptor = klass.__dict__["mult"]
             break
     assert isinstance(descriptor, property)
 
@@ -928,37 +928,37 @@ def test_eclassifier_constructor_args():
 
 
 
-def test_ocl::type::evoidtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EVoidType)
+def test_ocl_type_evoidtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EVoidType)
 
 
-def test_ocl::type::evoidtype_constructor_exists():
-    assert callable(ocl::type::EVoidType.__init__)
+def test_ocl_type_evoidtype_constructor_exists():
+    assert callable(ocl_type_EVoidType.__init__)
 
 
-def test_ocl::type::evoidtype_constructor_args():
-    sig = inspect.signature(ocl::type::EVoidType.__init__)
+def test_ocl_type_evoidtype_constructor_args():
+    sig = inspect.signature(ocl_type_EVoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::emessagetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EMessageType)
+def test_ocl_type_emessagetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EMessageType)
 
 
-def test_ocl::type::emessagetype_constructor_exists():
-    assert callable(ocl::type::EMessageType.__init__)
+def test_ocl_type_emessagetype_constructor_exists():
+    assert callable(ocl_type_EMessageType.__init__)
 
 
-def test_ocl::type::emessagetype_constructor_args():
-    sig = inspect.signature(ocl::type::EMessageType.__init__)
+def test_ocl_type_emessagetype_constructor_args():
+    sig = inspect.signature(ocl_type_EMessageType.__init__)
     params = list(sig.parameters.keys())
     assert "referredOperation" in params, "Missing parameter 'referredOperation'"
 
-def test_ocl::type::emessagetype_has_referredOperation():
-    assert hasattr(ocl::type::EMessageType, "referredOperation")
+def test_ocl_type_emessagetype_has_referredOperation():
+    assert hasattr(ocl_type_EMessageType, "referredOperation")
     descriptor = None
-    for klass in ocl::type::EMessageType.__mro__:
+    for klass in ocl_type_EMessageType.__mro__:
         if "referredOperation" in klass.__dict__:
             descriptor = klass.__dict__["referredOperation"]
             break
@@ -966,99 +966,69 @@ def test_ocl::type::emessagetype_has_referredOperation():
 
 
 
-def test_ocl::type::eanytype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EAnyType)
+def test_ocl_type_eanytype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EAnyType)
 
 
-def test_ocl::type::eanytype_constructor_exists():
-    assert callable(ocl::type::EAnyType.__init__)
+def test_ocl_type_eanytype_constructor_exists():
+    assert callable(ocl_type_EAnyType.__init__)
 
 
-def test_ocl::type::eanytype_constructor_args():
-    sig = inspect.signature(ocl::type::EAnyType.__init__)
+def test_ocl_type_eanytype_constructor_args():
+    sig = inspect.signature(ocl_type_EAnyType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::edatatype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EDataType)
+def test_ocl_type_edatatype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EDataType)
 
 
-def test_ocl::type::edatatype_constructor_exists():
-    assert callable(ocl::type::EDataType.__init__)
+def test_ocl_type_edatatype_constructor_exists():
+    assert callable(ocl_type_EDataType.__init__)
 
 
-def test_ocl::type::edatatype_constructor_args():
-    sig = inspect.signature(ocl::type::EDataType.__init__)
+def test_ocl_type_edatatype_constructor_args():
+    sig = inspect.signature(ocl_type_EDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::type::einvalidtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::type::EInvalidType)
+def test_ocl_type_einvalidtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_type_EInvalidType)
 
 
-def test_ocl::type::einvalidtype_constructor_exists():
-    assert callable(ocl::type::EInvalidType.__init__)
+def test_ocl_type_einvalidtype_constructor_exists():
+    assert callable(ocl_type_EInvalidType.__init__)
 
 
-def test_ocl::type::einvalidtype_constructor_args():
-    sig = inspect.signature(ocl::type::EInvalidType.__init__)
+def test_ocl_type_einvalidtype_constructor_args():
+    sig = inspect.signature(ocl_type_EInvalidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::dm::eentity_is_not_abstract():
-    assert not inspect.isabstract(ocl::dm::EEntity)
+def test_ocl_dm_eentity_is_not_abstract():
+    assert not inspect.isabstract(ocl_dm_EEntity)
 
 
-def test_ocl::dm::eentity_constructor_exists():
-    assert callable(ocl::dm::EEntity.__init__)
+def test_ocl_dm_eentity_constructor_exists():
+    assert callable(ocl_dm_EEntity.__init__)
 
 
-def test_ocl::dm::eentity_constructor_args():
-    sig = inspect.signature(ocl::dm::EEntity.__init__)
+def test_ocl_dm_eentity_constructor_args():
+    sig = inspect.signature(ocl_dm_EEntity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ocl::dm::eentity_has_name():
-    assert hasattr(ocl::dm::EEntity, "name")
+def test_ocl_dm_eentity_has_name():
+    assert hasattr(ocl_dm_EEntity, "name")
     descriptor = None
-    for klass in ocl::dm::EEntity.__mro__:
+    for klass in ocl_dm_EEntity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_eoperator_exists():
-    # Check that the Enumeration exists
-    assert EOperator is not None
-
-def test_eoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EOperator]
-    expected_literals = [
-        "allInstances",
-        "notEmpty",
-        "AND",
-        "flatten",
-        "greaterOrEqual",
-        "lessOrEqual",
-        "notEqual",
-        "less",
-        "isEmpty",
-        "oclIsUndefined",
-        "size",
-        "isUnique",
-        "OR",
-        "equal",
-        "IMPLIES",
-        "greater",
-        "XOR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EOperator"
 
 def test_eiteratorkind_exists():
     # Check that the Enumeration exists
@@ -1068,14 +1038,44 @@ def test_eiteratorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EIteratorKind]
     expected_literals = [
-        "collect",
-        "select",
         "forAll",
         "exists",
+        "select",
+        "collect",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EIteratorKind"
+
+def test_eoperator_exists():
+    # Check that the Enumeration exists
+    assert EOperator is not None
+
+def test_eoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EOperator]
+    expected_literals = [
+        "notEqual",
+        "lessOrEqual",
+        "flatten",
+        "XOR",
+        "oclIsUndefined",
+        "allInstances",
+        "size",
+        "notEmpty",
+        "isUnique",
+        "less",
+        "equal",
+        "OR",
+        "greaterOrEqual",
+        "IMPLIES",
+        "greater",
+        "AND",
+        "isEmpty",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EOperator"
 
 def test_emultiplicity_exists():
     # Check that the Enumeration exists
@@ -1085,8 +1085,8 @@ def test_emultiplicity_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EMultiplicity]
     expected_literals = [
-        "many",
         "one",
+        "many",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1104,64 +1104,64 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ocl::type::ESignal_strategy = st.builds(
-    ocl::type::ESignal,
+ocl_type_ESignal_strategy = st.builds(
+    ocl_type_ESignal,
 )
 ECollectionType_strategy = st.builds(
     ECollectionType,
 )
-ocl::type::ESetType_strategy = st.builds(
-    ocl::type::ESetType,
+ocl_type_ESetType_strategy = st.builds(
+    ocl_type_ESetType,
 )
-ocl::type::ESequenceType_strategy = st.builds(
-    ocl::type::ESequenceType,
+ocl_type_ESequenceType_strategy = st.builds(
+    ocl_type_ESequenceType,
 )
-ocl::type::EBagType_strategy = st.builds(
-    ocl::type::EBagType,
+ocl_type_EBagType_strategy = st.builds(
+    ocl_type_EBagType,
 )
-ocl::type::EOrderedSetType_strategy = st.builds(
-    ocl::type::EOrderedSetType,
+ocl_type_EOrderedSetType_strategy = st.builds(
+    ocl_type_EOrderedSetType,
 )
 EDataType_strategy = st.builds(
     EDataType,
 )
-ocl::type::ETupleType_strategy = st.builds(
-    ocl::type::ETupleType,
+ocl_type_ETupleType_strategy = st.builds(
+    ocl_type_ETupleType,
 )
-ocl::type::EPrimitiveType_strategy = st.builds(
-    ocl::type::EPrimitiveType,
+ocl_type_EPrimitiveType_strategy = st.builds(
+    ocl_type_EPrimitiveType,
 )
-ocl::type::ECollectionType_strategy = st.builds(
-    ocl::type::ECollectionType,
+ocl_type_ECollectionType_strategy = st.builds(
+    ocl_type_ECollectionType,
 )
 ESignal_strategy = st.builds(
     ESignal,
 )
-ocl::type::EClassifier_strategy = st.builds(
-    ocl::type::EClassifier,
+ocl_type_EClassifier_strategy = st.builds(
+    ocl_type_EClassifier,
 )
 EFeatureCallExp_strategy = st.builds(
     EFeatureCallExp,
 )
-ocl::exp::EOperationCallExp_strategy = st.builds(
-    ocl::exp::EOperationCallExp,
+ocl_exp_EOperationCallExp_strategy = st.builds(
+    ocl_exp_EOperationCallExp,
     referredOperation=
         safe_text
 )
-ocl::exp::ENavigationCallExp_strategy = st.builds(
-    ocl::exp::ENavigationCallExp,
+ocl_exp_ENavigationCallExp_strategy = st.builds(
+    ocl_exp_ENavigationCallExp,
 )
 ELiteralExp_strategy = st.builds(
     ELiteralExp,
 )
-ocl::exp::EPrimitiveType_strategy = st.builds(
-    ocl::exp::EPrimitiveType,
+ocl_exp_EPrimitiveType_strategy = st.builds(
+    ocl_exp_EPrimitiveType,
 )
 ENumericLiteralExp_strategy = st.builds(
     ENumericLiteralExp,
 )
-ocl::exp::EIntegerLiteralExp_strategy = st.builds(
-    ocl::exp::EIntegerLiteralExp,
+ocl_exp_EIntegerLiteralExp_strategy = st.builds(
+    ocl_exp_EIntegerLiteralExp,
     integerValue=
         safe_text
 )
@@ -1177,44 +1177,44 @@ EIterateExp_strategy = st.builds(
 ELoopExp_strategy = st.builds(
     ELoopExp,
 )
-ocl::exp::EIterateExp_strategy = st.builds(
-    ocl::exp::EIterateExp,
+ocl_exp_EIterateExp_strategy = st.builds(
+    ocl_exp_EIterateExp,
 )
-ocl::exp::EVariable_strategy = st.builds(
-    ocl::exp::EVariable,
+ocl_exp_EVariable_strategy = st.builds(
+    ocl_exp_EVariable,
     name=
         safe_text
 )
 EPrimitiveType_strategy = st.builds(
     EPrimitiveType,
 )
-ocl::exp::EStringLiteralExp_strategy = st.builds(
-    ocl::exp::EStringLiteralExp,
-    stringValue=
-        safe_text
-)
-ocl::exp::EBooleanLiteralExp_strategy = st.builds(
-    ocl::exp::EBooleanLiteralExp,
+ocl_exp_EBooleanLiteralExp_strategy = st.builds(
+    ocl_exp_EBooleanLiteralExp,
     booleanValue=
         safe_text
 )
-ocl::exp::ENumericLiteralExp_strategy = st.builds(
-    ocl::exp::ENumericLiteralExp,
+ocl_exp_EStringLiteralExp_strategy = st.builds(
+    ocl_exp_EStringLiteralExp,
+    stringValue=
+        safe_text
+)
+ocl_exp_ENumericLiteralExp_strategy = st.builds(
+    ocl_exp_ENumericLiteralExp,
 )
 ENavigationCallExp_strategy = st.builds(
     ENavigationCallExp,
 )
-ocl::exp::EAssociationClassCallExp_strategy = st.builds(
-    ocl::exp::EAssociationClassCallExp,
+ocl_exp_EAssociationClassCallExp_strategy = st.builds(
+    ocl_exp_EAssociationClassCallExp,
 )
 ECallExp_strategy = st.builds(
     ECallExp,
 )
-ocl::exp::EFeatureCallExp_strategy = st.builds(
-    ocl::exp::EFeatureCallExp,
+ocl_exp_EFeatureCallExp_strategy = st.builds(
+    ocl_exp_EFeatureCallExp,
 )
-ocl::exp::ELoopExp_strategy = st.builds(
-    ocl::exp::ELoopExp,
+ocl_exp_ELoopExp_strategy = st.builds(
+    ocl_exp_ELoopExp,
 )
 EVariable_strategy = st.builds(
     EVariable,
@@ -1222,58 +1222,58 @@ EVariable_strategy = st.builds(
 EOclExpression_strategy = st.builds(
     EOclExpression,
 )
-ocl::exp::EMessageExp_strategy = st.builds(
-    ocl::exp::EMessageExp,
+ocl_exp_ELiteralExp_strategy = st.builds(
+    ocl_exp_ELiteralExp,
 )
-ocl::exp::ELiteralExp_strategy = st.builds(
-    ocl::exp::ELiteralExp,
+ocl_exp_EIfExp_strategy = st.builds(
+    ocl_exp_EIfExp,
 )
-ocl::exp::ECallExp_strategy = st.builds(
-    ocl::exp::ECallExp,
+ocl_exp_EStateExp_strategy = st.builds(
+    ocl_exp_EStateExp,
 )
-ocl::exp::EIfExp_strategy = st.builds(
-    ocl::exp::EIfExp,
+ocl_exp_EMessageExp_strategy = st.builds(
+    ocl_exp_EMessageExp,
 )
-ocl::exp::EStateExp_strategy = st.builds(
-    ocl::exp::EStateExp,
+ocl_exp_ETypeExp_strategy = st.builds(
+    ocl_exp_ETypeExp,
 )
-ocl::exp::ETypeExp_strategy = st.builds(
-    ocl::exp::ETypeExp,
+ocl_exp_ECallExp_strategy = st.builds(
+    ocl_exp_ECallExp,
 )
-ocl::exp::EVariableExp_strategy = st.builds(
-    ocl::exp::EVariableExp,
+ocl_exp_EVariableExp_strategy = st.builds(
+    ocl_exp_EVariableExp,
 )
-ocl::exp::EOclExpression_strategy = st.builds(
-    ocl::exp::EOclExpression,
+ocl_exp_EOclExpression_strategy = st.builds(
+    ocl_exp_EOclExpression,
 )
-ocl::exp::EIteratorExp_strategy = st.builds(
-    ocl::exp::EIteratorExp,
+ocl_exp_EIteratorExp_strategy = st.builds(
+    ocl_exp_EIteratorExp,
     kind=
         safe_text
 )
-ocl::exp::EPropertyCallExp_strategy = st.builds(
-    ocl::exp::EPropertyCallExp,
+ocl_exp_EPropertyCallExp_strategy = st.builds(
+    ocl_exp_EPropertyCallExp,
 )
-ocl::dm::EAttribute_strategy = st.builds(
-    ocl::dm::EAttribute,
+ocl_dm_EAttribute_strategy = st.builds(
+    ocl_dm_EAttribute,
     type=
         safe_text,
     name=
         safe_text
 )
-ocl::dm::EDataModel_strategy = st.builds(
-    ocl::dm::EDataModel,
+ocl_dm_EDataModel_strategy = st.builds(
+    ocl_dm_EDataModel,
 )
 EEntity_strategy = st.builds(
     EEntity,
 )
-ocl::dm::EAssociationEnd_strategy = st.builds(
-    ocl::dm::EAssociationEnd,
-    mult=
+ocl_dm_EAssociationEnd_strategy = st.builds(
+    ocl_dm_EAssociationEnd,
+    name=
         safe_text,
     opp=
         safe_text,
-    name=
+    mult=
         safe_text
 )
 EAttribute_strategy = st.builds(
@@ -1285,142 +1285,136 @@ EAssociationEnd_strategy = st.builds(
 EClassifier_strategy = st.builds(
     EClassifier,
 )
-ocl::type::EVoidType_strategy = st.builds(
-    ocl::type::EVoidType,
+ocl_type_EVoidType_strategy = st.builds(
+    ocl_type_EVoidType,
 )
-ocl::type::EMessageType_strategy = st.builds(
-    ocl::type::EMessageType,
+ocl_type_EMessageType_strategy = st.builds(
+    ocl_type_EMessageType,
     referredOperation=
         safe_text
 )
-ocl::type::EAnyType_strategy = st.builds(
-    ocl::type::EAnyType,
+ocl_type_EAnyType_strategy = st.builds(
+    ocl_type_EAnyType,
 )
-ocl::type::EDataType_strategy = st.builds(
-    ocl::type::EDataType,
+ocl_type_EDataType_strategy = st.builds(
+    ocl_type_EDataType,
 )
-ocl::type::EInvalidType_strategy = st.builds(
-    ocl::type::EInvalidType,
+ocl_type_EInvalidType_strategy = st.builds(
+    ocl_type_EInvalidType,
 )
-ocl::dm::EEntity_strategy = st.builds(
-    ocl::dm::EEntity,
+ocl_dm_EEntity_strategy = st.builds(
+    ocl_dm_EEntity,
     name=
         safe_text
 )
 
-@given(instance=ocl::type::ESignal_strategy)
+@given(instance=ocl_type_ESignal_strategy)
 @settings(max_examples=50)
-def test_ocl::type::esignal_instantiation(instance):
-    assert isinstance(instance, ocl::type::ESignal)
+def test_ocl_type_esignal_instantiation(instance):
+    assert isinstance(instance, ocl_type_ESignal)
 
 @given(instance=ECollectionType_strategy)
 @settings(max_examples=50)
 def test_ecollectiontype_instantiation(instance):
     assert isinstance(instance, ECollectionType)
 
-@given(instance=ocl::type::ESetType_strategy)
+@given(instance=ocl_type_ESetType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::esettype_instantiation(instance):
-    assert isinstance(instance, ocl::type::ESetType)
+def test_ocl_type_esettype_instantiation(instance):
+    assert isinstance(instance, ocl_type_ESetType)
 
-@given(instance=ocl::type::ESequenceType_strategy)
+@given(instance=ocl_type_ESequenceType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::esequencetype_instantiation(instance):
-    assert isinstance(instance, ocl::type::ESequenceType)
+def test_ocl_type_esequencetype_instantiation(instance):
+    assert isinstance(instance, ocl_type_ESequenceType)
 
-@given(instance=ocl::type::EBagType_strategy)
+@given(instance=ocl_type_EBagType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::ebagtype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EBagType)
+def test_ocl_type_ebagtype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EBagType)
 
-@given(instance=ocl::type::EOrderedSetType_strategy)
+@given(instance=ocl_type_EOrderedSetType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::eorderedsettype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EOrderedSetType)
+def test_ocl_type_eorderedsettype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EOrderedSetType)
 
 @given(instance=EDataType_strategy)
 @settings(max_examples=50)
 def test_edatatype_instantiation(instance):
     assert isinstance(instance, EDataType)
 
-@given(instance=ocl::type::ETupleType_strategy)
+@given(instance=ocl_type_ETupleType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::etupletype_instantiation(instance):
-    assert isinstance(instance, ocl::type::ETupleType)
+def test_ocl_type_etupletype_instantiation(instance):
+    assert isinstance(instance, ocl_type_ETupleType)
 
-@given(instance=ocl::type::EPrimitiveType_strategy)
+@given(instance=ocl_type_EPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::eprimitivetype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EPrimitiveType)
+def test_ocl_type_eprimitivetype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EPrimitiveType)
 
-@given(instance=ocl::type::ECollectionType_strategy)
+@given(instance=ocl_type_ECollectionType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::ecollectiontype_instantiation(instance):
-    assert isinstance(instance, ocl::type::ECollectionType)
+def test_ocl_type_ecollectiontype_instantiation(instance):
+    assert isinstance(instance, ocl_type_ECollectionType)
 
 @given(instance=ESignal_strategy)
 @settings(max_examples=50)
 def test_esignal_instantiation(instance):
     assert isinstance(instance, ESignal)
 
-@given(instance=ocl::type::EClassifier_strategy)
+@given(instance=ocl_type_EClassifier_strategy)
 @settings(max_examples=50)
-def test_ocl::type::eclassifier_instantiation(instance):
-    assert isinstance(instance, ocl::type::EClassifier)
+def test_ocl_type_eclassifier_instantiation(instance):
+    assert isinstance(instance, ocl_type_EClassifier)
 
 @given(instance=EFeatureCallExp_strategy)
 @settings(max_examples=50)
 def test_efeaturecallexp_instantiation(instance):
     assert isinstance(instance, EFeatureCallExp)
 
-@given(instance=ocl::exp::EOperationCallExp_strategy)
+@given(instance=ocl_exp_EOperationCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eoperationcallexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EOperationCallExp)
-
-@given(instance=ocl::exp::EOperationCallExp_strategy)
-def test_ocl::exp::eoperationcallexp_referredOperation_type(instance):
-    assert isinstance(instance.referredOperation, str)
+def test_ocl_exp_eoperationcallexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EOperationCallExp)
 
 
-@given(instance=ocl::exp::EOperationCallExp_strategy)
-def test_ocl::exp::eoperationcallexp_referredOperation_setter(instance):
+
+@given(instance=ocl_exp_EOperationCallExp_strategy)
+def test_ocl_exp_eoperationcallexp_referredOperation_setter(instance):
     original = instance.referredOperation
     instance.referredOperation = original
     assert instance.referredOperation == original
 
-@given(instance=ocl::exp::ENavigationCallExp_strategy)
+@given(instance=ocl_exp_ENavigationCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::enavigationcallexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::ENavigationCallExp)
+def test_ocl_exp_enavigationcallexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_ENavigationCallExp)
 
 @given(instance=ELiteralExp_strategy)
 @settings(max_examples=50)
 def test_eliteralexp_instantiation(instance):
     assert isinstance(instance, ELiteralExp)
 
-@given(instance=ocl::exp::EPrimitiveType_strategy)
+@given(instance=ocl_exp_EPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eprimitivetype_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EPrimitiveType)
+def test_ocl_exp_eprimitivetype_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EPrimitiveType)
 
 @given(instance=ENumericLiteralExp_strategy)
 @settings(max_examples=50)
 def test_enumericliteralexp_instantiation(instance):
     assert isinstance(instance, ENumericLiteralExp)
 
-@given(instance=ocl::exp::EIntegerLiteralExp_strategy)
+@given(instance=ocl_exp_EIntegerLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eintegerliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EIntegerLiteralExp)
-
-@given(instance=ocl::exp::EIntegerLiteralExp_strategy)
-def test_ocl::exp::eintegerliteralexp_integerValue_type(instance):
-    assert isinstance(instance.integerValue, str)
+def test_ocl_exp_eintegerliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EIntegerLiteralExp)
 
 
-@given(instance=ocl::exp::EIntegerLiteralExp_strategy)
-def test_ocl::exp::eintegerliteralexp_integerValue_setter(instance):
+
+@given(instance=ocl_exp_EIntegerLiteralExp_strategy)
+def test_ocl_exp_eintegerliteralexp_integerValue_setter(instance):
     original = instance.integerValue
     instance.integerValue = original
     assert instance.integerValue == original
@@ -1445,23 +1439,20 @@ def test_eiterateexp_instantiation(instance):
 def test_eloopexp_instantiation(instance):
     assert isinstance(instance, ELoopExp)
 
-@given(instance=ocl::exp::EIterateExp_strategy)
+@given(instance=ocl_exp_EIterateExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eiterateexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EIterateExp)
+def test_ocl_exp_eiterateexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EIterateExp)
 
-@given(instance=ocl::exp::EVariable_strategy)
+@given(instance=ocl_exp_EVariable_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::evariable_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EVariable)
-
-@given(instance=ocl::exp::EVariable_strategy)
-def test_ocl::exp::evariable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ocl_exp_evariable_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EVariable)
 
 
-@given(instance=ocl::exp::EVariable_strategy)
-def test_ocl::exp::evariable_name_setter(instance):
+
+@given(instance=ocl_exp_EVariable_strategy)
+def test_ocl_exp_evariable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1471,67 +1462,61 @@ def test_ocl::exp::evariable_name_setter(instance):
 def test_eprimitivetype_instantiation(instance):
     assert isinstance(instance, EPrimitiveType)
 
-@given(instance=ocl::exp::EStringLiteralExp_strategy)
+@given(instance=ocl_exp_EBooleanLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::estringliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EStringLiteralExp)
-
-@given(instance=ocl::exp::EStringLiteralExp_strategy)
-def test_ocl::exp::estringliteralexp_stringValue_type(instance):
-    assert isinstance(instance.stringValue, str)
+def test_ocl_exp_ebooleanliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EBooleanLiteralExp)
 
 
-@given(instance=ocl::exp::EStringLiteralExp_strategy)
-def test_ocl::exp::estringliteralexp_stringValue_setter(instance):
-    original = instance.stringValue
-    instance.stringValue = original
-    assert instance.stringValue == original
 
-@given(instance=ocl::exp::EBooleanLiteralExp_strategy)
-@settings(max_examples=50)
-def test_ocl::exp::ebooleanliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EBooleanLiteralExp)
-
-@given(instance=ocl::exp::EBooleanLiteralExp_strategy)
-def test_ocl::exp::ebooleanliteralexp_booleanValue_type(instance):
-    assert isinstance(instance.booleanValue, str)
-
-
-@given(instance=ocl::exp::EBooleanLiteralExp_strategy)
-def test_ocl::exp::ebooleanliteralexp_booleanValue_setter(instance):
+@given(instance=ocl_exp_EBooleanLiteralExp_strategy)
+def test_ocl_exp_ebooleanliteralexp_booleanValue_setter(instance):
     original = instance.booleanValue
     instance.booleanValue = original
     assert instance.booleanValue == original
 
-@given(instance=ocl::exp::ENumericLiteralExp_strategy)
+@given(instance=ocl_exp_EStringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::enumericliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::ENumericLiteralExp)
+def test_ocl_exp_estringliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EStringLiteralExp)
+
+
+
+@given(instance=ocl_exp_EStringLiteralExp_strategy)
+def test_ocl_exp_estringliteralexp_stringValue_setter(instance):
+    original = instance.stringValue
+    instance.stringValue = original
+    assert instance.stringValue == original
+
+@given(instance=ocl_exp_ENumericLiteralExp_strategy)
+@settings(max_examples=50)
+def test_ocl_exp_enumericliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_ENumericLiteralExp)
 
 @given(instance=ENavigationCallExp_strategy)
 @settings(max_examples=50)
 def test_enavigationcallexp_instantiation(instance):
     assert isinstance(instance, ENavigationCallExp)
 
-@given(instance=ocl::exp::EAssociationClassCallExp_strategy)
+@given(instance=ocl_exp_EAssociationClassCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eassociationclasscallexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EAssociationClassCallExp)
+def test_ocl_exp_eassociationclasscallexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EAssociationClassCallExp)
 
 @given(instance=ECallExp_strategy)
 @settings(max_examples=50)
 def test_ecallexp_instantiation(instance):
     assert isinstance(instance, ECallExp)
 
-@given(instance=ocl::exp::EFeatureCallExp_strategy)
+@given(instance=ocl_exp_EFeatureCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::efeaturecallexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EFeatureCallExp)
+def test_ocl_exp_efeaturecallexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EFeatureCallExp)
 
-@given(instance=ocl::exp::ELoopExp_strategy)
+@given(instance=ocl_exp_ELoopExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eloopexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::ELoopExp)
+def test_ocl_exp_eloopexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_ELoopExp)
 
 @given(instance=EVariable_strategy)
 @settings(max_examples=50)
@@ -1543,141 +1528,123 @@ def test_evariable_instantiation(instance):
 def test_eoclexpression_instantiation(instance):
     assert isinstance(instance, EOclExpression)
 
-@given(instance=ocl::exp::EMessageExp_strategy)
+@given(instance=ocl_exp_ELiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::emessageexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EMessageExp)
+def test_ocl_exp_eliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_ELiteralExp)
 
-@given(instance=ocl::exp::ELiteralExp_strategy)
+@given(instance=ocl_exp_EIfExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::ELiteralExp)
+def test_ocl_exp_eifexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EIfExp)
 
-@given(instance=ocl::exp::ECallExp_strategy)
+@given(instance=ocl_exp_EStateExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::ecallexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::ECallExp)
+def test_ocl_exp_estateexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EStateExp)
 
-@given(instance=ocl::exp::EIfExp_strategy)
+@given(instance=ocl_exp_EMessageExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eifexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EIfExp)
+def test_ocl_exp_emessageexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EMessageExp)
 
-@given(instance=ocl::exp::EStateExp_strategy)
+@given(instance=ocl_exp_ETypeExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::estateexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EStateExp)
+def test_ocl_exp_etypeexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_ETypeExp)
 
-@given(instance=ocl::exp::ETypeExp_strategy)
+@given(instance=ocl_exp_ECallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::etypeexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::ETypeExp)
+def test_ocl_exp_ecallexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_ECallExp)
 
-@given(instance=ocl::exp::EVariableExp_strategy)
+@given(instance=ocl_exp_EVariableExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::evariableexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EVariableExp)
+def test_ocl_exp_evariableexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EVariableExp)
 
-@given(instance=ocl::exp::EOclExpression_strategy)
+@given(instance=ocl_exp_EOclExpression_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eoclexpression_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EOclExpression)
+def test_ocl_exp_eoclexpression_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EOclExpression)
 
-@given(instance=ocl::exp::EIteratorExp_strategy)
+@given(instance=ocl_exp_EIteratorExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::eiteratorexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EIteratorExp)
-
-@given(instance=ocl::exp::EIteratorExp_strategy)
-def test_ocl::exp::eiteratorexp_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_ocl_exp_eiteratorexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EIteratorExp)
 
 
-@given(instance=ocl::exp::EIteratorExp_strategy)
-def test_ocl::exp::eiteratorexp_kind_setter(instance):
+
+@given(instance=ocl_exp_EIteratorExp_strategy)
+def test_ocl_exp_eiteratorexp_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=ocl::exp::EPropertyCallExp_strategy)
+@given(instance=ocl_exp_EPropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::exp::epropertycallexp_instantiation(instance):
-    assert isinstance(instance, ocl::exp::EPropertyCallExp)
+def test_ocl_exp_epropertycallexp_instantiation(instance):
+    assert isinstance(instance, ocl_exp_EPropertyCallExp)
 
-@given(instance=ocl::dm::EAttribute_strategy)
+@given(instance=ocl_dm_EAttribute_strategy)
 @settings(max_examples=50)
-def test_ocl::dm::eattribute_instantiation(instance):
-    assert isinstance(instance, ocl::dm::EAttribute)
-
-@given(instance=ocl::dm::EAttribute_strategy)
-def test_ocl::dm::eattribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_ocl_dm_eattribute_instantiation(instance):
+    assert isinstance(instance, ocl_dm_EAttribute)
 
 
-@given(instance=ocl::dm::EAttribute_strategy)
-def test_ocl::dm::eattribute_type_setter(instance):
+
+@given(instance=ocl_dm_EAttribute_strategy)
+def test_ocl_dm_eattribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ocl::dm::EAttribute_strategy)
-def test_ocl::dm::eattribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ocl::dm::EAttribute_strategy)
-def test_ocl::dm::eattribute_name_setter(instance):
+@given(instance=ocl_dm_EAttribute_strategy)
+def test_ocl_dm_eattribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ocl::dm::EDataModel_strategy)
+@given(instance=ocl_dm_EDataModel_strategy)
 @settings(max_examples=50)
-def test_ocl::dm::edatamodel_instantiation(instance):
-    assert isinstance(instance, ocl::dm::EDataModel)
+def test_ocl_dm_edatamodel_instantiation(instance):
+    assert isinstance(instance, ocl_dm_EDataModel)
 
 @given(instance=EEntity_strategy)
 @settings(max_examples=50)
 def test_eentity_instantiation(instance):
     assert isinstance(instance, EEntity)
 
-@given(instance=ocl::dm::EAssociationEnd_strategy)
+@given(instance=ocl_dm_EAssociationEnd_strategy)
 @settings(max_examples=50)
-def test_ocl::dm::eassociationend_instantiation(instance):
-    assert isinstance(instance, ocl::dm::EAssociationEnd)
-
-@given(instance=ocl::dm::EAssociationEnd_strategy)
-def test_ocl::dm::eassociationend_mult_type(instance):
-    assert isinstance(instance.mult, str)
+def test_ocl_dm_eassociationend_instantiation(instance):
+    assert isinstance(instance, ocl_dm_EAssociationEnd)
 
 
-@given(instance=ocl::dm::EAssociationEnd_strategy)
-def test_ocl::dm::eassociationend_mult_setter(instance):
-    original = instance.mult
-    instance.mult = original
-    assert instance.mult == original
 
-@given(instance=ocl::dm::EAssociationEnd_strategy)
-def test_ocl::dm::eassociationend_opp_type(instance):
-    assert isinstance(instance.opp, str)
+@given(instance=ocl_dm_EAssociationEnd_strategy)
+def test_ocl_dm_eassociationend_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=ocl::dm::EAssociationEnd_strategy)
-def test_ocl::dm::eassociationend_opp_setter(instance):
+
+@given(instance=ocl_dm_EAssociationEnd_strategy)
+def test_ocl_dm_eassociationend_opp_setter(instance):
     original = instance.opp
     instance.opp = original
     assert instance.opp == original
 
-@given(instance=ocl::dm::EAssociationEnd_strategy)
-def test_ocl::dm::eassociationend_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ocl::dm::EAssociationEnd_strategy)
-def test_ocl::dm::eassociationend_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=ocl_dm_EAssociationEnd_strategy)
+def test_ocl_dm_eassociationend_mult_setter(instance):
+    original = instance.mult
+    instance.mult = original
+    assert instance.mult == original
 
 @given(instance=EAttribute_strategy)
 @settings(max_examples=50)
@@ -1694,54 +1661,48 @@ def test_eassociationend_instantiation(instance):
 def test_eclassifier_instantiation(instance):
     assert isinstance(instance, EClassifier)
 
-@given(instance=ocl::type::EVoidType_strategy)
+@given(instance=ocl_type_EVoidType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::evoidtype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EVoidType)
+def test_ocl_type_evoidtype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EVoidType)
 
-@given(instance=ocl::type::EMessageType_strategy)
+@given(instance=ocl_type_EMessageType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::emessagetype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EMessageType)
-
-@given(instance=ocl::type::EMessageType_strategy)
-def test_ocl::type::emessagetype_referredOperation_type(instance):
-    assert isinstance(instance.referredOperation, str)
+def test_ocl_type_emessagetype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EMessageType)
 
 
-@given(instance=ocl::type::EMessageType_strategy)
-def test_ocl::type::emessagetype_referredOperation_setter(instance):
+
+@given(instance=ocl_type_EMessageType_strategy)
+def test_ocl_type_emessagetype_referredOperation_setter(instance):
     original = instance.referredOperation
     instance.referredOperation = original
     assert instance.referredOperation == original
 
-@given(instance=ocl::type::EAnyType_strategy)
+@given(instance=ocl_type_EAnyType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::eanytype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EAnyType)
+def test_ocl_type_eanytype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EAnyType)
 
-@given(instance=ocl::type::EDataType_strategy)
+@given(instance=ocl_type_EDataType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::edatatype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EDataType)
+def test_ocl_type_edatatype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EDataType)
 
-@given(instance=ocl::type::EInvalidType_strategy)
+@given(instance=ocl_type_EInvalidType_strategy)
 @settings(max_examples=50)
-def test_ocl::type::einvalidtype_instantiation(instance):
-    assert isinstance(instance, ocl::type::EInvalidType)
+def test_ocl_type_einvalidtype_instantiation(instance):
+    assert isinstance(instance, ocl_type_EInvalidType)
 
-@given(instance=ocl::dm::EEntity_strategy)
+@given(instance=ocl_dm_EEntity_strategy)
 @settings(max_examples=50)
-def test_ocl::dm::eentity_instantiation(instance):
-    assert isinstance(instance, ocl::dm::EEntity)
-
-@given(instance=ocl::dm::EEntity_strategy)
-def test_ocl::dm::eentity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ocl_dm_eentity_instantiation(instance):
+    assert isinstance(instance, ocl_dm_EEntity)
 
 
-@given(instance=ocl::dm::EEntity_strategy)
-def test_ocl::dm::eentity_name_setter(instance):
+
+@given(instance=ocl_dm_EEntity_strategy)
+def test_ocl_dm_eentity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

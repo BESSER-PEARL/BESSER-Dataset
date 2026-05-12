@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     First_Class,
@@ -51,17 +51,8 @@ def test_first_class_constructor_exists():
 def test_first_class_constructor_args():
     sig = inspect.signature(First_Class.__init__)
     params = list(sig.parameters.keys())
-    assert "First_Seat_ID" in params, "Missing parameter 'First_Seat_ID'"
     assert "First_Seat_Price" in params, "Missing parameter 'First_Seat_Price'"
-
-def test_first_class_has_First_Seat_ID():
-    assert hasattr(First_Class, "First_Seat_ID")
-    descriptor = None
-    for klass in First_Class.__mro__:
-        if "First_Seat_ID" in klass.__dict__:
-            descriptor = klass.__dict__["First_Seat_ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "First_Seat_ID" in params, "Missing parameter 'First_Seat_ID'"
 
 def test_first_class_has_First_Seat_Price():
     assert hasattr(First_Class, "First_Seat_Price")
@@ -69,6 +60,15 @@ def test_first_class_has_First_Seat_Price():
     for klass in First_Class.__mro__:
         if "First_Seat_Price" in klass.__dict__:
             descriptor = klass.__dict__["First_Seat_Price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_first_class_has_First_Seat_ID():
+    assert hasattr(First_Class, "First_Seat_ID")
+    descriptor = None
+    for klass in First_Class.__mro__:
+        if "First_Seat_ID" in klass.__dict__:
+            descriptor = klass.__dict__["First_Seat_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -85,17 +85,8 @@ def test_business_seats_constructor_exists():
 def test_business_seats_constructor_args():
     sig = inspect.signature(Business_Seats.__init__)
     params = list(sig.parameters.keys())
-    assert "Buiss_Seat_Price" in params, "Missing parameter 'Buiss_Seat_Price'"
     assert "Buiss_Seat_ID" in params, "Missing parameter 'Buiss_Seat_ID'"
-
-def test_business_seats_has_Buiss_Seat_Price():
-    assert hasattr(Business_Seats, "Buiss_Seat_Price")
-    descriptor = None
-    for klass in Business_Seats.__mro__:
-        if "Buiss_Seat_Price" in klass.__dict__:
-            descriptor = klass.__dict__["Buiss_Seat_Price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Buiss_Seat_Price" in params, "Missing parameter 'Buiss_Seat_Price'"
 
 def test_business_seats_has_Buiss_Seat_ID():
     assert hasattr(Business_Seats, "Buiss_Seat_ID")
@@ -103,6 +94,15 @@ def test_business_seats_has_Buiss_Seat_ID():
     for klass in Business_Seats.__mro__:
         if "Buiss_Seat_ID" in klass.__dict__:
             descriptor = klass.__dict__["Buiss_Seat_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_business_seats_has_Buiss_Seat_Price():
+    assert hasattr(Business_Seats, "Buiss_Seat_Price")
+    descriptor = None
+    for klass in Business_Seats.__mro__:
+        if "Buiss_Seat_Price" in klass.__dict__:
+            descriptor = klass.__dict__["Buiss_Seat_Price"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,17 +119,8 @@ def test_economy_seats_constructor_exists():
 def test_economy_seats_constructor_args():
     sig = inspect.signature(Economy_Seats.__init__)
     params = list(sig.parameters.keys())
-    assert "Eco_Seat_Price" in params, "Missing parameter 'Eco_Seat_Price'"
     assert "Eco_Seat_ID" in params, "Missing parameter 'Eco_Seat_ID'"
-
-def test_economy_seats_has_Eco_Seat_Price():
-    assert hasattr(Economy_Seats, "Eco_Seat_Price")
-    descriptor = None
-    for klass in Economy_Seats.__mro__:
-        if "Eco_Seat_Price" in klass.__dict__:
-            descriptor = klass.__dict__["Eco_Seat_Price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Eco_Seat_Price" in params, "Missing parameter 'Eco_Seat_Price'"
 
 def test_economy_seats_has_Eco_Seat_ID():
     assert hasattr(Economy_Seats, "Eco_Seat_ID")
@@ -137,6 +128,15 @@ def test_economy_seats_has_Eco_Seat_ID():
     for klass in Economy_Seats.__mro__:
         if "Eco_Seat_ID" in klass.__dict__:
             descriptor = klass.__dict__["Eco_Seat_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_economy_seats_has_Eco_Seat_Price():
+    assert hasattr(Economy_Seats, "Eco_Seat_Price")
+    descriptor = None
+    for klass in Economy_Seats.__mro__:
+        if "Eco_Seat_Price" in klass.__dict__:
+            descriptor = klass.__dict__["Eco_Seat_Price"]
             break
     assert isinstance(descriptor, property)
 
@@ -153,18 +153,9 @@ def test_seats_constructor_exists():
 def test_seats_constructor_args():
     sig = inspect.signature(Seats.__init__)
     params = list(sig.parameters.keys())
-    assert "Seat_NO" in params, "Missing parameter 'Seat_NO'"
     assert "Seat_Catoegry" in params, "Missing parameter 'Seat_Catoegry'"
+    assert "Seat_NO" in params, "Missing parameter 'Seat_NO'"
     assert "Seat_ID" in params, "Missing parameter 'Seat_ID'"
-
-def test_seats_has_Seat_NO():
-    assert hasattr(Seats, "Seat_NO")
-    descriptor = None
-    for klass in Seats.__mro__:
-        if "Seat_NO" in klass.__dict__:
-            descriptor = klass.__dict__["Seat_NO"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_seats_has_Seat_Catoegry():
     assert hasattr(Seats, "Seat_Catoegry")
@@ -172,6 +163,15 @@ def test_seats_has_Seat_Catoegry():
     for klass in Seats.__mro__:
         if "Seat_Catoegry" in klass.__dict__:
             descriptor = klass.__dict__["Seat_Catoegry"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seats_has_Seat_NO():
+    assert hasattr(Seats, "Seat_NO")
+    descriptor = None
+    for klass in Seats.__mro__:
+        if "Seat_NO" in klass.__dict__:
+            descriptor = klass.__dict__["Seat_NO"]
             break
     assert isinstance(descriptor, property)
 
@@ -197,17 +197,8 @@ def test_infant_constructor_exists():
 def test_infant_constructor_args():
     sig = inspect.signature(Infant.__init__)
     params = list(sig.parameters.keys())
-    assert "Infant_No" in params, "Missing parameter 'Infant_No'"
     assert "Infant_Seat_Price" in params, "Missing parameter 'Infant_Seat_Price'"
-
-def test_infant_has_Infant_No():
-    assert hasattr(Infant, "Infant_No")
-    descriptor = None
-    for klass in Infant.__mro__:
-        if "Infant_No" in klass.__dict__:
-            descriptor = klass.__dict__["Infant_No"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Infant_No" in params, "Missing parameter 'Infant_No'"
 
 def test_infant_has_Infant_Seat_Price():
     assert hasattr(Infant, "Infant_Seat_Price")
@@ -215,6 +206,15 @@ def test_infant_has_Infant_Seat_Price():
     for klass in Infant.__mro__:
         if "Infant_Seat_Price" in klass.__dict__:
             descriptor = klass.__dict__["Infant_Seat_Price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_infant_has_Infant_No():
+    assert hasattr(Infant, "Infant_No")
+    descriptor = None
+    for klass in Infant.__mro__:
+        if "Infant_No" in klass.__dict__:
+            descriptor = klass.__dict__["Infant_No"]
             break
     assert isinstance(descriptor, property)
 
@@ -265,17 +265,8 @@ def test_adult_constructor_exists():
 def test_adult_constructor_args():
     sig = inspect.signature(Adult.__init__)
     params = list(sig.parameters.keys())
-    assert "Adult_Seat_Price" in params, "Missing parameter 'Adult_Seat_Price'"
     assert "Adult_ID" in params, "Missing parameter 'Adult_ID'"
-
-def test_adult_has_Adult_Seat_Price():
-    assert hasattr(Adult, "Adult_Seat_Price")
-    descriptor = None
-    for klass in Adult.__mro__:
-        if "Adult_Seat_Price" in klass.__dict__:
-            descriptor = klass.__dict__["Adult_Seat_Price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Adult_Seat_Price" in params, "Missing parameter 'Adult_Seat_Price'"
 
 def test_adult_has_Adult_ID():
     assert hasattr(Adult, "Adult_ID")
@@ -283,6 +274,15 @@ def test_adult_has_Adult_ID():
     for klass in Adult.__mro__:
         if "Adult_ID" in klass.__dict__:
             descriptor = klass.__dict__["Adult_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adult_has_Adult_Seat_Price():
+    assert hasattr(Adult, "Adult_Seat_Price")
+    descriptor = None
+    for klass in Adult.__mro__:
+        if "Adult_Seat_Price" in klass.__dict__:
+            descriptor = klass.__dict__["Adult_Seat_Price"]
             break
     assert isinstance(descriptor, property)
 
@@ -299,9 +299,18 @@ def test_offers_constructor_exists():
 def test_offers_constructor_args():
     sig = inspect.signature(Offers.__init__)
     params = list(sig.parameters.keys())
+    assert "Offer_Expiry_Date" in params, "Missing parameter 'Offer_Expiry_Date'"
     assert "Offer_Det" in params, "Missing parameter 'Offer_Det'"
     assert "Offer_NO" in params, "Missing parameter 'Offer_NO'"
-    assert "Offer_Expiry_Date" in params, "Missing parameter 'Offer_Expiry_Date'"
+
+def test_offers_has_Offer_Expiry_Date():
+    assert hasattr(Offers, "Offer_Expiry_Date")
+    descriptor = None
+    for klass in Offers.__mro__:
+        if "Offer_Expiry_Date" in klass.__dict__:
+            descriptor = klass.__dict__["Offer_Expiry_Date"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_offers_has_Offer_Det():
     assert hasattr(Offers, "Offer_Det")
@@ -321,15 +330,6 @@ def test_offers_has_Offer_NO():
             break
     assert isinstance(descriptor, property)
 
-def test_offers_has_Offer_Expiry_Date():
-    assert hasattr(Offers, "Offer_Expiry_Date")
-    descriptor = None
-    for klass in Offers.__mro__:
-        if "Offer_Expiry_Date" in klass.__dict__:
-            descriptor = klass.__dict__["Offer_Expiry_Date"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_ffp_members_is_not_abstract():
@@ -343,18 +343,9 @@ def test_ffp_members_constructor_exists():
 def test_ffp_members_constructor_args():
     sig = inspect.signature(FFP_Members.__init__)
     params = list(sig.parameters.keys())
-    assert "FFP_Category" in params, "Missing parameter 'FFP_Category'"
     assert "FFP_Qmiles" in params, "Missing parameter 'FFP_Qmiles'"
+    assert "FFP_Category" in params, "Missing parameter 'FFP_Category'"
     assert "FFP_ID" in params, "Missing parameter 'FFP_ID'"
-
-def test_ffp_members_has_FFP_Category():
-    assert hasattr(FFP_Members, "FFP_Category")
-    descriptor = None
-    for klass in FFP_Members.__mro__:
-        if "FFP_Category" in klass.__dict__:
-            descriptor = klass.__dict__["FFP_Category"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_ffp_members_has_FFP_Qmiles():
     assert hasattr(FFP_Members, "FFP_Qmiles")
@@ -362,6 +353,15 @@ def test_ffp_members_has_FFP_Qmiles():
     for klass in FFP_Members.__mro__:
         if "FFP_Qmiles" in klass.__dict__:
             descriptor = klass.__dict__["FFP_Qmiles"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ffp_members_has_FFP_Category():
+    assert hasattr(FFP_Members, "FFP_Category")
+    descriptor = None
+    for klass in FFP_Members.__mro__:
+        if "FFP_Category" in klass.__dict__:
+            descriptor = klass.__dict__["FFP_Category"]
             break
     assert isinstance(descriptor, property)
 
@@ -387,17 +387,8 @@ def test_flight_constructor_exists():
 def test_flight_constructor_args():
     sig = inspect.signature(Flight.__init__)
     params = list(sig.parameters.keys())
-    assert "Flgt_Details" in params, "Missing parameter 'Flgt_Details'"
     assert "Flgt_NO" in params, "Missing parameter 'Flgt_NO'"
-
-def test_flight_has_Flgt_Details():
-    assert hasattr(Flight, "Flgt_Details")
-    descriptor = None
-    for klass in Flight.__mro__:
-        if "Flgt_Details" in klass.__dict__:
-            descriptor = klass.__dict__["Flgt_Details"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Flgt_Details" in params, "Missing parameter 'Flgt_Details'"
 
 def test_flight_has_Flgt_NO():
     assert hasattr(Flight, "Flgt_NO")
@@ -405,6 +396,15 @@ def test_flight_has_Flgt_NO():
     for klass in Flight.__mro__:
         if "Flgt_NO" in klass.__dict__:
             descriptor = klass.__dict__["Flgt_NO"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flight_has_Flgt_Details():
+    assert hasattr(Flight, "Flgt_Details")
+    descriptor = None
+    for klass in Flight.__mro__:
+        if "Flgt_Details" in klass.__dict__:
+            descriptor = klass.__dict__["Flgt_Details"]
             break
     assert isinstance(descriptor, property)
 
@@ -421,18 +421,9 @@ def test_passengers_constructor_exists():
 def test_passengers_constructor_args():
     sig = inspect.signature(Passengers.__init__)
     params = list(sig.parameters.keys())
-    assert "passenger_name" in params, "Missing parameter 'passenger_name'"
     assert "Passenger_TKT_No" in params, "Missing parameter 'Passenger_TKT_No'"
+    assert "passenger_name" in params, "Missing parameter 'passenger_name'"
     assert "Passenger_Details" in params, "Missing parameter 'Passenger_Details'"
-
-def test_passengers_has_passenger_name():
-    assert hasattr(Passengers, "passenger_name")
-    descriptor = None
-    for klass in Passengers.__mro__:
-        if "passenger_name" in klass.__dict__:
-            descriptor = klass.__dict__["passenger_name"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_passengers_has_Passenger_TKT_No():
     assert hasattr(Passengers, "Passenger_TKT_No")
@@ -440,6 +431,15 @@ def test_passengers_has_Passenger_TKT_No():
     for klass in Passengers.__mro__:
         if "Passenger_TKT_No" in klass.__dict__:
             descriptor = klass.__dict__["Passenger_TKT_No"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_passengers_has_passenger_name():
+    assert hasattr(Passengers, "passenger_name")
+    descriptor = None
+    for klass in Passengers.__mro__:
+        if "passenger_name" in klass.__dict__:
+            descriptor = klass.__dict__["passenger_name"]
             break
     assert isinstance(descriptor, property)
 
@@ -696,39 +696,39 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 First_Class_strategy = st.builds(
     First_Class,
-    First_Seat_ID=
-        safe_text,
     First_Seat_Price=
+        safe_text,
+    First_Seat_ID=
         safe_text
 )
 Business_Seats_strategy = st.builds(
     Business_Seats,
-    Buiss_Seat_Price=
-        safe_text,
     Buiss_Seat_ID=
+        safe_text,
+    Buiss_Seat_Price=
         safe_text
 )
 Economy_Seats_strategy = st.builds(
     Economy_Seats,
-    Eco_Seat_Price=
-        safe_text,
     Eco_Seat_ID=
+        safe_text,
+    Eco_Seat_Price=
         safe_text
 )
 Seats_strategy = st.builds(
     Seats,
-    Seat_NO=
-        safe_text,
     Seat_Catoegry=
+        safe_text,
+    Seat_NO=
         safe_text,
     Seat_ID=
         safe_text
 )
 Infant_strategy = st.builds(
     Infant,
-    Infant_No=
-        safe_text,
     Infant_Seat_Price=
+        safe_text,
+    Infant_No=
         safe_text
 )
 Child_strategy = st.builds(
@@ -740,41 +740,41 @@ Child_strategy = st.builds(
 )
 Adult_strategy = st.builds(
     Adult,
-    Adult_Seat_Price=
-        safe_text,
     Adult_ID=
+        safe_text,
+    Adult_Seat_Price=
         safe_text
 )
 Offers_strategy = st.builds(
     Offers,
+    Offer_Expiry_Date=
+        safe_text,
     Offer_Det=
         safe_text,
     Offer_NO=
-        safe_text,
-    Offer_Expiry_Date=
         safe_text
 )
 FFP_Members_strategy = st.builds(
     FFP_Members,
-    FFP_Category=
-        safe_text,
     FFP_Qmiles=
+        safe_text,
+    FFP_Category=
         safe_text,
     FFP_ID=
         safe_text
 )
 Flight_strategy = st.builds(
     Flight,
-    Flgt_Details=
-        safe_text,
     Flgt_NO=
+        safe_text,
+    Flgt_Details=
         safe_text
 )
 Passengers_strategy = st.builds(
     Passengers,
-    passenger_name=
-        safe_text,
     Passenger_TKT_No=
+        safe_text,
+    passenger_name=
         safe_text,
     Passenger_Details=
         safe_text
@@ -834,20 +834,6 @@ Qaboos_Reservation_System_Enter_flight_Details_UseCase_strategy = st.builds(
 def test_first_class_instantiation(instance):
     assert isinstance(instance, First_Class)
 
-@given(instance=First_Class_strategy)
-def test_first_class_First_Seat_ID_type(instance):
-    assert isinstance(instance.First_Seat_ID, str)
-
-
-@given(instance=First_Class_strategy)
-def test_first_class_First_Seat_ID_setter(instance):
-    original = instance.First_Seat_ID
-    instance.First_Seat_ID = original
-    assert instance.First_Seat_ID == original
-
-@given(instance=First_Class_strategy)
-def test_first_class_First_Seat_Price_type(instance):
-    assert isinstance(instance.First_Seat_Price, str)
 
 
 @given(instance=First_Class_strategy)
@@ -856,25 +842,19 @@ def test_first_class_First_Seat_Price_setter(instance):
     instance.First_Seat_Price = original
     assert instance.First_Seat_Price == original
 
+
+
+@given(instance=First_Class_strategy)
+def test_first_class_First_Seat_ID_setter(instance):
+    original = instance.First_Seat_ID
+    instance.First_Seat_ID = original
+    assert instance.First_Seat_ID == original
+
 @given(instance=Business_Seats_strategy)
 @settings(max_examples=50)
 def test_business_seats_instantiation(instance):
     assert isinstance(instance, Business_Seats)
 
-@given(instance=Business_Seats_strategy)
-def test_business_seats_Buiss_Seat_Price_type(instance):
-    assert isinstance(instance.Buiss_Seat_Price, str)
-
-
-@given(instance=Business_Seats_strategy)
-def test_business_seats_Buiss_Seat_Price_setter(instance):
-    original = instance.Buiss_Seat_Price
-    instance.Buiss_Seat_Price = original
-    assert instance.Buiss_Seat_Price == original
-
-@given(instance=Business_Seats_strategy)
-def test_business_seats_Buiss_Seat_ID_type(instance):
-    assert isinstance(instance.Buiss_Seat_ID, str)
 
 
 @given(instance=Business_Seats_strategy)
@@ -883,25 +863,19 @@ def test_business_seats_Buiss_Seat_ID_setter(instance):
     instance.Buiss_Seat_ID = original
     assert instance.Buiss_Seat_ID == original
 
+
+
+@given(instance=Business_Seats_strategy)
+def test_business_seats_Buiss_Seat_Price_setter(instance):
+    original = instance.Buiss_Seat_Price
+    instance.Buiss_Seat_Price = original
+    assert instance.Buiss_Seat_Price == original
+
 @given(instance=Economy_Seats_strategy)
 @settings(max_examples=50)
 def test_economy_seats_instantiation(instance):
     assert isinstance(instance, Economy_Seats)
 
-@given(instance=Economy_Seats_strategy)
-def test_economy_seats_Eco_Seat_Price_type(instance):
-    assert isinstance(instance.Eco_Seat_Price, str)
-
-
-@given(instance=Economy_Seats_strategy)
-def test_economy_seats_Eco_Seat_Price_setter(instance):
-    original = instance.Eco_Seat_Price
-    instance.Eco_Seat_Price = original
-    assert instance.Eco_Seat_Price == original
-
-@given(instance=Economy_Seats_strategy)
-def test_economy_seats_Eco_Seat_ID_type(instance):
-    assert isinstance(instance.Eco_Seat_ID, str)
 
 
 @given(instance=Economy_Seats_strategy)
@@ -910,25 +884,19 @@ def test_economy_seats_Eco_Seat_ID_setter(instance):
     instance.Eco_Seat_ID = original
     assert instance.Eco_Seat_ID == original
 
+
+
+@given(instance=Economy_Seats_strategy)
+def test_economy_seats_Eco_Seat_Price_setter(instance):
+    original = instance.Eco_Seat_Price
+    instance.Eco_Seat_Price = original
+    assert instance.Eco_Seat_Price == original
+
 @given(instance=Seats_strategy)
 @settings(max_examples=50)
 def test_seats_instantiation(instance):
     assert isinstance(instance, Seats)
 
-@given(instance=Seats_strategy)
-def test_seats_Seat_NO_type(instance):
-    assert isinstance(instance.Seat_NO, str)
-
-
-@given(instance=Seats_strategy)
-def test_seats_Seat_NO_setter(instance):
-    original = instance.Seat_NO
-    instance.Seat_NO = original
-    assert instance.Seat_NO == original
-
-@given(instance=Seats_strategy)
-def test_seats_Seat_Catoegry_type(instance):
-    assert isinstance(instance.Seat_Catoegry, str)
 
 
 @given(instance=Seats_strategy)
@@ -937,9 +905,14 @@ def test_seats_Seat_Catoegry_setter(instance):
     instance.Seat_Catoegry = original
     assert instance.Seat_Catoegry == original
 
+
+
 @given(instance=Seats_strategy)
-def test_seats_Seat_ID_type(instance):
-    assert isinstance(instance.Seat_ID, str)
+def test_seats_Seat_NO_setter(instance):
+    original = instance.Seat_NO
+    instance.Seat_NO = original
+    assert instance.Seat_NO == original
+
 
 
 @given(instance=Seats_strategy)
@@ -953,20 +926,6 @@ def test_seats_Seat_ID_setter(instance):
 def test_infant_instantiation(instance):
     assert isinstance(instance, Infant)
 
-@given(instance=Infant_strategy)
-def test_infant_Infant_No_type(instance):
-    assert isinstance(instance.Infant_No, str)
-
-
-@given(instance=Infant_strategy)
-def test_infant_Infant_No_setter(instance):
-    original = instance.Infant_No
-    instance.Infant_No = original
-    assert instance.Infant_No == original
-
-@given(instance=Infant_strategy)
-def test_infant_Infant_Seat_Price_type(instance):
-    assert isinstance(instance.Infant_Seat_Price, str)
 
 
 @given(instance=Infant_strategy)
@@ -975,14 +934,19 @@ def test_infant_Infant_Seat_Price_setter(instance):
     instance.Infant_Seat_Price = original
     assert instance.Infant_Seat_Price == original
 
+
+
+@given(instance=Infant_strategy)
+def test_infant_Infant_No_setter(instance):
+    original = instance.Infant_No
+    instance.Infant_No = original
+    assert instance.Infant_No == original
+
 @given(instance=Child_strategy)
 @settings(max_examples=50)
 def test_child_instantiation(instance):
     assert isinstance(instance, Child)
 
-@given(instance=Child_strategy)
-def test_child_Child_Seat_Price_type(instance):
-    assert isinstance(instance.Child_Seat_Price, str)
 
 
 @given(instance=Child_strategy)
@@ -991,9 +955,6 @@ def test_child_Child_Seat_Price_setter(instance):
     instance.Child_Seat_Price = original
     assert instance.Child_Seat_Price == original
 
-@given(instance=Child_strategy)
-def test_child_Child_ID_type(instance):
-    assert isinstance(instance.Child_ID, str)
 
 
 @given(instance=Child_strategy)
@@ -1007,20 +968,6 @@ def test_child_Child_ID_setter(instance):
 def test_adult_instantiation(instance):
     assert isinstance(instance, Adult)
 
-@given(instance=Adult_strategy)
-def test_adult_Adult_Seat_Price_type(instance):
-    assert isinstance(instance.Adult_Seat_Price, str)
-
-
-@given(instance=Adult_strategy)
-def test_adult_Adult_Seat_Price_setter(instance):
-    original = instance.Adult_Seat_Price
-    instance.Adult_Seat_Price = original
-    assert instance.Adult_Seat_Price == original
-
-@given(instance=Adult_strategy)
-def test_adult_Adult_ID_type(instance):
-    assert isinstance(instance.Adult_ID, str)
 
 
 @given(instance=Adult_strategy)
@@ -1029,36 +976,19 @@ def test_adult_Adult_ID_setter(instance):
     instance.Adult_ID = original
     assert instance.Adult_ID == original
 
+
+
+@given(instance=Adult_strategy)
+def test_adult_Adult_Seat_Price_setter(instance):
+    original = instance.Adult_Seat_Price
+    instance.Adult_Seat_Price = original
+    assert instance.Adult_Seat_Price == original
+
 @given(instance=Offers_strategy)
 @settings(max_examples=50)
 def test_offers_instantiation(instance):
     assert isinstance(instance, Offers)
 
-@given(instance=Offers_strategy)
-def test_offers_Offer_Det_type(instance):
-    assert isinstance(instance.Offer_Det, str)
-
-
-@given(instance=Offers_strategy)
-def test_offers_Offer_Det_setter(instance):
-    original = instance.Offer_Det
-    instance.Offer_Det = original
-    assert instance.Offer_Det == original
-
-@given(instance=Offers_strategy)
-def test_offers_Offer_NO_type(instance):
-    assert isinstance(instance.Offer_NO, str)
-
-
-@given(instance=Offers_strategy)
-def test_offers_Offer_NO_setter(instance):
-    original = instance.Offer_NO
-    instance.Offer_NO = original
-    assert instance.Offer_NO == original
-
-@given(instance=Offers_strategy)
-def test_offers_Offer_Expiry_Date_type(instance):
-    assert isinstance(instance.Offer_Expiry_Date, str)
 
 
 @given(instance=Offers_strategy)
@@ -1067,25 +997,27 @@ def test_offers_Offer_Expiry_Date_setter(instance):
     instance.Offer_Expiry_Date = original
     assert instance.Offer_Expiry_Date == original
 
+
+
+@given(instance=Offers_strategy)
+def test_offers_Offer_Det_setter(instance):
+    original = instance.Offer_Det
+    instance.Offer_Det = original
+    assert instance.Offer_Det == original
+
+
+
+@given(instance=Offers_strategy)
+def test_offers_Offer_NO_setter(instance):
+    original = instance.Offer_NO
+    instance.Offer_NO = original
+    assert instance.Offer_NO == original
+
 @given(instance=FFP_Members_strategy)
 @settings(max_examples=50)
 def test_ffp_members_instantiation(instance):
     assert isinstance(instance, FFP_Members)
 
-@given(instance=FFP_Members_strategy)
-def test_ffp_members_FFP_Category_type(instance):
-    assert isinstance(instance.FFP_Category, str)
-
-
-@given(instance=FFP_Members_strategy)
-def test_ffp_members_FFP_Category_setter(instance):
-    original = instance.FFP_Category
-    instance.FFP_Category = original
-    assert instance.FFP_Category == original
-
-@given(instance=FFP_Members_strategy)
-def test_ffp_members_FFP_Qmiles_type(instance):
-    assert isinstance(instance.FFP_Qmiles, str)
 
 
 @given(instance=FFP_Members_strategy)
@@ -1094,9 +1026,14 @@ def test_ffp_members_FFP_Qmiles_setter(instance):
     instance.FFP_Qmiles = original
     assert instance.FFP_Qmiles == original
 
+
+
 @given(instance=FFP_Members_strategy)
-def test_ffp_members_FFP_ID_type(instance):
-    assert isinstance(instance.FFP_ID, str)
+def test_ffp_members_FFP_Category_setter(instance):
+    original = instance.FFP_Category
+    instance.FFP_Category = original
+    assert instance.FFP_Category == original
+
 
 
 @given(instance=FFP_Members_strategy)
@@ -1110,20 +1047,6 @@ def test_ffp_members_FFP_ID_setter(instance):
 def test_flight_instantiation(instance):
     assert isinstance(instance, Flight)
 
-@given(instance=Flight_strategy)
-def test_flight_Flgt_Details_type(instance):
-    assert isinstance(instance.Flgt_Details, str)
-
-
-@given(instance=Flight_strategy)
-def test_flight_Flgt_Details_setter(instance):
-    original = instance.Flgt_Details
-    instance.Flgt_Details = original
-    assert instance.Flgt_Details == original
-
-@given(instance=Flight_strategy)
-def test_flight_Flgt_NO_type(instance):
-    assert isinstance(instance.Flgt_NO, str)
 
 
 @given(instance=Flight_strategy)
@@ -1132,25 +1055,19 @@ def test_flight_Flgt_NO_setter(instance):
     instance.Flgt_NO = original
     assert instance.Flgt_NO == original
 
+
+
+@given(instance=Flight_strategy)
+def test_flight_Flgt_Details_setter(instance):
+    original = instance.Flgt_Details
+    instance.Flgt_Details = original
+    assert instance.Flgt_Details == original
+
 @given(instance=Passengers_strategy)
 @settings(max_examples=50)
 def test_passengers_instantiation(instance):
     assert isinstance(instance, Passengers)
 
-@given(instance=Passengers_strategy)
-def test_passengers_passenger_name_type(instance):
-    assert isinstance(instance.passenger_name, str)
-
-
-@given(instance=Passengers_strategy)
-def test_passengers_passenger_name_setter(instance):
-    original = instance.passenger_name
-    instance.passenger_name = original
-    assert instance.passenger_name == original
-
-@given(instance=Passengers_strategy)
-def test_passengers_Passenger_TKT_No_type(instance):
-    assert isinstance(instance.Passenger_TKT_No, str)
 
 
 @given(instance=Passengers_strategy)
@@ -1159,9 +1076,14 @@ def test_passengers_Passenger_TKT_No_setter(instance):
     instance.Passenger_TKT_No = original
     assert instance.Passenger_TKT_No == original
 
+
+
 @given(instance=Passengers_strategy)
-def test_passengers_Passenger_Details_type(instance):
-    assert isinstance(instance.Passenger_Details, str)
+def test_passengers_passenger_name_setter(instance):
+    original = instance.passenger_name
+    instance.passenger_name = original
+    assert instance.passenger_name == original
+
 
 
 @given(instance=Passengers_strategy)
@@ -1175,9 +1097,6 @@ def test_passengers_Passenger_Details_setter(instance):
 def test_qaboos_airways_instantiation(instance):
     assert isinstance(instance, Qaboos_Airways)
 
-@given(instance=Qaboos_Airways_strategy)
-def test_qaboos_airways_Comp_location_type(instance):
-    assert isinstance(instance.Comp_location, str)
 
 
 @given(instance=Qaboos_Airways_strategy)
@@ -1186,9 +1105,6 @@ def test_qaboos_airways_Comp_location_setter(instance):
     instance.Comp_location = original
     assert instance.Comp_location == original
 
-@given(instance=Qaboos_Airways_strategy)
-def test_qaboos_airways_Comp_Commercial_NO_type(instance):
-    assert isinstance(instance.Comp_Commercial_NO, str)
 
 
 @given(instance=Qaboos_Airways_strategy)

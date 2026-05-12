@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Arc,
-    petriNetEMF::TransitionToPlaceArc,
-    petriNetEMF::PlaceToTransitionArc,
-    petriNetEMF::Identification,
+    petriNetEMF_TransitionToPlaceArc,
+    petriNetEMF_PlaceToTransitionArc,
+    petriNetEMF_Identification,
     Identification,
-    petriNetEMF::Place,
-    petriNetEMF::Transition,
-    petriNetEMF::Arc,
-    petriNetEMF::PetriNet,
+    petriNetEMF_Place,
+    petriNetEMF_Arc,
+    petriNetEMF_Transition,
+    petriNetEMF_PetriNet,
 )
 
 # =============================================================================
@@ -37,61 +37,61 @@ def test_arc_constructor_args():
 
 
 
-def test_petrinetemf::transitiontoplacearc_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::TransitionToPlaceArc)
+def test_petrinetemf_transitiontoplacearc_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_TransitionToPlaceArc)
 
 
-def test_petrinetemf::transitiontoplacearc_constructor_exists():
-    assert callable(petriNetEMF::TransitionToPlaceArc.__init__)
+def test_petrinetemf_transitiontoplacearc_constructor_exists():
+    assert callable(petriNetEMF_TransitionToPlaceArc.__init__)
 
 
-def test_petrinetemf::transitiontoplacearc_constructor_args():
-    sig = inspect.signature(petriNetEMF::TransitionToPlaceArc.__init__)
+def test_petrinetemf_transitiontoplacearc_constructor_args():
+    sig = inspect.signature(petriNetEMF_TransitionToPlaceArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetemf::placetotransitionarc_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::PlaceToTransitionArc)
+def test_petrinetemf_placetotransitionarc_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_PlaceToTransitionArc)
 
 
-def test_petrinetemf::placetotransitionarc_constructor_exists():
-    assert callable(petriNetEMF::PlaceToTransitionArc.__init__)
+def test_petrinetemf_placetotransitionarc_constructor_exists():
+    assert callable(petriNetEMF_PlaceToTransitionArc.__init__)
 
 
-def test_petrinetemf::placetotransitionarc_constructor_args():
-    sig = inspect.signature(petriNetEMF::PlaceToTransitionArc.__init__)
+def test_petrinetemf_placetotransitionarc_constructor_args():
+    sig = inspect.signature(petriNetEMF_PlaceToTransitionArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetemf::identification_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::Identification)
+def test_petrinetemf_identification_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_Identification)
 
 
-def test_petrinetemf::identification_constructor_exists():
-    assert callable(petriNetEMF::Identification.__init__)
+def test_petrinetemf_identification_constructor_exists():
+    assert callable(petriNetEMF_Identification.__init__)
 
 
-def test_petrinetemf::identification_constructor_args():
-    sig = inspect.signature(petriNetEMF::Identification.__init__)
+def test_petrinetemf_identification_constructor_args():
+    sig = inspect.signature(petriNetEMF_Identification.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_petrinetemf::identification_has_name():
-    assert hasattr(petriNetEMF::Identification, "name")
+def test_petrinetemf_identification_has_name():
+    assert hasattr(petriNetEMF_Identification, "name")
     descriptor = None
-    for klass in petriNetEMF::Identification.__mro__:
+    for klass in petriNetEMF_Identification.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinetemf::identification_has_ID():
-    assert hasattr(petriNetEMF::Identification, "ID")
+def test_petrinetemf_identification_has_ID():
+    assert hasattr(petriNetEMF_Identification, "ID")
     descriptor = None
-    for klass in petriNetEMF::Identification.__mro__:
+    for klass in petriNetEMF_Identification.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -113,58 +113,58 @@ def test_identification_constructor_args():
 
 
 
-def test_petrinetemf::place_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::Place)
+def test_petrinetemf_place_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_Place)
 
 
-def test_petrinetemf::place_constructor_exists():
-    assert callable(petriNetEMF::Place.__init__)
+def test_petrinetemf_place_constructor_exists():
+    assert callable(petriNetEMF_Place.__init__)
 
 
-def test_petrinetemf::place_constructor_args():
-    sig = inspect.signature(petriNetEMF::Place.__init__)
+def test_petrinetemf_place_constructor_args():
+    sig = inspect.signature(petriNetEMF_Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetemf::transition_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::Transition)
+def test_petrinetemf_arc_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_Arc)
 
 
-def test_petrinetemf::transition_constructor_exists():
-    assert callable(petriNetEMF::Transition.__init__)
+def test_petrinetemf_arc_constructor_exists():
+    assert callable(petriNetEMF_Arc.__init__)
 
 
-def test_petrinetemf::transition_constructor_args():
-    sig = inspect.signature(petriNetEMF::Transition.__init__)
+def test_petrinetemf_arc_constructor_args():
+    sig = inspect.signature(petriNetEMF_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetemf::arc_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::Arc)
+def test_petrinetemf_transition_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_Transition)
 
 
-def test_petrinetemf::arc_constructor_exists():
-    assert callable(petriNetEMF::Arc.__init__)
+def test_petrinetemf_transition_constructor_exists():
+    assert callable(petriNetEMF_Transition.__init__)
 
 
-def test_petrinetemf::arc_constructor_args():
-    sig = inspect.signature(petriNetEMF::Arc.__init__)
+def test_petrinetemf_transition_constructor_args():
+    sig = inspect.signature(petriNetEMF_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetemf::petrinet_is_not_abstract():
-    assert not inspect.isabstract(petriNetEMF::PetriNet)
+def test_petrinetemf_petrinet_is_not_abstract():
+    assert not inspect.isabstract(petriNetEMF_PetriNet)
 
 
-def test_petrinetemf::petrinet_constructor_exists():
-    assert callable(petriNetEMF::PetriNet.__init__)
+def test_petrinetemf_petrinet_constructor_exists():
+    assert callable(petriNetEMF_PetriNet.__init__)
 
 
-def test_petrinetemf::petrinet_constructor_args():
-    sig = inspect.signature(petriNetEMF::PetriNet.__init__)
+def test_petrinetemf_petrinet_constructor_args():
+    sig = inspect.signature(petriNetEMF_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,14 +182,14 @@ safe_text = st.text(
 Arc_strategy = st.builds(
     Arc,
 )
-petriNetEMF::TransitionToPlaceArc_strategy = st.builds(
-    petriNetEMF::TransitionToPlaceArc,
+petriNetEMF_TransitionToPlaceArc_strategy = st.builds(
+    petriNetEMF_TransitionToPlaceArc,
 )
-petriNetEMF::PlaceToTransitionArc_strategy = st.builds(
-    petriNetEMF::PlaceToTransitionArc,
+petriNetEMF_PlaceToTransitionArc_strategy = st.builds(
+    petriNetEMF_PlaceToTransitionArc,
 )
-petriNetEMF::Identification_strategy = st.builds(
-    petriNetEMF::Identification,
+petriNetEMF_Identification_strategy = st.builds(
+    petriNetEMF_Identification,
     name=
         safe_text,
     ID=
@@ -198,17 +198,17 @@ petriNetEMF::Identification_strategy = st.builds(
 Identification_strategy = st.builds(
     Identification,
 )
-petriNetEMF::Place_strategy = st.builds(
-    petriNetEMF::Place,
+petriNetEMF_Place_strategy = st.builds(
+    petriNetEMF_Place,
 )
-petriNetEMF::Transition_strategy = st.builds(
-    petriNetEMF::Transition,
+petriNetEMF_Arc_strategy = st.builds(
+    petriNetEMF_Arc,
 )
-petriNetEMF::Arc_strategy = st.builds(
-    petriNetEMF::Arc,
+petriNetEMF_Transition_strategy = st.builds(
+    petriNetEMF_Transition,
 )
-petriNetEMF::PetriNet_strategy = st.builds(
-    petriNetEMF::PetriNet,
+petriNetEMF_PetriNet_strategy = st.builds(
+    petriNetEMF_PetriNet,
 )
 
 @given(instance=Arc_strategy)
@@ -216,39 +216,33 @@ petriNetEMF::PetriNet_strategy = st.builds(
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=petriNetEMF::TransitionToPlaceArc_strategy)
+@given(instance=petriNetEMF_TransitionToPlaceArc_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::transitiontoplacearc_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::TransitionToPlaceArc)
+def test_petrinetemf_transitiontoplacearc_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_TransitionToPlaceArc)
 
-@given(instance=petriNetEMF::PlaceToTransitionArc_strategy)
+@given(instance=petriNetEMF_PlaceToTransitionArc_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::placetotransitionarc_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::PlaceToTransitionArc)
+def test_petrinetemf_placetotransitionarc_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_PlaceToTransitionArc)
 
-@given(instance=petriNetEMF::Identification_strategy)
+@given(instance=petriNetEMF_Identification_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::identification_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::Identification)
-
-@given(instance=petriNetEMF::Identification_strategy)
-def test_petrinetemf::identification_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinetemf_identification_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_Identification)
 
 
-@given(instance=petriNetEMF::Identification_strategy)
-def test_petrinetemf::identification_name_setter(instance):
+
+@given(instance=petriNetEMF_Identification_strategy)
+def test_petrinetemf_identification_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petriNetEMF::Identification_strategy)
-def test_petrinetemf::identification_ID_type(instance):
-    assert isinstance(instance.ID, str)
 
 
-@given(instance=petriNetEMF::Identification_strategy)
-def test_petrinetemf::identification_ID_setter(instance):
+@given(instance=petriNetEMF_Identification_strategy)
+def test_petrinetemf_identification_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -258,22 +252,22 @@ def test_petrinetemf::identification_ID_setter(instance):
 def test_identification_instantiation(instance):
     assert isinstance(instance, Identification)
 
-@given(instance=petriNetEMF::Place_strategy)
+@given(instance=petriNetEMF_Place_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::place_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::Place)
+def test_petrinetemf_place_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_Place)
 
-@given(instance=petriNetEMF::Transition_strategy)
+@given(instance=petriNetEMF_Arc_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::transition_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::Transition)
+def test_petrinetemf_arc_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_Arc)
 
-@given(instance=petriNetEMF::Arc_strategy)
+@given(instance=petriNetEMF_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::arc_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::Arc)
+def test_petrinetemf_transition_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_Transition)
 
-@given(instance=petriNetEMF::PetriNet_strategy)
+@given(instance=petriNetEMF_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinetemf::petrinet_instantiation(instance):
-    assert isinstance(instance, petriNetEMF::PetriNet)
+def test_petrinetemf_petrinet_instantiation(instance):
+    assert isinstance(instance, petriNetEMF_PetriNet)

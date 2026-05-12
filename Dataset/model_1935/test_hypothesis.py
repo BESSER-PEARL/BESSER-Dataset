@@ -3,57 +3,57 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    easyflow::Chunk,
-    easyflow::GroupingEvent,
-    easyflow::Job,
-    easyflow::SplittingEvent,
+from python_code import (
+    easyflow_Chunk,
+    easyflow_GroupingEvent,
+    easyflow_Job,
+    easyflow_SplittingEvent,
     Traversal,
-    easyflow::Contig,
-    easyflow::ReadEnd,
-    easyflow::Locus,
-    easyflow::GenericTraversalCriterion,
-    easyflow::StringToChunkMap,
+    easyflow_Locus,
+    easyflow_ReadEnd,
+    easyflow_Contig,
+    easyflow_GenericTraversalCriterion,
+    easyflow_StringToChunkMap,
     ITraversal,
-    easyflow::Traversal,
-    easyflow::ITraversal,
+    easyflow_Traversal,
+    easyflow_ITraversal,
     EasyFlowMetadata,
-    easyflow::EasyFlowMetadataReader,
-    easyflow::StringToRecordMap,
-    easyflow::StringToLibraryMap,
-    easyflow::StringToReadgroupMap,
-    easyflow::StringToSampleMap,
+    easyflow_EasyFlowMetadataReader,
+    easyflow_StringToRecordMap,
+    easyflow_StringToLibraryMap,
+    easyflow_StringToReadgroupMap,
+    easyflow_StringToSampleMap,
     GroupingCriterion,
-    easyflow::Library,
-    easyflow::Record,
-    easyflow::Readgroup,
-    easyflow::Sample,
-    easyflow::Group,
-    easyflow::Tool,
-    easyflow::GroupingCriterion,
-    easyflow::Argument,
-    easyflow::Interpreter,
-    easyflow::IWorkflowUtil,
-    easyflow::CommandArgument,
-    easyflow::StringToGroupMap,
-    easyflow::StringToTraversalCriterionMap,
-    easyflow::StringToGroupingCriterionMap,
-    easyflow::StringToTaskMap,
-    easyflow::StringToToolMap,
-    easyflow::EasyFlowTemplate,
-    easyflow::Task,
-    easyflow::DataFormatToTaskList,
-    easyflow::TaskToDataProcessingType,
-    easyflow::DataProcessingTypeToTask,
-    easyflow::DataProcessingType,
-    easyflow::EasyFlowImplementationTemplate,
-    easyflow::EasyFlowMetadata,
-    easyflow::EasyFlowConfiguration,
-    easyflow::Workflow,
-    DataFormat,
+    easyflow_Library,
+    easyflow_Record,
+    easyflow_Sample,
+    easyflow_Readgroup,
+    easyflow_Group,
+    easyflow_Tool,
+    easyflow_GroupingCriterion,
+    easyflow_Argument,
+    easyflow_Interpreter,
+    easyflow_IWorkflowUtil,
+    easyflow_CommandArgument,
+    easyflow_StringToGroupMap,
+    easyflow_StringToTraversalCriterionMap,
+    easyflow_StringToGroupingCriterionMap,
+    easyflow_StringToTaskMap,
+    easyflow_StringToToolMap,
+    easyflow_EasyFlowTemplate,
+    easyflow_Task,
+    easyflow_DataFormatToTaskList,
+    easyflow_TaskToDataProcessingType,
+    easyflow_DataProcessingTypeToTask,
+    easyflow_DataProcessingType,
+    easyflow_EasyFlowImplementationTemplate,
+    easyflow_EasyFlowMetadata,
+    easyflow_EasyFlowConfiguration,
+    easyflow_Workflow,
     TraversalCriterion,
+    DataFormat,
     DataCriterion,
 )
 
@@ -63,287 +63,287 @@ from classes import (
 
 
 
-def test_easyflow::chunk_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Chunk)
+def test_easyflow_chunk_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Chunk)
 
 
-def test_easyflow::chunk_constructor_exists():
-    assert callable(easyflow::Chunk.__init__)
+def test_easyflow_chunk_constructor_exists():
+    assert callable(easyflow_Chunk.__init__)
 
 
-def test_easyflow::chunk_constructor_args():
-    sig = inspect.signature(easyflow::Chunk.__init__)
+def test_easyflow_chunk_constructor_args():
+    sig = inspect.signature(easyflow_Chunk.__init__)
     params = list(sig.parameters.keys())
-    assert "argument" in params, "Missing parameter 'argument'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "tool" in params, "Missing parameter 'tool'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "argument" in params, "Missing parameter 'argument'"
 
-def test_easyflow::chunk_has_argument():
-    assert hasattr(easyflow::Chunk, "argument")
+def test_easyflow_chunk_has_tool():
+    assert hasattr(easyflow_Chunk, "tool")
     descriptor = None
-    for klass in easyflow::Chunk.__mro__:
-        if "argument" in klass.__dict__:
-            descriptor = klass.__dict__["argument"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::chunk_has_name():
-    assert hasattr(easyflow::Chunk, "name")
-    descriptor = None
-    for klass in easyflow::Chunk.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::chunk_has_tool():
-    assert hasattr(easyflow::Chunk, "tool")
-    descriptor = None
-    for klass in easyflow::Chunk.__mro__:
+    for klass in easyflow_Chunk.__mro__:
         if "tool" in klass.__dict__:
             descriptor = klass.__dict__["tool"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_easyflow::groupingevent_is_not_abstract():
-    assert not inspect.isabstract(easyflow::GroupingEvent)
-
-
-def test_easyflow::groupingevent_constructor_exists():
-    assert callable(easyflow::GroupingEvent.__init__)
-
-
-def test_easyflow::groupingevent_constructor_args():
-    sig = inspect.signature(easyflow::GroupingEvent.__init__)
-    params = list(sig.parameters.keys())
-    assert "dagOut" in params, "Missing parameter 'dagOut'"
-    assert "dagIn" in params, "Missing parameter 'dagIn'"
-
-def test_easyflow::groupingevent_has_dagOut():
-    assert hasattr(easyflow::GroupingEvent, "dagOut")
+def test_easyflow_chunk_has_name():
+    assert hasattr(easyflow_Chunk, "name")
     descriptor = None
-    for klass in easyflow::GroupingEvent.__mro__:
-        if "dagOut" in klass.__dict__:
-            descriptor = klass.__dict__["dagOut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::groupingevent_has_dagIn():
-    assert hasattr(easyflow::GroupingEvent, "dagIn")
-    descriptor = None
-    for klass in easyflow::GroupingEvent.__mro__:
-        if "dagIn" in klass.__dict__:
-            descriptor = klass.__dict__["dagIn"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_easyflow::job_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Job)
-
-
-def test_easyflow::job_constructor_exists():
-    assert callable(easyflow::Job.__init__)
-
-
-def test_easyflow::job_constructor_args():
-    sig = inspect.signature(easyflow::Job.__init__)
-    params = list(sig.parameters.keys())
-    assert "dependencies" in params, "Missing parameter 'dependencies'"
-    assert "source" in params, "Missing parameter 'source'"
-    assert "subCmd" in params, "Missing parameter 'subCmd'"
-    assert "targetPlatformOptions" in params, "Missing parameter 'targetPlatformOptions'"
-    assert "genericArgs" in params, "Missing parameter 'genericArgs'"
-    assert "staticArgs" in params, "Missing parameter 'staticArgs'"
-    assert "targetPlatform" in params, "Missing parameter 'targetPlatform'"
-    assert "exe" in params, "Missing parameter 'exe'"
-    assert "inputArgs" in params, "Missing parameter 'inputArgs'"
-    assert "interpreterOption" in params, "Missing parameter 'interpreterOption'"
-    assert "targets" in params, "Missing parameter 'targets'"
-    assert "outputArgs" in params, "Missing parameter 'outputArgs'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_easyflow::job_has_dependencies():
-    assert hasattr(easyflow::Job, "dependencies")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "dependencies" in klass.__dict__:
-            descriptor = klass.__dict__["dependencies"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_source():
-    assert hasattr(easyflow::Job, "source")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "source" in klass.__dict__:
-            descriptor = klass.__dict__["source"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_subCmd():
-    assert hasattr(easyflow::Job, "subCmd")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "subCmd" in klass.__dict__:
-            descriptor = klass.__dict__["subCmd"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_targetPlatformOptions():
-    assert hasattr(easyflow::Job, "targetPlatformOptions")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "targetPlatformOptions" in klass.__dict__:
-            descriptor = klass.__dict__["targetPlatformOptions"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_genericArgs():
-    assert hasattr(easyflow::Job, "genericArgs")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "genericArgs" in klass.__dict__:
-            descriptor = klass.__dict__["genericArgs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_staticArgs():
-    assert hasattr(easyflow::Job, "staticArgs")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "staticArgs" in klass.__dict__:
-            descriptor = klass.__dict__["staticArgs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_targetPlatform():
-    assert hasattr(easyflow::Job, "targetPlatform")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "targetPlatform" in klass.__dict__:
-            descriptor = klass.__dict__["targetPlatform"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_exe():
-    assert hasattr(easyflow::Job, "exe")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "exe" in klass.__dict__:
-            descriptor = klass.__dict__["exe"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_inputArgs():
-    assert hasattr(easyflow::Job, "inputArgs")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "inputArgs" in klass.__dict__:
-            descriptor = klass.__dict__["inputArgs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_interpreterOption():
-    assert hasattr(easyflow::Job, "interpreterOption")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "interpreterOption" in klass.__dict__:
-            descriptor = klass.__dict__["interpreterOption"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_targets():
-    assert hasattr(easyflow::Job, "targets")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "targets" in klass.__dict__:
-            descriptor = klass.__dict__["targets"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_outputArgs():
-    assert hasattr(easyflow::Job, "outputArgs")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
-        if "outputArgs" in klass.__dict__:
-            descriptor = klass.__dict__["outputArgs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::job_has_name():
-    assert hasattr(easyflow::Job, "name")
-    descriptor = None
-    for klass in easyflow::Job.__mro__:
+    for klass in easyflow_Chunk.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_easyflow_chunk_has_argument():
+    assert hasattr(easyflow_Chunk, "argument")
+    descriptor = None
+    for klass in easyflow_Chunk.__mro__:
+        if "argument" in klass.__dict__:
+            descriptor = klass.__dict__["argument"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_easyflow::splittingevent_is_not_abstract():
-    assert not inspect.isabstract(easyflow::SplittingEvent)
+
+def test_easyflow_groupingevent_is_not_abstract():
+    assert not inspect.isabstract(easyflow_GroupingEvent)
 
 
-def test_easyflow::splittingevent_constructor_exists():
-    assert callable(easyflow::SplittingEvent.__init__)
+def test_easyflow_groupingevent_constructor_exists():
+    assert callable(easyflow_GroupingEvent.__init__)
 
 
-def test_easyflow::splittingevent_constructor_args():
-    sig = inspect.signature(easyflow::SplittingEvent.__init__)
+def test_easyflow_groupingevent_constructor_args():
+    sig = inspect.signature(easyflow_GroupingEvent.__init__)
     params = list(sig.parameters.keys())
-    assert "processedTask" in params, "Missing parameter 'processedTask'"
-    assert "dag" in params, "Missing parameter 'dag'"
+    assert "dagIn" in params, "Missing parameter 'dagIn'"
+    assert "dagOut" in params, "Missing parameter 'dagOut'"
+
+def test_easyflow_groupingevent_has_dagIn():
+    assert hasattr(easyflow_GroupingEvent, "dagIn")
+    descriptor = None
+    for klass in easyflow_GroupingEvent.__mro__:
+        if "dagIn" in klass.__dict__:
+            descriptor = klass.__dict__["dagIn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_groupingevent_has_dagOut():
+    assert hasattr(easyflow_GroupingEvent, "dagOut")
+    descriptor = None
+    for klass in easyflow_GroupingEvent.__mro__:
+        if "dagOut" in klass.__dict__:
+            descriptor = klass.__dict__["dagOut"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_easyflow_job_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Job)
+
+
+def test_easyflow_job_constructor_exists():
+    assert callable(easyflow_Job.__init__)
+
+
+def test_easyflow_job_constructor_args():
+    sig = inspect.signature(easyflow_Job.__init__)
+    params = list(sig.parameters.keys())
+    assert "targets" in params, "Missing parameter 'targets'"
+    assert "interpreterOption" in params, "Missing parameter 'interpreterOption'"
+    assert "staticArgs" in params, "Missing parameter 'staticArgs'"
+    assert "inputArgs" in params, "Missing parameter 'inputArgs'"
+    assert "dependencies" in params, "Missing parameter 'dependencies'"
+    assert "outputArgs" in params, "Missing parameter 'outputArgs'"
+    assert "targetPlatformOptions" in params, "Missing parameter 'targetPlatformOptions'"
+    assert "targetPlatform" in params, "Missing parameter 'targetPlatform'"
+    assert "source" in params, "Missing parameter 'source'"
+    assert "genericArgs" in params, "Missing parameter 'genericArgs'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "exe" in params, "Missing parameter 'exe'"
+    assert "subCmd" in params, "Missing parameter 'subCmd'"
+
+def test_easyflow_job_has_targets():
+    assert hasattr(easyflow_Job, "targets")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "targets" in klass.__dict__:
+            descriptor = klass.__dict__["targets"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_interpreterOption():
+    assert hasattr(easyflow_Job, "interpreterOption")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "interpreterOption" in klass.__dict__:
+            descriptor = klass.__dict__["interpreterOption"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_staticArgs():
+    assert hasattr(easyflow_Job, "staticArgs")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "staticArgs" in klass.__dict__:
+            descriptor = klass.__dict__["staticArgs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_inputArgs():
+    assert hasattr(easyflow_Job, "inputArgs")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "inputArgs" in klass.__dict__:
+            descriptor = klass.__dict__["inputArgs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_dependencies():
+    assert hasattr(easyflow_Job, "dependencies")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "dependencies" in klass.__dict__:
+            descriptor = klass.__dict__["dependencies"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_outputArgs():
+    assert hasattr(easyflow_Job, "outputArgs")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "outputArgs" in klass.__dict__:
+            descriptor = klass.__dict__["outputArgs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_targetPlatformOptions():
+    assert hasattr(easyflow_Job, "targetPlatformOptions")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "targetPlatformOptions" in klass.__dict__:
+            descriptor = klass.__dict__["targetPlatformOptions"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_targetPlatform():
+    assert hasattr(easyflow_Job, "targetPlatform")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "targetPlatform" in klass.__dict__:
+            descriptor = klass.__dict__["targetPlatform"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_source():
+    assert hasattr(easyflow_Job, "source")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "source" in klass.__dict__:
+            descriptor = klass.__dict__["source"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_genericArgs():
+    assert hasattr(easyflow_Job, "genericArgs")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "genericArgs" in klass.__dict__:
+            descriptor = klass.__dict__["genericArgs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_name():
+    assert hasattr(easyflow_Job, "name")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_exe():
+    assert hasattr(easyflow_Job, "exe")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "exe" in klass.__dict__:
+            descriptor = klass.__dict__["exe"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_job_has_subCmd():
+    assert hasattr(easyflow_Job, "subCmd")
+    descriptor = None
+    for klass in easyflow_Job.__mro__:
+        if "subCmd" in klass.__dict__:
+            descriptor = klass.__dict__["subCmd"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_easyflow_splittingevent_is_not_abstract():
+    assert not inspect.isabstract(easyflow_SplittingEvent)
+
+
+def test_easyflow_splittingevent_constructor_exists():
+    assert callable(easyflow_SplittingEvent.__init__)
+
+
+def test_easyflow_splittingevent_constructor_args():
+    sig = inspect.signature(easyflow_SplittingEvent.__init__)
+    params = list(sig.parameters.keys())
+    assert "traversalCriterion" in params, "Missing parameter 'traversalCriterion'"
     assert "traversalChunks" in params, "Missing parameter 'traversalChunks'"
     assert "traversalImplDir" in params, "Missing parameter 'traversalImplDir'"
-    assert "traversalCriterion" in params, "Missing parameter 'traversalCriterion'"
+    assert "processedTask" in params, "Missing parameter 'processedTask'"
+    assert "dag" in params, "Missing parameter 'dag'"
 
-def test_easyflow::splittingevent_has_processedTask():
-    assert hasattr(easyflow::SplittingEvent, "processedTask")
+def test_easyflow_splittingevent_has_traversalCriterion():
+    assert hasattr(easyflow_SplittingEvent, "traversalCriterion")
     descriptor = None
-    for klass in easyflow::SplittingEvent.__mro__:
-        if "processedTask" in klass.__dict__:
-            descriptor = klass.__dict__["processedTask"]
+    for klass in easyflow_SplittingEvent.__mro__:
+        if "traversalCriterion" in klass.__dict__:
+            descriptor = klass.__dict__["traversalCriterion"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::splittingevent_has_dag():
-    assert hasattr(easyflow::SplittingEvent, "dag")
+def test_easyflow_splittingevent_has_traversalChunks():
+    assert hasattr(easyflow_SplittingEvent, "traversalChunks")
     descriptor = None
-    for klass in easyflow::SplittingEvent.__mro__:
-        if "dag" in klass.__dict__:
-            descriptor = klass.__dict__["dag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::splittingevent_has_traversalChunks():
-    assert hasattr(easyflow::SplittingEvent, "traversalChunks")
-    descriptor = None
-    for klass in easyflow::SplittingEvent.__mro__:
+    for klass in easyflow_SplittingEvent.__mro__:
         if "traversalChunks" in klass.__dict__:
             descriptor = klass.__dict__["traversalChunks"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::splittingevent_has_traversalImplDir():
-    assert hasattr(easyflow::SplittingEvent, "traversalImplDir")
+def test_easyflow_splittingevent_has_traversalImplDir():
+    assert hasattr(easyflow_SplittingEvent, "traversalImplDir")
     descriptor = None
-    for klass in easyflow::SplittingEvent.__mro__:
+    for klass in easyflow_SplittingEvent.__mro__:
         if "traversalImplDir" in klass.__dict__:
             descriptor = klass.__dict__["traversalImplDir"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::splittingevent_has_traversalCriterion():
-    assert hasattr(easyflow::SplittingEvent, "traversalCriterion")
+def test_easyflow_splittingevent_has_processedTask():
+    assert hasattr(easyflow_SplittingEvent, "processedTask")
     descriptor = None
-    for klass in easyflow::SplittingEvent.__mro__:
-        if "traversalCriterion" in klass.__dict__:
-            descriptor = klass.__dict__["traversalCriterion"]
+    for klass in easyflow_SplittingEvent.__mro__:
+        if "processedTask" in klass.__dict__:
+            descriptor = klass.__dict__["processedTask"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_splittingevent_has_dag():
+    assert hasattr(easyflow_SplittingEvent, "dag")
+    descriptor = None
+    for klass in easyflow_SplittingEvent.__mro__:
+        if "dag" in klass.__dict__:
+            descriptor = klass.__dict__["dag"]
             break
     assert isinstance(descriptor, property)
 
@@ -363,79 +363,79 @@ def test_traversal_constructor_args():
 
 
 
-def test_easyflow::contig_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Contig)
+def test_easyflow_locus_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Locus)
 
 
-def test_easyflow::contig_constructor_exists():
-    assert callable(easyflow::Contig.__init__)
+def test_easyflow_locus_constructor_exists():
+    assert callable(easyflow_Locus.__init__)
 
 
-def test_easyflow::contig_constructor_args():
-    sig = inspect.signature(easyflow::Contig.__init__)
+def test_easyflow_locus_constructor_args():
+    sig = inspect.signature(easyflow_Locus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::readend_is_not_abstract():
-    assert not inspect.isabstract(easyflow::ReadEnd)
+def test_easyflow_readend_is_not_abstract():
+    assert not inspect.isabstract(easyflow_ReadEnd)
 
 
-def test_easyflow::readend_constructor_exists():
-    assert callable(easyflow::ReadEnd.__init__)
+def test_easyflow_readend_constructor_exists():
+    assert callable(easyflow_ReadEnd.__init__)
 
 
-def test_easyflow::readend_constructor_args():
-    sig = inspect.signature(easyflow::ReadEnd.__init__)
+def test_easyflow_readend_constructor_args():
+    sig = inspect.signature(easyflow_ReadEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::locus_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Locus)
+def test_easyflow_contig_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Contig)
 
 
-def test_easyflow::locus_constructor_exists():
-    assert callable(easyflow::Locus.__init__)
+def test_easyflow_contig_constructor_exists():
+    assert callable(easyflow_Contig.__init__)
 
 
-def test_easyflow::locus_constructor_args():
-    sig = inspect.signature(easyflow::Locus.__init__)
+def test_easyflow_contig_constructor_args():
+    sig = inspect.signature(easyflow_Contig.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::generictraversalcriterion_is_not_abstract():
-    assert not inspect.isabstract(easyflow::GenericTraversalCriterion)
+def test_easyflow_generictraversalcriterion_is_not_abstract():
+    assert not inspect.isabstract(easyflow_GenericTraversalCriterion)
 
 
-def test_easyflow::generictraversalcriterion_constructor_exists():
-    assert callable(easyflow::GenericTraversalCriterion.__init__)
+def test_easyflow_generictraversalcriterion_constructor_exists():
+    assert callable(easyflow_GenericTraversalCriterion.__init__)
 
 
-def test_easyflow::generictraversalcriterion_constructor_args():
-    sig = inspect.signature(easyflow::GenericTraversalCriterion.__init__)
+def test_easyflow_generictraversalcriterion_constructor_args():
+    sig = inspect.signature(easyflow_GenericTraversalCriterion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::stringtochunkmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToChunkMap)
+def test_easyflow_stringtochunkmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToChunkMap)
 
 
-def test_easyflow::stringtochunkmap_constructor_exists():
-    assert callable(easyflow::StringToChunkMap.__init__)
+def test_easyflow_stringtochunkmap_constructor_exists():
+    assert callable(easyflow_StringToChunkMap.__init__)
 
 
-def test_easyflow::stringtochunkmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToChunkMap.__init__)
+def test_easyflow_stringtochunkmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToChunkMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtochunkmap_has_key():
-    assert hasattr(easyflow::StringToChunkMap, "key")
+def test_easyflow_stringtochunkmap_has_key():
+    assert hasattr(easyflow_StringToChunkMap, "key")
     descriptor = None
-    for klass in easyflow::StringToChunkMap.__mro__:
+    for klass in easyflow_StringToChunkMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -457,23 +457,23 @@ def test_itraversal_constructor_args():
 
 
 
-def test_easyflow::traversal_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Traversal)
+def test_easyflow_traversal_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Traversal)
 
 
-def test_easyflow::traversal_constructor_exists():
-    assert callable(easyflow::Traversal.__init__)
+def test_easyflow_traversal_constructor_exists():
+    assert callable(easyflow_Traversal.__init__)
 
 
-def test_easyflow::traversal_constructor_args():
-    sig = inspect.signature(easyflow::Traversal.__init__)
+def test_easyflow_traversal_constructor_args():
+    sig = inspect.signature(easyflow_Traversal.__init__)
     params = list(sig.parameters.keys())
     assert "tarversalCriterion" in params, "Missing parameter 'tarversalCriterion'"
 
-def test_easyflow::traversal_has_tarversalCriterion():
-    assert hasattr(easyflow::Traversal, "tarversalCriterion")
+def test_easyflow_traversal_has_tarversalCriterion():
+    assert hasattr(easyflow_Traversal, "tarversalCriterion")
     descriptor = None
-    for klass in easyflow::Traversal.__mro__:
+    for klass in easyflow_Traversal.__mro__:
         if "tarversalCriterion" in klass.__dict__:
             descriptor = klass.__dict__["tarversalCriterion"]
             break
@@ -481,16 +481,16 @@ def test_easyflow::traversal_has_tarversalCriterion():
 
 
 
-def test_easyflow::itraversal_is_not_abstract():
-    assert not inspect.isabstract(easyflow::ITraversal)
+def test_easyflow_itraversal_is_not_abstract():
+    assert not inspect.isabstract(easyflow_ITraversal)
 
 
-def test_easyflow::itraversal_constructor_exists():
-    assert callable(easyflow::ITraversal.__init__)
+def test_easyflow_itraversal_constructor_exists():
+    assert callable(easyflow_ITraversal.__init__)
 
 
-def test_easyflow::itraversal_constructor_args():
-    sig = inspect.signature(easyflow::ITraversal.__init__)
+def test_easyflow_itraversal_constructor_args():
+    sig = inspect.signature(easyflow_ITraversal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -509,23 +509,23 @@ def test_easyflowmetadata_constructor_args():
 
 
 
-def test_easyflow::easyflowmetadatareader_is_not_abstract():
-    assert not inspect.isabstract(easyflow::EasyFlowMetadataReader)
+def test_easyflow_easyflowmetadatareader_is_not_abstract():
+    assert not inspect.isabstract(easyflow_EasyFlowMetadataReader)
 
 
-def test_easyflow::easyflowmetadatareader_constructor_exists():
-    assert callable(easyflow::EasyFlowMetadataReader.__init__)
+def test_easyflow_easyflowmetadatareader_constructor_exists():
+    assert callable(easyflow_EasyFlowMetadataReader.__init__)
 
 
-def test_easyflow::easyflowmetadatareader_constructor_args():
-    sig = inspect.signature(easyflow::EasyFlowMetadataReader.__init__)
+def test_easyflow_easyflowmetadatareader_constructor_args():
+    sig = inspect.signature(easyflow_EasyFlowMetadataReader.__init__)
     params = list(sig.parameters.keys())
     assert "fileName" in params, "Missing parameter 'fileName'"
 
-def test_easyflow::easyflowmetadatareader_has_fileName():
-    assert hasattr(easyflow::EasyFlowMetadataReader, "fileName")
+def test_easyflow_easyflowmetadatareader_has_fileName():
+    assert hasattr(easyflow_EasyFlowMetadataReader, "fileName")
     descriptor = None
-    for klass in easyflow::EasyFlowMetadataReader.__mro__:
+    for klass in easyflow_EasyFlowMetadataReader.__mro__:
         if "fileName" in klass.__dict__:
             descriptor = klass.__dict__["fileName"]
             break
@@ -533,23 +533,23 @@ def test_easyflow::easyflowmetadatareader_has_fileName():
 
 
 
-def test_easyflow::stringtorecordmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToRecordMap)
+def test_easyflow_stringtorecordmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToRecordMap)
 
 
-def test_easyflow::stringtorecordmap_constructor_exists():
-    assert callable(easyflow::StringToRecordMap.__init__)
+def test_easyflow_stringtorecordmap_constructor_exists():
+    assert callable(easyflow_StringToRecordMap.__init__)
 
 
-def test_easyflow::stringtorecordmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToRecordMap.__init__)
+def test_easyflow_stringtorecordmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToRecordMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtorecordmap_has_key():
-    assert hasattr(easyflow::StringToRecordMap, "key")
+def test_easyflow_stringtorecordmap_has_key():
+    assert hasattr(easyflow_StringToRecordMap, "key")
     descriptor = None
-    for klass in easyflow::StringToRecordMap.__mro__:
+    for klass in easyflow_StringToRecordMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -557,23 +557,23 @@ def test_easyflow::stringtorecordmap_has_key():
 
 
 
-def test_easyflow::stringtolibrarymap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToLibraryMap)
+def test_easyflow_stringtolibrarymap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToLibraryMap)
 
 
-def test_easyflow::stringtolibrarymap_constructor_exists():
-    assert callable(easyflow::StringToLibraryMap.__init__)
+def test_easyflow_stringtolibrarymap_constructor_exists():
+    assert callable(easyflow_StringToLibraryMap.__init__)
 
 
-def test_easyflow::stringtolibrarymap_constructor_args():
-    sig = inspect.signature(easyflow::StringToLibraryMap.__init__)
+def test_easyflow_stringtolibrarymap_constructor_args():
+    sig = inspect.signature(easyflow_StringToLibraryMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtolibrarymap_has_key():
-    assert hasattr(easyflow::StringToLibraryMap, "key")
+def test_easyflow_stringtolibrarymap_has_key():
+    assert hasattr(easyflow_StringToLibraryMap, "key")
     descriptor = None
-    for klass in easyflow::StringToLibraryMap.__mro__:
+    for klass in easyflow_StringToLibraryMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -581,23 +581,23 @@ def test_easyflow::stringtolibrarymap_has_key():
 
 
 
-def test_easyflow::stringtoreadgroupmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToReadgroupMap)
+def test_easyflow_stringtoreadgroupmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToReadgroupMap)
 
 
-def test_easyflow::stringtoreadgroupmap_constructor_exists():
-    assert callable(easyflow::StringToReadgroupMap.__init__)
+def test_easyflow_stringtoreadgroupmap_constructor_exists():
+    assert callable(easyflow_StringToReadgroupMap.__init__)
 
 
-def test_easyflow::stringtoreadgroupmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToReadgroupMap.__init__)
+def test_easyflow_stringtoreadgroupmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToReadgroupMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtoreadgroupmap_has_key():
-    assert hasattr(easyflow::StringToReadgroupMap, "key")
+def test_easyflow_stringtoreadgroupmap_has_key():
+    assert hasattr(easyflow_StringToReadgroupMap, "key")
     descriptor = None
-    for klass in easyflow::StringToReadgroupMap.__mro__:
+    for klass in easyflow_StringToReadgroupMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -605,23 +605,23 @@ def test_easyflow::stringtoreadgroupmap_has_key():
 
 
 
-def test_easyflow::stringtosamplemap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToSampleMap)
+def test_easyflow_stringtosamplemap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToSampleMap)
 
 
-def test_easyflow::stringtosamplemap_constructor_exists():
-    assert callable(easyflow::StringToSampleMap.__init__)
+def test_easyflow_stringtosamplemap_constructor_exists():
+    assert callable(easyflow_StringToSampleMap.__init__)
 
 
-def test_easyflow::stringtosamplemap_constructor_args():
-    sig = inspect.signature(easyflow::StringToSampleMap.__init__)
+def test_easyflow_stringtosamplemap_constructor_args():
+    sig = inspect.signature(easyflow_StringToSampleMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtosamplemap_has_key():
-    assert hasattr(easyflow::StringToSampleMap, "key")
+def test_easyflow_stringtosamplemap_has_key():
+    assert hasattr(easyflow_StringToSampleMap, "key")
     descriptor = None
-    for klass in easyflow::StringToSampleMap.__mro__:
+    for klass in easyflow_StringToSampleMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -643,297 +643,297 @@ def test_groupingcriterion_constructor_args():
 
 
 
-def test_easyflow::library_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Library)
+def test_easyflow_library_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Library)
 
 
-def test_easyflow::library_constructor_exists():
-    assert callable(easyflow::Library.__init__)
+def test_easyflow_library_constructor_exists():
+    assert callable(easyflow_Library.__init__)
 
 
-def test_easyflow::library_constructor_args():
-    sig = inspect.signature(easyflow::Library.__init__)
+def test_easyflow_library_constructor_args():
+    sig = inspect.signature(easyflow_Library.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "insertSize" in params, "Missing parameter 'insertSize'"
     assert "readLength" in params, "Missing parameter 'readLength'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_easyflow::library_has_insertSize():
-    assert hasattr(easyflow::Library, "insertSize")
+def test_easyflow_library_has_name():
+    assert hasattr(easyflow_Library, "name")
     descriptor = None
-    for klass in easyflow::Library.__mro__:
+    for klass in easyflow_Library.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_library_has_insertSize():
+    assert hasattr(easyflow_Library, "insertSize")
+    descriptor = None
+    for klass in easyflow_Library.__mro__:
         if "insertSize" in klass.__dict__:
             descriptor = klass.__dict__["insertSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::library_has_readLength():
-    assert hasattr(easyflow::Library, "readLength")
+def test_easyflow_library_has_readLength():
+    assert hasattr(easyflow_Library, "readLength")
     descriptor = None
-    for klass in easyflow::Library.__mro__:
+    for klass in easyflow_Library.__mro__:
         if "readLength" in klass.__dict__:
             descriptor = klass.__dict__["readLength"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::library_has_name():
-    assert hasattr(easyflow::Library, "name")
-    descriptor = None
-    for klass in easyflow::Library.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_easyflow::record_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Record)
-
-
-def test_easyflow::record_constructor_exists():
-    assert callable(easyflow::Record.__init__)
+def test_easyflow_record_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Record)
 
 
-def test_easyflow::record_constructor_args():
-    sig = inspect.signature(easyflow::Record.__init__)
+def test_easyflow_record_constructor_exists():
+    assert callable(easyflow_Record.__init__)
+
+
+def test_easyflow_record_constructor_args():
+    sig = inspect.signature(easyflow_Record.__init__)
     params = list(sig.parameters.keys())
-    assert "refData" in params, "Missing parameter 'refData'"
     assert "fileNames" in params, "Missing parameter 'fileNames'"
+    assert "refData" in params, "Missing parameter 'refData'"
 
-def test_easyflow::record_has_refData():
-    assert hasattr(easyflow::Record, "refData")
+def test_easyflow_record_has_fileNames():
+    assert hasattr(easyflow_Record, "fileNames")
     descriptor = None
-    for klass in easyflow::Record.__mro__:
-        if "refData" in klass.__dict__:
-            descriptor = klass.__dict__["refData"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::record_has_fileNames():
-    assert hasattr(easyflow::Record, "fileNames")
-    descriptor = None
-    for klass in easyflow::Record.__mro__:
+    for klass in easyflow_Record.__mro__:
         if "fileNames" in klass.__dict__:
             descriptor = klass.__dict__["fileNames"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_easyflow::readgroup_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Readgroup)
-
-
-def test_easyflow::readgroup_constructor_exists():
-    assert callable(easyflow::Readgroup.__init__)
-
-
-def test_easyflow::readgroup_constructor_args():
-    sig = inspect.signature(easyflow::Readgroup.__init__)
-    params = list(sig.parameters.keys())
-    assert "platform" in params, "Missing parameter 'platform'"
-    assert "platformUnit" in params, "Missing parameter 'platformUnit'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_easyflow::readgroup_has_platform():
-    assert hasattr(easyflow::Readgroup, "platform")
+def test_easyflow_record_has_refData():
+    assert hasattr(easyflow_Record, "refData")
     descriptor = None
-    for klass in easyflow::Readgroup.__mro__:
-        if "platform" in klass.__dict__:
-            descriptor = klass.__dict__["platform"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::readgroup_has_platformUnit():
-    assert hasattr(easyflow::Readgroup, "platformUnit")
-    descriptor = None
-    for klass in easyflow::Readgroup.__mro__:
-        if "platformUnit" in klass.__dict__:
-            descriptor = klass.__dict__["platformUnit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::readgroup_has_description():
-    assert hasattr(easyflow::Readgroup, "description")
-    descriptor = None
-    for klass in easyflow::Readgroup.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::readgroup_has_name():
-    assert hasattr(easyflow::Readgroup, "name")
-    descriptor = None
-    for klass in easyflow::Readgroup.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_easyflow::sample_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Sample)
-
-
-def test_easyflow::sample_constructor_exists():
-    assert callable(easyflow::Sample.__init__)
-
-
-def test_easyflow::sample_constructor_args():
-    sig = inspect.signature(easyflow::Sample.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_easyflow::sample_has_name():
-    assert hasattr(easyflow::Sample, "name")
-    descriptor = None
-    for klass in easyflow::Sample.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_easyflow::group_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Group)
-
-
-def test_easyflow::group_constructor_exists():
-    assert callable(easyflow::Group.__init__)
-
-
-def test_easyflow::group_constructor_args():
-    sig = inspect.signature(easyflow::Group.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_easyflow::group_has_name():
-    assert hasattr(easyflow::Group, "name")
-    descriptor = None
-    for klass in easyflow::Group.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_easyflow::tool_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Tool)
-
-
-def test_easyflow::tool_constructor_exists():
-    assert callable(easyflow::Tool.__init__)
-
-
-def test_easyflow::tool_constructor_args():
-    sig = inspect.signature(easyflow::Tool.__init__)
-    params = list(sig.parameters.keys())
-    assert "refData" in params, "Missing parameter 'refData'"
-    assert "category" in params, "Missing parameter 'category'"
-    assert "subCmd" in params, "Missing parameter 'subCmd'"
-    assert "toolName" in params, "Missing parameter 'toolName'"
-    assert "subCmdPrefix" in params, "Missing parameter 'subCmdPrefix'"
-    assert "pattern" in params, "Missing parameter 'pattern'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "source" in params, "Missing parameter 'source'"
-
-def test_easyflow::tool_has_refData():
-    assert hasattr(easyflow::Tool, "refData")
-    descriptor = None
-    for klass in easyflow::Tool.__mro__:
+    for klass in easyflow_Record.__mro__:
         if "refData" in klass.__dict__:
             descriptor = klass.__dict__["refData"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_category():
-    assert hasattr(easyflow::Tool, "category")
+
+
+def test_easyflow_sample_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Sample)
+
+
+def test_easyflow_sample_constructor_exists():
+    assert callable(easyflow_Sample.__init__)
+
+
+def test_easyflow_sample_constructor_args():
+    sig = inspect.signature(easyflow_Sample.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_easyflow_sample_has_name():
+    assert hasattr(easyflow_Sample, "name")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
+    for klass in easyflow_Sample.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_subCmd():
-    assert hasattr(easyflow::Tool, "subCmd")
+
+
+def test_easyflow_readgroup_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Readgroup)
+
+
+def test_easyflow_readgroup_constructor_exists():
+    assert callable(easyflow_Readgroup.__init__)
+
+
+def test_easyflow_readgroup_constructor_args():
+    sig = inspect.signature(easyflow_Readgroup.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "platform" in params, "Missing parameter 'platform'"
+    assert "platformUnit" in params, "Missing parameter 'platformUnit'"
+
+def test_easyflow_readgroup_has_description():
+    assert hasattr(easyflow_Readgroup, "description")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
-        if "subCmd" in klass.__dict__:
-            descriptor = klass.__dict__["subCmd"]
+    for klass in easyflow_Readgroup.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_toolName():
-    assert hasattr(easyflow::Tool, "toolName")
+def test_easyflow_readgroup_has_name():
+    assert hasattr(easyflow_Readgroup, "name")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
+    for klass in easyflow_Readgroup.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_readgroup_has_platform():
+    assert hasattr(easyflow_Readgroup, "platform")
+    descriptor = None
+    for klass in easyflow_Readgroup.__mro__:
+        if "platform" in klass.__dict__:
+            descriptor = klass.__dict__["platform"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_readgroup_has_platformUnit():
+    assert hasattr(easyflow_Readgroup, "platformUnit")
+    descriptor = None
+    for klass in easyflow_Readgroup.__mro__:
+        if "platformUnit" in klass.__dict__:
+            descriptor = klass.__dict__["platformUnit"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_easyflow_group_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Group)
+
+
+def test_easyflow_group_constructor_exists():
+    assert callable(easyflow_Group.__init__)
+
+
+def test_easyflow_group_constructor_args():
+    sig = inspect.signature(easyflow_Group.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_easyflow_group_has_name():
+    assert hasattr(easyflow_Group, "name")
+    descriptor = None
+    for klass in easyflow_Group.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_easyflow_tool_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Tool)
+
+
+def test_easyflow_tool_constructor_exists():
+    assert callable(easyflow_Tool.__init__)
+
+
+def test_easyflow_tool_constructor_args():
+    sig = inspect.signature(easyflow_Tool.__init__)
+    params = list(sig.parameters.keys())
+    assert "toolName" in params, "Missing parameter 'toolName'"
+    assert "subCmd" in params, "Missing parameter 'subCmd'"
+    assert "category" in params, "Missing parameter 'category'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "refData" in params, "Missing parameter 'refData'"
+    assert "subCmdPrefix" in params, "Missing parameter 'subCmdPrefix'"
+    assert "source" in params, "Missing parameter 'source'"
+    assert "pattern" in params, "Missing parameter 'pattern'"
+
+def test_easyflow_tool_has_toolName():
+    assert hasattr(easyflow_Tool, "toolName")
+    descriptor = None
+    for klass in easyflow_Tool.__mro__:
         if "toolName" in klass.__dict__:
             descriptor = klass.__dict__["toolName"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_subCmdPrefix():
-    assert hasattr(easyflow::Tool, "subCmdPrefix")
+def test_easyflow_tool_has_subCmd():
+    assert hasattr(easyflow_Tool, "subCmd")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
-        if "subCmdPrefix" in klass.__dict__:
-            descriptor = klass.__dict__["subCmdPrefix"]
+    for klass in easyflow_Tool.__mro__:
+        if "subCmd" in klass.__dict__:
+            descriptor = klass.__dict__["subCmd"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_pattern():
-    assert hasattr(easyflow::Tool, "pattern")
+def test_easyflow_tool_has_category():
+    assert hasattr(easyflow_Tool, "category")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
-        if "pattern" in klass.__dict__:
-            descriptor = klass.__dict__["pattern"]
+    for klass in easyflow_Tool.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_type():
-    assert hasattr(easyflow::Tool, "type")
+def test_easyflow_tool_has_type():
+    assert hasattr(easyflow_Tool, "type")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
+    for klass in easyflow_Tool.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::tool_has_source():
-    assert hasattr(easyflow::Tool, "source")
+def test_easyflow_tool_has_refData():
+    assert hasattr(easyflow_Tool, "refData")
     descriptor = None
-    for klass in easyflow::Tool.__mro__:
+    for klass in easyflow_Tool.__mro__:
+        if "refData" in klass.__dict__:
+            descriptor = klass.__dict__["refData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_tool_has_subCmdPrefix():
+    assert hasattr(easyflow_Tool, "subCmdPrefix")
+    descriptor = None
+    for klass in easyflow_Tool.__mro__:
+        if "subCmdPrefix" in klass.__dict__:
+            descriptor = klass.__dict__["subCmdPrefix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_tool_has_source():
+    assert hasattr(easyflow_Tool, "source")
+    descriptor = None
+    for klass in easyflow_Tool.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
     assert isinstance(descriptor, property)
 
+def test_easyflow_tool_has_pattern():
+    assert hasattr(easyflow_Tool, "pattern")
+    descriptor = None
+    for klass in easyflow_Tool.__mro__:
+        if "pattern" in klass.__dict__:
+            descriptor = klass.__dict__["pattern"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_easyflow::groupingcriterion_is_not_abstract():
-    assert not inspect.isabstract(easyflow::GroupingCriterion)
+
+def test_easyflow_groupingcriterion_is_not_abstract():
+    assert not inspect.isabstract(easyflow_GroupingCriterion)
 
 
-def test_easyflow::groupingcriterion_constructor_exists():
-    assert callable(easyflow::GroupingCriterion.__init__)
+def test_easyflow_groupingcriterion_constructor_exists():
+    assert callable(easyflow_GroupingCriterion.__init__)
 
 
-def test_easyflow::groupingcriterion_constructor_args():
-    sig = inspect.signature(easyflow::GroupingCriterion.__init__)
+def test_easyflow_groupingcriterion_constructor_args():
+    sig = inspect.signature(easyflow_GroupingCriterion.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_easyflow::groupingcriterion_has_id():
-    assert hasattr(easyflow::GroupingCriterion, "id")
+def test_easyflow_groupingcriterion_has_id():
+    assert hasattr(easyflow_GroupingCriterion, "id")
     descriptor = None
-    for klass in easyflow::GroupingCriterion.__mro__:
+    for klass in easyflow_GroupingCriterion.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -941,97 +941,97 @@ def test_easyflow::groupingcriterion_has_id():
 
 
 
-def test_easyflow::argument_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Argument)
+def test_easyflow_argument_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Argument)
 
 
-def test_easyflow::argument_constructor_exists():
-    assert callable(easyflow::Argument.__init__)
+def test_easyflow_argument_constructor_exists():
+    assert callable(easyflow_Argument.__init__)
 
 
-def test_easyflow::argument_constructor_args():
-    sig = inspect.signature(easyflow::Argument.__init__)
+def test_easyflow_argument_constructor_args():
+    sig = inspect.signature(easyflow_Argument.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "sep" in params, "Missing parameter 'sep'"
     assert "arg" in params, "Missing parameter 'arg'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_easyflow::argument_has_name():
-    assert hasattr(easyflow::Argument, "name")
+def test_easyflow_argument_has_sep():
+    assert hasattr(easyflow_Argument, "sep")
     descriptor = None
-    for klass in easyflow::Argument.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::argument_has_sep():
-    assert hasattr(easyflow::Argument, "sep")
-    descriptor = None
-    for klass in easyflow::Argument.__mro__:
+    for klass in easyflow_Argument.__mro__:
         if "sep" in klass.__dict__:
             descriptor = klass.__dict__["sep"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::argument_has_arg():
-    assert hasattr(easyflow::Argument, "arg")
+def test_easyflow_argument_has_arg():
+    assert hasattr(easyflow_Argument, "arg")
     descriptor = None
-    for klass in easyflow::Argument.__mro__:
+    for klass in easyflow_Argument.__mro__:
         if "arg" in klass.__dict__:
             descriptor = klass.__dict__["arg"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_easyflow::interpreter_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Interpreter)
-
-
-def test_easyflow::interpreter_constructor_exists():
-    assert callable(easyflow::Interpreter.__init__)
-
-
-def test_easyflow::interpreter_constructor_args():
-    sig = inspect.signature(easyflow::Interpreter.__init__)
-    params = list(sig.parameters.keys())
-    assert "options" in params, "Missing parameter 'options'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "subCmd" in params, "Missing parameter 'subCmd'"
-    assert "exe" in params, "Missing parameter 'exe'"
-
-def test_easyflow::interpreter_has_options():
-    assert hasattr(easyflow::Interpreter, "options")
+def test_easyflow_argument_has_name():
+    assert hasattr(easyflow_Argument, "name")
     descriptor = None
-    for klass in easyflow::Interpreter.__mro__:
-        if "options" in klass.__dict__:
-            descriptor = klass.__dict__["options"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::interpreter_has_name():
-    assert hasattr(easyflow::Interpreter, "name")
-    descriptor = None
-    for klass in easyflow::Interpreter.__mro__:
+    for klass in easyflow_Argument.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::interpreter_has_subCmd():
-    assert hasattr(easyflow::Interpreter, "subCmd")
+
+
+def test_easyflow_interpreter_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Interpreter)
+
+
+def test_easyflow_interpreter_constructor_exists():
+    assert callable(easyflow_Interpreter.__init__)
+
+
+def test_easyflow_interpreter_constructor_args():
+    sig = inspect.signature(easyflow_Interpreter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "options" in params, "Missing parameter 'options'"
+    assert "subCmd" in params, "Missing parameter 'subCmd'"
+    assert "exe" in params, "Missing parameter 'exe'"
+
+def test_easyflow_interpreter_has_name():
+    assert hasattr(easyflow_Interpreter, "name")
     descriptor = None
-    for klass in easyflow::Interpreter.__mro__:
+    for klass in easyflow_Interpreter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_interpreter_has_options():
+    assert hasattr(easyflow_Interpreter, "options")
+    descriptor = None
+    for klass in easyflow_Interpreter.__mro__:
+        if "options" in klass.__dict__:
+            descriptor = klass.__dict__["options"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_interpreter_has_subCmd():
+    assert hasattr(easyflow_Interpreter, "subCmd")
+    descriptor = None
+    for klass in easyflow_Interpreter.__mro__:
         if "subCmd" in klass.__dict__:
             descriptor = klass.__dict__["subCmd"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::interpreter_has_exe():
-    assert hasattr(easyflow::Interpreter, "exe")
+def test_easyflow_interpreter_has_exe():
+    assert hasattr(easyflow_Interpreter, "exe")
     descriptor = None
-    for klass in easyflow::Interpreter.__mro__:
+    for klass in easyflow_Interpreter.__mro__:
         if "exe" in klass.__dict__:
             descriptor = klass.__dict__["exe"]
             break
@@ -1039,101 +1039,101 @@ def test_easyflow::interpreter_has_exe():
 
 
 
-def test_easyflow::iworkflowutil_is_not_abstract():
-    assert not inspect.isabstract(easyflow::IWorkflowUtil)
+def test_easyflow_iworkflowutil_is_not_abstract():
+    assert not inspect.isabstract(easyflow_IWorkflowUtil)
 
 
-def test_easyflow::iworkflowutil_constructor_exists():
-    assert callable(easyflow::IWorkflowUtil.__init__)
+def test_easyflow_iworkflowutil_constructor_exists():
+    assert callable(easyflow_IWorkflowUtil.__init__)
 
 
-def test_easyflow::iworkflowutil_constructor_args():
-    sig = inspect.signature(easyflow::IWorkflowUtil.__init__)
+def test_easyflow_iworkflowutil_constructor_args():
+    sig = inspect.signature(easyflow_IWorkflowUtil.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::commandargument_is_not_abstract():
-    assert not inspect.isabstract(easyflow::CommandArgument)
+def test_easyflow_commandargument_is_not_abstract():
+    assert not inspect.isabstract(easyflow_CommandArgument)
 
 
-def test_easyflow::commandargument_constructor_exists():
-    assert callable(easyflow::CommandArgument.__init__)
+def test_easyflow_commandargument_constructor_exists():
+    assert callable(easyflow_CommandArgument.__init__)
 
 
-def test_easyflow::commandargument_constructor_args():
-    sig = inspect.signature(easyflow::CommandArgument.__init__)
+def test_easyflow_commandargument_constructor_args():
+    sig = inspect.signature(easyflow_CommandArgument.__init__)
     params = list(sig.parameters.keys())
-    assert "arg" in params, "Missing parameter 'arg'"
-    assert "sep" in params, "Missing parameter 'sep'"
     assert "required" in params, "Missing parameter 'required'"
-    assert "named" in params, "Missing parameter 'named'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "named" in params, "Missing parameter 'named'"
+    assert "sep" in params, "Missing parameter 'sep'"
+    assert "arg" in params, "Missing parameter 'arg'"
 
-def test_easyflow::commandargument_has_arg():
-    assert hasattr(easyflow::CommandArgument, "arg")
+def test_easyflow_commandargument_has_required():
+    assert hasattr(easyflow_CommandArgument, "required")
     descriptor = None
-    for klass in easyflow::CommandArgument.__mro__:
-        if "arg" in klass.__dict__:
-            descriptor = klass.__dict__["arg"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::commandargument_has_sep():
-    assert hasattr(easyflow::CommandArgument, "sep")
-    descriptor = None
-    for klass in easyflow::CommandArgument.__mro__:
-        if "sep" in klass.__dict__:
-            descriptor = klass.__dict__["sep"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::commandargument_has_required():
-    assert hasattr(easyflow::CommandArgument, "required")
-    descriptor = None
-    for klass in easyflow::CommandArgument.__mro__:
+    for klass in easyflow_CommandArgument.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::commandargument_has_named():
-    assert hasattr(easyflow::CommandArgument, "named")
+def test_easyflow_commandargument_has_name():
+    assert hasattr(easyflow_CommandArgument, "name")
     descriptor = None
-    for klass in easyflow::CommandArgument.__mro__:
+    for klass in easyflow_CommandArgument.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_commandargument_has_named():
+    assert hasattr(easyflow_CommandArgument, "named")
+    descriptor = None
+    for klass in easyflow_CommandArgument.__mro__:
         if "named" in klass.__dict__:
             descriptor = klass.__dict__["named"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::commandargument_has_name():
-    assert hasattr(easyflow::CommandArgument, "name")
+def test_easyflow_commandargument_has_sep():
+    assert hasattr(easyflow_CommandArgument, "sep")
     descriptor = None
-    for klass in easyflow::CommandArgument.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in easyflow_CommandArgument.__mro__:
+        if "sep" in klass.__dict__:
+            descriptor = klass.__dict__["sep"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_commandargument_has_arg():
+    assert hasattr(easyflow_CommandArgument, "arg")
+    descriptor = None
+    for klass in easyflow_CommandArgument.__mro__:
+        if "arg" in klass.__dict__:
+            descriptor = klass.__dict__["arg"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_easyflow::stringtogroupmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToGroupMap)
+def test_easyflow_stringtogroupmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToGroupMap)
 
 
-def test_easyflow::stringtogroupmap_constructor_exists():
-    assert callable(easyflow::StringToGroupMap.__init__)
+def test_easyflow_stringtogroupmap_constructor_exists():
+    assert callable(easyflow_StringToGroupMap.__init__)
 
 
-def test_easyflow::stringtogroupmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToGroupMap.__init__)
+def test_easyflow_stringtogroupmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToGroupMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtogroupmap_has_key():
-    assert hasattr(easyflow::StringToGroupMap, "key")
+def test_easyflow_stringtogroupmap_has_key():
+    assert hasattr(easyflow_StringToGroupMap, "key")
     descriptor = None
-    for klass in easyflow::StringToGroupMap.__mro__:
+    for klass in easyflow_StringToGroupMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1141,57 +1141,57 @@ def test_easyflow::stringtogroupmap_has_key():
 
 
 
-def test_easyflow::stringtotraversalcriterionmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToTraversalCriterionMap)
+def test_easyflow_stringtotraversalcriterionmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToTraversalCriterionMap)
 
 
-def test_easyflow::stringtotraversalcriterionmap_constructor_exists():
-    assert callable(easyflow::StringToTraversalCriterionMap.__init__)
+def test_easyflow_stringtotraversalcriterionmap_constructor_exists():
+    assert callable(easyflow_StringToTraversalCriterionMap.__init__)
 
 
-def test_easyflow::stringtotraversalcriterionmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToTraversalCriterionMap.__init__)
+def test_easyflow_stringtotraversalcriterionmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToTraversalCriterionMap.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_easyflow::stringtotraversalcriterionmap_has_value():
-    assert hasattr(easyflow::StringToTraversalCriterionMap, "value")
+def test_easyflow_stringtotraversalcriterionmap_has_key():
+    assert hasattr(easyflow_StringToTraversalCriterionMap, "key")
     descriptor = None
-    for klass in easyflow::StringToTraversalCriterionMap.__mro__:
+    for klass in easyflow_StringToTraversalCriterionMap.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_stringtotraversalcriterionmap_has_value():
+    assert hasattr(easyflow_StringToTraversalCriterionMap, "value")
+    descriptor = None
+    for klass in easyflow_StringToTraversalCriterionMap.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::stringtotraversalcriterionmap_has_key():
-    assert hasattr(easyflow::StringToTraversalCriterionMap, "key")
-    descriptor = None
-    for klass in easyflow::StringToTraversalCriterionMap.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_easyflow::stringtogroupingcriterionmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToGroupingCriterionMap)
-
-
-def test_easyflow::stringtogroupingcriterionmap_constructor_exists():
-    assert callable(easyflow::StringToGroupingCriterionMap.__init__)
+def test_easyflow_stringtogroupingcriterionmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToGroupingCriterionMap)
 
 
-def test_easyflow::stringtogroupingcriterionmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToGroupingCriterionMap.__init__)
+def test_easyflow_stringtogroupingcriterionmap_constructor_exists():
+    assert callable(easyflow_StringToGroupingCriterionMap.__init__)
+
+
+def test_easyflow_stringtogroupingcriterionmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToGroupingCriterionMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtogroupingcriterionmap_has_key():
-    assert hasattr(easyflow::StringToGroupingCriterionMap, "key")
+def test_easyflow_stringtogroupingcriterionmap_has_key():
+    assert hasattr(easyflow_StringToGroupingCriterionMap, "key")
     descriptor = None
-    for klass in easyflow::StringToGroupingCriterionMap.__mro__:
+    for klass in easyflow_StringToGroupingCriterionMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1199,23 +1199,23 @@ def test_easyflow::stringtogroupingcriterionmap_has_key():
 
 
 
-def test_easyflow::stringtotaskmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToTaskMap)
+def test_easyflow_stringtotaskmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToTaskMap)
 
 
-def test_easyflow::stringtotaskmap_constructor_exists():
-    assert callable(easyflow::StringToTaskMap.__init__)
+def test_easyflow_stringtotaskmap_constructor_exists():
+    assert callable(easyflow_StringToTaskMap.__init__)
 
 
-def test_easyflow::stringtotaskmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToTaskMap.__init__)
+def test_easyflow_stringtotaskmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToTaskMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtotaskmap_has_key():
-    assert hasattr(easyflow::StringToTaskMap, "key")
+def test_easyflow_stringtotaskmap_has_key():
+    assert hasattr(easyflow_StringToTaskMap, "key")
     descriptor = None
-    for klass in easyflow::StringToTaskMap.__mro__:
+    for klass in easyflow_StringToTaskMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1223,23 +1223,23 @@ def test_easyflow::stringtotaskmap_has_key():
 
 
 
-def test_easyflow::stringtotoolmap_is_not_abstract():
-    assert not inspect.isabstract(easyflow::StringToToolMap)
+def test_easyflow_stringtotoolmap_is_not_abstract():
+    assert not inspect.isabstract(easyflow_StringToToolMap)
 
 
-def test_easyflow::stringtotoolmap_constructor_exists():
-    assert callable(easyflow::StringToToolMap.__init__)
+def test_easyflow_stringtotoolmap_constructor_exists():
+    assert callable(easyflow_StringToToolMap.__init__)
 
 
-def test_easyflow::stringtotoolmap_constructor_args():
-    sig = inspect.signature(easyflow::StringToToolMap.__init__)
+def test_easyflow_stringtotoolmap_constructor_args():
+    sig = inspect.signature(easyflow_StringToToolMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::stringtotoolmap_has_key():
-    assert hasattr(easyflow::StringToToolMap, "key")
+def test_easyflow_stringtotoolmap_has_key():
+    assert hasattr(easyflow_StringToToolMap, "key")
     descriptor = None
-    for klass in easyflow::StringToToolMap.__mro__:
+    for klass in easyflow_StringToToolMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1247,23 +1247,23 @@ def test_easyflow::stringtotoolmap_has_key():
 
 
 
-def test_easyflow::easyflowtemplate_is_not_abstract():
-    assert not inspect.isabstract(easyflow::EasyFlowTemplate)
+def test_easyflow_easyflowtemplate_is_not_abstract():
+    assert not inspect.isabstract(easyflow_EasyFlowTemplate)
 
 
-def test_easyflow::easyflowtemplate_constructor_exists():
-    assert callable(easyflow::EasyFlowTemplate.__init__)
+def test_easyflow_easyflowtemplate_constructor_exists():
+    assert callable(easyflow_EasyFlowTemplate.__init__)
 
 
-def test_easyflow::easyflowtemplate_constructor_args():
-    sig = inspect.signature(easyflow::EasyFlowTemplate.__init__)
+def test_easyflow_easyflowtemplate_constructor_args():
+    sig = inspect.signature(easyflow_EasyFlowTemplate.__init__)
     params = list(sig.parameters.keys())
     assert "fileName" in params, "Missing parameter 'fileName'"
 
-def test_easyflow::easyflowtemplate_has_fileName():
-    assert hasattr(easyflow::EasyFlowTemplate, "fileName")
+def test_easyflow_easyflowtemplate_has_fileName():
+    assert hasattr(easyflow_EasyFlowTemplate, "fileName")
     descriptor = None
-    for klass in easyflow::EasyFlowTemplate.__mro__:
+    for klass in easyflow_EasyFlowTemplate.__mro__:
         if "fileName" in klass.__dict__:
             descriptor = klass.__dict__["fileName"]
             break
@@ -1271,197 +1271,197 @@ def test_easyflow::easyflowtemplate_has_fileName():
 
 
 
-def test_easyflow::task_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Task)
+def test_easyflow_task_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Task)
 
 
-def test_easyflow::task_constructor_exists():
-    assert callable(easyflow::Task.__init__)
+def test_easyflow_task_constructor_exists():
+    assert callable(easyflow_Task.__init__)
 
 
-def test_easyflow::task_constructor_args():
-    sig = inspect.signature(easyflow::Task.__init__)
+def test_easyflow_task_constructor_args():
+    sig = inspect.signature(easyflow_Task.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "contrast" in params, "Missing parameter 'contrast'"
-    assert "dataFormatIn" in params, "Missing parameter 'dataFormatIn'"
-    assert "splitCriterion" in params, "Missing parameter 'splitCriterion'"
-    assert "mergeCriterion" in params, "Missing parameter 'mergeCriterion'"
-    assert "jexlString" in params, "Missing parameter 'jexlString'"
-    assert "traversalCriterion" in params, "Missing parameter 'traversalCriterion'"
-    assert "static" in params, "Missing parameter 'static'"
-    assert "dataCriterion" in params, "Missing parameter 'dataCriterion'"
-    assert "util" in params, "Missing parameter 'util'"
     assert "isMultipleInstancesOfDataCriterion" in params, "Missing parameter 'isMultipleInstancesOfDataCriterion'"
-    assert "cardinalityOut" in params, "Missing parameter 'cardinalityOut'"
-    assert "cardinalityIn" in params, "Missing parameter 'cardinalityIn'"
+    assert "splitCriterion" in params, "Missing parameter 'splitCriterion'"
+    assert "jexlString" in params, "Missing parameter 'jexlString'"
+    assert "dataCriterion" in params, "Missing parameter 'dataCriterion'"
+    assert "skipGroupingCriterion" in params, "Missing parameter 'skipGroupingCriterion'"
+    assert "util" in params, "Missing parameter 'util'"
+    assert "traversalCriterion" in params, "Missing parameter 'traversalCriterion'"
     assert "depricated" in params, "Missing parameter 'depricated'"
     assert "dataFormatOut" in params, "Missing parameter 'dataFormatOut'"
-    assert "skipGroupingCriterion" in params, "Missing parameter 'skipGroupingCriterion'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "dataFormatIn" in params, "Missing parameter 'dataFormatIn'"
+    assert "contrast" in params, "Missing parameter 'contrast'"
+    assert "cardinalityIn" in params, "Missing parameter 'cardinalityIn'"
+    assert "cardinalityOut" in params, "Missing parameter 'cardinalityOut'"
+    assert "mergeCriterion" in params, "Missing parameter 'mergeCriterion'"
+    assert "static" in params, "Missing parameter 'static'"
 
-def test_easyflow::task_has_name():
-    assert hasattr(easyflow::Task, "name")
+def test_easyflow_task_has_isMultipleInstancesOfDataCriterion():
+    assert hasattr(easyflow_Task, "isMultipleInstancesOfDataCriterion")
     descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_contrast():
-    assert hasattr(easyflow::Task, "contrast")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "contrast" in klass.__dict__:
-            descriptor = klass.__dict__["contrast"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_dataFormatIn():
-    assert hasattr(easyflow::Task, "dataFormatIn")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "dataFormatIn" in klass.__dict__:
-            descriptor = klass.__dict__["dataFormatIn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_splitCriterion():
-    assert hasattr(easyflow::Task, "splitCriterion")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "splitCriterion" in klass.__dict__:
-            descriptor = klass.__dict__["splitCriterion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_mergeCriterion():
-    assert hasattr(easyflow::Task, "mergeCriterion")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "mergeCriterion" in klass.__dict__:
-            descriptor = klass.__dict__["mergeCriterion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_jexlString():
-    assert hasattr(easyflow::Task, "jexlString")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "jexlString" in klass.__dict__:
-            descriptor = klass.__dict__["jexlString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_traversalCriterion():
-    assert hasattr(easyflow::Task, "traversalCriterion")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "traversalCriterion" in klass.__dict__:
-            descriptor = klass.__dict__["traversalCriterion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_static():
-    assert hasattr(easyflow::Task, "static")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_dataCriterion():
-    assert hasattr(easyflow::Task, "dataCriterion")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "dataCriterion" in klass.__dict__:
-            descriptor = klass.__dict__["dataCriterion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_util():
-    assert hasattr(easyflow::Task, "util")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "util" in klass.__dict__:
-            descriptor = klass.__dict__["util"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_isMultipleInstancesOfDataCriterion():
-    assert hasattr(easyflow::Task, "isMultipleInstancesOfDataCriterion")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
+    for klass in easyflow_Task.__mro__:
         if "isMultipleInstancesOfDataCriterion" in klass.__dict__:
             descriptor = klass.__dict__["isMultipleInstancesOfDataCriterion"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::task_has_cardinalityOut():
-    assert hasattr(easyflow::Task, "cardinalityOut")
+def test_easyflow_task_has_splitCriterion():
+    assert hasattr(easyflow_Task, "splitCriterion")
     descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "cardinalityOut" in klass.__dict__:
-            descriptor = klass.__dict__["cardinalityOut"]
+    for klass in easyflow_Task.__mro__:
+        if "splitCriterion" in klass.__dict__:
+            descriptor = klass.__dict__["splitCriterion"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::task_has_cardinalityIn():
-    assert hasattr(easyflow::Task, "cardinalityIn")
+def test_easyflow_task_has_jexlString():
+    assert hasattr(easyflow_Task, "jexlString")
     descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "cardinalityIn" in klass.__dict__:
-            descriptor = klass.__dict__["cardinalityIn"]
+    for klass in easyflow_Task.__mro__:
+        if "jexlString" in klass.__dict__:
+            descriptor = klass.__dict__["jexlString"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::task_has_depricated():
-    assert hasattr(easyflow::Task, "depricated")
+def test_easyflow_task_has_dataCriterion():
+    assert hasattr(easyflow_Task, "dataCriterion")
     descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "depricated" in klass.__dict__:
-            descriptor = klass.__dict__["depricated"]
+    for klass in easyflow_Task.__mro__:
+        if "dataCriterion" in klass.__dict__:
+            descriptor = klass.__dict__["dataCriterion"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::task_has_dataFormatOut():
-    assert hasattr(easyflow::Task, "dataFormatOut")
+def test_easyflow_task_has_skipGroupingCriterion():
+    assert hasattr(easyflow_Task, "skipGroupingCriterion")
     descriptor = None
-    for klass in easyflow::Task.__mro__:
-        if "dataFormatOut" in klass.__dict__:
-            descriptor = klass.__dict__["dataFormatOut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::task_has_skipGroupingCriterion():
-    assert hasattr(easyflow::Task, "skipGroupingCriterion")
-    descriptor = None
-    for klass in easyflow::Task.__mro__:
+    for klass in easyflow_Task.__mro__:
         if "skipGroupingCriterion" in klass.__dict__:
             descriptor = klass.__dict__["skipGroupingCriterion"]
             break
     assert isinstance(descriptor, property)
 
+def test_easyflow_task_has_util():
+    assert hasattr(easyflow_Task, "util")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "util" in klass.__dict__:
+            descriptor = klass.__dict__["util"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_traversalCriterion():
+    assert hasattr(easyflow_Task, "traversalCriterion")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "traversalCriterion" in klass.__dict__:
+            descriptor = klass.__dict__["traversalCriterion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_depricated():
+    assert hasattr(easyflow_Task, "depricated")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "depricated" in klass.__dict__:
+            descriptor = klass.__dict__["depricated"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_dataFormatOut():
+    assert hasattr(easyflow_Task, "dataFormatOut")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "dataFormatOut" in klass.__dict__:
+            descriptor = klass.__dict__["dataFormatOut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_name():
+    assert hasattr(easyflow_Task, "name")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_dataFormatIn():
+    assert hasattr(easyflow_Task, "dataFormatIn")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "dataFormatIn" in klass.__dict__:
+            descriptor = klass.__dict__["dataFormatIn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_contrast():
+    assert hasattr(easyflow_Task, "contrast")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "contrast" in klass.__dict__:
+            descriptor = klass.__dict__["contrast"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_cardinalityIn():
+    assert hasattr(easyflow_Task, "cardinalityIn")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "cardinalityIn" in klass.__dict__:
+            descriptor = klass.__dict__["cardinalityIn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_cardinalityOut():
+    assert hasattr(easyflow_Task, "cardinalityOut")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "cardinalityOut" in klass.__dict__:
+            descriptor = klass.__dict__["cardinalityOut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_mergeCriterion():
+    assert hasattr(easyflow_Task, "mergeCriterion")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "mergeCriterion" in klass.__dict__:
+            descriptor = klass.__dict__["mergeCriterion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_task_has_static():
+    assert hasattr(easyflow_Task, "static")
+    descriptor = None
+    for klass in easyflow_Task.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_easyflow::dataformattotasklist_is_not_abstract():
-    assert not inspect.isabstract(easyflow::DataFormatToTaskList)
+
+def test_easyflow_dataformattotasklist_is_not_abstract():
+    assert not inspect.isabstract(easyflow_DataFormatToTaskList)
 
 
-def test_easyflow::dataformattotasklist_constructor_exists():
-    assert callable(easyflow::DataFormatToTaskList.__init__)
+def test_easyflow_dataformattotasklist_constructor_exists():
+    assert callable(easyflow_DataFormatToTaskList.__init__)
 
 
-def test_easyflow::dataformattotasklist_constructor_args():
-    sig = inspect.signature(easyflow::DataFormatToTaskList.__init__)
+def test_easyflow_dataformattotasklist_constructor_args():
+    sig = inspect.signature(easyflow_DataFormatToTaskList.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_easyflow::dataformattotasklist_has_key():
-    assert hasattr(easyflow::DataFormatToTaskList, "key")
+def test_easyflow_dataformattotasklist_has_key():
+    assert hasattr(easyflow_DataFormatToTaskList, "key")
     descriptor = None
-    for klass in easyflow::DataFormatToTaskList.__mro__:
+    for klass in easyflow_DataFormatToTaskList.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1469,290 +1469,261 @@ def test_easyflow::dataformattotasklist_has_key():
 
 
 
-def test_easyflow::tasktodataprocessingtype_is_not_abstract():
-    assert not inspect.isabstract(easyflow::TaskToDataProcessingType)
+def test_easyflow_tasktodataprocessingtype_is_not_abstract():
+    assert not inspect.isabstract(easyflow_TaskToDataProcessingType)
 
 
-def test_easyflow::tasktodataprocessingtype_constructor_exists():
-    assert callable(easyflow::TaskToDataProcessingType.__init__)
+def test_easyflow_tasktodataprocessingtype_constructor_exists():
+    assert callable(easyflow_TaskToDataProcessingType.__init__)
 
 
-def test_easyflow::tasktodataprocessingtype_constructor_args():
-    sig = inspect.signature(easyflow::TaskToDataProcessingType.__init__)
+def test_easyflow_tasktodataprocessingtype_constructor_args():
+    sig = inspect.signature(easyflow_TaskToDataProcessingType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::dataprocessingtypetotask_is_not_abstract():
-    assert not inspect.isabstract(easyflow::DataProcessingTypeToTask)
+def test_easyflow_dataprocessingtypetotask_is_not_abstract():
+    assert not inspect.isabstract(easyflow_DataProcessingTypeToTask)
 
 
-def test_easyflow::dataprocessingtypetotask_constructor_exists():
-    assert callable(easyflow::DataProcessingTypeToTask.__init__)
+def test_easyflow_dataprocessingtypetotask_constructor_exists():
+    assert callable(easyflow_DataProcessingTypeToTask.__init__)
 
 
-def test_easyflow::dataprocessingtypetotask_constructor_args():
-    sig = inspect.signature(easyflow::DataProcessingTypeToTask.__init__)
+def test_easyflow_dataprocessingtypetotask_constructor_args():
+    sig = inspect.signature(easyflow_DataProcessingTypeToTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_easyflow::dataprocessingtype_is_not_abstract():
-    assert not inspect.isabstract(easyflow::DataProcessingType)
+def test_easyflow_dataprocessingtype_is_not_abstract():
+    assert not inspect.isabstract(easyflow_DataProcessingType)
 
 
-def test_easyflow::dataprocessingtype_constructor_exists():
-    assert callable(easyflow::DataProcessingType.__init__)
+def test_easyflow_dataprocessingtype_constructor_exists():
+    assert callable(easyflow_DataProcessingType.__init__)
 
 
-def test_easyflow::dataprocessingtype_constructor_args():
-    sig = inspect.signature(easyflow::DataProcessingType.__init__)
+def test_easyflow_dataprocessingtype_constructor_args():
+    sig = inspect.signature(easyflow_DataProcessingType.__init__)
     params = list(sig.parameters.keys())
-    assert "dataFormatIn" in params, "Missing parameter 'dataFormatIn'"
     assert "dataFormatOut" in params, "Missing parameter 'dataFormatOut'"
+    assert "dataFormatIn" in params, "Missing parameter 'dataFormatIn'"
 
-def test_easyflow::dataprocessingtype_has_dataFormatIn():
-    assert hasattr(easyflow::DataProcessingType, "dataFormatIn")
+def test_easyflow_dataprocessingtype_has_dataFormatOut():
+    assert hasattr(easyflow_DataProcessingType, "dataFormatOut")
     descriptor = None
-    for klass in easyflow::DataProcessingType.__mro__:
-        if "dataFormatIn" in klass.__dict__:
-            descriptor = klass.__dict__["dataFormatIn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::dataprocessingtype_has_dataFormatOut():
-    assert hasattr(easyflow::DataProcessingType, "dataFormatOut")
-    descriptor = None
-    for klass in easyflow::DataProcessingType.__mro__:
+    for klass in easyflow_DataProcessingType.__mro__:
         if "dataFormatOut" in klass.__dict__:
             descriptor = klass.__dict__["dataFormatOut"]
             break
     assert isinstance(descriptor, property)
 
+def test_easyflow_dataprocessingtype_has_dataFormatIn():
+    assert hasattr(easyflow_DataProcessingType, "dataFormatIn")
+    descriptor = None
+    for klass in easyflow_DataProcessingType.__mro__:
+        if "dataFormatIn" in klass.__dict__:
+            descriptor = klass.__dict__["dataFormatIn"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_easyflow::easyflowimplementationtemplate_is_not_abstract():
-    assert not inspect.isabstract(easyflow::EasyFlowImplementationTemplate)
+
+def test_easyflow_easyflowimplementationtemplate_is_not_abstract():
+    assert not inspect.isabstract(easyflow_EasyFlowImplementationTemplate)
 
 
-def test_easyflow::easyflowimplementationtemplate_constructor_exists():
-    assert callable(easyflow::EasyFlowImplementationTemplate.__init__)
+def test_easyflow_easyflowimplementationtemplate_constructor_exists():
+    assert callable(easyflow_EasyFlowImplementationTemplate.__init__)
 
 
-def test_easyflow::easyflowimplementationtemplate_constructor_args():
-    sig = inspect.signature(easyflow::EasyFlowImplementationTemplate.__init__)
+def test_easyflow_easyflowimplementationtemplate_constructor_args():
+    sig = inspect.signature(easyflow_EasyFlowImplementationTemplate.__init__)
     params = list(sig.parameters.keys())
     assert "parameterConfigFileName" in params, "Missing parameter 'parameterConfigFileName'"
-    assert "jsonRootNode" in params, "Missing parameter 'jsonRootNode'"
-    assert "parameterConfigMap" in params, "Missing parameter 'parameterConfigMap'"
-    assert "globalOptions" in params, "Missing parameter 'globalOptions'"
     assert "fileName" in params, "Missing parameter 'fileName'"
+    assert "globalOptions" in params, "Missing parameter 'globalOptions'"
+    assert "parameterConfigMap" in params, "Missing parameter 'parameterConfigMap'"
+    assert "jsonRootNode" in params, "Missing parameter 'jsonRootNode'"
 
-def test_easyflow::easyflowimplementationtemplate_has_parameterConfigFileName():
-    assert hasattr(easyflow::EasyFlowImplementationTemplate, "parameterConfigFileName")
+def test_easyflow_easyflowimplementationtemplate_has_parameterConfigFileName():
+    assert hasattr(easyflow_EasyFlowImplementationTemplate, "parameterConfigFileName")
     descriptor = None
-    for klass in easyflow::EasyFlowImplementationTemplate.__mro__:
+    for klass in easyflow_EasyFlowImplementationTemplate.__mro__:
         if "parameterConfigFileName" in klass.__dict__:
             descriptor = klass.__dict__["parameterConfigFileName"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::easyflowimplementationtemplate_has_jsonRootNode():
-    assert hasattr(easyflow::EasyFlowImplementationTemplate, "jsonRootNode")
+def test_easyflow_easyflowimplementationtemplate_has_fileName():
+    assert hasattr(easyflow_EasyFlowImplementationTemplate, "fileName")
     descriptor = None
-    for klass in easyflow::EasyFlowImplementationTemplate.__mro__:
-        if "jsonRootNode" in klass.__dict__:
-            descriptor = klass.__dict__["jsonRootNode"]
+    for klass in easyflow_EasyFlowImplementationTemplate.__mro__:
+        if "fileName" in klass.__dict__:
+            descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::easyflowimplementationtemplate_has_parameterConfigMap():
-    assert hasattr(easyflow::EasyFlowImplementationTemplate, "parameterConfigMap")
+def test_easyflow_easyflowimplementationtemplate_has_globalOptions():
+    assert hasattr(easyflow_EasyFlowImplementationTemplate, "globalOptions")
     descriptor = None
-    for klass in easyflow::EasyFlowImplementationTemplate.__mro__:
-        if "parameterConfigMap" in klass.__dict__:
-            descriptor = klass.__dict__["parameterConfigMap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::easyflowimplementationtemplate_has_globalOptions():
-    assert hasattr(easyflow::EasyFlowImplementationTemplate, "globalOptions")
-    descriptor = None
-    for klass in easyflow::EasyFlowImplementationTemplate.__mro__:
+    for klass in easyflow_EasyFlowImplementationTemplate.__mro__:
         if "globalOptions" in klass.__dict__:
             descriptor = klass.__dict__["globalOptions"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::easyflowimplementationtemplate_has_fileName():
-    assert hasattr(easyflow::EasyFlowImplementationTemplate, "fileName")
+def test_easyflow_easyflowimplementationtemplate_has_parameterConfigMap():
+    assert hasattr(easyflow_EasyFlowImplementationTemplate, "parameterConfigMap")
     descriptor = None
-    for klass in easyflow::EasyFlowImplementationTemplate.__mro__:
-        if "fileName" in klass.__dict__:
-            descriptor = klass.__dict__["fileName"]
+    for klass in easyflow_EasyFlowImplementationTemplate.__mro__:
+        if "parameterConfigMap" in klass.__dict__:
+            descriptor = klass.__dict__["parameterConfigMap"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_easyflowimplementationtemplate_has_jsonRootNode():
+    assert hasattr(easyflow_EasyFlowImplementationTemplate, "jsonRootNode")
+    descriptor = None
+    for klass in easyflow_EasyFlowImplementationTemplate.__mro__:
+        if "jsonRootNode" in klass.__dict__:
+            descriptor = klass.__dict__["jsonRootNode"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_easyflow::easyflowmetadata_is_not_abstract():
-    assert not inspect.isabstract(easyflow::EasyFlowMetadata)
+def test_easyflow_easyflowmetadata_is_not_abstract():
+    assert not inspect.isabstract(easyflow_EasyFlowMetadata)
 
 
-def test_easyflow::easyflowmetadata_constructor_exists():
-    assert callable(easyflow::EasyFlowMetadata.__init__)
+def test_easyflow_easyflowmetadata_constructor_exists():
+    assert callable(easyflow_EasyFlowMetadata.__init__)
 
 
-def test_easyflow::easyflowmetadata_constructor_args():
-    sig = inspect.signature(easyflow::EasyFlowMetadata.__init__)
+def test_easyflow_easyflowmetadata_constructor_args():
+    sig = inspect.signature(easyflow_EasyFlowMetadata.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "refData" in params, "Missing parameter 'refData'"
     assert "contrast" in params, "Missing parameter 'contrast'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_easyflow::easyflowmetadata_has_refData():
-    assert hasattr(easyflow::EasyFlowMetadata, "refData")
+def test_easyflow_easyflowmetadata_has_name():
+    assert hasattr(easyflow_EasyFlowMetadata, "name")
     descriptor = None
-    for klass in easyflow::EasyFlowMetadata.__mro__:
+    for klass in easyflow_EasyFlowMetadata.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_easyflowmetadata_has_refData():
+    assert hasattr(easyflow_EasyFlowMetadata, "refData")
+    descriptor = None
+    for klass in easyflow_EasyFlowMetadata.__mro__:
         if "refData" in klass.__dict__:
             descriptor = klass.__dict__["refData"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::easyflowmetadata_has_contrast():
-    assert hasattr(easyflow::EasyFlowMetadata, "contrast")
+def test_easyflow_easyflowmetadata_has_contrast():
+    assert hasattr(easyflow_EasyFlowMetadata, "contrast")
     descriptor = None
-    for klass in easyflow::EasyFlowMetadata.__mro__:
+    for klass in easyflow_EasyFlowMetadata.__mro__:
         if "contrast" in klass.__dict__:
             descriptor = klass.__dict__["contrast"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::easyflowmetadata_has_name():
-    assert hasattr(easyflow::EasyFlowMetadata, "name")
-    descriptor = None
-    for klass in easyflow::EasyFlowMetadata.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_easyflow::easyflowconfiguration_is_not_abstract():
-    assert not inspect.isabstract(easyflow::EasyFlowConfiguration)
-
-
-def test_easyflow::easyflowconfiguration_constructor_exists():
-    assert callable(easyflow::EasyFlowConfiguration.__init__)
+def test_easyflow_easyflowconfiguration_is_not_abstract():
+    assert not inspect.isabstract(easyflow_EasyFlowConfiguration)
 
 
-def test_easyflow::easyflowconfiguration_constructor_args():
-    sig = inspect.signature(easyflow::EasyFlowConfiguration.__init__)
+def test_easyflow_easyflowconfiguration_constructor_exists():
+    assert callable(easyflow_EasyFlowConfiguration.__init__)
+
+
+def test_easyflow_easyflowconfiguration_constructor_args():
+    sig = inspect.signature(easyflow_EasyFlowConfiguration.__init__)
     params = list(sig.parameters.keys())
-    assert "configMap" in params, "Missing parameter 'configMap'"
     assert "fileName" in params, "Missing parameter 'fileName'"
+    assert "configMap" in params, "Missing parameter 'configMap'"
 
-def test_easyflow::easyflowconfiguration_has_configMap():
-    assert hasattr(easyflow::EasyFlowConfiguration, "configMap")
+def test_easyflow_easyflowconfiguration_has_fileName():
+    assert hasattr(easyflow_EasyFlowConfiguration, "fileName")
     descriptor = None
-    for klass in easyflow::EasyFlowConfiguration.__mro__:
-        if "configMap" in klass.__dict__:
-            descriptor = klass.__dict__["configMap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_easyflow::easyflowconfiguration_has_fileName():
-    assert hasattr(easyflow::EasyFlowConfiguration, "fileName")
-    descriptor = None
-    for klass in easyflow::EasyFlowConfiguration.__mro__:
+    for klass in easyflow_EasyFlowConfiguration.__mro__:
         if "fileName" in klass.__dict__:
             descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_easyflow::workflow_is_not_abstract():
-    assert not inspect.isabstract(easyflow::Workflow)
-
-
-def test_easyflow::workflow_constructor_exists():
-    assert callable(easyflow::Workflow.__init__)
-
-
-def test_easyflow::workflow_constructor_args():
-    sig = inspect.signature(easyflow::Workflow.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "dag" in params, "Missing parameter 'dag'"
-    assert "graph" in params, "Missing parameter 'graph'"
-    assert "jobDag" in params, "Missing parameter 'jobDag'"
-
-def test_easyflow::workflow_has_name():
-    assert hasattr(easyflow::Workflow, "name")
+def test_easyflow_easyflowconfiguration_has_configMap():
+    assert hasattr(easyflow_EasyFlowConfiguration, "configMap")
     descriptor = None
-    for klass in easyflow::Workflow.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in easyflow_EasyFlowConfiguration.__mro__:
+        if "configMap" in klass.__dict__:
+            descriptor = klass.__dict__["configMap"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::workflow_has_dag():
-    assert hasattr(easyflow::Workflow, "dag")
+
+
+def test_easyflow_workflow_is_not_abstract():
+    assert not inspect.isabstract(easyflow_Workflow)
+
+
+def test_easyflow_workflow_constructor_exists():
+    assert callable(easyflow_Workflow.__init__)
+
+
+def test_easyflow_workflow_constructor_args():
+    sig = inspect.signature(easyflow_Workflow.__init__)
+    params = list(sig.parameters.keys())
+    assert "dag" in params, "Missing parameter 'dag'"
+    assert "graph" in params, "Missing parameter 'graph'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "jobDag" in params, "Missing parameter 'jobDag'"
+
+def test_easyflow_workflow_has_dag():
+    assert hasattr(easyflow_Workflow, "dag")
     descriptor = None
-    for klass in easyflow::Workflow.__mro__:
+    for klass in easyflow_Workflow.__mro__:
         if "dag" in klass.__dict__:
             descriptor = klass.__dict__["dag"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::workflow_has_graph():
-    assert hasattr(easyflow::Workflow, "graph")
+def test_easyflow_workflow_has_graph():
+    assert hasattr(easyflow_Workflow, "graph")
     descriptor = None
-    for klass in easyflow::Workflow.__mro__:
+    for klass in easyflow_Workflow.__mro__:
         if "graph" in klass.__dict__:
             descriptor = klass.__dict__["graph"]
             break
     assert isinstance(descriptor, property)
 
-def test_easyflow::workflow_has_jobDag():
-    assert hasattr(easyflow::Workflow, "jobDag")
+def test_easyflow_workflow_has_name():
+    assert hasattr(easyflow_Workflow, "name")
     descriptor = None
-    for klass in easyflow::Workflow.__mro__:
+    for klass in easyflow_Workflow.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_easyflow_workflow_has_jobDag():
+    assert hasattr(easyflow_Workflow, "jobDag")
+    descriptor = None
+    for klass in easyflow_Workflow.__mro__:
         if "jobDag" in klass.__dict__:
             descriptor = klass.__dict__["jobDag"]
             break
     assert isinstance(descriptor, property)
-
-def test_dataformat_exists():
-    # Check that the Enumeration exists
-    assert DataFormat is not None
-
-def test_dataformat_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DataFormat]
-    expected_literals = [
-        "CSV",
-        "BAM",
-        "BCF",
-        "BWT",
-        "SAM",
-        "SAI",
-        "TXT",
-        "FAI",
-        "VCF_IDX",
-        "FASTA",
-        "VCF",
-        "DICT",
-        "FASTQ",
-        "BAI",
-        "IntervalList",
-        "None_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DataFormat"
 
 def test_traversalcriterion_exists():
     # Check that the Enumeration exists
@@ -1762,22 +1733,51 @@ def test_traversalcriterion_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TraversalCriterion]
     expected_literals = [
-        "Readgroup",
-        "IntervalList",
-        "ReadMappingFlag",
-        "Read",
-        "None_",
-        "Contig",
-        "Readpair",
-        "SplitRead",
-        "Library",
         "Locus",
-        "ReadEnd",
         "Sample",
+        "SplitRead",
+        "IntervalList",
+        "ReadEnd",
+        "Read",
+        "Readgroup",
+        "None_",
+        "ReadMappingFlag",
+        "Readpair",
+        "Contig",
+        "Library",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TraversalCriterion"
+
+def test_dataformat_exists():
+    # Check that the Enumeration exists
+    assert DataFormat is not None
+
+def test_dataformat_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DataFormat]
+    expected_literals = [
+        "SAM",
+        "TXT",
+        "BAI",
+        "FASTA",
+        "None_",
+        "BAM",
+        "BWT",
+        "CSV",
+        "VCF_IDX",
+        "IntervalList",
+        "VCF",
+        "FASTQ",
+        "DICT",
+        "FAI",
+        "SAI",
+        "BCF",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DataFormat"
 
 def test_datacriterion_exists():
     # Check that the Enumeration exists
@@ -1788,9 +1788,9 @@ def test_datacriterion_has_all_literals():
     enum_literals = [lit.name for lit in DataCriterion]
     expected_literals = [
         "None_",
+        "Library",
         "Readgroup",
         "Sample",
-        "Library",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1808,413 +1808,398 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-easyflow::Chunk_strategy = st.builds(
-    easyflow::Chunk,
-    argument=
+easyflow_Chunk_strategy = st.builds(
+    easyflow_Chunk,
+    tool=
         safe_text,
     name=
         safe_text,
-    tool=
+    argument=
         safe_text
 )
-easyflow::GroupingEvent_strategy = st.builds(
-    easyflow::GroupingEvent,
-    dagOut=
-        safe_text,
+easyflow_GroupingEvent_strategy = st.builds(
+    easyflow_GroupingEvent,
     dagIn=
+        safe_text,
+    dagOut=
         safe_text
 )
-easyflow::Job_strategy = st.builds(
-    easyflow::Job,
-    dependencies=
-        safe_text,
-    source=
-        safe_text,
-    subCmd=
-        safe_text,
-    targetPlatformOptions=
-        safe_text,
-    genericArgs=
-        safe_text,
-    staticArgs=
-        safe_text,
-    targetPlatform=
-        safe_text,
-    exe=
-        safe_text,
-    inputArgs=
+easyflow_Job_strategy = st.builds(
+    easyflow_Job,
+    targets=
         safe_text,
     interpreterOption=
         safe_text,
-    targets=
+    staticArgs=
+        safe_text,
+    inputArgs=
+        safe_text,
+    dependencies=
         safe_text,
     outputArgs=
         safe_text,
+    targetPlatformOptions=
+        safe_text,
+    targetPlatform=
+        safe_text,
+    source=
+        safe_text,
+    genericArgs=
+        safe_text,
     name=
+        safe_text,
+    exe=
+        safe_text,
+    subCmd=
         safe_text
 )
-easyflow::SplittingEvent_strategy = st.builds(
-    easyflow::SplittingEvent,
-    processedTask=
-        safe_text,
-    dag=
+easyflow_SplittingEvent_strategy = st.builds(
+    easyflow_SplittingEvent,
+    traversalCriterion=
         safe_text,
     traversalChunks=
         safe_text,
     traversalImplDir=
         safe_text,
-    traversalCriterion=
+    processedTask=
+        safe_text,
+    dag=
         safe_text
 )
 Traversal_strategy = st.builds(
     Traversal,
 )
-easyflow::Contig_strategy = st.builds(
-    easyflow::Contig,
+easyflow_Locus_strategy = st.builds(
+    easyflow_Locus,
 )
-easyflow::ReadEnd_strategy = st.builds(
-    easyflow::ReadEnd,
+easyflow_ReadEnd_strategy = st.builds(
+    easyflow_ReadEnd,
 )
-easyflow::Locus_strategy = st.builds(
-    easyflow::Locus,
+easyflow_Contig_strategy = st.builds(
+    easyflow_Contig,
 )
-easyflow::GenericTraversalCriterion_strategy = st.builds(
-    easyflow::GenericTraversalCriterion,
+easyflow_GenericTraversalCriterion_strategy = st.builds(
+    easyflow_GenericTraversalCriterion,
 )
-easyflow::StringToChunkMap_strategy = st.builds(
-    easyflow::StringToChunkMap,
+easyflow_StringToChunkMap_strategy = st.builds(
+    easyflow_StringToChunkMap,
     key=
         safe_text
 )
 ITraversal_strategy = st.builds(
     ITraversal,
 )
-easyflow::Traversal_strategy = st.builds(
-    easyflow::Traversal,
+easyflow_Traversal_strategy = st.builds(
+    easyflow_Traversal,
     tarversalCriterion=
         safe_text
 )
-easyflow::ITraversal_strategy = st.builds(
-    easyflow::ITraversal,
+easyflow_ITraversal_strategy = st.builds(
+    easyflow_ITraversal,
 )
 EasyFlowMetadata_strategy = st.builds(
     EasyFlowMetadata,
 )
-easyflow::EasyFlowMetadataReader_strategy = st.builds(
-    easyflow::EasyFlowMetadataReader,
+easyflow_EasyFlowMetadataReader_strategy = st.builds(
+    easyflow_EasyFlowMetadataReader,
     fileName=
         safe_text
 )
-easyflow::StringToRecordMap_strategy = st.builds(
-    easyflow::StringToRecordMap,
+easyflow_StringToRecordMap_strategy = st.builds(
+    easyflow_StringToRecordMap,
     key=
         safe_text
 )
-easyflow::StringToLibraryMap_strategy = st.builds(
-    easyflow::StringToLibraryMap,
+easyflow_StringToLibraryMap_strategy = st.builds(
+    easyflow_StringToLibraryMap,
     key=
         safe_text
 )
-easyflow::StringToReadgroupMap_strategy = st.builds(
-    easyflow::StringToReadgroupMap,
+easyflow_StringToReadgroupMap_strategy = st.builds(
+    easyflow_StringToReadgroupMap,
     key=
         safe_text
 )
-easyflow::StringToSampleMap_strategy = st.builds(
-    easyflow::StringToSampleMap,
+easyflow_StringToSampleMap_strategy = st.builds(
+    easyflow_StringToSampleMap,
     key=
         safe_text
 )
 GroupingCriterion_strategy = st.builds(
     GroupingCriterion,
 )
-easyflow::Library_strategy = st.builds(
-    easyflow::Library,
+easyflow_Library_strategy = st.builds(
+    easyflow_Library,
+    name=
+        safe_text,
     insertSize=
         st.integers(),
     readLength=
-        st.integers(),
+        st.integers()
+)
+easyflow_Record_strategy = st.builds(
+    easyflow_Record,
+    fileNames=
+        safe_text,
+    refData=
+        safe_text
+)
+easyflow_Sample_strategy = st.builds(
+    easyflow_Sample,
     name=
         safe_text
 )
-easyflow::Record_strategy = st.builds(
-    easyflow::Record,
-    refData=
-        safe_text,
-    fileNames=
-        safe_text
-)
-easyflow::Readgroup_strategy = st.builds(
-    easyflow::Readgroup,
-    platform=
-        safe_text,
-    platformUnit=
-        safe_text,
+easyflow_Readgroup_strategy = st.builds(
+    easyflow_Readgroup,
     description=
         safe_text,
     name=
-        safe_text
-)
-easyflow::Sample_strategy = st.builds(
-    easyflow::Sample,
-    name=
-        safe_text
-)
-easyflow::Group_strategy = st.builds(
-    easyflow::Group,
-    name=
-        safe_text
-)
-easyflow::Tool_strategy = st.builds(
-    easyflow::Tool,
-    refData=
         safe_text,
-    category=
+    platform=
+        safe_text,
+    platformUnit=
+        safe_text
+)
+easyflow_Group_strategy = st.builds(
+    easyflow_Group,
+    name=
+        safe_text
+)
+easyflow_Tool_strategy = st.builds(
+    easyflow_Tool,
+    toolName=
         safe_text,
     subCmd=
         safe_text,
-    toolName=
-        safe_text,
-    subCmdPrefix=
-        safe_text,
-    pattern=
+    category=
         safe_text,
     type=
         safe_text,
+    refData=
+        safe_text,
+    subCmdPrefix=
+        safe_text,
     source=
+        safe_text,
+    pattern=
         safe_text
 )
-easyflow::GroupingCriterion_strategy = st.builds(
-    easyflow::GroupingCriterion,
+easyflow_GroupingCriterion_strategy = st.builds(
+    easyflow_GroupingCriterion,
     id=
         safe_text
 )
-easyflow::Argument_strategy = st.builds(
-    easyflow::Argument,
-    name=
-        safe_text,
+easyflow_Argument_strategy = st.builds(
+    easyflow_Argument,
     sep=
         safe_text,
     arg=
-        safe_text
-)
-easyflow::Interpreter_strategy = st.builds(
-    easyflow::Interpreter,
-    options=
         safe_text,
     name=
+        safe_text
+)
+easyflow_Interpreter_strategy = st.builds(
+    easyflow_Interpreter,
+    name=
+        safe_text,
+    options=
         safe_text,
     subCmd=
         safe_text,
     exe=
         safe_text
 )
-easyflow::IWorkflowUtil_strategy = st.builds(
-    easyflow::IWorkflowUtil,
+easyflow_IWorkflowUtil_strategy = st.builds(
+    easyflow_IWorkflowUtil,
 )
-easyflow::CommandArgument_strategy = st.builds(
-    easyflow::CommandArgument,
-    arg=
-        safe_text,
-    sep=
-        safe_text,
+easyflow_CommandArgument_strategy = st.builds(
+    easyflow_CommandArgument,
     required=
         st.booleans(),
+    name=
+        safe_text,
     named=
         st.booleans(),
-    name=
-        safe_text
-)
-easyflow::StringToGroupMap_strategy = st.builds(
-    easyflow::StringToGroupMap,
-    key=
-        safe_text
-)
-easyflow::StringToTraversalCriterionMap_strategy = st.builds(
-    easyflow::StringToTraversalCriterionMap,
-    value=
+    sep=
         safe_text,
+    arg=
+        safe_text
+)
+easyflow_StringToGroupMap_strategy = st.builds(
+    easyflow_StringToGroupMap,
     key=
         safe_text
 )
-easyflow::StringToGroupingCriterionMap_strategy = st.builds(
-    easyflow::StringToGroupingCriterionMap,
+easyflow_StringToTraversalCriterionMap_strategy = st.builds(
+    easyflow_StringToTraversalCriterionMap,
+    key=
+        safe_text,
+    value=
+        safe_text
+)
+easyflow_StringToGroupingCriterionMap_strategy = st.builds(
+    easyflow_StringToGroupingCriterionMap,
     key=
         safe_text
 )
-easyflow::StringToTaskMap_strategy = st.builds(
-    easyflow::StringToTaskMap,
+easyflow_StringToTaskMap_strategy = st.builds(
+    easyflow_StringToTaskMap,
     key=
         safe_text
 )
-easyflow::StringToToolMap_strategy = st.builds(
-    easyflow::StringToToolMap,
+easyflow_StringToToolMap_strategy = st.builds(
+    easyflow_StringToToolMap,
     key=
         safe_text
 )
-easyflow::EasyFlowTemplate_strategy = st.builds(
-    easyflow::EasyFlowTemplate,
+easyflow_EasyFlowTemplate_strategy = st.builds(
+    easyflow_EasyFlowTemplate,
     fileName=
         safe_text
 )
-easyflow::Task_strategy = st.builds(
-    easyflow::Task,
-    name=
-        safe_text,
-    contrast=
-        st.booleans(),
-    dataFormatIn=
+easyflow_Task_strategy = st.builds(
+    easyflow_Task,
+    isMultipleInstancesOfDataCriterion=
         safe_text,
     splitCriterion=
         safe_text,
-    mergeCriterion=
-        safe_text,
     jexlString=
         safe_text,
-    traversalCriterion=
-        safe_text,
-    static=
-        st.booleans(),
     dataCriterion=
+        safe_text,
+    skipGroupingCriterion=
         safe_text,
     util=
         st.booleans(),
-    isMultipleInstancesOfDataCriterion=
-        safe_text,
-    cardinalityOut=
-        safe_text,
-    cardinalityIn=
+    traversalCriterion=
         safe_text,
     depricated=
         st.booleans(),
     dataFormatOut=
         safe_text,
-    skipGroupingCriterion=
-        safe_text
-)
-easyflow::DataFormatToTaskList_strategy = st.builds(
-    easyflow::DataFormatToTaskList,
-    key=
-        safe_text
-)
-easyflow::TaskToDataProcessingType_strategy = st.builds(
-    easyflow::TaskToDataProcessingType,
-)
-easyflow::DataProcessingTypeToTask_strategy = st.builds(
-    easyflow::DataProcessingTypeToTask,
-)
-easyflow::DataProcessingType_strategy = st.builds(
-    easyflow::DataProcessingType,
+    name=
+        safe_text,
     dataFormatIn=
-        safe_text,
-    dataFormatOut=
-        safe_text
-)
-easyflow::EasyFlowImplementationTemplate_strategy = st.builds(
-    easyflow::EasyFlowImplementationTemplate,
-    parameterConfigFileName=
-        safe_text,
-    jsonRootNode=
-        safe_text,
-    parameterConfigMap=
-        safe_text,
-    globalOptions=
-        safe_text,
-    fileName=
-        safe_text
-)
-easyflow::EasyFlowMetadata_strategy = st.builds(
-    easyflow::EasyFlowMetadata,
-    refData=
         safe_text,
     contrast=
         st.booleans(),
-    name=
+    cardinalityIn=
+        safe_text,
+    cardinalityOut=
+        safe_text,
+    mergeCriterion=
+        safe_text,
+    static=
+        st.booleans()
+)
+easyflow_DataFormatToTaskList_strategy = st.builds(
+    easyflow_DataFormatToTaskList,
+    key=
         safe_text
 )
-easyflow::EasyFlowConfiguration_strategy = st.builds(
-    easyflow::EasyFlowConfiguration,
-    configMap=
+easyflow_TaskToDataProcessingType_strategy = st.builds(
+    easyflow_TaskToDataProcessingType,
+)
+easyflow_DataProcessingTypeToTask_strategy = st.builds(
+    easyflow_DataProcessingTypeToTask,
+)
+easyflow_DataProcessingType_strategy = st.builds(
+    easyflow_DataProcessingType,
+    dataFormatOut=
+        safe_text,
+    dataFormatIn=
+        safe_text
+)
+easyflow_EasyFlowImplementationTemplate_strategy = st.builds(
+    easyflow_EasyFlowImplementationTemplate,
+    parameterConfigFileName=
         safe_text,
     fileName=
+        safe_text,
+    globalOptions=
+        safe_text,
+    parameterConfigMap=
+        safe_text,
+    jsonRootNode=
         safe_text
 )
-easyflow::Workflow_strategy = st.builds(
-    easyflow::Workflow,
+easyflow_EasyFlowMetadata_strategy = st.builds(
+    easyflow_EasyFlowMetadata,
     name=
         safe_text,
+    refData=
+        safe_text,
+    contrast=
+        st.booleans()
+)
+easyflow_EasyFlowConfiguration_strategy = st.builds(
+    easyflow_EasyFlowConfiguration,
+    fileName=
+        safe_text,
+    configMap=
+        safe_text
+)
+easyflow_Workflow_strategy = st.builds(
+    easyflow_Workflow,
     dag=
         safe_text,
     graph=
+        safe_text,
+    name=
         safe_text,
     jobDag=
         safe_text
 )
 
-@given(instance=easyflow::Chunk_strategy)
+@given(instance=easyflow_Chunk_strategy)
 @settings(max_examples=50)
-def test_easyflow::chunk_instantiation(instance):
-    assert isinstance(instance, easyflow::Chunk)
-
-@given(instance=easyflow::Chunk_strategy)
-def test_easyflow::chunk_argument_type(instance):
-    assert isinstance(instance.argument, str)
+def test_easyflow_chunk_instantiation(instance):
+    assert isinstance(instance, easyflow_Chunk)
 
 
-@given(instance=easyflow::Chunk_strategy)
-def test_easyflow::chunk_argument_setter(instance):
-    original = instance.argument
-    instance.argument = original
-    assert instance.argument == original
 
-@given(instance=easyflow::Chunk_strategy)
-def test_easyflow::chunk_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::Chunk_strategy)
-def test_easyflow::chunk_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=easyflow::Chunk_strategy)
-def test_easyflow::chunk_tool_type(instance):
-    assert isinstance(instance.tool, str)
-
-
-@given(instance=easyflow::Chunk_strategy)
-def test_easyflow::chunk_tool_setter(instance):
+@given(instance=easyflow_Chunk_strategy)
+def test_easyflow_chunk_tool_setter(instance):
     original = instance.tool
     instance.tool = original
     assert instance.tool == original
 
-@given(instance=easyflow::GroupingEvent_strategy)
+
+
+@given(instance=easyflow_Chunk_strategy)
+def test_easyflow_chunk_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=easyflow_Chunk_strategy)
+def test_easyflow_chunk_argument_setter(instance):
+    original = instance.argument
+    instance.argument = original
+    assert instance.argument == original
+
+@given(instance=easyflow_GroupingEvent_strategy)
 @settings(max_examples=50)
-def test_easyflow::groupingevent_instantiation(instance):
-    assert isinstance(instance, easyflow::GroupingEvent)
-
-@given(instance=easyflow::GroupingEvent_strategy)
-def test_easyflow::groupingevent_dagOut_type(instance):
-    assert isinstance(instance.dagOut, str)
+def test_easyflow_groupingevent_instantiation(instance):
+    assert isinstance(instance, easyflow_GroupingEvent)
 
 
-@given(instance=easyflow::GroupingEvent_strategy)
-def test_easyflow::groupingevent_dagOut_setter(instance):
-    original = instance.dagOut
-    instance.dagOut = original
-    assert instance.dagOut == original
 
-@given(instance=easyflow::GroupingEvent_strategy)
-def test_easyflow::groupingevent_dagIn_type(instance):
-    assert isinstance(instance.dagIn, str)
-
-
-@given(instance=easyflow::GroupingEvent_strategy)
-def test_easyflow::groupingevent_dagIn_setter(instance):
+@given(instance=easyflow_GroupingEvent_strategy)
+def test_easyflow_groupingevent_dagIn_setter(instance):
     original = instance.dagIn
     instance.dagIn = original
     assert instance.dagIn == original
+
+
+
+@given(instance=easyflow_GroupingEvent_strategy)
+def test_easyflow_groupingevent_dagOut_setter(instance):
+    original = instance.dagOut
+    instance.dagOut = original
+    assert instance.dagOut == original
 
 import warnings
 import copy
@@ -2222,9 +2207,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::GroupingEvent_strategy)
+@given(instance=easyflow_GroupingEvent_strategy)
 @settings(max_examples=30)
-def test_easyflow::groupingevent_applygroupingcriterion_changes_state(instance):
+def test_easyflow_groupingevent_applygroupingcriterion_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2238,162 +2223,123 @@ def test_easyflow::groupingevent_applygroupingcriterion_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'applyGroupingCriterion' in easyflow::GroupingEvent is empty"
+        assert has_statements, f"Function 'applyGroupingCriterion' in easyflow_GroupingEvent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'applyGroupingCriterion' in easyflow::GroupingEvent did not change state; check implementation")
+            warnings.warn(f"Operation 'applyGroupingCriterion' in easyflow_GroupingEvent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'applyGroupingCriterion' in easyflow::GroupingEvent is not implemented or raised an error")
+        warnings.warn(f"Operation 'applyGroupingCriterion' in easyflow_GroupingEvent is not implemented or raised an error")
 
-@given(instance=easyflow::Job_strategy)
+@given(instance=easyflow_Job_strategy)
 @settings(max_examples=50)
-def test_easyflow::job_instantiation(instance):
-    assert isinstance(instance, easyflow::Job)
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_dependencies_type(instance):
-    assert isinstance(instance.dependencies, str)
+def test_easyflow_job_instantiation(instance):
+    assert isinstance(instance, easyflow_Job)
 
 
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_dependencies_setter(instance):
-    original = instance.dependencies
-    instance.dependencies = original
-    assert instance.dependencies == original
 
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_source_type(instance):
-    assert isinstance(instance.source, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_source_setter(instance):
-    original = instance.source
-    instance.source = original
-    assert instance.source == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_subCmd_type(instance):
-    assert isinstance(instance.subCmd, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_subCmd_setter(instance):
-    original = instance.subCmd
-    instance.subCmd = original
-    assert instance.subCmd == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_targetPlatformOptions_type(instance):
-    assert isinstance(instance.targetPlatformOptions, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_targetPlatformOptions_setter(instance):
-    original = instance.targetPlatformOptions
-    instance.targetPlatformOptions = original
-    assert instance.targetPlatformOptions == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_genericArgs_type(instance):
-    assert isinstance(instance.genericArgs, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_genericArgs_setter(instance):
-    original = instance.genericArgs
-    instance.genericArgs = original
-    assert instance.genericArgs == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_staticArgs_type(instance):
-    assert isinstance(instance.staticArgs, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_staticArgs_setter(instance):
-    original = instance.staticArgs
-    instance.staticArgs = original
-    assert instance.staticArgs == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_targetPlatform_type(instance):
-    assert isinstance(instance.targetPlatform, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_targetPlatform_setter(instance):
-    original = instance.targetPlatform
-    instance.targetPlatform = original
-    assert instance.targetPlatform == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_exe_type(instance):
-    assert isinstance(instance.exe, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_exe_setter(instance):
-    original = instance.exe
-    instance.exe = original
-    assert instance.exe == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_inputArgs_type(instance):
-    assert isinstance(instance.inputArgs, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_inputArgs_setter(instance):
-    original = instance.inputArgs
-    instance.inputArgs = original
-    assert instance.inputArgs == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_interpreterOption_type(instance):
-    assert isinstance(instance.interpreterOption, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_interpreterOption_setter(instance):
-    original = instance.interpreterOption
-    instance.interpreterOption = original
-    assert instance.interpreterOption == original
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_targets_type(instance):
-    assert isinstance(instance.targets, str)
-
-
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_targets_setter(instance):
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_targets_setter(instance):
     original = instance.targets
     instance.targets = original
     assert instance.targets == original
 
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_outputArgs_type(instance):
-    assert isinstance(instance.outputArgs, str)
 
 
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_outputArgs_setter(instance):
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_interpreterOption_setter(instance):
+    original = instance.interpreterOption
+    instance.interpreterOption = original
+    assert instance.interpreterOption == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_staticArgs_setter(instance):
+    original = instance.staticArgs
+    instance.staticArgs = original
+    assert instance.staticArgs == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_inputArgs_setter(instance):
+    original = instance.inputArgs
+    instance.inputArgs = original
+    assert instance.inputArgs == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_dependencies_setter(instance):
+    original = instance.dependencies
+    instance.dependencies = original
+    assert instance.dependencies == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_outputArgs_setter(instance):
     original = instance.outputArgs
     instance.outputArgs = original
     assert instance.outputArgs == original
 
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=easyflow::Job_strategy)
-def test_easyflow::job_name_setter(instance):
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_targetPlatformOptions_setter(instance):
+    original = instance.targetPlatformOptions
+    instance.targetPlatformOptions = original
+    assert instance.targetPlatformOptions == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_targetPlatform_setter(instance):
+    original = instance.targetPlatform
+    instance.targetPlatform = original
+    assert instance.targetPlatform == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_source_setter(instance):
+    original = instance.source
+    instance.source = original
+    assert instance.source == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_genericArgs_setter(instance):
+    original = instance.genericArgs
+    instance.genericArgs = original
+    assert instance.genericArgs == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_exe_setter(instance):
+    original = instance.exe
+    instance.exe = original
+    assert instance.exe == original
+
+
+
+@given(instance=easyflow_Job_strategy)
+def test_easyflow_job_subCmd_setter(instance):
+    original = instance.subCmd
+    instance.subCmd = original
+    assert instance.subCmd == original
 
 import warnings
 import copy
@@ -2401,9 +2347,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Job_strategy)
+@given(instance=easyflow_Job_strategy)
 @settings(max_examples=30)
-def test_easyflow::job_writemakeflowrule_changes_state(instance):
+def test_easyflow_job_writemakeflowrule_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2415,134 +2361,59 @@ def test_easyflow::job_writemakeflowrule_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeMakeflowRule' in easyflow::Job is empty"
+        assert has_statements, f"Function 'writeMakeflowRule' in easyflow_Job is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeMakeflowRule' in easyflow::Job did not change state; check implementation")
+            warnings.warn(f"Operation 'writeMakeflowRule' in easyflow_Job did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeMakeflowRule' in easyflow::Job is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeMakeflowRule' in easyflow_Job is not implemented or raised an error")
 
-@given(instance=easyflow::SplittingEvent_strategy)
+@given(instance=easyflow_SplittingEvent_strategy)
 @settings(max_examples=50)
-def test_easyflow::splittingevent_instantiation(instance):
-    assert isinstance(instance, easyflow::SplittingEvent)
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_processedTask_type(instance):
-    assert isinstance(instance.processedTask, str)
+def test_easyflow_splittingevent_instantiation(instance):
+    assert isinstance(instance, easyflow_SplittingEvent)
 
 
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_processedTask_setter(instance):
-    original = instance.processedTask
-    instance.processedTask = original
-    assert instance.processedTask == original
 
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_dag_type(instance):
-    assert isinstance(instance.dag, str)
-
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_dag_setter(instance):
-    original = instance.dag
-    instance.dag = original
-    assert instance.dag == original
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_traversalChunks_type(instance):
-    assert isinstance(instance.traversalChunks, str)
-
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_traversalChunks_setter(instance):
-    original = instance.traversalChunks
-    instance.traversalChunks = original
-    assert instance.traversalChunks == original
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_traversalImplDir_type(instance):
-    assert isinstance(instance.traversalImplDir, str)
-
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_traversalImplDir_setter(instance):
-    original = instance.traversalImplDir
-    instance.traversalImplDir = original
-    assert instance.traversalImplDir == original
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_traversalCriterion_type(instance):
-    assert isinstance(instance.traversalCriterion, str)
-
-
-@given(instance=easyflow::SplittingEvent_strategy)
-def test_easyflow::splittingevent_traversalCriterion_setter(instance):
+@given(instance=easyflow_SplittingEvent_strategy)
+def test_easyflow_splittingevent_traversalCriterion_setter(instance):
     original = instance.traversalCriterion
     instance.traversalCriterion = original
     assert instance.traversalCriterion == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=easyflow::SplittingEvent_strategy)
-@settings(max_examples=30)
-def test_easyflow::splittingevent_applytraversalcriterion_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.applyTraversalCriterion(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.applyTraversalCriterion).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'applyTraversalCriterion' in easyflow::SplittingEvent is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'applyTraversalCriterion' in easyflow::SplittingEvent did not change state; check implementation")
+@given(instance=easyflow_SplittingEvent_strategy)
+def test_easyflow_splittingevent_traversalChunks_setter(instance):
+    original = instance.traversalChunks
+    instance.traversalChunks = original
+    assert instance.traversalChunks == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'applyTraversalCriterion' in easyflow::SplittingEvent is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=easyflow::SplittingEvent_strategy)
-@settings(max_examples=30)
-def test_easyflow::splittingevent_removepath_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removePath()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removePath).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removePath' in easyflow::SplittingEvent is empty"
+@given(instance=easyflow_SplittingEvent_strategy)
+def test_easyflow_splittingevent_traversalImplDir_setter(instance):
+    original = instance.traversalImplDir
+    instance.traversalImplDir = original
+    assert instance.traversalImplDir == original
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removePath' in easyflow::SplittingEvent did not change state; check implementation")
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removePath' in easyflow::SplittingEvent is not implemented or raised an error")
+
+@given(instance=easyflow_SplittingEvent_strategy)
+def test_easyflow_splittingevent_processedTask_setter(instance):
+    original = instance.processedTask
+    instance.processedTask = original
+    assert instance.processedTask == original
+
+
+
+@given(instance=easyflow_SplittingEvent_strategy)
+def test_easyflow_splittingevent_dag_setter(instance):
+    original = instance.dag
+    instance.dag = original
+    assert instance.dag == original
 
 import warnings
 import copy
@@ -2550,9 +2421,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::SplittingEvent_strategy)
+@given(instance=easyflow_SplittingEvent_strategy)
 @settings(max_examples=30)
-def test_easyflow::splittingevent_insertpathtodag_changes_state(instance):
+def test_easyflow_splittingevent_insertpathtodag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2566,24 +2437,84 @@ def test_easyflow::splittingevent_insertpathtodag_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'insertPathToDag' in easyflow::SplittingEvent is empty"
+        assert has_statements, f"Function 'insertPathToDag' in easyflow_SplittingEvent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'insertPathToDag' in easyflow::SplittingEvent did not change state; check implementation")
+            warnings.warn(f"Operation 'insertPathToDag' in easyflow_SplittingEvent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'insertPathToDag' in easyflow::SplittingEvent is not implemented or raised an error")
+        warnings.warn(f"Operation 'insertPathToDag' in easyflow_SplittingEvent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_SplittingEvent_strategy)
+@settings(max_examples=30)
+def test_easyflow_splittingevent_removepath_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removePath()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removePath).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removePath' in easyflow_SplittingEvent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removePath' in easyflow_SplittingEvent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removePath' in easyflow_SplittingEvent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_SplittingEvent_strategy)
+@settings(max_examples=30)
+def test_easyflow_splittingevent_applytraversalcriterion_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.applyTraversalCriterion(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.applyTraversalCriterion).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'applyTraversalCriterion' in easyflow_SplittingEvent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'applyTraversalCriterion' in easyflow_SplittingEvent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'applyTraversalCriterion' in easyflow_SplittingEvent is not implemented or raised an error")
 
 @given(instance=Traversal_strategy)
 @settings(max_examples=50)
 def test_traversal_instantiation(instance):
     assert isinstance(instance, Traversal)
 
-@given(instance=easyflow::Contig_strategy)
+@given(instance=easyflow_Locus_strategy)
 @settings(max_examples=50)
-def test_easyflow::contig_instantiation(instance):
-    assert isinstance(instance, easyflow::Contig)
+def test_easyflow_locus_instantiation(instance):
+    assert isinstance(instance, easyflow_Locus)
 
 import warnings
 import copy
@@ -2591,9 +2522,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Contig_strategy)
+@given(instance=easyflow_Locus_strategy)
 @settings(max_examples=30)
-def test_easyflow::contig_readchunks_changes_state(instance):
+def test_easyflow_locus_readchunks_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2605,19 +2536,19 @@ def test_easyflow::contig_readchunks_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readChunks' in easyflow::Contig is empty"
+        assert has_statements, f"Function 'readChunks' in easyflow_Locus is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readChunks' in easyflow::Contig did not change state; check implementation")
+            warnings.warn(f"Operation 'readChunks' in easyflow_Locus did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readChunks' in easyflow::Contig is not implemented or raised an error")
+        warnings.warn(f"Operation 'readChunks' in easyflow_Locus is not implemented or raised an error")
 
-@given(instance=easyflow::ReadEnd_strategy)
+@given(instance=easyflow_ReadEnd_strategy)
 @settings(max_examples=50)
-def test_easyflow::readend_instantiation(instance):
-    assert isinstance(instance, easyflow::ReadEnd)
+def test_easyflow_readend_instantiation(instance):
+    assert isinstance(instance, easyflow_ReadEnd)
 
 import warnings
 import copy
@@ -2625,9 +2556,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::ReadEnd_strategy)
+@given(instance=easyflow_ReadEnd_strategy)
 @settings(max_examples=30)
-def test_easyflow::readend_readchunks_changes_state(instance):
+def test_easyflow_readend_readchunks_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2639,19 +2570,19 @@ def test_easyflow::readend_readchunks_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readChunks' in easyflow::ReadEnd is empty"
+        assert has_statements, f"Function 'readChunks' in easyflow_ReadEnd is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readChunks' in easyflow::ReadEnd did not change state; check implementation")
+            warnings.warn(f"Operation 'readChunks' in easyflow_ReadEnd did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readChunks' in easyflow::ReadEnd is not implemented or raised an error")
+        warnings.warn(f"Operation 'readChunks' in easyflow_ReadEnd is not implemented or raised an error")
 
-@given(instance=easyflow::Locus_strategy)
+@given(instance=easyflow_Contig_strategy)
 @settings(max_examples=50)
-def test_easyflow::locus_instantiation(instance):
-    assert isinstance(instance, easyflow::Locus)
+def test_easyflow_contig_instantiation(instance):
+    assert isinstance(instance, easyflow_Contig)
 
 import warnings
 import copy
@@ -2659,9 +2590,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Locus_strategy)
+@given(instance=easyflow_Contig_strategy)
 @settings(max_examples=30)
-def test_easyflow::locus_readchunks_changes_state(instance):
+def test_easyflow_contig_readchunks_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2673,32 +2604,29 @@ def test_easyflow::locus_readchunks_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readChunks' in easyflow::Locus is empty"
+        assert has_statements, f"Function 'readChunks' in easyflow_Contig is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readChunks' in easyflow::Locus did not change state; check implementation")
+            warnings.warn(f"Operation 'readChunks' in easyflow_Contig did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readChunks' in easyflow::Locus is not implemented or raised an error")
+        warnings.warn(f"Operation 'readChunks' in easyflow_Contig is not implemented or raised an error")
 
-@given(instance=easyflow::GenericTraversalCriterion_strategy)
+@given(instance=easyflow_GenericTraversalCriterion_strategy)
 @settings(max_examples=50)
-def test_easyflow::generictraversalcriterion_instantiation(instance):
-    assert isinstance(instance, easyflow::GenericTraversalCriterion)
+def test_easyflow_generictraversalcriterion_instantiation(instance):
+    assert isinstance(instance, easyflow_GenericTraversalCriterion)
 
-@given(instance=easyflow::StringToChunkMap_strategy)
+@given(instance=easyflow_StringToChunkMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtochunkmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToChunkMap)
-
-@given(instance=easyflow::StringToChunkMap_strategy)
-def test_easyflow::stringtochunkmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtochunkmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToChunkMap)
 
 
-@given(instance=easyflow::StringToChunkMap_strategy)
-def test_easyflow::stringtochunkmap_key_setter(instance):
+
+@given(instance=easyflow_StringToChunkMap_strategy)
+def test_easyflow_stringtochunkmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
@@ -2708,26 +2636,23 @@ def test_easyflow::stringtochunkmap_key_setter(instance):
 def test_itraversal_instantiation(instance):
     assert isinstance(instance, ITraversal)
 
-@given(instance=easyflow::Traversal_strategy)
+@given(instance=easyflow_Traversal_strategy)
 @settings(max_examples=50)
-def test_easyflow::traversal_instantiation(instance):
-    assert isinstance(instance, easyflow::Traversal)
-
-@given(instance=easyflow::Traversal_strategy)
-def test_easyflow::traversal_tarversalCriterion_type(instance):
-    assert isinstance(instance.tarversalCriterion, str)
+def test_easyflow_traversal_instantiation(instance):
+    assert isinstance(instance, easyflow_Traversal)
 
 
-@given(instance=easyflow::Traversal_strategy)
-def test_easyflow::traversal_tarversalCriterion_setter(instance):
+
+@given(instance=easyflow_Traversal_strategy)
+def test_easyflow_traversal_tarversalCriterion_setter(instance):
     original = instance.tarversalCriterion
     instance.tarversalCriterion = original
     assert instance.tarversalCriterion == original
 
-@given(instance=easyflow::ITraversal_strategy)
+@given(instance=easyflow_ITraversal_strategy)
 @settings(max_examples=50)
-def test_easyflow::itraversal_instantiation(instance):
-    assert isinstance(instance, easyflow::ITraversal)
+def test_easyflow_itraversal_instantiation(instance):
+    assert isinstance(instance, easyflow_ITraversal)
 
 import warnings
 import copy
@@ -2735,38 +2660,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::ITraversal_strategy)
+@given(instance=easyflow_ITraversal_strategy)
 @settings(max_examples=30)
-def test_easyflow::itraversal_readchunks_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.readChunks()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.readChunks).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readChunks' in easyflow::ITraversal is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readChunks' in easyflow::ITraversal did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readChunks' in easyflow::ITraversal is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::ITraversal_strategy)
-@settings(max_examples=30)
-def test_easyflow::itraversal_readtemplate_changes_state(instance):
+def test_easyflow_itraversal_readtemplate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2780,32 +2676,58 @@ def test_easyflow::itraversal_readtemplate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readTemplate' in easyflow::ITraversal is empty"
+        assert has_statements, f"Function 'readTemplate' in easyflow_ITraversal is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readTemplate' in easyflow::ITraversal did not change state; check implementation")
+            warnings.warn(f"Operation 'readTemplate' in easyflow_ITraversal did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readTemplate' in easyflow::ITraversal is not implemented or raised an error")
+        warnings.warn(f"Operation 'readTemplate' in easyflow_ITraversal is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_ITraversal_strategy)
+@settings(max_examples=30)
+def test_easyflow_itraversal_readchunks_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.readChunks()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.readChunks).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'readChunks' in easyflow_ITraversal is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'readChunks' in easyflow_ITraversal did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'readChunks' in easyflow_ITraversal is not implemented or raised an error")
 
 @given(instance=EasyFlowMetadata_strategy)
 @settings(max_examples=50)
 def test_easyflowmetadata_instantiation(instance):
     assert isinstance(instance, EasyFlowMetadata)
 
-@given(instance=easyflow::EasyFlowMetadataReader_strategy)
+@given(instance=easyflow_EasyFlowMetadataReader_strategy)
 @settings(max_examples=50)
-def test_easyflow::easyflowmetadatareader_instantiation(instance):
-    assert isinstance(instance, easyflow::EasyFlowMetadataReader)
-
-@given(instance=easyflow::EasyFlowMetadataReader_strategy)
-def test_easyflow::easyflowmetadatareader_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
+def test_easyflow_easyflowmetadatareader_instantiation(instance):
+    assert isinstance(instance, easyflow_EasyFlowMetadataReader)
 
 
-@given(instance=easyflow::EasyFlowMetadataReader_strategy)
-def test_easyflow::easyflowmetadatareader_fileName_setter(instance):
+
+@given(instance=easyflow_EasyFlowMetadataReader_strategy)
+def test_easyflow_easyflowmetadatareader_fileName_setter(instance):
     original = instance.fileName
     instance.fileName = original
     assert instance.fileName == original
@@ -2816,9 +2738,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowMetadataReader_strategy)
+@given(instance=easyflow_EasyFlowMetadataReader_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowmetadatareader_metadatafilereader_changes_state(instance):
+def test_easyflow_easyflowmetadatareader_metadatafilereader_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2830,75 +2752,63 @@ def test_easyflow::easyflowmetadatareader_metadatafilereader_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'metadataFileReader' in easyflow::EasyFlowMetadataReader is empty"
+        assert has_statements, f"Function 'metadataFileReader' in easyflow_EasyFlowMetadataReader is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'metadataFileReader' in easyflow::EasyFlowMetadataReader did not change state; check implementation")
+            warnings.warn(f"Operation 'metadataFileReader' in easyflow_EasyFlowMetadataReader did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'metadataFileReader' in easyflow::EasyFlowMetadataReader is not implemented or raised an error")
+        warnings.warn(f"Operation 'metadataFileReader' in easyflow_EasyFlowMetadataReader is not implemented or raised an error")
 
-@given(instance=easyflow::StringToRecordMap_strategy)
+@given(instance=easyflow_StringToRecordMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtorecordmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToRecordMap)
-
-@given(instance=easyflow::StringToRecordMap_strategy)
-def test_easyflow::stringtorecordmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtorecordmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToRecordMap)
 
 
-@given(instance=easyflow::StringToRecordMap_strategy)
-def test_easyflow::stringtorecordmap_key_setter(instance):
+
+@given(instance=easyflow_StringToRecordMap_strategy)
+def test_easyflow_stringtorecordmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToLibraryMap_strategy)
+@given(instance=easyflow_StringToLibraryMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtolibrarymap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToLibraryMap)
-
-@given(instance=easyflow::StringToLibraryMap_strategy)
-def test_easyflow::stringtolibrarymap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtolibrarymap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToLibraryMap)
 
 
-@given(instance=easyflow::StringToLibraryMap_strategy)
-def test_easyflow::stringtolibrarymap_key_setter(instance):
+
+@given(instance=easyflow_StringToLibraryMap_strategy)
+def test_easyflow_stringtolibrarymap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToReadgroupMap_strategy)
+@given(instance=easyflow_StringToReadgroupMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtoreadgroupmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToReadgroupMap)
-
-@given(instance=easyflow::StringToReadgroupMap_strategy)
-def test_easyflow::stringtoreadgroupmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtoreadgroupmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToReadgroupMap)
 
 
-@given(instance=easyflow::StringToReadgroupMap_strategy)
-def test_easyflow::stringtoreadgroupmap_key_setter(instance):
+
+@given(instance=easyflow_StringToReadgroupMap_strategy)
+def test_easyflow_stringtoreadgroupmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToSampleMap_strategy)
+@given(instance=easyflow_StringToSampleMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtosamplemap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToSampleMap)
-
-@given(instance=easyflow::StringToSampleMap_strategy)
-def test_easyflow::stringtosamplemap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtosamplemap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToSampleMap)
 
 
-@given(instance=easyflow::StringToSampleMap_strategy)
-def test_easyflow::stringtosamplemap_key_setter(instance):
+
+@given(instance=easyflow_StringToSampleMap_strategy)
+def test_easyflow_stringtosamplemap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
@@ -2908,275 +2818,187 @@ def test_easyflow::stringtosamplemap_key_setter(instance):
 def test_groupingcriterion_instantiation(instance):
     assert isinstance(instance, GroupingCriterion)
 
-@given(instance=easyflow::Library_strategy)
+@given(instance=easyflow_Library_strategy)
 @settings(max_examples=50)
-def test_easyflow::library_instantiation(instance):
-    assert isinstance(instance, easyflow::Library)
-
-@given(instance=easyflow::Library_strategy)
-def test_easyflow::library_insertSize_type(instance):
-    assert isinstance(instance.insertSize, int)
+def test_easyflow_library_instantiation(instance):
+    assert isinstance(instance, easyflow_Library)
 
 
-@given(instance=easyflow::Library_strategy)
-def test_easyflow::library_insertSize_setter(instance):
+
+@given(instance=easyflow_Library_strategy)
+def test_easyflow_library_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=easyflow_Library_strategy)
+def test_easyflow_library_insertSize_setter(instance):
     original = instance.insertSize
     instance.insertSize = original
     assert instance.insertSize == original
 
-@given(instance=easyflow::Library_strategy)
-def test_easyflow::library_readLength_type(instance):
-    assert isinstance(instance.readLength, int)
 
 
-@given(instance=easyflow::Library_strategy)
-def test_easyflow::library_readLength_setter(instance):
+@given(instance=easyflow_Library_strategy)
+def test_easyflow_library_readLength_setter(instance):
     original = instance.readLength
     instance.readLength = original
     assert instance.readLength == original
 
-@given(instance=easyflow::Library_strategy)
-def test_easyflow::library_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::Library_strategy)
-def test_easyflow::library_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=easyflow::Record_strategy)
+@given(instance=easyflow_Record_strategy)
 @settings(max_examples=50)
-def test_easyflow::record_instantiation(instance):
-    assert isinstance(instance, easyflow::Record)
-
-@given(instance=easyflow::Record_strategy)
-def test_easyflow::record_refData_type(instance):
-    assert isinstance(instance.refData, str)
+def test_easyflow_record_instantiation(instance):
+    assert isinstance(instance, easyflow_Record)
 
 
-@given(instance=easyflow::Record_strategy)
-def test_easyflow::record_refData_setter(instance):
-    original = instance.refData
-    instance.refData = original
-    assert instance.refData == original
 
-@given(instance=easyflow::Record_strategy)
-def test_easyflow::record_fileNames_type(instance):
-    assert isinstance(instance.fileNames, str)
-
-
-@given(instance=easyflow::Record_strategy)
-def test_easyflow::record_fileNames_setter(instance):
+@given(instance=easyflow_Record_strategy)
+def test_easyflow_record_fileNames_setter(instance):
     original = instance.fileNames
     instance.fileNames = original
     assert instance.fileNames == original
 
-@given(instance=easyflow::Readgroup_strategy)
-@settings(max_examples=50)
-def test_easyflow::readgroup_instantiation(instance):
-    assert isinstance(instance, easyflow::Readgroup)
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_platform_type(instance):
-    assert isinstance(instance.platform, str)
 
 
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_platform_setter(instance):
-    original = instance.platform
-    instance.platform = original
-    assert instance.platform == original
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_platformUnit_type(instance):
-    assert isinstance(instance.platformUnit, str)
-
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_platformUnit_setter(instance):
-    original = instance.platformUnit
-    instance.platformUnit = original
-    assert instance.platformUnit == original
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::Readgroup_strategy)
-def test_easyflow::readgroup_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=easyflow::Sample_strategy)
-@settings(max_examples=50)
-def test_easyflow::sample_instantiation(instance):
-    assert isinstance(instance, easyflow::Sample)
-
-@given(instance=easyflow::Sample_strategy)
-def test_easyflow::sample_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::Sample_strategy)
-def test_easyflow::sample_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=easyflow::Group_strategy)
-@settings(max_examples=50)
-def test_easyflow::group_instantiation(instance):
-    assert isinstance(instance, easyflow::Group)
-
-@given(instance=easyflow::Group_strategy)
-def test_easyflow::group_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::Group_strategy)
-def test_easyflow::group_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=easyflow::Tool_strategy)
-@settings(max_examples=50)
-def test_easyflow::tool_instantiation(instance):
-    assert isinstance(instance, easyflow::Tool)
-
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_refData_type(instance):
-    assert isinstance(instance.refData, str)
-
-
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_refData_setter(instance):
+@given(instance=easyflow_Record_strategy)
+def test_easyflow_record_refData_setter(instance):
     original = instance.refData
     instance.refData = original
     assert instance.refData == original
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_category_type(instance):
-    assert isinstance(instance.category, str)
+@given(instance=easyflow_Sample_strategy)
+@settings(max_examples=50)
+def test_easyflow_sample_instantiation(instance):
+    assert isinstance(instance, easyflow_Sample)
 
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_subCmd_type(instance):
-    assert isinstance(instance.subCmd, str)
+@given(instance=easyflow_Sample_strategy)
+def test_easyflow_sample_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
-
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_subCmd_setter(instance):
-    original = instance.subCmd
-    instance.subCmd = original
-    assert instance.subCmd == original
-
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_toolName_type(instance):
-    assert isinstance(instance.toolName, str)
+@given(instance=easyflow_Readgroup_strategy)
+@settings(max_examples=50)
+def test_easyflow_readgroup_instantiation(instance):
+    assert isinstance(instance, easyflow_Readgroup)
 
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_toolName_setter(instance):
+
+@given(instance=easyflow_Readgroup_strategy)
+def test_easyflow_readgroup_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=easyflow_Readgroup_strategy)
+def test_easyflow_readgroup_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=easyflow_Readgroup_strategy)
+def test_easyflow_readgroup_platform_setter(instance):
+    original = instance.platform
+    instance.platform = original
+    assert instance.platform == original
+
+
+
+@given(instance=easyflow_Readgroup_strategy)
+def test_easyflow_readgroup_platformUnit_setter(instance):
+    original = instance.platformUnit
+    instance.platformUnit = original
+    assert instance.platformUnit == original
+
+@given(instance=easyflow_Group_strategy)
+@settings(max_examples=50)
+def test_easyflow_group_instantiation(instance):
+    assert isinstance(instance, easyflow_Group)
+
+
+
+@given(instance=easyflow_Group_strategy)
+def test_easyflow_group_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=easyflow_Tool_strategy)
+@settings(max_examples=50)
+def test_easyflow_tool_instantiation(instance):
+    assert isinstance(instance, easyflow_Tool)
+
+
+
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_toolName_setter(instance):
     original = instance.toolName
     instance.toolName = original
     assert instance.toolName == original
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_subCmdPrefix_type(instance):
-    assert isinstance(instance.subCmdPrefix, str)
 
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_subCmdPrefix_setter(instance):
-    original = instance.subCmdPrefix
-    instance.subCmdPrefix = original
-    assert instance.subCmdPrefix == original
-
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_pattern_type(instance):
-    assert isinstance(instance.pattern, str)
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_subCmd_setter(instance):
+    original = instance.subCmd
+    instance.subCmd = original
+    assert instance.subCmd == original
 
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_pattern_setter(instance):
-    original = instance.pattern
-    instance.pattern = original
-    assert instance.pattern == original
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
 
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_type_setter(instance):
+
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_source_type(instance):
-    assert isinstance(instance.source, str)
 
 
-@given(instance=easyflow::Tool_strategy)
-def test_easyflow::tool_source_setter(instance):
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_refData_setter(instance):
+    original = instance.refData
+    instance.refData = original
+    assert instance.refData == original
+
+
+
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_subCmdPrefix_setter(instance):
+    original = instance.subCmdPrefix
+    instance.subCmdPrefix = original
+    assert instance.subCmdPrefix == original
+
+
+
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=easyflow::Tool_strategy)
-@settings(max_examples=30)
-def test_easyflow::tool_createjob_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createJob(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createJob).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createJob' in easyflow::Tool is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createJob' in easyflow::Tool did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createJob' in easyflow::Tool is not implemented or raised an error")
+@given(instance=easyflow_Tool_strategy)
+def test_easyflow_tool_pattern_setter(instance):
+    original = instance.pattern
+    instance.pattern = original
+    assert instance.pattern == original
 
 import warnings
 import copy
@@ -3184,9 +3006,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Tool_strategy)
+@given(instance=easyflow_Tool_strategy)
 @settings(max_examples=30)
-def test_easyflow::tool_applyglobaloptions_changes_state(instance):
+def test_easyflow_tool_applyglobaloptions_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3200,27 +3022,55 @@ def test_easyflow::tool_applyglobaloptions_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'applyGlobalOptions' in easyflow::Tool is empty"
+        assert has_statements, f"Function 'applyGlobalOptions' in easyflow_Tool is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'applyGlobalOptions' in easyflow::Tool did not change state; check implementation")
+            warnings.warn(f"Operation 'applyGlobalOptions' in easyflow_Tool did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'applyGlobalOptions' in easyflow::Tool is not implemented or raised an error")
+        warnings.warn(f"Operation 'applyGlobalOptions' in easyflow_Tool is not implemented or raised an error")
 
-@given(instance=easyflow::GroupingCriterion_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_Tool_strategy)
+@settings(max_examples=30)
+def test_easyflow_tool_createjob_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createJob(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createJob).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createJob' in easyflow_Tool is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createJob' in easyflow_Tool did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createJob' in easyflow_Tool is not implemented or raised an error")
+
+@given(instance=easyflow_GroupingCriterion_strategy)
 @settings(max_examples=50)
-def test_easyflow::groupingcriterion_instantiation(instance):
-    assert isinstance(instance, easyflow::GroupingCriterion)
-
-@given(instance=easyflow::GroupingCriterion_strategy)
-def test_easyflow::groupingcriterion_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_easyflow_groupingcriterion_instantiation(instance):
+    assert isinstance(instance, easyflow_GroupingCriterion)
 
 
-@given(instance=easyflow::GroupingCriterion_strategy)
-def test_easyflow::groupingcriterion_id_setter(instance):
+
+@given(instance=easyflow_GroupingCriterion_strategy)
+def test_easyflow_groupingcriterion_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -3231,9 +3081,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::GroupingCriterion_strategy)
+@given(instance=easyflow_GroupingCriterion_strategy)
 @settings(max_examples=30)
-def test_easyflow::groupingcriterion_equalsparent_changes_state(instance):
+def test_easyflow_groupingcriterion_equalsparent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3247,106 +3097,85 @@ def test_easyflow::groupingcriterion_equalsparent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equalsParent' in easyflow::GroupingCriterion is empty"
+        assert has_statements, f"Function 'equalsParent' in easyflow_GroupingCriterion is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equalsParent' in easyflow::GroupingCriterion did not change state; check implementation")
+            warnings.warn(f"Operation 'equalsParent' in easyflow_GroupingCriterion did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equalsParent' in easyflow::GroupingCriterion is not implemented or raised an error")
+        warnings.warn(f"Operation 'equalsParent' in easyflow_GroupingCriterion is not implemented or raised an error")
 
-@given(instance=easyflow::Argument_strategy)
+@given(instance=easyflow_Argument_strategy)
 @settings(max_examples=50)
-def test_easyflow::argument_instantiation(instance):
-    assert isinstance(instance, easyflow::Argument)
-
-@given(instance=easyflow::Argument_strategy)
-def test_easyflow::argument_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_easyflow_argument_instantiation(instance):
+    assert isinstance(instance, easyflow_Argument)
 
 
-@given(instance=easyflow::Argument_strategy)
-def test_easyflow::argument_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=easyflow::Argument_strategy)
-def test_easyflow::argument_sep_type(instance):
-    assert isinstance(instance.sep, str)
-
-
-@given(instance=easyflow::Argument_strategy)
-def test_easyflow::argument_sep_setter(instance):
+@given(instance=easyflow_Argument_strategy)
+def test_easyflow_argument_sep_setter(instance):
     original = instance.sep
     instance.sep = original
     assert instance.sep == original
 
-@given(instance=easyflow::Argument_strategy)
-def test_easyflow::argument_arg_type(instance):
-    assert isinstance(instance.arg, str)
 
 
-@given(instance=easyflow::Argument_strategy)
-def test_easyflow::argument_arg_setter(instance):
+@given(instance=easyflow_Argument_strategy)
+def test_easyflow_argument_arg_setter(instance):
     original = instance.arg
     instance.arg = original
     assert instance.arg == original
 
-@given(instance=easyflow::Interpreter_strategy)
-@settings(max_examples=50)
-def test_easyflow::interpreter_instantiation(instance):
-    assert isinstance(instance, easyflow::Interpreter)
-
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_options_type(instance):
-    assert isinstance(instance.options, str)
 
 
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_options_setter(instance):
-    original = instance.options
-    instance.options = original
-    assert instance.options == original
-
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_name_setter(instance):
+@given(instance=easyflow_Argument_strategy)
+def test_easyflow_argument_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_subCmd_type(instance):
-    assert isinstance(instance.subCmd, str)
+@given(instance=easyflow_Interpreter_strategy)
+@settings(max_examples=50)
+def test_easyflow_interpreter_instantiation(instance):
+    assert isinstance(instance, easyflow_Interpreter)
 
 
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_subCmd_setter(instance):
+
+@given(instance=easyflow_Interpreter_strategy)
+def test_easyflow_interpreter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=easyflow_Interpreter_strategy)
+def test_easyflow_interpreter_options_setter(instance):
+    original = instance.options
+    instance.options = original
+    assert instance.options == original
+
+
+
+@given(instance=easyflow_Interpreter_strategy)
+def test_easyflow_interpreter_subCmd_setter(instance):
     original = instance.subCmd
     instance.subCmd = original
     assert instance.subCmd == original
 
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_exe_type(instance):
-    assert isinstance(instance.exe, str)
 
 
-@given(instance=easyflow::Interpreter_strategy)
-def test_easyflow::interpreter_exe_setter(instance):
+@given(instance=easyflow_Interpreter_strategy)
+def test_easyflow_interpreter_exe_setter(instance):
     original = instance.exe
     instance.exe = original
     assert instance.exe == original
 
-@given(instance=easyflow::IWorkflowUtil_strategy)
+@given(instance=easyflow_IWorkflowUtil_strategy)
 @settings(max_examples=50)
-def test_easyflow::iworkflowutil_instantiation(instance):
-    assert isinstance(instance, easyflow::IWorkflowUtil)
+def test_easyflow_iworkflowutil_instantiation(instance):
+    assert isinstance(instance, easyflow_IWorkflowUtil)
 
 import warnings
 import copy
@@ -3354,105 +3183,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::IWorkflowUtil_strategy)
+@given(instance=easyflow_IWorkflowUtil_strategy)
 @settings(max_examples=30)
-def test_easyflow::iworkflowutil_addtasklisttodag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addTaskListToDAG(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addTaskListToDAG).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTaskListToDAG' in easyflow::IWorkflowUtil is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTaskListToDAG' in easyflow::IWorkflowUtil did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTaskListToDAG' in easyflow::IWorkflowUtil is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::IWorkflowUtil_strategy)
-@settings(max_examples=30)
-def test_easyflow::iworkflowutil_convertgraphtodag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.convertGraphToDag(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.convertGraphToDag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'convertGraphToDag' in easyflow::IWorkflowUtil is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'convertGraphToDag' in easyflow::IWorkflowUtil did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'convertGraphToDag' in easyflow::IWorkflowUtil is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::IWorkflowUtil_strategy)
-@settings(max_examples=30)
-def test_easyflow::iworkflowutil_writedagtodot_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.writeDagToDot(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.writeDagToDot).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeDagToDot' in easyflow::IWorkflowUtil is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeDagToDot' in easyflow::IWorkflowUtil did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeDagToDot' in easyflow::IWorkflowUtil is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::IWorkflowUtil_strategy)
-@settings(max_examples=30)
-def test_easyflow::iworkflowutil_addtasklisttograph_changes_state(instance):
+def test_easyflow_iworkflowutil_addtasklisttograph_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3468,14 +3201,14 @@ def test_easyflow::iworkflowutil_addtasklisttograph_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTaskListToGraph' in easyflow::IWorkflowUtil is empty"
+        assert has_statements, f"Function 'addTaskListToGraph' in easyflow_IWorkflowUtil is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTaskListToGraph' in easyflow::IWorkflowUtil did not change state; check implementation")
+            warnings.warn(f"Operation 'addTaskListToGraph' in easyflow_IWorkflowUtil did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTaskListToGraph' in easyflow::IWorkflowUtil is not implemented or raised an error")
+        warnings.warn(f"Operation 'addTaskListToGraph' in easyflow_IWorkflowUtil is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3483,9 +3216,42 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::IWorkflowUtil_strategy)
+@given(instance=easyflow_IWorkflowUtil_strategy)
 @settings(max_examples=30)
-def test_easyflow::iworkflowutil_convertdagtograph_changes_state(instance):
+def test_easyflow_iworkflowutil_addtasklisttodag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addTaskListToDAG(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addTaskListToDAG).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addTaskListToDAG' in easyflow_IWorkflowUtil is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addTaskListToDAG' in easyflow_IWorkflowUtil did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addTaskListToDAG' in easyflow_IWorkflowUtil is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_IWorkflowUtil_strategy)
+@settings(max_examples=30)
+def test_easyflow_iworkflowutil_convertdagtograph_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3500,103 +3266,122 @@ def test_easyflow::iworkflowutil_convertdagtograph_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'convertDagToGraph' in easyflow::IWorkflowUtil is empty"
+        assert has_statements, f"Function 'convertDagToGraph' in easyflow_IWorkflowUtil is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'convertDagToGraph' in easyflow::IWorkflowUtil did not change state; check implementation")
+            warnings.warn(f"Operation 'convertDagToGraph' in easyflow_IWorkflowUtil did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'convertDagToGraph' in easyflow::IWorkflowUtil is not implemented or raised an error")
+        warnings.warn(f"Operation 'convertDagToGraph' in easyflow_IWorkflowUtil is not implemented or raised an error")
 
-@given(instance=easyflow::CommandArgument_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_IWorkflowUtil_strategy)
+@settings(max_examples=30)
+def test_easyflow_iworkflowutil_convertgraphtodag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.convertGraphToDag(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.convertGraphToDag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'convertGraphToDag' in easyflow_IWorkflowUtil is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'convertGraphToDag' in easyflow_IWorkflowUtil did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'convertGraphToDag' in easyflow_IWorkflowUtil is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_IWorkflowUtil_strategy)
+@settings(max_examples=30)
+def test_easyflow_iworkflowutil_writedagtodot_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.writeDagToDot(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.writeDagToDot).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'writeDagToDot' in easyflow_IWorkflowUtil is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'writeDagToDot' in easyflow_IWorkflowUtil did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'writeDagToDot' in easyflow_IWorkflowUtil is not implemented or raised an error")
+
+@given(instance=easyflow_CommandArgument_strategy)
 @settings(max_examples=50)
-def test_easyflow::commandargument_instantiation(instance):
-    assert isinstance(instance, easyflow::CommandArgument)
-
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_arg_type(instance):
-    assert isinstance(instance.arg, str)
+def test_easyflow_commandargument_instantiation(instance):
+    assert isinstance(instance, easyflow_CommandArgument)
 
 
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_arg_setter(instance):
-    original = instance.arg
-    instance.arg = original
-    assert instance.arg == original
 
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_sep_type(instance):
-    assert isinstance(instance.sep, str)
-
-
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_sep_setter(instance):
-    original = instance.sep
-    instance.sep = original
-    assert instance.sep == original
-
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_required_type(instance):
-    assert isinstance(instance.required, bool)
-
-
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_required_setter(instance):
+@given(instance=easyflow_CommandArgument_strategy)
+def test_easyflow_commandargument_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_named_type(instance):
-    assert isinstance(instance.named, bool)
 
 
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_named_setter(instance):
-    original = instance.named
-    instance.named = original
-    assert instance.named == original
-
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::CommandArgument_strategy)
-def test_easyflow::commandargument_name_setter(instance):
+@given(instance=easyflow_CommandArgument_strategy)
+def test_easyflow_commandargument_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=easyflow::CommandArgument_strategy)
-@settings(max_examples=30)
-def test_easyflow::commandargument_printstaticarg_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.printStaticArg()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.printStaticArg).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printStaticArg' in easyflow::CommandArgument is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printStaticArg' in easyflow::CommandArgument did not change state; check implementation")
+@given(instance=easyflow_CommandArgument_strategy)
+def test_easyflow_commandargument_named_setter(instance):
+    original = instance.named
+    instance.named = original
+    assert instance.named == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printStaticArg' in easyflow::CommandArgument is not implemented or raised an error")
+
+
+@given(instance=easyflow_CommandArgument_strategy)
+def test_easyflow_commandargument_sep_setter(instance):
+    original = instance.sep
+    instance.sep = original
+    assert instance.sep == original
+
+
+
+@given(instance=easyflow_CommandArgument_strategy)
+def test_easyflow_commandargument_arg_setter(instance):
+    original = instance.arg
+    instance.arg = original
+    assert instance.arg == original
 
 import warnings
 import copy
@@ -3604,71 +3389,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::CommandArgument_strategy)
+@given(instance=easyflow_CommandArgument_strategy)
 @settings(max_examples=30)
-def test_easyflow::commandargument_setcmdproperties_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setCmdProperties(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setCmdProperties).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setCmdProperties' in easyflow::CommandArgument is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setCmdProperties' in easyflow::CommandArgument did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setCmdProperties' in easyflow::CommandArgument is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::CommandArgument_strategy)
-@settings(max_examples=30)
-def test_easyflow::commandargument_setglobalcmdproperties_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setGlobalCmdProperties(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setGlobalCmdProperties).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setGlobalCmdProperties' in easyflow::CommandArgument is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setGlobalCmdProperties' in easyflow::CommandArgument did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setGlobalCmdProperties' in easyflow::CommandArgument is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::CommandArgument_strategy)
-@settings(max_examples=30)
-def test_easyflow::commandargument_printargument_changes_state(instance):
+def test_easyflow_commandargument_printargument_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3682,14 +3405,14 @@ def test_easyflow::commandargument_printargument_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printArgument' in easyflow::CommandArgument is empty"
+        assert has_statements, f"Function 'printArgument' in easyflow_CommandArgument is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printArgument' in easyflow::CommandArgument did not change state; check implementation")
+            warnings.warn(f"Operation 'printArgument' in easyflow_CommandArgument did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printArgument' in easyflow::CommandArgument is not implemented or raised an error")
+        warnings.warn(f"Operation 'printArgument' in easyflow_CommandArgument is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3697,9 +3420,100 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::CommandArgument_strategy)
+@given(instance=easyflow_CommandArgument_strategy)
 @settings(max_examples=30)
-def test_easyflow::commandargument_printgenericarg_changes_state(instance):
+def test_easyflow_commandargument_setcmdproperties_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setCmdProperties(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setCmdProperties).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setCmdProperties' in easyflow_CommandArgument is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setCmdProperties' in easyflow_CommandArgument did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setCmdProperties' in easyflow_CommandArgument is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_CommandArgument_strategy)
+@settings(max_examples=30)
+def test_easyflow_commandargument_setglobalcmdproperties_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setGlobalCmdProperties(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setGlobalCmdProperties).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setGlobalCmdProperties' in easyflow_CommandArgument is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setGlobalCmdProperties' in easyflow_CommandArgument did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setGlobalCmdProperties' in easyflow_CommandArgument is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_CommandArgument_strategy)
+@settings(max_examples=30)
+def test_easyflow_commandargument_printstaticarg_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.printStaticArg()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.printStaticArg).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'printStaticArg' in easyflow_CommandArgument is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'printStaticArg' in easyflow_CommandArgument did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'printStaticArg' in easyflow_CommandArgument is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_CommandArgument_strategy)
+@settings(max_examples=30)
+def test_easyflow_commandargument_printgenericarg_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3713,118 +3527,97 @@ def test_easyflow::commandargument_printgenericarg_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printGenericArg' in easyflow::CommandArgument is empty"
+        assert has_statements, f"Function 'printGenericArg' in easyflow_CommandArgument is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printGenericArg' in easyflow::CommandArgument did not change state; check implementation")
+            warnings.warn(f"Operation 'printGenericArg' in easyflow_CommandArgument did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printGenericArg' in easyflow::CommandArgument is not implemented or raised an error")
+        warnings.warn(f"Operation 'printGenericArg' in easyflow_CommandArgument is not implemented or raised an error")
 
-@given(instance=easyflow::StringToGroupMap_strategy)
+@given(instance=easyflow_StringToGroupMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtogroupmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToGroupMap)
-
-@given(instance=easyflow::StringToGroupMap_strategy)
-def test_easyflow::stringtogroupmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtogroupmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToGroupMap)
 
 
-@given(instance=easyflow::StringToGroupMap_strategy)
-def test_easyflow::stringtogroupmap_key_setter(instance):
+
+@given(instance=easyflow_StringToGroupMap_strategy)
+def test_easyflow_stringtogroupmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToTraversalCriterionMap_strategy)
+@given(instance=easyflow_StringToTraversalCriterionMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtotraversalcriterionmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToTraversalCriterionMap)
-
-@given(instance=easyflow::StringToTraversalCriterionMap_strategy)
-def test_easyflow::stringtotraversalcriterionmap_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_easyflow_stringtotraversalcriterionmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToTraversalCriterionMap)
 
 
-@given(instance=easyflow::StringToTraversalCriterionMap_strategy)
-def test_easyflow::stringtotraversalcriterionmap_value_setter(instance):
+
+@given(instance=easyflow_StringToTraversalCriterionMap_strategy)
+def test_easyflow_stringtotraversalcriterionmap_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+
+
+@given(instance=easyflow_StringToTraversalCriterionMap_strategy)
+def test_easyflow_stringtotraversalcriterionmap_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=easyflow::StringToTraversalCriterionMap_strategy)
-def test_easyflow::stringtotraversalcriterionmap_key_type(instance):
-    assert isinstance(instance.key, str)
+@given(instance=easyflow_StringToGroupingCriterionMap_strategy)
+@settings(max_examples=50)
+def test_easyflow_stringtogroupingcriterionmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToGroupingCriterionMap)
 
 
-@given(instance=easyflow::StringToTraversalCriterionMap_strategy)
-def test_easyflow::stringtotraversalcriterionmap_key_setter(instance):
+
+@given(instance=easyflow_StringToGroupingCriterionMap_strategy)
+def test_easyflow_stringtogroupingcriterionmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToGroupingCriterionMap_strategy)
+@given(instance=easyflow_StringToTaskMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtogroupingcriterionmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToGroupingCriterionMap)
-
-@given(instance=easyflow::StringToGroupingCriterionMap_strategy)
-def test_easyflow::stringtogroupingcriterionmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtotaskmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToTaskMap)
 
 
-@given(instance=easyflow::StringToGroupingCriterionMap_strategy)
-def test_easyflow::stringtogroupingcriterionmap_key_setter(instance):
+
+@given(instance=easyflow_StringToTaskMap_strategy)
+def test_easyflow_stringtotaskmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToTaskMap_strategy)
+@given(instance=easyflow_StringToToolMap_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtotaskmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToTaskMap)
-
-@given(instance=easyflow::StringToTaskMap_strategy)
-def test_easyflow::stringtotaskmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_stringtotoolmap_instantiation(instance):
+    assert isinstance(instance, easyflow_StringToToolMap)
 
 
-@given(instance=easyflow::StringToTaskMap_strategy)
-def test_easyflow::stringtotaskmap_key_setter(instance):
+
+@given(instance=easyflow_StringToToolMap_strategy)
+def test_easyflow_stringtotoolmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=easyflow::StringToToolMap_strategy)
+@given(instance=easyflow_EasyFlowTemplate_strategy)
 @settings(max_examples=50)
-def test_easyflow::stringtotoolmap_instantiation(instance):
-    assert isinstance(instance, easyflow::StringToToolMap)
-
-@given(instance=easyflow::StringToToolMap_strategy)
-def test_easyflow::stringtotoolmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_easyflow_easyflowtemplate_instantiation(instance):
+    assert isinstance(instance, easyflow_EasyFlowTemplate)
 
 
-@given(instance=easyflow::StringToToolMap_strategy)
-def test_easyflow::stringtotoolmap_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=easyflow::EasyFlowTemplate_strategy)
-@settings(max_examples=50)
-def test_easyflow::easyflowtemplate_instantiation(instance):
-    assert isinstance(instance, easyflow::EasyFlowTemplate)
-
-@given(instance=easyflow::EasyFlowTemplate_strategy)
-def test_easyflow::easyflowtemplate_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
-
-
-@given(instance=easyflow::EasyFlowTemplate_strategy)
-def test_easyflow::easyflowtemplate_fileName_setter(instance):
+@given(instance=easyflow_EasyFlowTemplate_strategy)
+def test_easyflow_easyflowtemplate_fileName_setter(instance):
     original = instance.fileName
     instance.fileName = original
     assert instance.fileName == original
@@ -3835,9 +3628,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowTemplate_strategy)
+@given(instance=easyflow_EasyFlowTemplate_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowtemplate_generategraphfromtemplatefile_changes_state(instance):
+def test_easyflow_easyflowtemplate_generategraphfromtemplatefile_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3849,14 +3642,14 @@ def test_easyflow::easyflowtemplate_generategraphfromtemplatefile_changes_state(
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'generateGraphFromTemplateFile' in easyflow::EasyFlowTemplate is empty"
+        assert has_statements, f"Function 'generateGraphFromTemplateFile' in easyflow_EasyFlowTemplate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'generateGraphFromTemplateFile' in easyflow::EasyFlowTemplate did not change state; check implementation")
+            warnings.warn(f"Operation 'generateGraphFromTemplateFile' in easyflow_EasyFlowTemplate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'generateGraphFromTemplateFile' in easyflow::EasyFlowTemplate is not implemented or raised an error")
+        warnings.warn(f"Operation 'generateGraphFromTemplateFile' in easyflow_EasyFlowTemplate is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3864,9 +3657,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowTemplate_strategy)
+@given(instance=easyflow_EasyFlowTemplate_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowtemplate_generatedagfromtemplatefile_changes_state(instance):
+def test_easyflow_easyflowtemplate_generatedagfromtemplatefile_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3878,195 +3671,147 @@ def test_easyflow::easyflowtemplate_generatedagfromtemplatefile_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'generateDAGFromTemplateFile' in easyflow::EasyFlowTemplate is empty"
+        assert has_statements, f"Function 'generateDAGFromTemplateFile' in easyflow_EasyFlowTemplate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'generateDAGFromTemplateFile' in easyflow::EasyFlowTemplate did not change state; check implementation")
+            warnings.warn(f"Operation 'generateDAGFromTemplateFile' in easyflow_EasyFlowTemplate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'generateDAGFromTemplateFile' in easyflow::EasyFlowTemplate is not implemented or raised an error")
+        warnings.warn(f"Operation 'generateDAGFromTemplateFile' in easyflow_EasyFlowTemplate is not implemented or raised an error")
 
-@given(instance=easyflow::Task_strategy)
+@given(instance=easyflow_Task_strategy)
 @settings(max_examples=50)
-def test_easyflow::task_instantiation(instance):
-    assert isinstance(instance, easyflow::Task)
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_easyflow_task_instantiation(instance):
+    assert isinstance(instance, easyflow_Task)
 
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_contrast_type(instance):
-    assert isinstance(instance.contrast, bool)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_contrast_setter(instance):
-    original = instance.contrast
-    instance.contrast = original
-    assert instance.contrast == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_dataFormatIn_type(instance):
-    assert isinstance(instance.dataFormatIn, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_dataFormatIn_setter(instance):
-    original = instance.dataFormatIn
-    instance.dataFormatIn = original
-    assert instance.dataFormatIn == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_splitCriterion_type(instance):
-    assert isinstance(instance.splitCriterion, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_splitCriterion_setter(instance):
-    original = instance.splitCriterion
-    instance.splitCriterion = original
-    assert instance.splitCriterion == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_mergeCriterion_type(instance):
-    assert isinstance(instance.mergeCriterion, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_mergeCriterion_setter(instance):
-    original = instance.mergeCriterion
-    instance.mergeCriterion = original
-    assert instance.mergeCriterion == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_jexlString_type(instance):
-    assert isinstance(instance.jexlString, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_jexlString_setter(instance):
-    original = instance.jexlString
-    instance.jexlString = original
-    assert instance.jexlString == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_traversalCriterion_type(instance):
-    assert isinstance(instance.traversalCriterion, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_traversalCriterion_setter(instance):
-    original = instance.traversalCriterion
-    instance.traversalCriterion = original
-    assert instance.traversalCriterion == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_dataCriterion_type(instance):
-    assert isinstance(instance.dataCriterion, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_dataCriterion_setter(instance):
-    original = instance.dataCriterion
-    instance.dataCriterion = original
-    assert instance.dataCriterion == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_util_type(instance):
-    assert isinstance(instance.util, bool)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_util_setter(instance):
-    original = instance.util
-    instance.util = original
-    assert instance.util == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_isMultipleInstancesOfDataCriterion_type(instance):
-    assert isinstance(instance.isMultipleInstancesOfDataCriterion, str)
-
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_isMultipleInstancesOfDataCriterion_setter(instance):
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_isMultipleInstancesOfDataCriterion_setter(instance):
     original = instance.isMultipleInstancesOfDataCriterion
     instance.isMultipleInstancesOfDataCriterion = original
     assert instance.isMultipleInstancesOfDataCriterion == original
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_cardinalityOut_type(instance):
-    assert isinstance(instance.cardinalityOut, str)
 
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_cardinalityOut_setter(instance):
-    original = instance.cardinalityOut
-    instance.cardinalityOut = original
-    assert instance.cardinalityOut == original
-
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_cardinalityIn_type(instance):
-    assert isinstance(instance.cardinalityIn, str)
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_splitCriterion_setter(instance):
+    original = instance.splitCriterion
+    instance.splitCriterion = original
+    assert instance.splitCriterion == original
 
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_cardinalityIn_setter(instance):
-    original = instance.cardinalityIn
-    instance.cardinalityIn = original
-    assert instance.cardinalityIn == original
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_depricated_type(instance):
-    assert isinstance(instance.depricated, bool)
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_jexlString_setter(instance):
+    original = instance.jexlString
+    instance.jexlString = original
+    assert instance.jexlString == original
 
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_depricated_setter(instance):
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_dataCriterion_setter(instance):
+    original = instance.dataCriterion
+    instance.dataCriterion = original
+    assert instance.dataCriterion == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_skipGroupingCriterion_setter(instance):
+    original = instance.skipGroupingCriterion
+    instance.skipGroupingCriterion = original
+    assert instance.skipGroupingCriterion == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_util_setter(instance):
+    original = instance.util
+    instance.util = original
+    assert instance.util == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_traversalCriterion_setter(instance):
+    original = instance.traversalCriterion
+    instance.traversalCriterion = original
+    assert instance.traversalCriterion == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_depricated_setter(instance):
     original = instance.depricated
     instance.depricated = original
     assert instance.depricated == original
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_dataFormatOut_type(instance):
-    assert isinstance(instance.dataFormatOut, str)
 
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_dataFormatOut_setter(instance):
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_dataFormatOut_setter(instance):
     original = instance.dataFormatOut
     instance.dataFormatOut = original
     assert instance.dataFormatOut == original
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_skipGroupingCriterion_type(instance):
-    assert isinstance(instance.skipGroupingCriterion, str)
 
 
-@given(instance=easyflow::Task_strategy)
-def test_easyflow::task_skipGroupingCriterion_setter(instance):
-    original = instance.skipGroupingCriterion
-    instance.skipGroupingCriterion = original
-    assert instance.skipGroupingCriterion == original
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_dataFormatIn_setter(instance):
+    original = instance.dataFormatIn
+    instance.dataFormatIn = original
+    assert instance.dataFormatIn == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_contrast_setter(instance):
+    original = instance.contrast
+    instance.contrast = original
+    assert instance.contrast == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_cardinalityIn_setter(instance):
+    original = instance.cardinalityIn
+    instance.cardinalityIn = original
+    assert instance.cardinalityIn == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_cardinalityOut_setter(instance):
+    original = instance.cardinalityOut
+    instance.cardinalityOut = original
+    assert instance.cardinalityOut == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_mergeCriterion_setter(instance):
+    original = instance.mergeCriterion
+    instance.mergeCriterion = original
+    assert instance.mergeCriterion == original
+
+
+
+@given(instance=easyflow_Task_strategy)
+def test_easyflow_task_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
 
 import warnings
 import copy
@@ -4074,9 +3819,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Task_strategy)
+@given(instance=easyflow_Task_strategy)
 @settings(max_examples=30)
-def test_easyflow::task_copy_changes_state(instance):
+def test_easyflow_task_copy_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4088,14 +3833,14 @@ def test_easyflow::task_copy_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'copy' in easyflow::Task is empty"
+        assert has_statements, f"Function 'copy' in easyflow_Task is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'copy' in easyflow::Task did not change state; check implementation")
+            warnings.warn(f"Operation 'copy' in easyflow_Task did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'copy' in easyflow::Task is not implemented or raised an error")
+        warnings.warn(f"Operation 'copy' in easyflow_Task is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4103,71 +3848,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Task_strategy)
+@given(instance=easyflow_Task_strategy)
 @settings(max_examples=30)
-def test_easyflow::task_isconvertableto_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isConvertableTo(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isConvertableTo).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isConvertableTo' in easyflow::Task is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isConvertableTo' in easyflow::Task did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isConvertableTo' in easyflow::Task is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Task_strategy)
-@settings(max_examples=30)
-def test_easyflow::task_evaluatejexlexp_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.evaluateJexlExp(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.evaluateJexlExp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluateJexlExp' in easyflow::Task is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluateJexlExp' in easyflow::Task did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluateJexlExp' in easyflow::Task is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Task_strategy)
-@settings(max_examples=30)
-def test_easyflow::task_fitstogroupingcriterionof_changes_state(instance):
+def test_easyflow_task_fitstogroupingcriterionof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4181,14 +3864,14 @@ def test_easyflow::task_fitstogroupingcriterionof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fitsToGroupingCriterionOf' in easyflow::Task is empty"
+        assert has_statements, f"Function 'fitsToGroupingCriterionOf' in easyflow_Task is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fitsToGroupingCriterionOf' in easyflow::Task did not change state; check implementation")
+            warnings.warn(f"Operation 'fitsToGroupingCriterionOf' in easyflow_Task did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fitsToGroupingCriterionOf' in easyflow::Task is not implemented or raised an error")
+        warnings.warn(f"Operation 'fitsToGroupingCriterionOf' in easyflow_Task is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4196,122 +3879,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Task_strategy)
+@given(instance=easyflow_Task_strategy)
 @settings(max_examples=30)
-def test_easyflow::task_ismarkedtoskip_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isMarkedToSkip()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isMarkedToSkip).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMarkedToSkip' in easyflow::Task is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMarkedToSkip' in easyflow::Task did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMarkedToSkip' in easyflow::Task is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Task_strategy)
-@settings(max_examples=30)
-def test_easyflow::task_readtask_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.readTask(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.readTask).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readTask' in easyflow::Task is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readTask' in easyflow::Task did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readTask' in easyflow::Task is not implemented or raised an error")
-
-@given(instance=easyflow::DataFormatToTaskList_strategy)
-@settings(max_examples=50)
-def test_easyflow::dataformattotasklist_instantiation(instance):
-    assert isinstance(instance, easyflow::DataFormatToTaskList)
-
-@given(instance=easyflow::DataFormatToTaskList_strategy)
-def test_easyflow::dataformattotasklist_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=easyflow::DataFormatToTaskList_strategy)
-def test_easyflow::dataformattotasklist_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=easyflow::TaskToDataProcessingType_strategy)
-@settings(max_examples=50)
-def test_easyflow::tasktodataprocessingtype_instantiation(instance):
-    assert isinstance(instance, easyflow::TaskToDataProcessingType)
-
-@given(instance=easyflow::DataProcessingTypeToTask_strategy)
-@settings(max_examples=50)
-def test_easyflow::dataprocessingtypetotask_instantiation(instance):
-    assert isinstance(instance, easyflow::DataProcessingTypeToTask)
-
-@given(instance=easyflow::DataProcessingType_strategy)
-@settings(max_examples=50)
-def test_easyflow::dataprocessingtype_instantiation(instance):
-    assert isinstance(instance, easyflow::DataProcessingType)
-
-@given(instance=easyflow::DataProcessingType_strategy)
-def test_easyflow::dataprocessingtype_dataFormatIn_type(instance):
-    assert isinstance(instance.dataFormatIn, str)
-
-
-@given(instance=easyflow::DataProcessingType_strategy)
-def test_easyflow::dataprocessingtype_dataFormatIn_setter(instance):
-    original = instance.dataFormatIn
-    instance.dataFormatIn = original
-    assert instance.dataFormatIn == original
-
-@given(instance=easyflow::DataProcessingType_strategy)
-def test_easyflow::dataprocessingtype_dataFormatOut_type(instance):
-    assert isinstance(instance.dataFormatOut, str)
-
-
-@given(instance=easyflow::DataProcessingType_strategy)
-def test_easyflow::dataprocessingtype_dataFormatOut_setter(instance):
-    original = instance.dataFormatOut
-    instance.dataFormatOut = original
-    assert instance.dataFormatOut == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::DataProcessingType_strategy)
-@settings(max_examples=30)
-def test_easyflow::dataprocessingtype_isconvertableto_changes_state(instance):
+def test_easyflow_task_isconvertableto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4325,74 +3895,14 @@ def test_easyflow::dataprocessingtype_isconvertableto_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isConvertableTo' in easyflow::DataProcessingType is empty"
+        assert has_statements, f"Function 'isConvertableTo' in easyflow_Task is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isConvertableTo' in easyflow::DataProcessingType did not change state; check implementation")
+            warnings.warn(f"Operation 'isConvertableTo' in easyflow_Task did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isConvertableTo' in easyflow::DataProcessingType is not implemented or raised an error")
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-@settings(max_examples=50)
-def test_easyflow::easyflowimplementationtemplate_instantiation(instance):
-    assert isinstance(instance, easyflow::EasyFlowImplementationTemplate)
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_parameterConfigFileName_type(instance):
-    assert isinstance(instance.parameterConfigFileName, str)
-
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_parameterConfigFileName_setter(instance):
-    original = instance.parameterConfigFileName
-    instance.parameterConfigFileName = original
-    assert instance.parameterConfigFileName == original
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_jsonRootNode_type(instance):
-    assert isinstance(instance.jsonRootNode, str)
-
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_jsonRootNode_setter(instance):
-    original = instance.jsonRootNode
-    instance.jsonRootNode = original
-    assert instance.jsonRootNode == original
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_parameterConfigMap_type(instance):
-    assert isinstance(instance.parameterConfigMap, str)
-
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_parameterConfigMap_setter(instance):
-    original = instance.parameterConfigMap
-    instance.parameterConfigMap = original
-    assert instance.parameterConfigMap == original
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_globalOptions_type(instance):
-    assert isinstance(instance.globalOptions, str)
-
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_globalOptions_setter(instance):
-    original = instance.globalOptions
-    instance.globalOptions = original
-    assert instance.globalOptions == original
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
-
-
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
-def test_easyflow::easyflowimplementationtemplate_fileName_setter(instance):
-    original = instance.fileName
-    instance.fileName = original
-    assert instance.fileName == original
+        warnings.warn(f"Operation 'isConvertableTo' in easyflow_Task is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4400,30 +3910,59 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
+@given(instance=easyflow_Task_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowimplementationtemplate_templatefileparser_changes_state(instance):
+def test_easyflow_task_ismarkedtoskip_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.templateFileParser(
+        instance.isMarkedToSkip()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isMarkedToSkip).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isMarkedToSkip' in easyflow_Task is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isMarkedToSkip' in easyflow_Task did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isMarkedToSkip' in easyflow_Task is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_Task_strategy)
+@settings(max_examples=30)
+def test_easyflow_task_readtask_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.readTask(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.templateFileParser).strip()
+        source = inspect.getsource(instance.readTask).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'templateFileParser' in easyflow::EasyFlowImplementationTemplate is empty"
+        assert has_statements, f"Function 'readTask' in easyflow_Task is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'templateFileParser' in easyflow::EasyFlowImplementationTemplate did not change state; check implementation")
+            warnings.warn(f"Operation 'readTask' in easyflow_Task did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'templateFileParser' in easyflow::EasyFlowImplementationTemplate is not implemented or raised an error")
+        warnings.warn(f"Operation 'readTask' in easyflow_Task is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4431,9 +3970,189 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
+@given(instance=easyflow_Task_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowimplementationtemplate_readparameterconfig_changes_state(instance):
+def test_easyflow_task_evaluatejexlexp_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.evaluateJexlExp(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.evaluateJexlExp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'evaluateJexlExp' in easyflow_Task is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'evaluateJexlExp' in easyflow_Task did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'evaluateJexlExp' in easyflow_Task is not implemented or raised an error")
+
+@given(instance=easyflow_DataFormatToTaskList_strategy)
+@settings(max_examples=50)
+def test_easyflow_dataformattotasklist_instantiation(instance):
+    assert isinstance(instance, easyflow_DataFormatToTaskList)
+
+
+
+@given(instance=easyflow_DataFormatToTaskList_strategy)
+def test_easyflow_dataformattotasklist_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=easyflow_TaskToDataProcessingType_strategy)
+@settings(max_examples=50)
+def test_easyflow_tasktodataprocessingtype_instantiation(instance):
+    assert isinstance(instance, easyflow_TaskToDataProcessingType)
+
+@given(instance=easyflow_DataProcessingTypeToTask_strategy)
+@settings(max_examples=50)
+def test_easyflow_dataprocessingtypetotask_instantiation(instance):
+    assert isinstance(instance, easyflow_DataProcessingTypeToTask)
+
+@given(instance=easyflow_DataProcessingType_strategy)
+@settings(max_examples=50)
+def test_easyflow_dataprocessingtype_instantiation(instance):
+    assert isinstance(instance, easyflow_DataProcessingType)
+
+
+
+@given(instance=easyflow_DataProcessingType_strategy)
+def test_easyflow_dataprocessingtype_dataFormatOut_setter(instance):
+    original = instance.dataFormatOut
+    instance.dataFormatOut = original
+    assert instance.dataFormatOut == original
+
+
+
+@given(instance=easyflow_DataProcessingType_strategy)
+def test_easyflow_dataprocessingtype_dataFormatIn_setter(instance):
+    original = instance.dataFormatIn
+    instance.dataFormatIn = original
+    assert instance.dataFormatIn == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_DataProcessingType_strategy)
+@settings(max_examples=30)
+def test_easyflow_dataprocessingtype_isconvertableto_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isConvertableTo(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isConvertableTo).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isConvertableTo' in easyflow_DataProcessingType is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isConvertableTo' in easyflow_DataProcessingType did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isConvertableTo' in easyflow_DataProcessingType is not implemented or raised an error")
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+@settings(max_examples=50)
+def test_easyflow_easyflowimplementationtemplate_instantiation(instance):
+    assert isinstance(instance, easyflow_EasyFlowImplementationTemplate)
+
+
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+def test_easyflow_easyflowimplementationtemplate_parameterConfigFileName_setter(instance):
+    original = instance.parameterConfigFileName
+    instance.parameterConfigFileName = original
+    assert instance.parameterConfigFileName == original
+
+
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+def test_easyflow_easyflowimplementationtemplate_fileName_setter(instance):
+    original = instance.fileName
+    instance.fileName = original
+    assert instance.fileName == original
+
+
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+def test_easyflow_easyflowimplementationtemplate_globalOptions_setter(instance):
+    original = instance.globalOptions
+    instance.globalOptions = original
+    assert instance.globalOptions == original
+
+
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+def test_easyflow_easyflowimplementationtemplate_parameterConfigMap_setter(instance):
+    original = instance.parameterConfigMap
+    instance.parameterConfigMap = original
+    assert instance.parameterConfigMap == original
+
+
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+def test_easyflow_easyflowimplementationtemplate_jsonRootNode_setter(instance):
+    original = instance.jsonRootNode
+    instance.jsonRootNode = original
+    assert instance.jsonRootNode == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+@settings(max_examples=30)
+def test_easyflow_easyflowimplementationtemplate_initjsonrootnode_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.initJsonRootNode()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.initJsonRootNode).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'initJsonRootNode' in easyflow_EasyFlowImplementationTemplate is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'initJsonRootNode' in easyflow_EasyFlowImplementationTemplate did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'initJsonRootNode' in easyflow_EasyFlowImplementationTemplate is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
+@settings(max_examples=30)
+def test_easyflow_easyflowimplementationtemplate_readparameterconfig_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4447,14 +4166,14 @@ def test_easyflow::easyflowimplementationtemplate_readparameterconfig_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readParameterConfig' in easyflow::EasyFlowImplementationTemplate is empty"
+        assert has_statements, f"Function 'readParameterConfig' in easyflow_EasyFlowImplementationTemplate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readParameterConfig' in easyflow::EasyFlowImplementationTemplate did not change state; check implementation")
+            warnings.warn(f"Operation 'readParameterConfig' in easyflow_EasyFlowImplementationTemplate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readParameterConfig' in easyflow::EasyFlowImplementationTemplate is not implemented or raised an error")
+        warnings.warn(f"Operation 'readParameterConfig' in easyflow_EasyFlowImplementationTemplate is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4462,93 +4181,80 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowImplementationTemplate_strategy)
+@given(instance=easyflow_EasyFlowImplementationTemplate_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowimplementationtemplate_initjsonrootnode_changes_state(instance):
+def test_easyflow_easyflowimplementationtemplate_templatefileparser_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.initJsonRootNode()
+        instance.templateFileParser(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.initJsonRootNode).strip()
+        source = inspect.getsource(instance.templateFileParser).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initJsonRootNode' in easyflow::EasyFlowImplementationTemplate is empty"
+        assert has_statements, f"Function 'templateFileParser' in easyflow_EasyFlowImplementationTemplate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initJsonRootNode' in easyflow::EasyFlowImplementationTemplate did not change state; check implementation")
+            warnings.warn(f"Operation 'templateFileParser' in easyflow_EasyFlowImplementationTemplate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initJsonRootNode' in easyflow::EasyFlowImplementationTemplate is not implemented or raised an error")
+        warnings.warn(f"Operation 'templateFileParser' in easyflow_EasyFlowImplementationTemplate is not implemented or raised an error")
 
-@given(instance=easyflow::EasyFlowMetadata_strategy)
+@given(instance=easyflow_EasyFlowMetadata_strategy)
 @settings(max_examples=50)
-def test_easyflow::easyflowmetadata_instantiation(instance):
-    assert isinstance(instance, easyflow::EasyFlowMetadata)
-
-@given(instance=easyflow::EasyFlowMetadata_strategy)
-def test_easyflow::easyflowmetadata_refData_type(instance):
-    assert isinstance(instance.refData, str)
+def test_easyflow_easyflowmetadata_instantiation(instance):
+    assert isinstance(instance, easyflow_EasyFlowMetadata)
 
 
-@given(instance=easyflow::EasyFlowMetadata_strategy)
-def test_easyflow::easyflowmetadata_refData_setter(instance):
-    original = instance.refData
-    instance.refData = original
-    assert instance.refData == original
 
-@given(instance=easyflow::EasyFlowMetadata_strategy)
-def test_easyflow::easyflowmetadata_contrast_type(instance):
-    assert isinstance(instance.contrast, bool)
-
-
-@given(instance=easyflow::EasyFlowMetadata_strategy)
-def test_easyflow::easyflowmetadata_contrast_setter(instance):
-    original = instance.contrast
-    instance.contrast = original
-    assert instance.contrast == original
-
-@given(instance=easyflow::EasyFlowMetadata_strategy)
-def test_easyflow::easyflowmetadata_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=easyflow::EasyFlowMetadata_strategy)
-def test_easyflow::easyflowmetadata_name_setter(instance):
+@given(instance=easyflow_EasyFlowMetadata_strategy)
+def test_easyflow_easyflowmetadata_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=easyflow::EasyFlowConfiguration_strategy)
+
+
+@given(instance=easyflow_EasyFlowMetadata_strategy)
+def test_easyflow_easyflowmetadata_refData_setter(instance):
+    original = instance.refData
+    instance.refData = original
+    assert instance.refData == original
+
+
+
+@given(instance=easyflow_EasyFlowMetadata_strategy)
+def test_easyflow_easyflowmetadata_contrast_setter(instance):
+    original = instance.contrast
+    instance.contrast = original
+    assert instance.contrast == original
+
+@given(instance=easyflow_EasyFlowConfiguration_strategy)
 @settings(max_examples=50)
-def test_easyflow::easyflowconfiguration_instantiation(instance):
-    assert isinstance(instance, easyflow::EasyFlowConfiguration)
-
-@given(instance=easyflow::EasyFlowConfiguration_strategy)
-def test_easyflow::easyflowconfiguration_configMap_type(instance):
-    assert isinstance(instance.configMap, str)
+def test_easyflow_easyflowconfiguration_instantiation(instance):
+    assert isinstance(instance, easyflow_EasyFlowConfiguration)
 
 
-@given(instance=easyflow::EasyFlowConfiguration_strategy)
-def test_easyflow::easyflowconfiguration_configMap_setter(instance):
-    original = instance.configMap
-    instance.configMap = original
-    assert instance.configMap == original
 
-@given(instance=easyflow::EasyFlowConfiguration_strategy)
-def test_easyflow::easyflowconfiguration_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
-
-
-@given(instance=easyflow::EasyFlowConfiguration_strategy)
-def test_easyflow::easyflowconfiguration_fileName_setter(instance):
+@given(instance=easyflow_EasyFlowConfiguration_strategy)
+def test_easyflow_easyflowconfiguration_fileName_setter(instance):
     original = instance.fileName
     instance.fileName = original
     assert instance.fileName == original
+
+
+
+@given(instance=easyflow_EasyFlowConfiguration_strategy)
+def test_easyflow_easyflowconfiguration_configMap_setter(instance):
+    original = instance.configMap
+    instance.configMap = original
+    assert instance.configMap == original
 
 import warnings
 import copy
@@ -4556,9 +4262,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::EasyFlowConfiguration_strategy)
+@given(instance=easyflow_EasyFlowConfiguration_strategy)
 @settings(max_examples=30)
-def test_easyflow::easyflowconfiguration_configfilereader_changes_state(instance):
+def test_easyflow_easyflowconfiguration_configfilereader_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4570,60 +4276,48 @@ def test_easyflow::easyflowconfiguration_configfilereader_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'configFileReader' in easyflow::EasyFlowConfiguration is empty"
+        assert has_statements, f"Function 'configFileReader' in easyflow_EasyFlowConfiguration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'configFileReader' in easyflow::EasyFlowConfiguration did not change state; check implementation")
+            warnings.warn(f"Operation 'configFileReader' in easyflow_EasyFlowConfiguration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'configFileReader' in easyflow::EasyFlowConfiguration is not implemented or raised an error")
+        warnings.warn(f"Operation 'configFileReader' in easyflow_EasyFlowConfiguration is not implemented or raised an error")
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=50)
-def test_easyflow::workflow_instantiation(instance):
-    assert isinstance(instance, easyflow::Workflow)
-
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_easyflow_workflow_instantiation(instance):
+    assert isinstance(instance, easyflow_Workflow)
 
 
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_dag_type(instance):
-    assert isinstance(instance.dag, str)
-
-
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_dag_setter(instance):
+@given(instance=easyflow_Workflow_strategy)
+def test_easyflow_workflow_dag_setter(instance):
     original = instance.dag
     instance.dag = original
     assert instance.dag == original
 
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_graph_type(instance):
-    assert isinstance(instance.graph, str)
 
 
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_graph_setter(instance):
+@given(instance=easyflow_Workflow_strategy)
+def test_easyflow_workflow_graph_setter(instance):
     original = instance.graph
     instance.graph = original
     assert instance.graph == original
 
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_jobDag_type(instance):
-    assert isinstance(instance.jobDag, str)
 
 
-@given(instance=easyflow::Workflow_strategy)
-def test_easyflow::workflow_jobDag_setter(instance):
+@given(instance=easyflow_Workflow_strategy)
+def test_easyflow_workflow_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=easyflow_Workflow_strategy)
+def test_easyflow_workflow_jobDag_setter(instance):
     original = instance.jobDag
     instance.jobDag = original
     assert instance.jobDag == original
@@ -4634,125 +4328,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_writemakeflow_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.writeMakeflow()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.writeMakeflow).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeMakeflow' in easyflow::Workflow is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeMakeflow' in easyflow::Workflow did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeMakeflow' in easyflow::Workflow is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Workflow_strategy)
-@settings(max_examples=30)
-def test_easyflow::workflow_writeawscloudformation_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.writeAWSCloudFormation()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.writeAWSCloudFormation).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeAWSCloudFormation' in easyflow::Workflow is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeAWSCloudFormation' in easyflow::Workflow did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeAWSCloudFormation' in easyflow::Workflow is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Workflow_strategy)
-@settings(max_examples=30)
-def test_easyflow::workflow_createjobdag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createJobDag()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createJobDag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createJobDag' in easyflow::Workflow is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createJobDag' in easyflow::Workflow did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createJobDag' in easyflow::Workflow is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Workflow_strategy)
-@settings(max_examples=30)
-def test_easyflow::workflow_printlasttaskmap_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.printLastTaskMap()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.printLastTaskMap).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printLastTaskMap' in easyflow::Workflow is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printLastTaskMap' in easyflow::Workflow did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printLastTaskMap' in easyflow::Workflow is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=easyflow::Workflow_strategy)
-@settings(max_examples=30)
-def test_easyflow::workflow_processmetadataset_changes_state(instance):
+def test_easyflow_workflow_processmetadataset_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4766,14 +4344,14 @@ def test_easyflow::workflow_processmetadataset_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'processMetadataSet' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'processMetadataSet' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'processMetadataSet' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'processMetadataSet' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'processMetadataSet' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'processMetadataSet' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4781,28 +4359,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_createtaskdag_changes_state(instance):
+def test_easyflow_workflow_writemakeflow_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.createTaskDag()
+        instance.writeMakeflow()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createTaskDag).strip()
+        source = inspect.getsource(instance.writeMakeflow).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createTaskDag' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'writeMakeflow' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createTaskDag' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'writeMakeflow' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createTaskDag' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeMakeflow' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4810,9 +4388,99 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_iteratebygroup_changes_state(instance):
+def test_easyflow_workflow_updatelasttaskclassmap_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.updateLastTaskClassMap(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.updateLastTaskClassMap).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'updateLastTaskClassMap' in easyflow_Workflow is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'updateLastTaskClassMap' in easyflow_Workflow did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'updateLastTaskClassMap' in easyflow_Workflow is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_Workflow_strategy)
+@settings(max_examples=30)
+def test_easyflow_workflow_checkdag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.checkDag()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.checkDag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'checkDag' in easyflow_Workflow is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'checkDag' in easyflow_Workflow did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'checkDag' in easyflow_Workflow is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_Workflow_strategy)
+@settings(max_examples=30)
+def test_easyflow_workflow_resolvestaticdependencies_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.resolveStaticDependencies()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.resolveStaticDependencies).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'resolveStaticDependencies' in easyflow_Workflow is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'resolveStaticDependencies' in easyflow_Workflow did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'resolveStaticDependencies' in easyflow_Workflow is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_Workflow_strategy)
+@settings(max_examples=30)
+def test_easyflow_workflow_iteratebygroup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4829,14 +4497,14 @@ def test_easyflow::workflow_iteratebygroup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'iterateByGroup' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'iterateByGroup' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'iterateByGroup' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'iterateByGroup' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'iterateByGroup' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'iterateByGroup' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4844,28 +4512,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_resolvestaticdependencies_changes_state(instance):
+def test_easyflow_workflow_createjobdag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.resolveStaticDependencies()
+        instance.createJobDag()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.resolveStaticDependencies).strip()
+        source = inspect.getsource(instance.createJobDag).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolveStaticDependencies' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'createJobDag' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolveStaticDependencies' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'createJobDag' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolveStaticDependencies' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'createJobDag' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4873,31 +4541,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_updatelasttaskclassmap_changes_state(instance):
+def test_easyflow_workflow_printlasttaskclassmap_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.updateLastTaskClassMap(
-            "test", 
-            "test"
-        )
+        instance.printLastTaskClassMap()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.updateLastTaskClassMap).strip()
+        source = inspect.getsource(instance.printLastTaskClassMap).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateLastTaskClassMap' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'printLastTaskClassMap' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateLastTaskClassMap' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'printLastTaskClassMap' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateLastTaskClassMap' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'printLastTaskClassMap' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4905,31 +4570,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_processmetadata_changes_state(instance):
+def test_easyflow_workflow_createtaskdag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.processMetadata(
-            "test", 
-            "test"
-        )
+        instance.createTaskDag()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.processMetadata).strip()
+        source = inspect.getsource(instance.createTaskDag).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'processMetadata' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'createTaskDag' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'processMetadata' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'createTaskDag' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'processMetadata' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'createTaskDag' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4937,28 +4599,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_checkdag_changes_state(instance):
+def test_easyflow_workflow_writeawscloudformation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.checkDag()
+        instance.writeAWSCloudFormation()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkDag).strip()
+        source = inspect.getsource(instance.writeAWSCloudFormation).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkDag' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'writeAWSCloudFormation' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkDag' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'writeAWSCloudFormation' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkDag' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeAWSCloudFormation' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4966,9 +4628,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_updatelasttaskclass_changes_state(instance):
+def test_easyflow_workflow_printlasttaskmap_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.printLastTaskMap()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.printLastTaskMap).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'printLastTaskMap' in easyflow_Workflow is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'printLastTaskMap' in easyflow_Workflow did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'printLastTaskMap' in easyflow_Workflow is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=easyflow_Workflow_strategy)
+@settings(max_examples=30)
+def test_easyflow_workflow_updatelasttaskclass_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4984,14 +4675,14 @@ def test_easyflow::workflow_updatelasttaskclass_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateLastTaskClass' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'updateLastTaskClass' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateLastTaskClass' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'updateLastTaskClass' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateLastTaskClass' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateLastTaskClass' in easyflow_Workflow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4999,25 +4690,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=easyflow::Workflow_strategy)
+@given(instance=easyflow_Workflow_strategy)
 @settings(max_examples=30)
-def test_easyflow::workflow_printlasttaskclassmap_changes_state(instance):
+def test_easyflow_workflow_processmetadata_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.printLastTaskClassMap()
+        instance.processMetadata(
+            "test", 
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.printLastTaskClassMap).strip()
+        source = inspect.getsource(instance.processMetadata).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printLastTaskClassMap' in easyflow::Workflow is empty"
+        assert has_statements, f"Function 'processMetadata' in easyflow_Workflow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printLastTaskClassMap' in easyflow::Workflow did not change state; check implementation")
+            warnings.warn(f"Operation 'processMetadata' in easyflow_Workflow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printLastTaskClassMap' in easyflow::Workflow is not implemented or raised an error")
+        warnings.warn(f"Operation 'processMetadata' in easyflow_Workflow is not implemented or raised an error")

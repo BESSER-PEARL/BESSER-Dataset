@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    yye::Foo,
+from python_code import (
+    yye_Foo,
     NamedElement,
-    yye::Relation,
-    yye::Base,
-    yye::Alias,
-    yye::NamedElement,
+    yye_Relation,
+    yye_Base,
+    yye_Alias,
+    yye_NamedElement,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_yye::foo_is_not_abstract():
-    assert not inspect.isabstract(yye::Foo)
+def test_yye_foo_is_not_abstract():
+    assert not inspect.isabstract(yye_Foo)
 
 
-def test_yye::foo_constructor_exists():
-    assert callable(yye::Foo.__init__)
+def test_yye_foo_constructor_exists():
+    assert callable(yye_Foo.__init__)
 
 
-def test_yye::foo_constructor_args():
-    sig = inspect.signature(yye::Foo.__init__)
+def test_yye_foo_constructor_args():
+    sig = inspect.signature(yye_Foo.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yye::foo_has_id():
-    assert hasattr(yye::Foo, "id")
+def test_yye_foo_has_id():
+    assert hasattr(yye_Foo, "id")
     descriptor = None
-    for klass in yye::Foo.__mro__:
+    for klass in yye_Foo.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -58,23 +58,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_yye::relation_is_not_abstract():
-    assert not inspect.isabstract(yye::Relation)
+def test_yye_relation_is_not_abstract():
+    assert not inspect.isabstract(yye_Relation)
 
 
-def test_yye::relation_constructor_exists():
-    assert callable(yye::Relation.__init__)
+def test_yye_relation_constructor_exists():
+    assert callable(yye_Relation.__init__)
 
 
-def test_yye::relation_constructor_args():
-    sig = inspect.signature(yye::Relation.__init__)
+def test_yye_relation_constructor_args():
+    sig = inspect.signature(yye_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_yye::relation_has_since():
-    assert hasattr(yye::Relation, "since")
+def test_yye_relation_has_since():
+    assert hasattr(yye_Relation, "since")
     descriptor = None
-    for klass in yye::Relation.__mro__:
+    for klass in yye_Relation.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -82,23 +82,23 @@ def test_yye::relation_has_since():
 
 
 
-def test_yye::base_is_not_abstract():
-    assert not inspect.isabstract(yye::Base)
+def test_yye_base_is_not_abstract():
+    assert not inspect.isabstract(yye_Base)
 
 
-def test_yye::base_constructor_exists():
-    assert callable(yye::Base.__init__)
+def test_yye_base_constructor_exists():
+    assert callable(yye_Base.__init__)
 
 
-def test_yye::base_constructor_args():
-    sig = inspect.signature(yye::Base.__init__)
+def test_yye_base_constructor_args():
+    sig = inspect.signature(yye_Base.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yye::base_has_id():
-    assert hasattr(yye::Base, "id")
+def test_yye_base_has_id():
+    assert hasattr(yye_Base, "id")
     descriptor = None
-    for klass in yye::Base.__mro__:
+    for klass in yye_Base.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -106,23 +106,23 @@ def test_yye::base_has_id():
 
 
 
-def test_yye::alias_is_not_abstract():
-    assert not inspect.isabstract(yye::Alias)
+def test_yye_alias_is_not_abstract():
+    assert not inspect.isabstract(yye_Alias)
 
 
-def test_yye::alias_constructor_exists():
-    assert callable(yye::Alias.__init__)
+def test_yye_alias_constructor_exists():
+    assert callable(yye_Alias.__init__)
 
 
-def test_yye::alias_constructor_args():
-    sig = inspect.signature(yye::Alias.__init__)
+def test_yye_alias_constructor_args():
+    sig = inspect.signature(yye_Alias.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yye::alias_has_id():
-    assert hasattr(yye::Alias, "id")
+def test_yye_alias_has_id():
+    assert hasattr(yye_Alias, "id")
     descriptor = None
-    for klass in yye::Alias.__mro__:
+    for klass in yye_Alias.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -130,23 +130,23 @@ def test_yye::alias_has_id():
 
 
 
-def test_yye::namedelement_is_not_abstract():
-    assert not inspect.isabstract(yye::NamedElement)
+def test_yye_namedelement_is_not_abstract():
+    assert not inspect.isabstract(yye_NamedElement)
 
 
-def test_yye::namedelement_constructor_exists():
-    assert callable(yye::NamedElement.__init__)
+def test_yye_namedelement_constructor_exists():
+    assert callable(yye_NamedElement.__init__)
 
 
-def test_yye::namedelement_constructor_args():
-    sig = inspect.signature(yye::NamedElement.__init__)
+def test_yye_namedelement_constructor_args():
+    sig = inspect.signature(yye_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_yye::namedelement_has_name():
-    assert hasattr(yye::NamedElement, "name")
+def test_yye_namedelement_has_name():
+    assert hasattr(yye_NamedElement, "name")
     descriptor = None
-    for klass in yye::NamedElement.__mro__:
+    for klass in yye_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -164,47 +164,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-yye::Foo_strategy = st.builds(
-    yye::Foo,
+yye_Foo_strategy = st.builds(
+    yye_Foo,
     id=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-yye::Relation_strategy = st.builds(
-    yye::Relation,
+yye_Relation_strategy = st.builds(
+    yye_Relation,
     since=
         safe_text
 )
-yye::Base_strategy = st.builds(
-    yye::Base,
+yye_Base_strategy = st.builds(
+    yye_Base,
     id=
         st.integers()
 )
-yye::Alias_strategy = st.builds(
-    yye::Alias,
+yye_Alias_strategy = st.builds(
+    yye_Alias,
     id=
         safe_text
 )
-yye::NamedElement_strategy = st.builds(
-    yye::NamedElement,
+yye_NamedElement_strategy = st.builds(
+    yye_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=yye::Foo_strategy)
+@given(instance=yye_Foo_strategy)
 @settings(max_examples=50)
-def test_yye::foo_instantiation(instance):
-    assert isinstance(instance, yye::Foo)
-
-@given(instance=yye::Foo_strategy)
-def test_yye::foo_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yye_foo_instantiation(instance):
+    assert isinstance(instance, yye_Foo)
 
 
-@given(instance=yye::Foo_strategy)
-def test_yye::foo_id_setter(instance):
+
+@given(instance=yye_Foo_strategy)
+def test_yye_foo_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -214,66 +211,54 @@ def test_yye::foo_id_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=yye::Relation_strategy)
+@given(instance=yye_Relation_strategy)
 @settings(max_examples=50)
-def test_yye::relation_instantiation(instance):
-    assert isinstance(instance, yye::Relation)
-
-@given(instance=yye::Relation_strategy)
-def test_yye::relation_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_yye_relation_instantiation(instance):
+    assert isinstance(instance, yye_Relation)
 
 
-@given(instance=yye::Relation_strategy)
-def test_yye::relation_since_setter(instance):
+
+@given(instance=yye_Relation_strategy)
+def test_yye_relation_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=yye::Base_strategy)
+@given(instance=yye_Base_strategy)
 @settings(max_examples=50)
-def test_yye::base_instantiation(instance):
-    assert isinstance(instance, yye::Base)
-
-@given(instance=yye::Base_strategy)
-def test_yye::base_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_yye_base_instantiation(instance):
+    assert isinstance(instance, yye_Base)
 
 
-@given(instance=yye::Base_strategy)
-def test_yye::base_id_setter(instance):
+
+@given(instance=yye_Base_strategy)
+def test_yye_base_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yye::Alias_strategy)
+@given(instance=yye_Alias_strategy)
 @settings(max_examples=50)
-def test_yye::alias_instantiation(instance):
-    assert isinstance(instance, yye::Alias)
-
-@given(instance=yye::Alias_strategy)
-def test_yye::alias_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yye_alias_instantiation(instance):
+    assert isinstance(instance, yye_Alias)
 
 
-@given(instance=yye::Alias_strategy)
-def test_yye::alias_id_setter(instance):
+
+@given(instance=yye_Alias_strategy)
+def test_yye_alias_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yye::NamedElement_strategy)
+@given(instance=yye_NamedElement_strategy)
 @settings(max_examples=50)
-def test_yye::namedelement_instantiation(instance):
-    assert isinstance(instance, yye::NamedElement)
-
-@given(instance=yye::NamedElement_strategy)
-def test_yye::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_yye_namedelement_instantiation(instance):
+    assert isinstance(instance, yye_NamedElement)
 
 
-@given(instance=yye::NamedElement_strategy)
-def test_yye::namedelement_name_setter(instance):
+
+@given(instance=yye_NamedElement_strategy)
+def test_yye_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

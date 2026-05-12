@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    target::Database,
-    target::Column,
-    target::FKey,
-    target::Table,
+from python_code import (
+    target_Database,
+    target_Column,
+    target_FKey,
+    target_Table,
 )
 
 # =============================================================================
@@ -18,85 +18,85 @@ from classes import (
 
 
 
-def test_target::database_is_not_abstract():
-    assert not inspect.isabstract(target::Database)
+def test_target_database_is_not_abstract():
+    assert not inspect.isabstract(target_Database)
 
 
-def test_target::database_constructor_exists():
-    assert callable(target::Database.__init__)
+def test_target_database_constructor_exists():
+    assert callable(target_Database.__init__)
 
 
-def test_target::database_constructor_args():
-    sig = inspect.signature(target::Database.__init__)
+def test_target_database_constructor_args():
+    sig = inspect.signature(target_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_target::column_is_not_abstract():
-    assert not inspect.isabstract(target::Column)
+def test_target_column_is_not_abstract():
+    assert not inspect.isabstract(target_Column)
 
 
-def test_target::column_constructor_exists():
-    assert callable(target::Column.__init__)
+def test_target_column_constructor_exists():
+    assert callable(target_Column.__init__)
 
 
-def test_target::column_constructor_args():
-    sig = inspect.signature(target::Column.__init__)
+def test_target_column_constructor_args():
+    sig = inspect.signature(target_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_target::column_has_type():
-    assert hasattr(target::Column, "type")
+def test_target_column_has_name():
+    assert hasattr(target_Column, "name")
     descriptor = None
-    for klass in target::Column.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_target::column_has_name():
-    assert hasattr(target::Column, "name")
-    descriptor = None
-    for klass in target::Column.__mro__:
+    for klass in target_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_target_column_has_type():
+    assert hasattr(target_Column, "type")
+    descriptor = None
+    for klass in target_Column.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_target::fkey_is_not_abstract():
-    assert not inspect.isabstract(target::FKey)
+
+def test_target_fkey_is_not_abstract():
+    assert not inspect.isabstract(target_FKey)
 
 
-def test_target::fkey_constructor_exists():
-    assert callable(target::FKey.__init__)
+def test_target_fkey_constructor_exists():
+    assert callable(target_FKey.__init__)
 
 
-def test_target::fkey_constructor_args():
-    sig = inspect.signature(target::FKey.__init__)
+def test_target_fkey_constructor_args():
+    sig = inspect.signature(target_FKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_target::table_is_not_abstract():
-    assert not inspect.isabstract(target::Table)
+def test_target_table_is_not_abstract():
+    assert not inspect.isabstract(target_Table)
 
 
-def test_target::table_constructor_exists():
-    assert callable(target::Table.__init__)
+def test_target_table_constructor_exists():
+    assert callable(target_Table.__init__)
 
 
-def test_target::table_constructor_args():
-    sig = inspect.signature(target::Table.__init__)
+def test_target_table_constructor_args():
+    sig = inspect.signature(target_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_target::table_has_name():
-    assert hasattr(target::Table, "name")
+def test_target_table_has_name():
+    assert hasattr(target_Table, "name")
     descriptor = None
-    for klass in target::Table.__mro__:
+    for klass in target_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-target::Database_strategy = st.builds(
-    target::Database,
+target_Database_strategy = st.builds(
+    target_Database,
 )
-target::Column_strategy = st.builds(
-    target::Column,
-    type=
+target_Column_strategy = st.builds(
+    target_Column,
+    name=
         safe_text,
+    type=
+        safe_text
+)
+target_FKey_strategy = st.builds(
+    target_FKey,
+)
+target_Table_strategy = st.builds(
+    target_Table,
     name=
         safe_text
 )
-target::FKey_strategy = st.builds(
-    target::FKey,
-)
-target::Table_strategy = st.builds(
-    target::Table,
-    name=
-        safe_text
-)
 
-@given(instance=target::Database_strategy)
+@given(instance=target_Database_strategy)
 @settings(max_examples=50)
-def test_target::database_instantiation(instance):
-    assert isinstance(instance, target::Database)
+def test_target_database_instantiation(instance):
+    assert isinstance(instance, target_Database)
 
-@given(instance=target::Column_strategy)
+@given(instance=target_Column_strategy)
 @settings(max_examples=50)
-def test_target::column_instantiation(instance):
-    assert isinstance(instance, target::Column)
-
-@given(instance=target::Column_strategy)
-def test_target::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_target_column_instantiation(instance):
+    assert isinstance(instance, target_Column)
 
 
-@given(instance=target::Column_strategy)
-def test_target::column_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=target::Column_strategy)
-def test_target::column_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=target::Column_strategy)
-def test_target::column_name_setter(instance):
+@given(instance=target_Column_strategy)
+def test_target_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=target::FKey_strategy)
+
+
+@given(instance=target_Column_strategy)
+def test_target_column_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=target_FKey_strategy)
 @settings(max_examples=50)
-def test_target::fkey_instantiation(instance):
-    assert isinstance(instance, target::FKey)
+def test_target_fkey_instantiation(instance):
+    assert isinstance(instance, target_FKey)
 
-@given(instance=target::Table_strategy)
+@given(instance=target_Table_strategy)
 @settings(max_examples=50)
-def test_target::table_instantiation(instance):
-    assert isinstance(instance, target::Table)
-
-@given(instance=target::Table_strategy)
-def test_target::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_target_table_instantiation(instance):
+    assert isinstance(instance, target_Table)
 
 
-@given(instance=target::Table_strategy)
-def test_target::table_name_setter(instance):
+
+@given(instance=target_Table_strategy)
+def test_target_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

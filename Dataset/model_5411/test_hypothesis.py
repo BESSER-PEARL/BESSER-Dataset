@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Gate,
-    dynamicFaultTree::Spare,
-    dynamicFaultTree::POR,
-    dynamicFaultTree::XOR,
-    dynamicFaultTree::PAND,
-    dynamicFaultTree::OR,
-    dynamicFaultTree::AND,
+    dynamicFaultTree_OR,
+    dynamicFaultTree_POR,
+    dynamicFaultTree_XOR,
+    dynamicFaultTree_Spare,
+    dynamicFaultTree_PAND,
+    dynamicFaultTree_AND,
     Dependency,
-    dynamicFaultTree::FunctionalDependency,
-    dynamicFaultTree::Sequence,
+    dynamicFaultTree_FunctionalDependency,
+    dynamicFaultTree_Sequence,
     Element,
-    dynamicFaultTree::Gate,
-    dynamicFaultTree::Element,
-    dynamicFaultTree::Dependency,
-    dynamicFaultTree::TopLevelEvent,
-    dynamicFaultTree::DFT,
-    dynamicFaultTree::Event,
+    dynamicFaultTree_Gate,
+    dynamicFaultTree_Element,
+    dynamicFaultTree_Dependency,
+    dynamicFaultTree_TopLevelEvent,
+    dynamicFaultTree_DFT,
+    dynamicFaultTree_Event,
 )
 
 # =============================================================================
@@ -45,86 +45,86 @@ def test_gate_constructor_args():
 
 
 
-def test_dynamicfaulttree::spare_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::Spare)
+def test_dynamicfaulttree_or_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_OR)
 
 
-def test_dynamicfaulttree::spare_constructor_exists():
-    assert callable(dynamicFaultTree::Spare.__init__)
+def test_dynamicfaulttree_or_constructor_exists():
+    assert callable(dynamicFaultTree_OR.__init__)
 
 
-def test_dynamicfaulttree::spare_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::Spare.__init__)
+def test_dynamicfaulttree_or_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_OR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::por_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::POR)
+def test_dynamicfaulttree_por_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_POR)
 
 
-def test_dynamicfaulttree::por_constructor_exists():
-    assert callable(dynamicFaultTree::POR.__init__)
+def test_dynamicfaulttree_por_constructor_exists():
+    assert callable(dynamicFaultTree_POR.__init__)
 
 
-def test_dynamicfaulttree::por_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::POR.__init__)
+def test_dynamicfaulttree_por_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_POR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::xor_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::XOR)
+def test_dynamicfaulttree_xor_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_XOR)
 
 
-def test_dynamicfaulttree::xor_constructor_exists():
-    assert callable(dynamicFaultTree::XOR.__init__)
+def test_dynamicfaulttree_xor_constructor_exists():
+    assert callable(dynamicFaultTree_XOR.__init__)
 
 
-def test_dynamicfaulttree::xor_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::XOR.__init__)
+def test_dynamicfaulttree_xor_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_XOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::pand_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::PAND)
+def test_dynamicfaulttree_spare_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_Spare)
 
 
-def test_dynamicfaulttree::pand_constructor_exists():
-    assert callable(dynamicFaultTree::PAND.__init__)
+def test_dynamicfaulttree_spare_constructor_exists():
+    assert callable(dynamicFaultTree_Spare.__init__)
 
 
-def test_dynamicfaulttree::pand_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::PAND.__init__)
+def test_dynamicfaulttree_spare_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_Spare.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::or_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::OR)
+def test_dynamicfaulttree_pand_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_PAND)
 
 
-def test_dynamicfaulttree::or_constructor_exists():
-    assert callable(dynamicFaultTree::OR.__init__)
+def test_dynamicfaulttree_pand_constructor_exists():
+    assert callable(dynamicFaultTree_PAND.__init__)
 
 
-def test_dynamicfaulttree::or_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::OR.__init__)
+def test_dynamicfaulttree_pand_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_PAND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::and_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::AND)
+def test_dynamicfaulttree_and_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_AND)
 
 
-def test_dynamicfaulttree::and_constructor_exists():
-    assert callable(dynamicFaultTree::AND.__init__)
+def test_dynamicfaulttree_and_constructor_exists():
+    assert callable(dynamicFaultTree_AND.__init__)
 
 
-def test_dynamicfaulttree::and_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::AND.__init__)
+def test_dynamicfaulttree_and_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_AND.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -143,30 +143,30 @@ def test_dependency_constructor_args():
 
 
 
-def test_dynamicfaulttree::functionaldependency_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::FunctionalDependency)
+def test_dynamicfaulttree_functionaldependency_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_FunctionalDependency)
 
 
-def test_dynamicfaulttree::functionaldependency_constructor_exists():
-    assert callable(dynamicFaultTree::FunctionalDependency.__init__)
+def test_dynamicfaulttree_functionaldependency_constructor_exists():
+    assert callable(dynamicFaultTree_FunctionalDependency.__init__)
 
 
-def test_dynamicfaulttree::functionaldependency_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::FunctionalDependency.__init__)
+def test_dynamicfaulttree_functionaldependency_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_FunctionalDependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::sequence_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::Sequence)
+def test_dynamicfaulttree_sequence_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_Sequence)
 
 
-def test_dynamicfaulttree::sequence_constructor_exists():
-    assert callable(dynamicFaultTree::Sequence.__init__)
+def test_dynamicfaulttree_sequence_constructor_exists():
+    assert callable(dynamicFaultTree_Sequence.__init__)
 
 
-def test_dynamicfaulttree::sequence_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::Sequence.__init__)
+def test_dynamicfaulttree_sequence_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -185,119 +185,119 @@ def test_element_constructor_args():
 
 
 
-def test_dynamicfaulttree::gate_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::Gate)
+def test_dynamicfaulttree_gate_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_Gate)
 
 
-def test_dynamicfaulttree::gate_constructor_exists():
-    assert callable(dynamicFaultTree::Gate.__init__)
+def test_dynamicfaulttree_gate_constructor_exists():
+    assert callable(dynamicFaultTree_Gate.__init__)
 
 
-def test_dynamicfaulttree::gate_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::Gate.__init__)
+def test_dynamicfaulttree_gate_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_Gate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::element_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::Element)
+def test_dynamicfaulttree_element_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_Element)
 
 
-def test_dynamicfaulttree::element_constructor_exists():
-    assert callable(dynamicFaultTree::Element.__init__)
+def test_dynamicfaulttree_element_constructor_exists():
+    assert callable(dynamicFaultTree_Element.__init__)
 
 
-def test_dynamicfaulttree::element_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::Element.__init__)
+def test_dynamicfaulttree_element_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_Element.__init__)
     params = list(sig.parameters.keys())
-    assert "probability" in params, "Missing parameter 'probability'"
-    assert "sequencePosition" in params, "Missing parameter 'sequencePosition'"
-    assert "elementID" in params, "Missing parameter 'elementID'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "elementID" in params, "Missing parameter 'elementID'"
+    assert "sequencePosition" in params, "Missing parameter 'sequencePosition'"
+    assert "probability" in params, "Missing parameter 'probability'"
 
-def test_dynamicfaulttree::element_has_probability():
-    assert hasattr(dynamicFaultTree::Element, "probability")
+def test_dynamicfaulttree_element_has_name():
+    assert hasattr(dynamicFaultTree_Element, "name")
     descriptor = None
-    for klass in dynamicFaultTree::Element.__mro__:
-        if "probability" in klass.__dict__:
-            descriptor = klass.__dict__["probability"]
+    for klass in dynamicFaultTree_Element.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_dynamicfaulttree::element_has_sequencePosition():
-    assert hasattr(dynamicFaultTree::Element, "sequencePosition")
+def test_dynamicfaulttree_element_has_elementID():
+    assert hasattr(dynamicFaultTree_Element, "elementID")
     descriptor = None
-    for klass in dynamicFaultTree::Element.__mro__:
-        if "sequencePosition" in klass.__dict__:
-            descriptor = klass.__dict__["sequencePosition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dynamicfaulttree::element_has_elementID():
-    assert hasattr(dynamicFaultTree::Element, "elementID")
-    descriptor = None
-    for klass in dynamicFaultTree::Element.__mro__:
+    for klass in dynamicFaultTree_Element.__mro__:
         if "elementID" in klass.__dict__:
             descriptor = klass.__dict__["elementID"]
             break
     assert isinstance(descriptor, property)
 
-def test_dynamicfaulttree::element_has_name():
-    assert hasattr(dynamicFaultTree::Element, "name")
+def test_dynamicfaulttree_element_has_sequencePosition():
+    assert hasattr(dynamicFaultTree_Element, "sequencePosition")
     descriptor = None
-    for klass in dynamicFaultTree::Element.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in dynamicFaultTree_Element.__mro__:
+        if "sequencePosition" in klass.__dict__:
+            descriptor = klass.__dict__["sequencePosition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dynamicfaulttree_element_has_probability():
+    assert hasattr(dynamicFaultTree_Element, "probability")
+    descriptor = None
+    for klass in dynamicFaultTree_Element.__mro__:
+        if "probability" in klass.__dict__:
+            descriptor = klass.__dict__["probability"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_dynamicfaulttree::dependency_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::Dependency)
+def test_dynamicfaulttree_dependency_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_Dependency)
 
 
-def test_dynamicfaulttree::dependency_constructor_exists():
-    assert callable(dynamicFaultTree::Dependency.__init__)
+def test_dynamicfaulttree_dependency_constructor_exists():
+    assert callable(dynamicFaultTree_Dependency.__init__)
 
 
-def test_dynamicfaulttree::dependency_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::Dependency.__init__)
+def test_dynamicfaulttree_dependency_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::toplevelevent_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::TopLevelEvent)
+def test_dynamicfaulttree_toplevelevent_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_TopLevelEvent)
 
 
-def test_dynamicfaulttree::toplevelevent_constructor_exists():
-    assert callable(dynamicFaultTree::TopLevelEvent.__init__)
+def test_dynamicfaulttree_toplevelevent_constructor_exists():
+    assert callable(dynamicFaultTree_TopLevelEvent.__init__)
 
 
-def test_dynamicfaulttree::toplevelevent_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::TopLevelEvent.__init__)
+def test_dynamicfaulttree_toplevelevent_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_TopLevelEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dynamicfaulttree::dft_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::DFT)
+def test_dynamicfaulttree_dft_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_DFT)
 
 
-def test_dynamicfaulttree::dft_constructor_exists():
-    assert callable(dynamicFaultTree::DFT.__init__)
+def test_dynamicfaulttree_dft_constructor_exists():
+    assert callable(dynamicFaultTree_DFT.__init__)
 
 
-def test_dynamicfaulttree::dft_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::DFT.__init__)
+def test_dynamicfaulttree_dft_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_DFT.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dynamicfaulttree::dft_has_name():
-    assert hasattr(dynamicFaultTree::DFT, "name")
+def test_dynamicfaulttree_dft_has_name():
+    assert hasattr(dynamicFaultTree_DFT, "name")
     descriptor = None
-    for klass in dynamicFaultTree::DFT.__mro__:
+    for klass in dynamicFaultTree_DFT.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -305,16 +305,16 @@ def test_dynamicfaulttree::dft_has_name():
 
 
 
-def test_dynamicfaulttree::event_is_not_abstract():
-    assert not inspect.isabstract(dynamicFaultTree::Event)
+def test_dynamicfaulttree_event_is_not_abstract():
+    assert not inspect.isabstract(dynamicFaultTree_Event)
 
 
-def test_dynamicfaulttree::event_constructor_exists():
-    assert callable(dynamicFaultTree::Event.__init__)
+def test_dynamicfaulttree_event_constructor_exists():
+    assert callable(dynamicFaultTree_Event.__init__)
 
 
-def test_dynamicfaulttree::event_constructor_args():
-    sig = inspect.signature(dynamicFaultTree::Event.__init__)
+def test_dynamicfaulttree_event_constructor_args():
+    sig = inspect.signature(dynamicFaultTree_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -332,63 +332,63 @@ safe_text = st.text(
 Gate_strategy = st.builds(
     Gate,
 )
-dynamicFaultTree::Spare_strategy = st.builds(
-    dynamicFaultTree::Spare,
+dynamicFaultTree_OR_strategy = st.builds(
+    dynamicFaultTree_OR,
 )
-dynamicFaultTree::POR_strategy = st.builds(
-    dynamicFaultTree::POR,
+dynamicFaultTree_POR_strategy = st.builds(
+    dynamicFaultTree_POR,
 )
-dynamicFaultTree::XOR_strategy = st.builds(
-    dynamicFaultTree::XOR,
+dynamicFaultTree_XOR_strategy = st.builds(
+    dynamicFaultTree_XOR,
 )
-dynamicFaultTree::PAND_strategy = st.builds(
-    dynamicFaultTree::PAND,
+dynamicFaultTree_Spare_strategy = st.builds(
+    dynamicFaultTree_Spare,
 )
-dynamicFaultTree::OR_strategy = st.builds(
-    dynamicFaultTree::OR,
+dynamicFaultTree_PAND_strategy = st.builds(
+    dynamicFaultTree_PAND,
 )
-dynamicFaultTree::AND_strategy = st.builds(
-    dynamicFaultTree::AND,
+dynamicFaultTree_AND_strategy = st.builds(
+    dynamicFaultTree_AND,
 )
 Dependency_strategy = st.builds(
     Dependency,
 )
-dynamicFaultTree::FunctionalDependency_strategy = st.builds(
-    dynamicFaultTree::FunctionalDependency,
+dynamicFaultTree_FunctionalDependency_strategy = st.builds(
+    dynamicFaultTree_FunctionalDependency,
 )
-dynamicFaultTree::Sequence_strategy = st.builds(
-    dynamicFaultTree::Sequence,
+dynamicFaultTree_Sequence_strategy = st.builds(
+    dynamicFaultTree_Sequence,
 )
 Element_strategy = st.builds(
     Element,
 )
-dynamicFaultTree::Gate_strategy = st.builds(
-    dynamicFaultTree::Gate,
+dynamicFaultTree_Gate_strategy = st.builds(
+    dynamicFaultTree_Gate,
 )
-dynamicFaultTree::Element_strategy = st.builds(
-    dynamicFaultTree::Element,
-    probability=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    sequencePosition=
-        st.integers(),
+dynamicFaultTree_Element_strategy = st.builds(
+    dynamicFaultTree_Element,
+    name=
+        safe_text,
     elementID=
         st.integers(),
+    sequencePosition=
+        st.integers(),
+    probability=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+dynamicFaultTree_Dependency_strategy = st.builds(
+    dynamicFaultTree_Dependency,
+)
+dynamicFaultTree_TopLevelEvent_strategy = st.builds(
+    dynamicFaultTree_TopLevelEvent,
+)
+dynamicFaultTree_DFT_strategy = st.builds(
+    dynamicFaultTree_DFT,
     name=
         safe_text
 )
-dynamicFaultTree::Dependency_strategy = st.builds(
-    dynamicFaultTree::Dependency,
-)
-dynamicFaultTree::TopLevelEvent_strategy = st.builds(
-    dynamicFaultTree::TopLevelEvent,
-)
-dynamicFaultTree::DFT_strategy = st.builds(
-    dynamicFaultTree::DFT,
-    name=
-        safe_text
-)
-dynamicFaultTree::Event_strategy = st.builds(
-    dynamicFaultTree::Event,
+dynamicFaultTree_Event_strategy = st.builds(
+    dynamicFaultTree_Event,
 )
 
 @given(instance=Gate_strategy)
@@ -396,137 +396,122 @@ dynamicFaultTree::Event_strategy = st.builds(
 def test_gate_instantiation(instance):
     assert isinstance(instance, Gate)
 
-@given(instance=dynamicFaultTree::Spare_strategy)
+@given(instance=dynamicFaultTree_OR_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::spare_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::Spare)
+def test_dynamicfaulttree_or_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_OR)
 
-@given(instance=dynamicFaultTree::POR_strategy)
+@given(instance=dynamicFaultTree_POR_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::por_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::POR)
+def test_dynamicfaulttree_por_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_POR)
 
-@given(instance=dynamicFaultTree::XOR_strategy)
+@given(instance=dynamicFaultTree_XOR_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::xor_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::XOR)
+def test_dynamicfaulttree_xor_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_XOR)
 
-@given(instance=dynamicFaultTree::PAND_strategy)
+@given(instance=dynamicFaultTree_Spare_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::pand_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::PAND)
+def test_dynamicfaulttree_spare_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_Spare)
 
-@given(instance=dynamicFaultTree::OR_strategy)
+@given(instance=dynamicFaultTree_PAND_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::or_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::OR)
+def test_dynamicfaulttree_pand_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_PAND)
 
-@given(instance=dynamicFaultTree::AND_strategy)
+@given(instance=dynamicFaultTree_AND_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::and_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::AND)
+def test_dynamicfaulttree_and_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_AND)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=dynamicFaultTree::FunctionalDependency_strategy)
+@given(instance=dynamicFaultTree_FunctionalDependency_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::functionaldependency_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::FunctionalDependency)
+def test_dynamicfaulttree_functionaldependency_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_FunctionalDependency)
 
-@given(instance=dynamicFaultTree::Sequence_strategy)
+@given(instance=dynamicFaultTree_Sequence_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::sequence_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::Sequence)
+def test_dynamicfaulttree_sequence_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_Sequence)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=dynamicFaultTree::Gate_strategy)
+@given(instance=dynamicFaultTree_Gate_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::gate_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::Gate)
+def test_dynamicfaulttree_gate_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_Gate)
 
-@given(instance=dynamicFaultTree::Element_strategy)
+@given(instance=dynamicFaultTree_Element_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::element_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::Element)
-
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_probability_type(instance):
-    assert isinstance(instance.probability, float)
+def test_dynamicfaulttree_element_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_Element)
 
 
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_probability_setter(instance):
-    original = instance.probability
-    instance.probability = original
-    assert instance.probability == original
 
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_sequencePosition_type(instance):
-    assert isinstance(instance.sequencePosition, int)
+@given(instance=dynamicFaultTree_Element_strategy)
+def test_dynamicfaulttree_element_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_sequencePosition_setter(instance):
-    original = instance.sequencePosition
-    instance.sequencePosition = original
-    assert instance.sequencePosition == original
 
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_elementID_type(instance):
-    assert isinstance(instance.elementID, int)
-
-
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_elementID_setter(instance):
+@given(instance=dynamicFaultTree_Element_strategy)
+def test_dynamicfaulttree_element_elementID_setter(instance):
     original = instance.elementID
     instance.elementID = original
     assert instance.elementID == original
 
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=dynamicFaultTree::Element_strategy)
-def test_dynamicfaulttree::element_name_setter(instance):
+@given(instance=dynamicFaultTree_Element_strategy)
+def test_dynamicfaulttree_element_sequencePosition_setter(instance):
+    original = instance.sequencePosition
+    instance.sequencePosition = original
+    assert instance.sequencePosition == original
+
+
+
+@given(instance=dynamicFaultTree_Element_strategy)
+def test_dynamicfaulttree_element_probability_setter(instance):
+    original = instance.probability
+    instance.probability = original
+    assert instance.probability == original
+
+@given(instance=dynamicFaultTree_Dependency_strategy)
+@settings(max_examples=50)
+def test_dynamicfaulttree_dependency_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_Dependency)
+
+@given(instance=dynamicFaultTree_TopLevelEvent_strategy)
+@settings(max_examples=50)
+def test_dynamicfaulttree_toplevelevent_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_TopLevelEvent)
+
+@given(instance=dynamicFaultTree_DFT_strategy)
+@settings(max_examples=50)
+def test_dynamicfaulttree_dft_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_DFT)
+
+
+
+@given(instance=dynamicFaultTree_DFT_strategy)
+def test_dynamicfaulttree_dft_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dynamicFaultTree::Dependency_strategy)
+@given(instance=dynamicFaultTree_Event_strategy)
 @settings(max_examples=50)
-def test_dynamicfaulttree::dependency_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::Dependency)
-
-@given(instance=dynamicFaultTree::TopLevelEvent_strategy)
-@settings(max_examples=50)
-def test_dynamicfaulttree::toplevelevent_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::TopLevelEvent)
-
-@given(instance=dynamicFaultTree::DFT_strategy)
-@settings(max_examples=50)
-def test_dynamicfaulttree::dft_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::DFT)
-
-@given(instance=dynamicFaultTree::DFT_strategy)
-def test_dynamicfaulttree::dft_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=dynamicFaultTree::DFT_strategy)
-def test_dynamicfaulttree::dft_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=dynamicFaultTree::Event_strategy)
-@settings(max_examples=50)
-def test_dynamicfaulttree::event_instantiation(instance):
-    assert isinstance(instance, dynamicFaultTree::Event)
+def test_dynamicfaulttree_event_instantiation(instance):
+    assert isinstance(instance, dynamicFaultTree_Event)

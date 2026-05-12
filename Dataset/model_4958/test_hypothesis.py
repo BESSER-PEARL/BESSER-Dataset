@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Model,
     TypedElement,
-    testmodel::Attribute,
+    testmodel_Attribute,
     ModelElement,
-    testmodel::Association,
-    testmodel::Group,
-    testmodel::Class,
+    testmodel_Association,
+    testmodel_Group,
+    testmodel_Class,
     NamedElement,
-    testmodel::ModelElement,
-    testmodel::TypedElement,
-    testmodel::NamedElement,
-    testmodel::Model,
+    testmodel_TypedElement,
+    testmodel_ModelElement,
+    testmodel_NamedElement,
+    testmodel_Model,
 )
 
 # =============================================================================
@@ -54,16 +54,16 @@ def test_typedelement_constructor_args():
 
 
 
-def test_testmodel::attribute_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Attribute)
+def test_testmodel_attribute_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Attribute)
 
 
-def test_testmodel::attribute_constructor_exists():
-    assert callable(testmodel::Attribute.__init__)
+def test_testmodel_attribute_constructor_exists():
+    assert callable(testmodel_Attribute.__init__)
 
 
-def test_testmodel::attribute_constructor_args():
-    sig = inspect.signature(testmodel::Attribute.__init__)
+def test_testmodel_attribute_constructor_args():
+    sig = inspect.signature(testmodel_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,64 +82,64 @@ def test_modelelement_constructor_args():
 
 
 
-def test_testmodel::association_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Association)
+def test_testmodel_association_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Association)
 
 
-def test_testmodel::association_constructor_exists():
-    assert callable(testmodel::Association.__init__)
+def test_testmodel_association_constructor_exists():
+    assert callable(testmodel_Association.__init__)
 
 
-def test_testmodel::association_constructor_args():
-    sig = inspect.signature(testmodel::Association.__init__)
+def test_testmodel_association_constructor_args():
+    sig = inspect.signature(testmodel_Association.__init__)
     params = list(sig.parameters.keys())
-    assert "secondLabel" in params, "Missing parameter 'secondLabel'"
     assert "firstLabel" in params, "Missing parameter 'firstLabel'"
+    assert "secondLabel" in params, "Missing parameter 'secondLabel'"
 
-def test_testmodel::association_has_secondLabel():
-    assert hasattr(testmodel::Association, "secondLabel")
+def test_testmodel_association_has_firstLabel():
+    assert hasattr(testmodel_Association, "firstLabel")
     descriptor = None
-    for klass in testmodel::Association.__mro__:
-        if "secondLabel" in klass.__dict__:
-            descriptor = klass.__dict__["secondLabel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_testmodel::association_has_firstLabel():
-    assert hasattr(testmodel::Association, "firstLabel")
-    descriptor = None
-    for klass in testmodel::Association.__mro__:
+    for klass in testmodel_Association.__mro__:
         if "firstLabel" in klass.__dict__:
             descriptor = klass.__dict__["firstLabel"]
             break
     assert isinstance(descriptor, property)
 
+def test_testmodel_association_has_secondLabel():
+    assert hasattr(testmodel_Association, "secondLabel")
+    descriptor = None
+    for klass in testmodel_Association.__mro__:
+        if "secondLabel" in klass.__dict__:
+            descriptor = klass.__dict__["secondLabel"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_testmodel::group_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Group)
+
+def test_testmodel_group_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Group)
 
 
-def test_testmodel::group_constructor_exists():
-    assert callable(testmodel::Group.__init__)
+def test_testmodel_group_constructor_exists():
+    assert callable(testmodel_Group.__init__)
 
 
-def test_testmodel::group_constructor_args():
-    sig = inspect.signature(testmodel::Group.__init__)
+def test_testmodel_group_constructor_args():
+    sig = inspect.signature(testmodel_Group.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::class_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Class)
+def test_testmodel_class_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Class)
 
 
-def test_testmodel::class_constructor_exists():
-    assert callable(testmodel::Class.__init__)
+def test_testmodel_class_constructor_exists():
+    assert callable(testmodel_Class.__init__)
 
 
-def test_testmodel::class_constructor_args():
-    sig = inspect.signature(testmodel::Class.__init__)
+def test_testmodel_class_constructor_args():
+    sig = inspect.signature(testmodel_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -158,51 +158,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_testmodel::modelelement_is_not_abstract():
-    assert not inspect.isabstract(testmodel::ModelElement)
+def test_testmodel_typedelement_is_not_abstract():
+    assert not inspect.isabstract(testmodel_TypedElement)
 
 
-def test_testmodel::modelelement_constructor_exists():
-    assert callable(testmodel::ModelElement.__init__)
+def test_testmodel_typedelement_constructor_exists():
+    assert callable(testmodel_TypedElement.__init__)
 
 
-def test_testmodel::modelelement_constructor_args():
-    sig = inspect.signature(testmodel::ModelElement.__init__)
+def test_testmodel_typedelement_constructor_args():
+    sig = inspect.signature(testmodel_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::typedelement_is_not_abstract():
-    assert not inspect.isabstract(testmodel::TypedElement)
+def test_testmodel_modelelement_is_not_abstract():
+    assert not inspect.isabstract(testmodel_ModelElement)
 
 
-def test_testmodel::typedelement_constructor_exists():
-    assert callable(testmodel::TypedElement.__init__)
+def test_testmodel_modelelement_constructor_exists():
+    assert callable(testmodel_ModelElement.__init__)
 
 
-def test_testmodel::typedelement_constructor_args():
-    sig = inspect.signature(testmodel::TypedElement.__init__)
+def test_testmodel_modelelement_constructor_args():
+    sig = inspect.signature(testmodel_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::namedelement_is_not_abstract():
-    assert not inspect.isabstract(testmodel::NamedElement)
+def test_testmodel_namedelement_is_not_abstract():
+    assert not inspect.isabstract(testmodel_NamedElement)
 
 
-def test_testmodel::namedelement_constructor_exists():
-    assert callable(testmodel::NamedElement.__init__)
+def test_testmodel_namedelement_constructor_exists():
+    assert callable(testmodel_NamedElement.__init__)
 
 
-def test_testmodel::namedelement_constructor_args():
-    sig = inspect.signature(testmodel::NamedElement.__init__)
+def test_testmodel_namedelement_constructor_args():
+    sig = inspect.signature(testmodel_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testmodel::namedelement_has_name():
-    assert hasattr(testmodel::NamedElement, "name")
+def test_testmodel_namedelement_has_name():
+    assert hasattr(testmodel_NamedElement, "name")
     descriptor = None
-    for klass in testmodel::NamedElement.__mro__:
+    for klass in testmodel_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -210,16 +210,16 @@ def test_testmodel::namedelement_has_name():
 
 
 
-def test_testmodel::model_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Model)
+def test_testmodel_model_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Model)
 
 
-def test_testmodel::model_constructor_exists():
-    assert callable(testmodel::Model.__init__)
+def test_testmodel_model_constructor_exists():
+    assert callable(testmodel_Model.__init__)
 
 
-def test_testmodel::model_constructor_args():
-    sig = inspect.signature(testmodel::Model.__init__)
+def test_testmodel_model_constructor_args():
+    sig = inspect.signature(testmodel_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,41 +240,41 @@ Model_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-testmodel::Attribute_strategy = st.builds(
-    testmodel::Attribute,
+testmodel_Attribute_strategy = st.builds(
+    testmodel_Attribute,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-testmodel::Association_strategy = st.builds(
-    testmodel::Association,
-    secondLabel=
-        safe_text,
+testmodel_Association_strategy = st.builds(
+    testmodel_Association,
     firstLabel=
+        safe_text,
+    secondLabel=
         safe_text
 )
-testmodel::Group_strategy = st.builds(
-    testmodel::Group,
+testmodel_Group_strategy = st.builds(
+    testmodel_Group,
 )
-testmodel::Class_strategy = st.builds(
-    testmodel::Class,
+testmodel_Class_strategy = st.builds(
+    testmodel_Class,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-testmodel::ModelElement_strategy = st.builds(
-    testmodel::ModelElement,
+testmodel_TypedElement_strategy = st.builds(
+    testmodel_TypedElement,
 )
-testmodel::TypedElement_strategy = st.builds(
-    testmodel::TypedElement,
+testmodel_ModelElement_strategy = st.builds(
+    testmodel_ModelElement,
 )
-testmodel::NamedElement_strategy = st.builds(
-    testmodel::NamedElement,
+testmodel_NamedElement_strategy = st.builds(
+    testmodel_NamedElement,
     name=
         safe_text
 )
-testmodel::Model_strategy = st.builds(
-    testmodel::Model,
+testmodel_Model_strategy = st.builds(
+    testmodel_Model,
 )
 
 @given(instance=Model_strategy)
@@ -287,85 +287,76 @@ def test_model_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=testmodel::Attribute_strategy)
+@given(instance=testmodel_Attribute_strategy)
 @settings(max_examples=50)
-def test_testmodel::attribute_instantiation(instance):
-    assert isinstance(instance, testmodel::Attribute)
+def test_testmodel_attribute_instantiation(instance):
+    assert isinstance(instance, testmodel_Attribute)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=testmodel::Association_strategy)
+@given(instance=testmodel_Association_strategy)
 @settings(max_examples=50)
-def test_testmodel::association_instantiation(instance):
-    assert isinstance(instance, testmodel::Association)
-
-@given(instance=testmodel::Association_strategy)
-def test_testmodel::association_secondLabel_type(instance):
-    assert isinstance(instance.secondLabel, str)
+def test_testmodel_association_instantiation(instance):
+    assert isinstance(instance, testmodel_Association)
 
 
-@given(instance=testmodel::Association_strategy)
-def test_testmodel::association_secondLabel_setter(instance):
-    original = instance.secondLabel
-    instance.secondLabel = original
-    assert instance.secondLabel == original
 
-@given(instance=testmodel::Association_strategy)
-def test_testmodel::association_firstLabel_type(instance):
-    assert isinstance(instance.firstLabel, str)
-
-
-@given(instance=testmodel::Association_strategy)
-def test_testmodel::association_firstLabel_setter(instance):
+@given(instance=testmodel_Association_strategy)
+def test_testmodel_association_firstLabel_setter(instance):
     original = instance.firstLabel
     instance.firstLabel = original
     assert instance.firstLabel == original
 
-@given(instance=testmodel::Group_strategy)
-@settings(max_examples=50)
-def test_testmodel::group_instantiation(instance):
-    assert isinstance(instance, testmodel::Group)
 
-@given(instance=testmodel::Class_strategy)
+
+@given(instance=testmodel_Association_strategy)
+def test_testmodel_association_secondLabel_setter(instance):
+    original = instance.secondLabel
+    instance.secondLabel = original
+    assert instance.secondLabel == original
+
+@given(instance=testmodel_Group_strategy)
 @settings(max_examples=50)
-def test_testmodel::class_instantiation(instance):
-    assert isinstance(instance, testmodel::Class)
+def test_testmodel_group_instantiation(instance):
+    assert isinstance(instance, testmodel_Group)
+
+@given(instance=testmodel_Class_strategy)
+@settings(max_examples=50)
+def test_testmodel_class_instantiation(instance):
+    assert isinstance(instance, testmodel_Class)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=testmodel::ModelElement_strategy)
+@given(instance=testmodel_TypedElement_strategy)
 @settings(max_examples=50)
-def test_testmodel::modelelement_instantiation(instance):
-    assert isinstance(instance, testmodel::ModelElement)
+def test_testmodel_typedelement_instantiation(instance):
+    assert isinstance(instance, testmodel_TypedElement)
 
-@given(instance=testmodel::TypedElement_strategy)
+@given(instance=testmodel_ModelElement_strategy)
 @settings(max_examples=50)
-def test_testmodel::typedelement_instantiation(instance):
-    assert isinstance(instance, testmodel::TypedElement)
+def test_testmodel_modelelement_instantiation(instance):
+    assert isinstance(instance, testmodel_ModelElement)
 
-@given(instance=testmodel::NamedElement_strategy)
+@given(instance=testmodel_NamedElement_strategy)
 @settings(max_examples=50)
-def test_testmodel::namedelement_instantiation(instance):
-    assert isinstance(instance, testmodel::NamedElement)
-
-@given(instance=testmodel::NamedElement_strategy)
-def test_testmodel::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_testmodel_namedelement_instantiation(instance):
+    assert isinstance(instance, testmodel_NamedElement)
 
 
-@given(instance=testmodel::NamedElement_strategy)
-def test_testmodel::namedelement_name_setter(instance):
+
+@given(instance=testmodel_NamedElement_strategy)
+def test_testmodel_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=testmodel::Model_strategy)
+@given(instance=testmodel_Model_strategy)
 @settings(max_examples=50)
-def test_testmodel::model_instantiation(instance):
-    assert isinstance(instance, testmodel::Model)
+def test_testmodel_model_instantiation(instance):
+    assert isinstance(instance, testmodel_Model)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    metrics::MetricLibrary,
-    metrics::Metric,
-    metrics::MetricSource,
+from python_code import (
+    metrics_MetricLibrary,
+    metrics_Metric,
+    metrics_MetricSource,
     MetricKind,
 )
 
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_metrics::metriclibrary_is_not_abstract():
-    assert not inspect.isabstract(metrics::MetricLibrary)
+def test_metrics_metriclibrary_is_not_abstract():
+    assert not inspect.isabstract(metrics_MetricLibrary)
 
 
-def test_metrics::metriclibrary_constructor_exists():
-    assert callable(metrics::MetricLibrary.__init__)
+def test_metrics_metriclibrary_constructor_exists():
+    assert callable(metrics_MetricLibrary.__init__)
 
 
-def test_metrics::metriclibrary_constructor_args():
-    sig = inspect.signature(metrics::MetricLibrary.__init__)
+def test_metrics_metriclibrary_constructor_args():
+    sig = inspect.signature(metrics_MetricLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metrics::metriclibrary_has_name():
-    assert hasattr(metrics::MetricLibrary, "name")
+def test_metrics_metriclibrary_has_name():
+    assert hasattr(metrics_MetricLibrary, "name")
     descriptor = None
-    for klass in metrics::MetricLibrary.__mro__:
+    for klass in metrics_MetricLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,89 +42,89 @@ def test_metrics::metriclibrary_has_name():
 
 
 
-def test_metrics::metric_is_not_abstract():
-    assert not inspect.isabstract(metrics::Metric)
+def test_metrics_metric_is_not_abstract():
+    assert not inspect.isabstract(metrics_Metric)
 
 
-def test_metrics::metric_constructor_exists():
-    assert callable(metrics::Metric.__init__)
+def test_metrics_metric_constructor_exists():
+    assert callable(metrics_Metric.__init__)
 
 
-def test_metrics::metric_constructor_args():
-    sig = inspect.signature(metrics::Metric.__init__)
+def test_metrics_metric_constructor_args():
+    sig = inspect.signature(metrics_Metric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metrics::metricsource_is_not_abstract():
-    assert not inspect.isabstract(metrics::MetricSource)
+def test_metrics_metricsource_is_not_abstract():
+    assert not inspect.isabstract(metrics_MetricSource)
 
 
-def test_metrics::metricsource_constructor_exists():
-    assert callable(metrics::MetricSource.__init__)
+def test_metrics_metricsource_constructor_exists():
+    assert callable(metrics_MetricSource.__init__)
 
 
-def test_metrics::metricsource_constructor_args():
-    sig = inspect.signature(metrics::MetricSource.__init__)
+def test_metrics_metricsource_constructor_args():
+    sig = inspect.signature(metrics_MetricSource.__init__)
     params = list(sig.parameters.keys())
     assert "metricLocation" in params, "Missing parameter 'metricLocation'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "metrickind" in params, "Missing parameter 'metrickind'"
     assert "lastPurge" in params, "Missing parameter 'lastPurge'"
     assert "lastContact" in params, "Missing parameter 'lastContact'"
     assert "mappingFile" in params, "Missing parameter 'mappingFile'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_metrics::metricsource_has_metricLocation():
-    assert hasattr(metrics::MetricSource, "metricLocation")
+def test_metrics_metricsource_has_metricLocation():
+    assert hasattr(metrics_MetricSource, "metricLocation")
     descriptor = None
-    for klass in metrics::MetricSource.__mro__:
+    for klass in metrics_MetricSource.__mro__:
         if "metricLocation" in klass.__dict__:
             descriptor = klass.__dict__["metricLocation"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metricsource_has_name():
-    assert hasattr(metrics::MetricSource, "name")
+def test_metrics_metricsource_has_metrickind():
+    assert hasattr(metrics_MetricSource, "metrickind")
     descriptor = None
-    for klass in metrics::MetricSource.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::metricsource_has_metrickind():
-    assert hasattr(metrics::MetricSource, "metrickind")
-    descriptor = None
-    for klass in metrics::MetricSource.__mro__:
+    for klass in metrics_MetricSource.__mro__:
         if "metrickind" in klass.__dict__:
             descriptor = klass.__dict__["metrickind"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metricsource_has_lastPurge():
-    assert hasattr(metrics::MetricSource, "lastPurge")
+def test_metrics_metricsource_has_lastPurge():
+    assert hasattr(metrics_MetricSource, "lastPurge")
     descriptor = None
-    for klass in metrics::MetricSource.__mro__:
+    for klass in metrics_MetricSource.__mro__:
         if "lastPurge" in klass.__dict__:
             descriptor = klass.__dict__["lastPurge"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metricsource_has_lastContact():
-    assert hasattr(metrics::MetricSource, "lastContact")
+def test_metrics_metricsource_has_lastContact():
+    assert hasattr(metrics_MetricSource, "lastContact")
     descriptor = None
-    for klass in metrics::MetricSource.__mro__:
+    for klass in metrics_MetricSource.__mro__:
         if "lastContact" in klass.__dict__:
             descriptor = klass.__dict__["lastContact"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metricsource_has_mappingFile():
-    assert hasattr(metrics::MetricSource, "mappingFile")
+def test_metrics_metricsource_has_mappingFile():
+    assert hasattr(metrics_MetricSource, "mappingFile")
     descriptor = None
-    for klass in metrics::MetricSource.__mro__:
+    for klass in metrics_MetricSource.__mro__:
         if "mappingFile" in klass.__dict__:
             descriptor = klass.__dict__["mappingFile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metrics_metricsource_has_name():
+    assert hasattr(metrics_MetricSource, "name")
+    descriptor = None
+    for klass in metrics_MetricSource.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -136,8 +136,8 @@ def test_metrickind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MetricKind]
     expected_literals = [
-        "RDMS",
         "FILE",
+        "RDMS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -155,19 +155,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-metrics::MetricLibrary_strategy = st.builds(
-    metrics::MetricLibrary,
+metrics_MetricLibrary_strategy = st.builds(
+    metrics_MetricLibrary,
     name=
         safe_text
 )
-metrics::Metric_strategy = st.builds(
-    metrics::Metric,
+metrics_Metric_strategy = st.builds(
+    metrics_Metric,
 )
-metrics::MetricSource_strategy = st.builds(
-    metrics::MetricSource,
+metrics_MetricSource_strategy = st.builds(
+    metrics_MetricSource,
     metricLocation=
-        safe_text,
-    name=
         safe_text,
     metrickind=
         safe_text,
@@ -176,97 +174,78 @@ metrics::MetricSource_strategy = st.builds(
     lastContact=
         safe_text,
     mappingFile=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=metrics::MetricLibrary_strategy)
+@given(instance=metrics_MetricLibrary_strategy)
 @settings(max_examples=50)
-def test_metrics::metriclibrary_instantiation(instance):
-    assert isinstance(instance, metrics::MetricLibrary)
-
-@given(instance=metrics::MetricLibrary_strategy)
-def test_metrics::metriclibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metrics_metriclibrary_instantiation(instance):
+    assert isinstance(instance, metrics_MetricLibrary)
 
 
-@given(instance=metrics::MetricLibrary_strategy)
-def test_metrics::metriclibrary_name_setter(instance):
+
+@given(instance=metrics_MetricLibrary_strategy)
+def test_metrics_metriclibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metrics::Metric_strategy)
+@given(instance=metrics_Metric_strategy)
 @settings(max_examples=50)
-def test_metrics::metric_instantiation(instance):
-    assert isinstance(instance, metrics::Metric)
+def test_metrics_metric_instantiation(instance):
+    assert isinstance(instance, metrics_Metric)
 
-@given(instance=metrics::MetricSource_strategy)
+@given(instance=metrics_MetricSource_strategy)
 @settings(max_examples=50)
-def test_metrics::metricsource_instantiation(instance):
-    assert isinstance(instance, metrics::MetricSource)
-
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_metricLocation_type(instance):
-    assert isinstance(instance.metricLocation, str)
+def test_metrics_metricsource_instantiation(instance):
+    assert isinstance(instance, metrics_MetricSource)
 
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_metricLocation_setter(instance):
+
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_metricLocation_setter(instance):
     original = instance.metricLocation
     instance.metricLocation = original
     assert instance.metricLocation == original
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_metrickind_type(instance):
-    assert isinstance(instance.metrickind, str)
-
-
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_metrickind_setter(instance):
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_metrickind_setter(instance):
     original = instance.metrickind
     instance.metrickind = original
     assert instance.metrickind == original
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_lastPurge_type(instance):
-    assert isinstance(instance.lastPurge, str)
 
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_lastPurge_setter(instance):
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_lastPurge_setter(instance):
     original = instance.lastPurge
     instance.lastPurge = original
     assert instance.lastPurge == original
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_lastContact_type(instance):
-    assert isinstance(instance.lastContact, str)
 
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_lastContact_setter(instance):
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_lastContact_setter(instance):
     original = instance.lastContact
     instance.lastContact = original
     assert instance.lastContact == original
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_mappingFile_type(instance):
-    assert isinstance(instance.mappingFile, str)
 
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_mappingFile_setter(instance):
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_mappingFile_setter(instance):
     original = instance.mappingFile
     instance.mappingFile = original
     assert instance.mappingFile == original
+
+
+
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

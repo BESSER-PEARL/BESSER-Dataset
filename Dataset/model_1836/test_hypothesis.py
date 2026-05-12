@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Library::Author,
-    Library::Book,
+from python_code import (
+    Library_Author,
+    Library_Book,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_library::author_is_not_abstract():
-    assert not inspect.isabstract(Library::Author)
+def test_library_author_is_not_abstract():
+    assert not inspect.isabstract(Library_Author)
 
 
-def test_library::author_constructor_exists():
-    assert callable(Library::Author.__init__)
+def test_library_author_constructor_exists():
+    assert callable(Library_Author.__init__)
 
 
-def test_library::author_constructor_args():
-    sig = inspect.signature(Library::Author.__init__)
+def test_library_author_constructor_args():
+    sig = inspect.signature(Library_Author.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(Library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(Library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(Library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(Library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(Library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(Library_Book.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Library::Author_strategy = st.builds(
-    Library::Author,
+Library_Author_strategy = st.builds(
+    Library_Author,
 )
-Library::Book_strategy = st.builds(
-    Library::Book,
+Library_Book_strategy = st.builds(
+    Library_Book,
 )
 
-@given(instance=Library::Author_strategy)
+@given(instance=Library_Author_strategy)
 @settings(max_examples=50)
-def test_library::author_instantiation(instance):
-    assert isinstance(instance, Library::Author)
+def test_library_author_instantiation(instance):
+    assert isinstance(instance, Library_Author)
 
-@given(instance=Library::Book_strategy)
+@given(instance=Library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, Library::Book)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, Library_Book)

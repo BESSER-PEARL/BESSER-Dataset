@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cgimodel::StateModels,
-    cgimodel::Transition,
-    cgimodel::BaseState,
-    cgimodel::StateModel,
-    cgimodel::Expr,
+from python_code import (
+    cgimodel_StateModels,
+    cgimodel_Transition,
+    cgimodel_BaseState,
+    cgimodel_StateModel,
+    cgimodel_Expr,
     BaseState,
-    cgimodel::OrState,
-    cgimodel::State,
+    cgimodel_OrState,
+    cgimodel_State,
 )
 
 # =============================================================================
@@ -22,51 +22,51 @@ from classes import (
 
 
 
-def test_cgimodel::statemodels_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::StateModels)
+def test_cgimodel_statemodels_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_StateModels)
 
 
-def test_cgimodel::statemodels_constructor_exists():
-    assert callable(cgimodel::StateModels.__init__)
+def test_cgimodel_statemodels_constructor_exists():
+    assert callable(cgimodel_StateModels.__init__)
 
 
-def test_cgimodel::statemodels_constructor_args():
-    sig = inspect.signature(cgimodel::StateModels.__init__)
+def test_cgimodel_statemodels_constructor_args():
+    sig = inspect.signature(cgimodel_StateModels.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cgimodel::transition_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::Transition)
+def test_cgimodel_transition_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_Transition)
 
 
-def test_cgimodel::transition_constructor_exists():
-    assert callable(cgimodel::Transition.__init__)
+def test_cgimodel_transition_constructor_exists():
+    assert callable(cgimodel_Transition.__init__)
 
 
-def test_cgimodel::transition_constructor_args():
-    sig = inspect.signature(cgimodel::Transition.__init__)
+def test_cgimodel_transition_constructor_args():
+    sig = inspect.signature(cgimodel_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cgimodel::basestate_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::BaseState)
+def test_cgimodel_basestate_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_BaseState)
 
 
-def test_cgimodel::basestate_constructor_exists():
-    assert callable(cgimodel::BaseState.__init__)
+def test_cgimodel_basestate_constructor_exists():
+    assert callable(cgimodel_BaseState.__init__)
 
 
-def test_cgimodel::basestate_constructor_args():
-    sig = inspect.signature(cgimodel::BaseState.__init__)
+def test_cgimodel_basestate_constructor_args():
+    sig = inspect.signature(cgimodel_BaseState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cgimodel::basestate_has_name():
-    assert hasattr(cgimodel::BaseState, "name")
+def test_cgimodel_basestate_has_name():
+    assert hasattr(cgimodel_BaseState, "name")
     descriptor = None
-    for klass in cgimodel::BaseState.__mro__:
+    for klass in cgimodel_BaseState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,23 +74,23 @@ def test_cgimodel::basestate_has_name():
 
 
 
-def test_cgimodel::statemodel_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::StateModel)
+def test_cgimodel_statemodel_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_StateModel)
 
 
-def test_cgimodel::statemodel_constructor_exists():
-    assert callable(cgimodel::StateModel.__init__)
+def test_cgimodel_statemodel_constructor_exists():
+    assert callable(cgimodel_StateModel.__init__)
 
 
-def test_cgimodel::statemodel_constructor_args():
-    sig = inspect.signature(cgimodel::StateModel.__init__)
+def test_cgimodel_statemodel_constructor_args():
+    sig = inspect.signature(cgimodel_StateModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cgimodel::statemodel_has_name():
-    assert hasattr(cgimodel::StateModel, "name")
+def test_cgimodel_statemodel_has_name():
+    assert hasattr(cgimodel_StateModel, "name")
     descriptor = None
-    for klass in cgimodel::StateModel.__mro__:
+    for klass in cgimodel_StateModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -98,23 +98,23 @@ def test_cgimodel::statemodel_has_name():
 
 
 
-def test_cgimodel::expr_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::Expr)
+def test_cgimodel_expr_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_Expr)
 
 
-def test_cgimodel::expr_constructor_exists():
-    assert callable(cgimodel::Expr.__init__)
+def test_cgimodel_expr_constructor_exists():
+    assert callable(cgimodel_Expr.__init__)
 
 
-def test_cgimodel::expr_constructor_args():
-    sig = inspect.signature(cgimodel::Expr.__init__)
+def test_cgimodel_expr_constructor_args():
+    sig = inspect.signature(cgimodel_Expr.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cgimodel::expr_has_value():
-    assert hasattr(cgimodel::Expr, "value")
+def test_cgimodel_expr_has_value():
+    assert hasattr(cgimodel_Expr, "value")
     descriptor = None
-    for klass in cgimodel::Expr.__mro__:
+    for klass in cgimodel_Expr.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -136,37 +136,37 @@ def test_basestate_constructor_args():
 
 
 
-def test_cgimodel::orstate_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::OrState)
+def test_cgimodel_orstate_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_OrState)
 
 
-def test_cgimodel::orstate_constructor_exists():
-    assert callable(cgimodel::OrState.__init__)
+def test_cgimodel_orstate_constructor_exists():
+    assert callable(cgimodel_OrState.__init__)
 
 
-def test_cgimodel::orstate_constructor_args():
-    sig = inspect.signature(cgimodel::OrState.__init__)
+def test_cgimodel_orstate_constructor_args():
+    sig = inspect.signature(cgimodel_OrState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cgimodel::state_is_not_abstract():
-    assert not inspect.isabstract(cgimodel::State)
+def test_cgimodel_state_is_not_abstract():
+    assert not inspect.isabstract(cgimodel_State)
 
 
-def test_cgimodel::state_constructor_exists():
-    assert callable(cgimodel::State.__init__)
+def test_cgimodel_state_constructor_exists():
+    assert callable(cgimodel_State.__init__)
 
 
-def test_cgimodel::state_constructor_args():
-    sig = inspect.signature(cgimodel::State.__init__)
+def test_cgimodel_state_constructor_args():
+    sig = inspect.signature(cgimodel_State.__init__)
     params = list(sig.parameters.keys())
     assert "set" in params, "Missing parameter 'set'"
 
-def test_cgimodel::state_has_set():
-    assert hasattr(cgimodel::State, "set")
+def test_cgimodel_state_has_set():
+    assert hasattr(cgimodel_State, "set")
     descriptor = None
-    for klass in cgimodel::State.__mro__:
+    for klass in cgimodel_State.__mro__:
         if "set" in klass.__dict__:
             descriptor = klass.__dict__["set"]
             break
@@ -184,61 +184,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cgimodel::StateModels_strategy = st.builds(
-    cgimodel::StateModels,
+cgimodel_StateModels_strategy = st.builds(
+    cgimodel_StateModels,
 )
-cgimodel::Transition_strategy = st.builds(
-    cgimodel::Transition,
+cgimodel_Transition_strategy = st.builds(
+    cgimodel_Transition,
 )
-cgimodel::BaseState_strategy = st.builds(
-    cgimodel::BaseState,
+cgimodel_BaseState_strategy = st.builds(
+    cgimodel_BaseState,
     name=
         safe_text
 )
-cgimodel::StateModel_strategy = st.builds(
-    cgimodel::StateModel,
+cgimodel_StateModel_strategy = st.builds(
+    cgimodel_StateModel,
     name=
         safe_text
 )
-cgimodel::Expr_strategy = st.builds(
-    cgimodel::Expr,
+cgimodel_Expr_strategy = st.builds(
+    cgimodel_Expr,
     value=
         safe_text
 )
 BaseState_strategy = st.builds(
     BaseState,
 )
-cgimodel::OrState_strategy = st.builds(
-    cgimodel::OrState,
+cgimodel_OrState_strategy = st.builds(
+    cgimodel_OrState,
 )
-cgimodel::State_strategy = st.builds(
-    cgimodel::State,
+cgimodel_State_strategy = st.builds(
+    cgimodel_State,
     set=
         st.booleans()
 )
 
-@given(instance=cgimodel::StateModels_strategy)
+@given(instance=cgimodel_StateModels_strategy)
 @settings(max_examples=50)
-def test_cgimodel::statemodels_instantiation(instance):
-    assert isinstance(instance, cgimodel::StateModels)
+def test_cgimodel_statemodels_instantiation(instance):
+    assert isinstance(instance, cgimodel_StateModels)
 
-@given(instance=cgimodel::Transition_strategy)
+@given(instance=cgimodel_Transition_strategy)
 @settings(max_examples=50)
-def test_cgimodel::transition_instantiation(instance):
-    assert isinstance(instance, cgimodel::Transition)
+def test_cgimodel_transition_instantiation(instance):
+    assert isinstance(instance, cgimodel_Transition)
 
-@given(instance=cgimodel::BaseState_strategy)
+@given(instance=cgimodel_BaseState_strategy)
 @settings(max_examples=50)
-def test_cgimodel::basestate_instantiation(instance):
-    assert isinstance(instance, cgimodel::BaseState)
-
-@given(instance=cgimodel::BaseState_strategy)
-def test_cgimodel::basestate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cgimodel_basestate_instantiation(instance):
+    assert isinstance(instance, cgimodel_BaseState)
 
 
-@given(instance=cgimodel::BaseState_strategy)
-def test_cgimodel::basestate_name_setter(instance):
+
+@given(instance=cgimodel_BaseState_strategy)
+def test_cgimodel_basestate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -249,9 +246,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=cgimodel::BaseState_strategy)
+@given(instance=cgimodel_BaseState_strategy)
 @settings(max_examples=30)
-def test_cgimodel::basestate_isset_changes_state(instance):
+def test_cgimodel_basestate_isset_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -263,43 +260,37 @@ def test_cgimodel::basestate_isset_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSet' in cgimodel::BaseState is empty"
+        assert has_statements, f"Function 'isSet' in cgimodel_BaseState is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSet' in cgimodel::BaseState did not change state; check implementation")
+            warnings.warn(f"Operation 'isSet' in cgimodel_BaseState did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSet' in cgimodel::BaseState is not implemented or raised an error")
+        warnings.warn(f"Operation 'isSet' in cgimodel_BaseState is not implemented or raised an error")
 
-@given(instance=cgimodel::StateModel_strategy)
+@given(instance=cgimodel_StateModel_strategy)
 @settings(max_examples=50)
-def test_cgimodel::statemodel_instantiation(instance):
-    assert isinstance(instance, cgimodel::StateModel)
-
-@given(instance=cgimodel::StateModel_strategy)
-def test_cgimodel::statemodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cgimodel_statemodel_instantiation(instance):
+    assert isinstance(instance, cgimodel_StateModel)
 
 
-@given(instance=cgimodel::StateModel_strategy)
-def test_cgimodel::statemodel_name_setter(instance):
+
+@given(instance=cgimodel_StateModel_strategy)
+def test_cgimodel_statemodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cgimodel::Expr_strategy)
+@given(instance=cgimodel_Expr_strategy)
 @settings(max_examples=50)
-def test_cgimodel::expr_instantiation(instance):
-    assert isinstance(instance, cgimodel::Expr)
-
-@given(instance=cgimodel::Expr_strategy)
-def test_cgimodel::expr_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cgimodel_expr_instantiation(instance):
+    assert isinstance(instance, cgimodel_Expr)
 
 
-@given(instance=cgimodel::Expr_strategy)
-def test_cgimodel::expr_value_setter(instance):
+
+@given(instance=cgimodel_Expr_strategy)
+def test_cgimodel_expr_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -309,23 +300,20 @@ def test_cgimodel::expr_value_setter(instance):
 def test_basestate_instantiation(instance):
     assert isinstance(instance, BaseState)
 
-@given(instance=cgimodel::OrState_strategy)
+@given(instance=cgimodel_OrState_strategy)
 @settings(max_examples=50)
-def test_cgimodel::orstate_instantiation(instance):
-    assert isinstance(instance, cgimodel::OrState)
+def test_cgimodel_orstate_instantiation(instance):
+    assert isinstance(instance, cgimodel_OrState)
 
-@given(instance=cgimodel::State_strategy)
+@given(instance=cgimodel_State_strategy)
 @settings(max_examples=50)
-def test_cgimodel::state_instantiation(instance):
-    assert isinstance(instance, cgimodel::State)
-
-@given(instance=cgimodel::State_strategy)
-def test_cgimodel::state_set_type(instance):
-    assert isinstance(instance.set, bool)
+def test_cgimodel_state_instantiation(instance):
+    assert isinstance(instance, cgimodel_State)
 
 
-@given(instance=cgimodel::State_strategy)
-def test_cgimodel::state_set_setter(instance):
+
+@given(instance=cgimodel_State_strategy)
+def test_cgimodel_state_set_setter(instance):
     original = instance.set
     instance.set = original
     assert instance.set == original

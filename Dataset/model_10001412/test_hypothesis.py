@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Cards,
@@ -33,9 +33,9 @@ def test_cards_constructor_args():
     sig = inspect.signature(Cards.__init__)
     params = list(sig.parameters.keys())
     assert "int" in params, "Missing parameter 'int'"
-    assert "bool" in params, "Missing parameter 'bool'"
     assert "int1" in params, "Missing parameter 'int1'"
     assert "string" in params, "Missing parameter 'string'"
+    assert "bool" in params, "Missing parameter 'bool'"
 
 def test_cards_has_int():
     assert hasattr(Cards, "int")
@@ -43,15 +43,6 @@ def test_cards_has_int():
     for klass in Cards.__mro__:
         if "int" in klass.__dict__:
             descriptor = klass.__dict__["int"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cards_has_bool():
-    assert hasattr(Cards, "bool")
-    descriptor = None
-    for klass in Cards.__mro__:
-        if "bool" in klass.__dict__:
-            descriptor = klass.__dict__["bool"]
             break
     assert isinstance(descriptor, property)
 
@@ -70,6 +61,15 @@ def test_cards_has_string():
     for klass in Cards.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cards_has_bool():
+    assert hasattr(Cards, "bool")
+    descriptor = None
+    for klass in Cards.__mro__:
+        if "bool" in klass.__dict__:
+            descriptor = klass.__dict__["bool"]
             break
     assert isinstance(descriptor, property)
 
@@ -110,10 +110,19 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
+    assert "Deck" in params, "Missing parameter 'Deck'"
     assert "int" in params, "Missing parameter 'int'"
     assert "Card" in params, "Missing parameter 'Card'"
-    assert "Deck" in params, "Missing parameter 'Deck'"
     assert "int1" in params, "Missing parameter 'int1'"
+
+def test_player_has_Deck():
+    assert hasattr(Player, "Deck")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "Deck" in klass.__dict__:
+            descriptor = klass.__dict__["Deck"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_player_has_int():
     assert hasattr(Player, "int")
@@ -130,15 +139,6 @@ def test_player_has_Card():
     for klass in Player.__mro__:
         if "Card" in klass.__dict__:
             descriptor = klass.__dict__["Card"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_player_has_Deck():
-    assert hasattr(Player, "Deck")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "Deck" in klass.__dict__:
-            descriptor = klass.__dict__["Deck"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,11 +253,11 @@ Cards_strategy = st.builds(
     Cards,
     int=
         safe_text,
-    bool=
-        safe_text,
     int1=
         safe_text,
     string=
+        safe_text,
+    bool=
         safe_text
 )
 Deck_strategy = st.builds(
@@ -267,11 +267,11 @@ Deck_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
+    Deck=
+        safe_text,
     int=
         safe_text,
     Card=
-        safe_text,
-    Deck=
         safe_text,
     int1=
         safe_text
@@ -300,9 +300,6 @@ Main_strategy = st.builds(
 def test_cards_instantiation(instance):
     assert isinstance(instance, Cards)
 
-@given(instance=Cards_strategy)
-def test_cards_int_type(instance):
-    assert isinstance(instance.int, str)
 
 
 @given(instance=Cards_strategy)
@@ -311,20 +308,6 @@ def test_cards_int_setter(instance):
     instance.int = original
     assert instance.int == original
 
-@given(instance=Cards_strategy)
-def test_cards_bool_type(instance):
-    assert isinstance(instance.bool, str)
-
-
-@given(instance=Cards_strategy)
-def test_cards_bool_setter(instance):
-    original = instance.bool
-    instance.bool = original
-    assert instance.bool == original
-
-@given(instance=Cards_strategy)
-def test_cards_int1_type(instance):
-    assert isinstance(instance.int1, str)
 
 
 @given(instance=Cards_strategy)
@@ -333,9 +316,6 @@ def test_cards_int1_setter(instance):
     instance.int1 = original
     assert instance.int1 == original
 
-@given(instance=Cards_strategy)
-def test_cards_string_type(instance):
-    assert isinstance(instance.string, str)
 
 
 @given(instance=Cards_strategy)
@@ -344,14 +324,19 @@ def test_cards_string_setter(instance):
     instance.string = original
     assert instance.string == original
 
+
+
+@given(instance=Cards_strategy)
+def test_cards_bool_setter(instance):
+    original = instance.bool
+    instance.bool = original
+    assert instance.bool == original
+
 @given(instance=Deck_strategy)
 @settings(max_examples=50)
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_int_type(instance):
-    assert isinstance(instance.int, str)
 
 
 @given(instance=Deck_strategy)
@@ -365,31 +350,6 @@ def test_deck_int_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_int_type(instance):
-    assert isinstance(instance.int, str)
-
-
-@given(instance=Player_strategy)
-def test_player_int_setter(instance):
-    original = instance.int
-    instance.int = original
-    assert instance.int == original
-
-@given(instance=Player_strategy)
-def test_player_Card_type(instance):
-    assert isinstance(instance.Card, str)
-
-
-@given(instance=Player_strategy)
-def test_player_Card_setter(instance):
-    original = instance.Card
-    instance.Card = original
-    assert instance.Card == original
-
-@given(instance=Player_strategy)
-def test_player_Deck_type(instance):
-    assert isinstance(instance.Deck, str)
 
 
 @given(instance=Player_strategy)
@@ -398,9 +358,22 @@ def test_player_Deck_setter(instance):
     instance.Deck = original
     assert instance.Deck == original
 
+
+
 @given(instance=Player_strategy)
-def test_player_int1_type(instance):
-    assert isinstance(instance.int1, str)
+def test_player_int_setter(instance):
+    original = instance.int
+    instance.int = original
+    assert instance.int == original
+
+
+
+@given(instance=Player_strategy)
+def test_player_Card_setter(instance):
+    original = instance.Card
+    instance.Card = original
+    assert instance.Card == original
+
 
 
 @given(instance=Player_strategy)
@@ -414,9 +387,6 @@ def test_player_int1_setter(instance):
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_int_type(instance):
-    assert isinstance(instance.int, str)
 
 
 @given(instance=Account_strategy)
@@ -425,9 +395,6 @@ def test_account_int_setter(instance):
     instance.int = original
     assert instance.int == original
 
-@given(instance=Account_strategy)
-def test_account_string_type(instance):
-    assert isinstance(instance.string, str)
 
 
 @given(instance=Account_strategy)
@@ -436,9 +403,6 @@ def test_account_string_setter(instance):
     instance.string = original
     assert instance.string == original
 
-@given(instance=Account_strategy)
-def test_account_int1_type(instance):
-    assert isinstance(instance.int1, str)
 
 
 @given(instance=Account_strategy)

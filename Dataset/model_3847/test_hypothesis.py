@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SqlDateTime,
-    ddlDsl::SqlInterval,
-    ddlDsl::SqlTimeStamp,
-    ddlDsl::SqlDate,
+    ddlDsl_SqlTimeStamp,
+    ddlDsl_SqlInterval,
+    ddlDsl_SqlDate,
     SqlDataType,
-    ddlDsl::SqlDateTime,
-    ddlDsl::LargeObjectType,
-    ddlDsl::LongRaw,
-    ddlDsl::SqlNumber,
-    ddlDsl::RowIdType,
-    ddlDsl::SqlBoolean,
-    ddlDsl::SqlCharacter,
+    ddlDsl_LongRaw,
+    ddlDsl_SqlNumber,
+    ddlDsl_LargeObjectType,
+    ddlDsl_SqlDateTime,
+    ddlDsl_RowIdType,
+    ddlDsl_SqlBoolean,
+    ddlDsl_SqlCharacter,
     Constraint,
-    ddlDsl::UniqueKeyConstraint,
-    ddlDsl::ForeignKeyConstraint,
-    ddlDsl::PrimaryKeyConstraint,
-    ddlDsl::NullableConstraint,
-    ddlDsl::ReferenceClause,
+    ddlDsl_UniqueKeyConstraint,
+    ddlDsl_ForeignKeyConstraint,
+    ddlDsl_PrimaryKeyConstraint,
+    ddlDsl_NullableConstraint,
+    ddlDsl_ReferenceClause,
     LongRaw,
-    ddlDsl::Raw,
-    ddlDsl::Long,
+    ddlDsl_Raw,
+    ddlDsl_Long,
     TableProperty,
-    ddlDsl::TableProperty,
+    ddlDsl_TableProperty,
     Create,
-    ddlDsl::CreateIndex,
-    ddlDsl::Column,
+    ddlDsl_CreateIndex,
+    ddlDsl_Column,
     Comment,
-    ddlDsl::ColumnComment,
-    ddlDsl::TableComment,
+    ddlDsl_ColumnComment,
+    ddlDsl_TableComment,
     AlterTableAction,
-    ddlDsl::AddTableConstraint,
-    ddlDsl::DropTableConstraint,
-    ddlDsl::Constraint,
-    ddlDsl::AlterTableAction,
-    ddlDsl::CreateTable,
+    ddlDsl_AddTableConstraint,
+    ddlDsl_DropTableConstraint,
+    ddlDsl_Constraint,
+    ddlDsl_AlterTableAction,
+    ddlDsl_CreateTable,
     DdlStatement,
-    ddlDsl::Drop,
-    ddlDsl::Create,
-    ddlDsl::Comment,
-    ddlDsl::Alter,
-    ddlDsl::SqlDataType,
-    ddlDsl::DdlStatement,
-    ddlDsl::Ddl,
+    ddlDsl_Comment,
+    ddlDsl_Create,
+    ddlDsl_Drop,
+    ddlDsl_Alter,
+    ddlDsl_SqlDataType,
+    ddlDsl_DdlStatement,
+    ddlDsl_Ddl,
     SortDirectionEnum,
 )
 
@@ -72,77 +72,77 @@ def test_sqldatetime_constructor_args():
 
 
 
-def test_ddldsl::sqlinterval_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlInterval)
+def test_ddldsl_sqltimestamp_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlTimeStamp)
 
 
-def test_ddldsl::sqlinterval_constructor_exists():
-    assert callable(ddlDsl::SqlInterval.__init__)
+def test_ddldsl_sqltimestamp_constructor_exists():
+    assert callable(ddlDsl_SqlTimeStamp.__init__)
 
 
-def test_ddldsl::sqlinterval_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlInterval.__init__)
+def test_ddldsl_sqltimestamp_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlTimeStamp.__init__)
     params = list(sig.parameters.keys())
-    assert "year" in params, "Missing parameter 'year'"
     assert "precision" in params, "Missing parameter 'precision'"
-    assert "day" in params, "Missing parameter 'day'"
-    assert "secondsPrecision" in params, "Missing parameter 'secondsPrecision'"
 
-def test_ddldsl::sqlinterval_has_year():
-    assert hasattr(ddlDsl::SqlInterval, "year")
+def test_ddldsl_sqltimestamp_has_precision():
+    assert hasattr(ddlDsl_SqlTimeStamp, "precision")
     descriptor = None
-    for klass in ddlDsl::SqlInterval.__mro__:
-        if "year" in klass.__dict__:
-            descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddldsl::sqlinterval_has_precision():
-    assert hasattr(ddlDsl::SqlInterval, "precision")
-    descriptor = None
-    for klass in ddlDsl::SqlInterval.__mro__:
+    for klass in ddlDsl_SqlTimeStamp.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddldsl::sqlinterval_has_day():
-    assert hasattr(ddlDsl::SqlInterval, "day")
-    descriptor = None
-    for klass in ddlDsl::SqlInterval.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_ddldsl::sqlinterval_has_secondsPrecision():
-    assert hasattr(ddlDsl::SqlInterval, "secondsPrecision")
+
+def test_ddldsl_sqlinterval_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlInterval)
+
+
+def test_ddldsl_sqlinterval_constructor_exists():
+    assert callable(ddlDsl_SqlInterval.__init__)
+
+
+def test_ddldsl_sqlinterval_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlInterval.__init__)
+    params = list(sig.parameters.keys())
+    assert "secondsPrecision" in params, "Missing parameter 'secondsPrecision'"
+    assert "day" in params, "Missing parameter 'day'"
+    assert "year" in params, "Missing parameter 'year'"
+    assert "precision" in params, "Missing parameter 'precision'"
+
+def test_ddldsl_sqlinterval_has_secondsPrecision():
+    assert hasattr(ddlDsl_SqlInterval, "secondsPrecision")
     descriptor = None
-    for klass in ddlDsl::SqlInterval.__mro__:
+    for klass in ddlDsl_SqlInterval.__mro__:
         if "secondsPrecision" in klass.__dict__:
             descriptor = klass.__dict__["secondsPrecision"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ddldsl::sqltimestamp_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlTimeStamp)
-
-
-def test_ddldsl::sqltimestamp_constructor_exists():
-    assert callable(ddlDsl::SqlTimeStamp.__init__)
-
-
-def test_ddldsl::sqltimestamp_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlTimeStamp.__init__)
-    params = list(sig.parameters.keys())
-    assert "precision" in params, "Missing parameter 'precision'"
-
-def test_ddldsl::sqltimestamp_has_precision():
-    assert hasattr(ddlDsl::SqlTimeStamp, "precision")
+def test_ddldsl_sqlinterval_has_day():
+    assert hasattr(ddlDsl_SqlInterval, "day")
     descriptor = None
-    for klass in ddlDsl::SqlTimeStamp.__mro__:
+    for klass in ddlDsl_SqlInterval.__mro__:
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddldsl_sqlinterval_has_year():
+    assert hasattr(ddlDsl_SqlInterval, "year")
+    descriptor = None
+    for klass in ddlDsl_SqlInterval.__mro__:
+        if "year" in klass.__dict__:
+            descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddldsl_sqlinterval_has_precision():
+    assert hasattr(ddlDsl_SqlInterval, "precision")
+    descriptor = None
+    for klass in ddlDsl_SqlInterval.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
@@ -150,16 +150,16 @@ def test_ddldsl::sqltimestamp_has_precision():
 
 
 
-def test_ddldsl::sqldate_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlDate)
+def test_ddldsl_sqldate_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlDate)
 
 
-def test_ddldsl::sqldate_constructor_exists():
-    assert callable(ddlDsl::SqlDate.__init__)
+def test_ddldsl_sqldate_constructor_exists():
+    assert callable(ddlDsl_SqlDate.__init__)
 
 
-def test_ddldsl::sqldate_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlDate.__init__)
+def test_ddldsl_sqldate_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlDate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,119 +178,81 @@ def test_sqldatatype_constructor_args():
 
 
 
-def test_ddldsl::sqldatetime_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlDateTime)
+def test_ddldsl_longraw_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_LongRaw)
 
 
-def test_ddldsl::sqldatetime_constructor_exists():
-    assert callable(ddlDsl::SqlDateTime.__init__)
+def test_ddldsl_longraw_constructor_exists():
+    assert callable(ddlDsl_LongRaw.__init__)
 
 
-def test_ddldsl::sqldatetime_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlDateTime.__init__)
+def test_ddldsl_longraw_constructor_args():
+    sig = inspect.signature(ddlDsl_LongRaw.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::largeobjecttype_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::LargeObjectType)
+def test_ddldsl_sqlnumber_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlNumber)
 
 
-def test_ddldsl::largeobjecttype_constructor_exists():
-    assert callable(ddlDsl::LargeObjectType.__init__)
+def test_ddldsl_sqlnumber_constructor_exists():
+    assert callable(ddlDsl_SqlNumber.__init__)
 
 
-def test_ddldsl::largeobjecttype_constructor_args():
-    sig = inspect.signature(ddlDsl::LargeObjectType.__init__)
+def test_ddldsl_sqlnumber_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlNumber.__init__)
     params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-
-def test_ddldsl::largeobjecttype_has_size():
-    assert hasattr(ddlDsl::LargeObjectType, "size")
-    descriptor = None
-    for klass in ddlDsl::LargeObjectType.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ddldsl::longraw_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::LongRaw)
-
-
-def test_ddldsl::longraw_constructor_exists():
-    assert callable(ddlDsl::LongRaw.__init__)
-
-
-def test_ddldsl::longraw_constructor_args():
-    sig = inspect.signature(ddlDsl::LongRaw.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ddldsl::sqlnumber_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlNumber)
-
-
-def test_ddldsl::sqlnumber_constructor_exists():
-    assert callable(ddlDsl::SqlNumber.__init__)
-
-
-def test_ddldsl::sqlnumber_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlNumber.__init__)
-    params = list(sig.parameters.keys())
+    assert "precision" in params, "Missing parameter 'precision'"
     assert "hasPrecision" in params, "Missing parameter 'hasPrecision'"
     assert "scale" in params, "Missing parameter 'scale'"
-    assert "precision" in params, "Missing parameter 'precision'"
 
-def test_ddldsl::sqlnumber_has_hasPrecision():
-    assert hasattr(ddlDsl::SqlNumber, "hasPrecision")
+def test_ddldsl_sqlnumber_has_precision():
+    assert hasattr(ddlDsl_SqlNumber, "precision")
     descriptor = None
-    for klass in ddlDsl::SqlNumber.__mro__:
-        if "hasPrecision" in klass.__dict__:
-            descriptor = klass.__dict__["hasPrecision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddldsl::sqlnumber_has_scale():
-    assert hasattr(ddlDsl::SqlNumber, "scale")
-    descriptor = None
-    for klass in ddlDsl::SqlNumber.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddldsl::sqlnumber_has_precision():
-    assert hasattr(ddlDsl::SqlNumber, "precision")
-    descriptor = None
-    for klass in ddlDsl::SqlNumber.__mro__:
+    for klass in ddlDsl_SqlNumber.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
+def test_ddldsl_sqlnumber_has_hasPrecision():
+    assert hasattr(ddlDsl_SqlNumber, "hasPrecision")
+    descriptor = None
+    for klass in ddlDsl_SqlNumber.__mro__:
+        if "hasPrecision" in klass.__dict__:
+            descriptor = klass.__dict__["hasPrecision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddldsl_sqlnumber_has_scale():
+    assert hasattr(ddlDsl_SqlNumber, "scale")
+    descriptor = None
+    for klass in ddlDsl_SqlNumber.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ddldsl::rowidtype_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::RowIdType)
+
+def test_ddldsl_largeobjecttype_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_LargeObjectType)
 
 
-def test_ddldsl::rowidtype_constructor_exists():
-    assert callable(ddlDsl::RowIdType.__init__)
+def test_ddldsl_largeobjecttype_constructor_exists():
+    assert callable(ddlDsl_LargeObjectType.__init__)
 
 
-def test_ddldsl::rowidtype_constructor_args():
-    sig = inspect.signature(ddlDsl::RowIdType.__init__)
+def test_ddldsl_largeobjecttype_constructor_args():
+    sig = inspect.signature(ddlDsl_LargeObjectType.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_ddldsl::rowidtype_has_size():
-    assert hasattr(ddlDsl::RowIdType, "size")
+def test_ddldsl_largeobjecttype_has_size():
+    assert hasattr(ddlDsl_LargeObjectType, "size")
     descriptor = None
-    for klass in ddlDsl::RowIdType.__mro__:
+    for klass in ddlDsl_LargeObjectType.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -298,49 +260,87 @@ def test_ddldsl::rowidtype_has_size():
 
 
 
-def test_ddldsl::sqlboolean_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlBoolean)
+def test_ddldsl_sqldatetime_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlDateTime)
 
 
-def test_ddldsl::sqlboolean_constructor_exists():
-    assert callable(ddlDsl::SqlBoolean.__init__)
+def test_ddldsl_sqldatetime_constructor_exists():
+    assert callable(ddlDsl_SqlDateTime.__init__)
 
 
-def test_ddldsl::sqlboolean_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlBoolean.__init__)
+def test_ddldsl_sqldatetime_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlDateTime.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::sqlcharacter_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlCharacter)
+def test_ddldsl_rowidtype_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_RowIdType)
 
 
-def test_ddldsl::sqlcharacter_constructor_exists():
-    assert callable(ddlDsl::SqlCharacter.__init__)
+def test_ddldsl_rowidtype_constructor_exists():
+    assert callable(ddlDsl_RowIdType.__init__)
 
 
-def test_ddldsl::sqlcharacter_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlCharacter.__init__)
+def test_ddldsl_rowidtype_constructor_args():
+    sig = inspect.signature(ddlDsl_RowIdType.__init__)
     params = list(sig.parameters.keys())
-    assert "national" in params, "Missing parameter 'national'"
     assert "size" in params, "Missing parameter 'size'"
 
-def test_ddldsl::sqlcharacter_has_national():
-    assert hasattr(ddlDsl::SqlCharacter, "national")
+def test_ddldsl_rowidtype_has_size():
+    assert hasattr(ddlDsl_RowIdType, "size")
     descriptor = None
-    for klass in ddlDsl::SqlCharacter.__mro__:
+    for klass in ddlDsl_RowIdType.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ddldsl_sqlboolean_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlBoolean)
+
+
+def test_ddldsl_sqlboolean_constructor_exists():
+    assert callable(ddlDsl_SqlBoolean.__init__)
+
+
+def test_ddldsl_sqlboolean_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlBoolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ddldsl_sqlcharacter_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlCharacter)
+
+
+def test_ddldsl_sqlcharacter_constructor_exists():
+    assert callable(ddlDsl_SqlCharacter.__init__)
+
+
+def test_ddldsl_sqlcharacter_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlCharacter.__init__)
+    params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
+    assert "national" in params, "Missing parameter 'national'"
+
+def test_ddldsl_sqlcharacter_has_size():
+    assert hasattr(ddlDsl_SqlCharacter, "size")
+    descriptor = None
+    for klass in ddlDsl_SqlCharacter.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddldsl_sqlcharacter_has_national():
+    assert hasattr(ddlDsl_SqlCharacter, "national")
+    descriptor = None
+    for klass in ddlDsl_SqlCharacter.__mro__:
         if "national" in klass.__dict__:
             descriptor = klass.__dict__["national"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddldsl::sqlcharacter_has_size():
-    assert hasattr(ddlDsl::SqlCharacter, "size")
-    descriptor = None
-    for klass in ddlDsl::SqlCharacter.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
@@ -360,65 +360,65 @@ def test_constraint_constructor_args():
 
 
 
-def test_ddldsl::uniquekeyconstraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::UniqueKeyConstraint)
+def test_ddldsl_uniquekeyconstraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_UniqueKeyConstraint)
 
 
-def test_ddldsl::uniquekeyconstraint_constructor_exists():
-    assert callable(ddlDsl::UniqueKeyConstraint.__init__)
+def test_ddldsl_uniquekeyconstraint_constructor_exists():
+    assert callable(ddlDsl_UniqueKeyConstraint.__init__)
 
 
-def test_ddldsl::uniquekeyconstraint_constructor_args():
-    sig = inspect.signature(ddlDsl::UniqueKeyConstraint.__init__)
+def test_ddldsl_uniquekeyconstraint_constructor_args():
+    sig = inspect.signature(ddlDsl_UniqueKeyConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::foreignkeyconstraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::ForeignKeyConstraint)
+def test_ddldsl_foreignkeyconstraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_ForeignKeyConstraint)
 
 
-def test_ddldsl::foreignkeyconstraint_constructor_exists():
-    assert callable(ddlDsl::ForeignKeyConstraint.__init__)
+def test_ddldsl_foreignkeyconstraint_constructor_exists():
+    assert callable(ddlDsl_ForeignKeyConstraint.__init__)
 
 
-def test_ddldsl::foreignkeyconstraint_constructor_args():
-    sig = inspect.signature(ddlDsl::ForeignKeyConstraint.__init__)
+def test_ddldsl_foreignkeyconstraint_constructor_args():
+    sig = inspect.signature(ddlDsl_ForeignKeyConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::primarykeyconstraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::PrimaryKeyConstraint)
+def test_ddldsl_primarykeyconstraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_PrimaryKeyConstraint)
 
 
-def test_ddldsl::primarykeyconstraint_constructor_exists():
-    assert callable(ddlDsl::PrimaryKeyConstraint.__init__)
+def test_ddldsl_primarykeyconstraint_constructor_exists():
+    assert callable(ddlDsl_PrimaryKeyConstraint.__init__)
 
 
-def test_ddldsl::primarykeyconstraint_constructor_args():
-    sig = inspect.signature(ddlDsl::PrimaryKeyConstraint.__init__)
+def test_ddldsl_primarykeyconstraint_constructor_args():
+    sig = inspect.signature(ddlDsl_PrimaryKeyConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::nullableconstraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::NullableConstraint)
+def test_ddldsl_nullableconstraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_NullableConstraint)
 
 
-def test_ddldsl::nullableconstraint_constructor_exists():
-    assert callable(ddlDsl::NullableConstraint.__init__)
+def test_ddldsl_nullableconstraint_constructor_exists():
+    assert callable(ddlDsl_NullableConstraint.__init__)
 
 
-def test_ddldsl::nullableconstraint_constructor_args():
-    sig = inspect.signature(ddlDsl::NullableConstraint.__init__)
+def test_ddldsl_nullableconstraint_constructor_args():
+    sig = inspect.signature(ddlDsl_NullableConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "not_" in params, "Missing parameter 'not_'"
 
-def test_ddldsl::nullableconstraint_has_not_():
-    assert hasattr(ddlDsl::NullableConstraint, "not_")
+def test_ddldsl_nullableconstraint_has_not_():
+    assert hasattr(ddlDsl_NullableConstraint, "not_")
     descriptor = None
-    for klass in ddlDsl::NullableConstraint.__mro__:
+    for klass in ddlDsl_NullableConstraint.__mro__:
         if "not_" in klass.__dict__:
             descriptor = klass.__dict__["not_"]
             break
@@ -426,16 +426,16 @@ def test_ddldsl::nullableconstraint_has_not_():
 
 
 
-def test_ddldsl::referenceclause_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::ReferenceClause)
+def test_ddldsl_referenceclause_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_ReferenceClause)
 
 
-def test_ddldsl::referenceclause_constructor_exists():
-    assert callable(ddlDsl::ReferenceClause.__init__)
+def test_ddldsl_referenceclause_constructor_exists():
+    assert callable(ddlDsl_ReferenceClause.__init__)
 
 
-def test_ddldsl::referenceclause_constructor_args():
-    sig = inspect.signature(ddlDsl::ReferenceClause.__init__)
+def test_ddldsl_referenceclause_constructor_args():
+    sig = inspect.signature(ddlDsl_ReferenceClause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -454,23 +454,23 @@ def test_longraw_constructor_args():
 
 
 
-def test_ddldsl::raw_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Raw)
+def test_ddldsl_raw_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Raw)
 
 
-def test_ddldsl::raw_constructor_exists():
-    assert callable(ddlDsl::Raw.__init__)
+def test_ddldsl_raw_constructor_exists():
+    assert callable(ddlDsl_Raw.__init__)
 
 
-def test_ddldsl::raw_constructor_args():
-    sig = inspect.signature(ddlDsl::Raw.__init__)
+def test_ddldsl_raw_constructor_args():
+    sig = inspect.signature(ddlDsl_Raw.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_ddldsl::raw_has_size():
-    assert hasattr(ddlDsl::Raw, "size")
+def test_ddldsl_raw_has_size():
+    assert hasattr(ddlDsl_Raw, "size")
     descriptor = None
-    for klass in ddlDsl::Raw.__mro__:
+    for klass in ddlDsl_Raw.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -478,23 +478,23 @@ def test_ddldsl::raw_has_size():
 
 
 
-def test_ddldsl::long_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Long)
+def test_ddldsl_long_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Long)
 
 
-def test_ddldsl::long_constructor_exists():
-    assert callable(ddlDsl::Long.__init__)
+def test_ddldsl_long_constructor_exists():
+    assert callable(ddlDsl_Long.__init__)
 
 
-def test_ddldsl::long_constructor_args():
-    sig = inspect.signature(ddlDsl::Long.__init__)
+def test_ddldsl_long_constructor_args():
+    sig = inspect.signature(ddlDsl_Long.__init__)
     params = list(sig.parameters.keys())
     assert "raw" in params, "Missing parameter 'raw'"
 
-def test_ddldsl::long_has_raw():
-    assert hasattr(ddlDsl::Long, "raw")
+def test_ddldsl_long_has_raw():
+    assert hasattr(ddlDsl_Long, "raw")
     descriptor = None
-    for klass in ddlDsl::Long.__mro__:
+    for klass in ddlDsl_Long.__mro__:
         if "raw" in klass.__dict__:
             descriptor = klass.__dict__["raw"]
             break
@@ -516,23 +516,23 @@ def test_tableproperty_constructor_args():
 
 
 
-def test_ddldsl::tableproperty_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::TableProperty)
+def test_ddldsl_tableproperty_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_TableProperty)
 
 
-def test_ddldsl::tableproperty_constructor_exists():
-    assert callable(ddlDsl::TableProperty.__init__)
+def test_ddldsl_tableproperty_constructor_exists():
+    assert callable(ddlDsl_TableProperty.__init__)
 
 
-def test_ddldsl::tableproperty_constructor_args():
-    sig = inspect.signature(ddlDsl::TableProperty.__init__)
+def test_ddldsl_tableproperty_constructor_args():
+    sig = inspect.signature(ddlDsl_TableProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ddldsl::tableproperty_has_name():
-    assert hasattr(ddlDsl::TableProperty, "name")
+def test_ddldsl_tableproperty_has_name():
+    assert hasattr(ddlDsl_TableProperty, "name")
     descriptor = None
-    for klass in ddlDsl::TableProperty.__mro__:
+    for klass in ddlDsl_TableProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -554,69 +554,69 @@ def test_create_constructor_args():
 
 
 
-def test_ddldsl::createindex_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::CreateIndex)
+def test_ddldsl_createindex_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_CreateIndex)
 
 
-def test_ddldsl::createindex_constructor_exists():
-    assert callable(ddlDsl::CreateIndex.__init__)
+def test_ddldsl_createindex_constructor_exists():
+    assert callable(ddlDsl_CreateIndex.__init__)
 
 
-def test_ddldsl::createindex_constructor_args():
-    sig = inspect.signature(ddlDsl::CreateIndex.__init__)
+def test_ddldsl_createindex_constructor_args():
+    sig = inspect.signature(ddlDsl_CreateIndex.__init__)
     params = list(sig.parameters.keys())
-    assert "sortOrders" in params, "Missing parameter 'sortOrders'"
     assert "unique" in params, "Missing parameter 'unique'"
+    assert "sortOrders" in params, "Missing parameter 'sortOrders'"
 
-def test_ddldsl::createindex_has_sortOrders():
-    assert hasattr(ddlDsl::CreateIndex, "sortOrders")
+def test_ddldsl_createindex_has_unique():
+    assert hasattr(ddlDsl_CreateIndex, "unique")
     descriptor = None
-    for klass in ddlDsl::CreateIndex.__mro__:
-        if "sortOrders" in klass.__dict__:
-            descriptor = klass.__dict__["sortOrders"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddldsl::createindex_has_unique():
-    assert hasattr(ddlDsl::CreateIndex, "unique")
-    descriptor = None
-    for klass in ddlDsl::CreateIndex.__mro__:
+    for klass in ddlDsl_CreateIndex.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ddldsl::column_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Column)
-
-
-def test_ddldsl::column_constructor_exists():
-    assert callable(ddlDsl::Column.__init__)
-
-
-def test_ddldsl::column_constructor_args():
-    sig = inspect.signature(ddlDsl::Column.__init__)
-    params = list(sig.parameters.keys())
-    assert "sorted" in params, "Missing parameter 'sorted'"
-    assert "default" in params, "Missing parameter 'default'"
-
-def test_ddldsl::column_has_sorted():
-    assert hasattr(ddlDsl::Column, "sorted")
+def test_ddldsl_createindex_has_sortOrders():
+    assert hasattr(ddlDsl_CreateIndex, "sortOrders")
     descriptor = None
-    for klass in ddlDsl::Column.__mro__:
-        if "sorted" in klass.__dict__:
-            descriptor = klass.__dict__["sorted"]
+    for klass in ddlDsl_CreateIndex.__mro__:
+        if "sortOrders" in klass.__dict__:
+            descriptor = klass.__dict__["sortOrders"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddldsl::column_has_default():
-    assert hasattr(ddlDsl::Column, "default")
+
+
+def test_ddldsl_column_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Column)
+
+
+def test_ddldsl_column_constructor_exists():
+    assert callable(ddlDsl_Column.__init__)
+
+
+def test_ddldsl_column_constructor_args():
+    sig = inspect.signature(ddlDsl_Column.__init__)
+    params = list(sig.parameters.keys())
+    assert "default" in params, "Missing parameter 'default'"
+    assert "sorted" in params, "Missing parameter 'sorted'"
+
+def test_ddldsl_column_has_default():
+    assert hasattr(ddlDsl_Column, "default")
     descriptor = None
-    for klass in ddlDsl::Column.__mro__:
+    for klass in ddlDsl_Column.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddldsl_column_has_sorted():
+    assert hasattr(ddlDsl_Column, "sorted")
+    descriptor = None
+    for klass in ddlDsl_Column.__mro__:
+        if "sorted" in klass.__dict__:
+            descriptor = klass.__dict__["sorted"]
             break
     assert isinstance(descriptor, property)
 
@@ -636,30 +636,30 @@ def test_comment_constructor_args():
 
 
 
-def test_ddldsl::columncomment_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::ColumnComment)
+def test_ddldsl_columncomment_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_ColumnComment)
 
 
-def test_ddldsl::columncomment_constructor_exists():
-    assert callable(ddlDsl::ColumnComment.__init__)
+def test_ddldsl_columncomment_constructor_exists():
+    assert callable(ddlDsl_ColumnComment.__init__)
 
 
-def test_ddldsl::columncomment_constructor_args():
-    sig = inspect.signature(ddlDsl::ColumnComment.__init__)
+def test_ddldsl_columncomment_constructor_args():
+    sig = inspect.signature(ddlDsl_ColumnComment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::tablecomment_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::TableComment)
+def test_ddldsl_tablecomment_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_TableComment)
 
 
-def test_ddldsl::tablecomment_constructor_exists():
-    assert callable(ddlDsl::TableComment.__init__)
+def test_ddldsl_tablecomment_constructor_exists():
+    assert callable(ddlDsl_TableComment.__init__)
 
 
-def test_ddldsl::tablecomment_constructor_args():
-    sig = inspect.signature(ddlDsl::TableComment.__init__)
+def test_ddldsl_tablecomment_constructor_args():
+    sig = inspect.signature(ddlDsl_TableComment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -678,23 +678,23 @@ def test_altertableaction_constructor_args():
 
 
 
-def test_ddldsl::addtableconstraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::AddTableConstraint)
+def test_ddldsl_addtableconstraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_AddTableConstraint)
 
 
-def test_ddldsl::addtableconstraint_constructor_exists():
-    assert callable(ddlDsl::AddTableConstraint.__init__)
+def test_ddldsl_addtableconstraint_constructor_exists():
+    assert callable(ddlDsl_AddTableConstraint.__init__)
 
 
-def test_ddldsl::addtableconstraint_constructor_args():
-    sig = inspect.signature(ddlDsl::AddTableConstraint.__init__)
+def test_ddldsl_addtableconstraint_constructor_args():
+    sig = inspect.signature(ddlDsl_AddTableConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ddldsl::addtableconstraint_has_name():
-    assert hasattr(ddlDsl::AddTableConstraint, "name")
+def test_ddldsl_addtableconstraint_has_name():
+    assert hasattr(ddlDsl_AddTableConstraint, "name")
     descriptor = None
-    for klass in ddlDsl::AddTableConstraint.__mro__:
+    for klass in ddlDsl_AddTableConstraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -702,58 +702,58 @@ def test_ddldsl::addtableconstraint_has_name():
 
 
 
-def test_ddldsl::droptableconstraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::DropTableConstraint)
+def test_ddldsl_droptableconstraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_DropTableConstraint)
 
 
-def test_ddldsl::droptableconstraint_constructor_exists():
-    assert callable(ddlDsl::DropTableConstraint.__init__)
+def test_ddldsl_droptableconstraint_constructor_exists():
+    assert callable(ddlDsl_DropTableConstraint.__init__)
 
 
-def test_ddldsl::droptableconstraint_constructor_args():
-    sig = inspect.signature(ddlDsl::DropTableConstraint.__init__)
+def test_ddldsl_droptableconstraint_constructor_args():
+    sig = inspect.signature(ddlDsl_DropTableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::constraint_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Constraint)
+def test_ddldsl_constraint_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Constraint)
 
 
-def test_ddldsl::constraint_constructor_exists():
-    assert callable(ddlDsl::Constraint.__init__)
+def test_ddldsl_constraint_constructor_exists():
+    assert callable(ddlDsl_Constraint.__init__)
 
 
-def test_ddldsl::constraint_constructor_args():
-    sig = inspect.signature(ddlDsl::Constraint.__init__)
+def test_ddldsl_constraint_constructor_args():
+    sig = inspect.signature(ddlDsl_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::altertableaction_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::AlterTableAction)
+def test_ddldsl_altertableaction_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_AlterTableAction)
 
 
-def test_ddldsl::altertableaction_constructor_exists():
-    assert callable(ddlDsl::AlterTableAction.__init__)
+def test_ddldsl_altertableaction_constructor_exists():
+    assert callable(ddlDsl_AlterTableAction.__init__)
 
 
-def test_ddldsl::altertableaction_constructor_args():
-    sig = inspect.signature(ddlDsl::AlterTableAction.__init__)
+def test_ddldsl_altertableaction_constructor_args():
+    sig = inspect.signature(ddlDsl_AlterTableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::createtable_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::CreateTable)
+def test_ddldsl_createtable_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_CreateTable)
 
 
-def test_ddldsl::createtable_constructor_exists():
-    assert callable(ddlDsl::CreateTable.__init__)
+def test_ddldsl_createtable_constructor_exists():
+    assert callable(ddlDsl_CreateTable.__init__)
 
 
-def test_ddldsl::createtable_constructor_args():
-    sig = inspect.signature(ddlDsl::CreateTable.__init__)
+def test_ddldsl_createtable_constructor_args():
+    sig = inspect.signature(ddlDsl_CreateTable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -772,71 +772,23 @@ def test_ddlstatement_constructor_args():
 
 
 
-def test_ddldsl::drop_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Drop)
+def test_ddldsl_comment_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Comment)
 
 
-def test_ddldsl::drop_constructor_exists():
-    assert callable(ddlDsl::Drop.__init__)
+def test_ddldsl_comment_constructor_exists():
+    assert callable(ddlDsl_Comment.__init__)
 
 
-def test_ddldsl::drop_constructor_args():
-    sig = inspect.signature(ddlDsl::Drop.__init__)
-    params = list(sig.parameters.keys())
-    assert "object" in params, "Missing parameter 'object'"
-
-def test_ddldsl::drop_has_object():
-    assert hasattr(ddlDsl::Drop, "object")
-    descriptor = None
-    for klass in ddlDsl::Drop.__mro__:
-        if "object" in klass.__dict__:
-            descriptor = klass.__dict__["object"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ddldsl::create_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Create)
-
-
-def test_ddldsl::create_constructor_exists():
-    assert callable(ddlDsl::Create.__init__)
-
-
-def test_ddldsl::create_constructor_args():
-    sig = inspect.signature(ddlDsl::Create.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_ddldsl::create_has_name():
-    assert hasattr(ddlDsl::Create, "name")
-    descriptor = None
-    for klass in ddlDsl::Create.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ddldsl::comment_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Comment)
-
-
-def test_ddldsl::comment_constructor_exists():
-    assert callable(ddlDsl::Comment.__init__)
-
-
-def test_ddldsl::comment_constructor_args():
-    sig = inspect.signature(ddlDsl::Comment.__init__)
+def test_ddldsl_comment_constructor_args():
+    sig = inspect.signature(ddlDsl_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_ddldsl::comment_has_comment():
-    assert hasattr(ddlDsl::Comment, "comment")
+def test_ddldsl_comment_has_comment():
+    assert hasattr(ddlDsl_Comment, "comment")
     descriptor = None
-    for klass in ddlDsl::Comment.__mro__:
+    for klass in ddlDsl_Comment.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -844,37 +796,23 @@ def test_ddldsl::comment_has_comment():
 
 
 
-def test_ddldsl::alter_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Alter)
+def test_ddldsl_create_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Create)
 
 
-def test_ddldsl::alter_constructor_exists():
-    assert callable(ddlDsl::Alter.__init__)
+def test_ddldsl_create_constructor_exists():
+    assert callable(ddlDsl_Create.__init__)
 
 
-def test_ddldsl::alter_constructor_args():
-    sig = inspect.signature(ddlDsl::Alter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ddldsl::sqldatatype_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::SqlDataType)
-
-
-def test_ddldsl::sqldatatype_constructor_exists():
-    assert callable(ddlDsl::SqlDataType.__init__)
-
-
-def test_ddldsl::sqldatatype_constructor_args():
-    sig = inspect.signature(ddlDsl::SqlDataType.__init__)
+def test_ddldsl_create_constructor_args():
+    sig = inspect.signature(ddlDsl_Create.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ddldsl::sqldatatype_has_name():
-    assert hasattr(ddlDsl::SqlDataType, "name")
+def test_ddldsl_create_has_name():
+    assert hasattr(ddlDsl_Create, "name")
     descriptor = None
-    for klass in ddlDsl::SqlDataType.__mro__:
+    for klass in ddlDsl_Create.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -882,30 +820,92 @@ def test_ddldsl::sqldatatype_has_name():
 
 
 
-def test_ddldsl::ddlstatement_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::DdlStatement)
+def test_ddldsl_drop_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Drop)
 
 
-def test_ddldsl::ddlstatement_constructor_exists():
-    assert callable(ddlDsl::DdlStatement.__init__)
+def test_ddldsl_drop_constructor_exists():
+    assert callable(ddlDsl_Drop.__init__)
 
 
-def test_ddldsl::ddlstatement_constructor_args():
-    sig = inspect.signature(ddlDsl::DdlStatement.__init__)
+def test_ddldsl_drop_constructor_args():
+    sig = inspect.signature(ddlDsl_Drop.__init__)
+    params = list(sig.parameters.keys())
+    assert "object" in params, "Missing parameter 'object'"
+
+def test_ddldsl_drop_has_object():
+    assert hasattr(ddlDsl_Drop, "object")
+    descriptor = None
+    for klass in ddlDsl_Drop.__mro__:
+        if "object" in klass.__dict__:
+            descriptor = klass.__dict__["object"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ddldsl_alter_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Alter)
+
+
+def test_ddldsl_alter_constructor_exists():
+    assert callable(ddlDsl_Alter.__init__)
+
+
+def test_ddldsl_alter_constructor_args():
+    sig = inspect.signature(ddlDsl_Alter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddldsl::ddl_is_not_abstract():
-    assert not inspect.isabstract(ddlDsl::Ddl)
+def test_ddldsl_sqldatatype_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_SqlDataType)
 
 
-def test_ddldsl::ddl_constructor_exists():
-    assert callable(ddlDsl::Ddl.__init__)
+def test_ddldsl_sqldatatype_constructor_exists():
+    assert callable(ddlDsl_SqlDataType.__init__)
 
 
-def test_ddldsl::ddl_constructor_args():
-    sig = inspect.signature(ddlDsl::Ddl.__init__)
+def test_ddldsl_sqldatatype_constructor_args():
+    sig = inspect.signature(ddlDsl_SqlDataType.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_ddldsl_sqldatatype_has_name():
+    assert hasattr(ddlDsl_SqlDataType, "name")
+    descriptor = None
+    for klass in ddlDsl_SqlDataType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ddldsl_ddlstatement_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_DdlStatement)
+
+
+def test_ddldsl_ddlstatement_constructor_exists():
+    assert callable(ddlDsl_DdlStatement.__init__)
+
+
+def test_ddldsl_ddlstatement_constructor_args():
+    sig = inspect.signature(ddlDsl_DdlStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ddldsl_ddl_is_not_abstract():
+    assert not inspect.isabstract(ddlDsl_Ddl)
+
+
+def test_ddldsl_ddl_constructor_exists():
+    assert callable(ddlDsl_Ddl.__init__)
+
+
+def test_ddldsl_ddl_constructor_args():
+    sig = inspect.signature(ddlDsl_Ddl.__init__)
     params = list(sig.parameters.keys())
 
 def test_sortdirectionenum_exists():
@@ -916,8 +916,8 @@ def test_sortdirectionenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SortDirectionEnum]
     expected_literals = [
-        "ASC",
         "DESC",
+        "ASC",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -938,181 +938,181 @@ safe_text = st.text(
 SqlDateTime_strategy = st.builds(
     SqlDateTime,
 )
-ddlDsl::SqlInterval_strategy = st.builds(
-    ddlDsl::SqlInterval,
-    year=
-        st.booleans(),
+ddlDsl_SqlTimeStamp_strategy = st.builds(
+    ddlDsl_SqlTimeStamp,
     precision=
+        st.integers()
+)
+ddlDsl_SqlInterval_strategy = st.builds(
+    ddlDsl_SqlInterval,
+    secondsPrecision=
         st.integers(),
     day=
         st.booleans(),
-    secondsPrecision=
-        st.integers()
-)
-ddlDsl::SqlTimeStamp_strategy = st.builds(
-    ddlDsl::SqlTimeStamp,
+    year=
+        st.booleans(),
     precision=
         st.integers()
 )
-ddlDsl::SqlDate_strategy = st.builds(
-    ddlDsl::SqlDate,
+ddlDsl_SqlDate_strategy = st.builds(
+    ddlDsl_SqlDate,
 )
 SqlDataType_strategy = st.builds(
     SqlDataType,
 )
-ddlDsl::SqlDateTime_strategy = st.builds(
-    ddlDsl::SqlDateTime,
+ddlDsl_LongRaw_strategy = st.builds(
+    ddlDsl_LongRaw,
 )
-ddlDsl::LargeObjectType_strategy = st.builds(
-    ddlDsl::LargeObjectType,
-    size=
-        st.integers()
-)
-ddlDsl::LongRaw_strategy = st.builds(
-    ddlDsl::LongRaw,
-)
-ddlDsl::SqlNumber_strategy = st.builds(
-    ddlDsl::SqlNumber,
+ddlDsl_SqlNumber_strategy = st.builds(
+    ddlDsl_SqlNumber,
+    precision=
+        st.integers(),
     hasPrecision=
         st.booleans(),
     scale=
+        st.integers()
+)
+ddlDsl_LargeObjectType_strategy = st.builds(
+    ddlDsl_LargeObjectType,
+    size=
+        st.integers()
+)
+ddlDsl_SqlDateTime_strategy = st.builds(
+    ddlDsl_SqlDateTime,
+)
+ddlDsl_RowIdType_strategy = st.builds(
+    ddlDsl_RowIdType,
+    size=
+        st.integers()
+)
+ddlDsl_SqlBoolean_strategy = st.builds(
+    ddlDsl_SqlBoolean,
+)
+ddlDsl_SqlCharacter_strategy = st.builds(
+    ddlDsl_SqlCharacter,
+    size=
         st.integers(),
-    precision=
-        st.integers()
-)
-ddlDsl::RowIdType_strategy = st.builds(
-    ddlDsl::RowIdType,
-    size=
-        st.integers()
-)
-ddlDsl::SqlBoolean_strategy = st.builds(
-    ddlDsl::SqlBoolean,
-)
-ddlDsl::SqlCharacter_strategy = st.builds(
-    ddlDsl::SqlCharacter,
     national=
-        st.booleans(),
-    size=
-        st.integers()
+        st.booleans()
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-ddlDsl::UniqueKeyConstraint_strategy = st.builds(
-    ddlDsl::UniqueKeyConstraint,
+ddlDsl_UniqueKeyConstraint_strategy = st.builds(
+    ddlDsl_UniqueKeyConstraint,
 )
-ddlDsl::ForeignKeyConstraint_strategy = st.builds(
-    ddlDsl::ForeignKeyConstraint,
+ddlDsl_ForeignKeyConstraint_strategy = st.builds(
+    ddlDsl_ForeignKeyConstraint,
 )
-ddlDsl::PrimaryKeyConstraint_strategy = st.builds(
-    ddlDsl::PrimaryKeyConstraint,
+ddlDsl_PrimaryKeyConstraint_strategy = st.builds(
+    ddlDsl_PrimaryKeyConstraint,
 )
-ddlDsl::NullableConstraint_strategy = st.builds(
-    ddlDsl::NullableConstraint,
+ddlDsl_NullableConstraint_strategy = st.builds(
+    ddlDsl_NullableConstraint,
     not_=
         st.booleans()
 )
-ddlDsl::ReferenceClause_strategy = st.builds(
-    ddlDsl::ReferenceClause,
+ddlDsl_ReferenceClause_strategy = st.builds(
+    ddlDsl_ReferenceClause,
 )
 LongRaw_strategy = st.builds(
     LongRaw,
 )
-ddlDsl::Raw_strategy = st.builds(
-    ddlDsl::Raw,
+ddlDsl_Raw_strategy = st.builds(
+    ddlDsl_Raw,
     size=
         st.integers()
 )
-ddlDsl::Long_strategy = st.builds(
-    ddlDsl::Long,
+ddlDsl_Long_strategy = st.builds(
+    ddlDsl_Long,
     raw=
         st.booleans()
 )
 TableProperty_strategy = st.builds(
     TableProperty,
 )
-ddlDsl::TableProperty_strategy = st.builds(
-    ddlDsl::TableProperty,
+ddlDsl_TableProperty_strategy = st.builds(
+    ddlDsl_TableProperty,
     name=
         safe_text
 )
 Create_strategy = st.builds(
     Create,
 )
-ddlDsl::CreateIndex_strategy = st.builds(
-    ddlDsl::CreateIndex,
-    sortOrders=
-        safe_text,
+ddlDsl_CreateIndex_strategy = st.builds(
+    ddlDsl_CreateIndex,
     unique=
-        st.booleans()
-)
-ddlDsl::Column_strategy = st.builds(
-    ddlDsl::Column,
-    sorted=
         st.booleans(),
-    default=
+    sortOrders=
         safe_text
+)
+ddlDsl_Column_strategy = st.builds(
+    ddlDsl_Column,
+    default=
+        safe_text,
+    sorted=
+        st.booleans()
 )
 Comment_strategy = st.builds(
     Comment,
 )
-ddlDsl::ColumnComment_strategy = st.builds(
-    ddlDsl::ColumnComment,
+ddlDsl_ColumnComment_strategy = st.builds(
+    ddlDsl_ColumnComment,
 )
-ddlDsl::TableComment_strategy = st.builds(
-    ddlDsl::TableComment,
+ddlDsl_TableComment_strategy = st.builds(
+    ddlDsl_TableComment,
 )
 AlterTableAction_strategy = st.builds(
     AlterTableAction,
 )
-ddlDsl::AddTableConstraint_strategy = st.builds(
-    ddlDsl::AddTableConstraint,
+ddlDsl_AddTableConstraint_strategy = st.builds(
+    ddlDsl_AddTableConstraint,
     name=
         safe_text
 )
-ddlDsl::DropTableConstraint_strategy = st.builds(
-    ddlDsl::DropTableConstraint,
+ddlDsl_DropTableConstraint_strategy = st.builds(
+    ddlDsl_DropTableConstraint,
 )
-ddlDsl::Constraint_strategy = st.builds(
-    ddlDsl::Constraint,
+ddlDsl_Constraint_strategy = st.builds(
+    ddlDsl_Constraint,
 )
-ddlDsl::AlterTableAction_strategy = st.builds(
-    ddlDsl::AlterTableAction,
+ddlDsl_AlterTableAction_strategy = st.builds(
+    ddlDsl_AlterTableAction,
 )
-ddlDsl::CreateTable_strategy = st.builds(
-    ddlDsl::CreateTable,
+ddlDsl_CreateTable_strategy = st.builds(
+    ddlDsl_CreateTable,
 )
 DdlStatement_strategy = st.builds(
     DdlStatement,
 )
-ddlDsl::Drop_strategy = st.builds(
-    ddlDsl::Drop,
-    object=
-        safe_text
-)
-ddlDsl::Create_strategy = st.builds(
-    ddlDsl::Create,
-    name=
-        safe_text
-)
-ddlDsl::Comment_strategy = st.builds(
-    ddlDsl::Comment,
+ddlDsl_Comment_strategy = st.builds(
+    ddlDsl_Comment,
     comment=
         safe_text
 )
-ddlDsl::Alter_strategy = st.builds(
-    ddlDsl::Alter,
-)
-ddlDsl::SqlDataType_strategy = st.builds(
-    ddlDsl::SqlDataType,
+ddlDsl_Create_strategy = st.builds(
+    ddlDsl_Create,
     name=
         safe_text
 )
-ddlDsl::DdlStatement_strategy = st.builds(
-    ddlDsl::DdlStatement,
+ddlDsl_Drop_strategy = st.builds(
+    ddlDsl_Drop,
+    object=
+        safe_text
 )
-ddlDsl::Ddl_strategy = st.builds(
-    ddlDsl::Ddl,
+ddlDsl_Alter_strategy = st.builds(
+    ddlDsl_Alter,
+)
+ddlDsl_SqlDataType_strategy = st.builds(
+    ddlDsl_SqlDataType,
+    name=
+        safe_text
+)
+ddlDsl_DdlStatement_strategy = st.builds(
+    ddlDsl_DdlStatement,
+)
+ddlDsl_Ddl_strategy = st.builds(
+    ddlDsl_Ddl,
 )
 
 @given(instance=SqlDateTime_strategy)
@@ -1120,267 +1120,222 @@ ddlDsl::Ddl_strategy = st.builds(
 def test_sqldatetime_instantiation(instance):
     assert isinstance(instance, SqlDateTime)
 
-@given(instance=ddlDsl::SqlInterval_strategy)
+@given(instance=ddlDsl_SqlTimeStamp_strategy)
 @settings(max_examples=50)
-def test_ddldsl::sqlinterval_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlInterval)
-
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_year_type(instance):
-    assert isinstance(instance.year, bool)
+def test_ddldsl_sqltimestamp_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlTimeStamp)
 
 
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
 
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_precision_type(instance):
-    assert isinstance(instance.precision, int)
-
-
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_precision_setter(instance):
+@given(instance=ddlDsl_SqlTimeStamp_strategy)
+def test_ddldsl_sqltimestamp_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_day_type(instance):
-    assert isinstance(instance.day, bool)
+@given(instance=ddlDsl_SqlInterval_strategy)
+@settings(max_examples=50)
+def test_ddldsl_sqlinterval_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlInterval)
 
 
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_day_setter(instance):
-    original = instance.day
-    instance.day = original
-    assert instance.day == original
 
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_secondsPrecision_type(instance):
-    assert isinstance(instance.secondsPrecision, int)
-
-
-@given(instance=ddlDsl::SqlInterval_strategy)
-def test_ddldsl::sqlinterval_secondsPrecision_setter(instance):
+@given(instance=ddlDsl_SqlInterval_strategy)
+def test_ddldsl_sqlinterval_secondsPrecision_setter(instance):
     original = instance.secondsPrecision
     instance.secondsPrecision = original
     assert instance.secondsPrecision == original
 
-@given(instance=ddlDsl::SqlTimeStamp_strategy)
-@settings(max_examples=50)
-def test_ddldsl::sqltimestamp_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlTimeStamp)
-
-@given(instance=ddlDsl::SqlTimeStamp_strategy)
-def test_ddldsl::sqltimestamp_precision_type(instance):
-    assert isinstance(instance.precision, int)
 
 
-@given(instance=ddlDsl::SqlTimeStamp_strategy)
-def test_ddldsl::sqltimestamp_precision_setter(instance):
+@given(instance=ddlDsl_SqlInterval_strategy)
+def test_ddldsl_sqlinterval_day_setter(instance):
+    original = instance.day
+    instance.day = original
+    assert instance.day == original
+
+
+
+@given(instance=ddlDsl_SqlInterval_strategy)
+def test_ddldsl_sqlinterval_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original
+
+
+
+@given(instance=ddlDsl_SqlInterval_strategy)
+def test_ddldsl_sqlinterval_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=ddlDsl::SqlDate_strategy)
+@given(instance=ddlDsl_SqlDate_strategy)
 @settings(max_examples=50)
-def test_ddldsl::sqldate_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlDate)
+def test_ddldsl_sqldate_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlDate)
 
 @given(instance=SqlDataType_strategy)
 @settings(max_examples=50)
 def test_sqldatatype_instantiation(instance):
     assert isinstance(instance, SqlDataType)
 
-@given(instance=ddlDsl::SqlDateTime_strategy)
+@given(instance=ddlDsl_LongRaw_strategy)
 @settings(max_examples=50)
-def test_ddldsl::sqldatetime_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlDateTime)
+def test_ddldsl_longraw_instantiation(instance):
+    assert isinstance(instance, ddlDsl_LongRaw)
 
-@given(instance=ddlDsl::LargeObjectType_strategy)
+@given(instance=ddlDsl_SqlNumber_strategy)
 @settings(max_examples=50)
-def test_ddldsl::largeobjecttype_instantiation(instance):
-    assert isinstance(instance, ddlDsl::LargeObjectType)
-
-@given(instance=ddlDsl::LargeObjectType_strategy)
-def test_ddldsl::largeobjecttype_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_ddldsl_sqlnumber_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlNumber)
 
 
-@given(instance=ddlDsl::LargeObjectType_strategy)
-def test_ddldsl::largeobjecttype_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
 
-@given(instance=ddlDsl::LongRaw_strategy)
-@settings(max_examples=50)
-def test_ddldsl::longraw_instantiation(instance):
-    assert isinstance(instance, ddlDsl::LongRaw)
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-@settings(max_examples=50)
-def test_ddldsl::sqlnumber_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlNumber)
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-def test_ddldsl::sqlnumber_hasPrecision_type(instance):
-    assert isinstance(instance.hasPrecision, bool)
-
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-def test_ddldsl::sqlnumber_hasPrecision_setter(instance):
-    original = instance.hasPrecision
-    instance.hasPrecision = original
-    assert instance.hasPrecision == original
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-def test_ddldsl::sqlnumber_scale_type(instance):
-    assert isinstance(instance.scale, int)
-
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-def test_ddldsl::sqlnumber_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-def test_ddldsl::sqlnumber_precision_type(instance):
-    assert isinstance(instance.precision, int)
-
-
-@given(instance=ddlDsl::SqlNumber_strategy)
-def test_ddldsl::sqlnumber_precision_setter(instance):
+@given(instance=ddlDsl_SqlNumber_strategy)
+def test_ddldsl_sqlnumber_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=ddlDsl::RowIdType_strategy)
+
+
+@given(instance=ddlDsl_SqlNumber_strategy)
+def test_ddldsl_sqlnumber_hasPrecision_setter(instance):
+    original = instance.hasPrecision
+    instance.hasPrecision = original
+    assert instance.hasPrecision == original
+
+
+
+@given(instance=ddlDsl_SqlNumber_strategy)
+def test_ddldsl_sqlnumber_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+@given(instance=ddlDsl_LargeObjectType_strategy)
 @settings(max_examples=50)
-def test_ddldsl::rowidtype_instantiation(instance):
-    assert isinstance(instance, ddlDsl::RowIdType)
-
-@given(instance=ddlDsl::RowIdType_strategy)
-def test_ddldsl::rowidtype_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_ddldsl_largeobjecttype_instantiation(instance):
+    assert isinstance(instance, ddlDsl_LargeObjectType)
 
 
-@given(instance=ddlDsl::RowIdType_strategy)
-def test_ddldsl::rowidtype_size_setter(instance):
+
+@given(instance=ddlDsl_LargeObjectType_strategy)
+def test_ddldsl_largeobjecttype_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=ddlDsl::SqlBoolean_strategy)
+@given(instance=ddlDsl_SqlDateTime_strategy)
 @settings(max_examples=50)
-def test_ddldsl::sqlboolean_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlBoolean)
+def test_ddldsl_sqldatetime_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlDateTime)
 
-@given(instance=ddlDsl::SqlCharacter_strategy)
+@given(instance=ddlDsl_RowIdType_strategy)
 @settings(max_examples=50)
-def test_ddldsl::sqlcharacter_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlCharacter)
-
-@given(instance=ddlDsl::SqlCharacter_strategy)
-def test_ddldsl::sqlcharacter_national_type(instance):
-    assert isinstance(instance.national, bool)
+def test_ddldsl_rowidtype_instantiation(instance):
+    assert isinstance(instance, ddlDsl_RowIdType)
 
 
-@given(instance=ddlDsl::SqlCharacter_strategy)
-def test_ddldsl::sqlcharacter_national_setter(instance):
+
+@given(instance=ddlDsl_RowIdType_strategy)
+def test_ddldsl_rowidtype_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=ddlDsl_SqlBoolean_strategy)
+@settings(max_examples=50)
+def test_ddldsl_sqlboolean_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlBoolean)
+
+@given(instance=ddlDsl_SqlCharacter_strategy)
+@settings(max_examples=50)
+def test_ddldsl_sqlcharacter_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlCharacter)
+
+
+
+@given(instance=ddlDsl_SqlCharacter_strategy)
+def test_ddldsl_sqlcharacter_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=ddlDsl_SqlCharacter_strategy)
+def test_ddldsl_sqlcharacter_national_setter(instance):
     original = instance.national
     instance.national = original
     assert instance.national == original
-
-@given(instance=ddlDsl::SqlCharacter_strategy)
-def test_ddldsl::sqlcharacter_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=ddlDsl::SqlCharacter_strategy)
-def test_ddldsl::sqlcharacter_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=ddlDsl::UniqueKeyConstraint_strategy)
+@given(instance=ddlDsl_UniqueKeyConstraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::uniquekeyconstraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::UniqueKeyConstraint)
+def test_ddldsl_uniquekeyconstraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_UniqueKeyConstraint)
 
-@given(instance=ddlDsl::ForeignKeyConstraint_strategy)
+@given(instance=ddlDsl_ForeignKeyConstraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::foreignkeyconstraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::ForeignKeyConstraint)
+def test_ddldsl_foreignkeyconstraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_ForeignKeyConstraint)
 
-@given(instance=ddlDsl::PrimaryKeyConstraint_strategy)
+@given(instance=ddlDsl_PrimaryKeyConstraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::primarykeyconstraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::PrimaryKeyConstraint)
+def test_ddldsl_primarykeyconstraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_PrimaryKeyConstraint)
 
-@given(instance=ddlDsl::NullableConstraint_strategy)
+@given(instance=ddlDsl_NullableConstraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::nullableconstraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::NullableConstraint)
-
-@given(instance=ddlDsl::NullableConstraint_strategy)
-def test_ddldsl::nullableconstraint_not__type(instance):
-    assert isinstance(instance.not_, bool)
+def test_ddldsl_nullableconstraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_NullableConstraint)
 
 
-@given(instance=ddlDsl::NullableConstraint_strategy)
-def test_ddldsl::nullableconstraint_not__setter(instance):
+
+@given(instance=ddlDsl_NullableConstraint_strategy)
+def test_ddldsl_nullableconstraint_not__setter(instance):
     original = instance.not_
     instance.not_ = original
     assert instance.not_ == original
 
-@given(instance=ddlDsl::ReferenceClause_strategy)
+@given(instance=ddlDsl_ReferenceClause_strategy)
 @settings(max_examples=50)
-def test_ddldsl::referenceclause_instantiation(instance):
-    assert isinstance(instance, ddlDsl::ReferenceClause)
+def test_ddldsl_referenceclause_instantiation(instance):
+    assert isinstance(instance, ddlDsl_ReferenceClause)
 
 @given(instance=LongRaw_strategy)
 @settings(max_examples=50)
 def test_longraw_instantiation(instance):
     assert isinstance(instance, LongRaw)
 
-@given(instance=ddlDsl::Raw_strategy)
+@given(instance=ddlDsl_Raw_strategy)
 @settings(max_examples=50)
-def test_ddldsl::raw_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Raw)
-
-@given(instance=ddlDsl::Raw_strategy)
-def test_ddldsl::raw_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_ddldsl_raw_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Raw)
 
 
-@given(instance=ddlDsl::Raw_strategy)
-def test_ddldsl::raw_size_setter(instance):
+
+@given(instance=ddlDsl_Raw_strategy)
+def test_ddldsl_raw_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=ddlDsl::Long_strategy)
+@given(instance=ddlDsl_Long_strategy)
 @settings(max_examples=50)
-def test_ddldsl::long_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Long)
-
-@given(instance=ddlDsl::Long_strategy)
-def test_ddldsl::long_raw_type(instance):
-    assert isinstance(instance.raw, bool)
+def test_ddldsl_long_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Long)
 
 
-@given(instance=ddlDsl::Long_strategy)
-def test_ddldsl::long_raw_setter(instance):
+
+@given(instance=ddlDsl_Long_strategy)
+def test_ddldsl_long_raw_setter(instance):
     original = instance.raw
     instance.raw = original
     assert instance.raw == original
@@ -1390,18 +1345,15 @@ def test_ddldsl::long_raw_setter(instance):
 def test_tableproperty_instantiation(instance):
     assert isinstance(instance, TableProperty)
 
-@given(instance=ddlDsl::TableProperty_strategy)
+@given(instance=ddlDsl_TableProperty_strategy)
 @settings(max_examples=50)
-def test_ddldsl::tableproperty_instantiation(instance):
-    assert isinstance(instance, ddlDsl::TableProperty)
-
-@given(instance=ddlDsl::TableProperty_strategy)
-def test_ddldsl::tableproperty_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ddldsl_tableproperty_instantiation(instance):
+    assert isinstance(instance, ddlDsl_TableProperty)
 
 
-@given(instance=ddlDsl::TableProperty_strategy)
-def test_ddldsl::tableproperty_name_setter(instance):
+
+@given(instance=ddlDsl_TableProperty_strategy)
+def test_ddldsl_tableproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1411,196 +1363,169 @@ def test_ddldsl::tableproperty_name_setter(instance):
 def test_create_instantiation(instance):
     assert isinstance(instance, Create)
 
-@given(instance=ddlDsl::CreateIndex_strategy)
+@given(instance=ddlDsl_CreateIndex_strategy)
 @settings(max_examples=50)
-def test_ddldsl::createindex_instantiation(instance):
-    assert isinstance(instance, ddlDsl::CreateIndex)
-
-@given(instance=ddlDsl::CreateIndex_strategy)
-def test_ddldsl::createindex_sortOrders_type(instance):
-    assert isinstance(instance.sortOrders, str)
+def test_ddldsl_createindex_instantiation(instance):
+    assert isinstance(instance, ddlDsl_CreateIndex)
 
 
-@given(instance=ddlDsl::CreateIndex_strategy)
-def test_ddldsl::createindex_sortOrders_setter(instance):
-    original = instance.sortOrders
-    instance.sortOrders = original
-    assert instance.sortOrders == original
 
-@given(instance=ddlDsl::CreateIndex_strategy)
-def test_ddldsl::createindex_unique_type(instance):
-    assert isinstance(instance.unique, bool)
-
-
-@given(instance=ddlDsl::CreateIndex_strategy)
-def test_ddldsl::createindex_unique_setter(instance):
+@given(instance=ddlDsl_CreateIndex_strategy)
+def test_ddldsl_createindex_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
 
-@given(instance=ddlDsl::Column_strategy)
+
+
+@given(instance=ddlDsl_CreateIndex_strategy)
+def test_ddldsl_createindex_sortOrders_setter(instance):
+    original = instance.sortOrders
+    instance.sortOrders = original
+    assert instance.sortOrders == original
+
+@given(instance=ddlDsl_Column_strategy)
 @settings(max_examples=50)
-def test_ddldsl::column_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Column)
-
-@given(instance=ddlDsl::Column_strategy)
-def test_ddldsl::column_sorted_type(instance):
-    assert isinstance(instance.sorted, bool)
+def test_ddldsl_column_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Column)
 
 
-@given(instance=ddlDsl::Column_strategy)
-def test_ddldsl::column_sorted_setter(instance):
-    original = instance.sorted
-    instance.sorted = original
-    assert instance.sorted == original
 
-@given(instance=ddlDsl::Column_strategy)
-def test_ddldsl::column_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=ddlDsl::Column_strategy)
-def test_ddldsl::column_default_setter(instance):
+@given(instance=ddlDsl_Column_strategy)
+def test_ddldsl_column_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
+
+
+
+@given(instance=ddlDsl_Column_strategy)
+def test_ddldsl_column_sorted_setter(instance):
+    original = instance.sorted
+    instance.sorted = original
+    assert instance.sorted == original
 
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=ddlDsl::ColumnComment_strategy)
+@given(instance=ddlDsl_ColumnComment_strategy)
 @settings(max_examples=50)
-def test_ddldsl::columncomment_instantiation(instance):
-    assert isinstance(instance, ddlDsl::ColumnComment)
+def test_ddldsl_columncomment_instantiation(instance):
+    assert isinstance(instance, ddlDsl_ColumnComment)
 
-@given(instance=ddlDsl::TableComment_strategy)
+@given(instance=ddlDsl_TableComment_strategy)
 @settings(max_examples=50)
-def test_ddldsl::tablecomment_instantiation(instance):
-    assert isinstance(instance, ddlDsl::TableComment)
+def test_ddldsl_tablecomment_instantiation(instance):
+    assert isinstance(instance, ddlDsl_TableComment)
 
 @given(instance=AlterTableAction_strategy)
 @settings(max_examples=50)
 def test_altertableaction_instantiation(instance):
     assert isinstance(instance, AlterTableAction)
 
-@given(instance=ddlDsl::AddTableConstraint_strategy)
+@given(instance=ddlDsl_AddTableConstraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::addtableconstraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::AddTableConstraint)
-
-@given(instance=ddlDsl::AddTableConstraint_strategy)
-def test_ddldsl::addtableconstraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ddldsl_addtableconstraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_AddTableConstraint)
 
 
-@given(instance=ddlDsl::AddTableConstraint_strategy)
-def test_ddldsl::addtableconstraint_name_setter(instance):
+
+@given(instance=ddlDsl_AddTableConstraint_strategy)
+def test_ddldsl_addtableconstraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ddlDsl::DropTableConstraint_strategy)
+@given(instance=ddlDsl_DropTableConstraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::droptableconstraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::DropTableConstraint)
+def test_ddldsl_droptableconstraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_DropTableConstraint)
 
-@given(instance=ddlDsl::Constraint_strategy)
+@given(instance=ddlDsl_Constraint_strategy)
 @settings(max_examples=50)
-def test_ddldsl::constraint_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Constraint)
+def test_ddldsl_constraint_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Constraint)
 
-@given(instance=ddlDsl::AlterTableAction_strategy)
+@given(instance=ddlDsl_AlterTableAction_strategy)
 @settings(max_examples=50)
-def test_ddldsl::altertableaction_instantiation(instance):
-    assert isinstance(instance, ddlDsl::AlterTableAction)
+def test_ddldsl_altertableaction_instantiation(instance):
+    assert isinstance(instance, ddlDsl_AlterTableAction)
 
-@given(instance=ddlDsl::CreateTable_strategy)
+@given(instance=ddlDsl_CreateTable_strategy)
 @settings(max_examples=50)
-def test_ddldsl::createtable_instantiation(instance):
-    assert isinstance(instance, ddlDsl::CreateTable)
+def test_ddldsl_createtable_instantiation(instance):
+    assert isinstance(instance, ddlDsl_CreateTable)
 
 @given(instance=DdlStatement_strategy)
 @settings(max_examples=50)
 def test_ddlstatement_instantiation(instance):
     assert isinstance(instance, DdlStatement)
 
-@given(instance=ddlDsl::Drop_strategy)
+@given(instance=ddlDsl_Comment_strategy)
 @settings(max_examples=50)
-def test_ddldsl::drop_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Drop)
-
-@given(instance=ddlDsl::Drop_strategy)
-def test_ddldsl::drop_object_type(instance):
-    assert isinstance(instance.object, str)
+def test_ddldsl_comment_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Comment)
 
 
-@given(instance=ddlDsl::Drop_strategy)
-def test_ddldsl::drop_object_setter(instance):
-    original = instance.object
-    instance.object = original
-    assert instance.object == original
 
-@given(instance=ddlDsl::Create_strategy)
-@settings(max_examples=50)
-def test_ddldsl::create_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Create)
-
-@given(instance=ddlDsl::Create_strategy)
-def test_ddldsl::create_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ddlDsl::Create_strategy)
-def test_ddldsl::create_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ddlDsl::Comment_strategy)
-@settings(max_examples=50)
-def test_ddldsl::comment_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Comment)
-
-@given(instance=ddlDsl::Comment_strategy)
-def test_ddldsl::comment_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=ddlDsl::Comment_strategy)
-def test_ddldsl::comment_comment_setter(instance):
+@given(instance=ddlDsl_Comment_strategy)
+def test_ddldsl_comment_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=ddlDsl::Alter_strategy)
+@given(instance=ddlDsl_Create_strategy)
 @settings(max_examples=50)
-def test_ddldsl::alter_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Alter)
-
-@given(instance=ddlDsl::SqlDataType_strategy)
-@settings(max_examples=50)
-def test_ddldsl::sqldatatype_instantiation(instance):
-    assert isinstance(instance, ddlDsl::SqlDataType)
-
-@given(instance=ddlDsl::SqlDataType_strategy)
-def test_ddldsl::sqldatatype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ddldsl_create_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Create)
 
 
-@given(instance=ddlDsl::SqlDataType_strategy)
-def test_ddldsl::sqldatatype_name_setter(instance):
+
+@given(instance=ddlDsl_Create_strategy)
+def test_ddldsl_create_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ddlDsl::DdlStatement_strategy)
+@given(instance=ddlDsl_Drop_strategy)
 @settings(max_examples=50)
-def test_ddldsl::ddlstatement_instantiation(instance):
-    assert isinstance(instance, ddlDsl::DdlStatement)
+def test_ddldsl_drop_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Drop)
 
-@given(instance=ddlDsl::Ddl_strategy)
+
+
+@given(instance=ddlDsl_Drop_strategy)
+def test_ddldsl_drop_object_setter(instance):
+    original = instance.object
+    instance.object = original
+    assert instance.object == original
+
+@given(instance=ddlDsl_Alter_strategy)
 @settings(max_examples=50)
-def test_ddldsl::ddl_instantiation(instance):
-    assert isinstance(instance, ddlDsl::Ddl)
+def test_ddldsl_alter_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Alter)
+
+@given(instance=ddlDsl_SqlDataType_strategy)
+@settings(max_examples=50)
+def test_ddldsl_sqldatatype_instantiation(instance):
+    assert isinstance(instance, ddlDsl_SqlDataType)
+
+
+
+@given(instance=ddlDsl_SqlDataType_strategy)
+def test_ddldsl_sqldatatype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=ddlDsl_DdlStatement_strategy)
+@settings(max_examples=50)
+def test_ddldsl_ddlstatement_instantiation(instance):
+    assert isinstance(instance, ddlDsl_DdlStatement)
+
+@given(instance=ddlDsl_Ddl_strategy)
+@settings(max_examples=50)
+def test_ddldsl_ddl_instantiation(instance):
+    assert isinstance(instance, ddlDsl_Ddl)

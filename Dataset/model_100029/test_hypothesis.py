@@ -3,39 +3,39 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    publication::SimpleFeature,
-    publication::Organization,
+from python_code import (
+    publication_SimpleFeature,
+    publication_Organization,
     Journal,
-    publication::JournalIssue,
-    publication::Ontology,
-    publication::Contact,
+    publication_JournalIssue,
+    publication_Ontology,
+    publication_Contact,
     Article,
-    publication::JournalArticle,
-    publication::BookArticle,
+    publication_JournalArticle,
+    publication_BookArticle,
     SimpleFeature,
-    publication::SimpleCitation,
+    publication_SimpleCitation,
     SimpleIdentifier,
-    publication::BiblioReferenceSet,
-    publication::Indexing,
-    publication::Content,
-    publication::OrderedLegalEntitySet,
-    publication::LegalEntity,
-    publication::SimpleOntologyTerm,
+    publication_BiblioReferenceSet,
+    publication_Indexing,
+    publication_Content,
+    publication_OrderedLegalEntitySet,
+    publication_LegalEntity,
+    publication_SimpleOntologyTerm,
     SimpleCitation,
-    publication::BiblioReference,
+    publication_BiblioReference,
     BiblioReference,
-    publication::Book,
-    publication::Protocol,
-    publication::Thesis,
-    publication::Journal,
-    publication::TechnicalReport,
-    publication::Multimedia,
-    publication::Proceeding,
-    publication::Article,
-    publication::WebResource,
+    publication_Thesis,
+    publication_Journal,
+    publication_TechnicalReport,
+    publication_Proceeding,
+    publication_Multimedia,
+    publication_Protocol,
+    publication_WebResource,
+    publication_Book,
+    publication_Article,
 )
 
 # =============================================================================
@@ -44,30 +44,30 @@ from classes import (
 
 
 
-def test_publication::simplefeature_is_not_abstract():
-    assert not inspect.isabstract(publication::SimpleFeature)
+def test_publication_simplefeature_is_not_abstract():
+    assert not inspect.isabstract(publication_SimpleFeature)
 
 
-def test_publication::simplefeature_constructor_exists():
-    assert callable(publication::SimpleFeature.__init__)
+def test_publication_simplefeature_constructor_exists():
+    assert callable(publication_SimpleFeature.__init__)
 
 
-def test_publication::simplefeature_constructor_args():
-    sig = inspect.signature(publication::SimpleFeature.__init__)
+def test_publication_simplefeature_constructor_args():
+    sig = inspect.signature(publication_SimpleFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::organization_is_not_abstract():
-    assert not inspect.isabstract(publication::Organization)
+def test_publication_organization_is_not_abstract():
+    assert not inspect.isabstract(publication_Organization)
 
 
-def test_publication::organization_constructor_exists():
-    assert callable(publication::Organization.__init__)
+def test_publication_organization_constructor_exists():
+    assert callable(publication_Organization.__init__)
 
 
-def test_publication::organization_constructor_args():
-    sig = inspect.signature(publication::Organization.__init__)
+def test_publication_organization_constructor_args():
+    sig = inspect.signature(publication_Organization.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,74 +86,74 @@ def test_journal_constructor_args():
 
 
 
-def test_publication::journalissue_is_not_abstract():
-    assert not inspect.isabstract(publication::JournalIssue)
+def test_publication_journalissue_is_not_abstract():
+    assert not inspect.isabstract(publication_JournalIssue)
 
 
-def test_publication::journalissue_constructor_exists():
-    assert callable(publication::JournalIssue.__init__)
+def test_publication_journalissue_constructor_exists():
+    assert callable(publication_JournalIssue.__init__)
 
 
-def test_publication::journalissue_constructor_args():
-    sig = inspect.signature(publication::JournalIssue.__init__)
+def test_publication_journalissue_constructor_args():
+    sig = inspect.signature(publication_JournalIssue.__init__)
     params = list(sig.parameters.keys())
-    assert "issue" in params, "Missing parameter 'issue'"
     assert "volume" in params, "Missing parameter 'volume'"
     assert "issueSupplement" in params, "Missing parameter 'issueSupplement'"
+    assert "issue" in params, "Missing parameter 'issue'"
 
-def test_publication::journalissue_has_issue():
-    assert hasattr(publication::JournalIssue, "issue")
+def test_publication_journalissue_has_volume():
+    assert hasattr(publication_JournalIssue, "volume")
     descriptor = None
-    for klass in publication::JournalIssue.__mro__:
-        if "issue" in klass.__dict__:
-            descriptor = klass.__dict__["issue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::journalissue_has_volume():
-    assert hasattr(publication::JournalIssue, "volume")
-    descriptor = None
-    for klass in publication::JournalIssue.__mro__:
+    for klass in publication_JournalIssue.__mro__:
         if "volume" in klass.__dict__:
             descriptor = klass.__dict__["volume"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::journalissue_has_issueSupplement():
-    assert hasattr(publication::JournalIssue, "issueSupplement")
+def test_publication_journalissue_has_issueSupplement():
+    assert hasattr(publication_JournalIssue, "issueSupplement")
     descriptor = None
-    for klass in publication::JournalIssue.__mro__:
+    for klass in publication_JournalIssue.__mro__:
         if "issueSupplement" in klass.__dict__:
             descriptor = klass.__dict__["issueSupplement"]
             break
     assert isinstance(descriptor, property)
 
+def test_publication_journalissue_has_issue():
+    assert hasattr(publication_JournalIssue, "issue")
+    descriptor = None
+    for klass in publication_JournalIssue.__mro__:
+        if "issue" in klass.__dict__:
+            descriptor = klass.__dict__["issue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_publication::ontology_is_not_abstract():
-    assert not inspect.isabstract(publication::Ontology)
+
+def test_publication_ontology_is_not_abstract():
+    assert not inspect.isabstract(publication_Ontology)
 
 
-def test_publication::ontology_constructor_exists():
-    assert callable(publication::Ontology.__init__)
+def test_publication_ontology_constructor_exists():
+    assert callable(publication_Ontology.__init__)
 
 
-def test_publication::ontology_constructor_args():
-    sig = inspect.signature(publication::Ontology.__init__)
+def test_publication_ontology_constructor_args():
+    sig = inspect.signature(publication_Ontology.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::contact_is_not_abstract():
-    assert not inspect.isabstract(publication::Contact)
+def test_publication_contact_is_not_abstract():
+    assert not inspect.isabstract(publication_Contact)
 
 
-def test_publication::contact_constructor_exists():
-    assert callable(publication::Contact.__init__)
+def test_publication_contact_constructor_exists():
+    assert callable(publication_Contact.__init__)
 
 
-def test_publication::contact_constructor_args():
-    sig = inspect.signature(publication::Contact.__init__)
+def test_publication_contact_constructor_args():
+    sig = inspect.signature(publication_Contact.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -172,37 +172,37 @@ def test_article_constructor_args():
 
 
 
-def test_publication::journalarticle_is_not_abstract():
-    assert not inspect.isabstract(publication::JournalArticle)
+def test_publication_journalarticle_is_not_abstract():
+    assert not inspect.isabstract(publication_JournalArticle)
 
 
-def test_publication::journalarticle_constructor_exists():
-    assert callable(publication::JournalArticle.__init__)
+def test_publication_journalarticle_constructor_exists():
+    assert callable(publication_JournalArticle.__init__)
 
 
-def test_publication::journalarticle_constructor_args():
-    sig = inspect.signature(publication::JournalArticle.__init__)
+def test_publication_journalarticle_constructor_args():
+    sig = inspect.signature(publication_JournalArticle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::bookarticle_is_not_abstract():
-    assert not inspect.isabstract(publication::BookArticle)
+def test_publication_bookarticle_is_not_abstract():
+    assert not inspect.isabstract(publication_BookArticle)
 
 
-def test_publication::bookarticle_constructor_exists():
-    assert callable(publication::BookArticle.__init__)
+def test_publication_bookarticle_constructor_exists():
+    assert callable(publication_BookArticle.__init__)
 
 
-def test_publication::bookarticle_constructor_args():
-    sig = inspect.signature(publication::BookArticle.__init__)
+def test_publication_bookarticle_constructor_args():
+    sig = inspect.signature(publication_BookArticle.__init__)
     params = list(sig.parameters.keys())
     assert "section" in params, "Missing parameter 'section'"
 
-def test_publication::bookarticle_has_section():
-    assert hasattr(publication::BookArticle, "section")
+def test_publication_bookarticle_has_section():
+    assert hasattr(publication_BookArticle, "section")
     descriptor = None
-    for klass in publication::BookArticle.__mro__:
+    for klass in publication_BookArticle.__mro__:
         if "section" in klass.__dict__:
             descriptor = klass.__dict__["section"]
             break
@@ -224,45 +224,45 @@ def test_simplefeature_constructor_args():
 
 
 
-def test_publication::simplecitation_is_not_abstract():
-    assert not inspect.isabstract(publication::SimpleCitation)
+def test_publication_simplecitation_is_not_abstract():
+    assert not inspect.isabstract(publication_SimpleCitation)
 
 
-def test_publication::simplecitation_constructor_exists():
-    assert callable(publication::SimpleCitation.__init__)
+def test_publication_simplecitation_constructor_exists():
+    assert callable(publication_SimpleCitation.__init__)
 
 
-def test_publication::simplecitation_constructor_args():
-    sig = inspect.signature(publication::SimpleCitation.__init__)
+def test_publication_simplecitation_constructor_args():
+    sig = inspect.signature(publication_SimpleCitation.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
-    assert "source" in params, "Missing parameter 'source'"
     assert "authorList" in params, "Missing parameter 'authorList'"
+    assert "source" in params, "Missing parameter 'source'"
+    assert "date" in params, "Missing parameter 'date'"
 
-def test_publication::simplecitation_has_date():
-    assert hasattr(publication::SimpleCitation, "date")
+def test_publication_simplecitation_has_authorList():
+    assert hasattr(publication_SimpleCitation, "authorList")
     descriptor = None
-    for klass in publication::SimpleCitation.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
+    for klass in publication_SimpleCitation.__mro__:
+        if "authorList" in klass.__dict__:
+            descriptor = klass.__dict__["authorList"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::simplecitation_has_source():
-    assert hasattr(publication::SimpleCitation, "source")
+def test_publication_simplecitation_has_source():
+    assert hasattr(publication_SimpleCitation, "source")
     descriptor = None
-    for klass in publication::SimpleCitation.__mro__:
+    for klass in publication_SimpleCitation.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::simplecitation_has_authorList():
-    assert hasattr(publication::SimpleCitation, "authorList")
+def test_publication_simplecitation_has_date():
+    assert hasattr(publication_SimpleCitation, "date")
     descriptor = None
-    for klass in publication::SimpleCitation.__mro__:
-        if "authorList" in klass.__dict__:
-            descriptor = klass.__dict__["authorList"]
+    for klass in publication_SimpleCitation.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -282,37 +282,37 @@ def test_simpleidentifier_constructor_args():
 
 
 
-def test_publication::biblioreferenceset_is_not_abstract():
-    assert not inspect.isabstract(publication::BiblioReferenceSet)
+def test_publication_biblioreferenceset_is_not_abstract():
+    assert not inspect.isabstract(publication_BiblioReferenceSet)
 
 
-def test_publication::biblioreferenceset_constructor_exists():
-    assert callable(publication::BiblioReferenceSet.__init__)
+def test_publication_biblioreferenceset_constructor_exists():
+    assert callable(publication_BiblioReferenceSet.__init__)
 
 
-def test_publication::biblioreferenceset_constructor_args():
-    sig = inspect.signature(publication::BiblioReferenceSet.__init__)
+def test_publication_biblioreferenceset_constructor_args():
+    sig = inspect.signature(publication_BiblioReferenceSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::indexing_is_not_abstract():
-    assert not inspect.isabstract(publication::Indexing)
+def test_publication_indexing_is_not_abstract():
+    assert not inspect.isabstract(publication_Indexing)
 
 
-def test_publication::indexing_constructor_exists():
-    assert callable(publication::Indexing.__init__)
+def test_publication_indexing_constructor_exists():
+    assert callable(publication_Indexing.__init__)
 
 
-def test_publication::indexing_constructor_args():
-    sig = inspect.signature(publication::Indexing.__init__)
+def test_publication_indexing_constructor_args():
+    sig = inspect.signature(publication_Indexing.__init__)
     params = list(sig.parameters.keys())
     assert "keywords" in params, "Missing parameter 'keywords'"
 
-def test_publication::indexing_has_keywords():
-    assert hasattr(publication::Indexing, "keywords")
+def test_publication_indexing_has_keywords():
+    assert hasattr(publication_Indexing, "keywords")
     descriptor = None
-    for klass in publication::Indexing.__mro__:
+    for klass in publication_Indexing.__mro__:
         if "keywords" in klass.__dict__:
             descriptor = klass.__dict__["keywords"]
             break
@@ -320,23 +320,23 @@ def test_publication::indexing_has_keywords():
 
 
 
-def test_publication::content_is_not_abstract():
-    assert not inspect.isabstract(publication::Content)
+def test_publication_content_is_not_abstract():
+    assert not inspect.isabstract(publication_Content)
 
 
-def test_publication::content_constructor_exists():
-    assert callable(publication::Content.__init__)
+def test_publication_content_constructor_exists():
+    assert callable(publication_Content.__init__)
 
 
-def test_publication::content_constructor_args():
-    sig = inspect.signature(publication::Content.__init__)
+def test_publication_content_constructor_args():
+    sig = inspect.signature(publication_Content.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_publication::content_has_body():
-    assert hasattr(publication::Content, "body")
+def test_publication_content_has_body():
+    assert hasattr(publication_Content, "body")
     descriptor = None
-    for klass in publication::Content.__mro__:
+    for klass in publication_Content.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -344,44 +344,44 @@ def test_publication::content_has_body():
 
 
 
-def test_publication::orderedlegalentityset_is_not_abstract():
-    assert not inspect.isabstract(publication::OrderedLegalEntitySet)
+def test_publication_orderedlegalentityset_is_not_abstract():
+    assert not inspect.isabstract(publication_OrderedLegalEntitySet)
 
 
-def test_publication::orderedlegalentityset_constructor_exists():
-    assert callable(publication::OrderedLegalEntitySet.__init__)
+def test_publication_orderedlegalentityset_constructor_exists():
+    assert callable(publication_OrderedLegalEntitySet.__init__)
 
 
-def test_publication::orderedlegalentityset_constructor_args():
-    sig = inspect.signature(publication::OrderedLegalEntitySet.__init__)
+def test_publication_orderedlegalentityset_constructor_args():
+    sig = inspect.signature(publication_OrderedLegalEntitySet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::legalentity_is_not_abstract():
-    assert not inspect.isabstract(publication::LegalEntity)
+def test_publication_legalentity_is_not_abstract():
+    assert not inspect.isabstract(publication_LegalEntity)
 
 
-def test_publication::legalentity_constructor_exists():
-    assert callable(publication::LegalEntity.__init__)
+def test_publication_legalentity_constructor_exists():
+    assert callable(publication_LegalEntity.__init__)
 
 
-def test_publication::legalentity_constructor_args():
-    sig = inspect.signature(publication::LegalEntity.__init__)
+def test_publication_legalentity_constructor_args():
+    sig = inspect.signature(publication_LegalEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::simpleontologyterm_is_not_abstract():
-    assert not inspect.isabstract(publication::SimpleOntologyTerm)
+def test_publication_simpleontologyterm_is_not_abstract():
+    assert not inspect.isabstract(publication_SimpleOntologyTerm)
 
 
-def test_publication::simpleontologyterm_constructor_exists():
-    assert callable(publication::SimpleOntologyTerm.__init__)
+def test_publication_simpleontologyterm_constructor_exists():
+    assert callable(publication_SimpleOntologyTerm.__init__)
 
 
-def test_publication::simpleontologyterm_constructor_args():
-    sig = inspect.signature(publication::SimpleOntologyTerm.__init__)
+def test_publication_simpleontologyterm_constructor_args():
+    sig = inspect.signature(publication_SimpleOntologyTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -400,16 +400,16 @@ def test_simplecitation_constructor_args():
 
 
 
-def test_publication::biblioreference_is_not_abstract():
-    assert not inspect.isabstract(publication::BiblioReference)
+def test_publication_biblioreference_is_not_abstract():
+    assert not inspect.isabstract(publication_BiblioReference)
 
 
-def test_publication::biblioreference_constructor_exists():
-    assert callable(publication::BiblioReference.__init__)
+def test_publication_biblioreference_constructor_exists():
+    assert callable(publication_BiblioReference.__init__)
 
 
-def test_publication::biblioreference_constructor_args():
-    sig = inspect.signature(publication::BiblioReference.__init__)
+def test_publication_biblioreference_constructor_args():
+    sig = inspect.signature(publication_BiblioReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -428,105 +428,37 @@ def test_biblioreference_constructor_args():
 
 
 
-def test_publication::book_is_not_abstract():
-    assert not inspect.isabstract(publication::Book)
+def test_publication_thesis_is_not_abstract():
+    assert not inspect.isabstract(publication_Thesis)
 
 
-def test_publication::book_constructor_exists():
-    assert callable(publication::Book.__init__)
+def test_publication_thesis_constructor_exists():
+    assert callable(publication_Thesis.__init__)
 
 
-def test_publication::book_constructor_args():
-    sig = inspect.signature(publication::Book.__init__)
-    params = list(sig.parameters.keys())
-    assert "edition" in params, "Missing parameter 'edition'"
-    assert "series" in params, "Missing parameter 'series'"
-    assert "volume" in params, "Missing parameter 'volume'"
-    assert "iSBN" in params, "Missing parameter 'iSBN'"
-
-def test_publication::book_has_edition():
-    assert hasattr(publication::Book, "edition")
-    descriptor = None
-    for klass in publication::Book.__mro__:
-        if "edition" in klass.__dict__:
-            descriptor = klass.__dict__["edition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::book_has_series():
-    assert hasattr(publication::Book, "series")
-    descriptor = None
-    for klass in publication::Book.__mro__:
-        if "series" in klass.__dict__:
-            descriptor = klass.__dict__["series"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::book_has_volume():
-    assert hasattr(publication::Book, "volume")
-    descriptor = None
-    for klass in publication::Book.__mro__:
-        if "volume" in klass.__dict__:
-            descriptor = klass.__dict__["volume"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::book_has_iSBN():
-    assert hasattr(publication::Book, "iSBN")
-    descriptor = None
-    for klass in publication::Book.__mro__:
-        if "iSBN" in klass.__dict__:
-            descriptor = klass.__dict__["iSBN"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_publication::protocol_is_not_abstract():
-    assert not inspect.isabstract(publication::Protocol)
-
-
-def test_publication::protocol_constructor_exists():
-    assert callable(publication::Protocol.__init__)
-
-
-def test_publication::protocol_constructor_args():
-    sig = inspect.signature(publication::Protocol.__init__)
+def test_publication_thesis_constructor_args():
+    sig = inspect.signature(publication_Thesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::thesis_is_not_abstract():
-    assert not inspect.isabstract(publication::Thesis)
+def test_publication_journal_is_not_abstract():
+    assert not inspect.isabstract(publication_Journal)
 
 
-def test_publication::thesis_constructor_exists():
-    assert callable(publication::Thesis.__init__)
+def test_publication_journal_constructor_exists():
+    assert callable(publication_Journal.__init__)
 
 
-def test_publication::thesis_constructor_args():
-    sig = inspect.signature(publication::Thesis.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_publication::journal_is_not_abstract():
-    assert not inspect.isabstract(publication::Journal)
-
-
-def test_publication::journal_constructor_exists():
-    assert callable(publication::Journal.__init__)
-
-
-def test_publication::journal_constructor_args():
-    sig = inspect.signature(publication::Journal.__init__)
+def test_publication_journal_constructor_args():
+    sig = inspect.signature(publication_Journal.__init__)
     params = list(sig.parameters.keys())
     assert "iSSN" in params, "Missing parameter 'iSSN'"
 
-def test_publication::journal_has_iSSN():
-    assert hasattr(publication::Journal, "iSSN")
+def test_publication_journal_has_iSSN():
+    assert hasattr(publication_Journal, "iSSN")
     descriptor = None
-    for klass in publication::Journal.__mro__:
+    for klass in publication_Journal.__mro__:
         if "iSSN" in klass.__dict__:
             descriptor = klass.__dict__["iSSN"]
             break
@@ -534,101 +466,169 @@ def test_publication::journal_has_iSSN():
 
 
 
-def test_publication::technicalreport_is_not_abstract():
-    assert not inspect.isabstract(publication::TechnicalReport)
+def test_publication_technicalreport_is_not_abstract():
+    assert not inspect.isabstract(publication_TechnicalReport)
 
 
-def test_publication::technicalreport_constructor_exists():
-    assert callable(publication::TechnicalReport.__init__)
+def test_publication_technicalreport_constructor_exists():
+    assert callable(publication_TechnicalReport.__init__)
 
 
-def test_publication::technicalreport_constructor_args():
-    sig = inspect.signature(publication::TechnicalReport.__init__)
+def test_publication_technicalreport_constructor_args():
+    sig = inspect.signature(publication_TechnicalReport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::multimedia_is_not_abstract():
-    assert not inspect.isabstract(publication::Multimedia)
+def test_publication_proceeding_is_not_abstract():
+    assert not inspect.isabstract(publication_Proceeding)
 
 
-def test_publication::multimedia_constructor_exists():
-    assert callable(publication::Multimedia.__init__)
+def test_publication_proceeding_constructor_exists():
+    assert callable(publication_Proceeding.__init__)
 
 
-def test_publication::multimedia_constructor_args():
-    sig = inspect.signature(publication::Multimedia.__init__)
+def test_publication_proceeding_constructor_args():
+    sig = inspect.signature(publication_Proceeding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::proceeding_is_not_abstract():
-    assert not inspect.isabstract(publication::Proceeding)
+def test_publication_multimedia_is_not_abstract():
+    assert not inspect.isabstract(publication_Multimedia)
 
 
-def test_publication::proceeding_constructor_exists():
-    assert callable(publication::Proceeding.__init__)
+def test_publication_multimedia_constructor_exists():
+    assert callable(publication_Multimedia.__init__)
 
 
-def test_publication::proceeding_constructor_args():
-    sig = inspect.signature(publication::Proceeding.__init__)
+def test_publication_multimedia_constructor_args():
+    sig = inspect.signature(publication_Multimedia.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::article_is_not_abstract():
-    assert not inspect.isabstract(publication::Article)
+def test_publication_protocol_is_not_abstract():
+    assert not inspect.isabstract(publication_Protocol)
 
 
-def test_publication::article_constructor_exists():
-    assert callable(publication::Article.__init__)
+def test_publication_protocol_constructor_exists():
+    assert callable(publication_Protocol.__init__)
 
 
-def test_publication::article_constructor_args():
-    sig = inspect.signature(publication::Article.__init__)
+def test_publication_protocol_constructor_args():
+    sig = inspect.signature(publication_Protocol.__init__)
     params = list(sig.parameters.keys())
-    assert "firstPage" in params, "Missing parameter 'firstPage'"
-    assert "lastPage" in params, "Missing parameter 'lastPage'"
 
-def test_publication::article_has_firstPage():
-    assert hasattr(publication::Article, "firstPage")
+
+
+def test_publication_webresource_is_not_abstract():
+    assert not inspect.isabstract(publication_WebResource)
+
+
+def test_publication_webresource_constructor_exists():
+    assert callable(publication_WebResource.__init__)
+
+
+def test_publication_webresource_constructor_args():
+    sig = inspect.signature(publication_WebResource.__init__)
+    params = list(sig.parameters.keys())
+    assert "uRL" in params, "Missing parameter 'uRL'"
+
+def test_publication_webresource_has_uRL():
+    assert hasattr(publication_WebResource, "uRL")
     descriptor = None
-    for klass in publication::Article.__mro__:
-        if "firstPage" in klass.__dict__:
-            descriptor = klass.__dict__["firstPage"]
+    for klass in publication_WebResource.__mro__:
+        if "uRL" in klass.__dict__:
+            descriptor = klass.__dict__["uRL"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::article_has_lastPage():
-    assert hasattr(publication::Article, "lastPage")
+
+
+def test_publication_book_is_not_abstract():
+    assert not inspect.isabstract(publication_Book)
+
+
+def test_publication_book_constructor_exists():
+    assert callable(publication_Book.__init__)
+
+
+def test_publication_book_constructor_args():
+    sig = inspect.signature(publication_Book.__init__)
+    params = list(sig.parameters.keys())
+    assert "edition" in params, "Missing parameter 'edition'"
+    assert "series" in params, "Missing parameter 'series'"
+    assert "iSBN" in params, "Missing parameter 'iSBN'"
+    assert "volume" in params, "Missing parameter 'volume'"
+
+def test_publication_book_has_edition():
+    assert hasattr(publication_Book, "edition")
     descriptor = None
-    for klass in publication::Article.__mro__:
+    for klass in publication_Book.__mro__:
+        if "edition" in klass.__dict__:
+            descriptor = klass.__dict__["edition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_publication_book_has_series():
+    assert hasattr(publication_Book, "series")
+    descriptor = None
+    for klass in publication_Book.__mro__:
+        if "series" in klass.__dict__:
+            descriptor = klass.__dict__["series"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_publication_book_has_iSBN():
+    assert hasattr(publication_Book, "iSBN")
+    descriptor = None
+    for klass in publication_Book.__mro__:
+        if "iSBN" in klass.__dict__:
+            descriptor = klass.__dict__["iSBN"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_publication_book_has_volume():
+    assert hasattr(publication_Book, "volume")
+    descriptor = None
+    for klass in publication_Book.__mro__:
+        if "volume" in klass.__dict__:
+            descriptor = klass.__dict__["volume"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_publication_article_is_not_abstract():
+    assert not inspect.isabstract(publication_Article)
+
+
+def test_publication_article_constructor_exists():
+    assert callable(publication_Article.__init__)
+
+
+def test_publication_article_constructor_args():
+    sig = inspect.signature(publication_Article.__init__)
+    params = list(sig.parameters.keys())
+    assert "lastPage" in params, "Missing parameter 'lastPage'"
+    assert "firstPage" in params, "Missing parameter 'firstPage'"
+
+def test_publication_article_has_lastPage():
+    assert hasattr(publication_Article, "lastPage")
+    descriptor = None
+    for klass in publication_Article.__mro__:
         if "lastPage" in klass.__dict__:
             descriptor = klass.__dict__["lastPage"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_publication::webresource_is_not_abstract():
-    assert not inspect.isabstract(publication::WebResource)
-
-
-def test_publication::webresource_constructor_exists():
-    assert callable(publication::WebResource.__init__)
-
-
-def test_publication::webresource_constructor_args():
-    sig = inspect.signature(publication::WebResource.__init__)
-    params = list(sig.parameters.keys())
-    assert "uRL" in params, "Missing parameter 'uRL'"
-
-def test_publication::webresource_has_uRL():
-    assert hasattr(publication::WebResource, "uRL")
+def test_publication_article_has_firstPage():
+    assert hasattr(publication_Article, "firstPage")
     descriptor = None
-    for klass in publication::WebResource.__mro__:
-        if "uRL" in klass.__dict__:
-            descriptor = klass.__dict__["uRL"]
+    for klass in publication_Article.__mro__:
+        if "firstPage" in klass.__dict__:
+            descriptor = klass.__dict__["firstPage"]
             break
     assert isinstance(descriptor, property)
 
@@ -644,216 +644,204 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-publication::SimpleFeature_strategy = st.builds(
-    publication::SimpleFeature,
+publication_SimpleFeature_strategy = st.builds(
+    publication_SimpleFeature,
 )
-publication::Organization_strategy = st.builds(
-    publication::Organization,
+publication_Organization_strategy = st.builds(
+    publication_Organization,
 )
 Journal_strategy = st.builds(
     Journal,
 )
-publication::JournalIssue_strategy = st.builds(
-    publication::JournalIssue,
-    issue=
-        safe_text,
+publication_JournalIssue_strategy = st.builds(
+    publication_JournalIssue,
     volume=
         safe_text,
     issueSupplement=
+        safe_text,
+    issue=
         safe_text
 )
-publication::Ontology_strategy = st.builds(
-    publication::Ontology,
+publication_Ontology_strategy = st.builds(
+    publication_Ontology,
 )
-publication::Contact_strategy = st.builds(
-    publication::Contact,
+publication_Contact_strategy = st.builds(
+    publication_Contact,
 )
 Article_strategy = st.builds(
     Article,
 )
-publication::JournalArticle_strategy = st.builds(
-    publication::JournalArticle,
+publication_JournalArticle_strategy = st.builds(
+    publication_JournalArticle,
 )
-publication::BookArticle_strategy = st.builds(
-    publication::BookArticle,
+publication_BookArticle_strategy = st.builds(
+    publication_BookArticle,
     section=
         safe_text
 )
 SimpleFeature_strategy = st.builds(
     SimpleFeature,
 )
-publication::SimpleCitation_strategy = st.builds(
-    publication::SimpleCitation,
-    date=
-        st.dates(),
+publication_SimpleCitation_strategy = st.builds(
+    publication_SimpleCitation,
+    authorList=
+        safe_text,
     source=
         safe_text,
-    authorList=
-        safe_text
+    date=
+        st.dates()
 )
 SimpleIdentifier_strategy = st.builds(
     SimpleIdentifier,
 )
-publication::BiblioReferenceSet_strategy = st.builds(
-    publication::BiblioReferenceSet,
+publication_BiblioReferenceSet_strategy = st.builds(
+    publication_BiblioReferenceSet,
 )
-publication::Indexing_strategy = st.builds(
-    publication::Indexing,
+publication_Indexing_strategy = st.builds(
+    publication_Indexing,
     keywords=
         safe_text
 )
-publication::Content_strategy = st.builds(
-    publication::Content,
+publication_Content_strategy = st.builds(
+    publication_Content,
     body=
         safe_text
 )
-publication::OrderedLegalEntitySet_strategy = st.builds(
-    publication::OrderedLegalEntitySet,
+publication_OrderedLegalEntitySet_strategy = st.builds(
+    publication_OrderedLegalEntitySet,
 )
-publication::LegalEntity_strategy = st.builds(
-    publication::LegalEntity,
+publication_LegalEntity_strategy = st.builds(
+    publication_LegalEntity,
 )
-publication::SimpleOntologyTerm_strategy = st.builds(
-    publication::SimpleOntologyTerm,
+publication_SimpleOntologyTerm_strategy = st.builds(
+    publication_SimpleOntologyTerm,
 )
 SimpleCitation_strategy = st.builds(
     SimpleCitation,
 )
-publication::BiblioReference_strategy = st.builds(
-    publication::BiblioReference,
+publication_BiblioReference_strategy = st.builds(
+    publication_BiblioReference,
 )
 BiblioReference_strategy = st.builds(
     BiblioReference,
 )
-publication::Book_strategy = st.builds(
-    publication::Book,
+publication_Thesis_strategy = st.builds(
+    publication_Thesis,
+)
+publication_Journal_strategy = st.builds(
+    publication_Journal,
+    iSSN=
+        safe_text
+)
+publication_TechnicalReport_strategy = st.builds(
+    publication_TechnicalReport,
+)
+publication_Proceeding_strategy = st.builds(
+    publication_Proceeding,
+)
+publication_Multimedia_strategy = st.builds(
+    publication_Multimedia,
+)
+publication_Protocol_strategy = st.builds(
+    publication_Protocol,
+)
+publication_WebResource_strategy = st.builds(
+    publication_WebResource,
+    uRL=
+        safe_text
+)
+publication_Book_strategy = st.builds(
+    publication_Book,
     edition=
         safe_text,
     series=
         safe_text,
-    volume=
-        safe_text,
     iSBN=
-        safe_text
-)
-publication::Protocol_strategy = st.builds(
-    publication::Protocol,
-)
-publication::Thesis_strategy = st.builds(
-    publication::Thesis,
-)
-publication::Journal_strategy = st.builds(
-    publication::Journal,
-    iSSN=
-        safe_text
-)
-publication::TechnicalReport_strategy = st.builds(
-    publication::TechnicalReport,
-)
-publication::Multimedia_strategy = st.builds(
-    publication::Multimedia,
-)
-publication::Proceeding_strategy = st.builds(
-    publication::Proceeding,
-)
-publication::Article_strategy = st.builds(
-    publication::Article,
-    firstPage=
         safe_text,
+    volume=
+        safe_text
+)
+publication_Article_strategy = st.builds(
+    publication_Article,
     lastPage=
-        safe_text
-)
-publication::WebResource_strategy = st.builds(
-    publication::WebResource,
-    uRL=
+        safe_text,
+    firstPage=
         safe_text
 )
 
-@given(instance=publication::SimpleFeature_strategy)
+@given(instance=publication_SimpleFeature_strategy)
 @settings(max_examples=50)
-def test_publication::simplefeature_instantiation(instance):
-    assert isinstance(instance, publication::SimpleFeature)
+def test_publication_simplefeature_instantiation(instance):
+    assert isinstance(instance, publication_SimpleFeature)
 
-@given(instance=publication::Organization_strategy)
+@given(instance=publication_Organization_strategy)
 @settings(max_examples=50)
-def test_publication::organization_instantiation(instance):
-    assert isinstance(instance, publication::Organization)
+def test_publication_organization_instantiation(instance):
+    assert isinstance(instance, publication_Organization)
 
 @given(instance=Journal_strategy)
 @settings(max_examples=50)
 def test_journal_instantiation(instance):
     assert isinstance(instance, Journal)
 
-@given(instance=publication::JournalIssue_strategy)
+@given(instance=publication_JournalIssue_strategy)
 @settings(max_examples=50)
-def test_publication::journalissue_instantiation(instance):
-    assert isinstance(instance, publication::JournalIssue)
-
-@given(instance=publication::JournalIssue_strategy)
-def test_publication::journalissue_issue_type(instance):
-    assert isinstance(instance.issue, str)
+def test_publication_journalissue_instantiation(instance):
+    assert isinstance(instance, publication_JournalIssue)
 
 
-@given(instance=publication::JournalIssue_strategy)
-def test_publication::journalissue_issue_setter(instance):
-    original = instance.issue
-    instance.issue = original
-    assert instance.issue == original
 
-@given(instance=publication::JournalIssue_strategy)
-def test_publication::journalissue_volume_type(instance):
-    assert isinstance(instance.volume, str)
-
-
-@given(instance=publication::JournalIssue_strategy)
-def test_publication::journalissue_volume_setter(instance):
+@given(instance=publication_JournalIssue_strategy)
+def test_publication_journalissue_volume_setter(instance):
     original = instance.volume
     instance.volume = original
     assert instance.volume == original
 
-@given(instance=publication::JournalIssue_strategy)
-def test_publication::journalissue_issueSupplement_type(instance):
-    assert isinstance(instance.issueSupplement, str)
 
 
-@given(instance=publication::JournalIssue_strategy)
-def test_publication::journalissue_issueSupplement_setter(instance):
+@given(instance=publication_JournalIssue_strategy)
+def test_publication_journalissue_issueSupplement_setter(instance):
     original = instance.issueSupplement
     instance.issueSupplement = original
     assert instance.issueSupplement == original
 
-@given(instance=publication::Ontology_strategy)
-@settings(max_examples=50)
-def test_publication::ontology_instantiation(instance):
-    assert isinstance(instance, publication::Ontology)
 
-@given(instance=publication::Contact_strategy)
+
+@given(instance=publication_JournalIssue_strategy)
+def test_publication_journalissue_issue_setter(instance):
+    original = instance.issue
+    instance.issue = original
+    assert instance.issue == original
+
+@given(instance=publication_Ontology_strategy)
 @settings(max_examples=50)
-def test_publication::contact_instantiation(instance):
-    assert isinstance(instance, publication::Contact)
+def test_publication_ontology_instantiation(instance):
+    assert isinstance(instance, publication_Ontology)
+
+@given(instance=publication_Contact_strategy)
+@settings(max_examples=50)
+def test_publication_contact_instantiation(instance):
+    assert isinstance(instance, publication_Contact)
 
 @given(instance=Article_strategy)
 @settings(max_examples=50)
 def test_article_instantiation(instance):
     assert isinstance(instance, Article)
 
-@given(instance=publication::JournalArticle_strategy)
+@given(instance=publication_JournalArticle_strategy)
 @settings(max_examples=50)
-def test_publication::journalarticle_instantiation(instance):
-    assert isinstance(instance, publication::JournalArticle)
+def test_publication_journalarticle_instantiation(instance):
+    assert isinstance(instance, publication_JournalArticle)
 
-@given(instance=publication::BookArticle_strategy)
+@given(instance=publication_BookArticle_strategy)
 @settings(max_examples=50)
-def test_publication::bookarticle_instantiation(instance):
-    assert isinstance(instance, publication::BookArticle)
-
-@given(instance=publication::BookArticle_strategy)
-def test_publication::bookarticle_section_type(instance):
-    assert isinstance(instance.section, str)
+def test_publication_bookarticle_instantiation(instance):
+    assert isinstance(instance, publication_BookArticle)
 
 
-@given(instance=publication::BookArticle_strategy)
-def test_publication::bookarticle_section_setter(instance):
+
+@given(instance=publication_BookArticle_strategy)
+def test_publication_bookarticle_section_setter(instance):
     original = instance.section
     instance.section = original
     assert instance.section == original
@@ -863,245 +851,206 @@ def test_publication::bookarticle_section_setter(instance):
 def test_simplefeature_instantiation(instance):
     assert isinstance(instance, SimpleFeature)
 
-@given(instance=publication::SimpleCitation_strategy)
+@given(instance=publication_SimpleCitation_strategy)
 @settings(max_examples=50)
-def test_publication::simplecitation_instantiation(instance):
-    assert isinstance(instance, publication::SimpleCitation)
-
-@given(instance=publication::SimpleCitation_strategy)
-def test_publication::simplecitation_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_publication_simplecitation_instantiation(instance):
+    assert isinstance(instance, publication_SimpleCitation)
 
 
-@given(instance=publication::SimpleCitation_strategy)
-def test_publication::simplecitation_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
 
-@given(instance=publication::SimpleCitation_strategy)
-def test_publication::simplecitation_source_type(instance):
-    assert isinstance(instance.source, str)
+@given(instance=publication_SimpleCitation_strategy)
+def test_publication_simplecitation_authorList_setter(instance):
+    original = instance.authorList
+    instance.authorList = original
+    assert instance.authorList == original
 
 
-@given(instance=publication::SimpleCitation_strategy)
-def test_publication::simplecitation_source_setter(instance):
+
+@given(instance=publication_SimpleCitation_strategy)
+def test_publication_simplecitation_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=publication::SimpleCitation_strategy)
-def test_publication::simplecitation_authorList_type(instance):
-    assert isinstance(instance.authorList, str)
 
 
-@given(instance=publication::SimpleCitation_strategy)
-def test_publication::simplecitation_authorList_setter(instance):
-    original = instance.authorList
-    instance.authorList = original
-    assert instance.authorList == original
+@given(instance=publication_SimpleCitation_strategy)
+def test_publication_simplecitation_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
 
 @given(instance=SimpleIdentifier_strategy)
 @settings(max_examples=50)
 def test_simpleidentifier_instantiation(instance):
     assert isinstance(instance, SimpleIdentifier)
 
-@given(instance=publication::BiblioReferenceSet_strategy)
+@given(instance=publication_BiblioReferenceSet_strategy)
 @settings(max_examples=50)
-def test_publication::biblioreferenceset_instantiation(instance):
-    assert isinstance(instance, publication::BiblioReferenceSet)
+def test_publication_biblioreferenceset_instantiation(instance):
+    assert isinstance(instance, publication_BiblioReferenceSet)
 
-@given(instance=publication::Indexing_strategy)
+@given(instance=publication_Indexing_strategy)
 @settings(max_examples=50)
-def test_publication::indexing_instantiation(instance):
-    assert isinstance(instance, publication::Indexing)
-
-@given(instance=publication::Indexing_strategy)
-def test_publication::indexing_keywords_type(instance):
-    assert isinstance(instance.keywords, str)
+def test_publication_indexing_instantiation(instance):
+    assert isinstance(instance, publication_Indexing)
 
 
-@given(instance=publication::Indexing_strategy)
-def test_publication::indexing_keywords_setter(instance):
+
+@given(instance=publication_Indexing_strategy)
+def test_publication_indexing_keywords_setter(instance):
     original = instance.keywords
     instance.keywords = original
     assert instance.keywords == original
 
-@given(instance=publication::Content_strategy)
+@given(instance=publication_Content_strategy)
 @settings(max_examples=50)
-def test_publication::content_instantiation(instance):
-    assert isinstance(instance, publication::Content)
-
-@given(instance=publication::Content_strategy)
-def test_publication::content_body_type(instance):
-    assert isinstance(instance.body, str)
+def test_publication_content_instantiation(instance):
+    assert isinstance(instance, publication_Content)
 
 
-@given(instance=publication::Content_strategy)
-def test_publication::content_body_setter(instance):
+
+@given(instance=publication_Content_strategy)
+def test_publication_content_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=publication::OrderedLegalEntitySet_strategy)
+@given(instance=publication_OrderedLegalEntitySet_strategy)
 @settings(max_examples=50)
-def test_publication::orderedlegalentityset_instantiation(instance):
-    assert isinstance(instance, publication::OrderedLegalEntitySet)
+def test_publication_orderedlegalentityset_instantiation(instance):
+    assert isinstance(instance, publication_OrderedLegalEntitySet)
 
-@given(instance=publication::LegalEntity_strategy)
+@given(instance=publication_LegalEntity_strategy)
 @settings(max_examples=50)
-def test_publication::legalentity_instantiation(instance):
-    assert isinstance(instance, publication::LegalEntity)
+def test_publication_legalentity_instantiation(instance):
+    assert isinstance(instance, publication_LegalEntity)
 
-@given(instance=publication::SimpleOntologyTerm_strategy)
+@given(instance=publication_SimpleOntologyTerm_strategy)
 @settings(max_examples=50)
-def test_publication::simpleontologyterm_instantiation(instance):
-    assert isinstance(instance, publication::SimpleOntologyTerm)
+def test_publication_simpleontologyterm_instantiation(instance):
+    assert isinstance(instance, publication_SimpleOntologyTerm)
 
 @given(instance=SimpleCitation_strategy)
 @settings(max_examples=50)
 def test_simplecitation_instantiation(instance):
     assert isinstance(instance, SimpleCitation)
 
-@given(instance=publication::BiblioReference_strategy)
+@given(instance=publication_BiblioReference_strategy)
 @settings(max_examples=50)
-def test_publication::biblioreference_instantiation(instance):
-    assert isinstance(instance, publication::BiblioReference)
+def test_publication_biblioreference_instantiation(instance):
+    assert isinstance(instance, publication_BiblioReference)
 
 @given(instance=BiblioReference_strategy)
 @settings(max_examples=50)
 def test_biblioreference_instantiation(instance):
     assert isinstance(instance, BiblioReference)
 
-@given(instance=publication::Book_strategy)
+@given(instance=publication_Thesis_strategy)
 @settings(max_examples=50)
-def test_publication::book_instantiation(instance):
-    assert isinstance(instance, publication::Book)
+def test_publication_thesis_instantiation(instance):
+    assert isinstance(instance, publication_Thesis)
 
-@given(instance=publication::Book_strategy)
-def test_publication::book_edition_type(instance):
-    assert isinstance(instance.edition, str)
-
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_edition_setter(instance):
-    original = instance.edition
-    instance.edition = original
-    assert instance.edition == original
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_series_type(instance):
-    assert isinstance(instance.series, str)
-
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_series_setter(instance):
-    original = instance.series
-    instance.series = original
-    assert instance.series == original
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_volume_type(instance):
-    assert isinstance(instance.volume, str)
-
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_volume_setter(instance):
-    original = instance.volume
-    instance.volume = original
-    assert instance.volume == original
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_iSBN_type(instance):
-    assert isinstance(instance.iSBN, str)
-
-
-@given(instance=publication::Book_strategy)
-def test_publication::book_iSBN_setter(instance):
-    original = instance.iSBN
-    instance.iSBN = original
-    assert instance.iSBN == original
-
-@given(instance=publication::Protocol_strategy)
+@given(instance=publication_Journal_strategy)
 @settings(max_examples=50)
-def test_publication::protocol_instantiation(instance):
-    assert isinstance(instance, publication::Protocol)
-
-@given(instance=publication::Thesis_strategy)
-@settings(max_examples=50)
-def test_publication::thesis_instantiation(instance):
-    assert isinstance(instance, publication::Thesis)
-
-@given(instance=publication::Journal_strategy)
-@settings(max_examples=50)
-def test_publication::journal_instantiation(instance):
-    assert isinstance(instance, publication::Journal)
-
-@given(instance=publication::Journal_strategy)
-def test_publication::journal_iSSN_type(instance):
-    assert isinstance(instance.iSSN, str)
+def test_publication_journal_instantiation(instance):
+    assert isinstance(instance, publication_Journal)
 
 
-@given(instance=publication::Journal_strategy)
-def test_publication::journal_iSSN_setter(instance):
+
+@given(instance=publication_Journal_strategy)
+def test_publication_journal_iSSN_setter(instance):
     original = instance.iSSN
     instance.iSSN = original
     assert instance.iSSN == original
 
-@given(instance=publication::TechnicalReport_strategy)
+@given(instance=publication_TechnicalReport_strategy)
 @settings(max_examples=50)
-def test_publication::technicalreport_instantiation(instance):
-    assert isinstance(instance, publication::TechnicalReport)
+def test_publication_technicalreport_instantiation(instance):
+    assert isinstance(instance, publication_TechnicalReport)
 
-@given(instance=publication::Multimedia_strategy)
+@given(instance=publication_Proceeding_strategy)
 @settings(max_examples=50)
-def test_publication::multimedia_instantiation(instance):
-    assert isinstance(instance, publication::Multimedia)
+def test_publication_proceeding_instantiation(instance):
+    assert isinstance(instance, publication_Proceeding)
 
-@given(instance=publication::Proceeding_strategy)
+@given(instance=publication_Multimedia_strategy)
 @settings(max_examples=50)
-def test_publication::proceeding_instantiation(instance):
-    assert isinstance(instance, publication::Proceeding)
+def test_publication_multimedia_instantiation(instance):
+    assert isinstance(instance, publication_Multimedia)
 
-@given(instance=publication::Article_strategy)
+@given(instance=publication_Protocol_strategy)
 @settings(max_examples=50)
-def test_publication::article_instantiation(instance):
-    assert isinstance(instance, publication::Article)
+def test_publication_protocol_instantiation(instance):
+    assert isinstance(instance, publication_Protocol)
 
-@given(instance=publication::Article_strategy)
-def test_publication::article_firstPage_type(instance):
-    assert isinstance(instance.firstPage, str)
-
-
-@given(instance=publication::Article_strategy)
-def test_publication::article_firstPage_setter(instance):
-    original = instance.firstPage
-    instance.firstPage = original
-    assert instance.firstPage == original
-
-@given(instance=publication::Article_strategy)
-def test_publication::article_lastPage_type(instance):
-    assert isinstance(instance.lastPage, str)
+@given(instance=publication_WebResource_strategy)
+@settings(max_examples=50)
+def test_publication_webresource_instantiation(instance):
+    assert isinstance(instance, publication_WebResource)
 
 
-@given(instance=publication::Article_strategy)
-def test_publication::article_lastPage_setter(instance):
+
+@given(instance=publication_WebResource_strategy)
+def test_publication_webresource_uRL_setter(instance):
+    original = instance.uRL
+    instance.uRL = original
+    assert instance.uRL == original
+
+@given(instance=publication_Book_strategy)
+@settings(max_examples=50)
+def test_publication_book_instantiation(instance):
+    assert isinstance(instance, publication_Book)
+
+
+
+@given(instance=publication_Book_strategy)
+def test_publication_book_edition_setter(instance):
+    original = instance.edition
+    instance.edition = original
+    assert instance.edition == original
+
+
+
+@given(instance=publication_Book_strategy)
+def test_publication_book_series_setter(instance):
+    original = instance.series
+    instance.series = original
+    assert instance.series == original
+
+
+
+@given(instance=publication_Book_strategy)
+def test_publication_book_iSBN_setter(instance):
+    original = instance.iSBN
+    instance.iSBN = original
+    assert instance.iSBN == original
+
+
+
+@given(instance=publication_Book_strategy)
+def test_publication_book_volume_setter(instance):
+    original = instance.volume
+    instance.volume = original
+    assert instance.volume == original
+
+@given(instance=publication_Article_strategy)
+@settings(max_examples=50)
+def test_publication_article_instantiation(instance):
+    assert isinstance(instance, publication_Article)
+
+
+
+@given(instance=publication_Article_strategy)
+def test_publication_article_lastPage_setter(instance):
     original = instance.lastPage
     instance.lastPage = original
     assert instance.lastPage == original
 
-@given(instance=publication::WebResource_strategy)
-@settings(max_examples=50)
-def test_publication::webresource_instantiation(instance):
-    assert isinstance(instance, publication::WebResource)
-
-@given(instance=publication::WebResource_strategy)
-def test_publication::webresource_uRL_type(instance):
-    assert isinstance(instance.uRL, str)
 
 
-@given(instance=publication::WebResource_strategy)
-def test_publication::webresource_uRL_setter(instance):
-    original = instance.uRL
-    instance.uRL = original
-    assert instance.uRL == original
+@given(instance=publication_Article_strategy)
+def test_publication_article_firstPage_setter(instance):
+    original = instance.firstPage
+    instance.firstPage = original
+    assert instance.firstPage == original

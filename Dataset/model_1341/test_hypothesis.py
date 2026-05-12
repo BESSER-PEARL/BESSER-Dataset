@@ -3,89 +3,89 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    baseCST::VisitableCS,
-    baseCST::Type,
+from python_code import (
+    baseCST_VisitableCS,
+    baseCST_Type,
     TypeRefCS,
-    baseCST::WildcardTypeRefCS,
+    baseCST_WildcardTypeRefCS,
     TemplateParameterCS,
     PathElementCS,
-    baseCST::PathElementWithURICS,
+    baseCST_PathElementWithURICS,
     RootCS,
     PackageCS,
-    baseCST::RootPackageCS,
-    baseCST::Property,
-    baseCST::EClassifier,
+    baseCST_RootPackageCS,
+    baseCST_Property,
+    baseCST_EClassifier,
     Pivotable,
     FeatureCS,
     ModelElementCS,
-    baseCST::TypeCS,
-    baseCST::RootCS,
-    baseCST::TemplateSignatureCS,
-    baseCST::TemplateParameterSubstitutionCS,
+    baseCST_RootCS,
+    baseCST_TemplateParameterSubstitutionCS,
+    baseCST_TemplateSignatureCS,
+    baseCST_TypeCS,
     ElementCS,
-    baseCST::PathNameCS,
-    baseCST::TemplateableElementCS,
-    baseCST::PathElementCS,
-    baseCST::PivotableElementCS,
-    baseCST::MultiplicityCS,
+    baseCST_PivotableElementCS,
+    baseCST_PathElementCS,
+    baseCST_TemplateableElementCS,
+    baseCST_PathNameCS,
+    baseCST_MultiplicityCS,
     MultiplicityCS,
-    baseCST::MultiplicityStringCS,
-    baseCST::MultiplicityBoundsCS,
-    baseCST::Element,
+    baseCST_MultiplicityStringCS,
+    baseCST_MultiplicityBoundsCS,
+    baseCST_Element,
     ElementRefCS,
-    baseCST::TemplateBindingCS,
-    baseCST::TypeRefCS,
+    baseCST_TemplateBindingCS,
+    baseCST_TypeRefCS,
     Nameable,
-    baseCST::NamedElementCS,
+    baseCST_NamedElementCS,
     TypedRefCS,
-    baseCST::PrimitiveTypeRefCS,
-    baseCST::TypedTypeRefCS,
-    baseCST::TupleTypeCS,
-    baseCST::Namespace,
+    baseCST_PrimitiveTypeRefCS,
+    baseCST_TupleTypeCS,
+    baseCST_TypedTypeRefCS,
+    baseCST_Namespace,
     TypedElementCS,
-    baseCST::TuplePartCS,
-    baseCST::ParameterCS,
-    baseCST::FeatureCS,
+    baseCST_ParameterCS,
+    baseCST_TuplePartCS,
+    baseCST_FeatureCS,
     PivotableElementCS,
-    baseCST::ElementRefCS,
+    baseCST_ElementRefCS,
     VisitableCS,
-    baseCST::ElementCS,
-    baseCST::SpecificationCS,
+    baseCST_ElementCS,
+    baseCST_SpecificationCS,
     TemplateableElementCS,
-    baseCST::OperationCS,
-    baseCST::LambdaTypeCS,
+    baseCST_LambdaTypeCS,
+    baseCST_OperationCS,
     TypeCS,
-    baseCST::TypeParameterCS,
-    baseCST::StructuralFeatureCS,
-    baseCST::TypedRefCS,
+    baseCST_TypeParameterCS,
+    baseCST_StructuralFeatureCS,
+    baseCST_TypedRefCS,
     NamespaceCS,
-    baseCST::PackageCS,
-    baseCST::LibraryCS,
-    baseCST::ImportCS,
+    baseCST_ImportCS,
+    baseCST_LibraryCS,
+    baseCST_PackageCS,
     ClassifierCS,
-    baseCST::DataTypeCS,
-    baseCST::EnumerationCS,
-    baseCST::ClassCS,
+    baseCST_EnumerationCS,
+    baseCST_DataTypeCS,
+    baseCST_ClassCS,
     StructuralFeatureCS,
-    baseCST::ReferenceCS,
-    baseCST::AttributeCS,
+    baseCST_ReferenceCS,
+    baseCST_AttributeCS,
     NamedElementCS,
-    baseCST::NamespaceCS,
-    baseCST::EnumerationLiteralCS,
-    baseCST::DetailCS,
-    baseCST::TypedElementCS,
-    baseCST::ConstraintCS,
-    baseCST::TemplateParameterCS,
-    baseCST::ClassifierCS,
-    baseCST::AnnotationElementCS,
-    baseCST::ModelElementRefCS,
-    baseCST::ModelElementCS,
+    baseCST_EnumerationLiteralCS,
+    baseCST_ConstraintCS,
+    baseCST_TypedElementCS,
+    baseCST_TemplateParameterCS,
+    baseCST_DetailCS,
+    baseCST_ClassifierCS,
+    baseCST_NamespaceCS,
+    baseCST_AnnotationElementCS,
+    baseCST_ModelElementRefCS,
+    baseCST_ModelElementCS,
     AnnotationElementCS,
-    baseCST::DocumentationCS,
-    baseCST::AnnotationCS,
+    baseCST_DocumentationCS,
+    baseCST_AnnotationCS,
     IteratorKind,
 )
 
@@ -95,30 +95,30 @@ from classes import (
 
 
 
-def test_basecst::visitablecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::VisitableCS)
+def test_basecst_visitablecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_VisitableCS)
 
 
-def test_basecst::visitablecs_constructor_exists():
-    assert callable(baseCST::VisitableCS.__init__)
+def test_basecst_visitablecs_constructor_exists():
+    assert callable(baseCST_VisitableCS.__init__)
 
 
-def test_basecst::visitablecs_constructor_args():
-    sig = inspect.signature(baseCST::VisitableCS.__init__)
+def test_basecst_visitablecs_constructor_args():
+    sig = inspect.signature(baseCST_VisitableCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::type_is_not_abstract():
-    assert not inspect.isabstract(baseCST::Type)
+def test_basecst_type_is_not_abstract():
+    assert not inspect.isabstract(baseCST_Type)
 
 
-def test_basecst::type_constructor_exists():
-    assert callable(baseCST::Type.__init__)
+def test_basecst_type_constructor_exists():
+    assert callable(baseCST_Type.__init__)
 
 
-def test_basecst::type_constructor_args():
-    sig = inspect.signature(baseCST::Type.__init__)
+def test_basecst_type_constructor_args():
+    sig = inspect.signature(baseCST_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,16 +137,16 @@ def test_typerefcs_constructor_args():
 
 
 
-def test_basecst::wildcardtyperefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::WildcardTypeRefCS)
+def test_basecst_wildcardtyperefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_WildcardTypeRefCS)
 
 
-def test_basecst::wildcardtyperefcs_constructor_exists():
-    assert callable(baseCST::WildcardTypeRefCS.__init__)
+def test_basecst_wildcardtyperefcs_constructor_exists():
+    assert callable(baseCST_WildcardTypeRefCS.__init__)
 
 
-def test_basecst::wildcardtyperefcs_constructor_args():
-    sig = inspect.signature(baseCST::WildcardTypeRefCS.__init__)
+def test_basecst_wildcardtyperefcs_constructor_args():
+    sig = inspect.signature(baseCST_WildcardTypeRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -179,23 +179,23 @@ def test_pathelementcs_constructor_args():
 
 
 
-def test_basecst::pathelementwithurics_is_not_abstract():
-    assert not inspect.isabstract(baseCST::PathElementWithURICS)
+def test_basecst_pathelementwithurics_is_not_abstract():
+    assert not inspect.isabstract(baseCST_PathElementWithURICS)
 
 
-def test_basecst::pathelementwithurics_constructor_exists():
-    assert callable(baseCST::PathElementWithURICS.__init__)
+def test_basecst_pathelementwithurics_constructor_exists():
+    assert callable(baseCST_PathElementWithURICS.__init__)
 
 
-def test_basecst::pathelementwithurics_constructor_args():
-    sig = inspect.signature(baseCST::PathElementWithURICS.__init__)
+def test_basecst_pathelementwithurics_constructor_args():
+    sig = inspect.signature(baseCST_PathElementWithURICS.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_basecst::pathelementwithurics_has_uri():
-    assert hasattr(baseCST::PathElementWithURICS, "uri")
+def test_basecst_pathelementwithurics_has_uri():
+    assert hasattr(baseCST_PathElementWithURICS, "uri")
     descriptor = None
-    for klass in baseCST::PathElementWithURICS.__mro__:
+    for klass in baseCST_PathElementWithURICS.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -231,44 +231,44 @@ def test_packagecs_constructor_args():
 
 
 
-def test_basecst::rootpackagecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::RootPackageCS)
+def test_basecst_rootpackagecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_RootPackageCS)
 
 
-def test_basecst::rootpackagecs_constructor_exists():
-    assert callable(baseCST::RootPackageCS.__init__)
+def test_basecst_rootpackagecs_constructor_exists():
+    assert callable(baseCST_RootPackageCS.__init__)
 
 
-def test_basecst::rootpackagecs_constructor_args():
-    sig = inspect.signature(baseCST::RootPackageCS.__init__)
+def test_basecst_rootpackagecs_constructor_args():
+    sig = inspect.signature(baseCST_RootPackageCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::property_is_not_abstract():
-    assert not inspect.isabstract(baseCST::Property)
+def test_basecst_property_is_not_abstract():
+    assert not inspect.isabstract(baseCST_Property)
 
 
-def test_basecst::property_constructor_exists():
-    assert callable(baseCST::Property.__init__)
+def test_basecst_property_constructor_exists():
+    assert callable(baseCST_Property.__init__)
 
 
-def test_basecst::property_constructor_args():
-    sig = inspect.signature(baseCST::Property.__init__)
+def test_basecst_property_constructor_args():
+    sig = inspect.signature(baseCST_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(baseCST::EClassifier)
+def test_basecst_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(baseCST_EClassifier)
 
 
-def test_basecst::eclassifier_constructor_exists():
-    assert callable(baseCST::EClassifier.__init__)
+def test_basecst_eclassifier_constructor_exists():
+    assert callable(baseCST_EClassifier.__init__)
 
 
-def test_basecst::eclassifier_constructor_args():
-    sig = inspect.signature(baseCST::EClassifier.__init__)
+def test_basecst_eclassifier_constructor_args():
+    sig = inspect.signature(baseCST_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -315,58 +315,58 @@ def test_modelelementcs_constructor_args():
 
 
 
-def test_basecst::typecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TypeCS)
+def test_basecst_rootcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_RootCS)
 
 
-def test_basecst::typecs_constructor_exists():
-    assert callable(baseCST::TypeCS.__init__)
+def test_basecst_rootcs_constructor_exists():
+    assert callable(baseCST_RootCS.__init__)
 
 
-def test_basecst::typecs_constructor_args():
-    sig = inspect.signature(baseCST::TypeCS.__init__)
+def test_basecst_rootcs_constructor_args():
+    sig = inspect.signature(baseCST_RootCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::rootcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::RootCS)
+def test_basecst_templateparametersubstitutioncs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TemplateParameterSubstitutionCS)
 
 
-def test_basecst::rootcs_constructor_exists():
-    assert callable(baseCST::RootCS.__init__)
+def test_basecst_templateparametersubstitutioncs_constructor_exists():
+    assert callable(baseCST_TemplateParameterSubstitutionCS.__init__)
 
 
-def test_basecst::rootcs_constructor_args():
-    sig = inspect.signature(baseCST::RootCS.__init__)
+def test_basecst_templateparametersubstitutioncs_constructor_args():
+    sig = inspect.signature(baseCST_TemplateParameterSubstitutionCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::templatesignaturecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TemplateSignatureCS)
+def test_basecst_templatesignaturecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TemplateSignatureCS)
 
 
-def test_basecst::templatesignaturecs_constructor_exists():
-    assert callable(baseCST::TemplateSignatureCS.__init__)
+def test_basecst_templatesignaturecs_constructor_exists():
+    assert callable(baseCST_TemplateSignatureCS.__init__)
 
 
-def test_basecst::templatesignaturecs_constructor_args():
-    sig = inspect.signature(baseCST::TemplateSignatureCS.__init__)
+def test_basecst_templatesignaturecs_constructor_args():
+    sig = inspect.signature(baseCST_TemplateSignatureCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::templateparametersubstitutioncs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TemplateParameterSubstitutionCS)
+def test_basecst_typecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TypeCS)
 
 
-def test_basecst::templateparametersubstitutioncs_constructor_exists():
-    assert callable(baseCST::TemplateParameterSubstitutionCS.__init__)
+def test_basecst_typecs_constructor_exists():
+    assert callable(baseCST_TypeCS.__init__)
 
 
-def test_basecst::templateparametersubstitutioncs_constructor_args():
-    sig = inspect.signature(baseCST::TemplateParameterSubstitutionCS.__init__)
+def test_basecst_typecs_constructor_args():
+    sig = inspect.signature(baseCST_TypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -385,23 +385,65 @@ def test_elementcs_constructor_args():
 
 
 
-def test_basecst::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::PathNameCS)
+def test_basecst_pivotableelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_PivotableElementCS)
 
 
-def test_basecst::pathnamecs_constructor_exists():
-    assert callable(baseCST::PathNameCS.__init__)
+def test_basecst_pivotableelementcs_constructor_exists():
+    assert callable(baseCST_PivotableElementCS.__init__)
 
 
-def test_basecst::pathnamecs_constructor_args():
-    sig = inspect.signature(baseCST::PathNameCS.__init__)
+def test_basecst_pivotableelementcs_constructor_args():
+    sig = inspect.signature(baseCST_PivotableElementCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_pathelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_PathElementCS)
+
+
+def test_basecst_pathelementcs_constructor_exists():
+    assert callable(baseCST_PathElementCS.__init__)
+
+
+def test_basecst_pathelementcs_constructor_args():
+    sig = inspect.signature(baseCST_PathElementCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_templateableelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TemplateableElementCS)
+
+
+def test_basecst_templateableelementcs_constructor_exists():
+    assert callable(baseCST_TemplateableElementCS.__init__)
+
+
+def test_basecst_templateableelementcs_constructor_args():
+    sig = inspect.signature(baseCST_TemplateableElementCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_PathNameCS)
+
+
+def test_basecst_pathnamecs_constructor_exists():
+    assert callable(baseCST_PathNameCS.__init__)
+
+
+def test_basecst_pathnamecs_constructor_args():
+    sig = inspect.signature(baseCST_PathNameCS.__init__)
     params = list(sig.parameters.keys())
     assert "scopeFilter" in params, "Missing parameter 'scopeFilter'"
 
-def test_basecst::pathnamecs_has_scopeFilter():
-    assert hasattr(baseCST::PathNameCS, "scopeFilter")
+def test_basecst_pathnamecs_has_scopeFilter():
+    assert hasattr(baseCST_PathNameCS, "scopeFilter")
     descriptor = None
-    for klass in baseCST::PathNameCS.__mro__:
+    for klass in baseCST_PathNameCS.__mro__:
         if "scopeFilter" in klass.__dict__:
             descriptor = klass.__dict__["scopeFilter"]
             break
@@ -409,58 +451,16 @@ def test_basecst::pathnamecs_has_scopeFilter():
 
 
 
-def test_basecst::templateableelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TemplateableElementCS)
+def test_basecst_multiplicitycs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_MultiplicityCS)
 
 
-def test_basecst::templateableelementcs_constructor_exists():
-    assert callable(baseCST::TemplateableElementCS.__init__)
+def test_basecst_multiplicitycs_constructor_exists():
+    assert callable(baseCST_MultiplicityCS.__init__)
 
 
-def test_basecst::templateableelementcs_constructor_args():
-    sig = inspect.signature(baseCST::TemplateableElementCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::pathelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::PathElementCS)
-
-
-def test_basecst::pathelementcs_constructor_exists():
-    assert callable(baseCST::PathElementCS.__init__)
-
-
-def test_basecst::pathelementcs_constructor_args():
-    sig = inspect.signature(baseCST::PathElementCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::pivotableelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::PivotableElementCS)
-
-
-def test_basecst::pivotableelementcs_constructor_exists():
-    assert callable(baseCST::PivotableElementCS.__init__)
-
-
-def test_basecst::pivotableelementcs_constructor_args():
-    sig = inspect.signature(baseCST::PivotableElementCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::multiplicitycs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::MultiplicityCS)
-
-
-def test_basecst::multiplicitycs_constructor_exists():
-    assert callable(baseCST::MultiplicityCS.__init__)
-
-
-def test_basecst::multiplicitycs_constructor_args():
-    sig = inspect.signature(baseCST::MultiplicityCS.__init__)
+def test_basecst_multiplicitycs_constructor_args():
+    sig = inspect.signature(baseCST_MultiplicityCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -479,23 +479,23 @@ def test_multiplicitycs_constructor_args():
 
 
 
-def test_basecst::multiplicitystringcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::MultiplicityStringCS)
+def test_basecst_multiplicitystringcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_MultiplicityStringCS)
 
 
-def test_basecst::multiplicitystringcs_constructor_exists():
-    assert callable(baseCST::MultiplicityStringCS.__init__)
+def test_basecst_multiplicitystringcs_constructor_exists():
+    assert callable(baseCST_MultiplicityStringCS.__init__)
 
 
-def test_basecst::multiplicitystringcs_constructor_args():
-    sig = inspect.signature(baseCST::MultiplicityStringCS.__init__)
+def test_basecst_multiplicitystringcs_constructor_args():
+    sig = inspect.signature(baseCST_MultiplicityStringCS.__init__)
     params = list(sig.parameters.keys())
     assert "stringBounds" in params, "Missing parameter 'stringBounds'"
 
-def test_basecst::multiplicitystringcs_has_stringBounds():
-    assert hasattr(baseCST::MultiplicityStringCS, "stringBounds")
+def test_basecst_multiplicitystringcs_has_stringBounds():
+    assert hasattr(baseCST_MultiplicityStringCS, "stringBounds")
     descriptor = None
-    for klass in baseCST::MultiplicityStringCS.__mro__:
+    for klass in baseCST_MultiplicityStringCS.__mro__:
         if "stringBounds" in klass.__dict__:
             descriptor = klass.__dict__["stringBounds"]
             break
@@ -503,33 +503,33 @@ def test_basecst::multiplicitystringcs_has_stringBounds():
 
 
 
-def test_basecst::multiplicityboundscs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::MultiplicityBoundsCS)
+def test_basecst_multiplicityboundscs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_MultiplicityBoundsCS)
 
 
-def test_basecst::multiplicityboundscs_constructor_exists():
-    assert callable(baseCST::MultiplicityBoundsCS.__init__)
+def test_basecst_multiplicityboundscs_constructor_exists():
+    assert callable(baseCST_MultiplicityBoundsCS.__init__)
 
 
-def test_basecst::multiplicityboundscs_constructor_args():
-    sig = inspect.signature(baseCST::MultiplicityBoundsCS.__init__)
+def test_basecst_multiplicityboundscs_constructor_args():
+    sig = inspect.signature(baseCST_MultiplicityBoundsCS.__init__)
     params = list(sig.parameters.keys())
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
     assert "upperBound" in params, "Missing parameter 'upperBound'"
 
-def test_basecst::multiplicityboundscs_has_lowerBound():
-    assert hasattr(baseCST::MultiplicityBoundsCS, "lowerBound")
+def test_basecst_multiplicityboundscs_has_lowerBound():
+    assert hasattr(baseCST_MultiplicityBoundsCS, "lowerBound")
     descriptor = None
-    for klass in baseCST::MultiplicityBoundsCS.__mro__:
+    for klass in baseCST_MultiplicityBoundsCS.__mro__:
         if "lowerBound" in klass.__dict__:
             descriptor = klass.__dict__["lowerBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_basecst::multiplicityboundscs_has_upperBound():
-    assert hasattr(baseCST::MultiplicityBoundsCS, "upperBound")
+def test_basecst_multiplicityboundscs_has_upperBound():
+    assert hasattr(baseCST_MultiplicityBoundsCS, "upperBound")
     descriptor = None
-    for klass in baseCST::MultiplicityBoundsCS.__mro__:
+    for klass in baseCST_MultiplicityBoundsCS.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
@@ -537,16 +537,16 @@ def test_basecst::multiplicityboundscs_has_upperBound():
 
 
 
-def test_basecst::element_is_not_abstract():
-    assert not inspect.isabstract(baseCST::Element)
+def test_basecst_element_is_not_abstract():
+    assert not inspect.isabstract(baseCST_Element)
 
 
-def test_basecst::element_constructor_exists():
-    assert callable(baseCST::Element.__init__)
+def test_basecst_element_constructor_exists():
+    assert callable(baseCST_Element.__init__)
 
 
-def test_basecst::element_constructor_args():
-    sig = inspect.signature(baseCST::Element.__init__)
+def test_basecst_element_constructor_args():
+    sig = inspect.signature(baseCST_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -565,30 +565,30 @@ def test_elementrefcs_constructor_args():
 
 
 
-def test_basecst::templatebindingcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TemplateBindingCS)
+def test_basecst_templatebindingcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TemplateBindingCS)
 
 
-def test_basecst::templatebindingcs_constructor_exists():
-    assert callable(baseCST::TemplateBindingCS.__init__)
+def test_basecst_templatebindingcs_constructor_exists():
+    assert callable(baseCST_TemplateBindingCS.__init__)
 
 
-def test_basecst::templatebindingcs_constructor_args():
-    sig = inspect.signature(baseCST::TemplateBindingCS.__init__)
+def test_basecst_templatebindingcs_constructor_args():
+    sig = inspect.signature(baseCST_TemplateBindingCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::typerefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TypeRefCS)
+def test_basecst_typerefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TypeRefCS)
 
 
-def test_basecst::typerefcs_constructor_exists():
-    assert callable(baseCST::TypeRefCS.__init__)
+def test_basecst_typerefcs_constructor_exists():
+    assert callable(baseCST_TypeRefCS.__init__)
 
 
-def test_basecst::typerefcs_constructor_args():
-    sig = inspect.signature(baseCST::TypeRefCS.__init__)
+def test_basecst_typerefcs_constructor_args():
+    sig = inspect.signature(baseCST_TypeRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -607,23 +607,23 @@ def test_nameable_constructor_args():
 
 
 
-def test_basecst::namedelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::NamedElementCS)
+def test_basecst_namedelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_NamedElementCS)
 
 
-def test_basecst::namedelementcs_constructor_exists():
-    assert callable(baseCST::NamedElementCS.__init__)
+def test_basecst_namedelementcs_constructor_exists():
+    assert callable(baseCST_NamedElementCS.__init__)
 
 
-def test_basecst::namedelementcs_constructor_args():
-    sig = inspect.signature(baseCST::NamedElementCS.__init__)
+def test_basecst_namedelementcs_constructor_args():
+    sig = inspect.signature(baseCST_NamedElementCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basecst::namedelementcs_has_name():
-    assert hasattr(baseCST::NamedElementCS, "name")
+def test_basecst_namedelementcs_has_name():
+    assert hasattr(baseCST_NamedElementCS, "name")
     descriptor = None
-    for klass in baseCST::NamedElementCS.__mro__:
+    for klass in baseCST_NamedElementCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -645,23 +645,23 @@ def test_typedrefcs_constructor_args():
 
 
 
-def test_basecst::primitivetyperefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::PrimitiveTypeRefCS)
+def test_basecst_primitivetyperefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_PrimitiveTypeRefCS)
 
 
-def test_basecst::primitivetyperefcs_constructor_exists():
-    assert callable(baseCST::PrimitiveTypeRefCS.__init__)
+def test_basecst_primitivetyperefcs_constructor_exists():
+    assert callable(baseCST_PrimitiveTypeRefCS.__init__)
 
 
-def test_basecst::primitivetyperefcs_constructor_args():
-    sig = inspect.signature(baseCST::PrimitiveTypeRefCS.__init__)
+def test_basecst_primitivetyperefcs_constructor_args():
+    sig = inspect.signature(baseCST_PrimitiveTypeRefCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basecst::primitivetyperefcs_has_name():
-    assert hasattr(baseCST::PrimitiveTypeRefCS, "name")
+def test_basecst_primitivetyperefcs_has_name():
+    assert hasattr(baseCST_PrimitiveTypeRefCS, "name")
     descriptor = None
-    for klass in baseCST::PrimitiveTypeRefCS.__mro__:
+    for klass in baseCST_PrimitiveTypeRefCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -669,37 +669,23 @@ def test_basecst::primitivetyperefcs_has_name():
 
 
 
-def test_basecst::typedtyperefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TypedTypeRefCS)
+def test_basecst_tupletypecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TupleTypeCS)
 
 
-def test_basecst::typedtyperefcs_constructor_exists():
-    assert callable(baseCST::TypedTypeRefCS.__init__)
+def test_basecst_tupletypecs_constructor_exists():
+    assert callable(baseCST_TupleTypeCS.__init__)
 
 
-def test_basecst::typedtyperefcs_constructor_args():
-    sig = inspect.signature(baseCST::TypedTypeRefCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::tupletypecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TupleTypeCS)
-
-
-def test_basecst::tupletypecs_constructor_exists():
-    assert callable(baseCST::TupleTypeCS.__init__)
-
-
-def test_basecst::tupletypecs_constructor_args():
-    sig = inspect.signature(baseCST::TupleTypeCS.__init__)
+def test_basecst_tupletypecs_constructor_args():
+    sig = inspect.signature(baseCST_TupleTypeCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basecst::tupletypecs_has_name():
-    assert hasattr(baseCST::TupleTypeCS, "name")
+def test_basecst_tupletypecs_has_name():
+    assert hasattr(baseCST_TupleTypeCS, "name")
     descriptor = None
-    for klass in baseCST::TupleTypeCS.__mro__:
+    for klass in baseCST_TupleTypeCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -707,16 +693,30 @@ def test_basecst::tupletypecs_has_name():
 
 
 
-def test_basecst::namespace_is_not_abstract():
-    assert not inspect.isabstract(baseCST::Namespace)
+def test_basecst_typedtyperefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TypedTypeRefCS)
 
 
-def test_basecst::namespace_constructor_exists():
-    assert callable(baseCST::Namespace.__init__)
+def test_basecst_typedtyperefcs_constructor_exists():
+    assert callable(baseCST_TypedTypeRefCS.__init__)
 
 
-def test_basecst::namespace_constructor_args():
-    sig = inspect.signature(baseCST::Namespace.__init__)
+def test_basecst_typedtyperefcs_constructor_args():
+    sig = inspect.signature(baseCST_TypedTypeRefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_namespace_is_not_abstract():
+    assert not inspect.isabstract(baseCST_Namespace)
+
+
+def test_basecst_namespace_constructor_exists():
+    assert callable(baseCST_Namespace.__init__)
+
+
+def test_basecst_namespace_constructor_args():
+    sig = inspect.signature(baseCST_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -735,44 +735,44 @@ def test_typedelementcs_constructor_args():
 
 
 
-def test_basecst::tuplepartcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TuplePartCS)
+def test_basecst_parametercs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ParameterCS)
 
 
-def test_basecst::tuplepartcs_constructor_exists():
-    assert callable(baseCST::TuplePartCS.__init__)
+def test_basecst_parametercs_constructor_exists():
+    assert callable(baseCST_ParameterCS.__init__)
 
 
-def test_basecst::tuplepartcs_constructor_args():
-    sig = inspect.signature(baseCST::TuplePartCS.__init__)
+def test_basecst_parametercs_constructor_args():
+    sig = inspect.signature(baseCST_ParameterCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::parametercs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ParameterCS)
+def test_basecst_tuplepartcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TuplePartCS)
 
 
-def test_basecst::parametercs_constructor_exists():
-    assert callable(baseCST::ParameterCS.__init__)
+def test_basecst_tuplepartcs_constructor_exists():
+    assert callable(baseCST_TuplePartCS.__init__)
 
 
-def test_basecst::parametercs_constructor_args():
-    sig = inspect.signature(baseCST::ParameterCS.__init__)
+def test_basecst_tuplepartcs_constructor_args():
+    sig = inspect.signature(baseCST_TuplePartCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::featurecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::FeatureCS)
+def test_basecst_featurecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_FeatureCS)
 
 
-def test_basecst::featurecs_constructor_exists():
-    assert callable(baseCST::FeatureCS.__init__)
+def test_basecst_featurecs_constructor_exists():
+    assert callable(baseCST_FeatureCS.__init__)
 
 
-def test_basecst::featurecs_constructor_args():
-    sig = inspect.signature(baseCST::FeatureCS.__init__)
+def test_basecst_featurecs_constructor_args():
+    sig = inspect.signature(baseCST_FeatureCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -791,16 +791,16 @@ def test_pivotableelementcs_constructor_args():
 
 
 
-def test_basecst::elementrefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ElementRefCS)
+def test_basecst_elementrefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ElementRefCS)
 
 
-def test_basecst::elementrefcs_constructor_exists():
-    assert callable(baseCST::ElementRefCS.__init__)
+def test_basecst_elementrefcs_constructor_exists():
+    assert callable(baseCST_ElementRefCS.__init__)
 
 
-def test_basecst::elementrefcs_constructor_args():
-    sig = inspect.signature(baseCST::ElementRefCS.__init__)
+def test_basecst_elementrefcs_constructor_args():
+    sig = inspect.signature(baseCST_ElementRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -819,37 +819,37 @@ def test_visitablecs_constructor_args():
 
 
 
-def test_basecst::elementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ElementCS)
+def test_basecst_elementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ElementCS)
 
 
-def test_basecst::elementcs_constructor_exists():
-    assert callable(baseCST::ElementCS.__init__)
+def test_basecst_elementcs_constructor_exists():
+    assert callable(baseCST_ElementCS.__init__)
 
 
-def test_basecst::elementcs_constructor_args():
-    sig = inspect.signature(baseCST::ElementCS.__init__)
+def test_basecst_elementcs_constructor_args():
+    sig = inspect.signature(baseCST_ElementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::specificationcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::SpecificationCS)
+def test_basecst_specificationcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_SpecificationCS)
 
 
-def test_basecst::specificationcs_constructor_exists():
-    assert callable(baseCST::SpecificationCS.__init__)
+def test_basecst_specificationcs_constructor_exists():
+    assert callable(baseCST_SpecificationCS.__init__)
 
 
-def test_basecst::specificationcs_constructor_args():
-    sig = inspect.signature(baseCST::SpecificationCS.__init__)
+def test_basecst_specificationcs_constructor_args():
+    sig = inspect.signature(baseCST_SpecificationCS.__init__)
     params = list(sig.parameters.keys())
     assert "exprString" in params, "Missing parameter 'exprString'"
 
-def test_basecst::specificationcs_has_exprString():
-    assert hasattr(baseCST::SpecificationCS, "exprString")
+def test_basecst_specificationcs_has_exprString():
+    assert hasattr(baseCST_SpecificationCS, "exprString")
     descriptor = None
-    for klass in baseCST::SpecificationCS.__mro__:
+    for klass in baseCST_SpecificationCS.__mro__:
         if "exprString" in klass.__dict__:
             descriptor = klass.__dict__["exprString"]
             break
@@ -871,41 +871,41 @@ def test_templateableelementcs_constructor_args():
 
 
 
-def test_basecst::operationcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::OperationCS)
+def test_basecst_lambdatypecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_LambdaTypeCS)
 
 
-def test_basecst::operationcs_constructor_exists():
-    assert callable(baseCST::OperationCS.__init__)
+def test_basecst_lambdatypecs_constructor_exists():
+    assert callable(baseCST_LambdaTypeCS.__init__)
 
 
-def test_basecst::operationcs_constructor_args():
-    sig = inspect.signature(baseCST::OperationCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::lambdatypecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::LambdaTypeCS)
-
-
-def test_basecst::lambdatypecs_constructor_exists():
-    assert callable(baseCST::LambdaTypeCS.__init__)
-
-
-def test_basecst::lambdatypecs_constructor_args():
-    sig = inspect.signature(baseCST::LambdaTypeCS.__init__)
+def test_basecst_lambdatypecs_constructor_args():
+    sig = inspect.signature(baseCST_LambdaTypeCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basecst::lambdatypecs_has_name():
-    assert hasattr(baseCST::LambdaTypeCS, "name")
+def test_basecst_lambdatypecs_has_name():
+    assert hasattr(baseCST_LambdaTypeCS, "name")
     descriptor = None
-    for klass in baseCST::LambdaTypeCS.__mro__:
+    for klass in baseCST_LambdaTypeCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_basecst_operationcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_OperationCS)
+
+
+def test_basecst_operationcs_constructor_exists():
+    assert callable(baseCST_OperationCS.__init__)
+
+
+def test_basecst_operationcs_constructor_args():
+    sig = inspect.signature(baseCST_OperationCS.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -923,37 +923,37 @@ def test_typecs_constructor_args():
 
 
 
-def test_basecst::typeparametercs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TypeParameterCS)
+def test_basecst_typeparametercs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TypeParameterCS)
 
 
-def test_basecst::typeparametercs_constructor_exists():
-    assert callable(baseCST::TypeParameterCS.__init__)
+def test_basecst_typeparametercs_constructor_exists():
+    assert callable(baseCST_TypeParameterCS.__init__)
 
 
-def test_basecst::typeparametercs_constructor_args():
-    sig = inspect.signature(baseCST::TypeParameterCS.__init__)
+def test_basecst_typeparametercs_constructor_args():
+    sig = inspect.signature(baseCST_TypeParameterCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::structuralfeaturecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::StructuralFeatureCS)
+def test_basecst_structuralfeaturecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_StructuralFeatureCS)
 
 
-def test_basecst::structuralfeaturecs_constructor_exists():
-    assert callable(baseCST::StructuralFeatureCS.__init__)
+def test_basecst_structuralfeaturecs_constructor_exists():
+    assert callable(baseCST_StructuralFeatureCS.__init__)
 
 
-def test_basecst::structuralfeaturecs_constructor_args():
-    sig = inspect.signature(baseCST::StructuralFeatureCS.__init__)
+def test_basecst_structuralfeaturecs_constructor_args():
+    sig = inspect.signature(baseCST_StructuralFeatureCS.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_basecst::structuralfeaturecs_has_default():
-    assert hasattr(baseCST::StructuralFeatureCS, "default")
+def test_basecst_structuralfeaturecs_has_default():
+    assert hasattr(baseCST_StructuralFeatureCS, "default")
     descriptor = None
-    for klass in baseCST::StructuralFeatureCS.__mro__:
+    for klass in baseCST_StructuralFeatureCS.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -961,16 +961,16 @@ def test_basecst::structuralfeaturecs_has_default():
 
 
 
-def test_basecst::typedrefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TypedRefCS)
+def test_basecst_typedrefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TypedRefCS)
 
 
-def test_basecst::typedrefcs_constructor_exists():
-    assert callable(baseCST::TypedRefCS.__init__)
+def test_basecst_typedrefcs_constructor_exists():
+    assert callable(baseCST_TypedRefCS.__init__)
 
 
-def test_basecst::typedrefcs_constructor_args():
-    sig = inspect.signature(baseCST::TypedRefCS.__init__)
+def test_basecst_typedrefcs_constructor_args():
+    sig = inspect.signature(baseCST_TypedRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -989,73 +989,73 @@ def test_namespacecs_constructor_args():
 
 
 
-def test_basecst::packagecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::PackageCS)
+def test_basecst_importcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ImportCS)
 
 
-def test_basecst::packagecs_constructor_exists():
-    assert callable(baseCST::PackageCS.__init__)
+def test_basecst_importcs_constructor_exists():
+    assert callable(baseCST_ImportCS.__init__)
 
 
-def test_basecst::packagecs_constructor_args():
-    sig = inspect.signature(baseCST::PackageCS.__init__)
+def test_basecst_importcs_constructor_args():
+    sig = inspect.signature(baseCST_ImportCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "all" in params, "Missing parameter 'all'"
+
+def test_basecst_importcs_has_all():
+    assert hasattr(baseCST_ImportCS, "all")
+    descriptor = None
+    for klass in baseCST_ImportCS.__mro__:
+        if "all" in klass.__dict__:
+            descriptor = klass.__dict__["all"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_basecst_librarycs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_LibraryCS)
+
+
+def test_basecst_librarycs_constructor_exists():
+    assert callable(baseCST_LibraryCS.__init__)
+
+
+def test_basecst_librarycs_constructor_args():
+    sig = inspect.signature(baseCST_LibraryCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_packagecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_PackageCS)
+
+
+def test_basecst_packagecs_constructor_exists():
+    assert callable(baseCST_PackageCS.__init__)
+
+
+def test_basecst_packagecs_constructor_args():
+    sig = inspect.signature(baseCST_PackageCS.__init__)
     params = list(sig.parameters.keys())
     assert "nsURI" in params, "Missing parameter 'nsURI'"
     assert "nsPrefix" in params, "Missing parameter 'nsPrefix'"
 
-def test_basecst::packagecs_has_nsURI():
-    assert hasattr(baseCST::PackageCS, "nsURI")
+def test_basecst_packagecs_has_nsURI():
+    assert hasattr(baseCST_PackageCS, "nsURI")
     descriptor = None
-    for klass in baseCST::PackageCS.__mro__:
+    for klass in baseCST_PackageCS.__mro__:
         if "nsURI" in klass.__dict__:
             descriptor = klass.__dict__["nsURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_basecst::packagecs_has_nsPrefix():
-    assert hasattr(baseCST::PackageCS, "nsPrefix")
+def test_basecst_packagecs_has_nsPrefix():
+    assert hasattr(baseCST_PackageCS, "nsPrefix")
     descriptor = None
-    for klass in baseCST::PackageCS.__mro__:
+    for klass in baseCST_PackageCS.__mro__:
         if "nsPrefix" in klass.__dict__:
             descriptor = klass.__dict__["nsPrefix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_basecst::librarycs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::LibraryCS)
-
-
-def test_basecst::librarycs_constructor_exists():
-    assert callable(baseCST::LibraryCS.__init__)
-
-
-def test_basecst::librarycs_constructor_args():
-    sig = inspect.signature(baseCST::LibraryCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::importcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ImportCS)
-
-
-def test_basecst::importcs_constructor_exists():
-    assert callable(baseCST::ImportCS.__init__)
-
-
-def test_basecst::importcs_constructor_args():
-    sig = inspect.signature(baseCST::ImportCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "all" in params, "Missing parameter 'all'"
-
-def test_basecst::importcs_has_all():
-    assert hasattr(baseCST::ImportCS, "all")
-    descriptor = None
-    for klass in baseCST::ImportCS.__mro__:
-        if "all" in klass.__dict__:
-            descriptor = klass.__dict__["all"]
             break
     assert isinstance(descriptor, property)
 
@@ -1075,44 +1075,44 @@ def test_classifiercs_constructor_args():
 
 
 
-def test_basecst::datatypecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::DataTypeCS)
+def test_basecst_enumerationcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_EnumerationCS)
 
 
-def test_basecst::datatypecs_constructor_exists():
-    assert callable(baseCST::DataTypeCS.__init__)
+def test_basecst_enumerationcs_constructor_exists():
+    assert callable(baseCST_EnumerationCS.__init__)
 
 
-def test_basecst::datatypecs_constructor_args():
-    sig = inspect.signature(baseCST::DataTypeCS.__init__)
+def test_basecst_enumerationcs_constructor_args():
+    sig = inspect.signature(baseCST_EnumerationCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::enumerationcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::EnumerationCS)
+def test_basecst_datatypecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_DataTypeCS)
 
 
-def test_basecst::enumerationcs_constructor_exists():
-    assert callable(baseCST::EnumerationCS.__init__)
+def test_basecst_datatypecs_constructor_exists():
+    assert callable(baseCST_DataTypeCS.__init__)
 
 
-def test_basecst::enumerationcs_constructor_args():
-    sig = inspect.signature(baseCST::EnumerationCS.__init__)
+def test_basecst_datatypecs_constructor_args():
+    sig = inspect.signature(baseCST_DataTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::classcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ClassCS)
+def test_basecst_classcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ClassCS)
 
 
-def test_basecst::classcs_constructor_exists():
-    assert callable(baseCST::ClassCS.__init__)
+def test_basecst_classcs_constructor_exists():
+    assert callable(baseCST_ClassCS.__init__)
 
 
-def test_basecst::classcs_constructor_args():
-    sig = inspect.signature(baseCST::ClassCS.__init__)
+def test_basecst_classcs_constructor_args():
+    sig = inspect.signature(baseCST_ClassCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1131,30 +1131,30 @@ def test_structuralfeaturecs_constructor_args():
 
 
 
-def test_basecst::referencecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ReferenceCS)
+def test_basecst_referencecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ReferenceCS)
 
 
-def test_basecst::referencecs_constructor_exists():
-    assert callable(baseCST::ReferenceCS.__init__)
+def test_basecst_referencecs_constructor_exists():
+    assert callable(baseCST_ReferenceCS.__init__)
 
 
-def test_basecst::referencecs_constructor_args():
-    sig = inspect.signature(baseCST::ReferenceCS.__init__)
+def test_basecst_referencecs_constructor_args():
+    sig = inspect.signature(baseCST_ReferenceCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basecst::attributecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::AttributeCS)
+def test_basecst_attributecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_AttributeCS)
 
 
-def test_basecst::attributecs_constructor_exists():
-    assert callable(baseCST::AttributeCS.__init__)
+def test_basecst_attributecs_constructor_exists():
+    assert callable(baseCST_AttributeCS.__init__)
 
 
-def test_basecst::attributecs_constructor_args():
-    sig = inspect.signature(baseCST::AttributeCS.__init__)
+def test_basecst_attributecs_constructor_args():
+    sig = inspect.signature(baseCST_AttributeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1173,37 +1173,23 @@ def test_namedelementcs_constructor_args():
 
 
 
-def test_basecst::namespacecs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::NamespaceCS)
+def test_basecst_enumerationliteralcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_EnumerationLiteralCS)
 
 
-def test_basecst::namespacecs_constructor_exists():
-    assert callable(baseCST::NamespaceCS.__init__)
+def test_basecst_enumerationliteralcs_constructor_exists():
+    assert callable(baseCST_EnumerationLiteralCS.__init__)
 
 
-def test_basecst::namespacecs_constructor_args():
-    sig = inspect.signature(baseCST::NamespaceCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::enumerationliteralcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::EnumerationLiteralCS)
-
-
-def test_basecst::enumerationliteralcs_constructor_exists():
-    assert callable(baseCST::EnumerationLiteralCS.__init__)
-
-
-def test_basecst::enumerationliteralcs_constructor_args():
-    sig = inspect.signature(baseCST::EnumerationLiteralCS.__init__)
+def test_basecst_enumerationliteralcs_constructor_args():
+    sig = inspect.signature(baseCST_EnumerationLiteralCS.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_basecst::enumerationliteralcs_has_value():
-    assert hasattr(baseCST::EnumerationLiteralCS, "value")
+def test_basecst_enumerationliteralcs_has_value():
+    assert hasattr(baseCST_EnumerationLiteralCS, "value")
     descriptor = None
-    for klass in baseCST::EnumerationLiteralCS.__mro__:
+    for klass in baseCST_EnumerationLiteralCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1211,81 +1197,23 @@ def test_basecst::enumerationliteralcs_has_value():
 
 
 
-def test_basecst::detailcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::DetailCS)
+def test_basecst_constraintcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ConstraintCS)
 
 
-def test_basecst::detailcs_constructor_exists():
-    assert callable(baseCST::DetailCS.__init__)
+def test_basecst_constraintcs_constructor_exists():
+    assert callable(baseCST_ConstraintCS.__init__)
 
 
-def test_basecst::detailcs_constructor_args():
-    sig = inspect.signature(baseCST::DetailCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_basecst::detailcs_has_value():
-    assert hasattr(baseCST::DetailCS, "value")
-    descriptor = None
-    for klass in baseCST::DetailCS.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_basecst::typedelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TypedElementCS)
-
-
-def test_basecst::typedelementcs_constructor_exists():
-    assert callable(baseCST::TypedElementCS.__init__)
-
-
-def test_basecst::typedelementcs_constructor_args():
-    sig = inspect.signature(baseCST::TypedElementCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "optional" in params, "Missing parameter 'optional'"
-    assert "qualifier" in params, "Missing parameter 'qualifier'"
-
-def test_basecst::typedelementcs_has_optional():
-    assert hasattr(baseCST::TypedElementCS, "optional")
-    descriptor = None
-    for klass in baseCST::TypedElementCS.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_basecst::typedelementcs_has_qualifier():
-    assert hasattr(baseCST::TypedElementCS, "qualifier")
-    descriptor = None
-    for klass in baseCST::TypedElementCS.__mro__:
-        if "qualifier" in klass.__dict__:
-            descriptor = klass.__dict__["qualifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_basecst::constraintcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ConstraintCS)
-
-
-def test_basecst::constraintcs_constructor_exists():
-    assert callable(baseCST::ConstraintCS.__init__)
-
-
-def test_basecst::constraintcs_constructor_args():
-    sig = inspect.signature(baseCST::ConstraintCS.__init__)
+def test_basecst_constraintcs_constructor_args():
+    sig = inspect.signature(baseCST_ConstraintCS.__init__)
     params = list(sig.parameters.keys())
     assert "stereotype" in params, "Missing parameter 'stereotype'"
 
-def test_basecst::constraintcs_has_stereotype():
-    assert hasattr(baseCST::ConstraintCS, "stereotype")
+def test_basecst_constraintcs_has_stereotype():
+    assert hasattr(baseCST_ConstraintCS, "stereotype")
     descriptor = None
-    for klass in baseCST::ConstraintCS.__mro__:
+    for klass in baseCST_ConstraintCS.__mro__:
         if "stereotype" in klass.__dict__:
             descriptor = klass.__dict__["stereotype"]
             break
@@ -1293,111 +1221,183 @@ def test_basecst::constraintcs_has_stereotype():
 
 
 
-def test_basecst::templateparametercs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::TemplateParameterCS)
+def test_basecst_typedelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TypedElementCS)
 
 
-def test_basecst::templateparametercs_constructor_exists():
-    assert callable(baseCST::TemplateParameterCS.__init__)
+def test_basecst_typedelementcs_constructor_exists():
+    assert callable(baseCST_TypedElementCS.__init__)
 
 
-def test_basecst::templateparametercs_constructor_args():
-    sig = inspect.signature(baseCST::TemplateParameterCS.__init__)
+def test_basecst_typedelementcs_constructor_args():
+    sig = inspect.signature(baseCST_TypedElementCS.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_basecst::classifiercs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ClassifierCS)
-
-
-def test_basecst::classifiercs_constructor_exists():
-    assert callable(baseCST::ClassifierCS.__init__)
-
-
-def test_basecst::classifiercs_constructor_args():
-    sig = inspect.signature(baseCST::ClassifierCS.__init__)
-    params = list(sig.parameters.keys())
+    assert "optional" in params, "Missing parameter 'optional'"
     assert "qualifier" in params, "Missing parameter 'qualifier'"
-    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
 
-def test_basecst::classifiercs_has_qualifier():
-    assert hasattr(baseCST::ClassifierCS, "qualifier")
+def test_basecst_typedelementcs_has_optional():
+    assert hasattr(baseCST_TypedElementCS, "optional")
     descriptor = None
-    for klass in baseCST::ClassifierCS.__mro__:
+    for klass in baseCST_TypedElementCS.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_basecst_typedelementcs_has_qualifier():
+    assert hasattr(baseCST_TypedElementCS, "qualifier")
+    descriptor = None
+    for klass in baseCST_TypedElementCS.__mro__:
         if "qualifier" in klass.__dict__:
             descriptor = klass.__dict__["qualifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_basecst::classifiercs_has_instanceClassName():
-    assert hasattr(baseCST::ClassifierCS, "instanceClassName")
+
+
+def test_basecst_templateparametercs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_TemplateParameterCS)
+
+
+def test_basecst_templateparametercs_constructor_exists():
+    assert callable(baseCST_TemplateParameterCS.__init__)
+
+
+def test_basecst_templateparametercs_constructor_args():
+    sig = inspect.signature(baseCST_TemplateParameterCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_detailcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_DetailCS)
+
+
+def test_basecst_detailcs_constructor_exists():
+    assert callable(baseCST_DetailCS.__init__)
+
+
+def test_basecst_detailcs_constructor_args():
+    sig = inspect.signature(baseCST_DetailCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_basecst_detailcs_has_value():
+    assert hasattr(baseCST_DetailCS, "value")
     descriptor = None
-    for klass in baseCST::ClassifierCS.__mro__:
+    for klass in baseCST_DetailCS.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_basecst_classifiercs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ClassifierCS)
+
+
+def test_basecst_classifiercs_constructor_exists():
+    assert callable(baseCST_ClassifierCS.__init__)
+
+
+def test_basecst_classifiercs_constructor_args():
+    sig = inspect.signature(baseCST_ClassifierCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
+    assert "qualifier" in params, "Missing parameter 'qualifier'"
+
+def test_basecst_classifiercs_has_instanceClassName():
+    assert hasattr(baseCST_ClassifierCS, "instanceClassName")
+    descriptor = None
+    for klass in baseCST_ClassifierCS.__mro__:
         if "instanceClassName" in klass.__dict__:
             descriptor = klass.__dict__["instanceClassName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_basecst::annotationelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::AnnotationElementCS)
-
-
-def test_basecst::annotationelementcs_constructor_exists():
-    assert callable(baseCST::AnnotationElementCS.__init__)
-
-
-def test_basecst::annotationelementcs_constructor_args():
-    sig = inspect.signature(baseCST::AnnotationElementCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::modelelementrefcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ModelElementRefCS)
-
-
-def test_basecst::modelelementrefcs_constructor_exists():
-    assert callable(baseCST::ModelElementRefCS.__init__)
-
-
-def test_basecst::modelelementrefcs_constructor_args():
-    sig = inspect.signature(baseCST::ModelElementRefCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basecst::modelelementcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::ModelElementCS)
-
-
-def test_basecst::modelelementcs_constructor_exists():
-    assert callable(baseCST::ModelElementCS.__init__)
-
-
-def test_basecst::modelelementcs_constructor_args():
-    sig = inspect.signature(baseCST::ModelElementCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "csi" in params, "Missing parameter 'csi'"
-    assert "originalXmiId" in params, "Missing parameter 'originalXmiId'"
-
-def test_basecst::modelelementcs_has_csi():
-    assert hasattr(baseCST::ModelElementCS, "csi")
+def test_basecst_classifiercs_has_qualifier():
+    assert hasattr(baseCST_ClassifierCS, "qualifier")
     descriptor = None
-    for klass in baseCST::ModelElementCS.__mro__:
-        if "csi" in klass.__dict__:
-            descriptor = klass.__dict__["csi"]
+    for klass in baseCST_ClassifierCS.__mro__:
+        if "qualifier" in klass.__dict__:
+            descriptor = klass.__dict__["qualifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_basecst::modelelementcs_has_originalXmiId():
-    assert hasattr(baseCST::ModelElementCS, "originalXmiId")
+
+
+def test_basecst_namespacecs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_NamespaceCS)
+
+
+def test_basecst_namespacecs_constructor_exists():
+    assert callable(baseCST_NamespaceCS.__init__)
+
+
+def test_basecst_namespacecs_constructor_args():
+    sig = inspect.signature(baseCST_NamespaceCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_annotationelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_AnnotationElementCS)
+
+
+def test_basecst_annotationelementcs_constructor_exists():
+    assert callable(baseCST_AnnotationElementCS.__init__)
+
+
+def test_basecst_annotationelementcs_constructor_args():
+    sig = inspect.signature(baseCST_AnnotationElementCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_modelelementrefcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ModelElementRefCS)
+
+
+def test_basecst_modelelementrefcs_constructor_exists():
+    assert callable(baseCST_ModelElementRefCS.__init__)
+
+
+def test_basecst_modelelementrefcs_constructor_args():
+    sig = inspect.signature(baseCST_ModelElementRefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basecst_modelelementcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_ModelElementCS)
+
+
+def test_basecst_modelelementcs_constructor_exists():
+    assert callable(baseCST_ModelElementCS.__init__)
+
+
+def test_basecst_modelelementcs_constructor_args():
+    sig = inspect.signature(baseCST_ModelElementCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "originalXmiId" in params, "Missing parameter 'originalXmiId'"
+    assert "csi" in params, "Missing parameter 'csi'"
+
+def test_basecst_modelelementcs_has_originalXmiId():
+    assert hasattr(baseCST_ModelElementCS, "originalXmiId")
     descriptor = None
-    for klass in baseCST::ModelElementCS.__mro__:
+    for klass in baseCST_ModelElementCS.__mro__:
         if "originalXmiId" in klass.__dict__:
             descriptor = klass.__dict__["originalXmiId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_basecst_modelelementcs_has_csi():
+    assert hasattr(baseCST_ModelElementCS, "csi")
+    descriptor = None
+    for klass in baseCST_ModelElementCS.__mro__:
+        if "csi" in klass.__dict__:
+            descriptor = klass.__dict__["csi"]
             break
     assert isinstance(descriptor, property)
 
@@ -1417,23 +1417,23 @@ def test_annotationelementcs_constructor_args():
 
 
 
-def test_basecst::documentationcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::DocumentationCS)
+def test_basecst_documentationcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_DocumentationCS)
 
 
-def test_basecst::documentationcs_constructor_exists():
-    assert callable(baseCST::DocumentationCS.__init__)
+def test_basecst_documentationcs_constructor_exists():
+    assert callable(baseCST_DocumentationCS.__init__)
 
 
-def test_basecst::documentationcs_constructor_args():
-    sig = inspect.signature(baseCST::DocumentationCS.__init__)
+def test_basecst_documentationcs_constructor_args():
+    sig = inspect.signature(baseCST_DocumentationCS.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_basecst::documentationcs_has_value():
-    assert hasattr(baseCST::DocumentationCS, "value")
+def test_basecst_documentationcs_has_value():
+    assert hasattr(baseCST_DocumentationCS, "value")
     descriptor = None
-    for klass in baseCST::DocumentationCS.__mro__:
+    for klass in baseCST_DocumentationCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1441,16 +1441,16 @@ def test_basecst::documentationcs_has_value():
 
 
 
-def test_basecst::annotationcs_is_not_abstract():
-    assert not inspect.isabstract(baseCST::AnnotationCS)
+def test_basecst_annotationcs_is_not_abstract():
+    assert not inspect.isabstract(baseCST_AnnotationCS)
 
 
-def test_basecst::annotationcs_constructor_exists():
-    assert callable(baseCST::AnnotationCS.__init__)
+def test_basecst_annotationcs_constructor_exists():
+    assert callable(baseCST_AnnotationCS.__init__)
 
 
-def test_basecst::annotationcs_constructor_args():
-    sig = inspect.signature(baseCST::AnnotationCS.__init__)
+def test_basecst_annotationcs_constructor_args():
+    sig = inspect.signature(baseCST_AnnotationCS.__init__)
     params = list(sig.parameters.keys())
 
 def test_iteratorkind_exists():
@@ -1481,17 +1481,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-baseCST::VisitableCS_strategy = st.builds(
-    baseCST::VisitableCS,
+baseCST_VisitableCS_strategy = st.builds(
+    baseCST_VisitableCS,
 )
-baseCST::Type_strategy = st.builds(
-    baseCST::Type,
+baseCST_Type_strategy = st.builds(
+    baseCST_Type,
 )
 TypeRefCS_strategy = st.builds(
     TypeRefCS,
 )
-baseCST::WildcardTypeRefCS_strategy = st.builds(
-    baseCST::WildcardTypeRefCS,
+baseCST_WildcardTypeRefCS_strategy = st.builds(
+    baseCST_WildcardTypeRefCS,
 )
 TemplateParameterCS_strategy = st.builds(
     TemplateParameterCS,
@@ -1499,8 +1499,8 @@ TemplateParameterCS_strategy = st.builds(
 PathElementCS_strategy = st.builds(
     PathElementCS,
 )
-baseCST::PathElementWithURICS_strategy = st.builds(
-    baseCST::PathElementWithURICS,
+baseCST_PathElementWithURICS_strategy = st.builds(
+    baseCST_PathElementWithURICS,
     uri=
         safe_text
 )
@@ -1510,14 +1510,14 @@ RootCS_strategy = st.builds(
 PackageCS_strategy = st.builds(
     PackageCS,
 )
-baseCST::RootPackageCS_strategy = st.builds(
-    baseCST::RootPackageCS,
+baseCST_RootPackageCS_strategy = st.builds(
+    baseCST_RootPackageCS,
 )
-baseCST::Property_strategy = st.builds(
-    baseCST::Property,
+baseCST_Property_strategy = st.builds(
+    baseCST_Property,
 )
-baseCST::EClassifier_strategy = st.builds(
-    baseCST::EClassifier,
+baseCST_EClassifier_strategy = st.builds(
+    baseCST_EClassifier,
 )
 Pivotable_strategy = st.builds(
     Pivotable,
@@ -1528,267 +1528,267 @@ FeatureCS_strategy = st.builds(
 ModelElementCS_strategy = st.builds(
     ModelElementCS,
 )
-baseCST::TypeCS_strategy = st.builds(
-    baseCST::TypeCS,
+baseCST_RootCS_strategy = st.builds(
+    baseCST_RootCS,
 )
-baseCST::RootCS_strategy = st.builds(
-    baseCST::RootCS,
+baseCST_TemplateParameterSubstitutionCS_strategy = st.builds(
+    baseCST_TemplateParameterSubstitutionCS,
 )
-baseCST::TemplateSignatureCS_strategy = st.builds(
-    baseCST::TemplateSignatureCS,
+baseCST_TemplateSignatureCS_strategy = st.builds(
+    baseCST_TemplateSignatureCS,
 )
-baseCST::TemplateParameterSubstitutionCS_strategy = st.builds(
-    baseCST::TemplateParameterSubstitutionCS,
+baseCST_TypeCS_strategy = st.builds(
+    baseCST_TypeCS,
 )
 ElementCS_strategy = st.builds(
     ElementCS,
 )
-baseCST::PathNameCS_strategy = st.builds(
-    baseCST::PathNameCS,
+baseCST_PivotableElementCS_strategy = st.builds(
+    baseCST_PivotableElementCS,
+)
+baseCST_PathElementCS_strategy = st.builds(
+    baseCST_PathElementCS,
+)
+baseCST_TemplateableElementCS_strategy = st.builds(
+    baseCST_TemplateableElementCS,
+)
+baseCST_PathNameCS_strategy = st.builds(
+    baseCST_PathNameCS,
     scopeFilter=
         safe_text
 )
-baseCST::TemplateableElementCS_strategy = st.builds(
-    baseCST::TemplateableElementCS,
-)
-baseCST::PathElementCS_strategy = st.builds(
-    baseCST::PathElementCS,
-)
-baseCST::PivotableElementCS_strategy = st.builds(
-    baseCST::PivotableElementCS,
-)
-baseCST::MultiplicityCS_strategy = st.builds(
-    baseCST::MultiplicityCS,
+baseCST_MultiplicityCS_strategy = st.builds(
+    baseCST_MultiplicityCS,
 )
 MultiplicityCS_strategy = st.builds(
     MultiplicityCS,
 )
-baseCST::MultiplicityStringCS_strategy = st.builds(
-    baseCST::MultiplicityStringCS,
+baseCST_MultiplicityStringCS_strategy = st.builds(
+    baseCST_MultiplicityStringCS,
     stringBounds=
         safe_text
 )
-baseCST::MultiplicityBoundsCS_strategy = st.builds(
-    baseCST::MultiplicityBoundsCS,
+baseCST_MultiplicityBoundsCS_strategy = st.builds(
+    baseCST_MultiplicityBoundsCS,
     lowerBound=
         st.integers(),
     upperBound=
         safe_text
 )
-baseCST::Element_strategy = st.builds(
-    baseCST::Element,
+baseCST_Element_strategy = st.builds(
+    baseCST_Element,
 )
 ElementRefCS_strategy = st.builds(
     ElementRefCS,
 )
-baseCST::TemplateBindingCS_strategy = st.builds(
-    baseCST::TemplateBindingCS,
+baseCST_TemplateBindingCS_strategy = st.builds(
+    baseCST_TemplateBindingCS,
 )
-baseCST::TypeRefCS_strategy = st.builds(
-    baseCST::TypeRefCS,
+baseCST_TypeRefCS_strategy = st.builds(
+    baseCST_TypeRefCS,
 )
 Nameable_strategy = st.builds(
     Nameable,
 )
-baseCST::NamedElementCS_strategy = st.builds(
-    baseCST::NamedElementCS,
+baseCST_NamedElementCS_strategy = st.builds(
+    baseCST_NamedElementCS,
     name=
         safe_text
 )
 TypedRefCS_strategy = st.builds(
     TypedRefCS,
 )
-baseCST::PrimitiveTypeRefCS_strategy = st.builds(
-    baseCST::PrimitiveTypeRefCS,
+baseCST_PrimitiveTypeRefCS_strategy = st.builds(
+    baseCST_PrimitiveTypeRefCS,
     name=
         safe_text
 )
-baseCST::TypedTypeRefCS_strategy = st.builds(
-    baseCST::TypedTypeRefCS,
-)
-baseCST::TupleTypeCS_strategy = st.builds(
-    baseCST::TupleTypeCS,
+baseCST_TupleTypeCS_strategy = st.builds(
+    baseCST_TupleTypeCS,
     name=
         safe_text
 )
-baseCST::Namespace_strategy = st.builds(
-    baseCST::Namespace,
+baseCST_TypedTypeRefCS_strategy = st.builds(
+    baseCST_TypedTypeRefCS,
+)
+baseCST_Namespace_strategy = st.builds(
+    baseCST_Namespace,
 )
 TypedElementCS_strategy = st.builds(
     TypedElementCS,
 )
-baseCST::TuplePartCS_strategy = st.builds(
-    baseCST::TuplePartCS,
+baseCST_ParameterCS_strategy = st.builds(
+    baseCST_ParameterCS,
 )
-baseCST::ParameterCS_strategy = st.builds(
-    baseCST::ParameterCS,
+baseCST_TuplePartCS_strategy = st.builds(
+    baseCST_TuplePartCS,
 )
-baseCST::FeatureCS_strategy = st.builds(
-    baseCST::FeatureCS,
+baseCST_FeatureCS_strategy = st.builds(
+    baseCST_FeatureCS,
 )
 PivotableElementCS_strategy = st.builds(
     PivotableElementCS,
 )
-baseCST::ElementRefCS_strategy = st.builds(
-    baseCST::ElementRefCS,
+baseCST_ElementRefCS_strategy = st.builds(
+    baseCST_ElementRefCS,
 )
 VisitableCS_strategy = st.builds(
     VisitableCS,
 )
-baseCST::ElementCS_strategy = st.builds(
-    baseCST::ElementCS,
+baseCST_ElementCS_strategy = st.builds(
+    baseCST_ElementCS,
 )
-baseCST::SpecificationCS_strategy = st.builds(
-    baseCST::SpecificationCS,
+baseCST_SpecificationCS_strategy = st.builds(
+    baseCST_SpecificationCS,
     exprString=
         safe_text
 )
 TemplateableElementCS_strategy = st.builds(
     TemplateableElementCS,
 )
-baseCST::OperationCS_strategy = st.builds(
-    baseCST::OperationCS,
-)
-baseCST::LambdaTypeCS_strategy = st.builds(
-    baseCST::LambdaTypeCS,
+baseCST_LambdaTypeCS_strategy = st.builds(
+    baseCST_LambdaTypeCS,
     name=
         safe_text
+)
+baseCST_OperationCS_strategy = st.builds(
+    baseCST_OperationCS,
 )
 TypeCS_strategy = st.builds(
     TypeCS,
 )
-baseCST::TypeParameterCS_strategy = st.builds(
-    baseCST::TypeParameterCS,
+baseCST_TypeParameterCS_strategy = st.builds(
+    baseCST_TypeParameterCS,
 )
-baseCST::StructuralFeatureCS_strategy = st.builds(
-    baseCST::StructuralFeatureCS,
+baseCST_StructuralFeatureCS_strategy = st.builds(
+    baseCST_StructuralFeatureCS,
     default=
         safe_text
 )
-baseCST::TypedRefCS_strategy = st.builds(
-    baseCST::TypedRefCS,
+baseCST_TypedRefCS_strategy = st.builds(
+    baseCST_TypedRefCS,
 )
 NamespaceCS_strategy = st.builds(
     NamespaceCS,
 )
-baseCST::PackageCS_strategy = st.builds(
-    baseCST::PackageCS,
+baseCST_ImportCS_strategy = st.builds(
+    baseCST_ImportCS,
+    all=
+        st.booleans()
+)
+baseCST_LibraryCS_strategy = st.builds(
+    baseCST_LibraryCS,
+)
+baseCST_PackageCS_strategy = st.builds(
+    baseCST_PackageCS,
     nsURI=
         safe_text,
     nsPrefix=
         safe_text
 )
-baseCST::LibraryCS_strategy = st.builds(
-    baseCST::LibraryCS,
-)
-baseCST::ImportCS_strategy = st.builds(
-    baseCST::ImportCS,
-    all=
-        st.booleans()
-)
 ClassifierCS_strategy = st.builds(
     ClassifierCS,
 )
-baseCST::DataTypeCS_strategy = st.builds(
-    baseCST::DataTypeCS,
+baseCST_EnumerationCS_strategy = st.builds(
+    baseCST_EnumerationCS,
 )
-baseCST::EnumerationCS_strategy = st.builds(
-    baseCST::EnumerationCS,
+baseCST_DataTypeCS_strategy = st.builds(
+    baseCST_DataTypeCS,
 )
-baseCST::ClassCS_strategy = st.builds(
-    baseCST::ClassCS,
+baseCST_ClassCS_strategy = st.builds(
+    baseCST_ClassCS,
 )
 StructuralFeatureCS_strategy = st.builds(
     StructuralFeatureCS,
 )
-baseCST::ReferenceCS_strategy = st.builds(
-    baseCST::ReferenceCS,
+baseCST_ReferenceCS_strategy = st.builds(
+    baseCST_ReferenceCS,
 )
-baseCST::AttributeCS_strategy = st.builds(
-    baseCST::AttributeCS,
+baseCST_AttributeCS_strategy = st.builds(
+    baseCST_AttributeCS,
 )
 NamedElementCS_strategy = st.builds(
     NamedElementCS,
 )
-baseCST::NamespaceCS_strategy = st.builds(
-    baseCST::NamespaceCS,
-)
-baseCST::EnumerationLiteralCS_strategy = st.builds(
-    baseCST::EnumerationLiteralCS,
+baseCST_EnumerationLiteralCS_strategy = st.builds(
+    baseCST_EnumerationLiteralCS,
     value=
         st.integers()
 )
-baseCST::DetailCS_strategy = st.builds(
-    baseCST::DetailCS,
-    value=
+baseCST_ConstraintCS_strategy = st.builds(
+    baseCST_ConstraintCS,
+    stereotype=
         safe_text
 )
-baseCST::TypedElementCS_strategy = st.builds(
-    baseCST::TypedElementCS,
+baseCST_TypedElementCS_strategy = st.builds(
+    baseCST_TypedElementCS,
     optional=
         st.booleans(),
     qualifier=
         safe_text
 )
-baseCST::ConstraintCS_strategy = st.builds(
-    baseCST::ConstraintCS,
-    stereotype=
+baseCST_TemplateParameterCS_strategy = st.builds(
+    baseCST_TemplateParameterCS,
+)
+baseCST_DetailCS_strategy = st.builds(
+    baseCST_DetailCS,
+    value=
         safe_text
 )
-baseCST::TemplateParameterCS_strategy = st.builds(
-    baseCST::TemplateParameterCS,
-)
-baseCST::ClassifierCS_strategy = st.builds(
-    baseCST::ClassifierCS,
-    qualifier=
-        safe_text,
+baseCST_ClassifierCS_strategy = st.builds(
+    baseCST_ClassifierCS,
     instanceClassName=
+        safe_text,
+    qualifier=
         safe_text
 )
-baseCST::AnnotationElementCS_strategy = st.builds(
-    baseCST::AnnotationElementCS,
+baseCST_NamespaceCS_strategy = st.builds(
+    baseCST_NamespaceCS,
 )
-baseCST::ModelElementRefCS_strategy = st.builds(
-    baseCST::ModelElementRefCS,
+baseCST_AnnotationElementCS_strategy = st.builds(
+    baseCST_AnnotationElementCS,
 )
-baseCST::ModelElementCS_strategy = st.builds(
-    baseCST::ModelElementCS,
-    csi=
-        safe_text,
+baseCST_ModelElementRefCS_strategy = st.builds(
+    baseCST_ModelElementRefCS,
+)
+baseCST_ModelElementCS_strategy = st.builds(
+    baseCST_ModelElementCS,
     originalXmiId=
+        safe_text,
+    csi=
         safe_text
 )
 AnnotationElementCS_strategy = st.builds(
     AnnotationElementCS,
 )
-baseCST::DocumentationCS_strategy = st.builds(
-    baseCST::DocumentationCS,
+baseCST_DocumentationCS_strategy = st.builds(
+    baseCST_DocumentationCS,
     value=
         safe_text
 )
-baseCST::AnnotationCS_strategy = st.builds(
-    baseCST::AnnotationCS,
+baseCST_AnnotationCS_strategy = st.builds(
+    baseCST_AnnotationCS,
 )
 
-@given(instance=baseCST::VisitableCS_strategy)
+@given(instance=baseCST_VisitableCS_strategy)
 @settings(max_examples=50)
-def test_basecst::visitablecs_instantiation(instance):
-    assert isinstance(instance, baseCST::VisitableCS)
+def test_basecst_visitablecs_instantiation(instance):
+    assert isinstance(instance, baseCST_VisitableCS)
 
-@given(instance=baseCST::Type_strategy)
+@given(instance=baseCST_Type_strategy)
 @settings(max_examples=50)
-def test_basecst::type_instantiation(instance):
-    assert isinstance(instance, baseCST::Type)
+def test_basecst_type_instantiation(instance):
+    assert isinstance(instance, baseCST_Type)
 
 @given(instance=TypeRefCS_strategy)
 @settings(max_examples=50)
 def test_typerefcs_instantiation(instance):
     assert isinstance(instance, TypeRefCS)
 
-@given(instance=baseCST::WildcardTypeRefCS_strategy)
+@given(instance=baseCST_WildcardTypeRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::wildcardtyperefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::WildcardTypeRefCS)
+def test_basecst_wildcardtyperefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_WildcardTypeRefCS)
 
 @given(instance=TemplateParameterCS_strategy)
 @settings(max_examples=50)
@@ -1800,18 +1800,15 @@ def test_templateparametercs_instantiation(instance):
 def test_pathelementcs_instantiation(instance):
     assert isinstance(instance, PathElementCS)
 
-@given(instance=baseCST::PathElementWithURICS_strategy)
+@given(instance=baseCST_PathElementWithURICS_strategy)
 @settings(max_examples=50)
-def test_basecst::pathelementwithurics_instantiation(instance):
-    assert isinstance(instance, baseCST::PathElementWithURICS)
-
-@given(instance=baseCST::PathElementWithURICS_strategy)
-def test_basecst::pathelementwithurics_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_basecst_pathelementwithurics_instantiation(instance):
+    assert isinstance(instance, baseCST_PathElementWithURICS)
 
 
-@given(instance=baseCST::PathElementWithURICS_strategy)
-def test_basecst::pathelementwithurics_uri_setter(instance):
+
+@given(instance=baseCST_PathElementWithURICS_strategy)
+def test_basecst_pathelementwithurics_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
@@ -1826,20 +1823,20 @@ def test_rootcs_instantiation(instance):
 def test_packagecs_instantiation(instance):
     assert isinstance(instance, PackageCS)
 
-@given(instance=baseCST::RootPackageCS_strategy)
+@given(instance=baseCST_RootPackageCS_strategy)
 @settings(max_examples=50)
-def test_basecst::rootpackagecs_instantiation(instance):
-    assert isinstance(instance, baseCST::RootPackageCS)
+def test_basecst_rootpackagecs_instantiation(instance):
+    assert isinstance(instance, baseCST_RootPackageCS)
 
-@given(instance=baseCST::Property_strategy)
+@given(instance=baseCST_Property_strategy)
 @settings(max_examples=50)
-def test_basecst::property_instantiation(instance):
-    assert isinstance(instance, baseCST::Property)
+def test_basecst_property_instantiation(instance):
+    assert isinstance(instance, baseCST_Property)
 
-@given(instance=baseCST::EClassifier_strategy)
+@given(instance=baseCST_EClassifier_strategy)
 @settings(max_examples=50)
-def test_basecst::eclassifier_instantiation(instance):
-    assert isinstance(instance, baseCST::EClassifier)
+def test_basecst_eclassifier_instantiation(instance):
+    assert isinstance(instance, baseCST_EClassifier)
 
 @given(instance=Pivotable_strategy)
 @settings(max_examples=50)
@@ -1856,152 +1853,137 @@ def test_featurecs_instantiation(instance):
 def test_modelelementcs_instantiation(instance):
     assert isinstance(instance, ModelElementCS)
 
-@given(instance=baseCST::TypeCS_strategy)
+@given(instance=baseCST_RootCS_strategy)
 @settings(max_examples=50)
-def test_basecst::typecs_instantiation(instance):
-    assert isinstance(instance, baseCST::TypeCS)
+def test_basecst_rootcs_instantiation(instance):
+    assert isinstance(instance, baseCST_RootCS)
 
-@given(instance=baseCST::RootCS_strategy)
+@given(instance=baseCST_TemplateParameterSubstitutionCS_strategy)
 @settings(max_examples=50)
-def test_basecst::rootcs_instantiation(instance):
-    assert isinstance(instance, baseCST::RootCS)
+def test_basecst_templateparametersubstitutioncs_instantiation(instance):
+    assert isinstance(instance, baseCST_TemplateParameterSubstitutionCS)
 
-@given(instance=baseCST::TemplateSignatureCS_strategy)
+@given(instance=baseCST_TemplateSignatureCS_strategy)
 @settings(max_examples=50)
-def test_basecst::templatesignaturecs_instantiation(instance):
-    assert isinstance(instance, baseCST::TemplateSignatureCS)
+def test_basecst_templatesignaturecs_instantiation(instance):
+    assert isinstance(instance, baseCST_TemplateSignatureCS)
 
-@given(instance=baseCST::TemplateParameterSubstitutionCS_strategy)
+@given(instance=baseCST_TypeCS_strategy)
 @settings(max_examples=50)
-def test_basecst::templateparametersubstitutioncs_instantiation(instance):
-    assert isinstance(instance, baseCST::TemplateParameterSubstitutionCS)
+def test_basecst_typecs_instantiation(instance):
+    assert isinstance(instance, baseCST_TypeCS)
 
 @given(instance=ElementCS_strategy)
 @settings(max_examples=50)
 def test_elementcs_instantiation(instance):
     assert isinstance(instance, ElementCS)
 
-@given(instance=baseCST::PathNameCS_strategy)
+@given(instance=baseCST_PivotableElementCS_strategy)
 @settings(max_examples=50)
-def test_basecst::pathnamecs_instantiation(instance):
-    assert isinstance(instance, baseCST::PathNameCS)
+def test_basecst_pivotableelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_PivotableElementCS)
 
-@given(instance=baseCST::PathNameCS_strategy)
-def test_basecst::pathnamecs_scopeFilter_type(instance):
-    assert isinstance(instance.scopeFilter, str)
+@given(instance=baseCST_PathElementCS_strategy)
+@settings(max_examples=50)
+def test_basecst_pathelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_PathElementCS)
+
+@given(instance=baseCST_TemplateableElementCS_strategy)
+@settings(max_examples=50)
+def test_basecst_templateableelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TemplateableElementCS)
+
+@given(instance=baseCST_PathNameCS_strategy)
+@settings(max_examples=50)
+def test_basecst_pathnamecs_instantiation(instance):
+    assert isinstance(instance, baseCST_PathNameCS)
 
 
-@given(instance=baseCST::PathNameCS_strategy)
-def test_basecst::pathnamecs_scopeFilter_setter(instance):
+
+@given(instance=baseCST_PathNameCS_strategy)
+def test_basecst_pathnamecs_scopeFilter_setter(instance):
     original = instance.scopeFilter
     instance.scopeFilter = original
     assert instance.scopeFilter == original
 
-@given(instance=baseCST::TemplateableElementCS_strategy)
+@given(instance=baseCST_MultiplicityCS_strategy)
 @settings(max_examples=50)
-def test_basecst::templateableelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TemplateableElementCS)
-
-@given(instance=baseCST::PathElementCS_strategy)
-@settings(max_examples=50)
-def test_basecst::pathelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::PathElementCS)
-
-@given(instance=baseCST::PivotableElementCS_strategy)
-@settings(max_examples=50)
-def test_basecst::pivotableelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::PivotableElementCS)
-
-@given(instance=baseCST::MultiplicityCS_strategy)
-@settings(max_examples=50)
-def test_basecst::multiplicitycs_instantiation(instance):
-    assert isinstance(instance, baseCST::MultiplicityCS)
+def test_basecst_multiplicitycs_instantiation(instance):
+    assert isinstance(instance, baseCST_MultiplicityCS)
 
 @given(instance=MultiplicityCS_strategy)
 @settings(max_examples=50)
 def test_multiplicitycs_instantiation(instance):
     assert isinstance(instance, MultiplicityCS)
 
-@given(instance=baseCST::MultiplicityStringCS_strategy)
+@given(instance=baseCST_MultiplicityStringCS_strategy)
 @settings(max_examples=50)
-def test_basecst::multiplicitystringcs_instantiation(instance):
-    assert isinstance(instance, baseCST::MultiplicityStringCS)
-
-@given(instance=baseCST::MultiplicityStringCS_strategy)
-def test_basecst::multiplicitystringcs_stringBounds_type(instance):
-    assert isinstance(instance.stringBounds, str)
+def test_basecst_multiplicitystringcs_instantiation(instance):
+    assert isinstance(instance, baseCST_MultiplicityStringCS)
 
 
-@given(instance=baseCST::MultiplicityStringCS_strategy)
-def test_basecst::multiplicitystringcs_stringBounds_setter(instance):
+
+@given(instance=baseCST_MultiplicityStringCS_strategy)
+def test_basecst_multiplicitystringcs_stringBounds_setter(instance):
     original = instance.stringBounds
     instance.stringBounds = original
     assert instance.stringBounds == original
 
-@given(instance=baseCST::MultiplicityBoundsCS_strategy)
+@given(instance=baseCST_MultiplicityBoundsCS_strategy)
 @settings(max_examples=50)
-def test_basecst::multiplicityboundscs_instantiation(instance):
-    assert isinstance(instance, baseCST::MultiplicityBoundsCS)
-
-@given(instance=baseCST::MultiplicityBoundsCS_strategy)
-def test_basecst::multiplicityboundscs_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
+def test_basecst_multiplicityboundscs_instantiation(instance):
+    assert isinstance(instance, baseCST_MultiplicityBoundsCS)
 
 
-@given(instance=baseCST::MultiplicityBoundsCS_strategy)
-def test_basecst::multiplicityboundscs_lowerBound_setter(instance):
+
+@given(instance=baseCST_MultiplicityBoundsCS_strategy)
+def test_basecst_multiplicityboundscs_lowerBound_setter(instance):
     original = instance.lowerBound
     instance.lowerBound = original
     assert instance.lowerBound == original
 
-@given(instance=baseCST::MultiplicityBoundsCS_strategy)
-def test_basecst::multiplicityboundscs_upperBound_type(instance):
-    assert isinstance(instance.upperBound, str)
 
 
-@given(instance=baseCST::MultiplicityBoundsCS_strategy)
-def test_basecst::multiplicityboundscs_upperBound_setter(instance):
+@given(instance=baseCST_MultiplicityBoundsCS_strategy)
+def test_basecst_multiplicityboundscs_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=baseCST::Element_strategy)
+@given(instance=baseCST_Element_strategy)
 @settings(max_examples=50)
-def test_basecst::element_instantiation(instance):
-    assert isinstance(instance, baseCST::Element)
+def test_basecst_element_instantiation(instance):
+    assert isinstance(instance, baseCST_Element)
 
 @given(instance=ElementRefCS_strategy)
 @settings(max_examples=50)
 def test_elementrefcs_instantiation(instance):
     assert isinstance(instance, ElementRefCS)
 
-@given(instance=baseCST::TemplateBindingCS_strategy)
+@given(instance=baseCST_TemplateBindingCS_strategy)
 @settings(max_examples=50)
-def test_basecst::templatebindingcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TemplateBindingCS)
+def test_basecst_templatebindingcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TemplateBindingCS)
 
-@given(instance=baseCST::TypeRefCS_strategy)
+@given(instance=baseCST_TypeRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::typerefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TypeRefCS)
+def test_basecst_typerefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TypeRefCS)
 
 @given(instance=Nameable_strategy)
 @settings(max_examples=50)
 def test_nameable_instantiation(instance):
     assert isinstance(instance, Nameable)
 
-@given(instance=baseCST::NamedElementCS_strategy)
+@given(instance=baseCST_NamedElementCS_strategy)
 @settings(max_examples=50)
-def test_basecst::namedelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::NamedElementCS)
-
-@given(instance=baseCST::NamedElementCS_strategy)
-def test_basecst::namedelementcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basecst_namedelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_NamedElementCS)
 
 
-@given(instance=baseCST::NamedElementCS_strategy)
-def test_basecst::namedelementcs_name_setter(instance):
+
+@given(instance=baseCST_NamedElementCS_strategy)
+def test_basecst_namedelementcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2011,100 +1993,91 @@ def test_basecst::namedelementcs_name_setter(instance):
 def test_typedrefcs_instantiation(instance):
     assert isinstance(instance, TypedRefCS)
 
-@given(instance=baseCST::PrimitiveTypeRefCS_strategy)
+@given(instance=baseCST_PrimitiveTypeRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::primitivetyperefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::PrimitiveTypeRefCS)
-
-@given(instance=baseCST::PrimitiveTypeRefCS_strategy)
-def test_basecst::primitivetyperefcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basecst_primitivetyperefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_PrimitiveTypeRefCS)
 
 
-@given(instance=baseCST::PrimitiveTypeRefCS_strategy)
-def test_basecst::primitivetyperefcs_name_setter(instance):
+
+@given(instance=baseCST_PrimitiveTypeRefCS_strategy)
+def test_basecst_primitivetyperefcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=baseCST::TypedTypeRefCS_strategy)
+@given(instance=baseCST_TupleTypeCS_strategy)
 @settings(max_examples=50)
-def test_basecst::typedtyperefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TypedTypeRefCS)
-
-@given(instance=baseCST::TupleTypeCS_strategy)
-@settings(max_examples=50)
-def test_basecst::tupletypecs_instantiation(instance):
-    assert isinstance(instance, baseCST::TupleTypeCS)
-
-@given(instance=baseCST::TupleTypeCS_strategy)
-def test_basecst::tupletypecs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basecst_tupletypecs_instantiation(instance):
+    assert isinstance(instance, baseCST_TupleTypeCS)
 
 
-@given(instance=baseCST::TupleTypeCS_strategy)
-def test_basecst::tupletypecs_name_setter(instance):
+
+@given(instance=baseCST_TupleTypeCS_strategy)
+def test_basecst_tupletypecs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=baseCST::Namespace_strategy)
+@given(instance=baseCST_TypedTypeRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::namespace_instantiation(instance):
-    assert isinstance(instance, baseCST::Namespace)
+def test_basecst_typedtyperefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TypedTypeRefCS)
+
+@given(instance=baseCST_Namespace_strategy)
+@settings(max_examples=50)
+def test_basecst_namespace_instantiation(instance):
+    assert isinstance(instance, baseCST_Namespace)
 
 @given(instance=TypedElementCS_strategy)
 @settings(max_examples=50)
 def test_typedelementcs_instantiation(instance):
     assert isinstance(instance, TypedElementCS)
 
-@given(instance=baseCST::TuplePartCS_strategy)
+@given(instance=baseCST_ParameterCS_strategy)
 @settings(max_examples=50)
-def test_basecst::tuplepartcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TuplePartCS)
+def test_basecst_parametercs_instantiation(instance):
+    assert isinstance(instance, baseCST_ParameterCS)
 
-@given(instance=baseCST::ParameterCS_strategy)
+@given(instance=baseCST_TuplePartCS_strategy)
 @settings(max_examples=50)
-def test_basecst::parametercs_instantiation(instance):
-    assert isinstance(instance, baseCST::ParameterCS)
+def test_basecst_tuplepartcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TuplePartCS)
 
-@given(instance=baseCST::FeatureCS_strategy)
+@given(instance=baseCST_FeatureCS_strategy)
 @settings(max_examples=50)
-def test_basecst::featurecs_instantiation(instance):
-    assert isinstance(instance, baseCST::FeatureCS)
+def test_basecst_featurecs_instantiation(instance):
+    assert isinstance(instance, baseCST_FeatureCS)
 
 @given(instance=PivotableElementCS_strategy)
 @settings(max_examples=50)
 def test_pivotableelementcs_instantiation(instance):
     assert isinstance(instance, PivotableElementCS)
 
-@given(instance=baseCST::ElementRefCS_strategy)
+@given(instance=baseCST_ElementRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::elementrefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ElementRefCS)
+def test_basecst_elementrefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ElementRefCS)
 
 @given(instance=VisitableCS_strategy)
 @settings(max_examples=50)
 def test_visitablecs_instantiation(instance):
     assert isinstance(instance, VisitableCS)
 
-@given(instance=baseCST::ElementCS_strategy)
+@given(instance=baseCST_ElementCS_strategy)
 @settings(max_examples=50)
-def test_basecst::elementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ElementCS)
+def test_basecst_elementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ElementCS)
 
-@given(instance=baseCST::SpecificationCS_strategy)
+@given(instance=baseCST_SpecificationCS_strategy)
 @settings(max_examples=50)
-def test_basecst::specificationcs_instantiation(instance):
-    assert isinstance(instance, baseCST::SpecificationCS)
-
-@given(instance=baseCST::SpecificationCS_strategy)
-def test_basecst::specificationcs_exprString_type(instance):
-    assert isinstance(instance.exprString, str)
+def test_basecst_specificationcs_instantiation(instance):
+    assert isinstance(instance, baseCST_SpecificationCS)
 
 
-@given(instance=baseCST::SpecificationCS_strategy)
-def test_basecst::specificationcs_exprString_setter(instance):
+
+@given(instance=baseCST_SpecificationCS_strategy)
+def test_basecst_specificationcs_exprString_setter(instance):
     original = instance.exprString
     instance.exprString = original
     assert instance.exprString == original
@@ -2114,322 +2087,277 @@ def test_basecst::specificationcs_exprString_setter(instance):
 def test_templateableelementcs_instantiation(instance):
     assert isinstance(instance, TemplateableElementCS)
 
-@given(instance=baseCST::OperationCS_strategy)
+@given(instance=baseCST_LambdaTypeCS_strategy)
 @settings(max_examples=50)
-def test_basecst::operationcs_instantiation(instance):
-    assert isinstance(instance, baseCST::OperationCS)
-
-@given(instance=baseCST::LambdaTypeCS_strategy)
-@settings(max_examples=50)
-def test_basecst::lambdatypecs_instantiation(instance):
-    assert isinstance(instance, baseCST::LambdaTypeCS)
-
-@given(instance=baseCST::LambdaTypeCS_strategy)
-def test_basecst::lambdatypecs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basecst_lambdatypecs_instantiation(instance):
+    assert isinstance(instance, baseCST_LambdaTypeCS)
 
 
-@given(instance=baseCST::LambdaTypeCS_strategy)
-def test_basecst::lambdatypecs_name_setter(instance):
+
+@given(instance=baseCST_LambdaTypeCS_strategy)
+def test_basecst_lambdatypecs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=baseCST_OperationCS_strategy)
+@settings(max_examples=50)
+def test_basecst_operationcs_instantiation(instance):
+    assert isinstance(instance, baseCST_OperationCS)
 
 @given(instance=TypeCS_strategy)
 @settings(max_examples=50)
 def test_typecs_instantiation(instance):
     assert isinstance(instance, TypeCS)
 
-@given(instance=baseCST::TypeParameterCS_strategy)
+@given(instance=baseCST_TypeParameterCS_strategy)
 @settings(max_examples=50)
-def test_basecst::typeparametercs_instantiation(instance):
-    assert isinstance(instance, baseCST::TypeParameterCS)
+def test_basecst_typeparametercs_instantiation(instance):
+    assert isinstance(instance, baseCST_TypeParameterCS)
 
-@given(instance=baseCST::StructuralFeatureCS_strategy)
+@given(instance=baseCST_StructuralFeatureCS_strategy)
 @settings(max_examples=50)
-def test_basecst::structuralfeaturecs_instantiation(instance):
-    assert isinstance(instance, baseCST::StructuralFeatureCS)
-
-@given(instance=baseCST::StructuralFeatureCS_strategy)
-def test_basecst::structuralfeaturecs_default_type(instance):
-    assert isinstance(instance.default, str)
+def test_basecst_structuralfeaturecs_instantiation(instance):
+    assert isinstance(instance, baseCST_StructuralFeatureCS)
 
 
-@given(instance=baseCST::StructuralFeatureCS_strategy)
-def test_basecst::structuralfeaturecs_default_setter(instance):
+
+@given(instance=baseCST_StructuralFeatureCS_strategy)
+def test_basecst_structuralfeaturecs_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=baseCST::TypedRefCS_strategy)
+@given(instance=baseCST_TypedRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::typedrefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TypedRefCS)
+def test_basecst_typedrefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TypedRefCS)
 
 @given(instance=NamespaceCS_strategy)
 @settings(max_examples=50)
 def test_namespacecs_instantiation(instance):
     assert isinstance(instance, NamespaceCS)
 
-@given(instance=baseCST::PackageCS_strategy)
+@given(instance=baseCST_ImportCS_strategy)
 @settings(max_examples=50)
-def test_basecst::packagecs_instantiation(instance):
-    assert isinstance(instance, baseCST::PackageCS)
-
-@given(instance=baseCST::PackageCS_strategy)
-def test_basecst::packagecs_nsURI_type(instance):
-    assert isinstance(instance.nsURI, str)
+def test_basecst_importcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ImportCS)
 
 
-@given(instance=baseCST::PackageCS_strategy)
-def test_basecst::packagecs_nsURI_setter(instance):
+
+@given(instance=baseCST_ImportCS_strategy)
+def test_basecst_importcs_all_setter(instance):
+    original = instance.all
+    instance.all = original
+    assert instance.all == original
+
+@given(instance=baseCST_LibraryCS_strategy)
+@settings(max_examples=50)
+def test_basecst_librarycs_instantiation(instance):
+    assert isinstance(instance, baseCST_LibraryCS)
+
+@given(instance=baseCST_PackageCS_strategy)
+@settings(max_examples=50)
+def test_basecst_packagecs_instantiation(instance):
+    assert isinstance(instance, baseCST_PackageCS)
+
+
+
+@given(instance=baseCST_PackageCS_strategy)
+def test_basecst_packagecs_nsURI_setter(instance):
     original = instance.nsURI
     instance.nsURI = original
     assert instance.nsURI == original
 
-@given(instance=baseCST::PackageCS_strategy)
-def test_basecst::packagecs_nsPrefix_type(instance):
-    assert isinstance(instance.nsPrefix, str)
 
 
-@given(instance=baseCST::PackageCS_strategy)
-def test_basecst::packagecs_nsPrefix_setter(instance):
+@given(instance=baseCST_PackageCS_strategy)
+def test_basecst_packagecs_nsPrefix_setter(instance):
     original = instance.nsPrefix
     instance.nsPrefix = original
     assert instance.nsPrefix == original
-
-@given(instance=baseCST::LibraryCS_strategy)
-@settings(max_examples=50)
-def test_basecst::librarycs_instantiation(instance):
-    assert isinstance(instance, baseCST::LibraryCS)
-
-@given(instance=baseCST::ImportCS_strategy)
-@settings(max_examples=50)
-def test_basecst::importcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ImportCS)
-
-@given(instance=baseCST::ImportCS_strategy)
-def test_basecst::importcs_all_type(instance):
-    assert isinstance(instance.all, bool)
-
-
-@given(instance=baseCST::ImportCS_strategy)
-def test_basecst::importcs_all_setter(instance):
-    original = instance.all
-    instance.all = original
-    assert instance.all == original
 
 @given(instance=ClassifierCS_strategy)
 @settings(max_examples=50)
 def test_classifiercs_instantiation(instance):
     assert isinstance(instance, ClassifierCS)
 
-@given(instance=baseCST::DataTypeCS_strategy)
+@given(instance=baseCST_EnumerationCS_strategy)
 @settings(max_examples=50)
-def test_basecst::datatypecs_instantiation(instance):
-    assert isinstance(instance, baseCST::DataTypeCS)
+def test_basecst_enumerationcs_instantiation(instance):
+    assert isinstance(instance, baseCST_EnumerationCS)
 
-@given(instance=baseCST::EnumerationCS_strategy)
+@given(instance=baseCST_DataTypeCS_strategy)
 @settings(max_examples=50)
-def test_basecst::enumerationcs_instantiation(instance):
-    assert isinstance(instance, baseCST::EnumerationCS)
+def test_basecst_datatypecs_instantiation(instance):
+    assert isinstance(instance, baseCST_DataTypeCS)
 
-@given(instance=baseCST::ClassCS_strategy)
+@given(instance=baseCST_ClassCS_strategy)
 @settings(max_examples=50)
-def test_basecst::classcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ClassCS)
+def test_basecst_classcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ClassCS)
 
 @given(instance=StructuralFeatureCS_strategy)
 @settings(max_examples=50)
 def test_structuralfeaturecs_instantiation(instance):
     assert isinstance(instance, StructuralFeatureCS)
 
-@given(instance=baseCST::ReferenceCS_strategy)
+@given(instance=baseCST_ReferenceCS_strategy)
 @settings(max_examples=50)
-def test_basecst::referencecs_instantiation(instance):
-    assert isinstance(instance, baseCST::ReferenceCS)
+def test_basecst_referencecs_instantiation(instance):
+    assert isinstance(instance, baseCST_ReferenceCS)
 
-@given(instance=baseCST::AttributeCS_strategy)
+@given(instance=baseCST_AttributeCS_strategy)
 @settings(max_examples=50)
-def test_basecst::attributecs_instantiation(instance):
-    assert isinstance(instance, baseCST::AttributeCS)
+def test_basecst_attributecs_instantiation(instance):
+    assert isinstance(instance, baseCST_AttributeCS)
 
 @given(instance=NamedElementCS_strategy)
 @settings(max_examples=50)
 def test_namedelementcs_instantiation(instance):
     assert isinstance(instance, NamedElementCS)
 
-@given(instance=baseCST::NamespaceCS_strategy)
+@given(instance=baseCST_EnumerationLiteralCS_strategy)
 @settings(max_examples=50)
-def test_basecst::namespacecs_instantiation(instance):
-    assert isinstance(instance, baseCST::NamespaceCS)
-
-@given(instance=baseCST::EnumerationLiteralCS_strategy)
-@settings(max_examples=50)
-def test_basecst::enumerationliteralcs_instantiation(instance):
-    assert isinstance(instance, baseCST::EnumerationLiteralCS)
-
-@given(instance=baseCST::EnumerationLiteralCS_strategy)
-def test_basecst::enumerationliteralcs_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_basecst_enumerationliteralcs_instantiation(instance):
+    assert isinstance(instance, baseCST_EnumerationLiteralCS)
 
 
-@given(instance=baseCST::EnumerationLiteralCS_strategy)
-def test_basecst::enumerationliteralcs_value_setter(instance):
+
+@given(instance=baseCST_EnumerationLiteralCS_strategy)
+def test_basecst_enumerationliteralcs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=baseCST::DetailCS_strategy)
+@given(instance=baseCST_ConstraintCS_strategy)
 @settings(max_examples=50)
-def test_basecst::detailcs_instantiation(instance):
-    assert isinstance(instance, baseCST::DetailCS)
-
-@given(instance=baseCST::DetailCS_strategy)
-def test_basecst::detailcs_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_basecst_constraintcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ConstraintCS)
 
 
-@given(instance=baseCST::DetailCS_strategy)
-def test_basecst::detailcs_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=baseCST::TypedElementCS_strategy)
-@settings(max_examples=50)
-def test_basecst::typedelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::TypedElementCS)
-
-@given(instance=baseCST::TypedElementCS_strategy)
-def test_basecst::typedelementcs_optional_type(instance):
-    assert isinstance(instance.optional, bool)
-
-
-@given(instance=baseCST::TypedElementCS_strategy)
-def test_basecst::typedelementcs_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
-
-@given(instance=baseCST::TypedElementCS_strategy)
-def test_basecst::typedelementcs_qualifier_type(instance):
-    assert isinstance(instance.qualifier, str)
-
-
-@given(instance=baseCST::TypedElementCS_strategy)
-def test_basecst::typedelementcs_qualifier_setter(instance):
-    original = instance.qualifier
-    instance.qualifier = original
-    assert instance.qualifier == original
-
-@given(instance=baseCST::ConstraintCS_strategy)
-@settings(max_examples=50)
-def test_basecst::constraintcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ConstraintCS)
-
-@given(instance=baseCST::ConstraintCS_strategy)
-def test_basecst::constraintcs_stereotype_type(instance):
-    assert isinstance(instance.stereotype, str)
-
-
-@given(instance=baseCST::ConstraintCS_strategy)
-def test_basecst::constraintcs_stereotype_setter(instance):
+@given(instance=baseCST_ConstraintCS_strategy)
+def test_basecst_constraintcs_stereotype_setter(instance):
     original = instance.stereotype
     instance.stereotype = original
     assert instance.stereotype == original
 
-@given(instance=baseCST::TemplateParameterCS_strategy)
+@given(instance=baseCST_TypedElementCS_strategy)
 @settings(max_examples=50)
-def test_basecst::templateparametercs_instantiation(instance):
-    assert isinstance(instance, baseCST::TemplateParameterCS)
-
-@given(instance=baseCST::ClassifierCS_strategy)
-@settings(max_examples=50)
-def test_basecst::classifiercs_instantiation(instance):
-    assert isinstance(instance, baseCST::ClassifierCS)
-
-@given(instance=baseCST::ClassifierCS_strategy)
-def test_basecst::classifiercs_qualifier_type(instance):
-    assert isinstance(instance.qualifier, str)
+def test_basecst_typedelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_TypedElementCS)
 
 
-@given(instance=baseCST::ClassifierCS_strategy)
-def test_basecst::classifiercs_qualifier_setter(instance):
+
+@given(instance=baseCST_TypedElementCS_strategy)
+def test_basecst_typedelementcs_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+
+
+@given(instance=baseCST_TypedElementCS_strategy)
+def test_basecst_typedelementcs_qualifier_setter(instance):
     original = instance.qualifier
     instance.qualifier = original
     assert instance.qualifier == original
 
-@given(instance=baseCST::ClassifierCS_strategy)
-def test_basecst::classifiercs_instanceClassName_type(instance):
-    assert isinstance(instance.instanceClassName, str)
+@given(instance=baseCST_TemplateParameterCS_strategy)
+@settings(max_examples=50)
+def test_basecst_templateparametercs_instantiation(instance):
+    assert isinstance(instance, baseCST_TemplateParameterCS)
+
+@given(instance=baseCST_DetailCS_strategy)
+@settings(max_examples=50)
+def test_basecst_detailcs_instantiation(instance):
+    assert isinstance(instance, baseCST_DetailCS)
 
 
-@given(instance=baseCST::ClassifierCS_strategy)
-def test_basecst::classifiercs_instanceClassName_setter(instance):
+
+@given(instance=baseCST_DetailCS_strategy)
+def test_basecst_detailcs_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=baseCST_ClassifierCS_strategy)
+@settings(max_examples=50)
+def test_basecst_classifiercs_instantiation(instance):
+    assert isinstance(instance, baseCST_ClassifierCS)
+
+
+
+@given(instance=baseCST_ClassifierCS_strategy)
+def test_basecst_classifiercs_instanceClassName_setter(instance):
     original = instance.instanceClassName
     instance.instanceClassName = original
     assert instance.instanceClassName == original
 
-@given(instance=baseCST::AnnotationElementCS_strategy)
+
+
+@given(instance=baseCST_ClassifierCS_strategy)
+def test_basecst_classifiercs_qualifier_setter(instance):
+    original = instance.qualifier
+    instance.qualifier = original
+    assert instance.qualifier == original
+
+@given(instance=baseCST_NamespaceCS_strategy)
 @settings(max_examples=50)
-def test_basecst::annotationelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::AnnotationElementCS)
+def test_basecst_namespacecs_instantiation(instance):
+    assert isinstance(instance, baseCST_NamespaceCS)
 
-@given(instance=baseCST::ModelElementRefCS_strategy)
+@given(instance=baseCST_AnnotationElementCS_strategy)
 @settings(max_examples=50)
-def test_basecst::modelelementrefcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ModelElementRefCS)
+def test_basecst_annotationelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_AnnotationElementCS)
 
-@given(instance=baseCST::ModelElementCS_strategy)
+@given(instance=baseCST_ModelElementRefCS_strategy)
 @settings(max_examples=50)
-def test_basecst::modelelementcs_instantiation(instance):
-    assert isinstance(instance, baseCST::ModelElementCS)
+def test_basecst_modelelementrefcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ModelElementRefCS)
 
-@given(instance=baseCST::ModelElementCS_strategy)
-def test_basecst::modelelementcs_csi_type(instance):
-    assert isinstance(instance.csi, str)
-
-
-@given(instance=baseCST::ModelElementCS_strategy)
-def test_basecst::modelelementcs_csi_setter(instance):
-    original = instance.csi
-    instance.csi = original
-    assert instance.csi == original
-
-@given(instance=baseCST::ModelElementCS_strategy)
-def test_basecst::modelelementcs_originalXmiId_type(instance):
-    assert isinstance(instance.originalXmiId, str)
+@given(instance=baseCST_ModelElementCS_strategy)
+@settings(max_examples=50)
+def test_basecst_modelelementcs_instantiation(instance):
+    assert isinstance(instance, baseCST_ModelElementCS)
 
 
-@given(instance=baseCST::ModelElementCS_strategy)
-def test_basecst::modelelementcs_originalXmiId_setter(instance):
+
+@given(instance=baseCST_ModelElementCS_strategy)
+def test_basecst_modelelementcs_originalXmiId_setter(instance):
     original = instance.originalXmiId
     instance.originalXmiId = original
     assert instance.originalXmiId == original
+
+
+
+@given(instance=baseCST_ModelElementCS_strategy)
+def test_basecst_modelelementcs_csi_setter(instance):
+    original = instance.csi
+    instance.csi = original
+    assert instance.csi == original
 
 @given(instance=AnnotationElementCS_strategy)
 @settings(max_examples=50)
 def test_annotationelementcs_instantiation(instance):
     assert isinstance(instance, AnnotationElementCS)
 
-@given(instance=baseCST::DocumentationCS_strategy)
+@given(instance=baseCST_DocumentationCS_strategy)
 @settings(max_examples=50)
-def test_basecst::documentationcs_instantiation(instance):
-    assert isinstance(instance, baseCST::DocumentationCS)
-
-@given(instance=baseCST::DocumentationCS_strategy)
-def test_basecst::documentationcs_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_basecst_documentationcs_instantiation(instance):
+    assert isinstance(instance, baseCST_DocumentationCS)
 
 
-@given(instance=baseCST::DocumentationCS_strategy)
-def test_basecst::documentationcs_value_setter(instance):
+
+@given(instance=baseCST_DocumentationCS_strategy)
+def test_basecst_documentationcs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=baseCST::AnnotationCS_strategy)
+@given(instance=baseCST_AnnotationCS_strategy)
 @settings(max_examples=50)
-def test_basecst::annotationcs_instantiation(instance):
-    assert isinstance(instance, baseCST::AnnotationCS)
+def test_basecst_annotationcs_instantiation(instance):
+    assert isinstance(instance, baseCST_AnnotationCS)

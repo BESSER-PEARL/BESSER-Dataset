@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Club_de_lecture_Faire_proposition_UseCase,
@@ -449,9 +449,6 @@ def test_media_physique_instantiation(instance):
 def test_utilisateur_inscrit1_instantiation(instance):
     assert isinstance(instance, Utilisateur_Inscrit1)
 
-@given(instance=Utilisateur_Inscrit1_strategy)
-def test_utilisateur_inscrit1_noCarte_type(instance):
-    assert isinstance(instance.noCarte, str)
 
 
 @given(instance=Utilisateur_Inscrit1_strategy)
@@ -475,9 +472,6 @@ def test_habitant_instantiation(instance):
 def test_animal_instantiation(instance):
     assert isinstance(instance, Animal)
 
-@given(instance=Animal_strategy)
-def test_animal_Age_type(instance):
-    assert isinstance(instance.Age, str)
 
 
 @given(instance=Animal_strategy)

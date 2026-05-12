@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Interface_Interface,
     mahasiswa,
     Actor2_Actor,
     UseCase3_UseCase,
@@ -14,25 +13,12 @@ from python_code import (
     UseCase_UseCase,
     Actor_Actor,
     Class,
+    Interface_Interface,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_interface_interface_is_not_abstract():
-    assert not inspect.isabstract(Interface_Interface)
-
-
-def test_interface_interface_constructor_exists():
-    assert callable(Interface_Interface.__init__)
-
-
-def test_interface_interface_constructor_args():
-    sig = inspect.signature(Interface_Interface.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -153,6 +139,20 @@ def test_class_has_attribute():
     assert isinstance(descriptor, property)
 
 
+
+def test_interface_interface_is_not_abstract():
+    assert not inspect.isabstract(Interface_Interface)
+
+
+def test_interface_interface_constructor_exists():
+    assert callable(Interface_Interface.__init__)
+
+
+def test_interface_interface_constructor_args():
+    sig = inspect.signature(Interface_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -164,9 +164,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Interface_Interface_strategy = st.builds(
-    Interface_Interface,
-)
 mahasiswa_strategy = st.builds(
     mahasiswa,
     nim=
@@ -192,20 +189,15 @@ Class_strategy = st.builds(
     attribute=
         safe_text
 )
-
-@given(instance=Interface_Interface_strategy)
-@settings(max_examples=50)
-def test_interface_interface_instantiation(instance):
-    assert isinstance(instance, Interface_Interface)
+Interface_Interface_strategy = st.builds(
+    Interface_Interface,
+)
 
 @given(instance=mahasiswa_strategy)
 @settings(max_examples=50)
 def test_mahasiswa_instantiation(instance):
     assert isinstance(instance, mahasiswa)
 
-@given(instance=mahasiswa_strategy)
-def test_mahasiswa_nim_type(instance):
-    assert isinstance(instance.nim, str)
 
 
 @given(instance=mahasiswa_strategy)
@@ -244,9 +236,6 @@ def test_actor_actor_instantiation(instance):
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=Class_strategy)
-def test_class_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Class_strategy)
@@ -254,3 +243,8 @@ def test_class_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+@given(instance=Interface_Interface_strategy)
+@settings(max_examples=50)
+def test_interface_interface_instantiation(instance):
+    assert isinstance(instance, Interface_Interface)

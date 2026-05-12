@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    expressions::IdlTypeDcl,
+from python_code import (
+    expressions_IdlTypeDcl,
     Expression,
-    expressions::FixedPtLiteral,
-    expressions::UnaryExpression,
-    expressions::AndExpression,
-    expressions::ShiftExpression,
-    expressions::IntegerLiteral,
-    expressions::OrExpression,
-    expressions::FloatingPointLiteral,
-    expressions::DoubleLiteral,
-    expressions::WideCharacterLiteral,
-    expressions::AddExpression,
-    expressions::XOrExpression,
-    expressions::WideStringLiteral,
-    expressions::CharacterLiteral,
-    expressions::BooleanLiteral,
-    expressions::StringLiteral,
-    expressions::ScopeLiteral,
-    expressions::MultExpression,
-    expressions::ConstExpression,
+    expressions_ScopeLiteral,
+    expressions_AndExpression,
+    expressions_WideCharacterLiteral,
+    expressions_DoubleLiteral,
+    expressions_OrExpression,
+    expressions_FixedPtLiteral,
+    expressions_MultExpression,
+    expressions_ShiftExpression,
+    expressions_CharacterLiteral,
+    expressions_IntegerLiteral,
+    expressions_FloatingPointLiteral,
+    expressions_BooleanLiteral,
+    expressions_AddExpression,
+    expressions_WideStringLiteral,
+    expressions_XOrExpression,
+    expressions_UnaryExpression,
+    expressions_StringLiteral,
+    expressions_ConstExpression,
     FileRegion,
-    expressions::Expression,
-    MultiType,
-    ShiftType,
+    expressions_Expression,
     UnaryType,
     AddType,
+    MultiType,
+    ShiftType,
 )
 
 # =============================================================================
@@ -40,16 +40,16 @@ from classes import (
 
 
 
-def test_expressions::idltypedcl_is_not_abstract():
-    assert not inspect.isabstract(expressions::IdlTypeDcl)
+def test_expressions_idltypedcl_is_not_abstract():
+    assert not inspect.isabstract(expressions_IdlTypeDcl)
 
 
-def test_expressions::idltypedcl_constructor_exists():
-    assert callable(expressions::IdlTypeDcl.__init__)
+def test_expressions_idltypedcl_constructor_exists():
+    assert callable(expressions_IdlTypeDcl.__init__)
 
 
-def test_expressions::idltypedcl_constructor_args():
-    sig = inspect.signature(expressions::IdlTypeDcl.__init__)
+def test_expressions_idltypedcl_constructor_args():
+    sig = inspect.signature(expressions_IdlTypeDcl.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -68,67 +68,157 @@ def test_expression_constructor_args():
 
 
 
-def test_expressions::fixedptliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::FixedPtLiteral)
+def test_expressions_scopeliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_ScopeLiteral)
 
 
-def test_expressions::fixedptliteral_constructor_exists():
-    assert callable(expressions::FixedPtLiteral.__init__)
+def test_expressions_scopeliteral_constructor_exists():
+    assert callable(expressions_ScopeLiteral.__init__)
 
 
-def test_expressions::fixedptliteral_constructor_args():
-    sig = inspect.signature(expressions::FixedPtLiteral.__init__)
+def test_expressions_scopeliteral_constructor_args():
+    sig = inspect.signature(expressions_ScopeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_andexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_AndExpression)
+
+
+def test_expressions_andexpression_constructor_exists():
+    assert callable(expressions_AndExpression.__init__)
+
+
+def test_expressions_andexpression_constructor_args():
+    sig = inspect.signature(expressions_AndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_widecharacterliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_WideCharacterLiteral)
+
+
+def test_expressions_widecharacterliteral_constructor_exists():
+    assert callable(expressions_WideCharacterLiteral.__init__)
+
+
+def test_expressions_widecharacterliteral_constructor_args():
+    sig = inspect.signature(expressions_WideCharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
-    assert "integerPart" in params, "Missing parameter 'integerPart'"
-    assert "decimalPart" in params, "Missing parameter 'decimalPart'"
 
-def test_expressions::fixedptliteral_has_value():
-    assert hasattr(expressions::FixedPtLiteral, "value")
+def test_expressions_widecharacterliteral_has_value():
+    assert hasattr(expressions_WideCharacterLiteral, "value")
     descriptor = None
-    for klass in expressions::FixedPtLiteral.__mro__:
+    for klass in expressions_WideCharacterLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_expressions::fixedptliteral_has_integerPart():
-    assert hasattr(expressions::FixedPtLiteral, "integerPart")
+
+
+def test_expressions_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_DoubleLiteral)
+
+
+def test_expressions_doubleliteral_constructor_exists():
+    assert callable(expressions_DoubleLiteral.__init__)
+
+
+def test_expressions_doubleliteral_constructor_args():
+    sig = inspect.signature(expressions_DoubleLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_expressions_doubleliteral_has_value():
+    assert hasattr(expressions_DoubleLiteral, "value")
     descriptor = None
-    for klass in expressions::FixedPtLiteral.__mro__:
-        if "integerPart" in klass.__dict__:
-            descriptor = klass.__dict__["integerPart"]
+    for klass in expressions_DoubleLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_expressions::fixedptliteral_has_decimalPart():
-    assert hasattr(expressions::FixedPtLiteral, "decimalPart")
+
+
+def test_expressions_orexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_OrExpression)
+
+
+def test_expressions_orexpression_constructor_exists():
+    assert callable(expressions_OrExpression.__init__)
+
+
+def test_expressions_orexpression_constructor_args():
+    sig = inspect.signature(expressions_OrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_fixedptliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_FixedPtLiteral)
+
+
+def test_expressions_fixedptliteral_constructor_exists():
+    assert callable(expressions_FixedPtLiteral.__init__)
+
+
+def test_expressions_fixedptliteral_constructor_args():
+    sig = inspect.signature(expressions_FixedPtLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "decimalPart" in params, "Missing parameter 'decimalPart'"
+    assert "value" in params, "Missing parameter 'value'"
+    assert "integerPart" in params, "Missing parameter 'integerPart'"
+
+def test_expressions_fixedptliteral_has_decimalPart():
+    assert hasattr(expressions_FixedPtLiteral, "decimalPart")
     descriptor = None
-    for klass in expressions::FixedPtLiteral.__mro__:
+    for klass in expressions_FixedPtLiteral.__mro__:
         if "decimalPart" in klass.__dict__:
             descriptor = klass.__dict__["decimalPart"]
             break
     assert isinstance(descriptor, property)
 
+def test_expressions_fixedptliteral_has_value():
+    assert hasattr(expressions_FixedPtLiteral, "value")
+    descriptor = None
+    for klass in expressions_FixedPtLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_expressions_fixedptliteral_has_integerPart():
+    assert hasattr(expressions_FixedPtLiteral, "integerPart")
+    descriptor = None
+    for klass in expressions_FixedPtLiteral.__mro__:
+        if "integerPart" in klass.__dict__:
+            descriptor = klass.__dict__["integerPart"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_expressions::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryExpression)
+
+def test_expressions_multexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_MultExpression)
 
 
-def test_expressions::unaryexpression_constructor_exists():
-    assert callable(expressions::UnaryExpression.__init__)
+def test_expressions_multexpression_constructor_exists():
+    assert callable(expressions_MultExpression.__init__)
 
 
-def test_expressions::unaryexpression_constructor_args():
-    sig = inspect.signature(expressions::UnaryExpression.__init__)
+def test_expressions_multexpression_constructor_args():
+    sig = inspect.signature(expressions_MultExpression.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_expressions::unaryexpression_has_type():
-    assert hasattr(expressions::UnaryExpression, "type")
+def test_expressions_multexpression_has_type():
+    assert hasattr(expressions_MultExpression, "type")
     descriptor = None
-    for klass in expressions::UnaryExpression.__mro__:
+    for klass in expressions_MultExpression.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -136,37 +226,23 @@ def test_expressions::unaryexpression_has_type():
 
 
 
-def test_expressions::andexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::AndExpression)
+def test_expressions_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ShiftExpression)
 
 
-def test_expressions::andexpression_constructor_exists():
-    assert callable(expressions::AndExpression.__init__)
+def test_expressions_shiftexpression_constructor_exists():
+    assert callable(expressions_ShiftExpression.__init__)
 
 
-def test_expressions::andexpression_constructor_args():
-    sig = inspect.signature(expressions::AndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ShiftExpression)
-
-
-def test_expressions::shiftexpression_constructor_exists():
-    assert callable(expressions::ShiftExpression.__init__)
-
-
-def test_expressions::shiftexpression_constructor_args():
-    sig = inspect.signature(expressions::ShiftExpression.__init__)
+def test_expressions_shiftexpression_constructor_args():
+    sig = inspect.signature(expressions_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_expressions::shiftexpression_has_type():
-    assert hasattr(expressions::ShiftExpression, "type")
+def test_expressions_shiftexpression_has_type():
+    assert hasattr(expressions_ShiftExpression, "type")
     descriptor = None
-    for klass in expressions::ShiftExpression.__mro__:
+    for klass in expressions_ShiftExpression.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -174,23 +250,23 @@ def test_expressions::shiftexpression_has_type():
 
 
 
-def test_expressions::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::IntegerLiteral)
+def test_expressions_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_CharacterLiteral)
 
 
-def test_expressions::integerliteral_constructor_exists():
-    assert callable(expressions::IntegerLiteral.__init__)
+def test_expressions_characterliteral_constructor_exists():
+    assert callable(expressions_CharacterLiteral.__init__)
 
 
-def test_expressions::integerliteral_constructor_args():
-    sig = inspect.signature(expressions::IntegerLiteral.__init__)
+def test_expressions_characterliteral_constructor_args():
+    sig = inspect.signature(expressions_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::integerliteral_has_value():
-    assert hasattr(expressions::IntegerLiteral, "value")
+def test_expressions_characterliteral_has_value():
+    assert hasattr(expressions_CharacterLiteral, "value")
     descriptor = None
-    for klass in expressions::IntegerLiteral.__mro__:
+    for klass in expressions_CharacterLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -198,37 +274,23 @@ def test_expressions::integerliteral_has_value():
 
 
 
-def test_expressions::orexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::OrExpression)
+def test_expressions_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_IntegerLiteral)
 
 
-def test_expressions::orexpression_constructor_exists():
-    assert callable(expressions::OrExpression.__init__)
+def test_expressions_integerliteral_constructor_exists():
+    assert callable(expressions_IntegerLiteral.__init__)
 
 
-def test_expressions::orexpression_constructor_args():
-    sig = inspect.signature(expressions::OrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::floatingpointliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::FloatingPointLiteral)
-
-
-def test_expressions::floatingpointliteral_constructor_exists():
-    assert callable(expressions::FloatingPointLiteral.__init__)
-
-
-def test_expressions::floatingpointliteral_constructor_args():
-    sig = inspect.signature(expressions::FloatingPointLiteral.__init__)
+def test_expressions_integerliteral_constructor_args():
+    sig = inspect.signature(expressions_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::floatingpointliteral_has_value():
-    assert hasattr(expressions::FloatingPointLiteral, "value")
+def test_expressions_integerliteral_has_value():
+    assert hasattr(expressions_IntegerLiteral, "value")
     descriptor = None
-    for klass in expressions::FloatingPointLiteral.__mro__:
+    for klass in expressions_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -236,23 +298,23 @@ def test_expressions::floatingpointliteral_has_value():
 
 
 
-def test_expressions::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::DoubleLiteral)
+def test_expressions_floatingpointliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_FloatingPointLiteral)
 
 
-def test_expressions::doubleliteral_constructor_exists():
-    assert callable(expressions::DoubleLiteral.__init__)
+def test_expressions_floatingpointliteral_constructor_exists():
+    assert callable(expressions_FloatingPointLiteral.__init__)
 
 
-def test_expressions::doubleliteral_constructor_args():
-    sig = inspect.signature(expressions::DoubleLiteral.__init__)
+def test_expressions_floatingpointliteral_constructor_args():
+    sig = inspect.signature(expressions_FloatingPointLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::doubleliteral_has_value():
-    assert hasattr(expressions::DoubleLiteral, "value")
+def test_expressions_floatingpointliteral_has_value():
+    assert hasattr(expressions_FloatingPointLiteral, "value")
     descriptor = None
-    for klass in expressions::DoubleLiteral.__mro__:
+    for klass in expressions_FloatingPointLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -260,23 +322,23 @@ def test_expressions::doubleliteral_has_value():
 
 
 
-def test_expressions::widecharacterliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::WideCharacterLiteral)
+def test_expressions_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_BooleanLiteral)
 
 
-def test_expressions::widecharacterliteral_constructor_exists():
-    assert callable(expressions::WideCharacterLiteral.__init__)
+def test_expressions_booleanliteral_constructor_exists():
+    assert callable(expressions_BooleanLiteral.__init__)
 
 
-def test_expressions::widecharacterliteral_constructor_args():
-    sig = inspect.signature(expressions::WideCharacterLiteral.__init__)
+def test_expressions_booleanliteral_constructor_args():
+    sig = inspect.signature(expressions_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::widecharacterliteral_has_value():
-    assert hasattr(expressions::WideCharacterLiteral, "value")
+def test_expressions_booleanliteral_has_value():
+    assert hasattr(expressions_BooleanLiteral, "value")
     descriptor = None
-    for klass in expressions::WideCharacterLiteral.__mro__:
+    for klass in expressions_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -284,23 +346,23 @@ def test_expressions::widecharacterliteral_has_value():
 
 
 
-def test_expressions::addexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::AddExpression)
+def test_expressions_addexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_AddExpression)
 
 
-def test_expressions::addexpression_constructor_exists():
-    assert callable(expressions::AddExpression.__init__)
+def test_expressions_addexpression_constructor_exists():
+    assert callable(expressions_AddExpression.__init__)
 
 
-def test_expressions::addexpression_constructor_args():
-    sig = inspect.signature(expressions::AddExpression.__init__)
+def test_expressions_addexpression_constructor_args():
+    sig = inspect.signature(expressions_AddExpression.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_expressions::addexpression_has_type():
-    assert hasattr(expressions::AddExpression, "type")
+def test_expressions_addexpression_has_type():
+    assert hasattr(expressions_AddExpression, "type")
     descriptor = None
-    for klass in expressions::AddExpression.__mro__:
+    for klass in expressions_AddExpression.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -308,37 +370,23 @@ def test_expressions::addexpression_has_type():
 
 
 
-def test_expressions::xorexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::XOrExpression)
+def test_expressions_widestringliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_WideStringLiteral)
 
 
-def test_expressions::xorexpression_constructor_exists():
-    assert callable(expressions::XOrExpression.__init__)
+def test_expressions_widestringliteral_constructor_exists():
+    assert callable(expressions_WideStringLiteral.__init__)
 
 
-def test_expressions::xorexpression_constructor_args():
-    sig = inspect.signature(expressions::XOrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::widestringliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::WideStringLiteral)
-
-
-def test_expressions::widestringliteral_constructor_exists():
-    assert callable(expressions::WideStringLiteral.__init__)
-
-
-def test_expressions::widestringliteral_constructor_args():
-    sig = inspect.signature(expressions::WideStringLiteral.__init__)
+def test_expressions_widestringliteral_constructor_args():
+    sig = inspect.signature(expressions_WideStringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::widestringliteral_has_value():
-    assert hasattr(expressions::WideStringLiteral, "value")
+def test_expressions_widestringliteral_has_value():
+    assert hasattr(expressions_WideStringLiteral, "value")
     descriptor = None
-    for klass in expressions::WideStringLiteral.__mro__:
+    for klass in expressions_WideStringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -346,109 +394,37 @@ def test_expressions::widestringliteral_has_value():
 
 
 
-def test_expressions::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::CharacterLiteral)
+def test_expressions_xorexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_XOrExpression)
 
 
-def test_expressions::characterliteral_constructor_exists():
-    assert callable(expressions::CharacterLiteral.__init__)
+def test_expressions_xorexpression_constructor_exists():
+    assert callable(expressions_XOrExpression.__init__)
 
 
-def test_expressions::characterliteral_constructor_args():
-    sig = inspect.signature(expressions::CharacterLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_expressions::characterliteral_has_value():
-    assert hasattr(expressions::CharacterLiteral, "value")
-    descriptor = None
-    for klass in expressions::CharacterLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expressions::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::BooleanLiteral)
-
-
-def test_expressions::booleanliteral_constructor_exists():
-    assert callable(expressions::BooleanLiteral.__init__)
-
-
-def test_expressions::booleanliteral_constructor_args():
-    sig = inspect.signature(expressions::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_expressions::booleanliteral_has_value():
-    assert hasattr(expressions::BooleanLiteral, "value")
-    descriptor = None
-    for klass in expressions::BooleanLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expressions::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::StringLiteral)
-
-
-def test_expressions::stringliteral_constructor_exists():
-    assert callable(expressions::StringLiteral.__init__)
-
-
-def test_expressions::stringliteral_constructor_args():
-    sig = inspect.signature(expressions::StringLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_expressions::stringliteral_has_value():
-    assert hasattr(expressions::StringLiteral, "value")
-    descriptor = None
-    for klass in expressions::StringLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expressions::scopeliteral_is_not_abstract():
-    assert not inspect.isabstract(expressions::ScopeLiteral)
-
-
-def test_expressions::scopeliteral_constructor_exists():
-    assert callable(expressions::ScopeLiteral.__init__)
-
-
-def test_expressions::scopeliteral_constructor_args():
-    sig = inspect.signature(expressions::ScopeLiteral.__init__)
+def test_expressions_xorexpression_constructor_args():
+    sig = inspect.signature(expressions_XOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::multexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::MultExpression)
+def test_expressions_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryExpression)
 
 
-def test_expressions::multexpression_constructor_exists():
-    assert callable(expressions::MultExpression.__init__)
+def test_expressions_unaryexpression_constructor_exists():
+    assert callable(expressions_UnaryExpression.__init__)
 
 
-def test_expressions::multexpression_constructor_args():
-    sig = inspect.signature(expressions::MultExpression.__init__)
+def test_expressions_unaryexpression_constructor_args():
+    sig = inspect.signature(expressions_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_expressions::multexpression_has_type():
-    assert hasattr(expressions::MultExpression, "type")
+def test_expressions_unaryexpression_has_type():
+    assert hasattr(expressions_UnaryExpression, "type")
     descriptor = None
-    for klass in expressions::MultExpression.__mro__:
+    for klass in expressions_UnaryExpression.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -456,16 +432,40 @@ def test_expressions::multexpression_has_type():
 
 
 
-def test_expressions::constexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConstExpression)
+def test_expressions_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(expressions_StringLiteral)
 
 
-def test_expressions::constexpression_constructor_exists():
-    assert callable(expressions::ConstExpression.__init__)
+def test_expressions_stringliteral_constructor_exists():
+    assert callable(expressions_StringLiteral.__init__)
 
 
-def test_expressions::constexpression_constructor_args():
-    sig = inspect.signature(expressions::ConstExpression.__init__)
+def test_expressions_stringliteral_constructor_args():
+    sig = inspect.signature(expressions_StringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_expressions_stringliteral_has_value():
+    assert hasattr(expressions_StringLiteral, "value")
+    descriptor = None
+    for klass in expressions_StringLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_expressions_constexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConstExpression)
+
+
+def test_expressions_constexpression_constructor_exists():
+    assert callable(expressions_ConstExpression.__init__)
+
+
+def test_expressions_constexpression_constructor_args():
+    sig = inspect.signature(expressions_ConstExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,48 +484,17 @@ def test_fileregion_constructor_args():
 
 
 
-def test_expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(expressions::Expression)
+def test_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(expressions_Expression)
 
 
-def test_expressions::expression_constructor_exists():
-    assert callable(expressions::Expression.__init__)
+def test_expressions_expression_constructor_exists():
+    assert callable(expressions_Expression.__init__)
 
 
-def test_expressions::expression_constructor_args():
-    sig = inspect.signature(expressions::Expression.__init__)
+def test_expressions_expression_constructor_args():
+    sig = inspect.signature(expressions_Expression.__init__)
     params = list(sig.parameters.keys())
-
-def test_multitype_exists():
-    # Check that the Enumeration exists
-    assert MultiType is not None
-
-def test_multitype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MultiType]
-    expected_literals = [
-        "MODULATION",
-        "MULTIPLICATION",
-        "DIVISION",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MultiType"
-
-def test_shifttype_exists():
-    # Check that the Enumeration exists
-    assert ShiftType is not None
-
-def test_shifttype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ShiftType]
-    expected_literals = [
-        "RIGHT",
-        "LEFT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ShiftType"
 
 def test_unarytype_exists():
     # Check that the Enumeration exists
@@ -535,8 +504,8 @@ def test_unarytype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in UnaryType]
     expected_literals = [
-        "POSITIVE",
         "NEGATIVE",
+        "POSITIVE",
         "TILDE",
     ]
     # Check that all expected literals exist
@@ -551,12 +520,43 @@ def test_addtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AddType]
     expected_literals = [
-        "ADDITION",
         "SUBTRACTION",
+        "ADDITION",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AddType"
+
+def test_multitype_exists():
+    # Check that the Enumeration exists
+    assert MultiType is not None
+
+def test_multitype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MultiType]
+    expected_literals = [
+        "MODULATION",
+        "DIVISION",
+        "MULTIPLICATION",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MultiType"
+
+def test_shifttype_exists():
+    # Check that the Enumeration exists
+    assert ShiftType is not None
+
+def test_shifttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ShiftType]
+    expected_literals = [
+        "LEFT",
+        "RIGHT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ShiftType"
 
 
 # =============================================================================
@@ -570,374 +570,329 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-expressions::IdlTypeDcl_strategy = st.builds(
-    expressions::IdlTypeDcl,
+expressions_IdlTypeDcl_strategy = st.builds(
+    expressions_IdlTypeDcl,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-expressions::FixedPtLiteral_strategy = st.builds(
-    expressions::FixedPtLiteral,
+expressions_ScopeLiteral_strategy = st.builds(
+    expressions_ScopeLiteral,
+)
+expressions_AndExpression_strategy = st.builds(
+    expressions_AndExpression,
+)
+expressions_WideCharacterLiteral_strategy = st.builds(
+    expressions_WideCharacterLiteral,
+    value=
+        safe_text
+)
+expressions_DoubleLiteral_strategy = st.builds(
+    expressions_DoubleLiteral,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+expressions_OrExpression_strategy = st.builds(
+    expressions_OrExpression,
+)
+expressions_FixedPtLiteral_strategy = st.builds(
+    expressions_FixedPtLiteral,
+    decimalPart=
+        st.integers(),
     value=
         safe_text,
     integerPart=
-        st.integers(),
-    decimalPart=
         st.integers()
 )
-expressions::UnaryExpression_strategy = st.builds(
-    expressions::UnaryExpression,
+expressions_MultExpression_strategy = st.builds(
+    expressions_MultExpression,
     type=
         safe_text
 )
-expressions::AndExpression_strategy = st.builds(
-    expressions::AndExpression,
-)
-expressions::ShiftExpression_strategy = st.builds(
-    expressions::ShiftExpression,
+expressions_ShiftExpression_strategy = st.builds(
+    expressions_ShiftExpression,
     type=
         safe_text
 )
-expressions::IntegerLiteral_strategy = st.builds(
-    expressions::IntegerLiteral,
+expressions_CharacterLiteral_strategy = st.builds(
+    expressions_CharacterLiteral,
+    value=
+        safe_text
+)
+expressions_IntegerLiteral_strategy = st.builds(
+    expressions_IntegerLiteral,
     value=
         st.integers()
 )
-expressions::OrExpression_strategy = st.builds(
-    expressions::OrExpression,
-)
-expressions::FloatingPointLiteral_strategy = st.builds(
-    expressions::FloatingPointLiteral,
+expressions_FloatingPointLiteral_strategy = st.builds(
+    expressions_FloatingPointLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-expressions::DoubleLiteral_strategy = st.builds(
-    expressions::DoubleLiteral,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-expressions::WideCharacterLiteral_strategy = st.builds(
-    expressions::WideCharacterLiteral,
-    value=
-        safe_text
-)
-expressions::AddExpression_strategy = st.builds(
-    expressions::AddExpression,
-    type=
-        safe_text
-)
-expressions::XOrExpression_strategy = st.builds(
-    expressions::XOrExpression,
-)
-expressions::WideStringLiteral_strategy = st.builds(
-    expressions::WideStringLiteral,
-    value=
-        safe_text
-)
-expressions::CharacterLiteral_strategy = st.builds(
-    expressions::CharacterLiteral,
-    value=
-        safe_text
-)
-expressions::BooleanLiteral_strategy = st.builds(
-    expressions::BooleanLiteral,
+expressions_BooleanLiteral_strategy = st.builds(
+    expressions_BooleanLiteral,
     value=
         st.booleans()
 )
-expressions::StringLiteral_strategy = st.builds(
-    expressions::StringLiteral,
-    value=
-        safe_text
-)
-expressions::ScopeLiteral_strategy = st.builds(
-    expressions::ScopeLiteral,
-)
-expressions::MultExpression_strategy = st.builds(
-    expressions::MultExpression,
+expressions_AddExpression_strategy = st.builds(
+    expressions_AddExpression,
     type=
         safe_text
 )
-expressions::ConstExpression_strategy = st.builds(
-    expressions::ConstExpression,
+expressions_WideStringLiteral_strategy = st.builds(
+    expressions_WideStringLiteral,
+    value=
+        safe_text
+)
+expressions_XOrExpression_strategy = st.builds(
+    expressions_XOrExpression,
+)
+expressions_UnaryExpression_strategy = st.builds(
+    expressions_UnaryExpression,
+    type=
+        safe_text
+)
+expressions_StringLiteral_strategy = st.builds(
+    expressions_StringLiteral,
+    value=
+        safe_text
+)
+expressions_ConstExpression_strategy = st.builds(
+    expressions_ConstExpression,
 )
 FileRegion_strategy = st.builds(
     FileRegion,
 )
-expressions::Expression_strategy = st.builds(
-    expressions::Expression,
+expressions_Expression_strategy = st.builds(
+    expressions_Expression,
 )
 
-@given(instance=expressions::IdlTypeDcl_strategy)
+@given(instance=expressions_IdlTypeDcl_strategy)
 @settings(max_examples=50)
-def test_expressions::idltypedcl_instantiation(instance):
-    assert isinstance(instance, expressions::IdlTypeDcl)
+def test_expressions_idltypedcl_instantiation(instance):
+    assert isinstance(instance, expressions_IdlTypeDcl)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=expressions::FixedPtLiteral_strategy)
+@given(instance=expressions_ScopeLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::fixedptliteral_instantiation(instance):
-    assert isinstance(instance, expressions::FixedPtLiteral)
+def test_expressions_scopeliteral_instantiation(instance):
+    assert isinstance(instance, expressions_ScopeLiteral)
 
-@given(instance=expressions::FixedPtLiteral_strategy)
-def test_expressions::fixedptliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=expressions_AndExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_andexpression_instantiation(instance):
+    assert isinstance(instance, expressions_AndExpression)
+
+@given(instance=expressions_WideCharacterLiteral_strategy)
+@settings(max_examples=50)
+def test_expressions_widecharacterliteral_instantiation(instance):
+    assert isinstance(instance, expressions_WideCharacterLiteral)
 
 
-@given(instance=expressions::FixedPtLiteral_strategy)
-def test_expressions::fixedptliteral_value_setter(instance):
+
+@given(instance=expressions_WideCharacterLiteral_strategy)
+def test_expressions_widecharacterliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::FixedPtLiteral_strategy)
-def test_expressions::fixedptliteral_integerPart_type(instance):
-    assert isinstance(instance.integerPart, int)
+@given(instance=expressions_DoubleLiteral_strategy)
+@settings(max_examples=50)
+def test_expressions_doubleliteral_instantiation(instance):
+    assert isinstance(instance, expressions_DoubleLiteral)
 
 
-@given(instance=expressions::FixedPtLiteral_strategy)
-def test_expressions::fixedptliteral_integerPart_setter(instance):
-    original = instance.integerPart
-    instance.integerPart = original
-    assert instance.integerPart == original
 
-@given(instance=expressions::FixedPtLiteral_strategy)
-def test_expressions::fixedptliteral_decimalPart_type(instance):
-    assert isinstance(instance.decimalPart, int)
+@given(instance=expressions_DoubleLiteral_strategy)
+def test_expressions_doubleliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=expressions_OrExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_orexpression_instantiation(instance):
+    assert isinstance(instance, expressions_OrExpression)
+
+@given(instance=expressions_FixedPtLiteral_strategy)
+@settings(max_examples=50)
+def test_expressions_fixedptliteral_instantiation(instance):
+    assert isinstance(instance, expressions_FixedPtLiteral)
 
 
-@given(instance=expressions::FixedPtLiteral_strategy)
-def test_expressions::fixedptliteral_decimalPart_setter(instance):
+
+@given(instance=expressions_FixedPtLiteral_strategy)
+def test_expressions_fixedptliteral_decimalPart_setter(instance):
     original = instance.decimalPart
     instance.decimalPart = original
     assert instance.decimalPart == original
 
-@given(instance=expressions::UnaryExpression_strategy)
+
+
+@given(instance=expressions_FixedPtLiteral_strategy)
+def test_expressions_fixedptliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=expressions_FixedPtLiteral_strategy)
+def test_expressions_fixedptliteral_integerPart_setter(instance):
+    original = instance.integerPart
+    instance.integerPart = original
+    assert instance.integerPart == original
+
+@given(instance=expressions_MultExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::unaryexpression_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryExpression)
-
-@given(instance=expressions::UnaryExpression_strategy)
-def test_expressions::unaryexpression_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_expressions_multexpression_instantiation(instance):
+    assert isinstance(instance, expressions_MultExpression)
 
 
-@given(instance=expressions::UnaryExpression_strategy)
-def test_expressions::unaryexpression_type_setter(instance):
+
+@given(instance=expressions_MultExpression_strategy)
+def test_expressions_multexpression_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=expressions::AndExpression_strategy)
+@given(instance=expressions_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::andexpression_instantiation(instance):
-    assert isinstance(instance, expressions::AndExpression)
-
-@given(instance=expressions::ShiftExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::shiftexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ShiftExpression)
-
-@given(instance=expressions::ShiftExpression_strategy)
-def test_expressions::shiftexpression_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_expressions_shiftexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ShiftExpression)
 
 
-@given(instance=expressions::ShiftExpression_strategy)
-def test_expressions::shiftexpression_type_setter(instance):
+
+@given(instance=expressions_ShiftExpression_strategy)
+def test_expressions_shiftexpression_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=expressions::IntegerLiteral_strategy)
+@given(instance=expressions_CharacterLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::integerliteral_instantiation(instance):
-    assert isinstance(instance, expressions::IntegerLiteral)
-
-@given(instance=expressions::IntegerLiteral_strategy)
-def test_expressions::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_expressions_characterliteral_instantiation(instance):
+    assert isinstance(instance, expressions_CharacterLiteral)
 
 
-@given(instance=expressions::IntegerLiteral_strategy)
-def test_expressions::integerliteral_value_setter(instance):
+
+@given(instance=expressions_CharacterLiteral_strategy)
+def test_expressions_characterliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::OrExpression_strategy)
+@given(instance=expressions_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::orexpression_instantiation(instance):
-    assert isinstance(instance, expressions::OrExpression)
-
-@given(instance=expressions::FloatingPointLiteral_strategy)
-@settings(max_examples=50)
-def test_expressions::floatingpointliteral_instantiation(instance):
-    assert isinstance(instance, expressions::FloatingPointLiteral)
-
-@given(instance=expressions::FloatingPointLiteral_strategy)
-def test_expressions::floatingpointliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_expressions_integerliteral_instantiation(instance):
+    assert isinstance(instance, expressions_IntegerLiteral)
 
 
-@given(instance=expressions::FloatingPointLiteral_strategy)
-def test_expressions::floatingpointliteral_value_setter(instance):
+
+@given(instance=expressions_IntegerLiteral_strategy)
+def test_expressions_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::DoubleLiteral_strategy)
+@given(instance=expressions_FloatingPointLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::doubleliteral_instantiation(instance):
-    assert isinstance(instance, expressions::DoubleLiteral)
-
-@given(instance=expressions::DoubleLiteral_strategy)
-def test_expressions::doubleliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_expressions_floatingpointliteral_instantiation(instance):
+    assert isinstance(instance, expressions_FloatingPointLiteral)
 
 
-@given(instance=expressions::DoubleLiteral_strategy)
-def test_expressions::doubleliteral_value_setter(instance):
+
+@given(instance=expressions_FloatingPointLiteral_strategy)
+def test_expressions_floatingpointliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::WideCharacterLiteral_strategy)
+@given(instance=expressions_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::widecharacterliteral_instantiation(instance):
-    assert isinstance(instance, expressions::WideCharacterLiteral)
-
-@given(instance=expressions::WideCharacterLiteral_strategy)
-def test_expressions::widecharacterliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_expressions_booleanliteral_instantiation(instance):
+    assert isinstance(instance, expressions_BooleanLiteral)
 
 
-@given(instance=expressions::WideCharacterLiteral_strategy)
-def test_expressions::widecharacterliteral_value_setter(instance):
+
+@given(instance=expressions_BooleanLiteral_strategy)
+def test_expressions_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::AddExpression_strategy)
+@given(instance=expressions_AddExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::addexpression_instantiation(instance):
-    assert isinstance(instance, expressions::AddExpression)
-
-@given(instance=expressions::AddExpression_strategy)
-def test_expressions::addexpression_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_expressions_addexpression_instantiation(instance):
+    assert isinstance(instance, expressions_AddExpression)
 
 
-@given(instance=expressions::AddExpression_strategy)
-def test_expressions::addexpression_type_setter(instance):
+
+@given(instance=expressions_AddExpression_strategy)
+def test_expressions_addexpression_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=expressions::XOrExpression_strategy)
+@given(instance=expressions_WideStringLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::xorexpression_instantiation(instance):
-    assert isinstance(instance, expressions::XOrExpression)
-
-@given(instance=expressions::WideStringLiteral_strategy)
-@settings(max_examples=50)
-def test_expressions::widestringliteral_instantiation(instance):
-    assert isinstance(instance, expressions::WideStringLiteral)
-
-@given(instance=expressions::WideStringLiteral_strategy)
-def test_expressions::widestringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_expressions_widestringliteral_instantiation(instance):
+    assert isinstance(instance, expressions_WideStringLiteral)
 
 
-@given(instance=expressions::WideStringLiteral_strategy)
-def test_expressions::widestringliteral_value_setter(instance):
+
+@given(instance=expressions_WideStringLiteral_strategy)
+def test_expressions_widestringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::CharacterLiteral_strategy)
+@given(instance=expressions_XOrExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::characterliteral_instantiation(instance):
-    assert isinstance(instance, expressions::CharacterLiteral)
+def test_expressions_xorexpression_instantiation(instance):
+    assert isinstance(instance, expressions_XOrExpression)
 
-@given(instance=expressions::CharacterLiteral_strategy)
-def test_expressions::characterliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=expressions::CharacterLiteral_strategy)
-def test_expressions::characterliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=expressions::BooleanLiteral_strategy)
+@given(instance=expressions_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::booleanliteral_instantiation(instance):
-    assert isinstance(instance, expressions::BooleanLiteral)
-
-@given(instance=expressions::BooleanLiteral_strategy)
-def test_expressions::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_expressions_unaryexpression_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryExpression)
 
 
-@given(instance=expressions::BooleanLiteral_strategy)
-def test_expressions::booleanliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=expressions::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_expressions::stringliteral_instantiation(instance):
-    assert isinstance(instance, expressions::StringLiteral)
-
-@given(instance=expressions::StringLiteral_strategy)
-def test_expressions::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=expressions::StringLiteral_strategy)
-def test_expressions::stringliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=expressions::ScopeLiteral_strategy)
-@settings(max_examples=50)
-def test_expressions::scopeliteral_instantiation(instance):
-    assert isinstance(instance, expressions::ScopeLiteral)
-
-@given(instance=expressions::MultExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::multexpression_instantiation(instance):
-    assert isinstance(instance, expressions::MultExpression)
-
-@given(instance=expressions::MultExpression_strategy)
-def test_expressions::multexpression_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=expressions::MultExpression_strategy)
-def test_expressions::multexpression_type_setter(instance):
+@given(instance=expressions_UnaryExpression_strategy)
+def test_expressions_unaryexpression_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=expressions::ConstExpression_strategy)
+@given(instance=expressions_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_expressions::constexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ConstExpression)
+def test_expressions_stringliteral_instantiation(instance):
+    assert isinstance(instance, expressions_StringLiteral)
+
+
+
+@given(instance=expressions_StringLiteral_strategy)
+def test_expressions_stringliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=expressions_ConstExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_constexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ConstExpression)
 
 @given(instance=FileRegion_strategy)
 @settings(max_examples=50)
 def test_fileregion_instantiation(instance):
     assert isinstance(instance, FileRegion)
 
-@given(instance=expressions::Expression_strategy)
+@given(instance=expressions_Expression_strategy)
 @settings(max_examples=50)
-def test_expressions::expression_instantiation(instance):
-    assert isinstance(instance, expressions::Expression)
+def test_expressions_expression_instantiation(instance):
+    assert isinstance(instance, expressions_Expression)

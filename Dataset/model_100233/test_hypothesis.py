@@ -3,102 +3,102 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    WordprocessingMLBasicDef::TabElt,
-    WordprocessingMLBasicDef::PictureType,
+from python_code import (
+    WordprocessingMLBasicDef_TabElt,
+    WordprocessingMLBasicDef_PictureType,
     TabElt,
-    WordprocessingMLBasicDef::StylesElt,
-    WordprocessingMLBasicDef::ListsElt,
-    WordprocessingMLBasicDef::FontsListElt,
-    WordprocessingMLBasicDef::FldCharElt,
+    WordprocessingMLBasicDef_StylesElt,
+    WordprocessingMLBasicDef_ListsElt,
+    WordprocessingMLBasicDef_FontsListElt,
+    WordprocessingMLBasicDef_FldCharElt,
     FldCharElt,
-    WordprocessingMLBasicDef::SectPrElt,
-    WordprocessingMLBasicDef::NoteElt,
-    WordprocessingMLBasicDef::SymElt,
+    WordprocessingMLBasicDef_SectPrElt,
+    WordprocessingMLBasicDef_NoteElt,
+    WordprocessingMLBasicDef_SymElt,
     SymElt,
     PictureType,
     RunContentElt,
-    WordprocessingMLBasicDef::Symbol,
-    WordprocessingMLBasicDef::Tab,
-    WordprocessingMLBasicDef::Separator,
-    WordprocessingMLBasicDef::Picture,
-    WordprocessingMLBasicDef::ContinuationSeparator,
-    WordprocessingMLBasicDef::FldChar,
-    WordprocessingMLBasicDef::AnnotationRef,
-    WordprocessingMLBasicDef::SoftHyphen,
-    WordprocessingMLBasicDef::Cr,
-    WordprocessingMLBasicDef::FootnoteRef,
-    WordprocessingMLBasicDef::PgNum,
-    WordprocessingMLBasicDef::NoBreakHyphen,
-    WordprocessingMLBasicDef::EndnoteRef,
-    WordprocessingMLBasicDef::BreakElt,
-    WordprocessingMLBasicDef::RunContentElt,
+    WordprocessingMLBasicDef_Picture,
+    WordprocessingMLBasicDef_NoBreakHyphen,
+    WordprocessingMLBasicDef_Cr,
+    WordprocessingMLBasicDef_FldChar,
+    WordprocessingMLBasicDef_Tab,
+    WordprocessingMLBasicDef_FootnoteRef,
+    WordprocessingMLBasicDef_AnnotationRef,
+    WordprocessingMLBasicDef_SoftHyphen,
+    WordprocessingMLBasicDef_ContinuationSeparator,
+    WordprocessingMLBasicDef_PgNum,
+    WordprocessingMLBasicDef_EndnoteRef,
+    WordprocessingMLBasicDef_Separator,
+    WordprocessingMLBasicDef_Symbol,
+    WordprocessingMLBasicDef_BreakElt,
+    WordprocessingMLBasicDef_RunContentElt,
     RunElt,
-    WordprocessingMLBasicDef::RunPrElt,
+    WordprocessingMLBasicDef_RunPrElt,
     ParaPrElt,
     BlockLevelChunkElt,
-    WordprocessingMLBasicDef::RunLevelElt,
-    WordprocessingMLBasicDef::ParaElt,
+    WordprocessingMLBasicDef_RunLevelElt,
+    WordprocessingMLBasicDef_ParaElt,
     RunPrElt,
-    WordprocessingMLBasicDef::ParaContentElt,
+    WordprocessingMLBasicDef_ParaContentElt,
     ParaElt,
-    WordprocessingMLBasicDef::ParaPrElt,
+    WordprocessingMLBasicDef_ParaPrElt,
     ParaContentElt,
-    WordprocessingMLBasicDef::SimpleFieldElt,
-    WordprocessingMLBasicDef::HLinkElt,
-    WordprocessingMLBasicDef::SubDocElt,
-    WordprocessingMLBasicDef::RunElt,
-    WordprocessingMLBasicDef::BodyElt,
+    WordprocessingMLBasicDef_SubDocElt,
+    WordprocessingMLBasicDef_HLinkElt,
+    WordprocessingMLBasicDef_SimpleFieldElt,
+    WordprocessingMLBasicDef_RunElt,
+    WordprocessingMLBasicDef_BodyElt,
     NoteElt,
-    WordprocessingMLBasicDef::Footnote,
-    WordprocessingMLBasicDef::Endnote,
-    WordprocessingMLBasicDef::BlockLevelElt,
+    WordprocessingMLBasicDef_Endnote,
+    WordprocessingMLBasicDef_Footnote,
+    WordprocessingMLBasicDef_BlockLevelElt,
     SectPrElt,
     BlockLevelElt,
-    WordprocessingMLBasicDef::BlockLevelChunkElt,
-    WordprocessingMLBasicDef::CfChunk,
+    WordprocessingMLBasicDef_CfChunk,
+    WordprocessingMLBasicDef_BlockLevelChunkElt,
     FontsListElt,
-    WordprocessingMLBasicDef::DocPrElt,
+    WordprocessingMLBasicDef_DocPrElt,
     StringProperty,
     BodyElt,
     DocPrElt,
     StylesElt,
     ListsElt,
     DocumentPropertiesCollection,
-    WordprocessingMLBasicDef::WordDocument,
+    WordprocessingMLBasicDef_WordDocument,
     SmartTagType,
-    WordprocessingMLBasicDef::StringType,
+    WordprocessingMLBasicDef_StringType,
     StringType,
-    WordprocessingMLBasicDef::InstrText,
-    WordprocessingMLBasicDef::Text,
-    WordprocessingMLBasicDef::DelInstrText,
-    WordprocessingMLBasicDef::DelText,
-    WordprocessingMLBasicDef::StringProperty,
+    WordprocessingMLBasicDef_DelText,
+    WordprocessingMLBasicDef_Text,
+    WordprocessingMLBasicDef_InstrText,
+    WordprocessingMLBasicDef_DelInstrText,
+    WordprocessingMLBasicDef_StringProperty,
     SmartTagsCollection,
-    WordprocessingMLBasicDef::SmartTagType,
+    WordprocessingMLBasicDef_SmartTagType,
     CustomDocumentPropertiesCollection,
-    WordprocessingMLBasicDef::SmartTagsCollection,
-    WordprocessingMLBasicDef::CustomDocumentPropertiesCollection,
-    WordprocessingMLBasicDef::CustomDocumentProperty,
+    WordprocessingMLBasicDef_SmartTagsCollection,
+    WordprocessingMLBasicDef_CustomDocumentPropertiesCollection,
+    WordprocessingMLBasicDef_CustomDocumentProperty,
     CustomDocumentProperty,
     VersionType,
     DateTimeType,
     ValueType,
-    WordprocessingMLBasicDef::FloatValue,
-    WordprocessingMLBasicDef::BooleanValue,
-    WordprocessingMLBasicDef::DateTimeTypeValue,
-    WordprocessingMLBasicDef::StringValue,
-    WordprocessingMLBasicDef::ValueType,
+    WordprocessingMLBasicDef_BooleanValue,
+    WordprocessingMLBasicDef_FloatValue,
+    WordprocessingMLBasicDef_DateTimeTypeValue,
+    WordprocessingMLBasicDef_StringValue,
+    WordprocessingMLBasicDef_ValueType,
     WordDocument,
-    WordprocessingMLBasicDef::DocumentPropertiesCollection,
-    WordprocessingMLBasicDef::DateTimeType,
-    WordprocessingMLBasicDef::VersionType,
+    WordprocessingMLBasicDef_DocumentPropertiesCollection,
+    WordprocessingMLBasicDef_DateTimeType,
+    WordprocessingMLBasicDef_VersionType,
     FldCharTypeProperty,
     BreakType,
-    OnOffType,
     NoteValue,
+    OnOffType,
 )
 
 # =============================================================================
@@ -107,30 +107,30 @@ from classes import (
 
 
 
-def test_wordprocessingmlbasicdef::tabelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::TabElt)
+def test_wordprocessingmlbasicdef_tabelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_TabElt)
 
 
-def test_wordprocessingmlbasicdef::tabelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::TabElt.__init__)
+def test_wordprocessingmlbasicdef_tabelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_TabElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::tabelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::TabElt.__init__)
+def test_wordprocessingmlbasicdef_tabelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_TabElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::picturetype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::PictureType)
+def test_wordprocessingmlbasicdef_picturetype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_PictureType)
 
 
-def test_wordprocessingmlbasicdef::picturetype_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::PictureType.__init__)
+def test_wordprocessingmlbasicdef_picturetype_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_PictureType.__init__)
 
 
-def test_wordprocessingmlbasicdef::picturetype_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::PictureType.__init__)
+def test_wordprocessingmlbasicdef_picturetype_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_PictureType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,75 +149,75 @@ def test_tabelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::styleselt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::StylesElt)
+def test_wordprocessingmlbasicdef_styleselt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_StylesElt)
 
 
-def test_wordprocessingmlbasicdef::styleselt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::StylesElt.__init__)
+def test_wordprocessingmlbasicdef_styleselt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_StylesElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::styleselt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::StylesElt.__init__)
+def test_wordprocessingmlbasicdef_styleselt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_StylesElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::listselt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::ListsElt)
+def test_wordprocessingmlbasicdef_listselt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_ListsElt)
 
 
-def test_wordprocessingmlbasicdef::listselt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::ListsElt.__init__)
+def test_wordprocessingmlbasicdef_listselt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_ListsElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::listselt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::ListsElt.__init__)
+def test_wordprocessingmlbasicdef_listselt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_ListsElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::fontslistelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::FontsListElt)
+def test_wordprocessingmlbasicdef_fontslistelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_FontsListElt)
 
 
-def test_wordprocessingmlbasicdef::fontslistelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::FontsListElt.__init__)
+def test_wordprocessingmlbasicdef_fontslistelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_FontsListElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::fontslistelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::FontsListElt.__init__)
+def test_wordprocessingmlbasicdef_fontslistelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_FontsListElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::fldcharelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::FldCharElt)
+def test_wordprocessingmlbasicdef_fldcharelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_FldCharElt)
 
 
-def test_wordprocessingmlbasicdef::fldcharelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::FldCharElt.__init__)
+def test_wordprocessingmlbasicdef_fldcharelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_FldCharElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::fldcharelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::FldCharElt.__init__)
+def test_wordprocessingmlbasicdef_fldcharelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_FldCharElt.__init__)
     params = list(sig.parameters.keys())
     assert "fldLock" in params, "Missing parameter 'fldLock'"
     assert "fldCharType" in params, "Missing parameter 'fldCharType'"
 
-def test_wordprocessingmlbasicdef::fldcharelt_has_fldLock():
-    assert hasattr(WordprocessingMLBasicDef::FldCharElt, "fldLock")
+def test_wordprocessingmlbasicdef_fldcharelt_has_fldLock():
+    assert hasattr(WordprocessingMLBasicDef_FldCharElt, "fldLock")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::FldCharElt.__mro__:
+    for klass in WordprocessingMLBasicDef_FldCharElt.__mro__:
         if "fldLock" in klass.__dict__:
             descriptor = klass.__dict__["fldLock"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::fldcharelt_has_fldCharType():
-    assert hasattr(WordprocessingMLBasicDef::FldCharElt, "fldCharType")
+def test_wordprocessingmlbasicdef_fldcharelt_has_fldCharType():
+    assert hasattr(WordprocessingMLBasicDef_FldCharElt, "fldCharType")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::FldCharElt.__mro__:
+    for klass in WordprocessingMLBasicDef_FldCharElt.__mro__:
         if "fldCharType" in klass.__dict__:
             descriptor = klass.__dict__["fldCharType"]
             break
@@ -239,47 +239,47 @@ def test_fldcharelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::sectprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SectPrElt)
+def test_wordprocessingmlbasicdef_sectprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SectPrElt)
 
 
-def test_wordprocessingmlbasicdef::sectprelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SectPrElt.__init__)
+def test_wordprocessingmlbasicdef_sectprelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SectPrElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::sectprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SectPrElt.__init__)
+def test_wordprocessingmlbasicdef_sectprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SectPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::noteelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::NoteElt)
+def test_wordprocessingmlbasicdef_noteelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_NoteElt)
 
 
-def test_wordprocessingmlbasicdef::noteelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::NoteElt.__init__)
+def test_wordprocessingmlbasicdef_noteelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_NoteElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::noteelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::NoteElt.__init__)
+def test_wordprocessingmlbasicdef_noteelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_NoteElt.__init__)
     params = list(sig.parameters.keys())
     assert "suppressRef" in params, "Missing parameter 'suppressRef'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_wordprocessingmlbasicdef::noteelt_has_suppressRef():
-    assert hasattr(WordprocessingMLBasicDef::NoteElt, "suppressRef")
+def test_wordprocessingmlbasicdef_noteelt_has_suppressRef():
+    assert hasattr(WordprocessingMLBasicDef_NoteElt, "suppressRef")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::NoteElt.__mro__:
+    for klass in WordprocessingMLBasicDef_NoteElt.__mro__:
         if "suppressRef" in klass.__dict__:
             descriptor = klass.__dict__["suppressRef"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::noteelt_has_type():
-    assert hasattr(WordprocessingMLBasicDef::NoteElt, "type")
+def test_wordprocessingmlbasicdef_noteelt_has_type():
+    assert hasattr(WordprocessingMLBasicDef_NoteElt, "type")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::NoteElt.__mro__:
+    for klass in WordprocessingMLBasicDef_NoteElt.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -287,16 +287,16 @@ def test_wordprocessingmlbasicdef::noteelt_has_type():
 
 
 
-def test_wordprocessingmlbasicdef::symelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SymElt)
+def test_wordprocessingmlbasicdef_symelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SymElt)
 
 
-def test_wordprocessingmlbasicdef::symelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SymElt.__init__)
+def test_wordprocessingmlbasicdef_symelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SymElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::symelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SymElt.__init__)
+def test_wordprocessingmlbasicdef_symelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SymElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -343,205 +343,205 @@ def test_runcontentelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::symbol_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Symbol)
+def test_wordprocessingmlbasicdef_picture_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Picture)
 
 
-def test_wordprocessingmlbasicdef::symbol_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Symbol.__init__)
+def test_wordprocessingmlbasicdef_picture_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Picture.__init__)
 
 
-def test_wordprocessingmlbasicdef::symbol_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Symbol.__init__)
+def test_wordprocessingmlbasicdef_picture_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Picture.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::tab_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Tab)
+def test_wordprocessingmlbasicdef_nobreakhyphen_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_NoBreakHyphen)
 
 
-def test_wordprocessingmlbasicdef::tab_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Tab.__init__)
+def test_wordprocessingmlbasicdef_nobreakhyphen_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_NoBreakHyphen.__init__)
 
 
-def test_wordprocessingmlbasicdef::tab_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Tab.__init__)
+def test_wordprocessingmlbasicdef_nobreakhyphen_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_NoBreakHyphen.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::separator_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Separator)
+def test_wordprocessingmlbasicdef_cr_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Cr)
 
 
-def test_wordprocessingmlbasicdef::separator_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Separator.__init__)
+def test_wordprocessingmlbasicdef_cr_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Cr.__init__)
 
 
-def test_wordprocessingmlbasicdef::separator_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Separator.__init__)
+def test_wordprocessingmlbasicdef_cr_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Cr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::picture_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Picture)
+def test_wordprocessingmlbasicdef_fldchar_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_FldChar)
 
 
-def test_wordprocessingmlbasicdef::picture_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Picture.__init__)
+def test_wordprocessingmlbasicdef_fldchar_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_FldChar.__init__)
 
 
-def test_wordprocessingmlbasicdef::picture_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Picture.__init__)
+def test_wordprocessingmlbasicdef_fldchar_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_FldChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::continuationseparator_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::ContinuationSeparator)
+def test_wordprocessingmlbasicdef_tab_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Tab)
 
 
-def test_wordprocessingmlbasicdef::continuationseparator_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::ContinuationSeparator.__init__)
+def test_wordprocessingmlbasicdef_tab_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Tab.__init__)
 
 
-def test_wordprocessingmlbasicdef::continuationseparator_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::ContinuationSeparator.__init__)
+def test_wordprocessingmlbasicdef_tab_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Tab.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::fldchar_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::FldChar)
+def test_wordprocessingmlbasicdef_footnoteref_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_FootnoteRef)
 
 
-def test_wordprocessingmlbasicdef::fldchar_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::FldChar.__init__)
+def test_wordprocessingmlbasicdef_footnoteref_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_FootnoteRef.__init__)
 
 
-def test_wordprocessingmlbasicdef::fldchar_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::FldChar.__init__)
+def test_wordprocessingmlbasicdef_footnoteref_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_FootnoteRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::annotationref_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::AnnotationRef)
+def test_wordprocessingmlbasicdef_annotationref_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_AnnotationRef)
 
 
-def test_wordprocessingmlbasicdef::annotationref_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::AnnotationRef.__init__)
+def test_wordprocessingmlbasicdef_annotationref_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_AnnotationRef.__init__)
 
 
-def test_wordprocessingmlbasicdef::annotationref_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::AnnotationRef.__init__)
+def test_wordprocessingmlbasicdef_annotationref_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_AnnotationRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::softhyphen_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SoftHyphen)
+def test_wordprocessingmlbasicdef_softhyphen_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SoftHyphen)
 
 
-def test_wordprocessingmlbasicdef::softhyphen_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SoftHyphen.__init__)
+def test_wordprocessingmlbasicdef_softhyphen_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SoftHyphen.__init__)
 
 
-def test_wordprocessingmlbasicdef::softhyphen_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SoftHyphen.__init__)
+def test_wordprocessingmlbasicdef_softhyphen_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SoftHyphen.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::cr_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Cr)
+def test_wordprocessingmlbasicdef_continuationseparator_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_ContinuationSeparator)
 
 
-def test_wordprocessingmlbasicdef::cr_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Cr.__init__)
+def test_wordprocessingmlbasicdef_continuationseparator_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_ContinuationSeparator.__init__)
 
 
-def test_wordprocessingmlbasicdef::cr_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Cr.__init__)
+def test_wordprocessingmlbasicdef_continuationseparator_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_ContinuationSeparator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::footnoteref_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::FootnoteRef)
+def test_wordprocessingmlbasicdef_pgnum_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_PgNum)
 
 
-def test_wordprocessingmlbasicdef::footnoteref_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::FootnoteRef.__init__)
+def test_wordprocessingmlbasicdef_pgnum_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_PgNum.__init__)
 
 
-def test_wordprocessingmlbasicdef::footnoteref_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::FootnoteRef.__init__)
+def test_wordprocessingmlbasicdef_pgnum_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_PgNum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::pgnum_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::PgNum)
+def test_wordprocessingmlbasicdef_endnoteref_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_EndnoteRef)
 
 
-def test_wordprocessingmlbasicdef::pgnum_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::PgNum.__init__)
+def test_wordprocessingmlbasicdef_endnoteref_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_EndnoteRef.__init__)
 
 
-def test_wordprocessingmlbasicdef::pgnum_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::PgNum.__init__)
+def test_wordprocessingmlbasicdef_endnoteref_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_EndnoteRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::nobreakhyphen_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::NoBreakHyphen)
+def test_wordprocessingmlbasicdef_separator_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Separator)
 
 
-def test_wordprocessingmlbasicdef::nobreakhyphen_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::NoBreakHyphen.__init__)
+def test_wordprocessingmlbasicdef_separator_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Separator.__init__)
 
 
-def test_wordprocessingmlbasicdef::nobreakhyphen_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::NoBreakHyphen.__init__)
+def test_wordprocessingmlbasicdef_separator_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Separator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::endnoteref_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::EndnoteRef)
+def test_wordprocessingmlbasicdef_symbol_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Symbol)
 
 
-def test_wordprocessingmlbasicdef::endnoteref_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::EndnoteRef.__init__)
+def test_wordprocessingmlbasicdef_symbol_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Symbol.__init__)
 
 
-def test_wordprocessingmlbasicdef::endnoteref_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::EndnoteRef.__init__)
+def test_wordprocessingmlbasicdef_symbol_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Symbol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::breakelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::BreakElt)
+def test_wordprocessingmlbasicdef_breakelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_BreakElt)
 
 
-def test_wordprocessingmlbasicdef::breakelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::BreakElt.__init__)
+def test_wordprocessingmlbasicdef_breakelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_BreakElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::breakelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::BreakElt.__init__)
+def test_wordprocessingmlbasicdef_breakelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_BreakElt.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_wordprocessingmlbasicdef::breakelt_has_type():
-    assert hasattr(WordprocessingMLBasicDef::BreakElt, "type")
+def test_wordprocessingmlbasicdef_breakelt_has_type():
+    assert hasattr(WordprocessingMLBasicDef_BreakElt, "type")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::BreakElt.__mro__:
+    for klass in WordprocessingMLBasicDef_BreakElt.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -549,16 +549,16 @@ def test_wordprocessingmlbasicdef::breakelt_has_type():
 
 
 
-def test_wordprocessingmlbasicdef::runcontentelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::RunContentElt)
+def test_wordprocessingmlbasicdef_runcontentelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_RunContentElt)
 
 
-def test_wordprocessingmlbasicdef::runcontentelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::RunContentElt.__init__)
+def test_wordprocessingmlbasicdef_runcontentelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_RunContentElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::runcontentelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::RunContentElt.__init__)
+def test_wordprocessingmlbasicdef_runcontentelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_RunContentElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -577,16 +577,16 @@ def test_runelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::runprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::RunPrElt)
+def test_wordprocessingmlbasicdef_runprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_RunPrElt)
 
 
-def test_wordprocessingmlbasicdef::runprelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::RunPrElt.__init__)
+def test_wordprocessingmlbasicdef_runprelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_RunPrElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::runprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::RunPrElt.__init__)
+def test_wordprocessingmlbasicdef_runprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_RunPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -619,30 +619,30 @@ def test_blocklevelchunkelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::runlevelelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::RunLevelElt)
+def test_wordprocessingmlbasicdef_runlevelelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_RunLevelElt)
 
 
-def test_wordprocessingmlbasicdef::runlevelelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::RunLevelElt.__init__)
+def test_wordprocessingmlbasicdef_runlevelelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_RunLevelElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::runlevelelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::RunLevelElt.__init__)
+def test_wordprocessingmlbasicdef_runlevelelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_RunLevelElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::paraelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::ParaElt)
+def test_wordprocessingmlbasicdef_paraelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_ParaElt)
 
 
-def test_wordprocessingmlbasicdef::paraelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::ParaElt.__init__)
+def test_wordprocessingmlbasicdef_paraelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_ParaElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::paraelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::ParaElt.__init__)
+def test_wordprocessingmlbasicdef_paraelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_ParaElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -661,16 +661,16 @@ def test_runprelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::paracontentelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::ParaContentElt)
+def test_wordprocessingmlbasicdef_paracontentelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_ParaContentElt)
 
 
-def test_wordprocessingmlbasicdef::paracontentelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::ParaContentElt.__init__)
+def test_wordprocessingmlbasicdef_paracontentelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_ParaContentElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::paracontentelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::ParaContentElt.__init__)
+def test_wordprocessingmlbasicdef_paracontentelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_ParaContentElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -689,16 +689,16 @@ def test_paraelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::paraprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::ParaPrElt)
+def test_wordprocessingmlbasicdef_paraprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_ParaPrElt)
 
 
-def test_wordprocessingmlbasicdef::paraprelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::ParaPrElt.__init__)
+def test_wordprocessingmlbasicdef_paraprelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_ParaPrElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::paraprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::ParaPrElt.__init__)
+def test_wordprocessingmlbasicdef_paraprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_ParaPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -717,72 +717,72 @@ def test_paracontentelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::simplefieldelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SimpleFieldElt)
+def test_wordprocessingmlbasicdef_subdocelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SubDocElt)
 
 
-def test_wordprocessingmlbasicdef::simplefieldelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SimpleFieldElt.__init__)
+def test_wordprocessingmlbasicdef_subdocelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SubDocElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::simplefieldelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SimpleFieldElt.__init__)
+def test_wordprocessingmlbasicdef_subdocelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SubDocElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::hlinkelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::HLinkElt)
+def test_wordprocessingmlbasicdef_hlinkelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_HLinkElt)
 
 
-def test_wordprocessingmlbasicdef::hlinkelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::HLinkElt.__init__)
+def test_wordprocessingmlbasicdef_hlinkelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_HLinkElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::hlinkelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::HLinkElt.__init__)
+def test_wordprocessingmlbasicdef_hlinkelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_HLinkElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::subdocelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SubDocElt)
+def test_wordprocessingmlbasicdef_simplefieldelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SimpleFieldElt)
 
 
-def test_wordprocessingmlbasicdef::subdocelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SubDocElt.__init__)
+def test_wordprocessingmlbasicdef_simplefieldelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SimpleFieldElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::subdocelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SubDocElt.__init__)
+def test_wordprocessingmlbasicdef_simplefieldelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SimpleFieldElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::runelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::RunElt)
+def test_wordprocessingmlbasicdef_runelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_RunElt)
 
 
-def test_wordprocessingmlbasicdef::runelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::RunElt.__init__)
+def test_wordprocessingmlbasicdef_runelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_RunElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::runelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::RunElt.__init__)
+def test_wordprocessingmlbasicdef_runelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_RunElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::bodyelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::BodyElt)
+def test_wordprocessingmlbasicdef_bodyelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_BodyElt)
 
 
-def test_wordprocessingmlbasicdef::bodyelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::BodyElt.__init__)
+def test_wordprocessingmlbasicdef_bodyelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_BodyElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::bodyelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::BodyElt.__init__)
+def test_wordprocessingmlbasicdef_bodyelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_BodyElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -801,44 +801,44 @@ def test_noteelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::footnote_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Footnote)
+def test_wordprocessingmlbasicdef_endnote_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Endnote)
 
 
-def test_wordprocessingmlbasicdef::footnote_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Footnote.__init__)
+def test_wordprocessingmlbasicdef_endnote_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Endnote.__init__)
 
 
-def test_wordprocessingmlbasicdef::footnote_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Footnote.__init__)
+def test_wordprocessingmlbasicdef_endnote_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Endnote.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::endnote_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Endnote)
+def test_wordprocessingmlbasicdef_footnote_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Footnote)
 
 
-def test_wordprocessingmlbasicdef::endnote_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Endnote.__init__)
+def test_wordprocessingmlbasicdef_footnote_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Footnote.__init__)
 
 
-def test_wordprocessingmlbasicdef::endnote_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Endnote.__init__)
+def test_wordprocessingmlbasicdef_footnote_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Footnote.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::blocklevelelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::BlockLevelElt)
+def test_wordprocessingmlbasicdef_blocklevelelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_BlockLevelElt)
 
 
-def test_wordprocessingmlbasicdef::blocklevelelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::BlockLevelElt.__init__)
+def test_wordprocessingmlbasicdef_blocklevelelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_BlockLevelElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::blocklevelelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::BlockLevelElt.__init__)
+def test_wordprocessingmlbasicdef_blocklevelelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_BlockLevelElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -871,30 +871,30 @@ def test_blocklevelelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::blocklevelchunkelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::BlockLevelChunkElt)
+def test_wordprocessingmlbasicdef_cfchunk_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_CfChunk)
 
 
-def test_wordprocessingmlbasicdef::blocklevelchunkelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::BlockLevelChunkElt.__init__)
+def test_wordprocessingmlbasicdef_cfchunk_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_CfChunk.__init__)
 
 
-def test_wordprocessingmlbasicdef::blocklevelchunkelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::BlockLevelChunkElt.__init__)
+def test_wordprocessingmlbasicdef_cfchunk_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_CfChunk.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::cfchunk_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::CfChunk)
+def test_wordprocessingmlbasicdef_blocklevelchunkelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_BlockLevelChunkElt)
 
 
-def test_wordprocessingmlbasicdef::cfchunk_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::CfChunk.__init__)
+def test_wordprocessingmlbasicdef_blocklevelchunkelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_BlockLevelChunkElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::cfchunk_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::CfChunk.__init__)
+def test_wordprocessingmlbasicdef_blocklevelchunkelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_BlockLevelChunkElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -913,16 +913,16 @@ def test_fontslistelt_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::docprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::DocPrElt)
+def test_wordprocessingmlbasicdef_docprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_DocPrElt)
 
 
-def test_wordprocessingmlbasicdef::docprelt_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::DocPrElt.__init__)
+def test_wordprocessingmlbasicdef_docprelt_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_DocPrElt.__init__)
 
 
-def test_wordprocessingmlbasicdef::docprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::DocPrElt.__init__)
+def test_wordprocessingmlbasicdef_docprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_DocPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1011,16 +1011,16 @@ def test_documentpropertiescollection_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::worddocument_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::WordDocument)
+def test_wordprocessingmlbasicdef_worddocument_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_WordDocument)
 
 
-def test_wordprocessingmlbasicdef::worddocument_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::WordDocument.__init__)
+def test_wordprocessingmlbasicdef_worddocument_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_WordDocument.__init__)
 
 
-def test_wordprocessingmlbasicdef::worddocument_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::WordDocument.__init__)
+def test_wordprocessingmlbasicdef_worddocument_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_WordDocument.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1039,23 +1039,23 @@ def test_smarttagtype_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::stringtype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::StringType)
+def test_wordprocessingmlbasicdef_stringtype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_StringType)
 
 
-def test_wordprocessingmlbasicdef::stringtype_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::StringType.__init__)
+def test_wordprocessingmlbasicdef_stringtype_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_StringType.__init__)
 
 
-def test_wordprocessingmlbasicdef::stringtype_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::StringType.__init__)
+def test_wordprocessingmlbasicdef_stringtype_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_StringType.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_wordprocessingmlbasicdef::stringtype_has_val():
-    assert hasattr(WordprocessingMLBasicDef::StringType, "val")
+def test_wordprocessingmlbasicdef_stringtype_has_val():
+    assert hasattr(WordprocessingMLBasicDef_StringType, "val")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::StringType.__mro__:
+    for klass in WordprocessingMLBasicDef_StringType.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -1077,72 +1077,72 @@ def test_stringtype_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::instrtext_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::InstrText)
+def test_wordprocessingmlbasicdef_deltext_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_DelText)
 
 
-def test_wordprocessingmlbasicdef::instrtext_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::InstrText.__init__)
+def test_wordprocessingmlbasicdef_deltext_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_DelText.__init__)
 
 
-def test_wordprocessingmlbasicdef::instrtext_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::InstrText.__init__)
+def test_wordprocessingmlbasicdef_deltext_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_DelText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::text_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::Text)
+def test_wordprocessingmlbasicdef_text_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_Text)
 
 
-def test_wordprocessingmlbasicdef::text_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::Text.__init__)
+def test_wordprocessingmlbasicdef_text_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_Text.__init__)
 
 
-def test_wordprocessingmlbasicdef::text_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::Text.__init__)
+def test_wordprocessingmlbasicdef_text_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_Text.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::delinstrtext_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::DelInstrText)
+def test_wordprocessingmlbasicdef_instrtext_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_InstrText)
 
 
-def test_wordprocessingmlbasicdef::delinstrtext_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::DelInstrText.__init__)
+def test_wordprocessingmlbasicdef_instrtext_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_InstrText.__init__)
 
 
-def test_wordprocessingmlbasicdef::delinstrtext_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::DelInstrText.__init__)
+def test_wordprocessingmlbasicdef_instrtext_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_InstrText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::deltext_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::DelText)
+def test_wordprocessingmlbasicdef_delinstrtext_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_DelInstrText)
 
 
-def test_wordprocessingmlbasicdef::deltext_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::DelText.__init__)
+def test_wordprocessingmlbasicdef_delinstrtext_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_DelInstrText.__init__)
 
 
-def test_wordprocessingmlbasicdef::deltext_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::DelText.__init__)
+def test_wordprocessingmlbasicdef_delinstrtext_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_DelInstrText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::stringproperty_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::StringProperty)
+def test_wordprocessingmlbasicdef_stringproperty_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_StringProperty)
 
 
-def test_wordprocessingmlbasicdef::stringproperty_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::StringProperty.__init__)
+def test_wordprocessingmlbasicdef_stringproperty_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_StringProperty.__init__)
 
 
-def test_wordprocessingmlbasicdef::stringproperty_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::StringProperty.__init__)
+def test_wordprocessingmlbasicdef_stringproperty_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_StringProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1161,45 +1161,45 @@ def test_smarttagscollection_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::smarttagtype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SmartTagType)
+def test_wordprocessingmlbasicdef_smarttagtype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SmartTagType)
 
 
-def test_wordprocessingmlbasicdef::smarttagtype_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SmartTagType.__init__)
+def test_wordprocessingmlbasicdef_smarttagtype_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SmartTagType.__init__)
 
 
-def test_wordprocessingmlbasicdef::smarttagtype_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SmartTagType.__init__)
+def test_wordprocessingmlbasicdef_smarttagtype_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SmartTagType.__init__)
     params = list(sig.parameters.keys())
-    assert "url" in params, "Missing parameter 'url'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "namespaceuri" in params, "Missing parameter 'namespaceuri'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "url" in params, "Missing parameter 'url'"
 
-def test_wordprocessingmlbasicdef::smarttagtype_has_url():
-    assert hasattr(WordprocessingMLBasicDef::SmartTagType, "url")
+def test_wordprocessingmlbasicdef_smarttagtype_has_namespaceuri():
+    assert hasattr(WordprocessingMLBasicDef_SmartTagType, "namespaceuri")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::SmartTagType.__mro__:
-        if "url" in klass.__dict__:
-            descriptor = klass.__dict__["url"]
+    for klass in WordprocessingMLBasicDef_SmartTagType.__mro__:
+        if "namespaceuri" in klass.__dict__:
+            descriptor = klass.__dict__["namespaceuri"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::smarttagtype_has_name():
-    assert hasattr(WordprocessingMLBasicDef::SmartTagType, "name")
+def test_wordprocessingmlbasicdef_smarttagtype_has_name():
+    assert hasattr(WordprocessingMLBasicDef_SmartTagType, "name")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::SmartTagType.__mro__:
+    for klass in WordprocessingMLBasicDef_SmartTagType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::smarttagtype_has_namespaceuri():
-    assert hasattr(WordprocessingMLBasicDef::SmartTagType, "namespaceuri")
+def test_wordprocessingmlbasicdef_smarttagtype_has_url():
+    assert hasattr(WordprocessingMLBasicDef_SmartTagType, "url")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::SmartTagType.__mro__:
-        if "namespaceuri" in klass.__dict__:
-            descriptor = klass.__dict__["namespaceuri"]
+    for klass in WordprocessingMLBasicDef_SmartTagType.__mro__:
+        if "url" in klass.__dict__:
+            descriptor = klass.__dict__["url"]
             break
     assert isinstance(descriptor, property)
 
@@ -1219,51 +1219,51 @@ def test_customdocumentpropertiescollection_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::smarttagscollection_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::SmartTagsCollection)
+def test_wordprocessingmlbasicdef_smarttagscollection_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_SmartTagsCollection)
 
 
-def test_wordprocessingmlbasicdef::smarttagscollection_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::SmartTagsCollection.__init__)
+def test_wordprocessingmlbasicdef_smarttagscollection_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_SmartTagsCollection.__init__)
 
 
-def test_wordprocessingmlbasicdef::smarttagscollection_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::SmartTagsCollection.__init__)
+def test_wordprocessingmlbasicdef_smarttagscollection_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_SmartTagsCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::customdocumentpropertiescollection_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::CustomDocumentPropertiesCollection)
+def test_wordprocessingmlbasicdef_customdocumentpropertiescollection_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_CustomDocumentPropertiesCollection)
 
 
-def test_wordprocessingmlbasicdef::customdocumentpropertiescollection_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::CustomDocumentPropertiesCollection.__init__)
+def test_wordprocessingmlbasicdef_customdocumentpropertiescollection_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_CustomDocumentPropertiesCollection.__init__)
 
 
-def test_wordprocessingmlbasicdef::customdocumentpropertiescollection_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::CustomDocumentPropertiesCollection.__init__)
+def test_wordprocessingmlbasicdef_customdocumentpropertiescollection_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_CustomDocumentPropertiesCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::customdocumentproperty_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::CustomDocumentProperty)
+def test_wordprocessingmlbasicdef_customdocumentproperty_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_CustomDocumentProperty)
 
 
-def test_wordprocessingmlbasicdef::customdocumentproperty_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::CustomDocumentProperty.__init__)
+def test_wordprocessingmlbasicdef_customdocumentproperty_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_CustomDocumentProperty.__init__)
 
 
-def test_wordprocessingmlbasicdef::customdocumentproperty_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::CustomDocumentProperty.__init__)
+def test_wordprocessingmlbasicdef_customdocumentproperty_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_CustomDocumentProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wordprocessingmlbasicdef::customdocumentproperty_has_name():
-    assert hasattr(WordprocessingMLBasicDef::CustomDocumentProperty, "name")
+def test_wordprocessingmlbasicdef_customdocumentproperty_has_name():
+    assert hasattr(WordprocessingMLBasicDef_CustomDocumentProperty, "name")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::CustomDocumentProperty.__mro__:
+    for klass in WordprocessingMLBasicDef_CustomDocumentProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1327,23 +1327,23 @@ def test_valuetype_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::floatvalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::FloatValue)
+def test_wordprocessingmlbasicdef_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_BooleanValue)
 
 
-def test_wordprocessingmlbasicdef::floatvalue_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::FloatValue.__init__)
+def test_wordprocessingmlbasicdef_booleanvalue_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_BooleanValue.__init__)
 
 
-def test_wordprocessingmlbasicdef::floatvalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::FloatValue.__init__)
+def test_wordprocessingmlbasicdef_booleanvalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_wordprocessingmlbasicdef::floatvalue_has_value():
-    assert hasattr(WordprocessingMLBasicDef::FloatValue, "value")
+def test_wordprocessingmlbasicdef_booleanvalue_has_value():
+    assert hasattr(WordprocessingMLBasicDef_BooleanValue, "value")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::FloatValue.__mro__:
+    for klass in WordprocessingMLBasicDef_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1351,23 +1351,23 @@ def test_wordprocessingmlbasicdef::floatvalue_has_value():
 
 
 
-def test_wordprocessingmlbasicdef::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::BooleanValue)
+def test_wordprocessingmlbasicdef_floatvalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_FloatValue)
 
 
-def test_wordprocessingmlbasicdef::booleanvalue_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::BooleanValue.__init__)
+def test_wordprocessingmlbasicdef_floatvalue_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_FloatValue.__init__)
 
 
-def test_wordprocessingmlbasicdef::booleanvalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::BooleanValue.__init__)
+def test_wordprocessingmlbasicdef_floatvalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_FloatValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_wordprocessingmlbasicdef::booleanvalue_has_value():
-    assert hasattr(WordprocessingMLBasicDef::BooleanValue, "value")
+def test_wordprocessingmlbasicdef_floatvalue_has_value():
+    assert hasattr(WordprocessingMLBasicDef_FloatValue, "value")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::BooleanValue.__mro__:
+    for klass in WordprocessingMLBasicDef_FloatValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1375,37 +1375,37 @@ def test_wordprocessingmlbasicdef::booleanvalue_has_value():
 
 
 
-def test_wordprocessingmlbasicdef::datetimetypevalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::DateTimeTypeValue)
+def test_wordprocessingmlbasicdef_datetimetypevalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_DateTimeTypeValue)
 
 
-def test_wordprocessingmlbasicdef::datetimetypevalue_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::DateTimeTypeValue.__init__)
+def test_wordprocessingmlbasicdef_datetimetypevalue_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_DateTimeTypeValue.__init__)
 
 
-def test_wordprocessingmlbasicdef::datetimetypevalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::DateTimeTypeValue.__init__)
+def test_wordprocessingmlbasicdef_datetimetypevalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_DateTimeTypeValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlbasicdef::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::StringValue)
+def test_wordprocessingmlbasicdef_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_StringValue)
 
 
-def test_wordprocessingmlbasicdef::stringvalue_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::StringValue.__init__)
+def test_wordprocessingmlbasicdef_stringvalue_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_StringValue.__init__)
 
 
-def test_wordprocessingmlbasicdef::stringvalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::StringValue.__init__)
+def test_wordprocessingmlbasicdef_stringvalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_wordprocessingmlbasicdef::stringvalue_has_value():
-    assert hasattr(WordprocessingMLBasicDef::StringValue, "value")
+def test_wordprocessingmlbasicdef_stringvalue_has_value():
+    assert hasattr(WordprocessingMLBasicDef_StringValue, "value")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::StringValue.__mro__:
+    for klass in WordprocessingMLBasicDef_StringValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1413,16 +1413,16 @@ def test_wordprocessingmlbasicdef::stringvalue_has_value():
 
 
 
-def test_wordprocessingmlbasicdef::valuetype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::ValueType)
+def test_wordprocessingmlbasicdef_valuetype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_ValueType)
 
 
-def test_wordprocessingmlbasicdef::valuetype_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::ValueType.__init__)
+def test_wordprocessingmlbasicdef_valuetype_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_ValueType.__init__)
 
 
-def test_wordprocessingmlbasicdef::valuetype_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::ValueType.__init__)
+def test_wordprocessingmlbasicdef_valuetype_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_ValueType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1441,341 +1441,341 @@ def test_worddocument_constructor_args():
 
 
 
-def test_wordprocessingmlbasicdef::documentpropertiescollection_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::DocumentPropertiesCollection)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_DocumentPropertiesCollection)
 
 
-def test_wordprocessingmlbasicdef::documentpropertiescollection_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::DocumentPropertiesCollection.__init__)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_DocumentPropertiesCollection.__init__)
 
 
-def test_wordprocessingmlbasicdef::documentpropertiescollection_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::DocumentPropertiesCollection.__init__)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_DocumentPropertiesCollection.__init__)
     params = list(sig.parameters.keys())
-    assert "lines" in params, "Missing parameter 'lines'"
-    assert "bytes" in params, "Missing parameter 'bytes'"
-    assert "guid" in params, "Missing parameter 'guid'"
-    assert "manager" in params, "Missing parameter 'manager'"
-    assert "presentationFormat" in params, "Missing parameter 'presentationFormat'"
-    assert "characters" in params, "Missing parameter 'characters'"
-    assert "paragraphs" in params, "Missing parameter 'paragraphs'"
-    assert "subject" in params, "Missing parameter 'subject'"
-    assert "charactersWithSpaces" in params, "Missing parameter 'charactersWithSpaces'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "words" in params, "Missing parameter 'words'"
     assert "hyperlinkBase" in params, "Missing parameter 'hyperlinkBase'"
-    assert "totalTime" in params, "Missing parameter 'totalTime'"
-    assert "appName" in params, "Missing parameter 'appName'"
-    assert "category" in params, "Missing parameter 'category'"
-    assert "pages" in params, "Missing parameter 'pages'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "author" in params, "Missing parameter 'author'"
-    assert "revision" in params, "Missing parameter 'revision'"
-    assert "lastAuthor" in params, "Missing parameter 'lastAuthor'"
-    assert "company" in params, "Missing parameter 'company'"
     assert "keywords" in params, "Missing parameter 'keywords'"
+    assert "guid" in params, "Missing parameter 'guid'"
+    assert "charactersWithSpaces" in params, "Missing parameter 'charactersWithSpaces'"
+    assert "appName" in params, "Missing parameter 'appName'"
+    assert "bytes" in params, "Missing parameter 'bytes'"
+    assert "manager" in params, "Missing parameter 'manager'"
+    assert "characters" in params, "Missing parameter 'characters'"
+    assert "lines" in params, "Missing parameter 'lines'"
+    assert "category" in params, "Missing parameter 'category'"
+    assert "subject" in params, "Missing parameter 'subject'"
+    assert "totalTime" in params, "Missing parameter 'totalTime'"
+    assert "lastAuthor" in params, "Missing parameter 'lastAuthor'"
+    assert "words" in params, "Missing parameter 'words'"
+    assert "company" in params, "Missing parameter 'company'"
+    assert "presentationFormat" in params, "Missing parameter 'presentationFormat'"
+    assert "author" in params, "Missing parameter 'author'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "paragraphs" in params, "Missing parameter 'paragraphs'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "revision" in params, "Missing parameter 'revision'"
+    assert "pages" in params, "Missing parameter 'pages'"
 
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_lines():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "lines")
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_hyperlinkBase():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "hyperlinkBase")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "lines" in klass.__dict__:
-            descriptor = klass.__dict__["lines"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_bytes():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "bytes")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "bytes" in klass.__dict__:
-            descriptor = klass.__dict__["bytes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_guid():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "guid")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "guid" in klass.__dict__:
-            descriptor = klass.__dict__["guid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_manager():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "manager")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "manager" in klass.__dict__:
-            descriptor = klass.__dict__["manager"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_presentationFormat():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "presentationFormat")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "presentationFormat" in klass.__dict__:
-            descriptor = klass.__dict__["presentationFormat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_characters():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "characters")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "characters" in klass.__dict__:
-            descriptor = klass.__dict__["characters"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_paragraphs():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "paragraphs")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "paragraphs" in klass.__dict__:
-            descriptor = klass.__dict__["paragraphs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_subject():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "subject")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "subject" in klass.__dict__:
-            descriptor = klass.__dict__["subject"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_charactersWithSpaces():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "charactersWithSpaces")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "charactersWithSpaces" in klass.__dict__:
-            descriptor = klass.__dict__["charactersWithSpaces"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_title():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "title")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_words():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "words")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "words" in klass.__dict__:
-            descriptor = klass.__dict__["words"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_hyperlinkBase():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "hyperlinkBase")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
         if "hyperlinkBase" in klass.__dict__:
             descriptor = klass.__dict__["hyperlinkBase"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_totalTime():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "totalTime")
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_keywords():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "keywords")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "totalTime" in klass.__dict__:
-            descriptor = klass.__dict__["totalTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_appName():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "appName")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "appName" in klass.__dict__:
-            descriptor = klass.__dict__["appName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_category():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "category")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_pages():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "pages")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_description():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "description")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_author():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "author")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_revision():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "revision")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "revision" in klass.__dict__:
-            descriptor = klass.__dict__["revision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_lastAuthor():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "lastAuthor")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "lastAuthor" in klass.__dict__:
-            descriptor = klass.__dict__["lastAuthor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_company():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "company")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
-        if "company" in klass.__dict__:
-            descriptor = klass.__dict__["company"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::documentpropertiescollection_has_keywords():
-    assert hasattr(WordprocessingMLBasicDef::DocumentPropertiesCollection, "keywords")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DocumentPropertiesCollection.__mro__:
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
         if "keywords" in klass.__dict__:
             descriptor = klass.__dict__["keywords"]
             break
     assert isinstance(descriptor, property)
 
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_guid():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "guid")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "guid" in klass.__dict__:
+            descriptor = klass.__dict__["guid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_charactersWithSpaces():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "charactersWithSpaces")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "charactersWithSpaces" in klass.__dict__:
+            descriptor = klass.__dict__["charactersWithSpaces"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_appName():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "appName")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "appName" in klass.__dict__:
+            descriptor = klass.__dict__["appName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_bytes():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "bytes")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "bytes" in klass.__dict__:
+            descriptor = klass.__dict__["bytes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_manager():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "manager")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "manager" in klass.__dict__:
+            descriptor = klass.__dict__["manager"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_characters():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "characters")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "characters" in klass.__dict__:
+            descriptor = klass.__dict__["characters"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_lines():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "lines")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "lines" in klass.__dict__:
+            descriptor = klass.__dict__["lines"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_category():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "category")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_subject():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "subject")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "subject" in klass.__dict__:
+            descriptor = klass.__dict__["subject"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_totalTime():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "totalTime")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "totalTime" in klass.__dict__:
+            descriptor = klass.__dict__["totalTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_lastAuthor():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "lastAuthor")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "lastAuthor" in klass.__dict__:
+            descriptor = klass.__dict__["lastAuthor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_words():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "words")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "words" in klass.__dict__:
+            descriptor = klass.__dict__["words"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_company():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "company")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "company" in klass.__dict__:
+            descriptor = klass.__dict__["company"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_presentationFormat():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "presentationFormat")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "presentationFormat" in klass.__dict__:
+            descriptor = klass.__dict__["presentationFormat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_author():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "author")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_description():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "description")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_paragraphs():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "paragraphs")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "paragraphs" in klass.__dict__:
+            descriptor = klass.__dict__["paragraphs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_title():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "title")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_revision():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "revision")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "revision" in klass.__dict__:
+            descriptor = klass.__dict__["revision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_documentpropertiescollection_has_pages():
+    assert hasattr(WordprocessingMLBasicDef_DocumentPropertiesCollection, "pages")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DocumentPropertiesCollection.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wordprocessingmlbasicdef::datetimetype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::DateTimeType)
+
+def test_wordprocessingmlbasicdef_datetimetype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_DateTimeType)
 
 
-def test_wordprocessingmlbasicdef::datetimetype_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::DateTimeType.__init__)
+def test_wordprocessingmlbasicdef_datetimetype_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_DateTimeType.__init__)
 
 
-def test_wordprocessingmlbasicdef::datetimetype_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::DateTimeType.__init__)
+def test_wordprocessingmlbasicdef_datetimetype_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_DateTimeType.__init__)
     params = list(sig.parameters.keys())
     assert "day" in params, "Missing parameter 'day'"
-    assert "hour" in params, "Missing parameter 'hour'"
     assert "month" in params, "Missing parameter 'month'"
+    assert "hour" in params, "Missing parameter 'hour'"
+    assert "year" in params, "Missing parameter 'year'"
     assert "minute" in params, "Missing parameter 'minute'"
     assert "second" in params, "Missing parameter 'second'"
-    assert "year" in params, "Missing parameter 'year'"
 
-def test_wordprocessingmlbasicdef::datetimetype_has_day():
-    assert hasattr(WordprocessingMLBasicDef::DateTimeType, "day")
+def test_wordprocessingmlbasicdef_datetimetype_has_day():
+    assert hasattr(WordprocessingMLBasicDef_DateTimeType, "day")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::DateTimeType.__mro__:
+    for klass in WordprocessingMLBasicDef_DateTimeType.__mro__:
         if "day" in klass.__dict__:
             descriptor = klass.__dict__["day"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::datetimetype_has_hour():
-    assert hasattr(WordprocessingMLBasicDef::DateTimeType, "hour")
+def test_wordprocessingmlbasicdef_datetimetype_has_month():
+    assert hasattr(WordprocessingMLBasicDef_DateTimeType, "month")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::DateTimeType.__mro__:
-        if "hour" in klass.__dict__:
-            descriptor = klass.__dict__["hour"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::datetimetype_has_month():
-    assert hasattr(WordprocessingMLBasicDef::DateTimeType, "month")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DateTimeType.__mro__:
+    for klass in WordprocessingMLBasicDef_DateTimeType.__mro__:
         if "month" in klass.__dict__:
             descriptor = klass.__dict__["month"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::datetimetype_has_minute():
-    assert hasattr(WordprocessingMLBasicDef::DateTimeType, "minute")
+def test_wordprocessingmlbasicdef_datetimetype_has_hour():
+    assert hasattr(WordprocessingMLBasicDef_DateTimeType, "hour")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::DateTimeType.__mro__:
-        if "minute" in klass.__dict__:
-            descriptor = klass.__dict__["minute"]
+    for klass in WordprocessingMLBasicDef_DateTimeType.__mro__:
+        if "hour" in klass.__dict__:
+            descriptor = klass.__dict__["hour"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::datetimetype_has_second():
-    assert hasattr(WordprocessingMLBasicDef::DateTimeType, "second")
+def test_wordprocessingmlbasicdef_datetimetype_has_year():
+    assert hasattr(WordprocessingMLBasicDef_DateTimeType, "year")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::DateTimeType.__mro__:
-        if "second" in klass.__dict__:
-            descriptor = klass.__dict__["second"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlbasicdef::datetimetype_has_year():
-    assert hasattr(WordprocessingMLBasicDef::DateTimeType, "year")
-    descriptor = None
-    for klass in WordprocessingMLBasicDef::DateTimeType.__mro__:
+    for klass in WordprocessingMLBasicDef_DateTimeType.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
     assert isinstance(descriptor, property)
 
+def test_wordprocessingmlbasicdef_datetimetype_has_minute():
+    assert hasattr(WordprocessingMLBasicDef_DateTimeType, "minute")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DateTimeType.__mro__:
+        if "minute" in klass.__dict__:
+            descriptor = klass.__dict__["minute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlbasicdef_datetimetype_has_second():
+    assert hasattr(WordprocessingMLBasicDef_DateTimeType, "second")
+    descriptor = None
+    for klass in WordprocessingMLBasicDef_DateTimeType.__mro__:
+        if "second" in klass.__dict__:
+            descriptor = klass.__dict__["second"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wordprocessingmlbasicdef::versiontype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLBasicDef::VersionType)
+
+def test_wordprocessingmlbasicdef_versiontype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLBasicDef_VersionType)
 
 
-def test_wordprocessingmlbasicdef::versiontype_constructor_exists():
-    assert callable(WordprocessingMLBasicDef::VersionType.__init__)
+def test_wordprocessingmlbasicdef_versiontype_constructor_exists():
+    assert callable(WordprocessingMLBasicDef_VersionType.__init__)
 
 
-def test_wordprocessingmlbasicdef::versiontype_constructor_args():
-    sig = inspect.signature(WordprocessingMLBasicDef::VersionType.__init__)
+def test_wordprocessingmlbasicdef_versiontype_constructor_args():
+    sig = inspect.signature(WordprocessingMLBasicDef_VersionType.__init__)
     params = list(sig.parameters.keys())
     assert "nn" in params, "Missing parameter 'nn'"
     assert "n" in params, "Missing parameter 'n'"
 
-def test_wordprocessingmlbasicdef::versiontype_has_nn():
-    assert hasattr(WordprocessingMLBasicDef::VersionType, "nn")
+def test_wordprocessingmlbasicdef_versiontype_has_nn():
+    assert hasattr(WordprocessingMLBasicDef_VersionType, "nn")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::VersionType.__mro__:
+    for klass in WordprocessingMLBasicDef_VersionType.__mro__:
         if "nn" in klass.__dict__:
             descriptor = klass.__dict__["nn"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlbasicdef::versiontype_has_n():
-    assert hasattr(WordprocessingMLBasicDef::VersionType, "n")
+def test_wordprocessingmlbasicdef_versiontype_has_n():
+    assert hasattr(WordprocessingMLBasicDef_VersionType, "n")
     descriptor = None
-    for klass in WordprocessingMLBasicDef::VersionType.__mro__:
+    for klass in WordprocessingMLBasicDef_VersionType.__mro__:
         if "n" in klass.__dict__:
             descriptor = klass.__dict__["n"]
             break
@@ -1790,8 +1790,8 @@ def test_fldchartypeproperty_has_all_literals():
     enum_literals = [lit.name for lit in FldCharTypeProperty]
     expected_literals = [
         "fctp_separate",
-        "fctp_end",
         "fctp_begin",
+        "fctp_end",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1805,28 +1805,13 @@ def test_breaktype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BreakType]
     expected_literals = [
-        "bt_column",
-        "bt_page",
         "bt_text_wrapping",
+        "bt_page",
+        "bt_column",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BreakType"
-
-def test_onofftype_exists():
-    # Check that the Enumeration exists
-    assert OnOffType is not None
-
-def test_onofftype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OnOffType]
-    expected_literals = [
-        "oot_off",
-        "oot_on",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OnOffType"
 
 def test_notevalue_exists():
     # Check that the Enumeration exists
@@ -1836,14 +1821,29 @@ def test_notevalue_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in NoteValue]
     expected_literals = [
-        "ftn_continuation_separator",
-        "ftn_separator",
-        "ftn_normal",
         "ftn_continuation_notice",
+        "ftn_separator",
+        "ftn_continuation_separator",
+        "ftn_normal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in NoteValue"
+
+def test_onofftype_exists():
+    # Check that the Enumeration exists
+    assert OnOffType is not None
+
+def test_onofftype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OnOffType]
+    expected_literals = [
+        "oot_on",
+        "oot_off",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OnOffType"
 
 
 # =============================================================================
@@ -1857,26 +1857,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-WordprocessingMLBasicDef::TabElt_strategy = st.builds(
-    WordprocessingMLBasicDef::TabElt,
+WordprocessingMLBasicDef_TabElt_strategy = st.builds(
+    WordprocessingMLBasicDef_TabElt,
 )
-WordprocessingMLBasicDef::PictureType_strategy = st.builds(
-    WordprocessingMLBasicDef::PictureType,
+WordprocessingMLBasicDef_PictureType_strategy = st.builds(
+    WordprocessingMLBasicDef_PictureType,
 )
 TabElt_strategy = st.builds(
     TabElt,
 )
-WordprocessingMLBasicDef::StylesElt_strategy = st.builds(
-    WordprocessingMLBasicDef::StylesElt,
+WordprocessingMLBasicDef_StylesElt_strategy = st.builds(
+    WordprocessingMLBasicDef_StylesElt,
 )
-WordprocessingMLBasicDef::ListsElt_strategy = st.builds(
-    WordprocessingMLBasicDef::ListsElt,
+WordprocessingMLBasicDef_ListsElt_strategy = st.builds(
+    WordprocessingMLBasicDef_ListsElt,
 )
-WordprocessingMLBasicDef::FontsListElt_strategy = st.builds(
-    WordprocessingMLBasicDef::FontsListElt,
+WordprocessingMLBasicDef_FontsListElt_strategy = st.builds(
+    WordprocessingMLBasicDef_FontsListElt,
 )
-WordprocessingMLBasicDef::FldCharElt_strategy = st.builds(
-    WordprocessingMLBasicDef::FldCharElt,
+WordprocessingMLBasicDef_FldCharElt_strategy = st.builds(
+    WordprocessingMLBasicDef_FldCharElt,
     fldLock=
         st.none(),
     fldCharType=
@@ -1885,18 +1885,18 @@ WordprocessingMLBasicDef::FldCharElt_strategy = st.builds(
 FldCharElt_strategy = st.builds(
     FldCharElt,
 )
-WordprocessingMLBasicDef::SectPrElt_strategy = st.builds(
-    WordprocessingMLBasicDef::SectPrElt,
+WordprocessingMLBasicDef_SectPrElt_strategy = st.builds(
+    WordprocessingMLBasicDef_SectPrElt,
 )
-WordprocessingMLBasicDef::NoteElt_strategy = st.builds(
-    WordprocessingMLBasicDef::NoteElt,
+WordprocessingMLBasicDef_NoteElt_strategy = st.builds(
+    WordprocessingMLBasicDef_NoteElt,
     suppressRef=
         st.none(),
     type=
         st.none()
 )
-WordprocessingMLBasicDef::SymElt_strategy = st.builds(
-    WordprocessingMLBasicDef::SymElt,
+WordprocessingMLBasicDef_SymElt_strategy = st.builds(
+    WordprocessingMLBasicDef_SymElt,
 )
 SymElt_strategy = st.builds(
     SymElt,
@@ -1907,58 +1907,58 @@ PictureType_strategy = st.builds(
 RunContentElt_strategy = st.builds(
     RunContentElt,
 )
-WordprocessingMLBasicDef::Symbol_strategy = st.builds(
-    WordprocessingMLBasicDef::Symbol,
+WordprocessingMLBasicDef_Picture_strategy = st.builds(
+    WordprocessingMLBasicDef_Picture,
 )
-WordprocessingMLBasicDef::Tab_strategy = st.builds(
-    WordprocessingMLBasicDef::Tab,
+WordprocessingMLBasicDef_NoBreakHyphen_strategy = st.builds(
+    WordprocessingMLBasicDef_NoBreakHyphen,
 )
-WordprocessingMLBasicDef::Separator_strategy = st.builds(
-    WordprocessingMLBasicDef::Separator,
+WordprocessingMLBasicDef_Cr_strategy = st.builds(
+    WordprocessingMLBasicDef_Cr,
 )
-WordprocessingMLBasicDef::Picture_strategy = st.builds(
-    WordprocessingMLBasicDef::Picture,
+WordprocessingMLBasicDef_FldChar_strategy = st.builds(
+    WordprocessingMLBasicDef_FldChar,
 )
-WordprocessingMLBasicDef::ContinuationSeparator_strategy = st.builds(
-    WordprocessingMLBasicDef::ContinuationSeparator,
+WordprocessingMLBasicDef_Tab_strategy = st.builds(
+    WordprocessingMLBasicDef_Tab,
 )
-WordprocessingMLBasicDef::FldChar_strategy = st.builds(
-    WordprocessingMLBasicDef::FldChar,
+WordprocessingMLBasicDef_FootnoteRef_strategy = st.builds(
+    WordprocessingMLBasicDef_FootnoteRef,
 )
-WordprocessingMLBasicDef::AnnotationRef_strategy = st.builds(
-    WordprocessingMLBasicDef::AnnotationRef,
+WordprocessingMLBasicDef_AnnotationRef_strategy = st.builds(
+    WordprocessingMLBasicDef_AnnotationRef,
 )
-WordprocessingMLBasicDef::SoftHyphen_strategy = st.builds(
-    WordprocessingMLBasicDef::SoftHyphen,
+WordprocessingMLBasicDef_SoftHyphen_strategy = st.builds(
+    WordprocessingMLBasicDef_SoftHyphen,
 )
-WordprocessingMLBasicDef::Cr_strategy = st.builds(
-    WordprocessingMLBasicDef::Cr,
+WordprocessingMLBasicDef_ContinuationSeparator_strategy = st.builds(
+    WordprocessingMLBasicDef_ContinuationSeparator,
 )
-WordprocessingMLBasicDef::FootnoteRef_strategy = st.builds(
-    WordprocessingMLBasicDef::FootnoteRef,
+WordprocessingMLBasicDef_PgNum_strategy = st.builds(
+    WordprocessingMLBasicDef_PgNum,
 )
-WordprocessingMLBasicDef::PgNum_strategy = st.builds(
-    WordprocessingMLBasicDef::PgNum,
+WordprocessingMLBasicDef_EndnoteRef_strategy = st.builds(
+    WordprocessingMLBasicDef_EndnoteRef,
 )
-WordprocessingMLBasicDef::NoBreakHyphen_strategy = st.builds(
-    WordprocessingMLBasicDef::NoBreakHyphen,
+WordprocessingMLBasicDef_Separator_strategy = st.builds(
+    WordprocessingMLBasicDef_Separator,
 )
-WordprocessingMLBasicDef::EndnoteRef_strategy = st.builds(
-    WordprocessingMLBasicDef::EndnoteRef,
+WordprocessingMLBasicDef_Symbol_strategy = st.builds(
+    WordprocessingMLBasicDef_Symbol,
 )
-WordprocessingMLBasicDef::BreakElt_strategy = st.builds(
-    WordprocessingMLBasicDef::BreakElt,
+WordprocessingMLBasicDef_BreakElt_strategy = st.builds(
+    WordprocessingMLBasicDef_BreakElt,
     type=
         st.none()
 )
-WordprocessingMLBasicDef::RunContentElt_strategy = st.builds(
-    WordprocessingMLBasicDef::RunContentElt,
+WordprocessingMLBasicDef_RunContentElt_strategy = st.builds(
+    WordprocessingMLBasicDef_RunContentElt,
 )
 RunElt_strategy = st.builds(
     RunElt,
 )
-WordprocessingMLBasicDef::RunPrElt_strategy = st.builds(
-    WordprocessingMLBasicDef::RunPrElt,
+WordprocessingMLBasicDef_RunPrElt_strategy = st.builds(
+    WordprocessingMLBasicDef_RunPrElt,
 )
 ParaPrElt_strategy = st.builds(
     ParaPrElt,
@@ -1966,53 +1966,53 @@ ParaPrElt_strategy = st.builds(
 BlockLevelChunkElt_strategy = st.builds(
     BlockLevelChunkElt,
 )
-WordprocessingMLBasicDef::RunLevelElt_strategy = st.builds(
-    WordprocessingMLBasicDef::RunLevelElt,
+WordprocessingMLBasicDef_RunLevelElt_strategy = st.builds(
+    WordprocessingMLBasicDef_RunLevelElt,
 )
-WordprocessingMLBasicDef::ParaElt_strategy = st.builds(
-    WordprocessingMLBasicDef::ParaElt,
+WordprocessingMLBasicDef_ParaElt_strategy = st.builds(
+    WordprocessingMLBasicDef_ParaElt,
 )
 RunPrElt_strategy = st.builds(
     RunPrElt,
 )
-WordprocessingMLBasicDef::ParaContentElt_strategy = st.builds(
-    WordprocessingMLBasicDef::ParaContentElt,
+WordprocessingMLBasicDef_ParaContentElt_strategy = st.builds(
+    WordprocessingMLBasicDef_ParaContentElt,
 )
 ParaElt_strategy = st.builds(
     ParaElt,
 )
-WordprocessingMLBasicDef::ParaPrElt_strategy = st.builds(
-    WordprocessingMLBasicDef::ParaPrElt,
+WordprocessingMLBasicDef_ParaPrElt_strategy = st.builds(
+    WordprocessingMLBasicDef_ParaPrElt,
 )
 ParaContentElt_strategy = st.builds(
     ParaContentElt,
 )
-WordprocessingMLBasicDef::SimpleFieldElt_strategy = st.builds(
-    WordprocessingMLBasicDef::SimpleFieldElt,
+WordprocessingMLBasicDef_SubDocElt_strategy = st.builds(
+    WordprocessingMLBasicDef_SubDocElt,
 )
-WordprocessingMLBasicDef::HLinkElt_strategy = st.builds(
-    WordprocessingMLBasicDef::HLinkElt,
+WordprocessingMLBasicDef_HLinkElt_strategy = st.builds(
+    WordprocessingMLBasicDef_HLinkElt,
 )
-WordprocessingMLBasicDef::SubDocElt_strategy = st.builds(
-    WordprocessingMLBasicDef::SubDocElt,
+WordprocessingMLBasicDef_SimpleFieldElt_strategy = st.builds(
+    WordprocessingMLBasicDef_SimpleFieldElt,
 )
-WordprocessingMLBasicDef::RunElt_strategy = st.builds(
-    WordprocessingMLBasicDef::RunElt,
+WordprocessingMLBasicDef_RunElt_strategy = st.builds(
+    WordprocessingMLBasicDef_RunElt,
 )
-WordprocessingMLBasicDef::BodyElt_strategy = st.builds(
-    WordprocessingMLBasicDef::BodyElt,
+WordprocessingMLBasicDef_BodyElt_strategy = st.builds(
+    WordprocessingMLBasicDef_BodyElt,
 )
 NoteElt_strategy = st.builds(
     NoteElt,
 )
-WordprocessingMLBasicDef::Footnote_strategy = st.builds(
-    WordprocessingMLBasicDef::Footnote,
+WordprocessingMLBasicDef_Endnote_strategy = st.builds(
+    WordprocessingMLBasicDef_Endnote,
 )
-WordprocessingMLBasicDef::Endnote_strategy = st.builds(
-    WordprocessingMLBasicDef::Endnote,
+WordprocessingMLBasicDef_Footnote_strategy = st.builds(
+    WordprocessingMLBasicDef_Footnote,
 )
-WordprocessingMLBasicDef::BlockLevelElt_strategy = st.builds(
-    WordprocessingMLBasicDef::BlockLevelElt,
+WordprocessingMLBasicDef_BlockLevelElt_strategy = st.builds(
+    WordprocessingMLBasicDef_BlockLevelElt,
 )
 SectPrElt_strategy = st.builds(
     SectPrElt,
@@ -2020,17 +2020,17 @@ SectPrElt_strategy = st.builds(
 BlockLevelElt_strategy = st.builds(
     BlockLevelElt,
 )
-WordprocessingMLBasicDef::BlockLevelChunkElt_strategy = st.builds(
-    WordprocessingMLBasicDef::BlockLevelChunkElt,
+WordprocessingMLBasicDef_CfChunk_strategy = st.builds(
+    WordprocessingMLBasicDef_CfChunk,
 )
-WordprocessingMLBasicDef::CfChunk_strategy = st.builds(
-    WordprocessingMLBasicDef::CfChunk,
+WordprocessingMLBasicDef_BlockLevelChunkElt_strategy = st.builds(
+    WordprocessingMLBasicDef_BlockLevelChunkElt,
 )
 FontsListElt_strategy = st.builds(
     FontsListElt,
 )
-WordprocessingMLBasicDef::DocPrElt_strategy = st.builds(
-    WordprocessingMLBasicDef::DocPrElt,
+WordprocessingMLBasicDef_DocPrElt_strategy = st.builds(
+    WordprocessingMLBasicDef_DocPrElt,
 )
 StringProperty_strategy = st.builds(
     StringProperty,
@@ -2050,58 +2050,58 @@ ListsElt_strategy = st.builds(
 DocumentPropertiesCollection_strategy = st.builds(
     DocumentPropertiesCollection,
 )
-WordprocessingMLBasicDef::WordDocument_strategy = st.builds(
-    WordprocessingMLBasicDef::WordDocument,
+WordprocessingMLBasicDef_WordDocument_strategy = st.builds(
+    WordprocessingMLBasicDef_WordDocument,
 )
 SmartTagType_strategy = st.builds(
     SmartTagType,
 )
-WordprocessingMLBasicDef::StringType_strategy = st.builds(
-    WordprocessingMLBasicDef::StringType,
+WordprocessingMLBasicDef_StringType_strategy = st.builds(
+    WordprocessingMLBasicDef_StringType,
     val=
         st.none()
 )
 StringType_strategy = st.builds(
     StringType,
 )
-WordprocessingMLBasicDef::InstrText_strategy = st.builds(
-    WordprocessingMLBasicDef::InstrText,
+WordprocessingMLBasicDef_DelText_strategy = st.builds(
+    WordprocessingMLBasicDef_DelText,
 )
-WordprocessingMLBasicDef::Text_strategy = st.builds(
-    WordprocessingMLBasicDef::Text,
+WordprocessingMLBasicDef_Text_strategy = st.builds(
+    WordprocessingMLBasicDef_Text,
 )
-WordprocessingMLBasicDef::DelInstrText_strategy = st.builds(
-    WordprocessingMLBasicDef::DelInstrText,
+WordprocessingMLBasicDef_InstrText_strategy = st.builds(
+    WordprocessingMLBasicDef_InstrText,
 )
-WordprocessingMLBasicDef::DelText_strategy = st.builds(
-    WordprocessingMLBasicDef::DelText,
+WordprocessingMLBasicDef_DelInstrText_strategy = st.builds(
+    WordprocessingMLBasicDef_DelInstrText,
 )
-WordprocessingMLBasicDef::StringProperty_strategy = st.builds(
-    WordprocessingMLBasicDef::StringProperty,
+WordprocessingMLBasicDef_StringProperty_strategy = st.builds(
+    WordprocessingMLBasicDef_StringProperty,
 )
 SmartTagsCollection_strategy = st.builds(
     SmartTagsCollection,
 )
-WordprocessingMLBasicDef::SmartTagType_strategy = st.builds(
-    WordprocessingMLBasicDef::SmartTagType,
-    url=
+WordprocessingMLBasicDef_SmartTagType_strategy = st.builds(
+    WordprocessingMLBasicDef_SmartTagType,
+    namespaceuri=
         st.none(),
     name=
         st.none(),
-    namespaceuri=
+    url=
         st.none()
 )
 CustomDocumentPropertiesCollection_strategy = st.builds(
     CustomDocumentPropertiesCollection,
 )
-WordprocessingMLBasicDef::SmartTagsCollection_strategy = st.builds(
-    WordprocessingMLBasicDef::SmartTagsCollection,
+WordprocessingMLBasicDef_SmartTagsCollection_strategy = st.builds(
+    WordprocessingMLBasicDef_SmartTagsCollection,
 )
-WordprocessingMLBasicDef::CustomDocumentPropertiesCollection_strategy = st.builds(
-    WordprocessingMLBasicDef::CustomDocumentPropertiesCollection,
+WordprocessingMLBasicDef_CustomDocumentPropertiesCollection_strategy = st.builds(
+    WordprocessingMLBasicDef_CustomDocumentPropertiesCollection,
 )
-WordprocessingMLBasicDef::CustomDocumentProperty_strategy = st.builds(
-    WordprocessingMLBasicDef::CustomDocumentProperty,
+WordprocessingMLBasicDef_CustomDocumentProperty_strategy = st.builds(
+    WordprocessingMLBasicDef_CustomDocumentProperty,
     name=
         st.none()
 )
@@ -2117,153 +2117,147 @@ DateTimeType_strategy = st.builds(
 ValueType_strategy = st.builds(
     ValueType,
 )
-WordprocessingMLBasicDef::FloatValue_strategy = st.builds(
-    WordprocessingMLBasicDef::FloatValue,
+WordprocessingMLBasicDef_BooleanValue_strategy = st.builds(
+    WordprocessingMLBasicDef_BooleanValue,
     value=
         st.none()
 )
-WordprocessingMLBasicDef::BooleanValue_strategy = st.builds(
-    WordprocessingMLBasicDef::BooleanValue,
+WordprocessingMLBasicDef_FloatValue_strategy = st.builds(
+    WordprocessingMLBasicDef_FloatValue,
     value=
         st.none()
 )
-WordprocessingMLBasicDef::DateTimeTypeValue_strategy = st.builds(
-    WordprocessingMLBasicDef::DateTimeTypeValue,
+WordprocessingMLBasicDef_DateTimeTypeValue_strategy = st.builds(
+    WordprocessingMLBasicDef_DateTimeTypeValue,
 )
-WordprocessingMLBasicDef::StringValue_strategy = st.builds(
-    WordprocessingMLBasicDef::StringValue,
+WordprocessingMLBasicDef_StringValue_strategy = st.builds(
+    WordprocessingMLBasicDef_StringValue,
     value=
         st.none()
 )
-WordprocessingMLBasicDef::ValueType_strategy = st.builds(
-    WordprocessingMLBasicDef::ValueType,
+WordprocessingMLBasicDef_ValueType_strategy = st.builds(
+    WordprocessingMLBasicDef_ValueType,
 )
 WordDocument_strategy = st.builds(
     WordDocument,
 )
-WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy = st.builds(
-    WordprocessingMLBasicDef::DocumentPropertiesCollection,
-    lines=
+WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy = st.builds(
+    WordprocessingMLBasicDef_DocumentPropertiesCollection,
+    hyperlinkBase=
         st.none(),
-    bytes=
+    keywords=
         st.none(),
     guid=
         st.none(),
-    manager=
-        st.none(),
-    presentationFormat=
-        st.none(),
-    characters=
-        st.none(),
-    paragraphs=
-        st.none(),
-    subject=
-        st.none(),
     charactersWithSpaces=
-        st.none(),
-    title=
-        st.none(),
-    words=
-        st.none(),
-    hyperlinkBase=
-        st.none(),
-    totalTime=
         st.none(),
     appName=
         st.none(),
+    bytes=
+        st.none(),
+    manager=
+        st.none(),
+    characters=
+        st.none(),
+    lines=
+        st.none(),
     category=
         st.none(),
-    pages=
+    subject=
         st.none(),
-    description=
-        st.none(),
-    author=
-        st.none(),
-    revision=
+    totalTime=
         st.none(),
     lastAuthor=
         st.none(),
+    words=
+        st.none(),
     company=
         st.none(),
-    keywords=
+    presentationFormat=
+        st.none(),
+    author=
+        st.none(),
+    description=
+        st.none(),
+    paragraphs=
+        st.none(),
+    title=
+        st.none(),
+    revision=
+        st.none(),
+    pages=
         st.none()
 )
-WordprocessingMLBasicDef::DateTimeType_strategy = st.builds(
-    WordprocessingMLBasicDef::DateTimeType,
+WordprocessingMLBasicDef_DateTimeType_strategy = st.builds(
+    WordprocessingMLBasicDef_DateTimeType,
     day=
+        st.none(),
+    month=
         st.none(),
     hour=
         st.none(),
-    month=
+    year=
         st.none(),
     minute=
         st.none(),
     second=
-        st.none(),
-    year=
         st.none()
 )
-WordprocessingMLBasicDef::VersionType_strategy = st.builds(
-    WordprocessingMLBasicDef::VersionType,
+WordprocessingMLBasicDef_VersionType_strategy = st.builds(
+    WordprocessingMLBasicDef_VersionType,
     nn=
         st.none(),
     n=
         st.none()
 )
 
-@given(instance=WordprocessingMLBasicDef::TabElt_strategy)
+@given(instance=WordprocessingMLBasicDef_TabElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::tabelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::TabElt)
+def test_wordprocessingmlbasicdef_tabelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_TabElt)
 
-@given(instance=WordprocessingMLBasicDef::PictureType_strategy)
+@given(instance=WordprocessingMLBasicDef_PictureType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::picturetype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::PictureType)
+def test_wordprocessingmlbasicdef_picturetype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_PictureType)
 
 @given(instance=TabElt_strategy)
 @settings(max_examples=50)
 def test_tabelt_instantiation(instance):
     assert isinstance(instance, TabElt)
 
-@given(instance=WordprocessingMLBasicDef::StylesElt_strategy)
+@given(instance=WordprocessingMLBasicDef_StylesElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::styleselt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::StylesElt)
+def test_wordprocessingmlbasicdef_styleselt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_StylesElt)
 
-@given(instance=WordprocessingMLBasicDef::ListsElt_strategy)
+@given(instance=WordprocessingMLBasicDef_ListsElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::listselt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::ListsElt)
+def test_wordprocessingmlbasicdef_listselt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_ListsElt)
 
-@given(instance=WordprocessingMLBasicDef::FontsListElt_strategy)
+@given(instance=WordprocessingMLBasicDef_FontsListElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::fontslistelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::FontsListElt)
+def test_wordprocessingmlbasicdef_fontslistelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_FontsListElt)
 
-@given(instance=WordprocessingMLBasicDef::FldCharElt_strategy)
+@given(instance=WordprocessingMLBasicDef_FldCharElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::fldcharelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::FldCharElt)
-
-@given(instance=WordprocessingMLBasicDef::FldCharElt_strategy)
-def test_wordprocessingmlbasicdef::fldcharelt_fldLock_type(instance):
-    assert isinstance(instance.fldLock, stringtype)
+def test_wordprocessingmlbasicdef_fldcharelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_FldCharElt)
 
 
-@given(instance=WordprocessingMLBasicDef::FldCharElt_strategy)
-def test_wordprocessingmlbasicdef::fldcharelt_fldLock_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_FldCharElt_strategy)
+def test_wordprocessingmlbasicdef_fldcharelt_fldLock_setter(instance):
     original = instance.fldLock
     instance.fldLock = original
     assert instance.fldLock == original
 
-@given(instance=WordprocessingMLBasicDef::FldCharElt_strategy)
-def test_wordprocessingmlbasicdef::fldcharelt_fldCharType_type(instance):
-    assert isinstance(instance.fldCharType, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::FldCharElt_strategy)
-def test_wordprocessingmlbasicdef::fldcharelt_fldCharType_setter(instance):
+@given(instance=WordprocessingMLBasicDef_FldCharElt_strategy)
+def test_wordprocessingmlbasicdef_fldcharelt_fldCharType_setter(instance):
     original = instance.fldCharType
     instance.fldCharType = original
     assert instance.fldCharType == original
@@ -2273,42 +2267,36 @@ def test_wordprocessingmlbasicdef::fldcharelt_fldCharType_setter(instance):
 def test_fldcharelt_instantiation(instance):
     assert isinstance(instance, FldCharElt)
 
-@given(instance=WordprocessingMLBasicDef::SectPrElt_strategy)
+@given(instance=WordprocessingMLBasicDef_SectPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::sectprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SectPrElt)
+def test_wordprocessingmlbasicdef_sectprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SectPrElt)
 
-@given(instance=WordprocessingMLBasicDef::NoteElt_strategy)
+@given(instance=WordprocessingMLBasicDef_NoteElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::noteelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::NoteElt)
-
-@given(instance=WordprocessingMLBasicDef::NoteElt_strategy)
-def test_wordprocessingmlbasicdef::noteelt_suppressRef_type(instance):
-    assert isinstance(instance.suppressRef, stringtype)
+def test_wordprocessingmlbasicdef_noteelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_NoteElt)
 
 
-@given(instance=WordprocessingMLBasicDef::NoteElt_strategy)
-def test_wordprocessingmlbasicdef::noteelt_suppressRef_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_NoteElt_strategy)
+def test_wordprocessingmlbasicdef_noteelt_suppressRef_setter(instance):
     original = instance.suppressRef
     instance.suppressRef = original
     assert instance.suppressRef == original
 
-@given(instance=WordprocessingMLBasicDef::NoteElt_strategy)
-def test_wordprocessingmlbasicdef::noteelt_type_type(instance):
-    assert isinstance(instance.type, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::NoteElt_strategy)
-def test_wordprocessingmlbasicdef::noteelt_type_setter(instance):
+@given(instance=WordprocessingMLBasicDef_NoteElt_strategy)
+def test_wordprocessingmlbasicdef_noteelt_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=WordprocessingMLBasicDef::SymElt_strategy)
+@given(instance=WordprocessingMLBasicDef_SymElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::symelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SymElt)
+def test_wordprocessingmlbasicdef_symelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SymElt)
 
 @given(instance=SymElt_strategy)
 @settings(max_examples=50)
@@ -2325,101 +2313,98 @@ def test_picturetype_instantiation(instance):
 def test_runcontentelt_instantiation(instance):
     assert isinstance(instance, RunContentElt)
 
-@given(instance=WordprocessingMLBasicDef::Symbol_strategy)
+@given(instance=WordprocessingMLBasicDef_Picture_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::symbol_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Symbol)
+def test_wordprocessingmlbasicdef_picture_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Picture)
 
-@given(instance=WordprocessingMLBasicDef::Tab_strategy)
+@given(instance=WordprocessingMLBasicDef_NoBreakHyphen_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::tab_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Tab)
+def test_wordprocessingmlbasicdef_nobreakhyphen_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_NoBreakHyphen)
 
-@given(instance=WordprocessingMLBasicDef::Separator_strategy)
+@given(instance=WordprocessingMLBasicDef_Cr_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::separator_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Separator)
+def test_wordprocessingmlbasicdef_cr_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Cr)
 
-@given(instance=WordprocessingMLBasicDef::Picture_strategy)
+@given(instance=WordprocessingMLBasicDef_FldChar_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::picture_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Picture)
+def test_wordprocessingmlbasicdef_fldchar_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_FldChar)
 
-@given(instance=WordprocessingMLBasicDef::ContinuationSeparator_strategy)
+@given(instance=WordprocessingMLBasicDef_Tab_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::continuationseparator_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::ContinuationSeparator)
+def test_wordprocessingmlbasicdef_tab_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Tab)
 
-@given(instance=WordprocessingMLBasicDef::FldChar_strategy)
+@given(instance=WordprocessingMLBasicDef_FootnoteRef_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::fldchar_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::FldChar)
+def test_wordprocessingmlbasicdef_footnoteref_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_FootnoteRef)
 
-@given(instance=WordprocessingMLBasicDef::AnnotationRef_strategy)
+@given(instance=WordprocessingMLBasicDef_AnnotationRef_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::annotationref_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::AnnotationRef)
+def test_wordprocessingmlbasicdef_annotationref_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_AnnotationRef)
 
-@given(instance=WordprocessingMLBasicDef::SoftHyphen_strategy)
+@given(instance=WordprocessingMLBasicDef_SoftHyphen_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::softhyphen_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SoftHyphen)
+def test_wordprocessingmlbasicdef_softhyphen_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SoftHyphen)
 
-@given(instance=WordprocessingMLBasicDef::Cr_strategy)
+@given(instance=WordprocessingMLBasicDef_ContinuationSeparator_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::cr_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Cr)
+def test_wordprocessingmlbasicdef_continuationseparator_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_ContinuationSeparator)
 
-@given(instance=WordprocessingMLBasicDef::FootnoteRef_strategy)
+@given(instance=WordprocessingMLBasicDef_PgNum_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::footnoteref_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::FootnoteRef)
+def test_wordprocessingmlbasicdef_pgnum_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_PgNum)
 
-@given(instance=WordprocessingMLBasicDef::PgNum_strategy)
+@given(instance=WordprocessingMLBasicDef_EndnoteRef_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::pgnum_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::PgNum)
+def test_wordprocessingmlbasicdef_endnoteref_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_EndnoteRef)
 
-@given(instance=WordprocessingMLBasicDef::NoBreakHyphen_strategy)
+@given(instance=WordprocessingMLBasicDef_Separator_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::nobreakhyphen_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::NoBreakHyphen)
+def test_wordprocessingmlbasicdef_separator_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Separator)
 
-@given(instance=WordprocessingMLBasicDef::EndnoteRef_strategy)
+@given(instance=WordprocessingMLBasicDef_Symbol_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::endnoteref_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::EndnoteRef)
+def test_wordprocessingmlbasicdef_symbol_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Symbol)
 
-@given(instance=WordprocessingMLBasicDef::BreakElt_strategy)
+@given(instance=WordprocessingMLBasicDef_BreakElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::breakelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::BreakElt)
-
-@given(instance=WordprocessingMLBasicDef::BreakElt_strategy)
-def test_wordprocessingmlbasicdef::breakelt_type_type(instance):
-    assert isinstance(instance.type, stringtype)
+def test_wordprocessingmlbasicdef_breakelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_BreakElt)
 
 
-@given(instance=WordprocessingMLBasicDef::BreakElt_strategy)
-def test_wordprocessingmlbasicdef::breakelt_type_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_BreakElt_strategy)
+def test_wordprocessingmlbasicdef_breakelt_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=WordprocessingMLBasicDef::RunContentElt_strategy)
+@given(instance=WordprocessingMLBasicDef_RunContentElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::runcontentelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::RunContentElt)
+def test_wordprocessingmlbasicdef_runcontentelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_RunContentElt)
 
 @given(instance=RunElt_strategy)
 @settings(max_examples=50)
 def test_runelt_instantiation(instance):
     assert isinstance(instance, RunElt)
 
-@given(instance=WordprocessingMLBasicDef::RunPrElt_strategy)
+@given(instance=WordprocessingMLBasicDef_RunPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::runprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::RunPrElt)
+def test_wordprocessingmlbasicdef_runprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_RunPrElt)
 
 @given(instance=ParaPrElt_strategy)
 @settings(max_examples=50)
@@ -2431,85 +2416,85 @@ def test_paraprelt_instantiation(instance):
 def test_blocklevelchunkelt_instantiation(instance):
     assert isinstance(instance, BlockLevelChunkElt)
 
-@given(instance=WordprocessingMLBasicDef::RunLevelElt_strategy)
+@given(instance=WordprocessingMLBasicDef_RunLevelElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::runlevelelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::RunLevelElt)
+def test_wordprocessingmlbasicdef_runlevelelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_RunLevelElt)
 
-@given(instance=WordprocessingMLBasicDef::ParaElt_strategy)
+@given(instance=WordprocessingMLBasicDef_ParaElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::paraelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::ParaElt)
+def test_wordprocessingmlbasicdef_paraelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_ParaElt)
 
 @given(instance=RunPrElt_strategy)
 @settings(max_examples=50)
 def test_runprelt_instantiation(instance):
     assert isinstance(instance, RunPrElt)
 
-@given(instance=WordprocessingMLBasicDef::ParaContentElt_strategy)
+@given(instance=WordprocessingMLBasicDef_ParaContentElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::paracontentelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::ParaContentElt)
+def test_wordprocessingmlbasicdef_paracontentelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_ParaContentElt)
 
 @given(instance=ParaElt_strategy)
 @settings(max_examples=50)
 def test_paraelt_instantiation(instance):
     assert isinstance(instance, ParaElt)
 
-@given(instance=WordprocessingMLBasicDef::ParaPrElt_strategy)
+@given(instance=WordprocessingMLBasicDef_ParaPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::paraprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::ParaPrElt)
+def test_wordprocessingmlbasicdef_paraprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_ParaPrElt)
 
 @given(instance=ParaContentElt_strategy)
 @settings(max_examples=50)
 def test_paracontentelt_instantiation(instance):
     assert isinstance(instance, ParaContentElt)
 
-@given(instance=WordprocessingMLBasicDef::SimpleFieldElt_strategy)
+@given(instance=WordprocessingMLBasicDef_SubDocElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::simplefieldelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SimpleFieldElt)
+def test_wordprocessingmlbasicdef_subdocelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SubDocElt)
 
-@given(instance=WordprocessingMLBasicDef::HLinkElt_strategy)
+@given(instance=WordprocessingMLBasicDef_HLinkElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::hlinkelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::HLinkElt)
+def test_wordprocessingmlbasicdef_hlinkelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_HLinkElt)
 
-@given(instance=WordprocessingMLBasicDef::SubDocElt_strategy)
+@given(instance=WordprocessingMLBasicDef_SimpleFieldElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::subdocelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SubDocElt)
+def test_wordprocessingmlbasicdef_simplefieldelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SimpleFieldElt)
 
-@given(instance=WordprocessingMLBasicDef::RunElt_strategy)
+@given(instance=WordprocessingMLBasicDef_RunElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::runelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::RunElt)
+def test_wordprocessingmlbasicdef_runelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_RunElt)
 
-@given(instance=WordprocessingMLBasicDef::BodyElt_strategy)
+@given(instance=WordprocessingMLBasicDef_BodyElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::bodyelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::BodyElt)
+def test_wordprocessingmlbasicdef_bodyelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_BodyElt)
 
 @given(instance=NoteElt_strategy)
 @settings(max_examples=50)
 def test_noteelt_instantiation(instance):
     assert isinstance(instance, NoteElt)
 
-@given(instance=WordprocessingMLBasicDef::Footnote_strategy)
+@given(instance=WordprocessingMLBasicDef_Endnote_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::footnote_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Footnote)
+def test_wordprocessingmlbasicdef_endnote_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Endnote)
 
-@given(instance=WordprocessingMLBasicDef::Endnote_strategy)
+@given(instance=WordprocessingMLBasicDef_Footnote_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::endnote_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Endnote)
+def test_wordprocessingmlbasicdef_footnote_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Footnote)
 
-@given(instance=WordprocessingMLBasicDef::BlockLevelElt_strategy)
+@given(instance=WordprocessingMLBasicDef_BlockLevelElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::blocklevelelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::BlockLevelElt)
+def test_wordprocessingmlbasicdef_blocklevelelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_BlockLevelElt)
 
 @given(instance=SectPrElt_strategy)
 @settings(max_examples=50)
@@ -2521,25 +2506,25 @@ def test_sectprelt_instantiation(instance):
 def test_blocklevelelt_instantiation(instance):
     assert isinstance(instance, BlockLevelElt)
 
-@given(instance=WordprocessingMLBasicDef::BlockLevelChunkElt_strategy)
+@given(instance=WordprocessingMLBasicDef_CfChunk_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::blocklevelchunkelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::BlockLevelChunkElt)
+def test_wordprocessingmlbasicdef_cfchunk_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_CfChunk)
 
-@given(instance=WordprocessingMLBasicDef::CfChunk_strategy)
+@given(instance=WordprocessingMLBasicDef_BlockLevelChunkElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::cfchunk_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::CfChunk)
+def test_wordprocessingmlbasicdef_blocklevelchunkelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_BlockLevelChunkElt)
 
 @given(instance=FontsListElt_strategy)
 @settings(max_examples=50)
 def test_fontslistelt_instantiation(instance):
     assert isinstance(instance, FontsListElt)
 
-@given(instance=WordprocessingMLBasicDef::DocPrElt_strategy)
+@given(instance=WordprocessingMLBasicDef_DocPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::docprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::DocPrElt)
+def test_wordprocessingmlbasicdef_docprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_DocPrElt)
 
 @given(instance=StringProperty_strategy)
 @settings(max_examples=50)
@@ -2571,28 +2556,25 @@ def test_listselt_instantiation(instance):
 def test_documentpropertiescollection_instantiation(instance):
     assert isinstance(instance, DocumentPropertiesCollection)
 
-@given(instance=WordprocessingMLBasicDef::WordDocument_strategy)
+@given(instance=WordprocessingMLBasicDef_WordDocument_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::worddocument_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::WordDocument)
+def test_wordprocessingmlbasicdef_worddocument_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_WordDocument)
 
 @given(instance=SmartTagType_strategy)
 @settings(max_examples=50)
 def test_smarttagtype_instantiation(instance):
     assert isinstance(instance, SmartTagType)
 
-@given(instance=WordprocessingMLBasicDef::StringType_strategy)
+@given(instance=WordprocessingMLBasicDef_StringType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::stringtype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::StringType)
-
-@given(instance=WordprocessingMLBasicDef::StringType_strategy)
-def test_wordprocessingmlbasicdef::stringtype_val_type(instance):
-    assert isinstance(instance.val, stringtype)
+def test_wordprocessingmlbasicdef_stringtype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_StringType)
 
 
-@given(instance=WordprocessingMLBasicDef::StringType_strategy)
-def test_wordprocessingmlbasicdef::stringtype_val_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_StringType_strategy)
+def test_wordprocessingmlbasicdef_stringtype_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
@@ -2602,101 +2584,89 @@ def test_wordprocessingmlbasicdef::stringtype_val_setter(instance):
 def test_stringtype_instantiation(instance):
     assert isinstance(instance, StringType)
 
-@given(instance=WordprocessingMLBasicDef::InstrText_strategy)
+@given(instance=WordprocessingMLBasicDef_DelText_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::instrtext_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::InstrText)
+def test_wordprocessingmlbasicdef_deltext_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_DelText)
 
-@given(instance=WordprocessingMLBasicDef::Text_strategy)
+@given(instance=WordprocessingMLBasicDef_Text_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::text_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::Text)
+def test_wordprocessingmlbasicdef_text_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_Text)
 
-@given(instance=WordprocessingMLBasicDef::DelInstrText_strategy)
+@given(instance=WordprocessingMLBasicDef_InstrText_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::delinstrtext_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::DelInstrText)
+def test_wordprocessingmlbasicdef_instrtext_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_InstrText)
 
-@given(instance=WordprocessingMLBasicDef::DelText_strategy)
+@given(instance=WordprocessingMLBasicDef_DelInstrText_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::deltext_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::DelText)
+def test_wordprocessingmlbasicdef_delinstrtext_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_DelInstrText)
 
-@given(instance=WordprocessingMLBasicDef::StringProperty_strategy)
+@given(instance=WordprocessingMLBasicDef_StringProperty_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::stringproperty_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::StringProperty)
+def test_wordprocessingmlbasicdef_stringproperty_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_StringProperty)
 
 @given(instance=SmartTagsCollection_strategy)
 @settings(max_examples=50)
 def test_smarttagscollection_instantiation(instance):
     assert isinstance(instance, SmartTagsCollection)
 
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
+@given(instance=WordprocessingMLBasicDef_SmartTagType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::smarttagtype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SmartTagType)
-
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
-def test_wordprocessingmlbasicdef::smarttagtype_url_type(instance):
-    assert isinstance(instance.url, stringtype)
+def test_wordprocessingmlbasicdef_smarttagtype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SmartTagType)
 
 
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
-def test_wordprocessingmlbasicdef::smarttagtype_url_setter(instance):
-    original = instance.url
-    instance.url = original
-    assert instance.url == original
 
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
-def test_wordprocessingmlbasicdef::smarttagtype_name_type(instance):
-    assert isinstance(instance.name, stringtype)
+@given(instance=WordprocessingMLBasicDef_SmartTagType_strategy)
+def test_wordprocessingmlbasicdef_smarttagtype_namespaceuri_setter(instance):
+    original = instance.namespaceuri
+    instance.namespaceuri = original
+    assert instance.namespaceuri == original
 
 
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
-def test_wordprocessingmlbasicdef::smarttagtype_name_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_SmartTagType_strategy)
+def test_wordprocessingmlbasicdef_smarttagtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
-def test_wordprocessingmlbasicdef::smarttagtype_namespaceuri_type(instance):
-    assert isinstance(instance.namespaceuri, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::SmartTagType_strategy)
-def test_wordprocessingmlbasicdef::smarttagtype_namespaceuri_setter(instance):
-    original = instance.namespaceuri
-    instance.namespaceuri = original
-    assert instance.namespaceuri == original
+@given(instance=WordprocessingMLBasicDef_SmartTagType_strategy)
+def test_wordprocessingmlbasicdef_smarttagtype_url_setter(instance):
+    original = instance.url
+    instance.url = original
+    assert instance.url == original
 
 @given(instance=CustomDocumentPropertiesCollection_strategy)
 @settings(max_examples=50)
 def test_customdocumentpropertiescollection_instantiation(instance):
     assert isinstance(instance, CustomDocumentPropertiesCollection)
 
-@given(instance=WordprocessingMLBasicDef::SmartTagsCollection_strategy)
+@given(instance=WordprocessingMLBasicDef_SmartTagsCollection_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::smarttagscollection_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::SmartTagsCollection)
+def test_wordprocessingmlbasicdef_smarttagscollection_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_SmartTagsCollection)
 
-@given(instance=WordprocessingMLBasicDef::CustomDocumentPropertiesCollection_strategy)
+@given(instance=WordprocessingMLBasicDef_CustomDocumentPropertiesCollection_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::customdocumentpropertiescollection_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::CustomDocumentPropertiesCollection)
+def test_wordprocessingmlbasicdef_customdocumentpropertiescollection_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_CustomDocumentPropertiesCollection)
 
-@given(instance=WordprocessingMLBasicDef::CustomDocumentProperty_strategy)
+@given(instance=WordprocessingMLBasicDef_CustomDocumentProperty_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::customdocumentproperty_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::CustomDocumentProperty)
-
-@given(instance=WordprocessingMLBasicDef::CustomDocumentProperty_strategy)
-def test_wordprocessingmlbasicdef::customdocumentproperty_name_type(instance):
-    assert isinstance(instance.name, stringtype)
+def test_wordprocessingmlbasicdef_customdocumentproperty_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_CustomDocumentProperty)
 
 
-@given(instance=WordprocessingMLBasicDef::CustomDocumentProperty_strategy)
-def test_wordprocessingmlbasicdef::customdocumentproperty_name_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_CustomDocumentProperty_strategy)
+def test_wordprocessingmlbasicdef_customdocumentproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2721,410 +2691,311 @@ def test_datetimetype_instantiation(instance):
 def test_valuetype_instantiation(instance):
     assert isinstance(instance, ValueType)
 
-@given(instance=WordprocessingMLBasicDef::FloatValue_strategy)
+@given(instance=WordprocessingMLBasicDef_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::floatvalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::FloatValue)
-
-@given(instance=WordprocessingMLBasicDef::FloatValue_strategy)
-def test_wordprocessingmlbasicdef::floatvalue_value_type(instance):
-    assert isinstance(instance.value, stringtype)
+def test_wordprocessingmlbasicdef_booleanvalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_BooleanValue)
 
 
-@given(instance=WordprocessingMLBasicDef::FloatValue_strategy)
-def test_wordprocessingmlbasicdef::floatvalue_value_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_BooleanValue_strategy)
+def test_wordprocessingmlbasicdef_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=WordprocessingMLBasicDef::BooleanValue_strategy)
+@given(instance=WordprocessingMLBasicDef_FloatValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::booleanvalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::BooleanValue)
-
-@given(instance=WordprocessingMLBasicDef::BooleanValue_strategy)
-def test_wordprocessingmlbasicdef::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, stringtype)
+def test_wordprocessingmlbasicdef_floatvalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_FloatValue)
 
 
-@given(instance=WordprocessingMLBasicDef::BooleanValue_strategy)
-def test_wordprocessingmlbasicdef::booleanvalue_value_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_FloatValue_strategy)
+def test_wordprocessingmlbasicdef_floatvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=WordprocessingMLBasicDef::DateTimeTypeValue_strategy)
+@given(instance=WordprocessingMLBasicDef_DateTimeTypeValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::datetimetypevalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::DateTimeTypeValue)
+def test_wordprocessingmlbasicdef_datetimetypevalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_DateTimeTypeValue)
 
-@given(instance=WordprocessingMLBasicDef::StringValue_strategy)
+@given(instance=WordprocessingMLBasicDef_StringValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::stringvalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::StringValue)
-
-@given(instance=WordprocessingMLBasicDef::StringValue_strategy)
-def test_wordprocessingmlbasicdef::stringvalue_value_type(instance):
-    assert isinstance(instance.value, stringtype)
+def test_wordprocessingmlbasicdef_stringvalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_StringValue)
 
 
-@given(instance=WordprocessingMLBasicDef::StringValue_strategy)
-def test_wordprocessingmlbasicdef::stringvalue_value_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_StringValue_strategy)
+def test_wordprocessingmlbasicdef_stringvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=WordprocessingMLBasicDef::ValueType_strategy)
+@given(instance=WordprocessingMLBasicDef_ValueType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::valuetype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::ValueType)
+def test_wordprocessingmlbasicdef_valuetype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_ValueType)
 
 @given(instance=WordDocument_strategy)
 @settings(max_examples=50)
 def test_worddocument_instantiation(instance):
     assert isinstance(instance, WordDocument)
 
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::DocumentPropertiesCollection)
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_lines_type(instance):
-    assert isinstance(instance.lines, stringtype)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_DocumentPropertiesCollection)
 
 
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_lines_setter(instance):
-    original = instance.lines
-    instance.lines = original
-    assert instance.lines == original
 
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_bytes_type(instance):
-    assert isinstance(instance.bytes, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_bytes_setter(instance):
-    original = instance.bytes
-    instance.bytes = original
-    assert instance.bytes == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_guid_type(instance):
-    assert isinstance(instance.guid, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_guid_setter(instance):
-    original = instance.guid
-    instance.guid = original
-    assert instance.guid == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_manager_type(instance):
-    assert isinstance(instance.manager, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_manager_setter(instance):
-    original = instance.manager
-    instance.manager = original
-    assert instance.manager == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_presentationFormat_type(instance):
-    assert isinstance(instance.presentationFormat, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_presentationFormat_setter(instance):
-    original = instance.presentationFormat
-    instance.presentationFormat = original
-    assert instance.presentationFormat == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_characters_type(instance):
-    assert isinstance(instance.characters, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_characters_setter(instance):
-    original = instance.characters
-    instance.characters = original
-    assert instance.characters == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_paragraphs_type(instance):
-    assert isinstance(instance.paragraphs, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_paragraphs_setter(instance):
-    original = instance.paragraphs
-    instance.paragraphs = original
-    assert instance.paragraphs == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_subject_type(instance):
-    assert isinstance(instance.subject, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_subject_setter(instance):
-    original = instance.subject
-    instance.subject = original
-    assert instance.subject == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_charactersWithSpaces_type(instance):
-    assert isinstance(instance.charactersWithSpaces, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_charactersWithSpaces_setter(instance):
-    original = instance.charactersWithSpaces
-    instance.charactersWithSpaces = original
-    assert instance.charactersWithSpaces == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_title_type(instance):
-    assert isinstance(instance.title, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_words_type(instance):
-    assert isinstance(instance.words, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_words_setter(instance):
-    original = instance.words
-    instance.words = original
-    assert instance.words == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_hyperlinkBase_type(instance):
-    assert isinstance(instance.hyperlinkBase, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_hyperlinkBase_setter(instance):
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_hyperlinkBase_setter(instance):
     original = instance.hyperlinkBase
     instance.hyperlinkBase = original
     assert instance.hyperlinkBase == original
 
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_totalTime_type(instance):
-    assert isinstance(instance.totalTime, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_totalTime_setter(instance):
-    original = instance.totalTime
-    instance.totalTime = original
-    assert instance.totalTime == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_appName_type(instance):
-    assert isinstance(instance.appName, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_appName_setter(instance):
-    original = instance.appName
-    instance.appName = original
-    assert instance.appName == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_category_type(instance):
-    assert isinstance(instance.category, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_pages_type(instance):
-    assert isinstance(instance.pages, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_description_type(instance):
-    assert isinstance(instance.description, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_author_type(instance):
-    assert isinstance(instance.author, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_revision_type(instance):
-    assert isinstance(instance.revision, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_revision_setter(instance):
-    original = instance.revision
-    instance.revision = original
-    assert instance.revision == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_lastAuthor_type(instance):
-    assert isinstance(instance.lastAuthor, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_lastAuthor_setter(instance):
-    original = instance.lastAuthor
-    instance.lastAuthor = original
-    assert instance.lastAuthor == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_company_type(instance):
-    assert isinstance(instance.company, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_company_setter(instance):
-    original = instance.company
-    instance.company = original
-    assert instance.company == original
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_keywords_type(instance):
-    assert isinstance(instance.keywords, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlbasicdef::documentpropertiescollection_keywords_setter(instance):
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_keywords_setter(instance):
     original = instance.keywords
     instance.keywords = original
     assert instance.keywords == original
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_guid_setter(instance):
+    original = instance.guid
+    instance.guid = original
+    assert instance.guid == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_charactersWithSpaces_setter(instance):
+    original = instance.charactersWithSpaces
+    instance.charactersWithSpaces = original
+    assert instance.charactersWithSpaces == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_appName_setter(instance):
+    original = instance.appName
+    instance.appName = original
+    assert instance.appName == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_bytes_setter(instance):
+    original = instance.bytes
+    instance.bytes = original
+    assert instance.bytes == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_manager_setter(instance):
+    original = instance.manager
+    instance.manager = original
+    assert instance.manager == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_characters_setter(instance):
+    original = instance.characters
+    instance.characters = original
+    assert instance.characters == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_lines_setter(instance):
+    original = instance.lines
+    instance.lines = original
+    assert instance.lines == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_subject_setter(instance):
+    original = instance.subject
+    instance.subject = original
+    assert instance.subject == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_totalTime_setter(instance):
+    original = instance.totalTime
+    instance.totalTime = original
+    assert instance.totalTime == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_lastAuthor_setter(instance):
+    original = instance.lastAuthor
+    instance.lastAuthor = original
+    assert instance.lastAuthor == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_words_setter(instance):
+    original = instance.words
+    instance.words = original
+    assert instance.words == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_company_setter(instance):
+    original = instance.company
+    instance.company = original
+    assert instance.company == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_presentationFormat_setter(instance):
+    original = instance.presentationFormat
+    instance.presentationFormat = original
+    assert instance.presentationFormat == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_paragraphs_setter(instance):
+    original = instance.paragraphs
+    instance.paragraphs = original
+    assert instance.paragraphs == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_revision_setter(instance):
+    original = instance.revision
+    instance.revision = original
+    assert instance.revision == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlbasicdef_documentpropertiescollection_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::datetimetype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::DateTimeType)
-
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_day_type(instance):
-    assert isinstance(instance.day, stringtype)
+def test_wordprocessingmlbasicdef_datetimetype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_DateTimeType)
 
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_day_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
+def test_wordprocessingmlbasicdef_datetimetype_day_setter(instance):
     original = instance.day
     instance.day = original
     assert instance.day == original
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_hour_type(instance):
-    assert isinstance(instance.hour, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_hour_setter(instance):
-    original = instance.hour
-    instance.hour = original
-    assert instance.hour == original
-
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_month_type(instance):
-    assert isinstance(instance.month, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_month_setter(instance):
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
+def test_wordprocessingmlbasicdef_datetimetype_month_setter(instance):
     original = instance.month
     instance.month = original
     assert instance.month == original
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_minute_type(instance):
-    assert isinstance(instance.minute, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_minute_setter(instance):
-    original = instance.minute
-    instance.minute = original
-    assert instance.minute == original
-
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_second_type(instance):
-    assert isinstance(instance.second, stringtype)
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
+def test_wordprocessingmlbasicdef_datetimetype_hour_setter(instance):
+    original = instance.hour
+    instance.hour = original
+    assert instance.hour == original
 
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_second_setter(instance):
-    original = instance.second
-    instance.second = original
-    assert instance.second == original
 
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_year_type(instance):
-    assert isinstance(instance.year, stringtype)
-
-
-@given(instance=WordprocessingMLBasicDef::DateTimeType_strategy)
-def test_wordprocessingmlbasicdef::datetimetype_year_setter(instance):
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
+def test_wordprocessingmlbasicdef_datetimetype_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
 
-@given(instance=WordprocessingMLBasicDef::VersionType_strategy)
+
+
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
+def test_wordprocessingmlbasicdef_datetimetype_minute_setter(instance):
+    original = instance.minute
+    instance.minute = original
+    assert instance.minute == original
+
+
+
+@given(instance=WordprocessingMLBasicDef_DateTimeType_strategy)
+def test_wordprocessingmlbasicdef_datetimetype_second_setter(instance):
+    original = instance.second
+    instance.second = original
+    assert instance.second == original
+
+@given(instance=WordprocessingMLBasicDef_VersionType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlbasicdef::versiontype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLBasicDef::VersionType)
-
-@given(instance=WordprocessingMLBasicDef::VersionType_strategy)
-def test_wordprocessingmlbasicdef::versiontype_nn_type(instance):
-    assert isinstance(instance.nn, stringtype)
+def test_wordprocessingmlbasicdef_versiontype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLBasicDef_VersionType)
 
 
-@given(instance=WordprocessingMLBasicDef::VersionType_strategy)
-def test_wordprocessingmlbasicdef::versiontype_nn_setter(instance):
+
+@given(instance=WordprocessingMLBasicDef_VersionType_strategy)
+def test_wordprocessingmlbasicdef_versiontype_nn_setter(instance):
     original = instance.nn
     instance.nn = original
     assert instance.nn == original
 
-@given(instance=WordprocessingMLBasicDef::VersionType_strategy)
-def test_wordprocessingmlbasicdef::versiontype_n_type(instance):
-    assert isinstance(instance.n, stringtype)
 
 
-@given(instance=WordprocessingMLBasicDef::VersionType_strategy)
-def test_wordprocessingmlbasicdef::versiontype_n_setter(instance):
+@given(instance=WordprocessingMLBasicDef_VersionType_strategy)
+def test_wordprocessingmlbasicdef_versiontype_n_setter(instance):
     original = instance.n
     instance.n = original
     assert instance.n == original

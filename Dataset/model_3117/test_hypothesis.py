@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Classifier,
-    CD::Package,
-    CD::Class,
-    CD::DataType,
+    CD_Class,
+    CD_Package,
+    CD_DataType,
     NamedElt,
-    CD::Attribute,
-    CD::Classifier,
-    CD::NamedElt,
+    CD_Attribute,
+    CD_Classifier,
+    CD_NamedElt,
 )
 
 # =============================================================================
@@ -36,37 +36,23 @@ def test_classifier_constructor_args():
 
 
 
-def test_cd::package_is_not_abstract():
-    assert not inspect.isabstract(CD::Package)
+def test_cd_class_is_not_abstract():
+    assert not inspect.isabstract(CD_Class)
 
 
-def test_cd::package_constructor_exists():
-    assert callable(CD::Package.__init__)
+def test_cd_class_constructor_exists():
+    assert callable(CD_Class.__init__)
 
 
-def test_cd::package_constructor_args():
-    sig = inspect.signature(CD::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cd::class_is_not_abstract():
-    assert not inspect.isabstract(CD::Class)
-
-
-def test_cd::class_constructor_exists():
-    assert callable(CD::Class.__init__)
-
-
-def test_cd::class_constructor_args():
-    sig = inspect.signature(CD::Class.__init__)
+def test_cd_class_constructor_args():
+    sig = inspect.signature(CD_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_cd::class_has_isAbstract():
-    assert hasattr(CD::Class, "isAbstract")
+def test_cd_class_has_isAbstract():
+    assert hasattr(CD_Class, "isAbstract")
     descriptor = None
-    for klass in CD::Class.__mro__:
+    for klass in CD_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -74,16 +60,30 @@ def test_cd::class_has_isAbstract():
 
 
 
-def test_cd::datatype_is_not_abstract():
-    assert not inspect.isabstract(CD::DataType)
+def test_cd_package_is_not_abstract():
+    assert not inspect.isabstract(CD_Package)
 
 
-def test_cd::datatype_constructor_exists():
-    assert callable(CD::DataType.__init__)
+def test_cd_package_constructor_exists():
+    assert callable(CD_Package.__init__)
 
 
-def test_cd::datatype_constructor_args():
-    sig = inspect.signature(CD::DataType.__init__)
+def test_cd_package_constructor_args():
+    sig = inspect.signature(CD_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cd_datatype_is_not_abstract():
+    assert not inspect.isabstract(CD_DataType)
+
+
+def test_cd_datatype_constructor_exists():
+    assert callable(CD_DataType.__init__)
+
+
+def test_cd_datatype_constructor_args():
+    sig = inspect.signature(CD_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -102,23 +102,23 @@ def test_namedelt_constructor_args():
 
 
 
-def test_cd::attribute_is_not_abstract():
-    assert not inspect.isabstract(CD::Attribute)
+def test_cd_attribute_is_not_abstract():
+    assert not inspect.isabstract(CD_Attribute)
 
 
-def test_cd::attribute_constructor_exists():
-    assert callable(CD::Attribute.__init__)
+def test_cd_attribute_constructor_exists():
+    assert callable(CD_Attribute.__init__)
 
 
-def test_cd::attribute_constructor_args():
-    sig = inspect.signature(CD::Attribute.__init__)
+def test_cd_attribute_constructor_args():
+    sig = inspect.signature(CD_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "multiValued" in params, "Missing parameter 'multiValued'"
 
-def test_cd::attribute_has_multiValued():
-    assert hasattr(CD::Attribute, "multiValued")
+def test_cd_attribute_has_multiValued():
+    assert hasattr(CD_Attribute, "multiValued")
     descriptor = None
-    for klass in CD::Attribute.__mro__:
+    for klass in CD_Attribute.__mro__:
         if "multiValued" in klass.__dict__:
             descriptor = klass.__dict__["multiValued"]
             break
@@ -126,37 +126,37 @@ def test_cd::attribute_has_multiValued():
 
 
 
-def test_cd::classifier_is_not_abstract():
-    assert not inspect.isabstract(CD::Classifier)
+def test_cd_classifier_is_not_abstract():
+    assert not inspect.isabstract(CD_Classifier)
 
 
-def test_cd::classifier_constructor_exists():
-    assert callable(CD::Classifier.__init__)
+def test_cd_classifier_constructor_exists():
+    assert callable(CD_Classifier.__init__)
 
 
-def test_cd::classifier_constructor_args():
-    sig = inspect.signature(CD::Classifier.__init__)
+def test_cd_classifier_constructor_args():
+    sig = inspect.signature(CD_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cd::namedelt_is_not_abstract():
-    assert not inspect.isabstract(CD::NamedElt)
+def test_cd_namedelt_is_not_abstract():
+    assert not inspect.isabstract(CD_NamedElt)
 
 
-def test_cd::namedelt_constructor_exists():
-    assert callable(CD::NamedElt.__init__)
+def test_cd_namedelt_constructor_exists():
+    assert callable(CD_NamedElt.__init__)
 
 
-def test_cd::namedelt_constructor_args():
-    sig = inspect.signature(CD::NamedElt.__init__)
+def test_cd_namedelt_constructor_args():
+    sig = inspect.signature(CD_NamedElt.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cd::namedelt_has_name():
-    assert hasattr(CD::NamedElt, "name")
+def test_cd_namedelt_has_name():
+    assert hasattr(CD_NamedElt, "name")
     descriptor = None
-    for klass in CD::NamedElt.__mro__:
+    for klass in CD_NamedElt.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -177,30 +177,30 @@ safe_text = st.text(
 Classifier_strategy = st.builds(
     Classifier,
 )
-CD::Package_strategy = st.builds(
-    CD::Package,
-)
-CD::Class_strategy = st.builds(
-    CD::Class,
+CD_Class_strategy = st.builds(
+    CD_Class,
     isAbstract=
         safe_text
 )
-CD::DataType_strategy = st.builds(
-    CD::DataType,
+CD_Package_strategy = st.builds(
+    CD_Package,
+)
+CD_DataType_strategy = st.builds(
+    CD_DataType,
 )
 NamedElt_strategy = st.builds(
     NamedElt,
 )
-CD::Attribute_strategy = st.builds(
-    CD::Attribute,
+CD_Attribute_strategy = st.builds(
+    CD_Attribute,
     multiValued=
         safe_text
 )
-CD::Classifier_strategy = st.builds(
-    CD::Classifier,
+CD_Classifier_strategy = st.builds(
+    CD_Classifier,
 )
-CD::NamedElt_strategy = st.builds(
-    CD::NamedElt,
+CD_NamedElt_strategy = st.builds(
+    CD_NamedElt,
     name=
         safe_text
 )
@@ -210,70 +210,61 @@ CD::NamedElt_strategy = st.builds(
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=CD::Package_strategy)
+@given(instance=CD_Class_strategy)
 @settings(max_examples=50)
-def test_cd::package_instantiation(instance):
-    assert isinstance(instance, CD::Package)
-
-@given(instance=CD::Class_strategy)
-@settings(max_examples=50)
-def test_cd::class_instantiation(instance):
-    assert isinstance(instance, CD::Class)
-
-@given(instance=CD::Class_strategy)
-def test_cd::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_cd_class_instantiation(instance):
+    assert isinstance(instance, CD_Class)
 
 
-@given(instance=CD::Class_strategy)
-def test_cd::class_isAbstract_setter(instance):
+
+@given(instance=CD_Class_strategy)
+def test_cd_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=CD::DataType_strategy)
+@given(instance=CD_Package_strategy)
 @settings(max_examples=50)
-def test_cd::datatype_instantiation(instance):
-    assert isinstance(instance, CD::DataType)
+def test_cd_package_instantiation(instance):
+    assert isinstance(instance, CD_Package)
+
+@given(instance=CD_DataType_strategy)
+@settings(max_examples=50)
+def test_cd_datatype_instantiation(instance):
+    assert isinstance(instance, CD_DataType)
 
 @given(instance=NamedElt_strategy)
 @settings(max_examples=50)
 def test_namedelt_instantiation(instance):
     assert isinstance(instance, NamedElt)
 
-@given(instance=CD::Attribute_strategy)
+@given(instance=CD_Attribute_strategy)
 @settings(max_examples=50)
-def test_cd::attribute_instantiation(instance):
-    assert isinstance(instance, CD::Attribute)
-
-@given(instance=CD::Attribute_strategy)
-def test_cd::attribute_multiValued_type(instance):
-    assert isinstance(instance.multiValued, str)
+def test_cd_attribute_instantiation(instance):
+    assert isinstance(instance, CD_Attribute)
 
 
-@given(instance=CD::Attribute_strategy)
-def test_cd::attribute_multiValued_setter(instance):
+
+@given(instance=CD_Attribute_strategy)
+def test_cd_attribute_multiValued_setter(instance):
     original = instance.multiValued
     instance.multiValued = original
     assert instance.multiValued == original
 
-@given(instance=CD::Classifier_strategy)
+@given(instance=CD_Classifier_strategy)
 @settings(max_examples=50)
-def test_cd::classifier_instantiation(instance):
-    assert isinstance(instance, CD::Classifier)
+def test_cd_classifier_instantiation(instance):
+    assert isinstance(instance, CD_Classifier)
 
-@given(instance=CD::NamedElt_strategy)
+@given(instance=CD_NamedElt_strategy)
 @settings(max_examples=50)
-def test_cd::namedelt_instantiation(instance):
-    assert isinstance(instance, CD::NamedElt)
-
-@given(instance=CD::NamedElt_strategy)
-def test_cd::namedelt_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cd_namedelt_instantiation(instance):
+    assert isinstance(instance, CD_NamedElt)
 
 
-@given(instance=CD::NamedElt_strategy)
-def test_cd::namedelt_name_setter(instance):
+
+@given(instance=CD_NamedElt_strategy)
+def test_cd_namedelt_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

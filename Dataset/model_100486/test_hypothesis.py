@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    UHSM::EObject,
-    UHSM::TracedClass,
-    StateMachine,
-    UHSM::UStateMachine,
-    Transition,
-    UHSM::UTransition,
-    TracedClass,
-    UHSM::Transition,
-    UHSM::State,
-    UHSM::StateMachine,
+from python_code import (
     State,
-    UHSM::CompositeState,
-    UHSM::InitialState,
-    UHSM::UState,
-    UHSM::FinalState,
+    UHSM_EObject,
+    UHSM_TracedClass,
+    StateMachine,
+    UHSM_UStateMachine,
+    UHSM_UState,
+    UHSM_FinalState,
+    UHSM_InitialState,
+    Transition,
+    UHSM_UTransition,
+    UHSM_CompositeState,
+    TracedClass,
+    UHSM_Transition,
+    UHSM_State,
+    UHSM_StateMachine,
 )
 
 # =============================================================================
@@ -29,37 +29,51 @@ from classes import (
 
 
 
-def test_uhsm::eobject_is_not_abstract():
-    assert not inspect.isabstract(UHSM::EObject)
+def test_state_is_not_abstract():
+    assert not inspect.isabstract(State)
 
 
-def test_uhsm::eobject_constructor_exists():
-    assert callable(UHSM::EObject.__init__)
+def test_state_constructor_exists():
+    assert callable(State.__init__)
 
 
-def test_uhsm::eobject_constructor_args():
-    sig = inspect.signature(UHSM::EObject.__init__)
+def test_state_constructor_args():
+    sig = inspect.signature(State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uhsm::tracedclass_is_not_abstract():
-    assert not inspect.isabstract(UHSM::TracedClass)
+def test_uhsm_eobject_is_not_abstract():
+    assert not inspect.isabstract(UHSM_EObject)
 
 
-def test_uhsm::tracedclass_constructor_exists():
-    assert callable(UHSM::TracedClass.__init__)
+def test_uhsm_eobject_constructor_exists():
+    assert callable(UHSM_EObject.__init__)
 
 
-def test_uhsm::tracedclass_constructor_args():
-    sig = inspect.signature(UHSM::TracedClass.__init__)
+def test_uhsm_eobject_constructor_args():
+    sig = inspect.signature(UHSM_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uhsm_tracedclass_is_not_abstract():
+    assert not inspect.isabstract(UHSM_TracedClass)
+
+
+def test_uhsm_tracedclass_constructor_exists():
+    assert callable(UHSM_TracedClass.__init__)
+
+
+def test_uhsm_tracedclass_constructor_args():
+    sig = inspect.signature(UHSM_TracedClass.__init__)
     params = list(sig.parameters.keys())
     assert "trace" in params, "Missing parameter 'trace'"
 
-def test_uhsm::tracedclass_has_trace():
-    assert hasattr(UHSM::TracedClass, "trace")
+def test_uhsm_tracedclass_has_trace():
+    assert hasattr(UHSM_TracedClass, "trace")
     descriptor = None
-    for klass in UHSM::TracedClass.__mro__:
+    for klass in UHSM_TracedClass.__mro__:
         if "trace" in klass.__dict__:
             descriptor = klass.__dict__["trace"]
             break
@@ -81,16 +95,58 @@ def test_statemachine_constructor_args():
 
 
 
-def test_uhsm::ustatemachine_is_not_abstract():
-    assert not inspect.isabstract(UHSM::UStateMachine)
+def test_uhsm_ustatemachine_is_not_abstract():
+    assert not inspect.isabstract(UHSM_UStateMachine)
 
 
-def test_uhsm::ustatemachine_constructor_exists():
-    assert callable(UHSM::UStateMachine.__init__)
+def test_uhsm_ustatemachine_constructor_exists():
+    assert callable(UHSM_UStateMachine.__init__)
 
 
-def test_uhsm::ustatemachine_constructor_args():
-    sig = inspect.signature(UHSM::UStateMachine.__init__)
+def test_uhsm_ustatemachine_constructor_args():
+    sig = inspect.signature(UHSM_UStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uhsm_ustate_is_not_abstract():
+    assert not inspect.isabstract(UHSM_UState)
+
+
+def test_uhsm_ustate_constructor_exists():
+    assert callable(UHSM_UState.__init__)
+
+
+def test_uhsm_ustate_constructor_args():
+    sig = inspect.signature(UHSM_UState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uhsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(UHSM_FinalState)
+
+
+def test_uhsm_finalstate_constructor_exists():
+    assert callable(UHSM_FinalState.__init__)
+
+
+def test_uhsm_finalstate_constructor_args():
+    sig = inspect.signature(UHSM_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uhsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(UHSM_InitialState)
+
+
+def test_uhsm_initialstate_constructor_exists():
+    assert callable(UHSM_InitialState.__init__)
+
+
+def test_uhsm_initialstate_constructor_args():
+    sig = inspect.signature(UHSM_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,16 +165,30 @@ def test_transition_constructor_args():
 
 
 
-def test_uhsm::utransition_is_not_abstract():
-    assert not inspect.isabstract(UHSM::UTransition)
+def test_uhsm_utransition_is_not_abstract():
+    assert not inspect.isabstract(UHSM_UTransition)
 
 
-def test_uhsm::utransition_constructor_exists():
-    assert callable(UHSM::UTransition.__init__)
+def test_uhsm_utransition_constructor_exists():
+    assert callable(UHSM_UTransition.__init__)
 
 
-def test_uhsm::utransition_constructor_args():
-    sig = inspect.signature(UHSM::UTransition.__init__)
+def test_uhsm_utransition_constructor_args():
+    sig = inspect.signature(UHSM_UTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uhsm_compositestate_is_not_abstract():
+    assert not inspect.isabstract(UHSM_CompositeState)
+
+
+def test_uhsm_compositestate_constructor_exists():
+    assert callable(UHSM_CompositeState.__init__)
+
+
+def test_uhsm_compositestate_constructor_args():
+    sig = inspect.signature(UHSM_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,43 +207,43 @@ def test_tracedclass_constructor_args():
 
 
 
-def test_uhsm::transition_is_not_abstract():
-    assert not inspect.isabstract(UHSM::Transition)
+def test_uhsm_transition_is_not_abstract():
+    assert not inspect.isabstract(UHSM_Transition)
 
 
-def test_uhsm::transition_constructor_exists():
-    assert callable(UHSM::Transition.__init__)
+def test_uhsm_transition_constructor_exists():
+    assert callable(UHSM_Transition.__init__)
 
 
-def test_uhsm::transition_constructor_args():
-    sig = inspect.signature(UHSM::Transition.__init__)
+def test_uhsm_transition_constructor_args():
+    sig = inspect.signature(UHSM_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "effect" in params, "Missing parameter 'effect'"
     assert "trigger" in params, "Missing parameter 'trigger'"
+    assert "effect" in params, "Missing parameter 'effect'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uhsm::transition_has_effect():
-    assert hasattr(UHSM::Transition, "effect")
+def test_uhsm_transition_has_trigger():
+    assert hasattr(UHSM_Transition, "trigger")
     descriptor = None
-    for klass in UHSM::Transition.__mro__:
-        if "effect" in klass.__dict__:
-            descriptor = klass.__dict__["effect"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uhsm::transition_has_trigger():
-    assert hasattr(UHSM::Transition, "trigger")
-    descriptor = None
-    for klass in UHSM::Transition.__mro__:
+    for klass in UHSM_Transition.__mro__:
         if "trigger" in klass.__dict__:
             descriptor = klass.__dict__["trigger"]
             break
     assert isinstance(descriptor, property)
 
-def test_uhsm::transition_has_name():
-    assert hasattr(UHSM::Transition, "name")
+def test_uhsm_transition_has_effect():
+    assert hasattr(UHSM_Transition, "effect")
     descriptor = None
-    for klass in UHSM::Transition.__mro__:
+    for klass in UHSM_Transition.__mro__:
+        if "effect" in klass.__dict__:
+            descriptor = klass.__dict__["effect"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uhsm_transition_has_name():
+    assert hasattr(UHSM_Transition, "name")
+    descriptor = None
+    for klass in UHSM_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -181,23 +251,23 @@ def test_uhsm::transition_has_name():
 
 
 
-def test_uhsm::state_is_not_abstract():
-    assert not inspect.isabstract(UHSM::State)
+def test_uhsm_state_is_not_abstract():
+    assert not inspect.isabstract(UHSM_State)
 
 
-def test_uhsm::state_constructor_exists():
-    assert callable(UHSM::State.__init__)
+def test_uhsm_state_constructor_exists():
+    assert callable(UHSM_State.__init__)
 
 
-def test_uhsm::state_constructor_args():
-    sig = inspect.signature(UHSM::State.__init__)
+def test_uhsm_state_constructor_args():
+    sig = inspect.signature(UHSM_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uhsm::state_has_name():
-    assert hasattr(UHSM::State, "name")
+def test_uhsm_state_has_name():
+    assert hasattr(UHSM_State, "name")
     descriptor = None
-    for klass in UHSM::State.__mro__:
+    for klass in UHSM_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -205,97 +275,27 @@ def test_uhsm::state_has_name():
 
 
 
-def test_uhsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(UHSM::StateMachine)
+def test_uhsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(UHSM_StateMachine)
 
 
-def test_uhsm::statemachine_constructor_exists():
-    assert callable(UHSM::StateMachine.__init__)
+def test_uhsm_statemachine_constructor_exists():
+    assert callable(UHSM_StateMachine.__init__)
 
 
-def test_uhsm::statemachine_constructor_args():
-    sig = inspect.signature(UHSM::StateMachine.__init__)
+def test_uhsm_statemachine_constructor_args():
+    sig = inspect.signature(UHSM_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uhsm::statemachine_has_name():
-    assert hasattr(UHSM::StateMachine, "name")
+def test_uhsm_statemachine_has_name():
+    assert hasattr(UHSM_StateMachine, "name")
     descriptor = None
-    for klass in UHSM::StateMachine.__mro__:
+    for klass in UHSM_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_state_is_not_abstract():
-    assert not inspect.isabstract(State)
-
-
-def test_state_constructor_exists():
-    assert callable(State.__init__)
-
-
-def test_state_constructor_args():
-    sig = inspect.signature(State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uhsm::compositestate_is_not_abstract():
-    assert not inspect.isabstract(UHSM::CompositeState)
-
-
-def test_uhsm::compositestate_constructor_exists():
-    assert callable(UHSM::CompositeState.__init__)
-
-
-def test_uhsm::compositestate_constructor_args():
-    sig = inspect.signature(UHSM::CompositeState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uhsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(UHSM::InitialState)
-
-
-def test_uhsm::initialstate_constructor_exists():
-    assert callable(UHSM::InitialState.__init__)
-
-
-def test_uhsm::initialstate_constructor_args():
-    sig = inspect.signature(UHSM::InitialState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uhsm::ustate_is_not_abstract():
-    assert not inspect.isabstract(UHSM::UState)
-
-
-def test_uhsm::ustate_constructor_exists():
-    assert callable(UHSM::UState.__init__)
-
-
-def test_uhsm::ustate_constructor_args():
-    sig = inspect.signature(UHSM::UState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uhsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(UHSM::FinalState)
-
-
-def test_uhsm::finalstate_constructor_exists():
-    assert callable(UHSM::FinalState.__init__)
-
-
-def test_uhsm::finalstate_constructor_args():
-    sig = inspect.signature(UHSM::FinalState.__init__)
-    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -309,81 +309,83 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-UHSM::EObject_strategy = st.builds(
-    UHSM::EObject,
+State_strategy = st.builds(
+    State,
 )
-UHSM::TracedClass_strategy = st.builds(
-    UHSM::TracedClass,
+UHSM_EObject_strategy = st.builds(
+    UHSM_EObject,
+)
+UHSM_TracedClass_strategy = st.builds(
+    UHSM_TracedClass,
     trace=
         safe_text
 )
 StateMachine_strategy = st.builds(
     StateMachine,
 )
-UHSM::UStateMachine_strategy = st.builds(
-    UHSM::UStateMachine,
+UHSM_UStateMachine_strategy = st.builds(
+    UHSM_UStateMachine,
+)
+UHSM_UState_strategy = st.builds(
+    UHSM_UState,
+)
+UHSM_FinalState_strategy = st.builds(
+    UHSM_FinalState,
+)
+UHSM_InitialState_strategy = st.builds(
+    UHSM_InitialState,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-UHSM::UTransition_strategy = st.builds(
-    UHSM::UTransition,
+UHSM_UTransition_strategy = st.builds(
+    UHSM_UTransition,
+)
+UHSM_CompositeState_strategy = st.builds(
+    UHSM_CompositeState,
 )
 TracedClass_strategy = st.builds(
     TracedClass,
 )
-UHSM::Transition_strategy = st.builds(
-    UHSM::Transition,
-    effect=
-        safe_text,
+UHSM_Transition_strategy = st.builds(
+    UHSM_Transition,
     trigger=
         safe_text,
+    effect=
+        safe_text,
     name=
         safe_text
 )
-UHSM::State_strategy = st.builds(
-    UHSM::State,
+UHSM_State_strategy = st.builds(
+    UHSM_State,
     name=
         safe_text
 )
-UHSM::StateMachine_strategy = st.builds(
-    UHSM::StateMachine,
+UHSM_StateMachine_strategy = st.builds(
+    UHSM_StateMachine,
     name=
         safe_text
-)
-State_strategy = st.builds(
-    State,
-)
-UHSM::CompositeState_strategy = st.builds(
-    UHSM::CompositeState,
-)
-UHSM::InitialState_strategy = st.builds(
-    UHSM::InitialState,
-)
-UHSM::UState_strategy = st.builds(
-    UHSM::UState,
-)
-UHSM::FinalState_strategy = st.builds(
-    UHSM::FinalState,
 )
 
-@given(instance=UHSM::EObject_strategy)
+@given(instance=State_strategy)
 @settings(max_examples=50)
-def test_uhsm::eobject_instantiation(instance):
-    assert isinstance(instance, UHSM::EObject)
+def test_state_instantiation(instance):
+    assert isinstance(instance, State)
 
-@given(instance=UHSM::TracedClass_strategy)
+@given(instance=UHSM_EObject_strategy)
 @settings(max_examples=50)
-def test_uhsm::tracedclass_instantiation(instance):
-    assert isinstance(instance, UHSM::TracedClass)
+def test_uhsm_eobject_instantiation(instance):
+    assert isinstance(instance, UHSM_EObject)
 
-@given(instance=UHSM::TracedClass_strategy)
-def test_uhsm::tracedclass_trace_type(instance):
-    assert isinstance(instance.trace, str)
+@given(instance=UHSM_TracedClass_strategy)
+@settings(max_examples=50)
+def test_uhsm_tracedclass_instantiation(instance):
+    assert isinstance(instance, UHSM_TracedClass)
 
 
-@given(instance=UHSM::TracedClass_strategy)
-def test_uhsm::tracedclass_trace_setter(instance):
+
+@given(instance=UHSM_TracedClass_strategy)
+def test_uhsm_tracedclass_trace_setter(instance):
     original = instance.trace
     instance.trace = original
     assert instance.trace == original
@@ -393,117 +395,97 @@ def test_uhsm::tracedclass_trace_setter(instance):
 def test_statemachine_instantiation(instance):
     assert isinstance(instance, StateMachine)
 
-@given(instance=UHSM::UStateMachine_strategy)
+@given(instance=UHSM_UStateMachine_strategy)
 @settings(max_examples=50)
-def test_uhsm::ustatemachine_instantiation(instance):
-    assert isinstance(instance, UHSM::UStateMachine)
+def test_uhsm_ustatemachine_instantiation(instance):
+    assert isinstance(instance, UHSM_UStateMachine)
+
+@given(instance=UHSM_UState_strategy)
+@settings(max_examples=50)
+def test_uhsm_ustate_instantiation(instance):
+    assert isinstance(instance, UHSM_UState)
+
+@given(instance=UHSM_FinalState_strategy)
+@settings(max_examples=50)
+def test_uhsm_finalstate_instantiation(instance):
+    assert isinstance(instance, UHSM_FinalState)
+
+@given(instance=UHSM_InitialState_strategy)
+@settings(max_examples=50)
+def test_uhsm_initialstate_instantiation(instance):
+    assert isinstance(instance, UHSM_InitialState)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=UHSM::UTransition_strategy)
+@given(instance=UHSM_UTransition_strategy)
 @settings(max_examples=50)
-def test_uhsm::utransition_instantiation(instance):
-    assert isinstance(instance, UHSM::UTransition)
+def test_uhsm_utransition_instantiation(instance):
+    assert isinstance(instance, UHSM_UTransition)
+
+@given(instance=UHSM_CompositeState_strategy)
+@settings(max_examples=50)
+def test_uhsm_compositestate_instantiation(instance):
+    assert isinstance(instance, UHSM_CompositeState)
 
 @given(instance=TracedClass_strategy)
 @settings(max_examples=50)
 def test_tracedclass_instantiation(instance):
     assert isinstance(instance, TracedClass)
 
-@given(instance=UHSM::Transition_strategy)
+@given(instance=UHSM_Transition_strategy)
 @settings(max_examples=50)
-def test_uhsm::transition_instantiation(instance):
-    assert isinstance(instance, UHSM::Transition)
-
-@given(instance=UHSM::Transition_strategy)
-def test_uhsm::transition_effect_type(instance):
-    assert isinstance(instance.effect, str)
+def test_uhsm_transition_instantiation(instance):
+    assert isinstance(instance, UHSM_Transition)
 
 
-@given(instance=UHSM::Transition_strategy)
-def test_uhsm::transition_effect_setter(instance):
-    original = instance.effect
-    instance.effect = original
-    assert instance.effect == original
 
-@given(instance=UHSM::Transition_strategy)
-def test_uhsm::transition_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
-
-
-@given(instance=UHSM::Transition_strategy)
-def test_uhsm::transition_trigger_setter(instance):
+@given(instance=UHSM_Transition_strategy)
+def test_uhsm_transition_trigger_setter(instance):
     original = instance.trigger
     instance.trigger = original
     assert instance.trigger == original
 
-@given(instance=UHSM::Transition_strategy)
-def test_uhsm::transition_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=UHSM::Transition_strategy)
-def test_uhsm::transition_name_setter(instance):
+@given(instance=UHSM_Transition_strategy)
+def test_uhsm_transition_effect_setter(instance):
+    original = instance.effect
+    instance.effect = original
+    assert instance.effect == original
+
+
+
+@given(instance=UHSM_Transition_strategy)
+def test_uhsm_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=UHSM::State_strategy)
+@given(instance=UHSM_State_strategy)
 @settings(max_examples=50)
-def test_uhsm::state_instantiation(instance):
-    assert isinstance(instance, UHSM::State)
-
-@given(instance=UHSM::State_strategy)
-def test_uhsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uhsm_state_instantiation(instance):
+    assert isinstance(instance, UHSM_State)
 
 
-@given(instance=UHSM::State_strategy)
-def test_uhsm::state_name_setter(instance):
+
+@given(instance=UHSM_State_strategy)
+def test_uhsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=UHSM::StateMachine_strategy)
+@given(instance=UHSM_StateMachine_strategy)
 @settings(max_examples=50)
-def test_uhsm::statemachine_instantiation(instance):
-    assert isinstance(instance, UHSM::StateMachine)
-
-@given(instance=UHSM::StateMachine_strategy)
-def test_uhsm::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uhsm_statemachine_instantiation(instance):
+    assert isinstance(instance, UHSM_StateMachine)
 
 
-@given(instance=UHSM::StateMachine_strategy)
-def test_uhsm::statemachine_name_setter(instance):
+
+@given(instance=UHSM_StateMachine_strategy)
+def test_uhsm_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=State_strategy)
-@settings(max_examples=50)
-def test_state_instantiation(instance):
-    assert isinstance(instance, State)
-
-@given(instance=UHSM::CompositeState_strategy)
-@settings(max_examples=50)
-def test_uhsm::compositestate_instantiation(instance):
-    assert isinstance(instance, UHSM::CompositeState)
-
-@given(instance=UHSM::InitialState_strategy)
-@settings(max_examples=50)
-def test_uhsm::initialstate_instantiation(instance):
-    assert isinstance(instance, UHSM::InitialState)
-
-@given(instance=UHSM::UState_strategy)
-@settings(max_examples=50)
-def test_uhsm::ustate_instantiation(instance):
-    assert isinstance(instance, UHSM::UState)
-
-@given(instance=UHSM::FinalState_strategy)
-@settings(max_examples=50)
-def test_uhsm::finalstate_instantiation(instance):
-    assert isinstance(instance, UHSM::FinalState)

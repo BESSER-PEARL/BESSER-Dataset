@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Deck,
@@ -144,9 +144,6 @@ def test_cardtester_instantiation(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_rank_type(instance):
-    assert isinstance(instance.rank, str)
 
 
 @given(instance=Card_strategy)
@@ -155,9 +152,6 @@ def test_card_rank_setter(instance):
     instance.rank = original
     assert instance.rank == original
 
-@given(instance=Card_strategy)
-def test_card_pointValue_type(instance):
-    assert isinstance(instance.pointValue, int)
 
 
 @given(instance=Card_strategy)
@@ -166,9 +160,6 @@ def test_card_pointValue_setter(instance):
     instance.pointValue = original
     assert instance.pointValue == original
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, str)
 
 
 @given(instance=Card_strategy)

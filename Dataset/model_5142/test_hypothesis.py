@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mytest::B,
+from python_code import (
+    mytest_B,
     EModelElement,
-    mytest::A,
-    mytest::MyRoot,
+    mytest_A,
+    mytest_MyRoot,
 )
 
 # =============================================================================
@@ -18,16 +18,16 @@ from classes import (
 
 
 
-def test_mytest::b_is_not_abstract():
-    assert not inspect.isabstract(mytest::B)
+def test_mytest_b_is_not_abstract():
+    assert not inspect.isabstract(mytest_B)
 
 
-def test_mytest::b_constructor_exists():
-    assert callable(mytest::B.__init__)
+def test_mytest_b_constructor_exists():
+    assert callable(mytest_B.__init__)
 
 
-def test_mytest::b_constructor_args():
-    sig = inspect.signature(mytest::B.__init__)
+def test_mytest_b_constructor_args():
+    sig = inspect.signature(mytest_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -46,23 +46,23 @@ def test_emodelelement_constructor_args():
 
 
 
-def test_mytest::a_is_not_abstract():
-    assert not inspect.isabstract(mytest::A)
+def test_mytest_a_is_not_abstract():
+    assert not inspect.isabstract(mytest_A)
 
 
-def test_mytest::a_constructor_exists():
-    assert callable(mytest::A.__init__)
+def test_mytest_a_constructor_exists():
+    assert callable(mytest_A.__init__)
 
 
-def test_mytest::a_constructor_args():
-    sig = inspect.signature(mytest::A.__init__)
+def test_mytest_a_constructor_args():
+    sig = inspect.signature(mytest_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mytest::a_has_name():
-    assert hasattr(mytest::A, "name")
+def test_mytest_a_has_name():
+    assert hasattr(mytest_A, "name")
     descriptor = None
-    for klass in mytest::A.__mro__:
+    for klass in mytest_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -70,16 +70,16 @@ def test_mytest::a_has_name():
 
 
 
-def test_mytest::myroot_is_not_abstract():
-    assert not inspect.isabstract(mytest::MyRoot)
+def test_mytest_myroot_is_not_abstract():
+    assert not inspect.isabstract(mytest_MyRoot)
 
 
-def test_mytest::myroot_constructor_exists():
-    assert callable(mytest::MyRoot.__init__)
+def test_mytest_myroot_constructor_exists():
+    assert callable(mytest_MyRoot.__init__)
 
 
-def test_mytest::myroot_constructor_args():
-    sig = inspect.signature(mytest::MyRoot.__init__)
+def test_mytest_myroot_constructor_args():
+    sig = inspect.signature(mytest_MyRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,48 +94,45 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mytest::B_strategy = st.builds(
-    mytest::B,
+mytest_B_strategy = st.builds(
+    mytest_B,
 )
 EModelElement_strategy = st.builds(
     EModelElement,
 )
-mytest::A_strategy = st.builds(
-    mytest::A,
+mytest_A_strategy = st.builds(
+    mytest_A,
     name=
         safe_text
 )
-mytest::MyRoot_strategy = st.builds(
-    mytest::MyRoot,
+mytest_MyRoot_strategy = st.builds(
+    mytest_MyRoot,
 )
 
-@given(instance=mytest::B_strategy)
+@given(instance=mytest_B_strategy)
 @settings(max_examples=50)
-def test_mytest::b_instantiation(instance):
-    assert isinstance(instance, mytest::B)
+def test_mytest_b_instantiation(instance):
+    assert isinstance(instance, mytest_B)
 
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=mytest::A_strategy)
+@given(instance=mytest_A_strategy)
 @settings(max_examples=50)
-def test_mytest::a_instantiation(instance):
-    assert isinstance(instance, mytest::A)
-
-@given(instance=mytest::A_strategy)
-def test_mytest::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mytest_a_instantiation(instance):
+    assert isinstance(instance, mytest_A)
 
 
-@given(instance=mytest::A_strategy)
-def test_mytest::a_name_setter(instance):
+
+@given(instance=mytest_A_strategy)
+def test_mytest_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mytest::MyRoot_strategy)
+@given(instance=mytest_MyRoot_strategy)
 @settings(max_examples=50)
-def test_mytest::myroot_instantiation(instance):
-    assert isinstance(instance, mytest::MyRoot)
+def test_mytest_myroot_instantiation(instance):
+    assert isinstance(instance, mytest_MyRoot)

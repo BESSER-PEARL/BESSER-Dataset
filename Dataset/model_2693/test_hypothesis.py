@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    multiview3::Named,
+from python_code import (
+    multiview3_Named,
     Named,
-    multiview3::C,
-    multiview3::B,
-    multiview3::A,
-    multiview3::F,
-    multiview3::H,
-    multiview3::K,
-    multiview3::E,
-    multiview3::W,
-    multiview3::M,
+    multiview3_F,
+    multiview3_M,
+    multiview3_W,
+    multiview3_A,
+    multiview3_H,
+    multiview3_B,
+    multiview3_C,
+    multiview3_K,
+    multiview3_E,
 )
 
 # =============================================================================
@@ -25,23 +25,23 @@ from classes import (
 
 
 
-def test_multiview3::named_is_not_abstract():
-    assert not inspect.isabstract(multiview3::Named)
+def test_multiview3_named_is_not_abstract():
+    assert not inspect.isabstract(multiview3_Named)
 
 
-def test_multiview3::named_constructor_exists():
-    assert callable(multiview3::Named.__init__)
+def test_multiview3_named_constructor_exists():
+    assert callable(multiview3_Named.__init__)
 
 
-def test_multiview3::named_constructor_args():
-    sig = inspect.signature(multiview3::Named.__init__)
+def test_multiview3_named_constructor_args():
+    sig = inspect.signature(multiview3_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_multiview3::named_has_name():
-    assert hasattr(multiview3::Named, "name")
+def test_multiview3_named_has_name():
+    assert hasattr(multiview3_Named, "name")
     descriptor = None
-    for klass in multiview3::Named.__mro__:
+    for klass in multiview3_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -63,128 +63,128 @@ def test_named_constructor_args():
 
 
 
-def test_multiview3::c_is_not_abstract():
-    assert not inspect.isabstract(multiview3::C)
+def test_multiview3_f_is_not_abstract():
+    assert not inspect.isabstract(multiview3_F)
 
 
-def test_multiview3::c_constructor_exists():
-    assert callable(multiview3::C.__init__)
+def test_multiview3_f_constructor_exists():
+    assert callable(multiview3_F.__init__)
 
 
-def test_multiview3::c_constructor_args():
-    sig = inspect.signature(multiview3::C.__init__)
+def test_multiview3_f_constructor_args():
+    sig = inspect.signature(multiview3_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::b_is_not_abstract():
-    assert not inspect.isabstract(multiview3::B)
+def test_multiview3_m_is_not_abstract():
+    assert not inspect.isabstract(multiview3_M)
 
 
-def test_multiview3::b_constructor_exists():
-    assert callable(multiview3::B.__init__)
+def test_multiview3_m_constructor_exists():
+    assert callable(multiview3_M.__init__)
 
 
-def test_multiview3::b_constructor_args():
-    sig = inspect.signature(multiview3::B.__init__)
+def test_multiview3_m_constructor_args():
+    sig = inspect.signature(multiview3_M.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::a_is_not_abstract():
-    assert not inspect.isabstract(multiview3::A)
+def test_multiview3_w_is_not_abstract():
+    assert not inspect.isabstract(multiview3_W)
 
 
-def test_multiview3::a_constructor_exists():
-    assert callable(multiview3::A.__init__)
+def test_multiview3_w_constructor_exists():
+    assert callable(multiview3_W.__init__)
 
 
-def test_multiview3::a_constructor_args():
-    sig = inspect.signature(multiview3::A.__init__)
+def test_multiview3_w_constructor_args():
+    sig = inspect.signature(multiview3_W.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::f_is_not_abstract():
-    assert not inspect.isabstract(multiview3::F)
+def test_multiview3_a_is_not_abstract():
+    assert not inspect.isabstract(multiview3_A)
 
 
-def test_multiview3::f_constructor_exists():
-    assert callable(multiview3::F.__init__)
+def test_multiview3_a_constructor_exists():
+    assert callable(multiview3_A.__init__)
 
 
-def test_multiview3::f_constructor_args():
-    sig = inspect.signature(multiview3::F.__init__)
+def test_multiview3_a_constructor_args():
+    sig = inspect.signature(multiview3_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::h_is_not_abstract():
-    assert not inspect.isabstract(multiview3::H)
+def test_multiview3_h_is_not_abstract():
+    assert not inspect.isabstract(multiview3_H)
 
 
-def test_multiview3::h_constructor_exists():
-    assert callable(multiview3::H.__init__)
+def test_multiview3_h_constructor_exists():
+    assert callable(multiview3_H.__init__)
 
 
-def test_multiview3::h_constructor_args():
-    sig = inspect.signature(multiview3::H.__init__)
+def test_multiview3_h_constructor_args():
+    sig = inspect.signature(multiview3_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::k_is_not_abstract():
-    assert not inspect.isabstract(multiview3::K)
+def test_multiview3_b_is_not_abstract():
+    assert not inspect.isabstract(multiview3_B)
 
 
-def test_multiview3::k_constructor_exists():
-    assert callable(multiview3::K.__init__)
+def test_multiview3_b_constructor_exists():
+    assert callable(multiview3_B.__init__)
 
 
-def test_multiview3::k_constructor_args():
-    sig = inspect.signature(multiview3::K.__init__)
+def test_multiview3_b_constructor_args():
+    sig = inspect.signature(multiview3_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::e_is_not_abstract():
-    assert not inspect.isabstract(multiview3::E)
+def test_multiview3_c_is_not_abstract():
+    assert not inspect.isabstract(multiview3_C)
 
 
-def test_multiview3::e_constructor_exists():
-    assert callable(multiview3::E.__init__)
+def test_multiview3_c_constructor_exists():
+    assert callable(multiview3_C.__init__)
 
 
-def test_multiview3::e_constructor_args():
-    sig = inspect.signature(multiview3::E.__init__)
+def test_multiview3_c_constructor_args():
+    sig = inspect.signature(multiview3_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::w_is_not_abstract():
-    assert not inspect.isabstract(multiview3::W)
+def test_multiview3_k_is_not_abstract():
+    assert not inspect.isabstract(multiview3_K)
 
 
-def test_multiview3::w_constructor_exists():
-    assert callable(multiview3::W.__init__)
+def test_multiview3_k_constructor_exists():
+    assert callable(multiview3_K.__init__)
 
 
-def test_multiview3::w_constructor_args():
-    sig = inspect.signature(multiview3::W.__init__)
+def test_multiview3_k_constructor_args():
+    sig = inspect.signature(multiview3_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multiview3::m_is_not_abstract():
-    assert not inspect.isabstract(multiview3::M)
+def test_multiview3_e_is_not_abstract():
+    assert not inspect.isabstract(multiview3_E)
 
 
-def test_multiview3::m_constructor_exists():
-    assert callable(multiview3::M.__init__)
+def test_multiview3_e_constructor_exists():
+    assert callable(multiview3_E.__init__)
 
 
-def test_multiview3::m_constructor_args():
-    sig = inspect.signature(multiview3::M.__init__)
+def test_multiview3_e_constructor_args():
+    sig = inspect.signature(multiview3_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -199,54 +199,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-multiview3::Named_strategy = st.builds(
-    multiview3::Named,
+multiview3_Named_strategy = st.builds(
+    multiview3_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-multiview3::C_strategy = st.builds(
-    multiview3::C,
+multiview3_F_strategy = st.builds(
+    multiview3_F,
 )
-multiview3::B_strategy = st.builds(
-    multiview3::B,
+multiview3_M_strategy = st.builds(
+    multiview3_M,
 )
-multiview3::A_strategy = st.builds(
-    multiview3::A,
+multiview3_W_strategy = st.builds(
+    multiview3_W,
 )
-multiview3::F_strategy = st.builds(
-    multiview3::F,
+multiview3_A_strategy = st.builds(
+    multiview3_A,
 )
-multiview3::H_strategy = st.builds(
-    multiview3::H,
+multiview3_H_strategy = st.builds(
+    multiview3_H,
 )
-multiview3::K_strategy = st.builds(
-    multiview3::K,
+multiview3_B_strategy = st.builds(
+    multiview3_B,
 )
-multiview3::E_strategy = st.builds(
-    multiview3::E,
+multiview3_C_strategy = st.builds(
+    multiview3_C,
 )
-multiview3::W_strategy = st.builds(
-    multiview3::W,
+multiview3_K_strategy = st.builds(
+    multiview3_K,
 )
-multiview3::M_strategy = st.builds(
-    multiview3::M,
+multiview3_E_strategy = st.builds(
+    multiview3_E,
 )
 
-@given(instance=multiview3::Named_strategy)
+@given(instance=multiview3_Named_strategy)
 @settings(max_examples=50)
-def test_multiview3::named_instantiation(instance):
-    assert isinstance(instance, multiview3::Named)
-
-@given(instance=multiview3::Named_strategy)
-def test_multiview3::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_multiview3_named_instantiation(instance):
+    assert isinstance(instance, multiview3_Named)
 
 
-@given(instance=multiview3::Named_strategy)
-def test_multiview3::named_name_setter(instance):
+
+@given(instance=multiview3_Named_strategy)
+def test_multiview3_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -256,47 +253,47 @@ def test_multiview3::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=multiview3::C_strategy)
+@given(instance=multiview3_F_strategy)
 @settings(max_examples=50)
-def test_multiview3::c_instantiation(instance):
-    assert isinstance(instance, multiview3::C)
+def test_multiview3_f_instantiation(instance):
+    assert isinstance(instance, multiview3_F)
 
-@given(instance=multiview3::B_strategy)
+@given(instance=multiview3_M_strategy)
 @settings(max_examples=50)
-def test_multiview3::b_instantiation(instance):
-    assert isinstance(instance, multiview3::B)
+def test_multiview3_m_instantiation(instance):
+    assert isinstance(instance, multiview3_M)
 
-@given(instance=multiview3::A_strategy)
+@given(instance=multiview3_W_strategy)
 @settings(max_examples=50)
-def test_multiview3::a_instantiation(instance):
-    assert isinstance(instance, multiview3::A)
+def test_multiview3_w_instantiation(instance):
+    assert isinstance(instance, multiview3_W)
 
-@given(instance=multiview3::F_strategy)
+@given(instance=multiview3_A_strategy)
 @settings(max_examples=50)
-def test_multiview3::f_instantiation(instance):
-    assert isinstance(instance, multiview3::F)
+def test_multiview3_a_instantiation(instance):
+    assert isinstance(instance, multiview3_A)
 
-@given(instance=multiview3::H_strategy)
+@given(instance=multiview3_H_strategy)
 @settings(max_examples=50)
-def test_multiview3::h_instantiation(instance):
-    assert isinstance(instance, multiview3::H)
+def test_multiview3_h_instantiation(instance):
+    assert isinstance(instance, multiview3_H)
 
-@given(instance=multiview3::K_strategy)
+@given(instance=multiview3_B_strategy)
 @settings(max_examples=50)
-def test_multiview3::k_instantiation(instance):
-    assert isinstance(instance, multiview3::K)
+def test_multiview3_b_instantiation(instance):
+    assert isinstance(instance, multiview3_B)
 
-@given(instance=multiview3::E_strategy)
+@given(instance=multiview3_C_strategy)
 @settings(max_examples=50)
-def test_multiview3::e_instantiation(instance):
-    assert isinstance(instance, multiview3::E)
+def test_multiview3_c_instantiation(instance):
+    assert isinstance(instance, multiview3_C)
 
-@given(instance=multiview3::W_strategy)
+@given(instance=multiview3_K_strategy)
 @settings(max_examples=50)
-def test_multiview3::w_instantiation(instance):
-    assert isinstance(instance, multiview3::W)
+def test_multiview3_k_instantiation(instance):
+    assert isinstance(instance, multiview3_K)
 
-@given(instance=multiview3::M_strategy)
+@given(instance=multiview3_E_strategy)
 @settings(max_examples=50)
-def test_multiview3::m_instantiation(instance):
-    assert isinstance(instance, multiview3::M)
+def test_multiview3_e_instantiation(instance):
+    assert isinstance(instance, multiview3_E)

@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    brmodel::Trace,
+from python_code import (
+    brmodel_Trace,
     Variable,
-    brmodel::RelatedVariable,
-    brmodel::EObject,
+    brmodel_RelatedVariable,
+    brmodel_EObject,
     Trace,
-    brmodel::Variable,
-    brmodel::Method,
+    brmodel_Variable,
+    brmodel_Method,
     Method,
-    brmodel::ReachableVariable,
-    brmodel::ReachableMethod,
-    brmodel::Statement,
-    brmodel::RelatedMethod,
-    brmodel::RulePart,
-    brmodel::SlicedVariable,
-    brmodel::Rule,
-    brmodel::Model,
+    brmodel_ReachableVariable,
+    brmodel_ReachableMethod,
+    brmodel_Statement,
+    brmodel_RelatedMethod,
+    brmodel_RulePart,
+    brmodel_SlicedVariable,
+    brmodel_Rule,
+    brmodel_Model,
 )
 
 # =============================================================================
@@ -30,16 +30,16 @@ from classes import (
 
 
 
-def test_brmodel::trace_is_not_abstract():
-    assert not inspect.isabstract(brmodel::Trace)
+def test_brmodel_trace_is_not_abstract():
+    assert not inspect.isabstract(brmodel_Trace)
 
 
-def test_brmodel::trace_constructor_exists():
-    assert callable(brmodel::Trace.__init__)
+def test_brmodel_trace_constructor_exists():
+    assert callable(brmodel_Trace.__init__)
 
 
-def test_brmodel::trace_constructor_args():
-    sig = inspect.signature(brmodel::Trace.__init__)
+def test_brmodel_trace_constructor_args():
+    sig = inspect.signature(brmodel_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -58,30 +58,30 @@ def test_variable_constructor_args():
 
 
 
-def test_brmodel::relatedvariable_is_not_abstract():
-    assert not inspect.isabstract(brmodel::RelatedVariable)
+def test_brmodel_relatedvariable_is_not_abstract():
+    assert not inspect.isabstract(brmodel_RelatedVariable)
 
 
-def test_brmodel::relatedvariable_constructor_exists():
-    assert callable(brmodel::RelatedVariable.__init__)
+def test_brmodel_relatedvariable_constructor_exists():
+    assert callable(brmodel_RelatedVariable.__init__)
 
 
-def test_brmodel::relatedvariable_constructor_args():
-    sig = inspect.signature(brmodel::RelatedVariable.__init__)
+def test_brmodel_relatedvariable_constructor_args():
+    sig = inspect.signature(brmodel_RelatedVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_brmodel::eobject_is_not_abstract():
-    assert not inspect.isabstract(brmodel::EObject)
+def test_brmodel_eobject_is_not_abstract():
+    assert not inspect.isabstract(brmodel_EObject)
 
 
-def test_brmodel::eobject_constructor_exists():
-    assert callable(brmodel::EObject.__init__)
+def test_brmodel_eobject_constructor_exists():
+    assert callable(brmodel_EObject.__init__)
 
 
-def test_brmodel::eobject_constructor_args():
-    sig = inspect.signature(brmodel::EObject.__init__)
+def test_brmodel_eobject_constructor_args():
+    sig = inspect.signature(brmodel_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,23 +100,23 @@ def test_trace_constructor_args():
 
 
 
-def test_brmodel::variable_is_not_abstract():
-    assert not inspect.isabstract(brmodel::Variable)
+def test_brmodel_variable_is_not_abstract():
+    assert not inspect.isabstract(brmodel_Variable)
 
 
-def test_brmodel::variable_constructor_exists():
-    assert callable(brmodel::Variable.__init__)
+def test_brmodel_variable_constructor_exists():
+    assert callable(brmodel_Variable.__init__)
 
 
-def test_brmodel::variable_constructor_args():
-    sig = inspect.signature(brmodel::Variable.__init__)
+def test_brmodel_variable_constructor_args():
+    sig = inspect.signature(brmodel_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_brmodel::variable_has_name():
-    assert hasattr(brmodel::Variable, "name")
+def test_brmodel_variable_has_name():
+    assert hasattr(brmodel_Variable, "name")
     descriptor = None
-    for klass in brmodel::Variable.__mro__:
+    for klass in brmodel_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,33 +124,33 @@ def test_brmodel::variable_has_name():
 
 
 
-def test_brmodel::method_is_not_abstract():
-    assert not inspect.isabstract(brmodel::Method)
+def test_brmodel_method_is_not_abstract():
+    assert not inspect.isabstract(brmodel_Method)
 
 
-def test_brmodel::method_constructor_exists():
-    assert callable(brmodel::Method.__init__)
+def test_brmodel_method_constructor_exists():
+    assert callable(brmodel_Method.__init__)
 
 
-def test_brmodel::method_constructor_args():
-    sig = inspect.signature(brmodel::Method.__init__)
+def test_brmodel_method_constructor_args():
+    sig = inspect.signature(brmodel_Method.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "class_" in params, "Missing parameter 'class_'"
 
-def test_brmodel::method_has_name():
-    assert hasattr(brmodel::Method, "name")
+def test_brmodel_method_has_name():
+    assert hasattr(brmodel_Method, "name")
     descriptor = None
-    for klass in brmodel::Method.__mro__:
+    for klass in brmodel_Method.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_brmodel::method_has_class_():
-    assert hasattr(brmodel::Method, "class_")
+def test_brmodel_method_has_class_():
+    assert hasattr(brmodel_Method, "class_")
     descriptor = None
-    for klass in brmodel::Method.__mro__:
+    for klass in brmodel_Method.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
@@ -172,37 +172,37 @@ def test_method_constructor_args():
 
 
 
-def test_brmodel::reachablevariable_is_not_abstract():
-    assert not inspect.isabstract(brmodel::ReachableVariable)
+def test_brmodel_reachablevariable_is_not_abstract():
+    assert not inspect.isabstract(brmodel_ReachableVariable)
 
 
-def test_brmodel::reachablevariable_constructor_exists():
-    assert callable(brmodel::ReachableVariable.__init__)
+def test_brmodel_reachablevariable_constructor_exists():
+    assert callable(brmodel_ReachableVariable.__init__)
 
 
-def test_brmodel::reachablevariable_constructor_args():
-    sig = inspect.signature(brmodel::ReachableVariable.__init__)
+def test_brmodel_reachablevariable_constructor_args():
+    sig = inspect.signature(brmodel_ReachableVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_brmodel::reachablemethod_is_not_abstract():
-    assert not inspect.isabstract(brmodel::ReachableMethod)
+def test_brmodel_reachablemethod_is_not_abstract():
+    assert not inspect.isabstract(brmodel_ReachableMethod)
 
 
-def test_brmodel::reachablemethod_constructor_exists():
-    assert callable(brmodel::ReachableMethod.__init__)
+def test_brmodel_reachablemethod_constructor_exists():
+    assert callable(brmodel_ReachableMethod.__init__)
 
 
-def test_brmodel::reachablemethod_constructor_args():
-    sig = inspect.signature(brmodel::ReachableMethod.__init__)
+def test_brmodel_reachablemethod_constructor_args():
+    sig = inspect.signature(brmodel_ReachableMethod.__init__)
     params = list(sig.parameters.keys())
     assert "distance" in params, "Missing parameter 'distance'"
 
-def test_brmodel::reachablemethod_has_distance():
-    assert hasattr(brmodel::ReachableMethod, "distance")
+def test_brmodel_reachablemethod_has_distance():
+    assert hasattr(brmodel_ReachableMethod, "distance")
     descriptor = None
-    for klass in brmodel::ReachableMethod.__mro__:
+    for klass in brmodel_ReachableMethod.__mro__:
         if "distance" in klass.__dict__:
             descriptor = klass.__dict__["distance"]
             break
@@ -210,23 +210,23 @@ def test_brmodel::reachablemethod_has_distance():
 
 
 
-def test_brmodel::statement_is_not_abstract():
-    assert not inspect.isabstract(brmodel::Statement)
+def test_brmodel_statement_is_not_abstract():
+    assert not inspect.isabstract(brmodel_Statement)
 
 
-def test_brmodel::statement_constructor_exists():
-    assert callable(brmodel::Statement.__init__)
+def test_brmodel_statement_constructor_exists():
+    assert callable(brmodel_Statement.__init__)
 
 
-def test_brmodel::statement_constructor_args():
-    sig = inspect.signature(brmodel::Statement.__init__)
+def test_brmodel_statement_constructor_args():
+    sig = inspect.signature(brmodel_Statement.__init__)
     params = list(sig.parameters.keys())
     assert "textContent" in params, "Missing parameter 'textContent'"
 
-def test_brmodel::statement_has_textContent():
-    assert hasattr(brmodel::Statement, "textContent")
+def test_brmodel_statement_has_textContent():
+    assert hasattr(brmodel_Statement, "textContent")
     descriptor = None
-    for klass in brmodel::Statement.__mro__:
+    for klass in brmodel_Statement.__mro__:
         if "textContent" in klass.__dict__:
             descriptor = klass.__dict__["textContent"]
             break
@@ -234,37 +234,37 @@ def test_brmodel::statement_has_textContent():
 
 
 
-def test_brmodel::relatedmethod_is_not_abstract():
-    assert not inspect.isabstract(brmodel::RelatedMethod)
+def test_brmodel_relatedmethod_is_not_abstract():
+    assert not inspect.isabstract(brmodel_RelatedMethod)
 
 
-def test_brmodel::relatedmethod_constructor_exists():
-    assert callable(brmodel::RelatedMethod.__init__)
+def test_brmodel_relatedmethod_constructor_exists():
+    assert callable(brmodel_RelatedMethod.__init__)
 
 
-def test_brmodel::relatedmethod_constructor_args():
-    sig = inspect.signature(brmodel::RelatedMethod.__init__)
+def test_brmodel_relatedmethod_constructor_args():
+    sig = inspect.signature(brmodel_RelatedMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_brmodel::rulepart_is_not_abstract():
-    assert not inspect.isabstract(brmodel::RulePart)
+def test_brmodel_rulepart_is_not_abstract():
+    assert not inspect.isabstract(brmodel_RulePart)
 
 
-def test_brmodel::rulepart_constructor_exists():
-    assert callable(brmodel::RulePart.__init__)
+def test_brmodel_rulepart_constructor_exists():
+    assert callable(brmodel_RulePart.__init__)
 
 
-def test_brmodel::rulepart_constructor_args():
-    sig = inspect.signature(brmodel::RulePart.__init__)
+def test_brmodel_rulepart_constructor_args():
+    sig = inspect.signature(brmodel_RulePart.__init__)
     params = list(sig.parameters.keys())
     assert "granularity" in params, "Missing parameter 'granularity'"
 
-def test_brmodel::rulepart_has_granularity():
-    assert hasattr(brmodel::RulePart, "granularity")
+def test_brmodel_rulepart_has_granularity():
+    assert hasattr(brmodel_RulePart, "granularity")
     descriptor = None
-    for klass in brmodel::RulePart.__mro__:
+    for klass in brmodel_RulePart.__mro__:
         if "granularity" in klass.__dict__:
             descriptor = klass.__dict__["granularity"]
             break
@@ -272,37 +272,37 @@ def test_brmodel::rulepart_has_granularity():
 
 
 
-def test_brmodel::slicedvariable_is_not_abstract():
-    assert not inspect.isabstract(brmodel::SlicedVariable)
+def test_brmodel_slicedvariable_is_not_abstract():
+    assert not inspect.isabstract(brmodel_SlicedVariable)
 
 
-def test_brmodel::slicedvariable_constructor_exists():
-    assert callable(brmodel::SlicedVariable.__init__)
+def test_brmodel_slicedvariable_constructor_exists():
+    assert callable(brmodel_SlicedVariable.__init__)
 
 
-def test_brmodel::slicedvariable_constructor_args():
-    sig = inspect.signature(brmodel::SlicedVariable.__init__)
+def test_brmodel_slicedvariable_constructor_args():
+    sig = inspect.signature(brmodel_SlicedVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_brmodel::rule_is_not_abstract():
-    assert not inspect.isabstract(brmodel::Rule)
+def test_brmodel_rule_is_not_abstract():
+    assert not inspect.isabstract(brmodel_Rule)
 
 
-def test_brmodel::rule_constructor_exists():
-    assert callable(brmodel::Rule.__init__)
+def test_brmodel_rule_constructor_exists():
+    assert callable(brmodel_Rule.__init__)
 
 
-def test_brmodel::rule_constructor_args():
-    sig = inspect.signature(brmodel::Rule.__init__)
+def test_brmodel_rule_constructor_args():
+    sig = inspect.signature(brmodel_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_brmodel::rule_has_id():
-    assert hasattr(brmodel::Rule, "id")
+def test_brmodel_rule_has_id():
+    assert hasattr(brmodel_Rule, "id")
     descriptor = None
-    for klass in brmodel::Rule.__mro__:
+    for klass in brmodel_Rule.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -310,16 +310,16 @@ def test_brmodel::rule_has_id():
 
 
 
-def test_brmodel::model_is_not_abstract():
-    assert not inspect.isabstract(brmodel::Model)
+def test_brmodel_model_is_not_abstract():
+    assert not inspect.isabstract(brmodel_Model)
 
 
-def test_brmodel::model_constructor_exists():
-    assert callable(brmodel::Model.__init__)
+def test_brmodel_model_constructor_exists():
+    assert callable(brmodel_Model.__init__)
 
 
-def test_brmodel::model_constructor_args():
-    sig = inspect.signature(brmodel::Model.__init__)
+def test_brmodel_model_constructor_args():
+    sig = inspect.signature(brmodel_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -334,28 +334,28 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-brmodel::Trace_strategy = st.builds(
-    brmodel::Trace,
+brmodel_Trace_strategy = st.builds(
+    brmodel_Trace,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-brmodel::RelatedVariable_strategy = st.builds(
-    brmodel::RelatedVariable,
+brmodel_RelatedVariable_strategy = st.builds(
+    brmodel_RelatedVariable,
 )
-brmodel::EObject_strategy = st.builds(
-    brmodel::EObject,
+brmodel_EObject_strategy = st.builds(
+    brmodel_EObject,
 )
 Trace_strategy = st.builds(
     Trace,
 )
-brmodel::Variable_strategy = st.builds(
-    brmodel::Variable,
+brmodel_Variable_strategy = st.builds(
+    brmodel_Variable,
     name=
         safe_text
 )
-brmodel::Method_strategy = st.builds(
-    brmodel::Method,
+brmodel_Method_strategy = st.builds(
+    brmodel_Method,
     name=
         safe_text,
     class_=
@@ -364,103 +364,94 @@ brmodel::Method_strategy = st.builds(
 Method_strategy = st.builds(
     Method,
 )
-brmodel::ReachableVariable_strategy = st.builds(
-    brmodel::ReachableVariable,
+brmodel_ReachableVariable_strategy = st.builds(
+    brmodel_ReachableVariable,
 )
-brmodel::ReachableMethod_strategy = st.builds(
-    brmodel::ReachableMethod,
+brmodel_ReachableMethod_strategy = st.builds(
+    brmodel_ReachableMethod,
     distance=
         safe_text
 )
-brmodel::Statement_strategy = st.builds(
-    brmodel::Statement,
+brmodel_Statement_strategy = st.builds(
+    brmodel_Statement,
     textContent=
         safe_text
 )
-brmodel::RelatedMethod_strategy = st.builds(
-    brmodel::RelatedMethod,
+brmodel_RelatedMethod_strategy = st.builds(
+    brmodel_RelatedMethod,
 )
-brmodel::RulePart_strategy = st.builds(
-    brmodel::RulePart,
+brmodel_RulePart_strategy = st.builds(
+    brmodel_RulePart,
     granularity=
         safe_text
 )
-brmodel::SlicedVariable_strategy = st.builds(
-    brmodel::SlicedVariable,
+brmodel_SlicedVariable_strategy = st.builds(
+    brmodel_SlicedVariable,
 )
-brmodel::Rule_strategy = st.builds(
-    brmodel::Rule,
+brmodel_Rule_strategy = st.builds(
+    brmodel_Rule,
     id=
         safe_text
 )
-brmodel::Model_strategy = st.builds(
-    brmodel::Model,
+brmodel_Model_strategy = st.builds(
+    brmodel_Model,
 )
 
-@given(instance=brmodel::Trace_strategy)
+@given(instance=brmodel_Trace_strategy)
 @settings(max_examples=50)
-def test_brmodel::trace_instantiation(instance):
-    assert isinstance(instance, brmodel::Trace)
+def test_brmodel_trace_instantiation(instance):
+    assert isinstance(instance, brmodel_Trace)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=brmodel::RelatedVariable_strategy)
+@given(instance=brmodel_RelatedVariable_strategy)
 @settings(max_examples=50)
-def test_brmodel::relatedvariable_instantiation(instance):
-    assert isinstance(instance, brmodel::RelatedVariable)
+def test_brmodel_relatedvariable_instantiation(instance):
+    assert isinstance(instance, brmodel_RelatedVariable)
 
-@given(instance=brmodel::EObject_strategy)
+@given(instance=brmodel_EObject_strategy)
 @settings(max_examples=50)
-def test_brmodel::eobject_instantiation(instance):
-    assert isinstance(instance, brmodel::EObject)
+def test_brmodel_eobject_instantiation(instance):
+    assert isinstance(instance, brmodel_EObject)
 
 @given(instance=Trace_strategy)
 @settings(max_examples=50)
 def test_trace_instantiation(instance):
     assert isinstance(instance, Trace)
 
-@given(instance=brmodel::Variable_strategy)
+@given(instance=brmodel_Variable_strategy)
 @settings(max_examples=50)
-def test_brmodel::variable_instantiation(instance):
-    assert isinstance(instance, brmodel::Variable)
-
-@given(instance=brmodel::Variable_strategy)
-def test_brmodel::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_brmodel_variable_instantiation(instance):
+    assert isinstance(instance, brmodel_Variable)
 
 
-@given(instance=brmodel::Variable_strategy)
-def test_brmodel::variable_name_setter(instance):
+
+@given(instance=brmodel_Variable_strategy)
+def test_brmodel_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=brmodel::Method_strategy)
+@given(instance=brmodel_Method_strategy)
 @settings(max_examples=50)
-def test_brmodel::method_instantiation(instance):
-    assert isinstance(instance, brmodel::Method)
-
-@given(instance=brmodel::Method_strategy)
-def test_brmodel::method_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_brmodel_method_instantiation(instance):
+    assert isinstance(instance, brmodel_Method)
 
 
-@given(instance=brmodel::Method_strategy)
-def test_brmodel::method_name_setter(instance):
+
+@given(instance=brmodel_Method_strategy)
+def test_brmodel_method_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=brmodel::Method_strategy)
-def test_brmodel::method_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=brmodel::Method_strategy)
-def test_brmodel::method_class__setter(instance):
+@given(instance=brmodel_Method_strategy)
+def test_brmodel_method_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
@@ -470,86 +461,74 @@ def test_brmodel::method_class__setter(instance):
 def test_method_instantiation(instance):
     assert isinstance(instance, Method)
 
-@given(instance=brmodel::ReachableVariable_strategy)
+@given(instance=brmodel_ReachableVariable_strategy)
 @settings(max_examples=50)
-def test_brmodel::reachablevariable_instantiation(instance):
-    assert isinstance(instance, brmodel::ReachableVariable)
+def test_brmodel_reachablevariable_instantiation(instance):
+    assert isinstance(instance, brmodel_ReachableVariable)
 
-@given(instance=brmodel::ReachableMethod_strategy)
+@given(instance=brmodel_ReachableMethod_strategy)
 @settings(max_examples=50)
-def test_brmodel::reachablemethod_instantiation(instance):
-    assert isinstance(instance, brmodel::ReachableMethod)
-
-@given(instance=brmodel::ReachableMethod_strategy)
-def test_brmodel::reachablemethod_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_brmodel_reachablemethod_instantiation(instance):
+    assert isinstance(instance, brmodel_ReachableMethod)
 
 
-@given(instance=brmodel::ReachableMethod_strategy)
-def test_brmodel::reachablemethod_distance_setter(instance):
+
+@given(instance=brmodel_ReachableMethod_strategy)
+def test_brmodel_reachablemethod_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
 
-@given(instance=brmodel::Statement_strategy)
+@given(instance=brmodel_Statement_strategy)
 @settings(max_examples=50)
-def test_brmodel::statement_instantiation(instance):
-    assert isinstance(instance, brmodel::Statement)
-
-@given(instance=brmodel::Statement_strategy)
-def test_brmodel::statement_textContent_type(instance):
-    assert isinstance(instance.textContent, str)
+def test_brmodel_statement_instantiation(instance):
+    assert isinstance(instance, brmodel_Statement)
 
 
-@given(instance=brmodel::Statement_strategy)
-def test_brmodel::statement_textContent_setter(instance):
+
+@given(instance=brmodel_Statement_strategy)
+def test_brmodel_statement_textContent_setter(instance):
     original = instance.textContent
     instance.textContent = original
     assert instance.textContent == original
 
-@given(instance=brmodel::RelatedMethod_strategy)
+@given(instance=brmodel_RelatedMethod_strategy)
 @settings(max_examples=50)
-def test_brmodel::relatedmethod_instantiation(instance):
-    assert isinstance(instance, brmodel::RelatedMethod)
+def test_brmodel_relatedmethod_instantiation(instance):
+    assert isinstance(instance, brmodel_RelatedMethod)
 
-@given(instance=brmodel::RulePart_strategy)
+@given(instance=brmodel_RulePart_strategy)
 @settings(max_examples=50)
-def test_brmodel::rulepart_instantiation(instance):
-    assert isinstance(instance, brmodel::RulePart)
-
-@given(instance=brmodel::RulePart_strategy)
-def test_brmodel::rulepart_granularity_type(instance):
-    assert isinstance(instance.granularity, str)
+def test_brmodel_rulepart_instantiation(instance):
+    assert isinstance(instance, brmodel_RulePart)
 
 
-@given(instance=brmodel::RulePart_strategy)
-def test_brmodel::rulepart_granularity_setter(instance):
+
+@given(instance=brmodel_RulePart_strategy)
+def test_brmodel_rulepart_granularity_setter(instance):
     original = instance.granularity
     instance.granularity = original
     assert instance.granularity == original
 
-@given(instance=brmodel::SlicedVariable_strategy)
+@given(instance=brmodel_SlicedVariable_strategy)
 @settings(max_examples=50)
-def test_brmodel::slicedvariable_instantiation(instance):
-    assert isinstance(instance, brmodel::SlicedVariable)
+def test_brmodel_slicedvariable_instantiation(instance):
+    assert isinstance(instance, brmodel_SlicedVariable)
 
-@given(instance=brmodel::Rule_strategy)
+@given(instance=brmodel_Rule_strategy)
 @settings(max_examples=50)
-def test_brmodel::rule_instantiation(instance):
-    assert isinstance(instance, brmodel::Rule)
-
-@given(instance=brmodel::Rule_strategy)
-def test_brmodel::rule_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_brmodel_rule_instantiation(instance):
+    assert isinstance(instance, brmodel_Rule)
 
 
-@given(instance=brmodel::Rule_strategy)
-def test_brmodel::rule_id_setter(instance):
+
+@given(instance=brmodel_Rule_strategy)
+def test_brmodel_rule_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=brmodel::Model_strategy)
+@given(instance=brmodel_Model_strategy)
 @settings(max_examples=50)
-def test_brmodel::model_instantiation(instance):
-    assert isinstance(instance, brmodel::Model)
+def test_brmodel_model_instantiation(instance):
+    assert isinstance(instance, brmodel_Model)

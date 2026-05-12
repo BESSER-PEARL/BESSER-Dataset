@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TypeB::BStringElement,
-    TypeB::BDoubleElement,
+from python_code import (
+    TypeB_BStringElement,
+    TypeB_BDoubleElement,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_typeb::bstringelement_is_not_abstract():
-    assert not inspect.isabstract(TypeB::BStringElement)
+def test_typeb_bstringelement_is_not_abstract():
+    assert not inspect.isabstract(TypeB_BStringElement)
 
 
-def test_typeb::bstringelement_constructor_exists():
-    assert callable(TypeB::BStringElement.__init__)
+def test_typeb_bstringelement_constructor_exists():
+    assert callable(TypeB_BStringElement.__init__)
 
 
-def test_typeb::bstringelement_constructor_args():
-    sig = inspect.signature(TypeB::BStringElement.__init__)
+def test_typeb_bstringelement_constructor_args():
+    sig = inspect.signature(TypeB_BStringElement.__init__)
     params = list(sig.parameters.keys())
     assert "stringValue" in params, "Missing parameter 'stringValue'"
 
-def test_typeb::bstringelement_has_stringValue():
-    assert hasattr(TypeB::BStringElement, "stringValue")
+def test_typeb_bstringelement_has_stringValue():
+    assert hasattr(TypeB_BStringElement, "stringValue")
     descriptor = None
-    for klass in TypeB::BStringElement.__mro__:
+    for klass in TypeB_BStringElement.__mro__:
         if "stringValue" in klass.__dict__:
             descriptor = klass.__dict__["stringValue"]
             break
@@ -40,23 +40,23 @@ def test_typeb::bstringelement_has_stringValue():
 
 
 
-def test_typeb::bdoubleelement_is_not_abstract():
-    assert not inspect.isabstract(TypeB::BDoubleElement)
+def test_typeb_bdoubleelement_is_not_abstract():
+    assert not inspect.isabstract(TypeB_BDoubleElement)
 
 
-def test_typeb::bdoubleelement_constructor_exists():
-    assert callable(TypeB::BDoubleElement.__init__)
+def test_typeb_bdoubleelement_constructor_exists():
+    assert callable(TypeB_BDoubleElement.__init__)
 
 
-def test_typeb::bdoubleelement_constructor_args():
-    sig = inspect.signature(TypeB::BDoubleElement.__init__)
+def test_typeb_bdoubleelement_constructor_args():
+    sig = inspect.signature(TypeB_BDoubleElement.__init__)
     params = list(sig.parameters.keys())
     assert "doubleValue" in params, "Missing parameter 'doubleValue'"
 
-def test_typeb::bdoubleelement_has_doubleValue():
-    assert hasattr(TypeB::BDoubleElement, "doubleValue")
+def test_typeb_bdoubleelement_has_doubleValue():
+    assert hasattr(TypeB_BDoubleElement, "doubleValue")
     descriptor = None
-    for klass in TypeB::BDoubleElement.__mro__:
+    for klass in TypeB_BDoubleElement.__mro__:
         if "doubleValue" in klass.__dict__:
             descriptor = klass.__dict__["doubleValue"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TypeB::BStringElement_strategy = st.builds(
-    TypeB::BStringElement,
+TypeB_BStringElement_strategy = st.builds(
+    TypeB_BStringElement,
     stringValue=
         safe_text
 )
-TypeB::BDoubleElement_strategy = st.builds(
-    TypeB::BDoubleElement,
+TypeB_BDoubleElement_strategy = st.builds(
+    TypeB_BDoubleElement,
     doubleValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 
-@given(instance=TypeB::BStringElement_strategy)
+@given(instance=TypeB_BStringElement_strategy)
 @settings(max_examples=50)
-def test_typeb::bstringelement_instantiation(instance):
-    assert isinstance(instance, TypeB::BStringElement)
-
-@given(instance=TypeB::BStringElement_strategy)
-def test_typeb::bstringelement_stringValue_type(instance):
-    assert isinstance(instance.stringValue, str)
+def test_typeb_bstringelement_instantiation(instance):
+    assert isinstance(instance, TypeB_BStringElement)
 
 
-@given(instance=TypeB::BStringElement_strategy)
-def test_typeb::bstringelement_stringValue_setter(instance):
+
+@given(instance=TypeB_BStringElement_strategy)
+def test_typeb_bstringelement_stringValue_setter(instance):
     original = instance.stringValue
     instance.stringValue = original
     assert instance.stringValue == original
 
-@given(instance=TypeB::BDoubleElement_strategy)
+@given(instance=TypeB_BDoubleElement_strategy)
 @settings(max_examples=50)
-def test_typeb::bdoubleelement_instantiation(instance):
-    assert isinstance(instance, TypeB::BDoubleElement)
-
-@given(instance=TypeB::BDoubleElement_strategy)
-def test_typeb::bdoubleelement_doubleValue_type(instance):
-    assert isinstance(instance.doubleValue, float)
+def test_typeb_bdoubleelement_instantiation(instance):
+    assert isinstance(instance, TypeB_BDoubleElement)
 
 
-@given(instance=TypeB::BDoubleElement_strategy)
-def test_typeb::bdoubleelement_doubleValue_setter(instance):
+
+@given(instance=TypeB_BDoubleElement_strategy)
+def test_typeb_bdoubleelement_doubleValue_setter(instance):
     original = instance.doubleValue
     instance.doubleValue = original
     assert instance.doubleValue == original

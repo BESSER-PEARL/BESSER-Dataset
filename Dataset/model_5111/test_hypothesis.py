@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SubType,
     SuperType,
-    testPackage::SubType,
-    testPackage::SubSubType,
-    testPackage::SuperType,
+    testPackage_SubType,
+    testPackage_SubSubType,
+    testPackage_SuperType,
 )
 
 # =============================================================================
@@ -47,44 +47,44 @@ def test_supertype_constructor_args():
 
 
 
-def test_testpackage::subtype_is_not_abstract():
-    assert not inspect.isabstract(testPackage::SubType)
+def test_testpackage_subtype_is_not_abstract():
+    assert not inspect.isabstract(testPackage_SubType)
 
 
-def test_testpackage::subtype_constructor_exists():
-    assert callable(testPackage::SubType.__init__)
+def test_testpackage_subtype_constructor_exists():
+    assert callable(testPackage_SubType.__init__)
 
 
-def test_testpackage::subtype_constructor_args():
-    sig = inspect.signature(testPackage::SubType.__init__)
+def test_testpackage_subtype_constructor_args():
+    sig = inspect.signature(testPackage_SubType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::subsubtype_is_not_abstract():
-    assert not inspect.isabstract(testPackage::SubSubType)
+def test_testpackage_subsubtype_is_not_abstract():
+    assert not inspect.isabstract(testPackage_SubSubType)
 
 
-def test_testpackage::subsubtype_constructor_exists():
-    assert callable(testPackage::SubSubType.__init__)
+def test_testpackage_subsubtype_constructor_exists():
+    assert callable(testPackage_SubSubType.__init__)
 
 
-def test_testpackage::subsubtype_constructor_args():
-    sig = inspect.signature(testPackage::SubSubType.__init__)
+def test_testpackage_subsubtype_constructor_args():
+    sig = inspect.signature(testPackage_SubSubType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::supertype_is_not_abstract():
-    assert not inspect.isabstract(testPackage::SuperType)
+def test_testpackage_supertype_is_not_abstract():
+    assert not inspect.isabstract(testPackage_SuperType)
 
 
-def test_testpackage::supertype_constructor_exists():
-    assert callable(testPackage::SuperType.__init__)
+def test_testpackage_supertype_constructor_exists():
+    assert callable(testPackage_SuperType.__init__)
 
 
-def test_testpackage::supertype_constructor_args():
-    sig = inspect.signature(testPackage::SuperType.__init__)
+def test_testpackage_supertype_constructor_args():
+    sig = inspect.signature(testPackage_SuperType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,14 +105,14 @@ SubType_strategy = st.builds(
 SuperType_strategy = st.builds(
     SuperType,
 )
-testPackage::SubType_strategy = st.builds(
-    testPackage::SubType,
+testPackage_SubType_strategy = st.builds(
+    testPackage_SubType,
 )
-testPackage::SubSubType_strategy = st.builds(
-    testPackage::SubSubType,
+testPackage_SubSubType_strategy = st.builds(
+    testPackage_SubSubType,
 )
-testPackage::SuperType_strategy = st.builds(
-    testPackage::SuperType,
+testPackage_SuperType_strategy = st.builds(
+    testPackage_SuperType,
 )
 
 @given(instance=SubType_strategy)
@@ -125,17 +125,17 @@ def test_subtype_instantiation(instance):
 def test_supertype_instantiation(instance):
     assert isinstance(instance, SuperType)
 
-@given(instance=testPackage::SubType_strategy)
+@given(instance=testPackage_SubType_strategy)
 @settings(max_examples=50)
-def test_testpackage::subtype_instantiation(instance):
-    assert isinstance(instance, testPackage::SubType)
+def test_testpackage_subtype_instantiation(instance):
+    assert isinstance(instance, testPackage_SubType)
 
-@given(instance=testPackage::SubSubType_strategy)
+@given(instance=testPackage_SubSubType_strategy)
 @settings(max_examples=50)
-def test_testpackage::subsubtype_instantiation(instance):
-    assert isinstance(instance, testPackage::SubSubType)
+def test_testpackage_subsubtype_instantiation(instance):
+    assert isinstance(instance, testPackage_SubSubType)
 
-@given(instance=testPackage::SuperType_strategy)
+@given(instance=testPackage_SuperType_strategy)
 @settings(max_examples=50)
-def test_testpackage::supertype_instantiation(instance):
-    assert isinstance(instance, testPackage::SuperType)
+def test_testpackage_supertype_instantiation(instance):
+    assert isinstance(instance, testPackage_SuperType)

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    m::pa::C,
-    m::pa::B,
-    m::pa::A,
-    m::ToplevelClass,
+from python_code import (
+    m_pa_C,
+    m_pa_B,
+    m_pa_A,
+    m_ToplevelClass,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_m::pa::c_is_not_abstract():
-    assert not inspect.isabstract(m::pa::C)
+def test_m_pa_c_is_not_abstract():
+    assert not inspect.isabstract(m_pa_C)
 
 
-def test_m::pa::c_constructor_exists():
-    assert callable(m::pa::C.__init__)
+def test_m_pa_c_constructor_exists():
+    assert callable(m_pa_C.__init__)
 
 
-def test_m::pa::c_constructor_args():
-    sig = inspect.signature(m::pa::C.__init__)
+def test_m_pa_c_constructor_args():
+    sig = inspect.signature(m_pa_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_m::pa::b_is_not_abstract():
-    assert not inspect.isabstract(m::pa::B)
+def test_m_pa_b_is_not_abstract():
+    assert not inspect.isabstract(m_pa_B)
 
 
-def test_m::pa::b_constructor_exists():
-    assert callable(m::pa::B.__init__)
+def test_m_pa_b_constructor_exists():
+    assert callable(m_pa_B.__init__)
 
 
-def test_m::pa::b_constructor_args():
-    sig = inspect.signature(m::pa::B.__init__)
+def test_m_pa_b_constructor_args():
+    sig = inspect.signature(m_pa_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_m::pa::a_is_not_abstract():
-    assert not inspect.isabstract(m::pa::A)
+def test_m_pa_a_is_not_abstract():
+    assert not inspect.isabstract(m_pa_A)
 
 
-def test_m::pa::a_constructor_exists():
-    assert callable(m::pa::A.__init__)
+def test_m_pa_a_constructor_exists():
+    assert callable(m_pa_A.__init__)
 
 
-def test_m::pa::a_constructor_args():
-    sig = inspect.signature(m::pa::A.__init__)
+def test_m_pa_a_constructor_args():
+    sig = inspect.signature(m_pa_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_m::toplevelclass_is_not_abstract():
-    assert not inspect.isabstract(m::ToplevelClass)
+def test_m_toplevelclass_is_not_abstract():
+    assert not inspect.isabstract(m_ToplevelClass)
 
 
-def test_m::toplevelclass_constructor_exists():
-    assert callable(m::ToplevelClass.__init__)
+def test_m_toplevelclass_constructor_exists():
+    assert callable(m_ToplevelClass.__init__)
 
 
-def test_m::toplevelclass_constructor_args():
-    sig = inspect.signature(m::ToplevelClass.__init__)
+def test_m_toplevelclass_constructor_args():
+    sig = inspect.signature(m_ToplevelClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-m::pa::C_strategy = st.builds(
-    m::pa::C,
+m_pa_C_strategy = st.builds(
+    m_pa_C,
 )
-m::pa::B_strategy = st.builds(
-    m::pa::B,
+m_pa_B_strategy = st.builds(
+    m_pa_B,
 )
-m::pa::A_strategy = st.builds(
-    m::pa::A,
+m_pa_A_strategy = st.builds(
+    m_pa_A,
 )
-m::ToplevelClass_strategy = st.builds(
-    m::ToplevelClass,
+m_ToplevelClass_strategy = st.builds(
+    m_ToplevelClass,
 )
 
-@given(instance=m::pa::C_strategy)
+@given(instance=m_pa_C_strategy)
 @settings(max_examples=50)
-def test_m::pa::c_instantiation(instance):
-    assert isinstance(instance, m::pa::C)
+def test_m_pa_c_instantiation(instance):
+    assert isinstance(instance, m_pa_C)
 
-@given(instance=m::pa::B_strategy)
+@given(instance=m_pa_B_strategy)
 @settings(max_examples=50)
-def test_m::pa::b_instantiation(instance):
-    assert isinstance(instance, m::pa::B)
+def test_m_pa_b_instantiation(instance):
+    assert isinstance(instance, m_pa_B)
 
-@given(instance=m::pa::A_strategy)
+@given(instance=m_pa_A_strategy)
 @settings(max_examples=50)
-def test_m::pa::a_instantiation(instance):
-    assert isinstance(instance, m::pa::A)
+def test_m_pa_a_instantiation(instance):
+    assert isinstance(instance, m_pa_A)
 
-@given(instance=m::ToplevelClass_strategy)
+@given(instance=m_ToplevelClass_strategy)
 @settings(max_examples=50)
-def test_m::toplevelclass_instantiation(instance):
-    assert isinstance(instance, m::ToplevelClass)
+def test_m_toplevelclass_instantiation(instance):
+    assert isinstance(instance, m_ToplevelClass)

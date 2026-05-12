@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractClassB,
-    opposite2::ConcreteEndB2,
-    opposite2::ConcreteEndB1,
-    opposite2::AbstractClassB,
-    opposite2::EndA,
-    opposite2::Root,
+    opposite2_ConcreteEndB2,
+    opposite2_ConcreteEndB1,
+    opposite2_AbstractClassB,
+    opposite2_EndA,
+    opposite2_Root,
 )
 
 # =============================================================================
@@ -34,72 +34,72 @@ def test_abstractclassb_constructor_args():
 
 
 
-def test_opposite2::concreteendb2_is_not_abstract():
-    assert not inspect.isabstract(opposite2::ConcreteEndB2)
+def test_opposite2_concreteendb2_is_not_abstract():
+    assert not inspect.isabstract(opposite2_ConcreteEndB2)
 
 
-def test_opposite2::concreteendb2_constructor_exists():
-    assert callable(opposite2::ConcreteEndB2.__init__)
+def test_opposite2_concreteendb2_constructor_exists():
+    assert callable(opposite2_ConcreteEndB2.__init__)
 
 
-def test_opposite2::concreteendb2_constructor_args():
-    sig = inspect.signature(opposite2::ConcreteEndB2.__init__)
+def test_opposite2_concreteendb2_constructor_args():
+    sig = inspect.signature(opposite2_ConcreteEndB2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite2::concreteendb1_is_not_abstract():
-    assert not inspect.isabstract(opposite2::ConcreteEndB1)
+def test_opposite2_concreteendb1_is_not_abstract():
+    assert not inspect.isabstract(opposite2_ConcreteEndB1)
 
 
-def test_opposite2::concreteendb1_constructor_exists():
-    assert callable(opposite2::ConcreteEndB1.__init__)
+def test_opposite2_concreteendb1_constructor_exists():
+    assert callable(opposite2_ConcreteEndB1.__init__)
 
 
-def test_opposite2::concreteendb1_constructor_args():
-    sig = inspect.signature(opposite2::ConcreteEndB1.__init__)
+def test_opposite2_concreteendb1_constructor_args():
+    sig = inspect.signature(opposite2_ConcreteEndB1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite2::abstractclassb_is_not_abstract():
-    assert not inspect.isabstract(opposite2::AbstractClassB)
+def test_opposite2_abstractclassb_is_not_abstract():
+    assert not inspect.isabstract(opposite2_AbstractClassB)
 
 
-def test_opposite2::abstractclassb_constructor_exists():
-    assert callable(opposite2::AbstractClassB.__init__)
+def test_opposite2_abstractclassb_constructor_exists():
+    assert callable(opposite2_AbstractClassB.__init__)
 
 
-def test_opposite2::abstractclassb_constructor_args():
-    sig = inspect.signature(opposite2::AbstractClassB.__init__)
+def test_opposite2_abstractclassb_constructor_args():
+    sig = inspect.signature(opposite2_AbstractClassB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite2::enda_is_not_abstract():
-    assert not inspect.isabstract(opposite2::EndA)
+def test_opposite2_enda_is_not_abstract():
+    assert not inspect.isabstract(opposite2_EndA)
 
 
-def test_opposite2::enda_constructor_exists():
-    assert callable(opposite2::EndA.__init__)
+def test_opposite2_enda_constructor_exists():
+    assert callable(opposite2_EndA.__init__)
 
 
-def test_opposite2::enda_constructor_args():
-    sig = inspect.signature(opposite2::EndA.__init__)
+def test_opposite2_enda_constructor_args():
+    sig = inspect.signature(opposite2_EndA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite2::root_is_not_abstract():
-    assert not inspect.isabstract(opposite2::Root)
+def test_opposite2_root_is_not_abstract():
+    assert not inspect.isabstract(opposite2_Root)
 
 
-def test_opposite2::root_constructor_exists():
-    assert callable(opposite2::Root.__init__)
+def test_opposite2_root_constructor_exists():
+    assert callable(opposite2_Root.__init__)
 
 
-def test_opposite2::root_constructor_args():
-    sig = inspect.signature(opposite2::Root.__init__)
+def test_opposite2_root_constructor_args():
+    sig = inspect.signature(opposite2_Root.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,20 +117,20 @@ safe_text = st.text(
 AbstractClassB_strategy = st.builds(
     AbstractClassB,
 )
-opposite2::ConcreteEndB2_strategy = st.builds(
-    opposite2::ConcreteEndB2,
+opposite2_ConcreteEndB2_strategy = st.builds(
+    opposite2_ConcreteEndB2,
 )
-opposite2::ConcreteEndB1_strategy = st.builds(
-    opposite2::ConcreteEndB1,
+opposite2_ConcreteEndB1_strategy = st.builds(
+    opposite2_ConcreteEndB1,
 )
-opposite2::AbstractClassB_strategy = st.builds(
-    opposite2::AbstractClassB,
+opposite2_AbstractClassB_strategy = st.builds(
+    opposite2_AbstractClassB,
 )
-opposite2::EndA_strategy = st.builds(
-    opposite2::EndA,
+opposite2_EndA_strategy = st.builds(
+    opposite2_EndA,
 )
-opposite2::Root_strategy = st.builds(
-    opposite2::Root,
+opposite2_Root_strategy = st.builds(
+    opposite2_Root,
 )
 
 @given(instance=AbstractClassB_strategy)
@@ -138,27 +138,27 @@ opposite2::Root_strategy = st.builds(
 def test_abstractclassb_instantiation(instance):
     assert isinstance(instance, AbstractClassB)
 
-@given(instance=opposite2::ConcreteEndB2_strategy)
+@given(instance=opposite2_ConcreteEndB2_strategy)
 @settings(max_examples=50)
-def test_opposite2::concreteendb2_instantiation(instance):
-    assert isinstance(instance, opposite2::ConcreteEndB2)
+def test_opposite2_concreteendb2_instantiation(instance):
+    assert isinstance(instance, opposite2_ConcreteEndB2)
 
-@given(instance=opposite2::ConcreteEndB1_strategy)
+@given(instance=opposite2_ConcreteEndB1_strategy)
 @settings(max_examples=50)
-def test_opposite2::concreteendb1_instantiation(instance):
-    assert isinstance(instance, opposite2::ConcreteEndB1)
+def test_opposite2_concreteendb1_instantiation(instance):
+    assert isinstance(instance, opposite2_ConcreteEndB1)
 
-@given(instance=opposite2::AbstractClassB_strategy)
+@given(instance=opposite2_AbstractClassB_strategy)
 @settings(max_examples=50)
-def test_opposite2::abstractclassb_instantiation(instance):
-    assert isinstance(instance, opposite2::AbstractClassB)
+def test_opposite2_abstractclassb_instantiation(instance):
+    assert isinstance(instance, opposite2_AbstractClassB)
 
-@given(instance=opposite2::EndA_strategy)
+@given(instance=opposite2_EndA_strategy)
 @settings(max_examples=50)
-def test_opposite2::enda_instantiation(instance):
-    assert isinstance(instance, opposite2::EndA)
+def test_opposite2_enda_instantiation(instance):
+    assert isinstance(instance, opposite2_EndA)
 
-@given(instance=opposite2::Root_strategy)
+@given(instance=opposite2_Root_strategy)
 @settings(max_examples=50)
-def test_opposite2::root_instantiation(instance):
-    assert isinstance(instance, opposite2::Root)
+def test_opposite2_root_instantiation(instance):
+    assert isinstance(instance, opposite2_Root)

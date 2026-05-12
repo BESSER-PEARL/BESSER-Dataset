@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractGreeting,
-    myDsl::GreetingReference,
-    myDsl::Greeting,
-    myDsl::AbstractGreeting,
-    myDsl::Model,
+    myDsl_GreetingReference,
+    myDsl_Greeting,
+    myDsl_AbstractGreeting,
+    myDsl_Model,
 )
 
 # =============================================================================
@@ -33,51 +33,51 @@ def test_abstractgreeting_constructor_args():
 
 
 
-def test_mydsl::greetingreference_is_not_abstract():
-    assert not inspect.isabstract(myDsl::GreetingReference)
+def test_mydsl_greetingreference_is_not_abstract():
+    assert not inspect.isabstract(myDsl_GreetingReference)
 
 
-def test_mydsl::greetingreference_constructor_exists():
-    assert callable(myDsl::GreetingReference.__init__)
+def test_mydsl_greetingreference_constructor_exists():
+    assert callable(myDsl_GreetingReference.__init__)
 
 
-def test_mydsl::greetingreference_constructor_args():
-    sig = inspect.signature(myDsl::GreetingReference.__init__)
+def test_mydsl_greetingreference_constructor_args():
+    sig = inspect.signature(myDsl_GreetingReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Greeting)
+def test_mydsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Greeting)
 
 
-def test_mydsl::greeting_constructor_exists():
-    assert callable(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_exists():
+    assert callable(myDsl_Greeting.__init__)
 
 
-def test_mydsl::greeting_constructor_args():
-    sig = inspect.signature(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_args():
+    sig = inspect.signature(myDsl_Greeting.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::abstractgreeting_is_not_abstract():
-    assert not inspect.isabstract(myDsl::AbstractGreeting)
+def test_mydsl_abstractgreeting_is_not_abstract():
+    assert not inspect.isabstract(myDsl_AbstractGreeting)
 
 
-def test_mydsl::abstractgreeting_constructor_exists():
-    assert callable(myDsl::AbstractGreeting.__init__)
+def test_mydsl_abstractgreeting_constructor_exists():
+    assert callable(myDsl_AbstractGreeting.__init__)
 
 
-def test_mydsl::abstractgreeting_constructor_args():
-    sig = inspect.signature(myDsl::AbstractGreeting.__init__)
+def test_mydsl_abstractgreeting_constructor_args():
+    sig = inspect.signature(myDsl_AbstractGreeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::abstractgreeting_has_name():
-    assert hasattr(myDsl::AbstractGreeting, "name")
+def test_mydsl_abstractgreeting_has_name():
+    assert hasattr(myDsl_AbstractGreeting, "name")
     descriptor = None
-    for klass in myDsl::AbstractGreeting.__mro__:
+    for klass in myDsl_AbstractGreeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -85,16 +85,16 @@ def test_mydsl::abstractgreeting_has_name():
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,19 +112,19 @@ safe_text = st.text(
 AbstractGreeting_strategy = st.builds(
     AbstractGreeting,
 )
-myDsl::GreetingReference_strategy = st.builds(
-    myDsl::GreetingReference,
+myDsl_GreetingReference_strategy = st.builds(
+    myDsl_GreetingReference,
 )
-myDsl::Greeting_strategy = st.builds(
-    myDsl::Greeting,
+myDsl_Greeting_strategy = st.builds(
+    myDsl_Greeting,
 )
-myDsl::AbstractGreeting_strategy = st.builds(
-    myDsl::AbstractGreeting,
+myDsl_AbstractGreeting_strategy = st.builds(
+    myDsl_AbstractGreeting,
     name=
         safe_text
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
 
 @given(instance=AbstractGreeting_strategy)
@@ -132,33 +132,30 @@ myDsl::Model_strategy = st.builds(
 def test_abstractgreeting_instantiation(instance):
     assert isinstance(instance, AbstractGreeting)
 
-@given(instance=myDsl::GreetingReference_strategy)
+@given(instance=myDsl_GreetingReference_strategy)
 @settings(max_examples=50)
-def test_mydsl::greetingreference_instantiation(instance):
-    assert isinstance(instance, myDsl::GreetingReference)
+def test_mydsl_greetingreference_instantiation(instance):
+    assert isinstance(instance, myDsl_GreetingReference)
 
-@given(instance=myDsl::Greeting_strategy)
+@given(instance=myDsl_Greeting_strategy)
 @settings(max_examples=50)
-def test_mydsl::greeting_instantiation(instance):
-    assert isinstance(instance, myDsl::Greeting)
+def test_mydsl_greeting_instantiation(instance):
+    assert isinstance(instance, myDsl_Greeting)
 
-@given(instance=myDsl::AbstractGreeting_strategy)
+@given(instance=myDsl_AbstractGreeting_strategy)
 @settings(max_examples=50)
-def test_mydsl::abstractgreeting_instantiation(instance):
-    assert isinstance(instance, myDsl::AbstractGreeting)
-
-@given(instance=myDsl::AbstractGreeting_strategy)
-def test_mydsl::abstractgreeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_abstractgreeting_instantiation(instance):
+    assert isinstance(instance, myDsl_AbstractGreeting)
 
 
-@given(instance=myDsl::AbstractGreeting_strategy)
-def test_mydsl::abstractgreeting_name_setter(instance):
+
+@given(instance=myDsl_AbstractGreeting_strategy)
+def test_mydsl_abstractgreeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)

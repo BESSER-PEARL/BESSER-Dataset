@@ -3,56 +3,56 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    archimateC2::Device,
-    archimateC2::SystemSoftware,
+    archimateC2_Device,
+    archimateC2_SystemSoftware,
     ApplicationComponent,
-    archimateC2::ApplicationCollaboration,
+    archimateC2_ApplicationCollaboration,
     ApplicationFunction,
-    archimateC2::ApplicationInteraction,
+    archimateC2_ApplicationInteraction,
     BusinessRole,
-    archimateC2::BusinessCollaboration,
+    archimateC2_BusinessCollaboration,
     ActiveStructure,
     BusinessBehaviorElement,
-    archimateC2::BusinessFunction,
-    archimateC2::BusinessInteraction,
-    archimateC2::BusinessProcess,
-    archimateC2::BusinessRole,
-    archimateC2::BusinessActor,
+    archimateC2_BusinessFunction,
+    archimateC2_BusinessInteraction,
+    archimateC2_BusinessProcess,
+    archimateC2_BusinessRole,
+    archimateC2_BusinessActor,
     BehaviorElement,
-    archimateC2::BusinessInterface,
-    archimateC2::BusinessBehaviorElement,
-    archimateC2::Location,
+    archimateC2_BusinessInterface,
+    archimateC2_BusinessBehaviorElement,
+    archimateC2_Location,
     BusinessObject,
     PassiveStructure,
-    archimateC2::Representation,
-    archimateC2::BusinessObject,
-    archimateC2::Meaning,
-    archimateC2::Product,
-    archimateC2::Value,
-    archimateC2::BusinessService,
-    archimateC2::Contract,
+    archimateC2_Product,
+    archimateC2_Representation,
+    archimateC2_Meaning,
+    archimateC2_BusinessObject,
+    archimateC2_Value,
+    archimateC2_BusinessService,
+    archimateC2_Contract,
     ArchimateElement,
-    archimateC2::BusinessEvent,
-    archimateC2::ApplicationComponent,
-    archimateC2::ApplicationService,
-    archimateC2::Node,
-    archimateC2::InfrastructureInterface,
-    archimateC2::CommunicationPath,
-    archimateC2::Network,
-    archimateC2::InfrastructureService,
-    archimateC2::ApplicationInterface,
-    archimateC2::Artifact,
-    archimateC2::DataObject,
-    archimateC2::ApplicationFunction,
-    archimateC2::PassiveStructure,
-    archimateC2::ActiveStructure,
-    archimateC2::BehaviorElement,
-    archimateC2::ArchimateElement,
-    archimateC2::ArchimateModel,
+    archimateC2_InfrastructureService,
+    archimateC2_ApplicationComponent,
+    archimateC2_Network,
+    archimateC2_DataObject,
+    archimateC2_Node,
+    archimateC2_ApplicationInterface,
+    archimateC2_Artifact,
+    archimateC2_CommunicationPath,
+    archimateC2_ApplicationService,
+    archimateC2_BusinessEvent,
+    archimateC2_ApplicationFunction,
+    archimateC2_InfrastructureInterface,
+    archimateC2_PassiveStructure,
+    archimateC2_ActiveStructure,
+    archimateC2_BehaviorElement,
+    archimateC2_ArchimateElement,
+    archimateC2_ArchimateModel,
 )
 
 # =============================================================================
@@ -75,30 +75,30 @@ def test_node_constructor_args():
 
 
 
-def test_archimatec2::device_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Device)
+def test_archimatec2_device_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Device)
 
 
-def test_archimatec2::device_constructor_exists():
-    assert callable(archimateC2::Device.__init__)
+def test_archimatec2_device_constructor_exists():
+    assert callable(archimateC2_Device.__init__)
 
 
-def test_archimatec2::device_constructor_args():
-    sig = inspect.signature(archimateC2::Device.__init__)
+def test_archimatec2_device_constructor_args():
+    sig = inspect.signature(archimateC2_Device.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::systemsoftware_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::SystemSoftware)
+def test_archimatec2_systemsoftware_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_SystemSoftware)
 
 
-def test_archimatec2::systemsoftware_constructor_exists():
-    assert callable(archimateC2::SystemSoftware.__init__)
+def test_archimatec2_systemsoftware_constructor_exists():
+    assert callable(archimateC2_SystemSoftware.__init__)
 
 
-def test_archimatec2::systemsoftware_constructor_args():
-    sig = inspect.signature(archimateC2::SystemSoftware.__init__)
+def test_archimatec2_systemsoftware_constructor_args():
+    sig = inspect.signature(archimateC2_SystemSoftware.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,16 +117,16 @@ def test_applicationcomponent_constructor_args():
 
 
 
-def test_archimatec2::applicationcollaboration_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ApplicationCollaboration)
+def test_archimatec2_applicationcollaboration_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ApplicationCollaboration)
 
 
-def test_archimatec2::applicationcollaboration_constructor_exists():
-    assert callable(archimateC2::ApplicationCollaboration.__init__)
+def test_archimatec2_applicationcollaboration_constructor_exists():
+    assert callable(archimateC2_ApplicationCollaboration.__init__)
 
 
-def test_archimatec2::applicationcollaboration_constructor_args():
-    sig = inspect.signature(archimateC2::ApplicationCollaboration.__init__)
+def test_archimatec2_applicationcollaboration_constructor_args():
+    sig = inspect.signature(archimateC2_ApplicationCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -145,16 +145,16 @@ def test_applicationfunction_constructor_args():
 
 
 
-def test_archimatec2::applicationinteraction_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ApplicationInteraction)
+def test_archimatec2_applicationinteraction_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ApplicationInteraction)
 
 
-def test_archimatec2::applicationinteraction_constructor_exists():
-    assert callable(archimateC2::ApplicationInteraction.__init__)
+def test_archimatec2_applicationinteraction_constructor_exists():
+    assert callable(archimateC2_ApplicationInteraction.__init__)
 
 
-def test_archimatec2::applicationinteraction_constructor_args():
-    sig = inspect.signature(archimateC2::ApplicationInteraction.__init__)
+def test_archimatec2_applicationinteraction_constructor_args():
+    sig = inspect.signature(archimateC2_ApplicationInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -173,23 +173,23 @@ def test_businessrole_constructor_args():
 
 
 
-def test_archimatec2::businesscollaboration_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessCollaboration)
+def test_archimatec2_businesscollaboration_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessCollaboration)
 
 
-def test_archimatec2::businesscollaboration_constructor_exists():
-    assert callable(archimateC2::BusinessCollaboration.__init__)
+def test_archimatec2_businesscollaboration_constructor_exists():
+    assert callable(archimateC2_BusinessCollaboration.__init__)
 
 
-def test_archimatec2::businesscollaboration_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessCollaboration.__init__)
+def test_archimatec2_businesscollaboration_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessCollaboration.__init__)
     params = list(sig.parameters.keys())
     assert "collaboration" in params, "Missing parameter 'collaboration'"
 
-def test_archimatec2::businesscollaboration_has_collaboration():
-    assert hasattr(archimateC2::BusinessCollaboration, "collaboration")
+def test_archimatec2_businesscollaboration_has_collaboration():
+    assert hasattr(archimateC2_BusinessCollaboration, "collaboration")
     descriptor = None
-    for klass in archimateC2::BusinessCollaboration.__mro__:
+    for klass in archimateC2_BusinessCollaboration.__mro__:
         if "collaboration" in klass.__dict__:
             descriptor = klass.__dict__["collaboration"]
             break
@@ -225,125 +225,125 @@ def test_businessbehaviorelement_constructor_args():
 
 
 
-def test_archimatec2::businessfunction_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessFunction)
+def test_archimatec2_businessfunction_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessFunction)
 
 
-def test_archimatec2::businessfunction_constructor_exists():
-    assert callable(archimateC2::BusinessFunction.__init__)
+def test_archimatec2_businessfunction_constructor_exists():
+    assert callable(archimateC2_BusinessFunction.__init__)
 
 
-def test_archimatec2::businessfunction_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessFunction.__init__)
+def test_archimatec2_businessfunction_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::businessinteraction_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessInteraction)
+def test_archimatec2_businessinteraction_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessInteraction)
 
 
-def test_archimatec2::businessinteraction_constructor_exists():
-    assert callable(archimateC2::BusinessInteraction.__init__)
+def test_archimatec2_businessinteraction_constructor_exists():
+    assert callable(archimateC2_BusinessInteraction.__init__)
 
 
-def test_archimatec2::businessinteraction_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessInteraction.__init__)
+def test_archimatec2_businessinteraction_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::businessprocess_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessProcess)
+def test_archimatec2_businessprocess_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessProcess)
 
 
-def test_archimatec2::businessprocess_constructor_exists():
-    assert callable(archimateC2::BusinessProcess.__init__)
+def test_archimatec2_businessprocess_constructor_exists():
+    assert callable(archimateC2_BusinessProcess.__init__)
 
 
-def test_archimatec2::businessprocess_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessProcess.__init__)
+def test_archimatec2_businessprocess_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessProcess.__init__)
     params = list(sig.parameters.keys())
-    assert "processID" in params, "Missing parameter 'processID'"
-    assert "processDesign" in params, "Missing parameter 'processDesign'"
     assert "processType" in params, "Missing parameter 'processType'"
+    assert "processDesign" in params, "Missing parameter 'processDesign'"
+    assert "processID" in params, "Missing parameter 'processID'"
     assert "processFullName" in params, "Missing parameter 'processFullName'"
-    assert "importance" in params, "Missing parameter 'importance'"
     assert "missionary" in params, "Missing parameter 'missionary'"
+    assert "importance" in params, "Missing parameter 'importance'"
 
-def test_archimatec2::businessprocess_has_processID():
-    assert hasattr(archimateC2::BusinessProcess, "processID")
+def test_archimatec2_businessprocess_has_processType():
+    assert hasattr(archimateC2_BusinessProcess, "processType")
     descriptor = None
-    for klass in archimateC2::BusinessProcess.__mro__:
-        if "processID" in klass.__dict__:
-            descriptor = klass.__dict__["processID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimatec2::businessprocess_has_processDesign():
-    assert hasattr(archimateC2::BusinessProcess, "processDesign")
-    descriptor = None
-    for klass in archimateC2::BusinessProcess.__mro__:
-        if "processDesign" in klass.__dict__:
-            descriptor = klass.__dict__["processDesign"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimatec2::businessprocess_has_processType():
-    assert hasattr(archimateC2::BusinessProcess, "processType")
-    descriptor = None
-    for klass in archimateC2::BusinessProcess.__mro__:
+    for klass in archimateC2_BusinessProcess.__mro__:
         if "processType" in klass.__dict__:
             descriptor = klass.__dict__["processType"]
             break
     assert isinstance(descriptor, property)
 
-def test_archimatec2::businessprocess_has_processFullName():
-    assert hasattr(archimateC2::BusinessProcess, "processFullName")
+def test_archimatec2_businessprocess_has_processDesign():
+    assert hasattr(archimateC2_BusinessProcess, "processDesign")
     descriptor = None
-    for klass in archimateC2::BusinessProcess.__mro__:
+    for klass in archimateC2_BusinessProcess.__mro__:
+        if "processDesign" in klass.__dict__:
+            descriptor = klass.__dict__["processDesign"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_archimatec2_businessprocess_has_processID():
+    assert hasattr(archimateC2_BusinessProcess, "processID")
+    descriptor = None
+    for klass in archimateC2_BusinessProcess.__mro__:
+        if "processID" in klass.__dict__:
+            descriptor = klass.__dict__["processID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_archimatec2_businessprocess_has_processFullName():
+    assert hasattr(archimateC2_BusinessProcess, "processFullName")
+    descriptor = None
+    for klass in archimateC2_BusinessProcess.__mro__:
         if "processFullName" in klass.__dict__:
             descriptor = klass.__dict__["processFullName"]
             break
     assert isinstance(descriptor, property)
 
-def test_archimatec2::businessprocess_has_importance():
-    assert hasattr(archimateC2::BusinessProcess, "importance")
+def test_archimatec2_businessprocess_has_missionary():
+    assert hasattr(archimateC2_BusinessProcess, "missionary")
     descriptor = None
-    for klass in archimateC2::BusinessProcess.__mro__:
-        if "importance" in klass.__dict__:
-            descriptor = klass.__dict__["importance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimatec2::businessprocess_has_missionary():
-    assert hasattr(archimateC2::BusinessProcess, "missionary")
-    descriptor = None
-    for klass in archimateC2::BusinessProcess.__mro__:
+    for klass in archimateC2_BusinessProcess.__mro__:
         if "missionary" in klass.__dict__:
             descriptor = klass.__dict__["missionary"]
             break
     assert isinstance(descriptor, property)
 
+def test_archimatec2_businessprocess_has_importance():
+    assert hasattr(archimateC2_BusinessProcess, "importance")
+    descriptor = None
+    for klass in archimateC2_BusinessProcess.__mro__:
+        if "importance" in klass.__dict__:
+            descriptor = klass.__dict__["importance"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_archimatec2::businessrole_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessRole)
+
+def test_archimatec2_businessrole_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessRole)
 
 
-def test_archimatec2::businessrole_constructor_exists():
-    assert callable(archimateC2::BusinessRole.__init__)
+def test_archimatec2_businessrole_constructor_exists():
+    assert callable(archimateC2_BusinessRole.__init__)
 
 
-def test_archimatec2::businessrole_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessRole.__init__)
+def test_archimatec2_businessrole_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessRole.__init__)
     params = list(sig.parameters.keys())
     assert "rank" in params, "Missing parameter 'rank'"
 
-def test_archimatec2::businessrole_has_rank():
-    assert hasattr(archimateC2::BusinessRole, "rank")
+def test_archimatec2_businessrole_has_rank():
+    assert hasattr(archimateC2_BusinessRole, "rank")
     descriptor = None
-    for klass in archimateC2::BusinessRole.__mro__:
+    for klass in archimateC2_BusinessRole.__mro__:
         if "rank" in klass.__dict__:
             descriptor = klass.__dict__["rank"]
             break
@@ -351,16 +351,16 @@ def test_archimatec2::businessrole_has_rank():
 
 
 
-def test_archimatec2::businessactor_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessActor)
+def test_archimatec2_businessactor_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessActor)
 
 
-def test_archimatec2::businessactor_constructor_exists():
-    assert callable(archimateC2::BusinessActor.__init__)
+def test_archimatec2_businessactor_constructor_exists():
+    assert callable(archimateC2_BusinessActor.__init__)
 
 
-def test_archimatec2::businessactor_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessActor.__init__)
+def test_archimatec2_businessactor_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessActor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -379,51 +379,51 @@ def test_behaviorelement_constructor_args():
 
 
 
-def test_archimatec2::businessinterface_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessInterface)
+def test_archimatec2_businessinterface_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessInterface)
 
 
-def test_archimatec2::businessinterface_constructor_exists():
-    assert callable(archimateC2::BusinessInterface.__init__)
+def test_archimatec2_businessinterface_constructor_exists():
+    assert callable(archimateC2_BusinessInterface.__init__)
 
 
-def test_archimatec2::businessinterface_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessInterface.__init__)
+def test_archimatec2_businessinterface_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::businessbehaviorelement_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessBehaviorElement)
+def test_archimatec2_businessbehaviorelement_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessBehaviorElement)
 
 
-def test_archimatec2::businessbehaviorelement_constructor_exists():
-    assert callable(archimateC2::BusinessBehaviorElement.__init__)
+def test_archimatec2_businessbehaviorelement_constructor_exists():
+    assert callable(archimateC2_BusinessBehaviorElement.__init__)
 
 
-def test_archimatec2::businessbehaviorelement_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessBehaviorElement.__init__)
+def test_archimatec2_businessbehaviorelement_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessBehaviorElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::location_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Location)
+def test_archimatec2_location_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Location)
 
 
-def test_archimatec2::location_constructor_exists():
-    assert callable(archimateC2::Location.__init__)
+def test_archimatec2_location_constructor_exists():
+    assert callable(archimateC2_Location.__init__)
 
 
-def test_archimatec2::location_constructor_args():
-    sig = inspect.signature(archimateC2::Location.__init__)
+def test_archimatec2_location_constructor_args():
+    sig = inspect.signature(archimateC2_Location.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_archimatec2::location_has_address():
-    assert hasattr(archimateC2::Location, "address")
+def test_archimatec2_location_has_address():
+    assert hasattr(archimateC2_Location, "address")
     descriptor = None
-    for klass in archimateC2::Location.__mro__:
+    for klass in archimateC2_Location.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -459,65 +459,23 @@ def test_passivestructure_constructor_args():
 
 
 
-def test_archimatec2::representation_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Representation)
+def test_archimatec2_product_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Product)
 
 
-def test_archimatec2::representation_constructor_exists():
-    assert callable(archimateC2::Representation.__init__)
+def test_archimatec2_product_constructor_exists():
+    assert callable(archimateC2_Product.__init__)
 
 
-def test_archimatec2::representation_constructor_args():
-    sig = inspect.signature(archimateC2::Representation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_archimatec2::businessobject_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessObject)
-
-
-def test_archimatec2::businessobject_constructor_exists():
-    assert callable(archimateC2::BusinessObject.__init__)
-
-
-def test_archimatec2::businessobject_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_archimatec2::meaning_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Meaning)
-
-
-def test_archimatec2::meaning_constructor_exists():
-    assert callable(archimateC2::Meaning.__init__)
-
-
-def test_archimatec2::meaning_constructor_args():
-    sig = inspect.signature(archimateC2::Meaning.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_archimatec2::product_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Product)
-
-
-def test_archimatec2::product_constructor_exists():
-    assert callable(archimateC2::Product.__init__)
-
-
-def test_archimatec2::product_constructor_args():
-    sig = inspect.signature(archimateC2::Product.__init__)
+def test_archimatec2_product_constructor_args():
+    sig = inspect.signature(archimateC2_Product.__init__)
     params = list(sig.parameters.keys())
     assert "contract" in params, "Missing parameter 'contract'"
 
-def test_archimatec2::product_has_contract():
-    assert hasattr(archimateC2::Product, "contract")
+def test_archimatec2_product_has_contract():
+    assert hasattr(archimateC2_Product, "contract")
     descriptor = None
-    for klass in archimateC2::Product.__mro__:
+    for klass in archimateC2_Product.__mro__:
         if "contract" in klass.__dict__:
             descriptor = klass.__dict__["contract"]
             break
@@ -525,44 +483,86 @@ def test_archimatec2::product_has_contract():
 
 
 
-def test_archimatec2::value_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Value)
+def test_archimatec2_representation_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Representation)
 
 
-def test_archimatec2::value_constructor_exists():
-    assert callable(archimateC2::Value.__init__)
+def test_archimatec2_representation_constructor_exists():
+    assert callable(archimateC2_Representation.__init__)
 
 
-def test_archimatec2::value_constructor_args():
-    sig = inspect.signature(archimateC2::Value.__init__)
+def test_archimatec2_representation_constructor_args():
+    sig = inspect.signature(archimateC2_Representation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::businessservice_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessService)
+def test_archimatec2_meaning_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Meaning)
 
 
-def test_archimatec2::businessservice_constructor_exists():
-    assert callable(archimateC2::BusinessService.__init__)
+def test_archimatec2_meaning_constructor_exists():
+    assert callable(archimateC2_Meaning.__init__)
 
 
-def test_archimatec2::businessservice_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessService.__init__)
+def test_archimatec2_meaning_constructor_args():
+    sig = inspect.signature(archimateC2_Meaning.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::contract_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Contract)
+def test_archimatec2_businessobject_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessObject)
 
 
-def test_archimatec2::contract_constructor_exists():
-    assert callable(archimateC2::Contract.__init__)
+def test_archimatec2_businessobject_constructor_exists():
+    assert callable(archimateC2_BusinessObject.__init__)
 
 
-def test_archimatec2::contract_constructor_args():
-    sig = inspect.signature(archimateC2::Contract.__init__)
+def test_archimatec2_businessobject_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_archimatec2_value_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Value)
+
+
+def test_archimatec2_value_constructor_exists():
+    assert callable(archimateC2_Value.__init__)
+
+
+def test_archimatec2_value_constructor_args():
+    sig = inspect.signature(archimateC2_Value.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_archimatec2_businessservice_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessService)
+
+
+def test_archimatec2_businessservice_constructor_exists():
+    assert callable(archimateC2_BusinessService.__init__)
+
+
+def test_archimatec2_businessservice_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessService.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_archimatec2_contract_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Contract)
+
+
+def test_archimatec2_contract_constructor_exists():
+    assert callable(archimateC2_Contract.__init__)
+
+
+def test_archimatec2_contract_constructor_args():
+    sig = inspect.signature(archimateC2_Contract.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -581,243 +581,243 @@ def test_archimateelement_constructor_args():
 
 
 
-def test_archimatec2::businessevent_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BusinessEvent)
+def test_archimatec2_infrastructureservice_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_InfrastructureService)
 
 
-def test_archimatec2::businessevent_constructor_exists():
-    assert callable(archimateC2::BusinessEvent.__init__)
+def test_archimatec2_infrastructureservice_constructor_exists():
+    assert callable(archimateC2_InfrastructureService.__init__)
 
 
-def test_archimatec2::businessevent_constructor_args():
-    sig = inspect.signature(archimateC2::BusinessEvent.__init__)
+def test_archimatec2_infrastructureservice_constructor_args():
+    sig = inspect.signature(archimateC2_InfrastructureService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::applicationcomponent_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ApplicationComponent)
+def test_archimatec2_applicationcomponent_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ApplicationComponent)
 
 
-def test_archimatec2::applicationcomponent_constructor_exists():
-    assert callable(archimateC2::ApplicationComponent.__init__)
+def test_archimatec2_applicationcomponent_constructor_exists():
+    assert callable(archimateC2_ApplicationComponent.__init__)
 
 
-def test_archimatec2::applicationcomponent_constructor_args():
-    sig = inspect.signature(archimateC2::ApplicationComponent.__init__)
+def test_archimatec2_applicationcomponent_constructor_args():
+    sig = inspect.signature(archimateC2_ApplicationComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::applicationservice_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ApplicationService)
+def test_archimatec2_network_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Network)
 
 
-def test_archimatec2::applicationservice_constructor_exists():
-    assert callable(archimateC2::ApplicationService.__init__)
+def test_archimatec2_network_constructor_exists():
+    assert callable(archimateC2_Network.__init__)
 
 
-def test_archimatec2::applicationservice_constructor_args():
-    sig = inspect.signature(archimateC2::ApplicationService.__init__)
+def test_archimatec2_network_constructor_args():
+    sig = inspect.signature(archimateC2_Network.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::node_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Node)
+def test_archimatec2_dataobject_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_DataObject)
 
 
-def test_archimatec2::node_constructor_exists():
-    assert callable(archimateC2::Node.__init__)
+def test_archimatec2_dataobject_constructor_exists():
+    assert callable(archimateC2_DataObject.__init__)
 
 
-def test_archimatec2::node_constructor_args():
-    sig = inspect.signature(archimateC2::Node.__init__)
+def test_archimatec2_dataobject_constructor_args():
+    sig = inspect.signature(archimateC2_DataObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::infrastructureinterface_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::InfrastructureInterface)
+def test_archimatec2_node_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Node)
 
 
-def test_archimatec2::infrastructureinterface_constructor_exists():
-    assert callable(archimateC2::InfrastructureInterface.__init__)
+def test_archimatec2_node_constructor_exists():
+    assert callable(archimateC2_Node.__init__)
 
 
-def test_archimatec2::infrastructureinterface_constructor_args():
-    sig = inspect.signature(archimateC2::InfrastructureInterface.__init__)
+def test_archimatec2_node_constructor_args():
+    sig = inspect.signature(archimateC2_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::communicationpath_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::CommunicationPath)
+def test_archimatec2_applicationinterface_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ApplicationInterface)
 
 
-def test_archimatec2::communicationpath_constructor_exists():
-    assert callable(archimateC2::CommunicationPath.__init__)
+def test_archimatec2_applicationinterface_constructor_exists():
+    assert callable(archimateC2_ApplicationInterface.__init__)
 
 
-def test_archimatec2::communicationpath_constructor_args():
-    sig = inspect.signature(archimateC2::CommunicationPath.__init__)
+def test_archimatec2_applicationinterface_constructor_args():
+    sig = inspect.signature(archimateC2_ApplicationInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::network_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Network)
+def test_archimatec2_artifact_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_Artifact)
 
 
-def test_archimatec2::network_constructor_exists():
-    assert callable(archimateC2::Network.__init__)
+def test_archimatec2_artifact_constructor_exists():
+    assert callable(archimateC2_Artifact.__init__)
 
 
-def test_archimatec2::network_constructor_args():
-    sig = inspect.signature(archimateC2::Network.__init__)
+def test_archimatec2_artifact_constructor_args():
+    sig = inspect.signature(archimateC2_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::infrastructureservice_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::InfrastructureService)
+def test_archimatec2_communicationpath_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_CommunicationPath)
 
 
-def test_archimatec2::infrastructureservice_constructor_exists():
-    assert callable(archimateC2::InfrastructureService.__init__)
+def test_archimatec2_communicationpath_constructor_exists():
+    assert callable(archimateC2_CommunicationPath.__init__)
 
 
-def test_archimatec2::infrastructureservice_constructor_args():
-    sig = inspect.signature(archimateC2::InfrastructureService.__init__)
+def test_archimatec2_communicationpath_constructor_args():
+    sig = inspect.signature(archimateC2_CommunicationPath.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::applicationinterface_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ApplicationInterface)
+def test_archimatec2_applicationservice_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ApplicationService)
 
 
-def test_archimatec2::applicationinterface_constructor_exists():
-    assert callable(archimateC2::ApplicationInterface.__init__)
+def test_archimatec2_applicationservice_constructor_exists():
+    assert callable(archimateC2_ApplicationService.__init__)
 
 
-def test_archimatec2::applicationinterface_constructor_args():
-    sig = inspect.signature(archimateC2::ApplicationInterface.__init__)
+def test_archimatec2_applicationservice_constructor_args():
+    sig = inspect.signature(archimateC2_ApplicationService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::artifact_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::Artifact)
+def test_archimatec2_businessevent_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BusinessEvent)
 
 
-def test_archimatec2::artifact_constructor_exists():
-    assert callable(archimateC2::Artifact.__init__)
+def test_archimatec2_businessevent_constructor_exists():
+    assert callable(archimateC2_BusinessEvent.__init__)
 
 
-def test_archimatec2::artifact_constructor_args():
-    sig = inspect.signature(archimateC2::Artifact.__init__)
+def test_archimatec2_businessevent_constructor_args():
+    sig = inspect.signature(archimateC2_BusinessEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::dataobject_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::DataObject)
+def test_archimatec2_applicationfunction_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ApplicationFunction)
 
 
-def test_archimatec2::dataobject_constructor_exists():
-    assert callable(archimateC2::DataObject.__init__)
+def test_archimatec2_applicationfunction_constructor_exists():
+    assert callable(archimateC2_ApplicationFunction.__init__)
 
 
-def test_archimatec2::dataobject_constructor_args():
-    sig = inspect.signature(archimateC2::DataObject.__init__)
+def test_archimatec2_applicationfunction_constructor_args():
+    sig = inspect.signature(archimateC2_ApplicationFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::applicationfunction_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ApplicationFunction)
+def test_archimatec2_infrastructureinterface_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_InfrastructureInterface)
 
 
-def test_archimatec2::applicationfunction_constructor_exists():
-    assert callable(archimateC2::ApplicationFunction.__init__)
+def test_archimatec2_infrastructureinterface_constructor_exists():
+    assert callable(archimateC2_InfrastructureInterface.__init__)
 
 
-def test_archimatec2::applicationfunction_constructor_args():
-    sig = inspect.signature(archimateC2::ApplicationFunction.__init__)
+def test_archimatec2_infrastructureinterface_constructor_args():
+    sig = inspect.signature(archimateC2_InfrastructureInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::passivestructure_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::PassiveStructure)
+def test_archimatec2_passivestructure_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_PassiveStructure)
 
 
-def test_archimatec2::passivestructure_constructor_exists():
-    assert callable(archimateC2::PassiveStructure.__init__)
+def test_archimatec2_passivestructure_constructor_exists():
+    assert callable(archimateC2_PassiveStructure.__init__)
 
 
-def test_archimatec2::passivestructure_constructor_args():
-    sig = inspect.signature(archimateC2::PassiveStructure.__init__)
+def test_archimatec2_passivestructure_constructor_args():
+    sig = inspect.signature(archimateC2_PassiveStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::activestructure_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ActiveStructure)
+def test_archimatec2_activestructure_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ActiveStructure)
 
 
-def test_archimatec2::activestructure_constructor_exists():
-    assert callable(archimateC2::ActiveStructure.__init__)
+def test_archimatec2_activestructure_constructor_exists():
+    assert callable(archimateC2_ActiveStructure.__init__)
 
 
-def test_archimatec2::activestructure_constructor_args():
-    sig = inspect.signature(archimateC2::ActiveStructure.__init__)
+def test_archimatec2_activestructure_constructor_args():
+    sig = inspect.signature(archimateC2_ActiveStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::behaviorelement_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::BehaviorElement)
+def test_archimatec2_behaviorelement_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_BehaviorElement)
 
 
-def test_archimatec2::behaviorelement_constructor_exists():
-    assert callable(archimateC2::BehaviorElement.__init__)
+def test_archimatec2_behaviorelement_constructor_exists():
+    assert callable(archimateC2_BehaviorElement.__init__)
 
 
-def test_archimatec2::behaviorelement_constructor_args():
-    sig = inspect.signature(archimateC2::BehaviorElement.__init__)
+def test_archimatec2_behaviorelement_constructor_args():
+    sig = inspect.signature(archimateC2_BehaviorElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatec2::archimateelement_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ArchimateElement)
+def test_archimatec2_archimateelement_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ArchimateElement)
 
 
-def test_archimatec2::archimateelement_constructor_exists():
-    assert callable(archimateC2::ArchimateElement.__init__)
+def test_archimatec2_archimateelement_constructor_exists():
+    assert callable(archimateC2_ArchimateElement.__init__)
 
 
-def test_archimatec2::archimateelement_constructor_args():
-    sig = inspect.signature(archimateC2::ArchimateElement.__init__)
+def test_archimatec2_archimateelement_constructor_args():
+    sig = inspect.signature(archimateC2_ArchimateElement.__init__)
     params = list(sig.parameters.keys())
     assert "elementName" in params, "Missing parameter 'elementName'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_archimatec2::archimateelement_has_elementName():
-    assert hasattr(archimateC2::ArchimateElement, "elementName")
+def test_archimatec2_archimateelement_has_elementName():
+    assert hasattr(archimateC2_ArchimateElement, "elementName")
     descriptor = None
-    for klass in archimateC2::ArchimateElement.__mro__:
+    for klass in archimateC2_ArchimateElement.__mro__:
         if "elementName" in klass.__dict__:
             descriptor = klass.__dict__["elementName"]
             break
     assert isinstance(descriptor, property)
 
-def test_archimatec2::archimateelement_has_description():
-    assert hasattr(archimateC2::ArchimateElement, "description")
+def test_archimatec2_archimateelement_has_description():
+    assert hasattr(archimateC2_ArchimateElement, "description")
     descriptor = None
-    for klass in archimateC2::ArchimateElement.__mro__:
+    for klass in archimateC2_ArchimateElement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -825,16 +825,16 @@ def test_archimatec2::archimateelement_has_description():
 
 
 
-def test_archimatec2::archimatemodel_is_not_abstract():
-    assert not inspect.isabstract(archimateC2::ArchimateModel)
+def test_archimatec2_archimatemodel_is_not_abstract():
+    assert not inspect.isabstract(archimateC2_ArchimateModel)
 
 
-def test_archimatec2::archimatemodel_constructor_exists():
-    assert callable(archimateC2::ArchimateModel.__init__)
+def test_archimatec2_archimatemodel_constructor_exists():
+    assert callable(archimateC2_ArchimateModel.__init__)
 
 
-def test_archimatec2::archimatemodel_constructor_args():
-    sig = inspect.signature(archimateC2::ArchimateModel.__init__)
+def test_archimatec2_archimatemodel_constructor_args():
+    sig = inspect.signature(archimateC2_ArchimateModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -852,29 +852,29 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-archimateC2::Device_strategy = st.builds(
-    archimateC2::Device,
+archimateC2_Device_strategy = st.builds(
+    archimateC2_Device,
 )
-archimateC2::SystemSoftware_strategy = st.builds(
-    archimateC2::SystemSoftware,
+archimateC2_SystemSoftware_strategy = st.builds(
+    archimateC2_SystemSoftware,
 )
 ApplicationComponent_strategy = st.builds(
     ApplicationComponent,
 )
-archimateC2::ApplicationCollaboration_strategy = st.builds(
-    archimateC2::ApplicationCollaboration,
+archimateC2_ApplicationCollaboration_strategy = st.builds(
+    archimateC2_ApplicationCollaboration,
 )
 ApplicationFunction_strategy = st.builds(
     ApplicationFunction,
 )
-archimateC2::ApplicationInteraction_strategy = st.builds(
-    archimateC2::ApplicationInteraction,
+archimateC2_ApplicationInteraction_strategy = st.builds(
+    archimateC2_ApplicationInteraction,
 )
 BusinessRole_strategy = st.builds(
     BusinessRole,
 )
-archimateC2::BusinessCollaboration_strategy = st.builds(
-    archimateC2::BusinessCollaboration,
+archimateC2_BusinessCollaboration_strategy = st.builds(
+    archimateC2_BusinessCollaboration,
     collaboration=
         safe_text
 )
@@ -884,46 +884,46 @@ ActiveStructure_strategy = st.builds(
 BusinessBehaviorElement_strategy = st.builds(
     BusinessBehaviorElement,
 )
-archimateC2::BusinessFunction_strategy = st.builds(
-    archimateC2::BusinessFunction,
+archimateC2_BusinessFunction_strategy = st.builds(
+    archimateC2_BusinessFunction,
 )
-archimateC2::BusinessInteraction_strategy = st.builds(
-    archimateC2::BusinessInteraction,
+archimateC2_BusinessInteraction_strategy = st.builds(
+    archimateC2_BusinessInteraction,
 )
-archimateC2::BusinessProcess_strategy = st.builds(
-    archimateC2::BusinessProcess,
-    processID=
+archimateC2_BusinessProcess_strategy = st.builds(
+    archimateC2_BusinessProcess,
+    processType=
         safe_text,
     processDesign=
         safe_text,
-    processType=
+    processID=
         safe_text,
     processFullName=
         safe_text,
-    importance=
-        st.integers(),
     missionary=
-        st.booleans()
+        st.booleans(),
+    importance=
+        st.integers()
 )
-archimateC2::BusinessRole_strategy = st.builds(
-    archimateC2::BusinessRole,
+archimateC2_BusinessRole_strategy = st.builds(
+    archimateC2_BusinessRole,
     rank=
         st.integers()
 )
-archimateC2::BusinessActor_strategy = st.builds(
-    archimateC2::BusinessActor,
+archimateC2_BusinessActor_strategy = st.builds(
+    archimateC2_BusinessActor,
 )
 BehaviorElement_strategy = st.builds(
     BehaviorElement,
 )
-archimateC2::BusinessInterface_strategy = st.builds(
-    archimateC2::BusinessInterface,
+archimateC2_BusinessInterface_strategy = st.builds(
+    archimateC2_BusinessInterface,
 )
-archimateC2::BusinessBehaviorElement_strategy = st.builds(
-    archimateC2::BusinessBehaviorElement,
+archimateC2_BusinessBehaviorElement_strategy = st.builds(
+    archimateC2_BusinessBehaviorElement,
 )
-archimateC2::Location_strategy = st.builds(
-    archimateC2::Location,
+archimateC2_Location_strategy = st.builds(
+    archimateC2_Location,
     address=
         safe_text
 )
@@ -933,86 +933,86 @@ BusinessObject_strategy = st.builds(
 PassiveStructure_strategy = st.builds(
     PassiveStructure,
 )
-archimateC2::Representation_strategy = st.builds(
-    archimateC2::Representation,
-)
-archimateC2::BusinessObject_strategy = st.builds(
-    archimateC2::BusinessObject,
-)
-archimateC2::Meaning_strategy = st.builds(
-    archimateC2::Meaning,
-)
-archimateC2::Product_strategy = st.builds(
-    archimateC2::Product,
+archimateC2_Product_strategy = st.builds(
+    archimateC2_Product,
     contract=
         safe_text
 )
-archimateC2::Value_strategy = st.builds(
-    archimateC2::Value,
+archimateC2_Representation_strategy = st.builds(
+    archimateC2_Representation,
 )
-archimateC2::BusinessService_strategy = st.builds(
-    archimateC2::BusinessService,
+archimateC2_Meaning_strategy = st.builds(
+    archimateC2_Meaning,
 )
-archimateC2::Contract_strategy = st.builds(
-    archimateC2::Contract,
+archimateC2_BusinessObject_strategy = st.builds(
+    archimateC2_BusinessObject,
+)
+archimateC2_Value_strategy = st.builds(
+    archimateC2_Value,
+)
+archimateC2_BusinessService_strategy = st.builds(
+    archimateC2_BusinessService,
+)
+archimateC2_Contract_strategy = st.builds(
+    archimateC2_Contract,
 )
 ArchimateElement_strategy = st.builds(
     ArchimateElement,
 )
-archimateC2::BusinessEvent_strategy = st.builds(
-    archimateC2::BusinessEvent,
+archimateC2_InfrastructureService_strategy = st.builds(
+    archimateC2_InfrastructureService,
 )
-archimateC2::ApplicationComponent_strategy = st.builds(
-    archimateC2::ApplicationComponent,
+archimateC2_ApplicationComponent_strategy = st.builds(
+    archimateC2_ApplicationComponent,
 )
-archimateC2::ApplicationService_strategy = st.builds(
-    archimateC2::ApplicationService,
+archimateC2_Network_strategy = st.builds(
+    archimateC2_Network,
 )
-archimateC2::Node_strategy = st.builds(
-    archimateC2::Node,
+archimateC2_DataObject_strategy = st.builds(
+    archimateC2_DataObject,
 )
-archimateC2::InfrastructureInterface_strategy = st.builds(
-    archimateC2::InfrastructureInterface,
+archimateC2_Node_strategy = st.builds(
+    archimateC2_Node,
 )
-archimateC2::CommunicationPath_strategy = st.builds(
-    archimateC2::CommunicationPath,
+archimateC2_ApplicationInterface_strategy = st.builds(
+    archimateC2_ApplicationInterface,
 )
-archimateC2::Network_strategy = st.builds(
-    archimateC2::Network,
+archimateC2_Artifact_strategy = st.builds(
+    archimateC2_Artifact,
 )
-archimateC2::InfrastructureService_strategy = st.builds(
-    archimateC2::InfrastructureService,
+archimateC2_CommunicationPath_strategy = st.builds(
+    archimateC2_CommunicationPath,
 )
-archimateC2::ApplicationInterface_strategy = st.builds(
-    archimateC2::ApplicationInterface,
+archimateC2_ApplicationService_strategy = st.builds(
+    archimateC2_ApplicationService,
 )
-archimateC2::Artifact_strategy = st.builds(
-    archimateC2::Artifact,
+archimateC2_BusinessEvent_strategy = st.builds(
+    archimateC2_BusinessEvent,
 )
-archimateC2::DataObject_strategy = st.builds(
-    archimateC2::DataObject,
+archimateC2_ApplicationFunction_strategy = st.builds(
+    archimateC2_ApplicationFunction,
 )
-archimateC2::ApplicationFunction_strategy = st.builds(
-    archimateC2::ApplicationFunction,
+archimateC2_InfrastructureInterface_strategy = st.builds(
+    archimateC2_InfrastructureInterface,
 )
-archimateC2::PassiveStructure_strategy = st.builds(
-    archimateC2::PassiveStructure,
+archimateC2_PassiveStructure_strategy = st.builds(
+    archimateC2_PassiveStructure,
 )
-archimateC2::ActiveStructure_strategy = st.builds(
-    archimateC2::ActiveStructure,
+archimateC2_ActiveStructure_strategy = st.builds(
+    archimateC2_ActiveStructure,
 )
-archimateC2::BehaviorElement_strategy = st.builds(
-    archimateC2::BehaviorElement,
+archimateC2_BehaviorElement_strategy = st.builds(
+    archimateC2_BehaviorElement,
 )
-archimateC2::ArchimateElement_strategy = st.builds(
-    archimateC2::ArchimateElement,
+archimateC2_ArchimateElement_strategy = st.builds(
+    archimateC2_ArchimateElement,
     elementName=
         safe_text,
     description=
         safe_text
 )
-archimateC2::ArchimateModel_strategy = st.builds(
-    archimateC2::ArchimateModel,
+archimateC2_ArchimateModel_strategy = st.builds(
+    archimateC2_ArchimateModel,
 )
 
 @given(instance=Node_strategy)
@@ -1020,53 +1020,50 @@ archimateC2::ArchimateModel_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=archimateC2::Device_strategy)
+@given(instance=archimateC2_Device_strategy)
 @settings(max_examples=50)
-def test_archimatec2::device_instantiation(instance):
-    assert isinstance(instance, archimateC2::Device)
+def test_archimatec2_device_instantiation(instance):
+    assert isinstance(instance, archimateC2_Device)
 
-@given(instance=archimateC2::SystemSoftware_strategy)
+@given(instance=archimateC2_SystemSoftware_strategy)
 @settings(max_examples=50)
-def test_archimatec2::systemsoftware_instantiation(instance):
-    assert isinstance(instance, archimateC2::SystemSoftware)
+def test_archimatec2_systemsoftware_instantiation(instance):
+    assert isinstance(instance, archimateC2_SystemSoftware)
 
 @given(instance=ApplicationComponent_strategy)
 @settings(max_examples=50)
 def test_applicationcomponent_instantiation(instance):
     assert isinstance(instance, ApplicationComponent)
 
-@given(instance=archimateC2::ApplicationCollaboration_strategy)
+@given(instance=archimateC2_ApplicationCollaboration_strategy)
 @settings(max_examples=50)
-def test_archimatec2::applicationcollaboration_instantiation(instance):
-    assert isinstance(instance, archimateC2::ApplicationCollaboration)
+def test_archimatec2_applicationcollaboration_instantiation(instance):
+    assert isinstance(instance, archimateC2_ApplicationCollaboration)
 
 @given(instance=ApplicationFunction_strategy)
 @settings(max_examples=50)
 def test_applicationfunction_instantiation(instance):
     assert isinstance(instance, ApplicationFunction)
 
-@given(instance=archimateC2::ApplicationInteraction_strategy)
+@given(instance=archimateC2_ApplicationInteraction_strategy)
 @settings(max_examples=50)
-def test_archimatec2::applicationinteraction_instantiation(instance):
-    assert isinstance(instance, archimateC2::ApplicationInteraction)
+def test_archimatec2_applicationinteraction_instantiation(instance):
+    assert isinstance(instance, archimateC2_ApplicationInteraction)
 
 @given(instance=BusinessRole_strategy)
 @settings(max_examples=50)
 def test_businessrole_instantiation(instance):
     assert isinstance(instance, BusinessRole)
 
-@given(instance=archimateC2::BusinessCollaboration_strategy)
+@given(instance=archimateC2_BusinessCollaboration_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businesscollaboration_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessCollaboration)
-
-@given(instance=archimateC2::BusinessCollaboration_strategy)
-def test_archimatec2::businesscollaboration_collaboration_type(instance):
-    assert isinstance(instance.collaboration, str)
+def test_archimatec2_businesscollaboration_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessCollaboration)
 
 
-@given(instance=archimateC2::BusinessCollaboration_strategy)
-def test_archimatec2::businesscollaboration_collaboration_setter(instance):
+
+@given(instance=archimateC2_BusinessCollaboration_strategy)
+def test_archimatec2_businesscollaboration_collaboration_setter(instance):
     original = instance.collaboration
     instance.collaboration = original
     assert instance.collaboration == original
@@ -1081,135 +1078,111 @@ def test_activestructure_instantiation(instance):
 def test_businessbehaviorelement_instantiation(instance):
     assert isinstance(instance, BusinessBehaviorElement)
 
-@given(instance=archimateC2::BusinessFunction_strategy)
+@given(instance=archimateC2_BusinessFunction_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessfunction_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessFunction)
+def test_archimatec2_businessfunction_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessFunction)
 
-@given(instance=archimateC2::BusinessInteraction_strategy)
+@given(instance=archimateC2_BusinessInteraction_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessinteraction_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessInteraction)
+def test_archimatec2_businessinteraction_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessInteraction)
 
-@given(instance=archimateC2::BusinessProcess_strategy)
+@given(instance=archimateC2_BusinessProcess_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessprocess_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessProcess)
-
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processID_type(instance):
-    assert isinstance(instance.processID, str)
+def test_archimatec2_businessprocess_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessProcess)
 
 
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processID_setter(instance):
-    original = instance.processID
-    instance.processID = original
-    assert instance.processID == original
 
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processDesign_type(instance):
-    assert isinstance(instance.processDesign, str)
-
-
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processDesign_setter(instance):
-    original = instance.processDesign
-    instance.processDesign = original
-    assert instance.processDesign == original
-
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processType_type(instance):
-    assert isinstance(instance.processType, str)
-
-
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processType_setter(instance):
+@given(instance=archimateC2_BusinessProcess_strategy)
+def test_archimatec2_businessprocess_processType_setter(instance):
     original = instance.processType
     instance.processType = original
     assert instance.processType == original
 
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processFullName_type(instance):
-    assert isinstance(instance.processFullName, str)
 
 
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_processFullName_setter(instance):
+@given(instance=archimateC2_BusinessProcess_strategy)
+def test_archimatec2_businessprocess_processDesign_setter(instance):
+    original = instance.processDesign
+    instance.processDesign = original
+    assert instance.processDesign == original
+
+
+
+@given(instance=archimateC2_BusinessProcess_strategy)
+def test_archimatec2_businessprocess_processID_setter(instance):
+    original = instance.processID
+    instance.processID = original
+    assert instance.processID == original
+
+
+
+@given(instance=archimateC2_BusinessProcess_strategy)
+def test_archimatec2_businessprocess_processFullName_setter(instance):
     original = instance.processFullName
     instance.processFullName = original
     assert instance.processFullName == original
 
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_importance_type(instance):
-    assert isinstance(instance.importance, int)
 
 
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_importance_setter(instance):
-    original = instance.importance
-    instance.importance = original
-    assert instance.importance == original
-
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_missionary_type(instance):
-    assert isinstance(instance.missionary, bool)
-
-
-@given(instance=archimateC2::BusinessProcess_strategy)
-def test_archimatec2::businessprocess_missionary_setter(instance):
+@given(instance=archimateC2_BusinessProcess_strategy)
+def test_archimatec2_businessprocess_missionary_setter(instance):
     original = instance.missionary
     instance.missionary = original
     assert instance.missionary == original
 
-@given(instance=archimateC2::BusinessRole_strategy)
+
+
+@given(instance=archimateC2_BusinessProcess_strategy)
+def test_archimatec2_businessprocess_importance_setter(instance):
+    original = instance.importance
+    instance.importance = original
+    assert instance.importance == original
+
+@given(instance=archimateC2_BusinessRole_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessrole_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessRole)
-
-@given(instance=archimateC2::BusinessRole_strategy)
-def test_archimatec2::businessrole_rank_type(instance):
-    assert isinstance(instance.rank, int)
+def test_archimatec2_businessrole_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessRole)
 
 
-@given(instance=archimateC2::BusinessRole_strategy)
-def test_archimatec2::businessrole_rank_setter(instance):
+
+@given(instance=archimateC2_BusinessRole_strategy)
+def test_archimatec2_businessrole_rank_setter(instance):
     original = instance.rank
     instance.rank = original
     assert instance.rank == original
 
-@given(instance=archimateC2::BusinessActor_strategy)
+@given(instance=archimateC2_BusinessActor_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessactor_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessActor)
+def test_archimatec2_businessactor_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessActor)
 
 @given(instance=BehaviorElement_strategy)
 @settings(max_examples=50)
 def test_behaviorelement_instantiation(instance):
     assert isinstance(instance, BehaviorElement)
 
-@given(instance=archimateC2::BusinessInterface_strategy)
+@given(instance=archimateC2_BusinessInterface_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessinterface_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessInterface)
+def test_archimatec2_businessinterface_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessInterface)
 
-@given(instance=archimateC2::BusinessBehaviorElement_strategy)
+@given(instance=archimateC2_BusinessBehaviorElement_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessbehaviorelement_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessBehaviorElement)
+def test_archimatec2_businessbehaviorelement_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessBehaviorElement)
 
-@given(instance=archimateC2::Location_strategy)
+@given(instance=archimateC2_Location_strategy)
 @settings(max_examples=50)
-def test_archimatec2::location_instantiation(instance):
-    assert isinstance(instance, archimateC2::Location)
-
-@given(instance=archimateC2::Location_strategy)
-def test_archimatec2::location_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_archimatec2_location_instantiation(instance):
+    assert isinstance(instance, archimateC2_Location)
 
 
-@given(instance=archimateC2::Location_strategy)
-def test_archimatec2::location_address_setter(instance):
+
+@given(instance=archimateC2_Location_strategy)
+def test_archimatec2_location_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
@@ -1224,160 +1197,151 @@ def test_businessobject_instantiation(instance):
 def test_passivestructure_instantiation(instance):
     assert isinstance(instance, PassiveStructure)
 
-@given(instance=archimateC2::Representation_strategy)
+@given(instance=archimateC2_Product_strategy)
 @settings(max_examples=50)
-def test_archimatec2::representation_instantiation(instance):
-    assert isinstance(instance, archimateC2::Representation)
-
-@given(instance=archimateC2::BusinessObject_strategy)
-@settings(max_examples=50)
-def test_archimatec2::businessobject_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessObject)
-
-@given(instance=archimateC2::Meaning_strategy)
-@settings(max_examples=50)
-def test_archimatec2::meaning_instantiation(instance):
-    assert isinstance(instance, archimateC2::Meaning)
-
-@given(instance=archimateC2::Product_strategy)
-@settings(max_examples=50)
-def test_archimatec2::product_instantiation(instance):
-    assert isinstance(instance, archimateC2::Product)
-
-@given(instance=archimateC2::Product_strategy)
-def test_archimatec2::product_contract_type(instance):
-    assert isinstance(instance.contract, str)
+def test_archimatec2_product_instantiation(instance):
+    assert isinstance(instance, archimateC2_Product)
 
 
-@given(instance=archimateC2::Product_strategy)
-def test_archimatec2::product_contract_setter(instance):
+
+@given(instance=archimateC2_Product_strategy)
+def test_archimatec2_product_contract_setter(instance):
     original = instance.contract
     instance.contract = original
     assert instance.contract == original
 
-@given(instance=archimateC2::Value_strategy)
+@given(instance=archimateC2_Representation_strategy)
 @settings(max_examples=50)
-def test_archimatec2::value_instantiation(instance):
-    assert isinstance(instance, archimateC2::Value)
+def test_archimatec2_representation_instantiation(instance):
+    assert isinstance(instance, archimateC2_Representation)
 
-@given(instance=archimateC2::BusinessService_strategy)
+@given(instance=archimateC2_Meaning_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessservice_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessService)
+def test_archimatec2_meaning_instantiation(instance):
+    assert isinstance(instance, archimateC2_Meaning)
 
-@given(instance=archimateC2::Contract_strategy)
+@given(instance=archimateC2_BusinessObject_strategy)
 @settings(max_examples=50)
-def test_archimatec2::contract_instantiation(instance):
-    assert isinstance(instance, archimateC2::Contract)
+def test_archimatec2_businessobject_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessObject)
+
+@given(instance=archimateC2_Value_strategy)
+@settings(max_examples=50)
+def test_archimatec2_value_instantiation(instance):
+    assert isinstance(instance, archimateC2_Value)
+
+@given(instance=archimateC2_BusinessService_strategy)
+@settings(max_examples=50)
+def test_archimatec2_businessservice_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessService)
+
+@given(instance=archimateC2_Contract_strategy)
+@settings(max_examples=50)
+def test_archimatec2_contract_instantiation(instance):
+    assert isinstance(instance, archimateC2_Contract)
 
 @given(instance=ArchimateElement_strategy)
 @settings(max_examples=50)
 def test_archimateelement_instantiation(instance):
     assert isinstance(instance, ArchimateElement)
 
-@given(instance=archimateC2::BusinessEvent_strategy)
+@given(instance=archimateC2_InfrastructureService_strategy)
 @settings(max_examples=50)
-def test_archimatec2::businessevent_instantiation(instance):
-    assert isinstance(instance, archimateC2::BusinessEvent)
+def test_archimatec2_infrastructureservice_instantiation(instance):
+    assert isinstance(instance, archimateC2_InfrastructureService)
 
-@given(instance=archimateC2::ApplicationComponent_strategy)
+@given(instance=archimateC2_ApplicationComponent_strategy)
 @settings(max_examples=50)
-def test_archimatec2::applicationcomponent_instantiation(instance):
-    assert isinstance(instance, archimateC2::ApplicationComponent)
+def test_archimatec2_applicationcomponent_instantiation(instance):
+    assert isinstance(instance, archimateC2_ApplicationComponent)
 
-@given(instance=archimateC2::ApplicationService_strategy)
+@given(instance=archimateC2_Network_strategy)
 @settings(max_examples=50)
-def test_archimatec2::applicationservice_instantiation(instance):
-    assert isinstance(instance, archimateC2::ApplicationService)
+def test_archimatec2_network_instantiation(instance):
+    assert isinstance(instance, archimateC2_Network)
 
-@given(instance=archimateC2::Node_strategy)
+@given(instance=archimateC2_DataObject_strategy)
 @settings(max_examples=50)
-def test_archimatec2::node_instantiation(instance):
-    assert isinstance(instance, archimateC2::Node)
+def test_archimatec2_dataobject_instantiation(instance):
+    assert isinstance(instance, archimateC2_DataObject)
 
-@given(instance=archimateC2::InfrastructureInterface_strategy)
+@given(instance=archimateC2_Node_strategy)
 @settings(max_examples=50)
-def test_archimatec2::infrastructureinterface_instantiation(instance):
-    assert isinstance(instance, archimateC2::InfrastructureInterface)
+def test_archimatec2_node_instantiation(instance):
+    assert isinstance(instance, archimateC2_Node)
 
-@given(instance=archimateC2::CommunicationPath_strategy)
+@given(instance=archimateC2_ApplicationInterface_strategy)
 @settings(max_examples=50)
-def test_archimatec2::communicationpath_instantiation(instance):
-    assert isinstance(instance, archimateC2::CommunicationPath)
+def test_archimatec2_applicationinterface_instantiation(instance):
+    assert isinstance(instance, archimateC2_ApplicationInterface)
 
-@given(instance=archimateC2::Network_strategy)
+@given(instance=archimateC2_Artifact_strategy)
 @settings(max_examples=50)
-def test_archimatec2::network_instantiation(instance):
-    assert isinstance(instance, archimateC2::Network)
+def test_archimatec2_artifact_instantiation(instance):
+    assert isinstance(instance, archimateC2_Artifact)
 
-@given(instance=archimateC2::InfrastructureService_strategy)
+@given(instance=archimateC2_CommunicationPath_strategy)
 @settings(max_examples=50)
-def test_archimatec2::infrastructureservice_instantiation(instance):
-    assert isinstance(instance, archimateC2::InfrastructureService)
+def test_archimatec2_communicationpath_instantiation(instance):
+    assert isinstance(instance, archimateC2_CommunicationPath)
 
-@given(instance=archimateC2::ApplicationInterface_strategy)
+@given(instance=archimateC2_ApplicationService_strategy)
 @settings(max_examples=50)
-def test_archimatec2::applicationinterface_instantiation(instance):
-    assert isinstance(instance, archimateC2::ApplicationInterface)
+def test_archimatec2_applicationservice_instantiation(instance):
+    assert isinstance(instance, archimateC2_ApplicationService)
 
-@given(instance=archimateC2::Artifact_strategy)
+@given(instance=archimateC2_BusinessEvent_strategy)
 @settings(max_examples=50)
-def test_archimatec2::artifact_instantiation(instance):
-    assert isinstance(instance, archimateC2::Artifact)
+def test_archimatec2_businessevent_instantiation(instance):
+    assert isinstance(instance, archimateC2_BusinessEvent)
 
-@given(instance=archimateC2::DataObject_strategy)
+@given(instance=archimateC2_ApplicationFunction_strategy)
 @settings(max_examples=50)
-def test_archimatec2::dataobject_instantiation(instance):
-    assert isinstance(instance, archimateC2::DataObject)
+def test_archimatec2_applicationfunction_instantiation(instance):
+    assert isinstance(instance, archimateC2_ApplicationFunction)
 
-@given(instance=archimateC2::ApplicationFunction_strategy)
+@given(instance=archimateC2_InfrastructureInterface_strategy)
 @settings(max_examples=50)
-def test_archimatec2::applicationfunction_instantiation(instance):
-    assert isinstance(instance, archimateC2::ApplicationFunction)
+def test_archimatec2_infrastructureinterface_instantiation(instance):
+    assert isinstance(instance, archimateC2_InfrastructureInterface)
 
-@given(instance=archimateC2::PassiveStructure_strategy)
+@given(instance=archimateC2_PassiveStructure_strategy)
 @settings(max_examples=50)
-def test_archimatec2::passivestructure_instantiation(instance):
-    assert isinstance(instance, archimateC2::PassiveStructure)
+def test_archimatec2_passivestructure_instantiation(instance):
+    assert isinstance(instance, archimateC2_PassiveStructure)
 
-@given(instance=archimateC2::ActiveStructure_strategy)
+@given(instance=archimateC2_ActiveStructure_strategy)
 @settings(max_examples=50)
-def test_archimatec2::activestructure_instantiation(instance):
-    assert isinstance(instance, archimateC2::ActiveStructure)
+def test_archimatec2_activestructure_instantiation(instance):
+    assert isinstance(instance, archimateC2_ActiveStructure)
 
-@given(instance=archimateC2::BehaviorElement_strategy)
+@given(instance=archimateC2_BehaviorElement_strategy)
 @settings(max_examples=50)
-def test_archimatec2::behaviorelement_instantiation(instance):
-    assert isinstance(instance, archimateC2::BehaviorElement)
+def test_archimatec2_behaviorelement_instantiation(instance):
+    assert isinstance(instance, archimateC2_BehaviorElement)
 
-@given(instance=archimateC2::ArchimateElement_strategy)
+@given(instance=archimateC2_ArchimateElement_strategy)
 @settings(max_examples=50)
-def test_archimatec2::archimateelement_instantiation(instance):
-    assert isinstance(instance, archimateC2::ArchimateElement)
-
-@given(instance=archimateC2::ArchimateElement_strategy)
-def test_archimatec2::archimateelement_elementName_type(instance):
-    assert isinstance(instance.elementName, str)
+def test_archimatec2_archimateelement_instantiation(instance):
+    assert isinstance(instance, archimateC2_ArchimateElement)
 
 
-@given(instance=archimateC2::ArchimateElement_strategy)
-def test_archimatec2::archimateelement_elementName_setter(instance):
+
+@given(instance=archimateC2_ArchimateElement_strategy)
+def test_archimatec2_archimateelement_elementName_setter(instance):
     original = instance.elementName
     instance.elementName = original
     assert instance.elementName == original
 
-@given(instance=archimateC2::ArchimateElement_strategy)
-def test_archimatec2::archimateelement_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=archimateC2::ArchimateElement_strategy)
-def test_archimatec2::archimateelement_description_setter(instance):
+@given(instance=archimateC2_ArchimateElement_strategy)
+def test_archimatec2_archimateelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=archimateC2::ArchimateModel_strategy)
+@given(instance=archimateC2_ArchimateModel_strategy)
 @settings(max_examples=50)
-def test_archimatec2::archimatemodel_instantiation(instance):
-    assert isinstance(instance, archimateC2::ArchimateModel)
+def test_archimatec2_archimatemodel_instantiation(instance):
+    assert isinstance(instance, archimateC2_ArchimateModel)

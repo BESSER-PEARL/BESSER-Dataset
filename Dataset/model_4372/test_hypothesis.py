@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    expressions::Model,
+from python_code import (
+    expressions_Model,
     UnaryOperator,
-    expressions::Neg,
+    expressions_Neg,
     Function,
-    expressions::Count,
+    expressions_Count,
     ComparisonOperand,
-    expressions::Function,
-    expressions::Quantity,
+    expressions_Function,
+    expressions_Quantity,
     ComparisonOperator,
-    expressions::L,
-    expressions::G,
-    expressions::D,
-    expressions::E,
-    expressions::LE,
-    expressions::GE,
+    expressions_D,
+    expressions_E,
+    expressions_LE,
+    expressions_L,
+    expressions_G,
+    expressions_GE,
     QuantifyOperator,
-    expressions::Number,
-    expressions::Any,
-    expressions::All,
+    expressions_Number,
+    expressions_Any,
+    expressions_All,
     BinaryOperator,
-    expressions::Or,
-    expressions::And,
-    expressions::Implies,
+    expressions_And,
+    expressions_Or,
+    expressions_Implies,
     Expression,
-    expressions::UnaryOperator,
-    expressions::ComparisonOperator,
-    expressions::QuantifyOperator,
-    expressions::Feature,
-    expressions::ComparisonOperand,
-    expressions::BinaryOperator,
-    expressions::Expression,
+    expressions_QuantifyOperator,
+    expressions_ComparisonOperand,
+    expressions_Feature,
+    expressions_UnaryOperator,
+    expressions_ComparisonOperator,
+    expressions_BinaryOperator,
+    expressions_Expression,
 )
 
 # =============================================================================
@@ -45,16 +45,16 @@ from classes import (
 
 
 
-def test_expressions::model_is_not_abstract():
-    assert not inspect.isabstract(expressions::Model)
+def test_expressions_model_is_not_abstract():
+    assert not inspect.isabstract(expressions_Model)
 
 
-def test_expressions::model_constructor_exists():
-    assert callable(expressions::Model.__init__)
+def test_expressions_model_constructor_exists():
+    assert callable(expressions_Model.__init__)
 
 
-def test_expressions::model_constructor_args():
-    sig = inspect.signature(expressions::Model.__init__)
+def test_expressions_model_constructor_args():
+    sig = inspect.signature(expressions_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,16 +73,16 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_expressions::neg_is_not_abstract():
-    assert not inspect.isabstract(expressions::Neg)
+def test_expressions_neg_is_not_abstract():
+    assert not inspect.isabstract(expressions_Neg)
 
 
-def test_expressions::neg_constructor_exists():
-    assert callable(expressions::Neg.__init__)
+def test_expressions_neg_constructor_exists():
+    assert callable(expressions_Neg.__init__)
 
 
-def test_expressions::neg_constructor_args():
-    sig = inspect.signature(expressions::Neg.__init__)
+def test_expressions_neg_constructor_args():
+    sig = inspect.signature(expressions_Neg.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -101,16 +101,16 @@ def test_function_constructor_args():
 
 
 
-def test_expressions::count_is_not_abstract():
-    assert not inspect.isabstract(expressions::Count)
+def test_expressions_count_is_not_abstract():
+    assert not inspect.isabstract(expressions_Count)
 
 
-def test_expressions::count_constructor_exists():
-    assert callable(expressions::Count.__init__)
+def test_expressions_count_constructor_exists():
+    assert callable(expressions_Count.__init__)
 
 
-def test_expressions::count_constructor_args():
-    sig = inspect.signature(expressions::Count.__init__)
+def test_expressions_count_constructor_args():
+    sig = inspect.signature(expressions_Count.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,37 +129,37 @@ def test_comparisonoperand_constructor_args():
 
 
 
-def test_expressions::function_is_not_abstract():
-    assert not inspect.isabstract(expressions::Function)
+def test_expressions_function_is_not_abstract():
+    assert not inspect.isabstract(expressions_Function)
 
 
-def test_expressions::function_constructor_exists():
-    assert callable(expressions::Function.__init__)
+def test_expressions_function_constructor_exists():
+    assert callable(expressions_Function.__init__)
 
 
-def test_expressions::function_constructor_args():
-    sig = inspect.signature(expressions::Function.__init__)
+def test_expressions_function_constructor_args():
+    sig = inspect.signature(expressions_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::quantity_is_not_abstract():
-    assert not inspect.isabstract(expressions::Quantity)
+def test_expressions_quantity_is_not_abstract():
+    assert not inspect.isabstract(expressions_Quantity)
 
 
-def test_expressions::quantity_constructor_exists():
-    assert callable(expressions::Quantity.__init__)
+def test_expressions_quantity_constructor_exists():
+    assert callable(expressions_Quantity.__init__)
 
 
-def test_expressions::quantity_constructor_args():
-    sig = inspect.signature(expressions::Quantity.__init__)
+def test_expressions_quantity_constructor_args():
+    sig = inspect.signature(expressions_Quantity.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::quantity_has_value():
-    assert hasattr(expressions::Quantity, "value")
+def test_expressions_quantity_has_value():
+    assert hasattr(expressions_Quantity, "value")
     descriptor = None
-    for klass in expressions::Quantity.__mro__:
+    for klass in expressions_Quantity.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -181,86 +181,86 @@ def test_comparisonoperator_constructor_args():
 
 
 
-def test_expressions::l_is_not_abstract():
-    assert not inspect.isabstract(expressions::L)
+def test_expressions_d_is_not_abstract():
+    assert not inspect.isabstract(expressions_D)
 
 
-def test_expressions::l_constructor_exists():
-    assert callable(expressions::L.__init__)
+def test_expressions_d_constructor_exists():
+    assert callable(expressions_D.__init__)
 
 
-def test_expressions::l_constructor_args():
-    sig = inspect.signature(expressions::L.__init__)
+def test_expressions_d_constructor_args():
+    sig = inspect.signature(expressions_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::g_is_not_abstract():
-    assert not inspect.isabstract(expressions::G)
+def test_expressions_e_is_not_abstract():
+    assert not inspect.isabstract(expressions_E)
 
 
-def test_expressions::g_constructor_exists():
-    assert callable(expressions::G.__init__)
+def test_expressions_e_constructor_exists():
+    assert callable(expressions_E.__init__)
 
 
-def test_expressions::g_constructor_args():
-    sig = inspect.signature(expressions::G.__init__)
+def test_expressions_e_constructor_args():
+    sig = inspect.signature(expressions_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::d_is_not_abstract():
-    assert not inspect.isabstract(expressions::D)
+def test_expressions_le_is_not_abstract():
+    assert not inspect.isabstract(expressions_LE)
 
 
-def test_expressions::d_constructor_exists():
-    assert callable(expressions::D.__init__)
+def test_expressions_le_constructor_exists():
+    assert callable(expressions_LE.__init__)
 
 
-def test_expressions::d_constructor_args():
-    sig = inspect.signature(expressions::D.__init__)
+def test_expressions_le_constructor_args():
+    sig = inspect.signature(expressions_LE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::e_is_not_abstract():
-    assert not inspect.isabstract(expressions::E)
+def test_expressions_l_is_not_abstract():
+    assert not inspect.isabstract(expressions_L)
 
 
-def test_expressions::e_constructor_exists():
-    assert callable(expressions::E.__init__)
+def test_expressions_l_constructor_exists():
+    assert callable(expressions_L.__init__)
 
 
-def test_expressions::e_constructor_args():
-    sig = inspect.signature(expressions::E.__init__)
+def test_expressions_l_constructor_args():
+    sig = inspect.signature(expressions_L.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::le_is_not_abstract():
-    assert not inspect.isabstract(expressions::LE)
+def test_expressions_g_is_not_abstract():
+    assert not inspect.isabstract(expressions_G)
 
 
-def test_expressions::le_constructor_exists():
-    assert callable(expressions::LE.__init__)
+def test_expressions_g_constructor_exists():
+    assert callable(expressions_G.__init__)
 
 
-def test_expressions::le_constructor_args():
-    sig = inspect.signature(expressions::LE.__init__)
+def test_expressions_g_constructor_args():
+    sig = inspect.signature(expressions_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::ge_is_not_abstract():
-    assert not inspect.isabstract(expressions::GE)
+def test_expressions_ge_is_not_abstract():
+    assert not inspect.isabstract(expressions_GE)
 
 
-def test_expressions::ge_constructor_exists():
-    assert callable(expressions::GE.__init__)
+def test_expressions_ge_constructor_exists():
+    assert callable(expressions_GE.__init__)
 
 
-def test_expressions::ge_constructor_args():
-    sig = inspect.signature(expressions::GE.__init__)
+def test_expressions_ge_constructor_args():
+    sig = inspect.signature(expressions_GE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -279,23 +279,23 @@ def test_quantifyoperator_constructor_args():
 
 
 
-def test_expressions::number_is_not_abstract():
-    assert not inspect.isabstract(expressions::Number)
+def test_expressions_number_is_not_abstract():
+    assert not inspect.isabstract(expressions_Number)
 
 
-def test_expressions::number_constructor_exists():
-    assert callable(expressions::Number.__init__)
+def test_expressions_number_constructor_exists():
+    assert callable(expressions_Number.__init__)
 
 
-def test_expressions::number_constructor_args():
-    sig = inspect.signature(expressions::Number.__init__)
+def test_expressions_number_constructor_args():
+    sig = inspect.signature(expressions_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_expressions::number_has_value():
-    assert hasattr(expressions::Number, "value")
+def test_expressions_number_has_value():
+    assert hasattr(expressions_Number, "value")
     descriptor = None
-    for klass in expressions::Number.__mro__:
+    for klass in expressions_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -303,30 +303,30 @@ def test_expressions::number_has_value():
 
 
 
-def test_expressions::any_is_not_abstract():
-    assert not inspect.isabstract(expressions::Any)
+def test_expressions_any_is_not_abstract():
+    assert not inspect.isabstract(expressions_Any)
 
 
-def test_expressions::any_constructor_exists():
-    assert callable(expressions::Any.__init__)
+def test_expressions_any_constructor_exists():
+    assert callable(expressions_Any.__init__)
 
 
-def test_expressions::any_constructor_args():
-    sig = inspect.signature(expressions::Any.__init__)
+def test_expressions_any_constructor_args():
+    sig = inspect.signature(expressions_Any.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::all_is_not_abstract():
-    assert not inspect.isabstract(expressions::All)
+def test_expressions_all_is_not_abstract():
+    assert not inspect.isabstract(expressions_All)
 
 
-def test_expressions::all_constructor_exists():
-    assert callable(expressions::All.__init__)
+def test_expressions_all_constructor_exists():
+    assert callable(expressions_All.__init__)
 
 
-def test_expressions::all_constructor_args():
-    sig = inspect.signature(expressions::All.__init__)
+def test_expressions_all_constructor_args():
+    sig = inspect.signature(expressions_All.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -345,44 +345,44 @@ def test_binaryoperator_constructor_args():
 
 
 
-def test_expressions::or_is_not_abstract():
-    assert not inspect.isabstract(expressions::Or)
+def test_expressions_and_is_not_abstract():
+    assert not inspect.isabstract(expressions_And)
 
 
-def test_expressions::or_constructor_exists():
-    assert callable(expressions::Or.__init__)
+def test_expressions_and_constructor_exists():
+    assert callable(expressions_And.__init__)
 
 
-def test_expressions::or_constructor_args():
-    sig = inspect.signature(expressions::Or.__init__)
+def test_expressions_and_constructor_args():
+    sig = inspect.signature(expressions_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::and_is_not_abstract():
-    assert not inspect.isabstract(expressions::And)
+def test_expressions_or_is_not_abstract():
+    assert not inspect.isabstract(expressions_Or)
 
 
-def test_expressions::and_constructor_exists():
-    assert callable(expressions::And.__init__)
+def test_expressions_or_constructor_exists():
+    assert callable(expressions_Or.__init__)
 
 
-def test_expressions::and_constructor_args():
-    sig = inspect.signature(expressions::And.__init__)
+def test_expressions_or_constructor_args():
+    sig = inspect.signature(expressions_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::implies_is_not_abstract():
-    assert not inspect.isabstract(expressions::Implies)
+def test_expressions_implies_is_not_abstract():
+    assert not inspect.isabstract(expressions_Implies)
 
 
-def test_expressions::implies_constructor_exists():
-    assert callable(expressions::Implies.__init__)
+def test_expressions_implies_constructor_exists():
+    assert callable(expressions_Implies.__init__)
 
 
-def test_expressions::implies_constructor_args():
-    sig = inspect.signature(expressions::Implies.__init__)
+def test_expressions_implies_constructor_args():
+    sig = inspect.signature(expressions_Implies.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -401,65 +401,51 @@ def test_expression_constructor_args():
 
 
 
-def test_expressions::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryOperator)
+def test_expressions_quantifyoperator_is_not_abstract():
+    assert not inspect.isabstract(expressions_QuantifyOperator)
 
 
-def test_expressions::unaryoperator_constructor_exists():
-    assert callable(expressions::UnaryOperator.__init__)
+def test_expressions_quantifyoperator_constructor_exists():
+    assert callable(expressions_QuantifyOperator.__init__)
 
 
-def test_expressions::unaryoperator_constructor_args():
-    sig = inspect.signature(expressions::UnaryOperator.__init__)
+def test_expressions_quantifyoperator_constructor_args():
+    sig = inspect.signature(expressions_QuantifyOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::comparisonoperator_is_not_abstract():
-    assert not inspect.isabstract(expressions::ComparisonOperator)
+def test_expressions_comparisonoperand_is_not_abstract():
+    assert not inspect.isabstract(expressions_ComparisonOperand)
 
 
-def test_expressions::comparisonoperator_constructor_exists():
-    assert callable(expressions::ComparisonOperator.__init__)
+def test_expressions_comparisonoperand_constructor_exists():
+    assert callable(expressions_ComparisonOperand.__init__)
 
 
-def test_expressions::comparisonoperator_constructor_args():
-    sig = inspect.signature(expressions::ComparisonOperator.__init__)
+def test_expressions_comparisonoperand_constructor_args():
+    sig = inspect.signature(expressions_ComparisonOperand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::quantifyoperator_is_not_abstract():
-    assert not inspect.isabstract(expressions::QuantifyOperator)
+def test_expressions_feature_is_not_abstract():
+    assert not inspect.isabstract(expressions_Feature)
 
 
-def test_expressions::quantifyoperator_constructor_exists():
-    assert callable(expressions::QuantifyOperator.__init__)
+def test_expressions_feature_constructor_exists():
+    assert callable(expressions_Feature.__init__)
 
 
-def test_expressions::quantifyoperator_constructor_args():
-    sig = inspect.signature(expressions::QuantifyOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::feature_is_not_abstract():
-    assert not inspect.isabstract(expressions::Feature)
-
-
-def test_expressions::feature_constructor_exists():
-    assert callable(expressions::Feature.__init__)
-
-
-def test_expressions::feature_constructor_args():
-    sig = inspect.signature(expressions::Feature.__init__)
+def test_expressions_feature_constructor_args():
+    sig = inspect.signature(expressions_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_expressions::feature_has_name():
-    assert hasattr(expressions::Feature, "name")
+def test_expressions_feature_has_name():
+    assert hasattr(expressions_Feature, "name")
     descriptor = None
-    for klass in expressions::Feature.__mro__:
+    for klass in expressions_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -467,44 +453,58 @@ def test_expressions::feature_has_name():
 
 
 
-def test_expressions::comparisonoperand_is_not_abstract():
-    assert not inspect.isabstract(expressions::ComparisonOperand)
+def test_expressions_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryOperator)
 
 
-def test_expressions::comparisonoperand_constructor_exists():
-    assert callable(expressions::ComparisonOperand.__init__)
+def test_expressions_unaryoperator_constructor_exists():
+    assert callable(expressions_UnaryOperator.__init__)
 
 
-def test_expressions::comparisonoperand_constructor_args():
-    sig = inspect.signature(expressions::ComparisonOperand.__init__)
+def test_expressions_unaryoperator_constructor_args():
+    sig = inspect.signature(expressions_UnaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(expressions::BinaryOperator)
+def test_expressions_comparisonoperator_is_not_abstract():
+    assert not inspect.isabstract(expressions_ComparisonOperator)
 
 
-def test_expressions::binaryoperator_constructor_exists():
-    assert callable(expressions::BinaryOperator.__init__)
+def test_expressions_comparisonoperator_constructor_exists():
+    assert callable(expressions_ComparisonOperator.__init__)
 
 
-def test_expressions::binaryoperator_constructor_args():
-    sig = inspect.signature(expressions::BinaryOperator.__init__)
+def test_expressions_comparisonoperator_constructor_args():
+    sig = inspect.signature(expressions_ComparisonOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(expressions::Expression)
+def test_expressions_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(expressions_BinaryOperator)
 
 
-def test_expressions::expression_constructor_exists():
-    assert callable(expressions::Expression.__init__)
+def test_expressions_binaryoperator_constructor_exists():
+    assert callable(expressions_BinaryOperator.__init__)
 
 
-def test_expressions::expression_constructor_args():
-    sig = inspect.signature(expressions::Expression.__init__)
+def test_expressions_binaryoperator_constructor_args():
+    sig = inspect.signature(expressions_BinaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(expressions_Expression)
+
+
+def test_expressions_expression_constructor_exists():
+    assert callable(expressions_Expression.__init__)
+
+
+def test_expressions_expression_constructor_args():
+    sig = inspect.signature(expressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -519,153 +519,150 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-expressions::Model_strategy = st.builds(
-    expressions::Model,
+expressions_Model_strategy = st.builds(
+    expressions_Model,
 )
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-expressions::Neg_strategy = st.builds(
-    expressions::Neg,
+expressions_Neg_strategy = st.builds(
+    expressions_Neg,
 )
 Function_strategy = st.builds(
     Function,
 )
-expressions::Count_strategy = st.builds(
-    expressions::Count,
+expressions_Count_strategy = st.builds(
+    expressions_Count,
 )
 ComparisonOperand_strategy = st.builds(
     ComparisonOperand,
 )
-expressions::Function_strategy = st.builds(
-    expressions::Function,
+expressions_Function_strategy = st.builds(
+    expressions_Function,
 )
-expressions::Quantity_strategy = st.builds(
-    expressions::Quantity,
+expressions_Quantity_strategy = st.builds(
+    expressions_Quantity,
     value=
         st.integers()
 )
 ComparisonOperator_strategy = st.builds(
     ComparisonOperator,
 )
-expressions::L_strategy = st.builds(
-    expressions::L,
+expressions_D_strategy = st.builds(
+    expressions_D,
 )
-expressions::G_strategy = st.builds(
-    expressions::G,
+expressions_E_strategy = st.builds(
+    expressions_E,
 )
-expressions::D_strategy = st.builds(
-    expressions::D,
+expressions_LE_strategy = st.builds(
+    expressions_LE,
 )
-expressions::E_strategy = st.builds(
-    expressions::E,
+expressions_L_strategy = st.builds(
+    expressions_L,
 )
-expressions::LE_strategy = st.builds(
-    expressions::LE,
+expressions_G_strategy = st.builds(
+    expressions_G,
 )
-expressions::GE_strategy = st.builds(
-    expressions::GE,
+expressions_GE_strategy = st.builds(
+    expressions_GE,
 )
 QuantifyOperator_strategy = st.builds(
     QuantifyOperator,
 )
-expressions::Number_strategy = st.builds(
-    expressions::Number,
+expressions_Number_strategy = st.builds(
+    expressions_Number,
     value=
         st.integers()
 )
-expressions::Any_strategy = st.builds(
-    expressions::Any,
+expressions_Any_strategy = st.builds(
+    expressions_Any,
 )
-expressions::All_strategy = st.builds(
-    expressions::All,
+expressions_All_strategy = st.builds(
+    expressions_All,
 )
 BinaryOperator_strategy = st.builds(
     BinaryOperator,
 )
-expressions::Or_strategy = st.builds(
-    expressions::Or,
+expressions_And_strategy = st.builds(
+    expressions_And,
 )
-expressions::And_strategy = st.builds(
-    expressions::And,
+expressions_Or_strategy = st.builds(
+    expressions_Or,
 )
-expressions::Implies_strategy = st.builds(
-    expressions::Implies,
+expressions_Implies_strategy = st.builds(
+    expressions_Implies,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-expressions::UnaryOperator_strategy = st.builds(
-    expressions::UnaryOperator,
+expressions_QuantifyOperator_strategy = st.builds(
+    expressions_QuantifyOperator,
 )
-expressions::ComparisonOperator_strategy = st.builds(
-    expressions::ComparisonOperator,
+expressions_ComparisonOperand_strategy = st.builds(
+    expressions_ComparisonOperand,
 )
-expressions::QuantifyOperator_strategy = st.builds(
-    expressions::QuantifyOperator,
-)
-expressions::Feature_strategy = st.builds(
-    expressions::Feature,
+expressions_Feature_strategy = st.builds(
+    expressions_Feature,
     name=
         safe_text
 )
-expressions::ComparisonOperand_strategy = st.builds(
-    expressions::ComparisonOperand,
+expressions_UnaryOperator_strategy = st.builds(
+    expressions_UnaryOperator,
 )
-expressions::BinaryOperator_strategy = st.builds(
-    expressions::BinaryOperator,
+expressions_ComparisonOperator_strategy = st.builds(
+    expressions_ComparisonOperator,
 )
-expressions::Expression_strategy = st.builds(
-    expressions::Expression,
+expressions_BinaryOperator_strategy = st.builds(
+    expressions_BinaryOperator,
+)
+expressions_Expression_strategy = st.builds(
+    expressions_Expression,
 )
 
-@given(instance=expressions::Model_strategy)
+@given(instance=expressions_Model_strategy)
 @settings(max_examples=50)
-def test_expressions::model_instantiation(instance):
-    assert isinstance(instance, expressions::Model)
+def test_expressions_model_instantiation(instance):
+    assert isinstance(instance, expressions_Model)
 
 @given(instance=UnaryOperator_strategy)
 @settings(max_examples=50)
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=expressions::Neg_strategy)
+@given(instance=expressions_Neg_strategy)
 @settings(max_examples=50)
-def test_expressions::neg_instantiation(instance):
-    assert isinstance(instance, expressions::Neg)
+def test_expressions_neg_instantiation(instance):
+    assert isinstance(instance, expressions_Neg)
 
 @given(instance=Function_strategy)
 @settings(max_examples=50)
 def test_function_instantiation(instance):
     assert isinstance(instance, Function)
 
-@given(instance=expressions::Count_strategy)
+@given(instance=expressions_Count_strategy)
 @settings(max_examples=50)
-def test_expressions::count_instantiation(instance):
-    assert isinstance(instance, expressions::Count)
+def test_expressions_count_instantiation(instance):
+    assert isinstance(instance, expressions_Count)
 
 @given(instance=ComparisonOperand_strategy)
 @settings(max_examples=50)
 def test_comparisonoperand_instantiation(instance):
     assert isinstance(instance, ComparisonOperand)
 
-@given(instance=expressions::Function_strategy)
+@given(instance=expressions_Function_strategy)
 @settings(max_examples=50)
-def test_expressions::function_instantiation(instance):
-    assert isinstance(instance, expressions::Function)
+def test_expressions_function_instantiation(instance):
+    assert isinstance(instance, expressions_Function)
 
-@given(instance=expressions::Quantity_strategy)
+@given(instance=expressions_Quantity_strategy)
 @settings(max_examples=50)
-def test_expressions::quantity_instantiation(instance):
-    assert isinstance(instance, expressions::Quantity)
-
-@given(instance=expressions::Quantity_strategy)
-def test_expressions::quantity_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_expressions_quantity_instantiation(instance):
+    assert isinstance(instance, expressions_Quantity)
 
 
-@given(instance=expressions::Quantity_strategy)
-def test_expressions::quantity_value_setter(instance):
+
+@given(instance=expressions_Quantity_strategy)
+def test_expressions_quantity_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -675,134 +672,128 @@ def test_expressions::quantity_value_setter(instance):
 def test_comparisonoperator_instantiation(instance):
     assert isinstance(instance, ComparisonOperator)
 
-@given(instance=expressions::L_strategy)
+@given(instance=expressions_D_strategy)
 @settings(max_examples=50)
-def test_expressions::l_instantiation(instance):
-    assert isinstance(instance, expressions::L)
+def test_expressions_d_instantiation(instance):
+    assert isinstance(instance, expressions_D)
 
-@given(instance=expressions::G_strategy)
+@given(instance=expressions_E_strategy)
 @settings(max_examples=50)
-def test_expressions::g_instantiation(instance):
-    assert isinstance(instance, expressions::G)
+def test_expressions_e_instantiation(instance):
+    assert isinstance(instance, expressions_E)
 
-@given(instance=expressions::D_strategy)
+@given(instance=expressions_LE_strategy)
 @settings(max_examples=50)
-def test_expressions::d_instantiation(instance):
-    assert isinstance(instance, expressions::D)
+def test_expressions_le_instantiation(instance):
+    assert isinstance(instance, expressions_LE)
 
-@given(instance=expressions::E_strategy)
+@given(instance=expressions_L_strategy)
 @settings(max_examples=50)
-def test_expressions::e_instantiation(instance):
-    assert isinstance(instance, expressions::E)
+def test_expressions_l_instantiation(instance):
+    assert isinstance(instance, expressions_L)
 
-@given(instance=expressions::LE_strategy)
+@given(instance=expressions_G_strategy)
 @settings(max_examples=50)
-def test_expressions::le_instantiation(instance):
-    assert isinstance(instance, expressions::LE)
+def test_expressions_g_instantiation(instance):
+    assert isinstance(instance, expressions_G)
 
-@given(instance=expressions::GE_strategy)
+@given(instance=expressions_GE_strategy)
 @settings(max_examples=50)
-def test_expressions::ge_instantiation(instance):
-    assert isinstance(instance, expressions::GE)
+def test_expressions_ge_instantiation(instance):
+    assert isinstance(instance, expressions_GE)
 
 @given(instance=QuantifyOperator_strategy)
 @settings(max_examples=50)
 def test_quantifyoperator_instantiation(instance):
     assert isinstance(instance, QuantifyOperator)
 
-@given(instance=expressions::Number_strategy)
+@given(instance=expressions_Number_strategy)
 @settings(max_examples=50)
-def test_expressions::number_instantiation(instance):
-    assert isinstance(instance, expressions::Number)
-
-@given(instance=expressions::Number_strategy)
-def test_expressions::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_expressions_number_instantiation(instance):
+    assert isinstance(instance, expressions_Number)
 
 
-@given(instance=expressions::Number_strategy)
-def test_expressions::number_value_setter(instance):
+
+@given(instance=expressions_Number_strategy)
+def test_expressions_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=expressions::Any_strategy)
+@given(instance=expressions_Any_strategy)
 @settings(max_examples=50)
-def test_expressions::any_instantiation(instance):
-    assert isinstance(instance, expressions::Any)
+def test_expressions_any_instantiation(instance):
+    assert isinstance(instance, expressions_Any)
 
-@given(instance=expressions::All_strategy)
+@given(instance=expressions_All_strategy)
 @settings(max_examples=50)
-def test_expressions::all_instantiation(instance):
-    assert isinstance(instance, expressions::All)
+def test_expressions_all_instantiation(instance):
+    assert isinstance(instance, expressions_All)
 
 @given(instance=BinaryOperator_strategy)
 @settings(max_examples=50)
 def test_binaryoperator_instantiation(instance):
     assert isinstance(instance, BinaryOperator)
 
-@given(instance=expressions::Or_strategy)
+@given(instance=expressions_And_strategy)
 @settings(max_examples=50)
-def test_expressions::or_instantiation(instance):
-    assert isinstance(instance, expressions::Or)
+def test_expressions_and_instantiation(instance):
+    assert isinstance(instance, expressions_And)
 
-@given(instance=expressions::And_strategy)
+@given(instance=expressions_Or_strategy)
 @settings(max_examples=50)
-def test_expressions::and_instantiation(instance):
-    assert isinstance(instance, expressions::And)
+def test_expressions_or_instantiation(instance):
+    assert isinstance(instance, expressions_Or)
 
-@given(instance=expressions::Implies_strategy)
+@given(instance=expressions_Implies_strategy)
 @settings(max_examples=50)
-def test_expressions::implies_instantiation(instance):
-    assert isinstance(instance, expressions::Implies)
+def test_expressions_implies_instantiation(instance):
+    assert isinstance(instance, expressions_Implies)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=expressions::UnaryOperator_strategy)
+@given(instance=expressions_QuantifyOperator_strategy)
 @settings(max_examples=50)
-def test_expressions::unaryoperator_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryOperator)
+def test_expressions_quantifyoperator_instantiation(instance):
+    assert isinstance(instance, expressions_QuantifyOperator)
 
-@given(instance=expressions::ComparisonOperator_strategy)
+@given(instance=expressions_ComparisonOperand_strategy)
 @settings(max_examples=50)
-def test_expressions::comparisonoperator_instantiation(instance):
-    assert isinstance(instance, expressions::ComparisonOperator)
+def test_expressions_comparisonoperand_instantiation(instance):
+    assert isinstance(instance, expressions_ComparisonOperand)
 
-@given(instance=expressions::QuantifyOperator_strategy)
+@given(instance=expressions_Feature_strategy)
 @settings(max_examples=50)
-def test_expressions::quantifyoperator_instantiation(instance):
-    assert isinstance(instance, expressions::QuantifyOperator)
-
-@given(instance=expressions::Feature_strategy)
-@settings(max_examples=50)
-def test_expressions::feature_instantiation(instance):
-    assert isinstance(instance, expressions::Feature)
-
-@given(instance=expressions::Feature_strategy)
-def test_expressions::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_expressions_feature_instantiation(instance):
+    assert isinstance(instance, expressions_Feature)
 
 
-@given(instance=expressions::Feature_strategy)
-def test_expressions::feature_name_setter(instance):
+
+@given(instance=expressions_Feature_strategy)
+def test_expressions_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=expressions::ComparisonOperand_strategy)
+@given(instance=expressions_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_expressions::comparisonoperand_instantiation(instance):
-    assert isinstance(instance, expressions::ComparisonOperand)
+def test_expressions_unaryoperator_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryOperator)
 
-@given(instance=expressions::BinaryOperator_strategy)
+@given(instance=expressions_ComparisonOperator_strategy)
 @settings(max_examples=50)
-def test_expressions::binaryoperator_instantiation(instance):
-    assert isinstance(instance, expressions::BinaryOperator)
+def test_expressions_comparisonoperator_instantiation(instance):
+    assert isinstance(instance, expressions_ComparisonOperator)
 
-@given(instance=expressions::Expression_strategy)
+@given(instance=expressions_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_expressions::expression_instantiation(instance):
-    assert isinstance(instance, expressions::Expression)
+def test_expressions_binaryoperator_instantiation(instance):
+    assert isinstance(instance, expressions_BinaryOperator)
+
+@given(instance=expressions_Expression_strategy)
+@settings(max_examples=50)
+def test_expressions_expression_instantiation(instance):
+    assert isinstance(instance, expressions_Expression)

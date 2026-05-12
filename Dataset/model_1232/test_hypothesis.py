@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    qvt::cst::IHasName,
-    cst::qvt::EObject,
+from python_code import (
+    qvt_cst_IHasName,
+    cst_qvt_EObject,
     IdentifierCS,
-    cst::IHasName,
-    cst::CSTNode,
-    qvt::cst::IdentifierCS,
-    qvt::cst::IdentifiedCS,
-    qvt::cst::ErrorNode,
+    cst_IHasName,
+    cst_CSTNode,
+    qvt_cst_IdentifierCS,
+    qvt_cst_IdentifiedCS,
+    qvt_cst_ErrorNode,
 )
 
 # =============================================================================
@@ -22,30 +22,30 @@ from classes import (
 
 
 
-def test_qvt::cst::ihasname_is_not_abstract():
-    assert not inspect.isabstract(qvt::cst::IHasName)
+def test_qvt_cst_ihasname_is_not_abstract():
+    assert not inspect.isabstract(qvt_cst_IHasName)
 
 
-def test_qvt::cst::ihasname_constructor_exists():
-    assert callable(qvt::cst::IHasName.__init__)
+def test_qvt_cst_ihasname_constructor_exists():
+    assert callable(qvt_cst_IHasName.__init__)
 
 
-def test_qvt::cst::ihasname_constructor_args():
-    sig = inspect.signature(qvt::cst::IHasName.__init__)
+def test_qvt_cst_ihasname_constructor_args():
+    sig = inspect.signature(qvt_cst_IHasName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cst::qvt::eobject_is_not_abstract():
-    assert not inspect.isabstract(cst::qvt::EObject)
+def test_cst_qvt_eobject_is_not_abstract():
+    assert not inspect.isabstract(cst_qvt_EObject)
 
 
-def test_cst::qvt::eobject_constructor_exists():
-    assert callable(cst::qvt::EObject.__init__)
+def test_cst_qvt_eobject_constructor_exists():
+    assert callable(cst_qvt_EObject.__init__)
 
 
-def test_cst::qvt::eobject_constructor_args():
-    sig = inspect.signature(cst::qvt::EObject.__init__)
+def test_cst_qvt_eobject_constructor_args():
+    sig = inspect.signature(cst_qvt_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,51 +64,51 @@ def test_identifiercs_constructor_args():
 
 
 
-def test_cst::ihasname_is_not_abstract():
-    assert not inspect.isabstract(cst::IHasName)
+def test_cst_ihasname_is_not_abstract():
+    assert not inspect.isabstract(cst_IHasName)
 
 
-def test_cst::ihasname_constructor_exists():
-    assert callable(cst::IHasName.__init__)
+def test_cst_ihasname_constructor_exists():
+    assert callable(cst_IHasName.__init__)
 
 
-def test_cst::ihasname_constructor_args():
-    sig = inspect.signature(cst::IHasName.__init__)
+def test_cst_ihasname_constructor_args():
+    sig = inspect.signature(cst_IHasName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cst::cstnode_is_not_abstract():
-    assert not inspect.isabstract(cst::CSTNode)
+def test_cst_cstnode_is_not_abstract():
+    assert not inspect.isabstract(cst_CSTNode)
 
 
-def test_cst::cstnode_constructor_exists():
-    assert callable(cst::CSTNode.__init__)
+def test_cst_cstnode_constructor_exists():
+    assert callable(cst_CSTNode.__init__)
 
 
-def test_cst::cstnode_constructor_args():
-    sig = inspect.signature(cst::CSTNode.__init__)
+def test_cst_cstnode_constructor_args():
+    sig = inspect.signature(cst_CSTNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvt::cst::identifiercs_is_not_abstract():
-    assert not inspect.isabstract(qvt::cst::IdentifierCS)
+def test_qvt_cst_identifiercs_is_not_abstract():
+    assert not inspect.isabstract(qvt_cst_IdentifierCS)
 
 
-def test_qvt::cst::identifiercs_constructor_exists():
-    assert callable(qvt::cst::IdentifierCS.__init__)
+def test_qvt_cst_identifiercs_constructor_exists():
+    assert callable(qvt_cst_IdentifierCS.__init__)
 
 
-def test_qvt::cst::identifiercs_constructor_args():
-    sig = inspect.signature(qvt::cst::IdentifierCS.__init__)
+def test_qvt_cst_identifiercs_constructor_args():
+    sig = inspect.signature(qvt_cst_IdentifierCS.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_qvt::cst::identifiercs_has_value():
-    assert hasattr(qvt::cst::IdentifierCS, "value")
+def test_qvt_cst_identifiercs_has_value():
+    assert hasattr(qvt_cst_IdentifierCS, "value")
     descriptor = None
-    for klass in qvt::cst::IdentifierCS.__mro__:
+    for klass in qvt_cst_IdentifierCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -116,37 +116,37 @@ def test_qvt::cst::identifiercs_has_value():
 
 
 
-def test_qvt::cst::identifiedcs_is_not_abstract():
-    assert not inspect.isabstract(qvt::cst::IdentifiedCS)
+def test_qvt_cst_identifiedcs_is_not_abstract():
+    assert not inspect.isabstract(qvt_cst_IdentifiedCS)
 
 
-def test_qvt::cst::identifiedcs_constructor_exists():
-    assert callable(qvt::cst::IdentifiedCS.__init__)
+def test_qvt_cst_identifiedcs_constructor_exists():
+    assert callable(qvt_cst_IdentifiedCS.__init__)
 
 
-def test_qvt::cst::identifiedcs_constructor_args():
-    sig = inspect.signature(qvt::cst::IdentifiedCS.__init__)
+def test_qvt_cst_identifiedcs_constructor_args():
+    sig = inspect.signature(qvt_cst_IdentifiedCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvt::cst::errornode_is_not_abstract():
-    assert not inspect.isabstract(qvt::cst::ErrorNode)
+def test_qvt_cst_errornode_is_not_abstract():
+    assert not inspect.isabstract(qvt_cst_ErrorNode)
 
 
-def test_qvt::cst::errornode_constructor_exists():
-    assert callable(qvt::cst::ErrorNode.__init__)
+def test_qvt_cst_errornode_constructor_exists():
+    assert callable(qvt_cst_ErrorNode.__init__)
 
 
-def test_qvt::cst::errornode_constructor_args():
-    sig = inspect.signature(qvt::cst::ErrorNode.__init__)
+def test_qvt_cst_errornode_constructor_args():
+    sig = inspect.signature(qvt_cst_ErrorNode.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_qvt::cst::errornode_has_message():
-    assert hasattr(qvt::cst::ErrorNode, "message")
+def test_qvt_cst_errornode_has_message():
+    assert hasattr(qvt_cst_ErrorNode, "message")
     descriptor = None
-    for klass in qvt::cst::ErrorNode.__mro__:
+    for klass in qvt_cst_ErrorNode.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -164,93 +164,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-qvt::cst::IHasName_strategy = st.builds(
-    qvt::cst::IHasName,
+qvt_cst_IHasName_strategy = st.builds(
+    qvt_cst_IHasName,
 )
-cst::qvt::EObject_strategy = st.builds(
-    cst::qvt::EObject,
+cst_qvt_EObject_strategy = st.builds(
+    cst_qvt_EObject,
 )
 IdentifierCS_strategy = st.builds(
     IdentifierCS,
 )
-cst::IHasName_strategy = st.builds(
-    cst::IHasName,
+cst_IHasName_strategy = st.builds(
+    cst_IHasName,
 )
-cst::CSTNode_strategy = st.builds(
-    cst::CSTNode,
+cst_CSTNode_strategy = st.builds(
+    cst_CSTNode,
 )
-qvt::cst::IdentifierCS_strategy = st.builds(
-    qvt::cst::IdentifierCS,
+qvt_cst_IdentifierCS_strategy = st.builds(
+    qvt_cst_IdentifierCS,
     value=
         safe_text
 )
-qvt::cst::IdentifiedCS_strategy = st.builds(
-    qvt::cst::IdentifiedCS,
+qvt_cst_IdentifiedCS_strategy = st.builds(
+    qvt_cst_IdentifiedCS,
 )
-qvt::cst::ErrorNode_strategy = st.builds(
-    qvt::cst::ErrorNode,
+qvt_cst_ErrorNode_strategy = st.builds(
+    qvt_cst_ErrorNode,
     message=
         safe_text
 )
 
-@given(instance=qvt::cst::IHasName_strategy)
+@given(instance=qvt_cst_IHasName_strategy)
 @settings(max_examples=50)
-def test_qvt::cst::ihasname_instantiation(instance):
-    assert isinstance(instance, qvt::cst::IHasName)
+def test_qvt_cst_ihasname_instantiation(instance):
+    assert isinstance(instance, qvt_cst_IHasName)
 
-@given(instance=cst::qvt::EObject_strategy)
+@given(instance=cst_qvt_EObject_strategy)
 @settings(max_examples=50)
-def test_cst::qvt::eobject_instantiation(instance):
-    assert isinstance(instance, cst::qvt::EObject)
+def test_cst_qvt_eobject_instantiation(instance):
+    assert isinstance(instance, cst_qvt_EObject)
 
 @given(instance=IdentifierCS_strategy)
 @settings(max_examples=50)
 def test_identifiercs_instantiation(instance):
     assert isinstance(instance, IdentifierCS)
 
-@given(instance=cst::IHasName_strategy)
+@given(instance=cst_IHasName_strategy)
 @settings(max_examples=50)
-def test_cst::ihasname_instantiation(instance):
-    assert isinstance(instance, cst::IHasName)
+def test_cst_ihasname_instantiation(instance):
+    assert isinstance(instance, cst_IHasName)
 
-@given(instance=cst::CSTNode_strategy)
+@given(instance=cst_CSTNode_strategy)
 @settings(max_examples=50)
-def test_cst::cstnode_instantiation(instance):
-    assert isinstance(instance, cst::CSTNode)
+def test_cst_cstnode_instantiation(instance):
+    assert isinstance(instance, cst_CSTNode)
 
-@given(instance=qvt::cst::IdentifierCS_strategy)
+@given(instance=qvt_cst_IdentifierCS_strategy)
 @settings(max_examples=50)
-def test_qvt::cst::identifiercs_instantiation(instance):
-    assert isinstance(instance, qvt::cst::IdentifierCS)
-
-@given(instance=qvt::cst::IdentifierCS_strategy)
-def test_qvt::cst::identifiercs_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_qvt_cst_identifiercs_instantiation(instance):
+    assert isinstance(instance, qvt_cst_IdentifierCS)
 
 
-@given(instance=qvt::cst::IdentifierCS_strategy)
-def test_qvt::cst::identifiercs_value_setter(instance):
+
+@given(instance=qvt_cst_IdentifierCS_strategy)
+def test_qvt_cst_identifiercs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=qvt::cst::IdentifiedCS_strategy)
+@given(instance=qvt_cst_IdentifiedCS_strategy)
 @settings(max_examples=50)
-def test_qvt::cst::identifiedcs_instantiation(instance):
-    assert isinstance(instance, qvt::cst::IdentifiedCS)
+def test_qvt_cst_identifiedcs_instantiation(instance):
+    assert isinstance(instance, qvt_cst_IdentifiedCS)
 
-@given(instance=qvt::cst::ErrorNode_strategy)
+@given(instance=qvt_cst_ErrorNode_strategy)
 @settings(max_examples=50)
-def test_qvt::cst::errornode_instantiation(instance):
-    assert isinstance(instance, qvt::cst::ErrorNode)
-
-@given(instance=qvt::cst::ErrorNode_strategy)
-def test_qvt::cst::errornode_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_qvt_cst_errornode_instantiation(instance):
+    assert isinstance(instance, qvt_cst_ErrorNode)
 
 
-@given(instance=qvt::cst::ErrorNode_strategy)
-def test_qvt::cst::errornode_message_setter(instance):
+
+@given(instance=qvt_cst_ErrorNode_strategy)
+def test_qvt_cst_errornode_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original

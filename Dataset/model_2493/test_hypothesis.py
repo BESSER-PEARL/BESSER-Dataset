@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FExpression,
-    fsmWithMethods::MethodCall,
-    fsmWithMethods::Event,
-    fsmWithMethods::Transition,
-    fsmWithMethods::Method,
-    fsmWithMethods::Referentiable,
+    fsmWithMethods_Event,
+    fsmWithMethods_Transition,
+    fsmWithMethods_MethodCall,
+    fsmWithMethods_Method,
+    fsmWithMethods_Referentiable,
     Referentiable,
-    fsmWithMethods::FExpression,
-    fsmWithMethods::State,
-    fsmWithMethods::Fsm,
+    fsmWithMethods_FExpression,
+    fsmWithMethods_State,
+    fsmWithMethods_Fsm,
 )
 
 # =============================================================================
@@ -38,72 +38,72 @@ def test_fexpression_constructor_args():
 
 
 
-def test_fsmwithmethods::methodcall_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::MethodCall)
+def test_fsmwithmethods_event_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_Event)
 
 
-def test_fsmwithmethods::methodcall_constructor_exists():
-    assert callable(fsmWithMethods::MethodCall.__init__)
+def test_fsmwithmethods_event_constructor_exists():
+    assert callable(fsmWithMethods_Event.__init__)
 
 
-def test_fsmwithmethods::methodcall_constructor_args():
-    sig = inspect.signature(fsmWithMethods::MethodCall.__init__)
+def test_fsmwithmethods_event_constructor_args():
+    sig = inspect.signature(fsmWithMethods_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmwithmethods::event_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::Event)
+def test_fsmwithmethods_transition_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_Transition)
 
 
-def test_fsmwithmethods::event_constructor_exists():
-    assert callable(fsmWithMethods::Event.__init__)
+def test_fsmwithmethods_transition_constructor_exists():
+    assert callable(fsmWithMethods_Transition.__init__)
 
 
-def test_fsmwithmethods::event_constructor_args():
-    sig = inspect.signature(fsmWithMethods::Event.__init__)
+def test_fsmwithmethods_transition_constructor_args():
+    sig = inspect.signature(fsmWithMethods_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmwithmethods::transition_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::Transition)
+def test_fsmwithmethods_methodcall_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_MethodCall)
 
 
-def test_fsmwithmethods::transition_constructor_exists():
-    assert callable(fsmWithMethods::Transition.__init__)
+def test_fsmwithmethods_methodcall_constructor_exists():
+    assert callable(fsmWithMethods_MethodCall.__init__)
 
 
-def test_fsmwithmethods::transition_constructor_args():
-    sig = inspect.signature(fsmWithMethods::Transition.__init__)
+def test_fsmwithmethods_methodcall_constructor_args():
+    sig = inspect.signature(fsmWithMethods_MethodCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmwithmethods::method_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::Method)
+def test_fsmwithmethods_method_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_Method)
 
 
-def test_fsmwithmethods::method_constructor_exists():
-    assert callable(fsmWithMethods::Method.__init__)
+def test_fsmwithmethods_method_constructor_exists():
+    assert callable(fsmWithMethods_Method.__init__)
 
 
-def test_fsmwithmethods::method_constructor_args():
-    sig = inspect.signature(fsmWithMethods::Method.__init__)
+def test_fsmwithmethods_method_constructor_args():
+    sig = inspect.signature(fsmWithMethods_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmwithmethods::referentiable_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::Referentiable)
+def test_fsmwithmethods_referentiable_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_Referentiable)
 
 
-def test_fsmwithmethods::referentiable_constructor_exists():
-    assert callable(fsmWithMethods::Referentiable.__init__)
+def test_fsmwithmethods_referentiable_constructor_exists():
+    assert callable(fsmWithMethods_Referentiable.__init__)
 
 
-def test_fsmwithmethods::referentiable_constructor_args():
-    sig = inspect.signature(fsmWithMethods::Referentiable.__init__)
+def test_fsmwithmethods_referentiable_constructor_args():
+    sig = inspect.signature(fsmWithMethods_Referentiable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -122,23 +122,23 @@ def test_referentiable_constructor_args():
 
 
 
-def test_fsmwithmethods::fexpression_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::FExpression)
+def test_fsmwithmethods_fexpression_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_FExpression)
 
 
-def test_fsmwithmethods::fexpression_constructor_exists():
-    assert callable(fsmWithMethods::FExpression.__init__)
+def test_fsmwithmethods_fexpression_constructor_exists():
+    assert callable(fsmWithMethods_FExpression.__init__)
 
 
-def test_fsmwithmethods::fexpression_constructor_args():
-    sig = inspect.signature(fsmWithMethods::FExpression.__init__)
+def test_fsmwithmethods_fexpression_constructor_args():
+    sig = inspect.signature(fsmWithMethods_FExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsmwithmethods::fexpression_has_name():
-    assert hasattr(fsmWithMethods::FExpression, "name")
+def test_fsmwithmethods_fexpression_has_name():
+    assert hasattr(fsmWithMethods_FExpression, "name")
     descriptor = None
-    for klass in fsmWithMethods::FExpression.__mro__:
+    for klass in fsmWithMethods_FExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -146,37 +146,37 @@ def test_fsmwithmethods::fexpression_has_name():
 
 
 
-def test_fsmwithmethods::state_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::State)
+def test_fsmwithmethods_state_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_State)
 
 
-def test_fsmwithmethods::state_constructor_exists():
-    assert callable(fsmWithMethods::State.__init__)
+def test_fsmwithmethods_state_constructor_exists():
+    assert callable(fsmWithMethods_State.__init__)
 
 
-def test_fsmwithmethods::state_constructor_args():
-    sig = inspect.signature(fsmWithMethods::State.__init__)
+def test_fsmwithmethods_state_constructor_args():
+    sig = inspect.signature(fsmWithMethods_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmwithmethods::fsm_is_not_abstract():
-    assert not inspect.isabstract(fsmWithMethods::Fsm)
+def test_fsmwithmethods_fsm_is_not_abstract():
+    assert not inspect.isabstract(fsmWithMethods_Fsm)
 
 
-def test_fsmwithmethods::fsm_constructor_exists():
-    assert callable(fsmWithMethods::Fsm.__init__)
+def test_fsmwithmethods_fsm_constructor_exists():
+    assert callable(fsmWithMethods_Fsm.__init__)
 
 
-def test_fsmwithmethods::fsm_constructor_args():
-    sig = inspect.signature(fsmWithMethods::Fsm.__init__)
+def test_fsmwithmethods_fsm_constructor_args():
+    sig = inspect.signature(fsmWithMethods_Fsm.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsmwithmethods::fsm_has_name():
-    assert hasattr(fsmWithMethods::Fsm, "name")
+def test_fsmwithmethods_fsm_has_name():
+    assert hasattr(fsmWithMethods_Fsm, "name")
     descriptor = None
-    for klass in fsmWithMethods::Fsm.__mro__:
+    for klass in fsmWithMethods_Fsm.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -197,34 +197,34 @@ safe_text = st.text(
 FExpression_strategy = st.builds(
     FExpression,
 )
-fsmWithMethods::MethodCall_strategy = st.builds(
-    fsmWithMethods::MethodCall,
+fsmWithMethods_Event_strategy = st.builds(
+    fsmWithMethods_Event,
 )
-fsmWithMethods::Event_strategy = st.builds(
-    fsmWithMethods::Event,
+fsmWithMethods_Transition_strategy = st.builds(
+    fsmWithMethods_Transition,
 )
-fsmWithMethods::Transition_strategy = st.builds(
-    fsmWithMethods::Transition,
+fsmWithMethods_MethodCall_strategy = st.builds(
+    fsmWithMethods_MethodCall,
 )
-fsmWithMethods::Method_strategy = st.builds(
-    fsmWithMethods::Method,
+fsmWithMethods_Method_strategy = st.builds(
+    fsmWithMethods_Method,
 )
-fsmWithMethods::Referentiable_strategy = st.builds(
-    fsmWithMethods::Referentiable,
+fsmWithMethods_Referentiable_strategy = st.builds(
+    fsmWithMethods_Referentiable,
 )
 Referentiable_strategy = st.builds(
     Referentiable,
 )
-fsmWithMethods::FExpression_strategy = st.builds(
-    fsmWithMethods::FExpression,
+fsmWithMethods_FExpression_strategy = st.builds(
+    fsmWithMethods_FExpression,
     name=
         safe_text
 )
-fsmWithMethods::State_strategy = st.builds(
-    fsmWithMethods::State,
+fsmWithMethods_State_strategy = st.builds(
+    fsmWithMethods_State,
 )
-fsmWithMethods::Fsm_strategy = st.builds(
-    fsmWithMethods::Fsm,
+fsmWithMethods_Fsm_strategy = st.builds(
+    fsmWithMethods_Fsm,
     name=
         safe_text
 )
@@ -234,69 +234,63 @@ fsmWithMethods::Fsm_strategy = st.builds(
 def test_fexpression_instantiation(instance):
     assert isinstance(instance, FExpression)
 
-@given(instance=fsmWithMethods::MethodCall_strategy)
+@given(instance=fsmWithMethods_Event_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::methodcall_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::MethodCall)
+def test_fsmwithmethods_event_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_Event)
 
-@given(instance=fsmWithMethods::Event_strategy)
+@given(instance=fsmWithMethods_Transition_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::event_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::Event)
+def test_fsmwithmethods_transition_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_Transition)
 
-@given(instance=fsmWithMethods::Transition_strategy)
+@given(instance=fsmWithMethods_MethodCall_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::transition_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::Transition)
+def test_fsmwithmethods_methodcall_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_MethodCall)
 
-@given(instance=fsmWithMethods::Method_strategy)
+@given(instance=fsmWithMethods_Method_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::method_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::Method)
+def test_fsmwithmethods_method_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_Method)
 
-@given(instance=fsmWithMethods::Referentiable_strategy)
+@given(instance=fsmWithMethods_Referentiable_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::referentiable_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::Referentiable)
+def test_fsmwithmethods_referentiable_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_Referentiable)
 
 @given(instance=Referentiable_strategy)
 @settings(max_examples=50)
 def test_referentiable_instantiation(instance):
     assert isinstance(instance, Referentiable)
 
-@given(instance=fsmWithMethods::FExpression_strategy)
+@given(instance=fsmWithMethods_FExpression_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::fexpression_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::FExpression)
-
-@given(instance=fsmWithMethods::FExpression_strategy)
-def test_fsmwithmethods::fexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsmwithmethods_fexpression_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_FExpression)
 
 
-@given(instance=fsmWithMethods::FExpression_strategy)
-def test_fsmwithmethods::fexpression_name_setter(instance):
+
+@given(instance=fsmWithMethods_FExpression_strategy)
+def test_fsmwithmethods_fexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsmWithMethods::State_strategy)
+@given(instance=fsmWithMethods_State_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::state_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::State)
+def test_fsmwithmethods_state_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_State)
 
-@given(instance=fsmWithMethods::Fsm_strategy)
+@given(instance=fsmWithMethods_Fsm_strategy)
 @settings(max_examples=50)
-def test_fsmwithmethods::fsm_instantiation(instance):
-    assert isinstance(instance, fsmWithMethods::Fsm)
-
-@given(instance=fsmWithMethods::Fsm_strategy)
-def test_fsmwithmethods::fsm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsmwithmethods_fsm_instantiation(instance):
+    assert isinstance(instance, fsmWithMethods_Fsm)
 
 
-@given(instance=fsmWithMethods::Fsm_strategy)
-def test_fsmwithmethods::fsm_name_setter(instance):
+
+@given(instance=fsmWithMethods_Fsm_strategy)
+def test_fsmwithmethods_fsm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

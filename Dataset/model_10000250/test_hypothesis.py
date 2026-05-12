@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Connect4_Client,
@@ -60,27 +60,18 @@ def test_connect4_connect_constructor_exists():
 def test_connect4_connect_constructor_args():
     sig = inspect.signature(Connect4_connect.__init__)
     params = list(sig.parameters.keys())
-    assert "label3" in params, "Missing parameter 'label3'"
     assert "x" in params, "Missing parameter 'x'"
-    assert "FRAME_WIDTH" in params, "Missing parameter 'FRAME_WIDTH'"
     assert "label5" in params, "Missing parameter 'label5'"
-    assert "label4" in params, "Missing parameter 'label4'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "label4" in params, "Missing parameter 'label4'"
+    assert "label3" in params, "Missing parameter 'label3'"
     assert "columnSize" in params, "Missing parameter 'columnSize'"
-    assert "rowSize" in params, "Missing parameter 'rowSize'"
     assert "label1" in params, "Missing parameter 'label1'"
+    assert "panel" in params, "Missing parameter 'panel'"
     assert "FRAME_HEIGHT" in params, "Missing parameter 'FRAME_HEIGHT'"
     assert "label2" in params, "Missing parameter 'label2'"
-    assert "panel" in params, "Missing parameter 'panel'"
-
-def test_connect4_connect_has_label3():
-    assert hasattr(Connect4_connect, "label3")
-    descriptor = None
-    for klass in Connect4_connect.__mro__:
-        if "label3" in klass.__dict__:
-            descriptor = klass.__dict__["label3"]
-            break
-    assert isinstance(descriptor, property)
+    assert "rowSize" in params, "Missing parameter 'rowSize'"
+    assert "FRAME_WIDTH" in params, "Missing parameter 'FRAME_WIDTH'"
 
 def test_connect4_connect_has_x():
     assert hasattr(Connect4_connect, "x")
@@ -88,15 +79,6 @@ def test_connect4_connect_has_x():
     for klass in Connect4_connect.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_connect4_connect_has_FRAME_WIDTH():
-    assert hasattr(Connect4_connect, "FRAME_WIDTH")
-    descriptor = None
-    for klass in Connect4_connect.__mro__:
-        if "FRAME_WIDTH" in klass.__dict__:
-            descriptor = klass.__dict__["FRAME_WIDTH"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,6 +91,15 @@ def test_connect4_connect_has_label5():
             break
     assert isinstance(descriptor, property)
 
+def test_connect4_connect_has_y():
+    assert hasattr(Connect4_connect, "y")
+    descriptor = None
+    for klass in Connect4_connect.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_connect4_connect_has_label4():
     assert hasattr(Connect4_connect, "label4")
     descriptor = None
@@ -118,12 +109,12 @@ def test_connect4_connect_has_label4():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_connect_has_y():
-    assert hasattr(Connect4_connect, "y")
+def test_connect4_connect_has_label3():
+    assert hasattr(Connect4_connect, "label3")
     descriptor = None
     for klass in Connect4_connect.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
+        if "label3" in klass.__dict__:
+            descriptor = klass.__dict__["label3"]
             break
     assert isinstance(descriptor, property)
 
@@ -136,21 +127,21 @@ def test_connect4_connect_has_columnSize():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_connect_has_rowSize():
-    assert hasattr(Connect4_connect, "rowSize")
-    descriptor = None
-    for klass in Connect4_connect.__mro__:
-        if "rowSize" in klass.__dict__:
-            descriptor = klass.__dict__["rowSize"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_connect4_connect_has_label1():
     assert hasattr(Connect4_connect, "label1")
     descriptor = None
     for klass in Connect4_connect.__mro__:
         if "label1" in klass.__dict__:
             descriptor = klass.__dict__["label1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_connect4_connect_has_panel():
+    assert hasattr(Connect4_connect, "panel")
+    descriptor = None
+    for klass in Connect4_connect.__mro__:
+        if "panel" in klass.__dict__:
+            descriptor = klass.__dict__["panel"]
             break
     assert isinstance(descriptor, property)
 
@@ -172,12 +163,21 @@ def test_connect4_connect_has_label2():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_connect_has_panel():
-    assert hasattr(Connect4_connect, "panel")
+def test_connect4_connect_has_rowSize():
+    assert hasattr(Connect4_connect, "rowSize")
     descriptor = None
     for klass in Connect4_connect.__mro__:
-        if "panel" in klass.__dict__:
-            descriptor = klass.__dict__["panel"]
+        if "rowSize" in klass.__dict__:
+            descriptor = klass.__dict__["rowSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_connect4_connect_has_FRAME_WIDTH():
+    assert hasattr(Connect4_connect, "FRAME_WIDTH")
+    descriptor = None
+    for klass in Connect4_connect.__mro__:
+        if "FRAME_WIDTH" in klass.__dict__:
+            descriptor = klass.__dict__["FRAME_WIDTH"]
             break
     assert isinstance(descriptor, property)
 
@@ -194,17 +194,8 @@ def test_connect4_circlepanel_constructor_exists():
 def test_connect4_circlepanel_constructor_args():
     sig = inspect.signature(Connect4_CirclePanel.__init__)
     params = list(sig.parameters.keys())
-    assert "colorIndex" in params, "Missing parameter 'colorIndex'"
     assert "color" in params, "Missing parameter 'color'"
-
-def test_connect4_circlepanel_has_colorIndex():
-    assert hasattr(Connect4_CirclePanel, "colorIndex")
-    descriptor = None
-    for klass in Connect4_CirclePanel.__mro__:
-        if "colorIndex" in klass.__dict__:
-            descriptor = klass.__dict__["colorIndex"]
-            break
-    assert isinstance(descriptor, property)
+    assert "colorIndex" in params, "Missing parameter 'colorIndex'"
 
 def test_connect4_circlepanel_has_color():
     assert hasattr(Connect4_CirclePanel, "color")
@@ -212,6 +203,15 @@ def test_connect4_circlepanel_has_color():
     for klass in Connect4_CirclePanel.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_connect4_circlepanel_has_colorIndex():
+    assert hasattr(Connect4_CirclePanel, "colorIndex")
+    descriptor = None
+    for klass in Connect4_CirclePanel.__mro__:
+        if "colorIndex" in klass.__dict__:
+            descriptor = klass.__dict__["colorIndex"]
             break
     assert isinstance(descriptor, property)
 
@@ -228,16 +228,16 @@ def test_connect4_board_constructor_exists():
 def test_connect4_board_constructor_args():
     sig = inspect.signature(Connect4_Board.__init__)
     params = list(sig.parameters.keys())
-    assert "gameBoard" in params, "Missing parameter 'gameBoard'"
-    assert "maxRows" in params, "Missing parameter 'maxRows'"
     assert "maxColumns" in params, "Missing parameter 'maxColumns'"
+    assert "maxRows" in params, "Missing parameter 'maxRows'"
+    assert "gameBoard" in params, "Missing parameter 'gameBoard'"
 
-def test_connect4_board_has_gameBoard():
-    assert hasattr(Connect4_Board, "gameBoard")
+def test_connect4_board_has_maxColumns():
+    assert hasattr(Connect4_Board, "maxColumns")
     descriptor = None
     for klass in Connect4_Board.__mro__:
-        if "gameBoard" in klass.__dict__:
-            descriptor = klass.__dict__["gameBoard"]
+        if "maxColumns" in klass.__dict__:
+            descriptor = klass.__dict__["maxColumns"]
             break
     assert isinstance(descriptor, property)
 
@@ -250,12 +250,12 @@ def test_connect4_board_has_maxRows():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_board_has_maxColumns():
-    assert hasattr(Connect4_Board, "maxColumns")
+def test_connect4_board_has_gameBoard():
+    assert hasattr(Connect4_Board, "gameBoard")
     descriptor = None
     for klass in Connect4_Board.__mro__:
-        if "maxColumns" in klass.__dict__:
-            descriptor = klass.__dict__["maxColumns"]
+        if "gameBoard" in klass.__dict__:
+            descriptor = klass.__dict__["gameBoard"]
             break
     assert isinstance(descriptor, property)
 
@@ -273,9 +273,9 @@ def test_connect4_token_constructor_args():
     sig = inspect.signature(Connect4_Token.__init__)
     params = list(sig.parameters.keys())
     assert "yValue" in params, "Missing parameter 'yValue'"
-    assert "xValue" in params, "Missing parameter 'xValue'"
-    assert "color" in params, "Missing parameter 'color'"
     assert "isEmpty" in params, "Missing parameter 'isEmpty'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "xValue" in params, "Missing parameter 'xValue'"
 
 def test_connect4_token_has_yValue():
     assert hasattr(Connect4_Token, "yValue")
@@ -286,12 +286,12 @@ def test_connect4_token_has_yValue():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_token_has_xValue():
-    assert hasattr(Connect4_Token, "xValue")
+def test_connect4_token_has_isEmpty():
+    assert hasattr(Connect4_Token, "isEmpty")
     descriptor = None
     for klass in Connect4_Token.__mro__:
-        if "xValue" in klass.__dict__:
-            descriptor = klass.__dict__["xValue"]
+        if "isEmpty" in klass.__dict__:
+            descriptor = klass.__dict__["isEmpty"]
             break
     assert isinstance(descriptor, property)
 
@@ -304,12 +304,12 @@ def test_connect4_token_has_color():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_token_has_isEmpty():
-    assert hasattr(Connect4_Token, "isEmpty")
+def test_connect4_token_has_xValue():
+    assert hasattr(Connect4_Token, "xValue")
     descriptor = None
     for klass in Connect4_Token.__mro__:
-        if "isEmpty" in klass.__dict__:
-            descriptor = klass.__dict__["isEmpty"]
+        if "xValue" in klass.__dict__:
+            descriptor = klass.__dict__["xValue"]
             break
     assert isinstance(descriptor, property)
 
@@ -326,20 +326,11 @@ def test_connect4_player_constructor_exists():
 def test_connect4_player_constructor_args():
     sig = inspect.signature(Connect4_Player.__init__)
     params = list(sig.parameters.keys())
-    assert "currentPlayer" in params, "Missing parameter 'currentPlayer'"
     assert "name" in params, "Missing parameter 'name'"
     assert "roundWon" in params, "Missing parameter 'roundWon'"
-    assert "wins" in params, "Missing parameter 'wins'"
     assert "tokenColor" in params, "Missing parameter 'tokenColor'"
-
-def test_connect4_player_has_currentPlayer():
-    assert hasattr(Connect4_Player, "currentPlayer")
-    descriptor = None
-    for klass in Connect4_Player.__mro__:
-        if "currentPlayer" in klass.__dict__:
-            descriptor = klass.__dict__["currentPlayer"]
-            break
-    assert isinstance(descriptor, property)
+    assert "wins" in params, "Missing parameter 'wins'"
+    assert "currentPlayer" in params, "Missing parameter 'currentPlayer'"
 
 def test_connect4_player_has_name():
     assert hasattr(Connect4_Player, "name")
@@ -359,6 +350,15 @@ def test_connect4_player_has_roundWon():
             break
     assert isinstance(descriptor, property)
 
+def test_connect4_player_has_tokenColor():
+    assert hasattr(Connect4_Player, "tokenColor")
+    descriptor = None
+    for klass in Connect4_Player.__mro__:
+        if "tokenColor" in klass.__dict__:
+            descriptor = klass.__dict__["tokenColor"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_connect4_player_has_wins():
     assert hasattr(Connect4_Player, "wins")
     descriptor = None
@@ -368,12 +368,12 @@ def test_connect4_player_has_wins():
             break
     assert isinstance(descriptor, property)
 
-def test_connect4_player_has_tokenColor():
-    assert hasattr(Connect4_Player, "tokenColor")
+def test_connect4_player_has_currentPlayer():
+    assert hasattr(Connect4_Player, "currentPlayer")
     descriptor = None
     for klass in Connect4_Player.__mro__:
-        if "tokenColor" in klass.__dict__:
-            descriptor = klass.__dict__["tokenColor"]
+        if "currentPlayer" in klass.__dict__:
+            descriptor = klass.__dict__["currentPlayer"]
             break
     assert isinstance(descriptor, property)
 
@@ -397,70 +397,70 @@ Connect4_Server_strategy = st.builds(
 )
 Connect4_connect_strategy = st.builds(
     Connect4_connect,
-    label3=
-        safe_text,
     x=
-        st.integers(),
-    FRAME_WIDTH=
         st.integers(),
     label5=
         safe_text,
-    label4=
-        safe_text,
     y=
         st.integers(),
+    label4=
+        safe_text,
+    label3=
+        safe_text,
     columnSize=
         st.integers(),
-    rowSize=
-        st.integers(),
     label1=
+        safe_text,
+    panel=
         safe_text,
     FRAME_HEIGHT=
         st.integers(),
     label2=
         safe_text,
-    panel=
-        safe_text
+    rowSize=
+        st.integers(),
+    FRAME_WIDTH=
+        st.integers()
 )
 Connect4_CirclePanel_strategy = st.builds(
     Connect4_CirclePanel,
-    colorIndex=
-        st.integers(),
     color=
-        safe_text
+        safe_text,
+    colorIndex=
+        st.integers()
 )
 Connect4_Board_strategy = st.builds(
     Connect4_Board,
-    gameBoard=
-        safe_text,
+    maxColumns=
+        st.integers(),
     maxRows=
         st.integers(),
-    maxColumns=
-        st.integers()
+    gameBoard=
+        safe_text
 )
 Connect4_Token_strategy = st.builds(
     Connect4_Token,
     yValue=
         st.integers(),
-    xValue=
-        st.integers(),
+    isEmpty=
+        st.booleans(),
     color=
         safe_text,
-    isEmpty=
-        st.booleans()
+    xValue=
+        st.integers()
 )
 Connect4_Player_strategy = st.builds(
     Connect4_Player,
-    currentPlayer=
-        st.booleans(),
     name=
         safe_text,
     roundWon=
         st.booleans(),
+    tokenColor=
+        safe_text,
     wins=
         st.integers(),
-    tokenColor=
-        safe_text
+    currentPlayer=
+        st.booleans()
 )
 
 @given(instance=Connect4_Client_strategy)
@@ -478,20 +478,6 @@ def test_connect4_server_instantiation(instance):
 def test_connect4_connect_instantiation(instance):
     assert isinstance(instance, Connect4_connect)
 
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label3_type(instance):
-    assert isinstance(instance.label3, str)
-
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label3_setter(instance):
-    original = instance.label3
-    instance.label3 = original
-    assert instance.label3 == original
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=Connect4_connect_strategy)
@@ -500,20 +486,6 @@ def test_connect4_connect_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_FRAME_WIDTH_type(instance):
-    assert isinstance(instance.FRAME_WIDTH, int)
-
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_FRAME_WIDTH_setter(instance):
-    original = instance.FRAME_WIDTH
-    instance.FRAME_WIDTH = original
-    assert instance.FRAME_WIDTH == original
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label5_type(instance):
-    assert isinstance(instance.label5, str)
 
 
 @given(instance=Connect4_connect_strategy)
@@ -522,20 +494,6 @@ def test_connect4_connect_label5_setter(instance):
     instance.label5 = original
     assert instance.label5 == original
 
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label4_type(instance):
-    assert isinstance(instance.label4, str)
-
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label4_setter(instance):
-    original = instance.label4
-    instance.label4 = original
-    assert instance.label4 == original
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
 @given(instance=Connect4_connect_strategy)
@@ -544,9 +502,22 @@ def test_connect4_connect_y_setter(instance):
     instance.y = original
     assert instance.y == original
 
+
+
 @given(instance=Connect4_connect_strategy)
-def test_connect4_connect_columnSize_type(instance):
-    assert isinstance(instance.columnSize, int)
+def test_connect4_connect_label4_setter(instance):
+    original = instance.label4
+    instance.label4 = original
+    assert instance.label4 == original
+
+
+
+@given(instance=Connect4_connect_strategy)
+def test_connect4_connect_label3_setter(instance):
+    original = instance.label3
+    instance.label3 = original
+    assert instance.label3 == original
+
 
 
 @given(instance=Connect4_connect_strategy)
@@ -555,20 +526,6 @@ def test_connect4_connect_columnSize_setter(instance):
     instance.columnSize = original
     assert instance.columnSize == original
 
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_rowSize_type(instance):
-    assert isinstance(instance.rowSize, int)
-
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_rowSize_setter(instance):
-    original = instance.rowSize
-    instance.rowSize = original
-    assert instance.rowSize == original
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label1_type(instance):
-    assert isinstance(instance.label1, str)
 
 
 @given(instance=Connect4_connect_strategy)
@@ -577,31 +534,6 @@ def test_connect4_connect_label1_setter(instance):
     instance.label1 = original
     assert instance.label1 == original
 
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_FRAME_HEIGHT_type(instance):
-    assert isinstance(instance.FRAME_HEIGHT, int)
-
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_FRAME_HEIGHT_setter(instance):
-    original = instance.FRAME_HEIGHT
-    instance.FRAME_HEIGHT = original
-    assert instance.FRAME_HEIGHT == original
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label2_type(instance):
-    assert isinstance(instance.label2, str)
-
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_label2_setter(instance):
-    original = instance.label2
-    instance.label2 = original
-    assert instance.label2 == original
-
-@given(instance=Connect4_connect_strategy)
-def test_connect4_connect_panel_type(instance):
-    assert isinstance(instance.panel, str)
 
 
 @given(instance=Connect4_connect_strategy)
@@ -610,25 +542,43 @@ def test_connect4_connect_panel_setter(instance):
     instance.panel = original
     assert instance.panel == original
 
+
+
+@given(instance=Connect4_connect_strategy)
+def test_connect4_connect_FRAME_HEIGHT_setter(instance):
+    original = instance.FRAME_HEIGHT
+    instance.FRAME_HEIGHT = original
+    assert instance.FRAME_HEIGHT == original
+
+
+
+@given(instance=Connect4_connect_strategy)
+def test_connect4_connect_label2_setter(instance):
+    original = instance.label2
+    instance.label2 = original
+    assert instance.label2 == original
+
+
+
+@given(instance=Connect4_connect_strategy)
+def test_connect4_connect_rowSize_setter(instance):
+    original = instance.rowSize
+    instance.rowSize = original
+    assert instance.rowSize == original
+
+
+
+@given(instance=Connect4_connect_strategy)
+def test_connect4_connect_FRAME_WIDTH_setter(instance):
+    original = instance.FRAME_WIDTH
+    instance.FRAME_WIDTH = original
+    assert instance.FRAME_WIDTH == original
+
 @given(instance=Connect4_CirclePanel_strategy)
 @settings(max_examples=50)
 def test_connect4_circlepanel_instantiation(instance):
     assert isinstance(instance, Connect4_CirclePanel)
 
-@given(instance=Connect4_CirclePanel_strategy)
-def test_connect4_circlepanel_colorIndex_type(instance):
-    assert isinstance(instance.colorIndex, int)
-
-
-@given(instance=Connect4_CirclePanel_strategy)
-def test_connect4_circlepanel_colorIndex_setter(instance):
-    original = instance.colorIndex
-    instance.colorIndex = original
-    assert instance.colorIndex == original
-
-@given(instance=Connect4_CirclePanel_strategy)
-def test_connect4_circlepanel_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
 @given(instance=Connect4_CirclePanel_strategy)
@@ -637,36 +587,19 @@ def test_connect4_circlepanel_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
+
+
+@given(instance=Connect4_CirclePanel_strategy)
+def test_connect4_circlepanel_colorIndex_setter(instance):
+    original = instance.colorIndex
+    instance.colorIndex = original
+    assert instance.colorIndex == original
+
 @given(instance=Connect4_Board_strategy)
 @settings(max_examples=50)
 def test_connect4_board_instantiation(instance):
     assert isinstance(instance, Connect4_Board)
 
-@given(instance=Connect4_Board_strategy)
-def test_connect4_board_gameBoard_type(instance):
-    assert isinstance(instance.gameBoard, str)
-
-
-@given(instance=Connect4_Board_strategy)
-def test_connect4_board_gameBoard_setter(instance):
-    original = instance.gameBoard
-    instance.gameBoard = original
-    assert instance.gameBoard == original
-
-@given(instance=Connect4_Board_strategy)
-def test_connect4_board_maxRows_type(instance):
-    assert isinstance(instance.maxRows, int)
-
-
-@given(instance=Connect4_Board_strategy)
-def test_connect4_board_maxRows_setter(instance):
-    original = instance.maxRows
-    instance.maxRows = original
-    assert instance.maxRows == original
-
-@given(instance=Connect4_Board_strategy)
-def test_connect4_board_maxColumns_type(instance):
-    assert isinstance(instance.maxColumns, int)
 
 
 @given(instance=Connect4_Board_strategy)
@@ -675,14 +608,27 @@ def test_connect4_board_maxColumns_setter(instance):
     instance.maxColumns = original
     assert instance.maxColumns == original
 
+
+
+@given(instance=Connect4_Board_strategy)
+def test_connect4_board_maxRows_setter(instance):
+    original = instance.maxRows
+    instance.maxRows = original
+    assert instance.maxRows == original
+
+
+
+@given(instance=Connect4_Board_strategy)
+def test_connect4_board_gameBoard_setter(instance):
+    original = instance.gameBoard
+    instance.gameBoard = original
+    assert instance.gameBoard == original
+
 @given(instance=Connect4_Token_strategy)
 @settings(max_examples=50)
 def test_connect4_token_instantiation(instance):
     assert isinstance(instance, Connect4_Token)
 
-@given(instance=Connect4_Token_strategy)
-def test_connect4_token_yValue_type(instance):
-    assert isinstance(instance.yValue, int)
 
 
 @given(instance=Connect4_Token_strategy)
@@ -691,31 +637,6 @@ def test_connect4_token_yValue_setter(instance):
     instance.yValue = original
     assert instance.yValue == original
 
-@given(instance=Connect4_Token_strategy)
-def test_connect4_token_xValue_type(instance):
-    assert isinstance(instance.xValue, int)
-
-
-@given(instance=Connect4_Token_strategy)
-def test_connect4_token_xValue_setter(instance):
-    original = instance.xValue
-    instance.xValue = original
-    assert instance.xValue == original
-
-@given(instance=Connect4_Token_strategy)
-def test_connect4_token_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Connect4_Token_strategy)
-def test_connect4_token_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=Connect4_Token_strategy)
-def test_connect4_token_isEmpty_type(instance):
-    assert isinstance(instance.isEmpty, bool)
 
 
 @given(instance=Connect4_Token_strategy)
@@ -724,25 +645,27 @@ def test_connect4_token_isEmpty_setter(instance):
     instance.isEmpty = original
     assert instance.isEmpty == original
 
+
+
+@given(instance=Connect4_Token_strategy)
+def test_connect4_token_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=Connect4_Token_strategy)
+def test_connect4_token_xValue_setter(instance):
+    original = instance.xValue
+    instance.xValue = original
+    assert instance.xValue == original
+
 @given(instance=Connect4_Player_strategy)
 @settings(max_examples=50)
 def test_connect4_player_instantiation(instance):
     assert isinstance(instance, Connect4_Player)
 
-@given(instance=Connect4_Player_strategy)
-def test_connect4_player_currentPlayer_type(instance):
-    assert isinstance(instance.currentPlayer, bool)
-
-
-@given(instance=Connect4_Player_strategy)
-def test_connect4_player_currentPlayer_setter(instance):
-    original = instance.currentPlayer
-    instance.currentPlayer = original
-    assert instance.currentPlayer == original
-
-@given(instance=Connect4_Player_strategy)
-def test_connect4_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Connect4_Player_strategy)
@@ -751,9 +674,6 @@ def test_connect4_player_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Connect4_Player_strategy)
-def test_connect4_player_roundWon_type(instance):
-    assert isinstance(instance.roundWon, bool)
 
 
 @given(instance=Connect4_Player_strategy)
@@ -762,9 +682,14 @@ def test_connect4_player_roundWon_setter(instance):
     instance.roundWon = original
     assert instance.roundWon == original
 
+
+
 @given(instance=Connect4_Player_strategy)
-def test_connect4_player_wins_type(instance):
-    assert isinstance(instance.wins, int)
+def test_connect4_player_tokenColor_setter(instance):
+    original = instance.tokenColor
+    instance.tokenColor = original
+    assert instance.tokenColor == original
+
 
 
 @given(instance=Connect4_Player_strategy)
@@ -773,13 +698,10 @@ def test_connect4_player_wins_setter(instance):
     instance.wins = original
     assert instance.wins == original
 
-@given(instance=Connect4_Player_strategy)
-def test_connect4_player_tokenColor_type(instance):
-    assert isinstance(instance.tokenColor, str)
 
 
 @given(instance=Connect4_Player_strategy)
-def test_connect4_player_tokenColor_setter(instance):
-    original = instance.tokenColor
-    instance.tokenColor = original
-    assert instance.tokenColor == original
+def test_connect4_player_currentPlayer_setter(instance):
+    original = instance.currentPlayer
+    instance.currentPlayer = original
+    assert instance.currentPlayer == original

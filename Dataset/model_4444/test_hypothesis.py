@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ioT::FetchDataCondition,
-    ioT::Time,
-    ioT::FetchDataExpression,
-    ioT::FetchData,
-    ioT::Destination,
-    ioT::Device,
-    ioT::DeviceTypes,
-    ioT::DeviceType,
-    ioT::Method,
-    ioT::SensorGetMethod,
-    ioT::SensorGroup,
-    ioT::DestinationTypes,
-    ioT::Sensor,
-    ioT::DestinationType,
-    ioT::Portnumber,
-    ioT::Ip,
-    ioT::Server,
-    ioT::ServerTypes,
-    ioT::ServerType,
-    ioT::SensorTypes,
-    ioT::SensorType,
-    ioT::EObject,
-    ioT::System,
+from python_code import (
+    ioT_FetchDataCondition,
+    ioT_Time,
+    ioT_FetchDataExpression,
+    ioT_FetchData,
+    ioT_Destination,
+    ioT_Device,
+    ioT_DeviceTypes,
+    ioT_DeviceType,
+    ioT_Method,
+    ioT_SensorGetMethod,
+    ioT_SensorGroup,
+    ioT_DestinationTypes,
+    ioT_Sensor,
+    ioT_DestinationType,
+    ioT_Portnumber,
+    ioT_Ip,
+    ioT_Server,
+    ioT_ServerTypes,
+    ioT_ServerType,
+    ioT_SensorTypes,
+    ioT_SensorType,
+    ioT_EObject,
+    ioT_System,
 )
 
 # =============================================================================
@@ -37,23 +37,23 @@ from classes import (
 
 
 
-def test_iot::fetchdatacondition_is_not_abstract():
-    assert not inspect.isabstract(ioT::FetchDataCondition)
+def test_iot_fetchdatacondition_is_not_abstract():
+    assert not inspect.isabstract(ioT_FetchDataCondition)
 
 
-def test_iot::fetchdatacondition_constructor_exists():
-    assert callable(ioT::FetchDataCondition.__init__)
+def test_iot_fetchdatacondition_constructor_exists():
+    assert callable(ioT_FetchDataCondition.__init__)
 
 
-def test_iot::fetchdatacondition_constructor_args():
-    sig = inspect.signature(ioT::FetchDataCondition.__init__)
+def test_iot_fetchdatacondition_constructor_args():
+    sig = inspect.signature(ioT_FetchDataCondition.__init__)
     params = list(sig.parameters.keys())
     assert "condition" in params, "Missing parameter 'condition'"
 
-def test_iot::fetchdatacondition_has_condition():
-    assert hasattr(ioT::FetchDataCondition, "condition")
+def test_iot_fetchdatacondition_has_condition():
+    assert hasattr(ioT_FetchDataCondition, "condition")
     descriptor = None
-    for klass in ioT::FetchDataCondition.__mro__:
+    for klass in ioT_FetchDataCondition.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
@@ -61,23 +61,23 @@ def test_iot::fetchdatacondition_has_condition():
 
 
 
-def test_iot::time_is_not_abstract():
-    assert not inspect.isabstract(ioT::Time)
+def test_iot_time_is_not_abstract():
+    assert not inspect.isabstract(ioT_Time)
 
 
-def test_iot::time_constructor_exists():
-    assert callable(ioT::Time.__init__)
+def test_iot_time_constructor_exists():
+    assert callable(ioT_Time.__init__)
 
 
-def test_iot::time_constructor_args():
-    sig = inspect.signature(ioT::Time.__init__)
+def test_iot_time_constructor_args():
+    sig = inspect.signature(ioT_Time.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_iot::time_has_time():
-    assert hasattr(ioT::Time, "time")
+def test_iot_time_has_time():
+    assert hasattr(ioT_Time, "time")
     descriptor = None
-    for klass in ioT::Time.__mro__:
+    for klass in ioT_Time.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -85,23 +85,23 @@ def test_iot::time_has_time():
 
 
 
-def test_iot::fetchdataexpression_is_not_abstract():
-    assert not inspect.isabstract(ioT::FetchDataExpression)
+def test_iot_fetchdataexpression_is_not_abstract():
+    assert not inspect.isabstract(ioT_FetchDataExpression)
 
 
-def test_iot::fetchdataexpression_constructor_exists():
-    assert callable(ioT::FetchDataExpression.__init__)
+def test_iot_fetchdataexpression_constructor_exists():
+    assert callable(ioT_FetchDataExpression.__init__)
 
 
-def test_iot::fetchdataexpression_constructor_args():
-    sig = inspect.signature(ioT::FetchDataExpression.__init__)
+def test_iot_fetchdataexpression_constructor_args():
+    sig = inspect.signature(ioT_FetchDataExpression.__init__)
     params = list(sig.parameters.keys())
     assert "timeUnit" in params, "Missing parameter 'timeUnit'"
 
-def test_iot::fetchdataexpression_has_timeUnit():
-    assert hasattr(ioT::FetchDataExpression, "timeUnit")
+def test_iot_fetchdataexpression_has_timeUnit():
+    assert hasattr(ioT_FetchDataExpression, "timeUnit")
     descriptor = None
-    for klass in ioT::FetchDataExpression.__mro__:
+    for klass in ioT_FetchDataExpression.__mro__:
         if "timeUnit" in klass.__dict__:
             descriptor = klass.__dict__["timeUnit"]
             break
@@ -109,37 +109,37 @@ def test_iot::fetchdataexpression_has_timeUnit():
 
 
 
-def test_iot::fetchdata_is_not_abstract():
-    assert not inspect.isabstract(ioT::FetchData)
+def test_iot_fetchdata_is_not_abstract():
+    assert not inspect.isabstract(ioT_FetchData)
 
 
-def test_iot::fetchdata_constructor_exists():
-    assert callable(ioT::FetchData.__init__)
+def test_iot_fetchdata_constructor_exists():
+    assert callable(ioT_FetchData.__init__)
 
 
-def test_iot::fetchdata_constructor_args():
-    sig = inspect.signature(ioT::FetchData.__init__)
+def test_iot_fetchdata_constructor_args():
+    sig = inspect.signature(ioT_FetchData.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::destination_is_not_abstract():
-    assert not inspect.isabstract(ioT::Destination)
+def test_iot_destination_is_not_abstract():
+    assert not inspect.isabstract(ioT_Destination)
 
 
-def test_iot::destination_constructor_exists():
-    assert callable(ioT::Destination.__init__)
+def test_iot_destination_constructor_exists():
+    assert callable(ioT_Destination.__init__)
 
 
-def test_iot::destination_constructor_args():
-    sig = inspect.signature(ioT::Destination.__init__)
+def test_iot_destination_constructor_args():
+    sig = inspect.signature(ioT_Destination.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::destination_has_name():
-    assert hasattr(ioT::Destination, "name")
+def test_iot_destination_has_name():
+    assert hasattr(ioT_Destination, "name")
     descriptor = None
-    for klass in ioT::Destination.__mro__:
+    for klass in ioT_Destination.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -147,23 +147,23 @@ def test_iot::destination_has_name():
 
 
 
-def test_iot::device_is_not_abstract():
-    assert not inspect.isabstract(ioT::Device)
+def test_iot_device_is_not_abstract():
+    assert not inspect.isabstract(ioT_Device)
 
 
-def test_iot::device_constructor_exists():
-    assert callable(ioT::Device.__init__)
+def test_iot_device_constructor_exists():
+    assert callable(ioT_Device.__init__)
 
 
-def test_iot::device_constructor_args():
-    sig = inspect.signature(ioT::Device.__init__)
+def test_iot_device_constructor_args():
+    sig = inspect.signature(ioT_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::device_has_name():
-    assert hasattr(ioT::Device, "name")
+def test_iot_device_has_name():
+    assert hasattr(ioT_Device, "name")
     descriptor = None
-    for klass in ioT::Device.__mro__:
+    for klass in ioT_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -171,37 +171,37 @@ def test_iot::device_has_name():
 
 
 
-def test_iot::devicetypes_is_not_abstract():
-    assert not inspect.isabstract(ioT::DeviceTypes)
+def test_iot_devicetypes_is_not_abstract():
+    assert not inspect.isabstract(ioT_DeviceTypes)
 
 
-def test_iot::devicetypes_constructor_exists():
-    assert callable(ioT::DeviceTypes.__init__)
+def test_iot_devicetypes_constructor_exists():
+    assert callable(ioT_DeviceTypes.__init__)
 
 
-def test_iot::devicetypes_constructor_args():
-    sig = inspect.signature(ioT::DeviceTypes.__init__)
+def test_iot_devicetypes_constructor_args():
+    sig = inspect.signature(ioT_DeviceTypes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::devicetype_is_not_abstract():
-    assert not inspect.isabstract(ioT::DeviceType)
+def test_iot_devicetype_is_not_abstract():
+    assert not inspect.isabstract(ioT_DeviceType)
 
 
-def test_iot::devicetype_constructor_exists():
-    assert callable(ioT::DeviceType.__init__)
+def test_iot_devicetype_constructor_exists():
+    assert callable(ioT_DeviceType.__init__)
 
 
-def test_iot::devicetype_constructor_args():
-    sig = inspect.signature(ioT::DeviceType.__init__)
+def test_iot_devicetype_constructor_args():
+    sig = inspect.signature(ioT_DeviceType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::devicetype_has_name():
-    assert hasattr(ioT::DeviceType, "name")
+def test_iot_devicetype_has_name():
+    assert hasattr(ioT_DeviceType, "name")
     descriptor = None
-    for klass in ioT::DeviceType.__mro__:
+    for klass in ioT_DeviceType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -209,33 +209,33 @@ def test_iot::devicetype_has_name():
 
 
 
-def test_iot::method_is_not_abstract():
-    assert not inspect.isabstract(ioT::Method)
+def test_iot_method_is_not_abstract():
+    assert not inspect.isabstract(ioT_Method)
 
 
-def test_iot::method_constructor_exists():
-    assert callable(ioT::Method.__init__)
+def test_iot_method_constructor_exists():
+    assert callable(ioT_Method.__init__)
 
 
-def test_iot::method_constructor_args():
-    sig = inspect.signature(ioT::Method.__init__)
+def test_iot_method_constructor_args():
+    sig = inspect.signature(ioT_Method.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "parameters" in params, "Missing parameter 'parameters'"
 
-def test_iot::method_has_name():
-    assert hasattr(ioT::Method, "name")
+def test_iot_method_has_name():
+    assert hasattr(ioT_Method, "name")
     descriptor = None
-    for klass in ioT::Method.__mro__:
+    for klass in ioT_Method.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::method_has_parameters():
-    assert hasattr(ioT::Method, "parameters")
+def test_iot_method_has_parameters():
+    assert hasattr(ioT_Method, "parameters")
     descriptor = None
-    for klass in ioT::Method.__mro__:
+    for klass in ioT_Method.__mro__:
         if "parameters" in klass.__dict__:
             descriptor = klass.__dict__["parameters"]
             break
@@ -243,37 +243,37 @@ def test_iot::method_has_parameters():
 
 
 
-def test_iot::sensorgetmethod_is_not_abstract():
-    assert not inspect.isabstract(ioT::SensorGetMethod)
+def test_iot_sensorgetmethod_is_not_abstract():
+    assert not inspect.isabstract(ioT_SensorGetMethod)
 
 
-def test_iot::sensorgetmethod_constructor_exists():
-    assert callable(ioT::SensorGetMethod.__init__)
+def test_iot_sensorgetmethod_constructor_exists():
+    assert callable(ioT_SensorGetMethod.__init__)
 
 
-def test_iot::sensorgetmethod_constructor_args():
-    sig = inspect.signature(ioT::SensorGetMethod.__init__)
+def test_iot_sensorgetmethod_constructor_args():
+    sig = inspect.signature(ioT_SensorGetMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sensorgroup_is_not_abstract():
-    assert not inspect.isabstract(ioT::SensorGroup)
+def test_iot_sensorgroup_is_not_abstract():
+    assert not inspect.isabstract(ioT_SensorGroup)
 
 
-def test_iot::sensorgroup_constructor_exists():
-    assert callable(ioT::SensorGroup.__init__)
+def test_iot_sensorgroup_constructor_exists():
+    assert callable(ioT_SensorGroup.__init__)
 
 
-def test_iot::sensorgroup_constructor_args():
-    sig = inspect.signature(ioT::SensorGroup.__init__)
+def test_iot_sensorgroup_constructor_args():
+    sig = inspect.signature(ioT_SensorGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::sensorgroup_has_name():
-    assert hasattr(ioT::SensorGroup, "name")
+def test_iot_sensorgroup_has_name():
+    assert hasattr(ioT_SensorGroup, "name")
     descriptor = None
-    for klass in ioT::SensorGroup.__mro__:
+    for klass in ioT_SensorGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -281,37 +281,37 @@ def test_iot::sensorgroup_has_name():
 
 
 
-def test_iot::destinationtypes_is_not_abstract():
-    assert not inspect.isabstract(ioT::DestinationTypes)
+def test_iot_destinationtypes_is_not_abstract():
+    assert not inspect.isabstract(ioT_DestinationTypes)
 
 
-def test_iot::destinationtypes_constructor_exists():
-    assert callable(ioT::DestinationTypes.__init__)
+def test_iot_destinationtypes_constructor_exists():
+    assert callable(ioT_DestinationTypes.__init__)
 
 
-def test_iot::destinationtypes_constructor_args():
-    sig = inspect.signature(ioT::DestinationTypes.__init__)
+def test_iot_destinationtypes_constructor_args():
+    sig = inspect.signature(ioT_DestinationTypes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sensor_is_not_abstract():
-    assert not inspect.isabstract(ioT::Sensor)
+def test_iot_sensor_is_not_abstract():
+    assert not inspect.isabstract(ioT_Sensor)
 
 
-def test_iot::sensor_constructor_exists():
-    assert callable(ioT::Sensor.__init__)
+def test_iot_sensor_constructor_exists():
+    assert callable(ioT_Sensor.__init__)
 
 
-def test_iot::sensor_constructor_args():
-    sig = inspect.signature(ioT::Sensor.__init__)
+def test_iot_sensor_constructor_args():
+    sig = inspect.signature(ioT_Sensor.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::sensor_has_name():
-    assert hasattr(ioT::Sensor, "name")
+def test_iot_sensor_has_name():
+    assert hasattr(ioT_Sensor, "name")
     descriptor = None
-    for klass in ioT::Sensor.__mro__:
+    for klass in ioT_Sensor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -319,23 +319,23 @@ def test_iot::sensor_has_name():
 
 
 
-def test_iot::destinationtype_is_not_abstract():
-    assert not inspect.isabstract(ioT::DestinationType)
+def test_iot_destinationtype_is_not_abstract():
+    assert not inspect.isabstract(ioT_DestinationType)
 
 
-def test_iot::destinationtype_constructor_exists():
-    assert callable(ioT::DestinationType.__init__)
+def test_iot_destinationtype_constructor_exists():
+    assert callable(ioT_DestinationType.__init__)
 
 
-def test_iot::destinationtype_constructor_args():
-    sig = inspect.signature(ioT::DestinationType.__init__)
+def test_iot_destinationtype_constructor_args():
+    sig = inspect.signature(ioT_DestinationType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::destinationtype_has_name():
-    assert hasattr(ioT::DestinationType, "name")
+def test_iot_destinationtype_has_name():
+    assert hasattr(ioT_DestinationType, "name")
     descriptor = None
-    for klass in ioT::DestinationType.__mro__:
+    for klass in ioT_DestinationType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -343,23 +343,23 @@ def test_iot::destinationtype_has_name():
 
 
 
-def test_iot::portnumber_is_not_abstract():
-    assert not inspect.isabstract(ioT::Portnumber)
+def test_iot_portnumber_is_not_abstract():
+    assert not inspect.isabstract(ioT_Portnumber)
 
 
-def test_iot::portnumber_constructor_exists():
-    assert callable(ioT::Portnumber.__init__)
+def test_iot_portnumber_constructor_exists():
+    assert callable(ioT_Portnumber.__init__)
 
 
-def test_iot::portnumber_constructor_args():
-    sig = inspect.signature(ioT::Portnumber.__init__)
+def test_iot_portnumber_constructor_args():
+    sig = inspect.signature(ioT_Portnumber.__init__)
     params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
 
-def test_iot::portnumber_has_number():
-    assert hasattr(ioT::Portnumber, "number")
+def test_iot_portnumber_has_number():
+    assert hasattr(ioT_Portnumber, "number")
     descriptor = None
-    for klass in ioT::Portnumber.__mro__:
+    for klass in ioT_Portnumber.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
@@ -367,23 +367,23 @@ def test_iot::portnumber_has_number():
 
 
 
-def test_iot::ip_is_not_abstract():
-    assert not inspect.isabstract(ioT::Ip)
+def test_iot_ip_is_not_abstract():
+    assert not inspect.isabstract(ioT_Ip)
 
 
-def test_iot::ip_constructor_exists():
-    assert callable(ioT::Ip.__init__)
+def test_iot_ip_constructor_exists():
+    assert callable(ioT_Ip.__init__)
 
 
-def test_iot::ip_constructor_args():
-    sig = inspect.signature(ioT::Ip.__init__)
+def test_iot_ip_constructor_args():
+    sig = inspect.signature(ioT_Ip.__init__)
     params = list(sig.parameters.keys())
     assert "ip" in params, "Missing parameter 'ip'"
 
-def test_iot::ip_has_ip():
-    assert hasattr(ioT::Ip, "ip")
+def test_iot_ip_has_ip():
+    assert hasattr(ioT_Ip, "ip")
     descriptor = None
-    for klass in ioT::Ip.__mro__:
+    for klass in ioT_Ip.__mro__:
         if "ip" in klass.__dict__:
             descriptor = klass.__dict__["ip"]
             break
@@ -391,23 +391,23 @@ def test_iot::ip_has_ip():
 
 
 
-def test_iot::server_is_not_abstract():
-    assert not inspect.isabstract(ioT::Server)
+def test_iot_server_is_not_abstract():
+    assert not inspect.isabstract(ioT_Server)
 
 
-def test_iot::server_constructor_exists():
-    assert callable(ioT::Server.__init__)
+def test_iot_server_constructor_exists():
+    assert callable(ioT_Server.__init__)
 
 
-def test_iot::server_constructor_args():
-    sig = inspect.signature(ioT::Server.__init__)
+def test_iot_server_constructor_args():
+    sig = inspect.signature(ioT_Server.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::server_has_name():
-    assert hasattr(ioT::Server, "name")
+def test_iot_server_has_name():
+    assert hasattr(ioT_Server, "name")
     descriptor = None
-    for klass in ioT::Server.__mro__:
+    for klass in ioT_Server.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -415,37 +415,37 @@ def test_iot::server_has_name():
 
 
 
-def test_iot::servertypes_is_not_abstract():
-    assert not inspect.isabstract(ioT::ServerTypes)
+def test_iot_servertypes_is_not_abstract():
+    assert not inspect.isabstract(ioT_ServerTypes)
 
 
-def test_iot::servertypes_constructor_exists():
-    assert callable(ioT::ServerTypes.__init__)
+def test_iot_servertypes_constructor_exists():
+    assert callable(ioT_ServerTypes.__init__)
 
 
-def test_iot::servertypes_constructor_args():
-    sig = inspect.signature(ioT::ServerTypes.__init__)
+def test_iot_servertypes_constructor_args():
+    sig = inspect.signature(ioT_ServerTypes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::servertype_is_not_abstract():
-    assert not inspect.isabstract(ioT::ServerType)
+def test_iot_servertype_is_not_abstract():
+    assert not inspect.isabstract(ioT_ServerType)
 
 
-def test_iot::servertype_constructor_exists():
-    assert callable(ioT::ServerType.__init__)
+def test_iot_servertype_constructor_exists():
+    assert callable(ioT_ServerType.__init__)
 
 
-def test_iot::servertype_constructor_args():
-    sig = inspect.signature(ioT::ServerType.__init__)
+def test_iot_servertype_constructor_args():
+    sig = inspect.signature(ioT_ServerType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::servertype_has_name():
-    assert hasattr(ioT::ServerType, "name")
+def test_iot_servertype_has_name():
+    assert hasattr(ioT_ServerType, "name")
     descriptor = None
-    for klass in ioT::ServerType.__mro__:
+    for klass in ioT_ServerType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -453,37 +453,37 @@ def test_iot::servertype_has_name():
 
 
 
-def test_iot::sensortypes_is_not_abstract():
-    assert not inspect.isabstract(ioT::SensorTypes)
+def test_iot_sensortypes_is_not_abstract():
+    assert not inspect.isabstract(ioT_SensorTypes)
 
 
-def test_iot::sensortypes_constructor_exists():
-    assert callable(ioT::SensorTypes.__init__)
+def test_iot_sensortypes_constructor_exists():
+    assert callable(ioT_SensorTypes.__init__)
 
 
-def test_iot::sensortypes_constructor_args():
-    sig = inspect.signature(ioT::SensorTypes.__init__)
+def test_iot_sensortypes_constructor_args():
+    sig = inspect.signature(ioT_SensorTypes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sensortype_is_not_abstract():
-    assert not inspect.isabstract(ioT::SensorType)
+def test_iot_sensortype_is_not_abstract():
+    assert not inspect.isabstract(ioT_SensorType)
 
 
-def test_iot::sensortype_constructor_exists():
-    assert callable(ioT::SensorType.__init__)
+def test_iot_sensortype_constructor_exists():
+    assert callable(ioT_SensorType.__init__)
 
 
-def test_iot::sensortype_constructor_args():
-    sig = inspect.signature(ioT::SensorType.__init__)
+def test_iot_sensortype_constructor_args():
+    sig = inspect.signature(ioT_SensorType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::sensortype_has_name():
-    assert hasattr(ioT::SensorType, "name")
+def test_iot_sensortype_has_name():
+    assert hasattr(ioT_SensorType, "name")
     descriptor = None
-    for klass in ioT::SensorType.__mro__:
+    for klass in ioT_SensorType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -491,30 +491,30 @@ def test_iot::sensortype_has_name():
 
 
 
-def test_iot::eobject_is_not_abstract():
-    assert not inspect.isabstract(ioT::EObject)
+def test_iot_eobject_is_not_abstract():
+    assert not inspect.isabstract(ioT_EObject)
 
 
-def test_iot::eobject_constructor_exists():
-    assert callable(ioT::EObject.__init__)
+def test_iot_eobject_constructor_exists():
+    assert callable(ioT_EObject.__init__)
 
 
-def test_iot::eobject_constructor_args():
-    sig = inspect.signature(ioT::EObject.__init__)
+def test_iot_eobject_constructor_args():
+    sig = inspect.signature(ioT_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::system_is_not_abstract():
-    assert not inspect.isabstract(ioT::System)
+def test_iot_system_is_not_abstract():
+    assert not inspect.isabstract(ioT_System)
 
 
-def test_iot::system_constructor_exists():
-    assert callable(ioT::System.__init__)
+def test_iot_system_constructor_exists():
+    assert callable(ioT_System.__init__)
 
 
-def test_iot::system_constructor_args():
-    sig = inspect.signature(ioT::System.__init__)
+def test_iot_system_constructor_args():
+    sig = inspect.signature(ioT_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -529,395 +529,347 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ioT::FetchDataCondition_strategy = st.builds(
-    ioT::FetchDataCondition,
+ioT_FetchDataCondition_strategy = st.builds(
+    ioT_FetchDataCondition,
     condition=
         safe_text
 )
-ioT::Time_strategy = st.builds(
-    ioT::Time,
+ioT_Time_strategy = st.builds(
+    ioT_Time,
     time=
         st.integers()
 )
-ioT::FetchDataExpression_strategy = st.builds(
-    ioT::FetchDataExpression,
+ioT_FetchDataExpression_strategy = st.builds(
+    ioT_FetchDataExpression,
     timeUnit=
         safe_text
 )
-ioT::FetchData_strategy = st.builds(
-    ioT::FetchData,
+ioT_FetchData_strategy = st.builds(
+    ioT_FetchData,
 )
-ioT::Destination_strategy = st.builds(
-    ioT::Destination,
+ioT_Destination_strategy = st.builds(
+    ioT_Destination,
     name=
         safe_text
 )
-ioT::Device_strategy = st.builds(
-    ioT::Device,
+ioT_Device_strategy = st.builds(
+    ioT_Device,
     name=
         safe_text
 )
-ioT::DeviceTypes_strategy = st.builds(
-    ioT::DeviceTypes,
+ioT_DeviceTypes_strategy = st.builds(
+    ioT_DeviceTypes,
 )
-ioT::DeviceType_strategy = st.builds(
-    ioT::DeviceType,
+ioT_DeviceType_strategy = st.builds(
+    ioT_DeviceType,
     name=
         safe_text
 )
-ioT::Method_strategy = st.builds(
-    ioT::Method,
+ioT_Method_strategy = st.builds(
+    ioT_Method,
     name=
         safe_text,
     parameters=
         safe_text
 )
-ioT::SensorGetMethod_strategy = st.builds(
-    ioT::SensorGetMethod,
+ioT_SensorGetMethod_strategy = st.builds(
+    ioT_SensorGetMethod,
 )
-ioT::SensorGroup_strategy = st.builds(
-    ioT::SensorGroup,
+ioT_SensorGroup_strategy = st.builds(
+    ioT_SensorGroup,
     name=
         safe_text
 )
-ioT::DestinationTypes_strategy = st.builds(
-    ioT::DestinationTypes,
+ioT_DestinationTypes_strategy = st.builds(
+    ioT_DestinationTypes,
 )
-ioT::Sensor_strategy = st.builds(
-    ioT::Sensor,
+ioT_Sensor_strategy = st.builds(
+    ioT_Sensor,
     name=
         safe_text
 )
-ioT::DestinationType_strategy = st.builds(
-    ioT::DestinationType,
+ioT_DestinationType_strategy = st.builds(
+    ioT_DestinationType,
     name=
         safe_text
 )
-ioT::Portnumber_strategy = st.builds(
-    ioT::Portnumber,
+ioT_Portnumber_strategy = st.builds(
+    ioT_Portnumber,
     number=
         st.integers()
 )
-ioT::Ip_strategy = st.builds(
-    ioT::Ip,
+ioT_Ip_strategy = st.builds(
+    ioT_Ip,
     ip=
         st.integers()
 )
-ioT::Server_strategy = st.builds(
-    ioT::Server,
+ioT_Server_strategy = st.builds(
+    ioT_Server,
     name=
         safe_text
 )
-ioT::ServerTypes_strategy = st.builds(
-    ioT::ServerTypes,
+ioT_ServerTypes_strategy = st.builds(
+    ioT_ServerTypes,
 )
-ioT::ServerType_strategy = st.builds(
-    ioT::ServerType,
+ioT_ServerType_strategy = st.builds(
+    ioT_ServerType,
     name=
         safe_text
 )
-ioT::SensorTypes_strategy = st.builds(
-    ioT::SensorTypes,
+ioT_SensorTypes_strategy = st.builds(
+    ioT_SensorTypes,
 )
-ioT::SensorType_strategy = st.builds(
-    ioT::SensorType,
+ioT_SensorType_strategy = st.builds(
+    ioT_SensorType,
     name=
         safe_text
 )
-ioT::EObject_strategy = st.builds(
-    ioT::EObject,
+ioT_EObject_strategy = st.builds(
+    ioT_EObject,
 )
-ioT::System_strategy = st.builds(
-    ioT::System,
+ioT_System_strategy = st.builds(
+    ioT_System,
 )
 
-@given(instance=ioT::FetchDataCondition_strategy)
+@given(instance=ioT_FetchDataCondition_strategy)
 @settings(max_examples=50)
-def test_iot::fetchdatacondition_instantiation(instance):
-    assert isinstance(instance, ioT::FetchDataCondition)
-
-@given(instance=ioT::FetchDataCondition_strategy)
-def test_iot::fetchdatacondition_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_iot_fetchdatacondition_instantiation(instance):
+    assert isinstance(instance, ioT_FetchDataCondition)
 
 
-@given(instance=ioT::FetchDataCondition_strategy)
-def test_iot::fetchdatacondition_condition_setter(instance):
+
+@given(instance=ioT_FetchDataCondition_strategy)
+def test_iot_fetchdatacondition_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=ioT::Time_strategy)
+@given(instance=ioT_Time_strategy)
 @settings(max_examples=50)
-def test_iot::time_instantiation(instance):
-    assert isinstance(instance, ioT::Time)
-
-@given(instance=ioT::Time_strategy)
-def test_iot::time_time_type(instance):
-    assert isinstance(instance.time, int)
+def test_iot_time_instantiation(instance):
+    assert isinstance(instance, ioT_Time)
 
 
-@given(instance=ioT::Time_strategy)
-def test_iot::time_time_setter(instance):
+
+@given(instance=ioT_Time_strategy)
+def test_iot_time_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=ioT::FetchDataExpression_strategy)
+@given(instance=ioT_FetchDataExpression_strategy)
 @settings(max_examples=50)
-def test_iot::fetchdataexpression_instantiation(instance):
-    assert isinstance(instance, ioT::FetchDataExpression)
-
-@given(instance=ioT::FetchDataExpression_strategy)
-def test_iot::fetchdataexpression_timeUnit_type(instance):
-    assert isinstance(instance.timeUnit, str)
+def test_iot_fetchdataexpression_instantiation(instance):
+    assert isinstance(instance, ioT_FetchDataExpression)
 
 
-@given(instance=ioT::FetchDataExpression_strategy)
-def test_iot::fetchdataexpression_timeUnit_setter(instance):
+
+@given(instance=ioT_FetchDataExpression_strategy)
+def test_iot_fetchdataexpression_timeUnit_setter(instance):
     original = instance.timeUnit
     instance.timeUnit = original
     assert instance.timeUnit == original
 
-@given(instance=ioT::FetchData_strategy)
+@given(instance=ioT_FetchData_strategy)
 @settings(max_examples=50)
-def test_iot::fetchdata_instantiation(instance):
-    assert isinstance(instance, ioT::FetchData)
+def test_iot_fetchdata_instantiation(instance):
+    assert isinstance(instance, ioT_FetchData)
 
-@given(instance=ioT::Destination_strategy)
+@given(instance=ioT_Destination_strategy)
 @settings(max_examples=50)
-def test_iot::destination_instantiation(instance):
-    assert isinstance(instance, ioT::Destination)
-
-@given(instance=ioT::Destination_strategy)
-def test_iot::destination_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_destination_instantiation(instance):
+    assert isinstance(instance, ioT_Destination)
 
 
-@given(instance=ioT::Destination_strategy)
-def test_iot::destination_name_setter(instance):
+
+@given(instance=ioT_Destination_strategy)
+def test_iot_destination_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::Device_strategy)
+@given(instance=ioT_Device_strategy)
 @settings(max_examples=50)
-def test_iot::device_instantiation(instance):
-    assert isinstance(instance, ioT::Device)
-
-@given(instance=ioT::Device_strategy)
-def test_iot::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_device_instantiation(instance):
+    assert isinstance(instance, ioT_Device)
 
 
-@given(instance=ioT::Device_strategy)
-def test_iot::device_name_setter(instance):
+
+@given(instance=ioT_Device_strategy)
+def test_iot_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::DeviceTypes_strategy)
+@given(instance=ioT_DeviceTypes_strategy)
 @settings(max_examples=50)
-def test_iot::devicetypes_instantiation(instance):
-    assert isinstance(instance, ioT::DeviceTypes)
+def test_iot_devicetypes_instantiation(instance):
+    assert isinstance(instance, ioT_DeviceTypes)
 
-@given(instance=ioT::DeviceType_strategy)
+@given(instance=ioT_DeviceType_strategy)
 @settings(max_examples=50)
-def test_iot::devicetype_instantiation(instance):
-    assert isinstance(instance, ioT::DeviceType)
-
-@given(instance=ioT::DeviceType_strategy)
-def test_iot::devicetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_devicetype_instantiation(instance):
+    assert isinstance(instance, ioT_DeviceType)
 
 
-@given(instance=ioT::DeviceType_strategy)
-def test_iot::devicetype_name_setter(instance):
+
+@given(instance=ioT_DeviceType_strategy)
+def test_iot_devicetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::Method_strategy)
+@given(instance=ioT_Method_strategy)
 @settings(max_examples=50)
-def test_iot::method_instantiation(instance):
-    assert isinstance(instance, ioT::Method)
-
-@given(instance=ioT::Method_strategy)
-def test_iot::method_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_method_instantiation(instance):
+    assert isinstance(instance, ioT_Method)
 
 
-@given(instance=ioT::Method_strategy)
-def test_iot::method_name_setter(instance):
+
+@given(instance=ioT_Method_strategy)
+def test_iot_method_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::Method_strategy)
-def test_iot::method_parameters_type(instance):
-    assert isinstance(instance.parameters, str)
 
 
-@given(instance=ioT::Method_strategy)
-def test_iot::method_parameters_setter(instance):
+@given(instance=ioT_Method_strategy)
+def test_iot_method_parameters_setter(instance):
     original = instance.parameters
     instance.parameters = original
     assert instance.parameters == original
 
-@given(instance=ioT::SensorGetMethod_strategy)
+@given(instance=ioT_SensorGetMethod_strategy)
 @settings(max_examples=50)
-def test_iot::sensorgetmethod_instantiation(instance):
-    assert isinstance(instance, ioT::SensorGetMethod)
+def test_iot_sensorgetmethod_instantiation(instance):
+    assert isinstance(instance, ioT_SensorGetMethod)
 
-@given(instance=ioT::SensorGroup_strategy)
+@given(instance=ioT_SensorGroup_strategy)
 @settings(max_examples=50)
-def test_iot::sensorgroup_instantiation(instance):
-    assert isinstance(instance, ioT::SensorGroup)
-
-@given(instance=ioT::SensorGroup_strategy)
-def test_iot::sensorgroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_sensorgroup_instantiation(instance):
+    assert isinstance(instance, ioT_SensorGroup)
 
 
-@given(instance=ioT::SensorGroup_strategy)
-def test_iot::sensorgroup_name_setter(instance):
+
+@given(instance=ioT_SensorGroup_strategy)
+def test_iot_sensorgroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::DestinationTypes_strategy)
+@given(instance=ioT_DestinationTypes_strategy)
 @settings(max_examples=50)
-def test_iot::destinationtypes_instantiation(instance):
-    assert isinstance(instance, ioT::DestinationTypes)
+def test_iot_destinationtypes_instantiation(instance):
+    assert isinstance(instance, ioT_DestinationTypes)
 
-@given(instance=ioT::Sensor_strategy)
+@given(instance=ioT_Sensor_strategy)
 @settings(max_examples=50)
-def test_iot::sensor_instantiation(instance):
-    assert isinstance(instance, ioT::Sensor)
-
-@given(instance=ioT::Sensor_strategy)
-def test_iot::sensor_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_sensor_instantiation(instance):
+    assert isinstance(instance, ioT_Sensor)
 
 
-@given(instance=ioT::Sensor_strategy)
-def test_iot::sensor_name_setter(instance):
+
+@given(instance=ioT_Sensor_strategy)
+def test_iot_sensor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::DestinationType_strategy)
+@given(instance=ioT_DestinationType_strategy)
 @settings(max_examples=50)
-def test_iot::destinationtype_instantiation(instance):
-    assert isinstance(instance, ioT::DestinationType)
-
-@given(instance=ioT::DestinationType_strategy)
-def test_iot::destinationtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_destinationtype_instantiation(instance):
+    assert isinstance(instance, ioT_DestinationType)
 
 
-@given(instance=ioT::DestinationType_strategy)
-def test_iot::destinationtype_name_setter(instance):
+
+@given(instance=ioT_DestinationType_strategy)
+def test_iot_destinationtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::Portnumber_strategy)
+@given(instance=ioT_Portnumber_strategy)
 @settings(max_examples=50)
-def test_iot::portnumber_instantiation(instance):
-    assert isinstance(instance, ioT::Portnumber)
-
-@given(instance=ioT::Portnumber_strategy)
-def test_iot::portnumber_number_type(instance):
-    assert isinstance(instance.number, int)
+def test_iot_portnumber_instantiation(instance):
+    assert isinstance(instance, ioT_Portnumber)
 
 
-@given(instance=ioT::Portnumber_strategy)
-def test_iot::portnumber_number_setter(instance):
+
+@given(instance=ioT_Portnumber_strategy)
+def test_iot_portnumber_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
 
-@given(instance=ioT::Ip_strategy)
+@given(instance=ioT_Ip_strategy)
 @settings(max_examples=50)
-def test_iot::ip_instantiation(instance):
-    assert isinstance(instance, ioT::Ip)
-
-@given(instance=ioT::Ip_strategy)
-def test_iot::ip_ip_type(instance):
-    assert isinstance(instance.ip, int)
+def test_iot_ip_instantiation(instance):
+    assert isinstance(instance, ioT_Ip)
 
 
-@given(instance=ioT::Ip_strategy)
-def test_iot::ip_ip_setter(instance):
+
+@given(instance=ioT_Ip_strategy)
+def test_iot_ip_ip_setter(instance):
     original = instance.ip
     instance.ip = original
     assert instance.ip == original
 
-@given(instance=ioT::Server_strategy)
+@given(instance=ioT_Server_strategy)
 @settings(max_examples=50)
-def test_iot::server_instantiation(instance):
-    assert isinstance(instance, ioT::Server)
-
-@given(instance=ioT::Server_strategy)
-def test_iot::server_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_server_instantiation(instance):
+    assert isinstance(instance, ioT_Server)
 
 
-@given(instance=ioT::Server_strategy)
-def test_iot::server_name_setter(instance):
+
+@given(instance=ioT_Server_strategy)
+def test_iot_server_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::ServerTypes_strategy)
+@given(instance=ioT_ServerTypes_strategy)
 @settings(max_examples=50)
-def test_iot::servertypes_instantiation(instance):
-    assert isinstance(instance, ioT::ServerTypes)
+def test_iot_servertypes_instantiation(instance):
+    assert isinstance(instance, ioT_ServerTypes)
 
-@given(instance=ioT::ServerType_strategy)
+@given(instance=ioT_ServerType_strategy)
 @settings(max_examples=50)
-def test_iot::servertype_instantiation(instance):
-    assert isinstance(instance, ioT::ServerType)
-
-@given(instance=ioT::ServerType_strategy)
-def test_iot::servertype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_servertype_instantiation(instance):
+    assert isinstance(instance, ioT_ServerType)
 
 
-@given(instance=ioT::ServerType_strategy)
-def test_iot::servertype_name_setter(instance):
+
+@given(instance=ioT_ServerType_strategy)
+def test_iot_servertype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::SensorTypes_strategy)
+@given(instance=ioT_SensorTypes_strategy)
 @settings(max_examples=50)
-def test_iot::sensortypes_instantiation(instance):
-    assert isinstance(instance, ioT::SensorTypes)
+def test_iot_sensortypes_instantiation(instance):
+    assert isinstance(instance, ioT_SensorTypes)
 
-@given(instance=ioT::SensorType_strategy)
+@given(instance=ioT_SensorType_strategy)
 @settings(max_examples=50)
-def test_iot::sensortype_instantiation(instance):
-    assert isinstance(instance, ioT::SensorType)
-
-@given(instance=ioT::SensorType_strategy)
-def test_iot::sensortype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_sensortype_instantiation(instance):
+    assert isinstance(instance, ioT_SensorType)
 
 
-@given(instance=ioT::SensorType_strategy)
-def test_iot::sensortype_name_setter(instance):
+
+@given(instance=ioT_SensorType_strategy)
+def test_iot_sensortype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::EObject_strategy)
+@given(instance=ioT_EObject_strategy)
 @settings(max_examples=50)
-def test_iot::eobject_instantiation(instance):
-    assert isinstance(instance, ioT::EObject)
+def test_iot_eobject_instantiation(instance):
+    assert isinstance(instance, ioT_EObject)
 
-@given(instance=ioT::System_strategy)
+@given(instance=ioT_System_strategy)
 @settings(max_examples=50)
-def test_iot::system_instantiation(instance):
-    assert isinstance(instance, ioT::System)
+def test_iot_system_instantiation(instance):
+    assert isinstance(instance, ioT_System)

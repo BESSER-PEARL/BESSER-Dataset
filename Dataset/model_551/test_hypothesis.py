@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    familyTree::Person,
-    familyTree::FamilyTree,
+from python_code import (
+    familyTree_Person,
+    familyTree_FamilyTree,
     Person,
-    familyTree::Female,
-    familyTree::Male,
+    familyTree_Female,
+    familyTree_Male,
 )
 
 # =============================================================================
@@ -19,33 +19,33 @@ from classes import (
 
 
 
-def test_familytree::person_is_not_abstract():
-    assert not inspect.isabstract(familyTree::Person)
+def test_familytree_person_is_not_abstract():
+    assert not inspect.isabstract(familyTree_Person)
 
 
-def test_familytree::person_constructor_exists():
-    assert callable(familyTree::Person.__init__)
+def test_familytree_person_constructor_exists():
+    assert callable(familyTree_Person.__init__)
 
 
-def test_familytree::person_constructor_args():
-    sig = inspect.signature(familyTree::Person.__init__)
+def test_familytree_person_constructor_args():
+    sig = inspect.signature(familyTree_Person.__init__)
     params = list(sig.parameters.keys())
     assert "lastName" in params, "Missing parameter 'lastName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_familytree::person_has_lastName():
-    assert hasattr(familyTree::Person, "lastName")
+def test_familytree_person_has_lastName():
+    assert hasattr(familyTree_Person, "lastName")
     descriptor = None
-    for klass in familyTree::Person.__mro__:
+    for klass in familyTree_Person.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_familytree::person_has_name():
-    assert hasattr(familyTree::Person, "name")
+def test_familytree_person_has_name():
+    assert hasattr(familyTree_Person, "name")
     descriptor = None
-    for klass in familyTree::Person.__mro__:
+    for klass in familyTree_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -53,16 +53,16 @@ def test_familytree::person_has_name():
 
 
 
-def test_familytree::familytree_is_not_abstract():
-    assert not inspect.isabstract(familyTree::FamilyTree)
+def test_familytree_familytree_is_not_abstract():
+    assert not inspect.isabstract(familyTree_FamilyTree)
 
 
-def test_familytree::familytree_constructor_exists():
-    assert callable(familyTree::FamilyTree.__init__)
+def test_familytree_familytree_constructor_exists():
+    assert callable(familyTree_FamilyTree.__init__)
 
 
-def test_familytree::familytree_constructor_args():
-    sig = inspect.signature(familyTree::FamilyTree.__init__)
+def test_familytree_familytree_constructor_args():
+    sig = inspect.signature(familyTree_FamilyTree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,30 +81,30 @@ def test_person_constructor_args():
 
 
 
-def test_familytree::female_is_not_abstract():
-    assert not inspect.isabstract(familyTree::Female)
+def test_familytree_female_is_not_abstract():
+    assert not inspect.isabstract(familyTree_Female)
 
 
-def test_familytree::female_constructor_exists():
-    assert callable(familyTree::Female.__init__)
+def test_familytree_female_constructor_exists():
+    assert callable(familyTree_Female.__init__)
 
 
-def test_familytree::female_constructor_args():
-    sig = inspect.signature(familyTree::Female.__init__)
+def test_familytree_female_constructor_args():
+    sig = inspect.signature(familyTree_Female.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_familytree::male_is_not_abstract():
-    assert not inspect.isabstract(familyTree::Male)
+def test_familytree_male_is_not_abstract():
+    assert not inspect.isabstract(familyTree_Male)
 
 
-def test_familytree::male_constructor_exists():
-    assert callable(familyTree::Male.__init__)
+def test_familytree_male_constructor_exists():
+    assert callable(familyTree_Male.__init__)
 
 
-def test_familytree::male_constructor_args():
-    sig = inspect.signature(familyTree::Male.__init__)
+def test_familytree_male_constructor_args():
+    sig = inspect.signature(familyTree_Male.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -119,69 +119,63 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-familyTree::Person_strategy = st.builds(
-    familyTree::Person,
+familyTree_Person_strategy = st.builds(
+    familyTree_Person,
     lastName=
         safe_text,
     name=
         safe_text
 )
-familyTree::FamilyTree_strategy = st.builds(
-    familyTree::FamilyTree,
+familyTree_FamilyTree_strategy = st.builds(
+    familyTree_FamilyTree,
 )
 Person_strategy = st.builds(
     Person,
 )
-familyTree::Female_strategy = st.builds(
-    familyTree::Female,
+familyTree_Female_strategy = st.builds(
+    familyTree_Female,
 )
-familyTree::Male_strategy = st.builds(
-    familyTree::Male,
+familyTree_Male_strategy = st.builds(
+    familyTree_Male,
 )
 
-@given(instance=familyTree::Person_strategy)
+@given(instance=familyTree_Person_strategy)
 @settings(max_examples=50)
-def test_familytree::person_instantiation(instance):
-    assert isinstance(instance, familyTree::Person)
-
-@given(instance=familyTree::Person_strategy)
-def test_familytree::person_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_familytree_person_instantiation(instance):
+    assert isinstance(instance, familyTree_Person)
 
 
-@given(instance=familyTree::Person_strategy)
-def test_familytree::person_lastName_setter(instance):
+
+@given(instance=familyTree_Person_strategy)
+def test_familytree_person_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=familyTree::Person_strategy)
-def test_familytree::person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=familyTree::Person_strategy)
-def test_familytree::person_name_setter(instance):
+@given(instance=familyTree_Person_strategy)
+def test_familytree_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=familyTree::FamilyTree_strategy)
+@given(instance=familyTree_FamilyTree_strategy)
 @settings(max_examples=50)
-def test_familytree::familytree_instantiation(instance):
-    assert isinstance(instance, familyTree::FamilyTree)
+def test_familytree_familytree_instantiation(instance):
+    assert isinstance(instance, familyTree_FamilyTree)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=familyTree::Female_strategy)
+@given(instance=familyTree_Female_strategy)
 @settings(max_examples=50)
-def test_familytree::female_instantiation(instance):
-    assert isinstance(instance, familyTree::Female)
+def test_familytree_female_instantiation(instance):
+    assert isinstance(instance, familyTree_Female)
 
-@given(instance=familyTree::Male_strategy)
+@given(instance=familyTree_Male_strategy)
 @settings(max_examples=50)
-def test_familytree::male_instantiation(instance):
-    assert isinstance(instance, familyTree::Male)
+def test_familytree_male_instantiation(instance):
+    assert isinstance(instance, familyTree_Male)

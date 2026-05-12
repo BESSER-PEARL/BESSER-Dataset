@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Arc,
-    petri::PTArc,
-    petri::TPArc,
+    petri_PTArc,
+    petri_TPArc,
     Node,
-    petri::Transition,
-    petri::Place,
-    petri::Arc,
-    petri::Node,
-    petri::PetriNet,
+    petri_Transition,
+    petri_Place,
+    petri_Arc,
+    petri_Node,
+    petri_PetriNet,
 )
 
 # =============================================================================
@@ -37,30 +37,30 @@ def test_arc_constructor_args():
 
 
 
-def test_petri::ptarc_is_not_abstract():
-    assert not inspect.isabstract(petri::PTArc)
+def test_petri_ptarc_is_not_abstract():
+    assert not inspect.isabstract(petri_PTArc)
 
 
-def test_petri::ptarc_constructor_exists():
-    assert callable(petri::PTArc.__init__)
+def test_petri_ptarc_constructor_exists():
+    assert callable(petri_PTArc.__init__)
 
 
-def test_petri::ptarc_constructor_args():
-    sig = inspect.signature(petri::PTArc.__init__)
+def test_petri_ptarc_constructor_args():
+    sig = inspect.signature(petri_PTArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petri::tparc_is_not_abstract():
-    assert not inspect.isabstract(petri::TPArc)
+def test_petri_tparc_is_not_abstract():
+    assert not inspect.isabstract(petri_TPArc)
 
 
-def test_petri::tparc_constructor_exists():
-    assert callable(petri::TPArc.__init__)
+def test_petri_tparc_constructor_exists():
+    assert callable(petri_TPArc.__init__)
 
 
-def test_petri::tparc_constructor_args():
-    sig = inspect.signature(petri::TPArc.__init__)
+def test_petri_tparc_constructor_args():
+    sig = inspect.signature(petri_TPArc.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,37 +79,37 @@ def test_node_constructor_args():
 
 
 
-def test_petri::transition_is_not_abstract():
-    assert not inspect.isabstract(petri::Transition)
+def test_petri_transition_is_not_abstract():
+    assert not inspect.isabstract(petri_Transition)
 
 
-def test_petri::transition_constructor_exists():
-    assert callable(petri::Transition.__init__)
+def test_petri_transition_constructor_exists():
+    assert callable(petri_Transition.__init__)
 
 
-def test_petri::transition_constructor_args():
-    sig = inspect.signature(petri::Transition.__init__)
+def test_petri_transition_constructor_args():
+    sig = inspect.signature(petri_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petri::place_is_not_abstract():
-    assert not inspect.isabstract(petri::Place)
+def test_petri_place_is_not_abstract():
+    assert not inspect.isabstract(petri_Place)
 
 
-def test_petri::place_constructor_exists():
-    assert callable(petri::Place.__init__)
+def test_petri_place_constructor_exists():
+    assert callable(petri_Place.__init__)
 
 
-def test_petri::place_constructor_args():
-    sig = inspect.signature(petri::Place.__init__)
+def test_petri_place_constructor_args():
+    sig = inspect.signature(petri_Place.__init__)
     params = list(sig.parameters.keys())
     assert "tokens" in params, "Missing parameter 'tokens'"
 
-def test_petri::place_has_tokens():
-    assert hasattr(petri::Place, "tokens")
+def test_petri_place_has_tokens():
+    assert hasattr(petri_Place, "tokens")
     descriptor = None
-    for klass in petri::Place.__mro__:
+    for klass in petri_Place.__mro__:
         if "tokens" in klass.__dict__:
             descriptor = klass.__dict__["tokens"]
             break
@@ -117,37 +117,37 @@ def test_petri::place_has_tokens():
 
 
 
-def test_petri::arc_is_not_abstract():
-    assert not inspect.isabstract(petri::Arc)
+def test_petri_arc_is_not_abstract():
+    assert not inspect.isabstract(petri_Arc)
 
 
-def test_petri::arc_constructor_exists():
-    assert callable(petri::Arc.__init__)
+def test_petri_arc_constructor_exists():
+    assert callable(petri_Arc.__init__)
 
 
-def test_petri::arc_constructor_args():
-    sig = inspect.signature(petri::Arc.__init__)
+def test_petri_arc_constructor_args():
+    sig = inspect.signature(petri_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petri::node_is_not_abstract():
-    assert not inspect.isabstract(petri::Node)
+def test_petri_node_is_not_abstract():
+    assert not inspect.isabstract(petri_Node)
 
 
-def test_petri::node_constructor_exists():
-    assert callable(petri::Node.__init__)
+def test_petri_node_constructor_exists():
+    assert callable(petri_Node.__init__)
 
 
-def test_petri::node_constructor_args():
-    sig = inspect.signature(petri::Node.__init__)
+def test_petri_node_constructor_args():
+    sig = inspect.signature(petri_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petri::node_has_name():
-    assert hasattr(petri::Node, "name")
+def test_petri_node_has_name():
+    assert hasattr(petri_Node, "name")
     descriptor = None
-    for klass in petri::Node.__mro__:
+    for klass in petri_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -155,16 +155,16 @@ def test_petri::node_has_name():
 
 
 
-def test_petri::petrinet_is_not_abstract():
-    assert not inspect.isabstract(petri::PetriNet)
+def test_petri_petrinet_is_not_abstract():
+    assert not inspect.isabstract(petri_PetriNet)
 
 
-def test_petri::petrinet_constructor_exists():
-    assert callable(petri::PetriNet.__init__)
+def test_petri_petrinet_constructor_exists():
+    assert callable(petri_PetriNet.__init__)
 
 
-def test_petri::petrinet_constructor_args():
-    sig = inspect.signature(petri::PetriNet.__init__)
+def test_petri_petrinet_constructor_args():
+    sig = inspect.signature(petri_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,33 +182,33 @@ safe_text = st.text(
 Arc_strategy = st.builds(
     Arc,
 )
-petri::PTArc_strategy = st.builds(
-    petri::PTArc,
+petri_PTArc_strategy = st.builds(
+    petri_PTArc,
 )
-petri::TPArc_strategy = st.builds(
-    petri::TPArc,
+petri_TPArc_strategy = st.builds(
+    petri_TPArc,
 )
 Node_strategy = st.builds(
     Node,
 )
-petri::Transition_strategy = st.builds(
-    petri::Transition,
+petri_Transition_strategy = st.builds(
+    petri_Transition,
 )
-petri::Place_strategy = st.builds(
-    petri::Place,
+petri_Place_strategy = st.builds(
+    petri_Place,
     tokens=
         st.integers()
 )
-petri::Arc_strategy = st.builds(
-    petri::Arc,
+petri_Arc_strategy = st.builds(
+    petri_Arc,
 )
-petri::Node_strategy = st.builds(
-    petri::Node,
+petri_Node_strategy = st.builds(
+    petri_Node,
     name=
         safe_text
 )
-petri::PetriNet_strategy = st.builds(
-    petri::PetriNet,
+petri_PetriNet_strategy = st.builds(
+    petri_PetriNet,
 )
 
 @given(instance=Arc_strategy)
@@ -216,64 +216,58 @@ petri::PetriNet_strategy = st.builds(
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=petri::PTArc_strategy)
+@given(instance=petri_PTArc_strategy)
 @settings(max_examples=50)
-def test_petri::ptarc_instantiation(instance):
-    assert isinstance(instance, petri::PTArc)
+def test_petri_ptarc_instantiation(instance):
+    assert isinstance(instance, petri_PTArc)
 
-@given(instance=petri::TPArc_strategy)
+@given(instance=petri_TPArc_strategy)
 @settings(max_examples=50)
-def test_petri::tparc_instantiation(instance):
-    assert isinstance(instance, petri::TPArc)
+def test_petri_tparc_instantiation(instance):
+    assert isinstance(instance, petri_TPArc)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=petri::Transition_strategy)
+@given(instance=petri_Transition_strategy)
 @settings(max_examples=50)
-def test_petri::transition_instantiation(instance):
-    assert isinstance(instance, petri::Transition)
+def test_petri_transition_instantiation(instance):
+    assert isinstance(instance, petri_Transition)
 
-@given(instance=petri::Place_strategy)
+@given(instance=petri_Place_strategy)
 @settings(max_examples=50)
-def test_petri::place_instantiation(instance):
-    assert isinstance(instance, petri::Place)
-
-@given(instance=petri::Place_strategy)
-def test_petri::place_tokens_type(instance):
-    assert isinstance(instance.tokens, int)
+def test_petri_place_instantiation(instance):
+    assert isinstance(instance, petri_Place)
 
 
-@given(instance=petri::Place_strategy)
-def test_petri::place_tokens_setter(instance):
+
+@given(instance=petri_Place_strategy)
+def test_petri_place_tokens_setter(instance):
     original = instance.tokens
     instance.tokens = original
     assert instance.tokens == original
 
-@given(instance=petri::Arc_strategy)
+@given(instance=petri_Arc_strategy)
 @settings(max_examples=50)
-def test_petri::arc_instantiation(instance):
-    assert isinstance(instance, petri::Arc)
+def test_petri_arc_instantiation(instance):
+    assert isinstance(instance, petri_Arc)
 
-@given(instance=petri::Node_strategy)
+@given(instance=petri_Node_strategy)
 @settings(max_examples=50)
-def test_petri::node_instantiation(instance):
-    assert isinstance(instance, petri::Node)
-
-@given(instance=petri::Node_strategy)
-def test_petri::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petri_node_instantiation(instance):
+    assert isinstance(instance, petri_Node)
 
 
-@given(instance=petri::Node_strategy)
-def test_petri::node_name_setter(instance):
+
+@given(instance=petri_Node_strategy)
+def test_petri_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petri::PetriNet_strategy)
+@given(instance=petri_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petri::petrinet_instantiation(instance):
-    assert isinstance(instance, petri::PetriNet)
+def test_petri_petrinet_instantiation(instance):
+    assert isinstance(instance, petri_PetriNet)

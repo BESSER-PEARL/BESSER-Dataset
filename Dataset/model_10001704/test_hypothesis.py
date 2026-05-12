@@ -3,9 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    VISITS_THE_WEBSITE_UseCase,
+    CUSTOMER_Actor,
     Company,
     CancelService,
     Feedback,
@@ -22,13 +24,39 @@ from python_code import (
     ADDS_ITEMS_SERVICE_TO_CART_UseCase,
     SELECTS_THE_ITEMS_SERVICE_UseCase,
     CREATES_THE_WEBSITE_UseCase,
-    VISITS_THE_WEBSITE_UseCase,
-    CUSTOMER_Actor,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_visits_the_website_usecase_is_not_abstract():
+    assert not inspect.isabstract(VISITS_THE_WEBSITE_UseCase)
+
+
+def test_visits_the_website_usecase_constructor_exists():
+    assert callable(VISITS_THE_WEBSITE_UseCase.__init__)
+
+
+def test_visits_the_website_usecase_constructor_args():
+    sig = inspect.signature(VISITS_THE_WEBSITE_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_customer_actor_is_not_abstract():
+    assert not inspect.isabstract(CUSTOMER_Actor)
+
+
+def test_customer_actor_constructor_exists():
+    assert callable(CUSTOMER_Actor.__init__)
+
+
+def test_customer_actor_constructor_args():
+    sig = inspect.signature(CUSTOMER_Actor.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -255,34 +283,6 @@ def test_creates_the_website_usecase_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_visits_the_website_usecase_is_not_abstract():
-    assert not inspect.isabstract(VISITS_THE_WEBSITE_UseCase)
-
-
-def test_visits_the_website_usecase_constructor_exists():
-    assert callable(VISITS_THE_WEBSITE_UseCase.__init__)
-
-
-def test_visits_the_website_usecase_constructor_args():
-    sig = inspect.signature(VISITS_THE_WEBSITE_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_customer_actor_is_not_abstract():
-    assert not inspect.isabstract(CUSTOMER_Actor)
-
-
-def test_customer_actor_constructor_exists():
-    assert callable(CUSTOMER_Actor.__init__)
-
-
-def test_customer_actor_constructor_args():
-    sig = inspect.signature(CUSTOMER_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -294,6 +294,12 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+VISITS_THE_WEBSITE_UseCase_strategy = st.builds(
+    VISITS_THE_WEBSITE_UseCase,
+)
+CUSTOMER_Actor_strategy = st.builds(
+    CUSTOMER_Actor,
+)
 Company_strategy = st.builds(
     Company,
 )
@@ -342,12 +348,16 @@ SELECTS_THE_ITEMS_SERVICE_UseCase_strategy = st.builds(
 CREATES_THE_WEBSITE_UseCase_strategy = st.builds(
     CREATES_THE_WEBSITE_UseCase,
 )
-VISITS_THE_WEBSITE_UseCase_strategy = st.builds(
-    VISITS_THE_WEBSITE_UseCase,
-)
-CUSTOMER_Actor_strategy = st.builds(
-    CUSTOMER_Actor,
-)
+
+@given(instance=VISITS_THE_WEBSITE_UseCase_strategy)
+@settings(max_examples=50)
+def test_visits_the_website_usecase_instantiation(instance):
+    assert isinstance(instance, VISITS_THE_WEBSITE_UseCase)
+
+@given(instance=CUSTOMER_Actor_strategy)
+@settings(max_examples=50)
+def test_customer_actor_instantiation(instance):
+    assert isinstance(instance, CUSTOMER_Actor)
 
 @given(instance=Company_strategy)
 @settings(max_examples=50)
@@ -428,13 +438,3 @@ def test_selects_the_items_service_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_creates_the_website_usecase_instantiation(instance):
     assert isinstance(instance, CREATES_THE_WEBSITE_UseCase)
-
-@given(instance=VISITS_THE_WEBSITE_UseCase_strategy)
-@settings(max_examples=50)
-def test_visits_the_website_usecase_instantiation(instance):
-    assert isinstance(instance, VISITS_THE_WEBSITE_UseCase)
-
-@given(instance=CUSTOMER_Actor_strategy)
-@settings(max_examples=50)
-def test_customer_actor_instantiation(instance):
-    assert isinstance(instance, CUSTOMER_Actor)

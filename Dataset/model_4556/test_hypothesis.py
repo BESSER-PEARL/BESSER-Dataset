@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     CMD,
-    myDsl::TURTLE,
-    myDsl::PENSTATE,
-    myDsl::MOVE,
-    myDsl::LEFT,
-    myDsl::RIGHT,
-    myDsl::PENCOLOUR,
-    myDsl::PAPER,
-    myDsl::CMD,
-    myDsl::PROGRAM,
+    myDsl_TURTLE,
+    myDsl_PENSTATE,
+    myDsl_RIGHT,
+    myDsl_MOVE,
+    myDsl_PENCOLOUR,
+    myDsl_LEFT,
+    myDsl_PAPER,
+    myDsl_CMD,
+    myDsl_PROGRAM,
 )
 
 # =============================================================================
@@ -38,57 +38,57 @@ def test_cmd_constructor_args():
 
 
 
-def test_mydsl::turtle_is_not_abstract():
-    assert not inspect.isabstract(myDsl::TURTLE)
+def test_mydsl_turtle_is_not_abstract():
+    assert not inspect.isabstract(myDsl_TURTLE)
 
 
-def test_mydsl::turtle_constructor_exists():
-    assert callable(myDsl::TURTLE.__init__)
+def test_mydsl_turtle_constructor_exists():
+    assert callable(myDsl_TURTLE.__init__)
 
 
-def test_mydsl::turtle_constructor_args():
-    sig = inspect.signature(myDsl::TURTLE.__init__)
+def test_mydsl_turtle_constructor_args():
+    sig = inspect.signature(myDsl_TURTLE.__init__)
     params = list(sig.parameters.keys())
-    assert "startPosX" in params, "Missing parameter 'startPosX'"
     assert "startPosY" in params, "Missing parameter 'startPosY'"
+    assert "startPosX" in params, "Missing parameter 'startPosX'"
 
-def test_mydsl::turtle_has_startPosX():
-    assert hasattr(myDsl::TURTLE, "startPosX")
+def test_mydsl_turtle_has_startPosY():
+    assert hasattr(myDsl_TURTLE, "startPosY")
     descriptor = None
-    for klass in myDsl::TURTLE.__mro__:
-        if "startPosX" in klass.__dict__:
-            descriptor = klass.__dict__["startPosX"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mydsl::turtle_has_startPosY():
-    assert hasattr(myDsl::TURTLE, "startPosY")
-    descriptor = None
-    for klass in myDsl::TURTLE.__mro__:
+    for klass in myDsl_TURTLE.__mro__:
         if "startPosY" in klass.__dict__:
             descriptor = klass.__dict__["startPosY"]
             break
     assert isinstance(descriptor, property)
 
+def test_mydsl_turtle_has_startPosX():
+    assert hasattr(myDsl_TURTLE, "startPosX")
+    descriptor = None
+    for klass in myDsl_TURTLE.__mro__:
+        if "startPosX" in klass.__dict__:
+            descriptor = klass.__dict__["startPosX"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mydsl::penstate_is_not_abstract():
-    assert not inspect.isabstract(myDsl::PENSTATE)
+
+def test_mydsl_penstate_is_not_abstract():
+    assert not inspect.isabstract(myDsl_PENSTATE)
 
 
-def test_mydsl::penstate_constructor_exists():
-    assert callable(myDsl::PENSTATE.__init__)
+def test_mydsl_penstate_constructor_exists():
+    assert callable(myDsl_PENSTATE.__init__)
 
 
-def test_mydsl::penstate_constructor_args():
-    sig = inspect.signature(myDsl::PENSTATE.__init__)
+def test_mydsl_penstate_constructor_args():
+    sig = inspect.signature(myDsl_PENSTATE.__init__)
     params = list(sig.parameters.keys())
     assert "penState" in params, "Missing parameter 'penState'"
 
-def test_mydsl::penstate_has_penState():
-    assert hasattr(myDsl::PENSTATE, "penState")
+def test_mydsl_penstate_has_penState():
+    assert hasattr(myDsl_PENSTATE, "penState")
     descriptor = None
-    for klass in myDsl::PENSTATE.__mro__:
+    for klass in myDsl_PENSTATE.__mro__:
         if "penState" in klass.__dict__:
             descriptor = klass.__dict__["penState"]
             break
@@ -96,23 +96,23 @@ def test_mydsl::penstate_has_penState():
 
 
 
-def test_mydsl::move_is_not_abstract():
-    assert not inspect.isabstract(myDsl::MOVE)
+def test_mydsl_right_is_not_abstract():
+    assert not inspect.isabstract(myDsl_RIGHT)
 
 
-def test_mydsl::move_constructor_exists():
-    assert callable(myDsl::MOVE.__init__)
+def test_mydsl_right_constructor_exists():
+    assert callable(myDsl_RIGHT.__init__)
 
 
-def test_mydsl::move_constructor_args():
-    sig = inspect.signature(myDsl::MOVE.__init__)
+def test_mydsl_right_constructor_args():
+    sig = inspect.signature(myDsl_RIGHT.__init__)
     params = list(sig.parameters.keys())
     assert "amount" in params, "Missing parameter 'amount'"
 
-def test_mydsl::move_has_amount():
-    assert hasattr(myDsl::MOVE, "amount")
+def test_mydsl_right_has_amount():
+    assert hasattr(myDsl_RIGHT, "amount")
     descriptor = None
-    for klass in myDsl::MOVE.__mro__:
+    for klass in myDsl_RIGHT.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
@@ -120,23 +120,23 @@ def test_mydsl::move_has_amount():
 
 
 
-def test_mydsl::left_is_not_abstract():
-    assert not inspect.isabstract(myDsl::LEFT)
+def test_mydsl_move_is_not_abstract():
+    assert not inspect.isabstract(myDsl_MOVE)
 
 
-def test_mydsl::left_constructor_exists():
-    assert callable(myDsl::LEFT.__init__)
+def test_mydsl_move_constructor_exists():
+    assert callable(myDsl_MOVE.__init__)
 
 
-def test_mydsl::left_constructor_args():
-    sig = inspect.signature(myDsl::LEFT.__init__)
+def test_mydsl_move_constructor_args():
+    sig = inspect.signature(myDsl_MOVE.__init__)
     params = list(sig.parameters.keys())
     assert "amount" in params, "Missing parameter 'amount'"
 
-def test_mydsl::left_has_amount():
-    assert hasattr(myDsl::LEFT, "amount")
+def test_mydsl_move_has_amount():
+    assert hasattr(myDsl_MOVE, "amount")
     descriptor = None
-    for klass in myDsl::LEFT.__mro__:
+    for klass in myDsl_MOVE.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
@@ -144,47 +144,23 @@ def test_mydsl::left_has_amount():
 
 
 
-def test_mydsl::right_is_not_abstract():
-    assert not inspect.isabstract(myDsl::RIGHT)
+def test_mydsl_pencolour_is_not_abstract():
+    assert not inspect.isabstract(myDsl_PENCOLOUR)
 
 
-def test_mydsl::right_constructor_exists():
-    assert callable(myDsl::RIGHT.__init__)
+def test_mydsl_pencolour_constructor_exists():
+    assert callable(myDsl_PENCOLOUR.__init__)
 
 
-def test_mydsl::right_constructor_args():
-    sig = inspect.signature(myDsl::RIGHT.__init__)
-    params = list(sig.parameters.keys())
-    assert "amount" in params, "Missing parameter 'amount'"
-
-def test_mydsl::right_has_amount():
-    assert hasattr(myDsl::RIGHT, "amount")
-    descriptor = None
-    for klass in myDsl::RIGHT.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mydsl::pencolour_is_not_abstract():
-    assert not inspect.isabstract(myDsl::PENCOLOUR)
-
-
-def test_mydsl::pencolour_constructor_exists():
-    assert callable(myDsl::PENCOLOUR.__init__)
-
-
-def test_mydsl::pencolour_constructor_args():
-    sig = inspect.signature(myDsl::PENCOLOUR.__init__)
+def test_mydsl_pencolour_constructor_args():
+    sig = inspect.signature(myDsl_PENCOLOUR.__init__)
     params = list(sig.parameters.keys())
     assert "colour" in params, "Missing parameter 'colour'"
 
-def test_mydsl::pencolour_has_colour():
-    assert hasattr(myDsl::PENCOLOUR, "colour")
+def test_mydsl_pencolour_has_colour():
+    assert hasattr(myDsl_PENCOLOUR, "colour")
     descriptor = None
-    for klass in myDsl::PENCOLOUR.__mro__:
+    for klass in myDsl_PENCOLOUR.__mro__:
         if "colour" in klass.__dict__:
             descriptor = klass.__dict__["colour"]
             break
@@ -192,43 +168,67 @@ def test_mydsl::pencolour_has_colour():
 
 
 
-def test_mydsl::paper_is_not_abstract():
-    assert not inspect.isabstract(myDsl::PAPER)
+def test_mydsl_left_is_not_abstract():
+    assert not inspect.isabstract(myDsl_LEFT)
 
 
-def test_mydsl::paper_constructor_exists():
-    assert callable(myDsl::PAPER.__init__)
+def test_mydsl_left_constructor_exists():
+    assert callable(myDsl_LEFT.__init__)
 
 
-def test_mydsl::paper_constructor_args():
-    sig = inspect.signature(myDsl::PAPER.__init__)
+def test_mydsl_left_constructor_args():
+    sig = inspect.signature(myDsl_LEFT.__init__)
     params = list(sig.parameters.keys())
-    assert "sizeY" in params, "Missing parameter 'sizeY'"
-    assert "paperColour" in params, "Missing parameter 'paperColour'"
-    assert "sizeX" in params, "Missing parameter 'sizeX'"
+    assert "amount" in params, "Missing parameter 'amount'"
 
-def test_mydsl::paper_has_sizeY():
-    assert hasattr(myDsl::PAPER, "sizeY")
+def test_mydsl_left_has_amount():
+    assert hasattr(myDsl_LEFT, "amount")
     descriptor = None
-    for klass in myDsl::PAPER.__mro__:
-        if "sizeY" in klass.__dict__:
-            descriptor = klass.__dict__["sizeY"]
+    for klass in myDsl_LEFT.__mro__:
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
-def test_mydsl::paper_has_paperColour():
-    assert hasattr(myDsl::PAPER, "paperColour")
+
+
+def test_mydsl_paper_is_not_abstract():
+    assert not inspect.isabstract(myDsl_PAPER)
+
+
+def test_mydsl_paper_constructor_exists():
+    assert callable(myDsl_PAPER.__init__)
+
+
+def test_mydsl_paper_constructor_args():
+    sig = inspect.signature(myDsl_PAPER.__init__)
+    params = list(sig.parameters.keys())
+    assert "paperColour" in params, "Missing parameter 'paperColour'"
+    assert "sizeY" in params, "Missing parameter 'sizeY'"
+    assert "sizeX" in params, "Missing parameter 'sizeX'"
+
+def test_mydsl_paper_has_paperColour():
+    assert hasattr(myDsl_PAPER, "paperColour")
     descriptor = None
-    for klass in myDsl::PAPER.__mro__:
+    for klass in myDsl_PAPER.__mro__:
         if "paperColour" in klass.__dict__:
             descriptor = klass.__dict__["paperColour"]
             break
     assert isinstance(descriptor, property)
 
-def test_mydsl::paper_has_sizeX():
-    assert hasattr(myDsl::PAPER, "sizeX")
+def test_mydsl_paper_has_sizeY():
+    assert hasattr(myDsl_PAPER, "sizeY")
     descriptor = None
-    for klass in myDsl::PAPER.__mro__:
+    for klass in myDsl_PAPER.__mro__:
+        if "sizeY" in klass.__dict__:
+            descriptor = klass.__dict__["sizeY"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mydsl_paper_has_sizeX():
+    assert hasattr(myDsl_PAPER, "sizeX")
+    descriptor = None
+    for klass in myDsl_PAPER.__mro__:
         if "sizeX" in klass.__dict__:
             descriptor = klass.__dict__["sizeX"]
             break
@@ -236,30 +236,30 @@ def test_mydsl::paper_has_sizeX():
 
 
 
-def test_mydsl::cmd_is_not_abstract():
-    assert not inspect.isabstract(myDsl::CMD)
+def test_mydsl_cmd_is_not_abstract():
+    assert not inspect.isabstract(myDsl_CMD)
 
 
-def test_mydsl::cmd_constructor_exists():
-    assert callable(myDsl::CMD.__init__)
+def test_mydsl_cmd_constructor_exists():
+    assert callable(myDsl_CMD.__init__)
 
 
-def test_mydsl::cmd_constructor_args():
-    sig = inspect.signature(myDsl::CMD.__init__)
+def test_mydsl_cmd_constructor_args():
+    sig = inspect.signature(myDsl_CMD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::program_is_not_abstract():
-    assert not inspect.isabstract(myDsl::PROGRAM)
+def test_mydsl_program_is_not_abstract():
+    assert not inspect.isabstract(myDsl_PROGRAM)
 
 
-def test_mydsl::program_constructor_exists():
-    assert callable(myDsl::PROGRAM.__init__)
+def test_mydsl_program_constructor_exists():
+    assert callable(myDsl_PROGRAM.__init__)
 
 
-def test_mydsl::program_constructor_args():
-    sig = inspect.signature(myDsl::PROGRAM.__init__)
+def test_mydsl_program_constructor_args():
+    sig = inspect.signature(myDsl_PROGRAM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -277,52 +277,52 @@ safe_text = st.text(
 CMD_strategy = st.builds(
     CMD,
 )
-myDsl::TURTLE_strategy = st.builds(
-    myDsl::TURTLE,
-    startPosX=
-        st.integers(),
+myDsl_TURTLE_strategy = st.builds(
+    myDsl_TURTLE,
     startPosY=
+        st.integers(),
+    startPosX=
         st.integers()
 )
-myDsl::PENSTATE_strategy = st.builds(
-    myDsl::PENSTATE,
+myDsl_PENSTATE_strategy = st.builds(
+    myDsl_PENSTATE,
     penState=
         safe_text
 )
-myDsl::MOVE_strategy = st.builds(
-    myDsl::MOVE,
+myDsl_RIGHT_strategy = st.builds(
+    myDsl_RIGHT,
     amount=
         st.integers()
 )
-myDsl::LEFT_strategy = st.builds(
-    myDsl::LEFT,
+myDsl_MOVE_strategy = st.builds(
+    myDsl_MOVE,
     amount=
         st.integers()
 )
-myDsl::RIGHT_strategy = st.builds(
-    myDsl::RIGHT,
-    amount=
-        st.integers()
-)
-myDsl::PENCOLOUR_strategy = st.builds(
-    myDsl::PENCOLOUR,
+myDsl_PENCOLOUR_strategy = st.builds(
+    myDsl_PENCOLOUR,
     colour=
         safe_text
 )
-myDsl::PAPER_strategy = st.builds(
-    myDsl::PAPER,
-    sizeY=
-        st.integers(),
+myDsl_LEFT_strategy = st.builds(
+    myDsl_LEFT,
+    amount=
+        st.integers()
+)
+myDsl_PAPER_strategy = st.builds(
+    myDsl_PAPER,
     paperColour=
         safe_text,
+    sizeY=
+        st.integers(),
     sizeX=
         st.integers()
 )
-myDsl::CMD_strategy = st.builds(
-    myDsl::CMD,
+myDsl_CMD_strategy = st.builds(
+    myDsl_CMD,
 )
-myDsl::PROGRAM_strategy = st.builds(
-    myDsl::PROGRAM,
+myDsl_PROGRAM_strategy = st.builds(
+    myDsl_PROGRAM,
 )
 
 @given(instance=CMD_strategy)
@@ -330,157 +330,127 @@ myDsl::PROGRAM_strategy = st.builds(
 def test_cmd_instantiation(instance):
     assert isinstance(instance, CMD)
 
-@given(instance=myDsl::TURTLE_strategy)
+@given(instance=myDsl_TURTLE_strategy)
 @settings(max_examples=50)
-def test_mydsl::turtle_instantiation(instance):
-    assert isinstance(instance, myDsl::TURTLE)
-
-@given(instance=myDsl::TURTLE_strategy)
-def test_mydsl::turtle_startPosX_type(instance):
-    assert isinstance(instance.startPosX, int)
+def test_mydsl_turtle_instantiation(instance):
+    assert isinstance(instance, myDsl_TURTLE)
 
 
-@given(instance=myDsl::TURTLE_strategy)
-def test_mydsl::turtle_startPosX_setter(instance):
-    original = instance.startPosX
-    instance.startPosX = original
-    assert instance.startPosX == original
 
-@given(instance=myDsl::TURTLE_strategy)
-def test_mydsl::turtle_startPosY_type(instance):
-    assert isinstance(instance.startPosY, int)
-
-
-@given(instance=myDsl::TURTLE_strategy)
-def test_mydsl::turtle_startPosY_setter(instance):
+@given(instance=myDsl_TURTLE_strategy)
+def test_mydsl_turtle_startPosY_setter(instance):
     original = instance.startPosY
     instance.startPosY = original
     assert instance.startPosY == original
 
-@given(instance=myDsl::PENSTATE_strategy)
+
+
+@given(instance=myDsl_TURTLE_strategy)
+def test_mydsl_turtle_startPosX_setter(instance):
+    original = instance.startPosX
+    instance.startPosX = original
+    assert instance.startPosX == original
+
+@given(instance=myDsl_PENSTATE_strategy)
 @settings(max_examples=50)
-def test_mydsl::penstate_instantiation(instance):
-    assert isinstance(instance, myDsl::PENSTATE)
-
-@given(instance=myDsl::PENSTATE_strategy)
-def test_mydsl::penstate_penState_type(instance):
-    assert isinstance(instance.penState, str)
+def test_mydsl_penstate_instantiation(instance):
+    assert isinstance(instance, myDsl_PENSTATE)
 
 
-@given(instance=myDsl::PENSTATE_strategy)
-def test_mydsl::penstate_penState_setter(instance):
+
+@given(instance=myDsl_PENSTATE_strategy)
+def test_mydsl_penstate_penState_setter(instance):
     original = instance.penState
     instance.penState = original
     assert instance.penState == original
 
-@given(instance=myDsl::MOVE_strategy)
+@given(instance=myDsl_RIGHT_strategy)
 @settings(max_examples=50)
-def test_mydsl::move_instantiation(instance):
-    assert isinstance(instance, myDsl::MOVE)
-
-@given(instance=myDsl::MOVE_strategy)
-def test_mydsl::move_amount_type(instance):
-    assert isinstance(instance.amount, int)
+def test_mydsl_right_instantiation(instance):
+    assert isinstance(instance, myDsl_RIGHT)
 
 
-@given(instance=myDsl::MOVE_strategy)
-def test_mydsl::move_amount_setter(instance):
+
+@given(instance=myDsl_RIGHT_strategy)
+def test_mydsl_right_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
 
-@given(instance=myDsl::LEFT_strategy)
+@given(instance=myDsl_MOVE_strategy)
 @settings(max_examples=50)
-def test_mydsl::left_instantiation(instance):
-    assert isinstance(instance, myDsl::LEFT)
-
-@given(instance=myDsl::LEFT_strategy)
-def test_mydsl::left_amount_type(instance):
-    assert isinstance(instance.amount, int)
+def test_mydsl_move_instantiation(instance):
+    assert isinstance(instance, myDsl_MOVE)
 
 
-@given(instance=myDsl::LEFT_strategy)
-def test_mydsl::left_amount_setter(instance):
+
+@given(instance=myDsl_MOVE_strategy)
+def test_mydsl_move_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
 
-@given(instance=myDsl::RIGHT_strategy)
+@given(instance=myDsl_PENCOLOUR_strategy)
 @settings(max_examples=50)
-def test_mydsl::right_instantiation(instance):
-    assert isinstance(instance, myDsl::RIGHT)
-
-@given(instance=myDsl::RIGHT_strategy)
-def test_mydsl::right_amount_type(instance):
-    assert isinstance(instance.amount, int)
+def test_mydsl_pencolour_instantiation(instance):
+    assert isinstance(instance, myDsl_PENCOLOUR)
 
 
-@given(instance=myDsl::RIGHT_strategy)
-def test_mydsl::right_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
 
-@given(instance=myDsl::PENCOLOUR_strategy)
-@settings(max_examples=50)
-def test_mydsl::pencolour_instantiation(instance):
-    assert isinstance(instance, myDsl::PENCOLOUR)
-
-@given(instance=myDsl::PENCOLOUR_strategy)
-def test_mydsl::pencolour_colour_type(instance):
-    assert isinstance(instance.colour, str)
-
-
-@given(instance=myDsl::PENCOLOUR_strategy)
-def test_mydsl::pencolour_colour_setter(instance):
+@given(instance=myDsl_PENCOLOUR_strategy)
+def test_mydsl_pencolour_colour_setter(instance):
     original = instance.colour
     instance.colour = original
     assert instance.colour == original
 
-@given(instance=myDsl::PAPER_strategy)
+@given(instance=myDsl_LEFT_strategy)
 @settings(max_examples=50)
-def test_mydsl::paper_instantiation(instance):
-    assert isinstance(instance, myDsl::PAPER)
-
-@given(instance=myDsl::PAPER_strategy)
-def test_mydsl::paper_sizeY_type(instance):
-    assert isinstance(instance.sizeY, int)
+def test_mydsl_left_instantiation(instance):
+    assert isinstance(instance, myDsl_LEFT)
 
 
-@given(instance=myDsl::PAPER_strategy)
-def test_mydsl::paper_sizeY_setter(instance):
-    original = instance.sizeY
-    instance.sizeY = original
-    assert instance.sizeY == original
 
-@given(instance=myDsl::PAPER_strategy)
-def test_mydsl::paper_paperColour_type(instance):
-    assert isinstance(instance.paperColour, str)
+@given(instance=myDsl_LEFT_strategy)
+def test_mydsl_left_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
+
+@given(instance=myDsl_PAPER_strategy)
+@settings(max_examples=50)
+def test_mydsl_paper_instantiation(instance):
+    assert isinstance(instance, myDsl_PAPER)
 
 
-@given(instance=myDsl::PAPER_strategy)
-def test_mydsl::paper_paperColour_setter(instance):
+
+@given(instance=myDsl_PAPER_strategy)
+def test_mydsl_paper_paperColour_setter(instance):
     original = instance.paperColour
     instance.paperColour = original
     assert instance.paperColour == original
 
-@given(instance=myDsl::PAPER_strategy)
-def test_mydsl::paper_sizeX_type(instance):
-    assert isinstance(instance.sizeX, int)
 
 
-@given(instance=myDsl::PAPER_strategy)
-def test_mydsl::paper_sizeX_setter(instance):
+@given(instance=myDsl_PAPER_strategy)
+def test_mydsl_paper_sizeY_setter(instance):
+    original = instance.sizeY
+    instance.sizeY = original
+    assert instance.sizeY == original
+
+
+
+@given(instance=myDsl_PAPER_strategy)
+def test_mydsl_paper_sizeX_setter(instance):
     original = instance.sizeX
     instance.sizeX = original
     assert instance.sizeX == original
 
-@given(instance=myDsl::CMD_strategy)
+@given(instance=myDsl_CMD_strategy)
 @settings(max_examples=50)
-def test_mydsl::cmd_instantiation(instance):
-    assert isinstance(instance, myDsl::CMD)
+def test_mydsl_cmd_instantiation(instance):
+    assert isinstance(instance, myDsl_CMD)
 
-@given(instance=myDsl::PROGRAM_strategy)
+@given(instance=myDsl_PROGRAM_strategy)
 @settings(max_examples=50)
-def test_mydsl::program_instantiation(instance):
-    assert isinstance(instance, myDsl::PROGRAM)
+def test_mydsl_program_instantiation(instance):
+    assert isinstance(instance, myDsl_PROGRAM)

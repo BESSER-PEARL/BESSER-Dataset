@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    di::ElementEntry,
-    di::Guide,
+from python_code import (
+    di_ElementEntry,
+    di_Guide,
     Line,
     Shape,
-    di::GradientShape,
-    di::Ruler,
+    di_GradientShape,
+    di_Ruler,
     Node,
-    di::Grid,
-    di::Comment,
+    di_Grid,
+    di_Comment,
     Container,
-    di::Diagram,
-    di::Connector,
-    di::Line,
-    di::Shape,
-    di::EObject,
-    di::View,
-    di::CommentLink,
+    di_Diagram,
+    di_Connector,
+    di_Line,
+    di_Shape,
+    di_EObject,
+    di_View,
+    di_CommentLink,
     View,
-    di::Container,
-    di::Node,
+    di_Container,
+    di_Node,
+    Alignment,
     RulerUnit,
     LineStyle,
-    Alignment,
 )
 
 # =============================================================================
@@ -37,23 +37,23 @@ from classes import (
 
 
 
-def test_di::elemententry_is_not_abstract():
-    assert not inspect.isabstract(di::ElementEntry)
+def test_di_elemententry_is_not_abstract():
+    assert not inspect.isabstract(di_ElementEntry)
 
 
-def test_di::elemententry_constructor_exists():
-    assert callable(di::ElementEntry.__init__)
+def test_di_elemententry_constructor_exists():
+    assert callable(di_ElementEntry.__init__)
 
 
-def test_di::elemententry_constructor_args():
-    sig = inspect.signature(di::ElementEntry.__init__)
+def test_di_elemententry_constructor_args():
+    sig = inspect.signature(di_ElementEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_di::elemententry_has_value():
-    assert hasattr(di::ElementEntry, "value")
+def test_di_elemententry_has_value():
+    assert hasattr(di_ElementEntry, "value")
     descriptor = None
-    for klass in di::ElementEntry.__mro__:
+    for klass in di_ElementEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -61,23 +61,23 @@ def test_di::elemententry_has_value():
 
 
 
-def test_di::guide_is_not_abstract():
-    assert not inspect.isabstract(di::Guide)
+def test_di_guide_is_not_abstract():
+    assert not inspect.isabstract(di_Guide)
 
 
-def test_di::guide_constructor_exists():
-    assert callable(di::Guide.__init__)
+def test_di_guide_constructor_exists():
+    assert callable(di_Guide.__init__)
 
 
-def test_di::guide_constructor_args():
-    sig = inspect.signature(di::Guide.__init__)
+def test_di_guide_constructor_args():
+    sig = inspect.signature(di_Guide.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_di::guide_has_position():
-    assert hasattr(di::Guide, "position")
+def test_di_guide_has_position():
+    assert hasattr(di_Guide, "position")
     descriptor = None
-    for klass in di::Guide.__mro__:
+    for klass in di_Guide.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -113,43 +113,43 @@ def test_shape_constructor_args():
 
 
 
-def test_di::gradientshape_is_not_abstract():
-    assert not inspect.isabstract(di::GradientShape)
+def test_di_gradientshape_is_not_abstract():
+    assert not inspect.isabstract(di_GradientShape)
 
 
-def test_di::gradientshape_constructor_exists():
-    assert callable(di::GradientShape.__init__)
+def test_di_gradientshape_constructor_exists():
+    assert callable(di_GradientShape.__init__)
 
 
-def test_di::gradientshape_constructor_args():
-    sig = inspect.signature(di::GradientShape.__init__)
+def test_di_gradientshape_constructor_args():
+    sig = inspect.signature(di_GradientShape.__init__)
     params = list(sig.parameters.keys())
-    assert "verticalGradient" in params, "Missing parameter 'verticalGradient'"
     assert "usingGradient" in params, "Missing parameter 'usingGradient'"
+    assert "verticalGradient" in params, "Missing parameter 'verticalGradient'"
     assert "gradientColor" in params, "Missing parameter 'gradientColor'"
 
-def test_di::gradientshape_has_verticalGradient():
-    assert hasattr(di::GradientShape, "verticalGradient")
+def test_di_gradientshape_has_usingGradient():
+    assert hasattr(di_GradientShape, "usingGradient")
     descriptor = None
-    for klass in di::GradientShape.__mro__:
-        if "verticalGradient" in klass.__dict__:
-            descriptor = klass.__dict__["verticalGradient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::gradientshape_has_usingGradient():
-    assert hasattr(di::GradientShape, "usingGradient")
-    descriptor = None
-    for klass in di::GradientShape.__mro__:
+    for klass in di_GradientShape.__mro__:
         if "usingGradient" in klass.__dict__:
             descriptor = klass.__dict__["usingGradient"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::gradientshape_has_gradientColor():
-    assert hasattr(di::GradientShape, "gradientColor")
+def test_di_gradientshape_has_verticalGradient():
+    assert hasattr(di_GradientShape, "verticalGradient")
     descriptor = None
-    for klass in di::GradientShape.__mro__:
+    for klass in di_GradientShape.__mro__:
+        if "verticalGradient" in klass.__dict__:
+            descriptor = klass.__dict__["verticalGradient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_gradientshape_has_gradientColor():
+    assert hasattr(di_GradientShape, "gradientColor")
+    descriptor = None
+    for klass in di_GradientShape.__mro__:
         if "gradientColor" in klass.__dict__:
             descriptor = klass.__dict__["gradientColor"]
             break
@@ -157,23 +157,23 @@ def test_di::gradientshape_has_gradientColor():
 
 
 
-def test_di::ruler_is_not_abstract():
-    assert not inspect.isabstract(di::Ruler)
+def test_di_ruler_is_not_abstract():
+    assert not inspect.isabstract(di_Ruler)
 
 
-def test_di::ruler_constructor_exists():
-    assert callable(di::Ruler.__init__)
+def test_di_ruler_constructor_exists():
+    assert callable(di_Ruler.__init__)
 
 
-def test_di::ruler_constructor_args():
-    sig = inspect.signature(di::Ruler.__init__)
+def test_di_ruler_constructor_args():
+    sig = inspect.signature(di_Ruler.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
 
-def test_di::ruler_has_unit():
-    assert hasattr(di::Ruler, "unit")
+def test_di_ruler_has_unit():
+    assert hasattr(di_Ruler, "unit")
     descriptor = None
-    for klass in di::Ruler.__mro__:
+    for klass in di_Ruler.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
@@ -195,60 +195,60 @@ def test_node_constructor_args():
 
 
 
-def test_di::grid_is_not_abstract():
-    assert not inspect.isabstract(di::Grid)
+def test_di_grid_is_not_abstract():
+    assert not inspect.isabstract(di_Grid)
 
 
-def test_di::grid_constructor_exists():
-    assert callable(di::Grid.__init__)
+def test_di_grid_constructor_exists():
+    assert callable(di_Grid.__init__)
 
 
-def test_di::grid_constructor_args():
-    sig = inspect.signature(di::Grid.__init__)
+def test_di_grid_constructor_args():
+    sig = inspect.signature(di_Grid.__init__)
     params = list(sig.parameters.keys())
+    assert "spacing" in params, "Missing parameter 'spacing'"
     assert "style" in params, "Missing parameter 'style'"
     assert "color" in params, "Missing parameter 'color'"
-    assert "spacing" in params, "Missing parameter 'spacing'"
 
-def test_di::grid_has_style():
-    assert hasattr(di::Grid, "style")
+def test_di_grid_has_spacing():
+    assert hasattr(di_Grid, "spacing")
     descriptor = None
-    for klass in di::Grid.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::grid_has_color():
-    assert hasattr(di::Grid, "color")
-    descriptor = None
-    for klass in di::Grid.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::grid_has_spacing():
-    assert hasattr(di::Grid, "spacing")
-    descriptor = None
-    for klass in di::Grid.__mro__:
+    for klass in di_Grid.__mro__:
         if "spacing" in klass.__dict__:
             descriptor = klass.__dict__["spacing"]
             break
     assert isinstance(descriptor, property)
 
+def test_di_grid_has_style():
+    assert hasattr(di_Grid, "style")
+    descriptor = None
+    for klass in di_Grid.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_grid_has_color():
+    assert hasattr(di_Grid, "color")
+    descriptor = None
+    for klass in di_Grid.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_di::comment_is_not_abstract():
-    assert not inspect.isabstract(di::Comment)
+
+def test_di_comment_is_not_abstract():
+    assert not inspect.isabstract(di_Comment)
 
 
-def test_di::comment_constructor_exists():
-    assert callable(di::Comment.__init__)
+def test_di_comment_constructor_exists():
+    assert callable(di_Comment.__init__)
 
 
-def test_di::comment_constructor_args():
-    sig = inspect.signature(di::Comment.__init__)
+def test_di_comment_constructor_args():
+    sig = inspect.signature(di_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -267,151 +267,151 @@ def test_container_constructor_args():
 
 
 
-def test_di::diagram_is_not_abstract():
-    assert not inspect.isabstract(di::Diagram)
+def test_di_diagram_is_not_abstract():
+    assert not inspect.isabstract(di_Diagram)
 
 
-def test_di::diagram_constructor_exists():
-    assert callable(di::Diagram.__init__)
+def test_di_diagram_constructor_exists():
+    assert callable(di_Diagram.__init__)
 
 
-def test_di::diagram_constructor_args():
-    sig = inspect.signature(di::Diagram.__init__)
+def test_di_diagram_constructor_args():
+    sig = inspect.signature(di_Diagram.__init__)
     params = list(sig.parameters.keys())
-    assert "snapToGrid" in params, "Missing parameter 'snapToGrid'"
     assert "snapToGeometry" in params, "Missing parameter 'snapToGeometry'"
     assert "rulers" in params, "Missing parameter 'rulers'"
+    assert "snapToGrid" in params, "Missing parameter 'snapToGrid'"
 
-def test_di::diagram_has_snapToGrid():
-    assert hasattr(di::Diagram, "snapToGrid")
+def test_di_diagram_has_snapToGeometry():
+    assert hasattr(di_Diagram, "snapToGeometry")
     descriptor = None
-    for klass in di::Diagram.__mro__:
-        if "snapToGrid" in klass.__dict__:
-            descriptor = klass.__dict__["snapToGrid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::diagram_has_snapToGeometry():
-    assert hasattr(di::Diagram, "snapToGeometry")
-    descriptor = None
-    for klass in di::Diagram.__mro__:
+    for klass in di_Diagram.__mro__:
         if "snapToGeometry" in klass.__dict__:
             descriptor = klass.__dict__["snapToGeometry"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::diagram_has_rulers():
-    assert hasattr(di::Diagram, "rulers")
+def test_di_diagram_has_rulers():
+    assert hasattr(di_Diagram, "rulers")
     descriptor = None
-    for klass in di::Diagram.__mro__:
+    for klass in di_Diagram.__mro__:
         if "rulers" in klass.__dict__:
             descriptor = klass.__dict__["rulers"]
             break
     assert isinstance(descriptor, property)
 
+def test_di_diagram_has_snapToGrid():
+    assert hasattr(di_Diagram, "snapToGrid")
+    descriptor = None
+    for klass in di_Diagram.__mro__:
+        if "snapToGrid" in klass.__dict__:
+            descriptor = klass.__dict__["snapToGrid"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_di::connector_is_not_abstract():
-    assert not inspect.isabstract(di::Connector)
+
+def test_di_connector_is_not_abstract():
+    assert not inspect.isabstract(di_Connector)
 
 
-def test_di::connector_constructor_exists():
-    assert callable(di::Connector.__init__)
+def test_di_connector_constructor_exists():
+    assert callable(di_Connector.__init__)
 
 
-def test_di::connector_constructor_args():
-    sig = inspect.signature(di::Connector.__init__)
+def test_di_connector_constructor_args():
+    sig = inspect.signature(di_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::line_is_not_abstract():
-    assert not inspect.isabstract(di::Line)
+def test_di_line_is_not_abstract():
+    assert not inspect.isabstract(di_Line)
 
 
-def test_di::line_constructor_exists():
-    assert callable(di::Line.__init__)
+def test_di_line_constructor_exists():
+    assert callable(di_Line.__init__)
 
 
-def test_di::line_constructor_args():
-    sig = inspect.signature(di::Line.__init__)
+def test_di_line_constructor_args():
+    sig = inspect.signature(di_Line.__init__)
     params = list(sig.parameters.keys())
-    assert "sourceAnchor" in params, "Missing parameter 'sourceAnchor'"
-    assert "sourceNode" in params, "Missing parameter 'sourceNode'"
-    assert "targetNode" in params, "Missing parameter 'targetNode'"
     assert "style" in params, "Missing parameter 'style'"
     assert "width" in params, "Missing parameter 'width'"
+    assert "sourceNode" in params, "Missing parameter 'sourceNode'"
     assert "targetAnchor" in params, "Missing parameter 'targetAnchor'"
     assert "lineDash" in params, "Missing parameter 'lineDash'"
+    assert "targetNode" in params, "Missing parameter 'targetNode'"
+    assert "sourceAnchor" in params, "Missing parameter 'sourceAnchor'"
     assert "color" in params, "Missing parameter 'color'"
 
-def test_di::line_has_sourceAnchor():
-    assert hasattr(di::Line, "sourceAnchor")
+def test_di_line_has_style():
+    assert hasattr(di_Line, "style")
     descriptor = None
-    for klass in di::Line.__mro__:
-        if "sourceAnchor" in klass.__dict__:
-            descriptor = klass.__dict__["sourceAnchor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::line_has_sourceNode():
-    assert hasattr(di::Line, "sourceNode")
-    descriptor = None
-    for klass in di::Line.__mro__:
-        if "sourceNode" in klass.__dict__:
-            descriptor = klass.__dict__["sourceNode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::line_has_targetNode():
-    assert hasattr(di::Line, "targetNode")
-    descriptor = None
-    for klass in di::Line.__mro__:
-        if "targetNode" in klass.__dict__:
-            descriptor = klass.__dict__["targetNode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::line_has_style():
-    assert hasattr(di::Line, "style")
-    descriptor = None
-    for klass in di::Line.__mro__:
+    for klass in di_Line.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::line_has_width():
-    assert hasattr(di::Line, "width")
+def test_di_line_has_width():
+    assert hasattr(di_Line, "width")
     descriptor = None
-    for klass in di::Line.__mro__:
+    for klass in di_Line.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::line_has_targetAnchor():
-    assert hasattr(di::Line, "targetAnchor")
+def test_di_line_has_sourceNode():
+    assert hasattr(di_Line, "sourceNode")
     descriptor = None
-    for klass in di::Line.__mro__:
+    for klass in di_Line.__mro__:
+        if "sourceNode" in klass.__dict__:
+            descriptor = klass.__dict__["sourceNode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_line_has_targetAnchor():
+    assert hasattr(di_Line, "targetAnchor")
+    descriptor = None
+    for klass in di_Line.__mro__:
         if "targetAnchor" in klass.__dict__:
             descriptor = klass.__dict__["targetAnchor"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::line_has_lineDash():
-    assert hasattr(di::Line, "lineDash")
+def test_di_line_has_lineDash():
+    assert hasattr(di_Line, "lineDash")
     descriptor = None
-    for klass in di::Line.__mro__:
+    for klass in di_Line.__mro__:
         if "lineDash" in klass.__dict__:
             descriptor = klass.__dict__["lineDash"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::line_has_color():
-    assert hasattr(di::Line, "color")
+def test_di_line_has_targetNode():
+    assert hasattr(di_Line, "targetNode")
     descriptor = None
-    for klass in di::Line.__mro__:
+    for klass in di_Line.__mro__:
+        if "targetNode" in klass.__dict__:
+            descriptor = klass.__dict__["targetNode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_line_has_sourceAnchor():
+    assert hasattr(di_Line, "sourceAnchor")
+    descriptor = None
+    for klass in di_Line.__mro__:
+        if "sourceAnchor" in klass.__dict__:
+            descriptor = klass.__dict__["sourceAnchor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_line_has_color():
+    assert hasattr(di_Line, "color")
+    descriptor = None
+    for klass in di_Line.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -419,91 +419,91 @@ def test_di::line_has_color():
 
 
 
-def test_di::shape_is_not_abstract():
-    assert not inspect.isabstract(di::Shape)
+def test_di_shape_is_not_abstract():
+    assert not inspect.isabstract(di_Shape)
 
 
-def test_di::shape_constructor_exists():
-    assert callable(di::Shape.__init__)
+def test_di_shape_constructor_exists():
+    assert callable(di_Shape.__init__)
 
 
-def test_di::shape_constructor_args():
-    sig = inspect.signature(di::Shape.__init__)
+def test_di_shape_constructor_args():
+    sig = inspect.signature(di_Shape.__init__)
     params = list(sig.parameters.keys())
-    assert "foreground" in params, "Missing parameter 'foreground'"
     assert "background" in params, "Missing parameter 'background'"
     assert "bounds" in params, "Missing parameter 'bounds'"
+    assert "foreground" in params, "Missing parameter 'foreground'"
 
-def test_di::shape_has_foreground():
-    assert hasattr(di::Shape, "foreground")
+def test_di_shape_has_background():
+    assert hasattr(di_Shape, "background")
     descriptor = None
-    for klass in di::Shape.__mro__:
-        if "foreground" in klass.__dict__:
-            descriptor = klass.__dict__["foreground"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::shape_has_background():
-    assert hasattr(di::Shape, "background")
-    descriptor = None
-    for klass in di::Shape.__mro__:
+    for klass in di_Shape.__mro__:
         if "background" in klass.__dict__:
             descriptor = klass.__dict__["background"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::shape_has_bounds():
-    assert hasattr(di::Shape, "bounds")
+def test_di_shape_has_bounds():
+    assert hasattr(di_Shape, "bounds")
     descriptor = None
-    for klass in di::Shape.__mro__:
+    for klass in di_Shape.__mro__:
         if "bounds" in klass.__dict__:
             descriptor = klass.__dict__["bounds"]
             break
     assert isinstance(descriptor, property)
 
+def test_di_shape_has_foreground():
+    assert hasattr(di_Shape, "foreground")
+    descriptor = None
+    for klass in di_Shape.__mro__:
+        if "foreground" in klass.__dict__:
+            descriptor = klass.__dict__["foreground"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_di::eobject_is_not_abstract():
-    assert not inspect.isabstract(di::EObject)
+
+def test_di_eobject_is_not_abstract():
+    assert not inspect.isabstract(di_EObject)
 
 
-def test_di::eobject_constructor_exists():
-    assert callable(di::EObject.__init__)
+def test_di_eobject_constructor_exists():
+    assert callable(di_EObject.__init__)
 
 
-def test_di::eobject_constructor_args():
-    sig = inspect.signature(di::EObject.__init__)
+def test_di_eobject_constructor_args():
+    sig = inspect.signature(di_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::view_is_not_abstract():
-    assert not inspect.isabstract(di::View)
+def test_di_view_is_not_abstract():
+    assert not inspect.isabstract(di_View)
 
 
-def test_di::view_constructor_exists():
-    assert callable(di::View.__init__)
+def test_di_view_constructor_exists():
+    assert callable(di_View.__init__)
 
 
-def test_di::view_constructor_args():
-    sig = inspect.signature(di::View.__init__)
+def test_di_view_constructor_args():
+    sig = inspect.signature(di_View.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_di::view_has_label():
-    assert hasattr(di::View, "label")
+def test_di_view_has_label():
+    assert hasattr(di_View, "label")
     descriptor = None
-    for klass in di::View.__mro__:
+    for klass in di_View.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::view_has_id():
-    assert hasattr(di::View, "id")
+def test_di_view_has_id():
+    assert hasattr(di_View, "id")
     descriptor = None
-    for klass in di::View.__mro__:
+    for klass in di_View.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -511,16 +511,16 @@ def test_di::view_has_id():
 
 
 
-def test_di::commentlink_is_not_abstract():
-    assert not inspect.isabstract(di::CommentLink)
+def test_di_commentlink_is_not_abstract():
+    assert not inspect.isabstract(di_CommentLink)
 
 
-def test_di::commentlink_constructor_exists():
-    assert callable(di::CommentLink.__init__)
+def test_di_commentlink_constructor_exists():
+    assert callable(di_CommentLink.__init__)
 
 
-def test_di::commentlink_constructor_args():
-    sig = inspect.signature(di::CommentLink.__init__)
+def test_di_commentlink_constructor_args():
+    sig = inspect.signature(di_CommentLink.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -539,71 +539,89 @@ def test_view_constructor_args():
 
 
 
-def test_di::container_is_not_abstract():
-    assert not inspect.isabstract(di::Container)
+def test_di_container_is_not_abstract():
+    assert not inspect.isabstract(di_Container)
 
 
-def test_di::container_constructor_exists():
-    assert callable(di::Container.__init__)
+def test_di_container_constructor_exists():
+    assert callable(di_Container.__init__)
 
 
-def test_di::container_constructor_args():
-    sig = inspect.signature(di::Container.__init__)
+def test_di_container_constructor_args():
+    sig = inspect.signature(di_Container.__init__)
     params = list(sig.parameters.keys())
-    assert "allShapes" in params, "Missing parameter 'allShapes'"
     assert "allLines" in params, "Missing parameter 'allLines'"
+    assert "allShapes" in params, "Missing parameter 'allShapes'"
 
-def test_di::container_has_allShapes():
-    assert hasattr(di::Container, "allShapes")
+def test_di_container_has_allLines():
+    assert hasattr(di_Container, "allLines")
     descriptor = None
-    for klass in di::Container.__mro__:
-        if "allShapes" in klass.__dict__:
-            descriptor = klass.__dict__["allShapes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::container_has_allLines():
-    assert hasattr(di::Container, "allLines")
-    descriptor = None
-    for klass in di::Container.__mro__:
+    for klass in di_Container.__mro__:
         if "allLines" in klass.__dict__:
             descriptor = klass.__dict__["allLines"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_di::node_is_not_abstract():
-    assert not inspect.isabstract(di::Node)
-
-
-def test_di::node_constructor_exists():
-    assert callable(di::Node.__init__)
-
-
-def test_di::node_constructor_args():
-    sig = inspect.signature(di::Node.__init__)
-    params = list(sig.parameters.keys())
-    assert "allOutgoingLines" in params, "Missing parameter 'allOutgoingLines'"
-    assert "allIncomingLines" in params, "Missing parameter 'allIncomingLines'"
-
-def test_di::node_has_allOutgoingLines():
-    assert hasattr(di::Node, "allOutgoingLines")
+def test_di_container_has_allShapes():
+    assert hasattr(di_Container, "allShapes")
     descriptor = None
-    for klass in di::Node.__mro__:
+    for klass in di_Container.__mro__:
+        if "allShapes" in klass.__dict__:
+            descriptor = klass.__dict__["allShapes"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_di_node_is_not_abstract():
+    assert not inspect.isabstract(di_Node)
+
+
+def test_di_node_constructor_exists():
+    assert callable(di_Node.__init__)
+
+
+def test_di_node_constructor_args():
+    sig = inspect.signature(di_Node.__init__)
+    params = list(sig.parameters.keys())
+    assert "allIncomingLines" in params, "Missing parameter 'allIncomingLines'"
+    assert "allOutgoingLines" in params, "Missing parameter 'allOutgoingLines'"
+
+def test_di_node_has_allIncomingLines():
+    assert hasattr(di_Node, "allIncomingLines")
+    descriptor = None
+    for klass in di_Node.__mro__:
+        if "allIncomingLines" in klass.__dict__:
+            descriptor = klass.__dict__["allIncomingLines"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_node_has_allOutgoingLines():
+    assert hasattr(di_Node, "allOutgoingLines")
+    descriptor = None
+    for klass in di_Node.__mro__:
         if "allOutgoingLines" in klass.__dict__:
             descriptor = klass.__dict__["allOutgoingLines"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::node_has_allIncomingLines():
-    assert hasattr(di::Node, "allIncomingLines")
-    descriptor = None
-    for klass in di::Node.__mro__:
-        if "allIncomingLines" in klass.__dict__:
-            descriptor = klass.__dict__["allIncomingLines"]
-            break
-    assert isinstance(descriptor, property)
+def test_alignment_exists():
+    # Check that the Enumeration exists
+    assert Alignment is not None
+
+def test_alignment_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Alignment]
+    expected_literals = [
+        "BOTTOM",
+        "LEFT",
+        "TOP",
+        "CENTER",
+        "RIGHT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Alignment"
 
 def test_rulerunit_exists():
     # Check that the Enumeration exists
@@ -613,9 +631,9 @@ def test_rulerunit_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in RulerUnit]
     expected_literals = [
-        "CENTIMETERS",
-        "PIXELS",
         "INCHES",
+        "PIXELS",
+        "CENTIMETERS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -629,34 +647,16 @@ def test_linestyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LineStyle]
     expected_literals = [
+        "DOT",
+        "SOLID",
         "DASH",
         "LINE_CUSTOM",
-        "SOLID",
-        "DASHDOT",
-        "DOT",
         "DASHDOTDOT",
+        "DASHDOT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
-
-def test_alignment_exists():
-    # Check that the Enumeration exists
-    assert Alignment is not None
-
-def test_alignment_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Alignment]
-    expected_literals = [
-        "BOTTOM",
-        "RIGHT",
-        "CENTER",
-        "TOP",
-        "LEFT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Alignment"
 
 
 # =============================================================================
@@ -670,13 +670,13 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-di::ElementEntry_strategy = st.builds(
-    di::ElementEntry,
+di_ElementEntry_strategy = st.builds(
+    di_ElementEntry,
     value=
         safe_text
 )
-di::Guide_strategy = st.builds(
-    di::Guide,
+di_Guide_strategy = st.builds(
+    di_Guide,
     position=
         st.integers()
 )
@@ -686,137 +686,131 @@ Line_strategy = st.builds(
 Shape_strategy = st.builds(
     Shape,
 )
-di::GradientShape_strategy = st.builds(
-    di::GradientShape,
-    verticalGradient=
-        st.booleans(),
+di_GradientShape_strategy = st.builds(
+    di_GradientShape,
     usingGradient=
+        st.booleans(),
+    verticalGradient=
         st.booleans(),
     gradientColor=
         st.integers()
 )
-di::Ruler_strategy = st.builds(
-    di::Ruler,
+di_Ruler_strategy = st.builds(
+    di_Ruler,
     unit=
         safe_text
 )
 Node_strategy = st.builds(
     Node,
 )
-di::Grid_strategy = st.builds(
-    di::Grid,
+di_Grid_strategy = st.builds(
+    di_Grid,
+    spacing=
+        st.integers(),
     style=
         safe_text,
     color=
-        st.integers(),
-    spacing=
         st.integers()
 )
-di::Comment_strategy = st.builds(
-    di::Comment,
+di_Comment_strategy = st.builds(
+    di_Comment,
 )
 Container_strategy = st.builds(
     Container,
 )
-di::Diagram_strategy = st.builds(
-    di::Diagram,
-    snapToGrid=
-        st.booleans(),
+di_Diagram_strategy = st.builds(
+    di_Diagram,
     snapToGeometry=
         st.booleans(),
     rulers=
-        safe_text
+        safe_text,
+    snapToGrid=
+        st.booleans()
 )
-di::Connector_strategy = st.builds(
-    di::Connector,
+di_Connector_strategy = st.builds(
+    di_Connector,
 )
-di::Line_strategy = st.builds(
-    di::Line,
-    sourceAnchor=
-        safe_text,
-    sourceNode=
-        safe_text,
-    targetNode=
-        safe_text,
+di_Line_strategy = st.builds(
+    di_Line,
     style=
         safe_text,
     width=
         st.integers(),
+    sourceNode=
+        safe_text,
     targetAnchor=
         safe_text,
     lineDash=
         st.integers(),
+    targetNode=
+        safe_text,
+    sourceAnchor=
+        safe_text,
     color=
         st.integers()
 )
-di::Shape_strategy = st.builds(
-    di::Shape,
-    foreground=
-        st.integers(),
+di_Shape_strategy = st.builds(
+    di_Shape,
     background=
         st.integers(),
     bounds=
-        safe_text
+        safe_text,
+    foreground=
+        st.integers()
 )
-di::EObject_strategy = st.builds(
-    di::EObject,
+di_EObject_strategy = st.builds(
+    di_EObject,
 )
-di::View_strategy = st.builds(
-    di::View,
+di_View_strategy = st.builds(
+    di_View,
     label=
         safe_text,
     id=
         safe_text
 )
-di::CommentLink_strategy = st.builds(
-    di::CommentLink,
+di_CommentLink_strategy = st.builds(
+    di_CommentLink,
 )
 View_strategy = st.builds(
     View,
 )
-di::Container_strategy = st.builds(
-    di::Container,
-    allShapes=
-        safe_text,
+di_Container_strategy = st.builds(
+    di_Container,
     allLines=
-        safe_text
-)
-di::Node_strategy = st.builds(
-    di::Node,
-    allOutgoingLines=
         safe_text,
+    allShapes=
+        safe_text
+)
+di_Node_strategy = st.builds(
+    di_Node,
     allIncomingLines=
+        safe_text,
+    allOutgoingLines=
         safe_text
 )
 
-@given(instance=di::ElementEntry_strategy)
+@given(instance=di_ElementEntry_strategy)
 @settings(max_examples=50)
-def test_di::elemententry_instantiation(instance):
-    assert isinstance(instance, di::ElementEntry)
-
-@given(instance=di::ElementEntry_strategy)
-def test_di::elemententry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_di_elemententry_instantiation(instance):
+    assert isinstance(instance, di_ElementEntry)
 
 
-@given(instance=di::ElementEntry_strategy)
-def test_di::elemententry_value_setter(instance):
+
+@given(instance=di_ElementEntry_strategy)
+def test_di_elemententry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=di::Guide_strategy)
+@given(instance=di_Guide_strategy)
 @settings(max_examples=50)
-def test_di::guide_instantiation(instance):
-    assert isinstance(instance, di::Guide)
-
-@given(instance=di::Guide_strategy)
-def test_di::guide_position_type(instance):
-    assert isinstance(instance.position, int)
+def test_di_guide_instantiation(instance):
+    assert isinstance(instance, di_Guide)
 
 
-@given(instance=di::Guide_strategy)
-def test_di::guide_position_setter(instance):
+
+@given(instance=di_Guide_strategy)
+def test_di_guide_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
@@ -831,56 +825,44 @@ def test_line_instantiation(instance):
 def test_shape_instantiation(instance):
     assert isinstance(instance, Shape)
 
-@given(instance=di::GradientShape_strategy)
+@given(instance=di_GradientShape_strategy)
 @settings(max_examples=50)
-def test_di::gradientshape_instantiation(instance):
-    assert isinstance(instance, di::GradientShape)
-
-@given(instance=di::GradientShape_strategy)
-def test_di::gradientshape_verticalGradient_type(instance):
-    assert isinstance(instance.verticalGradient, bool)
+def test_di_gradientshape_instantiation(instance):
+    assert isinstance(instance, di_GradientShape)
 
 
-@given(instance=di::GradientShape_strategy)
-def test_di::gradientshape_verticalGradient_setter(instance):
-    original = instance.verticalGradient
-    instance.verticalGradient = original
-    assert instance.verticalGradient == original
 
-@given(instance=di::GradientShape_strategy)
-def test_di::gradientshape_usingGradient_type(instance):
-    assert isinstance(instance.usingGradient, bool)
-
-
-@given(instance=di::GradientShape_strategy)
-def test_di::gradientshape_usingGradient_setter(instance):
+@given(instance=di_GradientShape_strategy)
+def test_di_gradientshape_usingGradient_setter(instance):
     original = instance.usingGradient
     instance.usingGradient = original
     assert instance.usingGradient == original
 
-@given(instance=di::GradientShape_strategy)
-def test_di::gradientshape_gradientColor_type(instance):
-    assert isinstance(instance.gradientColor, int)
 
 
-@given(instance=di::GradientShape_strategy)
-def test_di::gradientshape_gradientColor_setter(instance):
+@given(instance=di_GradientShape_strategy)
+def test_di_gradientshape_verticalGradient_setter(instance):
+    original = instance.verticalGradient
+    instance.verticalGradient = original
+    assert instance.verticalGradient == original
+
+
+
+@given(instance=di_GradientShape_strategy)
+def test_di_gradientshape_gradientColor_setter(instance):
     original = instance.gradientColor
     instance.gradientColor = original
     assert instance.gradientColor == original
 
-@given(instance=di::Ruler_strategy)
+@given(instance=di_Ruler_strategy)
 @settings(max_examples=50)
-def test_di::ruler_instantiation(instance):
-    assert isinstance(instance, di::Ruler)
-
-@given(instance=di::Ruler_strategy)
-def test_di::ruler_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_di_ruler_instantiation(instance):
+    assert isinstance(instance, di_Ruler)
 
 
-@given(instance=di::Ruler_strategy)
-def test_di::ruler_unit_setter(instance):
+
+@given(instance=di_Ruler_strategy)
+def test_di_ruler_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
@@ -890,320 +872,251 @@ def test_di::ruler_unit_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=di::Grid_strategy)
+@given(instance=di_Grid_strategy)
 @settings(max_examples=50)
-def test_di::grid_instantiation(instance):
-    assert isinstance(instance, di::Grid)
-
-@given(instance=di::Grid_strategy)
-def test_di::grid_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_di_grid_instantiation(instance):
+    assert isinstance(instance, di_Grid)
 
 
-@given(instance=di::Grid_strategy)
-def test_di::grid_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
 
-@given(instance=di::Grid_strategy)
-def test_di::grid_color_type(instance):
-    assert isinstance(instance.color, int)
-
-
-@given(instance=di::Grid_strategy)
-def test_di::grid_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=di::Grid_strategy)
-def test_di::grid_spacing_type(instance):
-    assert isinstance(instance.spacing, int)
-
-
-@given(instance=di::Grid_strategy)
-def test_di::grid_spacing_setter(instance):
+@given(instance=di_Grid_strategy)
+def test_di_grid_spacing_setter(instance):
     original = instance.spacing
     instance.spacing = original
     assert instance.spacing == original
 
-@given(instance=di::Comment_strategy)
+
+
+@given(instance=di_Grid_strategy)
+def test_di_grid_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=di_Grid_strategy)
+def test_di_grid_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+@given(instance=di_Comment_strategy)
 @settings(max_examples=50)
-def test_di::comment_instantiation(instance):
-    assert isinstance(instance, di::Comment)
+def test_di_comment_instantiation(instance):
+    assert isinstance(instance, di_Comment)
 
 @given(instance=Container_strategy)
 @settings(max_examples=50)
 def test_container_instantiation(instance):
     assert isinstance(instance, Container)
 
-@given(instance=di::Diagram_strategy)
+@given(instance=di_Diagram_strategy)
 @settings(max_examples=50)
-def test_di::diagram_instantiation(instance):
-    assert isinstance(instance, di::Diagram)
-
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_snapToGrid_type(instance):
-    assert isinstance(instance.snapToGrid, bool)
+def test_di_diagram_instantiation(instance):
+    assert isinstance(instance, di_Diagram)
 
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_snapToGrid_setter(instance):
-    original = instance.snapToGrid
-    instance.snapToGrid = original
-    assert instance.snapToGrid == original
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_snapToGeometry_type(instance):
-    assert isinstance(instance.snapToGeometry, bool)
-
-
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_snapToGeometry_setter(instance):
+@given(instance=di_Diagram_strategy)
+def test_di_diagram_snapToGeometry_setter(instance):
     original = instance.snapToGeometry
     instance.snapToGeometry = original
     assert instance.snapToGeometry == original
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_rulers_type(instance):
-    assert isinstance(instance.rulers, str)
 
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_rulers_setter(instance):
+@given(instance=di_Diagram_strategy)
+def test_di_diagram_rulers_setter(instance):
     original = instance.rulers
     instance.rulers = original
     assert instance.rulers == original
 
-@given(instance=di::Connector_strategy)
+
+
+@given(instance=di_Diagram_strategy)
+def test_di_diagram_snapToGrid_setter(instance):
+    original = instance.snapToGrid
+    instance.snapToGrid = original
+    assert instance.snapToGrid == original
+
+@given(instance=di_Connector_strategy)
 @settings(max_examples=50)
-def test_di::connector_instantiation(instance):
-    assert isinstance(instance, di::Connector)
+def test_di_connector_instantiation(instance):
+    assert isinstance(instance, di_Connector)
 
-@given(instance=di::Line_strategy)
+@given(instance=di_Line_strategy)
 @settings(max_examples=50)
-def test_di::line_instantiation(instance):
-    assert isinstance(instance, di::Line)
-
-@given(instance=di::Line_strategy)
-def test_di::line_sourceAnchor_type(instance):
-    assert isinstance(instance.sourceAnchor, str)
+def test_di_line_instantiation(instance):
+    assert isinstance(instance, di_Line)
 
 
-@given(instance=di::Line_strategy)
-def test_di::line_sourceAnchor_setter(instance):
-    original = instance.sourceAnchor
-    instance.sourceAnchor = original
-    assert instance.sourceAnchor == original
 
-@given(instance=di::Line_strategy)
-def test_di::line_sourceNode_type(instance):
-    assert isinstance(instance.sourceNode, str)
-
-
-@given(instance=di::Line_strategy)
-def test_di::line_sourceNode_setter(instance):
-    original = instance.sourceNode
-    instance.sourceNode = original
-    assert instance.sourceNode == original
-
-@given(instance=di::Line_strategy)
-def test_di::line_targetNode_type(instance):
-    assert isinstance(instance.targetNode, str)
-
-
-@given(instance=di::Line_strategy)
-def test_di::line_targetNode_setter(instance):
-    original = instance.targetNode
-    instance.targetNode = original
-    assert instance.targetNode == original
-
-@given(instance=di::Line_strategy)
-def test_di::line_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=di::Line_strategy)
-def test_di::line_style_setter(instance):
+@given(instance=di_Line_strategy)
+def test_di_line_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=di::Line_strategy)
-def test_di::line_width_type(instance):
-    assert isinstance(instance.width, int)
 
 
-@given(instance=di::Line_strategy)
-def test_di::line_width_setter(instance):
+@given(instance=di_Line_strategy)
+def test_di_line_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=di::Line_strategy)
-def test_di::line_targetAnchor_type(instance):
-    assert isinstance(instance.targetAnchor, str)
 
 
-@given(instance=di::Line_strategy)
-def test_di::line_targetAnchor_setter(instance):
+@given(instance=di_Line_strategy)
+def test_di_line_sourceNode_setter(instance):
+    original = instance.sourceNode
+    instance.sourceNode = original
+    assert instance.sourceNode == original
+
+
+
+@given(instance=di_Line_strategy)
+def test_di_line_targetAnchor_setter(instance):
     original = instance.targetAnchor
     instance.targetAnchor = original
     assert instance.targetAnchor == original
 
-@given(instance=di::Line_strategy)
-def test_di::line_lineDash_type(instance):
-    assert isinstance(instance.lineDash, int)
 
 
-@given(instance=di::Line_strategy)
-def test_di::line_lineDash_setter(instance):
+@given(instance=di_Line_strategy)
+def test_di_line_lineDash_setter(instance):
     original = instance.lineDash
     instance.lineDash = original
     assert instance.lineDash == original
 
-@given(instance=di::Line_strategy)
-def test_di::line_color_type(instance):
-    assert isinstance(instance.color, int)
 
 
-@given(instance=di::Line_strategy)
-def test_di::line_color_setter(instance):
+@given(instance=di_Line_strategy)
+def test_di_line_targetNode_setter(instance):
+    original = instance.targetNode
+    instance.targetNode = original
+    assert instance.targetNode == original
+
+
+
+@given(instance=di_Line_strategy)
+def test_di_line_sourceAnchor_setter(instance):
+    original = instance.sourceAnchor
+    instance.sourceAnchor = original
+    assert instance.sourceAnchor == original
+
+
+
+@given(instance=di_Line_strategy)
+def test_di_line_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=di::Shape_strategy)
+@given(instance=di_Shape_strategy)
 @settings(max_examples=50)
-def test_di::shape_instantiation(instance):
-    assert isinstance(instance, di::Shape)
-
-@given(instance=di::Shape_strategy)
-def test_di::shape_foreground_type(instance):
-    assert isinstance(instance.foreground, int)
+def test_di_shape_instantiation(instance):
+    assert isinstance(instance, di_Shape)
 
 
-@given(instance=di::Shape_strategy)
-def test_di::shape_foreground_setter(instance):
-    original = instance.foreground
-    instance.foreground = original
-    assert instance.foreground == original
 
-@given(instance=di::Shape_strategy)
-def test_di::shape_background_type(instance):
-    assert isinstance(instance.background, int)
-
-
-@given(instance=di::Shape_strategy)
-def test_di::shape_background_setter(instance):
+@given(instance=di_Shape_strategy)
+def test_di_shape_background_setter(instance):
     original = instance.background
     instance.background = original
     assert instance.background == original
 
-@given(instance=di::Shape_strategy)
-def test_di::shape_bounds_type(instance):
-    assert isinstance(instance.bounds, str)
 
 
-@given(instance=di::Shape_strategy)
-def test_di::shape_bounds_setter(instance):
+@given(instance=di_Shape_strategy)
+def test_di_shape_bounds_setter(instance):
     original = instance.bounds
     instance.bounds = original
     assert instance.bounds == original
 
-@given(instance=di::EObject_strategy)
+
+
+@given(instance=di_Shape_strategy)
+def test_di_shape_foreground_setter(instance):
+    original = instance.foreground
+    instance.foreground = original
+    assert instance.foreground == original
+
+@given(instance=di_EObject_strategy)
 @settings(max_examples=50)
-def test_di::eobject_instantiation(instance):
-    assert isinstance(instance, di::EObject)
+def test_di_eobject_instantiation(instance):
+    assert isinstance(instance, di_EObject)
 
-@given(instance=di::View_strategy)
+@given(instance=di_View_strategy)
 @settings(max_examples=50)
-def test_di::view_instantiation(instance):
-    assert isinstance(instance, di::View)
-
-@given(instance=di::View_strategy)
-def test_di::view_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_di_view_instantiation(instance):
+    assert isinstance(instance, di_View)
 
 
-@given(instance=di::View_strategy)
-def test_di::view_label_setter(instance):
+
+@given(instance=di_View_strategy)
+def test_di_view_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=di::View_strategy)
-def test_di::view_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=di::View_strategy)
-def test_di::view_id_setter(instance):
+@given(instance=di_View_strategy)
+def test_di_view_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=di::CommentLink_strategy)
+@given(instance=di_CommentLink_strategy)
 @settings(max_examples=50)
-def test_di::commentlink_instantiation(instance):
-    assert isinstance(instance, di::CommentLink)
+def test_di_commentlink_instantiation(instance):
+    assert isinstance(instance, di_CommentLink)
 
 @given(instance=View_strategy)
 @settings(max_examples=50)
 def test_view_instantiation(instance):
     assert isinstance(instance, View)
 
-@given(instance=di::Container_strategy)
+@given(instance=di_Container_strategy)
 @settings(max_examples=50)
-def test_di::container_instantiation(instance):
-    assert isinstance(instance, di::Container)
-
-@given(instance=di::Container_strategy)
-def test_di::container_allShapes_type(instance):
-    assert isinstance(instance.allShapes, str)
+def test_di_container_instantiation(instance):
+    assert isinstance(instance, di_Container)
 
 
-@given(instance=di::Container_strategy)
-def test_di::container_allShapes_setter(instance):
-    original = instance.allShapes
-    instance.allShapes = original
-    assert instance.allShapes == original
 
-@given(instance=di::Container_strategy)
-def test_di::container_allLines_type(instance):
-    assert isinstance(instance.allLines, str)
-
-
-@given(instance=di::Container_strategy)
-def test_di::container_allLines_setter(instance):
+@given(instance=di_Container_strategy)
+def test_di_container_allLines_setter(instance):
     original = instance.allLines
     instance.allLines = original
     assert instance.allLines == original
 
-@given(instance=di::Node_strategy)
+
+
+@given(instance=di_Container_strategy)
+def test_di_container_allShapes_setter(instance):
+    original = instance.allShapes
+    instance.allShapes = original
+    assert instance.allShapes == original
+
+@given(instance=di_Node_strategy)
 @settings(max_examples=50)
-def test_di::node_instantiation(instance):
-    assert isinstance(instance, di::Node)
-
-@given(instance=di::Node_strategy)
-def test_di::node_allOutgoingLines_type(instance):
-    assert isinstance(instance.allOutgoingLines, str)
+def test_di_node_instantiation(instance):
+    assert isinstance(instance, di_Node)
 
 
-@given(instance=di::Node_strategy)
-def test_di::node_allOutgoingLines_setter(instance):
-    original = instance.allOutgoingLines
-    instance.allOutgoingLines = original
-    assert instance.allOutgoingLines == original
 
-@given(instance=di::Node_strategy)
-def test_di::node_allIncomingLines_type(instance):
-    assert isinstance(instance.allIncomingLines, str)
-
-
-@given(instance=di::Node_strategy)
-def test_di::node_allIncomingLines_setter(instance):
+@given(instance=di_Node_strategy)
+def test_di_node_allIncomingLines_setter(instance):
     original = instance.allIncomingLines
     instance.allIncomingLines = original
     assert instance.allIncomingLines == original
+
+
+
+@given(instance=di_Node_strategy)
+def test_di_node_allOutgoingLines_setter(instance):
+    original = instance.allOutgoingLines
+    instance.allOutgoingLines = original
+    assert instance.allOutgoingLines == original

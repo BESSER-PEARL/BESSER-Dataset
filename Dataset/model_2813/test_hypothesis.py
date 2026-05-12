@@ -3,62 +3,62 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    shape::Point,
-    shape::CommonLayout,
-    shape::CompartmentPolygon,
-    shape::CompartmentRoundedRectangle,
+from python_code import (
+    shape_Point,
+    shape_CommonLayout,
+    shape_CompartmentPolygon,
+    shape_CompartmentRoundedRectangle,
     CompartmentShape,
-    shape::CompartmentEllipse,
-    shape::CompartmentRectangle,
-    shape::CompartmentShape,
-    shape::Compartment,
-    shape::CompartmentInfo,
+    shape_CompartmentEllipse,
+    shape_CompartmentRectangle,
+    shape_CompartmentShape,
+    shape_Compartment,
+    shape_CompartmentInfo,
     Shape,
-    shape::Polyline,
-    shape::Polygon,
-    shape::RoundedRectangle,
-    shape::Text,
-    shape::Rectangle,
-    shape::Ellipse,
-    shape::Line,
-    shape::TextLayout,
-    shape::RoundedRectangleLayout,
-    shape::RectangleEllipseLayout,
-    shape::PolyLineLayout,
-    shape::LineLayout,
+    shape_Rectangle,
+    shape_Polyline,
+    shape_RoundedRectangle,
+    shape_Polygon,
+    shape_Text,
+    shape_Ellipse,
+    shape_Line,
+    shape_TextLayout,
+    shape_RoundedRectangleLayout,
+    shape_RectangleEllipseLayout,
+    shape_PolyLineLayout,
+    shape_LineLayout,
     ShapeConnection,
-    shape::CDRectangle,
-    shape::CDPolyline,
-    shape::CDText,
-    shape::CDPolygon,
-    shape::CDEllipse,
-    shape::CDRoundedRectangle,
-    shape::CDLine,
+    shape_CDRectangle,
+    shape_CDPolygon,
+    shape_CDEllipse,
+    shape_CDRoundedRectangle,
+    shape_CDPolyline,
+    shape_CDText,
+    shape_CDLine,
     AnchorPositionPos,
-    shape::AnchorFixPointPosition,
-    shape::AnchorRelativePosition,
-    shape::AnchorPositionPos,
-    shape::AnchorPosition,
-    shape::TextBody,
+    shape_AnchorFixPointPosition,
+    shape_AnchorRelativePosition,
+    shape_AnchorPositionPos,
+    shape_AnchorPosition,
+    shape_TextBody,
     AnchorType,
-    shape::AnchorManual,
-    shape::AnchorPredefinied,
-    shape::AnchorType,
-    shape::ShapeConnection,
-    shape::Anchor,
-    shape::Description,
-    shape::Shape,
-    shape::ShapeLayout,
-    shape::PlacingDefinition,
-    shape::ShapestyleLayout,
+    shape_AnchorManual,
+    shape_AnchorPredefinied,
+    shape_AnchorType,
+    shape_ShapeConnection,
+    shape_Anchor,
+    shape_Description,
+    shape_Shape,
+    shape_ShapeLayout,
+    shape_PlacingDefinition,
+    shape_ShapestyleLayout,
     ShapeContainerElement,
-    shape::ShapeDefinition,
-    shape::ConnectionDefinition,
-    shape::ShapeContainerElement,
-    shape::ShapeContainer,
+    shape_ShapeDefinition,
+    shape_ConnectionDefinition,
+    shape_ShapeContainerElement,
+    shape_ShapeContainer,
     ConnectionStyle,
     HAlign,
     TextType,
@@ -73,138 +73,138 @@ from classes import (
 
 
 
-def test_shape::point_is_not_abstract():
-    assert not inspect.isabstract(shape::Point)
+def test_shape_point_is_not_abstract():
+    assert not inspect.isabstract(shape_Point)
 
 
-def test_shape::point_constructor_exists():
-    assert callable(shape::Point.__init__)
+def test_shape_point_constructor_exists():
+    assert callable(shape_Point.__init__)
 
 
-def test_shape::point_constructor_args():
-    sig = inspect.signature(shape::Point.__init__)
+def test_shape_point_constructor_args():
+    sig = inspect.signature(shape_Point.__init__)
     params = list(sig.parameters.keys())
     assert "curveAfter" in params, "Missing parameter 'curveAfter'"
+    assert "ycor" in params, "Missing parameter 'ycor'"
     assert "curveBefore" in params, "Missing parameter 'curveBefore'"
     assert "xcor" in params, "Missing parameter 'xcor'"
-    assert "ycor" in params, "Missing parameter 'ycor'"
 
-def test_shape::point_has_curveAfter():
-    assert hasattr(shape::Point, "curveAfter")
+def test_shape_point_has_curveAfter():
+    assert hasattr(shape_Point, "curveAfter")
     descriptor = None
-    for klass in shape::Point.__mro__:
+    for klass in shape_Point.__mro__:
         if "curveAfter" in klass.__dict__:
             descriptor = klass.__dict__["curveAfter"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::point_has_curveBefore():
-    assert hasattr(shape::Point, "curveBefore")
+def test_shape_point_has_ycor():
+    assert hasattr(shape_Point, "ycor")
     descriptor = None
-    for klass in shape::Point.__mro__:
+    for klass in shape_Point.__mro__:
+        if "ycor" in klass.__dict__:
+            descriptor = klass.__dict__["ycor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_point_has_curveBefore():
+    assert hasattr(shape_Point, "curveBefore")
+    descriptor = None
+    for klass in shape_Point.__mro__:
         if "curveBefore" in klass.__dict__:
             descriptor = klass.__dict__["curveBefore"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::point_has_xcor():
-    assert hasattr(shape::Point, "xcor")
+def test_shape_point_has_xcor():
+    assert hasattr(shape_Point, "xcor")
     descriptor = None
-    for klass in shape::Point.__mro__:
+    for klass in shape_Point.__mro__:
         if "xcor" in klass.__dict__:
             descriptor = klass.__dict__["xcor"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::point_has_ycor():
-    assert hasattr(shape::Point, "ycor")
-    descriptor = None
-    for klass in shape::Point.__mro__:
-        if "ycor" in klass.__dict__:
-            descriptor = klass.__dict__["ycor"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_shape::commonlayout_is_not_abstract():
-    assert not inspect.isabstract(shape::CommonLayout)
-
-
-def test_shape::commonlayout_constructor_exists():
-    assert callable(shape::CommonLayout.__init__)
+def test_shape_commonlayout_is_not_abstract():
+    assert not inspect.isabstract(shape_CommonLayout)
 
 
-def test_shape::commonlayout_constructor_args():
-    sig = inspect.signature(shape::CommonLayout.__init__)
+def test_shape_commonlayout_constructor_exists():
+    assert callable(shape_CommonLayout.__init__)
+
+
+def test_shape_commonlayout_constructor_args():
+    sig = inspect.signature(shape_CommonLayout.__init__)
     params = list(sig.parameters.keys())
-    assert "ycor" in params, "Missing parameter 'ycor'"
-    assert "xcor" in params, "Missing parameter 'xcor'"
     assert "width" in params, "Missing parameter 'width'"
+    assert "xcor" in params, "Missing parameter 'xcor'"
     assert "heigth" in params, "Missing parameter 'heigth'"
+    assert "ycor" in params, "Missing parameter 'ycor'"
 
-def test_shape::commonlayout_has_ycor():
-    assert hasattr(shape::CommonLayout, "ycor")
+def test_shape_commonlayout_has_width():
+    assert hasattr(shape_CommonLayout, "width")
     descriptor = None
-    for klass in shape::CommonLayout.__mro__:
-        if "ycor" in klass.__dict__:
-            descriptor = klass.__dict__["ycor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::commonlayout_has_xcor():
-    assert hasattr(shape::CommonLayout, "xcor")
-    descriptor = None
-    for klass in shape::CommonLayout.__mro__:
-        if "xcor" in klass.__dict__:
-            descriptor = klass.__dict__["xcor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::commonlayout_has_width():
-    assert hasattr(shape::CommonLayout, "width")
-    descriptor = None
-    for klass in shape::CommonLayout.__mro__:
+    for klass in shape_CommonLayout.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::commonlayout_has_heigth():
-    assert hasattr(shape::CommonLayout, "heigth")
+def test_shape_commonlayout_has_xcor():
+    assert hasattr(shape_CommonLayout, "xcor")
     descriptor = None
-    for klass in shape::CommonLayout.__mro__:
+    for klass in shape_CommonLayout.__mro__:
+        if "xcor" in klass.__dict__:
+            descriptor = klass.__dict__["xcor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_commonlayout_has_heigth():
+    assert hasattr(shape_CommonLayout, "heigth")
+    descriptor = None
+    for klass in shape_CommonLayout.__mro__:
         if "heigth" in klass.__dict__:
             descriptor = klass.__dict__["heigth"]
             break
     assert isinstance(descriptor, property)
 
+def test_shape_commonlayout_has_ycor():
+    assert hasattr(shape_CommonLayout, "ycor")
+    descriptor = None
+    for klass in shape_CommonLayout.__mro__:
+        if "ycor" in klass.__dict__:
+            descriptor = klass.__dict__["ycor"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_shape::compartmentpolygon_is_not_abstract():
-    assert not inspect.isabstract(shape::CompartmentPolygon)
+
+def test_shape_compartmentpolygon_is_not_abstract():
+    assert not inspect.isabstract(shape_CompartmentPolygon)
 
 
-def test_shape::compartmentpolygon_constructor_exists():
-    assert callable(shape::CompartmentPolygon.__init__)
+def test_shape_compartmentpolygon_constructor_exists():
+    assert callable(shape_CompartmentPolygon.__init__)
 
 
-def test_shape::compartmentpolygon_constructor_args():
-    sig = inspect.signature(shape::CompartmentPolygon.__init__)
+def test_shape_compartmentpolygon_constructor_args():
+    sig = inspect.signature(shape_CompartmentPolygon.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::compartmentroundedrectangle_is_not_abstract():
-    assert not inspect.isabstract(shape::CompartmentRoundedRectangle)
+def test_shape_compartmentroundedrectangle_is_not_abstract():
+    assert not inspect.isabstract(shape_CompartmentRoundedRectangle)
 
 
-def test_shape::compartmentroundedrectangle_constructor_exists():
-    assert callable(shape::CompartmentRoundedRectangle.__init__)
+def test_shape_compartmentroundedrectangle_constructor_exists():
+    assert callable(shape_CompartmentRoundedRectangle.__init__)
 
 
-def test_shape::compartmentroundedrectangle_constructor_args():
-    sig = inspect.signature(shape::CompartmentRoundedRectangle.__init__)
+def test_shape_compartmentroundedrectangle_constructor_args():
+    sig = inspect.signature(shape_CompartmentRoundedRectangle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -223,65 +223,65 @@ def test_compartmentshape_constructor_args():
 
 
 
-def test_shape::compartmentellipse_is_not_abstract():
-    assert not inspect.isabstract(shape::CompartmentEllipse)
+def test_shape_compartmentellipse_is_not_abstract():
+    assert not inspect.isabstract(shape_CompartmentEllipse)
 
 
-def test_shape::compartmentellipse_constructor_exists():
-    assert callable(shape::CompartmentEllipse.__init__)
+def test_shape_compartmentellipse_constructor_exists():
+    assert callable(shape_CompartmentEllipse.__init__)
 
 
-def test_shape::compartmentellipse_constructor_args():
-    sig = inspect.signature(shape::CompartmentEllipse.__init__)
+def test_shape_compartmentellipse_constructor_args():
+    sig = inspect.signature(shape_CompartmentEllipse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::compartmentrectangle_is_not_abstract():
-    assert not inspect.isabstract(shape::CompartmentRectangle)
+def test_shape_compartmentrectangle_is_not_abstract():
+    assert not inspect.isabstract(shape_CompartmentRectangle)
 
 
-def test_shape::compartmentrectangle_constructor_exists():
-    assert callable(shape::CompartmentRectangle.__init__)
+def test_shape_compartmentrectangle_constructor_exists():
+    assert callable(shape_CompartmentRectangle.__init__)
 
 
-def test_shape::compartmentrectangle_constructor_args():
-    sig = inspect.signature(shape::CompartmentRectangle.__init__)
+def test_shape_compartmentrectangle_constructor_args():
+    sig = inspect.signature(shape_CompartmentRectangle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::compartmentshape_is_not_abstract():
-    assert not inspect.isabstract(shape::CompartmentShape)
+def test_shape_compartmentshape_is_not_abstract():
+    assert not inspect.isabstract(shape_CompartmentShape)
 
 
-def test_shape::compartmentshape_constructor_exists():
-    assert callable(shape::CompartmentShape.__init__)
+def test_shape_compartmentshape_constructor_exists():
+    assert callable(shape_CompartmentShape.__init__)
 
 
-def test_shape::compartmentshape_constructor_args():
-    sig = inspect.signature(shape::CompartmentShape.__init__)
+def test_shape_compartmentshape_constructor_args():
+    sig = inspect.signature(shape_CompartmentShape.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::compartment_is_not_abstract():
-    assert not inspect.isabstract(shape::Compartment)
+def test_shape_compartment_is_not_abstract():
+    assert not inspect.isabstract(shape_Compartment)
 
 
-def test_shape::compartment_constructor_exists():
-    assert callable(shape::Compartment.__init__)
+def test_shape_compartment_constructor_exists():
+    assert callable(shape_Compartment.__init__)
 
 
-def test_shape::compartment_constructor_args():
-    sig = inspect.signature(shape::Compartment.__init__)
+def test_shape_compartment_constructor_args():
+    sig = inspect.signature(shape_Compartment.__init__)
     params = list(sig.parameters.keys())
     assert "compartmentLayout" in params, "Missing parameter 'compartmentLayout'"
 
-def test_shape::compartment_has_compartmentLayout():
-    assert hasattr(shape::Compartment, "compartmentLayout")
+def test_shape_compartment_has_compartmentLayout():
+    assert hasattr(shape_Compartment, "compartmentLayout")
     descriptor = None
-    for klass in shape::Compartment.__mro__:
+    for klass in shape_Compartment.__mro__:
         if "compartmentLayout" in klass.__dict__:
             descriptor = klass.__dict__["compartmentLayout"]
             break
@@ -289,75 +289,75 @@ def test_shape::compartment_has_compartmentLayout():
 
 
 
-def test_shape::compartmentinfo_is_not_abstract():
-    assert not inspect.isabstract(shape::CompartmentInfo)
+def test_shape_compartmentinfo_is_not_abstract():
+    assert not inspect.isabstract(shape_CompartmentInfo)
 
 
-def test_shape::compartmentinfo_constructor_exists():
-    assert callable(shape::CompartmentInfo.__init__)
+def test_shape_compartmentinfo_constructor_exists():
+    assert callable(shape_CompartmentInfo.__init__)
 
 
-def test_shape::compartmentinfo_constructor_args():
-    sig = inspect.signature(shape::CompartmentInfo.__init__)
+def test_shape_compartmentinfo_constructor_args():
+    sig = inspect.signature(shape_CompartmentInfo.__init__)
     params = list(sig.parameters.keys())
-    assert "compartmentLayout" in params, "Missing parameter 'compartmentLayout'"
-    assert "margin" in params, "Missing parameter 'margin'"
-    assert "stretchV" in params, "Missing parameter 'stretchV'"
     assert "stretchH" in params, "Missing parameter 'stretchH'"
     assert "spacing" in params, "Missing parameter 'spacing'"
+    assert "margin" in params, "Missing parameter 'margin'"
+    assert "compartmentLayout" in params, "Missing parameter 'compartmentLayout'"
     assert "invisible" in params, "Missing parameter 'invisible'"
+    assert "stretchV" in params, "Missing parameter 'stretchV'"
 
-def test_shape::compartmentinfo_has_compartmentLayout():
-    assert hasattr(shape::CompartmentInfo, "compartmentLayout")
+def test_shape_compartmentinfo_has_stretchH():
+    assert hasattr(shape_CompartmentInfo, "stretchH")
     descriptor = None
-    for klass in shape::CompartmentInfo.__mro__:
-        if "compartmentLayout" in klass.__dict__:
-            descriptor = klass.__dict__["compartmentLayout"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::compartmentinfo_has_margin():
-    assert hasattr(shape::CompartmentInfo, "margin")
-    descriptor = None
-    for klass in shape::CompartmentInfo.__mro__:
-        if "margin" in klass.__dict__:
-            descriptor = klass.__dict__["margin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::compartmentinfo_has_stretchV():
-    assert hasattr(shape::CompartmentInfo, "stretchV")
-    descriptor = None
-    for klass in shape::CompartmentInfo.__mro__:
-        if "stretchV" in klass.__dict__:
-            descriptor = klass.__dict__["stretchV"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::compartmentinfo_has_stretchH():
-    assert hasattr(shape::CompartmentInfo, "stretchH")
-    descriptor = None
-    for klass in shape::CompartmentInfo.__mro__:
+    for klass in shape_CompartmentInfo.__mro__:
         if "stretchH" in klass.__dict__:
             descriptor = klass.__dict__["stretchH"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::compartmentinfo_has_spacing():
-    assert hasattr(shape::CompartmentInfo, "spacing")
+def test_shape_compartmentinfo_has_spacing():
+    assert hasattr(shape_CompartmentInfo, "spacing")
     descriptor = None
-    for klass in shape::CompartmentInfo.__mro__:
+    for klass in shape_CompartmentInfo.__mro__:
         if "spacing" in klass.__dict__:
             descriptor = klass.__dict__["spacing"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::compartmentinfo_has_invisible():
-    assert hasattr(shape::CompartmentInfo, "invisible")
+def test_shape_compartmentinfo_has_margin():
+    assert hasattr(shape_CompartmentInfo, "margin")
     descriptor = None
-    for klass in shape::CompartmentInfo.__mro__:
+    for klass in shape_CompartmentInfo.__mro__:
+        if "margin" in klass.__dict__:
+            descriptor = klass.__dict__["margin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_compartmentinfo_has_compartmentLayout():
+    assert hasattr(shape_CompartmentInfo, "compartmentLayout")
+    descriptor = None
+    for klass in shape_CompartmentInfo.__mro__:
+        if "compartmentLayout" in klass.__dict__:
+            descriptor = klass.__dict__["compartmentLayout"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_compartmentinfo_has_invisible():
+    assert hasattr(shape_CompartmentInfo, "invisible")
+    descriptor = None
+    for klass in shape_CompartmentInfo.__mro__:
         if "invisible" in klass.__dict__:
             descriptor = klass.__dict__["invisible"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_compartmentinfo_has_stretchV():
+    assert hasattr(shape_CompartmentInfo, "stretchV")
+    descriptor = None
+    for klass in shape_CompartmentInfo.__mro__:
+        if "stretchV" in klass.__dict__:
+            descriptor = klass.__dict__["stretchV"]
             break
     assert isinstance(descriptor, property)
 
@@ -377,65 +377,79 @@ def test_shape_constructor_args():
 
 
 
-def test_shape::polyline_is_not_abstract():
-    assert not inspect.isabstract(shape::Polyline)
+def test_shape_rectangle_is_not_abstract():
+    assert not inspect.isabstract(shape_Rectangle)
 
 
-def test_shape::polyline_constructor_exists():
-    assert callable(shape::Polyline.__init__)
+def test_shape_rectangle_constructor_exists():
+    assert callable(shape_Rectangle.__init__)
 
 
-def test_shape::polyline_constructor_args():
-    sig = inspect.signature(shape::Polyline.__init__)
+def test_shape_rectangle_constructor_args():
+    sig = inspect.signature(shape_Rectangle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::polygon_is_not_abstract():
-    assert not inspect.isabstract(shape::Polygon)
+def test_shape_polyline_is_not_abstract():
+    assert not inspect.isabstract(shape_Polyline)
 
 
-def test_shape::polygon_constructor_exists():
-    assert callable(shape::Polygon.__init__)
+def test_shape_polyline_constructor_exists():
+    assert callable(shape_Polyline.__init__)
 
 
-def test_shape::polygon_constructor_args():
-    sig = inspect.signature(shape::Polygon.__init__)
+def test_shape_polyline_constructor_args():
+    sig = inspect.signature(shape_Polyline.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::roundedrectangle_is_not_abstract():
-    assert not inspect.isabstract(shape::RoundedRectangle)
+def test_shape_roundedrectangle_is_not_abstract():
+    assert not inspect.isabstract(shape_RoundedRectangle)
 
 
-def test_shape::roundedrectangle_constructor_exists():
-    assert callable(shape::RoundedRectangle.__init__)
+def test_shape_roundedrectangle_constructor_exists():
+    assert callable(shape_RoundedRectangle.__init__)
 
 
-def test_shape::roundedrectangle_constructor_args():
-    sig = inspect.signature(shape::RoundedRectangle.__init__)
+def test_shape_roundedrectangle_constructor_args():
+    sig = inspect.signature(shape_RoundedRectangle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::text_is_not_abstract():
-    assert not inspect.isabstract(shape::Text)
+def test_shape_polygon_is_not_abstract():
+    assert not inspect.isabstract(shape_Polygon)
 
 
-def test_shape::text_constructor_exists():
-    assert callable(shape::Text.__init__)
+def test_shape_polygon_constructor_exists():
+    assert callable(shape_Polygon.__init__)
 
 
-def test_shape::text_constructor_args():
-    sig = inspect.signature(shape::Text.__init__)
+def test_shape_polygon_constructor_args():
+    sig = inspect.signature(shape_Polygon.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shape_text_is_not_abstract():
+    assert not inspect.isabstract(shape_Text)
+
+
+def test_shape_text_constructor_exists():
+    assert callable(shape_Text.__init__)
+
+
+def test_shape_text_constructor_args():
+    sig = inspect.signature(shape_Text.__init__)
     params = list(sig.parameters.keys())
     assert "texttype" in params, "Missing parameter 'texttype'"
 
-def test_shape::text_has_texttype():
-    assert hasattr(shape::Text, "texttype")
+def test_shape_text_has_texttype():
+    assert hasattr(shape_Text, "texttype")
     descriptor = None
-    for klass in shape::Text.__mro__:
+    for klass in shape_Text.__mro__:
         if "texttype" in klass.__dict__:
             descriptor = klass.__dict__["texttype"]
             break
@@ -443,75 +457,61 @@ def test_shape::text_has_texttype():
 
 
 
-def test_shape::rectangle_is_not_abstract():
-    assert not inspect.isabstract(shape::Rectangle)
+def test_shape_ellipse_is_not_abstract():
+    assert not inspect.isabstract(shape_Ellipse)
 
 
-def test_shape::rectangle_constructor_exists():
-    assert callable(shape::Rectangle.__init__)
+def test_shape_ellipse_constructor_exists():
+    assert callable(shape_Ellipse.__init__)
 
 
-def test_shape::rectangle_constructor_args():
-    sig = inspect.signature(shape::Rectangle.__init__)
+def test_shape_ellipse_constructor_args():
+    sig = inspect.signature(shape_Ellipse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::ellipse_is_not_abstract():
-    assert not inspect.isabstract(shape::Ellipse)
+def test_shape_line_is_not_abstract():
+    assert not inspect.isabstract(shape_Line)
 
 
-def test_shape::ellipse_constructor_exists():
-    assert callable(shape::Ellipse.__init__)
+def test_shape_line_constructor_exists():
+    assert callable(shape_Line.__init__)
 
 
-def test_shape::ellipse_constructor_args():
-    sig = inspect.signature(shape::Ellipse.__init__)
+def test_shape_line_constructor_args():
+    sig = inspect.signature(shape_Line.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::line_is_not_abstract():
-    assert not inspect.isabstract(shape::Line)
+def test_shape_textlayout_is_not_abstract():
+    assert not inspect.isabstract(shape_TextLayout)
 
 
-def test_shape::line_constructor_exists():
-    assert callable(shape::Line.__init__)
+def test_shape_textlayout_constructor_exists():
+    assert callable(shape_TextLayout.__init__)
 
 
-def test_shape::line_constructor_args():
-    sig = inspect.signature(shape::Line.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shape::textlayout_is_not_abstract():
-    assert not inspect.isabstract(shape::TextLayout)
-
-
-def test_shape::textlayout_constructor_exists():
-    assert callable(shape::TextLayout.__init__)
-
-
-def test_shape::textlayout_constructor_args():
-    sig = inspect.signature(shape::TextLayout.__init__)
+def test_shape_textlayout_constructor_args():
+    sig = inspect.signature(shape_TextLayout.__init__)
     params = list(sig.parameters.keys())
     assert "hAlign" in params, "Missing parameter 'hAlign'"
     assert "vAlign" in params, "Missing parameter 'vAlign'"
 
-def test_shape::textlayout_has_hAlign():
-    assert hasattr(shape::TextLayout, "hAlign")
+def test_shape_textlayout_has_hAlign():
+    assert hasattr(shape_TextLayout, "hAlign")
     descriptor = None
-    for klass in shape::TextLayout.__mro__:
+    for klass in shape_TextLayout.__mro__:
         if "hAlign" in klass.__dict__:
             descriptor = klass.__dict__["hAlign"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::textlayout_has_vAlign():
-    assert hasattr(shape::TextLayout, "vAlign")
+def test_shape_textlayout_has_vAlign():
+    assert hasattr(shape_TextLayout, "vAlign")
     descriptor = None
-    for klass in shape::TextLayout.__mro__:
+    for klass in shape_TextLayout.__mro__:
         if "vAlign" in klass.__dict__:
             descriptor = klass.__dict__["vAlign"]
             break
@@ -519,78 +519,78 @@ def test_shape::textlayout_has_vAlign():
 
 
 
-def test_shape::roundedrectanglelayout_is_not_abstract():
-    assert not inspect.isabstract(shape::RoundedRectangleLayout)
+def test_shape_roundedrectanglelayout_is_not_abstract():
+    assert not inspect.isabstract(shape_RoundedRectangleLayout)
 
 
-def test_shape::roundedrectanglelayout_constructor_exists():
-    assert callable(shape::RoundedRectangleLayout.__init__)
+def test_shape_roundedrectanglelayout_constructor_exists():
+    assert callable(shape_RoundedRectangleLayout.__init__)
 
 
-def test_shape::roundedrectanglelayout_constructor_args():
-    sig = inspect.signature(shape::RoundedRectangleLayout.__init__)
+def test_shape_roundedrectanglelayout_constructor_args():
+    sig = inspect.signature(shape_RoundedRectangleLayout.__init__)
     params = list(sig.parameters.keys())
-    assert "curveHeight" in params, "Missing parameter 'curveHeight'"
     assert "curveWidth" in params, "Missing parameter 'curveWidth'"
+    assert "curveHeight" in params, "Missing parameter 'curveHeight'"
 
-def test_shape::roundedrectanglelayout_has_curveHeight():
-    assert hasattr(shape::RoundedRectangleLayout, "curveHeight")
+def test_shape_roundedrectanglelayout_has_curveWidth():
+    assert hasattr(shape_RoundedRectangleLayout, "curveWidth")
     descriptor = None
-    for klass in shape::RoundedRectangleLayout.__mro__:
-        if "curveHeight" in klass.__dict__:
-            descriptor = klass.__dict__["curveHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::roundedrectanglelayout_has_curveWidth():
-    assert hasattr(shape::RoundedRectangleLayout, "curveWidth")
-    descriptor = None
-    for klass in shape::RoundedRectangleLayout.__mro__:
+    for klass in shape_RoundedRectangleLayout.__mro__:
         if "curveWidth" in klass.__dict__:
             descriptor = klass.__dict__["curveWidth"]
             break
     assert isinstance(descriptor, property)
 
+def test_shape_roundedrectanglelayout_has_curveHeight():
+    assert hasattr(shape_RoundedRectangleLayout, "curveHeight")
+    descriptor = None
+    for klass in shape_RoundedRectangleLayout.__mro__:
+        if "curveHeight" in klass.__dict__:
+            descriptor = klass.__dict__["curveHeight"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_shape::rectangleellipselayout_is_not_abstract():
-    assert not inspect.isabstract(shape::RectangleEllipseLayout)
+
+def test_shape_rectangleellipselayout_is_not_abstract():
+    assert not inspect.isabstract(shape_RectangleEllipseLayout)
 
 
-def test_shape::rectangleellipselayout_constructor_exists():
-    assert callable(shape::RectangleEllipseLayout.__init__)
+def test_shape_rectangleellipselayout_constructor_exists():
+    assert callable(shape_RectangleEllipseLayout.__init__)
 
 
-def test_shape::rectangleellipselayout_constructor_args():
-    sig = inspect.signature(shape::RectangleEllipseLayout.__init__)
+def test_shape_rectangleellipselayout_constructor_args():
+    sig = inspect.signature(shape_RectangleEllipseLayout.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::polylinelayout_is_not_abstract():
-    assert not inspect.isabstract(shape::PolyLineLayout)
+def test_shape_polylinelayout_is_not_abstract():
+    assert not inspect.isabstract(shape_PolyLineLayout)
 
 
-def test_shape::polylinelayout_constructor_exists():
-    assert callable(shape::PolyLineLayout.__init__)
+def test_shape_polylinelayout_constructor_exists():
+    assert callable(shape_PolyLineLayout.__init__)
 
 
-def test_shape::polylinelayout_constructor_args():
-    sig = inspect.signature(shape::PolyLineLayout.__init__)
+def test_shape_polylinelayout_constructor_args():
+    sig = inspect.signature(shape_PolyLineLayout.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::linelayout_is_not_abstract():
-    assert not inspect.isabstract(shape::LineLayout)
+def test_shape_linelayout_is_not_abstract():
+    assert not inspect.isabstract(shape_LineLayout)
 
 
-def test_shape::linelayout_constructor_exists():
-    assert callable(shape::LineLayout.__init__)
+def test_shape_linelayout_constructor_exists():
+    assert callable(shape_LineLayout.__init__)
 
 
-def test_shape::linelayout_constructor_args():
-    sig = inspect.signature(shape::LineLayout.__init__)
+def test_shape_linelayout_constructor_args():
+    sig = inspect.signature(shape_LineLayout.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -609,51 +609,93 @@ def test_shapeconnection_constructor_args():
 
 
 
-def test_shape::cdrectangle_is_not_abstract():
-    assert not inspect.isabstract(shape::CDRectangle)
+def test_shape_cdrectangle_is_not_abstract():
+    assert not inspect.isabstract(shape_CDRectangle)
 
 
-def test_shape::cdrectangle_constructor_exists():
-    assert callable(shape::CDRectangle.__init__)
+def test_shape_cdrectangle_constructor_exists():
+    assert callable(shape_CDRectangle.__init__)
 
 
-def test_shape::cdrectangle_constructor_args():
-    sig = inspect.signature(shape::CDRectangle.__init__)
+def test_shape_cdrectangle_constructor_args():
+    sig = inspect.signature(shape_CDRectangle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::cdpolyline_is_not_abstract():
-    assert not inspect.isabstract(shape::CDPolyline)
+def test_shape_cdpolygon_is_not_abstract():
+    assert not inspect.isabstract(shape_CDPolygon)
 
 
-def test_shape::cdpolyline_constructor_exists():
-    assert callable(shape::CDPolyline.__init__)
+def test_shape_cdpolygon_constructor_exists():
+    assert callable(shape_CDPolygon.__init__)
 
 
-def test_shape::cdpolyline_constructor_args():
-    sig = inspect.signature(shape::CDPolyline.__init__)
+def test_shape_cdpolygon_constructor_args():
+    sig = inspect.signature(shape_CDPolygon.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::cdtext_is_not_abstract():
-    assert not inspect.isabstract(shape::CDText)
+def test_shape_cdellipse_is_not_abstract():
+    assert not inspect.isabstract(shape_CDEllipse)
 
 
-def test_shape::cdtext_constructor_exists():
-    assert callable(shape::CDText.__init__)
+def test_shape_cdellipse_constructor_exists():
+    assert callable(shape_CDEllipse.__init__)
 
 
-def test_shape::cdtext_constructor_args():
-    sig = inspect.signature(shape::CDText.__init__)
+def test_shape_cdellipse_constructor_args():
+    sig = inspect.signature(shape_CDEllipse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shape_cdroundedrectangle_is_not_abstract():
+    assert not inspect.isabstract(shape_CDRoundedRectangle)
+
+
+def test_shape_cdroundedrectangle_constructor_exists():
+    assert callable(shape_CDRoundedRectangle.__init__)
+
+
+def test_shape_cdroundedrectangle_constructor_args():
+    sig = inspect.signature(shape_CDRoundedRectangle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shape_cdpolyline_is_not_abstract():
+    assert not inspect.isabstract(shape_CDPolyline)
+
+
+def test_shape_cdpolyline_constructor_exists():
+    assert callable(shape_CDPolyline.__init__)
+
+
+def test_shape_cdpolyline_constructor_args():
+    sig = inspect.signature(shape_CDPolyline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shape_cdtext_is_not_abstract():
+    assert not inspect.isabstract(shape_CDText)
+
+
+def test_shape_cdtext_constructor_exists():
+    assert callable(shape_CDText.__init__)
+
+
+def test_shape_cdtext_constructor_args():
+    sig = inspect.signature(shape_CDText.__init__)
     params = list(sig.parameters.keys())
     assert "texttype" in params, "Missing parameter 'texttype'"
 
-def test_shape::cdtext_has_texttype():
-    assert hasattr(shape::CDText, "texttype")
+def test_shape_cdtext_has_texttype():
+    assert hasattr(shape_CDText, "texttype")
     descriptor = None
-    for klass in shape::CDText.__mro__:
+    for klass in shape_CDText.__mro__:
         if "texttype" in klass.__dict__:
             descriptor = klass.__dict__["texttype"]
             break
@@ -661,58 +703,16 @@ def test_shape::cdtext_has_texttype():
 
 
 
-def test_shape::cdpolygon_is_not_abstract():
-    assert not inspect.isabstract(shape::CDPolygon)
+def test_shape_cdline_is_not_abstract():
+    assert not inspect.isabstract(shape_CDLine)
 
 
-def test_shape::cdpolygon_constructor_exists():
-    assert callable(shape::CDPolygon.__init__)
+def test_shape_cdline_constructor_exists():
+    assert callable(shape_CDLine.__init__)
 
 
-def test_shape::cdpolygon_constructor_args():
-    sig = inspect.signature(shape::CDPolygon.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shape::cdellipse_is_not_abstract():
-    assert not inspect.isabstract(shape::CDEllipse)
-
-
-def test_shape::cdellipse_constructor_exists():
-    assert callable(shape::CDEllipse.__init__)
-
-
-def test_shape::cdellipse_constructor_args():
-    sig = inspect.signature(shape::CDEllipse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shape::cdroundedrectangle_is_not_abstract():
-    assert not inspect.isabstract(shape::CDRoundedRectangle)
-
-
-def test_shape::cdroundedrectangle_constructor_exists():
-    assert callable(shape::CDRoundedRectangle.__init__)
-
-
-def test_shape::cdroundedrectangle_constructor_args():
-    sig = inspect.signature(shape::CDRoundedRectangle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shape::cdline_is_not_abstract():
-    assert not inspect.isabstract(shape::CDLine)
-
-
-def test_shape::cdline_constructor_exists():
-    assert callable(shape::CDLine.__init__)
-
-
-def test_shape::cdline_constructor_args():
-    sig = inspect.signature(shape::CDLine.__init__)
+def test_shape_cdline_constructor_args():
+    sig = inspect.signature(shape_CDLine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -731,33 +731,33 @@ def test_anchorpositionpos_constructor_args():
 
 
 
-def test_shape::anchorfixpointposition_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorFixPointPosition)
+def test_shape_anchorfixpointposition_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorFixPointPosition)
 
 
-def test_shape::anchorfixpointposition_constructor_exists():
-    assert callable(shape::AnchorFixPointPosition.__init__)
+def test_shape_anchorfixpointposition_constructor_exists():
+    assert callable(shape_AnchorFixPointPosition.__init__)
 
 
-def test_shape::anchorfixpointposition_constructor_args():
-    sig = inspect.signature(shape::AnchorFixPointPosition.__init__)
+def test_shape_anchorfixpointposition_constructor_args():
+    sig = inspect.signature(shape_AnchorFixPointPosition.__init__)
     params = list(sig.parameters.keys())
     assert "ycor" in params, "Missing parameter 'ycor'"
     assert "xcor" in params, "Missing parameter 'xcor'"
 
-def test_shape::anchorfixpointposition_has_ycor():
-    assert hasattr(shape::AnchorFixPointPosition, "ycor")
+def test_shape_anchorfixpointposition_has_ycor():
+    assert hasattr(shape_AnchorFixPointPosition, "ycor")
     descriptor = None
-    for klass in shape::AnchorFixPointPosition.__mro__:
+    for klass in shape_AnchorFixPointPosition.__mro__:
         if "ycor" in klass.__dict__:
             descriptor = klass.__dict__["ycor"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::anchorfixpointposition_has_xcor():
-    assert hasattr(shape::AnchorFixPointPosition, "xcor")
+def test_shape_anchorfixpointposition_has_xcor():
+    assert hasattr(shape_AnchorFixPointPosition, "xcor")
     descriptor = None
-    for klass in shape::AnchorFixPointPosition.__mro__:
+    for klass in shape_AnchorFixPointPosition.__mro__:
         if "xcor" in klass.__dict__:
             descriptor = klass.__dict__["xcor"]
             break
@@ -765,33 +765,33 @@ def test_shape::anchorfixpointposition_has_xcor():
 
 
 
-def test_shape::anchorrelativeposition_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorRelativePosition)
+def test_shape_anchorrelativeposition_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorRelativePosition)
 
 
-def test_shape::anchorrelativeposition_constructor_exists():
-    assert callable(shape::AnchorRelativePosition.__init__)
+def test_shape_anchorrelativeposition_constructor_exists():
+    assert callable(shape_AnchorRelativePosition.__init__)
 
 
-def test_shape::anchorrelativeposition_constructor_args():
-    sig = inspect.signature(shape::AnchorRelativePosition.__init__)
+def test_shape_anchorrelativeposition_constructor_args():
+    sig = inspect.signature(shape_AnchorRelativePosition.__init__)
     params = list(sig.parameters.keys())
     assert "xoffset" in params, "Missing parameter 'xoffset'"
     assert "yoffset" in params, "Missing parameter 'yoffset'"
 
-def test_shape::anchorrelativeposition_has_xoffset():
-    assert hasattr(shape::AnchorRelativePosition, "xoffset")
+def test_shape_anchorrelativeposition_has_xoffset():
+    assert hasattr(shape_AnchorRelativePosition, "xoffset")
     descriptor = None
-    for klass in shape::AnchorRelativePosition.__mro__:
+    for klass in shape_AnchorRelativePosition.__mro__:
         if "xoffset" in klass.__dict__:
             descriptor = klass.__dict__["xoffset"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::anchorrelativeposition_has_yoffset():
-    assert hasattr(shape::AnchorRelativePosition, "yoffset")
+def test_shape_anchorrelativeposition_has_yoffset():
+    assert hasattr(shape_AnchorRelativePosition, "yoffset")
     descriptor = None
-    for klass in shape::AnchorRelativePosition.__mro__:
+    for klass in shape_AnchorRelativePosition.__mro__:
         if "yoffset" in klass.__dict__:
             descriptor = klass.__dict__["yoffset"]
             break
@@ -799,51 +799,51 @@ def test_shape::anchorrelativeposition_has_yoffset():
 
 
 
-def test_shape::anchorpositionpos_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorPositionPos)
+def test_shape_anchorpositionpos_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorPositionPos)
 
 
-def test_shape::anchorpositionpos_constructor_exists():
-    assert callable(shape::AnchorPositionPos.__init__)
+def test_shape_anchorpositionpos_constructor_exists():
+    assert callable(shape_AnchorPositionPos.__init__)
 
 
-def test_shape::anchorpositionpos_constructor_args():
-    sig = inspect.signature(shape::AnchorPositionPos.__init__)
+def test_shape_anchorpositionpos_constructor_args():
+    sig = inspect.signature(shape_AnchorPositionPos.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::anchorposition_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorPosition)
+def test_shape_anchorposition_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorPosition)
 
 
-def test_shape::anchorposition_constructor_exists():
-    assert callable(shape::AnchorPosition.__init__)
+def test_shape_anchorposition_constructor_exists():
+    assert callable(shape_AnchorPosition.__init__)
 
 
-def test_shape::anchorposition_constructor_args():
-    sig = inspect.signature(shape::AnchorPosition.__init__)
+def test_shape_anchorposition_constructor_args():
+    sig = inspect.signature(shape_AnchorPosition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::textbody_is_not_abstract():
-    assert not inspect.isabstract(shape::TextBody)
+def test_shape_textbody_is_not_abstract():
+    assert not inspect.isabstract(shape_TextBody)
 
 
-def test_shape::textbody_constructor_exists():
-    assert callable(shape::TextBody.__init__)
+def test_shape_textbody_constructor_exists():
+    assert callable(shape_TextBody.__init__)
 
 
-def test_shape::textbody_constructor_args():
-    sig = inspect.signature(shape::TextBody.__init__)
+def test_shape_textbody_constructor_args():
+    sig = inspect.signature(shape_TextBody.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_shape::textbody_has_value():
-    assert hasattr(shape::TextBody, "value")
+def test_shape_textbody_has_value():
+    assert hasattr(shape_TextBody, "value")
     descriptor = None
-    for klass in shape::TextBody.__mro__:
+    for klass in shape_TextBody.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -865,37 +865,37 @@ def test_anchortype_constructor_args():
 
 
 
-def test_shape::anchormanual_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorManual)
+def test_shape_anchormanual_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorManual)
 
 
-def test_shape::anchormanual_constructor_exists():
-    assert callable(shape::AnchorManual.__init__)
+def test_shape_anchormanual_constructor_exists():
+    assert callable(shape_AnchorManual.__init__)
 
 
-def test_shape::anchormanual_constructor_args():
-    sig = inspect.signature(shape::AnchorManual.__init__)
+def test_shape_anchormanual_constructor_args():
+    sig = inspect.signature(shape_AnchorManual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::anchorpredefinied_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorPredefinied)
+def test_shape_anchorpredefinied_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorPredefinied)
 
 
-def test_shape::anchorpredefinied_constructor_exists():
-    assert callable(shape::AnchorPredefinied.__init__)
+def test_shape_anchorpredefinied_constructor_exists():
+    assert callable(shape_AnchorPredefinied.__init__)
 
 
-def test_shape::anchorpredefinied_constructor_args():
-    sig = inspect.signature(shape::AnchorPredefinied.__init__)
+def test_shape_anchorpredefinied_constructor_args():
+    sig = inspect.signature(shape_AnchorPredefinied.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_shape::anchorpredefinied_has_value():
-    assert hasattr(shape::AnchorPredefinied, "value")
+def test_shape_anchorpredefinied_has_value():
+    assert hasattr(shape_AnchorPredefinied, "value")
     descriptor = None
-    for klass in shape::AnchorPredefinied.__mro__:
+    for klass in shape_AnchorPredefinied.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -903,37 +903,37 @@ def test_shape::anchorpredefinied_has_value():
 
 
 
-def test_shape::anchortype_is_not_abstract():
-    assert not inspect.isabstract(shape::AnchorType)
+def test_shape_anchortype_is_not_abstract():
+    assert not inspect.isabstract(shape_AnchorType)
 
 
-def test_shape::anchortype_constructor_exists():
-    assert callable(shape::AnchorType.__init__)
+def test_shape_anchortype_constructor_exists():
+    assert callable(shape_AnchorType.__init__)
 
 
-def test_shape::anchortype_constructor_args():
-    sig = inspect.signature(shape::AnchorType.__init__)
+def test_shape_anchortype_constructor_args():
+    sig = inspect.signature(shape_AnchorType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::shapeconnection_is_not_abstract():
-    assert not inspect.isabstract(shape::ShapeConnection)
+def test_shape_shapeconnection_is_not_abstract():
+    assert not inspect.isabstract(shape_ShapeConnection)
 
 
-def test_shape::shapeconnection_constructor_exists():
-    assert callable(shape::ShapeConnection.__init__)
+def test_shape_shapeconnection_constructor_exists():
+    assert callable(shape_ShapeConnection.__init__)
 
 
-def test_shape::shapeconnection_constructor_args():
-    sig = inspect.signature(shape::ShapeConnection.__init__)
+def test_shape_shapeconnection_constructor_args():
+    sig = inspect.signature(shape_ShapeConnection.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
 
-def test_shape::shapeconnection_has_style():
-    assert hasattr(shape::ShapeConnection, "style")
+def test_shape_shapeconnection_has_style():
+    assert hasattr(shape_ShapeConnection, "style")
     descriptor = None
-    for klass in shape::ShapeConnection.__mro__:
+    for klass in shape_ShapeConnection.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -941,81 +941,81 @@ def test_shape::shapeconnection_has_style():
 
 
 
-def test_shape::anchor_is_not_abstract():
-    assert not inspect.isabstract(shape::Anchor)
+def test_shape_anchor_is_not_abstract():
+    assert not inspect.isabstract(shape_Anchor)
 
 
-def test_shape::anchor_constructor_exists():
-    assert callable(shape::Anchor.__init__)
+def test_shape_anchor_constructor_exists():
+    assert callable(shape_Anchor.__init__)
 
 
-def test_shape::anchor_constructor_args():
-    sig = inspect.signature(shape::Anchor.__init__)
+def test_shape_anchor_constructor_args():
+    sig = inspect.signature(shape_Anchor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::description_is_not_abstract():
-    assert not inspect.isabstract(shape::Description)
+def test_shape_description_is_not_abstract():
+    assert not inspect.isabstract(shape_Description)
 
 
-def test_shape::description_constructor_exists():
-    assert callable(shape::Description.__init__)
+def test_shape_description_constructor_exists():
+    assert callable(shape_Description.__init__)
 
 
-def test_shape::description_constructor_args():
-    sig = inspect.signature(shape::Description.__init__)
+def test_shape_description_constructor_args():
+    sig = inspect.signature(shape_Description.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
-    assert "vAlign" in params, "Missing parameter 'vAlign'"
     assert "hAlign" in params, "Missing parameter 'hAlign'"
+    assert "vAlign" in params, "Missing parameter 'vAlign'"
 
-def test_shape::description_has_style():
-    assert hasattr(shape::Description, "style")
+def test_shape_description_has_style():
+    assert hasattr(shape_Description, "style")
     descriptor = None
-    for klass in shape::Description.__mro__:
+    for klass in shape_Description.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::description_has_vAlign():
-    assert hasattr(shape::Description, "vAlign")
+def test_shape_description_has_hAlign():
+    assert hasattr(shape_Description, "hAlign")
     descriptor = None
-    for klass in shape::Description.__mro__:
-        if "vAlign" in klass.__dict__:
-            descriptor = klass.__dict__["vAlign"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::description_has_hAlign():
-    assert hasattr(shape::Description, "hAlign")
-    descriptor = None
-    for klass in shape::Description.__mro__:
+    for klass in shape_Description.__mro__:
         if "hAlign" in klass.__dict__:
             descriptor = klass.__dict__["hAlign"]
             break
     assert isinstance(descriptor, property)
 
+def test_shape_description_has_vAlign():
+    assert hasattr(shape_Description, "vAlign")
+    descriptor = None
+    for klass in shape_Description.__mro__:
+        if "vAlign" in klass.__dict__:
+            descriptor = klass.__dict__["vAlign"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_shape::shape_is_not_abstract():
-    assert not inspect.isabstract(shape::Shape)
+
+def test_shape_shape_is_not_abstract():
+    assert not inspect.isabstract(shape_Shape)
 
 
-def test_shape::shape_constructor_exists():
-    assert callable(shape::Shape.__init__)
+def test_shape_shape_constructor_exists():
+    assert callable(shape_Shape.__init__)
 
 
-def test_shape::shape_constructor_args():
-    sig = inspect.signature(shape::Shape.__init__)
+def test_shape_shape_constructor_args():
+    sig = inspect.signature(shape_Shape.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
 
-def test_shape::shape_has_style():
-    assert hasattr(shape::Shape, "style")
+def test_shape_shape_has_style():
+    assert hasattr(shape_Shape, "style")
     descriptor = None
-    for klass in shape::Shape.__mro__:
+    for klass in shape_Shape.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -1023,144 +1023,144 @@ def test_shape::shape_has_style():
 
 
 
-def test_shape::shapelayout_is_not_abstract():
-    assert not inspect.isabstract(shape::ShapeLayout)
+def test_shape_shapelayout_is_not_abstract():
+    assert not inspect.isabstract(shape_ShapeLayout)
 
 
-def test_shape::shapelayout_constructor_exists():
-    assert callable(shape::ShapeLayout.__init__)
+def test_shape_shapelayout_constructor_exists():
+    assert callable(shape_ShapeLayout.__init__)
 
 
-def test_shape::shapelayout_constructor_args():
-    sig = inspect.signature(shape::ShapeLayout.__init__)
+def test_shape_shapelayout_constructor_args():
+    sig = inspect.signature(shape_ShapeLayout.__init__)
     params = list(sig.parameters.keys())
+    assert "minheight" in params, "Missing parameter 'minheight'"
     assert "stretchV" in params, "Missing parameter 'stretchV'"
-    assert "maxwidth" in params, "Missing parameter 'maxwidth'"
     assert "proportional" in params, "Missing parameter 'proportional'"
+    assert "maxheight" in params, "Missing parameter 'maxheight'"
     assert "minwidth" in params, "Missing parameter 'minwidth'"
     assert "stretchH" in params, "Missing parameter 'stretchH'"
-    assert "minheight" in params, "Missing parameter 'minheight'"
-    assert "maxheight" in params, "Missing parameter 'maxheight'"
+    assert "maxwidth" in params, "Missing parameter 'maxwidth'"
 
-def test_shape::shapelayout_has_stretchV():
-    assert hasattr(shape::ShapeLayout, "stretchV")
+def test_shape_shapelayout_has_minheight():
+    assert hasattr(shape_ShapeLayout, "minheight")
     descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
-        if "stretchV" in klass.__dict__:
-            descriptor = klass.__dict__["stretchV"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::shapelayout_has_maxwidth():
-    assert hasattr(shape::ShapeLayout, "maxwidth")
-    descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
-        if "maxwidth" in klass.__dict__:
-            descriptor = klass.__dict__["maxwidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::shapelayout_has_proportional():
-    assert hasattr(shape::ShapeLayout, "proportional")
-    descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
-        if "proportional" in klass.__dict__:
-            descriptor = klass.__dict__["proportional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::shapelayout_has_minwidth():
-    assert hasattr(shape::ShapeLayout, "minwidth")
-    descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
-        if "minwidth" in klass.__dict__:
-            descriptor = klass.__dict__["minwidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::shapelayout_has_stretchH():
-    assert hasattr(shape::ShapeLayout, "stretchH")
-    descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
-        if "stretchH" in klass.__dict__:
-            descriptor = klass.__dict__["stretchH"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::shapelayout_has_minheight():
-    assert hasattr(shape::ShapeLayout, "minheight")
-    descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
+    for klass in shape_ShapeLayout.__mro__:
         if "minheight" in klass.__dict__:
             descriptor = klass.__dict__["minheight"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::shapelayout_has_maxheight():
-    assert hasattr(shape::ShapeLayout, "maxheight")
+def test_shape_shapelayout_has_stretchV():
+    assert hasattr(shape_ShapeLayout, "stretchV")
     descriptor = None
-    for klass in shape::ShapeLayout.__mro__:
+    for klass in shape_ShapeLayout.__mro__:
+        if "stretchV" in klass.__dict__:
+            descriptor = klass.__dict__["stretchV"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_shapelayout_has_proportional():
+    assert hasattr(shape_ShapeLayout, "proportional")
+    descriptor = None
+    for klass in shape_ShapeLayout.__mro__:
+        if "proportional" in klass.__dict__:
+            descriptor = klass.__dict__["proportional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_shapelayout_has_maxheight():
+    assert hasattr(shape_ShapeLayout, "maxheight")
+    descriptor = None
+    for klass in shape_ShapeLayout.__mro__:
         if "maxheight" in klass.__dict__:
             descriptor = klass.__dict__["maxheight"]
             break
     assert isinstance(descriptor, property)
 
+def test_shape_shapelayout_has_minwidth():
+    assert hasattr(shape_ShapeLayout, "minwidth")
+    descriptor = None
+    for klass in shape_ShapeLayout.__mro__:
+        if "minwidth" in klass.__dict__:
+            descriptor = klass.__dict__["minwidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_shapelayout_has_stretchH():
+    assert hasattr(shape_ShapeLayout, "stretchH")
+    descriptor = None
+    for klass in shape_ShapeLayout.__mro__:
+        if "stretchH" in klass.__dict__:
+            descriptor = klass.__dict__["stretchH"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_shapelayout_has_maxwidth():
+    assert hasattr(shape_ShapeLayout, "maxwidth")
+    descriptor = None
+    for klass in shape_ShapeLayout.__mro__:
+        if "maxwidth" in klass.__dict__:
+            descriptor = klass.__dict__["maxwidth"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_shape::placingdefinition_is_not_abstract():
-    assert not inspect.isabstract(shape::PlacingDefinition)
+
+def test_shape_placingdefinition_is_not_abstract():
+    assert not inspect.isabstract(shape_PlacingDefinition)
 
 
-def test_shape::placingdefinition_constructor_exists():
-    assert callable(shape::PlacingDefinition.__init__)
+def test_shape_placingdefinition_constructor_exists():
+    assert callable(shape_PlacingDefinition.__init__)
 
 
-def test_shape::placingdefinition_constructor_args():
-    sig = inspect.signature(shape::PlacingDefinition.__init__)
+def test_shape_placingdefinition_constructor_args():
+    sig = inspect.signature(shape_PlacingDefinition.__init__)
     params = list(sig.parameters.keys())
-    assert "offset" in params, "Missing parameter 'offset'"
-    assert "distance" in params, "Missing parameter 'distance'"
     assert "angle" in params, "Missing parameter 'angle'"
+    assert "distance" in params, "Missing parameter 'distance'"
+    assert "offset" in params, "Missing parameter 'offset'"
 
-def test_shape::placingdefinition_has_offset():
-    assert hasattr(shape::PlacingDefinition, "offset")
+def test_shape_placingdefinition_has_angle():
+    assert hasattr(shape_PlacingDefinition, "angle")
     descriptor = None
-    for klass in shape::PlacingDefinition.__mro__:
-        if "offset" in klass.__dict__:
-            descriptor = klass.__dict__["offset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::placingdefinition_has_distance():
-    assert hasattr(shape::PlacingDefinition, "distance")
-    descriptor = None
-    for klass in shape::PlacingDefinition.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shape::placingdefinition_has_angle():
-    assert hasattr(shape::PlacingDefinition, "angle")
-    descriptor = None
-    for klass in shape::PlacingDefinition.__mro__:
+    for klass in shape_PlacingDefinition.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
     assert isinstance(descriptor, property)
 
+def test_shape_placingdefinition_has_distance():
+    assert hasattr(shape_PlacingDefinition, "distance")
+    descriptor = None
+    for klass in shape_PlacingDefinition.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_placingdefinition_has_offset():
+    assert hasattr(shape_PlacingDefinition, "offset")
+    descriptor = None
+    for klass in shape_PlacingDefinition.__mro__:
+        if "offset" in klass.__dict__:
+            descriptor = klass.__dict__["offset"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_shape::shapestylelayout_is_not_abstract():
-    assert not inspect.isabstract(shape::ShapestyleLayout)
+
+def test_shape_shapestylelayout_is_not_abstract():
+    assert not inspect.isabstract(shape_ShapestyleLayout)
 
 
-def test_shape::shapestylelayout_constructor_exists():
-    assert callable(shape::ShapestyleLayout.__init__)
+def test_shape_shapestylelayout_constructor_exists():
+    assert callable(shape_ShapestyleLayout.__init__)
 
 
-def test_shape::shapestylelayout_constructor_args():
-    sig = inspect.signature(shape::ShapestyleLayout.__init__)
+def test_shape_shapestylelayout_constructor_args():
+    sig = inspect.signature(shape_ShapestyleLayout.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1179,37 +1179,37 @@ def test_shapecontainerelement_constructor_args():
 
 
 
-def test_shape::shapedefinition_is_not_abstract():
-    assert not inspect.isabstract(shape::ShapeDefinition)
+def test_shape_shapedefinition_is_not_abstract():
+    assert not inspect.isabstract(shape_ShapeDefinition)
 
 
-def test_shape::shapedefinition_constructor_exists():
-    assert callable(shape::ShapeDefinition.__init__)
+def test_shape_shapedefinition_constructor_exists():
+    assert callable(shape_ShapeDefinition.__init__)
 
 
-def test_shape::shapedefinition_constructor_args():
-    sig = inspect.signature(shape::ShapeDefinition.__init__)
+def test_shape_shapedefinition_constructor_args():
+    sig = inspect.signature(shape_ShapeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shape::connectiondefinition_is_not_abstract():
-    assert not inspect.isabstract(shape::ConnectionDefinition)
+def test_shape_connectiondefinition_is_not_abstract():
+    assert not inspect.isabstract(shape_ConnectionDefinition)
 
 
-def test_shape::connectiondefinition_constructor_exists():
-    assert callable(shape::ConnectionDefinition.__init__)
+def test_shape_connectiondefinition_constructor_exists():
+    assert callable(shape_ConnectionDefinition.__init__)
 
 
-def test_shape::connectiondefinition_constructor_args():
-    sig = inspect.signature(shape::ConnectionDefinition.__init__)
+def test_shape_connectiondefinition_constructor_args():
+    sig = inspect.signature(shape_ConnectionDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "connectionStyle" in params, "Missing parameter 'connectionStyle'"
 
-def test_shape::connectiondefinition_has_connectionStyle():
-    assert hasattr(shape::ConnectionDefinition, "connectionStyle")
+def test_shape_connectiondefinition_has_connectionStyle():
+    assert hasattr(shape_ConnectionDefinition, "connectionStyle")
     descriptor = None
-    for klass in shape::ConnectionDefinition.__mro__:
+    for klass in shape_ConnectionDefinition.__mro__:
         if "connectionStyle" in klass.__dict__:
             descriptor = klass.__dict__["connectionStyle"]
             break
@@ -1217,33 +1217,33 @@ def test_shape::connectiondefinition_has_connectionStyle():
 
 
 
-def test_shape::shapecontainerelement_is_not_abstract():
-    assert not inspect.isabstract(shape::ShapeContainerElement)
+def test_shape_shapecontainerelement_is_not_abstract():
+    assert not inspect.isabstract(shape_ShapeContainerElement)
 
 
-def test_shape::shapecontainerelement_constructor_exists():
-    assert callable(shape::ShapeContainerElement.__init__)
+def test_shape_shapecontainerelement_constructor_exists():
+    assert callable(shape_ShapeContainerElement.__init__)
 
 
-def test_shape::shapecontainerelement_constructor_args():
-    sig = inspect.signature(shape::ShapeContainerElement.__init__)
+def test_shape_shapecontainerelement_constructor_args():
+    sig = inspect.signature(shape_ShapeContainerElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "style" in params, "Missing parameter 'style'"
 
-def test_shape::shapecontainerelement_has_name():
-    assert hasattr(shape::ShapeContainerElement, "name")
+def test_shape_shapecontainerelement_has_name():
+    assert hasattr(shape_ShapeContainerElement, "name")
     descriptor = None
-    for klass in shape::ShapeContainerElement.__mro__:
+    for klass in shape_ShapeContainerElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_shape::shapecontainerelement_has_style():
-    assert hasattr(shape::ShapeContainerElement, "style")
+def test_shape_shapecontainerelement_has_style():
+    assert hasattr(shape_ShapeContainerElement, "style")
     descriptor = None
-    for klass in shape::ShapeContainerElement.__mro__:
+    for klass in shape_ShapeContainerElement.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -1251,16 +1251,16 @@ def test_shape::shapecontainerelement_has_style():
 
 
 
-def test_shape::shapecontainer_is_not_abstract():
-    assert not inspect.isabstract(shape::ShapeContainer)
+def test_shape_shapecontainer_is_not_abstract():
+    assert not inspect.isabstract(shape_ShapeContainer)
 
 
-def test_shape::shapecontainer_constructor_exists():
-    assert callable(shape::ShapeContainer.__init__)
+def test_shape_shapecontainer_constructor_exists():
+    assert callable(shape_ShapeContainer.__init__)
 
 
-def test_shape::shapecontainer_constructor_args():
-    sig = inspect.signature(shape::ShapeContainer.__init__)
+def test_shape_shapecontainer_constructor_args():
+    sig = inspect.signature(shape_ShapeContainer.__init__)
     params = list(sig.parameters.keys())
 
 def test_connectionstyle_exists():
@@ -1271,8 +1271,8 @@ def test_connectionstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ConnectionStyle]
     expected_literals = [
-        "manhatten",
         "freeform",
+        "manhatten",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1287,8 +1287,8 @@ def test_halign_has_all_literals():
     enum_literals = [lit.name for lit in HAlign]
     expected_literals = [
         "CENTER",
-        "LEFT",
         "RIGHT",
+        "LEFT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1302,8 +1302,8 @@ def test_texttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TextType]
     expected_literals = [
-        "default",
         "multiline",
+        "default",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1317,8 +1317,8 @@ def test_valign_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VAlign]
     expected_literals = [
-        "TOP",
         "BOTTOM",
+        "TOP",
         "MIDDLE",
     ]
     # Check that all expected literals exist
@@ -1333,9 +1333,9 @@ def test_compartmentlayout_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CompartmentLayout]
     expected_literals = [
-        "FIT",
         "FIXED",
         "VERTICAL",
+        "FIT",
         "HORIZONTAL",
     ]
     # Check that all expected literals exist
@@ -1350,8 +1350,8 @@ def test_anchorpredefiniedenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AnchorPredefiniedEnum]
     expected_literals = [
-        "corners",
         "center",
+        "corners",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1369,723 +1369,645 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-shape::Point_strategy = st.builds(
-    shape::Point,
+shape_Point_strategy = st.builds(
+    shape_Point,
     curveAfter=
         st.integers(),
+    ycor=
+        safe_text,
     curveBefore=
         st.integers(),
     xcor=
-        safe_text,
-    ycor=
         safe_text
 )
-shape::CommonLayout_strategy = st.builds(
-    shape::CommonLayout,
-    ycor=
+shape_CommonLayout_strategy = st.builds(
+    shape_CommonLayout,
+    width=
         st.integers(),
     xcor=
         st.integers(),
-    width=
-        st.integers(),
     heigth=
+        st.integers(),
+    ycor=
         st.integers()
 )
-shape::CompartmentPolygon_strategy = st.builds(
-    shape::CompartmentPolygon,
+shape_CompartmentPolygon_strategy = st.builds(
+    shape_CompartmentPolygon,
 )
-shape::CompartmentRoundedRectangle_strategy = st.builds(
-    shape::CompartmentRoundedRectangle,
+shape_CompartmentRoundedRectangle_strategy = st.builds(
+    shape_CompartmentRoundedRectangle,
 )
 CompartmentShape_strategy = st.builds(
     CompartmentShape,
 )
-shape::CompartmentEllipse_strategy = st.builds(
-    shape::CompartmentEllipse,
+shape_CompartmentEllipse_strategy = st.builds(
+    shape_CompartmentEllipse,
 )
-shape::CompartmentRectangle_strategy = st.builds(
-    shape::CompartmentRectangle,
+shape_CompartmentRectangle_strategy = st.builds(
+    shape_CompartmentRectangle,
 )
-shape::CompartmentShape_strategy = st.builds(
-    shape::CompartmentShape,
+shape_CompartmentShape_strategy = st.builds(
+    shape_CompartmentShape,
 )
-shape::Compartment_strategy = st.builds(
-    shape::Compartment,
+shape_Compartment_strategy = st.builds(
+    shape_Compartment,
     compartmentLayout=
         safe_text
 )
-shape::CompartmentInfo_strategy = st.builds(
-    shape::CompartmentInfo,
-    compartmentLayout=
-        safe_text,
-    margin=
-        st.integers(),
-    stretchV=
-        safe_text,
+shape_CompartmentInfo_strategy = st.builds(
+    shape_CompartmentInfo,
     stretchH=
         safe_text,
     spacing=
         st.integers(),
+    margin=
+        st.integers(),
+    compartmentLayout=
+        safe_text,
     invisible=
-        st.booleans()
+        st.booleans(),
+    stretchV=
+        safe_text
 )
 Shape_strategy = st.builds(
     Shape,
 )
-shape::Polyline_strategy = st.builds(
-    shape::Polyline,
+shape_Rectangle_strategy = st.builds(
+    shape_Rectangle,
 )
-shape::Polygon_strategy = st.builds(
-    shape::Polygon,
+shape_Polyline_strategy = st.builds(
+    shape_Polyline,
 )
-shape::RoundedRectangle_strategy = st.builds(
-    shape::RoundedRectangle,
+shape_RoundedRectangle_strategy = st.builds(
+    shape_RoundedRectangle,
 )
-shape::Text_strategy = st.builds(
-    shape::Text,
+shape_Polygon_strategy = st.builds(
+    shape_Polygon,
+)
+shape_Text_strategy = st.builds(
+    shape_Text,
     texttype=
         safe_text
 )
-shape::Rectangle_strategy = st.builds(
-    shape::Rectangle,
+shape_Ellipse_strategy = st.builds(
+    shape_Ellipse,
 )
-shape::Ellipse_strategy = st.builds(
-    shape::Ellipse,
+shape_Line_strategy = st.builds(
+    shape_Line,
 )
-shape::Line_strategy = st.builds(
-    shape::Line,
-)
-shape::TextLayout_strategy = st.builds(
-    shape::TextLayout,
+shape_TextLayout_strategy = st.builds(
+    shape_TextLayout,
     hAlign=
         safe_text,
     vAlign=
         safe_text
 )
-shape::RoundedRectangleLayout_strategy = st.builds(
-    shape::RoundedRectangleLayout,
-    curveHeight=
-        st.integers(),
+shape_RoundedRectangleLayout_strategy = st.builds(
+    shape_RoundedRectangleLayout,
     curveWidth=
+        st.integers(),
+    curveHeight=
         st.integers()
 )
-shape::RectangleEllipseLayout_strategy = st.builds(
-    shape::RectangleEllipseLayout,
+shape_RectangleEllipseLayout_strategy = st.builds(
+    shape_RectangleEllipseLayout,
 )
-shape::PolyLineLayout_strategy = st.builds(
-    shape::PolyLineLayout,
+shape_PolyLineLayout_strategy = st.builds(
+    shape_PolyLineLayout,
 )
-shape::LineLayout_strategy = st.builds(
-    shape::LineLayout,
+shape_LineLayout_strategy = st.builds(
+    shape_LineLayout,
 )
 ShapeConnection_strategy = st.builds(
     ShapeConnection,
 )
-shape::CDRectangle_strategy = st.builds(
-    shape::CDRectangle,
+shape_CDRectangle_strategy = st.builds(
+    shape_CDRectangle,
 )
-shape::CDPolyline_strategy = st.builds(
-    shape::CDPolyline,
+shape_CDPolygon_strategy = st.builds(
+    shape_CDPolygon,
 )
-shape::CDText_strategy = st.builds(
-    shape::CDText,
+shape_CDEllipse_strategy = st.builds(
+    shape_CDEllipse,
+)
+shape_CDRoundedRectangle_strategy = st.builds(
+    shape_CDRoundedRectangle,
+)
+shape_CDPolyline_strategy = st.builds(
+    shape_CDPolyline,
+)
+shape_CDText_strategy = st.builds(
+    shape_CDText,
     texttype=
         safe_text
 )
-shape::CDPolygon_strategy = st.builds(
-    shape::CDPolygon,
-)
-shape::CDEllipse_strategy = st.builds(
-    shape::CDEllipse,
-)
-shape::CDRoundedRectangle_strategy = st.builds(
-    shape::CDRoundedRectangle,
-)
-shape::CDLine_strategy = st.builds(
-    shape::CDLine,
+shape_CDLine_strategy = st.builds(
+    shape_CDLine,
 )
 AnchorPositionPos_strategy = st.builds(
     AnchorPositionPos,
 )
-shape::AnchorFixPointPosition_strategy = st.builds(
-    shape::AnchorFixPointPosition,
+shape_AnchorFixPointPosition_strategy = st.builds(
+    shape_AnchorFixPointPosition,
     ycor=
         st.integers(),
     xcor=
         st.integers()
 )
-shape::AnchorRelativePosition_strategy = st.builds(
-    shape::AnchorRelativePosition,
+shape_AnchorRelativePosition_strategy = st.builds(
+    shape_AnchorRelativePosition,
     xoffset=
         safe_text,
     yoffset=
         safe_text
 )
-shape::AnchorPositionPos_strategy = st.builds(
-    shape::AnchorPositionPos,
+shape_AnchorPositionPos_strategy = st.builds(
+    shape_AnchorPositionPos,
 )
-shape::AnchorPosition_strategy = st.builds(
-    shape::AnchorPosition,
+shape_AnchorPosition_strategy = st.builds(
+    shape_AnchorPosition,
 )
-shape::TextBody_strategy = st.builds(
-    shape::TextBody,
+shape_TextBody_strategy = st.builds(
+    shape_TextBody,
     value=
         safe_text
 )
 AnchorType_strategy = st.builds(
     AnchorType,
 )
-shape::AnchorManual_strategy = st.builds(
-    shape::AnchorManual,
+shape_AnchorManual_strategy = st.builds(
+    shape_AnchorManual,
 )
-shape::AnchorPredefinied_strategy = st.builds(
-    shape::AnchorPredefinied,
+shape_AnchorPredefinied_strategy = st.builds(
+    shape_AnchorPredefinied,
     value=
         safe_text
 )
-shape::AnchorType_strategy = st.builds(
-    shape::AnchorType,
+shape_AnchorType_strategy = st.builds(
+    shape_AnchorType,
 )
-shape::ShapeConnection_strategy = st.builds(
-    shape::ShapeConnection,
+shape_ShapeConnection_strategy = st.builds(
+    shape_ShapeConnection,
     style=
         safe_text
 )
-shape::Anchor_strategy = st.builds(
-    shape::Anchor,
+shape_Anchor_strategy = st.builds(
+    shape_Anchor,
 )
-shape::Description_strategy = st.builds(
-    shape::Description,
+shape_Description_strategy = st.builds(
+    shape_Description,
     style=
-        safe_text,
-    vAlign=
         safe_text,
     hAlign=
+        safe_text,
+    vAlign=
         safe_text
 )
-shape::Shape_strategy = st.builds(
-    shape::Shape,
+shape_Shape_strategy = st.builds(
+    shape_Shape,
     style=
         safe_text
 )
-shape::ShapeLayout_strategy = st.builds(
-    shape::ShapeLayout,
+shape_ShapeLayout_strategy = st.builds(
+    shape_ShapeLayout,
+    minheight=
+        st.integers(),
     stretchV=
         safe_text,
-    maxwidth=
-        st.integers(),
     proportional=
         safe_text,
+    maxheight=
+        st.integers(),
     minwidth=
         st.integers(),
     stretchH=
         safe_text,
-    minheight=
-        st.integers(),
-    maxheight=
+    maxwidth=
         st.integers()
 )
-shape::PlacingDefinition_strategy = st.builds(
-    shape::PlacingDefinition,
-    offset=
-        safe_text,
+shape_PlacingDefinition_strategy = st.builds(
+    shape_PlacingDefinition,
+    angle=
+        st.integers(),
     distance=
         st.integers(),
-    angle=
-        st.integers()
+    offset=
+        safe_text
 )
-shape::ShapestyleLayout_strategy = st.builds(
-    shape::ShapestyleLayout,
+shape_ShapestyleLayout_strategy = st.builds(
+    shape_ShapestyleLayout,
 )
 ShapeContainerElement_strategy = st.builds(
     ShapeContainerElement,
 )
-shape::ShapeDefinition_strategy = st.builds(
-    shape::ShapeDefinition,
+shape_ShapeDefinition_strategy = st.builds(
+    shape_ShapeDefinition,
 )
-shape::ConnectionDefinition_strategy = st.builds(
-    shape::ConnectionDefinition,
+shape_ConnectionDefinition_strategy = st.builds(
+    shape_ConnectionDefinition,
     connectionStyle=
         safe_text
 )
-shape::ShapeContainerElement_strategy = st.builds(
-    shape::ShapeContainerElement,
+shape_ShapeContainerElement_strategy = st.builds(
+    shape_ShapeContainerElement,
     name=
         safe_text,
     style=
         safe_text
 )
-shape::ShapeContainer_strategy = st.builds(
-    shape::ShapeContainer,
+shape_ShapeContainer_strategy = st.builds(
+    shape_ShapeContainer,
 )
 
-@given(instance=shape::Point_strategy)
+@given(instance=shape_Point_strategy)
 @settings(max_examples=50)
-def test_shape::point_instantiation(instance):
-    assert isinstance(instance, shape::Point)
-
-@given(instance=shape::Point_strategy)
-def test_shape::point_curveAfter_type(instance):
-    assert isinstance(instance.curveAfter, int)
+def test_shape_point_instantiation(instance):
+    assert isinstance(instance, shape_Point)
 
 
-@given(instance=shape::Point_strategy)
-def test_shape::point_curveAfter_setter(instance):
+
+@given(instance=shape_Point_strategy)
+def test_shape_point_curveAfter_setter(instance):
     original = instance.curveAfter
     instance.curveAfter = original
     assert instance.curveAfter == original
 
-@given(instance=shape::Point_strategy)
-def test_shape::point_curveBefore_type(instance):
-    assert isinstance(instance.curveBefore, int)
 
 
-@given(instance=shape::Point_strategy)
-def test_shape::point_curveBefore_setter(instance):
+@given(instance=shape_Point_strategy)
+def test_shape_point_ycor_setter(instance):
+    original = instance.ycor
+    instance.ycor = original
+    assert instance.ycor == original
+
+
+
+@given(instance=shape_Point_strategy)
+def test_shape_point_curveBefore_setter(instance):
     original = instance.curveBefore
     instance.curveBefore = original
     assert instance.curveBefore == original
 
-@given(instance=shape::Point_strategy)
-def test_shape::point_xcor_type(instance):
-    assert isinstance(instance.xcor, str)
 
 
-@given(instance=shape::Point_strategy)
-def test_shape::point_xcor_setter(instance):
+@given(instance=shape_Point_strategy)
+def test_shape_point_xcor_setter(instance):
     original = instance.xcor
     instance.xcor = original
     assert instance.xcor == original
 
-@given(instance=shape::Point_strategy)
-def test_shape::point_ycor_type(instance):
-    assert isinstance(instance.ycor, str)
-
-
-@given(instance=shape::Point_strategy)
-def test_shape::point_ycor_setter(instance):
-    original = instance.ycor
-    instance.ycor = original
-    assert instance.ycor == original
-
-@given(instance=shape::CommonLayout_strategy)
+@given(instance=shape_CommonLayout_strategy)
 @settings(max_examples=50)
-def test_shape::commonlayout_instantiation(instance):
-    assert isinstance(instance, shape::CommonLayout)
-
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_ycor_type(instance):
-    assert isinstance(instance.ycor, int)
+def test_shape_commonlayout_instantiation(instance):
+    assert isinstance(instance, shape_CommonLayout)
 
 
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_ycor_setter(instance):
-    original = instance.ycor
-    instance.ycor = original
-    assert instance.ycor == original
 
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_xcor_type(instance):
-    assert isinstance(instance.xcor, int)
-
-
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_xcor_setter(instance):
-    original = instance.xcor
-    instance.xcor = original
-    assert instance.xcor == original
-
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_width_setter(instance):
+@given(instance=shape_CommonLayout_strategy)
+def test_shape_commonlayout_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_heigth_type(instance):
-    assert isinstance(instance.heigth, int)
 
 
-@given(instance=shape::CommonLayout_strategy)
-def test_shape::commonlayout_heigth_setter(instance):
+@given(instance=shape_CommonLayout_strategy)
+def test_shape_commonlayout_xcor_setter(instance):
+    original = instance.xcor
+    instance.xcor = original
+    assert instance.xcor == original
+
+
+
+@given(instance=shape_CommonLayout_strategy)
+def test_shape_commonlayout_heigth_setter(instance):
     original = instance.heigth
     instance.heigth = original
     assert instance.heigth == original
 
-@given(instance=shape::CompartmentPolygon_strategy)
-@settings(max_examples=50)
-def test_shape::compartmentpolygon_instantiation(instance):
-    assert isinstance(instance, shape::CompartmentPolygon)
 
-@given(instance=shape::CompartmentRoundedRectangle_strategy)
+
+@given(instance=shape_CommonLayout_strategy)
+def test_shape_commonlayout_ycor_setter(instance):
+    original = instance.ycor
+    instance.ycor = original
+    assert instance.ycor == original
+
+@given(instance=shape_CompartmentPolygon_strategy)
 @settings(max_examples=50)
-def test_shape::compartmentroundedrectangle_instantiation(instance):
-    assert isinstance(instance, shape::CompartmentRoundedRectangle)
+def test_shape_compartmentpolygon_instantiation(instance):
+    assert isinstance(instance, shape_CompartmentPolygon)
+
+@given(instance=shape_CompartmentRoundedRectangle_strategy)
+@settings(max_examples=50)
+def test_shape_compartmentroundedrectangle_instantiation(instance):
+    assert isinstance(instance, shape_CompartmentRoundedRectangle)
 
 @given(instance=CompartmentShape_strategy)
 @settings(max_examples=50)
 def test_compartmentshape_instantiation(instance):
     assert isinstance(instance, CompartmentShape)
 
-@given(instance=shape::CompartmentEllipse_strategy)
+@given(instance=shape_CompartmentEllipse_strategy)
 @settings(max_examples=50)
-def test_shape::compartmentellipse_instantiation(instance):
-    assert isinstance(instance, shape::CompartmentEllipse)
+def test_shape_compartmentellipse_instantiation(instance):
+    assert isinstance(instance, shape_CompartmentEllipse)
 
-@given(instance=shape::CompartmentRectangle_strategy)
+@given(instance=shape_CompartmentRectangle_strategy)
 @settings(max_examples=50)
-def test_shape::compartmentrectangle_instantiation(instance):
-    assert isinstance(instance, shape::CompartmentRectangle)
+def test_shape_compartmentrectangle_instantiation(instance):
+    assert isinstance(instance, shape_CompartmentRectangle)
 
-@given(instance=shape::CompartmentShape_strategy)
+@given(instance=shape_CompartmentShape_strategy)
 @settings(max_examples=50)
-def test_shape::compartmentshape_instantiation(instance):
-    assert isinstance(instance, shape::CompartmentShape)
+def test_shape_compartmentshape_instantiation(instance):
+    assert isinstance(instance, shape_CompartmentShape)
 
-@given(instance=shape::Compartment_strategy)
+@given(instance=shape_Compartment_strategy)
 @settings(max_examples=50)
-def test_shape::compartment_instantiation(instance):
-    assert isinstance(instance, shape::Compartment)
-
-@given(instance=shape::Compartment_strategy)
-def test_shape::compartment_compartmentLayout_type(instance):
-    assert isinstance(instance.compartmentLayout, str)
+def test_shape_compartment_instantiation(instance):
+    assert isinstance(instance, shape_Compartment)
 
 
-@given(instance=shape::Compartment_strategy)
-def test_shape::compartment_compartmentLayout_setter(instance):
+
+@given(instance=shape_Compartment_strategy)
+def test_shape_compartment_compartmentLayout_setter(instance):
     original = instance.compartmentLayout
     instance.compartmentLayout = original
     assert instance.compartmentLayout == original
 
-@given(instance=shape::CompartmentInfo_strategy)
+@given(instance=shape_CompartmentInfo_strategy)
 @settings(max_examples=50)
-def test_shape::compartmentinfo_instantiation(instance):
-    assert isinstance(instance, shape::CompartmentInfo)
-
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_compartmentLayout_type(instance):
-    assert isinstance(instance.compartmentLayout, str)
+def test_shape_compartmentinfo_instantiation(instance):
+    assert isinstance(instance, shape_CompartmentInfo)
 
 
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_compartmentLayout_setter(instance):
-    original = instance.compartmentLayout
-    instance.compartmentLayout = original
-    assert instance.compartmentLayout == original
 
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_margin_type(instance):
-    assert isinstance(instance.margin, int)
-
-
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_margin_setter(instance):
-    original = instance.margin
-    instance.margin = original
-    assert instance.margin == original
-
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_stretchV_type(instance):
-    assert isinstance(instance.stretchV, str)
-
-
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_stretchV_setter(instance):
-    original = instance.stretchV
-    instance.stretchV = original
-    assert instance.stretchV == original
-
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_stretchH_type(instance):
-    assert isinstance(instance.stretchH, str)
-
-
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_stretchH_setter(instance):
+@given(instance=shape_CompartmentInfo_strategy)
+def test_shape_compartmentinfo_stretchH_setter(instance):
     original = instance.stretchH
     instance.stretchH = original
     assert instance.stretchH == original
 
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_spacing_type(instance):
-    assert isinstance(instance.spacing, int)
 
 
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_spacing_setter(instance):
+@given(instance=shape_CompartmentInfo_strategy)
+def test_shape_compartmentinfo_spacing_setter(instance):
     original = instance.spacing
     instance.spacing = original
     assert instance.spacing == original
 
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_invisible_type(instance):
-    assert isinstance(instance.invisible, bool)
 
 
-@given(instance=shape::CompartmentInfo_strategy)
-def test_shape::compartmentinfo_invisible_setter(instance):
+@given(instance=shape_CompartmentInfo_strategy)
+def test_shape_compartmentinfo_margin_setter(instance):
+    original = instance.margin
+    instance.margin = original
+    assert instance.margin == original
+
+
+
+@given(instance=shape_CompartmentInfo_strategy)
+def test_shape_compartmentinfo_compartmentLayout_setter(instance):
+    original = instance.compartmentLayout
+    instance.compartmentLayout = original
+    assert instance.compartmentLayout == original
+
+
+
+@given(instance=shape_CompartmentInfo_strategy)
+def test_shape_compartmentinfo_invisible_setter(instance):
     original = instance.invisible
     instance.invisible = original
     assert instance.invisible == original
+
+
+
+@given(instance=shape_CompartmentInfo_strategy)
+def test_shape_compartmentinfo_stretchV_setter(instance):
+    original = instance.stretchV
+    instance.stretchV = original
+    assert instance.stretchV == original
 
 @given(instance=Shape_strategy)
 @settings(max_examples=50)
 def test_shape_instantiation(instance):
     assert isinstance(instance, Shape)
 
-@given(instance=shape::Polyline_strategy)
+@given(instance=shape_Rectangle_strategy)
 @settings(max_examples=50)
-def test_shape::polyline_instantiation(instance):
-    assert isinstance(instance, shape::Polyline)
+def test_shape_rectangle_instantiation(instance):
+    assert isinstance(instance, shape_Rectangle)
 
-@given(instance=shape::Polygon_strategy)
+@given(instance=shape_Polyline_strategy)
 @settings(max_examples=50)
-def test_shape::polygon_instantiation(instance):
-    assert isinstance(instance, shape::Polygon)
+def test_shape_polyline_instantiation(instance):
+    assert isinstance(instance, shape_Polyline)
 
-@given(instance=shape::RoundedRectangle_strategy)
+@given(instance=shape_RoundedRectangle_strategy)
 @settings(max_examples=50)
-def test_shape::roundedrectangle_instantiation(instance):
-    assert isinstance(instance, shape::RoundedRectangle)
+def test_shape_roundedrectangle_instantiation(instance):
+    assert isinstance(instance, shape_RoundedRectangle)
 
-@given(instance=shape::Text_strategy)
+@given(instance=shape_Polygon_strategy)
 @settings(max_examples=50)
-def test_shape::text_instantiation(instance):
-    assert isinstance(instance, shape::Text)
+def test_shape_polygon_instantiation(instance):
+    assert isinstance(instance, shape_Polygon)
 
-@given(instance=shape::Text_strategy)
-def test_shape::text_texttype_type(instance):
-    assert isinstance(instance.texttype, str)
+@given(instance=shape_Text_strategy)
+@settings(max_examples=50)
+def test_shape_text_instantiation(instance):
+    assert isinstance(instance, shape_Text)
 
 
-@given(instance=shape::Text_strategy)
-def test_shape::text_texttype_setter(instance):
+
+@given(instance=shape_Text_strategy)
+def test_shape_text_texttype_setter(instance):
     original = instance.texttype
     instance.texttype = original
     assert instance.texttype == original
 
-@given(instance=shape::Rectangle_strategy)
+@given(instance=shape_Ellipse_strategy)
 @settings(max_examples=50)
-def test_shape::rectangle_instantiation(instance):
-    assert isinstance(instance, shape::Rectangle)
+def test_shape_ellipse_instantiation(instance):
+    assert isinstance(instance, shape_Ellipse)
 
-@given(instance=shape::Ellipse_strategy)
+@given(instance=shape_Line_strategy)
 @settings(max_examples=50)
-def test_shape::ellipse_instantiation(instance):
-    assert isinstance(instance, shape::Ellipse)
+def test_shape_line_instantiation(instance):
+    assert isinstance(instance, shape_Line)
 
-@given(instance=shape::Line_strategy)
+@given(instance=shape_TextLayout_strategy)
 @settings(max_examples=50)
-def test_shape::line_instantiation(instance):
-    assert isinstance(instance, shape::Line)
-
-@given(instance=shape::TextLayout_strategy)
-@settings(max_examples=50)
-def test_shape::textlayout_instantiation(instance):
-    assert isinstance(instance, shape::TextLayout)
-
-@given(instance=shape::TextLayout_strategy)
-def test_shape::textlayout_hAlign_type(instance):
-    assert isinstance(instance.hAlign, str)
+def test_shape_textlayout_instantiation(instance):
+    assert isinstance(instance, shape_TextLayout)
 
 
-@given(instance=shape::TextLayout_strategy)
-def test_shape::textlayout_hAlign_setter(instance):
+
+@given(instance=shape_TextLayout_strategy)
+def test_shape_textlayout_hAlign_setter(instance):
     original = instance.hAlign
     instance.hAlign = original
     assert instance.hAlign == original
 
-@given(instance=shape::TextLayout_strategy)
-def test_shape::textlayout_vAlign_type(instance):
-    assert isinstance(instance.vAlign, str)
 
 
-@given(instance=shape::TextLayout_strategy)
-def test_shape::textlayout_vAlign_setter(instance):
+@given(instance=shape_TextLayout_strategy)
+def test_shape_textlayout_vAlign_setter(instance):
     original = instance.vAlign
     instance.vAlign = original
     assert instance.vAlign == original
 
-@given(instance=shape::RoundedRectangleLayout_strategy)
+@given(instance=shape_RoundedRectangleLayout_strategy)
 @settings(max_examples=50)
-def test_shape::roundedrectanglelayout_instantiation(instance):
-    assert isinstance(instance, shape::RoundedRectangleLayout)
-
-@given(instance=shape::RoundedRectangleLayout_strategy)
-def test_shape::roundedrectanglelayout_curveHeight_type(instance):
-    assert isinstance(instance.curveHeight, int)
+def test_shape_roundedrectanglelayout_instantiation(instance):
+    assert isinstance(instance, shape_RoundedRectangleLayout)
 
 
-@given(instance=shape::RoundedRectangleLayout_strategy)
-def test_shape::roundedrectanglelayout_curveHeight_setter(instance):
-    original = instance.curveHeight
-    instance.curveHeight = original
-    assert instance.curveHeight == original
 
-@given(instance=shape::RoundedRectangleLayout_strategy)
-def test_shape::roundedrectanglelayout_curveWidth_type(instance):
-    assert isinstance(instance.curveWidth, int)
-
-
-@given(instance=shape::RoundedRectangleLayout_strategy)
-def test_shape::roundedrectanglelayout_curveWidth_setter(instance):
+@given(instance=shape_RoundedRectangleLayout_strategy)
+def test_shape_roundedrectanglelayout_curveWidth_setter(instance):
     original = instance.curveWidth
     instance.curveWidth = original
     assert instance.curveWidth == original
 
-@given(instance=shape::RectangleEllipseLayout_strategy)
-@settings(max_examples=50)
-def test_shape::rectangleellipselayout_instantiation(instance):
-    assert isinstance(instance, shape::RectangleEllipseLayout)
 
-@given(instance=shape::PolyLineLayout_strategy)
-@settings(max_examples=50)
-def test_shape::polylinelayout_instantiation(instance):
-    assert isinstance(instance, shape::PolyLineLayout)
 
-@given(instance=shape::LineLayout_strategy)
+@given(instance=shape_RoundedRectangleLayout_strategy)
+def test_shape_roundedrectanglelayout_curveHeight_setter(instance):
+    original = instance.curveHeight
+    instance.curveHeight = original
+    assert instance.curveHeight == original
+
+@given(instance=shape_RectangleEllipseLayout_strategy)
 @settings(max_examples=50)
-def test_shape::linelayout_instantiation(instance):
-    assert isinstance(instance, shape::LineLayout)
+def test_shape_rectangleellipselayout_instantiation(instance):
+    assert isinstance(instance, shape_RectangleEllipseLayout)
+
+@given(instance=shape_PolyLineLayout_strategy)
+@settings(max_examples=50)
+def test_shape_polylinelayout_instantiation(instance):
+    assert isinstance(instance, shape_PolyLineLayout)
+
+@given(instance=shape_LineLayout_strategy)
+@settings(max_examples=50)
+def test_shape_linelayout_instantiation(instance):
+    assert isinstance(instance, shape_LineLayout)
 
 @given(instance=ShapeConnection_strategy)
 @settings(max_examples=50)
 def test_shapeconnection_instantiation(instance):
     assert isinstance(instance, ShapeConnection)
 
-@given(instance=shape::CDRectangle_strategy)
+@given(instance=shape_CDRectangle_strategy)
 @settings(max_examples=50)
-def test_shape::cdrectangle_instantiation(instance):
-    assert isinstance(instance, shape::CDRectangle)
+def test_shape_cdrectangle_instantiation(instance):
+    assert isinstance(instance, shape_CDRectangle)
 
-@given(instance=shape::CDPolyline_strategy)
+@given(instance=shape_CDPolygon_strategy)
 @settings(max_examples=50)
-def test_shape::cdpolyline_instantiation(instance):
-    assert isinstance(instance, shape::CDPolyline)
+def test_shape_cdpolygon_instantiation(instance):
+    assert isinstance(instance, shape_CDPolygon)
 
-@given(instance=shape::CDText_strategy)
+@given(instance=shape_CDEllipse_strategy)
 @settings(max_examples=50)
-def test_shape::cdtext_instantiation(instance):
-    assert isinstance(instance, shape::CDText)
+def test_shape_cdellipse_instantiation(instance):
+    assert isinstance(instance, shape_CDEllipse)
 
-@given(instance=shape::CDText_strategy)
-def test_shape::cdtext_texttype_type(instance):
-    assert isinstance(instance.texttype, str)
+@given(instance=shape_CDRoundedRectangle_strategy)
+@settings(max_examples=50)
+def test_shape_cdroundedrectangle_instantiation(instance):
+    assert isinstance(instance, shape_CDRoundedRectangle)
+
+@given(instance=shape_CDPolyline_strategy)
+@settings(max_examples=50)
+def test_shape_cdpolyline_instantiation(instance):
+    assert isinstance(instance, shape_CDPolyline)
+
+@given(instance=shape_CDText_strategy)
+@settings(max_examples=50)
+def test_shape_cdtext_instantiation(instance):
+    assert isinstance(instance, shape_CDText)
 
 
-@given(instance=shape::CDText_strategy)
-def test_shape::cdtext_texttype_setter(instance):
+
+@given(instance=shape_CDText_strategy)
+def test_shape_cdtext_texttype_setter(instance):
     original = instance.texttype
     instance.texttype = original
     assert instance.texttype == original
 
-@given(instance=shape::CDPolygon_strategy)
+@given(instance=shape_CDLine_strategy)
 @settings(max_examples=50)
-def test_shape::cdpolygon_instantiation(instance):
-    assert isinstance(instance, shape::CDPolygon)
-
-@given(instance=shape::CDEllipse_strategy)
-@settings(max_examples=50)
-def test_shape::cdellipse_instantiation(instance):
-    assert isinstance(instance, shape::CDEllipse)
-
-@given(instance=shape::CDRoundedRectangle_strategy)
-@settings(max_examples=50)
-def test_shape::cdroundedrectangle_instantiation(instance):
-    assert isinstance(instance, shape::CDRoundedRectangle)
-
-@given(instance=shape::CDLine_strategy)
-@settings(max_examples=50)
-def test_shape::cdline_instantiation(instance):
-    assert isinstance(instance, shape::CDLine)
+def test_shape_cdline_instantiation(instance):
+    assert isinstance(instance, shape_CDLine)
 
 @given(instance=AnchorPositionPos_strategy)
 @settings(max_examples=50)
 def test_anchorpositionpos_instantiation(instance):
     assert isinstance(instance, AnchorPositionPos)
 
-@given(instance=shape::AnchorFixPointPosition_strategy)
+@given(instance=shape_AnchorFixPointPosition_strategy)
 @settings(max_examples=50)
-def test_shape::anchorfixpointposition_instantiation(instance):
-    assert isinstance(instance, shape::AnchorFixPointPosition)
-
-@given(instance=shape::AnchorFixPointPosition_strategy)
-def test_shape::anchorfixpointposition_ycor_type(instance):
-    assert isinstance(instance.ycor, int)
+def test_shape_anchorfixpointposition_instantiation(instance):
+    assert isinstance(instance, shape_AnchorFixPointPosition)
 
 
-@given(instance=shape::AnchorFixPointPosition_strategy)
-def test_shape::anchorfixpointposition_ycor_setter(instance):
+
+@given(instance=shape_AnchorFixPointPosition_strategy)
+def test_shape_anchorfixpointposition_ycor_setter(instance):
     original = instance.ycor
     instance.ycor = original
     assert instance.ycor == original
 
-@given(instance=shape::AnchorFixPointPosition_strategy)
-def test_shape::anchorfixpointposition_xcor_type(instance):
-    assert isinstance(instance.xcor, int)
 
 
-@given(instance=shape::AnchorFixPointPosition_strategy)
-def test_shape::anchorfixpointposition_xcor_setter(instance):
+@given(instance=shape_AnchorFixPointPosition_strategy)
+def test_shape_anchorfixpointposition_xcor_setter(instance):
     original = instance.xcor
     instance.xcor = original
     assert instance.xcor == original
 
-@given(instance=shape::AnchorRelativePosition_strategy)
+@given(instance=shape_AnchorRelativePosition_strategy)
 @settings(max_examples=50)
-def test_shape::anchorrelativeposition_instantiation(instance):
-    assert isinstance(instance, shape::AnchorRelativePosition)
-
-@given(instance=shape::AnchorRelativePosition_strategy)
-def test_shape::anchorrelativeposition_xoffset_type(instance):
-    assert isinstance(instance.xoffset, str)
+def test_shape_anchorrelativeposition_instantiation(instance):
+    assert isinstance(instance, shape_AnchorRelativePosition)
 
 
-@given(instance=shape::AnchorRelativePosition_strategy)
-def test_shape::anchorrelativeposition_xoffset_setter(instance):
+
+@given(instance=shape_AnchorRelativePosition_strategy)
+def test_shape_anchorrelativeposition_xoffset_setter(instance):
     original = instance.xoffset
     instance.xoffset = original
     assert instance.xoffset == original
 
-@given(instance=shape::AnchorRelativePosition_strategy)
-def test_shape::anchorrelativeposition_yoffset_type(instance):
-    assert isinstance(instance.yoffset, str)
 
 
-@given(instance=shape::AnchorRelativePosition_strategy)
-def test_shape::anchorrelativeposition_yoffset_setter(instance):
+@given(instance=shape_AnchorRelativePosition_strategy)
+def test_shape_anchorrelativeposition_yoffset_setter(instance):
     original = instance.yoffset
     instance.yoffset = original
     assert instance.yoffset == original
 
-@given(instance=shape::AnchorPositionPos_strategy)
+@given(instance=shape_AnchorPositionPos_strategy)
 @settings(max_examples=50)
-def test_shape::anchorpositionpos_instantiation(instance):
-    assert isinstance(instance, shape::AnchorPositionPos)
+def test_shape_anchorpositionpos_instantiation(instance):
+    assert isinstance(instance, shape_AnchorPositionPos)
 
-@given(instance=shape::AnchorPosition_strategy)
+@given(instance=shape_AnchorPosition_strategy)
 @settings(max_examples=50)
-def test_shape::anchorposition_instantiation(instance):
-    assert isinstance(instance, shape::AnchorPosition)
+def test_shape_anchorposition_instantiation(instance):
+    assert isinstance(instance, shape_AnchorPosition)
 
-@given(instance=shape::TextBody_strategy)
+@given(instance=shape_TextBody_strategy)
 @settings(max_examples=50)
-def test_shape::textbody_instantiation(instance):
-    assert isinstance(instance, shape::TextBody)
-
-@given(instance=shape::TextBody_strategy)
-def test_shape::textbody_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_shape_textbody_instantiation(instance):
+    assert isinstance(instance, shape_TextBody)
 
 
-@given(instance=shape::TextBody_strategy)
-def test_shape::textbody_value_setter(instance):
+
+@given(instance=shape_TextBody_strategy)
+def test_shape_textbody_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2095,286 +2017,229 @@ def test_shape::textbody_value_setter(instance):
 def test_anchortype_instantiation(instance):
     assert isinstance(instance, AnchorType)
 
-@given(instance=shape::AnchorManual_strategy)
+@given(instance=shape_AnchorManual_strategy)
 @settings(max_examples=50)
-def test_shape::anchormanual_instantiation(instance):
-    assert isinstance(instance, shape::AnchorManual)
+def test_shape_anchormanual_instantiation(instance):
+    assert isinstance(instance, shape_AnchorManual)
 
-@given(instance=shape::AnchorPredefinied_strategy)
+@given(instance=shape_AnchorPredefinied_strategy)
 @settings(max_examples=50)
-def test_shape::anchorpredefinied_instantiation(instance):
-    assert isinstance(instance, shape::AnchorPredefinied)
-
-@given(instance=shape::AnchorPredefinied_strategy)
-def test_shape::anchorpredefinied_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_shape_anchorpredefinied_instantiation(instance):
+    assert isinstance(instance, shape_AnchorPredefinied)
 
 
-@given(instance=shape::AnchorPredefinied_strategy)
-def test_shape::anchorpredefinied_value_setter(instance):
+
+@given(instance=shape_AnchorPredefinied_strategy)
+def test_shape_anchorpredefinied_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=shape::AnchorType_strategy)
+@given(instance=shape_AnchorType_strategy)
 @settings(max_examples=50)
-def test_shape::anchortype_instantiation(instance):
-    assert isinstance(instance, shape::AnchorType)
+def test_shape_anchortype_instantiation(instance):
+    assert isinstance(instance, shape_AnchorType)
 
-@given(instance=shape::ShapeConnection_strategy)
+@given(instance=shape_ShapeConnection_strategy)
 @settings(max_examples=50)
-def test_shape::shapeconnection_instantiation(instance):
-    assert isinstance(instance, shape::ShapeConnection)
-
-@given(instance=shape::ShapeConnection_strategy)
-def test_shape::shapeconnection_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_shape_shapeconnection_instantiation(instance):
+    assert isinstance(instance, shape_ShapeConnection)
 
 
-@given(instance=shape::ShapeConnection_strategy)
-def test_shape::shapeconnection_style_setter(instance):
+
+@given(instance=shape_ShapeConnection_strategy)
+def test_shape_shapeconnection_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=shape::Anchor_strategy)
+@given(instance=shape_Anchor_strategy)
 @settings(max_examples=50)
-def test_shape::anchor_instantiation(instance):
-    assert isinstance(instance, shape::Anchor)
+def test_shape_anchor_instantiation(instance):
+    assert isinstance(instance, shape_Anchor)
 
-@given(instance=shape::Description_strategy)
+@given(instance=shape_Description_strategy)
 @settings(max_examples=50)
-def test_shape::description_instantiation(instance):
-    assert isinstance(instance, shape::Description)
-
-@given(instance=shape::Description_strategy)
-def test_shape::description_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_shape_description_instantiation(instance):
+    assert isinstance(instance, shape_Description)
 
 
-@given(instance=shape::Description_strategy)
-def test_shape::description_style_setter(instance):
+
+@given(instance=shape_Description_strategy)
+def test_shape_description_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=shape::Description_strategy)
-def test_shape::description_vAlign_type(instance):
-    assert isinstance(instance.vAlign, str)
 
 
-@given(instance=shape::Description_strategy)
-def test_shape::description_vAlign_setter(instance):
-    original = instance.vAlign
-    instance.vAlign = original
-    assert instance.vAlign == original
-
-@given(instance=shape::Description_strategy)
-def test_shape::description_hAlign_type(instance):
-    assert isinstance(instance.hAlign, str)
-
-
-@given(instance=shape::Description_strategy)
-def test_shape::description_hAlign_setter(instance):
+@given(instance=shape_Description_strategy)
+def test_shape_description_hAlign_setter(instance):
     original = instance.hAlign
     instance.hAlign = original
     assert instance.hAlign == original
 
-@given(instance=shape::Shape_strategy)
+
+
+@given(instance=shape_Description_strategy)
+def test_shape_description_vAlign_setter(instance):
+    original = instance.vAlign
+    instance.vAlign = original
+    assert instance.vAlign == original
+
+@given(instance=shape_Shape_strategy)
 @settings(max_examples=50)
-def test_shape::shape_instantiation(instance):
-    assert isinstance(instance, shape::Shape)
-
-@given(instance=shape::Shape_strategy)
-def test_shape::shape_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_shape_shape_instantiation(instance):
+    assert isinstance(instance, shape_Shape)
 
 
-@given(instance=shape::Shape_strategy)
-def test_shape::shape_style_setter(instance):
+
+@given(instance=shape_Shape_strategy)
+def test_shape_shape_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=shape::ShapeLayout_strategy)
+@given(instance=shape_ShapeLayout_strategy)
 @settings(max_examples=50)
-def test_shape::shapelayout_instantiation(instance):
-    assert isinstance(instance, shape::ShapeLayout)
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_stretchV_type(instance):
-    assert isinstance(instance.stretchV, str)
+def test_shape_shapelayout_instantiation(instance):
+    assert isinstance(instance, shape_ShapeLayout)
 
 
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_stretchV_setter(instance):
-    original = instance.stretchV
-    instance.stretchV = original
-    assert instance.stretchV == original
 
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_maxwidth_type(instance):
-    assert isinstance(instance.maxwidth, int)
-
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_maxwidth_setter(instance):
-    original = instance.maxwidth
-    instance.maxwidth = original
-    assert instance.maxwidth == original
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_proportional_type(instance):
-    assert isinstance(instance.proportional, str)
-
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_proportional_setter(instance):
-    original = instance.proportional
-    instance.proportional = original
-    assert instance.proportional == original
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_minwidth_type(instance):
-    assert isinstance(instance.minwidth, int)
-
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_minwidth_setter(instance):
-    original = instance.minwidth
-    instance.minwidth = original
-    assert instance.minwidth == original
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_stretchH_type(instance):
-    assert isinstance(instance.stretchH, str)
-
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_stretchH_setter(instance):
-    original = instance.stretchH
-    instance.stretchH = original
-    assert instance.stretchH == original
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_minheight_type(instance):
-    assert isinstance(instance.minheight, int)
-
-
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_minheight_setter(instance):
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_minheight_setter(instance):
     original = instance.minheight
     instance.minheight = original
     assert instance.minheight == original
 
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_maxheight_type(instance):
-    assert isinstance(instance.maxheight, int)
 
 
-@given(instance=shape::ShapeLayout_strategy)
-def test_shape::shapelayout_maxheight_setter(instance):
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_stretchV_setter(instance):
+    original = instance.stretchV
+    instance.stretchV = original
+    assert instance.stretchV == original
+
+
+
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_proportional_setter(instance):
+    original = instance.proportional
+    instance.proportional = original
+    assert instance.proportional == original
+
+
+
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_maxheight_setter(instance):
     original = instance.maxheight
     instance.maxheight = original
     assert instance.maxheight == original
 
-@given(instance=shape::PlacingDefinition_strategy)
+
+
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_minwidth_setter(instance):
+    original = instance.minwidth
+    instance.minwidth = original
+    assert instance.minwidth == original
+
+
+
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_stretchH_setter(instance):
+    original = instance.stretchH
+    instance.stretchH = original
+    assert instance.stretchH == original
+
+
+
+@given(instance=shape_ShapeLayout_strategy)
+def test_shape_shapelayout_maxwidth_setter(instance):
+    original = instance.maxwidth
+    instance.maxwidth = original
+    assert instance.maxwidth == original
+
+@given(instance=shape_PlacingDefinition_strategy)
 @settings(max_examples=50)
-def test_shape::placingdefinition_instantiation(instance):
-    assert isinstance(instance, shape::PlacingDefinition)
-
-@given(instance=shape::PlacingDefinition_strategy)
-def test_shape::placingdefinition_offset_type(instance):
-    assert isinstance(instance.offset, str)
+def test_shape_placingdefinition_instantiation(instance):
+    assert isinstance(instance, shape_PlacingDefinition)
 
 
-@given(instance=shape::PlacingDefinition_strategy)
-def test_shape::placingdefinition_offset_setter(instance):
-    original = instance.offset
-    instance.offset = original
-    assert instance.offset == original
 
-@given(instance=shape::PlacingDefinition_strategy)
-def test_shape::placingdefinition_distance_type(instance):
-    assert isinstance(instance.distance, int)
-
-
-@given(instance=shape::PlacingDefinition_strategy)
-def test_shape::placingdefinition_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
-
-@given(instance=shape::PlacingDefinition_strategy)
-def test_shape::placingdefinition_angle_type(instance):
-    assert isinstance(instance.angle, int)
-
-
-@given(instance=shape::PlacingDefinition_strategy)
-def test_shape::placingdefinition_angle_setter(instance):
+@given(instance=shape_PlacingDefinition_strategy)
+def test_shape_placingdefinition_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=shape::ShapestyleLayout_strategy)
+
+
+@given(instance=shape_PlacingDefinition_strategy)
+def test_shape_placingdefinition_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+
+
+@given(instance=shape_PlacingDefinition_strategy)
+def test_shape_placingdefinition_offset_setter(instance):
+    original = instance.offset
+    instance.offset = original
+    assert instance.offset == original
+
+@given(instance=shape_ShapestyleLayout_strategy)
 @settings(max_examples=50)
-def test_shape::shapestylelayout_instantiation(instance):
-    assert isinstance(instance, shape::ShapestyleLayout)
+def test_shape_shapestylelayout_instantiation(instance):
+    assert isinstance(instance, shape_ShapestyleLayout)
 
 @given(instance=ShapeContainerElement_strategy)
 @settings(max_examples=50)
 def test_shapecontainerelement_instantiation(instance):
     assert isinstance(instance, ShapeContainerElement)
 
-@given(instance=shape::ShapeDefinition_strategy)
+@given(instance=shape_ShapeDefinition_strategy)
 @settings(max_examples=50)
-def test_shape::shapedefinition_instantiation(instance):
-    assert isinstance(instance, shape::ShapeDefinition)
+def test_shape_shapedefinition_instantiation(instance):
+    assert isinstance(instance, shape_ShapeDefinition)
 
-@given(instance=shape::ConnectionDefinition_strategy)
+@given(instance=shape_ConnectionDefinition_strategy)
 @settings(max_examples=50)
-def test_shape::connectiondefinition_instantiation(instance):
-    assert isinstance(instance, shape::ConnectionDefinition)
-
-@given(instance=shape::ConnectionDefinition_strategy)
-def test_shape::connectiondefinition_connectionStyle_type(instance):
-    assert isinstance(instance.connectionStyle, str)
+def test_shape_connectiondefinition_instantiation(instance):
+    assert isinstance(instance, shape_ConnectionDefinition)
 
 
-@given(instance=shape::ConnectionDefinition_strategy)
-def test_shape::connectiondefinition_connectionStyle_setter(instance):
+
+@given(instance=shape_ConnectionDefinition_strategy)
+def test_shape_connectiondefinition_connectionStyle_setter(instance):
     original = instance.connectionStyle
     instance.connectionStyle = original
     assert instance.connectionStyle == original
 
-@given(instance=shape::ShapeContainerElement_strategy)
+@given(instance=shape_ShapeContainerElement_strategy)
 @settings(max_examples=50)
-def test_shape::shapecontainerelement_instantiation(instance):
-    assert isinstance(instance, shape::ShapeContainerElement)
-
-@given(instance=shape::ShapeContainerElement_strategy)
-def test_shape::shapecontainerelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_shape_shapecontainerelement_instantiation(instance):
+    assert isinstance(instance, shape_ShapeContainerElement)
 
 
-@given(instance=shape::ShapeContainerElement_strategy)
-def test_shape::shapecontainerelement_name_setter(instance):
+
+@given(instance=shape_ShapeContainerElement_strategy)
+def test_shape_shapecontainerelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=shape::ShapeContainerElement_strategy)
-def test_shape::shapecontainerelement_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=shape::ShapeContainerElement_strategy)
-def test_shape::shapecontainerelement_style_setter(instance):
+@given(instance=shape_ShapeContainerElement_strategy)
+def test_shape_shapecontainerelement_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=shape::ShapeContainer_strategy)
+@given(instance=shape_ShapeContainer_strategy)
 @settings(max_examples=50)
-def test_shape::shapecontainer_instantiation(instance):
-    assert isinstance(instance, shape::ShapeContainer)
+def test_shape_shapecontainer_instantiation(instance):
+    assert isinstance(instance, shape_ShapeContainer)

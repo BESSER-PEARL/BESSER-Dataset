@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Manufacturer_Actor,
@@ -213,19 +213,10 @@ def test_repair_constructor_exists():
 def test_repair_constructor_args():
     sig = inspect.signature(Repair.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
     assert "customer" in params, "Missing parameter 'customer'"
     assert "part" in params, "Missing parameter 'part'"
+    assert "date" in params, "Missing parameter 'date'"
     assert "car" in params, "Missing parameter 'car'"
-
-def test_repair_has_date():
-    assert hasattr(Repair, "date")
-    descriptor = None
-    for klass in Repair.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_repair_has_customer():
     assert hasattr(Repair, "customer")
@@ -242,6 +233,15 @@ def test_repair_has_part():
     for klass in Repair.__mro__:
         if "part" in klass.__dict__:
             descriptor = klass.__dict__["part"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_repair_has_date():
+    assert hasattr(Repair, "date")
+    descriptor = None
+    for klass in Repair.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -267,18 +267,9 @@ def test_repairpart_constructor_exists():
 def test_repairpart_constructor_args():
     sig = inspect.signature(RepairPart.__init__)
     params = list(sig.parameters.keys())
-    assert "stock" in params, "Missing parameter 'stock'"
     assert "name" in params, "Missing parameter 'name'"
     assert "cost" in params, "Missing parameter 'cost'"
-
-def test_repairpart_has_stock():
-    assert hasattr(RepairPart, "stock")
-    descriptor = None
-    for klass in RepairPart.__mro__:
-        if "stock" in klass.__dict__:
-            descriptor = klass.__dict__["stock"]
-            break
-    assert isinstance(descriptor, property)
+    assert "stock" in params, "Missing parameter 'stock'"
 
 def test_repairpart_has_name():
     assert hasattr(RepairPart, "name")
@@ -298,6 +289,15 @@ def test_repairpart_has_cost():
             break
     assert isinstance(descriptor, property)
 
+def test_repairpart_has_stock():
+    assert hasattr(RepairPart, "stock")
+    descriptor = None
+    for klass in RepairPart.__mro__:
+        if "stock" in klass.__dict__:
+            descriptor = klass.__dict__["stock"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_sale_is_not_abstract():
@@ -312,8 +312,8 @@ def test_sale_constructor_args():
     sig = inspect.signature(Sale.__init__)
     params = list(sig.parameters.keys())
     assert "billable" in params, "Missing parameter 'billable'"
-    assert "date" in params, "Missing parameter 'date'"
     assert "car" in params, "Missing parameter 'car'"
+    assert "date" in params, "Missing parameter 'date'"
     assert "customer" in params, "Missing parameter 'customer'"
 
 def test_sale_has_billable():
@@ -325,21 +325,21 @@ def test_sale_has_billable():
             break
     assert isinstance(descriptor, property)
 
-def test_sale_has_date():
-    assert hasattr(Sale, "date")
-    descriptor = None
-    for klass in Sale.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_sale_has_car():
     assert hasattr(Sale, "car")
     descriptor = None
     for klass in Sale.__mro__:
         if "car" in klass.__dict__:
             descriptor = klass.__dict__["car"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sale_has_date():
+    assert hasattr(Sale, "date")
+    descriptor = None
+    for klass in Sale.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -365,17 +365,17 @@ def test_car_constructor_exists():
 def test_car_constructor_args():
     sig = inspect.signature(Car.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
+    assert "stock" in params, "Missing parameter 'stock'"
     assert "manufacturer" in params, "Missing parameter 'manufacturer'"
     assert "cost" in params, "Missing parameter 'cost'"
-    assert "stock" in params, "Missing parameter 'stock'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_car_has_name():
-    assert hasattr(Car, "name")
+def test_car_has_stock():
+    assert hasattr(Car, "stock")
     descriptor = None
     for klass in Car.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+        if "stock" in klass.__dict__:
+            descriptor = klass.__dict__["stock"]
             break
     assert isinstance(descriptor, property)
 
@@ -397,12 +397,12 @@ def test_car_has_cost():
             break
     assert isinstance(descriptor, property)
 
-def test_car_has_stock():
-    assert hasattr(Car, "stock")
+def test_car_has_name():
+    assert hasattr(Car, "name")
     descriptor = None
     for klass in Car.__mro__:
-        if "stock" in klass.__dict__:
-            descriptor = klass.__dict__["stock"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -433,17 +433,8 @@ def test_activerecord_constructor_exists():
 def test_activerecord_constructor_args():
     sig = inspect.signature(ActiveRecord.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "connection" in params, "Missing parameter 'connection'"
-
-def test_activerecord_has_id():
-    assert hasattr(ActiveRecord, "id")
-    descriptor = None
-    for klass in ActiveRecord.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_activerecord_has_connection():
     assert hasattr(ActiveRecord, "connection")
@@ -451,6 +442,15 @@ def test_activerecord_has_connection():
     for klass in ActiveRecord.__mro__:
         if "connection" in klass.__dict__:
             descriptor = klass.__dict__["connection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activerecord_has_id():
+    assert hasattr(ActiveRecord, "id")
+    descriptor = None
+    for klass in ActiveRecord.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -467,18 +467,9 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "address" in params, "Missing parameter 'address'"
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_customer_has_address():
-    assert hasattr(Customer, "address")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
+    assert "address" in params, "Missing parameter 'address'"
 
 def test_customer_has_type():
     assert hasattr(Customer, "type")
@@ -495,6 +486,15 @@ def test_customer_has_name():
     for klass in Customer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_address():
+    assert hasattr(Customer, "address")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -561,63 +561,63 @@ Customer_Actor_strategy = st.builds(
 )
 Repair_strategy = st.builds(
     Repair,
-    date=
-        st.dates(),
     customer=
         st.none(),
     part=
         st.none(),
+    date=
+        st.dates(),
     car=
         st.none()
 )
 RepairPart_strategy = st.builds(
     RepairPart,
-    stock=
-        st.integers(),
     name=
-        safe_text,
-    cost=
-        safe_text
-)
-Sale_strategy = st.builds(
-    Sale,
-    billable=
-        safe_text,
-    date=
-        st.dates(),
-    car=
-        st.none(),
-    customer=
-        st.none()
-)
-Car_strategy = st.builds(
-    Car,
-    name=
-        safe_text,
-    manufacturer=
         safe_text,
     cost=
         safe_text,
     stock=
         st.integers()
 )
+Sale_strategy = st.builds(
+    Sale,
+    billable=
+        safe_text,
+    car=
+        st.none(),
+    date=
+        st.dates(),
+    customer=
+        st.none()
+)
+Car_strategy = st.builds(
+    Car,
+    stock=
+        st.integers(),
+    manufacturer=
+        safe_text,
+    cost=
+        safe_text,
+    name=
+        safe_text
+)
 ConnectionInterface_Interface_strategy = st.builds(
     ConnectionInterface_Interface,
 )
 ActiveRecord_strategy = st.builds(
     ActiveRecord,
-    id=
-        st.integers(),
     connection=
-        st.none()
+        st.none(),
+    id=
+        st.integers()
 )
 Customer_strategy = st.builds(
     Customer,
-    address=
-        safe_text,
     type=
         st.none(),
     name=
+        safe_text,
+    address=
         safe_text
 )
 
@@ -686,20 +686,6 @@ def test_customer_actor_instantiation(instance):
 def test_repair_instantiation(instance):
     assert isinstance(instance, Repair)
 
-@given(instance=Repair_strategy)
-def test_repair_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=Repair_strategy)
-def test_repair_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Repair_strategy)
-def test_repair_customer_type(instance):
-    assert isinstance(instance.customer, customer)
 
 
 @given(instance=Repair_strategy)
@@ -708,9 +694,6 @@ def test_repair_customer_setter(instance):
     instance.customer = original
     assert instance.customer == original
 
-@given(instance=Repair_strategy)
-def test_repair_part_type(instance):
-    assert isinstance(instance.part, repairpart)
 
 
 @given(instance=Repair_strategy)
@@ -719,9 +702,14 @@ def test_repair_part_setter(instance):
     instance.part = original
     assert instance.part == original
 
+
+
 @given(instance=Repair_strategy)
-def test_repair_car_type(instance):
-    assert isinstance(instance.car, car)
+def test_repair_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
 
 
 @given(instance=Repair_strategy)
@@ -735,20 +723,6 @@ def test_repair_car_setter(instance):
 def test_repairpart_instantiation(instance):
     assert isinstance(instance, RepairPart)
 
-@given(instance=RepairPart_strategy)
-def test_repairpart_stock_type(instance):
-    assert isinstance(instance.stock, int)
-
-
-@given(instance=RepairPart_strategy)
-def test_repairpart_stock_setter(instance):
-    original = instance.stock
-    instance.stock = original
-    assert instance.stock == original
-
-@given(instance=RepairPart_strategy)
-def test_repairpart_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=RepairPart_strategy)
@@ -757,9 +731,6 @@ def test_repairpart_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=RepairPart_strategy)
-def test_repairpart_cost_type(instance):
-    assert isinstance(instance.cost, str)
 
 
 @given(instance=RepairPart_strategy)
@@ -768,14 +739,19 @@ def test_repairpart_cost_setter(instance):
     instance.cost = original
     assert instance.cost == original
 
+
+
+@given(instance=RepairPart_strategy)
+def test_repairpart_stock_setter(instance):
+    original = instance.stock
+    instance.stock = original
+    assert instance.stock == original
+
 @given(instance=Sale_strategy)
 @settings(max_examples=50)
 def test_sale_instantiation(instance):
     assert isinstance(instance, Sale)
 
-@given(instance=Sale_strategy)
-def test_sale_billable_type(instance):
-    assert isinstance(instance.billable, str)
 
 
 @given(instance=Sale_strategy)
@@ -784,20 +760,6 @@ def test_sale_billable_setter(instance):
     instance.billable = original
     assert instance.billable == original
 
-@given(instance=Sale_strategy)
-def test_sale_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=Sale_strategy)
-def test_sale_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Sale_strategy)
-def test_sale_car_type(instance):
-    assert isinstance(instance.car, car)
 
 
 @given(instance=Sale_strategy)
@@ -806,9 +768,14 @@ def test_sale_car_setter(instance):
     instance.car = original
     assert instance.car == original
 
+
+
 @given(instance=Sale_strategy)
-def test_sale_customer_type(instance):
-    assert isinstance(instance.customer, customer)
+def test_sale_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
 
 
 @given(instance=Sale_strategy)
@@ -822,20 +789,14 @@ def test_sale_customer_setter(instance):
 def test_car_instantiation(instance):
     assert isinstance(instance, Car)
 
-@given(instance=Car_strategy)
-def test_car_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Car_strategy)
-def test_car_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+def test_car_stock_setter(instance):
+    original = instance.stock
+    instance.stock = original
+    assert instance.stock == original
 
-@given(instance=Car_strategy)
-def test_car_manufacturer_type(instance):
-    assert isinstance(instance.manufacturer, str)
 
 
 @given(instance=Car_strategy)
@@ -844,9 +805,6 @@ def test_car_manufacturer_setter(instance):
     instance.manufacturer = original
     assert instance.manufacturer == original
 
-@given(instance=Car_strategy)
-def test_car_cost_type(instance):
-    assert isinstance(instance.cost, str)
 
 
 @given(instance=Car_strategy)
@@ -855,16 +813,13 @@ def test_car_cost_setter(instance):
     instance.cost = original
     assert instance.cost == original
 
-@given(instance=Car_strategy)
-def test_car_stock_type(instance):
-    assert isinstance(instance.stock, int)
 
 
 @given(instance=Car_strategy)
-def test_car_stock_setter(instance):
-    original = instance.stock
-    instance.stock = original
-    assert instance.stock == original
+def test_car_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=ConnectionInterface_Interface_strategy)
 @settings(max_examples=50)
@@ -876,20 +831,6 @@ def test_connectioninterface_interface_instantiation(instance):
 def test_activerecord_instantiation(instance):
     assert isinstance(instance, ActiveRecord)
 
-@given(instance=ActiveRecord_strategy)
-def test_activerecord_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=ActiveRecord_strategy)
-def test_activerecord_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=ActiveRecord_strategy)
-def test_activerecord_connection_type(instance):
-    assert isinstance(instance.connection, connectioninterface_interface)
 
 
 @given(instance=ActiveRecord_strategy)
@@ -898,25 +839,19 @@ def test_activerecord_connection_setter(instance):
     instance.connection = original
     assert instance.connection == original
 
+
+
+@given(instance=ActiveRecord_strategy)
+def test_activerecord_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Customer_strategy)
-def test_customer_type_type(instance):
-    assert isinstance(instance.type, customertype)
 
 
 @given(instance=Customer_strategy)
@@ -925,9 +860,6 @@ def test_customer_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=Customer_strategy)
-def test_customer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Customer_strategy)
@@ -935,3 +867,11 @@ def test_customer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original

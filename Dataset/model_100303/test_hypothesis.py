@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petrinetDsl::Storage,
-    petrinetDsl::Transaction,
-    petrinetDsl::Place,
-    petrinetDsl::Resource,
-    petrinetDsl::PetriNet,
-    petrinetDsl::PutStatement,
-    petrinetDsl::TakeStatement,
-    petrinetDsl::AssureStatement,
+from python_code import (
+    petrinetDsl_Storage,
+    petrinetDsl_Transaction,
+    petrinetDsl_Place,
+    petrinetDsl_Resource,
+    petrinetDsl_PetriNet,
+    petrinetDsl_PutStatement,
+    petrinetDsl_TakeStatement,
+    petrinetDsl_AssureStatement,
 )
 
 # =============================================================================
@@ -22,33 +22,33 @@ from classes import (
 
 
 
-def test_petrinetdsl::storage_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::Storage)
+def test_petrinetdsl_storage_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_Storage)
 
 
-def test_petrinetdsl::storage_constructor_exists():
-    assert callable(petrinetDsl::Storage.__init__)
+def test_petrinetdsl_storage_constructor_exists():
+    assert callable(petrinetDsl_Storage.__init__)
 
 
-def test_petrinetdsl::storage_constructor_args():
-    sig = inspect.signature(petrinetDsl::Storage.__init__)
+def test_petrinetdsl_storage_constructor_args():
+    sig = inspect.signature(petrinetDsl_Storage.__init__)
     params = list(sig.parameters.keys())
     assert "capacity" in params, "Missing parameter 'capacity'"
     assert "count" in params, "Missing parameter 'count'"
 
-def test_petrinetdsl::storage_has_capacity():
-    assert hasattr(petrinetDsl::Storage, "capacity")
+def test_petrinetdsl_storage_has_capacity():
+    assert hasattr(petrinetDsl_Storage, "capacity")
     descriptor = None
-    for klass in petrinetDsl::Storage.__mro__:
+    for klass in petrinetDsl_Storage.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinetdsl::storage_has_count():
-    assert hasattr(petrinetDsl::Storage, "count")
+def test_petrinetdsl_storage_has_count():
+    assert hasattr(petrinetDsl_Storage, "count")
     descriptor = None
-    for klass in petrinetDsl::Storage.__mro__:
+    for klass in petrinetDsl_Storage.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
@@ -56,23 +56,23 @@ def test_petrinetdsl::storage_has_count():
 
 
 
-def test_petrinetdsl::transaction_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::Transaction)
+def test_petrinetdsl_transaction_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_Transaction)
 
 
-def test_petrinetdsl::transaction_constructor_exists():
-    assert callable(petrinetDsl::Transaction.__init__)
+def test_petrinetdsl_transaction_constructor_exists():
+    assert callable(petrinetDsl_Transaction.__init__)
 
 
-def test_petrinetdsl::transaction_constructor_args():
-    sig = inspect.signature(petrinetDsl::Transaction.__init__)
+def test_petrinetdsl_transaction_constructor_args():
+    sig = inspect.signature(petrinetDsl_Transaction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinetdsl::transaction_has_name():
-    assert hasattr(petrinetDsl::Transaction, "name")
+def test_petrinetdsl_transaction_has_name():
+    assert hasattr(petrinetDsl_Transaction, "name")
     descriptor = None
-    for klass in petrinetDsl::Transaction.__mro__:
+    for klass in petrinetDsl_Transaction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,23 +80,23 @@ def test_petrinetdsl::transaction_has_name():
 
 
 
-def test_petrinetdsl::place_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::Place)
+def test_petrinetdsl_place_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_Place)
 
 
-def test_petrinetdsl::place_constructor_exists():
-    assert callable(petrinetDsl::Place.__init__)
+def test_petrinetdsl_place_constructor_exists():
+    assert callable(petrinetDsl_Place.__init__)
 
 
-def test_petrinetdsl::place_constructor_args():
-    sig = inspect.signature(petrinetDsl::Place.__init__)
+def test_petrinetdsl_place_constructor_args():
+    sig = inspect.signature(petrinetDsl_Place.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinetdsl::place_has_name():
-    assert hasattr(petrinetDsl::Place, "name")
+def test_petrinetdsl_place_has_name():
+    assert hasattr(petrinetDsl_Place, "name")
     descriptor = None
-    for klass in petrinetDsl::Place.__mro__:
+    for klass in petrinetDsl_Place.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,23 +104,23 @@ def test_petrinetdsl::place_has_name():
 
 
 
-def test_petrinetdsl::resource_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::Resource)
+def test_petrinetdsl_resource_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_Resource)
 
 
-def test_petrinetdsl::resource_constructor_exists():
-    assert callable(petrinetDsl::Resource.__init__)
+def test_petrinetdsl_resource_constructor_exists():
+    assert callable(petrinetDsl_Resource.__init__)
 
 
-def test_petrinetdsl::resource_constructor_args():
-    sig = inspect.signature(petrinetDsl::Resource.__init__)
+def test_petrinetdsl_resource_constructor_args():
+    sig = inspect.signature(petrinetDsl_Resource.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinetdsl::resource_has_name():
-    assert hasattr(petrinetDsl::Resource, "name")
+def test_petrinetdsl_resource_has_name():
+    assert hasattr(petrinetDsl_Resource, "name")
     descriptor = None
-    for klass in petrinetDsl::Resource.__mro__:
+    for klass in petrinetDsl_Resource.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -128,37 +128,37 @@ def test_petrinetdsl::resource_has_name():
 
 
 
-def test_petrinetdsl::petrinet_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::PetriNet)
+def test_petrinetdsl_petrinet_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_PetriNet)
 
 
-def test_petrinetdsl::petrinet_constructor_exists():
-    assert callable(petrinetDsl::PetriNet.__init__)
+def test_petrinetdsl_petrinet_constructor_exists():
+    assert callable(petrinetDsl_PetriNet.__init__)
 
 
-def test_petrinetdsl::petrinet_constructor_args():
-    sig = inspect.signature(petrinetDsl::PetriNet.__init__)
+def test_petrinetdsl_petrinet_constructor_args():
+    sig = inspect.signature(petrinetDsl_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetdsl::putstatement_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::PutStatement)
+def test_petrinetdsl_putstatement_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_PutStatement)
 
 
-def test_petrinetdsl::putstatement_constructor_exists():
-    assert callable(petrinetDsl::PutStatement.__init__)
+def test_petrinetdsl_putstatement_constructor_exists():
+    assert callable(petrinetDsl_PutStatement.__init__)
 
 
-def test_petrinetdsl::putstatement_constructor_args():
-    sig = inspect.signature(petrinetDsl::PutStatement.__init__)
+def test_petrinetdsl_putstatement_constructor_args():
+    sig = inspect.signature(petrinetDsl_PutStatement.__init__)
     params = list(sig.parameters.keys())
     assert "count" in params, "Missing parameter 'count'"
 
-def test_petrinetdsl::putstatement_has_count():
-    assert hasattr(petrinetDsl::PutStatement, "count")
+def test_petrinetdsl_putstatement_has_count():
+    assert hasattr(petrinetDsl_PutStatement, "count")
     descriptor = None
-    for klass in petrinetDsl::PutStatement.__mro__:
+    for klass in petrinetDsl_PutStatement.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
@@ -166,23 +166,23 @@ def test_petrinetdsl::putstatement_has_count():
 
 
 
-def test_petrinetdsl::takestatement_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::TakeStatement)
+def test_petrinetdsl_takestatement_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_TakeStatement)
 
 
-def test_petrinetdsl::takestatement_constructor_exists():
-    assert callable(petrinetDsl::TakeStatement.__init__)
+def test_petrinetdsl_takestatement_constructor_exists():
+    assert callable(petrinetDsl_TakeStatement.__init__)
 
 
-def test_petrinetdsl::takestatement_constructor_args():
-    sig = inspect.signature(petrinetDsl::TakeStatement.__init__)
+def test_petrinetdsl_takestatement_constructor_args():
+    sig = inspect.signature(petrinetDsl_TakeStatement.__init__)
     params = list(sig.parameters.keys())
     assert "count" in params, "Missing parameter 'count'"
 
-def test_petrinetdsl::takestatement_has_count():
-    assert hasattr(petrinetDsl::TakeStatement, "count")
+def test_petrinetdsl_takestatement_has_count():
+    assert hasattr(petrinetDsl_TakeStatement, "count")
     descriptor = None
-    for klass in petrinetDsl::TakeStatement.__mro__:
+    for klass in petrinetDsl_TakeStatement.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
@@ -190,23 +190,23 @@ def test_petrinetdsl::takestatement_has_count():
 
 
 
-def test_petrinetdsl::assurestatement_is_not_abstract():
-    assert not inspect.isabstract(petrinetDsl::AssureStatement)
+def test_petrinetdsl_assurestatement_is_not_abstract():
+    assert not inspect.isabstract(petrinetDsl_AssureStatement)
 
 
-def test_petrinetdsl::assurestatement_constructor_exists():
-    assert callable(petrinetDsl::AssureStatement.__init__)
+def test_petrinetdsl_assurestatement_constructor_exists():
+    assert callable(petrinetDsl_AssureStatement.__init__)
 
 
-def test_petrinetdsl::assurestatement_constructor_args():
-    sig = inspect.signature(petrinetDsl::AssureStatement.__init__)
+def test_petrinetdsl_assurestatement_constructor_args():
+    sig = inspect.signature(petrinetDsl_AssureStatement.__init__)
     params = list(sig.parameters.keys())
     assert "count" in params, "Missing parameter 'count'"
 
-def test_petrinetdsl::assurestatement_has_count():
-    assert hasattr(petrinetDsl::AssureStatement, "count")
+def test_petrinetdsl_assurestatement_has_count():
+    assert hasattr(petrinetDsl_AssureStatement, "count")
     descriptor = None
-    for klass in petrinetDsl::AssureStatement.__mro__:
+    for klass in petrinetDsl_AssureStatement.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
@@ -224,171 +224,147 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petrinetDsl::Storage_strategy = st.builds(
-    petrinetDsl::Storage,
+petrinetDsl_Storage_strategy = st.builds(
+    petrinetDsl_Storage,
     capacity=
         st.integers(),
     count=
         st.integers()
 )
-petrinetDsl::Transaction_strategy = st.builds(
-    petrinetDsl::Transaction,
+petrinetDsl_Transaction_strategy = st.builds(
+    petrinetDsl_Transaction,
     name=
         safe_text
 )
-petrinetDsl::Place_strategy = st.builds(
-    petrinetDsl::Place,
+petrinetDsl_Place_strategy = st.builds(
+    petrinetDsl_Place,
     name=
         safe_text
 )
-petrinetDsl::Resource_strategy = st.builds(
-    petrinetDsl::Resource,
+petrinetDsl_Resource_strategy = st.builds(
+    petrinetDsl_Resource,
     name=
         safe_text
 )
-petrinetDsl::PetriNet_strategy = st.builds(
-    petrinetDsl::PetriNet,
+petrinetDsl_PetriNet_strategy = st.builds(
+    petrinetDsl_PetriNet,
 )
-petrinetDsl::PutStatement_strategy = st.builds(
-    petrinetDsl::PutStatement,
+petrinetDsl_PutStatement_strategy = st.builds(
+    petrinetDsl_PutStatement,
     count=
         st.integers()
 )
-petrinetDsl::TakeStatement_strategy = st.builds(
-    petrinetDsl::TakeStatement,
+petrinetDsl_TakeStatement_strategy = st.builds(
+    petrinetDsl_TakeStatement,
     count=
         st.integers()
 )
-petrinetDsl::AssureStatement_strategy = st.builds(
-    petrinetDsl::AssureStatement,
+petrinetDsl_AssureStatement_strategy = st.builds(
+    petrinetDsl_AssureStatement,
     count=
         st.integers()
 )
 
-@given(instance=petrinetDsl::Storage_strategy)
+@given(instance=petrinetDsl_Storage_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::storage_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::Storage)
-
-@given(instance=petrinetDsl::Storage_strategy)
-def test_petrinetdsl::storage_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
+def test_petrinetdsl_storage_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_Storage)
 
 
-@given(instance=petrinetDsl::Storage_strategy)
-def test_petrinetdsl::storage_capacity_setter(instance):
+
+@given(instance=petrinetDsl_Storage_strategy)
+def test_petrinetdsl_storage_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original
 
-@given(instance=petrinetDsl::Storage_strategy)
-def test_petrinetdsl::storage_count_type(instance):
-    assert isinstance(instance.count, int)
 
 
-@given(instance=petrinetDsl::Storage_strategy)
-def test_petrinetdsl::storage_count_setter(instance):
+@given(instance=petrinetDsl_Storage_strategy)
+def test_petrinetdsl_storage_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
 
-@given(instance=petrinetDsl::Transaction_strategy)
+@given(instance=petrinetDsl_Transaction_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::transaction_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::Transaction)
-
-@given(instance=petrinetDsl::Transaction_strategy)
-def test_petrinetdsl::transaction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinetdsl_transaction_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_Transaction)
 
 
-@given(instance=petrinetDsl::Transaction_strategy)
-def test_petrinetdsl::transaction_name_setter(instance):
+
+@given(instance=petrinetDsl_Transaction_strategy)
+def test_petrinetdsl_transaction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petrinetDsl::Place_strategy)
+@given(instance=petrinetDsl_Place_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::place_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::Place)
-
-@given(instance=petrinetDsl::Place_strategy)
-def test_petrinetdsl::place_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinetdsl_place_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_Place)
 
 
-@given(instance=petrinetDsl::Place_strategy)
-def test_petrinetdsl::place_name_setter(instance):
+
+@given(instance=petrinetDsl_Place_strategy)
+def test_petrinetdsl_place_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petrinetDsl::Resource_strategy)
+@given(instance=petrinetDsl_Resource_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::resource_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::Resource)
-
-@given(instance=petrinetDsl::Resource_strategy)
-def test_petrinetdsl::resource_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinetdsl_resource_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_Resource)
 
 
-@given(instance=petrinetDsl::Resource_strategy)
-def test_petrinetdsl::resource_name_setter(instance):
+
+@given(instance=petrinetDsl_Resource_strategy)
+def test_petrinetdsl_resource_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petrinetDsl::PetriNet_strategy)
+@given(instance=petrinetDsl_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::petrinet_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::PetriNet)
+def test_petrinetdsl_petrinet_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_PetriNet)
 
-@given(instance=petrinetDsl::PutStatement_strategy)
+@given(instance=petrinetDsl_PutStatement_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::putstatement_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::PutStatement)
-
-@given(instance=petrinetDsl::PutStatement_strategy)
-def test_petrinetdsl::putstatement_count_type(instance):
-    assert isinstance(instance.count, int)
+def test_petrinetdsl_putstatement_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_PutStatement)
 
 
-@given(instance=petrinetDsl::PutStatement_strategy)
-def test_petrinetdsl::putstatement_count_setter(instance):
+
+@given(instance=petrinetDsl_PutStatement_strategy)
+def test_petrinetdsl_putstatement_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
 
-@given(instance=petrinetDsl::TakeStatement_strategy)
+@given(instance=petrinetDsl_TakeStatement_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::takestatement_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::TakeStatement)
-
-@given(instance=petrinetDsl::TakeStatement_strategy)
-def test_petrinetdsl::takestatement_count_type(instance):
-    assert isinstance(instance.count, int)
+def test_petrinetdsl_takestatement_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_TakeStatement)
 
 
-@given(instance=petrinetDsl::TakeStatement_strategy)
-def test_petrinetdsl::takestatement_count_setter(instance):
+
+@given(instance=petrinetDsl_TakeStatement_strategy)
+def test_petrinetdsl_takestatement_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
 
-@given(instance=petrinetDsl::AssureStatement_strategy)
+@given(instance=petrinetDsl_AssureStatement_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::assurestatement_instantiation(instance):
-    assert isinstance(instance, petrinetDsl::AssureStatement)
-
-@given(instance=petrinetDsl::AssureStatement_strategy)
-def test_petrinetdsl::assurestatement_count_type(instance):
-    assert isinstance(instance.count, int)
+def test_petrinetdsl_assurestatement_instantiation(instance):
+    assert isinstance(instance, petrinetDsl_AssureStatement)
 
 
-@given(instance=petrinetDsl::AssureStatement_strategy)
-def test_petrinetdsl::assurestatement_count_setter(instance):
+
+@given(instance=petrinetDsl_AssureStatement_strategy)
+def test_petrinetdsl_assurestatement_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original

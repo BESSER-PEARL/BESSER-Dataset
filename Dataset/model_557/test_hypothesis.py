@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    family::Family,
-    family::course,
-    family::university,
-    family::person,
+from python_code import (
+    family_Family,
+    family_course,
+    family_university,
+    family_person,
 )
 
 # =============================================================================
@@ -18,37 +18,37 @@ from classes import (
 
 
 
-def test_family::family_is_not_abstract():
-    assert not inspect.isabstract(family::Family)
+def test_family_family_is_not_abstract():
+    assert not inspect.isabstract(family_Family)
 
 
-def test_family::family_constructor_exists():
-    assert callable(family::Family.__init__)
+def test_family_family_constructor_exists():
+    assert callable(family_Family.__init__)
 
 
-def test_family::family_constructor_args():
-    sig = inspect.signature(family::Family.__init__)
+def test_family_family_constructor_args():
+    sig = inspect.signature(family_Family.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_family::course_is_not_abstract():
-    assert not inspect.isabstract(family::course)
+def test_family_course_is_not_abstract():
+    assert not inspect.isabstract(family_course)
 
 
-def test_family::course_constructor_exists():
-    assert callable(family::course.__init__)
+def test_family_course_constructor_exists():
+    assert callable(family_course.__init__)
 
 
-def test_family::course_constructor_args():
-    sig = inspect.signature(family::course.__init__)
+def test_family_course_constructor_args():
+    sig = inspect.signature(family_course.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_family::course_has_name():
-    assert hasattr(family::course, "name")
+def test_family_course_has_name():
+    assert hasattr(family_course, "name")
     descriptor = None
-    for klass in family::course.__mro__:
+    for klass in family_course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -56,23 +56,23 @@ def test_family::course_has_name():
 
 
 
-def test_family::university_is_not_abstract():
-    assert not inspect.isabstract(family::university)
+def test_family_university_is_not_abstract():
+    assert not inspect.isabstract(family_university)
 
 
-def test_family::university_constructor_exists():
-    assert callable(family::university.__init__)
+def test_family_university_constructor_exists():
+    assert callable(family_university.__init__)
 
 
-def test_family::university_constructor_args():
-    sig = inspect.signature(family::university.__init__)
+def test_family_university_constructor_args():
+    sig = inspect.signature(family_university.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_family::university_has_name():
-    assert hasattr(family::university, "name")
+def test_family_university_has_name():
+    assert hasattr(family_university, "name")
     descriptor = None
-    for klass in family::university.__mro__:
+    for klass in family_university.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,45 +80,45 @@ def test_family::university_has_name():
 
 
 
-def test_family::person_is_not_abstract():
-    assert not inspect.isabstract(family::person)
+def test_family_person_is_not_abstract():
+    assert not inspect.isabstract(family_person)
 
 
-def test_family::person_constructor_exists():
-    assert callable(family::person.__init__)
+def test_family_person_constructor_exists():
+    assert callable(family_person.__init__)
 
 
-def test_family::person_constructor_args():
-    sig = inspect.signature(family::person.__init__)
+def test_family_person_constructor_args():
+    sig = inspect.signature(family_person.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "CPR" in params, "Missing parameter 'CPR'"
     assert "age" in params, "Missing parameter 'age'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_family::person_has_name():
-    assert hasattr(family::person, "name")
+def test_family_person_has_CPR():
+    assert hasattr(family_person, "CPR")
     descriptor = None
-    for klass in family::person.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::person_has_CPR():
-    assert hasattr(family::person, "CPR")
-    descriptor = None
-    for klass in family::person.__mro__:
+    for klass in family_person.__mro__:
         if "CPR" in klass.__dict__:
             descriptor = klass.__dict__["CPR"]
             break
     assert isinstance(descriptor, property)
 
-def test_family::person_has_age():
-    assert hasattr(family::person, "age")
+def test_family_person_has_age():
+    assert hasattr(family_person, "age")
     descriptor = None
-    for klass in family::person.__mro__:
+    for klass in family_person.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_family_person_has_name():
+    assert hasattr(family_person, "name")
+    descriptor = None
+    for klass in family_person.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-family::Family_strategy = st.builds(
-    family::Family,
+family_Family_strategy = st.builds(
+    family_Family,
 )
-family::course_strategy = st.builds(
-    family::course,
+family_course_strategy = st.builds(
+    family_course,
     name=
         safe_text
 )
-family::university_strategy = st.builds(
-    family::university,
+family_university_strategy = st.builds(
+    family_university,
     name=
         safe_text
 )
-family::person_strategy = st.builds(
-    family::person,
-    name=
-        safe_text,
+family_person_strategy = st.builds(
+    family_person,
     CPR=
         safe_text,
     age=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 
-@given(instance=family::Family_strategy)
+@given(instance=family_Family_strategy)
 @settings(max_examples=50)
-def test_family::family_instantiation(instance):
-    assert isinstance(instance, family::Family)
+def test_family_family_instantiation(instance):
+    assert isinstance(instance, family_Family)
 
-@given(instance=family::course_strategy)
+@given(instance=family_course_strategy)
 @settings(max_examples=50)
-def test_family::course_instantiation(instance):
-    assert isinstance(instance, family::course)
-
-@given(instance=family::course_strategy)
-def test_family::course_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_family_course_instantiation(instance):
+    assert isinstance(instance, family_course)
 
 
-@given(instance=family::course_strategy)
-def test_family::course_name_setter(instance):
+
+@given(instance=family_course_strategy)
+def test_family_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=family::university_strategy)
+@given(instance=family_university_strategy)
 @settings(max_examples=50)
-def test_family::university_instantiation(instance):
-    assert isinstance(instance, family::university)
-
-@given(instance=family::university_strategy)
-def test_family::university_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_family_university_instantiation(instance):
+    assert isinstance(instance, family_university)
 
 
-@given(instance=family::university_strategy)
-def test_family::university_name_setter(instance):
+
+@given(instance=family_university_strategy)
+def test_family_university_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=family::person_strategy)
+@given(instance=family_person_strategy)
 @settings(max_examples=50)
-def test_family::person_instantiation(instance):
-    assert isinstance(instance, family::person)
-
-@given(instance=family::person_strategy)
-def test_family::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_family_person_instantiation(instance):
+    assert isinstance(instance, family_person)
 
 
-@given(instance=family::person_strategy)
-def test_family::person_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=family::person_strategy)
-def test_family::person_CPR_type(instance):
-    assert isinstance(instance.CPR, str)
-
-
-@given(instance=family::person_strategy)
-def test_family::person_CPR_setter(instance):
+@given(instance=family_person_strategy)
+def test_family_person_CPR_setter(instance):
     original = instance.CPR
     instance.CPR = original
     assert instance.CPR == original
 
-@given(instance=family::person_strategy)
-def test_family::person_age_type(instance):
-    assert isinstance(instance.age, int)
 
 
-@given(instance=family::person_strategy)
-def test_family::person_age_setter(instance):
+@given(instance=family_person_strategy)
+def test_family_person_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
+
+
+
+@given(instance=family_person_strategy)
+def test_family_person_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

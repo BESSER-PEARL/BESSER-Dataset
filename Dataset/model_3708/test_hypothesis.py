@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Association,
-    UML2::AssociationClass,
-    UML2::CommunicationPath,
-    UML2::Extension,
-    UML2::Property,
-    UML2::Association,
+    UML2_AssociationClass,
+    UML2_CommunicationPath,
+    UML2_Extension,
+    UML2_Property,
+    UML2_Association,
     Property,
-    UML2::Port,
-    UML2::ExtensionEnd,
+    UML2_Port,
+    UML2_ExtensionEnd,
 )
 
 # =============================================================================
@@ -37,72 +37,72 @@ def test_association_constructor_args():
 
 
 
-def test_uml2::associationclass_is_not_abstract():
-    assert not inspect.isabstract(UML2::AssociationClass)
+def test_uml2_associationclass_is_not_abstract():
+    assert not inspect.isabstract(UML2_AssociationClass)
 
 
-def test_uml2::associationclass_constructor_exists():
-    assert callable(UML2::AssociationClass.__init__)
+def test_uml2_associationclass_constructor_exists():
+    assert callable(UML2_AssociationClass.__init__)
 
 
-def test_uml2::associationclass_constructor_args():
-    sig = inspect.signature(UML2::AssociationClass.__init__)
+def test_uml2_associationclass_constructor_args():
+    sig = inspect.signature(UML2_AssociationClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::communicationpath_is_not_abstract():
-    assert not inspect.isabstract(UML2::CommunicationPath)
+def test_uml2_communicationpath_is_not_abstract():
+    assert not inspect.isabstract(UML2_CommunicationPath)
 
 
-def test_uml2::communicationpath_constructor_exists():
-    assert callable(UML2::CommunicationPath.__init__)
+def test_uml2_communicationpath_constructor_exists():
+    assert callable(UML2_CommunicationPath.__init__)
 
 
-def test_uml2::communicationpath_constructor_args():
-    sig = inspect.signature(UML2::CommunicationPath.__init__)
+def test_uml2_communicationpath_constructor_args():
+    sig = inspect.signature(UML2_CommunicationPath.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::extension_is_not_abstract():
-    assert not inspect.isabstract(UML2::Extension)
+def test_uml2_extension_is_not_abstract():
+    assert not inspect.isabstract(UML2_Extension)
 
 
-def test_uml2::extension_constructor_exists():
-    assert callable(UML2::Extension.__init__)
+def test_uml2_extension_constructor_exists():
+    assert callable(UML2_Extension.__init__)
 
 
-def test_uml2::extension_constructor_args():
-    sig = inspect.signature(UML2::Extension.__init__)
+def test_uml2_extension_constructor_args():
+    sig = inspect.signature(UML2_Extension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::property_is_not_abstract():
-    assert not inspect.isabstract(UML2::Property)
+def test_uml2_property_is_not_abstract():
+    assert not inspect.isabstract(UML2_Property)
 
 
-def test_uml2::property_constructor_exists():
-    assert callable(UML2::Property.__init__)
+def test_uml2_property_constructor_exists():
+    assert callable(UML2_Property.__init__)
 
 
-def test_uml2::property_constructor_args():
-    sig = inspect.signature(UML2::Property.__init__)
+def test_uml2_property_constructor_args():
+    sig = inspect.signature(UML2_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::association_is_not_abstract():
-    assert not inspect.isabstract(UML2::Association)
+def test_uml2_association_is_not_abstract():
+    assert not inspect.isabstract(UML2_Association)
 
 
-def test_uml2::association_constructor_exists():
-    assert callable(UML2::Association.__init__)
+def test_uml2_association_constructor_exists():
+    assert callable(UML2_Association.__init__)
 
 
-def test_uml2::association_constructor_args():
-    sig = inspect.signature(UML2::Association.__init__)
+def test_uml2_association_constructor_args():
+    sig = inspect.signature(UML2_Association.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -121,30 +121,30 @@ def test_property_constructor_args():
 
 
 
-def test_uml2::port_is_not_abstract():
-    assert not inspect.isabstract(UML2::Port)
+def test_uml2_port_is_not_abstract():
+    assert not inspect.isabstract(UML2_Port)
 
 
-def test_uml2::port_constructor_exists():
-    assert callable(UML2::Port.__init__)
+def test_uml2_port_constructor_exists():
+    assert callable(UML2_Port.__init__)
 
 
-def test_uml2::port_constructor_args():
-    sig = inspect.signature(UML2::Port.__init__)
+def test_uml2_port_constructor_args():
+    sig = inspect.signature(UML2_Port.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::extensionend_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExtensionEnd)
+def test_uml2_extensionend_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExtensionEnd)
 
 
-def test_uml2::extensionend_constructor_exists():
-    assert callable(UML2::ExtensionEnd.__init__)
+def test_uml2_extensionend_constructor_exists():
+    assert callable(UML2_ExtensionEnd.__init__)
 
 
-def test_uml2::extensionend_constructor_args():
-    sig = inspect.signature(UML2::ExtensionEnd.__init__)
+def test_uml2_extensionend_constructor_args():
+    sig = inspect.signature(UML2_ExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,29 +162,29 @@ safe_text = st.text(
 Association_strategy = st.builds(
     Association,
 )
-UML2::AssociationClass_strategy = st.builds(
-    UML2::AssociationClass,
+UML2_AssociationClass_strategy = st.builds(
+    UML2_AssociationClass,
 )
-UML2::CommunicationPath_strategy = st.builds(
-    UML2::CommunicationPath,
+UML2_CommunicationPath_strategy = st.builds(
+    UML2_CommunicationPath,
 )
-UML2::Extension_strategy = st.builds(
-    UML2::Extension,
+UML2_Extension_strategy = st.builds(
+    UML2_Extension,
 )
-UML2::Property_strategy = st.builds(
-    UML2::Property,
+UML2_Property_strategy = st.builds(
+    UML2_Property,
 )
-UML2::Association_strategy = st.builds(
-    UML2::Association,
+UML2_Association_strategy = st.builds(
+    UML2_Association,
 )
 Property_strategy = st.builds(
     Property,
 )
-UML2::Port_strategy = st.builds(
-    UML2::Port,
+UML2_Port_strategy = st.builds(
+    UML2_Port,
 )
-UML2::ExtensionEnd_strategy = st.builds(
-    UML2::ExtensionEnd,
+UML2_ExtensionEnd_strategy = st.builds(
+    UML2_ExtensionEnd,
 )
 
 @given(instance=Association_strategy)
@@ -192,42 +192,42 @@ UML2::ExtensionEnd_strategy = st.builds(
 def test_association_instantiation(instance):
     assert isinstance(instance, Association)
 
-@given(instance=UML2::AssociationClass_strategy)
+@given(instance=UML2_AssociationClass_strategy)
 @settings(max_examples=50)
-def test_uml2::associationclass_instantiation(instance):
-    assert isinstance(instance, UML2::AssociationClass)
+def test_uml2_associationclass_instantiation(instance):
+    assert isinstance(instance, UML2_AssociationClass)
 
-@given(instance=UML2::CommunicationPath_strategy)
+@given(instance=UML2_CommunicationPath_strategy)
 @settings(max_examples=50)
-def test_uml2::communicationpath_instantiation(instance):
-    assert isinstance(instance, UML2::CommunicationPath)
+def test_uml2_communicationpath_instantiation(instance):
+    assert isinstance(instance, UML2_CommunicationPath)
 
-@given(instance=UML2::Extension_strategy)
+@given(instance=UML2_Extension_strategy)
 @settings(max_examples=50)
-def test_uml2::extension_instantiation(instance):
-    assert isinstance(instance, UML2::Extension)
+def test_uml2_extension_instantiation(instance):
+    assert isinstance(instance, UML2_Extension)
 
-@given(instance=UML2::Property_strategy)
+@given(instance=UML2_Property_strategy)
 @settings(max_examples=50)
-def test_uml2::property_instantiation(instance):
-    assert isinstance(instance, UML2::Property)
+def test_uml2_property_instantiation(instance):
+    assert isinstance(instance, UML2_Property)
 
-@given(instance=UML2::Association_strategy)
+@given(instance=UML2_Association_strategy)
 @settings(max_examples=50)
-def test_uml2::association_instantiation(instance):
-    assert isinstance(instance, UML2::Association)
+def test_uml2_association_instantiation(instance):
+    assert isinstance(instance, UML2_Association)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=UML2::Port_strategy)
+@given(instance=UML2_Port_strategy)
 @settings(max_examples=50)
-def test_uml2::port_instantiation(instance):
-    assert isinstance(instance, UML2::Port)
+def test_uml2_port_instantiation(instance):
+    assert isinstance(instance, UML2_Port)
 
-@given(instance=UML2::ExtensionEnd_strategy)
+@given(instance=UML2_ExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_uml2::extensionend_instantiation(instance):
-    assert isinstance(instance, UML2::ExtensionEnd)
+def test_uml2_extensionend_instantiation(instance):
+    assert isinstance(instance, UML2_ExtensionEnd)

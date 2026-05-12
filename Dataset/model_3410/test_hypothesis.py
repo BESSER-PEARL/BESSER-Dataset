@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::Contact,
-    test::Address,
-    test::Person,
+from python_code import (
+    test_Contact,
+    test_Address,
+    test_Person,
     ContactType,
 )
 
@@ -18,33 +18,33 @@ from classes import (
 
 
 
-def test_test::contact_is_not_abstract():
-    assert not inspect.isabstract(test::Contact)
+def test_test_contact_is_not_abstract():
+    assert not inspect.isabstract(test_Contact)
 
 
-def test_test::contact_constructor_exists():
-    assert callable(test::Contact.__init__)
+def test_test_contact_constructor_exists():
+    assert callable(test_Contact.__init__)
 
 
-def test_test::contact_constructor_args():
-    sig = inspect.signature(test::Contact.__init__)
+def test_test_contact_constructor_args():
+    sig = inspect.signature(test_Contact.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_test::contact_has_value():
-    assert hasattr(test::Contact, "value")
+def test_test_contact_has_value():
+    assert hasattr(test_Contact, "value")
     descriptor = None
-    for klass in test::Contact.__mro__:
+    for klass in test_Contact.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::contact_has_type():
-    assert hasattr(test::Contact, "type")
+def test_test_contact_has_type():
+    assert hasattr(test_Contact, "type")
     descriptor = None
-    for klass in test::Contact.__mro__:
+    for klass in test_Contact.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -52,67 +52,67 @@ def test_test::contact_has_type():
 
 
 
-def test_test::address_is_not_abstract():
-    assert not inspect.isabstract(test::Address)
+def test_test_address_is_not_abstract():
+    assert not inspect.isabstract(test_Address)
 
 
-def test_test::address_constructor_exists():
-    assert callable(test::Address.__init__)
+def test_test_address_constructor_exists():
+    assert callable(test_Address.__init__)
 
 
-def test_test::address_constructor_args():
-    sig = inspect.signature(test::Address.__init__)
+def test_test_address_constructor_args():
+    sig = inspect.signature(test_Address.__init__)
     params = list(sig.parameters.keys())
-    assert "street" in params, "Missing parameter 'street'"
     assert "city" in params, "Missing parameter 'city'"
+    assert "street" in params, "Missing parameter 'street'"
 
-def test_test::address_has_street():
-    assert hasattr(test::Address, "street")
+def test_test_address_has_city():
+    assert hasattr(test_Address, "city")
     descriptor = None
-    for klass in test::Address.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test::address_has_city():
-    assert hasattr(test::Address, "city")
-    descriptor = None
-    for klass in test::Address.__mro__:
+    for klass in test_Address.__mro__:
         if "city" in klass.__dict__:
             descriptor = klass.__dict__["city"]
             break
     assert isinstance(descriptor, property)
 
+def test_test_address_has_street():
+    assert hasattr(test_Address, "street")
+    descriptor = None
+    for klass in test_Address.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_test::person_is_not_abstract():
-    assert not inspect.isabstract(test::Person)
+
+def test_test_person_is_not_abstract():
+    assert not inspect.isabstract(test_Person)
 
 
-def test_test::person_constructor_exists():
-    assert callable(test::Person.__init__)
+def test_test_person_constructor_exists():
+    assert callable(test_Person.__init__)
 
 
-def test_test::person_constructor_args():
-    sig = inspect.signature(test::Person.__init__)
+def test_test_person_constructor_args():
+    sig = inspect.signature(test_Person.__init__)
     params = list(sig.parameters.keys())
     assert "lastname" in params, "Missing parameter 'lastname'"
     assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_test::person_has_lastname():
-    assert hasattr(test::Person, "lastname")
+def test_test_person_has_lastname():
+    assert hasattr(test_Person, "lastname")
     descriptor = None
-    for klass in test::Person.__mro__:
+    for klass in test_Person.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::person_has_firstname():
-    assert hasattr(test::Person, "firstname")
+def test_test_person_has_firstname():
+    assert hasattr(test_Person, "firstname")
     descriptor = None
-    for klass in test::Person.__mro__:
+    for klass in test_Person.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
             break
@@ -145,105 +145,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::Contact_strategy = st.builds(
-    test::Contact,
+test_Contact_strategy = st.builds(
+    test_Contact,
     value=
         safe_text,
     type=
         safe_text
 )
-test::Address_strategy = st.builds(
-    test::Address,
-    street=
-        safe_text,
+test_Address_strategy = st.builds(
+    test_Address,
     city=
+        safe_text,
+    street=
         safe_text
 )
-test::Person_strategy = st.builds(
-    test::Person,
+test_Person_strategy = st.builds(
+    test_Person,
     lastname=
         safe_text,
     firstname=
         safe_text
 )
 
-@given(instance=test::Contact_strategy)
+@given(instance=test_Contact_strategy)
 @settings(max_examples=50)
-def test_test::contact_instantiation(instance):
-    assert isinstance(instance, test::Contact)
-
-@given(instance=test::Contact_strategy)
-def test_test::contact_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_test_contact_instantiation(instance):
+    assert isinstance(instance, test_Contact)
 
 
-@given(instance=test::Contact_strategy)
-def test_test::contact_value_setter(instance):
+
+@given(instance=test_Contact_strategy)
+def test_test_contact_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=test::Contact_strategy)
-def test_test::contact_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=test::Contact_strategy)
-def test_test::contact_type_setter(instance):
+@given(instance=test_Contact_strategy)
+def test_test_contact_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=test::Address_strategy)
+@given(instance=test_Address_strategy)
 @settings(max_examples=50)
-def test_test::address_instantiation(instance):
-    assert isinstance(instance, test::Address)
-
-@given(instance=test::Address_strategy)
-def test_test::address_street_type(instance):
-    assert isinstance(instance.street, str)
+def test_test_address_instantiation(instance):
+    assert isinstance(instance, test_Address)
 
 
-@given(instance=test::Address_strategy)
-def test_test::address_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
 
-@given(instance=test::Address_strategy)
-def test_test::address_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=test::Address_strategy)
-def test_test::address_city_setter(instance):
+@given(instance=test_Address_strategy)
+def test_test_address_city_setter(instance):
     original = instance.city
     instance.city = original
     assert instance.city == original
 
-@given(instance=test::Person_strategy)
+
+
+@given(instance=test_Address_strategy)
+def test_test_address_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+@given(instance=test_Person_strategy)
 @settings(max_examples=50)
-def test_test::person_instantiation(instance):
-    assert isinstance(instance, test::Person)
-
-@given(instance=test::Person_strategy)
-def test_test::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
+def test_test_person_instantiation(instance):
+    assert isinstance(instance, test_Person)
 
 
-@given(instance=test::Person_strategy)
-def test_test::person_lastname_setter(instance):
+
+@given(instance=test_Person_strategy)
+def test_test_person_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=test::Person_strategy)
-def test_test::person_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
 
 
-@given(instance=test::Person_strategy)
-def test_test::person_firstname_setter(instance):
+@given(instance=test_Person_strategy)
+def test_test_person_firstname_setter(instance):
     original = instance.firstname
     instance.firstname = original
     assert instance.firstname == original

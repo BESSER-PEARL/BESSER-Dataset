@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Arch::Event,
+from python_code import (
+    Arch_Event,
     GraphicControl,
-    Arch::TextBox,
-    Arch::Div,
-    Arch::DropDownList,
-    Arch::Label,
-    Arch::Parameter,
-    Arch::Attribute,
-    Arch::Method,
-    Arch::GraphicControl,
-    Arch::Entity,
-    Arch::Logic,
-    Arch::Service,
-    Arch::Controller,
-    Arch::View,
-    Arch::BackEnd,
-    Arch::FrontEnd,
-    Arch::Application,
+    Arch_TextBox,
+    Arch_DropDownList,
+    Arch_Div,
+    Arch_Label,
+    Arch_Parameter,
+    Arch_Attribute,
+    Arch_Method,
+    Arch_GraphicControl,
+    Arch_Entity,
+    Arch_Logic,
+    Arch_Service,
+    Arch_Controller,
+    Arch_View,
+    Arch_BackEnd,
+    Arch_FrontEnd,
+    Arch_Application,
 )
 
 # =============================================================================
@@ -32,23 +32,23 @@ from classes import (
 
 
 
-def test_arch::event_is_not_abstract():
-    assert not inspect.isabstract(Arch::Event)
+def test_arch_event_is_not_abstract():
+    assert not inspect.isabstract(Arch_Event)
 
 
-def test_arch::event_constructor_exists():
-    assert callable(Arch::Event.__init__)
+def test_arch_event_constructor_exists():
+    assert callable(Arch_Event.__init__)
 
 
-def test_arch::event_constructor_args():
-    sig = inspect.signature(Arch::Event.__init__)
+def test_arch_event_constructor_args():
+    sig = inspect.signature(Arch_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::event_has_name():
-    assert hasattr(Arch::Event, "name")
+def test_arch_event_has_name():
+    assert hasattr(Arch_Event, "name")
     descriptor = None
-    for klass in Arch::Event.__mro__:
+    for klass in Arch_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -70,23 +70,23 @@ def test_graphiccontrol_constructor_args():
 
 
 
-def test_arch::textbox_is_not_abstract():
-    assert not inspect.isabstract(Arch::TextBox)
+def test_arch_textbox_is_not_abstract():
+    assert not inspect.isabstract(Arch_TextBox)
 
 
-def test_arch::textbox_constructor_exists():
-    assert callable(Arch::TextBox.__init__)
+def test_arch_textbox_constructor_exists():
+    assert callable(Arch_TextBox.__init__)
 
 
-def test_arch::textbox_constructor_args():
-    sig = inspect.signature(Arch::TextBox.__init__)
+def test_arch_textbox_constructor_args():
+    sig = inspect.signature(Arch_TextBox.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_arch::textbox_has_type():
-    assert hasattr(Arch::TextBox, "type")
+def test_arch_textbox_has_type():
+    assert hasattr(Arch_TextBox, "type")
     descriptor = None
-    for klass in Arch::TextBox.__mro__:
+    for klass in Arch_TextBox.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -94,37 +94,23 @@ def test_arch::textbox_has_type():
 
 
 
-def test_arch::div_is_not_abstract():
-    assert not inspect.isabstract(Arch::Div)
+def test_arch_dropdownlist_is_not_abstract():
+    assert not inspect.isabstract(Arch_DropDownList)
 
 
-def test_arch::div_constructor_exists():
-    assert callable(Arch::Div.__init__)
+def test_arch_dropdownlist_constructor_exists():
+    assert callable(Arch_DropDownList.__init__)
 
 
-def test_arch::div_constructor_args():
-    sig = inspect.signature(Arch::Div.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arch::dropdownlist_is_not_abstract():
-    assert not inspect.isabstract(Arch::DropDownList)
-
-
-def test_arch::dropdownlist_constructor_exists():
-    assert callable(Arch::DropDownList.__init__)
-
-
-def test_arch::dropdownlist_constructor_args():
-    sig = inspect.signature(Arch::DropDownList.__init__)
+def test_arch_dropdownlist_constructor_args():
+    sig = inspect.signature(Arch_DropDownList.__init__)
     params = list(sig.parameters.keys())
     assert "items" in params, "Missing parameter 'items'"
 
-def test_arch::dropdownlist_has_items():
-    assert hasattr(Arch::DropDownList, "items")
+def test_arch_dropdownlist_has_items():
+    assert hasattr(Arch_DropDownList, "items")
     descriptor = None
-    for klass in Arch::DropDownList.__mro__:
+    for klass in Arch_DropDownList.__mro__:
         if "items" in klass.__dict__:
             descriptor = klass.__dict__["items"]
             break
@@ -132,23 +118,37 @@ def test_arch::dropdownlist_has_items():
 
 
 
-def test_arch::label_is_not_abstract():
-    assert not inspect.isabstract(Arch::Label)
+def test_arch_div_is_not_abstract():
+    assert not inspect.isabstract(Arch_Div)
 
 
-def test_arch::label_constructor_exists():
-    assert callable(Arch::Label.__init__)
+def test_arch_div_constructor_exists():
+    assert callable(Arch_Div.__init__)
 
 
-def test_arch::label_constructor_args():
-    sig = inspect.signature(Arch::Label.__init__)
+def test_arch_div_constructor_args():
+    sig = inspect.signature(Arch_Div.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arch_label_is_not_abstract():
+    assert not inspect.isabstract(Arch_Label)
+
+
+def test_arch_label_constructor_exists():
+    assert callable(Arch_Label.__init__)
+
+
+def test_arch_label_constructor_args():
+    sig = inspect.signature(Arch_Label.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_arch::label_has_text():
-    assert hasattr(Arch::Label, "text")
+def test_arch_label_has_text():
+    assert hasattr(Arch_Label, "text")
     descriptor = None
-    for klass in Arch::Label.__mro__:
+    for klass in Arch_Label.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -156,125 +156,101 @@ def test_arch::label_has_text():
 
 
 
-def test_arch::parameter_is_not_abstract():
-    assert not inspect.isabstract(Arch::Parameter)
+def test_arch_parameter_is_not_abstract():
+    assert not inspect.isabstract(Arch_Parameter)
 
 
-def test_arch::parameter_constructor_exists():
-    assert callable(Arch::Parameter.__init__)
+def test_arch_parameter_constructor_exists():
+    assert callable(Arch_Parameter.__init__)
 
 
-def test_arch::parameter_constructor_args():
-    sig = inspect.signature(Arch::Parameter.__init__)
+def test_arch_parameter_constructor_args():
+    sig = inspect.signature(Arch_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::parameter_has_name():
-    assert hasattr(Arch::Parameter, "name")
+def test_arch_parameter_has_type():
+    assert hasattr(Arch_Parameter, "type")
     descriptor = None
-    for klass in Arch::Parameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arch::parameter_has_type():
-    assert hasattr(Arch::Parameter, "type")
-    descriptor = None
-    for klass in Arch::Parameter.__mro__:
+    for klass in Arch_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_arch::attribute_is_not_abstract():
-    assert not inspect.isabstract(Arch::Attribute)
-
-
-def test_arch::attribute_constructor_exists():
-    assert callable(Arch::Attribute.__init__)
-
-
-def test_arch::attribute_constructor_args():
-    sig = inspect.signature(Arch::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_arch::attribute_has_name():
-    assert hasattr(Arch::Attribute, "name")
+def test_arch_parameter_has_name():
+    assert hasattr(Arch_Parameter, "name")
     descriptor = None
-    for klass in Arch::Attribute.__mro__:
+    for klass in Arch_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_arch::attribute_has_type():
-    assert hasattr(Arch::Attribute, "type")
+
+
+def test_arch_attribute_is_not_abstract():
+    assert not inspect.isabstract(Arch_Attribute)
+
+
+def test_arch_attribute_constructor_exists():
+    assert callable(Arch_Attribute.__init__)
+
+
+def test_arch_attribute_constructor_args():
+    sig = inspect.signature(Arch_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_arch_attribute_has_type():
+    assert hasattr(Arch_Attribute, "type")
     descriptor = None
-    for klass in Arch::Attribute.__mro__:
+    for klass in Arch_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_arch_attribute_has_name():
+    assert hasattr(Arch_Attribute, "name")
+    descriptor = None
+    for klass in Arch_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_arch::method_is_not_abstract():
-    assert not inspect.isabstract(Arch::Method)
+
+def test_arch_method_is_not_abstract():
+    assert not inspect.isabstract(Arch_Method)
 
 
-def test_arch::method_constructor_exists():
-    assert callable(Arch::Method.__init__)
+def test_arch_method_constructor_exists():
+    assert callable(Arch_Method.__init__)
 
 
-def test_arch::method_constructor_args():
-    sig = inspect.signature(Arch::Method.__init__)
+def test_arch_method_constructor_args():
+    sig = inspect.signature(Arch_Method.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "returntype" in params, "Missing parameter 'returntype'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::method_has_name():
-    assert hasattr(Arch::Method, "name")
+def test_arch_method_has_returntype():
+    assert hasattr(Arch_Method, "returntype")
     descriptor = None
-    for klass in Arch::Method.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arch::method_has_returntype():
-    assert hasattr(Arch::Method, "returntype")
-    descriptor = None
-    for klass in Arch::Method.__mro__:
+    for klass in Arch_Method.__mro__:
         if "returntype" in klass.__dict__:
             descriptor = klass.__dict__["returntype"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_arch::graphiccontrol_is_not_abstract():
-    assert not inspect.isabstract(Arch::GraphicControl)
-
-
-def test_arch::graphiccontrol_constructor_exists():
-    assert callable(Arch::GraphicControl.__init__)
-
-
-def test_arch::graphiccontrol_constructor_args():
-    sig = inspect.signature(Arch::GraphicControl.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_arch::graphiccontrol_has_name():
-    assert hasattr(Arch::GraphicControl, "name")
+def test_arch_method_has_name():
+    assert hasattr(Arch_Method, "name")
     descriptor = None
-    for klass in Arch::GraphicControl.__mro__:
+    for klass in Arch_Method.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -282,23 +258,23 @@ def test_arch::graphiccontrol_has_name():
 
 
 
-def test_arch::entity_is_not_abstract():
-    assert not inspect.isabstract(Arch::Entity)
+def test_arch_graphiccontrol_is_not_abstract():
+    assert not inspect.isabstract(Arch_GraphicControl)
 
 
-def test_arch::entity_constructor_exists():
-    assert callable(Arch::Entity.__init__)
+def test_arch_graphiccontrol_constructor_exists():
+    assert callable(Arch_GraphicControl.__init__)
 
 
-def test_arch::entity_constructor_args():
-    sig = inspect.signature(Arch::Entity.__init__)
+def test_arch_graphiccontrol_constructor_args():
+    sig = inspect.signature(Arch_GraphicControl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::entity_has_name():
-    assert hasattr(Arch::Entity, "name")
+def test_arch_graphiccontrol_has_name():
+    assert hasattr(Arch_GraphicControl, "name")
     descriptor = None
-    for klass in Arch::Entity.__mro__:
+    for klass in Arch_GraphicControl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -306,23 +282,23 @@ def test_arch::entity_has_name():
 
 
 
-def test_arch::logic_is_not_abstract():
-    assert not inspect.isabstract(Arch::Logic)
+def test_arch_entity_is_not_abstract():
+    assert not inspect.isabstract(Arch_Entity)
 
 
-def test_arch::logic_constructor_exists():
-    assert callable(Arch::Logic.__init__)
+def test_arch_entity_constructor_exists():
+    assert callable(Arch_Entity.__init__)
 
 
-def test_arch::logic_constructor_args():
-    sig = inspect.signature(Arch::Logic.__init__)
+def test_arch_entity_constructor_args():
+    sig = inspect.signature(Arch_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::logic_has_name():
-    assert hasattr(Arch::Logic, "name")
+def test_arch_entity_has_name():
+    assert hasattr(Arch_Entity, "name")
     descriptor = None
-    for klass in Arch::Logic.__mro__:
+    for klass in Arch_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -330,23 +306,23 @@ def test_arch::logic_has_name():
 
 
 
-def test_arch::service_is_not_abstract():
-    assert not inspect.isabstract(Arch::Service)
+def test_arch_logic_is_not_abstract():
+    assert not inspect.isabstract(Arch_Logic)
 
 
-def test_arch::service_constructor_exists():
-    assert callable(Arch::Service.__init__)
+def test_arch_logic_constructor_exists():
+    assert callable(Arch_Logic.__init__)
 
 
-def test_arch::service_constructor_args():
-    sig = inspect.signature(Arch::Service.__init__)
+def test_arch_logic_constructor_args():
+    sig = inspect.signature(Arch_Logic.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::service_has_name():
-    assert hasattr(Arch::Service, "name")
+def test_arch_logic_has_name():
+    assert hasattr(Arch_Logic, "name")
     descriptor = None
-    for klass in Arch::Service.__mro__:
+    for klass in Arch_Logic.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -354,23 +330,23 @@ def test_arch::service_has_name():
 
 
 
-def test_arch::controller_is_not_abstract():
-    assert not inspect.isabstract(Arch::Controller)
+def test_arch_service_is_not_abstract():
+    assert not inspect.isabstract(Arch_Service)
 
 
-def test_arch::controller_constructor_exists():
-    assert callable(Arch::Controller.__init__)
+def test_arch_service_constructor_exists():
+    assert callable(Arch_Service.__init__)
 
 
-def test_arch::controller_constructor_args():
-    sig = inspect.signature(Arch::Controller.__init__)
+def test_arch_service_constructor_args():
+    sig = inspect.signature(Arch_Service.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::controller_has_name():
-    assert hasattr(Arch::Controller, "name")
+def test_arch_service_has_name():
+    assert hasattr(Arch_Service, "name")
     descriptor = None
-    for klass in Arch::Controller.__mro__:
+    for klass in Arch_Service.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -378,23 +354,23 @@ def test_arch::controller_has_name():
 
 
 
-def test_arch::view_is_not_abstract():
-    assert not inspect.isabstract(Arch::View)
+def test_arch_controller_is_not_abstract():
+    assert not inspect.isabstract(Arch_Controller)
 
 
-def test_arch::view_constructor_exists():
-    assert callable(Arch::View.__init__)
+def test_arch_controller_constructor_exists():
+    assert callable(Arch_Controller.__init__)
 
 
-def test_arch::view_constructor_args():
-    sig = inspect.signature(Arch::View.__init__)
+def test_arch_controller_constructor_args():
+    sig = inspect.signature(Arch_Controller.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::view_has_name():
-    assert hasattr(Arch::View, "name")
+def test_arch_controller_has_name():
+    assert hasattr(Arch_Controller, "name")
     descriptor = None
-    for klass in Arch::View.__mro__:
+    for klass in Arch_Controller.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -402,23 +378,23 @@ def test_arch::view_has_name():
 
 
 
-def test_arch::backend_is_not_abstract():
-    assert not inspect.isabstract(Arch::BackEnd)
+def test_arch_view_is_not_abstract():
+    assert not inspect.isabstract(Arch_View)
 
 
-def test_arch::backend_constructor_exists():
-    assert callable(Arch::BackEnd.__init__)
+def test_arch_view_constructor_exists():
+    assert callable(Arch_View.__init__)
 
 
-def test_arch::backend_constructor_args():
-    sig = inspect.signature(Arch::BackEnd.__init__)
+def test_arch_view_constructor_args():
+    sig = inspect.signature(Arch_View.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::backend_has_name():
-    assert hasattr(Arch::BackEnd, "name")
+def test_arch_view_has_name():
+    assert hasattr(Arch_View, "name")
     descriptor = None
-    for klass in Arch::BackEnd.__mro__:
+    for klass in Arch_View.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -426,23 +402,23 @@ def test_arch::backend_has_name():
 
 
 
-def test_arch::frontend_is_not_abstract():
-    assert not inspect.isabstract(Arch::FrontEnd)
+def test_arch_backend_is_not_abstract():
+    assert not inspect.isabstract(Arch_BackEnd)
 
 
-def test_arch::frontend_constructor_exists():
-    assert callable(Arch::FrontEnd.__init__)
+def test_arch_backend_constructor_exists():
+    assert callable(Arch_BackEnd.__init__)
 
 
-def test_arch::frontend_constructor_args():
-    sig = inspect.signature(Arch::FrontEnd.__init__)
+def test_arch_backend_constructor_args():
+    sig = inspect.signature(Arch_BackEnd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::frontend_has_name():
-    assert hasattr(Arch::FrontEnd, "name")
+def test_arch_backend_has_name():
+    assert hasattr(Arch_BackEnd, "name")
     descriptor = None
-    for klass in Arch::FrontEnd.__mro__:
+    for klass in Arch_BackEnd.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -450,23 +426,47 @@ def test_arch::frontend_has_name():
 
 
 
-def test_arch::application_is_not_abstract():
-    assert not inspect.isabstract(Arch::Application)
+def test_arch_frontend_is_not_abstract():
+    assert not inspect.isabstract(Arch_FrontEnd)
 
 
-def test_arch::application_constructor_exists():
-    assert callable(Arch::Application.__init__)
+def test_arch_frontend_constructor_exists():
+    assert callable(Arch_FrontEnd.__init__)
 
 
-def test_arch::application_constructor_args():
-    sig = inspect.signature(Arch::Application.__init__)
+def test_arch_frontend_constructor_args():
+    sig = inspect.signature(Arch_FrontEnd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arch::application_has_name():
-    assert hasattr(Arch::Application, "name")
+def test_arch_frontend_has_name():
+    assert hasattr(Arch_FrontEnd, "name")
     descriptor = None
-    for klass in Arch::Application.__mro__:
+    for klass in Arch_FrontEnd.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_arch_application_is_not_abstract():
+    assert not inspect.isabstract(Arch_Application)
+
+
+def test_arch_application_constructor_exists():
+    assert callable(Arch_Application.__init__)
+
+
+def test_arch_application_constructor_args():
+    sig = inspect.signature(Arch_Application.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_arch_application_has_name():
+    assert hasattr(Arch_Application, "name")
+    descriptor = None
+    for klass in Arch_Application.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -484,111 +484,108 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Arch::Event_strategy = st.builds(
-    Arch::Event,
+Arch_Event_strategy = st.builds(
+    Arch_Event,
     name=
         safe_text
 )
 GraphicControl_strategy = st.builds(
     GraphicControl,
 )
-Arch::TextBox_strategy = st.builds(
-    Arch::TextBox,
+Arch_TextBox_strategy = st.builds(
+    Arch_TextBox,
     type=
         safe_text
 )
-Arch::Div_strategy = st.builds(
-    Arch::Div,
-)
-Arch::DropDownList_strategy = st.builds(
-    Arch::DropDownList,
+Arch_DropDownList_strategy = st.builds(
+    Arch_DropDownList,
     items=
         safe_text
 )
-Arch::Label_strategy = st.builds(
-    Arch::Label,
+Arch_Div_strategy = st.builds(
+    Arch_Div,
+)
+Arch_Label_strategy = st.builds(
+    Arch_Label,
     text=
         safe_text
 )
-Arch::Parameter_strategy = st.builds(
-    Arch::Parameter,
-    name=
-        safe_text,
+Arch_Parameter_strategy = st.builds(
+    Arch_Parameter,
     type=
+        safe_text,
+    name=
         safe_text
 )
-Arch::Attribute_strategy = st.builds(
-    Arch::Attribute,
-    name=
-        safe_text,
+Arch_Attribute_strategy = st.builds(
+    Arch_Attribute,
     type=
+        safe_text,
+    name=
         safe_text
 )
-Arch::Method_strategy = st.builds(
-    Arch::Method,
-    name=
-        safe_text,
+Arch_Method_strategy = st.builds(
+    Arch_Method,
     returntype=
-        safe_text
-)
-Arch::GraphicControl_strategy = st.builds(
-    Arch::GraphicControl,
+        safe_text,
     name=
         safe_text
 )
-Arch::Entity_strategy = st.builds(
-    Arch::Entity,
+Arch_GraphicControl_strategy = st.builds(
+    Arch_GraphicControl,
     name=
         safe_text
 )
-Arch::Logic_strategy = st.builds(
-    Arch::Logic,
+Arch_Entity_strategy = st.builds(
+    Arch_Entity,
     name=
         safe_text
 )
-Arch::Service_strategy = st.builds(
-    Arch::Service,
+Arch_Logic_strategy = st.builds(
+    Arch_Logic,
     name=
         safe_text
 )
-Arch::Controller_strategy = st.builds(
-    Arch::Controller,
+Arch_Service_strategy = st.builds(
+    Arch_Service,
     name=
         safe_text
 )
-Arch::View_strategy = st.builds(
-    Arch::View,
+Arch_Controller_strategy = st.builds(
+    Arch_Controller,
     name=
         safe_text
 )
-Arch::BackEnd_strategy = st.builds(
-    Arch::BackEnd,
+Arch_View_strategy = st.builds(
+    Arch_View,
     name=
         safe_text
 )
-Arch::FrontEnd_strategy = st.builds(
-    Arch::FrontEnd,
+Arch_BackEnd_strategy = st.builds(
+    Arch_BackEnd,
     name=
         safe_text
 )
-Arch::Application_strategy = st.builds(
-    Arch::Application,
+Arch_FrontEnd_strategy = st.builds(
+    Arch_FrontEnd,
+    name=
+        safe_text
+)
+Arch_Application_strategy = st.builds(
+    Arch_Application,
     name=
         safe_text
 )
 
-@given(instance=Arch::Event_strategy)
+@given(instance=Arch_Event_strategy)
 @settings(max_examples=50)
-def test_arch::event_instantiation(instance):
-    assert isinstance(instance, Arch::Event)
-
-@given(instance=Arch::Event_strategy)
-def test_arch::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_event_instantiation(instance):
+    assert isinstance(instance, Arch_Event)
 
 
-@given(instance=Arch::Event_strategy)
-def test_arch::event_name_setter(instance):
+
+@given(instance=Arch_Event_strategy)
+def test_arch_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -598,280 +595,226 @@ def test_arch::event_name_setter(instance):
 def test_graphiccontrol_instantiation(instance):
     assert isinstance(instance, GraphicControl)
 
-@given(instance=Arch::TextBox_strategy)
+@given(instance=Arch_TextBox_strategy)
 @settings(max_examples=50)
-def test_arch::textbox_instantiation(instance):
-    assert isinstance(instance, Arch::TextBox)
-
-@given(instance=Arch::TextBox_strategy)
-def test_arch::textbox_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_arch_textbox_instantiation(instance):
+    assert isinstance(instance, Arch_TextBox)
 
 
-@given(instance=Arch::TextBox_strategy)
-def test_arch::textbox_type_setter(instance):
+
+@given(instance=Arch_TextBox_strategy)
+def test_arch_textbox_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Arch::Div_strategy)
+@given(instance=Arch_DropDownList_strategy)
 @settings(max_examples=50)
-def test_arch::div_instantiation(instance):
-    assert isinstance(instance, Arch::Div)
-
-@given(instance=Arch::DropDownList_strategy)
-@settings(max_examples=50)
-def test_arch::dropdownlist_instantiation(instance):
-    assert isinstance(instance, Arch::DropDownList)
-
-@given(instance=Arch::DropDownList_strategy)
-def test_arch::dropdownlist_items_type(instance):
-    assert isinstance(instance.items, str)
+def test_arch_dropdownlist_instantiation(instance):
+    assert isinstance(instance, Arch_DropDownList)
 
 
-@given(instance=Arch::DropDownList_strategy)
-def test_arch::dropdownlist_items_setter(instance):
+
+@given(instance=Arch_DropDownList_strategy)
+def test_arch_dropdownlist_items_setter(instance):
     original = instance.items
     instance.items = original
     assert instance.items == original
 
-@given(instance=Arch::Label_strategy)
+@given(instance=Arch_Div_strategy)
 @settings(max_examples=50)
-def test_arch::label_instantiation(instance):
-    assert isinstance(instance, Arch::Label)
+def test_arch_div_instantiation(instance):
+    assert isinstance(instance, Arch_Div)
 
-@given(instance=Arch::Label_strategy)
-def test_arch::label_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=Arch_Label_strategy)
+@settings(max_examples=50)
+def test_arch_label_instantiation(instance):
+    assert isinstance(instance, Arch_Label)
 
 
-@given(instance=Arch::Label_strategy)
-def test_arch::label_text_setter(instance):
+
+@given(instance=Arch_Label_strategy)
+def test_arch_label_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=Arch::Parameter_strategy)
+@given(instance=Arch_Parameter_strategy)
 @settings(max_examples=50)
-def test_arch::parameter_instantiation(instance):
-    assert isinstance(instance, Arch::Parameter)
-
-@given(instance=Arch::Parameter_strategy)
-def test_arch::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_parameter_instantiation(instance):
+    assert isinstance(instance, Arch_Parameter)
 
 
-@given(instance=Arch::Parameter_strategy)
-def test_arch::parameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=Arch::Parameter_strategy)
-def test_arch::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Arch::Parameter_strategy)
-def test_arch::parameter_type_setter(instance):
+@given(instance=Arch_Parameter_strategy)
+def test_arch_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Arch::Attribute_strategy)
-@settings(max_examples=50)
-def test_arch::attribute_instantiation(instance):
-    assert isinstance(instance, Arch::Attribute)
-
-@given(instance=Arch::Attribute_strategy)
-def test_arch::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Arch::Attribute_strategy)
-def test_arch::attribute_name_setter(instance):
+@given(instance=Arch_Parameter_strategy)
+def test_arch_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Attribute_strategy)
-def test_arch::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=Arch_Attribute_strategy)
+@settings(max_examples=50)
+def test_arch_attribute_instantiation(instance):
+    assert isinstance(instance, Arch_Attribute)
 
 
-@given(instance=Arch::Attribute_strategy)
-def test_arch::attribute_type_setter(instance):
+
+@given(instance=Arch_Attribute_strategy)
+def test_arch_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Arch::Method_strategy)
-@settings(max_examples=50)
-def test_arch::method_instantiation(instance):
-    assert isinstance(instance, Arch::Method)
-
-@given(instance=Arch::Method_strategy)
-def test_arch::method_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Arch::Method_strategy)
-def test_arch::method_name_setter(instance):
+@given(instance=Arch_Attribute_strategy)
+def test_arch_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Method_strategy)
-def test_arch::method_returntype_type(instance):
-    assert isinstance(instance.returntype, str)
+@given(instance=Arch_Method_strategy)
+@settings(max_examples=50)
+def test_arch_method_instantiation(instance):
+    assert isinstance(instance, Arch_Method)
 
 
-@given(instance=Arch::Method_strategy)
-def test_arch::method_returntype_setter(instance):
+
+@given(instance=Arch_Method_strategy)
+def test_arch_method_returntype_setter(instance):
     original = instance.returntype
     instance.returntype = original
     assert instance.returntype == original
 
-@given(instance=Arch::GraphicControl_strategy)
-@settings(max_examples=50)
-def test_arch::graphiccontrol_instantiation(instance):
-    assert isinstance(instance, Arch::GraphicControl)
-
-@given(instance=Arch::GraphicControl_strategy)
-def test_arch::graphiccontrol_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Arch::GraphicControl_strategy)
-def test_arch::graphiccontrol_name_setter(instance):
+@given(instance=Arch_Method_strategy)
+def test_arch_method_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Entity_strategy)
+@given(instance=Arch_GraphicControl_strategy)
 @settings(max_examples=50)
-def test_arch::entity_instantiation(instance):
-    assert isinstance(instance, Arch::Entity)
-
-@given(instance=Arch::Entity_strategy)
-def test_arch::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_graphiccontrol_instantiation(instance):
+    assert isinstance(instance, Arch_GraphicControl)
 
 
-@given(instance=Arch::Entity_strategy)
-def test_arch::entity_name_setter(instance):
+
+@given(instance=Arch_GraphicControl_strategy)
+def test_arch_graphiccontrol_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Logic_strategy)
+@given(instance=Arch_Entity_strategy)
 @settings(max_examples=50)
-def test_arch::logic_instantiation(instance):
-    assert isinstance(instance, Arch::Logic)
-
-@given(instance=Arch::Logic_strategy)
-def test_arch::logic_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_entity_instantiation(instance):
+    assert isinstance(instance, Arch_Entity)
 
 
-@given(instance=Arch::Logic_strategy)
-def test_arch::logic_name_setter(instance):
+
+@given(instance=Arch_Entity_strategy)
+def test_arch_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Service_strategy)
+@given(instance=Arch_Logic_strategy)
 @settings(max_examples=50)
-def test_arch::service_instantiation(instance):
-    assert isinstance(instance, Arch::Service)
-
-@given(instance=Arch::Service_strategy)
-def test_arch::service_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_logic_instantiation(instance):
+    assert isinstance(instance, Arch_Logic)
 
 
-@given(instance=Arch::Service_strategy)
-def test_arch::service_name_setter(instance):
+
+@given(instance=Arch_Logic_strategy)
+def test_arch_logic_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Controller_strategy)
+@given(instance=Arch_Service_strategy)
 @settings(max_examples=50)
-def test_arch::controller_instantiation(instance):
-    assert isinstance(instance, Arch::Controller)
-
-@given(instance=Arch::Controller_strategy)
-def test_arch::controller_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_service_instantiation(instance):
+    assert isinstance(instance, Arch_Service)
 
 
-@given(instance=Arch::Controller_strategy)
-def test_arch::controller_name_setter(instance):
+
+@given(instance=Arch_Service_strategy)
+def test_arch_service_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::View_strategy)
+@given(instance=Arch_Controller_strategy)
 @settings(max_examples=50)
-def test_arch::view_instantiation(instance):
-    assert isinstance(instance, Arch::View)
-
-@given(instance=Arch::View_strategy)
-def test_arch::view_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_controller_instantiation(instance):
+    assert isinstance(instance, Arch_Controller)
 
 
-@given(instance=Arch::View_strategy)
-def test_arch::view_name_setter(instance):
+
+@given(instance=Arch_Controller_strategy)
+def test_arch_controller_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::BackEnd_strategy)
+@given(instance=Arch_View_strategy)
 @settings(max_examples=50)
-def test_arch::backend_instantiation(instance):
-    assert isinstance(instance, Arch::BackEnd)
-
-@given(instance=Arch::BackEnd_strategy)
-def test_arch::backend_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_view_instantiation(instance):
+    assert isinstance(instance, Arch_View)
 
 
-@given(instance=Arch::BackEnd_strategy)
-def test_arch::backend_name_setter(instance):
+
+@given(instance=Arch_View_strategy)
+def test_arch_view_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::FrontEnd_strategy)
+@given(instance=Arch_BackEnd_strategy)
 @settings(max_examples=50)
-def test_arch::frontend_instantiation(instance):
-    assert isinstance(instance, Arch::FrontEnd)
-
-@given(instance=Arch::FrontEnd_strategy)
-def test_arch::frontend_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_backend_instantiation(instance):
+    assert isinstance(instance, Arch_BackEnd)
 
 
-@given(instance=Arch::FrontEnd_strategy)
-def test_arch::frontend_name_setter(instance):
+
+@given(instance=Arch_BackEnd_strategy)
+def test_arch_backend_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Arch::Application_strategy)
+@given(instance=Arch_FrontEnd_strategy)
 @settings(max_examples=50)
-def test_arch::application_instantiation(instance):
-    assert isinstance(instance, Arch::Application)
-
-@given(instance=Arch::Application_strategy)
-def test_arch::application_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arch_frontend_instantiation(instance):
+    assert isinstance(instance, Arch_FrontEnd)
 
 
-@given(instance=Arch::Application_strategy)
-def test_arch::application_name_setter(instance):
+
+@given(instance=Arch_FrontEnd_strategy)
+def test_arch_frontend_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Arch_Application_strategy)
+@settings(max_examples=50)
+def test_arch_application_instantiation(instance):
+    assert isinstance(instance, Arch_Application)
+
+
+
+@given(instance=Arch_Application_strategy)
+def test_arch_application_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

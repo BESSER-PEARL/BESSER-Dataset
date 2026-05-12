@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class_Diagram_for_Propsed_System_ETF,
@@ -190,9 +190,9 @@ def test_class_diagram_for_propsed_system_messages_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Messages.__init__)
     params = list(sig.parameters.keys())
     assert "msg" in params, "Missing parameter 'msg'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "sender" in params, "Missing parameter 'sender'"
     assert "read_recipt" in params, "Missing parameter 'read_recipt'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "reciever" in params, "Missing parameter 'reciever'"
 
 def test_class_diagram_for_propsed_system_messages_has_msg():
@@ -201,6 +201,15 @@ def test_class_diagram_for_propsed_system_messages_has_msg():
     for klass in Class_Diagram_for_Propsed_System_Messages.__mro__:
         if "msg" in klass.__dict__:
             descriptor = klass.__dict__["msg"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_messages_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_Messages, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Messages.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -219,15 +228,6 @@ def test_class_diagram_for_propsed_system_messages_has_read_recipt():
     for klass in Class_Diagram_for_Propsed_System_Messages.__mro__:
         if "read_recipt" in klass.__dict__:
             descriptor = klass.__dict__["read_recipt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_messages_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_Messages, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Messages.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,20 +253,11 @@ def test_class_diagram_for_propsed_system_advances_constructor_exists():
 def test_class_diagram_for_propsed_system_advances_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Advances.__init__)
     params = list(sig.parameters.keys())
-    assert "installments" in params, "Missing parameter 'installments'"
     assert "id" in params, "Missing parameter 'id'"
     assert "remain" in params, "Missing parameter 'remain'"
-    assert "amount" in params, "Missing parameter 'amount'"
     assert "empid" in params, "Missing parameter 'empid'"
-
-def test_class_diagram_for_propsed_system_advances_has_installments():
-    assert hasattr(Class_Diagram_for_Propsed_System_Advances, "installments")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Advances.__mro__:
-        if "installments" in klass.__dict__:
-            descriptor = klass.__dict__["installments"]
-            break
-    assert isinstance(descriptor, property)
+    assert "amount" in params, "Missing parameter 'amount'"
+    assert "installments" in params, "Missing parameter 'installments'"
 
 def test_class_diagram_for_propsed_system_advances_has_id():
     assert hasattr(Class_Diagram_for_Propsed_System_Advances, "id")
@@ -286,6 +277,15 @@ def test_class_diagram_for_propsed_system_advances_has_remain():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_advances_has_empid():
+    assert hasattr(Class_Diagram_for_Propsed_System_Advances, "empid")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Advances.__mro__:
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_class_diagram_for_propsed_system_advances_has_amount():
     assert hasattr(Class_Diagram_for_Propsed_System_Advances, "amount")
     descriptor = None
@@ -295,12 +295,12 @@ def test_class_diagram_for_propsed_system_advances_has_amount():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_advances_has_empid():
-    assert hasattr(Class_Diagram_for_Propsed_System_Advances, "empid")
+def test_class_diagram_for_propsed_system_advances_has_installments():
+    assert hasattr(Class_Diagram_for_Propsed_System_Advances, "installments")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Advances.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
+        if "installments" in klass.__dict__:
+            descriptor = klass.__dict__["installments"]
             break
     assert isinstance(descriptor, property)
 
@@ -361,27 +361,18 @@ def test_class_diagram_for_propsed_system_users_constructor_exists():
 def test_class_diagram_for_propsed_system_users_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Users.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "lastname" in params, "Missing parameter 'lastname'"
-    assert "firstname" in params, "Missing parameter 'firstname'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_class_diagram_for_propsed_system_users_has_password():
-    assert hasattr(Class_Diagram_for_Propsed_System_Users, "password")
+def test_class_diagram_for_propsed_system_users_has_email():
+    assert hasattr(Class_Diagram_for_Propsed_System_Users, "email")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Users.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_users_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_Users, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Users.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -394,21 +385,30 @@ def test_class_diagram_for_propsed_system_users_has_lastname():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_users_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_Users, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Users.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_users_has_password():
+    assert hasattr(Class_Diagram_for_Propsed_System_Users, "password")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Users.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_class_diagram_for_propsed_system_users_has_firstname():
     assert hasattr(Class_Diagram_for_Propsed_System_Users, "firstname")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Users.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_users_has_email():
-    assert hasattr(Class_Diagram_for_Propsed_System_Users, "email")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Users.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -425,16 +425,16 @@ def test_class_diagram_for_propsed_system_user_groups_constructor_exists():
 def test_class_diagram_for_propsed_system_user_groups_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_User_groups.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
-def test_class_diagram_for_propsed_system_user_groups_has_attribute2():
-    assert hasattr(Class_Diagram_for_Propsed_System_User_groups, "attribute2")
+def test_class_diagram_for_propsed_system_user_groups_has_attribute():
+    assert hasattr(Class_Diagram_for_Propsed_System_User_groups, "attribute")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_User_groups.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -447,12 +447,12 @@ def test_class_diagram_for_propsed_system_user_groups_has_attribute3():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_user_groups_has_attribute():
-    assert hasattr(Class_Diagram_for_Propsed_System_User_groups, "attribute")
+def test_class_diagram_for_propsed_system_user_groups_has_attribute2():
+    assert hasattr(Class_Diagram_for_Propsed_System_User_groups, "attribute2")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_User_groups.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -470,9 +470,9 @@ def test_class_diagram_for_propsed_system_ot_requests_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_OT_Requests.__init__)
     params = list(sig.parameters.keys())
     assert "EmpID" in params, "Missing parameter 'EmpID'"
-    assert "OTType" in params, "Missing parameter 'OTType'"
     assert "id" in params, "Missing parameter 'id'"
     assert "OtDay" in params, "Missing parameter 'OtDay'"
+    assert "OTType" in params, "Missing parameter 'OTType'"
 
 def test_class_diagram_for_propsed_system_ot_requests_has_EmpID():
     assert hasattr(Class_Diagram_for_Propsed_System_OT_Requests, "EmpID")
@@ -480,15 +480,6 @@ def test_class_diagram_for_propsed_system_ot_requests_has_EmpID():
     for klass in Class_Diagram_for_Propsed_System_OT_Requests.__mro__:
         if "EmpID" in klass.__dict__:
             descriptor = klass.__dict__["EmpID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_ot_requests_has_OTType():
-    assert hasattr(Class_Diagram_for_Propsed_System_OT_Requests, "OTType")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_OT_Requests.__mro__:
-        if "OTType" in klass.__dict__:
-            descriptor = klass.__dict__["OTType"]
             break
     assert isinstance(descriptor, property)
 
@@ -510,6 +501,15 @@ def test_class_diagram_for_propsed_system_ot_requests_has_OtDay():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_ot_requests_has_OTType():
+    assert hasattr(Class_Diagram_for_Propsed_System_OT_Requests, "OTType")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_OT_Requests.__mro__:
+        if "OTType" in klass.__dict__:
+            descriptor = klass.__dict__["OTType"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_class_diagram_for_propsed_system_leaveprofiles_is_not_abstract():
@@ -523,19 +523,10 @@ def test_class_diagram_for_propsed_system_leaveprofiles_constructor_exists():
 def test_class_diagram_for_propsed_system_leaveprofiles_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_LeaveProfiles.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "anual" in params, "Missing parameter 'anual'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "casual" in params, "Missing parameter 'casual'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_class_diagram_for_propsed_system_leaveprofiles_has_name():
-    assert hasattr(Class_Diagram_for_Propsed_System_LeaveProfiles, "name")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_LeaveProfiles.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_class_diagram_for_propsed_system_leaveprofiles_has_anual():
     assert hasattr(Class_Diagram_for_Propsed_System_LeaveProfiles, "anual")
@@ -543,6 +534,15 @@ def test_class_diagram_for_propsed_system_leaveprofiles_has_anual():
     for klass in Class_Diagram_for_Propsed_System_LeaveProfiles.__mro__:
         if "anual" in klass.__dict__:
             descriptor = klass.__dict__["anual"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_leaveprofiles_has_name():
+    assert hasattr(Class_Diagram_for_Propsed_System_LeaveProfiles, "name")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_LeaveProfiles.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -577,39 +577,12 @@ def test_class_diagram_for_propsed_system_leave_taken_constructor_exists():
 def test_class_diagram_for_propsed_system_leave_taken_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Leave_Taken.__init__)
     params = list(sig.parameters.keys())
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "enddate" in params, "Missing parameter 'enddate'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "leavetype" in params, "Missing parameter 'leavetype'"
     assert "start_date" in params, "Missing parameter 'start_date'"
+    assert "empid" in params, "Missing parameter 'empid'"
     assert "status" in params, "Missing parameter 'status'"
-
-def test_class_diagram_for_propsed_system_leave_taken_has_empid():
-    assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "empid")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_leave_taken_has_enddate():
-    assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "enddate")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
-        if "enddate" in klass.__dict__:
-            descriptor = klass.__dict__["enddate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_leave_taken_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
+    assert "enddate" in params, "Missing parameter 'enddate'"
 
 def test_class_diagram_for_propsed_system_leave_taken_has_leavetype():
     assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "leavetype")
@@ -629,12 +602,39 @@ def test_class_diagram_for_propsed_system_leave_taken_has_start_date():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_leave_taken_has_empid():
+    assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "empid")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_class_diagram_for_propsed_system_leave_taken_has_status():
     assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "status")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_leave_taken_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_leave_taken_has_enddate():
+    assert hasattr(Class_Diagram_for_Propsed_System_Leave_Taken, "enddate")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Leave_Taken.__mro__:
+        if "enddate" in klass.__dict__:
+            descriptor = klass.__dict__["enddate"]
             break
     assert isinstance(descriptor, property)
 
@@ -651,17 +651,17 @@ def test_class_diagram_for_propsed_system_event_constructor_exists():
 def test_class_diagram_for_propsed_system_event_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Event.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "eventname" in params, "Missing parameter 'eventname'"
     assert "date" in params, "Missing parameter 'date'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "eventname" in params, "Missing parameter 'eventname'"
 
-def test_class_diagram_for_propsed_system_event_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_Event, "id")
+def test_class_diagram_for_propsed_system_event_has_date():
+    assert hasattr(Class_Diagram_for_Propsed_System_Event, "date")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Event.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -674,21 +674,21 @@ def test_class_diagram_for_propsed_system_event_has_type():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_event_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_Event, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Event.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_class_diagram_for_propsed_system_event_has_eventname():
     assert hasattr(Class_Diagram_for_Propsed_System_Event, "eventname")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Event.__mro__:
         if "eventname" in klass.__dict__:
             descriptor = klass.__dict__["eventname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_event_has_date():
-    assert hasattr(Class_Diagram_for_Propsed_System_Event, "date")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Event.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -705,9 +705,18 @@ def test_class_diagram_for_propsed_system_epf_constructor_exists():
 def test_class_diagram_for_propsed_system_epf_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_EPF.__init__)
     params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
     assert "effectve_date" in params, "Missing parameter 'effectve_date'"
     assert "precentage" in params, "Missing parameter 'precentage'"
-    assert "id" in params, "Missing parameter 'id'"
+
+def test_class_diagram_for_propsed_system_epf_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_EPF, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EPF.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_class_diagram_for_propsed_system_epf_has_effectve_date():
     assert hasattr(Class_Diagram_for_Propsed_System_EPF, "effectve_date")
@@ -727,15 +736,6 @@ def test_class_diagram_for_propsed_system_epf_has_precentage():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_epf_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_EPF, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EPF.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_class_diagram_for_propsed_system_employeesalary_is_not_abstract():
@@ -749,17 +749,8 @@ def test_class_diagram_for_propsed_system_employeesalary_constructor_exists():
 def test_class_diagram_for_propsed_system_employeesalary_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_EmployeeSalary.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-
-def test_class_diagram_for_propsed_system_employeesalary_has_attribute():
-    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeSalary, "attribute")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EmployeeSalary.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_class_diagram_for_propsed_system_employeesalary_has_attribute2():
     assert hasattr(Class_Diagram_for_Propsed_System_EmployeeSalary, "attribute2")
@@ -767,6 +758,15 @@ def test_class_diagram_for_propsed_system_employeesalary_has_attribute2():
     for klass in Class_Diagram_for_Propsed_System_EmployeeSalary.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employeesalary_has_attribute():
+    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeSalary, "attribute")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EmployeeSalary.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -784,13 +784,13 @@ def test_class_diagram_for_propsed_system_employeeparoll_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_EmployeeParoll.__init__)
     params = list(sig.parameters.keys())
     assert "otamount" in params, "Missing parameter 'otamount'"
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "doyamount" in params, "Missing parameter 'doyamount'"
-    assert "empid3" in params, "Missing parameter 'empid3'"
-    assert "basicslaray" in params, "Missing parameter 'basicslaray'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "epf" in params, "Missing parameter 'epf'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "doyamount" in params, "Missing parameter 'doyamount'"
+    assert "basicslaray" in params, "Missing parameter 'basicslaray'"
+    assert "empid3" in params, "Missing parameter 'empid3'"
     assert "etf" in params, "Missing parameter 'etf'"
+    assert "empid" in params, "Missing parameter 'empid'"
 
 def test_class_diagram_for_propsed_system_employeeparoll_has_otamount():
     assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "otamount")
@@ -798,51 +798,6 @@ def test_class_diagram_for_propsed_system_employeeparoll_has_otamount():
     for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
         if "otamount" in klass.__dict__:
             descriptor = klass.__dict__["otamount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employeeparoll_has_empid():
-    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "empid")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employeeparoll_has_doyamount():
-    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "doyamount")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
-        if "doyamount" in klass.__dict__:
-            descriptor = klass.__dict__["doyamount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employeeparoll_has_empid3():
-    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "empid3")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
-        if "empid3" in klass.__dict__:
-            descriptor = klass.__dict__["empid3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employeeparoll_has_basicslaray():
-    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "basicslaray")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
-        if "basicslaray" in klass.__dict__:
-            descriptor = klass.__dict__["basicslaray"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employeeparoll_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -855,12 +810,57 @@ def test_class_diagram_for_propsed_system_employeeparoll_has_epf():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_employeeparoll_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employeeparoll_has_doyamount():
+    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "doyamount")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
+        if "doyamount" in klass.__dict__:
+            descriptor = klass.__dict__["doyamount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employeeparoll_has_basicslaray():
+    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "basicslaray")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
+        if "basicslaray" in klass.__dict__:
+            descriptor = klass.__dict__["basicslaray"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employeeparoll_has_empid3():
+    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "empid3")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
+        if "empid3" in klass.__dict__:
+            descriptor = klass.__dict__["empid3"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_class_diagram_for_propsed_system_employeeparoll_has_etf():
     assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "etf")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
         if "etf" in klass.__dict__:
             descriptor = klass.__dict__["etf"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employeeparoll_has_empid():
+    assert hasattr(Class_Diagram_for_Propsed_System_EmployeeParoll, "empid")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_EmployeeParoll.__mro__:
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -877,31 +877,22 @@ def test_class_diagram_for_propsed_system_employee_constructor_exists():
 def test_class_diagram_for_propsed_system_employee_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "leavegroup" in params, "Missing parameter 'leavegroup'"
-    assert "post" in params, "Missing parameter 'post'"
-    assert "usergroup" in params, "Missing parameter 'usergroup'"
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "user_id" in params, "Missing parameter 'user_id'"
     assert "mobile" in params, "Missing parameter 'mobile'"
-    assert "shift" in params, "Missing parameter 'shift'"
+    assert "usergroup" in params, "Missing parameter 'usergroup'"
+    assert "post" in params, "Missing parameter 'post'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
+    assert "leavegroup" in params, "Missing parameter 'leavegroup'"
     assert "depid" in params, "Missing parameter 'depid'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "shift" in params, "Missing parameter 'shift'"
+    assert "empid" in params, "Missing parameter 'empid'"
 
-def test_class_diagram_for_propsed_system_employee_has_leavegroup():
-    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "leavegroup")
+def test_class_diagram_for_propsed_system_employee_has_mobile():
+    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "mobile")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
-        if "leavegroup" in klass.__dict__:
-            descriptor = klass.__dict__["leavegroup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employee_has_post():
-    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "post")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
-        if "post" in klass.__dict__:
-            descriptor = klass.__dict__["post"]
+        if "mobile" in klass.__dict__:
+            descriptor = klass.__dict__["mobile"]
             break
     assert isinstance(descriptor, property)
 
@@ -914,21 +905,12 @@ def test_class_diagram_for_propsed_system_employee_has_usergroup():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_employee_has_empid():
-    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "empid")
+def test_class_diagram_for_propsed_system_employee_has_post():
+    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "post")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_employee_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "post" in klass.__dict__:
+            descriptor = klass.__dict__["post"]
             break
     assert isinstance(descriptor, property)
 
@@ -941,12 +923,30 @@ def test_class_diagram_for_propsed_system_employee_has_user_id():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_employee_has_mobile():
-    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "mobile")
+def test_class_diagram_for_propsed_system_employee_has_leavegroup():
+    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "leavegroup")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
-        if "mobile" in klass.__dict__:
-            descriptor = klass.__dict__["mobile"]
+        if "leavegroup" in klass.__dict__:
+            descriptor = klass.__dict__["leavegroup"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employee_has_depid():
+    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "depid")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
+        if "depid" in klass.__dict__:
+            descriptor = klass.__dict__["depid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_employee_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -959,12 +959,12 @@ def test_class_diagram_for_propsed_system_employee_has_shift():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_employee_has_depid():
-    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "depid")
+def test_class_diagram_for_propsed_system_employee_has_empid():
+    assert hasattr(Class_Diagram_for_Propsed_System_Employee, "empid")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Employee.__mro__:
-        if "depid" in klass.__dict__:
-            descriptor = klass.__dict__["depid"]
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -982,8 +982,8 @@ def test_class_diagram_for_propsed_system_posts_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Posts.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "department" in params, "Missing parameter 'department'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "department" in params, "Missing parameter 'department'"
 
 def test_class_diagram_for_propsed_system_posts_has_id():
     assert hasattr(Class_Diagram_for_Propsed_System_Posts, "id")
@@ -994,21 +994,21 @@ def test_class_diagram_for_propsed_system_posts_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_posts_has_department():
-    assert hasattr(Class_Diagram_for_Propsed_System_Posts, "department")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Posts.__mro__:
-        if "department" in klass.__dict__:
-            descriptor = klass.__dict__["department"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_class_diagram_for_propsed_system_posts_has_name():
     assert hasattr(Class_Diagram_for_Propsed_System_Posts, "name")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_Posts.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_posts_has_department():
+    assert hasattr(Class_Diagram_for_Propsed_System_Posts, "department")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Posts.__mro__:
+        if "department" in klass.__dict__:
+            descriptor = klass.__dict__["department"]
             break
     assert isinstance(descriptor, property)
 
@@ -1025,28 +1025,10 @@ def test_class_diagram_for_propsed_system_shifts_constructor_exists():
 def test_class_diagram_for_propsed_system_shifts_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Shifts.__init__)
     params = list(sig.parameters.keys())
-    assert "starttime" in params, "Missing parameter 'starttime'"
-    assert "endtime" in params, "Missing parameter 'endtime'"
     assert "shiftaname" in params, "Missing parameter 'shiftaname'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_class_diagram_for_propsed_system_shifts_has_starttime():
-    assert hasattr(Class_Diagram_for_Propsed_System_Shifts, "starttime")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Shifts.__mro__:
-        if "starttime" in klass.__dict__:
-            descriptor = klass.__dict__["starttime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_shifts_has_endtime():
-    assert hasattr(Class_Diagram_for_Propsed_System_Shifts, "endtime")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Shifts.__mro__:
-        if "endtime" in klass.__dict__:
-            descriptor = klass.__dict__["endtime"]
-            break
-    assert isinstance(descriptor, property)
+    assert "endtime" in params, "Missing parameter 'endtime'"
+    assert "starttime" in params, "Missing parameter 'starttime'"
 
 def test_class_diagram_for_propsed_system_shifts_has_shiftaname():
     assert hasattr(Class_Diagram_for_Propsed_System_Shifts, "shiftaname")
@@ -1063,6 +1045,24 @@ def test_class_diagram_for_propsed_system_shifts_has_id():
     for klass in Class_Diagram_for_Propsed_System_Shifts.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_shifts_has_endtime():
+    assert hasattr(Class_Diagram_for_Propsed_System_Shifts, "endtime")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Shifts.__mro__:
+        if "endtime" in klass.__dict__:
+            descriptor = klass.__dict__["endtime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_shifts_has_starttime():
+    assert hasattr(Class_Diagram_for_Propsed_System_Shifts, "starttime")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Shifts.__mro__:
+        if "starttime" in klass.__dict__:
+            descriptor = klass.__dict__["starttime"]
             break
     assert isinstance(descriptor, property)
 
@@ -1113,9 +1113,18 @@ def test_class_diagram_for_propsed_system_deductions_constructor_exists():
 def test_class_diagram_for_propsed_system_deductions_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Deductions.__init__)
     params = list(sig.parameters.keys())
+    assert "empid" in params, "Missing parameter 'empid'"
     assert "amount" in params, "Missing parameter 'amount'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "empid" in params, "Missing parameter 'empid'"
+
+def test_class_diagram_for_propsed_system_deductions_has_empid():
+    assert hasattr(Class_Diagram_for_Propsed_System_Deductions, "empid")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Deductions.__mro__:
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_class_diagram_for_propsed_system_deductions_has_amount():
     assert hasattr(Class_Diagram_for_Propsed_System_Deductions, "amount")
@@ -1135,15 +1144,6 @@ def test_class_diagram_for_propsed_system_deductions_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_deductions_has_empid():
-    assert hasattr(Class_Diagram_for_Propsed_System_Deductions, "empid")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Deductions.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_class_diagram_for_propsed_system_allowancetypes_is_not_abstract():
@@ -1158,8 +1158,8 @@ def test_class_diagram_for_propsed_system_allowancetypes_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_AllowanceTypes.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
-    assert "date_added" in params, "Missing parameter 'date_added'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "date_added" in params, "Missing parameter 'date_added'"
 
 def test_class_diagram_for_propsed_system_allowancetypes_has_type():
     assert hasattr(Class_Diagram_for_Propsed_System_AllowanceTypes, "type")
@@ -1170,21 +1170,21 @@ def test_class_diagram_for_propsed_system_allowancetypes_has_type():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_allowancetypes_has_date_added():
-    assert hasattr(Class_Diagram_for_Propsed_System_AllowanceTypes, "date_added")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_AllowanceTypes.__mro__:
-        if "date_added" in klass.__dict__:
-            descriptor = klass.__dict__["date_added"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_class_diagram_for_propsed_system_allowancetypes_has_id():
     assert hasattr(Class_Diagram_for_Propsed_System_AllowanceTypes, "id")
     descriptor = None
     for klass in Class_Diagram_for_Propsed_System_AllowanceTypes.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_allowancetypes_has_date_added():
+    assert hasattr(Class_Diagram_for_Propsed_System_AllowanceTypes, "date_added")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_AllowanceTypes.__mro__:
+        if "date_added" in klass.__dict__:
+            descriptor = klass.__dict__["date_added"]
             break
     assert isinstance(descriptor, property)
 
@@ -1201,9 +1201,18 @@ def test_class_diagram_for_propsed_system_deuctiontypes_constructor_exists():
 def test_class_diagram_for_propsed_system_deuctiontypes_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_DeuctionTypes.__init__)
     params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
     assert "id" in params, "Missing parameter 'id'"
     assert "date_add" in params, "Missing parameter 'date_add'"
-    assert "type" in params, "Missing parameter 'type'"
+
+def test_class_diagram_for_propsed_system_deuctiontypes_has_type():
+    assert hasattr(Class_Diagram_for_Propsed_System_DeuctionTypes, "type")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_DeuctionTypes.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_class_diagram_for_propsed_system_deuctiontypes_has_id():
     assert hasattr(Class_Diagram_for_Propsed_System_DeuctionTypes, "id")
@@ -1223,15 +1232,6 @@ def test_class_diagram_for_propsed_system_deuctiontypes_has_date_add():
             break
     assert isinstance(descriptor, property)
 
-def test_class_diagram_for_propsed_system_deuctiontypes_has_type():
-    assert hasattr(Class_Diagram_for_Propsed_System_DeuctionTypes, "type")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_DeuctionTypes.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_class_diagram_for_propsed_system_attendance_is_not_abstract():
@@ -1245,19 +1245,10 @@ def test_class_diagram_for_propsed_system_attendance_constructor_exists():
 def test_class_diagram_for_propsed_system_attendance_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Attendance.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "empid" in params, "Missing parameter 'empid'"
     assert "timein" in params, "Missing parameter 'timein'"
     assert "timeout" in params, "Missing parameter 'timeout'"
-
-def test_class_diagram_for_propsed_system_attendance_has_id():
-    assert hasattr(Class_Diagram_for_Propsed_System_Attendance, "id")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Attendance.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_class_diagram_for_propsed_system_attendance_has_empid():
     assert hasattr(Class_Diagram_for_Propsed_System_Attendance, "empid")
@@ -1286,6 +1277,15 @@ def test_class_diagram_for_propsed_system_attendance_has_timeout():
             break
     assert isinstance(descriptor, property)
 
+def test_class_diagram_for_propsed_system_attendance_has_id():
+    assert hasattr(Class_Diagram_for_Propsed_System_Attendance, "id")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Attendance.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_class_diagram_for_propsed_system_allowance_is_not_abstract():
@@ -1300,9 +1300,9 @@ def test_class_diagram_for_propsed_system_allowance_constructor_args():
     sig = inspect.signature(Class_Diagram_for_Propsed_System_Allowance.__init__)
     params = list(sig.parameters.keys())
     assert "emp_id" in params, "Missing parameter 'emp_id'"
+    assert "amount" in params, "Missing parameter 'amount'"
     assert "id" in params, "Missing parameter 'id'"
     assert "effectivedate" in params, "Missing parameter 'effectivedate'"
-    assert "amount" in params, "Missing parameter 'amount'"
 
 def test_class_diagram_for_propsed_system_allowance_has_emp_id():
     assert hasattr(Class_Diagram_for_Propsed_System_Allowance, "emp_id")
@@ -1310,6 +1310,15 @@ def test_class_diagram_for_propsed_system_allowance_has_emp_id():
     for klass in Class_Diagram_for_Propsed_System_Allowance.__mro__:
         if "emp_id" in klass.__dict__:
             descriptor = klass.__dict__["emp_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_diagram_for_propsed_system_allowance_has_amount():
+    assert hasattr(Class_Diagram_for_Propsed_System_Allowance, "amount")
+    descriptor = None
+    for klass in Class_Diagram_for_Propsed_System_Allowance.__mro__:
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -1328,15 +1337,6 @@ def test_class_diagram_for_propsed_system_allowance_has_effectivedate():
     for klass in Class_Diagram_for_Propsed_System_Allowance.__mro__:
         if "effectivedate" in klass.__dict__:
             descriptor = klass.__dict__["effectivedate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class_diagram_for_propsed_system_allowance_has_amount():
-    assert hasattr(Class_Diagram_for_Propsed_System_Allowance, "amount")
-    descriptor = None
-    for klass in Class_Diagram_for_Propsed_System_Allowance.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -1367,17 +1367,8 @@ def test_package_user_permissions_constructor_exists():
 def test_package_user_permissions_constructor_args():
     sig = inspect.signature(Package_User_Permissions.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_user_permissions_has_attribute2():
-    assert hasattr(Package_User_Permissions, "attribute2")
-    descriptor = None
-    for klass in Package_User_Permissions.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_user_permissions_has_attribute():
     assert hasattr(Package_User_Permissions, "attribute")
@@ -1385,6 +1376,15 @@ def test_package_user_permissions_has_attribute():
     for klass in Package_User_Permissions.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_user_permissions_has_attribute2():
+    assert hasattr(Package_User_Permissions, "attribute2")
+    descriptor = None
+    for klass in Package_User_Permissions.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1445,9 +1445,9 @@ def test_package_users_constructor_args():
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
     assert "firstname" in params, "Missing parameter 'firstname'"
-    assert "password" in params, "Missing parameter 'password'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_package_users_has_email():
     assert hasattr(Package_Users, "email")
@@ -1467,12 +1467,12 @@ def test_package_users_has_firstname():
             break
     assert isinstance(descriptor, property)
 
-def test_package_users_has_password():
-    assert hasattr(Package_Users, "password")
+def test_package_users_has_lastname():
+    assert hasattr(Package_Users, "lastname")
     descriptor = None
     for klass in Package_Users.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "lastname" in klass.__dict__:
+            descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
@@ -1485,12 +1485,12 @@ def test_package_users_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_package_users_has_lastname():
-    assert hasattr(Package_Users, "lastname")
+def test_package_users_has_password():
+    assert hasattr(Package_Users, "password")
     descriptor = None
     for klass in Package_Users.__mro__:
-        if "lastname" in klass.__dict__:
-            descriptor = klass.__dict__["lastname"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -1507,18 +1507,9 @@ def test_package_user_groups_constructor_exists():
 def test_package_user_groups_constructor_args():
     sig = inspect.signature(Package_User_groups.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_user_groups_has_attribute3():
-    assert hasattr(Package_User_groups, "attribute3")
-    descriptor = None
-    for klass in Package_User_groups.__mro__:
-        if "attribute3" in klass.__dict__:
-            descriptor = klass.__dict__["attribute3"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_package_user_groups_has_attribute2():
     assert hasattr(Package_User_groups, "attribute2")
@@ -1526,6 +1517,15 @@ def test_package_user_groups_has_attribute2():
     for klass in Package_User_groups.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_user_groups_has_attribute3():
+    assert hasattr(Package_User_groups, "attribute3")
+    descriptor = None
+    for klass in Package_User_groups.__mro__:
+        if "attribute3" in klass.__dict__:
+            descriptor = klass.__dict__["attribute3"]
             break
     assert isinstance(descriptor, property)
 
@@ -1551,17 +1551,17 @@ def test_package_ot_requests_constructor_exists():
 def test_package_ot_requests_constructor_args():
     sig = inspect.signature(Package_OT_Requests.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
+    assert "OtDay" in params, "Missing parameter 'OtDay'"
     assert "EmpID" in params, "Missing parameter 'EmpID'"
     assert "OTType" in params, "Missing parameter 'OTType'"
-    assert "OtDay" in params, "Missing parameter 'OtDay'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_package_ot_requests_has_id():
-    assert hasattr(Package_OT_Requests, "id")
+def test_package_ot_requests_has_OtDay():
+    assert hasattr(Package_OT_Requests, "OtDay")
     descriptor = None
     for klass in Package_OT_Requests.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "OtDay" in klass.__dict__:
+            descriptor = klass.__dict__["OtDay"]
             break
     assert isinstance(descriptor, property)
 
@@ -1583,12 +1583,12 @@ def test_package_ot_requests_has_OTType():
             break
     assert isinstance(descriptor, property)
 
-def test_package_ot_requests_has_OtDay():
-    assert hasattr(Package_OT_Requests, "OtDay")
+def test_package_ot_requests_has_id():
+    assert hasattr(Package_OT_Requests, "id")
     descriptor = None
     for klass in Package_OT_Requests.__mro__:
-        if "OtDay" in klass.__dict__:
-            descriptor = klass.__dict__["OtDay"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -1605,17 +1605,8 @@ def test_package_leaveprofiles_constructor_exists():
 def test_package_leaveprofiles_constructor_args():
     sig = inspect.signature(Package_LeaveProfiles.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_leaveprofiles_has_attribute2():
-    assert hasattr(Package_LeaveProfiles, "attribute2")
-    descriptor = None
-    for klass in Package_LeaveProfiles.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_leaveprofiles_has_attribute():
     assert hasattr(Package_LeaveProfiles, "attribute")
@@ -1623,6 +1614,15 @@ def test_package_leaveprofiles_has_attribute():
     for klass in Package_LeaveProfiles.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_leaveprofiles_has_attribute2():
+    assert hasattr(Package_LeaveProfiles, "attribute2")
+    descriptor = None
+    for klass in Package_LeaveProfiles.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1687,18 +1687,9 @@ def test_package_epf_constructor_exists():
 def test_package_epf_constructor_args():
     sig = inspect.signature(Package_EPF.__init__)
     params = list(sig.parameters.keys())
-    assert "effectve_date" in params, "Missing parameter 'effectve_date'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "effectve_date" in params, "Missing parameter 'effectve_date'"
     assert "precentage" in params, "Missing parameter 'precentage'"
-
-def test_package_epf_has_effectve_date():
-    assert hasattr(Package_EPF, "effectve_date")
-    descriptor = None
-    for klass in Package_EPF.__mro__:
-        if "effectve_date" in klass.__dict__:
-            descriptor = klass.__dict__["effectve_date"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_package_epf_has_id():
     assert hasattr(Package_EPF, "id")
@@ -1706,6 +1697,15 @@ def test_package_epf_has_id():
     for klass in Package_EPF.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_epf_has_effectve_date():
+    assert hasattr(Package_EPF, "effectve_date")
+    descriptor = None
+    for klass in Package_EPF.__mro__:
+        if "effectve_date" in klass.__dict__:
+            descriptor = klass.__dict__["effectve_date"]
             break
     assert isinstance(descriptor, property)
 
@@ -1731,17 +1731,8 @@ def test_package_employeesalary_constructor_exists():
 def test_package_employeesalary_constructor_args():
     sig = inspect.signature(Package_EmployeeSalary.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-
-def test_package_employeesalary_has_attribute():
-    assert hasattr(Package_EmployeeSalary, "attribute")
-    descriptor = None
-    for klass in Package_EmployeeSalary.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_package_employeesalary_has_attribute2():
     assert hasattr(Package_EmployeeSalary, "attribute2")
@@ -1749,6 +1740,15 @@ def test_package_employeesalary_has_attribute2():
     for klass in Package_EmployeeSalary.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_employeesalary_has_attribute():
+    assert hasattr(Package_EmployeeSalary, "attribute")
+    descriptor = None
+    for klass in Package_EmployeeSalary.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -1799,29 +1799,29 @@ def test_package_employee_constructor_exists():
 def test_package_employee_constructor_args():
     sig = inspect.signature(Package_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "usergroup" in params, "Missing parameter 'usergroup'"
-    assert "shift" in params, "Missing parameter 'shift'"
     assert "post" in params, "Missing parameter 'post'"
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "depid" in params, "Missing parameter 'depid'"
     assert "leavegroup" in params, "Missing parameter 'leavegroup'"
+    assert "shift" in params, "Missing parameter 'shift'"
+    assert "depid" in params, "Missing parameter 'depid'"
+    assert "empid" in params, "Missing parameter 'empid'"
+    assert "usergroup" in params, "Missing parameter 'usergroup'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_package_employee_has_id():
-    assert hasattr(Package_Employee, "id")
+def test_package_employee_has_post():
+    assert hasattr(Package_Employee, "post")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "post" in klass.__dict__:
+            descriptor = klass.__dict__["post"]
             break
     assert isinstance(descriptor, property)
 
-def test_package_employee_has_usergroup():
-    assert hasattr(Package_Employee, "usergroup")
+def test_package_employee_has_leavegroup():
+    assert hasattr(Package_Employee, "leavegroup")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "usergroup" in klass.__dict__:
-            descriptor = klass.__dict__["usergroup"]
+        if "leavegroup" in klass.__dict__:
+            descriptor = klass.__dict__["leavegroup"]
             break
     assert isinstance(descriptor, property)
 
@@ -1834,12 +1834,12 @@ def test_package_employee_has_shift():
             break
     assert isinstance(descriptor, property)
 
-def test_package_employee_has_post():
-    assert hasattr(Package_Employee, "post")
+def test_package_employee_has_depid():
+    assert hasattr(Package_Employee, "depid")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "post" in klass.__dict__:
-            descriptor = klass.__dict__["post"]
+        if "depid" in klass.__dict__:
+            descriptor = klass.__dict__["depid"]
             break
     assert isinstance(descriptor, property)
 
@@ -1852,21 +1852,21 @@ def test_package_employee_has_empid():
             break
     assert isinstance(descriptor, property)
 
-def test_package_employee_has_depid():
-    assert hasattr(Package_Employee, "depid")
+def test_package_employee_has_usergroup():
+    assert hasattr(Package_Employee, "usergroup")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "depid" in klass.__dict__:
-            descriptor = klass.__dict__["depid"]
+        if "usergroup" in klass.__dict__:
+            descriptor = klass.__dict__["usergroup"]
             break
     assert isinstance(descriptor, property)
 
-def test_package_employee_has_leavegroup():
-    assert hasattr(Package_Employee, "leavegroup")
+def test_package_employee_has_id():
+    assert hasattr(Package_Employee, "id")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "leavegroup" in klass.__dict__:
-            descriptor = klass.__dict__["leavegroup"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -1883,17 +1883,8 @@ def test_package_posts_constructor_exists():
 def test_package_posts_constructor_args():
     sig = inspect.signature(Package_Posts.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_posts_has_attribute2():
-    assert hasattr(Package_Posts, "attribute2")
-    descriptor = None
-    for klass in Package_Posts.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_posts_has_attribute():
     assert hasattr(Package_Posts, "attribute")
@@ -1901,6 +1892,15 @@ def test_package_posts_has_attribute():
     for klass in Package_Posts.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_posts_has_attribute2():
+    assert hasattr(Package_Posts, "attribute2")
+    descriptor = None
+    for klass in Package_Posts.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1917,17 +1917,8 @@ def test_package_shifts_constructor_exists():
 def test_package_shifts_constructor_args():
     sig = inspect.signature(Package_Shifts.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_shifts_has_attribute2():
-    assert hasattr(Package_Shifts, "attribute2")
-    descriptor = None
-    for klass in Package_Shifts.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_shifts_has_attribute():
     assert hasattr(Package_Shifts, "attribute")
@@ -1935,6 +1926,15 @@ def test_package_shifts_has_attribute():
     for klass in Package_Shifts.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_shifts_has_attribute2():
+    assert hasattr(Package_Shifts, "attribute2")
+    descriptor = None
+    for klass in Package_Shifts.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1975,17 +1975,8 @@ def test_package_deductions_constructor_exists():
 def test_package_deductions_constructor_args():
     sig = inspect.signature(Package_Deductions.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_deductions_has_attribute2():
-    assert hasattr(Package_Deductions, "attribute2")
-    descriptor = None
-    for klass in Package_Deductions.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_deductions_has_attribute():
     assert hasattr(Package_Deductions, "attribute")
@@ -1993,6 +1984,15 @@ def test_package_deductions_has_attribute():
     for klass in Package_Deductions.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_deductions_has_attribute2():
+    assert hasattr(Package_Deductions, "attribute2")
+    descriptor = None
+    for klass in Package_Deductions.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -2038,9 +2038,9 @@ def test_package_attendance_constructor_args():
     sig = inspect.signature(Package_Attendance.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "timein" in params, "Missing parameter 'timein'"
     assert "timeout" in params, "Missing parameter 'timeout'"
+    assert "timein" in params, "Missing parameter 'timein'"
+    assert "empid" in params, "Missing parameter 'empid'"
 
 def test_package_attendance_has_id():
     assert hasattr(Package_Attendance, "id")
@@ -2051,12 +2051,12 @@ def test_package_attendance_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_package_attendance_has_empid():
-    assert hasattr(Package_Attendance, "empid")
+def test_package_attendance_has_timeout():
+    assert hasattr(Package_Attendance, "timeout")
     descriptor = None
     for klass in Package_Attendance.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
+        if "timeout" in klass.__dict__:
+            descriptor = klass.__dict__["timeout"]
             break
     assert isinstance(descriptor, property)
 
@@ -2069,12 +2069,12 @@ def test_package_attendance_has_timein():
             break
     assert isinstance(descriptor, property)
 
-def test_package_attendance_has_timeout():
-    assert hasattr(Package_Attendance, "timeout")
+def test_package_attendance_has_empid():
+    assert hasattr(Package_Attendance, "empid")
     descriptor = None
     for klass in Package_Attendance.__mro__:
-        if "timeout" in klass.__dict__:
-            descriptor = klass.__dict__["timeout"]
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -2574,26 +2574,26 @@ Class_Diagram_for_Propsed_System_Messages_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Messages,
     msg=
         st.integers(),
+    id=
+        safe_text,
     sender=
         st.integers(),
     read_recipt=
-        safe_text,
-    id=
         safe_text,
     reciever=
         st.integers()
 )
 Class_Diagram_for_Propsed_System_Advances_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Advances,
-    installments=
-        st.integers(),
     id=
         st.integers(),
     remain=
         st.integers(),
+    empid=
+        st.integers(),
     amount=
         safe_text,
-    empid=
+    installments=
         st.integers()
 )
 Class_Diagram_for_Propsed_System_UserUpdates_strategy = st.builds(
@@ -2607,43 +2607,43 @@ Class_Diagram_for_Propsed_System_UserUpdates_strategy = st.builds(
 )
 Class_Diagram_for_Propsed_System_Users_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Users,
-    password=
-        st.integers(),
-    id=
+    email=
         st.integers(),
     lastname=
         st.integers(),
-    firstname=
+    id=
         st.integers(),
-    email=
+    password=
+        st.integers(),
+    firstname=
         st.integers()
 )
 Class_Diagram_for_Propsed_System_User_groups_strategy = st.builds(
     Class_Diagram_for_Propsed_System_User_groups,
-    attribute2=
+    attribute=
         safe_text,
     attribute3=
         safe_text,
-    attribute=
+    attribute2=
         safe_text
 )
 Class_Diagram_for_Propsed_System_OT_Requests_strategy = st.builds(
     Class_Diagram_for_Propsed_System_OT_Requests,
     EmpID=
         st.integers(),
-    OTType=
-        st.integers(),
     id=
         st.integers(),
     OtDay=
-        st.dates()
+        st.dates(),
+    OTType=
+        st.integers()
 )
 Class_Diagram_for_Propsed_System_LeaveProfiles_strategy = st.builds(
     Class_Diagram_for_Propsed_System_LeaveProfiles,
-    name=
-        safe_text,
     anual=
         st.integers(),
+    name=
+        safe_text,
     casual=
         st.integers(),
     id=
@@ -2651,104 +2651,104 @@ Class_Diagram_for_Propsed_System_LeaveProfiles_strategy = st.builds(
 )
 Class_Diagram_for_Propsed_System_Leave_Taken_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Leave_Taken,
-    empid=
-        st.integers(),
-    enddate=
-        safe_text,
-    id=
-        st.integers(),
     leavetype=
         st.integers(),
     start_date=
         st.none(),
+    empid=
+        st.integers(),
     status=
-        st.integers()
+        st.integers(),
+    id=
+        st.integers(),
+    enddate=
+        safe_text
 )
 Class_Diagram_for_Propsed_System_Event_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Event,
-    id=
+    date=
         safe_text,
     type=
         st.integers(),
-    eventname=
+    id=
         safe_text,
-    date=
+    eventname=
         safe_text
 )
 Class_Diagram_for_Propsed_System_EPF_strategy = st.builds(
     Class_Diagram_for_Propsed_System_EPF,
+    id=
+        st.integers(),
     effectve_date=
         st.none(),
     precentage=
-        st.integers(),
-    id=
         st.integers()
 )
 Class_Diagram_for_Propsed_System_EmployeeSalary_strategy = st.builds(
     Class_Diagram_for_Propsed_System_EmployeeSalary,
-    attribute=
-        safe_text,
     attribute2=
+        safe_text,
+    attribute=
         safe_text
 )
 Class_Diagram_for_Propsed_System_EmployeeParoll_strategy = st.builds(
     Class_Diagram_for_Propsed_System_EmployeeParoll,
     otamount=
         st.integers(),
-    empid=
+    epf=
+        st.integers(),
+    id=
         st.integers(),
     doyamount=
         st.integers(),
-    empid3=
-        st.integers(),
     basicslaray=
         st.integers(),
-    id=
-        st.integers(),
-    epf=
+    empid3=
         st.integers(),
     etf=
-        safe_text
+        safe_text,
+    empid=
+        st.integers()
 )
 Class_Diagram_for_Propsed_System_Employee_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Employee,
-    leavegroup=
+    mobile=
+        st.integers(),
+    usergroup=
         st.integers(),
     post=
         safe_text,
-    usergroup=
-        st.integers(),
-    empid=
-        safe_text,
-    id=
-        safe_text,
     user_id=
         st.integers(),
-    mobile=
+    leavegroup=
         st.integers(),
+    depid=
+        st.integers(),
+    id=
+        safe_text,
     shift=
         safe_text,
-    depid=
-        st.integers()
+    empid=
+        safe_text
 )
 Class_Diagram_for_Propsed_System_Posts_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Posts,
     id=
         st.integers(),
-    department=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    department=
+        st.integers()
 )
 Class_Diagram_for_Propsed_System_Shifts_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Shifts,
-    starttime=
-        safe_text,
-    endtime=
-        safe_text,
     shiftaname=
         safe_text,
     id=
+        safe_text,
+    endtime=
+        safe_text,
+    starttime=
         safe_text
 )
 Class_Diagram_for_Propsed_System_Departments_strategy = st.builds(
@@ -2760,51 +2760,51 @@ Class_Diagram_for_Propsed_System_Departments_strategy = st.builds(
 )
 Class_Diagram_for_Propsed_System_Deductions_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Deductions,
+    empid=
+        st.integers(),
     amount=
         safe_text,
     id=
-        safe_text,
-    empid=
-        st.integers()
+        safe_text
 )
 Class_Diagram_for_Propsed_System_AllowanceTypes_strategy = st.builds(
     Class_Diagram_for_Propsed_System_AllowanceTypes,
     type=
         st.integers(),
-    date_added=
-        st.none(),
     id=
-        st.integers()
+        st.integers(),
+    date_added=
+        st.none()
 )
 Class_Diagram_for_Propsed_System_DeuctionTypes_strategy = st.builds(
     Class_Diagram_for_Propsed_System_DeuctionTypes,
+    type=
+        safe_text,
     id=
         st.integers(),
     date_add=
-        safe_text,
-    type=
         safe_text
 )
 Class_Diagram_for_Propsed_System_Attendance_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Attendance,
-    id=
-        st.integers(),
     empid=
         st.integers(),
     timein=
         safe_text,
     timeout=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
 Class_Diagram_for_Propsed_System_Allowance_strategy = st.builds(
     Class_Diagram_for_Propsed_System_Allowance,
     emp_id=
         st.integers(),
+    amount=
+        safe_text,
     id=
         st.integers(),
     effectivedate=
-        safe_text,
-    amount=
         safe_text
 )
 Package_ETF_strategy = st.builds(
@@ -2812,9 +2812,9 @@ Package_ETF_strategy = st.builds(
 )
 Package_User_Permissions_strategy = st.builds(
     Package_User_Permissions,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_Messages_strategy = st.builds(
@@ -2832,38 +2832,38 @@ Package_Users_strategy = st.builds(
         st.integers(),
     firstname=
         st.integers(),
-    password=
+    lastname=
         st.integers(),
     id=
         st.integers(),
-    lastname=
+    password=
         st.integers()
 )
 Package_User_groups_strategy = st.builds(
     Package_User_groups,
-    attribute3=
-        safe_text,
     attribute2=
+        safe_text,
+    attribute3=
         safe_text,
     attribute=
         safe_text
 )
 Package_OT_Requests_strategy = st.builds(
     Package_OT_Requests,
-    id=
-        st.integers(),
+    OtDay=
+        st.dates(),
     EmpID=
         st.integers(),
     OTType=
         st.integers(),
-    OtDay=
-        st.dates()
+    id=
+        st.integers()
 )
 Package_LeaveProfiles_strategy = st.builds(
     Package_LeaveProfiles,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_Leave_Taken_strategy = st.builds(
@@ -2878,18 +2878,18 @@ Package_Event_strategy = st.builds(
 )
 Package_EPF_strategy = st.builds(
     Package_EPF,
-    effectve_date=
-        st.none(),
     id=
         st.integers(),
+    effectve_date=
+        st.none(),
     precentage=
         st.integers()
 )
 Package_EmployeeSalary_strategy = st.builds(
     Package_EmployeeSalary,
-    attribute=
-        safe_text,
     attribute2=
+        safe_text,
+    attribute=
         safe_text
 )
 Package_EmployeeParoll_strategy = st.builds(
@@ -2901,33 +2901,33 @@ Package_EmployeeParoll_strategy = st.builds(
 )
 Package_Employee_strategy = st.builds(
     Package_Employee,
-    id=
+    post=
         safe_text,
-    usergroup=
+    leavegroup=
         st.integers(),
     shift=
         safe_text,
-    post=
-        safe_text,
-    empid=
-        safe_text,
     depid=
         st.integers(),
-    leavegroup=
-        st.integers()
+    empid=
+        safe_text,
+    usergroup=
+        st.integers(),
+    id=
+        safe_text
 )
 Package_Posts_strategy = st.builds(
     Package_Posts,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_Shifts_strategy = st.builds(
     Package_Shifts,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_Departments_strategy = st.builds(
@@ -2937,9 +2937,9 @@ Package_Departments_strategy = st.builds(
 )
 Package_Deductions_strategy = st.builds(
     Package_Deductions,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_AllowanceTypes_strategy = st.builds(
@@ -2952,12 +2952,12 @@ Package_Attendance_strategy = st.builds(
     Package_Attendance,
     id=
         st.integers(),
-    empid=
-        st.integers(),
+    timeout=
+        safe_text,
     timein=
         safe_text,
-    timeout=
-        safe_text
+    empid=
+        st.integers()
 )
 Package_Allowance_strategy = st.builds(
     Package_Allowance,
@@ -3058,9 +3058,6 @@ Employee_Actor_strategy = st.builds(
 def test_class_diagram_for_propsed_system_etf_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_ETF)
 
-@given(instance=Class_Diagram_for_Propsed_System_ETF_strategy)
-def test_class_diagram_for_propsed_system_etf_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_ETF_strategy)
@@ -3069,9 +3066,6 @@ def test_class_diagram_for_propsed_system_etf_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Class_Diagram_for_Propsed_System_ETF_strategy)
-def test_class_diagram_for_propsed_system_etf_precentage_type(instance):
-    assert isinstance(instance.precentage, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_ETF_strategy)
@@ -3080,9 +3074,6 @@ def test_class_diagram_for_propsed_system_etf_precentage_setter(instance):
     instance.precentage = original
     assert instance.precentage == original
 
-@given(instance=Class_Diagram_for_Propsed_System_ETF_strategy)
-def test_class_diagram_for_propsed_system_etf_effectivedate_type(instance):
-    assert isinstance(instance.effectivedate, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_ETF_strategy)
@@ -3096,9 +3087,6 @@ def test_class_diagram_for_propsed_system_etf_effectivedate_setter(instance):
 def test_class_diagram_for_propsed_system_user_permissions_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_User_Permissions)
 
-@given(instance=Class_Diagram_for_Propsed_System_User_Permissions_strategy)
-def test_class_diagram_for_propsed_system_user_permissions_module_type(instance):
-    assert isinstance(instance.module, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_User_Permissions_strategy)
@@ -3107,9 +3095,6 @@ def test_class_diagram_for_propsed_system_user_permissions_module_setter(instanc
     instance.module = original
     assert instance.module == original
 
-@given(instance=Class_Diagram_for_Propsed_System_User_Permissions_strategy)
-def test_class_diagram_for_propsed_system_user_permissions_permissions_type(instance):
-    assert isinstance(instance.permissions, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_User_Permissions_strategy)
@@ -3118,9 +3103,6 @@ def test_class_diagram_for_propsed_system_user_permissions_permissions_setter(in
     instance.permissions = original
     assert instance.permissions == original
 
-@given(instance=Class_Diagram_for_Propsed_System_User_Permissions_strategy)
-def test_class_diagram_for_propsed_system_user_permissions_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_User_Permissions_strategy)
@@ -3134,9 +3116,6 @@ def test_class_diagram_for_propsed_system_user_permissions_id_setter(instance):
 def test_class_diagram_for_propsed_system_messages_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Messages)
 
-@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_msg_type(instance):
-    assert isinstance(instance.msg, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
@@ -3145,31 +3124,6 @@ def test_class_diagram_for_propsed_system_messages_msg_setter(instance):
     instance.msg = original
     assert instance.msg == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_sender_type(instance):
-    assert isinstance(instance.sender, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_sender_setter(instance):
-    original = instance.sender
-    instance.sender = original
-    assert instance.sender == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_read_recipt_type(instance):
-    assert isinstance(instance.read_recipt, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_read_recipt_setter(instance):
-    original = instance.read_recipt
-    instance.read_recipt = original
-    assert instance.read_recipt == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
@@ -3178,9 +3132,22 @@ def test_class_diagram_for_propsed_system_messages_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
-def test_class_diagram_for_propsed_system_messages_reciever_type(instance):
-    assert isinstance(instance.reciever, int)
+def test_class_diagram_for_propsed_system_messages_sender_setter(instance):
+    original = instance.sender
+    instance.sender = original
+    assert instance.sender == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
+def test_class_diagram_for_propsed_system_messages_read_recipt_setter(instance):
+    original = instance.read_recipt
+    instance.read_recipt = original
+    assert instance.read_recipt == original
+
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Messages_strategy)
@@ -3194,20 +3161,6 @@ def test_class_diagram_for_propsed_system_messages_reciever_setter(instance):
 def test_class_diagram_for_propsed_system_advances_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Advances)
 
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_installments_type(instance):
-    assert isinstance(instance.installments, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_installments_setter(instance):
-    original = instance.installments
-    instance.installments = original
-    assert instance.installments == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
@@ -3216,9 +3169,6 @@ def test_class_diagram_for_propsed_system_advances_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_remain_type(instance):
-    assert isinstance(instance.remain, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
@@ -3227,20 +3177,6 @@ def test_class_diagram_for_propsed_system_advances_remain_setter(instance):
     instance.remain = original
     assert instance.remain == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_amount_type(instance):
-    assert isinstance(instance.amount, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
-def test_class_diagram_for_propsed_system_advances_empid_type(instance):
-    assert isinstance(instance.empid, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
@@ -3249,14 +3185,27 @@ def test_class_diagram_for_propsed_system_advances_empid_setter(instance):
     instance.empid = original
     assert instance.empid == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
+def test_class_diagram_for_propsed_system_advances_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Advances_strategy)
+def test_class_diagram_for_propsed_system_advances_installments_setter(instance):
+    original = instance.installments
+    instance.installments = original
+    assert instance.installments == original
+
 @given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_userupdates_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_UserUpdates)
 
-@given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
-def test_class_diagram_for_propsed_system_userupdates_user_id_type(instance):
-    assert isinstance(instance.user_id, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
@@ -3265,9 +3214,6 @@ def test_class_diagram_for_propsed_system_userupdates_user_id_setter(instance):
     instance.user_id = original
     assert instance.user_id == original
 
-@given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
-def test_class_diagram_for_propsed_system_userupdates_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
@@ -3276,9 +3222,6 @@ def test_class_diagram_for_propsed_system_userupdates_attribute3_setter(instance
     instance.attribute3 = original
     assert instance.attribute3 == original
 
-@given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
-def test_class_diagram_for_propsed_system_userupdates_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_UserUpdates_strategy)
@@ -3292,53 +3235,6 @@ def test_class_diagram_for_propsed_system_userupdates_id_setter(instance):
 def test_class_diagram_for_propsed_system_users_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Users)
 
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_password_type(instance):
-    assert isinstance(instance.password, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_lastname_type(instance):
-    assert isinstance(instance.lastname, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_lastname_setter(instance):
-    original = instance.lastname
-    instance.lastname = original
-    assert instance.lastname == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_firstname_type(instance):
-    assert isinstance(instance.firstname, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_firstname_setter(instance):
-    original = instance.firstname
-    instance.firstname = original
-    assert instance.firstname == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
-def test_class_diagram_for_propsed_system_users_email_type(instance):
-    assert isinstance(instance.email, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
@@ -3347,36 +3243,43 @@ def test_class_diagram_for_propsed_system_users_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
+def test_class_diagram_for_propsed_system_users_lastname_setter(instance):
+    original = instance.lastname
+    instance.lastname = original
+    assert instance.lastname == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
+def test_class_diagram_for_propsed_system_users_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
+def test_class_diagram_for_propsed_system_users_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Users_strategy)
+def test_class_diagram_for_propsed_system_users_firstname_setter(instance):
+    original = instance.firstname
+    instance.firstname = original
+    assert instance.firstname == original
+
 @given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_user_groups_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_User_groups)
 
-@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
-def test_class_diagram_for_propsed_system_user_groups_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
-def test_class_diagram_for_propsed_system_user_groups_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
-def test_class_diagram_for_propsed_system_user_groups_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
-def test_class_diagram_for_propsed_system_user_groups_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
-def test_class_diagram_for_propsed_system_user_groups_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
@@ -3385,14 +3288,27 @@ def test_class_diagram_for_propsed_system_user_groups_attribute_setter(instance)
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
+def test_class_diagram_for_propsed_system_user_groups_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_User_groups_strategy)
+def test_class_diagram_for_propsed_system_user_groups_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_ot_requests_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_OT_Requests)
 
-@given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
-def test_class_diagram_for_propsed_system_ot_requests_EmpID_type(instance):
-    assert isinstance(instance.EmpID, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
@@ -3401,20 +3317,6 @@ def test_class_diagram_for_propsed_system_ot_requests_EmpID_setter(instance):
     instance.EmpID = original
     assert instance.EmpID == original
 
-@given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
-def test_class_diagram_for_propsed_system_ot_requests_OTType_type(instance):
-    assert isinstance(instance.OTType, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
-def test_class_diagram_for_propsed_system_ot_requests_OTType_setter(instance):
-    original = instance.OTType
-    instance.OTType = original
-    assert instance.OTType == original
-
-@given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
-def test_class_diagram_for_propsed_system_ot_requests_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
@@ -3423,9 +3325,6 @@ def test_class_diagram_for_propsed_system_ot_requests_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
-def test_class_diagram_for_propsed_system_ot_requests_OtDay_type(instance):
-    assert isinstance(instance.OtDay, date)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
@@ -3434,25 +3333,19 @@ def test_class_diagram_for_propsed_system_ot_requests_OtDay_setter(instance):
     instance.OtDay = original
     assert instance.OtDay == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_OT_Requests_strategy)
+def test_class_diagram_for_propsed_system_ot_requests_OTType_setter(instance):
+    original = instance.OTType
+    instance.OTType = original
+    assert instance.OTType == original
+
 @given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_leaveprofiles_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_LeaveProfiles)
 
-@given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
-def test_class_diagram_for_propsed_system_leaveprofiles_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
-def test_class_diagram_for_propsed_system_leaveprofiles_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
-def test_class_diagram_for_propsed_system_leaveprofiles_anual_type(instance):
-    assert isinstance(instance.anual, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
@@ -3461,9 +3354,14 @@ def test_class_diagram_for_propsed_system_leaveprofiles_anual_setter(instance):
     instance.anual = original
     assert instance.anual == original
 
+
+
 @given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
-def test_class_diagram_for_propsed_system_leaveprofiles_casual_type(instance):
-    assert isinstance(instance.casual, int)
+def test_class_diagram_for_propsed_system_leaveprofiles_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 
 
 @given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
@@ -3472,9 +3370,6 @@ def test_class_diagram_for_propsed_system_leaveprofiles_casual_setter(instance):
     instance.casual = original
     assert instance.casual == original
 
-@given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
-def test_class_diagram_for_propsed_system_leaveprofiles_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_LeaveProfiles_strategy)
@@ -3488,42 +3383,6 @@ def test_class_diagram_for_propsed_system_leaveprofiles_id_setter(instance):
 def test_class_diagram_for_propsed_system_leave_taken_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Leave_Taken)
 
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_empid_type(instance):
-    assert isinstance(instance.empid, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_empid_setter(instance):
-    original = instance.empid
-    instance.empid = original
-    assert instance.empid == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_enddate_type(instance):
-    assert isinstance(instance.enddate, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_enddate_setter(instance):
-    original = instance.enddate
-    instance.enddate = original
-    assert instance.enddate == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_leavetype_type(instance):
-    assert isinstance(instance.leavetype, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
@@ -3532,9 +3391,6 @@ def test_class_diagram_for_propsed_system_leave_taken_leavetype_setter(instance)
     instance.leavetype = original
     assert instance.leavetype == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_start_date_type(instance):
-    assert isinstance(instance.start_date, class_diagram_for_propsed_system_userupdates)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
@@ -3543,9 +3399,14 @@ def test_class_diagram_for_propsed_system_leave_taken_start_date_setter(instance
     instance.start_date = original
     assert instance.start_date == original
 
+
+
 @given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
-def test_class_diagram_for_propsed_system_leave_taken_status_type(instance):
-    assert isinstance(instance.status, int)
+def test_class_diagram_for_propsed_system_leave_taken_empid_setter(instance):
+    original = instance.empid
+    instance.empid = original
+    assert instance.empid == original
+
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
@@ -3554,47 +3415,27 @@ def test_class_diagram_for_propsed_system_leave_taken_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
+def test_class_diagram_for_propsed_system_leave_taken_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Leave_Taken_strategy)
+def test_class_diagram_for_propsed_system_leave_taken_enddate_setter(instance):
+    original = instance.enddate
+    instance.enddate = original
+    assert instance.enddate == original
+
 @given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_event_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Event)
 
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_type_type(instance):
-    assert isinstance(instance.type, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_eventname_type(instance):
-    assert isinstance(instance.eventname, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_eventname_setter(instance):
-    original = instance.eventname
-    instance.eventname = original
-    assert instance.eventname == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
-def test_class_diagram_for_propsed_system_event_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
@@ -3603,36 +3444,35 @@ def test_class_diagram_for_propsed_system_event_date_setter(instance):
     instance.date = original
     assert instance.date == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
+def test_class_diagram_for_propsed_system_event_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
+def test_class_diagram_for_propsed_system_event_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Event_strategy)
+def test_class_diagram_for_propsed_system_event_eventname_setter(instance):
+    original = instance.eventname
+    instance.eventname = original
+    assert instance.eventname == original
+
 @given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_epf_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_EPF)
 
-@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
-def test_class_diagram_for_propsed_system_epf_effectve_date_type(instance):
-    assert isinstance(instance.effectve_date, class_diagram_for_propsed_system_userupdates)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
-def test_class_diagram_for_propsed_system_epf_effectve_date_setter(instance):
-    original = instance.effectve_date
-    instance.effectve_date = original
-    assert instance.effectve_date == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
-def test_class_diagram_for_propsed_system_epf_precentage_type(instance):
-    assert isinstance(instance.precentage, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
-def test_class_diagram_for_propsed_system_epf_precentage_setter(instance):
-    original = instance.precentage
-    instance.precentage = original
-    assert instance.precentage == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
-def test_class_diagram_for_propsed_system_epf_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
@@ -3641,25 +3481,27 @@ def test_class_diagram_for_propsed_system_epf_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
+def test_class_diagram_for_propsed_system_epf_effectve_date_setter(instance):
+    original = instance.effectve_date
+    instance.effectve_date = original
+    assert instance.effectve_date == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_EPF_strategy)
+def test_class_diagram_for_propsed_system_epf_precentage_setter(instance):
+    original = instance.precentage
+    instance.precentage = original
+    assert instance.precentage == original
+
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeSalary_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_employeesalary_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_EmployeeSalary)
 
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeSalary_strategy)
-def test_class_diagram_for_propsed_system_employeesalary_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeSalary_strategy)
-def test_class_diagram_for_propsed_system_employeesalary_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeSalary_strategy)
-def test_class_diagram_for_propsed_system_employeesalary_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeSalary_strategy)
@@ -3668,14 +3510,19 @@ def test_class_diagram_for_propsed_system_employeesalary_attribute2_setter(insta
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_EmployeeSalary_strategy)
+def test_class_diagram_for_propsed_system_employeesalary_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_employeeparoll_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_EmployeeParoll)
 
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_otamount_type(instance):
-    assert isinstance(instance.otamount, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
@@ -3684,64 +3531,6 @@ def test_class_diagram_for_propsed_system_employeeparoll_otamount_setter(instanc
     instance.otamount = original
     assert instance.otamount == original
 
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_empid_type(instance):
-    assert isinstance(instance.empid, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_empid_setter(instance):
-    original = instance.empid
-    instance.empid = original
-    assert instance.empid == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_doyamount_type(instance):
-    assert isinstance(instance.doyamount, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_doyamount_setter(instance):
-    original = instance.doyamount
-    instance.doyamount = original
-    assert instance.doyamount == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_empid3_type(instance):
-    assert isinstance(instance.empid3, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_empid3_setter(instance):
-    original = instance.empid3
-    instance.empid3 = original
-    assert instance.empid3 == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_basicslaray_type(instance):
-    assert isinstance(instance.basicslaray, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_basicslaray_setter(instance):
-    original = instance.basicslaray
-    instance.basicslaray = original
-    assert instance.basicslaray == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_epf_type(instance):
-    assert isinstance(instance.epf, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
@@ -3750,9 +3539,38 @@ def test_class_diagram_for_propsed_system_employeeparoll_epf_setter(instance):
     instance.epf = original
     assert instance.epf == original
 
+
+
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
-def test_class_diagram_for_propsed_system_employeeparoll_etf_type(instance):
-    assert isinstance(instance.etf, str)
+def test_class_diagram_for_propsed_system_employeeparoll_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
+def test_class_diagram_for_propsed_system_employeeparoll_doyamount_setter(instance):
+    original = instance.doyamount
+    instance.doyamount = original
+    assert instance.doyamount == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
+def test_class_diagram_for_propsed_system_employeeparoll_basicslaray_setter(instance):
+    original = instance.basicslaray
+    instance.basicslaray = original
+    assert instance.basicslaray == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
+def test_class_diagram_for_propsed_system_employeeparoll_empid3_setter(instance):
+    original = instance.empid3
+    instance.empid3 = original
+    assert instance.empid3 == original
+
 
 
 @given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
@@ -3761,80 +3579,19 @@ def test_class_diagram_for_propsed_system_employeeparoll_etf_setter(instance):
     instance.etf = original
     assert instance.etf == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-@settings(max_examples=50)
-def test_class_diagram_for_propsed_system_employee_instantiation(instance):
-    assert isinstance(instance, Class_Diagram_for_Propsed_System_Employee)
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_leavegroup_type(instance):
-    assert isinstance(instance.leavegroup, int)
 
 
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_leavegroup_setter(instance):
-    original = instance.leavegroup
-    instance.leavegroup = original
-    assert instance.leavegroup == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_post_type(instance):
-    assert isinstance(instance.post, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_post_setter(instance):
-    original = instance.post
-    instance.post = original
-    assert instance.post == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_usergroup_type(instance):
-    assert isinstance(instance.usergroup, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_usergroup_setter(instance):
-    original = instance.usergroup
-    instance.usergroup = original
-    assert instance.usergroup == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_empid_type(instance):
-    assert isinstance(instance.empid, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_empid_setter(instance):
+@given(instance=Class_Diagram_for_Propsed_System_EmployeeParoll_strategy)
+def test_class_diagram_for_propsed_system_employeeparoll_empid_setter(instance):
     original = instance.empid
     instance.empid = original
     assert instance.empid == original
 
 @given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_id_type(instance):
-    assert isinstance(instance.id, str)
+@settings(max_examples=50)
+def test_class_diagram_for_propsed_system_employee_instantiation(instance):
+    assert isinstance(instance, Class_Diagram_for_Propsed_System_Employee)
 
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_user_id_type(instance):
-    assert isinstance(instance.user_id, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_mobile_type(instance):
-    assert isinstance(instance.mobile, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
@@ -3843,20 +3600,38 @@ def test_class_diagram_for_propsed_system_employee_mobile_setter(instance):
     instance.mobile = original
     assert instance.mobile == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_shift_type(instance):
-    assert isinstance(instance.shift, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_shift_setter(instance):
-    original = instance.shift
-    instance.shift = original
-    assert instance.shift == original
+def test_class_diagram_for_propsed_system_employee_usergroup_setter(instance):
+    original = instance.usergroup
+    instance.usergroup = original
+    assert instance.usergroup == original
+
+
 
 @given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
-def test_class_diagram_for_propsed_system_employee_depid_type(instance):
-    assert isinstance(instance.depid, int)
+def test_class_diagram_for_propsed_system_employee_post_setter(instance):
+    original = instance.post
+    instance.post = original
+    assert instance.post == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
+def test_class_diagram_for_propsed_system_employee_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
+def test_class_diagram_for_propsed_system_employee_leavegroup_setter(instance):
+    original = instance.leavegroup
+    instance.leavegroup = original
+    assert instance.leavegroup == original
+
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
@@ -3865,14 +3640,35 @@ def test_class_diagram_for_propsed_system_employee_depid_setter(instance):
     instance.depid = original
     assert instance.depid == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
+def test_class_diagram_for_propsed_system_employee_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
+def test_class_diagram_for_propsed_system_employee_shift_setter(instance):
+    original = instance.shift
+    instance.shift = original
+    assert instance.shift == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Employee_strategy)
+def test_class_diagram_for_propsed_system_employee_empid_setter(instance):
+    original = instance.empid
+    instance.empid = original
+    assert instance.empid == original
+
 @given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_posts_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Posts)
 
-@given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
-def test_class_diagram_for_propsed_system_posts_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
@@ -3881,20 +3677,6 @@ def test_class_diagram_for_propsed_system_posts_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
-def test_class_diagram_for_propsed_system_posts_department_type(instance):
-    assert isinstance(instance.department, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
-def test_class_diagram_for_propsed_system_posts_department_setter(instance):
-    original = instance.department
-    instance.department = original
-    assert instance.department == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
-def test_class_diagram_for_propsed_system_posts_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
@@ -3903,36 +3685,19 @@ def test_class_diagram_for_propsed_system_posts_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Posts_strategy)
+def test_class_diagram_for_propsed_system_posts_department_setter(instance):
+    original = instance.department
+    instance.department = original
+    assert instance.department == original
+
 @given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_shifts_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Shifts)
 
-@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
-def test_class_diagram_for_propsed_system_shifts_starttime_type(instance):
-    assert isinstance(instance.starttime, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
-def test_class_diagram_for_propsed_system_shifts_starttime_setter(instance):
-    original = instance.starttime
-    instance.starttime = original
-    assert instance.starttime == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
-def test_class_diagram_for_propsed_system_shifts_endtime_type(instance):
-    assert isinstance(instance.endtime, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
-def test_class_diagram_for_propsed_system_shifts_endtime_setter(instance):
-    original = instance.endtime
-    instance.endtime = original
-    assert instance.endtime == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
-def test_class_diagram_for_propsed_system_shifts_shiftaname_type(instance):
-    assert isinstance(instance.shiftaname, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
@@ -3941,9 +3706,6 @@ def test_class_diagram_for_propsed_system_shifts_shiftaname_setter(instance):
     instance.shiftaname = original
     assert instance.shiftaname == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
-def test_class_diagram_for_propsed_system_shifts_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
@@ -3952,14 +3714,27 @@ def test_class_diagram_for_propsed_system_shifts_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
+def test_class_diagram_for_propsed_system_shifts_endtime_setter(instance):
+    original = instance.endtime
+    instance.endtime = original
+    assert instance.endtime == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Shifts_strategy)
+def test_class_diagram_for_propsed_system_shifts_starttime_setter(instance):
+    original = instance.starttime
+    instance.starttime = original
+    assert instance.starttime == original
+
 @given(instance=Class_Diagram_for_Propsed_System_Departments_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_departments_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Departments)
 
-@given(instance=Class_Diagram_for_Propsed_System_Departments_strategy)
-def test_class_diagram_for_propsed_system_departments_depname_type(instance):
-    assert isinstance(instance.depname, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Departments_strategy)
@@ -3968,9 +3743,6 @@ def test_class_diagram_for_propsed_system_departments_depname_setter(instance):
     instance.depname = original
     assert instance.depname == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Departments_strategy)
-def test_class_diagram_for_propsed_system_departments_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Departments_strategy)
@@ -3984,31 +3756,6 @@ def test_class_diagram_for_propsed_system_departments_id_setter(instance):
 def test_class_diagram_for_propsed_system_deductions_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Deductions)
 
-@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
-def test_class_diagram_for_propsed_system_deductions_amount_type(instance):
-    assert isinstance(instance.amount, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
-def test_class_diagram_for_propsed_system_deductions_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
-def test_class_diagram_for_propsed_system_deductions_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
-def test_class_diagram_for_propsed_system_deductions_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
-def test_class_diagram_for_propsed_system_deductions_empid_type(instance):
-    assert isinstance(instance.empid, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
@@ -4017,14 +3764,27 @@ def test_class_diagram_for_propsed_system_deductions_empid_setter(instance):
     instance.empid = original
     assert instance.empid == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
+def test_class_diagram_for_propsed_system_deductions_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Deductions_strategy)
+def test_class_diagram_for_propsed_system_deductions_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_allowancetypes_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_AllowanceTypes)
 
-@given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
-def test_class_diagram_for_propsed_system_allowancetypes_type_type(instance):
-    assert isinstance(instance.type, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
@@ -4033,20 +3793,6 @@ def test_class_diagram_for_propsed_system_allowancetypes_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
-def test_class_diagram_for_propsed_system_allowancetypes_date_added_type(instance):
-    assert isinstance(instance.date_added, class_diagram_for_propsed_system_userupdates)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
-def test_class_diagram_for_propsed_system_allowancetypes_date_added_setter(instance):
-    original = instance.date_added
-    instance.date_added = original
-    assert instance.date_added == original
-
-@given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
-def test_class_diagram_for_propsed_system_allowancetypes_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
@@ -4055,36 +3801,19 @@ def test_class_diagram_for_propsed_system_allowancetypes_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_AllowanceTypes_strategy)
+def test_class_diagram_for_propsed_system_allowancetypes_date_added_setter(instance):
+    original = instance.date_added
+    instance.date_added = original
+    assert instance.date_added == original
+
 @given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_deuctiontypes_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_DeuctionTypes)
 
-@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
-def test_class_diagram_for_propsed_system_deuctiontypes_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
-def test_class_diagram_for_propsed_system_deuctiontypes_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
-def test_class_diagram_for_propsed_system_deuctiontypes_date_add_type(instance):
-    assert isinstance(instance.date_add, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
-def test_class_diagram_for_propsed_system_deuctiontypes_date_add_setter(instance):
-    original = instance.date_add
-    instance.date_add = original
-    assert instance.date_add == original
-
-@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
-def test_class_diagram_for_propsed_system_deuctiontypes_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
@@ -4093,25 +3822,27 @@ def test_class_diagram_for_propsed_system_deuctiontypes_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
+def test_class_diagram_for_propsed_system_deuctiontypes_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Class_Diagram_for_Propsed_System_DeuctionTypes_strategy)
+def test_class_diagram_for_propsed_system_deuctiontypes_date_add_setter(instance):
+    original = instance.date_add
+    instance.date_add = original
+    assert instance.date_add == original
+
 @given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_attendance_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Attendance)
 
-@given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
-def test_class_diagram_for_propsed_system_attendance_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
-def test_class_diagram_for_propsed_system_attendance_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
-def test_class_diagram_for_propsed_system_attendance_empid_type(instance):
-    assert isinstance(instance.empid, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
@@ -4120,9 +3851,6 @@ def test_class_diagram_for_propsed_system_attendance_empid_setter(instance):
     instance.empid = original
     assert instance.empid == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
-def test_class_diagram_for_propsed_system_attendance_timein_type(instance):
-    assert isinstance(instance.timein, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
@@ -4131,9 +3859,6 @@ def test_class_diagram_for_propsed_system_attendance_timein_setter(instance):
     instance.timein = original
     assert instance.timein == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
-def test_class_diagram_for_propsed_system_attendance_timeout_type(instance):
-    assert isinstance(instance.timeout, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
@@ -4142,14 +3867,19 @@ def test_class_diagram_for_propsed_system_attendance_timeout_setter(instance):
     instance.timeout = original
     assert instance.timeout == original
 
+
+
+@given(instance=Class_Diagram_for_Propsed_System_Attendance_strategy)
+def test_class_diagram_for_propsed_system_attendance_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
 @settings(max_examples=50)
 def test_class_diagram_for_propsed_system_allowance_instantiation(instance):
     assert isinstance(instance, Class_Diagram_for_Propsed_System_Allowance)
 
-@given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
-def test_class_diagram_for_propsed_system_allowance_emp_id_type(instance):
-    assert isinstance(instance.emp_id, int)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
@@ -4158,9 +3888,14 @@ def test_class_diagram_for_propsed_system_allowance_emp_id_setter(instance):
     instance.emp_id = original
     assert instance.emp_id == original
 
+
+
 @given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
-def test_class_diagram_for_propsed_system_allowance_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_class_diagram_for_propsed_system_allowance_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
+
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
@@ -4169,9 +3904,6 @@ def test_class_diagram_for_propsed_system_allowance_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
-def test_class_diagram_for_propsed_system_allowance_effectivedate_type(instance):
-    assert isinstance(instance.effectivedate, str)
 
 
 @given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
@@ -4179,17 +3911,6 @@ def test_class_diagram_for_propsed_system_allowance_effectivedate_setter(instanc
     original = instance.effectivedate
     instance.effectivedate = original
     assert instance.effectivedate == original
-
-@given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
-def test_class_diagram_for_propsed_system_allowance_amount_type(instance):
-    assert isinstance(instance.amount, str)
-
-
-@given(instance=Class_Diagram_for_Propsed_System_Allowance_strategy)
-def test_class_diagram_for_propsed_system_allowance_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
 
 @given(instance=Package_ETF_strategy)
 @settings(max_examples=50)
@@ -4201,20 +3922,6 @@ def test_package_etf_instantiation(instance):
 def test_package_user_permissions_instantiation(instance):
     assert isinstance(instance, Package_User_Permissions)
 
-@given(instance=Package_User_Permissions_strategy)
-def test_package_user_permissions_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_User_Permissions_strategy)
-def test_package_user_permissions_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_User_Permissions_strategy)
-def test_package_user_permissions_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_User_Permissions_strategy)
@@ -4222,6 +3929,14 @@ def test_package_user_permissions_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Package_User_Permissions_strategy)
+def test_package_user_permissions_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
 
 @given(instance=Package_Messages_strategy)
 @settings(max_examples=50)
@@ -4243,9 +3958,6 @@ def test_package_userupdates_instantiation(instance):
 def test_package_users_instantiation(instance):
     assert isinstance(instance, Package_Users)
 
-@given(instance=Package_Users_strategy)
-def test_package_users_email_type(instance):
-    assert isinstance(instance.email, int)
 
 
 @given(instance=Package_Users_strategy)
@@ -4254,9 +3966,6 @@ def test_package_users_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=Package_Users_strategy)
-def test_package_users_firstname_type(instance):
-    assert isinstance(instance.firstname, int)
 
 
 @given(instance=Package_Users_strategy)
@@ -4265,31 +3974,6 @@ def test_package_users_firstname_setter(instance):
     instance.firstname = original
     assert instance.firstname == original
 
-@given(instance=Package_Users_strategy)
-def test_package_users_password_type(instance):
-    assert isinstance(instance.password, int)
-
-
-@given(instance=Package_Users_strategy)
-def test_package_users_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Package_Users_strategy)
-def test_package_users_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package_Users_strategy)
-def test_package_users_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package_Users_strategy)
-def test_package_users_lastname_type(instance):
-    assert isinstance(instance.lastname, int)
 
 
 @given(instance=Package_Users_strategy)
@@ -4298,25 +3982,27 @@ def test_package_users_lastname_setter(instance):
     instance.lastname = original
     assert instance.lastname == original
 
+
+
+@given(instance=Package_Users_strategy)
+def test_package_users_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Package_Users_strategy)
+def test_package_users_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=Package_User_groups_strategy)
 @settings(max_examples=50)
 def test_package_user_groups_instantiation(instance):
     assert isinstance(instance, Package_User_groups)
 
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_User_groups_strategy)
@@ -4325,9 +4011,14 @@ def test_package_user_groups_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
 @given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
+def test_package_user_groups_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
+
 
 
 @given(instance=Package_User_groups_strategy)
@@ -4341,42 +4032,6 @@ def test_package_user_groups_attribute_setter(instance):
 def test_package_ot_requests_instantiation(instance):
     assert isinstance(instance, Package_OT_Requests)
 
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_EmpID_type(instance):
-    assert isinstance(instance.EmpID, int)
-
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_EmpID_setter(instance):
-    original = instance.EmpID
-    instance.EmpID = original
-    assert instance.EmpID == original
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_OTType_type(instance):
-    assert isinstance(instance.OTType, int)
-
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_OTType_setter(instance):
-    original = instance.OTType
-    instance.OTType = original
-    assert instance.OTType == original
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_OtDay_type(instance):
-    assert isinstance(instance.OtDay, date)
 
 
 @given(instance=Package_OT_Requests_strategy)
@@ -4385,25 +4040,35 @@ def test_package_ot_requests_OtDay_setter(instance):
     instance.OtDay = original
     assert instance.OtDay == original
 
+
+
+@given(instance=Package_OT_Requests_strategy)
+def test_package_ot_requests_EmpID_setter(instance):
+    original = instance.EmpID
+    instance.EmpID = original
+    assert instance.EmpID == original
+
+
+
+@given(instance=Package_OT_Requests_strategy)
+def test_package_ot_requests_OTType_setter(instance):
+    original = instance.OTType
+    instance.OTType = original
+    assert instance.OTType == original
+
+
+
+@given(instance=Package_OT_Requests_strategy)
+def test_package_ot_requests_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Package_LeaveProfiles_strategy)
 @settings(max_examples=50)
 def test_package_leaveprofiles_instantiation(instance):
     assert isinstance(instance, Package_LeaveProfiles)
 
-@given(instance=Package_LeaveProfiles_strategy)
-def test_package_leaveprofiles_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_LeaveProfiles_strategy)
-def test_package_leaveprofiles_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_LeaveProfiles_strategy)
-def test_package_leaveprofiles_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_LeaveProfiles_strategy)
@@ -4412,14 +4077,19 @@ def test_package_leaveprofiles_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=Package_LeaveProfiles_strategy)
+def test_package_leaveprofiles_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Package_Leave_Taken_strategy)
 @settings(max_examples=50)
 def test_package_leave_taken_instantiation(instance):
     assert isinstance(instance, Package_Leave_Taken)
 
-@given(instance=Package_Leave_Taken_strategy)
-def test_package_leave_taken_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Leave_Taken_strategy)
@@ -4428,9 +4098,6 @@ def test_package_leave_taken_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_Leave_Taken_strategy)
-def test_package_leave_taken_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_Leave_Taken_strategy)
@@ -4449,20 +4116,6 @@ def test_package_event_instantiation(instance):
 def test_package_epf_instantiation(instance):
     assert isinstance(instance, Package_EPF)
 
-@given(instance=Package_EPF_strategy)
-def test_package_epf_effectve_date_type(instance):
-    assert isinstance(instance.effectve_date, package_userupdates)
-
-
-@given(instance=Package_EPF_strategy)
-def test_package_epf_effectve_date_setter(instance):
-    original = instance.effectve_date
-    instance.effectve_date = original
-    assert instance.effectve_date == original
-
-@given(instance=Package_EPF_strategy)
-def test_package_epf_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_EPF_strategy)
@@ -4471,9 +4124,14 @@ def test_package_epf_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=Package_EPF_strategy)
-def test_package_epf_precentage_type(instance):
-    assert isinstance(instance.precentage, int)
+def test_package_epf_effectve_date_setter(instance):
+    original = instance.effectve_date
+    instance.effectve_date = original
+    assert instance.effectve_date == original
+
 
 
 @given(instance=Package_EPF_strategy)
@@ -4487,20 +4145,6 @@ def test_package_epf_precentage_setter(instance):
 def test_package_employeesalary_instantiation(instance):
     assert isinstance(instance, Package_EmployeeSalary)
 
-@given(instance=Package_EmployeeSalary_strategy)
-def test_package_employeesalary_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Package_EmployeeSalary_strategy)
-def test_package_employeesalary_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Package_EmployeeSalary_strategy)
-def test_package_employeesalary_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_EmployeeSalary_strategy)
@@ -4509,14 +4153,19 @@ def test_package_employeesalary_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
+@given(instance=Package_EmployeeSalary_strategy)
+def test_package_employeesalary_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Package_EmployeeParoll_strategy)
 @settings(max_examples=50)
 def test_package_employeeparoll_instantiation(instance):
     assert isinstance(instance, Package_EmployeeParoll)
 
-@given(instance=Package_EmployeeParoll_strategy)
-def test_package_employeeparoll_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_EmployeeParoll_strategy)
@@ -4525,9 +4174,6 @@ def test_package_employeeparoll_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Package_EmployeeParoll_strategy)
-def test_package_employeeparoll_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_EmployeeParoll_strategy)
@@ -4541,42 +4187,6 @@ def test_package_employeeparoll_attribute_setter(instance):
 def test_package_employee_instantiation(instance):
     assert isinstance(instance, Package_Employee)
 
-@given(instance=Package_Employee_strategy)
-def test_package_employee_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_usergroup_type(instance):
-    assert isinstance(instance.usergroup, int)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_usergroup_setter(instance):
-    original = instance.usergroup
-    instance.usergroup = original
-    assert instance.usergroup == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_shift_type(instance):
-    assert isinstance(instance.shift, str)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_shift_setter(instance):
-    original = instance.shift
-    instance.shift = original
-    assert instance.shift == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_post_type(instance):
-    assert isinstance(instance.post, str)
 
 
 @given(instance=Package_Employee_strategy)
@@ -4585,31 +4195,6 @@ def test_package_employee_post_setter(instance):
     instance.post = original
     assert instance.post == original
 
-@given(instance=Package_Employee_strategy)
-def test_package_employee_empid_type(instance):
-    assert isinstance(instance.empid, str)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_empid_setter(instance):
-    original = instance.empid
-    instance.empid = original
-    assert instance.empid == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_depid_type(instance):
-    assert isinstance(instance.depid, int)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_depid_setter(instance):
-    original = instance.depid
-    instance.depid = original
-    assert instance.depid == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_leavegroup_type(instance):
-    assert isinstance(instance.leavegroup, int)
 
 
 @given(instance=Package_Employee_strategy)
@@ -4618,25 +4203,51 @@ def test_package_employee_leavegroup_setter(instance):
     instance.leavegroup = original
     assert instance.leavegroup == original
 
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_shift_setter(instance):
+    original = instance.shift
+    instance.shift = original
+    assert instance.shift == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_depid_setter(instance):
+    original = instance.depid
+    instance.depid = original
+    assert instance.depid == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_empid_setter(instance):
+    original = instance.empid
+    instance.empid = original
+    assert instance.empid == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_usergroup_setter(instance):
+    original = instance.usergroup
+    instance.usergroup = original
+    assert instance.usergroup == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Package_Posts_strategy)
 @settings(max_examples=50)
 def test_package_posts_instantiation(instance):
     assert isinstance(instance, Package_Posts)
 
-@given(instance=Package_Posts_strategy)
-def test_package_posts_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_Posts_strategy)
-def test_package_posts_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_Posts_strategy)
-def test_package_posts_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Posts_strategy)
@@ -4645,25 +4256,19 @@ def test_package_posts_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_Shifts_strategy)
-@settings(max_examples=50)
-def test_package_shifts_instantiation(instance):
-    assert isinstance(instance, Package_Shifts)
-
-@given(instance=Package_Shifts_strategy)
-def test_package_shifts_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
-@given(instance=Package_Shifts_strategy)
-def test_package_shifts_attribute2_setter(instance):
+@given(instance=Package_Posts_strategy)
+def test_package_posts_attribute2_setter(instance):
     original = instance.attribute2
     instance.attribute2 = original
     assert instance.attribute2 == original
 
 @given(instance=Package_Shifts_strategy)
-def test_package_shifts_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
+@settings(max_examples=50)
+def test_package_shifts_instantiation(instance):
+    assert isinstance(instance, Package_Shifts)
+
 
 
 @given(instance=Package_Shifts_strategy)
@@ -4672,14 +4277,19 @@ def test_package_shifts_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=Package_Shifts_strategy)
+def test_package_shifts_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Package_Departments_strategy)
 @settings(max_examples=50)
 def test_package_departments_instantiation(instance):
     assert isinstance(instance, Package_Departments)
 
-@given(instance=Package_Departments_strategy)
-def test_package_departments_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_Departments_strategy)
@@ -4693,20 +4303,6 @@ def test_package_departments_id_setter(instance):
 def test_package_deductions_instantiation(instance):
     assert isinstance(instance, Package_Deductions)
 
-@given(instance=Package_Deductions_strategy)
-def test_package_deductions_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_Deductions_strategy)
-def test_package_deductions_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_Deductions_strategy)
-def test_package_deductions_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Deductions_strategy)
@@ -4714,6 +4310,14 @@ def test_package_deductions_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Package_Deductions_strategy)
+def test_package_deductions_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
 
 @given(instance=Package_AllowanceTypes_strategy)
 @settings(max_examples=50)
@@ -4730,9 +4334,6 @@ def test_package_deuctiontypes_instantiation(instance):
 def test_package_attendance_instantiation(instance):
     assert isinstance(instance, Package_Attendance)
 
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_Attendance_strategy)
@@ -4741,31 +4342,6 @@ def test_package_attendance_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_empid_type(instance):
-    assert isinstance(instance.empid, int)
-
-
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_empid_setter(instance):
-    original = instance.empid
-    instance.empid = original
-    assert instance.empid == original
-
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_timein_type(instance):
-    assert isinstance(instance.timein, str)
-
-
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_timein_setter(instance):
-    original = instance.timein
-    instance.timein = original
-    assert instance.timein == original
-
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_timeout_type(instance):
-    assert isinstance(instance.timeout, str)
 
 
 @given(instance=Package_Attendance_strategy)
@@ -4774,14 +4350,27 @@ def test_package_attendance_timeout_setter(instance):
     instance.timeout = original
     assert instance.timeout == original
 
+
+
+@given(instance=Package_Attendance_strategy)
+def test_package_attendance_timein_setter(instance):
+    original = instance.timein
+    instance.timein = original
+    assert instance.timein == original
+
+
+
+@given(instance=Package_Attendance_strategy)
+def test_package_attendance_empid_setter(instance):
+    original = instance.empid
+    instance.empid = original
+    assert instance.empid == original
+
 @given(instance=Package_Allowance_strategy)
 @settings(max_examples=50)
 def test_package_allowance_instantiation(instance):
     assert isinstance(instance, Package_Allowance)
 
-@given(instance=Package_Allowance_strategy)
-def test_package_allowance_Effectivedate_type(instance):
-    assert isinstance(instance.Effectivedate, str)
 
 
 @given(instance=Package_Allowance_strategy)
@@ -4790,9 +4379,6 @@ def test_package_allowance_Effectivedate_setter(instance):
     instance.Effectivedate = original
     assert instance.Effectivedate == original
 
-@given(instance=Package_Allowance_strategy)
-def test_package_allowance_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_Allowance_strategy)
@@ -4801,9 +4387,6 @@ def test_package_allowance_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Package_Allowance_strategy)
-def test_package_allowance_emp_id_type(instance):
-    assert isinstance(instance.emp_id, str)
 
 
 @given(instance=Package_Allowance_strategy)

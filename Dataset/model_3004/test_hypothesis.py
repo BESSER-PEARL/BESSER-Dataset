@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BSExpression,
-    blorqueScript::BSMulDivOrModExpression,
-    blorqueScript::BSUnaryModifierExpression,
-    blorqueScript::BSTernaryExpression,
-    blorqueScript::BSArrayAccessExpression,
-    blorqueScript::BSPlusMinusOrStringConcatExpression,
-    blorqueScript::BSBitwiseShiftExpression,
-    blorqueScript::BSThisLiteral,
-    blorqueScript::BSOrderedRelationExpression,
-    blorqueScript::BSMemberSelectionExpression,
-    blorqueScript::BSBitwiseAndExpression,
-    blorqueScript::BSRealConstant,
-    blorqueScript::BSNewExpression,
-    blorqueScript::BSBitwiseOrExpression,
-    blorqueScript::BSNullLiteral,
-    blorqueScript::BSBooleanOrExpression,
-    blorqueScript::BSClientLiteral,
-    blorqueScript::BSCastExpression,
-    blorqueScript::BSBooleanConstant,
-    blorqueScript::BSSymbolRef,
-    blorqueScript::BSMethodInvokationExpression,
-    blorqueScript::BSEqualityExpression,
-    blorqueScript::BSBooleanAndExpression,
-    blorqueScript::BSHexadecimalConstant,
-    blorqueScript::BSPostfixArithmeticExpression,
-    blorqueScript::BSNumberConstant,
-    blorqueScript::BSStringConstant,
-    blorqueScript::BSBitwiseXorExpression,
-    blorqueScript::BSParentheticalExpression,
-    blorqueScript::BSParentLiteral,
-    blorqueScript::BSAssignmentExpression,
-    blorqueScript::BSSymbol,
-    blorqueScript::BSBlock,
-    blorqueScript::BSCase,
+    blorqueScript_BSPostfixArithmeticExpression,
+    blorqueScript_BSCastExpression,
+    blorqueScript_BSMemberSelectionExpression,
+    blorqueScript_BSPlusMinusOrStringConcatExpression,
+    blorqueScript_BSBooleanAndExpression,
+    blorqueScript_BSClientLiteral,
+    blorqueScript_BSBooleanConstant,
+    blorqueScript_BSEqualityExpression,
+    blorqueScript_BSNullLiteral,
+    blorqueScript_BSBitwiseXorExpression,
+    blorqueScript_BSParentLiteral,
+    blorqueScript_BSBitwiseShiftExpression,
+    blorqueScript_BSRealConstant,
+    blorqueScript_BSOrderedRelationExpression,
+    blorqueScript_BSMulDivOrModExpression,
+    blorqueScript_BSParentheticalExpression,
+    blorqueScript_BSSymbolRef,
+    blorqueScript_BSNumberConstant,
+    blorqueScript_BSUnaryModifierExpression,
+    blorqueScript_BSBitwiseAndExpression,
+    blorqueScript_BSHexadecimalConstant,
+    blorqueScript_BSBitwiseOrExpression,
+    blorqueScript_BSStringConstant,
+    blorqueScript_BSMethodInvokationExpression,
+    blorqueScript_BSTernaryExpression,
+    blorqueScript_BSNewExpression,
+    blorqueScript_BSArrayAccessExpression,
+    blorqueScript_BSThisLiteral,
+    blorqueScript_BSBooleanOrExpression,
+    blorqueScript_BSAssignmentExpression,
+    blorqueScript_BSSymbol,
+    blorqueScript_BSBlock,
+    blorqueScript_BSCase,
     BSMember,
-    blorqueScript::BSMethod,
-    blorqueScript::BSField,
+    blorqueScript_BSMethod,
+    blorqueScript_BSField,
     BSStatement,
-    blorqueScript::BSSwitchStatement,
-    blorqueScript::BSWhileLoop,
-    blorqueScript::BSContinue,
-    blorqueScript::BSBreak,
-    blorqueScript::BSIfStatement,
-    blorqueScript::BSForLoop,
-    blorqueScript::BSExpression,
-    blorqueScript::BSReturn,
-    blorqueScript::BSStatement,
+    blorqueScript_BSIfStatement,
+    blorqueScript_BSBreak,
+    blorqueScript_BSContinue,
+    blorqueScript_BSWhileLoop,
+    blorqueScript_BSForLoop,
+    blorqueScript_BSExpression,
+    blorqueScript_BSSwitchStatement,
+    blorqueScript_BSReturn,
+    blorqueScript_BSStatement,
     BSBlock,
-    blorqueScript::BSCaseBlock,
-    blorqueScript::BSSwitchBlock,
-    blorqueScript::BSLoopBlock,
-    blorqueScript::BSIfBlock,
-    blorqueScript::BSMethodBody,
+    blorqueScript_BSIfBlock,
+    blorqueScript_BSCaseBlock,
+    blorqueScript_BSLoopBlock,
+    blorqueScript_BSSwitchBlock,
+    blorqueScript_BSMethodBody,
     BSSymbol,
-    blorqueScript::BSParameter,
-    blorqueScript::BSVariableDeclaration,
-    blorqueScript::BSMember,
-    blorqueScript::BSClass,
-    blorqueScript::BSImport,
-    blorqueScript::BSFile,
+    blorqueScript_BSParameter,
+    blorqueScript_BSVariableDeclaration,
+    blorqueScript_BSMember,
+    blorqueScript_BSClass,
+    blorqueScript_BSImport,
+    blorqueScript_BSFile,
     BSPrimitiveType,
 )
 
@@ -89,23 +89,23 @@ def test_bsexpression_constructor_args():
 
 
 
-def test_blorquescript::bsmuldivormodexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSMulDivOrModExpression)
+def test_blorquescript_bspostfixarithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSPostfixArithmeticExpression)
 
 
-def test_blorquescript::bsmuldivormodexpression_constructor_exists():
-    assert callable(blorqueScript::BSMulDivOrModExpression.__init__)
+def test_blorquescript_bspostfixarithmeticexpression_constructor_exists():
+    assert callable(blorqueScript_BSPostfixArithmeticExpression.__init__)
 
 
-def test_blorquescript::bsmuldivormodexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSMulDivOrModExpression.__init__)
+def test_blorquescript_bspostfixarithmeticexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSPostfixArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_blorquescript::bsmuldivormodexpression_has_operator():
-    assert hasattr(blorqueScript::BSMulDivOrModExpression, "operator")
+def test_blorquescript_bspostfixarithmeticexpression_has_operator():
+    assert hasattr(blorqueScript_BSPostfixArithmeticExpression, "operator")
     descriptor = None
-    for klass in blorqueScript::BSMulDivOrModExpression.__mro__:
+    for klass in blorqueScript_BSPostfixArithmeticExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -113,23 +113,71 @@ def test_blorquescript::bsmuldivormodexpression_has_operator():
 
 
 
-def test_blorquescript::bsunarymodifierexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSUnaryModifierExpression)
+def test_blorquescript_bscastexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSCastExpression)
 
 
-def test_blorquescript::bsunarymodifierexpression_constructor_exists():
-    assert callable(blorqueScript::BSUnaryModifierExpression.__init__)
+def test_blorquescript_bscastexpression_constructor_exists():
+    assert callable(blorqueScript_BSCastExpression.__init__)
 
 
-def test_blorquescript::bsunarymodifierexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSUnaryModifierExpression.__init__)
+def test_blorquescript_bscastexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSCastExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "isArray" in params, "Missing parameter 'isArray'"
+    assert "pType" in params, "Missing parameter 'pType'"
+
+def test_blorquescript_bscastexpression_has_isArray():
+    assert hasattr(blorqueScript_BSCastExpression, "isArray")
+    descriptor = None
+    for klass in blorqueScript_BSCastExpression.__mro__:
+        if "isArray" in klass.__dict__:
+            descriptor = klass.__dict__["isArray"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_blorquescript_bscastexpression_has_pType():
+    assert hasattr(blorqueScript_BSCastExpression, "pType")
+    descriptor = None
+    for klass in blorqueScript_BSCastExpression.__mro__:
+        if "pType" in klass.__dict__:
+            descriptor = klass.__dict__["pType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_blorquescript_bsmemberselectionexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSMemberSelectionExpression)
+
+
+def test_blorquescript_bsmemberselectionexpression_constructor_exists():
+    assert callable(blorqueScript_BSMemberSelectionExpression.__init__)
+
+
+def test_blorquescript_bsmemberselectionexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSMemberSelectionExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsplusminusorstringconcatexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSPlusMinusOrStringConcatExpression)
+
+
+def test_blorquescript_bsplusminusorstringconcatexpression_constructor_exists():
+    assert callable(blorqueScript_BSPlusMinusOrStringConcatExpression.__init__)
+
+
+def test_blorquescript_bsplusminusorstringconcatexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSPlusMinusOrStringConcatExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_blorquescript::bsunarymodifierexpression_has_operator():
-    assert hasattr(blorqueScript::BSUnaryModifierExpression, "operator")
+def test_blorquescript_bsplusminusorstringconcatexpression_has_operator():
+    assert hasattr(blorqueScript_BSPlusMinusOrStringConcatExpression, "operator")
     descriptor = None
-    for klass in blorqueScript::BSUnaryModifierExpression.__mro__:
+    for klass in blorqueScript_BSPlusMinusOrStringConcatExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -137,51 +185,75 @@ def test_blorquescript::bsunarymodifierexpression_has_operator():
 
 
 
-def test_blorquescript::bsternaryexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSTernaryExpression)
+def test_blorquescript_bsbooleanandexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBooleanAndExpression)
 
 
-def test_blorquescript::bsternaryexpression_constructor_exists():
-    assert callable(blorqueScript::BSTernaryExpression.__init__)
+def test_blorquescript_bsbooleanandexpression_constructor_exists():
+    assert callable(blorqueScript_BSBooleanAndExpression.__init__)
 
 
-def test_blorquescript::bsternaryexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSTernaryExpression.__init__)
+def test_blorquescript_bsbooleanandexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBooleanAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsarrayaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSArrayAccessExpression)
+def test_blorquescript_bsclientliteral_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSClientLiteral)
 
 
-def test_blorquescript::bsarrayaccessexpression_constructor_exists():
-    assert callable(blorqueScript::BSArrayAccessExpression.__init__)
+def test_blorquescript_bsclientliteral_constructor_exists():
+    assert callable(blorqueScript_BSClientLiteral.__init__)
 
 
-def test_blorquescript::bsarrayaccessexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSArrayAccessExpression.__init__)
+def test_blorquescript_bsclientliteral_constructor_args():
+    sig = inspect.signature(blorqueScript_BSClientLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsplusminusorstringconcatexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSPlusMinusOrStringConcatExpression)
+def test_blorquescript_bsbooleanconstant_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBooleanConstant)
 
 
-def test_blorquescript::bsplusminusorstringconcatexpression_constructor_exists():
-    assert callable(blorqueScript::BSPlusMinusOrStringConcatExpression.__init__)
+def test_blorquescript_bsbooleanconstant_constructor_exists():
+    assert callable(blorqueScript_BSBooleanConstant.__init__)
 
 
-def test_blorquescript::bsplusminusorstringconcatexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSPlusMinusOrStringConcatExpression.__init__)
+def test_blorquescript_bsbooleanconstant_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBooleanConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_blorquescript_bsbooleanconstant_has_value():
+    assert hasattr(blorqueScript_BSBooleanConstant, "value")
+    descriptor = None
+    for klass in blorqueScript_BSBooleanConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_blorquescript_bsequalityexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSEqualityExpression)
+
+
+def test_blorquescript_bsequalityexpression_constructor_exists():
+    assert callable(blorqueScript_BSEqualityExpression.__init__)
+
+
+def test_blorquescript_bsequalityexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSEqualityExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_blorquescript::bsplusminusorstringconcatexpression_has_operator():
-    assert hasattr(blorqueScript::BSPlusMinusOrStringConcatExpression, "operator")
+def test_blorquescript_bsequalityexpression_has_operator():
+    assert hasattr(blorqueScript_BSEqualityExpression, "operator")
     descriptor = None
-    for klass in blorqueScript::BSPlusMinusOrStringConcatExpression.__mro__:
+    for klass in blorqueScript_BSEqualityExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -189,23 +261,65 @@ def test_blorquescript::bsplusminusorstringconcatexpression_has_operator():
 
 
 
-def test_blorquescript::bsbitwiseshiftexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBitwiseShiftExpression)
+def test_blorquescript_bsnullliteral_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSNullLiteral)
 
 
-def test_blorquescript::bsbitwiseshiftexpression_constructor_exists():
-    assert callable(blorqueScript::BSBitwiseShiftExpression.__init__)
+def test_blorquescript_bsnullliteral_constructor_exists():
+    assert callable(blorqueScript_BSNullLiteral.__init__)
 
 
-def test_blorquescript::bsbitwiseshiftexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBitwiseShiftExpression.__init__)
+def test_blorquescript_bsnullliteral_constructor_args():
+    sig = inspect.signature(blorqueScript_BSNullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsbitwisexorexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBitwiseXorExpression)
+
+
+def test_blorquescript_bsbitwisexorexpression_constructor_exists():
+    assert callable(blorqueScript_BSBitwiseXorExpression.__init__)
+
+
+def test_blorquescript_bsbitwisexorexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBitwiseXorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsparentliteral_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSParentLiteral)
+
+
+def test_blorquescript_bsparentliteral_constructor_exists():
+    assert callable(blorqueScript_BSParentLiteral.__init__)
+
+
+def test_blorquescript_bsparentliteral_constructor_args():
+    sig = inspect.signature(blorqueScript_BSParentLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsbitwiseshiftexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBitwiseShiftExpression)
+
+
+def test_blorquescript_bsbitwiseshiftexpression_constructor_exists():
+    assert callable(blorqueScript_BSBitwiseShiftExpression.__init__)
+
+
+def test_blorquescript_bsbitwiseshiftexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBitwiseShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_blorquescript::bsbitwiseshiftexpression_has_operator():
-    assert hasattr(blorqueScript::BSBitwiseShiftExpression, "operator")
+def test_blorquescript_bsbitwiseshiftexpression_has_operator():
+    assert hasattr(blorqueScript_BSBitwiseShiftExpression, "operator")
     descriptor = None
-    for klass in blorqueScript::BSBitwiseShiftExpression.__mro__:
+    for klass in blorqueScript_BSBitwiseShiftExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -213,89 +327,23 @@ def test_blorquescript::bsbitwiseshiftexpression_has_operator():
 
 
 
-def test_blorquescript::bsthisliteral_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSThisLiteral)
+def test_blorquescript_bsrealconstant_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSRealConstant)
 
 
-def test_blorquescript::bsthisliteral_constructor_exists():
-    assert callable(blorqueScript::BSThisLiteral.__init__)
+def test_blorquescript_bsrealconstant_constructor_exists():
+    assert callable(blorqueScript_BSRealConstant.__init__)
 
 
-def test_blorquescript::bsthisliteral_constructor_args():
-    sig = inspect.signature(blorqueScript::BSThisLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsorderedrelationexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSOrderedRelationExpression)
-
-
-def test_blorquescript::bsorderedrelationexpression_constructor_exists():
-    assert callable(blorqueScript::BSOrderedRelationExpression.__init__)
-
-
-def test_blorquescript::bsorderedrelationexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSOrderedRelationExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_blorquescript::bsorderedrelationexpression_has_operator():
-    assert hasattr(blorqueScript::BSOrderedRelationExpression, "operator")
-    descriptor = None
-    for klass in blorqueScript::BSOrderedRelationExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_blorquescript::bsmemberselectionexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSMemberSelectionExpression)
-
-
-def test_blorquescript::bsmemberselectionexpression_constructor_exists():
-    assert callable(blorqueScript::BSMemberSelectionExpression.__init__)
-
-
-def test_blorquescript::bsmemberselectionexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSMemberSelectionExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsbitwiseandexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBitwiseAndExpression)
-
-
-def test_blorquescript::bsbitwiseandexpression_constructor_exists():
-    assert callable(blorqueScript::BSBitwiseAndExpression.__init__)
-
-
-def test_blorquescript::bsbitwiseandexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBitwiseAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsrealconstant_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSRealConstant)
-
-
-def test_blorquescript::bsrealconstant_constructor_exists():
-    assert callable(blorqueScript::BSRealConstant.__init__)
-
-
-def test_blorquescript::bsrealconstant_constructor_args():
-    sig = inspect.signature(blorqueScript::BSRealConstant.__init__)
+def test_blorquescript_bsrealconstant_constructor_args():
+    sig = inspect.signature(blorqueScript_BSRealConstant.__init__)
     params = list(sig.parameters.keys())
     assert "right" in params, "Missing parameter 'right'"
 
-def test_blorquescript::bsrealconstant_has_right():
-    assert hasattr(blorqueScript::BSRealConstant, "right")
+def test_blorquescript_bsrealconstant_has_right():
+    assert hasattr(blorqueScript_BSRealConstant, "right")
     descriptor = None
-    for klass in blorqueScript::BSRealConstant.__mro__:
+    for klass in blorqueScript_BSRealConstant.__mro__:
         if "right" in klass.__dict__:
             descriptor = klass.__dict__["right"]
             break
@@ -303,189 +351,23 @@ def test_blorquescript::bsrealconstant_has_right():
 
 
 
-def test_blorquescript::bsnewexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSNewExpression)
+def test_blorquescript_bsorderedrelationexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSOrderedRelationExpression)
 
 
-def test_blorquescript::bsnewexpression_constructor_exists():
-    assert callable(blorqueScript::BSNewExpression.__init__)
+def test_blorquescript_bsorderedrelationexpression_constructor_exists():
+    assert callable(blorqueScript_BSOrderedRelationExpression.__init__)
 
 
-def test_blorquescript::bsnewexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSNewExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "isArray" in params, "Missing parameter 'isArray'"
-
-def test_blorquescript::bsnewexpression_has_isArray():
-    assert hasattr(blorqueScript::BSNewExpression, "isArray")
-    descriptor = None
-    for klass in blorqueScript::BSNewExpression.__mro__:
-        if "isArray" in klass.__dict__:
-            descriptor = klass.__dict__["isArray"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_blorquescript::bsbitwiseorexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBitwiseOrExpression)
-
-
-def test_blorquescript::bsbitwiseorexpression_constructor_exists():
-    assert callable(blorqueScript::BSBitwiseOrExpression.__init__)
-
-
-def test_blorquescript::bsbitwiseorexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBitwiseOrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsnullliteral_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSNullLiteral)
-
-
-def test_blorquescript::bsnullliteral_constructor_exists():
-    assert callable(blorqueScript::BSNullLiteral.__init__)
-
-
-def test_blorquescript::bsnullliteral_constructor_args():
-    sig = inspect.signature(blorqueScript::BSNullLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsbooleanorexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBooleanOrExpression)
-
-
-def test_blorquescript::bsbooleanorexpression_constructor_exists():
-    assert callable(blorqueScript::BSBooleanOrExpression.__init__)
-
-
-def test_blorquescript::bsbooleanorexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBooleanOrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsclientliteral_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSClientLiteral)
-
-
-def test_blorquescript::bsclientliteral_constructor_exists():
-    assert callable(blorqueScript::BSClientLiteral.__init__)
-
-
-def test_blorquescript::bsclientliteral_constructor_args():
-    sig = inspect.signature(blorqueScript::BSClientLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bscastexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSCastExpression)
-
-
-def test_blorquescript::bscastexpression_constructor_exists():
-    assert callable(blorqueScript::BSCastExpression.__init__)
-
-
-def test_blorquescript::bscastexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSCastExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "isArray" in params, "Missing parameter 'isArray'"
-    assert "pType" in params, "Missing parameter 'pType'"
-
-def test_blorquescript::bscastexpression_has_isArray():
-    assert hasattr(blorqueScript::BSCastExpression, "isArray")
-    descriptor = None
-    for klass in blorqueScript::BSCastExpression.__mro__:
-        if "isArray" in klass.__dict__:
-            descriptor = klass.__dict__["isArray"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_blorquescript::bscastexpression_has_pType():
-    assert hasattr(blorqueScript::BSCastExpression, "pType")
-    descriptor = None
-    for klass in blorqueScript::BSCastExpression.__mro__:
-        if "pType" in klass.__dict__:
-            descriptor = klass.__dict__["pType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_blorquescript::bsbooleanconstant_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBooleanConstant)
-
-
-def test_blorquescript::bsbooleanconstant_constructor_exists():
-    assert callable(blorqueScript::BSBooleanConstant.__init__)
-
-
-def test_blorquescript::bsbooleanconstant_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBooleanConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_blorquescript::bsbooleanconstant_has_value():
-    assert hasattr(blorqueScript::BSBooleanConstant, "value")
-    descriptor = None
-    for klass in blorqueScript::BSBooleanConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_blorquescript::bssymbolref_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSSymbolRef)
-
-
-def test_blorquescript::bssymbolref_constructor_exists():
-    assert callable(blorqueScript::BSSymbolRef.__init__)
-
-
-def test_blorquescript::bssymbolref_constructor_args():
-    sig = inspect.signature(blorqueScript::BSSymbolRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsmethodinvokationexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSMethodInvokationExpression)
-
-
-def test_blorquescript::bsmethodinvokationexpression_constructor_exists():
-    assert callable(blorqueScript::BSMethodInvokationExpression.__init__)
-
-
-def test_blorquescript::bsmethodinvokationexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSMethodInvokationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsequalityexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSEqualityExpression)
-
-
-def test_blorquescript::bsequalityexpression_constructor_exists():
-    assert callable(blorqueScript::BSEqualityExpression.__init__)
-
-
-def test_blorquescript::bsequalityexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSEqualityExpression.__init__)
+def test_blorquescript_bsorderedrelationexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSOrderedRelationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_blorquescript::bsequalityexpression_has_operator():
-    assert hasattr(blorqueScript::BSEqualityExpression, "operator")
+def test_blorquescript_bsorderedrelationexpression_has_operator():
+    assert hasattr(blorqueScript_BSOrderedRelationExpression, "operator")
     descriptor = None
-    for klass in blorqueScript::BSEqualityExpression.__mro__:
+    for klass in blorqueScript_BSOrderedRelationExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -493,61 +375,23 @@ def test_blorquescript::bsequalityexpression_has_operator():
 
 
 
-def test_blorquescript::bsbooleanandexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBooleanAndExpression)
+def test_blorquescript_bsmuldivormodexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSMulDivOrModExpression)
 
 
-def test_blorquescript::bsbooleanandexpression_constructor_exists():
-    assert callable(blorqueScript::BSBooleanAndExpression.__init__)
+def test_blorquescript_bsmuldivormodexpression_constructor_exists():
+    assert callable(blorqueScript_BSMulDivOrModExpression.__init__)
 
 
-def test_blorquescript::bsbooleanandexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBooleanAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bshexadecimalconstant_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSHexadecimalConstant)
-
-
-def test_blorquescript::bshexadecimalconstant_constructor_exists():
-    assert callable(blorqueScript::BSHexadecimalConstant.__init__)
-
-
-def test_blorquescript::bshexadecimalconstant_constructor_args():
-    sig = inspect.signature(blorqueScript::BSHexadecimalConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_blorquescript::bshexadecimalconstant_has_value():
-    assert hasattr(blorqueScript::BSHexadecimalConstant, "value")
-    descriptor = None
-    for klass in blorqueScript::BSHexadecimalConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_blorquescript::bspostfixarithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSPostfixArithmeticExpression)
-
-
-def test_blorquescript::bspostfixarithmeticexpression_constructor_exists():
-    assert callable(blorqueScript::BSPostfixArithmeticExpression.__init__)
-
-
-def test_blorquescript::bspostfixarithmeticexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSPostfixArithmeticExpression.__init__)
+def test_blorquescript_bsmuldivormodexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSMulDivOrModExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_blorquescript::bspostfixarithmeticexpression_has_operator():
-    assert hasattr(blorqueScript::BSPostfixArithmeticExpression, "operator")
+def test_blorquescript_bsmuldivormodexpression_has_operator():
+    assert hasattr(blorqueScript_BSMulDivOrModExpression, "operator")
     descriptor = None
-    for klass in blorqueScript::BSPostfixArithmeticExpression.__mro__:
+    for klass in blorqueScript_BSMulDivOrModExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -555,23 +399,51 @@ def test_blorquescript::bspostfixarithmeticexpression_has_operator():
 
 
 
-def test_blorquescript::bsnumberconstant_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSNumberConstant)
+def test_blorquescript_bsparentheticalexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSParentheticalExpression)
 
 
-def test_blorquescript::bsnumberconstant_constructor_exists():
-    assert callable(blorqueScript::BSNumberConstant.__init__)
+def test_blorquescript_bsparentheticalexpression_constructor_exists():
+    assert callable(blorqueScript_BSParentheticalExpression.__init__)
 
 
-def test_blorquescript::bsnumberconstant_constructor_args():
-    sig = inspect.signature(blorqueScript::BSNumberConstant.__init__)
+def test_blorquescript_bsparentheticalexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSParentheticalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bssymbolref_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSSymbolRef)
+
+
+def test_blorquescript_bssymbolref_constructor_exists():
+    assert callable(blorqueScript_BSSymbolRef.__init__)
+
+
+def test_blorquescript_bssymbolref_constructor_args():
+    sig = inspect.signature(blorqueScript_BSSymbolRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsnumberconstant_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSNumberConstant)
+
+
+def test_blorquescript_bsnumberconstant_constructor_exists():
+    assert callable(blorqueScript_BSNumberConstant.__init__)
+
+
+def test_blorquescript_bsnumberconstant_constructor_args():
+    sig = inspect.signature(blorqueScript_BSNumberConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_blorquescript::bsnumberconstant_has_value():
-    assert hasattr(blorqueScript::BSNumberConstant, "value")
+def test_blorquescript_bsnumberconstant_has_value():
+    assert hasattr(blorqueScript_BSNumberConstant, "value")
     descriptor = None
-    for klass in blorqueScript::BSNumberConstant.__mro__:
+    for klass in blorqueScript_BSNumberConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -579,23 +451,61 @@ def test_blorquescript::bsnumberconstant_has_value():
 
 
 
-def test_blorquescript::bsstringconstant_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSStringConstant)
+def test_blorquescript_bsunarymodifierexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSUnaryModifierExpression)
 
 
-def test_blorquescript::bsstringconstant_constructor_exists():
-    assert callable(blorqueScript::BSStringConstant.__init__)
+def test_blorquescript_bsunarymodifierexpression_constructor_exists():
+    assert callable(blorqueScript_BSUnaryModifierExpression.__init__)
 
 
-def test_blorquescript::bsstringconstant_constructor_args():
-    sig = inspect.signature(blorqueScript::BSStringConstant.__init__)
+def test_blorquescript_bsunarymodifierexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSUnaryModifierExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_blorquescript_bsunarymodifierexpression_has_operator():
+    assert hasattr(blorqueScript_BSUnaryModifierExpression, "operator")
+    descriptor = None
+    for klass in blorqueScript_BSUnaryModifierExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_blorquescript_bsbitwiseandexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBitwiseAndExpression)
+
+
+def test_blorquescript_bsbitwiseandexpression_constructor_exists():
+    assert callable(blorqueScript_BSBitwiseAndExpression.__init__)
+
+
+def test_blorquescript_bsbitwiseandexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBitwiseAndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bshexadecimalconstant_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSHexadecimalConstant)
+
+
+def test_blorquescript_bshexadecimalconstant_constructor_exists():
+    assert callable(blorqueScript_BSHexadecimalConstant.__init__)
+
+
+def test_blorquescript_bshexadecimalconstant_constructor_args():
+    sig = inspect.signature(blorqueScript_BSHexadecimalConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_blorquescript::bsstringconstant_has_value():
-    assert hasattr(blorqueScript::BSStringConstant, "value")
+def test_blorquescript_bshexadecimalconstant_has_value():
+    assert hasattr(blorqueScript_BSHexadecimalConstant, "value")
     descriptor = None
-    for klass in blorqueScript::BSStringConstant.__mro__:
+    for klass in blorqueScript_BSHexadecimalConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -603,65 +513,155 @@ def test_blorquescript::bsstringconstant_has_value():
 
 
 
-def test_blorquescript::bsbitwisexorexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBitwiseXorExpression)
+def test_blorquescript_bsbitwiseorexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBitwiseOrExpression)
 
 
-def test_blorquescript::bsbitwisexorexpression_constructor_exists():
-    assert callable(blorqueScript::BSBitwiseXorExpression.__init__)
+def test_blorquescript_bsbitwiseorexpression_constructor_exists():
+    assert callable(blorqueScript_BSBitwiseOrExpression.__init__)
 
 
-def test_blorquescript::bsbitwisexorexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBitwiseXorExpression.__init__)
+def test_blorquescript_bsbitwiseorexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBitwiseOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsparentheticalexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSParentheticalExpression)
+def test_blorquescript_bsstringconstant_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSStringConstant)
 
 
-def test_blorquescript::bsparentheticalexpression_constructor_exists():
-    assert callable(blorqueScript::BSParentheticalExpression.__init__)
+def test_blorquescript_bsstringconstant_constructor_exists():
+    assert callable(blorqueScript_BSStringConstant.__init__)
 
 
-def test_blorquescript::bsparentheticalexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSParentheticalExpression.__init__)
+def test_blorquescript_bsstringconstant_constructor_args():
+    sig = inspect.signature(blorqueScript_BSStringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_blorquescript_bsstringconstant_has_value():
+    assert hasattr(blorqueScript_BSStringConstant, "value")
+    descriptor = None
+    for klass in blorqueScript_BSStringConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_blorquescript_bsmethodinvokationexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSMethodInvokationExpression)
+
+
+def test_blorquescript_bsmethodinvokationexpression_constructor_exists():
+    assert callable(blorqueScript_BSMethodInvokationExpression.__init__)
+
+
+def test_blorquescript_bsmethodinvokationexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSMethodInvokationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsparentliteral_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSParentLiteral)
+def test_blorquescript_bsternaryexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSTernaryExpression)
 
 
-def test_blorquescript::bsparentliteral_constructor_exists():
-    assert callable(blorqueScript::BSParentLiteral.__init__)
+def test_blorquescript_bsternaryexpression_constructor_exists():
+    assert callable(blorqueScript_BSTernaryExpression.__init__)
 
 
-def test_blorquescript::bsparentliteral_constructor_args():
-    sig = inspect.signature(blorqueScript::BSParentLiteral.__init__)
+def test_blorquescript_bsternaryexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSTernaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSAssignmentExpression)
+def test_blorquescript_bsnewexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSNewExpression)
 
 
-def test_blorquescript::bsassignmentexpression_constructor_exists():
-    assert callable(blorqueScript::BSAssignmentExpression.__init__)
+def test_blorquescript_bsnewexpression_constructor_exists():
+    assert callable(blorqueScript_BSNewExpression.__init__)
 
 
-def test_blorquescript::bsassignmentexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSAssignmentExpression.__init__)
+def test_blorquescript_bsnewexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSNewExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "isArray" in params, "Missing parameter 'isArray'"
+
+def test_blorquescript_bsnewexpression_has_isArray():
+    assert hasattr(blorqueScript_BSNewExpression, "isArray")
+    descriptor = None
+    for klass in blorqueScript_BSNewExpression.__mro__:
+        if "isArray" in klass.__dict__:
+            descriptor = klass.__dict__["isArray"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_blorquescript_bsarrayaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSArrayAccessExpression)
+
+
+def test_blorquescript_bsarrayaccessexpression_constructor_exists():
+    assert callable(blorqueScript_BSArrayAccessExpression.__init__)
+
+
+def test_blorquescript_bsarrayaccessexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSArrayAccessExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsthisliteral_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSThisLiteral)
+
+
+def test_blorquescript_bsthisliteral_constructor_exists():
+    assert callable(blorqueScript_BSThisLiteral.__init__)
+
+
+def test_blorquescript_bsthisliteral_constructor_args():
+    sig = inspect.signature(blorqueScript_BSThisLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsbooleanorexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBooleanOrExpression)
+
+
+def test_blorquescript_bsbooleanorexpression_constructor_exists():
+    assert callable(blorqueScript_BSBooleanOrExpression.__init__)
+
+
+def test_blorquescript_bsbooleanorexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBooleanOrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSAssignmentExpression)
+
+
+def test_blorquescript_bsassignmentexpression_constructor_exists():
+    assert callable(blorqueScript_BSAssignmentExpression.__init__)
+
+
+def test_blorquescript_bsassignmentexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
     assert "assignmentOperator" in params, "Missing parameter 'assignmentOperator'"
 
-def test_blorquescript::bsassignmentexpression_has_assignmentOperator():
-    assert hasattr(blorqueScript::BSAssignmentExpression, "assignmentOperator")
+def test_blorquescript_bsassignmentexpression_has_assignmentOperator():
+    assert hasattr(blorqueScript_BSAssignmentExpression, "assignmentOperator")
     descriptor = None
-    for klass in blorqueScript::BSAssignmentExpression.__mro__:
+    for klass in blorqueScript_BSAssignmentExpression.__mro__:
         if "assignmentOperator" in klass.__dict__:
             descriptor = klass.__dict__["assignmentOperator"]
             break
@@ -669,64 +669,64 @@ def test_blorquescript::bsassignmentexpression_has_assignmentOperator():
 
 
 
-def test_blorquescript::bssymbol_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSSymbol)
+def test_blorquescript_bssymbol_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSSymbol)
 
 
-def test_blorquescript::bssymbol_constructor_exists():
-    assert callable(blorqueScript::BSSymbol.__init__)
+def test_blorquescript_bssymbol_constructor_exists():
+    assert callable(blorqueScript_BSSymbol.__init__)
 
 
-def test_blorquescript::bssymbol_constructor_args():
-    sig = inspect.signature(blorqueScript::BSSymbol.__init__)
+def test_blorquescript_bssymbol_constructor_args():
+    sig = inspect.signature(blorqueScript_BSSymbol.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "pType" in params, "Missing parameter 'pType'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_blorquescript::bssymbol_has_name():
-    assert hasattr(blorqueScript::BSSymbol, "name")
+def test_blorquescript_bssymbol_has_pType():
+    assert hasattr(blorqueScript_BSSymbol, "pType")
     descriptor = None
-    for klass in blorqueScript::BSSymbol.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_blorquescript::bssymbol_has_pType():
-    assert hasattr(blorqueScript::BSSymbol, "pType")
-    descriptor = None
-    for klass in blorqueScript::BSSymbol.__mro__:
+    for klass in blorqueScript_BSSymbol.__mro__:
         if "pType" in klass.__dict__:
             descriptor = klass.__dict__["pType"]
             break
     assert isinstance(descriptor, property)
 
+def test_blorquescript_bssymbol_has_name():
+    assert hasattr(blorqueScript_BSSymbol, "name")
+    descriptor = None
+    for klass in blorqueScript_BSSymbol.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_blorquescript::bsblock_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBlock)
+
+def test_blorquescript_bsblock_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBlock)
 
 
-def test_blorquescript::bsblock_constructor_exists():
-    assert callable(blorqueScript::BSBlock.__init__)
+def test_blorquescript_bsblock_constructor_exists():
+    assert callable(blorqueScript_BSBlock.__init__)
 
 
-def test_blorquescript::bsblock_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBlock.__init__)
+def test_blorquescript_bsblock_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bscase_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSCase)
+def test_blorquescript_bscase_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSCase)
 
 
-def test_blorquescript::bscase_constructor_exists():
-    assert callable(blorqueScript::BSCase.__init__)
+def test_blorquescript_bscase_constructor_exists():
+    assert callable(blorqueScript_BSCase.__init__)
 
 
-def test_blorquescript::bscase_constructor_args():
-    sig = inspect.signature(blorqueScript::BSCase.__init__)
+def test_blorquescript_bscase_constructor_args():
+    sig = inspect.signature(blorqueScript_BSCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -745,30 +745,30 @@ def test_bsmember_constructor_args():
 
 
 
-def test_blorquescript::bsmethod_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSMethod)
+def test_blorquescript_bsmethod_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSMethod)
 
 
-def test_blorquescript::bsmethod_constructor_exists():
-    assert callable(blorqueScript::BSMethod.__init__)
+def test_blorquescript_bsmethod_constructor_exists():
+    assert callable(blorqueScript_BSMethod.__init__)
 
 
-def test_blorquescript::bsmethod_constructor_args():
-    sig = inspect.signature(blorqueScript::BSMethod.__init__)
+def test_blorquescript_bsmethod_constructor_args():
+    sig = inspect.signature(blorqueScript_BSMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsfield_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSField)
+def test_blorquescript_bsfield_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSField)
 
 
-def test_blorquescript::bsfield_constructor_exists():
-    assert callable(blorqueScript::BSField.__init__)
+def test_blorquescript_bsfield_constructor_exists():
+    assert callable(blorqueScript_BSField.__init__)
 
 
-def test_blorquescript::bsfield_constructor_args():
-    sig = inspect.signature(blorqueScript::BSField.__init__)
+def test_blorquescript_bsfield_constructor_args():
+    sig = inspect.signature(blorqueScript_BSField.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -787,23 +787,107 @@ def test_bsstatement_constructor_args():
 
 
 
-def test_blorquescript::bsswitchstatement_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSSwitchStatement)
+def test_blorquescript_bsifstatement_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSIfStatement)
 
 
-def test_blorquescript::bsswitchstatement_constructor_exists():
-    assert callable(blorqueScript::BSSwitchStatement.__init__)
+def test_blorquescript_bsifstatement_constructor_exists():
+    assert callable(blorqueScript_BSIfStatement.__init__)
 
 
-def test_blorquescript::bsswitchstatement_constructor_args():
-    sig = inspect.signature(blorqueScript::BSSwitchStatement.__init__)
+def test_blorquescript_bsifstatement_constructor_args():
+    sig = inspect.signature(blorqueScript_BSIfStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsbreak_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSBreak)
+
+
+def test_blorquescript_bsbreak_constructor_exists():
+    assert callable(blorqueScript_BSBreak.__init__)
+
+
+def test_blorquescript_bsbreak_constructor_args():
+    sig = inspect.signature(blorqueScript_BSBreak.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bscontinue_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSContinue)
+
+
+def test_blorquescript_bscontinue_constructor_exists():
+    assert callable(blorqueScript_BSContinue.__init__)
+
+
+def test_blorquescript_bscontinue_constructor_args():
+    sig = inspect.signature(blorqueScript_BSContinue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bswhileloop_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSWhileLoop)
+
+
+def test_blorquescript_bswhileloop_constructor_exists():
+    assert callable(blorqueScript_BSWhileLoop.__init__)
+
+
+def test_blorquescript_bswhileloop_constructor_args():
+    sig = inspect.signature(blorqueScript_BSWhileLoop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsforloop_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSForLoop)
+
+
+def test_blorquescript_bsforloop_constructor_exists():
+    assert callable(blorqueScript_BSForLoop.__init__)
+
+
+def test_blorquescript_bsforloop_constructor_args():
+    sig = inspect.signature(blorqueScript_BSForLoop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsexpression_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSExpression)
+
+
+def test_blorquescript_bsexpression_constructor_exists():
+    assert callable(blorqueScript_BSExpression.__init__)
+
+
+def test_blorquescript_bsexpression_constructor_args():
+    sig = inspect.signature(blorqueScript_BSExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blorquescript_bsswitchstatement_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSSwitchStatement)
+
+
+def test_blorquescript_bsswitchstatement_constructor_exists():
+    assert callable(blorqueScript_BSSwitchStatement.__init__)
+
+
+def test_blorquescript_bsswitchstatement_constructor_args():
+    sig = inspect.signature(blorqueScript_BSSwitchStatement.__init__)
     params = list(sig.parameters.keys())
     assert "stringSwitch" in params, "Missing parameter 'stringSwitch'"
 
-def test_blorquescript::bsswitchstatement_has_stringSwitch():
-    assert hasattr(blorqueScript::BSSwitchStatement, "stringSwitch")
+def test_blorquescript_bsswitchstatement_has_stringSwitch():
+    assert hasattr(blorqueScript_BSSwitchStatement, "stringSwitch")
     descriptor = None
-    for klass in blorqueScript::BSSwitchStatement.__mro__:
+    for klass in blorqueScript_BSSwitchStatement.__mro__:
         if "stringSwitch" in klass.__dict__:
             descriptor = klass.__dict__["stringSwitch"]
             break
@@ -811,114 +895,30 @@ def test_blorquescript::bsswitchstatement_has_stringSwitch():
 
 
 
-def test_blorquescript::bswhileloop_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSWhileLoop)
+def test_blorquescript_bsreturn_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSReturn)
 
 
-def test_blorquescript::bswhileloop_constructor_exists():
-    assert callable(blorqueScript::BSWhileLoop.__init__)
+def test_blorquescript_bsreturn_constructor_exists():
+    assert callable(blorqueScript_BSReturn.__init__)
 
 
-def test_blorquescript::bswhileloop_constructor_args():
-    sig = inspect.signature(blorqueScript::BSWhileLoop.__init__)
+def test_blorquescript_bsreturn_constructor_args():
+    sig = inspect.signature(blorqueScript_BSReturn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bscontinue_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSContinue)
+def test_blorquescript_bsstatement_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSStatement)
 
 
-def test_blorquescript::bscontinue_constructor_exists():
-    assert callable(blorqueScript::BSContinue.__init__)
+def test_blorquescript_bsstatement_constructor_exists():
+    assert callable(blorqueScript_BSStatement.__init__)
 
 
-def test_blorquescript::bscontinue_constructor_args():
-    sig = inspect.signature(blorqueScript::BSContinue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsbreak_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSBreak)
-
-
-def test_blorquescript::bsbreak_constructor_exists():
-    assert callable(blorqueScript::BSBreak.__init__)
-
-
-def test_blorquescript::bsbreak_constructor_args():
-    sig = inspect.signature(blorqueScript::BSBreak.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsifstatement_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSIfStatement)
-
-
-def test_blorquescript::bsifstatement_constructor_exists():
-    assert callable(blorqueScript::BSIfStatement.__init__)
-
-
-def test_blorquescript::bsifstatement_constructor_args():
-    sig = inspect.signature(blorqueScript::BSIfStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsforloop_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSForLoop)
-
-
-def test_blorquescript::bsforloop_constructor_exists():
-    assert callable(blorqueScript::BSForLoop.__init__)
-
-
-def test_blorquescript::bsforloop_constructor_args():
-    sig = inspect.signature(blorqueScript::BSForLoop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsexpression_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSExpression)
-
-
-def test_blorquescript::bsexpression_constructor_exists():
-    assert callable(blorqueScript::BSExpression.__init__)
-
-
-def test_blorquescript::bsexpression_constructor_args():
-    sig = inspect.signature(blorqueScript::BSExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsreturn_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSReturn)
-
-
-def test_blorquescript::bsreturn_constructor_exists():
-    assert callable(blorqueScript::BSReturn.__init__)
-
-
-def test_blorquescript::bsreturn_constructor_args():
-    sig = inspect.signature(blorqueScript::BSReturn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blorquescript::bsstatement_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSStatement)
-
-
-def test_blorquescript::bsstatement_constructor_exists():
-    assert callable(blorqueScript::BSStatement.__init__)
-
-
-def test_blorquescript::bsstatement_constructor_args():
-    sig = inspect.signature(blorqueScript::BSStatement.__init__)
+def test_blorquescript_bsstatement_constructor_args():
+    sig = inspect.signature(blorqueScript_BSStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -937,72 +937,72 @@ def test_bsblock_constructor_args():
 
 
 
-def test_blorquescript::bscaseblock_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSCaseBlock)
+def test_blorquescript_bsifblock_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSIfBlock)
 
 
-def test_blorquescript::bscaseblock_constructor_exists():
-    assert callable(blorqueScript::BSCaseBlock.__init__)
+def test_blorquescript_bsifblock_constructor_exists():
+    assert callable(blorqueScript_BSIfBlock.__init__)
 
 
-def test_blorquescript::bscaseblock_constructor_args():
-    sig = inspect.signature(blorqueScript::BSCaseBlock.__init__)
+def test_blorquescript_bsifblock_constructor_args():
+    sig = inspect.signature(blorqueScript_BSIfBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsswitchblock_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSSwitchBlock)
+def test_blorquescript_bscaseblock_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSCaseBlock)
 
 
-def test_blorquescript::bsswitchblock_constructor_exists():
-    assert callable(blorqueScript::BSSwitchBlock.__init__)
+def test_blorquescript_bscaseblock_constructor_exists():
+    assert callable(blorqueScript_BSCaseBlock.__init__)
 
 
-def test_blorquescript::bsswitchblock_constructor_args():
-    sig = inspect.signature(blorqueScript::BSSwitchBlock.__init__)
+def test_blorquescript_bscaseblock_constructor_args():
+    sig = inspect.signature(blorqueScript_BSCaseBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsloopblock_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSLoopBlock)
+def test_blorquescript_bsloopblock_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSLoopBlock)
 
 
-def test_blorquescript::bsloopblock_constructor_exists():
-    assert callable(blorqueScript::BSLoopBlock.__init__)
+def test_blorquescript_bsloopblock_constructor_exists():
+    assert callable(blorqueScript_BSLoopBlock.__init__)
 
 
-def test_blorquescript::bsloopblock_constructor_args():
-    sig = inspect.signature(blorqueScript::BSLoopBlock.__init__)
+def test_blorquescript_bsloopblock_constructor_args():
+    sig = inspect.signature(blorqueScript_BSLoopBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsifblock_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSIfBlock)
+def test_blorquescript_bsswitchblock_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSSwitchBlock)
 
 
-def test_blorquescript::bsifblock_constructor_exists():
-    assert callable(blorqueScript::BSIfBlock.__init__)
+def test_blorquescript_bsswitchblock_constructor_exists():
+    assert callable(blorqueScript_BSSwitchBlock.__init__)
 
 
-def test_blorquescript::bsifblock_constructor_args():
-    sig = inspect.signature(blorqueScript::BSIfBlock.__init__)
+def test_blorquescript_bsswitchblock_constructor_args():
+    sig = inspect.signature(blorqueScript_BSSwitchBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsmethodbody_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSMethodBody)
+def test_blorquescript_bsmethodbody_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSMethodBody)
 
 
-def test_blorquescript::bsmethodbody_constructor_exists():
-    assert callable(blorqueScript::BSMethodBody.__init__)
+def test_blorquescript_bsmethodbody_constructor_exists():
+    assert callable(blorqueScript_BSMethodBody.__init__)
 
 
-def test_blorquescript::bsmethodbody_constructor_args():
-    sig = inspect.signature(blorqueScript::BSMethodBody.__init__)
+def test_blorquescript_bsmethodbody_constructor_args():
+    sig = inspect.signature(blorqueScript_BSMethodBody.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1021,23 +1021,23 @@ def test_bssymbol_constructor_args():
 
 
 
-def test_blorquescript::bsparameter_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSParameter)
+def test_blorquescript_bsparameter_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSParameter)
 
 
-def test_blorquescript::bsparameter_constructor_exists():
-    assert callable(blorqueScript::BSParameter.__init__)
+def test_blorquescript_bsparameter_constructor_exists():
+    assert callable(blorqueScript_BSParameter.__init__)
 
 
-def test_blorquescript::bsparameter_constructor_args():
-    sig = inspect.signature(blorqueScript::BSParameter.__init__)
+def test_blorquescript_bsparameter_constructor_args():
+    sig = inspect.signature(blorqueScript_BSParameter.__init__)
     params = list(sig.parameters.keys())
     assert "isArray" in params, "Missing parameter 'isArray'"
 
-def test_blorquescript::bsparameter_has_isArray():
-    assert hasattr(blorqueScript::BSParameter, "isArray")
+def test_blorquescript_bsparameter_has_isArray():
+    assert hasattr(blorqueScript_BSParameter, "isArray")
     descriptor = None
-    for klass in blorqueScript::BSParameter.__mro__:
+    for klass in blorqueScript_BSParameter.__mro__:
         if "isArray" in klass.__dict__:
             descriptor = klass.__dict__["isArray"]
             break
@@ -1045,37 +1045,37 @@ def test_blorquescript::bsparameter_has_isArray():
 
 
 
-def test_blorquescript::bsvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSVariableDeclaration)
+def test_blorquescript_bsvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSVariableDeclaration)
 
 
-def test_blorquescript::bsvariabledeclaration_constructor_exists():
-    assert callable(blorqueScript::BSVariableDeclaration.__init__)
+def test_blorquescript_bsvariabledeclaration_constructor_exists():
+    assert callable(blorqueScript_BSVariableDeclaration.__init__)
 
 
-def test_blorquescript::bsvariabledeclaration_constructor_args():
-    sig = inspect.signature(blorqueScript::BSVariableDeclaration.__init__)
+def test_blorquescript_bsvariabledeclaration_constructor_args():
+    sig = inspect.signature(blorqueScript_BSVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_blorquescript::bsmember_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSMember)
+def test_blorquescript_bsmember_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSMember)
 
 
-def test_blorquescript::bsmember_constructor_exists():
-    assert callable(blorqueScript::BSMember.__init__)
+def test_blorquescript_bsmember_constructor_exists():
+    assert callable(blorqueScript_BSMember.__init__)
 
 
-def test_blorquescript::bsmember_constructor_args():
-    sig = inspect.signature(blorqueScript::BSMember.__init__)
+def test_blorquescript_bsmember_constructor_args():
+    sig = inspect.signature(blorqueScript_BSMember.__init__)
     params = list(sig.parameters.keys())
     assert "isArray" in params, "Missing parameter 'isArray'"
 
-def test_blorquescript::bsmember_has_isArray():
-    assert hasattr(blorqueScript::BSMember, "isArray")
+def test_blorquescript_bsmember_has_isArray():
+    assert hasattr(blorqueScript_BSMember, "isArray")
     descriptor = None
-    for klass in blorqueScript::BSMember.__mro__:
+    for klass in blorqueScript_BSMember.__mro__:
         if "isArray" in klass.__dict__:
             descriptor = klass.__dict__["isArray"]
             break
@@ -1083,23 +1083,23 @@ def test_blorquescript::bsmember_has_isArray():
 
 
 
-def test_blorquescript::bsclass_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSClass)
+def test_blorquescript_bsclass_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSClass)
 
 
-def test_blorquescript::bsclass_constructor_exists():
-    assert callable(blorqueScript::BSClass.__init__)
+def test_blorquescript_bsclass_constructor_exists():
+    assert callable(blorqueScript_BSClass.__init__)
 
 
-def test_blorquescript::bsclass_constructor_args():
-    sig = inspect.signature(blorqueScript::BSClass.__init__)
+def test_blorquescript_bsclass_constructor_args():
+    sig = inspect.signature(blorqueScript_BSClass.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_blorquescript::bsclass_has_name():
-    assert hasattr(blorqueScript::BSClass, "name")
+def test_blorquescript_bsclass_has_name():
+    assert hasattr(blorqueScript_BSClass, "name")
     descriptor = None
-    for klass in blorqueScript::BSClass.__mro__:
+    for klass in blorqueScript_BSClass.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1107,23 +1107,23 @@ def test_blorquescript::bsclass_has_name():
 
 
 
-def test_blorquescript::bsimport_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSImport)
+def test_blorquescript_bsimport_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSImport)
 
 
-def test_blorquescript::bsimport_constructor_exists():
-    assert callable(blorqueScript::BSImport.__init__)
+def test_blorquescript_bsimport_constructor_exists():
+    assert callable(blorqueScript_BSImport.__init__)
 
 
-def test_blorquescript::bsimport_constructor_args():
-    sig = inspect.signature(blorqueScript::BSImport.__init__)
+def test_blorquescript_bsimport_constructor_args():
+    sig = inspect.signature(blorqueScript_BSImport.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_blorquescript::bsimport_has_importedNamespace():
-    assert hasattr(blorqueScript::BSImport, "importedNamespace")
+def test_blorquescript_bsimport_has_importedNamespace():
+    assert hasattr(blorqueScript_BSImport, "importedNamespace")
     descriptor = None
-    for klass in blorqueScript::BSImport.__mro__:
+    for klass in blorqueScript_BSImport.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -1131,23 +1131,23 @@ def test_blorquescript::bsimport_has_importedNamespace():
 
 
 
-def test_blorquescript::bsfile_is_not_abstract():
-    assert not inspect.isabstract(blorqueScript::BSFile)
+def test_blorquescript_bsfile_is_not_abstract():
+    assert not inspect.isabstract(blorqueScript_BSFile)
 
 
-def test_blorquescript::bsfile_constructor_exists():
-    assert callable(blorqueScript::BSFile.__init__)
+def test_blorquescript_bsfile_constructor_exists():
+    assert callable(blorqueScript_BSFile.__init__)
 
 
-def test_blorquescript::bsfile_constructor_args():
-    sig = inspect.signature(blorqueScript::BSFile.__init__)
+def test_blorquescript_bsfile_constructor_args():
+    sig = inspect.signature(blorqueScript_BSFile.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_blorquescript::bsfile_has_name():
-    assert hasattr(blorqueScript::BSFile, "name")
+def test_blorquescript_bsfile_has_name():
+    assert hasattr(blorqueScript_BSFile, "name")
     descriptor = None
-    for klass in blorqueScript::BSFile.__mro__:
+    for klass in blorqueScript_BSFile.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1161,12 +1161,12 @@ def test_bsprimitivetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BSPrimitiveType]
     expected_literals = [
-        "VOID",
-        "OBJECT",
-        "STRING",
         "TAGGED_STRING",
+        "VOID",
+        "STRING",
         "NONE",
         "NUMBER",
+        "OBJECT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1187,228 +1187,228 @@ safe_text = st.text(
 BSExpression_strategy = st.builds(
     BSExpression,
 )
-blorqueScript::BSMulDivOrModExpression_strategy = st.builds(
-    blorqueScript::BSMulDivOrModExpression,
+blorqueScript_BSPostfixArithmeticExpression_strategy = st.builds(
+    blorqueScript_BSPostfixArithmeticExpression,
     operator=
         safe_text
 )
-blorqueScript::BSUnaryModifierExpression_strategy = st.builds(
-    blorqueScript::BSUnaryModifierExpression,
-    operator=
-        safe_text
-)
-blorqueScript::BSTernaryExpression_strategy = st.builds(
-    blorqueScript::BSTernaryExpression,
-)
-blorqueScript::BSArrayAccessExpression_strategy = st.builds(
-    blorqueScript::BSArrayAccessExpression,
-)
-blorqueScript::BSPlusMinusOrStringConcatExpression_strategy = st.builds(
-    blorqueScript::BSPlusMinusOrStringConcatExpression,
-    operator=
-        safe_text
-)
-blorqueScript::BSBitwiseShiftExpression_strategy = st.builds(
-    blorqueScript::BSBitwiseShiftExpression,
-    operator=
-        safe_text
-)
-blorqueScript::BSThisLiteral_strategy = st.builds(
-    blorqueScript::BSThisLiteral,
-)
-blorqueScript::BSOrderedRelationExpression_strategy = st.builds(
-    blorqueScript::BSOrderedRelationExpression,
-    operator=
-        safe_text
-)
-blorqueScript::BSMemberSelectionExpression_strategy = st.builds(
-    blorqueScript::BSMemberSelectionExpression,
-)
-blorqueScript::BSBitwiseAndExpression_strategy = st.builds(
-    blorqueScript::BSBitwiseAndExpression,
-)
-blorqueScript::BSRealConstant_strategy = st.builds(
-    blorqueScript::BSRealConstant,
-    right=
-        st.integers()
-)
-blorqueScript::BSNewExpression_strategy = st.builds(
-    blorqueScript::BSNewExpression,
-    isArray=
-        st.booleans()
-)
-blorqueScript::BSBitwiseOrExpression_strategy = st.builds(
-    blorqueScript::BSBitwiseOrExpression,
-)
-blorqueScript::BSNullLiteral_strategy = st.builds(
-    blorqueScript::BSNullLiteral,
-)
-blorqueScript::BSBooleanOrExpression_strategy = st.builds(
-    blorqueScript::BSBooleanOrExpression,
-)
-blorqueScript::BSClientLiteral_strategy = st.builds(
-    blorqueScript::BSClientLiteral,
-)
-blorqueScript::BSCastExpression_strategy = st.builds(
-    blorqueScript::BSCastExpression,
+blorqueScript_BSCastExpression_strategy = st.builds(
+    blorqueScript_BSCastExpression,
     isArray=
         st.booleans(),
     pType=
         safe_text
 )
-blorqueScript::BSBooleanConstant_strategy = st.builds(
-    blorqueScript::BSBooleanConstant,
-    value=
-        safe_text
+blorqueScript_BSMemberSelectionExpression_strategy = st.builds(
+    blorqueScript_BSMemberSelectionExpression,
 )
-blorqueScript::BSSymbolRef_strategy = st.builds(
-    blorqueScript::BSSymbolRef,
-)
-blorqueScript::BSMethodInvokationExpression_strategy = st.builds(
-    blorqueScript::BSMethodInvokationExpression,
-)
-blorqueScript::BSEqualityExpression_strategy = st.builds(
-    blorqueScript::BSEqualityExpression,
+blorqueScript_BSPlusMinusOrStringConcatExpression_strategy = st.builds(
+    blorqueScript_BSPlusMinusOrStringConcatExpression,
     operator=
         safe_text
 )
-blorqueScript::BSBooleanAndExpression_strategy = st.builds(
-    blorqueScript::BSBooleanAndExpression,
+blorqueScript_BSBooleanAndExpression_strategy = st.builds(
+    blorqueScript_BSBooleanAndExpression,
 )
-blorqueScript::BSHexadecimalConstant_strategy = st.builds(
-    blorqueScript::BSHexadecimalConstant,
+blorqueScript_BSClientLiteral_strategy = st.builds(
+    blorqueScript_BSClientLiteral,
+)
+blorqueScript_BSBooleanConstant_strategy = st.builds(
+    blorqueScript_BSBooleanConstant,
     value=
         safe_text
 )
-blorqueScript::BSPostfixArithmeticExpression_strategy = st.builds(
-    blorqueScript::BSPostfixArithmeticExpression,
+blorqueScript_BSEqualityExpression_strategy = st.builds(
+    blorqueScript_BSEqualityExpression,
     operator=
         safe_text
 )
-blorqueScript::BSNumberConstant_strategy = st.builds(
-    blorqueScript::BSNumberConstant,
+blorqueScript_BSNullLiteral_strategy = st.builds(
+    blorqueScript_BSNullLiteral,
+)
+blorqueScript_BSBitwiseXorExpression_strategy = st.builds(
+    blorqueScript_BSBitwiseXorExpression,
+)
+blorqueScript_BSParentLiteral_strategy = st.builds(
+    blorqueScript_BSParentLiteral,
+)
+blorqueScript_BSBitwiseShiftExpression_strategy = st.builds(
+    blorqueScript_BSBitwiseShiftExpression,
+    operator=
+        safe_text
+)
+blorqueScript_BSRealConstant_strategy = st.builds(
+    blorqueScript_BSRealConstant,
+    right=
+        st.integers()
+)
+blorqueScript_BSOrderedRelationExpression_strategy = st.builds(
+    blorqueScript_BSOrderedRelationExpression,
+    operator=
+        safe_text
+)
+blorqueScript_BSMulDivOrModExpression_strategy = st.builds(
+    blorqueScript_BSMulDivOrModExpression,
+    operator=
+        safe_text
+)
+blorqueScript_BSParentheticalExpression_strategy = st.builds(
+    blorqueScript_BSParentheticalExpression,
+)
+blorqueScript_BSSymbolRef_strategy = st.builds(
+    blorqueScript_BSSymbolRef,
+)
+blorqueScript_BSNumberConstant_strategy = st.builds(
+    blorqueScript_BSNumberConstant,
     value=
         st.integers()
 )
-blorqueScript::BSStringConstant_strategy = st.builds(
-    blorqueScript::BSStringConstant,
+blorqueScript_BSUnaryModifierExpression_strategy = st.builds(
+    blorqueScript_BSUnaryModifierExpression,
+    operator=
+        safe_text
+)
+blorqueScript_BSBitwiseAndExpression_strategy = st.builds(
+    blorqueScript_BSBitwiseAndExpression,
+)
+blorqueScript_BSHexadecimalConstant_strategy = st.builds(
+    blorqueScript_BSHexadecimalConstant,
     value=
         safe_text
 )
-blorqueScript::BSBitwiseXorExpression_strategy = st.builds(
-    blorqueScript::BSBitwiseXorExpression,
+blorqueScript_BSBitwiseOrExpression_strategy = st.builds(
+    blorqueScript_BSBitwiseOrExpression,
 )
-blorqueScript::BSParentheticalExpression_strategy = st.builds(
-    blorqueScript::BSParentheticalExpression,
+blorqueScript_BSStringConstant_strategy = st.builds(
+    blorqueScript_BSStringConstant,
+    value=
+        safe_text
 )
-blorqueScript::BSParentLiteral_strategy = st.builds(
-    blorqueScript::BSParentLiteral,
+blorqueScript_BSMethodInvokationExpression_strategy = st.builds(
+    blorqueScript_BSMethodInvokationExpression,
 )
-blorqueScript::BSAssignmentExpression_strategy = st.builds(
-    blorqueScript::BSAssignmentExpression,
+blorqueScript_BSTernaryExpression_strategy = st.builds(
+    blorqueScript_BSTernaryExpression,
+)
+blorqueScript_BSNewExpression_strategy = st.builds(
+    blorqueScript_BSNewExpression,
+    isArray=
+        st.booleans()
+)
+blorqueScript_BSArrayAccessExpression_strategy = st.builds(
+    blorqueScript_BSArrayAccessExpression,
+)
+blorqueScript_BSThisLiteral_strategy = st.builds(
+    blorqueScript_BSThisLiteral,
+)
+blorqueScript_BSBooleanOrExpression_strategy = st.builds(
+    blorqueScript_BSBooleanOrExpression,
+)
+blorqueScript_BSAssignmentExpression_strategy = st.builds(
+    blorqueScript_BSAssignmentExpression,
     assignmentOperator=
         safe_text
 )
-blorqueScript::BSSymbol_strategy = st.builds(
-    blorqueScript::BSSymbol,
-    name=
-        safe_text,
+blorqueScript_BSSymbol_strategy = st.builds(
+    blorqueScript_BSSymbol,
     pType=
+        safe_text,
+    name=
         safe_text
 )
-blorqueScript::BSBlock_strategy = st.builds(
-    blorqueScript::BSBlock,
+blorqueScript_BSBlock_strategy = st.builds(
+    blorqueScript_BSBlock,
 )
-blorqueScript::BSCase_strategy = st.builds(
-    blorqueScript::BSCase,
+blorqueScript_BSCase_strategy = st.builds(
+    blorqueScript_BSCase,
 )
 BSMember_strategy = st.builds(
     BSMember,
 )
-blorqueScript::BSMethod_strategy = st.builds(
-    blorqueScript::BSMethod,
+blorqueScript_BSMethod_strategy = st.builds(
+    blorqueScript_BSMethod,
 )
-blorqueScript::BSField_strategy = st.builds(
-    blorqueScript::BSField,
+blorqueScript_BSField_strategy = st.builds(
+    blorqueScript_BSField,
 )
 BSStatement_strategy = st.builds(
     BSStatement,
 )
-blorqueScript::BSSwitchStatement_strategy = st.builds(
-    blorqueScript::BSSwitchStatement,
+blorqueScript_BSIfStatement_strategy = st.builds(
+    blorqueScript_BSIfStatement,
+)
+blorqueScript_BSBreak_strategy = st.builds(
+    blorqueScript_BSBreak,
+)
+blorqueScript_BSContinue_strategy = st.builds(
+    blorqueScript_BSContinue,
+)
+blorqueScript_BSWhileLoop_strategy = st.builds(
+    blorqueScript_BSWhileLoop,
+)
+blorqueScript_BSForLoop_strategy = st.builds(
+    blorqueScript_BSForLoop,
+)
+blorqueScript_BSExpression_strategy = st.builds(
+    blorqueScript_BSExpression,
+)
+blorqueScript_BSSwitchStatement_strategy = st.builds(
+    blorqueScript_BSSwitchStatement,
     stringSwitch=
         st.booleans()
 )
-blorqueScript::BSWhileLoop_strategy = st.builds(
-    blorqueScript::BSWhileLoop,
+blorqueScript_BSReturn_strategy = st.builds(
+    blorqueScript_BSReturn,
 )
-blorqueScript::BSContinue_strategy = st.builds(
-    blorqueScript::BSContinue,
-)
-blorqueScript::BSBreak_strategy = st.builds(
-    blorqueScript::BSBreak,
-)
-blorqueScript::BSIfStatement_strategy = st.builds(
-    blorqueScript::BSIfStatement,
-)
-blorqueScript::BSForLoop_strategy = st.builds(
-    blorqueScript::BSForLoop,
-)
-blorqueScript::BSExpression_strategy = st.builds(
-    blorqueScript::BSExpression,
-)
-blorqueScript::BSReturn_strategy = st.builds(
-    blorqueScript::BSReturn,
-)
-blorqueScript::BSStatement_strategy = st.builds(
-    blorqueScript::BSStatement,
+blorqueScript_BSStatement_strategy = st.builds(
+    blorqueScript_BSStatement,
 )
 BSBlock_strategy = st.builds(
     BSBlock,
 )
-blorqueScript::BSCaseBlock_strategy = st.builds(
-    blorqueScript::BSCaseBlock,
+blorqueScript_BSIfBlock_strategy = st.builds(
+    blorqueScript_BSIfBlock,
 )
-blorqueScript::BSSwitchBlock_strategy = st.builds(
-    blorqueScript::BSSwitchBlock,
+blorqueScript_BSCaseBlock_strategy = st.builds(
+    blorqueScript_BSCaseBlock,
 )
-blorqueScript::BSLoopBlock_strategy = st.builds(
-    blorqueScript::BSLoopBlock,
+blorqueScript_BSLoopBlock_strategy = st.builds(
+    blorqueScript_BSLoopBlock,
 )
-blorqueScript::BSIfBlock_strategy = st.builds(
-    blorqueScript::BSIfBlock,
+blorqueScript_BSSwitchBlock_strategy = st.builds(
+    blorqueScript_BSSwitchBlock,
 )
-blorqueScript::BSMethodBody_strategy = st.builds(
-    blorqueScript::BSMethodBody,
+blorqueScript_BSMethodBody_strategy = st.builds(
+    blorqueScript_BSMethodBody,
 )
 BSSymbol_strategy = st.builds(
     BSSymbol,
 )
-blorqueScript::BSParameter_strategy = st.builds(
-    blorqueScript::BSParameter,
+blorqueScript_BSParameter_strategy = st.builds(
+    blorqueScript_BSParameter,
     isArray=
         st.booleans()
 )
-blorqueScript::BSVariableDeclaration_strategy = st.builds(
-    blorqueScript::BSVariableDeclaration,
+blorqueScript_BSVariableDeclaration_strategy = st.builds(
+    blorqueScript_BSVariableDeclaration,
 )
-blorqueScript::BSMember_strategy = st.builds(
-    blorqueScript::BSMember,
+blorqueScript_BSMember_strategy = st.builds(
+    blorqueScript_BSMember,
     isArray=
         st.booleans()
 )
-blorqueScript::BSClass_strategy = st.builds(
-    blorqueScript::BSClass,
+blorqueScript_BSClass_strategy = st.builds(
+    blorqueScript_BSClass,
     name=
         safe_text
 )
-blorqueScript::BSImport_strategy = st.builds(
-    blorqueScript::BSImport,
+blorqueScript_BSImport_strategy = st.builds(
+    blorqueScript_BSImport,
     importedNamespace=
         safe_text
 )
-blorqueScript::BSFile_strategy = st.builds(
-    blorqueScript::BSFile,
+blorqueScript_BSFile_strategy = st.builds(
+    blorqueScript_BSFile,
     name=
         safe_text
 )
@@ -1418,561 +1418,489 @@ blorqueScript::BSFile_strategy = st.builds(
 def test_bsexpression_instantiation(instance):
     assert isinstance(instance, BSExpression)
 
-@given(instance=blorqueScript::BSMulDivOrModExpression_strategy)
+@given(instance=blorqueScript_BSPostfixArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsmuldivormodexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSMulDivOrModExpression)
-
-@given(instance=blorqueScript::BSMulDivOrModExpression_strategy)
-def test_blorquescript::bsmuldivormodexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_blorquescript_bspostfixarithmeticexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSPostfixArithmeticExpression)
 
 
-@given(instance=blorqueScript::BSMulDivOrModExpression_strategy)
-def test_blorquescript::bsmuldivormodexpression_operator_setter(instance):
+
+@given(instance=blorqueScript_BSPostfixArithmeticExpression_strategy)
+def test_blorquescript_bspostfixarithmeticexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=blorqueScript::BSUnaryModifierExpression_strategy)
+@given(instance=blorqueScript_BSCastExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsunarymodifierexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSUnaryModifierExpression)
-
-@given(instance=blorqueScript::BSUnaryModifierExpression_strategy)
-def test_blorquescript::bsunarymodifierexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_blorquescript_bscastexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSCastExpression)
 
 
-@given(instance=blorqueScript::BSUnaryModifierExpression_strategy)
-def test_blorquescript::bsunarymodifierexpression_operator_setter(instance):
+
+@given(instance=blorqueScript_BSCastExpression_strategy)
+def test_blorquescript_bscastexpression_isArray_setter(instance):
+    original = instance.isArray
+    instance.isArray = original
+    assert instance.isArray == original
+
+
+
+@given(instance=blorqueScript_BSCastExpression_strategy)
+def test_blorquescript_bscastexpression_pType_setter(instance):
+    original = instance.pType
+    instance.pType = original
+    assert instance.pType == original
+
+@given(instance=blorqueScript_BSMemberSelectionExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsmemberselectionexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSMemberSelectionExpression)
+
+@given(instance=blorqueScript_BSPlusMinusOrStringConcatExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsplusminusorstringconcatexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSPlusMinusOrStringConcatExpression)
+
+
+
+@given(instance=blorqueScript_BSPlusMinusOrStringConcatExpression_strategy)
+def test_blorquescript_bsplusminusorstringconcatexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=blorqueScript::BSTernaryExpression_strategy)
+@given(instance=blorqueScript_BSBooleanAndExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsternaryexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSTernaryExpression)
+def test_blorquescript_bsbooleanandexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBooleanAndExpression)
 
-@given(instance=blorqueScript::BSArrayAccessExpression_strategy)
+@given(instance=blorqueScript_BSClientLiteral_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsarrayaccessexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSArrayAccessExpression)
+def test_blorquescript_bsclientliteral_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSClientLiteral)
 
-@given(instance=blorqueScript::BSPlusMinusOrStringConcatExpression_strategy)
+@given(instance=blorqueScript_BSBooleanConstant_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsplusminusorstringconcatexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSPlusMinusOrStringConcatExpression)
-
-@given(instance=blorqueScript::BSPlusMinusOrStringConcatExpression_strategy)
-def test_blorquescript::bsplusminusorstringconcatexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_blorquescript_bsbooleanconstant_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBooleanConstant)
 
 
-@given(instance=blorqueScript::BSPlusMinusOrStringConcatExpression_strategy)
-def test_blorquescript::bsplusminusorstringconcatexpression_operator_setter(instance):
+
+@given(instance=blorqueScript_BSBooleanConstant_strategy)
+def test_blorquescript_bsbooleanconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=blorqueScript_BSEqualityExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsequalityexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSEqualityExpression)
+
+
+
+@given(instance=blorqueScript_BSEqualityExpression_strategy)
+def test_blorquescript_bsequalityexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=blorqueScript::BSBitwiseShiftExpression_strategy)
+@given(instance=blorqueScript_BSNullLiteral_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsbitwiseshiftexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBitwiseShiftExpression)
+def test_blorquescript_bsnullliteral_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSNullLiteral)
 
-@given(instance=blorqueScript::BSBitwiseShiftExpression_strategy)
-def test_blorquescript::bsbitwiseshiftexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=blorqueScript_BSBitwiseXorExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsbitwisexorexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBitwiseXorExpression)
+
+@given(instance=blorqueScript_BSParentLiteral_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsparentliteral_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSParentLiteral)
+
+@given(instance=blorqueScript_BSBitwiseShiftExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsbitwiseshiftexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBitwiseShiftExpression)
 
 
-@given(instance=blorqueScript::BSBitwiseShiftExpression_strategy)
-def test_blorquescript::bsbitwiseshiftexpression_operator_setter(instance):
+
+@given(instance=blorqueScript_BSBitwiseShiftExpression_strategy)
+def test_blorquescript_bsbitwiseshiftexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=blorqueScript::BSThisLiteral_strategy)
+@given(instance=blorqueScript_BSRealConstant_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsthisliteral_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSThisLiteral)
-
-@given(instance=blorqueScript::BSOrderedRelationExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsorderedrelationexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSOrderedRelationExpression)
-
-@given(instance=blorqueScript::BSOrderedRelationExpression_strategy)
-def test_blorquescript::bsorderedrelationexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_blorquescript_bsrealconstant_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSRealConstant)
 
 
-@given(instance=blorqueScript::BSOrderedRelationExpression_strategy)
-def test_blorquescript::bsorderedrelationexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=blorqueScript::BSMemberSelectionExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsmemberselectionexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSMemberSelectionExpression)
-
-@given(instance=blorqueScript::BSBitwiseAndExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsbitwiseandexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBitwiseAndExpression)
-
-@given(instance=blorqueScript::BSRealConstant_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsrealconstant_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSRealConstant)
-
-@given(instance=blorqueScript::BSRealConstant_strategy)
-def test_blorquescript::bsrealconstant_right_type(instance):
-    assert isinstance(instance.right, int)
-
-
-@given(instance=blorqueScript::BSRealConstant_strategy)
-def test_blorquescript::bsrealconstant_right_setter(instance):
+@given(instance=blorqueScript_BSRealConstant_strategy)
+def test_blorquescript_bsrealconstant_right_setter(instance):
     original = instance.right
     instance.right = original
     assert instance.right == original
 
-@given(instance=blorqueScript::BSNewExpression_strategy)
+@given(instance=blorqueScript_BSOrderedRelationExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsnewexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSNewExpression)
-
-@given(instance=blorqueScript::BSNewExpression_strategy)
-def test_blorquescript::bsnewexpression_isArray_type(instance):
-    assert isinstance(instance.isArray, bool)
+def test_blorquescript_bsorderedrelationexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSOrderedRelationExpression)
 
 
-@given(instance=blorqueScript::BSNewExpression_strategy)
-def test_blorquescript::bsnewexpression_isArray_setter(instance):
-    original = instance.isArray
-    instance.isArray = original
-    assert instance.isArray == original
 
-@given(instance=blorqueScript::BSBitwiseOrExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsbitwiseorexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBitwiseOrExpression)
-
-@given(instance=blorqueScript::BSNullLiteral_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsnullliteral_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSNullLiteral)
-
-@given(instance=blorqueScript::BSBooleanOrExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsbooleanorexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBooleanOrExpression)
-
-@given(instance=blorqueScript::BSClientLiteral_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsclientliteral_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSClientLiteral)
-
-@given(instance=blorqueScript::BSCastExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bscastexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSCastExpression)
-
-@given(instance=blorqueScript::BSCastExpression_strategy)
-def test_blorquescript::bscastexpression_isArray_type(instance):
-    assert isinstance(instance.isArray, bool)
-
-
-@given(instance=blorqueScript::BSCastExpression_strategy)
-def test_blorquescript::bscastexpression_isArray_setter(instance):
-    original = instance.isArray
-    instance.isArray = original
-    assert instance.isArray == original
-
-@given(instance=blorqueScript::BSCastExpression_strategy)
-def test_blorquescript::bscastexpression_pType_type(instance):
-    assert isinstance(instance.pType, str)
-
-
-@given(instance=blorqueScript::BSCastExpression_strategy)
-def test_blorquescript::bscastexpression_pType_setter(instance):
-    original = instance.pType
-    instance.pType = original
-    assert instance.pType == original
-
-@given(instance=blorqueScript::BSBooleanConstant_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsbooleanconstant_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBooleanConstant)
-
-@given(instance=blorqueScript::BSBooleanConstant_strategy)
-def test_blorquescript::bsbooleanconstant_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=blorqueScript::BSBooleanConstant_strategy)
-def test_blorquescript::bsbooleanconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=blorqueScript::BSSymbolRef_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bssymbolref_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSSymbolRef)
-
-@given(instance=blorqueScript::BSMethodInvokationExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsmethodinvokationexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSMethodInvokationExpression)
-
-@given(instance=blorqueScript::BSEqualityExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsequalityexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSEqualityExpression)
-
-@given(instance=blorqueScript::BSEqualityExpression_strategy)
-def test_blorquescript::bsequalityexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=blorqueScript::BSEqualityExpression_strategy)
-def test_blorquescript::bsequalityexpression_operator_setter(instance):
+@given(instance=blorqueScript_BSOrderedRelationExpression_strategy)
+def test_blorquescript_bsorderedrelationexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=blorqueScript::BSBooleanAndExpression_strategy)
+@given(instance=blorqueScript_BSMulDivOrModExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsbooleanandexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBooleanAndExpression)
-
-@given(instance=blorqueScript::BSHexadecimalConstant_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bshexadecimalconstant_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSHexadecimalConstant)
-
-@given(instance=blorqueScript::BSHexadecimalConstant_strategy)
-def test_blorquescript::bshexadecimalconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_blorquescript_bsmuldivormodexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSMulDivOrModExpression)
 
 
-@given(instance=blorqueScript::BSHexadecimalConstant_strategy)
-def test_blorquescript::bshexadecimalconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=blorqueScript::BSPostfixArithmeticExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bspostfixarithmeticexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSPostfixArithmeticExpression)
-
-@given(instance=blorqueScript::BSPostfixArithmeticExpression_strategy)
-def test_blorquescript::bspostfixarithmeticexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=blorqueScript::BSPostfixArithmeticExpression_strategy)
-def test_blorquescript::bspostfixarithmeticexpression_operator_setter(instance):
+@given(instance=blorqueScript_BSMulDivOrModExpression_strategy)
+def test_blorquescript_bsmuldivormodexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=blorqueScript::BSNumberConstant_strategy)
+@given(instance=blorqueScript_BSParentheticalExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsnumberconstant_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSNumberConstant)
+def test_blorquescript_bsparentheticalexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSParentheticalExpression)
 
-@given(instance=blorqueScript::BSNumberConstant_strategy)
-def test_blorquescript::bsnumberconstant_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=blorqueScript_BSSymbolRef_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bssymbolref_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSSymbolRef)
+
+@given(instance=blorqueScript_BSNumberConstant_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsnumberconstant_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSNumberConstant)
 
 
-@given(instance=blorqueScript::BSNumberConstant_strategy)
-def test_blorquescript::bsnumberconstant_value_setter(instance):
+
+@given(instance=blorqueScript_BSNumberConstant_strategy)
+def test_blorquescript_bsnumberconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=blorqueScript::BSStringConstant_strategy)
+@given(instance=blorqueScript_BSUnaryModifierExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsstringconstant_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSStringConstant)
-
-@given(instance=blorqueScript::BSStringConstant_strategy)
-def test_blorquescript::bsstringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_blorquescript_bsunarymodifierexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSUnaryModifierExpression)
 
 
-@given(instance=blorqueScript::BSStringConstant_strategy)
-def test_blorquescript::bsstringconstant_value_setter(instance):
+
+@given(instance=blorqueScript_BSUnaryModifierExpression_strategy)
+def test_blorquescript_bsunarymodifierexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=blorqueScript_BSBitwiseAndExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsbitwiseandexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBitwiseAndExpression)
+
+@given(instance=blorqueScript_BSHexadecimalConstant_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bshexadecimalconstant_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSHexadecimalConstant)
+
+
+
+@given(instance=blorqueScript_BSHexadecimalConstant_strategy)
+def test_blorquescript_bshexadecimalconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=blorqueScript::BSBitwiseXorExpression_strategy)
+@given(instance=blorqueScript_BSBitwiseOrExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsbitwisexorexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBitwiseXorExpression)
+def test_blorquescript_bsbitwiseorexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBitwiseOrExpression)
 
-@given(instance=blorqueScript::BSParentheticalExpression_strategy)
+@given(instance=blorqueScript_BSStringConstant_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsparentheticalexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSParentheticalExpression)
+def test_blorquescript_bsstringconstant_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSStringConstant)
 
-@given(instance=blorqueScript::BSParentLiteral_strategy)
+
+
+@given(instance=blorqueScript_BSStringConstant_strategy)
+def test_blorquescript_bsstringconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=blorqueScript_BSMethodInvokationExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsparentliteral_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSParentLiteral)
+def test_blorquescript_bsmethodinvokationexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSMethodInvokationExpression)
 
-@given(instance=blorqueScript::BSAssignmentExpression_strategy)
+@given(instance=blorqueScript_BSTernaryExpression_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsassignmentexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSAssignmentExpression)
+def test_blorquescript_bsternaryexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSTernaryExpression)
 
-@given(instance=blorqueScript::BSAssignmentExpression_strategy)
-def test_blorquescript::bsassignmentexpression_assignmentOperator_type(instance):
-    assert isinstance(instance.assignmentOperator, str)
+@given(instance=blorqueScript_BSNewExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsnewexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSNewExpression)
 
 
-@given(instance=blorqueScript::BSAssignmentExpression_strategy)
-def test_blorquescript::bsassignmentexpression_assignmentOperator_setter(instance):
+
+@given(instance=blorqueScript_BSNewExpression_strategy)
+def test_blorquescript_bsnewexpression_isArray_setter(instance):
+    original = instance.isArray
+    instance.isArray = original
+    assert instance.isArray == original
+
+@given(instance=blorqueScript_BSArrayAccessExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsarrayaccessexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSArrayAccessExpression)
+
+@given(instance=blorqueScript_BSThisLiteral_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsthisliteral_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSThisLiteral)
+
+@given(instance=blorqueScript_BSBooleanOrExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsbooleanorexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBooleanOrExpression)
+
+@given(instance=blorqueScript_BSAssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsassignmentexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSAssignmentExpression)
+
+
+
+@given(instance=blorqueScript_BSAssignmentExpression_strategy)
+def test_blorquescript_bsassignmentexpression_assignmentOperator_setter(instance):
     original = instance.assignmentOperator
     instance.assignmentOperator = original
     assert instance.assignmentOperator == original
 
-@given(instance=blorqueScript::BSSymbol_strategy)
+@given(instance=blorqueScript_BSSymbol_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bssymbol_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSSymbol)
-
-@given(instance=blorqueScript::BSSymbol_strategy)
-def test_blorquescript::bssymbol_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_blorquescript_bssymbol_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSSymbol)
 
 
-@given(instance=blorqueScript::BSSymbol_strategy)
-def test_blorquescript::bssymbol_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=blorqueScript::BSSymbol_strategy)
-def test_blorquescript::bssymbol_pType_type(instance):
-    assert isinstance(instance.pType, str)
-
-
-@given(instance=blorqueScript::BSSymbol_strategy)
-def test_blorquescript::bssymbol_pType_setter(instance):
+@given(instance=blorqueScript_BSSymbol_strategy)
+def test_blorquescript_bssymbol_pType_setter(instance):
     original = instance.pType
     instance.pType = original
     assert instance.pType == original
 
-@given(instance=blorqueScript::BSBlock_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsblock_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBlock)
 
-@given(instance=blorqueScript::BSCase_strategy)
+
+@given(instance=blorqueScript_BSSymbol_strategy)
+def test_blorquescript_bssymbol_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=blorqueScript_BSBlock_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bscase_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSCase)
+def test_blorquescript_bsblock_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBlock)
+
+@given(instance=blorqueScript_BSCase_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bscase_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSCase)
 
 @given(instance=BSMember_strategy)
 @settings(max_examples=50)
 def test_bsmember_instantiation(instance):
     assert isinstance(instance, BSMember)
 
-@given(instance=blorqueScript::BSMethod_strategy)
+@given(instance=blorqueScript_BSMethod_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsmethod_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSMethod)
+def test_blorquescript_bsmethod_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSMethod)
 
-@given(instance=blorqueScript::BSField_strategy)
+@given(instance=blorqueScript_BSField_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsfield_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSField)
+def test_blorquescript_bsfield_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSField)
 
 @given(instance=BSStatement_strategy)
 @settings(max_examples=50)
 def test_bsstatement_instantiation(instance):
     assert isinstance(instance, BSStatement)
 
-@given(instance=blorqueScript::BSSwitchStatement_strategy)
+@given(instance=blorqueScript_BSIfStatement_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsswitchstatement_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSSwitchStatement)
+def test_blorquescript_bsifstatement_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSIfStatement)
 
-@given(instance=blorqueScript::BSSwitchStatement_strategy)
-def test_blorquescript::bsswitchstatement_stringSwitch_type(instance):
-    assert isinstance(instance.stringSwitch, bool)
+@given(instance=blorqueScript_BSBreak_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsbreak_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSBreak)
+
+@given(instance=blorqueScript_BSContinue_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bscontinue_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSContinue)
+
+@given(instance=blorqueScript_BSWhileLoop_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bswhileloop_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSWhileLoop)
+
+@given(instance=blorqueScript_BSForLoop_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsforloop_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSForLoop)
+
+@given(instance=blorqueScript_BSExpression_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsexpression_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSExpression)
+
+@given(instance=blorqueScript_BSSwitchStatement_strategy)
+@settings(max_examples=50)
+def test_blorquescript_bsswitchstatement_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSSwitchStatement)
 
 
-@given(instance=blorqueScript::BSSwitchStatement_strategy)
-def test_blorquescript::bsswitchstatement_stringSwitch_setter(instance):
+
+@given(instance=blorqueScript_BSSwitchStatement_strategy)
+def test_blorquescript_bsswitchstatement_stringSwitch_setter(instance):
     original = instance.stringSwitch
     instance.stringSwitch = original
     assert instance.stringSwitch == original
 
-@given(instance=blorqueScript::BSWhileLoop_strategy)
+@given(instance=blorqueScript_BSReturn_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bswhileloop_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSWhileLoop)
+def test_blorquescript_bsreturn_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSReturn)
 
-@given(instance=blorqueScript::BSContinue_strategy)
+@given(instance=blorqueScript_BSStatement_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bscontinue_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSContinue)
-
-@given(instance=blorqueScript::BSBreak_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsbreak_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSBreak)
-
-@given(instance=blorqueScript::BSIfStatement_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsifstatement_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSIfStatement)
-
-@given(instance=blorqueScript::BSForLoop_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsforloop_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSForLoop)
-
-@given(instance=blorqueScript::BSExpression_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsexpression_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSExpression)
-
-@given(instance=blorqueScript::BSReturn_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsreturn_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSReturn)
-
-@given(instance=blorqueScript::BSStatement_strategy)
-@settings(max_examples=50)
-def test_blorquescript::bsstatement_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSStatement)
+def test_blorquescript_bsstatement_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSStatement)
 
 @given(instance=BSBlock_strategy)
 @settings(max_examples=50)
 def test_bsblock_instantiation(instance):
     assert isinstance(instance, BSBlock)
 
-@given(instance=blorqueScript::BSCaseBlock_strategy)
+@given(instance=blorqueScript_BSIfBlock_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bscaseblock_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSCaseBlock)
+def test_blorquescript_bsifblock_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSIfBlock)
 
-@given(instance=blorqueScript::BSSwitchBlock_strategy)
+@given(instance=blorqueScript_BSCaseBlock_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsswitchblock_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSSwitchBlock)
+def test_blorquescript_bscaseblock_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSCaseBlock)
 
-@given(instance=blorqueScript::BSLoopBlock_strategy)
+@given(instance=blorqueScript_BSLoopBlock_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsloopblock_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSLoopBlock)
+def test_blorquescript_bsloopblock_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSLoopBlock)
 
-@given(instance=blorqueScript::BSIfBlock_strategy)
+@given(instance=blorqueScript_BSSwitchBlock_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsifblock_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSIfBlock)
+def test_blorquescript_bsswitchblock_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSSwitchBlock)
 
-@given(instance=blorqueScript::BSMethodBody_strategy)
+@given(instance=blorqueScript_BSMethodBody_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsmethodbody_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSMethodBody)
+def test_blorquescript_bsmethodbody_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSMethodBody)
 
 @given(instance=BSSymbol_strategy)
 @settings(max_examples=50)
 def test_bssymbol_instantiation(instance):
     assert isinstance(instance, BSSymbol)
 
-@given(instance=blorqueScript::BSParameter_strategy)
+@given(instance=blorqueScript_BSParameter_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsparameter_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSParameter)
-
-@given(instance=blorqueScript::BSParameter_strategy)
-def test_blorquescript::bsparameter_isArray_type(instance):
-    assert isinstance(instance.isArray, bool)
+def test_blorquescript_bsparameter_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSParameter)
 
 
-@given(instance=blorqueScript::BSParameter_strategy)
-def test_blorquescript::bsparameter_isArray_setter(instance):
+
+@given(instance=blorqueScript_BSParameter_strategy)
+def test_blorquescript_bsparameter_isArray_setter(instance):
     original = instance.isArray
     instance.isArray = original
     assert instance.isArray == original
 
-@given(instance=blorqueScript::BSVariableDeclaration_strategy)
+@given(instance=blorqueScript_BSVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSVariableDeclaration)
+def test_blorquescript_bsvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSVariableDeclaration)
 
-@given(instance=blorqueScript::BSMember_strategy)
+@given(instance=blorqueScript_BSMember_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsmember_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSMember)
-
-@given(instance=blorqueScript::BSMember_strategy)
-def test_blorquescript::bsmember_isArray_type(instance):
-    assert isinstance(instance.isArray, bool)
+def test_blorquescript_bsmember_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSMember)
 
 
-@given(instance=blorqueScript::BSMember_strategy)
-def test_blorquescript::bsmember_isArray_setter(instance):
+
+@given(instance=blorqueScript_BSMember_strategy)
+def test_blorquescript_bsmember_isArray_setter(instance):
     original = instance.isArray
     instance.isArray = original
     assert instance.isArray == original
 
-@given(instance=blorqueScript::BSClass_strategy)
+@given(instance=blorqueScript_BSClass_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsclass_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSClass)
-
-@given(instance=blorqueScript::BSClass_strategy)
-def test_blorquescript::bsclass_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_blorquescript_bsclass_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSClass)
 
 
-@given(instance=blorqueScript::BSClass_strategy)
-def test_blorquescript::bsclass_name_setter(instance):
+
+@given(instance=blorqueScript_BSClass_strategy)
+def test_blorquescript_bsclass_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=blorqueScript::BSImport_strategy)
+@given(instance=blorqueScript_BSImport_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsimport_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSImport)
-
-@given(instance=blorqueScript::BSImport_strategy)
-def test_blorquescript::bsimport_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_blorquescript_bsimport_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSImport)
 
 
-@given(instance=blorqueScript::BSImport_strategy)
-def test_blorquescript::bsimport_importedNamespace_setter(instance):
+
+@given(instance=blorqueScript_BSImport_strategy)
+def test_blorquescript_bsimport_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=blorqueScript::BSFile_strategy)
+@given(instance=blorqueScript_BSFile_strategy)
 @settings(max_examples=50)
-def test_blorquescript::bsfile_instantiation(instance):
-    assert isinstance(instance, blorqueScript::BSFile)
-
-@given(instance=blorqueScript::BSFile_strategy)
-def test_blorquescript::bsfile_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_blorquescript_bsfile_instantiation(instance):
+    assert isinstance(instance, blorqueScript_BSFile)
 
 
-@given(instance=blorqueScript::BSFile_strategy)
-def test_blorquescript::bsfile_name_setter(instance):
+
+@given(instance=blorqueScript_BSFile_strategy)
+def test_blorquescript_bsfile_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,12 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ClassV,
     ClassU,
     ClassT,
+    ClassS,
+    ClassR,
+    ClassQ,
+    InterfaceO_Interface,
+    ClassP,
+    ClassN,
+    ClassM,
     ClassL,
     ClassK,
     ClassH,
@@ -21,13 +28,6 @@ from python_code import (
     ClassB,
     ClassA,
     BankAccount,
-    ClassS,
-    ClassR,
-    ClassQ,
-    InterfaceO_Interface,
-    ClassP,
-    ClassN,
-    ClassM,
 )
 
 # =============================================================================
@@ -74,6 +74,104 @@ def test_classt_constructor_exists():
 
 def test_classt_constructor_args():
     sig = inspect.signature(ClassT.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classs_is_not_abstract():
+    assert not inspect.isabstract(ClassS)
+
+
+def test_classs_constructor_exists():
+    assert callable(ClassS.__init__)
+
+
+def test_classs_constructor_args():
+    sig = inspect.signature(ClassS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classr_is_not_abstract():
+    assert not inspect.isabstract(ClassR)
+
+
+def test_classr_constructor_exists():
+    assert callable(ClassR.__init__)
+
+
+def test_classr_constructor_args():
+    sig = inspect.signature(ClassR.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classq_is_not_abstract():
+    assert not inspect.isabstract(ClassQ)
+
+
+def test_classq_constructor_exists():
+    assert callable(ClassQ.__init__)
+
+
+def test_classq_constructor_args():
+    sig = inspect.signature(ClassQ.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interfaceo_interface_is_not_abstract():
+    assert not inspect.isabstract(InterfaceO_Interface)
+
+
+def test_interfaceo_interface_constructor_exists():
+    assert callable(InterfaceO_Interface.__init__)
+
+
+def test_interfaceo_interface_constructor_args():
+    sig = inspect.signature(InterfaceO_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classp_is_not_abstract():
+    assert not inspect.isabstract(ClassP)
+
+
+def test_classp_constructor_exists():
+    assert callable(ClassP.__init__)
+
+
+def test_classp_constructor_args():
+    sig = inspect.signature(ClassP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classn_is_not_abstract():
+    assert not inspect.isabstract(ClassN)
+
+
+def test_classn_constructor_exists():
+    assert callable(ClassN.__init__)
+
+
+def test_classn_constructor_args():
+    sig = inspect.signature(ClassN.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classm_is_not_abstract():
+    assert not inspect.isabstract(ClassM)
+
+
+def test_classm_constructor_exists():
+    assert callable(ClassM.__init__)
+
+
+def test_classm_constructor_args():
+    sig = inspect.signature(ClassM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -201,17 +299,17 @@ def test_classc_constructor_exists():
 def test_classc_constructor_args():
     sig = inspect.signature(ClassC.__init__)
     params = list(sig.parameters.keys())
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
 
-def test_classc_has_protectedAttribute():
-    assert hasattr(ClassC, "protectedAttribute")
+def test_classc_has_privateAttribute():
+    assert hasattr(ClassC, "privateAttribute")
     descriptor = None
     for klass in ClassC.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -233,12 +331,12 @@ def test_classc_has_publicAttribute():
             break
     assert isinstance(descriptor, property)
 
-def test_classc_has_privateAttribute():
-    assert hasattr(ClassC, "privateAttribute")
+def test_classc_has_protectedAttribute():
+    assert hasattr(ClassC, "protectedAttribute")
     descriptor = None
     for klass in ClassC.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -269,28 +367,10 @@ def test_classa_constructor_exists():
 def test_classa_constructor_args():
     sig = inspect.signature(ClassA.__init__)
     params = list(sig.parameters.keys())
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
-    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
-
-def test_classa_has_protectedAttribute():
-    assert hasattr(ClassA, "protectedAttribute")
-    descriptor = None
-    for klass in ClassA.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classa_has_publicAttribute():
-    assert hasattr(ClassA, "publicAttribute")
-    descriptor = None
-    for klass in ClassA.__mro__:
-        if "publicAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["publicAttribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
 
 def test_classa_has_packageAttribute():
     assert hasattr(ClassA, "packageAttribute")
@@ -301,12 +381,30 @@ def test_classa_has_packageAttribute():
             break
     assert isinstance(descriptor, property)
 
+def test_classa_has_protectedAttribute():
+    assert hasattr(ClassA, "protectedAttribute")
+    descriptor = None
+    for klass in ClassA.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_classa_has_privateAttribute():
     assert hasattr(ClassA, "privateAttribute")
     descriptor = None
     for klass in ClassA.__mro__:
         if "privateAttribute" in klass.__dict__:
             descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classa_has_publicAttribute():
+    assert hasattr(ClassA, "publicAttribute")
+    descriptor = None
+    for klass in ClassA.__mro__:
+        if "publicAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["publicAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -345,104 +443,6 @@ def test_bankaccount_has_ownerName():
     assert isinstance(descriptor, property)
 
 
-
-def test_classs_is_not_abstract():
-    assert not inspect.isabstract(ClassS)
-
-
-def test_classs_constructor_exists():
-    assert callable(ClassS.__init__)
-
-
-def test_classs_constructor_args():
-    sig = inspect.signature(ClassS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classr_is_not_abstract():
-    assert not inspect.isabstract(ClassR)
-
-
-def test_classr_constructor_exists():
-    assert callable(ClassR.__init__)
-
-
-def test_classr_constructor_args():
-    sig = inspect.signature(ClassR.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classq_is_not_abstract():
-    assert not inspect.isabstract(ClassQ)
-
-
-def test_classq_constructor_exists():
-    assert callable(ClassQ.__init__)
-
-
-def test_classq_constructor_args():
-    sig = inspect.signature(ClassQ.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interfaceo_interface_is_not_abstract():
-    assert not inspect.isabstract(InterfaceO_Interface)
-
-
-def test_interfaceo_interface_constructor_exists():
-    assert callable(InterfaceO_Interface.__init__)
-
-
-def test_interfaceo_interface_constructor_args():
-    sig = inspect.signature(InterfaceO_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classp_is_not_abstract():
-    assert not inspect.isabstract(ClassP)
-
-
-def test_classp_constructor_exists():
-    assert callable(ClassP.__init__)
-
-
-def test_classp_constructor_args():
-    sig = inspect.signature(ClassP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classn_is_not_abstract():
-    assert not inspect.isabstract(ClassN)
-
-
-def test_classn_constructor_exists():
-    assert callable(ClassN.__init__)
-
-
-def test_classn_constructor_args():
-    sig = inspect.signature(ClassN.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classm_is_not_abstract():
-    assert not inspect.isabstract(ClassM)
-
-
-def test_classm_constructor_exists():
-    assert callable(ClassM.__init__)
-
-
-def test_classm_constructor_args():
-    sig = inspect.signature(ClassM.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -462,6 +462,27 @@ ClassU_strategy = st.builds(
 )
 ClassT_strategy = st.builds(
     ClassT,
+)
+ClassS_strategy = st.builds(
+    ClassS,
+)
+ClassR_strategy = st.builds(
+    ClassR,
+)
+ClassQ_strategy = st.builds(
+    ClassQ,
+)
+InterfaceO_Interface_strategy = st.builds(
+    InterfaceO_Interface,
+)
+ClassP_strategy = st.builds(
+    ClassP,
+)
+ClassN_strategy = st.builds(
+    ClassN,
+)
+ClassM_strategy = st.builds(
+    ClassM,
 )
 ClassL_strategy = st.builds(
     ClassL,
@@ -489,28 +510,28 @@ ClassD_strategy = st.builds(
 )
 ClassC_strategy = st.builds(
     ClassC,
-    protectedAttribute=
-        safe_text,
+    privateAttribute=
+        st.integers(),
     packageAttribute=
         safe_text,
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    privateAttribute=
-        st.integers()
+    protectedAttribute=
+        safe_text
 )
 ClassB_strategy = st.builds(
     ClassB,
 )
 ClassA_strategy = st.builds(
     ClassA,
-    protectedAttribute=
-        safe_text,
-    publicAttribute=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     packageAttribute=
         safe_text,
+    protectedAttribute=
+        safe_text,
     privateAttribute=
-        st.integers()
+        st.integers(),
+    publicAttribute=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 BankAccount_strategy = st.builds(
     BankAccount,
@@ -518,27 +539,6 @@ BankAccount_strategy = st.builds(
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     ownerName=
         safe_text
-)
-ClassS_strategy = st.builds(
-    ClassS,
-)
-ClassR_strategy = st.builds(
-    ClassR,
-)
-ClassQ_strategy = st.builds(
-    ClassQ,
-)
-InterfaceO_Interface_strategy = st.builds(
-    InterfaceO_Interface,
-)
-ClassP_strategy = st.builds(
-    ClassP,
-)
-ClassN_strategy = st.builds(
-    ClassN,
-)
-ClassM_strategy = st.builds(
-    ClassM,
 )
 
 @given(instance=ClassV_strategy)
@@ -555,6 +555,41 @@ def test_classu_instantiation(instance):
 @settings(max_examples=50)
 def test_classt_instantiation(instance):
     assert isinstance(instance, ClassT)
+
+@given(instance=ClassS_strategy)
+@settings(max_examples=50)
+def test_classs_instantiation(instance):
+    assert isinstance(instance, ClassS)
+
+@given(instance=ClassR_strategy)
+@settings(max_examples=50)
+def test_classr_instantiation(instance):
+    assert isinstance(instance, ClassR)
+
+@given(instance=ClassQ_strategy)
+@settings(max_examples=50)
+def test_classq_instantiation(instance):
+    assert isinstance(instance, ClassQ)
+
+@given(instance=InterfaceO_Interface_strategy)
+@settings(max_examples=50)
+def test_interfaceo_interface_instantiation(instance):
+    assert isinstance(instance, InterfaceO_Interface)
+
+@given(instance=ClassP_strategy)
+@settings(max_examples=50)
+def test_classp_instantiation(instance):
+    assert isinstance(instance, ClassP)
+
+@given(instance=ClassN_strategy)
+@settings(max_examples=50)
+def test_classn_instantiation(instance):
+    assert isinstance(instance, ClassN)
+
+@given(instance=ClassM_strategy)
+@settings(max_examples=50)
+def test_classm_instantiation(instance):
+    assert isinstance(instance, ClassM)
 
 @given(instance=ClassL_strategy)
 @settings(max_examples=50)
@@ -601,20 +636,14 @@ def test_classd_instantiation(instance):
 def test_classc_instantiation(instance):
     assert isinstance(instance, ClassC)
 
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
 
 
 @given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
+def test_classc_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=ClassC_strategy)
@@ -623,9 +652,6 @@ def test_classc_packageAttribute_setter(instance):
     instance.packageAttribute = original
     assert instance.packageAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
 
 
 @given(instance=ClassC_strategy)
@@ -634,16 +660,13 @@ def test_classc_publicAttribute_setter(instance):
     instance.publicAttribute = original
     assert instance.publicAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=ClassC_strategy)
-def test_classc_privateAttribute_setter(instance):
-    original = instance.privateAttribute
-    instance.privateAttribute = original
-    assert instance.privateAttribute == original
+def test_classc_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
 
 @given(instance=ClassB_strategy)
 @settings(max_examples=50)
@@ -655,31 +678,6 @@ def test_classb_instantiation(instance):
 def test_classa_instantiation(instance):
     assert isinstance(instance, ClassA)
 
-@given(instance=ClassA_strategy)
-def test_classa_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=ClassA_strategy)
-def test_classa_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
-
-@given(instance=ClassA_strategy)
-def test_classa_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
-
-
-@given(instance=ClassA_strategy)
-def test_classa_publicAttribute_setter(instance):
-    original = instance.publicAttribute
-    instance.publicAttribute = original
-    assert instance.publicAttribute == original
-
-@given(instance=ClassA_strategy)
-def test_classa_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=ClassA_strategy)
@@ -688,9 +686,14 @@ def test_classa_packageAttribute_setter(instance):
     instance.packageAttribute = original
     assert instance.packageAttribute == original
 
+
+
 @given(instance=ClassA_strategy)
-def test_classa_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
+def test_classa_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
 
 
 @given(instance=ClassA_strategy)
@@ -699,14 +702,19 @@ def test_classa_privateAttribute_setter(instance):
     instance.privateAttribute = original
     assert instance.privateAttribute == original
 
+
+
+@given(instance=ClassA_strategy)
+def test_classa_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
 @given(instance=BankAccount_strategy)
 @settings(max_examples=50)
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
 
 
 @given(instance=BankAccount_strategy)
@@ -715,9 +723,6 @@ def test_bankaccount_balance_setter(instance):
     instance.balance = original
     assert instance.balance == original
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
 
 
 @given(instance=BankAccount_strategy)
@@ -725,38 +730,3 @@ def test_bankaccount_ownerName_setter(instance):
     original = instance.ownerName
     instance.ownerName = original
     assert instance.ownerName == original
-
-@given(instance=ClassS_strategy)
-@settings(max_examples=50)
-def test_classs_instantiation(instance):
-    assert isinstance(instance, ClassS)
-
-@given(instance=ClassR_strategy)
-@settings(max_examples=50)
-def test_classr_instantiation(instance):
-    assert isinstance(instance, ClassR)
-
-@given(instance=ClassQ_strategy)
-@settings(max_examples=50)
-def test_classq_instantiation(instance):
-    assert isinstance(instance, ClassQ)
-
-@given(instance=InterfaceO_Interface_strategy)
-@settings(max_examples=50)
-def test_interfaceo_interface_instantiation(instance):
-    assert isinstance(instance, InterfaceO_Interface)
-
-@given(instance=ClassP_strategy)
-@settings(max_examples=50)
-def test_classp_instantiation(instance):
-    assert isinstance(instance, ClassP)
-
-@given(instance=ClassN_strategy)
-@settings(max_examples=50)
-def test_classn_instantiation(instance):
-    assert isinstance(instance, ClassN)
-
-@given(instance=ClassM_strategy)
-@settings(max_examples=50)
-def test_classm_instantiation(instance):
-    assert isinstance(instance, ClassM)

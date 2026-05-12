@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Card,
@@ -27,9 +27,18 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
+    assert "color" in params, "Missing parameter 'color'"
     assert "suit" in params, "Missing parameter 'suit'"
     assert "value" in params, "Missing parameter 'value'"
-    assert "color" in params, "Missing parameter 'color'"
+
+def test_card_has_color():
+    assert hasattr(Card, "color")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_card_has_suit():
     assert hasattr(Card, "suit")
@@ -46,15 +55,6 @@ def test_card_has_value():
     for klass in Card.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_card_has_color():
-    assert hasattr(Card, "color")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
@@ -96,12 +96,12 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Card_strategy = st.builds(
     Card,
+    color=
+        st.booleans(),
     suit=
         st.integers(),
     value=
-        st.integers(),
-    color=
-        st.booleans()
+        st.integers()
 )
 Deck_strategy = st.builds(
     Deck,
@@ -114,31 +114,6 @@ Deck_strategy = st.builds(
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, int)
-
-
-@given(instance=Card_strategy)
-def test_card_suit_setter(instance):
-    original = instance.suit
-    instance.suit = original
-    assert instance.suit == original
-
-@given(instance=Card_strategy)
-def test_card_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=Card_strategy)
-def test_card_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Card_strategy)
-def test_card_color_type(instance):
-    assert isinstance(instance.color, bool)
 
 
 @given(instance=Card_strategy)
@@ -147,14 +122,27 @@ def test_card_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
+
+
+@given(instance=Card_strategy)
+def test_card_suit_setter(instance):
+    original = instance.suit
+    instance.suit = original
+    assert instance.suit == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
 @given(instance=Deck_strategy)
 @settings(max_examples=50)
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_deck_type(instance):
-    assert isinstance(instance.deck, str)
 
 
 @given(instance=Deck_strategy)

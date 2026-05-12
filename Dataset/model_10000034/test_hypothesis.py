@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     services_ScoreException,
@@ -76,11 +76,11 @@ def test_services_ratingservicejdbc_constructor_args():
     sig = inspect.signature(services_RatingServiceJDBC.__init__)
     params = list(sig.parameters.keys())
     assert "USER" in params, "Missing parameter 'USER'"
-    assert "SELECT_RATING" in params, "Missing parameter 'SELECT_RATING'"
-    assert "PASSWORD" in params, "Missing parameter 'PASSWORD'"
-    assert "SELECT_AVERAGE_RATING" in params, "Missing parameter 'SELECT_AVERAGE_RATING'"
-    assert "INSERT_RATING" in params, "Missing parameter 'INSERT_RATING'"
     assert "URL" in params, "Missing parameter 'URL'"
+    assert "INSERT_RATING" in params, "Missing parameter 'INSERT_RATING'"
+    assert "PASSWORD" in params, "Missing parameter 'PASSWORD'"
+    assert "SELECT_RATING" in params, "Missing parameter 'SELECT_RATING'"
+    assert "SELECT_AVERAGE_RATING" in params, "Missing parameter 'SELECT_AVERAGE_RATING'"
 
 def test_services_ratingservicejdbc_has_USER():
     assert hasattr(services_RatingServiceJDBC, "USER")
@@ -91,30 +91,12 @@ def test_services_ratingservicejdbc_has_USER():
             break
     assert isinstance(descriptor, property)
 
-def test_services_ratingservicejdbc_has_SELECT_RATING():
-    assert hasattr(services_RatingServiceJDBC, "SELECT_RATING")
+def test_services_ratingservicejdbc_has_URL():
+    assert hasattr(services_RatingServiceJDBC, "URL")
     descriptor = None
     for klass in services_RatingServiceJDBC.__mro__:
-        if "SELECT_RATING" in klass.__dict__:
-            descriptor = klass.__dict__["SELECT_RATING"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_services_ratingservicejdbc_has_PASSWORD():
-    assert hasattr(services_RatingServiceJDBC, "PASSWORD")
-    descriptor = None
-    for klass in services_RatingServiceJDBC.__mro__:
-        if "PASSWORD" in klass.__dict__:
-            descriptor = klass.__dict__["PASSWORD"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_services_ratingservicejdbc_has_SELECT_AVERAGE_RATING():
-    assert hasattr(services_RatingServiceJDBC, "SELECT_AVERAGE_RATING")
-    descriptor = None
-    for klass in services_RatingServiceJDBC.__mro__:
-        if "SELECT_AVERAGE_RATING" in klass.__dict__:
-            descriptor = klass.__dict__["SELECT_AVERAGE_RATING"]
+        if "URL" in klass.__dict__:
+            descriptor = klass.__dict__["URL"]
             break
     assert isinstance(descriptor, property)
 
@@ -127,12 +109,30 @@ def test_services_ratingservicejdbc_has_INSERT_RATING():
             break
     assert isinstance(descriptor, property)
 
-def test_services_ratingservicejdbc_has_URL():
-    assert hasattr(services_RatingServiceJDBC, "URL")
+def test_services_ratingservicejdbc_has_PASSWORD():
+    assert hasattr(services_RatingServiceJDBC, "PASSWORD")
     descriptor = None
     for klass in services_RatingServiceJDBC.__mro__:
-        if "URL" in klass.__dict__:
-            descriptor = klass.__dict__["URL"]
+        if "PASSWORD" in klass.__dict__:
+            descriptor = klass.__dict__["PASSWORD"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_services_ratingservicejdbc_has_SELECT_RATING():
+    assert hasattr(services_RatingServiceJDBC, "SELECT_RATING")
+    descriptor = None
+    for klass in services_RatingServiceJDBC.__mro__:
+        if "SELECT_RATING" in klass.__dict__:
+            descriptor = klass.__dict__["SELECT_RATING"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_services_ratingservicejdbc_has_SELECT_AVERAGE_RATING():
+    assert hasattr(services_RatingServiceJDBC, "SELECT_AVERAGE_RATING")
+    descriptor = None
+    for klass in services_RatingServiceJDBC.__mro__:
+        if "SELECT_AVERAGE_RATING" in klass.__dict__:
+            descriptor = klass.__dict__["SELECT_AVERAGE_RATING"]
             break
     assert isinstance(descriptor, property)
 
@@ -177,38 +177,11 @@ def test_services_commentservicejdbc_constructor_exists():
 def test_services_commentservicejdbc_constructor_args():
     sig = inspect.signature(services_CommentServiceJDBC.__init__)
     params = list(sig.parameters.keys())
-    assert "SELECT_COMMENTS" in params, "Missing parameter 'SELECT_COMMENTS'"
-    assert "URL" in params, "Missing parameter 'URL'"
-    assert "PASSWORD" in params, "Missing parameter 'PASSWORD'"
     assert "USER" in params, "Missing parameter 'USER'"
     assert "INSERT_COMMENT" in params, "Missing parameter 'INSERT_COMMENT'"
-
-def test_services_commentservicejdbc_has_SELECT_COMMENTS():
-    assert hasattr(services_CommentServiceJDBC, "SELECT_COMMENTS")
-    descriptor = None
-    for klass in services_CommentServiceJDBC.__mro__:
-        if "SELECT_COMMENTS" in klass.__dict__:
-            descriptor = klass.__dict__["SELECT_COMMENTS"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_services_commentservicejdbc_has_URL():
-    assert hasattr(services_CommentServiceJDBC, "URL")
-    descriptor = None
-    for klass in services_CommentServiceJDBC.__mro__:
-        if "URL" in klass.__dict__:
-            descriptor = klass.__dict__["URL"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_services_commentservicejdbc_has_PASSWORD():
-    assert hasattr(services_CommentServiceJDBC, "PASSWORD")
-    descriptor = None
-    for klass in services_CommentServiceJDBC.__mro__:
-        if "PASSWORD" in klass.__dict__:
-            descriptor = klass.__dict__["PASSWORD"]
-            break
-    assert isinstance(descriptor, property)
+    assert "PASSWORD" in params, "Missing parameter 'PASSWORD'"
+    assert "SELECT_COMMENTS" in params, "Missing parameter 'SELECT_COMMENTS'"
+    assert "URL" in params, "Missing parameter 'URL'"
 
 def test_services_commentservicejdbc_has_USER():
     assert hasattr(services_CommentServiceJDBC, "USER")
@@ -225,6 +198,33 @@ def test_services_commentservicejdbc_has_INSERT_COMMENT():
     for klass in services_CommentServiceJDBC.__mro__:
         if "INSERT_COMMENT" in klass.__dict__:
             descriptor = klass.__dict__["INSERT_COMMENT"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_services_commentservicejdbc_has_PASSWORD():
+    assert hasattr(services_CommentServiceJDBC, "PASSWORD")
+    descriptor = None
+    for klass in services_CommentServiceJDBC.__mro__:
+        if "PASSWORD" in klass.__dict__:
+            descriptor = klass.__dict__["PASSWORD"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_services_commentservicejdbc_has_SELECT_COMMENTS():
+    assert hasattr(services_CommentServiceJDBC, "SELECT_COMMENTS")
+    descriptor = None
+    for klass in services_CommentServiceJDBC.__mro__:
+        if "SELECT_COMMENTS" in klass.__dict__:
+            descriptor = klass.__dict__["SELECT_COMMENTS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_services_commentservicejdbc_has_URL():
+    assert hasattr(services_CommentServiceJDBC, "URL")
+    descriptor = None
+    for klass in services_CommentServiceJDBC.__mro__:
+        if "URL" in klass.__dict__:
+            descriptor = klass.__dict__["URL"]
             break
     assert isinstance(descriptor, property)
 
@@ -294,8 +294,8 @@ def test_entities_score_constructor_args():
     sig = inspect.signature(entities_Score.__init__)
     params = list(sig.parameters.keys())
     assert "points" in params, "Missing parameter 'points'"
-    assert "game" in params, "Missing parameter 'game'"
     assert "playedOn" in params, "Missing parameter 'playedOn'"
+    assert "game" in params, "Missing parameter 'game'"
     assert "player" in params, "Missing parameter 'player'"
 
 def test_entities_score_has_points():
@@ -307,21 +307,21 @@ def test_entities_score_has_points():
             break
     assert isinstance(descriptor, property)
 
-def test_entities_score_has_game():
-    assert hasattr(entities_Score, "game")
-    descriptor = None
-    for klass in entities_Score.__mro__:
-        if "game" in klass.__dict__:
-            descriptor = klass.__dict__["game"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_entities_score_has_playedOn():
     assert hasattr(entities_Score, "playedOn")
     descriptor = None
     for klass in entities_Score.__mro__:
         if "playedOn" in klass.__dict__:
             descriptor = klass.__dict__["playedOn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_entities_score_has_game():
+    assert hasattr(entities_Score, "game")
+    descriptor = None
+    for klass in entities_Score.__mro__:
+        if "game" in klass.__dict__:
+            descriptor = klass.__dict__["game"]
             break
     assert isinstance(descriptor, property)
 
@@ -347,10 +347,28 @@ def test_entities_rating_constructor_exists():
 def test_entities_rating_constructor_args():
     sig = inspect.signature(entities_Rating.__init__)
     params = list(sig.parameters.keys())
+    assert "player" in params, "Missing parameter 'player'"
+    assert "ratedon" in params, "Missing parameter 'ratedon'"
     assert "rating" in params, "Missing parameter 'rating'"
     assert "game" in params, "Missing parameter 'game'"
-    assert "ratedon" in params, "Missing parameter 'ratedon'"
-    assert "player" in params, "Missing parameter 'player'"
+
+def test_entities_rating_has_player():
+    assert hasattr(entities_Rating, "player")
+    descriptor = None
+    for klass in entities_Rating.__mro__:
+        if "player" in klass.__dict__:
+            descriptor = klass.__dict__["player"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_entities_rating_has_ratedon():
+    assert hasattr(entities_Rating, "ratedon")
+    descriptor = None
+    for klass in entities_Rating.__mro__:
+        if "ratedon" in klass.__dict__:
+            descriptor = klass.__dict__["ratedon"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_entities_rating_has_rating():
     assert hasattr(entities_Rating, "rating")
@@ -370,24 +388,6 @@ def test_entities_rating_has_game():
             break
     assert isinstance(descriptor, property)
 
-def test_entities_rating_has_ratedon():
-    assert hasattr(entities_Rating, "ratedon")
-    descriptor = None
-    for klass in entities_Rating.__mro__:
-        if "ratedon" in klass.__dict__:
-            descriptor = klass.__dict__["ratedon"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_entities_rating_has_player():
-    assert hasattr(entities_Rating, "player")
-    descriptor = None
-    for klass in entities_Rating.__mro__:
-        if "player" in klass.__dict__:
-            descriptor = klass.__dict__["player"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_entities_comment_is_not_abstract():
@@ -401,28 +401,10 @@ def test_entities_comment_constructor_exists():
 def test_entities_comment_constructor_args():
     sig = inspect.signature(entities_Comment.__init__)
     params = list(sig.parameters.keys())
-    assert "player" in params, "Missing parameter 'player'"
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "commentedOn" in params, "Missing parameter 'commentedOn'"
     assert "game" in params, "Missing parameter 'game'"
-
-def test_entities_comment_has_player():
-    assert hasattr(entities_Comment, "player")
-    descriptor = None
-    for klass in entities_Comment.__mro__:
-        if "player" in klass.__dict__:
-            descriptor = klass.__dict__["player"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_entities_comment_has_comment():
-    assert hasattr(entities_Comment, "comment")
-    descriptor = None
-    for klass in entities_Comment.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "player" in params, "Missing parameter 'player'"
 
 def test_entities_comment_has_commentedOn():
     assert hasattr(entities_Comment, "commentedOn")
@@ -439,6 +421,24 @@ def test_entities_comment_has_game():
     for klass in entities_Comment.__mro__:
         if "game" in klass.__dict__:
             descriptor = klass.__dict__["game"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_entities_comment_has_comment():
+    assert hasattr(entities_Comment, "comment")
+    descriptor = None
+    for klass in entities_Comment.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_entities_comment_has_player():
+    assert hasattr(entities_Comment, "player")
+    descriptor = None
+    for klass in entities_Comment.__mro__:
+        if "player" in klass.__dict__:
+            descriptor = klass.__dict__["player"]
             break
     assert isinstance(descriptor, property)
 
@@ -537,11 +537,20 @@ def test_deck_deck_constructor_exists():
 def test_deck_deck_constructor_args():
     sig = inspect.signature(deck_Deck.__init__)
     params = list(sig.parameters.keys())
-    assert "stepCounter" in params, "Missing parameter 'stepCounter'"
-    assert "removeItemFromArrayIndex" in params, "Missing parameter 'removeItemFromArrayIndex'"
-    assert "score" in params, "Missing parameter 'score'"
     assert "foundationIndex" in params, "Missing parameter 'foundationIndex'"
+    assert "stepCounter" in params, "Missing parameter 'stepCounter'"
+    assert "score" in params, "Missing parameter 'score'"
+    assert "removeItemFromArrayIndex" in params, "Missing parameter 'removeItemFromArrayIndex'"
     assert "inputDestinationRow" in params, "Missing parameter 'inputDestinationRow'"
+
+def test_deck_deck_has_foundationIndex():
+    assert hasattr(deck_Deck, "foundationIndex")
+    descriptor = None
+    for klass in deck_Deck.__mro__:
+        if "foundationIndex" in klass.__dict__:
+            descriptor = klass.__dict__["foundationIndex"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_deck_deck_has_stepCounter():
     assert hasattr(deck_Deck, "stepCounter")
@@ -549,15 +558,6 @@ def test_deck_deck_has_stepCounter():
     for klass in deck_Deck.__mro__:
         if "stepCounter" in klass.__dict__:
             descriptor = klass.__dict__["stepCounter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_deck_deck_has_removeItemFromArrayIndex():
-    assert hasattr(deck_Deck, "removeItemFromArrayIndex")
-    descriptor = None
-    for klass in deck_Deck.__mro__:
-        if "removeItemFromArrayIndex" in klass.__dict__:
-            descriptor = klass.__dict__["removeItemFromArrayIndex"]
             break
     assert isinstance(descriptor, property)
 
@@ -570,12 +570,12 @@ def test_deck_deck_has_score():
             break
     assert isinstance(descriptor, property)
 
-def test_deck_deck_has_foundationIndex():
-    assert hasattr(deck_Deck, "foundationIndex")
+def test_deck_deck_has_removeItemFromArrayIndex():
+    assert hasattr(deck_Deck, "removeItemFromArrayIndex")
     descriptor = None
     for klass in deck_Deck.__mro__:
-        if "foundationIndex" in klass.__dict__:
-            descriptor = klass.__dict__["foundationIndex"]
+        if "removeItemFromArrayIndex" in klass.__dict__:
+            descriptor = klass.__dict__["removeItemFromArrayIndex"]
             break
     assert isinstance(descriptor, property)
 
@@ -838,8 +838,8 @@ def test_scoreservicejdbctest_constructor_args():
     sig = inspect.signature(ScoreServiceJDBCTest.__init__)
     params = list(sig.parameters.keys())
     assert "PASS" in params, "Missing parameter 'PASS'"
-    assert "URL" in params, "Missing parameter 'URL'"
     assert "DELETE" in params, "Missing parameter 'DELETE'"
+    assert "URL" in params, "Missing parameter 'URL'"
     assert "USER" in params, "Missing parameter 'USER'"
 
 def test_scoreservicejdbctest_has_PASS():
@@ -851,21 +851,21 @@ def test_scoreservicejdbctest_has_PASS():
             break
     assert isinstance(descriptor, property)
 
-def test_scoreservicejdbctest_has_URL():
-    assert hasattr(ScoreServiceJDBCTest, "URL")
-    descriptor = None
-    for klass in ScoreServiceJDBCTest.__mro__:
-        if "URL" in klass.__dict__:
-            descriptor = klass.__dict__["URL"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_scoreservicejdbctest_has_DELETE():
     assert hasattr(ScoreServiceJDBCTest, "DELETE")
     descriptor = None
     for klass in ScoreServiceJDBCTest.__mro__:
         if "DELETE" in klass.__dict__:
             descriptor = klass.__dict__["DELETE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scoreservicejdbctest_has_URL():
+    assert hasattr(ScoreServiceJDBCTest, "URL")
+    descriptor = None
+    for klass in ScoreServiceJDBCTest.__mro__:
+        if "URL" in klass.__dict__:
+            descriptor = klass.__dict__["URL"]
             break
     assert isinstance(descriptor, property)
 
@@ -891,19 +891,10 @@ def test_ratingservicetest_constructor_exists():
 def test_ratingservicetest_constructor_args():
     sig = inspect.signature(RatingServiceTest.__init__)
     params = list(sig.parameters.keys())
-    assert "TEST_PLAYER_2" in params, "Missing parameter 'TEST_PLAYER_2'"
     assert "TEST_PLAYER" in params, "Missing parameter 'TEST_PLAYER'"
+    assert "TEST_PLAYER_2" in params, "Missing parameter 'TEST_PLAYER_2'"
     assert "GAME_NAME" in params, "Missing parameter 'GAME_NAME'"
     assert "TEST_PLAYER_3" in params, "Missing parameter 'TEST_PLAYER_3'"
-
-def test_ratingservicetest_has_TEST_PLAYER_2():
-    assert hasattr(RatingServiceTest, "TEST_PLAYER_2")
-    descriptor = None
-    for klass in RatingServiceTest.__mro__:
-        if "TEST_PLAYER_2" in klass.__dict__:
-            descriptor = klass.__dict__["TEST_PLAYER_2"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_ratingservicetest_has_TEST_PLAYER():
     assert hasattr(RatingServiceTest, "TEST_PLAYER")
@@ -911,6 +902,15 @@ def test_ratingservicetest_has_TEST_PLAYER():
     for klass in RatingServiceTest.__mro__:
         if "TEST_PLAYER" in klass.__dict__:
             descriptor = klass.__dict__["TEST_PLAYER"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ratingservicetest_has_TEST_PLAYER_2():
+    assert hasattr(RatingServiceTest, "TEST_PLAYER_2")
+    descriptor = None
+    for klass in RatingServiceTest.__mro__:
+        if "TEST_PLAYER_2" in klass.__dict__:
+            descriptor = klass.__dict__["TEST_PLAYER_2"]
             break
     assert isinstance(descriptor, property)
 
@@ -979,10 +979,19 @@ def test_commentservicejdbctest_constructor_exists():
 def test_commentservicejdbctest_constructor_args():
     sig = inspect.signature(CommentServiceJDBCTest.__init__)
     params = list(sig.parameters.keys())
-    assert "USER" in params, "Missing parameter 'USER'"
-    assert "PASS" in params, "Missing parameter 'PASS'"
-    assert "DELETE" in params, "Missing parameter 'DELETE'"
     assert "URL" in params, "Missing parameter 'URL'"
+    assert "USER" in params, "Missing parameter 'USER'"
+    assert "DELETE" in params, "Missing parameter 'DELETE'"
+    assert "PASS" in params, "Missing parameter 'PASS'"
+
+def test_commentservicejdbctest_has_URL():
+    assert hasattr(CommentServiceJDBCTest, "URL")
+    descriptor = None
+    for klass in CommentServiceJDBCTest.__mro__:
+        if "URL" in klass.__dict__:
+            descriptor = klass.__dict__["URL"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_commentservicejdbctest_has_USER():
     assert hasattr(CommentServiceJDBCTest, "USER")
@@ -990,15 +999,6 @@ def test_commentservicejdbctest_has_USER():
     for klass in CommentServiceJDBCTest.__mro__:
         if "USER" in klass.__dict__:
             descriptor = klass.__dict__["USER"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_commentservicejdbctest_has_PASS():
-    assert hasattr(CommentServiceJDBCTest, "PASS")
-    descriptor = None
-    for klass in CommentServiceJDBCTest.__mro__:
-        if "PASS" in klass.__dict__:
-            descriptor = klass.__dict__["PASS"]
             break
     assert isinstance(descriptor, property)
 
@@ -1011,12 +1011,12 @@ def test_commentservicejdbctest_has_DELETE():
             break
     assert isinstance(descriptor, property)
 
-def test_commentservicejdbctest_has_URL():
-    assert hasattr(CommentServiceJDBCTest, "URL")
+def test_commentservicejdbctest_has_PASS():
+    assert hasattr(CommentServiceJDBCTest, "PASS")
     descriptor = None
     for klass in CommentServiceJDBCTest.__mro__:
-        if "URL" in klass.__dict__:
-            descriptor = klass.__dict__["URL"]
+        if "PASS" in klass.__dict__:
+            descriptor = klass.__dict__["PASS"]
             break
     assert isinstance(descriptor, property)
 
@@ -1033,18 +1033,18 @@ def test_services_scoreservicejdbc_constructor_exists():
 def test_services_scoreservicejdbc_constructor_args():
     sig = inspect.signature(services_ScoreServiceJDBC.__init__)
     params = list(sig.parameters.keys())
-    assert "PASSWORD" in params, "Missing parameter 'PASSWORD'"
-    assert "INSERT_SCORE" in params, "Missing parameter 'INSERT_SCORE'"
     assert "URL" in params, "Missing parameter 'URL'"
+    assert "INSERT_SCORE" in params, "Missing parameter 'INSERT_SCORE'"
+    assert "PASSWORD" in params, "Missing parameter 'PASSWORD'"
     assert "USER" in params, "Missing parameter 'USER'"
     assert "SELECT_SCORE" in params, "Missing parameter 'SELECT_SCORE'"
 
-def test_services_scoreservicejdbc_has_PASSWORD():
-    assert hasattr(services_ScoreServiceJDBC, "PASSWORD")
+def test_services_scoreservicejdbc_has_URL():
+    assert hasattr(services_ScoreServiceJDBC, "URL")
     descriptor = None
     for klass in services_ScoreServiceJDBC.__mro__:
-        if "PASSWORD" in klass.__dict__:
-            descriptor = klass.__dict__["PASSWORD"]
+        if "URL" in klass.__dict__:
+            descriptor = klass.__dict__["URL"]
             break
     assert isinstance(descriptor, property)
 
@@ -1057,12 +1057,12 @@ def test_services_scoreservicejdbc_has_INSERT_SCORE():
             break
     assert isinstance(descriptor, property)
 
-def test_services_scoreservicejdbc_has_URL():
-    assert hasattr(services_ScoreServiceJDBC, "URL")
+def test_services_scoreservicejdbc_has_PASSWORD():
+    assert hasattr(services_ScoreServiceJDBC, "PASSWORD")
     descriptor = None
     for klass in services_ScoreServiceJDBC.__mro__:
-        if "URL" in klass.__dict__:
-            descriptor = klass.__dict__["URL"]
+        if "PASSWORD" in klass.__dict__:
+            descriptor = klass.__dict__["PASSWORD"]
             break
     assert isinstance(descriptor, property)
 
@@ -1131,15 +1131,15 @@ services_RatingServiceJDBC_strategy = st.builds(
     services_RatingServiceJDBC,
     USER=
         safe_text,
-    SELECT_RATING=
-        safe_text,
-    PASSWORD=
-        safe_text,
-    SELECT_AVERAGE_RATING=
+    URL=
         safe_text,
     INSERT_RATING=
         safe_text,
-    URL=
+    PASSWORD=
+        safe_text,
+    SELECT_RATING=
+        safe_text,
+    SELECT_AVERAGE_RATING=
         safe_text
 )
 services_RatingService_Interface_strategy = st.builds(
@@ -1150,15 +1150,15 @@ services_RatingException_strategy = st.builds(
 )
 services_CommentServiceJDBC_strategy = st.builds(
     services_CommentServiceJDBC,
-    SELECT_COMMENTS=
-        safe_text,
-    URL=
-        safe_text,
-    PASSWORD=
-        safe_text,
     USER=
         safe_text,
     INSERT_COMMENT=
+        safe_text,
+    PASSWORD=
+        safe_text,
+    SELECT_COMMENTS=
+        safe_text,
+    URL=
         safe_text
 )
 services_CommentService_Interface_strategy = st.builds(
@@ -1176,33 +1176,33 @@ entities_Score_strategy = st.builds(
     entities_Score,
     points=
         st.integers(),
-    game=
-        safe_text,
     playedOn=
         st.none(),
+    game=
+        safe_text,
     player=
         safe_text
 )
 entities_Rating_strategy = st.builds(
     entities_Rating,
-    rating=
-        st.integers(),
-    game=
+    player=
         safe_text,
     ratedon=
         st.none(),
-    player=
+    rating=
+        st.integers(),
+    game=
         safe_text
 )
 entities_Comment_strategy = st.builds(
     entities_Comment,
-    player=
-        safe_text,
-    comment=
-        safe_text,
     commentedOn=
         st.none(),
     game=
+        safe_text,
+    comment=
+        safe_text,
+    player=
         safe_text
 )
 deck_Tableau_strategy = st.builds(
@@ -1224,13 +1224,13 @@ deck_Foundations_strategy = st.builds(
 )
 deck_Deck_strategy = st.builds(
     deck_Deck,
-    stepCounter=
+    foundationIndex=
         st.integers(),
-    removeItemFromArrayIndex=
+    stepCounter=
         st.integers(),
     score=
         st.integers(),
-    foundationIndex=
+    removeItemFromArrayIndex=
         st.integers(),
     inputDestinationRow=
         st.integers()
@@ -1289,18 +1289,18 @@ ScoreServiceJDBCTest_strategy = st.builds(
     ScoreServiceJDBCTest,
     PASS=
         safe_text,
-    URL=
-        safe_text,
     DELETE=
+        safe_text,
+    URL=
         safe_text,
     USER=
         safe_text
 )
 RatingServiceTest_strategy = st.builds(
     RatingServiceTest,
-    TEST_PLAYER_2=
-        safe_text,
     TEST_PLAYER=
+        safe_text,
+    TEST_PLAYER_2=
         safe_text,
     GAME_NAME=
         safe_text,
@@ -1316,22 +1316,22 @@ CommentServiceTest_strategy = st.builds(
 )
 CommentServiceJDBCTest_strategy = st.builds(
     CommentServiceJDBCTest,
-    USER=
+    URL=
         safe_text,
-    PASS=
+    USER=
         safe_text,
     DELETE=
         safe_text,
-    URL=
+    PASS=
         safe_text
 )
 services_ScoreServiceJDBC_strategy = st.builds(
     services_ScoreServiceJDBC,
-    PASSWORD=
+    URL=
         safe_text,
     INSERT_SCORE=
         safe_text,
-    URL=
+    PASSWORD=
         safe_text,
     USER=
         safe_text,
@@ -1355,9 +1355,6 @@ def test_services_scoreexception_instantiation(instance):
 def test_services_ratingservicejdbc_instantiation(instance):
     assert isinstance(instance, services_RatingServiceJDBC)
 
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_USER_type(instance):
-    assert isinstance(instance.USER, str)
 
 
 @given(instance=services_RatingServiceJDBC_strategy)
@@ -1366,42 +1363,14 @@ def test_services_ratingservicejdbc_USER_setter(instance):
     instance.USER = original
     assert instance.USER == original
 
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_SELECT_RATING_type(instance):
-    assert isinstance(instance.SELECT_RATING, str)
 
 
 @given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_SELECT_RATING_setter(instance):
-    original = instance.SELECT_RATING
-    instance.SELECT_RATING = original
-    assert instance.SELECT_RATING == original
+def test_services_ratingservicejdbc_URL_setter(instance):
+    original = instance.URL
+    instance.URL = original
+    assert instance.URL == original
 
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_PASSWORD_type(instance):
-    assert isinstance(instance.PASSWORD, str)
-
-
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_PASSWORD_setter(instance):
-    original = instance.PASSWORD
-    instance.PASSWORD = original
-    assert instance.PASSWORD == original
-
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_SELECT_AVERAGE_RATING_type(instance):
-    assert isinstance(instance.SELECT_AVERAGE_RATING, str)
-
-
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_SELECT_AVERAGE_RATING_setter(instance):
-    original = instance.SELECT_AVERAGE_RATING
-    instance.SELECT_AVERAGE_RATING = original
-    assert instance.SELECT_AVERAGE_RATING == original
-
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_INSERT_RATING_type(instance):
-    assert isinstance(instance.INSERT_RATING, str)
 
 
 @given(instance=services_RatingServiceJDBC_strategy)
@@ -1410,16 +1379,29 @@ def test_services_ratingservicejdbc_INSERT_RATING_setter(instance):
     instance.INSERT_RATING = original
     assert instance.INSERT_RATING == original
 
-@given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_URL_type(instance):
-    assert isinstance(instance.URL, str)
 
 
 @given(instance=services_RatingServiceJDBC_strategy)
-def test_services_ratingservicejdbc_URL_setter(instance):
-    original = instance.URL
-    instance.URL = original
-    assert instance.URL == original
+def test_services_ratingservicejdbc_PASSWORD_setter(instance):
+    original = instance.PASSWORD
+    instance.PASSWORD = original
+    assert instance.PASSWORD == original
+
+
+
+@given(instance=services_RatingServiceJDBC_strategy)
+def test_services_ratingservicejdbc_SELECT_RATING_setter(instance):
+    original = instance.SELECT_RATING
+    instance.SELECT_RATING = original
+    assert instance.SELECT_RATING == original
+
+
+
+@given(instance=services_RatingServiceJDBC_strategy)
+def test_services_ratingservicejdbc_SELECT_AVERAGE_RATING_setter(instance):
+    original = instance.SELECT_AVERAGE_RATING
+    instance.SELECT_AVERAGE_RATING = original
+    assert instance.SELECT_AVERAGE_RATING == original
 
 @given(instance=services_RatingService_Interface_strategy)
 @settings(max_examples=50)
@@ -1436,42 +1418,6 @@ def test_services_ratingexception_instantiation(instance):
 def test_services_commentservicejdbc_instantiation(instance):
     assert isinstance(instance, services_CommentServiceJDBC)
 
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_SELECT_COMMENTS_type(instance):
-    assert isinstance(instance.SELECT_COMMENTS, str)
-
-
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_SELECT_COMMENTS_setter(instance):
-    original = instance.SELECT_COMMENTS
-    instance.SELECT_COMMENTS = original
-    assert instance.SELECT_COMMENTS == original
-
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_URL_type(instance):
-    assert isinstance(instance.URL, str)
-
-
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_URL_setter(instance):
-    original = instance.URL
-    instance.URL = original
-    assert instance.URL == original
-
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_PASSWORD_type(instance):
-    assert isinstance(instance.PASSWORD, str)
-
-
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_PASSWORD_setter(instance):
-    original = instance.PASSWORD
-    instance.PASSWORD = original
-    assert instance.PASSWORD == original
-
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_USER_type(instance):
-    assert isinstance(instance.USER, str)
 
 
 @given(instance=services_CommentServiceJDBC_strategy)
@@ -1480,9 +1426,6 @@ def test_services_commentservicejdbc_USER_setter(instance):
     instance.USER = original
     assert instance.USER == original
 
-@given(instance=services_CommentServiceJDBC_strategy)
-def test_services_commentservicejdbc_INSERT_COMMENT_type(instance):
-    assert isinstance(instance.INSERT_COMMENT, str)
 
 
 @given(instance=services_CommentServiceJDBC_strategy)
@@ -1490,6 +1433,30 @@ def test_services_commentservicejdbc_INSERT_COMMENT_setter(instance):
     original = instance.INSERT_COMMENT
     instance.INSERT_COMMENT = original
     assert instance.INSERT_COMMENT == original
+
+
+
+@given(instance=services_CommentServiceJDBC_strategy)
+def test_services_commentservicejdbc_PASSWORD_setter(instance):
+    original = instance.PASSWORD
+    instance.PASSWORD = original
+    assert instance.PASSWORD == original
+
+
+
+@given(instance=services_CommentServiceJDBC_strategy)
+def test_services_commentservicejdbc_SELECT_COMMENTS_setter(instance):
+    original = instance.SELECT_COMMENTS
+    instance.SELECT_COMMENTS = original
+    assert instance.SELECT_COMMENTS == original
+
+
+
+@given(instance=services_CommentServiceJDBC_strategy)
+def test_services_commentservicejdbc_URL_setter(instance):
+    original = instance.URL
+    instance.URL = original
+    assert instance.URL == original
 
 @given(instance=services_CommentService_Interface_strategy)
 @settings(max_examples=50)
@@ -1506,9 +1473,6 @@ def test_services_commentexception_instantiation(instance):
 def test_features_history_instantiation(instance):
     assert isinstance(instance, features_History)
 
-@given(instance=features_History_strategy)
-def test_features_history_revertList_type(instance):
-    assert isinstance(instance.revertList, int)
 
 
 @given(instance=features_History_strategy)
@@ -1522,9 +1486,6 @@ def test_features_history_revertList_setter(instance):
 def test_entities_score_instantiation(instance):
     assert isinstance(instance, entities_Score)
 
-@given(instance=entities_Score_strategy)
-def test_entities_score_points_type(instance):
-    assert isinstance(instance.points, int)
 
 
 @given(instance=entities_Score_strategy)
@@ -1533,20 +1494,6 @@ def test_entities_score_points_setter(instance):
     instance.points = original
     assert instance.points == original
 
-@given(instance=entities_Score_strategy)
-def test_entities_score_game_type(instance):
-    assert isinstance(instance.game, str)
-
-
-@given(instance=entities_Score_strategy)
-def test_entities_score_game_setter(instance):
-    original = instance.game
-    instance.game = original
-    assert instance.game == original
-
-@given(instance=entities_Score_strategy)
-def test_entities_score_playedOn_type(instance):
-    assert isinstance(instance.playedOn, genmymodelreverse_java_util_date)
 
 
 @given(instance=entities_Score_strategy)
@@ -1555,9 +1502,14 @@ def test_entities_score_playedOn_setter(instance):
     instance.playedOn = original
     assert instance.playedOn == original
 
+
+
 @given(instance=entities_Score_strategy)
-def test_entities_score_player_type(instance):
-    assert isinstance(instance.player, str)
+def test_entities_score_game_setter(instance):
+    original = instance.game
+    instance.game = original
+    assert instance.game == original
+
 
 
 @given(instance=entities_Score_strategy)
@@ -1571,42 +1523,6 @@ def test_entities_score_player_setter(instance):
 def test_entities_rating_instantiation(instance):
     assert isinstance(instance, entities_Rating)
 
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_rating_type(instance):
-    assert isinstance(instance.rating, int)
-
-
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_rating_setter(instance):
-    original = instance.rating
-    instance.rating = original
-    assert instance.rating == original
-
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_game_type(instance):
-    assert isinstance(instance.game, str)
-
-
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_game_setter(instance):
-    original = instance.game
-    instance.game = original
-    assert instance.game == original
-
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_ratedon_type(instance):
-    assert isinstance(instance.ratedon, genmymodelreverse_java_util_date)
-
-
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_ratedon_setter(instance):
-    original = instance.ratedon
-    instance.ratedon = original
-    assert instance.ratedon == original
-
-@given(instance=entities_Rating_strategy)
-def test_entities_rating_player_type(instance):
-    assert isinstance(instance.player, str)
 
 
 @given(instance=entities_Rating_strategy)
@@ -1615,36 +1531,35 @@ def test_entities_rating_player_setter(instance):
     instance.player = original
     assert instance.player == original
 
+
+
+@given(instance=entities_Rating_strategy)
+def test_entities_rating_ratedon_setter(instance):
+    original = instance.ratedon
+    instance.ratedon = original
+    assert instance.ratedon == original
+
+
+
+@given(instance=entities_Rating_strategy)
+def test_entities_rating_rating_setter(instance):
+    original = instance.rating
+    instance.rating = original
+    assert instance.rating == original
+
+
+
+@given(instance=entities_Rating_strategy)
+def test_entities_rating_game_setter(instance):
+    original = instance.game
+    instance.game = original
+    assert instance.game == original
+
 @given(instance=entities_Comment_strategy)
 @settings(max_examples=50)
 def test_entities_comment_instantiation(instance):
     assert isinstance(instance, entities_Comment)
 
-@given(instance=entities_Comment_strategy)
-def test_entities_comment_player_type(instance):
-    assert isinstance(instance.player, str)
-
-
-@given(instance=entities_Comment_strategy)
-def test_entities_comment_player_setter(instance):
-    original = instance.player
-    instance.player = original
-    assert instance.player == original
-
-@given(instance=entities_Comment_strategy)
-def test_entities_comment_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=entities_Comment_strategy)
-def test_entities_comment_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=entities_Comment_strategy)
-def test_entities_comment_commentedOn_type(instance):
-    assert isinstance(instance.commentedOn, genmymodelreverse_java_util_date)
 
 
 @given(instance=entities_Comment_strategy)
@@ -1653,9 +1568,6 @@ def test_entities_comment_commentedOn_setter(instance):
     instance.commentedOn = original
     assert instance.commentedOn == original
 
-@given(instance=entities_Comment_strategy)
-def test_entities_comment_game_type(instance):
-    assert isinstance(instance.game, str)
 
 
 @given(instance=entities_Comment_strategy)
@@ -1664,14 +1576,27 @@ def test_entities_comment_game_setter(instance):
     instance.game = original
     assert instance.game == original
 
+
+
+@given(instance=entities_Comment_strategy)
+def test_entities_comment_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=entities_Comment_strategy)
+def test_entities_comment_player_setter(instance):
+    original = instance.player
+    instance.player = original
+    assert instance.player == original
+
 @given(instance=deck_Tableau_strategy)
 @settings(max_examples=50)
 def test_deck_tableau_instantiation(instance):
     assert isinstance(instance, deck_Tableau)
 
-@given(instance=deck_Tableau_strategy)
-def test_deck_tableau_columns_type(instance):
-    assert isinstance(instance.columns, str)
 
 
 @given(instance=deck_Tableau_strategy)
@@ -1685,9 +1610,6 @@ def test_deck_tableau_columns_setter(instance):
 def test_deck_stock_instantiation(instance):
     assert isinstance(instance, deck_Stock)
 
-@given(instance=deck_Stock_strategy)
-def test_deck_stock_stock_type(instance):
-    assert isinstance(instance.stock, str)
 
 
 @given(instance=deck_Stock_strategy)
@@ -1696,9 +1618,6 @@ def test_deck_stock_stock_setter(instance):
     instance.stock = original
     assert instance.stock == original
 
-@given(instance=deck_Stock_strategy)
-def test_deck_stock_STARTING_INDEX_type(instance):
-    assert isinstance(instance.STARTING_INDEX, int)
 
 
 @given(instance=deck_Stock_strategy)
@@ -1712,9 +1631,6 @@ def test_deck_stock_STARTING_INDEX_setter(instance):
 def test_deck_foundations_instantiation(instance):
     assert isinstance(instance, deck_Foundations)
 
-@given(instance=deck_Foundations_strategy)
-def test_deck_foundations_foundationList_type(instance):
-    assert isinstance(instance.foundationList, str)
 
 
 @given(instance=deck_Foundations_strategy)
@@ -1728,42 +1644,6 @@ def test_deck_foundations_foundationList_setter(instance):
 def test_deck_deck_instantiation(instance):
     assert isinstance(instance, deck_Deck)
 
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_stepCounter_type(instance):
-    assert isinstance(instance.stepCounter, int)
-
-
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_stepCounter_setter(instance):
-    original = instance.stepCounter
-    instance.stepCounter = original
-    assert instance.stepCounter == original
-
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_removeItemFromArrayIndex_type(instance):
-    assert isinstance(instance.removeItemFromArrayIndex, int)
-
-
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_removeItemFromArrayIndex_setter(instance):
-    original = instance.removeItemFromArrayIndex
-    instance.removeItemFromArrayIndex = original
-    assert instance.removeItemFromArrayIndex == original
-
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_score_type(instance):
-    assert isinstance(instance.score, int)
-
-
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_score_setter(instance):
-    original = instance.score
-    instance.score = original
-    assert instance.score == original
-
-@given(instance=deck_Deck_strategy)
-def test_deck_deck_foundationIndex_type(instance):
-    assert isinstance(instance.foundationIndex, int)
 
 
 @given(instance=deck_Deck_strategy)
@@ -1772,9 +1652,30 @@ def test_deck_deck_foundationIndex_setter(instance):
     instance.foundationIndex = original
     assert instance.foundationIndex == original
 
+
+
 @given(instance=deck_Deck_strategy)
-def test_deck_deck_inputDestinationRow_type(instance):
-    assert isinstance(instance.inputDestinationRow, int)
+def test_deck_deck_stepCounter_setter(instance):
+    original = instance.stepCounter
+    instance.stepCounter = original
+    assert instance.stepCounter == original
+
+
+
+@given(instance=deck_Deck_strategy)
+def test_deck_deck_score_setter(instance):
+    original = instance.score
+    instance.score = original
+    assert instance.score == original
+
+
+
+@given(instance=deck_Deck_strategy)
+def test_deck_deck_removeItemFromArrayIndex_setter(instance):
+    original = instance.removeItemFromArrayIndex
+    instance.removeItemFromArrayIndex = original
+    assert instance.removeItemFromArrayIndex == original
+
 
 
 @given(instance=deck_Deck_strategy)
@@ -1788,9 +1689,6 @@ def test_deck_deck_inputDestinationRow_setter(instance):
 def test_card_pack_instantiation(instance):
     assert isinstance(instance, card_Pack)
 
-@given(instance=card_Pack_strategy)
-def test_card_pack_cardPack_type(instance):
-    assert isinstance(instance.cardPack, str)
 
 
 @given(instance=card_Pack_strategy)
@@ -1804,9 +1702,6 @@ def test_card_pack_cardPack_setter(instance):
 def test_card_card_instantiation(instance):
     assert isinstance(instance, card_Card)
 
-@given(instance=card_Card_strategy)
-def test_card_card_flipped_type(instance):
-    assert isinstance(instance.flipped, bool)
 
 
 @given(instance=card_Card_strategy)
@@ -1815,9 +1710,6 @@ def test_card_card_flipped_setter(instance):
     instance.flipped = original
     assert instance.flipped == original
 
-@given(instance=card_Card_strategy)
-def test_card_card_rank_type(instance):
-    assert isinstance(instance.rank, int)
 
 
 @given(instance=card_Card_strategy)
@@ -1886,9 +1778,6 @@ def test_spidersolitairetestsuite_instantiation(instance):
 def test_scoreservicetest_instantiation(instance):
     assert isinstance(instance, ScoreServiceTest)
 
-@given(instance=ScoreServiceTest_strategy)
-def test_scoreservicetest_GAME_NAME_type(instance):
-    assert isinstance(instance.GAME_NAME, str)
 
 
 @given(instance=ScoreServiceTest_strategy)
@@ -1902,9 +1791,6 @@ def test_scoreservicetest_GAME_NAME_setter(instance):
 def test_scoreservicejdbctest_instantiation(instance):
     assert isinstance(instance, ScoreServiceJDBCTest)
 
-@given(instance=ScoreServiceJDBCTest_strategy)
-def test_scoreservicejdbctest_PASS_type(instance):
-    assert isinstance(instance.PASS, str)
 
 
 @given(instance=ScoreServiceJDBCTest_strategy)
@@ -1913,20 +1799,6 @@ def test_scoreservicejdbctest_PASS_setter(instance):
     instance.PASS = original
     assert instance.PASS == original
 
-@given(instance=ScoreServiceJDBCTest_strategy)
-def test_scoreservicejdbctest_URL_type(instance):
-    assert isinstance(instance.URL, str)
-
-
-@given(instance=ScoreServiceJDBCTest_strategy)
-def test_scoreservicejdbctest_URL_setter(instance):
-    original = instance.URL
-    instance.URL = original
-    assert instance.URL == original
-
-@given(instance=ScoreServiceJDBCTest_strategy)
-def test_scoreservicejdbctest_DELETE_type(instance):
-    assert isinstance(instance.DELETE, str)
 
 
 @given(instance=ScoreServiceJDBCTest_strategy)
@@ -1935,9 +1807,14 @@ def test_scoreservicejdbctest_DELETE_setter(instance):
     instance.DELETE = original
     assert instance.DELETE == original
 
+
+
 @given(instance=ScoreServiceJDBCTest_strategy)
-def test_scoreservicejdbctest_USER_type(instance):
-    assert isinstance(instance.USER, str)
+def test_scoreservicejdbctest_URL_setter(instance):
+    original = instance.URL
+    instance.URL = original
+    assert instance.URL == original
+
 
 
 @given(instance=ScoreServiceJDBCTest_strategy)
@@ -1951,20 +1828,6 @@ def test_scoreservicejdbctest_USER_setter(instance):
 def test_ratingservicetest_instantiation(instance):
     assert isinstance(instance, RatingServiceTest)
 
-@given(instance=RatingServiceTest_strategy)
-def test_ratingservicetest_TEST_PLAYER_2_type(instance):
-    assert isinstance(instance.TEST_PLAYER_2, str)
-
-
-@given(instance=RatingServiceTest_strategy)
-def test_ratingservicetest_TEST_PLAYER_2_setter(instance):
-    original = instance.TEST_PLAYER_2
-    instance.TEST_PLAYER_2 = original
-    assert instance.TEST_PLAYER_2 == original
-
-@given(instance=RatingServiceTest_strategy)
-def test_ratingservicetest_TEST_PLAYER_type(instance):
-    assert isinstance(instance.TEST_PLAYER, str)
 
 
 @given(instance=RatingServiceTest_strategy)
@@ -1973,9 +1836,14 @@ def test_ratingservicetest_TEST_PLAYER_setter(instance):
     instance.TEST_PLAYER = original
     assert instance.TEST_PLAYER == original
 
+
+
 @given(instance=RatingServiceTest_strategy)
-def test_ratingservicetest_GAME_NAME_type(instance):
-    assert isinstance(instance.GAME_NAME, str)
+def test_ratingservicetest_TEST_PLAYER_2_setter(instance):
+    original = instance.TEST_PLAYER_2
+    instance.TEST_PLAYER_2 = original
+    assert instance.TEST_PLAYER_2 == original
+
 
 
 @given(instance=RatingServiceTest_strategy)
@@ -1984,9 +1852,6 @@ def test_ratingservicetest_GAME_NAME_setter(instance):
     instance.GAME_NAME = original
     assert instance.GAME_NAME == original
 
-@given(instance=RatingServiceTest_strategy)
-def test_ratingservicetest_TEST_PLAYER_3_type(instance):
-    assert isinstance(instance.TEST_PLAYER_3, str)
 
 
 @given(instance=RatingServiceTest_strategy)
@@ -2000,9 +1865,6 @@ def test_ratingservicetest_TEST_PLAYER_3_setter(instance):
 def test_commentservicetest_instantiation(instance):
     assert isinstance(instance, CommentServiceTest)
 
-@given(instance=CommentServiceTest_strategy)
-def test_commentservicetest_PLAYER_NAME_type(instance):
-    assert isinstance(instance.PLAYER_NAME, str)
 
 
 @given(instance=CommentServiceTest_strategy)
@@ -2011,9 +1873,6 @@ def test_commentservicetest_PLAYER_NAME_setter(instance):
     instance.PLAYER_NAME = original
     assert instance.PLAYER_NAME == original
 
-@given(instance=CommentServiceTest_strategy)
-def test_commentservicetest_GAME_NAME_type(instance):
-    assert isinstance(instance.GAME_NAME, str)
 
 
 @given(instance=CommentServiceTest_strategy)
@@ -2027,42 +1886,6 @@ def test_commentservicetest_GAME_NAME_setter(instance):
 def test_commentservicejdbctest_instantiation(instance):
     assert isinstance(instance, CommentServiceJDBCTest)
 
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_USER_type(instance):
-    assert isinstance(instance.USER, str)
-
-
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_USER_setter(instance):
-    original = instance.USER
-    instance.USER = original
-    assert instance.USER == original
-
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_PASS_type(instance):
-    assert isinstance(instance.PASS, str)
-
-
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_PASS_setter(instance):
-    original = instance.PASS
-    instance.PASS = original
-    assert instance.PASS == original
-
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_DELETE_type(instance):
-    assert isinstance(instance.DELETE, str)
-
-
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_DELETE_setter(instance):
-    original = instance.DELETE
-    instance.DELETE = original
-    assert instance.DELETE == original
-
-@given(instance=CommentServiceJDBCTest_strategy)
-def test_commentservicejdbctest_URL_type(instance):
-    assert isinstance(instance.URL, str)
 
 
 @given(instance=CommentServiceJDBCTest_strategy)
@@ -2071,36 +1894,35 @@ def test_commentservicejdbctest_URL_setter(instance):
     instance.URL = original
     assert instance.URL == original
 
+
+
+@given(instance=CommentServiceJDBCTest_strategy)
+def test_commentservicejdbctest_USER_setter(instance):
+    original = instance.USER
+    instance.USER = original
+    assert instance.USER == original
+
+
+
+@given(instance=CommentServiceJDBCTest_strategy)
+def test_commentservicejdbctest_DELETE_setter(instance):
+    original = instance.DELETE
+    instance.DELETE = original
+    assert instance.DELETE == original
+
+
+
+@given(instance=CommentServiceJDBCTest_strategy)
+def test_commentservicejdbctest_PASS_setter(instance):
+    original = instance.PASS
+    instance.PASS = original
+    assert instance.PASS == original
+
 @given(instance=services_ScoreServiceJDBC_strategy)
 @settings(max_examples=50)
 def test_services_scoreservicejdbc_instantiation(instance):
     assert isinstance(instance, services_ScoreServiceJDBC)
 
-@given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_PASSWORD_type(instance):
-    assert isinstance(instance.PASSWORD, str)
-
-
-@given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_PASSWORD_setter(instance):
-    original = instance.PASSWORD
-    instance.PASSWORD = original
-    assert instance.PASSWORD == original
-
-@given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_INSERT_SCORE_type(instance):
-    assert isinstance(instance.INSERT_SCORE, str)
-
-
-@given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_INSERT_SCORE_setter(instance):
-    original = instance.INSERT_SCORE
-    instance.INSERT_SCORE = original
-    assert instance.INSERT_SCORE == original
-
-@given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_URL_type(instance):
-    assert isinstance(instance.URL, str)
 
 
 @given(instance=services_ScoreServiceJDBC_strategy)
@@ -2109,9 +1931,22 @@ def test_services_scoreservicejdbc_URL_setter(instance):
     instance.URL = original
     assert instance.URL == original
 
+
+
 @given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_USER_type(instance):
-    assert isinstance(instance.USER, str)
+def test_services_scoreservicejdbc_INSERT_SCORE_setter(instance):
+    original = instance.INSERT_SCORE
+    instance.INSERT_SCORE = original
+    assert instance.INSERT_SCORE == original
+
+
+
+@given(instance=services_ScoreServiceJDBC_strategy)
+def test_services_scoreservicejdbc_PASSWORD_setter(instance):
+    original = instance.PASSWORD
+    instance.PASSWORD = original
+    assert instance.PASSWORD == original
+
 
 
 @given(instance=services_ScoreServiceJDBC_strategy)
@@ -2120,9 +1955,6 @@ def test_services_scoreservicejdbc_USER_setter(instance):
     instance.USER = original
     assert instance.USER == original
 
-@given(instance=services_ScoreServiceJDBC_strategy)
-def test_services_scoreservicejdbc_SELECT_SCORE_type(instance):
-    assert isinstance(instance.SELECT_SCORE, str)
 
 
 @given(instance=services_ScoreServiceJDBC_strategy)

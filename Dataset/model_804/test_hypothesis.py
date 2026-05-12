@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    kfsm::Action,
-    kfsm::Transition,
-    kfsm::State,
-    kfsm::FSM,
+from python_code import (
+    kfsm_Action,
+    kfsm_Transition,
+    kfsm_State,
+    kfsm_FSM,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_kfsm::action_is_not_abstract():
-    assert not inspect.isabstract(kfsm::Action)
+def test_kfsm_action_is_not_abstract():
+    assert not inspect.isabstract(kfsm_Action)
 
 
-def test_kfsm::action_constructor_exists():
-    assert callable(kfsm::Action.__init__)
+def test_kfsm_action_constructor_exists():
+    assert callable(kfsm_Action.__init__)
 
 
-def test_kfsm::action_constructor_args():
-    sig = inspect.signature(kfsm::Action.__init__)
+def test_kfsm_action_constructor_args():
+    sig = inspect.signature(kfsm_Action.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_kfsm::action_has_id():
-    assert hasattr(kfsm::Action, "id")
+def test_kfsm_action_has_id():
+    assert hasattr(kfsm_Action, "id")
     descriptor = None
-    for klass in kfsm::Action.__mro__:
+    for klass in kfsm_Action.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -42,57 +42,57 @@ def test_kfsm::action_has_id():
 
 
 
-def test_kfsm::transition_is_not_abstract():
-    assert not inspect.isabstract(kfsm::Transition)
+def test_kfsm_transition_is_not_abstract():
+    assert not inspect.isabstract(kfsm_Transition)
 
 
-def test_kfsm::transition_constructor_exists():
-    assert callable(kfsm::Transition.__init__)
+def test_kfsm_transition_constructor_exists():
+    assert callable(kfsm_Transition.__init__)
 
 
-def test_kfsm::transition_constructor_args():
-    sig = inspect.signature(kfsm::Transition.__init__)
+def test_kfsm_transition_constructor_args():
+    sig = inspect.signature(kfsm_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "input" in params, "Missing parameter 'input'"
     assert "output" in params, "Missing parameter 'output'"
+    assert "input" in params, "Missing parameter 'input'"
 
-def test_kfsm::transition_has_input():
-    assert hasattr(kfsm::Transition, "input")
+def test_kfsm_transition_has_output():
+    assert hasattr(kfsm_Transition, "output")
     descriptor = None
-    for klass in kfsm::Transition.__mro__:
-        if "input" in klass.__dict__:
-            descriptor = klass.__dict__["input"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kfsm::transition_has_output():
-    assert hasattr(kfsm::Transition, "output")
-    descriptor = None
-    for klass in kfsm::Transition.__mro__:
+    for klass in kfsm_Transition.__mro__:
         if "output" in klass.__dict__:
             descriptor = klass.__dict__["output"]
             break
     assert isinstance(descriptor, property)
 
+def test_kfsm_transition_has_input():
+    assert hasattr(kfsm_Transition, "input")
+    descriptor = None
+    for klass in kfsm_Transition.__mro__:
+        if "input" in klass.__dict__:
+            descriptor = klass.__dict__["input"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_kfsm::state_is_not_abstract():
-    assert not inspect.isabstract(kfsm::State)
+
+def test_kfsm_state_is_not_abstract():
+    assert not inspect.isabstract(kfsm_State)
 
 
-def test_kfsm::state_constructor_exists():
-    assert callable(kfsm::State.__init__)
+def test_kfsm_state_constructor_exists():
+    assert callable(kfsm_State.__init__)
 
 
-def test_kfsm::state_constructor_args():
-    sig = inspect.signature(kfsm::State.__init__)
+def test_kfsm_state_constructor_args():
+    sig = inspect.signature(kfsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_kfsm::state_has_name():
-    assert hasattr(kfsm::State, "name")
+def test_kfsm_state_has_name():
+    assert hasattr(kfsm_State, "name")
     descriptor = None
-    for klass in kfsm::State.__mro__:
+    for klass in kfsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -100,16 +100,16 @@ def test_kfsm::state_has_name():
 
 
 
-def test_kfsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(kfsm::FSM)
+def test_kfsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(kfsm_FSM)
 
 
-def test_kfsm::fsm_constructor_exists():
-    assert callable(kfsm::FSM.__init__)
+def test_kfsm_fsm_constructor_exists():
+    assert callable(kfsm_FSM.__init__)
 
 
-def test_kfsm::fsm_constructor_args():
-    sig = inspect.signature(kfsm::FSM.__init__)
+def test_kfsm_fsm_constructor_args():
+    sig = inspect.signature(kfsm_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-kfsm::Action_strategy = st.builds(
-    kfsm::Action,
+kfsm_Action_strategy = st.builds(
+    kfsm_Action,
     id=
         safe_text
 )
-kfsm::Transition_strategy = st.builds(
-    kfsm::Transition,
-    input=
-        safe_text,
+kfsm_Transition_strategy = st.builds(
+    kfsm_Transition,
     output=
+        safe_text,
+    input=
         safe_text
 )
-kfsm::State_strategy = st.builds(
-    kfsm::State,
+kfsm_State_strategy = st.builds(
+    kfsm_State,
     name=
         safe_text
 )
-kfsm::FSM_strategy = st.builds(
-    kfsm::FSM,
+kfsm_FSM_strategy = st.builds(
+    kfsm_FSM,
 )
 
-@given(instance=kfsm::Action_strategy)
+@given(instance=kfsm_Action_strategy)
 @settings(max_examples=50)
-def test_kfsm::action_instantiation(instance):
-    assert isinstance(instance, kfsm::Action)
-
-@given(instance=kfsm::Action_strategy)
-def test_kfsm::action_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_kfsm_action_instantiation(instance):
+    assert isinstance(instance, kfsm_Action)
 
 
-@given(instance=kfsm::Action_strategy)
-def test_kfsm::action_id_setter(instance):
+
+@given(instance=kfsm_Action_strategy)
+def test_kfsm_action_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=kfsm::Transition_strategy)
+@given(instance=kfsm_Transition_strategy)
 @settings(max_examples=50)
-def test_kfsm::transition_instantiation(instance):
-    assert isinstance(instance, kfsm::Transition)
-
-@given(instance=kfsm::Transition_strategy)
-def test_kfsm::transition_input_type(instance):
-    assert isinstance(instance.input, str)
+def test_kfsm_transition_instantiation(instance):
+    assert isinstance(instance, kfsm_Transition)
 
 
-@given(instance=kfsm::Transition_strategy)
-def test_kfsm::transition_input_setter(instance):
-    original = instance.input
-    instance.input = original
-    assert instance.input == original
 
-@given(instance=kfsm::Transition_strategy)
-def test_kfsm::transition_output_type(instance):
-    assert isinstance(instance.output, str)
-
-
-@given(instance=kfsm::Transition_strategy)
-def test_kfsm::transition_output_setter(instance):
+@given(instance=kfsm_Transition_strategy)
+def test_kfsm_transition_output_setter(instance):
     original = instance.output
     instance.output = original
     assert instance.output == original
 
-@given(instance=kfsm::State_strategy)
+
+
+@given(instance=kfsm_Transition_strategy)
+def test_kfsm_transition_input_setter(instance):
+    original = instance.input
+    instance.input = original
+    assert instance.input == original
+
+@given(instance=kfsm_State_strategy)
 @settings(max_examples=50)
-def test_kfsm::state_instantiation(instance):
-    assert isinstance(instance, kfsm::State)
-
-@given(instance=kfsm::State_strategy)
-def test_kfsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_kfsm_state_instantiation(instance):
+    assert isinstance(instance, kfsm_State)
 
 
-@given(instance=kfsm::State_strategy)
-def test_kfsm::state_name_setter(instance):
+
+@given(instance=kfsm_State_strategy)
+def test_kfsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=kfsm::FSM_strategy)
+@given(instance=kfsm_FSM_strategy)
 @settings(max_examples=50)
-def test_kfsm::fsm_instantiation(instance):
-    assert isinstance(instance, kfsm::FSM)
+def test_kfsm_fsm_instantiation(instance):
+    assert isinstance(instance, kfsm_FSM)

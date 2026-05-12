@@ -3,219 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    MicrocontrollerModeling::Processor,
-    MicrocontrollerModeling::CLanguage,
-    MicrocontrollerModeling::Pin,
-    MicrocontrollerModeling::Microcontroller,
+from python_code import (
     EEPROM,
     ROM,
-    MicrocontrollerModeling::EEPROM,
+    MicrocontrollerModeling_EEPROM,
     Memory,
-    MicrocontrollerModeling::PinMode,
-    MicrocontrollerModeling::Library,
-    MicrocontrollerModeling::Register,
-    MicrocontrollerModeling::RAM,
-    MicrocontrollerModeling::Flash,
-    MicrocontrollerModeling::Memory,
+    MicrocontrollerModeling_PinMode,
+    MicrocontrollerModeling_Library,
+    MicrocontrollerModeling_Register,
+    MicrocontrollerModeling_RAM,
+    MicrocontrollerModeling_Flash,
+    MicrocontrollerModeling_Memory,
     Function,
-    MicrocontrollerModeling::TimerConfig,
-    MicrocontrollerModeling::Instruction,
-    MicrocontrollerModeling::Parameter,
-    MicrocontrollerModeling::Function,
-    MicrocontrollerModeling::PinOperation,
-    MicrocontrollerModeling::ROM,
-    OperationName,
-    RegType,
-    SpeedUnit,
-    PinModes,
-    MemoryUnit,
-    WordSize,
+    MicrocontrollerModeling_TimerConfig,
+    MicrocontrollerModeling_Instruction,
+    MicrocontrollerModeling_Parameter,
+    MicrocontrollerModeling_Function,
+    MicrocontrollerModeling_PinOperation,
+    MicrocontrollerModeling_ROM,
+    MicrocontrollerModeling_Processor,
+    MicrocontrollerModeling_CLanguage,
+    MicrocontrollerModeling_Pin,
+    MicrocontrollerModeling_Microcontroller,
     PinNature,
+    RegType,
+    OperationName,
+    WordSize,
     TimerOp,
+    SpeedUnit,
+    MemoryUnit,
+    PinModes,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_microcontrollermodeling::processor_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Processor)
-
-
-def test_microcontrollermodeling::processor_constructor_exists():
-    assert callable(MicrocontrollerModeling::Processor.__init__)
-
-
-def test_microcontrollermodeling::processor_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Processor.__init__)
-    params = list(sig.parameters.keys())
-    assert "unit" in params, "Missing parameter 'unit'"
-    assert "speed" in params, "Missing parameter 'speed'"
-
-def test_microcontrollermodeling::processor_has_unit():
-    assert hasattr(MicrocontrollerModeling::Processor, "unit")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Processor.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::processor_has_speed():
-    assert hasattr(MicrocontrollerModeling::Processor, "speed")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Processor.__mro__:
-        if "speed" in klass.__dict__:
-            descriptor = klass.__dict__["speed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_microcontrollermodeling::clanguage_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::CLanguage)
-
-
-def test_microcontrollermodeling::clanguage_constructor_exists():
-    assert callable(MicrocontrollerModeling::CLanguage.__init__)
-
-
-def test_microcontrollermodeling::clanguage_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::CLanguage.__init__)
-    params = list(sig.parameters.keys())
-    assert "filesExtension" in params, "Missing parameter 'filesExtension'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "hasMain" in params, "Missing parameter 'hasMain'"
-
-def test_microcontrollermodeling::clanguage_has_filesExtension():
-    assert hasattr(MicrocontrollerModeling::CLanguage, "filesExtension")
-    descriptor = None
-    for klass in MicrocontrollerModeling::CLanguage.__mro__:
-        if "filesExtension" in klass.__dict__:
-            descriptor = klass.__dict__["filesExtension"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::clanguage_has_name():
-    assert hasattr(MicrocontrollerModeling::CLanguage, "name")
-    descriptor = None
-    for klass in MicrocontrollerModeling::CLanguage.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::clanguage_has_hasMain():
-    assert hasattr(MicrocontrollerModeling::CLanguage, "hasMain")
-    descriptor = None
-    for klass in MicrocontrollerModeling::CLanguage.__mro__:
-        if "hasMain" in klass.__dict__:
-            descriptor = klass.__dict__["hasMain"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_microcontrollermodeling::pin_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Pin)
-
-
-def test_microcontrollermodeling::pin_constructor_exists():
-    assert callable(MicrocontrollerModeling::Pin.__init__)
-
-
-def test_microcontrollermodeling::pin_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Pin.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "nature" in params, "Missing parameter 'nature'"
-    assert "number" in params, "Missing parameter 'number'"
-
-def test_microcontrollermodeling::pin_has_name():
-    assert hasattr(MicrocontrollerModeling::Pin, "name")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Pin.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::pin_has_nature():
-    assert hasattr(MicrocontrollerModeling::Pin, "nature")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Pin.__mro__:
-        if "nature" in klass.__dict__:
-            descriptor = klass.__dict__["nature"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::pin_has_number():
-    assert hasattr(MicrocontrollerModeling::Pin, "number")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Pin.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_microcontrollermodeling::microcontroller_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Microcontroller)
-
-
-def test_microcontrollermodeling::microcontroller_constructor_exists():
-    assert callable(MicrocontrollerModeling::Microcontroller.__init__)
-
-
-def test_microcontrollermodeling::microcontroller_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Microcontroller.__init__)
-    params = list(sig.parameters.keys())
-    assert "wordMemory" in params, "Missing parameter 'wordMemory'"
-    assert "manufacturer" in params, "Missing parameter 'manufacturer'"
-    assert "family" in params, "Missing parameter 'family'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_microcontrollermodeling::microcontroller_has_wordMemory():
-    assert hasattr(MicrocontrollerModeling::Microcontroller, "wordMemory")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Microcontroller.__mro__:
-        if "wordMemory" in klass.__dict__:
-            descriptor = klass.__dict__["wordMemory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::microcontroller_has_manufacturer():
-    assert hasattr(MicrocontrollerModeling::Microcontroller, "manufacturer")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Microcontroller.__mro__:
-        if "manufacturer" in klass.__dict__:
-            descriptor = klass.__dict__["manufacturer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::microcontroller_has_family():
-    assert hasattr(MicrocontrollerModeling::Microcontroller, "family")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Microcontroller.__mro__:
-        if "family" in klass.__dict__:
-            descriptor = klass.__dict__["family"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_microcontrollermodeling::microcontroller_has_name():
-    assert hasattr(MicrocontrollerModeling::Microcontroller, "name")
-    descriptor = None
-    for klass in MicrocontrollerModeling::Microcontroller.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -247,16 +71,16 @@ def test_rom_constructor_args():
 
 
 
-def test_microcontrollermodeling::eeprom_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::EEPROM)
+def test_microcontrollermodeling_eeprom_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_EEPROM)
 
 
-def test_microcontrollermodeling::eeprom_constructor_exists():
-    assert callable(MicrocontrollerModeling::EEPROM.__init__)
+def test_microcontrollermodeling_eeprom_constructor_exists():
+    assert callable(MicrocontrollerModeling_EEPROM.__init__)
 
 
-def test_microcontrollermodeling::eeprom_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::EEPROM.__init__)
+def test_microcontrollermodeling_eeprom_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_EEPROM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -275,33 +99,33 @@ def test_memory_constructor_args():
 
 
 
-def test_microcontrollermodeling::pinmode_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::PinMode)
+def test_microcontrollermodeling_pinmode_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_PinMode)
 
 
-def test_microcontrollermodeling::pinmode_constructor_exists():
-    assert callable(MicrocontrollerModeling::PinMode.__init__)
+def test_microcontrollermodeling_pinmode_constructor_exists():
+    assert callable(MicrocontrollerModeling_PinMode.__init__)
 
 
-def test_microcontrollermodeling::pinmode_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::PinMode.__init__)
+def test_microcontrollermodeling_pinmode_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_PinMode.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_microcontrollermodeling::pinmode_has_name():
-    assert hasattr(MicrocontrollerModeling::PinMode, "name")
+def test_microcontrollermodeling_pinmode_has_name():
+    assert hasattr(MicrocontrollerModeling_PinMode, "name")
     descriptor = None
-    for klass in MicrocontrollerModeling::PinMode.__mro__:
+    for klass in MicrocontrollerModeling_PinMode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_microcontrollermodeling::pinmode_has_value():
-    assert hasattr(MicrocontrollerModeling::PinMode, "value")
+def test_microcontrollermodeling_pinmode_has_value():
+    assert hasattr(MicrocontrollerModeling_PinMode, "value")
     descriptor = None
-    for klass in MicrocontrollerModeling::PinMode.__mro__:
+    for klass in MicrocontrollerModeling_PinMode.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -309,23 +133,23 @@ def test_microcontrollermodeling::pinmode_has_value():
 
 
 
-def test_microcontrollermodeling::library_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Library)
+def test_microcontrollermodeling_library_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Library)
 
 
-def test_microcontrollermodeling::library_constructor_exists():
-    assert callable(MicrocontrollerModeling::Library.__init__)
+def test_microcontrollermodeling_library_constructor_exists():
+    assert callable(MicrocontrollerModeling_Library.__init__)
 
 
-def test_microcontrollermodeling::library_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Library.__init__)
+def test_microcontrollermodeling_library_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_microcontrollermodeling::library_has_name():
-    assert hasattr(MicrocontrollerModeling::Library, "name")
+def test_microcontrollermodeling_library_has_name():
+    assert hasattr(MicrocontrollerModeling_Library, "name")
     descriptor = None
-    for klass in MicrocontrollerModeling::Library.__mro__:
+    for klass in MicrocontrollerModeling_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -333,33 +157,33 @@ def test_microcontrollermodeling::library_has_name():
 
 
 
-def test_microcontrollermodeling::register_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Register)
+def test_microcontrollermodeling_register_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Register)
 
 
-def test_microcontrollermodeling::register_constructor_exists():
-    assert callable(MicrocontrollerModeling::Register.__init__)
+def test_microcontrollermodeling_register_constructor_exists():
+    assert callable(MicrocontrollerModeling_Register.__init__)
 
 
-def test_microcontrollermodeling::register_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Register.__init__)
+def test_microcontrollermodeling_register_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Register.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_microcontrollermodeling::register_has_type():
-    assert hasattr(MicrocontrollerModeling::Register, "type")
+def test_microcontrollermodeling_register_has_type():
+    assert hasattr(MicrocontrollerModeling_Register, "type")
     descriptor = None
-    for klass in MicrocontrollerModeling::Register.__mro__:
+    for klass in MicrocontrollerModeling_Register.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_microcontrollermodeling::register_has_name():
-    assert hasattr(MicrocontrollerModeling::Register, "name")
+def test_microcontrollermodeling_register_has_name():
+    assert hasattr(MicrocontrollerModeling_Register, "name")
     descriptor = None
-    for klass in MicrocontrollerModeling::Register.__mro__:
+    for klass in MicrocontrollerModeling_Register.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -367,61 +191,61 @@ def test_microcontrollermodeling::register_has_name():
 
 
 
-def test_microcontrollermodeling::ram_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::RAM)
+def test_microcontrollermodeling_ram_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_RAM)
 
 
-def test_microcontrollermodeling::ram_constructor_exists():
-    assert callable(MicrocontrollerModeling::RAM.__init__)
+def test_microcontrollermodeling_ram_constructor_exists():
+    assert callable(MicrocontrollerModeling_RAM.__init__)
 
 
-def test_microcontrollermodeling::ram_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::RAM.__init__)
+def test_microcontrollermodeling_ram_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_RAM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_microcontrollermodeling::flash_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Flash)
+def test_microcontrollermodeling_flash_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Flash)
 
 
-def test_microcontrollermodeling::flash_constructor_exists():
-    assert callable(MicrocontrollerModeling::Flash.__init__)
+def test_microcontrollermodeling_flash_constructor_exists():
+    assert callable(MicrocontrollerModeling_Flash.__init__)
 
 
-def test_microcontrollermodeling::flash_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Flash.__init__)
+def test_microcontrollermodeling_flash_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Flash.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_microcontrollermodeling::memory_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Memory)
+def test_microcontrollermodeling_memory_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Memory)
 
 
-def test_microcontrollermodeling::memory_constructor_exists():
-    assert callable(MicrocontrollerModeling::Memory.__init__)
+def test_microcontrollermodeling_memory_constructor_exists():
+    assert callable(MicrocontrollerModeling_Memory.__init__)
 
 
-def test_microcontrollermodeling::memory_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Memory.__init__)
+def test_microcontrollermodeling_memory_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Memory.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
     assert "size" in params, "Missing parameter 'size'"
 
-def test_microcontrollermodeling::memory_has_unit():
-    assert hasattr(MicrocontrollerModeling::Memory, "unit")
+def test_microcontrollermodeling_memory_has_unit():
+    assert hasattr(MicrocontrollerModeling_Memory, "unit")
     descriptor = None
-    for klass in MicrocontrollerModeling::Memory.__mro__:
+    for klass in MicrocontrollerModeling_Memory.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_microcontrollermodeling::memory_has_size():
-    assert hasattr(MicrocontrollerModeling::Memory, "size")
+def test_microcontrollermodeling_memory_has_size():
+    assert hasattr(MicrocontrollerModeling_Memory, "size")
     descriptor = None
-    for klass in MicrocontrollerModeling::Memory.__mro__:
+    for klass in MicrocontrollerModeling_Memory.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -443,33 +267,33 @@ def test_function_constructor_args():
 
 
 
-def test_microcontrollermodeling::timerconfig_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::TimerConfig)
+def test_microcontrollermodeling_timerconfig_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_TimerConfig)
 
 
-def test_microcontrollermodeling::timerconfig_constructor_exists():
-    assert callable(MicrocontrollerModeling::TimerConfig.__init__)
+def test_microcontrollermodeling_timerconfig_constructor_exists():
+    assert callable(MicrocontrollerModeling_TimerConfig.__init__)
 
 
-def test_microcontrollermodeling::timerconfig_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::TimerConfig.__init__)
+def test_microcontrollermodeling_timerconfig_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_TimerConfig.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "period" in params, "Missing parameter 'period'"
 
-def test_microcontrollermodeling::timerconfig_has_name():
-    assert hasattr(MicrocontrollerModeling::TimerConfig, "name")
+def test_microcontrollermodeling_timerconfig_has_name():
+    assert hasattr(MicrocontrollerModeling_TimerConfig, "name")
     descriptor = None
-    for klass in MicrocontrollerModeling::TimerConfig.__mro__:
+    for klass in MicrocontrollerModeling_TimerConfig.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_microcontrollermodeling::timerconfig_has_period():
-    assert hasattr(MicrocontrollerModeling::TimerConfig, "period")
+def test_microcontrollermodeling_timerconfig_has_period():
+    assert hasattr(MicrocontrollerModeling_TimerConfig, "period")
     descriptor = None
-    for klass in MicrocontrollerModeling::TimerConfig.__mro__:
+    for klass in MicrocontrollerModeling_TimerConfig.__mro__:
         if "period" in klass.__dict__:
             descriptor = klass.__dict__["period"]
             break
@@ -477,23 +301,23 @@ def test_microcontrollermodeling::timerconfig_has_period():
 
 
 
-def test_microcontrollermodeling::instruction_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Instruction)
+def test_microcontrollermodeling_instruction_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Instruction)
 
 
-def test_microcontrollermodeling::instruction_constructor_exists():
-    assert callable(MicrocontrollerModeling::Instruction.__init__)
+def test_microcontrollermodeling_instruction_constructor_exists():
+    assert callable(MicrocontrollerModeling_Instruction.__init__)
 
 
-def test_microcontrollermodeling::instruction_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Instruction.__init__)
+def test_microcontrollermodeling_instruction_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Instruction.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_microcontrollermodeling::instruction_has_value():
-    assert hasattr(MicrocontrollerModeling::Instruction, "value")
+def test_microcontrollermodeling_instruction_has_value():
+    assert hasattr(MicrocontrollerModeling_Instruction, "value")
     descriptor = None
-    for klass in MicrocontrollerModeling::Instruction.__mro__:
+    for klass in MicrocontrollerModeling_Instruction.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -501,33 +325,33 @@ def test_microcontrollermodeling::instruction_has_value():
 
 
 
-def test_microcontrollermodeling::parameter_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Parameter)
+def test_microcontrollermodeling_parameter_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Parameter)
 
 
-def test_microcontrollermodeling::parameter_constructor_exists():
-    assert callable(MicrocontrollerModeling::Parameter.__init__)
+def test_microcontrollermodeling_parameter_constructor_exists():
+    assert callable(MicrocontrollerModeling_Parameter.__init__)
 
 
-def test_microcontrollermodeling::parameter_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Parameter.__init__)
+def test_microcontrollermodeling_parameter_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_microcontrollermodeling::parameter_has_type():
-    assert hasattr(MicrocontrollerModeling::Parameter, "type")
+def test_microcontrollermodeling_parameter_has_type():
+    assert hasattr(MicrocontrollerModeling_Parameter, "type")
     descriptor = None
-    for klass in MicrocontrollerModeling::Parameter.__mro__:
+    for klass in MicrocontrollerModeling_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_microcontrollermodeling::parameter_has_name():
-    assert hasattr(MicrocontrollerModeling::Parameter, "name")
+def test_microcontrollermodeling_parameter_has_name():
+    assert hasattr(MicrocontrollerModeling_Parameter, "name")
     descriptor = None
-    for klass in MicrocontrollerModeling::Parameter.__mro__:
+    for klass in MicrocontrollerModeling_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -535,23 +359,23 @@ def test_microcontrollermodeling::parameter_has_name():
 
 
 
-def test_microcontrollermodeling::function_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::Function)
+def test_microcontrollermodeling_function_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Function)
 
 
-def test_microcontrollermodeling::function_constructor_exists():
-    assert callable(MicrocontrollerModeling::Function.__init__)
+def test_microcontrollermodeling_function_constructor_exists():
+    assert callable(MicrocontrollerModeling_Function.__init__)
 
 
-def test_microcontrollermodeling::function_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::Function.__init__)
+def test_microcontrollermodeling_function_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Function.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_microcontrollermodeling::function_has_type():
-    assert hasattr(MicrocontrollerModeling::Function, "type")
+def test_microcontrollermodeling_function_has_type():
+    assert hasattr(MicrocontrollerModeling_Function, "type")
     descriptor = None
-    for klass in MicrocontrollerModeling::Function.__mro__:
+    for klass in MicrocontrollerModeling_Function.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -559,23 +383,23 @@ def test_microcontrollermodeling::function_has_type():
 
 
 
-def test_microcontrollermodeling::pinoperation_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::PinOperation)
+def test_microcontrollermodeling_pinoperation_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_PinOperation)
 
 
-def test_microcontrollermodeling::pinoperation_constructor_exists():
-    assert callable(MicrocontrollerModeling::PinOperation.__init__)
+def test_microcontrollermodeling_pinoperation_constructor_exists():
+    assert callable(MicrocontrollerModeling_PinOperation.__init__)
 
 
-def test_microcontrollermodeling::pinoperation_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::PinOperation.__init__)
+def test_microcontrollermodeling_pinoperation_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_PinOperation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_microcontrollermodeling::pinoperation_has_name():
-    assert hasattr(MicrocontrollerModeling::PinOperation, "name")
+def test_microcontrollermodeling_pinoperation_has_name():
+    assert hasattr(MicrocontrollerModeling_PinOperation, "name")
     descriptor = None
-    for klass in MicrocontrollerModeling::PinOperation.__mro__:
+    for klass in MicrocontrollerModeling_PinOperation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -583,122 +407,193 @@ def test_microcontrollermodeling::pinoperation_has_name():
 
 
 
-def test_microcontrollermodeling::rom_is_not_abstract():
-    assert not inspect.isabstract(MicrocontrollerModeling::ROM)
+def test_microcontrollermodeling_rom_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_ROM)
 
 
-def test_microcontrollermodeling::rom_constructor_exists():
-    assert callable(MicrocontrollerModeling::ROM.__init__)
+def test_microcontrollermodeling_rom_constructor_exists():
+    assert callable(MicrocontrollerModeling_ROM.__init__)
 
 
-def test_microcontrollermodeling::rom_constructor_args():
-    sig = inspect.signature(MicrocontrollerModeling::ROM.__init__)
+def test_microcontrollermodeling_rom_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_ROM.__init__)
     params = list(sig.parameters.keys())
 
-def test_operationname_exists():
-    # Check that the Enumeration exists
-    assert OperationName is not None
 
-def test_operationname_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OperationName]
-    expected_literals = [
-        "digitalPinWrite",
-        "analogPinWrite",
-        "analogPinRead",
-        "pinConfigMode",
-        "digitalPinRead",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OperationName"
 
-def test_regtype_exists():
-    # Check that the Enumeration exists
-    assert RegType is not None
+def test_microcontrollermodeling_processor_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Processor)
 
-def test_regtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RegType]
-    expected_literals = [
-        "PCounter",
-        "CCR",
-        "IR",
-        "ICR",
-        "Stack",
-        "accumulator",
-        "general",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RegType"
 
-def test_speedunit_exists():
-    # Check that the Enumeration exists
-    assert SpeedUnit is not None
+def test_microcontrollermodeling_processor_constructor_exists():
+    assert callable(MicrocontrollerModeling_Processor.__init__)
 
-def test_speedunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SpeedUnit]
-    expected_literals = [
-        "MIPS",
-        "Mhz",
-        "Hz",
-        "GHz",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SpeedUnit"
 
-def test_pinmodes_exists():
-    # Check that the Enumeration exists
-    assert PinModes is not None
+def test_microcontrollermodeling_processor_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Processor.__init__)
+    params = list(sig.parameters.keys())
+    assert "speed" in params, "Missing parameter 'speed'"
+    assert "unit" in params, "Missing parameter 'unit'"
 
-def test_pinmodes_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PinModes]
-    expected_literals = [
-        "Output",
-        "Input",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PinModes"
+def test_microcontrollermodeling_processor_has_speed():
+    assert hasattr(MicrocontrollerModeling_Processor, "speed")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Processor.__mro__:
+        if "speed" in klass.__dict__:
+            descriptor = klass.__dict__["speed"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_memoryunit_exists():
-    # Check that the Enumeration exists
-    assert MemoryUnit is not None
+def test_microcontrollermodeling_processor_has_unit():
+    assert hasattr(MicrocontrollerModeling_Processor, "unit")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Processor.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_memoryunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MemoryUnit]
-    expected_literals = [
-        "Mo",
-        "Go",
-        "Ko",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MemoryUnit"
 
-def test_wordsize_exists():
-    # Check that the Enumeration exists
-    assert WordSize is not None
 
-def test_wordsize_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WordSize]
-    expected_literals = [
-        "wd_48bits",
-        "wd_32bits",
-        "wd_24bits",
-        "wd_16bits",
-        "wd_64bits",
-        "wd_8bits",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WordSize"
+def test_microcontrollermodeling_clanguage_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_CLanguage)
+
+
+def test_microcontrollermodeling_clanguage_constructor_exists():
+    assert callable(MicrocontrollerModeling_CLanguage.__init__)
+
+
+def test_microcontrollermodeling_clanguage_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_CLanguage.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "filesExtension" in params, "Missing parameter 'filesExtension'"
+    assert "hasMain" in params, "Missing parameter 'hasMain'"
+
+def test_microcontrollermodeling_clanguage_has_name():
+    assert hasattr(MicrocontrollerModeling_CLanguage, "name")
+    descriptor = None
+    for klass in MicrocontrollerModeling_CLanguage.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_clanguage_has_filesExtension():
+    assert hasattr(MicrocontrollerModeling_CLanguage, "filesExtension")
+    descriptor = None
+    for klass in MicrocontrollerModeling_CLanguage.__mro__:
+        if "filesExtension" in klass.__dict__:
+            descriptor = klass.__dict__["filesExtension"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_clanguage_has_hasMain():
+    assert hasattr(MicrocontrollerModeling_CLanguage, "hasMain")
+    descriptor = None
+    for klass in MicrocontrollerModeling_CLanguage.__mro__:
+        if "hasMain" in klass.__dict__:
+            descriptor = klass.__dict__["hasMain"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_microcontrollermodeling_pin_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Pin)
+
+
+def test_microcontrollermodeling_pin_constructor_exists():
+    assert callable(MicrocontrollerModeling_Pin.__init__)
+
+
+def test_microcontrollermodeling_pin_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Pin.__init__)
+    params = list(sig.parameters.keys())
+    assert "number" in params, "Missing parameter 'number'"
+    assert "nature" in params, "Missing parameter 'nature'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_microcontrollermodeling_pin_has_number():
+    assert hasattr(MicrocontrollerModeling_Pin, "number")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Pin.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_pin_has_nature():
+    assert hasattr(MicrocontrollerModeling_Pin, "nature")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Pin.__mro__:
+        if "nature" in klass.__dict__:
+            descriptor = klass.__dict__["nature"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_pin_has_name():
+    assert hasattr(MicrocontrollerModeling_Pin, "name")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Pin.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_microcontrollermodeling_microcontroller_is_not_abstract():
+    assert not inspect.isabstract(MicrocontrollerModeling_Microcontroller)
+
+
+def test_microcontrollermodeling_microcontroller_constructor_exists():
+    assert callable(MicrocontrollerModeling_Microcontroller.__init__)
+
+
+def test_microcontrollermodeling_microcontroller_constructor_args():
+    sig = inspect.signature(MicrocontrollerModeling_Microcontroller.__init__)
+    params = list(sig.parameters.keys())
+    assert "wordMemory" in params, "Missing parameter 'wordMemory'"
+    assert "family" in params, "Missing parameter 'family'"
+    assert "manufacturer" in params, "Missing parameter 'manufacturer'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_microcontrollermodeling_microcontroller_has_wordMemory():
+    assert hasattr(MicrocontrollerModeling_Microcontroller, "wordMemory")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Microcontroller.__mro__:
+        if "wordMemory" in klass.__dict__:
+            descriptor = klass.__dict__["wordMemory"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_microcontroller_has_family():
+    assert hasattr(MicrocontrollerModeling_Microcontroller, "family")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Microcontroller.__mro__:
+        if "family" in klass.__dict__:
+            descriptor = klass.__dict__["family"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_microcontroller_has_manufacturer():
+    assert hasattr(MicrocontrollerModeling_Microcontroller, "manufacturer")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Microcontroller.__mro__:
+        if "manufacturer" in klass.__dict__:
+            descriptor = klass.__dict__["manufacturer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_microcontrollermodeling_microcontroller_has_name():
+    assert hasattr(MicrocontrollerModeling_Microcontroller, "name")
+    descriptor = None
+    for klass in MicrocontrollerModeling_Microcontroller.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_pinnature_exists():
     # Check that the Enumeration exists
@@ -708,13 +603,70 @@ def test_pinnature_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PinNature]
     expected_literals = [
+        "Analog",
         "Mixed",
         "Digital",
-        "Analog",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PinNature"
+
+def test_regtype_exists():
+    # Check that the Enumeration exists
+    assert RegType is not None
+
+def test_regtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RegType]
+    expected_literals = [
+        "CCR",
+        "ICR",
+        "PCounter",
+        "general",
+        "accumulator",
+        "Stack",
+        "IR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RegType"
+
+def test_operationname_exists():
+    # Check that the Enumeration exists
+    assert OperationName is not None
+
+def test_operationname_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OperationName]
+    expected_literals = [
+        "pinConfigMode",
+        "digitalPinRead",
+        "digitalPinWrite",
+        "analogPinWrite",
+        "analogPinRead",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OperationName"
+
+def test_wordsize_exists():
+    # Check that the Enumeration exists
+    assert WordSize is not None
+
+def test_wordsize_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WordSize]
+    expected_literals = [
+        "wd_32bits",
+        "wd_64bits",
+        "wd_16bits",
+        "wd_8bits",
+        "wd_48bits",
+        "wd_24bits",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WordSize"
 
 def test_timerop_exists():
     # Check that the Enumeration exists
@@ -730,6 +682,54 @@ def test_timerop_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TimerOp"
 
+def test_speedunit_exists():
+    # Check that the Enumeration exists
+    assert SpeedUnit is not None
+
+def test_speedunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SpeedUnit]
+    expected_literals = [
+        "GHz",
+        "MIPS",
+        "Hz",
+        "Mhz",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SpeedUnit"
+
+def test_memoryunit_exists():
+    # Check that the Enumeration exists
+    assert MemoryUnit is not None
+
+def test_memoryunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MemoryUnit]
+    expected_literals = [
+        "Go",
+        "Mo",
+        "Ko",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MemoryUnit"
+
+def test_pinmodes_exists():
+    # Check that the Enumeration exists
+    assert PinModes is not None
+
+def test_pinmodes_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PinModes]
+    expected_literals = [
+        "Input",
+        "Output",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PinModes"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -742,81 +742,45 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-MicrocontrollerModeling::Processor_strategy = st.builds(
-    MicrocontrollerModeling::Processor,
-    unit=
-        safe_text,
-    speed=
-        st.integers()
-)
-MicrocontrollerModeling::CLanguage_strategy = st.builds(
-    MicrocontrollerModeling::CLanguage,
-    filesExtension=
-        safe_text,
-    name=
-        safe_text,
-    hasMain=
-        st.booleans()
-)
-MicrocontrollerModeling::Pin_strategy = st.builds(
-    MicrocontrollerModeling::Pin,
-    name=
-        safe_text,
-    nature=
-        safe_text,
-    number=
-        st.integers()
-)
-MicrocontrollerModeling::Microcontroller_strategy = st.builds(
-    MicrocontrollerModeling::Microcontroller,
-    wordMemory=
-        safe_text,
-    manufacturer=
-        safe_text,
-    family=
-        safe_text,
-    name=
-        safe_text
-)
 EEPROM_strategy = st.builds(
     EEPROM,
 )
 ROM_strategy = st.builds(
     ROM,
 )
-MicrocontrollerModeling::EEPROM_strategy = st.builds(
-    MicrocontrollerModeling::EEPROM,
+MicrocontrollerModeling_EEPROM_strategy = st.builds(
+    MicrocontrollerModeling_EEPROM,
 )
 Memory_strategy = st.builds(
     Memory,
 )
-MicrocontrollerModeling::PinMode_strategy = st.builds(
-    MicrocontrollerModeling::PinMode,
+MicrocontrollerModeling_PinMode_strategy = st.builds(
+    MicrocontrollerModeling_PinMode,
     name=
         safe_text,
     value=
         safe_text
 )
-MicrocontrollerModeling::Library_strategy = st.builds(
-    MicrocontrollerModeling::Library,
+MicrocontrollerModeling_Library_strategy = st.builds(
+    MicrocontrollerModeling_Library,
     name=
         safe_text
 )
-MicrocontrollerModeling::Register_strategy = st.builds(
-    MicrocontrollerModeling::Register,
+MicrocontrollerModeling_Register_strategy = st.builds(
+    MicrocontrollerModeling_Register,
     type=
         safe_text,
     name=
         safe_text
 )
-MicrocontrollerModeling::RAM_strategy = st.builds(
-    MicrocontrollerModeling::RAM,
+MicrocontrollerModeling_RAM_strategy = st.builds(
+    MicrocontrollerModeling_RAM,
 )
-MicrocontrollerModeling::Flash_strategy = st.builds(
-    MicrocontrollerModeling::Flash,
+MicrocontrollerModeling_Flash_strategy = st.builds(
+    MicrocontrollerModeling_Flash,
 )
-MicrocontrollerModeling::Memory_strategy = st.builds(
-    MicrocontrollerModeling::Memory,
+MicrocontrollerModeling_Memory_strategy = st.builds(
+    MicrocontrollerModeling_Memory,
     unit=
         safe_text,
     size=
@@ -825,190 +789,74 @@ MicrocontrollerModeling::Memory_strategy = st.builds(
 Function_strategy = st.builds(
     Function,
 )
-MicrocontrollerModeling::TimerConfig_strategy = st.builds(
-    MicrocontrollerModeling::TimerConfig,
+MicrocontrollerModeling_TimerConfig_strategy = st.builds(
+    MicrocontrollerModeling_TimerConfig,
     name=
         safe_text,
     period=
         st.integers()
 )
-MicrocontrollerModeling::Instruction_strategy = st.builds(
-    MicrocontrollerModeling::Instruction,
+MicrocontrollerModeling_Instruction_strategy = st.builds(
+    MicrocontrollerModeling_Instruction,
     value=
         safe_text
 )
-MicrocontrollerModeling::Parameter_strategy = st.builds(
-    MicrocontrollerModeling::Parameter,
+MicrocontrollerModeling_Parameter_strategy = st.builds(
+    MicrocontrollerModeling_Parameter,
     type=
         safe_text,
     name=
         safe_text
 )
-MicrocontrollerModeling::Function_strategy = st.builds(
-    MicrocontrollerModeling::Function,
+MicrocontrollerModeling_Function_strategy = st.builds(
+    MicrocontrollerModeling_Function,
     type=
         safe_text
 )
-MicrocontrollerModeling::PinOperation_strategy = st.builds(
-    MicrocontrollerModeling::PinOperation,
+MicrocontrollerModeling_PinOperation_strategy = st.builds(
+    MicrocontrollerModeling_PinOperation,
     name=
         safe_text
 )
-MicrocontrollerModeling::ROM_strategy = st.builds(
-    MicrocontrollerModeling::ROM,
+MicrocontrollerModeling_ROM_strategy = st.builds(
+    MicrocontrollerModeling_ROM,
 )
-
-@given(instance=MicrocontrollerModeling::Processor_strategy)
-@settings(max_examples=50)
-def test_microcontrollermodeling::processor_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Processor)
-
-@given(instance=MicrocontrollerModeling::Processor_strategy)
-def test_microcontrollermodeling::processor_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=MicrocontrollerModeling::Processor_strategy)
-def test_microcontrollermodeling::processor_unit_setter(instance):
-    original = instance.unit
-    instance.unit = original
-    assert instance.unit == original
-
-@given(instance=MicrocontrollerModeling::Processor_strategy)
-def test_microcontrollermodeling::processor_speed_type(instance):
-    assert isinstance(instance.speed, int)
-
-
-@given(instance=MicrocontrollerModeling::Processor_strategy)
-def test_microcontrollermodeling::processor_speed_setter(instance):
-    original = instance.speed
-    instance.speed = original
-    assert instance.speed == original
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-@settings(max_examples=50)
-def test_microcontrollermodeling::clanguage_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::CLanguage)
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-def test_microcontrollermodeling::clanguage_filesExtension_type(instance):
-    assert isinstance(instance.filesExtension, str)
-
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-def test_microcontrollermodeling::clanguage_filesExtension_setter(instance):
-    original = instance.filesExtension
-    instance.filesExtension = original
-    assert instance.filesExtension == original
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-def test_microcontrollermodeling::clanguage_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-def test_microcontrollermodeling::clanguage_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-def test_microcontrollermodeling::clanguage_hasMain_type(instance):
-    assert isinstance(instance.hasMain, bool)
-
-
-@given(instance=MicrocontrollerModeling::CLanguage_strategy)
-def test_microcontrollermodeling::clanguage_hasMain_setter(instance):
-    original = instance.hasMain
-    instance.hasMain = original
-    assert instance.hasMain == original
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-@settings(max_examples=50)
-def test_microcontrollermodeling::pin_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Pin)
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-def test_microcontrollermodeling::pin_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-def test_microcontrollermodeling::pin_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-def test_microcontrollermodeling::pin_nature_type(instance):
-    assert isinstance(instance.nature, str)
-
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-def test_microcontrollermodeling::pin_nature_setter(instance):
-    original = instance.nature
-    instance.nature = original
-    assert instance.nature == original
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-def test_microcontrollermodeling::pin_number_type(instance):
-    assert isinstance(instance.number, int)
-
-
-@given(instance=MicrocontrollerModeling::Pin_strategy)
-def test_microcontrollermodeling::pin_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-@settings(max_examples=50)
-def test_microcontrollermodeling::microcontroller_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Microcontroller)
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_wordMemory_type(instance):
-    assert isinstance(instance.wordMemory, str)
-
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_wordMemory_setter(instance):
-    original = instance.wordMemory
-    instance.wordMemory = original
-    assert instance.wordMemory == original
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_manufacturer_type(instance):
-    assert isinstance(instance.manufacturer, str)
-
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_manufacturer_setter(instance):
-    original = instance.manufacturer
-    instance.manufacturer = original
-    assert instance.manufacturer == original
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_family_type(instance):
-    assert isinstance(instance.family, str)
-
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_family_setter(instance):
-    original = instance.family
-    instance.family = original
-    assert instance.family == original
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=MicrocontrollerModeling::Microcontroller_strategy)
-def test_microcontrollermodeling::microcontroller_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+MicrocontrollerModeling_Processor_strategy = st.builds(
+    MicrocontrollerModeling_Processor,
+    speed=
+        st.integers(),
+    unit=
+        safe_text
+)
+MicrocontrollerModeling_CLanguage_strategy = st.builds(
+    MicrocontrollerModeling_CLanguage,
+    name=
+        safe_text,
+    filesExtension=
+        safe_text,
+    hasMain=
+        st.booleans()
+)
+MicrocontrollerModeling_Pin_strategy = st.builds(
+    MicrocontrollerModeling_Pin,
+    number=
+        st.integers(),
+    nature=
+        safe_text,
+    name=
+        safe_text
+)
+MicrocontrollerModeling_Microcontroller_strategy = st.builds(
+    MicrocontrollerModeling_Microcontroller,
+    wordMemory=
+        safe_text,
+    family=
+        safe_text,
+    manufacturer=
+        safe_text,
+    name=
+        safe_text
+)
 
 @given(instance=EEPROM_strategy)
 @settings(max_examples=50)
@@ -1020,119 +868,98 @@ def test_eeprom_instantiation(instance):
 def test_rom_instantiation(instance):
     assert isinstance(instance, ROM)
 
-@given(instance=MicrocontrollerModeling::EEPROM_strategy)
+@given(instance=MicrocontrollerModeling_EEPROM_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::eeprom_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::EEPROM)
+def test_microcontrollermodeling_eeprom_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_EEPROM)
 
 @given(instance=Memory_strategy)
 @settings(max_examples=50)
 def test_memory_instantiation(instance):
     assert isinstance(instance, Memory)
 
-@given(instance=MicrocontrollerModeling::PinMode_strategy)
+@given(instance=MicrocontrollerModeling_PinMode_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::pinmode_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::PinMode)
-
-@given(instance=MicrocontrollerModeling::PinMode_strategy)
-def test_microcontrollermodeling::pinmode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_microcontrollermodeling_pinmode_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_PinMode)
 
 
-@given(instance=MicrocontrollerModeling::PinMode_strategy)
-def test_microcontrollermodeling::pinmode_name_setter(instance):
+
+@given(instance=MicrocontrollerModeling_PinMode_strategy)
+def test_microcontrollermodeling_pinmode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MicrocontrollerModeling::PinMode_strategy)
-def test_microcontrollermodeling::pinmode_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=MicrocontrollerModeling::PinMode_strategy)
-def test_microcontrollermodeling::pinmode_value_setter(instance):
+@given(instance=MicrocontrollerModeling_PinMode_strategy)
+def test_microcontrollermodeling_pinmode_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=MicrocontrollerModeling::Library_strategy)
+@given(instance=MicrocontrollerModeling_Library_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::library_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Library)
-
-@given(instance=MicrocontrollerModeling::Library_strategy)
-def test_microcontrollermodeling::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_microcontrollermodeling_library_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Library)
 
 
-@given(instance=MicrocontrollerModeling::Library_strategy)
-def test_microcontrollermodeling::library_name_setter(instance):
+
+@given(instance=MicrocontrollerModeling_Library_strategy)
+def test_microcontrollermodeling_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MicrocontrollerModeling::Register_strategy)
+@given(instance=MicrocontrollerModeling_Register_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::register_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Register)
-
-@given(instance=MicrocontrollerModeling::Register_strategy)
-def test_microcontrollermodeling::register_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_microcontrollermodeling_register_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Register)
 
 
-@given(instance=MicrocontrollerModeling::Register_strategy)
-def test_microcontrollermodeling::register_type_setter(instance):
+
+@given(instance=MicrocontrollerModeling_Register_strategy)
+def test_microcontrollermodeling_register_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=MicrocontrollerModeling::Register_strategy)
-def test_microcontrollermodeling::register_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=MicrocontrollerModeling::Register_strategy)
-def test_microcontrollermodeling::register_name_setter(instance):
+@given(instance=MicrocontrollerModeling_Register_strategy)
+def test_microcontrollermodeling_register_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MicrocontrollerModeling::RAM_strategy)
+@given(instance=MicrocontrollerModeling_RAM_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::ram_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::RAM)
+def test_microcontrollermodeling_ram_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_RAM)
 
-@given(instance=MicrocontrollerModeling::Flash_strategy)
+@given(instance=MicrocontrollerModeling_Flash_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::flash_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Flash)
+def test_microcontrollermodeling_flash_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Flash)
 
-@given(instance=MicrocontrollerModeling::Memory_strategy)
+@given(instance=MicrocontrollerModeling_Memory_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::memory_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Memory)
-
-@given(instance=MicrocontrollerModeling::Memory_strategy)
-def test_microcontrollermodeling::memory_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_microcontrollermodeling_memory_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Memory)
 
 
-@given(instance=MicrocontrollerModeling::Memory_strategy)
-def test_microcontrollermodeling::memory_unit_setter(instance):
+
+@given(instance=MicrocontrollerModeling_Memory_strategy)
+def test_microcontrollermodeling_memory_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=MicrocontrollerModeling::Memory_strategy)
-def test_microcontrollermodeling::memory_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
-@given(instance=MicrocontrollerModeling::Memory_strategy)
-def test_microcontrollermodeling::memory_size_setter(instance):
+@given(instance=MicrocontrollerModeling_Memory_strategy)
+def test_microcontrollermodeling_memory_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
@@ -1142,109 +969,204 @@ def test_microcontrollermodeling::memory_size_setter(instance):
 def test_function_instantiation(instance):
     assert isinstance(instance, Function)
 
-@given(instance=MicrocontrollerModeling::TimerConfig_strategy)
+@given(instance=MicrocontrollerModeling_TimerConfig_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::timerconfig_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::TimerConfig)
-
-@given(instance=MicrocontrollerModeling::TimerConfig_strategy)
-def test_microcontrollermodeling::timerconfig_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_microcontrollermodeling_timerconfig_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_TimerConfig)
 
 
-@given(instance=MicrocontrollerModeling::TimerConfig_strategy)
-def test_microcontrollermodeling::timerconfig_name_setter(instance):
+
+@given(instance=MicrocontrollerModeling_TimerConfig_strategy)
+def test_microcontrollermodeling_timerconfig_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MicrocontrollerModeling::TimerConfig_strategy)
-def test_microcontrollermodeling::timerconfig_period_type(instance):
-    assert isinstance(instance.period, int)
 
 
-@given(instance=MicrocontrollerModeling::TimerConfig_strategy)
-def test_microcontrollermodeling::timerconfig_period_setter(instance):
+@given(instance=MicrocontrollerModeling_TimerConfig_strategy)
+def test_microcontrollermodeling_timerconfig_period_setter(instance):
     original = instance.period
     instance.period = original
     assert instance.period == original
 
-@given(instance=MicrocontrollerModeling::Instruction_strategy)
+@given(instance=MicrocontrollerModeling_Instruction_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::instruction_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Instruction)
-
-@given(instance=MicrocontrollerModeling::Instruction_strategy)
-def test_microcontrollermodeling::instruction_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_microcontrollermodeling_instruction_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Instruction)
 
 
-@given(instance=MicrocontrollerModeling::Instruction_strategy)
-def test_microcontrollermodeling::instruction_value_setter(instance):
+
+@given(instance=MicrocontrollerModeling_Instruction_strategy)
+def test_microcontrollermodeling_instruction_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=MicrocontrollerModeling::Parameter_strategy)
+@given(instance=MicrocontrollerModeling_Parameter_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::parameter_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Parameter)
-
-@given(instance=MicrocontrollerModeling::Parameter_strategy)
-def test_microcontrollermodeling::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_microcontrollermodeling_parameter_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Parameter)
 
 
-@given(instance=MicrocontrollerModeling::Parameter_strategy)
-def test_microcontrollermodeling::parameter_type_setter(instance):
+
+@given(instance=MicrocontrollerModeling_Parameter_strategy)
+def test_microcontrollermodeling_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=MicrocontrollerModeling::Parameter_strategy)
-def test_microcontrollermodeling::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=MicrocontrollerModeling::Parameter_strategy)
-def test_microcontrollermodeling::parameter_name_setter(instance):
+@given(instance=MicrocontrollerModeling_Parameter_strategy)
+def test_microcontrollermodeling_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MicrocontrollerModeling::Function_strategy)
+@given(instance=MicrocontrollerModeling_Function_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::function_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::Function)
-
-@given(instance=MicrocontrollerModeling::Function_strategy)
-def test_microcontrollermodeling::function_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_microcontrollermodeling_function_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Function)
 
 
-@given(instance=MicrocontrollerModeling::Function_strategy)
-def test_microcontrollermodeling::function_type_setter(instance):
+
+@given(instance=MicrocontrollerModeling_Function_strategy)
+def test_microcontrollermodeling_function_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=MicrocontrollerModeling::PinOperation_strategy)
+@given(instance=MicrocontrollerModeling_PinOperation_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::pinoperation_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::PinOperation)
-
-@given(instance=MicrocontrollerModeling::PinOperation_strategy)
-def test_microcontrollermodeling::pinoperation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_microcontrollermodeling_pinoperation_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_PinOperation)
 
 
-@given(instance=MicrocontrollerModeling::PinOperation_strategy)
-def test_microcontrollermodeling::pinoperation_name_setter(instance):
+
+@given(instance=MicrocontrollerModeling_PinOperation_strategy)
+def test_microcontrollermodeling_pinoperation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MicrocontrollerModeling::ROM_strategy)
+@given(instance=MicrocontrollerModeling_ROM_strategy)
 @settings(max_examples=50)
-def test_microcontrollermodeling::rom_instantiation(instance):
-    assert isinstance(instance, MicrocontrollerModeling::ROM)
+def test_microcontrollermodeling_rom_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_ROM)
+
+@given(instance=MicrocontrollerModeling_Processor_strategy)
+@settings(max_examples=50)
+def test_microcontrollermodeling_processor_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Processor)
+
+
+
+@given(instance=MicrocontrollerModeling_Processor_strategy)
+def test_microcontrollermodeling_processor_speed_setter(instance):
+    original = instance.speed
+    instance.speed = original
+    assert instance.speed == original
+
+
+
+@given(instance=MicrocontrollerModeling_Processor_strategy)
+def test_microcontrollermodeling_processor_unit_setter(instance):
+    original = instance.unit
+    instance.unit = original
+    assert instance.unit == original
+
+@given(instance=MicrocontrollerModeling_CLanguage_strategy)
+@settings(max_examples=50)
+def test_microcontrollermodeling_clanguage_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_CLanguage)
+
+
+
+@given(instance=MicrocontrollerModeling_CLanguage_strategy)
+def test_microcontrollermodeling_clanguage_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=MicrocontrollerModeling_CLanguage_strategy)
+def test_microcontrollermodeling_clanguage_filesExtension_setter(instance):
+    original = instance.filesExtension
+    instance.filesExtension = original
+    assert instance.filesExtension == original
+
+
+
+@given(instance=MicrocontrollerModeling_CLanguage_strategy)
+def test_microcontrollermodeling_clanguage_hasMain_setter(instance):
+    original = instance.hasMain
+    instance.hasMain = original
+    assert instance.hasMain == original
+
+@given(instance=MicrocontrollerModeling_Pin_strategy)
+@settings(max_examples=50)
+def test_microcontrollermodeling_pin_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Pin)
+
+
+
+@given(instance=MicrocontrollerModeling_Pin_strategy)
+def test_microcontrollermodeling_pin_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=MicrocontrollerModeling_Pin_strategy)
+def test_microcontrollermodeling_pin_nature_setter(instance):
+    original = instance.nature
+    instance.nature = original
+    assert instance.nature == original
+
+
+
+@given(instance=MicrocontrollerModeling_Pin_strategy)
+def test_microcontrollermodeling_pin_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=MicrocontrollerModeling_Microcontroller_strategy)
+@settings(max_examples=50)
+def test_microcontrollermodeling_microcontroller_instantiation(instance):
+    assert isinstance(instance, MicrocontrollerModeling_Microcontroller)
+
+
+
+@given(instance=MicrocontrollerModeling_Microcontroller_strategy)
+def test_microcontrollermodeling_microcontroller_wordMemory_setter(instance):
+    original = instance.wordMemory
+    instance.wordMemory = original
+    assert instance.wordMemory == original
+
+
+
+@given(instance=MicrocontrollerModeling_Microcontroller_strategy)
+def test_microcontrollermodeling_microcontroller_family_setter(instance):
+    original = instance.family
+    instance.family = original
+    assert instance.family == original
+
+
+
+@given(instance=MicrocontrollerModeling_Microcontroller_strategy)
+def test_microcontrollermodeling_microcontroller_manufacturer_setter(instance):
+    original = instance.manufacturer
+    instance.manufacturer = original
+    assert instance.manufacturer == original
+
+
+
+@given(instance=MicrocontrollerModeling_Microcontroller_strategy)
+def test_microcontrollermodeling_microcontroller_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

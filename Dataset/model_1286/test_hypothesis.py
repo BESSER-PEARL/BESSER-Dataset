@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StateVertex,
-    StateMachine::FinalState,
-    StateMachine::SimpleState,
-    StateMachine::InitialState,
-    StateMachine::Event,
-    StateMachine::Transition,
-    StateMachine::StateVertex,
-    StateMachine::StateMachine,
+    StateMachine_FinalState,
+    StateMachine_SimpleState,
+    StateMachine_InitialState,
+    StateMachine_Event,
+    StateMachine_Transition,
+    StateMachine_StateVertex,
+    StateMachine_StateMachine,
 )
 
 # =============================================================================
@@ -36,79 +36,79 @@ def test_statevertex_constructor_args():
 
 
 
-def test_statemachine::finalstate_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::FinalState)
+def test_statemachine_finalstate_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_FinalState)
 
 
-def test_statemachine::finalstate_constructor_exists():
-    assert callable(StateMachine::FinalState.__init__)
+def test_statemachine_finalstate_constructor_exists():
+    assert callable(StateMachine_FinalState.__init__)
 
 
-def test_statemachine::finalstate_constructor_args():
-    sig = inspect.signature(StateMachine::FinalState.__init__)
+def test_statemachine_finalstate_constructor_args():
+    sig = inspect.signature(StateMachine_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::simplestate_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::SimpleState)
+def test_statemachine_simplestate_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_SimpleState)
 
 
-def test_statemachine::simplestate_constructor_exists():
-    assert callable(StateMachine::SimpleState.__init__)
+def test_statemachine_simplestate_constructor_exists():
+    assert callable(StateMachine_SimpleState.__init__)
 
 
-def test_statemachine::simplestate_constructor_args():
-    sig = inspect.signature(StateMachine::SimpleState.__init__)
+def test_statemachine_simplestate_constructor_args():
+    sig = inspect.signature(StateMachine_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::initialstate_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::InitialState)
+def test_statemachine_initialstate_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_InitialState)
 
 
-def test_statemachine::initialstate_constructor_exists():
-    assert callable(StateMachine::InitialState.__init__)
+def test_statemachine_initialstate_constructor_exists():
+    assert callable(StateMachine_InitialState.__init__)
 
 
-def test_statemachine::initialstate_constructor_args():
-    sig = inspect.signature(StateMachine::InitialState.__init__)
+def test_statemachine_initialstate_constructor_args():
+    sig = inspect.signature(StateMachine_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::event_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::Event)
+def test_statemachine_event_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_Event)
 
 
-def test_statemachine::event_constructor_exists():
-    assert callable(StateMachine::Event.__init__)
+def test_statemachine_event_constructor_exists():
+    assert callable(StateMachine_Event.__init__)
 
 
-def test_statemachine::event_constructor_args():
-    sig = inspect.signature(StateMachine::Event.__init__)
+def test_statemachine_event_constructor_args():
+    sig = inspect.signature(StateMachine_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(StateMachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(StateMachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(StateMachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(StateMachine_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::transition_has_name():
-    assert hasattr(StateMachine::Transition, "name")
+def test_statemachine_transition_has_name():
+    assert hasattr(StateMachine_Transition, "name")
     descriptor = None
-    for klass in StateMachine::Transition.__mro__:
+    for klass in StateMachine_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -116,23 +116,23 @@ def test_statemachine::transition_has_name():
 
 
 
-def test_statemachine::statevertex_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::StateVertex)
+def test_statemachine_statevertex_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_StateVertex)
 
 
-def test_statemachine::statevertex_constructor_exists():
-    assert callable(StateMachine::StateVertex.__init__)
+def test_statemachine_statevertex_constructor_exists():
+    assert callable(StateMachine_StateVertex.__init__)
 
 
-def test_statemachine::statevertex_constructor_args():
-    sig = inspect.signature(StateMachine::StateVertex.__init__)
+def test_statemachine_statevertex_constructor_args():
+    sig = inspect.signature(StateMachine_StateVertex.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::statevertex_has_name():
-    assert hasattr(StateMachine::StateVertex, "name")
+def test_statemachine_statevertex_has_name():
+    assert hasattr(StateMachine_StateVertex, "name")
     descriptor = None
-    for klass in StateMachine::StateVertex.__mro__:
+    for klass in StateMachine_StateVertex.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -140,16 +140,16 @@ def test_statemachine::statevertex_has_name():
 
 
 
-def test_statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(StateMachine::StateMachine)
+def test_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(StateMachine_StateMachine)
 
 
-def test_statemachine::statemachine_constructor_exists():
-    assert callable(StateMachine::StateMachine.__init__)
+def test_statemachine_statemachine_constructor_exists():
+    assert callable(StateMachine_StateMachine.__init__)
 
 
-def test_statemachine::statemachine_constructor_args():
-    sig = inspect.signature(StateMachine::StateMachine.__init__)
+def test_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(StateMachine_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -167,30 +167,30 @@ safe_text = st.text(
 StateVertex_strategy = st.builds(
     StateVertex,
 )
-StateMachine::FinalState_strategy = st.builds(
-    StateMachine::FinalState,
+StateMachine_FinalState_strategy = st.builds(
+    StateMachine_FinalState,
 )
-StateMachine::SimpleState_strategy = st.builds(
-    StateMachine::SimpleState,
+StateMachine_SimpleState_strategy = st.builds(
+    StateMachine_SimpleState,
 )
-StateMachine::InitialState_strategy = st.builds(
-    StateMachine::InitialState,
+StateMachine_InitialState_strategy = st.builds(
+    StateMachine_InitialState,
 )
-StateMachine::Event_strategy = st.builds(
-    StateMachine::Event,
+StateMachine_Event_strategy = st.builds(
+    StateMachine_Event,
 )
-StateMachine::Transition_strategy = st.builds(
-    StateMachine::Transition,
+StateMachine_Transition_strategy = st.builds(
+    StateMachine_Transition,
     name=
         safe_text
 )
-StateMachine::StateVertex_strategy = st.builds(
-    StateMachine::StateVertex,
+StateMachine_StateVertex_strategy = st.builds(
+    StateMachine_StateVertex,
     name=
         safe_text
 )
-StateMachine::StateMachine_strategy = st.builds(
-    StateMachine::StateMachine,
+StateMachine_StateMachine_strategy = st.builds(
+    StateMachine_StateMachine,
 )
 
 @given(instance=StateVertex_strategy)
@@ -198,59 +198,53 @@ StateMachine::StateMachine_strategy = st.builds(
 def test_statevertex_instantiation(instance):
     assert isinstance(instance, StateVertex)
 
-@given(instance=StateMachine::FinalState_strategy)
+@given(instance=StateMachine_FinalState_strategy)
 @settings(max_examples=50)
-def test_statemachine::finalstate_instantiation(instance):
-    assert isinstance(instance, StateMachine::FinalState)
+def test_statemachine_finalstate_instantiation(instance):
+    assert isinstance(instance, StateMachine_FinalState)
 
-@given(instance=StateMachine::SimpleState_strategy)
+@given(instance=StateMachine_SimpleState_strategy)
 @settings(max_examples=50)
-def test_statemachine::simplestate_instantiation(instance):
-    assert isinstance(instance, StateMachine::SimpleState)
+def test_statemachine_simplestate_instantiation(instance):
+    assert isinstance(instance, StateMachine_SimpleState)
 
-@given(instance=StateMachine::InitialState_strategy)
+@given(instance=StateMachine_InitialState_strategy)
 @settings(max_examples=50)
-def test_statemachine::initialstate_instantiation(instance):
-    assert isinstance(instance, StateMachine::InitialState)
+def test_statemachine_initialstate_instantiation(instance):
+    assert isinstance(instance, StateMachine_InitialState)
 
-@given(instance=StateMachine::Event_strategy)
+@given(instance=StateMachine_Event_strategy)
 @settings(max_examples=50)
-def test_statemachine::event_instantiation(instance):
-    assert isinstance(instance, StateMachine::Event)
+def test_statemachine_event_instantiation(instance):
+    assert isinstance(instance, StateMachine_Event)
 
-@given(instance=StateMachine::Transition_strategy)
+@given(instance=StateMachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, StateMachine::Transition)
-
-@given(instance=StateMachine::Transition_strategy)
-def test_statemachine::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, StateMachine_Transition)
 
 
-@given(instance=StateMachine::Transition_strategy)
-def test_statemachine::transition_name_setter(instance):
+
+@given(instance=StateMachine_Transition_strategy)
+def test_statemachine_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=StateMachine::StateVertex_strategy)
+@given(instance=StateMachine_StateVertex_strategy)
 @settings(max_examples=50)
-def test_statemachine::statevertex_instantiation(instance):
-    assert isinstance(instance, StateMachine::StateVertex)
-
-@given(instance=StateMachine::StateVertex_strategy)
-def test_statemachine::statevertex_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_statevertex_instantiation(instance):
+    assert isinstance(instance, StateMachine_StateVertex)
 
 
-@given(instance=StateMachine::StateVertex_strategy)
-def test_statemachine::statevertex_name_setter(instance):
+
+@given(instance=StateMachine_StateVertex_strategy)
+def test_statemachine_statevertex_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=StateMachine::StateMachine_strategy)
+@given(instance=StateMachine_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, StateMachine::StateMachine)
+def test_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, StateMachine_StateMachine)

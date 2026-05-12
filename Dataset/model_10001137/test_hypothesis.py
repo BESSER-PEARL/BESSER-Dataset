@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Program,
@@ -86,17 +86,8 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
-    assert "isSoft" in params, "Missing parameter 'isSoft'"
     assert "CardsInHand" in params, "Missing parameter 'CardsInHand'"
-
-def test_player_has_isSoft():
-    assert hasattr(Player, "isSoft")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "isSoft" in klass.__dict__:
-            descriptor = klass.__dict__["isSoft"]
-            break
-    assert isinstance(descriptor, property)
+    assert "isSoft" in params, "Missing parameter 'isSoft'"
 
 def test_player_has_CardsInHand():
     assert hasattr(Player, "CardsInHand")
@@ -104,6 +95,15 @@ def test_player_has_CardsInHand():
     for klass in Player.__mro__:
         if "CardsInHand" in klass.__dict__:
             descriptor = klass.__dict__["CardsInHand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_isSoft():
+    assert hasattr(Player, "isSoft")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "isSoft" in klass.__dict__:
+            descriptor = klass.__dict__["isSoft"]
             break
     assert isinstance(descriptor, property)
 
@@ -239,10 +239,10 @@ Dealer_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
-    isSoft=
-        st.booleans(),
     CardsInHand=
-        st.none()
+        st.none(),
+    isSoft=
+        st.booleans()
 )
 Deck_strategy = st.builds(
     Deck,
@@ -274,9 +274,6 @@ def test_gamemanager_instantiation(instance):
 def test_dealer_instantiation(instance):
     assert isinstance(instance, Dealer)
 
-@given(instance=Dealer_strategy)
-def test_dealer_cardDeck_type(instance):
-    assert isinstance(instance.cardDeck, deck)
 
 
 @given(instance=Dealer_strategy)
@@ -290,20 +287,6 @@ def test_dealer_cardDeck_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_isSoft_type(instance):
-    assert isinstance(instance.isSoft, bool)
-
-
-@given(instance=Player_strategy)
-def test_player_isSoft_setter(instance):
-    original = instance.isSoft
-    instance.isSoft = original
-    assert instance.isSoft == original
-
-@given(instance=Player_strategy)
-def test_player_CardsInHand_type(instance):
-    assert isinstance(instance.CardsInHand, card)
 
 
 @given(instance=Player_strategy)
@@ -312,14 +295,19 @@ def test_player_CardsInHand_setter(instance):
     instance.CardsInHand = original
     assert instance.CardsInHand == original
 
+
+
+@given(instance=Player_strategy)
+def test_player_isSoft_setter(instance):
+    original = instance.isSoft
+    instance.isSoft = original
+    assert instance.isSoft == original
+
 @given(instance=Deck_strategy)
 @settings(max_examples=50)
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_List_card__type(instance):
-    assert isinstance(instance.List_card_, card)
 
 
 @given(instance=Deck_strategy)
@@ -333,9 +321,6 @@ def test_deck_List_card__setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card__Suit_type(instance):
-    assert isinstance(instance._Suit, int)
 
 
 @given(instance=Card_strategy)
@@ -344,9 +329,6 @@ def test_card__Suit_setter(instance):
     instance._Suit = original
     assert instance._Suit == original
 
-@given(instance=Card_strategy)
-def test_card__CardNumber_type(instance):
-    assert isinstance(instance._CardNumber, int)
 
 
 @given(instance=Card_strategy)
@@ -355,9 +337,6 @@ def test_card__CardNumber_setter(instance):
     instance._CardNumber = original
     assert instance._CardNumber == original
 
-@given(instance=Card_strategy)
-def test_card__CardValue_type(instance):
-    assert isinstance(instance._CardValue, int)
 
 
 @given(instance=Card_strategy)

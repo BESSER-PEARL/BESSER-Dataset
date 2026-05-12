@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Z1,
@@ -270,9 +270,6 @@ def test_r_instantiation(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_altB_type(instance):
-    assert isinstance(instance.altB, str)
 
 
 @given(instance=B_strategy)
@@ -286,9 +283,6 @@ def test_b_altB_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_altA_type(instance):
-    assert isinstance(instance.altA, str)
 
 
 @given(instance=A_strategy)
@@ -302,9 +296,6 @@ def test_a_altA_setter(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_altC1_type(instance):
-    assert isinstance(instance.altC1, int)
 
 
 @given(instance=C_strategy)
@@ -313,9 +304,6 @@ def test_c_altC1_setter(instance):
     instance.altC1 = original
     assert instance.altC1 == original
 
-@given(instance=C_strategy)
-def test_c_altC2_type(instance):
-    assert isinstance(instance.altC2, bool)
 
 
 @given(instance=C_strategy)

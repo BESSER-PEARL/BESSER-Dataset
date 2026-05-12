@@ -3,57 +3,57 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    doc::builder::PropertyEntry,
-    builder::PropertyEntry,
+from python_code import (
+    doc_builder_PropertyEntry,
+    builder_PropertyEntry,
     Author,
-    doc::fragment::Copyright,
+    doc_fragment_Copyright,
     Map,
-    doc::builder::BookBuilder,
+    doc_builder_BookBuilder,
     BookSection,
-    doc::book::BookContainer,
+    doc_book_BookContainer,
     Copyright,
     BookContainer,
-    doc::book::BookSection,
-    doc::book::Book,
-    doc::map::MapContainer,
-    fragment::Content,
-    doc::fragment::Author,
-    doc::fragment::Content,
+    doc_book_BookSection,
+    doc_book_Book,
+    doc_map_MapContainer,
+    fragment_Content,
+    doc_fragment_Author,
+    doc_fragment_Content,
     Section,
     Content,
-    doc::fragment::PlainTextContent,
-    doc::fragment::Container,
+    doc_fragment_PlainTextContent,
+    doc_fragment_Container,
     Container,
-    doc::fragment::Section,
-    doc::fragment::Fragment,
+    doc_fragment_Section,
+    doc_fragment_Fragment,
     ResourceFactory,
-    doc::map::ExtensionMappingEntry,
-    doc::map::ResourceFactory,
-    map::MapElement,
-    doc::map::ContentGenerator,
-    map::MapContainer,
-    doc::map::MapSection,
+    doc_map_ExtensionMappingEntry,
+    doc_map_ResourceFactory,
+    map_MapElement,
+    doc_map_ContentGenerator,
+    map_MapContainer,
+    doc_map_MapSection,
     PatternRule,
-    doc::map::ExcludePatternRule,
-    doc::map::IncludePatternRule,
-    doc::map::NameRule,
+    doc_map_ExcludePatternRule,
+    doc_map_IncludePatternRule,
+    doc_map_NameRule,
     NameRule,
-    doc::map::PatternRule,
+    doc_map_PatternRule,
+    doc_map_MapElement,
+    Import,
+    doc_map_Feature,
+    doc_map_File,
+    MapElement,
+    doc_map_Import,
     ExtensionMappingEntry,
     MapContainer,
-    doc::map::Map,
-    doc::Test,
-    doc::map::MapElement,
-    Import,
-    doc::map::Feature,
-    doc::map::File,
-    MapElement,
-    doc::map::Import,
-    NumberingStyle,
+    doc_map_Map,
+    doc_Test,
     RuleResult,
+    NumberingStyle,
 )
 
 # =============================================================================
@@ -62,50 +62,50 @@ from classes import (
 
 
 
-def test_doc::builder::propertyentry_is_not_abstract():
-    assert not inspect.isabstract(doc::builder::PropertyEntry)
+def test_doc_builder_propertyentry_is_not_abstract():
+    assert not inspect.isabstract(doc_builder_PropertyEntry)
 
 
-def test_doc::builder::propertyentry_constructor_exists():
-    assert callable(doc::builder::PropertyEntry.__init__)
+def test_doc_builder_propertyentry_constructor_exists():
+    assert callable(doc_builder_PropertyEntry.__init__)
 
 
-def test_doc::builder::propertyentry_constructor_args():
-    sig = inspect.signature(doc::builder::PropertyEntry.__init__)
+def test_doc_builder_propertyentry_constructor_args():
+    sig = inspect.signature(doc_builder_PropertyEntry.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_doc::builder::propertyentry_has_value():
-    assert hasattr(doc::builder::PropertyEntry, "value")
+def test_doc_builder_propertyentry_has_key():
+    assert hasattr(doc_builder_PropertyEntry, "key")
     descriptor = None
-    for klass in doc::builder::PropertyEntry.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::builder::propertyentry_has_key():
-    assert hasattr(doc::builder::PropertyEntry, "key")
-    descriptor = None
-    for klass in doc::builder::PropertyEntry.__mro__:
+    for klass in doc_builder_PropertyEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
+def test_doc_builder_propertyentry_has_value():
+    assert hasattr(doc_builder_PropertyEntry, "value")
+    descriptor = None
+    for klass in doc_builder_PropertyEntry.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_builder::propertyentry_is_not_abstract():
-    assert not inspect.isabstract(builder::PropertyEntry)
+
+def test_builder_propertyentry_is_not_abstract():
+    assert not inspect.isabstract(builder_PropertyEntry)
 
 
-def test_builder::propertyentry_constructor_exists():
-    assert callable(builder::PropertyEntry.__init__)
+def test_builder_propertyentry_constructor_exists():
+    assert callable(builder_PropertyEntry.__init__)
 
 
-def test_builder::propertyentry_constructor_args():
-    sig = inspect.signature(builder::PropertyEntry.__init__)
+def test_builder_propertyentry_constructor_args():
+    sig = inspect.signature(builder_PropertyEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,23 +124,23 @@ def test_author_constructor_args():
 
 
 
-def test_doc::fragment::copyright_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::Copyright)
+def test_doc_fragment_copyright_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_Copyright)
 
 
-def test_doc::fragment::copyright_constructor_exists():
-    assert callable(doc::fragment::Copyright.__init__)
+def test_doc_fragment_copyright_constructor_exists():
+    assert callable(doc_fragment_Copyright.__init__)
 
 
-def test_doc::fragment::copyright_constructor_args():
-    sig = inspect.signature(doc::fragment::Copyright.__init__)
+def test_doc_fragment_copyright_constructor_args():
+    sig = inspect.signature(doc_fragment_Copyright.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
 
-def test_doc::fragment::copyright_has_year():
-    assert hasattr(doc::fragment::Copyright, "year")
+def test_doc_fragment_copyright_has_year():
+    assert hasattr(doc_fragment_Copyright, "year")
     descriptor = None
-    for klass in doc::fragment::Copyright.__mro__:
+    for klass in doc_fragment_Copyright.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
@@ -162,55 +162,55 @@ def test_map_constructor_args():
 
 
 
-def test_doc::builder::bookbuilder_is_not_abstract():
-    assert not inspect.isabstract(doc::builder::BookBuilder)
+def test_doc_builder_bookbuilder_is_not_abstract():
+    assert not inspect.isabstract(doc_builder_BookBuilder)
 
 
-def test_doc::builder::bookbuilder_constructor_exists():
-    assert callable(doc::builder::BookBuilder.__init__)
+def test_doc_builder_bookbuilder_constructor_exists():
+    assert callable(doc_builder_BookBuilder.__init__)
 
 
-def test_doc::builder::bookbuilder_constructor_args():
-    sig = inspect.signature(doc::builder::BookBuilder.__init__)
+def test_doc_builder_bookbuilder_constructor_args():
+    sig = inspect.signature(doc_builder_BookBuilder.__init__)
     params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
     assert "license" in params, "Missing parameter 'license'"
     assert "copyrightMarker" in params, "Missing parameter 'copyrightMarker'"
     assert "version" in params, "Missing parameter 'version'"
-    assert "title" in params, "Missing parameter 'title'"
 
-def test_doc::builder::bookbuilder_has_license():
-    assert hasattr(doc::builder::BookBuilder, "license")
+def test_doc_builder_bookbuilder_has_title():
+    assert hasattr(doc_builder_BookBuilder, "title")
     descriptor = None
-    for klass in doc::builder::BookBuilder.__mro__:
+    for klass in doc_builder_BookBuilder.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doc_builder_bookbuilder_has_license():
+    assert hasattr(doc_builder_BookBuilder, "license")
+    descriptor = None
+    for klass in doc_builder_BookBuilder.__mro__:
         if "license" in klass.__dict__:
             descriptor = klass.__dict__["license"]
             break
     assert isinstance(descriptor, property)
 
-def test_doc::builder::bookbuilder_has_copyrightMarker():
-    assert hasattr(doc::builder::BookBuilder, "copyrightMarker")
+def test_doc_builder_bookbuilder_has_copyrightMarker():
+    assert hasattr(doc_builder_BookBuilder, "copyrightMarker")
     descriptor = None
-    for klass in doc::builder::BookBuilder.__mro__:
+    for klass in doc_builder_BookBuilder.__mro__:
         if "copyrightMarker" in klass.__dict__:
             descriptor = klass.__dict__["copyrightMarker"]
             break
     assert isinstance(descriptor, property)
 
-def test_doc::builder::bookbuilder_has_version():
-    assert hasattr(doc::builder::BookBuilder, "version")
+def test_doc_builder_bookbuilder_has_version():
+    assert hasattr(doc_builder_BookBuilder, "version")
     descriptor = None
-    for klass in doc::builder::BookBuilder.__mro__:
+    for klass in doc_builder_BookBuilder.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::builder::bookbuilder_has_title():
-    assert hasattr(doc::builder::BookBuilder, "title")
-    descriptor = None
-    for klass in doc::builder::BookBuilder.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
@@ -230,23 +230,23 @@ def test_booksection_constructor_args():
 
 
 
-def test_doc::book::bookcontainer_is_not_abstract():
-    assert not inspect.isabstract(doc::book::BookContainer)
+def test_doc_book_bookcontainer_is_not_abstract():
+    assert not inspect.isabstract(doc_book_BookContainer)
 
 
-def test_doc::book::bookcontainer_constructor_exists():
-    assert callable(doc::book::BookContainer.__init__)
+def test_doc_book_bookcontainer_constructor_exists():
+    assert callable(doc_book_BookContainer.__init__)
 
 
-def test_doc::book::bookcontainer_constructor_args():
-    sig = inspect.signature(doc::book::BookContainer.__init__)
+def test_doc_book_bookcontainer_constructor_args():
+    sig = inspect.signature(doc_book_BookContainer.__init__)
     params = list(sig.parameters.keys())
     assert "numberingStyle" in params, "Missing parameter 'numberingStyle'"
 
-def test_doc::book::bookcontainer_has_numberingStyle():
-    assert hasattr(doc::book::BookContainer, "numberingStyle")
+def test_doc_book_bookcontainer_has_numberingStyle():
+    assert hasattr(doc_book_BookContainer, "numberingStyle")
     descriptor = None
-    for klass in doc::book::BookContainer.__mro__:
+    for klass in doc_book_BookContainer.__mro__:
         if "numberingStyle" in klass.__dict__:
             descriptor = klass.__dict__["numberingStyle"]
             break
@@ -282,53 +282,53 @@ def test_bookcontainer_constructor_args():
 
 
 
-def test_doc::book::booksection_is_not_abstract():
-    assert not inspect.isabstract(doc::book::BookSection)
+def test_doc_book_booksection_is_not_abstract():
+    assert not inspect.isabstract(doc_book_BookSection)
 
 
-def test_doc::book::booksection_constructor_exists():
-    assert callable(doc::book::BookSection.__init__)
+def test_doc_book_booksection_constructor_exists():
+    assert callable(doc_book_BookSection.__init__)
 
 
-def test_doc::book::booksection_constructor_args():
-    sig = inspect.signature(doc::book::BookSection.__init__)
+def test_doc_book_booksection_constructor_args():
+    sig = inspect.signature(doc_book_BookSection.__init__)
     params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
     assert "fullNumber" in params, "Missing parameter 'fullNumber'"
     assert "number" in params, "Missing parameter 'number'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_doc::book::booksection_has_fullNumber():
-    assert hasattr(doc::book::BookSection, "fullNumber")
+def test_doc_book_booksection_has_id():
+    assert hasattr(doc_book_BookSection, "id")
     descriptor = None
-    for klass in doc::book::BookSection.__mro__:
-        if "fullNumber" in klass.__dict__:
-            descriptor = klass.__dict__["fullNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::book::booksection_has_number():
-    assert hasattr(doc::book::BookSection, "number")
-    descriptor = None
-    for klass in doc::book::BookSection.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::book::booksection_has_id():
-    assert hasattr(doc::book::BookSection, "id")
-    descriptor = None
-    for klass in doc::book::BookSection.__mro__:
+    for klass in doc_book_BookSection.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_doc::book::booksection_has_title():
-    assert hasattr(doc::book::BookSection, "title")
+def test_doc_book_booksection_has_fullNumber():
+    assert hasattr(doc_book_BookSection, "fullNumber")
     descriptor = None
-    for klass in doc::book::BookSection.__mro__:
+    for klass in doc_book_BookSection.__mro__:
+        if "fullNumber" in klass.__dict__:
+            descriptor = klass.__dict__["fullNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doc_book_booksection_has_number():
+    assert hasattr(doc_book_BookSection, "number")
+    descriptor = None
+    for klass in doc_book_BookSection.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doc_book_booksection_has_title():
+    assert hasattr(doc_book_BookSection, "title")
+    descriptor = None
+    for klass in doc_book_BookSection.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -336,53 +336,53 @@ def test_doc::book::booksection_has_title():
 
 
 
-def test_doc::book::book_is_not_abstract():
-    assert not inspect.isabstract(doc::book::Book)
+def test_doc_book_book_is_not_abstract():
+    assert not inspect.isabstract(doc_book_Book)
 
 
-def test_doc::book::book_constructor_exists():
-    assert callable(doc::book::Book.__init__)
+def test_doc_book_book_constructor_exists():
+    assert callable(doc_book_Book.__init__)
 
 
-def test_doc::book::book_constructor_args():
-    sig = inspect.signature(doc::book::Book.__init__)
+def test_doc_book_book_constructor_args():
+    sig = inspect.signature(doc_book_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "copyrightMarker" in params, "Missing parameter 'copyrightMarker'"
+    assert "version" in params, "Missing parameter 'version'"
+    assert "title" in params, "Missing parameter 'title'"
     assert "copyrightText" in params, "Missing parameter 'copyrightText'"
 
-def test_doc::book::book_has_title():
-    assert hasattr(doc::book::Book, "title")
+def test_doc_book_book_has_copyrightMarker():
+    assert hasattr(doc_book_Book, "copyrightMarker")
     descriptor = None
-    for klass in doc::book::Book.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::book::book_has_version():
-    assert hasattr(doc::book::Book, "version")
-    descriptor = None
-    for klass in doc::book::Book.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::book::book_has_copyrightMarker():
-    assert hasattr(doc::book::Book, "copyrightMarker")
-    descriptor = None
-    for klass in doc::book::Book.__mro__:
+    for klass in doc_book_Book.__mro__:
         if "copyrightMarker" in klass.__dict__:
             descriptor = klass.__dict__["copyrightMarker"]
             break
     assert isinstance(descriptor, property)
 
-def test_doc::book::book_has_copyrightText():
-    assert hasattr(doc::book::Book, "copyrightText")
+def test_doc_book_book_has_version():
+    assert hasattr(doc_book_Book, "version")
     descriptor = None
-    for klass in doc::book::Book.__mro__:
+    for klass in doc_book_Book.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doc_book_book_has_title():
+    assert hasattr(doc_book_Book, "title")
+    descriptor = None
+    for klass in doc_book_Book.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doc_book_book_has_copyrightText():
+    assert hasattr(doc_book_Book, "copyrightText")
+    descriptor = None
+    for klass in doc_book_Book.__mro__:
         if "copyrightText" in klass.__dict__:
             descriptor = klass.__dict__["copyrightText"]
             break
@@ -390,23 +390,23 @@ def test_doc::book::book_has_copyrightText():
 
 
 
-def test_doc::map::mapcontainer_is_not_abstract():
-    assert not inspect.isabstract(doc::map::MapContainer)
+def test_doc_map_mapcontainer_is_not_abstract():
+    assert not inspect.isabstract(doc_map_MapContainer)
 
 
-def test_doc::map::mapcontainer_constructor_exists():
-    assert callable(doc::map::MapContainer.__init__)
+def test_doc_map_mapcontainer_constructor_exists():
+    assert callable(doc_map_MapContainer.__init__)
 
 
-def test_doc::map::mapcontainer_constructor_args():
-    sig = inspect.signature(doc::map::MapContainer.__init__)
+def test_doc_map_mapcontainer_constructor_args():
+    sig = inspect.signature(doc_map_MapContainer.__init__)
     params = list(sig.parameters.keys())
     assert "numberingStyle" in params, "Missing parameter 'numberingStyle'"
 
-def test_doc::map::mapcontainer_has_numberingStyle():
-    assert hasattr(doc::map::MapContainer, "numberingStyle")
+def test_doc_map_mapcontainer_has_numberingStyle():
+    assert hasattr(doc_map_MapContainer, "numberingStyle")
     descriptor = None
-    for klass in doc::map::MapContainer.__mro__:
+    for klass in doc_map_MapContainer.__mro__:
         if "numberingStyle" in klass.__dict__:
             descriptor = klass.__dict__["numberingStyle"]
             break
@@ -414,74 +414,74 @@ def test_doc::map::mapcontainer_has_numberingStyle():
 
 
 
-def test_fragment::content_is_not_abstract():
-    assert not inspect.isabstract(fragment::Content)
+def test_fragment_content_is_not_abstract():
+    assert not inspect.isabstract(fragment_Content)
 
 
-def test_fragment::content_constructor_exists():
-    assert callable(fragment::Content.__init__)
+def test_fragment_content_constructor_exists():
+    assert callable(fragment_Content.__init__)
 
 
-def test_fragment::content_constructor_args():
-    sig = inspect.signature(fragment::Content.__init__)
+def test_fragment_content_constructor_args():
+    sig = inspect.signature(fragment_Content.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_doc::fragment::author_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::Author)
+def test_doc_fragment_author_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_Author)
 
 
-def test_doc::fragment::author_constructor_exists():
-    assert callable(doc::fragment::Author.__init__)
+def test_doc_fragment_author_constructor_exists():
+    assert callable(doc_fragment_Author.__init__)
 
 
-def test_doc::fragment::author_constructor_args():
-    sig = inspect.signature(doc::fragment::Author.__init__)
+def test_doc_fragment_author_constructor_args():
+    sig = inspect.signature(doc_fragment_Author.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_doc::fragment::author_has_ref():
-    assert hasattr(doc::fragment::Author, "ref")
+def test_doc_fragment_author_has_ref():
+    assert hasattr(doc_fragment_Author, "ref")
     descriptor = None
-    for klass in doc::fragment::Author.__mro__:
+    for klass in doc_fragment_Author.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
     assert isinstance(descriptor, property)
 
-def test_doc::fragment::author_has_name():
-    assert hasattr(doc::fragment::Author, "name")
+def test_doc_fragment_author_has_id():
+    assert hasattr(doc_fragment_Author, "id")
     descriptor = None
-    for klass in doc::fragment::Author.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::fragment::author_has_id():
-    assert hasattr(doc::fragment::Author, "id")
-    descriptor = None
-    for klass in doc::fragment::Author.__mro__:
+    for klass in doc_fragment_Author.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
+def test_doc_fragment_author_has_name():
+    assert hasattr(doc_fragment_Author, "name")
+    descriptor = None
+    for klass in doc_fragment_Author.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_doc::fragment::content_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::Content)
+
+def test_doc_fragment_content_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_Content)
 
 
-def test_doc::fragment::content_constructor_exists():
-    assert callable(doc::fragment::Content.__init__)
+def test_doc_fragment_content_constructor_exists():
+    assert callable(doc_fragment_Content.__init__)
 
 
-def test_doc::fragment::content_constructor_args():
-    sig = inspect.signature(doc::fragment::Content.__init__)
+def test_doc_fragment_content_constructor_args():
+    sig = inspect.signature(doc_fragment_Content.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -514,23 +514,23 @@ def test_content_constructor_args():
 
 
 
-def test_doc::fragment::plaintextcontent_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::PlainTextContent)
+def test_doc_fragment_plaintextcontent_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_PlainTextContent)
 
 
-def test_doc::fragment::plaintextcontent_constructor_exists():
-    assert callable(doc::fragment::PlainTextContent.__init__)
+def test_doc_fragment_plaintextcontent_constructor_exists():
+    assert callable(doc_fragment_PlainTextContent.__init__)
 
 
-def test_doc::fragment::plaintextcontent_constructor_args():
-    sig = inspect.signature(doc::fragment::PlainTextContent.__init__)
+def test_doc_fragment_plaintextcontent_constructor_args():
+    sig = inspect.signature(doc_fragment_PlainTextContent.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_doc::fragment::plaintextcontent_has_value():
-    assert hasattr(doc::fragment::PlainTextContent, "value")
+def test_doc_fragment_plaintextcontent_has_value():
+    assert hasattr(doc_fragment_PlainTextContent, "value")
     descriptor = None
-    for klass in doc::fragment::PlainTextContent.__mro__:
+    for klass in doc_fragment_PlainTextContent.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -538,23 +538,23 @@ def test_doc::fragment::plaintextcontent_has_value():
 
 
 
-def test_doc::fragment::container_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::Container)
+def test_doc_fragment_container_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_Container)
 
 
-def test_doc::fragment::container_constructor_exists():
-    assert callable(doc::fragment::Container.__init__)
+def test_doc_fragment_container_constructor_exists():
+    assert callable(doc_fragment_Container.__init__)
 
 
-def test_doc::fragment::container_constructor_args():
-    sig = inspect.signature(doc::fragment::Container.__init__)
+def test_doc_fragment_container_constructor_args():
+    sig = inspect.signature(doc_fragment_Container.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_doc::fragment::container_has_content():
-    assert hasattr(doc::fragment::Container, "content")
+def test_doc_fragment_container_has_content():
+    assert hasattr(doc_fragment_Container, "content")
     descriptor = None
-    for klass in doc::fragment::Container.__mro__:
+    for klass in doc_fragment_Container.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -576,23 +576,23 @@ def test_container_constructor_args():
 
 
 
-def test_doc::fragment::section_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::Section)
+def test_doc_fragment_section_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_Section)
 
 
-def test_doc::fragment::section_constructor_exists():
-    assert callable(doc::fragment::Section.__init__)
+def test_doc_fragment_section_constructor_exists():
+    assert callable(doc_fragment_Section.__init__)
 
 
-def test_doc::fragment::section_constructor_args():
-    sig = inspect.signature(doc::fragment::Section.__init__)
+def test_doc_fragment_section_constructor_args():
+    sig = inspect.signature(doc_fragment_Section.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_doc::fragment::section_has_title():
-    assert hasattr(doc::fragment::Section, "title")
+def test_doc_fragment_section_has_title():
+    assert hasattr(doc_fragment_Section, "title")
     descriptor = None
-    for klass in doc::fragment::Section.__mro__:
+    for klass in doc_fragment_Section.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -600,16 +600,16 @@ def test_doc::fragment::section_has_title():
 
 
 
-def test_doc::fragment::fragment_is_not_abstract():
-    assert not inspect.isabstract(doc::fragment::Fragment)
+def test_doc_fragment_fragment_is_not_abstract():
+    assert not inspect.isabstract(doc_fragment_Fragment)
 
 
-def test_doc::fragment::fragment_constructor_exists():
-    assert callable(doc::fragment::Fragment.__init__)
+def test_doc_fragment_fragment_constructor_exists():
+    assert callable(doc_fragment_Fragment.__init__)
 
 
-def test_doc::fragment::fragment_constructor_args():
-    sig = inspect.signature(doc::fragment::Fragment.__init__)
+def test_doc_fragment_fragment_constructor_args():
+    sig = inspect.signature(doc_fragment_Fragment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -628,23 +628,23 @@ def test_resourcefactory_constructor_args():
 
 
 
-def test_doc::map::extensionmappingentry_is_not_abstract():
-    assert not inspect.isabstract(doc::map::ExtensionMappingEntry)
+def test_doc_map_extensionmappingentry_is_not_abstract():
+    assert not inspect.isabstract(doc_map_ExtensionMappingEntry)
 
 
-def test_doc::map::extensionmappingentry_constructor_exists():
-    assert callable(doc::map::ExtensionMappingEntry.__init__)
+def test_doc_map_extensionmappingentry_constructor_exists():
+    assert callable(doc_map_ExtensionMappingEntry.__init__)
 
 
-def test_doc::map::extensionmappingentry_constructor_args():
-    sig = inspect.signature(doc::map::ExtensionMappingEntry.__init__)
+def test_doc_map_extensionmappingentry_constructor_args():
+    sig = inspect.signature(doc_map_ExtensionMappingEntry.__init__)
     params = list(sig.parameters.keys())
     assert "extension" in params, "Missing parameter 'extension'"
 
-def test_doc::map::extensionmappingentry_has_extension():
-    assert hasattr(doc::map::ExtensionMappingEntry, "extension")
+def test_doc_map_extensionmappingentry_has_extension():
+    assert hasattr(doc_map_ExtensionMappingEntry, "extension")
     descriptor = None
-    for klass in doc::map::ExtensionMappingEntry.__mro__:
+    for klass in doc_map_ExtensionMappingEntry.__mro__:
         if "extension" in klass.__dict__:
             descriptor = klass.__dict__["extension"]
             break
@@ -652,23 +652,23 @@ def test_doc::map::extensionmappingentry_has_extension():
 
 
 
-def test_doc::map::resourcefactory_is_not_abstract():
-    assert not inspect.isabstract(doc::map::ResourceFactory)
+def test_doc_map_resourcefactory_is_not_abstract():
+    assert not inspect.isabstract(doc_map_ResourceFactory)
 
 
-def test_doc::map::resourcefactory_constructor_exists():
-    assert callable(doc::map::ResourceFactory.__init__)
+def test_doc_map_resourcefactory_constructor_exists():
+    assert callable(doc_map_ResourceFactory.__init__)
 
 
-def test_doc::map::resourcefactory_constructor_args():
-    sig = inspect.signature(doc::map::ResourceFactory.__init__)
+def test_doc_map_resourcefactory_constructor_args():
+    sig = inspect.signature(doc_map_ResourceFactory.__init__)
     params = list(sig.parameters.keys())
     assert "className" in params, "Missing parameter 'className'"
 
-def test_doc::map::resourcefactory_has_className():
-    assert hasattr(doc::map::ResourceFactory, "className")
+def test_doc_map_resourcefactory_has_className():
+    assert hasattr(doc_map_ResourceFactory, "className")
     descriptor = None
-    for klass in doc::map::ResourceFactory.__mro__:
+    for klass in doc_map_ResourceFactory.__mro__:
         if "className" in klass.__dict__:
             descriptor = klass.__dict__["className"]
             break
@@ -676,77 +676,77 @@ def test_doc::map::resourcefactory_has_className():
 
 
 
-def test_map::mapelement_is_not_abstract():
-    assert not inspect.isabstract(map::MapElement)
+def test_map_mapelement_is_not_abstract():
+    assert not inspect.isabstract(map_MapElement)
 
 
-def test_map::mapelement_constructor_exists():
-    assert callable(map::MapElement.__init__)
+def test_map_mapelement_constructor_exists():
+    assert callable(map_MapElement.__init__)
 
 
-def test_map::mapelement_constructor_args():
-    sig = inspect.signature(map::MapElement.__init__)
+def test_map_mapelement_constructor_args():
+    sig = inspect.signature(map_MapElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_doc::map::contentgenerator_is_not_abstract():
-    assert not inspect.isabstract(doc::map::ContentGenerator)
+def test_doc_map_contentgenerator_is_not_abstract():
+    assert not inspect.isabstract(doc_map_ContentGenerator)
 
 
-def test_doc::map::contentgenerator_constructor_exists():
-    assert callable(doc::map::ContentGenerator.__init__)
+def test_doc_map_contentgenerator_constructor_exists():
+    assert callable(doc_map_ContentGenerator.__init__)
 
 
-def test_doc::map::contentgenerator_constructor_args():
-    sig = inspect.signature(doc::map::ContentGenerator.__init__)
+def test_doc_map_contentgenerator_constructor_args():
+    sig = inspect.signature(doc_map_ContentGenerator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_map::mapcontainer_is_not_abstract():
-    assert not inspect.isabstract(map::MapContainer)
+def test_map_mapcontainer_is_not_abstract():
+    assert not inspect.isabstract(map_MapContainer)
 
 
-def test_map::mapcontainer_constructor_exists():
-    assert callable(map::MapContainer.__init__)
+def test_map_mapcontainer_constructor_exists():
+    assert callable(map_MapContainer.__init__)
 
 
-def test_map::mapcontainer_constructor_args():
-    sig = inspect.signature(map::MapContainer.__init__)
+def test_map_mapcontainer_constructor_args():
+    sig = inspect.signature(map_MapContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_doc::map::mapsection_is_not_abstract():
-    assert not inspect.isabstract(doc::map::MapSection)
+def test_doc_map_mapsection_is_not_abstract():
+    assert not inspect.isabstract(doc_map_MapSection)
 
 
-def test_doc::map::mapsection_constructor_exists():
-    assert callable(doc::map::MapSection.__init__)
+def test_doc_map_mapsection_constructor_exists():
+    assert callable(doc_map_MapSection.__init__)
 
 
-def test_doc::map::mapsection_constructor_args():
-    sig = inspect.signature(doc::map::MapSection.__init__)
+def test_doc_map_mapsection_constructor_args():
+    sig = inspect.signature(doc_map_MapSection.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "title" in params, "Missing parameter 'title'"
 
-def test_doc::map::mapsection_has_title():
-    assert hasattr(doc::map::MapSection, "title")
+def test_doc_map_mapsection_has_id():
+    assert hasattr(doc_map_MapSection, "id")
     descriptor = None
-    for klass in doc::map::MapSection.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
+    for klass in doc_map_MapSection.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_doc::map::mapsection_has_id():
-    assert hasattr(doc::map::MapSection, "id")
+def test_doc_map_mapsection_has_title():
+    assert hasattr(doc_map_MapSection, "title")
     descriptor = None
-    for klass in doc::map::MapSection.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in doc_map_MapSection.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
@@ -766,44 +766,44 @@ def test_patternrule_constructor_args():
 
 
 
-def test_doc::map::excludepatternrule_is_not_abstract():
-    assert not inspect.isabstract(doc::map::ExcludePatternRule)
+def test_doc_map_excludepatternrule_is_not_abstract():
+    assert not inspect.isabstract(doc_map_ExcludePatternRule)
 
 
-def test_doc::map::excludepatternrule_constructor_exists():
-    assert callable(doc::map::ExcludePatternRule.__init__)
+def test_doc_map_excludepatternrule_constructor_exists():
+    assert callable(doc_map_ExcludePatternRule.__init__)
 
 
-def test_doc::map::excludepatternrule_constructor_args():
-    sig = inspect.signature(doc::map::ExcludePatternRule.__init__)
+def test_doc_map_excludepatternrule_constructor_args():
+    sig = inspect.signature(doc_map_ExcludePatternRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_doc::map::includepatternrule_is_not_abstract():
-    assert not inspect.isabstract(doc::map::IncludePatternRule)
+def test_doc_map_includepatternrule_is_not_abstract():
+    assert not inspect.isabstract(doc_map_IncludePatternRule)
 
 
-def test_doc::map::includepatternrule_constructor_exists():
-    assert callable(doc::map::IncludePatternRule.__init__)
+def test_doc_map_includepatternrule_constructor_exists():
+    assert callable(doc_map_IncludePatternRule.__init__)
 
 
-def test_doc::map::includepatternrule_constructor_args():
-    sig = inspect.signature(doc::map::IncludePatternRule.__init__)
+def test_doc_map_includepatternrule_constructor_args():
+    sig = inspect.signature(doc_map_IncludePatternRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_doc::map::namerule_is_not_abstract():
-    assert not inspect.isabstract(doc::map::NameRule)
+def test_doc_map_namerule_is_not_abstract():
+    assert not inspect.isabstract(doc_map_NameRule)
 
 
-def test_doc::map::namerule_constructor_exists():
-    assert callable(doc::map::NameRule.__init__)
+def test_doc_map_namerule_constructor_exists():
+    assert callable(doc_map_NameRule.__init__)
 
 
-def test_doc::map::namerule_constructor_args():
-    sig = inspect.signature(doc::map::NameRule.__init__)
+def test_doc_map_namerule_constructor_args():
+    sig = inspect.signature(doc_map_NameRule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -822,27 +822,141 @@ def test_namerule_constructor_args():
 
 
 
-def test_doc::map::patternrule_is_not_abstract():
-    assert not inspect.isabstract(doc::map::PatternRule)
+def test_doc_map_patternrule_is_not_abstract():
+    assert not inspect.isabstract(doc_map_PatternRule)
 
 
-def test_doc::map::patternrule_constructor_exists():
-    assert callable(doc::map::PatternRule.__init__)
+def test_doc_map_patternrule_constructor_exists():
+    assert callable(doc_map_PatternRule.__init__)
 
 
-def test_doc::map::patternrule_constructor_args():
-    sig = inspect.signature(doc::map::PatternRule.__init__)
+def test_doc_map_patternrule_constructor_args():
+    sig = inspect.signature(doc_map_PatternRule.__init__)
     params = list(sig.parameters.keys())
     assert "pattern" in params, "Missing parameter 'pattern'"
 
-def test_doc::map::patternrule_has_pattern():
-    assert hasattr(doc::map::PatternRule, "pattern")
+def test_doc_map_patternrule_has_pattern():
+    assert hasattr(doc_map_PatternRule, "pattern")
     descriptor = None
-    for klass in doc::map::PatternRule.__mro__:
+    for klass in doc_map_PatternRule.__mro__:
         if "pattern" in klass.__dict__:
             descriptor = klass.__dict__["pattern"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_doc_map_mapelement_is_not_abstract():
+    assert not inspect.isabstract(doc_map_MapElement)
+
+
+def test_doc_map_mapelement_constructor_exists():
+    assert callable(doc_map_MapElement.__init__)
+
+
+def test_doc_map_mapelement_constructor_args():
+    sig = inspect.signature(doc_map_MapElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_import_is_not_abstract():
+    assert not inspect.isabstract(Import)
+
+
+def test_import_constructor_exists():
+    assert callable(Import.__init__)
+
+
+def test_import_constructor_args():
+    sig = inspect.signature(Import.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_doc_map_feature_is_not_abstract():
+    assert not inspect.isabstract(doc_map_Feature)
+
+
+def test_doc_map_feature_constructor_exists():
+    assert callable(doc_map_Feature.__init__)
+
+
+def test_doc_map_feature_constructor_args():
+    sig = inspect.signature(doc_map_Feature.__init__)
+    params = list(sig.parameters.keys())
+    assert "featureId" in params, "Missing parameter 'featureId'"
+    assert "createSection" in params, "Missing parameter 'createSection'"
+
+def test_doc_map_feature_has_featureId():
+    assert hasattr(doc_map_Feature, "featureId")
+    descriptor = None
+    for klass in doc_map_Feature.__mro__:
+        if "featureId" in klass.__dict__:
+            descriptor = klass.__dict__["featureId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doc_map_feature_has_createSection():
+    assert hasattr(doc_map_Feature, "createSection")
+    descriptor = None
+    for klass in doc_map_Feature.__mro__:
+        if "createSection" in klass.__dict__:
+            descriptor = klass.__dict__["createSection"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_doc_map_file_is_not_abstract():
+    assert not inspect.isabstract(doc_map_File)
+
+
+def test_doc_map_file_constructor_exists():
+    assert callable(doc_map_File.__init__)
+
+
+def test_doc_map_file_constructor_args():
+    sig = inspect.signature(doc_map_File.__init__)
+    params = list(sig.parameters.keys())
+    assert "path" in params, "Missing parameter 'path'"
+
+def test_doc_map_file_has_path():
+    assert hasattr(doc_map_File, "path")
+    descriptor = None
+    for klass in doc_map_File.__mro__:
+        if "path" in klass.__dict__:
+            descriptor = klass.__dict__["path"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mapelement_is_not_abstract():
+    assert not inspect.isabstract(MapElement)
+
+
+def test_mapelement_constructor_exists():
+    assert callable(MapElement.__init__)
+
+
+def test_mapelement_constructor_args():
+    sig = inspect.signature(MapElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_doc_map_import_is_not_abstract():
+    assert not inspect.isabstract(doc_map_Import)
+
+
+def test_doc_map_import_constructor_exists():
+    assert callable(doc_map_Import.__init__)
+
+
+def test_doc_map_import_constructor_args():
+    sig = inspect.signature(doc_map_Import.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -874,161 +988,31 @@ def test_mapcontainer_constructor_args():
 
 
 
-def test_doc::map::map_is_not_abstract():
-    assert not inspect.isabstract(doc::map::Map)
+def test_doc_map_map_is_not_abstract():
+    assert not inspect.isabstract(doc_map_Map)
 
 
-def test_doc::map::map_constructor_exists():
-    assert callable(doc::map::Map.__init__)
+def test_doc_map_map_constructor_exists():
+    assert callable(doc_map_Map.__init__)
 
 
-def test_doc::map::map_constructor_args():
-    sig = inspect.signature(doc::map::Map.__init__)
+def test_doc_map_map_constructor_args():
+    sig = inspect.signature(doc_map_Map.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_doc::test_is_not_abstract():
-    assert not inspect.isabstract(doc::Test)
+def test_doc_test_is_not_abstract():
+    assert not inspect.isabstract(doc_Test)
 
 
-def test_doc::test_constructor_exists():
-    assert callable(doc::Test.__init__)
+def test_doc_test_constructor_exists():
+    assert callable(doc_Test.__init__)
 
 
-def test_doc::test_constructor_args():
-    sig = inspect.signature(doc::Test.__init__)
+def test_doc_test_constructor_args():
+    sig = inspect.signature(doc_Test.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_doc::map::mapelement_is_not_abstract():
-    assert not inspect.isabstract(doc::map::MapElement)
-
-
-def test_doc::map::mapelement_constructor_exists():
-    assert callable(doc::map::MapElement.__init__)
-
-
-def test_doc::map::mapelement_constructor_args():
-    sig = inspect.signature(doc::map::MapElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_import_is_not_abstract():
-    assert not inspect.isabstract(Import)
-
-
-def test_import_constructor_exists():
-    assert callable(Import.__init__)
-
-
-def test_import_constructor_args():
-    sig = inspect.signature(Import.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_doc::map::feature_is_not_abstract():
-    assert not inspect.isabstract(doc::map::Feature)
-
-
-def test_doc::map::feature_constructor_exists():
-    assert callable(doc::map::Feature.__init__)
-
-
-def test_doc::map::feature_constructor_args():
-    sig = inspect.signature(doc::map::Feature.__init__)
-    params = list(sig.parameters.keys())
-    assert "featureId" in params, "Missing parameter 'featureId'"
-    assert "createSection" in params, "Missing parameter 'createSection'"
-
-def test_doc::map::feature_has_featureId():
-    assert hasattr(doc::map::Feature, "featureId")
-    descriptor = None
-    for klass in doc::map::Feature.__mro__:
-        if "featureId" in klass.__dict__:
-            descriptor = klass.__dict__["featureId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doc::map::feature_has_createSection():
-    assert hasattr(doc::map::Feature, "createSection")
-    descriptor = None
-    for klass in doc::map::Feature.__mro__:
-        if "createSection" in klass.__dict__:
-            descriptor = klass.__dict__["createSection"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_doc::map::file_is_not_abstract():
-    assert not inspect.isabstract(doc::map::File)
-
-
-def test_doc::map::file_constructor_exists():
-    assert callable(doc::map::File.__init__)
-
-
-def test_doc::map::file_constructor_args():
-    sig = inspect.signature(doc::map::File.__init__)
-    params = list(sig.parameters.keys())
-    assert "path" in params, "Missing parameter 'path'"
-
-def test_doc::map::file_has_path():
-    assert hasattr(doc::map::File, "path")
-    descriptor = None
-    for klass in doc::map::File.__mro__:
-        if "path" in klass.__dict__:
-            descriptor = klass.__dict__["path"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mapelement_is_not_abstract():
-    assert not inspect.isabstract(MapElement)
-
-
-def test_mapelement_constructor_exists():
-    assert callable(MapElement.__init__)
-
-
-def test_mapelement_constructor_args():
-    sig = inspect.signature(MapElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_doc::map::import_is_not_abstract():
-    assert not inspect.isabstract(doc::map::Import)
-
-
-def test_doc::map::import_constructor_exists():
-    assert callable(doc::map::Import.__init__)
-
-
-def test_doc::map::import_constructor_args():
-    sig = inspect.signature(doc::map::Import.__init__)
-    params = list(sig.parameters.keys())
-
-def test_numberingstyle_exists():
-    # Check that the Enumeration exists
-    assert NumberingStyle is not None
-
-def test_numberingstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NumberingStyle]
-    expected_literals = [
-        "ROMAN",
-        "ARABIC",
-        "LATIN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NumberingStyle"
 
 def test_ruleresult_exists():
     # Check that the Enumeration exists
@@ -1038,12 +1022,28 @@ def test_ruleresult_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in RuleResult]
     expected_literals = [
-        "REJECT",
         "ACCEPT",
+        "REJECT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in RuleResult"
+
+def test_numberingstyle_exists():
+    # Check that the Enumeration exists
+    assert NumberingStyle is not None
+
+def test_numberingstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in NumberingStyle]
+    expected_literals = [
+        "LATIN",
+        "ARABIC",
+        "ROMAN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in NumberingStyle"
 
 
 # =============================================================================
@@ -1057,43 +1057,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-doc::builder::PropertyEntry_strategy = st.builds(
-    doc::builder::PropertyEntry,
-    value=
-        safe_text,
+doc_builder_PropertyEntry_strategy = st.builds(
+    doc_builder_PropertyEntry,
     key=
+        safe_text,
+    value=
         safe_text
 )
-builder::PropertyEntry_strategy = st.builds(
-    builder::PropertyEntry,
+builder_PropertyEntry_strategy = st.builds(
+    builder_PropertyEntry,
 )
 Author_strategy = st.builds(
     Author,
 )
-doc::fragment::Copyright_strategy = st.builds(
-    doc::fragment::Copyright,
+doc_fragment_Copyright_strategy = st.builds(
+    doc_fragment_Copyright,
     year=
         st.integers()
 )
 Map_strategy = st.builds(
     Map,
 )
-doc::builder::BookBuilder_strategy = st.builds(
-    doc::builder::BookBuilder,
+doc_builder_BookBuilder_strategy = st.builds(
+    doc_builder_BookBuilder,
+    title=
+        safe_text,
     license=
         safe_text,
     copyrightMarker=
         safe_text,
     version=
-        safe_text,
-    title=
         safe_text
 )
 BookSection_strategy = st.builds(
     BookSection,
 )
-doc::book::BookContainer_strategy = st.builds(
-    doc::book::BookContainer,
+doc_book_BookContainer_strategy = st.builds(
+    doc_book_BookContainer,
     numberingStyle=
         safe_text
 )
@@ -1103,47 +1103,47 @@ Copyright_strategy = st.builds(
 BookContainer_strategy = st.builds(
     BookContainer,
 )
-doc::book::BookSection_strategy = st.builds(
-    doc::book::BookSection,
+doc_book_BookSection_strategy = st.builds(
+    doc_book_BookSection,
+    id=
+        safe_text,
     fullNumber=
         safe_text,
     number=
         st.integers(),
-    id=
-        safe_text,
     title=
         safe_text
 )
-doc::book::Book_strategy = st.builds(
-    doc::book::Book,
-    title=
+doc_book_Book_strategy = st.builds(
+    doc_book_Book,
+    copyrightMarker=
         safe_text,
     version=
         safe_text,
-    copyrightMarker=
+    title=
         safe_text,
     copyrightText=
         safe_text
 )
-doc::map::MapContainer_strategy = st.builds(
-    doc::map::MapContainer,
+doc_map_MapContainer_strategy = st.builds(
+    doc_map_MapContainer,
     numberingStyle=
         safe_text
 )
-fragment::Content_strategy = st.builds(
-    fragment::Content,
+fragment_Content_strategy = st.builds(
+    fragment_Content,
 )
-doc::fragment::Author_strategy = st.builds(
-    doc::fragment::Author,
+doc_fragment_Author_strategy = st.builds(
+    doc_fragment_Author,
     ref=
         safe_text,
-    name=
-        safe_text,
     id=
+        safe_text,
+    name=
         safe_text
 )
-doc::fragment::Content_strategy = st.builds(
-    doc::fragment::Content,
+doc_fragment_Content_strategy = st.builds(
+    doc_fragment_Content,
 )
 Section_strategy = st.builds(
     Section,
@@ -1151,75 +1151,99 @@ Section_strategy = st.builds(
 Content_strategy = st.builds(
     Content,
 )
-doc::fragment::PlainTextContent_strategy = st.builds(
-    doc::fragment::PlainTextContent,
+doc_fragment_PlainTextContent_strategy = st.builds(
+    doc_fragment_PlainTextContent,
     value=
         safe_text
 )
-doc::fragment::Container_strategy = st.builds(
-    doc::fragment::Container,
+doc_fragment_Container_strategy = st.builds(
+    doc_fragment_Container,
     content=
         safe_text
 )
 Container_strategy = st.builds(
     Container,
 )
-doc::fragment::Section_strategy = st.builds(
-    doc::fragment::Section,
+doc_fragment_Section_strategy = st.builds(
+    doc_fragment_Section,
     title=
         safe_text
 )
-doc::fragment::Fragment_strategy = st.builds(
-    doc::fragment::Fragment,
+doc_fragment_Fragment_strategy = st.builds(
+    doc_fragment_Fragment,
 )
 ResourceFactory_strategy = st.builds(
     ResourceFactory,
 )
-doc::map::ExtensionMappingEntry_strategy = st.builds(
-    doc::map::ExtensionMappingEntry,
+doc_map_ExtensionMappingEntry_strategy = st.builds(
+    doc_map_ExtensionMappingEntry,
     extension=
         safe_text
 )
-doc::map::ResourceFactory_strategy = st.builds(
-    doc::map::ResourceFactory,
+doc_map_ResourceFactory_strategy = st.builds(
+    doc_map_ResourceFactory,
     className=
         safe_text
 )
-map::MapElement_strategy = st.builds(
-    map::MapElement,
+map_MapElement_strategy = st.builds(
+    map_MapElement,
 )
-doc::map::ContentGenerator_strategy = st.builds(
-    doc::map::ContentGenerator,
+doc_map_ContentGenerator_strategy = st.builds(
+    doc_map_ContentGenerator,
 )
-map::MapContainer_strategy = st.builds(
-    map::MapContainer,
+map_MapContainer_strategy = st.builds(
+    map_MapContainer,
 )
-doc::map::MapSection_strategy = st.builds(
-    doc::map::MapSection,
-    title=
-        safe_text,
+doc_map_MapSection_strategy = st.builds(
+    doc_map_MapSection,
     id=
+        safe_text,
+    title=
         safe_text
 )
 PatternRule_strategy = st.builds(
     PatternRule,
 )
-doc::map::ExcludePatternRule_strategy = st.builds(
-    doc::map::ExcludePatternRule,
+doc_map_ExcludePatternRule_strategy = st.builds(
+    doc_map_ExcludePatternRule,
 )
-doc::map::IncludePatternRule_strategy = st.builds(
-    doc::map::IncludePatternRule,
+doc_map_IncludePatternRule_strategy = st.builds(
+    doc_map_IncludePatternRule,
 )
-doc::map::NameRule_strategy = st.builds(
-    doc::map::NameRule,
+doc_map_NameRule_strategy = st.builds(
+    doc_map_NameRule,
 )
 NameRule_strategy = st.builds(
     NameRule,
 )
-doc::map::PatternRule_strategy = st.builds(
-    doc::map::PatternRule,
+doc_map_PatternRule_strategy = st.builds(
+    doc_map_PatternRule,
     pattern=
         safe_text
+)
+doc_map_MapElement_strategy = st.builds(
+    doc_map_MapElement,
+)
+Import_strategy = st.builds(
+    Import,
+)
+doc_map_Feature_strategy = st.builds(
+    doc_map_Feature,
+    featureId=
+        safe_text,
+    createSection=
+        st.booleans()
+)
+doc_map_File_strategy = st.builds(
+    doc_map_File,
+    path=
+        safe_text
+)
+MapElement_strategy = st.builds(
+    MapElement,
+)
+doc_map_Import_strategy = st.builds(
+    doc_map_Import,
 )
 ExtensionMappingEntry_strategy = st.builds(
     ExtensionMappingEntry,
@@ -1227,86 +1251,53 @@ ExtensionMappingEntry_strategy = st.builds(
 MapContainer_strategy = st.builds(
     MapContainer,
 )
-doc::map::Map_strategy = st.builds(
-    doc::map::Map,
+doc_map_Map_strategy = st.builds(
+    doc_map_Map,
 )
-doc::Test_strategy = st.builds(
-    doc::Test,
-)
-doc::map::MapElement_strategy = st.builds(
-    doc::map::MapElement,
-)
-Import_strategy = st.builds(
-    Import,
-)
-doc::map::Feature_strategy = st.builds(
-    doc::map::Feature,
-    featureId=
-        safe_text,
-    createSection=
-        st.booleans()
-)
-doc::map::File_strategy = st.builds(
-    doc::map::File,
-    path=
-        safe_text
-)
-MapElement_strategy = st.builds(
-    MapElement,
-)
-doc::map::Import_strategy = st.builds(
-    doc::map::Import,
+doc_Test_strategy = st.builds(
+    doc_Test,
 )
 
-@given(instance=doc::builder::PropertyEntry_strategy)
+@given(instance=doc_builder_PropertyEntry_strategy)
 @settings(max_examples=50)
-def test_doc::builder::propertyentry_instantiation(instance):
-    assert isinstance(instance, doc::builder::PropertyEntry)
-
-@given(instance=doc::builder::PropertyEntry_strategy)
-def test_doc::builder::propertyentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_doc_builder_propertyentry_instantiation(instance):
+    assert isinstance(instance, doc_builder_PropertyEntry)
 
 
-@given(instance=doc::builder::PropertyEntry_strategy)
-def test_doc::builder::propertyentry_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=doc::builder::PropertyEntry_strategy)
-def test_doc::builder::propertyentry_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=doc::builder::PropertyEntry_strategy)
-def test_doc::builder::propertyentry_key_setter(instance):
+@given(instance=doc_builder_PropertyEntry_strategy)
+def test_doc_builder_propertyentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=builder::PropertyEntry_strategy)
+
+
+@given(instance=doc_builder_PropertyEntry_strategy)
+def test_doc_builder_propertyentry_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=builder_PropertyEntry_strategy)
 @settings(max_examples=50)
-def test_builder::propertyentry_instantiation(instance):
-    assert isinstance(instance, builder::PropertyEntry)
+def test_builder_propertyentry_instantiation(instance):
+    assert isinstance(instance, builder_PropertyEntry)
 
 @given(instance=Author_strategy)
 @settings(max_examples=50)
 def test_author_instantiation(instance):
     assert isinstance(instance, Author)
 
-@given(instance=doc::fragment::Copyright_strategy)
+@given(instance=doc_fragment_Copyright_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::copyright_instantiation(instance):
-    assert isinstance(instance, doc::fragment::Copyright)
-
-@given(instance=doc::fragment::Copyright_strategy)
-def test_doc::fragment::copyright_year_type(instance):
-    assert isinstance(instance.year, int)
+def test_doc_fragment_copyright_instantiation(instance):
+    assert isinstance(instance, doc_fragment_Copyright)
 
 
-@given(instance=doc::fragment::Copyright_strategy)
-def test_doc::fragment::copyright_year_setter(instance):
+
+@given(instance=doc_fragment_Copyright_strategy)
+def test_doc_fragment_copyright_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
@@ -1316,72 +1307,57 @@ def test_doc::fragment::copyright_year_setter(instance):
 def test_map_instantiation(instance):
     assert isinstance(instance, Map)
 
-@given(instance=doc::builder::BookBuilder_strategy)
+@given(instance=doc_builder_BookBuilder_strategy)
 @settings(max_examples=50)
-def test_doc::builder::bookbuilder_instantiation(instance):
-    assert isinstance(instance, doc::builder::BookBuilder)
-
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_license_type(instance):
-    assert isinstance(instance.license, str)
+def test_doc_builder_bookbuilder_instantiation(instance):
+    assert isinstance(instance, doc_builder_BookBuilder)
 
 
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_license_setter(instance):
+
+@given(instance=doc_builder_BookBuilder_strategy)
+def test_doc_builder_bookbuilder_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=doc_builder_BookBuilder_strategy)
+def test_doc_builder_bookbuilder_license_setter(instance):
     original = instance.license
     instance.license = original
     assert instance.license == original
 
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_copyrightMarker_type(instance):
-    assert isinstance(instance.copyrightMarker, str)
 
 
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_copyrightMarker_setter(instance):
+@given(instance=doc_builder_BookBuilder_strategy)
+def test_doc_builder_bookbuilder_copyrightMarker_setter(instance):
     original = instance.copyrightMarker
     instance.copyrightMarker = original
     assert instance.copyrightMarker == original
 
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_version_setter(instance):
+@given(instance=doc_builder_BookBuilder_strategy)
+def test_doc_builder_bookbuilder_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
-
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=doc::builder::BookBuilder_strategy)
-def test_doc::builder::bookbuilder_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
 @given(instance=BookSection_strategy)
 @settings(max_examples=50)
 def test_booksection_instantiation(instance):
     assert isinstance(instance, BookSection)
 
-@given(instance=doc::book::BookContainer_strategy)
+@given(instance=doc_book_BookContainer_strategy)
 @settings(max_examples=50)
-def test_doc::book::bookcontainer_instantiation(instance):
-    assert isinstance(instance, doc::book::BookContainer)
-
-@given(instance=doc::book::BookContainer_strategy)
-def test_doc::book::bookcontainer_numberingStyle_type(instance):
-    assert isinstance(instance.numberingStyle, str)
+def test_doc_book_bookcontainer_instantiation(instance):
+    assert isinstance(instance, doc_book_BookContainer)
 
 
-@given(instance=doc::book::BookContainer_strategy)
-def test_doc::book::bookcontainer_numberingStyle_setter(instance):
+
+@given(instance=doc_book_BookContainer_strategy)
+def test_doc_book_bookcontainer_numberingStyle_setter(instance):
     original = instance.numberingStyle
     instance.numberingStyle = original
     assert instance.numberingStyle == original
@@ -1396,167 +1372,131 @@ def test_copyright_instantiation(instance):
 def test_bookcontainer_instantiation(instance):
     assert isinstance(instance, BookContainer)
 
-@given(instance=doc::book::BookSection_strategy)
+@given(instance=doc_book_BookSection_strategy)
 @settings(max_examples=50)
-def test_doc::book::booksection_instantiation(instance):
-    assert isinstance(instance, doc::book::BookSection)
-
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_fullNumber_type(instance):
-    assert isinstance(instance.fullNumber, str)
+def test_doc_book_booksection_instantiation(instance):
+    assert isinstance(instance, doc_book_BookSection)
 
 
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_fullNumber_setter(instance):
+
+@given(instance=doc_book_BookSection_strategy)
+def test_doc_book_booksection_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=doc_book_BookSection_strategy)
+def test_doc_book_booksection_fullNumber_setter(instance):
     original = instance.fullNumber
     instance.fullNumber = original
     assert instance.fullNumber == original
 
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_number_setter(instance):
+@given(instance=doc_book_BookSection_strategy)
+def test_doc_book_booksection_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
 
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=doc::book::BookSection_strategy)
-def test_doc::book::booksection_title_setter(instance):
+@given(instance=doc_book_BookSection_strategy)
+def test_doc_book_booksection_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=doc::book::Book_strategy)
+@given(instance=doc_book_Book_strategy)
 @settings(max_examples=50)
-def test_doc::book::book_instantiation(instance):
-    assert isinstance(instance, doc::book::Book)
-
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_doc_book_book_instantiation(instance):
+    assert isinstance(instance, doc_book_Book)
 
 
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_copyrightMarker_type(instance):
-    assert isinstance(instance.copyrightMarker, str)
-
-
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_copyrightMarker_setter(instance):
+@given(instance=doc_book_Book_strategy)
+def test_doc_book_book_copyrightMarker_setter(instance):
     original = instance.copyrightMarker
     instance.copyrightMarker = original
     assert instance.copyrightMarker == original
 
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_copyrightText_type(instance):
-    assert isinstance(instance.copyrightText, str)
 
 
-@given(instance=doc::book::Book_strategy)
-def test_doc::book::book_copyrightText_setter(instance):
+@given(instance=doc_book_Book_strategy)
+def test_doc_book_book_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=doc_book_Book_strategy)
+def test_doc_book_book_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=doc_book_Book_strategy)
+def test_doc_book_book_copyrightText_setter(instance):
     original = instance.copyrightText
     instance.copyrightText = original
     assert instance.copyrightText == original
 
-@given(instance=doc::map::MapContainer_strategy)
+@given(instance=doc_map_MapContainer_strategy)
 @settings(max_examples=50)
-def test_doc::map::mapcontainer_instantiation(instance):
-    assert isinstance(instance, doc::map::MapContainer)
-
-@given(instance=doc::map::MapContainer_strategy)
-def test_doc::map::mapcontainer_numberingStyle_type(instance):
-    assert isinstance(instance.numberingStyle, str)
+def test_doc_map_mapcontainer_instantiation(instance):
+    assert isinstance(instance, doc_map_MapContainer)
 
 
-@given(instance=doc::map::MapContainer_strategy)
-def test_doc::map::mapcontainer_numberingStyle_setter(instance):
+
+@given(instance=doc_map_MapContainer_strategy)
+def test_doc_map_mapcontainer_numberingStyle_setter(instance):
     original = instance.numberingStyle
     instance.numberingStyle = original
     assert instance.numberingStyle == original
 
-@given(instance=fragment::Content_strategy)
+@given(instance=fragment_Content_strategy)
 @settings(max_examples=50)
-def test_fragment::content_instantiation(instance):
-    assert isinstance(instance, fragment::Content)
+def test_fragment_content_instantiation(instance):
+    assert isinstance(instance, fragment_Content)
 
-@given(instance=doc::fragment::Author_strategy)
+@given(instance=doc_fragment_Author_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::author_instantiation(instance):
-    assert isinstance(instance, doc::fragment::Author)
-
-@given(instance=doc::fragment::Author_strategy)
-def test_doc::fragment::author_ref_type(instance):
-    assert isinstance(instance.ref, str)
+def test_doc_fragment_author_instantiation(instance):
+    assert isinstance(instance, doc_fragment_Author)
 
 
-@given(instance=doc::fragment::Author_strategy)
-def test_doc::fragment::author_ref_setter(instance):
+
+@given(instance=doc_fragment_Author_strategy)
+def test_doc_fragment_author_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=doc::fragment::Author_strategy)
-def test_doc::fragment::author_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=doc::fragment::Author_strategy)
-def test_doc::fragment::author_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=doc::fragment::Author_strategy)
-def test_doc::fragment::author_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=doc::fragment::Author_strategy)
-def test_doc::fragment::author_id_setter(instance):
+@given(instance=doc_fragment_Author_strategy)
+def test_doc_fragment_author_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=doc::fragment::Content_strategy)
+
+
+@given(instance=doc_fragment_Author_strategy)
+def test_doc_fragment_author_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=doc_fragment_Content_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::content_instantiation(instance):
-    assert isinstance(instance, doc::fragment::Content)
+def test_doc_fragment_content_instantiation(instance):
+    assert isinstance(instance, doc_fragment_Content)
 
 @given(instance=Section_strategy)
 @settings(max_examples=50)
@@ -1568,34 +1508,28 @@ def test_section_instantiation(instance):
 def test_content_instantiation(instance):
     assert isinstance(instance, Content)
 
-@given(instance=doc::fragment::PlainTextContent_strategy)
+@given(instance=doc_fragment_PlainTextContent_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::plaintextcontent_instantiation(instance):
-    assert isinstance(instance, doc::fragment::PlainTextContent)
-
-@given(instance=doc::fragment::PlainTextContent_strategy)
-def test_doc::fragment::plaintextcontent_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_doc_fragment_plaintextcontent_instantiation(instance):
+    assert isinstance(instance, doc_fragment_PlainTextContent)
 
 
-@given(instance=doc::fragment::PlainTextContent_strategy)
-def test_doc::fragment::plaintextcontent_value_setter(instance):
+
+@given(instance=doc_fragment_PlainTextContent_strategy)
+def test_doc_fragment_plaintextcontent_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=doc::fragment::Container_strategy)
+@given(instance=doc_fragment_Container_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::container_instantiation(instance):
-    assert isinstance(instance, doc::fragment::Container)
-
-@given(instance=doc::fragment::Container_strategy)
-def test_doc::fragment::container_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_doc_fragment_container_instantiation(instance):
+    assert isinstance(instance, doc_fragment_Container)
 
 
-@given(instance=doc::fragment::Container_strategy)
-def test_doc::fragment::container_content_setter(instance):
+
+@given(instance=doc_fragment_Container_strategy)
+def test_doc_fragment_container_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
@@ -1605,115 +1539,100 @@ def test_doc::fragment::container_content_setter(instance):
 def test_container_instantiation(instance):
     assert isinstance(instance, Container)
 
-@given(instance=doc::fragment::Section_strategy)
+@given(instance=doc_fragment_Section_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::section_instantiation(instance):
-    assert isinstance(instance, doc::fragment::Section)
-
-@given(instance=doc::fragment::Section_strategy)
-def test_doc::fragment::section_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_doc_fragment_section_instantiation(instance):
+    assert isinstance(instance, doc_fragment_Section)
 
 
-@given(instance=doc::fragment::Section_strategy)
-def test_doc::fragment::section_title_setter(instance):
+
+@given(instance=doc_fragment_Section_strategy)
+def test_doc_fragment_section_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=doc::fragment::Fragment_strategy)
+@given(instance=doc_fragment_Fragment_strategy)
 @settings(max_examples=50)
-def test_doc::fragment::fragment_instantiation(instance):
-    assert isinstance(instance, doc::fragment::Fragment)
+def test_doc_fragment_fragment_instantiation(instance):
+    assert isinstance(instance, doc_fragment_Fragment)
 
 @given(instance=ResourceFactory_strategy)
 @settings(max_examples=50)
 def test_resourcefactory_instantiation(instance):
     assert isinstance(instance, ResourceFactory)
 
-@given(instance=doc::map::ExtensionMappingEntry_strategy)
+@given(instance=doc_map_ExtensionMappingEntry_strategy)
 @settings(max_examples=50)
-def test_doc::map::extensionmappingentry_instantiation(instance):
-    assert isinstance(instance, doc::map::ExtensionMappingEntry)
-
-@given(instance=doc::map::ExtensionMappingEntry_strategy)
-def test_doc::map::extensionmappingentry_extension_type(instance):
-    assert isinstance(instance.extension, str)
+def test_doc_map_extensionmappingentry_instantiation(instance):
+    assert isinstance(instance, doc_map_ExtensionMappingEntry)
 
 
-@given(instance=doc::map::ExtensionMappingEntry_strategy)
-def test_doc::map::extensionmappingentry_extension_setter(instance):
+
+@given(instance=doc_map_ExtensionMappingEntry_strategy)
+def test_doc_map_extensionmappingentry_extension_setter(instance):
     original = instance.extension
     instance.extension = original
     assert instance.extension == original
 
-@given(instance=doc::map::ResourceFactory_strategy)
+@given(instance=doc_map_ResourceFactory_strategy)
 @settings(max_examples=50)
-def test_doc::map::resourcefactory_instantiation(instance):
-    assert isinstance(instance, doc::map::ResourceFactory)
-
-@given(instance=doc::map::ResourceFactory_strategy)
-def test_doc::map::resourcefactory_className_type(instance):
-    assert isinstance(instance.className, str)
+def test_doc_map_resourcefactory_instantiation(instance):
+    assert isinstance(instance, doc_map_ResourceFactory)
 
 
-@given(instance=doc::map::ResourceFactory_strategy)
-def test_doc::map::resourcefactory_className_setter(instance):
+
+@given(instance=doc_map_ResourceFactory_strategy)
+def test_doc_map_resourcefactory_className_setter(instance):
     original = instance.className
     instance.className = original
     assert instance.className == original
 
-@given(instance=map::MapElement_strategy)
+@given(instance=map_MapElement_strategy)
 @settings(max_examples=50)
-def test_map::mapelement_instantiation(instance):
-    assert isinstance(instance, map::MapElement)
+def test_map_mapelement_instantiation(instance):
+    assert isinstance(instance, map_MapElement)
 
-@given(instance=doc::map::ContentGenerator_strategy)
+@given(instance=doc_map_ContentGenerator_strategy)
 @settings(max_examples=50)
-def test_doc::map::contentgenerator_instantiation(instance):
-    assert isinstance(instance, doc::map::ContentGenerator)
+def test_doc_map_contentgenerator_instantiation(instance):
+    assert isinstance(instance, doc_map_ContentGenerator)
 
-@given(instance=map::MapContainer_strategy)
+@given(instance=map_MapContainer_strategy)
 @settings(max_examples=50)
-def test_map::mapcontainer_instantiation(instance):
-    assert isinstance(instance, map::MapContainer)
+def test_map_mapcontainer_instantiation(instance):
+    assert isinstance(instance, map_MapContainer)
 
-@given(instance=doc::map::MapSection_strategy)
+@given(instance=doc_map_MapSection_strategy)
 @settings(max_examples=50)
-def test_doc::map::mapsection_instantiation(instance):
-    assert isinstance(instance, doc::map::MapSection)
-
-@given(instance=doc::map::MapSection_strategy)
-def test_doc::map::mapsection_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_doc_map_mapsection_instantiation(instance):
+    assert isinstance(instance, doc_map_MapSection)
 
 
-@given(instance=doc::map::MapSection_strategy)
-def test_doc::map::mapsection_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=doc::map::MapSection_strategy)
-def test_doc::map::mapsection_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=doc::map::MapSection_strategy)
-def test_doc::map::mapsection_id_setter(instance):
+@given(instance=doc_map_MapSection_strategy)
+def test_doc_map_mapsection_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+
+
+@given(instance=doc_map_MapSection_strategy)
+def test_doc_map_mapsection_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
 
 @given(instance=PatternRule_strategy)
 @settings(max_examples=50)
 def test_patternrule_instantiation(instance):
     assert isinstance(instance, PatternRule)
 
-@given(instance=doc::map::ExcludePatternRule_strategy)
+@given(instance=doc_map_ExcludePatternRule_strategy)
 @settings(max_examples=50)
-def test_doc::map::excludepatternrule_instantiation(instance):
-    assert isinstance(instance, doc::map::ExcludePatternRule)
+def test_doc_map_excludepatternrule_instantiation(instance):
+    assert isinstance(instance, doc_map_ExcludePatternRule)
 
 import warnings
 import copy
@@ -1721,9 +1640,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=doc::map::ExcludePatternRule_strategy)
+@given(instance=doc_map_ExcludePatternRule_strategy)
 @settings(max_examples=30)
-def test_doc::map::excludepatternrule_checkrule_changes_state(instance):
+def test_doc_map_excludepatternrule_checkrule_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1737,19 +1656,19 @@ def test_doc::map::excludepatternrule_checkrule_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRule' in doc::map::ExcludePatternRule is empty"
+        assert has_statements, f"Function 'checkRule' in doc_map_ExcludePatternRule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRule' in doc::map::ExcludePatternRule did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRule' in doc_map_ExcludePatternRule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRule' in doc::map::ExcludePatternRule is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkRule' in doc_map_ExcludePatternRule is not implemented or raised an error")
 
-@given(instance=doc::map::IncludePatternRule_strategy)
+@given(instance=doc_map_IncludePatternRule_strategy)
 @settings(max_examples=50)
-def test_doc::map::includepatternrule_instantiation(instance):
-    assert isinstance(instance, doc::map::IncludePatternRule)
+def test_doc_map_includepatternrule_instantiation(instance):
+    assert isinstance(instance, doc_map_IncludePatternRule)
 
 import warnings
 import copy
@@ -1757,9 +1676,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=doc::map::IncludePatternRule_strategy)
+@given(instance=doc_map_IncludePatternRule_strategy)
 @settings(max_examples=30)
-def test_doc::map::includepatternrule_checkrule_changes_state(instance):
+def test_doc_map_includepatternrule_checkrule_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1773,19 +1692,19 @@ def test_doc::map::includepatternrule_checkrule_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRule' in doc::map::IncludePatternRule is empty"
+        assert has_statements, f"Function 'checkRule' in doc_map_IncludePatternRule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRule' in doc::map::IncludePatternRule did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRule' in doc_map_IncludePatternRule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRule' in doc::map::IncludePatternRule is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkRule' in doc_map_IncludePatternRule is not implemented or raised an error")
 
-@given(instance=doc::map::NameRule_strategy)
+@given(instance=doc_map_NameRule_strategy)
 @settings(max_examples=50)
-def test_doc::map::namerule_instantiation(instance):
-    assert isinstance(instance, doc::map::NameRule)
+def test_doc_map_namerule_instantiation(instance):
+    assert isinstance(instance, doc_map_NameRule)
 
 import warnings
 import copy
@@ -1793,9 +1712,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=doc::map::NameRule_strategy)
+@given(instance=doc_map_NameRule_strategy)
 @settings(max_examples=30)
-def test_doc::map::namerule_checkrule_changes_state(instance):
+def test_doc_map_namerule_checkrule_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1809,35 +1728,117 @@ def test_doc::map::namerule_checkrule_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRule' in doc::map::NameRule is empty"
+        assert has_statements, f"Function 'checkRule' in doc_map_NameRule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRule' in doc::map::NameRule did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRule' in doc_map_NameRule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRule' in doc::map::NameRule is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkRule' in doc_map_NameRule is not implemented or raised an error")
 
 @given(instance=NameRule_strategy)
 @settings(max_examples=50)
 def test_namerule_instantiation(instance):
     assert isinstance(instance, NameRule)
 
-@given(instance=doc::map::PatternRule_strategy)
+@given(instance=doc_map_PatternRule_strategy)
 @settings(max_examples=50)
-def test_doc::map::patternrule_instantiation(instance):
-    assert isinstance(instance, doc::map::PatternRule)
-
-@given(instance=doc::map::PatternRule_strategy)
-def test_doc::map::patternrule_pattern_type(instance):
-    assert isinstance(instance.pattern, str)
+def test_doc_map_patternrule_instantiation(instance):
+    assert isinstance(instance, doc_map_PatternRule)
 
 
-@given(instance=doc::map::PatternRule_strategy)
-def test_doc::map::patternrule_pattern_setter(instance):
+
+@given(instance=doc_map_PatternRule_strategy)
+def test_doc_map_patternrule_pattern_setter(instance):
     original = instance.pattern
     instance.pattern = original
     assert instance.pattern == original
+
+@given(instance=doc_map_MapElement_strategy)
+@settings(max_examples=50)
+def test_doc_map_mapelement_instantiation(instance):
+    assert isinstance(instance, doc_map_MapElement)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=doc_map_MapElement_strategy)
+@settings(max_examples=30)
+def test_doc_map_mapelement_visit_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.visit(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.visit).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'visit' in doc_map_MapElement is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'visit' in doc_map_MapElement did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'visit' in doc_map_MapElement is not implemented or raised an error")
+
+@given(instance=Import_strategy)
+@settings(max_examples=50)
+def test_import_instantiation(instance):
+    assert isinstance(instance, Import)
+
+@given(instance=doc_map_Feature_strategy)
+@settings(max_examples=50)
+def test_doc_map_feature_instantiation(instance):
+    assert isinstance(instance, doc_map_Feature)
+
+
+
+@given(instance=doc_map_Feature_strategy)
+def test_doc_map_feature_featureId_setter(instance):
+    original = instance.featureId
+    instance.featureId = original
+    assert instance.featureId == original
+
+
+
+@given(instance=doc_map_Feature_strategy)
+def test_doc_map_feature_createSection_setter(instance):
+    original = instance.createSection
+    instance.createSection = original
+    assert instance.createSection == original
+
+@given(instance=doc_map_File_strategy)
+@settings(max_examples=50)
+def test_doc_map_file_instantiation(instance):
+    assert isinstance(instance, doc_map_File)
+
+
+
+@given(instance=doc_map_File_strategy)
+def test_doc_map_file_path_setter(instance):
+    original = instance.path
+    instance.path = original
+    assert instance.path == original
+
+@given(instance=MapElement_strategy)
+@settings(max_examples=50)
+def test_mapelement_instantiation(instance):
+    assert isinstance(instance, MapElement)
+
+@given(instance=doc_map_Import_strategy)
+@settings(max_examples=50)
+def test_doc_map_import_instantiation(instance):
+    assert isinstance(instance, doc_map_Import)
 
 @given(instance=ExtensionMappingEntry_strategy)
 @settings(max_examples=50)
@@ -1849,10 +1850,10 @@ def test_extensionmappingentry_instantiation(instance):
 def test_mapcontainer_instantiation(instance):
     assert isinstance(instance, MapContainer)
 
-@given(instance=doc::map::Map_strategy)
+@given(instance=doc_map_Map_strategy)
 @settings(max_examples=50)
-def test_doc::map::map_instantiation(instance):
-    assert isinstance(instance, doc::map::Map)
+def test_doc_map_map_instantiation(instance):
+    assert isinstance(instance, doc_map_Map)
 
 import warnings
 import copy
@@ -1860,9 +1861,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=doc::map::Map_strategy)
+@given(instance=doc_map_Map_strategy)
 @settings(max_examples=30)
-def test_doc::map::map_visit_changes_state(instance):
+def test_doc_map_map_visit_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1876,110 +1877,16 @@ def test_doc::map::map_visit_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'visit' in doc::map::Map is empty"
+        assert has_statements, f"Function 'visit' in doc_map_Map is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'visit' in doc::map::Map did not change state; check implementation")
+            warnings.warn(f"Operation 'visit' in doc_map_Map did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'visit' in doc::map::Map is not implemented or raised an error")
+        warnings.warn(f"Operation 'visit' in doc_map_Map is not implemented or raised an error")
 
-@given(instance=doc::Test_strategy)
+@given(instance=doc_Test_strategy)
 @settings(max_examples=50)
-def test_doc::test_instantiation(instance):
-    assert isinstance(instance, doc::Test)
-
-@given(instance=doc::map::MapElement_strategy)
-@settings(max_examples=50)
-def test_doc::map::mapelement_instantiation(instance):
-    assert isinstance(instance, doc::map::MapElement)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=doc::map::MapElement_strategy)
-@settings(max_examples=30)
-def test_doc::map::mapelement_visit_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.visit(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.visit).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'visit' in doc::map::MapElement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'visit' in doc::map::MapElement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'visit' in doc::map::MapElement is not implemented or raised an error")
-
-@given(instance=Import_strategy)
-@settings(max_examples=50)
-def test_import_instantiation(instance):
-    assert isinstance(instance, Import)
-
-@given(instance=doc::map::Feature_strategy)
-@settings(max_examples=50)
-def test_doc::map::feature_instantiation(instance):
-    assert isinstance(instance, doc::map::Feature)
-
-@given(instance=doc::map::Feature_strategy)
-def test_doc::map::feature_featureId_type(instance):
-    assert isinstance(instance.featureId, str)
-
-
-@given(instance=doc::map::Feature_strategy)
-def test_doc::map::feature_featureId_setter(instance):
-    original = instance.featureId
-    instance.featureId = original
-    assert instance.featureId == original
-
-@given(instance=doc::map::Feature_strategy)
-def test_doc::map::feature_createSection_type(instance):
-    assert isinstance(instance.createSection, bool)
-
-
-@given(instance=doc::map::Feature_strategy)
-def test_doc::map::feature_createSection_setter(instance):
-    original = instance.createSection
-    instance.createSection = original
-    assert instance.createSection == original
-
-@given(instance=doc::map::File_strategy)
-@settings(max_examples=50)
-def test_doc::map::file_instantiation(instance):
-    assert isinstance(instance, doc::map::File)
-
-@given(instance=doc::map::File_strategy)
-def test_doc::map::file_path_type(instance):
-    assert isinstance(instance.path, str)
-
-
-@given(instance=doc::map::File_strategy)
-def test_doc::map::file_path_setter(instance):
-    original = instance.path
-    instance.path = original
-    assert instance.path == original
-
-@given(instance=MapElement_strategy)
-@settings(max_examples=50)
-def test_mapelement_instantiation(instance):
-    assert isinstance(instance, MapElement)
-
-@given(instance=doc::map::Import_strategy)
-@settings(max_examples=50)
-def test_doc::map::import_instantiation(instance):
-    assert isinstance(instance, doc::map::Import)
+def test_doc_test_instantiation(instance):
+    assert isinstance(instance, doc_Test)

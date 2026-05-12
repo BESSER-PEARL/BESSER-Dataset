@@ -1,0 +1,77 @@
+The model has 43 class(es).
+The class 'JTextField' has no attributes.
+The class 'JTable' has no attributes.
+The class 'Prompt' has the following attributes: 'FONT_SIZE' of type int; 'OUTPUT_WIDTH' of type int; 'queuePosition' of type int; 'frame' of type JFrame; 'OUTPUT_HEIGHT' of type int; 'output' of type JTextArea; 'commandLine' of type JTextField; 'frameFont' of type Font; 'MAX_COMMAND_LENGTH' of type int.
+The class 'Instruction_IncrementPointer' has no attributes.
+The class 'Instruction_CloseBracket' has no attributes.
+The class 'Instruction_Yield' has no attributes.
+The class 'Instruction_Print' has no attributes.
+The class 'IO_Device' has the following attributes: 'counter' of type int.
+The class 'Memory' has the following attributes: 'table' of type Page__; 'memory' of type Memory__.
+The class 'Task_Manager' has the following attributes: 'amountofFreeMemory' of type JLabel; 'scrollPane' of type JScrollPane; 'amountofUsedMemory' of type JLabel; 'numberOfProcesses' of type JLabel; 'contactTable' of type JTable.
+The class 'JTextArea' has no attributes.
+The class 'Process' has the following attributes: 'registers' of type str; 'name' of type str; 'processState' of type ProcessState; 'memoryUseage' of type int.
+The class 'ProgramFileData' has the following attributes: 'instructions' of type ArrayList_Instruction_; 'name' of type str; 'memory' of type int.
+The class 'CPU' has the following attributes: 'interruptQueue' of type ArrayList_Interrupter_; 'registers' of type str.
+The class 'Instruction_Exit' has no attributes.
+The class 'Operating_System' has the following attributes: 'PROC_DATA_POINTER' of type int; 'PROC_BASE_REGISTER' of type int; 'PAGE_SIZE' of type int; 'INSTRUCTION_REGISTER' of type int; 'taskManager' of type Task_Manager; 'dispatcher' of type Dispatcher; 'prompt' of type Prompt; 'cpu' of type CPU; 'PROC_BASE_POINTER' of type int; 'NUMBER_OF_REGISTERS' of type int; 'device' of type IO_Device; 'QUANTUM' of type int; 'memory' of type Memory; 'MEMORY_SIZE' of type int; 'clock' of type Clock; 'PROCESS_ID_REGISTER' of type int; 'scheduler' of type Scheduler; 'hardDrive' of type Hard_Drive; 'PROC_LIMIT_REGISTER' of type int.
+The class 'Object' has no attributes.
+The class 'Instruction_IncrementValue' has no attributes.
+The class 'Instruction_DecrementValue' has no attributes.
+The class 'JLabel' has no attributes.
+The class 'Class' has no attributes.
+The class 'ProcessData' has the following attributes: 'instructions' of type ArrayList_Instruction_; 'startTime' of type str; 'name' of type str; 'memory' of type int.
+The class 'Page' has the following attributes: 'free' of type bool; 'owner' of type Process; 'attribute' of type str.
+The class 'JScrollPane' has no attributes.
+The class 'Dispatcher' has no attributes.
+The class 'Clock' has the following attributes: 'clockCycle' of type int.
+The class 'Interrupter_Interface' has no attributes.
+The class 'Request' has the following attributes: 'startAddress' of type int; 'processID' of type int; 'endAddress' of type int.
+The class 'ProcessTableModel' has the following attributes: 'numberProcesses' of type int; 'columnNames' of type str; 'processList' of type str.
+The class 'Scheduler' has the following attributes: 'newQueue' of type ProcessData; 'ioQueue' of type Process; 'readyQueue' of type Process; 'identifier' of type int.
+The class 'Instruction_Out' has no attributes.
+The class 'Instruction_Instruction_Interface' has no attributes.
+The class 'Instruction_Calculate' has the following attributes: 'time' of type int.
+The class 'Instruction_IO' has no attributes.
+The class 'Font' has no attributes.
+The class 'Instruction_DecrementPointer' has no attributes.
+The class 'ArrayList_ProgramFileData_' has no attributes.
+The class 'AbstractTableModel' has no attributes.
+The class 'JFrame' has no attributes.
+The class 'Main' has no attributes.
+The class 'Instruction_OpenBracket' has no attributes.
+The class 'JobFileData' has the following attributes: 'programs' of type ArrayList_ProgramFileData_; 'startTimes' of type ArrayList_Integer_.
+The class 'Hard_Drive' has the following attributes: 'memory' of type str.
+The enumeration 'ArrayList_Integer_' does not specify any literals.
+The enumeration 'ArrayList_Interrupter_' does not specify any literals.
+The enumeration 'Page__' does not specify any literals.
+The enumeration 'ProcessState' does not specify any literals.
+The enumeration 'Memory__' does not specify any literals.
+The enumeration 'ArrayList_Instruction_' does not specify any literals.
+The enumeration 'ArrayList_ProcessData_' does not specify any literals.
+'Operating_System' (role 'clock28', cardinality 0..*) is associated with 'Clock' (role 'operating_System29', cardinality 0..*).
+'Operating_System' (role 'hard_Drive40', cardinality 0..*) is associated with 'Hard_Drive' (role 'operating_System41', cardinality 0..*).
+'Operating_System' (role 'main26', cardinality 0..*) is associated with 'Main' (role 'operating_System27', cardinality 0..*).
+'Process' (role 'task_Manager25', cardinality 0..*) is associated with 'Task_Manager' (role 'process24', cardinality 0..*).
+'Operating_System' (role 'cPU30', cardinality 0..*) is associated with 'CPU' (role 'operating_System31', cardinality 0..*).
+'Operating_System' (role 'iO_Device38', cardinality 0..*) is associated with 'IO_Device' (role 'operating_System39', cardinality 0..*).
+'Operating_System' (role 'out13', cardinality 0..*) is associated with 'Instruction_Out' (role 'operating_System12', cardinality 0..*).
+'Instruction_Instruction_Interface' (role 'processData14', cardinality 0..*) is associated with 'ProcessData' (role 'instruction15', cardinality 0..*).
+'Operating_System' (role 'exit7', cardinality 0..*) is associated with 'Instruction_Exit' (role 'operating_System6', cardinality 0..*).
+'Operating_System' (role 'dispatcher32', cardinality 0..*) is associated with 'Dispatcher' (role 'operating_System33', cardinality 0..*).
+'Operating_System' (role 'memory34', cardinality 0..*) is associated with 'Memory' (role 'operating_System35', cardinality 0..*).
+'Page' (role 'memory51', cardinality 0..*) is associated with 'Memory' (role 'page50', cardinality 0..*).
+'Operating_System' (role 'scheduler36', cardinality 0..*) is associated with 'Scheduler' (role 'operating_System37', cardinality 0..*).
+'Operating_System' (role 'processTableModel17', cardinality 0..*) is associated with 'ProcessTableModel' (role 'operating_System16', cardinality 0..*).
+'Instruction_IO' (role 'operating_System2', cardinality 0..*) is associated with 'Operating_System' (role 'iO3', cardinality 0..*).
+'Instruction_Calculate' (role 'operating_System10', cardinality 0..*) is associated with 'Operating_System' (role 'calculate11', cardinality 0..*).
+'Process' (role 'exit9', cardinality 0..*) is associated with 'Instruction_Exit' (role 'process8', cardinality 0..*).
+'JobFileData' (role 'programFileData46', cardinality 0..*) is associated with 'ProgramFileData' (role 'jobFileData47', cardinality 0..*).
+'Process' (role 'page43', cardinality 0..*) is associated with 'Page' (role 'process42', cardinality 0..*).
+'Operating_System' (role 'task_Manager22', cardinality 0..*) is associated with 'Task_Manager' (role 'operating_System23', cardinality 0..*).
+'Prompt' (role 'operating_System21', cardinality 0..*) is associated with 'Operating_System' (role 'prompt20', cardinality 0..*).
+'Instruction_Yield' (role 'operating_System0', cardinality 0..*) is associated with 'Operating_System' (role 'yield1', cardinality 0..*).
+'ProgramFileData' (role 'instruction44', cardinality 0..*) is associated with 'Instruction_Instruction_Interface' (role 'programFileData45', cardinality 0..*).
+'Request' (role 'hard_Drive49', cardinality 0..*) is associated with 'Hard_Drive' (role 'request48', cardinality 0..*).
+'ProcessTableModel' (role 'process18', cardinality 0..*) is associated with 'Process' (role 'processTableModel19', cardinality 0..*).
+'Instruction_IO' (role 'process4', cardinality 0..*) is associated with 'Process' (role 'iO5', cardinality 0..*).

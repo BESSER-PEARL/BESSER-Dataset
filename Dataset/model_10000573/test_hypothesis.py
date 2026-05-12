@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     door_alarm_system,
@@ -128,11 +128,11 @@ def test_timelog_constructor_args():
     sig = inspect.signature(timelog.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
-    assert "month" in params, "Missing parameter 'month'"
     assert "seconds" in params, "Missing parameter 'seconds'"
-    assert "hour" in params, "Missing parameter 'hour'"
-    assert "minutes" in params, "Missing parameter 'minutes'"
     assert "day" in params, "Missing parameter 'day'"
+    assert "minutes" in params, "Missing parameter 'minutes'"
+    assert "month" in params, "Missing parameter 'month'"
+    assert "hour" in params, "Missing parameter 'hour'"
 
 def test_timelog_has_year():
     assert hasattr(timelog, "year")
@@ -140,15 +140,6 @@ def test_timelog_has_year():
     for klass in timelog.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_timelog_has_month():
-    assert hasattr(timelog, "month")
-    descriptor = None
-    for klass in timelog.__mro__:
-        if "month" in klass.__dict__:
-            descriptor = klass.__dict__["month"]
             break
     assert isinstance(descriptor, property)
 
@@ -161,12 +152,12 @@ def test_timelog_has_seconds():
             break
     assert isinstance(descriptor, property)
 
-def test_timelog_has_hour():
-    assert hasattr(timelog, "hour")
+def test_timelog_has_day():
+    assert hasattr(timelog, "day")
     descriptor = None
     for klass in timelog.__mro__:
-        if "hour" in klass.__dict__:
-            descriptor = klass.__dict__["hour"]
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
             break
     assert isinstance(descriptor, property)
 
@@ -179,12 +170,21 @@ def test_timelog_has_minutes():
             break
     assert isinstance(descriptor, property)
 
-def test_timelog_has_day():
-    assert hasattr(timelog, "day")
+def test_timelog_has_month():
+    assert hasattr(timelog, "month")
     descriptor = None
     for klass in timelog.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
+        if "month" in klass.__dict__:
+            descriptor = klass.__dict__["month"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_timelog_has_hour():
+    assert hasattr(timelog, "hour")
+    descriptor = None
+    for klass in timelog.__mro__:
+        if "hour" in klass.__dict__:
+            descriptor = klass.__dict__["hour"]
             break
     assert isinstance(descriptor, property)
 
@@ -201,9 +201,18 @@ def test_eventlog_constructor_exists():
 def test_eventlog_constructor_args():
     sig = inspect.signature(eventlog.__init__)
     params = list(sig.parameters.keys())
+    assert "event_info" in params, "Missing parameter 'event_info'"
     assert "event_id" in params, "Missing parameter 'event_id'"
     assert "event_time" in params, "Missing parameter 'event_time'"
-    assert "event_info" in params, "Missing parameter 'event_info'"
+
+def test_eventlog_has_event_info():
+    assert hasattr(eventlog, "event_info")
+    descriptor = None
+    for klass in eventlog.__mro__:
+        if "event_info" in klass.__dict__:
+            descriptor = klass.__dict__["event_info"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_eventlog_has_event_id():
     assert hasattr(eventlog, "event_id")
@@ -223,15 +232,6 @@ def test_eventlog_has_event_time():
             break
     assert isinstance(descriptor, property)
 
-def test_eventlog_has_event_info():
-    assert hasattr(eventlog, "event_info")
-    descriptor = None
-    for klass in eventlog.__mro__:
-        if "event_info" in klass.__dict__:
-            descriptor = klass.__dict__["event_info"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_login_is_not_abstract():
@@ -245,12 +245,39 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(login.__init__)
     params = list(sig.parameters.keys())
+    assert "lockout" in params, "Missing parameter 'lockout'"
+    assert "loginattempt" in params, "Missing parameter 'loginattempt'"
+    assert "loginapp" in params, "Missing parameter 'loginapp'"
     assert "logoutapp" in params, "Missing parameter 'logoutapp'"
     assert "password" in params, "Missing parameter 'password'"
-    assert "loginapp" in params, "Missing parameter 'loginapp'"
-    assert "loginattempt" in params, "Missing parameter 'loginattempt'"
-    assert "lockout" in params, "Missing parameter 'lockout'"
     assert "username" in params, "Missing parameter 'username'"
+
+def test_login_has_lockout():
+    assert hasattr(login, "lockout")
+    descriptor = None
+    for klass in login.__mro__:
+        if "lockout" in klass.__dict__:
+            descriptor = klass.__dict__["lockout"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_loginattempt():
+    assert hasattr(login, "loginattempt")
+    descriptor = None
+    for klass in login.__mro__:
+        if "loginattempt" in klass.__dict__:
+            descriptor = klass.__dict__["loginattempt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_loginapp():
+    assert hasattr(login, "loginapp")
+    descriptor = None
+    for klass in login.__mro__:
+        if "loginapp" in klass.__dict__:
+            descriptor = klass.__dict__["loginapp"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_login_has_logoutapp():
     assert hasattr(login, "logoutapp")
@@ -267,33 +294,6 @@ def test_login_has_password():
     for klass in login.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_login_has_loginapp():
-    assert hasattr(login, "loginapp")
-    descriptor = None
-    for klass in login.__mro__:
-        if "loginapp" in klass.__dict__:
-            descriptor = klass.__dict__["loginapp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_login_has_loginattempt():
-    assert hasattr(login, "loginattempt")
-    descriptor = None
-    for klass in login.__mro__:
-        if "loginattempt" in klass.__dict__:
-            descriptor = klass.__dict__["loginattempt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_login_has_lockout():
-    assert hasattr(login, "lockout")
-    descriptor = None
-    for klass in login.__mro__:
-        if "lockout" in klass.__dict__:
-            descriptor = klass.__dict__["lockout"]
             break
     assert isinstance(descriptor, property)
 
@@ -343,28 +343,10 @@ def test_notification_system_constructor_exists():
 def test_notification_system_constructor_args():
     sig = inspect.signature(Notification_System.__init__)
     params = list(sig.parameters.keys())
-    assert "PublicSafetyPage" in params, "Missing parameter 'PublicSafetyPage'"
-    assert "OwnerEmail" in params, "Missing parameter 'OwnerEmail'"
     assert "OwnerNum__Integer" in params, "Missing parameter 'OwnerNum__Integer'"
     assert "PublicSafetyNumber" in params, "Missing parameter 'PublicSafetyNumber'"
-
-def test_notification_system_has_PublicSafetyPage():
-    assert hasattr(Notification_System, "PublicSafetyPage")
-    descriptor = None
-    for klass in Notification_System.__mro__:
-        if "PublicSafetyPage" in klass.__dict__:
-            descriptor = klass.__dict__["PublicSafetyPage"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notification_system_has_OwnerEmail():
-    assert hasattr(Notification_System, "OwnerEmail")
-    descriptor = None
-    for klass in Notification_System.__mro__:
-        if "OwnerEmail" in klass.__dict__:
-            descriptor = klass.__dict__["OwnerEmail"]
-            break
-    assert isinstance(descriptor, property)
+    assert "PublicSafetyPage" in params, "Missing parameter 'PublicSafetyPage'"
+    assert "OwnerEmail" in params, "Missing parameter 'OwnerEmail'"
 
 def test_notification_system_has_OwnerNum__Integer():
     assert hasattr(Notification_System, "OwnerNum__Integer")
@@ -384,6 +366,24 @@ def test_notification_system_has_PublicSafetyNumber():
             break
     assert isinstance(descriptor, property)
 
+def test_notification_system_has_PublicSafetyPage():
+    assert hasattr(Notification_System, "PublicSafetyPage")
+    descriptor = None
+    for klass in Notification_System.__mro__:
+        if "PublicSafetyPage" in klass.__dict__:
+            descriptor = klass.__dict__["PublicSafetyPage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notification_system_has_OwnerEmail():
+    assert hasattr(Notification_System, "OwnerEmail")
+    descriptor = None
+    for klass in Notification_System.__mro__:
+        if "OwnerEmail" in klass.__dict__:
+            descriptor = klass.__dict__["OwnerEmail"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_flood_sensor_is_not_abstract():
@@ -397,19 +397,10 @@ def test_flood_sensor_constructor_exists():
 def test_flood_sensor_constructor_args():
     sig = inspect.signature(flood_sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "flood_sensor_loaction" in params, "Missing parameter 'flood_sensor_loaction'"
     assert "waterlevel_breach_status" in params, "Missing parameter 'waterlevel_breach_status'"
-    assert "flood_sensor_id" in params, "Missing parameter 'flood_sensor_id'"
     assert "flood_sensor_status" in params, "Missing parameter 'flood_sensor_status'"
-
-def test_flood_sensor_has_flood_sensor_loaction():
-    assert hasattr(flood_sensor, "flood_sensor_loaction")
-    descriptor = None
-    for klass in flood_sensor.__mro__:
-        if "flood_sensor_loaction" in klass.__dict__:
-            descriptor = klass.__dict__["flood_sensor_loaction"]
-            break
-    assert isinstance(descriptor, property)
+    assert "flood_sensor_id" in params, "Missing parameter 'flood_sensor_id'"
+    assert "flood_sensor_loaction" in params, "Missing parameter 'flood_sensor_loaction'"
 
 def test_flood_sensor_has_waterlevel_breach_status():
     assert hasattr(flood_sensor, "waterlevel_breach_status")
@@ -417,6 +408,15 @@ def test_flood_sensor_has_waterlevel_breach_status():
     for klass in flood_sensor.__mro__:
         if "waterlevel_breach_status" in klass.__dict__:
             descriptor = klass.__dict__["waterlevel_breach_status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flood_sensor_has_flood_sensor_status():
+    assert hasattr(flood_sensor, "flood_sensor_status")
+    descriptor = None
+    for klass in flood_sensor.__mro__:
+        if "flood_sensor_status" in klass.__dict__:
+            descriptor = klass.__dict__["flood_sensor_status"]
             break
     assert isinstance(descriptor, property)
 
@@ -429,12 +429,12 @@ def test_flood_sensor_has_flood_sensor_id():
             break
     assert isinstance(descriptor, property)
 
-def test_flood_sensor_has_flood_sensor_status():
-    assert hasattr(flood_sensor, "flood_sensor_status")
+def test_flood_sensor_has_flood_sensor_loaction():
+    assert hasattr(flood_sensor, "flood_sensor_loaction")
     descriptor = None
     for klass in flood_sensor.__mro__:
-        if "flood_sensor_status" in klass.__dict__:
-            descriptor = klass.__dict__["flood_sensor_status"]
+        if "flood_sensor_loaction" in klass.__dict__:
+            descriptor = klass.__dict__["flood_sensor_loaction"]
             break
     assert isinstance(descriptor, property)
 
@@ -519,28 +519,10 @@ def test_temp_sensor_constructor_exists():
 def test_temp_sensor_constructor_args():
     sig = inspect.signature(temp_sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "temp_sensor_id" in params, "Missing parameter 'temp_sensor_id'"
-    assert "temp_sensor_location" in params, "Missing parameter 'temp_sensor_location'"
     assert "temp_level_breach" in params, "Missing parameter 'temp_level_breach'"
+    assert "temp_sensor_id" in params, "Missing parameter 'temp_sensor_id'"
     assert "temp_sensor_status" in params, "Missing parameter 'temp_sensor_status'"
-
-def test_temp_sensor_has_temp_sensor_id():
-    assert hasattr(temp_sensor, "temp_sensor_id")
-    descriptor = None
-    for klass in temp_sensor.__mro__:
-        if "temp_sensor_id" in klass.__dict__:
-            descriptor = klass.__dict__["temp_sensor_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_temp_sensor_has_temp_sensor_location():
-    assert hasattr(temp_sensor, "temp_sensor_location")
-    descriptor = None
-    for klass in temp_sensor.__mro__:
-        if "temp_sensor_location" in klass.__dict__:
-            descriptor = klass.__dict__["temp_sensor_location"]
-            break
-    assert isinstance(descriptor, property)
+    assert "temp_sensor_location" in params, "Missing parameter 'temp_sensor_location'"
 
 def test_temp_sensor_has_temp_level_breach():
     assert hasattr(temp_sensor, "temp_level_breach")
@@ -551,12 +533,30 @@ def test_temp_sensor_has_temp_level_breach():
             break
     assert isinstance(descriptor, property)
 
+def test_temp_sensor_has_temp_sensor_id():
+    assert hasattr(temp_sensor, "temp_sensor_id")
+    descriptor = None
+    for klass in temp_sensor.__mro__:
+        if "temp_sensor_id" in klass.__dict__:
+            descriptor = klass.__dict__["temp_sensor_id"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_temp_sensor_has_temp_sensor_status():
     assert hasattr(temp_sensor, "temp_sensor_status")
     descriptor = None
     for klass in temp_sensor.__mro__:
         if "temp_sensor_status" in klass.__dict__:
             descriptor = klass.__dict__["temp_sensor_status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_temp_sensor_has_temp_sensor_location():
+    assert hasattr(temp_sensor, "temp_sensor_location")
+    descriptor = None
+    for klass in temp_sensor.__mro__:
+        if "temp_sensor_location" in klass.__dict__:
+            descriptor = klass.__dict__["temp_sensor_location"]
             break
     assert isinstance(descriptor, property)
 
@@ -587,18 +587,9 @@ def test_camera_records_constructor_exists():
 def test_camera_records_constructor_args():
     sig = inspect.signature(camera_records.__init__)
     params = list(sig.parameters.keys())
-    assert "camera_location" in params, "Missing parameter 'camera_location'"
     assert "camera_status_on" in params, "Missing parameter 'camera_status_on'"
     assert "camera_id" in params, "Missing parameter 'camera_id'"
-
-def test_camera_records_has_camera_location():
-    assert hasattr(camera_records, "camera_location")
-    descriptor = None
-    for klass in camera_records.__mro__:
-        if "camera_location" in klass.__dict__:
-            descriptor = klass.__dict__["camera_location"]
-            break
-    assert isinstance(descriptor, property)
+    assert "camera_location" in params, "Missing parameter 'camera_location'"
 
 def test_camera_records_has_camera_status_on():
     assert hasattr(camera_records, "camera_status_on")
@@ -618,6 +609,15 @@ def test_camera_records_has_camera_id():
             break
     assert isinstance(descriptor, property)
 
+def test_camera_records_has_camera_location():
+    assert hasattr(camera_records, "camera_location")
+    descriptor = None
+    for klass in camera_records.__mro__:
+        if "camera_location" in klass.__dict__:
+            descriptor = klass.__dict__["camera_location"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_smoke_sensor_is_not_abstract():
@@ -631,28 +631,10 @@ def test_smoke_sensor_constructor_exists():
 def test_smoke_sensor_constructor_args():
     sig = inspect.signature(smoke_sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "smoke_sensor_id" in params, "Missing parameter 'smoke_sensor_id'"
-    assert "smoke_sensor_status" in params, "Missing parameter 'smoke_sensor_status'"
     assert "smoke_sensor_location" in params, "Missing parameter 'smoke_sensor_location'"
     assert "smoke_level_breach" in params, "Missing parameter 'smoke_level_breach'"
-
-def test_smoke_sensor_has_smoke_sensor_id():
-    assert hasattr(smoke_sensor, "smoke_sensor_id")
-    descriptor = None
-    for klass in smoke_sensor.__mro__:
-        if "smoke_sensor_id" in klass.__dict__:
-            descriptor = klass.__dict__["smoke_sensor_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smoke_sensor_has_smoke_sensor_status():
-    assert hasattr(smoke_sensor, "smoke_sensor_status")
-    descriptor = None
-    for klass in smoke_sensor.__mro__:
-        if "smoke_sensor_status" in klass.__dict__:
-            descriptor = klass.__dict__["smoke_sensor_status"]
-            break
-    assert isinstance(descriptor, property)
+    assert "smoke_sensor_id" in params, "Missing parameter 'smoke_sensor_id'"
+    assert "smoke_sensor_status" in params, "Missing parameter 'smoke_sensor_status'"
 
 def test_smoke_sensor_has_smoke_sensor_location():
     assert hasattr(smoke_sensor, "smoke_sensor_location")
@@ -669,6 +651,24 @@ def test_smoke_sensor_has_smoke_level_breach():
     for klass in smoke_sensor.__mro__:
         if "smoke_level_breach" in klass.__dict__:
             descriptor = klass.__dict__["smoke_level_breach"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smoke_sensor_has_smoke_sensor_id():
+    assert hasattr(smoke_sensor, "smoke_sensor_id")
+    descriptor = None
+    for klass in smoke_sensor.__mro__:
+        if "smoke_sensor_id" in klass.__dict__:
+            descriptor = klass.__dict__["smoke_sensor_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smoke_sensor_has_smoke_sensor_status():
+    assert hasattr(smoke_sensor, "smoke_sensor_status")
+    descriptor = None
+    for klass in smoke_sensor.__mro__:
+        if "smoke_sensor_status" in klass.__dict__:
+            descriptor = klass.__dict__["smoke_sensor_status"]
             break
     assert isinstance(descriptor, property)
 
@@ -706,38 +706,38 @@ timelog_strategy = st.builds(
     timelog,
     year=
         st.integers(),
-    month=
-        st.integers(),
     seconds=
         st.integers(),
-    hour=
+    day=
         st.integers(),
     minutes=
         st.integers(),
-    day=
+    month=
+        st.integers(),
+    hour=
         st.integers()
 )
 eventlog_strategy = st.builds(
     eventlog,
+    event_info=
+        safe_text,
     event_id=
         st.integers(),
     event_time=
-        st.integers(),
-    event_info=
-        safe_text
+        st.integers()
 )
 login_strategy = st.builds(
     login,
+    lockout=
+        st.integers(),
+    loginattempt=
+        st.integers(),
+    loginapp=
+        safe_text,
     logoutapp=
         safe_text,
     password=
         safe_text,
-    loginapp=
-        safe_text,
-    loginattempt=
-        st.integers(),
-    lockout=
-        st.integers(),
     username=
         safe_text
 )
@@ -748,25 +748,25 @@ owner_details_strategy = st.builds(
 )
 Notification_System_strategy = st.builds(
     Notification_System,
-    PublicSafetyPage=
-        st.integers(),
-    OwnerEmail=
-        safe_text,
     OwnerNum__Integer=
         safe_text,
     PublicSafetyNumber=
-        st.integers()
+        st.integers(),
+    PublicSafetyPage=
+        st.integers(),
+    OwnerEmail=
+        safe_text
 )
 flood_sensor_strategy = st.builds(
     flood_sensor,
-    flood_sensor_loaction=
-        safe_text,
     waterlevel_breach_status=
+        st.booleans(),
+    flood_sensor_status=
         st.booleans(),
     flood_sensor_id=
         st.integers(),
-    flood_sensor_status=
-        st.booleans()
+    flood_sensor_loaction=
+        safe_text
 )
 door_sensor_strategy = st.builds(
     door_sensor,
@@ -784,36 +784,36 @@ control_panel_strategy = st.builds(
 )
 temp_sensor_strategy = st.builds(
     temp_sensor,
-    temp_sensor_id=
-        st.integers(),
-    temp_sensor_location=
-        safe_text,
     temp_level_breach=
         st.booleans(),
+    temp_sensor_id=
+        st.integers(),
     temp_sensor_status=
-        st.booleans()
+        st.booleans(),
+    temp_sensor_location=
+        safe_text
 )
 InterfaceO_Interface_strategy = st.builds(
     InterfaceO_Interface,
 )
 camera_records_strategy = st.builds(
     camera_records,
-    camera_location=
-        safe_text,
     camera_status_on=
         st.booleans(),
     camera_id=
-        st.integers()
+        st.integers(),
+    camera_location=
+        safe_text
 )
 smoke_sensor_strategy = st.builds(
     smoke_sensor,
-    smoke_sensor_id=
-        st.integers(),
-    smoke_sensor_status=
-        st.booleans(),
     smoke_sensor_location=
         safe_text,
     smoke_level_breach=
+        st.booleans(),
+    smoke_sensor_id=
+        st.integers(),
+    smoke_sensor_status=
         st.booleans()
 )
 
@@ -822,9 +822,6 @@ smoke_sensor_strategy = st.builds(
 def test_door_alarm_system_instantiation(instance):
     assert isinstance(instance, door_alarm_system)
 
-@given(instance=door_alarm_system_strategy)
-def test_door_alarm_system_door_alarm_system_type(instance):
-    assert isinstance(instance.door_alarm_system, bool)
 
 
 @given(instance=door_alarm_system_strategy)
@@ -843,9 +840,6 @@ def test_classj_instantiation(instance):
 def test_flood_alarm_system_instantiation(instance):
     assert isinstance(instance, flood_alarm_system)
 
-@given(instance=flood_alarm_system_strategy)
-def test_flood_alarm_system_flood_alarm_system_type(instance):
-    assert isinstance(instance.flood_alarm_system, bool)
 
 
 @given(instance=flood_alarm_system_strategy)
@@ -859,9 +853,6 @@ def test_flood_alarm_system_flood_alarm_system_setter(instance):
 def test_fire_alarm_system_instantiation(instance):
     assert isinstance(instance, fire_alarm_system)
 
-@given(instance=fire_alarm_system_strategy)
-def test_fire_alarm_system_fire_alarm_system_on_type(instance):
-    assert isinstance(instance.fire_alarm_system_on, bool)
 
 
 @given(instance=fire_alarm_system_strategy)
@@ -875,9 +866,6 @@ def test_fire_alarm_system_fire_alarm_system_on_setter(instance):
 def test_timelog_instantiation(instance):
     assert isinstance(instance, timelog)
 
-@given(instance=timelog_strategy)
-def test_timelog_year_type(instance):
-    assert isinstance(instance.year, int)
 
 
 @given(instance=timelog_strategy)
@@ -886,20 +874,6 @@ def test_timelog_year_setter(instance):
     instance.year = original
     assert instance.year == original
 
-@given(instance=timelog_strategy)
-def test_timelog_month_type(instance):
-    assert isinstance(instance.month, int)
-
-
-@given(instance=timelog_strategy)
-def test_timelog_month_setter(instance):
-    original = instance.month
-    instance.month = original
-    assert instance.month == original
-
-@given(instance=timelog_strategy)
-def test_timelog_seconds_type(instance):
-    assert isinstance(instance.seconds, int)
 
 
 @given(instance=timelog_strategy)
@@ -908,31 +882,6 @@ def test_timelog_seconds_setter(instance):
     instance.seconds = original
     assert instance.seconds == original
 
-@given(instance=timelog_strategy)
-def test_timelog_hour_type(instance):
-    assert isinstance(instance.hour, int)
-
-
-@given(instance=timelog_strategy)
-def test_timelog_hour_setter(instance):
-    original = instance.hour
-    instance.hour = original
-    assert instance.hour == original
-
-@given(instance=timelog_strategy)
-def test_timelog_minutes_type(instance):
-    assert isinstance(instance.minutes, int)
-
-
-@given(instance=timelog_strategy)
-def test_timelog_minutes_setter(instance):
-    original = instance.minutes
-    instance.minutes = original
-    assert instance.minutes == original
-
-@given(instance=timelog_strategy)
-def test_timelog_day_type(instance):
-    assert isinstance(instance.day, int)
 
 
 @given(instance=timelog_strategy)
@@ -941,36 +890,35 @@ def test_timelog_day_setter(instance):
     instance.day = original
     assert instance.day == original
 
+
+
+@given(instance=timelog_strategy)
+def test_timelog_minutes_setter(instance):
+    original = instance.minutes
+    instance.minutes = original
+    assert instance.minutes == original
+
+
+
+@given(instance=timelog_strategy)
+def test_timelog_month_setter(instance):
+    original = instance.month
+    instance.month = original
+    assert instance.month == original
+
+
+
+@given(instance=timelog_strategy)
+def test_timelog_hour_setter(instance):
+    original = instance.hour
+    instance.hour = original
+    assert instance.hour == original
+
 @given(instance=eventlog_strategy)
 @settings(max_examples=50)
 def test_eventlog_instantiation(instance):
     assert isinstance(instance, eventlog)
 
-@given(instance=eventlog_strategy)
-def test_eventlog_event_id_type(instance):
-    assert isinstance(instance.event_id, int)
-
-
-@given(instance=eventlog_strategy)
-def test_eventlog_event_id_setter(instance):
-    original = instance.event_id
-    instance.event_id = original
-    assert instance.event_id == original
-
-@given(instance=eventlog_strategy)
-def test_eventlog_event_time_type(instance):
-    assert isinstance(instance.event_time, int)
-
-
-@given(instance=eventlog_strategy)
-def test_eventlog_event_time_setter(instance):
-    original = instance.event_time
-    instance.event_time = original
-    assert instance.event_time == original
-
-@given(instance=eventlog_strategy)
-def test_eventlog_event_info_type(instance):
-    assert isinstance(instance.event_info, str)
 
 
 @given(instance=eventlog_strategy)
@@ -979,58 +927,27 @@ def test_eventlog_event_info_setter(instance):
     instance.event_info = original
     assert instance.event_info == original
 
+
+
+@given(instance=eventlog_strategy)
+def test_eventlog_event_id_setter(instance):
+    original = instance.event_id
+    instance.event_id = original
+    assert instance.event_id == original
+
+
+
+@given(instance=eventlog_strategy)
+def test_eventlog_event_time_setter(instance):
+    original = instance.event_time
+    instance.event_time = original
+    assert instance.event_time == original
+
 @given(instance=login_strategy)
 @settings(max_examples=50)
 def test_login_instantiation(instance):
     assert isinstance(instance, login)
 
-@given(instance=login_strategy)
-def test_login_logoutapp_type(instance):
-    assert isinstance(instance.logoutapp, str)
-
-
-@given(instance=login_strategy)
-def test_login_logoutapp_setter(instance):
-    original = instance.logoutapp
-    instance.logoutapp = original
-    assert instance.logoutapp == original
-
-@given(instance=login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=login_strategy)
-def test_login_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=login_strategy)
-def test_login_loginapp_type(instance):
-    assert isinstance(instance.loginapp, str)
-
-
-@given(instance=login_strategy)
-def test_login_loginapp_setter(instance):
-    original = instance.loginapp
-    instance.loginapp = original
-    assert instance.loginapp == original
-
-@given(instance=login_strategy)
-def test_login_loginattempt_type(instance):
-    assert isinstance(instance.loginattempt, int)
-
-
-@given(instance=login_strategy)
-def test_login_loginattempt_setter(instance):
-    original = instance.loginattempt
-    instance.loginattempt = original
-    assert instance.loginattempt == original
-
-@given(instance=login_strategy)
-def test_login_lockout_type(instance):
-    assert isinstance(instance.lockout, int)
 
 
 @given(instance=login_strategy)
@@ -1039,9 +956,38 @@ def test_login_lockout_setter(instance):
     instance.lockout = original
     assert instance.lockout == original
 
+
+
 @given(instance=login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
+def test_login_loginattempt_setter(instance):
+    original = instance.loginattempt
+    instance.loginattempt = original
+    assert instance.loginattempt == original
+
+
+
+@given(instance=login_strategy)
+def test_login_loginapp_setter(instance):
+    original = instance.loginapp
+    instance.loginapp = original
+    assert instance.loginapp == original
+
+
+
+@given(instance=login_strategy)
+def test_login_logoutapp_setter(instance):
+    original = instance.logoutapp
+    instance.logoutapp = original
+    assert instance.logoutapp == original
+
+
+
+@given(instance=login_strategy)
+def test_login_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 
 
 @given(instance=login_strategy)
@@ -1055,9 +1001,6 @@ def test_login_username_setter(instance):
 def test_owner_details_instantiation(instance):
     assert isinstance(instance, owner_details)
 
-@given(instance=owner_details_strategy)
-def test_owner_details_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
 
 
 @given(instance=owner_details_strategy)
@@ -1071,31 +1014,6 @@ def test_owner_details_ownerName_setter(instance):
 def test_notification_system_instantiation(instance):
     assert isinstance(instance, Notification_System)
 
-@given(instance=Notification_System_strategy)
-def test_notification_system_PublicSafetyPage_type(instance):
-    assert isinstance(instance.PublicSafetyPage, int)
-
-
-@given(instance=Notification_System_strategy)
-def test_notification_system_PublicSafetyPage_setter(instance):
-    original = instance.PublicSafetyPage
-    instance.PublicSafetyPage = original
-    assert instance.PublicSafetyPage == original
-
-@given(instance=Notification_System_strategy)
-def test_notification_system_OwnerEmail_type(instance):
-    assert isinstance(instance.OwnerEmail, str)
-
-
-@given(instance=Notification_System_strategy)
-def test_notification_system_OwnerEmail_setter(instance):
-    original = instance.OwnerEmail
-    instance.OwnerEmail = original
-    assert instance.OwnerEmail == original
-
-@given(instance=Notification_System_strategy)
-def test_notification_system_OwnerNum__Integer_type(instance):
-    assert isinstance(instance.OwnerNum__Integer, str)
 
 
 @given(instance=Notification_System_strategy)
@@ -1104,9 +1022,6 @@ def test_notification_system_OwnerNum__Integer_setter(instance):
     instance.OwnerNum__Integer = original
     assert instance.OwnerNum__Integer == original
 
-@given(instance=Notification_System_strategy)
-def test_notification_system_PublicSafetyNumber_type(instance):
-    assert isinstance(instance.PublicSafetyNumber, int)
 
 
 @given(instance=Notification_System_strategy)
@@ -1115,25 +1030,27 @@ def test_notification_system_PublicSafetyNumber_setter(instance):
     instance.PublicSafetyNumber = original
     assert instance.PublicSafetyNumber == original
 
+
+
+@given(instance=Notification_System_strategy)
+def test_notification_system_PublicSafetyPage_setter(instance):
+    original = instance.PublicSafetyPage
+    instance.PublicSafetyPage = original
+    assert instance.PublicSafetyPage == original
+
+
+
+@given(instance=Notification_System_strategy)
+def test_notification_system_OwnerEmail_setter(instance):
+    original = instance.OwnerEmail
+    instance.OwnerEmail = original
+    assert instance.OwnerEmail == original
+
 @given(instance=flood_sensor_strategy)
 @settings(max_examples=50)
 def test_flood_sensor_instantiation(instance):
     assert isinstance(instance, flood_sensor)
 
-@given(instance=flood_sensor_strategy)
-def test_flood_sensor_flood_sensor_loaction_type(instance):
-    assert isinstance(instance.flood_sensor_loaction, str)
-
-
-@given(instance=flood_sensor_strategy)
-def test_flood_sensor_flood_sensor_loaction_setter(instance):
-    original = instance.flood_sensor_loaction
-    instance.flood_sensor_loaction = original
-    assert instance.flood_sensor_loaction == original
-
-@given(instance=flood_sensor_strategy)
-def test_flood_sensor_waterlevel_breach_status_type(instance):
-    assert isinstance(instance.waterlevel_breach_status, bool)
 
 
 @given(instance=flood_sensor_strategy)
@@ -1142,20 +1059,6 @@ def test_flood_sensor_waterlevel_breach_status_setter(instance):
     instance.waterlevel_breach_status = original
     assert instance.waterlevel_breach_status == original
 
-@given(instance=flood_sensor_strategy)
-def test_flood_sensor_flood_sensor_id_type(instance):
-    assert isinstance(instance.flood_sensor_id, int)
-
-
-@given(instance=flood_sensor_strategy)
-def test_flood_sensor_flood_sensor_id_setter(instance):
-    original = instance.flood_sensor_id
-    instance.flood_sensor_id = original
-    assert instance.flood_sensor_id == original
-
-@given(instance=flood_sensor_strategy)
-def test_flood_sensor_flood_sensor_status_type(instance):
-    assert isinstance(instance.flood_sensor_status, bool)
 
 
 @given(instance=flood_sensor_strategy)
@@ -1164,14 +1067,27 @@ def test_flood_sensor_flood_sensor_status_setter(instance):
     instance.flood_sensor_status = original
     assert instance.flood_sensor_status == original
 
+
+
+@given(instance=flood_sensor_strategy)
+def test_flood_sensor_flood_sensor_id_setter(instance):
+    original = instance.flood_sensor_id
+    instance.flood_sensor_id = original
+    assert instance.flood_sensor_id == original
+
+
+
+@given(instance=flood_sensor_strategy)
+def test_flood_sensor_flood_sensor_loaction_setter(instance):
+    original = instance.flood_sensor_loaction
+    instance.flood_sensor_loaction = original
+    assert instance.flood_sensor_loaction == original
+
 @given(instance=door_sensor_strategy)
 @settings(max_examples=50)
 def test_door_sensor_instantiation(instance):
     assert isinstance(instance, door_sensor)
 
-@given(instance=door_sensor_strategy)
-def test_door_sensor_door_location_type(instance):
-    assert isinstance(instance.door_location, str)
 
 
 @given(instance=door_sensor_strategy)
@@ -1180,9 +1096,6 @@ def test_door_sensor_door_location_setter(instance):
     instance.door_location = original
     assert instance.door_location == original
 
-@given(instance=door_sensor_strategy)
-def test_door_sensor_door_sensor_id_type(instance):
-    assert isinstance(instance.door_sensor_id, int)
 
 
 @given(instance=door_sensor_strategy)
@@ -1191,9 +1104,6 @@ def test_door_sensor_door_sensor_id_setter(instance):
     instance.door_sensor_id = original
     assert instance.door_sensor_id == original
 
-@given(instance=door_sensor_strategy)
-def test_door_sensor_door_open_status_type(instance):
-    assert isinstance(instance.door_open_status, bool)
 
 
 @given(instance=door_sensor_strategy)
@@ -1207,9 +1117,6 @@ def test_door_sensor_door_open_status_setter(instance):
 def test_control_panel_instantiation(instance):
     assert isinstance(instance, control_panel)
 
-@given(instance=control_panel_strategy)
-def test_control_panel_system_on_type(instance):
-    assert isinstance(instance.system_on, bool)
 
 
 @given(instance=control_panel_strategy)
@@ -1223,31 +1130,6 @@ def test_control_panel_system_on_setter(instance):
 def test_temp_sensor_instantiation(instance):
     assert isinstance(instance, temp_sensor)
 
-@given(instance=temp_sensor_strategy)
-def test_temp_sensor_temp_sensor_id_type(instance):
-    assert isinstance(instance.temp_sensor_id, int)
-
-
-@given(instance=temp_sensor_strategy)
-def test_temp_sensor_temp_sensor_id_setter(instance):
-    original = instance.temp_sensor_id
-    instance.temp_sensor_id = original
-    assert instance.temp_sensor_id == original
-
-@given(instance=temp_sensor_strategy)
-def test_temp_sensor_temp_sensor_location_type(instance):
-    assert isinstance(instance.temp_sensor_location, str)
-
-
-@given(instance=temp_sensor_strategy)
-def test_temp_sensor_temp_sensor_location_setter(instance):
-    original = instance.temp_sensor_location
-    instance.temp_sensor_location = original
-    assert instance.temp_sensor_location == original
-
-@given(instance=temp_sensor_strategy)
-def test_temp_sensor_temp_level_breach_type(instance):
-    assert isinstance(instance.temp_level_breach, bool)
 
 
 @given(instance=temp_sensor_strategy)
@@ -1256,9 +1138,14 @@ def test_temp_sensor_temp_level_breach_setter(instance):
     instance.temp_level_breach = original
     assert instance.temp_level_breach == original
 
+
+
 @given(instance=temp_sensor_strategy)
-def test_temp_sensor_temp_sensor_status_type(instance):
-    assert isinstance(instance.temp_sensor_status, bool)
+def test_temp_sensor_temp_sensor_id_setter(instance):
+    original = instance.temp_sensor_id
+    instance.temp_sensor_id = original
+    assert instance.temp_sensor_id == original
+
 
 
 @given(instance=temp_sensor_strategy)
@@ -1266,6 +1153,14 @@ def test_temp_sensor_temp_sensor_status_setter(instance):
     original = instance.temp_sensor_status
     instance.temp_sensor_status = original
     assert instance.temp_sensor_status == original
+
+
+
+@given(instance=temp_sensor_strategy)
+def test_temp_sensor_temp_sensor_location_setter(instance):
+    original = instance.temp_sensor_location
+    instance.temp_sensor_location = original
+    assert instance.temp_sensor_location == original
 
 @given(instance=InterfaceO_Interface_strategy)
 @settings(max_examples=50)
@@ -1277,20 +1172,6 @@ def test_interfaceo_interface_instantiation(instance):
 def test_camera_records_instantiation(instance):
     assert isinstance(instance, camera_records)
 
-@given(instance=camera_records_strategy)
-def test_camera_records_camera_location_type(instance):
-    assert isinstance(instance.camera_location, str)
-
-
-@given(instance=camera_records_strategy)
-def test_camera_records_camera_location_setter(instance):
-    original = instance.camera_location
-    instance.camera_location = original
-    assert instance.camera_location == original
-
-@given(instance=camera_records_strategy)
-def test_camera_records_camera_status_on_type(instance):
-    assert isinstance(instance.camera_status_on, bool)
 
 
 @given(instance=camera_records_strategy)
@@ -1299,9 +1180,6 @@ def test_camera_records_camera_status_on_setter(instance):
     instance.camera_status_on = original
     assert instance.camera_status_on == original
 
-@given(instance=camera_records_strategy)
-def test_camera_records_camera_id_type(instance):
-    assert isinstance(instance.camera_id, int)
 
 
 @given(instance=camera_records_strategy)
@@ -1310,36 +1188,19 @@ def test_camera_records_camera_id_setter(instance):
     instance.camera_id = original
     assert instance.camera_id == original
 
+
+
+@given(instance=camera_records_strategy)
+def test_camera_records_camera_location_setter(instance):
+    original = instance.camera_location
+    instance.camera_location = original
+    assert instance.camera_location == original
+
 @given(instance=smoke_sensor_strategy)
 @settings(max_examples=50)
 def test_smoke_sensor_instantiation(instance):
     assert isinstance(instance, smoke_sensor)
 
-@given(instance=smoke_sensor_strategy)
-def test_smoke_sensor_smoke_sensor_id_type(instance):
-    assert isinstance(instance.smoke_sensor_id, int)
-
-
-@given(instance=smoke_sensor_strategy)
-def test_smoke_sensor_smoke_sensor_id_setter(instance):
-    original = instance.smoke_sensor_id
-    instance.smoke_sensor_id = original
-    assert instance.smoke_sensor_id == original
-
-@given(instance=smoke_sensor_strategy)
-def test_smoke_sensor_smoke_sensor_status_type(instance):
-    assert isinstance(instance.smoke_sensor_status, bool)
-
-
-@given(instance=smoke_sensor_strategy)
-def test_smoke_sensor_smoke_sensor_status_setter(instance):
-    original = instance.smoke_sensor_status
-    instance.smoke_sensor_status = original
-    assert instance.smoke_sensor_status == original
-
-@given(instance=smoke_sensor_strategy)
-def test_smoke_sensor_smoke_sensor_location_type(instance):
-    assert isinstance(instance.smoke_sensor_location, str)
 
 
 @given(instance=smoke_sensor_strategy)
@@ -1348,9 +1209,6 @@ def test_smoke_sensor_smoke_sensor_location_setter(instance):
     instance.smoke_sensor_location = original
     assert instance.smoke_sensor_location == original
 
-@given(instance=smoke_sensor_strategy)
-def test_smoke_sensor_smoke_level_breach_type(instance):
-    assert isinstance(instance.smoke_level_breach, bool)
 
 
 @given(instance=smoke_sensor_strategy)
@@ -1358,3 +1216,19 @@ def test_smoke_sensor_smoke_level_breach_setter(instance):
     original = instance.smoke_level_breach
     instance.smoke_level_breach = original
     assert instance.smoke_level_breach == original
+
+
+
+@given(instance=smoke_sensor_strategy)
+def test_smoke_sensor_smoke_sensor_id_setter(instance):
+    original = instance.smoke_sensor_id
+    instance.smoke_sensor_id = original
+    assert instance.smoke_sensor_id == original
+
+
+
+@given(instance=smoke_sensor_strategy)
+def test_smoke_sensor_smoke_sensor_status_setter(instance):
+    original = instance.smoke_sensor_status
+    instance.smoke_sensor_status = original
+    assert instance.smoke_sensor_status == original

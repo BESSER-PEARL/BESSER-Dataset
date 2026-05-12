@@ -3,82 +3,82 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Relation,
-    umlclassdiagram::Aggregation,
-    umlclassdiagram::Association,
-    umlclassdiagram::Composition,
-    umlclassdiagram::Dependency,
+    umlclassdiagram_Association,
+    umlclassdiagram_Aggregation,
+    umlclassdiagram_Composition,
+    umlclassdiagram_Dependency,
     Modifier,
-    umlclassdiagram::Operator,
+    umlclassdiagram_Operator,
     Feature,
-    umlclassdiagram::Operation,
-    umlclassdiagram::Attribute,
+    umlclassdiagram_Operation,
+    umlclassdiagram_Attribute,
     Classifier,
-    umlclassdiagram::Class,
-    umlclassdiagram::AssociationClass,
+    umlclassdiagram_Class,
+    umlclassdiagram_AssociationClass,
     NavigationPathCS,
-    umlclassdiagram::NavigationPathElementCS,
-    umlclassdiagram::NavigationPathVariableCS,
-    umlclassdiagram::NavigationPathCS,
+    umlclassdiagram_NavigationPathElementCS,
+    umlclassdiagram_NavigationPathVariableCS,
+    umlclassdiagram_NavigationPathCS,
     NamedElement,
-    umlclassdiagram::Parameter,
-    umlclassdiagram::Modifier,
-    umlclassdiagram::NamedElement,
-    umlclassdiagram::Constraint,
-    umlclassdiagram::PrimitiveElement,
-    umlclassdiagram::Relation,
-    umlclassdiagram::Classifier,
-    umlclassdiagram::ClassDiagram,
-    umlclassdiagram::AccVarCS,
+    umlclassdiagram_Modifier,
+    umlclassdiagram_Parameter,
+    umlclassdiagram_NamedElement,
+    umlclassdiagram_Constraint,
+    umlclassdiagram_PrimitiveElement,
+    umlclassdiagram_Relation,
+    umlclassdiagram_Classifier,
+    umlclassdiagram_ClassDiagram,
+    umlclassdiagram_AccVarCS,
     LoopExpCS,
-    umlclassdiagram::ForAllExpCS,
-    umlclassdiagram::IterateExpCS,
-    umlclassdiagram::CollectExpCS,
-    umlclassdiagram::IteratorVarCS,
-    umlclassdiagram::NavigationPathNameCS,
-    umlclassdiagram::ExistsExpCS,
+    umlclassdiagram_IterateExpCS,
+    umlclassdiagram_ForAllExpCS,
+    umlclassdiagram_CollectExpCS,
+    umlclassdiagram_IteratorVarCS,
+    umlclassdiagram_NavigationPathNameCS,
+    umlclassdiagram_ExistsExpCS,
     BooleanLiteralExpCS,
-    umlclassdiagram::BooleanExpCS,
-    umlclassdiagram::Feature,
+    umlclassdiagram_BooleanExpCS,
+    umlclassdiagram_Feature,
     PathCS,
-    umlclassdiagram::PathElementCS,
-    umlclassdiagram::PathVariableCS,
-    umlclassdiagram::PathCS,
+    umlclassdiagram_PathElementCS,
+    umlclassdiagram_PathVariableCS,
+    umlclassdiagram_PathCS,
     LiteralExpCS,
-    umlclassdiagram::StringLiteralExpCS,
-    umlclassdiagram::BooleanLiteralExpCS,
-    umlclassdiagram::IntLiteralExpCS,
-    umlclassdiagram::InvariantCS,
-    umlclassdiagram::ExpCS,
-    umlclassdiagram::RoundedBracketClauseCS,
+    umlclassdiagram_BooleanLiteralExpCS,
+    umlclassdiagram_StringLiteralExpCS,
+    umlclassdiagram_IntLiteralExpCS,
+    umlclassdiagram_InvariantCS,
+    umlclassdiagram_ExpCS,
+    umlclassdiagram_RoundedBracketClauseCS,
     NavigationExpCS,
-    umlclassdiagram::LoopExpCS,
-    umlclassdiagram::NavigationNameExpCS,
-    umlclassdiagram::NameExpCS,
+    umlclassdiagram_NavigationNameExpCS,
+    umlclassdiagram_LoopExpCS,
+    umlclassdiagram_NameExpCS,
     PrimaryExpCS,
-    umlclassdiagram::LiteralExpCS,
+    umlclassdiagram_LiteralExpCS,
     CallExpCS,
-    umlclassdiagram::PrimaryExpCS,
-    umlclassdiagram::NavigationExpCS,
+    umlclassdiagram_PrimaryExpCS,
+    umlclassdiagram_NavigationExpCS,
     LogicExpCS,
-    umlclassdiagram::CallExpCS,
+    umlclassdiagram_CallExpCS,
     ExpCS,
-    umlclassdiagram::LogicExpCS,
-    umlclassdiagram::ParameterCS,
-    umlclassdiagram::OperationCS,
-    umlclassdiagram::PropertyCS,
-    umlclassdiagram::PathNameCS,
-    umlclassdiagram::ClassCS,
-    umlclassdiagram::ConstraintCS,
-    umlclassdiagram::PackageCS,
-    umlclassdiagram::RootCS,
-    PrimitiveDataType,
-    ScopeType,
+    umlclassdiagram_LogicExpCS,
+    umlclassdiagram_ParameterCS,
+    umlclassdiagram_OperationCS,
+    umlclassdiagram_PropertyCS,
+    umlclassdiagram_PathNameCS,
+    umlclassdiagram_ClassCS,
+    umlclassdiagram_ConstraintCS,
+    umlclassdiagram_PackageCS,
+    umlclassdiagram_RootCS,
     OperatorType,
     VisbilityType,
+    PrimitiveDataType,
+    ScopeType,
 )
 
 # =============================================================================
@@ -101,58 +101,58 @@ def test_relation_constructor_args():
 
 
 
-def test_umlclassdiagram::aggregation_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Aggregation)
+def test_umlclassdiagram_association_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Association)
 
 
-def test_umlclassdiagram::aggregation_constructor_exists():
-    assert callable(umlclassdiagram::Aggregation.__init__)
+def test_umlclassdiagram_association_constructor_exists():
+    assert callable(umlclassdiagram_Association.__init__)
 
 
-def test_umlclassdiagram::aggregation_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Aggregation.__init__)
+def test_umlclassdiagram_association_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::association_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Association)
+def test_umlclassdiagram_aggregation_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Aggregation)
 
 
-def test_umlclassdiagram::association_constructor_exists():
-    assert callable(umlclassdiagram::Association.__init__)
+def test_umlclassdiagram_aggregation_constructor_exists():
+    assert callable(umlclassdiagram_Aggregation.__init__)
 
 
-def test_umlclassdiagram::association_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Association.__init__)
+def test_umlclassdiagram_aggregation_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Aggregation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::composition_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Composition)
+def test_umlclassdiagram_composition_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Composition)
 
 
-def test_umlclassdiagram::composition_constructor_exists():
-    assert callable(umlclassdiagram::Composition.__init__)
+def test_umlclassdiagram_composition_constructor_exists():
+    assert callable(umlclassdiagram_Composition.__init__)
 
 
-def test_umlclassdiagram::composition_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Composition.__init__)
+def test_umlclassdiagram_composition_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Composition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::dependency_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Dependency)
+def test_umlclassdiagram_dependency_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Dependency)
 
 
-def test_umlclassdiagram::dependency_constructor_exists():
-    assert callable(umlclassdiagram::Dependency.__init__)
+def test_umlclassdiagram_dependency_constructor_exists():
+    assert callable(umlclassdiagram_Dependency.__init__)
 
 
-def test_umlclassdiagram::dependency_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Dependency.__init__)
+def test_umlclassdiagram_dependency_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -171,23 +171,23 @@ def test_modifier_constructor_args():
 
 
 
-def test_umlclassdiagram::operator_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Operator)
+def test_umlclassdiagram_operator_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Operator)
 
 
-def test_umlclassdiagram::operator_constructor_exists():
-    assert callable(umlclassdiagram::Operator.__init__)
+def test_umlclassdiagram_operator_constructor_exists():
+    assert callable(umlclassdiagram_Operator.__init__)
 
 
-def test_umlclassdiagram::operator_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Operator.__init__)
+def test_umlclassdiagram_operator_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_umlclassdiagram::operator_has_operator():
-    assert hasattr(umlclassdiagram::Operator, "operator")
+def test_umlclassdiagram_operator_has_operator():
+    assert hasattr(umlclassdiagram_Operator, "operator")
     descriptor = None
-    for klass in umlclassdiagram::Operator.__mro__:
+    for klass in umlclassdiagram_Operator.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -209,37 +209,37 @@ def test_feature_constructor_args():
 
 
 
-def test_umlclassdiagram::operation_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Operation)
+def test_umlclassdiagram_operation_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Operation)
 
 
-def test_umlclassdiagram::operation_constructor_exists():
-    assert callable(umlclassdiagram::Operation.__init__)
+def test_umlclassdiagram_operation_constructor_exists():
+    assert callable(umlclassdiagram_Operation.__init__)
 
 
-def test_umlclassdiagram::operation_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Operation.__init__)
+def test_umlclassdiagram_operation_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::attribute_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Attribute)
+def test_umlclassdiagram_attribute_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Attribute)
 
 
-def test_umlclassdiagram::attribute_constructor_exists():
-    assert callable(umlclassdiagram::Attribute.__init__)
+def test_umlclassdiagram_attribute_constructor_exists():
+    assert callable(umlclassdiagram_Attribute.__init__)
 
 
-def test_umlclassdiagram::attribute_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Attribute.__init__)
+def test_umlclassdiagram_attribute_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "derived" in params, "Missing parameter 'derived'"
 
-def test_umlclassdiagram::attribute_has_derived():
-    assert hasattr(umlclassdiagram::Attribute, "derived")
+def test_umlclassdiagram_attribute_has_derived():
+    assert hasattr(umlclassdiagram_Attribute, "derived")
     descriptor = None
-    for klass in umlclassdiagram::Attribute.__mro__:
+    for klass in umlclassdiagram_Attribute.__mro__:
         if "derived" in klass.__dict__:
             descriptor = klass.__dict__["derived"]
             break
@@ -261,30 +261,30 @@ def test_classifier_constructor_args():
 
 
 
-def test_umlclassdiagram::class_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Class)
+def test_umlclassdiagram_class_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Class)
 
 
-def test_umlclassdiagram::class_constructor_exists():
-    assert callable(umlclassdiagram::Class.__init__)
+def test_umlclassdiagram_class_constructor_exists():
+    assert callable(umlclassdiagram_Class.__init__)
 
 
-def test_umlclassdiagram::class_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Class.__init__)
+def test_umlclassdiagram_class_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::associationclass_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::AssociationClass)
+def test_umlclassdiagram_associationclass_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_AssociationClass)
 
 
-def test_umlclassdiagram::associationclass_constructor_exists():
-    assert callable(umlclassdiagram::AssociationClass.__init__)
+def test_umlclassdiagram_associationclass_constructor_exists():
+    assert callable(umlclassdiagram_AssociationClass.__init__)
 
 
-def test_umlclassdiagram::associationclass_constructor_args():
-    sig = inspect.signature(umlclassdiagram::AssociationClass.__init__)
+def test_umlclassdiagram_associationclass_constructor_args():
+    sig = inspect.signature(umlclassdiagram_AssociationClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -303,37 +303,37 @@ def test_navigationpathcs_constructor_args():
 
 
 
-def test_umlclassdiagram::navigationpathelementcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NavigationPathElementCS)
+def test_umlclassdiagram_navigationpathelementcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NavigationPathElementCS)
 
 
-def test_umlclassdiagram::navigationpathelementcs_constructor_exists():
-    assert callable(umlclassdiagram::NavigationPathElementCS.__init__)
+def test_umlclassdiagram_navigationpathelementcs_constructor_exists():
+    assert callable(umlclassdiagram_NavigationPathElementCS.__init__)
 
 
-def test_umlclassdiagram::navigationpathelementcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NavigationPathElementCS.__init__)
+def test_umlclassdiagram_navigationpathelementcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NavigationPathElementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::navigationpathvariablecs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NavigationPathVariableCS)
+def test_umlclassdiagram_navigationpathvariablecs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NavigationPathVariableCS)
 
 
-def test_umlclassdiagram::navigationpathvariablecs_constructor_exists():
-    assert callable(umlclassdiagram::NavigationPathVariableCS.__init__)
+def test_umlclassdiagram_navigationpathvariablecs_constructor_exists():
+    assert callable(umlclassdiagram_NavigationPathVariableCS.__init__)
 
 
-def test_umlclassdiagram::navigationpathvariablecs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NavigationPathVariableCS.__init__)
+def test_umlclassdiagram_navigationpathvariablecs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NavigationPathVariableCS.__init__)
     params = list(sig.parameters.keys())
     assert "varName" in params, "Missing parameter 'varName'"
 
-def test_umlclassdiagram::navigationpathvariablecs_has_varName():
-    assert hasattr(umlclassdiagram::NavigationPathVariableCS, "varName")
+def test_umlclassdiagram_navigationpathvariablecs_has_varName():
+    assert hasattr(umlclassdiagram_NavigationPathVariableCS, "varName")
     descriptor = None
-    for klass in umlclassdiagram::NavigationPathVariableCS.__mro__:
+    for klass in umlclassdiagram_NavigationPathVariableCS.__mro__:
         if "varName" in klass.__dict__:
             descriptor = klass.__dict__["varName"]
             break
@@ -341,16 +341,16 @@ def test_umlclassdiagram::navigationpathvariablecs_has_varName():
 
 
 
-def test_umlclassdiagram::navigationpathcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NavigationPathCS)
+def test_umlclassdiagram_navigationpathcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NavigationPathCS)
 
 
-def test_umlclassdiagram::navigationpathcs_constructor_exists():
-    assert callable(umlclassdiagram::NavigationPathCS.__init__)
+def test_umlclassdiagram_navigationpathcs_constructor_exists():
+    assert callable(umlclassdiagram_NavigationPathCS.__init__)
 
 
-def test_umlclassdiagram::navigationpathcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NavigationPathCS.__init__)
+def test_umlclassdiagram_navigationpathcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NavigationPathCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -369,71 +369,71 @@ def test_namedelement_constructor_args():
 
 
 
-def test_umlclassdiagram::parameter_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Parameter)
+def test_umlclassdiagram_modifier_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Modifier)
 
 
-def test_umlclassdiagram::parameter_constructor_exists():
-    assert callable(umlclassdiagram::Parameter.__init__)
+def test_umlclassdiagram_modifier_constructor_exists():
+    assert callable(umlclassdiagram_Modifier.__init__)
 
 
-def test_umlclassdiagram::parameter_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Parameter.__init__)
+def test_umlclassdiagram_modifier_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Modifier.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_umlclassdiagram::modifier_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Modifier)
-
-
-def test_umlclassdiagram::modifier_constructor_exists():
-    assert callable(umlclassdiagram::Modifier.__init__)
-
-
-def test_umlclassdiagram::modifier_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Modifier.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "scope" in params, "Missing parameter 'scope'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_umlclassdiagram::modifier_has_visibility():
-    assert hasattr(umlclassdiagram::Modifier, "visibility")
+def test_umlclassdiagram_modifier_has_scope():
+    assert hasattr(umlclassdiagram_Modifier, "scope")
     descriptor = None
-    for klass in umlclassdiagram::Modifier.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlclassdiagram::modifier_has_scope():
-    assert hasattr(umlclassdiagram::Modifier, "scope")
-    descriptor = None
-    for klass in umlclassdiagram::Modifier.__mro__:
+    for klass in umlclassdiagram_Modifier.__mro__:
         if "scope" in klass.__dict__:
             descriptor = klass.__dict__["scope"]
             break
     assert isinstance(descriptor, property)
 
+def test_umlclassdiagram_modifier_has_visibility():
+    assert hasattr(umlclassdiagram_Modifier, "visibility")
+    descriptor = None
+    for klass in umlclassdiagram_Modifier.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_umlclassdiagram::namedelement_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NamedElement)
+
+def test_umlclassdiagram_parameter_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Parameter)
 
 
-def test_umlclassdiagram::namedelement_constructor_exists():
-    assert callable(umlclassdiagram::NamedElement.__init__)
+def test_umlclassdiagram_parameter_constructor_exists():
+    assert callable(umlclassdiagram_Parameter.__init__)
 
 
-def test_umlclassdiagram::namedelement_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NamedElement.__init__)
+def test_umlclassdiagram_parameter_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlclassdiagram_namedelement_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NamedElement)
+
+
+def test_umlclassdiagram_namedelement_constructor_exists():
+    assert callable(umlclassdiagram_NamedElement.__init__)
+
+
+def test_umlclassdiagram_namedelement_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::namedelement_has_name():
-    assert hasattr(umlclassdiagram::NamedElement, "name")
+def test_umlclassdiagram_namedelement_has_name():
+    assert hasattr(umlclassdiagram_NamedElement, "name")
     descriptor = None
-    for klass in umlclassdiagram::NamedElement.__mro__:
+    for klass in umlclassdiagram_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -441,23 +441,23 @@ def test_umlclassdiagram::namedelement_has_name():
 
 
 
-def test_umlclassdiagram::constraint_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Constraint)
+def test_umlclassdiagram_constraint_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Constraint)
 
 
-def test_umlclassdiagram::constraint_constructor_exists():
-    assert callable(umlclassdiagram::Constraint.__init__)
+def test_umlclassdiagram_constraint_constructor_exists():
+    assert callable(umlclassdiagram_Constraint.__init__)
 
 
-def test_umlclassdiagram::constraint_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Constraint.__init__)
+def test_umlclassdiagram_constraint_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_umlclassdiagram::constraint_has_id():
-    assert hasattr(umlclassdiagram::Constraint, "id")
+def test_umlclassdiagram_constraint_has_id():
+    assert hasattr(umlclassdiagram_Constraint, "id")
     descriptor = None
-    for klass in umlclassdiagram::Constraint.__mro__:
+    for klass in umlclassdiagram_Constraint.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -465,23 +465,23 @@ def test_umlclassdiagram::constraint_has_id():
 
 
 
-def test_umlclassdiagram::primitiveelement_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PrimitiveElement)
+def test_umlclassdiagram_primitiveelement_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PrimitiveElement)
 
 
-def test_umlclassdiagram::primitiveelement_constructor_exists():
-    assert callable(umlclassdiagram::PrimitiveElement.__init__)
+def test_umlclassdiagram_primitiveelement_constructor_exists():
+    assert callable(umlclassdiagram_PrimitiveElement.__init__)
 
 
-def test_umlclassdiagram::primitiveelement_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PrimitiveElement.__init__)
+def test_umlclassdiagram_primitiveelement_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PrimitiveElement.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_umlclassdiagram::primitiveelement_has_type():
-    assert hasattr(umlclassdiagram::PrimitiveElement, "type")
+def test_umlclassdiagram_primitiveelement_has_type():
+    assert hasattr(umlclassdiagram_PrimitiveElement, "type")
     descriptor = None
-    for klass in umlclassdiagram::PrimitiveElement.__mro__:
+    for klass in umlclassdiagram_PrimitiveElement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -489,77 +489,77 @@ def test_umlclassdiagram::primitiveelement_has_type():
 
 
 
-def test_umlclassdiagram::relation_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Relation)
+def test_umlclassdiagram_relation_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Relation)
 
 
-def test_umlclassdiagram::relation_constructor_exists():
-    assert callable(umlclassdiagram::Relation.__init__)
+def test_umlclassdiagram_relation_constructor_exists():
+    assert callable(umlclassdiagram_Relation.__init__)
 
 
-def test_umlclassdiagram::relation_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Relation.__init__)
+def test_umlclassdiagram_relation_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Relation.__init__)
     params = list(sig.parameters.keys())
-    assert "nsrc" in params, "Missing parameter 'nsrc'"
-    assert "derived" in params, "Missing parameter 'derived'"
     assert "ntar" in params, "Missing parameter 'ntar'"
+    assert "derived" in params, "Missing parameter 'derived'"
+    assert "nsrc" in params, "Missing parameter 'nsrc'"
 
-def test_umlclassdiagram::relation_has_nsrc():
-    assert hasattr(umlclassdiagram::Relation, "nsrc")
+def test_umlclassdiagram_relation_has_ntar():
+    assert hasattr(umlclassdiagram_Relation, "ntar")
     descriptor = None
-    for klass in umlclassdiagram::Relation.__mro__:
-        if "nsrc" in klass.__dict__:
-            descriptor = klass.__dict__["nsrc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlclassdiagram::relation_has_derived():
-    assert hasattr(umlclassdiagram::Relation, "derived")
-    descriptor = None
-    for klass in umlclassdiagram::Relation.__mro__:
-        if "derived" in klass.__dict__:
-            descriptor = klass.__dict__["derived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlclassdiagram::relation_has_ntar():
-    assert hasattr(umlclassdiagram::Relation, "ntar")
-    descriptor = None
-    for klass in umlclassdiagram::Relation.__mro__:
+    for klass in umlclassdiagram_Relation.__mro__:
         if "ntar" in klass.__dict__:
             descriptor = klass.__dict__["ntar"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_umlclassdiagram::classifier_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Classifier)
-
-
-def test_umlclassdiagram::classifier_constructor_exists():
-    assert callable(umlclassdiagram::Classifier.__init__)
-
-
-def test_umlclassdiagram::classifier_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Classifier.__init__)
-    params = list(sig.parameters.keys())
-    assert "derived" in params, "Missing parameter 'derived'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-
-def test_umlclassdiagram::classifier_has_derived():
-    assert hasattr(umlclassdiagram::Classifier, "derived")
+def test_umlclassdiagram_relation_has_derived():
+    assert hasattr(umlclassdiagram_Relation, "derived")
     descriptor = None
-    for klass in umlclassdiagram::Classifier.__mro__:
+    for klass in umlclassdiagram_Relation.__mro__:
         if "derived" in klass.__dict__:
             descriptor = klass.__dict__["derived"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclassdiagram::classifier_has_abstract():
-    assert hasattr(umlclassdiagram::Classifier, "abstract")
+def test_umlclassdiagram_relation_has_nsrc():
+    assert hasattr(umlclassdiagram_Relation, "nsrc")
     descriptor = None
-    for klass in umlclassdiagram::Classifier.__mro__:
+    for klass in umlclassdiagram_Relation.__mro__:
+        if "nsrc" in klass.__dict__:
+            descriptor = klass.__dict__["nsrc"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_umlclassdiagram_classifier_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Classifier)
+
+
+def test_umlclassdiagram_classifier_constructor_exists():
+    assert callable(umlclassdiagram_Classifier.__init__)
+
+
+def test_umlclassdiagram_classifier_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Classifier.__init__)
+    params = list(sig.parameters.keys())
+    assert "derived" in params, "Missing parameter 'derived'"
+    assert "abstract" in params, "Missing parameter 'abstract'"
+
+def test_umlclassdiagram_classifier_has_derived():
+    assert hasattr(umlclassdiagram_Classifier, "derived")
+    descriptor = None
+    for klass in umlclassdiagram_Classifier.__mro__:
+        if "derived" in klass.__dict__:
+            descriptor = klass.__dict__["derived"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_umlclassdiagram_classifier_has_abstract():
+    assert hasattr(umlclassdiagram_Classifier, "abstract")
+    descriptor = None
+    for klass in umlclassdiagram_Classifier.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -567,37 +567,37 @@ def test_umlclassdiagram::classifier_has_abstract():
 
 
 
-def test_umlclassdiagram::classdiagram_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ClassDiagram)
+def test_umlclassdiagram_classdiagram_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ClassDiagram)
 
 
-def test_umlclassdiagram::classdiagram_constructor_exists():
-    assert callable(umlclassdiagram::ClassDiagram.__init__)
+def test_umlclassdiagram_classdiagram_constructor_exists():
+    assert callable(umlclassdiagram_ClassDiagram.__init__)
 
 
-def test_umlclassdiagram::classdiagram_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ClassDiagram.__init__)
+def test_umlclassdiagram_classdiagram_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ClassDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::accvarcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::AccVarCS)
+def test_umlclassdiagram_accvarcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_AccVarCS)
 
 
-def test_umlclassdiagram::accvarcs_constructor_exists():
-    assert callable(umlclassdiagram::AccVarCS.__init__)
+def test_umlclassdiagram_accvarcs_constructor_exists():
+    assert callable(umlclassdiagram_AccVarCS.__init__)
 
 
-def test_umlclassdiagram::accvarcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::AccVarCS.__init__)
+def test_umlclassdiagram_accvarcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_AccVarCS.__init__)
     params = list(sig.parameters.keys())
     assert "accVarName" in params, "Missing parameter 'accVarName'"
 
-def test_umlclassdiagram::accvarcs_has_accVarName():
-    assert hasattr(umlclassdiagram::AccVarCS, "accVarName")
+def test_umlclassdiagram_accvarcs_has_accVarName():
+    assert hasattr(umlclassdiagram_AccVarCS, "accVarName")
     descriptor = None
-    for klass in umlclassdiagram::AccVarCS.__mro__:
+    for klass in umlclassdiagram_AccVarCS.__mro__:
         if "accVarName" in klass.__dict__:
             descriptor = klass.__dict__["accVarName"]
             break
@@ -619,65 +619,65 @@ def test_loopexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::forallexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ForAllExpCS)
+def test_umlclassdiagram_iterateexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_IterateExpCS)
 
 
-def test_umlclassdiagram::forallexpcs_constructor_exists():
-    assert callable(umlclassdiagram::ForAllExpCS.__init__)
+def test_umlclassdiagram_iterateexpcs_constructor_exists():
+    assert callable(umlclassdiagram_IterateExpCS.__init__)
 
 
-def test_umlclassdiagram::forallexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ForAllExpCS.__init__)
+def test_umlclassdiagram_iterateexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_IterateExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::iterateexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::IterateExpCS)
+def test_umlclassdiagram_forallexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ForAllExpCS)
 
 
-def test_umlclassdiagram::iterateexpcs_constructor_exists():
-    assert callable(umlclassdiagram::IterateExpCS.__init__)
+def test_umlclassdiagram_forallexpcs_constructor_exists():
+    assert callable(umlclassdiagram_ForAllExpCS.__init__)
 
 
-def test_umlclassdiagram::iterateexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::IterateExpCS.__init__)
+def test_umlclassdiagram_forallexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ForAllExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::collectexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::CollectExpCS)
+def test_umlclassdiagram_collectexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_CollectExpCS)
 
 
-def test_umlclassdiagram::collectexpcs_constructor_exists():
-    assert callable(umlclassdiagram::CollectExpCS.__init__)
+def test_umlclassdiagram_collectexpcs_constructor_exists():
+    assert callable(umlclassdiagram_CollectExpCS.__init__)
 
 
-def test_umlclassdiagram::collectexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::CollectExpCS.__init__)
+def test_umlclassdiagram_collectexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_CollectExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::iteratorvarcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::IteratorVarCS)
+def test_umlclassdiagram_iteratorvarcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_IteratorVarCS)
 
 
-def test_umlclassdiagram::iteratorvarcs_constructor_exists():
-    assert callable(umlclassdiagram::IteratorVarCS.__init__)
+def test_umlclassdiagram_iteratorvarcs_constructor_exists():
+    assert callable(umlclassdiagram_IteratorVarCS.__init__)
 
 
-def test_umlclassdiagram::iteratorvarcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::IteratorVarCS.__init__)
+def test_umlclassdiagram_iteratorvarcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_IteratorVarCS.__init__)
     params = list(sig.parameters.keys())
     assert "itName" in params, "Missing parameter 'itName'"
 
-def test_umlclassdiagram::iteratorvarcs_has_itName():
-    assert hasattr(umlclassdiagram::IteratorVarCS, "itName")
+def test_umlclassdiagram_iteratorvarcs_has_itName():
+    assert hasattr(umlclassdiagram_IteratorVarCS, "itName")
     descriptor = None
-    for klass in umlclassdiagram::IteratorVarCS.__mro__:
+    for klass in umlclassdiagram_IteratorVarCS.__mro__:
         if "itName" in klass.__dict__:
             descriptor = klass.__dict__["itName"]
             break
@@ -685,30 +685,30 @@ def test_umlclassdiagram::iteratorvarcs_has_itName():
 
 
 
-def test_umlclassdiagram::navigationpathnamecs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NavigationPathNameCS)
+def test_umlclassdiagram_navigationpathnamecs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NavigationPathNameCS)
 
 
-def test_umlclassdiagram::navigationpathnamecs_constructor_exists():
-    assert callable(umlclassdiagram::NavigationPathNameCS.__init__)
+def test_umlclassdiagram_navigationpathnamecs_constructor_exists():
+    assert callable(umlclassdiagram_NavigationPathNameCS.__init__)
 
 
-def test_umlclassdiagram::navigationpathnamecs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NavigationPathNameCS.__init__)
+def test_umlclassdiagram_navigationpathnamecs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NavigationPathNameCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::existsexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ExistsExpCS)
+def test_umlclassdiagram_existsexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ExistsExpCS)
 
 
-def test_umlclassdiagram::existsexpcs_constructor_exists():
-    assert callable(umlclassdiagram::ExistsExpCS.__init__)
+def test_umlclassdiagram_existsexpcs_constructor_exists():
+    assert callable(umlclassdiagram_ExistsExpCS.__init__)
 
 
-def test_umlclassdiagram::existsexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ExistsExpCS.__init__)
+def test_umlclassdiagram_existsexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ExistsExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -727,23 +727,23 @@ def test_booleanliteralexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::booleanexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::BooleanExpCS)
+def test_umlclassdiagram_booleanexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_BooleanExpCS)
 
 
-def test_umlclassdiagram::booleanexpcs_constructor_exists():
-    assert callable(umlclassdiagram::BooleanExpCS.__init__)
+def test_umlclassdiagram_booleanexpcs_constructor_exists():
+    assert callable(umlclassdiagram_BooleanExpCS.__init__)
 
 
-def test_umlclassdiagram::booleanexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::BooleanExpCS.__init__)
+def test_umlclassdiagram_booleanexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_BooleanExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "boolSymbol" in params, "Missing parameter 'boolSymbol'"
 
-def test_umlclassdiagram::booleanexpcs_has_boolSymbol():
-    assert hasattr(umlclassdiagram::BooleanExpCS, "boolSymbol")
+def test_umlclassdiagram_booleanexpcs_has_boolSymbol():
+    assert hasattr(umlclassdiagram_BooleanExpCS, "boolSymbol")
     descriptor = None
-    for klass in umlclassdiagram::BooleanExpCS.__mro__:
+    for klass in umlclassdiagram_BooleanExpCS.__mro__:
         if "boolSymbol" in klass.__dict__:
             descriptor = klass.__dict__["boolSymbol"]
             break
@@ -751,45 +751,45 @@ def test_umlclassdiagram::booleanexpcs_has_boolSymbol():
 
 
 
-def test_umlclassdiagram::feature_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::Feature)
+def test_umlclassdiagram_feature_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_Feature)
 
 
-def test_umlclassdiagram::feature_constructor_exists():
-    assert callable(umlclassdiagram::Feature.__init__)
+def test_umlclassdiagram_feature_constructor_exists():
+    assert callable(umlclassdiagram_Feature.__init__)
 
 
-def test_umlclassdiagram::feature_constructor_args():
-    sig = inspect.signature(umlclassdiagram::Feature.__init__)
+def test_umlclassdiagram_feature_constructor_args():
+    sig = inspect.signature(umlclassdiagram_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "scope" in params, "Missing parameter 'scope'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::feature_has_name():
-    assert hasattr(umlclassdiagram::Feature, "name")
+def test_umlclassdiagram_feature_has_scope():
+    assert hasattr(umlclassdiagram_Feature, "scope")
     descriptor = None
-    for klass in umlclassdiagram::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in umlclassdiagram_Feature.__mro__:
+        if "scope" in klass.__dict__:
+            descriptor = klass.__dict__["scope"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclassdiagram::feature_has_visibility():
-    assert hasattr(umlclassdiagram::Feature, "visibility")
+def test_umlclassdiagram_feature_has_visibility():
+    assert hasattr(umlclassdiagram_Feature, "visibility")
     descriptor = None
-    for klass in umlclassdiagram::Feature.__mro__:
+    for klass in umlclassdiagram_Feature.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclassdiagram::feature_has_scope():
-    assert hasattr(umlclassdiagram::Feature, "scope")
+def test_umlclassdiagram_feature_has_name():
+    assert hasattr(umlclassdiagram_Feature, "name")
     descriptor = None
-    for klass in umlclassdiagram::Feature.__mro__:
-        if "scope" in klass.__dict__:
-            descriptor = klass.__dict__["scope"]
+    for klass in umlclassdiagram_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -809,37 +809,37 @@ def test_pathcs_constructor_args():
 
 
 
-def test_umlclassdiagram::pathelementcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PathElementCS)
+def test_umlclassdiagram_pathelementcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PathElementCS)
 
 
-def test_umlclassdiagram::pathelementcs_constructor_exists():
-    assert callable(umlclassdiagram::PathElementCS.__init__)
+def test_umlclassdiagram_pathelementcs_constructor_exists():
+    assert callable(umlclassdiagram_PathElementCS.__init__)
 
 
-def test_umlclassdiagram::pathelementcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PathElementCS.__init__)
+def test_umlclassdiagram_pathelementcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PathElementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::pathvariablecs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PathVariableCS)
+def test_umlclassdiagram_pathvariablecs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PathVariableCS)
 
 
-def test_umlclassdiagram::pathvariablecs_constructor_exists():
-    assert callable(umlclassdiagram::PathVariableCS.__init__)
+def test_umlclassdiagram_pathvariablecs_constructor_exists():
+    assert callable(umlclassdiagram_PathVariableCS.__init__)
 
 
-def test_umlclassdiagram::pathvariablecs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PathVariableCS.__init__)
+def test_umlclassdiagram_pathvariablecs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PathVariableCS.__init__)
     params = list(sig.parameters.keys())
     assert "varName" in params, "Missing parameter 'varName'"
 
-def test_umlclassdiagram::pathvariablecs_has_varName():
-    assert hasattr(umlclassdiagram::PathVariableCS, "varName")
+def test_umlclassdiagram_pathvariablecs_has_varName():
+    assert hasattr(umlclassdiagram_PathVariableCS, "varName")
     descriptor = None
-    for klass in umlclassdiagram::PathVariableCS.__mro__:
+    for klass in umlclassdiagram_PathVariableCS.__mro__:
         if "varName" in klass.__dict__:
             descriptor = klass.__dict__["varName"]
             break
@@ -847,16 +847,16 @@ def test_umlclassdiagram::pathvariablecs_has_varName():
 
 
 
-def test_umlclassdiagram::pathcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PathCS)
+def test_umlclassdiagram_pathcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PathCS)
 
 
-def test_umlclassdiagram::pathcs_constructor_exists():
-    assert callable(umlclassdiagram::PathCS.__init__)
+def test_umlclassdiagram_pathcs_constructor_exists():
+    assert callable(umlclassdiagram_PathCS.__init__)
 
 
-def test_umlclassdiagram::pathcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PathCS.__init__)
+def test_umlclassdiagram_pathcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PathCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -875,23 +875,37 @@ def test_literalexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::stringliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::StringLiteralExpCS)
+def test_umlclassdiagram_booleanliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_BooleanLiteralExpCS)
 
 
-def test_umlclassdiagram::stringliteralexpcs_constructor_exists():
-    assert callable(umlclassdiagram::StringLiteralExpCS.__init__)
+def test_umlclassdiagram_booleanliteralexpcs_constructor_exists():
+    assert callable(umlclassdiagram_BooleanLiteralExpCS.__init__)
 
 
-def test_umlclassdiagram::stringliteralexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::StringLiteralExpCS.__init__)
+def test_umlclassdiagram_booleanliteralexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_BooleanLiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlclassdiagram_stringliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_StringLiteralExpCS)
+
+
+def test_umlclassdiagram_stringliteralexpcs_constructor_exists():
+    assert callable(umlclassdiagram_StringLiteralExpCS.__init__)
+
+
+def test_umlclassdiagram_stringliteralexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_StringLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_umlclassdiagram::stringliteralexpcs_has_stringSymbol():
-    assert hasattr(umlclassdiagram::StringLiteralExpCS, "stringSymbol")
+def test_umlclassdiagram_stringliteralexpcs_has_stringSymbol():
+    assert hasattr(umlclassdiagram_StringLiteralExpCS, "stringSymbol")
     descriptor = None
-    for klass in umlclassdiagram::StringLiteralExpCS.__mro__:
+    for klass in umlclassdiagram_StringLiteralExpCS.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -899,37 +913,23 @@ def test_umlclassdiagram::stringliteralexpcs_has_stringSymbol():
 
 
 
-def test_umlclassdiagram::booleanliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::BooleanLiteralExpCS)
+def test_umlclassdiagram_intliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_IntLiteralExpCS)
 
 
-def test_umlclassdiagram::booleanliteralexpcs_constructor_exists():
-    assert callable(umlclassdiagram::BooleanLiteralExpCS.__init__)
+def test_umlclassdiagram_intliteralexpcs_constructor_exists():
+    assert callable(umlclassdiagram_IntLiteralExpCS.__init__)
 
 
-def test_umlclassdiagram::booleanliteralexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::BooleanLiteralExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlclassdiagram::intliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::IntLiteralExpCS)
-
-
-def test_umlclassdiagram::intliteralexpcs_constructor_exists():
-    assert callable(umlclassdiagram::IntLiteralExpCS.__init__)
-
-
-def test_umlclassdiagram::intliteralexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::IntLiteralExpCS.__init__)
+def test_umlclassdiagram_intliteralexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_IntLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "intSymbol" in params, "Missing parameter 'intSymbol'"
 
-def test_umlclassdiagram::intliteralexpcs_has_intSymbol():
-    assert hasattr(umlclassdiagram::IntLiteralExpCS, "intSymbol")
+def test_umlclassdiagram_intliteralexpcs_has_intSymbol():
+    assert hasattr(umlclassdiagram_IntLiteralExpCS, "intSymbol")
     descriptor = None
-    for klass in umlclassdiagram::IntLiteralExpCS.__mro__:
+    for klass in umlclassdiagram_IntLiteralExpCS.__mro__:
         if "intSymbol" in klass.__dict__:
             descriptor = klass.__dict__["intSymbol"]
             break
@@ -937,44 +937,44 @@ def test_umlclassdiagram::intliteralexpcs_has_intSymbol():
 
 
 
-def test_umlclassdiagram::invariantcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::InvariantCS)
+def test_umlclassdiagram_invariantcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_InvariantCS)
 
 
-def test_umlclassdiagram::invariantcs_constructor_exists():
-    assert callable(umlclassdiagram::InvariantCS.__init__)
+def test_umlclassdiagram_invariantcs_constructor_exists():
+    assert callable(umlclassdiagram_InvariantCS.__init__)
 
 
-def test_umlclassdiagram::invariantcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::InvariantCS.__init__)
+def test_umlclassdiagram_invariantcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_InvariantCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::expcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ExpCS)
+def test_umlclassdiagram_expcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ExpCS)
 
 
-def test_umlclassdiagram::expcs_constructor_exists():
-    assert callable(umlclassdiagram::ExpCS.__init__)
+def test_umlclassdiagram_expcs_constructor_exists():
+    assert callable(umlclassdiagram_ExpCS.__init__)
 
 
-def test_umlclassdiagram::expcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ExpCS.__init__)
+def test_umlclassdiagram_expcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::roundedbracketclausecs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::RoundedBracketClauseCS)
+def test_umlclassdiagram_roundedbracketclausecs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_RoundedBracketClauseCS)
 
 
-def test_umlclassdiagram::roundedbracketclausecs_constructor_exists():
-    assert callable(umlclassdiagram::RoundedBracketClauseCS.__init__)
+def test_umlclassdiagram_roundedbracketclausecs_constructor_exists():
+    assert callable(umlclassdiagram_RoundedBracketClauseCS.__init__)
 
 
-def test_umlclassdiagram::roundedbracketclausecs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::RoundedBracketClauseCS.__init__)
+def test_umlclassdiagram_roundedbracketclausecs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_RoundedBracketClauseCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -993,23 +993,37 @@ def test_navigationexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::loopexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::LoopExpCS)
+def test_umlclassdiagram_navigationnameexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NavigationNameExpCS)
 
 
-def test_umlclassdiagram::loopexpcs_constructor_exists():
-    assert callable(umlclassdiagram::LoopExpCS.__init__)
+def test_umlclassdiagram_navigationnameexpcs_constructor_exists():
+    assert callable(umlclassdiagram_NavigationNameExpCS.__init__)
 
 
-def test_umlclassdiagram::loopexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::LoopExpCS.__init__)
+def test_umlclassdiagram_navigationnameexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NavigationNameExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlclassdiagram_loopexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_LoopExpCS)
+
+
+def test_umlclassdiagram_loopexpcs_constructor_exists():
+    assert callable(umlclassdiagram_LoopExpCS.__init__)
+
+
+def test_umlclassdiagram_loopexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_LoopExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "logicOp" in params, "Missing parameter 'logicOp'"
 
-def test_umlclassdiagram::loopexpcs_has_logicOp():
-    assert hasattr(umlclassdiagram::LoopExpCS, "logicOp")
+def test_umlclassdiagram_loopexpcs_has_logicOp():
+    assert hasattr(umlclassdiagram_LoopExpCS, "logicOp")
     descriptor = None
-    for klass in umlclassdiagram::LoopExpCS.__mro__:
+    for klass in umlclassdiagram_LoopExpCS.__mro__:
         if "logicOp" in klass.__dict__:
             descriptor = klass.__dict__["logicOp"]
             break
@@ -1017,30 +1031,16 @@ def test_umlclassdiagram::loopexpcs_has_logicOp():
 
 
 
-def test_umlclassdiagram::navigationnameexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NavigationNameExpCS)
+def test_umlclassdiagram_nameexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NameExpCS)
 
 
-def test_umlclassdiagram::navigationnameexpcs_constructor_exists():
-    assert callable(umlclassdiagram::NavigationNameExpCS.__init__)
+def test_umlclassdiagram_nameexpcs_constructor_exists():
+    assert callable(umlclassdiagram_NameExpCS.__init__)
 
 
-def test_umlclassdiagram::navigationnameexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NavigationNameExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlclassdiagram::nameexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NameExpCS)
-
-
-def test_umlclassdiagram::nameexpcs_constructor_exists():
-    assert callable(umlclassdiagram::NameExpCS.__init__)
-
-
-def test_umlclassdiagram::nameexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NameExpCS.__init__)
+def test_umlclassdiagram_nameexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NameExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1059,16 +1059,16 @@ def test_primaryexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::literalexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::LiteralExpCS)
+def test_umlclassdiagram_literalexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_LiteralExpCS)
 
 
-def test_umlclassdiagram::literalexpcs_constructor_exists():
-    assert callable(umlclassdiagram::LiteralExpCS.__init__)
+def test_umlclassdiagram_literalexpcs_constructor_exists():
+    assert callable(umlclassdiagram_LiteralExpCS.__init__)
 
 
-def test_umlclassdiagram::literalexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::LiteralExpCS.__init__)
+def test_umlclassdiagram_literalexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_LiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1087,30 +1087,30 @@ def test_callexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::primaryexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PrimaryExpCS)
+def test_umlclassdiagram_primaryexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PrimaryExpCS)
 
 
-def test_umlclassdiagram::primaryexpcs_constructor_exists():
-    assert callable(umlclassdiagram::PrimaryExpCS.__init__)
+def test_umlclassdiagram_primaryexpcs_constructor_exists():
+    assert callable(umlclassdiagram_PrimaryExpCS.__init__)
 
 
-def test_umlclassdiagram::primaryexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PrimaryExpCS.__init__)
+def test_umlclassdiagram_primaryexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PrimaryExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::navigationexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::NavigationExpCS)
+def test_umlclassdiagram_navigationexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_NavigationExpCS)
 
 
-def test_umlclassdiagram::navigationexpcs_constructor_exists():
-    assert callable(umlclassdiagram::NavigationExpCS.__init__)
+def test_umlclassdiagram_navigationexpcs_constructor_exists():
+    assert callable(umlclassdiagram_NavigationExpCS.__init__)
 
 
-def test_umlclassdiagram::navigationexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::NavigationExpCS.__init__)
+def test_umlclassdiagram_navigationexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_NavigationExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1129,16 +1129,16 @@ def test_logicexpcs_constructor_args():
 
 
 
-def test_umlclassdiagram::callexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::CallExpCS)
+def test_umlclassdiagram_callexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_CallExpCS)
 
 
-def test_umlclassdiagram::callexpcs_constructor_exists():
-    assert callable(umlclassdiagram::CallExpCS.__init__)
+def test_umlclassdiagram_callexpcs_constructor_exists():
+    assert callable(umlclassdiagram_CallExpCS.__init__)
 
 
-def test_umlclassdiagram::callexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::CallExpCS.__init__)
+def test_umlclassdiagram_callexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_CallExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1157,23 +1157,23 @@ def test_expcs_constructor_args():
 
 
 
-def test_umlclassdiagram::logicexpcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::LogicExpCS)
+def test_umlclassdiagram_logicexpcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_LogicExpCS)
 
 
-def test_umlclassdiagram::logicexpcs_constructor_exists():
-    assert callable(umlclassdiagram::LogicExpCS.__init__)
+def test_umlclassdiagram_logicexpcs_constructor_exists():
+    assert callable(umlclassdiagram_LogicExpCS.__init__)
 
 
-def test_umlclassdiagram::logicexpcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::LogicExpCS.__init__)
+def test_umlclassdiagram_logicexpcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_LogicExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_umlclassdiagram::logicexpcs_has_op():
-    assert hasattr(umlclassdiagram::LogicExpCS, "op")
+def test_umlclassdiagram_logicexpcs_has_op():
+    assert hasattr(umlclassdiagram_LogicExpCS, "op")
     descriptor = None
-    for klass in umlclassdiagram::LogicExpCS.__mro__:
+    for klass in umlclassdiagram_LogicExpCS.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1181,23 +1181,23 @@ def test_umlclassdiagram::logicexpcs_has_op():
 
 
 
-def test_umlclassdiagram::parametercs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ParameterCS)
+def test_umlclassdiagram_parametercs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ParameterCS)
 
 
-def test_umlclassdiagram::parametercs_constructor_exists():
-    assert callable(umlclassdiagram::ParameterCS.__init__)
+def test_umlclassdiagram_parametercs_constructor_exists():
+    assert callable(umlclassdiagram_ParameterCS.__init__)
 
 
-def test_umlclassdiagram::parametercs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ParameterCS.__init__)
+def test_umlclassdiagram_parametercs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ParameterCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::parametercs_has_name():
-    assert hasattr(umlclassdiagram::ParameterCS, "name")
+def test_umlclassdiagram_parametercs_has_name():
+    assert hasattr(umlclassdiagram_ParameterCS, "name")
     descriptor = None
-    for klass in umlclassdiagram::ParameterCS.__mro__:
+    for klass in umlclassdiagram_ParameterCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1205,23 +1205,23 @@ def test_umlclassdiagram::parametercs_has_name():
 
 
 
-def test_umlclassdiagram::operationcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::OperationCS)
+def test_umlclassdiagram_operationcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_OperationCS)
 
 
-def test_umlclassdiagram::operationcs_constructor_exists():
-    assert callable(umlclassdiagram::OperationCS.__init__)
+def test_umlclassdiagram_operationcs_constructor_exists():
+    assert callable(umlclassdiagram_OperationCS.__init__)
 
 
-def test_umlclassdiagram::operationcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::OperationCS.__init__)
+def test_umlclassdiagram_operationcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_OperationCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::operationcs_has_name():
-    assert hasattr(umlclassdiagram::OperationCS, "name")
+def test_umlclassdiagram_operationcs_has_name():
+    assert hasattr(umlclassdiagram_OperationCS, "name")
     descriptor = None
-    for klass in umlclassdiagram::OperationCS.__mro__:
+    for klass in umlclassdiagram_OperationCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1229,23 +1229,23 @@ def test_umlclassdiagram::operationcs_has_name():
 
 
 
-def test_umlclassdiagram::propertycs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PropertyCS)
+def test_umlclassdiagram_propertycs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PropertyCS)
 
 
-def test_umlclassdiagram::propertycs_constructor_exists():
-    assert callable(umlclassdiagram::PropertyCS.__init__)
+def test_umlclassdiagram_propertycs_constructor_exists():
+    assert callable(umlclassdiagram_PropertyCS.__init__)
 
 
-def test_umlclassdiagram::propertycs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PropertyCS.__init__)
+def test_umlclassdiagram_propertycs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PropertyCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::propertycs_has_name():
-    assert hasattr(umlclassdiagram::PropertyCS, "name")
+def test_umlclassdiagram_propertycs_has_name():
+    assert hasattr(umlclassdiagram_PropertyCS, "name")
     descriptor = None
-    for klass in umlclassdiagram::PropertyCS.__mro__:
+    for klass in umlclassdiagram_PropertyCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1253,37 +1253,37 @@ def test_umlclassdiagram::propertycs_has_name():
 
 
 
-def test_umlclassdiagram::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PathNameCS)
+def test_umlclassdiagram_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PathNameCS)
 
 
-def test_umlclassdiagram::pathnamecs_constructor_exists():
-    assert callable(umlclassdiagram::PathNameCS.__init__)
+def test_umlclassdiagram_pathnamecs_constructor_exists():
+    assert callable(umlclassdiagram_PathNameCS.__init__)
 
 
-def test_umlclassdiagram::pathnamecs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PathNameCS.__init__)
+def test_umlclassdiagram_pathnamecs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PathNameCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::classcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ClassCS)
+def test_umlclassdiagram_classcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ClassCS)
 
 
-def test_umlclassdiagram::classcs_constructor_exists():
-    assert callable(umlclassdiagram::ClassCS.__init__)
+def test_umlclassdiagram_classcs_constructor_exists():
+    assert callable(umlclassdiagram_ClassCS.__init__)
 
 
-def test_umlclassdiagram::classcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ClassCS.__init__)
+def test_umlclassdiagram_classcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ClassCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::classcs_has_name():
-    assert hasattr(umlclassdiagram::ClassCS, "name")
+def test_umlclassdiagram_classcs_has_name():
+    assert hasattr(umlclassdiagram_ClassCS, "name")
     descriptor = None
-    for klass in umlclassdiagram::ClassCS.__mro__:
+    for klass in umlclassdiagram_ClassCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1291,37 +1291,37 @@ def test_umlclassdiagram::classcs_has_name():
 
 
 
-def test_umlclassdiagram::constraintcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::ConstraintCS)
+def test_umlclassdiagram_constraintcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_ConstraintCS)
 
 
-def test_umlclassdiagram::constraintcs_constructor_exists():
-    assert callable(umlclassdiagram::ConstraintCS.__init__)
+def test_umlclassdiagram_constraintcs_constructor_exists():
+    assert callable(umlclassdiagram_ConstraintCS.__init__)
 
 
-def test_umlclassdiagram::constraintcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::ConstraintCS.__init__)
+def test_umlclassdiagram_constraintcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_ConstraintCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclassdiagram::packagecs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::PackageCS)
+def test_umlclassdiagram_packagecs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_PackageCS)
 
 
-def test_umlclassdiagram::packagecs_constructor_exists():
-    assert callable(umlclassdiagram::PackageCS.__init__)
+def test_umlclassdiagram_packagecs_constructor_exists():
+    assert callable(umlclassdiagram_PackageCS.__init__)
 
 
-def test_umlclassdiagram::packagecs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::PackageCS.__init__)
+def test_umlclassdiagram_packagecs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_PackageCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclassdiagram::packagecs_has_name():
-    assert hasattr(umlclassdiagram::PackageCS, "name")
+def test_umlclassdiagram_packagecs_has_name():
+    assert hasattr(umlclassdiagram_PackageCS, "name")
     descriptor = None
-    for klass in umlclassdiagram::PackageCS.__mro__:
+    for klass in umlclassdiagram_PackageCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1329,50 +1329,17 @@ def test_umlclassdiagram::packagecs_has_name():
 
 
 
-def test_umlclassdiagram::rootcs_is_not_abstract():
-    assert not inspect.isabstract(umlclassdiagram::RootCS)
+def test_umlclassdiagram_rootcs_is_not_abstract():
+    assert not inspect.isabstract(umlclassdiagram_RootCS)
 
 
-def test_umlclassdiagram::rootcs_constructor_exists():
-    assert callable(umlclassdiagram::RootCS.__init__)
+def test_umlclassdiagram_rootcs_constructor_exists():
+    assert callable(umlclassdiagram_RootCS.__init__)
 
 
-def test_umlclassdiagram::rootcs_constructor_args():
-    sig = inspect.signature(umlclassdiagram::RootCS.__init__)
+def test_umlclassdiagram_rootcs_constructor_args():
+    sig = inspect.signature(umlclassdiagram_RootCS.__init__)
     params = list(sig.parameters.keys())
-
-def test_primitivedatatype_exists():
-    # Check that the Enumeration exists
-    assert PrimitiveDataType is not None
-
-def test_primitivedatatype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrimitiveDataType]
-    expected_literals = [
-        "Integer",
-        "Double",
-        "String",
-        "Boolean",
-        "Date",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveDataType"
-
-def test_scopetype_exists():
-    # Check that the Enumeration exists
-    assert ScopeType is not None
-
-def test_scopetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ScopeType]
-    expected_literals = [
-        "instance",
-        "classifier",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ScopeType"
 
 def test_operatortype_exists():
     # Check that the Enumeration exists
@@ -1382,21 +1349,21 @@ def test_operatortype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OperatorType]
     expected_literals = [
-        "module",
-        "gte",
-        "lte",
-        "negative",
-        "gt",
-        "equals",
-        "multiply",
-        "lt",
-        "or_",
-        "add",
-        "divide",
-        "not_",
         "subtract",
+        "or_",
+        "gte",
+        "module",
         "and_",
+        "add",
+        "multiply",
         "distinct",
+        "lt",
+        "gt",
+        "negative",
+        "equals",
+        "lte",
+        "not_",
+        "divide",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1410,14 +1377,47 @@ def test_visbilitytype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VisbilityType]
     expected_literals = [
-        "public",
-        "package",
         "protected",
+        "package",
+        "public",
         "private",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VisbilityType"
+
+def test_primitivedatatype_exists():
+    # Check that the Enumeration exists
+    assert PrimitiveDataType is not None
+
+def test_primitivedatatype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PrimitiveDataType]
+    expected_literals = [
+        "Integer",
+        "Date",
+        "Boolean",
+        "String",
+        "Double",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveDataType"
+
+def test_scopetype_exists():
+    # Check that the Enumeration exists
+    assert ScopeType is not None
+
+def test_scopetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ScopeType]
+    expected_literals = [
+        "classifier",
+        "instance",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ScopeType"
 
 
 # =============================================================================
@@ -1434,267 +1434,267 @@ safe_text = st.text(
 Relation_strategy = st.builds(
     Relation,
 )
-umlclassdiagram::Aggregation_strategy = st.builds(
-    umlclassdiagram::Aggregation,
+umlclassdiagram_Association_strategy = st.builds(
+    umlclassdiagram_Association,
 )
-umlclassdiagram::Association_strategy = st.builds(
-    umlclassdiagram::Association,
+umlclassdiagram_Aggregation_strategy = st.builds(
+    umlclassdiagram_Aggregation,
 )
-umlclassdiagram::Composition_strategy = st.builds(
-    umlclassdiagram::Composition,
+umlclassdiagram_Composition_strategy = st.builds(
+    umlclassdiagram_Composition,
 )
-umlclassdiagram::Dependency_strategy = st.builds(
-    umlclassdiagram::Dependency,
+umlclassdiagram_Dependency_strategy = st.builds(
+    umlclassdiagram_Dependency,
 )
 Modifier_strategy = st.builds(
     Modifier,
 )
-umlclassdiagram::Operator_strategy = st.builds(
-    umlclassdiagram::Operator,
+umlclassdiagram_Operator_strategy = st.builds(
+    umlclassdiagram_Operator,
     operator=
         safe_text
 )
 Feature_strategy = st.builds(
     Feature,
 )
-umlclassdiagram::Operation_strategy = st.builds(
-    umlclassdiagram::Operation,
+umlclassdiagram_Operation_strategy = st.builds(
+    umlclassdiagram_Operation,
 )
-umlclassdiagram::Attribute_strategy = st.builds(
-    umlclassdiagram::Attribute,
+umlclassdiagram_Attribute_strategy = st.builds(
+    umlclassdiagram_Attribute,
     derived=
         st.booleans()
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-umlclassdiagram::Class_strategy = st.builds(
-    umlclassdiagram::Class,
+umlclassdiagram_Class_strategy = st.builds(
+    umlclassdiagram_Class,
 )
-umlclassdiagram::AssociationClass_strategy = st.builds(
-    umlclassdiagram::AssociationClass,
+umlclassdiagram_AssociationClass_strategy = st.builds(
+    umlclassdiagram_AssociationClass,
 )
 NavigationPathCS_strategy = st.builds(
     NavigationPathCS,
 )
-umlclassdiagram::NavigationPathElementCS_strategy = st.builds(
-    umlclassdiagram::NavigationPathElementCS,
+umlclassdiagram_NavigationPathElementCS_strategy = st.builds(
+    umlclassdiagram_NavigationPathElementCS,
 )
-umlclassdiagram::NavigationPathVariableCS_strategy = st.builds(
-    umlclassdiagram::NavigationPathVariableCS,
+umlclassdiagram_NavigationPathVariableCS_strategy = st.builds(
+    umlclassdiagram_NavigationPathVariableCS,
     varName=
         safe_text
 )
-umlclassdiagram::NavigationPathCS_strategy = st.builds(
-    umlclassdiagram::NavigationPathCS,
+umlclassdiagram_NavigationPathCS_strategy = st.builds(
+    umlclassdiagram_NavigationPathCS,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-umlclassdiagram::Parameter_strategy = st.builds(
-    umlclassdiagram::Parameter,
-)
-umlclassdiagram::Modifier_strategy = st.builds(
-    umlclassdiagram::Modifier,
-    visibility=
-        safe_text,
+umlclassdiagram_Modifier_strategy = st.builds(
+    umlclassdiagram_Modifier,
     scope=
+        safe_text,
+    visibility=
         safe_text
 )
-umlclassdiagram::NamedElement_strategy = st.builds(
-    umlclassdiagram::NamedElement,
+umlclassdiagram_Parameter_strategy = st.builds(
+    umlclassdiagram_Parameter,
+)
+umlclassdiagram_NamedElement_strategy = st.builds(
+    umlclassdiagram_NamedElement,
     name=
         safe_text
 )
-umlclassdiagram::Constraint_strategy = st.builds(
-    umlclassdiagram::Constraint,
+umlclassdiagram_Constraint_strategy = st.builds(
+    umlclassdiagram_Constraint,
     id=
         safe_text
 )
-umlclassdiagram::PrimitiveElement_strategy = st.builds(
-    umlclassdiagram::PrimitiveElement,
+umlclassdiagram_PrimitiveElement_strategy = st.builds(
+    umlclassdiagram_PrimitiveElement,
     type=
         safe_text
 )
-umlclassdiagram::Relation_strategy = st.builds(
-    umlclassdiagram::Relation,
-    nsrc=
+umlclassdiagram_Relation_strategy = st.builds(
+    umlclassdiagram_Relation,
+    ntar=
         safe_text,
     derived=
         st.booleans(),
-    ntar=
+    nsrc=
         safe_text
 )
-umlclassdiagram::Classifier_strategy = st.builds(
-    umlclassdiagram::Classifier,
+umlclassdiagram_Classifier_strategy = st.builds(
+    umlclassdiagram_Classifier,
     derived=
         st.booleans(),
     abstract=
         st.booleans()
 )
-umlclassdiagram::ClassDiagram_strategy = st.builds(
-    umlclassdiagram::ClassDiagram,
+umlclassdiagram_ClassDiagram_strategy = st.builds(
+    umlclassdiagram_ClassDiagram,
 )
-umlclassdiagram::AccVarCS_strategy = st.builds(
-    umlclassdiagram::AccVarCS,
+umlclassdiagram_AccVarCS_strategy = st.builds(
+    umlclassdiagram_AccVarCS,
     accVarName=
         safe_text
 )
 LoopExpCS_strategy = st.builds(
     LoopExpCS,
 )
-umlclassdiagram::ForAllExpCS_strategy = st.builds(
-    umlclassdiagram::ForAllExpCS,
+umlclassdiagram_IterateExpCS_strategy = st.builds(
+    umlclassdiagram_IterateExpCS,
 )
-umlclassdiagram::IterateExpCS_strategy = st.builds(
-    umlclassdiagram::IterateExpCS,
+umlclassdiagram_ForAllExpCS_strategy = st.builds(
+    umlclassdiagram_ForAllExpCS,
 )
-umlclassdiagram::CollectExpCS_strategy = st.builds(
-    umlclassdiagram::CollectExpCS,
+umlclassdiagram_CollectExpCS_strategy = st.builds(
+    umlclassdiagram_CollectExpCS,
 )
-umlclassdiagram::IteratorVarCS_strategy = st.builds(
-    umlclassdiagram::IteratorVarCS,
+umlclassdiagram_IteratorVarCS_strategy = st.builds(
+    umlclassdiagram_IteratorVarCS,
     itName=
         safe_text
 )
-umlclassdiagram::NavigationPathNameCS_strategy = st.builds(
-    umlclassdiagram::NavigationPathNameCS,
+umlclassdiagram_NavigationPathNameCS_strategy = st.builds(
+    umlclassdiagram_NavigationPathNameCS,
 )
-umlclassdiagram::ExistsExpCS_strategy = st.builds(
-    umlclassdiagram::ExistsExpCS,
+umlclassdiagram_ExistsExpCS_strategy = st.builds(
+    umlclassdiagram_ExistsExpCS,
 )
 BooleanLiteralExpCS_strategy = st.builds(
     BooleanLiteralExpCS,
 )
-umlclassdiagram::BooleanExpCS_strategy = st.builds(
-    umlclassdiagram::BooleanExpCS,
+umlclassdiagram_BooleanExpCS_strategy = st.builds(
+    umlclassdiagram_BooleanExpCS,
     boolSymbol=
         st.booleans()
 )
-umlclassdiagram::Feature_strategy = st.builds(
-    umlclassdiagram::Feature,
-    name=
+umlclassdiagram_Feature_strategy = st.builds(
+    umlclassdiagram_Feature,
+    scope=
         safe_text,
     visibility=
         safe_text,
-    scope=
+    name=
         safe_text
 )
 PathCS_strategy = st.builds(
     PathCS,
 )
-umlclassdiagram::PathElementCS_strategy = st.builds(
-    umlclassdiagram::PathElementCS,
+umlclassdiagram_PathElementCS_strategy = st.builds(
+    umlclassdiagram_PathElementCS,
 )
-umlclassdiagram::PathVariableCS_strategy = st.builds(
-    umlclassdiagram::PathVariableCS,
+umlclassdiagram_PathVariableCS_strategy = st.builds(
+    umlclassdiagram_PathVariableCS,
     varName=
         safe_text
 )
-umlclassdiagram::PathCS_strategy = st.builds(
-    umlclassdiagram::PathCS,
+umlclassdiagram_PathCS_strategy = st.builds(
+    umlclassdiagram_PathCS,
 )
 LiteralExpCS_strategy = st.builds(
     LiteralExpCS,
 )
-umlclassdiagram::StringLiteralExpCS_strategy = st.builds(
-    umlclassdiagram::StringLiteralExpCS,
+umlclassdiagram_BooleanLiteralExpCS_strategy = st.builds(
+    umlclassdiagram_BooleanLiteralExpCS,
+)
+umlclassdiagram_StringLiteralExpCS_strategy = st.builds(
+    umlclassdiagram_StringLiteralExpCS,
     stringSymbol=
         safe_text
 )
-umlclassdiagram::BooleanLiteralExpCS_strategy = st.builds(
-    umlclassdiagram::BooleanLiteralExpCS,
-)
-umlclassdiagram::IntLiteralExpCS_strategy = st.builds(
-    umlclassdiagram::IntLiteralExpCS,
+umlclassdiagram_IntLiteralExpCS_strategy = st.builds(
+    umlclassdiagram_IntLiteralExpCS,
     intSymbol=
         st.integers()
 )
-umlclassdiagram::InvariantCS_strategy = st.builds(
-    umlclassdiagram::InvariantCS,
+umlclassdiagram_InvariantCS_strategy = st.builds(
+    umlclassdiagram_InvariantCS,
 )
-umlclassdiagram::ExpCS_strategy = st.builds(
-    umlclassdiagram::ExpCS,
+umlclassdiagram_ExpCS_strategy = st.builds(
+    umlclassdiagram_ExpCS,
 )
-umlclassdiagram::RoundedBracketClauseCS_strategy = st.builds(
-    umlclassdiagram::RoundedBracketClauseCS,
+umlclassdiagram_RoundedBracketClauseCS_strategy = st.builds(
+    umlclassdiagram_RoundedBracketClauseCS,
 )
 NavigationExpCS_strategy = st.builds(
     NavigationExpCS,
 )
-umlclassdiagram::LoopExpCS_strategy = st.builds(
-    umlclassdiagram::LoopExpCS,
+umlclassdiagram_NavigationNameExpCS_strategy = st.builds(
+    umlclassdiagram_NavigationNameExpCS,
+)
+umlclassdiagram_LoopExpCS_strategy = st.builds(
+    umlclassdiagram_LoopExpCS,
     logicOp=
         safe_text
 )
-umlclassdiagram::NavigationNameExpCS_strategy = st.builds(
-    umlclassdiagram::NavigationNameExpCS,
-)
-umlclassdiagram::NameExpCS_strategy = st.builds(
-    umlclassdiagram::NameExpCS,
+umlclassdiagram_NameExpCS_strategy = st.builds(
+    umlclassdiagram_NameExpCS,
 )
 PrimaryExpCS_strategy = st.builds(
     PrimaryExpCS,
 )
-umlclassdiagram::LiteralExpCS_strategy = st.builds(
-    umlclassdiagram::LiteralExpCS,
+umlclassdiagram_LiteralExpCS_strategy = st.builds(
+    umlclassdiagram_LiteralExpCS,
 )
 CallExpCS_strategy = st.builds(
     CallExpCS,
 )
-umlclassdiagram::PrimaryExpCS_strategy = st.builds(
-    umlclassdiagram::PrimaryExpCS,
+umlclassdiagram_PrimaryExpCS_strategy = st.builds(
+    umlclassdiagram_PrimaryExpCS,
 )
-umlclassdiagram::NavigationExpCS_strategy = st.builds(
-    umlclassdiagram::NavigationExpCS,
+umlclassdiagram_NavigationExpCS_strategy = st.builds(
+    umlclassdiagram_NavigationExpCS,
 )
 LogicExpCS_strategy = st.builds(
     LogicExpCS,
 )
-umlclassdiagram::CallExpCS_strategy = st.builds(
-    umlclassdiagram::CallExpCS,
+umlclassdiagram_CallExpCS_strategy = st.builds(
+    umlclassdiagram_CallExpCS,
 )
 ExpCS_strategy = st.builds(
     ExpCS,
 )
-umlclassdiagram::LogicExpCS_strategy = st.builds(
-    umlclassdiagram::LogicExpCS,
+umlclassdiagram_LogicExpCS_strategy = st.builds(
+    umlclassdiagram_LogicExpCS,
     op=
         safe_text
 )
-umlclassdiagram::ParameterCS_strategy = st.builds(
-    umlclassdiagram::ParameterCS,
+umlclassdiagram_ParameterCS_strategy = st.builds(
+    umlclassdiagram_ParameterCS,
     name=
         safe_text
 )
-umlclassdiagram::OperationCS_strategy = st.builds(
-    umlclassdiagram::OperationCS,
+umlclassdiagram_OperationCS_strategy = st.builds(
+    umlclassdiagram_OperationCS,
     name=
         safe_text
 )
-umlclassdiagram::PropertyCS_strategy = st.builds(
-    umlclassdiagram::PropertyCS,
+umlclassdiagram_PropertyCS_strategy = st.builds(
+    umlclassdiagram_PropertyCS,
     name=
         safe_text
 )
-umlclassdiagram::PathNameCS_strategy = st.builds(
-    umlclassdiagram::PathNameCS,
+umlclassdiagram_PathNameCS_strategy = st.builds(
+    umlclassdiagram_PathNameCS,
 )
-umlclassdiagram::ClassCS_strategy = st.builds(
-    umlclassdiagram::ClassCS,
+umlclassdiagram_ClassCS_strategy = st.builds(
+    umlclassdiagram_ClassCS,
     name=
         safe_text
 )
-umlclassdiagram::ConstraintCS_strategy = st.builds(
-    umlclassdiagram::ConstraintCS,
+umlclassdiagram_ConstraintCS_strategy = st.builds(
+    umlclassdiagram_ConstraintCS,
 )
-umlclassdiagram::PackageCS_strategy = st.builds(
-    umlclassdiagram::PackageCS,
+umlclassdiagram_PackageCS_strategy = st.builds(
+    umlclassdiagram_PackageCS,
     name=
         safe_text
 )
-umlclassdiagram::RootCS_strategy = st.builds(
-    umlclassdiagram::RootCS,
+umlclassdiagram_RootCS_strategy = st.builds(
+    umlclassdiagram_RootCS,
 )
 
 @given(instance=Relation_strategy)
@@ -1702,43 +1702,40 @@ umlclassdiagram::RootCS_strategy = st.builds(
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=umlclassdiagram::Aggregation_strategy)
+@given(instance=umlclassdiagram_Association_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::aggregation_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Aggregation)
+def test_umlclassdiagram_association_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Association)
 
-@given(instance=umlclassdiagram::Association_strategy)
+@given(instance=umlclassdiagram_Aggregation_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::association_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Association)
+def test_umlclassdiagram_aggregation_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Aggregation)
 
-@given(instance=umlclassdiagram::Composition_strategy)
+@given(instance=umlclassdiagram_Composition_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::composition_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Composition)
+def test_umlclassdiagram_composition_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Composition)
 
-@given(instance=umlclassdiagram::Dependency_strategy)
+@given(instance=umlclassdiagram_Dependency_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::dependency_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Dependency)
+def test_umlclassdiagram_dependency_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Dependency)
 
 @given(instance=Modifier_strategy)
 @settings(max_examples=50)
 def test_modifier_instantiation(instance):
     assert isinstance(instance, Modifier)
 
-@given(instance=umlclassdiagram::Operator_strategy)
+@given(instance=umlclassdiagram_Operator_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::operator_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Operator)
-
-@given(instance=umlclassdiagram::Operator_strategy)
-def test_umlclassdiagram::operator_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_umlclassdiagram_operator_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Operator)
 
 
-@given(instance=umlclassdiagram::Operator_strategy)
-def test_umlclassdiagram::operator_operator_setter(instance):
+
+@given(instance=umlclassdiagram_Operator_strategy)
+def test_umlclassdiagram_operator_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -1748,23 +1745,20 @@ def test_umlclassdiagram::operator_operator_setter(instance):
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=umlclassdiagram::Operation_strategy)
+@given(instance=umlclassdiagram_Operation_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::operation_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Operation)
+def test_umlclassdiagram_operation_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Operation)
 
-@given(instance=umlclassdiagram::Attribute_strategy)
+@given(instance=umlclassdiagram_Attribute_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::attribute_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Attribute)
-
-@given(instance=umlclassdiagram::Attribute_strategy)
-def test_umlclassdiagram::attribute_derived_type(instance):
-    assert isinstance(instance.derived, bool)
+def test_umlclassdiagram_attribute_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Attribute)
 
 
-@given(instance=umlclassdiagram::Attribute_strategy)
-def test_umlclassdiagram::attribute_derived_setter(instance):
+
+@given(instance=umlclassdiagram_Attribute_strategy)
+def test_umlclassdiagram_attribute_derived_setter(instance):
     original = instance.derived
     instance.derived = original
     assert instance.derived == original
@@ -1774,214 +1768,178 @@ def test_umlclassdiagram::attribute_derived_setter(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=umlclassdiagram::Class_strategy)
+@given(instance=umlclassdiagram_Class_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::class_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Class)
+def test_umlclassdiagram_class_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Class)
 
-@given(instance=umlclassdiagram::AssociationClass_strategy)
+@given(instance=umlclassdiagram_AssociationClass_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::associationclass_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::AssociationClass)
+def test_umlclassdiagram_associationclass_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_AssociationClass)
 
 @given(instance=NavigationPathCS_strategy)
 @settings(max_examples=50)
 def test_navigationpathcs_instantiation(instance):
     assert isinstance(instance, NavigationPathCS)
 
-@given(instance=umlclassdiagram::NavigationPathElementCS_strategy)
+@given(instance=umlclassdiagram_NavigationPathElementCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::navigationpathelementcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NavigationPathElementCS)
+def test_umlclassdiagram_navigationpathelementcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NavigationPathElementCS)
 
-@given(instance=umlclassdiagram::NavigationPathVariableCS_strategy)
+@given(instance=umlclassdiagram_NavigationPathVariableCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::navigationpathvariablecs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NavigationPathVariableCS)
-
-@given(instance=umlclassdiagram::NavigationPathVariableCS_strategy)
-def test_umlclassdiagram::navigationpathvariablecs_varName_type(instance):
-    assert isinstance(instance.varName, str)
+def test_umlclassdiagram_navigationpathvariablecs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NavigationPathVariableCS)
 
 
-@given(instance=umlclassdiagram::NavigationPathVariableCS_strategy)
-def test_umlclassdiagram::navigationpathvariablecs_varName_setter(instance):
+
+@given(instance=umlclassdiagram_NavigationPathVariableCS_strategy)
+def test_umlclassdiagram_navigationpathvariablecs_varName_setter(instance):
     original = instance.varName
     instance.varName = original
     assert instance.varName == original
 
-@given(instance=umlclassdiagram::NavigationPathCS_strategy)
+@given(instance=umlclassdiagram_NavigationPathCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::navigationpathcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NavigationPathCS)
+def test_umlclassdiagram_navigationpathcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NavigationPathCS)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=umlclassdiagram::Parameter_strategy)
+@given(instance=umlclassdiagram_Modifier_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::parameter_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Parameter)
-
-@given(instance=umlclassdiagram::Modifier_strategy)
-@settings(max_examples=50)
-def test_umlclassdiagram::modifier_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Modifier)
-
-@given(instance=umlclassdiagram::Modifier_strategy)
-def test_umlclassdiagram::modifier_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_umlclassdiagram_modifier_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Modifier)
 
 
-@given(instance=umlclassdiagram::Modifier_strategy)
-def test_umlclassdiagram::modifier_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
 
-@given(instance=umlclassdiagram::Modifier_strategy)
-def test_umlclassdiagram::modifier_scope_type(instance):
-    assert isinstance(instance.scope, str)
-
-
-@given(instance=umlclassdiagram::Modifier_strategy)
-def test_umlclassdiagram::modifier_scope_setter(instance):
+@given(instance=umlclassdiagram_Modifier_strategy)
+def test_umlclassdiagram_modifier_scope_setter(instance):
     original = instance.scope
     instance.scope = original
     assert instance.scope == original
 
-@given(instance=umlclassdiagram::NamedElement_strategy)
+
+
+@given(instance=umlclassdiagram_Modifier_strategy)
+def test_umlclassdiagram_modifier_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=umlclassdiagram_Parameter_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::namedelement_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NamedElement)
+def test_umlclassdiagram_parameter_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Parameter)
 
-@given(instance=umlclassdiagram::NamedElement_strategy)
-def test_umlclassdiagram::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=umlclassdiagram_NamedElement_strategy)
+@settings(max_examples=50)
+def test_umlclassdiagram_namedelement_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NamedElement)
 
 
-@given(instance=umlclassdiagram::NamedElement_strategy)
-def test_umlclassdiagram::namedelement_name_setter(instance):
+
+@given(instance=umlclassdiagram_NamedElement_strategy)
+def test_umlclassdiagram_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlclassdiagram::Constraint_strategy)
+@given(instance=umlclassdiagram_Constraint_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::constraint_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Constraint)
-
-@given(instance=umlclassdiagram::Constraint_strategy)
-def test_umlclassdiagram::constraint_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_umlclassdiagram_constraint_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Constraint)
 
 
-@given(instance=umlclassdiagram::Constraint_strategy)
-def test_umlclassdiagram::constraint_id_setter(instance):
+
+@given(instance=umlclassdiagram_Constraint_strategy)
+def test_umlclassdiagram_constraint_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=umlclassdiagram::PrimitiveElement_strategy)
+@given(instance=umlclassdiagram_PrimitiveElement_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::primitiveelement_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PrimitiveElement)
-
-@given(instance=umlclassdiagram::PrimitiveElement_strategy)
-def test_umlclassdiagram::primitiveelement_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_umlclassdiagram_primitiveelement_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PrimitiveElement)
 
 
-@given(instance=umlclassdiagram::PrimitiveElement_strategy)
-def test_umlclassdiagram::primitiveelement_type_setter(instance):
+
+@given(instance=umlclassdiagram_PrimitiveElement_strategy)
+def test_umlclassdiagram_primitiveelement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=umlclassdiagram::Relation_strategy)
+@given(instance=umlclassdiagram_Relation_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::relation_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Relation)
-
-@given(instance=umlclassdiagram::Relation_strategy)
-def test_umlclassdiagram::relation_nsrc_type(instance):
-    assert isinstance(instance.nsrc, str)
+def test_umlclassdiagram_relation_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Relation)
 
 
-@given(instance=umlclassdiagram::Relation_strategy)
-def test_umlclassdiagram::relation_nsrc_setter(instance):
-    original = instance.nsrc
-    instance.nsrc = original
-    assert instance.nsrc == original
 
-@given(instance=umlclassdiagram::Relation_strategy)
-def test_umlclassdiagram::relation_derived_type(instance):
-    assert isinstance(instance.derived, bool)
-
-
-@given(instance=umlclassdiagram::Relation_strategy)
-def test_umlclassdiagram::relation_derived_setter(instance):
-    original = instance.derived
-    instance.derived = original
-    assert instance.derived == original
-
-@given(instance=umlclassdiagram::Relation_strategy)
-def test_umlclassdiagram::relation_ntar_type(instance):
-    assert isinstance(instance.ntar, str)
-
-
-@given(instance=umlclassdiagram::Relation_strategy)
-def test_umlclassdiagram::relation_ntar_setter(instance):
+@given(instance=umlclassdiagram_Relation_strategy)
+def test_umlclassdiagram_relation_ntar_setter(instance):
     original = instance.ntar
     instance.ntar = original
     assert instance.ntar == original
 
-@given(instance=umlclassdiagram::Classifier_strategy)
-@settings(max_examples=50)
-def test_umlclassdiagram::classifier_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Classifier)
-
-@given(instance=umlclassdiagram::Classifier_strategy)
-def test_umlclassdiagram::classifier_derived_type(instance):
-    assert isinstance(instance.derived, bool)
 
 
-@given(instance=umlclassdiagram::Classifier_strategy)
-def test_umlclassdiagram::classifier_derived_setter(instance):
+@given(instance=umlclassdiagram_Relation_strategy)
+def test_umlclassdiagram_relation_derived_setter(instance):
     original = instance.derived
     instance.derived = original
     assert instance.derived == original
 
-@given(instance=umlclassdiagram::Classifier_strategy)
-def test_umlclassdiagram::classifier_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
 
 
-@given(instance=umlclassdiagram::Classifier_strategy)
-def test_umlclassdiagram::classifier_abstract_setter(instance):
+@given(instance=umlclassdiagram_Relation_strategy)
+def test_umlclassdiagram_relation_nsrc_setter(instance):
+    original = instance.nsrc
+    instance.nsrc = original
+    assert instance.nsrc == original
+
+@given(instance=umlclassdiagram_Classifier_strategy)
+@settings(max_examples=50)
+def test_umlclassdiagram_classifier_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Classifier)
+
+
+
+@given(instance=umlclassdiagram_Classifier_strategy)
+def test_umlclassdiagram_classifier_derived_setter(instance):
+    original = instance.derived
+    instance.derived = original
+    assert instance.derived == original
+
+
+
+@given(instance=umlclassdiagram_Classifier_strategy)
+def test_umlclassdiagram_classifier_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=umlclassdiagram::ClassDiagram_strategy)
+@given(instance=umlclassdiagram_ClassDiagram_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::classdiagram_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ClassDiagram)
+def test_umlclassdiagram_classdiagram_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ClassDiagram)
 
-@given(instance=umlclassdiagram::AccVarCS_strategy)
+@given(instance=umlclassdiagram_AccVarCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::accvarcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::AccVarCS)
-
-@given(instance=umlclassdiagram::AccVarCS_strategy)
-def test_umlclassdiagram::accvarcs_accVarName_type(instance):
-    assert isinstance(instance.accVarName, str)
+def test_umlclassdiagram_accvarcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_AccVarCS)
 
 
-@given(instance=umlclassdiagram::AccVarCS_strategy)
-def test_umlclassdiagram::accvarcs_accVarName_setter(instance):
+
+@given(instance=umlclassdiagram_AccVarCS_strategy)
+def test_umlclassdiagram_accvarcs_accVarName_setter(instance):
     original = instance.accVarName
     instance.accVarName = original
     assert instance.accVarName == original
@@ -1991,372 +1949,327 @@ def test_umlclassdiagram::accvarcs_accVarName_setter(instance):
 def test_loopexpcs_instantiation(instance):
     assert isinstance(instance, LoopExpCS)
 
-@given(instance=umlclassdiagram::ForAllExpCS_strategy)
+@given(instance=umlclassdiagram_IterateExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::forallexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ForAllExpCS)
+def test_umlclassdiagram_iterateexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_IterateExpCS)
 
-@given(instance=umlclassdiagram::IterateExpCS_strategy)
+@given(instance=umlclassdiagram_ForAllExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::iterateexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::IterateExpCS)
+def test_umlclassdiagram_forallexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ForAllExpCS)
 
-@given(instance=umlclassdiagram::CollectExpCS_strategy)
+@given(instance=umlclassdiagram_CollectExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::collectexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::CollectExpCS)
+def test_umlclassdiagram_collectexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_CollectExpCS)
 
-@given(instance=umlclassdiagram::IteratorVarCS_strategy)
+@given(instance=umlclassdiagram_IteratorVarCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::iteratorvarcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::IteratorVarCS)
-
-@given(instance=umlclassdiagram::IteratorVarCS_strategy)
-def test_umlclassdiagram::iteratorvarcs_itName_type(instance):
-    assert isinstance(instance.itName, str)
+def test_umlclassdiagram_iteratorvarcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_IteratorVarCS)
 
 
-@given(instance=umlclassdiagram::IteratorVarCS_strategy)
-def test_umlclassdiagram::iteratorvarcs_itName_setter(instance):
+
+@given(instance=umlclassdiagram_IteratorVarCS_strategy)
+def test_umlclassdiagram_iteratorvarcs_itName_setter(instance):
     original = instance.itName
     instance.itName = original
     assert instance.itName == original
 
-@given(instance=umlclassdiagram::NavigationPathNameCS_strategy)
+@given(instance=umlclassdiagram_NavigationPathNameCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::navigationpathnamecs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NavigationPathNameCS)
+def test_umlclassdiagram_navigationpathnamecs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NavigationPathNameCS)
 
-@given(instance=umlclassdiagram::ExistsExpCS_strategy)
+@given(instance=umlclassdiagram_ExistsExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::existsexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ExistsExpCS)
+def test_umlclassdiagram_existsexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ExistsExpCS)
 
 @given(instance=BooleanLiteralExpCS_strategy)
 @settings(max_examples=50)
 def test_booleanliteralexpcs_instantiation(instance):
     assert isinstance(instance, BooleanLiteralExpCS)
 
-@given(instance=umlclassdiagram::BooleanExpCS_strategy)
+@given(instance=umlclassdiagram_BooleanExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::booleanexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::BooleanExpCS)
-
-@given(instance=umlclassdiagram::BooleanExpCS_strategy)
-def test_umlclassdiagram::booleanexpcs_boolSymbol_type(instance):
-    assert isinstance(instance.boolSymbol, bool)
+def test_umlclassdiagram_booleanexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_BooleanExpCS)
 
 
-@given(instance=umlclassdiagram::BooleanExpCS_strategy)
-def test_umlclassdiagram::booleanexpcs_boolSymbol_setter(instance):
+
+@given(instance=umlclassdiagram_BooleanExpCS_strategy)
+def test_umlclassdiagram_booleanexpcs_boolSymbol_setter(instance):
     original = instance.boolSymbol
     instance.boolSymbol = original
     assert instance.boolSymbol == original
 
-@given(instance=umlclassdiagram::Feature_strategy)
+@given(instance=umlclassdiagram_Feature_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::feature_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::Feature)
-
-@given(instance=umlclassdiagram::Feature_strategy)
-def test_umlclassdiagram::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlclassdiagram_feature_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_Feature)
 
 
-@given(instance=umlclassdiagram::Feature_strategy)
-def test_umlclassdiagram::feature_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=umlclassdiagram::Feature_strategy)
-def test_umlclassdiagram::feature_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+@given(instance=umlclassdiagram_Feature_strategy)
+def test_umlclassdiagram_feature_scope_setter(instance):
+    original = instance.scope
+    instance.scope = original
+    assert instance.scope == original
 
 
-@given(instance=umlclassdiagram::Feature_strategy)
-def test_umlclassdiagram::feature_visibility_setter(instance):
+
+@given(instance=umlclassdiagram_Feature_strategy)
+def test_umlclassdiagram_feature_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=umlclassdiagram::Feature_strategy)
-def test_umlclassdiagram::feature_scope_type(instance):
-    assert isinstance(instance.scope, str)
 
 
-@given(instance=umlclassdiagram::Feature_strategy)
-def test_umlclassdiagram::feature_scope_setter(instance):
-    original = instance.scope
-    instance.scope = original
-    assert instance.scope == original
+@given(instance=umlclassdiagram_Feature_strategy)
+def test_umlclassdiagram_feature_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=PathCS_strategy)
 @settings(max_examples=50)
 def test_pathcs_instantiation(instance):
     assert isinstance(instance, PathCS)
 
-@given(instance=umlclassdiagram::PathElementCS_strategy)
+@given(instance=umlclassdiagram_PathElementCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::pathelementcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PathElementCS)
+def test_umlclassdiagram_pathelementcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PathElementCS)
 
-@given(instance=umlclassdiagram::PathVariableCS_strategy)
+@given(instance=umlclassdiagram_PathVariableCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::pathvariablecs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PathVariableCS)
-
-@given(instance=umlclassdiagram::PathVariableCS_strategy)
-def test_umlclassdiagram::pathvariablecs_varName_type(instance):
-    assert isinstance(instance.varName, str)
+def test_umlclassdiagram_pathvariablecs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PathVariableCS)
 
 
-@given(instance=umlclassdiagram::PathVariableCS_strategy)
-def test_umlclassdiagram::pathvariablecs_varName_setter(instance):
+
+@given(instance=umlclassdiagram_PathVariableCS_strategy)
+def test_umlclassdiagram_pathvariablecs_varName_setter(instance):
     original = instance.varName
     instance.varName = original
     assert instance.varName == original
 
-@given(instance=umlclassdiagram::PathCS_strategy)
+@given(instance=umlclassdiagram_PathCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::pathcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PathCS)
+def test_umlclassdiagram_pathcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PathCS)
 
 @given(instance=LiteralExpCS_strategy)
 @settings(max_examples=50)
 def test_literalexpcs_instantiation(instance):
     assert isinstance(instance, LiteralExpCS)
 
-@given(instance=umlclassdiagram::StringLiteralExpCS_strategy)
+@given(instance=umlclassdiagram_BooleanLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::stringliteralexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::StringLiteralExpCS)
+def test_umlclassdiagram_booleanliteralexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_BooleanLiteralExpCS)
 
-@given(instance=umlclassdiagram::StringLiteralExpCS_strategy)
-def test_umlclassdiagram::stringliteralexpcs_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+@given(instance=umlclassdiagram_StringLiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_umlclassdiagram_stringliteralexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_StringLiteralExpCS)
 
 
-@given(instance=umlclassdiagram::StringLiteralExpCS_strategy)
-def test_umlclassdiagram::stringliteralexpcs_stringSymbol_setter(instance):
+
+@given(instance=umlclassdiagram_StringLiteralExpCS_strategy)
+def test_umlclassdiagram_stringliteralexpcs_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
 
-@given(instance=umlclassdiagram::BooleanLiteralExpCS_strategy)
+@given(instance=umlclassdiagram_IntLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::booleanliteralexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::BooleanLiteralExpCS)
-
-@given(instance=umlclassdiagram::IntLiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_umlclassdiagram::intliteralexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::IntLiteralExpCS)
-
-@given(instance=umlclassdiagram::IntLiteralExpCS_strategy)
-def test_umlclassdiagram::intliteralexpcs_intSymbol_type(instance):
-    assert isinstance(instance.intSymbol, int)
+def test_umlclassdiagram_intliteralexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_IntLiteralExpCS)
 
 
-@given(instance=umlclassdiagram::IntLiteralExpCS_strategy)
-def test_umlclassdiagram::intliteralexpcs_intSymbol_setter(instance):
+
+@given(instance=umlclassdiagram_IntLiteralExpCS_strategy)
+def test_umlclassdiagram_intliteralexpcs_intSymbol_setter(instance):
     original = instance.intSymbol
     instance.intSymbol = original
     assert instance.intSymbol == original
 
-@given(instance=umlclassdiagram::InvariantCS_strategy)
+@given(instance=umlclassdiagram_InvariantCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::invariantcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::InvariantCS)
+def test_umlclassdiagram_invariantcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_InvariantCS)
 
-@given(instance=umlclassdiagram::ExpCS_strategy)
+@given(instance=umlclassdiagram_ExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::expcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ExpCS)
+def test_umlclassdiagram_expcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ExpCS)
 
-@given(instance=umlclassdiagram::RoundedBracketClauseCS_strategy)
+@given(instance=umlclassdiagram_RoundedBracketClauseCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::roundedbracketclausecs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::RoundedBracketClauseCS)
+def test_umlclassdiagram_roundedbracketclausecs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_RoundedBracketClauseCS)
 
 @given(instance=NavigationExpCS_strategy)
 @settings(max_examples=50)
 def test_navigationexpcs_instantiation(instance):
     assert isinstance(instance, NavigationExpCS)
 
-@given(instance=umlclassdiagram::LoopExpCS_strategy)
+@given(instance=umlclassdiagram_NavigationNameExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::loopexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::LoopExpCS)
+def test_umlclassdiagram_navigationnameexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NavigationNameExpCS)
 
-@given(instance=umlclassdiagram::LoopExpCS_strategy)
-def test_umlclassdiagram::loopexpcs_logicOp_type(instance):
-    assert isinstance(instance.logicOp, str)
+@given(instance=umlclassdiagram_LoopExpCS_strategy)
+@settings(max_examples=50)
+def test_umlclassdiagram_loopexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_LoopExpCS)
 
 
-@given(instance=umlclassdiagram::LoopExpCS_strategy)
-def test_umlclassdiagram::loopexpcs_logicOp_setter(instance):
+
+@given(instance=umlclassdiagram_LoopExpCS_strategy)
+def test_umlclassdiagram_loopexpcs_logicOp_setter(instance):
     original = instance.logicOp
     instance.logicOp = original
     assert instance.logicOp == original
 
-@given(instance=umlclassdiagram::NavigationNameExpCS_strategy)
+@given(instance=umlclassdiagram_NameExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::navigationnameexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NavigationNameExpCS)
-
-@given(instance=umlclassdiagram::NameExpCS_strategy)
-@settings(max_examples=50)
-def test_umlclassdiagram::nameexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NameExpCS)
+def test_umlclassdiagram_nameexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NameExpCS)
 
 @given(instance=PrimaryExpCS_strategy)
 @settings(max_examples=50)
 def test_primaryexpcs_instantiation(instance):
     assert isinstance(instance, PrimaryExpCS)
 
-@given(instance=umlclassdiagram::LiteralExpCS_strategy)
+@given(instance=umlclassdiagram_LiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::literalexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::LiteralExpCS)
+def test_umlclassdiagram_literalexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_LiteralExpCS)
 
 @given(instance=CallExpCS_strategy)
 @settings(max_examples=50)
 def test_callexpcs_instantiation(instance):
     assert isinstance(instance, CallExpCS)
 
-@given(instance=umlclassdiagram::PrimaryExpCS_strategy)
+@given(instance=umlclassdiagram_PrimaryExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::primaryexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PrimaryExpCS)
+def test_umlclassdiagram_primaryexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PrimaryExpCS)
 
-@given(instance=umlclassdiagram::NavigationExpCS_strategy)
+@given(instance=umlclassdiagram_NavigationExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::navigationexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::NavigationExpCS)
+def test_umlclassdiagram_navigationexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_NavigationExpCS)
 
 @given(instance=LogicExpCS_strategy)
 @settings(max_examples=50)
 def test_logicexpcs_instantiation(instance):
     assert isinstance(instance, LogicExpCS)
 
-@given(instance=umlclassdiagram::CallExpCS_strategy)
+@given(instance=umlclassdiagram_CallExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::callexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::CallExpCS)
+def test_umlclassdiagram_callexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_CallExpCS)
 
 @given(instance=ExpCS_strategy)
 @settings(max_examples=50)
 def test_expcs_instantiation(instance):
     assert isinstance(instance, ExpCS)
 
-@given(instance=umlclassdiagram::LogicExpCS_strategy)
+@given(instance=umlclassdiagram_LogicExpCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::logicexpcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::LogicExpCS)
-
-@given(instance=umlclassdiagram::LogicExpCS_strategy)
-def test_umlclassdiagram::logicexpcs_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_umlclassdiagram_logicexpcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_LogicExpCS)
 
 
-@given(instance=umlclassdiagram::LogicExpCS_strategy)
-def test_umlclassdiagram::logicexpcs_op_setter(instance):
+
+@given(instance=umlclassdiagram_LogicExpCS_strategy)
+def test_umlclassdiagram_logicexpcs_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=umlclassdiagram::ParameterCS_strategy)
+@given(instance=umlclassdiagram_ParameterCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::parametercs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ParameterCS)
-
-@given(instance=umlclassdiagram::ParameterCS_strategy)
-def test_umlclassdiagram::parametercs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlclassdiagram_parametercs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ParameterCS)
 
 
-@given(instance=umlclassdiagram::ParameterCS_strategy)
-def test_umlclassdiagram::parametercs_name_setter(instance):
+
+@given(instance=umlclassdiagram_ParameterCS_strategy)
+def test_umlclassdiagram_parametercs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlclassdiagram::OperationCS_strategy)
+@given(instance=umlclassdiagram_OperationCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::operationcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::OperationCS)
-
-@given(instance=umlclassdiagram::OperationCS_strategy)
-def test_umlclassdiagram::operationcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlclassdiagram_operationcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_OperationCS)
 
 
-@given(instance=umlclassdiagram::OperationCS_strategy)
-def test_umlclassdiagram::operationcs_name_setter(instance):
+
+@given(instance=umlclassdiagram_OperationCS_strategy)
+def test_umlclassdiagram_operationcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlclassdiagram::PropertyCS_strategy)
+@given(instance=umlclassdiagram_PropertyCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::propertycs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PropertyCS)
-
-@given(instance=umlclassdiagram::PropertyCS_strategy)
-def test_umlclassdiagram::propertycs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlclassdiagram_propertycs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PropertyCS)
 
 
-@given(instance=umlclassdiagram::PropertyCS_strategy)
-def test_umlclassdiagram::propertycs_name_setter(instance):
+
+@given(instance=umlclassdiagram_PropertyCS_strategy)
+def test_umlclassdiagram_propertycs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlclassdiagram::PathNameCS_strategy)
+@given(instance=umlclassdiagram_PathNameCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::pathnamecs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PathNameCS)
+def test_umlclassdiagram_pathnamecs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PathNameCS)
 
-@given(instance=umlclassdiagram::ClassCS_strategy)
+@given(instance=umlclassdiagram_ClassCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::classcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ClassCS)
-
-@given(instance=umlclassdiagram::ClassCS_strategy)
-def test_umlclassdiagram::classcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlclassdiagram_classcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ClassCS)
 
 
-@given(instance=umlclassdiagram::ClassCS_strategy)
-def test_umlclassdiagram::classcs_name_setter(instance):
+
+@given(instance=umlclassdiagram_ClassCS_strategy)
+def test_umlclassdiagram_classcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlclassdiagram::ConstraintCS_strategy)
+@given(instance=umlclassdiagram_ConstraintCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::constraintcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::ConstraintCS)
+def test_umlclassdiagram_constraintcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_ConstraintCS)
 
-@given(instance=umlclassdiagram::PackageCS_strategy)
+@given(instance=umlclassdiagram_PackageCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::packagecs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::PackageCS)
-
-@given(instance=umlclassdiagram::PackageCS_strategy)
-def test_umlclassdiagram::packagecs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlclassdiagram_packagecs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_PackageCS)
 
 
-@given(instance=umlclassdiagram::PackageCS_strategy)
-def test_umlclassdiagram::packagecs_name_setter(instance):
+
+@given(instance=umlclassdiagram_PackageCS_strategy)
+def test_umlclassdiagram_packagecs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlclassdiagram::RootCS_strategy)
+@given(instance=umlclassdiagram_RootCS_strategy)
 @settings(max_examples=50)
-def test_umlclassdiagram::rootcs_instantiation(instance):
-    assert isinstance(instance, umlclassdiagram::RootCS)
+def test_umlclassdiagram_rootcs_instantiation(instance):
+    assert isinstance(instance, umlclassdiagram_RootCS)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testLanguage::Greeting,
-    testLanguage::Model,
+from python_code import (
+    testLanguage_Greeting,
+    testLanguage_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_testlanguage::greeting_is_not_abstract():
-    assert not inspect.isabstract(testLanguage::Greeting)
+def test_testlanguage_greeting_is_not_abstract():
+    assert not inspect.isabstract(testLanguage_Greeting)
 
 
-def test_testlanguage::greeting_constructor_exists():
-    assert callable(testLanguage::Greeting.__init__)
+def test_testlanguage_greeting_constructor_exists():
+    assert callable(testLanguage_Greeting.__init__)
 
 
-def test_testlanguage::greeting_constructor_args():
-    sig = inspect.signature(testLanguage::Greeting.__init__)
+def test_testlanguage_greeting_constructor_args():
+    sig = inspect.signature(testLanguage_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testlanguage::greeting_has_name():
-    assert hasattr(testLanguage::Greeting, "name")
+def test_testlanguage_greeting_has_name():
+    assert hasattr(testLanguage_Greeting, "name")
     descriptor = None
-    for klass in testLanguage::Greeting.__mro__:
+    for klass in testLanguage_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_testlanguage::greeting_has_name():
 
 
 
-def test_testlanguage::model_is_not_abstract():
-    assert not inspect.isabstract(testLanguage::Model)
+def test_testlanguage_model_is_not_abstract():
+    assert not inspect.isabstract(testLanguage_Model)
 
 
-def test_testlanguage::model_constructor_exists():
-    assert callable(testLanguage::Model.__init__)
+def test_testlanguage_model_constructor_exists():
+    assert callable(testLanguage_Model.__init__)
 
 
-def test_testlanguage::model_constructor_args():
-    sig = inspect.signature(testLanguage::Model.__init__)
+def test_testlanguage_model_constructor_args():
+    sig = inspect.signature(testLanguage_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testLanguage::Greeting_strategy = st.builds(
-    testLanguage::Greeting,
+testLanguage_Greeting_strategy = st.builds(
+    testLanguage_Greeting,
     name=
         safe_text
 )
-testLanguage::Model_strategy = st.builds(
-    testLanguage::Model,
+testLanguage_Model_strategy = st.builds(
+    testLanguage_Model,
 )
 
-@given(instance=testLanguage::Greeting_strategy)
+@given(instance=testLanguage_Greeting_strategy)
 @settings(max_examples=50)
-def test_testlanguage::greeting_instantiation(instance):
-    assert isinstance(instance, testLanguage::Greeting)
-
-@given(instance=testLanguage::Greeting_strategy)
-def test_testlanguage::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_testlanguage_greeting_instantiation(instance):
+    assert isinstance(instance, testLanguage_Greeting)
 
 
-@given(instance=testLanguage::Greeting_strategy)
-def test_testlanguage::greeting_name_setter(instance):
+
+@given(instance=testLanguage_Greeting_strategy)
+def test_testlanguage_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=testLanguage::Model_strategy)
+@given(instance=testLanguage_Model_strategy)
 @settings(max_examples=50)
-def test_testlanguage::model_instantiation(instance):
-    assert isinstance(instance, testLanguage::Model)
+def test_testlanguage_model_instantiation(instance):
+    assert isinstance(instance, testLanguage_Model)

@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    party::CommonObject,
+from python_code import (
+    party_CommonObject,
     URL,
-    party::Web,
+    party_Web,
     Party,
-    party::Person,
+    party_Person,
     Address,
-    party::USAddress,
-    party::EMail,
+    party_USAddress,
+    party_EMail,
     ContactInfo,
-    party::Address,
-    party::URL,
-    party::Custom,
-    party::Phone,
+    party_Address,
+    party_Custom,
+    party_URL,
+    party_Phone,
     DateEffectiveObject,
-    party::MatrixRelationship,
-    party::Role,
-    party::Tag,
-    party::Tagged,
-    party::Organization,
-    party::Identity,
-    party::ContactInfo,
+    party_Role,
+    party_MatrixRelationship,
+    party_Tag,
+    party_Tagged,
+    party_Organization,
+    party_Identity,
+    party_ContactInfo,
     Tagged,
-    party::DateEffectiveObject,
-    party::Party,
+    party_DateEffectiveObject,
+    party_Party,
 )
 
 # =============================================================================
@@ -38,16 +38,16 @@ from classes import (
 
 
 
-def test_party::commonobject_is_not_abstract():
-    assert not inspect.isabstract(party::CommonObject)
+def test_party_commonobject_is_not_abstract():
+    assert not inspect.isabstract(party_CommonObject)
 
 
-def test_party::commonobject_constructor_exists():
-    assert callable(party::CommonObject.__init__)
+def test_party_commonobject_constructor_exists():
+    assert callable(party_CommonObject.__init__)
 
 
-def test_party::commonobject_constructor_args():
-    sig = inspect.signature(party::CommonObject.__init__)
+def test_party_commonobject_constructor_args():
+    sig = inspect.signature(party_CommonObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -66,16 +66,16 @@ def test_url_constructor_args():
 
 
 
-def test_party::web_is_not_abstract():
-    assert not inspect.isabstract(party::Web)
+def test_party_web_is_not_abstract():
+    assert not inspect.isabstract(party_Web)
 
 
-def test_party::web_constructor_exists():
-    assert callable(party::Web.__init__)
+def test_party_web_constructor_exists():
+    assert callable(party_Web.__init__)
 
 
-def test_party::web_constructor_args():
-    sig = inspect.signature(party::Web.__init__)
+def test_party_web_constructor_args():
+    sig = inspect.signature(party_Web.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,23 +94,23 @@ def test_party_constructor_args():
 
 
 
-def test_party::person_is_not_abstract():
-    assert not inspect.isabstract(party::Person)
+def test_party_person_is_not_abstract():
+    assert not inspect.isabstract(party_Person)
 
 
-def test_party::person_constructor_exists():
-    assert callable(party::Person.__init__)
+def test_party_person_constructor_exists():
+    assert callable(party_Person.__init__)
 
 
-def test_party::person_constructor_args():
-    sig = inspect.signature(party::Person.__init__)
+def test_party_person_constructor_args():
+    sig = inspect.signature(party_Person.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_party::person_has_title():
-    assert hasattr(party::Person, "title")
+def test_party_person_has_title():
+    assert hasattr(party_Person, "title")
     descriptor = None
-    for klass in party::Person.__mro__:
+    for klass in party_Person.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -132,73 +132,73 @@ def test_address_constructor_args():
 
 
 
-def test_party::usaddress_is_not_abstract():
-    assert not inspect.isabstract(party::USAddress)
+def test_party_usaddress_is_not_abstract():
+    assert not inspect.isabstract(party_USAddress)
 
 
-def test_party::usaddress_constructor_exists():
-    assert callable(party::USAddress.__init__)
+def test_party_usaddress_constructor_exists():
+    assert callable(party_USAddress.__init__)
 
 
-def test_party::usaddress_constructor_args():
-    sig = inspect.signature(party::USAddress.__init__)
+def test_party_usaddress_constructor_args():
+    sig = inspect.signature(party_USAddress.__init__)
     params = list(sig.parameters.keys())
-    assert "street2" in params, "Missing parameter 'street2'"
-    assert "state" in params, "Missing parameter 'state'"
-    assert "recipient" in params, "Missing parameter 'recipient'"
-    assert "street1" in params, "Missing parameter 'street1'"
     assert "city" in params, "Missing parameter 'city'"
+    assert "recipient" in params, "Missing parameter 'recipient'"
+    assert "street2" in params, "Missing parameter 'street2'"
+    assert "street1" in params, "Missing parameter 'street1'"
+    assert "state" in params, "Missing parameter 'state'"
     assert "zip" in params, "Missing parameter 'zip'"
 
-def test_party::usaddress_has_street2():
-    assert hasattr(party::USAddress, "street2")
+def test_party_usaddress_has_city():
+    assert hasattr(party_USAddress, "city")
     descriptor = None
-    for klass in party::USAddress.__mro__:
-        if "street2" in klass.__dict__:
-            descriptor = klass.__dict__["street2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_party::usaddress_has_state():
-    assert hasattr(party::USAddress, "state")
-    descriptor = None
-    for klass in party::USAddress.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_party::usaddress_has_recipient():
-    assert hasattr(party::USAddress, "recipient")
-    descriptor = None
-    for klass in party::USAddress.__mro__:
-        if "recipient" in klass.__dict__:
-            descriptor = klass.__dict__["recipient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_party::usaddress_has_street1():
-    assert hasattr(party::USAddress, "street1")
-    descriptor = None
-    for klass in party::USAddress.__mro__:
-        if "street1" in klass.__dict__:
-            descriptor = klass.__dict__["street1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_party::usaddress_has_city():
-    assert hasattr(party::USAddress, "city")
-    descriptor = None
-    for klass in party::USAddress.__mro__:
+    for klass in party_USAddress.__mro__:
         if "city" in klass.__dict__:
             descriptor = klass.__dict__["city"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::usaddress_has_zip():
-    assert hasattr(party::USAddress, "zip")
+def test_party_usaddress_has_recipient():
+    assert hasattr(party_USAddress, "recipient")
     descriptor = None
-    for klass in party::USAddress.__mro__:
+    for klass in party_USAddress.__mro__:
+        if "recipient" in klass.__dict__:
+            descriptor = klass.__dict__["recipient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_party_usaddress_has_street2():
+    assert hasattr(party_USAddress, "street2")
+    descriptor = None
+    for klass in party_USAddress.__mro__:
+        if "street2" in klass.__dict__:
+            descriptor = klass.__dict__["street2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_party_usaddress_has_street1():
+    assert hasattr(party_USAddress, "street1")
+    descriptor = None
+    for klass in party_USAddress.__mro__:
+        if "street1" in klass.__dict__:
+            descriptor = klass.__dict__["street1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_party_usaddress_has_state():
+    assert hasattr(party_USAddress, "state")
+    descriptor = None
+    for klass in party_USAddress.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_party_usaddress_has_zip():
+    assert hasattr(party_USAddress, "zip")
+    descriptor = None
+    for klass in party_USAddress.__mro__:
         if "zip" in klass.__dict__:
             descriptor = klass.__dict__["zip"]
             break
@@ -206,16 +206,16 @@ def test_party::usaddress_has_zip():
 
 
 
-def test_party::email_is_not_abstract():
-    assert not inspect.isabstract(party::EMail)
+def test_party_email_is_not_abstract():
+    assert not inspect.isabstract(party_EMail)
 
 
-def test_party::email_constructor_exists():
-    assert callable(party::EMail.__init__)
+def test_party_email_constructor_exists():
+    assert callable(party_EMail.__init__)
 
 
-def test_party::email_constructor_args():
-    sig = inspect.signature(party::EMail.__init__)
+def test_party_email_constructor_args():
+    sig = inspect.signature(party_EMail.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -234,23 +234,23 @@ def test_contactinfo_constructor_args():
 
 
 
-def test_party::address_is_not_abstract():
-    assert not inspect.isabstract(party::Address)
+def test_party_address_is_not_abstract():
+    assert not inspect.isabstract(party_Address)
 
 
-def test_party::address_constructor_exists():
-    assert callable(party::Address.__init__)
+def test_party_address_constructor_exists():
+    assert callable(party_Address.__init__)
 
 
-def test_party::address_constructor_args():
-    sig = inspect.signature(party::Address.__init__)
+def test_party_address_constructor_args():
+    sig = inspect.signature(party_Address.__init__)
     params = list(sig.parameters.keys())
     assert "country" in params, "Missing parameter 'country'"
 
-def test_party::address_has_country():
-    assert hasattr(party::Address, "country")
+def test_party_address_has_country():
+    assert hasattr(party_Address, "country")
     descriptor = None
-    for klass in party::Address.__mro__:
+    for klass in party_Address.__mro__:
         if "country" in klass.__dict__:
             descriptor = klass.__dict__["country"]
             break
@@ -258,47 +258,23 @@ def test_party::address_has_country():
 
 
 
-def test_party::url_is_not_abstract():
-    assert not inspect.isabstract(party::URL)
+def test_party_custom_is_not_abstract():
+    assert not inspect.isabstract(party_Custom)
 
 
-def test_party::url_constructor_exists():
-    assert callable(party::URL.__init__)
+def test_party_custom_constructor_exists():
+    assert callable(party_Custom.__init__)
 
 
-def test_party::url_constructor_args():
-    sig = inspect.signature(party::URL.__init__)
-    params = list(sig.parameters.keys())
-    assert "address" in params, "Missing parameter 'address'"
-
-def test_party::url_has_address():
-    assert hasattr(party::URL, "address")
-    descriptor = None
-    for klass in party::URL.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_party::custom_is_not_abstract():
-    assert not inspect.isabstract(party::Custom)
-
-
-def test_party::custom_constructor_exists():
-    assert callable(party::Custom.__init__)
-
-
-def test_party::custom_constructor_args():
-    sig = inspect.signature(party::Custom.__init__)
+def test_party_custom_constructor_args():
+    sig = inspect.signature(party_Custom.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_party::custom_has_location():
-    assert hasattr(party::Custom, "location")
+def test_party_custom_has_location():
+    assert hasattr(party_Custom, "location")
     descriptor = None
-    for klass in party::Custom.__mro__:
+    for klass in party_Custom.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -306,45 +282,69 @@ def test_party::custom_has_location():
 
 
 
-def test_party::phone_is_not_abstract():
-    assert not inspect.isabstract(party::Phone)
+def test_party_url_is_not_abstract():
+    assert not inspect.isabstract(party_URL)
 
 
-def test_party::phone_constructor_exists():
-    assert callable(party::Phone.__init__)
+def test_party_url_constructor_exists():
+    assert callable(party_URL.__init__)
 
 
-def test_party::phone_constructor_args():
-    sig = inspect.signature(party::Phone.__init__)
+def test_party_url_constructor_args():
+    sig = inspect.signature(party_URL.__init__)
     params = list(sig.parameters.keys())
-    assert "countryCode" in params, "Missing parameter 'countryCode'"
-    assert "areaCode" in params, "Missing parameter 'areaCode'"
-    assert "number" in params, "Missing parameter 'number'"
+    assert "address" in params, "Missing parameter 'address'"
 
-def test_party::phone_has_countryCode():
-    assert hasattr(party::Phone, "countryCode")
+def test_party_url_has_address():
+    assert hasattr(party_URL, "address")
     descriptor = None
-    for klass in party::Phone.__mro__:
-        if "countryCode" in klass.__dict__:
-            descriptor = klass.__dict__["countryCode"]
+    for klass in party_URL.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::phone_has_areaCode():
-    assert hasattr(party::Phone, "areaCode")
+
+
+def test_party_phone_is_not_abstract():
+    assert not inspect.isabstract(party_Phone)
+
+
+def test_party_phone_constructor_exists():
+    assert callable(party_Phone.__init__)
+
+
+def test_party_phone_constructor_args():
+    sig = inspect.signature(party_Phone.__init__)
+    params = list(sig.parameters.keys())
+    assert "areaCode" in params, "Missing parameter 'areaCode'"
+    assert "number" in params, "Missing parameter 'number'"
+    assert "countryCode" in params, "Missing parameter 'countryCode'"
+
+def test_party_phone_has_areaCode():
+    assert hasattr(party_Phone, "areaCode")
     descriptor = None
-    for klass in party::Phone.__mro__:
+    for klass in party_Phone.__mro__:
         if "areaCode" in klass.__dict__:
             descriptor = klass.__dict__["areaCode"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::phone_has_number():
-    assert hasattr(party::Phone, "number")
+def test_party_phone_has_number():
+    assert hasattr(party_Phone, "number")
     descriptor = None
-    for klass in party::Phone.__mro__:
+    for klass in party_Phone.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_party_phone_has_countryCode():
+    assert hasattr(party_Phone, "countryCode")
+    descriptor = None
+    for klass in party_Phone.__mro__:
+        if "countryCode" in klass.__dict__:
+            descriptor = klass.__dict__["countryCode"]
             break
     assert isinstance(descriptor, property)
 
@@ -364,23 +364,23 @@ def test_dateeffectiveobject_constructor_args():
 
 
 
-def test_party::matrixrelationship_is_not_abstract():
-    assert not inspect.isabstract(party::MatrixRelationship)
+def test_party_role_is_not_abstract():
+    assert not inspect.isabstract(party_Role)
 
 
-def test_party::matrixrelationship_constructor_exists():
-    assert callable(party::MatrixRelationship.__init__)
+def test_party_role_constructor_exists():
+    assert callable(party_Role.__init__)
 
 
-def test_party::matrixrelationship_constructor_args():
-    sig = inspect.signature(party::MatrixRelationship.__init__)
+def test_party_role_constructor_args():
+    sig = inspect.signature(party_Role.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_party::matrixrelationship_has_name():
-    assert hasattr(party::MatrixRelationship, "name")
+def test_party_role_has_name():
+    assert hasattr(party_Role, "name")
     descriptor = None
-    for klass in party::MatrixRelationship.__mro__:
+    for klass in party_Role.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -388,23 +388,23 @@ def test_party::matrixrelationship_has_name():
 
 
 
-def test_party::role_is_not_abstract():
-    assert not inspect.isabstract(party::Role)
+def test_party_matrixrelationship_is_not_abstract():
+    assert not inspect.isabstract(party_MatrixRelationship)
 
 
-def test_party::role_constructor_exists():
-    assert callable(party::Role.__init__)
+def test_party_matrixrelationship_constructor_exists():
+    assert callable(party_MatrixRelationship.__init__)
 
 
-def test_party::role_constructor_args():
-    sig = inspect.signature(party::Role.__init__)
+def test_party_matrixrelationship_constructor_args():
+    sig = inspect.signature(party_MatrixRelationship.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_party::role_has_name():
-    assert hasattr(party::Role, "name")
+def test_party_matrixrelationship_has_name():
+    assert hasattr(party_MatrixRelationship, "name")
     descriptor = None
-    for klass in party::Role.__mro__:
+    for klass in party_MatrixRelationship.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -412,67 +412,43 @@ def test_party::role_has_name():
 
 
 
-def test_party::tag_is_not_abstract():
-    assert not inspect.isabstract(party::Tag)
+def test_party_tag_is_not_abstract():
+    assert not inspect.isabstract(party_Tag)
 
 
-def test_party::tag_constructor_exists():
-    assert callable(party::Tag.__init__)
+def test_party_tag_constructor_exists():
+    assert callable(party_Tag.__init__)
 
 
-def test_party::tag_constructor_args():
-    sig = inspect.signature(party::Tag.__init__)
+def test_party_tag_constructor_args():
+    sig = inspect.signature(party_Tag.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_party::tag_has_comment():
-    assert hasattr(party::Tag, "comment")
+def test_party_tag_has_value():
+    assert hasattr(party_Tag, "value")
     descriptor = None
-    for klass in party::Tag.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_party::tag_has_value():
-    assert hasattr(party::Tag, "value")
-    descriptor = None
-    for klass in party::Tag.__mro__:
+    for klass in party_Tag.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::tag_has_name():
-    assert hasattr(party::Tag, "name")
+def test_party_tag_has_name():
+    assert hasattr(party_Tag, "name")
     descriptor = None
-    for klass in party::Tag.__mro__:
+    for klass in party_Tag.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_party::tagged_is_not_abstract():
-    assert not inspect.isabstract(party::Tagged)
-
-
-def test_party::tagged_constructor_exists():
-    assert callable(party::Tagged.__init__)
-
-
-def test_party::tagged_constructor_args():
-    sig = inspect.signature(party::Tagged.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_party::tagged_has_comment():
-    assert hasattr(party::Tagged, "comment")
+def test_party_tag_has_comment():
+    assert hasattr(party_Tag, "comment")
     descriptor = None
-    for klass in party::Tagged.__mro__:
+    for klass in party_Tag.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -480,23 +456,47 @@ def test_party::tagged_has_comment():
 
 
 
-def test_party::organization_is_not_abstract():
-    assert not inspect.isabstract(party::Organization)
+def test_party_tagged_is_not_abstract():
+    assert not inspect.isabstract(party_Tagged)
 
 
-def test_party::organization_constructor_exists():
-    assert callable(party::Organization.__init__)
+def test_party_tagged_constructor_exists():
+    assert callable(party_Tagged.__init__)
 
 
-def test_party::organization_constructor_args():
-    sig = inspect.signature(party::Organization.__init__)
+def test_party_tagged_constructor_args():
+    sig = inspect.signature(party_Tagged.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_party_tagged_has_comment():
+    assert hasattr(party_Tagged, "comment")
+    descriptor = None
+    for klass in party_Tagged.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_party_organization_is_not_abstract():
+    assert not inspect.isabstract(party_Organization)
+
+
+def test_party_organization_constructor_exists():
+    assert callable(party_Organization.__init__)
+
+
+def test_party_organization_constructor_args():
+    sig = inspect.signature(party_Organization.__init__)
     params = list(sig.parameters.keys())
     assert "organizationType" in params, "Missing parameter 'organizationType'"
 
-def test_party::organization_has_organizationType():
-    assert hasattr(party::Organization, "organizationType")
+def test_party_organization_has_organizationType():
+    assert hasattr(party_Organization, "organizationType")
     descriptor = None
-    for klass in party::Organization.__mro__:
+    for klass in party_Organization.__mro__:
         if "organizationType" in klass.__dict__:
             descriptor = klass.__dict__["organizationType"]
             break
@@ -504,43 +504,43 @@ def test_party::organization_has_organizationType():
 
 
 
-def test_party::identity_is_not_abstract():
-    assert not inspect.isabstract(party::Identity)
+def test_party_identity_is_not_abstract():
+    assert not inspect.isabstract(party_Identity)
 
 
-def test_party::identity_constructor_exists():
-    assert callable(party::Identity.__init__)
+def test_party_identity_constructor_exists():
+    assert callable(party_Identity.__init__)
 
 
-def test_party::identity_constructor_args():
-    sig = inspect.signature(party::Identity.__init__)
+def test_party_identity_constructor_args():
+    sig = inspect.signature(party_Identity.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "value" in params, "Missing parameter 'value'"
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_party::identity_has_value():
-    assert hasattr(party::Identity, "value")
+def test_party_identity_has_type():
+    assert hasattr(party_Identity, "type")
     descriptor = None
-    for klass in party::Identity.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_party::identity_has_type():
-    assert hasattr(party::Identity, "type")
-    descriptor = None
-    for klass in party::Identity.__mro__:
+    for klass in party_Identity.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::identity_has_comment():
-    assert hasattr(party::Identity, "comment")
+def test_party_identity_has_value():
+    assert hasattr(party_Identity, "value")
     descriptor = None
-    for klass in party::Identity.__mro__:
+    for klass in party_Identity.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_party_identity_has_comment():
+    assert hasattr(party_Identity, "comment")
+    descriptor = None
+    for klass in party_Identity.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -548,23 +548,23 @@ def test_party::identity_has_comment():
 
 
 
-def test_party::contactinfo_is_not_abstract():
-    assert not inspect.isabstract(party::ContactInfo)
+def test_party_contactinfo_is_not_abstract():
+    assert not inspect.isabstract(party_ContactInfo)
 
 
-def test_party::contactinfo_constructor_exists():
-    assert callable(party::ContactInfo.__init__)
+def test_party_contactinfo_constructor_exists():
+    assert callable(party_ContactInfo.__init__)
 
 
-def test_party::contactinfo_constructor_args():
-    sig = inspect.signature(party::ContactInfo.__init__)
+def test_party_contactinfo_constructor_args():
+    sig = inspect.signature(party_ContactInfo.__init__)
     params = list(sig.parameters.keys())
     assert "category" in params, "Missing parameter 'category'"
 
-def test_party::contactinfo_has_category():
-    assert hasattr(party::ContactInfo, "category")
+def test_party_contactinfo_has_category():
+    assert hasattr(party_ContactInfo, "category")
     descriptor = None
-    for klass in party::ContactInfo.__mro__:
+    for klass in party_ContactInfo.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
@@ -586,33 +586,33 @@ def test_tagged_constructor_args():
 
 
 
-def test_party::dateeffectiveobject_is_not_abstract():
-    assert not inspect.isabstract(party::DateEffectiveObject)
+def test_party_dateeffectiveobject_is_not_abstract():
+    assert not inspect.isabstract(party_DateEffectiveObject)
 
 
-def test_party::dateeffectiveobject_constructor_exists():
-    assert callable(party::DateEffectiveObject.__init__)
+def test_party_dateeffectiveobject_constructor_exists():
+    assert callable(party_DateEffectiveObject.__init__)
 
 
-def test_party::dateeffectiveobject_constructor_args():
-    sig = inspect.signature(party::DateEffectiveObject.__init__)
+def test_party_dateeffectiveobject_constructor_args():
+    sig = inspect.signature(party_DateEffectiveObject.__init__)
     params = list(sig.parameters.keys())
     assert "end" in params, "Missing parameter 'end'"
     assert "start" in params, "Missing parameter 'start'"
 
-def test_party::dateeffectiveobject_has_end():
-    assert hasattr(party::DateEffectiveObject, "end")
+def test_party_dateeffectiveobject_has_end():
+    assert hasattr(party_DateEffectiveObject, "end")
     descriptor = None
-    for klass in party::DateEffectiveObject.__mro__:
+    for klass in party_DateEffectiveObject.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::dateeffectiveobject_has_start():
-    assert hasattr(party::DateEffectiveObject, "start")
+def test_party_dateeffectiveobject_has_start():
+    assert hasattr(party_DateEffectiveObject, "start")
     descriptor = None
-    for klass in party::DateEffectiveObject.__mro__:
+    for klass in party_DateEffectiveObject.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
@@ -620,33 +620,33 @@ def test_party::dateeffectiveobject_has_start():
 
 
 
-def test_party::party_is_not_abstract():
-    assert not inspect.isabstract(party::Party)
+def test_party_party_is_not_abstract():
+    assert not inspect.isabstract(party_Party)
 
 
-def test_party::party_constructor_exists():
-    assert callable(party::Party.__init__)
+def test_party_party_constructor_exists():
+    assert callable(party_Party.__init__)
 
 
-def test_party::party_constructor_args():
-    sig = inspect.signature(party::Party.__init__)
+def test_party_party_constructor_args():
+    sig = inspect.signature(party_Party.__init__)
     params = list(sig.parameters.keys())
     assert "uid" in params, "Missing parameter 'uid'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_party::party_has_uid():
-    assert hasattr(party::Party, "uid")
+def test_party_party_has_uid():
+    assert hasattr(party_Party, "uid")
     descriptor = None
-    for klass in party::Party.__mro__:
+    for klass in party_Party.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
-def test_party::party_has_name():
-    assert hasattr(party::Party, "name")
+def test_party_party_has_name():
+    assert hasattr(party_Party, "name")
     descriptor = None
-    for klass in party::Party.__mro__:
+    for klass in party_Party.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -664,167 +664,164 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-party::CommonObject_strategy = st.builds(
-    party::CommonObject,
+party_CommonObject_strategy = st.builds(
+    party_CommonObject,
 )
 URL_strategy = st.builds(
     URL,
 )
-party::Web_strategy = st.builds(
-    party::Web,
+party_Web_strategy = st.builds(
+    party_Web,
 )
 Party_strategy = st.builds(
     Party,
 )
-party::Person_strategy = st.builds(
-    party::Person,
+party_Person_strategy = st.builds(
+    party_Person,
     title=
         safe_text
 )
 Address_strategy = st.builds(
     Address,
 )
-party::USAddress_strategy = st.builds(
-    party::USAddress,
-    street2=
-        safe_text,
-    state=
+party_USAddress_strategy = st.builds(
+    party_USAddress,
+    city=
         safe_text,
     recipient=
         safe_text,
+    street2=
+        safe_text,
     street1=
         safe_text,
-    city=
+    state=
         safe_text,
     zip=
         safe_text
 )
-party::EMail_strategy = st.builds(
-    party::EMail,
+party_EMail_strategy = st.builds(
+    party_EMail,
 )
 ContactInfo_strategy = st.builds(
     ContactInfo,
 )
-party::Address_strategy = st.builds(
-    party::Address,
+party_Address_strategy = st.builds(
+    party_Address,
     country=
         safe_text
 )
-party::URL_strategy = st.builds(
-    party::URL,
-    address=
-        safe_text
-)
-party::Custom_strategy = st.builds(
-    party::Custom,
+party_Custom_strategy = st.builds(
+    party_Custom,
     location=
         safe_text
 )
-party::Phone_strategy = st.builds(
-    party::Phone,
-    countryCode=
-        safe_text,
+party_URL_strategy = st.builds(
+    party_URL,
+    address=
+        safe_text
+)
+party_Phone_strategy = st.builds(
+    party_Phone,
     areaCode=
         st.integers(),
     number=
+        safe_text,
+    countryCode=
         safe_text
 )
 DateEffectiveObject_strategy = st.builds(
     DateEffectiveObject,
 )
-party::MatrixRelationship_strategy = st.builds(
-    party::MatrixRelationship,
+party_Role_strategy = st.builds(
+    party_Role,
     name=
         safe_text
 )
-party::Role_strategy = st.builds(
-    party::Role,
+party_MatrixRelationship_strategy = st.builds(
+    party_MatrixRelationship,
     name=
         safe_text
 )
-party::Tag_strategy = st.builds(
-    party::Tag,
-    comment=
-        safe_text,
+party_Tag_strategy = st.builds(
+    party_Tag,
     value=
         safe_text,
     name=
-        safe_text
-)
-party::Tagged_strategy = st.builds(
-    party::Tagged,
+        safe_text,
     comment=
         safe_text
 )
-party::Organization_strategy = st.builds(
-    party::Organization,
+party_Tagged_strategy = st.builds(
+    party_Tagged,
+    comment=
+        safe_text
+)
+party_Organization_strategy = st.builds(
+    party_Organization,
     organizationType=
         safe_text
 )
-party::Identity_strategy = st.builds(
-    party::Identity,
-    value=
-        safe_text,
+party_Identity_strategy = st.builds(
+    party_Identity,
     type=
+        safe_text,
+    value=
         safe_text,
     comment=
         safe_text
 )
-party::ContactInfo_strategy = st.builds(
-    party::ContactInfo,
+party_ContactInfo_strategy = st.builds(
+    party_ContactInfo,
     category=
         safe_text
 )
 Tagged_strategy = st.builds(
     Tagged,
 )
-party::DateEffectiveObject_strategy = st.builds(
-    party::DateEffectiveObject,
+party_DateEffectiveObject_strategy = st.builds(
+    party_DateEffectiveObject,
     end=
         st.dates(),
     start=
         st.dates()
 )
-party::Party_strategy = st.builds(
-    party::Party,
+party_Party_strategy = st.builds(
+    party_Party,
     uid=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=party::CommonObject_strategy)
+@given(instance=party_CommonObject_strategy)
 @settings(max_examples=50)
-def test_party::commonobject_instantiation(instance):
-    assert isinstance(instance, party::CommonObject)
+def test_party_commonobject_instantiation(instance):
+    assert isinstance(instance, party_CommonObject)
 
 @given(instance=URL_strategy)
 @settings(max_examples=50)
 def test_url_instantiation(instance):
     assert isinstance(instance, URL)
 
-@given(instance=party::Web_strategy)
+@given(instance=party_Web_strategy)
 @settings(max_examples=50)
-def test_party::web_instantiation(instance):
-    assert isinstance(instance, party::Web)
+def test_party_web_instantiation(instance):
+    assert isinstance(instance, party_Web)
 
 @given(instance=Party_strategy)
 @settings(max_examples=50)
 def test_party_instantiation(instance):
     assert isinstance(instance, Party)
 
-@given(instance=party::Person_strategy)
+@given(instance=party_Person_strategy)
 @settings(max_examples=50)
-def test_party::person_instantiation(instance):
-    assert isinstance(instance, party::Person)
-
-@given(instance=party::Person_strategy)
-def test_party::person_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_party_person_instantiation(instance):
+    assert isinstance(instance, party_Person)
 
 
-@given(instance=party::Person_strategy)
-def test_party::person_title_setter(instance):
+
+@given(instance=party_Person_strategy)
+def test_party_person_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
@@ -834,330 +831,261 @@ def test_party::person_title_setter(instance):
 def test_address_instantiation(instance):
     assert isinstance(instance, Address)
 
-@given(instance=party::USAddress_strategy)
+@given(instance=party_USAddress_strategy)
 @settings(max_examples=50)
-def test_party::usaddress_instantiation(instance):
-    assert isinstance(instance, party::USAddress)
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_street2_type(instance):
-    assert isinstance(instance.street2, str)
+def test_party_usaddress_instantiation(instance):
+    assert isinstance(instance, party_USAddress)
 
 
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_street2_setter(instance):
-    original = instance.street2
-    instance.street2 = original
-    assert instance.street2 == original
 
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_recipient_type(instance):
-    assert isinstance(instance.recipient, str)
-
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_recipient_setter(instance):
-    original = instance.recipient
-    instance.recipient = original
-    assert instance.recipient == original
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_street1_type(instance):
-    assert isinstance(instance.street1, str)
-
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_street1_setter(instance):
-    original = instance.street1
-    instance.street1 = original
-    assert instance.street1 == original
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_city_setter(instance):
+@given(instance=party_USAddress_strategy)
+def test_party_usaddress_city_setter(instance):
     original = instance.city
     instance.city = original
     assert instance.city == original
 
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_zip_type(instance):
-    assert isinstance(instance.zip, str)
 
 
-@given(instance=party::USAddress_strategy)
-def test_party::usaddress_zip_setter(instance):
+@given(instance=party_USAddress_strategy)
+def test_party_usaddress_recipient_setter(instance):
+    original = instance.recipient
+    instance.recipient = original
+    assert instance.recipient == original
+
+
+
+@given(instance=party_USAddress_strategy)
+def test_party_usaddress_street2_setter(instance):
+    original = instance.street2
+    instance.street2 = original
+    assert instance.street2 == original
+
+
+
+@given(instance=party_USAddress_strategy)
+def test_party_usaddress_street1_setter(instance):
+    original = instance.street1
+    instance.street1 = original
+    assert instance.street1 == original
+
+
+
+@given(instance=party_USAddress_strategy)
+def test_party_usaddress_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+
+
+@given(instance=party_USAddress_strategy)
+def test_party_usaddress_zip_setter(instance):
     original = instance.zip
     instance.zip = original
     assert instance.zip == original
 
-@given(instance=party::EMail_strategy)
+@given(instance=party_EMail_strategy)
 @settings(max_examples=50)
-def test_party::email_instantiation(instance):
-    assert isinstance(instance, party::EMail)
+def test_party_email_instantiation(instance):
+    assert isinstance(instance, party_EMail)
 
 @given(instance=ContactInfo_strategy)
 @settings(max_examples=50)
 def test_contactinfo_instantiation(instance):
     assert isinstance(instance, ContactInfo)
 
-@given(instance=party::Address_strategy)
+@given(instance=party_Address_strategy)
 @settings(max_examples=50)
-def test_party::address_instantiation(instance):
-    assert isinstance(instance, party::Address)
-
-@given(instance=party::Address_strategy)
-def test_party::address_country_type(instance):
-    assert isinstance(instance.country, str)
+def test_party_address_instantiation(instance):
+    assert isinstance(instance, party_Address)
 
 
-@given(instance=party::Address_strategy)
-def test_party::address_country_setter(instance):
+
+@given(instance=party_Address_strategy)
+def test_party_address_country_setter(instance):
     original = instance.country
     instance.country = original
     assert instance.country == original
 
-@given(instance=party::URL_strategy)
+@given(instance=party_Custom_strategy)
 @settings(max_examples=50)
-def test_party::url_instantiation(instance):
-    assert isinstance(instance, party::URL)
-
-@given(instance=party::URL_strategy)
-def test_party::url_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_party_custom_instantiation(instance):
+    assert isinstance(instance, party_Custom)
 
 
-@given(instance=party::URL_strategy)
-def test_party::url_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
 
-@given(instance=party::Custom_strategy)
-@settings(max_examples=50)
-def test_party::custom_instantiation(instance):
-    assert isinstance(instance, party::Custom)
-
-@given(instance=party::Custom_strategy)
-def test_party::custom_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=party::Custom_strategy)
-def test_party::custom_location_setter(instance):
+@given(instance=party_Custom_strategy)
+def test_party_custom_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=party::Phone_strategy)
+@given(instance=party_URL_strategy)
 @settings(max_examples=50)
-def test_party::phone_instantiation(instance):
-    assert isinstance(instance, party::Phone)
-
-@given(instance=party::Phone_strategy)
-def test_party::phone_countryCode_type(instance):
-    assert isinstance(instance.countryCode, str)
+def test_party_url_instantiation(instance):
+    assert isinstance(instance, party_URL)
 
 
-@given(instance=party::Phone_strategy)
-def test_party::phone_countryCode_setter(instance):
-    original = instance.countryCode
-    instance.countryCode = original
-    assert instance.countryCode == original
 
-@given(instance=party::Phone_strategy)
-def test_party::phone_areaCode_type(instance):
-    assert isinstance(instance.areaCode, int)
+@given(instance=party_URL_strategy)
+def test_party_url_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+@given(instance=party_Phone_strategy)
+@settings(max_examples=50)
+def test_party_phone_instantiation(instance):
+    assert isinstance(instance, party_Phone)
 
 
-@given(instance=party::Phone_strategy)
-def test_party::phone_areaCode_setter(instance):
+
+@given(instance=party_Phone_strategy)
+def test_party_phone_areaCode_setter(instance):
     original = instance.areaCode
     instance.areaCode = original
     assert instance.areaCode == original
 
-@given(instance=party::Phone_strategy)
-def test_party::phone_number_type(instance):
-    assert isinstance(instance.number, str)
 
 
-@given(instance=party::Phone_strategy)
-def test_party::phone_number_setter(instance):
+@given(instance=party_Phone_strategy)
+def test_party_phone_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
+
+
+
+@given(instance=party_Phone_strategy)
+def test_party_phone_countryCode_setter(instance):
+    original = instance.countryCode
+    instance.countryCode = original
+    assert instance.countryCode == original
 
 @given(instance=DateEffectiveObject_strategy)
 @settings(max_examples=50)
 def test_dateeffectiveobject_instantiation(instance):
     assert isinstance(instance, DateEffectiveObject)
 
-@given(instance=party::MatrixRelationship_strategy)
+@given(instance=party_Role_strategy)
 @settings(max_examples=50)
-def test_party::matrixrelationship_instantiation(instance):
-    assert isinstance(instance, party::MatrixRelationship)
-
-@given(instance=party::MatrixRelationship_strategy)
-def test_party::matrixrelationship_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_party_role_instantiation(instance):
+    assert isinstance(instance, party_Role)
 
 
-@given(instance=party::MatrixRelationship_strategy)
-def test_party::matrixrelationship_name_setter(instance):
+
+@given(instance=party_Role_strategy)
+def test_party_role_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=party::Role_strategy)
+@given(instance=party_MatrixRelationship_strategy)
 @settings(max_examples=50)
-def test_party::role_instantiation(instance):
-    assert isinstance(instance, party::Role)
-
-@given(instance=party::Role_strategy)
-def test_party::role_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_party_matrixrelationship_instantiation(instance):
+    assert isinstance(instance, party_MatrixRelationship)
 
 
-@given(instance=party::Role_strategy)
-def test_party::role_name_setter(instance):
+
+@given(instance=party_MatrixRelationship_strategy)
+def test_party_matrixrelationship_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=party::Tag_strategy)
+@given(instance=party_Tag_strategy)
 @settings(max_examples=50)
-def test_party::tag_instantiation(instance):
-    assert isinstance(instance, party::Tag)
-
-@given(instance=party::Tag_strategy)
-def test_party::tag_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_party_tag_instantiation(instance):
+    assert isinstance(instance, party_Tag)
 
 
-@given(instance=party::Tag_strategy)
-def test_party::tag_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
 
-@given(instance=party::Tag_strategy)
-def test_party::tag_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=party::Tag_strategy)
-def test_party::tag_value_setter(instance):
+@given(instance=party_Tag_strategy)
+def test_party_tag_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=party::Tag_strategy)
-def test_party::tag_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=party::Tag_strategy)
-def test_party::tag_name_setter(instance):
+@given(instance=party_Tag_strategy)
+def test_party_tag_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=party::Tagged_strategy)
-@settings(max_examples=50)
-def test_party::tagged_instantiation(instance):
-    assert isinstance(instance, party::Tagged)
-
-@given(instance=party::Tagged_strategy)
-def test_party::tagged_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=party::Tagged_strategy)
-def test_party::tagged_comment_setter(instance):
+@given(instance=party_Tag_strategy)
+def test_party_tag_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=party::Organization_strategy)
+@given(instance=party_Tagged_strategy)
 @settings(max_examples=50)
-def test_party::organization_instantiation(instance):
-    assert isinstance(instance, party::Organization)
-
-@given(instance=party::Organization_strategy)
-def test_party::organization_organizationType_type(instance):
-    assert isinstance(instance.organizationType, str)
+def test_party_tagged_instantiation(instance):
+    assert isinstance(instance, party_Tagged)
 
 
-@given(instance=party::Organization_strategy)
-def test_party::organization_organizationType_setter(instance):
+
+@given(instance=party_Tagged_strategy)
+def test_party_tagged_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=party_Organization_strategy)
+@settings(max_examples=50)
+def test_party_organization_instantiation(instance):
+    assert isinstance(instance, party_Organization)
+
+
+
+@given(instance=party_Organization_strategy)
+def test_party_organization_organizationType_setter(instance):
     original = instance.organizationType
     instance.organizationType = original
     assert instance.organizationType == original
 
-@given(instance=party::Identity_strategy)
+@given(instance=party_Identity_strategy)
 @settings(max_examples=50)
-def test_party::identity_instantiation(instance):
-    assert isinstance(instance, party::Identity)
-
-@given(instance=party::Identity_strategy)
-def test_party::identity_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_party_identity_instantiation(instance):
+    assert isinstance(instance, party_Identity)
 
 
-@given(instance=party::Identity_strategy)
-def test_party::identity_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=party::Identity_strategy)
-def test_party::identity_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=party::Identity_strategy)
-def test_party::identity_type_setter(instance):
+@given(instance=party_Identity_strategy)
+def test_party_identity_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=party::Identity_strategy)
-def test_party::identity_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=party::Identity_strategy)
-def test_party::identity_comment_setter(instance):
+@given(instance=party_Identity_strategy)
+def test_party_identity_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=party_Identity_strategy)
+def test_party_identity_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=party::ContactInfo_strategy)
+@given(instance=party_ContactInfo_strategy)
 @settings(max_examples=50)
-def test_party::contactinfo_instantiation(instance):
-    assert isinstance(instance, party::ContactInfo)
-
-@given(instance=party::ContactInfo_strategy)
-def test_party::contactinfo_category_type(instance):
-    assert isinstance(instance.category, str)
+def test_party_contactinfo_instantiation(instance):
+    assert isinstance(instance, party_ContactInfo)
 
 
-@given(instance=party::ContactInfo_strategy)
-def test_party::contactinfo_category_setter(instance):
+
+@given(instance=party_ContactInfo_strategy)
+def test_party_contactinfo_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
@@ -1167,29 +1095,23 @@ def test_party::contactinfo_category_setter(instance):
 def test_tagged_instantiation(instance):
     assert isinstance(instance, Tagged)
 
-@given(instance=party::DateEffectiveObject_strategy)
+@given(instance=party_DateEffectiveObject_strategy)
 @settings(max_examples=50)
-def test_party::dateeffectiveobject_instantiation(instance):
-    assert isinstance(instance, party::DateEffectiveObject)
-
-@given(instance=party::DateEffectiveObject_strategy)
-def test_party::dateeffectiveobject_end_type(instance):
-    assert isinstance(instance.end, date)
+def test_party_dateeffectiveobject_instantiation(instance):
+    assert isinstance(instance, party_DateEffectiveObject)
 
 
-@given(instance=party::DateEffectiveObject_strategy)
-def test_party::dateeffectiveobject_end_setter(instance):
+
+@given(instance=party_DateEffectiveObject_strategy)
+def test_party_dateeffectiveobject_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=party::DateEffectiveObject_strategy)
-def test_party::dateeffectiveobject_start_type(instance):
-    assert isinstance(instance.start, date)
 
 
-@given(instance=party::DateEffectiveObject_strategy)
-def test_party::dateeffectiveobject_start_setter(instance):
+@given(instance=party_DateEffectiveObject_strategy)
+def test_party_dateeffectiveobject_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
@@ -1200,9 +1122,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=party::DateEffectiveObject_strategy)
+@given(instance=party_DateEffectiveObject_strategy)
 @settings(max_examples=30)
-def test_party::dateeffectiveobject_iseffective_changes_state(instance):
+def test_party_dateeffectiveobject_iseffective_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1216,14 +1138,14 @@ def test_party::dateeffectiveobject_iseffective_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEffective' in party::DateEffectiveObject is empty"
+        assert has_statements, f"Function 'isEffective' in party_DateEffectiveObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEffective' in party::DateEffectiveObject did not change state; check implementation")
+            warnings.warn(f"Operation 'isEffective' in party_DateEffectiveObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEffective' in party::DateEffectiveObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEffective' in party_DateEffectiveObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1231,9 +1153,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=party::DateEffectiveObject_strategy)
+@given(instance=party_DateEffectiveObject_strategy)
 @settings(max_examples=30)
-def test_party::dateeffectiveobject_iseffectivenow_changes_state(instance):
+def test_party_dateeffectiveobject_iseffectivenow_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1245,38 +1167,32 @@ def test_party::dateeffectiveobject_iseffectivenow_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEffectiveNow' in party::DateEffectiveObject is empty"
+        assert has_statements, f"Function 'isEffectiveNow' in party_DateEffectiveObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEffectiveNow' in party::DateEffectiveObject did not change state; check implementation")
+            warnings.warn(f"Operation 'isEffectiveNow' in party_DateEffectiveObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEffectiveNow' in party::DateEffectiveObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEffectiveNow' in party_DateEffectiveObject is not implemented or raised an error")
 
-@given(instance=party::Party_strategy)
+@given(instance=party_Party_strategy)
 @settings(max_examples=50)
-def test_party::party_instantiation(instance):
-    assert isinstance(instance, party::Party)
-
-@given(instance=party::Party_strategy)
-def test_party::party_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_party_party_instantiation(instance):
+    assert isinstance(instance, party_Party)
 
 
-@given(instance=party::Party_strategy)
-def test_party::party_uid_setter(instance):
+
+@given(instance=party_Party_strategy)
+def test_party_party_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=party::Party_strategy)
-def test_party::party_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=party::Party_strategy)
-def test_party::party_name_setter(instance):
+@given(instance=party_Party_strategy)
+def test_party_party_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1287,9 +1203,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=party::Party_strategy)
+@given(instance=party_Party_strategy)
 @settings(max_examples=30)
-def test_party::party_setexternalparent_changes_state(instance):
+def test_party_party_setexternalparent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1303,11 +1219,11 @@ def test_party::party_setexternalparent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setExternalParent' in party::Party is empty"
+        assert has_statements, f"Function 'setExternalParent' in party_Party is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setExternalParent' in party::Party did not change state; check implementation")
+            warnings.warn(f"Operation 'setExternalParent' in party_Party did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setExternalParent' in party::Party is not implemented or raised an error")
+        warnings.warn(f"Operation 'setExternalParent' in party_Party is not implemented or raised an error")

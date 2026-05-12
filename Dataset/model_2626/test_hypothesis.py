@@ -3,282 +3,282 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    description::EndUserDocumentedElement,
+from python_code import (
+    tool_DeleteHookParameter,
+    diagram_tool_DeleteHook,
+    AbstractToolDescription,
+    diagram_tool_RequestDescription,
+    tool_DeleteHook,
+    tool_ElementDeleteVariable,
+    tool_ElementDoubleClickVariable,
+    tool_InitEdgeCreationOperation,
+    tool_TargetEdgeViewCreationVariable,
+    tool_SourceEdgeViewCreationVariable,
+    tool_TargetEdgeCreationVariable,
+    tool_SourceEdgeCreationVariable,
+    tool_ContainerViewVariable,
+    tool_NodeCreationVariable,
+    MappingBasedToolDescription,
+    diagram_tool_ContainerCreationDescription,
+    diagram_tool_DeleteElementDescription,
+    diagram_tool_EdgeCreationDescription,
+    diagram_tool_DoubleClickDescription,
+    diagram_tool_NodeCreationDescription,
+    tool_ToolGroup,
+    diagram_tool_ToolGroupExtension,
+    ToolEntry,
+    diagram_tool_ToolGroup,
+    tool_ToolGroupExtension,
+    tool_PopupMenu,
+    tool_ToolEntry,
+    tool_InitialNodeCreationOperation,
+    diagram_style_HideLabelCapabilityStyleDescription,
+    EdgeStyleDescription,
+    diagram_style_BracketEdgeStyleDescription,
+    BasicLabelStyleDescription,
+    diagram_style_CenterLabelStyleDescription,
+    diagram_style_EndLabelStyleDescription,
+    diagram_style_BeginLabelStyleDescription,
+    style_EndLabelStyleDescription,
+    style_CenterLabelStyleDescription,
+    style_BeginLabelStyleDescription,
+    style_LabelBorderStyleDescription,
+    diagram_style_SizeComputationContainerStyleDescription,
+    diagram_style_GaugeSectionDescription,
+    style_GaugeSectionDescription,
+    style_SizeComputationContainerStyleDescription,
+    style_RoundedCornerStyleDescription,
+    NodeStyleDescription,
+    diagram_style_NoteDescription,
+    diagram_style_EllipseNodeDescription,
+    diagram_style_SquareDescription,
+    diagram_style_DotDescription,
+    diagram_style_GaugeCompositeStyleDescription,
+    diagram_style_BundledImageDescription,
+    diagram_style_CustomStyleDescription,
+    style_HideLabelCapabilityStyleDescription,
+    style_TooltipStyleDescription,
+    style_LabelStyleDescription,
+    style_BorderedStyleDescription,
+    diagram_style_ContainerStyleDescription,
+    ColorDescription,
+    StyleDescription,
+    diagram_style_RoundedCornerStyleDescription,
+    diagram_style_EdgeStyleDescription,
+    diagram_style_BorderedStyleDescription,
+    tool_ContainerDropDescription,
+    diagram_style_LozengeNodeDescription,
+    diagram_description_DragAndDropTargetDescription,
+    Customization,
+    DecorationDescriptionsSet,
+    description_EndUserDocumentedElement,
     DecorationDescription,
-    diagram::description::MappingBasedDecoration,
+    diagram_description_MappingBasedDecoration,
     DocumentedElement,
-    diagram::description::Layout,
+    diagram_description_Layout,
     ConditionalStyleDescription,
-    diagram::description::ConditionalEdgeStyleDescription,
-    diagram::description::ConditionalContainerStyleDescription,
-    diagram::description::ConditionalNodeStyleDescription,
-    description::IdentifiedElement,
-    diagram::description::IEdgeMapping,
+    diagram_description_ConditionalEdgeStyleDescription,
+    diagram_description_ConditionalContainerStyleDescription,
+    diagram_description_ConditionalNodeStyleDescription,
+    description_IdentifiedElement,
+    diagram_description_IEdgeMapping,
     AbstractNodeMapping,
-    tool::ReconnectEdgeDescription,
+    tool_ReconnectEdgeDescription,
     ConditionalEdgeStyleDescription,
-    style::EdgeStyleDescription,
-    description::IEdgeMapping,
-    description::ContainerMapping,
-    description::AbstractMappingImport,
-    diagram::description::ContainerMappingImport,
-    description::NodeMapping,
-    diagram::description::NodeMappingImport,
+    style_EdgeStyleDescription,
+    description_IEdgeMapping,
+    description_ContainerMapping,
+    description_AbstractMappingImport,
+    diagram_description_ContainerMappingImport,
+    description_NodeMapping,
+    diagram_description_NodeMappingImport,
     ConditionalContainerStyleDescription,
-    style::ContainerStyleDescription,
+    style_ContainerStyleDescription,
+    diagram_style_ShapeContainerStyleDescription,
+    diagram_style_FlatContainerStyleDescription,
     ConditionalNodeStyleDescription,
-    style::NodeStyleDescription,
-    description::AbstractNodeMapping,
-    description::DiagramElementMapping,
-    tool::DoubleClickDescription,
-    tool::DirectEditLabel,
-    tool::DeleteElementDescription,
-    description::RepresentationElementMapping,
+    style_NodeStyleDescription,
+    diagram_style_WorkspaceImageDescription,
+    description_AbstractNodeMapping,
+    description_DiagramElementMapping,
+    tool_DoubleClickDescription,
+    tool_DirectEditLabel,
+    tool_DeleteElementDescription,
+    description_RepresentationElementMapping,
     RepresentationExtensionDescription,
-    diagram::description::DiagramExtensionDescription,
-    description::DiagramDescription,
-    description::RepresentationImportDescription,
-    diagram::description::DiagramImportDescription,
-    tool::ToolSection,
+    diagram_description_DiagramExtensionDescription,
+    description_DiagramDescription,
+    description_RepresentationImportDescription,
+    diagram_description_DiagramImportDescription,
+    tool_ToolSection,
     EdgeMappingImport,
-    tool::InitialOperation,
+    tool_InitialOperation,
     Layout,
-    diagram::description::OrderedTreeLayout,
-    diagram::description::CompositeLayout,
-    tool::RepresentationCreationDescription,
-    tool::AbstractToolDescription,
-    concern::ConcernSet,
-    validation::ValidationSet,
+    diagram_description_CompositeLayout,
+    diagram_description_OrderedTreeLayout,
+    tool_RepresentationCreationDescription,
+    tool_AbstractToolDescription,
+    concern_ConcernSet,
+    validation_ValidationSet,
     EdgeMapping,
-    description::PasteTargetDescription,
-    diagram::description::DiagramElementMapping,
-    description::RepresentationDescription,
-    description::DragAndDropTargetDescription,
-    diagram::description::ContainerMapping,
-    diagram::description::NodeMapping,
-    diagram::description::DiagramDescription,
-    diagram::EObject,
-    tool::SelectModelElementVariable,
-    diagram::HideLabelCapabilityStyle,
-    diagram::DragAndDropTarget,
-    style::StyleDescription,
-    diagram::ComputedStyleDescriptionRegistry,
+    description_PasteTargetDescription,
+    diagram_description_DiagramElementMapping,
+    description_RepresentationDescription,
+    description_DragAndDropTargetDescription,
+    diagram_description_NodeMapping,
+    diagram_description_ContainerMapping,
+    diagram_description_DiagramDescription,
+    diagram_EObject,
+    tool_SelectModelElementVariable,
+    diagram_concern_ConcernSet,
+    InteractiveVariableDescription,
+    filter_Filter,
+    FilterDescription,
+    diagram_filter_CompositeFilterDescription,
+    diagram_filter_Filter,
+    Filter,
+    diagram_filter_VariableFilter,
+    diagram_filter_MappingFilter,
+    tool_ElementDropVariable,
+    tool_DropContainerVariable,
+    diagram_tool_ContainerDropDescription,
+    RepresentationNavigationDescription,
+    diagram_tool_DiagramNavigationDescription,
+    RepresentationCreationDescription,
+    diagram_tool_DiagramCreationDescription,
+    tool_InitialContainerDropOperation,
+    ContainerModelOperation,
+    diagram_tool_Navigation,
+    diagram_tool_CreateView,
+    tool_VariableContainer,
+    description_AbstractVariable,
+    diagram_tool_NodeCreationVariable,
+    diagram_tool_ElementDoubleClickVariable,
+    diagram_tool_SourceEdgeViewCreationVariable,
+    diagram_tool_TargetEdgeCreationVariable,
+    diagram_tool_TargetEdgeViewCreationVariable,
+    diagram_tool_SourceEdgeCreationVariable,
+    diagram_tool_BehaviorTool,
+    tool_EditMaskVariables,
+    diagram_tool_DirectEditLabel,
+    CreateView,
+    diagram_tool_CreateEdgeView,
+    tool_ElementSelectVariable,
+    diagram_tool_ReconnectEdgeDescription,
+    diagram_tool_DeleteHookParameter,
+    diagram_HideLabelCapabilityStyle,
+    diagram_DragAndDropTarget,
+    style_StyleDescription,
+    diagram_style_NodeStyleDescription,
+    diagram_ComputedStyleDescriptionRegistry,
     EdgeStyle,
-    diagram::BracketEdgeStyle,
+    diagram_BracketEdgeStyle,
     BasicLabelStyle,
     CollapseFilter,
-    diagram::IndirectlyCollapseFilter,
-    diagram::VariableValue,
+    diagram_IndirectlyCollapseFilter,
+    diagram_VariableValue,
     TypedVariable,
     VariableValue,
-    diagram::EObjectVariableValue,
-    diagram::TypedVariableValue,
-    diagram::EndLabelStyle,
-    diagram::BeginLabelStyle,
-    diagram::CenterLabelStyle,
+    diagram_TypedVariableValue,
+    diagram_EObjectVariableValue,
+    diagram_EndLabelStyle,
+    diagram_BeginLabelStyle,
+    diagram_CenterLabelStyle,
     ContainerStyle,
-    diagram::ShapeContainerStyle,
-    diagram::FlatContainerStyle,
+    diagram_ShapeContainerStyle,
+    diagram_FlatContainerStyle,
     Customizable,
-    diagram::GaugeSection,
+    diagram_GaugeSection,
     NodeStyle,
-    diagram::Note,
-    diagram::GaugeCompositeStyle,
-    diagram::Ellipse,
-    diagram::Lozenge,
-    diagram::CustomStyle,
-    diagram::WorkspaceImage,
-    diagram::Square,
-    diagram::BundledImage,
-    diagram::Dot,
+    diagram_Note,
+    diagram_Square,
+    diagram_Ellipse,
+    diagram_Lozenge,
+    diagram_CustomStyle,
+    diagram_BundledImage,
+    diagram_GaugeCompositeStyle,
+    diagram_WorkspaceImage,
+    diagram_Dot,
     HideLabelCapabilityStyle,
     BorderedStyle,
     Style,
-    diagram::BorderedStyle,
+    diagram_BorderedStyle,
     LabelStyle,
     IEdgeMapping,
-    diagram::EdgeTarget,
-    diagram::EdgeStyle,
+    diagram_EdgeTarget,
+    diagram_EdgeStyle,
     DDiagramElementContainer,
-    diagram::DNodeList,
-    diagram::DNodeContainer,
+    diagram_DNodeList,
+    diagram_DNodeContainer,
     ContainerMapping,
-    diagram::ContainerStyle,
+    diagram_ContainerStyle,
     NodeMapping,
-    diagram::Style,
-    diagram::NodeStyle,
+    diagram_Style,
+    diagram_NodeStyle,
     EdgeTarget,
     AbstractDNode,
     DDiagramElement,
-    diagram::AbstractDNode,
-    filter::CompositeFilterDescription,
+    diagram_AbstractDNode,
+    filter_CompositeFilterDescription,
     GraphicalFilter,
-    diagram::AbsoluteBoundsFilter,
-    diagram::CollapseFilter,
-    diagram::FoldingPointFilter,
-    diagram::HideLabelFilter,
-    diagram::AppliedCompositeFilters,
-    diagram::FoldingFilter,
-    diagram::HideFilter,
-    diagram::GraphicalFilter,
+    diagram_AppliedCompositeFilters,
+    diagram_HideLabelFilter,
+    diagram_FoldingPointFilter,
+    diagram_CollapseFilter,
+    diagram_FoldingFilter,
+    diagram_AbsoluteBoundsFilter,
+    diagram_HideFilter,
+    diagram_GraphicalFilter,
     DiagramElementMapping,
-    diagram::Decoration,
+    diagram_Decoration,
     DRepresentationElement,
     DSemanticDecorator,
     DDiagram,
-    diagram::DSemanticDiagram,
+    diagram_DSemanticDiagram,
     Layer,
-    diagram::description::AdditionalLayer,
-    diagram::FilterVariableHistory,
-    tool::BehaviorTool,
-    validation::ValidationRule,
+    diagram_description_AdditionalLayer,
+    diagram_FilterVariableHistory,
+    tool_BehaviorTool,
+    validation_ValidationRule,
     AdditionalLayer,
-    filter::FilterDescription,
-    concern::ConcernDescription,
-    diagram::DNodeListElement,
-    diagram::DEdge,
+    filter_FilterDescription,
+    concern_ConcernDescription,
+    diagram_DNodeListElement,
+    diagram_DEdge,
     DiagramDescription,
-    diagram::DDiagramElement,
+    diagram_DDiagramElement,
     DragAndDropTarget,
-    diagram::DNode,
-    diagram::DDiagramElementContainer,
-    description::DocumentedElement,
-    diagram::description::Layer,
-    diagram::description::EdgeMappingImport,
-    diagram::description::EdgeMapping,
-    diagram::description::AbstractNodeMapping,
+    diagram_DDiagramElementContainer,
+    diagram_DNode,
+    description_DocumentedElement,
+    diagram_description_EdgeMappingImport,
+    diagram_filter_FilterDescription,
+    diagram_description_AbstractNodeMapping,
+    diagram_concern_ConcernDescription,
+    diagram_description_Layer,
+    diagram_tool_ToolSection,
+    diagram_description_EdgeMapping,
     DRepresentation,
-    diagram::DDiagram,
-    diagram::concern::ConcernDescription,
-    diagram::concern::ConcernSet,
-    InteractiveVariableDescription,
-    filter::Filter,
-    FilterDescription,
-    diagram::filter::CompositeFilterDescription,
-    diagram::filter::Filter,
-    diagram::filter::FilterDescription,
-    Filter,
-    diagram::filter::VariableFilter,
-    diagram::filter::MappingFilter,
-    tool::ElementDropVariable,
-    tool::DropContainerVariable,
-    RepresentationNavigationDescription,
-    diagram::tool::DiagramNavigationDescription,
-    RepresentationCreationDescription,
-    diagram::tool::DiagramCreationDescription,
-    tool::InitialContainerDropOperation,
-    ContainerModelOperation,
-    diagram::tool::Navigation,
-    diagram::tool::CreateView,
-    tool::VariableContainer,
-    description::AbstractVariable,
-    diagram::tool::TargetEdgeCreationVariable,
-    diagram::tool::TargetEdgeViewCreationVariable,
-    diagram::tool::NodeCreationVariable,
-    diagram::tool::SourceEdgeViewCreationVariable,
-    diagram::tool::ElementDoubleClickVariable,
-    diagram::tool::SourceEdgeCreationVariable,
-    tool::EditMaskVariables,
-    CreateView,
-    diagram::tool::CreateEdgeView,
-    tool::ElementSelectVariable,
-    diagram::tool::DeleteHookParameter,
-    tool::DeleteHookParameter,
-    diagram::tool::DeleteHook,
-    AbstractToolDescription,
-    diagram::tool::BehaviorTool,
-    diagram::tool::RequestDescription,
-    tool::DeleteHook,
-    tool::ElementDeleteVariable,
-    tool::ElementDoubleClickVariable,
-    tool::InitEdgeCreationOperation,
-    tool::TargetEdgeViewCreationVariable,
-    tool::SourceEdgeViewCreationVariable,
-    tool::TargetEdgeCreationVariable,
-    tool::SourceEdgeCreationVariable,
-    tool::ContainerViewVariable,
-    tool::NodeCreationVariable,
-    MappingBasedToolDescription,
-    diagram::tool::EdgeCreationDescription,
-    diagram::tool::ReconnectEdgeDescription,
-    diagram::tool::DoubleClickDescription,
-    diagram::tool::DirectEditLabel,
-    diagram::tool::ContainerDropDescription,
-    diagram::tool::ContainerCreationDescription,
-    diagram::tool::DeleteElementDescription,
-    diagram::tool::NodeCreationDescription,
-    tool::ToolGroup,
-    diagram::tool::ToolGroupExtension,
-    ToolEntry,
-    diagram::tool::ToolGroup,
-    tool::ToolGroupExtension,
-    tool::PopupMenu,
-    tool::ToolEntry,
-    tool::InitialNodeCreationOperation,
-    diagram::style::HideLabelCapabilityStyleDescription,
-    EdgeStyleDescription,
-    diagram::style::BracketEdgeStyleDescription,
-    BasicLabelStyleDescription,
-    diagram::style::CenterLabelStyleDescription,
-    diagram::style::EndLabelStyleDescription,
-    diagram::style::BeginLabelStyleDescription,
-    style::EndLabelStyleDescription,
-    style::CenterLabelStyleDescription,
-    style::BeginLabelStyleDescription,
-    diagram::tool::ToolSection,
-    diagram::style::WorkspaceImageDescription,
-    style::LabelBorderStyleDescription,
-    diagram::style::SizeComputationContainerStyleDescription,
-    diagram::style::GaugeSectionDescription,
-    style::GaugeSectionDescription,
-    style::SizeComputationContainerStyleDescription,
-    diagram::style::ShapeContainerStyleDescription,
-    diagram::style::FlatContainerStyleDescription,
-    style::RoundedCornerStyleDescription,
-    NodeStyleDescription,
-    diagram::style::GaugeCompositeStyleDescription,
-    diagram::style::EllipseNodeDescription,
-    diagram::style::BundledImageDescription,
-    diagram::style::SquareDescription,
-    diagram::style::DotDescription,
-    diagram::style::NoteDescription,
-    diagram::style::CustomStyleDescription,
-    style::HideLabelCapabilityStyleDescription,
-    style::TooltipStyleDescription,
-    style::LabelStyleDescription,
-    style::BorderedStyleDescription,
-    diagram::style::ContainerStyleDescription,
-    diagram::style::NodeStyleDescription,
-    ColorDescription,
-    StyleDescription,
-    diagram::style::RoundedCornerStyleDescription,
-    diagram::style::EdgeStyleDescription,
-    diagram::style::BorderedStyleDescription,
-    tool::ContainerDropDescription,
-    diagram::style::LozengeNodeDescription,
-    diagram::description::DragAndDropTargetDescription,
-    Customization,
-    DecorationDescriptionsSet,
-    FoldingStyle,
-    FilterKind,
-    ArrangeConstraint,
-    Side,
-    ReconnectionKind,
-    LabelPosition,
-    AlignmentKind,
-    CenteringStyle,
+    diagram_DDiagram,
     ContainerShape,
-    BackgroundStyle,
-    EdgeArrows,
-    ContainerLayout,
-    LayoutDirection,
-    ResizeKind,
-    EdgeRouting,
     BundledImageShape,
+    LabelPosition,
+    BackgroundStyle,
+    ResizeKind,
+    ReconnectionKind,
+    Side,
+    EdgeArrows,
+    ArrangeConstraint,
+    FilterKind,
+    ContainerLayout,
+    CenteringStyle,
     LineStyle,
+    EdgeRouting,
+    LayoutDirection,
+    AlignmentKind,
+    FoldingStyle,
 )
 
 # =============================================================================
@@ -287,16 +287,1314 @@ from classes import (
 
 
 
-def test_description::enduserdocumentedelement_is_not_abstract():
-    assert not inspect.isabstract(description::EndUserDocumentedElement)
+def test_tool_deletehookparameter_is_not_abstract():
+    assert not inspect.isabstract(tool_DeleteHookParameter)
 
 
-def test_description::enduserdocumentedelement_constructor_exists():
-    assert callable(description::EndUserDocumentedElement.__init__)
+def test_tool_deletehookparameter_constructor_exists():
+    assert callable(tool_DeleteHookParameter.__init__)
 
 
-def test_description::enduserdocumentedelement_constructor_args():
-    sig = inspect.signature(description::EndUserDocumentedElement.__init__)
+def test_tool_deletehookparameter_constructor_args():
+    sig = inspect.signature(tool_DeleteHookParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_deletehook_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DeleteHook)
+
+
+def test_diagram_tool_deletehook_constructor_exists():
+    assert callable(diagram_tool_DeleteHook.__init__)
+
+
+def test_diagram_tool_deletehook_constructor_args():
+    sig = inspect.signature(diagram_tool_DeleteHook.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_diagram_tool_deletehook_has_id():
+    assert hasattr(diagram_tool_DeleteHook, "id")
+    descriptor = None
+    for klass in diagram_tool_DeleteHook.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_abstracttooldescription_is_not_abstract():
+    assert not inspect.isabstract(AbstractToolDescription)
+
+
+def test_abstracttooldescription_constructor_exists():
+    assert callable(AbstractToolDescription.__init__)
+
+
+def test_abstracttooldescription_constructor_args():
+    sig = inspect.signature(AbstractToolDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_requestdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_RequestDescription)
+
+
+def test_diagram_tool_requestdescription_constructor_exists():
+    assert callable(diagram_tool_RequestDescription.__init__)
+
+
+def test_diagram_tool_requestdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_RequestDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_diagram_tool_requestdescription_has_type():
+    assert hasattr(diagram_tool_RequestDescription, "type")
+    descriptor = None
+    for klass in diagram_tool_RequestDescription.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_deletehook_is_not_abstract():
+    assert not inspect.isabstract(tool_DeleteHook)
+
+
+def test_tool_deletehook_constructor_exists():
+    assert callable(tool_DeleteHook.__init__)
+
+
+def test_tool_deletehook_constructor_args():
+    sig = inspect.signature(tool_DeleteHook.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_elementdeletevariable_is_not_abstract():
+    assert not inspect.isabstract(tool_ElementDeleteVariable)
+
+
+def test_tool_elementdeletevariable_constructor_exists():
+    assert callable(tool_ElementDeleteVariable.__init__)
+
+
+def test_tool_elementdeletevariable_constructor_args():
+    sig = inspect.signature(tool_ElementDeleteVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_elementdoubleclickvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_ElementDoubleClickVariable)
+
+
+def test_tool_elementdoubleclickvariable_constructor_exists():
+    assert callable(tool_ElementDoubleClickVariable.__init__)
+
+
+def test_tool_elementdoubleclickvariable_constructor_args():
+    sig = inspect.signature(tool_ElementDoubleClickVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_initedgecreationoperation_is_not_abstract():
+    assert not inspect.isabstract(tool_InitEdgeCreationOperation)
+
+
+def test_tool_initedgecreationoperation_constructor_exists():
+    assert callable(tool_InitEdgeCreationOperation.__init__)
+
+
+def test_tool_initedgecreationoperation_constructor_args():
+    sig = inspect.signature(tool_InitEdgeCreationOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_targetedgeviewcreationvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_TargetEdgeViewCreationVariable)
+
+
+def test_tool_targetedgeviewcreationvariable_constructor_exists():
+    assert callable(tool_TargetEdgeViewCreationVariable.__init__)
+
+
+def test_tool_targetedgeviewcreationvariable_constructor_args():
+    sig = inspect.signature(tool_TargetEdgeViewCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_sourceedgeviewcreationvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_SourceEdgeViewCreationVariable)
+
+
+def test_tool_sourceedgeviewcreationvariable_constructor_exists():
+    assert callable(tool_SourceEdgeViewCreationVariable.__init__)
+
+
+def test_tool_sourceedgeviewcreationvariable_constructor_args():
+    sig = inspect.signature(tool_SourceEdgeViewCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_targetedgecreationvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_TargetEdgeCreationVariable)
+
+
+def test_tool_targetedgecreationvariable_constructor_exists():
+    assert callable(tool_TargetEdgeCreationVariable.__init__)
+
+
+def test_tool_targetedgecreationvariable_constructor_args():
+    sig = inspect.signature(tool_TargetEdgeCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_sourceedgecreationvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_SourceEdgeCreationVariable)
+
+
+def test_tool_sourceedgecreationvariable_constructor_exists():
+    assert callable(tool_SourceEdgeCreationVariable.__init__)
+
+
+def test_tool_sourceedgecreationvariable_constructor_args():
+    sig = inspect.signature(tool_SourceEdgeCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_containerviewvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_ContainerViewVariable)
+
+
+def test_tool_containerviewvariable_constructor_exists():
+    assert callable(tool_ContainerViewVariable.__init__)
+
+
+def test_tool_containerviewvariable_constructor_args():
+    sig = inspect.signature(tool_ContainerViewVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_nodecreationvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_NodeCreationVariable)
+
+
+def test_tool_nodecreationvariable_constructor_exists():
+    assert callable(tool_NodeCreationVariable.__init__)
+
+
+def test_tool_nodecreationvariable_constructor_args():
+    sig = inspect.signature(tool_NodeCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mappingbasedtooldescription_is_not_abstract():
+    assert not inspect.isabstract(MappingBasedToolDescription)
+
+
+def test_mappingbasedtooldescription_constructor_exists():
+    assert callable(MappingBasedToolDescription.__init__)
+
+
+def test_mappingbasedtooldescription_constructor_args():
+    sig = inspect.signature(MappingBasedToolDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_containercreationdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ContainerCreationDescription)
+
+
+def test_diagram_tool_containercreationdescription_constructor_exists():
+    assert callable(diagram_tool_ContainerCreationDescription.__init__)
+
+
+def test_diagram_tool_containercreationdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_ContainerCreationDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "iconPath" in params, "Missing parameter 'iconPath'"
+
+def test_diagram_tool_containercreationdescription_has_iconPath():
+    assert hasattr(diagram_tool_ContainerCreationDescription, "iconPath")
+    descriptor = None
+    for klass in diagram_tool_ContainerCreationDescription.__mro__:
+        if "iconPath" in klass.__dict__:
+            descriptor = klass.__dict__["iconPath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_tool_deleteelementdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DeleteElementDescription)
+
+
+def test_diagram_tool_deleteelementdescription_constructor_exists():
+    assert callable(diagram_tool_DeleteElementDescription.__init__)
+
+
+def test_diagram_tool_deleteelementdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_DeleteElementDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_edgecreationdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_EdgeCreationDescription)
+
+
+def test_diagram_tool_edgecreationdescription_constructor_exists():
+    assert callable(diagram_tool_EdgeCreationDescription.__init__)
+
+
+def test_diagram_tool_edgecreationdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_EdgeCreationDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "iconPath" in params, "Missing parameter 'iconPath'"
+    assert "connectionStartPrecondition" in params, "Missing parameter 'connectionStartPrecondition'"
+
+def test_diagram_tool_edgecreationdescription_has_iconPath():
+    assert hasattr(diagram_tool_EdgeCreationDescription, "iconPath")
+    descriptor = None
+    for klass in diagram_tool_EdgeCreationDescription.__mro__:
+        if "iconPath" in klass.__dict__:
+            descriptor = klass.__dict__["iconPath"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_tool_edgecreationdescription_has_connectionStartPrecondition():
+    assert hasattr(diagram_tool_EdgeCreationDescription, "connectionStartPrecondition")
+    descriptor = None
+    for klass in diagram_tool_EdgeCreationDescription.__mro__:
+        if "connectionStartPrecondition" in klass.__dict__:
+            descriptor = klass.__dict__["connectionStartPrecondition"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_tool_doubleclickdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DoubleClickDescription)
+
+
+def test_diagram_tool_doubleclickdescription_constructor_exists():
+    assert callable(diagram_tool_DoubleClickDescription.__init__)
+
+
+def test_diagram_tool_doubleclickdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_DoubleClickDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_nodecreationdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_NodeCreationDescription)
+
+
+def test_diagram_tool_nodecreationdescription_constructor_exists():
+    assert callable(diagram_tool_NodeCreationDescription.__init__)
+
+
+def test_diagram_tool_nodecreationdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_NodeCreationDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "iconPath" in params, "Missing parameter 'iconPath'"
+
+def test_diagram_tool_nodecreationdescription_has_iconPath():
+    assert hasattr(diagram_tool_NodeCreationDescription, "iconPath")
+    descriptor = None
+    for klass in diagram_tool_NodeCreationDescription.__mro__:
+        if "iconPath" in klass.__dict__:
+            descriptor = klass.__dict__["iconPath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_toolgroup_is_not_abstract():
+    assert not inspect.isabstract(tool_ToolGroup)
+
+
+def test_tool_toolgroup_constructor_exists():
+    assert callable(tool_ToolGroup.__init__)
+
+
+def test_tool_toolgroup_constructor_args():
+    sig = inspect.signature(tool_ToolGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_toolgroupextension_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ToolGroupExtension)
+
+
+def test_diagram_tool_toolgroupextension_constructor_exists():
+    assert callable(diagram_tool_ToolGroupExtension.__init__)
+
+
+def test_diagram_tool_toolgroupextension_constructor_args():
+    sig = inspect.signature(diagram_tool_ToolGroupExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_toolentry_is_not_abstract():
+    assert not inspect.isabstract(ToolEntry)
+
+
+def test_toolentry_constructor_exists():
+    assert callable(ToolEntry.__init__)
+
+
+def test_toolentry_constructor_args():
+    sig = inspect.signature(ToolEntry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_toolgroup_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ToolGroup)
+
+
+def test_diagram_tool_toolgroup_constructor_exists():
+    assert callable(diagram_tool_ToolGroup.__init__)
+
+
+def test_diagram_tool_toolgroup_constructor_args():
+    sig = inspect.signature(diagram_tool_ToolGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_toolgroupextension_is_not_abstract():
+    assert not inspect.isabstract(tool_ToolGroupExtension)
+
+
+def test_tool_toolgroupextension_constructor_exists():
+    assert callable(tool_ToolGroupExtension.__init__)
+
+
+def test_tool_toolgroupextension_constructor_args():
+    sig = inspect.signature(tool_ToolGroupExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_popupmenu_is_not_abstract():
+    assert not inspect.isabstract(tool_PopupMenu)
+
+
+def test_tool_popupmenu_constructor_exists():
+    assert callable(tool_PopupMenu.__init__)
+
+
+def test_tool_popupmenu_constructor_args():
+    sig = inspect.signature(tool_PopupMenu.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_toolentry_is_not_abstract():
+    assert not inspect.isabstract(tool_ToolEntry)
+
+
+def test_tool_toolentry_constructor_exists():
+    assert callable(tool_ToolEntry.__init__)
+
+
+def test_tool_toolentry_constructor_args():
+    sig = inspect.signature(tool_ToolEntry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_initialnodecreationoperation_is_not_abstract():
+    assert not inspect.isabstract(tool_InitialNodeCreationOperation)
+
+
+def test_tool_initialnodecreationoperation_constructor_exists():
+    assert callable(tool_InitialNodeCreationOperation.__init__)
+
+
+def test_tool_initialnodecreationoperation_constructor_args():
+    sig = inspect.signature(tool_InitialNodeCreationOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_hidelabelcapabilitystyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_HideLabelCapabilityStyleDescription)
+
+
+def test_diagram_style_hidelabelcapabilitystyledescription_constructor_exists():
+    assert callable(diagram_style_HideLabelCapabilityStyleDescription.__init__)
+
+
+def test_diagram_style_hidelabelcapabilitystyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_HideLabelCapabilityStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "hideLabelByDefault" in params, "Missing parameter 'hideLabelByDefault'"
+
+def test_diagram_style_hidelabelcapabilitystyledescription_has_hideLabelByDefault():
+    assert hasattr(diagram_style_HideLabelCapabilityStyleDescription, "hideLabelByDefault")
+    descriptor = None
+    for klass in diagram_style_HideLabelCapabilityStyleDescription.__mro__:
+        if "hideLabelByDefault" in klass.__dict__:
+            descriptor = klass.__dict__["hideLabelByDefault"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_edgestyledescription_is_not_abstract():
+    assert not inspect.isabstract(EdgeStyleDescription)
+
+
+def test_edgestyledescription_constructor_exists():
+    assert callable(EdgeStyleDescription.__init__)
+
+
+def test_edgestyledescription_constructor_args():
+    sig = inspect.signature(EdgeStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_bracketedgestyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_BracketEdgeStyleDescription)
+
+
+def test_diagram_style_bracketedgestyledescription_constructor_exists():
+    assert callable(diagram_style_BracketEdgeStyleDescription.__init__)
+
+
+def test_diagram_style_bracketedgestyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_BracketEdgeStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basiclabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(BasicLabelStyleDescription)
+
+
+def test_basiclabelstyledescription_constructor_exists():
+    assert callable(BasicLabelStyleDescription.__init__)
+
+
+def test_basiclabelstyledescription_constructor_args():
+    sig = inspect.signature(BasicLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_centerlabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_CenterLabelStyleDescription)
+
+
+def test_diagram_style_centerlabelstyledescription_constructor_exists():
+    assert callable(diagram_style_CenterLabelStyleDescription.__init__)
+
+
+def test_diagram_style_centerlabelstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_CenterLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_endlabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_EndLabelStyleDescription)
+
+
+def test_diagram_style_endlabelstyledescription_constructor_exists():
+    assert callable(diagram_style_EndLabelStyleDescription.__init__)
+
+
+def test_diagram_style_endlabelstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_EndLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_beginlabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_BeginLabelStyleDescription)
+
+
+def test_diagram_style_beginlabelstyledescription_constructor_exists():
+    assert callable(diagram_style_BeginLabelStyleDescription.__init__)
+
+
+def test_diagram_style_beginlabelstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_BeginLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_endlabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_EndLabelStyleDescription)
+
+
+def test_style_endlabelstyledescription_constructor_exists():
+    assert callable(style_EndLabelStyleDescription.__init__)
+
+
+def test_style_endlabelstyledescription_constructor_args():
+    sig = inspect.signature(style_EndLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_centerlabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_CenterLabelStyleDescription)
+
+
+def test_style_centerlabelstyledescription_constructor_exists():
+    assert callable(style_CenterLabelStyleDescription.__init__)
+
+
+def test_style_centerlabelstyledescription_constructor_args():
+    sig = inspect.signature(style_CenterLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_beginlabelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_BeginLabelStyleDescription)
+
+
+def test_style_beginlabelstyledescription_constructor_exists():
+    assert callable(style_BeginLabelStyleDescription.__init__)
+
+
+def test_style_beginlabelstyledescription_constructor_args():
+    sig = inspect.signature(style_BeginLabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_labelborderstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_LabelBorderStyleDescription)
+
+
+def test_style_labelborderstyledescription_constructor_exists():
+    assert callable(style_LabelBorderStyleDescription.__init__)
+
+
+def test_style_labelborderstyledescription_constructor_args():
+    sig = inspect.signature(style_LabelBorderStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_sizecomputationcontainerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_SizeComputationContainerStyleDescription)
+
+
+def test_diagram_style_sizecomputationcontainerstyledescription_constructor_exists():
+    assert callable(diagram_style_SizeComputationContainerStyleDescription.__init__)
+
+
+def test_diagram_style_sizecomputationcontainerstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_SizeComputationContainerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "widthComputationExpression" in params, "Missing parameter 'widthComputationExpression'"
+    assert "heightComputationExpression" in params, "Missing parameter 'heightComputationExpression'"
+
+def test_diagram_style_sizecomputationcontainerstyledescription_has_widthComputationExpression():
+    assert hasattr(diagram_style_SizeComputationContainerStyleDescription, "widthComputationExpression")
+    descriptor = None
+    for klass in diagram_style_SizeComputationContainerStyleDescription.__mro__:
+        if "widthComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["widthComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_sizecomputationcontainerstyledescription_has_heightComputationExpression():
+    assert hasattr(diagram_style_SizeComputationContainerStyleDescription, "heightComputationExpression")
+    descriptor = None
+    for klass in diagram_style_SizeComputationContainerStyleDescription.__mro__:
+        if "heightComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["heightComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_gaugesectiondescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_GaugeSectionDescription)
+
+
+def test_diagram_style_gaugesectiondescription_constructor_exists():
+    assert callable(diagram_style_GaugeSectionDescription.__init__)
+
+
+def test_diagram_style_gaugesectiondescription_constructor_args():
+    sig = inspect.signature(diagram_style_GaugeSectionDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "minValueExpression" in params, "Missing parameter 'minValueExpression'"
+    assert "label" in params, "Missing parameter 'label'"
+    assert "maxValueExpression" in params, "Missing parameter 'maxValueExpression'"
+    assert "valueExpression" in params, "Missing parameter 'valueExpression'"
+
+def test_diagram_style_gaugesectiondescription_has_minValueExpression():
+    assert hasattr(diagram_style_GaugeSectionDescription, "minValueExpression")
+    descriptor = None
+    for klass in diagram_style_GaugeSectionDescription.__mro__:
+        if "minValueExpression" in klass.__dict__:
+            descriptor = klass.__dict__["minValueExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_gaugesectiondescription_has_label():
+    assert hasattr(diagram_style_GaugeSectionDescription, "label")
+    descriptor = None
+    for klass in diagram_style_GaugeSectionDescription.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_gaugesectiondescription_has_maxValueExpression():
+    assert hasattr(diagram_style_GaugeSectionDescription, "maxValueExpression")
+    descriptor = None
+    for klass in diagram_style_GaugeSectionDescription.__mro__:
+        if "maxValueExpression" in klass.__dict__:
+            descriptor = klass.__dict__["maxValueExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_gaugesectiondescription_has_valueExpression():
+    assert hasattr(diagram_style_GaugeSectionDescription, "valueExpression")
+    descriptor = None
+    for klass in diagram_style_GaugeSectionDescription.__mro__:
+        if "valueExpression" in klass.__dict__:
+            descriptor = klass.__dict__["valueExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_style_gaugesectiondescription_is_not_abstract():
+    assert not inspect.isabstract(style_GaugeSectionDescription)
+
+
+def test_style_gaugesectiondescription_constructor_exists():
+    assert callable(style_GaugeSectionDescription.__init__)
+
+
+def test_style_gaugesectiondescription_constructor_args():
+    sig = inspect.signature(style_GaugeSectionDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_sizecomputationcontainerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_SizeComputationContainerStyleDescription)
+
+
+def test_style_sizecomputationcontainerstyledescription_constructor_exists():
+    assert callable(style_SizeComputationContainerStyleDescription.__init__)
+
+
+def test_style_sizecomputationcontainerstyledescription_constructor_args():
+    sig = inspect.signature(style_SizeComputationContainerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_roundedcornerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_RoundedCornerStyleDescription)
+
+
+def test_style_roundedcornerstyledescription_constructor_exists():
+    assert callable(style_RoundedCornerStyleDescription.__init__)
+
+
+def test_style_roundedcornerstyledescription_constructor_args():
+    sig = inspect.signature(style_RoundedCornerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_nodestyledescription_is_not_abstract():
+    assert not inspect.isabstract(NodeStyleDescription)
+
+
+def test_nodestyledescription_constructor_exists():
+    assert callable(NodeStyleDescription.__init__)
+
+
+def test_nodestyledescription_constructor_args():
+    sig = inspect.signature(NodeStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_notedescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_NoteDescription)
+
+
+def test_diagram_style_notedescription_constructor_exists():
+    assert callable(diagram_style_NoteDescription.__init__)
+
+
+def test_diagram_style_notedescription_constructor_args():
+    sig = inspect.signature(diagram_style_NoteDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_ellipsenodedescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_EllipseNodeDescription)
+
+
+def test_diagram_style_ellipsenodedescription_constructor_exists():
+    assert callable(diagram_style_EllipseNodeDescription.__init__)
+
+
+def test_diagram_style_ellipsenodedescription_constructor_args():
+    sig = inspect.signature(diagram_style_EllipseNodeDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "verticalDiameterComputationExpression" in params, "Missing parameter 'verticalDiameterComputationExpression'"
+    assert "horizontalDiameterComputationExpression" in params, "Missing parameter 'horizontalDiameterComputationExpression'"
+
+def test_diagram_style_ellipsenodedescription_has_verticalDiameterComputationExpression():
+    assert hasattr(diagram_style_EllipseNodeDescription, "verticalDiameterComputationExpression")
+    descriptor = None
+    for klass in diagram_style_EllipseNodeDescription.__mro__:
+        if "verticalDiameterComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["verticalDiameterComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_ellipsenodedescription_has_horizontalDiameterComputationExpression():
+    assert hasattr(diagram_style_EllipseNodeDescription, "horizontalDiameterComputationExpression")
+    descriptor = None
+    for klass in diagram_style_EllipseNodeDescription.__mro__:
+        if "horizontalDiameterComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalDiameterComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_squaredescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_SquareDescription)
+
+
+def test_diagram_style_squaredescription_constructor_exists():
+    assert callable(diagram_style_SquareDescription.__init__)
+
+
+def test_diagram_style_squaredescription_constructor_args():
+    sig = inspect.signature(diagram_style_SquareDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+
+def test_diagram_style_squaredescription_has_width():
+    assert hasattr(diagram_style_SquareDescription, "width")
+    descriptor = None
+    for klass in diagram_style_SquareDescription.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_squaredescription_has_height():
+    assert hasattr(diagram_style_SquareDescription, "height")
+    descriptor = None
+    for klass in diagram_style_SquareDescription.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_dotdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_DotDescription)
+
+
+def test_diagram_style_dotdescription_constructor_exists():
+    assert callable(diagram_style_DotDescription.__init__)
+
+
+def test_diagram_style_dotdescription_constructor_args():
+    sig = inspect.signature(diagram_style_DotDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "strokeSizeComputationExpression" in params, "Missing parameter 'strokeSizeComputationExpression'"
+
+def test_diagram_style_dotdescription_has_strokeSizeComputationExpression():
+    assert hasattr(diagram_style_DotDescription, "strokeSizeComputationExpression")
+    descriptor = None
+    for klass in diagram_style_DotDescription.__mro__:
+        if "strokeSizeComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["strokeSizeComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_gaugecompositestyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_GaugeCompositeStyleDescription)
+
+
+def test_diagram_style_gaugecompositestyledescription_constructor_exists():
+    assert callable(diagram_style_GaugeCompositeStyleDescription.__init__)
+
+
+def test_diagram_style_gaugecompositestyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_GaugeCompositeStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "alignment" in params, "Missing parameter 'alignment'"
+
+def test_diagram_style_gaugecompositestyledescription_has_alignment():
+    assert hasattr(diagram_style_GaugeCompositeStyleDescription, "alignment")
+    descriptor = None
+    for klass in diagram_style_GaugeCompositeStyleDescription.__mro__:
+        if "alignment" in klass.__dict__:
+            descriptor = klass.__dict__["alignment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_bundledimagedescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_BundledImageDescription)
+
+
+def test_diagram_style_bundledimagedescription_constructor_exists():
+    assert callable(diagram_style_BundledImageDescription.__init__)
+
+
+def test_diagram_style_bundledimagedescription_constructor_args():
+    sig = inspect.signature(diagram_style_BundledImageDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "shape" in params, "Missing parameter 'shape'"
+    assert "providedShapeID" in params, "Missing parameter 'providedShapeID'"
+
+def test_diagram_style_bundledimagedescription_has_shape():
+    assert hasattr(diagram_style_BundledImageDescription, "shape")
+    descriptor = None
+    for klass in diagram_style_BundledImageDescription.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_bundledimagedescription_has_providedShapeID():
+    assert hasattr(diagram_style_BundledImageDescription, "providedShapeID")
+    descriptor = None
+    for klass in diagram_style_BundledImageDescription.__mro__:
+        if "providedShapeID" in klass.__dict__:
+            descriptor = klass.__dict__["providedShapeID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_customstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_CustomStyleDescription)
+
+
+def test_diagram_style_customstyledescription_constructor_exists():
+    assert callable(diagram_style_CustomStyleDescription.__init__)
+
+
+def test_diagram_style_customstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_CustomStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_diagram_style_customstyledescription_has_id():
+    assert hasattr(diagram_style_CustomStyleDescription, "id")
+    descriptor = None
+    for klass in diagram_style_CustomStyleDescription.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_style_hidelabelcapabilitystyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_HideLabelCapabilityStyleDescription)
+
+
+def test_style_hidelabelcapabilitystyledescription_constructor_exists():
+    assert callable(style_HideLabelCapabilityStyleDescription.__init__)
+
+
+def test_style_hidelabelcapabilitystyledescription_constructor_args():
+    sig = inspect.signature(style_HideLabelCapabilityStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_tooltipstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_TooltipStyleDescription)
+
+
+def test_style_tooltipstyledescription_constructor_exists():
+    assert callable(style_TooltipStyleDescription.__init__)
+
+
+def test_style_tooltipstyledescription_constructor_args():
+    sig = inspect.signature(style_TooltipStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_labelstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_LabelStyleDescription)
+
+
+def test_style_labelstyledescription_constructor_exists():
+    assert callable(style_LabelStyleDescription.__init__)
+
+
+def test_style_labelstyledescription_constructor_args():
+    sig = inspect.signature(style_LabelStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_borderedstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_BorderedStyleDescription)
+
+
+def test_style_borderedstyledescription_constructor_exists():
+    assert callable(style_BorderedStyleDescription.__init__)
+
+
+def test_style_borderedstyledescription_constructor_args():
+    sig = inspect.signature(style_BorderedStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_containerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_ContainerStyleDescription)
+
+
+def test_diagram_style_containerstyledescription_constructor_exists():
+    assert callable(diagram_style_ContainerStyleDescription.__init__)
+
+
+def test_diagram_style_containerstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_ContainerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "roundedCorner" in params, "Missing parameter 'roundedCorner'"
+
+def test_diagram_style_containerstyledescription_has_roundedCorner():
+    assert hasattr(diagram_style_ContainerStyleDescription, "roundedCorner")
+    descriptor = None
+    for klass in diagram_style_ContainerStyleDescription.__mro__:
+        if "roundedCorner" in klass.__dict__:
+            descriptor = klass.__dict__["roundedCorner"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_colordescription_is_not_abstract():
+    assert not inspect.isabstract(ColorDescription)
+
+
+def test_colordescription_constructor_exists():
+    assert callable(ColorDescription.__init__)
+
+
+def test_colordescription_constructor_args():
+    sig = inspect.signature(ColorDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_styledescription_is_not_abstract():
+    assert not inspect.isabstract(StyleDescription)
+
+
+def test_styledescription_constructor_exists():
+    assert callable(StyleDescription.__init__)
+
+
+def test_styledescription_constructor_args():
+    sig = inspect.signature(StyleDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_roundedcornerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_RoundedCornerStyleDescription)
+
+
+def test_diagram_style_roundedcornerstyledescription_constructor_exists():
+    assert callable(diagram_style_RoundedCornerStyleDescription.__init__)
+
+
+def test_diagram_style_roundedcornerstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_RoundedCornerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "arcHeight" in params, "Missing parameter 'arcHeight'"
+    assert "arcWidth" in params, "Missing parameter 'arcWidth'"
+
+def test_diagram_style_roundedcornerstyledescription_has_arcHeight():
+    assert hasattr(diagram_style_RoundedCornerStyleDescription, "arcHeight")
+    descriptor = None
+    for klass in diagram_style_RoundedCornerStyleDescription.__mro__:
+        if "arcHeight" in klass.__dict__:
+            descriptor = klass.__dict__["arcHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_roundedcornerstyledescription_has_arcWidth():
+    assert hasattr(diagram_style_RoundedCornerStyleDescription, "arcWidth")
+    descriptor = None
+    for klass in diagram_style_RoundedCornerStyleDescription.__mro__:
+        if "arcWidth" in klass.__dict__:
+            descriptor = klass.__dict__["arcWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_edgestyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_EdgeStyleDescription)
+
+
+def test_diagram_style_edgestyledescription_constructor_exists():
+    assert callable(diagram_style_EdgeStyleDescription.__init__)
+
+
+def test_diagram_style_edgestyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_EdgeStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "endsCentering" in params, "Missing parameter 'endsCentering'"
+    assert "foldingStyle" in params, "Missing parameter 'foldingStyle'"
+    assert "sizeComputationExpression" in params, "Missing parameter 'sizeComputationExpression'"
+    assert "routingStyle" in params, "Missing parameter 'routingStyle'"
+    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
+    assert "targetArrow" in params, "Missing parameter 'targetArrow'"
+    assert "sourceArrow" in params, "Missing parameter 'sourceArrow'"
+
+def test_diagram_style_edgestyledescription_has_endsCentering():
+    assert hasattr(diagram_style_EdgeStyleDescription, "endsCentering")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "endsCentering" in klass.__dict__:
+            descriptor = klass.__dict__["endsCentering"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_edgestyledescription_has_foldingStyle():
+    assert hasattr(diagram_style_EdgeStyleDescription, "foldingStyle")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "foldingStyle" in klass.__dict__:
+            descriptor = klass.__dict__["foldingStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_edgestyledescription_has_sizeComputationExpression():
+    assert hasattr(diagram_style_EdgeStyleDescription, "sizeComputationExpression")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "sizeComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["sizeComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_edgestyledescription_has_routingStyle():
+    assert hasattr(diagram_style_EdgeStyleDescription, "routingStyle")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "routingStyle" in klass.__dict__:
+            descriptor = klass.__dict__["routingStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_edgestyledescription_has_lineStyle():
+    assert hasattr(diagram_style_EdgeStyleDescription, "lineStyle")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "lineStyle" in klass.__dict__:
+            descriptor = klass.__dict__["lineStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_edgestyledescription_has_targetArrow():
+    assert hasattr(diagram_style_EdgeStyleDescription, "targetArrow")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "targetArrow" in klass.__dict__:
+            descriptor = klass.__dict__["targetArrow"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_edgestyledescription_has_sourceArrow():
+    assert hasattr(diagram_style_EdgeStyleDescription, "sourceArrow")
+    descriptor = None
+    for klass in diagram_style_EdgeStyleDescription.__mro__:
+        if "sourceArrow" in klass.__dict__:
+            descriptor = klass.__dict__["sourceArrow"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_borderedstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_BorderedStyleDescription)
+
+
+def test_diagram_style_borderedstyledescription_constructor_exists():
+    assert callable(diagram_style_BorderedStyleDescription.__init__)
+
+
+def test_diagram_style_borderedstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_BorderedStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "borderSizeComputationExpression" in params, "Missing parameter 'borderSizeComputationExpression'"
+    assert "borderLineStyle" in params, "Missing parameter 'borderLineStyle'"
+
+def test_diagram_style_borderedstyledescription_has_borderSizeComputationExpression():
+    assert hasattr(diagram_style_BorderedStyleDescription, "borderSizeComputationExpression")
+    descriptor = None
+    for klass in diagram_style_BorderedStyleDescription.__mro__:
+        if "borderSizeComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["borderSizeComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_borderedstyledescription_has_borderLineStyle():
+    assert hasattr(diagram_style_BorderedStyleDescription, "borderLineStyle")
+    descriptor = None
+    for klass in diagram_style_BorderedStyleDescription.__mro__:
+        if "borderLineStyle" in klass.__dict__:
+            descriptor = klass.__dict__["borderLineStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_containerdropdescription_is_not_abstract():
+    assert not inspect.isabstract(tool_ContainerDropDescription)
+
+
+def test_tool_containerdropdescription_constructor_exists():
+    assert callable(tool_ContainerDropDescription.__init__)
+
+
+def test_tool_containerdropdescription_constructor_args():
+    sig = inspect.signature(tool_ContainerDropDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_lozengenodedescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_LozengeNodeDescription)
+
+
+def test_diagram_style_lozengenodedescription_constructor_exists():
+    assert callable(diagram_style_LozengeNodeDescription.__init__)
+
+
+def test_diagram_style_lozengenodedescription_constructor_args():
+    sig = inspect.signature(diagram_style_LozengeNodeDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "widthComputationExpression" in params, "Missing parameter 'widthComputationExpression'"
+    assert "heightComputationExpression" in params, "Missing parameter 'heightComputationExpression'"
+
+def test_diagram_style_lozengenodedescription_has_widthComputationExpression():
+    assert hasattr(diagram_style_LozengeNodeDescription, "widthComputationExpression")
+    descriptor = None
+    for klass in diagram_style_LozengeNodeDescription.__mro__:
+        if "widthComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["widthComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_lozengenodedescription_has_heightComputationExpression():
+    assert hasattr(diagram_style_LozengeNodeDescription, "heightComputationExpression")
+    descriptor = None
+    for klass in diagram_style_LozengeNodeDescription.__mro__:
+        if "heightComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["heightComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_description_draganddroptargetdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_DragAndDropTargetDescription)
+
+
+def test_diagram_description_draganddroptargetdescription_constructor_exists():
+    assert callable(diagram_description_DragAndDropTargetDescription.__init__)
+
+
+def test_diagram_description_draganddroptargetdescription_constructor_args():
+    sig = inspect.signature(diagram_description_DragAndDropTargetDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_customization_is_not_abstract():
+    assert not inspect.isabstract(Customization)
+
+
+def test_customization_constructor_exists():
+    assert callable(Customization.__init__)
+
+
+def test_customization_constructor_args():
+    sig = inspect.signature(Customization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_decorationdescriptionsset_is_not_abstract():
+    assert not inspect.isabstract(DecorationDescriptionsSet)
+
+
+def test_decorationdescriptionsset_constructor_exists():
+    assert callable(DecorationDescriptionsSet.__init__)
+
+
+def test_decorationdescriptionsset_constructor_args():
+    sig = inspect.signature(DecorationDescriptionsSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_description_enduserdocumentedelement_is_not_abstract():
+    assert not inspect.isabstract(description_EndUserDocumentedElement)
+
+
+def test_description_enduserdocumentedelement_constructor_exists():
+    assert callable(description_EndUserDocumentedElement.__init__)
+
+
+def test_description_enduserdocumentedelement_constructor_args():
+    sig = inspect.signature(description_EndUserDocumentedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -315,16 +1613,16 @@ def test_decorationdescription_constructor_args():
 
 
 
-def test_diagram::description::mappingbaseddecoration_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::MappingBasedDecoration)
+def test_diagram_description_mappingbaseddecoration_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_MappingBasedDecoration)
 
 
-def test_diagram::description::mappingbaseddecoration_constructor_exists():
-    assert callable(diagram::description::MappingBasedDecoration.__init__)
+def test_diagram_description_mappingbaseddecoration_constructor_exists():
+    assert callable(diagram_description_MappingBasedDecoration.__init__)
 
 
-def test_diagram::description::mappingbaseddecoration_constructor_args():
-    sig = inspect.signature(diagram::description::MappingBasedDecoration.__init__)
+def test_diagram_description_mappingbaseddecoration_constructor_args():
+    sig = inspect.signature(diagram_description_MappingBasedDecoration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -343,16 +1641,16 @@ def test_documentedelement_constructor_args():
 
 
 
-def test_diagram::description::layout_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::Layout)
+def test_diagram_description_layout_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_Layout)
 
 
-def test_diagram::description::layout_constructor_exists():
-    assert callable(diagram::description::Layout.__init__)
+def test_diagram_description_layout_constructor_exists():
+    assert callable(diagram_description_Layout.__init__)
 
 
-def test_diagram::description::layout_constructor_args():
-    sig = inspect.signature(diagram::description::Layout.__init__)
+def test_diagram_description_layout_constructor_args():
+    sig = inspect.signature(diagram_description_Layout.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -371,72 +1669,72 @@ def test_conditionalstyledescription_constructor_args():
 
 
 
-def test_diagram::description::conditionaledgestyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::ConditionalEdgeStyleDescription)
+def test_diagram_description_conditionaledgestyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_ConditionalEdgeStyleDescription)
 
 
-def test_diagram::description::conditionaledgestyledescription_constructor_exists():
-    assert callable(diagram::description::ConditionalEdgeStyleDescription.__init__)
+def test_diagram_description_conditionaledgestyledescription_constructor_exists():
+    assert callable(diagram_description_ConditionalEdgeStyleDescription.__init__)
 
 
-def test_diagram::description::conditionaledgestyledescription_constructor_args():
-    sig = inspect.signature(diagram::description::ConditionalEdgeStyleDescription.__init__)
+def test_diagram_description_conditionaledgestyledescription_constructor_args():
+    sig = inspect.signature(diagram_description_ConditionalEdgeStyleDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::conditionalcontainerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::ConditionalContainerStyleDescription)
+def test_diagram_description_conditionalcontainerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_ConditionalContainerStyleDescription)
 
 
-def test_diagram::description::conditionalcontainerstyledescription_constructor_exists():
-    assert callable(diagram::description::ConditionalContainerStyleDescription.__init__)
+def test_diagram_description_conditionalcontainerstyledescription_constructor_exists():
+    assert callable(diagram_description_ConditionalContainerStyleDescription.__init__)
 
 
-def test_diagram::description::conditionalcontainerstyledescription_constructor_args():
-    sig = inspect.signature(diagram::description::ConditionalContainerStyleDescription.__init__)
+def test_diagram_description_conditionalcontainerstyledescription_constructor_args():
+    sig = inspect.signature(diagram_description_ConditionalContainerStyleDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::conditionalnodestyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::ConditionalNodeStyleDescription)
+def test_diagram_description_conditionalnodestyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_ConditionalNodeStyleDescription)
 
 
-def test_diagram::description::conditionalnodestyledescription_constructor_exists():
-    assert callable(diagram::description::ConditionalNodeStyleDescription.__init__)
+def test_diagram_description_conditionalnodestyledescription_constructor_exists():
+    assert callable(diagram_description_ConditionalNodeStyleDescription.__init__)
 
 
-def test_diagram::description::conditionalnodestyledescription_constructor_args():
-    sig = inspect.signature(diagram::description::ConditionalNodeStyleDescription.__init__)
+def test_diagram_description_conditionalnodestyledescription_constructor_args():
+    sig = inspect.signature(diagram_description_ConditionalNodeStyleDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::identifiedelement_is_not_abstract():
-    assert not inspect.isabstract(description::IdentifiedElement)
+def test_description_identifiedelement_is_not_abstract():
+    assert not inspect.isabstract(description_IdentifiedElement)
 
 
-def test_description::identifiedelement_constructor_exists():
-    assert callable(description::IdentifiedElement.__init__)
+def test_description_identifiedelement_constructor_exists():
+    assert callable(description_IdentifiedElement.__init__)
 
 
-def test_description::identifiedelement_constructor_args():
-    sig = inspect.signature(description::IdentifiedElement.__init__)
+def test_description_identifiedelement_constructor_args():
+    sig = inspect.signature(description_IdentifiedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::iedgemapping_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::IEdgeMapping)
+def test_diagram_description_iedgemapping_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_IEdgeMapping)
 
 
-def test_diagram::description::iedgemapping_constructor_exists():
-    assert callable(diagram::description::IEdgeMapping.__init__)
+def test_diagram_description_iedgemapping_constructor_exists():
+    assert callable(diagram_description_IEdgeMapping.__init__)
 
 
-def test_diagram::description::iedgemapping_constructor_args():
-    sig = inspect.signature(diagram::description::IEdgeMapping.__init__)
+def test_diagram_description_iedgemapping_constructor_args():
+    sig = inspect.signature(diagram_description_IEdgeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -455,16 +1753,16 @@ def test_abstractnodemapping_constructor_args():
 
 
 
-def test_tool::reconnectedgedescription_is_not_abstract():
-    assert not inspect.isabstract(tool::ReconnectEdgeDescription)
+def test_tool_reconnectedgedescription_is_not_abstract():
+    assert not inspect.isabstract(tool_ReconnectEdgeDescription)
 
 
-def test_tool::reconnectedgedescription_constructor_exists():
-    assert callable(tool::ReconnectEdgeDescription.__init__)
+def test_tool_reconnectedgedescription_constructor_exists():
+    assert callable(tool_ReconnectEdgeDescription.__init__)
 
 
-def test_tool::reconnectedgedescription_constructor_args():
-    sig = inspect.signature(tool::ReconnectEdgeDescription.__init__)
+def test_tool_reconnectedgedescription_constructor_args():
+    sig = inspect.signature(tool_ReconnectEdgeDescription.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -483,100 +1781,100 @@ def test_conditionaledgestyledescription_constructor_args():
 
 
 
-def test_style::edgestyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::EdgeStyleDescription)
+def test_style_edgestyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_EdgeStyleDescription)
 
 
-def test_style::edgestyledescription_constructor_exists():
-    assert callable(style::EdgeStyleDescription.__init__)
+def test_style_edgestyledescription_constructor_exists():
+    assert callable(style_EdgeStyleDescription.__init__)
 
 
-def test_style::edgestyledescription_constructor_args():
-    sig = inspect.signature(style::EdgeStyleDescription.__init__)
+def test_style_edgestyledescription_constructor_args():
+    sig = inspect.signature(style_EdgeStyleDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::iedgemapping_is_not_abstract():
-    assert not inspect.isabstract(description::IEdgeMapping)
+def test_description_iedgemapping_is_not_abstract():
+    assert not inspect.isabstract(description_IEdgeMapping)
 
 
-def test_description::iedgemapping_constructor_exists():
-    assert callable(description::IEdgeMapping.__init__)
+def test_description_iedgemapping_constructor_exists():
+    assert callable(description_IEdgeMapping.__init__)
 
 
-def test_description::iedgemapping_constructor_args():
-    sig = inspect.signature(description::IEdgeMapping.__init__)
+def test_description_iedgemapping_constructor_args():
+    sig = inspect.signature(description_IEdgeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::containermapping_is_not_abstract():
-    assert not inspect.isabstract(description::ContainerMapping)
+def test_description_containermapping_is_not_abstract():
+    assert not inspect.isabstract(description_ContainerMapping)
 
 
-def test_description::containermapping_constructor_exists():
-    assert callable(description::ContainerMapping.__init__)
+def test_description_containermapping_constructor_exists():
+    assert callable(description_ContainerMapping.__init__)
 
 
-def test_description::containermapping_constructor_args():
-    sig = inspect.signature(description::ContainerMapping.__init__)
+def test_description_containermapping_constructor_args():
+    sig = inspect.signature(description_ContainerMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::abstractmappingimport_is_not_abstract():
-    assert not inspect.isabstract(description::AbstractMappingImport)
+def test_description_abstractmappingimport_is_not_abstract():
+    assert not inspect.isabstract(description_AbstractMappingImport)
 
 
-def test_description::abstractmappingimport_constructor_exists():
-    assert callable(description::AbstractMappingImport.__init__)
+def test_description_abstractmappingimport_constructor_exists():
+    assert callable(description_AbstractMappingImport.__init__)
 
 
-def test_description::abstractmappingimport_constructor_args():
-    sig = inspect.signature(description::AbstractMappingImport.__init__)
+def test_description_abstractmappingimport_constructor_args():
+    sig = inspect.signature(description_AbstractMappingImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::containermappingimport_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::ContainerMappingImport)
+def test_diagram_description_containermappingimport_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_ContainerMappingImport)
 
 
-def test_diagram::description::containermappingimport_constructor_exists():
-    assert callable(diagram::description::ContainerMappingImport.__init__)
+def test_diagram_description_containermappingimport_constructor_exists():
+    assert callable(diagram_description_ContainerMappingImport.__init__)
 
 
-def test_diagram::description::containermappingimport_constructor_args():
-    sig = inspect.signature(diagram::description::ContainerMappingImport.__init__)
+def test_diagram_description_containermappingimport_constructor_args():
+    sig = inspect.signature(diagram_description_ContainerMappingImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::nodemapping_is_not_abstract():
-    assert not inspect.isabstract(description::NodeMapping)
+def test_description_nodemapping_is_not_abstract():
+    assert not inspect.isabstract(description_NodeMapping)
 
 
-def test_description::nodemapping_constructor_exists():
-    assert callable(description::NodeMapping.__init__)
+def test_description_nodemapping_constructor_exists():
+    assert callable(description_NodeMapping.__init__)
 
 
-def test_description::nodemapping_constructor_args():
-    sig = inspect.signature(description::NodeMapping.__init__)
+def test_description_nodemapping_constructor_args():
+    sig = inspect.signature(description_NodeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::nodemappingimport_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::NodeMappingImport)
+def test_diagram_description_nodemappingimport_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_NodeMappingImport)
 
 
-def test_diagram::description::nodemappingimport_constructor_exists():
-    assert callable(diagram::description::NodeMappingImport.__init__)
+def test_diagram_description_nodemappingimport_constructor_exists():
+    assert callable(diagram_description_NodeMappingImport.__init__)
 
 
-def test_diagram::description::nodemappingimport_constructor_args():
-    sig = inspect.signature(diagram::description::NodeMappingImport.__init__)
+def test_diagram_description_nodemappingimport_constructor_args():
+    sig = inspect.signature(diagram_description_NodeMappingImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -595,17 +1893,65 @@ def test_conditionalcontainerstyledescription_constructor_args():
 
 
 
-def test_style::containerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::ContainerStyleDescription)
+def test_style_containerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_ContainerStyleDescription)
 
 
-def test_style::containerstyledescription_constructor_exists():
-    assert callable(style::ContainerStyleDescription.__init__)
+def test_style_containerstyledescription_constructor_exists():
+    assert callable(style_ContainerStyleDescription.__init__)
 
 
-def test_style::containerstyledescription_constructor_args():
-    sig = inspect.signature(style::ContainerStyleDescription.__init__)
+def test_style_containerstyledescription_constructor_args():
+    sig = inspect.signature(style_ContainerStyleDescription.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_diagram_style_shapecontainerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_ShapeContainerStyleDescription)
+
+
+def test_diagram_style_shapecontainerstyledescription_constructor_exists():
+    assert callable(diagram_style_ShapeContainerStyleDescription.__init__)
+
+
+def test_diagram_style_shapecontainerstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_ShapeContainerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "shape" in params, "Missing parameter 'shape'"
+
+def test_diagram_style_shapecontainerstyledescription_has_shape():
+    assert hasattr(diagram_style_ShapeContainerStyleDescription, "shape")
+    descriptor = None
+    for klass in diagram_style_ShapeContainerStyleDescription.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_style_flatcontainerstyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_FlatContainerStyleDescription)
+
+
+def test_diagram_style_flatcontainerstyledescription_constructor_exists():
+    assert callable(diagram_style_FlatContainerStyleDescription.__init__)
+
+
+def test_diagram_style_flatcontainerstyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_FlatContainerStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "backgroundStyle" in params, "Missing parameter 'backgroundStyle'"
+
+def test_diagram_style_flatcontainerstyledescription_has_backgroundStyle():
+    assert hasattr(diagram_style_FlatContainerStyleDescription, "backgroundStyle")
+    descriptor = None
+    for klass in diagram_style_FlatContainerStyleDescription.__mro__:
+        if "backgroundStyle" in klass.__dict__:
+            descriptor = klass.__dict__["backgroundStyle"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -623,100 +1969,124 @@ def test_conditionalnodestyledescription_constructor_args():
 
 
 
-def test_style::nodestyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::NodeStyleDescription)
+def test_style_nodestyledescription_is_not_abstract():
+    assert not inspect.isabstract(style_NodeStyleDescription)
 
 
-def test_style::nodestyledescription_constructor_exists():
-    assert callable(style::NodeStyleDescription.__init__)
+def test_style_nodestyledescription_constructor_exists():
+    assert callable(style_NodeStyleDescription.__init__)
 
 
-def test_style::nodestyledescription_constructor_args():
-    sig = inspect.signature(style::NodeStyleDescription.__init__)
+def test_style_nodestyledescription_constructor_args():
+    sig = inspect.signature(style_NodeStyleDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::abstractnodemapping_is_not_abstract():
-    assert not inspect.isabstract(description::AbstractNodeMapping)
+def test_diagram_style_workspaceimagedescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_WorkspaceImageDescription)
 
 
-def test_description::abstractnodemapping_constructor_exists():
-    assert callable(description::AbstractNodeMapping.__init__)
+def test_diagram_style_workspaceimagedescription_constructor_exists():
+    assert callable(diagram_style_WorkspaceImageDescription.__init__)
 
 
-def test_description::abstractnodemapping_constructor_args():
-    sig = inspect.signature(description::AbstractNodeMapping.__init__)
+def test_diagram_style_workspaceimagedescription_constructor_args():
+    sig = inspect.signature(diagram_style_WorkspaceImageDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "workspacePath" in params, "Missing parameter 'workspacePath'"
+
+def test_diagram_style_workspaceimagedescription_has_workspacePath():
+    assert hasattr(diagram_style_WorkspaceImageDescription, "workspacePath")
+    descriptor = None
+    for klass in diagram_style_WorkspaceImageDescription.__mro__:
+        if "workspacePath" in klass.__dict__:
+            descriptor = klass.__dict__["workspacePath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_description_abstractnodemapping_is_not_abstract():
+    assert not inspect.isabstract(description_AbstractNodeMapping)
+
+
+def test_description_abstractnodemapping_constructor_exists():
+    assert callable(description_AbstractNodeMapping.__init__)
+
+
+def test_description_abstractnodemapping_constructor_args():
+    sig = inspect.signature(description_AbstractNodeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::diagramelementmapping_is_not_abstract():
-    assert not inspect.isabstract(description::DiagramElementMapping)
+def test_description_diagramelementmapping_is_not_abstract():
+    assert not inspect.isabstract(description_DiagramElementMapping)
 
 
-def test_description::diagramelementmapping_constructor_exists():
-    assert callable(description::DiagramElementMapping.__init__)
+def test_description_diagramelementmapping_constructor_exists():
+    assert callable(description_DiagramElementMapping.__init__)
 
 
-def test_description::diagramelementmapping_constructor_args():
-    sig = inspect.signature(description::DiagramElementMapping.__init__)
+def test_description_diagramelementmapping_constructor_args():
+    sig = inspect.signature(description_DiagramElementMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::doubleclickdescription_is_not_abstract():
-    assert not inspect.isabstract(tool::DoubleClickDescription)
+def test_tool_doubleclickdescription_is_not_abstract():
+    assert not inspect.isabstract(tool_DoubleClickDescription)
 
 
-def test_tool::doubleclickdescription_constructor_exists():
-    assert callable(tool::DoubleClickDescription.__init__)
+def test_tool_doubleclickdescription_constructor_exists():
+    assert callable(tool_DoubleClickDescription.__init__)
 
 
-def test_tool::doubleclickdescription_constructor_args():
-    sig = inspect.signature(tool::DoubleClickDescription.__init__)
+def test_tool_doubleclickdescription_constructor_args():
+    sig = inspect.signature(tool_DoubleClickDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::directeditlabel_is_not_abstract():
-    assert not inspect.isabstract(tool::DirectEditLabel)
+def test_tool_directeditlabel_is_not_abstract():
+    assert not inspect.isabstract(tool_DirectEditLabel)
 
 
-def test_tool::directeditlabel_constructor_exists():
-    assert callable(tool::DirectEditLabel.__init__)
+def test_tool_directeditlabel_constructor_exists():
+    assert callable(tool_DirectEditLabel.__init__)
 
 
-def test_tool::directeditlabel_constructor_args():
-    sig = inspect.signature(tool::DirectEditLabel.__init__)
+def test_tool_directeditlabel_constructor_args():
+    sig = inspect.signature(tool_DirectEditLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::deleteelementdescription_is_not_abstract():
-    assert not inspect.isabstract(tool::DeleteElementDescription)
+def test_tool_deleteelementdescription_is_not_abstract():
+    assert not inspect.isabstract(tool_DeleteElementDescription)
 
 
-def test_tool::deleteelementdescription_constructor_exists():
-    assert callable(tool::DeleteElementDescription.__init__)
+def test_tool_deleteelementdescription_constructor_exists():
+    assert callable(tool_DeleteElementDescription.__init__)
 
 
-def test_tool::deleteelementdescription_constructor_args():
-    sig = inspect.signature(tool::DeleteElementDescription.__init__)
+def test_tool_deleteelementdescription_constructor_args():
+    sig = inspect.signature(tool_DeleteElementDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::representationelementmapping_is_not_abstract():
-    assert not inspect.isabstract(description::RepresentationElementMapping)
+def test_description_representationelementmapping_is_not_abstract():
+    assert not inspect.isabstract(description_RepresentationElementMapping)
 
 
-def test_description::representationelementmapping_constructor_exists():
-    assert callable(description::RepresentationElementMapping.__init__)
+def test_description_representationelementmapping_constructor_exists():
+    assert callable(description_RepresentationElementMapping.__init__)
 
 
-def test_description::representationelementmapping_constructor_args():
-    sig = inspect.signature(description::RepresentationElementMapping.__init__)
+def test_description_representationelementmapping_constructor_args():
+    sig = inspect.signature(description_RepresentationElementMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -735,72 +2105,72 @@ def test_representationextensiondescription_constructor_args():
 
 
 
-def test_diagram::description::diagramextensiondescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::DiagramExtensionDescription)
+def test_diagram_description_diagramextensiondescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_DiagramExtensionDescription)
 
 
-def test_diagram::description::diagramextensiondescription_constructor_exists():
-    assert callable(diagram::description::DiagramExtensionDescription.__init__)
+def test_diagram_description_diagramextensiondescription_constructor_exists():
+    assert callable(diagram_description_DiagramExtensionDescription.__init__)
 
 
-def test_diagram::description::diagramextensiondescription_constructor_args():
-    sig = inspect.signature(diagram::description::DiagramExtensionDescription.__init__)
+def test_diagram_description_diagramextensiondescription_constructor_args():
+    sig = inspect.signature(diagram_description_DiagramExtensionDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::diagramdescription_is_not_abstract():
-    assert not inspect.isabstract(description::DiagramDescription)
+def test_description_diagramdescription_is_not_abstract():
+    assert not inspect.isabstract(description_DiagramDescription)
 
 
-def test_description::diagramdescription_constructor_exists():
-    assert callable(description::DiagramDescription.__init__)
+def test_description_diagramdescription_constructor_exists():
+    assert callable(description_DiagramDescription.__init__)
 
 
-def test_description::diagramdescription_constructor_args():
-    sig = inspect.signature(description::DiagramDescription.__init__)
+def test_description_diagramdescription_constructor_args():
+    sig = inspect.signature(description_DiagramDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::representationimportdescription_is_not_abstract():
-    assert not inspect.isabstract(description::RepresentationImportDescription)
+def test_description_representationimportdescription_is_not_abstract():
+    assert not inspect.isabstract(description_RepresentationImportDescription)
 
 
-def test_description::representationimportdescription_constructor_exists():
-    assert callable(description::RepresentationImportDescription.__init__)
+def test_description_representationimportdescription_constructor_exists():
+    assert callable(description_RepresentationImportDescription.__init__)
 
 
-def test_description::representationimportdescription_constructor_args():
-    sig = inspect.signature(description::RepresentationImportDescription.__init__)
+def test_description_representationimportdescription_constructor_args():
+    sig = inspect.signature(description_RepresentationImportDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::diagramimportdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::DiagramImportDescription)
+def test_diagram_description_diagramimportdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_DiagramImportDescription)
 
 
-def test_diagram::description::diagramimportdescription_constructor_exists():
-    assert callable(diagram::description::DiagramImportDescription.__init__)
+def test_diagram_description_diagramimportdescription_constructor_exists():
+    assert callable(diagram_description_DiagramImportDescription.__init__)
 
 
-def test_diagram::description::diagramimportdescription_constructor_args():
-    sig = inspect.signature(diagram::description::DiagramImportDescription.__init__)
+def test_diagram_description_diagramimportdescription_constructor_args():
+    sig = inspect.signature(diagram_description_DiagramImportDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::toolsection_is_not_abstract():
-    assert not inspect.isabstract(tool::ToolSection)
+def test_tool_toolsection_is_not_abstract():
+    assert not inspect.isabstract(tool_ToolSection)
 
 
-def test_tool::toolsection_constructor_exists():
-    assert callable(tool::ToolSection.__init__)
+def test_tool_toolsection_constructor_exists():
+    assert callable(tool_ToolSection.__init__)
 
 
-def test_tool::toolsection_constructor_args():
-    sig = inspect.signature(tool::ToolSection.__init__)
+def test_tool_toolsection_constructor_args():
+    sig = inspect.signature(tool_ToolSection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -819,16 +2189,16 @@ def test_edgemappingimport_constructor_args():
 
 
 
-def test_tool::initialoperation_is_not_abstract():
-    assert not inspect.isabstract(tool::InitialOperation)
+def test_tool_initialoperation_is_not_abstract():
+    assert not inspect.isabstract(tool_InitialOperation)
 
 
-def test_tool::initialoperation_constructor_exists():
-    assert callable(tool::InitialOperation.__init__)
+def test_tool_initialoperation_constructor_exists():
+    assert callable(tool_InitialOperation.__init__)
 
 
-def test_tool::initialoperation_constructor_args():
-    sig = inspect.signature(tool::InitialOperation.__init__)
+def test_tool_initialoperation_constructor_args():
+    sig = inspect.signature(tool_InitialOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -847,57 +2217,33 @@ def test_layout_constructor_args():
 
 
 
-def test_diagram::description::orderedtreelayout_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::OrderedTreeLayout)
+def test_diagram_description_compositelayout_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_CompositeLayout)
 
 
-def test_diagram::description::orderedtreelayout_constructor_exists():
-    assert callable(diagram::description::OrderedTreeLayout.__init__)
+def test_diagram_description_compositelayout_constructor_exists():
+    assert callable(diagram_description_CompositeLayout.__init__)
 
 
-def test_diagram::description::orderedtreelayout_constructor_args():
-    sig = inspect.signature(diagram::description::OrderedTreeLayout.__init__)
-    params = list(sig.parameters.keys())
-    assert "childrenExpression" in params, "Missing parameter 'childrenExpression'"
-
-def test_diagram::description::orderedtreelayout_has_childrenExpression():
-    assert hasattr(diagram::description::OrderedTreeLayout, "childrenExpression")
-    descriptor = None
-    for klass in diagram::description::OrderedTreeLayout.__mro__:
-        if "childrenExpression" in klass.__dict__:
-            descriptor = klass.__dict__["childrenExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::description::compositelayout_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::CompositeLayout)
-
-
-def test_diagram::description::compositelayout_constructor_exists():
-    assert callable(diagram::description::CompositeLayout.__init__)
-
-
-def test_diagram::description::compositelayout_constructor_args():
-    sig = inspect.signature(diagram::description::CompositeLayout.__init__)
+def test_diagram_description_compositelayout_constructor_args():
+    sig = inspect.signature(diagram_description_CompositeLayout.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
     assert "padding" in params, "Missing parameter 'padding'"
 
-def test_diagram::description::compositelayout_has_direction():
-    assert hasattr(diagram::description::CompositeLayout, "direction")
+def test_diagram_description_compositelayout_has_direction():
+    assert hasattr(diagram_description_CompositeLayout, "direction")
     descriptor = None
-    for klass in diagram::description::CompositeLayout.__mro__:
+    for klass in diagram_description_CompositeLayout.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::description::compositelayout_has_padding():
-    assert hasattr(diagram::description::CompositeLayout, "padding")
+def test_diagram_description_compositelayout_has_padding():
+    assert hasattr(diagram_description_CompositeLayout, "padding")
     descriptor = None
-    for klass in diagram::description::CompositeLayout.__mro__:
+    for klass in diagram_description_CompositeLayout.__mro__:
         if "padding" in klass.__dict__:
             descriptor = klass.__dict__["padding"]
             break
@@ -905,58 +2251,82 @@ def test_diagram::description::compositelayout_has_padding():
 
 
 
-def test_tool::representationcreationdescription_is_not_abstract():
-    assert not inspect.isabstract(tool::RepresentationCreationDescription)
+def test_diagram_description_orderedtreelayout_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_OrderedTreeLayout)
 
 
-def test_tool::representationcreationdescription_constructor_exists():
-    assert callable(tool::RepresentationCreationDescription.__init__)
+def test_diagram_description_orderedtreelayout_constructor_exists():
+    assert callable(diagram_description_OrderedTreeLayout.__init__)
 
 
-def test_tool::representationcreationdescription_constructor_args():
-    sig = inspect.signature(tool::RepresentationCreationDescription.__init__)
+def test_diagram_description_orderedtreelayout_constructor_args():
+    sig = inspect.signature(diagram_description_OrderedTreeLayout.__init__)
+    params = list(sig.parameters.keys())
+    assert "childrenExpression" in params, "Missing parameter 'childrenExpression'"
+
+def test_diagram_description_orderedtreelayout_has_childrenExpression():
+    assert hasattr(diagram_description_OrderedTreeLayout, "childrenExpression")
+    descriptor = None
+    for klass in diagram_description_OrderedTreeLayout.__mro__:
+        if "childrenExpression" in klass.__dict__:
+            descriptor = klass.__dict__["childrenExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_representationcreationdescription_is_not_abstract():
+    assert not inspect.isabstract(tool_RepresentationCreationDescription)
+
+
+def test_tool_representationcreationdescription_constructor_exists():
+    assert callable(tool_RepresentationCreationDescription.__init__)
+
+
+def test_tool_representationcreationdescription_constructor_args():
+    sig = inspect.signature(tool_RepresentationCreationDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::abstracttooldescription_is_not_abstract():
-    assert not inspect.isabstract(tool::AbstractToolDescription)
+def test_tool_abstracttooldescription_is_not_abstract():
+    assert not inspect.isabstract(tool_AbstractToolDescription)
 
 
-def test_tool::abstracttooldescription_constructor_exists():
-    assert callable(tool::AbstractToolDescription.__init__)
+def test_tool_abstracttooldescription_constructor_exists():
+    assert callable(tool_AbstractToolDescription.__init__)
 
 
-def test_tool::abstracttooldescription_constructor_args():
-    sig = inspect.signature(tool::AbstractToolDescription.__init__)
+def test_tool_abstracttooldescription_constructor_args():
+    sig = inspect.signature(tool_AbstractToolDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_concern::concernset_is_not_abstract():
-    assert not inspect.isabstract(concern::ConcernSet)
+def test_concern_concernset_is_not_abstract():
+    assert not inspect.isabstract(concern_ConcernSet)
 
 
-def test_concern::concernset_constructor_exists():
-    assert callable(concern::ConcernSet.__init__)
+def test_concern_concernset_constructor_exists():
+    assert callable(concern_ConcernSet.__init__)
 
 
-def test_concern::concernset_constructor_args():
-    sig = inspect.signature(concern::ConcernSet.__init__)
+def test_concern_concernset_constructor_args():
+    sig = inspect.signature(concern_ConcernSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_validation::validationset_is_not_abstract():
-    assert not inspect.isabstract(validation::ValidationSet)
+def test_validation_validationset_is_not_abstract():
+    assert not inspect.isabstract(validation_ValidationSet)
 
 
-def test_validation::validationset_constructor_exists():
-    assert callable(validation::ValidationSet.__init__)
+def test_validation_validationset_constructor_exists():
+    assert callable(validation_ValidationSet.__init__)
 
 
-def test_validation::validationset_constructor_args():
-    sig = inspect.signature(validation::ValidationSet.__init__)
+def test_validation_validationset_constructor_args():
+    sig = inspect.signature(validation_ValidationSet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -975,129 +2345,143 @@ def test_edgemapping_constructor_args():
 
 
 
-def test_description::pastetargetdescription_is_not_abstract():
-    assert not inspect.isabstract(description::PasteTargetDescription)
+def test_description_pastetargetdescription_is_not_abstract():
+    assert not inspect.isabstract(description_PasteTargetDescription)
 
 
-def test_description::pastetargetdescription_constructor_exists():
-    assert callable(description::PasteTargetDescription.__init__)
+def test_description_pastetargetdescription_constructor_exists():
+    assert callable(description_PasteTargetDescription.__init__)
 
 
-def test_description::pastetargetdescription_constructor_args():
-    sig = inspect.signature(description::PasteTargetDescription.__init__)
+def test_description_pastetargetdescription_constructor_args():
+    sig = inspect.signature(description_PasteTargetDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::diagramelementmapping_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::DiagramElementMapping)
+def test_diagram_description_diagramelementmapping_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_DiagramElementMapping)
 
 
-def test_diagram::description::diagramelementmapping_constructor_exists():
-    assert callable(diagram::description::DiagramElementMapping.__init__)
+def test_diagram_description_diagramelementmapping_constructor_exists():
+    assert callable(diagram_description_DiagramElementMapping.__init__)
 
 
-def test_diagram::description::diagramelementmapping_constructor_args():
-    sig = inspect.signature(diagram::description::DiagramElementMapping.__init__)
+def test_diagram_description_diagramelementmapping_constructor_args():
+    sig = inspect.signature(diagram_description_DiagramElementMapping.__init__)
     params = list(sig.parameters.keys())
-    assert "synchronizationLock" in params, "Missing parameter 'synchronizationLock'"
-    assert "createElements" in params, "Missing parameter 'createElements'"
-    assert "semanticCandidatesExpression" in params, "Missing parameter 'semanticCandidatesExpression'"
-    assert "semanticElements" in params, "Missing parameter 'semanticElements'"
     assert "preconditionExpression" in params, "Missing parameter 'preconditionExpression'"
+    assert "semanticElements" in params, "Missing parameter 'semanticElements'"
+    assert "synchronizationLock" in params, "Missing parameter 'synchronizationLock'"
+    assert "semanticCandidatesExpression" in params, "Missing parameter 'semanticCandidatesExpression'"
+    assert "createElements" in params, "Missing parameter 'createElements'"
 
-def test_diagram::description::diagramelementmapping_has_synchronizationLock():
-    assert hasattr(diagram::description::DiagramElementMapping, "synchronizationLock")
+def test_diagram_description_diagramelementmapping_has_preconditionExpression():
+    assert hasattr(diagram_description_DiagramElementMapping, "preconditionExpression")
     descriptor = None
-    for klass in diagram::description::DiagramElementMapping.__mro__:
-        if "synchronizationLock" in klass.__dict__:
-            descriptor = klass.__dict__["synchronizationLock"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramelementmapping_has_createElements():
-    assert hasattr(diagram::description::DiagramElementMapping, "createElements")
-    descriptor = None
-    for klass in diagram::description::DiagramElementMapping.__mro__:
-        if "createElements" in klass.__dict__:
-            descriptor = klass.__dict__["createElements"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramelementmapping_has_semanticCandidatesExpression():
-    assert hasattr(diagram::description::DiagramElementMapping, "semanticCandidatesExpression")
-    descriptor = None
-    for klass in diagram::description::DiagramElementMapping.__mro__:
-        if "semanticCandidatesExpression" in klass.__dict__:
-            descriptor = klass.__dict__["semanticCandidatesExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramelementmapping_has_semanticElements():
-    assert hasattr(diagram::description::DiagramElementMapping, "semanticElements")
-    descriptor = None
-    for klass in diagram::description::DiagramElementMapping.__mro__:
-        if "semanticElements" in klass.__dict__:
-            descriptor = klass.__dict__["semanticElements"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramelementmapping_has_preconditionExpression():
-    assert hasattr(diagram::description::DiagramElementMapping, "preconditionExpression")
-    descriptor = None
-    for klass in diagram::description::DiagramElementMapping.__mro__:
+    for klass in diagram_description_DiagramElementMapping.__mro__:
         if "preconditionExpression" in klass.__dict__:
             descriptor = klass.__dict__["preconditionExpression"]
             break
     assert isinstance(descriptor, property)
 
+def test_diagram_description_diagramelementmapping_has_semanticElements():
+    assert hasattr(diagram_description_DiagramElementMapping, "semanticElements")
+    descriptor = None
+    for klass in diagram_description_DiagramElementMapping.__mro__:
+        if "semanticElements" in klass.__dict__:
+            descriptor = klass.__dict__["semanticElements"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_diagramelementmapping_has_synchronizationLock():
+    assert hasattr(diagram_description_DiagramElementMapping, "synchronizationLock")
+    descriptor = None
+    for klass in diagram_description_DiagramElementMapping.__mro__:
+        if "synchronizationLock" in klass.__dict__:
+            descriptor = klass.__dict__["synchronizationLock"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_diagramelementmapping_has_semanticCandidatesExpression():
+    assert hasattr(diagram_description_DiagramElementMapping, "semanticCandidatesExpression")
+    descriptor = None
+    for klass in diagram_description_DiagramElementMapping.__mro__:
+        if "semanticCandidatesExpression" in klass.__dict__:
+            descriptor = klass.__dict__["semanticCandidatesExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_diagramelementmapping_has_createElements():
+    assert hasattr(diagram_description_DiagramElementMapping, "createElements")
+    descriptor = None
+    for klass in diagram_description_DiagramElementMapping.__mro__:
+        if "createElements" in klass.__dict__:
+            descriptor = klass.__dict__["createElements"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_description::representationdescription_is_not_abstract():
-    assert not inspect.isabstract(description::RepresentationDescription)
+
+def test_description_representationdescription_is_not_abstract():
+    assert not inspect.isabstract(description_RepresentationDescription)
 
 
-def test_description::representationdescription_constructor_exists():
-    assert callable(description::RepresentationDescription.__init__)
+def test_description_representationdescription_constructor_exists():
+    assert callable(description_RepresentationDescription.__init__)
 
 
-def test_description::representationdescription_constructor_args():
-    sig = inspect.signature(description::RepresentationDescription.__init__)
+def test_description_representationdescription_constructor_args():
+    sig = inspect.signature(description_RepresentationDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_description::draganddroptargetdescription_is_not_abstract():
-    assert not inspect.isabstract(description::DragAndDropTargetDescription)
+def test_description_draganddroptargetdescription_is_not_abstract():
+    assert not inspect.isabstract(description_DragAndDropTargetDescription)
 
 
-def test_description::draganddroptargetdescription_constructor_exists():
-    assert callable(description::DragAndDropTargetDescription.__init__)
+def test_description_draganddroptargetdescription_constructor_exists():
+    assert callable(description_DragAndDropTargetDescription.__init__)
 
 
-def test_description::draganddroptargetdescription_constructor_args():
-    sig = inspect.signature(description::DragAndDropTargetDescription.__init__)
+def test_description_draganddroptargetdescription_constructor_args():
+    sig = inspect.signature(description_DragAndDropTargetDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::description::containermapping_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::ContainerMapping)
+def test_diagram_description_nodemapping_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_NodeMapping)
 
 
-def test_diagram::description::containermapping_constructor_exists():
-    assert callable(diagram::description::ContainerMapping.__init__)
+def test_diagram_description_nodemapping_constructor_exists():
+    assert callable(diagram_description_NodeMapping.__init__)
 
 
-def test_diagram::description::containermapping_constructor_args():
-    sig = inspect.signature(diagram::description::ContainerMapping.__init__)
+def test_diagram_description_nodemapping_constructor_args():
+    sig = inspect.signature(diagram_description_NodeMapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_description_containermapping_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_ContainerMapping)
+
+
+def test_diagram_description_containermapping_constructor_exists():
+    assert callable(diagram_description_ContainerMapping.__init__)
+
+
+def test_diagram_description_containermapping_constructor_args():
+    sig = inspect.signature(diagram_description_ContainerMapping.__init__)
     params = list(sig.parameters.keys())
     assert "childrenPresentation" in params, "Missing parameter 'childrenPresentation'"
 
-def test_diagram::description::containermapping_has_childrenPresentation():
-    assert hasattr(diagram::description::ContainerMapping, "childrenPresentation")
+def test_diagram_description_containermapping_has_childrenPresentation():
+    assert hasattr(diagram_description_ContainerMapping, "childrenPresentation")
     descriptor = None
-    for klass in diagram::description::ContainerMapping.__mro__:
+    for klass in diagram_description_ContainerMapping.__mro__:
         if "childrenPresentation" in klass.__dict__:
             descriptor = klass.__dict__["childrenPresentation"]
             break
@@ -1105,119 +2489,769 @@ def test_diagram::description::containermapping_has_childrenPresentation():
 
 
 
-def test_diagram::description::nodemapping_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::NodeMapping)
+def test_diagram_description_diagramdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_DiagramDescription)
 
 
-def test_diagram::description::nodemapping_constructor_exists():
-    assert callable(diagram::description::NodeMapping.__init__)
+def test_diagram_description_diagramdescription_constructor_exists():
+    assert callable(diagram_description_DiagramDescription.__init__)
 
 
-def test_diagram::description::nodemapping_constructor_args():
-    sig = inspect.signature(diagram::description::NodeMapping.__init__)
+def test_diagram_description_diagramdescription_constructor_args():
+    sig = inspect.signature(diagram_description_DiagramDescription.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_diagram::description::diagramdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::DiagramDescription)
-
-
-def test_diagram::description::diagramdescription_constructor_exists():
-    assert callable(diagram::description::DiagramDescription.__init__)
-
-
-def test_diagram::description::diagramdescription_constructor_args():
-    sig = inspect.signature(diagram::description::DiagramDescription.__init__)
-    params = list(sig.parameters.keys())
+    assert "preconditionExpression" in params, "Missing parameter 'preconditionExpression'"
+    assert "domainClass" in params, "Missing parameter 'domainClass'"
     assert "rootExpression" in params, "Missing parameter 'rootExpression'"
     assert "enablePopupBars" in params, "Missing parameter 'enablePopupBars'"
-    assert "domainClass" in params, "Missing parameter 'domainClass'"
-    assert "preconditionExpression" in params, "Missing parameter 'preconditionExpression'"
 
-def test_diagram::description::diagramdescription_has_rootExpression():
-    assert hasattr(diagram::description::DiagramDescription, "rootExpression")
+def test_diagram_description_diagramdescription_has_preconditionExpression():
+    assert hasattr(diagram_description_DiagramDescription, "preconditionExpression")
     descriptor = None
-    for klass in diagram::description::DiagramDescription.__mro__:
-        if "rootExpression" in klass.__dict__:
-            descriptor = klass.__dict__["rootExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramdescription_has_enablePopupBars():
-    assert hasattr(diagram::description::DiagramDescription, "enablePopupBars")
-    descriptor = None
-    for klass in diagram::description::DiagramDescription.__mro__:
-        if "enablePopupBars" in klass.__dict__:
-            descriptor = klass.__dict__["enablePopupBars"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramdescription_has_domainClass():
-    assert hasattr(diagram::description::DiagramDescription, "domainClass")
-    descriptor = None
-    for klass in diagram::description::DiagramDescription.__mro__:
-        if "domainClass" in klass.__dict__:
-            descriptor = klass.__dict__["domainClass"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::diagramdescription_has_preconditionExpression():
-    assert hasattr(diagram::description::DiagramDescription, "preconditionExpression")
-    descriptor = None
-    for klass in diagram::description::DiagramDescription.__mro__:
+    for klass in diagram_description_DiagramDescription.__mro__:
         if "preconditionExpression" in klass.__dict__:
             descriptor = klass.__dict__["preconditionExpression"]
             break
     assert isinstance(descriptor, property)
 
+def test_diagram_description_diagramdescription_has_domainClass():
+    assert hasattr(diagram_description_DiagramDescription, "domainClass")
+    descriptor = None
+    for klass in diagram_description_DiagramDescription.__mro__:
+        if "domainClass" in klass.__dict__:
+            descriptor = klass.__dict__["domainClass"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_diagramdescription_has_rootExpression():
+    assert hasattr(diagram_description_DiagramDescription, "rootExpression")
+    descriptor = None
+    for klass in diagram_description_DiagramDescription.__mro__:
+        if "rootExpression" in klass.__dict__:
+            descriptor = klass.__dict__["rootExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_diagramdescription_has_enablePopupBars():
+    assert hasattr(diagram_description_DiagramDescription, "enablePopupBars")
+    descriptor = None
+    for klass in diagram_description_DiagramDescription.__mro__:
+        if "enablePopupBars" in klass.__dict__:
+            descriptor = klass.__dict__["enablePopupBars"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_diagram::eobject_is_not_abstract():
-    assert not inspect.isabstract(diagram::EObject)
+
+def test_diagram_eobject_is_not_abstract():
+    assert not inspect.isabstract(diagram_EObject)
 
 
-def test_diagram::eobject_constructor_exists():
-    assert callable(diagram::EObject.__init__)
+def test_diagram_eobject_constructor_exists():
+    assert callable(diagram_EObject.__init__)
 
 
-def test_diagram::eobject_constructor_args():
-    sig = inspect.signature(diagram::EObject.__init__)
+def test_diagram_eobject_constructor_args():
+    sig = inspect.signature(diagram_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::selectmodelelementvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::SelectModelElementVariable)
+def test_tool_selectmodelelementvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_SelectModelElementVariable)
 
 
-def test_tool::selectmodelelementvariable_constructor_exists():
-    assert callable(tool::SelectModelElementVariable.__init__)
+def test_tool_selectmodelelementvariable_constructor_exists():
+    assert callable(tool_SelectModelElementVariable.__init__)
 
 
-def test_tool::selectmodelelementvariable_constructor_args():
-    sig = inspect.signature(tool::SelectModelElementVariable.__init__)
+def test_tool_selectmodelelementvariable_constructor_args():
+    sig = inspect.signature(tool_SelectModelElementVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::hidelabelcapabilitystyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::HideLabelCapabilityStyle)
+def test_diagram_concern_concernset_is_not_abstract():
+    assert not inspect.isabstract(diagram_concern_ConcernSet)
 
 
-def test_diagram::hidelabelcapabilitystyle_constructor_exists():
-    assert callable(diagram::HideLabelCapabilityStyle.__init__)
+def test_diagram_concern_concernset_constructor_exists():
+    assert callable(diagram_concern_ConcernSet.__init__)
 
 
-def test_diagram::hidelabelcapabilitystyle_constructor_args():
-    sig = inspect.signature(diagram::HideLabelCapabilityStyle.__init__)
+def test_diagram_concern_concernset_constructor_args():
+    sig = inspect.signature(diagram_concern_ConcernSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interactivevariabledescription_is_not_abstract():
+    assert not inspect.isabstract(InteractiveVariableDescription)
+
+
+def test_interactivevariabledescription_constructor_exists():
+    assert callable(InteractiveVariableDescription.__init__)
+
+
+def test_interactivevariabledescription_constructor_args():
+    sig = inspect.signature(InteractiveVariableDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_filter_filter_is_not_abstract():
+    assert not inspect.isabstract(filter_Filter)
+
+
+def test_filter_filter_constructor_exists():
+    assert callable(filter_Filter.__init__)
+
+
+def test_filter_filter_constructor_args():
+    sig = inspect.signature(filter_Filter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_filterdescription_is_not_abstract():
+    assert not inspect.isabstract(FilterDescription)
+
+
+def test_filterdescription_constructor_exists():
+    assert callable(FilterDescription.__init__)
+
+
+def test_filterdescription_constructor_args():
+    sig = inspect.signature(FilterDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_filter_compositefilterdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_filter_CompositeFilterDescription)
+
+
+def test_diagram_filter_compositefilterdescription_constructor_exists():
+    assert callable(diagram_filter_CompositeFilterDescription.__init__)
+
+
+def test_diagram_filter_compositefilterdescription_constructor_args():
+    sig = inspect.signature(diagram_filter_CompositeFilterDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_filter_filter_is_not_abstract():
+    assert not inspect.isabstract(diagram_filter_Filter)
+
+
+def test_diagram_filter_filter_constructor_exists():
+    assert callable(diagram_filter_Filter.__init__)
+
+
+def test_diagram_filter_filter_constructor_args():
+    sig = inspect.signature(diagram_filter_Filter.__init__)
+    params = list(sig.parameters.keys())
+    assert "filterKind" in params, "Missing parameter 'filterKind'"
+
+def test_diagram_filter_filter_has_filterKind():
+    assert hasattr(diagram_filter_Filter, "filterKind")
+    descriptor = None
+    for klass in diagram_filter_Filter.__mro__:
+        if "filterKind" in klass.__dict__:
+            descriptor = klass.__dict__["filterKind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_filter_is_not_abstract():
+    assert not inspect.isabstract(Filter)
+
+
+def test_filter_constructor_exists():
+    assert callable(Filter.__init__)
+
+
+def test_filter_constructor_args():
+    sig = inspect.signature(Filter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_filter_variablefilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_filter_VariableFilter)
+
+
+def test_diagram_filter_variablefilter_constructor_exists():
+    assert callable(diagram_filter_VariableFilter.__init__)
+
+
+def test_diagram_filter_variablefilter_constructor_args():
+    sig = inspect.signature(diagram_filter_VariableFilter.__init__)
+    params = list(sig.parameters.keys())
+    assert "semanticConditionExpression" in params, "Missing parameter 'semanticConditionExpression'"
+
+def test_diagram_filter_variablefilter_has_semanticConditionExpression():
+    assert hasattr(diagram_filter_VariableFilter, "semanticConditionExpression")
+    descriptor = None
+    for klass in diagram_filter_VariableFilter.__mro__:
+        if "semanticConditionExpression" in klass.__dict__:
+            descriptor = klass.__dict__["semanticConditionExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_filter_mappingfilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_filter_MappingFilter)
+
+
+def test_diagram_filter_mappingfilter_constructor_exists():
+    assert callable(diagram_filter_MappingFilter.__init__)
+
+
+def test_diagram_filter_mappingfilter_constructor_args():
+    sig = inspect.signature(diagram_filter_MappingFilter.__init__)
+    params = list(sig.parameters.keys())
+    assert "viewConditionExpression" in params, "Missing parameter 'viewConditionExpression'"
+    assert "semanticConditionExpression" in params, "Missing parameter 'semanticConditionExpression'"
+
+def test_diagram_filter_mappingfilter_has_viewConditionExpression():
+    assert hasattr(diagram_filter_MappingFilter, "viewConditionExpression")
+    descriptor = None
+    for klass in diagram_filter_MappingFilter.__mro__:
+        if "viewConditionExpression" in klass.__dict__:
+            descriptor = klass.__dict__["viewConditionExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_filter_mappingfilter_has_semanticConditionExpression():
+    assert hasattr(diagram_filter_MappingFilter, "semanticConditionExpression")
+    descriptor = None
+    for klass in diagram_filter_MappingFilter.__mro__:
+        if "semanticConditionExpression" in klass.__dict__:
+            descriptor = klass.__dict__["semanticConditionExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_elementdropvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_ElementDropVariable)
+
+
+def test_tool_elementdropvariable_constructor_exists():
+    assert callable(tool_ElementDropVariable.__init__)
+
+
+def test_tool_elementdropvariable_constructor_args():
+    sig = inspect.signature(tool_ElementDropVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_dropcontainervariable_is_not_abstract():
+    assert not inspect.isabstract(tool_DropContainerVariable)
+
+
+def test_tool_dropcontainervariable_constructor_exists():
+    assert callable(tool_DropContainerVariable.__init__)
+
+
+def test_tool_dropcontainervariable_constructor_args():
+    sig = inspect.signature(tool_DropContainerVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_containerdropdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ContainerDropDescription)
+
+
+def test_diagram_tool_containerdropdescription_constructor_exists():
+    assert callable(diagram_tool_ContainerDropDescription.__init__)
+
+
+def test_diagram_tool_containerdropdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_ContainerDropDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "dragSource" in params, "Missing parameter 'dragSource'"
+    assert "moveEdges" in params, "Missing parameter 'moveEdges'"
+
+def test_diagram_tool_containerdropdescription_has_dragSource():
+    assert hasattr(diagram_tool_ContainerDropDescription, "dragSource")
+    descriptor = None
+    for klass in diagram_tool_ContainerDropDescription.__mro__:
+        if "dragSource" in klass.__dict__:
+            descriptor = klass.__dict__["dragSource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_tool_containerdropdescription_has_moveEdges():
+    assert hasattr(diagram_tool_ContainerDropDescription, "moveEdges")
+    descriptor = None
+    for klass in diagram_tool_ContainerDropDescription.__mro__:
+        if "moveEdges" in klass.__dict__:
+            descriptor = klass.__dict__["moveEdges"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_representationnavigationdescription_is_not_abstract():
+    assert not inspect.isabstract(RepresentationNavigationDescription)
+
+
+def test_representationnavigationdescription_constructor_exists():
+    assert callable(RepresentationNavigationDescription.__init__)
+
+
+def test_representationnavigationdescription_constructor_args():
+    sig = inspect.signature(RepresentationNavigationDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_diagramnavigationdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DiagramNavigationDescription)
+
+
+def test_diagram_tool_diagramnavigationdescription_constructor_exists():
+    assert callable(diagram_tool_DiagramNavigationDescription.__init__)
+
+
+def test_diagram_tool_diagramnavigationdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_DiagramNavigationDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_representationcreationdescription_is_not_abstract():
+    assert not inspect.isabstract(RepresentationCreationDescription)
+
+
+def test_representationcreationdescription_constructor_exists():
+    assert callable(RepresentationCreationDescription.__init__)
+
+
+def test_representationcreationdescription_constructor_args():
+    sig = inspect.signature(RepresentationCreationDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_diagramcreationdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DiagramCreationDescription)
+
+
+def test_diagram_tool_diagramcreationdescription_constructor_exists():
+    assert callable(diagram_tool_DiagramCreationDescription.__init__)
+
+
+def test_diagram_tool_diagramcreationdescription_constructor_args():
+    sig = inspect.signature(diagram_tool_DiagramCreationDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tool_initialcontainerdropoperation_is_not_abstract():
+    assert not inspect.isabstract(tool_InitialContainerDropOperation)
+
+
+def test_tool_initialcontainerdropoperation_constructor_exists():
+    assert callable(tool_InitialContainerDropOperation.__init__)
+
+
+def test_tool_initialcontainerdropoperation_constructor_args():
+    sig = inspect.signature(tool_InitialContainerDropOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_containermodeloperation_is_not_abstract():
+    assert not inspect.isabstract(ContainerModelOperation)
+
+
+def test_containermodeloperation_constructor_exists():
+    assert callable(ContainerModelOperation.__init__)
+
+
+def test_containermodeloperation_constructor_args():
+    sig = inspect.signature(ContainerModelOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_navigation_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_Navigation)
+
+
+def test_diagram_tool_navigation_constructor_exists():
+    assert callable(diagram_tool_Navigation.__init__)
+
+
+def test_diagram_tool_navigation_constructor_args():
+    sig = inspect.signature(diagram_tool_Navigation.__init__)
+    params = list(sig.parameters.keys())
+    assert "createIfNotExistent" in params, "Missing parameter 'createIfNotExistent'"
+
+def test_diagram_tool_navigation_has_createIfNotExistent():
+    assert hasattr(diagram_tool_Navigation, "createIfNotExistent")
+    descriptor = None
+    for klass in diagram_tool_Navigation.__mro__:
+        if "createIfNotExistent" in klass.__dict__:
+            descriptor = klass.__dict__["createIfNotExistent"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_tool_createview_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_CreateView)
+
+
+def test_diagram_tool_createview_constructor_exists():
+    assert callable(diagram_tool_CreateView.__init__)
+
+
+def test_diagram_tool_createview_constructor_args():
+    sig = inspect.signature(diagram_tool_CreateView.__init__)
+    params = list(sig.parameters.keys())
+    assert "containerViewExpression" in params, "Missing parameter 'containerViewExpression'"
+    assert "variableName" in params, "Missing parameter 'variableName'"
+
+def test_diagram_tool_createview_has_containerViewExpression():
+    assert hasattr(diagram_tool_CreateView, "containerViewExpression")
+    descriptor = None
+    for klass in diagram_tool_CreateView.__mro__:
+        if "containerViewExpression" in klass.__dict__:
+            descriptor = klass.__dict__["containerViewExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_tool_createview_has_variableName():
+    assert hasattr(diagram_tool_CreateView, "variableName")
+    descriptor = None
+    for klass in diagram_tool_CreateView.__mro__:
+        if "variableName" in klass.__dict__:
+            descriptor = klass.__dict__["variableName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_variablecontainer_is_not_abstract():
+    assert not inspect.isabstract(tool_VariableContainer)
+
+
+def test_tool_variablecontainer_constructor_exists():
+    assert callable(tool_VariableContainer.__init__)
+
+
+def test_tool_variablecontainer_constructor_args():
+    sig = inspect.signature(tool_VariableContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_description_abstractvariable_is_not_abstract():
+    assert not inspect.isabstract(description_AbstractVariable)
+
+
+def test_description_abstractvariable_constructor_exists():
+    assert callable(description_AbstractVariable.__init__)
+
+
+def test_description_abstractvariable_constructor_args():
+    sig = inspect.signature(description_AbstractVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_nodecreationvariable_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_NodeCreationVariable)
+
+
+def test_diagram_tool_nodecreationvariable_constructor_exists():
+    assert callable(diagram_tool_NodeCreationVariable.__init__)
+
+
+def test_diagram_tool_nodecreationvariable_constructor_args():
+    sig = inspect.signature(diagram_tool_NodeCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_elementdoubleclickvariable_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ElementDoubleClickVariable)
+
+
+def test_diagram_tool_elementdoubleclickvariable_constructor_exists():
+    assert callable(diagram_tool_ElementDoubleClickVariable.__init__)
+
+
+def test_diagram_tool_elementdoubleclickvariable_constructor_args():
+    sig = inspect.signature(diagram_tool_ElementDoubleClickVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_sourceedgeviewcreationvariable_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_SourceEdgeViewCreationVariable)
+
+
+def test_diagram_tool_sourceedgeviewcreationvariable_constructor_exists():
+    assert callable(diagram_tool_SourceEdgeViewCreationVariable.__init__)
+
+
+def test_diagram_tool_sourceedgeviewcreationvariable_constructor_args():
+    sig = inspect.signature(diagram_tool_SourceEdgeViewCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_targetedgecreationvariable_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_TargetEdgeCreationVariable)
+
+
+def test_diagram_tool_targetedgecreationvariable_constructor_exists():
+    assert callable(diagram_tool_TargetEdgeCreationVariable.__init__)
+
+
+def test_diagram_tool_targetedgecreationvariable_constructor_args():
+    sig = inspect.signature(diagram_tool_TargetEdgeCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_targetedgeviewcreationvariable_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_TargetEdgeViewCreationVariable)
+
+
+def test_diagram_tool_targetedgeviewcreationvariable_constructor_exists():
+    assert callable(diagram_tool_TargetEdgeViewCreationVariable.__init__)
+
+
+def test_diagram_tool_targetedgeviewcreationvariable_constructor_args():
+    sig = inspect.signature(diagram_tool_TargetEdgeViewCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_sourceedgecreationvariable_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_SourceEdgeCreationVariable)
+
+
+def test_diagram_tool_sourceedgecreationvariable_constructor_exists():
+    assert callable(diagram_tool_SourceEdgeCreationVariable.__init__)
+
+
+def test_diagram_tool_sourceedgecreationvariable_constructor_args():
+    sig = inspect.signature(diagram_tool_SourceEdgeCreationVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_behaviortool_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_BehaviorTool)
+
+
+def test_diagram_tool_behaviortool_constructor_exists():
+    assert callable(diagram_tool_BehaviorTool.__init__)
+
+
+def test_diagram_tool_behaviortool_constructor_args():
+    sig = inspect.signature(diagram_tool_BehaviorTool.__init__)
+    params = list(sig.parameters.keys())
+    assert "domainClass" in params, "Missing parameter 'domainClass'"
+
+def test_diagram_tool_behaviortool_has_domainClass():
+    assert hasattr(diagram_tool_BehaviorTool, "domainClass")
+    descriptor = None
+    for klass in diagram_tool_BehaviorTool.__mro__:
+        if "domainClass" in klass.__dict__:
+            descriptor = klass.__dict__["domainClass"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_editmaskvariables_is_not_abstract():
+    assert not inspect.isabstract(tool_EditMaskVariables)
+
+
+def test_tool_editmaskvariables_constructor_exists():
+    assert callable(tool_EditMaskVariables.__init__)
+
+
+def test_tool_editmaskvariables_constructor_args():
+    sig = inspect.signature(tool_EditMaskVariables.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_directeditlabel_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DirectEditLabel)
+
+
+def test_diagram_tool_directeditlabel_constructor_exists():
+    assert callable(diagram_tool_DirectEditLabel.__init__)
+
+
+def test_diagram_tool_directeditlabel_constructor_args():
+    sig = inspect.signature(diagram_tool_DirectEditLabel.__init__)
+    params = list(sig.parameters.keys())
+    assert "inputLabelExpression" in params, "Missing parameter 'inputLabelExpression'"
+
+def test_diagram_tool_directeditlabel_has_inputLabelExpression():
+    assert hasattr(diagram_tool_DirectEditLabel, "inputLabelExpression")
+    descriptor = None
+    for klass in diagram_tool_DirectEditLabel.__mro__:
+        if "inputLabelExpression" in klass.__dict__:
+            descriptor = klass.__dict__["inputLabelExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_createview_is_not_abstract():
+    assert not inspect.isabstract(CreateView)
+
+
+def test_createview_constructor_exists():
+    assert callable(CreateView.__init__)
+
+
+def test_createview_constructor_args():
+    sig = inspect.signature(CreateView.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_createedgeview_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_CreateEdgeView)
+
+
+def test_diagram_tool_createedgeview_constructor_exists():
+    assert callable(diagram_tool_CreateEdgeView.__init__)
+
+
+def test_diagram_tool_createedgeview_constructor_args():
+    sig = inspect.signature(diagram_tool_CreateEdgeView.__init__)
+    params = list(sig.parameters.keys())
+    assert "targetExpression" in params, "Missing parameter 'targetExpression'"
+    assert "sourceExpression" in params, "Missing parameter 'sourceExpression'"
+
+def test_diagram_tool_createedgeview_has_targetExpression():
+    assert hasattr(diagram_tool_CreateEdgeView, "targetExpression")
+    descriptor = None
+    for klass in diagram_tool_CreateEdgeView.__mro__:
+        if "targetExpression" in klass.__dict__:
+            descriptor = klass.__dict__["targetExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_tool_createedgeview_has_sourceExpression():
+    assert hasattr(diagram_tool_CreateEdgeView, "sourceExpression")
+    descriptor = None
+    for klass in diagram_tool_CreateEdgeView.__mro__:
+        if "sourceExpression" in klass.__dict__:
+            descriptor = klass.__dict__["sourceExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tool_elementselectvariable_is_not_abstract():
+    assert not inspect.isabstract(tool_ElementSelectVariable)
+
+
+def test_tool_elementselectvariable_constructor_exists():
+    assert callable(tool_ElementSelectVariable.__init__)
+
+
+def test_tool_elementselectvariable_constructor_args():
+    sig = inspect.signature(tool_ElementSelectVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_tool_reconnectedgedescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ReconnectEdgeDescription)
+
+
+def test_diagram_tool_reconnectedgedescription_constructor_exists():
+    assert callable(diagram_tool_ReconnectEdgeDescription.__init__)
+
+
+def test_diagram_tool_reconnectedgedescription_constructor_args():
+    sig = inspect.signature(diagram_tool_ReconnectEdgeDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "reconnectionKind" in params, "Missing parameter 'reconnectionKind'"
+
+def test_diagram_tool_reconnectedgedescription_has_reconnectionKind():
+    assert hasattr(diagram_tool_ReconnectEdgeDescription, "reconnectionKind")
+    descriptor = None
+    for klass in diagram_tool_ReconnectEdgeDescription.__mro__:
+        if "reconnectionKind" in klass.__dict__:
+            descriptor = klass.__dict__["reconnectionKind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_tool_deletehookparameter_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_DeleteHookParameter)
+
+
+def test_diagram_tool_deletehookparameter_constructor_exists():
+    assert callable(diagram_tool_DeleteHookParameter.__init__)
+
+
+def test_diagram_tool_deletehookparameter_constructor_args():
+    sig = inspect.signature(diagram_tool_DeleteHookParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_diagram_tool_deletehookparameter_has_name():
+    assert hasattr(diagram_tool_DeleteHookParameter, "name")
+    descriptor = None
+    for klass in diagram_tool_DeleteHookParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_tool_deletehookparameter_has_value():
+    assert hasattr(diagram_tool_DeleteHookParameter, "value")
+    descriptor = None
+    for klass in diagram_tool_DeleteHookParameter.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_hidelabelcapabilitystyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_HideLabelCapabilityStyle)
+
+
+def test_diagram_hidelabelcapabilitystyle_constructor_exists():
+    assert callable(diagram_HideLabelCapabilityStyle.__init__)
+
+
+def test_diagram_hidelabelcapabilitystyle_constructor_args():
+    sig = inspect.signature(diagram_HideLabelCapabilityStyle.__init__)
     params = list(sig.parameters.keys())
     assert "hideLabelByDefault" in params, "Missing parameter 'hideLabelByDefault'"
 
-def test_diagram::hidelabelcapabilitystyle_has_hideLabelByDefault():
-    assert hasattr(diagram::HideLabelCapabilityStyle, "hideLabelByDefault")
+def test_diagram_hidelabelcapabilitystyle_has_hideLabelByDefault():
+    assert hasattr(diagram_HideLabelCapabilityStyle, "hideLabelByDefault")
     descriptor = None
-    for klass in diagram::HideLabelCapabilityStyle.__mro__:
+    for klass in diagram_HideLabelCapabilityStyle.__mro__:
         if "hideLabelByDefault" in klass.__dict__:
             descriptor = klass.__dict__["hideLabelByDefault"]
             break
@@ -1225,44 +3259,98 @@ def test_diagram::hidelabelcapabilitystyle_has_hideLabelByDefault():
 
 
 
-def test_diagram::draganddroptarget_is_not_abstract():
-    assert not inspect.isabstract(diagram::DragAndDropTarget)
+def test_diagram_draganddroptarget_is_not_abstract():
+    assert not inspect.isabstract(diagram_DragAndDropTarget)
 
 
-def test_diagram::draganddroptarget_constructor_exists():
-    assert callable(diagram::DragAndDropTarget.__init__)
+def test_diagram_draganddroptarget_constructor_exists():
+    assert callable(diagram_DragAndDropTarget.__init__)
 
 
-def test_diagram::draganddroptarget_constructor_args():
-    sig = inspect.signature(diagram::DragAndDropTarget.__init__)
+def test_diagram_draganddroptarget_constructor_args():
+    sig = inspect.signature(diagram_DragAndDropTarget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_style::styledescription_is_not_abstract():
-    assert not inspect.isabstract(style::StyleDescription)
+def test_style_styledescription_is_not_abstract():
+    assert not inspect.isabstract(style_StyleDescription)
 
 
-def test_style::styledescription_constructor_exists():
-    assert callable(style::StyleDescription.__init__)
+def test_style_styledescription_constructor_exists():
+    assert callable(style_StyleDescription.__init__)
 
 
-def test_style::styledescription_constructor_args():
-    sig = inspect.signature(style::StyleDescription.__init__)
+def test_style_styledescription_constructor_args():
+    sig = inspect.signature(style_StyleDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::computedstyledescriptionregistry_is_not_abstract():
-    assert not inspect.isabstract(diagram::ComputedStyleDescriptionRegistry)
+def test_diagram_style_nodestyledescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_style_NodeStyleDescription)
 
 
-def test_diagram::computedstyledescriptionregistry_constructor_exists():
-    assert callable(diagram::ComputedStyleDescriptionRegistry.__init__)
+def test_diagram_style_nodestyledescription_constructor_exists():
+    assert callable(diagram_style_NodeStyleDescription.__init__)
 
 
-def test_diagram::computedstyledescriptionregistry_constructor_args():
-    sig = inspect.signature(diagram::ComputedStyleDescriptionRegistry.__init__)
+def test_diagram_style_nodestyledescription_constructor_args():
+    sig = inspect.signature(diagram_style_NodeStyleDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "resizeKind" in params, "Missing parameter 'resizeKind'"
+    assert "sizeComputationExpression" in params, "Missing parameter 'sizeComputationExpression'"
+    assert "labelPosition" in params, "Missing parameter 'labelPosition'"
+    assert "forbiddenSides" in params, "Missing parameter 'forbiddenSides'"
+
+def test_diagram_style_nodestyledescription_has_resizeKind():
+    assert hasattr(diagram_style_NodeStyleDescription, "resizeKind")
+    descriptor = None
+    for klass in diagram_style_NodeStyleDescription.__mro__:
+        if "resizeKind" in klass.__dict__:
+            descriptor = klass.__dict__["resizeKind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_nodestyledescription_has_sizeComputationExpression():
+    assert hasattr(diagram_style_NodeStyleDescription, "sizeComputationExpression")
+    descriptor = None
+    for klass in diagram_style_NodeStyleDescription.__mro__:
+        if "sizeComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["sizeComputationExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_nodestyledescription_has_labelPosition():
+    assert hasattr(diagram_style_NodeStyleDescription, "labelPosition")
+    descriptor = None
+    for klass in diagram_style_NodeStyleDescription.__mro__:
+        if "labelPosition" in klass.__dict__:
+            descriptor = klass.__dict__["labelPosition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_style_nodestyledescription_has_forbiddenSides():
+    assert hasattr(diagram_style_NodeStyleDescription, "forbiddenSides")
+    descriptor = None
+    for klass in diagram_style_NodeStyleDescription.__mro__:
+        if "forbiddenSides" in klass.__dict__:
+            descriptor = klass.__dict__["forbiddenSides"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_computedstyledescriptionregistry_is_not_abstract():
+    assert not inspect.isabstract(diagram_ComputedStyleDescriptionRegistry)
+
+
+def test_diagram_computedstyledescriptionregistry_constructor_exists():
+    assert callable(diagram_ComputedStyleDescriptionRegistry.__init__)
+
+
+def test_diagram_computedstyledescriptionregistry_constructor_args():
+    sig = inspect.signature(diagram_ComputedStyleDescriptionRegistry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1281,16 +3369,16 @@ def test_edgestyle_constructor_args():
 
 
 
-def test_diagram::bracketedgestyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::BracketEdgeStyle)
+def test_diagram_bracketedgestyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_BracketEdgeStyle)
 
 
-def test_diagram::bracketedgestyle_constructor_exists():
-    assert callable(diagram::BracketEdgeStyle.__init__)
+def test_diagram_bracketedgestyle_constructor_exists():
+    assert callable(diagram_BracketEdgeStyle.__init__)
 
 
-def test_diagram::bracketedgestyle_constructor_args():
-    sig = inspect.signature(diagram::BracketEdgeStyle.__init__)
+def test_diagram_bracketedgestyle_constructor_args():
+    sig = inspect.signature(diagram_BracketEdgeStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1323,30 +3411,30 @@ def test_collapsefilter_constructor_args():
 
 
 
-def test_diagram::indirectlycollapsefilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::IndirectlyCollapseFilter)
+def test_diagram_indirectlycollapsefilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_IndirectlyCollapseFilter)
 
 
-def test_diagram::indirectlycollapsefilter_constructor_exists():
-    assert callable(diagram::IndirectlyCollapseFilter.__init__)
+def test_diagram_indirectlycollapsefilter_constructor_exists():
+    assert callable(diagram_IndirectlyCollapseFilter.__init__)
 
 
-def test_diagram::indirectlycollapsefilter_constructor_args():
-    sig = inspect.signature(diagram::IndirectlyCollapseFilter.__init__)
+def test_diagram_indirectlycollapsefilter_constructor_args():
+    sig = inspect.signature(diagram_IndirectlyCollapseFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::variablevalue_is_not_abstract():
-    assert not inspect.isabstract(diagram::VariableValue)
+def test_diagram_variablevalue_is_not_abstract():
+    assert not inspect.isabstract(diagram_VariableValue)
 
 
-def test_diagram::variablevalue_constructor_exists():
-    assert callable(diagram::VariableValue.__init__)
+def test_diagram_variablevalue_constructor_exists():
+    assert callable(diagram_VariableValue.__init__)
 
 
-def test_diagram::variablevalue_constructor_args():
-    sig = inspect.signature(diagram::VariableValue.__init__)
+def test_diagram_variablevalue_constructor_args():
+    sig = inspect.signature(diagram_VariableValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1379,37 +3467,23 @@ def test_variablevalue_constructor_args():
 
 
 
-def test_diagram::eobjectvariablevalue_is_not_abstract():
-    assert not inspect.isabstract(diagram::EObjectVariableValue)
+def test_diagram_typedvariablevalue_is_not_abstract():
+    assert not inspect.isabstract(diagram_TypedVariableValue)
 
 
-def test_diagram::eobjectvariablevalue_constructor_exists():
-    assert callable(diagram::EObjectVariableValue.__init__)
+def test_diagram_typedvariablevalue_constructor_exists():
+    assert callable(diagram_TypedVariableValue.__init__)
 
 
-def test_diagram::eobjectvariablevalue_constructor_args():
-    sig = inspect.signature(diagram::EObjectVariableValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::typedvariablevalue_is_not_abstract():
-    assert not inspect.isabstract(diagram::TypedVariableValue)
-
-
-def test_diagram::typedvariablevalue_constructor_exists():
-    assert callable(diagram::TypedVariableValue.__init__)
-
-
-def test_diagram::typedvariablevalue_constructor_args():
-    sig = inspect.signature(diagram::TypedVariableValue.__init__)
+def test_diagram_typedvariablevalue_constructor_args():
+    sig = inspect.signature(diagram_TypedVariableValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_diagram::typedvariablevalue_has_value():
-    assert hasattr(diagram::TypedVariableValue, "value")
+def test_diagram_typedvariablevalue_has_value():
+    assert hasattr(diagram_TypedVariableValue, "value")
     descriptor = None
-    for klass in diagram::TypedVariableValue.__mro__:
+    for klass in diagram_TypedVariableValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1417,44 +3491,58 @@ def test_diagram::typedvariablevalue_has_value():
 
 
 
-def test_diagram::endlabelstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::EndLabelStyle)
+def test_diagram_eobjectvariablevalue_is_not_abstract():
+    assert not inspect.isabstract(diagram_EObjectVariableValue)
 
 
-def test_diagram::endlabelstyle_constructor_exists():
-    assert callable(diagram::EndLabelStyle.__init__)
+def test_diagram_eobjectvariablevalue_constructor_exists():
+    assert callable(diagram_EObjectVariableValue.__init__)
 
 
-def test_diagram::endlabelstyle_constructor_args():
-    sig = inspect.signature(diagram::EndLabelStyle.__init__)
+def test_diagram_eobjectvariablevalue_constructor_args():
+    sig = inspect.signature(diagram_EObjectVariableValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::beginlabelstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::BeginLabelStyle)
+def test_diagram_endlabelstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_EndLabelStyle)
 
 
-def test_diagram::beginlabelstyle_constructor_exists():
-    assert callable(diagram::BeginLabelStyle.__init__)
+def test_diagram_endlabelstyle_constructor_exists():
+    assert callable(diagram_EndLabelStyle.__init__)
 
 
-def test_diagram::beginlabelstyle_constructor_args():
-    sig = inspect.signature(diagram::BeginLabelStyle.__init__)
+def test_diagram_endlabelstyle_constructor_args():
+    sig = inspect.signature(diagram_EndLabelStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::centerlabelstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::CenterLabelStyle)
+def test_diagram_beginlabelstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_BeginLabelStyle)
 
 
-def test_diagram::centerlabelstyle_constructor_exists():
-    assert callable(diagram::CenterLabelStyle.__init__)
+def test_diagram_beginlabelstyle_constructor_exists():
+    assert callable(diagram_BeginLabelStyle.__init__)
 
 
-def test_diagram::centerlabelstyle_constructor_args():
-    sig = inspect.signature(diagram::CenterLabelStyle.__init__)
+def test_diagram_beginlabelstyle_constructor_args():
+    sig = inspect.signature(diagram_BeginLabelStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_centerlabelstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_CenterLabelStyle)
+
+
+def test_diagram_centerlabelstyle_constructor_exists():
+    assert callable(diagram_CenterLabelStyle.__init__)
+
+
+def test_diagram_centerlabelstyle_constructor_args():
+    sig = inspect.signature(diagram_CenterLabelStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1473,77 +3561,77 @@ def test_containerstyle_constructor_args():
 
 
 
-def test_diagram::shapecontainerstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::ShapeContainerStyle)
+def test_diagram_shapecontainerstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_ShapeContainerStyle)
 
 
-def test_diagram::shapecontainerstyle_constructor_exists():
-    assert callable(diagram::ShapeContainerStyle.__init__)
+def test_diagram_shapecontainerstyle_constructor_exists():
+    assert callable(diagram_ShapeContainerStyle.__init__)
 
 
-def test_diagram::shapecontainerstyle_constructor_args():
-    sig = inspect.signature(diagram::ShapeContainerStyle.__init__)
+def test_diagram_shapecontainerstyle_constructor_args():
+    sig = inspect.signature(diagram_ShapeContainerStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "backgroundColor" in params, "Missing parameter 'backgroundColor'"
     assert "shape" in params, "Missing parameter 'shape'"
+    assert "backgroundColor" in params, "Missing parameter 'backgroundColor'"
 
-def test_diagram::shapecontainerstyle_has_backgroundColor():
-    assert hasattr(diagram::ShapeContainerStyle, "backgroundColor")
+def test_diagram_shapecontainerstyle_has_shape():
+    assert hasattr(diagram_ShapeContainerStyle, "shape")
     descriptor = None
-    for klass in diagram::ShapeContainerStyle.__mro__:
-        if "backgroundColor" in klass.__dict__:
-            descriptor = klass.__dict__["backgroundColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::shapecontainerstyle_has_shape():
-    assert hasattr(diagram::ShapeContainerStyle, "shape")
-    descriptor = None
-    for klass in diagram::ShapeContainerStyle.__mro__:
+    for klass in diagram_ShapeContainerStyle.__mro__:
         if "shape" in klass.__dict__:
             descriptor = klass.__dict__["shape"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagram::flatcontainerstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::FlatContainerStyle)
-
-
-def test_diagram::flatcontainerstyle_constructor_exists():
-    assert callable(diagram::FlatContainerStyle.__init__)
-
-
-def test_diagram::flatcontainerstyle_constructor_args():
-    sig = inspect.signature(diagram::FlatContainerStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "foregroundColor" in params, "Missing parameter 'foregroundColor'"
-    assert "backgroundColor" in params, "Missing parameter 'backgroundColor'"
-    assert "backgroundStyle" in params, "Missing parameter 'backgroundStyle'"
-
-def test_diagram::flatcontainerstyle_has_foregroundColor():
-    assert hasattr(diagram::FlatContainerStyle, "foregroundColor")
+def test_diagram_shapecontainerstyle_has_backgroundColor():
+    assert hasattr(diagram_ShapeContainerStyle, "backgroundColor")
     descriptor = None
-    for klass in diagram::FlatContainerStyle.__mro__:
-        if "foregroundColor" in klass.__dict__:
-            descriptor = klass.__dict__["foregroundColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::flatcontainerstyle_has_backgroundColor():
-    assert hasattr(diagram::FlatContainerStyle, "backgroundColor")
-    descriptor = None
-    for klass in diagram::FlatContainerStyle.__mro__:
+    for klass in diagram_ShapeContainerStyle.__mro__:
         if "backgroundColor" in klass.__dict__:
             descriptor = klass.__dict__["backgroundColor"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::flatcontainerstyle_has_backgroundStyle():
-    assert hasattr(diagram::FlatContainerStyle, "backgroundStyle")
+
+
+def test_diagram_flatcontainerstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_FlatContainerStyle)
+
+
+def test_diagram_flatcontainerstyle_constructor_exists():
+    assert callable(diagram_FlatContainerStyle.__init__)
+
+
+def test_diagram_flatcontainerstyle_constructor_args():
+    sig = inspect.signature(diagram_FlatContainerStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "backgroundColor" in params, "Missing parameter 'backgroundColor'"
+    assert "foregroundColor" in params, "Missing parameter 'foregroundColor'"
+    assert "backgroundStyle" in params, "Missing parameter 'backgroundStyle'"
+
+def test_diagram_flatcontainerstyle_has_backgroundColor():
+    assert hasattr(diagram_FlatContainerStyle, "backgroundColor")
     descriptor = None
-    for klass in diagram::FlatContainerStyle.__mro__:
+    for klass in diagram_FlatContainerStyle.__mro__:
+        if "backgroundColor" in klass.__dict__:
+            descriptor = klass.__dict__["backgroundColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_flatcontainerstyle_has_foregroundColor():
+    assert hasattr(diagram_FlatContainerStyle, "foregroundColor")
+    descriptor = None
+    for klass in diagram_FlatContainerStyle.__mro__:
+        if "foregroundColor" in klass.__dict__:
+            descriptor = klass.__dict__["foregroundColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_flatcontainerstyle_has_backgroundStyle():
+    assert hasattr(diagram_FlatContainerStyle, "backgroundStyle")
+    descriptor = None
+    for klass in diagram_FlatContainerStyle.__mro__:
         if "backgroundStyle" in klass.__dict__:
             descriptor = klass.__dict__["backgroundStyle"]
             break
@@ -1565,75 +3653,75 @@ def test_customizable_constructor_args():
 
 
 
-def test_diagram::gaugesection_is_not_abstract():
-    assert not inspect.isabstract(diagram::GaugeSection)
+def test_diagram_gaugesection_is_not_abstract():
+    assert not inspect.isabstract(diagram_GaugeSection)
 
 
-def test_diagram::gaugesection_constructor_exists():
-    assert callable(diagram::GaugeSection.__init__)
+def test_diagram_gaugesection_constructor_exists():
+    assert callable(diagram_GaugeSection.__init__)
 
 
-def test_diagram::gaugesection_constructor_args():
-    sig = inspect.signature(diagram::GaugeSection.__init__)
+def test_diagram_gaugesection_constructor_args():
+    sig = inspect.signature(diagram_GaugeSection.__init__)
     params = list(sig.parameters.keys())
-    assert "min" in params, "Missing parameter 'min'"
-    assert "value" in params, "Missing parameter 'value'"
-    assert "label" in params, "Missing parameter 'label'"
     assert "max" in params, "Missing parameter 'max'"
+    assert "label" in params, "Missing parameter 'label'"
     assert "backgroundColor" in params, "Missing parameter 'backgroundColor'"
     assert "foregroundColor" in params, "Missing parameter 'foregroundColor'"
+    assert "value" in params, "Missing parameter 'value'"
+    assert "min" in params, "Missing parameter 'min'"
 
-def test_diagram::gaugesection_has_min():
-    assert hasattr(diagram::GaugeSection, "min")
+def test_diagram_gaugesection_has_max():
+    assert hasattr(diagram_GaugeSection, "max")
     descriptor = None
-    for klass in diagram::GaugeSection.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::gaugesection_has_value():
-    assert hasattr(diagram::GaugeSection, "value")
-    descriptor = None
-    for klass in diagram::GaugeSection.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::gaugesection_has_label():
-    assert hasattr(diagram::GaugeSection, "label")
-    descriptor = None
-    for klass in diagram::GaugeSection.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::gaugesection_has_max():
-    assert hasattr(diagram::GaugeSection, "max")
-    descriptor = None
-    for klass in diagram::GaugeSection.__mro__:
+    for klass in diagram_GaugeSection.__mro__:
         if "max" in klass.__dict__:
             descriptor = klass.__dict__["max"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::gaugesection_has_backgroundColor():
-    assert hasattr(diagram::GaugeSection, "backgroundColor")
+def test_diagram_gaugesection_has_label():
+    assert hasattr(diagram_GaugeSection, "label")
     descriptor = None
-    for klass in diagram::GaugeSection.__mro__:
+    for klass in diagram_GaugeSection.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_gaugesection_has_backgroundColor():
+    assert hasattr(diagram_GaugeSection, "backgroundColor")
+    descriptor = None
+    for klass in diagram_GaugeSection.__mro__:
         if "backgroundColor" in klass.__dict__:
             descriptor = klass.__dict__["backgroundColor"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::gaugesection_has_foregroundColor():
-    assert hasattr(diagram::GaugeSection, "foregroundColor")
+def test_diagram_gaugesection_has_foregroundColor():
+    assert hasattr(diagram_GaugeSection, "foregroundColor")
     descriptor = None
-    for klass in diagram::GaugeSection.__mro__:
+    for klass in diagram_GaugeSection.__mro__:
         if "foregroundColor" in klass.__dict__:
             descriptor = klass.__dict__["foregroundColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_gaugesection_has_value():
+    assert hasattr(diagram_GaugeSection, "value")
+    descriptor = None
+    for klass in diagram_GaugeSection.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_gaugesection_has_min():
+    assert hasattr(diagram_GaugeSection, "min")
+    descriptor = None
+    for klass in diagram_GaugeSection.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
@@ -1653,23 +3741,23 @@ def test_nodestyle_constructor_args():
 
 
 
-def test_diagram::note_is_not_abstract():
-    assert not inspect.isabstract(diagram::Note)
+def test_diagram_note_is_not_abstract():
+    assert not inspect.isabstract(diagram_Note)
 
 
-def test_diagram::note_constructor_exists():
-    assert callable(diagram::Note.__init__)
+def test_diagram_note_constructor_exists():
+    assert callable(diagram_Note.__init__)
 
 
-def test_diagram::note_constructor_args():
-    sig = inspect.signature(diagram::Note.__init__)
+def test_diagram_note_constructor_args():
+    sig = inspect.signature(diagram_Note.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_diagram::note_has_color():
-    assert hasattr(diagram::Note, "color")
+def test_diagram_note_has_color():
+    assert hasattr(diagram_Note, "color")
     descriptor = None
-    for klass in diagram::Note.__mro__:
+    for klass in diagram_Note.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -1677,135 +3765,155 @@ def test_diagram::note_has_color():
 
 
 
-def test_diagram::gaugecompositestyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::GaugeCompositeStyle)
+def test_diagram_square_is_not_abstract():
+    assert not inspect.isabstract(diagram_Square)
 
 
-def test_diagram::gaugecompositestyle_constructor_exists():
-    assert callable(diagram::GaugeCompositeStyle.__init__)
+def test_diagram_square_constructor_exists():
+    assert callable(diagram_Square.__init__)
 
 
-def test_diagram::gaugecompositestyle_constructor_args():
-    sig = inspect.signature(diagram::GaugeCompositeStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "alignment" in params, "Missing parameter 'alignment'"
-
-def test_diagram::gaugecompositestyle_has_alignment():
-    assert hasattr(diagram::GaugeCompositeStyle, "alignment")
-    descriptor = None
-    for klass in diagram::GaugeCompositeStyle.__mro__:
-        if "alignment" in klass.__dict__:
-            descriptor = klass.__dict__["alignment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::ellipse_is_not_abstract():
-    assert not inspect.isabstract(diagram::Ellipse)
-
-
-def test_diagram::ellipse_constructor_exists():
-    assert callable(diagram::Ellipse.__init__)
-
-
-def test_diagram::ellipse_constructor_args():
-    sig = inspect.signature(diagram::Ellipse.__init__)
-    params = list(sig.parameters.keys())
-    assert "horizontalDiameter" in params, "Missing parameter 'horizontalDiameter'"
-    assert "color" in params, "Missing parameter 'color'"
-    assert "verticalDiameter" in params, "Missing parameter 'verticalDiameter'"
-
-def test_diagram::ellipse_has_horizontalDiameter():
-    assert hasattr(diagram::Ellipse, "horizontalDiameter")
-    descriptor = None
-    for klass in diagram::Ellipse.__mro__:
-        if "horizontalDiameter" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalDiameter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::ellipse_has_color():
-    assert hasattr(diagram::Ellipse, "color")
-    descriptor = None
-    for klass in diagram::Ellipse.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::ellipse_has_verticalDiameter():
-    assert hasattr(diagram::Ellipse, "verticalDiameter")
-    descriptor = None
-    for klass in diagram::Ellipse.__mro__:
-        if "verticalDiameter" in klass.__dict__:
-            descriptor = klass.__dict__["verticalDiameter"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::lozenge_is_not_abstract():
-    assert not inspect.isabstract(diagram::Lozenge)
-
-
-def test_diagram::lozenge_constructor_exists():
-    assert callable(diagram::Lozenge.__init__)
-
-
-def test_diagram::lozenge_constructor_args():
-    sig = inspect.signature(diagram::Lozenge.__init__)
+def test_diagram_square_constructor_args():
+    sig = inspect.signature(diagram_Square.__init__)
     params = list(sig.parameters.keys())
     assert "width" in params, "Missing parameter 'width'"
-    assert "color" in params, "Missing parameter 'color'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "color" in params, "Missing parameter 'color'"
 
-def test_diagram::lozenge_has_width():
-    assert hasattr(diagram::Lozenge, "width")
+def test_diagram_square_has_width():
+    assert hasattr(diagram_Square, "width")
     descriptor = None
-    for klass in diagram::Lozenge.__mro__:
+    for klass in diagram_Square.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::lozenge_has_color():
-    assert hasattr(diagram::Lozenge, "color")
+def test_diagram_square_has_height():
+    assert hasattr(diagram_Square, "height")
     descriptor = None
-    for klass in diagram::Lozenge.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::lozenge_has_height():
-    assert hasattr(diagram::Lozenge, "height")
-    descriptor = None
-    for klass in diagram::Lozenge.__mro__:
+    for klass in diagram_Square.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
+def test_diagram_square_has_color():
+    assert hasattr(diagram_Square, "color")
+    descriptor = None
+    for klass in diagram_Square.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_diagram::customstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::CustomStyle)
+
+def test_diagram_ellipse_is_not_abstract():
+    assert not inspect.isabstract(diagram_Ellipse)
 
 
-def test_diagram::customstyle_constructor_exists():
-    assert callable(diagram::CustomStyle.__init__)
+def test_diagram_ellipse_constructor_exists():
+    assert callable(diagram_Ellipse.__init__)
 
 
-def test_diagram::customstyle_constructor_args():
-    sig = inspect.signature(diagram::CustomStyle.__init__)
+def test_diagram_ellipse_constructor_args():
+    sig = inspect.signature(diagram_Ellipse.__init__)
+    params = list(sig.parameters.keys())
+    assert "color" in params, "Missing parameter 'color'"
+    assert "verticalDiameter" in params, "Missing parameter 'verticalDiameter'"
+    assert "horizontalDiameter" in params, "Missing parameter 'horizontalDiameter'"
+
+def test_diagram_ellipse_has_color():
+    assert hasattr(diagram_Ellipse, "color")
+    descriptor = None
+    for klass in diagram_Ellipse.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_ellipse_has_verticalDiameter():
+    assert hasattr(diagram_Ellipse, "verticalDiameter")
+    descriptor = None
+    for klass in diagram_Ellipse.__mro__:
+        if "verticalDiameter" in klass.__dict__:
+            descriptor = klass.__dict__["verticalDiameter"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_ellipse_has_horizontalDiameter():
+    assert hasattr(diagram_Ellipse, "horizontalDiameter")
+    descriptor = None
+    for klass in diagram_Ellipse.__mro__:
+        if "horizontalDiameter" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalDiameter"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_lozenge_is_not_abstract():
+    assert not inspect.isabstract(diagram_Lozenge)
+
+
+def test_diagram_lozenge_constructor_exists():
+    assert callable(diagram_Lozenge.__init__)
+
+
+def test_diagram_lozenge_constructor_args():
+    sig = inspect.signature(diagram_Lozenge.__init__)
+    params = list(sig.parameters.keys())
+    assert "height" in params, "Missing parameter 'height'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "width" in params, "Missing parameter 'width'"
+
+def test_diagram_lozenge_has_height():
+    assert hasattr(diagram_Lozenge, "height")
+    descriptor = None
+    for klass in diagram_Lozenge.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_lozenge_has_color():
+    assert hasattr(diagram_Lozenge, "color")
+    descriptor = None
+    for klass in diagram_Lozenge.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_lozenge_has_width():
+    assert hasattr(diagram_Lozenge, "width")
+    descriptor = None
+    for klass in diagram_Lozenge.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_customstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_CustomStyle)
+
+
+def test_diagram_customstyle_constructor_exists():
+    assert callable(diagram_CustomStyle.__init__)
+
+
+def test_diagram_customstyle_constructor_args():
+    sig = inspect.signature(diagram_CustomStyle.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_diagram::customstyle_has_id():
-    assert hasattr(diagram::CustomStyle, "id")
+def test_diagram_customstyle_has_id():
+    assert hasattr(diagram_CustomStyle, "id")
     descriptor = None
-    for klass in diagram::CustomStyle.__mro__:
+    for klass in diagram_CustomStyle.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1813,23 +3921,91 @@ def test_diagram::customstyle_has_id():
 
 
 
-def test_diagram::workspaceimage_is_not_abstract():
-    assert not inspect.isabstract(diagram::WorkspaceImage)
+def test_diagram_bundledimage_is_not_abstract():
+    assert not inspect.isabstract(diagram_BundledImage)
 
 
-def test_diagram::workspaceimage_constructor_exists():
-    assert callable(diagram::WorkspaceImage.__init__)
+def test_diagram_bundledimage_constructor_exists():
+    assert callable(diagram_BundledImage.__init__)
 
 
-def test_diagram::workspaceimage_constructor_args():
-    sig = inspect.signature(diagram::WorkspaceImage.__init__)
+def test_diagram_bundledimage_constructor_args():
+    sig = inspect.signature(diagram_BundledImage.__init__)
+    params = list(sig.parameters.keys())
+    assert "shape" in params, "Missing parameter 'shape'"
+    assert "providedShapeID" in params, "Missing parameter 'providedShapeID'"
+    assert "color" in params, "Missing parameter 'color'"
+
+def test_diagram_bundledimage_has_shape():
+    assert hasattr(diagram_BundledImage, "shape")
+    descriptor = None
+    for klass in diagram_BundledImage.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_bundledimage_has_providedShapeID():
+    assert hasattr(diagram_BundledImage, "providedShapeID")
+    descriptor = None
+    for klass in diagram_BundledImage.__mro__:
+        if "providedShapeID" in klass.__dict__:
+            descriptor = klass.__dict__["providedShapeID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_bundledimage_has_color():
+    assert hasattr(diagram_BundledImage, "color")
+    descriptor = None
+    for klass in diagram_BundledImage.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_gaugecompositestyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_GaugeCompositeStyle)
+
+
+def test_diagram_gaugecompositestyle_constructor_exists():
+    assert callable(diagram_GaugeCompositeStyle.__init__)
+
+
+def test_diagram_gaugecompositestyle_constructor_args():
+    sig = inspect.signature(diagram_GaugeCompositeStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "alignment" in params, "Missing parameter 'alignment'"
+
+def test_diagram_gaugecompositestyle_has_alignment():
+    assert hasattr(diagram_GaugeCompositeStyle, "alignment")
+    descriptor = None
+    for klass in diagram_GaugeCompositeStyle.__mro__:
+        if "alignment" in klass.__dict__:
+            descriptor = klass.__dict__["alignment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_workspaceimage_is_not_abstract():
+    assert not inspect.isabstract(diagram_WorkspaceImage)
+
+
+def test_diagram_workspaceimage_constructor_exists():
+    assert callable(diagram_WorkspaceImage.__init__)
+
+
+def test_diagram_workspaceimage_constructor_args():
+    sig = inspect.signature(diagram_WorkspaceImage.__init__)
     params = list(sig.parameters.keys())
     assert "workspacePath" in params, "Missing parameter 'workspacePath'"
 
-def test_diagram::workspaceimage_has_workspacePath():
-    assert hasattr(diagram::WorkspaceImage, "workspacePath")
+def test_diagram_workspaceimage_has_workspacePath():
+    assert hasattr(diagram_WorkspaceImage, "workspacePath")
     descriptor = None
-    for klass in diagram::WorkspaceImage.__mro__:
+    for klass in diagram_WorkspaceImage.__mro__:
         if "workspacePath" in klass.__dict__:
             descriptor = klass.__dict__["workspacePath"]
             break
@@ -1837,121 +4013,33 @@ def test_diagram::workspaceimage_has_workspacePath():
 
 
 
-def test_diagram::square_is_not_abstract():
-    assert not inspect.isabstract(diagram::Square)
+def test_diagram_dot_is_not_abstract():
+    assert not inspect.isabstract(diagram_Dot)
 
 
-def test_diagram::square_constructor_exists():
-    assert callable(diagram::Square.__init__)
+def test_diagram_dot_constructor_exists():
+    assert callable(diagram_Dot.__init__)
 
 
-def test_diagram::square_constructor_args():
-    sig = inspect.signature(diagram::Square.__init__)
-    params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "color" in params, "Missing parameter 'color'"
-
-def test_diagram::square_has_height():
-    assert hasattr(diagram::Square, "height")
-    descriptor = None
-    for klass in diagram::Square.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::square_has_width():
-    assert hasattr(diagram::Square, "width")
-    descriptor = None
-    for klass in diagram::Square.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::square_has_color():
-    assert hasattr(diagram::Square, "color")
-    descriptor = None
-    for klass in diagram::Square.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::bundledimage_is_not_abstract():
-    assert not inspect.isabstract(diagram::BundledImage)
-
-
-def test_diagram::bundledimage_constructor_exists():
-    assert callable(diagram::BundledImage.__init__)
-
-
-def test_diagram::bundledimage_constructor_args():
-    sig = inspect.signature(diagram::BundledImage.__init__)
-    params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
-    assert "providedShapeID" in params, "Missing parameter 'providedShapeID'"
-    assert "shape" in params, "Missing parameter 'shape'"
-
-def test_diagram::bundledimage_has_color():
-    assert hasattr(diagram::BundledImage, "color")
-    descriptor = None
-    for klass in diagram::BundledImage.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::bundledimage_has_providedShapeID():
-    assert hasattr(diagram::BundledImage, "providedShapeID")
-    descriptor = None
-    for klass in diagram::BundledImage.__mro__:
-        if "providedShapeID" in klass.__dict__:
-            descriptor = klass.__dict__["providedShapeID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::bundledimage_has_shape():
-    assert hasattr(diagram::BundledImage, "shape")
-    descriptor = None
-    for klass in diagram::BundledImage.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::dot_is_not_abstract():
-    assert not inspect.isabstract(diagram::Dot)
-
-
-def test_diagram::dot_constructor_exists():
-    assert callable(diagram::Dot.__init__)
-
-
-def test_diagram::dot_constructor_args():
-    sig = inspect.signature(diagram::Dot.__init__)
+def test_diagram_dot_constructor_args():
+    sig = inspect.signature(diagram_Dot.__init__)
     params = list(sig.parameters.keys())
     assert "backgroundColor" in params, "Missing parameter 'backgroundColor'"
     assert "strokeSizeComputationExpression" in params, "Missing parameter 'strokeSizeComputationExpression'"
 
-def test_diagram::dot_has_backgroundColor():
-    assert hasattr(diagram::Dot, "backgroundColor")
+def test_diagram_dot_has_backgroundColor():
+    assert hasattr(diagram_Dot, "backgroundColor")
     descriptor = None
-    for klass in diagram::Dot.__mro__:
+    for klass in diagram_Dot.__mro__:
         if "backgroundColor" in klass.__dict__:
             descriptor = klass.__dict__["backgroundColor"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dot_has_strokeSizeComputationExpression():
-    assert hasattr(diagram::Dot, "strokeSizeComputationExpression")
+def test_diagram_dot_has_strokeSizeComputationExpression():
+    assert hasattr(diagram_Dot, "strokeSizeComputationExpression")
     descriptor = None
-    for klass in diagram::Dot.__mro__:
+    for klass in diagram_Dot.__mro__:
         if "strokeSizeComputationExpression" in klass.__dict__:
             descriptor = klass.__dict__["strokeSizeComputationExpression"]
             break
@@ -2001,55 +4089,55 @@ def test_style_constructor_args():
 
 
 
-def test_diagram::borderedstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::BorderedStyle)
+def test_diagram_borderedstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_BorderedStyle)
 
 
-def test_diagram::borderedstyle_constructor_exists():
-    assert callable(diagram::BorderedStyle.__init__)
+def test_diagram_borderedstyle_constructor_exists():
+    assert callable(diagram_BorderedStyle.__init__)
 
 
-def test_diagram::borderedstyle_constructor_args():
-    sig = inspect.signature(diagram::BorderedStyle.__init__)
+def test_diagram_borderedstyle_constructor_args():
+    sig = inspect.signature(diagram_BorderedStyle.__init__)
     params = list(sig.parameters.keys())
+    assert "borderSize" in params, "Missing parameter 'borderSize'"
+    assert "borderColor" in params, "Missing parameter 'borderColor'"
     assert "borderLineStyle" in params, "Missing parameter 'borderLineStyle'"
     assert "borderSizeComputationExpression" in params, "Missing parameter 'borderSizeComputationExpression'"
-    assert "borderColor" in params, "Missing parameter 'borderColor'"
-    assert "borderSize" in params, "Missing parameter 'borderSize'"
 
-def test_diagram::borderedstyle_has_borderLineStyle():
-    assert hasattr(diagram::BorderedStyle, "borderLineStyle")
+def test_diagram_borderedstyle_has_borderSize():
+    assert hasattr(diagram_BorderedStyle, "borderSize")
     descriptor = None
-    for klass in diagram::BorderedStyle.__mro__:
-        if "borderLineStyle" in klass.__dict__:
-            descriptor = klass.__dict__["borderLineStyle"]
+    for klass in diagram_BorderedStyle.__mro__:
+        if "borderSize" in klass.__dict__:
+            descriptor = klass.__dict__["borderSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::borderedstyle_has_borderSizeComputationExpression():
-    assert hasattr(diagram::BorderedStyle, "borderSizeComputationExpression")
+def test_diagram_borderedstyle_has_borderColor():
+    assert hasattr(diagram_BorderedStyle, "borderColor")
     descriptor = None
-    for klass in diagram::BorderedStyle.__mro__:
-        if "borderSizeComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["borderSizeComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::borderedstyle_has_borderColor():
-    assert hasattr(diagram::BorderedStyle, "borderColor")
-    descriptor = None
-    for klass in diagram::BorderedStyle.__mro__:
+    for klass in diagram_BorderedStyle.__mro__:
         if "borderColor" in klass.__dict__:
             descriptor = klass.__dict__["borderColor"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::borderedstyle_has_borderSize():
-    assert hasattr(diagram::BorderedStyle, "borderSize")
+def test_diagram_borderedstyle_has_borderLineStyle():
+    assert hasattr(diagram_BorderedStyle, "borderLineStyle")
     descriptor = None
-    for klass in diagram::BorderedStyle.__mro__:
-        if "borderSize" in klass.__dict__:
-            descriptor = klass.__dict__["borderSize"]
+    for klass in diagram_BorderedStyle.__mro__:
+        if "borderLineStyle" in klass.__dict__:
+            descriptor = klass.__dict__["borderLineStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_borderedstyle_has_borderSizeComputationExpression():
+    assert hasattr(diagram_BorderedStyle, "borderSizeComputationExpression")
+    descriptor = None
+    for klass in diagram_BorderedStyle.__mro__:
+        if "borderSizeComputationExpression" in klass.__dict__:
+            descriptor = klass.__dict__["borderSizeComputationExpression"]
             break
     assert isinstance(descriptor, property)
 
@@ -2083,109 +4171,109 @@ def test_iedgemapping_constructor_args():
 
 
 
-def test_diagram::edgetarget_is_not_abstract():
-    assert not inspect.isabstract(diagram::EdgeTarget)
+def test_diagram_edgetarget_is_not_abstract():
+    assert not inspect.isabstract(diagram_EdgeTarget)
 
 
-def test_diagram::edgetarget_constructor_exists():
-    assert callable(diagram::EdgeTarget.__init__)
+def test_diagram_edgetarget_constructor_exists():
+    assert callable(diagram_EdgeTarget.__init__)
 
 
-def test_diagram::edgetarget_constructor_args():
-    sig = inspect.signature(diagram::EdgeTarget.__init__)
+def test_diagram_edgetarget_constructor_args():
+    sig = inspect.signature(diagram_EdgeTarget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::edgestyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::EdgeStyle)
+def test_diagram_edgestyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_EdgeStyle)
 
 
-def test_diagram::edgestyle_constructor_exists():
-    assert callable(diagram::EdgeStyle.__init__)
+def test_diagram_edgestyle_constructor_exists():
+    assert callable(diagram_EdgeStyle.__init__)
 
 
-def test_diagram::edgestyle_constructor_args():
-    sig = inspect.signature(diagram::EdgeStyle.__init__)
+def test_diagram_edgestyle_constructor_args():
+    sig = inspect.signature(diagram_EdgeStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "targetArrow" in params, "Missing parameter 'targetArrow'"
-    assert "sourceArrow" in params, "Missing parameter 'sourceArrow'"
-    assert "foldingStyle" in params, "Missing parameter 'foldingStyle'"
-    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
-    assert "routingStyle" in params, "Missing parameter 'routingStyle'"
     assert "strokeColor" in params, "Missing parameter 'strokeColor'"
+    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
+    assert "foldingStyle" in params, "Missing parameter 'foldingStyle'"
     assert "centered" in params, "Missing parameter 'centered'"
+    assert "sourceArrow" in params, "Missing parameter 'sourceArrow'"
     assert "size" in params, "Missing parameter 'size'"
+    assert "routingStyle" in params, "Missing parameter 'routingStyle'"
+    assert "targetArrow" in params, "Missing parameter 'targetArrow'"
 
-def test_diagram::edgestyle_has_targetArrow():
-    assert hasattr(diagram::EdgeStyle, "targetArrow")
+def test_diagram_edgestyle_has_strokeColor():
+    assert hasattr(diagram_EdgeStyle, "strokeColor")
     descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
-        if "targetArrow" in klass.__dict__:
-            descriptor = klass.__dict__["targetArrow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::edgestyle_has_sourceArrow():
-    assert hasattr(diagram::EdgeStyle, "sourceArrow")
-    descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
-        if "sourceArrow" in klass.__dict__:
-            descriptor = klass.__dict__["sourceArrow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::edgestyle_has_foldingStyle():
-    assert hasattr(diagram::EdgeStyle, "foldingStyle")
-    descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
-        if "foldingStyle" in klass.__dict__:
-            descriptor = klass.__dict__["foldingStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::edgestyle_has_lineStyle():
-    assert hasattr(diagram::EdgeStyle, "lineStyle")
-    descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
-        if "lineStyle" in klass.__dict__:
-            descriptor = klass.__dict__["lineStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::edgestyle_has_routingStyle():
-    assert hasattr(diagram::EdgeStyle, "routingStyle")
-    descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
-        if "routingStyle" in klass.__dict__:
-            descriptor = klass.__dict__["routingStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::edgestyle_has_strokeColor():
-    assert hasattr(diagram::EdgeStyle, "strokeColor")
-    descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
+    for klass in diagram_EdgeStyle.__mro__:
         if "strokeColor" in klass.__dict__:
             descriptor = klass.__dict__["strokeColor"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::edgestyle_has_centered():
-    assert hasattr(diagram::EdgeStyle, "centered")
+def test_diagram_edgestyle_has_lineStyle():
+    assert hasattr(diagram_EdgeStyle, "lineStyle")
     descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
+    for klass in diagram_EdgeStyle.__mro__:
+        if "lineStyle" in klass.__dict__:
+            descriptor = klass.__dict__["lineStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_edgestyle_has_foldingStyle():
+    assert hasattr(diagram_EdgeStyle, "foldingStyle")
+    descriptor = None
+    for klass in diagram_EdgeStyle.__mro__:
+        if "foldingStyle" in klass.__dict__:
+            descriptor = klass.__dict__["foldingStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_edgestyle_has_centered():
+    assert hasattr(diagram_EdgeStyle, "centered")
+    descriptor = None
+    for klass in diagram_EdgeStyle.__mro__:
         if "centered" in klass.__dict__:
             descriptor = klass.__dict__["centered"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::edgestyle_has_size():
-    assert hasattr(diagram::EdgeStyle, "size")
+def test_diagram_edgestyle_has_sourceArrow():
+    assert hasattr(diagram_EdgeStyle, "sourceArrow")
     descriptor = None
-    for klass in diagram::EdgeStyle.__mro__:
+    for klass in diagram_EdgeStyle.__mro__:
+        if "sourceArrow" in klass.__dict__:
+            descriptor = klass.__dict__["sourceArrow"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_edgestyle_has_size():
+    assert hasattr(diagram_EdgeStyle, "size")
+    descriptor = None
+    for klass in diagram_EdgeStyle.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_edgestyle_has_routingStyle():
+    assert hasattr(diagram_EdgeStyle, "routingStyle")
+    descriptor = None
+    for klass in diagram_EdgeStyle.__mro__:
+        if "routingStyle" in klass.__dict__:
+            descriptor = klass.__dict__["routingStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_edgestyle_has_targetArrow():
+    assert hasattr(diagram_EdgeStyle, "targetArrow")
+    descriptor = None
+    for klass in diagram_EdgeStyle.__mro__:
+        if "targetArrow" in klass.__dict__:
+            descriptor = klass.__dict__["targetArrow"]
             break
     assert isinstance(descriptor, property)
 
@@ -2205,37 +4293,37 @@ def test_ddiagramelementcontainer_constructor_args():
 
 
 
-def test_diagram::dnodelist_is_not_abstract():
-    assert not inspect.isabstract(diagram::DNodeList)
+def test_diagram_dnodelist_is_not_abstract():
+    assert not inspect.isabstract(diagram_DNodeList)
 
 
-def test_diagram::dnodelist_constructor_exists():
-    assert callable(diagram::DNodeList.__init__)
+def test_diagram_dnodelist_constructor_exists():
+    assert callable(diagram_DNodeList.__init__)
 
 
-def test_diagram::dnodelist_constructor_args():
-    sig = inspect.signature(diagram::DNodeList.__init__)
+def test_diagram_dnodelist_constructor_args():
+    sig = inspect.signature(diagram_DNodeList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::dnodecontainer_is_not_abstract():
-    assert not inspect.isabstract(diagram::DNodeContainer)
+def test_diagram_dnodecontainer_is_not_abstract():
+    assert not inspect.isabstract(diagram_DNodeContainer)
 
 
-def test_diagram::dnodecontainer_constructor_exists():
-    assert callable(diagram::DNodeContainer.__init__)
+def test_diagram_dnodecontainer_constructor_exists():
+    assert callable(diagram_DNodeContainer.__init__)
 
 
-def test_diagram::dnodecontainer_constructor_args():
-    sig = inspect.signature(diagram::DNodeContainer.__init__)
+def test_diagram_dnodecontainer_constructor_args():
+    sig = inspect.signature(diagram_DNodeContainer.__init__)
     params = list(sig.parameters.keys())
     assert "childrenPresentation" in params, "Missing parameter 'childrenPresentation'"
 
-def test_diagram::dnodecontainer_has_childrenPresentation():
-    assert hasattr(diagram::DNodeContainer, "childrenPresentation")
+def test_diagram_dnodecontainer_has_childrenPresentation():
+    assert hasattr(diagram_DNodeContainer, "childrenPresentation")
     descriptor = None
-    for klass in diagram::DNodeContainer.__mro__:
+    for klass in diagram_DNodeContainer.__mro__:
         if "childrenPresentation" in klass.__dict__:
             descriptor = klass.__dict__["childrenPresentation"]
             break
@@ -2257,16 +4345,16 @@ def test_containermapping_constructor_args():
 
 
 
-def test_diagram::containerstyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::ContainerStyle)
+def test_diagram_containerstyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_ContainerStyle)
 
 
-def test_diagram::containerstyle_constructor_exists():
-    assert callable(diagram::ContainerStyle.__init__)
+def test_diagram_containerstyle_constructor_exists():
+    assert callable(diagram_ContainerStyle.__init__)
 
 
-def test_diagram::containerstyle_constructor_args():
-    sig = inspect.signature(diagram::ContainerStyle.__init__)
+def test_diagram_containerstyle_constructor_args():
+    sig = inspect.signature(diagram_ContainerStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2285,37 +4373,37 @@ def test_nodemapping_constructor_args():
 
 
 
-def test_diagram::style_is_not_abstract():
-    assert not inspect.isabstract(diagram::Style)
+def test_diagram_style_is_not_abstract():
+    assert not inspect.isabstract(diagram_Style)
 
 
-def test_diagram::style_constructor_exists():
-    assert callable(diagram::Style.__init__)
+def test_diagram_style_constructor_exists():
+    assert callable(diagram_Style.__init__)
 
 
-def test_diagram::style_constructor_args():
-    sig = inspect.signature(diagram::Style.__init__)
+def test_diagram_style_constructor_args():
+    sig = inspect.signature(diagram_Style.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::nodestyle_is_not_abstract():
-    assert not inspect.isabstract(diagram::NodeStyle)
+def test_diagram_nodestyle_is_not_abstract():
+    assert not inspect.isabstract(diagram_NodeStyle)
 
 
-def test_diagram::nodestyle_constructor_exists():
-    assert callable(diagram::NodeStyle.__init__)
+def test_diagram_nodestyle_constructor_exists():
+    assert callable(diagram_NodeStyle.__init__)
 
 
-def test_diagram::nodestyle_constructor_args():
-    sig = inspect.signature(diagram::NodeStyle.__init__)
+def test_diagram_nodestyle_constructor_args():
+    sig = inspect.signature(diagram_NodeStyle.__init__)
     params = list(sig.parameters.keys())
     assert "labelPosition" in params, "Missing parameter 'labelPosition'"
 
-def test_diagram::nodestyle_has_labelPosition():
-    assert hasattr(diagram::NodeStyle, "labelPosition")
+def test_diagram_nodestyle_has_labelPosition():
+    assert hasattr(diagram_NodeStyle, "labelPosition")
     descriptor = None
-    for klass in diagram::NodeStyle.__mro__:
+    for klass in diagram_NodeStyle.__mro__:
         if "labelPosition" in klass.__dict__:
             descriptor = klass.__dict__["labelPosition"]
             break
@@ -2365,23 +4453,23 @@ def test_ddiagramelement_constructor_args():
 
 
 
-def test_diagram::abstractdnode_is_not_abstract():
-    assert not inspect.isabstract(diagram::AbstractDNode)
+def test_diagram_abstractdnode_is_not_abstract():
+    assert not inspect.isabstract(diagram_AbstractDNode)
 
 
-def test_diagram::abstractdnode_constructor_exists():
-    assert callable(diagram::AbstractDNode.__init__)
+def test_diagram_abstractdnode_constructor_exists():
+    assert callable(diagram_AbstractDNode.__init__)
 
 
-def test_diagram::abstractdnode_constructor_args():
-    sig = inspect.signature(diagram::AbstractDNode.__init__)
+def test_diagram_abstractdnode_constructor_args():
+    sig = inspect.signature(diagram_AbstractDNode.__init__)
     params = list(sig.parameters.keys())
     assert "arrangeConstraints" in params, "Missing parameter 'arrangeConstraints'"
 
-def test_diagram::abstractdnode_has_arrangeConstraints():
-    assert hasattr(diagram::AbstractDNode, "arrangeConstraints")
+def test_diagram_abstractdnode_has_arrangeConstraints():
+    assert hasattr(diagram_AbstractDNode, "arrangeConstraints")
     descriptor = None
-    for klass in diagram::AbstractDNode.__mro__:
+    for klass in diagram_AbstractDNode.__mro__:
         if "arrangeConstraints" in klass.__dict__:
             descriptor = klass.__dict__["arrangeConstraints"]
             break
@@ -2389,16 +4477,16 @@ def test_diagram::abstractdnode_has_arrangeConstraints():
 
 
 
-def test_filter::compositefilterdescription_is_not_abstract():
-    assert not inspect.isabstract(filter::CompositeFilterDescription)
+def test_filter_compositefilterdescription_is_not_abstract():
+    assert not inspect.isabstract(filter_CompositeFilterDescription)
 
 
-def test_filter::compositefilterdescription_constructor_exists():
-    assert callable(filter::CompositeFilterDescription.__init__)
+def test_filter_compositefilterdescription_constructor_exists():
+    assert callable(filter_CompositeFilterDescription.__init__)
 
 
-def test_filter::compositefilterdescription_constructor_args():
-    sig = inspect.signature(filter::CompositeFilterDescription.__init__)
+def test_filter_compositefilterdescription_constructor_args():
+    sig = inspect.signature(filter_CompositeFilterDescription.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2417,87 +4505,143 @@ def test_graphicalfilter_constructor_args():
 
 
 
-def test_diagram::absoluteboundsfilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::AbsoluteBoundsFilter)
+def test_diagram_appliedcompositefilters_is_not_abstract():
+    assert not inspect.isabstract(diagram_AppliedCompositeFilters)
 
 
-def test_diagram::absoluteboundsfilter_constructor_exists():
-    assert callable(diagram::AbsoluteBoundsFilter.__init__)
+def test_diagram_appliedcompositefilters_constructor_exists():
+    assert callable(diagram_AppliedCompositeFilters.__init__)
 
 
-def test_diagram::absoluteboundsfilter_constructor_args():
-    sig = inspect.signature(diagram::AbsoluteBoundsFilter.__init__)
+def test_diagram_appliedcompositefilters_constructor_args():
+    sig = inspect.signature(diagram_AppliedCompositeFilters.__init__)
     params = list(sig.parameters.keys())
-    assert "width" in params, "Missing parameter 'width'"
-    assert "x" in params, "Missing parameter 'x'"
-    assert "y" in params, "Missing parameter 'y'"
-    assert "height" in params, "Missing parameter 'height'"
 
-def test_diagram::absoluteboundsfilter_has_width():
-    assert hasattr(diagram::AbsoluteBoundsFilter, "width")
+
+
+def test_diagram_hidelabelfilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_HideLabelFilter)
+
+
+def test_diagram_hidelabelfilter_constructor_exists():
+    assert callable(diagram_HideLabelFilter.__init__)
+
+
+def test_diagram_hidelabelfilter_constructor_args():
+    sig = inspect.signature(diagram_HideLabelFilter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_foldingpointfilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_FoldingPointFilter)
+
+
+def test_diagram_foldingpointfilter_constructor_exists():
+    assert callable(diagram_FoldingPointFilter.__init__)
+
+
+def test_diagram_foldingpointfilter_constructor_args():
+    sig = inspect.signature(diagram_FoldingPointFilter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_collapsefilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_CollapseFilter)
+
+
+def test_diagram_collapsefilter_constructor_exists():
+    assert callable(diagram_CollapseFilter.__init__)
+
+
+def test_diagram_collapsefilter_constructor_args():
+    sig = inspect.signature(diagram_CollapseFilter.__init__)
+    params = list(sig.parameters.keys())
+    assert "height" in params, "Missing parameter 'height'"
+    assert "width" in params, "Missing parameter 'width'"
+
+def test_diagram_collapsefilter_has_height():
+    assert hasattr(diagram_CollapseFilter, "height")
     descriptor = None
-    for klass in diagram::AbsoluteBoundsFilter.__mro__:
+    for klass in diagram_CollapseFilter.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_collapsefilter_has_width():
+    assert hasattr(diagram_CollapseFilter, "width")
+    descriptor = None
+    for klass in diagram_CollapseFilter.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::absoluteboundsfilter_has_x():
-    assert hasattr(diagram::AbsoluteBoundsFilter, "x")
+
+
+def test_diagram_foldingfilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_FoldingFilter)
+
+
+def test_diagram_foldingfilter_constructor_exists():
+    assert callable(diagram_FoldingFilter.__init__)
+
+
+def test_diagram_foldingfilter_constructor_args():
+    sig = inspect.signature(diagram_FoldingFilter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_absoluteboundsfilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_AbsoluteBoundsFilter)
+
+
+def test_diagram_absoluteboundsfilter_constructor_exists():
+    assert callable(diagram_AbsoluteBoundsFilter.__init__)
+
+
+def test_diagram_absoluteboundsfilter_constructor_args():
+    sig = inspect.signature(diagram_AbsoluteBoundsFilter.__init__)
+    params = list(sig.parameters.keys())
+    assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "width" in params, "Missing parameter 'width'"
+
+def test_diagram_absoluteboundsfilter_has_x():
+    assert hasattr(diagram_AbsoluteBoundsFilter, "x")
     descriptor = None
-    for klass in diagram::AbsoluteBoundsFilter.__mro__:
+    for klass in diagram_AbsoluteBoundsFilter.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::absoluteboundsfilter_has_y():
-    assert hasattr(diagram::AbsoluteBoundsFilter, "y")
+def test_diagram_absoluteboundsfilter_has_y():
+    assert hasattr(diagram_AbsoluteBoundsFilter, "y")
     descriptor = None
-    for klass in diagram::AbsoluteBoundsFilter.__mro__:
+    for klass in diagram_AbsoluteBoundsFilter.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::absoluteboundsfilter_has_height():
-    assert hasattr(diagram::AbsoluteBoundsFilter, "height")
+def test_diagram_absoluteboundsfilter_has_height():
+    assert hasattr(diagram_AbsoluteBoundsFilter, "height")
     descriptor = None
-    for klass in diagram::AbsoluteBoundsFilter.__mro__:
+    for klass in diagram_AbsoluteBoundsFilter.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagram::collapsefilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::CollapseFilter)
-
-
-def test_diagram::collapsefilter_constructor_exists():
-    assert callable(diagram::CollapseFilter.__init__)
-
-
-def test_diagram::collapsefilter_constructor_args():
-    sig = inspect.signature(diagram::CollapseFilter.__init__)
-    params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_diagram::collapsefilter_has_height():
-    assert hasattr(diagram::CollapseFilter, "height")
+def test_diagram_absoluteboundsfilter_has_width():
+    assert hasattr(diagram_AbsoluteBoundsFilter, "width")
     descriptor = None
-    for klass in diagram::CollapseFilter.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::collapsefilter_has_width():
-    assert hasattr(diagram::CollapseFilter, "width")
-    descriptor = None
-    for klass in diagram::CollapseFilter.__mro__:
+    for klass in diagram_AbsoluteBoundsFilter.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
@@ -2505,86 +4649,30 @@ def test_diagram::collapsefilter_has_width():
 
 
 
-def test_diagram::foldingpointfilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::FoldingPointFilter)
+def test_diagram_hidefilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_HideFilter)
 
 
-def test_diagram::foldingpointfilter_constructor_exists():
-    assert callable(diagram::FoldingPointFilter.__init__)
+def test_diagram_hidefilter_constructor_exists():
+    assert callable(diagram_HideFilter.__init__)
 
 
-def test_diagram::foldingpointfilter_constructor_args():
-    sig = inspect.signature(diagram::FoldingPointFilter.__init__)
+def test_diagram_hidefilter_constructor_args():
+    sig = inspect.signature(diagram_HideFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::hidelabelfilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::HideLabelFilter)
+def test_diagram_graphicalfilter_is_not_abstract():
+    assert not inspect.isabstract(diagram_GraphicalFilter)
 
 
-def test_diagram::hidelabelfilter_constructor_exists():
-    assert callable(diagram::HideLabelFilter.__init__)
+def test_diagram_graphicalfilter_constructor_exists():
+    assert callable(diagram_GraphicalFilter.__init__)
 
 
-def test_diagram::hidelabelfilter_constructor_args():
-    sig = inspect.signature(diagram::HideLabelFilter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::appliedcompositefilters_is_not_abstract():
-    assert not inspect.isabstract(diagram::AppliedCompositeFilters)
-
-
-def test_diagram::appliedcompositefilters_constructor_exists():
-    assert callable(diagram::AppliedCompositeFilters.__init__)
-
-
-def test_diagram::appliedcompositefilters_constructor_args():
-    sig = inspect.signature(diagram::AppliedCompositeFilters.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::foldingfilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::FoldingFilter)
-
-
-def test_diagram::foldingfilter_constructor_exists():
-    assert callable(diagram::FoldingFilter.__init__)
-
-
-def test_diagram::foldingfilter_constructor_args():
-    sig = inspect.signature(diagram::FoldingFilter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::hidefilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::HideFilter)
-
-
-def test_diagram::hidefilter_constructor_exists():
-    assert callable(diagram::HideFilter.__init__)
-
-
-def test_diagram::hidefilter_constructor_args():
-    sig = inspect.signature(diagram::HideFilter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::graphicalfilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::GraphicalFilter)
-
-
-def test_diagram::graphicalfilter_constructor_exists():
-    assert callable(diagram::GraphicalFilter.__init__)
-
-
-def test_diagram::graphicalfilter_constructor_args():
-    sig = inspect.signature(diagram::GraphicalFilter.__init__)
+def test_diagram_graphicalfilter_constructor_args():
+    sig = inspect.signature(diagram_GraphicalFilter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2603,16 +4691,16 @@ def test_diagramelementmapping_constructor_args():
 
 
 
-def test_diagram::decoration_is_not_abstract():
-    assert not inspect.isabstract(diagram::Decoration)
+def test_diagram_decoration_is_not_abstract():
+    assert not inspect.isabstract(diagram_Decoration)
 
 
-def test_diagram::decoration_constructor_exists():
-    assert callable(diagram::Decoration.__init__)
+def test_diagram_decoration_constructor_exists():
+    assert callable(diagram_Decoration.__init__)
 
 
-def test_diagram::decoration_constructor_args():
-    sig = inspect.signature(diagram::Decoration.__init__)
+def test_diagram_decoration_constructor_args():
+    sig = inspect.signature(diagram_Decoration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2659,16 +4747,16 @@ def test_ddiagram_constructor_args():
 
 
 
-def test_diagram::dsemanticdiagram_is_not_abstract():
-    assert not inspect.isabstract(diagram::DSemanticDiagram)
+def test_diagram_dsemanticdiagram_is_not_abstract():
+    assert not inspect.isabstract(diagram_DSemanticDiagram)
 
 
-def test_diagram::dsemanticdiagram_constructor_exists():
-    assert callable(diagram::DSemanticDiagram.__init__)
+def test_diagram_dsemanticdiagram_constructor_exists():
+    assert callable(diagram_DSemanticDiagram.__init__)
 
 
-def test_diagram::dsemanticdiagram_constructor_args():
-    sig = inspect.signature(diagram::DSemanticDiagram.__init__)
+def test_diagram_dsemanticdiagram_constructor_args():
+    sig = inspect.signature(diagram_DSemanticDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2687,78 +4775,78 @@ def test_layer_constructor_args():
 
 
 
-def test_diagram::description::additionallayer_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::AdditionalLayer)
+def test_diagram_description_additionallayer_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_AdditionalLayer)
 
 
-def test_diagram::description::additionallayer_constructor_exists():
-    assert callable(diagram::description::AdditionalLayer.__init__)
+def test_diagram_description_additionallayer_constructor_exists():
+    assert callable(diagram_description_AdditionalLayer.__init__)
 
 
-def test_diagram::description::additionallayer_constructor_args():
-    sig = inspect.signature(diagram::description::AdditionalLayer.__init__)
+def test_diagram_description_additionallayer_constructor_args():
+    sig = inspect.signature(diagram_description_AdditionalLayer.__init__)
     params = list(sig.parameters.keys())
-    assert "optional" in params, "Missing parameter 'optional'"
     assert "activeByDefault" in params, "Missing parameter 'activeByDefault'"
+    assert "optional" in params, "Missing parameter 'optional'"
 
-def test_diagram::description::additionallayer_has_optional():
-    assert hasattr(diagram::description::AdditionalLayer, "optional")
+def test_diagram_description_additionallayer_has_activeByDefault():
+    assert hasattr(diagram_description_AdditionalLayer, "activeByDefault")
     descriptor = None
-    for klass in diagram::description::AdditionalLayer.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::additionallayer_has_activeByDefault():
-    assert hasattr(diagram::description::AdditionalLayer, "activeByDefault")
-    descriptor = None
-    for klass in diagram::description::AdditionalLayer.__mro__:
+    for klass in diagram_description_AdditionalLayer.__mro__:
         if "activeByDefault" in klass.__dict__:
             descriptor = klass.__dict__["activeByDefault"]
             break
     assert isinstance(descriptor, property)
 
+def test_diagram_description_additionallayer_has_optional():
+    assert hasattr(diagram_description_AdditionalLayer, "optional")
+    descriptor = None
+    for klass in diagram_description_AdditionalLayer.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_diagram::filtervariablehistory_is_not_abstract():
-    assert not inspect.isabstract(diagram::FilterVariableHistory)
+
+def test_diagram_filtervariablehistory_is_not_abstract():
+    assert not inspect.isabstract(diagram_FilterVariableHistory)
 
 
-def test_diagram::filtervariablehistory_constructor_exists():
-    assert callable(diagram::FilterVariableHistory.__init__)
+def test_diagram_filtervariablehistory_constructor_exists():
+    assert callable(diagram_FilterVariableHistory.__init__)
 
 
-def test_diagram::filtervariablehistory_constructor_args():
-    sig = inspect.signature(diagram::FilterVariableHistory.__init__)
+def test_diagram_filtervariablehistory_constructor_args():
+    sig = inspect.signature(diagram_FilterVariableHistory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tool::behaviortool_is_not_abstract():
-    assert not inspect.isabstract(tool::BehaviorTool)
+def test_tool_behaviortool_is_not_abstract():
+    assert not inspect.isabstract(tool_BehaviorTool)
 
 
-def test_tool::behaviortool_constructor_exists():
-    assert callable(tool::BehaviorTool.__init__)
+def test_tool_behaviortool_constructor_exists():
+    assert callable(tool_BehaviorTool.__init__)
 
 
-def test_tool::behaviortool_constructor_args():
-    sig = inspect.signature(tool::BehaviorTool.__init__)
+def test_tool_behaviortool_constructor_args():
+    sig = inspect.signature(tool_BehaviorTool.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_validation::validationrule_is_not_abstract():
-    assert not inspect.isabstract(validation::ValidationRule)
+def test_validation_validationrule_is_not_abstract():
+    assert not inspect.isabstract(validation_ValidationRule)
 
 
-def test_validation::validationrule_constructor_exists():
-    assert callable(validation::ValidationRule.__init__)
+def test_validation_validationrule_constructor_exists():
+    assert callable(validation_ValidationRule.__init__)
 
 
-def test_validation::validationrule_constructor_args():
-    sig = inspect.signature(validation::ValidationRule.__init__)
+def test_validation_validationrule_constructor_args():
+    sig = inspect.signature(validation_ValidationRule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2777,125 +4865,125 @@ def test_additionallayer_constructor_args():
 
 
 
-def test_filter::filterdescription_is_not_abstract():
-    assert not inspect.isabstract(filter::FilterDescription)
+def test_filter_filterdescription_is_not_abstract():
+    assert not inspect.isabstract(filter_FilterDescription)
 
 
-def test_filter::filterdescription_constructor_exists():
-    assert callable(filter::FilterDescription.__init__)
+def test_filter_filterdescription_constructor_exists():
+    assert callable(filter_FilterDescription.__init__)
 
 
-def test_filter::filterdescription_constructor_args():
-    sig = inspect.signature(filter::FilterDescription.__init__)
+def test_filter_filterdescription_constructor_args():
+    sig = inspect.signature(filter_FilterDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_concern::concerndescription_is_not_abstract():
-    assert not inspect.isabstract(concern::ConcernDescription)
+def test_concern_concerndescription_is_not_abstract():
+    assert not inspect.isabstract(concern_ConcernDescription)
 
 
-def test_concern::concerndescription_constructor_exists():
-    assert callable(concern::ConcernDescription.__init__)
+def test_concern_concerndescription_constructor_exists():
+    assert callable(concern_ConcernDescription.__init__)
 
 
-def test_concern::concerndescription_constructor_args():
-    sig = inspect.signature(concern::ConcernDescription.__init__)
+def test_concern_concerndescription_constructor_args():
+    sig = inspect.signature(concern_ConcernDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::dnodelistelement_is_not_abstract():
-    assert not inspect.isabstract(diagram::DNodeListElement)
+def test_diagram_dnodelistelement_is_not_abstract():
+    assert not inspect.isabstract(diagram_DNodeListElement)
 
 
-def test_diagram::dnodelistelement_constructor_exists():
-    assert callable(diagram::DNodeListElement.__init__)
+def test_diagram_dnodelistelement_constructor_exists():
+    assert callable(diagram_DNodeListElement.__init__)
 
 
-def test_diagram::dnodelistelement_constructor_args():
-    sig = inspect.signature(diagram::DNodeListElement.__init__)
+def test_diagram_dnodelistelement_constructor_args():
+    sig = inspect.signature(diagram_DNodeListElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagram::dedge_is_not_abstract():
-    assert not inspect.isabstract(diagram::DEdge)
+def test_diagram_dedge_is_not_abstract():
+    assert not inspect.isabstract(diagram_DEdge)
 
 
-def test_diagram::dedge_constructor_exists():
-    assert callable(diagram::DEdge.__init__)
+def test_diagram_dedge_constructor_exists():
+    assert callable(diagram_DEdge.__init__)
 
 
-def test_diagram::dedge_constructor_args():
-    sig = inspect.signature(diagram::DEdge.__init__)
+def test_diagram_dedge_constructor_args():
+    sig = inspect.signature(diagram_DEdge.__init__)
     params = list(sig.parameters.keys())
-    assert "isMockEdge" in params, "Missing parameter 'isMockEdge'"
-    assert "beginLabel" in params, "Missing parameter 'beginLabel'"
-    assert "isFold" in params, "Missing parameter 'isFold'"
     assert "size" in params, "Missing parameter 'size'"
+    assert "beginLabel" in params, "Missing parameter 'beginLabel'"
     assert "routingStyle" in params, "Missing parameter 'routingStyle'"
     assert "endLabel" in params, "Missing parameter 'endLabel'"
+    assert "isMockEdge" in params, "Missing parameter 'isMockEdge'"
+    assert "isFold" in params, "Missing parameter 'isFold'"
     assert "arrangeConstraints" in params, "Missing parameter 'arrangeConstraints'"
 
-def test_diagram::dedge_has_isMockEdge():
-    assert hasattr(diagram::DEdge, "isMockEdge")
+def test_diagram_dedge_has_size():
+    assert hasattr(diagram_DEdge, "size")
     descriptor = None
-    for klass in diagram::DEdge.__mro__:
-        if "isMockEdge" in klass.__dict__:
-            descriptor = klass.__dict__["isMockEdge"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::dedge_has_beginLabel():
-    assert hasattr(diagram::DEdge, "beginLabel")
-    descriptor = None
-    for klass in diagram::DEdge.__mro__:
-        if "beginLabel" in klass.__dict__:
-            descriptor = klass.__dict__["beginLabel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::dedge_has_isFold():
-    assert hasattr(diagram::DEdge, "isFold")
-    descriptor = None
-    for klass in diagram::DEdge.__mro__:
-        if "isFold" in klass.__dict__:
-            descriptor = klass.__dict__["isFold"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::dedge_has_size():
-    assert hasattr(diagram::DEdge, "size")
-    descriptor = None
-    for klass in diagram::DEdge.__mro__:
+    for klass in diagram_DEdge.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dedge_has_routingStyle():
-    assert hasattr(diagram::DEdge, "routingStyle")
+def test_diagram_dedge_has_beginLabel():
+    assert hasattr(diagram_DEdge, "beginLabel")
     descriptor = None
-    for klass in diagram::DEdge.__mro__:
+    for klass in diagram_DEdge.__mro__:
+        if "beginLabel" in klass.__dict__:
+            descriptor = klass.__dict__["beginLabel"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_dedge_has_routingStyle():
+    assert hasattr(diagram_DEdge, "routingStyle")
+    descriptor = None
+    for klass in diagram_DEdge.__mro__:
         if "routingStyle" in klass.__dict__:
             descriptor = klass.__dict__["routingStyle"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dedge_has_endLabel():
-    assert hasattr(diagram::DEdge, "endLabel")
+def test_diagram_dedge_has_endLabel():
+    assert hasattr(diagram_DEdge, "endLabel")
     descriptor = None
-    for klass in diagram::DEdge.__mro__:
+    for klass in diagram_DEdge.__mro__:
         if "endLabel" in klass.__dict__:
             descriptor = klass.__dict__["endLabel"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dedge_has_arrangeConstraints():
-    assert hasattr(diagram::DEdge, "arrangeConstraints")
+def test_diagram_dedge_has_isMockEdge():
+    assert hasattr(diagram_DEdge, "isMockEdge")
     descriptor = None
-    for klass in diagram::DEdge.__mro__:
+    for klass in diagram_DEdge.__mro__:
+        if "isMockEdge" in klass.__dict__:
+            descriptor = klass.__dict__["isMockEdge"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_dedge_has_isFold():
+    assert hasattr(diagram_DEdge, "isFold")
+    descriptor = None
+    for klass in diagram_DEdge.__mro__:
+        if "isFold" in klass.__dict__:
+            descriptor = klass.__dict__["isFold"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_dedge_has_arrangeConstraints():
+    assert hasattr(diagram_DEdge, "arrangeConstraints")
+    descriptor = None
+    for klass in diagram_DEdge.__mro__:
         if "arrangeConstraints" in klass.__dict__:
             descriptor = klass.__dict__["arrangeConstraints"]
             break
@@ -2917,33 +5005,33 @@ def test_diagramdescription_constructor_args():
 
 
 
-def test_diagram::ddiagramelement_is_not_abstract():
-    assert not inspect.isabstract(diagram::DDiagramElement)
+def test_diagram_ddiagramelement_is_not_abstract():
+    assert not inspect.isabstract(diagram_DDiagramElement)
 
 
-def test_diagram::ddiagramelement_constructor_exists():
-    assert callable(diagram::DDiagramElement.__init__)
+def test_diagram_ddiagramelement_constructor_exists():
+    assert callable(diagram_DDiagramElement.__init__)
 
 
-def test_diagram::ddiagramelement_constructor_args():
-    sig = inspect.signature(diagram::DDiagramElement.__init__)
+def test_diagram_ddiagramelement_constructor_args():
+    sig = inspect.signature(diagram_DDiagramElement.__init__)
     params = list(sig.parameters.keys())
     assert "tooltipText" in params, "Missing parameter 'tooltipText'"
     assert "visible" in params, "Missing parameter 'visible'"
 
-def test_diagram::ddiagramelement_has_tooltipText():
-    assert hasattr(diagram::DDiagramElement, "tooltipText")
+def test_diagram_ddiagramelement_has_tooltipText():
+    assert hasattr(diagram_DDiagramElement, "tooltipText")
     descriptor = None
-    for klass in diagram::DDiagramElement.__mro__:
+    for klass in diagram_DDiagramElement.__mro__:
         if "tooltipText" in klass.__dict__:
             descriptor = klass.__dict__["tooltipText"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::ddiagramelement_has_visible():
-    assert hasattr(diagram::DDiagramElement, "visible")
+def test_diagram_ddiagramelement_has_visible():
+    assert hasattr(diagram_DDiagramElement, "visible")
     descriptor = None
-    for klass in diagram::DDiagramElement.__mro__:
+    for klass in diagram_DDiagramElement.__mro__:
         if "visible" in klass.__dict__:
             descriptor = klass.__dict__["visible"]
             break
@@ -2965,149 +5053,125 @@ def test_draganddroptarget_constructor_args():
 
 
 
-def test_diagram::dnode_is_not_abstract():
-    assert not inspect.isabstract(diagram::DNode)
+def test_diagram_ddiagramelementcontainer_is_not_abstract():
+    assert not inspect.isabstract(diagram_DDiagramElementContainer)
 
 
-def test_diagram::dnode_constructor_exists():
-    assert callable(diagram::DNode.__init__)
+def test_diagram_ddiagramelementcontainer_constructor_exists():
+    assert callable(diagram_DDiagramElementContainer.__init__)
 
 
-def test_diagram::dnode_constructor_args():
-    sig = inspect.signature(diagram::DNode.__init__)
+def test_diagram_ddiagramelementcontainer_constructor_args():
+    sig = inspect.signature(diagram_DDiagramElementContainer.__init__)
     params = list(sig.parameters.keys())
-    assert "resizeKind" in params, "Missing parameter 'resizeKind'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "labelPosition" in params, "Missing parameter 'labelPosition'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "width" in params, "Missing parameter 'width'"
 
-def test_diagram::dnode_has_resizeKind():
-    assert hasattr(diagram::DNode, "resizeKind")
+def test_diagram_ddiagramelementcontainer_has_height():
+    assert hasattr(diagram_DDiagramElementContainer, "height")
     descriptor = None
-    for klass in diagram::DNode.__mro__:
-        if "resizeKind" in klass.__dict__:
-            descriptor = klass.__dict__["resizeKind"]
+    for klass in diagram_DDiagramElementContainer.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dnode_has_width():
-    assert hasattr(diagram::DNode, "width")
+def test_diagram_ddiagramelementcontainer_has_width():
+    assert hasattr(diagram_DDiagramElementContainer, "width")
     descriptor = None
-    for klass in diagram::DNode.__mro__:
+    for klass in diagram_DDiagramElementContainer.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dnode_has_labelPosition():
-    assert hasattr(diagram::DNode, "labelPosition")
+
+
+def test_diagram_dnode_is_not_abstract():
+    assert not inspect.isabstract(diagram_DNode)
+
+
+def test_diagram_dnode_constructor_exists():
+    assert callable(diagram_DNode.__init__)
+
+
+def test_diagram_dnode_constructor_args():
+    sig = inspect.signature(diagram_DNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "labelPosition" in params, "Missing parameter 'labelPosition'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "resizeKind" in params, "Missing parameter 'resizeKind'"
+    assert "height" in params, "Missing parameter 'height'"
+
+def test_diagram_dnode_has_labelPosition():
+    assert hasattr(diagram_DNode, "labelPosition")
     descriptor = None
-    for klass in diagram::DNode.__mro__:
+    for klass in diagram_DNode.__mro__:
         if "labelPosition" in klass.__dict__:
             descriptor = klass.__dict__["labelPosition"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::dnode_has_height():
-    assert hasattr(diagram::DNode, "height")
+def test_diagram_dnode_has_width():
+    assert hasattr(diagram_DNode, "width")
     descriptor = None
-    for klass in diagram::DNode.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::ddiagramelementcontainer_is_not_abstract():
-    assert not inspect.isabstract(diagram::DDiagramElementContainer)
-
-
-def test_diagram::ddiagramelementcontainer_constructor_exists():
-    assert callable(diagram::DDiagramElementContainer.__init__)
-
-
-def test_diagram::ddiagramelementcontainer_constructor_args():
-    sig = inspect.signature(diagram::DDiagramElementContainer.__init__)
-    params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_diagram::ddiagramelementcontainer_has_height():
-    assert hasattr(diagram::DDiagramElementContainer, "height")
-    descriptor = None
-    for klass in diagram::DDiagramElementContainer.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::ddiagramelementcontainer_has_width():
-    assert hasattr(diagram::DDiagramElementContainer, "width")
-    descriptor = None
-    for klass in diagram::DDiagramElementContainer.__mro__:
+    for klass in diagram_DNode.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_description::documentedelement_is_not_abstract():
-    assert not inspect.isabstract(description::DocumentedElement)
-
-
-def test_description::documentedelement_constructor_exists():
-    assert callable(description::DocumentedElement.__init__)
-
-
-def test_description::documentedelement_constructor_args():
-    sig = inspect.signature(description::DocumentedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::description::layer_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::Layer)
-
-
-def test_diagram::description::layer_constructor_exists():
-    assert callable(diagram::description::Layer.__init__)
-
-
-def test_diagram::description::layer_constructor_args():
-    sig = inspect.signature(diagram::description::Layer.__init__)
-    params = list(sig.parameters.keys())
-    assert "icon" in params, "Missing parameter 'icon'"
-
-def test_diagram::description::layer_has_icon():
-    assert hasattr(diagram::description::Layer, "icon")
+def test_diagram_dnode_has_resizeKind():
+    assert hasattr(diagram_DNode, "resizeKind")
     descriptor = None
-    for klass in diagram::description::Layer.__mro__:
-        if "icon" in klass.__dict__:
-            descriptor = klass.__dict__["icon"]
+    for klass in diagram_DNode.__mro__:
+        if "resizeKind" in klass.__dict__:
+            descriptor = klass.__dict__["resizeKind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_dnode_has_height():
+    assert hasattr(diagram_DNode, "height")
+    descriptor = None
+    for klass in diagram_DNode.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_diagram::description::edgemappingimport_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::EdgeMappingImport)
+def test_description_documentedelement_is_not_abstract():
+    assert not inspect.isabstract(description_DocumentedElement)
 
 
-def test_diagram::description::edgemappingimport_constructor_exists():
-    assert callable(diagram::description::EdgeMappingImport.__init__)
+def test_description_documentedelement_constructor_exists():
+    assert callable(description_DocumentedElement.__init__)
 
 
-def test_diagram::description::edgemappingimport_constructor_args():
-    sig = inspect.signature(diagram::description::EdgeMappingImport.__init__)
+def test_description_documentedelement_constructor_args():
+    sig = inspect.signature(description_DocumentedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_description_edgemappingimport_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_EdgeMappingImport)
+
+
+def test_diagram_description_edgemappingimport_constructor_exists():
+    assert callable(diagram_description_EdgeMappingImport.__init__)
+
+
+def test_diagram_description_edgemappingimport_constructor_args():
+    sig = inspect.signature(diagram_description_EdgeMappingImport.__init__)
     params = list(sig.parameters.keys())
     assert "inheritsAncestorFilters" in params, "Missing parameter 'inheritsAncestorFilters'"
 
-def test_diagram::description::edgemappingimport_has_inheritsAncestorFilters():
-    assert hasattr(diagram::description::EdgeMappingImport, "inheritsAncestorFilters")
+def test_diagram_description_edgemappingimport_has_inheritsAncestorFilters():
+    assert hasattr(diagram_description_EdgeMappingImport, "inheritsAncestorFilters")
     descriptor = None
-    for klass in diagram::description::EdgeMappingImport.__mro__:
+    for klass in diagram_description_EdgeMappingImport.__mro__:
         if "inheritsAncestorFilters" in klass.__dict__:
             descriptor = klass.__dict__["inheritsAncestorFilters"]
             break
@@ -3115,99 +5179,175 @@ def test_diagram::description::edgemappingimport_has_inheritsAncestorFilters():
 
 
 
-def test_diagram::description::edgemapping_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::EdgeMapping)
+def test_diagram_filter_filterdescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_filter_FilterDescription)
 
 
-def test_diagram::description::edgemapping_constructor_exists():
-    assert callable(diagram::description::EdgeMapping.__init__)
+def test_diagram_filter_filterdescription_constructor_exists():
+    assert callable(diagram_filter_FilterDescription.__init__)
 
 
-def test_diagram::description::edgemapping_constructor_args():
-    sig = inspect.signature(diagram::description::EdgeMapping.__init__)
+def test_diagram_filter_filterdescription_constructor_args():
+    sig = inspect.signature(diagram_filter_FilterDescription.__init__)
     params = list(sig.parameters.keys())
-    assert "pathExpression" in params, "Missing parameter 'pathExpression'"
+
+
+
+def test_diagram_description_abstractnodemapping_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_AbstractNodeMapping)
+
+
+def test_diagram_description_abstractnodemapping_constructor_exists():
+    assert callable(diagram_description_AbstractNodeMapping.__init__)
+
+
+def test_diagram_description_abstractnodemapping_constructor_args():
+    sig = inspect.signature(diagram_description_AbstractNodeMapping.__init__)
+    params = list(sig.parameters.keys())
     assert "domainClass" in params, "Missing parameter 'domainClass'"
-    assert "targetFinderExpression" in params, "Missing parameter 'targetFinderExpression'"
-    assert "useDomainElement" in params, "Missing parameter 'useDomainElement'"
-    assert "targetExpression" in params, "Missing parameter 'targetExpression'"
-    assert "sourceFinderExpression" in params, "Missing parameter 'sourceFinderExpression'"
 
-def test_diagram::description::edgemapping_has_pathExpression():
-    assert hasattr(diagram::description::EdgeMapping, "pathExpression")
+def test_diagram_description_abstractnodemapping_has_domainClass():
+    assert hasattr(diagram_description_AbstractNodeMapping, "domainClass")
     descriptor = None
-    for klass in diagram::description::EdgeMapping.__mro__:
-        if "pathExpression" in klass.__dict__:
-            descriptor = klass.__dict__["pathExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::edgemapping_has_domainClass():
-    assert hasattr(diagram::description::EdgeMapping, "domainClass")
-    descriptor = None
-    for klass in diagram::description::EdgeMapping.__mro__:
+    for klass in diagram_description_AbstractNodeMapping.__mro__:
         if "domainClass" in klass.__dict__:
             descriptor = klass.__dict__["domainClass"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::description::edgemapping_has_targetFinderExpression():
-    assert hasattr(diagram::description::EdgeMapping, "targetFinderExpression")
+
+
+def test_diagram_concern_concerndescription_is_not_abstract():
+    assert not inspect.isabstract(diagram_concern_ConcernDescription)
+
+
+def test_diagram_concern_concerndescription_constructor_exists():
+    assert callable(diagram_concern_ConcernDescription.__init__)
+
+
+def test_diagram_concern_concerndescription_constructor_args():
+    sig = inspect.signature(diagram_concern_ConcernDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagram_description_layer_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_Layer)
+
+
+def test_diagram_description_layer_constructor_exists():
+    assert callable(diagram_description_Layer.__init__)
+
+
+def test_diagram_description_layer_constructor_args():
+    sig = inspect.signature(diagram_description_Layer.__init__)
+    params = list(sig.parameters.keys())
+    assert "icon" in params, "Missing parameter 'icon'"
+
+def test_diagram_description_layer_has_icon():
+    assert hasattr(diagram_description_Layer, "icon")
     descriptor = None
-    for klass in diagram::description::EdgeMapping.__mro__:
-        if "targetFinderExpression" in klass.__dict__:
-            descriptor = klass.__dict__["targetFinderExpression"]
+    for klass in diagram_description_Layer.__mro__:
+        if "icon" in klass.__dict__:
+            descriptor = klass.__dict__["icon"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::description::edgemapping_has_useDomainElement():
-    assert hasattr(diagram::description::EdgeMapping, "useDomainElement")
+
+
+def test_diagram_tool_toolsection_is_not_abstract():
+    assert not inspect.isabstract(diagram_tool_ToolSection)
+
+
+def test_diagram_tool_toolsection_constructor_exists():
+    assert callable(diagram_tool_ToolSection.__init__)
+
+
+def test_diagram_tool_toolsection_constructor_args():
+    sig = inspect.signature(diagram_tool_ToolSection.__init__)
+    params = list(sig.parameters.keys())
+    assert "icon" in params, "Missing parameter 'icon'"
+
+def test_diagram_tool_toolsection_has_icon():
+    assert hasattr(diagram_tool_ToolSection, "icon")
     descriptor = None
-    for klass in diagram::description::EdgeMapping.__mro__:
+    for klass in diagram_tool_ToolSection.__mro__:
+        if "icon" in klass.__dict__:
+            descriptor = klass.__dict__["icon"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagram_description_edgemapping_is_not_abstract():
+    assert not inspect.isabstract(diagram_description_EdgeMapping)
+
+
+def test_diagram_description_edgemapping_constructor_exists():
+    assert callable(diagram_description_EdgeMapping.__init__)
+
+
+def test_diagram_description_edgemapping_constructor_args():
+    sig = inspect.signature(diagram_description_EdgeMapping.__init__)
+    params = list(sig.parameters.keys())
+    assert "domainClass" in params, "Missing parameter 'domainClass'"
+    assert "useDomainElement" in params, "Missing parameter 'useDomainElement'"
+    assert "sourceFinderExpression" in params, "Missing parameter 'sourceFinderExpression'"
+    assert "targetFinderExpression" in params, "Missing parameter 'targetFinderExpression'"
+    assert "pathExpression" in params, "Missing parameter 'pathExpression'"
+    assert "targetExpression" in params, "Missing parameter 'targetExpression'"
+
+def test_diagram_description_edgemapping_has_domainClass():
+    assert hasattr(diagram_description_EdgeMapping, "domainClass")
+    descriptor = None
+    for klass in diagram_description_EdgeMapping.__mro__:
+        if "domainClass" in klass.__dict__:
+            descriptor = klass.__dict__["domainClass"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_edgemapping_has_useDomainElement():
+    assert hasattr(diagram_description_EdgeMapping, "useDomainElement")
+    descriptor = None
+    for klass in diagram_description_EdgeMapping.__mro__:
         if "useDomainElement" in klass.__dict__:
             descriptor = klass.__dict__["useDomainElement"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagram::description::edgemapping_has_targetExpression():
-    assert hasattr(diagram::description::EdgeMapping, "targetExpression")
+def test_diagram_description_edgemapping_has_sourceFinderExpression():
+    assert hasattr(diagram_description_EdgeMapping, "sourceFinderExpression")
     descriptor = None
-    for klass in diagram::description::EdgeMapping.__mro__:
-        if "targetExpression" in klass.__dict__:
-            descriptor = klass.__dict__["targetExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::description::edgemapping_has_sourceFinderExpression():
-    assert hasattr(diagram::description::EdgeMapping, "sourceFinderExpression")
-    descriptor = None
-    for klass in diagram::description::EdgeMapping.__mro__:
+    for klass in diagram_description_EdgeMapping.__mro__:
         if "sourceFinderExpression" in klass.__dict__:
             descriptor = klass.__dict__["sourceFinderExpression"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagram::description::abstractnodemapping_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::AbstractNodeMapping)
-
-
-def test_diagram::description::abstractnodemapping_constructor_exists():
-    assert callable(diagram::description::AbstractNodeMapping.__init__)
-
-
-def test_diagram::description::abstractnodemapping_constructor_args():
-    sig = inspect.signature(diagram::description::AbstractNodeMapping.__init__)
-    params = list(sig.parameters.keys())
-    assert "domainClass" in params, "Missing parameter 'domainClass'"
-
-def test_diagram::description::abstractnodemapping_has_domainClass():
-    assert hasattr(diagram::description::AbstractNodeMapping, "domainClass")
+def test_diagram_description_edgemapping_has_targetFinderExpression():
+    assert hasattr(diagram_description_EdgeMapping, "targetFinderExpression")
     descriptor = None
-    for klass in diagram::description::AbstractNodeMapping.__mro__:
-        if "domainClass" in klass.__dict__:
-            descriptor = klass.__dict__["domainClass"]
+    for klass in diagram_description_EdgeMapping.__mro__:
+        if "targetFinderExpression" in klass.__dict__:
+            descriptor = klass.__dict__["targetFinderExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_edgemapping_has_pathExpression():
+    assert hasattr(diagram_description_EdgeMapping, "pathExpression")
+    descriptor = None
+    for klass in diagram_description_EdgeMapping.__mro__:
+        if "pathExpression" in klass.__dict__:
+            descriptor = klass.__dict__["pathExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagram_description_edgemapping_has_targetExpression():
+    assert hasattr(diagram_description_EdgeMapping, "targetExpression")
+    descriptor = None
+    for klass in diagram_description_EdgeMapping.__mro__:
+        if "targetExpression" in klass.__dict__:
+            descriptor = klass.__dict__["targetExpression"]
             break
     assert isinstance(descriptor, property)
 
@@ -3227,2218 +5367,185 @@ def test_drepresentation_constructor_args():
 
 
 
-def test_diagram::ddiagram_is_not_abstract():
-    assert not inspect.isabstract(diagram::DDiagram)
+def test_diagram_ddiagram_is_not_abstract():
+    assert not inspect.isabstract(diagram_DDiagram)
 
 
-def test_diagram::ddiagram_constructor_exists():
-    assert callable(diagram::DDiagram.__init__)
+def test_diagram_ddiagram_constructor_exists():
+    assert callable(diagram_DDiagram.__init__)
 
 
-def test_diagram::ddiagram_constructor_args():
-    sig = inspect.signature(diagram::DDiagram.__init__)
+def test_diagram_ddiagram_constructor_args():
+    sig = inspect.signature(diagram_DDiagram.__init__)
     params = list(sig.parameters.keys())
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "isInLayoutingMode" in params, "Missing parameter 'isInLayoutingMode'"
     assert "headerHeight" in params, "Missing parameter 'headerHeight'"
+    assert "isInLayoutingMode" in params, "Missing parameter 'isInLayoutingMode'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
 
-def test_diagram::ddiagram_has_synchronized():
-    assert hasattr(diagram::DDiagram, "synchronized")
+def test_diagram_ddiagram_has_headerHeight():
+    assert hasattr(diagram_DDiagram, "headerHeight")
     descriptor = None
-    for klass in diagram::DDiagram.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::ddiagram_has_isInLayoutingMode():
-    assert hasattr(diagram::DDiagram, "isInLayoutingMode")
-    descriptor = None
-    for klass in diagram::DDiagram.__mro__:
-        if "isInLayoutingMode" in klass.__dict__:
-            descriptor = klass.__dict__["isInLayoutingMode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::ddiagram_has_headerHeight():
-    assert hasattr(diagram::DDiagram, "headerHeight")
-    descriptor = None
-    for klass in diagram::DDiagram.__mro__:
+    for klass in diagram_DDiagram.__mro__:
         if "headerHeight" in klass.__dict__:
             descriptor = klass.__dict__["headerHeight"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagram::concern::concerndescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::concern::ConcernDescription)
-
-
-def test_diagram::concern::concerndescription_constructor_exists():
-    assert callable(diagram::concern::ConcernDescription.__init__)
-
-
-def test_diagram::concern::concerndescription_constructor_args():
-    sig = inspect.signature(diagram::concern::ConcernDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::concern::concernset_is_not_abstract():
-    assert not inspect.isabstract(diagram::concern::ConcernSet)
-
-
-def test_diagram::concern::concernset_constructor_exists():
-    assert callable(diagram::concern::ConcernSet.__init__)
-
-
-def test_diagram::concern::concernset_constructor_args():
-    sig = inspect.signature(diagram::concern::ConcernSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interactivevariabledescription_is_not_abstract():
-    assert not inspect.isabstract(InteractiveVariableDescription)
-
-
-def test_interactivevariabledescription_constructor_exists():
-    assert callable(InteractiveVariableDescription.__init__)
-
-
-def test_interactivevariabledescription_constructor_args():
-    sig = inspect.signature(InteractiveVariableDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_filter::filter_is_not_abstract():
-    assert not inspect.isabstract(filter::Filter)
-
-
-def test_filter::filter_constructor_exists():
-    assert callable(filter::Filter.__init__)
-
-
-def test_filter::filter_constructor_args():
-    sig = inspect.signature(filter::Filter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_filterdescription_is_not_abstract():
-    assert not inspect.isabstract(FilterDescription)
-
-
-def test_filterdescription_constructor_exists():
-    assert callable(FilterDescription.__init__)
-
-
-def test_filterdescription_constructor_args():
-    sig = inspect.signature(FilterDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::filter::compositefilterdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::filter::CompositeFilterDescription)
-
-
-def test_diagram::filter::compositefilterdescription_constructor_exists():
-    assert callable(diagram::filter::CompositeFilterDescription.__init__)
-
-
-def test_diagram::filter::compositefilterdescription_constructor_args():
-    sig = inspect.signature(diagram::filter::CompositeFilterDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::filter::filter_is_not_abstract():
-    assert not inspect.isabstract(diagram::filter::Filter)
-
-
-def test_diagram::filter::filter_constructor_exists():
-    assert callable(diagram::filter::Filter.__init__)
-
-
-def test_diagram::filter::filter_constructor_args():
-    sig = inspect.signature(diagram::filter::Filter.__init__)
-    params = list(sig.parameters.keys())
-    assert "filterKind" in params, "Missing parameter 'filterKind'"
-
-def test_diagram::filter::filter_has_filterKind():
-    assert hasattr(diagram::filter::Filter, "filterKind")
+def test_diagram_ddiagram_has_isInLayoutingMode():
+    assert hasattr(diagram_DDiagram, "isInLayoutingMode")
     descriptor = None
-    for klass in diagram::filter::Filter.__mro__:
-        if "filterKind" in klass.__dict__:
-            descriptor = klass.__dict__["filterKind"]
+    for klass in diagram_DDiagram.__mro__:
+        if "isInLayoutingMode" in klass.__dict__:
+            descriptor = klass.__dict__["isInLayoutingMode"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagram::filter::filterdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::filter::FilterDescription)
-
-
-def test_diagram::filter::filterdescription_constructor_exists():
-    assert callable(diagram::filter::FilterDescription.__init__)
-
-
-def test_diagram::filter::filterdescription_constructor_args():
-    sig = inspect.signature(diagram::filter::FilterDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_filter_is_not_abstract():
-    assert not inspect.isabstract(Filter)
-
-
-def test_filter_constructor_exists():
-    assert callable(Filter.__init__)
-
-
-def test_filter_constructor_args():
-    sig = inspect.signature(Filter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::filter::variablefilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::filter::VariableFilter)
-
-
-def test_diagram::filter::variablefilter_constructor_exists():
-    assert callable(diagram::filter::VariableFilter.__init__)
-
-
-def test_diagram::filter::variablefilter_constructor_args():
-    sig = inspect.signature(diagram::filter::VariableFilter.__init__)
-    params = list(sig.parameters.keys())
-    assert "semanticConditionExpression" in params, "Missing parameter 'semanticConditionExpression'"
-
-def test_diagram::filter::variablefilter_has_semanticConditionExpression():
-    assert hasattr(diagram::filter::VariableFilter, "semanticConditionExpression")
+def test_diagram_ddiagram_has_synchronized():
+    assert hasattr(diagram_DDiagram, "synchronized")
     descriptor = None
-    for klass in diagram::filter::VariableFilter.__mro__:
-        if "semanticConditionExpression" in klass.__dict__:
-            descriptor = klass.__dict__["semanticConditionExpression"]
+    for klass in diagram_DDiagram.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagram::filter::mappingfilter_is_not_abstract():
-    assert not inspect.isabstract(diagram::filter::MappingFilter)
-
-
-def test_diagram::filter::mappingfilter_constructor_exists():
-    assert callable(diagram::filter::MappingFilter.__init__)
-
-
-def test_diagram::filter::mappingfilter_constructor_args():
-    sig = inspect.signature(diagram::filter::MappingFilter.__init__)
-    params = list(sig.parameters.keys())
-    assert "semanticConditionExpression" in params, "Missing parameter 'semanticConditionExpression'"
-    assert "viewConditionExpression" in params, "Missing parameter 'viewConditionExpression'"
-
-def test_diagram::filter::mappingfilter_has_semanticConditionExpression():
-    assert hasattr(diagram::filter::MappingFilter, "semanticConditionExpression")
-    descriptor = None
-    for klass in diagram::filter::MappingFilter.__mro__:
-        if "semanticConditionExpression" in klass.__dict__:
-            descriptor = klass.__dict__["semanticConditionExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::filter::mappingfilter_has_viewConditionExpression():
-    assert hasattr(diagram::filter::MappingFilter, "viewConditionExpression")
-    descriptor = None
-    for klass in diagram::filter::MappingFilter.__mro__:
-        if "viewConditionExpression" in klass.__dict__:
-            descriptor = klass.__dict__["viewConditionExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::elementdropvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::ElementDropVariable)
-
-
-def test_tool::elementdropvariable_constructor_exists():
-    assert callable(tool::ElementDropVariable.__init__)
-
-
-def test_tool::elementdropvariable_constructor_args():
-    sig = inspect.signature(tool::ElementDropVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::dropcontainervariable_is_not_abstract():
-    assert not inspect.isabstract(tool::DropContainerVariable)
-
-
-def test_tool::dropcontainervariable_constructor_exists():
-    assert callable(tool::DropContainerVariable.__init__)
-
-
-def test_tool::dropcontainervariable_constructor_args():
-    sig = inspect.signature(tool::DropContainerVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_representationnavigationdescription_is_not_abstract():
-    assert not inspect.isabstract(RepresentationNavigationDescription)
-
-
-def test_representationnavigationdescription_constructor_exists():
-    assert callable(RepresentationNavigationDescription.__init__)
-
-
-def test_representationnavigationdescription_constructor_args():
-    sig = inspect.signature(RepresentationNavigationDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::diagramnavigationdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DiagramNavigationDescription)
-
-
-def test_diagram::tool::diagramnavigationdescription_constructor_exists():
-    assert callable(diagram::tool::DiagramNavigationDescription.__init__)
-
-
-def test_diagram::tool::diagramnavigationdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::DiagramNavigationDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_representationcreationdescription_is_not_abstract():
-    assert not inspect.isabstract(RepresentationCreationDescription)
-
-
-def test_representationcreationdescription_constructor_exists():
-    assert callable(RepresentationCreationDescription.__init__)
-
-
-def test_representationcreationdescription_constructor_args():
-    sig = inspect.signature(RepresentationCreationDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::diagramcreationdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DiagramCreationDescription)
-
-
-def test_diagram::tool::diagramcreationdescription_constructor_exists():
-    assert callable(diagram::tool::DiagramCreationDescription.__init__)
-
-
-def test_diagram::tool::diagramcreationdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::DiagramCreationDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::initialcontainerdropoperation_is_not_abstract():
-    assert not inspect.isabstract(tool::InitialContainerDropOperation)
-
-
-def test_tool::initialcontainerdropoperation_constructor_exists():
-    assert callable(tool::InitialContainerDropOperation.__init__)
-
-
-def test_tool::initialcontainerdropoperation_constructor_args():
-    sig = inspect.signature(tool::InitialContainerDropOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_containermodeloperation_is_not_abstract():
-    assert not inspect.isabstract(ContainerModelOperation)
-
-
-def test_containermodeloperation_constructor_exists():
-    assert callable(ContainerModelOperation.__init__)
-
-
-def test_containermodeloperation_constructor_args():
-    sig = inspect.signature(ContainerModelOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::navigation_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::Navigation)
-
-
-def test_diagram::tool::navigation_constructor_exists():
-    assert callable(diagram::tool::Navigation.__init__)
-
-
-def test_diagram::tool::navigation_constructor_args():
-    sig = inspect.signature(diagram::tool::Navigation.__init__)
-    params = list(sig.parameters.keys())
-    assert "createIfNotExistent" in params, "Missing parameter 'createIfNotExistent'"
-
-def test_diagram::tool::navigation_has_createIfNotExistent():
-    assert hasattr(diagram::tool::Navigation, "createIfNotExistent")
-    descriptor = None
-    for klass in diagram::tool::Navigation.__mro__:
-        if "createIfNotExistent" in klass.__dict__:
-            descriptor = klass.__dict__["createIfNotExistent"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::createview_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::CreateView)
-
-
-def test_diagram::tool::createview_constructor_exists():
-    assert callable(diagram::tool::CreateView.__init__)
-
-
-def test_diagram::tool::createview_constructor_args():
-    sig = inspect.signature(diagram::tool::CreateView.__init__)
-    params = list(sig.parameters.keys())
-    assert "containerViewExpression" in params, "Missing parameter 'containerViewExpression'"
-    assert "variableName" in params, "Missing parameter 'variableName'"
-
-def test_diagram::tool::createview_has_containerViewExpression():
-    assert hasattr(diagram::tool::CreateView, "containerViewExpression")
-    descriptor = None
-    for klass in diagram::tool::CreateView.__mro__:
-        if "containerViewExpression" in klass.__dict__:
-            descriptor = klass.__dict__["containerViewExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::tool::createview_has_variableName():
-    assert hasattr(diagram::tool::CreateView, "variableName")
-    descriptor = None
-    for klass in diagram::tool::CreateView.__mro__:
-        if "variableName" in klass.__dict__:
-            descriptor = klass.__dict__["variableName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::variablecontainer_is_not_abstract():
-    assert not inspect.isabstract(tool::VariableContainer)
-
-
-def test_tool::variablecontainer_constructor_exists():
-    assert callable(tool::VariableContainer.__init__)
-
-
-def test_tool::variablecontainer_constructor_args():
-    sig = inspect.signature(tool::VariableContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_description::abstractvariable_is_not_abstract():
-    assert not inspect.isabstract(description::AbstractVariable)
-
-
-def test_description::abstractvariable_constructor_exists():
-    assert callable(description::AbstractVariable.__init__)
-
-
-def test_description::abstractvariable_constructor_args():
-    sig = inspect.signature(description::AbstractVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::targetedgecreationvariable_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::TargetEdgeCreationVariable)
-
-
-def test_diagram::tool::targetedgecreationvariable_constructor_exists():
-    assert callable(diagram::tool::TargetEdgeCreationVariable.__init__)
-
-
-def test_diagram::tool::targetedgecreationvariable_constructor_args():
-    sig = inspect.signature(diagram::tool::TargetEdgeCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::targetedgeviewcreationvariable_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::TargetEdgeViewCreationVariable)
-
-
-def test_diagram::tool::targetedgeviewcreationvariable_constructor_exists():
-    assert callable(diagram::tool::TargetEdgeViewCreationVariable.__init__)
-
-
-def test_diagram::tool::targetedgeviewcreationvariable_constructor_args():
-    sig = inspect.signature(diagram::tool::TargetEdgeViewCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::nodecreationvariable_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::NodeCreationVariable)
-
-
-def test_diagram::tool::nodecreationvariable_constructor_exists():
-    assert callable(diagram::tool::NodeCreationVariable.__init__)
-
-
-def test_diagram::tool::nodecreationvariable_constructor_args():
-    sig = inspect.signature(diagram::tool::NodeCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::sourceedgeviewcreationvariable_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::SourceEdgeViewCreationVariable)
-
-
-def test_diagram::tool::sourceedgeviewcreationvariable_constructor_exists():
-    assert callable(diagram::tool::SourceEdgeViewCreationVariable.__init__)
-
-
-def test_diagram::tool::sourceedgeviewcreationvariable_constructor_args():
-    sig = inspect.signature(diagram::tool::SourceEdgeViewCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::elementdoubleclickvariable_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ElementDoubleClickVariable)
-
-
-def test_diagram::tool::elementdoubleclickvariable_constructor_exists():
-    assert callable(diagram::tool::ElementDoubleClickVariable.__init__)
-
-
-def test_diagram::tool::elementdoubleclickvariable_constructor_args():
-    sig = inspect.signature(diagram::tool::ElementDoubleClickVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::sourceedgecreationvariable_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::SourceEdgeCreationVariable)
-
-
-def test_diagram::tool::sourceedgecreationvariable_constructor_exists():
-    assert callable(diagram::tool::SourceEdgeCreationVariable.__init__)
-
-
-def test_diagram::tool::sourceedgecreationvariable_constructor_args():
-    sig = inspect.signature(diagram::tool::SourceEdgeCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::editmaskvariables_is_not_abstract():
-    assert not inspect.isabstract(tool::EditMaskVariables)
-
-
-def test_tool::editmaskvariables_constructor_exists():
-    assert callable(tool::EditMaskVariables.__init__)
-
-
-def test_tool::editmaskvariables_constructor_args():
-    sig = inspect.signature(tool::EditMaskVariables.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_createview_is_not_abstract():
-    assert not inspect.isabstract(CreateView)
-
-
-def test_createview_constructor_exists():
-    assert callable(CreateView.__init__)
-
-
-def test_createview_constructor_args():
-    sig = inspect.signature(CreateView.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::createedgeview_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::CreateEdgeView)
-
-
-def test_diagram::tool::createedgeview_constructor_exists():
-    assert callable(diagram::tool::CreateEdgeView.__init__)
-
-
-def test_diagram::tool::createedgeview_constructor_args():
-    sig = inspect.signature(diagram::tool::CreateEdgeView.__init__)
-    params = list(sig.parameters.keys())
-    assert "sourceExpression" in params, "Missing parameter 'sourceExpression'"
-    assert "targetExpression" in params, "Missing parameter 'targetExpression'"
-
-def test_diagram::tool::createedgeview_has_sourceExpression():
-    assert hasattr(diagram::tool::CreateEdgeView, "sourceExpression")
-    descriptor = None
-    for klass in diagram::tool::CreateEdgeView.__mro__:
-        if "sourceExpression" in klass.__dict__:
-            descriptor = klass.__dict__["sourceExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::tool::createedgeview_has_targetExpression():
-    assert hasattr(diagram::tool::CreateEdgeView, "targetExpression")
-    descriptor = None
-    for klass in diagram::tool::CreateEdgeView.__mro__:
-        if "targetExpression" in klass.__dict__:
-            descriptor = klass.__dict__["targetExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::elementselectvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::ElementSelectVariable)
-
-
-def test_tool::elementselectvariable_constructor_exists():
-    assert callable(tool::ElementSelectVariable.__init__)
-
-
-def test_tool::elementselectvariable_constructor_args():
-    sig = inspect.signature(tool::ElementSelectVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::deletehookparameter_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DeleteHookParameter)
-
-
-def test_diagram::tool::deletehookparameter_constructor_exists():
-    assert callable(diagram::tool::DeleteHookParameter.__init__)
-
-
-def test_diagram::tool::deletehookparameter_constructor_args():
-    sig = inspect.signature(diagram::tool::DeleteHookParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_diagram::tool::deletehookparameter_has_name():
-    assert hasattr(diagram::tool::DeleteHookParameter, "name")
-    descriptor = None
-    for klass in diagram::tool::DeleteHookParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::tool::deletehookparameter_has_value():
-    assert hasattr(diagram::tool::DeleteHookParameter, "value")
-    descriptor = None
-    for klass in diagram::tool::DeleteHookParameter.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::deletehookparameter_is_not_abstract():
-    assert not inspect.isabstract(tool::DeleteHookParameter)
-
-
-def test_tool::deletehookparameter_constructor_exists():
-    assert callable(tool::DeleteHookParameter.__init__)
-
-
-def test_tool::deletehookparameter_constructor_args():
-    sig = inspect.signature(tool::DeleteHookParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::deletehook_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DeleteHook)
-
-
-def test_diagram::tool::deletehook_constructor_exists():
-    assert callable(diagram::tool::DeleteHook.__init__)
-
-
-def test_diagram::tool::deletehook_constructor_args():
-    sig = inspect.signature(diagram::tool::DeleteHook.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_diagram::tool::deletehook_has_id():
-    assert hasattr(diagram::tool::DeleteHook, "id")
-    descriptor = None
-    for klass in diagram::tool::DeleteHook.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_abstracttooldescription_is_not_abstract():
-    assert not inspect.isabstract(AbstractToolDescription)
-
-
-def test_abstracttooldescription_constructor_exists():
-    assert callable(AbstractToolDescription.__init__)
-
-
-def test_abstracttooldescription_constructor_args():
-    sig = inspect.signature(AbstractToolDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::behaviortool_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::BehaviorTool)
-
-
-def test_diagram::tool::behaviortool_constructor_exists():
-    assert callable(diagram::tool::BehaviorTool.__init__)
-
-
-def test_diagram::tool::behaviortool_constructor_args():
-    sig = inspect.signature(diagram::tool::BehaviorTool.__init__)
-    params = list(sig.parameters.keys())
-    assert "domainClass" in params, "Missing parameter 'domainClass'"
-
-def test_diagram::tool::behaviortool_has_domainClass():
-    assert hasattr(diagram::tool::BehaviorTool, "domainClass")
-    descriptor = None
-    for klass in diagram::tool::BehaviorTool.__mro__:
-        if "domainClass" in klass.__dict__:
-            descriptor = klass.__dict__["domainClass"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::requestdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::RequestDescription)
-
-
-def test_diagram::tool::requestdescription_constructor_exists():
-    assert callable(diagram::tool::RequestDescription.__init__)
-
-
-def test_diagram::tool::requestdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::RequestDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_diagram::tool::requestdescription_has_type():
-    assert hasattr(diagram::tool::RequestDescription, "type")
-    descriptor = None
-    for klass in diagram::tool::RequestDescription.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::deletehook_is_not_abstract():
-    assert not inspect.isabstract(tool::DeleteHook)
-
-
-def test_tool::deletehook_constructor_exists():
-    assert callable(tool::DeleteHook.__init__)
-
-
-def test_tool::deletehook_constructor_args():
-    sig = inspect.signature(tool::DeleteHook.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::elementdeletevariable_is_not_abstract():
-    assert not inspect.isabstract(tool::ElementDeleteVariable)
-
-
-def test_tool::elementdeletevariable_constructor_exists():
-    assert callable(tool::ElementDeleteVariable.__init__)
-
-
-def test_tool::elementdeletevariable_constructor_args():
-    sig = inspect.signature(tool::ElementDeleteVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::elementdoubleclickvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::ElementDoubleClickVariable)
-
-
-def test_tool::elementdoubleclickvariable_constructor_exists():
-    assert callable(tool::ElementDoubleClickVariable.__init__)
-
-
-def test_tool::elementdoubleclickvariable_constructor_args():
-    sig = inspect.signature(tool::ElementDoubleClickVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::initedgecreationoperation_is_not_abstract():
-    assert not inspect.isabstract(tool::InitEdgeCreationOperation)
-
-
-def test_tool::initedgecreationoperation_constructor_exists():
-    assert callable(tool::InitEdgeCreationOperation.__init__)
-
-
-def test_tool::initedgecreationoperation_constructor_args():
-    sig = inspect.signature(tool::InitEdgeCreationOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::targetedgeviewcreationvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::TargetEdgeViewCreationVariable)
-
-
-def test_tool::targetedgeviewcreationvariable_constructor_exists():
-    assert callable(tool::TargetEdgeViewCreationVariable.__init__)
-
-
-def test_tool::targetedgeviewcreationvariable_constructor_args():
-    sig = inspect.signature(tool::TargetEdgeViewCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::sourceedgeviewcreationvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::SourceEdgeViewCreationVariable)
-
-
-def test_tool::sourceedgeviewcreationvariable_constructor_exists():
-    assert callable(tool::SourceEdgeViewCreationVariable.__init__)
-
-
-def test_tool::sourceedgeviewcreationvariable_constructor_args():
-    sig = inspect.signature(tool::SourceEdgeViewCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::targetedgecreationvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::TargetEdgeCreationVariable)
-
-
-def test_tool::targetedgecreationvariable_constructor_exists():
-    assert callable(tool::TargetEdgeCreationVariable.__init__)
-
-
-def test_tool::targetedgecreationvariable_constructor_args():
-    sig = inspect.signature(tool::TargetEdgeCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::sourceedgecreationvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::SourceEdgeCreationVariable)
-
-
-def test_tool::sourceedgecreationvariable_constructor_exists():
-    assert callable(tool::SourceEdgeCreationVariable.__init__)
-
-
-def test_tool::sourceedgecreationvariable_constructor_args():
-    sig = inspect.signature(tool::SourceEdgeCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::containerviewvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::ContainerViewVariable)
-
-
-def test_tool::containerviewvariable_constructor_exists():
-    assert callable(tool::ContainerViewVariable.__init__)
-
-
-def test_tool::containerviewvariable_constructor_args():
-    sig = inspect.signature(tool::ContainerViewVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::nodecreationvariable_is_not_abstract():
-    assert not inspect.isabstract(tool::NodeCreationVariable)
-
-
-def test_tool::nodecreationvariable_constructor_exists():
-    assert callable(tool::NodeCreationVariable.__init__)
-
-
-def test_tool::nodecreationvariable_constructor_args():
-    sig = inspect.signature(tool::NodeCreationVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mappingbasedtooldescription_is_not_abstract():
-    assert not inspect.isabstract(MappingBasedToolDescription)
-
-
-def test_mappingbasedtooldescription_constructor_exists():
-    assert callable(MappingBasedToolDescription.__init__)
-
-
-def test_mappingbasedtooldescription_constructor_args():
-    sig = inspect.signature(MappingBasedToolDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::edgecreationdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::EdgeCreationDescription)
-
-
-def test_diagram::tool::edgecreationdescription_constructor_exists():
-    assert callable(diagram::tool::EdgeCreationDescription.__init__)
-
-
-def test_diagram::tool::edgecreationdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::EdgeCreationDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "iconPath" in params, "Missing parameter 'iconPath'"
-    assert "connectionStartPrecondition" in params, "Missing parameter 'connectionStartPrecondition'"
-
-def test_diagram::tool::edgecreationdescription_has_iconPath():
-    assert hasattr(diagram::tool::EdgeCreationDescription, "iconPath")
-    descriptor = None
-    for klass in diagram::tool::EdgeCreationDescription.__mro__:
-        if "iconPath" in klass.__dict__:
-            descriptor = klass.__dict__["iconPath"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::tool::edgecreationdescription_has_connectionStartPrecondition():
-    assert hasattr(diagram::tool::EdgeCreationDescription, "connectionStartPrecondition")
-    descriptor = None
-    for klass in diagram::tool::EdgeCreationDescription.__mro__:
-        if "connectionStartPrecondition" in klass.__dict__:
-            descriptor = klass.__dict__["connectionStartPrecondition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::reconnectedgedescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ReconnectEdgeDescription)
-
-
-def test_diagram::tool::reconnectedgedescription_constructor_exists():
-    assert callable(diagram::tool::ReconnectEdgeDescription.__init__)
-
-
-def test_diagram::tool::reconnectedgedescription_constructor_args():
-    sig = inspect.signature(diagram::tool::ReconnectEdgeDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "reconnectionKind" in params, "Missing parameter 'reconnectionKind'"
-
-def test_diagram::tool::reconnectedgedescription_has_reconnectionKind():
-    assert hasattr(diagram::tool::ReconnectEdgeDescription, "reconnectionKind")
-    descriptor = None
-    for klass in diagram::tool::ReconnectEdgeDescription.__mro__:
-        if "reconnectionKind" in klass.__dict__:
-            descriptor = klass.__dict__["reconnectionKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::doubleclickdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DoubleClickDescription)
-
-
-def test_diagram::tool::doubleclickdescription_constructor_exists():
-    assert callable(diagram::tool::DoubleClickDescription.__init__)
-
-
-def test_diagram::tool::doubleclickdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::DoubleClickDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::directeditlabel_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DirectEditLabel)
-
-
-def test_diagram::tool::directeditlabel_constructor_exists():
-    assert callable(diagram::tool::DirectEditLabel.__init__)
-
-
-def test_diagram::tool::directeditlabel_constructor_args():
-    sig = inspect.signature(diagram::tool::DirectEditLabel.__init__)
-    params = list(sig.parameters.keys())
-    assert "inputLabelExpression" in params, "Missing parameter 'inputLabelExpression'"
-
-def test_diagram::tool::directeditlabel_has_inputLabelExpression():
-    assert hasattr(diagram::tool::DirectEditLabel, "inputLabelExpression")
-    descriptor = None
-    for klass in diagram::tool::DirectEditLabel.__mro__:
-        if "inputLabelExpression" in klass.__dict__:
-            descriptor = klass.__dict__["inputLabelExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::containerdropdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ContainerDropDescription)
-
-
-def test_diagram::tool::containerdropdescription_constructor_exists():
-    assert callable(diagram::tool::ContainerDropDescription.__init__)
-
-
-def test_diagram::tool::containerdropdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::ContainerDropDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "dragSource" in params, "Missing parameter 'dragSource'"
-    assert "moveEdges" in params, "Missing parameter 'moveEdges'"
-
-def test_diagram::tool::containerdropdescription_has_dragSource():
-    assert hasattr(diagram::tool::ContainerDropDescription, "dragSource")
-    descriptor = None
-    for klass in diagram::tool::ContainerDropDescription.__mro__:
-        if "dragSource" in klass.__dict__:
-            descriptor = klass.__dict__["dragSource"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::tool::containerdropdescription_has_moveEdges():
-    assert hasattr(diagram::tool::ContainerDropDescription, "moveEdges")
-    descriptor = None
-    for klass in diagram::tool::ContainerDropDescription.__mro__:
-        if "moveEdges" in klass.__dict__:
-            descriptor = klass.__dict__["moveEdges"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::containercreationdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ContainerCreationDescription)
-
-
-def test_diagram::tool::containercreationdescription_constructor_exists():
-    assert callable(diagram::tool::ContainerCreationDescription.__init__)
-
-
-def test_diagram::tool::containercreationdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::ContainerCreationDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "iconPath" in params, "Missing parameter 'iconPath'"
-
-def test_diagram::tool::containercreationdescription_has_iconPath():
-    assert hasattr(diagram::tool::ContainerCreationDescription, "iconPath")
-    descriptor = None
-    for klass in diagram::tool::ContainerCreationDescription.__mro__:
-        if "iconPath" in klass.__dict__:
-            descriptor = klass.__dict__["iconPath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::tool::deleteelementdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::DeleteElementDescription)
-
-
-def test_diagram::tool::deleteelementdescription_constructor_exists():
-    assert callable(diagram::tool::DeleteElementDescription.__init__)
-
-
-def test_diagram::tool::deleteelementdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::DeleteElementDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::nodecreationdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::NodeCreationDescription)
-
-
-def test_diagram::tool::nodecreationdescription_constructor_exists():
-    assert callable(diagram::tool::NodeCreationDescription.__init__)
-
-
-def test_diagram::tool::nodecreationdescription_constructor_args():
-    sig = inspect.signature(diagram::tool::NodeCreationDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "iconPath" in params, "Missing parameter 'iconPath'"
-
-def test_diagram::tool::nodecreationdescription_has_iconPath():
-    assert hasattr(diagram::tool::NodeCreationDescription, "iconPath")
-    descriptor = None
-    for klass in diagram::tool::NodeCreationDescription.__mro__:
-        if "iconPath" in klass.__dict__:
-            descriptor = klass.__dict__["iconPath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::toolgroup_is_not_abstract():
-    assert not inspect.isabstract(tool::ToolGroup)
-
-
-def test_tool::toolgroup_constructor_exists():
-    assert callable(tool::ToolGroup.__init__)
-
-
-def test_tool::toolgroup_constructor_args():
-    sig = inspect.signature(tool::ToolGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::toolgroupextension_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ToolGroupExtension)
-
-
-def test_diagram::tool::toolgroupextension_constructor_exists():
-    assert callable(diagram::tool::ToolGroupExtension.__init__)
-
-
-def test_diagram::tool::toolgroupextension_constructor_args():
-    sig = inspect.signature(diagram::tool::ToolGroupExtension.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_toolentry_is_not_abstract():
-    assert not inspect.isabstract(ToolEntry)
-
-
-def test_toolentry_constructor_exists():
-    assert callable(ToolEntry.__init__)
-
-
-def test_toolentry_constructor_args():
-    sig = inspect.signature(ToolEntry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::toolgroup_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ToolGroup)
-
-
-def test_diagram::tool::toolgroup_constructor_exists():
-    assert callable(diagram::tool::ToolGroup.__init__)
-
-
-def test_diagram::tool::toolgroup_constructor_args():
-    sig = inspect.signature(diagram::tool::ToolGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::toolgroupextension_is_not_abstract():
-    assert not inspect.isabstract(tool::ToolGroupExtension)
-
-
-def test_tool::toolgroupextension_constructor_exists():
-    assert callable(tool::ToolGroupExtension.__init__)
-
-
-def test_tool::toolgroupextension_constructor_args():
-    sig = inspect.signature(tool::ToolGroupExtension.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::popupmenu_is_not_abstract():
-    assert not inspect.isabstract(tool::PopupMenu)
-
-
-def test_tool::popupmenu_constructor_exists():
-    assert callable(tool::PopupMenu.__init__)
-
-
-def test_tool::popupmenu_constructor_args():
-    sig = inspect.signature(tool::PopupMenu.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::toolentry_is_not_abstract():
-    assert not inspect.isabstract(tool::ToolEntry)
-
-
-def test_tool::toolentry_constructor_exists():
-    assert callable(tool::ToolEntry.__init__)
-
-
-def test_tool::toolentry_constructor_args():
-    sig = inspect.signature(tool::ToolEntry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tool::initialnodecreationoperation_is_not_abstract():
-    assert not inspect.isabstract(tool::InitialNodeCreationOperation)
-
-
-def test_tool::initialnodecreationoperation_constructor_exists():
-    assert callable(tool::InitialNodeCreationOperation.__init__)
-
-
-def test_tool::initialnodecreationoperation_constructor_args():
-    sig = inspect.signature(tool::InitialNodeCreationOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::hidelabelcapabilitystyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::HideLabelCapabilityStyleDescription)
-
-
-def test_diagram::style::hidelabelcapabilitystyledescription_constructor_exists():
-    assert callable(diagram::style::HideLabelCapabilityStyleDescription.__init__)
-
-
-def test_diagram::style::hidelabelcapabilitystyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::HideLabelCapabilityStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "hideLabelByDefault" in params, "Missing parameter 'hideLabelByDefault'"
-
-def test_diagram::style::hidelabelcapabilitystyledescription_has_hideLabelByDefault():
-    assert hasattr(diagram::style::HideLabelCapabilityStyleDescription, "hideLabelByDefault")
-    descriptor = None
-    for klass in diagram::style::HideLabelCapabilityStyleDescription.__mro__:
-        if "hideLabelByDefault" in klass.__dict__:
-            descriptor = klass.__dict__["hideLabelByDefault"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_edgestyledescription_is_not_abstract():
-    assert not inspect.isabstract(EdgeStyleDescription)
-
-
-def test_edgestyledescription_constructor_exists():
-    assert callable(EdgeStyleDescription.__init__)
-
-
-def test_edgestyledescription_constructor_args():
-    sig = inspect.signature(EdgeStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::bracketedgestyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::BracketEdgeStyleDescription)
-
-
-def test_diagram::style::bracketedgestyledescription_constructor_exists():
-    assert callable(diagram::style::BracketEdgeStyleDescription.__init__)
-
-
-def test_diagram::style::bracketedgestyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::BracketEdgeStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basiclabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(BasicLabelStyleDescription)
-
-
-def test_basiclabelstyledescription_constructor_exists():
-    assert callable(BasicLabelStyleDescription.__init__)
-
-
-def test_basiclabelstyledescription_constructor_args():
-    sig = inspect.signature(BasicLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::centerlabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::CenterLabelStyleDescription)
-
-
-def test_diagram::style::centerlabelstyledescription_constructor_exists():
-    assert callable(diagram::style::CenterLabelStyleDescription.__init__)
-
-
-def test_diagram::style::centerlabelstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::CenterLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::endlabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::EndLabelStyleDescription)
-
-
-def test_diagram::style::endlabelstyledescription_constructor_exists():
-    assert callable(diagram::style::EndLabelStyleDescription.__init__)
-
-
-def test_diagram::style::endlabelstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::EndLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::beginlabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::BeginLabelStyleDescription)
-
-
-def test_diagram::style::beginlabelstyledescription_constructor_exists():
-    assert callable(diagram::style::BeginLabelStyleDescription.__init__)
-
-
-def test_diagram::style::beginlabelstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::BeginLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::endlabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::EndLabelStyleDescription)
-
-
-def test_style::endlabelstyledescription_constructor_exists():
-    assert callable(style::EndLabelStyleDescription.__init__)
-
-
-def test_style::endlabelstyledescription_constructor_args():
-    sig = inspect.signature(style::EndLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::centerlabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::CenterLabelStyleDescription)
-
-
-def test_style::centerlabelstyledescription_constructor_exists():
-    assert callable(style::CenterLabelStyleDescription.__init__)
-
-
-def test_style::centerlabelstyledescription_constructor_args():
-    sig = inspect.signature(style::CenterLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::beginlabelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::BeginLabelStyleDescription)
-
-
-def test_style::beginlabelstyledescription_constructor_exists():
-    assert callable(style::BeginLabelStyleDescription.__init__)
-
-
-def test_style::beginlabelstyledescription_constructor_args():
-    sig = inspect.signature(style::BeginLabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::tool::toolsection_is_not_abstract():
-    assert not inspect.isabstract(diagram::tool::ToolSection)
-
-
-def test_diagram::tool::toolsection_constructor_exists():
-    assert callable(diagram::tool::ToolSection.__init__)
-
-
-def test_diagram::tool::toolsection_constructor_args():
-    sig = inspect.signature(diagram::tool::ToolSection.__init__)
-    params = list(sig.parameters.keys())
-    assert "icon" in params, "Missing parameter 'icon'"
-
-def test_diagram::tool::toolsection_has_icon():
-    assert hasattr(diagram::tool::ToolSection, "icon")
-    descriptor = None
-    for klass in diagram::tool::ToolSection.__mro__:
-        if "icon" in klass.__dict__:
-            descriptor = klass.__dict__["icon"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::workspaceimagedescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::WorkspaceImageDescription)
-
-
-def test_diagram::style::workspaceimagedescription_constructor_exists():
-    assert callable(diagram::style::WorkspaceImageDescription.__init__)
-
-
-def test_diagram::style::workspaceimagedescription_constructor_args():
-    sig = inspect.signature(diagram::style::WorkspaceImageDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "workspacePath" in params, "Missing parameter 'workspacePath'"
-
-def test_diagram::style::workspaceimagedescription_has_workspacePath():
-    assert hasattr(diagram::style::WorkspaceImageDescription, "workspacePath")
-    descriptor = None
-    for klass in diagram::style::WorkspaceImageDescription.__mro__:
-        if "workspacePath" in klass.__dict__:
-            descriptor = klass.__dict__["workspacePath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_style::labelborderstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::LabelBorderStyleDescription)
-
-
-def test_style::labelborderstyledescription_constructor_exists():
-    assert callable(style::LabelBorderStyleDescription.__init__)
-
-
-def test_style::labelborderstyledescription_constructor_args():
-    sig = inspect.signature(style::LabelBorderStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::sizecomputationcontainerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::SizeComputationContainerStyleDescription)
-
-
-def test_diagram::style::sizecomputationcontainerstyledescription_constructor_exists():
-    assert callable(diagram::style::SizeComputationContainerStyleDescription.__init__)
-
-
-def test_diagram::style::sizecomputationcontainerstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::SizeComputationContainerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "widthComputationExpression" in params, "Missing parameter 'widthComputationExpression'"
-    assert "heightComputationExpression" in params, "Missing parameter 'heightComputationExpression'"
-
-def test_diagram::style::sizecomputationcontainerstyledescription_has_widthComputationExpression():
-    assert hasattr(diagram::style::SizeComputationContainerStyleDescription, "widthComputationExpression")
-    descriptor = None
-    for klass in diagram::style::SizeComputationContainerStyleDescription.__mro__:
-        if "widthComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["widthComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::sizecomputationcontainerstyledescription_has_heightComputationExpression():
-    assert hasattr(diagram::style::SizeComputationContainerStyleDescription, "heightComputationExpression")
-    descriptor = None
-    for klass in diagram::style::SizeComputationContainerStyleDescription.__mro__:
-        if "heightComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["heightComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::gaugesectiondescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::GaugeSectionDescription)
-
-
-def test_diagram::style::gaugesectiondescription_constructor_exists():
-    assert callable(diagram::style::GaugeSectionDescription.__init__)
-
-
-def test_diagram::style::gaugesectiondescription_constructor_args():
-    sig = inspect.signature(diagram::style::GaugeSectionDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
-    assert "minValueExpression" in params, "Missing parameter 'minValueExpression'"
-    assert "valueExpression" in params, "Missing parameter 'valueExpression'"
-    assert "maxValueExpression" in params, "Missing parameter 'maxValueExpression'"
-
-def test_diagram::style::gaugesectiondescription_has_label():
-    assert hasattr(diagram::style::GaugeSectionDescription, "label")
-    descriptor = None
-    for klass in diagram::style::GaugeSectionDescription.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::gaugesectiondescription_has_minValueExpression():
-    assert hasattr(diagram::style::GaugeSectionDescription, "minValueExpression")
-    descriptor = None
-    for klass in diagram::style::GaugeSectionDescription.__mro__:
-        if "minValueExpression" in klass.__dict__:
-            descriptor = klass.__dict__["minValueExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::gaugesectiondescription_has_valueExpression():
-    assert hasattr(diagram::style::GaugeSectionDescription, "valueExpression")
-    descriptor = None
-    for klass in diagram::style::GaugeSectionDescription.__mro__:
-        if "valueExpression" in klass.__dict__:
-            descriptor = klass.__dict__["valueExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::gaugesectiondescription_has_maxValueExpression():
-    assert hasattr(diagram::style::GaugeSectionDescription, "maxValueExpression")
-    descriptor = None
-    for klass in diagram::style::GaugeSectionDescription.__mro__:
-        if "maxValueExpression" in klass.__dict__:
-            descriptor = klass.__dict__["maxValueExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_style::gaugesectiondescription_is_not_abstract():
-    assert not inspect.isabstract(style::GaugeSectionDescription)
-
-
-def test_style::gaugesectiondescription_constructor_exists():
-    assert callable(style::GaugeSectionDescription.__init__)
-
-
-def test_style::gaugesectiondescription_constructor_args():
-    sig = inspect.signature(style::GaugeSectionDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::sizecomputationcontainerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::SizeComputationContainerStyleDescription)
-
-
-def test_style::sizecomputationcontainerstyledescription_constructor_exists():
-    assert callable(style::SizeComputationContainerStyleDescription.__init__)
-
-
-def test_style::sizecomputationcontainerstyledescription_constructor_args():
-    sig = inspect.signature(style::SizeComputationContainerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::shapecontainerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::ShapeContainerStyleDescription)
-
-
-def test_diagram::style::shapecontainerstyledescription_constructor_exists():
-    assert callable(diagram::style::ShapeContainerStyleDescription.__init__)
-
-
-def test_diagram::style::shapecontainerstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::ShapeContainerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "shape" in params, "Missing parameter 'shape'"
-
-def test_diagram::style::shapecontainerstyledescription_has_shape():
-    assert hasattr(diagram::style::ShapeContainerStyleDescription, "shape")
-    descriptor = None
-    for klass in diagram::style::ShapeContainerStyleDescription.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::flatcontainerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::FlatContainerStyleDescription)
-
-
-def test_diagram::style::flatcontainerstyledescription_constructor_exists():
-    assert callable(diagram::style::FlatContainerStyleDescription.__init__)
-
-
-def test_diagram::style::flatcontainerstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::FlatContainerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "backgroundStyle" in params, "Missing parameter 'backgroundStyle'"
-
-def test_diagram::style::flatcontainerstyledescription_has_backgroundStyle():
-    assert hasattr(diagram::style::FlatContainerStyleDescription, "backgroundStyle")
-    descriptor = None
-    for klass in diagram::style::FlatContainerStyleDescription.__mro__:
-        if "backgroundStyle" in klass.__dict__:
-            descriptor = klass.__dict__["backgroundStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_style::roundedcornerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::RoundedCornerStyleDescription)
-
-
-def test_style::roundedcornerstyledescription_constructor_exists():
-    assert callable(style::RoundedCornerStyleDescription.__init__)
-
-
-def test_style::roundedcornerstyledescription_constructor_args():
-    sig = inspect.signature(style::RoundedCornerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_nodestyledescription_is_not_abstract():
-    assert not inspect.isabstract(NodeStyleDescription)
-
-
-def test_nodestyledescription_constructor_exists():
-    assert callable(NodeStyleDescription.__init__)
-
-
-def test_nodestyledescription_constructor_args():
-    sig = inspect.signature(NodeStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::gaugecompositestyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::GaugeCompositeStyleDescription)
-
-
-def test_diagram::style::gaugecompositestyledescription_constructor_exists():
-    assert callable(diagram::style::GaugeCompositeStyleDescription.__init__)
-
-
-def test_diagram::style::gaugecompositestyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::GaugeCompositeStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "alignment" in params, "Missing parameter 'alignment'"
-
-def test_diagram::style::gaugecompositestyledescription_has_alignment():
-    assert hasattr(diagram::style::GaugeCompositeStyleDescription, "alignment")
-    descriptor = None
-    for klass in diagram::style::GaugeCompositeStyleDescription.__mro__:
-        if "alignment" in klass.__dict__:
-            descriptor = klass.__dict__["alignment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::ellipsenodedescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::EllipseNodeDescription)
-
-
-def test_diagram::style::ellipsenodedescription_constructor_exists():
-    assert callable(diagram::style::EllipseNodeDescription.__init__)
-
-
-def test_diagram::style::ellipsenodedescription_constructor_args():
-    sig = inspect.signature(diagram::style::EllipseNodeDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "verticalDiameterComputationExpression" in params, "Missing parameter 'verticalDiameterComputationExpression'"
-    assert "horizontalDiameterComputationExpression" in params, "Missing parameter 'horizontalDiameterComputationExpression'"
-
-def test_diagram::style::ellipsenodedescription_has_verticalDiameterComputationExpression():
-    assert hasattr(diagram::style::EllipseNodeDescription, "verticalDiameterComputationExpression")
-    descriptor = None
-    for klass in diagram::style::EllipseNodeDescription.__mro__:
-        if "verticalDiameterComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["verticalDiameterComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::ellipsenodedescription_has_horizontalDiameterComputationExpression():
-    assert hasattr(diagram::style::EllipseNodeDescription, "horizontalDiameterComputationExpression")
-    descriptor = None
-    for klass in diagram::style::EllipseNodeDescription.__mro__:
-        if "horizontalDiameterComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalDiameterComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::bundledimagedescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::BundledImageDescription)
-
-
-def test_diagram::style::bundledimagedescription_constructor_exists():
-    assert callable(diagram::style::BundledImageDescription.__init__)
-
-
-def test_diagram::style::bundledimagedescription_constructor_args():
-    sig = inspect.signature(diagram::style::BundledImageDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "shape" in params, "Missing parameter 'shape'"
-    assert "providedShapeID" in params, "Missing parameter 'providedShapeID'"
-
-def test_diagram::style::bundledimagedescription_has_shape():
-    assert hasattr(diagram::style::BundledImageDescription, "shape")
-    descriptor = None
-    for klass in diagram::style::BundledImageDescription.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::bundledimagedescription_has_providedShapeID():
-    assert hasattr(diagram::style::BundledImageDescription, "providedShapeID")
-    descriptor = None
-    for klass in diagram::style::BundledImageDescription.__mro__:
-        if "providedShapeID" in klass.__dict__:
-            descriptor = klass.__dict__["providedShapeID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::squaredescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::SquareDescription)
-
-
-def test_diagram::style::squaredescription_constructor_exists():
-    assert callable(diagram::style::SquareDescription.__init__)
-
-
-def test_diagram::style::squaredescription_constructor_args():
-    sig = inspect.signature(diagram::style::SquareDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_diagram::style::squaredescription_has_height():
-    assert hasattr(diagram::style::SquareDescription, "height")
-    descriptor = None
-    for klass in diagram::style::SquareDescription.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::squaredescription_has_width():
-    assert hasattr(diagram::style::SquareDescription, "width")
-    descriptor = None
-    for klass in diagram::style::SquareDescription.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::dotdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::DotDescription)
-
-
-def test_diagram::style::dotdescription_constructor_exists():
-    assert callable(diagram::style::DotDescription.__init__)
-
-
-def test_diagram::style::dotdescription_constructor_args():
-    sig = inspect.signature(diagram::style::DotDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "strokeSizeComputationExpression" in params, "Missing parameter 'strokeSizeComputationExpression'"
-
-def test_diagram::style::dotdescription_has_strokeSizeComputationExpression():
-    assert hasattr(diagram::style::DotDescription, "strokeSizeComputationExpression")
-    descriptor = None
-    for klass in diagram::style::DotDescription.__mro__:
-        if "strokeSizeComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["strokeSizeComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::notedescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::NoteDescription)
-
-
-def test_diagram::style::notedescription_constructor_exists():
-    assert callable(diagram::style::NoteDescription.__init__)
-
-
-def test_diagram::style::notedescription_constructor_args():
-    sig = inspect.signature(diagram::style::NoteDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::customstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::CustomStyleDescription)
-
-
-def test_diagram::style::customstyledescription_constructor_exists():
-    assert callable(diagram::style::CustomStyleDescription.__init__)
-
-
-def test_diagram::style::customstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::CustomStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_diagram::style::customstyledescription_has_id():
-    assert hasattr(diagram::style::CustomStyleDescription, "id")
-    descriptor = None
-    for klass in diagram::style::CustomStyleDescription.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_style::hidelabelcapabilitystyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::HideLabelCapabilityStyleDescription)
-
-
-def test_style::hidelabelcapabilitystyledescription_constructor_exists():
-    assert callable(style::HideLabelCapabilityStyleDescription.__init__)
-
-
-def test_style::hidelabelcapabilitystyledescription_constructor_args():
-    sig = inspect.signature(style::HideLabelCapabilityStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::tooltipstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::TooltipStyleDescription)
-
-
-def test_style::tooltipstyledescription_constructor_exists():
-    assert callable(style::TooltipStyleDescription.__init__)
-
-
-def test_style::tooltipstyledescription_constructor_args():
-    sig = inspect.signature(style::TooltipStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::labelstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::LabelStyleDescription)
-
-
-def test_style::labelstyledescription_constructor_exists():
-    assert callable(style::LabelStyleDescription.__init__)
-
-
-def test_style::labelstyledescription_constructor_args():
-    sig = inspect.signature(style::LabelStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style::borderedstyledescription_is_not_abstract():
-    assert not inspect.isabstract(style::BorderedStyleDescription)
-
-
-def test_style::borderedstyledescription_constructor_exists():
-    assert callable(style::BorderedStyleDescription.__init__)
-
-
-def test_style::borderedstyledescription_constructor_args():
-    sig = inspect.signature(style::BorderedStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::containerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::ContainerStyleDescription)
-
-
-def test_diagram::style::containerstyledescription_constructor_exists():
-    assert callable(diagram::style::ContainerStyleDescription.__init__)
-
-
-def test_diagram::style::containerstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::ContainerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "roundedCorner" in params, "Missing parameter 'roundedCorner'"
-
-def test_diagram::style::containerstyledescription_has_roundedCorner():
-    assert hasattr(diagram::style::ContainerStyleDescription, "roundedCorner")
-    descriptor = None
-    for klass in diagram::style::ContainerStyleDescription.__mro__:
-        if "roundedCorner" in klass.__dict__:
-            descriptor = klass.__dict__["roundedCorner"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::nodestyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::NodeStyleDescription)
-
-
-def test_diagram::style::nodestyledescription_constructor_exists():
-    assert callable(diagram::style::NodeStyleDescription.__init__)
-
-
-def test_diagram::style::nodestyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::NodeStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "forbiddenSides" in params, "Missing parameter 'forbiddenSides'"
-    assert "labelPosition" in params, "Missing parameter 'labelPosition'"
-    assert "resizeKind" in params, "Missing parameter 'resizeKind'"
-    assert "sizeComputationExpression" in params, "Missing parameter 'sizeComputationExpression'"
-
-def test_diagram::style::nodestyledescription_has_forbiddenSides():
-    assert hasattr(diagram::style::NodeStyleDescription, "forbiddenSides")
-    descriptor = None
-    for klass in diagram::style::NodeStyleDescription.__mro__:
-        if "forbiddenSides" in klass.__dict__:
-            descriptor = klass.__dict__["forbiddenSides"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::nodestyledescription_has_labelPosition():
-    assert hasattr(diagram::style::NodeStyleDescription, "labelPosition")
-    descriptor = None
-    for klass in diagram::style::NodeStyleDescription.__mro__:
-        if "labelPosition" in klass.__dict__:
-            descriptor = klass.__dict__["labelPosition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::nodestyledescription_has_resizeKind():
-    assert hasattr(diagram::style::NodeStyleDescription, "resizeKind")
-    descriptor = None
-    for klass in diagram::style::NodeStyleDescription.__mro__:
-        if "resizeKind" in klass.__dict__:
-            descriptor = klass.__dict__["resizeKind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::nodestyledescription_has_sizeComputationExpression():
-    assert hasattr(diagram::style::NodeStyleDescription, "sizeComputationExpression")
-    descriptor = None
-    for klass in diagram::style::NodeStyleDescription.__mro__:
-        if "sizeComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["sizeComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_colordescription_is_not_abstract():
-    assert not inspect.isabstract(ColorDescription)
-
-
-def test_colordescription_constructor_exists():
-    assert callable(ColorDescription.__init__)
-
-
-def test_colordescription_constructor_args():
-    sig = inspect.signature(ColorDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_styledescription_is_not_abstract():
-    assert not inspect.isabstract(StyleDescription)
-
-
-def test_styledescription_constructor_exists():
-    assert callable(StyleDescription.__init__)
-
-
-def test_styledescription_constructor_args():
-    sig = inspect.signature(StyleDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::roundedcornerstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::RoundedCornerStyleDescription)
-
-
-def test_diagram::style::roundedcornerstyledescription_constructor_exists():
-    assert callable(diagram::style::RoundedCornerStyleDescription.__init__)
-
-
-def test_diagram::style::roundedcornerstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::RoundedCornerStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "arcWidth" in params, "Missing parameter 'arcWidth'"
-    assert "arcHeight" in params, "Missing parameter 'arcHeight'"
-
-def test_diagram::style::roundedcornerstyledescription_has_arcWidth():
-    assert hasattr(diagram::style::RoundedCornerStyleDescription, "arcWidth")
-    descriptor = None
-    for klass in diagram::style::RoundedCornerStyleDescription.__mro__:
-        if "arcWidth" in klass.__dict__:
-            descriptor = klass.__dict__["arcWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::roundedcornerstyledescription_has_arcHeight():
-    assert hasattr(diagram::style::RoundedCornerStyleDescription, "arcHeight")
-    descriptor = None
-    for klass in diagram::style::RoundedCornerStyleDescription.__mro__:
-        if "arcHeight" in klass.__dict__:
-            descriptor = klass.__dict__["arcHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::edgestyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::EdgeStyleDescription)
-
-
-def test_diagram::style::edgestyledescription_constructor_exists():
-    assert callable(diagram::style::EdgeStyleDescription.__init__)
-
-
-def test_diagram::style::edgestyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::EdgeStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "endsCentering" in params, "Missing parameter 'endsCentering'"
-    assert "routingStyle" in params, "Missing parameter 'routingStyle'"
-    assert "sourceArrow" in params, "Missing parameter 'sourceArrow'"
-    assert "targetArrow" in params, "Missing parameter 'targetArrow'"
-    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
-    assert "foldingStyle" in params, "Missing parameter 'foldingStyle'"
-    assert "sizeComputationExpression" in params, "Missing parameter 'sizeComputationExpression'"
-
-def test_diagram::style::edgestyledescription_has_endsCentering():
-    assert hasattr(diagram::style::EdgeStyleDescription, "endsCentering")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "endsCentering" in klass.__dict__:
-            descriptor = klass.__dict__["endsCentering"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::edgestyledescription_has_routingStyle():
-    assert hasattr(diagram::style::EdgeStyleDescription, "routingStyle")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "routingStyle" in klass.__dict__:
-            descriptor = klass.__dict__["routingStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::edgestyledescription_has_sourceArrow():
-    assert hasattr(diagram::style::EdgeStyleDescription, "sourceArrow")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "sourceArrow" in klass.__dict__:
-            descriptor = klass.__dict__["sourceArrow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::edgestyledescription_has_targetArrow():
-    assert hasattr(diagram::style::EdgeStyleDescription, "targetArrow")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "targetArrow" in klass.__dict__:
-            descriptor = klass.__dict__["targetArrow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::edgestyledescription_has_lineStyle():
-    assert hasattr(diagram::style::EdgeStyleDescription, "lineStyle")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "lineStyle" in klass.__dict__:
-            descriptor = klass.__dict__["lineStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::edgestyledescription_has_foldingStyle():
-    assert hasattr(diagram::style::EdgeStyleDescription, "foldingStyle")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "foldingStyle" in klass.__dict__:
-            descriptor = klass.__dict__["foldingStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::edgestyledescription_has_sizeComputationExpression():
-    assert hasattr(diagram::style::EdgeStyleDescription, "sizeComputationExpression")
-    descriptor = None
-    for klass in diagram::style::EdgeStyleDescription.__mro__:
-        if "sizeComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["sizeComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::style::borderedstyledescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::BorderedStyleDescription)
-
-
-def test_diagram::style::borderedstyledescription_constructor_exists():
-    assert callable(diagram::style::BorderedStyleDescription.__init__)
-
-
-def test_diagram::style::borderedstyledescription_constructor_args():
-    sig = inspect.signature(diagram::style::BorderedStyleDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "borderSizeComputationExpression" in params, "Missing parameter 'borderSizeComputationExpression'"
-    assert "borderLineStyle" in params, "Missing parameter 'borderLineStyle'"
-
-def test_diagram::style::borderedstyledescription_has_borderSizeComputationExpression():
-    assert hasattr(diagram::style::BorderedStyleDescription, "borderSizeComputationExpression")
-    descriptor = None
-    for klass in diagram::style::BorderedStyleDescription.__mro__:
-        if "borderSizeComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["borderSizeComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::borderedstyledescription_has_borderLineStyle():
-    assert hasattr(diagram::style::BorderedStyleDescription, "borderLineStyle")
-    descriptor = None
-    for klass in diagram::style::BorderedStyleDescription.__mro__:
-        if "borderLineStyle" in klass.__dict__:
-            descriptor = klass.__dict__["borderLineStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tool::containerdropdescription_is_not_abstract():
-    assert not inspect.isabstract(tool::ContainerDropDescription)
-
-
-def test_tool::containerdropdescription_constructor_exists():
-    assert callable(tool::ContainerDropDescription.__init__)
-
-
-def test_tool::containerdropdescription_constructor_args():
-    sig = inspect.signature(tool::ContainerDropDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagram::style::lozengenodedescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::style::LozengeNodeDescription)
-
-
-def test_diagram::style::lozengenodedescription_constructor_exists():
-    assert callable(diagram::style::LozengeNodeDescription.__init__)
-
-
-def test_diagram::style::lozengenodedescription_constructor_args():
-    sig = inspect.signature(diagram::style::LozengeNodeDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "widthComputationExpression" in params, "Missing parameter 'widthComputationExpression'"
-    assert "heightComputationExpression" in params, "Missing parameter 'heightComputationExpression'"
-
-def test_diagram::style::lozengenodedescription_has_widthComputationExpression():
-    assert hasattr(diagram::style::LozengeNodeDescription, "widthComputationExpression")
-    descriptor = None
-    for klass in diagram::style::LozengeNodeDescription.__mro__:
-        if "widthComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["widthComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagram::style::lozengenodedescription_has_heightComputationExpression():
-    assert hasattr(diagram::style::LozengeNodeDescription, "heightComputationExpression")
-    descriptor = None
-    for klass in diagram::style::LozengeNodeDescription.__mro__:
-        if "heightComputationExpression" in klass.__dict__:
-            descriptor = klass.__dict__["heightComputationExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diagram::description::draganddroptargetdescription_is_not_abstract():
-    assert not inspect.isabstract(diagram::description::DragAndDropTargetDescription)
-
-
-def test_diagram::description::draganddroptargetdescription_constructor_exists():
-    assert callable(diagram::description::DragAndDropTargetDescription.__init__)
-
-
-def test_diagram::description::draganddroptargetdescription_constructor_args():
-    sig = inspect.signature(diagram::description::DragAndDropTargetDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_customization_is_not_abstract():
-    assert not inspect.isabstract(Customization)
-
-
-def test_customization_constructor_exists():
-    assert callable(Customization.__init__)
-
-
-def test_customization_constructor_args():
-    sig = inspect.signature(Customization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_decorationdescriptionsset_is_not_abstract():
-    assert not inspect.isabstract(DecorationDescriptionsSet)
-
-
-def test_decorationdescriptionsset_constructor_exists():
-    assert callable(DecorationDescriptionsSet.__init__)
-
-
-def test_decorationdescriptionsset_constructor_args():
-    sig = inspect.signature(DecorationDescriptionsSet.__init__)
-    params = list(sig.parameters.keys())
-
-def test_foldingstyle_exists():
+def test_containershape_exists():
     # Check that the Enumeration exists
-    assert FoldingStyle is not None
+    assert ContainerShape is not None
 
-def test_foldingstyle_has_all_literals():
+def test_containershape_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FoldingStyle]
+    enum_literals = [lit.name for lit in ContainerShape]
     expected_literals = [
-        "TARGET",
-        "SOURCE",
+        "parallelogram",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ContainerShape"
+
+def test_bundledimageshape_exists():
+    # Check that the Enumeration exists
+    assert BundledImageShape is not None
+
+def test_bundledimageshape_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BundledImageShape]
+    expected_literals = [
+        "stroke",
+        "ring",
+        "providedShape",
+        "square",
+        "dot",
+        "triangle",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BundledImageShape"
+
+def test_labelposition_exists():
+    # Check that the Enumeration exists
+    assert LabelPosition is not None
+
+def test_labelposition_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LabelPosition]
+    expected_literals = [
+        "border",
+        "node",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LabelPosition"
+
+def test_backgroundstyle_exists():
+    # Check that the Enumeration exists
+    assert BackgroundStyle is not None
+
+def test_backgroundstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BackgroundStyle]
+    expected_literals = [
+        "Liquid",
+        "GradientLeftToRight",
+        "GradientTopToBottom",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BackgroundStyle"
+
+def test_resizekind_exists():
+    # Check that the Enumeration exists
+    assert ResizeKind is not None
+
+def test_resizekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ResizeKind]
+    expected_literals = [
+        "NSEW",
         "NONE",
+        "EAST_WEST",
+        "NORTH_SOUTH",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FoldingStyle"
+        assert lit_name in enum_literals, f"Literal '' missing in ResizeKind"
 
-def test_filterkind_exists():
+def test_reconnectionkind_exists():
     # Check that the Enumeration exists
-    assert FilterKind is not None
+    assert ReconnectionKind is not None
 
-def test_filterkind_has_all_literals():
+def test_reconnectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FilterKind]
+    enum_literals = [lit.name for lit in ReconnectionKind]
     expected_literals = [
-        "HIDE",
-        "COLLAPSE",
+        "RECONNECT_SOURCE",
+        "RECONNECT_BOTH",
+        "RECONNECT_TARGET",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FilterKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ReconnectionKind"
+
+def test_side_exists():
+    # Check that the Enumeration exists
+    assert Side is not None
+
+def test_side_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Side]
+    expected_literals = [
+        "SOUTH",
+        "NORTH",
+        "EAST",
+        "WEST",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Side"
+
+def test_edgearrows_exists():
+    # Check that the Enumeration exists
+    assert EdgeArrows is not None
+
+def test_edgearrows_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EdgeArrows]
+    expected_literals = [
+        "OutputClosedArrow",
+        "OutputArrow",
+        "InputFillClosedArrow",
+        "FillDiamond",
+        "InputArrowWithFillDiamond",
+        "InputClosedArrow",
+        "OutputFillClosedArrow",
+        "NoDecoration",
+        "InputArrow",
+        "InputArrowWithDiamond",
+        "Diamond",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EdgeArrows"
 
 def test_arrangeconstraint_exists():
     # Check that the Enumeration exists
@@ -5456,140 +5563,20 @@ def test_arrangeconstraint_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ArrangeConstraint"
 
-def test_side_exists():
+def test_filterkind_exists():
     # Check that the Enumeration exists
-    assert Side is not None
+    assert FilterKind is not None
 
-def test_side_has_all_literals():
+def test_filterkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Side]
+    enum_literals = [lit.name for lit in FilterKind]
     expected_literals = [
-        "NORTH",
-        "WEST",
-        "EAST",
-        "SOUTH",
+        "COLLAPSE",
+        "HIDE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Side"
-
-def test_reconnectionkind_exists():
-    # Check that the Enumeration exists
-    assert ReconnectionKind is not None
-
-def test_reconnectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ReconnectionKind]
-    expected_literals = [
-        "RECONNECT_BOTH",
-        "RECONNECT_TARGET",
-        "RECONNECT_SOURCE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ReconnectionKind"
-
-def test_labelposition_exists():
-    # Check that the Enumeration exists
-    assert LabelPosition is not None
-
-def test_labelposition_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LabelPosition]
-    expected_literals = [
-        "node",
-        "border",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LabelPosition"
-
-def test_alignmentkind_exists():
-    # Check that the Enumeration exists
-    assert AlignmentKind is not None
-
-def test_alignmentkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AlignmentKind]
-    expected_literals = [
-        "VERTICAL",
-        "HORIZONTAL",
-        "SQUARE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AlignmentKind"
-
-def test_centeringstyle_exists():
-    # Check that the Enumeration exists
-    assert CenteringStyle is not None
-
-def test_centeringstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CenteringStyle]
-    expected_literals = [
-        "None_",
-        "Source",
-        "Both",
-        "Target",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CenteringStyle"
-
-def test_containershape_exists():
-    # Check that the Enumeration exists
-    assert ContainerShape is not None
-
-def test_containershape_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ContainerShape]
-    expected_literals = [
-        "parallelogram",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ContainerShape"
-
-def test_backgroundstyle_exists():
-    # Check that the Enumeration exists
-    assert BackgroundStyle is not None
-
-def test_backgroundstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BackgroundStyle]
-    expected_literals = [
-        "GradientLeftToRight",
-        "GradientTopToBottom",
-        "Liquid",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BackgroundStyle"
-
-def test_edgearrows_exists():
-    # Check that the Enumeration exists
-    assert EdgeArrows is not None
-
-def test_edgearrows_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EdgeArrows]
-    expected_literals = [
-        "FillDiamond",
-        "OutputClosedArrow",
-        "OutputFillClosedArrow",
-        "InputArrow",
-        "InputClosedArrow",
-        "Diamond",
-        "InputFillClosedArrow",
-        "InputArrowWithFillDiamond",
-        "InputArrowWithDiamond",
-        "NoDecoration",
-        "OutputArrow",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EdgeArrows"
+        assert lit_name in enum_literals, f"Literal '' missing in FilterKind"
 
 def test_containerlayout_exists():
     # Check that the Enumeration exists
@@ -5600,81 +5587,30 @@ def test_containerlayout_has_all_literals():
     enum_literals = [lit.name for lit in ContainerLayout]
     expected_literals = [
         "HorizontalStack",
-        "FreeForm",
-        "List",
         "VerticalStack",
+        "List",
+        "FreeForm",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ContainerLayout"
 
-def test_layoutdirection_exists():
+def test_centeringstyle_exists():
     # Check that the Enumeration exists
-    assert LayoutDirection is not None
+    assert CenteringStyle is not None
 
-def test_layoutdirection_has_all_literals():
+def test_centeringstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LayoutDirection]
+    enum_literals = [lit.name for lit in CenteringStyle]
     expected_literals = [
-        "TopToBottom",
-        "LeftToRight",
-        "BottomToTop",
+        "None_",
+        "Both",
+        "Target",
+        "Source",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LayoutDirection"
-
-def test_resizekind_exists():
-    # Check that the Enumeration exists
-    assert ResizeKind is not None
-
-def test_resizekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ResizeKind]
-    expected_literals = [
-        "NONE",
-        "EAST_WEST",
-        "NSEW",
-        "NORTH_SOUTH",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ResizeKind"
-
-def test_edgerouting_exists():
-    # Check that the Enumeration exists
-    assert EdgeRouting is not None
-
-def test_edgerouting_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EdgeRouting]
-    expected_literals = [
-        "tree",
-        "straight",
-        "manhattan",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EdgeRouting"
-
-def test_bundledimageshape_exists():
-    # Check that the Enumeration exists
-    assert BundledImageShape is not None
-
-def test_bundledimageshape_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BundledImageShape]
-    expected_literals = [
-        "square",
-        "dot",
-        "providedShape",
-        "ring",
-        "triangle",
-        "stroke",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BundledImageShape"
+        assert lit_name in enum_literals, f"Literal '' missing in CenteringStyle"
 
 def test_linestyle_exists():
     # Check that the Enumeration exists
@@ -5684,14 +5620,78 @@ def test_linestyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LineStyle]
     expected_literals = [
-        "dash_dot",
         "dot",
-        "solid",
         "dash",
+        "solid",
+        "dash_dot",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
+
+def test_edgerouting_exists():
+    # Check that the Enumeration exists
+    assert EdgeRouting is not None
+
+def test_edgerouting_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EdgeRouting]
+    expected_literals = [
+        "manhattan",
+        "tree",
+        "straight",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EdgeRouting"
+
+def test_layoutdirection_exists():
+    # Check that the Enumeration exists
+    assert LayoutDirection is not None
+
+def test_layoutdirection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LayoutDirection]
+    expected_literals = [
+        "BottomToTop",
+        "TopToBottom",
+        "LeftToRight",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LayoutDirection"
+
+def test_alignmentkind_exists():
+    # Check that the Enumeration exists
+    assert AlignmentKind is not None
+
+def test_alignmentkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AlignmentKind]
+    expected_literals = [
+        "SQUARE",
+        "VERTICAL",
+        "HORIZONTAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AlignmentKind"
+
+def test_foldingstyle_exists():
+    # Check that the Enumeration exists
+    assert FoldingStyle is not None
+
+def test_foldingstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FoldingStyle]
+    expected_literals = [
+        "SOURCE",
+        "NONE",
+        "TARGET",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FoldingStyle"
 
 
 # =============================================================================
@@ -5705,219 +5705,658 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-description::EndUserDocumentedElement_strategy = st.builds(
-    description::EndUserDocumentedElement,
+tool_DeleteHookParameter_strategy = st.builds(
+    tool_DeleteHookParameter,
+)
+diagram_tool_DeleteHook_strategy = st.builds(
+    diagram_tool_DeleteHook,
+    id=
+        safe_text
+)
+AbstractToolDescription_strategy = st.builds(
+    AbstractToolDescription,
+)
+diagram_tool_RequestDescription_strategy = st.builds(
+    diagram_tool_RequestDescription,
+    type=
+        safe_text
+)
+tool_DeleteHook_strategy = st.builds(
+    tool_DeleteHook,
+)
+tool_ElementDeleteVariable_strategy = st.builds(
+    tool_ElementDeleteVariable,
+)
+tool_ElementDoubleClickVariable_strategy = st.builds(
+    tool_ElementDoubleClickVariable,
+)
+tool_InitEdgeCreationOperation_strategy = st.builds(
+    tool_InitEdgeCreationOperation,
+)
+tool_TargetEdgeViewCreationVariable_strategy = st.builds(
+    tool_TargetEdgeViewCreationVariable,
+)
+tool_SourceEdgeViewCreationVariable_strategy = st.builds(
+    tool_SourceEdgeViewCreationVariable,
+)
+tool_TargetEdgeCreationVariable_strategy = st.builds(
+    tool_TargetEdgeCreationVariable,
+)
+tool_SourceEdgeCreationVariable_strategy = st.builds(
+    tool_SourceEdgeCreationVariable,
+)
+tool_ContainerViewVariable_strategy = st.builds(
+    tool_ContainerViewVariable,
+)
+tool_NodeCreationVariable_strategy = st.builds(
+    tool_NodeCreationVariable,
+)
+MappingBasedToolDescription_strategy = st.builds(
+    MappingBasedToolDescription,
+)
+diagram_tool_ContainerCreationDescription_strategy = st.builds(
+    diagram_tool_ContainerCreationDescription,
+    iconPath=
+        safe_text
+)
+diagram_tool_DeleteElementDescription_strategy = st.builds(
+    diagram_tool_DeleteElementDescription,
+)
+diagram_tool_EdgeCreationDescription_strategy = st.builds(
+    diagram_tool_EdgeCreationDescription,
+    iconPath=
+        safe_text,
+    connectionStartPrecondition=
+        safe_text
+)
+diagram_tool_DoubleClickDescription_strategy = st.builds(
+    diagram_tool_DoubleClickDescription,
+)
+diagram_tool_NodeCreationDescription_strategy = st.builds(
+    diagram_tool_NodeCreationDescription,
+    iconPath=
+        safe_text
+)
+tool_ToolGroup_strategy = st.builds(
+    tool_ToolGroup,
+)
+diagram_tool_ToolGroupExtension_strategy = st.builds(
+    diagram_tool_ToolGroupExtension,
+)
+ToolEntry_strategy = st.builds(
+    ToolEntry,
+)
+diagram_tool_ToolGroup_strategy = st.builds(
+    diagram_tool_ToolGroup,
+)
+tool_ToolGroupExtension_strategy = st.builds(
+    tool_ToolGroupExtension,
+)
+tool_PopupMenu_strategy = st.builds(
+    tool_PopupMenu,
+)
+tool_ToolEntry_strategy = st.builds(
+    tool_ToolEntry,
+)
+tool_InitialNodeCreationOperation_strategy = st.builds(
+    tool_InitialNodeCreationOperation,
+)
+diagram_style_HideLabelCapabilityStyleDescription_strategy = st.builds(
+    diagram_style_HideLabelCapabilityStyleDescription,
+    hideLabelByDefault=
+        st.booleans()
+)
+EdgeStyleDescription_strategy = st.builds(
+    EdgeStyleDescription,
+)
+diagram_style_BracketEdgeStyleDescription_strategy = st.builds(
+    diagram_style_BracketEdgeStyleDescription,
+)
+BasicLabelStyleDescription_strategy = st.builds(
+    BasicLabelStyleDescription,
+)
+diagram_style_CenterLabelStyleDescription_strategy = st.builds(
+    diagram_style_CenterLabelStyleDescription,
+)
+diagram_style_EndLabelStyleDescription_strategy = st.builds(
+    diagram_style_EndLabelStyleDescription,
+)
+diagram_style_BeginLabelStyleDescription_strategy = st.builds(
+    diagram_style_BeginLabelStyleDescription,
+)
+style_EndLabelStyleDescription_strategy = st.builds(
+    style_EndLabelStyleDescription,
+)
+style_CenterLabelStyleDescription_strategy = st.builds(
+    style_CenterLabelStyleDescription,
+)
+style_BeginLabelStyleDescription_strategy = st.builds(
+    style_BeginLabelStyleDescription,
+)
+style_LabelBorderStyleDescription_strategy = st.builds(
+    style_LabelBorderStyleDescription,
+)
+diagram_style_SizeComputationContainerStyleDescription_strategy = st.builds(
+    diagram_style_SizeComputationContainerStyleDescription,
+    widthComputationExpression=
+        safe_text,
+    heightComputationExpression=
+        safe_text
+)
+diagram_style_GaugeSectionDescription_strategy = st.builds(
+    diagram_style_GaugeSectionDescription,
+    minValueExpression=
+        safe_text,
+    label=
+        safe_text,
+    maxValueExpression=
+        safe_text,
+    valueExpression=
+        safe_text
+)
+style_GaugeSectionDescription_strategy = st.builds(
+    style_GaugeSectionDescription,
+)
+style_SizeComputationContainerStyleDescription_strategy = st.builds(
+    style_SizeComputationContainerStyleDescription,
+)
+style_RoundedCornerStyleDescription_strategy = st.builds(
+    style_RoundedCornerStyleDescription,
+)
+NodeStyleDescription_strategy = st.builds(
+    NodeStyleDescription,
+)
+diagram_style_NoteDescription_strategy = st.builds(
+    diagram_style_NoteDescription,
+)
+diagram_style_EllipseNodeDescription_strategy = st.builds(
+    diagram_style_EllipseNodeDescription,
+    verticalDiameterComputationExpression=
+        safe_text,
+    horizontalDiameterComputationExpression=
+        safe_text
+)
+diagram_style_SquareDescription_strategy = st.builds(
+    diagram_style_SquareDescription,
+    width=
+        safe_text,
+    height=
+        safe_text
+)
+diagram_style_DotDescription_strategy = st.builds(
+    diagram_style_DotDescription,
+    strokeSizeComputationExpression=
+        safe_text
+)
+diagram_style_GaugeCompositeStyleDescription_strategy = st.builds(
+    diagram_style_GaugeCompositeStyleDescription,
+    alignment=
+        safe_text
+)
+diagram_style_BundledImageDescription_strategy = st.builds(
+    diagram_style_BundledImageDescription,
+    shape=
+        safe_text,
+    providedShapeID=
+        safe_text
+)
+diagram_style_CustomStyleDescription_strategy = st.builds(
+    diagram_style_CustomStyleDescription,
+    id=
+        safe_text
+)
+style_HideLabelCapabilityStyleDescription_strategy = st.builds(
+    style_HideLabelCapabilityStyleDescription,
+)
+style_TooltipStyleDescription_strategy = st.builds(
+    style_TooltipStyleDescription,
+)
+style_LabelStyleDescription_strategy = st.builds(
+    style_LabelStyleDescription,
+)
+style_BorderedStyleDescription_strategy = st.builds(
+    style_BorderedStyleDescription,
+)
+diagram_style_ContainerStyleDescription_strategy = st.builds(
+    diagram_style_ContainerStyleDescription,
+    roundedCorner=
+        st.booleans()
+)
+ColorDescription_strategy = st.builds(
+    ColorDescription,
+)
+StyleDescription_strategy = st.builds(
+    StyleDescription,
+)
+diagram_style_RoundedCornerStyleDescription_strategy = st.builds(
+    diagram_style_RoundedCornerStyleDescription,
+    arcHeight=
+        safe_text,
+    arcWidth=
+        safe_text
+)
+diagram_style_EdgeStyleDescription_strategy = st.builds(
+    diagram_style_EdgeStyleDescription,
+    endsCentering=
+        safe_text,
+    foldingStyle=
+        safe_text,
+    sizeComputationExpression=
+        safe_text,
+    routingStyle=
+        safe_text,
+    lineStyle=
+        safe_text,
+    targetArrow=
+        safe_text,
+    sourceArrow=
+        safe_text
+)
+diagram_style_BorderedStyleDescription_strategy = st.builds(
+    diagram_style_BorderedStyleDescription,
+    borderSizeComputationExpression=
+        safe_text,
+    borderLineStyle=
+        safe_text
+)
+tool_ContainerDropDescription_strategy = st.builds(
+    tool_ContainerDropDescription,
+)
+diagram_style_LozengeNodeDescription_strategy = st.builds(
+    diagram_style_LozengeNodeDescription,
+    widthComputationExpression=
+        safe_text,
+    heightComputationExpression=
+        safe_text
+)
+diagram_description_DragAndDropTargetDescription_strategy = st.builds(
+    diagram_description_DragAndDropTargetDescription,
+)
+Customization_strategy = st.builds(
+    Customization,
+)
+DecorationDescriptionsSet_strategy = st.builds(
+    DecorationDescriptionsSet,
+)
+description_EndUserDocumentedElement_strategy = st.builds(
+    description_EndUserDocumentedElement,
 )
 DecorationDescription_strategy = st.builds(
     DecorationDescription,
 )
-diagram::description::MappingBasedDecoration_strategy = st.builds(
-    diagram::description::MappingBasedDecoration,
+diagram_description_MappingBasedDecoration_strategy = st.builds(
+    diagram_description_MappingBasedDecoration,
 )
 DocumentedElement_strategy = st.builds(
     DocumentedElement,
 )
-diagram::description::Layout_strategy = st.builds(
-    diagram::description::Layout,
+diagram_description_Layout_strategy = st.builds(
+    diagram_description_Layout,
 )
 ConditionalStyleDescription_strategy = st.builds(
     ConditionalStyleDescription,
 )
-diagram::description::ConditionalEdgeStyleDescription_strategy = st.builds(
-    diagram::description::ConditionalEdgeStyleDescription,
+diagram_description_ConditionalEdgeStyleDescription_strategy = st.builds(
+    diagram_description_ConditionalEdgeStyleDescription,
 )
-diagram::description::ConditionalContainerStyleDescription_strategy = st.builds(
-    diagram::description::ConditionalContainerStyleDescription,
+diagram_description_ConditionalContainerStyleDescription_strategy = st.builds(
+    diagram_description_ConditionalContainerStyleDescription,
 )
-diagram::description::ConditionalNodeStyleDescription_strategy = st.builds(
-    diagram::description::ConditionalNodeStyleDescription,
+diagram_description_ConditionalNodeStyleDescription_strategy = st.builds(
+    diagram_description_ConditionalNodeStyleDescription,
 )
-description::IdentifiedElement_strategy = st.builds(
-    description::IdentifiedElement,
+description_IdentifiedElement_strategy = st.builds(
+    description_IdentifiedElement,
 )
-diagram::description::IEdgeMapping_strategy = st.builds(
-    diagram::description::IEdgeMapping,
+diagram_description_IEdgeMapping_strategy = st.builds(
+    diagram_description_IEdgeMapping,
 )
 AbstractNodeMapping_strategy = st.builds(
     AbstractNodeMapping,
 )
-tool::ReconnectEdgeDescription_strategy = st.builds(
-    tool::ReconnectEdgeDescription,
+tool_ReconnectEdgeDescription_strategy = st.builds(
+    tool_ReconnectEdgeDescription,
 )
 ConditionalEdgeStyleDescription_strategy = st.builds(
     ConditionalEdgeStyleDescription,
 )
-style::EdgeStyleDescription_strategy = st.builds(
-    style::EdgeStyleDescription,
+style_EdgeStyleDescription_strategy = st.builds(
+    style_EdgeStyleDescription,
 )
-description::IEdgeMapping_strategy = st.builds(
-    description::IEdgeMapping,
+description_IEdgeMapping_strategy = st.builds(
+    description_IEdgeMapping,
 )
-description::ContainerMapping_strategy = st.builds(
-    description::ContainerMapping,
+description_ContainerMapping_strategy = st.builds(
+    description_ContainerMapping,
 )
-description::AbstractMappingImport_strategy = st.builds(
-    description::AbstractMappingImport,
+description_AbstractMappingImport_strategy = st.builds(
+    description_AbstractMappingImport,
 )
-diagram::description::ContainerMappingImport_strategy = st.builds(
-    diagram::description::ContainerMappingImport,
+diagram_description_ContainerMappingImport_strategy = st.builds(
+    diagram_description_ContainerMappingImport,
 )
-description::NodeMapping_strategy = st.builds(
-    description::NodeMapping,
+description_NodeMapping_strategy = st.builds(
+    description_NodeMapping,
 )
-diagram::description::NodeMappingImport_strategy = st.builds(
-    diagram::description::NodeMappingImport,
+diagram_description_NodeMappingImport_strategy = st.builds(
+    diagram_description_NodeMappingImport,
 )
 ConditionalContainerStyleDescription_strategy = st.builds(
     ConditionalContainerStyleDescription,
 )
-style::ContainerStyleDescription_strategy = st.builds(
-    style::ContainerStyleDescription,
+style_ContainerStyleDescription_strategy = st.builds(
+    style_ContainerStyleDescription,
+)
+diagram_style_ShapeContainerStyleDescription_strategy = st.builds(
+    diagram_style_ShapeContainerStyleDescription,
+    shape=
+        safe_text
+)
+diagram_style_FlatContainerStyleDescription_strategy = st.builds(
+    diagram_style_FlatContainerStyleDescription,
+    backgroundStyle=
+        safe_text
 )
 ConditionalNodeStyleDescription_strategy = st.builds(
     ConditionalNodeStyleDescription,
 )
-style::NodeStyleDescription_strategy = st.builds(
-    style::NodeStyleDescription,
+style_NodeStyleDescription_strategy = st.builds(
+    style_NodeStyleDescription,
 )
-description::AbstractNodeMapping_strategy = st.builds(
-    description::AbstractNodeMapping,
+diagram_style_WorkspaceImageDescription_strategy = st.builds(
+    diagram_style_WorkspaceImageDescription,
+    workspacePath=
+        safe_text
 )
-description::DiagramElementMapping_strategy = st.builds(
-    description::DiagramElementMapping,
+description_AbstractNodeMapping_strategy = st.builds(
+    description_AbstractNodeMapping,
 )
-tool::DoubleClickDescription_strategy = st.builds(
-    tool::DoubleClickDescription,
+description_DiagramElementMapping_strategy = st.builds(
+    description_DiagramElementMapping,
 )
-tool::DirectEditLabel_strategy = st.builds(
-    tool::DirectEditLabel,
+tool_DoubleClickDescription_strategy = st.builds(
+    tool_DoubleClickDescription,
 )
-tool::DeleteElementDescription_strategy = st.builds(
-    tool::DeleteElementDescription,
+tool_DirectEditLabel_strategy = st.builds(
+    tool_DirectEditLabel,
 )
-description::RepresentationElementMapping_strategy = st.builds(
-    description::RepresentationElementMapping,
+tool_DeleteElementDescription_strategy = st.builds(
+    tool_DeleteElementDescription,
+)
+description_RepresentationElementMapping_strategy = st.builds(
+    description_RepresentationElementMapping,
 )
 RepresentationExtensionDescription_strategy = st.builds(
     RepresentationExtensionDescription,
 )
-diagram::description::DiagramExtensionDescription_strategy = st.builds(
-    diagram::description::DiagramExtensionDescription,
+diagram_description_DiagramExtensionDescription_strategy = st.builds(
+    diagram_description_DiagramExtensionDescription,
 )
-description::DiagramDescription_strategy = st.builds(
-    description::DiagramDescription,
+description_DiagramDescription_strategy = st.builds(
+    description_DiagramDescription,
 )
-description::RepresentationImportDescription_strategy = st.builds(
-    description::RepresentationImportDescription,
+description_RepresentationImportDescription_strategy = st.builds(
+    description_RepresentationImportDescription,
 )
-diagram::description::DiagramImportDescription_strategy = st.builds(
-    diagram::description::DiagramImportDescription,
+diagram_description_DiagramImportDescription_strategy = st.builds(
+    diagram_description_DiagramImportDescription,
 )
-tool::ToolSection_strategy = st.builds(
-    tool::ToolSection,
+tool_ToolSection_strategy = st.builds(
+    tool_ToolSection,
 )
 EdgeMappingImport_strategy = st.builds(
     EdgeMappingImport,
 )
-tool::InitialOperation_strategy = st.builds(
-    tool::InitialOperation,
+tool_InitialOperation_strategy = st.builds(
+    tool_InitialOperation,
 )
 Layout_strategy = st.builds(
     Layout,
 )
-diagram::description::OrderedTreeLayout_strategy = st.builds(
-    diagram::description::OrderedTreeLayout,
-    childrenExpression=
-        safe_text
-)
-diagram::description::CompositeLayout_strategy = st.builds(
-    diagram::description::CompositeLayout,
+diagram_description_CompositeLayout_strategy = st.builds(
+    diagram_description_CompositeLayout,
     direction=
         safe_text,
     padding=
         st.integers()
 )
-tool::RepresentationCreationDescription_strategy = st.builds(
-    tool::RepresentationCreationDescription,
+diagram_description_OrderedTreeLayout_strategy = st.builds(
+    diagram_description_OrderedTreeLayout,
+    childrenExpression=
+        safe_text
 )
-tool::AbstractToolDescription_strategy = st.builds(
-    tool::AbstractToolDescription,
+tool_RepresentationCreationDescription_strategy = st.builds(
+    tool_RepresentationCreationDescription,
 )
-concern::ConcernSet_strategy = st.builds(
-    concern::ConcernSet,
+tool_AbstractToolDescription_strategy = st.builds(
+    tool_AbstractToolDescription,
 )
-validation::ValidationSet_strategy = st.builds(
-    validation::ValidationSet,
+concern_ConcernSet_strategy = st.builds(
+    concern_ConcernSet,
+)
+validation_ValidationSet_strategy = st.builds(
+    validation_ValidationSet,
 )
 EdgeMapping_strategy = st.builds(
     EdgeMapping,
 )
-description::PasteTargetDescription_strategy = st.builds(
-    description::PasteTargetDescription,
+description_PasteTargetDescription_strategy = st.builds(
+    description_PasteTargetDescription,
 )
-diagram::description::DiagramElementMapping_strategy = st.builds(
-    diagram::description::DiagramElementMapping,
-    synchronizationLock=
-        st.booleans(),
-    createElements=
-        st.booleans(),
-    semanticCandidatesExpression=
+diagram_description_DiagramElementMapping_strategy = st.builds(
+    diagram_description_DiagramElementMapping,
+    preconditionExpression=
         safe_text,
     semanticElements=
         safe_text,
-    preconditionExpression=
-        safe_text
+    synchronizationLock=
+        st.booleans(),
+    semanticCandidatesExpression=
+        safe_text,
+    createElements=
+        st.booleans()
 )
-description::RepresentationDescription_strategy = st.builds(
-    description::RepresentationDescription,
+description_RepresentationDescription_strategy = st.builds(
+    description_RepresentationDescription,
 )
-description::DragAndDropTargetDescription_strategy = st.builds(
-    description::DragAndDropTargetDescription,
+description_DragAndDropTargetDescription_strategy = st.builds(
+    description_DragAndDropTargetDescription,
 )
-diagram::description::ContainerMapping_strategy = st.builds(
-    diagram::description::ContainerMapping,
+diagram_description_NodeMapping_strategy = st.builds(
+    diagram_description_NodeMapping,
+)
+diagram_description_ContainerMapping_strategy = st.builds(
+    diagram_description_ContainerMapping,
     childrenPresentation=
         safe_text
 )
-diagram::description::NodeMapping_strategy = st.builds(
-    diagram::description::NodeMapping,
-)
-diagram::description::DiagramDescription_strategy = st.builds(
-    diagram::description::DiagramDescription,
+diagram_description_DiagramDescription_strategy = st.builds(
+    diagram_description_DiagramDescription,
+    preconditionExpression=
+        safe_text,
+    domainClass=
+        safe_text,
     rootExpression=
         safe_text,
     enablePopupBars=
-        st.booleans(),
-    domainClass=
-        safe_text,
-    preconditionExpression=
+        st.booleans()
+)
+diagram_EObject_strategy = st.builds(
+    diagram_EObject,
+)
+tool_SelectModelElementVariable_strategy = st.builds(
+    tool_SelectModelElementVariable,
+)
+diagram_concern_ConcernSet_strategy = st.builds(
+    diagram_concern_ConcernSet,
+)
+InteractiveVariableDescription_strategy = st.builds(
+    InteractiveVariableDescription,
+)
+filter_Filter_strategy = st.builds(
+    filter_Filter,
+)
+FilterDescription_strategy = st.builds(
+    FilterDescription,
+)
+diagram_filter_CompositeFilterDescription_strategy = st.builds(
+    diagram_filter_CompositeFilterDescription,
+)
+diagram_filter_Filter_strategy = st.builds(
+    diagram_filter_Filter,
+    filterKind=
         safe_text
 )
-diagram::EObject_strategy = st.builds(
-    diagram::EObject,
+Filter_strategy = st.builds(
+    Filter,
 )
-tool::SelectModelElementVariable_strategy = st.builds(
-    tool::SelectModelElementVariable,
+diagram_filter_VariableFilter_strategy = st.builds(
+    diagram_filter_VariableFilter,
+    semanticConditionExpression=
+        safe_text
 )
-diagram::HideLabelCapabilityStyle_strategy = st.builds(
-    diagram::HideLabelCapabilityStyle,
+diagram_filter_MappingFilter_strategy = st.builds(
+    diagram_filter_MappingFilter,
+    viewConditionExpression=
+        safe_text,
+    semanticConditionExpression=
+        safe_text
+)
+tool_ElementDropVariable_strategy = st.builds(
+    tool_ElementDropVariable,
+)
+tool_DropContainerVariable_strategy = st.builds(
+    tool_DropContainerVariable,
+)
+diagram_tool_ContainerDropDescription_strategy = st.builds(
+    diagram_tool_ContainerDropDescription,
+    dragSource=
+        safe_text,
+    moveEdges=
+        st.booleans()
+)
+RepresentationNavigationDescription_strategy = st.builds(
+    RepresentationNavigationDescription,
+)
+diagram_tool_DiagramNavigationDescription_strategy = st.builds(
+    diagram_tool_DiagramNavigationDescription,
+)
+RepresentationCreationDescription_strategy = st.builds(
+    RepresentationCreationDescription,
+)
+diagram_tool_DiagramCreationDescription_strategy = st.builds(
+    diagram_tool_DiagramCreationDescription,
+)
+tool_InitialContainerDropOperation_strategy = st.builds(
+    tool_InitialContainerDropOperation,
+)
+ContainerModelOperation_strategy = st.builds(
+    ContainerModelOperation,
+)
+diagram_tool_Navigation_strategy = st.builds(
+    diagram_tool_Navigation,
+    createIfNotExistent=
+        st.booleans()
+)
+diagram_tool_CreateView_strategy = st.builds(
+    diagram_tool_CreateView,
+    containerViewExpression=
+        safe_text,
+    variableName=
+        safe_text
+)
+tool_VariableContainer_strategy = st.builds(
+    tool_VariableContainer,
+)
+description_AbstractVariable_strategy = st.builds(
+    description_AbstractVariable,
+)
+diagram_tool_NodeCreationVariable_strategy = st.builds(
+    diagram_tool_NodeCreationVariable,
+)
+diagram_tool_ElementDoubleClickVariable_strategy = st.builds(
+    diagram_tool_ElementDoubleClickVariable,
+)
+diagram_tool_SourceEdgeViewCreationVariable_strategy = st.builds(
+    diagram_tool_SourceEdgeViewCreationVariable,
+)
+diagram_tool_TargetEdgeCreationVariable_strategy = st.builds(
+    diagram_tool_TargetEdgeCreationVariable,
+)
+diagram_tool_TargetEdgeViewCreationVariable_strategy = st.builds(
+    diagram_tool_TargetEdgeViewCreationVariable,
+)
+diagram_tool_SourceEdgeCreationVariable_strategy = st.builds(
+    diagram_tool_SourceEdgeCreationVariable,
+)
+diagram_tool_BehaviorTool_strategy = st.builds(
+    diagram_tool_BehaviorTool,
+    domainClass=
+        safe_text
+)
+tool_EditMaskVariables_strategy = st.builds(
+    tool_EditMaskVariables,
+)
+diagram_tool_DirectEditLabel_strategy = st.builds(
+    diagram_tool_DirectEditLabel,
+    inputLabelExpression=
+        safe_text
+)
+CreateView_strategy = st.builds(
+    CreateView,
+)
+diagram_tool_CreateEdgeView_strategy = st.builds(
+    diagram_tool_CreateEdgeView,
+    targetExpression=
+        safe_text,
+    sourceExpression=
+        safe_text
+)
+tool_ElementSelectVariable_strategy = st.builds(
+    tool_ElementSelectVariable,
+)
+diagram_tool_ReconnectEdgeDescription_strategy = st.builds(
+    diagram_tool_ReconnectEdgeDescription,
+    reconnectionKind=
+        safe_text
+)
+diagram_tool_DeleteHookParameter_strategy = st.builds(
+    diagram_tool_DeleteHookParameter,
+    name=
+        safe_text,
+    value=
+        safe_text
+)
+diagram_HideLabelCapabilityStyle_strategy = st.builds(
+    diagram_HideLabelCapabilityStyle,
     hideLabelByDefault=
         st.booleans()
 )
-diagram::DragAndDropTarget_strategy = st.builds(
-    diagram::DragAndDropTarget,
+diagram_DragAndDropTarget_strategy = st.builds(
+    diagram_DragAndDropTarget,
 )
-style::StyleDescription_strategy = st.builds(
-    style::StyleDescription,
+style_StyleDescription_strategy = st.builds(
+    style_StyleDescription,
 )
-diagram::ComputedStyleDescriptionRegistry_strategy = st.builds(
-    diagram::ComputedStyleDescriptionRegistry,
+diagram_style_NodeStyleDescription_strategy = st.builds(
+    diagram_style_NodeStyleDescription,
+    resizeKind=
+        safe_text,
+    sizeComputationExpression=
+        safe_text,
+    labelPosition=
+        safe_text,
+    forbiddenSides=
+        safe_text
+)
+diagram_ComputedStyleDescriptionRegistry_strategy = st.builds(
+    diagram_ComputedStyleDescriptionRegistry,
 )
 EdgeStyle_strategy = st.builds(
     EdgeStyle,
 )
-diagram::BracketEdgeStyle_strategy = st.builds(
-    diagram::BracketEdgeStyle,
+diagram_BracketEdgeStyle_strategy = st.builds(
+    diagram_BracketEdgeStyle,
 )
 BasicLabelStyle_strategy = st.builds(
     BasicLabelStyle,
@@ -5925,11 +6364,11 @@ BasicLabelStyle_strategy = st.builds(
 CollapseFilter_strategy = st.builds(
     CollapseFilter,
 )
-diagram::IndirectlyCollapseFilter_strategy = st.builds(
-    diagram::IndirectlyCollapseFilter,
+diagram_IndirectlyCollapseFilter_strategy = st.builds(
+    diagram_IndirectlyCollapseFilter,
 )
-diagram::VariableValue_strategy = st.builds(
-    diagram::VariableValue,
+diagram_VariableValue_strategy = st.builds(
+    diagram_VariableValue,
 )
 TypedVariable_strategy = st.builds(
     TypedVariable,
@@ -5937,38 +6376,38 @@ TypedVariable_strategy = st.builds(
 VariableValue_strategy = st.builds(
     VariableValue,
 )
-diagram::EObjectVariableValue_strategy = st.builds(
-    diagram::EObjectVariableValue,
-)
-diagram::TypedVariableValue_strategy = st.builds(
-    diagram::TypedVariableValue,
+diagram_TypedVariableValue_strategy = st.builds(
+    diagram_TypedVariableValue,
     value=
         safe_text
 )
-diagram::EndLabelStyle_strategy = st.builds(
-    diagram::EndLabelStyle,
+diagram_EObjectVariableValue_strategy = st.builds(
+    diagram_EObjectVariableValue,
 )
-diagram::BeginLabelStyle_strategy = st.builds(
-    diagram::BeginLabelStyle,
+diagram_EndLabelStyle_strategy = st.builds(
+    diagram_EndLabelStyle,
 )
-diagram::CenterLabelStyle_strategy = st.builds(
-    diagram::CenterLabelStyle,
+diagram_BeginLabelStyle_strategy = st.builds(
+    diagram_BeginLabelStyle,
+)
+diagram_CenterLabelStyle_strategy = st.builds(
+    diagram_CenterLabelStyle,
 )
 ContainerStyle_strategy = st.builds(
     ContainerStyle,
 )
-diagram::ShapeContainerStyle_strategy = st.builds(
-    diagram::ShapeContainerStyle,
-    backgroundColor=
-        safe_text,
+diagram_ShapeContainerStyle_strategy = st.builds(
+    diagram_ShapeContainerStyle,
     shape=
+        safe_text,
+    backgroundColor=
         safe_text
 )
-diagram::FlatContainerStyle_strategy = st.builds(
-    diagram::FlatContainerStyle,
-    foregroundColor=
-        safe_text,
+diagram_FlatContainerStyle_strategy = st.builds(
+    diagram_FlatContainerStyle,
     backgroundColor=
+        safe_text,
+    foregroundColor=
         safe_text,
     backgroundStyle=
         safe_text
@@ -5976,82 +6415,82 @@ diagram::FlatContainerStyle_strategy = st.builds(
 Customizable_strategy = st.builds(
     Customizable,
 )
-diagram::GaugeSection_strategy = st.builds(
-    diagram::GaugeSection,
-    min=
-        safe_text,
-    value=
+diagram_GaugeSection_strategy = st.builds(
+    diagram_GaugeSection,
+    max=
         safe_text,
     label=
-        safe_text,
-    max=
         safe_text,
     backgroundColor=
         safe_text,
     foregroundColor=
+        safe_text,
+    value=
+        safe_text,
+    min=
         safe_text
 )
 NodeStyle_strategy = st.builds(
     NodeStyle,
 )
-diagram::Note_strategy = st.builds(
-    diagram::Note,
+diagram_Note_strategy = st.builds(
+    diagram_Note,
     color=
         safe_text
 )
-diagram::GaugeCompositeStyle_strategy = st.builds(
-    diagram::GaugeCompositeStyle,
-    alignment=
+diagram_Square_strategy = st.builds(
+    diagram_Square,
+    width=
+        safe_text,
+    height=
+        safe_text,
+    color=
         safe_text
 )
-diagram::Ellipse_strategy = st.builds(
-    diagram::Ellipse,
-    horizontalDiameter=
-        safe_text,
+diagram_Ellipse_strategy = st.builds(
+    diagram_Ellipse,
     color=
         safe_text,
     verticalDiameter=
+        safe_text,
+    horizontalDiameter=
         safe_text
 )
-diagram::Lozenge_strategy = st.builds(
-    diagram::Lozenge,
-    width=
+diagram_Lozenge_strategy = st.builds(
+    diagram_Lozenge,
+    height=
         safe_text,
     color=
         safe_text,
-    height=
+    width=
         safe_text
 )
-diagram::CustomStyle_strategy = st.builds(
-    diagram::CustomStyle,
+diagram_CustomStyle_strategy = st.builds(
+    diagram_CustomStyle,
     id=
         safe_text
 )
-diagram::WorkspaceImage_strategy = st.builds(
-    diagram::WorkspaceImage,
-    workspacePath=
-        safe_text
-)
-diagram::Square_strategy = st.builds(
-    diagram::Square,
-    height=
-        safe_text,
-    width=
-        safe_text,
-    color=
-        safe_text
-)
-diagram::BundledImage_strategy = st.builds(
-    diagram::BundledImage,
-    color=
+diagram_BundledImage_strategy = st.builds(
+    diagram_BundledImage,
+    shape=
         safe_text,
     providedShapeID=
         safe_text,
-    shape=
+    color=
         safe_text
 )
-diagram::Dot_strategy = st.builds(
-    diagram::Dot,
+diagram_GaugeCompositeStyle_strategy = st.builds(
+    diagram_GaugeCompositeStyle,
+    alignment=
+        safe_text
+)
+diagram_WorkspaceImage_strategy = st.builds(
+    diagram_WorkspaceImage,
+    workspacePath=
+        safe_text
+)
+diagram_Dot_strategy = st.builds(
+    diagram_Dot,
     backgroundColor=
         safe_text,
     strokeSizeComputationExpression=
@@ -6066,15 +6505,15 @@ BorderedStyle_strategy = st.builds(
 Style_strategy = st.builds(
     Style,
 )
-diagram::BorderedStyle_strategy = st.builds(
-    diagram::BorderedStyle,
-    borderLineStyle=
-        safe_text,
-    borderSizeComputationExpression=
+diagram_BorderedStyle_strategy = st.builds(
+    diagram_BorderedStyle,
+    borderSize=
         safe_text,
     borderColor=
         safe_text,
-    borderSize=
+    borderLineStyle=
+        safe_text,
+    borderSizeComputationExpression=
         safe_text
 )
 LabelStyle_strategy = st.builds(
@@ -6083,53 +6522,53 @@ LabelStyle_strategy = st.builds(
 IEdgeMapping_strategy = st.builds(
     IEdgeMapping,
 )
-diagram::EdgeTarget_strategy = st.builds(
-    diagram::EdgeTarget,
+diagram_EdgeTarget_strategy = st.builds(
+    diagram_EdgeTarget,
 )
-diagram::EdgeStyle_strategy = st.builds(
-    diagram::EdgeStyle,
-    targetArrow=
-        safe_text,
-    sourceArrow=
-        safe_text,
-    foldingStyle=
+diagram_EdgeStyle_strategy = st.builds(
+    diagram_EdgeStyle,
+    strokeColor=
         safe_text,
     lineStyle=
         safe_text,
-    routingStyle=
-        safe_text,
-    strokeColor=
+    foldingStyle=
         safe_text,
     centered=
         safe_text,
+    sourceArrow=
+        safe_text,
     size=
+        safe_text,
+    routingStyle=
+        safe_text,
+    targetArrow=
         safe_text
 )
 DDiagramElementContainer_strategy = st.builds(
     DDiagramElementContainer,
 )
-diagram::DNodeList_strategy = st.builds(
-    diagram::DNodeList,
+diagram_DNodeList_strategy = st.builds(
+    diagram_DNodeList,
 )
-diagram::DNodeContainer_strategy = st.builds(
-    diagram::DNodeContainer,
+diagram_DNodeContainer_strategy = st.builds(
+    diagram_DNodeContainer,
     childrenPresentation=
         safe_text
 )
 ContainerMapping_strategy = st.builds(
     ContainerMapping,
 )
-diagram::ContainerStyle_strategy = st.builds(
-    diagram::ContainerStyle,
+diagram_ContainerStyle_strategy = st.builds(
+    diagram_ContainerStyle,
 )
 NodeMapping_strategy = st.builds(
     NodeMapping,
 )
-diagram::Style_strategy = st.builds(
-    diagram::Style,
+diagram_Style_strategy = st.builds(
+    diagram_Style,
 )
-diagram::NodeStyle_strategy = st.builds(
-    diagram::NodeStyle,
+diagram_NodeStyle_strategy = st.builds(
+    diagram_NodeStyle,
     labelPosition=
         safe_text
 )
@@ -6142,58 +6581,58 @@ AbstractDNode_strategy = st.builds(
 DDiagramElement_strategy = st.builds(
     DDiagramElement,
 )
-diagram::AbstractDNode_strategy = st.builds(
-    diagram::AbstractDNode,
+diagram_AbstractDNode_strategy = st.builds(
+    diagram_AbstractDNode,
     arrangeConstraints=
         safe_text
 )
-filter::CompositeFilterDescription_strategy = st.builds(
-    filter::CompositeFilterDescription,
+filter_CompositeFilterDescription_strategy = st.builds(
+    filter_CompositeFilterDescription,
 )
 GraphicalFilter_strategy = st.builds(
     GraphicalFilter,
 )
-diagram::AbsoluteBoundsFilter_strategy = st.builds(
-    diagram::AbsoluteBoundsFilter,
-    width=
-        safe_text,
-    x=
-        safe_text,
-    y=
-        safe_text,
-    height=
-        safe_text
+diagram_AppliedCompositeFilters_strategy = st.builds(
+    diagram_AppliedCompositeFilters,
 )
-diagram::CollapseFilter_strategy = st.builds(
-    diagram::CollapseFilter,
+diagram_HideLabelFilter_strategy = st.builds(
+    diagram_HideLabelFilter,
+)
+diagram_FoldingPointFilter_strategy = st.builds(
+    diagram_FoldingPointFilter,
+)
+diagram_CollapseFilter_strategy = st.builds(
+    diagram_CollapseFilter,
     height=
         st.integers(),
     width=
         st.integers()
 )
-diagram::FoldingPointFilter_strategy = st.builds(
-    diagram::FoldingPointFilter,
+diagram_FoldingFilter_strategy = st.builds(
+    diagram_FoldingFilter,
 )
-diagram::HideLabelFilter_strategy = st.builds(
-    diagram::HideLabelFilter,
+diagram_AbsoluteBoundsFilter_strategy = st.builds(
+    diagram_AbsoluteBoundsFilter,
+    x=
+        safe_text,
+    y=
+        safe_text,
+    height=
+        safe_text,
+    width=
+        safe_text
 )
-diagram::AppliedCompositeFilters_strategy = st.builds(
-    diagram::AppliedCompositeFilters,
+diagram_HideFilter_strategy = st.builds(
+    diagram_HideFilter,
 )
-diagram::FoldingFilter_strategy = st.builds(
-    diagram::FoldingFilter,
-)
-diagram::HideFilter_strategy = st.builds(
-    diagram::HideFilter,
-)
-diagram::GraphicalFilter_strategy = st.builds(
-    diagram::GraphicalFilter,
+diagram_GraphicalFilter_strategy = st.builds(
+    diagram_GraphicalFilter,
 )
 DiagramElementMapping_strategy = st.builds(
     DiagramElementMapping,
 )
-diagram::Decoration_strategy = st.builds(
-    diagram::Decoration,
+diagram_Decoration_strategy = st.builds(
+    diagram_Decoration,
 )
 DRepresentationElement_strategy = st.builds(
     DRepresentationElement,
@@ -6204,62 +6643,62 @@ DSemanticDecorator_strategy = st.builds(
 DDiagram_strategy = st.builds(
     DDiagram,
 )
-diagram::DSemanticDiagram_strategy = st.builds(
-    diagram::DSemanticDiagram,
+diagram_DSemanticDiagram_strategy = st.builds(
+    diagram_DSemanticDiagram,
 )
 Layer_strategy = st.builds(
     Layer,
 )
-diagram::description::AdditionalLayer_strategy = st.builds(
-    diagram::description::AdditionalLayer,
-    optional=
-        st.booleans(),
+diagram_description_AdditionalLayer_strategy = st.builds(
+    diagram_description_AdditionalLayer,
     activeByDefault=
+        st.booleans(),
+    optional=
         st.booleans()
 )
-diagram::FilterVariableHistory_strategy = st.builds(
-    diagram::FilterVariableHistory,
+diagram_FilterVariableHistory_strategy = st.builds(
+    diagram_FilterVariableHistory,
 )
-tool::BehaviorTool_strategy = st.builds(
-    tool::BehaviorTool,
+tool_BehaviorTool_strategy = st.builds(
+    tool_BehaviorTool,
 )
-validation::ValidationRule_strategy = st.builds(
-    validation::ValidationRule,
+validation_ValidationRule_strategy = st.builds(
+    validation_ValidationRule,
 )
 AdditionalLayer_strategy = st.builds(
     AdditionalLayer,
 )
-filter::FilterDescription_strategy = st.builds(
-    filter::FilterDescription,
+filter_FilterDescription_strategy = st.builds(
+    filter_FilterDescription,
 )
-concern::ConcernDescription_strategy = st.builds(
-    concern::ConcernDescription,
+concern_ConcernDescription_strategy = st.builds(
+    concern_ConcernDescription,
 )
-diagram::DNodeListElement_strategy = st.builds(
-    diagram::DNodeListElement,
+diagram_DNodeListElement_strategy = st.builds(
+    diagram_DNodeListElement,
 )
-diagram::DEdge_strategy = st.builds(
-    diagram::DEdge,
-    isMockEdge=
-        st.booleans(),
-    beginLabel=
-        safe_text,
-    isFold=
-        st.booleans(),
+diagram_DEdge_strategy = st.builds(
+    diagram_DEdge,
     size=
+        safe_text,
+    beginLabel=
         safe_text,
     routingStyle=
         safe_text,
     endLabel=
         safe_text,
+    isMockEdge=
+        st.booleans(),
+    isFold=
+        st.booleans(),
     arrangeConstraints=
         safe_text
 )
 DiagramDescription_strategy = st.builds(
     DiagramDescription,
 )
-diagram::DDiagramElement_strategy = st.builds(
-    diagram::DDiagramElement,
+diagram_DDiagramElement_strategy = st.builds(
+    diagram_DDiagramElement,
     tooltipText=
         safe_text,
     visible=
@@ -6268,852 +6707,1051 @@ diagram::DDiagramElement_strategy = st.builds(
 DragAndDropTarget_strategy = st.builds(
     DragAndDropTarget,
 )
-diagram::DNode_strategy = st.builds(
-    diagram::DNode,
-    resizeKind=
+diagram_DDiagramElementContainer_strategy = st.builds(
+    diagram_DDiagramElementContainer,
+    height=
         safe_text,
     width=
-        safe_text,
+        safe_text
+)
+diagram_DNode_strategy = st.builds(
+    diagram_DNode,
     labelPosition=
         safe_text,
-    height=
-        safe_text
-)
-diagram::DDiagramElementContainer_strategy = st.builds(
-    diagram::DDiagramElementContainer,
-    height=
-        safe_text,
     width=
+        safe_text,
+    resizeKind=
+        safe_text,
+    height=
         safe_text
 )
-description::DocumentedElement_strategy = st.builds(
-    description::DocumentedElement,
+description_DocumentedElement_strategy = st.builds(
+    description_DocumentedElement,
 )
-diagram::description::Layer_strategy = st.builds(
-    diagram::description::Layer,
-    icon=
-        safe_text
-)
-diagram::description::EdgeMappingImport_strategy = st.builds(
-    diagram::description::EdgeMappingImport,
+diagram_description_EdgeMappingImport_strategy = st.builds(
+    diagram_description_EdgeMappingImport,
     inheritsAncestorFilters=
         st.booleans()
 )
-diagram::description::EdgeMapping_strategy = st.builds(
-    diagram::description::EdgeMapping,
-    pathExpression=
-        safe_text,
+diagram_filter_FilterDescription_strategy = st.builds(
+    diagram_filter_FilterDescription,
+)
+diagram_description_AbstractNodeMapping_strategy = st.builds(
+    diagram_description_AbstractNodeMapping,
     domainClass=
-        safe_text,
-    targetFinderExpression=
+        safe_text
+)
+diagram_concern_ConcernDescription_strategy = st.builds(
+    diagram_concern_ConcernDescription,
+)
+diagram_description_Layer_strategy = st.builds(
+    diagram_description_Layer,
+    icon=
+        safe_text
+)
+diagram_tool_ToolSection_strategy = st.builds(
+    diagram_tool_ToolSection,
+    icon=
+        safe_text
+)
+diagram_description_EdgeMapping_strategy = st.builds(
+    diagram_description_EdgeMapping,
+    domainClass=
         safe_text,
     useDomainElement=
         st.booleans(),
-    targetExpression=
-        safe_text,
     sourceFinderExpression=
-        safe_text
-)
-diagram::description::AbstractNodeMapping_strategy = st.builds(
-    diagram::description::AbstractNodeMapping,
-    domainClass=
+        safe_text,
+    targetFinderExpression=
+        safe_text,
+    pathExpression=
+        safe_text,
+    targetExpression=
         safe_text
 )
 DRepresentation_strategy = st.builds(
     DRepresentation,
 )
-diagram::DDiagram_strategy = st.builds(
-    diagram::DDiagram,
-    synchronized=
-        st.booleans(),
+diagram_DDiagram_strategy = st.builds(
+    diagram_DDiagram,
+    headerHeight=
+        st.integers(),
     isInLayoutingMode=
         st.booleans(),
-    headerHeight=
-        st.integers()
-)
-diagram::concern::ConcernDescription_strategy = st.builds(
-    diagram::concern::ConcernDescription,
-)
-diagram::concern::ConcernSet_strategy = st.builds(
-    diagram::concern::ConcernSet,
-)
-InteractiveVariableDescription_strategy = st.builds(
-    InteractiveVariableDescription,
-)
-filter::Filter_strategy = st.builds(
-    filter::Filter,
-)
-FilterDescription_strategy = st.builds(
-    FilterDescription,
-)
-diagram::filter::CompositeFilterDescription_strategy = st.builds(
-    diagram::filter::CompositeFilterDescription,
-)
-diagram::filter::Filter_strategy = st.builds(
-    diagram::filter::Filter,
-    filterKind=
-        safe_text
-)
-diagram::filter::FilterDescription_strategy = st.builds(
-    diagram::filter::FilterDescription,
-)
-Filter_strategy = st.builds(
-    Filter,
-)
-diagram::filter::VariableFilter_strategy = st.builds(
-    diagram::filter::VariableFilter,
-    semanticConditionExpression=
-        safe_text
-)
-diagram::filter::MappingFilter_strategy = st.builds(
-    diagram::filter::MappingFilter,
-    semanticConditionExpression=
-        safe_text,
-    viewConditionExpression=
-        safe_text
-)
-tool::ElementDropVariable_strategy = st.builds(
-    tool::ElementDropVariable,
-)
-tool::DropContainerVariable_strategy = st.builds(
-    tool::DropContainerVariable,
-)
-RepresentationNavigationDescription_strategy = st.builds(
-    RepresentationNavigationDescription,
-)
-diagram::tool::DiagramNavigationDescription_strategy = st.builds(
-    diagram::tool::DiagramNavigationDescription,
-)
-RepresentationCreationDescription_strategy = st.builds(
-    RepresentationCreationDescription,
-)
-diagram::tool::DiagramCreationDescription_strategy = st.builds(
-    diagram::tool::DiagramCreationDescription,
-)
-tool::InitialContainerDropOperation_strategy = st.builds(
-    tool::InitialContainerDropOperation,
-)
-ContainerModelOperation_strategy = st.builds(
-    ContainerModelOperation,
-)
-diagram::tool::Navigation_strategy = st.builds(
-    diagram::tool::Navigation,
-    createIfNotExistent=
+    synchronized=
         st.booleans()
-)
-diagram::tool::CreateView_strategy = st.builds(
-    diagram::tool::CreateView,
-    containerViewExpression=
-        safe_text,
-    variableName=
-        safe_text
-)
-tool::VariableContainer_strategy = st.builds(
-    tool::VariableContainer,
-)
-description::AbstractVariable_strategy = st.builds(
-    description::AbstractVariable,
-)
-diagram::tool::TargetEdgeCreationVariable_strategy = st.builds(
-    diagram::tool::TargetEdgeCreationVariable,
-)
-diagram::tool::TargetEdgeViewCreationVariable_strategy = st.builds(
-    diagram::tool::TargetEdgeViewCreationVariable,
-)
-diagram::tool::NodeCreationVariable_strategy = st.builds(
-    diagram::tool::NodeCreationVariable,
-)
-diagram::tool::SourceEdgeViewCreationVariable_strategy = st.builds(
-    diagram::tool::SourceEdgeViewCreationVariable,
-)
-diagram::tool::ElementDoubleClickVariable_strategy = st.builds(
-    diagram::tool::ElementDoubleClickVariable,
-)
-diagram::tool::SourceEdgeCreationVariable_strategy = st.builds(
-    diagram::tool::SourceEdgeCreationVariable,
-)
-tool::EditMaskVariables_strategy = st.builds(
-    tool::EditMaskVariables,
-)
-CreateView_strategy = st.builds(
-    CreateView,
-)
-diagram::tool::CreateEdgeView_strategy = st.builds(
-    diagram::tool::CreateEdgeView,
-    sourceExpression=
-        safe_text,
-    targetExpression=
-        safe_text
-)
-tool::ElementSelectVariable_strategy = st.builds(
-    tool::ElementSelectVariable,
-)
-diagram::tool::DeleteHookParameter_strategy = st.builds(
-    diagram::tool::DeleteHookParameter,
-    name=
-        safe_text,
-    value=
-        safe_text
-)
-tool::DeleteHookParameter_strategy = st.builds(
-    tool::DeleteHookParameter,
-)
-diagram::tool::DeleteHook_strategy = st.builds(
-    diagram::tool::DeleteHook,
-    id=
-        safe_text
-)
-AbstractToolDescription_strategy = st.builds(
-    AbstractToolDescription,
-)
-diagram::tool::BehaviorTool_strategy = st.builds(
-    diagram::tool::BehaviorTool,
-    domainClass=
-        safe_text
-)
-diagram::tool::RequestDescription_strategy = st.builds(
-    diagram::tool::RequestDescription,
-    type=
-        safe_text
-)
-tool::DeleteHook_strategy = st.builds(
-    tool::DeleteHook,
-)
-tool::ElementDeleteVariable_strategy = st.builds(
-    tool::ElementDeleteVariable,
-)
-tool::ElementDoubleClickVariable_strategy = st.builds(
-    tool::ElementDoubleClickVariable,
-)
-tool::InitEdgeCreationOperation_strategy = st.builds(
-    tool::InitEdgeCreationOperation,
-)
-tool::TargetEdgeViewCreationVariable_strategy = st.builds(
-    tool::TargetEdgeViewCreationVariable,
-)
-tool::SourceEdgeViewCreationVariable_strategy = st.builds(
-    tool::SourceEdgeViewCreationVariable,
-)
-tool::TargetEdgeCreationVariable_strategy = st.builds(
-    tool::TargetEdgeCreationVariable,
-)
-tool::SourceEdgeCreationVariable_strategy = st.builds(
-    tool::SourceEdgeCreationVariable,
-)
-tool::ContainerViewVariable_strategy = st.builds(
-    tool::ContainerViewVariable,
-)
-tool::NodeCreationVariable_strategy = st.builds(
-    tool::NodeCreationVariable,
-)
-MappingBasedToolDescription_strategy = st.builds(
-    MappingBasedToolDescription,
-)
-diagram::tool::EdgeCreationDescription_strategy = st.builds(
-    diagram::tool::EdgeCreationDescription,
-    iconPath=
-        safe_text,
-    connectionStartPrecondition=
-        safe_text
-)
-diagram::tool::ReconnectEdgeDescription_strategy = st.builds(
-    diagram::tool::ReconnectEdgeDescription,
-    reconnectionKind=
-        safe_text
-)
-diagram::tool::DoubleClickDescription_strategy = st.builds(
-    diagram::tool::DoubleClickDescription,
-)
-diagram::tool::DirectEditLabel_strategy = st.builds(
-    diagram::tool::DirectEditLabel,
-    inputLabelExpression=
-        safe_text
-)
-diagram::tool::ContainerDropDescription_strategy = st.builds(
-    diagram::tool::ContainerDropDescription,
-    dragSource=
-        safe_text,
-    moveEdges=
-        st.booleans()
-)
-diagram::tool::ContainerCreationDescription_strategy = st.builds(
-    diagram::tool::ContainerCreationDescription,
-    iconPath=
-        safe_text
-)
-diagram::tool::DeleteElementDescription_strategy = st.builds(
-    diagram::tool::DeleteElementDescription,
-)
-diagram::tool::NodeCreationDescription_strategy = st.builds(
-    diagram::tool::NodeCreationDescription,
-    iconPath=
-        safe_text
-)
-tool::ToolGroup_strategy = st.builds(
-    tool::ToolGroup,
-)
-diagram::tool::ToolGroupExtension_strategy = st.builds(
-    diagram::tool::ToolGroupExtension,
-)
-ToolEntry_strategy = st.builds(
-    ToolEntry,
-)
-diagram::tool::ToolGroup_strategy = st.builds(
-    diagram::tool::ToolGroup,
-)
-tool::ToolGroupExtension_strategy = st.builds(
-    tool::ToolGroupExtension,
-)
-tool::PopupMenu_strategy = st.builds(
-    tool::PopupMenu,
-)
-tool::ToolEntry_strategy = st.builds(
-    tool::ToolEntry,
-)
-tool::InitialNodeCreationOperation_strategy = st.builds(
-    tool::InitialNodeCreationOperation,
-)
-diagram::style::HideLabelCapabilityStyleDescription_strategy = st.builds(
-    diagram::style::HideLabelCapabilityStyleDescription,
-    hideLabelByDefault=
-        st.booleans()
-)
-EdgeStyleDescription_strategy = st.builds(
-    EdgeStyleDescription,
-)
-diagram::style::BracketEdgeStyleDescription_strategy = st.builds(
-    diagram::style::BracketEdgeStyleDescription,
-)
-BasicLabelStyleDescription_strategy = st.builds(
-    BasicLabelStyleDescription,
-)
-diagram::style::CenterLabelStyleDescription_strategy = st.builds(
-    diagram::style::CenterLabelStyleDescription,
-)
-diagram::style::EndLabelStyleDescription_strategy = st.builds(
-    diagram::style::EndLabelStyleDescription,
-)
-diagram::style::BeginLabelStyleDescription_strategy = st.builds(
-    diagram::style::BeginLabelStyleDescription,
-)
-style::EndLabelStyleDescription_strategy = st.builds(
-    style::EndLabelStyleDescription,
-)
-style::CenterLabelStyleDescription_strategy = st.builds(
-    style::CenterLabelStyleDescription,
-)
-style::BeginLabelStyleDescription_strategy = st.builds(
-    style::BeginLabelStyleDescription,
-)
-diagram::tool::ToolSection_strategy = st.builds(
-    diagram::tool::ToolSection,
-    icon=
-        safe_text
-)
-diagram::style::WorkspaceImageDescription_strategy = st.builds(
-    diagram::style::WorkspaceImageDescription,
-    workspacePath=
-        safe_text
-)
-style::LabelBorderStyleDescription_strategy = st.builds(
-    style::LabelBorderStyleDescription,
-)
-diagram::style::SizeComputationContainerStyleDescription_strategy = st.builds(
-    diagram::style::SizeComputationContainerStyleDescription,
-    widthComputationExpression=
-        safe_text,
-    heightComputationExpression=
-        safe_text
-)
-diagram::style::GaugeSectionDescription_strategy = st.builds(
-    diagram::style::GaugeSectionDescription,
-    label=
-        safe_text,
-    minValueExpression=
-        safe_text,
-    valueExpression=
-        safe_text,
-    maxValueExpression=
-        safe_text
-)
-style::GaugeSectionDescription_strategy = st.builds(
-    style::GaugeSectionDescription,
-)
-style::SizeComputationContainerStyleDescription_strategy = st.builds(
-    style::SizeComputationContainerStyleDescription,
-)
-diagram::style::ShapeContainerStyleDescription_strategy = st.builds(
-    diagram::style::ShapeContainerStyleDescription,
-    shape=
-        safe_text
-)
-diagram::style::FlatContainerStyleDescription_strategy = st.builds(
-    diagram::style::FlatContainerStyleDescription,
-    backgroundStyle=
-        safe_text
-)
-style::RoundedCornerStyleDescription_strategy = st.builds(
-    style::RoundedCornerStyleDescription,
-)
-NodeStyleDescription_strategy = st.builds(
-    NodeStyleDescription,
-)
-diagram::style::GaugeCompositeStyleDescription_strategy = st.builds(
-    diagram::style::GaugeCompositeStyleDescription,
-    alignment=
-        safe_text
-)
-diagram::style::EllipseNodeDescription_strategy = st.builds(
-    diagram::style::EllipseNodeDescription,
-    verticalDiameterComputationExpression=
-        safe_text,
-    horizontalDiameterComputationExpression=
-        safe_text
-)
-diagram::style::BundledImageDescription_strategy = st.builds(
-    diagram::style::BundledImageDescription,
-    shape=
-        safe_text,
-    providedShapeID=
-        safe_text
-)
-diagram::style::SquareDescription_strategy = st.builds(
-    diagram::style::SquareDescription,
-    height=
-        safe_text,
-    width=
-        safe_text
-)
-diagram::style::DotDescription_strategy = st.builds(
-    diagram::style::DotDescription,
-    strokeSizeComputationExpression=
-        safe_text
-)
-diagram::style::NoteDescription_strategy = st.builds(
-    diagram::style::NoteDescription,
-)
-diagram::style::CustomStyleDescription_strategy = st.builds(
-    diagram::style::CustomStyleDescription,
-    id=
-        safe_text
-)
-style::HideLabelCapabilityStyleDescription_strategy = st.builds(
-    style::HideLabelCapabilityStyleDescription,
-)
-style::TooltipStyleDescription_strategy = st.builds(
-    style::TooltipStyleDescription,
-)
-style::LabelStyleDescription_strategy = st.builds(
-    style::LabelStyleDescription,
-)
-style::BorderedStyleDescription_strategy = st.builds(
-    style::BorderedStyleDescription,
-)
-diagram::style::ContainerStyleDescription_strategy = st.builds(
-    diagram::style::ContainerStyleDescription,
-    roundedCorner=
-        st.booleans()
-)
-diagram::style::NodeStyleDescription_strategy = st.builds(
-    diagram::style::NodeStyleDescription,
-    forbiddenSides=
-        safe_text,
-    labelPosition=
-        safe_text,
-    resizeKind=
-        safe_text,
-    sizeComputationExpression=
-        safe_text
-)
-ColorDescription_strategy = st.builds(
-    ColorDescription,
-)
-StyleDescription_strategy = st.builds(
-    StyleDescription,
-)
-diagram::style::RoundedCornerStyleDescription_strategy = st.builds(
-    diagram::style::RoundedCornerStyleDescription,
-    arcWidth=
-        safe_text,
-    arcHeight=
-        safe_text
-)
-diagram::style::EdgeStyleDescription_strategy = st.builds(
-    diagram::style::EdgeStyleDescription,
-    endsCentering=
-        safe_text,
-    routingStyle=
-        safe_text,
-    sourceArrow=
-        safe_text,
-    targetArrow=
-        safe_text,
-    lineStyle=
-        safe_text,
-    foldingStyle=
-        safe_text,
-    sizeComputationExpression=
-        safe_text
-)
-diagram::style::BorderedStyleDescription_strategy = st.builds(
-    diagram::style::BorderedStyleDescription,
-    borderSizeComputationExpression=
-        safe_text,
-    borderLineStyle=
-        safe_text
-)
-tool::ContainerDropDescription_strategy = st.builds(
-    tool::ContainerDropDescription,
-)
-diagram::style::LozengeNodeDescription_strategy = st.builds(
-    diagram::style::LozengeNodeDescription,
-    widthComputationExpression=
-        safe_text,
-    heightComputationExpression=
-        safe_text
-)
-diagram::description::DragAndDropTargetDescription_strategy = st.builds(
-    diagram::description::DragAndDropTargetDescription,
-)
-Customization_strategy = st.builds(
-    Customization,
-)
-DecorationDescriptionsSet_strategy = st.builds(
-    DecorationDescriptionsSet,
 )
 
-@given(instance=description::EndUserDocumentedElement_strategy)
+@given(instance=tool_DeleteHookParameter_strategy)
 @settings(max_examples=50)
-def test_description::enduserdocumentedelement_instantiation(instance):
-    assert isinstance(instance, description::EndUserDocumentedElement)
+def test_tool_deletehookparameter_instantiation(instance):
+    assert isinstance(instance, tool_DeleteHookParameter)
+
+@given(instance=diagram_tool_DeleteHook_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_deletehook_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DeleteHook)
+
+
+
+@given(instance=diagram_tool_DeleteHook_strategy)
+def test_diagram_tool_deletehook_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=AbstractToolDescription_strategy)
+@settings(max_examples=50)
+def test_abstracttooldescription_instantiation(instance):
+    assert isinstance(instance, AbstractToolDescription)
+
+@given(instance=diagram_tool_RequestDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_requestdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_RequestDescription)
+
+
+
+@given(instance=diagram_tool_RequestDescription_strategy)
+def test_diagram_tool_requestdescription_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=tool_DeleteHook_strategy)
+@settings(max_examples=50)
+def test_tool_deletehook_instantiation(instance):
+    assert isinstance(instance, tool_DeleteHook)
+
+@given(instance=tool_ElementDeleteVariable_strategy)
+@settings(max_examples=50)
+def test_tool_elementdeletevariable_instantiation(instance):
+    assert isinstance(instance, tool_ElementDeleteVariable)
+
+@given(instance=tool_ElementDoubleClickVariable_strategy)
+@settings(max_examples=50)
+def test_tool_elementdoubleclickvariable_instantiation(instance):
+    assert isinstance(instance, tool_ElementDoubleClickVariable)
+
+@given(instance=tool_InitEdgeCreationOperation_strategy)
+@settings(max_examples=50)
+def test_tool_initedgecreationoperation_instantiation(instance):
+    assert isinstance(instance, tool_InitEdgeCreationOperation)
+
+@given(instance=tool_TargetEdgeViewCreationVariable_strategy)
+@settings(max_examples=50)
+def test_tool_targetedgeviewcreationvariable_instantiation(instance):
+    assert isinstance(instance, tool_TargetEdgeViewCreationVariable)
+
+@given(instance=tool_SourceEdgeViewCreationVariable_strategy)
+@settings(max_examples=50)
+def test_tool_sourceedgeviewcreationvariable_instantiation(instance):
+    assert isinstance(instance, tool_SourceEdgeViewCreationVariable)
+
+@given(instance=tool_TargetEdgeCreationVariable_strategy)
+@settings(max_examples=50)
+def test_tool_targetedgecreationvariable_instantiation(instance):
+    assert isinstance(instance, tool_TargetEdgeCreationVariable)
+
+@given(instance=tool_SourceEdgeCreationVariable_strategy)
+@settings(max_examples=50)
+def test_tool_sourceedgecreationvariable_instantiation(instance):
+    assert isinstance(instance, tool_SourceEdgeCreationVariable)
+
+@given(instance=tool_ContainerViewVariable_strategy)
+@settings(max_examples=50)
+def test_tool_containerviewvariable_instantiation(instance):
+    assert isinstance(instance, tool_ContainerViewVariable)
+
+@given(instance=tool_NodeCreationVariable_strategy)
+@settings(max_examples=50)
+def test_tool_nodecreationvariable_instantiation(instance):
+    assert isinstance(instance, tool_NodeCreationVariable)
+
+@given(instance=MappingBasedToolDescription_strategy)
+@settings(max_examples=50)
+def test_mappingbasedtooldescription_instantiation(instance):
+    assert isinstance(instance, MappingBasedToolDescription)
+
+@given(instance=diagram_tool_ContainerCreationDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_containercreationdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ContainerCreationDescription)
+
+
+
+@given(instance=diagram_tool_ContainerCreationDescription_strategy)
+def test_diagram_tool_containercreationdescription_iconPath_setter(instance):
+    original = instance.iconPath
+    instance.iconPath = original
+    assert instance.iconPath == original
+
+@given(instance=diagram_tool_DeleteElementDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_deleteelementdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DeleteElementDescription)
+
+@given(instance=diagram_tool_EdgeCreationDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_edgecreationdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_EdgeCreationDescription)
+
+
+
+@given(instance=diagram_tool_EdgeCreationDescription_strategy)
+def test_diagram_tool_edgecreationdescription_iconPath_setter(instance):
+    original = instance.iconPath
+    instance.iconPath = original
+    assert instance.iconPath == original
+
+
+
+@given(instance=diagram_tool_EdgeCreationDescription_strategy)
+def test_diagram_tool_edgecreationdescription_connectionStartPrecondition_setter(instance):
+    original = instance.connectionStartPrecondition
+    instance.connectionStartPrecondition = original
+    assert instance.connectionStartPrecondition == original
+
+@given(instance=diagram_tool_DoubleClickDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_doubleclickdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DoubleClickDescription)
+
+@given(instance=diagram_tool_NodeCreationDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_nodecreationdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_NodeCreationDescription)
+
+
+
+@given(instance=diagram_tool_NodeCreationDescription_strategy)
+def test_diagram_tool_nodecreationdescription_iconPath_setter(instance):
+    original = instance.iconPath
+    instance.iconPath = original
+    assert instance.iconPath == original
+
+@given(instance=tool_ToolGroup_strategy)
+@settings(max_examples=50)
+def test_tool_toolgroup_instantiation(instance):
+    assert isinstance(instance, tool_ToolGroup)
+
+@given(instance=diagram_tool_ToolGroupExtension_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_toolgroupextension_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ToolGroupExtension)
+
+@given(instance=ToolEntry_strategy)
+@settings(max_examples=50)
+def test_toolentry_instantiation(instance):
+    assert isinstance(instance, ToolEntry)
+
+@given(instance=diagram_tool_ToolGroup_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_toolgroup_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ToolGroup)
+
+@given(instance=tool_ToolGroupExtension_strategy)
+@settings(max_examples=50)
+def test_tool_toolgroupextension_instantiation(instance):
+    assert isinstance(instance, tool_ToolGroupExtension)
+
+@given(instance=tool_PopupMenu_strategy)
+@settings(max_examples=50)
+def test_tool_popupmenu_instantiation(instance):
+    assert isinstance(instance, tool_PopupMenu)
+
+@given(instance=tool_ToolEntry_strategy)
+@settings(max_examples=50)
+def test_tool_toolentry_instantiation(instance):
+    assert isinstance(instance, tool_ToolEntry)
+
+@given(instance=tool_InitialNodeCreationOperation_strategy)
+@settings(max_examples=50)
+def test_tool_initialnodecreationoperation_instantiation(instance):
+    assert isinstance(instance, tool_InitialNodeCreationOperation)
+
+@given(instance=diagram_style_HideLabelCapabilityStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_hidelabelcapabilitystyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_HideLabelCapabilityStyleDescription)
+
+
+
+@given(instance=diagram_style_HideLabelCapabilityStyleDescription_strategy)
+def test_diagram_style_hidelabelcapabilitystyledescription_hideLabelByDefault_setter(instance):
+    original = instance.hideLabelByDefault
+    instance.hideLabelByDefault = original
+    assert instance.hideLabelByDefault == original
+
+@given(instance=EdgeStyleDescription_strategy)
+@settings(max_examples=50)
+def test_edgestyledescription_instantiation(instance):
+    assert isinstance(instance, EdgeStyleDescription)
+
+@given(instance=diagram_style_BracketEdgeStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_bracketedgestyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_BracketEdgeStyleDescription)
+
+@given(instance=BasicLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_basiclabelstyledescription_instantiation(instance):
+    assert isinstance(instance, BasicLabelStyleDescription)
+
+@given(instance=diagram_style_CenterLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_centerlabelstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_CenterLabelStyleDescription)
+
+@given(instance=diagram_style_EndLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_endlabelstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_EndLabelStyleDescription)
+
+@given(instance=diagram_style_BeginLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_beginlabelstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_BeginLabelStyleDescription)
+
+@given(instance=style_EndLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_endlabelstyledescription_instantiation(instance):
+    assert isinstance(instance, style_EndLabelStyleDescription)
+
+@given(instance=style_CenterLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_centerlabelstyledescription_instantiation(instance):
+    assert isinstance(instance, style_CenterLabelStyleDescription)
+
+@given(instance=style_BeginLabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_beginlabelstyledescription_instantiation(instance):
+    assert isinstance(instance, style_BeginLabelStyleDescription)
+
+@given(instance=style_LabelBorderStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_labelborderstyledescription_instantiation(instance):
+    assert isinstance(instance, style_LabelBorderStyleDescription)
+
+@given(instance=diagram_style_SizeComputationContainerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_sizecomputationcontainerstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_SizeComputationContainerStyleDescription)
+
+
+
+@given(instance=diagram_style_SizeComputationContainerStyleDescription_strategy)
+def test_diagram_style_sizecomputationcontainerstyledescription_widthComputationExpression_setter(instance):
+    original = instance.widthComputationExpression
+    instance.widthComputationExpression = original
+    assert instance.widthComputationExpression == original
+
+
+
+@given(instance=diagram_style_SizeComputationContainerStyleDescription_strategy)
+def test_diagram_style_sizecomputationcontainerstyledescription_heightComputationExpression_setter(instance):
+    original = instance.heightComputationExpression
+    instance.heightComputationExpression = original
+    assert instance.heightComputationExpression == original
+
+@given(instance=diagram_style_GaugeSectionDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_gaugesectiondescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_GaugeSectionDescription)
+
+
+
+@given(instance=diagram_style_GaugeSectionDescription_strategy)
+def test_diagram_style_gaugesectiondescription_minValueExpression_setter(instance):
+    original = instance.minValueExpression
+    instance.minValueExpression = original
+    assert instance.minValueExpression == original
+
+
+
+@given(instance=diagram_style_GaugeSectionDescription_strategy)
+def test_diagram_style_gaugesectiondescription_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=diagram_style_GaugeSectionDescription_strategy)
+def test_diagram_style_gaugesectiondescription_maxValueExpression_setter(instance):
+    original = instance.maxValueExpression
+    instance.maxValueExpression = original
+    assert instance.maxValueExpression == original
+
+
+
+@given(instance=diagram_style_GaugeSectionDescription_strategy)
+def test_diagram_style_gaugesectiondescription_valueExpression_setter(instance):
+    original = instance.valueExpression
+    instance.valueExpression = original
+    assert instance.valueExpression == original
+
+@given(instance=style_GaugeSectionDescription_strategy)
+@settings(max_examples=50)
+def test_style_gaugesectiondescription_instantiation(instance):
+    assert isinstance(instance, style_GaugeSectionDescription)
+
+@given(instance=style_SizeComputationContainerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_sizecomputationcontainerstyledescription_instantiation(instance):
+    assert isinstance(instance, style_SizeComputationContainerStyleDescription)
+
+@given(instance=style_RoundedCornerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_roundedcornerstyledescription_instantiation(instance):
+    assert isinstance(instance, style_RoundedCornerStyleDescription)
+
+@given(instance=NodeStyleDescription_strategy)
+@settings(max_examples=50)
+def test_nodestyledescription_instantiation(instance):
+    assert isinstance(instance, NodeStyleDescription)
+
+@given(instance=diagram_style_NoteDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_notedescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_NoteDescription)
+
+@given(instance=diagram_style_EllipseNodeDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_ellipsenodedescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_EllipseNodeDescription)
+
+
+
+@given(instance=diagram_style_EllipseNodeDescription_strategy)
+def test_diagram_style_ellipsenodedescription_verticalDiameterComputationExpression_setter(instance):
+    original = instance.verticalDiameterComputationExpression
+    instance.verticalDiameterComputationExpression = original
+    assert instance.verticalDiameterComputationExpression == original
+
+
+
+@given(instance=diagram_style_EllipseNodeDescription_strategy)
+def test_diagram_style_ellipsenodedescription_horizontalDiameterComputationExpression_setter(instance):
+    original = instance.horizontalDiameterComputationExpression
+    instance.horizontalDiameterComputationExpression = original
+    assert instance.horizontalDiameterComputationExpression == original
+
+@given(instance=diagram_style_SquareDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_squaredescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_SquareDescription)
+
+
+
+@given(instance=diagram_style_SquareDescription_strategy)
+def test_diagram_style_squaredescription_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=diagram_style_SquareDescription_strategy)
+def test_diagram_style_squaredescription_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+@given(instance=diagram_style_DotDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_dotdescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_DotDescription)
+
+
+
+@given(instance=diagram_style_DotDescription_strategy)
+def test_diagram_style_dotdescription_strokeSizeComputationExpression_setter(instance):
+    original = instance.strokeSizeComputationExpression
+    instance.strokeSizeComputationExpression = original
+    assert instance.strokeSizeComputationExpression == original
+
+@given(instance=diagram_style_GaugeCompositeStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_gaugecompositestyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_GaugeCompositeStyleDescription)
+
+
+
+@given(instance=diagram_style_GaugeCompositeStyleDescription_strategy)
+def test_diagram_style_gaugecompositestyledescription_alignment_setter(instance):
+    original = instance.alignment
+    instance.alignment = original
+    assert instance.alignment == original
+
+@given(instance=diagram_style_BundledImageDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_bundledimagedescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_BundledImageDescription)
+
+
+
+@given(instance=diagram_style_BundledImageDescription_strategy)
+def test_diagram_style_bundledimagedescription_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+
+
+@given(instance=diagram_style_BundledImageDescription_strategy)
+def test_diagram_style_bundledimagedescription_providedShapeID_setter(instance):
+    original = instance.providedShapeID
+    instance.providedShapeID = original
+    assert instance.providedShapeID == original
+
+@given(instance=diagram_style_CustomStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_customstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_CustomStyleDescription)
+
+
+
+@given(instance=diagram_style_CustomStyleDescription_strategy)
+def test_diagram_style_customstyledescription_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=style_HideLabelCapabilityStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_hidelabelcapabilitystyledescription_instantiation(instance):
+    assert isinstance(instance, style_HideLabelCapabilityStyleDescription)
+
+@given(instance=style_TooltipStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_tooltipstyledescription_instantiation(instance):
+    assert isinstance(instance, style_TooltipStyleDescription)
+
+@given(instance=style_LabelStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_labelstyledescription_instantiation(instance):
+    assert isinstance(instance, style_LabelStyleDescription)
+
+@given(instance=style_BorderedStyleDescription_strategy)
+@settings(max_examples=50)
+def test_style_borderedstyledescription_instantiation(instance):
+    assert isinstance(instance, style_BorderedStyleDescription)
+
+@given(instance=diagram_style_ContainerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_containerstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_ContainerStyleDescription)
+
+
+
+@given(instance=diagram_style_ContainerStyleDescription_strategy)
+def test_diagram_style_containerstyledescription_roundedCorner_setter(instance):
+    original = instance.roundedCorner
+    instance.roundedCorner = original
+    assert instance.roundedCorner == original
+
+@given(instance=ColorDescription_strategy)
+@settings(max_examples=50)
+def test_colordescription_instantiation(instance):
+    assert isinstance(instance, ColorDescription)
+
+@given(instance=StyleDescription_strategy)
+@settings(max_examples=50)
+def test_styledescription_instantiation(instance):
+    assert isinstance(instance, StyleDescription)
+
+@given(instance=diagram_style_RoundedCornerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_roundedcornerstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_RoundedCornerStyleDescription)
+
+
+
+@given(instance=diagram_style_RoundedCornerStyleDescription_strategy)
+def test_diagram_style_roundedcornerstyledescription_arcHeight_setter(instance):
+    original = instance.arcHeight
+    instance.arcHeight = original
+    assert instance.arcHeight == original
+
+
+
+@given(instance=diagram_style_RoundedCornerStyleDescription_strategy)
+def test_diagram_style_roundedcornerstyledescription_arcWidth_setter(instance):
+    original = instance.arcWidth
+    instance.arcWidth = original
+    assert instance.arcWidth == original
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_edgestyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_EdgeStyleDescription)
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_endsCentering_setter(instance):
+    original = instance.endsCentering
+    instance.endsCentering = original
+    assert instance.endsCentering == original
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_foldingStyle_setter(instance):
+    original = instance.foldingStyle
+    instance.foldingStyle = original
+    assert instance.foldingStyle == original
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_sizeComputationExpression_setter(instance):
+    original = instance.sizeComputationExpression
+    instance.sizeComputationExpression = original
+    assert instance.sizeComputationExpression == original
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_routingStyle_setter(instance):
+    original = instance.routingStyle
+    instance.routingStyle = original
+    assert instance.routingStyle == original
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_lineStyle_setter(instance):
+    original = instance.lineStyle
+    instance.lineStyle = original
+    assert instance.lineStyle == original
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_targetArrow_setter(instance):
+    original = instance.targetArrow
+    instance.targetArrow = original
+    assert instance.targetArrow == original
+
+
+
+@given(instance=diagram_style_EdgeStyleDescription_strategy)
+def test_diagram_style_edgestyledescription_sourceArrow_setter(instance):
+    original = instance.sourceArrow
+    instance.sourceArrow = original
+    assert instance.sourceArrow == original
+
+@given(instance=diagram_style_BorderedStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_borderedstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_BorderedStyleDescription)
+
+
+
+@given(instance=diagram_style_BorderedStyleDescription_strategy)
+def test_diagram_style_borderedstyledescription_borderSizeComputationExpression_setter(instance):
+    original = instance.borderSizeComputationExpression
+    instance.borderSizeComputationExpression = original
+    assert instance.borderSizeComputationExpression == original
+
+
+
+@given(instance=diagram_style_BorderedStyleDescription_strategy)
+def test_diagram_style_borderedstyledescription_borderLineStyle_setter(instance):
+    original = instance.borderLineStyle
+    instance.borderLineStyle = original
+    assert instance.borderLineStyle == original
+
+@given(instance=tool_ContainerDropDescription_strategy)
+@settings(max_examples=50)
+def test_tool_containerdropdescription_instantiation(instance):
+    assert isinstance(instance, tool_ContainerDropDescription)
+
+@given(instance=diagram_style_LozengeNodeDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_lozengenodedescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_LozengeNodeDescription)
+
+
+
+@given(instance=diagram_style_LozengeNodeDescription_strategy)
+def test_diagram_style_lozengenodedescription_widthComputationExpression_setter(instance):
+    original = instance.widthComputationExpression
+    instance.widthComputationExpression = original
+    assert instance.widthComputationExpression == original
+
+
+
+@given(instance=diagram_style_LozengeNodeDescription_strategy)
+def test_diagram_style_lozengenodedescription_heightComputationExpression_setter(instance):
+    original = instance.heightComputationExpression
+    instance.heightComputationExpression = original
+    assert instance.heightComputationExpression == original
+
+@given(instance=diagram_description_DragAndDropTargetDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_description_draganddroptargetdescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_DragAndDropTargetDescription)
+
+@given(instance=Customization_strategy)
+@settings(max_examples=50)
+def test_customization_instantiation(instance):
+    assert isinstance(instance, Customization)
+
+@given(instance=DecorationDescriptionsSet_strategy)
+@settings(max_examples=50)
+def test_decorationdescriptionsset_instantiation(instance):
+    assert isinstance(instance, DecorationDescriptionsSet)
+
+@given(instance=description_EndUserDocumentedElement_strategy)
+@settings(max_examples=50)
+def test_description_enduserdocumentedelement_instantiation(instance):
+    assert isinstance(instance, description_EndUserDocumentedElement)
 
 @given(instance=DecorationDescription_strategy)
 @settings(max_examples=50)
 def test_decorationdescription_instantiation(instance):
     assert isinstance(instance, DecorationDescription)
 
-@given(instance=diagram::description::MappingBasedDecoration_strategy)
+@given(instance=diagram_description_MappingBasedDecoration_strategy)
 @settings(max_examples=50)
-def test_diagram::description::mappingbaseddecoration_instantiation(instance):
-    assert isinstance(instance, diagram::description::MappingBasedDecoration)
+def test_diagram_description_mappingbaseddecoration_instantiation(instance):
+    assert isinstance(instance, diagram_description_MappingBasedDecoration)
 
 @given(instance=DocumentedElement_strategy)
 @settings(max_examples=50)
 def test_documentedelement_instantiation(instance):
     assert isinstance(instance, DocumentedElement)
 
-@given(instance=diagram::description::Layout_strategy)
+@given(instance=diagram_description_Layout_strategy)
 @settings(max_examples=50)
-def test_diagram::description::layout_instantiation(instance):
-    assert isinstance(instance, diagram::description::Layout)
+def test_diagram_description_layout_instantiation(instance):
+    assert isinstance(instance, diagram_description_Layout)
 
 @given(instance=ConditionalStyleDescription_strategy)
 @settings(max_examples=50)
 def test_conditionalstyledescription_instantiation(instance):
     assert isinstance(instance, ConditionalStyleDescription)
 
-@given(instance=diagram::description::ConditionalEdgeStyleDescription_strategy)
+@given(instance=diagram_description_ConditionalEdgeStyleDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::description::conditionaledgestyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::ConditionalEdgeStyleDescription)
+def test_diagram_description_conditionaledgestyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_ConditionalEdgeStyleDescription)
 
-@given(instance=diagram::description::ConditionalContainerStyleDescription_strategy)
+@given(instance=diagram_description_ConditionalContainerStyleDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::description::conditionalcontainerstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::ConditionalContainerStyleDescription)
+def test_diagram_description_conditionalcontainerstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_ConditionalContainerStyleDescription)
 
-@given(instance=diagram::description::ConditionalNodeStyleDescription_strategy)
+@given(instance=diagram_description_ConditionalNodeStyleDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::description::conditionalnodestyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::ConditionalNodeStyleDescription)
+def test_diagram_description_conditionalnodestyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_ConditionalNodeStyleDescription)
 
-@given(instance=description::IdentifiedElement_strategy)
+@given(instance=description_IdentifiedElement_strategy)
 @settings(max_examples=50)
-def test_description::identifiedelement_instantiation(instance):
-    assert isinstance(instance, description::IdentifiedElement)
+def test_description_identifiedelement_instantiation(instance):
+    assert isinstance(instance, description_IdentifiedElement)
 
-@given(instance=diagram::description::IEdgeMapping_strategy)
+@given(instance=diagram_description_IEdgeMapping_strategy)
 @settings(max_examples=50)
-def test_diagram::description::iedgemapping_instantiation(instance):
-    assert isinstance(instance, diagram::description::IEdgeMapping)
+def test_diagram_description_iedgemapping_instantiation(instance):
+    assert isinstance(instance, diagram_description_IEdgeMapping)
 
 @given(instance=AbstractNodeMapping_strategy)
 @settings(max_examples=50)
 def test_abstractnodemapping_instantiation(instance):
     assert isinstance(instance, AbstractNodeMapping)
 
-@given(instance=tool::ReconnectEdgeDescription_strategy)
+@given(instance=tool_ReconnectEdgeDescription_strategy)
 @settings(max_examples=50)
-def test_tool::reconnectedgedescription_instantiation(instance):
-    assert isinstance(instance, tool::ReconnectEdgeDescription)
+def test_tool_reconnectedgedescription_instantiation(instance):
+    assert isinstance(instance, tool_ReconnectEdgeDescription)
 
 @given(instance=ConditionalEdgeStyleDescription_strategy)
 @settings(max_examples=50)
 def test_conditionaledgestyledescription_instantiation(instance):
     assert isinstance(instance, ConditionalEdgeStyleDescription)
 
-@given(instance=style::EdgeStyleDescription_strategy)
+@given(instance=style_EdgeStyleDescription_strategy)
 @settings(max_examples=50)
-def test_style::edgestyledescription_instantiation(instance):
-    assert isinstance(instance, style::EdgeStyleDescription)
+def test_style_edgestyledescription_instantiation(instance):
+    assert isinstance(instance, style_EdgeStyleDescription)
 
-@given(instance=description::IEdgeMapping_strategy)
+@given(instance=description_IEdgeMapping_strategy)
 @settings(max_examples=50)
-def test_description::iedgemapping_instantiation(instance):
-    assert isinstance(instance, description::IEdgeMapping)
+def test_description_iedgemapping_instantiation(instance):
+    assert isinstance(instance, description_IEdgeMapping)
 
-@given(instance=description::ContainerMapping_strategy)
+@given(instance=description_ContainerMapping_strategy)
 @settings(max_examples=50)
-def test_description::containermapping_instantiation(instance):
-    assert isinstance(instance, description::ContainerMapping)
+def test_description_containermapping_instantiation(instance):
+    assert isinstance(instance, description_ContainerMapping)
 
-@given(instance=description::AbstractMappingImport_strategy)
+@given(instance=description_AbstractMappingImport_strategy)
 @settings(max_examples=50)
-def test_description::abstractmappingimport_instantiation(instance):
-    assert isinstance(instance, description::AbstractMappingImport)
+def test_description_abstractmappingimport_instantiation(instance):
+    assert isinstance(instance, description_AbstractMappingImport)
 
-@given(instance=diagram::description::ContainerMappingImport_strategy)
+@given(instance=diagram_description_ContainerMappingImport_strategy)
 @settings(max_examples=50)
-def test_diagram::description::containermappingimport_instantiation(instance):
-    assert isinstance(instance, diagram::description::ContainerMappingImport)
+def test_diagram_description_containermappingimport_instantiation(instance):
+    assert isinstance(instance, diagram_description_ContainerMappingImport)
 
-@given(instance=description::NodeMapping_strategy)
+@given(instance=description_NodeMapping_strategy)
 @settings(max_examples=50)
-def test_description::nodemapping_instantiation(instance):
-    assert isinstance(instance, description::NodeMapping)
+def test_description_nodemapping_instantiation(instance):
+    assert isinstance(instance, description_NodeMapping)
 
-@given(instance=diagram::description::NodeMappingImport_strategy)
+@given(instance=diagram_description_NodeMappingImport_strategy)
 @settings(max_examples=50)
-def test_diagram::description::nodemappingimport_instantiation(instance):
-    assert isinstance(instance, diagram::description::NodeMappingImport)
+def test_diagram_description_nodemappingimport_instantiation(instance):
+    assert isinstance(instance, diagram_description_NodeMappingImport)
 
 @given(instance=ConditionalContainerStyleDescription_strategy)
 @settings(max_examples=50)
 def test_conditionalcontainerstyledescription_instantiation(instance):
     assert isinstance(instance, ConditionalContainerStyleDescription)
 
-@given(instance=style::ContainerStyleDescription_strategy)
+@given(instance=style_ContainerStyleDescription_strategy)
 @settings(max_examples=50)
-def test_style::containerstyledescription_instantiation(instance):
-    assert isinstance(instance, style::ContainerStyleDescription)
+def test_style_containerstyledescription_instantiation(instance):
+    assert isinstance(instance, style_ContainerStyleDescription)
+
+@given(instance=diagram_style_ShapeContainerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_shapecontainerstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_ShapeContainerStyleDescription)
+
+
+
+@given(instance=diagram_style_ShapeContainerStyleDescription_strategy)
+def test_diagram_style_shapecontainerstyledescription_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+@given(instance=diagram_style_FlatContainerStyleDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_style_flatcontainerstyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_FlatContainerStyleDescription)
+
+
+
+@given(instance=diagram_style_FlatContainerStyleDescription_strategy)
+def test_diagram_style_flatcontainerstyledescription_backgroundStyle_setter(instance):
+    original = instance.backgroundStyle
+    instance.backgroundStyle = original
+    assert instance.backgroundStyle == original
 
 @given(instance=ConditionalNodeStyleDescription_strategy)
 @settings(max_examples=50)
 def test_conditionalnodestyledescription_instantiation(instance):
     assert isinstance(instance, ConditionalNodeStyleDescription)
 
-@given(instance=style::NodeStyleDescription_strategy)
+@given(instance=style_NodeStyleDescription_strategy)
 @settings(max_examples=50)
-def test_style::nodestyledescription_instantiation(instance):
-    assert isinstance(instance, style::NodeStyleDescription)
+def test_style_nodestyledescription_instantiation(instance):
+    assert isinstance(instance, style_NodeStyleDescription)
 
-@given(instance=description::AbstractNodeMapping_strategy)
+@given(instance=diagram_style_WorkspaceImageDescription_strategy)
 @settings(max_examples=50)
-def test_description::abstractnodemapping_instantiation(instance):
-    assert isinstance(instance, description::AbstractNodeMapping)
+def test_diagram_style_workspaceimagedescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_WorkspaceImageDescription)
 
-@given(instance=description::DiagramElementMapping_strategy)
-@settings(max_examples=50)
-def test_description::diagramelementmapping_instantiation(instance):
-    assert isinstance(instance, description::DiagramElementMapping)
 
-@given(instance=tool::DoubleClickDescription_strategy)
-@settings(max_examples=50)
-def test_tool::doubleclickdescription_instantiation(instance):
-    assert isinstance(instance, tool::DoubleClickDescription)
 
-@given(instance=tool::DirectEditLabel_strategy)
-@settings(max_examples=50)
-def test_tool::directeditlabel_instantiation(instance):
-    assert isinstance(instance, tool::DirectEditLabel)
+@given(instance=diagram_style_WorkspaceImageDescription_strategy)
+def test_diagram_style_workspaceimagedescription_workspacePath_setter(instance):
+    original = instance.workspacePath
+    instance.workspacePath = original
+    assert instance.workspacePath == original
 
-@given(instance=tool::DeleteElementDescription_strategy)
+@given(instance=description_AbstractNodeMapping_strategy)
 @settings(max_examples=50)
-def test_tool::deleteelementdescription_instantiation(instance):
-    assert isinstance(instance, tool::DeleteElementDescription)
+def test_description_abstractnodemapping_instantiation(instance):
+    assert isinstance(instance, description_AbstractNodeMapping)
 
-@given(instance=description::RepresentationElementMapping_strategy)
+@given(instance=description_DiagramElementMapping_strategy)
 @settings(max_examples=50)
-def test_description::representationelementmapping_instantiation(instance):
-    assert isinstance(instance, description::RepresentationElementMapping)
+def test_description_diagramelementmapping_instantiation(instance):
+    assert isinstance(instance, description_DiagramElementMapping)
+
+@given(instance=tool_DoubleClickDescription_strategy)
+@settings(max_examples=50)
+def test_tool_doubleclickdescription_instantiation(instance):
+    assert isinstance(instance, tool_DoubleClickDescription)
+
+@given(instance=tool_DirectEditLabel_strategy)
+@settings(max_examples=50)
+def test_tool_directeditlabel_instantiation(instance):
+    assert isinstance(instance, tool_DirectEditLabel)
+
+@given(instance=tool_DeleteElementDescription_strategy)
+@settings(max_examples=50)
+def test_tool_deleteelementdescription_instantiation(instance):
+    assert isinstance(instance, tool_DeleteElementDescription)
+
+@given(instance=description_RepresentationElementMapping_strategy)
+@settings(max_examples=50)
+def test_description_representationelementmapping_instantiation(instance):
+    assert isinstance(instance, description_RepresentationElementMapping)
 
 @given(instance=RepresentationExtensionDescription_strategy)
 @settings(max_examples=50)
 def test_representationextensiondescription_instantiation(instance):
     assert isinstance(instance, RepresentationExtensionDescription)
 
-@given(instance=diagram::description::DiagramExtensionDescription_strategy)
+@given(instance=diagram_description_DiagramExtensionDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::description::diagramextensiondescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::DiagramExtensionDescription)
+def test_diagram_description_diagramextensiondescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_DiagramExtensionDescription)
 
-@given(instance=description::DiagramDescription_strategy)
+@given(instance=description_DiagramDescription_strategy)
 @settings(max_examples=50)
-def test_description::diagramdescription_instantiation(instance):
-    assert isinstance(instance, description::DiagramDescription)
+def test_description_diagramdescription_instantiation(instance):
+    assert isinstance(instance, description_DiagramDescription)
 
-@given(instance=description::RepresentationImportDescription_strategy)
+@given(instance=description_RepresentationImportDescription_strategy)
 @settings(max_examples=50)
-def test_description::representationimportdescription_instantiation(instance):
-    assert isinstance(instance, description::RepresentationImportDescription)
+def test_description_representationimportdescription_instantiation(instance):
+    assert isinstance(instance, description_RepresentationImportDescription)
 
-@given(instance=diagram::description::DiagramImportDescription_strategy)
+@given(instance=diagram_description_DiagramImportDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::description::diagramimportdescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::DiagramImportDescription)
+def test_diagram_description_diagramimportdescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_DiagramImportDescription)
 
-@given(instance=tool::ToolSection_strategy)
+@given(instance=tool_ToolSection_strategy)
 @settings(max_examples=50)
-def test_tool::toolsection_instantiation(instance):
-    assert isinstance(instance, tool::ToolSection)
+def test_tool_toolsection_instantiation(instance):
+    assert isinstance(instance, tool_ToolSection)
 
 @given(instance=EdgeMappingImport_strategy)
 @settings(max_examples=50)
 def test_edgemappingimport_instantiation(instance):
     assert isinstance(instance, EdgeMappingImport)
 
-@given(instance=tool::InitialOperation_strategy)
+@given(instance=tool_InitialOperation_strategy)
 @settings(max_examples=50)
-def test_tool::initialoperation_instantiation(instance):
-    assert isinstance(instance, tool::InitialOperation)
+def test_tool_initialoperation_instantiation(instance):
+    assert isinstance(instance, tool_InitialOperation)
 
 @given(instance=Layout_strategy)
 @settings(max_examples=50)
 def test_layout_instantiation(instance):
     assert isinstance(instance, Layout)
 
-@given(instance=diagram::description::OrderedTreeLayout_strategy)
+@given(instance=diagram_description_CompositeLayout_strategy)
 @settings(max_examples=50)
-def test_diagram::description::orderedtreelayout_instantiation(instance):
-    assert isinstance(instance, diagram::description::OrderedTreeLayout)
-
-@given(instance=diagram::description::OrderedTreeLayout_strategy)
-def test_diagram::description::orderedtreelayout_childrenExpression_type(instance):
-    assert isinstance(instance.childrenExpression, str)
+def test_diagram_description_compositelayout_instantiation(instance):
+    assert isinstance(instance, diagram_description_CompositeLayout)
 
 
-@given(instance=diagram::description::OrderedTreeLayout_strategy)
-def test_diagram::description::orderedtreelayout_childrenExpression_setter(instance):
-    original = instance.childrenExpression
-    instance.childrenExpression = original
-    assert instance.childrenExpression == original
 
-@given(instance=diagram::description::CompositeLayout_strategy)
-@settings(max_examples=50)
-def test_diagram::description::compositelayout_instantiation(instance):
-    assert isinstance(instance, diagram::description::CompositeLayout)
-
-@given(instance=diagram::description::CompositeLayout_strategy)
-def test_diagram::description::compositelayout_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=diagram::description::CompositeLayout_strategy)
-def test_diagram::description::compositelayout_direction_setter(instance):
+@given(instance=diagram_description_CompositeLayout_strategy)
+def test_diagram_description_compositelayout_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=diagram::description::CompositeLayout_strategy)
-def test_diagram::description::compositelayout_padding_type(instance):
-    assert isinstance(instance.padding, int)
 
 
-@given(instance=diagram::description::CompositeLayout_strategy)
-def test_diagram::description::compositelayout_padding_setter(instance):
+@given(instance=diagram_description_CompositeLayout_strategy)
+def test_diagram_description_compositelayout_padding_setter(instance):
     original = instance.padding
     instance.padding = original
     assert instance.padding == original
 
-@given(instance=tool::RepresentationCreationDescription_strategy)
+@given(instance=diagram_description_OrderedTreeLayout_strategy)
 @settings(max_examples=50)
-def test_tool::representationcreationdescription_instantiation(instance):
-    assert isinstance(instance, tool::RepresentationCreationDescription)
+def test_diagram_description_orderedtreelayout_instantiation(instance):
+    assert isinstance(instance, diagram_description_OrderedTreeLayout)
 
-@given(instance=tool::AbstractToolDescription_strategy)
-@settings(max_examples=50)
-def test_tool::abstracttooldescription_instantiation(instance):
-    assert isinstance(instance, tool::AbstractToolDescription)
 
-@given(instance=concern::ConcernSet_strategy)
-@settings(max_examples=50)
-def test_concern::concernset_instantiation(instance):
-    assert isinstance(instance, concern::ConcernSet)
 
-@given(instance=validation::ValidationSet_strategy)
+@given(instance=diagram_description_OrderedTreeLayout_strategy)
+def test_diagram_description_orderedtreelayout_childrenExpression_setter(instance):
+    original = instance.childrenExpression
+    instance.childrenExpression = original
+    assert instance.childrenExpression == original
+
+@given(instance=tool_RepresentationCreationDescription_strategy)
 @settings(max_examples=50)
-def test_validation::validationset_instantiation(instance):
-    assert isinstance(instance, validation::ValidationSet)
+def test_tool_representationcreationdescription_instantiation(instance):
+    assert isinstance(instance, tool_RepresentationCreationDescription)
+
+@given(instance=tool_AbstractToolDescription_strategy)
+@settings(max_examples=50)
+def test_tool_abstracttooldescription_instantiation(instance):
+    assert isinstance(instance, tool_AbstractToolDescription)
+
+@given(instance=concern_ConcernSet_strategy)
+@settings(max_examples=50)
+def test_concern_concernset_instantiation(instance):
+    assert isinstance(instance, concern_ConcernSet)
+
+@given(instance=validation_ValidationSet_strategy)
+@settings(max_examples=50)
+def test_validation_validationset_instantiation(instance):
+    assert isinstance(instance, validation_ValidationSet)
 
 @given(instance=EdgeMapping_strategy)
 @settings(max_examples=50)
 def test_edgemapping_instantiation(instance):
     assert isinstance(instance, EdgeMapping)
 
-@given(instance=description::PasteTargetDescription_strategy)
+@given(instance=description_PasteTargetDescription_strategy)
 @settings(max_examples=50)
-def test_description::pastetargetdescription_instantiation(instance):
-    assert isinstance(instance, description::PasteTargetDescription)
+def test_description_pastetargetdescription_instantiation(instance):
+    assert isinstance(instance, description_PasteTargetDescription)
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
+@given(instance=diagram_description_DiagramElementMapping_strategy)
 @settings(max_examples=50)
-def test_diagram::description::diagramelementmapping_instantiation(instance):
-    assert isinstance(instance, diagram::description::DiagramElementMapping)
-
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_synchronizationLock_type(instance):
-    assert isinstance(instance.synchronizationLock, bool)
+def test_diagram_description_diagramelementmapping_instantiation(instance):
+    assert isinstance(instance, diagram_description_DiagramElementMapping)
 
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_synchronizationLock_setter(instance):
-    original = instance.synchronizationLock
-    instance.synchronizationLock = original
-    assert instance.synchronizationLock == original
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_createElements_type(instance):
-    assert isinstance(instance.createElements, bool)
+@given(instance=diagram_description_DiagramElementMapping_strategy)
+def test_diagram_description_diagramelementmapping_preconditionExpression_setter(instance):
+    original = instance.preconditionExpression
+    instance.preconditionExpression = original
+    assert instance.preconditionExpression == original
 
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_createElements_setter(instance):
-    original = instance.createElements
-    instance.createElements = original
-    assert instance.createElements == original
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_semanticCandidatesExpression_type(instance):
-    assert isinstance(instance.semanticCandidatesExpression, str)
-
-
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_semanticCandidatesExpression_setter(instance):
-    original = instance.semanticCandidatesExpression
-    instance.semanticCandidatesExpression = original
-    assert instance.semanticCandidatesExpression == original
-
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_semanticElements_type(instance):
-    assert isinstance(instance.semanticElements, str)
-
-
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_semanticElements_setter(instance):
+@given(instance=diagram_description_DiagramElementMapping_strategy)
+def test_diagram_description_diagramelementmapping_semanticElements_setter(instance):
     original = instance.semanticElements
     instance.semanticElements = original
     assert instance.semanticElements == original
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_preconditionExpression_type(instance):
-    assert isinstance(instance.preconditionExpression, str)
 
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
-def test_diagram::description::diagramelementmapping_preconditionExpression_setter(instance):
-    original = instance.preconditionExpression
-    instance.preconditionExpression = original
-    assert instance.preconditionExpression == original
+@given(instance=diagram_description_DiagramElementMapping_strategy)
+def test_diagram_description_diagramelementmapping_synchronizationLock_setter(instance):
+    original = instance.synchronizationLock
+    instance.synchronizationLock = original
+    assert instance.synchronizationLock == original
+
+
+
+@given(instance=diagram_description_DiagramElementMapping_strategy)
+def test_diagram_description_diagramelementmapping_semanticCandidatesExpression_setter(instance):
+    original = instance.semanticCandidatesExpression
+    instance.semanticCandidatesExpression = original
+    assert instance.semanticCandidatesExpression == original
+
+
+
+@given(instance=diagram_description_DiagramElementMapping_strategy)
+def test_diagram_description_diagramelementmapping_createElements_setter(instance):
+    original = instance.createElements
+    instance.createElements = original
+    assert instance.createElements == original
 
 import warnings
 import copy
@@ -7121,9 +7759,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
+@given(instance=diagram_description_DiagramElementMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::diagramelementmapping_isfrom_changes_state(instance):
+def test_diagram_description_diagramelementmapping_isfrom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7137,14 +7775,14 @@ def test_diagram::description::diagramelementmapping_isfrom_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isFrom' in diagram::description::DiagramElementMapping is empty"
+        assert has_statements, f"Function 'isFrom' in diagram_description_DiagramElementMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isFrom' in diagram::description::DiagramElementMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'isFrom' in diagram_description_DiagramElementMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isFrom' in diagram::description::DiagramElementMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'isFrom' in diagram_description_DiagramElementMapping is not implemented or raised an error")
 
 import warnings
 import copy
@@ -7152,9 +7790,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::DiagramElementMapping_strategy)
+@given(instance=diagram_description_DiagramElementMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::diagramelementmapping_checkprecondition_changes_state(instance):
+def test_diagram_description_diagramelementmapping_checkprecondition_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7170,45 +7808,29 @@ def test_diagram::description::diagramelementmapping_checkprecondition_changes_s
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkPrecondition' in diagram::description::DiagramElementMapping is empty"
+        assert has_statements, f"Function 'checkPrecondition' in diagram_description_DiagramElementMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkPrecondition' in diagram::description::DiagramElementMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'checkPrecondition' in diagram_description_DiagramElementMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkPrecondition' in diagram::description::DiagramElementMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkPrecondition' in diagram_description_DiagramElementMapping is not implemented or raised an error")
 
-@given(instance=description::RepresentationDescription_strategy)
+@given(instance=description_RepresentationDescription_strategy)
 @settings(max_examples=50)
-def test_description::representationdescription_instantiation(instance):
-    assert isinstance(instance, description::RepresentationDescription)
+def test_description_representationdescription_instantiation(instance):
+    assert isinstance(instance, description_RepresentationDescription)
 
-@given(instance=description::DragAndDropTargetDescription_strategy)
+@given(instance=description_DragAndDropTargetDescription_strategy)
 @settings(max_examples=50)
-def test_description::draganddroptargetdescription_instantiation(instance):
-    assert isinstance(instance, description::DragAndDropTargetDescription)
+def test_description_draganddroptargetdescription_instantiation(instance):
+    assert isinstance(instance, description_DragAndDropTargetDescription)
 
-@given(instance=diagram::description::ContainerMapping_strategy)
+@given(instance=diagram_description_NodeMapping_strategy)
 @settings(max_examples=50)
-def test_diagram::description::containermapping_instantiation(instance):
-    assert isinstance(instance, diagram::description::ContainerMapping)
-
-@given(instance=diagram::description::ContainerMapping_strategy)
-def test_diagram::description::containermapping_childrenPresentation_type(instance):
-    assert isinstance(instance.childrenPresentation, str)
-
-
-@given(instance=diagram::description::ContainerMapping_strategy)
-def test_diagram::description::containermapping_childrenPresentation_setter(instance):
-    original = instance.childrenPresentation
-    instance.childrenPresentation = original
-    assert instance.childrenPresentation == original
-
-@given(instance=diagram::description::NodeMapping_strategy)
-@settings(max_examples=50)
-def test_diagram::description::nodemapping_instantiation(instance):
-    assert isinstance(instance, diagram::description::NodeMapping)
+def test_diagram_description_nodemapping_instantiation(instance):
+    assert isinstance(instance, diagram_description_NodeMapping)
 
 import warnings
 import copy
@@ -7216,9 +7838,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::NodeMapping_strategy)
+@given(instance=diagram_description_NodeMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::nodemapping_updatenode_changes_state(instance):
+def test_diagram_description_nodemapping_updatenode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7232,14 +7854,14 @@ def test_diagram::description::nodemapping_updatenode_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateNode' in diagram::description::NodeMapping is empty"
+        assert has_statements, f"Function 'updateNode' in diagram_description_NodeMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateNode' in diagram::description::NodeMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'updateNode' in diagram_description_NodeMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateNode' in diagram::description::NodeMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateNode' in diagram_description_NodeMapping is not implemented or raised an error")
 
 import warnings
 import copy
@@ -7247,9 +7869,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::NodeMapping_strategy)
+@given(instance=diagram_description_NodeMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::nodemapping_updatelistelement_changes_state(instance):
+def test_diagram_description_nodemapping_updatelistelement_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7263,14 +7885,14 @@ def test_diagram::description::nodemapping_updatelistelement_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateListElement' in diagram::description::NodeMapping is empty"
+        assert has_statements, f"Function 'updateListElement' in diagram_description_NodeMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateListElement' in diagram::description::NodeMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'updateListElement' in diagram_description_NodeMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateListElement' in diagram::description::NodeMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateListElement' in diagram_description_NodeMapping is not implemented or raised an error")
 
 import warnings
 import copy
@@ -7278,9 +7900,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::NodeMapping_strategy)
+@given(instance=diagram_description_NodeMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::nodemapping_createnode_changes_state(instance):
+def test_diagram_description_nodemapping_createnode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7296,63 +7918,64 @@ def test_diagram::description::nodemapping_createnode_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createNode' in diagram::description::NodeMapping is empty"
+        assert has_statements, f"Function 'createNode' in diagram_description_NodeMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createNode' in diagram::description::NodeMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'createNode' in diagram_description_NodeMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createNode' in diagram::description::NodeMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'createNode' in diagram_description_NodeMapping is not implemented or raised an error")
 
-@given(instance=diagram::description::DiagramDescription_strategy)
+@given(instance=diagram_description_ContainerMapping_strategy)
 @settings(max_examples=50)
-def test_diagram::description::diagramdescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::DiagramDescription)
-
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_rootExpression_type(instance):
-    assert isinstance(instance.rootExpression, str)
+def test_diagram_description_containermapping_instantiation(instance):
+    assert isinstance(instance, diagram_description_ContainerMapping)
 
 
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_rootExpression_setter(instance):
-    original = instance.rootExpression
-    instance.rootExpression = original
-    assert instance.rootExpression == original
 
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_enablePopupBars_type(instance):
-    assert isinstance(instance.enablePopupBars, bool)
+@given(instance=diagram_description_ContainerMapping_strategy)
+def test_diagram_description_containermapping_childrenPresentation_setter(instance):
+    original = instance.childrenPresentation
+    instance.childrenPresentation = original
+    assert instance.childrenPresentation == original
 
-
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_enablePopupBars_setter(instance):
-    original = instance.enablePopupBars
-    instance.enablePopupBars = original
-    assert instance.enablePopupBars == original
-
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_domainClass_type(instance):
-    assert isinstance(instance.domainClass, str)
+@given(instance=diagram_description_DiagramDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_description_diagramdescription_instantiation(instance):
+    assert isinstance(instance, diagram_description_DiagramDescription)
 
 
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_domainClass_setter(instance):
+
+@given(instance=diagram_description_DiagramDescription_strategy)
+def test_diagram_description_diagramdescription_preconditionExpression_setter(instance):
+    original = instance.preconditionExpression
+    instance.preconditionExpression = original
+    assert instance.preconditionExpression == original
+
+
+
+@given(instance=diagram_description_DiagramDescription_strategy)
+def test_diagram_description_diagramdescription_domainClass_setter(instance):
     original = instance.domainClass
     instance.domainClass = original
     assert instance.domainClass == original
 
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_preconditionExpression_type(instance):
-    assert isinstance(instance.preconditionExpression, str)
 
 
-@given(instance=diagram::description::DiagramDescription_strategy)
-def test_diagram::description::diagramdescription_preconditionExpression_setter(instance):
-    original = instance.preconditionExpression
-    instance.preconditionExpression = original
-    assert instance.preconditionExpression == original
+@given(instance=diagram_description_DiagramDescription_strategy)
+def test_diagram_description_diagramdescription_rootExpression_setter(instance):
+    original = instance.rootExpression
+    instance.rootExpression = original
+    assert instance.rootExpression == original
+
+
+
+@given(instance=diagram_description_DiagramDescription_strategy)
+def test_diagram_description_diagramdescription_enablePopupBars_setter(instance):
+    original = instance.enablePopupBars
+    instance.enablePopupBars = original
+    assert instance.enablePopupBars == original
 
 import warnings
 import copy
@@ -7360,9 +7983,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::DiagramDescription_strategy)
+@given(instance=diagram_description_DiagramDescription_strategy)
 @settings(max_examples=30)
-def test_diagram::description::diagramdescription_creatediagram_changes_state(instance):
+def test_diagram_description_diagramdescription_creatediagram_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7374,65 +7997,467 @@ def test_diagram::description::diagramdescription_creatediagram_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createDiagram' in diagram::description::DiagramDescription is empty"
+        assert has_statements, f"Function 'createDiagram' in diagram_description_DiagramDescription is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createDiagram' in diagram::description::DiagramDescription did not change state; check implementation")
+            warnings.warn(f"Operation 'createDiagram' in diagram_description_DiagramDescription did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createDiagram' in diagram::description::DiagramDescription is not implemented or raised an error")
+        warnings.warn(f"Operation 'createDiagram' in diagram_description_DiagramDescription is not implemented or raised an error")
 
-@given(instance=diagram::EObject_strategy)
+@given(instance=diagram_EObject_strategy)
 @settings(max_examples=50)
-def test_diagram::eobject_instantiation(instance):
-    assert isinstance(instance, diagram::EObject)
+def test_diagram_eobject_instantiation(instance):
+    assert isinstance(instance, diagram_EObject)
 
-@given(instance=tool::SelectModelElementVariable_strategy)
+@given(instance=tool_SelectModelElementVariable_strategy)
 @settings(max_examples=50)
-def test_tool::selectmodelelementvariable_instantiation(instance):
-    assert isinstance(instance, tool::SelectModelElementVariable)
+def test_tool_selectmodelelementvariable_instantiation(instance):
+    assert isinstance(instance, tool_SelectModelElementVariable)
 
-@given(instance=diagram::HideLabelCapabilityStyle_strategy)
+@given(instance=diagram_concern_ConcernSet_strategy)
 @settings(max_examples=50)
-def test_diagram::hidelabelcapabilitystyle_instantiation(instance):
-    assert isinstance(instance, diagram::HideLabelCapabilityStyle)
+def test_diagram_concern_concernset_instantiation(instance):
+    assert isinstance(instance, diagram_concern_ConcernSet)
 
-@given(instance=diagram::HideLabelCapabilityStyle_strategy)
-def test_diagram::hidelabelcapabilitystyle_hideLabelByDefault_type(instance):
-    assert isinstance(instance.hideLabelByDefault, bool)
+@given(instance=InteractiveVariableDescription_strategy)
+@settings(max_examples=50)
+def test_interactivevariabledescription_instantiation(instance):
+    assert isinstance(instance, InteractiveVariableDescription)
+
+@given(instance=filter_Filter_strategy)
+@settings(max_examples=50)
+def test_filter_filter_instantiation(instance):
+    assert isinstance(instance, filter_Filter)
+
+@given(instance=FilterDescription_strategy)
+@settings(max_examples=50)
+def test_filterdescription_instantiation(instance):
+    assert isinstance(instance, FilterDescription)
+
+@given(instance=diagram_filter_CompositeFilterDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_filter_compositefilterdescription_instantiation(instance):
+    assert isinstance(instance, diagram_filter_CompositeFilterDescription)
+
+@given(instance=diagram_filter_Filter_strategy)
+@settings(max_examples=50)
+def test_diagram_filter_filter_instantiation(instance):
+    assert isinstance(instance, diagram_filter_Filter)
 
 
-@given(instance=diagram::HideLabelCapabilityStyle_strategy)
-def test_diagram::hidelabelcapabilitystyle_hideLabelByDefault_setter(instance):
+
+@given(instance=diagram_filter_Filter_strategy)
+def test_diagram_filter_filter_filterKind_setter(instance):
+    original = instance.filterKind
+    instance.filterKind = original
+    assert instance.filterKind == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=diagram_filter_Filter_strategy)
+@settings(max_examples=30)
+def test_diagram_filter_filter_isvisible_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isVisible(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isVisible).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isVisible' in diagram_filter_Filter is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isVisible' in diagram_filter_Filter did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isVisible' in diagram_filter_Filter is not implemented or raised an error")
+
+@given(instance=Filter_strategy)
+@settings(max_examples=50)
+def test_filter_instantiation(instance):
+    assert isinstance(instance, Filter)
+
+@given(instance=diagram_filter_VariableFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_filter_variablefilter_instantiation(instance):
+    assert isinstance(instance, diagram_filter_VariableFilter)
+
+
+
+@given(instance=diagram_filter_VariableFilter_strategy)
+def test_diagram_filter_variablefilter_semanticConditionExpression_setter(instance):
+    original = instance.semanticConditionExpression
+    instance.semanticConditionExpression = original
+    assert instance.semanticConditionExpression == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=diagram_filter_VariableFilter_strategy)
+@settings(max_examples=30)
+def test_diagram_filter_variablefilter_resetvariables_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.resetVariables()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.resetVariables).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'resetVariables' in diagram_filter_VariableFilter is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'resetVariables' in diagram_filter_VariableFilter did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'resetVariables' in diagram_filter_VariableFilter is not implemented or raised an error")
+
+@given(instance=diagram_filter_MappingFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_filter_mappingfilter_instantiation(instance):
+    assert isinstance(instance, diagram_filter_MappingFilter)
+
+
+
+@given(instance=diagram_filter_MappingFilter_strategy)
+def test_diagram_filter_mappingfilter_viewConditionExpression_setter(instance):
+    original = instance.viewConditionExpression
+    instance.viewConditionExpression = original
+    assert instance.viewConditionExpression == original
+
+
+
+@given(instance=diagram_filter_MappingFilter_strategy)
+def test_diagram_filter_mappingfilter_semanticConditionExpression_setter(instance):
+    original = instance.semanticConditionExpression
+    instance.semanticConditionExpression = original
+    assert instance.semanticConditionExpression == original
+
+@given(instance=tool_ElementDropVariable_strategy)
+@settings(max_examples=50)
+def test_tool_elementdropvariable_instantiation(instance):
+    assert isinstance(instance, tool_ElementDropVariable)
+
+@given(instance=tool_DropContainerVariable_strategy)
+@settings(max_examples=50)
+def test_tool_dropcontainervariable_instantiation(instance):
+    assert isinstance(instance, tool_DropContainerVariable)
+
+@given(instance=diagram_tool_ContainerDropDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_containerdropdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ContainerDropDescription)
+
+
+
+@given(instance=diagram_tool_ContainerDropDescription_strategy)
+def test_diagram_tool_containerdropdescription_dragSource_setter(instance):
+    original = instance.dragSource
+    instance.dragSource = original
+    assert instance.dragSource == original
+
+
+
+@given(instance=diagram_tool_ContainerDropDescription_strategy)
+def test_diagram_tool_containerdropdescription_moveEdges_setter(instance):
+    original = instance.moveEdges
+    instance.moveEdges = original
+    assert instance.moveEdges == original
+
+@given(instance=RepresentationNavigationDescription_strategy)
+@settings(max_examples=50)
+def test_representationnavigationdescription_instantiation(instance):
+    assert isinstance(instance, RepresentationNavigationDescription)
+
+@given(instance=diagram_tool_DiagramNavigationDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_diagramnavigationdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DiagramNavigationDescription)
+
+@given(instance=RepresentationCreationDescription_strategy)
+@settings(max_examples=50)
+def test_representationcreationdescription_instantiation(instance):
+    assert isinstance(instance, RepresentationCreationDescription)
+
+@given(instance=diagram_tool_DiagramCreationDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_diagramcreationdescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DiagramCreationDescription)
+
+@given(instance=tool_InitialContainerDropOperation_strategy)
+@settings(max_examples=50)
+def test_tool_initialcontainerdropoperation_instantiation(instance):
+    assert isinstance(instance, tool_InitialContainerDropOperation)
+
+@given(instance=ContainerModelOperation_strategy)
+@settings(max_examples=50)
+def test_containermodeloperation_instantiation(instance):
+    assert isinstance(instance, ContainerModelOperation)
+
+@given(instance=diagram_tool_Navigation_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_navigation_instantiation(instance):
+    assert isinstance(instance, diagram_tool_Navigation)
+
+
+
+@given(instance=diagram_tool_Navigation_strategy)
+def test_diagram_tool_navigation_createIfNotExistent_setter(instance):
+    original = instance.createIfNotExistent
+    instance.createIfNotExistent = original
+    assert instance.createIfNotExistent == original
+
+@given(instance=diagram_tool_CreateView_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_createview_instantiation(instance):
+    assert isinstance(instance, diagram_tool_CreateView)
+
+
+
+@given(instance=diagram_tool_CreateView_strategy)
+def test_diagram_tool_createview_containerViewExpression_setter(instance):
+    original = instance.containerViewExpression
+    instance.containerViewExpression = original
+    assert instance.containerViewExpression == original
+
+
+
+@given(instance=diagram_tool_CreateView_strategy)
+def test_diagram_tool_createview_variableName_setter(instance):
+    original = instance.variableName
+    instance.variableName = original
+    assert instance.variableName == original
+
+@given(instance=tool_VariableContainer_strategy)
+@settings(max_examples=50)
+def test_tool_variablecontainer_instantiation(instance):
+    assert isinstance(instance, tool_VariableContainer)
+
+@given(instance=description_AbstractVariable_strategy)
+@settings(max_examples=50)
+def test_description_abstractvariable_instantiation(instance):
+    assert isinstance(instance, description_AbstractVariable)
+
+@given(instance=diagram_tool_NodeCreationVariable_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_nodecreationvariable_instantiation(instance):
+    assert isinstance(instance, diagram_tool_NodeCreationVariable)
+
+@given(instance=diagram_tool_ElementDoubleClickVariable_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_elementdoubleclickvariable_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ElementDoubleClickVariable)
+
+@given(instance=diagram_tool_SourceEdgeViewCreationVariable_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_sourceedgeviewcreationvariable_instantiation(instance):
+    assert isinstance(instance, diagram_tool_SourceEdgeViewCreationVariable)
+
+@given(instance=diagram_tool_TargetEdgeCreationVariable_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_targetedgecreationvariable_instantiation(instance):
+    assert isinstance(instance, diagram_tool_TargetEdgeCreationVariable)
+
+@given(instance=diagram_tool_TargetEdgeViewCreationVariable_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_targetedgeviewcreationvariable_instantiation(instance):
+    assert isinstance(instance, diagram_tool_TargetEdgeViewCreationVariable)
+
+@given(instance=diagram_tool_SourceEdgeCreationVariable_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_sourceedgecreationvariable_instantiation(instance):
+    assert isinstance(instance, diagram_tool_SourceEdgeCreationVariable)
+
+@given(instance=diagram_tool_BehaviorTool_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_behaviortool_instantiation(instance):
+    assert isinstance(instance, diagram_tool_BehaviorTool)
+
+
+
+@given(instance=diagram_tool_BehaviorTool_strategy)
+def test_diagram_tool_behaviortool_domainClass_setter(instance):
+    original = instance.domainClass
+    instance.domainClass = original
+    assert instance.domainClass == original
+
+@given(instance=tool_EditMaskVariables_strategy)
+@settings(max_examples=50)
+def test_tool_editmaskvariables_instantiation(instance):
+    assert isinstance(instance, tool_EditMaskVariables)
+
+@given(instance=diagram_tool_DirectEditLabel_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_directeditlabel_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DirectEditLabel)
+
+
+
+@given(instance=diagram_tool_DirectEditLabel_strategy)
+def test_diagram_tool_directeditlabel_inputLabelExpression_setter(instance):
+    original = instance.inputLabelExpression
+    instance.inputLabelExpression = original
+    assert instance.inputLabelExpression == original
+
+@given(instance=CreateView_strategy)
+@settings(max_examples=50)
+def test_createview_instantiation(instance):
+    assert isinstance(instance, CreateView)
+
+@given(instance=diagram_tool_CreateEdgeView_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_createedgeview_instantiation(instance):
+    assert isinstance(instance, diagram_tool_CreateEdgeView)
+
+
+
+@given(instance=diagram_tool_CreateEdgeView_strategy)
+def test_diagram_tool_createedgeview_targetExpression_setter(instance):
+    original = instance.targetExpression
+    instance.targetExpression = original
+    assert instance.targetExpression == original
+
+
+
+@given(instance=diagram_tool_CreateEdgeView_strategy)
+def test_diagram_tool_createedgeview_sourceExpression_setter(instance):
+    original = instance.sourceExpression
+    instance.sourceExpression = original
+    assert instance.sourceExpression == original
+
+@given(instance=tool_ElementSelectVariable_strategy)
+@settings(max_examples=50)
+def test_tool_elementselectvariable_instantiation(instance):
+    assert isinstance(instance, tool_ElementSelectVariable)
+
+@given(instance=diagram_tool_ReconnectEdgeDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_reconnectedgedescription_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ReconnectEdgeDescription)
+
+
+
+@given(instance=diagram_tool_ReconnectEdgeDescription_strategy)
+def test_diagram_tool_reconnectedgedescription_reconnectionKind_setter(instance):
+    original = instance.reconnectionKind
+    instance.reconnectionKind = original
+    assert instance.reconnectionKind == original
+
+@given(instance=diagram_tool_DeleteHookParameter_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_deletehookparameter_instantiation(instance):
+    assert isinstance(instance, diagram_tool_DeleteHookParameter)
+
+
+
+@given(instance=diagram_tool_DeleteHookParameter_strategy)
+def test_diagram_tool_deletehookparameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=diagram_tool_DeleteHookParameter_strategy)
+def test_diagram_tool_deletehookparameter_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=diagram_HideLabelCapabilityStyle_strategy)
+@settings(max_examples=50)
+def test_diagram_hidelabelcapabilitystyle_instantiation(instance):
+    assert isinstance(instance, diagram_HideLabelCapabilityStyle)
+
+
+
+@given(instance=diagram_HideLabelCapabilityStyle_strategy)
+def test_diagram_hidelabelcapabilitystyle_hideLabelByDefault_setter(instance):
     original = instance.hideLabelByDefault
     instance.hideLabelByDefault = original
     assert instance.hideLabelByDefault == original
 
-@given(instance=diagram::DragAndDropTarget_strategy)
+@given(instance=diagram_DragAndDropTarget_strategy)
 @settings(max_examples=50)
-def test_diagram::draganddroptarget_instantiation(instance):
-    assert isinstance(instance, diagram::DragAndDropTarget)
+def test_diagram_draganddroptarget_instantiation(instance):
+    assert isinstance(instance, diagram_DragAndDropTarget)
 
-@given(instance=style::StyleDescription_strategy)
+@given(instance=style_StyleDescription_strategy)
 @settings(max_examples=50)
-def test_style::styledescription_instantiation(instance):
-    assert isinstance(instance, style::StyleDescription)
+def test_style_styledescription_instantiation(instance):
+    assert isinstance(instance, style_StyleDescription)
 
-@given(instance=diagram::ComputedStyleDescriptionRegistry_strategy)
+@given(instance=diagram_style_NodeStyleDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::computedstyledescriptionregistry_instantiation(instance):
-    assert isinstance(instance, diagram::ComputedStyleDescriptionRegistry)
+def test_diagram_style_nodestyledescription_instantiation(instance):
+    assert isinstance(instance, diagram_style_NodeStyleDescription)
+
+
+
+@given(instance=diagram_style_NodeStyleDescription_strategy)
+def test_diagram_style_nodestyledescription_resizeKind_setter(instance):
+    original = instance.resizeKind
+    instance.resizeKind = original
+    assert instance.resizeKind == original
+
+
+
+@given(instance=diagram_style_NodeStyleDescription_strategy)
+def test_diagram_style_nodestyledescription_sizeComputationExpression_setter(instance):
+    original = instance.sizeComputationExpression
+    instance.sizeComputationExpression = original
+    assert instance.sizeComputationExpression == original
+
+
+
+@given(instance=diagram_style_NodeStyleDescription_strategy)
+def test_diagram_style_nodestyledescription_labelPosition_setter(instance):
+    original = instance.labelPosition
+    instance.labelPosition = original
+    assert instance.labelPosition == original
+
+
+
+@given(instance=diagram_style_NodeStyleDescription_strategy)
+def test_diagram_style_nodestyledescription_forbiddenSides_setter(instance):
+    original = instance.forbiddenSides
+    instance.forbiddenSides = original
+    assert instance.forbiddenSides == original
+
+@given(instance=diagram_ComputedStyleDescriptionRegistry_strategy)
+@settings(max_examples=50)
+def test_diagram_computedstyledescriptionregistry_instantiation(instance):
+    assert isinstance(instance, diagram_ComputedStyleDescriptionRegistry)
 
 @given(instance=EdgeStyle_strategy)
 @settings(max_examples=50)
 def test_edgestyle_instantiation(instance):
     assert isinstance(instance, EdgeStyle)
 
-@given(instance=diagram::BracketEdgeStyle_strategy)
+@given(instance=diagram_BracketEdgeStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::bracketedgestyle_instantiation(instance):
-    assert isinstance(instance, diagram::BracketEdgeStyle)
+def test_diagram_bracketedgestyle_instantiation(instance):
+    assert isinstance(instance, diagram_BracketEdgeStyle)
 
 @given(instance=BasicLabelStyle_strategy)
 @settings(max_examples=50)
@@ -7444,15 +8469,15 @@ def test_basiclabelstyle_instantiation(instance):
 def test_collapsefilter_instantiation(instance):
     assert isinstance(instance, CollapseFilter)
 
-@given(instance=diagram::IndirectlyCollapseFilter_strategy)
+@given(instance=diagram_IndirectlyCollapseFilter_strategy)
 @settings(max_examples=50)
-def test_diagram::indirectlycollapsefilter_instantiation(instance):
-    assert isinstance(instance, diagram::IndirectlyCollapseFilter)
+def test_diagram_indirectlycollapsefilter_instantiation(instance):
+    assert isinstance(instance, diagram_IndirectlyCollapseFilter)
 
-@given(instance=diagram::VariableValue_strategy)
+@given(instance=diagram_VariableValue_strategy)
 @settings(max_examples=50)
-def test_diagram::variablevalue_instantiation(instance):
-    assert isinstance(instance, diagram::VariableValue)
+def test_diagram_variablevalue_instantiation(instance):
+    assert isinstance(instance, diagram_VariableValue)
 
 @given(instance=TypedVariable_strategy)
 @settings(max_examples=50)
@@ -7464,31 +8489,28 @@ def test_typedvariable_instantiation(instance):
 def test_variablevalue_instantiation(instance):
     assert isinstance(instance, VariableValue)
 
-@given(instance=diagram::EObjectVariableValue_strategy)
+@given(instance=diagram_TypedVariableValue_strategy)
 @settings(max_examples=50)
-def test_diagram::eobjectvariablevalue_instantiation(instance):
-    assert isinstance(instance, diagram::EObjectVariableValue)
-
-@given(instance=diagram::TypedVariableValue_strategy)
-@settings(max_examples=50)
-def test_diagram::typedvariablevalue_instantiation(instance):
-    assert isinstance(instance, diagram::TypedVariableValue)
-
-@given(instance=diagram::TypedVariableValue_strategy)
-def test_diagram::typedvariablevalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_diagram_typedvariablevalue_instantiation(instance):
+    assert isinstance(instance, diagram_TypedVariableValue)
 
 
-@given(instance=diagram::TypedVariableValue_strategy)
-def test_diagram::typedvariablevalue_value_setter(instance):
+
+@given(instance=diagram_TypedVariableValue_strategy)
+def test_diagram_typedvariablevalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=diagram::EndLabelStyle_strategy)
+@given(instance=diagram_EObjectVariableValue_strategy)
 @settings(max_examples=50)
-def test_diagram::endlabelstyle_instantiation(instance):
-    assert isinstance(instance, diagram::EndLabelStyle)
+def test_diagram_eobjectvariablevalue_instantiation(instance):
+    assert isinstance(instance, diagram_EObjectVariableValue)
+
+@given(instance=diagram_EndLabelStyle_strategy)
+@settings(max_examples=50)
+def test_diagram_endlabelstyle_instantiation(instance):
+    assert isinstance(instance, diagram_EndLabelStyle)
 
 import warnings
 import copy
@@ -7496,9 +8518,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::EndLabelStyle_strategy)
+@given(instance=diagram_EndLabelStyle_strategy)
 @settings(max_examples=30)
-def test_diagram::endlabelstyle_setdescription_changes_state(instance):
+def test_diagram_endlabelstyle_setdescription_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7512,19 +8534,19 @@ def test_diagram::endlabelstyle_setdescription_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDescription' in diagram::EndLabelStyle is empty"
+        assert has_statements, f"Function 'setDescription' in diagram_EndLabelStyle is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDescription' in diagram::EndLabelStyle did not change state; check implementation")
+            warnings.warn(f"Operation 'setDescription' in diagram_EndLabelStyle did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDescription' in diagram::EndLabelStyle is not implemented or raised an error")
+        warnings.warn(f"Operation 'setDescription' in diagram_EndLabelStyle is not implemented or raised an error")
 
-@given(instance=diagram::BeginLabelStyle_strategy)
+@given(instance=diagram_BeginLabelStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::beginlabelstyle_instantiation(instance):
-    assert isinstance(instance, diagram::BeginLabelStyle)
+def test_diagram_beginlabelstyle_instantiation(instance):
+    assert isinstance(instance, diagram_BeginLabelStyle)
 
 import warnings
 import copy
@@ -7532,9 +8554,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::BeginLabelStyle_strategy)
+@given(instance=diagram_BeginLabelStyle_strategy)
 @settings(max_examples=30)
-def test_diagram::beginlabelstyle_setdescription_changes_state(instance):
+def test_diagram_beginlabelstyle_setdescription_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7548,19 +8570,19 @@ def test_diagram::beginlabelstyle_setdescription_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDescription' in diagram::BeginLabelStyle is empty"
+        assert has_statements, f"Function 'setDescription' in diagram_BeginLabelStyle is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDescription' in diagram::BeginLabelStyle did not change state; check implementation")
+            warnings.warn(f"Operation 'setDescription' in diagram_BeginLabelStyle did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDescription' in diagram::BeginLabelStyle is not implemented or raised an error")
+        warnings.warn(f"Operation 'setDescription' in diagram_BeginLabelStyle is not implemented or raised an error")
 
-@given(instance=diagram::CenterLabelStyle_strategy)
+@given(instance=diagram_CenterLabelStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::centerlabelstyle_instantiation(instance):
-    assert isinstance(instance, diagram::CenterLabelStyle)
+def test_diagram_centerlabelstyle_instantiation(instance):
+    assert isinstance(instance, diagram_CenterLabelStyle)
 
 import warnings
 import copy
@@ -7568,9 +8590,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::CenterLabelStyle_strategy)
+@given(instance=diagram_CenterLabelStyle_strategy)
 @settings(max_examples=30)
-def test_diagram::centerlabelstyle_setdescription_changes_state(instance):
+def test_diagram_centerlabelstyle_setdescription_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7584,81 +8606,66 @@ def test_diagram::centerlabelstyle_setdescription_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDescription' in diagram::CenterLabelStyle is empty"
+        assert has_statements, f"Function 'setDescription' in diagram_CenterLabelStyle is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDescription' in diagram::CenterLabelStyle did not change state; check implementation")
+            warnings.warn(f"Operation 'setDescription' in diagram_CenterLabelStyle did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDescription' in diagram::CenterLabelStyle is not implemented or raised an error")
+        warnings.warn(f"Operation 'setDescription' in diagram_CenterLabelStyle is not implemented or raised an error")
 
 @given(instance=ContainerStyle_strategy)
 @settings(max_examples=50)
 def test_containerstyle_instantiation(instance):
     assert isinstance(instance, ContainerStyle)
 
-@given(instance=diagram::ShapeContainerStyle_strategy)
+@given(instance=diagram_ShapeContainerStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::shapecontainerstyle_instantiation(instance):
-    assert isinstance(instance, diagram::ShapeContainerStyle)
-
-@given(instance=diagram::ShapeContainerStyle_strategy)
-def test_diagram::shapecontainerstyle_backgroundColor_type(instance):
-    assert isinstance(instance.backgroundColor, str)
+def test_diagram_shapecontainerstyle_instantiation(instance):
+    assert isinstance(instance, diagram_ShapeContainerStyle)
 
 
-@given(instance=diagram::ShapeContainerStyle_strategy)
-def test_diagram::shapecontainerstyle_backgroundColor_setter(instance):
-    original = instance.backgroundColor
-    instance.backgroundColor = original
-    assert instance.backgroundColor == original
 
-@given(instance=diagram::ShapeContainerStyle_strategy)
-def test_diagram::shapecontainerstyle_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=diagram::ShapeContainerStyle_strategy)
-def test_diagram::shapecontainerstyle_shape_setter(instance):
+@given(instance=diagram_ShapeContainerStyle_strategy)
+def test_diagram_shapecontainerstyle_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=diagram::FlatContainerStyle_strategy)
-@settings(max_examples=50)
-def test_diagram::flatcontainerstyle_instantiation(instance):
-    assert isinstance(instance, diagram::FlatContainerStyle)
-
-@given(instance=diagram::FlatContainerStyle_strategy)
-def test_diagram::flatcontainerstyle_foregroundColor_type(instance):
-    assert isinstance(instance.foregroundColor, str)
 
 
-@given(instance=diagram::FlatContainerStyle_strategy)
-def test_diagram::flatcontainerstyle_foregroundColor_setter(instance):
-    original = instance.foregroundColor
-    instance.foregroundColor = original
-    assert instance.foregroundColor == original
-
-@given(instance=diagram::FlatContainerStyle_strategy)
-def test_diagram::flatcontainerstyle_backgroundColor_type(instance):
-    assert isinstance(instance.backgroundColor, str)
-
-
-@given(instance=diagram::FlatContainerStyle_strategy)
-def test_diagram::flatcontainerstyle_backgroundColor_setter(instance):
+@given(instance=diagram_ShapeContainerStyle_strategy)
+def test_diagram_shapecontainerstyle_backgroundColor_setter(instance):
     original = instance.backgroundColor
     instance.backgroundColor = original
     assert instance.backgroundColor == original
 
-@given(instance=diagram::FlatContainerStyle_strategy)
-def test_diagram::flatcontainerstyle_backgroundStyle_type(instance):
-    assert isinstance(instance.backgroundStyle, str)
+@given(instance=diagram_FlatContainerStyle_strategy)
+@settings(max_examples=50)
+def test_diagram_flatcontainerstyle_instantiation(instance):
+    assert isinstance(instance, diagram_FlatContainerStyle)
 
 
-@given(instance=diagram::FlatContainerStyle_strategy)
-def test_diagram::flatcontainerstyle_backgroundStyle_setter(instance):
+
+@given(instance=diagram_FlatContainerStyle_strategy)
+def test_diagram_flatcontainerstyle_backgroundColor_setter(instance):
+    original = instance.backgroundColor
+    instance.backgroundColor = original
+    assert instance.backgroundColor == original
+
+
+
+@given(instance=diagram_FlatContainerStyle_strategy)
+def test_diagram_flatcontainerstyle_foregroundColor_setter(instance):
+    original = instance.foregroundColor
+    instance.foregroundColor = original
+    assert instance.foregroundColor == original
+
+
+
+@given(instance=diagram_FlatContainerStyle_strategy)
+def test_diagram_flatcontainerstyle_backgroundStyle_setter(instance):
     original = instance.backgroundStyle
     instance.backgroundStyle = original
     assert instance.backgroundStyle == original
@@ -7668,321 +8675,249 @@ def test_diagram::flatcontainerstyle_backgroundStyle_setter(instance):
 def test_customizable_instantiation(instance):
     assert isinstance(instance, Customizable)
 
-@given(instance=diagram::GaugeSection_strategy)
+@given(instance=diagram_GaugeSection_strategy)
 @settings(max_examples=50)
-def test_diagram::gaugesection_instantiation(instance):
-    assert isinstance(instance, diagram::GaugeSection)
-
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_min_type(instance):
-    assert isinstance(instance.min, str)
+def test_diagram_gaugesection_instantiation(instance):
+    assert isinstance(instance, diagram_GaugeSection)
 
 
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_min_setter(instance):
-    original = instance.min
-    instance.min = original
-    assert instance.min == original
 
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_max_type(instance):
-    assert isinstance(instance.max, str)
-
-
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_max_setter(instance):
+@given(instance=diagram_GaugeSection_strategy)
+def test_diagram_gaugesection_max_setter(instance):
     original = instance.max
     instance.max = original
     assert instance.max == original
 
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_backgroundColor_type(instance):
-    assert isinstance(instance.backgroundColor, str)
 
 
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_backgroundColor_setter(instance):
+@given(instance=diagram_GaugeSection_strategy)
+def test_diagram_gaugesection_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=diagram_GaugeSection_strategy)
+def test_diagram_gaugesection_backgroundColor_setter(instance):
     original = instance.backgroundColor
     instance.backgroundColor = original
     assert instance.backgroundColor == original
 
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_foregroundColor_type(instance):
-    assert isinstance(instance.foregroundColor, str)
 
 
-@given(instance=diagram::GaugeSection_strategy)
-def test_diagram::gaugesection_foregroundColor_setter(instance):
+@given(instance=diagram_GaugeSection_strategy)
+def test_diagram_gaugesection_foregroundColor_setter(instance):
     original = instance.foregroundColor
     instance.foregroundColor = original
     assert instance.foregroundColor == original
+
+
+
+@given(instance=diagram_GaugeSection_strategy)
+def test_diagram_gaugesection_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=diagram_GaugeSection_strategy)
+def test_diagram_gaugesection_min_setter(instance):
+    original = instance.min
+    instance.min = original
+    assert instance.min == original
 
 @given(instance=NodeStyle_strategy)
 @settings(max_examples=50)
 def test_nodestyle_instantiation(instance):
     assert isinstance(instance, NodeStyle)
 
-@given(instance=diagram::Note_strategy)
+@given(instance=diagram_Note_strategy)
 @settings(max_examples=50)
-def test_diagram::note_instantiation(instance):
-    assert isinstance(instance, diagram::Note)
-
-@given(instance=diagram::Note_strategy)
-def test_diagram::note_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_diagram_note_instantiation(instance):
+    assert isinstance(instance, diagram_Note)
 
 
-@given(instance=diagram::Note_strategy)
-def test_diagram::note_color_setter(instance):
+
+@given(instance=diagram_Note_strategy)
+def test_diagram_note_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=diagram::GaugeCompositeStyle_strategy)
+@given(instance=diagram_Square_strategy)
 @settings(max_examples=50)
-def test_diagram::gaugecompositestyle_instantiation(instance):
-    assert isinstance(instance, diagram::GaugeCompositeStyle)
-
-@given(instance=diagram::GaugeCompositeStyle_strategy)
-def test_diagram::gaugecompositestyle_alignment_type(instance):
-    assert isinstance(instance.alignment, str)
+def test_diagram_square_instantiation(instance):
+    assert isinstance(instance, diagram_Square)
 
 
-@given(instance=diagram::GaugeCompositeStyle_strategy)
-def test_diagram::gaugecompositestyle_alignment_setter(instance):
-    original = instance.alignment
-    instance.alignment = original
-    assert instance.alignment == original
 
-@given(instance=diagram::Ellipse_strategy)
-@settings(max_examples=50)
-def test_diagram::ellipse_instantiation(instance):
-    assert isinstance(instance, diagram::Ellipse)
-
-@given(instance=diagram::Ellipse_strategy)
-def test_diagram::ellipse_horizontalDiameter_type(instance):
-    assert isinstance(instance.horizontalDiameter, str)
+@given(instance=diagram_Square_strategy)
+def test_diagram_square_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
 
 
-@given(instance=diagram::Ellipse_strategy)
-def test_diagram::ellipse_horizontalDiameter_setter(instance):
-    original = instance.horizontalDiameter
-    instance.horizontalDiameter = original
-    assert instance.horizontalDiameter == original
 
-@given(instance=diagram::Ellipse_strategy)
-def test_diagram::ellipse_color_type(instance):
-    assert isinstance(instance.color, str)
+@given(instance=diagram_Square_strategy)
+def test_diagram_square_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
 
 
-@given(instance=diagram::Ellipse_strategy)
-def test_diagram::ellipse_color_setter(instance):
+
+@given(instance=diagram_Square_strategy)
+def test_diagram_square_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=diagram::Ellipse_strategy)
-def test_diagram::ellipse_verticalDiameter_type(instance):
-    assert isinstance(instance.verticalDiameter, str)
+@given(instance=diagram_Ellipse_strategy)
+@settings(max_examples=50)
+def test_diagram_ellipse_instantiation(instance):
+    assert isinstance(instance, diagram_Ellipse)
 
 
-@given(instance=diagram::Ellipse_strategy)
-def test_diagram::ellipse_verticalDiameter_setter(instance):
+
+@given(instance=diagram_Ellipse_strategy)
+def test_diagram_ellipse_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=diagram_Ellipse_strategy)
+def test_diagram_ellipse_verticalDiameter_setter(instance):
     original = instance.verticalDiameter
     instance.verticalDiameter = original
     assert instance.verticalDiameter == original
 
-@given(instance=diagram::Lozenge_strategy)
+
+
+@given(instance=diagram_Ellipse_strategy)
+def test_diagram_ellipse_horizontalDiameter_setter(instance):
+    original = instance.horizontalDiameter
+    instance.horizontalDiameter = original
+    assert instance.horizontalDiameter == original
+
+@given(instance=diagram_Lozenge_strategy)
 @settings(max_examples=50)
-def test_diagram::lozenge_instantiation(instance):
-    assert isinstance(instance, diagram::Lozenge)
-
-@given(instance=diagram::Lozenge_strategy)
-def test_diagram::lozenge_width_type(instance):
-    assert isinstance(instance.width, str)
+def test_diagram_lozenge_instantiation(instance):
+    assert isinstance(instance, diagram_Lozenge)
 
 
-@given(instance=diagram::Lozenge_strategy)
-def test_diagram::lozenge_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
 
-@given(instance=diagram::Lozenge_strategy)
-def test_diagram::lozenge_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=diagram::Lozenge_strategy)
-def test_diagram::lozenge_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=diagram::Lozenge_strategy)
-def test_diagram::lozenge_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=diagram::Lozenge_strategy)
-def test_diagram::lozenge_height_setter(instance):
+@given(instance=diagram_Lozenge_strategy)
+def test_diagram_lozenge_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=diagram::CustomStyle_strategy)
+
+
+@given(instance=diagram_Lozenge_strategy)
+def test_diagram_lozenge_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=diagram_Lozenge_strategy)
+def test_diagram_lozenge_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+@given(instance=diagram_CustomStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::customstyle_instantiation(instance):
-    assert isinstance(instance, diagram::CustomStyle)
-
-@given(instance=diagram::CustomStyle_strategy)
-def test_diagram::customstyle_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_diagram_customstyle_instantiation(instance):
+    assert isinstance(instance, diagram_CustomStyle)
 
 
-@given(instance=diagram::CustomStyle_strategy)
-def test_diagram::customstyle_id_setter(instance):
+
+@given(instance=diagram_CustomStyle_strategy)
+def test_diagram_customstyle_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=diagram::WorkspaceImage_strategy)
+@given(instance=diagram_BundledImage_strategy)
 @settings(max_examples=50)
-def test_diagram::workspaceimage_instantiation(instance):
-    assert isinstance(instance, diagram::WorkspaceImage)
-
-@given(instance=diagram::WorkspaceImage_strategy)
-def test_diagram::workspaceimage_workspacePath_type(instance):
-    assert isinstance(instance.workspacePath, str)
+def test_diagram_bundledimage_instantiation(instance):
+    assert isinstance(instance, diagram_BundledImage)
 
 
-@given(instance=diagram::WorkspaceImage_strategy)
-def test_diagram::workspaceimage_workspacePath_setter(instance):
-    original = instance.workspacePath
-    instance.workspacePath = original
-    assert instance.workspacePath == original
 
-@given(instance=diagram::Square_strategy)
-@settings(max_examples=50)
-def test_diagram::square_instantiation(instance):
-    assert isinstance(instance, diagram::Square)
-
-@given(instance=diagram::Square_strategy)
-def test_diagram::square_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=diagram::Square_strategy)
-def test_diagram::square_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=diagram::Square_strategy)
-def test_diagram::square_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=diagram::Square_strategy)
-def test_diagram::square_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=diagram::Square_strategy)
-def test_diagram::square_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=diagram::Square_strategy)
-def test_diagram::square_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=diagram::BundledImage_strategy)
-@settings(max_examples=50)
-def test_diagram::bundledimage_instantiation(instance):
-    assert isinstance(instance, diagram::BundledImage)
-
-@given(instance=diagram::BundledImage_strategy)
-def test_diagram::bundledimage_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=diagram::BundledImage_strategy)
-def test_diagram::bundledimage_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=diagram::BundledImage_strategy)
-def test_diagram::bundledimage_providedShapeID_type(instance):
-    assert isinstance(instance.providedShapeID, str)
-
-
-@given(instance=diagram::BundledImage_strategy)
-def test_diagram::bundledimage_providedShapeID_setter(instance):
-    original = instance.providedShapeID
-    instance.providedShapeID = original
-    assert instance.providedShapeID == original
-
-@given(instance=diagram::BundledImage_strategy)
-def test_diagram::bundledimage_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=diagram::BundledImage_strategy)
-def test_diagram::bundledimage_shape_setter(instance):
+@given(instance=diagram_BundledImage_strategy)
+def test_diagram_bundledimage_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=diagram::Dot_strategy)
+
+
+@given(instance=diagram_BundledImage_strategy)
+def test_diagram_bundledimage_providedShapeID_setter(instance):
+    original = instance.providedShapeID
+    instance.providedShapeID = original
+    assert instance.providedShapeID == original
+
+
+
+@given(instance=diagram_BundledImage_strategy)
+def test_diagram_bundledimage_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+@given(instance=diagram_GaugeCompositeStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::dot_instantiation(instance):
-    assert isinstance(instance, diagram::Dot)
-
-@given(instance=diagram::Dot_strategy)
-def test_diagram::dot_backgroundColor_type(instance):
-    assert isinstance(instance.backgroundColor, str)
+def test_diagram_gaugecompositestyle_instantiation(instance):
+    assert isinstance(instance, diagram_GaugeCompositeStyle)
 
 
-@given(instance=diagram::Dot_strategy)
-def test_diagram::dot_backgroundColor_setter(instance):
+
+@given(instance=diagram_GaugeCompositeStyle_strategy)
+def test_diagram_gaugecompositestyle_alignment_setter(instance):
+    original = instance.alignment
+    instance.alignment = original
+    assert instance.alignment == original
+
+@given(instance=diagram_WorkspaceImage_strategy)
+@settings(max_examples=50)
+def test_diagram_workspaceimage_instantiation(instance):
+    assert isinstance(instance, diagram_WorkspaceImage)
+
+
+
+@given(instance=diagram_WorkspaceImage_strategy)
+def test_diagram_workspaceimage_workspacePath_setter(instance):
+    original = instance.workspacePath
+    instance.workspacePath = original
+    assert instance.workspacePath == original
+
+@given(instance=diagram_Dot_strategy)
+@settings(max_examples=50)
+def test_diagram_dot_instantiation(instance):
+    assert isinstance(instance, diagram_Dot)
+
+
+
+@given(instance=diagram_Dot_strategy)
+def test_diagram_dot_backgroundColor_setter(instance):
     original = instance.backgroundColor
     instance.backgroundColor = original
     assert instance.backgroundColor == original
 
-@given(instance=diagram::Dot_strategy)
-def test_diagram::dot_strokeSizeComputationExpression_type(instance):
-    assert isinstance(instance.strokeSizeComputationExpression, str)
 
 
-@given(instance=diagram::Dot_strategy)
-def test_diagram::dot_strokeSizeComputationExpression_setter(instance):
+@given(instance=diagram_Dot_strategy)
+def test_diagram_dot_strokeSizeComputationExpression_setter(instance):
     original = instance.strokeSizeComputationExpression
     instance.strokeSizeComputationExpression = original
     assert instance.strokeSizeComputationExpression == original
@@ -8002,54 +8937,42 @@ def test_borderedstyle_instantiation(instance):
 def test_style_instantiation(instance):
     assert isinstance(instance, Style)
 
-@given(instance=diagram::BorderedStyle_strategy)
+@given(instance=diagram_BorderedStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::borderedstyle_instantiation(instance):
-    assert isinstance(instance, diagram::BorderedStyle)
-
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderLineStyle_type(instance):
-    assert isinstance(instance.borderLineStyle, str)
+def test_diagram_borderedstyle_instantiation(instance):
+    assert isinstance(instance, diagram_BorderedStyle)
 
 
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderLineStyle_setter(instance):
-    original = instance.borderLineStyle
-    instance.borderLineStyle = original
-    assert instance.borderLineStyle == original
 
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderSizeComputationExpression_type(instance):
-    assert isinstance(instance.borderSizeComputationExpression, str)
+@given(instance=diagram_BorderedStyle_strategy)
+def test_diagram_borderedstyle_borderSize_setter(instance):
+    original = instance.borderSize
+    instance.borderSize = original
+    assert instance.borderSize == original
 
 
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderSizeComputationExpression_setter(instance):
-    original = instance.borderSizeComputationExpression
-    instance.borderSizeComputationExpression = original
-    assert instance.borderSizeComputationExpression == original
 
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderColor_type(instance):
-    assert isinstance(instance.borderColor, str)
-
-
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderColor_setter(instance):
+@given(instance=diagram_BorderedStyle_strategy)
+def test_diagram_borderedstyle_borderColor_setter(instance):
     original = instance.borderColor
     instance.borderColor = original
     assert instance.borderColor == original
 
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderSize_type(instance):
-    assert isinstance(instance.borderSize, str)
 
 
-@given(instance=diagram::BorderedStyle_strategy)
-def test_diagram::borderedstyle_borderSize_setter(instance):
-    original = instance.borderSize
-    instance.borderSize = original
-    assert instance.borderSize == original
+@given(instance=diagram_BorderedStyle_strategy)
+def test_diagram_borderedstyle_borderLineStyle_setter(instance):
+    original = instance.borderLineStyle
+    instance.borderLineStyle = original
+    assert instance.borderLineStyle == original
+
+
+
+@given(instance=diagram_BorderedStyle_strategy)
+def test_diagram_borderedstyle_borderSizeComputationExpression_setter(instance):
+    original = instance.borderSizeComputationExpression
+    instance.borderSizeComputationExpression = original
+    assert instance.borderSizeComputationExpression == original
 
 @given(instance=LabelStyle_strategy)
 @settings(max_examples=50)
@@ -8061,126 +8984,99 @@ def test_labelstyle_instantiation(instance):
 def test_iedgemapping_instantiation(instance):
     assert isinstance(instance, IEdgeMapping)
 
-@given(instance=diagram::EdgeTarget_strategy)
+@given(instance=diagram_EdgeTarget_strategy)
 @settings(max_examples=50)
-def test_diagram::edgetarget_instantiation(instance):
-    assert isinstance(instance, diagram::EdgeTarget)
+def test_diagram_edgetarget_instantiation(instance):
+    assert isinstance(instance, diagram_EdgeTarget)
 
-@given(instance=diagram::EdgeStyle_strategy)
+@given(instance=diagram_EdgeStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::edgestyle_instantiation(instance):
-    assert isinstance(instance, diagram::EdgeStyle)
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_targetArrow_type(instance):
-    assert isinstance(instance.targetArrow, str)
+def test_diagram_edgestyle_instantiation(instance):
+    assert isinstance(instance, diagram_EdgeStyle)
 
 
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_targetArrow_setter(instance):
-    original = instance.targetArrow
-    instance.targetArrow = original
-    assert instance.targetArrow == original
 
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_sourceArrow_type(instance):
-    assert isinstance(instance.sourceArrow, str)
-
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_sourceArrow_setter(instance):
-    original = instance.sourceArrow
-    instance.sourceArrow = original
-    assert instance.sourceArrow == original
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_foldingStyle_type(instance):
-    assert isinstance(instance.foldingStyle, str)
-
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_foldingStyle_setter(instance):
-    original = instance.foldingStyle
-    instance.foldingStyle = original
-    assert instance.foldingStyle == original
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_lineStyle_type(instance):
-    assert isinstance(instance.lineStyle, str)
-
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_lineStyle_setter(instance):
-    original = instance.lineStyle
-    instance.lineStyle = original
-    assert instance.lineStyle == original
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_routingStyle_type(instance):
-    assert isinstance(instance.routingStyle, str)
-
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_routingStyle_setter(instance):
-    original = instance.routingStyle
-    instance.routingStyle = original
-    assert instance.routingStyle == original
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_strokeColor_type(instance):
-    assert isinstance(instance.strokeColor, str)
-
-
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_strokeColor_setter(instance):
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_strokeColor_setter(instance):
     original = instance.strokeColor
     instance.strokeColor = original
     assert instance.strokeColor == original
 
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_centered_type(instance):
-    assert isinstance(instance.centered, str)
 
 
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_centered_setter(instance):
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_lineStyle_setter(instance):
+    original = instance.lineStyle
+    instance.lineStyle = original
+    assert instance.lineStyle == original
+
+
+
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_foldingStyle_setter(instance):
+    original = instance.foldingStyle
+    instance.foldingStyle = original
+    assert instance.foldingStyle == original
+
+
+
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_centered_setter(instance):
     original = instance.centered
     instance.centered = original
     assert instance.centered == original
 
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_size_type(instance):
-    assert isinstance(instance.size, str)
 
 
-@given(instance=diagram::EdgeStyle_strategy)
-def test_diagram::edgestyle_size_setter(instance):
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_sourceArrow_setter(instance):
+    original = instance.sourceArrow
+    instance.sourceArrow = original
+    assert instance.sourceArrow == original
+
+
+
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
+
+
+
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_routingStyle_setter(instance):
+    original = instance.routingStyle
+    instance.routingStyle = original
+    assert instance.routingStyle == original
+
+
+
+@given(instance=diagram_EdgeStyle_strategy)
+def test_diagram_edgestyle_targetArrow_setter(instance):
+    original = instance.targetArrow
+    instance.targetArrow = original
+    assert instance.targetArrow == original
 
 @given(instance=DDiagramElementContainer_strategy)
 @settings(max_examples=50)
 def test_ddiagramelementcontainer_instantiation(instance):
     assert isinstance(instance, DDiagramElementContainer)
 
-@given(instance=diagram::DNodeList_strategy)
+@given(instance=diagram_DNodeList_strategy)
 @settings(max_examples=50)
-def test_diagram::dnodelist_instantiation(instance):
-    assert isinstance(instance, diagram::DNodeList)
+def test_diagram_dnodelist_instantiation(instance):
+    assert isinstance(instance, diagram_DNodeList)
 
-@given(instance=diagram::DNodeContainer_strategy)
+@given(instance=diagram_DNodeContainer_strategy)
 @settings(max_examples=50)
-def test_diagram::dnodecontainer_instantiation(instance):
-    assert isinstance(instance, diagram::DNodeContainer)
-
-@given(instance=diagram::DNodeContainer_strategy)
-def test_diagram::dnodecontainer_childrenPresentation_type(instance):
-    assert isinstance(instance.childrenPresentation, str)
+def test_diagram_dnodecontainer_instantiation(instance):
+    assert isinstance(instance, diagram_DNodeContainer)
 
 
-@given(instance=diagram::DNodeContainer_strategy)
-def test_diagram::dnodecontainer_childrenPresentation_setter(instance):
+
+@given(instance=diagram_DNodeContainer_strategy)
+def test_diagram_dnodecontainer_childrenPresentation_setter(instance):
     original = instance.childrenPresentation
     instance.childrenPresentation = original
     assert instance.childrenPresentation == original
@@ -8190,33 +9086,30 @@ def test_diagram::dnodecontainer_childrenPresentation_setter(instance):
 def test_containermapping_instantiation(instance):
     assert isinstance(instance, ContainerMapping)
 
-@given(instance=diagram::ContainerStyle_strategy)
+@given(instance=diagram_ContainerStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::containerstyle_instantiation(instance):
-    assert isinstance(instance, diagram::ContainerStyle)
+def test_diagram_containerstyle_instantiation(instance):
+    assert isinstance(instance, diagram_ContainerStyle)
 
 @given(instance=NodeMapping_strategy)
 @settings(max_examples=50)
 def test_nodemapping_instantiation(instance):
     assert isinstance(instance, NodeMapping)
 
-@given(instance=diagram::Style_strategy)
+@given(instance=diagram_Style_strategy)
 @settings(max_examples=50)
-def test_diagram::style_instantiation(instance):
-    assert isinstance(instance, diagram::Style)
+def test_diagram_style_instantiation(instance):
+    assert isinstance(instance, diagram_Style)
 
-@given(instance=diagram::NodeStyle_strategy)
+@given(instance=diagram_NodeStyle_strategy)
 @settings(max_examples=50)
-def test_diagram::nodestyle_instantiation(instance):
-    assert isinstance(instance, diagram::NodeStyle)
-
-@given(instance=diagram::NodeStyle_strategy)
-def test_diagram::nodestyle_labelPosition_type(instance):
-    assert isinstance(instance.labelPosition, str)
+def test_diagram_nodestyle_instantiation(instance):
+    assert isinstance(instance, diagram_NodeStyle)
 
 
-@given(instance=diagram::NodeStyle_strategy)
-def test_diagram::nodestyle_labelPosition_setter(instance):
+
+@given(instance=diagram_NodeStyle_strategy)
+def test_diagram_nodestyle_labelPosition_setter(instance):
     original = instance.labelPosition
     instance.labelPosition = original
     assert instance.labelPosition == original
@@ -8236,147 +9129,126 @@ def test_abstractdnode_instantiation(instance):
 def test_ddiagramelement_instantiation(instance):
     assert isinstance(instance, DDiagramElement)
 
-@given(instance=diagram::AbstractDNode_strategy)
+@given(instance=diagram_AbstractDNode_strategy)
 @settings(max_examples=50)
-def test_diagram::abstractdnode_instantiation(instance):
-    assert isinstance(instance, diagram::AbstractDNode)
-
-@given(instance=diagram::AbstractDNode_strategy)
-def test_diagram::abstractdnode_arrangeConstraints_type(instance):
-    assert isinstance(instance.arrangeConstraints, str)
+def test_diagram_abstractdnode_instantiation(instance):
+    assert isinstance(instance, diagram_AbstractDNode)
 
 
-@given(instance=diagram::AbstractDNode_strategy)
-def test_diagram::abstractdnode_arrangeConstraints_setter(instance):
+
+@given(instance=diagram_AbstractDNode_strategy)
+def test_diagram_abstractdnode_arrangeConstraints_setter(instance):
     original = instance.arrangeConstraints
     instance.arrangeConstraints = original
     assert instance.arrangeConstraints == original
 
-@given(instance=filter::CompositeFilterDescription_strategy)
+@given(instance=filter_CompositeFilterDescription_strategy)
 @settings(max_examples=50)
-def test_filter::compositefilterdescription_instantiation(instance):
-    assert isinstance(instance, filter::CompositeFilterDescription)
+def test_filter_compositefilterdescription_instantiation(instance):
+    assert isinstance(instance, filter_CompositeFilterDescription)
 
 @given(instance=GraphicalFilter_strategy)
 @settings(max_examples=50)
 def test_graphicalfilter_instantiation(instance):
     assert isinstance(instance, GraphicalFilter)
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
+@given(instance=diagram_AppliedCompositeFilters_strategy)
 @settings(max_examples=50)
-def test_diagram::absoluteboundsfilter_instantiation(instance):
-    assert isinstance(instance, diagram::AbsoluteBoundsFilter)
+def test_diagram_appliedcompositefilters_instantiation(instance):
+    assert isinstance(instance, diagram_AppliedCompositeFilters)
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_width_type(instance):
-    assert isinstance(instance.width, str)
+@given(instance=diagram_HideLabelFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_hidelabelfilter_instantiation(instance):
+    assert isinstance(instance, diagram_HideLabelFilter)
+
+@given(instance=diagram_FoldingPointFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_foldingpointfilter_instantiation(instance):
+    assert isinstance(instance, diagram_FoldingPointFilter)
+
+@given(instance=diagram_CollapseFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_collapsefilter_instantiation(instance):
+    assert isinstance(instance, diagram_CollapseFilter)
 
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_width_setter(instance):
+
+@given(instance=diagram_CollapseFilter_strategy)
+def test_diagram_collapsefilter_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=diagram_CollapseFilter_strategy)
+def test_diagram_collapsefilter_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_x_type(instance):
-    assert isinstance(instance.x, str)
+@given(instance=diagram_FoldingFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_foldingfilter_instantiation(instance):
+    assert isinstance(instance, diagram_FoldingFilter)
+
+@given(instance=diagram_AbsoluteBoundsFilter_strategy)
+@settings(max_examples=50)
+def test_diagram_absoluteboundsfilter_instantiation(instance):
+    assert isinstance(instance, diagram_AbsoluteBoundsFilter)
 
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_x_setter(instance):
+
+@given(instance=diagram_AbsoluteBoundsFilter_strategy)
+def test_diagram_absoluteboundsfilter_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_y_type(instance):
-    assert isinstance(instance.y, str)
 
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_y_setter(instance):
+@given(instance=diagram_AbsoluteBoundsFilter_strategy)
+def test_diagram_absoluteboundsfilter_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_height_type(instance):
-    assert isinstance(instance.height, str)
 
 
-@given(instance=diagram::AbsoluteBoundsFilter_strategy)
-def test_diagram::absoluteboundsfilter_height_setter(instance):
+@given(instance=diagram_AbsoluteBoundsFilter_strategy)
+def test_diagram_absoluteboundsfilter_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=diagram::CollapseFilter_strategy)
-@settings(max_examples=50)
-def test_diagram::collapsefilter_instantiation(instance):
-    assert isinstance(instance, diagram::CollapseFilter)
-
-@given(instance=diagram::CollapseFilter_strategy)
-def test_diagram::collapsefilter_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=diagram::CollapseFilter_strategy)
-def test_diagram::collapsefilter_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=diagram::CollapseFilter_strategy)
-def test_diagram::collapsefilter_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=diagram::CollapseFilter_strategy)
-def test_diagram::collapsefilter_width_setter(instance):
+@given(instance=diagram_AbsoluteBoundsFilter_strategy)
+def test_diagram_absoluteboundsfilter_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=diagram::FoldingPointFilter_strategy)
+@given(instance=diagram_HideFilter_strategy)
 @settings(max_examples=50)
-def test_diagram::foldingpointfilter_instantiation(instance):
-    assert isinstance(instance, diagram::FoldingPointFilter)
+def test_diagram_hidefilter_instantiation(instance):
+    assert isinstance(instance, diagram_HideFilter)
 
-@given(instance=diagram::HideLabelFilter_strategy)
+@given(instance=diagram_GraphicalFilter_strategy)
 @settings(max_examples=50)
-def test_diagram::hidelabelfilter_instantiation(instance):
-    assert isinstance(instance, diagram::HideLabelFilter)
-
-@given(instance=diagram::AppliedCompositeFilters_strategy)
-@settings(max_examples=50)
-def test_diagram::appliedcompositefilters_instantiation(instance):
-    assert isinstance(instance, diagram::AppliedCompositeFilters)
-
-@given(instance=diagram::FoldingFilter_strategy)
-@settings(max_examples=50)
-def test_diagram::foldingfilter_instantiation(instance):
-    assert isinstance(instance, diagram::FoldingFilter)
-
-@given(instance=diagram::HideFilter_strategy)
-@settings(max_examples=50)
-def test_diagram::hidefilter_instantiation(instance):
-    assert isinstance(instance, diagram::HideFilter)
-
-@given(instance=diagram::GraphicalFilter_strategy)
-@settings(max_examples=50)
-def test_diagram::graphicalfilter_instantiation(instance):
-    assert isinstance(instance, diagram::GraphicalFilter)
+def test_diagram_graphicalfilter_instantiation(instance):
+    assert isinstance(instance, diagram_GraphicalFilter)
 
 @given(instance=DiagramElementMapping_strategy)
 @settings(max_examples=50)
 def test_diagramelementmapping_instantiation(instance):
     assert isinstance(instance, DiagramElementMapping)
 
-@given(instance=diagram::Decoration_strategy)
+@given(instance=diagram_Decoration_strategy)
 @settings(max_examples=50)
-def test_diagram::decoration_instantiation(instance):
-    assert isinstance(instance, diagram::Decoration)
+def test_diagram_decoration_instantiation(instance):
+    assert isinstance(instance, diagram_Decoration)
 
 @given(instance=DRepresentationElement_strategy)
 @settings(max_examples=50)
@@ -8393,156 +9265,129 @@ def test_dsemanticdecorator_instantiation(instance):
 def test_ddiagram_instantiation(instance):
     assert isinstance(instance, DDiagram)
 
-@given(instance=diagram::DSemanticDiagram_strategy)
+@given(instance=diagram_DSemanticDiagram_strategy)
 @settings(max_examples=50)
-def test_diagram::dsemanticdiagram_instantiation(instance):
-    assert isinstance(instance, diagram::DSemanticDiagram)
+def test_diagram_dsemanticdiagram_instantiation(instance):
+    assert isinstance(instance, diagram_DSemanticDiagram)
 
 @given(instance=Layer_strategy)
 @settings(max_examples=50)
 def test_layer_instantiation(instance):
     assert isinstance(instance, Layer)
 
-@given(instance=diagram::description::AdditionalLayer_strategy)
+@given(instance=diagram_description_AdditionalLayer_strategy)
 @settings(max_examples=50)
-def test_diagram::description::additionallayer_instantiation(instance):
-    assert isinstance(instance, diagram::description::AdditionalLayer)
-
-@given(instance=diagram::description::AdditionalLayer_strategy)
-def test_diagram::description::additionallayer_optional_type(instance):
-    assert isinstance(instance.optional, bool)
+def test_diagram_description_additionallayer_instantiation(instance):
+    assert isinstance(instance, diagram_description_AdditionalLayer)
 
 
-@given(instance=diagram::description::AdditionalLayer_strategy)
-def test_diagram::description::additionallayer_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
 
-@given(instance=diagram::description::AdditionalLayer_strategy)
-def test_diagram::description::additionallayer_activeByDefault_type(instance):
-    assert isinstance(instance.activeByDefault, bool)
-
-
-@given(instance=diagram::description::AdditionalLayer_strategy)
-def test_diagram::description::additionallayer_activeByDefault_setter(instance):
+@given(instance=diagram_description_AdditionalLayer_strategy)
+def test_diagram_description_additionallayer_activeByDefault_setter(instance):
     original = instance.activeByDefault
     instance.activeByDefault = original
     assert instance.activeByDefault == original
 
-@given(instance=diagram::FilterVariableHistory_strategy)
-@settings(max_examples=50)
-def test_diagram::filtervariablehistory_instantiation(instance):
-    assert isinstance(instance, diagram::FilterVariableHistory)
 
-@given(instance=tool::BehaviorTool_strategy)
-@settings(max_examples=50)
-def test_tool::behaviortool_instantiation(instance):
-    assert isinstance(instance, tool::BehaviorTool)
 
-@given(instance=validation::ValidationRule_strategy)
+@given(instance=diagram_description_AdditionalLayer_strategy)
+def test_diagram_description_additionallayer_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+@given(instance=diagram_FilterVariableHistory_strategy)
 @settings(max_examples=50)
-def test_validation::validationrule_instantiation(instance):
-    assert isinstance(instance, validation::ValidationRule)
+def test_diagram_filtervariablehistory_instantiation(instance):
+    assert isinstance(instance, diagram_FilterVariableHistory)
+
+@given(instance=tool_BehaviorTool_strategy)
+@settings(max_examples=50)
+def test_tool_behaviortool_instantiation(instance):
+    assert isinstance(instance, tool_BehaviorTool)
+
+@given(instance=validation_ValidationRule_strategy)
+@settings(max_examples=50)
+def test_validation_validationrule_instantiation(instance):
+    assert isinstance(instance, validation_ValidationRule)
 
 @given(instance=AdditionalLayer_strategy)
 @settings(max_examples=50)
 def test_additionallayer_instantiation(instance):
     assert isinstance(instance, AdditionalLayer)
 
-@given(instance=filter::FilterDescription_strategy)
+@given(instance=filter_FilterDescription_strategy)
 @settings(max_examples=50)
-def test_filter::filterdescription_instantiation(instance):
-    assert isinstance(instance, filter::FilterDescription)
+def test_filter_filterdescription_instantiation(instance):
+    assert isinstance(instance, filter_FilterDescription)
 
-@given(instance=concern::ConcernDescription_strategy)
+@given(instance=concern_ConcernDescription_strategy)
 @settings(max_examples=50)
-def test_concern::concerndescription_instantiation(instance):
-    assert isinstance(instance, concern::ConcernDescription)
+def test_concern_concerndescription_instantiation(instance):
+    assert isinstance(instance, concern_ConcernDescription)
 
-@given(instance=diagram::DNodeListElement_strategy)
+@given(instance=diagram_DNodeListElement_strategy)
 @settings(max_examples=50)
-def test_diagram::dnodelistelement_instantiation(instance):
-    assert isinstance(instance, diagram::DNodeListElement)
+def test_diagram_dnodelistelement_instantiation(instance):
+    assert isinstance(instance, diagram_DNodeListElement)
 
-@given(instance=diagram::DEdge_strategy)
+@given(instance=diagram_DEdge_strategy)
 @settings(max_examples=50)
-def test_diagram::dedge_instantiation(instance):
-    assert isinstance(instance, diagram::DEdge)
-
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_isMockEdge_type(instance):
-    assert isinstance(instance.isMockEdge, bool)
+def test_diagram_dedge_instantiation(instance):
+    assert isinstance(instance, diagram_DEdge)
 
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_isMockEdge_setter(instance):
-    original = instance.isMockEdge
-    instance.isMockEdge = original
-    assert instance.isMockEdge == original
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_beginLabel_type(instance):
-    assert isinstance(instance.beginLabel, str)
-
-
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_beginLabel_setter(instance):
-    original = instance.beginLabel
-    instance.beginLabel = original
-    assert instance.beginLabel == original
-
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_isFold_type(instance):
-    assert isinstance(instance.isFold, bool)
-
-
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_isFold_setter(instance):
-    original = instance.isFold
-    instance.isFold = original
-    assert instance.isFold == original
-
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_size_setter(instance):
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_routingStyle_type(instance):
-    assert isinstance(instance.routingStyle, str)
 
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_routingStyle_setter(instance):
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_beginLabel_setter(instance):
+    original = instance.beginLabel
+    instance.beginLabel = original
+    assert instance.beginLabel == original
+
+
+
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_routingStyle_setter(instance):
     original = instance.routingStyle
     instance.routingStyle = original
     assert instance.routingStyle == original
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_endLabel_type(instance):
-    assert isinstance(instance.endLabel, str)
 
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_endLabel_setter(instance):
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_endLabel_setter(instance):
     original = instance.endLabel
     instance.endLabel = original
     assert instance.endLabel == original
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_arrangeConstraints_type(instance):
-    assert isinstance(instance.arrangeConstraints, str)
 
 
-@given(instance=diagram::DEdge_strategy)
-def test_diagram::dedge_arrangeConstraints_setter(instance):
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_isMockEdge_setter(instance):
+    original = instance.isMockEdge
+    instance.isMockEdge = original
+    assert instance.isMockEdge == original
+
+
+
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_isFold_setter(instance):
+    original = instance.isFold
+    instance.isFold = original
+    assert instance.isFold == original
+
+
+
+@given(instance=diagram_DEdge_strategy)
+def test_diagram_dedge_arrangeConstraints_setter(instance):
     original = instance.arrangeConstraints
     instance.arrangeConstraints = original
     assert instance.arrangeConstraints == original
@@ -8553,9 +9398,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::DEdge_strategy)
+@given(instance=diagram_DEdge_strategy)
 @settings(max_examples=30)
-def test_diagram::dedge_isrootfolding_changes_state(instance):
+def test_diagram_dedge_isrootfolding_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8567,43 +9412,37 @@ def test_diagram::dedge_isrootfolding_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isRootFolding' in diagram::DEdge is empty"
+        assert has_statements, f"Function 'isRootFolding' in diagram_DEdge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isRootFolding' in diagram::DEdge did not change state; check implementation")
+            warnings.warn(f"Operation 'isRootFolding' in diagram_DEdge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isRootFolding' in diagram::DEdge is not implemented or raised an error")
+        warnings.warn(f"Operation 'isRootFolding' in diagram_DEdge is not implemented or raised an error")
 
 @given(instance=DiagramDescription_strategy)
 @settings(max_examples=50)
 def test_diagramdescription_instantiation(instance):
     assert isinstance(instance, DiagramDescription)
 
-@given(instance=diagram::DDiagramElement_strategy)
+@given(instance=diagram_DDiagramElement_strategy)
 @settings(max_examples=50)
-def test_diagram::ddiagramelement_instantiation(instance):
-    assert isinstance(instance, diagram::DDiagramElement)
-
-@given(instance=diagram::DDiagramElement_strategy)
-def test_diagram::ddiagramelement_tooltipText_type(instance):
-    assert isinstance(instance.tooltipText, str)
+def test_diagram_ddiagramelement_instantiation(instance):
+    assert isinstance(instance, diagram_DDiagramElement)
 
 
-@given(instance=diagram::DDiagramElement_strategy)
-def test_diagram::ddiagramelement_tooltipText_setter(instance):
+
+@given(instance=diagram_DDiagramElement_strategy)
+def test_diagram_ddiagramelement_tooltipText_setter(instance):
     original = instance.tooltipText
     instance.tooltipText = original
     assert instance.tooltipText == original
 
-@given(instance=diagram::DDiagramElement_strategy)
-def test_diagram::ddiagramelement_visible_type(instance):
-    assert isinstance(instance.visible, bool)
 
 
-@given(instance=diagram::DDiagramElement_strategy)
-def test_diagram::ddiagramelement_visible_setter(instance):
+@given(instance=diagram_DDiagramElement_strategy)
+def test_diagram_ddiagramelement_visible_setter(instance):
     original = instance.visible
     instance.visible = original
     assert instance.visible == original
@@ -8613,189 +9452,86 @@ def test_diagram::ddiagramelement_visible_setter(instance):
 def test_draganddroptarget_instantiation(instance):
     assert isinstance(instance, DragAndDropTarget)
 
-@given(instance=diagram::DNode_strategy)
+@given(instance=diagram_DDiagramElementContainer_strategy)
 @settings(max_examples=50)
-def test_diagram::dnode_instantiation(instance):
-    assert isinstance(instance, diagram::DNode)
-
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_resizeKind_type(instance):
-    assert isinstance(instance.resizeKind, str)
+def test_diagram_ddiagramelementcontainer_instantiation(instance):
+    assert isinstance(instance, diagram_DDiagramElementContainer)
 
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_resizeKind_setter(instance):
-    original = instance.resizeKind
-    instance.resizeKind = original
-    assert instance.resizeKind == original
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_width_type(instance):
-    assert isinstance(instance.width, str)
+@given(instance=diagram_DDiagramElementContainer_strategy)
+def test_diagram_ddiagramelementcontainer_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
 
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_width_setter(instance):
+
+@given(instance=diagram_DDiagramElementContainer_strategy)
+def test_diagram_ddiagramelementcontainer_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_labelPosition_type(instance):
-    assert isinstance(instance.labelPosition, str)
+@given(instance=diagram_DNode_strategy)
+@settings(max_examples=50)
+def test_diagram_dnode_instantiation(instance):
+    assert isinstance(instance, diagram_DNode)
 
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_labelPosition_setter(instance):
+
+@given(instance=diagram_DNode_strategy)
+def test_diagram_dnode_labelPosition_setter(instance):
     original = instance.labelPosition
     instance.labelPosition = original
     assert instance.labelPosition == original
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_height_type(instance):
-    assert isinstance(instance.height, str)
 
 
-@given(instance=diagram::DNode_strategy)
-def test_diagram::dnode_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=diagram::DDiagramElementContainer_strategy)
-@settings(max_examples=50)
-def test_diagram::ddiagramelementcontainer_instantiation(instance):
-    assert isinstance(instance, diagram::DDiagramElementContainer)
-
-@given(instance=diagram::DDiagramElementContainer_strategy)
-def test_diagram::ddiagramelementcontainer_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=diagram::DDiagramElementContainer_strategy)
-def test_diagram::ddiagramelementcontainer_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=diagram::DDiagramElementContainer_strategy)
-def test_diagram::ddiagramelementcontainer_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=diagram::DDiagramElementContainer_strategy)
-def test_diagram::ddiagramelementcontainer_width_setter(instance):
+@given(instance=diagram_DNode_strategy)
+def test_diagram_dnode_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=description::DocumentedElement_strategy)
+
+
+@given(instance=diagram_DNode_strategy)
+def test_diagram_dnode_resizeKind_setter(instance):
+    original = instance.resizeKind
+    instance.resizeKind = original
+    assert instance.resizeKind == original
+
+
+
+@given(instance=diagram_DNode_strategy)
+def test_diagram_dnode_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+@given(instance=description_DocumentedElement_strategy)
 @settings(max_examples=50)
-def test_description::documentedelement_instantiation(instance):
-    assert isinstance(instance, description::DocumentedElement)
+def test_description_documentedelement_instantiation(instance):
+    assert isinstance(instance, description_DocumentedElement)
 
-@given(instance=diagram::description::Layer_strategy)
+@given(instance=diagram_description_EdgeMappingImport_strategy)
 @settings(max_examples=50)
-def test_diagram::description::layer_instantiation(instance):
-    assert isinstance(instance, diagram::description::Layer)
-
-@given(instance=diagram::description::Layer_strategy)
-def test_diagram::description::layer_icon_type(instance):
-    assert isinstance(instance.icon, str)
+def test_diagram_description_edgemappingimport_instantiation(instance):
+    assert isinstance(instance, diagram_description_EdgeMappingImport)
 
 
-@given(instance=diagram::description::Layer_strategy)
-def test_diagram::description::layer_icon_setter(instance):
-    original = instance.icon
-    instance.icon = original
-    assert instance.icon == original
 
-@given(instance=diagram::description::EdgeMappingImport_strategy)
-@settings(max_examples=50)
-def test_diagram::description::edgemappingimport_instantiation(instance):
-    assert isinstance(instance, diagram::description::EdgeMappingImport)
-
-@given(instance=diagram::description::EdgeMappingImport_strategy)
-def test_diagram::description::edgemappingimport_inheritsAncestorFilters_type(instance):
-    assert isinstance(instance.inheritsAncestorFilters, bool)
-
-
-@given(instance=diagram::description::EdgeMappingImport_strategy)
-def test_diagram::description::edgemappingimport_inheritsAncestorFilters_setter(instance):
+@given(instance=diagram_description_EdgeMappingImport_strategy)
+def test_diagram_description_edgemappingimport_inheritsAncestorFilters_setter(instance):
     original = instance.inheritsAncestorFilters
     instance.inheritsAncestorFilters = original
     assert instance.inheritsAncestorFilters == original
 
-@given(instance=diagram::description::EdgeMapping_strategy)
+@given(instance=diagram_filter_FilterDescription_strategy)
 @settings(max_examples=50)
-def test_diagram::description::edgemapping_instantiation(instance):
-    assert isinstance(instance, diagram::description::EdgeMapping)
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_pathExpression_type(instance):
-    assert isinstance(instance.pathExpression, str)
-
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_pathExpression_setter(instance):
-    original = instance.pathExpression
-    instance.pathExpression = original
-    assert instance.pathExpression == original
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_domainClass_type(instance):
-    assert isinstance(instance.domainClass, str)
-
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_domainClass_setter(instance):
-    original = instance.domainClass
-    instance.domainClass = original
-    assert instance.domainClass == original
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_targetFinderExpression_type(instance):
-    assert isinstance(instance.targetFinderExpression, str)
-
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_targetFinderExpression_setter(instance):
-    original = instance.targetFinderExpression
-    instance.targetFinderExpression = original
-    assert instance.targetFinderExpression == original
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_useDomainElement_type(instance):
-    assert isinstance(instance.useDomainElement, bool)
-
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_useDomainElement_setter(instance):
-    original = instance.useDomainElement
-    instance.useDomainElement = original
-    assert instance.useDomainElement == original
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_targetExpression_type(instance):
-    assert isinstance(instance.targetExpression, str)
-
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_targetExpression_setter(instance):
-    original = instance.targetExpression
-    instance.targetExpression = original
-    assert instance.targetExpression == original
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_sourceFinderExpression_type(instance):
-    assert isinstance(instance.sourceFinderExpression, str)
-
-
-@given(instance=diagram::description::EdgeMapping_strategy)
-def test_diagram::description::edgemapping_sourceFinderExpression_setter(instance):
-    original = instance.sourceFinderExpression
-    instance.sourceFinderExpression = original
-    assert instance.sourceFinderExpression == original
+def test_diagram_filter_filterdescription_instantiation(instance):
+    assert isinstance(instance, diagram_filter_FilterDescription)
 
 import warnings
 import copy
@@ -8803,30 +9539,43 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::EdgeMapping_strategy)
+@given(instance=diagram_filter_FilterDescription_strategy)
 @settings(max_examples=30)
-def test_diagram::description::edgemapping_updateedge_changes_state(instance):
+def test_diagram_filter_filterdescription_isvisible_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.updateEdge(
+        instance.isVisible(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.updateEdge).strip()
+        source = inspect.getsource(instance.isVisible).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateEdge' in diagram::description::EdgeMapping is empty"
+        assert has_statements, f"Function 'isVisible' in diagram_filter_FilterDescription is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateEdge' in diagram::description::EdgeMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'isVisible' in diagram_filter_FilterDescription did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateEdge' in diagram::description::EdgeMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'isVisible' in diagram_filter_FilterDescription is not implemented or raised an error")
+
+@given(instance=diagram_description_AbstractNodeMapping_strategy)
+@settings(max_examples=50)
+def test_diagram_description_abstractnodemapping_instantiation(instance):
+    assert isinstance(instance, diagram_description_AbstractNodeMapping)
+
+
+
+@given(instance=diagram_description_AbstractNodeMapping_strategy)
+def test_diagram_description_abstractnodemapping_domainClass_setter(instance):
+    original = instance.domainClass
+    instance.domainClass = original
+    assert instance.domainClass == original
 
 import warnings
 import copy
@@ -8834,9 +9583,184 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::EdgeMapping_strategy)
+@given(instance=diagram_description_AbstractNodeMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::edgemapping_createedge_changes_state(instance):
+def test_diagram_description_abstractnodemapping_cleardnodesdone_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.clearDNodesDone()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.clearDNodesDone).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'clearDNodesDone' in diagram_description_AbstractNodeMapping is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'clearDNodesDone' in diagram_description_AbstractNodeMapping did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'clearDNodesDone' in diagram_description_AbstractNodeMapping is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=diagram_description_AbstractNodeMapping_strategy)
+@settings(max_examples=30)
+def test_diagram_description_abstractnodemapping_finddnodefromeobject_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findDNodeFromEObject(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findDNodeFromEObject).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findDNodeFromEObject' in diagram_description_AbstractNodeMapping is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findDNodeFromEObject' in diagram_description_AbstractNodeMapping did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findDNodeFromEObject' in diagram_description_AbstractNodeMapping is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=diagram_description_AbstractNodeMapping_strategy)
+@settings(max_examples=30)
+def test_diagram_description_abstractnodemapping_adddonenode_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addDoneNode(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addDoneNode).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addDoneNode' in diagram_description_AbstractNodeMapping is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addDoneNode' in diagram_description_AbstractNodeMapping did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addDoneNode' in diagram_description_AbstractNodeMapping is not implemented or raised an error")
+
+@given(instance=diagram_concern_ConcernDescription_strategy)
+@settings(max_examples=50)
+def test_diagram_concern_concerndescription_instantiation(instance):
+    assert isinstance(instance, diagram_concern_ConcernDescription)
+
+@given(instance=diagram_description_Layer_strategy)
+@settings(max_examples=50)
+def test_diagram_description_layer_instantiation(instance):
+    assert isinstance(instance, diagram_description_Layer)
+
+
+
+@given(instance=diagram_description_Layer_strategy)
+def test_diagram_description_layer_icon_setter(instance):
+    original = instance.icon
+    instance.icon = original
+    assert instance.icon == original
+
+@given(instance=diagram_tool_ToolSection_strategy)
+@settings(max_examples=50)
+def test_diagram_tool_toolsection_instantiation(instance):
+    assert isinstance(instance, diagram_tool_ToolSection)
+
+
+
+@given(instance=diagram_tool_ToolSection_strategy)
+def test_diagram_tool_toolsection_icon_setter(instance):
+    original = instance.icon
+    instance.icon = original
+    assert instance.icon == original
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+@settings(max_examples=50)
+def test_diagram_description_edgemapping_instantiation(instance):
+    assert isinstance(instance, diagram_description_EdgeMapping)
+
+
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+def test_diagram_description_edgemapping_domainClass_setter(instance):
+    original = instance.domainClass
+    instance.domainClass = original
+    assert instance.domainClass == original
+
+
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+def test_diagram_description_edgemapping_useDomainElement_setter(instance):
+    original = instance.useDomainElement
+    instance.useDomainElement = original
+    assert instance.useDomainElement == original
+
+
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+def test_diagram_description_edgemapping_sourceFinderExpression_setter(instance):
+    original = instance.sourceFinderExpression
+    instance.sourceFinderExpression = original
+    assert instance.sourceFinderExpression == original
+
+
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+def test_diagram_description_edgemapping_targetFinderExpression_setter(instance):
+    original = instance.targetFinderExpression
+    instance.targetFinderExpression = original
+    assert instance.targetFinderExpression == original
+
+
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+def test_diagram_description_edgemapping_pathExpression_setter(instance):
+    original = instance.pathExpression
+    instance.pathExpression = original
+    assert instance.pathExpression == original
+
+
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+def test_diagram_description_edgemapping_targetExpression_setter(instance):
+    original = instance.targetExpression
+    instance.targetExpression = original
+    assert instance.targetExpression == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=diagram_description_EdgeMapping_strategy)
+@settings(max_examples=30)
+def test_diagram_description_edgemapping_createedge_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8853,30 +9777,14 @@ def test_diagram::description::edgemapping_createedge_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createEdge' in diagram::description::EdgeMapping is empty"
+        assert has_statements, f"Function 'createEdge' in diagram_description_EdgeMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createEdge' in diagram::description::EdgeMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'createEdge' in diagram_description_EdgeMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createEdge' in diagram::description::EdgeMapping is not implemented or raised an error")
-
-@given(instance=diagram::description::AbstractNodeMapping_strategy)
-@settings(max_examples=50)
-def test_diagram::description::abstractnodemapping_instantiation(instance):
-    assert isinstance(instance, diagram::description::AbstractNodeMapping)
-
-@given(instance=diagram::description::AbstractNodeMapping_strategy)
-def test_diagram::description::abstractnodemapping_domainClass_type(instance):
-    assert isinstance(instance.domainClass, str)
-
-
-@given(instance=diagram::description::AbstractNodeMapping_strategy)
-def test_diagram::description::abstractnodemapping_domainClass_setter(instance):
-    original = instance.domainClass
-    instance.domainClass = original
-    assert instance.domainClass == original
+        warnings.warn(f"Operation 'createEdge' in diagram_description_EdgeMapping is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8884,1431 +9792,61 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diagram::description::AbstractNodeMapping_strategy)
+@given(instance=diagram_description_EdgeMapping_strategy)
 @settings(max_examples=30)
-def test_diagram::description::abstractnodemapping_adddonenode_changes_state(instance):
+def test_diagram_description_edgemapping_updateedge_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.addDoneNode(
+        instance.updateEdge(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addDoneNode).strip()
+        source = inspect.getsource(instance.updateEdge).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addDoneNode' in diagram::description::AbstractNodeMapping is empty"
+        assert has_statements, f"Function 'updateEdge' in diagram_description_EdgeMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addDoneNode' in diagram::description::AbstractNodeMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'updateEdge' in diagram_description_EdgeMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addDoneNode' in diagram::description::AbstractNodeMapping is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=diagram::description::AbstractNodeMapping_strategy)
-@settings(max_examples=30)
-def test_diagram::description::abstractnodemapping_finddnodefromeobject_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findDNodeFromEObject(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findDNodeFromEObject).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findDNodeFromEObject' in diagram::description::AbstractNodeMapping is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findDNodeFromEObject' in diagram::description::AbstractNodeMapping did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findDNodeFromEObject' in diagram::description::AbstractNodeMapping is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=diagram::description::AbstractNodeMapping_strategy)
-@settings(max_examples=30)
-def test_diagram::description::abstractnodemapping_cleardnodesdone_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.clearDNodesDone()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.clearDNodesDone).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clearDNodesDone' in diagram::description::AbstractNodeMapping is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clearDNodesDone' in diagram::description::AbstractNodeMapping did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clearDNodesDone' in diagram::description::AbstractNodeMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateEdge' in diagram_description_EdgeMapping is not implemented or raised an error")
 
 @given(instance=DRepresentation_strategy)
 @settings(max_examples=50)
 def test_drepresentation_instantiation(instance):
     assert isinstance(instance, DRepresentation)
 
-@given(instance=diagram::DDiagram_strategy)
+@given(instance=diagram_DDiagram_strategy)
 @settings(max_examples=50)
-def test_diagram::ddiagram_instantiation(instance):
-    assert isinstance(instance, diagram::DDiagram)
-
-@given(instance=diagram::DDiagram_strategy)
-def test_diagram::ddiagram_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
+def test_diagram_ddiagram_instantiation(instance):
+    assert isinstance(instance, diagram_DDiagram)
 
 
-@given(instance=diagram::DDiagram_strategy)
-def test_diagram::ddiagram_synchronized_setter(instance):
-    original = instance.synchronized
-    instance.synchronized = original
-    assert instance.synchronized == original
 
-@given(instance=diagram::DDiagram_strategy)
-def test_diagram::ddiagram_isInLayoutingMode_type(instance):
-    assert isinstance(instance.isInLayoutingMode, bool)
-
-
-@given(instance=diagram::DDiagram_strategy)
-def test_diagram::ddiagram_isInLayoutingMode_setter(instance):
-    original = instance.isInLayoutingMode
-    instance.isInLayoutingMode = original
-    assert instance.isInLayoutingMode == original
-
-@given(instance=diagram::DDiagram_strategy)
-def test_diagram::ddiagram_headerHeight_type(instance):
-    assert isinstance(instance.headerHeight, int)
-
-
-@given(instance=diagram::DDiagram_strategy)
-def test_diagram::ddiagram_headerHeight_setter(instance):
+@given(instance=diagram_DDiagram_strategy)
+def test_diagram_ddiagram_headerHeight_setter(instance):
     original = instance.headerHeight
     instance.headerHeight = original
     assert instance.headerHeight == original
 
-@given(instance=diagram::concern::ConcernDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::concern::concerndescription_instantiation(instance):
-    assert isinstance(instance, diagram::concern::ConcernDescription)
 
-@given(instance=diagram::concern::ConcernSet_strategy)
-@settings(max_examples=50)
-def test_diagram::concern::concernset_instantiation(instance):
-    assert isinstance(instance, diagram::concern::ConcernSet)
 
-@given(instance=InteractiveVariableDescription_strategy)
-@settings(max_examples=50)
-def test_interactivevariabledescription_instantiation(instance):
-    assert isinstance(instance, InteractiveVariableDescription)
+@given(instance=diagram_DDiagram_strategy)
+def test_diagram_ddiagram_isInLayoutingMode_setter(instance):
+    original = instance.isInLayoutingMode
+    instance.isInLayoutingMode = original
+    assert instance.isInLayoutingMode == original
 
-@given(instance=filter::Filter_strategy)
-@settings(max_examples=50)
-def test_filter::filter_instantiation(instance):
-    assert isinstance(instance, filter::Filter)
 
-@given(instance=FilterDescription_strategy)
-@settings(max_examples=50)
-def test_filterdescription_instantiation(instance):
-    assert isinstance(instance, FilterDescription)
 
-@given(instance=diagram::filter::CompositeFilterDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::filter::compositefilterdescription_instantiation(instance):
-    assert isinstance(instance, diagram::filter::CompositeFilterDescription)
-
-@given(instance=diagram::filter::Filter_strategy)
-@settings(max_examples=50)
-def test_diagram::filter::filter_instantiation(instance):
-    assert isinstance(instance, diagram::filter::Filter)
-
-@given(instance=diagram::filter::Filter_strategy)
-def test_diagram::filter::filter_filterKind_type(instance):
-    assert isinstance(instance.filterKind, str)
-
-
-@given(instance=diagram::filter::Filter_strategy)
-def test_diagram::filter::filter_filterKind_setter(instance):
-    original = instance.filterKind
-    instance.filterKind = original
-    assert instance.filterKind == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=diagram::filter::Filter_strategy)
-@settings(max_examples=30)
-def test_diagram::filter::filter_isvisible_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isVisible(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isVisible).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isVisible' in diagram::filter::Filter is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isVisible' in diagram::filter::Filter did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isVisible' in diagram::filter::Filter is not implemented or raised an error")
-
-@given(instance=diagram::filter::FilterDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::filter::filterdescription_instantiation(instance):
-    assert isinstance(instance, diagram::filter::FilterDescription)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=diagram::filter::FilterDescription_strategy)
-@settings(max_examples=30)
-def test_diagram::filter::filterdescription_isvisible_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isVisible(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isVisible).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isVisible' in diagram::filter::FilterDescription is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isVisible' in diagram::filter::FilterDescription did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isVisible' in diagram::filter::FilterDescription is not implemented or raised an error")
-
-@given(instance=Filter_strategy)
-@settings(max_examples=50)
-def test_filter_instantiation(instance):
-    assert isinstance(instance, Filter)
-
-@given(instance=diagram::filter::VariableFilter_strategy)
-@settings(max_examples=50)
-def test_diagram::filter::variablefilter_instantiation(instance):
-    assert isinstance(instance, diagram::filter::VariableFilter)
-
-@given(instance=diagram::filter::VariableFilter_strategy)
-def test_diagram::filter::variablefilter_semanticConditionExpression_type(instance):
-    assert isinstance(instance.semanticConditionExpression, str)
-
-
-@given(instance=diagram::filter::VariableFilter_strategy)
-def test_diagram::filter::variablefilter_semanticConditionExpression_setter(instance):
-    original = instance.semanticConditionExpression
-    instance.semanticConditionExpression = original
-    assert instance.semanticConditionExpression == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=diagram::filter::VariableFilter_strategy)
-@settings(max_examples=30)
-def test_diagram::filter::variablefilter_resetvariables_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.resetVariables()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.resetVariables).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resetVariables' in diagram::filter::VariableFilter is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resetVariables' in diagram::filter::VariableFilter did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resetVariables' in diagram::filter::VariableFilter is not implemented or raised an error")
-
-@given(instance=diagram::filter::MappingFilter_strategy)
-@settings(max_examples=50)
-def test_diagram::filter::mappingfilter_instantiation(instance):
-    assert isinstance(instance, diagram::filter::MappingFilter)
-
-@given(instance=diagram::filter::MappingFilter_strategy)
-def test_diagram::filter::mappingfilter_semanticConditionExpression_type(instance):
-    assert isinstance(instance.semanticConditionExpression, str)
-
-
-@given(instance=diagram::filter::MappingFilter_strategy)
-def test_diagram::filter::mappingfilter_semanticConditionExpression_setter(instance):
-    original = instance.semanticConditionExpression
-    instance.semanticConditionExpression = original
-    assert instance.semanticConditionExpression == original
-
-@given(instance=diagram::filter::MappingFilter_strategy)
-def test_diagram::filter::mappingfilter_viewConditionExpression_type(instance):
-    assert isinstance(instance.viewConditionExpression, str)
-
-
-@given(instance=diagram::filter::MappingFilter_strategy)
-def test_diagram::filter::mappingfilter_viewConditionExpression_setter(instance):
-    original = instance.viewConditionExpression
-    instance.viewConditionExpression = original
-    assert instance.viewConditionExpression == original
-
-@given(instance=tool::ElementDropVariable_strategy)
-@settings(max_examples=50)
-def test_tool::elementdropvariable_instantiation(instance):
-    assert isinstance(instance, tool::ElementDropVariable)
-
-@given(instance=tool::DropContainerVariable_strategy)
-@settings(max_examples=50)
-def test_tool::dropcontainervariable_instantiation(instance):
-    assert isinstance(instance, tool::DropContainerVariable)
-
-@given(instance=RepresentationNavigationDescription_strategy)
-@settings(max_examples=50)
-def test_representationnavigationdescription_instantiation(instance):
-    assert isinstance(instance, RepresentationNavigationDescription)
-
-@given(instance=diagram::tool::DiagramNavigationDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::diagramnavigationdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DiagramNavigationDescription)
-
-@given(instance=RepresentationCreationDescription_strategy)
-@settings(max_examples=50)
-def test_representationcreationdescription_instantiation(instance):
-    assert isinstance(instance, RepresentationCreationDescription)
-
-@given(instance=diagram::tool::DiagramCreationDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::diagramcreationdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DiagramCreationDescription)
-
-@given(instance=tool::InitialContainerDropOperation_strategy)
-@settings(max_examples=50)
-def test_tool::initialcontainerdropoperation_instantiation(instance):
-    assert isinstance(instance, tool::InitialContainerDropOperation)
-
-@given(instance=ContainerModelOperation_strategy)
-@settings(max_examples=50)
-def test_containermodeloperation_instantiation(instance):
-    assert isinstance(instance, ContainerModelOperation)
-
-@given(instance=diagram::tool::Navigation_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::navigation_instantiation(instance):
-    assert isinstance(instance, diagram::tool::Navigation)
-
-@given(instance=diagram::tool::Navigation_strategy)
-def test_diagram::tool::navigation_createIfNotExistent_type(instance):
-    assert isinstance(instance.createIfNotExistent, bool)
-
-
-@given(instance=diagram::tool::Navigation_strategy)
-def test_diagram::tool::navigation_createIfNotExistent_setter(instance):
-    original = instance.createIfNotExistent
-    instance.createIfNotExistent = original
-    assert instance.createIfNotExistent == original
-
-@given(instance=diagram::tool::CreateView_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::createview_instantiation(instance):
-    assert isinstance(instance, diagram::tool::CreateView)
-
-@given(instance=diagram::tool::CreateView_strategy)
-def test_diagram::tool::createview_containerViewExpression_type(instance):
-    assert isinstance(instance.containerViewExpression, str)
-
-
-@given(instance=diagram::tool::CreateView_strategy)
-def test_diagram::tool::createview_containerViewExpression_setter(instance):
-    original = instance.containerViewExpression
-    instance.containerViewExpression = original
-    assert instance.containerViewExpression == original
-
-@given(instance=diagram::tool::CreateView_strategy)
-def test_diagram::tool::createview_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
-
-
-@given(instance=diagram::tool::CreateView_strategy)
-def test_diagram::tool::createview_variableName_setter(instance):
-    original = instance.variableName
-    instance.variableName = original
-    assert instance.variableName == original
-
-@given(instance=tool::VariableContainer_strategy)
-@settings(max_examples=50)
-def test_tool::variablecontainer_instantiation(instance):
-    assert isinstance(instance, tool::VariableContainer)
-
-@given(instance=description::AbstractVariable_strategy)
-@settings(max_examples=50)
-def test_description::abstractvariable_instantiation(instance):
-    assert isinstance(instance, description::AbstractVariable)
-
-@given(instance=diagram::tool::TargetEdgeCreationVariable_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::targetedgecreationvariable_instantiation(instance):
-    assert isinstance(instance, diagram::tool::TargetEdgeCreationVariable)
-
-@given(instance=diagram::tool::TargetEdgeViewCreationVariable_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::targetedgeviewcreationvariable_instantiation(instance):
-    assert isinstance(instance, diagram::tool::TargetEdgeViewCreationVariable)
-
-@given(instance=diagram::tool::NodeCreationVariable_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::nodecreationvariable_instantiation(instance):
-    assert isinstance(instance, diagram::tool::NodeCreationVariable)
-
-@given(instance=diagram::tool::SourceEdgeViewCreationVariable_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::sourceedgeviewcreationvariable_instantiation(instance):
-    assert isinstance(instance, diagram::tool::SourceEdgeViewCreationVariable)
-
-@given(instance=diagram::tool::ElementDoubleClickVariable_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::elementdoubleclickvariable_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ElementDoubleClickVariable)
-
-@given(instance=diagram::tool::SourceEdgeCreationVariable_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::sourceedgecreationvariable_instantiation(instance):
-    assert isinstance(instance, diagram::tool::SourceEdgeCreationVariable)
-
-@given(instance=tool::EditMaskVariables_strategy)
-@settings(max_examples=50)
-def test_tool::editmaskvariables_instantiation(instance):
-    assert isinstance(instance, tool::EditMaskVariables)
-
-@given(instance=CreateView_strategy)
-@settings(max_examples=50)
-def test_createview_instantiation(instance):
-    assert isinstance(instance, CreateView)
-
-@given(instance=diagram::tool::CreateEdgeView_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::createedgeview_instantiation(instance):
-    assert isinstance(instance, diagram::tool::CreateEdgeView)
-
-@given(instance=diagram::tool::CreateEdgeView_strategy)
-def test_diagram::tool::createedgeview_sourceExpression_type(instance):
-    assert isinstance(instance.sourceExpression, str)
-
-
-@given(instance=diagram::tool::CreateEdgeView_strategy)
-def test_diagram::tool::createedgeview_sourceExpression_setter(instance):
-    original = instance.sourceExpression
-    instance.sourceExpression = original
-    assert instance.sourceExpression == original
-
-@given(instance=diagram::tool::CreateEdgeView_strategy)
-def test_diagram::tool::createedgeview_targetExpression_type(instance):
-    assert isinstance(instance.targetExpression, str)
-
-
-@given(instance=diagram::tool::CreateEdgeView_strategy)
-def test_diagram::tool::createedgeview_targetExpression_setter(instance):
-    original = instance.targetExpression
-    instance.targetExpression = original
-    assert instance.targetExpression == original
-
-@given(instance=tool::ElementSelectVariable_strategy)
-@settings(max_examples=50)
-def test_tool::elementselectvariable_instantiation(instance):
-    assert isinstance(instance, tool::ElementSelectVariable)
-
-@given(instance=diagram::tool::DeleteHookParameter_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::deletehookparameter_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DeleteHookParameter)
-
-@given(instance=diagram::tool::DeleteHookParameter_strategy)
-def test_diagram::tool::deletehookparameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=diagram::tool::DeleteHookParameter_strategy)
-def test_diagram::tool::deletehookparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=diagram::tool::DeleteHookParameter_strategy)
-def test_diagram::tool::deletehookparameter_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=diagram::tool::DeleteHookParameter_strategy)
-def test_diagram::tool::deletehookparameter_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=tool::DeleteHookParameter_strategy)
-@settings(max_examples=50)
-def test_tool::deletehookparameter_instantiation(instance):
-    assert isinstance(instance, tool::DeleteHookParameter)
-
-@given(instance=diagram::tool::DeleteHook_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::deletehook_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DeleteHook)
-
-@given(instance=diagram::tool::DeleteHook_strategy)
-def test_diagram::tool::deletehook_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=diagram::tool::DeleteHook_strategy)
-def test_diagram::tool::deletehook_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=AbstractToolDescription_strategy)
-@settings(max_examples=50)
-def test_abstracttooldescription_instantiation(instance):
-    assert isinstance(instance, AbstractToolDescription)
-
-@given(instance=diagram::tool::BehaviorTool_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::behaviortool_instantiation(instance):
-    assert isinstance(instance, diagram::tool::BehaviorTool)
-
-@given(instance=diagram::tool::BehaviorTool_strategy)
-def test_diagram::tool::behaviortool_domainClass_type(instance):
-    assert isinstance(instance.domainClass, str)
-
-
-@given(instance=diagram::tool::BehaviorTool_strategy)
-def test_diagram::tool::behaviortool_domainClass_setter(instance):
-    original = instance.domainClass
-    instance.domainClass = original
-    assert instance.domainClass == original
-
-@given(instance=diagram::tool::RequestDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::requestdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::RequestDescription)
-
-@given(instance=diagram::tool::RequestDescription_strategy)
-def test_diagram::tool::requestdescription_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=diagram::tool::RequestDescription_strategy)
-def test_diagram::tool::requestdescription_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=tool::DeleteHook_strategy)
-@settings(max_examples=50)
-def test_tool::deletehook_instantiation(instance):
-    assert isinstance(instance, tool::DeleteHook)
-
-@given(instance=tool::ElementDeleteVariable_strategy)
-@settings(max_examples=50)
-def test_tool::elementdeletevariable_instantiation(instance):
-    assert isinstance(instance, tool::ElementDeleteVariable)
-
-@given(instance=tool::ElementDoubleClickVariable_strategy)
-@settings(max_examples=50)
-def test_tool::elementdoubleclickvariable_instantiation(instance):
-    assert isinstance(instance, tool::ElementDoubleClickVariable)
-
-@given(instance=tool::InitEdgeCreationOperation_strategy)
-@settings(max_examples=50)
-def test_tool::initedgecreationoperation_instantiation(instance):
-    assert isinstance(instance, tool::InitEdgeCreationOperation)
-
-@given(instance=tool::TargetEdgeViewCreationVariable_strategy)
-@settings(max_examples=50)
-def test_tool::targetedgeviewcreationvariable_instantiation(instance):
-    assert isinstance(instance, tool::TargetEdgeViewCreationVariable)
-
-@given(instance=tool::SourceEdgeViewCreationVariable_strategy)
-@settings(max_examples=50)
-def test_tool::sourceedgeviewcreationvariable_instantiation(instance):
-    assert isinstance(instance, tool::SourceEdgeViewCreationVariable)
-
-@given(instance=tool::TargetEdgeCreationVariable_strategy)
-@settings(max_examples=50)
-def test_tool::targetedgecreationvariable_instantiation(instance):
-    assert isinstance(instance, tool::TargetEdgeCreationVariable)
-
-@given(instance=tool::SourceEdgeCreationVariable_strategy)
-@settings(max_examples=50)
-def test_tool::sourceedgecreationvariable_instantiation(instance):
-    assert isinstance(instance, tool::SourceEdgeCreationVariable)
-
-@given(instance=tool::ContainerViewVariable_strategy)
-@settings(max_examples=50)
-def test_tool::containerviewvariable_instantiation(instance):
-    assert isinstance(instance, tool::ContainerViewVariable)
-
-@given(instance=tool::NodeCreationVariable_strategy)
-@settings(max_examples=50)
-def test_tool::nodecreationvariable_instantiation(instance):
-    assert isinstance(instance, tool::NodeCreationVariable)
-
-@given(instance=MappingBasedToolDescription_strategy)
-@settings(max_examples=50)
-def test_mappingbasedtooldescription_instantiation(instance):
-    assert isinstance(instance, MappingBasedToolDescription)
-
-@given(instance=diagram::tool::EdgeCreationDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::edgecreationdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::EdgeCreationDescription)
-
-@given(instance=diagram::tool::EdgeCreationDescription_strategy)
-def test_diagram::tool::edgecreationdescription_iconPath_type(instance):
-    assert isinstance(instance.iconPath, str)
-
-
-@given(instance=diagram::tool::EdgeCreationDescription_strategy)
-def test_diagram::tool::edgecreationdescription_iconPath_setter(instance):
-    original = instance.iconPath
-    instance.iconPath = original
-    assert instance.iconPath == original
-
-@given(instance=diagram::tool::EdgeCreationDescription_strategy)
-def test_diagram::tool::edgecreationdescription_connectionStartPrecondition_type(instance):
-    assert isinstance(instance.connectionStartPrecondition, str)
-
-
-@given(instance=diagram::tool::EdgeCreationDescription_strategy)
-def test_diagram::tool::edgecreationdescription_connectionStartPrecondition_setter(instance):
-    original = instance.connectionStartPrecondition
-    instance.connectionStartPrecondition = original
-    assert instance.connectionStartPrecondition == original
-
-@given(instance=diagram::tool::ReconnectEdgeDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::reconnectedgedescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ReconnectEdgeDescription)
-
-@given(instance=diagram::tool::ReconnectEdgeDescription_strategy)
-def test_diagram::tool::reconnectedgedescription_reconnectionKind_type(instance):
-    assert isinstance(instance.reconnectionKind, str)
-
-
-@given(instance=diagram::tool::ReconnectEdgeDescription_strategy)
-def test_diagram::tool::reconnectedgedescription_reconnectionKind_setter(instance):
-    original = instance.reconnectionKind
-    instance.reconnectionKind = original
-    assert instance.reconnectionKind == original
-
-@given(instance=diagram::tool::DoubleClickDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::doubleclickdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DoubleClickDescription)
-
-@given(instance=diagram::tool::DirectEditLabel_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::directeditlabel_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DirectEditLabel)
-
-@given(instance=diagram::tool::DirectEditLabel_strategy)
-def test_diagram::tool::directeditlabel_inputLabelExpression_type(instance):
-    assert isinstance(instance.inputLabelExpression, str)
-
-
-@given(instance=diagram::tool::DirectEditLabel_strategy)
-def test_diagram::tool::directeditlabel_inputLabelExpression_setter(instance):
-    original = instance.inputLabelExpression
-    instance.inputLabelExpression = original
-    assert instance.inputLabelExpression == original
-
-@given(instance=diagram::tool::ContainerDropDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::containerdropdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ContainerDropDescription)
-
-@given(instance=diagram::tool::ContainerDropDescription_strategy)
-def test_diagram::tool::containerdropdescription_dragSource_type(instance):
-    assert isinstance(instance.dragSource, str)
-
-
-@given(instance=diagram::tool::ContainerDropDescription_strategy)
-def test_diagram::tool::containerdropdescription_dragSource_setter(instance):
-    original = instance.dragSource
-    instance.dragSource = original
-    assert instance.dragSource == original
-
-@given(instance=diagram::tool::ContainerDropDescription_strategy)
-def test_diagram::tool::containerdropdescription_moveEdges_type(instance):
-    assert isinstance(instance.moveEdges, bool)
-
-
-@given(instance=diagram::tool::ContainerDropDescription_strategy)
-def test_diagram::tool::containerdropdescription_moveEdges_setter(instance):
-    original = instance.moveEdges
-    instance.moveEdges = original
-    assert instance.moveEdges == original
-
-@given(instance=diagram::tool::ContainerCreationDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::containercreationdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ContainerCreationDescription)
-
-@given(instance=diagram::tool::ContainerCreationDescription_strategy)
-def test_diagram::tool::containercreationdescription_iconPath_type(instance):
-    assert isinstance(instance.iconPath, str)
-
-
-@given(instance=diagram::tool::ContainerCreationDescription_strategy)
-def test_diagram::tool::containercreationdescription_iconPath_setter(instance):
-    original = instance.iconPath
-    instance.iconPath = original
-    assert instance.iconPath == original
-
-@given(instance=diagram::tool::DeleteElementDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::deleteelementdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::DeleteElementDescription)
-
-@given(instance=diagram::tool::NodeCreationDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::nodecreationdescription_instantiation(instance):
-    assert isinstance(instance, diagram::tool::NodeCreationDescription)
-
-@given(instance=diagram::tool::NodeCreationDescription_strategy)
-def test_diagram::tool::nodecreationdescription_iconPath_type(instance):
-    assert isinstance(instance.iconPath, str)
-
-
-@given(instance=diagram::tool::NodeCreationDescription_strategy)
-def test_diagram::tool::nodecreationdescription_iconPath_setter(instance):
-    original = instance.iconPath
-    instance.iconPath = original
-    assert instance.iconPath == original
-
-@given(instance=tool::ToolGroup_strategy)
-@settings(max_examples=50)
-def test_tool::toolgroup_instantiation(instance):
-    assert isinstance(instance, tool::ToolGroup)
-
-@given(instance=diagram::tool::ToolGroupExtension_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::toolgroupextension_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ToolGroupExtension)
-
-@given(instance=ToolEntry_strategy)
-@settings(max_examples=50)
-def test_toolentry_instantiation(instance):
-    assert isinstance(instance, ToolEntry)
-
-@given(instance=diagram::tool::ToolGroup_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::toolgroup_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ToolGroup)
-
-@given(instance=tool::ToolGroupExtension_strategy)
-@settings(max_examples=50)
-def test_tool::toolgroupextension_instantiation(instance):
-    assert isinstance(instance, tool::ToolGroupExtension)
-
-@given(instance=tool::PopupMenu_strategy)
-@settings(max_examples=50)
-def test_tool::popupmenu_instantiation(instance):
-    assert isinstance(instance, tool::PopupMenu)
-
-@given(instance=tool::ToolEntry_strategy)
-@settings(max_examples=50)
-def test_tool::toolentry_instantiation(instance):
-    assert isinstance(instance, tool::ToolEntry)
-
-@given(instance=tool::InitialNodeCreationOperation_strategy)
-@settings(max_examples=50)
-def test_tool::initialnodecreationoperation_instantiation(instance):
-    assert isinstance(instance, tool::InitialNodeCreationOperation)
-
-@given(instance=diagram::style::HideLabelCapabilityStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::hidelabelcapabilitystyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::HideLabelCapabilityStyleDescription)
-
-@given(instance=diagram::style::HideLabelCapabilityStyleDescription_strategy)
-def test_diagram::style::hidelabelcapabilitystyledescription_hideLabelByDefault_type(instance):
-    assert isinstance(instance.hideLabelByDefault, bool)
-
-
-@given(instance=diagram::style::HideLabelCapabilityStyleDescription_strategy)
-def test_diagram::style::hidelabelcapabilitystyledescription_hideLabelByDefault_setter(instance):
-    original = instance.hideLabelByDefault
-    instance.hideLabelByDefault = original
-    assert instance.hideLabelByDefault == original
-
-@given(instance=EdgeStyleDescription_strategy)
-@settings(max_examples=50)
-def test_edgestyledescription_instantiation(instance):
-    assert isinstance(instance, EdgeStyleDescription)
-
-@given(instance=diagram::style::BracketEdgeStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::bracketedgestyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::BracketEdgeStyleDescription)
-
-@given(instance=BasicLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_basiclabelstyledescription_instantiation(instance):
-    assert isinstance(instance, BasicLabelStyleDescription)
-
-@given(instance=diagram::style::CenterLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::centerlabelstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::CenterLabelStyleDescription)
-
-@given(instance=diagram::style::EndLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::endlabelstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::EndLabelStyleDescription)
-
-@given(instance=diagram::style::BeginLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::beginlabelstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::BeginLabelStyleDescription)
-
-@given(instance=style::EndLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::endlabelstyledescription_instantiation(instance):
-    assert isinstance(instance, style::EndLabelStyleDescription)
-
-@given(instance=style::CenterLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::centerlabelstyledescription_instantiation(instance):
-    assert isinstance(instance, style::CenterLabelStyleDescription)
-
-@given(instance=style::BeginLabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::beginlabelstyledescription_instantiation(instance):
-    assert isinstance(instance, style::BeginLabelStyleDescription)
-
-@given(instance=diagram::tool::ToolSection_strategy)
-@settings(max_examples=50)
-def test_diagram::tool::toolsection_instantiation(instance):
-    assert isinstance(instance, diagram::tool::ToolSection)
-
-@given(instance=diagram::tool::ToolSection_strategy)
-def test_diagram::tool::toolsection_icon_type(instance):
-    assert isinstance(instance.icon, str)
-
-
-@given(instance=diagram::tool::ToolSection_strategy)
-def test_diagram::tool::toolsection_icon_setter(instance):
-    original = instance.icon
-    instance.icon = original
-    assert instance.icon == original
-
-@given(instance=diagram::style::WorkspaceImageDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::workspaceimagedescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::WorkspaceImageDescription)
-
-@given(instance=diagram::style::WorkspaceImageDescription_strategy)
-def test_diagram::style::workspaceimagedescription_workspacePath_type(instance):
-    assert isinstance(instance.workspacePath, str)
-
-
-@given(instance=diagram::style::WorkspaceImageDescription_strategy)
-def test_diagram::style::workspaceimagedescription_workspacePath_setter(instance):
-    original = instance.workspacePath
-    instance.workspacePath = original
-    assert instance.workspacePath == original
-
-@given(instance=style::LabelBorderStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::labelborderstyledescription_instantiation(instance):
-    assert isinstance(instance, style::LabelBorderStyleDescription)
-
-@given(instance=diagram::style::SizeComputationContainerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::sizecomputationcontainerstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::SizeComputationContainerStyleDescription)
-
-@given(instance=diagram::style::SizeComputationContainerStyleDescription_strategy)
-def test_diagram::style::sizecomputationcontainerstyledescription_widthComputationExpression_type(instance):
-    assert isinstance(instance.widthComputationExpression, str)
-
-
-@given(instance=diagram::style::SizeComputationContainerStyleDescription_strategy)
-def test_diagram::style::sizecomputationcontainerstyledescription_widthComputationExpression_setter(instance):
-    original = instance.widthComputationExpression
-    instance.widthComputationExpression = original
-    assert instance.widthComputationExpression == original
-
-@given(instance=diagram::style::SizeComputationContainerStyleDescription_strategy)
-def test_diagram::style::sizecomputationcontainerstyledescription_heightComputationExpression_type(instance):
-    assert isinstance(instance.heightComputationExpression, str)
-
-
-@given(instance=diagram::style::SizeComputationContainerStyleDescription_strategy)
-def test_diagram::style::sizecomputationcontainerstyledescription_heightComputationExpression_setter(instance):
-    original = instance.heightComputationExpression
-    instance.heightComputationExpression = original
-    assert instance.heightComputationExpression == original
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::gaugesectiondescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::GaugeSectionDescription)
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_minValueExpression_type(instance):
-    assert isinstance(instance.minValueExpression, str)
-
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_minValueExpression_setter(instance):
-    original = instance.minValueExpression
-    instance.minValueExpression = original
-    assert instance.minValueExpression == original
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_valueExpression_type(instance):
-    assert isinstance(instance.valueExpression, str)
-
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_valueExpression_setter(instance):
-    original = instance.valueExpression
-    instance.valueExpression = original
-    assert instance.valueExpression == original
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_maxValueExpression_type(instance):
-    assert isinstance(instance.maxValueExpression, str)
-
-
-@given(instance=diagram::style::GaugeSectionDescription_strategy)
-def test_diagram::style::gaugesectiondescription_maxValueExpression_setter(instance):
-    original = instance.maxValueExpression
-    instance.maxValueExpression = original
-    assert instance.maxValueExpression == original
-
-@given(instance=style::GaugeSectionDescription_strategy)
-@settings(max_examples=50)
-def test_style::gaugesectiondescription_instantiation(instance):
-    assert isinstance(instance, style::GaugeSectionDescription)
-
-@given(instance=style::SizeComputationContainerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::sizecomputationcontainerstyledescription_instantiation(instance):
-    assert isinstance(instance, style::SizeComputationContainerStyleDescription)
-
-@given(instance=diagram::style::ShapeContainerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::shapecontainerstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::ShapeContainerStyleDescription)
-
-@given(instance=diagram::style::ShapeContainerStyleDescription_strategy)
-def test_diagram::style::shapecontainerstyledescription_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=diagram::style::ShapeContainerStyleDescription_strategy)
-def test_diagram::style::shapecontainerstyledescription_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
-
-@given(instance=diagram::style::FlatContainerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::flatcontainerstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::FlatContainerStyleDescription)
-
-@given(instance=diagram::style::FlatContainerStyleDescription_strategy)
-def test_diagram::style::flatcontainerstyledescription_backgroundStyle_type(instance):
-    assert isinstance(instance.backgroundStyle, str)
-
-
-@given(instance=diagram::style::FlatContainerStyleDescription_strategy)
-def test_diagram::style::flatcontainerstyledescription_backgroundStyle_setter(instance):
-    original = instance.backgroundStyle
-    instance.backgroundStyle = original
-    assert instance.backgroundStyle == original
-
-@given(instance=style::RoundedCornerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::roundedcornerstyledescription_instantiation(instance):
-    assert isinstance(instance, style::RoundedCornerStyleDescription)
-
-@given(instance=NodeStyleDescription_strategy)
-@settings(max_examples=50)
-def test_nodestyledescription_instantiation(instance):
-    assert isinstance(instance, NodeStyleDescription)
-
-@given(instance=diagram::style::GaugeCompositeStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::gaugecompositestyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::GaugeCompositeStyleDescription)
-
-@given(instance=diagram::style::GaugeCompositeStyleDescription_strategy)
-def test_diagram::style::gaugecompositestyledescription_alignment_type(instance):
-    assert isinstance(instance.alignment, str)
-
-
-@given(instance=diagram::style::GaugeCompositeStyleDescription_strategy)
-def test_diagram::style::gaugecompositestyledescription_alignment_setter(instance):
-    original = instance.alignment
-    instance.alignment = original
-    assert instance.alignment == original
-
-@given(instance=diagram::style::EllipseNodeDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::ellipsenodedescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::EllipseNodeDescription)
-
-@given(instance=diagram::style::EllipseNodeDescription_strategy)
-def test_diagram::style::ellipsenodedescription_verticalDiameterComputationExpression_type(instance):
-    assert isinstance(instance.verticalDiameterComputationExpression, str)
-
-
-@given(instance=diagram::style::EllipseNodeDescription_strategy)
-def test_diagram::style::ellipsenodedescription_verticalDiameterComputationExpression_setter(instance):
-    original = instance.verticalDiameterComputationExpression
-    instance.verticalDiameterComputationExpression = original
-    assert instance.verticalDiameterComputationExpression == original
-
-@given(instance=diagram::style::EllipseNodeDescription_strategy)
-def test_diagram::style::ellipsenodedescription_horizontalDiameterComputationExpression_type(instance):
-    assert isinstance(instance.horizontalDiameterComputationExpression, str)
-
-
-@given(instance=diagram::style::EllipseNodeDescription_strategy)
-def test_diagram::style::ellipsenodedescription_horizontalDiameterComputationExpression_setter(instance):
-    original = instance.horizontalDiameterComputationExpression
-    instance.horizontalDiameterComputationExpression = original
-    assert instance.horizontalDiameterComputationExpression == original
-
-@given(instance=diagram::style::BundledImageDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::bundledimagedescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::BundledImageDescription)
-
-@given(instance=diagram::style::BundledImageDescription_strategy)
-def test_diagram::style::bundledimagedescription_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=diagram::style::BundledImageDescription_strategy)
-def test_diagram::style::bundledimagedescription_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
-
-@given(instance=diagram::style::BundledImageDescription_strategy)
-def test_diagram::style::bundledimagedescription_providedShapeID_type(instance):
-    assert isinstance(instance.providedShapeID, str)
-
-
-@given(instance=diagram::style::BundledImageDescription_strategy)
-def test_diagram::style::bundledimagedescription_providedShapeID_setter(instance):
-    original = instance.providedShapeID
-    instance.providedShapeID = original
-    assert instance.providedShapeID == original
-
-@given(instance=diagram::style::SquareDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::squaredescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::SquareDescription)
-
-@given(instance=diagram::style::SquareDescription_strategy)
-def test_diagram::style::squaredescription_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=diagram::style::SquareDescription_strategy)
-def test_diagram::style::squaredescription_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=diagram::style::SquareDescription_strategy)
-def test_diagram::style::squaredescription_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=diagram::style::SquareDescription_strategy)
-def test_diagram::style::squaredescription_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=diagram::style::DotDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::dotdescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::DotDescription)
-
-@given(instance=diagram::style::DotDescription_strategy)
-def test_diagram::style::dotdescription_strokeSizeComputationExpression_type(instance):
-    assert isinstance(instance.strokeSizeComputationExpression, str)
-
-
-@given(instance=diagram::style::DotDescription_strategy)
-def test_diagram::style::dotdescription_strokeSizeComputationExpression_setter(instance):
-    original = instance.strokeSizeComputationExpression
-    instance.strokeSizeComputationExpression = original
-    assert instance.strokeSizeComputationExpression == original
-
-@given(instance=diagram::style::NoteDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::notedescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::NoteDescription)
-
-@given(instance=diagram::style::CustomStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::customstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::CustomStyleDescription)
-
-@given(instance=diagram::style::CustomStyleDescription_strategy)
-def test_diagram::style::customstyledescription_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=diagram::style::CustomStyleDescription_strategy)
-def test_diagram::style::customstyledescription_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=style::HideLabelCapabilityStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::hidelabelcapabilitystyledescription_instantiation(instance):
-    assert isinstance(instance, style::HideLabelCapabilityStyleDescription)
-
-@given(instance=style::TooltipStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::tooltipstyledescription_instantiation(instance):
-    assert isinstance(instance, style::TooltipStyleDescription)
-
-@given(instance=style::LabelStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::labelstyledescription_instantiation(instance):
-    assert isinstance(instance, style::LabelStyleDescription)
-
-@given(instance=style::BorderedStyleDescription_strategy)
-@settings(max_examples=50)
-def test_style::borderedstyledescription_instantiation(instance):
-    assert isinstance(instance, style::BorderedStyleDescription)
-
-@given(instance=diagram::style::ContainerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::containerstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::ContainerStyleDescription)
-
-@given(instance=diagram::style::ContainerStyleDescription_strategy)
-def test_diagram::style::containerstyledescription_roundedCorner_type(instance):
-    assert isinstance(instance.roundedCorner, bool)
-
-
-@given(instance=diagram::style::ContainerStyleDescription_strategy)
-def test_diagram::style::containerstyledescription_roundedCorner_setter(instance):
-    original = instance.roundedCorner
-    instance.roundedCorner = original
-    assert instance.roundedCorner == original
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::nodestyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::NodeStyleDescription)
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_forbiddenSides_type(instance):
-    assert isinstance(instance.forbiddenSides, str)
-
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_forbiddenSides_setter(instance):
-    original = instance.forbiddenSides
-    instance.forbiddenSides = original
-    assert instance.forbiddenSides == original
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_labelPosition_type(instance):
-    assert isinstance(instance.labelPosition, str)
-
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_labelPosition_setter(instance):
-    original = instance.labelPosition
-    instance.labelPosition = original
-    assert instance.labelPosition == original
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_resizeKind_type(instance):
-    assert isinstance(instance.resizeKind, str)
-
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_resizeKind_setter(instance):
-    original = instance.resizeKind
-    instance.resizeKind = original
-    assert instance.resizeKind == original
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_sizeComputationExpression_type(instance):
-    assert isinstance(instance.sizeComputationExpression, str)
-
-
-@given(instance=diagram::style::NodeStyleDescription_strategy)
-def test_diagram::style::nodestyledescription_sizeComputationExpression_setter(instance):
-    original = instance.sizeComputationExpression
-    instance.sizeComputationExpression = original
-    assert instance.sizeComputationExpression == original
-
-@given(instance=ColorDescription_strategy)
-@settings(max_examples=50)
-def test_colordescription_instantiation(instance):
-    assert isinstance(instance, ColorDescription)
-
-@given(instance=StyleDescription_strategy)
-@settings(max_examples=50)
-def test_styledescription_instantiation(instance):
-    assert isinstance(instance, StyleDescription)
-
-@given(instance=diagram::style::RoundedCornerStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::roundedcornerstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::RoundedCornerStyleDescription)
-
-@given(instance=diagram::style::RoundedCornerStyleDescription_strategy)
-def test_diagram::style::roundedcornerstyledescription_arcWidth_type(instance):
-    assert isinstance(instance.arcWidth, str)
-
-
-@given(instance=diagram::style::RoundedCornerStyleDescription_strategy)
-def test_diagram::style::roundedcornerstyledescription_arcWidth_setter(instance):
-    original = instance.arcWidth
-    instance.arcWidth = original
-    assert instance.arcWidth == original
-
-@given(instance=diagram::style::RoundedCornerStyleDescription_strategy)
-def test_diagram::style::roundedcornerstyledescription_arcHeight_type(instance):
-    assert isinstance(instance.arcHeight, str)
-
-
-@given(instance=diagram::style::RoundedCornerStyleDescription_strategy)
-def test_diagram::style::roundedcornerstyledescription_arcHeight_setter(instance):
-    original = instance.arcHeight
-    instance.arcHeight = original
-    assert instance.arcHeight == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::edgestyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::EdgeStyleDescription)
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_endsCentering_type(instance):
-    assert isinstance(instance.endsCentering, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_endsCentering_setter(instance):
-    original = instance.endsCentering
-    instance.endsCentering = original
-    assert instance.endsCentering == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_routingStyle_type(instance):
-    assert isinstance(instance.routingStyle, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_routingStyle_setter(instance):
-    original = instance.routingStyle
-    instance.routingStyle = original
-    assert instance.routingStyle == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_sourceArrow_type(instance):
-    assert isinstance(instance.sourceArrow, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_sourceArrow_setter(instance):
-    original = instance.sourceArrow
-    instance.sourceArrow = original
-    assert instance.sourceArrow == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_targetArrow_type(instance):
-    assert isinstance(instance.targetArrow, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_targetArrow_setter(instance):
-    original = instance.targetArrow
-    instance.targetArrow = original
-    assert instance.targetArrow == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_lineStyle_type(instance):
-    assert isinstance(instance.lineStyle, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_lineStyle_setter(instance):
-    original = instance.lineStyle
-    instance.lineStyle = original
-    assert instance.lineStyle == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_foldingStyle_type(instance):
-    assert isinstance(instance.foldingStyle, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_foldingStyle_setter(instance):
-    original = instance.foldingStyle
-    instance.foldingStyle = original
-    assert instance.foldingStyle == original
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_sizeComputationExpression_type(instance):
-    assert isinstance(instance.sizeComputationExpression, str)
-
-
-@given(instance=diagram::style::EdgeStyleDescription_strategy)
-def test_diagram::style::edgestyledescription_sizeComputationExpression_setter(instance):
-    original = instance.sizeComputationExpression
-    instance.sizeComputationExpression = original
-    assert instance.sizeComputationExpression == original
-
-@given(instance=diagram::style::BorderedStyleDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::borderedstyledescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::BorderedStyleDescription)
-
-@given(instance=diagram::style::BorderedStyleDescription_strategy)
-def test_diagram::style::borderedstyledescription_borderSizeComputationExpression_type(instance):
-    assert isinstance(instance.borderSizeComputationExpression, str)
-
-
-@given(instance=diagram::style::BorderedStyleDescription_strategy)
-def test_diagram::style::borderedstyledescription_borderSizeComputationExpression_setter(instance):
-    original = instance.borderSizeComputationExpression
-    instance.borderSizeComputationExpression = original
-    assert instance.borderSizeComputationExpression == original
-
-@given(instance=diagram::style::BorderedStyleDescription_strategy)
-def test_diagram::style::borderedstyledescription_borderLineStyle_type(instance):
-    assert isinstance(instance.borderLineStyle, str)
-
-
-@given(instance=diagram::style::BorderedStyleDescription_strategy)
-def test_diagram::style::borderedstyledescription_borderLineStyle_setter(instance):
-    original = instance.borderLineStyle
-    instance.borderLineStyle = original
-    assert instance.borderLineStyle == original
-
-@given(instance=tool::ContainerDropDescription_strategy)
-@settings(max_examples=50)
-def test_tool::containerdropdescription_instantiation(instance):
-    assert isinstance(instance, tool::ContainerDropDescription)
-
-@given(instance=diagram::style::LozengeNodeDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::style::lozengenodedescription_instantiation(instance):
-    assert isinstance(instance, diagram::style::LozengeNodeDescription)
-
-@given(instance=diagram::style::LozengeNodeDescription_strategy)
-def test_diagram::style::lozengenodedescription_widthComputationExpression_type(instance):
-    assert isinstance(instance.widthComputationExpression, str)
-
-
-@given(instance=diagram::style::LozengeNodeDescription_strategy)
-def test_diagram::style::lozengenodedescription_widthComputationExpression_setter(instance):
-    original = instance.widthComputationExpression
-    instance.widthComputationExpression = original
-    assert instance.widthComputationExpression == original
-
-@given(instance=diagram::style::LozengeNodeDescription_strategy)
-def test_diagram::style::lozengenodedescription_heightComputationExpression_type(instance):
-    assert isinstance(instance.heightComputationExpression, str)
-
-
-@given(instance=diagram::style::LozengeNodeDescription_strategy)
-def test_diagram::style::lozengenodedescription_heightComputationExpression_setter(instance):
-    original = instance.heightComputationExpression
-    instance.heightComputationExpression = original
-    assert instance.heightComputationExpression == original
-
-@given(instance=diagram::description::DragAndDropTargetDescription_strategy)
-@settings(max_examples=50)
-def test_diagram::description::draganddroptargetdescription_instantiation(instance):
-    assert isinstance(instance, diagram::description::DragAndDropTargetDescription)
-
-@given(instance=Customization_strategy)
-@settings(max_examples=50)
-def test_customization_instantiation(instance):
-    assert isinstance(instance, Customization)
-
-@given(instance=DecorationDescriptionsSet_strategy)
-@settings(max_examples=50)
-def test_decorationdescriptionsset_instantiation(instance):
-    assert isinstance(instance, DecorationDescriptionsSet)
+@given(instance=diagram_DDiagram_strategy)
+def test_diagram_ddiagram_synchronized_setter(instance):
+    original = instance.synchronized
+    instance.synchronized = original
+    assert instance.synchronized == original

@@ -3,46 +3,46 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    sgraph_Scope,
+    sgraph_SpecificationElement,
+    sgraph_ScopedElement,
+    sgraph_Reaction,
+    sgraph_ReactiveElement,
+    sgraph_ReactionProperty,
+    sgraph_Effect,
+    sgraph_Trigger,
+    Declaration,
+    sgraph_Event,
+    sgraph_ImportDeclaration,
+    sgraph_Variable,
     RegularState,
-    sgraph::FinalState,
-    sgraph::Import,
+    sgraph_FinalState,
+    sgraph_Import,
     CompositeElement,
     ScopedElement,
     ReactiveElement,
     Pseudostate,
-    sgraph::Entry,
+    sgraph_Entry,
+    sgraph_Exit,
+    sgraph_Choice,
+    sgraph_Synchronization,
     DocumentedElement,
-    sgraph::Scope,
-    sgraph::SpecificationElement,
-    sgraph::Synchronization,
-    sgraph::ScopedElement,
-    sgraph::Reaction,
-    sgraph::ReactiveElement,
-    sgraph::Exit,
-    sgraph::ReactionProperty,
-    sgraph::Effect,
-    sgraph::Trigger,
-    sgraph::Choice,
-    Declaration,
-    sgraph::Event,
-    sgraph::ImportDeclaration,
-    sgraph::Variable,
     Reaction,
     SpecificationElement,
-    sgraph::Transition,
-    sgraph::State,
-    sgraph::CompositeElement,
+    sgraph_State,
+    sgraph_Transition,
+    sgraph_CompositeElement,
     NamedElement,
-    sgraph::Statechart,
-    sgraph::Region,
-    sgraph::Declaration,
-    sgraph::Vertex,
+    sgraph_Declaration,
+    sgraph_Statechart,
+    sgraph_Region,
+    sgraph_Vertex,
     Vertex,
-    sgraph::RegularState,
-    sgraph::Pseudostate,
+    sgraph_RegularState,
+    sgraph_Pseudostate,
     ChoiceKind,
     EntryKind,
 )
@@ -50,6 +50,194 @@ from classes import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_sgraph_scope_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Scope)
+
+
+def test_sgraph_scope_constructor_exists():
+    assert callable(sgraph_Scope.__init__)
+
+
+def test_sgraph_scope_constructor_args():
+    sig = inspect.signature(sgraph_Scope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_specificationelement_is_not_abstract():
+    assert not inspect.isabstract(sgraph_SpecificationElement)
+
+
+def test_sgraph_specificationelement_constructor_exists():
+    assert callable(sgraph_SpecificationElement.__init__)
+
+
+def test_sgraph_specificationelement_constructor_args():
+    sig = inspect.signature(sgraph_SpecificationElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "specification" in params, "Missing parameter 'specification'"
+
+def test_sgraph_specificationelement_has_specification():
+    assert hasattr(sgraph_SpecificationElement, "specification")
+    descriptor = None
+    for klass in sgraph_SpecificationElement.__mro__:
+        if "specification" in klass.__dict__:
+            descriptor = klass.__dict__["specification"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sgraph_scopedelement_is_not_abstract():
+    assert not inspect.isabstract(sgraph_ScopedElement)
+
+
+def test_sgraph_scopedelement_constructor_exists():
+    assert callable(sgraph_ScopedElement.__init__)
+
+
+def test_sgraph_scopedelement_constructor_args():
+    sig = inspect.signature(sgraph_ScopedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "namespace" in params, "Missing parameter 'namespace'"
+
+def test_sgraph_scopedelement_has_namespace():
+    assert hasattr(sgraph_ScopedElement, "namespace")
+    descriptor = None
+    for klass in sgraph_ScopedElement.__mro__:
+        if "namespace" in klass.__dict__:
+            descriptor = klass.__dict__["namespace"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sgraph_reaction_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Reaction)
+
+
+def test_sgraph_reaction_constructor_exists():
+    assert callable(sgraph_Reaction.__init__)
+
+
+def test_sgraph_reaction_constructor_args():
+    sig = inspect.signature(sgraph_Reaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_reactiveelement_is_not_abstract():
+    assert not inspect.isabstract(sgraph_ReactiveElement)
+
+
+def test_sgraph_reactiveelement_constructor_exists():
+    assert callable(sgraph_ReactiveElement.__init__)
+
+
+def test_sgraph_reactiveelement_constructor_args():
+    sig = inspect.signature(sgraph_ReactiveElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_reactionproperty_is_not_abstract():
+    assert not inspect.isabstract(sgraph_ReactionProperty)
+
+
+def test_sgraph_reactionproperty_constructor_exists():
+    assert callable(sgraph_ReactionProperty.__init__)
+
+
+def test_sgraph_reactionproperty_constructor_args():
+    sig = inspect.signature(sgraph_ReactionProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_effect_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Effect)
+
+
+def test_sgraph_effect_constructor_exists():
+    assert callable(sgraph_Effect.__init__)
+
+
+def test_sgraph_effect_constructor_args():
+    sig = inspect.signature(sgraph_Effect.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_trigger_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Trigger)
+
+
+def test_sgraph_trigger_constructor_exists():
+    assert callable(sgraph_Trigger.__init__)
+
+
+def test_sgraph_trigger_constructor_args():
+    sig = inspect.signature(sgraph_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_declaration_is_not_abstract():
+    assert not inspect.isabstract(Declaration)
+
+
+def test_declaration_constructor_exists():
+    assert callable(Declaration.__init__)
+
+
+def test_declaration_constructor_args():
+    sig = inspect.signature(Declaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_event_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Event)
+
+
+def test_sgraph_event_constructor_exists():
+    assert callable(sgraph_Event.__init__)
+
+
+def test_sgraph_event_constructor_args():
+    sig = inspect.signature(sgraph_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(sgraph_ImportDeclaration)
+
+
+def test_sgraph_importdeclaration_constructor_exists():
+    assert callable(sgraph_ImportDeclaration.__init__)
+
+
+def test_sgraph_importdeclaration_constructor_args():
+    sig = inspect.signature(sgraph_ImportDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_variable_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Variable)
+
+
+def test_sgraph_variable_constructor_exists():
+    assert callable(sgraph_Variable.__init__)
+
+
+def test_sgraph_variable_constructor_args():
+    sig = inspect.signature(sgraph_Variable.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -67,37 +255,37 @@ def test_regularstate_constructor_args():
 
 
 
-def test_sgraph::finalstate_is_not_abstract():
-    assert not inspect.isabstract(sgraph::FinalState)
+def test_sgraph_finalstate_is_not_abstract():
+    assert not inspect.isabstract(sgraph_FinalState)
 
 
-def test_sgraph::finalstate_constructor_exists():
-    assert callable(sgraph::FinalState.__init__)
+def test_sgraph_finalstate_constructor_exists():
+    assert callable(sgraph_FinalState.__init__)
 
 
-def test_sgraph::finalstate_constructor_args():
-    sig = inspect.signature(sgraph::FinalState.__init__)
+def test_sgraph_finalstate_constructor_args():
+    sig = inspect.signature(sgraph_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sgraph::import_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Import)
+def test_sgraph_import_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Import)
 
 
-def test_sgraph::import_constructor_exists():
-    assert callable(sgraph::Import.__init__)
+def test_sgraph_import_constructor_exists():
+    assert callable(sgraph_Import.__init__)
 
 
-def test_sgraph::import_constructor_args():
-    sig = inspect.signature(sgraph::Import.__init__)
+def test_sgraph_import_constructor_args():
+    sig = inspect.signature(sgraph_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_sgraph::import_has_importedNamespace():
-    assert hasattr(sgraph::Import, "importedNamespace")
+def test_sgraph_import_has_importedNamespace():
+    assert hasattr(sgraph_Import, "importedNamespace")
     descriptor = None
-    for klass in sgraph::Import.__mro__:
+    for klass in sgraph_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -161,27 +349,79 @@ def test_pseudostate_constructor_args():
 
 
 
-def test_sgraph::entry_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Entry)
+def test_sgraph_entry_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Entry)
 
 
-def test_sgraph::entry_constructor_exists():
-    assert callable(sgraph::Entry.__init__)
+def test_sgraph_entry_constructor_exists():
+    assert callable(sgraph_Entry.__init__)
 
 
-def test_sgraph::entry_constructor_args():
-    sig = inspect.signature(sgraph::Entry.__init__)
+def test_sgraph_entry_constructor_args():
+    sig = inspect.signature(sgraph_Entry.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_sgraph::entry_has_kind():
-    assert hasattr(sgraph::Entry, "kind")
+def test_sgraph_entry_has_kind():
+    assert hasattr(sgraph_Entry, "kind")
     descriptor = None
-    for klass in sgraph::Entry.__mro__:
+    for klass in sgraph_Entry.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_sgraph_exit_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Exit)
+
+
+def test_sgraph_exit_constructor_exists():
+    assert callable(sgraph_Exit.__init__)
+
+
+def test_sgraph_exit_constructor_args():
+    sig = inspect.signature(sgraph_Exit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_choice_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Choice)
+
+
+def test_sgraph_choice_constructor_exists():
+    assert callable(sgraph_Choice.__init__)
+
+
+def test_sgraph_choice_constructor_args():
+    sig = inspect.signature(sgraph_Choice.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_sgraph_choice_has_kind():
+    assert hasattr(sgraph_Choice, "kind")
+    descriptor = None
+    for klass in sgraph_Choice.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sgraph_synchronization_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Synchronization)
+
+
+def test_sgraph_synchronization_constructor_exists():
+    assert callable(sgraph_Synchronization.__init__)
+
+
+def test_sgraph_synchronization_constructor_args():
+    sig = inspect.signature(sgraph_Synchronization.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -195,246 +435,6 @@ def test_documentedelement_constructor_exists():
 
 def test_documentedelement_constructor_args():
     sig = inspect.signature(DocumentedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::scope_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Scope)
-
-
-def test_sgraph::scope_constructor_exists():
-    assert callable(sgraph::Scope.__init__)
-
-
-def test_sgraph::scope_constructor_args():
-    sig = inspect.signature(sgraph::Scope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::specificationelement_is_not_abstract():
-    assert not inspect.isabstract(sgraph::SpecificationElement)
-
-
-def test_sgraph::specificationelement_constructor_exists():
-    assert callable(sgraph::SpecificationElement.__init__)
-
-
-def test_sgraph::specificationelement_constructor_args():
-    sig = inspect.signature(sgraph::SpecificationElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "specification" in params, "Missing parameter 'specification'"
-
-def test_sgraph::specificationelement_has_specification():
-    assert hasattr(sgraph::SpecificationElement, "specification")
-    descriptor = None
-    for klass in sgraph::SpecificationElement.__mro__:
-        if "specification" in klass.__dict__:
-            descriptor = klass.__dict__["specification"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sgraph::synchronization_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Synchronization)
-
-
-def test_sgraph::synchronization_constructor_exists():
-    assert callable(sgraph::Synchronization.__init__)
-
-
-def test_sgraph::synchronization_constructor_args():
-    sig = inspect.signature(sgraph::Synchronization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::scopedelement_is_not_abstract():
-    assert not inspect.isabstract(sgraph::ScopedElement)
-
-
-def test_sgraph::scopedelement_constructor_exists():
-    assert callable(sgraph::ScopedElement.__init__)
-
-
-def test_sgraph::scopedelement_constructor_args():
-    sig = inspect.signature(sgraph::ScopedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "namespace" in params, "Missing parameter 'namespace'"
-
-def test_sgraph::scopedelement_has_namespace():
-    assert hasattr(sgraph::ScopedElement, "namespace")
-    descriptor = None
-    for klass in sgraph::ScopedElement.__mro__:
-        if "namespace" in klass.__dict__:
-            descriptor = klass.__dict__["namespace"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sgraph::reaction_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Reaction)
-
-
-def test_sgraph::reaction_constructor_exists():
-    assert callable(sgraph::Reaction.__init__)
-
-
-def test_sgraph::reaction_constructor_args():
-    sig = inspect.signature(sgraph::Reaction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::reactiveelement_is_not_abstract():
-    assert not inspect.isabstract(sgraph::ReactiveElement)
-
-
-def test_sgraph::reactiveelement_constructor_exists():
-    assert callable(sgraph::ReactiveElement.__init__)
-
-
-def test_sgraph::reactiveelement_constructor_args():
-    sig = inspect.signature(sgraph::ReactiveElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::exit_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Exit)
-
-
-def test_sgraph::exit_constructor_exists():
-    assert callable(sgraph::Exit.__init__)
-
-
-def test_sgraph::exit_constructor_args():
-    sig = inspect.signature(sgraph::Exit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::reactionproperty_is_not_abstract():
-    assert not inspect.isabstract(sgraph::ReactionProperty)
-
-
-def test_sgraph::reactionproperty_constructor_exists():
-    assert callable(sgraph::ReactionProperty.__init__)
-
-
-def test_sgraph::reactionproperty_constructor_args():
-    sig = inspect.signature(sgraph::ReactionProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::effect_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Effect)
-
-
-def test_sgraph::effect_constructor_exists():
-    assert callable(sgraph::Effect.__init__)
-
-
-def test_sgraph::effect_constructor_args():
-    sig = inspect.signature(sgraph::Effect.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::trigger_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Trigger)
-
-
-def test_sgraph::trigger_constructor_exists():
-    assert callable(sgraph::Trigger.__init__)
-
-
-def test_sgraph::trigger_constructor_args():
-    sig = inspect.signature(sgraph::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::choice_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Choice)
-
-
-def test_sgraph::choice_constructor_exists():
-    assert callable(sgraph::Choice.__init__)
-
-
-def test_sgraph::choice_constructor_args():
-    sig = inspect.signature(sgraph::Choice.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_sgraph::choice_has_kind():
-    assert hasattr(sgraph::Choice, "kind")
-    descriptor = None
-    for klass in sgraph::Choice.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_declaration_is_not_abstract():
-    assert not inspect.isabstract(Declaration)
-
-
-def test_declaration_constructor_exists():
-    assert callable(Declaration.__init__)
-
-
-def test_declaration_constructor_args():
-    sig = inspect.signature(Declaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::event_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Event)
-
-
-def test_sgraph::event_constructor_exists():
-    assert callable(sgraph::Event.__init__)
-
-
-def test_sgraph::event_constructor_args():
-    sig = inspect.signature(sgraph::Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(sgraph::ImportDeclaration)
-
-
-def test_sgraph::importdeclaration_constructor_exists():
-    assert callable(sgraph::ImportDeclaration.__init__)
-
-
-def test_sgraph::importdeclaration_constructor_args():
-    sig = inspect.signature(sgraph::ImportDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::variable_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Variable)
-
-
-def test_sgraph::variable_constructor_exists():
-    assert callable(sgraph::Variable.__init__)
-
-
-def test_sgraph::variable_constructor_args():
-    sig = inspect.signature(sgraph::Variable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -467,87 +467,73 @@ def test_specificationelement_constructor_args():
 
 
 
-def test_sgraph::transition_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Transition)
+def test_sgraph_state_is_not_abstract():
+    assert not inspect.isabstract(sgraph_State)
 
 
-def test_sgraph::transition_constructor_exists():
-    assert callable(sgraph::Transition.__init__)
+def test_sgraph_state_constructor_exists():
+    assert callable(sgraph_State.__init__)
 
 
-def test_sgraph::transition_constructor_args():
-    sig = inspect.signature(sgraph::Transition.__init__)
+def test_sgraph_state_constructor_args():
+    sig = inspect.signature(sgraph_State.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_sgraph::state_is_not_abstract():
-    assert not inspect.isabstract(sgraph::State)
-
-
-def test_sgraph::state_constructor_exists():
-    assert callable(sgraph::State.__init__)
-
-
-def test_sgraph::state_constructor_args():
-    sig = inspect.signature(sgraph::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "substatechartId" in params, "Missing parameter 'substatechartId'"
-    assert "subchart" in params, "Missing parameter 'subchart'"
     assert "orthogonal" in params, "Missing parameter 'orthogonal'"
     assert "composite" in params, "Missing parameter 'composite'"
     assert "leaf" in params, "Missing parameter 'leaf'"
+    assert "subchart" in params, "Missing parameter 'subchart'"
+    assert "substatechartId" in params, "Missing parameter 'substatechartId'"
     assert "simple" in params, "Missing parameter 'simple'"
 
-def test_sgraph::state_has_substatechartId():
-    assert hasattr(sgraph::State, "substatechartId")
+def test_sgraph_state_has_orthogonal():
+    assert hasattr(sgraph_State, "orthogonal")
     descriptor = None
-    for klass in sgraph::State.__mro__:
-        if "substatechartId" in klass.__dict__:
-            descriptor = klass.__dict__["substatechartId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sgraph::state_has_subchart():
-    assert hasattr(sgraph::State, "subchart")
-    descriptor = None
-    for klass in sgraph::State.__mro__:
-        if "subchart" in klass.__dict__:
-            descriptor = klass.__dict__["subchart"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sgraph::state_has_orthogonal():
-    assert hasattr(sgraph::State, "orthogonal")
-    descriptor = None
-    for klass in sgraph::State.__mro__:
+    for klass in sgraph_State.__mro__:
         if "orthogonal" in klass.__dict__:
             descriptor = klass.__dict__["orthogonal"]
             break
     assert isinstance(descriptor, property)
 
-def test_sgraph::state_has_composite():
-    assert hasattr(sgraph::State, "composite")
+def test_sgraph_state_has_composite():
+    assert hasattr(sgraph_State, "composite")
     descriptor = None
-    for klass in sgraph::State.__mro__:
+    for klass in sgraph_State.__mro__:
         if "composite" in klass.__dict__:
             descriptor = klass.__dict__["composite"]
             break
     assert isinstance(descriptor, property)
 
-def test_sgraph::state_has_leaf():
-    assert hasattr(sgraph::State, "leaf")
+def test_sgraph_state_has_leaf():
+    assert hasattr(sgraph_State, "leaf")
     descriptor = None
-    for klass in sgraph::State.__mro__:
+    for klass in sgraph_State.__mro__:
         if "leaf" in klass.__dict__:
             descriptor = klass.__dict__["leaf"]
             break
     assert isinstance(descriptor, property)
 
-def test_sgraph::state_has_simple():
-    assert hasattr(sgraph::State, "simple")
+def test_sgraph_state_has_subchart():
+    assert hasattr(sgraph_State, "subchart")
     descriptor = None
-    for klass in sgraph::State.__mro__:
+    for klass in sgraph_State.__mro__:
+        if "subchart" in klass.__dict__:
+            descriptor = klass.__dict__["subchart"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sgraph_state_has_substatechartId():
+    assert hasattr(sgraph_State, "substatechartId")
+    descriptor = None
+    for klass in sgraph_State.__mro__:
+        if "substatechartId" in klass.__dict__:
+            descriptor = klass.__dict__["substatechartId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sgraph_state_has_simple():
+    assert hasattr(sgraph_State, "simple")
+    descriptor = None
+    for klass in sgraph_State.__mro__:
         if "simple" in klass.__dict__:
             descriptor = klass.__dict__["simple"]
             break
@@ -555,16 +541,30 @@ def test_sgraph::state_has_simple():
 
 
 
-def test_sgraph::compositeelement_is_not_abstract():
-    assert not inspect.isabstract(sgraph::CompositeElement)
+def test_sgraph_transition_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Transition)
 
 
-def test_sgraph::compositeelement_constructor_exists():
-    assert callable(sgraph::CompositeElement.__init__)
+def test_sgraph_transition_constructor_exists():
+    assert callable(sgraph_Transition.__init__)
 
 
-def test_sgraph::compositeelement_constructor_args():
-    sig = inspect.signature(sgraph::CompositeElement.__init__)
+def test_sgraph_transition_constructor_args():
+    sig = inspect.signature(sgraph_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sgraph_compositeelement_is_not_abstract():
+    assert not inspect.isabstract(sgraph_CompositeElement)
+
+
+def test_sgraph_compositeelement_constructor_exists():
+    assert callable(sgraph_CompositeElement.__init__)
+
+
+def test_sgraph_compositeelement_constructor_args():
+    sig = inspect.signature(sgraph_CompositeElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -583,58 +583,58 @@ def test_namedelement_constructor_args():
 
 
 
-def test_sgraph::statechart_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Statechart)
+def test_sgraph_declaration_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Declaration)
 
 
-def test_sgraph::statechart_constructor_exists():
-    assert callable(sgraph::Statechart.__init__)
+def test_sgraph_declaration_constructor_exists():
+    assert callable(sgraph_Declaration.__init__)
 
 
-def test_sgraph::statechart_constructor_args():
-    sig = inspect.signature(sgraph::Statechart.__init__)
+def test_sgraph_declaration_constructor_args():
+    sig = inspect.signature(sgraph_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sgraph::region_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Region)
+def test_sgraph_statechart_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Statechart)
 
 
-def test_sgraph::region_constructor_exists():
-    assert callable(sgraph::Region.__init__)
+def test_sgraph_statechart_constructor_exists():
+    assert callable(sgraph_Statechart.__init__)
 
 
-def test_sgraph::region_constructor_args():
-    sig = inspect.signature(sgraph::Region.__init__)
+def test_sgraph_statechart_constructor_args():
+    sig = inspect.signature(sgraph_Statechart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sgraph::declaration_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Declaration)
+def test_sgraph_region_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Region)
 
 
-def test_sgraph::declaration_constructor_exists():
-    assert callable(sgraph::Declaration.__init__)
+def test_sgraph_region_constructor_exists():
+    assert callable(sgraph_Region.__init__)
 
 
-def test_sgraph::declaration_constructor_args():
-    sig = inspect.signature(sgraph::Declaration.__init__)
+def test_sgraph_region_constructor_args():
+    sig = inspect.signature(sgraph_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sgraph::vertex_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Vertex)
+def test_sgraph_vertex_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Vertex)
 
 
-def test_sgraph::vertex_constructor_exists():
-    assert callable(sgraph::Vertex.__init__)
+def test_sgraph_vertex_constructor_exists():
+    assert callable(sgraph_Vertex.__init__)
 
 
-def test_sgraph::vertex_constructor_args():
-    sig = inspect.signature(sgraph::Vertex.__init__)
+def test_sgraph_vertex_constructor_args():
+    sig = inspect.signature(sgraph_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -653,30 +653,30 @@ def test_vertex_constructor_args():
 
 
 
-def test_sgraph::regularstate_is_not_abstract():
-    assert not inspect.isabstract(sgraph::RegularState)
+def test_sgraph_regularstate_is_not_abstract():
+    assert not inspect.isabstract(sgraph_RegularState)
 
 
-def test_sgraph::regularstate_constructor_exists():
-    assert callable(sgraph::RegularState.__init__)
+def test_sgraph_regularstate_constructor_exists():
+    assert callable(sgraph_RegularState.__init__)
 
 
-def test_sgraph::regularstate_constructor_args():
-    sig = inspect.signature(sgraph::RegularState.__init__)
+def test_sgraph_regularstate_constructor_args():
+    sig = inspect.signature(sgraph_RegularState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sgraph::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(sgraph::Pseudostate)
+def test_sgraph_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(sgraph_Pseudostate)
 
 
-def test_sgraph::pseudostate_constructor_exists():
-    assert callable(sgraph::Pseudostate.__init__)
+def test_sgraph_pseudostate_constructor_exists():
+    assert callable(sgraph_Pseudostate.__init__)
 
 
-def test_sgraph::pseudostate_constructor_args():
-    sig = inspect.signature(sgraph::Pseudostate.__init__)
+def test_sgraph_pseudostate_constructor_args():
+    sig = inspect.signature(sgraph_Pseudostate.__init__)
     params = list(sig.parameters.keys())
 
 def test_choicekind_exists():
@@ -687,8 +687,8 @@ def test_choicekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ChoiceKind]
     expected_literals = [
-        "dynamic",
         "static",
+        "dynamic",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -702,9 +702,9 @@ def test_entrykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EntryKind]
     expected_literals = [
-        "initial",
         "shallowHistory",
         "deepHistory",
+        "initial",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -722,14 +722,54 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+sgraph_Scope_strategy = st.builds(
+    sgraph_Scope,
+)
+sgraph_SpecificationElement_strategy = st.builds(
+    sgraph_SpecificationElement,
+    specification=
+        safe_text
+)
+sgraph_ScopedElement_strategy = st.builds(
+    sgraph_ScopedElement,
+    namespace=
+        safe_text
+)
+sgraph_Reaction_strategy = st.builds(
+    sgraph_Reaction,
+)
+sgraph_ReactiveElement_strategy = st.builds(
+    sgraph_ReactiveElement,
+)
+sgraph_ReactionProperty_strategy = st.builds(
+    sgraph_ReactionProperty,
+)
+sgraph_Effect_strategy = st.builds(
+    sgraph_Effect,
+)
+sgraph_Trigger_strategy = st.builds(
+    sgraph_Trigger,
+)
+Declaration_strategy = st.builds(
+    Declaration,
+)
+sgraph_Event_strategy = st.builds(
+    sgraph_Event,
+)
+sgraph_ImportDeclaration_strategy = st.builds(
+    sgraph_ImportDeclaration,
+)
+sgraph_Variable_strategy = st.builds(
+    sgraph_Variable,
+)
 RegularState_strategy = st.builds(
     RegularState,
 )
-sgraph::FinalState_strategy = st.builds(
-    sgraph::FinalState,
+sgraph_FinalState_strategy = st.builds(
+    sgraph_FinalState,
 )
-sgraph::Import_strategy = st.builds(
-    sgraph::Import,
+sgraph_Import_strategy = st.builds(
+    sgraph_Import,
     importedNamespace=
         safe_text
 )
@@ -745,64 +785,24 @@ ReactiveElement_strategy = st.builds(
 Pseudostate_strategy = st.builds(
     Pseudostate,
 )
-sgraph::Entry_strategy = st.builds(
-    sgraph::Entry,
+sgraph_Entry_strategy = st.builds(
+    sgraph_Entry,
     kind=
         safe_text
+)
+sgraph_Exit_strategy = st.builds(
+    sgraph_Exit,
+)
+sgraph_Choice_strategy = st.builds(
+    sgraph_Choice,
+    kind=
+        safe_text
+)
+sgraph_Synchronization_strategy = st.builds(
+    sgraph_Synchronization,
 )
 DocumentedElement_strategy = st.builds(
     DocumentedElement,
-)
-sgraph::Scope_strategy = st.builds(
-    sgraph::Scope,
-)
-sgraph::SpecificationElement_strategy = st.builds(
-    sgraph::SpecificationElement,
-    specification=
-        safe_text
-)
-sgraph::Synchronization_strategy = st.builds(
-    sgraph::Synchronization,
-)
-sgraph::ScopedElement_strategy = st.builds(
-    sgraph::ScopedElement,
-    namespace=
-        safe_text
-)
-sgraph::Reaction_strategy = st.builds(
-    sgraph::Reaction,
-)
-sgraph::ReactiveElement_strategy = st.builds(
-    sgraph::ReactiveElement,
-)
-sgraph::Exit_strategy = st.builds(
-    sgraph::Exit,
-)
-sgraph::ReactionProperty_strategy = st.builds(
-    sgraph::ReactionProperty,
-)
-sgraph::Effect_strategy = st.builds(
-    sgraph::Effect,
-)
-sgraph::Trigger_strategy = st.builds(
-    sgraph::Trigger,
-)
-sgraph::Choice_strategy = st.builds(
-    sgraph::Choice,
-    kind=
-        safe_text
-)
-Declaration_strategy = st.builds(
-    Declaration,
-)
-sgraph::Event_strategy = st.builds(
-    sgraph::Event,
-)
-sgraph::ImportDeclaration_strategy = st.builds(
-    sgraph::ImportDeclaration,
-)
-sgraph::Variable_strategy = st.builds(
-    sgraph::Variable,
 )
 Reaction_strategy = st.builds(
     Reaction,
@@ -810,74 +810,147 @@ Reaction_strategy = st.builds(
 SpecificationElement_strategy = st.builds(
     SpecificationElement,
 )
-sgraph::Transition_strategy = st.builds(
-    sgraph::Transition,
-)
-sgraph::State_strategy = st.builds(
-    sgraph::State,
-    substatechartId=
-        safe_text,
-    subchart=
-        st.booleans(),
+sgraph_State_strategy = st.builds(
+    sgraph_State,
     orthogonal=
         st.booleans(),
     composite=
         st.booleans(),
     leaf=
         st.booleans(),
+    subchart=
+        st.booleans(),
+    substatechartId=
+        safe_text,
     simple=
         st.booleans()
 )
-sgraph::CompositeElement_strategy = st.builds(
-    sgraph::CompositeElement,
+sgraph_Transition_strategy = st.builds(
+    sgraph_Transition,
+)
+sgraph_CompositeElement_strategy = st.builds(
+    sgraph_CompositeElement,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-sgraph::Statechart_strategy = st.builds(
-    sgraph::Statechart,
+sgraph_Declaration_strategy = st.builds(
+    sgraph_Declaration,
 )
-sgraph::Region_strategy = st.builds(
-    sgraph::Region,
+sgraph_Statechart_strategy = st.builds(
+    sgraph_Statechart,
 )
-sgraph::Declaration_strategy = st.builds(
-    sgraph::Declaration,
+sgraph_Region_strategy = st.builds(
+    sgraph_Region,
 )
-sgraph::Vertex_strategy = st.builds(
-    sgraph::Vertex,
+sgraph_Vertex_strategy = st.builds(
+    sgraph_Vertex,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-sgraph::RegularState_strategy = st.builds(
-    sgraph::RegularState,
+sgraph_RegularState_strategy = st.builds(
+    sgraph_RegularState,
 )
-sgraph::Pseudostate_strategy = st.builds(
-    sgraph::Pseudostate,
+sgraph_Pseudostate_strategy = st.builds(
+    sgraph_Pseudostate,
 )
+
+@given(instance=sgraph_Scope_strategy)
+@settings(max_examples=50)
+def test_sgraph_scope_instantiation(instance):
+    assert isinstance(instance, sgraph_Scope)
+
+@given(instance=sgraph_SpecificationElement_strategy)
+@settings(max_examples=50)
+def test_sgraph_specificationelement_instantiation(instance):
+    assert isinstance(instance, sgraph_SpecificationElement)
+
+
+
+@given(instance=sgraph_SpecificationElement_strategy)
+def test_sgraph_specificationelement_specification_setter(instance):
+    original = instance.specification
+    instance.specification = original
+    assert instance.specification == original
+
+@given(instance=sgraph_ScopedElement_strategy)
+@settings(max_examples=50)
+def test_sgraph_scopedelement_instantiation(instance):
+    assert isinstance(instance, sgraph_ScopedElement)
+
+
+
+@given(instance=sgraph_ScopedElement_strategy)
+def test_sgraph_scopedelement_namespace_setter(instance):
+    original = instance.namespace
+    instance.namespace = original
+    assert instance.namespace == original
+
+@given(instance=sgraph_Reaction_strategy)
+@settings(max_examples=50)
+def test_sgraph_reaction_instantiation(instance):
+    assert isinstance(instance, sgraph_Reaction)
+
+@given(instance=sgraph_ReactiveElement_strategy)
+@settings(max_examples=50)
+def test_sgraph_reactiveelement_instantiation(instance):
+    assert isinstance(instance, sgraph_ReactiveElement)
+
+@given(instance=sgraph_ReactionProperty_strategy)
+@settings(max_examples=50)
+def test_sgraph_reactionproperty_instantiation(instance):
+    assert isinstance(instance, sgraph_ReactionProperty)
+
+@given(instance=sgraph_Effect_strategy)
+@settings(max_examples=50)
+def test_sgraph_effect_instantiation(instance):
+    assert isinstance(instance, sgraph_Effect)
+
+@given(instance=sgraph_Trigger_strategy)
+@settings(max_examples=50)
+def test_sgraph_trigger_instantiation(instance):
+    assert isinstance(instance, sgraph_Trigger)
+
+@given(instance=Declaration_strategy)
+@settings(max_examples=50)
+def test_declaration_instantiation(instance):
+    assert isinstance(instance, Declaration)
+
+@given(instance=sgraph_Event_strategy)
+@settings(max_examples=50)
+def test_sgraph_event_instantiation(instance):
+    assert isinstance(instance, sgraph_Event)
+
+@given(instance=sgraph_ImportDeclaration_strategy)
+@settings(max_examples=50)
+def test_sgraph_importdeclaration_instantiation(instance):
+    assert isinstance(instance, sgraph_ImportDeclaration)
+
+@given(instance=sgraph_Variable_strategy)
+@settings(max_examples=50)
+def test_sgraph_variable_instantiation(instance):
+    assert isinstance(instance, sgraph_Variable)
 
 @given(instance=RegularState_strategy)
 @settings(max_examples=50)
 def test_regularstate_instantiation(instance):
     assert isinstance(instance, RegularState)
 
-@given(instance=sgraph::FinalState_strategy)
+@given(instance=sgraph_FinalState_strategy)
 @settings(max_examples=50)
-def test_sgraph::finalstate_instantiation(instance):
-    assert isinstance(instance, sgraph::FinalState)
+def test_sgraph_finalstate_instantiation(instance):
+    assert isinstance(instance, sgraph_FinalState)
 
-@given(instance=sgraph::Import_strategy)
+@given(instance=sgraph_Import_strategy)
 @settings(max_examples=50)
-def test_sgraph::import_instantiation(instance):
-    assert isinstance(instance, sgraph::Import)
-
-@given(instance=sgraph::Import_strategy)
-def test_sgraph::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_sgraph_import_instantiation(instance):
+    assert isinstance(instance, sgraph_Import)
 
 
-@given(instance=sgraph::Import_strategy)
-def test_sgraph::import_importedNamespace_setter(instance):
+
+@given(instance=sgraph_Import_strategy)
+def test_sgraph_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
@@ -902,134 +975,46 @@ def test_reactiveelement_instantiation(instance):
 def test_pseudostate_instantiation(instance):
     assert isinstance(instance, Pseudostate)
 
-@given(instance=sgraph::Entry_strategy)
+@given(instance=sgraph_Entry_strategy)
 @settings(max_examples=50)
-def test_sgraph::entry_instantiation(instance):
-    assert isinstance(instance, sgraph::Entry)
-
-@given(instance=sgraph::Entry_strategy)
-def test_sgraph::entry_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_sgraph_entry_instantiation(instance):
+    assert isinstance(instance, sgraph_Entry)
 
 
-@given(instance=sgraph::Entry_strategy)
-def test_sgraph::entry_kind_setter(instance):
+
+@given(instance=sgraph_Entry_strategy)
+def test_sgraph_entry_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
+
+@given(instance=sgraph_Exit_strategy)
+@settings(max_examples=50)
+def test_sgraph_exit_instantiation(instance):
+    assert isinstance(instance, sgraph_Exit)
+
+@given(instance=sgraph_Choice_strategy)
+@settings(max_examples=50)
+def test_sgraph_choice_instantiation(instance):
+    assert isinstance(instance, sgraph_Choice)
+
+
+
+@given(instance=sgraph_Choice_strategy)
+def test_sgraph_choice_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=sgraph_Synchronization_strategy)
+@settings(max_examples=50)
+def test_sgraph_synchronization_instantiation(instance):
+    assert isinstance(instance, sgraph_Synchronization)
 
 @given(instance=DocumentedElement_strategy)
 @settings(max_examples=50)
 def test_documentedelement_instantiation(instance):
     assert isinstance(instance, DocumentedElement)
-
-@given(instance=sgraph::Scope_strategy)
-@settings(max_examples=50)
-def test_sgraph::scope_instantiation(instance):
-    assert isinstance(instance, sgraph::Scope)
-
-@given(instance=sgraph::SpecificationElement_strategy)
-@settings(max_examples=50)
-def test_sgraph::specificationelement_instantiation(instance):
-    assert isinstance(instance, sgraph::SpecificationElement)
-
-@given(instance=sgraph::SpecificationElement_strategy)
-def test_sgraph::specificationelement_specification_type(instance):
-    assert isinstance(instance.specification, str)
-
-
-@given(instance=sgraph::SpecificationElement_strategy)
-def test_sgraph::specificationelement_specification_setter(instance):
-    original = instance.specification
-    instance.specification = original
-    assert instance.specification == original
-
-@given(instance=sgraph::Synchronization_strategy)
-@settings(max_examples=50)
-def test_sgraph::synchronization_instantiation(instance):
-    assert isinstance(instance, sgraph::Synchronization)
-
-@given(instance=sgraph::ScopedElement_strategy)
-@settings(max_examples=50)
-def test_sgraph::scopedelement_instantiation(instance):
-    assert isinstance(instance, sgraph::ScopedElement)
-
-@given(instance=sgraph::ScopedElement_strategy)
-def test_sgraph::scopedelement_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
-
-
-@given(instance=sgraph::ScopedElement_strategy)
-def test_sgraph::scopedelement_namespace_setter(instance):
-    original = instance.namespace
-    instance.namespace = original
-    assert instance.namespace == original
-
-@given(instance=sgraph::Reaction_strategy)
-@settings(max_examples=50)
-def test_sgraph::reaction_instantiation(instance):
-    assert isinstance(instance, sgraph::Reaction)
-
-@given(instance=sgraph::ReactiveElement_strategy)
-@settings(max_examples=50)
-def test_sgraph::reactiveelement_instantiation(instance):
-    assert isinstance(instance, sgraph::ReactiveElement)
-
-@given(instance=sgraph::Exit_strategy)
-@settings(max_examples=50)
-def test_sgraph::exit_instantiation(instance):
-    assert isinstance(instance, sgraph::Exit)
-
-@given(instance=sgraph::ReactionProperty_strategy)
-@settings(max_examples=50)
-def test_sgraph::reactionproperty_instantiation(instance):
-    assert isinstance(instance, sgraph::ReactionProperty)
-
-@given(instance=sgraph::Effect_strategy)
-@settings(max_examples=50)
-def test_sgraph::effect_instantiation(instance):
-    assert isinstance(instance, sgraph::Effect)
-
-@given(instance=sgraph::Trigger_strategy)
-@settings(max_examples=50)
-def test_sgraph::trigger_instantiation(instance):
-    assert isinstance(instance, sgraph::Trigger)
-
-@given(instance=sgraph::Choice_strategy)
-@settings(max_examples=50)
-def test_sgraph::choice_instantiation(instance):
-    assert isinstance(instance, sgraph::Choice)
-
-@given(instance=sgraph::Choice_strategy)
-def test_sgraph::choice_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=sgraph::Choice_strategy)
-def test_sgraph::choice_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=Declaration_strategy)
-@settings(max_examples=50)
-def test_declaration_instantiation(instance):
-    assert isinstance(instance, Declaration)
-
-@given(instance=sgraph::Event_strategy)
-@settings(max_examples=50)
-def test_sgraph::event_instantiation(instance):
-    assert isinstance(instance, sgraph::Event)
-
-@given(instance=sgraph::ImportDeclaration_strategy)
-@settings(max_examples=50)
-def test_sgraph::importdeclaration_instantiation(instance):
-    assert isinstance(instance, sgraph::ImportDeclaration)
-
-@given(instance=sgraph::Variable_strategy)
-@settings(max_examples=50)
-def test_sgraph::variable_instantiation(instance):
-    assert isinstance(instance, sgraph::Variable)
 
 @given(instance=Reaction_strategy)
 @settings(max_examples=50)
@@ -1041,123 +1026,105 @@ def test_reaction_instantiation(instance):
 def test_specificationelement_instantiation(instance):
     assert isinstance(instance, SpecificationElement)
 
-@given(instance=sgraph::Transition_strategy)
+@given(instance=sgraph_State_strategy)
 @settings(max_examples=50)
-def test_sgraph::transition_instantiation(instance):
-    assert isinstance(instance, sgraph::Transition)
-
-@given(instance=sgraph::State_strategy)
-@settings(max_examples=50)
-def test_sgraph::state_instantiation(instance):
-    assert isinstance(instance, sgraph::State)
-
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_substatechartId_type(instance):
-    assert isinstance(instance.substatechartId, str)
+def test_sgraph_state_instantiation(instance):
+    assert isinstance(instance, sgraph_State)
 
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_substatechartId_setter(instance):
-    original = instance.substatechartId
-    instance.substatechartId = original
-    assert instance.substatechartId == original
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_subchart_type(instance):
-    assert isinstance(instance.subchart, bool)
-
-
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_subchart_setter(instance):
-    original = instance.subchart
-    instance.subchart = original
-    assert instance.subchart == original
-
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_orthogonal_type(instance):
-    assert isinstance(instance.orthogonal, bool)
-
-
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_orthogonal_setter(instance):
+@given(instance=sgraph_State_strategy)
+def test_sgraph_state_orthogonal_setter(instance):
     original = instance.orthogonal
     instance.orthogonal = original
     assert instance.orthogonal == original
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_composite_type(instance):
-    assert isinstance(instance.composite, bool)
 
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_composite_setter(instance):
+@given(instance=sgraph_State_strategy)
+def test_sgraph_state_composite_setter(instance):
     original = instance.composite
     instance.composite = original
     assert instance.composite == original
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_leaf_type(instance):
-    assert isinstance(instance.leaf, bool)
 
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_leaf_setter(instance):
+@given(instance=sgraph_State_strategy)
+def test_sgraph_state_leaf_setter(instance):
     original = instance.leaf
     instance.leaf = original
     assert instance.leaf == original
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_simple_type(instance):
-    assert isinstance(instance.simple, bool)
 
 
-@given(instance=sgraph::State_strategy)
-def test_sgraph::state_simple_setter(instance):
+@given(instance=sgraph_State_strategy)
+def test_sgraph_state_subchart_setter(instance):
+    original = instance.subchart
+    instance.subchart = original
+    assert instance.subchart == original
+
+
+
+@given(instance=sgraph_State_strategy)
+def test_sgraph_state_substatechartId_setter(instance):
+    original = instance.substatechartId
+    instance.substatechartId = original
+    assert instance.substatechartId == original
+
+
+
+@given(instance=sgraph_State_strategy)
+def test_sgraph_state_simple_setter(instance):
     original = instance.simple
     instance.simple = original
     assert instance.simple == original
 
-@given(instance=sgraph::CompositeElement_strategy)
+@given(instance=sgraph_Transition_strategy)
 @settings(max_examples=50)
-def test_sgraph::compositeelement_instantiation(instance):
-    assert isinstance(instance, sgraph::CompositeElement)
+def test_sgraph_transition_instantiation(instance):
+    assert isinstance(instance, sgraph_Transition)
+
+@given(instance=sgraph_CompositeElement_strategy)
+@settings(max_examples=50)
+def test_sgraph_compositeelement_instantiation(instance):
+    assert isinstance(instance, sgraph_CompositeElement)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=sgraph::Statechart_strategy)
+@given(instance=sgraph_Declaration_strategy)
 @settings(max_examples=50)
-def test_sgraph::statechart_instantiation(instance):
-    assert isinstance(instance, sgraph::Statechart)
+def test_sgraph_declaration_instantiation(instance):
+    assert isinstance(instance, sgraph_Declaration)
 
-@given(instance=sgraph::Region_strategy)
+@given(instance=sgraph_Statechart_strategy)
 @settings(max_examples=50)
-def test_sgraph::region_instantiation(instance):
-    assert isinstance(instance, sgraph::Region)
+def test_sgraph_statechart_instantiation(instance):
+    assert isinstance(instance, sgraph_Statechart)
 
-@given(instance=sgraph::Declaration_strategy)
+@given(instance=sgraph_Region_strategy)
 @settings(max_examples=50)
-def test_sgraph::declaration_instantiation(instance):
-    assert isinstance(instance, sgraph::Declaration)
+def test_sgraph_region_instantiation(instance):
+    assert isinstance(instance, sgraph_Region)
 
-@given(instance=sgraph::Vertex_strategy)
+@given(instance=sgraph_Vertex_strategy)
 @settings(max_examples=50)
-def test_sgraph::vertex_instantiation(instance):
-    assert isinstance(instance, sgraph::Vertex)
+def test_sgraph_vertex_instantiation(instance):
+    assert isinstance(instance, sgraph_Vertex)
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=sgraph::RegularState_strategy)
+@given(instance=sgraph_RegularState_strategy)
 @settings(max_examples=50)
-def test_sgraph::regularstate_instantiation(instance):
-    assert isinstance(instance, sgraph::RegularState)
+def test_sgraph_regularstate_instantiation(instance):
+    assert isinstance(instance, sgraph_RegularState)
 
-@given(instance=sgraph::Pseudostate_strategy)
+@given(instance=sgraph_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_sgraph::pseudostate_instantiation(instance):
-    assert isinstance(instance, sgraph::Pseudostate)
+def test_sgraph_pseudostate_instantiation(instance):
+    assert isinstance(instance, sgraph_Pseudostate)

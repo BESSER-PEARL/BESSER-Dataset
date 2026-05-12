@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    employeeDsl::Employee,
-    employeeDsl::EmployeeContainer,
+from python_code import (
+    employeeDsl_Employee,
+    employeeDsl_EmployeeContainer,
 )
 
 # =============================================================================
@@ -16,60 +16,60 @@ from classes import (
 
 
 
-def test_employeedsl::employee_is_not_abstract():
-    assert not inspect.isabstract(employeeDsl::Employee)
+def test_employeedsl_employee_is_not_abstract():
+    assert not inspect.isabstract(employeeDsl_Employee)
 
 
-def test_employeedsl::employee_constructor_exists():
-    assert callable(employeeDsl::Employee.__init__)
+def test_employeedsl_employee_constructor_exists():
+    assert callable(employeeDsl_Employee.__init__)
 
 
-def test_employeedsl::employee_constructor_args():
-    sig = inspect.signature(employeeDsl::Employee.__init__)
+def test_employeedsl_employee_constructor_args():
+    sig = inspect.signature(employeeDsl_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "salary" in params, "Missing parameter 'salary'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_employeedsl::employee_has_salary():
-    assert hasattr(employeeDsl::Employee, "salary")
+def test_employeedsl_employee_has_salary():
+    assert hasattr(employeeDsl_Employee, "salary")
     descriptor = None
-    for klass in employeeDsl::Employee.__mro__:
+    for klass in employeeDsl_Employee.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
             break
     assert isinstance(descriptor, property)
 
-def test_employeedsl::employee_has_name():
-    assert hasattr(employeeDsl::Employee, "name")
+def test_employeedsl_employee_has_ID():
+    assert hasattr(employeeDsl_Employee, "ID")
     descriptor = None
-    for klass in employeeDsl::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employeedsl::employee_has_ID():
-    assert hasattr(employeeDsl::Employee, "ID")
-    descriptor = None
-    for klass in employeeDsl::Employee.__mro__:
+    for klass in employeeDsl_Employee.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
+def test_employeedsl_employee_has_name():
+    assert hasattr(employeeDsl_Employee, "name")
+    descriptor = None
+    for klass in employeeDsl_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_employeedsl::employeecontainer_is_not_abstract():
-    assert not inspect.isabstract(employeeDsl::EmployeeContainer)
+
+def test_employeedsl_employeecontainer_is_not_abstract():
+    assert not inspect.isabstract(employeeDsl_EmployeeContainer)
 
 
-def test_employeedsl::employeecontainer_constructor_exists():
-    assert callable(employeeDsl::EmployeeContainer.__init__)
+def test_employeedsl_employeecontainer_constructor_exists():
+    assert callable(employeeDsl_EmployeeContainer.__init__)
 
 
-def test_employeedsl::employeecontainer_constructor_args():
-    sig = inspect.signature(employeeDsl::EmployeeContainer.__init__)
+def test_employeedsl_employeecontainer_constructor_args():
+    sig = inspect.signature(employeeDsl_EmployeeContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,58 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-employeeDsl::Employee_strategy = st.builds(
-    employeeDsl::Employee,
+employeeDsl_Employee_strategy = st.builds(
+    employeeDsl_Employee,
     salary=
         st.integers(),
-    name=
-        safe_text,
     ID=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
-employeeDsl::EmployeeContainer_strategy = st.builds(
-    employeeDsl::EmployeeContainer,
+employeeDsl_EmployeeContainer_strategy = st.builds(
+    employeeDsl_EmployeeContainer,
 )
 
-@given(instance=employeeDsl::Employee_strategy)
+@given(instance=employeeDsl_Employee_strategy)
 @settings(max_examples=50)
-def test_employeedsl::employee_instantiation(instance):
-    assert isinstance(instance, employeeDsl::Employee)
-
-@given(instance=employeeDsl::Employee_strategy)
-def test_employeedsl::employee_salary_type(instance):
-    assert isinstance(instance.salary, int)
+def test_employeedsl_employee_instantiation(instance):
+    assert isinstance(instance, employeeDsl_Employee)
 
 
-@given(instance=employeeDsl::Employee_strategy)
-def test_employeedsl::employee_salary_setter(instance):
+
+@given(instance=employeeDsl_Employee_strategy)
+def test_employeedsl_employee_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
 
-@given(instance=employeeDsl::Employee_strategy)
-def test_employeedsl::employee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=employeeDsl::Employee_strategy)
-def test_employeedsl::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=employeeDsl::Employee_strategy)
-def test_employeedsl::employee_ID_type(instance):
-    assert isinstance(instance.ID, int)
-
-
-@given(instance=employeeDsl::Employee_strategy)
-def test_employeedsl::employee_ID_setter(instance):
+@given(instance=employeeDsl_Employee_strategy)
+def test_employeedsl_employee_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=employeeDsl::EmployeeContainer_strategy)
+
+
+@given(instance=employeeDsl_Employee_strategy)
+def test_employeedsl_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=employeeDsl_EmployeeContainer_strategy)
 @settings(max_examples=50)
-def test_employeedsl::employeecontainer_instantiation(instance):
-    assert isinstance(instance, employeeDsl::EmployeeContainer)
+def test_employeedsl_employeecontainer_instantiation(instance):
+    assert isinstance(instance, employeeDsl_EmployeeContainer)

@@ -3,12 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    FireAlarm_Sensor,
-    Sensor,
-    System___mirror,
     Newsfeed,
     Entertainment,
     MyHome,
@@ -24,133 +21,14 @@ from python_code import (
     Home_Security_System,
     Door_Sensor,
     Motion_Sensor,
+    FireAlarm_Sensor,
+    Sensor,
+    System___mirror,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_firealarm_sensor_is_not_abstract():
-    assert not inspect.isabstract(FireAlarm_Sensor)
-
-
-def test_firealarm_sensor_constructor_exists():
-    assert callable(FireAlarm_Sensor.__init__)
-
-
-def test_firealarm_sensor_constructor_args():
-    sig = inspect.signature(FireAlarm_Sensor.__init__)
-    params = list(sig.parameters.keys())
-    assert "SmokeAlarm" in params, "Missing parameter 'SmokeAlarm'"
-
-def test_firealarm_sensor_has_SmokeAlarm():
-    assert hasattr(FireAlarm_Sensor, "SmokeAlarm")
-    descriptor = None
-    for klass in FireAlarm_Sensor.__mro__:
-        if "SmokeAlarm" in klass.__dict__:
-            descriptor = klass.__dict__["SmokeAlarm"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sensor_is_not_abstract():
-    assert not inspect.isabstract(Sensor)
-
-
-def test_sensor_constructor_exists():
-    assert callable(Sensor.__init__)
-
-
-def test_sensor_constructor_args():
-    sig = inspect.signature(Sensor.__init__)
-    params = list(sig.parameters.keys())
-    assert "SensorType" in params, "Missing parameter 'SensorType'"
-    assert "SensorID" in params, "Missing parameter 'SensorID'"
-
-def test_sensor_has_SensorType():
-    assert hasattr(Sensor, "SensorType")
-    descriptor = None
-    for klass in Sensor.__mro__:
-        if "SensorType" in klass.__dict__:
-            descriptor = klass.__dict__["SensorType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sensor_has_SensorID():
-    assert hasattr(Sensor, "SensorID")
-    descriptor = None
-    for klass in Sensor.__mro__:
-        if "SensorID" in klass.__dict__:
-            descriptor = klass.__dict__["SensorID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_system___mirror_is_not_abstract():
-    assert not inspect.isabstract(System___mirror)
-
-
-def test_system___mirror_constructor_exists():
-    assert callable(System___mirror.__init__)
-
-
-def test_system___mirror_constructor_args():
-    sig = inspect.signature(System___mirror.__init__)
-    params = list(sig.parameters.keys())
-    assert "Display_feed" in params, "Missing parameter 'Display_feed'"
-    assert "Update" in params, "Missing parameter 'Update'"
-    assert "PhoneConnect" in params, "Missing parameter 'PhoneConnect'"
-    assert "security" in params, "Missing parameter 'security'"
-    assert "Status" in params, "Missing parameter 'Status'"
-
-def test_system___mirror_has_Display_feed():
-    assert hasattr(System___mirror, "Display_feed")
-    descriptor = None
-    for klass in System___mirror.__mro__:
-        if "Display_feed" in klass.__dict__:
-            descriptor = klass.__dict__["Display_feed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_system___mirror_has_Update():
-    assert hasattr(System___mirror, "Update")
-    descriptor = None
-    for klass in System___mirror.__mro__:
-        if "Update" in klass.__dict__:
-            descriptor = klass.__dict__["Update"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_system___mirror_has_PhoneConnect():
-    assert hasattr(System___mirror, "PhoneConnect")
-    descriptor = None
-    for klass in System___mirror.__mro__:
-        if "PhoneConnect" in klass.__dict__:
-            descriptor = klass.__dict__["PhoneConnect"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_system___mirror_has_security():
-    assert hasattr(System___mirror, "security")
-    descriptor = None
-    for klass in System___mirror.__mro__:
-        if "security" in klass.__dict__:
-            descriptor = klass.__dict__["security"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_system___mirror_has_Status():
-    assert hasattr(System___mirror, "Status")
-    descriptor = None
-    for klass in System___mirror.__mro__:
-        if "Status" in klass.__dict__:
-            descriptor = klass.__dict__["Status"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -166,10 +44,10 @@ def test_newsfeed_constructor_args():
     sig = inspect.signature(Newsfeed.__init__)
     params = list(sig.parameters.keys())
     assert "Email" in params, "Missing parameter 'Email'"
-    assert "News" in params, "Missing parameter 'News'"
-    assert "weather" in params, "Missing parameter 'weather'"
     assert "TimeID" in params, "Missing parameter 'TimeID'"
     assert "Calendar" in params, "Missing parameter 'Calendar'"
+    assert "News" in params, "Missing parameter 'News'"
+    assert "weather" in params, "Missing parameter 'weather'"
 
 def test_newsfeed_has_Email():
     assert hasattr(Newsfeed, "Email")
@@ -177,24 +55,6 @@ def test_newsfeed_has_Email():
     for klass in Newsfeed.__mro__:
         if "Email" in klass.__dict__:
             descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_newsfeed_has_News():
-    assert hasattr(Newsfeed, "News")
-    descriptor = None
-    for klass in Newsfeed.__mro__:
-        if "News" in klass.__dict__:
-            descriptor = klass.__dict__["News"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_newsfeed_has_weather():
-    assert hasattr(Newsfeed, "weather")
-    descriptor = None
-    for klass in Newsfeed.__mro__:
-        if "weather" in klass.__dict__:
-            descriptor = klass.__dict__["weather"]
             break
     assert isinstance(descriptor, property)
 
@@ -213,6 +73,24 @@ def test_newsfeed_has_Calendar():
     for klass in Newsfeed.__mro__:
         if "Calendar" in klass.__dict__:
             descriptor = klass.__dict__["Calendar"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_newsfeed_has_News():
+    assert hasattr(Newsfeed, "News")
+    descriptor = None
+    for klass in Newsfeed.__mro__:
+        if "News" in klass.__dict__:
+            descriptor = klass.__dict__["News"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_newsfeed_has_weather():
+    assert hasattr(Newsfeed, "weather")
+    descriptor = None
+    for klass in Newsfeed.__mro__:
+        if "weather" in klass.__dict__:
+            descriptor = klass.__dict__["weather"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,29 +131,11 @@ def test_myhome_constructor_exists():
 def test_myhome_constructor_args():
     sig = inspect.signature(MyHome.__init__)
     params = list(sig.parameters.keys())
-    assert "Coffee" in params, "Missing parameter 'Coffee'"
-    assert "DishWasher" in params, "Missing parameter 'DishWasher'"
     assert "Alarm" in params, "Missing parameter 'Alarm'"
-    assert "WashingMachine" in params, "Missing parameter 'WashingMachine'"
     assert "TimeID" in params, "Missing parameter 'TimeID'"
-
-def test_myhome_has_Coffee():
-    assert hasattr(MyHome, "Coffee")
-    descriptor = None
-    for klass in MyHome.__mro__:
-        if "Coffee" in klass.__dict__:
-            descriptor = klass.__dict__["Coffee"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_myhome_has_DishWasher():
-    assert hasattr(MyHome, "DishWasher")
-    descriptor = None
-    for klass in MyHome.__mro__:
-        if "DishWasher" in klass.__dict__:
-            descriptor = klass.__dict__["DishWasher"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Coffee" in params, "Missing parameter 'Coffee'"
+    assert "WashingMachine" in params, "Missing parameter 'WashingMachine'"
+    assert "DishWasher" in params, "Missing parameter 'DishWasher'"
 
 def test_myhome_has_Alarm():
     assert hasattr(MyHome, "Alarm")
@@ -283,6 +143,24 @@ def test_myhome_has_Alarm():
     for klass in MyHome.__mro__:
         if "Alarm" in klass.__dict__:
             descriptor = klass.__dict__["Alarm"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_myhome_has_TimeID():
+    assert hasattr(MyHome, "TimeID")
+    descriptor = None
+    for klass in MyHome.__mro__:
+        if "TimeID" in klass.__dict__:
+            descriptor = klass.__dict__["TimeID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_myhome_has_Coffee():
+    assert hasattr(MyHome, "Coffee")
+    descriptor = None
+    for klass in MyHome.__mro__:
+        if "Coffee" in klass.__dict__:
+            descriptor = klass.__dict__["Coffee"]
             break
     assert isinstance(descriptor, property)
 
@@ -295,12 +173,12 @@ def test_myhome_has_WashingMachine():
             break
     assert isinstance(descriptor, property)
 
-def test_myhome_has_TimeID():
-    assert hasattr(MyHome, "TimeID")
+def test_myhome_has_DishWasher():
+    assert hasattr(MyHome, "DishWasher")
     descriptor = None
     for klass in MyHome.__mro__:
-        if "TimeID" in klass.__dict__:
-            descriptor = klass.__dict__["TimeID"]
+        if "DishWasher" in klass.__dict__:
+            descriptor = klass.__dict__["DishWasher"]
             break
     assert isinstance(descriptor, property)
 
@@ -573,6 +451,128 @@ def test_motion_sensor_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_firealarm_sensor_is_not_abstract():
+    assert not inspect.isabstract(FireAlarm_Sensor)
+
+
+def test_firealarm_sensor_constructor_exists():
+    assert callable(FireAlarm_Sensor.__init__)
+
+
+def test_firealarm_sensor_constructor_args():
+    sig = inspect.signature(FireAlarm_Sensor.__init__)
+    params = list(sig.parameters.keys())
+    assert "SmokeAlarm" in params, "Missing parameter 'SmokeAlarm'"
+
+def test_firealarm_sensor_has_SmokeAlarm():
+    assert hasattr(FireAlarm_Sensor, "SmokeAlarm")
+    descriptor = None
+    for klass in FireAlarm_Sensor.__mro__:
+        if "SmokeAlarm" in klass.__dict__:
+            descriptor = klass.__dict__["SmokeAlarm"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sensor_is_not_abstract():
+    assert not inspect.isabstract(Sensor)
+
+
+def test_sensor_constructor_exists():
+    assert callable(Sensor.__init__)
+
+
+def test_sensor_constructor_args():
+    sig = inspect.signature(Sensor.__init__)
+    params = list(sig.parameters.keys())
+    assert "SensorID" in params, "Missing parameter 'SensorID'"
+    assert "SensorType" in params, "Missing parameter 'SensorType'"
+
+def test_sensor_has_SensorID():
+    assert hasattr(Sensor, "SensorID")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorID" in klass.__dict__:
+            descriptor = klass.__dict__["SensorID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sensor_has_SensorType():
+    assert hasattr(Sensor, "SensorType")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorType" in klass.__dict__:
+            descriptor = klass.__dict__["SensorType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_system___mirror_is_not_abstract():
+    assert not inspect.isabstract(System___mirror)
+
+
+def test_system___mirror_constructor_exists():
+    assert callable(System___mirror.__init__)
+
+
+def test_system___mirror_constructor_args():
+    sig = inspect.signature(System___mirror.__init__)
+    params = list(sig.parameters.keys())
+    assert "Status" in params, "Missing parameter 'Status'"
+    assert "PhoneConnect" in params, "Missing parameter 'PhoneConnect'"
+    assert "Display_feed" in params, "Missing parameter 'Display_feed'"
+    assert "Update" in params, "Missing parameter 'Update'"
+    assert "security" in params, "Missing parameter 'security'"
+
+def test_system___mirror_has_Status():
+    assert hasattr(System___mirror, "Status")
+    descriptor = None
+    for klass in System___mirror.__mro__:
+        if "Status" in klass.__dict__:
+            descriptor = klass.__dict__["Status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system___mirror_has_PhoneConnect():
+    assert hasattr(System___mirror, "PhoneConnect")
+    descriptor = None
+    for klass in System___mirror.__mro__:
+        if "PhoneConnect" in klass.__dict__:
+            descriptor = klass.__dict__["PhoneConnect"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system___mirror_has_Display_feed():
+    assert hasattr(System___mirror, "Display_feed")
+    descriptor = None
+    for klass in System___mirror.__mro__:
+        if "Display_feed" in klass.__dict__:
+            descriptor = klass.__dict__["Display_feed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system___mirror_has_Update():
+    assert hasattr(System___mirror, "Update")
+    descriptor = None
+    for klass in System___mirror.__mro__:
+        if "Update" in klass.__dict__:
+            descriptor = klass.__dict__["Update"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system___mirror_has_security():
+    assert hasattr(System___mirror, "security")
+    descriptor = None
+    for klass in System___mirror.__mro__:
+        if "security" in klass.__dict__:
+            descriptor = klass.__dict__["security"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -584,42 +584,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-FireAlarm_Sensor_strategy = st.builds(
-    FireAlarm_Sensor,
-    SmokeAlarm=
-        st.booleans()
-)
-Sensor_strategy = st.builds(
-    Sensor,
-    SensorType=
-        st.integers(),
-    SensorID=
-        st.integers()
-)
-System___mirror_strategy = st.builds(
-    System___mirror,
-    Display_feed=
-        st.none(),
-    Update=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    PhoneConnect=
-        st.booleans(),
-    security=
-        st.none(),
-    Status=
-        st.booleans()
-)
 Newsfeed_strategy = st.builds(
     Newsfeed,
     Email=
         safe_text,
-    News=
-        safe_text,
-    weather=
-        safe_text,
     TimeID=
         safe_text,
     Calendar=
+        safe_text,
+    News=
+        safe_text,
+    weather=
         safe_text
 )
 Entertainment_strategy = st.builds(
@@ -629,15 +604,15 @@ Entertainment_strategy = st.builds(
 )
 MyHome_strategy = st.builds(
     MyHome,
-    Coffee=
-        safe_text,
-    DishWasher=
-        safe_text,
     Alarm=
+        safe_text,
+    TimeID=
+        safe_text,
+    Coffee=
         safe_text,
     WashingMachine=
         safe_text,
-    TimeID=
+    DishWasher=
         safe_text
 )
 HomeTheatre_strategy = st.builds(
@@ -696,118 +671,37 @@ Door_Sensor_strategy = st.builds(
 Motion_Sensor_strategy = st.builds(
     Motion_Sensor,
 )
-
-@given(instance=FireAlarm_Sensor_strategy)
-@settings(max_examples=50)
-def test_firealarm_sensor_instantiation(instance):
-    assert isinstance(instance, FireAlarm_Sensor)
-
-@given(instance=FireAlarm_Sensor_strategy)
-def test_firealarm_sensor_SmokeAlarm_type(instance):
-    assert isinstance(instance.SmokeAlarm, bool)
-
-
-@given(instance=FireAlarm_Sensor_strategy)
-def test_firealarm_sensor_SmokeAlarm_setter(instance):
-    original = instance.SmokeAlarm
-    instance.SmokeAlarm = original
-    assert instance.SmokeAlarm == original
-
-@given(instance=Sensor_strategy)
-@settings(max_examples=50)
-def test_sensor_instantiation(instance):
-    assert isinstance(instance, Sensor)
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
-
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_setter(instance):
-    original = instance.SensorType
-    instance.SensorType = original
-    assert instance.SensorType == original
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
-
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_setter(instance):
-    original = instance.SensorID
-    instance.SensorID = original
-    assert instance.SensorID == original
-
-@given(instance=System___mirror_strategy)
-@settings(max_examples=50)
-def test_system___mirror_instantiation(instance):
-    assert isinstance(instance, System___mirror)
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_Display_feed_type(instance):
-    assert isinstance(instance.Display_feed, newsfeed)
-
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_Display_feed_setter(instance):
-    original = instance.Display_feed
-    instance.Display_feed = original
-    assert instance.Display_feed == original
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_Update_type(instance):
-    assert isinstance(instance.Update, float)
-
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_Update_setter(instance):
-    original = instance.Update
-    instance.Update = original
-    assert instance.Update == original
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_PhoneConnect_type(instance):
-    assert isinstance(instance.PhoneConnect, bool)
-
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_PhoneConnect_setter(instance):
-    original = instance.PhoneConnect
-    instance.PhoneConnect = original
-    assert instance.PhoneConnect == original
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_security_type(instance):
-    assert isinstance(instance.security, home_security_system)
-
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_security_setter(instance):
-    original = instance.security
-    instance.security = original
-    assert instance.security == original
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_Status_type(instance):
-    assert isinstance(instance.Status, bool)
-
-
-@given(instance=System___mirror_strategy)
-def test_system___mirror_Status_setter(instance):
-    original = instance.Status
-    instance.Status = original
-    assert instance.Status == original
+FireAlarm_Sensor_strategy = st.builds(
+    FireAlarm_Sensor,
+    SmokeAlarm=
+        st.booleans()
+)
+Sensor_strategy = st.builds(
+    Sensor,
+    SensorID=
+        st.integers(),
+    SensorType=
+        st.integers()
+)
+System___mirror_strategy = st.builds(
+    System___mirror,
+    Status=
+        st.booleans(),
+    PhoneConnect=
+        st.booleans(),
+    Display_feed=
+        st.none(),
+    Update=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    security=
+        st.none()
+)
 
 @given(instance=Newsfeed_strategy)
 @settings(max_examples=50)
 def test_newsfeed_instantiation(instance):
     assert isinstance(instance, Newsfeed)
 
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Newsfeed_strategy)
@@ -816,31 +710,6 @@ def test_newsfeed_Email_setter(instance):
     instance.Email = original
     assert instance.Email == original
 
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_News_type(instance):
-    assert isinstance(instance.News, str)
-
-
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_News_setter(instance):
-    original = instance.News
-    instance.News = original
-    assert instance.News == original
-
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_weather_type(instance):
-    assert isinstance(instance.weather, str)
-
-
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_weather_setter(instance):
-    original = instance.weather
-    instance.weather = original
-    assert instance.weather == original
-
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_TimeID_type(instance):
-    assert isinstance(instance.TimeID, str)
 
 
 @given(instance=Newsfeed_strategy)
@@ -849,9 +718,6 @@ def test_newsfeed_TimeID_setter(instance):
     instance.TimeID = original
     assert instance.TimeID == original
 
-@given(instance=Newsfeed_strategy)
-def test_newsfeed_Calendar_type(instance):
-    assert isinstance(instance.Calendar, str)
 
 
 @given(instance=Newsfeed_strategy)
@@ -860,14 +726,27 @@ def test_newsfeed_Calendar_setter(instance):
     instance.Calendar = original
     assert instance.Calendar == original
 
+
+
+@given(instance=Newsfeed_strategy)
+def test_newsfeed_News_setter(instance):
+    original = instance.News
+    instance.News = original
+    assert instance.News == original
+
+
+
+@given(instance=Newsfeed_strategy)
+def test_newsfeed_weather_setter(instance):
+    original = instance.weather
+    instance.weather = original
+    assert instance.weather == original
+
 @given(instance=Entertainment_strategy)
 @settings(max_examples=50)
 def test_entertainment_instantiation(instance):
     assert isinstance(instance, Entertainment)
 
-@given(instance=Entertainment_strategy)
-def test_entertainment_DeviceID_type(instance):
-    assert isinstance(instance.DeviceID, int)
 
 
 @given(instance=Entertainment_strategy)
@@ -881,31 +760,6 @@ def test_entertainment_DeviceID_setter(instance):
 def test_myhome_instantiation(instance):
     assert isinstance(instance, MyHome)
 
-@given(instance=MyHome_strategy)
-def test_myhome_Coffee_type(instance):
-    assert isinstance(instance.Coffee, str)
-
-
-@given(instance=MyHome_strategy)
-def test_myhome_Coffee_setter(instance):
-    original = instance.Coffee
-    instance.Coffee = original
-    assert instance.Coffee == original
-
-@given(instance=MyHome_strategy)
-def test_myhome_DishWasher_type(instance):
-    assert isinstance(instance.DishWasher, str)
-
-
-@given(instance=MyHome_strategy)
-def test_myhome_DishWasher_setter(instance):
-    original = instance.DishWasher
-    instance.DishWasher = original
-    assert instance.DishWasher == original
-
-@given(instance=MyHome_strategy)
-def test_myhome_Alarm_type(instance):
-    assert isinstance(instance.Alarm, str)
 
 
 @given(instance=MyHome_strategy)
@@ -914,20 +768,6 @@ def test_myhome_Alarm_setter(instance):
     instance.Alarm = original
     assert instance.Alarm == original
 
-@given(instance=MyHome_strategy)
-def test_myhome_WashingMachine_type(instance):
-    assert isinstance(instance.WashingMachine, str)
-
-
-@given(instance=MyHome_strategy)
-def test_myhome_WashingMachine_setter(instance):
-    original = instance.WashingMachine
-    instance.WashingMachine = original
-    assert instance.WashingMachine == original
-
-@given(instance=MyHome_strategy)
-def test_myhome_TimeID_type(instance):
-    assert isinstance(instance.TimeID, str)
 
 
 @given(instance=MyHome_strategy)
@@ -936,14 +776,35 @@ def test_myhome_TimeID_setter(instance):
     instance.TimeID = original
     assert instance.TimeID == original
 
+
+
+@given(instance=MyHome_strategy)
+def test_myhome_Coffee_setter(instance):
+    original = instance.Coffee
+    instance.Coffee = original
+    assert instance.Coffee == original
+
+
+
+@given(instance=MyHome_strategy)
+def test_myhome_WashingMachine_setter(instance):
+    original = instance.WashingMachine
+    instance.WashingMachine = original
+    assert instance.WashingMachine == original
+
+
+
+@given(instance=MyHome_strategy)
+def test_myhome_DishWasher_setter(instance):
+    original = instance.DishWasher
+    instance.DishWasher = original
+    assert instance.DishWasher == original
+
 @given(instance=HomeTheatre_strategy)
 @settings(max_examples=50)
 def test_hometheatre_instantiation(instance):
     assert isinstance(instance, HomeTheatre)
 
-@given(instance=HomeTheatre_strategy)
-def test_hometheatre_HTID_type(instance):
-    assert isinstance(instance.HTID, str)
 
 
 @given(instance=HomeTheatre_strategy)
@@ -957,9 +818,6 @@ def test_hometheatre_HTID_setter(instance):
 def test_tv_instantiation(instance):
     assert isinstance(instance, TV)
 
-@given(instance=TV_strategy)
-def test_tv_TVID_type(instance):
-    assert isinstance(instance.TVID, int)
 
 
 @given(instance=TV_strategy)
@@ -973,9 +831,6 @@ def test_tv_TVID_setter(instance):
 def test_evening_instantiation(instance):
     assert isinstance(instance, Evening)
 
-@given(instance=Evening_strategy)
-def test_evening_Night_type(instance):
-    assert isinstance(instance.Night, int)
 
 
 @given(instance=Evening_strategy)
@@ -989,9 +844,6 @@ def test_evening_Night_setter(instance):
 def test_morning_instantiation(instance):
     assert isinstance(instance, Morning)
 
-@given(instance=Morning_strategy)
-def test_morning_Morn_type(instance):
-    assert isinstance(instance.Morn, int)
 
 
 @given(instance=Morning_strategy)
@@ -1005,9 +857,6 @@ def test_morning_Morn_setter(instance):
 def test_light_instantiation(instance):
     assert isinstance(instance, Light)
 
-@given(instance=Light_strategy)
-def test_light_LightID_type(instance):
-    assert isinstance(instance.LightID, str)
 
 
 @given(instance=Light_strategy)
@@ -1021,9 +870,6 @@ def test_light_LightID_setter(instance):
 def test_radio_instantiation(instance):
     assert isinstance(instance, Radio)
 
-@given(instance=Radio_strategy)
-def test_radio_RadioID_type(instance):
-    assert isinstance(instance.RadioID, int)
 
 
 @given(instance=Radio_strategy)
@@ -1037,9 +883,6 @@ def test_radio_RadioID_setter(instance):
 def test_camera_instantiation(instance):
     assert isinstance(instance, Camera)
 
-@given(instance=Camera_strategy)
-def test_camera_CameraID_type(instance):
-    assert isinstance(instance.CameraID, int)
 
 
 @given(instance=Camera_strategy)
@@ -1053,9 +896,6 @@ def test_camera_CameraID_setter(instance):
 def test_door_instantiation(instance):
     assert isinstance(instance, Door)
 
-@given(instance=Door_strategy)
-def test_door_DoorID_type(instance):
-    assert isinstance(instance.DoorID, int)
 
 
 @given(instance=Door_strategy)
@@ -1069,9 +909,6 @@ def test_door_DoorID_setter(instance):
 def test_alert_instantiation(instance):
     assert isinstance(instance, Alert)
 
-@given(instance=Alert_strategy)
-def test_alert_AlertID_type(instance):
-    assert isinstance(instance.AlertID, int)
 
 
 @given(instance=Alert_strategy)
@@ -1085,9 +922,6 @@ def test_alert_AlertID_setter(instance):
 def test_home_security_system_instantiation(instance):
     assert isinstance(instance, Home_Security_System)
 
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=Home_Security_System_strategy)
@@ -1105,3 +939,82 @@ def test_door_sensor_instantiation(instance):
 @settings(max_examples=50)
 def test_motion_sensor_instantiation(instance):
     assert isinstance(instance, Motion_Sensor)
+
+@given(instance=FireAlarm_Sensor_strategy)
+@settings(max_examples=50)
+def test_firealarm_sensor_instantiation(instance):
+    assert isinstance(instance, FireAlarm_Sensor)
+
+
+
+@given(instance=FireAlarm_Sensor_strategy)
+def test_firealarm_sensor_SmokeAlarm_setter(instance):
+    original = instance.SmokeAlarm
+    instance.SmokeAlarm = original
+    assert instance.SmokeAlarm == original
+
+@given(instance=Sensor_strategy)
+@settings(max_examples=50)
+def test_sensor_instantiation(instance):
+    assert isinstance(instance, Sensor)
+
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorID_setter(instance):
+    original = instance.SensorID
+    instance.SensorID = original
+    assert instance.SensorID == original
+
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorType_setter(instance):
+    original = instance.SensorType
+    instance.SensorType = original
+    assert instance.SensorType == original
+
+@given(instance=System___mirror_strategy)
+@settings(max_examples=50)
+def test_system___mirror_instantiation(instance):
+    assert isinstance(instance, System___mirror)
+
+
+
+@given(instance=System___mirror_strategy)
+def test_system___mirror_Status_setter(instance):
+    original = instance.Status
+    instance.Status = original
+    assert instance.Status == original
+
+
+
+@given(instance=System___mirror_strategy)
+def test_system___mirror_PhoneConnect_setter(instance):
+    original = instance.PhoneConnect
+    instance.PhoneConnect = original
+    assert instance.PhoneConnect == original
+
+
+
+@given(instance=System___mirror_strategy)
+def test_system___mirror_Display_feed_setter(instance):
+    original = instance.Display_feed
+    instance.Display_feed = original
+    assert instance.Display_feed == original
+
+
+
+@given(instance=System___mirror_strategy)
+def test_system___mirror_Update_setter(instance):
+    original = instance.Update
+    instance.Update = original
+    assert instance.Update == original
+
+
+
+@given(instance=System___mirror_strategy)
+def test_system___mirror_security_setter(instance):
+    original = instance.security
+    instance.security = original
+    assert instance.security == original

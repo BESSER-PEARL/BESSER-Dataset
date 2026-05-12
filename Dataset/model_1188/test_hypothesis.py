@@ -3,46 +3,46 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     CollectionExp,
-    superimposed::SetExp,
-    superimposed::OclModel,
+    superimposed_SetExp,
+    superimposed_OclModel,
     OclType,
-    superimposed::OclModelElement,
+    superimposed_OclModelElement,
     NumericExp,
-    superimposed::IntegerExp,
-    superimposed::RealExp,
+    superimposed_IntegerExp,
+    superimposed_RealExp,
     PrimitiveExp,
-    superimposed::BooleanExp,
-    superimposed::NumericExp,
-    superimposed::StringExp,
+    superimposed_NumericExp,
+    superimposed_BooleanExp,
+    superimposed_StringExp,
     VariableDeclaration,
-    superimposed::Iterator,
+    superimposed_Iterator,
     LoopExp,
-    superimposed::IteratorExp,
+    superimposed_IteratorExp,
     OperatorCallExp,
-    superimposed::UnaryOperatorCallExp,
-    superimposed::BinaryOperatorCallExp,
+    superimposed_UnaryOperatorCallExp,
+    superimposed_BinaryOperatorCallExp,
     OperationCallExp,
-    superimposed::CollectionOperationCallExp,
+    superimposed_CollectionOperationCallExp,
     PropertyCallExp,
-    superimposed::LoopExp,
-    superimposed::NavigationCallExp,
-    superimposed::OperationCallExp,
+    superimposed_LoopExp,
+    superimposed_NavigationCallExp,
+    superimposed_OperationCallExp,
     OclExpression,
-    superimposed::IfExp,
-    superimposed::LetExp,
-    superimposed::OclUndefinedExp,
-    superimposed::PrimitiveExp,
-    superimposed::CollectionExp,
-    superimposed::OperatorCallExp,
-    superimposed::PropertyCallExp,
-    superimposed::VariableExp,
-    superimposed::OclType,
-    superimposed::VariableDeclaration,
-    superimposed::OclExpression,
+    superimposed_CollectionExp,
+    superimposed_PrimitiveExp,
+    superimposed_OperatorCallExp,
+    superimposed_IfExp,
+    superimposed_LetExp,
+    superimposed_OclUndefinedExp,
+    superimposed_PropertyCallExp,
+    superimposed_VariableExp,
+    superimposed_OclType,
+    superimposed_VariableDeclaration,
+    superimposed_OclExpression,
 )
 
 # =============================================================================
@@ -65,37 +65,37 @@ def test_collectionexp_constructor_args():
 
 
 
-def test_superimposed::setexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::SetExp)
+def test_superimposed_setexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_SetExp)
 
 
-def test_superimposed::setexp_constructor_exists():
-    assert callable(superimposed::SetExp.__init__)
+def test_superimposed_setexp_constructor_exists():
+    assert callable(superimposed_SetExp.__init__)
 
 
-def test_superimposed::setexp_constructor_args():
-    sig = inspect.signature(superimposed::SetExp.__init__)
+def test_superimposed_setexp_constructor_args():
+    sig = inspect.signature(superimposed_SetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::oclmodel_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OclModel)
+def test_superimposed_oclmodel_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OclModel)
 
 
-def test_superimposed::oclmodel_constructor_exists():
-    assert callable(superimposed::OclModel.__init__)
+def test_superimposed_oclmodel_constructor_exists():
+    assert callable(superimposed_OclModel.__init__)
 
 
-def test_superimposed::oclmodel_constructor_args():
-    sig = inspect.signature(superimposed::OclModel.__init__)
+def test_superimposed_oclmodel_constructor_args():
+    sig = inspect.signature(superimposed_OclModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::oclmodel_has_name():
-    assert hasattr(superimposed::OclModel, "name")
+def test_superimposed_oclmodel_has_name():
+    assert hasattr(superimposed_OclModel, "name")
     descriptor = None
-    for klass in superimposed::OclModel.__mro__:
+    for klass in superimposed_OclModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -117,23 +117,23 @@ def test_ocltype_constructor_args():
 
 
 
-def test_superimposed::oclmodelelement_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OclModelElement)
+def test_superimposed_oclmodelelement_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OclModelElement)
 
 
-def test_superimposed::oclmodelelement_constructor_exists():
-    assert callable(superimposed::OclModelElement.__init__)
+def test_superimposed_oclmodelelement_constructor_exists():
+    assert callable(superimposed_OclModelElement.__init__)
 
 
-def test_superimposed::oclmodelelement_constructor_args():
-    sig = inspect.signature(superimposed::OclModelElement.__init__)
+def test_superimposed_oclmodelelement_constructor_args():
+    sig = inspect.signature(superimposed_OclModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::oclmodelelement_has_name():
-    assert hasattr(superimposed::OclModelElement, "name")
+def test_superimposed_oclmodelelement_has_name():
+    assert hasattr(superimposed_OclModelElement, "name")
     descriptor = None
-    for klass in superimposed::OclModelElement.__mro__:
+    for klass in superimposed_OclModelElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -155,23 +155,23 @@ def test_numericexp_constructor_args():
 
 
 
-def test_superimposed::integerexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::IntegerExp)
+def test_superimposed_integerexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_IntegerExp)
 
 
-def test_superimposed::integerexp_constructor_exists():
-    assert callable(superimposed::IntegerExp.__init__)
+def test_superimposed_integerexp_constructor_exists():
+    assert callable(superimposed_IntegerExp.__init__)
 
 
-def test_superimposed::integerexp_constructor_args():
-    sig = inspect.signature(superimposed::IntegerExp.__init__)
+def test_superimposed_integerexp_constructor_args():
+    sig = inspect.signature(superimposed_IntegerExp.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_superimposed::integerexp_has_integerSymbol():
-    assert hasattr(superimposed::IntegerExp, "integerSymbol")
+def test_superimposed_integerexp_has_integerSymbol():
+    assert hasattr(superimposed_IntegerExp, "integerSymbol")
     descriptor = None
-    for klass in superimposed::IntegerExp.__mro__:
+    for klass in superimposed_IntegerExp.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -179,23 +179,23 @@ def test_superimposed::integerexp_has_integerSymbol():
 
 
 
-def test_superimposed::realexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::RealExp)
+def test_superimposed_realexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_RealExp)
 
 
-def test_superimposed::realexp_constructor_exists():
-    assert callable(superimposed::RealExp.__init__)
+def test_superimposed_realexp_constructor_exists():
+    assert callable(superimposed_RealExp.__init__)
 
 
-def test_superimposed::realexp_constructor_args():
-    sig = inspect.signature(superimposed::RealExp.__init__)
+def test_superimposed_realexp_constructor_args():
+    sig = inspect.signature(superimposed_RealExp.__init__)
     params = list(sig.parameters.keys())
     assert "realSymbol" in params, "Missing parameter 'realSymbol'"
 
-def test_superimposed::realexp_has_realSymbol():
-    assert hasattr(superimposed::RealExp, "realSymbol")
+def test_superimposed_realexp_has_realSymbol():
+    assert hasattr(superimposed_RealExp, "realSymbol")
     descriptor = None
-    for klass in superimposed::RealExp.__mro__:
+    for klass in superimposed_RealExp.__mro__:
         if "realSymbol" in klass.__dict__:
             descriptor = klass.__dict__["realSymbol"]
             break
@@ -217,23 +217,37 @@ def test_primitiveexp_constructor_args():
 
 
 
-def test_superimposed::booleanexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::BooleanExp)
+def test_superimposed_numericexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_NumericExp)
 
 
-def test_superimposed::booleanexp_constructor_exists():
-    assert callable(superimposed::BooleanExp.__init__)
+def test_superimposed_numericexp_constructor_exists():
+    assert callable(superimposed_NumericExp.__init__)
 
 
-def test_superimposed::booleanexp_constructor_args():
-    sig = inspect.signature(superimposed::BooleanExp.__init__)
+def test_superimposed_numericexp_constructor_args():
+    sig = inspect.signature(superimposed_NumericExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_superimposed_booleanexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_BooleanExp)
+
+
+def test_superimposed_booleanexp_constructor_exists():
+    assert callable(superimposed_BooleanExp.__init__)
+
+
+def test_superimposed_booleanexp_constructor_args():
+    sig = inspect.signature(superimposed_BooleanExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_superimposed::booleanexp_has_booleanSymbol():
-    assert hasattr(superimposed::BooleanExp, "booleanSymbol")
+def test_superimposed_booleanexp_has_booleanSymbol():
+    assert hasattr(superimposed_BooleanExp, "booleanSymbol")
     descriptor = None
-    for klass in superimposed::BooleanExp.__mro__:
+    for klass in superimposed_BooleanExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -241,37 +255,23 @@ def test_superimposed::booleanexp_has_booleanSymbol():
 
 
 
-def test_superimposed::numericexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::NumericExp)
+def test_superimposed_stringexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_StringExp)
 
 
-def test_superimposed::numericexp_constructor_exists():
-    assert callable(superimposed::NumericExp.__init__)
+def test_superimposed_stringexp_constructor_exists():
+    assert callable(superimposed_StringExp.__init__)
 
 
-def test_superimposed::numericexp_constructor_args():
-    sig = inspect.signature(superimposed::NumericExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_superimposed::stringexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::StringExp)
-
-
-def test_superimposed::stringexp_constructor_exists():
-    assert callable(superimposed::StringExp.__init__)
-
-
-def test_superimposed::stringexp_constructor_args():
-    sig = inspect.signature(superimposed::StringExp.__init__)
+def test_superimposed_stringexp_constructor_args():
+    sig = inspect.signature(superimposed_StringExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_superimposed::stringexp_has_stringSymbol():
-    assert hasattr(superimposed::StringExp, "stringSymbol")
+def test_superimposed_stringexp_has_stringSymbol():
+    assert hasattr(superimposed_StringExp, "stringSymbol")
     descriptor = None
-    for klass in superimposed::StringExp.__mro__:
+    for klass in superimposed_StringExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -293,16 +293,16 @@ def test_variabledeclaration_constructor_args():
 
 
 
-def test_superimposed::iterator_is_not_abstract():
-    assert not inspect.isabstract(superimposed::Iterator)
+def test_superimposed_iterator_is_not_abstract():
+    assert not inspect.isabstract(superimposed_Iterator)
 
 
-def test_superimposed::iterator_constructor_exists():
-    assert callable(superimposed::Iterator.__init__)
+def test_superimposed_iterator_constructor_exists():
+    assert callable(superimposed_Iterator.__init__)
 
 
-def test_superimposed::iterator_constructor_args():
-    sig = inspect.signature(superimposed::Iterator.__init__)
+def test_superimposed_iterator_constructor_args():
+    sig = inspect.signature(superimposed_Iterator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -321,23 +321,23 @@ def test_loopexp_constructor_args():
 
 
 
-def test_superimposed::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::IteratorExp)
+def test_superimposed_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_IteratorExp)
 
 
-def test_superimposed::iteratorexp_constructor_exists():
-    assert callable(superimposed::IteratorExp.__init__)
+def test_superimposed_iteratorexp_constructor_exists():
+    assert callable(superimposed_IteratorExp.__init__)
 
 
-def test_superimposed::iteratorexp_constructor_args():
-    sig = inspect.signature(superimposed::IteratorExp.__init__)
+def test_superimposed_iteratorexp_constructor_args():
+    sig = inspect.signature(superimposed_IteratorExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::iteratorexp_has_name():
-    assert hasattr(superimposed::IteratorExp, "name")
+def test_superimposed_iteratorexp_has_name():
+    assert hasattr(superimposed_IteratorExp, "name")
     descriptor = None
-    for klass in superimposed::IteratorExp.__mro__:
+    for klass in superimposed_IteratorExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -359,30 +359,30 @@ def test_operatorcallexp_constructor_args():
 
 
 
-def test_superimposed::unaryoperatorcallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::UnaryOperatorCallExp)
+def test_superimposed_unaryoperatorcallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_UnaryOperatorCallExp)
 
 
-def test_superimposed::unaryoperatorcallexp_constructor_exists():
-    assert callable(superimposed::UnaryOperatorCallExp.__init__)
+def test_superimposed_unaryoperatorcallexp_constructor_exists():
+    assert callable(superimposed_UnaryOperatorCallExp.__init__)
 
 
-def test_superimposed::unaryoperatorcallexp_constructor_args():
-    sig = inspect.signature(superimposed::UnaryOperatorCallExp.__init__)
+def test_superimposed_unaryoperatorcallexp_constructor_args():
+    sig = inspect.signature(superimposed_UnaryOperatorCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::binaryoperatorcallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::BinaryOperatorCallExp)
+def test_superimposed_binaryoperatorcallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_BinaryOperatorCallExp)
 
 
-def test_superimposed::binaryoperatorcallexp_constructor_exists():
-    assert callable(superimposed::BinaryOperatorCallExp.__init__)
+def test_superimposed_binaryoperatorcallexp_constructor_exists():
+    assert callable(superimposed_BinaryOperatorCallExp.__init__)
 
 
-def test_superimposed::binaryoperatorcallexp_constructor_args():
-    sig = inspect.signature(superimposed::BinaryOperatorCallExp.__init__)
+def test_superimposed_binaryoperatorcallexp_constructor_args():
+    sig = inspect.signature(superimposed_BinaryOperatorCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -401,16 +401,16 @@ def test_operationcallexp_constructor_args():
 
 
 
-def test_superimposed::collectionoperationcallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::CollectionOperationCallExp)
+def test_superimposed_collectionoperationcallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_CollectionOperationCallExp)
 
 
-def test_superimposed::collectionoperationcallexp_constructor_exists():
-    assert callable(superimposed::CollectionOperationCallExp.__init__)
+def test_superimposed_collectionoperationcallexp_constructor_exists():
+    assert callable(superimposed_CollectionOperationCallExp.__init__)
 
 
-def test_superimposed::collectionoperationcallexp_constructor_args():
-    sig = inspect.signature(superimposed::CollectionOperationCallExp.__init__)
+def test_superimposed_collectionoperationcallexp_constructor_args():
+    sig = inspect.signature(superimposed_CollectionOperationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -429,37 +429,37 @@ def test_propertycallexp_constructor_args():
 
 
 
-def test_superimposed::loopexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::LoopExp)
+def test_superimposed_loopexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_LoopExp)
 
 
-def test_superimposed::loopexp_constructor_exists():
-    assert callable(superimposed::LoopExp.__init__)
+def test_superimposed_loopexp_constructor_exists():
+    assert callable(superimposed_LoopExp.__init__)
 
 
-def test_superimposed::loopexp_constructor_args():
-    sig = inspect.signature(superimposed::LoopExp.__init__)
+def test_superimposed_loopexp_constructor_args():
+    sig = inspect.signature(superimposed_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::NavigationCallExp)
+def test_superimposed_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_NavigationCallExp)
 
 
-def test_superimposed::navigationcallexp_constructor_exists():
-    assert callable(superimposed::NavigationCallExp.__init__)
+def test_superimposed_navigationcallexp_constructor_exists():
+    assert callable(superimposed_NavigationCallExp.__init__)
 
 
-def test_superimposed::navigationcallexp_constructor_args():
-    sig = inspect.signature(superimposed::NavigationCallExp.__init__)
+def test_superimposed_navigationcallexp_constructor_args():
+    sig = inspect.signature(superimposed_NavigationCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::navigationcallexp_has_name():
-    assert hasattr(superimposed::NavigationCallExp, "name")
+def test_superimposed_navigationcallexp_has_name():
+    assert hasattr(superimposed_NavigationCallExp, "name")
     descriptor = None
-    for klass in superimposed::NavigationCallExp.__mro__:
+    for klass in superimposed_NavigationCallExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -467,23 +467,23 @@ def test_superimposed::navigationcallexp_has_name():
 
 
 
-def test_superimposed::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OperationCallExp)
+def test_superimposed_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OperationCallExp)
 
 
-def test_superimposed::operationcallexp_constructor_exists():
-    assert callable(superimposed::OperationCallExp.__init__)
+def test_superimposed_operationcallexp_constructor_exists():
+    assert callable(superimposed_OperationCallExp.__init__)
 
 
-def test_superimposed::operationcallexp_constructor_args():
-    sig = inspect.signature(superimposed::OperationCallExp.__init__)
+def test_superimposed_operationcallexp_constructor_args():
+    sig = inspect.signature(superimposed_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::operationcallexp_has_name():
-    assert hasattr(superimposed::OperationCallExp, "name")
+def test_superimposed_operationcallexp_has_name():
+    assert hasattr(superimposed_OperationCallExp, "name")
     descriptor = None
-    for klass in superimposed::OperationCallExp.__mro__:
+    for klass in superimposed_OperationCallExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -505,93 +505,51 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_superimposed::ifexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::IfExp)
+def test_superimposed_collectionexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_CollectionExp)
 
 
-def test_superimposed::ifexp_constructor_exists():
-    assert callable(superimposed::IfExp.__init__)
+def test_superimposed_collectionexp_constructor_exists():
+    assert callable(superimposed_CollectionExp.__init__)
 
 
-def test_superimposed::ifexp_constructor_args():
-    sig = inspect.signature(superimposed::IfExp.__init__)
+def test_superimposed_collectionexp_constructor_args():
+    sig = inspect.signature(superimposed_CollectionExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::letexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::LetExp)
+def test_superimposed_primitiveexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_PrimitiveExp)
 
 
-def test_superimposed::letexp_constructor_exists():
-    assert callable(superimposed::LetExp.__init__)
+def test_superimposed_primitiveexp_constructor_exists():
+    assert callable(superimposed_PrimitiveExp.__init__)
 
 
-def test_superimposed::letexp_constructor_args():
-    sig = inspect.signature(superimposed::LetExp.__init__)
+def test_superimposed_primitiveexp_constructor_args():
+    sig = inspect.signature(superimposed_PrimitiveExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::oclundefinedexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OclUndefinedExp)
+def test_superimposed_operatorcallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OperatorCallExp)
 
 
-def test_superimposed::oclundefinedexp_constructor_exists():
-    assert callable(superimposed::OclUndefinedExp.__init__)
+def test_superimposed_operatorcallexp_constructor_exists():
+    assert callable(superimposed_OperatorCallExp.__init__)
 
 
-def test_superimposed::oclundefinedexp_constructor_args():
-    sig = inspect.signature(superimposed::OclUndefinedExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_superimposed::primitiveexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::PrimitiveExp)
-
-
-def test_superimposed::primitiveexp_constructor_exists():
-    assert callable(superimposed::PrimitiveExp.__init__)
-
-
-def test_superimposed::primitiveexp_constructor_args():
-    sig = inspect.signature(superimposed::PrimitiveExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_superimposed::collectionexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::CollectionExp)
-
-
-def test_superimposed::collectionexp_constructor_exists():
-    assert callable(superimposed::CollectionExp.__init__)
-
-
-def test_superimposed::collectionexp_constructor_args():
-    sig = inspect.signature(superimposed::CollectionExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_superimposed::operatorcallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OperatorCallExp)
-
-
-def test_superimposed::operatorcallexp_constructor_exists():
-    assert callable(superimposed::OperatorCallExp.__init__)
-
-
-def test_superimposed::operatorcallexp_constructor_args():
-    sig = inspect.signature(superimposed::OperatorCallExp.__init__)
+def test_superimposed_operatorcallexp_constructor_args():
+    sig = inspect.signature(superimposed_OperatorCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::operatorcallexp_has_name():
-    assert hasattr(superimposed::OperatorCallExp, "name")
+def test_superimposed_operatorcallexp_has_name():
+    assert hasattr(superimposed_OperatorCallExp, "name")
     descriptor = None
-    for klass in superimposed::OperatorCallExp.__mro__:
+    for klass in superimposed_OperatorCallExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -599,65 +557,107 @@ def test_superimposed::operatorcallexp_has_name():
 
 
 
-def test_superimposed::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::PropertyCallExp)
+def test_superimposed_ifexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_IfExp)
 
 
-def test_superimposed::propertycallexp_constructor_exists():
-    assert callable(superimposed::PropertyCallExp.__init__)
+def test_superimposed_ifexp_constructor_exists():
+    assert callable(superimposed_IfExp.__init__)
 
 
-def test_superimposed::propertycallexp_constructor_args():
-    sig = inspect.signature(superimposed::PropertyCallExp.__init__)
+def test_superimposed_ifexp_constructor_args():
+    sig = inspect.signature(superimposed_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::variableexp_is_not_abstract():
-    assert not inspect.isabstract(superimposed::VariableExp)
+def test_superimposed_letexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_LetExp)
 
 
-def test_superimposed::variableexp_constructor_exists():
-    assert callable(superimposed::VariableExp.__init__)
+def test_superimposed_letexp_constructor_exists():
+    assert callable(superimposed_LetExp.__init__)
 
 
-def test_superimposed::variableexp_constructor_args():
-    sig = inspect.signature(superimposed::VariableExp.__init__)
+def test_superimposed_letexp_constructor_args():
+    sig = inspect.signature(superimposed_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::ocltype_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OclType)
+def test_superimposed_oclundefinedexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OclUndefinedExp)
 
 
-def test_superimposed::ocltype_constructor_exists():
-    assert callable(superimposed::OclType.__init__)
+def test_superimposed_oclundefinedexp_constructor_exists():
+    assert callable(superimposed_OclUndefinedExp.__init__)
 
 
-def test_superimposed::ocltype_constructor_args():
-    sig = inspect.signature(superimposed::OclType.__init__)
+def test_superimposed_oclundefinedexp_constructor_args():
+    sig = inspect.signature(superimposed_OclUndefinedExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_superimposed::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(superimposed::VariableDeclaration)
+def test_superimposed_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_PropertyCallExp)
 
 
-def test_superimposed::variabledeclaration_constructor_exists():
-    assert callable(superimposed::VariableDeclaration.__init__)
+def test_superimposed_propertycallexp_constructor_exists():
+    assert callable(superimposed_PropertyCallExp.__init__)
 
 
-def test_superimposed::variabledeclaration_constructor_args():
-    sig = inspect.signature(superimposed::VariableDeclaration.__init__)
+def test_superimposed_propertycallexp_constructor_args():
+    sig = inspect.signature(superimposed_PropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_superimposed_variableexp_is_not_abstract():
+    assert not inspect.isabstract(superimposed_VariableExp)
+
+
+def test_superimposed_variableexp_constructor_exists():
+    assert callable(superimposed_VariableExp.__init__)
+
+
+def test_superimposed_variableexp_constructor_args():
+    sig = inspect.signature(superimposed_VariableExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_superimposed_ocltype_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OclType)
+
+
+def test_superimposed_ocltype_constructor_exists():
+    assert callable(superimposed_OclType.__init__)
+
+
+def test_superimposed_ocltype_constructor_args():
+    sig = inspect.signature(superimposed_OclType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_superimposed_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(superimposed_VariableDeclaration)
+
+
+def test_superimposed_variabledeclaration_constructor_exists():
+    assert callable(superimposed_VariableDeclaration.__init__)
+
+
+def test_superimposed_variabledeclaration_constructor_args():
+    sig = inspect.signature(superimposed_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_superimposed::variabledeclaration_has_name():
-    assert hasattr(superimposed::VariableDeclaration, "name")
+def test_superimposed_variabledeclaration_has_name():
+    assert hasattr(superimposed_VariableDeclaration, "name")
     descriptor = None
-    for klass in superimposed::VariableDeclaration.__mro__:
+    for klass in superimposed_VariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -665,16 +665,16 @@ def test_superimposed::variabledeclaration_has_name():
 
 
 
-def test_superimposed::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(superimposed::OclExpression)
+def test_superimposed_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(superimposed_OclExpression)
 
 
-def test_superimposed::oclexpression_constructor_exists():
-    assert callable(superimposed::OclExpression.__init__)
+def test_superimposed_oclexpression_constructor_exists():
+    assert callable(superimposed_OclExpression.__init__)
 
 
-def test_superimposed::oclexpression_constructor_args():
-    sig = inspect.signature(superimposed::OclExpression.__init__)
+def test_superimposed_oclexpression_constructor_args():
+    sig = inspect.signature(superimposed_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -692,135 +692,135 @@ safe_text = st.text(
 CollectionExp_strategy = st.builds(
     CollectionExp,
 )
-superimposed::SetExp_strategy = st.builds(
-    superimposed::SetExp,
+superimposed_SetExp_strategy = st.builds(
+    superimposed_SetExp,
 )
-superimposed::OclModel_strategy = st.builds(
-    superimposed::OclModel,
+superimposed_OclModel_strategy = st.builds(
+    superimposed_OclModel,
     name=
         safe_text
 )
 OclType_strategy = st.builds(
     OclType,
 )
-superimposed::OclModelElement_strategy = st.builds(
-    superimposed::OclModelElement,
+superimposed_OclModelElement_strategy = st.builds(
+    superimposed_OclModelElement,
     name=
         safe_text
 )
 NumericExp_strategy = st.builds(
     NumericExp,
 )
-superimposed::IntegerExp_strategy = st.builds(
-    superimposed::IntegerExp,
+superimposed_IntegerExp_strategy = st.builds(
+    superimposed_IntegerExp,
     integerSymbol=
         safe_text
 )
-superimposed::RealExp_strategy = st.builds(
-    superimposed::RealExp,
+superimposed_RealExp_strategy = st.builds(
+    superimposed_RealExp,
     realSymbol=
         safe_text
 )
 PrimitiveExp_strategy = st.builds(
     PrimitiveExp,
 )
-superimposed::BooleanExp_strategy = st.builds(
-    superimposed::BooleanExp,
+superimposed_NumericExp_strategy = st.builds(
+    superimposed_NumericExp,
+)
+superimposed_BooleanExp_strategy = st.builds(
+    superimposed_BooleanExp,
     booleanSymbol=
         safe_text
 )
-superimposed::NumericExp_strategy = st.builds(
-    superimposed::NumericExp,
-)
-superimposed::StringExp_strategy = st.builds(
-    superimposed::StringExp,
+superimposed_StringExp_strategy = st.builds(
+    superimposed_StringExp,
     stringSymbol=
         safe_text
 )
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
-superimposed::Iterator_strategy = st.builds(
-    superimposed::Iterator,
+superimposed_Iterator_strategy = st.builds(
+    superimposed_Iterator,
 )
 LoopExp_strategy = st.builds(
     LoopExp,
 )
-superimposed::IteratorExp_strategy = st.builds(
-    superimposed::IteratorExp,
+superimposed_IteratorExp_strategy = st.builds(
+    superimposed_IteratorExp,
     name=
         safe_text
 )
 OperatorCallExp_strategy = st.builds(
     OperatorCallExp,
 )
-superimposed::UnaryOperatorCallExp_strategy = st.builds(
-    superimposed::UnaryOperatorCallExp,
+superimposed_UnaryOperatorCallExp_strategy = st.builds(
+    superimposed_UnaryOperatorCallExp,
 )
-superimposed::BinaryOperatorCallExp_strategy = st.builds(
-    superimposed::BinaryOperatorCallExp,
+superimposed_BinaryOperatorCallExp_strategy = st.builds(
+    superimposed_BinaryOperatorCallExp,
 )
 OperationCallExp_strategy = st.builds(
     OperationCallExp,
 )
-superimposed::CollectionOperationCallExp_strategy = st.builds(
-    superimposed::CollectionOperationCallExp,
+superimposed_CollectionOperationCallExp_strategy = st.builds(
+    superimposed_CollectionOperationCallExp,
 )
 PropertyCallExp_strategy = st.builds(
     PropertyCallExp,
 )
-superimposed::LoopExp_strategy = st.builds(
-    superimposed::LoopExp,
+superimposed_LoopExp_strategy = st.builds(
+    superimposed_LoopExp,
 )
-superimposed::NavigationCallExp_strategy = st.builds(
-    superimposed::NavigationCallExp,
+superimposed_NavigationCallExp_strategy = st.builds(
+    superimposed_NavigationCallExp,
     name=
         safe_text
 )
-superimposed::OperationCallExp_strategy = st.builds(
-    superimposed::OperationCallExp,
+superimposed_OperationCallExp_strategy = st.builds(
+    superimposed_OperationCallExp,
     name=
         safe_text
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-superimposed::IfExp_strategy = st.builds(
-    superimposed::IfExp,
+superimposed_CollectionExp_strategy = st.builds(
+    superimposed_CollectionExp,
 )
-superimposed::LetExp_strategy = st.builds(
-    superimposed::LetExp,
+superimposed_PrimitiveExp_strategy = st.builds(
+    superimposed_PrimitiveExp,
 )
-superimposed::OclUndefinedExp_strategy = st.builds(
-    superimposed::OclUndefinedExp,
-)
-superimposed::PrimitiveExp_strategy = st.builds(
-    superimposed::PrimitiveExp,
-)
-superimposed::CollectionExp_strategy = st.builds(
-    superimposed::CollectionExp,
-)
-superimposed::OperatorCallExp_strategy = st.builds(
-    superimposed::OperatorCallExp,
+superimposed_OperatorCallExp_strategy = st.builds(
+    superimposed_OperatorCallExp,
     name=
         safe_text
 )
-superimposed::PropertyCallExp_strategy = st.builds(
-    superimposed::PropertyCallExp,
+superimposed_IfExp_strategy = st.builds(
+    superimposed_IfExp,
 )
-superimposed::VariableExp_strategy = st.builds(
-    superimposed::VariableExp,
+superimposed_LetExp_strategy = st.builds(
+    superimposed_LetExp,
 )
-superimposed::OclType_strategy = st.builds(
-    superimposed::OclType,
+superimposed_OclUndefinedExp_strategy = st.builds(
+    superimposed_OclUndefinedExp,
 )
-superimposed::VariableDeclaration_strategy = st.builds(
-    superimposed::VariableDeclaration,
+superimposed_PropertyCallExp_strategy = st.builds(
+    superimposed_PropertyCallExp,
+)
+superimposed_VariableExp_strategy = st.builds(
+    superimposed_VariableExp,
+)
+superimposed_OclType_strategy = st.builds(
+    superimposed_OclType,
+)
+superimposed_VariableDeclaration_strategy = st.builds(
+    superimposed_VariableDeclaration,
     name=
         safe_text
 )
-superimposed::OclExpression_strategy = st.builds(
-    superimposed::OclExpression,
+superimposed_OclExpression_strategy = st.builds(
+    superimposed_OclExpression,
 )
 
 @given(instance=CollectionExp_strategy)
@@ -828,23 +828,20 @@ superimposed::OclExpression_strategy = st.builds(
 def test_collectionexp_instantiation(instance):
     assert isinstance(instance, CollectionExp)
 
-@given(instance=superimposed::SetExp_strategy)
+@given(instance=superimposed_SetExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::setexp_instantiation(instance):
-    assert isinstance(instance, superimposed::SetExp)
+def test_superimposed_setexp_instantiation(instance):
+    assert isinstance(instance, superimposed_SetExp)
 
-@given(instance=superimposed::OclModel_strategy)
+@given(instance=superimposed_OclModel_strategy)
 @settings(max_examples=50)
-def test_superimposed::oclmodel_instantiation(instance):
-    assert isinstance(instance, superimposed::OclModel)
-
-@given(instance=superimposed::OclModel_strategy)
-def test_superimposed::oclmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_superimposed_oclmodel_instantiation(instance):
+    assert isinstance(instance, superimposed_OclModel)
 
 
-@given(instance=superimposed::OclModel_strategy)
-def test_superimposed::oclmodel_name_setter(instance):
+
+@given(instance=superimposed_OclModel_strategy)
+def test_superimposed_oclmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -854,18 +851,15 @@ def test_superimposed::oclmodel_name_setter(instance):
 def test_ocltype_instantiation(instance):
     assert isinstance(instance, OclType)
 
-@given(instance=superimposed::OclModelElement_strategy)
+@given(instance=superimposed_OclModelElement_strategy)
 @settings(max_examples=50)
-def test_superimposed::oclmodelelement_instantiation(instance):
-    assert isinstance(instance, superimposed::OclModelElement)
-
-@given(instance=superimposed::OclModelElement_strategy)
-def test_superimposed::oclmodelelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_superimposed_oclmodelelement_instantiation(instance):
+    assert isinstance(instance, superimposed_OclModelElement)
 
 
-@given(instance=superimposed::OclModelElement_strategy)
-def test_superimposed::oclmodelelement_name_setter(instance):
+
+@given(instance=superimposed_OclModelElement_strategy)
+def test_superimposed_oclmodelelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -875,34 +869,28 @@ def test_superimposed::oclmodelelement_name_setter(instance):
 def test_numericexp_instantiation(instance):
     assert isinstance(instance, NumericExp)
 
-@given(instance=superimposed::IntegerExp_strategy)
+@given(instance=superimposed_IntegerExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::integerexp_instantiation(instance):
-    assert isinstance(instance, superimposed::IntegerExp)
-
-@given(instance=superimposed::IntegerExp_strategy)
-def test_superimposed::integerexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_superimposed_integerexp_instantiation(instance):
+    assert isinstance(instance, superimposed_IntegerExp)
 
 
-@given(instance=superimposed::IntegerExp_strategy)
-def test_superimposed::integerexp_integerSymbol_setter(instance):
+
+@given(instance=superimposed_IntegerExp_strategy)
+def test_superimposed_integerexp_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
 
-@given(instance=superimposed::RealExp_strategy)
+@given(instance=superimposed_RealExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::realexp_instantiation(instance):
-    assert isinstance(instance, superimposed::RealExp)
-
-@given(instance=superimposed::RealExp_strategy)
-def test_superimposed::realexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
+def test_superimposed_realexp_instantiation(instance):
+    assert isinstance(instance, superimposed_RealExp)
 
 
-@given(instance=superimposed::RealExp_strategy)
-def test_superimposed::realexp_realSymbol_setter(instance):
+
+@given(instance=superimposed_RealExp_strategy)
+def test_superimposed_realexp_realSymbol_setter(instance):
     original = instance.realSymbol
     instance.realSymbol = original
     assert instance.realSymbol == original
@@ -912,39 +900,33 @@ def test_superimposed::realexp_realSymbol_setter(instance):
 def test_primitiveexp_instantiation(instance):
     assert isinstance(instance, PrimitiveExp)
 
-@given(instance=superimposed::BooleanExp_strategy)
+@given(instance=superimposed_NumericExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::booleanexp_instantiation(instance):
-    assert isinstance(instance, superimposed::BooleanExp)
+def test_superimposed_numericexp_instantiation(instance):
+    assert isinstance(instance, superimposed_NumericExp)
 
-@given(instance=superimposed::BooleanExp_strategy)
-def test_superimposed::booleanexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
+@given(instance=superimposed_BooleanExp_strategy)
+@settings(max_examples=50)
+def test_superimposed_booleanexp_instantiation(instance):
+    assert isinstance(instance, superimposed_BooleanExp)
 
 
-@given(instance=superimposed::BooleanExp_strategy)
-def test_superimposed::booleanexp_booleanSymbol_setter(instance):
+
+@given(instance=superimposed_BooleanExp_strategy)
+def test_superimposed_booleanexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
 
-@given(instance=superimposed::NumericExp_strategy)
+@given(instance=superimposed_StringExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::numericexp_instantiation(instance):
-    assert isinstance(instance, superimposed::NumericExp)
-
-@given(instance=superimposed::StringExp_strategy)
-@settings(max_examples=50)
-def test_superimposed::stringexp_instantiation(instance):
-    assert isinstance(instance, superimposed::StringExp)
-
-@given(instance=superimposed::StringExp_strategy)
-def test_superimposed::stringexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_superimposed_stringexp_instantiation(instance):
+    assert isinstance(instance, superimposed_StringExp)
 
 
-@given(instance=superimposed::StringExp_strategy)
-def test_superimposed::stringexp_stringSymbol_setter(instance):
+
+@given(instance=superimposed_StringExp_strategy)
+def test_superimposed_stringexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
@@ -954,28 +936,25 @@ def test_superimposed::stringexp_stringSymbol_setter(instance):
 def test_variabledeclaration_instantiation(instance):
     assert isinstance(instance, VariableDeclaration)
 
-@given(instance=superimposed::Iterator_strategy)
+@given(instance=superimposed_Iterator_strategy)
 @settings(max_examples=50)
-def test_superimposed::iterator_instantiation(instance):
-    assert isinstance(instance, superimposed::Iterator)
+def test_superimposed_iterator_instantiation(instance):
+    assert isinstance(instance, superimposed_Iterator)
 
 @given(instance=LoopExp_strategy)
 @settings(max_examples=50)
 def test_loopexp_instantiation(instance):
     assert isinstance(instance, LoopExp)
 
-@given(instance=superimposed::IteratorExp_strategy)
+@given(instance=superimposed_IteratorExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::iteratorexp_instantiation(instance):
-    assert isinstance(instance, superimposed::IteratorExp)
-
-@given(instance=superimposed::IteratorExp_strategy)
-def test_superimposed::iteratorexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_superimposed_iteratorexp_instantiation(instance):
+    assert isinstance(instance, superimposed_IteratorExp)
 
 
-@given(instance=superimposed::IteratorExp_strategy)
-def test_superimposed::iteratorexp_name_setter(instance):
+
+@given(instance=superimposed_IteratorExp_strategy)
+def test_superimposed_iteratorexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -985,64 +964,58 @@ def test_superimposed::iteratorexp_name_setter(instance):
 def test_operatorcallexp_instantiation(instance):
     assert isinstance(instance, OperatorCallExp)
 
-@given(instance=superimposed::UnaryOperatorCallExp_strategy)
+@given(instance=superimposed_UnaryOperatorCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::unaryoperatorcallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::UnaryOperatorCallExp)
+def test_superimposed_unaryoperatorcallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_UnaryOperatorCallExp)
 
-@given(instance=superimposed::BinaryOperatorCallExp_strategy)
+@given(instance=superimposed_BinaryOperatorCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::binaryoperatorcallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::BinaryOperatorCallExp)
+def test_superimposed_binaryoperatorcallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_BinaryOperatorCallExp)
 
 @given(instance=OperationCallExp_strategy)
 @settings(max_examples=50)
 def test_operationcallexp_instantiation(instance):
     assert isinstance(instance, OperationCallExp)
 
-@given(instance=superimposed::CollectionOperationCallExp_strategy)
+@given(instance=superimposed_CollectionOperationCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::collectionoperationcallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::CollectionOperationCallExp)
+def test_superimposed_collectionoperationcallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_CollectionOperationCallExp)
 
 @given(instance=PropertyCallExp_strategy)
 @settings(max_examples=50)
 def test_propertycallexp_instantiation(instance):
     assert isinstance(instance, PropertyCallExp)
 
-@given(instance=superimposed::LoopExp_strategy)
+@given(instance=superimposed_LoopExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::loopexp_instantiation(instance):
-    assert isinstance(instance, superimposed::LoopExp)
+def test_superimposed_loopexp_instantiation(instance):
+    assert isinstance(instance, superimposed_LoopExp)
 
-@given(instance=superimposed::NavigationCallExp_strategy)
+@given(instance=superimposed_NavigationCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::NavigationCallExp)
-
-@given(instance=superimposed::NavigationCallExp_strategy)
-def test_superimposed::navigationcallexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_superimposed_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_NavigationCallExp)
 
 
-@given(instance=superimposed::NavigationCallExp_strategy)
-def test_superimposed::navigationcallexp_name_setter(instance):
+
+@given(instance=superimposed_NavigationCallExp_strategy)
+def test_superimposed_navigationcallexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=superimposed::OperationCallExp_strategy)
+@given(instance=superimposed_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::operationcallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::OperationCallExp)
-
-@given(instance=superimposed::OperationCallExp_strategy)
-def test_superimposed::operationcallexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_superimposed_operationcallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_OperationCallExp)
 
 
-@given(instance=superimposed::OperationCallExp_strategy)
-def test_superimposed::operationcallexp_name_setter(instance):
+
+@given(instance=superimposed_OperationCallExp_strategy)
+def test_superimposed_operationcallexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1052,79 +1025,73 @@ def test_superimposed::operationcallexp_name_setter(instance):
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=superimposed::IfExp_strategy)
+@given(instance=superimposed_CollectionExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::ifexp_instantiation(instance):
-    assert isinstance(instance, superimposed::IfExp)
+def test_superimposed_collectionexp_instantiation(instance):
+    assert isinstance(instance, superimposed_CollectionExp)
 
-@given(instance=superimposed::LetExp_strategy)
+@given(instance=superimposed_PrimitiveExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::letexp_instantiation(instance):
-    assert isinstance(instance, superimposed::LetExp)
+def test_superimposed_primitiveexp_instantiation(instance):
+    assert isinstance(instance, superimposed_PrimitiveExp)
 
-@given(instance=superimposed::OclUndefinedExp_strategy)
+@given(instance=superimposed_OperatorCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::oclundefinedexp_instantiation(instance):
-    assert isinstance(instance, superimposed::OclUndefinedExp)
-
-@given(instance=superimposed::PrimitiveExp_strategy)
-@settings(max_examples=50)
-def test_superimposed::primitiveexp_instantiation(instance):
-    assert isinstance(instance, superimposed::PrimitiveExp)
-
-@given(instance=superimposed::CollectionExp_strategy)
-@settings(max_examples=50)
-def test_superimposed::collectionexp_instantiation(instance):
-    assert isinstance(instance, superimposed::CollectionExp)
-
-@given(instance=superimposed::OperatorCallExp_strategy)
-@settings(max_examples=50)
-def test_superimposed::operatorcallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::OperatorCallExp)
-
-@given(instance=superimposed::OperatorCallExp_strategy)
-def test_superimposed::operatorcallexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_superimposed_operatorcallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_OperatorCallExp)
 
 
-@given(instance=superimposed::OperatorCallExp_strategy)
-def test_superimposed::operatorcallexp_name_setter(instance):
+
+@given(instance=superimposed_OperatorCallExp_strategy)
+def test_superimposed_operatorcallexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=superimposed::PropertyCallExp_strategy)
+@given(instance=superimposed_IfExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::propertycallexp_instantiation(instance):
-    assert isinstance(instance, superimposed::PropertyCallExp)
+def test_superimposed_ifexp_instantiation(instance):
+    assert isinstance(instance, superimposed_IfExp)
 
-@given(instance=superimposed::VariableExp_strategy)
+@given(instance=superimposed_LetExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::variableexp_instantiation(instance):
-    assert isinstance(instance, superimposed::VariableExp)
+def test_superimposed_letexp_instantiation(instance):
+    assert isinstance(instance, superimposed_LetExp)
 
-@given(instance=superimposed::OclType_strategy)
+@given(instance=superimposed_OclUndefinedExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::ocltype_instantiation(instance):
-    assert isinstance(instance, superimposed::OclType)
+def test_superimposed_oclundefinedexp_instantiation(instance):
+    assert isinstance(instance, superimposed_OclUndefinedExp)
 
-@given(instance=superimposed::VariableDeclaration_strategy)
+@given(instance=superimposed_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_superimposed::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, superimposed::VariableDeclaration)
+def test_superimposed_propertycallexp_instantiation(instance):
+    assert isinstance(instance, superimposed_PropertyCallExp)
 
-@given(instance=superimposed::VariableDeclaration_strategy)
-def test_superimposed::variabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=superimposed_VariableExp_strategy)
+@settings(max_examples=50)
+def test_superimposed_variableexp_instantiation(instance):
+    assert isinstance(instance, superimposed_VariableExp)
+
+@given(instance=superimposed_OclType_strategy)
+@settings(max_examples=50)
+def test_superimposed_ocltype_instantiation(instance):
+    assert isinstance(instance, superimposed_OclType)
+
+@given(instance=superimposed_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_superimposed_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, superimposed_VariableDeclaration)
 
 
-@given(instance=superimposed::VariableDeclaration_strategy)
-def test_superimposed::variabledeclaration_name_setter(instance):
+
+@given(instance=superimposed_VariableDeclaration_strategy)
+def test_superimposed_variabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=superimposed::OclExpression_strategy)
+@given(instance=superimposed_OclExpression_strategy)
 @settings(max_examples=50)
-def test_superimposed::oclexpression_instantiation(instance):
-    assert isinstance(instance, superimposed::OclExpression)
+def test_superimposed_oclexpression_instantiation(instance):
+    assert isinstance(instance, superimposed_OclExpression)

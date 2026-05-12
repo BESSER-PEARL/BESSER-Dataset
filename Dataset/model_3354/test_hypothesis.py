@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Operation,
-    Trmodel::Update,
-    Trmodel::Delete,
-    Trmodel::Add,
-    Trmodel::Column,
-    Trmodel::Table,
-    Trmodel::LoadModel,
-    Trmodel::Operation,
-    Trmodel::loader,
+    Trmodel_Delete,
+    Trmodel_Update,
+    Trmodel_Add,
+    Trmodel_Column,
+    Trmodel_Table,
+    Trmodel_LoadModel,
+    Trmodel_Operation,
+    Trmodel_loader,
 )
 
 # =============================================================================
@@ -37,23 +37,37 @@ def test_operation_constructor_args():
 
 
 
-def test_trmodel::update_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::Update)
+def test_trmodel_delete_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_Delete)
 
 
-def test_trmodel::update_constructor_exists():
-    assert callable(Trmodel::Update.__init__)
+def test_trmodel_delete_constructor_exists():
+    assert callable(Trmodel_Delete.__init__)
 
 
-def test_trmodel::update_constructor_args():
-    sig = inspect.signature(Trmodel::Update.__init__)
+def test_trmodel_delete_constructor_args():
+    sig = inspect.signature(Trmodel_Delete.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trmodel_update_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_Update)
+
+
+def test_trmodel_update_constructor_exists():
+    assert callable(Trmodel_Update.__init__)
+
+
+def test_trmodel_update_constructor_args():
+    sig = inspect.signature(Trmodel_Update.__init__)
     params = list(sig.parameters.keys())
     assert "newName" in params, "Missing parameter 'newName'"
 
-def test_trmodel::update_has_newName():
-    assert hasattr(Trmodel::Update, "newName")
+def test_trmodel_update_has_newName():
+    assert hasattr(Trmodel_Update, "newName")
     descriptor = None
-    for klass in Trmodel::Update.__mro__:
+    for klass in Trmodel_Update.__mro__:
         if "newName" in klass.__dict__:
             descriptor = klass.__dict__["newName"]
             break
@@ -61,61 +75,47 @@ def test_trmodel::update_has_newName():
 
 
 
-def test_trmodel::delete_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::Delete)
+def test_trmodel_add_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_Add)
 
 
-def test_trmodel::delete_constructor_exists():
-    assert callable(Trmodel::Delete.__init__)
+def test_trmodel_add_constructor_exists():
+    assert callable(Trmodel_Add.__init__)
 
 
-def test_trmodel::delete_constructor_args():
-    sig = inspect.signature(Trmodel::Delete.__init__)
+def test_trmodel_add_constructor_args():
+    sig = inspect.signature(Trmodel_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trmodel::add_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::Add)
+def test_trmodel_column_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_Column)
 
 
-def test_trmodel::add_constructor_exists():
-    assert callable(Trmodel::Add.__init__)
+def test_trmodel_column_constructor_exists():
+    assert callable(Trmodel_Column.__init__)
 
 
-def test_trmodel::add_constructor_args():
-    sig = inspect.signature(Trmodel::Add.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trmodel::column_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::Column)
-
-
-def test_trmodel::column_constructor_exists():
-    assert callable(Trmodel::Column.__init__)
-
-
-def test_trmodel::column_constructor_args():
-    sig = inspect.signature(Trmodel::Column.__init__)
+def test_trmodel_column_constructor_args():
+    sig = inspect.signature(Trmodel_Column.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
     assert "tableName" in params, "Missing parameter 'tableName'"
 
-def test_trmodel::column_has_Name():
-    assert hasattr(Trmodel::Column, "Name")
+def test_trmodel_column_has_Name():
+    assert hasattr(Trmodel_Column, "Name")
     descriptor = None
-    for klass in Trmodel::Column.__mro__:
+    for klass in Trmodel_Column.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_trmodel::column_has_tableName():
-    assert hasattr(Trmodel::Column, "tableName")
+def test_trmodel_column_has_tableName():
+    assert hasattr(Trmodel_Column, "tableName")
     descriptor = None
-    for klass in Trmodel::Column.__mro__:
+    for klass in Trmodel_Column.__mro__:
         if "tableName" in klass.__dict__:
             descriptor = klass.__dict__["tableName"]
             break
@@ -123,23 +123,23 @@ def test_trmodel::column_has_tableName():
 
 
 
-def test_trmodel::table_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::Table)
+def test_trmodel_table_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_Table)
 
 
-def test_trmodel::table_constructor_exists():
-    assert callable(Trmodel::Table.__init__)
+def test_trmodel_table_constructor_exists():
+    assert callable(Trmodel_Table.__init__)
 
 
-def test_trmodel::table_constructor_args():
-    sig = inspect.signature(Trmodel::Table.__init__)
+def test_trmodel_table_constructor_args():
+    sig = inspect.signature(Trmodel_Table.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_trmodel::table_has_Name():
-    assert hasattr(Trmodel::Table, "Name")
+def test_trmodel_table_has_Name():
+    assert hasattr(Trmodel_Table, "Name")
     descriptor = None
-    for klass in Trmodel::Table.__mro__:
+    for klass in Trmodel_Table.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -147,23 +147,23 @@ def test_trmodel::table_has_Name():
 
 
 
-def test_trmodel::loadmodel_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::LoadModel)
+def test_trmodel_loadmodel_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_LoadModel)
 
 
-def test_trmodel::loadmodel_constructor_exists():
-    assert callable(Trmodel::LoadModel.__init__)
+def test_trmodel_loadmodel_constructor_exists():
+    assert callable(Trmodel_LoadModel.__init__)
 
 
-def test_trmodel::loadmodel_constructor_args():
-    sig = inspect.signature(Trmodel::LoadModel.__init__)
+def test_trmodel_loadmodel_constructor_args():
+    sig = inspect.signature(Trmodel_LoadModel.__init__)
     params = list(sig.parameters.keys())
     assert "url" in params, "Missing parameter 'url'"
 
-def test_trmodel::loadmodel_has_url():
-    assert hasattr(Trmodel::LoadModel, "url")
+def test_trmodel_loadmodel_has_url():
+    assert hasattr(Trmodel_LoadModel, "url")
     descriptor = None
-    for klass in Trmodel::LoadModel.__mro__:
+    for klass in Trmodel_LoadModel.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -171,30 +171,30 @@ def test_trmodel::loadmodel_has_url():
 
 
 
-def test_trmodel::operation_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::Operation)
+def test_trmodel_operation_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_Operation)
 
 
-def test_trmodel::operation_constructor_exists():
-    assert callable(Trmodel::Operation.__init__)
+def test_trmodel_operation_constructor_exists():
+    assert callable(Trmodel_Operation.__init__)
 
 
-def test_trmodel::operation_constructor_args():
-    sig = inspect.signature(Trmodel::Operation.__init__)
+def test_trmodel_operation_constructor_args():
+    sig = inspect.signature(Trmodel_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trmodel::loader_is_not_abstract():
-    assert not inspect.isabstract(Trmodel::loader)
+def test_trmodel_loader_is_not_abstract():
+    assert not inspect.isabstract(Trmodel_loader)
 
 
-def test_trmodel::loader_constructor_exists():
-    assert callable(Trmodel::loader.__init__)
+def test_trmodel_loader_constructor_exists():
+    assert callable(Trmodel_loader.__init__)
 
 
-def test_trmodel::loader_constructor_args():
-    sig = inspect.signature(Trmodel::loader.__init__)
+def test_trmodel_loader_constructor_args():
+    sig = inspect.signature(Trmodel_loader.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,39 +212,39 @@ safe_text = st.text(
 Operation_strategy = st.builds(
     Operation,
 )
-Trmodel::Update_strategy = st.builds(
-    Trmodel::Update,
+Trmodel_Delete_strategy = st.builds(
+    Trmodel_Delete,
+)
+Trmodel_Update_strategy = st.builds(
+    Trmodel_Update,
     newName=
         safe_text
 )
-Trmodel::Delete_strategy = st.builds(
-    Trmodel::Delete,
+Trmodel_Add_strategy = st.builds(
+    Trmodel_Add,
 )
-Trmodel::Add_strategy = st.builds(
-    Trmodel::Add,
-)
-Trmodel::Column_strategy = st.builds(
-    Trmodel::Column,
+Trmodel_Column_strategy = st.builds(
+    Trmodel_Column,
     Name=
         safe_text,
     tableName=
         safe_text
 )
-Trmodel::Table_strategy = st.builds(
-    Trmodel::Table,
+Trmodel_Table_strategy = st.builds(
+    Trmodel_Table,
     Name=
         safe_text
 )
-Trmodel::LoadModel_strategy = st.builds(
-    Trmodel::LoadModel,
+Trmodel_LoadModel_strategy = st.builds(
+    Trmodel_LoadModel,
     url=
         safe_text
 )
-Trmodel::Operation_strategy = st.builds(
-    Trmodel::Operation,
+Trmodel_Operation_strategy = st.builds(
+    Trmodel_Operation,
 )
-Trmodel::loader_strategy = st.builds(
-    Trmodel::loader,
+Trmodel_loader_strategy = st.builds(
+    Trmodel_loader,
 )
 
 @given(instance=Operation_strategy)
@@ -252,97 +252,82 @@ Trmodel::loader_strategy = st.builds(
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=Trmodel::Update_strategy)
+@given(instance=Trmodel_Delete_strategy)
 @settings(max_examples=50)
-def test_trmodel::update_instantiation(instance):
-    assert isinstance(instance, Trmodel::Update)
+def test_trmodel_delete_instantiation(instance):
+    assert isinstance(instance, Trmodel_Delete)
 
-@given(instance=Trmodel::Update_strategy)
-def test_trmodel::update_newName_type(instance):
-    assert isinstance(instance.newName, str)
+@given(instance=Trmodel_Update_strategy)
+@settings(max_examples=50)
+def test_trmodel_update_instantiation(instance):
+    assert isinstance(instance, Trmodel_Update)
 
 
-@given(instance=Trmodel::Update_strategy)
-def test_trmodel::update_newName_setter(instance):
+
+@given(instance=Trmodel_Update_strategy)
+def test_trmodel_update_newName_setter(instance):
     original = instance.newName
     instance.newName = original
     assert instance.newName == original
 
-@given(instance=Trmodel::Delete_strategy)
+@given(instance=Trmodel_Add_strategy)
 @settings(max_examples=50)
-def test_trmodel::delete_instantiation(instance):
-    assert isinstance(instance, Trmodel::Delete)
+def test_trmodel_add_instantiation(instance):
+    assert isinstance(instance, Trmodel_Add)
 
-@given(instance=Trmodel::Add_strategy)
+@given(instance=Trmodel_Column_strategy)
 @settings(max_examples=50)
-def test_trmodel::add_instantiation(instance):
-    assert isinstance(instance, Trmodel::Add)
-
-@given(instance=Trmodel::Column_strategy)
-@settings(max_examples=50)
-def test_trmodel::column_instantiation(instance):
-    assert isinstance(instance, Trmodel::Column)
-
-@given(instance=Trmodel::Column_strategy)
-def test_trmodel::column_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_trmodel_column_instantiation(instance):
+    assert isinstance(instance, Trmodel_Column)
 
 
-@given(instance=Trmodel::Column_strategy)
-def test_trmodel::column_Name_setter(instance):
+
+@given(instance=Trmodel_Column_strategy)
+def test_trmodel_column_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Trmodel::Column_strategy)
-def test_trmodel::column_tableName_type(instance):
-    assert isinstance(instance.tableName, str)
 
 
-@given(instance=Trmodel::Column_strategy)
-def test_trmodel::column_tableName_setter(instance):
+@given(instance=Trmodel_Column_strategy)
+def test_trmodel_column_tableName_setter(instance):
     original = instance.tableName
     instance.tableName = original
     assert instance.tableName == original
 
-@given(instance=Trmodel::Table_strategy)
+@given(instance=Trmodel_Table_strategy)
 @settings(max_examples=50)
-def test_trmodel::table_instantiation(instance):
-    assert isinstance(instance, Trmodel::Table)
-
-@given(instance=Trmodel::Table_strategy)
-def test_trmodel::table_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_trmodel_table_instantiation(instance):
+    assert isinstance(instance, Trmodel_Table)
 
 
-@given(instance=Trmodel::Table_strategy)
-def test_trmodel::table_Name_setter(instance):
+
+@given(instance=Trmodel_Table_strategy)
+def test_trmodel_table_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Trmodel::LoadModel_strategy)
+@given(instance=Trmodel_LoadModel_strategy)
 @settings(max_examples=50)
-def test_trmodel::loadmodel_instantiation(instance):
-    assert isinstance(instance, Trmodel::LoadModel)
-
-@given(instance=Trmodel::LoadModel_strategy)
-def test_trmodel::loadmodel_url_type(instance):
-    assert isinstance(instance.url, str)
+def test_trmodel_loadmodel_instantiation(instance):
+    assert isinstance(instance, Trmodel_LoadModel)
 
 
-@given(instance=Trmodel::LoadModel_strategy)
-def test_trmodel::loadmodel_url_setter(instance):
+
+@given(instance=Trmodel_LoadModel_strategy)
+def test_trmodel_loadmodel_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=Trmodel::Operation_strategy)
+@given(instance=Trmodel_Operation_strategy)
 @settings(max_examples=50)
-def test_trmodel::operation_instantiation(instance):
-    assert isinstance(instance, Trmodel::Operation)
+def test_trmodel_operation_instantiation(instance):
+    assert isinstance(instance, Trmodel_Operation)
 
-@given(instance=Trmodel::loader_strategy)
+@given(instance=Trmodel_loader_strategy)
 @settings(max_examples=50)
-def test_trmodel::loader_instantiation(instance):
-    assert isinstance(instance, Trmodel::loader)
+def test_trmodel_loader_instantiation(instance):
+    assert isinstance(instance, Trmodel_loader)

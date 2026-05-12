@@ -3,54 +3,54 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::Property,
+from python_code import (
+    test_Property,
     Property,
-    test::OutputProperty,
-    test::InputProperty,
+    test_OutputProperty,
+    test_InputProperty,
     OutputProperty,
-    test::HeaderProperty,
-    test::ResponseProperty,
+    test_HeaderProperty,
+    test_ResponseProperty,
     InputProperty,
-    test::ParameterProperty,
+    test_ParameterProperty,
     HeaderAssertion,
-    test::HeaderEqualsAssertion,
+    test_HeaderEqualsAssertion,
     PerformanceAssertion,
-    test::SLAAssertion,
+    test_SLAAssertion,
     ComplianceAssertion,
-    test::SchemaComplianceAssertion,
+    test_SchemaComplianceAssertion,
     ResponseMessageAssertion,
-    test::ResponseMessageEqualsAssertion,
-    test::ResponseMessageContainsAssertion,
+    test_ResponseMessageEqualsAssertion,
+    test_ResponseMessageContainsAssertion,
     Assertion,
-    test::PerformanceAssertion,
-    test::ResponseMessageAssertion,
-    test::HeaderAssertion,
-    test::ComplianceAssertion,
-    test::NamedElement,
-    test::Authorization,
-    test::Assertion,
-    test::Parameter,
+    test_ResponseMessageAssertion,
+    test_HeaderAssertion,
+    test_PerformanceAssertion,
+    test_ComplianceAssertion,
+    test_NamedElement,
+    test_Authorization,
+    test_Assertion,
+    test_Parameter,
     Authorization,
-    test::OAuth2,
-    test::Basic,
+    test_OAuth2,
+    test_Basic,
     HTTPStatusAssertion,
-    test::ValidStatusCodesAssertion,
-    test::InvalidStatusCodesAssertion,
-    test::HTTPStatusAssertion,
-    test::HeaderExistsAssertion,
+    test_ValidStatusCodesAssertion,
+    test_InvalidStatusCodesAssertion,
+    test_HTTPStatusAssertion,
+    test_HeaderExistsAssertion,
     NamedElement,
-    test::TestCase,
-    test::TestSuite,
+    test_TestCase,
+    test_TestSuite,
     TestStep,
-    test::PropertyTransfer,
-    test::APIRequest,
-    test::TestStep,
-    ParameterLocation,
-    SchemeType,
+    test_PropertyTransfer,
+    test_APIRequest,
+    test_TestStep,
     HTTPMethod,
+    SchemeType,
+    ParameterLocation,
     PathLanguage,
 )
 
@@ -60,35 +60,35 @@ from classes import (
 
 
 
-def test_test::property_is_not_abstract():
-    assert not inspect.isabstract(test::Property)
+def test_test_property_is_not_abstract():
+    assert not inspect.isabstract(test_Property)
 
 
-def test_test::property_constructor_exists():
-    assert callable(test::Property.__init__)
+def test_test_property_constructor_exists():
+    assert callable(test_Property.__init__)
 
 
-def test_test::property_constructor_args():
-    sig = inspect.signature(test::Property.__init__)
+def test_test_property_constructor_args():
+    sig = inspect.signature(test_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "pathLanguage" in params, "Missing parameter 'pathLanguage'"
     assert "expression" in params, "Missing parameter 'expression'"
+    assert "pathLanguage" in params, "Missing parameter 'pathLanguage'"
 
-def test_test::property_has_pathLanguage():
-    assert hasattr(test::Property, "pathLanguage")
+def test_test_property_has_expression():
+    assert hasattr(test_Property, "expression")
     descriptor = None
-    for klass in test::Property.__mro__:
-        if "pathLanguage" in klass.__dict__:
-            descriptor = klass.__dict__["pathLanguage"]
+    for klass in test_Property.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::property_has_expression():
-    assert hasattr(test::Property, "expression")
+def test_test_property_has_pathLanguage():
+    assert hasattr(test_Property, "pathLanguage")
     descriptor = None
-    for klass in test::Property.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
+    for klass in test_Property.__mro__:
+        if "pathLanguage" in klass.__dict__:
+            descriptor = klass.__dict__["pathLanguage"]
             break
     assert isinstance(descriptor, property)
 
@@ -108,30 +108,30 @@ def test_property_constructor_args():
 
 
 
-def test_test::outputproperty_is_not_abstract():
-    assert not inspect.isabstract(test::OutputProperty)
+def test_test_outputproperty_is_not_abstract():
+    assert not inspect.isabstract(test_OutputProperty)
 
 
-def test_test::outputproperty_constructor_exists():
-    assert callable(test::OutputProperty.__init__)
+def test_test_outputproperty_constructor_exists():
+    assert callable(test_OutputProperty.__init__)
 
 
-def test_test::outputproperty_constructor_args():
-    sig = inspect.signature(test::OutputProperty.__init__)
+def test_test_outputproperty_constructor_args():
+    sig = inspect.signature(test_OutputProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::inputproperty_is_not_abstract():
-    assert not inspect.isabstract(test::InputProperty)
+def test_test_inputproperty_is_not_abstract():
+    assert not inspect.isabstract(test_InputProperty)
 
 
-def test_test::inputproperty_constructor_exists():
-    assert callable(test::InputProperty.__init__)
+def test_test_inputproperty_constructor_exists():
+    assert callable(test_InputProperty.__init__)
 
 
-def test_test::inputproperty_constructor_args():
-    sig = inspect.signature(test::InputProperty.__init__)
+def test_test_inputproperty_constructor_args():
+    sig = inspect.signature(test_InputProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -150,30 +150,30 @@ def test_outputproperty_constructor_args():
 
 
 
-def test_test::headerproperty_is_not_abstract():
-    assert not inspect.isabstract(test::HeaderProperty)
+def test_test_headerproperty_is_not_abstract():
+    assert not inspect.isabstract(test_HeaderProperty)
 
 
-def test_test::headerproperty_constructor_exists():
-    assert callable(test::HeaderProperty.__init__)
+def test_test_headerproperty_constructor_exists():
+    assert callable(test_HeaderProperty.__init__)
 
 
-def test_test::headerproperty_constructor_args():
-    sig = inspect.signature(test::HeaderProperty.__init__)
+def test_test_headerproperty_constructor_args():
+    sig = inspect.signature(test_HeaderProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::responseproperty_is_not_abstract():
-    assert not inspect.isabstract(test::ResponseProperty)
+def test_test_responseproperty_is_not_abstract():
+    assert not inspect.isabstract(test_ResponseProperty)
 
 
-def test_test::responseproperty_constructor_exists():
-    assert callable(test::ResponseProperty.__init__)
+def test_test_responseproperty_constructor_exists():
+    assert callable(test_ResponseProperty.__init__)
 
 
-def test_test::responseproperty_constructor_args():
-    sig = inspect.signature(test::ResponseProperty.__init__)
+def test_test_responseproperty_constructor_args():
+    sig = inspect.signature(test_ResponseProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,16 +192,16 @@ def test_inputproperty_constructor_args():
 
 
 
-def test_test::parameterproperty_is_not_abstract():
-    assert not inspect.isabstract(test::ParameterProperty)
+def test_test_parameterproperty_is_not_abstract():
+    assert not inspect.isabstract(test_ParameterProperty)
 
 
-def test_test::parameterproperty_constructor_exists():
-    assert callable(test::ParameterProperty.__init__)
+def test_test_parameterproperty_constructor_exists():
+    assert callable(test_ParameterProperty.__init__)
 
 
-def test_test::parameterproperty_constructor_args():
-    sig = inspect.signature(test::ParameterProperty.__init__)
+def test_test_parameterproperty_constructor_args():
+    sig = inspect.signature(test_ParameterProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -220,23 +220,23 @@ def test_headerassertion_constructor_args():
 
 
 
-def test_test::headerequalsassertion_is_not_abstract():
-    assert not inspect.isabstract(test::HeaderEqualsAssertion)
+def test_test_headerequalsassertion_is_not_abstract():
+    assert not inspect.isabstract(test_HeaderEqualsAssertion)
 
 
-def test_test::headerequalsassertion_constructor_exists():
-    assert callable(test::HeaderEqualsAssertion.__init__)
+def test_test_headerequalsassertion_constructor_exists():
+    assert callable(test_HeaderEqualsAssertion.__init__)
 
 
-def test_test::headerequalsassertion_constructor_args():
-    sig = inspect.signature(test::HeaderEqualsAssertion.__init__)
+def test_test_headerequalsassertion_constructor_args():
+    sig = inspect.signature(test_HeaderEqualsAssertion.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_test::headerequalsassertion_has_value():
-    assert hasattr(test::HeaderEqualsAssertion, "value")
+def test_test_headerequalsassertion_has_value():
+    assert hasattr(test_HeaderEqualsAssertion, "value")
     descriptor = None
-    for klass in test::HeaderEqualsAssertion.__mro__:
+    for klass in test_HeaderEqualsAssertion.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -258,23 +258,23 @@ def test_performanceassertion_constructor_args():
 
 
 
-def test_test::slaassertion_is_not_abstract():
-    assert not inspect.isabstract(test::SLAAssertion)
+def test_test_slaassertion_is_not_abstract():
+    assert not inspect.isabstract(test_SLAAssertion)
 
 
-def test_test::slaassertion_constructor_exists():
-    assert callable(test::SLAAssertion.__init__)
+def test_test_slaassertion_constructor_exists():
+    assert callable(test_SLAAssertion.__init__)
 
 
-def test_test::slaassertion_constructor_args():
-    sig = inspect.signature(test::SLAAssertion.__init__)
+def test_test_slaassertion_constructor_args():
+    sig = inspect.signature(test_SLAAssertion.__init__)
     params = list(sig.parameters.keys())
     assert "maxTime" in params, "Missing parameter 'maxTime'"
 
-def test_test::slaassertion_has_maxTime():
-    assert hasattr(test::SLAAssertion, "maxTime")
+def test_test_slaassertion_has_maxTime():
+    assert hasattr(test_SLAAssertion, "maxTime")
     descriptor = None
-    for klass in test::SLAAssertion.__mro__:
+    for klass in test_SLAAssertion.__mro__:
         if "maxTime" in klass.__dict__:
             descriptor = klass.__dict__["maxTime"]
             break
@@ -296,16 +296,16 @@ def test_complianceassertion_constructor_args():
 
 
 
-def test_test::schemacomplianceassertion_is_not_abstract():
-    assert not inspect.isabstract(test::SchemaComplianceAssertion)
+def test_test_schemacomplianceassertion_is_not_abstract():
+    assert not inspect.isabstract(test_SchemaComplianceAssertion)
 
 
-def test_test::schemacomplianceassertion_constructor_exists():
-    assert callable(test::SchemaComplianceAssertion.__init__)
+def test_test_schemacomplianceassertion_constructor_exists():
+    assert callable(test_SchemaComplianceAssertion.__init__)
 
 
-def test_test::schemacomplianceassertion_constructor_args():
-    sig = inspect.signature(test::SchemaComplianceAssertion.__init__)
+def test_test_schemacomplianceassertion_constructor_args():
+    sig = inspect.signature(test_SchemaComplianceAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -324,30 +324,30 @@ def test_responsemessageassertion_constructor_args():
 
 
 
-def test_test::responsemessageequalsassertion_is_not_abstract():
-    assert not inspect.isabstract(test::ResponseMessageEqualsAssertion)
+def test_test_responsemessageequalsassertion_is_not_abstract():
+    assert not inspect.isabstract(test_ResponseMessageEqualsAssertion)
 
 
-def test_test::responsemessageequalsassertion_constructor_exists():
-    assert callable(test::ResponseMessageEqualsAssertion.__init__)
+def test_test_responsemessageequalsassertion_constructor_exists():
+    assert callable(test_ResponseMessageEqualsAssertion.__init__)
 
 
-def test_test::responsemessageequalsassertion_constructor_args():
-    sig = inspect.signature(test::ResponseMessageEqualsAssertion.__init__)
+def test_test_responsemessageequalsassertion_constructor_args():
+    sig = inspect.signature(test_ResponseMessageEqualsAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::responsemessagecontainsassertion_is_not_abstract():
-    assert not inspect.isabstract(test::ResponseMessageContainsAssertion)
+def test_test_responsemessagecontainsassertion_is_not_abstract():
+    assert not inspect.isabstract(test_ResponseMessageContainsAssertion)
 
 
-def test_test::responsemessagecontainsassertion_constructor_exists():
-    assert callable(test::ResponseMessageContainsAssertion.__init__)
+def test_test_responsemessagecontainsassertion_constructor_exists():
+    assert callable(test_ResponseMessageContainsAssertion.__init__)
 
 
-def test_test::responsemessagecontainsassertion_constructor_args():
-    sig = inspect.signature(test::ResponseMessageContainsAssertion.__init__)
+def test_test_responsemessagecontainsassertion_constructor_args():
+    sig = inspect.signature(test_ResponseMessageContainsAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -366,37 +366,23 @@ def test_assertion_constructor_args():
 
 
 
-def test_test::performanceassertion_is_not_abstract():
-    assert not inspect.isabstract(test::PerformanceAssertion)
+def test_test_responsemessageassertion_is_not_abstract():
+    assert not inspect.isabstract(test_ResponseMessageAssertion)
 
 
-def test_test::performanceassertion_constructor_exists():
-    assert callable(test::PerformanceAssertion.__init__)
+def test_test_responsemessageassertion_constructor_exists():
+    assert callable(test_ResponseMessageAssertion.__init__)
 
 
-def test_test::performanceassertion_constructor_args():
-    sig = inspect.signature(test::PerformanceAssertion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_test::responsemessageassertion_is_not_abstract():
-    assert not inspect.isabstract(test::ResponseMessageAssertion)
-
-
-def test_test::responsemessageassertion_constructor_exists():
-    assert callable(test::ResponseMessageAssertion.__init__)
-
-
-def test_test::responsemessageassertion_constructor_args():
-    sig = inspect.signature(test::ResponseMessageAssertion.__init__)
+def test_test_responsemessageassertion_constructor_args():
+    sig = inspect.signature(test_ResponseMessageAssertion.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_test::responsemessageassertion_has_value():
-    assert hasattr(test::ResponseMessageAssertion, "value")
+def test_test_responsemessageassertion_has_value():
+    assert hasattr(test_ResponseMessageAssertion, "value")
     descriptor = None
-    for klass in test::ResponseMessageAssertion.__mro__:
+    for klass in test_ResponseMessageAssertion.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -404,23 +390,23 @@ def test_test::responsemessageassertion_has_value():
 
 
 
-def test_test::headerassertion_is_not_abstract():
-    assert not inspect.isabstract(test::HeaderAssertion)
+def test_test_headerassertion_is_not_abstract():
+    assert not inspect.isabstract(test_HeaderAssertion)
 
 
-def test_test::headerassertion_constructor_exists():
-    assert callable(test::HeaderAssertion.__init__)
+def test_test_headerassertion_constructor_exists():
+    assert callable(test_HeaderAssertion.__init__)
 
 
-def test_test::headerassertion_constructor_args():
-    sig = inspect.signature(test::HeaderAssertion.__init__)
+def test_test_headerassertion_constructor_args():
+    sig = inspect.signature(test_HeaderAssertion.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_test::headerassertion_has_key():
-    assert hasattr(test::HeaderAssertion, "key")
+def test_test_headerassertion_has_key():
+    assert hasattr(test_HeaderAssertion, "key")
     descriptor = None
-    for klass in test::HeaderAssertion.__mro__:
+    for klass in test_HeaderAssertion.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -428,23 +414,37 @@ def test_test::headerassertion_has_key():
 
 
 
-def test_test::complianceassertion_is_not_abstract():
-    assert not inspect.isabstract(test::ComplianceAssertion)
+def test_test_performanceassertion_is_not_abstract():
+    assert not inspect.isabstract(test_PerformanceAssertion)
 
 
-def test_test::complianceassertion_constructor_exists():
-    assert callable(test::ComplianceAssertion.__init__)
+def test_test_performanceassertion_constructor_exists():
+    assert callable(test_PerformanceAssertion.__init__)
 
 
-def test_test::complianceassertion_constructor_args():
-    sig = inspect.signature(test::ComplianceAssertion.__init__)
+def test_test_performanceassertion_constructor_args():
+    sig = inspect.signature(test_PerformanceAssertion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_test_complianceassertion_is_not_abstract():
+    assert not inspect.isabstract(test_ComplianceAssertion)
+
+
+def test_test_complianceassertion_constructor_exists():
+    assert callable(test_ComplianceAssertion.__init__)
+
+
+def test_test_complianceassertion_constructor_args():
+    sig = inspect.signature(test_ComplianceAssertion.__init__)
     params = list(sig.parameters.keys())
     assert "path" in params, "Missing parameter 'path'"
 
-def test_test::complianceassertion_has_path():
-    assert hasattr(test::ComplianceAssertion, "path")
+def test_test_complianceassertion_has_path():
+    assert hasattr(test_ComplianceAssertion, "path")
     descriptor = None
-    for klass in test::ComplianceAssertion.__mro__:
+    for klass in test_ComplianceAssertion.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
@@ -452,23 +452,23 @@ def test_test::complianceassertion_has_path():
 
 
 
-def test_test::namedelement_is_not_abstract():
-    assert not inspect.isabstract(test::NamedElement)
+def test_test_namedelement_is_not_abstract():
+    assert not inspect.isabstract(test_NamedElement)
 
 
-def test_test::namedelement_constructor_exists():
-    assert callable(test::NamedElement.__init__)
+def test_test_namedelement_constructor_exists():
+    assert callable(test_NamedElement.__init__)
 
 
-def test_test::namedelement_constructor_args():
-    sig = inspect.signature(test::NamedElement.__init__)
+def test_test_namedelement_constructor_args():
+    sig = inspect.signature(test_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_test::namedelement_has_name():
-    assert hasattr(test::NamedElement, "name")
+def test_test_namedelement_has_name():
+    assert hasattr(test_NamedElement, "name")
     descriptor = None
-    for klass in test::NamedElement.__mro__:
+    for klass in test_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -476,37 +476,37 @@ def test_test::namedelement_has_name():
 
 
 
-def test_test::authorization_is_not_abstract():
-    assert not inspect.isabstract(test::Authorization)
+def test_test_authorization_is_not_abstract():
+    assert not inspect.isabstract(test_Authorization)
 
 
-def test_test::authorization_constructor_exists():
-    assert callable(test::Authorization.__init__)
+def test_test_authorization_constructor_exists():
+    assert callable(test_Authorization.__init__)
 
 
-def test_test::authorization_constructor_args():
-    sig = inspect.signature(test::Authorization.__init__)
+def test_test_authorization_constructor_args():
+    sig = inspect.signature(test_Authorization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::assertion_is_not_abstract():
-    assert not inspect.isabstract(test::Assertion)
+def test_test_assertion_is_not_abstract():
+    assert not inspect.isabstract(test_Assertion)
 
 
-def test_test::assertion_constructor_exists():
-    assert callable(test::Assertion.__init__)
+def test_test_assertion_constructor_exists():
+    assert callable(test_Assertion.__init__)
 
 
-def test_test::assertion_constructor_args():
-    sig = inspect.signature(test::Assertion.__init__)
+def test_test_assertion_constructor_args():
+    sig = inspect.signature(test_Assertion.__init__)
     params = list(sig.parameters.keys())
     assert "errorMessage" in params, "Missing parameter 'errorMessage'"
 
-def test_test::assertion_has_errorMessage():
-    assert hasattr(test::Assertion, "errorMessage")
+def test_test_assertion_has_errorMessage():
+    assert hasattr(test_Assertion, "errorMessage")
     descriptor = None
-    for klass in test::Assertion.__mro__:
+    for klass in test_Assertion.__mro__:
         if "errorMessage" in klass.__dict__:
             descriptor = klass.__dict__["errorMessage"]
             break
@@ -514,43 +514,43 @@ def test_test::assertion_has_errorMessage():
 
 
 
-def test_test::parameter_is_not_abstract():
-    assert not inspect.isabstract(test::Parameter)
+def test_test_parameter_is_not_abstract():
+    assert not inspect.isabstract(test_Parameter)
 
 
-def test_test::parameter_constructor_exists():
-    assert callable(test::Parameter.__init__)
+def test_test_parameter_constructor_exists():
+    assert callable(test_Parameter.__init__)
 
 
-def test_test::parameter_constructor_args():
-    sig = inspect.signature(test::Parameter.__init__)
+def test_test_parameter_constructor_args():
+    sig = inspect.signature(test_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "location" in params, "Missing parameter 'location'"
 
-def test_test::parameter_has_name():
-    assert hasattr(test::Parameter, "name")
+def test_test_parameter_has_value():
+    assert hasattr(test_Parameter, "value")
     descriptor = None
-    for klass in test::Parameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test::parameter_has_value():
-    assert hasattr(test::Parameter, "value")
-    descriptor = None
-    for klass in test::Parameter.__mro__:
+    for klass in test_Parameter.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::parameter_has_location():
-    assert hasattr(test::Parameter, "location")
+def test_test_parameter_has_name():
+    assert hasattr(test_Parameter, "name")
     descriptor = None
-    for klass in test::Parameter.__mro__:
+    for klass in test_Parameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_test_parameter_has_location():
+    assert hasattr(test_Parameter, "location")
+    descriptor = None
+    for klass in test_Parameter.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -572,23 +572,23 @@ def test_authorization_constructor_args():
 
 
 
-def test_test::oauth2_is_not_abstract():
-    assert not inspect.isabstract(test::OAuth2)
+def test_test_oauth2_is_not_abstract():
+    assert not inspect.isabstract(test_OAuth2)
 
 
-def test_test::oauth2_constructor_exists():
-    assert callable(test::OAuth2.__init__)
+def test_test_oauth2_constructor_exists():
+    assert callable(test_OAuth2.__init__)
 
 
-def test_test::oauth2_constructor_args():
-    sig = inspect.signature(test::OAuth2.__init__)
+def test_test_oauth2_constructor_args():
+    sig = inspect.signature(test_OAuth2.__init__)
     params = list(sig.parameters.keys())
     assert "token" in params, "Missing parameter 'token'"
 
-def test_test::oauth2_has_token():
-    assert hasattr(test::OAuth2, "token")
+def test_test_oauth2_has_token():
+    assert hasattr(test_OAuth2, "token")
     descriptor = None
-    for klass in test::OAuth2.__mro__:
+    for klass in test_OAuth2.__mro__:
         if "token" in klass.__dict__:
             descriptor = klass.__dict__["token"]
             break
@@ -596,33 +596,33 @@ def test_test::oauth2_has_token():
 
 
 
-def test_test::basic_is_not_abstract():
-    assert not inspect.isabstract(test::Basic)
+def test_test_basic_is_not_abstract():
+    assert not inspect.isabstract(test_Basic)
 
 
-def test_test::basic_constructor_exists():
-    assert callable(test::Basic.__init__)
+def test_test_basic_constructor_exists():
+    assert callable(test_Basic.__init__)
 
 
-def test_test::basic_constructor_args():
-    sig = inspect.signature(test::Basic.__init__)
+def test_test_basic_constructor_args():
+    sig = inspect.signature(test_Basic.__init__)
     params = list(sig.parameters.keys())
     assert "username" in params, "Missing parameter 'username'"
     assert "password" in params, "Missing parameter 'password'"
 
-def test_test::basic_has_username():
-    assert hasattr(test::Basic, "username")
+def test_test_basic_has_username():
+    assert hasattr(test_Basic, "username")
     descriptor = None
-    for klass in test::Basic.__mro__:
+    for klass in test_Basic.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::basic_has_password():
-    assert hasattr(test::Basic, "password")
+def test_test_basic_has_password():
+    assert hasattr(test_Basic, "password")
     descriptor = None
-    for klass in test::Basic.__mro__:
+    for klass in test_Basic.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
@@ -644,51 +644,51 @@ def test_httpstatusassertion_constructor_args():
 
 
 
-def test_test::validstatuscodesassertion_is_not_abstract():
-    assert not inspect.isabstract(test::ValidStatusCodesAssertion)
+def test_test_validstatuscodesassertion_is_not_abstract():
+    assert not inspect.isabstract(test_ValidStatusCodesAssertion)
 
 
-def test_test::validstatuscodesassertion_constructor_exists():
-    assert callable(test::ValidStatusCodesAssertion.__init__)
+def test_test_validstatuscodesassertion_constructor_exists():
+    assert callable(test_ValidStatusCodesAssertion.__init__)
 
 
-def test_test::validstatuscodesassertion_constructor_args():
-    sig = inspect.signature(test::ValidStatusCodesAssertion.__init__)
+def test_test_validstatuscodesassertion_constructor_args():
+    sig = inspect.signature(test_ValidStatusCodesAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::invalidstatuscodesassertion_is_not_abstract():
-    assert not inspect.isabstract(test::InvalidStatusCodesAssertion)
+def test_test_invalidstatuscodesassertion_is_not_abstract():
+    assert not inspect.isabstract(test_InvalidStatusCodesAssertion)
 
 
-def test_test::invalidstatuscodesassertion_constructor_exists():
-    assert callable(test::InvalidStatusCodesAssertion.__init__)
+def test_test_invalidstatuscodesassertion_constructor_exists():
+    assert callable(test_InvalidStatusCodesAssertion.__init__)
 
 
-def test_test::invalidstatuscodesassertion_constructor_args():
-    sig = inspect.signature(test::InvalidStatusCodesAssertion.__init__)
+def test_test_invalidstatuscodesassertion_constructor_args():
+    sig = inspect.signature(test_InvalidStatusCodesAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::httpstatusassertion_is_not_abstract():
-    assert not inspect.isabstract(test::HTTPStatusAssertion)
+def test_test_httpstatusassertion_is_not_abstract():
+    assert not inspect.isabstract(test_HTTPStatusAssertion)
 
 
-def test_test::httpstatusassertion_constructor_exists():
-    assert callable(test::HTTPStatusAssertion.__init__)
+def test_test_httpstatusassertion_constructor_exists():
+    assert callable(test_HTTPStatusAssertion.__init__)
 
 
-def test_test::httpstatusassertion_constructor_args():
-    sig = inspect.signature(test::HTTPStatusAssertion.__init__)
+def test_test_httpstatusassertion_constructor_args():
+    sig = inspect.signature(test_HTTPStatusAssertion.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
 
-def test_test::httpstatusassertion_has_code():
-    assert hasattr(test::HTTPStatusAssertion, "code")
+def test_test_httpstatusassertion_has_code():
+    assert hasattr(test_HTTPStatusAssertion, "code")
     descriptor = None
-    for klass in test::HTTPStatusAssertion.__mro__:
+    for klass in test_HTTPStatusAssertion.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
@@ -696,16 +696,16 @@ def test_test::httpstatusassertion_has_code():
 
 
 
-def test_test::headerexistsassertion_is_not_abstract():
-    assert not inspect.isabstract(test::HeaderExistsAssertion)
+def test_test_headerexistsassertion_is_not_abstract():
+    assert not inspect.isabstract(test_HeaderExistsAssertion)
 
 
-def test_test::headerexistsassertion_constructor_exists():
-    assert callable(test::HeaderExistsAssertion.__init__)
+def test_test_headerexistsassertion_constructor_exists():
+    assert callable(test_HeaderExistsAssertion.__init__)
 
 
-def test_test::headerexistsassertion_constructor_args():
-    sig = inspect.signature(test::HeaderExistsAssertion.__init__)
+def test_test_headerexistsassertion_constructor_args():
+    sig = inspect.signature(test_HeaderExistsAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -724,23 +724,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_test::testcase_is_not_abstract():
-    assert not inspect.isabstract(test::TestCase)
+def test_test_testcase_is_not_abstract():
+    assert not inspect.isabstract(test_TestCase)
 
 
-def test_test::testcase_constructor_exists():
-    assert callable(test::TestCase.__init__)
+def test_test_testcase_constructor_exists():
+    assert callable(test_TestCase.__init__)
 
 
-def test_test::testcase_constructor_args():
-    sig = inspect.signature(test::TestCase.__init__)
+def test_test_testcase_constructor_args():
+    sig = inspect.signature(test_TestCase.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_test::testcase_has_description():
-    assert hasattr(test::TestCase, "description")
+def test_test_testcase_has_description():
+    assert hasattr(test_TestCase, "description")
     descriptor = None
-    for klass in test::TestCase.__mro__:
+    for klass in test_TestCase.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -748,33 +748,33 @@ def test_test::testcase_has_description():
 
 
 
-def test_test::testsuite_is_not_abstract():
-    assert not inspect.isabstract(test::TestSuite)
+def test_test_testsuite_is_not_abstract():
+    assert not inspect.isabstract(test_TestSuite)
 
 
-def test_test::testsuite_constructor_exists():
-    assert callable(test::TestSuite.__init__)
+def test_test_testsuite_constructor_exists():
+    assert callable(test_TestSuite.__init__)
 
 
-def test_test::testsuite_constructor_args():
-    sig = inspect.signature(test::TestSuite.__init__)
+def test_test_testsuite_constructor_args():
+    sig = inspect.signature(test_TestSuite.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "api" in params, "Missing parameter 'api'"
 
-def test_test::testsuite_has_description():
-    assert hasattr(test::TestSuite, "description")
+def test_test_testsuite_has_description():
+    assert hasattr(test_TestSuite, "description")
     descriptor = None
-    for klass in test::TestSuite.__mro__:
+    for klass in test_TestSuite.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::testsuite_has_api():
-    assert hasattr(test::TestSuite, "api")
+def test_test_testsuite_has_api():
+    assert hasattr(test_TestSuite, "api")
     descriptor = None
-    for klass in test::TestSuite.__mro__:
+    for klass in test_TestSuite.__mro__:
         if "api" in klass.__dict__:
             descriptor = klass.__dict__["api"]
             break
@@ -796,120 +796,85 @@ def test_teststep_constructor_args():
 
 
 
-def test_test::propertytransfer_is_not_abstract():
-    assert not inspect.isabstract(test::PropertyTransfer)
+def test_test_propertytransfer_is_not_abstract():
+    assert not inspect.isabstract(test_PropertyTransfer)
 
 
-def test_test::propertytransfer_constructor_exists():
-    assert callable(test::PropertyTransfer.__init__)
+def test_test_propertytransfer_constructor_exists():
+    assert callable(test_PropertyTransfer.__init__)
 
 
-def test_test::propertytransfer_constructor_args():
-    sig = inspect.signature(test::PropertyTransfer.__init__)
+def test_test_propertytransfer_constructor_args():
+    sig = inspect.signature(test_PropertyTransfer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::apirequest_is_not_abstract():
-    assert not inspect.isabstract(test::APIRequest)
+def test_test_apirequest_is_not_abstract():
+    assert not inspect.isabstract(test_APIRequest)
 
 
-def test_test::apirequest_constructor_exists():
-    assert callable(test::APIRequest.__init__)
+def test_test_apirequest_constructor_exists():
+    assert callable(test_APIRequest.__init__)
 
 
-def test_test::apirequest_constructor_args():
-    sig = inspect.signature(test::APIRequest.__init__)
+def test_test_apirequest_constructor_args():
+    sig = inspect.signature(test_APIRequest.__init__)
     params = list(sig.parameters.keys())
-    assert "contentType" in params, "Missing parameter 'contentType'"
+    assert "scheme" in params, "Missing parameter 'scheme'"
     assert "accept" in params, "Missing parameter 'accept'"
     assert "operationId" in params, "Missing parameter 'operationId'"
-    assert "scheme" in params, "Missing parameter 'scheme'"
+    assert "contentType" in params, "Missing parameter 'contentType'"
 
-def test_test::apirequest_has_contentType():
-    assert hasattr(test::APIRequest, "contentType")
+def test_test_apirequest_has_scheme():
+    assert hasattr(test_APIRequest, "scheme")
     descriptor = None
-    for klass in test::APIRequest.__mro__:
-        if "contentType" in klass.__dict__:
-            descriptor = klass.__dict__["contentType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test::apirequest_has_accept():
-    assert hasattr(test::APIRequest, "accept")
-    descriptor = None
-    for klass in test::APIRequest.__mro__:
-        if "accept" in klass.__dict__:
-            descriptor = klass.__dict__["accept"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test::apirequest_has_operationId():
-    assert hasattr(test::APIRequest, "operationId")
-    descriptor = None
-    for klass in test::APIRequest.__mro__:
-        if "operationId" in klass.__dict__:
-            descriptor = klass.__dict__["operationId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test::apirequest_has_scheme():
-    assert hasattr(test::APIRequest, "scheme")
-    descriptor = None
-    for klass in test::APIRequest.__mro__:
+    for klass in test_APIRequest.__mro__:
         if "scheme" in klass.__dict__:
             descriptor = klass.__dict__["scheme"]
             break
     assert isinstance(descriptor, property)
 
+def test_test_apirequest_has_accept():
+    assert hasattr(test_APIRequest, "accept")
+    descriptor = None
+    for klass in test_APIRequest.__mro__:
+        if "accept" in klass.__dict__:
+            descriptor = klass.__dict__["accept"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_test_apirequest_has_operationId():
+    assert hasattr(test_APIRequest, "operationId")
+    descriptor = None
+    for klass in test_APIRequest.__mro__:
+        if "operationId" in klass.__dict__:
+            descriptor = klass.__dict__["operationId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_test_apirequest_has_contentType():
+    assert hasattr(test_APIRequest, "contentType")
+    descriptor = None
+    for klass in test_APIRequest.__mro__:
+        if "contentType" in klass.__dict__:
+            descriptor = klass.__dict__["contentType"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_test::teststep_is_not_abstract():
-    assert not inspect.isabstract(test::TestStep)
+
+def test_test_teststep_is_not_abstract():
+    assert not inspect.isabstract(test_TestStep)
 
 
-def test_test::teststep_constructor_exists():
-    assert callable(test::TestStep.__init__)
+def test_test_teststep_constructor_exists():
+    assert callable(test_TestStep.__init__)
 
 
-def test_test::teststep_constructor_args():
-    sig = inspect.signature(test::TestStep.__init__)
+def test_test_teststep_constructor_args():
+    sig = inspect.signature(test_TestStep.__init__)
     params = list(sig.parameters.keys())
-
-def test_parameterlocation_exists():
-    # Check that the Enumeration exists
-    assert ParameterLocation is not None
-
-def test_parameterlocation_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterLocation]
-    expected_literals = [
-        "header",
-        "query",
-        "undefined",
-        "path",
-        "body",
-        "formData",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterLocation"
-
-def test_schemetype_exists():
-    # Check that the Enumeration exists
-    assert SchemeType is not None
-
-def test_schemetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SchemeType]
-    expected_literals = [
-        "https",
-        "http",
-        "undefined",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SchemeType"
 
 def test_httpmethod_exists():
     # Check that the Enumeration exists
@@ -920,15 +885,50 @@ def test_httpmethod_has_all_literals():
     enum_literals = [lit.name for lit in HTTPMethod]
     expected_literals = [
         "PUT",
+        "undefined",
+        "POST",
         "DELETE",
         "GET",
-        "undefined",
         "OPTIONS",
-        "POST",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in HTTPMethod"
+
+def test_schemetype_exists():
+    # Check that the Enumeration exists
+    assert SchemeType is not None
+
+def test_schemetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SchemeType]
+    expected_literals = [
+        "https",
+        "undefined",
+        "http",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SchemeType"
+
+def test_parameterlocation_exists():
+    # Check that the Enumeration exists
+    assert ParameterLocation is not None
+
+def test_parameterlocation_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ParameterLocation]
+    expected_literals = [
+        "query",
+        "path",
+        "undefined",
+        "header",
+        "body",
+        "formData",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterLocation"
 
 def test_pathlanguage_exists():
     # Check that the Enumeration exists
@@ -938,9 +938,9 @@ def test_pathlanguage_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PathLanguage]
     expected_literals = [
+        "XPath",
         "undefined",
         "JSONPath",
-        "XPath",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -958,107 +958,107 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::Property_strategy = st.builds(
-    test::Property,
-    pathLanguage=
-        safe_text,
+test_Property_strategy = st.builds(
+    test_Property,
     expression=
+        safe_text,
+    pathLanguage=
         safe_text
 )
 Property_strategy = st.builds(
     Property,
 )
-test::OutputProperty_strategy = st.builds(
-    test::OutputProperty,
+test_OutputProperty_strategy = st.builds(
+    test_OutputProperty,
 )
-test::InputProperty_strategy = st.builds(
-    test::InputProperty,
+test_InputProperty_strategy = st.builds(
+    test_InputProperty,
 )
 OutputProperty_strategy = st.builds(
     OutputProperty,
 )
-test::HeaderProperty_strategy = st.builds(
-    test::HeaderProperty,
+test_HeaderProperty_strategy = st.builds(
+    test_HeaderProperty,
 )
-test::ResponseProperty_strategy = st.builds(
-    test::ResponseProperty,
+test_ResponseProperty_strategy = st.builds(
+    test_ResponseProperty,
 )
 InputProperty_strategy = st.builds(
     InputProperty,
 )
-test::ParameterProperty_strategy = st.builds(
-    test::ParameterProperty,
+test_ParameterProperty_strategy = st.builds(
+    test_ParameterProperty,
 )
 HeaderAssertion_strategy = st.builds(
     HeaderAssertion,
 )
-test::HeaderEqualsAssertion_strategy = st.builds(
-    test::HeaderEqualsAssertion,
+test_HeaderEqualsAssertion_strategy = st.builds(
+    test_HeaderEqualsAssertion,
     value=
         safe_text
 )
 PerformanceAssertion_strategy = st.builds(
     PerformanceAssertion,
 )
-test::SLAAssertion_strategy = st.builds(
-    test::SLAAssertion,
+test_SLAAssertion_strategy = st.builds(
+    test_SLAAssertion,
     maxTime=
         safe_text
 )
 ComplianceAssertion_strategy = st.builds(
     ComplianceAssertion,
 )
-test::SchemaComplianceAssertion_strategy = st.builds(
-    test::SchemaComplianceAssertion,
+test_SchemaComplianceAssertion_strategy = st.builds(
+    test_SchemaComplianceAssertion,
 )
 ResponseMessageAssertion_strategy = st.builds(
     ResponseMessageAssertion,
 )
-test::ResponseMessageEqualsAssertion_strategy = st.builds(
-    test::ResponseMessageEqualsAssertion,
+test_ResponseMessageEqualsAssertion_strategy = st.builds(
+    test_ResponseMessageEqualsAssertion,
 )
-test::ResponseMessageContainsAssertion_strategy = st.builds(
-    test::ResponseMessageContainsAssertion,
+test_ResponseMessageContainsAssertion_strategy = st.builds(
+    test_ResponseMessageContainsAssertion,
 )
 Assertion_strategy = st.builds(
     Assertion,
 )
-test::PerformanceAssertion_strategy = st.builds(
-    test::PerformanceAssertion,
-)
-test::ResponseMessageAssertion_strategy = st.builds(
-    test::ResponseMessageAssertion,
+test_ResponseMessageAssertion_strategy = st.builds(
+    test_ResponseMessageAssertion,
     value=
         safe_text
 )
-test::HeaderAssertion_strategy = st.builds(
-    test::HeaderAssertion,
+test_HeaderAssertion_strategy = st.builds(
+    test_HeaderAssertion,
     key=
         safe_text
 )
-test::ComplianceAssertion_strategy = st.builds(
-    test::ComplianceAssertion,
+test_PerformanceAssertion_strategy = st.builds(
+    test_PerformanceAssertion,
+)
+test_ComplianceAssertion_strategy = st.builds(
+    test_ComplianceAssertion,
     path=
         safe_text
 )
-test::NamedElement_strategy = st.builds(
-    test::NamedElement,
+test_NamedElement_strategy = st.builds(
+    test_NamedElement,
     name=
         safe_text
 )
-test::Authorization_strategy = st.builds(
-    test::Authorization,
+test_Authorization_strategy = st.builds(
+    test_Authorization,
 )
-test::Assertion_strategy = st.builds(
-    test::Assertion,
+test_Assertion_strategy = st.builds(
+    test_Assertion,
     errorMessage=
         safe_text
 )
-test::Parameter_strategy = st.builds(
-    test::Parameter,
-    name=
-        safe_text,
+test_Parameter_strategy = st.builds(
+    test_Parameter,
     value=
+        safe_text,
+    name=
         safe_text,
     location=
         safe_text
@@ -1066,13 +1066,13 @@ test::Parameter_strategy = st.builds(
 Authorization_strategy = st.builds(
     Authorization,
 )
-test::OAuth2_strategy = st.builds(
-    test::OAuth2,
+test_OAuth2_strategy = st.builds(
+    test_OAuth2,
     token=
         safe_text
 )
-test::Basic_strategy = st.builds(
-    test::Basic,
+test_Basic_strategy = st.builds(
+    test_Basic,
     username=
         safe_text,
     password=
@@ -1081,30 +1081,30 @@ test::Basic_strategy = st.builds(
 HTTPStatusAssertion_strategy = st.builds(
     HTTPStatusAssertion,
 )
-test::ValidStatusCodesAssertion_strategy = st.builds(
-    test::ValidStatusCodesAssertion,
+test_ValidStatusCodesAssertion_strategy = st.builds(
+    test_ValidStatusCodesAssertion,
 )
-test::InvalidStatusCodesAssertion_strategy = st.builds(
-    test::InvalidStatusCodesAssertion,
+test_InvalidStatusCodesAssertion_strategy = st.builds(
+    test_InvalidStatusCodesAssertion,
 )
-test::HTTPStatusAssertion_strategy = st.builds(
-    test::HTTPStatusAssertion,
+test_HTTPStatusAssertion_strategy = st.builds(
+    test_HTTPStatusAssertion,
     code=
         safe_text
 )
-test::HeaderExistsAssertion_strategy = st.builds(
-    test::HeaderExistsAssertion,
+test_HeaderExistsAssertion_strategy = st.builds(
+    test_HeaderExistsAssertion,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-test::TestCase_strategy = st.builds(
-    test::TestCase,
+test_TestCase_strategy = st.builds(
+    test_TestCase,
     description=
         safe_text
 )
-test::TestSuite_strategy = st.builds(
-    test::TestSuite,
+test_TestSuite_strategy = st.builds(
+    test_TestSuite,
     description=
         safe_text,
     api=
@@ -1113,108 +1113,99 @@ test::TestSuite_strategy = st.builds(
 TestStep_strategy = st.builds(
     TestStep,
 )
-test::PropertyTransfer_strategy = st.builds(
-    test::PropertyTransfer,
+test_PropertyTransfer_strategy = st.builds(
+    test_PropertyTransfer,
 )
-test::APIRequest_strategy = st.builds(
-    test::APIRequest,
-    contentType=
+test_APIRequest_strategy = st.builds(
+    test_APIRequest,
+    scheme=
         safe_text,
     accept=
         safe_text,
     operationId=
         safe_text,
-    scheme=
+    contentType=
         safe_text
 )
-test::TestStep_strategy = st.builds(
-    test::TestStep,
+test_TestStep_strategy = st.builds(
+    test_TestStep,
 )
 
-@given(instance=test::Property_strategy)
+@given(instance=test_Property_strategy)
 @settings(max_examples=50)
-def test_test::property_instantiation(instance):
-    assert isinstance(instance, test::Property)
-
-@given(instance=test::Property_strategy)
-def test_test::property_pathLanguage_type(instance):
-    assert isinstance(instance.pathLanguage, str)
+def test_test_property_instantiation(instance):
+    assert isinstance(instance, test_Property)
 
 
-@given(instance=test::Property_strategy)
-def test_test::property_pathLanguage_setter(instance):
-    original = instance.pathLanguage
-    instance.pathLanguage = original
-    assert instance.pathLanguage == original
 
-@given(instance=test::Property_strategy)
-def test_test::property_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=test::Property_strategy)
-def test_test::property_expression_setter(instance):
+@given(instance=test_Property_strategy)
+def test_test_property_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
+
+
+
+@given(instance=test_Property_strategy)
+def test_test_property_pathLanguage_setter(instance):
+    original = instance.pathLanguage
+    instance.pathLanguage = original
+    assert instance.pathLanguage == original
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=test::OutputProperty_strategy)
+@given(instance=test_OutputProperty_strategy)
 @settings(max_examples=50)
-def test_test::outputproperty_instantiation(instance):
-    assert isinstance(instance, test::OutputProperty)
+def test_test_outputproperty_instantiation(instance):
+    assert isinstance(instance, test_OutputProperty)
 
-@given(instance=test::InputProperty_strategy)
+@given(instance=test_InputProperty_strategy)
 @settings(max_examples=50)
-def test_test::inputproperty_instantiation(instance):
-    assert isinstance(instance, test::InputProperty)
+def test_test_inputproperty_instantiation(instance):
+    assert isinstance(instance, test_InputProperty)
 
 @given(instance=OutputProperty_strategy)
 @settings(max_examples=50)
 def test_outputproperty_instantiation(instance):
     assert isinstance(instance, OutputProperty)
 
-@given(instance=test::HeaderProperty_strategy)
+@given(instance=test_HeaderProperty_strategy)
 @settings(max_examples=50)
-def test_test::headerproperty_instantiation(instance):
-    assert isinstance(instance, test::HeaderProperty)
+def test_test_headerproperty_instantiation(instance):
+    assert isinstance(instance, test_HeaderProperty)
 
-@given(instance=test::ResponseProperty_strategy)
+@given(instance=test_ResponseProperty_strategy)
 @settings(max_examples=50)
-def test_test::responseproperty_instantiation(instance):
-    assert isinstance(instance, test::ResponseProperty)
+def test_test_responseproperty_instantiation(instance):
+    assert isinstance(instance, test_ResponseProperty)
 
 @given(instance=InputProperty_strategy)
 @settings(max_examples=50)
 def test_inputproperty_instantiation(instance):
     assert isinstance(instance, InputProperty)
 
-@given(instance=test::ParameterProperty_strategy)
+@given(instance=test_ParameterProperty_strategy)
 @settings(max_examples=50)
-def test_test::parameterproperty_instantiation(instance):
-    assert isinstance(instance, test::ParameterProperty)
+def test_test_parameterproperty_instantiation(instance):
+    assert isinstance(instance, test_ParameterProperty)
 
 @given(instance=HeaderAssertion_strategy)
 @settings(max_examples=50)
 def test_headerassertion_instantiation(instance):
     assert isinstance(instance, HeaderAssertion)
 
-@given(instance=test::HeaderEqualsAssertion_strategy)
+@given(instance=test_HeaderEqualsAssertion_strategy)
 @settings(max_examples=50)
-def test_test::headerequalsassertion_instantiation(instance):
-    assert isinstance(instance, test::HeaderEqualsAssertion)
-
-@given(instance=test::HeaderEqualsAssertion_strategy)
-def test_test::headerequalsassertion_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_test_headerequalsassertion_instantiation(instance):
+    assert isinstance(instance, test_HeaderEqualsAssertion)
 
 
-@given(instance=test::HeaderEqualsAssertion_strategy)
-def test_test::headerequalsassertion_value_setter(instance):
+
+@given(instance=test_HeaderEqualsAssertion_strategy)
+def test_test_headerequalsassertion_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1224,18 +1215,15 @@ def test_test::headerequalsassertion_value_setter(instance):
 def test_performanceassertion_instantiation(instance):
     assert isinstance(instance, PerformanceAssertion)
 
-@given(instance=test::SLAAssertion_strategy)
+@given(instance=test_SLAAssertion_strategy)
 @settings(max_examples=50)
-def test_test::slaassertion_instantiation(instance):
-    assert isinstance(instance, test::SLAAssertion)
-
-@given(instance=test::SLAAssertion_strategy)
-def test_test::slaassertion_maxTime_type(instance):
-    assert isinstance(instance.maxTime, str)
+def test_test_slaassertion_instantiation(instance):
+    assert isinstance(instance, test_SLAAssertion)
 
 
-@given(instance=test::SLAAssertion_strategy)
-def test_test::slaassertion_maxTime_setter(instance):
+
+@given(instance=test_SLAAssertion_strategy)
+def test_test_slaassertion_maxTime_setter(instance):
     original = instance.maxTime
     instance.maxTime = original
     assert instance.maxTime == original
@@ -1245,155 +1233,131 @@ def test_test::slaassertion_maxTime_setter(instance):
 def test_complianceassertion_instantiation(instance):
     assert isinstance(instance, ComplianceAssertion)
 
-@given(instance=test::SchemaComplianceAssertion_strategy)
+@given(instance=test_SchemaComplianceAssertion_strategy)
 @settings(max_examples=50)
-def test_test::schemacomplianceassertion_instantiation(instance):
-    assert isinstance(instance, test::SchemaComplianceAssertion)
+def test_test_schemacomplianceassertion_instantiation(instance):
+    assert isinstance(instance, test_SchemaComplianceAssertion)
 
 @given(instance=ResponseMessageAssertion_strategy)
 @settings(max_examples=50)
 def test_responsemessageassertion_instantiation(instance):
     assert isinstance(instance, ResponseMessageAssertion)
 
-@given(instance=test::ResponseMessageEqualsAssertion_strategy)
+@given(instance=test_ResponseMessageEqualsAssertion_strategy)
 @settings(max_examples=50)
-def test_test::responsemessageequalsassertion_instantiation(instance):
-    assert isinstance(instance, test::ResponseMessageEqualsAssertion)
+def test_test_responsemessageequalsassertion_instantiation(instance):
+    assert isinstance(instance, test_ResponseMessageEqualsAssertion)
 
-@given(instance=test::ResponseMessageContainsAssertion_strategy)
+@given(instance=test_ResponseMessageContainsAssertion_strategy)
 @settings(max_examples=50)
-def test_test::responsemessagecontainsassertion_instantiation(instance):
-    assert isinstance(instance, test::ResponseMessageContainsAssertion)
+def test_test_responsemessagecontainsassertion_instantiation(instance):
+    assert isinstance(instance, test_ResponseMessageContainsAssertion)
 
 @given(instance=Assertion_strategy)
 @settings(max_examples=50)
 def test_assertion_instantiation(instance):
     assert isinstance(instance, Assertion)
 
-@given(instance=test::PerformanceAssertion_strategy)
+@given(instance=test_ResponseMessageAssertion_strategy)
 @settings(max_examples=50)
-def test_test::performanceassertion_instantiation(instance):
-    assert isinstance(instance, test::PerformanceAssertion)
-
-@given(instance=test::ResponseMessageAssertion_strategy)
-@settings(max_examples=50)
-def test_test::responsemessageassertion_instantiation(instance):
-    assert isinstance(instance, test::ResponseMessageAssertion)
-
-@given(instance=test::ResponseMessageAssertion_strategy)
-def test_test::responsemessageassertion_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_test_responsemessageassertion_instantiation(instance):
+    assert isinstance(instance, test_ResponseMessageAssertion)
 
 
-@given(instance=test::ResponseMessageAssertion_strategy)
-def test_test::responsemessageassertion_value_setter(instance):
+
+@given(instance=test_ResponseMessageAssertion_strategy)
+def test_test_responsemessageassertion_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=test::HeaderAssertion_strategy)
+@given(instance=test_HeaderAssertion_strategy)
 @settings(max_examples=50)
-def test_test::headerassertion_instantiation(instance):
-    assert isinstance(instance, test::HeaderAssertion)
-
-@given(instance=test::HeaderAssertion_strategy)
-def test_test::headerassertion_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_test_headerassertion_instantiation(instance):
+    assert isinstance(instance, test_HeaderAssertion)
 
 
-@given(instance=test::HeaderAssertion_strategy)
-def test_test::headerassertion_key_setter(instance):
+
+@given(instance=test_HeaderAssertion_strategy)
+def test_test_headerassertion_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=test::ComplianceAssertion_strategy)
+@given(instance=test_PerformanceAssertion_strategy)
 @settings(max_examples=50)
-def test_test::complianceassertion_instantiation(instance):
-    assert isinstance(instance, test::ComplianceAssertion)
+def test_test_performanceassertion_instantiation(instance):
+    assert isinstance(instance, test_PerformanceAssertion)
 
-@given(instance=test::ComplianceAssertion_strategy)
-def test_test::complianceassertion_path_type(instance):
-    assert isinstance(instance.path, str)
+@given(instance=test_ComplianceAssertion_strategy)
+@settings(max_examples=50)
+def test_test_complianceassertion_instantiation(instance):
+    assert isinstance(instance, test_ComplianceAssertion)
 
 
-@given(instance=test::ComplianceAssertion_strategy)
-def test_test::complianceassertion_path_setter(instance):
+
+@given(instance=test_ComplianceAssertion_strategy)
+def test_test_complianceassertion_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=test::NamedElement_strategy)
+@given(instance=test_NamedElement_strategy)
 @settings(max_examples=50)
-def test_test::namedelement_instantiation(instance):
-    assert isinstance(instance, test::NamedElement)
-
-@given(instance=test::NamedElement_strategy)
-def test_test::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_test_namedelement_instantiation(instance):
+    assert isinstance(instance, test_NamedElement)
 
 
-@given(instance=test::NamedElement_strategy)
-def test_test::namedelement_name_setter(instance):
+
+@given(instance=test_NamedElement_strategy)
+def test_test_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=test::Authorization_strategy)
+@given(instance=test_Authorization_strategy)
 @settings(max_examples=50)
-def test_test::authorization_instantiation(instance):
-    assert isinstance(instance, test::Authorization)
+def test_test_authorization_instantiation(instance):
+    assert isinstance(instance, test_Authorization)
 
-@given(instance=test::Assertion_strategy)
+@given(instance=test_Assertion_strategy)
 @settings(max_examples=50)
-def test_test::assertion_instantiation(instance):
-    assert isinstance(instance, test::Assertion)
-
-@given(instance=test::Assertion_strategy)
-def test_test::assertion_errorMessage_type(instance):
-    assert isinstance(instance.errorMessage, str)
+def test_test_assertion_instantiation(instance):
+    assert isinstance(instance, test_Assertion)
 
 
-@given(instance=test::Assertion_strategy)
-def test_test::assertion_errorMessage_setter(instance):
+
+@given(instance=test_Assertion_strategy)
+def test_test_assertion_errorMessage_setter(instance):
     original = instance.errorMessage
     instance.errorMessage = original
     assert instance.errorMessage == original
 
-@given(instance=test::Parameter_strategy)
+@given(instance=test_Parameter_strategy)
 @settings(max_examples=50)
-def test_test::parameter_instantiation(instance):
-    assert isinstance(instance, test::Parameter)
-
-@given(instance=test::Parameter_strategy)
-def test_test::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_test_parameter_instantiation(instance):
+    assert isinstance(instance, test_Parameter)
 
 
-@given(instance=test::Parameter_strategy)
-def test_test::parameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=test::Parameter_strategy)
-def test_test::parameter_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=test::Parameter_strategy)
-def test_test::parameter_value_setter(instance):
+@given(instance=test_Parameter_strategy)
+def test_test_parameter_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=test::Parameter_strategy)
-def test_test::parameter_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=test::Parameter_strategy)
-def test_test::parameter_location_setter(instance):
+@given(instance=test_Parameter_strategy)
+def test_test_parameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=test_Parameter_strategy)
+def test_test_parameter_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
@@ -1403,45 +1367,36 @@ def test_test::parameter_location_setter(instance):
 def test_authorization_instantiation(instance):
     assert isinstance(instance, Authorization)
 
-@given(instance=test::OAuth2_strategy)
+@given(instance=test_OAuth2_strategy)
 @settings(max_examples=50)
-def test_test::oauth2_instantiation(instance):
-    assert isinstance(instance, test::OAuth2)
-
-@given(instance=test::OAuth2_strategy)
-def test_test::oauth2_token_type(instance):
-    assert isinstance(instance.token, str)
+def test_test_oauth2_instantiation(instance):
+    assert isinstance(instance, test_OAuth2)
 
 
-@given(instance=test::OAuth2_strategy)
-def test_test::oauth2_token_setter(instance):
+
+@given(instance=test_OAuth2_strategy)
+def test_test_oauth2_token_setter(instance):
     original = instance.token
     instance.token = original
     assert instance.token == original
 
-@given(instance=test::Basic_strategy)
+@given(instance=test_Basic_strategy)
 @settings(max_examples=50)
-def test_test::basic_instantiation(instance):
-    assert isinstance(instance, test::Basic)
-
-@given(instance=test::Basic_strategy)
-def test_test::basic_username_type(instance):
-    assert isinstance(instance.username, str)
+def test_test_basic_instantiation(instance):
+    assert isinstance(instance, test_Basic)
 
 
-@given(instance=test::Basic_strategy)
-def test_test::basic_username_setter(instance):
+
+@given(instance=test_Basic_strategy)
+def test_test_basic_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
 
-@given(instance=test::Basic_strategy)
-def test_test::basic_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
-@given(instance=test::Basic_strategy)
-def test_test::basic_password_setter(instance):
+@given(instance=test_Basic_strategy)
+def test_test_basic_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
@@ -1451,81 +1406,69 @@ def test_test::basic_password_setter(instance):
 def test_httpstatusassertion_instantiation(instance):
     assert isinstance(instance, HTTPStatusAssertion)
 
-@given(instance=test::ValidStatusCodesAssertion_strategy)
+@given(instance=test_ValidStatusCodesAssertion_strategy)
 @settings(max_examples=50)
-def test_test::validstatuscodesassertion_instantiation(instance):
-    assert isinstance(instance, test::ValidStatusCodesAssertion)
+def test_test_validstatuscodesassertion_instantiation(instance):
+    assert isinstance(instance, test_ValidStatusCodesAssertion)
 
-@given(instance=test::InvalidStatusCodesAssertion_strategy)
+@given(instance=test_InvalidStatusCodesAssertion_strategy)
 @settings(max_examples=50)
-def test_test::invalidstatuscodesassertion_instantiation(instance):
-    assert isinstance(instance, test::InvalidStatusCodesAssertion)
+def test_test_invalidstatuscodesassertion_instantiation(instance):
+    assert isinstance(instance, test_InvalidStatusCodesAssertion)
 
-@given(instance=test::HTTPStatusAssertion_strategy)
+@given(instance=test_HTTPStatusAssertion_strategy)
 @settings(max_examples=50)
-def test_test::httpstatusassertion_instantiation(instance):
-    assert isinstance(instance, test::HTTPStatusAssertion)
-
-@given(instance=test::HTTPStatusAssertion_strategy)
-def test_test::httpstatusassertion_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_test_httpstatusassertion_instantiation(instance):
+    assert isinstance(instance, test_HTTPStatusAssertion)
 
 
-@given(instance=test::HTTPStatusAssertion_strategy)
-def test_test::httpstatusassertion_code_setter(instance):
+
+@given(instance=test_HTTPStatusAssertion_strategy)
+def test_test_httpstatusassertion_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=test::HeaderExistsAssertion_strategy)
+@given(instance=test_HeaderExistsAssertion_strategy)
 @settings(max_examples=50)
-def test_test::headerexistsassertion_instantiation(instance):
-    assert isinstance(instance, test::HeaderExistsAssertion)
+def test_test_headerexistsassertion_instantiation(instance):
+    assert isinstance(instance, test_HeaderExistsAssertion)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=test::TestCase_strategy)
+@given(instance=test_TestCase_strategy)
 @settings(max_examples=50)
-def test_test::testcase_instantiation(instance):
-    assert isinstance(instance, test::TestCase)
-
-@given(instance=test::TestCase_strategy)
-def test_test::testcase_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_test_testcase_instantiation(instance):
+    assert isinstance(instance, test_TestCase)
 
 
-@given(instance=test::TestCase_strategy)
-def test_test::testcase_description_setter(instance):
+
+@given(instance=test_TestCase_strategy)
+def test_test_testcase_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=test::TestSuite_strategy)
+@given(instance=test_TestSuite_strategy)
 @settings(max_examples=50)
-def test_test::testsuite_instantiation(instance):
-    assert isinstance(instance, test::TestSuite)
-
-@given(instance=test::TestSuite_strategy)
-def test_test::testsuite_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_test_testsuite_instantiation(instance):
+    assert isinstance(instance, test_TestSuite)
 
 
-@given(instance=test::TestSuite_strategy)
-def test_test::testsuite_description_setter(instance):
+
+@given(instance=test_TestSuite_strategy)
+def test_test_testsuite_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=test::TestSuite_strategy)
-def test_test::testsuite_api_type(instance):
-    assert isinstance(instance.api, str)
 
 
-@given(instance=test::TestSuite_strategy)
-def test_test::testsuite_api_setter(instance):
+@given(instance=test_TestSuite_strategy)
+def test_test_testsuite_api_setter(instance):
     original = instance.api
     instance.api = original
     assert instance.api == original
@@ -1535,61 +1478,49 @@ def test_test::testsuite_api_setter(instance):
 def test_teststep_instantiation(instance):
     assert isinstance(instance, TestStep)
 
-@given(instance=test::PropertyTransfer_strategy)
+@given(instance=test_PropertyTransfer_strategy)
 @settings(max_examples=50)
-def test_test::propertytransfer_instantiation(instance):
-    assert isinstance(instance, test::PropertyTransfer)
+def test_test_propertytransfer_instantiation(instance):
+    assert isinstance(instance, test_PropertyTransfer)
 
-@given(instance=test::APIRequest_strategy)
+@given(instance=test_APIRequest_strategy)
 @settings(max_examples=50)
-def test_test::apirequest_instantiation(instance):
-    assert isinstance(instance, test::APIRequest)
-
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_contentType_type(instance):
-    assert isinstance(instance.contentType, str)
+def test_test_apirequest_instantiation(instance):
+    assert isinstance(instance, test_APIRequest)
 
 
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_contentType_setter(instance):
-    original = instance.contentType
-    instance.contentType = original
-    assert instance.contentType == original
 
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_accept_type(instance):
-    assert isinstance(instance.accept, str)
-
-
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_accept_setter(instance):
-    original = instance.accept
-    instance.accept = original
-    assert instance.accept == original
-
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_operationId_type(instance):
-    assert isinstance(instance.operationId, str)
-
-
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_operationId_setter(instance):
-    original = instance.operationId
-    instance.operationId = original
-    assert instance.operationId == original
-
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_scheme_type(instance):
-    assert isinstance(instance.scheme, str)
-
-
-@given(instance=test::APIRequest_strategy)
-def test_test::apirequest_scheme_setter(instance):
+@given(instance=test_APIRequest_strategy)
+def test_test_apirequest_scheme_setter(instance):
     original = instance.scheme
     instance.scheme = original
     assert instance.scheme == original
 
-@given(instance=test::TestStep_strategy)
+
+
+@given(instance=test_APIRequest_strategy)
+def test_test_apirequest_accept_setter(instance):
+    original = instance.accept
+    instance.accept = original
+    assert instance.accept == original
+
+
+
+@given(instance=test_APIRequest_strategy)
+def test_test_apirequest_operationId_setter(instance):
+    original = instance.operationId
+    instance.operationId = original
+    assert instance.operationId == original
+
+
+
+@given(instance=test_APIRequest_strategy)
+def test_test_apirequest_contentType_setter(instance):
+    original = instance.contentType
+    instance.contentType = original
+    assert instance.contentType == original
+
+@given(instance=test_TestStep_strategy)
 @settings(max_examples=50)
-def test_test::teststep_instantiation(instance):
-    assert isinstance(instance, test::TestStep)
+def test_test_teststep_instantiation(instance):
+    assert isinstance(instance, test_TestStep)

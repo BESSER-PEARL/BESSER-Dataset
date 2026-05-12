@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    umlMM::Attribute,
+from python_code import (
+    umlMM_Attribute,
     Classifier,
-    umlMM::Datatype,
-    umlMM::Class,
-    umlMM::Classifier,
-    umlMM::Associaton,
-    umlMM::Package,
+    umlMM_Datatype,
+    umlMM_Class,
+    umlMM_Classifier,
+    umlMM_Associaton,
+    umlMM_Package,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_umlmm::attribute_is_not_abstract():
-    assert not inspect.isabstract(umlMM::Attribute)
+def test_umlmm_attribute_is_not_abstract():
+    assert not inspect.isabstract(umlMM_Attribute)
 
 
-def test_umlmm::attribute_constructor_exists():
-    assert callable(umlMM::Attribute.__init__)
+def test_umlmm_attribute_constructor_exists():
+    assert callable(umlMM_Attribute.__init__)
 
 
-def test_umlmm::attribute_constructor_args():
-    sig = inspect.signature(umlMM::Attribute.__init__)
+def test_umlmm_attribute_constructor_args():
+    sig = inspect.signature(umlMM_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlmm::attribute_has_name():
-    assert hasattr(umlMM::Attribute, "name")
+def test_umlmm_attribute_has_name():
+    assert hasattr(umlMM_Attribute, "name")
     descriptor = None
-    for klass in umlMM::Attribute.__mro__:
+    for klass in umlMM_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,37 +59,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_umlmm::datatype_is_not_abstract():
-    assert not inspect.isabstract(umlMM::Datatype)
+def test_umlmm_datatype_is_not_abstract():
+    assert not inspect.isabstract(umlMM_Datatype)
 
 
-def test_umlmm::datatype_constructor_exists():
-    assert callable(umlMM::Datatype.__init__)
+def test_umlmm_datatype_constructor_exists():
+    assert callable(umlMM_Datatype.__init__)
 
 
-def test_umlmm::datatype_constructor_args():
-    sig = inspect.signature(umlMM::Datatype.__init__)
+def test_umlmm_datatype_constructor_args():
+    sig = inspect.signature(umlMM_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmm::class_is_not_abstract():
-    assert not inspect.isabstract(umlMM::Class)
+def test_umlmm_class_is_not_abstract():
+    assert not inspect.isabstract(umlMM_Class)
 
 
-def test_umlmm::class_constructor_exists():
-    assert callable(umlMM::Class.__init__)
+def test_umlmm_class_constructor_exists():
+    assert callable(umlMM_Class.__init__)
 
 
-def test_umlmm::class_constructor_args():
-    sig = inspect.signature(umlMM::Class.__init__)
+def test_umlmm_class_constructor_args():
+    sig = inspect.signature(umlMM_Class.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_umlmm::class_has_kind():
-    assert hasattr(umlMM::Class, "kind")
+def test_umlmm_class_has_kind():
+    assert hasattr(umlMM_Class, "kind")
     descriptor = None
-    for klass in umlMM::Class.__mro__:
+    for klass in umlMM_Class.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -97,23 +97,23 @@ def test_umlmm::class_has_kind():
 
 
 
-def test_umlmm::classifier_is_not_abstract():
-    assert not inspect.isabstract(umlMM::Classifier)
+def test_umlmm_classifier_is_not_abstract():
+    assert not inspect.isabstract(umlMM_Classifier)
 
 
-def test_umlmm::classifier_constructor_exists():
-    assert callable(umlMM::Classifier.__init__)
+def test_umlmm_classifier_constructor_exists():
+    assert callable(umlMM_Classifier.__init__)
 
 
-def test_umlmm::classifier_constructor_args():
-    sig = inspect.signature(umlMM::Classifier.__init__)
+def test_umlmm_classifier_constructor_args():
+    sig = inspect.signature(umlMM_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlmm::classifier_has_name():
-    assert hasattr(umlMM::Classifier, "name")
+def test_umlmm_classifier_has_name():
+    assert hasattr(umlMM_Classifier, "name")
     descriptor = None
-    for klass in umlMM::Classifier.__mro__:
+    for klass in umlMM_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -121,23 +121,23 @@ def test_umlmm::classifier_has_name():
 
 
 
-def test_umlmm::associaton_is_not_abstract():
-    assert not inspect.isabstract(umlMM::Associaton)
+def test_umlmm_associaton_is_not_abstract():
+    assert not inspect.isabstract(umlMM_Associaton)
 
 
-def test_umlmm::associaton_constructor_exists():
-    assert callable(umlMM::Associaton.__init__)
+def test_umlmm_associaton_constructor_exists():
+    assert callable(umlMM_Associaton.__init__)
 
 
-def test_umlmm::associaton_constructor_args():
-    sig = inspect.signature(umlMM::Associaton.__init__)
+def test_umlmm_associaton_constructor_args():
+    sig = inspect.signature(umlMM_Associaton.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlmm::associaton_has_name():
-    assert hasattr(umlMM::Associaton, "name")
+def test_umlmm_associaton_has_name():
+    assert hasattr(umlMM_Associaton, "name")
     descriptor = None
-    for klass in umlMM::Associaton.__mro__:
+    for klass in umlMM_Associaton.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -145,23 +145,23 @@ def test_umlmm::associaton_has_name():
 
 
 
-def test_umlmm::package_is_not_abstract():
-    assert not inspect.isabstract(umlMM::Package)
+def test_umlmm_package_is_not_abstract():
+    assert not inspect.isabstract(umlMM_Package)
 
 
-def test_umlmm::package_constructor_exists():
-    assert callable(umlMM::Package.__init__)
+def test_umlmm_package_constructor_exists():
+    assert callable(umlMM_Package.__init__)
 
 
-def test_umlmm::package_constructor_args():
-    sig = inspect.signature(umlMM::Package.__init__)
+def test_umlmm_package_constructor_args():
+    sig = inspect.signature(umlMM_Package.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlmm::package_has_name():
-    assert hasattr(umlMM::Package, "name")
+def test_umlmm_package_has_name():
+    assert hasattr(umlMM_Package, "name")
     descriptor = None
-    for klass in umlMM::Package.__mro__:
+    for klass in umlMM_Package.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -179,50 +179,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-umlMM::Attribute_strategy = st.builds(
-    umlMM::Attribute,
+umlMM_Attribute_strategy = st.builds(
+    umlMM_Attribute,
     name=
         safe_text
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-umlMM::Datatype_strategy = st.builds(
-    umlMM::Datatype,
+umlMM_Datatype_strategy = st.builds(
+    umlMM_Datatype,
 )
-umlMM::Class_strategy = st.builds(
-    umlMM::Class,
+umlMM_Class_strategy = st.builds(
+    umlMM_Class,
     kind=
         safe_text
 )
-umlMM::Classifier_strategy = st.builds(
-    umlMM::Classifier,
+umlMM_Classifier_strategy = st.builds(
+    umlMM_Classifier,
     name=
         safe_text
 )
-umlMM::Associaton_strategy = st.builds(
-    umlMM::Associaton,
+umlMM_Associaton_strategy = st.builds(
+    umlMM_Associaton,
     name=
         safe_text
 )
-umlMM::Package_strategy = st.builds(
-    umlMM::Package,
+umlMM_Package_strategy = st.builds(
+    umlMM_Package,
     name=
         safe_text
 )
 
-@given(instance=umlMM::Attribute_strategy)
+@given(instance=umlMM_Attribute_strategy)
 @settings(max_examples=50)
-def test_umlmm::attribute_instantiation(instance):
-    assert isinstance(instance, umlMM::Attribute)
-
-@given(instance=umlMM::Attribute_strategy)
-def test_umlmm::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlmm_attribute_instantiation(instance):
+    assert isinstance(instance, umlMM_Attribute)
 
 
-@given(instance=umlMM::Attribute_strategy)
-def test_umlmm::attribute_name_setter(instance):
+
+@given(instance=umlMM_Attribute_strategy)
+def test_umlmm_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -232,71 +229,59 @@ def test_umlmm::attribute_name_setter(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=umlMM::Datatype_strategy)
+@given(instance=umlMM_Datatype_strategy)
 @settings(max_examples=50)
-def test_umlmm::datatype_instantiation(instance):
-    assert isinstance(instance, umlMM::Datatype)
+def test_umlmm_datatype_instantiation(instance):
+    assert isinstance(instance, umlMM_Datatype)
 
-@given(instance=umlMM::Class_strategy)
+@given(instance=umlMM_Class_strategy)
 @settings(max_examples=50)
-def test_umlmm::class_instantiation(instance):
-    assert isinstance(instance, umlMM::Class)
-
-@given(instance=umlMM::Class_strategy)
-def test_umlmm::class_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_umlmm_class_instantiation(instance):
+    assert isinstance(instance, umlMM_Class)
 
 
-@given(instance=umlMM::Class_strategy)
-def test_umlmm::class_kind_setter(instance):
+
+@given(instance=umlMM_Class_strategy)
+def test_umlmm_class_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=umlMM::Classifier_strategy)
+@given(instance=umlMM_Classifier_strategy)
 @settings(max_examples=50)
-def test_umlmm::classifier_instantiation(instance):
-    assert isinstance(instance, umlMM::Classifier)
-
-@given(instance=umlMM::Classifier_strategy)
-def test_umlmm::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlmm_classifier_instantiation(instance):
+    assert isinstance(instance, umlMM_Classifier)
 
 
-@given(instance=umlMM::Classifier_strategy)
-def test_umlmm::classifier_name_setter(instance):
+
+@given(instance=umlMM_Classifier_strategy)
+def test_umlmm_classifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlMM::Associaton_strategy)
+@given(instance=umlMM_Associaton_strategy)
 @settings(max_examples=50)
-def test_umlmm::associaton_instantiation(instance):
-    assert isinstance(instance, umlMM::Associaton)
-
-@given(instance=umlMM::Associaton_strategy)
-def test_umlmm::associaton_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlmm_associaton_instantiation(instance):
+    assert isinstance(instance, umlMM_Associaton)
 
 
-@given(instance=umlMM::Associaton_strategy)
-def test_umlmm::associaton_name_setter(instance):
+
+@given(instance=umlMM_Associaton_strategy)
+def test_umlmm_associaton_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlMM::Package_strategy)
+@given(instance=umlMM_Package_strategy)
 @settings(max_examples=50)
-def test_umlmm::package_instantiation(instance):
-    assert isinstance(instance, umlMM::Package)
-
-@given(instance=umlMM::Package_strategy)
-def test_umlmm::package_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlmm_package_instantiation(instance):
+    assert isinstance(instance, umlMM_Package)
 
 
-@given(instance=umlMM::Package_strategy)
-def test_umlmm::package_name_setter(instance):
+
+@given(instance=umlMM_Package_strategy)
+def test_umlmm_package_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

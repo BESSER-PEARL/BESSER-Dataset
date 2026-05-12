@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Calculate_caloriesBurnt,
@@ -150,18 +150,9 @@ def test_weekly_chart_constructor_exists():
 def test_weekly_chart_constructor_args():
     sig = inspect.signature(Weekly_Chart.__init__)
     params = list(sig.parameters.keys())
-    assert "Steps" in params, "Missing parameter 'Steps'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "Steps" in params, "Missing parameter 'Steps'"
     assert "CaloriesBurnt" in params, "Missing parameter 'CaloriesBurnt'"
-
-def test_weekly_chart_has_Steps():
-    assert hasattr(Weekly_Chart, "Steps")
-    descriptor = None
-    for klass in Weekly_Chart.__mro__:
-        if "Steps" in klass.__dict__:
-            descriptor = klass.__dict__["Steps"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_weekly_chart_has_Name():
     assert hasattr(Weekly_Chart, "Name")
@@ -169,6 +160,15 @@ def test_weekly_chart_has_Name():
     for klass in Weekly_Chart.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_weekly_chart_has_Steps():
+    assert hasattr(Weekly_Chart, "Steps")
+    descriptor = None
+    for klass in Weekly_Chart.__mro__:
+        if "Steps" in klass.__dict__:
+            descriptor = klass.__dict__["Steps"]
             break
     assert isinstance(descriptor, property)
 
@@ -228,17 +228,8 @@ def test_draw_path_constructor_exists():
 def test_draw_path_constructor_args():
     sig = inspect.signature(Draw_Path.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Route" in params, "Missing parameter 'Route'"
-
-def test_draw_path_has_Name():
-    assert hasattr(Draw_Path, "Name")
-    descriptor = None
-    for klass in Draw_Path.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Name" in params, "Missing parameter 'Name'"
 
 def test_draw_path_has_Route():
     assert hasattr(Draw_Path, "Route")
@@ -246,6 +237,15 @@ def test_draw_path_has_Route():
     for klass in Draw_Path.__mro__:
         if "Route" in klass.__dict__:
             descriptor = klass.__dict__["Route"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw_path_has_Name():
+    assert hasattr(Draw_Path, "Name")
+    descriptor = None
+    for klass in Draw_Path.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -262,16 +262,16 @@ def test_count_steps_and_calories_constructor_exists():
 def test_count_steps_and_calories_constructor_args():
     sig = inspect.signature(Count_Steps_and_Calories.__init__)
     params = list(sig.parameters.keys())
-    assert "Steps" in params, "Missing parameter 'Steps'"
-    assert "CaloriesBurnt" in params, "Missing parameter 'CaloriesBurnt'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "CaloriesBurnt" in params, "Missing parameter 'CaloriesBurnt'"
+    assert "Steps" in params, "Missing parameter 'Steps'"
 
-def test_count_steps_and_calories_has_Steps():
-    assert hasattr(Count_Steps_and_Calories, "Steps")
+def test_count_steps_and_calories_has_Name():
+    assert hasattr(Count_Steps_and_Calories, "Name")
     descriptor = None
     for klass in Count_Steps_and_Calories.__mro__:
-        if "Steps" in klass.__dict__:
-            descriptor = klass.__dict__["Steps"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -284,12 +284,12 @@ def test_count_steps_and_calories_has_CaloriesBurnt():
             break
     assert isinstance(descriptor, property)
 
-def test_count_steps_and_calories_has_Name():
-    assert hasattr(Count_Steps_and_Calories, "Name")
+def test_count_steps_and_calories_has_Steps():
+    assert hasattr(Count_Steps_and_Calories, "Steps")
     descriptor = None
     for klass in Count_Steps_and_Calories.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "Steps" in klass.__dict__:
+            descriptor = klass.__dict__["Steps"]
             break
     assert isinstance(descriptor, property)
 
@@ -306,11 +306,20 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "Calories_Burnt" in params, "Missing parameter 'Calories_Burnt'"
-    assert "Weight" in params, "Missing parameter 'Weight'"
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Path_Drawn" in params, "Missing parameter 'Path_Drawn'"
+    assert "Calories_Burnt" in params, "Missing parameter 'Calories_Burnt'"
+    assert "Name" in params, "Missing parameter 'Name'"
     assert "Steps" in params, "Missing parameter 'Steps'"
+    assert "Weight" in params, "Missing parameter 'Weight'"
+
+def test_user_has_Path_Drawn():
+    assert hasattr(User, "Path_Drawn")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Path_Drawn" in klass.__dict__:
+            descriptor = klass.__dict__["Path_Drawn"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_user_has_Calories_Burnt():
     assert hasattr(User, "Calories_Burnt")
@@ -318,15 +327,6 @@ def test_user_has_Calories_Burnt():
     for klass in User.__mro__:
         if "Calories_Burnt" in klass.__dict__:
             descriptor = klass.__dict__["Calories_Burnt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Weight():
-    assert hasattr(User, "Weight")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Weight" in klass.__dict__:
-            descriptor = klass.__dict__["Weight"]
             break
     assert isinstance(descriptor, property)
 
@@ -339,21 +339,21 @@ def test_user_has_Name():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Path_Drawn():
-    assert hasattr(User, "Path_Drawn")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Path_Drawn" in klass.__dict__:
-            descriptor = klass.__dict__["Path_Drawn"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_user_has_Steps():
     assert hasattr(User, "Steps")
     descriptor = None
     for klass in User.__mro__:
         if "Steps" in klass.__dict__:
             descriptor = klass.__dict__["Steps"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Weight():
+    assert hasattr(User, "Weight")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Weight" in klass.__dict__:
+            descriptor = klass.__dict__["Weight"]
             break
     assert isinstance(descriptor, property)
 
@@ -395,10 +395,10 @@ Give_Name_strategy = st.builds(
 )
 Weekly_Chart_strategy = st.builds(
     Weekly_Chart,
-    Steps=
-        st.integers(),
     Name=
         safe_text,
+    Steps=
+        st.integers(),
     CaloriesBurnt=
         safe_text
 )
@@ -411,31 +411,31 @@ Update_Data_strategy = st.builds(
 )
 Draw_Path_strategy = st.builds(
     Draw_Path,
-    Name=
-        safe_text,
     Route=
+        safe_text,
+    Name=
         safe_text
 )
 Count_Steps_and_Calories_strategy = st.builds(
     Count_Steps_and_Calories,
-    Steps=
-        st.integers(),
+    Name=
+        safe_text,
     CaloriesBurnt=
         safe_text,
-    Name=
-        safe_text
+    Steps=
+        st.integers()
 )
 User_strategy = st.builds(
     User,
-    Calories_Burnt=
-        safe_text,
-    Weight=
-        st.integers(),
-    Name=
-        safe_text,
     Path_Drawn=
         safe_text,
+    Calories_Burnt=
+        safe_text,
+    Name=
+        safe_text,
     Steps=
+        st.integers(),
+    Weight=
         st.integers()
 )
 
@@ -444,9 +444,6 @@ User_strategy = st.builds(
 def test_calculate_caloriesburnt_instantiation(instance):
     assert isinstance(instance, Calculate_caloriesBurnt)
 
-@given(instance=Calculate_caloriesBurnt_strategy)
-def test_calculate_caloriesburnt_CaloriesBurnt_type(instance):
-    assert isinstance(instance.CaloriesBurnt, str)
 
 
 @given(instance=Calculate_caloriesBurnt_strategy)
@@ -455,9 +452,6 @@ def test_calculate_caloriesburnt_CaloriesBurnt_setter(instance):
     instance.CaloriesBurnt = original
     assert instance.CaloriesBurnt == original
 
-@given(instance=Calculate_caloriesBurnt_strategy)
-def test_calculate_caloriesburnt_Steps_type(instance):
-    assert isinstance(instance.Steps, int)
 
 
 @given(instance=Calculate_caloriesBurnt_strategy)
@@ -466,9 +460,6 @@ def test_calculate_caloriesburnt_Steps_setter(instance):
     instance.Steps = original
     assert instance.Steps == original
 
-@given(instance=Calculate_caloriesBurnt_strategy)
-def test_calculate_caloriesburnt_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Calculate_caloriesBurnt_strategy)
@@ -482,9 +473,6 @@ def test_calculate_caloriesburnt_Name_setter(instance):
 def test_count_steps_instantiation(instance):
     assert isinstance(instance, Count_Steps)
 
-@given(instance=Count_Steps_strategy)
-def test_count_steps_Steps_type(instance):
-    assert isinstance(instance.Steps, int)
 
 
 @given(instance=Count_Steps_strategy)
@@ -498,9 +486,6 @@ def test_count_steps_Steps_setter(instance):
 def test_give_weight_instantiation(instance):
     assert isinstance(instance, Give_Weight)
 
-@given(instance=Give_Weight_strategy)
-def test_give_weight_Weight_type(instance):
-    assert isinstance(instance.Weight, int)
 
 
 @given(instance=Give_Weight_strategy)
@@ -514,9 +499,6 @@ def test_give_weight_Weight_setter(instance):
 def test_give_name_instantiation(instance):
     assert isinstance(instance, Give_Name)
 
-@given(instance=Give_Name_strategy)
-def test_give_name_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Give_Name_strategy)
@@ -530,20 +512,6 @@ def test_give_name_Name_setter(instance):
 def test_weekly_chart_instantiation(instance):
     assert isinstance(instance, Weekly_Chart)
 
-@given(instance=Weekly_Chart_strategy)
-def test_weekly_chart_Steps_type(instance):
-    assert isinstance(instance.Steps, int)
-
-
-@given(instance=Weekly_Chart_strategy)
-def test_weekly_chart_Steps_setter(instance):
-    original = instance.Steps
-    instance.Steps = original
-    assert instance.Steps == original
-
-@given(instance=Weekly_Chart_strategy)
-def test_weekly_chart_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Weekly_Chart_strategy)
@@ -552,9 +520,14 @@ def test_weekly_chart_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
 @given(instance=Weekly_Chart_strategy)
-def test_weekly_chart_CaloriesBurnt_type(instance):
-    assert isinstance(instance.CaloriesBurnt, str)
+def test_weekly_chart_Steps_setter(instance):
+    original = instance.Steps
+    instance.Steps = original
+    assert instance.Steps == original
+
 
 
 @given(instance=Weekly_Chart_strategy)
@@ -568,9 +541,6 @@ def test_weekly_chart_CaloriesBurnt_setter(instance):
 def test_update_data_instantiation(instance):
     assert isinstance(instance, Update_Data)
 
-@given(instance=Update_Data_strategy)
-def test_update_data_Weight_type(instance):
-    assert isinstance(instance.Weight, int)
 
 
 @given(instance=Update_Data_strategy)
@@ -579,9 +549,6 @@ def test_update_data_Weight_setter(instance):
     instance.Weight = original
     assert instance.Weight == original
 
-@given(instance=Update_Data_strategy)
-def test_update_data_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Update_Data_strategy)
@@ -595,20 +562,6 @@ def test_update_data_Name_setter(instance):
 def test_draw_path_instantiation(instance):
     assert isinstance(instance, Draw_Path)
 
-@given(instance=Draw_Path_strategy)
-def test_draw_path_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Draw_Path_strategy)
-def test_draw_path_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Draw_Path_strategy)
-def test_draw_path_Route_type(instance):
-    assert isinstance(instance.Route, str)
 
 
 @given(instance=Draw_Path_strategy)
@@ -617,36 +570,19 @@ def test_draw_path_Route_setter(instance):
     instance.Route = original
     assert instance.Route == original
 
+
+
+@given(instance=Draw_Path_strategy)
+def test_draw_path_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=Count_Steps_and_Calories_strategy)
 @settings(max_examples=50)
 def test_count_steps_and_calories_instantiation(instance):
     assert isinstance(instance, Count_Steps_and_Calories)
 
-@given(instance=Count_Steps_and_Calories_strategy)
-def test_count_steps_and_calories_Steps_type(instance):
-    assert isinstance(instance.Steps, int)
-
-
-@given(instance=Count_Steps_and_Calories_strategy)
-def test_count_steps_and_calories_Steps_setter(instance):
-    original = instance.Steps
-    instance.Steps = original
-    assert instance.Steps == original
-
-@given(instance=Count_Steps_and_Calories_strategy)
-def test_count_steps_and_calories_CaloriesBurnt_type(instance):
-    assert isinstance(instance.CaloriesBurnt, str)
-
-
-@given(instance=Count_Steps_and_Calories_strategy)
-def test_count_steps_and_calories_CaloriesBurnt_setter(instance):
-    original = instance.CaloriesBurnt
-    instance.CaloriesBurnt = original
-    assert instance.CaloriesBurnt == original
-
-@given(instance=Count_Steps_and_Calories_strategy)
-def test_count_steps_and_calories_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Count_Steps_and_Calories_strategy)
@@ -655,47 +591,27 @@ def test_count_steps_and_calories_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Count_Steps_and_Calories_strategy)
+def test_count_steps_and_calories_CaloriesBurnt_setter(instance):
+    original = instance.CaloriesBurnt
+    instance.CaloriesBurnt = original
+    assert instance.CaloriesBurnt == original
+
+
+
+@given(instance=Count_Steps_and_Calories_strategy)
+def test_count_steps_and_calories_Steps_setter(instance):
+    original = instance.Steps
+    instance.Steps = original
+    assert instance.Steps == original
+
 @given(instance=User_strategy)
 @settings(max_examples=50)
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Calories_Burnt_type(instance):
-    assert isinstance(instance.Calories_Burnt, str)
-
-
-@given(instance=User_strategy)
-def test_user_Calories_Burnt_setter(instance):
-    original = instance.Calories_Burnt
-    instance.Calories_Burnt = original
-    assert instance.Calories_Burnt == original
-
-@given(instance=User_strategy)
-def test_user_Weight_type(instance):
-    assert isinstance(instance.Weight, int)
-
-
-@given(instance=User_strategy)
-def test_user_Weight_setter(instance):
-    original = instance.Weight
-    instance.Weight = original
-    assert instance.Weight == original
-
-@given(instance=User_strategy)
-def test_user_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=User_strategy)
-def test_user_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=User_strategy)
-def test_user_Path_Drawn_type(instance):
-    assert isinstance(instance.Path_Drawn, str)
 
 
 @given(instance=User_strategy)
@@ -704,9 +620,22 @@ def test_user_Path_Drawn_setter(instance):
     instance.Path_Drawn = original
     assert instance.Path_Drawn == original
 
+
+
 @given(instance=User_strategy)
-def test_user_Steps_type(instance):
-    assert isinstance(instance.Steps, int)
+def test_user_Calories_Burnt_setter(instance):
+    original = instance.Calories_Burnt
+    instance.Calories_Burnt = original
+    assert instance.Calories_Burnt == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 
 
 @given(instance=User_strategy)
@@ -714,3 +643,11 @@ def test_user_Steps_setter(instance):
     original = instance.Steps
     instance.Steps = original
     assert instance.Steps == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Weight_setter(instance):
+    original = instance.Weight
+    instance.Weight = original
+    assert instance.Weight == original

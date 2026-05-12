@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     casier,
@@ -170,9 +170,6 @@ def test_customer_instantiation(instance):
 def test_people_instantiation(instance):
     assert isinstance(instance, People)
 
-@given(instance=People_strategy)
-def test_people_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=People_strategy)

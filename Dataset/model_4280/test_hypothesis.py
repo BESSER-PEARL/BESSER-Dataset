@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    bowling::Game,
-    bowling::Matchup,
-    bowling::Tournament,
-    bowling::League,
-    bowling::Player,
+from python_code import (
+    bowling_Matchup,
+    bowling_Tournament,
+    bowling_League,
+    bowling_Player,
+    bowling_Game,
     TournamentType,
 )
 
@@ -20,51 +20,37 @@ from classes import (
 
 
 
-def test_bowling::game_is_not_abstract():
-    assert not inspect.isabstract(bowling::Game)
+def test_bowling_matchup_is_not_abstract():
+    assert not inspect.isabstract(bowling_Matchup)
 
 
-def test_bowling::game_constructor_exists():
-    assert callable(bowling::Game.__init__)
+def test_bowling_matchup_constructor_exists():
+    assert callable(bowling_Matchup.__init__)
 
 
-def test_bowling::game_constructor_args():
-    sig = inspect.signature(bowling::Game.__init__)
+def test_bowling_matchup_constructor_args():
+    sig = inspect.signature(bowling_Matchup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bowling::matchup_is_not_abstract():
-    assert not inspect.isabstract(bowling::Matchup)
+def test_bowling_tournament_is_not_abstract():
+    assert not inspect.isabstract(bowling_Tournament)
 
 
-def test_bowling::matchup_constructor_exists():
-    assert callable(bowling::Matchup.__init__)
+def test_bowling_tournament_constructor_exists():
+    assert callable(bowling_Tournament.__init__)
 
 
-def test_bowling::matchup_constructor_args():
-    sig = inspect.signature(bowling::Matchup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bowling::tournament_is_not_abstract():
-    assert not inspect.isabstract(bowling::Tournament)
-
-
-def test_bowling::tournament_constructor_exists():
-    assert callable(bowling::Tournament.__init__)
-
-
-def test_bowling::tournament_constructor_args():
-    sig = inspect.signature(bowling::Tournament.__init__)
+def test_bowling_tournament_constructor_args():
+    sig = inspect.signature(bowling_Tournament.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_bowling::tournament_has_type():
-    assert hasattr(bowling::Tournament, "type")
+def test_bowling_tournament_has_type():
+    assert hasattr(bowling_Tournament, "type")
     descriptor = None
-    for klass in bowling::Tournament.__mro__:
+    for klass in bowling_Tournament.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -72,23 +58,23 @@ def test_bowling::tournament_has_type():
 
 
 
-def test_bowling::league_is_not_abstract():
-    assert not inspect.isabstract(bowling::League)
+def test_bowling_league_is_not_abstract():
+    assert not inspect.isabstract(bowling_League)
 
 
-def test_bowling::league_constructor_exists():
-    assert callable(bowling::League.__init__)
+def test_bowling_league_constructor_exists():
+    assert callable(bowling_League.__init__)
 
 
-def test_bowling::league_constructor_args():
-    sig = inspect.signature(bowling::League.__init__)
+def test_bowling_league_constructor_args():
+    sig = inspect.signature(bowling_League.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_bowling::league_has_name():
-    assert hasattr(bowling::League, "name")
+def test_bowling_league_has_name():
+    assert hasattr(bowling_League, "name")
     descriptor = None
-    for klass in bowling::League.__mro__:
+    for klass in bowling_League.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -96,37 +82,51 @@ def test_bowling::league_has_name():
 
 
 
-def test_bowling::player_is_not_abstract():
-    assert not inspect.isabstract(bowling::Player)
+def test_bowling_player_is_not_abstract():
+    assert not inspect.isabstract(bowling_Player)
 
 
-def test_bowling::player_constructor_exists():
-    assert callable(bowling::Player.__init__)
+def test_bowling_player_constructor_exists():
+    assert callable(bowling_Player.__init__)
 
 
-def test_bowling::player_constructor_args():
-    sig = inspect.signature(bowling::Player.__init__)
+def test_bowling_player_constructor_args():
+    sig = inspect.signature(bowling_Player.__init__)
     params = list(sig.parameters.keys())
     assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_bowling::player_has_dateOfBirth():
-    assert hasattr(bowling::Player, "dateOfBirth")
+def test_bowling_player_has_dateOfBirth():
+    assert hasattr(bowling_Player, "dateOfBirth")
     descriptor = None
-    for klass in bowling::Player.__mro__:
+    for klass in bowling_Player.__mro__:
         if "dateOfBirth" in klass.__dict__:
             descriptor = klass.__dict__["dateOfBirth"]
             break
     assert isinstance(descriptor, property)
 
-def test_bowling::player_has_name():
-    assert hasattr(bowling::Player, "name")
+def test_bowling_player_has_name():
+    assert hasattr(bowling_Player, "name")
     descriptor = None
-    for klass in bowling::Player.__mro__:
+    for klass in bowling_Player.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_bowling_game_is_not_abstract():
+    assert not inspect.isabstract(bowling_Game)
+
+
+def test_bowling_game_constructor_exists():
+    assert callable(bowling_Game.__init__)
+
+
+def test_bowling_game_constructor_args():
+    sig = inspect.signature(bowling_Game.__init__)
+    params = list(sig.parameters.keys())
 
 def test_tournamenttype_exists():
     # Check that the Enumeration exists
@@ -136,8 +136,8 @@ def test_tournamenttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TournamentType]
     expected_literals = [
-        "Pro",
         "Amateur",
+        "Pro",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -155,95 +155,83 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-bowling::Game_strategy = st.builds(
-    bowling::Game,
+bowling_Matchup_strategy = st.builds(
+    bowling_Matchup,
 )
-bowling::Matchup_strategy = st.builds(
-    bowling::Matchup,
-)
-bowling::Tournament_strategy = st.builds(
-    bowling::Tournament,
+bowling_Tournament_strategy = st.builds(
+    bowling_Tournament,
     type=
         safe_text
 )
-bowling::League_strategy = st.builds(
-    bowling::League,
+bowling_League_strategy = st.builds(
+    bowling_League,
     name=
         safe_text
 )
-bowling::Player_strategy = st.builds(
-    bowling::Player,
+bowling_Player_strategy = st.builds(
+    bowling_Player,
     dateOfBirth=
         st.dates(),
     name=
         safe_text
 )
+bowling_Game_strategy = st.builds(
+    bowling_Game,
+)
 
-@given(instance=bowling::Game_strategy)
+@given(instance=bowling_Matchup_strategy)
 @settings(max_examples=50)
-def test_bowling::game_instantiation(instance):
-    assert isinstance(instance, bowling::Game)
+def test_bowling_matchup_instantiation(instance):
+    assert isinstance(instance, bowling_Matchup)
 
-@given(instance=bowling::Matchup_strategy)
+@given(instance=bowling_Tournament_strategy)
 @settings(max_examples=50)
-def test_bowling::matchup_instantiation(instance):
-    assert isinstance(instance, bowling::Matchup)
-
-@given(instance=bowling::Tournament_strategy)
-@settings(max_examples=50)
-def test_bowling::tournament_instantiation(instance):
-    assert isinstance(instance, bowling::Tournament)
-
-@given(instance=bowling::Tournament_strategy)
-def test_bowling::tournament_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_bowling_tournament_instantiation(instance):
+    assert isinstance(instance, bowling_Tournament)
 
 
-@given(instance=bowling::Tournament_strategy)
-def test_bowling::tournament_type_setter(instance):
+
+@given(instance=bowling_Tournament_strategy)
+def test_bowling_tournament_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=bowling::League_strategy)
+@given(instance=bowling_League_strategy)
 @settings(max_examples=50)
-def test_bowling::league_instantiation(instance):
-    assert isinstance(instance, bowling::League)
-
-@given(instance=bowling::League_strategy)
-def test_bowling::league_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_bowling_league_instantiation(instance):
+    assert isinstance(instance, bowling_League)
 
 
-@given(instance=bowling::League_strategy)
-def test_bowling::league_name_setter(instance):
+
+@given(instance=bowling_League_strategy)
+def test_bowling_league_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=bowling::Player_strategy)
+@given(instance=bowling_Player_strategy)
 @settings(max_examples=50)
-def test_bowling::player_instantiation(instance):
-    assert isinstance(instance, bowling::Player)
-
-@given(instance=bowling::Player_strategy)
-def test_bowling::player_dateOfBirth_type(instance):
-    assert isinstance(instance.dateOfBirth, date)
+def test_bowling_player_instantiation(instance):
+    assert isinstance(instance, bowling_Player)
 
 
-@given(instance=bowling::Player_strategy)
-def test_bowling::player_dateOfBirth_setter(instance):
+
+@given(instance=bowling_Player_strategy)
+def test_bowling_player_dateOfBirth_setter(instance):
     original = instance.dateOfBirth
     instance.dateOfBirth = original
     assert instance.dateOfBirth == original
 
-@given(instance=bowling::Player_strategy)
-def test_bowling::player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=bowling::Player_strategy)
-def test_bowling::player_name_setter(instance):
+@given(instance=bowling_Player_strategy)
+def test_bowling_player_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=bowling_Game_strategy)
+@settings(max_examples=50)
+def test_bowling_game_instantiation(instance):
+    assert isinstance(instance, bowling_Game)

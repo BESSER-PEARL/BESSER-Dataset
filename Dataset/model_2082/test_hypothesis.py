@@ -3,38 +3,38 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rsgf::mw::Middleware,
-    rsgf::vm::VM,
+from python_code import (
+    rsgf_mw_Middleware,
+    rsgf_vm_VM,
     VM,
     Tree,
-    rsgf::skeleton::Skeleton,
+    rsgf_skeleton_Skeleton,
     Middleware,
-    rsgf::bundle::Process,
+    rsgf_bundle_Process,
     Process,
     Skeleton,
-    rsgf::bundle::Bundle,
-    rsgf::tree::Node,
+    rsgf_bundle_Bundle,
+    rsgf_tree_Node,
     Simulator,
     Coordinator,
     Root,
-    rsgf::tree::P::Simulator,
-    rsgf::tree::PDEVSSimulator,
-    rsgf::tree::CDEVSSimulator,
-    rsgf::tree::P::Coordinator,
-    rsgf::tree::NodeCoordinator,
-    rsgf::tree::FlatCoordinator,
-    rsgf::tree::PDEVSCoordinator,
-    rsgf::tree::CDEVSCoordinator,
+    rsgf_tree_P_Simulator,
+    rsgf_tree_PDEVSSimulator,
+    rsgf_tree_CDEVSSimulator,
+    rsgf_tree_P_Coordinator,
+    rsgf_tree_NodeCoordinator,
+    rsgf_tree_FlatCoordinator,
+    rsgf_tree_PDEVSCoordinator,
+    rsgf_tree_CDEVSCoordinator,
     BasicNode,
-    rsgf::tree::Coordinator,
-    rsgf::tree::Simulator,
+    rsgf_tree_Simulator,
+    rsgf_tree_Coordinator,
     Node,
-    rsgf::tree::BasicNode,
-    rsgf::tree::Root,
-    rsgf::tree::Tree,
+    rsgf_tree_BasicNode,
+    rsgf_tree_Root,
+    rsgf_tree_Tree,
 )
 
 # =============================================================================
@@ -43,49 +43,49 @@ from classes import (
 
 
 
-def test_rsgf::mw::middleware_is_not_abstract():
-    assert not inspect.isabstract(rsgf::mw::Middleware)
+def test_rsgf_mw_middleware_is_not_abstract():
+    assert not inspect.isabstract(rsgf_mw_Middleware)
 
 
-def test_rsgf::mw::middleware_constructor_exists():
-    assert callable(rsgf::mw::Middleware.__init__)
+def test_rsgf_mw_middleware_constructor_exists():
+    assert callable(rsgf_mw_Middleware.__init__)
 
 
-def test_rsgf::mw::middleware_constructor_args():
-    sig = inspect.signature(rsgf::mw::Middleware.__init__)
+def test_rsgf_mw_middleware_constructor_args():
+    sig = inspect.signature(rsgf_mw_Middleware.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::vm::vm_is_not_abstract():
-    assert not inspect.isabstract(rsgf::vm::VM)
+def test_rsgf_vm_vm_is_not_abstract():
+    assert not inspect.isabstract(rsgf_vm_VM)
 
 
-def test_rsgf::vm::vm_constructor_exists():
-    assert callable(rsgf::vm::VM.__init__)
+def test_rsgf_vm_vm_constructor_exists():
+    assert callable(rsgf_vm_VM.__init__)
 
 
-def test_rsgf::vm::vm_constructor_args():
-    sig = inspect.signature(rsgf::vm::VM.__init__)
+def test_rsgf_vm_vm_constructor_args():
+    sig = inspect.signature(rsgf_vm_VM.__init__)
     params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "protocol" in params, "Missing parameter 'protocol'"
+    assert "ID" in params, "Missing parameter 'ID'"
 
-def test_rsgf::vm::vm_has_ID():
-    assert hasattr(rsgf::vm::VM, "ID")
+def test_rsgf_vm_vm_has_protocol():
+    assert hasattr(rsgf_vm_VM, "protocol")
     descriptor = None
-    for klass in rsgf::vm::VM.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+    for klass in rsgf_vm_VM.__mro__:
+        if "protocol" in klass.__dict__:
+            descriptor = klass.__dict__["protocol"]
             break
     assert isinstance(descriptor, property)
 
-def test_rsgf::vm::vm_has_protocol():
-    assert hasattr(rsgf::vm::VM, "protocol")
+def test_rsgf_vm_vm_has_ID():
+    assert hasattr(rsgf_vm_VM, "ID")
     descriptor = None
-    for klass in rsgf::vm::VM.__mro__:
-        if "protocol" in klass.__dict__:
-            descriptor = klass.__dict__["protocol"]
+    for klass in rsgf_vm_VM.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,23 +119,23 @@ def test_tree_constructor_args():
 
 
 
-def test_rsgf::skeleton::skeleton_is_not_abstract():
-    assert not inspect.isabstract(rsgf::skeleton::Skeleton)
+def test_rsgf_skeleton_skeleton_is_not_abstract():
+    assert not inspect.isabstract(rsgf_skeleton_Skeleton)
 
 
-def test_rsgf::skeleton::skeleton_constructor_exists():
-    assert callable(rsgf::skeleton::Skeleton.__init__)
+def test_rsgf_skeleton_skeleton_constructor_exists():
+    assert callable(rsgf_skeleton_Skeleton.__init__)
 
 
-def test_rsgf::skeleton::skeleton_constructor_args():
-    sig = inspect.signature(rsgf::skeleton::Skeleton.__init__)
+def test_rsgf_skeleton_skeleton_constructor_args():
+    sig = inspect.signature(rsgf_skeleton_Skeleton.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_rsgf::skeleton::skeleton_has_ID():
-    assert hasattr(rsgf::skeleton::Skeleton, "ID")
+def test_rsgf_skeleton_skeleton_has_ID():
+    assert hasattr(rsgf_skeleton_Skeleton, "ID")
     descriptor = None
-    for klass in rsgf::skeleton::Skeleton.__mro__:
+    for klass in rsgf_skeleton_Skeleton.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -157,23 +157,23 @@ def test_middleware_constructor_args():
 
 
 
-def test_rsgf::bundle::process_is_not_abstract():
-    assert not inspect.isabstract(rsgf::bundle::Process)
+def test_rsgf_bundle_process_is_not_abstract():
+    assert not inspect.isabstract(rsgf_bundle_Process)
 
 
-def test_rsgf::bundle::process_constructor_exists():
-    assert callable(rsgf::bundle::Process.__init__)
+def test_rsgf_bundle_process_constructor_exists():
+    assert callable(rsgf_bundle_Process.__init__)
 
 
-def test_rsgf::bundle::process_constructor_args():
-    sig = inspect.signature(rsgf::bundle::Process.__init__)
+def test_rsgf_bundle_process_constructor_args():
+    sig = inspect.signature(rsgf_bundle_Process.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_rsgf::bundle::process_has_ID():
-    assert hasattr(rsgf::bundle::Process, "ID")
+def test_rsgf_bundle_process_has_ID():
+    assert hasattr(rsgf_bundle_Process, "ID")
     descriptor = None
-    for klass in rsgf::bundle::Process.__mro__:
+    for klass in rsgf_bundle_Process.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -209,23 +209,23 @@ def test_skeleton_constructor_args():
 
 
 
-def test_rsgf::bundle::bundle_is_not_abstract():
-    assert not inspect.isabstract(rsgf::bundle::Bundle)
+def test_rsgf_bundle_bundle_is_not_abstract():
+    assert not inspect.isabstract(rsgf_bundle_Bundle)
 
 
-def test_rsgf::bundle::bundle_constructor_exists():
-    assert callable(rsgf::bundle::Bundle.__init__)
+def test_rsgf_bundle_bundle_constructor_exists():
+    assert callable(rsgf_bundle_Bundle.__init__)
 
 
-def test_rsgf::bundle::bundle_constructor_args():
-    sig = inspect.signature(rsgf::bundle::Bundle.__init__)
+def test_rsgf_bundle_bundle_constructor_args():
+    sig = inspect.signature(rsgf_bundle_Bundle.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_rsgf::bundle::bundle_has_ID():
-    assert hasattr(rsgf::bundle::Bundle, "ID")
+def test_rsgf_bundle_bundle_has_ID():
+    assert hasattr(rsgf_bundle_Bundle, "ID")
     descriptor = None
-    for klass in rsgf::bundle::Bundle.__mro__:
+    for klass in rsgf_bundle_Bundle.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -233,23 +233,23 @@ def test_rsgf::bundle::bundle_has_ID():
 
 
 
-def test_rsgf::tree::node_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::Node)
+def test_rsgf_tree_node_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_Node)
 
 
-def test_rsgf::tree::node_constructor_exists():
-    assert callable(rsgf::tree::Node.__init__)
+def test_rsgf_tree_node_constructor_exists():
+    assert callable(rsgf_tree_Node.__init__)
 
 
-def test_rsgf::tree::node_constructor_args():
-    sig = inspect.signature(rsgf::tree::Node.__init__)
+def test_rsgf_tree_node_constructor_args():
+    sig = inspect.signature(rsgf_tree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_rsgf::tree::node_has_ID():
-    assert hasattr(rsgf::tree::Node, "ID")
+def test_rsgf_tree_node_has_ID():
+    assert hasattr(rsgf_tree_Node, "ID")
     descriptor = None
-    for klass in rsgf::tree::Node.__mro__:
+    for klass in rsgf_tree_Node.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -299,114 +299,114 @@ def test_root_constructor_args():
 
 
 
-def test_rsgf::tree::p::simulator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::P::Simulator)
+def test_rsgf_tree_p_simulator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_P_Simulator)
 
 
-def test_rsgf::tree::p::simulator_constructor_exists():
-    assert callable(rsgf::tree::P::Simulator.__init__)
+def test_rsgf_tree_p_simulator_constructor_exists():
+    assert callable(rsgf_tree_P_Simulator.__init__)
 
 
-def test_rsgf::tree::p::simulator_constructor_args():
-    sig = inspect.signature(rsgf::tree::P::Simulator.__init__)
+def test_rsgf_tree_p_simulator_constructor_args():
+    sig = inspect.signature(rsgf_tree_P_Simulator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::pdevssimulator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::PDEVSSimulator)
+def test_rsgf_tree_pdevssimulator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_PDEVSSimulator)
 
 
-def test_rsgf::tree::pdevssimulator_constructor_exists():
-    assert callable(rsgf::tree::PDEVSSimulator.__init__)
+def test_rsgf_tree_pdevssimulator_constructor_exists():
+    assert callable(rsgf_tree_PDEVSSimulator.__init__)
 
 
-def test_rsgf::tree::pdevssimulator_constructor_args():
-    sig = inspect.signature(rsgf::tree::PDEVSSimulator.__init__)
+def test_rsgf_tree_pdevssimulator_constructor_args():
+    sig = inspect.signature(rsgf_tree_PDEVSSimulator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::cdevssimulator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::CDEVSSimulator)
+def test_rsgf_tree_cdevssimulator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_CDEVSSimulator)
 
 
-def test_rsgf::tree::cdevssimulator_constructor_exists():
-    assert callable(rsgf::tree::CDEVSSimulator.__init__)
+def test_rsgf_tree_cdevssimulator_constructor_exists():
+    assert callable(rsgf_tree_CDEVSSimulator.__init__)
 
 
-def test_rsgf::tree::cdevssimulator_constructor_args():
-    sig = inspect.signature(rsgf::tree::CDEVSSimulator.__init__)
+def test_rsgf_tree_cdevssimulator_constructor_args():
+    sig = inspect.signature(rsgf_tree_CDEVSSimulator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::p::coordinator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::P::Coordinator)
+def test_rsgf_tree_p_coordinator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_P_Coordinator)
 
 
-def test_rsgf::tree::p::coordinator_constructor_exists():
-    assert callable(rsgf::tree::P::Coordinator.__init__)
+def test_rsgf_tree_p_coordinator_constructor_exists():
+    assert callable(rsgf_tree_P_Coordinator.__init__)
 
 
-def test_rsgf::tree::p::coordinator_constructor_args():
-    sig = inspect.signature(rsgf::tree::P::Coordinator.__init__)
+def test_rsgf_tree_p_coordinator_constructor_args():
+    sig = inspect.signature(rsgf_tree_P_Coordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::nodecoordinator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::NodeCoordinator)
+def test_rsgf_tree_nodecoordinator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_NodeCoordinator)
 
 
-def test_rsgf::tree::nodecoordinator_constructor_exists():
-    assert callable(rsgf::tree::NodeCoordinator.__init__)
+def test_rsgf_tree_nodecoordinator_constructor_exists():
+    assert callable(rsgf_tree_NodeCoordinator.__init__)
 
 
-def test_rsgf::tree::nodecoordinator_constructor_args():
-    sig = inspect.signature(rsgf::tree::NodeCoordinator.__init__)
+def test_rsgf_tree_nodecoordinator_constructor_args():
+    sig = inspect.signature(rsgf_tree_NodeCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::flatcoordinator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::FlatCoordinator)
+def test_rsgf_tree_flatcoordinator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_FlatCoordinator)
 
 
-def test_rsgf::tree::flatcoordinator_constructor_exists():
-    assert callable(rsgf::tree::FlatCoordinator.__init__)
+def test_rsgf_tree_flatcoordinator_constructor_exists():
+    assert callable(rsgf_tree_FlatCoordinator.__init__)
 
 
-def test_rsgf::tree::flatcoordinator_constructor_args():
-    sig = inspect.signature(rsgf::tree::FlatCoordinator.__init__)
+def test_rsgf_tree_flatcoordinator_constructor_args():
+    sig = inspect.signature(rsgf_tree_FlatCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::pdevscoordinator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::PDEVSCoordinator)
+def test_rsgf_tree_pdevscoordinator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_PDEVSCoordinator)
 
 
-def test_rsgf::tree::pdevscoordinator_constructor_exists():
-    assert callable(rsgf::tree::PDEVSCoordinator.__init__)
+def test_rsgf_tree_pdevscoordinator_constructor_exists():
+    assert callable(rsgf_tree_PDEVSCoordinator.__init__)
 
 
-def test_rsgf::tree::pdevscoordinator_constructor_args():
-    sig = inspect.signature(rsgf::tree::PDEVSCoordinator.__init__)
+def test_rsgf_tree_pdevscoordinator_constructor_args():
+    sig = inspect.signature(rsgf_tree_PDEVSCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::cdevscoordinator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::CDEVSCoordinator)
+def test_rsgf_tree_cdevscoordinator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_CDEVSCoordinator)
 
 
-def test_rsgf::tree::cdevscoordinator_constructor_exists():
-    assert callable(rsgf::tree::CDEVSCoordinator.__init__)
+def test_rsgf_tree_cdevscoordinator_constructor_exists():
+    assert callable(rsgf_tree_CDEVSCoordinator.__init__)
 
 
-def test_rsgf::tree::cdevscoordinator_constructor_args():
-    sig = inspect.signature(rsgf::tree::CDEVSCoordinator.__init__)
+def test_rsgf_tree_cdevscoordinator_constructor_args():
+    sig = inspect.signature(rsgf_tree_CDEVSCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -425,30 +425,30 @@ def test_basicnode_constructor_args():
 
 
 
-def test_rsgf::tree::coordinator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::Coordinator)
+def test_rsgf_tree_simulator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_Simulator)
 
 
-def test_rsgf::tree::coordinator_constructor_exists():
-    assert callable(rsgf::tree::Coordinator.__init__)
+def test_rsgf_tree_simulator_constructor_exists():
+    assert callable(rsgf_tree_Simulator.__init__)
 
 
-def test_rsgf::tree::coordinator_constructor_args():
-    sig = inspect.signature(rsgf::tree::Coordinator.__init__)
+def test_rsgf_tree_simulator_constructor_args():
+    sig = inspect.signature(rsgf_tree_Simulator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::simulator_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::Simulator)
+def test_rsgf_tree_coordinator_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_Coordinator)
 
 
-def test_rsgf::tree::simulator_constructor_exists():
-    assert callable(rsgf::tree::Simulator.__init__)
+def test_rsgf_tree_coordinator_constructor_exists():
+    assert callable(rsgf_tree_Coordinator.__init__)
 
 
-def test_rsgf::tree::simulator_constructor_args():
-    sig = inspect.signature(rsgf::tree::Simulator.__init__)
+def test_rsgf_tree_coordinator_constructor_args():
+    sig = inspect.signature(rsgf_tree_Coordinator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -467,23 +467,23 @@ def test_node_constructor_args():
 
 
 
-def test_rsgf::tree::basicnode_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::BasicNode)
+def test_rsgf_tree_basicnode_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_BasicNode)
 
 
-def test_rsgf::tree::basicnode_constructor_exists():
-    assert callable(rsgf::tree::BasicNode.__init__)
+def test_rsgf_tree_basicnode_constructor_exists():
+    assert callable(rsgf_tree_BasicNode.__init__)
 
 
-def test_rsgf::tree::basicnode_constructor_args():
-    sig = inspect.signature(rsgf::tree::BasicNode.__init__)
+def test_rsgf_tree_basicnode_constructor_args():
+    sig = inspect.signature(rsgf_tree_BasicNode.__init__)
     params = list(sig.parameters.keys())
     assert "modelName" in params, "Missing parameter 'modelName'"
 
-def test_rsgf::tree::basicnode_has_modelName():
-    assert hasattr(rsgf::tree::BasicNode, "modelName")
+def test_rsgf_tree_basicnode_has_modelName():
+    assert hasattr(rsgf_tree_BasicNode, "modelName")
     descriptor = None
-    for klass in rsgf::tree::BasicNode.__mro__:
+    for klass in rsgf_tree_BasicNode.__mro__:
         if "modelName" in klass.__dict__:
             descriptor = klass.__dict__["modelName"]
             break
@@ -491,37 +491,37 @@ def test_rsgf::tree::basicnode_has_modelName():
 
 
 
-def test_rsgf::tree::root_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::Root)
+def test_rsgf_tree_root_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_Root)
 
 
-def test_rsgf::tree::root_constructor_exists():
-    assert callable(rsgf::tree::Root.__init__)
+def test_rsgf_tree_root_constructor_exists():
+    assert callable(rsgf_tree_Root.__init__)
 
 
-def test_rsgf::tree::root_constructor_args():
-    sig = inspect.signature(rsgf::tree::Root.__init__)
+def test_rsgf_tree_root_constructor_args():
+    sig = inspect.signature(rsgf_tree_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rsgf::tree::tree_is_not_abstract():
-    assert not inspect.isabstract(rsgf::tree::Tree)
+def test_rsgf_tree_tree_is_not_abstract():
+    assert not inspect.isabstract(rsgf_tree_Tree)
 
 
-def test_rsgf::tree::tree_constructor_exists():
-    assert callable(rsgf::tree::Tree.__init__)
+def test_rsgf_tree_tree_constructor_exists():
+    assert callable(rsgf_tree_Tree.__init__)
 
 
-def test_rsgf::tree::tree_constructor_args():
-    sig = inspect.signature(rsgf::tree::Tree.__init__)
+def test_rsgf_tree_tree_constructor_args():
+    sig = inspect.signature(rsgf_tree_Tree.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_rsgf::tree::tree_has_ID():
-    assert hasattr(rsgf::tree::Tree, "ID")
+def test_rsgf_tree_tree_has_ID():
+    assert hasattr(rsgf_tree_Tree, "ID")
     descriptor = None
-    for klass in rsgf::tree::Tree.__mro__:
+    for klass in rsgf_tree_Tree.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -539,14 +539,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rsgf::mw::Middleware_strategy = st.builds(
-    rsgf::mw::Middleware,
+rsgf_mw_Middleware_strategy = st.builds(
+    rsgf_mw_Middleware,
 )
-rsgf::vm::VM_strategy = st.builds(
-    rsgf::vm::VM,
-    ID=
-        safe_text,
+rsgf_vm_VM_strategy = st.builds(
+    rsgf_vm_VM,
     protocol=
+        safe_text,
+    ID=
         safe_text
 )
 VM_strategy = st.builds(
@@ -555,16 +555,16 @@ VM_strategy = st.builds(
 Tree_strategy = st.builds(
     Tree,
 )
-rsgf::skeleton::Skeleton_strategy = st.builds(
-    rsgf::skeleton::Skeleton,
+rsgf_skeleton_Skeleton_strategy = st.builds(
+    rsgf_skeleton_Skeleton,
     ID=
         safe_text
 )
 Middleware_strategy = st.builds(
     Middleware,
 )
-rsgf::bundle::Process_strategy = st.builds(
-    rsgf::bundle::Process,
+rsgf_bundle_Process_strategy = st.builds(
+    rsgf_bundle_Process,
     ID=
         safe_text
 )
@@ -574,13 +574,13 @@ Process_strategy = st.builds(
 Skeleton_strategy = st.builds(
     Skeleton,
 )
-rsgf::bundle::Bundle_strategy = st.builds(
-    rsgf::bundle::Bundle,
+rsgf_bundle_Bundle_strategy = st.builds(
+    rsgf_bundle_Bundle,
     ID=
         safe_text
 )
-rsgf::tree::Node_strategy = st.builds(
-    rsgf::tree::Node,
+rsgf_tree_Node_strategy = st.builds(
+    rsgf_tree_Node,
     ID=
         safe_text
 )
@@ -593,60 +593,60 @@ Coordinator_strategy = st.builds(
 Root_strategy = st.builds(
     Root,
 )
-rsgf::tree::P::Simulator_strategy = st.builds(
-    rsgf::tree::P::Simulator,
+rsgf_tree_P_Simulator_strategy = st.builds(
+    rsgf_tree_P_Simulator,
 )
-rsgf::tree::PDEVSSimulator_strategy = st.builds(
-    rsgf::tree::PDEVSSimulator,
+rsgf_tree_PDEVSSimulator_strategy = st.builds(
+    rsgf_tree_PDEVSSimulator,
 )
-rsgf::tree::CDEVSSimulator_strategy = st.builds(
-    rsgf::tree::CDEVSSimulator,
+rsgf_tree_CDEVSSimulator_strategy = st.builds(
+    rsgf_tree_CDEVSSimulator,
 )
-rsgf::tree::P::Coordinator_strategy = st.builds(
-    rsgf::tree::P::Coordinator,
+rsgf_tree_P_Coordinator_strategy = st.builds(
+    rsgf_tree_P_Coordinator,
 )
-rsgf::tree::NodeCoordinator_strategy = st.builds(
-    rsgf::tree::NodeCoordinator,
+rsgf_tree_NodeCoordinator_strategy = st.builds(
+    rsgf_tree_NodeCoordinator,
 )
-rsgf::tree::FlatCoordinator_strategy = st.builds(
-    rsgf::tree::FlatCoordinator,
+rsgf_tree_FlatCoordinator_strategy = st.builds(
+    rsgf_tree_FlatCoordinator,
 )
-rsgf::tree::PDEVSCoordinator_strategy = st.builds(
-    rsgf::tree::PDEVSCoordinator,
+rsgf_tree_PDEVSCoordinator_strategy = st.builds(
+    rsgf_tree_PDEVSCoordinator,
 )
-rsgf::tree::CDEVSCoordinator_strategy = st.builds(
-    rsgf::tree::CDEVSCoordinator,
+rsgf_tree_CDEVSCoordinator_strategy = st.builds(
+    rsgf_tree_CDEVSCoordinator,
 )
 BasicNode_strategy = st.builds(
     BasicNode,
 )
-rsgf::tree::Coordinator_strategy = st.builds(
-    rsgf::tree::Coordinator,
+rsgf_tree_Simulator_strategy = st.builds(
+    rsgf_tree_Simulator,
 )
-rsgf::tree::Simulator_strategy = st.builds(
-    rsgf::tree::Simulator,
+rsgf_tree_Coordinator_strategy = st.builds(
+    rsgf_tree_Coordinator,
 )
 Node_strategy = st.builds(
     Node,
 )
-rsgf::tree::BasicNode_strategy = st.builds(
-    rsgf::tree::BasicNode,
+rsgf_tree_BasicNode_strategy = st.builds(
+    rsgf_tree_BasicNode,
     modelName=
         safe_text
 )
-rsgf::tree::Root_strategy = st.builds(
-    rsgf::tree::Root,
+rsgf_tree_Root_strategy = st.builds(
+    rsgf_tree_Root,
 )
-rsgf::tree::Tree_strategy = st.builds(
-    rsgf::tree::Tree,
+rsgf_tree_Tree_strategy = st.builds(
+    rsgf_tree_Tree,
     ID=
         safe_text
 )
 
-@given(instance=rsgf::mw::Middleware_strategy)
+@given(instance=rsgf_mw_Middleware_strategy)
 @settings(max_examples=50)
-def test_rsgf::mw::middleware_instantiation(instance):
-    assert isinstance(instance, rsgf::mw::Middleware)
+def test_rsgf_mw_middleware_instantiation(instance):
+    assert isinstance(instance, rsgf_mw_Middleware)
 
 import warnings
 import copy
@@ -654,38 +654,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rsgf::mw::Middleware_strategy)
+@given(instance=rsgf_mw_Middleware_strategy)
 @settings(max_examples=30)
-def test_rsgf::mw::middleware_send_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.send()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.send).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'send' in rsgf::mw::Middleware is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'send' in rsgf::mw::Middleware did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'send' in rsgf::mw::Middleware is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=rsgf::mw::Middleware_strategy)
-@settings(max_examples=30)
-def test_rsgf::mw::middleware_establish_changes_state(instance):
+def test_rsgf_mw_middleware_establish_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -697,14 +668,14 @@ def test_rsgf::mw::middleware_establish_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'establish' in rsgf::mw::Middleware is empty"
+        assert has_statements, f"Function 'establish' in rsgf_mw_Middleware is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'establish' in rsgf::mw::Middleware did not change state; check implementation")
+            warnings.warn(f"Operation 'establish' in rsgf_mw_Middleware did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'establish' in rsgf::mw::Middleware is not implemented or raised an error")
+        warnings.warn(f"Operation 'establish' in rsgf_mw_Middleware is not implemented or raised an error")
 
 import warnings
 import copy
@@ -712,9 +683,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rsgf::mw::Middleware_strategy)
+@given(instance=rsgf_mw_Middleware_strategy)
 @settings(max_examples=30)
-def test_rsgf::mw::middleware_bind_changes_state(instance):
+def test_rsgf_mw_middleware_send_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.send()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.send).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'send' in rsgf_mw_Middleware is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'send' in rsgf_mw_Middleware did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'send' in rsgf_mw_Middleware is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=rsgf_mw_Middleware_strategy)
+@settings(max_examples=30)
+def test_rsgf_mw_middleware_bind_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -726,41 +726,35 @@ def test_rsgf::mw::middleware_bind_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bind' in rsgf::mw::Middleware is empty"
+        assert has_statements, f"Function 'bind' in rsgf_mw_Middleware is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bind' in rsgf::mw::Middleware did not change state; check implementation")
+            warnings.warn(f"Operation 'bind' in rsgf_mw_Middleware did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bind' in rsgf::mw::Middleware is not implemented or raised an error")
+        warnings.warn(f"Operation 'bind' in rsgf_mw_Middleware is not implemented or raised an error")
 
-@given(instance=rsgf::vm::VM_strategy)
+@given(instance=rsgf_vm_VM_strategy)
 @settings(max_examples=50)
-def test_rsgf::vm::vm_instantiation(instance):
-    assert isinstance(instance, rsgf::vm::VM)
-
-@given(instance=rsgf::vm::VM_strategy)
-def test_rsgf::vm::vm_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_rsgf_vm_vm_instantiation(instance):
+    assert isinstance(instance, rsgf_vm_VM)
 
 
-@given(instance=rsgf::vm::VM_strategy)
-def test_rsgf::vm::vm_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
 
-@given(instance=rsgf::vm::VM_strategy)
-def test_rsgf::vm::vm_protocol_type(instance):
-    assert isinstance(instance.protocol, str)
-
-
-@given(instance=rsgf::vm::VM_strategy)
-def test_rsgf::vm::vm_protocol_setter(instance):
+@given(instance=rsgf_vm_VM_strategy)
+def test_rsgf_vm_vm_protocol_setter(instance):
     original = instance.protocol
     instance.protocol = original
     assert instance.protocol == original
+
+
+
+@given(instance=rsgf_vm_VM_strategy)
+def test_rsgf_vm_vm_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
 
 @given(instance=VM_strategy)
 @settings(max_examples=50)
@@ -772,18 +766,15 @@ def test_vm_instantiation(instance):
 def test_tree_instantiation(instance):
     assert isinstance(instance, Tree)
 
-@given(instance=rsgf::skeleton::Skeleton_strategy)
+@given(instance=rsgf_skeleton_Skeleton_strategy)
 @settings(max_examples=50)
-def test_rsgf::skeleton::skeleton_instantiation(instance):
-    assert isinstance(instance, rsgf::skeleton::Skeleton)
-
-@given(instance=rsgf::skeleton::Skeleton_strategy)
-def test_rsgf::skeleton::skeleton_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_rsgf_skeleton_skeleton_instantiation(instance):
+    assert isinstance(instance, rsgf_skeleton_Skeleton)
 
 
-@given(instance=rsgf::skeleton::Skeleton_strategy)
-def test_rsgf::skeleton::skeleton_ID_setter(instance):
+
+@given(instance=rsgf_skeleton_Skeleton_strategy)
+def test_rsgf_skeleton_skeleton_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -793,18 +784,15 @@ def test_rsgf::skeleton::skeleton_ID_setter(instance):
 def test_middleware_instantiation(instance):
     assert isinstance(instance, Middleware)
 
-@given(instance=rsgf::bundle::Process_strategy)
+@given(instance=rsgf_bundle_Process_strategy)
 @settings(max_examples=50)
-def test_rsgf::bundle::process_instantiation(instance):
-    assert isinstance(instance, rsgf::bundle::Process)
-
-@given(instance=rsgf::bundle::Process_strategy)
-def test_rsgf::bundle::process_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_rsgf_bundle_process_instantiation(instance):
+    assert isinstance(instance, rsgf_bundle_Process)
 
 
-@given(instance=rsgf::bundle::Process_strategy)
-def test_rsgf::bundle::process_ID_setter(instance):
+
+@given(instance=rsgf_bundle_Process_strategy)
+def test_rsgf_bundle_process_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -819,34 +807,28 @@ def test_process_instantiation(instance):
 def test_skeleton_instantiation(instance):
     assert isinstance(instance, Skeleton)
 
-@given(instance=rsgf::bundle::Bundle_strategy)
+@given(instance=rsgf_bundle_Bundle_strategy)
 @settings(max_examples=50)
-def test_rsgf::bundle::bundle_instantiation(instance):
-    assert isinstance(instance, rsgf::bundle::Bundle)
-
-@given(instance=rsgf::bundle::Bundle_strategy)
-def test_rsgf::bundle::bundle_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_rsgf_bundle_bundle_instantiation(instance):
+    assert isinstance(instance, rsgf_bundle_Bundle)
 
 
-@given(instance=rsgf::bundle::Bundle_strategy)
-def test_rsgf::bundle::bundle_ID_setter(instance):
+
+@given(instance=rsgf_bundle_Bundle_strategy)
+def test_rsgf_bundle_bundle_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=rsgf::tree::Node_strategy)
+@given(instance=rsgf_tree_Node_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::node_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::Node)
-
-@given(instance=rsgf::tree::Node_strategy)
-def test_rsgf::tree::node_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_rsgf_tree_node_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_Node)
 
 
-@given(instance=rsgf::tree::Node_strategy)
-def test_rsgf::tree::node_ID_setter(instance):
+
+@given(instance=rsgf_tree_Node_strategy)
+def test_rsgf_tree_node_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -866,99 +848,93 @@ def test_coordinator_instantiation(instance):
 def test_root_instantiation(instance):
     assert isinstance(instance, Root)
 
-@given(instance=rsgf::tree::P::Simulator_strategy)
+@given(instance=rsgf_tree_P_Simulator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::p::simulator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::P::Simulator)
+def test_rsgf_tree_p_simulator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_P_Simulator)
 
-@given(instance=rsgf::tree::PDEVSSimulator_strategy)
+@given(instance=rsgf_tree_PDEVSSimulator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::pdevssimulator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::PDEVSSimulator)
+def test_rsgf_tree_pdevssimulator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_PDEVSSimulator)
 
-@given(instance=rsgf::tree::CDEVSSimulator_strategy)
+@given(instance=rsgf_tree_CDEVSSimulator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::cdevssimulator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::CDEVSSimulator)
+def test_rsgf_tree_cdevssimulator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_CDEVSSimulator)
 
-@given(instance=rsgf::tree::P::Coordinator_strategy)
+@given(instance=rsgf_tree_P_Coordinator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::p::coordinator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::P::Coordinator)
+def test_rsgf_tree_p_coordinator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_P_Coordinator)
 
-@given(instance=rsgf::tree::NodeCoordinator_strategy)
+@given(instance=rsgf_tree_NodeCoordinator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::nodecoordinator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::NodeCoordinator)
+def test_rsgf_tree_nodecoordinator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_NodeCoordinator)
 
-@given(instance=rsgf::tree::FlatCoordinator_strategy)
+@given(instance=rsgf_tree_FlatCoordinator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::flatcoordinator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::FlatCoordinator)
+def test_rsgf_tree_flatcoordinator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_FlatCoordinator)
 
-@given(instance=rsgf::tree::PDEVSCoordinator_strategy)
+@given(instance=rsgf_tree_PDEVSCoordinator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::pdevscoordinator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::PDEVSCoordinator)
+def test_rsgf_tree_pdevscoordinator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_PDEVSCoordinator)
 
-@given(instance=rsgf::tree::CDEVSCoordinator_strategy)
+@given(instance=rsgf_tree_CDEVSCoordinator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::cdevscoordinator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::CDEVSCoordinator)
+def test_rsgf_tree_cdevscoordinator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_CDEVSCoordinator)
 
 @given(instance=BasicNode_strategy)
 @settings(max_examples=50)
 def test_basicnode_instantiation(instance):
     assert isinstance(instance, BasicNode)
 
-@given(instance=rsgf::tree::Coordinator_strategy)
+@given(instance=rsgf_tree_Simulator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::coordinator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::Coordinator)
+def test_rsgf_tree_simulator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_Simulator)
 
-@given(instance=rsgf::tree::Simulator_strategy)
+@given(instance=rsgf_tree_Coordinator_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::simulator_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::Simulator)
+def test_rsgf_tree_coordinator_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_Coordinator)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=rsgf::tree::BasicNode_strategy)
+@given(instance=rsgf_tree_BasicNode_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::basicnode_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::BasicNode)
-
-@given(instance=rsgf::tree::BasicNode_strategy)
-def test_rsgf::tree::basicnode_modelName_type(instance):
-    assert isinstance(instance.modelName, str)
+def test_rsgf_tree_basicnode_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_BasicNode)
 
 
-@given(instance=rsgf::tree::BasicNode_strategy)
-def test_rsgf::tree::basicnode_modelName_setter(instance):
+
+@given(instance=rsgf_tree_BasicNode_strategy)
+def test_rsgf_tree_basicnode_modelName_setter(instance):
     original = instance.modelName
     instance.modelName = original
     assert instance.modelName == original
 
-@given(instance=rsgf::tree::Root_strategy)
+@given(instance=rsgf_tree_Root_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::root_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::Root)
+def test_rsgf_tree_root_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_Root)
 
-@given(instance=rsgf::tree::Tree_strategy)
+@given(instance=rsgf_tree_Tree_strategy)
 @settings(max_examples=50)
-def test_rsgf::tree::tree_instantiation(instance):
-    assert isinstance(instance, rsgf::tree::Tree)
-
-@given(instance=rsgf::tree::Tree_strategy)
-def test_rsgf::tree::tree_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_rsgf_tree_tree_instantiation(instance):
+    assert isinstance(instance, rsgf_tree_Tree)
 
 
-@given(instance=rsgf::tree::Tree_strategy)
-def test_rsgf::tree::tree_ID_setter(instance):
+
+@given(instance=rsgf_tree_Tree_strategy)
+def test_rsgf_tree_tree_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original

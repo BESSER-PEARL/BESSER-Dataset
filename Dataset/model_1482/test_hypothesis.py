@@ -3,43 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    transformr::Expression,
-    transformr::Assignment,
+    transformr_Expression,
+    transformr_Assignment,
     Executable,
-    transformr::Block,
-    transformr::Branch,
+    transformr_Branch,
+    transformr_Block,
     PatternConstraint,
-    transformr::ForAll,
-    transformr::Exists,
+    transformr_ForAll,
+    transformr_Exists,
     BinaryConstraint,
-    transformr::Or,
-    transformr::And,
+    transformr_Or,
+    transformr_And,
     Constraint,
-    transformr::BinaryConstraint,
-    transformr::VariableConstraint,
-    transformr::Not,
-    transformr::PatternConstraint,
-    transformr::TypedElement,
-    transformr::NamedElement,
+    transformr_Not,
+    transformr_BinaryConstraint,
+    transformr_VariableConstraint,
+    transformr_PatternConstraint,
+    transformr_TypedElement,
+    transformr_NamedElement,
     TypedElement,
     Pattern,
-    transformr::Rule,
-    transformr::Constraint,
+    transformr_Rule,
+    transformr_Constraint,
     Graph,
-    transformr::Pattern,
+    transformr_Pattern,
     GraphElement,
-    transformr::Edge,
-    transformr::Node,
+    transformr_Edge,
+    transformr_Node,
     NamedElement,
-    transformr::Variable,
-    transformr::GraphElement,
-    transformr::Executable,
-    transformr::Attribute,
-    transformr::Graph,
+    transformr_Attribute,
+    transformr_GraphElement,
+    transformr_Executable,
+    transformr_Variable,
+    transformr_Graph,
 )
 
 # =============================================================================
@@ -62,23 +62,23 @@ def test_expression_constructor_args():
 
 
 
-def test_transformr::expression_is_not_abstract():
-    assert not inspect.isabstract(transformr::Expression)
+def test_transformr_expression_is_not_abstract():
+    assert not inspect.isabstract(transformr_Expression)
 
 
-def test_transformr::expression_constructor_exists():
-    assert callable(transformr::Expression.__init__)
+def test_transformr_expression_constructor_exists():
+    assert callable(transformr_Expression.__init__)
 
 
-def test_transformr::expression_constructor_args():
-    sig = inspect.signature(transformr::Expression.__init__)
+def test_transformr_expression_constructor_args():
+    sig = inspect.signature(transformr_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_transformr::expression_has_expression():
-    assert hasattr(transformr::Expression, "expression")
+def test_transformr_expression_has_expression():
+    assert hasattr(transformr_Expression, "expression")
     descriptor = None
-    for klass in transformr::Expression.__mro__:
+    for klass in transformr_Expression.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -86,16 +86,16 @@ def test_transformr::expression_has_expression():
 
 
 
-def test_transformr::assignment_is_not_abstract():
-    assert not inspect.isabstract(transformr::Assignment)
+def test_transformr_assignment_is_not_abstract():
+    assert not inspect.isabstract(transformr_Assignment)
 
 
-def test_transformr::assignment_constructor_exists():
-    assert callable(transformr::Assignment.__init__)
+def test_transformr_assignment_constructor_exists():
+    assert callable(transformr_Assignment.__init__)
 
 
-def test_transformr::assignment_constructor_args():
-    sig = inspect.signature(transformr::Assignment.__init__)
+def test_transformr_assignment_constructor_args():
+    sig = inspect.signature(transformr_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,30 +114,30 @@ def test_executable_constructor_args():
 
 
 
-def test_transformr::block_is_not_abstract():
-    assert not inspect.isabstract(transformr::Block)
+def test_transformr_branch_is_not_abstract():
+    assert not inspect.isabstract(transformr_Branch)
 
 
-def test_transformr::block_constructor_exists():
-    assert callable(transformr::Block.__init__)
+def test_transformr_branch_constructor_exists():
+    assert callable(transformr_Branch.__init__)
 
 
-def test_transformr::block_constructor_args():
-    sig = inspect.signature(transformr::Block.__init__)
+def test_transformr_branch_constructor_args():
+    sig = inspect.signature(transformr_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::branch_is_not_abstract():
-    assert not inspect.isabstract(transformr::Branch)
+def test_transformr_block_is_not_abstract():
+    assert not inspect.isabstract(transformr_Block)
 
 
-def test_transformr::branch_constructor_exists():
-    assert callable(transformr::Branch.__init__)
+def test_transformr_block_constructor_exists():
+    assert callable(transformr_Block.__init__)
 
 
-def test_transformr::branch_constructor_args():
-    sig = inspect.signature(transformr::Branch.__init__)
+def test_transformr_block_constructor_args():
+    sig = inspect.signature(transformr_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -156,30 +156,30 @@ def test_patternconstraint_constructor_args():
 
 
 
-def test_transformr::forall_is_not_abstract():
-    assert not inspect.isabstract(transformr::ForAll)
+def test_transformr_forall_is_not_abstract():
+    assert not inspect.isabstract(transformr_ForAll)
 
 
-def test_transformr::forall_constructor_exists():
-    assert callable(transformr::ForAll.__init__)
+def test_transformr_forall_constructor_exists():
+    assert callable(transformr_ForAll.__init__)
 
 
-def test_transformr::forall_constructor_args():
-    sig = inspect.signature(transformr::ForAll.__init__)
+def test_transformr_forall_constructor_args():
+    sig = inspect.signature(transformr_ForAll.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::exists_is_not_abstract():
-    assert not inspect.isabstract(transformr::Exists)
+def test_transformr_exists_is_not_abstract():
+    assert not inspect.isabstract(transformr_Exists)
 
 
-def test_transformr::exists_constructor_exists():
-    assert callable(transformr::Exists.__init__)
+def test_transformr_exists_constructor_exists():
+    assert callable(transformr_Exists.__init__)
 
 
-def test_transformr::exists_constructor_args():
-    sig = inspect.signature(transformr::Exists.__init__)
+def test_transformr_exists_constructor_args():
+    sig = inspect.signature(transformr_Exists.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -198,30 +198,30 @@ def test_binaryconstraint_constructor_args():
 
 
 
-def test_transformr::or_is_not_abstract():
-    assert not inspect.isabstract(transformr::Or)
+def test_transformr_or_is_not_abstract():
+    assert not inspect.isabstract(transformr_Or)
 
 
-def test_transformr::or_constructor_exists():
-    assert callable(transformr::Or.__init__)
+def test_transformr_or_constructor_exists():
+    assert callable(transformr_Or.__init__)
 
 
-def test_transformr::or_constructor_args():
-    sig = inspect.signature(transformr::Or.__init__)
+def test_transformr_or_constructor_args():
+    sig = inspect.signature(transformr_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::and_is_not_abstract():
-    assert not inspect.isabstract(transformr::And)
+def test_transformr_and_is_not_abstract():
+    assert not inspect.isabstract(transformr_And)
 
 
-def test_transformr::and_constructor_exists():
-    assert callable(transformr::And.__init__)
+def test_transformr_and_constructor_exists():
+    assert callable(transformr_And.__init__)
 
 
-def test_transformr::and_constructor_args():
-    sig = inspect.signature(transformr::And.__init__)
+def test_transformr_and_constructor_args():
+    sig = inspect.signature(transformr_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,79 +240,79 @@ def test_constraint_constructor_args():
 
 
 
-def test_transformr::binaryconstraint_is_not_abstract():
-    assert not inspect.isabstract(transformr::BinaryConstraint)
+def test_transformr_not_is_not_abstract():
+    assert not inspect.isabstract(transformr_Not)
 
 
-def test_transformr::binaryconstraint_constructor_exists():
-    assert callable(transformr::BinaryConstraint.__init__)
+def test_transformr_not_constructor_exists():
+    assert callable(transformr_Not.__init__)
 
 
-def test_transformr::binaryconstraint_constructor_args():
-    sig = inspect.signature(transformr::BinaryConstraint.__init__)
+def test_transformr_not_constructor_args():
+    sig = inspect.signature(transformr_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::variableconstraint_is_not_abstract():
-    assert not inspect.isabstract(transformr::VariableConstraint)
+def test_transformr_binaryconstraint_is_not_abstract():
+    assert not inspect.isabstract(transformr_BinaryConstraint)
 
 
-def test_transformr::variableconstraint_constructor_exists():
-    assert callable(transformr::VariableConstraint.__init__)
+def test_transformr_binaryconstraint_constructor_exists():
+    assert callable(transformr_BinaryConstraint.__init__)
 
 
-def test_transformr::variableconstraint_constructor_args():
-    sig = inspect.signature(transformr::VariableConstraint.__init__)
+def test_transformr_binaryconstraint_constructor_args():
+    sig = inspect.signature(transformr_BinaryConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::not_is_not_abstract():
-    assert not inspect.isabstract(transformr::Not)
+def test_transformr_variableconstraint_is_not_abstract():
+    assert not inspect.isabstract(transformr_VariableConstraint)
 
 
-def test_transformr::not_constructor_exists():
-    assert callable(transformr::Not.__init__)
+def test_transformr_variableconstraint_constructor_exists():
+    assert callable(transformr_VariableConstraint.__init__)
 
 
-def test_transformr::not_constructor_args():
-    sig = inspect.signature(transformr::Not.__init__)
+def test_transformr_variableconstraint_constructor_args():
+    sig = inspect.signature(transformr_VariableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::patternconstraint_is_not_abstract():
-    assert not inspect.isabstract(transformr::PatternConstraint)
+def test_transformr_patternconstraint_is_not_abstract():
+    assert not inspect.isabstract(transformr_PatternConstraint)
 
 
-def test_transformr::patternconstraint_constructor_exists():
-    assert callable(transformr::PatternConstraint.__init__)
+def test_transformr_patternconstraint_constructor_exists():
+    assert callable(transformr_PatternConstraint.__init__)
 
 
-def test_transformr::patternconstraint_constructor_args():
-    sig = inspect.signature(transformr::PatternConstraint.__init__)
+def test_transformr_patternconstraint_constructor_args():
+    sig = inspect.signature(transformr_PatternConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::typedelement_is_not_abstract():
-    assert not inspect.isabstract(transformr::TypedElement)
+def test_transformr_typedelement_is_not_abstract():
+    assert not inspect.isabstract(transformr_TypedElement)
 
 
-def test_transformr::typedelement_constructor_exists():
-    assert callable(transformr::TypedElement.__init__)
+def test_transformr_typedelement_constructor_exists():
+    assert callable(transformr_TypedElement.__init__)
 
 
-def test_transformr::typedelement_constructor_args():
-    sig = inspect.signature(transformr::TypedElement.__init__)
+def test_transformr_typedelement_constructor_args():
+    sig = inspect.signature(transformr_TypedElement.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_transformr::typedelement_has_type():
-    assert hasattr(transformr::TypedElement, "type")
+def test_transformr_typedelement_has_type():
+    assert hasattr(transformr_TypedElement, "type")
     descriptor = None
-    for klass in transformr::TypedElement.__mro__:
+    for klass in transformr_TypedElement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -320,23 +320,23 @@ def test_transformr::typedelement_has_type():
 
 
 
-def test_transformr::namedelement_is_not_abstract():
-    assert not inspect.isabstract(transformr::NamedElement)
+def test_transformr_namedelement_is_not_abstract():
+    assert not inspect.isabstract(transformr_NamedElement)
 
 
-def test_transformr::namedelement_constructor_exists():
-    assert callable(transformr::NamedElement.__init__)
+def test_transformr_namedelement_constructor_exists():
+    assert callable(transformr_NamedElement.__init__)
 
 
-def test_transformr::namedelement_constructor_args():
-    sig = inspect.signature(transformr::NamedElement.__init__)
+def test_transformr_namedelement_constructor_args():
+    sig = inspect.signature(transformr_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_transformr::namedelement_has_name():
-    assert hasattr(transformr::NamedElement, "name")
+def test_transformr_namedelement_has_name():
+    assert hasattr(transformr_NamedElement, "name")
     descriptor = None
-    for klass in transformr::NamedElement.__mro__:
+    for klass in transformr_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -372,30 +372,30 @@ def test_pattern_constructor_args():
 
 
 
-def test_transformr::rule_is_not_abstract():
-    assert not inspect.isabstract(transformr::Rule)
+def test_transformr_rule_is_not_abstract():
+    assert not inspect.isabstract(transformr_Rule)
 
 
-def test_transformr::rule_constructor_exists():
-    assert callable(transformr::Rule.__init__)
+def test_transformr_rule_constructor_exists():
+    assert callable(transformr_Rule.__init__)
 
 
-def test_transformr::rule_constructor_args():
-    sig = inspect.signature(transformr::Rule.__init__)
+def test_transformr_rule_constructor_args():
+    sig = inspect.signature(transformr_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::constraint_is_not_abstract():
-    assert not inspect.isabstract(transformr::Constraint)
+def test_transformr_constraint_is_not_abstract():
+    assert not inspect.isabstract(transformr_Constraint)
 
 
-def test_transformr::constraint_constructor_exists():
-    assert callable(transformr::Constraint.__init__)
+def test_transformr_constraint_constructor_exists():
+    assert callable(transformr_Constraint.__init__)
 
 
-def test_transformr::constraint_constructor_args():
-    sig = inspect.signature(transformr::Constraint.__init__)
+def test_transformr_constraint_constructor_args():
+    sig = inspect.signature(transformr_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -414,16 +414,16 @@ def test_graph_constructor_args():
 
 
 
-def test_transformr::pattern_is_not_abstract():
-    assert not inspect.isabstract(transformr::Pattern)
+def test_transformr_pattern_is_not_abstract():
+    assert not inspect.isabstract(transformr_Pattern)
 
 
-def test_transformr::pattern_constructor_exists():
-    assert callable(transformr::Pattern.__init__)
+def test_transformr_pattern_constructor_exists():
+    assert callable(transformr_Pattern.__init__)
 
 
-def test_transformr::pattern_constructor_args():
-    sig = inspect.signature(transformr::Pattern.__init__)
+def test_transformr_pattern_constructor_args():
+    sig = inspect.signature(transformr_Pattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -442,30 +442,30 @@ def test_graphelement_constructor_args():
 
 
 
-def test_transformr::edge_is_not_abstract():
-    assert not inspect.isabstract(transformr::Edge)
+def test_transformr_edge_is_not_abstract():
+    assert not inspect.isabstract(transformr_Edge)
 
 
-def test_transformr::edge_constructor_exists():
-    assert callable(transformr::Edge.__init__)
+def test_transformr_edge_constructor_exists():
+    assert callable(transformr_Edge.__init__)
 
 
-def test_transformr::edge_constructor_args():
-    sig = inspect.signature(transformr::Edge.__init__)
+def test_transformr_edge_constructor_args():
+    sig = inspect.signature(transformr_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::node_is_not_abstract():
-    assert not inspect.isabstract(transformr::Node)
+def test_transformr_node_is_not_abstract():
+    assert not inspect.isabstract(transformr_Node)
 
 
-def test_transformr::node_constructor_exists():
-    assert callable(transformr::Node.__init__)
+def test_transformr_node_constructor_exists():
+    assert callable(transformr_Node.__init__)
 
 
-def test_transformr::node_constructor_args():
-    sig = inspect.signature(transformr::Node.__init__)
+def test_transformr_node_constructor_args():
+    sig = inspect.signature(transformr_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,72 +484,72 @@ def test_namedelement_constructor_args():
 
 
 
-def test_transformr::variable_is_not_abstract():
-    assert not inspect.isabstract(transformr::Variable)
+def test_transformr_attribute_is_not_abstract():
+    assert not inspect.isabstract(transformr_Attribute)
 
 
-def test_transformr::variable_constructor_exists():
-    assert callable(transformr::Variable.__init__)
+def test_transformr_attribute_constructor_exists():
+    assert callable(transformr_Attribute.__init__)
 
 
-def test_transformr::variable_constructor_args():
-    sig = inspect.signature(transformr::Variable.__init__)
+def test_transformr_attribute_constructor_args():
+    sig = inspect.signature(transformr_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::graphelement_is_not_abstract():
-    assert not inspect.isabstract(transformr::GraphElement)
+def test_transformr_graphelement_is_not_abstract():
+    assert not inspect.isabstract(transformr_GraphElement)
 
 
-def test_transformr::graphelement_constructor_exists():
-    assert callable(transformr::GraphElement.__init__)
+def test_transformr_graphelement_constructor_exists():
+    assert callable(transformr_GraphElement.__init__)
 
 
-def test_transformr::graphelement_constructor_args():
-    sig = inspect.signature(transformr::GraphElement.__init__)
+def test_transformr_graphelement_constructor_args():
+    sig = inspect.signature(transformr_GraphElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::executable_is_not_abstract():
-    assert not inspect.isabstract(transformr::Executable)
+def test_transformr_executable_is_not_abstract():
+    assert not inspect.isabstract(transformr_Executable)
 
 
-def test_transformr::executable_constructor_exists():
-    assert callable(transformr::Executable.__init__)
+def test_transformr_executable_constructor_exists():
+    assert callable(transformr_Executable.__init__)
 
 
-def test_transformr::executable_constructor_args():
-    sig = inspect.signature(transformr::Executable.__init__)
+def test_transformr_executable_constructor_args():
+    sig = inspect.signature(transformr_Executable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::attribute_is_not_abstract():
-    assert not inspect.isabstract(transformr::Attribute)
+def test_transformr_variable_is_not_abstract():
+    assert not inspect.isabstract(transformr_Variable)
 
 
-def test_transformr::attribute_constructor_exists():
-    assert callable(transformr::Attribute.__init__)
+def test_transformr_variable_constructor_exists():
+    assert callable(transformr_Variable.__init__)
 
 
-def test_transformr::attribute_constructor_args():
-    sig = inspect.signature(transformr::Attribute.__init__)
+def test_transformr_variable_constructor_args():
+    sig = inspect.signature(transformr_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformr::graph_is_not_abstract():
-    assert not inspect.isabstract(transformr::Graph)
+def test_transformr_graph_is_not_abstract():
+    assert not inspect.isabstract(transformr_Graph)
 
 
-def test_transformr::graph_constructor_exists():
-    assert callable(transformr::Graph.__init__)
+def test_transformr_graph_constructor_exists():
+    assert callable(transformr_Graph.__init__)
 
 
-def test_transformr::graph_constructor_args():
-    sig = inspect.signature(transformr::Graph.__init__)
+def test_transformr_graph_constructor_args():
+    sig = inspect.signature(transformr_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -567,63 +567,63 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-transformr::Expression_strategy = st.builds(
-    transformr::Expression,
+transformr_Expression_strategy = st.builds(
+    transformr_Expression,
     expression=
         safe_text
 )
-transformr::Assignment_strategy = st.builds(
-    transformr::Assignment,
+transformr_Assignment_strategy = st.builds(
+    transformr_Assignment,
 )
 Executable_strategy = st.builds(
     Executable,
 )
-transformr::Block_strategy = st.builds(
-    transformr::Block,
+transformr_Branch_strategy = st.builds(
+    transformr_Branch,
 )
-transformr::Branch_strategy = st.builds(
-    transformr::Branch,
+transformr_Block_strategy = st.builds(
+    transformr_Block,
 )
 PatternConstraint_strategy = st.builds(
     PatternConstraint,
 )
-transformr::ForAll_strategy = st.builds(
-    transformr::ForAll,
+transformr_ForAll_strategy = st.builds(
+    transformr_ForAll,
 )
-transformr::Exists_strategy = st.builds(
-    transformr::Exists,
+transformr_Exists_strategy = st.builds(
+    transformr_Exists,
 )
 BinaryConstraint_strategy = st.builds(
     BinaryConstraint,
 )
-transformr::Or_strategy = st.builds(
-    transformr::Or,
+transformr_Or_strategy = st.builds(
+    transformr_Or,
 )
-transformr::And_strategy = st.builds(
-    transformr::And,
+transformr_And_strategy = st.builds(
+    transformr_And,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-transformr::BinaryConstraint_strategy = st.builds(
-    transformr::BinaryConstraint,
+transformr_Not_strategy = st.builds(
+    transformr_Not,
 )
-transformr::VariableConstraint_strategy = st.builds(
-    transformr::VariableConstraint,
+transformr_BinaryConstraint_strategy = st.builds(
+    transformr_BinaryConstraint,
 )
-transformr::Not_strategy = st.builds(
-    transformr::Not,
+transformr_VariableConstraint_strategy = st.builds(
+    transformr_VariableConstraint,
 )
-transformr::PatternConstraint_strategy = st.builds(
-    transformr::PatternConstraint,
+transformr_PatternConstraint_strategy = st.builds(
+    transformr_PatternConstraint,
 )
-transformr::TypedElement_strategy = st.builds(
-    transformr::TypedElement,
+transformr_TypedElement_strategy = st.builds(
+    transformr_TypedElement,
     type=
         safe_text
 )
-transformr::NamedElement_strategy = st.builds(
-    transformr::NamedElement,
+transformr_NamedElement_strategy = st.builds(
+    transformr_NamedElement,
     name=
         safe_text
 )
@@ -633,44 +633,44 @@ TypedElement_strategy = st.builds(
 Pattern_strategy = st.builds(
     Pattern,
 )
-transformr::Rule_strategy = st.builds(
-    transformr::Rule,
+transformr_Rule_strategy = st.builds(
+    transformr_Rule,
 )
-transformr::Constraint_strategy = st.builds(
-    transformr::Constraint,
+transformr_Constraint_strategy = st.builds(
+    transformr_Constraint,
 )
 Graph_strategy = st.builds(
     Graph,
 )
-transformr::Pattern_strategy = st.builds(
-    transformr::Pattern,
+transformr_Pattern_strategy = st.builds(
+    transformr_Pattern,
 )
 GraphElement_strategy = st.builds(
     GraphElement,
 )
-transformr::Edge_strategy = st.builds(
-    transformr::Edge,
+transformr_Edge_strategy = st.builds(
+    transformr_Edge,
 )
-transformr::Node_strategy = st.builds(
-    transformr::Node,
+transformr_Node_strategy = st.builds(
+    transformr_Node,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-transformr::Variable_strategy = st.builds(
-    transformr::Variable,
+transformr_Attribute_strategy = st.builds(
+    transformr_Attribute,
 )
-transformr::GraphElement_strategy = st.builds(
-    transformr::GraphElement,
+transformr_GraphElement_strategy = st.builds(
+    transformr_GraphElement,
 )
-transformr::Executable_strategy = st.builds(
-    transformr::Executable,
+transformr_Executable_strategy = st.builds(
+    transformr_Executable,
 )
-transformr::Attribute_strategy = st.builds(
-    transformr::Attribute,
+transformr_Variable_strategy = st.builds(
+    transformr_Variable,
 )
-transformr::Graph_strategy = st.builds(
-    transformr::Graph,
+transformr_Graph_strategy = st.builds(
+    transformr_Graph,
 )
 
 @given(instance=Expression_strategy)
@@ -678,125 +678,116 @@ transformr::Graph_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=transformr::Expression_strategy)
+@given(instance=transformr_Expression_strategy)
 @settings(max_examples=50)
-def test_transformr::expression_instantiation(instance):
-    assert isinstance(instance, transformr::Expression)
-
-@given(instance=transformr::Expression_strategy)
-def test_transformr::expression_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_transformr_expression_instantiation(instance):
+    assert isinstance(instance, transformr_Expression)
 
 
-@given(instance=transformr::Expression_strategy)
-def test_transformr::expression_expression_setter(instance):
+
+@given(instance=transformr_Expression_strategy)
+def test_transformr_expression_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=transformr::Assignment_strategy)
+@given(instance=transformr_Assignment_strategy)
 @settings(max_examples=50)
-def test_transformr::assignment_instantiation(instance):
-    assert isinstance(instance, transformr::Assignment)
+def test_transformr_assignment_instantiation(instance):
+    assert isinstance(instance, transformr_Assignment)
 
 @given(instance=Executable_strategy)
 @settings(max_examples=50)
 def test_executable_instantiation(instance):
     assert isinstance(instance, Executable)
 
-@given(instance=transformr::Block_strategy)
+@given(instance=transformr_Branch_strategy)
 @settings(max_examples=50)
-def test_transformr::block_instantiation(instance):
-    assert isinstance(instance, transformr::Block)
+def test_transformr_branch_instantiation(instance):
+    assert isinstance(instance, transformr_Branch)
 
-@given(instance=transformr::Branch_strategy)
+@given(instance=transformr_Block_strategy)
 @settings(max_examples=50)
-def test_transformr::branch_instantiation(instance):
-    assert isinstance(instance, transformr::Branch)
+def test_transformr_block_instantiation(instance):
+    assert isinstance(instance, transformr_Block)
 
 @given(instance=PatternConstraint_strategy)
 @settings(max_examples=50)
 def test_patternconstraint_instantiation(instance):
     assert isinstance(instance, PatternConstraint)
 
-@given(instance=transformr::ForAll_strategy)
+@given(instance=transformr_ForAll_strategy)
 @settings(max_examples=50)
-def test_transformr::forall_instantiation(instance):
-    assert isinstance(instance, transformr::ForAll)
+def test_transformr_forall_instantiation(instance):
+    assert isinstance(instance, transformr_ForAll)
 
-@given(instance=transformr::Exists_strategy)
+@given(instance=transformr_Exists_strategy)
 @settings(max_examples=50)
-def test_transformr::exists_instantiation(instance):
-    assert isinstance(instance, transformr::Exists)
+def test_transformr_exists_instantiation(instance):
+    assert isinstance(instance, transformr_Exists)
 
 @given(instance=BinaryConstraint_strategy)
 @settings(max_examples=50)
 def test_binaryconstraint_instantiation(instance):
     assert isinstance(instance, BinaryConstraint)
 
-@given(instance=transformr::Or_strategy)
+@given(instance=transformr_Or_strategy)
 @settings(max_examples=50)
-def test_transformr::or_instantiation(instance):
-    assert isinstance(instance, transformr::Or)
+def test_transformr_or_instantiation(instance):
+    assert isinstance(instance, transformr_Or)
 
-@given(instance=transformr::And_strategy)
+@given(instance=transformr_And_strategy)
 @settings(max_examples=50)
-def test_transformr::and_instantiation(instance):
-    assert isinstance(instance, transformr::And)
+def test_transformr_and_instantiation(instance):
+    assert isinstance(instance, transformr_And)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=transformr::BinaryConstraint_strategy)
+@given(instance=transformr_Not_strategy)
 @settings(max_examples=50)
-def test_transformr::binaryconstraint_instantiation(instance):
-    assert isinstance(instance, transformr::BinaryConstraint)
+def test_transformr_not_instantiation(instance):
+    assert isinstance(instance, transformr_Not)
 
-@given(instance=transformr::VariableConstraint_strategy)
+@given(instance=transformr_BinaryConstraint_strategy)
 @settings(max_examples=50)
-def test_transformr::variableconstraint_instantiation(instance):
-    assert isinstance(instance, transformr::VariableConstraint)
+def test_transformr_binaryconstraint_instantiation(instance):
+    assert isinstance(instance, transformr_BinaryConstraint)
 
-@given(instance=transformr::Not_strategy)
+@given(instance=transformr_VariableConstraint_strategy)
 @settings(max_examples=50)
-def test_transformr::not_instantiation(instance):
-    assert isinstance(instance, transformr::Not)
+def test_transformr_variableconstraint_instantiation(instance):
+    assert isinstance(instance, transformr_VariableConstraint)
 
-@given(instance=transformr::PatternConstraint_strategy)
+@given(instance=transformr_PatternConstraint_strategy)
 @settings(max_examples=50)
-def test_transformr::patternconstraint_instantiation(instance):
-    assert isinstance(instance, transformr::PatternConstraint)
+def test_transformr_patternconstraint_instantiation(instance):
+    assert isinstance(instance, transformr_PatternConstraint)
 
-@given(instance=transformr::TypedElement_strategy)
+@given(instance=transformr_TypedElement_strategy)
 @settings(max_examples=50)
-def test_transformr::typedelement_instantiation(instance):
-    assert isinstance(instance, transformr::TypedElement)
-
-@given(instance=transformr::TypedElement_strategy)
-def test_transformr::typedelement_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_transformr_typedelement_instantiation(instance):
+    assert isinstance(instance, transformr_TypedElement)
 
 
-@given(instance=transformr::TypedElement_strategy)
-def test_transformr::typedelement_type_setter(instance):
+
+@given(instance=transformr_TypedElement_strategy)
+def test_transformr_typedelement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=transformr::NamedElement_strategy)
+@given(instance=transformr_NamedElement_strategy)
 @settings(max_examples=50)
-def test_transformr::namedelement_instantiation(instance):
-    assert isinstance(instance, transformr::NamedElement)
-
-@given(instance=transformr::NamedElement_strategy)
-def test_transformr::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_transformr_namedelement_instantiation(instance):
+    assert isinstance(instance, transformr_NamedElement)
 
 
-@given(instance=transformr::NamedElement_strategy)
-def test_transformr::namedelement_name_setter(instance):
+
+@given(instance=transformr_NamedElement_strategy)
+def test_transformr_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -811,35 +802,35 @@ def test_typedelement_instantiation(instance):
 def test_pattern_instantiation(instance):
     assert isinstance(instance, Pattern)
 
-@given(instance=transformr::Rule_strategy)
+@given(instance=transformr_Rule_strategy)
 @settings(max_examples=50)
-def test_transformr::rule_instantiation(instance):
-    assert isinstance(instance, transformr::Rule)
+def test_transformr_rule_instantiation(instance):
+    assert isinstance(instance, transformr_Rule)
 
-@given(instance=transformr::Constraint_strategy)
+@given(instance=transformr_Constraint_strategy)
 @settings(max_examples=50)
-def test_transformr::constraint_instantiation(instance):
-    assert isinstance(instance, transformr::Constraint)
+def test_transformr_constraint_instantiation(instance):
+    assert isinstance(instance, transformr_Constraint)
 
 @given(instance=Graph_strategy)
 @settings(max_examples=50)
 def test_graph_instantiation(instance):
     assert isinstance(instance, Graph)
 
-@given(instance=transformr::Pattern_strategy)
+@given(instance=transformr_Pattern_strategy)
 @settings(max_examples=50)
-def test_transformr::pattern_instantiation(instance):
-    assert isinstance(instance, transformr::Pattern)
+def test_transformr_pattern_instantiation(instance):
+    assert isinstance(instance, transformr_Pattern)
 
 @given(instance=GraphElement_strategy)
 @settings(max_examples=50)
 def test_graphelement_instantiation(instance):
     assert isinstance(instance, GraphElement)
 
-@given(instance=transformr::Edge_strategy)
+@given(instance=transformr_Edge_strategy)
 @settings(max_examples=50)
-def test_transformr::edge_instantiation(instance):
-    assert isinstance(instance, transformr::Edge)
+def test_transformr_edge_instantiation(instance):
+    assert isinstance(instance, transformr_Edge)
 
 import warnings
 import copy
@@ -847,9 +838,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=transformr::Edge_strategy)
+@given(instance=transformr_Edge_strategy)
 @settings(max_examples=30)
-def test_transformr::edge_setsource_changes_state(instance):
+def test_transformr_edge_setetype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setEType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setEType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setEType' in transformr_Edge is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setEType' in transformr_Edge did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setEType' in transformr_Edge is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=transformr_Edge_strategy)
+@settings(max_examples=30)
+def test_transformr_edge_setsource_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -863,50 +885,19 @@ def test_transformr::edge_setsource_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setSource' in transformr::Edge is empty"
+        assert has_statements, f"Function 'setSource' in transformr_Edge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setSource' in transformr::Edge did not change state; check implementation")
+            warnings.warn(f"Operation 'setSource' in transformr_Edge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setSource' in transformr::Edge is not implemented or raised an error")
+        warnings.warn(f"Operation 'setSource' in transformr_Edge is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=transformr::Edge_strategy)
-@settings(max_examples=30)
-def test_transformr::edge_setetype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setEType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setEType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setEType' in transformr::Edge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setEType' in transformr::Edge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setEType' in transformr::Edge is not implemented or raised an error")
-
-@given(instance=transformr::Node_strategy)
+@given(instance=transformr_Node_strategy)
 @settings(max_examples=50)
-def test_transformr::node_instantiation(instance):
-    assert isinstance(instance, transformr::Node)
+def test_transformr_node_instantiation(instance):
+    assert isinstance(instance, transformr_Node)
 
 import warnings
 import copy
@@ -914,9 +905,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=transformr::Node_strategy)
+@given(instance=transformr_Node_strategy)
 @settings(max_examples=30)
-def test_transformr::node_setetype_changes_state(instance):
+def test_transformr_node_setetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -930,39 +921,24 @@ def test_transformr::node_setetype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setEType' in transformr::Node is empty"
+        assert has_statements, f"Function 'setEType' in transformr_Node is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setEType' in transformr::Node did not change state; check implementation")
+            warnings.warn(f"Operation 'setEType' in transformr_Node did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setEType' in transformr::Node is not implemented or raised an error")
+        warnings.warn(f"Operation 'setEType' in transformr_Node is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=transformr::Variable_strategy)
+@given(instance=transformr_Attribute_strategy)
 @settings(max_examples=50)
-def test_transformr::variable_instantiation(instance):
-    assert isinstance(instance, transformr::Variable)
-
-@given(instance=transformr::GraphElement_strategy)
-@settings(max_examples=50)
-def test_transformr::graphelement_instantiation(instance):
-    assert isinstance(instance, transformr::GraphElement)
-
-@given(instance=transformr::Executable_strategy)
-@settings(max_examples=50)
-def test_transformr::executable_instantiation(instance):
-    assert isinstance(instance, transformr::Executable)
-
-@given(instance=transformr::Attribute_strategy)
-@settings(max_examples=50)
-def test_transformr::attribute_instantiation(instance):
-    assert isinstance(instance, transformr::Attribute)
+def test_transformr_attribute_instantiation(instance):
+    assert isinstance(instance, transformr_Attribute)
 
 import warnings
 import copy
@@ -970,9 +946,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=transformr::Attribute_strategy)
+@given(instance=transformr_Attribute_strategy)
 @settings(max_examples=30)
-def test_transformr::attribute_setetype_changes_state(instance):
+def test_transformr_attribute_setetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -986,16 +962,31 @@ def test_transformr::attribute_setetype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setEType' in transformr::Attribute is empty"
+        assert has_statements, f"Function 'setEType' in transformr_Attribute is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setEType' in transformr::Attribute did not change state; check implementation")
+            warnings.warn(f"Operation 'setEType' in transformr_Attribute did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setEType' in transformr::Attribute is not implemented or raised an error")
+        warnings.warn(f"Operation 'setEType' in transformr_Attribute is not implemented or raised an error")
 
-@given(instance=transformr::Graph_strategy)
+@given(instance=transformr_GraphElement_strategy)
 @settings(max_examples=50)
-def test_transformr::graph_instantiation(instance):
-    assert isinstance(instance, transformr::Graph)
+def test_transformr_graphelement_instantiation(instance):
+    assert isinstance(instance, transformr_GraphElement)
+
+@given(instance=transformr_Executable_strategy)
+@settings(max_examples=50)
+def test_transformr_executable_instantiation(instance):
+    assert isinstance(instance, transformr_Executable)
+
+@given(instance=transformr_Variable_strategy)
+@settings(max_examples=50)
+def test_transformr_variable_instantiation(instance):
+    assert isinstance(instance, transformr_Variable)
+
+@given(instance=transformr_Graph_strategy)
+@settings(max_examples=50)
+def test_transformr_graph_instantiation(instance):
+    assert isinstance(instance, transformr_Graph)

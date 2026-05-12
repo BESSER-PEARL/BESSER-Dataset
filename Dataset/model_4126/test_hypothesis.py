@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    assignment2::ExpMD,
-    assignment2::ExpPM,
-    assignment2::EObject,
+from python_code import (
+    assignment2_ExpMD,
+    assignment2_ExpPM,
+    assignment2_EObject,
     ExpMinusPlus,
-    assignment2::ExpMultDiv,
-    assignment2::ExpMinusPlus,
-    assignment2::MathExp,
-    assignment2::Model,
+    assignment2_ExpMultDiv,
+    assignment2_ExpMinusPlus,
+    assignment2_MathExp,
+    assignment2_Model,
     ExpMD,
-    assignment2::Div,
-    assignment2::Mult,
+    assignment2_Div,
+    assignment2_Mult,
     ExpPM,
-    assignment2::Minus,
-    assignment2::Plus,
+    assignment2_Minus,
+    assignment2_Plus,
     Primary,
-    assignment2::Number,
-    assignment2::Parenthesis,
+    assignment2_Number,
+    assignment2_Parenthesis,
     ExpMultDiv,
-    assignment2::Exp,
-    assignment2::Primary,
+    assignment2_Exp,
+    assignment2_Primary,
 )
 
 # =============================================================================
@@ -34,44 +34,44 @@ from classes import (
 
 
 
-def test_assignment2::expmd_is_not_abstract():
-    assert not inspect.isabstract(assignment2::ExpMD)
+def test_assignment2_expmd_is_not_abstract():
+    assert not inspect.isabstract(assignment2_ExpMD)
 
 
-def test_assignment2::expmd_constructor_exists():
-    assert callable(assignment2::ExpMD.__init__)
+def test_assignment2_expmd_constructor_exists():
+    assert callable(assignment2_ExpMD.__init__)
 
 
-def test_assignment2::expmd_constructor_args():
-    sig = inspect.signature(assignment2::ExpMD.__init__)
+def test_assignment2_expmd_constructor_args():
+    sig = inspect.signature(assignment2_ExpMD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::exppm_is_not_abstract():
-    assert not inspect.isabstract(assignment2::ExpPM)
+def test_assignment2_exppm_is_not_abstract():
+    assert not inspect.isabstract(assignment2_ExpPM)
 
 
-def test_assignment2::exppm_constructor_exists():
-    assert callable(assignment2::ExpPM.__init__)
+def test_assignment2_exppm_constructor_exists():
+    assert callable(assignment2_ExpPM.__init__)
 
 
-def test_assignment2::exppm_constructor_args():
-    sig = inspect.signature(assignment2::ExpPM.__init__)
+def test_assignment2_exppm_constructor_args():
+    sig = inspect.signature(assignment2_ExpPM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::eobject_is_not_abstract():
-    assert not inspect.isabstract(assignment2::EObject)
+def test_assignment2_eobject_is_not_abstract():
+    assert not inspect.isabstract(assignment2_EObject)
 
 
-def test_assignment2::eobject_constructor_exists():
-    assert callable(assignment2::EObject.__init__)
+def test_assignment2_eobject_constructor_exists():
+    assert callable(assignment2_EObject.__init__)
 
 
-def test_assignment2::eobject_constructor_args():
-    sig = inspect.signature(assignment2::EObject.__init__)
+def test_assignment2_eobject_constructor_args():
+    sig = inspect.signature(assignment2_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,58 +90,58 @@ def test_expminusplus_constructor_args():
 
 
 
-def test_assignment2::expmultdiv_is_not_abstract():
-    assert not inspect.isabstract(assignment2::ExpMultDiv)
+def test_assignment2_expmultdiv_is_not_abstract():
+    assert not inspect.isabstract(assignment2_ExpMultDiv)
 
 
-def test_assignment2::expmultdiv_constructor_exists():
-    assert callable(assignment2::ExpMultDiv.__init__)
+def test_assignment2_expmultdiv_constructor_exists():
+    assert callable(assignment2_ExpMultDiv.__init__)
 
 
-def test_assignment2::expmultdiv_constructor_args():
-    sig = inspect.signature(assignment2::ExpMultDiv.__init__)
+def test_assignment2_expmultdiv_constructor_args():
+    sig = inspect.signature(assignment2_ExpMultDiv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::expminusplus_is_not_abstract():
-    assert not inspect.isabstract(assignment2::ExpMinusPlus)
+def test_assignment2_expminusplus_is_not_abstract():
+    assert not inspect.isabstract(assignment2_ExpMinusPlus)
 
 
-def test_assignment2::expminusplus_constructor_exists():
-    assert callable(assignment2::ExpMinusPlus.__init__)
+def test_assignment2_expminusplus_constructor_exists():
+    assert callable(assignment2_ExpMinusPlus.__init__)
 
 
-def test_assignment2::expminusplus_constructor_args():
-    sig = inspect.signature(assignment2::ExpMinusPlus.__init__)
+def test_assignment2_expminusplus_constructor_args():
+    sig = inspect.signature(assignment2_ExpMinusPlus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::mathexp_is_not_abstract():
-    assert not inspect.isabstract(assignment2::MathExp)
+def test_assignment2_mathexp_is_not_abstract():
+    assert not inspect.isabstract(assignment2_MathExp)
 
 
-def test_assignment2::mathexp_constructor_exists():
-    assert callable(assignment2::MathExp.__init__)
+def test_assignment2_mathexp_constructor_exists():
+    assert callable(assignment2_MathExp.__init__)
 
 
-def test_assignment2::mathexp_constructor_args():
-    sig = inspect.signature(assignment2::MathExp.__init__)
+def test_assignment2_mathexp_constructor_args():
+    sig = inspect.signature(assignment2_MathExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::model_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Model)
+def test_assignment2_model_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Model)
 
 
-def test_assignment2::model_constructor_exists():
-    assert callable(assignment2::Model.__init__)
+def test_assignment2_model_constructor_exists():
+    assert callable(assignment2_Model.__init__)
 
 
-def test_assignment2::model_constructor_args():
-    sig = inspect.signature(assignment2::Model.__init__)
+def test_assignment2_model_constructor_args():
+    sig = inspect.signature(assignment2_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -160,30 +160,30 @@ def test_expmd_constructor_args():
 
 
 
-def test_assignment2::div_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Div)
+def test_assignment2_div_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Div)
 
 
-def test_assignment2::div_constructor_exists():
-    assert callable(assignment2::Div.__init__)
+def test_assignment2_div_constructor_exists():
+    assert callable(assignment2_Div.__init__)
 
 
-def test_assignment2::div_constructor_args():
-    sig = inspect.signature(assignment2::Div.__init__)
+def test_assignment2_div_constructor_args():
+    sig = inspect.signature(assignment2_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::mult_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Mult)
+def test_assignment2_mult_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Mult)
 
 
-def test_assignment2::mult_constructor_exists():
-    assert callable(assignment2::Mult.__init__)
+def test_assignment2_mult_constructor_exists():
+    assert callable(assignment2_Mult.__init__)
 
 
-def test_assignment2::mult_constructor_args():
-    sig = inspect.signature(assignment2::Mult.__init__)
+def test_assignment2_mult_constructor_args():
+    sig = inspect.signature(assignment2_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -202,30 +202,30 @@ def test_exppm_constructor_args():
 
 
 
-def test_assignment2::minus_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Minus)
+def test_assignment2_minus_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Minus)
 
 
-def test_assignment2::minus_constructor_exists():
-    assert callable(assignment2::Minus.__init__)
+def test_assignment2_minus_constructor_exists():
+    assert callable(assignment2_Minus.__init__)
 
 
-def test_assignment2::minus_constructor_args():
-    sig = inspect.signature(assignment2::Minus.__init__)
+def test_assignment2_minus_constructor_args():
+    sig = inspect.signature(assignment2_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::plus_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Plus)
+def test_assignment2_plus_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Plus)
 
 
-def test_assignment2::plus_constructor_exists():
-    assert callable(assignment2::Plus.__init__)
+def test_assignment2_plus_constructor_exists():
+    assert callable(assignment2_Plus.__init__)
 
 
-def test_assignment2::plus_constructor_args():
-    sig = inspect.signature(assignment2::Plus.__init__)
+def test_assignment2_plus_constructor_args():
+    sig = inspect.signature(assignment2_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,23 +244,23 @@ def test_primary_constructor_args():
 
 
 
-def test_assignment2::number_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Number)
+def test_assignment2_number_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Number)
 
 
-def test_assignment2::number_constructor_exists():
-    assert callable(assignment2::Number.__init__)
+def test_assignment2_number_constructor_exists():
+    assert callable(assignment2_Number.__init__)
 
 
-def test_assignment2::number_constructor_args():
-    sig = inspect.signature(assignment2::Number.__init__)
+def test_assignment2_number_constructor_args():
+    sig = inspect.signature(assignment2_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_assignment2::number_has_value():
-    assert hasattr(assignment2::Number, "value")
+def test_assignment2_number_has_value():
+    assert hasattr(assignment2_Number, "value")
     descriptor = None
-    for klass in assignment2::Number.__mro__:
+    for klass in assignment2_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -268,16 +268,16 @@ def test_assignment2::number_has_value():
 
 
 
-def test_assignment2::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Parenthesis)
+def test_assignment2_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Parenthesis)
 
 
-def test_assignment2::parenthesis_constructor_exists():
-    assert callable(assignment2::Parenthesis.__init__)
+def test_assignment2_parenthesis_constructor_exists():
+    assert callable(assignment2_Parenthesis.__init__)
 
 
-def test_assignment2::parenthesis_constructor_args():
-    sig = inspect.signature(assignment2::Parenthesis.__init__)
+def test_assignment2_parenthesis_constructor_args():
+    sig = inspect.signature(assignment2_Parenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -296,30 +296,30 @@ def test_expmultdiv_constructor_args():
 
 
 
-def test_assignment2::exp_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Exp)
+def test_assignment2_exp_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Exp)
 
 
-def test_assignment2::exp_constructor_exists():
-    assert callable(assignment2::Exp.__init__)
+def test_assignment2_exp_constructor_exists():
+    assert callable(assignment2_Exp.__init__)
 
 
-def test_assignment2::exp_constructor_args():
-    sig = inspect.signature(assignment2::Exp.__init__)
+def test_assignment2_exp_constructor_args():
+    sig = inspect.signature(assignment2_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment2::primary_is_not_abstract():
-    assert not inspect.isabstract(assignment2::Primary)
+def test_assignment2_primary_is_not_abstract():
+    assert not inspect.isabstract(assignment2_Primary)
 
 
-def test_assignment2::primary_constructor_exists():
-    assert callable(assignment2::Primary.__init__)
+def test_assignment2_primary_constructor_exists():
+    assert callable(assignment2_Primary.__init__)
 
 
-def test_assignment2::primary_constructor_args():
-    sig = inspect.signature(assignment2::Primary.__init__)
+def test_assignment2_primary_constructor_args():
+    sig = inspect.signature(assignment2_Primary.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -334,176 +334,173 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-assignment2::ExpMD_strategy = st.builds(
-    assignment2::ExpMD,
+assignment2_ExpMD_strategy = st.builds(
+    assignment2_ExpMD,
 )
-assignment2::ExpPM_strategy = st.builds(
-    assignment2::ExpPM,
+assignment2_ExpPM_strategy = st.builds(
+    assignment2_ExpPM,
 )
-assignment2::EObject_strategy = st.builds(
-    assignment2::EObject,
+assignment2_EObject_strategy = st.builds(
+    assignment2_EObject,
 )
 ExpMinusPlus_strategy = st.builds(
     ExpMinusPlus,
 )
-assignment2::ExpMultDiv_strategy = st.builds(
-    assignment2::ExpMultDiv,
+assignment2_ExpMultDiv_strategy = st.builds(
+    assignment2_ExpMultDiv,
 )
-assignment2::ExpMinusPlus_strategy = st.builds(
-    assignment2::ExpMinusPlus,
+assignment2_ExpMinusPlus_strategy = st.builds(
+    assignment2_ExpMinusPlus,
 )
-assignment2::MathExp_strategy = st.builds(
-    assignment2::MathExp,
+assignment2_MathExp_strategy = st.builds(
+    assignment2_MathExp,
 )
-assignment2::Model_strategy = st.builds(
-    assignment2::Model,
+assignment2_Model_strategy = st.builds(
+    assignment2_Model,
 )
 ExpMD_strategy = st.builds(
     ExpMD,
 )
-assignment2::Div_strategy = st.builds(
-    assignment2::Div,
+assignment2_Div_strategy = st.builds(
+    assignment2_Div,
 )
-assignment2::Mult_strategy = st.builds(
-    assignment2::Mult,
+assignment2_Mult_strategy = st.builds(
+    assignment2_Mult,
 )
 ExpPM_strategy = st.builds(
     ExpPM,
 )
-assignment2::Minus_strategy = st.builds(
-    assignment2::Minus,
+assignment2_Minus_strategy = st.builds(
+    assignment2_Minus,
 )
-assignment2::Plus_strategy = st.builds(
-    assignment2::Plus,
+assignment2_Plus_strategy = st.builds(
+    assignment2_Plus,
 )
 Primary_strategy = st.builds(
     Primary,
 )
-assignment2::Number_strategy = st.builds(
-    assignment2::Number,
+assignment2_Number_strategy = st.builds(
+    assignment2_Number,
     value=
         st.integers()
 )
-assignment2::Parenthesis_strategy = st.builds(
-    assignment2::Parenthesis,
+assignment2_Parenthesis_strategy = st.builds(
+    assignment2_Parenthesis,
 )
 ExpMultDiv_strategy = st.builds(
     ExpMultDiv,
 )
-assignment2::Exp_strategy = st.builds(
-    assignment2::Exp,
+assignment2_Exp_strategy = st.builds(
+    assignment2_Exp,
 )
-assignment2::Primary_strategy = st.builds(
-    assignment2::Primary,
+assignment2_Primary_strategy = st.builds(
+    assignment2_Primary,
 )
 
-@given(instance=assignment2::ExpMD_strategy)
+@given(instance=assignment2_ExpMD_strategy)
 @settings(max_examples=50)
-def test_assignment2::expmd_instantiation(instance):
-    assert isinstance(instance, assignment2::ExpMD)
+def test_assignment2_expmd_instantiation(instance):
+    assert isinstance(instance, assignment2_ExpMD)
 
-@given(instance=assignment2::ExpPM_strategy)
+@given(instance=assignment2_ExpPM_strategy)
 @settings(max_examples=50)
-def test_assignment2::exppm_instantiation(instance):
-    assert isinstance(instance, assignment2::ExpPM)
+def test_assignment2_exppm_instantiation(instance):
+    assert isinstance(instance, assignment2_ExpPM)
 
-@given(instance=assignment2::EObject_strategy)
+@given(instance=assignment2_EObject_strategy)
 @settings(max_examples=50)
-def test_assignment2::eobject_instantiation(instance):
-    assert isinstance(instance, assignment2::EObject)
+def test_assignment2_eobject_instantiation(instance):
+    assert isinstance(instance, assignment2_EObject)
 
 @given(instance=ExpMinusPlus_strategy)
 @settings(max_examples=50)
 def test_expminusplus_instantiation(instance):
     assert isinstance(instance, ExpMinusPlus)
 
-@given(instance=assignment2::ExpMultDiv_strategy)
+@given(instance=assignment2_ExpMultDiv_strategy)
 @settings(max_examples=50)
-def test_assignment2::expmultdiv_instantiation(instance):
-    assert isinstance(instance, assignment2::ExpMultDiv)
+def test_assignment2_expmultdiv_instantiation(instance):
+    assert isinstance(instance, assignment2_ExpMultDiv)
 
-@given(instance=assignment2::ExpMinusPlus_strategy)
+@given(instance=assignment2_ExpMinusPlus_strategy)
 @settings(max_examples=50)
-def test_assignment2::expminusplus_instantiation(instance):
-    assert isinstance(instance, assignment2::ExpMinusPlus)
+def test_assignment2_expminusplus_instantiation(instance):
+    assert isinstance(instance, assignment2_ExpMinusPlus)
 
-@given(instance=assignment2::MathExp_strategy)
+@given(instance=assignment2_MathExp_strategy)
 @settings(max_examples=50)
-def test_assignment2::mathexp_instantiation(instance):
-    assert isinstance(instance, assignment2::MathExp)
+def test_assignment2_mathexp_instantiation(instance):
+    assert isinstance(instance, assignment2_MathExp)
 
-@given(instance=assignment2::Model_strategy)
+@given(instance=assignment2_Model_strategy)
 @settings(max_examples=50)
-def test_assignment2::model_instantiation(instance):
-    assert isinstance(instance, assignment2::Model)
+def test_assignment2_model_instantiation(instance):
+    assert isinstance(instance, assignment2_Model)
 
 @given(instance=ExpMD_strategy)
 @settings(max_examples=50)
 def test_expmd_instantiation(instance):
     assert isinstance(instance, ExpMD)
 
-@given(instance=assignment2::Div_strategy)
+@given(instance=assignment2_Div_strategy)
 @settings(max_examples=50)
-def test_assignment2::div_instantiation(instance):
-    assert isinstance(instance, assignment2::Div)
+def test_assignment2_div_instantiation(instance):
+    assert isinstance(instance, assignment2_Div)
 
-@given(instance=assignment2::Mult_strategy)
+@given(instance=assignment2_Mult_strategy)
 @settings(max_examples=50)
-def test_assignment2::mult_instantiation(instance):
-    assert isinstance(instance, assignment2::Mult)
+def test_assignment2_mult_instantiation(instance):
+    assert isinstance(instance, assignment2_Mult)
 
 @given(instance=ExpPM_strategy)
 @settings(max_examples=50)
 def test_exppm_instantiation(instance):
     assert isinstance(instance, ExpPM)
 
-@given(instance=assignment2::Minus_strategy)
+@given(instance=assignment2_Minus_strategy)
 @settings(max_examples=50)
-def test_assignment2::minus_instantiation(instance):
-    assert isinstance(instance, assignment2::Minus)
+def test_assignment2_minus_instantiation(instance):
+    assert isinstance(instance, assignment2_Minus)
 
-@given(instance=assignment2::Plus_strategy)
+@given(instance=assignment2_Plus_strategy)
 @settings(max_examples=50)
-def test_assignment2::plus_instantiation(instance):
-    assert isinstance(instance, assignment2::Plus)
+def test_assignment2_plus_instantiation(instance):
+    assert isinstance(instance, assignment2_Plus)
 
 @given(instance=Primary_strategy)
 @settings(max_examples=50)
 def test_primary_instantiation(instance):
     assert isinstance(instance, Primary)
 
-@given(instance=assignment2::Number_strategy)
+@given(instance=assignment2_Number_strategy)
 @settings(max_examples=50)
-def test_assignment2::number_instantiation(instance):
-    assert isinstance(instance, assignment2::Number)
-
-@given(instance=assignment2::Number_strategy)
-def test_assignment2::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_assignment2_number_instantiation(instance):
+    assert isinstance(instance, assignment2_Number)
 
 
-@given(instance=assignment2::Number_strategy)
-def test_assignment2::number_value_setter(instance):
+
+@given(instance=assignment2_Number_strategy)
+def test_assignment2_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=assignment2::Parenthesis_strategy)
+@given(instance=assignment2_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_assignment2::parenthesis_instantiation(instance):
-    assert isinstance(instance, assignment2::Parenthesis)
+def test_assignment2_parenthesis_instantiation(instance):
+    assert isinstance(instance, assignment2_Parenthesis)
 
 @given(instance=ExpMultDiv_strategy)
 @settings(max_examples=50)
 def test_expmultdiv_instantiation(instance):
     assert isinstance(instance, ExpMultDiv)
 
-@given(instance=assignment2::Exp_strategy)
+@given(instance=assignment2_Exp_strategy)
 @settings(max_examples=50)
-def test_assignment2::exp_instantiation(instance):
-    assert isinstance(instance, assignment2::Exp)
+def test_assignment2_exp_instantiation(instance):
+    assert isinstance(instance, assignment2_Exp)
 
-@given(instance=assignment2::Primary_strategy)
+@given(instance=assignment2_Primary_strategy)
 @settings(max_examples=50)
-def test_assignment2::primary_instantiation(instance):
-    assert isinstance(instance, assignment2::Primary)
+def test_assignment2_primary_instantiation(instance):
+    assert isinstance(instance, assignment2_Primary)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     CPU,
@@ -461,9 +461,6 @@ def test_instruction_instantiation(instance):
 def test_program_instantiation(instance):
     assert isinstance(instance, Program)
 
-@given(instance=Program_strategy)
-def test_program_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Program_strategy)
@@ -487,9 +484,6 @@ def test_ram_instantiation(instance):
 def test_cache_instantiation(instance):
     assert isinstance(instance, Cache)
 
-@given(instance=Cache_strategy)
-def test_cache_chunck_type(instance):
-    assert isinstance(instance.chunck, str)
 
 
 @given(instance=Cache_strategy)

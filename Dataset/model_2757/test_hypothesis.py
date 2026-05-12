@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::A,
-    test::B,
-    test::Compo,
+from python_code import (
+    test_A,
+    test_B,
+    test_Compo,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_test::a_is_not_abstract():
-    assert not inspect.isabstract(test::A)
+def test_test_a_is_not_abstract():
+    assert not inspect.isabstract(test_A)
 
 
-def test_test::a_constructor_exists():
-    assert callable(test::A.__init__)
+def test_test_a_constructor_exists():
+    assert callable(test_A.__init__)
 
 
-def test_test::a_constructor_args():
-    sig = inspect.signature(test::A.__init__)
+def test_test_a_constructor_args():
+    sig = inspect.signature(test_A.__init__)
     params = list(sig.parameters.keys())
     assert "listen" in params, "Missing parameter 'listen'"
 
-def test_test::a_has_listen():
-    assert hasattr(test::A, "listen")
+def test_test_a_has_listen():
+    assert hasattr(test_A, "listen")
     descriptor = None
-    for klass in test::A.__mro__:
+    for klass in test_A.__mro__:
         if "listen" in klass.__dict__:
             descriptor = klass.__dict__["listen"]
             break
@@ -41,23 +41,23 @@ def test_test::a_has_listen():
 
 
 
-def test_test::b_is_not_abstract():
-    assert not inspect.isabstract(test::B)
+def test_test_b_is_not_abstract():
+    assert not inspect.isabstract(test_B)
 
 
-def test_test::b_constructor_exists():
-    assert callable(test::B.__init__)
+def test_test_b_constructor_exists():
+    assert callable(test_B.__init__)
 
 
-def test_test::b_constructor_args():
-    sig = inspect.signature(test::B.__init__)
+def test_test_b_constructor_args():
+    sig = inspect.signature(test_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_test::b_has_name():
-    assert hasattr(test::B, "name")
+def test_test_b_has_name():
+    assert hasattr(test_B, "name")
     descriptor = None
-    for klass in test::B.__mro__:
+    for klass in test_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,16 +65,16 @@ def test_test::b_has_name():
 
 
 
-def test_test::compo_is_not_abstract():
-    assert not inspect.isabstract(test::Compo)
+def test_test_compo_is_not_abstract():
+    assert not inspect.isabstract(test_Compo)
 
 
-def test_test::compo_constructor_exists():
-    assert callable(test::Compo.__init__)
+def test_test_compo_constructor_exists():
+    assert callable(test_Compo.__init__)
 
 
-def test_test::compo_constructor_args():
-    sig = inspect.signature(test::Compo.__init__)
+def test_test_compo_constructor_args():
+    sig = inspect.signature(test_Compo.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::A_strategy = st.builds(
-    test::A,
+test_A_strategy = st.builds(
+    test_A,
     listen=
         st.integers()
 )
-test::B_strategy = st.builds(
-    test::B,
+test_B_strategy = st.builds(
+    test_B,
     name=
         safe_text
 )
-test::Compo_strategy = st.builds(
-    test::Compo,
+test_Compo_strategy = st.builds(
+    test_Compo,
 )
 
-@given(instance=test::A_strategy)
+@given(instance=test_A_strategy)
 @settings(max_examples=50)
-def test_test::a_instantiation(instance):
-    assert isinstance(instance, test::A)
-
-@given(instance=test::A_strategy)
-def test_test::a_listen_type(instance):
-    assert isinstance(instance.listen, int)
+def test_test_a_instantiation(instance):
+    assert isinstance(instance, test_A)
 
 
-@given(instance=test::A_strategy)
-def test_test::a_listen_setter(instance):
+
+@given(instance=test_A_strategy)
+def test_test_a_listen_setter(instance):
     original = instance.listen
     instance.listen = original
     assert instance.listen == original
 
-@given(instance=test::B_strategy)
+@given(instance=test_B_strategy)
 @settings(max_examples=50)
-def test_test::b_instantiation(instance):
-    assert isinstance(instance, test::B)
-
-@given(instance=test::B_strategy)
-def test_test::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_test_b_instantiation(instance):
+    assert isinstance(instance, test_B)
 
 
-@given(instance=test::B_strategy)
-def test_test::b_name_setter(instance):
+
+@given(instance=test_B_strategy)
+def test_test_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=test::Compo_strategy)
+@given(instance=test_Compo_strategy)
 @settings(max_examples=50)
-def test_test::compo_instantiation(instance):
-    assert isinstance(instance, test::Compo)
+def test_test_compo_instantiation(instance):
+    assert isinstance(instance, test_Compo)

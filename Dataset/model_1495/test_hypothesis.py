@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    petri::net::Place,
-    petri::net::Transition,
-    petri::net::Arc,
-    petri::net::Node,
-    petri::net::PetriNet,
+    petri_net_Place,
+    petri_net_Transition,
+    petri_net_Arc,
+    petri_net_Node,
+    petri_net_PetriNet,
 )
 
 # =============================================================================
@@ -34,51 +34,51 @@ def test_node_constructor_args():
 
 
 
-def test_petri::net::place_is_not_abstract():
-    assert not inspect.isabstract(petri::net::Place)
+def test_petri_net_place_is_not_abstract():
+    assert not inspect.isabstract(petri_net_Place)
 
 
-def test_petri::net::place_constructor_exists():
-    assert callable(petri::net::Place.__init__)
+def test_petri_net_place_constructor_exists():
+    assert callable(petri_net_Place.__init__)
 
 
-def test_petri::net::place_constructor_args():
-    sig = inspect.signature(petri::net::Place.__init__)
+def test_petri_net_place_constructor_args():
+    sig = inspect.signature(petri_net_Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petri::net::transition_is_not_abstract():
-    assert not inspect.isabstract(petri::net::Transition)
+def test_petri_net_transition_is_not_abstract():
+    assert not inspect.isabstract(petri_net_Transition)
 
 
-def test_petri::net::transition_constructor_exists():
-    assert callable(petri::net::Transition.__init__)
+def test_petri_net_transition_constructor_exists():
+    assert callable(petri_net_Transition.__init__)
 
 
-def test_petri::net::transition_constructor_args():
-    sig = inspect.signature(petri::net::Transition.__init__)
+def test_petri_net_transition_constructor_args():
+    sig = inspect.signature(petri_net_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petri::net::arc_is_not_abstract():
-    assert not inspect.isabstract(petri::net::Arc)
+def test_petri_net_arc_is_not_abstract():
+    assert not inspect.isabstract(petri_net_Arc)
 
 
-def test_petri::net::arc_constructor_exists():
-    assert callable(petri::net::Arc.__init__)
+def test_petri_net_arc_constructor_exists():
+    assert callable(petri_net_Arc.__init__)
 
 
-def test_petri::net::arc_constructor_args():
-    sig = inspect.signature(petri::net::Arc.__init__)
+def test_petri_net_arc_constructor_args():
+    sig = inspect.signature(petri_net_Arc.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petri::net::arc_has_name():
-    assert hasattr(petri::net::Arc, "name")
+def test_petri_net_arc_has_name():
+    assert hasattr(petri_net_Arc, "name")
     descriptor = None
-    for klass in petri::net::Arc.__mro__:
+    for klass in petri_net_Arc.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,23 +86,23 @@ def test_petri::net::arc_has_name():
 
 
 
-def test_petri::net::node_is_not_abstract():
-    assert not inspect.isabstract(petri::net::Node)
+def test_petri_net_node_is_not_abstract():
+    assert not inspect.isabstract(petri_net_Node)
 
 
-def test_petri::net::node_constructor_exists():
-    assert callable(petri::net::Node.__init__)
+def test_petri_net_node_constructor_exists():
+    assert callable(petri_net_Node.__init__)
 
 
-def test_petri::net::node_constructor_args():
-    sig = inspect.signature(petri::net::Node.__init__)
+def test_petri_net_node_constructor_args():
+    sig = inspect.signature(petri_net_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petri::net::node_has_name():
-    assert hasattr(petri::net::Node, "name")
+def test_petri_net_node_has_name():
+    assert hasattr(petri_net_Node, "name")
     descriptor = None
-    for klass in petri::net::Node.__mro__:
+    for klass in petri_net_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -110,23 +110,23 @@ def test_petri::net::node_has_name():
 
 
 
-def test_petri::net::petrinet_is_not_abstract():
-    assert not inspect.isabstract(petri::net::PetriNet)
+def test_petri_net_petrinet_is_not_abstract():
+    assert not inspect.isabstract(petri_net_PetriNet)
 
 
-def test_petri::net::petrinet_constructor_exists():
-    assert callable(petri::net::PetriNet.__init__)
+def test_petri_net_petrinet_constructor_exists():
+    assert callable(petri_net_PetriNet.__init__)
 
 
-def test_petri::net::petrinet_constructor_args():
-    sig = inspect.signature(petri::net::PetriNet.__init__)
+def test_petri_net_petrinet_constructor_args():
+    sig = inspect.signature(petri_net_PetriNet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petri::net::petrinet_has_name():
-    assert hasattr(petri::net::PetriNet, "name")
+def test_petri_net_petrinet_has_name():
+    assert hasattr(petri_net_PetriNet, "name")
     descriptor = None
-    for klass in petri::net::PetriNet.__mro__:
+    for klass in petri_net_PetriNet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -147,24 +147,24 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-petri::net::Place_strategy = st.builds(
-    petri::net::Place,
+petri_net_Place_strategy = st.builds(
+    petri_net_Place,
 )
-petri::net::Transition_strategy = st.builds(
-    petri::net::Transition,
+petri_net_Transition_strategy = st.builds(
+    petri_net_Transition,
 )
-petri::net::Arc_strategy = st.builds(
-    petri::net::Arc,
+petri_net_Arc_strategy = st.builds(
+    petri_net_Arc,
     name=
         safe_text
 )
-petri::net::Node_strategy = st.builds(
-    petri::net::Node,
+petri_net_Node_strategy = st.builds(
+    petri_net_Node,
     name=
         safe_text
 )
-petri::net::PetriNet_strategy = st.builds(
-    petri::net::PetriNet,
+petri_net_PetriNet_strategy = st.builds(
+    petri_net_PetriNet,
     name=
         safe_text
 )
@@ -174,60 +174,51 @@ petri::net::PetriNet_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=petri::net::Place_strategy)
+@given(instance=petri_net_Place_strategy)
 @settings(max_examples=50)
-def test_petri::net::place_instantiation(instance):
-    assert isinstance(instance, petri::net::Place)
+def test_petri_net_place_instantiation(instance):
+    assert isinstance(instance, petri_net_Place)
 
-@given(instance=petri::net::Transition_strategy)
+@given(instance=petri_net_Transition_strategy)
 @settings(max_examples=50)
-def test_petri::net::transition_instantiation(instance):
-    assert isinstance(instance, petri::net::Transition)
+def test_petri_net_transition_instantiation(instance):
+    assert isinstance(instance, petri_net_Transition)
 
-@given(instance=petri::net::Arc_strategy)
+@given(instance=petri_net_Arc_strategy)
 @settings(max_examples=50)
-def test_petri::net::arc_instantiation(instance):
-    assert isinstance(instance, petri::net::Arc)
-
-@given(instance=petri::net::Arc_strategy)
-def test_petri::net::arc_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petri_net_arc_instantiation(instance):
+    assert isinstance(instance, petri_net_Arc)
 
 
-@given(instance=petri::net::Arc_strategy)
-def test_petri::net::arc_name_setter(instance):
+
+@given(instance=petri_net_Arc_strategy)
+def test_petri_net_arc_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petri::net::Node_strategy)
+@given(instance=petri_net_Node_strategy)
 @settings(max_examples=50)
-def test_petri::net::node_instantiation(instance):
-    assert isinstance(instance, petri::net::Node)
-
-@given(instance=petri::net::Node_strategy)
-def test_petri::net::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petri_net_node_instantiation(instance):
+    assert isinstance(instance, petri_net_Node)
 
 
-@given(instance=petri::net::Node_strategy)
-def test_petri::net::node_name_setter(instance):
+
+@given(instance=petri_net_Node_strategy)
+def test_petri_net_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petri::net::PetriNet_strategy)
+@given(instance=petri_net_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petri::net::petrinet_instantiation(instance):
-    assert isinstance(instance, petri::net::PetriNet)
-
-@given(instance=petri::net::PetriNet_strategy)
-def test_petri::net::petrinet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petri_net_petrinet_instantiation(instance):
+    assert isinstance(instance, petri_net_PetriNet)
 
 
-@given(instance=petri::net::PetriNet_strategy)
-def test_petri::net::petrinet_name_setter(instance):
+
+@given(instance=petri_net_PetriNet_strategy)
+def test_petri_net_petrinet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

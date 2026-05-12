@@ -3,38 +3,38 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    swml::Page,
-    swml::Literal,
+    swml_Page,
+    swml_Literal,
     Page,
-    swml::LinkJoinNode,
-    swml::StaticPage,
+    swml_LinkJoinNode,
+    swml_StaticPage,
     EntityPage,
-    swml::DeletePage,
-    swml::CreatePage,
-    swml::UpdatePage,
-    swml::DynamicPage,
+    swml_DeletePage,
+    swml_CreatePage,
+    swml_UpdatePage,
+    swml_DynamicPage,
     DynamicPage,
-    swml::EntityPage,
-    swml::IndexPage,
+    swml_EntityPage,
+    swml_IndexPage,
     Link,
-    swml::ContextualLink,
-    swml::NonContextualLink,
-    swml::KOLink,
-    swml::OKLink,
-    swml::Parameter,
-    swml::Node,
-    swml::Link,
-    swml::Enumeration,
-    swml::Relationship,
-    swml::Attribute,
-    swml::EntityType,
-    swml::WebApplication,
-    swml::HypertextModel,
-    swml::ContentModel,
+    swml_KOLink,
+    swml_ContextualLink,
+    swml_NonContextualLink,
+    swml_OKLink,
+    swml_Parameter,
+    swml_Node,
+    swml_Link,
+    swml_Enumeration,
+    swml_Relationship,
+    swml_Attribute,
+    swml_EntityType,
+    swml_HypertextModel,
+    swml_ContentModel,
+    swml_WebApplication,
     SWMLType,
 )
 
@@ -58,23 +58,23 @@ def test_node_constructor_args():
 
 
 
-def test_swml::page_is_not_abstract():
-    assert not inspect.isabstract(swml::Page)
+def test_swml_page_is_not_abstract():
+    assert not inspect.isabstract(swml_Page)
 
 
-def test_swml::page_constructor_exists():
-    assert callable(swml::Page.__init__)
+def test_swml_page_constructor_exists():
+    assert callable(swml_Page.__init__)
 
 
-def test_swml::page_constructor_args():
-    sig = inspect.signature(swml::Page.__init__)
+def test_swml_page_constructor_args():
+    sig = inspect.signature(swml_Page.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::page_has_name():
-    assert hasattr(swml::Page, "name")
+def test_swml_page_has_name():
+    assert hasattr(swml_Page, "name")
     descriptor = None
-    for klass in swml::Page.__mro__:
+    for klass in swml_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -82,23 +82,23 @@ def test_swml::page_has_name():
 
 
 
-def test_swml::literal_is_not_abstract():
-    assert not inspect.isabstract(swml::Literal)
+def test_swml_literal_is_not_abstract():
+    assert not inspect.isabstract(swml_Literal)
 
 
-def test_swml::literal_constructor_exists():
-    assert callable(swml::Literal.__init__)
+def test_swml_literal_constructor_exists():
+    assert callable(swml_Literal.__init__)
 
 
-def test_swml::literal_constructor_args():
-    sig = inspect.signature(swml::Literal.__init__)
+def test_swml_literal_constructor_args():
+    sig = inspect.signature(swml_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::literal_has_name():
-    assert hasattr(swml::Literal, "name")
+def test_swml_literal_has_name():
+    assert hasattr(swml_Literal, "name")
     descriptor = None
-    for klass in swml::Literal.__mro__:
+    for klass in swml_Literal.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -120,30 +120,30 @@ def test_page_constructor_args():
 
 
 
-def test_swml::linkjoinnode_is_not_abstract():
-    assert not inspect.isabstract(swml::LinkJoinNode)
+def test_swml_linkjoinnode_is_not_abstract():
+    assert not inspect.isabstract(swml_LinkJoinNode)
 
 
-def test_swml::linkjoinnode_constructor_exists():
-    assert callable(swml::LinkJoinNode.__init__)
+def test_swml_linkjoinnode_constructor_exists():
+    assert callable(swml_LinkJoinNode.__init__)
 
 
-def test_swml::linkjoinnode_constructor_args():
-    sig = inspect.signature(swml::LinkJoinNode.__init__)
+def test_swml_linkjoinnode_constructor_args():
+    sig = inspect.signature(swml_LinkJoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::staticpage_is_not_abstract():
-    assert not inspect.isabstract(swml::StaticPage)
+def test_swml_staticpage_is_not_abstract():
+    assert not inspect.isabstract(swml_StaticPage)
 
 
-def test_swml::staticpage_constructor_exists():
-    assert callable(swml::StaticPage.__init__)
+def test_swml_staticpage_constructor_exists():
+    assert callable(swml_StaticPage.__init__)
 
 
-def test_swml::staticpage_constructor_args():
-    sig = inspect.signature(swml::StaticPage.__init__)
+def test_swml_staticpage_constructor_args():
+    sig = inspect.signature(swml_StaticPage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,58 +162,58 @@ def test_entitypage_constructor_args():
 
 
 
-def test_swml::deletepage_is_not_abstract():
-    assert not inspect.isabstract(swml::DeletePage)
+def test_swml_deletepage_is_not_abstract():
+    assert not inspect.isabstract(swml_DeletePage)
 
 
-def test_swml::deletepage_constructor_exists():
-    assert callable(swml::DeletePage.__init__)
+def test_swml_deletepage_constructor_exists():
+    assert callable(swml_DeletePage.__init__)
 
 
-def test_swml::deletepage_constructor_args():
-    sig = inspect.signature(swml::DeletePage.__init__)
+def test_swml_deletepage_constructor_args():
+    sig = inspect.signature(swml_DeletePage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::createpage_is_not_abstract():
-    assert not inspect.isabstract(swml::CreatePage)
+def test_swml_createpage_is_not_abstract():
+    assert not inspect.isabstract(swml_CreatePage)
 
 
-def test_swml::createpage_constructor_exists():
-    assert callable(swml::CreatePage.__init__)
+def test_swml_createpage_constructor_exists():
+    assert callable(swml_CreatePage.__init__)
 
 
-def test_swml::createpage_constructor_args():
-    sig = inspect.signature(swml::CreatePage.__init__)
+def test_swml_createpage_constructor_args():
+    sig = inspect.signature(swml_CreatePage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::updatepage_is_not_abstract():
-    assert not inspect.isabstract(swml::UpdatePage)
+def test_swml_updatepage_is_not_abstract():
+    assert not inspect.isabstract(swml_UpdatePage)
 
 
-def test_swml::updatepage_constructor_exists():
-    assert callable(swml::UpdatePage.__init__)
+def test_swml_updatepage_constructor_exists():
+    assert callable(swml_UpdatePage.__init__)
 
 
-def test_swml::updatepage_constructor_args():
-    sig = inspect.signature(swml::UpdatePage.__init__)
+def test_swml_updatepage_constructor_args():
+    sig = inspect.signature(swml_UpdatePage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::dynamicpage_is_not_abstract():
-    assert not inspect.isabstract(swml::DynamicPage)
+def test_swml_dynamicpage_is_not_abstract():
+    assert not inspect.isabstract(swml_DynamicPage)
 
 
-def test_swml::dynamicpage_constructor_exists():
-    assert callable(swml::DynamicPage.__init__)
+def test_swml_dynamicpage_constructor_exists():
+    assert callable(swml_DynamicPage.__init__)
 
 
-def test_swml::dynamicpage_constructor_args():
-    sig = inspect.signature(swml::DynamicPage.__init__)
+def test_swml_dynamicpage_constructor_args():
+    sig = inspect.signature(swml_DynamicPage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,30 +232,30 @@ def test_dynamicpage_constructor_args():
 
 
 
-def test_swml::entitypage_is_not_abstract():
-    assert not inspect.isabstract(swml::EntityPage)
+def test_swml_entitypage_is_not_abstract():
+    assert not inspect.isabstract(swml_EntityPage)
 
 
-def test_swml::entitypage_constructor_exists():
-    assert callable(swml::EntityPage.__init__)
+def test_swml_entitypage_constructor_exists():
+    assert callable(swml_EntityPage.__init__)
 
 
-def test_swml::entitypage_constructor_args():
-    sig = inspect.signature(swml::EntityPage.__init__)
+def test_swml_entitypage_constructor_args():
+    sig = inspect.signature(swml_EntityPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::indexpage_is_not_abstract():
-    assert not inspect.isabstract(swml::IndexPage)
+def test_swml_indexpage_is_not_abstract():
+    assert not inspect.isabstract(swml_IndexPage)
 
 
-def test_swml::indexpage_constructor_exists():
-    assert callable(swml::IndexPage.__init__)
+def test_swml_indexpage_constructor_exists():
+    assert callable(swml_IndexPage.__init__)
 
 
-def test_swml::indexpage_constructor_args():
-    sig = inspect.signature(swml::IndexPage.__init__)
+def test_swml_indexpage_constructor_args():
+    sig = inspect.signature(swml_IndexPage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -274,79 +274,79 @@ def test_link_constructor_args():
 
 
 
-def test_swml::contextuallink_is_not_abstract():
-    assert not inspect.isabstract(swml::ContextualLink)
+def test_swml_kolink_is_not_abstract():
+    assert not inspect.isabstract(swml_KOLink)
 
 
-def test_swml::contextuallink_constructor_exists():
-    assert callable(swml::ContextualLink.__init__)
+def test_swml_kolink_constructor_exists():
+    assert callable(swml_KOLink.__init__)
 
 
-def test_swml::contextuallink_constructor_args():
-    sig = inspect.signature(swml::ContextualLink.__init__)
+def test_swml_kolink_constructor_args():
+    sig = inspect.signature(swml_KOLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::noncontextuallink_is_not_abstract():
-    assert not inspect.isabstract(swml::NonContextualLink)
+def test_swml_contextuallink_is_not_abstract():
+    assert not inspect.isabstract(swml_ContextualLink)
 
 
-def test_swml::noncontextuallink_constructor_exists():
-    assert callable(swml::NonContextualLink.__init__)
+def test_swml_contextuallink_constructor_exists():
+    assert callable(swml_ContextualLink.__init__)
 
 
-def test_swml::noncontextuallink_constructor_args():
-    sig = inspect.signature(swml::NonContextualLink.__init__)
+def test_swml_contextuallink_constructor_args():
+    sig = inspect.signature(swml_ContextualLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::kolink_is_not_abstract():
-    assert not inspect.isabstract(swml::KOLink)
+def test_swml_noncontextuallink_is_not_abstract():
+    assert not inspect.isabstract(swml_NonContextualLink)
 
 
-def test_swml::kolink_constructor_exists():
-    assert callable(swml::KOLink.__init__)
+def test_swml_noncontextuallink_constructor_exists():
+    assert callable(swml_NonContextualLink.__init__)
 
 
-def test_swml::kolink_constructor_args():
-    sig = inspect.signature(swml::KOLink.__init__)
+def test_swml_noncontextuallink_constructor_args():
+    sig = inspect.signature(swml_NonContextualLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::oklink_is_not_abstract():
-    assert not inspect.isabstract(swml::OKLink)
+def test_swml_oklink_is_not_abstract():
+    assert not inspect.isabstract(swml_OKLink)
 
 
-def test_swml::oklink_constructor_exists():
-    assert callable(swml::OKLink.__init__)
+def test_swml_oklink_constructor_exists():
+    assert callable(swml_OKLink.__init__)
 
 
-def test_swml::oklink_constructor_args():
-    sig = inspect.signature(swml::OKLink.__init__)
+def test_swml_oklink_constructor_args():
+    sig = inspect.signature(swml_OKLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::parameter_is_not_abstract():
-    assert not inspect.isabstract(swml::Parameter)
+def test_swml_parameter_is_not_abstract():
+    assert not inspect.isabstract(swml_Parameter)
 
 
-def test_swml::parameter_constructor_exists():
-    assert callable(swml::Parameter.__init__)
+def test_swml_parameter_constructor_exists():
+    assert callable(swml_Parameter.__init__)
 
 
-def test_swml::parameter_constructor_args():
-    sig = inspect.signature(swml::Parameter.__init__)
+def test_swml_parameter_constructor_args():
+    sig = inspect.signature(swml_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "ValueSpec" in params, "Missing parameter 'ValueSpec'"
 
-def test_swml::parameter_has_ValueSpec():
-    assert hasattr(swml::Parameter, "ValueSpec")
+def test_swml_parameter_has_ValueSpec():
+    assert hasattr(swml_Parameter, "ValueSpec")
     descriptor = None
-    for klass in swml::Parameter.__mro__:
+    for klass in swml_Parameter.__mro__:
         if "ValueSpec" in klass.__dict__:
             descriptor = klass.__dict__["ValueSpec"]
             break
@@ -354,51 +354,51 @@ def test_swml::parameter_has_ValueSpec():
 
 
 
-def test_swml::node_is_not_abstract():
-    assert not inspect.isabstract(swml::Node)
+def test_swml_node_is_not_abstract():
+    assert not inspect.isabstract(swml_Node)
 
 
-def test_swml::node_constructor_exists():
-    assert callable(swml::Node.__init__)
+def test_swml_node_constructor_exists():
+    assert callable(swml_Node.__init__)
 
 
-def test_swml::node_constructor_args():
-    sig = inspect.signature(swml::Node.__init__)
+def test_swml_node_constructor_args():
+    sig = inspect.signature(swml_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::link_is_not_abstract():
-    assert not inspect.isabstract(swml::Link)
+def test_swml_link_is_not_abstract():
+    assert not inspect.isabstract(swml_Link)
 
 
-def test_swml::link_constructor_exists():
-    assert callable(swml::Link.__init__)
+def test_swml_link_constructor_exists():
+    assert callable(swml_Link.__init__)
 
 
-def test_swml::link_constructor_args():
-    sig = inspect.signature(swml::Link.__init__)
+def test_swml_link_constructor_args():
+    sig = inspect.signature(swml_Link.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::enumeration_is_not_abstract():
-    assert not inspect.isabstract(swml::Enumeration)
+def test_swml_enumeration_is_not_abstract():
+    assert not inspect.isabstract(swml_Enumeration)
 
 
-def test_swml::enumeration_constructor_exists():
-    assert callable(swml::Enumeration.__init__)
+def test_swml_enumeration_constructor_exists():
+    assert callable(swml_Enumeration.__init__)
 
 
-def test_swml::enumeration_constructor_args():
-    sig = inspect.signature(swml::Enumeration.__init__)
+def test_swml_enumeration_constructor_args():
+    sig = inspect.signature(swml_Enumeration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::enumeration_has_name():
-    assert hasattr(swml::Enumeration, "name")
+def test_swml_enumeration_has_name():
+    assert hasattr(swml_Enumeration, "name")
     descriptor = None
-    for klass in swml::Enumeration.__mro__:
+    for klass in swml_Enumeration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -406,111 +406,111 @@ def test_swml::enumeration_has_name():
 
 
 
-def test_swml::relationship_is_not_abstract():
-    assert not inspect.isabstract(swml::Relationship)
+def test_swml_relationship_is_not_abstract():
+    assert not inspect.isabstract(swml_Relationship)
 
 
-def test_swml::relationship_constructor_exists():
-    assert callable(swml::Relationship.__init__)
+def test_swml_relationship_constructor_exists():
+    assert callable(swml_Relationship.__init__)
 
 
-def test_swml::relationship_constructor_args():
-    sig = inspect.signature(swml::Relationship.__init__)
+def test_swml_relationship_constructor_args():
+    sig = inspect.signature(swml_Relationship.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::relationship_has_name():
-    assert hasattr(swml::Relationship, "name")
+def test_swml_relationship_has_upper():
+    assert hasattr(swml_Relationship, "upper")
     descriptor = None
-    for klass in swml::Relationship.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swml::relationship_has_lower():
-    assert hasattr(swml::Relationship, "lower")
-    descriptor = None
-    for klass in swml::Relationship.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swml::relationship_has_upper():
-    assert hasattr(swml::Relationship, "upper")
-    descriptor = None
-    for klass in swml::Relationship.__mro__:
+    for klass in swml_Relationship.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_swml::attribute_is_not_abstract():
-    assert not inspect.isabstract(swml::Attribute)
-
-
-def test_swml::attribute_constructor_exists():
-    assert callable(swml::Attribute.__init__)
-
-
-def test_swml::attribute_constructor_args():
-    sig = inspect.signature(swml::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_swml::attribute_has_name():
-    assert hasattr(swml::Attribute, "name")
+def test_swml_relationship_has_lower():
+    assert hasattr(swml_Relationship, "lower")
     descriptor = None
-    for klass in swml::Attribute.__mro__:
+    for klass in swml_Relationship.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swml_relationship_has_name():
+    assert hasattr(swml_Relationship, "name")
+    descriptor = None
+    for klass in swml_Relationship.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_swml::attribute_has_type():
-    assert hasattr(swml::Attribute, "type")
+
+
+def test_swml_attribute_is_not_abstract():
+    assert not inspect.isabstract(swml_Attribute)
+
+
+def test_swml_attribute_constructor_exists():
+    assert callable(swml_Attribute.__init__)
+
+
+def test_swml_attribute_constructor_args():
+    sig = inspect.signature(swml_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_swml_attribute_has_type():
+    assert hasattr(swml_Attribute, "type")
     descriptor = None
-    for klass in swml::Attribute.__mro__:
+    for klass in swml_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_swml::entitytype_is_not_abstract():
-    assert not inspect.isabstract(swml::EntityType)
-
-
-def test_swml::entitytype_constructor_exists():
-    assert callable(swml::EntityType.__init__)
-
-
-def test_swml::entitytype_constructor_args():
-    sig = inspect.signature(swml::EntityType.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-
-def test_swml::entitytype_has_name():
-    assert hasattr(swml::EntityType, "name")
+def test_swml_attribute_has_name():
+    assert hasattr(swml_Attribute, "name")
     descriptor = None
-    for klass in swml::EntityType.__mro__:
+    for klass in swml_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_swml::entitytype_has_isAbstract():
-    assert hasattr(swml::EntityType, "isAbstract")
+
+
+def test_swml_entitytype_is_not_abstract():
+    assert not inspect.isabstract(swml_EntityType)
+
+
+def test_swml_entitytype_constructor_exists():
+    assert callable(swml_EntityType.__init__)
+
+
+def test_swml_entitytype_constructor_args():
+    sig = inspect.signature(swml_EntityType.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+
+def test_swml_entitytype_has_name():
+    assert hasattr(swml_EntityType, "name")
     descriptor = None
-    for klass in swml::EntityType.__mro__:
+    for klass in swml_EntityType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swml_entitytype_has_isAbstract():
+    assert hasattr(swml_EntityType, "isAbstract")
+    descriptor = None
+    for klass in swml_EntityType.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -518,55 +518,55 @@ def test_swml::entitytype_has_isAbstract():
 
 
 
-def test_swml::webapplication_is_not_abstract():
-    assert not inspect.isabstract(swml::WebApplication)
+def test_swml_hypertextmodel_is_not_abstract():
+    assert not inspect.isabstract(swml_HypertextModel)
 
 
-def test_swml::webapplication_constructor_exists():
-    assert callable(swml::WebApplication.__init__)
+def test_swml_hypertextmodel_constructor_exists():
+    assert callable(swml_HypertextModel.__init__)
 
 
-def test_swml::webapplication_constructor_args():
-    sig = inspect.signature(swml::WebApplication.__init__)
+def test_swml_hypertextmodel_constructor_args():
+    sig = inspect.signature(swml_HypertextModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swml_contentmodel_is_not_abstract():
+    assert not inspect.isabstract(swml_ContentModel)
+
+
+def test_swml_contentmodel_constructor_exists():
+    assert callable(swml_ContentModel.__init__)
+
+
+def test_swml_contentmodel_constructor_args():
+    sig = inspect.signature(swml_ContentModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swml_webapplication_is_not_abstract():
+    assert not inspect.isabstract(swml_WebApplication)
+
+
+def test_swml_webapplication_constructor_exists():
+    assert callable(swml_WebApplication.__init__)
+
+
+def test_swml_webapplication_constructor_args():
+    sig = inspect.signature(swml_WebApplication.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::webapplication_has_name():
-    assert hasattr(swml::WebApplication, "name")
+def test_swml_webapplication_has_name():
+    assert hasattr(swml_WebApplication, "name")
     descriptor = None
-    for klass in swml::WebApplication.__mro__:
+    for klass in swml_WebApplication.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_swml::hypertextmodel_is_not_abstract():
-    assert not inspect.isabstract(swml::HypertextModel)
-
-
-def test_swml::hypertextmodel_constructor_exists():
-    assert callable(swml::HypertextModel.__init__)
-
-
-def test_swml::hypertextmodel_constructor_args():
-    sig = inspect.signature(swml::HypertextModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swml::contentmodel_is_not_abstract():
-    assert not inspect.isabstract(swml::ContentModel)
-
-
-def test_swml::contentmodel_constructor_exists():
-    assert callable(swml::ContentModel.__init__)
-
-
-def test_swml::contentmodel_constructor_args():
-    sig = inspect.signature(swml::ContentModel.__init__)
-    params = list(sig.parameters.keys())
 
 def test_swmltype_exists():
     # Check that the Enumeration exists
@@ -576,13 +576,13 @@ def test_swmltype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SWMLType]
     expected_literals = [
-        "Boolean",
-        "String",
-        "Email",
-        "Float",
         "Time",
         "Integer",
+        "String",
+        "Email",
         "Date",
+        "Float",
+        "Boolean",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -603,113 +603,113 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-swml::Page_strategy = st.builds(
-    swml::Page,
+swml_Page_strategy = st.builds(
+    swml_Page,
     name=
         safe_text
 )
-swml::Literal_strategy = st.builds(
-    swml::Literal,
+swml_Literal_strategy = st.builds(
+    swml_Literal,
     name=
         safe_text
 )
 Page_strategy = st.builds(
     Page,
 )
-swml::LinkJoinNode_strategy = st.builds(
-    swml::LinkJoinNode,
+swml_LinkJoinNode_strategy = st.builds(
+    swml_LinkJoinNode,
 )
-swml::StaticPage_strategy = st.builds(
-    swml::StaticPage,
+swml_StaticPage_strategy = st.builds(
+    swml_StaticPage,
 )
 EntityPage_strategy = st.builds(
     EntityPage,
 )
-swml::DeletePage_strategy = st.builds(
-    swml::DeletePage,
+swml_DeletePage_strategy = st.builds(
+    swml_DeletePage,
 )
-swml::CreatePage_strategy = st.builds(
-    swml::CreatePage,
+swml_CreatePage_strategy = st.builds(
+    swml_CreatePage,
 )
-swml::UpdatePage_strategy = st.builds(
-    swml::UpdatePage,
+swml_UpdatePage_strategy = st.builds(
+    swml_UpdatePage,
 )
-swml::DynamicPage_strategy = st.builds(
-    swml::DynamicPage,
+swml_DynamicPage_strategy = st.builds(
+    swml_DynamicPage,
 )
 DynamicPage_strategy = st.builds(
     DynamicPage,
 )
-swml::EntityPage_strategy = st.builds(
-    swml::EntityPage,
+swml_EntityPage_strategy = st.builds(
+    swml_EntityPage,
 )
-swml::IndexPage_strategy = st.builds(
-    swml::IndexPage,
+swml_IndexPage_strategy = st.builds(
+    swml_IndexPage,
 )
 Link_strategy = st.builds(
     Link,
 )
-swml::ContextualLink_strategy = st.builds(
-    swml::ContextualLink,
+swml_KOLink_strategy = st.builds(
+    swml_KOLink,
 )
-swml::NonContextualLink_strategy = st.builds(
-    swml::NonContextualLink,
+swml_ContextualLink_strategy = st.builds(
+    swml_ContextualLink,
 )
-swml::KOLink_strategy = st.builds(
-    swml::KOLink,
+swml_NonContextualLink_strategy = st.builds(
+    swml_NonContextualLink,
 )
-swml::OKLink_strategy = st.builds(
-    swml::OKLink,
+swml_OKLink_strategy = st.builds(
+    swml_OKLink,
 )
-swml::Parameter_strategy = st.builds(
-    swml::Parameter,
+swml_Parameter_strategy = st.builds(
+    swml_Parameter,
     ValueSpec=
         safe_text
 )
-swml::Node_strategy = st.builds(
-    swml::Node,
+swml_Node_strategy = st.builds(
+    swml_Node,
 )
-swml::Link_strategy = st.builds(
-    swml::Link,
+swml_Link_strategy = st.builds(
+    swml_Link,
 )
-swml::Enumeration_strategy = st.builds(
-    swml::Enumeration,
+swml_Enumeration_strategy = st.builds(
+    swml_Enumeration,
     name=
         safe_text
 )
-swml::Relationship_strategy = st.builds(
-    swml::Relationship,
-    name=
-        safe_text,
+swml_Relationship_strategy = st.builds(
+    swml_Relationship,
+    upper=
+        st.integers(),
     lower=
         st.integers(),
-    upper=
-        st.integers()
-)
-swml::Attribute_strategy = st.builds(
-    swml::Attribute,
     name=
-        safe_text,
-    type=
         safe_text
 )
-swml::EntityType_strategy = st.builds(
-    swml::EntityType,
+swml_Attribute_strategy = st.builds(
+    swml_Attribute,
+    type=
+        safe_text,
+    name=
+        safe_text
+)
+swml_EntityType_strategy = st.builds(
+    swml_EntityType,
     name=
         safe_text,
     isAbstract=
         st.booleans()
 )
-swml::WebApplication_strategy = st.builds(
-    swml::WebApplication,
+swml_HypertextModel_strategy = st.builds(
+    swml_HypertextModel,
+)
+swml_ContentModel_strategy = st.builds(
+    swml_ContentModel,
+)
+swml_WebApplication_strategy = st.builds(
+    swml_WebApplication,
     name=
         safe_text
-)
-swml::HypertextModel_strategy = st.builds(
-    swml::HypertextModel,
-)
-swml::ContentModel_strategy = st.builds(
-    swml::ContentModel,
 )
 
 @given(instance=Node_strategy)
@@ -717,34 +717,28 @@ swml::ContentModel_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=swml::Page_strategy)
+@given(instance=swml_Page_strategy)
 @settings(max_examples=50)
-def test_swml::page_instantiation(instance):
-    assert isinstance(instance, swml::Page)
-
-@given(instance=swml::Page_strategy)
-def test_swml::page_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_page_instantiation(instance):
+    assert isinstance(instance, swml_Page)
 
 
-@given(instance=swml::Page_strategy)
-def test_swml::page_name_setter(instance):
+
+@given(instance=swml_Page_strategy)
+def test_swml_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swml::Literal_strategy)
+@given(instance=swml_Literal_strategy)
 @settings(max_examples=50)
-def test_swml::literal_instantiation(instance):
-    assert isinstance(instance, swml::Literal)
-
-@given(instance=swml::Literal_strategy)
-def test_swml::literal_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_literal_instantiation(instance):
+    assert isinstance(instance, swml_Literal)
 
 
-@given(instance=swml::Literal_strategy)
-def test_swml::literal_name_setter(instance):
+
+@given(instance=swml_Literal_strategy)
+def test_swml_literal_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -754,237 +748,207 @@ def test_swml::literal_name_setter(instance):
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=swml::LinkJoinNode_strategy)
+@given(instance=swml_LinkJoinNode_strategy)
 @settings(max_examples=50)
-def test_swml::linkjoinnode_instantiation(instance):
-    assert isinstance(instance, swml::LinkJoinNode)
+def test_swml_linkjoinnode_instantiation(instance):
+    assert isinstance(instance, swml_LinkJoinNode)
 
-@given(instance=swml::StaticPage_strategy)
+@given(instance=swml_StaticPage_strategy)
 @settings(max_examples=50)
-def test_swml::staticpage_instantiation(instance):
-    assert isinstance(instance, swml::StaticPage)
+def test_swml_staticpage_instantiation(instance):
+    assert isinstance(instance, swml_StaticPage)
 
 @given(instance=EntityPage_strategy)
 @settings(max_examples=50)
 def test_entitypage_instantiation(instance):
     assert isinstance(instance, EntityPage)
 
-@given(instance=swml::DeletePage_strategy)
+@given(instance=swml_DeletePage_strategy)
 @settings(max_examples=50)
-def test_swml::deletepage_instantiation(instance):
-    assert isinstance(instance, swml::DeletePage)
+def test_swml_deletepage_instantiation(instance):
+    assert isinstance(instance, swml_DeletePage)
 
-@given(instance=swml::CreatePage_strategy)
+@given(instance=swml_CreatePage_strategy)
 @settings(max_examples=50)
-def test_swml::createpage_instantiation(instance):
-    assert isinstance(instance, swml::CreatePage)
+def test_swml_createpage_instantiation(instance):
+    assert isinstance(instance, swml_CreatePage)
 
-@given(instance=swml::UpdatePage_strategy)
+@given(instance=swml_UpdatePage_strategy)
 @settings(max_examples=50)
-def test_swml::updatepage_instantiation(instance):
-    assert isinstance(instance, swml::UpdatePage)
+def test_swml_updatepage_instantiation(instance):
+    assert isinstance(instance, swml_UpdatePage)
 
-@given(instance=swml::DynamicPage_strategy)
+@given(instance=swml_DynamicPage_strategy)
 @settings(max_examples=50)
-def test_swml::dynamicpage_instantiation(instance):
-    assert isinstance(instance, swml::DynamicPage)
+def test_swml_dynamicpage_instantiation(instance):
+    assert isinstance(instance, swml_DynamicPage)
 
 @given(instance=DynamicPage_strategy)
 @settings(max_examples=50)
 def test_dynamicpage_instantiation(instance):
     assert isinstance(instance, DynamicPage)
 
-@given(instance=swml::EntityPage_strategy)
+@given(instance=swml_EntityPage_strategy)
 @settings(max_examples=50)
-def test_swml::entitypage_instantiation(instance):
-    assert isinstance(instance, swml::EntityPage)
+def test_swml_entitypage_instantiation(instance):
+    assert isinstance(instance, swml_EntityPage)
 
-@given(instance=swml::IndexPage_strategy)
+@given(instance=swml_IndexPage_strategy)
 @settings(max_examples=50)
-def test_swml::indexpage_instantiation(instance):
-    assert isinstance(instance, swml::IndexPage)
+def test_swml_indexpage_instantiation(instance):
+    assert isinstance(instance, swml_IndexPage)
 
 @given(instance=Link_strategy)
 @settings(max_examples=50)
 def test_link_instantiation(instance):
     assert isinstance(instance, Link)
 
-@given(instance=swml::ContextualLink_strategy)
+@given(instance=swml_KOLink_strategy)
 @settings(max_examples=50)
-def test_swml::contextuallink_instantiation(instance):
-    assert isinstance(instance, swml::ContextualLink)
+def test_swml_kolink_instantiation(instance):
+    assert isinstance(instance, swml_KOLink)
 
-@given(instance=swml::NonContextualLink_strategy)
+@given(instance=swml_ContextualLink_strategy)
 @settings(max_examples=50)
-def test_swml::noncontextuallink_instantiation(instance):
-    assert isinstance(instance, swml::NonContextualLink)
+def test_swml_contextuallink_instantiation(instance):
+    assert isinstance(instance, swml_ContextualLink)
 
-@given(instance=swml::KOLink_strategy)
+@given(instance=swml_NonContextualLink_strategy)
 @settings(max_examples=50)
-def test_swml::kolink_instantiation(instance):
-    assert isinstance(instance, swml::KOLink)
+def test_swml_noncontextuallink_instantiation(instance):
+    assert isinstance(instance, swml_NonContextualLink)
 
-@given(instance=swml::OKLink_strategy)
+@given(instance=swml_OKLink_strategy)
 @settings(max_examples=50)
-def test_swml::oklink_instantiation(instance):
-    assert isinstance(instance, swml::OKLink)
+def test_swml_oklink_instantiation(instance):
+    assert isinstance(instance, swml_OKLink)
 
-@given(instance=swml::Parameter_strategy)
+@given(instance=swml_Parameter_strategy)
 @settings(max_examples=50)
-def test_swml::parameter_instantiation(instance):
-    assert isinstance(instance, swml::Parameter)
-
-@given(instance=swml::Parameter_strategy)
-def test_swml::parameter_ValueSpec_type(instance):
-    assert isinstance(instance.ValueSpec, str)
+def test_swml_parameter_instantiation(instance):
+    assert isinstance(instance, swml_Parameter)
 
 
-@given(instance=swml::Parameter_strategy)
-def test_swml::parameter_ValueSpec_setter(instance):
+
+@given(instance=swml_Parameter_strategy)
+def test_swml_parameter_ValueSpec_setter(instance):
     original = instance.ValueSpec
     instance.ValueSpec = original
     assert instance.ValueSpec == original
 
-@given(instance=swml::Node_strategy)
+@given(instance=swml_Node_strategy)
 @settings(max_examples=50)
-def test_swml::node_instantiation(instance):
-    assert isinstance(instance, swml::Node)
+def test_swml_node_instantiation(instance):
+    assert isinstance(instance, swml_Node)
 
-@given(instance=swml::Link_strategy)
+@given(instance=swml_Link_strategy)
 @settings(max_examples=50)
-def test_swml::link_instantiation(instance):
-    assert isinstance(instance, swml::Link)
+def test_swml_link_instantiation(instance):
+    assert isinstance(instance, swml_Link)
 
-@given(instance=swml::Enumeration_strategy)
+@given(instance=swml_Enumeration_strategy)
 @settings(max_examples=50)
-def test_swml::enumeration_instantiation(instance):
-    assert isinstance(instance, swml::Enumeration)
-
-@given(instance=swml::Enumeration_strategy)
-def test_swml::enumeration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_enumeration_instantiation(instance):
+    assert isinstance(instance, swml_Enumeration)
 
 
-@given(instance=swml::Enumeration_strategy)
-def test_swml::enumeration_name_setter(instance):
+
+@given(instance=swml_Enumeration_strategy)
+def test_swml_enumeration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swml::Relationship_strategy)
+@given(instance=swml_Relationship_strategy)
 @settings(max_examples=50)
-def test_swml::relationship_instantiation(instance):
-    assert isinstance(instance, swml::Relationship)
-
-@given(instance=swml::Relationship_strategy)
-def test_swml::relationship_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_relationship_instantiation(instance):
+    assert isinstance(instance, swml_Relationship)
 
 
-@given(instance=swml::Relationship_strategy)
-def test_swml::relationship_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=swml::Relationship_strategy)
-def test_swml::relationship_lower_type(instance):
-    assert isinstance(instance.lower, int)
-
-
-@given(instance=swml::Relationship_strategy)
-def test_swml::relationship_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=swml::Relationship_strategy)
-def test_swml::relationship_upper_type(instance):
-    assert isinstance(instance.upper, int)
-
-
-@given(instance=swml::Relationship_strategy)
-def test_swml::relationship_upper_setter(instance):
+@given(instance=swml_Relationship_strategy)
+def test_swml_relationship_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=swml::Attribute_strategy)
-@settings(max_examples=50)
-def test_swml::attribute_instantiation(instance):
-    assert isinstance(instance, swml::Attribute)
-
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_name_setter(instance):
+@given(instance=swml_Relationship_strategy)
+def test_swml_relationship_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=swml_Relationship_strategy)
+def test_swml_relationship_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=swml_Attribute_strategy)
+@settings(max_examples=50)
+def test_swml_attribute_instantiation(instance):
+    assert isinstance(instance, swml_Attribute)
 
 
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_type_setter(instance):
+
+@given(instance=swml_Attribute_strategy)
+def test_swml_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=swml::EntityType_strategy)
-@settings(max_examples=50)
-def test_swml::entitytype_instantiation(instance):
-    assert isinstance(instance, swml::EntityType)
-
-@given(instance=swml::EntityType_strategy)
-def test_swml::entitytype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=swml::EntityType_strategy)
-def test_swml::entitytype_name_setter(instance):
+@given(instance=swml_Attribute_strategy)
+def test_swml_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swml::EntityType_strategy)
-def test_swml::entitytype_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+@given(instance=swml_EntityType_strategy)
+@settings(max_examples=50)
+def test_swml_entitytype_instantiation(instance):
+    assert isinstance(instance, swml_EntityType)
 
 
-@given(instance=swml::EntityType_strategy)
-def test_swml::entitytype_isAbstract_setter(instance):
+
+@given(instance=swml_EntityType_strategy)
+def test_swml_entitytype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=swml_EntityType_strategy)
+def test_swml_entitytype_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=swml::WebApplication_strategy)
+@given(instance=swml_HypertextModel_strategy)
 @settings(max_examples=50)
-def test_swml::webapplication_instantiation(instance):
-    assert isinstance(instance, swml::WebApplication)
+def test_swml_hypertextmodel_instantiation(instance):
+    assert isinstance(instance, swml_HypertextModel)
 
-@given(instance=swml::WebApplication_strategy)
-def test_swml::webapplication_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=swml_ContentModel_strategy)
+@settings(max_examples=50)
+def test_swml_contentmodel_instantiation(instance):
+    assert isinstance(instance, swml_ContentModel)
+
+@given(instance=swml_WebApplication_strategy)
+@settings(max_examples=50)
+def test_swml_webapplication_instantiation(instance):
+    assert isinstance(instance, swml_WebApplication)
 
 
-@given(instance=swml::WebApplication_strategy)
-def test_swml::webapplication_name_setter(instance):
+
+@given(instance=swml_WebApplication_strategy)
+def test_swml_webapplication_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=swml::HypertextModel_strategy)
-@settings(max_examples=50)
-def test_swml::hypertextmodel_instantiation(instance):
-    assert isinstance(instance, swml::HypertextModel)
-
-@given(instance=swml::ContentModel_strategy)
-@settings(max_examples=50)
-def test_swml::contentmodel_instantiation(instance):
-    assert isinstance(instance, swml::ContentModel)

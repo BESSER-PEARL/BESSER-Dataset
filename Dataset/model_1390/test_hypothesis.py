@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Transition,
-    statemachine::State,
-    statemachine::MyFSM,
+from python_code import (
+    statemachine_Transition,
+    statemachine_State,
+    statemachine_MyFSM,
     State,
-    statemachine::FinalState,
-    statemachine::InitialState,
+    statemachine_InitialState,
+    statemachine_FinalState,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::transition_has_name():
-    assert hasattr(statemachine::Transition, "name")
+def test_statemachine_transition_has_name():
+    assert hasattr(statemachine_Transition, "name")
     descriptor = None
-    for klass in statemachine::Transition.__mro__:
+    for klass in statemachine_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,23 +44,23 @@ def test_statemachine::transition_has_name():
 
 
 
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::state_has_name():
-    assert hasattr(statemachine::State, "name")
+def test_statemachine_state_has_name():
+    assert hasattr(statemachine_State, "name")
     descriptor = None
-    for klass in statemachine::State.__mro__:
+    for klass in statemachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -68,23 +68,23 @@ def test_statemachine::state_has_name():
 
 
 
-def test_statemachine::myfsm_is_not_abstract():
-    assert not inspect.isabstract(statemachine::MyFSM)
+def test_statemachine_myfsm_is_not_abstract():
+    assert not inspect.isabstract(statemachine_MyFSM)
 
 
-def test_statemachine::myfsm_constructor_exists():
-    assert callable(statemachine::MyFSM.__init__)
+def test_statemachine_myfsm_constructor_exists():
+    assert callable(statemachine_MyFSM.__init__)
 
 
-def test_statemachine::myfsm_constructor_args():
-    sig = inspect.signature(statemachine::MyFSM.__init__)
+def test_statemachine_myfsm_constructor_args():
+    sig = inspect.signature(statemachine_MyFSM.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::myfsm_has_name():
-    assert hasattr(statemachine::MyFSM, "name")
+def test_statemachine_myfsm_has_name():
+    assert hasattr(statemachine_MyFSM, "name")
     descriptor = None
-    for klass in statemachine::MyFSM.__mro__:
+    for klass in statemachine_MyFSM.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,30 +106,30 @@ def test_state_constructor_args():
 
 
 
-def test_statemachine::finalstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::FinalState)
+def test_statemachine_initialstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_InitialState)
 
 
-def test_statemachine::finalstate_constructor_exists():
-    assert callable(statemachine::FinalState.__init__)
+def test_statemachine_initialstate_constructor_exists():
+    assert callable(statemachine_InitialState.__init__)
 
 
-def test_statemachine::finalstate_constructor_args():
-    sig = inspect.signature(statemachine::FinalState.__init__)
+def test_statemachine_initialstate_constructor_args():
+    sig = inspect.signature(statemachine_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::initialstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::InitialState)
+def test_statemachine_finalstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_FinalState)
 
 
-def test_statemachine::initialstate_constructor_exists():
-    assert callable(statemachine::InitialState.__init__)
+def test_statemachine_finalstate_constructor_exists():
+    assert callable(statemachine_FinalState.__init__)
 
 
-def test_statemachine::initialstate_constructor_args():
-    sig = inspect.signature(statemachine::InitialState.__init__)
+def test_statemachine_finalstate_constructor_args():
+    sig = inspect.signature(statemachine_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,75 +144,66 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
     name=
         safe_text
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
+statemachine_State_strategy = st.builds(
+    statemachine_State,
     name=
         safe_text
 )
-statemachine::MyFSM_strategy = st.builds(
-    statemachine::MyFSM,
+statemachine_MyFSM_strategy = st.builds(
+    statemachine_MyFSM,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-statemachine::FinalState_strategy = st.builds(
-    statemachine::FinalState,
+statemachine_InitialState_strategy = st.builds(
+    statemachine_InitialState,
 )
-statemachine::InitialState_strategy = st.builds(
-    statemachine::InitialState,
+statemachine_FinalState_strategy = st.builds(
+    statemachine_FinalState,
 )
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
 
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_name_setter(instance):
+
+@given(instance=statemachine_Transition_strategy)
+def test_statemachine_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachine::State_strategy)
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_setter(instance):
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachine::MyFSM_strategy)
+@given(instance=statemachine_MyFSM_strategy)
 @settings(max_examples=50)
-def test_statemachine::myfsm_instantiation(instance):
-    assert isinstance(instance, statemachine::MyFSM)
-
-@given(instance=statemachine::MyFSM_strategy)
-def test_statemachine::myfsm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_myfsm_instantiation(instance):
+    assert isinstance(instance, statemachine_MyFSM)
 
 
-@given(instance=statemachine::MyFSM_strategy)
-def test_statemachine::myfsm_name_setter(instance):
+
+@given(instance=statemachine_MyFSM_strategy)
+def test_statemachine_myfsm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -222,12 +213,12 @@ def test_statemachine::myfsm_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=statemachine::FinalState_strategy)
+@given(instance=statemachine_InitialState_strategy)
 @settings(max_examples=50)
-def test_statemachine::finalstate_instantiation(instance):
-    assert isinstance(instance, statemachine::FinalState)
+def test_statemachine_initialstate_instantiation(instance):
+    assert isinstance(instance, statemachine_InitialState)
 
-@given(instance=statemachine::InitialState_strategy)
+@given(instance=statemachine_FinalState_strategy)
 @settings(max_examples=50)
-def test_statemachine::initialstate_instantiation(instance):
-    assert isinstance(instance, statemachine::InitialState)
+def test_statemachine_finalstate_instantiation(instance):
+    assert isinstance(instance, statemachine_FinalState)

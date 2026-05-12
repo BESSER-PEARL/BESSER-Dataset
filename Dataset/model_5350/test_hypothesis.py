@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    p1::1::EClass1,
+from python_code import (
+    p1_1_EClass1,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_p1::1::eclass1_is_not_abstract():
-    assert not inspect.isabstract(p1::1::EClass1)
+def test_p1_1_eclass1_is_not_abstract():
+    assert not inspect.isabstract(p1_1_EClass1)
 
 
-def test_p1::1::eclass1_constructor_exists():
-    assert callable(p1::1::EClass1.__init__)
+def test_p1_1_eclass1_constructor_exists():
+    assert callable(p1_1_EClass1.__init__)
 
 
-def test_p1::1::eclass1_constructor_args():
-    sig = inspect.signature(p1::1::EClass1.__init__)
+def test_p1_1_eclass1_constructor_args():
+    sig = inspect.signature(p1_1_EClass1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-p1::1::EClass1_strategy = st.builds(
-    p1::1::EClass1,
+p1_1_EClass1_strategy = st.builds(
+    p1_1_EClass1,
 )
 
-@given(instance=p1::1::EClass1_strategy)
+@given(instance=p1_1_EClass1_strategy)
 @settings(max_examples=50)
-def test_p1::1::eclass1_instantiation(instance):
-    assert isinstance(instance, p1::1::EClass1)
+def test_p1_1_eclass1_instantiation(instance):
+    assert isinstance(instance, p1_1_EClass1)

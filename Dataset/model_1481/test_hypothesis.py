@@ -3,43 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graphpattern::Extendable,
-    graphpattern::Resource,
+from python_code import (
+    graphpattern_Extendable,
+    graphpattern_Resource,
     ParameterBinding,
-    graphpattern::ValueBinding,
-    graphpattern::ObjectBinding,
-    graphpattern::ParameterBinding,
-    graphpattern::Stereotype,
-    graphpattern::DependencyEdge,
-    graphpattern::DependencyNode,
-    graphpattern::EObjectList,
+    graphpattern_ValueBinding,
+    graphpattern_ObjectBinding,
+    graphpattern_ParameterBinding,
+    graphpattern_Stereotype,
+    graphpattern_DependencyEdge,
+    graphpattern_DependencyNode,
+    graphpattern_EObjectList,
     Extendable,
-    graphpattern::PatternElement,
-    graphpattern::Assignment,
-    graphpattern::Profile,
+    graphpattern_PatternElement,
+    graphpattern_Assignment,
+    graphpattern_Profile,
     Pattern,
-    graphpattern::Bundle,
-    graphpattern::EObject,
-    graphpattern::EAttribute,
-    graphpattern::EReference,
-    graphpattern::EPackage,
-    graphpattern::Matching,
-    graphpattern::EClass,
+    graphpattern_Bundle,
+    graphpattern_EObject,
+    graphpattern_EAttribute,
+    graphpattern_EReference,
+    graphpattern_EPackage,
+    graphpattern_Matching,
+    graphpattern_EClass,
     GraphElement,
-    graphpattern::EdgePattern,
-    graphpattern::AttributePattern,
-    graphpattern::DependencyGraph,
-    graphpattern::NodePattern,
+    graphpattern_EdgePattern,
+    graphpattern_AttributePattern,
+    graphpattern_DependencyGraph,
+    graphpattern_NodePattern,
     PatternElement,
-    graphpattern::Parameter,
-    graphpattern::SubGraph,
-    graphpattern::GraphElement,
-    graphpattern::Association,
-    graphpattern::Pattern,
-    graphpattern::GraphPattern,
+    graphpattern_SubGraph,
+    graphpattern_Pattern,
+    graphpattern_Association,
+    graphpattern_GraphElement,
+    graphpattern_Parameter,
+    graphpattern_GraphPattern,
 )
 
 # =============================================================================
@@ -48,30 +48,30 @@ from classes import (
 
 
 
-def test_graphpattern::extendable_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Extendable)
+def test_graphpattern_extendable_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Extendable)
 
 
-def test_graphpattern::extendable_constructor_exists():
-    assert callable(graphpattern::Extendable.__init__)
+def test_graphpattern_extendable_constructor_exists():
+    assert callable(graphpattern_Extendable.__init__)
 
 
-def test_graphpattern::extendable_constructor_args():
-    sig = inspect.signature(graphpattern::Extendable.__init__)
+def test_graphpattern_extendable_constructor_args():
+    sig = inspect.signature(graphpattern_Extendable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::resource_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Resource)
+def test_graphpattern_resource_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Resource)
 
 
-def test_graphpattern::resource_constructor_exists():
-    assert callable(graphpattern::Resource.__init__)
+def test_graphpattern_resource_constructor_exists():
+    assert callable(graphpattern_Resource.__init__)
 
 
-def test_graphpattern::resource_constructor_args():
-    sig = inspect.signature(graphpattern::Resource.__init__)
+def test_graphpattern_resource_constructor_args():
+    sig = inspect.signature(graphpattern_Resource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,23 +90,23 @@ def test_parameterbinding_constructor_args():
 
 
 
-def test_graphpattern::valuebinding_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::ValueBinding)
+def test_graphpattern_valuebinding_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_ValueBinding)
 
 
-def test_graphpattern::valuebinding_constructor_exists():
-    assert callable(graphpattern::ValueBinding.__init__)
+def test_graphpattern_valuebinding_constructor_exists():
+    assert callable(graphpattern_ValueBinding.__init__)
 
 
-def test_graphpattern::valuebinding_constructor_args():
-    sig = inspect.signature(graphpattern::ValueBinding.__init__)
+def test_graphpattern_valuebinding_constructor_args():
+    sig = inspect.signature(graphpattern_ValueBinding.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graphpattern::valuebinding_has_value():
-    assert hasattr(graphpattern::ValueBinding, "value")
+def test_graphpattern_valuebinding_has_value():
+    assert hasattr(graphpattern_ValueBinding, "value")
     descriptor = None
-    for klass in graphpattern::ValueBinding.__mro__:
+    for klass in graphpattern_ValueBinding.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -114,51 +114,51 @@ def test_graphpattern::valuebinding_has_value():
 
 
 
-def test_graphpattern::objectbinding_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::ObjectBinding)
+def test_graphpattern_objectbinding_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_ObjectBinding)
 
 
-def test_graphpattern::objectbinding_constructor_exists():
-    assert callable(graphpattern::ObjectBinding.__init__)
+def test_graphpattern_objectbinding_constructor_exists():
+    assert callable(graphpattern_ObjectBinding.__init__)
 
 
-def test_graphpattern::objectbinding_constructor_args():
-    sig = inspect.signature(graphpattern::ObjectBinding.__init__)
+def test_graphpattern_objectbinding_constructor_args():
+    sig = inspect.signature(graphpattern_ObjectBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::parameterbinding_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::ParameterBinding)
+def test_graphpattern_parameterbinding_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_ParameterBinding)
 
 
-def test_graphpattern::parameterbinding_constructor_exists():
-    assert callable(graphpattern::ParameterBinding.__init__)
+def test_graphpattern_parameterbinding_constructor_exists():
+    assert callable(graphpattern_ParameterBinding.__init__)
 
 
-def test_graphpattern::parameterbinding_constructor_args():
-    sig = inspect.signature(graphpattern::ParameterBinding.__init__)
+def test_graphpattern_parameterbinding_constructor_args():
+    sig = inspect.signature(graphpattern_ParameterBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::stereotype_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Stereotype)
+def test_graphpattern_stereotype_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Stereotype)
 
 
-def test_graphpattern::stereotype_constructor_exists():
-    assert callable(graphpattern::Stereotype.__init__)
+def test_graphpattern_stereotype_constructor_exists():
+    assert callable(graphpattern_Stereotype.__init__)
 
 
-def test_graphpattern::stereotype_constructor_args():
-    sig = inspect.signature(graphpattern::Stereotype.__init__)
+def test_graphpattern_stereotype_constructor_args():
+    sig = inspect.signature(graphpattern_Stereotype.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphpattern::stereotype_has_name():
-    assert hasattr(graphpattern::Stereotype, "name")
+def test_graphpattern_stereotype_has_name():
+    assert hasattr(graphpattern_Stereotype, "name")
     descriptor = None
-    for klass in graphpattern::Stereotype.__mro__:
+    for klass in graphpattern_Stereotype.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,51 +166,51 @@ def test_graphpattern::stereotype_has_name():
 
 
 
-def test_graphpattern::dependencyedge_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::DependencyEdge)
+def test_graphpattern_dependencyedge_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_DependencyEdge)
 
 
-def test_graphpattern::dependencyedge_constructor_exists():
-    assert callable(graphpattern::DependencyEdge.__init__)
+def test_graphpattern_dependencyedge_constructor_exists():
+    assert callable(graphpattern_DependencyEdge.__init__)
 
 
-def test_graphpattern::dependencyedge_constructor_args():
-    sig = inspect.signature(graphpattern::DependencyEdge.__init__)
+def test_graphpattern_dependencyedge_constructor_args():
+    sig = inspect.signature(graphpattern_DependencyEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::dependencynode_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::DependencyNode)
+def test_graphpattern_dependencynode_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_DependencyNode)
 
 
-def test_graphpattern::dependencynode_constructor_exists():
-    assert callable(graphpattern::DependencyNode.__init__)
+def test_graphpattern_dependencynode_constructor_exists():
+    assert callable(graphpattern_DependencyNode.__init__)
 
 
-def test_graphpattern::dependencynode_constructor_args():
-    sig = inspect.signature(graphpattern::DependencyNode.__init__)
+def test_graphpattern_dependencynode_constructor_args():
+    sig = inspect.signature(graphpattern_DependencyNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::eobjectlist_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EObjectList)
+def test_graphpattern_eobjectlist_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EObjectList)
 
 
-def test_graphpattern::eobjectlist_constructor_exists():
-    assert callable(graphpattern::EObjectList.__init__)
+def test_graphpattern_eobjectlist_constructor_exists():
+    assert callable(graphpattern_EObjectList.__init__)
 
 
-def test_graphpattern::eobjectlist_constructor_args():
-    sig = inspect.signature(graphpattern::EObjectList.__init__)
+def test_graphpattern_eobjectlist_constructor_args():
+    sig = inspect.signature(graphpattern_EObjectList.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_graphpattern::eobjectlist_has_label():
-    assert hasattr(graphpattern::EObjectList, "label")
+def test_graphpattern_eobjectlist_has_label():
+    assert hasattr(graphpattern_EObjectList, "label")
     descriptor = None
-    for klass in graphpattern::EObjectList.__mro__:
+    for klass in graphpattern_EObjectList.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -232,91 +232,91 @@ def test_extendable_constructor_args():
 
 
 
-def test_graphpattern::patternelement_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::PatternElement)
+def test_graphpattern_patternelement_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_PatternElement)
 
 
-def test_graphpattern::patternelement_constructor_exists():
-    assert callable(graphpattern::PatternElement.__init__)
+def test_graphpattern_patternelement_constructor_exists():
+    assert callable(graphpattern_PatternElement.__init__)
 
 
-def test_graphpattern::patternelement_constructor_args():
-    sig = inspect.signature(graphpattern::PatternElement.__init__)
+def test_graphpattern_patternelement_constructor_args():
+    sig = inspect.signature(graphpattern_PatternElement.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_graphpattern::patternelement_has_description():
-    assert hasattr(graphpattern::PatternElement, "description")
+def test_graphpattern_patternelement_has_name():
+    assert hasattr(graphpattern_PatternElement, "name")
     descriptor = None
-    for klass in graphpattern::PatternElement.__mro__:
+    for klass in graphpattern_PatternElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graphpattern_patternelement_has_description():
+    assert hasattr(graphpattern_PatternElement, "description")
+    descriptor = None
+    for klass in graphpattern_PatternElement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphpattern::patternelement_has_name():
-    assert hasattr(graphpattern::PatternElement, "name")
+
+
+def test_graphpattern_assignment_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Assignment)
+
+
+def test_graphpattern_assignment_constructor_exists():
+    assert callable(graphpattern_Assignment.__init__)
+
+
+def test_graphpattern_assignment_constructor_args():
+    sig = inspect.signature(graphpattern_Assignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graphpattern_profile_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Profile)
+
+
+def test_graphpattern_profile_constructor_exists():
+    assert callable(graphpattern_Profile.__init__)
+
+
+def test_graphpattern_profile_constructor_args():
+    sig = inspect.signature(graphpattern_Profile.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_graphpattern_profile_has_name():
+    assert hasattr(graphpattern_Profile, "name")
     descriptor = None
-    for klass in graphpattern::PatternElement.__mro__:
+    for klass in graphpattern_Profile.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_graphpattern::assignment_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Assignment)
-
-
-def test_graphpattern::assignment_constructor_exists():
-    assert callable(graphpattern::Assignment.__init__)
-
-
-def test_graphpattern::assignment_constructor_args():
-    sig = inspect.signature(graphpattern::Assignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graphpattern::profile_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Profile)
-
-
-def test_graphpattern::profile_constructor_exists():
-    assert callable(graphpattern::Profile.__init__)
-
-
-def test_graphpattern::profile_constructor_args():
-    sig = inspect.signature(graphpattern::Profile.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_graphpattern::profile_has_id():
-    assert hasattr(graphpattern::Profile, "id")
+def test_graphpattern_profile_has_id():
+    assert hasattr(graphpattern_Profile, "id")
     descriptor = None
-    for klass in graphpattern::Profile.__mro__:
+    for klass in graphpattern_Profile.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphpattern::profile_has_name():
-    assert hasattr(graphpattern::Profile, "name")
+def test_graphpattern_profile_has_description():
+    assert hasattr(graphpattern_Profile, "description")
     descriptor = None
-    for klass in graphpattern::Profile.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphpattern::profile_has_description():
-    assert hasattr(graphpattern::Profile, "description")
-    descriptor = None
-    for klass in graphpattern::Profile.__mro__:
+    for klass in graphpattern_Profile.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -338,100 +338,100 @@ def test_pattern_constructor_args():
 
 
 
-def test_graphpattern::bundle_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Bundle)
+def test_graphpattern_bundle_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Bundle)
 
 
-def test_graphpattern::bundle_constructor_exists():
-    assert callable(graphpattern::Bundle.__init__)
+def test_graphpattern_bundle_constructor_exists():
+    assert callable(graphpattern_Bundle.__init__)
 
 
-def test_graphpattern::bundle_constructor_args():
-    sig = inspect.signature(graphpattern::Bundle.__init__)
+def test_graphpattern_bundle_constructor_args():
+    sig = inspect.signature(graphpattern_Bundle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::eobject_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EObject)
+def test_graphpattern_eobject_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EObject)
 
 
-def test_graphpattern::eobject_constructor_exists():
-    assert callable(graphpattern::EObject.__init__)
+def test_graphpattern_eobject_constructor_exists():
+    assert callable(graphpattern_EObject.__init__)
 
 
-def test_graphpattern::eobject_constructor_args():
-    sig = inspect.signature(graphpattern::EObject.__init__)
+def test_graphpattern_eobject_constructor_args():
+    sig = inspect.signature(graphpattern_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::eattribute_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EAttribute)
+def test_graphpattern_eattribute_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EAttribute)
 
 
-def test_graphpattern::eattribute_constructor_exists():
-    assert callable(graphpattern::EAttribute.__init__)
+def test_graphpattern_eattribute_constructor_exists():
+    assert callable(graphpattern_EAttribute.__init__)
 
 
-def test_graphpattern::eattribute_constructor_args():
-    sig = inspect.signature(graphpattern::EAttribute.__init__)
+def test_graphpattern_eattribute_constructor_args():
+    sig = inspect.signature(graphpattern_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::ereference_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EReference)
+def test_graphpattern_ereference_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EReference)
 
 
-def test_graphpattern::ereference_constructor_exists():
-    assert callable(graphpattern::EReference.__init__)
+def test_graphpattern_ereference_constructor_exists():
+    assert callable(graphpattern_EReference.__init__)
 
 
-def test_graphpattern::ereference_constructor_args():
-    sig = inspect.signature(graphpattern::EReference.__init__)
+def test_graphpattern_ereference_constructor_args():
+    sig = inspect.signature(graphpattern_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::epackage_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EPackage)
+def test_graphpattern_epackage_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EPackage)
 
 
-def test_graphpattern::epackage_constructor_exists():
-    assert callable(graphpattern::EPackage.__init__)
+def test_graphpattern_epackage_constructor_exists():
+    assert callable(graphpattern_EPackage.__init__)
 
 
-def test_graphpattern::epackage_constructor_args():
-    sig = inspect.signature(graphpattern::EPackage.__init__)
+def test_graphpattern_epackage_constructor_args():
+    sig = inspect.signature(graphpattern_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::matching_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Matching)
+def test_graphpattern_matching_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Matching)
 
 
-def test_graphpattern::matching_constructor_exists():
-    assert callable(graphpattern::Matching.__init__)
+def test_graphpattern_matching_constructor_exists():
+    assert callable(graphpattern_Matching.__init__)
 
 
-def test_graphpattern::matching_constructor_args():
-    sig = inspect.signature(graphpattern::Matching.__init__)
+def test_graphpattern_matching_constructor_args():
+    sig = inspect.signature(graphpattern_Matching.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::eclass_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EClass)
+def test_graphpattern_eclass_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EClass)
 
 
-def test_graphpattern::eclass_constructor_exists():
-    assert callable(graphpattern::EClass.__init__)
+def test_graphpattern_eclass_constructor_exists():
+    assert callable(graphpattern_EClass.__init__)
 
 
-def test_graphpattern::eclass_constructor_args():
-    sig = inspect.signature(graphpattern::EClass.__init__)
+def test_graphpattern_eclass_constructor_args():
+    sig = inspect.signature(graphpattern_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -450,57 +450,57 @@ def test_graphelement_constructor_args():
 
 
 
-def test_graphpattern::edgepattern_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::EdgePattern)
+def test_graphpattern_edgepattern_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_EdgePattern)
 
 
-def test_graphpattern::edgepattern_constructor_exists():
-    assert callable(graphpattern::EdgePattern.__init__)
+def test_graphpattern_edgepattern_constructor_exists():
+    assert callable(graphpattern_EdgePattern.__init__)
 
 
-def test_graphpattern::edgepattern_constructor_args():
-    sig = inspect.signature(graphpattern::EdgePattern.__init__)
+def test_graphpattern_edgepattern_constructor_args():
+    sig = inspect.signature(graphpattern_EdgePattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::attributepattern_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::AttributePattern)
+def test_graphpattern_attributepattern_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_AttributePattern)
 
 
-def test_graphpattern::attributepattern_constructor_exists():
-    assert callable(graphpattern::AttributePattern.__init__)
+def test_graphpattern_attributepattern_constructor_exists():
+    assert callable(graphpattern_AttributePattern.__init__)
 
 
-def test_graphpattern::attributepattern_constructor_args():
-    sig = inspect.signature(graphpattern::AttributePattern.__init__)
+def test_graphpattern_attributepattern_constructor_args():
+    sig = inspect.signature(graphpattern_AttributePattern.__init__)
     params = list(sig.parameters.keys())
     assert "variables" in params, "Missing parameter 'variables'"
     assert "constant" in params, "Missing parameter 'constant'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graphpattern::attributepattern_has_variables():
-    assert hasattr(graphpattern::AttributePattern, "variables")
+def test_graphpattern_attributepattern_has_variables():
+    assert hasattr(graphpattern_AttributePattern, "variables")
     descriptor = None
-    for klass in graphpattern::AttributePattern.__mro__:
+    for klass in graphpattern_AttributePattern.__mro__:
         if "variables" in klass.__dict__:
             descriptor = klass.__dict__["variables"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphpattern::attributepattern_has_constant():
-    assert hasattr(graphpattern::AttributePattern, "constant")
+def test_graphpattern_attributepattern_has_constant():
+    assert hasattr(graphpattern_AttributePattern, "constant")
     descriptor = None
-    for klass in graphpattern::AttributePattern.__mro__:
+    for klass in graphpattern_AttributePattern.__mro__:
         if "constant" in klass.__dict__:
             descriptor = klass.__dict__["constant"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphpattern::attributepattern_has_value():
-    assert hasattr(graphpattern::AttributePattern, "value")
+def test_graphpattern_attributepattern_has_value():
+    assert hasattr(graphpattern_AttributePattern, "value")
     descriptor = None
-    for klass in graphpattern::AttributePattern.__mro__:
+    for klass in graphpattern_AttributePattern.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -508,30 +508,30 @@ def test_graphpattern::attributepattern_has_value():
 
 
 
-def test_graphpattern::dependencygraph_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::DependencyGraph)
+def test_graphpattern_dependencygraph_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_DependencyGraph)
 
 
-def test_graphpattern::dependencygraph_constructor_exists():
-    assert callable(graphpattern::DependencyGraph.__init__)
+def test_graphpattern_dependencygraph_constructor_exists():
+    assert callable(graphpattern_DependencyGraph.__init__)
 
 
-def test_graphpattern::dependencygraph_constructor_args():
-    sig = inspect.signature(graphpattern::DependencyGraph.__init__)
+def test_graphpattern_dependencygraph_constructor_args():
+    sig = inspect.signature(graphpattern_DependencyGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::nodepattern_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::NodePattern)
+def test_graphpattern_nodepattern_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_NodePattern)
 
 
-def test_graphpattern::nodepattern_constructor_exists():
-    assert callable(graphpattern::NodePattern.__init__)
+def test_graphpattern_nodepattern_constructor_exists():
+    assert callable(graphpattern_NodePattern.__init__)
 
 
-def test_graphpattern::nodepattern_constructor_args():
-    sig = inspect.signature(graphpattern::NodePattern.__init__)
+def test_graphpattern_nodepattern_constructor_args():
+    sig = inspect.signature(graphpattern_NodePattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -550,86 +550,86 @@ def test_patternelement_constructor_args():
 
 
 
-def test_graphpattern::parameter_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Parameter)
+def test_graphpattern_subgraph_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_SubGraph)
 
 
-def test_graphpattern::parameter_constructor_exists():
-    assert callable(graphpattern::Parameter.__init__)
+def test_graphpattern_subgraph_constructor_exists():
+    assert callable(graphpattern_SubGraph.__init__)
 
 
-def test_graphpattern::parameter_constructor_args():
-    sig = inspect.signature(graphpattern::Parameter.__init__)
+def test_graphpattern_subgraph_constructor_args():
+    sig = inspect.signature(graphpattern_SubGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::subgraph_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::SubGraph)
+def test_graphpattern_pattern_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Pattern)
 
 
-def test_graphpattern::subgraph_constructor_exists():
-    assert callable(graphpattern::SubGraph.__init__)
+def test_graphpattern_pattern_constructor_exists():
+    assert callable(graphpattern_Pattern.__init__)
 
 
-def test_graphpattern::subgraph_constructor_args():
-    sig = inspect.signature(graphpattern::SubGraph.__init__)
+def test_graphpattern_pattern_constructor_args():
+    sig = inspect.signature(graphpattern_Pattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::graphelement_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::GraphElement)
+def test_graphpattern_association_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Association)
 
 
-def test_graphpattern::graphelement_constructor_exists():
-    assert callable(graphpattern::GraphElement.__init__)
+def test_graphpattern_association_constructor_exists():
+    assert callable(graphpattern_Association.__init__)
 
 
-def test_graphpattern::graphelement_constructor_args():
-    sig = inspect.signature(graphpattern::GraphElement.__init__)
+def test_graphpattern_association_constructor_args():
+    sig = inspect.signature(graphpattern_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::association_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Association)
+def test_graphpattern_graphelement_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_GraphElement)
 
 
-def test_graphpattern::association_constructor_exists():
-    assert callable(graphpattern::Association.__init__)
+def test_graphpattern_graphelement_constructor_exists():
+    assert callable(graphpattern_GraphElement.__init__)
 
 
-def test_graphpattern::association_constructor_args():
-    sig = inspect.signature(graphpattern::Association.__init__)
+def test_graphpattern_graphelement_constructor_args():
+    sig = inspect.signature(graphpattern_GraphElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::pattern_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::Pattern)
+def test_graphpattern_parameter_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_Parameter)
 
 
-def test_graphpattern::pattern_constructor_exists():
-    assert callable(graphpattern::Pattern.__init__)
+def test_graphpattern_parameter_constructor_exists():
+    assert callable(graphpattern_Parameter.__init__)
 
 
-def test_graphpattern::pattern_constructor_args():
-    sig = inspect.signature(graphpattern::Pattern.__init__)
+def test_graphpattern_parameter_constructor_args():
+    sig = inspect.signature(graphpattern_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphpattern::graphpattern_is_not_abstract():
-    assert not inspect.isabstract(graphpattern::GraphPattern)
+def test_graphpattern_graphpattern_is_not_abstract():
+    assert not inspect.isabstract(graphpattern_GraphPattern)
 
 
-def test_graphpattern::graphpattern_constructor_exists():
-    assert callable(graphpattern::GraphPattern.__init__)
+def test_graphpattern_graphpattern_constructor_exists():
+    assert callable(graphpattern_GraphPattern.__init__)
 
 
-def test_graphpattern::graphpattern_constructor_args():
-    sig = inspect.signature(graphpattern::GraphPattern.__init__)
+def test_graphpattern_graphpattern_constructor_args():
+    sig = inspect.signature(graphpattern_GraphPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -644,60 +644,60 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graphpattern::Extendable_strategy = st.builds(
-    graphpattern::Extendable,
+graphpattern_Extendable_strategy = st.builds(
+    graphpattern_Extendable,
 )
-graphpattern::Resource_strategy = st.builds(
-    graphpattern::Resource,
+graphpattern_Resource_strategy = st.builds(
+    graphpattern_Resource,
 )
 ParameterBinding_strategy = st.builds(
     ParameterBinding,
 )
-graphpattern::ValueBinding_strategy = st.builds(
-    graphpattern::ValueBinding,
+graphpattern_ValueBinding_strategy = st.builds(
+    graphpattern_ValueBinding,
     value=
         safe_text
 )
-graphpattern::ObjectBinding_strategy = st.builds(
-    graphpattern::ObjectBinding,
+graphpattern_ObjectBinding_strategy = st.builds(
+    graphpattern_ObjectBinding,
 )
-graphpattern::ParameterBinding_strategy = st.builds(
-    graphpattern::ParameterBinding,
+graphpattern_ParameterBinding_strategy = st.builds(
+    graphpattern_ParameterBinding,
 )
-graphpattern::Stereotype_strategy = st.builds(
-    graphpattern::Stereotype,
+graphpattern_Stereotype_strategy = st.builds(
+    graphpattern_Stereotype,
     name=
         safe_text
 )
-graphpattern::DependencyEdge_strategy = st.builds(
-    graphpattern::DependencyEdge,
+graphpattern_DependencyEdge_strategy = st.builds(
+    graphpattern_DependencyEdge,
 )
-graphpattern::DependencyNode_strategy = st.builds(
-    graphpattern::DependencyNode,
+graphpattern_DependencyNode_strategy = st.builds(
+    graphpattern_DependencyNode,
 )
-graphpattern::EObjectList_strategy = st.builds(
-    graphpattern::EObjectList,
+graphpattern_EObjectList_strategy = st.builds(
+    graphpattern_EObjectList,
     label=
         safe_text
 )
 Extendable_strategy = st.builds(
     Extendable,
 )
-graphpattern::PatternElement_strategy = st.builds(
-    graphpattern::PatternElement,
-    description=
-        safe_text,
+graphpattern_PatternElement_strategy = st.builds(
+    graphpattern_PatternElement,
     name=
+        safe_text,
+    description=
         safe_text
 )
-graphpattern::Assignment_strategy = st.builds(
-    graphpattern::Assignment,
+graphpattern_Assignment_strategy = st.builds(
+    graphpattern_Assignment,
 )
-graphpattern::Profile_strategy = st.builds(
-    graphpattern::Profile,
-    id=
-        safe_text,
+graphpattern_Profile_strategy = st.builds(
+    graphpattern_Profile,
     name=
+        safe_text,
+    id=
         safe_text,
     description=
         safe_text
@@ -705,35 +705,35 @@ graphpattern::Profile_strategy = st.builds(
 Pattern_strategy = st.builds(
     Pattern,
 )
-graphpattern::Bundle_strategy = st.builds(
-    graphpattern::Bundle,
+graphpattern_Bundle_strategy = st.builds(
+    graphpattern_Bundle,
 )
-graphpattern::EObject_strategy = st.builds(
-    graphpattern::EObject,
+graphpattern_EObject_strategy = st.builds(
+    graphpattern_EObject,
 )
-graphpattern::EAttribute_strategy = st.builds(
-    graphpattern::EAttribute,
+graphpattern_EAttribute_strategy = st.builds(
+    graphpattern_EAttribute,
 )
-graphpattern::EReference_strategy = st.builds(
-    graphpattern::EReference,
+graphpattern_EReference_strategy = st.builds(
+    graphpattern_EReference,
 )
-graphpattern::EPackage_strategy = st.builds(
-    graphpattern::EPackage,
+graphpattern_EPackage_strategy = st.builds(
+    graphpattern_EPackage,
 )
-graphpattern::Matching_strategy = st.builds(
-    graphpattern::Matching,
+graphpattern_Matching_strategy = st.builds(
+    graphpattern_Matching,
 )
-graphpattern::EClass_strategy = st.builds(
-    graphpattern::EClass,
+graphpattern_EClass_strategy = st.builds(
+    graphpattern_EClass,
 )
 GraphElement_strategy = st.builds(
     GraphElement,
 )
-graphpattern::EdgePattern_strategy = st.builds(
-    graphpattern::EdgePattern,
+graphpattern_EdgePattern_strategy = st.builds(
+    graphpattern_EdgePattern,
 )
-graphpattern::AttributePattern_strategy = st.builds(
-    graphpattern::AttributePattern,
+graphpattern_AttributePattern_strategy = st.builds(
+    graphpattern_AttributePattern,
     variables=
         safe_text,
     constant=
@@ -741,113 +741,104 @@ graphpattern::AttributePattern_strategy = st.builds(
     value=
         safe_text
 )
-graphpattern::DependencyGraph_strategy = st.builds(
-    graphpattern::DependencyGraph,
+graphpattern_DependencyGraph_strategy = st.builds(
+    graphpattern_DependencyGraph,
 )
-graphpattern::NodePattern_strategy = st.builds(
-    graphpattern::NodePattern,
+graphpattern_NodePattern_strategy = st.builds(
+    graphpattern_NodePattern,
 )
 PatternElement_strategy = st.builds(
     PatternElement,
 )
-graphpattern::Parameter_strategy = st.builds(
-    graphpattern::Parameter,
+graphpattern_SubGraph_strategy = st.builds(
+    graphpattern_SubGraph,
 )
-graphpattern::SubGraph_strategy = st.builds(
-    graphpattern::SubGraph,
+graphpattern_Pattern_strategy = st.builds(
+    graphpattern_Pattern,
 )
-graphpattern::GraphElement_strategy = st.builds(
-    graphpattern::GraphElement,
+graphpattern_Association_strategy = st.builds(
+    graphpattern_Association,
 )
-graphpattern::Association_strategy = st.builds(
-    graphpattern::Association,
+graphpattern_GraphElement_strategy = st.builds(
+    graphpattern_GraphElement,
 )
-graphpattern::Pattern_strategy = st.builds(
-    graphpattern::Pattern,
+graphpattern_Parameter_strategy = st.builds(
+    graphpattern_Parameter,
 )
-graphpattern::GraphPattern_strategy = st.builds(
-    graphpattern::GraphPattern,
+graphpattern_GraphPattern_strategy = st.builds(
+    graphpattern_GraphPattern,
 )
 
-@given(instance=graphpattern::Extendable_strategy)
+@given(instance=graphpattern_Extendable_strategy)
 @settings(max_examples=50)
-def test_graphpattern::extendable_instantiation(instance):
-    assert isinstance(instance, graphpattern::Extendable)
+def test_graphpattern_extendable_instantiation(instance):
+    assert isinstance(instance, graphpattern_Extendable)
 
-@given(instance=graphpattern::Resource_strategy)
+@given(instance=graphpattern_Resource_strategy)
 @settings(max_examples=50)
-def test_graphpattern::resource_instantiation(instance):
-    assert isinstance(instance, graphpattern::Resource)
+def test_graphpattern_resource_instantiation(instance):
+    assert isinstance(instance, graphpattern_Resource)
 
 @given(instance=ParameterBinding_strategy)
 @settings(max_examples=50)
 def test_parameterbinding_instantiation(instance):
     assert isinstance(instance, ParameterBinding)
 
-@given(instance=graphpattern::ValueBinding_strategy)
+@given(instance=graphpattern_ValueBinding_strategy)
 @settings(max_examples=50)
-def test_graphpattern::valuebinding_instantiation(instance):
-    assert isinstance(instance, graphpattern::ValueBinding)
-
-@given(instance=graphpattern::ValueBinding_strategy)
-def test_graphpattern::valuebinding_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_graphpattern_valuebinding_instantiation(instance):
+    assert isinstance(instance, graphpattern_ValueBinding)
 
 
-@given(instance=graphpattern::ValueBinding_strategy)
-def test_graphpattern::valuebinding_value_setter(instance):
+
+@given(instance=graphpattern_ValueBinding_strategy)
+def test_graphpattern_valuebinding_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=graphpattern::ObjectBinding_strategy)
+@given(instance=graphpattern_ObjectBinding_strategy)
 @settings(max_examples=50)
-def test_graphpattern::objectbinding_instantiation(instance):
-    assert isinstance(instance, graphpattern::ObjectBinding)
+def test_graphpattern_objectbinding_instantiation(instance):
+    assert isinstance(instance, graphpattern_ObjectBinding)
 
-@given(instance=graphpattern::ParameterBinding_strategy)
+@given(instance=graphpattern_ParameterBinding_strategy)
 @settings(max_examples=50)
-def test_graphpattern::parameterbinding_instantiation(instance):
-    assert isinstance(instance, graphpattern::ParameterBinding)
+def test_graphpattern_parameterbinding_instantiation(instance):
+    assert isinstance(instance, graphpattern_ParameterBinding)
 
-@given(instance=graphpattern::Stereotype_strategy)
+@given(instance=graphpattern_Stereotype_strategy)
 @settings(max_examples=50)
-def test_graphpattern::stereotype_instantiation(instance):
-    assert isinstance(instance, graphpattern::Stereotype)
-
-@given(instance=graphpattern::Stereotype_strategy)
-def test_graphpattern::stereotype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphpattern_stereotype_instantiation(instance):
+    assert isinstance(instance, graphpattern_Stereotype)
 
 
-@given(instance=graphpattern::Stereotype_strategy)
-def test_graphpattern::stereotype_name_setter(instance):
+
+@given(instance=graphpattern_Stereotype_strategy)
+def test_graphpattern_stereotype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphpattern::DependencyEdge_strategy)
+@given(instance=graphpattern_DependencyEdge_strategy)
 @settings(max_examples=50)
-def test_graphpattern::dependencyedge_instantiation(instance):
-    assert isinstance(instance, graphpattern::DependencyEdge)
+def test_graphpattern_dependencyedge_instantiation(instance):
+    assert isinstance(instance, graphpattern_DependencyEdge)
 
-@given(instance=graphpattern::DependencyNode_strategy)
+@given(instance=graphpattern_DependencyNode_strategy)
 @settings(max_examples=50)
-def test_graphpattern::dependencynode_instantiation(instance):
-    assert isinstance(instance, graphpattern::DependencyNode)
+def test_graphpattern_dependencynode_instantiation(instance):
+    assert isinstance(instance, graphpattern_DependencyNode)
 
-@given(instance=graphpattern::EObjectList_strategy)
+@given(instance=graphpattern_EObjectList_strategy)
 @settings(max_examples=50)
-def test_graphpattern::eobjectlist_instantiation(instance):
-    assert isinstance(instance, graphpattern::EObjectList)
-
-@given(instance=graphpattern::EObjectList_strategy)
-def test_graphpattern::eobjectlist_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_graphpattern_eobjectlist_instantiation(instance):
+    assert isinstance(instance, graphpattern_EObjectList)
 
 
-@given(instance=graphpattern::EObjectList_strategy)
-def test_graphpattern::eobjectlist_label_setter(instance):
+
+@given(instance=graphpattern_EObjectList_strategy)
+def test_graphpattern_eobjectlist_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -857,72 +848,57 @@ def test_graphpattern::eobjectlist_label_setter(instance):
 def test_extendable_instantiation(instance):
     assert isinstance(instance, Extendable)
 
-@given(instance=graphpattern::PatternElement_strategy)
+@given(instance=graphpattern_PatternElement_strategy)
 @settings(max_examples=50)
-def test_graphpattern::patternelement_instantiation(instance):
-    assert isinstance(instance, graphpattern::PatternElement)
-
-@given(instance=graphpattern::PatternElement_strategy)
-def test_graphpattern::patternelement_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_graphpattern_patternelement_instantiation(instance):
+    assert isinstance(instance, graphpattern_PatternElement)
 
 
-@given(instance=graphpattern::PatternElement_strategy)
-def test_graphpattern::patternelement_description_setter(instance):
+
+@given(instance=graphpattern_PatternElement_strategy)
+def test_graphpattern_patternelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=graphpattern_PatternElement_strategy)
+def test_graphpattern_patternelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=graphpattern::PatternElement_strategy)
-def test_graphpattern::patternelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=graphpattern_Assignment_strategy)
+@settings(max_examples=50)
+def test_graphpattern_assignment_instantiation(instance):
+    assert isinstance(instance, graphpattern_Assignment)
+
+@given(instance=graphpattern_Profile_strategy)
+@settings(max_examples=50)
+def test_graphpattern_profile_instantiation(instance):
+    assert isinstance(instance, graphpattern_Profile)
 
 
-@given(instance=graphpattern::PatternElement_strategy)
-def test_graphpattern::patternelement_name_setter(instance):
+
+@given(instance=graphpattern_Profile_strategy)
+def test_graphpattern_profile_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphpattern::Assignment_strategy)
-@settings(max_examples=50)
-def test_graphpattern::assignment_instantiation(instance):
-    assert isinstance(instance, graphpattern::Assignment)
-
-@given(instance=graphpattern::Profile_strategy)
-@settings(max_examples=50)
-def test_graphpattern::profile_instantiation(instance):
-    assert isinstance(instance, graphpattern::Profile)
-
-@given(instance=graphpattern::Profile_strategy)
-def test_graphpattern::profile_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=graphpattern::Profile_strategy)
-def test_graphpattern::profile_id_setter(instance):
+@given(instance=graphpattern_Profile_strategy)
+def test_graphpattern_profile_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=graphpattern::Profile_strategy)
-def test_graphpattern::profile_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=graphpattern::Profile_strategy)
-def test_graphpattern::profile_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=graphpattern::Profile_strategy)
-def test_graphpattern::profile_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=graphpattern::Profile_strategy)
-def test_graphpattern::profile_description_setter(instance):
+@given(instance=graphpattern_Profile_strategy)
+def test_graphpattern_profile_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -932,35 +908,35 @@ def test_graphpattern::profile_description_setter(instance):
 def test_pattern_instantiation(instance):
     assert isinstance(instance, Pattern)
 
-@given(instance=graphpattern::Bundle_strategy)
+@given(instance=graphpattern_Bundle_strategy)
 @settings(max_examples=50)
-def test_graphpattern::bundle_instantiation(instance):
-    assert isinstance(instance, graphpattern::Bundle)
+def test_graphpattern_bundle_instantiation(instance):
+    assert isinstance(instance, graphpattern_Bundle)
 
-@given(instance=graphpattern::EObject_strategy)
+@given(instance=graphpattern_EObject_strategy)
 @settings(max_examples=50)
-def test_graphpattern::eobject_instantiation(instance):
-    assert isinstance(instance, graphpattern::EObject)
+def test_graphpattern_eobject_instantiation(instance):
+    assert isinstance(instance, graphpattern_EObject)
 
-@given(instance=graphpattern::EAttribute_strategy)
+@given(instance=graphpattern_EAttribute_strategy)
 @settings(max_examples=50)
-def test_graphpattern::eattribute_instantiation(instance):
-    assert isinstance(instance, graphpattern::EAttribute)
+def test_graphpattern_eattribute_instantiation(instance):
+    assert isinstance(instance, graphpattern_EAttribute)
 
-@given(instance=graphpattern::EReference_strategy)
+@given(instance=graphpattern_EReference_strategy)
 @settings(max_examples=50)
-def test_graphpattern::ereference_instantiation(instance):
-    assert isinstance(instance, graphpattern::EReference)
+def test_graphpattern_ereference_instantiation(instance):
+    assert isinstance(instance, graphpattern_EReference)
 
-@given(instance=graphpattern::EPackage_strategy)
+@given(instance=graphpattern_EPackage_strategy)
 @settings(max_examples=50)
-def test_graphpattern::epackage_instantiation(instance):
-    assert isinstance(instance, graphpattern::EPackage)
+def test_graphpattern_epackage_instantiation(instance):
+    assert isinstance(instance, graphpattern_EPackage)
 
-@given(instance=graphpattern::Matching_strategy)
+@given(instance=graphpattern_Matching_strategy)
 @settings(max_examples=50)
-def test_graphpattern::matching_instantiation(instance):
-    assert isinstance(instance, graphpattern::Matching)
+def test_graphpattern_matching_instantiation(instance):
+    assert isinstance(instance, graphpattern_Matching)
 
 import warnings
 import copy
@@ -968,38 +944,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::Matching_strategy)
+@given(instance=graphpattern_Matching_strategy)
 @settings(max_examples=30)
-def test_graphpattern::matching_iterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.iterator()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.iterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'iterator' in graphpattern::Matching is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'iterator' in graphpattern::Matching did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'iterator' in graphpattern::Matching is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphpattern::Matching_strategy)
-@settings(max_examples=30)
-def test_graphpattern::matching_contains_changes_state(instance):
+def test_graphpattern_matching_contains_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1013,14 +960,14 @@ def test_graphpattern::matching_contains_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'contains' in graphpattern::Matching is empty"
+        assert has_statements, f"Function 'contains' in graphpattern_Matching is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'contains' in graphpattern::Matching did not change state; check implementation")
+            warnings.warn(f"Operation 'contains' in graphpattern_Matching did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'contains' in graphpattern::Matching is not implemented or raised an error")
+        warnings.warn(f"Operation 'contains' in graphpattern_Matching is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1028,9 +975,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::Matching_strategy)
+@given(instance=graphpattern_Matching_strategy)
 @settings(max_examples=30)
-def test_graphpattern::matching_add_changes_state(instance):
+def test_graphpattern_matching_add_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1044,14 +991,14 @@ def test_graphpattern::matching_add_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in graphpattern::Matching is empty"
+        assert has_statements, f"Function 'add' in graphpattern_Matching is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in graphpattern::Matching did not change state; check implementation")
+            warnings.warn(f"Operation 'add' in graphpattern_Matching did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in graphpattern::Matching is not implemented or raised an error")
+        warnings.warn(f"Operation 'add' in graphpattern_Matching is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1059,9 +1006,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::Matching_strategy)
+@given(instance=graphpattern_Matching_strategy)
 @settings(max_examples=30)
-def test_graphpattern::matching_remove_changes_state(instance):
+def test_graphpattern_matching_size_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.size()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.size).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'size' in graphpattern_Matching is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'size' in graphpattern_Matching did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'size' in graphpattern_Matching is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphpattern_Matching_strategy)
+@settings(max_examples=30)
+def test_graphpattern_matching_remove_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1075,14 +1051,14 @@ def test_graphpattern::matching_remove_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in graphpattern::Matching is empty"
+        assert has_statements, f"Function 'remove' in graphpattern_Matching is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in graphpattern::Matching did not change state; check implementation")
+            warnings.warn(f"Operation 'remove' in graphpattern_Matching did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in graphpattern::Matching is not implemented or raised an error")
+        warnings.warn(f"Operation 'remove' in graphpattern_Matching is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1090,9 +1066,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::Matching_strategy)
+@given(instance=graphpattern_Matching_strategy)
 @settings(max_examples=30)
-def test_graphpattern::matching_clear_changes_state(instance):
+def test_graphpattern_matching_iterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.iterator()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.iterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'iterator' in graphpattern_Matching is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'iterator' in graphpattern_Matching did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'iterator' in graphpattern_Matching is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphpattern_Matching_strategy)
+@settings(max_examples=30)
+def test_graphpattern_matching_clear_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1104,14 +1109,14 @@ def test_graphpattern::matching_clear_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clear' in graphpattern::Matching is empty"
+        assert has_statements, f"Function 'clear' in graphpattern_Matching is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clear' in graphpattern::Matching did not change state; check implementation")
+            warnings.warn(f"Operation 'clear' in graphpattern_Matching did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clear' in graphpattern::Matching is not implemented or raised an error")
+        warnings.warn(f"Operation 'clear' in graphpattern_Matching is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1119,9 +1124,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::Matching_strategy)
+@given(instance=graphpattern_Matching_strategy)
 @settings(max_examples=30)
-def test_graphpattern::matching_isempty_changes_state(instance):
+def test_graphpattern_matching_isempty_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1133,93 +1138,55 @@ def test_graphpattern::matching_isempty_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEmpty' in graphpattern::Matching is empty"
+        assert has_statements, f"Function 'isEmpty' in graphpattern_Matching is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEmpty' in graphpattern::Matching did not change state; check implementation")
+            warnings.warn(f"Operation 'isEmpty' in graphpattern_Matching did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEmpty' in graphpattern::Matching is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEmpty' in graphpattern_Matching is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphpattern::Matching_strategy)
-@settings(max_examples=30)
-def test_graphpattern::matching_size_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.size()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.size).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'size' in graphpattern::Matching is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'size' in graphpattern::Matching did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'size' in graphpattern::Matching is not implemented or raised an error")
-
-@given(instance=graphpattern::EClass_strategy)
+@given(instance=graphpattern_EClass_strategy)
 @settings(max_examples=50)
-def test_graphpattern::eclass_instantiation(instance):
-    assert isinstance(instance, graphpattern::EClass)
+def test_graphpattern_eclass_instantiation(instance):
+    assert isinstance(instance, graphpattern_EClass)
 
 @given(instance=GraphElement_strategy)
 @settings(max_examples=50)
 def test_graphelement_instantiation(instance):
     assert isinstance(instance, GraphElement)
 
-@given(instance=graphpattern::EdgePattern_strategy)
+@given(instance=graphpattern_EdgePattern_strategy)
 @settings(max_examples=50)
-def test_graphpattern::edgepattern_instantiation(instance):
-    assert isinstance(instance, graphpattern::EdgePattern)
+def test_graphpattern_edgepattern_instantiation(instance):
+    assert isinstance(instance, graphpattern_EdgePattern)
 
-@given(instance=graphpattern::AttributePattern_strategy)
+@given(instance=graphpattern_AttributePattern_strategy)
 @settings(max_examples=50)
-def test_graphpattern::attributepattern_instantiation(instance):
-    assert isinstance(instance, graphpattern::AttributePattern)
-
-@given(instance=graphpattern::AttributePattern_strategy)
-def test_graphpattern::attributepattern_variables_type(instance):
-    assert isinstance(instance.variables, str)
+def test_graphpattern_attributepattern_instantiation(instance):
+    assert isinstance(instance, graphpattern_AttributePattern)
 
 
-@given(instance=graphpattern::AttributePattern_strategy)
-def test_graphpattern::attributepattern_variables_setter(instance):
+
+@given(instance=graphpattern_AttributePattern_strategy)
+def test_graphpattern_attributepattern_variables_setter(instance):
     original = instance.variables
     instance.variables = original
     assert instance.variables == original
 
-@given(instance=graphpattern::AttributePattern_strategy)
-def test_graphpattern::attributepattern_constant_type(instance):
-    assert isinstance(instance.constant, str)
 
 
-@given(instance=graphpattern::AttributePattern_strategy)
-def test_graphpattern::attributepattern_constant_setter(instance):
+@given(instance=graphpattern_AttributePattern_strategy)
+def test_graphpattern_attributepattern_constant_setter(instance):
     original = instance.constant
     instance.constant = original
     assert instance.constant == original
 
-@given(instance=graphpattern::AttributePattern_strategy)
-def test_graphpattern::attributepattern_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=graphpattern::AttributePattern_strategy)
-def test_graphpattern::attributepattern_value_setter(instance):
+@given(instance=graphpattern_AttributePattern_strategy)
+def test_graphpattern_attributepattern_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1230,9 +1197,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::AttributePattern_strategy)
+@given(instance=graphpattern_AttributePattern_strategy)
 @settings(max_examples=30)
-def test_graphpattern::attributepattern_isexpression_changes_state(instance):
+def test_graphpattern_attributepattern_isexpression_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1244,14 +1211,14 @@ def test_graphpattern::attributepattern_isexpression_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExpression' in graphpattern::AttributePattern is empty"
+        assert has_statements, f"Function 'isExpression' in graphpattern_AttributePattern is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExpression' in graphpattern::AttributePattern did not change state; check implementation")
+            warnings.warn(f"Operation 'isExpression' in graphpattern_AttributePattern did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExpression' in graphpattern::AttributePattern is not implemented or raised an error")
+        warnings.warn(f"Operation 'isExpression' in graphpattern_AttributePattern is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1259,38 +1226,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::AttributePattern_strategy)
+@given(instance=graphpattern_AttributePattern_strategy)
 @settings(max_examples=30)
-def test_graphpattern::attributepattern_isconstant_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isConstant()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isConstant).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isConstant' in graphpattern::AttributePattern is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isConstant' in graphpattern::AttributePattern did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isConstant' in graphpattern::AttributePattern is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphpattern::AttributePattern_strategy)
-@settings(max_examples=30)
-def test_graphpattern::attributepattern_isvariable_changes_state(instance):
+def test_graphpattern_attributepattern_isvariable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1302,24 +1240,14 @@ def test_graphpattern::attributepattern_isvariable_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isVariable' in graphpattern::AttributePattern is empty"
+        assert has_statements, f"Function 'isVariable' in graphpattern_AttributePattern is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isVariable' in graphpattern::AttributePattern did not change state; check implementation")
+            warnings.warn(f"Operation 'isVariable' in graphpattern_AttributePattern did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isVariable' in graphpattern::AttributePattern is not implemented or raised an error")
-
-@given(instance=graphpattern::DependencyGraph_strategy)
-@settings(max_examples=50)
-def test_graphpattern::dependencygraph_instantiation(instance):
-    assert isinstance(instance, graphpattern::DependencyGraph)
-
-@given(instance=graphpattern::NodePattern_strategy)
-@settings(max_examples=50)
-def test_graphpattern::nodepattern_instantiation(instance):
-    assert isinstance(instance, graphpattern::NodePattern)
+        warnings.warn(f"Operation 'isVariable' in graphpattern_AttributePattern is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1327,9 +1255,48 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphpattern::NodePattern_strategy)
+@given(instance=graphpattern_AttributePattern_strategy)
 @settings(max_examples=30)
-def test_graphpattern::nodepattern_removeincident_changes_state(instance):
+def test_graphpattern_attributepattern_isconstant_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isConstant()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isConstant).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isConstant' in graphpattern_AttributePattern is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isConstant' in graphpattern_AttributePattern did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isConstant' in graphpattern_AttributePattern is not implemented or raised an error")
+
+@given(instance=graphpattern_DependencyGraph_strategy)
+@settings(max_examples=50)
+def test_graphpattern_dependencygraph_instantiation(instance):
+    assert isinstance(instance, graphpattern_DependencyGraph)
+
+@given(instance=graphpattern_NodePattern_strategy)
+@settings(max_examples=50)
+def test_graphpattern_nodepattern_instantiation(instance):
+    assert isinstance(instance, graphpattern_NodePattern)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphpattern_NodePattern_strategy)
+@settings(max_examples=30)
+def test_graphpattern_nodepattern_removeincident_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1343,46 +1310,46 @@ def test_graphpattern::nodepattern_removeincident_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeIncident' in graphpattern::NodePattern is empty"
+        assert has_statements, f"Function 'removeIncident' in graphpattern_NodePattern is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeIncident' in graphpattern::NodePattern did not change state; check implementation")
+            warnings.warn(f"Operation 'removeIncident' in graphpattern_NodePattern did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeIncident' in graphpattern::NodePattern is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeIncident' in graphpattern_NodePattern is not implemented or raised an error")
 
 @given(instance=PatternElement_strategy)
 @settings(max_examples=50)
 def test_patternelement_instantiation(instance):
     assert isinstance(instance, PatternElement)
 
-@given(instance=graphpattern::Parameter_strategy)
+@given(instance=graphpattern_SubGraph_strategy)
 @settings(max_examples=50)
-def test_graphpattern::parameter_instantiation(instance):
-    assert isinstance(instance, graphpattern::Parameter)
+def test_graphpattern_subgraph_instantiation(instance):
+    assert isinstance(instance, graphpattern_SubGraph)
 
-@given(instance=graphpattern::SubGraph_strategy)
+@given(instance=graphpattern_Pattern_strategy)
 @settings(max_examples=50)
-def test_graphpattern::subgraph_instantiation(instance):
-    assert isinstance(instance, graphpattern::SubGraph)
+def test_graphpattern_pattern_instantiation(instance):
+    assert isinstance(instance, graphpattern_Pattern)
 
-@given(instance=graphpattern::GraphElement_strategy)
+@given(instance=graphpattern_Association_strategy)
 @settings(max_examples=50)
-def test_graphpattern::graphelement_instantiation(instance):
-    assert isinstance(instance, graphpattern::GraphElement)
+def test_graphpattern_association_instantiation(instance):
+    assert isinstance(instance, graphpattern_Association)
 
-@given(instance=graphpattern::Association_strategy)
+@given(instance=graphpattern_GraphElement_strategy)
 @settings(max_examples=50)
-def test_graphpattern::association_instantiation(instance):
-    assert isinstance(instance, graphpattern::Association)
+def test_graphpattern_graphelement_instantiation(instance):
+    assert isinstance(instance, graphpattern_GraphElement)
 
-@given(instance=graphpattern::Pattern_strategy)
+@given(instance=graphpattern_Parameter_strategy)
 @settings(max_examples=50)
-def test_graphpattern::pattern_instantiation(instance):
-    assert isinstance(instance, graphpattern::Pattern)
+def test_graphpattern_parameter_instantiation(instance):
+    assert isinstance(instance, graphpattern_Parameter)
 
-@given(instance=graphpattern::GraphPattern_strategy)
+@given(instance=graphpattern_GraphPattern_strategy)
 @settings(max_examples=50)
-def test_graphpattern::graphpattern_instantiation(instance):
-    assert isinstance(instance, graphpattern::GraphPattern)
+def test_graphpattern_graphpattern_instantiation(instance):
+    assert isinstance(instance, graphpattern_GraphPattern)

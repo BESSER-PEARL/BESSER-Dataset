@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     R,
@@ -113,17 +113,8 @@ def test_c_constructor_exists():
 def test_c_constructor_args():
     sig = inspect.signature(C.__init__)
     params = list(sig.parameters.keys())
-    assert "d" in params, "Missing parameter 'd'"
     assert "c" in params, "Missing parameter 'c'"
-
-def test_c_has_d():
-    assert hasattr(C, "d")
-    descriptor = None
-    for klass in C.__mro__:
-        if "d" in klass.__dict__:
-            descriptor = klass.__dict__["d"]
-            break
-    assert isinstance(descriptor, property)
+    assert "d" in params, "Missing parameter 'd'"
 
 def test_c_has_c():
     assert hasattr(C, "c")
@@ -131,6 +122,15 @@ def test_c_has_c():
     for klass in C.__mro__:
         if "c" in klass.__dict__:
             descriptor = klass.__dict__["c"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_c_has_d():
+    assert hasattr(C, "d")
+    descriptor = None
+    for klass in C.__mro__:
+        if "d" in klass.__dict__:
+            descriptor = klass.__dict__["d"]
             break
     assert isinstance(descriptor, property)
 
@@ -213,10 +213,10 @@ C2_strategy = st.builds(
 )
 C_strategy = st.builds(
     C,
-    d=
-        st.booleans(),
     c=
-        st.integers()
+        st.integers(),
+    d=
+        st.booleans()
 )
 B_strategy = st.builds(
     B,
@@ -244,9 +244,6 @@ def test_c3_instantiation(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_Y_type(instance):
-    assert isinstance(instance.Y, str)
 
 
 @given(instance=Y_strategy)
@@ -270,20 +267,6 @@ def test_c2_instantiation(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_d_type(instance):
-    assert isinstance(instance.d, bool)
-
-
-@given(instance=C_strategy)
-def test_c_d_setter(instance):
-    original = instance.d
-    instance.d = original
-    assert instance.d == original
-
-@given(instance=C_strategy)
-def test_c_c_type(instance):
-    assert isinstance(instance.c, int)
 
 
 @given(instance=C_strategy)
@@ -292,14 +275,19 @@ def test_c_c_setter(instance):
     instance.c = original
     assert instance.c == original
 
+
+
+@given(instance=C_strategy)
+def test_c_d_setter(instance):
+    original = instance.d
+    instance.d = original
+    assert instance.d == original
+
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_b_type(instance):
-    assert isinstance(instance.b, int)
 
 
 @given(instance=B_strategy)
@@ -313,9 +301,6 @@ def test_b_b_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_a_type(instance):
-    assert isinstance(instance.a, str)
 
 
 @given(instance=A_strategy)

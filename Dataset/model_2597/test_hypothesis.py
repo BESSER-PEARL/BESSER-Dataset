@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    LazyRuleInheritanceTest::ClassA,
-    LazyRuleInheritanceTest::subpackage::ClassB,
+from python_code import (
+    LazyRuleInheritanceTest_ClassA,
+    LazyRuleInheritanceTest_subpackage_ClassB,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_lazyruleinheritancetest::classa_is_not_abstract():
-    assert not inspect.isabstract(LazyRuleInheritanceTest::ClassA)
+def test_lazyruleinheritancetest_classa_is_not_abstract():
+    assert not inspect.isabstract(LazyRuleInheritanceTest_ClassA)
 
 
-def test_lazyruleinheritancetest::classa_constructor_exists():
-    assert callable(LazyRuleInheritanceTest::ClassA.__init__)
+def test_lazyruleinheritancetest_classa_constructor_exists():
+    assert callable(LazyRuleInheritanceTest_ClassA.__init__)
 
 
-def test_lazyruleinheritancetest::classa_constructor_args():
-    sig = inspect.signature(LazyRuleInheritanceTest::ClassA.__init__)
+def test_lazyruleinheritancetest_classa_constructor_args():
+    sig = inspect.signature(LazyRuleInheritanceTest_ClassA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lazyruleinheritancetest::subpackage::classb_is_not_abstract():
-    assert not inspect.isabstract(LazyRuleInheritanceTest::subpackage::ClassB)
+def test_lazyruleinheritancetest_subpackage_classb_is_not_abstract():
+    assert not inspect.isabstract(LazyRuleInheritanceTest_subpackage_ClassB)
 
 
-def test_lazyruleinheritancetest::subpackage::classb_constructor_exists():
-    assert callable(LazyRuleInheritanceTest::subpackage::ClassB.__init__)
+def test_lazyruleinheritancetest_subpackage_classb_constructor_exists():
+    assert callable(LazyRuleInheritanceTest_subpackage_ClassB.__init__)
 
 
-def test_lazyruleinheritancetest::subpackage::classb_constructor_args():
-    sig = inspect.signature(LazyRuleInheritanceTest::subpackage::ClassB.__init__)
+def test_lazyruleinheritancetest_subpackage_classb_constructor_args():
+    sig = inspect.signature(LazyRuleInheritanceTest_subpackage_ClassB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-LazyRuleInheritanceTest::ClassA_strategy = st.builds(
-    LazyRuleInheritanceTest::ClassA,
+LazyRuleInheritanceTest_ClassA_strategy = st.builds(
+    LazyRuleInheritanceTest_ClassA,
 )
-LazyRuleInheritanceTest::subpackage::ClassB_strategy = st.builds(
-    LazyRuleInheritanceTest::subpackage::ClassB,
+LazyRuleInheritanceTest_subpackage_ClassB_strategy = st.builds(
+    LazyRuleInheritanceTest_subpackage_ClassB,
 )
 
-@given(instance=LazyRuleInheritanceTest::ClassA_strategy)
+@given(instance=LazyRuleInheritanceTest_ClassA_strategy)
 @settings(max_examples=50)
-def test_lazyruleinheritancetest::classa_instantiation(instance):
-    assert isinstance(instance, LazyRuleInheritanceTest::ClassA)
+def test_lazyruleinheritancetest_classa_instantiation(instance):
+    assert isinstance(instance, LazyRuleInheritanceTest_ClassA)
 
-@given(instance=LazyRuleInheritanceTest::subpackage::ClassB_strategy)
+@given(instance=LazyRuleInheritanceTest_subpackage_ClassB_strategy)
 @settings(max_examples=50)
-def test_lazyruleinheritancetest::subpackage::classb_instantiation(instance):
-    assert isinstance(instance, LazyRuleInheritanceTest::subpackage::ClassB)
+def test_lazyruleinheritancetest_subpackage_classb_instantiation(instance):
+    assert isinstance(instance, LazyRuleInheritanceTest_subpackage_ClassB)

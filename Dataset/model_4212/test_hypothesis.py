@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testFramework::TABLEACTION,
-    testFramework::FIRSTACTION,
-    testFramework::Greeting,
-    testFramework::Model,
-    testFramework::LABEL,
-    testFramework::IDENTIFIER,
+from python_code import (
+    testFramework_TABLEACTION,
+    testFramework_FIRSTACTION,
+    testFramework_Greeting,
+    testFramework_Model,
+    testFramework_LABEL,
+    testFramework_IDENTIFIER,
 )
 
 # =============================================================================
@@ -20,37 +20,37 @@ from classes import (
 
 
 
-def test_testframework::tableaction_is_not_abstract():
-    assert not inspect.isabstract(testFramework::TABLEACTION)
+def test_testframework_tableaction_is_not_abstract():
+    assert not inspect.isabstract(testFramework_TABLEACTION)
 
 
-def test_testframework::tableaction_constructor_exists():
-    assert callable(testFramework::TABLEACTION.__init__)
+def test_testframework_tableaction_constructor_exists():
+    assert callable(testFramework_TABLEACTION.__init__)
 
 
-def test_testframework::tableaction_constructor_args():
-    sig = inspect.signature(testFramework::TABLEACTION.__init__)
+def test_testframework_tableaction_constructor_args():
+    sig = inspect.signature(testFramework_TABLEACTION.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testframework::firstaction_is_not_abstract():
-    assert not inspect.isabstract(testFramework::FIRSTACTION)
+def test_testframework_firstaction_is_not_abstract():
+    assert not inspect.isabstract(testFramework_FIRSTACTION)
 
 
-def test_testframework::firstaction_constructor_exists():
-    assert callable(testFramework::FIRSTACTION.__init__)
+def test_testframework_firstaction_constructor_exists():
+    assert callable(testFramework_FIRSTACTION.__init__)
 
 
-def test_testframework::firstaction_constructor_args():
-    sig = inspect.signature(testFramework::FIRSTACTION.__init__)
+def test_testframework_firstaction_constructor_args():
+    sig = inspect.signature(testFramework_FIRSTACTION.__init__)
     params = list(sig.parameters.keys())
     assert "checktableAction" in params, "Missing parameter 'checktableAction'"
 
-def test_testframework::firstaction_has_checktableAction():
-    assert hasattr(testFramework::FIRSTACTION, "checktableAction")
+def test_testframework_firstaction_has_checktableAction():
+    assert hasattr(testFramework_FIRSTACTION, "checktableAction")
     descriptor = None
-    for klass in testFramework::FIRSTACTION.__mro__:
+    for klass in testFramework_FIRSTACTION.__mro__:
         if "checktableAction" in klass.__dict__:
             descriptor = klass.__dict__["checktableAction"]
             break
@@ -58,33 +58,33 @@ def test_testframework::firstaction_has_checktableAction():
 
 
 
-def test_testframework::greeting_is_not_abstract():
-    assert not inspect.isabstract(testFramework::Greeting)
+def test_testframework_greeting_is_not_abstract():
+    assert not inspect.isabstract(testFramework_Greeting)
 
 
-def test_testframework::greeting_constructor_exists():
-    assert callable(testFramework::Greeting.__init__)
+def test_testframework_greeting_constructor_exists():
+    assert callable(testFramework_Greeting.__init__)
 
 
-def test_testframework::greeting_constructor_args():
-    sig = inspect.signature(testFramework::Greeting.__init__)
+def test_testframework_greeting_constructor_args():
+    sig = inspect.signature(testFramework_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "summaryDetails" in params, "Missing parameter 'summaryDetails'"
     assert "testcaseValue" in params, "Missing parameter 'testcaseValue'"
 
-def test_testframework::greeting_has_summaryDetails():
-    assert hasattr(testFramework::Greeting, "summaryDetails")
+def test_testframework_greeting_has_summaryDetails():
+    assert hasattr(testFramework_Greeting, "summaryDetails")
     descriptor = None
-    for klass in testFramework::Greeting.__mro__:
+    for klass in testFramework_Greeting.__mro__:
         if "summaryDetails" in klass.__dict__:
             descriptor = klass.__dict__["summaryDetails"]
             break
     assert isinstance(descriptor, property)
 
-def test_testframework::greeting_has_testcaseValue():
-    assert hasattr(testFramework::Greeting, "testcaseValue")
+def test_testframework_greeting_has_testcaseValue():
+    assert hasattr(testFramework_Greeting, "testcaseValue")
     descriptor = None
-    for klass in testFramework::Greeting.__mro__:
+    for klass in testFramework_Greeting.__mro__:
         if "testcaseValue" in klass.__dict__:
             descriptor = klass.__dict__["testcaseValue"]
             break
@@ -92,37 +92,37 @@ def test_testframework::greeting_has_testcaseValue():
 
 
 
-def test_testframework::model_is_not_abstract():
-    assert not inspect.isabstract(testFramework::Model)
+def test_testframework_model_is_not_abstract():
+    assert not inspect.isabstract(testFramework_Model)
 
 
-def test_testframework::model_constructor_exists():
-    assert callable(testFramework::Model.__init__)
+def test_testframework_model_constructor_exists():
+    assert callable(testFramework_Model.__init__)
 
 
-def test_testframework::model_constructor_args():
-    sig = inspect.signature(testFramework::Model.__init__)
+def test_testframework_model_constructor_args():
+    sig = inspect.signature(testFramework_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testframework::label_is_not_abstract():
-    assert not inspect.isabstract(testFramework::LABEL)
+def test_testframework_label_is_not_abstract():
+    assert not inspect.isabstract(testFramework_LABEL)
 
 
-def test_testframework::label_constructor_exists():
-    assert callable(testFramework::LABEL.__init__)
+def test_testframework_label_constructor_exists():
+    assert callable(testFramework_LABEL.__init__)
 
 
-def test_testframework::label_constructor_args():
-    sig = inspect.signature(testFramework::LABEL.__init__)
+def test_testframework_label_constructor_args():
+    sig = inspect.signature(testFramework_LABEL.__init__)
     params = list(sig.parameters.keys())
     assert "labelvalue" in params, "Missing parameter 'labelvalue'"
 
-def test_testframework::label_has_labelvalue():
-    assert hasattr(testFramework::LABEL, "labelvalue")
+def test_testframework_label_has_labelvalue():
+    assert hasattr(testFramework_LABEL, "labelvalue")
     descriptor = None
-    for klass in testFramework::LABEL.__mro__:
+    for klass in testFramework_LABEL.__mro__:
         if "labelvalue" in klass.__dict__:
             descriptor = klass.__dict__["labelvalue"]
             break
@@ -130,23 +130,23 @@ def test_testframework::label_has_labelvalue():
 
 
 
-def test_testframework::identifier_is_not_abstract():
-    assert not inspect.isabstract(testFramework::IDENTIFIER)
+def test_testframework_identifier_is_not_abstract():
+    assert not inspect.isabstract(testFramework_IDENTIFIER)
 
 
-def test_testframework::identifier_constructor_exists():
-    assert callable(testFramework::IDENTIFIER.__init__)
+def test_testframework_identifier_constructor_exists():
+    assert callable(testFramework_IDENTIFIER.__init__)
 
 
-def test_testframework::identifier_constructor_args():
-    sig = inspect.signature(testFramework::IDENTIFIER.__init__)
+def test_testframework_identifier_constructor_args():
+    sig = inspect.signature(testFramework_IDENTIFIER.__init__)
     params = list(sig.parameters.keys())
     assert "identifiervalue" in params, "Missing parameter 'identifiervalue'"
 
-def test_testframework::identifier_has_identifiervalue():
-    assert hasattr(testFramework::IDENTIFIER, "identifiervalue")
+def test_testframework_identifier_has_identifiervalue():
+    assert hasattr(testFramework_IDENTIFIER, "identifiervalue")
     descriptor = None
-    for klass in testFramework::IDENTIFIER.__mro__:
+    for klass in testFramework_IDENTIFIER.__mro__:
         if "identifiervalue" in klass.__dict__:
             descriptor = klass.__dict__["identifiervalue"]
             break
@@ -164,116 +164,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testFramework::TABLEACTION_strategy = st.builds(
-    testFramework::TABLEACTION,
+testFramework_TABLEACTION_strategy = st.builds(
+    testFramework_TABLEACTION,
 )
-testFramework::FIRSTACTION_strategy = st.builds(
-    testFramework::FIRSTACTION,
+testFramework_FIRSTACTION_strategy = st.builds(
+    testFramework_FIRSTACTION,
     checktableAction=
         safe_text
 )
-testFramework::Greeting_strategy = st.builds(
-    testFramework::Greeting,
+testFramework_Greeting_strategy = st.builds(
+    testFramework_Greeting,
     summaryDetails=
         safe_text,
     testcaseValue=
         st.integers()
 )
-testFramework::Model_strategy = st.builds(
-    testFramework::Model,
+testFramework_Model_strategy = st.builds(
+    testFramework_Model,
 )
-testFramework::LABEL_strategy = st.builds(
-    testFramework::LABEL,
+testFramework_LABEL_strategy = st.builds(
+    testFramework_LABEL,
     labelvalue=
         safe_text
 )
-testFramework::IDENTIFIER_strategy = st.builds(
-    testFramework::IDENTIFIER,
+testFramework_IDENTIFIER_strategy = st.builds(
+    testFramework_IDENTIFIER,
     identifiervalue=
         safe_text
 )
 
-@given(instance=testFramework::TABLEACTION_strategy)
+@given(instance=testFramework_TABLEACTION_strategy)
 @settings(max_examples=50)
-def test_testframework::tableaction_instantiation(instance):
-    assert isinstance(instance, testFramework::TABLEACTION)
+def test_testframework_tableaction_instantiation(instance):
+    assert isinstance(instance, testFramework_TABLEACTION)
 
-@given(instance=testFramework::FIRSTACTION_strategy)
+@given(instance=testFramework_FIRSTACTION_strategy)
 @settings(max_examples=50)
-def test_testframework::firstaction_instantiation(instance):
-    assert isinstance(instance, testFramework::FIRSTACTION)
-
-@given(instance=testFramework::FIRSTACTION_strategy)
-def test_testframework::firstaction_checktableAction_type(instance):
-    assert isinstance(instance.checktableAction, str)
+def test_testframework_firstaction_instantiation(instance):
+    assert isinstance(instance, testFramework_FIRSTACTION)
 
 
-@given(instance=testFramework::FIRSTACTION_strategy)
-def test_testframework::firstaction_checktableAction_setter(instance):
+
+@given(instance=testFramework_FIRSTACTION_strategy)
+def test_testframework_firstaction_checktableAction_setter(instance):
     original = instance.checktableAction
     instance.checktableAction = original
     assert instance.checktableAction == original
 
-@given(instance=testFramework::Greeting_strategy)
+@given(instance=testFramework_Greeting_strategy)
 @settings(max_examples=50)
-def test_testframework::greeting_instantiation(instance):
-    assert isinstance(instance, testFramework::Greeting)
-
-@given(instance=testFramework::Greeting_strategy)
-def test_testframework::greeting_summaryDetails_type(instance):
-    assert isinstance(instance.summaryDetails, str)
+def test_testframework_greeting_instantiation(instance):
+    assert isinstance(instance, testFramework_Greeting)
 
 
-@given(instance=testFramework::Greeting_strategy)
-def test_testframework::greeting_summaryDetails_setter(instance):
+
+@given(instance=testFramework_Greeting_strategy)
+def test_testframework_greeting_summaryDetails_setter(instance):
     original = instance.summaryDetails
     instance.summaryDetails = original
     assert instance.summaryDetails == original
 
-@given(instance=testFramework::Greeting_strategy)
-def test_testframework::greeting_testcaseValue_type(instance):
-    assert isinstance(instance.testcaseValue, int)
 
 
-@given(instance=testFramework::Greeting_strategy)
-def test_testframework::greeting_testcaseValue_setter(instance):
+@given(instance=testFramework_Greeting_strategy)
+def test_testframework_greeting_testcaseValue_setter(instance):
     original = instance.testcaseValue
     instance.testcaseValue = original
     assert instance.testcaseValue == original
 
-@given(instance=testFramework::Model_strategy)
+@given(instance=testFramework_Model_strategy)
 @settings(max_examples=50)
-def test_testframework::model_instantiation(instance):
-    assert isinstance(instance, testFramework::Model)
+def test_testframework_model_instantiation(instance):
+    assert isinstance(instance, testFramework_Model)
 
-@given(instance=testFramework::LABEL_strategy)
+@given(instance=testFramework_LABEL_strategy)
 @settings(max_examples=50)
-def test_testframework::label_instantiation(instance):
-    assert isinstance(instance, testFramework::LABEL)
-
-@given(instance=testFramework::LABEL_strategy)
-def test_testframework::label_labelvalue_type(instance):
-    assert isinstance(instance.labelvalue, str)
+def test_testframework_label_instantiation(instance):
+    assert isinstance(instance, testFramework_LABEL)
 
 
-@given(instance=testFramework::LABEL_strategy)
-def test_testframework::label_labelvalue_setter(instance):
+
+@given(instance=testFramework_LABEL_strategy)
+def test_testframework_label_labelvalue_setter(instance):
     original = instance.labelvalue
     instance.labelvalue = original
     assert instance.labelvalue == original
 
-@given(instance=testFramework::IDENTIFIER_strategy)
+@given(instance=testFramework_IDENTIFIER_strategy)
 @settings(max_examples=50)
-def test_testframework::identifier_instantiation(instance):
-    assert isinstance(instance, testFramework::IDENTIFIER)
-
-@given(instance=testFramework::IDENTIFIER_strategy)
-def test_testframework::identifier_identifiervalue_type(instance):
-    assert isinstance(instance.identifiervalue, str)
+def test_testframework_identifier_instantiation(instance):
+    assert isinstance(instance, testFramework_IDENTIFIER)
 
 
-@given(instance=testFramework::IDENTIFIER_strategy)
-def test_testframework::identifier_identifiervalue_setter(instance):
+
+@given(instance=testFramework_IDENTIFIER_strategy)
+def test_testframework_identifier_identifiervalue_setter(instance):
     original = instance.identifiervalue
     instance.identifiervalue = original
     assert instance.identifiervalue == original

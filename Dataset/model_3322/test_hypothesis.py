@@ -3,60 +3,60 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    exp::aux,
-    simpleJava::package::name::aux,
-    variable::declarator,
-    simpleJava::literal::expression,
-    simpleJava::bit::expression,
-    simpleJava::numeric::expression,
-    simpleJava::logical::expression,
-    expression::aux,
+from python_code import (
+    exp_aux,
+    simpleJava_package_name_aux,
+    variable_declarator,
+    simpleJava_literal_expression,
+    simpleJava_bit_expression,
+    simpleJava_numeric_expression,
+    simpleJava_logical_expression,
+    expression_aux,
     expression,
-    simpleJava::exp::aux,
-    simpleJava::newBlock,
-    simpleJava::type::specifier,
-    simpleJava::creating::aux,
-    simpleJava::creating::expression,
-    creating::aux,
-    simpleJava::aux,
-    simpleJava::mais::aux,
-    simpleJava::arglist,
-    simpleJava::expression::aux,
+    simpleJava_exp_aux,
+    simpleJava_newBlock,
+    simpleJava_type_specifier,
+    simpleJava_creating_aux,
+    simpleJava_creating_expression,
+    creating_aux,
+    simpleJava_aux,
+    simpleJava_mais_aux,
+    simpleJava_arglist,
+    simpleJava_expression_aux,
     newBlock,
-    simpleJava::variable::initializer,
-    simpleJava::variable::declarator,
-    simpleJava::switch::statement,
-    simpleJava::try::statement,
-    simpleJava::for::statement,
-    simpleJava::while::statement,
-    simpleJava::parameter,
-    simpleJava::statement::block,
-    simpleJava::parameter::list,
-    simpleJava::type,
-    simpleJava::static::initializer,
-    simpleJava::variable::declaration,
-    simpleJava::constructor::declaration,
-    simpleJava::method::declaration,
-    simpleJava::field::declaration,
-    simpleJava::do::statement,
-    simpleJava::if::statement,
-    simpleJava::expression,
-    simpleJava::statement,
-    simpleJava::type::declaration,
-    simpleJava::import::statement,
-    simpleJava::package::statement,
+    simpleJava_variable_initializer,
+    simpleJava_variable_declarator,
+    simpleJava_switch_statement,
+    simpleJava_try_statement,
+    simpleJava_for_statement,
+    simpleJava_while_statement,
+    simpleJava_parameter,
+    simpleJava_statement_block,
+    simpleJava_parameter_list,
+    simpleJava_type,
+    simpleJava_static_initializer,
+    simpleJava_variable_declaration,
+    simpleJava_constructor_declaration,
+    simpleJava_method_declaration,
+    simpleJava_field_declaration,
+    simpleJava_do_statement,
+    simpleJava_if_statement,
+    simpleJava_expression,
+    simpleJava_statement,
+    simpleJava_type_declaration,
+    simpleJava_import_statement,
+    simpleJava_package_statement,
     Model,
-    simpleJava::compilation::unit,
-    simpleJava::Model,
-    simpleJava::MODIFIER,
-    type::declaration,
-    simpleJava::doc::comment,
-    simpleJava::interface::declaration,
-    simpleJava::class::declaration,
-    simpleJava::name,
+    simpleJava_compilation_unit,
+    simpleJava_Model,
+    simpleJava_MODIFIER,
+    type_declaration,
+    simpleJava_doc_comment,
+    simpleJava_interface_declaration,
+    simpleJava_class_declaration,
+    simpleJava_name,
 )
 
 # =============================================================================
@@ -65,37 +65,37 @@ from classes import (
 
 
 
-def test_exp::aux_is_not_abstract():
-    assert not inspect.isabstract(exp::aux)
+def test_exp_aux_is_not_abstract():
+    assert not inspect.isabstract(exp_aux)
 
 
-def test_exp::aux_constructor_exists():
-    assert callable(exp::aux.__init__)
+def test_exp_aux_constructor_exists():
+    assert callable(exp_aux.__init__)
 
 
-def test_exp::aux_constructor_args():
-    sig = inspect.signature(exp::aux.__init__)
+def test_exp_aux_constructor_args():
+    sig = inspect.signature(exp_aux.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::package::name::aux_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::package::name::aux)
+def test_simplejava_package_name_aux_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_package_name_aux)
 
 
-def test_simplejava::package::name::aux_constructor_exists():
-    assert callable(simpleJava::package::name::aux.__init__)
+def test_simplejava_package_name_aux_constructor_exists():
+    assert callable(simpleJava_package_name_aux.__init__)
 
 
-def test_simplejava::package::name::aux_constructor_args():
-    sig = inspect.signature(simpleJava::package::name::aux.__init__)
+def test_simplejava_package_name_aux_constructor_args():
+    sig = inspect.signature(simpleJava_package_name_aux.__init__)
     params = list(sig.parameters.keys())
     assert "nomePacote" in params, "Missing parameter 'nomePacote'"
 
-def test_simplejava::package::name::aux_has_nomePacote():
-    assert hasattr(simpleJava::package::name::aux, "nomePacote")
+def test_simplejava_package_name_aux_has_nomePacote():
+    assert hasattr(simpleJava_package_name_aux, "nomePacote")
     descriptor = None
-    for klass in simpleJava::package::name::aux.__mro__:
+    for klass in simpleJava_package_name_aux.__mro__:
         if "nomePacote" in klass.__dict__:
             descriptor = klass.__dict__["nomePacote"]
             break
@@ -103,67 +103,67 @@ def test_simplejava::package::name::aux_has_nomePacote():
 
 
 
-def test_variable::declarator_is_not_abstract():
-    assert not inspect.isabstract(variable::declarator)
+def test_variable_declarator_is_not_abstract():
+    assert not inspect.isabstract(variable_declarator)
 
 
-def test_variable::declarator_constructor_exists():
-    assert callable(variable::declarator.__init__)
+def test_variable_declarator_constructor_exists():
+    assert callable(variable_declarator.__init__)
 
 
-def test_variable::declarator_constructor_args():
-    sig = inspect.signature(variable::declarator.__init__)
+def test_variable_declarator_constructor_args():
+    sig = inspect.signature(variable_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::literal::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::literal::expression)
+def test_simplejava_literal_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_literal_expression)
 
 
-def test_simplejava::literal::expression_constructor_exists():
-    assert callable(simpleJava::literal::expression.__init__)
+def test_simplejava_literal_expression_constructor_exists():
+    assert callable(simpleJava_literal_expression.__init__)
 
 
-def test_simplejava::literal::expression_constructor_args():
-    sig = inspect.signature(simpleJava::literal::expression.__init__)
+def test_simplejava_literal_expression_constructor_args():
+    sig = inspect.signature(simpleJava_literal_expression.__init__)
     params = list(sig.parameters.keys())
     assert "string" in params, "Missing parameter 'string'"
     assert "inteiro" in params, "Missing parameter 'inteiro'"
     assert "l_float" in params, "Missing parameter 'l_float'"
     assert "decimal" in params, "Missing parameter 'decimal'"
 
-def test_simplejava::literal::expression_has_string():
-    assert hasattr(simpleJava::literal::expression, "string")
+def test_simplejava_literal_expression_has_string():
+    assert hasattr(simpleJava_literal_expression, "string")
     descriptor = None
-    for klass in simpleJava::literal::expression.__mro__:
+    for klass in simpleJava_literal_expression.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplejava::literal::expression_has_inteiro():
-    assert hasattr(simpleJava::literal::expression, "inteiro")
+def test_simplejava_literal_expression_has_inteiro():
+    assert hasattr(simpleJava_literal_expression, "inteiro")
     descriptor = None
-    for klass in simpleJava::literal::expression.__mro__:
+    for klass in simpleJava_literal_expression.__mro__:
         if "inteiro" in klass.__dict__:
             descriptor = klass.__dict__["inteiro"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplejava::literal::expression_has_l_float():
-    assert hasattr(simpleJava::literal::expression, "l_float")
+def test_simplejava_literal_expression_has_l_float():
+    assert hasattr(simpleJava_literal_expression, "l_float")
     descriptor = None
-    for klass in simpleJava::literal::expression.__mro__:
+    for klass in simpleJava_literal_expression.__mro__:
         if "l_float" in klass.__dict__:
             descriptor = klass.__dict__["l_float"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplejava::literal::expression_has_decimal():
-    assert hasattr(simpleJava::literal::expression, "decimal")
+def test_simplejava_literal_expression_has_decimal():
+    assert hasattr(simpleJava_literal_expression, "decimal")
     descriptor = None
-    for klass in simpleJava::literal::expression.__mro__:
+    for klass in simpleJava_literal_expression.__mro__:
         if "decimal" in klass.__dict__:
             descriptor = klass.__dict__["decimal"]
             break
@@ -171,23 +171,23 @@ def test_simplejava::literal::expression_has_decimal():
 
 
 
-def test_simplejava::bit::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::bit::expression)
+def test_simplejava_bit_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_bit_expression)
 
 
-def test_simplejava::bit::expression_constructor_exists():
-    assert callable(simpleJava::bit::expression.__init__)
+def test_simplejava_bit_expression_constructor_exists():
+    assert callable(simpleJava_bit_expression.__init__)
 
 
-def test_simplejava::bit::expression_constructor_args():
-    sig = inspect.signature(simpleJava::bit::expression.__init__)
+def test_simplejava_bit_expression_constructor_args():
+    sig = inspect.signature(simpleJava_bit_expression.__init__)
     params = list(sig.parameters.keys())
     assert "operador" in params, "Missing parameter 'operador'"
 
-def test_simplejava::bit::expression_has_operador():
-    assert hasattr(simpleJava::bit::expression, "operador")
+def test_simplejava_bit_expression_has_operador():
+    assert hasattr(simpleJava_bit_expression, "operador")
     descriptor = None
-    for klass in simpleJava::bit::expression.__mro__:
+    for klass in simpleJava_bit_expression.__mro__:
         if "operador" in klass.__dict__:
             descriptor = klass.__dict__["operador"]
             break
@@ -195,23 +195,23 @@ def test_simplejava::bit::expression_has_operador():
 
 
 
-def test_simplejava::numeric::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::numeric::expression)
+def test_simplejava_numeric_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_numeric_expression)
 
 
-def test_simplejava::numeric::expression_constructor_exists():
-    assert callable(simpleJava::numeric::expression.__init__)
+def test_simplejava_numeric_expression_constructor_exists():
+    assert callable(simpleJava_numeric_expression.__init__)
 
 
-def test_simplejava::numeric::expression_constructor_args():
-    sig = inspect.signature(simpleJava::numeric::expression.__init__)
+def test_simplejava_numeric_expression_constructor_args():
+    sig = inspect.signature(simpleJava_numeric_expression.__init__)
     params = list(sig.parameters.keys())
     assert "operador" in params, "Missing parameter 'operador'"
 
-def test_simplejava::numeric::expression_has_operador():
-    assert hasattr(simpleJava::numeric::expression, "operador")
+def test_simplejava_numeric_expression_has_operador():
+    assert hasattr(simpleJava_numeric_expression, "operador")
     descriptor = None
-    for klass in simpleJava::numeric::expression.__mro__:
+    for klass in simpleJava_numeric_expression.__mro__:
         if "operador" in klass.__dict__:
             descriptor = klass.__dict__["operador"]
             break
@@ -219,23 +219,23 @@ def test_simplejava::numeric::expression_has_operador():
 
 
 
-def test_simplejava::logical::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::logical::expression)
+def test_simplejava_logical_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_logical_expression)
 
 
-def test_simplejava::logical::expression_constructor_exists():
-    assert callable(simpleJava::logical::expression.__init__)
+def test_simplejava_logical_expression_constructor_exists():
+    assert callable(simpleJava_logical_expression.__init__)
 
 
-def test_simplejava::logical::expression_constructor_args():
-    sig = inspect.signature(simpleJava::logical::expression.__init__)
+def test_simplejava_logical_expression_constructor_args():
+    sig = inspect.signature(simpleJava_logical_expression.__init__)
     params = list(sig.parameters.keys())
     assert "operador" in params, "Missing parameter 'operador'"
 
-def test_simplejava::logical::expression_has_operador():
-    assert hasattr(simpleJava::logical::expression, "operador")
+def test_simplejava_logical_expression_has_operador():
+    assert hasattr(simpleJava_logical_expression, "operador")
     descriptor = None
-    for klass in simpleJava::logical::expression.__mro__:
+    for klass in simpleJava_logical_expression.__mro__:
         if "operador" in klass.__dict__:
             descriptor = klass.__dict__["operador"]
             break
@@ -243,16 +243,16 @@ def test_simplejava::logical::expression_has_operador():
 
 
 
-def test_expression::aux_is_not_abstract():
-    assert not inspect.isabstract(expression::aux)
+def test_expression_aux_is_not_abstract():
+    assert not inspect.isabstract(expression_aux)
 
 
-def test_expression::aux_constructor_exists():
-    assert callable(expression::aux.__init__)
+def test_expression_aux_constructor_exists():
+    assert callable(expression_aux.__init__)
 
 
-def test_expression::aux_constructor_args():
-    sig = inspect.signature(expression::aux.__init__)
+def test_expression_aux_constructor_args():
+    sig = inspect.signature(expression_aux.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -271,51 +271,51 @@ def test_expression_constructor_args():
 
 
 
-def test_simplejava::exp::aux_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::exp::aux)
+def test_simplejava_exp_aux_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_exp_aux)
 
 
-def test_simplejava::exp::aux_constructor_exists():
-    assert callable(simpleJava::exp::aux.__init__)
+def test_simplejava_exp_aux_constructor_exists():
+    assert callable(simpleJava_exp_aux.__init__)
 
 
-def test_simplejava::exp::aux_constructor_args():
-    sig = inspect.signature(simpleJava::exp::aux.__init__)
+def test_simplejava_exp_aux_constructor_args():
+    sig = inspect.signature(simpleJava_exp_aux.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::newblock_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::newBlock)
+def test_simplejava_newblock_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_newBlock)
 
 
-def test_simplejava::newblock_constructor_exists():
-    assert callable(simpleJava::newBlock.__init__)
+def test_simplejava_newblock_constructor_exists():
+    assert callable(simpleJava_newBlock.__init__)
 
 
-def test_simplejava::newblock_constructor_args():
-    sig = inspect.signature(simpleJava::newBlock.__init__)
+def test_simplejava_newblock_constructor_args():
+    sig = inspect.signature(simpleJava_newBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::type::specifier_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::type::specifier)
+def test_simplejava_type_specifier_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_type_specifier)
 
 
-def test_simplejava::type::specifier_constructor_exists():
-    assert callable(simpleJava::type::specifier.__init__)
+def test_simplejava_type_specifier_constructor_exists():
+    assert callable(simpleJava_type_specifier.__init__)
 
 
-def test_simplejava::type::specifier_constructor_args():
-    sig = inspect.signature(simpleJava::type::specifier.__init__)
+def test_simplejava_type_specifier_constructor_args():
+    sig = inspect.signature(simpleJava_type_specifier.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_simplejava::type::specifier_has_nome():
-    assert hasattr(simpleJava::type::specifier, "nome")
+def test_simplejava_type_specifier_has_nome():
+    assert hasattr(simpleJava_type_specifier, "nome")
     descriptor = None
-    for klass in simpleJava::type::specifier.__mro__:
+    for klass in simpleJava_type_specifier.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -323,79 +323,79 @@ def test_simplejava::type::specifier_has_nome():
 
 
 
-def test_simplejava::creating::aux_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::creating::aux)
+def test_simplejava_creating_aux_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_creating_aux)
 
 
-def test_simplejava::creating::aux_constructor_exists():
-    assert callable(simpleJava::creating::aux.__init__)
+def test_simplejava_creating_aux_constructor_exists():
+    assert callable(simpleJava_creating_aux.__init__)
 
 
-def test_simplejava::creating::aux_constructor_args():
-    sig = inspect.signature(simpleJava::creating::aux.__init__)
+def test_simplejava_creating_aux_constructor_args():
+    sig = inspect.signature(simpleJava_creating_aux.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::creating::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::creating::expression)
+def test_simplejava_creating_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_creating_expression)
 
 
-def test_simplejava::creating::expression_constructor_exists():
-    assert callable(simpleJava::creating::expression.__init__)
+def test_simplejava_creating_expression_constructor_exists():
+    assert callable(simpleJava_creating_expression.__init__)
 
 
-def test_simplejava::creating::expression_constructor_args():
-    sig = inspect.signature(simpleJava::creating::expression.__init__)
+def test_simplejava_creating_expression_constructor_args():
+    sig = inspect.signature(simpleJava_creating_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_creating::aux_is_not_abstract():
-    assert not inspect.isabstract(creating::aux)
+def test_creating_aux_is_not_abstract():
+    assert not inspect.isabstract(creating_aux)
 
 
-def test_creating::aux_constructor_exists():
-    assert callable(creating::aux.__init__)
+def test_creating_aux_constructor_exists():
+    assert callable(creating_aux.__init__)
 
 
-def test_creating::aux_constructor_args():
-    sig = inspect.signature(creating::aux.__init__)
+def test_creating_aux_constructor_args():
+    sig = inspect.signature(creating_aux.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::aux_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::aux)
+def test_simplejava_aux_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_aux)
 
 
-def test_simplejava::aux_constructor_exists():
-    assert callable(simpleJava::aux.__init__)
+def test_simplejava_aux_constructor_exists():
+    assert callable(simpleJava_aux.__init__)
 
 
-def test_simplejava::aux_constructor_args():
-    sig = inspect.signature(simpleJava::aux.__init__)
+def test_simplejava_aux_constructor_args():
+    sig = inspect.signature(simpleJava_aux.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::mais::aux_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::mais::aux)
+def test_simplejava_mais_aux_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_mais_aux)
 
 
-def test_simplejava::mais::aux_constructor_exists():
-    assert callable(simpleJava::mais::aux.__init__)
+def test_simplejava_mais_aux_constructor_exists():
+    assert callable(simpleJava_mais_aux.__init__)
 
 
-def test_simplejava::mais::aux_constructor_args():
-    sig = inspect.signature(simpleJava::mais::aux.__init__)
+def test_simplejava_mais_aux_constructor_args():
+    sig = inspect.signature(simpleJava_mais_aux.__init__)
     params = list(sig.parameters.keys())
     assert "operador" in params, "Missing parameter 'operador'"
 
-def test_simplejava::mais::aux_has_operador():
-    assert hasattr(simpleJava::mais::aux, "operador")
+def test_simplejava_mais_aux_has_operador():
+    assert hasattr(simpleJava_mais_aux, "operador")
     descriptor = None
-    for klass in simpleJava::mais::aux.__mro__:
+    for klass in simpleJava_mais_aux.__mro__:
         if "operador" in klass.__dict__:
             descriptor = klass.__dict__["operador"]
             break
@@ -403,23 +403,23 @@ def test_simplejava::mais::aux_has_operador():
 
 
 
-def test_simplejava::arglist_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::arglist)
+def test_simplejava_arglist_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_arglist)
 
 
-def test_simplejava::arglist_constructor_exists():
-    assert callable(simpleJava::arglist.__init__)
+def test_simplejava_arglist_constructor_exists():
+    assert callable(simpleJava_arglist.__init__)
 
 
-def test_simplejava::arglist_constructor_args():
-    sig = inspect.signature(simpleJava::arglist.__init__)
+def test_simplejava_arglist_constructor_args():
+    sig = inspect.signature(simpleJava_arglist.__init__)
     params = list(sig.parameters.keys())
     assert "nomeParametro" in params, "Missing parameter 'nomeParametro'"
 
-def test_simplejava::arglist_has_nomeParametro():
-    assert hasattr(simpleJava::arglist, "nomeParametro")
+def test_simplejava_arglist_has_nomeParametro():
+    assert hasattr(simpleJava_arglist, "nomeParametro")
     descriptor = None
-    for klass in simpleJava::arglist.__mro__:
+    for klass in simpleJava_arglist.__mro__:
         if "nomeParametro" in klass.__dict__:
             descriptor = klass.__dict__["nomeParametro"]
             break
@@ -427,23 +427,23 @@ def test_simplejava::arglist_has_nomeParametro():
 
 
 
-def test_simplejava::expression::aux_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::expression::aux)
+def test_simplejava_expression_aux_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_expression_aux)
 
 
-def test_simplejava::expression::aux_constructor_exists():
-    assert callable(simpleJava::expression::aux.__init__)
+def test_simplejava_expression_aux_constructor_exists():
+    assert callable(simpleJava_expression_aux.__init__)
 
 
-def test_simplejava::expression::aux_constructor_args():
-    sig = inspect.signature(simpleJava::expression::aux.__init__)
+def test_simplejava_expression_aux_constructor_args():
+    sig = inspect.signature(simpleJava_expression_aux.__init__)
     params = list(sig.parameters.keys())
     assert "operador" in params, "Missing parameter 'operador'"
 
-def test_simplejava::expression::aux_has_operador():
-    assert hasattr(simpleJava::expression::aux, "operador")
+def test_simplejava_expression_aux_has_operador():
+    assert hasattr(simpleJava_expression_aux, "operador")
     descriptor = None
-    for klass in simpleJava::expression::aux.__mro__:
+    for klass in simpleJava_expression_aux.__mro__:
         if "operador" in klass.__dict__:
             descriptor = klass.__dict__["operador"]
             break
@@ -465,127 +465,127 @@ def test_newblock_constructor_args():
 
 
 
-def test_simplejava::variable::initializer_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::variable::initializer)
+def test_simplejava_variable_initializer_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_variable_initializer)
 
 
-def test_simplejava::variable::initializer_constructor_exists():
-    assert callable(simpleJava::variable::initializer.__init__)
+def test_simplejava_variable_initializer_constructor_exists():
+    assert callable(simpleJava_variable_initializer.__init__)
 
 
-def test_simplejava::variable::initializer_constructor_args():
-    sig = inspect.signature(simpleJava::variable::initializer.__init__)
+def test_simplejava_variable_initializer_constructor_args():
+    sig = inspect.signature(simpleJava_variable_initializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::variable::declarator_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::variable::declarator)
+def test_simplejava_variable_declarator_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_variable_declarator)
 
 
-def test_simplejava::variable::declarator_constructor_exists():
-    assert callable(simpleJava::variable::declarator.__init__)
+def test_simplejava_variable_declarator_constructor_exists():
+    assert callable(simpleJava_variable_declarator.__init__)
 
 
-def test_simplejava::variable::declarator_constructor_args():
-    sig = inspect.signature(simpleJava::variable::declarator.__init__)
+def test_simplejava_variable_declarator_constructor_args():
+    sig = inspect.signature(simpleJava_variable_declarator.__init__)
     params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
     assert "nomeVariavel" in params, "Missing parameter 'nomeVariavel'"
+    assert "op" in params, "Missing parameter 'op'"
 
-def test_simplejava::variable::declarator_has_op():
-    assert hasattr(simpleJava::variable::declarator, "op")
+def test_simplejava_variable_declarator_has_nomeVariavel():
+    assert hasattr(simpleJava_variable_declarator, "nomeVariavel")
     descriptor = None
-    for klass in simpleJava::variable::declarator.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplejava::variable::declarator_has_nomeVariavel():
-    assert hasattr(simpleJava::variable::declarator, "nomeVariavel")
-    descriptor = None
-    for klass in simpleJava::variable::declarator.__mro__:
+    for klass in simpleJava_variable_declarator.__mro__:
         if "nomeVariavel" in klass.__dict__:
             descriptor = klass.__dict__["nomeVariavel"]
             break
     assert isinstance(descriptor, property)
 
+def test_simplejava_variable_declarator_has_op():
+    assert hasattr(simpleJava_variable_declarator, "op")
+    descriptor = None
+    for klass in simpleJava_variable_declarator.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simplejava::switch::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::switch::statement)
+
+def test_simplejava_switch_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_switch_statement)
 
 
-def test_simplejava::switch::statement_constructor_exists():
-    assert callable(simpleJava::switch::statement.__init__)
+def test_simplejava_switch_statement_constructor_exists():
+    assert callable(simpleJava_switch_statement.__init__)
 
 
-def test_simplejava::switch::statement_constructor_args():
-    sig = inspect.signature(simpleJava::switch::statement.__init__)
+def test_simplejava_switch_statement_constructor_args():
+    sig = inspect.signature(simpleJava_switch_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::try::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::try::statement)
+def test_simplejava_try_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_try_statement)
 
 
-def test_simplejava::try::statement_constructor_exists():
-    assert callable(simpleJava::try::statement.__init__)
+def test_simplejava_try_statement_constructor_exists():
+    assert callable(simpleJava_try_statement.__init__)
 
 
-def test_simplejava::try::statement_constructor_args():
-    sig = inspect.signature(simpleJava::try::statement.__init__)
+def test_simplejava_try_statement_constructor_args():
+    sig = inspect.signature(simpleJava_try_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::for::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::for::statement)
+def test_simplejava_for_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_for_statement)
 
 
-def test_simplejava::for::statement_constructor_exists():
-    assert callable(simpleJava::for::statement.__init__)
+def test_simplejava_for_statement_constructor_exists():
+    assert callable(simpleJava_for_statement.__init__)
 
 
-def test_simplejava::for::statement_constructor_args():
-    sig = inspect.signature(simpleJava::for::statement.__init__)
+def test_simplejava_for_statement_constructor_args():
+    sig = inspect.signature(simpleJava_for_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::while::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::while::statement)
+def test_simplejava_while_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_while_statement)
 
 
-def test_simplejava::while::statement_constructor_exists():
-    assert callable(simpleJava::while::statement.__init__)
+def test_simplejava_while_statement_constructor_exists():
+    assert callable(simpleJava_while_statement.__init__)
 
 
-def test_simplejava::while::statement_constructor_args():
-    sig = inspect.signature(simpleJava::while::statement.__init__)
+def test_simplejava_while_statement_constructor_args():
+    sig = inspect.signature(simpleJava_while_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::parameter_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::parameter)
+def test_simplejava_parameter_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_parameter)
 
 
-def test_simplejava::parameter_constructor_exists():
-    assert callable(simpleJava::parameter.__init__)
+def test_simplejava_parameter_constructor_exists():
+    assert callable(simpleJava_parameter.__init__)
 
 
-def test_simplejava::parameter_constructor_args():
-    sig = inspect.signature(simpleJava::parameter.__init__)
+def test_simplejava_parameter_constructor_args():
+    sig = inspect.signature(simpleJava_parameter.__init__)
     params = list(sig.parameters.keys())
     assert "nomeParametro" in params, "Missing parameter 'nomeParametro'"
 
-def test_simplejava::parameter_has_nomeParametro():
-    assert hasattr(simpleJava::parameter, "nomeParametro")
+def test_simplejava_parameter_has_nomeParametro():
+    assert hasattr(simpleJava_parameter, "nomeParametro")
     descriptor = None
-    for klass in simpleJava::parameter.__mro__:
+    for klass in simpleJava_parameter.__mro__:
         if "nomeParametro" in klass.__dict__:
             descriptor = klass.__dict__["nomeParametro"]
             break
@@ -593,93 +593,93 @@ def test_simplejava::parameter_has_nomeParametro():
 
 
 
-def test_simplejava::statement::block_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::statement::block)
+def test_simplejava_statement_block_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_statement_block)
 
 
-def test_simplejava::statement::block_constructor_exists():
-    assert callable(simpleJava::statement::block.__init__)
+def test_simplejava_statement_block_constructor_exists():
+    assert callable(simpleJava_statement_block.__init__)
 
 
-def test_simplejava::statement::block_constructor_args():
-    sig = inspect.signature(simpleJava::statement::block.__init__)
+def test_simplejava_statement_block_constructor_args():
+    sig = inspect.signature(simpleJava_statement_block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::parameter::list_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::parameter::list)
+def test_simplejava_parameter_list_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_parameter_list)
 
 
-def test_simplejava::parameter::list_constructor_exists():
-    assert callable(simpleJava::parameter::list.__init__)
+def test_simplejava_parameter_list_constructor_exists():
+    assert callable(simpleJava_parameter_list.__init__)
 
 
-def test_simplejava::parameter::list_constructor_args():
-    sig = inspect.signature(simpleJava::parameter::list.__init__)
+def test_simplejava_parameter_list_constructor_args():
+    sig = inspect.signature(simpleJava_parameter_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::type_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::type)
+def test_simplejava_type_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_type)
 
 
-def test_simplejava::type_constructor_exists():
-    assert callable(simpleJava::type.__init__)
+def test_simplejava_type_constructor_exists():
+    assert callable(simpleJava_type.__init__)
 
 
-def test_simplejava::type_constructor_args():
-    sig = inspect.signature(simpleJava::type.__init__)
+def test_simplejava_type_constructor_args():
+    sig = inspect.signature(simpleJava_type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::static::initializer_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::static::initializer)
+def test_simplejava_static_initializer_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_static_initializer)
 
 
-def test_simplejava::static::initializer_constructor_exists():
-    assert callable(simpleJava::static::initializer.__init__)
+def test_simplejava_static_initializer_constructor_exists():
+    assert callable(simpleJava_static_initializer.__init__)
 
 
-def test_simplejava::static::initializer_constructor_args():
-    sig = inspect.signature(simpleJava::static::initializer.__init__)
+def test_simplejava_static_initializer_constructor_args():
+    sig = inspect.signature(simpleJava_static_initializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::variable::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::variable::declaration)
+def test_simplejava_variable_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_variable_declaration)
 
 
-def test_simplejava::variable::declaration_constructor_exists():
-    assert callable(simpleJava::variable::declaration.__init__)
+def test_simplejava_variable_declaration_constructor_exists():
+    assert callable(simpleJava_variable_declaration.__init__)
 
 
-def test_simplejava::variable::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::variable::declaration.__init__)
+def test_simplejava_variable_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_variable_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::constructor::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::constructor::declaration)
+def test_simplejava_constructor_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_constructor_declaration)
 
 
-def test_simplejava::constructor::declaration_constructor_exists():
-    assert callable(simpleJava::constructor::declaration.__init__)
+def test_simplejava_constructor_declaration_constructor_exists():
+    assert callable(simpleJava_constructor_declaration.__init__)
 
 
-def test_simplejava::constructor::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::constructor::declaration.__init__)
+def test_simplejava_constructor_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_constructor_declaration.__init__)
     params = list(sig.parameters.keys())
     assert "nomeContrutor" in params, "Missing parameter 'nomeContrutor'"
 
-def test_simplejava::constructor::declaration_has_nomeContrutor():
-    assert hasattr(simpleJava::constructor::declaration, "nomeContrutor")
+def test_simplejava_constructor_declaration_has_nomeContrutor():
+    assert hasattr(simpleJava_constructor_declaration, "nomeContrutor")
     descriptor = None
-    for klass in simpleJava::constructor::declaration.__mro__:
+    for klass in simpleJava_constructor_declaration.__mro__:
         if "nomeContrutor" in klass.__dict__:
             descriptor = klass.__dict__["nomeContrutor"]
             break
@@ -687,23 +687,23 @@ def test_simplejava::constructor::declaration_has_nomeContrutor():
 
 
 
-def test_simplejava::method::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::method::declaration)
+def test_simplejava_method_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_method_declaration)
 
 
-def test_simplejava::method::declaration_constructor_exists():
-    assert callable(simpleJava::method::declaration.__init__)
+def test_simplejava_method_declaration_constructor_exists():
+    assert callable(simpleJava_method_declaration.__init__)
 
 
-def test_simplejava::method::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::method::declaration.__init__)
+def test_simplejava_method_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_method_declaration.__init__)
     params = list(sig.parameters.keys())
     assert "nomeMetodo" in params, "Missing parameter 'nomeMetodo'"
 
-def test_simplejava::method::declaration_has_nomeMetodo():
-    assert hasattr(simpleJava::method::declaration, "nomeMetodo")
+def test_simplejava_method_declaration_has_nomeMetodo():
+    assert hasattr(simpleJava_method_declaration, "nomeMetodo")
     descriptor = None
-    for klass in simpleJava::method::declaration.__mro__:
+    for klass in simpleJava_method_declaration.__mro__:
         if "nomeMetodo" in klass.__dict__:
             descriptor = klass.__dict__["nomeMetodo"]
             break
@@ -711,65 +711,65 @@ def test_simplejava::method::declaration_has_nomeMetodo():
 
 
 
-def test_simplejava::field::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::field::declaration)
+def test_simplejava_field_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_field_declaration)
 
 
-def test_simplejava::field::declaration_constructor_exists():
-    assert callable(simpleJava::field::declaration.__init__)
+def test_simplejava_field_declaration_constructor_exists():
+    assert callable(simpleJava_field_declaration.__init__)
 
 
-def test_simplejava::field::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::field::declaration.__init__)
+def test_simplejava_field_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_field_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::do::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::do::statement)
+def test_simplejava_do_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_do_statement)
 
 
-def test_simplejava::do::statement_constructor_exists():
-    assert callable(simpleJava::do::statement.__init__)
+def test_simplejava_do_statement_constructor_exists():
+    assert callable(simpleJava_do_statement.__init__)
 
 
-def test_simplejava::do::statement_constructor_args():
-    sig = inspect.signature(simpleJava::do::statement.__init__)
+def test_simplejava_do_statement_constructor_args():
+    sig = inspect.signature(simpleJava_do_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::if::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::if::statement)
+def test_simplejava_if_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_if_statement)
 
 
-def test_simplejava::if::statement_constructor_exists():
-    assert callable(simpleJava::if::statement.__init__)
+def test_simplejava_if_statement_constructor_exists():
+    assert callable(simpleJava_if_statement.__init__)
 
 
-def test_simplejava::if::statement_constructor_args():
-    sig = inspect.signature(simpleJava::if::statement.__init__)
+def test_simplejava_if_statement_constructor_args():
+    sig = inspect.signature(simpleJava_if_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::expression)
+def test_simplejava_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_expression)
 
 
-def test_simplejava::expression_constructor_exists():
-    assert callable(simpleJava::expression.__init__)
+def test_simplejava_expression_constructor_exists():
+    assert callable(simpleJava_expression.__init__)
 
 
-def test_simplejava::expression_constructor_args():
-    sig = inspect.signature(simpleJava::expression.__init__)
+def test_simplejava_expression_constructor_args():
+    sig = inspect.signature(simpleJava_expression.__init__)
     params = list(sig.parameters.keys())
     assert "identificador" in params, "Missing parameter 'identificador'"
 
-def test_simplejava::expression_has_identificador():
-    assert hasattr(simpleJava::expression, "identificador")
+def test_simplejava_expression_has_identificador():
+    assert hasattr(simpleJava_expression, "identificador")
     descriptor = None
-    for klass in simpleJava::expression.__mro__:
+    for klass in simpleJava_expression.__mro__:
         if "identificador" in klass.__dict__:
             descriptor = klass.__dict__["identificador"]
             break
@@ -777,78 +777,78 @@ def test_simplejava::expression_has_identificador():
 
 
 
-def test_simplejava::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::statement)
+def test_simplejava_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_statement)
 
 
-def test_simplejava::statement_constructor_exists():
-    assert callable(simpleJava::statement.__init__)
+def test_simplejava_statement_constructor_exists():
+    assert callable(simpleJava_statement.__init__)
 
 
-def test_simplejava::statement_constructor_args():
-    sig = inspect.signature(simpleJava::statement.__init__)
+def test_simplejava_statement_constructor_args():
+    sig = inspect.signature(simpleJava_statement.__init__)
     params = list(sig.parameters.keys())
-    assert "break_" in params, "Missing parameter 'break_'"
     assert "continue_" in params, "Missing parameter 'continue_'"
+    assert "break_" in params, "Missing parameter 'break_'"
 
-def test_simplejava::statement_has_break_():
-    assert hasattr(simpleJava::statement, "break_")
+def test_simplejava_statement_has_continue_():
+    assert hasattr(simpleJava_statement, "continue_")
     descriptor = None
-    for klass in simpleJava::statement.__mro__:
-        if "break_" in klass.__dict__:
-            descriptor = klass.__dict__["break_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplejava::statement_has_continue_():
-    assert hasattr(simpleJava::statement, "continue_")
-    descriptor = None
-    for klass in simpleJava::statement.__mro__:
+    for klass in simpleJava_statement.__mro__:
         if "continue_" in klass.__dict__:
             descriptor = klass.__dict__["continue_"]
             break
     assert isinstance(descriptor, property)
 
+def test_simplejava_statement_has_break_():
+    assert hasattr(simpleJava_statement, "break_")
+    descriptor = None
+    for klass in simpleJava_statement.__mro__:
+        if "break_" in klass.__dict__:
+            descriptor = klass.__dict__["break_"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simplejava::type::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::type::declaration)
+
+def test_simplejava_type_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_type_declaration)
 
 
-def test_simplejava::type::declaration_constructor_exists():
-    assert callable(simpleJava::type::declaration.__init__)
+def test_simplejava_type_declaration_constructor_exists():
+    assert callable(simpleJava_type_declaration.__init__)
 
 
-def test_simplejava::type::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::type::declaration.__init__)
+def test_simplejava_type_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_type_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::import::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::import::statement)
+def test_simplejava_import_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_import_statement)
 
 
-def test_simplejava::import::statement_constructor_exists():
-    assert callable(simpleJava::import::statement.__init__)
+def test_simplejava_import_statement_constructor_exists():
+    assert callable(simpleJava_import_statement.__init__)
 
 
-def test_simplejava::import::statement_constructor_args():
-    sig = inspect.signature(simpleJava::import::statement.__init__)
+def test_simplejava_import_statement_constructor_args():
+    sig = inspect.signature(simpleJava_import_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::package::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::package::statement)
+def test_simplejava_package_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_package_statement)
 
 
-def test_simplejava::package::statement_constructor_exists():
-    assert callable(simpleJava::package::statement.__init__)
+def test_simplejava_package_statement_constructor_exists():
+    assert callable(simpleJava_package_statement.__init__)
 
 
-def test_simplejava::package::statement_constructor_args():
-    sig = inspect.signature(simpleJava::package::statement.__init__)
+def test_simplejava_package_statement_constructor_args():
+    sig = inspect.signature(simpleJava_package_statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -867,51 +867,51 @@ def test_model_constructor_args():
 
 
 
-def test_simplejava::compilation::unit_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::compilation::unit)
+def test_simplejava_compilation_unit_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_compilation_unit)
 
 
-def test_simplejava::compilation::unit_constructor_exists():
-    assert callable(simpleJava::compilation::unit.__init__)
+def test_simplejava_compilation_unit_constructor_exists():
+    assert callable(simpleJava_compilation_unit.__init__)
 
 
-def test_simplejava::compilation::unit_constructor_args():
-    sig = inspect.signature(simpleJava::compilation::unit.__init__)
+def test_simplejava_compilation_unit_constructor_args():
+    sig = inspect.signature(simpleJava_compilation_unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::model_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::Model)
+def test_simplejava_model_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_Model)
 
 
-def test_simplejava::model_constructor_exists():
-    assert callable(simpleJava::Model.__init__)
+def test_simplejava_model_constructor_exists():
+    assert callable(simpleJava_Model.__init__)
 
 
-def test_simplejava::model_constructor_args():
-    sig = inspect.signature(simpleJava::Model.__init__)
+def test_simplejava_model_constructor_args():
+    sig = inspect.signature(simpleJava_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::modifier_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::MODIFIER)
+def test_simplejava_modifier_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_MODIFIER)
 
 
-def test_simplejava::modifier_constructor_exists():
-    assert callable(simpleJava::MODIFIER.__init__)
+def test_simplejava_modifier_constructor_exists():
+    assert callable(simpleJava_MODIFIER.__init__)
 
 
-def test_simplejava::modifier_constructor_args():
-    sig = inspect.signature(simpleJava::MODIFIER.__init__)
+def test_simplejava_modifier_constructor_args():
+    sig = inspect.signature(simpleJava_MODIFIER.__init__)
     params = list(sig.parameters.keys())
     assert "modificador" in params, "Missing parameter 'modificador'"
 
-def test_simplejava::modifier_has_modificador():
-    assert hasattr(simpleJava::MODIFIER, "modificador")
+def test_simplejava_modifier_has_modificador():
+    assert hasattr(simpleJava_MODIFIER, "modificador")
     descriptor = None
-    for klass in simpleJava::MODIFIER.__mro__:
+    for klass in simpleJava_MODIFIER.__mro__:
         if "modificador" in klass.__dict__:
             descriptor = klass.__dict__["modificador"]
             break
@@ -919,37 +919,37 @@ def test_simplejava::modifier_has_modificador():
 
 
 
-def test_type::declaration_is_not_abstract():
-    assert not inspect.isabstract(type::declaration)
+def test_type_declaration_is_not_abstract():
+    assert not inspect.isabstract(type_declaration)
 
 
-def test_type::declaration_constructor_exists():
-    assert callable(type::declaration.__init__)
+def test_type_declaration_constructor_exists():
+    assert callable(type_declaration.__init__)
 
 
-def test_type::declaration_constructor_args():
-    sig = inspect.signature(type::declaration.__init__)
+def test_type_declaration_constructor_args():
+    sig = inspect.signature(type_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplejava::doc::comment_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::doc::comment)
+def test_simplejava_doc_comment_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_doc_comment)
 
 
-def test_simplejava::doc::comment_constructor_exists():
-    assert callable(simpleJava::doc::comment.__init__)
+def test_simplejava_doc_comment_constructor_exists():
+    assert callable(simpleJava_doc_comment.__init__)
 
 
-def test_simplejava::doc::comment_constructor_args():
-    sig = inspect.signature(simpleJava::doc::comment.__init__)
+def test_simplejava_doc_comment_constructor_args():
+    sig = inspect.signature(simpleJava_doc_comment.__init__)
     params = list(sig.parameters.keys())
     assert "comentario" in params, "Missing parameter 'comentario'"
 
-def test_simplejava::doc::comment_has_comentario():
-    assert hasattr(simpleJava::doc::comment, "comentario")
+def test_simplejava_doc_comment_has_comentario():
+    assert hasattr(simpleJava_doc_comment, "comentario")
     descriptor = None
-    for klass in simpleJava::doc::comment.__mro__:
+    for klass in simpleJava_doc_comment.__mro__:
         if "comentario" in klass.__dict__:
             descriptor = klass.__dict__["comentario"]
             break
@@ -957,23 +957,23 @@ def test_simplejava::doc::comment_has_comentario():
 
 
 
-def test_simplejava::interface::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::interface::declaration)
+def test_simplejava_interface_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_interface_declaration)
 
 
-def test_simplejava::interface::declaration_constructor_exists():
-    assert callable(simpleJava::interface::declaration.__init__)
+def test_simplejava_interface_declaration_constructor_exists():
+    assert callable(simpleJava_interface_declaration.__init__)
 
 
-def test_simplejava::interface::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::interface::declaration.__init__)
+def test_simplejava_interface_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_interface_declaration.__init__)
     params = list(sig.parameters.keys())
     assert "nomeInterface" in params, "Missing parameter 'nomeInterface'"
 
-def test_simplejava::interface::declaration_has_nomeInterface():
-    assert hasattr(simpleJava::interface::declaration, "nomeInterface")
+def test_simplejava_interface_declaration_has_nomeInterface():
+    assert hasattr(simpleJava_interface_declaration, "nomeInterface")
     descriptor = None
-    for klass in simpleJava::interface::declaration.__mro__:
+    for klass in simpleJava_interface_declaration.__mro__:
         if "nomeInterface" in klass.__dict__:
             descriptor = klass.__dict__["nomeInterface"]
             break
@@ -981,23 +981,23 @@ def test_simplejava::interface::declaration_has_nomeInterface():
 
 
 
-def test_simplejava::class::declaration_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::class::declaration)
+def test_simplejava_class_declaration_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_class_declaration)
 
 
-def test_simplejava::class::declaration_constructor_exists():
-    assert callable(simpleJava::class::declaration.__init__)
+def test_simplejava_class_declaration_constructor_exists():
+    assert callable(simpleJava_class_declaration.__init__)
 
 
-def test_simplejava::class::declaration_constructor_args():
-    sig = inspect.signature(simpleJava::class::declaration.__init__)
+def test_simplejava_class_declaration_constructor_args():
+    sig = inspect.signature(simpleJava_class_declaration.__init__)
     params = list(sig.parameters.keys())
     assert "nomeClasse" in params, "Missing parameter 'nomeClasse'"
 
-def test_simplejava::class::declaration_has_nomeClasse():
-    assert hasattr(simpleJava::class::declaration, "nomeClasse")
+def test_simplejava_class_declaration_has_nomeClasse():
+    assert hasattr(simpleJava_class_declaration, "nomeClasse")
     descriptor = None
-    for klass in simpleJava::class::declaration.__mro__:
+    for klass in simpleJava_class_declaration.__mro__:
         if "nomeClasse" in klass.__dict__:
             descriptor = klass.__dict__["nomeClasse"]
             break
@@ -1005,23 +1005,23 @@ def test_simplejava::class::declaration_has_nomeClasse():
 
 
 
-def test_simplejava::name_is_not_abstract():
-    assert not inspect.isabstract(simpleJava::name)
+def test_simplejava_name_is_not_abstract():
+    assert not inspect.isabstract(simpleJava_name)
 
 
-def test_simplejava::name_constructor_exists():
-    assert callable(simpleJava::name.__init__)
+def test_simplejava_name_constructor_exists():
+    assert callable(simpleJava_name.__init__)
 
 
-def test_simplejava::name_constructor_args():
-    sig = inspect.signature(simpleJava::name.__init__)
+def test_simplejava_name_constructor_args():
+    sig = inspect.signature(simpleJava_name.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_simplejava::name_has_nome():
-    assert hasattr(simpleJava::name, "nome")
+def test_simplejava_name_has_nome():
+    assert hasattr(simpleJava_name, "nome")
     descriptor = None
-    for klass in simpleJava::name.__mro__:
+    for klass in simpleJava_name.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1039,19 +1039,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-exp::aux_strategy = st.builds(
-    exp::aux,
+exp_aux_strategy = st.builds(
+    exp_aux,
 )
-simpleJava::package::name::aux_strategy = st.builds(
-    simpleJava::package::name::aux,
+simpleJava_package_name_aux_strategy = st.builds(
+    simpleJava_package_name_aux,
     nomePacote=
         safe_text
 )
-variable::declarator_strategy = st.builds(
-    variable::declarator,
+variable_declarator_strategy = st.builds(
+    variable_declarator,
 )
-simpleJava::literal::expression_strategy = st.builds(
-    simpleJava::literal::expression,
+simpleJava_literal_expression_strategy = st.builds(
+    simpleJava_literal_expression,
     string=
         safe_text,
     inteiro=
@@ -1061,411 +1061,375 @@ simpleJava::literal::expression_strategy = st.builds(
     decimal=
         safe_text
 )
-simpleJava::bit::expression_strategy = st.builds(
-    simpleJava::bit::expression,
+simpleJava_bit_expression_strategy = st.builds(
+    simpleJava_bit_expression,
     operador=
         safe_text
 )
-simpleJava::numeric::expression_strategy = st.builds(
-    simpleJava::numeric::expression,
+simpleJava_numeric_expression_strategy = st.builds(
+    simpleJava_numeric_expression,
     operador=
         safe_text
 )
-simpleJava::logical::expression_strategy = st.builds(
-    simpleJava::logical::expression,
+simpleJava_logical_expression_strategy = st.builds(
+    simpleJava_logical_expression,
     operador=
         safe_text
 )
-expression::aux_strategy = st.builds(
-    expression::aux,
+expression_aux_strategy = st.builds(
+    expression_aux,
 )
 expression_strategy = st.builds(
     expression,
 )
-simpleJava::exp::aux_strategy = st.builds(
-    simpleJava::exp::aux,
+simpleJava_exp_aux_strategy = st.builds(
+    simpleJava_exp_aux,
 )
-simpleJava::newBlock_strategy = st.builds(
-    simpleJava::newBlock,
+simpleJava_newBlock_strategy = st.builds(
+    simpleJava_newBlock,
 )
-simpleJava::type::specifier_strategy = st.builds(
-    simpleJava::type::specifier,
+simpleJava_type_specifier_strategy = st.builds(
+    simpleJava_type_specifier,
     nome=
         safe_text
 )
-simpleJava::creating::aux_strategy = st.builds(
-    simpleJava::creating::aux,
+simpleJava_creating_aux_strategy = st.builds(
+    simpleJava_creating_aux,
 )
-simpleJava::creating::expression_strategy = st.builds(
-    simpleJava::creating::expression,
+simpleJava_creating_expression_strategy = st.builds(
+    simpleJava_creating_expression,
 )
-creating::aux_strategy = st.builds(
-    creating::aux,
+creating_aux_strategy = st.builds(
+    creating_aux,
 )
-simpleJava::aux_strategy = st.builds(
-    simpleJava::aux,
+simpleJava_aux_strategy = st.builds(
+    simpleJava_aux,
 )
-simpleJava::mais::aux_strategy = st.builds(
-    simpleJava::mais::aux,
+simpleJava_mais_aux_strategy = st.builds(
+    simpleJava_mais_aux,
     operador=
         safe_text
 )
-simpleJava::arglist_strategy = st.builds(
-    simpleJava::arglist,
+simpleJava_arglist_strategy = st.builds(
+    simpleJava_arglist,
     nomeParametro=
         safe_text
 )
-simpleJava::expression::aux_strategy = st.builds(
-    simpleJava::expression::aux,
+simpleJava_expression_aux_strategy = st.builds(
+    simpleJava_expression_aux,
     operador=
         safe_text
 )
 newBlock_strategy = st.builds(
     newBlock,
 )
-simpleJava::variable::initializer_strategy = st.builds(
-    simpleJava::variable::initializer,
+simpleJava_variable_initializer_strategy = st.builds(
+    simpleJava_variable_initializer,
 )
-simpleJava::variable::declarator_strategy = st.builds(
-    simpleJava::variable::declarator,
-    op=
-        safe_text,
+simpleJava_variable_declarator_strategy = st.builds(
+    simpleJava_variable_declarator,
     nomeVariavel=
+        safe_text,
+    op=
         safe_text
 )
-simpleJava::switch::statement_strategy = st.builds(
-    simpleJava::switch::statement,
+simpleJava_switch_statement_strategy = st.builds(
+    simpleJava_switch_statement,
 )
-simpleJava::try::statement_strategy = st.builds(
-    simpleJava::try::statement,
+simpleJava_try_statement_strategy = st.builds(
+    simpleJava_try_statement,
 )
-simpleJava::for::statement_strategy = st.builds(
-    simpleJava::for::statement,
+simpleJava_for_statement_strategy = st.builds(
+    simpleJava_for_statement,
 )
-simpleJava::while::statement_strategy = st.builds(
-    simpleJava::while::statement,
+simpleJava_while_statement_strategy = st.builds(
+    simpleJava_while_statement,
 )
-simpleJava::parameter_strategy = st.builds(
-    simpleJava::parameter,
+simpleJava_parameter_strategy = st.builds(
+    simpleJava_parameter,
     nomeParametro=
         safe_text
 )
-simpleJava::statement::block_strategy = st.builds(
-    simpleJava::statement::block,
+simpleJava_statement_block_strategy = st.builds(
+    simpleJava_statement_block,
 )
-simpleJava::parameter::list_strategy = st.builds(
-    simpleJava::parameter::list,
+simpleJava_parameter_list_strategy = st.builds(
+    simpleJava_parameter_list,
 )
-simpleJava::type_strategy = st.builds(
-    simpleJava::type,
+simpleJava_type_strategy = st.builds(
+    simpleJava_type,
 )
-simpleJava::static::initializer_strategy = st.builds(
-    simpleJava::static::initializer,
+simpleJava_static_initializer_strategy = st.builds(
+    simpleJava_static_initializer,
 )
-simpleJava::variable::declaration_strategy = st.builds(
-    simpleJava::variable::declaration,
+simpleJava_variable_declaration_strategy = st.builds(
+    simpleJava_variable_declaration,
 )
-simpleJava::constructor::declaration_strategy = st.builds(
-    simpleJava::constructor::declaration,
+simpleJava_constructor_declaration_strategy = st.builds(
+    simpleJava_constructor_declaration,
     nomeContrutor=
         safe_text
 )
-simpleJava::method::declaration_strategy = st.builds(
-    simpleJava::method::declaration,
+simpleJava_method_declaration_strategy = st.builds(
+    simpleJava_method_declaration,
     nomeMetodo=
         safe_text
 )
-simpleJava::field::declaration_strategy = st.builds(
-    simpleJava::field::declaration,
+simpleJava_field_declaration_strategy = st.builds(
+    simpleJava_field_declaration,
 )
-simpleJava::do::statement_strategy = st.builds(
-    simpleJava::do::statement,
+simpleJava_do_statement_strategy = st.builds(
+    simpleJava_do_statement,
 )
-simpleJava::if::statement_strategy = st.builds(
-    simpleJava::if::statement,
+simpleJava_if_statement_strategy = st.builds(
+    simpleJava_if_statement,
 )
-simpleJava::expression_strategy = st.builds(
-    simpleJava::expression,
+simpleJava_expression_strategy = st.builds(
+    simpleJava_expression,
     identificador=
         safe_text
 )
-simpleJava::statement_strategy = st.builds(
-    simpleJava::statement,
-    break_=
-        safe_text,
+simpleJava_statement_strategy = st.builds(
+    simpleJava_statement,
     continue_=
+        safe_text,
+    break_=
         safe_text
 )
-simpleJava::type::declaration_strategy = st.builds(
-    simpleJava::type::declaration,
+simpleJava_type_declaration_strategy = st.builds(
+    simpleJava_type_declaration,
 )
-simpleJava::import::statement_strategy = st.builds(
-    simpleJava::import::statement,
+simpleJava_import_statement_strategy = st.builds(
+    simpleJava_import_statement,
 )
-simpleJava::package::statement_strategy = st.builds(
-    simpleJava::package::statement,
+simpleJava_package_statement_strategy = st.builds(
+    simpleJava_package_statement,
 )
 Model_strategy = st.builds(
     Model,
 )
-simpleJava::compilation::unit_strategy = st.builds(
-    simpleJava::compilation::unit,
+simpleJava_compilation_unit_strategy = st.builds(
+    simpleJava_compilation_unit,
 )
-simpleJava::Model_strategy = st.builds(
-    simpleJava::Model,
+simpleJava_Model_strategy = st.builds(
+    simpleJava_Model,
 )
-simpleJava::MODIFIER_strategy = st.builds(
-    simpleJava::MODIFIER,
+simpleJava_MODIFIER_strategy = st.builds(
+    simpleJava_MODIFIER,
     modificador=
         safe_text
 )
-type::declaration_strategy = st.builds(
-    type::declaration,
+type_declaration_strategy = st.builds(
+    type_declaration,
 )
-simpleJava::doc::comment_strategy = st.builds(
-    simpleJava::doc::comment,
+simpleJava_doc_comment_strategy = st.builds(
+    simpleJava_doc_comment,
     comentario=
         safe_text
 )
-simpleJava::interface::declaration_strategy = st.builds(
-    simpleJava::interface::declaration,
+simpleJava_interface_declaration_strategy = st.builds(
+    simpleJava_interface_declaration,
     nomeInterface=
         safe_text
 )
-simpleJava::class::declaration_strategy = st.builds(
-    simpleJava::class::declaration,
+simpleJava_class_declaration_strategy = st.builds(
+    simpleJava_class_declaration,
     nomeClasse=
         safe_text
 )
-simpleJava::name_strategy = st.builds(
-    simpleJava::name,
+simpleJava_name_strategy = st.builds(
+    simpleJava_name,
     nome=
         safe_text
 )
 
-@given(instance=exp::aux_strategy)
+@given(instance=exp_aux_strategy)
 @settings(max_examples=50)
-def test_exp::aux_instantiation(instance):
-    assert isinstance(instance, exp::aux)
+def test_exp_aux_instantiation(instance):
+    assert isinstance(instance, exp_aux)
 
-@given(instance=simpleJava::package::name::aux_strategy)
+@given(instance=simpleJava_package_name_aux_strategy)
 @settings(max_examples=50)
-def test_simplejava::package::name::aux_instantiation(instance):
-    assert isinstance(instance, simpleJava::package::name::aux)
-
-@given(instance=simpleJava::package::name::aux_strategy)
-def test_simplejava::package::name::aux_nomePacote_type(instance):
-    assert isinstance(instance.nomePacote, str)
+def test_simplejava_package_name_aux_instantiation(instance):
+    assert isinstance(instance, simpleJava_package_name_aux)
 
 
-@given(instance=simpleJava::package::name::aux_strategy)
-def test_simplejava::package::name::aux_nomePacote_setter(instance):
+
+@given(instance=simpleJava_package_name_aux_strategy)
+def test_simplejava_package_name_aux_nomePacote_setter(instance):
     original = instance.nomePacote
     instance.nomePacote = original
     assert instance.nomePacote == original
 
-@given(instance=variable::declarator_strategy)
+@given(instance=variable_declarator_strategy)
 @settings(max_examples=50)
-def test_variable::declarator_instantiation(instance):
-    assert isinstance(instance, variable::declarator)
+def test_variable_declarator_instantiation(instance):
+    assert isinstance(instance, variable_declarator)
 
-@given(instance=simpleJava::literal::expression_strategy)
+@given(instance=simpleJava_literal_expression_strategy)
 @settings(max_examples=50)
-def test_simplejava::literal::expression_instantiation(instance):
-    assert isinstance(instance, simpleJava::literal::expression)
-
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_string_type(instance):
-    assert isinstance(instance.string, str)
+def test_simplejava_literal_expression_instantiation(instance):
+    assert isinstance(instance, simpleJava_literal_expression)
 
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_string_setter(instance):
+
+@given(instance=simpleJava_literal_expression_strategy)
+def test_simplejava_literal_expression_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_inteiro_type(instance):
-    assert isinstance(instance.inteiro, str)
 
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_inteiro_setter(instance):
+@given(instance=simpleJava_literal_expression_strategy)
+def test_simplejava_literal_expression_inteiro_setter(instance):
     original = instance.inteiro
     instance.inteiro = original
     assert instance.inteiro == original
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_l_float_type(instance):
-    assert isinstance(instance.l_float, str)
 
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_l_float_setter(instance):
+@given(instance=simpleJava_literal_expression_strategy)
+def test_simplejava_literal_expression_l_float_setter(instance):
     original = instance.l_float
     instance.l_float = original
     assert instance.l_float == original
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_decimal_type(instance):
-    assert isinstance(instance.decimal, str)
 
 
-@given(instance=simpleJava::literal::expression_strategy)
-def test_simplejava::literal::expression_decimal_setter(instance):
+@given(instance=simpleJava_literal_expression_strategy)
+def test_simplejava_literal_expression_decimal_setter(instance):
     original = instance.decimal
     instance.decimal = original
     assert instance.decimal == original
 
-@given(instance=simpleJava::bit::expression_strategy)
+@given(instance=simpleJava_bit_expression_strategy)
 @settings(max_examples=50)
-def test_simplejava::bit::expression_instantiation(instance):
-    assert isinstance(instance, simpleJava::bit::expression)
-
-@given(instance=simpleJava::bit::expression_strategy)
-def test_simplejava::bit::expression_operador_type(instance):
-    assert isinstance(instance.operador, str)
+def test_simplejava_bit_expression_instantiation(instance):
+    assert isinstance(instance, simpleJava_bit_expression)
 
 
-@given(instance=simpleJava::bit::expression_strategy)
-def test_simplejava::bit::expression_operador_setter(instance):
+
+@given(instance=simpleJava_bit_expression_strategy)
+def test_simplejava_bit_expression_operador_setter(instance):
     original = instance.operador
     instance.operador = original
     assert instance.operador == original
 
-@given(instance=simpleJava::numeric::expression_strategy)
+@given(instance=simpleJava_numeric_expression_strategy)
 @settings(max_examples=50)
-def test_simplejava::numeric::expression_instantiation(instance):
-    assert isinstance(instance, simpleJava::numeric::expression)
-
-@given(instance=simpleJava::numeric::expression_strategy)
-def test_simplejava::numeric::expression_operador_type(instance):
-    assert isinstance(instance.operador, str)
+def test_simplejava_numeric_expression_instantiation(instance):
+    assert isinstance(instance, simpleJava_numeric_expression)
 
 
-@given(instance=simpleJava::numeric::expression_strategy)
-def test_simplejava::numeric::expression_operador_setter(instance):
+
+@given(instance=simpleJava_numeric_expression_strategy)
+def test_simplejava_numeric_expression_operador_setter(instance):
     original = instance.operador
     instance.operador = original
     assert instance.operador == original
 
-@given(instance=simpleJava::logical::expression_strategy)
+@given(instance=simpleJava_logical_expression_strategy)
 @settings(max_examples=50)
-def test_simplejava::logical::expression_instantiation(instance):
-    assert isinstance(instance, simpleJava::logical::expression)
-
-@given(instance=simpleJava::logical::expression_strategy)
-def test_simplejava::logical::expression_operador_type(instance):
-    assert isinstance(instance.operador, str)
+def test_simplejava_logical_expression_instantiation(instance):
+    assert isinstance(instance, simpleJava_logical_expression)
 
 
-@given(instance=simpleJava::logical::expression_strategy)
-def test_simplejava::logical::expression_operador_setter(instance):
+
+@given(instance=simpleJava_logical_expression_strategy)
+def test_simplejava_logical_expression_operador_setter(instance):
     original = instance.operador
     instance.operador = original
     assert instance.operador == original
 
-@given(instance=expression::aux_strategy)
+@given(instance=expression_aux_strategy)
 @settings(max_examples=50)
-def test_expression::aux_instantiation(instance):
-    assert isinstance(instance, expression::aux)
+def test_expression_aux_instantiation(instance):
+    assert isinstance(instance, expression_aux)
 
 @given(instance=expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, expression)
 
-@given(instance=simpleJava::exp::aux_strategy)
+@given(instance=simpleJava_exp_aux_strategy)
 @settings(max_examples=50)
-def test_simplejava::exp::aux_instantiation(instance):
-    assert isinstance(instance, simpleJava::exp::aux)
+def test_simplejava_exp_aux_instantiation(instance):
+    assert isinstance(instance, simpleJava_exp_aux)
 
-@given(instance=simpleJava::newBlock_strategy)
+@given(instance=simpleJava_newBlock_strategy)
 @settings(max_examples=50)
-def test_simplejava::newblock_instantiation(instance):
-    assert isinstance(instance, simpleJava::newBlock)
+def test_simplejava_newblock_instantiation(instance):
+    assert isinstance(instance, simpleJava_newBlock)
 
-@given(instance=simpleJava::type::specifier_strategy)
+@given(instance=simpleJava_type_specifier_strategy)
 @settings(max_examples=50)
-def test_simplejava::type::specifier_instantiation(instance):
-    assert isinstance(instance, simpleJava::type::specifier)
-
-@given(instance=simpleJava::type::specifier_strategy)
-def test_simplejava::type::specifier_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_simplejava_type_specifier_instantiation(instance):
+    assert isinstance(instance, simpleJava_type_specifier)
 
 
-@given(instance=simpleJava::type::specifier_strategy)
-def test_simplejava::type::specifier_nome_setter(instance):
+
+@given(instance=simpleJava_type_specifier_strategy)
+def test_simplejava_type_specifier_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=simpleJava::creating::aux_strategy)
+@given(instance=simpleJava_creating_aux_strategy)
 @settings(max_examples=50)
-def test_simplejava::creating::aux_instantiation(instance):
-    assert isinstance(instance, simpleJava::creating::aux)
+def test_simplejava_creating_aux_instantiation(instance):
+    assert isinstance(instance, simpleJava_creating_aux)
 
-@given(instance=simpleJava::creating::expression_strategy)
+@given(instance=simpleJava_creating_expression_strategy)
 @settings(max_examples=50)
-def test_simplejava::creating::expression_instantiation(instance):
-    assert isinstance(instance, simpleJava::creating::expression)
+def test_simplejava_creating_expression_instantiation(instance):
+    assert isinstance(instance, simpleJava_creating_expression)
 
-@given(instance=creating::aux_strategy)
+@given(instance=creating_aux_strategy)
 @settings(max_examples=50)
-def test_creating::aux_instantiation(instance):
-    assert isinstance(instance, creating::aux)
+def test_creating_aux_instantiation(instance):
+    assert isinstance(instance, creating_aux)
 
-@given(instance=simpleJava::aux_strategy)
+@given(instance=simpleJava_aux_strategy)
 @settings(max_examples=50)
-def test_simplejava::aux_instantiation(instance):
-    assert isinstance(instance, simpleJava::aux)
+def test_simplejava_aux_instantiation(instance):
+    assert isinstance(instance, simpleJava_aux)
 
-@given(instance=simpleJava::mais::aux_strategy)
+@given(instance=simpleJava_mais_aux_strategy)
 @settings(max_examples=50)
-def test_simplejava::mais::aux_instantiation(instance):
-    assert isinstance(instance, simpleJava::mais::aux)
-
-@given(instance=simpleJava::mais::aux_strategy)
-def test_simplejava::mais::aux_operador_type(instance):
-    assert isinstance(instance.operador, str)
+def test_simplejava_mais_aux_instantiation(instance):
+    assert isinstance(instance, simpleJava_mais_aux)
 
 
-@given(instance=simpleJava::mais::aux_strategy)
-def test_simplejava::mais::aux_operador_setter(instance):
+
+@given(instance=simpleJava_mais_aux_strategy)
+def test_simplejava_mais_aux_operador_setter(instance):
     original = instance.operador
     instance.operador = original
     assert instance.operador == original
 
-@given(instance=simpleJava::arglist_strategy)
+@given(instance=simpleJava_arglist_strategy)
 @settings(max_examples=50)
-def test_simplejava::arglist_instantiation(instance):
-    assert isinstance(instance, simpleJava::arglist)
-
-@given(instance=simpleJava::arglist_strategy)
-def test_simplejava::arglist_nomeParametro_type(instance):
-    assert isinstance(instance.nomeParametro, str)
+def test_simplejava_arglist_instantiation(instance):
+    assert isinstance(instance, simpleJava_arglist)
 
 
-@given(instance=simpleJava::arglist_strategy)
-def test_simplejava::arglist_nomeParametro_setter(instance):
+
+@given(instance=simpleJava_arglist_strategy)
+def test_simplejava_arglist_nomeParametro_setter(instance):
     original = instance.nomeParametro
     instance.nomeParametro = original
     assert instance.nomeParametro == original
 
-@given(instance=simpleJava::expression::aux_strategy)
+@given(instance=simpleJava_expression_aux_strategy)
 @settings(max_examples=50)
-def test_simplejava::expression::aux_instantiation(instance):
-    assert isinstance(instance, simpleJava::expression::aux)
-
-@given(instance=simpleJava::expression::aux_strategy)
-def test_simplejava::expression::aux_operador_type(instance):
-    assert isinstance(instance.operador, str)
+def test_simplejava_expression_aux_instantiation(instance):
+    assert isinstance(instance, simpleJava_expression_aux)
 
 
-@given(instance=simpleJava::expression::aux_strategy)
-def test_simplejava::expression::aux_operador_setter(instance):
+
+@given(instance=simpleJava_expression_aux_strategy)
+def test_simplejava_expression_aux_operador_setter(instance):
     original = instance.operador
     instance.operador = original
     assert instance.operador == original
@@ -1475,300 +1439,261 @@ def test_simplejava::expression::aux_operador_setter(instance):
 def test_newblock_instantiation(instance):
     assert isinstance(instance, newBlock)
 
-@given(instance=simpleJava::variable::initializer_strategy)
+@given(instance=simpleJava_variable_initializer_strategy)
 @settings(max_examples=50)
-def test_simplejava::variable::initializer_instantiation(instance):
-    assert isinstance(instance, simpleJava::variable::initializer)
+def test_simplejava_variable_initializer_instantiation(instance):
+    assert isinstance(instance, simpleJava_variable_initializer)
 
-@given(instance=simpleJava::variable::declarator_strategy)
+@given(instance=simpleJava_variable_declarator_strategy)
 @settings(max_examples=50)
-def test_simplejava::variable::declarator_instantiation(instance):
-    assert isinstance(instance, simpleJava::variable::declarator)
-
-@given(instance=simpleJava::variable::declarator_strategy)
-def test_simplejava::variable::declarator_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_simplejava_variable_declarator_instantiation(instance):
+    assert isinstance(instance, simpleJava_variable_declarator)
 
 
-@given(instance=simpleJava::variable::declarator_strategy)
-def test_simplejava::variable::declarator_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
 
-@given(instance=simpleJava::variable::declarator_strategy)
-def test_simplejava::variable::declarator_nomeVariavel_type(instance):
-    assert isinstance(instance.nomeVariavel, str)
-
-
-@given(instance=simpleJava::variable::declarator_strategy)
-def test_simplejava::variable::declarator_nomeVariavel_setter(instance):
+@given(instance=simpleJava_variable_declarator_strategy)
+def test_simplejava_variable_declarator_nomeVariavel_setter(instance):
     original = instance.nomeVariavel
     instance.nomeVariavel = original
     assert instance.nomeVariavel == original
 
-@given(instance=simpleJava::switch::statement_strategy)
+
+
+@given(instance=simpleJava_variable_declarator_strategy)
+def test_simplejava_variable_declarator_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=simpleJava_switch_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::switch::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::switch::statement)
+def test_simplejava_switch_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_switch_statement)
 
-@given(instance=simpleJava::try::statement_strategy)
+@given(instance=simpleJava_try_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::try::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::try::statement)
+def test_simplejava_try_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_try_statement)
 
-@given(instance=simpleJava::for::statement_strategy)
+@given(instance=simpleJava_for_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::for::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::for::statement)
+def test_simplejava_for_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_for_statement)
 
-@given(instance=simpleJava::while::statement_strategy)
+@given(instance=simpleJava_while_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::while::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::while::statement)
+def test_simplejava_while_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_while_statement)
 
-@given(instance=simpleJava::parameter_strategy)
+@given(instance=simpleJava_parameter_strategy)
 @settings(max_examples=50)
-def test_simplejava::parameter_instantiation(instance):
-    assert isinstance(instance, simpleJava::parameter)
-
-@given(instance=simpleJava::parameter_strategy)
-def test_simplejava::parameter_nomeParametro_type(instance):
-    assert isinstance(instance.nomeParametro, str)
+def test_simplejava_parameter_instantiation(instance):
+    assert isinstance(instance, simpleJava_parameter)
 
 
-@given(instance=simpleJava::parameter_strategy)
-def test_simplejava::parameter_nomeParametro_setter(instance):
+
+@given(instance=simpleJava_parameter_strategy)
+def test_simplejava_parameter_nomeParametro_setter(instance):
     original = instance.nomeParametro
     instance.nomeParametro = original
     assert instance.nomeParametro == original
 
-@given(instance=simpleJava::statement::block_strategy)
+@given(instance=simpleJava_statement_block_strategy)
 @settings(max_examples=50)
-def test_simplejava::statement::block_instantiation(instance):
-    assert isinstance(instance, simpleJava::statement::block)
+def test_simplejava_statement_block_instantiation(instance):
+    assert isinstance(instance, simpleJava_statement_block)
 
-@given(instance=simpleJava::parameter::list_strategy)
+@given(instance=simpleJava_parameter_list_strategy)
 @settings(max_examples=50)
-def test_simplejava::parameter::list_instantiation(instance):
-    assert isinstance(instance, simpleJava::parameter::list)
+def test_simplejava_parameter_list_instantiation(instance):
+    assert isinstance(instance, simpleJava_parameter_list)
 
-@given(instance=simpleJava::type_strategy)
+@given(instance=simpleJava_type_strategy)
 @settings(max_examples=50)
-def test_simplejava::type_instantiation(instance):
-    assert isinstance(instance, simpleJava::type)
+def test_simplejava_type_instantiation(instance):
+    assert isinstance(instance, simpleJava_type)
 
-@given(instance=simpleJava::static::initializer_strategy)
+@given(instance=simpleJava_static_initializer_strategy)
 @settings(max_examples=50)
-def test_simplejava::static::initializer_instantiation(instance):
-    assert isinstance(instance, simpleJava::static::initializer)
+def test_simplejava_static_initializer_instantiation(instance):
+    assert isinstance(instance, simpleJava_static_initializer)
 
-@given(instance=simpleJava::variable::declaration_strategy)
+@given(instance=simpleJava_variable_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::variable::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::variable::declaration)
+def test_simplejava_variable_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_variable_declaration)
 
-@given(instance=simpleJava::constructor::declaration_strategy)
+@given(instance=simpleJava_constructor_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::constructor::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::constructor::declaration)
-
-@given(instance=simpleJava::constructor::declaration_strategy)
-def test_simplejava::constructor::declaration_nomeContrutor_type(instance):
-    assert isinstance(instance.nomeContrutor, str)
+def test_simplejava_constructor_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_constructor_declaration)
 
 
-@given(instance=simpleJava::constructor::declaration_strategy)
-def test_simplejava::constructor::declaration_nomeContrutor_setter(instance):
+
+@given(instance=simpleJava_constructor_declaration_strategy)
+def test_simplejava_constructor_declaration_nomeContrutor_setter(instance):
     original = instance.nomeContrutor
     instance.nomeContrutor = original
     assert instance.nomeContrutor == original
 
-@given(instance=simpleJava::method::declaration_strategy)
+@given(instance=simpleJava_method_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::method::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::method::declaration)
-
-@given(instance=simpleJava::method::declaration_strategy)
-def test_simplejava::method::declaration_nomeMetodo_type(instance):
-    assert isinstance(instance.nomeMetodo, str)
+def test_simplejava_method_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_method_declaration)
 
 
-@given(instance=simpleJava::method::declaration_strategy)
-def test_simplejava::method::declaration_nomeMetodo_setter(instance):
+
+@given(instance=simpleJava_method_declaration_strategy)
+def test_simplejava_method_declaration_nomeMetodo_setter(instance):
     original = instance.nomeMetodo
     instance.nomeMetodo = original
     assert instance.nomeMetodo == original
 
-@given(instance=simpleJava::field::declaration_strategy)
+@given(instance=simpleJava_field_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::field::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::field::declaration)
+def test_simplejava_field_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_field_declaration)
 
-@given(instance=simpleJava::do::statement_strategy)
+@given(instance=simpleJava_do_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::do::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::do::statement)
+def test_simplejava_do_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_do_statement)
 
-@given(instance=simpleJava::if::statement_strategy)
+@given(instance=simpleJava_if_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::if::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::if::statement)
+def test_simplejava_if_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_if_statement)
 
-@given(instance=simpleJava::expression_strategy)
+@given(instance=simpleJava_expression_strategy)
 @settings(max_examples=50)
-def test_simplejava::expression_instantiation(instance):
-    assert isinstance(instance, simpleJava::expression)
-
-@given(instance=simpleJava::expression_strategy)
-def test_simplejava::expression_identificador_type(instance):
-    assert isinstance(instance.identificador, str)
+def test_simplejava_expression_instantiation(instance):
+    assert isinstance(instance, simpleJava_expression)
 
 
-@given(instance=simpleJava::expression_strategy)
-def test_simplejava::expression_identificador_setter(instance):
+
+@given(instance=simpleJava_expression_strategy)
+def test_simplejava_expression_identificador_setter(instance):
     original = instance.identificador
     instance.identificador = original
     assert instance.identificador == original
 
-@given(instance=simpleJava::statement_strategy)
+@given(instance=simpleJava_statement_strategy)
 @settings(max_examples=50)
-def test_simplejava::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::statement)
-
-@given(instance=simpleJava::statement_strategy)
-def test_simplejava::statement_break__type(instance):
-    assert isinstance(instance.break_, str)
+def test_simplejava_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_statement)
 
 
-@given(instance=simpleJava::statement_strategy)
-def test_simplejava::statement_break__setter(instance):
-    original = instance.break_
-    instance.break_ = original
-    assert instance.break_ == original
 
-@given(instance=simpleJava::statement_strategy)
-def test_simplejava::statement_continue__type(instance):
-    assert isinstance(instance.continue_, str)
-
-
-@given(instance=simpleJava::statement_strategy)
-def test_simplejava::statement_continue__setter(instance):
+@given(instance=simpleJava_statement_strategy)
+def test_simplejava_statement_continue__setter(instance):
     original = instance.continue_
     instance.continue_ = original
     assert instance.continue_ == original
 
-@given(instance=simpleJava::type::declaration_strategy)
-@settings(max_examples=50)
-def test_simplejava::type::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::type::declaration)
 
-@given(instance=simpleJava::import::statement_strategy)
-@settings(max_examples=50)
-def test_simplejava::import::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::import::statement)
 
-@given(instance=simpleJava::package::statement_strategy)
+@given(instance=simpleJava_statement_strategy)
+def test_simplejava_statement_break__setter(instance):
+    original = instance.break_
+    instance.break_ = original
+    assert instance.break_ == original
+
+@given(instance=simpleJava_type_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::package::statement_instantiation(instance):
-    assert isinstance(instance, simpleJava::package::statement)
+def test_simplejava_type_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_type_declaration)
+
+@given(instance=simpleJava_import_statement_strategy)
+@settings(max_examples=50)
+def test_simplejava_import_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_import_statement)
+
+@given(instance=simpleJava_package_statement_strategy)
+@settings(max_examples=50)
+def test_simplejava_package_statement_instantiation(instance):
+    assert isinstance(instance, simpleJava_package_statement)
 
 @given(instance=Model_strategy)
 @settings(max_examples=50)
 def test_model_instantiation(instance):
     assert isinstance(instance, Model)
 
-@given(instance=simpleJava::compilation::unit_strategy)
+@given(instance=simpleJava_compilation_unit_strategy)
 @settings(max_examples=50)
-def test_simplejava::compilation::unit_instantiation(instance):
-    assert isinstance(instance, simpleJava::compilation::unit)
+def test_simplejava_compilation_unit_instantiation(instance):
+    assert isinstance(instance, simpleJava_compilation_unit)
 
-@given(instance=simpleJava::Model_strategy)
+@given(instance=simpleJava_Model_strategy)
 @settings(max_examples=50)
-def test_simplejava::model_instantiation(instance):
-    assert isinstance(instance, simpleJava::Model)
+def test_simplejava_model_instantiation(instance):
+    assert isinstance(instance, simpleJava_Model)
 
-@given(instance=simpleJava::MODIFIER_strategy)
+@given(instance=simpleJava_MODIFIER_strategy)
 @settings(max_examples=50)
-def test_simplejava::modifier_instantiation(instance):
-    assert isinstance(instance, simpleJava::MODIFIER)
-
-@given(instance=simpleJava::MODIFIER_strategy)
-def test_simplejava::modifier_modificador_type(instance):
-    assert isinstance(instance.modificador, str)
+def test_simplejava_modifier_instantiation(instance):
+    assert isinstance(instance, simpleJava_MODIFIER)
 
 
-@given(instance=simpleJava::MODIFIER_strategy)
-def test_simplejava::modifier_modificador_setter(instance):
+
+@given(instance=simpleJava_MODIFIER_strategy)
+def test_simplejava_modifier_modificador_setter(instance):
     original = instance.modificador
     instance.modificador = original
     assert instance.modificador == original
 
-@given(instance=type::declaration_strategy)
+@given(instance=type_declaration_strategy)
 @settings(max_examples=50)
-def test_type::declaration_instantiation(instance):
-    assert isinstance(instance, type::declaration)
+def test_type_declaration_instantiation(instance):
+    assert isinstance(instance, type_declaration)
 
-@given(instance=simpleJava::doc::comment_strategy)
+@given(instance=simpleJava_doc_comment_strategy)
 @settings(max_examples=50)
-def test_simplejava::doc::comment_instantiation(instance):
-    assert isinstance(instance, simpleJava::doc::comment)
-
-@given(instance=simpleJava::doc::comment_strategy)
-def test_simplejava::doc::comment_comentario_type(instance):
-    assert isinstance(instance.comentario, str)
+def test_simplejava_doc_comment_instantiation(instance):
+    assert isinstance(instance, simpleJava_doc_comment)
 
 
-@given(instance=simpleJava::doc::comment_strategy)
-def test_simplejava::doc::comment_comentario_setter(instance):
+
+@given(instance=simpleJava_doc_comment_strategy)
+def test_simplejava_doc_comment_comentario_setter(instance):
     original = instance.comentario
     instance.comentario = original
     assert instance.comentario == original
 
-@given(instance=simpleJava::interface::declaration_strategy)
+@given(instance=simpleJava_interface_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::interface::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::interface::declaration)
-
-@given(instance=simpleJava::interface::declaration_strategy)
-def test_simplejava::interface::declaration_nomeInterface_type(instance):
-    assert isinstance(instance.nomeInterface, str)
+def test_simplejava_interface_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_interface_declaration)
 
 
-@given(instance=simpleJava::interface::declaration_strategy)
-def test_simplejava::interface::declaration_nomeInterface_setter(instance):
+
+@given(instance=simpleJava_interface_declaration_strategy)
+def test_simplejava_interface_declaration_nomeInterface_setter(instance):
     original = instance.nomeInterface
     instance.nomeInterface = original
     assert instance.nomeInterface == original
 
-@given(instance=simpleJava::class::declaration_strategy)
+@given(instance=simpleJava_class_declaration_strategy)
 @settings(max_examples=50)
-def test_simplejava::class::declaration_instantiation(instance):
-    assert isinstance(instance, simpleJava::class::declaration)
-
-@given(instance=simpleJava::class::declaration_strategy)
-def test_simplejava::class::declaration_nomeClasse_type(instance):
-    assert isinstance(instance.nomeClasse, str)
+def test_simplejava_class_declaration_instantiation(instance):
+    assert isinstance(instance, simpleJava_class_declaration)
 
 
-@given(instance=simpleJava::class::declaration_strategy)
-def test_simplejava::class::declaration_nomeClasse_setter(instance):
+
+@given(instance=simpleJava_class_declaration_strategy)
+def test_simplejava_class_declaration_nomeClasse_setter(instance):
     original = instance.nomeClasse
     instance.nomeClasse = original
     assert instance.nomeClasse == original
 
-@given(instance=simpleJava::name_strategy)
+@given(instance=simpleJava_name_strategy)
 @settings(max_examples=50)
-def test_simplejava::name_instantiation(instance):
-    assert isinstance(instance, simpleJava::name)
-
-@given(instance=simpleJava::name_strategy)
-def test_simplejava::name_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_simplejava_name_instantiation(instance):
+    assert isinstance(instance, simpleJava_name)
 
 
-@given(instance=simpleJava::name_strategy)
-def test_simplejava::name_nome_setter(instance):
+
+@given(instance=simpleJava_name_strategy)
+def test_simplejava_name_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original

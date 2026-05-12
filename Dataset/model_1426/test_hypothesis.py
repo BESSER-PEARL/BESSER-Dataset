@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ModelElement,
-    statechart::AbstractState,
-    statechart::Transition,
-    statechart::ModelElement,
-    statechart::StateMachine,
+    statechart_AbstractState,
+    statechart_Transition,
+    statechart_ModelElement,
+    statechart_StateMachine,
     AbstractState,
-    statechart::FinalState,
-    statechart::SimpleState,
-    statechart::InitialState,
-    statechart::CompositeState,
-    statechart::Action,
+    statechart_InitialState,
+    statechart_SimpleState,
+    statechart_FinalState,
+    statechart_CompositeState,
+    statechart_Action,
     ActionKind,
 )
 
@@ -40,47 +40,47 @@ def test_modelelement_constructor_args():
 
 
 
-def test_statechart::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(statechart::AbstractState)
+def test_statechart_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(statechart_AbstractState)
 
 
-def test_statechart::abstractstate_constructor_exists():
-    assert callable(statechart::AbstractState.__init__)
+def test_statechart_abstractstate_constructor_exists():
+    assert callable(statechart_AbstractState.__init__)
 
 
-def test_statechart::abstractstate_constructor_args():
-    sig = inspect.signature(statechart::AbstractState.__init__)
+def test_statechart_abstractstate_constructor_args():
+    sig = inspect.signature(statechart_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechart::transition_is_not_abstract():
-    assert not inspect.isabstract(statechart::Transition)
+def test_statechart_transition_is_not_abstract():
+    assert not inspect.isabstract(statechart_Transition)
 
 
-def test_statechart::transition_constructor_exists():
-    assert callable(statechart::Transition.__init__)
+def test_statechart_transition_constructor_exists():
+    assert callable(statechart_Transition.__init__)
 
 
-def test_statechart::transition_constructor_args():
-    sig = inspect.signature(statechart::Transition.__init__)
+def test_statechart_transition_constructor_args():
+    sig = inspect.signature(statechart_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "guard" in params, "Missing parameter 'guard'"
     assert "event" in params, "Missing parameter 'event'"
 
-def test_statechart::transition_has_guard():
-    assert hasattr(statechart::Transition, "guard")
+def test_statechart_transition_has_guard():
+    assert hasattr(statechart_Transition, "guard")
     descriptor = None
-    for klass in statechart::Transition.__mro__:
+    for klass in statechart_Transition.__mro__:
         if "guard" in klass.__dict__:
             descriptor = klass.__dict__["guard"]
             break
     assert isinstance(descriptor, property)
 
-def test_statechart::transition_has_event():
-    assert hasattr(statechart::Transition, "event")
+def test_statechart_transition_has_event():
+    assert hasattr(statechart_Transition, "event")
     descriptor = None
-    for klass in statechart::Transition.__mro__:
+    for klass in statechart_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -88,23 +88,23 @@ def test_statechart::transition_has_event():
 
 
 
-def test_statechart::modelelement_is_not_abstract():
-    assert not inspect.isabstract(statechart::ModelElement)
+def test_statechart_modelelement_is_not_abstract():
+    assert not inspect.isabstract(statechart_ModelElement)
 
 
-def test_statechart::modelelement_constructor_exists():
-    assert callable(statechart::ModelElement.__init__)
+def test_statechart_modelelement_constructor_exists():
+    assert callable(statechart_ModelElement.__init__)
 
 
-def test_statechart::modelelement_constructor_args():
-    sig = inspect.signature(statechart::ModelElement.__init__)
+def test_statechart_modelelement_constructor_args():
+    sig = inspect.signature(statechart_ModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statechart::modelelement_has_name():
-    assert hasattr(statechart::ModelElement, "name")
+def test_statechart_modelelement_has_name():
+    assert hasattr(statechart_ModelElement, "name")
     descriptor = None
-    for klass in statechart::ModelElement.__mro__:
+    for klass in statechart_ModelElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -112,16 +112,16 @@ def test_statechart::modelelement_has_name():
 
 
 
-def test_statechart::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statechart::StateMachine)
+def test_statechart_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statechart_StateMachine)
 
 
-def test_statechart::statemachine_constructor_exists():
-    assert callable(statechart::StateMachine.__init__)
+def test_statechart_statemachine_constructor_exists():
+    assert callable(statechart_StateMachine.__init__)
 
 
-def test_statechart::statemachine_constructor_args():
-    sig = inspect.signature(statechart::StateMachine.__init__)
+def test_statechart_statemachine_constructor_args():
+    sig = inspect.signature(statechart_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -140,79 +140,79 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_statechart::finalstate_is_not_abstract():
-    assert not inspect.isabstract(statechart::FinalState)
+def test_statechart_initialstate_is_not_abstract():
+    assert not inspect.isabstract(statechart_InitialState)
 
 
-def test_statechart::finalstate_constructor_exists():
-    assert callable(statechart::FinalState.__init__)
+def test_statechart_initialstate_constructor_exists():
+    assert callable(statechart_InitialState.__init__)
 
 
-def test_statechart::finalstate_constructor_args():
-    sig = inspect.signature(statechart::FinalState.__init__)
+def test_statechart_initialstate_constructor_args():
+    sig = inspect.signature(statechart_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechart::simplestate_is_not_abstract():
-    assert not inspect.isabstract(statechart::SimpleState)
+def test_statechart_simplestate_is_not_abstract():
+    assert not inspect.isabstract(statechart_SimpleState)
 
 
-def test_statechart::simplestate_constructor_exists():
-    assert callable(statechart::SimpleState.__init__)
+def test_statechart_simplestate_constructor_exists():
+    assert callable(statechart_SimpleState.__init__)
 
 
-def test_statechart::simplestate_constructor_args():
-    sig = inspect.signature(statechart::SimpleState.__init__)
+def test_statechart_simplestate_constructor_args():
+    sig = inspect.signature(statechart_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechart::initialstate_is_not_abstract():
-    assert not inspect.isabstract(statechart::InitialState)
+def test_statechart_finalstate_is_not_abstract():
+    assert not inspect.isabstract(statechart_FinalState)
 
 
-def test_statechart::initialstate_constructor_exists():
-    assert callable(statechart::InitialState.__init__)
+def test_statechart_finalstate_constructor_exists():
+    assert callable(statechart_FinalState.__init__)
 
 
-def test_statechart::initialstate_constructor_args():
-    sig = inspect.signature(statechart::InitialState.__init__)
+def test_statechart_finalstate_constructor_args():
+    sig = inspect.signature(statechart_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechart::compositestate_is_not_abstract():
-    assert not inspect.isabstract(statechart::CompositeState)
+def test_statechart_compositestate_is_not_abstract():
+    assert not inspect.isabstract(statechart_CompositeState)
 
 
-def test_statechart::compositestate_constructor_exists():
-    assert callable(statechart::CompositeState.__init__)
+def test_statechart_compositestate_constructor_exists():
+    assert callable(statechart_CompositeState.__init__)
 
 
-def test_statechart::compositestate_constructor_args():
-    sig = inspect.signature(statechart::CompositeState.__init__)
+def test_statechart_compositestate_constructor_args():
+    sig = inspect.signature(statechart_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechart::action_is_not_abstract():
-    assert not inspect.isabstract(statechart::Action)
+def test_statechart_action_is_not_abstract():
+    assert not inspect.isabstract(statechart_Action)
 
 
-def test_statechart::action_constructor_exists():
-    assert callable(statechart::Action.__init__)
+def test_statechart_action_constructor_exists():
+    assert callable(statechart_Action.__init__)
 
 
-def test_statechart::action_constructor_args():
-    sig = inspect.signature(statechart::Action.__init__)
+def test_statechart_action_constructor_args():
+    sig = inspect.signature(statechart_Action.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_statechart::action_has_kind():
-    assert hasattr(statechart::Action, "kind")
+def test_statechart_action_has_kind():
+    assert hasattr(statechart_Action, "kind")
     descriptor = None
-    for klass in statechart::Action.__mro__:
+    for klass in statechart_Action.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -248,41 +248,41 @@ safe_text = st.text(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-statechart::AbstractState_strategy = st.builds(
-    statechart::AbstractState,
+statechart_AbstractState_strategy = st.builds(
+    statechart_AbstractState,
 )
-statechart::Transition_strategy = st.builds(
-    statechart::Transition,
+statechart_Transition_strategy = st.builds(
+    statechart_Transition,
     guard=
         safe_text,
     event=
         safe_text
 )
-statechart::ModelElement_strategy = st.builds(
-    statechart::ModelElement,
+statechart_ModelElement_strategy = st.builds(
+    statechart_ModelElement,
     name=
         safe_text
 )
-statechart::StateMachine_strategy = st.builds(
-    statechart::StateMachine,
+statechart_StateMachine_strategy = st.builds(
+    statechart_StateMachine,
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-statechart::FinalState_strategy = st.builds(
-    statechart::FinalState,
+statechart_InitialState_strategy = st.builds(
+    statechart_InitialState,
 )
-statechart::SimpleState_strategy = st.builds(
-    statechart::SimpleState,
+statechart_SimpleState_strategy = st.builds(
+    statechart_SimpleState,
 )
-statechart::InitialState_strategy = st.builds(
-    statechart::InitialState,
+statechart_FinalState_strategy = st.builds(
+    statechart_FinalState,
 )
-statechart::CompositeState_strategy = st.builds(
-    statechart::CompositeState,
+statechart_CompositeState_strategy = st.builds(
+    statechart_CompositeState,
 )
-statechart::Action_strategy = st.builds(
-    statechart::Action,
+statechart_Action_strategy = st.builds(
+    statechart_Action,
     kind=
         safe_text
 )
@@ -292,96 +292,84 @@ statechart::Action_strategy = st.builds(
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=statechart::AbstractState_strategy)
+@given(instance=statechart_AbstractState_strategy)
 @settings(max_examples=50)
-def test_statechart::abstractstate_instantiation(instance):
-    assert isinstance(instance, statechart::AbstractState)
+def test_statechart_abstractstate_instantiation(instance):
+    assert isinstance(instance, statechart_AbstractState)
 
-@given(instance=statechart::Transition_strategy)
+@given(instance=statechart_Transition_strategy)
 @settings(max_examples=50)
-def test_statechart::transition_instantiation(instance):
-    assert isinstance(instance, statechart::Transition)
-
-@given(instance=statechart::Transition_strategy)
-def test_statechart::transition_guard_type(instance):
-    assert isinstance(instance.guard, str)
+def test_statechart_transition_instantiation(instance):
+    assert isinstance(instance, statechart_Transition)
 
 
-@given(instance=statechart::Transition_strategy)
-def test_statechart::transition_guard_setter(instance):
+
+@given(instance=statechart_Transition_strategy)
+def test_statechart_transition_guard_setter(instance):
     original = instance.guard
     instance.guard = original
     assert instance.guard == original
 
-@given(instance=statechart::Transition_strategy)
-def test_statechart::transition_event_type(instance):
-    assert isinstance(instance.event, str)
 
 
-@given(instance=statechart::Transition_strategy)
-def test_statechart::transition_event_setter(instance):
+@given(instance=statechart_Transition_strategy)
+def test_statechart_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=statechart::ModelElement_strategy)
+@given(instance=statechart_ModelElement_strategy)
 @settings(max_examples=50)
-def test_statechart::modelelement_instantiation(instance):
-    assert isinstance(instance, statechart::ModelElement)
-
-@given(instance=statechart::ModelElement_strategy)
-def test_statechart::modelelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statechart_modelelement_instantiation(instance):
+    assert isinstance(instance, statechart_ModelElement)
 
 
-@given(instance=statechart::ModelElement_strategy)
-def test_statechart::modelelement_name_setter(instance):
+
+@given(instance=statechart_ModelElement_strategy)
+def test_statechart_modelelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statechart::StateMachine_strategy)
+@given(instance=statechart_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statechart::statemachine_instantiation(instance):
-    assert isinstance(instance, statechart::StateMachine)
+def test_statechart_statemachine_instantiation(instance):
+    assert isinstance(instance, statechart_StateMachine)
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=statechart::FinalState_strategy)
+@given(instance=statechart_InitialState_strategy)
 @settings(max_examples=50)
-def test_statechart::finalstate_instantiation(instance):
-    assert isinstance(instance, statechart::FinalState)
+def test_statechart_initialstate_instantiation(instance):
+    assert isinstance(instance, statechart_InitialState)
 
-@given(instance=statechart::SimpleState_strategy)
+@given(instance=statechart_SimpleState_strategy)
 @settings(max_examples=50)
-def test_statechart::simplestate_instantiation(instance):
-    assert isinstance(instance, statechart::SimpleState)
+def test_statechart_simplestate_instantiation(instance):
+    assert isinstance(instance, statechart_SimpleState)
 
-@given(instance=statechart::InitialState_strategy)
+@given(instance=statechart_FinalState_strategy)
 @settings(max_examples=50)
-def test_statechart::initialstate_instantiation(instance):
-    assert isinstance(instance, statechart::InitialState)
+def test_statechart_finalstate_instantiation(instance):
+    assert isinstance(instance, statechart_FinalState)
 
-@given(instance=statechart::CompositeState_strategy)
+@given(instance=statechart_CompositeState_strategy)
 @settings(max_examples=50)
-def test_statechart::compositestate_instantiation(instance):
-    assert isinstance(instance, statechart::CompositeState)
+def test_statechart_compositestate_instantiation(instance):
+    assert isinstance(instance, statechart_CompositeState)
 
-@given(instance=statechart::Action_strategy)
+@given(instance=statechart_Action_strategy)
 @settings(max_examples=50)
-def test_statechart::action_instantiation(instance):
-    assert isinstance(instance, statechart::Action)
-
-@given(instance=statechart::Action_strategy)
-def test_statechart::action_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_statechart_action_instantiation(instance):
+    assert isinstance(instance, statechart_Action)
 
 
-@given(instance=statechart::Action_strategy)
-def test_statechart::action_kind_setter(instance):
+
+@given(instance=statechart_Action_strategy)
+def test_statechart_action_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original

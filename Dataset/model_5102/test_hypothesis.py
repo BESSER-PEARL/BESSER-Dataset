@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testPackage::SecondClass,
-    testPackage::FirstClass,
+from python_code import (
+    testPackage_SecondClass,
+    testPackage_FirstClass,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_testpackage::secondclass_is_not_abstract():
-    assert not inspect.isabstract(testPackage::SecondClass)
+def test_testpackage_secondclass_is_not_abstract():
+    assert not inspect.isabstract(testPackage_SecondClass)
 
 
-def test_testpackage::secondclass_constructor_exists():
-    assert callable(testPackage::SecondClass.__init__)
+def test_testpackage_secondclass_constructor_exists():
+    assert callable(testPackage_SecondClass.__init__)
 
 
-def test_testpackage::secondclass_constructor_args():
-    sig = inspect.signature(testPackage::SecondClass.__init__)
+def test_testpackage_secondclass_constructor_args():
+    sig = inspect.signature(testPackage_SecondClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::firstclass_is_not_abstract():
-    assert not inspect.isabstract(testPackage::FirstClass)
+def test_testpackage_firstclass_is_not_abstract():
+    assert not inspect.isabstract(testPackage_FirstClass)
 
 
-def test_testpackage::firstclass_constructor_exists():
-    assert callable(testPackage::FirstClass.__init__)
+def test_testpackage_firstclass_constructor_exists():
+    assert callable(testPackage_FirstClass.__init__)
 
 
-def test_testpackage::firstclass_constructor_args():
-    sig = inspect.signature(testPackage::FirstClass.__init__)
+def test_testpackage_firstclass_constructor_args():
+    sig = inspect.signature(testPackage_FirstClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testPackage::SecondClass_strategy = st.builds(
-    testPackage::SecondClass,
+testPackage_SecondClass_strategy = st.builds(
+    testPackage_SecondClass,
 )
-testPackage::FirstClass_strategy = st.builds(
-    testPackage::FirstClass,
+testPackage_FirstClass_strategy = st.builds(
+    testPackage_FirstClass,
 )
 
-@given(instance=testPackage::SecondClass_strategy)
+@given(instance=testPackage_SecondClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::secondclass_instantiation(instance):
-    assert isinstance(instance, testPackage::SecondClass)
+def test_testpackage_secondclass_instantiation(instance):
+    assert isinstance(instance, testPackage_SecondClass)
 
-@given(instance=testPackage::FirstClass_strategy)
+@given(instance=testPackage_FirstClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::firstclass_instantiation(instance):
-    assert isinstance(instance, testPackage::FirstClass)
+def test_testpackage_firstclass_instantiation(instance):
+    assert isinstance(instance, testPackage_FirstClass)

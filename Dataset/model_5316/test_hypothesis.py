@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     M,
     A,
     N,
-    refinher2::Y,
-    refinher2::H,
+    refinher2_Y,
+    refinher2_H,
     CE,
-    refinher2::DL,
-    refinher2::DNamedElement,
-    refinher2::M,
+    refinher2_DL,
+    refinher2_DNamedElement,
+    refinher2_M,
     DNamedElement,
-    refinher2::N,
-    refinher2::AB,
-    refinher2::A,
-    refinher2::E,
-    refinher2::DG,
-    refinher2::DC,
+    refinher2_A,
+    refinher2_AB,
+    refinher2_N,
+    refinher2_E,
+    refinher2_DG,
+    refinher2_DC,
     E,
-    refinher2::CE,
-    refinher2::DR,
-    refinher2::BB,
+    refinher2_CE,
+    refinher2_DR,
+    refinher2_BB,
 )
 
 # =============================================================================
@@ -76,30 +76,30 @@ def test_n_constructor_args():
 
 
 
-def test_refinher2::y_is_not_abstract():
-    assert not inspect.isabstract(refinher2::Y)
+def test_refinher2_y_is_not_abstract():
+    assert not inspect.isabstract(refinher2_Y)
 
 
-def test_refinher2::y_constructor_exists():
-    assert callable(refinher2::Y.__init__)
+def test_refinher2_y_constructor_exists():
+    assert callable(refinher2_Y.__init__)
 
 
-def test_refinher2::y_constructor_args():
-    sig = inspect.signature(refinher2::Y.__init__)
+def test_refinher2_y_constructor_args():
+    sig = inspect.signature(refinher2_Y.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::h_is_not_abstract():
-    assert not inspect.isabstract(refinher2::H)
+def test_refinher2_h_is_not_abstract():
+    assert not inspect.isabstract(refinher2_H)
 
 
-def test_refinher2::h_constructor_exists():
-    assert callable(refinher2::H.__init__)
+def test_refinher2_h_constructor_exists():
+    assert callable(refinher2_H.__init__)
 
 
-def test_refinher2::h_constructor_args():
-    sig = inspect.signature(refinher2::H.__init__)
+def test_refinher2_h_constructor_args():
+    sig = inspect.signature(refinher2_H.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -118,37 +118,37 @@ def test_ce_constructor_args():
 
 
 
-def test_refinher2::dl_is_not_abstract():
-    assert not inspect.isabstract(refinher2::DL)
+def test_refinher2_dl_is_not_abstract():
+    assert not inspect.isabstract(refinher2_DL)
 
 
-def test_refinher2::dl_constructor_exists():
-    assert callable(refinher2::DL.__init__)
+def test_refinher2_dl_constructor_exists():
+    assert callable(refinher2_DL.__init__)
 
 
-def test_refinher2::dl_constructor_args():
-    sig = inspect.signature(refinher2::DL.__init__)
+def test_refinher2_dl_constructor_args():
+    sig = inspect.signature(refinher2_DL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::dnamedelement_is_not_abstract():
-    assert not inspect.isabstract(refinher2::DNamedElement)
+def test_refinher2_dnamedelement_is_not_abstract():
+    assert not inspect.isabstract(refinher2_DNamedElement)
 
 
-def test_refinher2::dnamedelement_constructor_exists():
-    assert callable(refinher2::DNamedElement.__init__)
+def test_refinher2_dnamedelement_constructor_exists():
+    assert callable(refinher2_DNamedElement.__init__)
 
 
-def test_refinher2::dnamedelement_constructor_args():
-    sig = inspect.signature(refinher2::DNamedElement.__init__)
+def test_refinher2_dnamedelement_constructor_args():
+    sig = inspect.signature(refinher2_DNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_refinher2::dnamedelement_has_name():
-    assert hasattr(refinher2::DNamedElement, "name")
+def test_refinher2_dnamedelement_has_name():
+    assert hasattr(refinher2_DNamedElement, "name")
     descriptor = None
-    for klass in refinher2::DNamedElement.__mro__:
+    for klass in refinher2_DNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -156,16 +156,16 @@ def test_refinher2::dnamedelement_has_name():
 
 
 
-def test_refinher2::m_is_not_abstract():
-    assert not inspect.isabstract(refinher2::M)
+def test_refinher2_m_is_not_abstract():
+    assert not inspect.isabstract(refinher2_M)
 
 
-def test_refinher2::m_constructor_exists():
-    assert callable(refinher2::M.__init__)
+def test_refinher2_m_constructor_exists():
+    assert callable(refinher2_M.__init__)
 
 
-def test_refinher2::m_constructor_args():
-    sig = inspect.signature(refinher2::M.__init__)
+def test_refinher2_m_constructor_args():
+    sig = inspect.signature(refinher2_M.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -184,86 +184,86 @@ def test_dnamedelement_constructor_args():
 
 
 
-def test_refinher2::n_is_not_abstract():
-    assert not inspect.isabstract(refinher2::N)
+def test_refinher2_a_is_not_abstract():
+    assert not inspect.isabstract(refinher2_A)
 
 
-def test_refinher2::n_constructor_exists():
-    assert callable(refinher2::N.__init__)
+def test_refinher2_a_constructor_exists():
+    assert callable(refinher2_A.__init__)
 
 
-def test_refinher2::n_constructor_args():
-    sig = inspect.signature(refinher2::N.__init__)
+def test_refinher2_a_constructor_args():
+    sig = inspect.signature(refinher2_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::ab_is_not_abstract():
-    assert not inspect.isabstract(refinher2::AB)
+def test_refinher2_ab_is_not_abstract():
+    assert not inspect.isabstract(refinher2_AB)
 
 
-def test_refinher2::ab_constructor_exists():
-    assert callable(refinher2::AB.__init__)
+def test_refinher2_ab_constructor_exists():
+    assert callable(refinher2_AB.__init__)
 
 
-def test_refinher2::ab_constructor_args():
-    sig = inspect.signature(refinher2::AB.__init__)
+def test_refinher2_ab_constructor_args():
+    sig = inspect.signature(refinher2_AB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::a_is_not_abstract():
-    assert not inspect.isabstract(refinher2::A)
+def test_refinher2_n_is_not_abstract():
+    assert not inspect.isabstract(refinher2_N)
 
 
-def test_refinher2::a_constructor_exists():
-    assert callable(refinher2::A.__init__)
+def test_refinher2_n_constructor_exists():
+    assert callable(refinher2_N.__init__)
 
 
-def test_refinher2::a_constructor_args():
-    sig = inspect.signature(refinher2::A.__init__)
+def test_refinher2_n_constructor_args():
+    sig = inspect.signature(refinher2_N.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::e_is_not_abstract():
-    assert not inspect.isabstract(refinher2::E)
+def test_refinher2_e_is_not_abstract():
+    assert not inspect.isabstract(refinher2_E)
 
 
-def test_refinher2::e_constructor_exists():
-    assert callable(refinher2::E.__init__)
+def test_refinher2_e_constructor_exists():
+    assert callable(refinher2_E.__init__)
 
 
-def test_refinher2::e_constructor_args():
-    sig = inspect.signature(refinher2::E.__init__)
+def test_refinher2_e_constructor_args():
+    sig = inspect.signature(refinher2_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::dg_is_not_abstract():
-    assert not inspect.isabstract(refinher2::DG)
+def test_refinher2_dg_is_not_abstract():
+    assert not inspect.isabstract(refinher2_DG)
 
 
-def test_refinher2::dg_constructor_exists():
-    assert callable(refinher2::DG.__init__)
+def test_refinher2_dg_constructor_exists():
+    assert callable(refinher2_DG.__init__)
 
 
-def test_refinher2::dg_constructor_args():
-    sig = inspect.signature(refinher2::DG.__init__)
+def test_refinher2_dg_constructor_args():
+    sig = inspect.signature(refinher2_DG.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::dc_is_not_abstract():
-    assert not inspect.isabstract(refinher2::DC)
+def test_refinher2_dc_is_not_abstract():
+    assert not inspect.isabstract(refinher2_DC)
 
 
-def test_refinher2::dc_constructor_exists():
-    assert callable(refinher2::DC.__init__)
+def test_refinher2_dc_constructor_exists():
+    assert callable(refinher2_DC.__init__)
 
 
-def test_refinher2::dc_constructor_args():
-    sig = inspect.signature(refinher2::DC.__init__)
+def test_refinher2_dc_constructor_args():
+    sig = inspect.signature(refinher2_DC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -282,44 +282,44 @@ def test_e_constructor_args():
 
 
 
-def test_refinher2::ce_is_not_abstract():
-    assert not inspect.isabstract(refinher2::CE)
+def test_refinher2_ce_is_not_abstract():
+    assert not inspect.isabstract(refinher2_CE)
 
 
-def test_refinher2::ce_constructor_exists():
-    assert callable(refinher2::CE.__init__)
+def test_refinher2_ce_constructor_exists():
+    assert callable(refinher2_CE.__init__)
 
 
-def test_refinher2::ce_constructor_args():
-    sig = inspect.signature(refinher2::CE.__init__)
+def test_refinher2_ce_constructor_args():
+    sig = inspect.signature(refinher2_CE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::dr_is_not_abstract():
-    assert not inspect.isabstract(refinher2::DR)
+def test_refinher2_dr_is_not_abstract():
+    assert not inspect.isabstract(refinher2_DR)
 
 
-def test_refinher2::dr_constructor_exists():
-    assert callable(refinher2::DR.__init__)
+def test_refinher2_dr_constructor_exists():
+    assert callable(refinher2_DR.__init__)
 
 
-def test_refinher2::dr_constructor_args():
-    sig = inspect.signature(refinher2::DR.__init__)
+def test_refinher2_dr_constructor_args():
+    sig = inspect.signature(refinher2_DR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher2::bb_is_not_abstract():
-    assert not inspect.isabstract(refinher2::BB)
+def test_refinher2_bb_is_not_abstract():
+    assert not inspect.isabstract(refinher2_BB)
 
 
-def test_refinher2::bb_constructor_exists():
-    assert callable(refinher2::BB.__init__)
+def test_refinher2_bb_constructor_exists():
+    assert callable(refinher2_BB.__init__)
 
 
-def test_refinher2::bb_constructor_args():
-    sig = inspect.signature(refinher2::BB.__init__)
+def test_refinher2_bb_constructor_args():
+    sig = inspect.signature(refinher2_BB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -343,58 +343,58 @@ A_strategy = st.builds(
 N_strategy = st.builds(
     N,
 )
-refinher2::Y_strategy = st.builds(
-    refinher2::Y,
+refinher2_Y_strategy = st.builds(
+    refinher2_Y,
 )
-refinher2::H_strategy = st.builds(
-    refinher2::H,
+refinher2_H_strategy = st.builds(
+    refinher2_H,
 )
 CE_strategy = st.builds(
     CE,
 )
-refinher2::DL_strategy = st.builds(
-    refinher2::DL,
+refinher2_DL_strategy = st.builds(
+    refinher2_DL,
 )
-refinher2::DNamedElement_strategy = st.builds(
-    refinher2::DNamedElement,
+refinher2_DNamedElement_strategy = st.builds(
+    refinher2_DNamedElement,
     name=
         safe_text
 )
-refinher2::M_strategy = st.builds(
-    refinher2::M,
+refinher2_M_strategy = st.builds(
+    refinher2_M,
 )
 DNamedElement_strategy = st.builds(
     DNamedElement,
 )
-refinher2::N_strategy = st.builds(
-    refinher2::N,
+refinher2_A_strategy = st.builds(
+    refinher2_A,
 )
-refinher2::AB_strategy = st.builds(
-    refinher2::AB,
+refinher2_AB_strategy = st.builds(
+    refinher2_AB,
 )
-refinher2::A_strategy = st.builds(
-    refinher2::A,
+refinher2_N_strategy = st.builds(
+    refinher2_N,
 )
-refinher2::E_strategy = st.builds(
-    refinher2::E,
+refinher2_E_strategy = st.builds(
+    refinher2_E,
 )
-refinher2::DG_strategy = st.builds(
-    refinher2::DG,
+refinher2_DG_strategy = st.builds(
+    refinher2_DG,
 )
-refinher2::DC_strategy = st.builds(
-    refinher2::DC,
+refinher2_DC_strategy = st.builds(
+    refinher2_DC,
 )
 E_strategy = st.builds(
     E,
 )
-refinher2::CE_strategy = st.builds(
-    refinher2::CE,
+refinher2_CE_strategy = st.builds(
+    refinher2_CE,
 )
-refinher2::DR_strategy = st.builds(
-    refinher2::DR,
+refinher2_DR_strategy = st.builds(
+    refinher2_DR,
 )
-refinher2::BB_strategy = st.builds(
-    refinher2::BB,
+refinher2_BB_strategy = st.builds(
+    refinher2_BB,
 )
 
 @given(instance=M_strategy)
@@ -412,98 +412,95 @@ def test_a_instantiation(instance):
 def test_n_instantiation(instance):
     assert isinstance(instance, N)
 
-@given(instance=refinher2::Y_strategy)
+@given(instance=refinher2_Y_strategy)
 @settings(max_examples=50)
-def test_refinher2::y_instantiation(instance):
-    assert isinstance(instance, refinher2::Y)
+def test_refinher2_y_instantiation(instance):
+    assert isinstance(instance, refinher2_Y)
 
-@given(instance=refinher2::H_strategy)
+@given(instance=refinher2_H_strategy)
 @settings(max_examples=50)
-def test_refinher2::h_instantiation(instance):
-    assert isinstance(instance, refinher2::H)
+def test_refinher2_h_instantiation(instance):
+    assert isinstance(instance, refinher2_H)
 
 @given(instance=CE_strategy)
 @settings(max_examples=50)
 def test_ce_instantiation(instance):
     assert isinstance(instance, CE)
 
-@given(instance=refinher2::DL_strategy)
+@given(instance=refinher2_DL_strategy)
 @settings(max_examples=50)
-def test_refinher2::dl_instantiation(instance):
-    assert isinstance(instance, refinher2::DL)
+def test_refinher2_dl_instantiation(instance):
+    assert isinstance(instance, refinher2_DL)
 
-@given(instance=refinher2::DNamedElement_strategy)
+@given(instance=refinher2_DNamedElement_strategy)
 @settings(max_examples=50)
-def test_refinher2::dnamedelement_instantiation(instance):
-    assert isinstance(instance, refinher2::DNamedElement)
-
-@given(instance=refinher2::DNamedElement_strategy)
-def test_refinher2::dnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_refinher2_dnamedelement_instantiation(instance):
+    assert isinstance(instance, refinher2_DNamedElement)
 
 
-@given(instance=refinher2::DNamedElement_strategy)
-def test_refinher2::dnamedelement_name_setter(instance):
+
+@given(instance=refinher2_DNamedElement_strategy)
+def test_refinher2_dnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=refinher2::M_strategy)
+@given(instance=refinher2_M_strategy)
 @settings(max_examples=50)
-def test_refinher2::m_instantiation(instance):
-    assert isinstance(instance, refinher2::M)
+def test_refinher2_m_instantiation(instance):
+    assert isinstance(instance, refinher2_M)
 
 @given(instance=DNamedElement_strategy)
 @settings(max_examples=50)
 def test_dnamedelement_instantiation(instance):
     assert isinstance(instance, DNamedElement)
 
-@given(instance=refinher2::N_strategy)
+@given(instance=refinher2_A_strategy)
 @settings(max_examples=50)
-def test_refinher2::n_instantiation(instance):
-    assert isinstance(instance, refinher2::N)
+def test_refinher2_a_instantiation(instance):
+    assert isinstance(instance, refinher2_A)
 
-@given(instance=refinher2::AB_strategy)
+@given(instance=refinher2_AB_strategy)
 @settings(max_examples=50)
-def test_refinher2::ab_instantiation(instance):
-    assert isinstance(instance, refinher2::AB)
+def test_refinher2_ab_instantiation(instance):
+    assert isinstance(instance, refinher2_AB)
 
-@given(instance=refinher2::A_strategy)
+@given(instance=refinher2_N_strategy)
 @settings(max_examples=50)
-def test_refinher2::a_instantiation(instance):
-    assert isinstance(instance, refinher2::A)
+def test_refinher2_n_instantiation(instance):
+    assert isinstance(instance, refinher2_N)
 
-@given(instance=refinher2::E_strategy)
+@given(instance=refinher2_E_strategy)
 @settings(max_examples=50)
-def test_refinher2::e_instantiation(instance):
-    assert isinstance(instance, refinher2::E)
+def test_refinher2_e_instantiation(instance):
+    assert isinstance(instance, refinher2_E)
 
-@given(instance=refinher2::DG_strategy)
+@given(instance=refinher2_DG_strategy)
 @settings(max_examples=50)
-def test_refinher2::dg_instantiation(instance):
-    assert isinstance(instance, refinher2::DG)
+def test_refinher2_dg_instantiation(instance):
+    assert isinstance(instance, refinher2_DG)
 
-@given(instance=refinher2::DC_strategy)
+@given(instance=refinher2_DC_strategy)
 @settings(max_examples=50)
-def test_refinher2::dc_instantiation(instance):
-    assert isinstance(instance, refinher2::DC)
+def test_refinher2_dc_instantiation(instance):
+    assert isinstance(instance, refinher2_DC)
 
 @given(instance=E_strategy)
 @settings(max_examples=50)
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=refinher2::CE_strategy)
+@given(instance=refinher2_CE_strategy)
 @settings(max_examples=50)
-def test_refinher2::ce_instantiation(instance):
-    assert isinstance(instance, refinher2::CE)
+def test_refinher2_ce_instantiation(instance):
+    assert isinstance(instance, refinher2_CE)
 
-@given(instance=refinher2::DR_strategy)
+@given(instance=refinher2_DR_strategy)
 @settings(max_examples=50)
-def test_refinher2::dr_instantiation(instance):
-    assert isinstance(instance, refinher2::DR)
+def test_refinher2_dr_instantiation(instance):
+    assert isinstance(instance, refinher2_DR)
 
-@given(instance=refinher2::BB_strategy)
+@given(instance=refinher2_BB_strategy)
 @settings(max_examples=50)
-def test_refinher2::bb_instantiation(instance):
-    assert isinstance(instance, refinher2::BB)
+def test_refinher2_bb_instantiation(instance):
+    assert isinstance(instance, refinher2_BB)

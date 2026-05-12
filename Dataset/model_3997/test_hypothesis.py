@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Classifier,
-    classes::Datatype,
-    classes::CClass,
+    classes_Datatype,
+    classes_CClass,
     NamedElement,
-    classes::Attribute,
-    classes::NamedElement,
-    classes::Classifier,
-    classes::CModel,
+    classes_Attribute,
+    classes_NamedElement,
+    classes_Classifier,
+    classes_CModel,
 )
 
 # =============================================================================
@@ -36,37 +36,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_classes::datatype_is_not_abstract():
-    assert not inspect.isabstract(classes::Datatype)
+def test_classes_datatype_is_not_abstract():
+    assert not inspect.isabstract(classes_Datatype)
 
 
-def test_classes::datatype_constructor_exists():
-    assert callable(classes::Datatype.__init__)
+def test_classes_datatype_constructor_exists():
+    assert callable(classes_Datatype.__init__)
 
 
-def test_classes::datatype_constructor_args():
-    sig = inspect.signature(classes::Datatype.__init__)
+def test_classes_datatype_constructor_args():
+    sig = inspect.signature(classes_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::cclass_is_not_abstract():
-    assert not inspect.isabstract(classes::CClass)
+def test_classes_cclass_is_not_abstract():
+    assert not inspect.isabstract(classes_CClass)
 
 
-def test_classes::cclass_constructor_exists():
-    assert callable(classes::CClass.__init__)
+def test_classes_cclass_constructor_exists():
+    assert callable(classes_CClass.__init__)
 
 
-def test_classes::cclass_constructor_args():
-    sig = inspect.signature(classes::CClass.__init__)
+def test_classes_cclass_constructor_args():
+    sig = inspect.signature(classes_CClass.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_classes::cclass_has_abstract():
-    assert hasattr(classes::CClass, "abstract")
+def test_classes_cclass_has_abstract():
+    assert hasattr(classes_CClass, "abstract")
     descriptor = None
-    for klass in classes::CClass.__mro__:
+    for klass in classes_CClass.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -88,23 +88,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_classes::attribute_is_not_abstract():
-    assert not inspect.isabstract(classes::Attribute)
+def test_classes_attribute_is_not_abstract():
+    assert not inspect.isabstract(classes_Attribute)
 
 
-def test_classes::attribute_constructor_exists():
-    assert callable(classes::Attribute.__init__)
+def test_classes_attribute_constructor_exists():
+    assert callable(classes_Attribute.__init__)
 
 
-def test_classes::attribute_constructor_args():
-    sig = inspect.signature(classes::Attribute.__init__)
+def test_classes_attribute_constructor_args():
+    sig = inspect.signature(classes_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "isMany" in params, "Missing parameter 'isMany'"
 
-def test_classes::attribute_has_isMany():
-    assert hasattr(classes::Attribute, "isMany")
+def test_classes_attribute_has_isMany():
+    assert hasattr(classes_Attribute, "isMany")
     descriptor = None
-    for klass in classes::Attribute.__mro__:
+    for klass in classes_Attribute.__mro__:
         if "isMany" in klass.__dict__:
             descriptor = klass.__dict__["isMany"]
             break
@@ -112,23 +112,23 @@ def test_classes::attribute_has_isMany():
 
 
 
-def test_classes::namedelement_is_not_abstract():
-    assert not inspect.isabstract(classes::NamedElement)
+def test_classes_namedelement_is_not_abstract():
+    assert not inspect.isabstract(classes_NamedElement)
 
 
-def test_classes::namedelement_constructor_exists():
-    assert callable(classes::NamedElement.__init__)
+def test_classes_namedelement_constructor_exists():
+    assert callable(classes_NamedElement.__init__)
 
 
-def test_classes::namedelement_constructor_args():
-    sig = inspect.signature(classes::NamedElement.__init__)
+def test_classes_namedelement_constructor_args():
+    sig = inspect.signature(classes_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classes::namedelement_has_name():
-    assert hasattr(classes::NamedElement, "name")
+def test_classes_namedelement_has_name():
+    assert hasattr(classes_NamedElement, "name")
     descriptor = None
-    for klass in classes::NamedElement.__mro__:
+    for klass in classes_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -136,30 +136,30 @@ def test_classes::namedelement_has_name():
 
 
 
-def test_classes::classifier_is_not_abstract():
-    assert not inspect.isabstract(classes::Classifier)
+def test_classes_classifier_is_not_abstract():
+    assert not inspect.isabstract(classes_Classifier)
 
 
-def test_classes::classifier_constructor_exists():
-    assert callable(classes::Classifier.__init__)
+def test_classes_classifier_constructor_exists():
+    assert callable(classes_Classifier.__init__)
 
 
-def test_classes::classifier_constructor_args():
-    sig = inspect.signature(classes::Classifier.__init__)
+def test_classes_classifier_constructor_args():
+    sig = inspect.signature(classes_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::cmodel_is_not_abstract():
-    assert not inspect.isabstract(classes::CModel)
+def test_classes_cmodel_is_not_abstract():
+    assert not inspect.isabstract(classes_CModel)
 
 
-def test_classes::cmodel_constructor_exists():
-    assert callable(classes::CModel.__init__)
+def test_classes_cmodel_constructor_exists():
+    assert callable(classes_CModel.__init__)
 
 
-def test_classes::cmodel_constructor_args():
-    sig = inspect.signature(classes::CModel.__init__)
+def test_classes_cmodel_constructor_args():
+    sig = inspect.signature(classes_CModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,32 +177,32 @@ safe_text = st.text(
 Classifier_strategy = st.builds(
     Classifier,
 )
-classes::Datatype_strategy = st.builds(
-    classes::Datatype,
+classes_Datatype_strategy = st.builds(
+    classes_Datatype,
 )
-classes::CClass_strategy = st.builds(
-    classes::CClass,
+classes_CClass_strategy = st.builds(
+    classes_CClass,
     abstract=
         st.booleans()
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-classes::Attribute_strategy = st.builds(
-    classes::Attribute,
+classes_Attribute_strategy = st.builds(
+    classes_Attribute,
     isMany=
         st.booleans()
 )
-classes::NamedElement_strategy = st.builds(
-    classes::NamedElement,
+classes_NamedElement_strategy = st.builds(
+    classes_NamedElement,
     name=
         safe_text
 )
-classes::Classifier_strategy = st.builds(
-    classes::Classifier,
+classes_Classifier_strategy = st.builds(
+    classes_Classifier,
 )
-classes::CModel_strategy = st.builds(
-    classes::CModel,
+classes_CModel_strategy = st.builds(
+    classes_CModel,
 )
 
 @given(instance=Classifier_strategy)
@@ -210,23 +210,20 @@ classes::CModel_strategy = st.builds(
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=classes::Datatype_strategy)
+@given(instance=classes_Datatype_strategy)
 @settings(max_examples=50)
-def test_classes::datatype_instantiation(instance):
-    assert isinstance(instance, classes::Datatype)
+def test_classes_datatype_instantiation(instance):
+    assert isinstance(instance, classes_Datatype)
 
-@given(instance=classes::CClass_strategy)
+@given(instance=classes_CClass_strategy)
 @settings(max_examples=50)
-def test_classes::cclass_instantiation(instance):
-    assert isinstance(instance, classes::CClass)
-
-@given(instance=classes::CClass_strategy)
-def test_classes::cclass_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+def test_classes_cclass_instantiation(instance):
+    assert isinstance(instance, classes_CClass)
 
 
-@given(instance=classes::CClass_strategy)
-def test_classes::cclass_abstract_setter(instance):
+
+@given(instance=classes_CClass_strategy)
+def test_classes_cclass_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
@@ -236,44 +233,38 @@ def test_classes::cclass_abstract_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=classes::Attribute_strategy)
+@given(instance=classes_Attribute_strategy)
 @settings(max_examples=50)
-def test_classes::attribute_instantiation(instance):
-    assert isinstance(instance, classes::Attribute)
-
-@given(instance=classes::Attribute_strategy)
-def test_classes::attribute_isMany_type(instance):
-    assert isinstance(instance.isMany, bool)
+def test_classes_attribute_instantiation(instance):
+    assert isinstance(instance, classes_Attribute)
 
 
-@given(instance=classes::Attribute_strategy)
-def test_classes::attribute_isMany_setter(instance):
+
+@given(instance=classes_Attribute_strategy)
+def test_classes_attribute_isMany_setter(instance):
     original = instance.isMany
     instance.isMany = original
     assert instance.isMany == original
 
-@given(instance=classes::NamedElement_strategy)
+@given(instance=classes_NamedElement_strategy)
 @settings(max_examples=50)
-def test_classes::namedelement_instantiation(instance):
-    assert isinstance(instance, classes::NamedElement)
-
-@given(instance=classes::NamedElement_strategy)
-def test_classes::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classes_namedelement_instantiation(instance):
+    assert isinstance(instance, classes_NamedElement)
 
 
-@given(instance=classes::NamedElement_strategy)
-def test_classes::namedelement_name_setter(instance):
+
+@given(instance=classes_NamedElement_strategy)
+def test_classes_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=classes::Classifier_strategy)
+@given(instance=classes_Classifier_strategy)
 @settings(max_examples=50)
-def test_classes::classifier_instantiation(instance):
-    assert isinstance(instance, classes::Classifier)
+def test_classes_classifier_instantiation(instance):
+    assert isinstance(instance, classes_Classifier)
 
-@given(instance=classes::CModel_strategy)
+@given(instance=classes_CModel_strategy)
 @settings(max_examples=50)
-def test_classes::cmodel_instantiation(instance):
-    assert isinstance(instance, classes::CModel)
+def test_classes_cmodel_instantiation(instance):
+    assert isinstance(instance, classes_CModel)

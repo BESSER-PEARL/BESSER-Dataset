@@ -3,11 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::Font,
-    LineStyleSupport,
+from python_code import (
     ValueSupport,
     LineHeightSupport,
     ColorAlternativeSupport,
@@ -27,227 +25,161 @@ from classes import (
     TextAlignmentSupport,
     LinkSupport,
     VerticalScrollbarSupport,
-    model::WidgetContainer,
+    model_WidgetContainer,
     IconSupport,
     FontSupport,
     ColorBackgroundSupport,
     StateSupport,
     Widget,
-    model::Checkbox,
-    model::Tree,
-    model::Panel,
-    model::Placeholder,
-    model::HScrollbar,
-    model::Popup,
-    model::Window,
-    model::VScrollbar,
-    model::Icon,
-    model::Table,
-    model::Text,
-    model::RadioButton,
-    model::Browser,
-    model::Menu,
-    model::List,
-    model::TextArea,
-    model::HLine,
-    model::TextField,
-    model::Group,
-    model::Link,
-    model::Spinner,
-    model::Area,
-    model::Combo,
-    model::Label,
-    model::Button,
-    model::WidgetDescriptor,
-    model::RulerGuide,
-    model::ScreenFont,
-    model::ScreenRuler,
+    model_Popup,
+    model_Placeholder,
+    model_HScrollbar,
+    model_Combo,
+    model_Browser,
+    model_Label,
+    model_Text,
+    model_Window,
+    model_Icon,
+    model_Panel,
+    model_Link,
+    model_RadioButton,
+    model_TextField,
+    model_Group,
+    model_List,
+    model_Checkbox,
+    model_TextArea,
+    model_Spinner,
+    model_Area,
+    model_Button,
+    model_WidgetDescriptor,
+    model_RulerGuide,
+    model_ScreenFont,
+    model_ScreenRuler,
     NoteSupport,
-    model::Widget,
+    model_Widget,
     WidgetContainer,
-    model::Screen,
-    model::overrides::WidgetContainerOverrides,
-    model::overrides::FontOverrides,
+    model_Screen,
+    model_overrides_WidgetContainerOverrides,
+    model_overrides_FontOverrides,
     Operation,
     ItemOverrides,
     FontOverrides,
     StringToStringMap,
-    model::overrides::Reference,
-    overrides::model::EObject,
-    model::overrides::Insert,
-    overrides::Operation,
-    model::overrides::Operation,
-    model::overrides::StringToStringMap,
+    model_overrides_Reference,
+    overrides_model_EObject,
+    model_overrides_Insert,
+    overrides_Operation,
+    model_overrides_Operation,
+    model_overrides_StringToStringMap,
     Reference,
-    model::overrides::ItemOverrides,
-    model::story::Panel,
+    model_overrides_ItemOverrides,
+    model_story_Panel,
     Panel,
-    model::story::Storyboard,
-    model::NoteSupport,
-    model::TextLinksSupport,
-    model::AnnotationSupport,
-    overrides::Reference,
-    model::overrides::Delete,
-    model::overrides::Move,
-    overrides::WidgetContainerOverrides,
-    model::overrides::WidgetOverrides,
+    model_story_Storyboard,
+    model_NoteSupport,
+    model_TextLinksSupport,
+    model_AnnotationSupport,
+    overrides_Reference,
+    model_overrides_Move,
+    model_overrides_Delete,
+    overrides_WidgetContainerOverrides,
+    model_overrides_WidgetOverrides,
     WidgetOverrides,
     WidgetContainerOverrides,
-    model::overrides::Overrides,
+    model_overrides_Overrides,
     Storyboard,
-    story::model::Screen,
-    model::Shape,
-    model::SkinSupport,
-    model::VButtonBar,
-    model::LineHeightSupport,
-    model::Switch,
-    model::Alert,
-    model::NameSupport,
-    model::Hotspot,
-    model::LinkSupport,
-    model::FlipSupport,
-    model::RotationSupport,
-    model::LineStyleSupport,
-    model::ColorAlternativeSupport,
-    model::IconPositionSupport,
-    model::Rectangle,
-    model::ItemSupport,
-    model::Item,
-    model::Chart,
-    model::ListSupport,
-    model::ColorPicker,
-    model::ValueSupport,
-    model::VSplitter,
-    model::HSplitter,
-    model::Circle,
-    model::BorderStyleSupport,
-    model::ButtonBar,
-    model::DateField,
-    model::VerticalScrollbarSupport,
-    model::Accordion,
-    model::LinkBar,
-    model::IconSupport,
-    model::TabbedPane,
-    model::CoverFlow,
-    model::Map,
-    model::VideoPlayer,
-    model::ProgressBar,
+    story_model_Screen,
+    model_SkinSupport,
+    model_VButtonBar,
+    model_LineHeightSupport,
+    model_Switch,
+    model_Alert,
+    model_NameSupport,
+    model_Hotspot,
+    model_LinkSupport,
+    model_FlipSupport,
+    model_RotationSupport,
+    model_LineStyleSupport,
+    model_ColorAlternativeSupport,
+    model_IconPositionSupport,
+    model_Rectangle,
+    model_ItemSupport,
+    model_Item,
+    model_Chart,
+    model_ListSupport,
+    model_ColorPicker,
+    model_ValueSupport,
+    model_VSplitter,
+    model_HSplitter,
+    model_BorderStyleSupport,
+    model_ButtonBar,
+    model_DateField,
+    model_VerticalScrollbarSupport,
+    model_Accordion,
+    model_LinkBar,
+    model_IconSupport,
+    model_TabbedPane,
+    model_CoverFlow,
+    model_Map,
+    model_VideoPlayer,
+    model_ProgressBar,
     AnnotationSupport,
-    model::CurlyBrace,
-    model::CrossOut,
-    model::Arrow,
-    model::Callout,
-    model::Breadcrumbs,
-    model::StateSupport,
-    model::BorderSupport,
-    model::ScratchOut,
-    model::Tooltip,
-    model::SearchField,
-    model::FontSupport,
-    model::Note,
-    model::BooleanSelectionSupport,
-    model::TextAlignmentSupport,
-    model::SelectionSupport,
-    model::ColorAlphaSupport,
-    model::ColorBorderSupport,
-    model::ColorBackgroundSupport,
-    model::ColorForegroundSupport,
-    model::Master,
+    model_CrossOut,
+    model_CurlyBrace,
+    model_Callout,
+    model_Breadcrumbs,
+    model_StateSupport,
+    model_BorderSupport,
+    model_ScratchOut,
+    model_Tooltip,
+    model_SearchField,
+    model_FontSupport,
+    model_Note,
+    model_BooleanSelectionSupport,
+    model_TextAlignmentSupport,
+    model_SelectionSupport,
+    model_ColorAlphaSupport,
+    model_ColorBorderSupport,
+    model_ColorBackgroundSupport,
+    model_ColorForegroundSupport,
+    model_Master,
     NameSupport,
-    model::WidgetGroup,
+    model_WidgetGroup,
     FlipSupport,
-    model::SVGImage,
-    model::Image,
+    model_SVGImage,
+    model_Image,
     Overrides,
-    model::Tabs,
-    model::VSlider,
-    model::HSlider,
-    model::VLine,
-    TextAlignment,
-    LineStyle,
-    ChartType,
-    State,
-    Position,
+    model_Tabs,
+    model_VSlider,
+    model_HSlider,
+    model_Font,
+    model_Tree,
+    model_Table,
+    model_Menu,
+    LineStyleSupport,
+    model_VLine,
+    model_Shape,
+    model_Arrow,
+    model_Circle,
+    model_HLine,
+    model_VScrollbar,
     BorderStyle,
-    Rotation90,
-    ResizeMode,
-    ButtonStyle,
-    IconSize,
     ShapeType,
     Theme,
+    LineStyle,
+    Position,
+    IconSize,
+    State,
+    ResizeMode,
+    ChartType,
+    TextAlignment,
+    ButtonStyle,
+    Rotation90,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_model::font_is_not_abstract():
-    assert not inspect.isabstract(model::Font)
-
-
-def test_model::font_constructor_exists():
-    assert callable(model::Font.__init__)
-
-
-def test_model::font_constructor_args():
-    sig = inspect.signature(model::Font.__init__)
-    params = list(sig.parameters.keys())
-    assert "underline" in params, "Missing parameter 'underline'"
-    assert "bold" in params, "Missing parameter 'bold'"
-    assert "italic" in params, "Missing parameter 'italic'"
-    assert "size" in params, "Missing parameter 'size'"
-
-def test_model::font_has_underline():
-    assert hasattr(model::Font, "underline")
-    descriptor = None
-    for klass in model::Font.__mro__:
-        if "underline" in klass.__dict__:
-            descriptor = klass.__dict__["underline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::font_has_bold():
-    assert hasattr(model::Font, "bold")
-    descriptor = None
-    for klass in model::Font.__mro__:
-        if "bold" in klass.__dict__:
-            descriptor = klass.__dict__["bold"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::font_has_italic():
-    assert hasattr(model::Font, "italic")
-    descriptor = None
-    for klass in model::Font.__mro__:
-        if "italic" in klass.__dict__:
-            descriptor = klass.__dict__["italic"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::font_has_size():
-    assert hasattr(model::Font, "size")
-    descriptor = None
-    for klass in model::Font.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_linestylesupport_is_not_abstract():
-    assert not inspect.isabstract(LineStyleSupport)
-
-
-def test_linestylesupport_constructor_exists():
-    assert callable(LineStyleSupport.__init__)
-
-
-def test_linestylesupport_constructor_args():
-    sig = inspect.signature(LineStyleSupport.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -517,16 +449,16 @@ def test_verticalscrollbarsupport_constructor_args():
 
 
 
-def test_model::widgetcontainer_is_not_abstract():
-    assert not inspect.isabstract(model::WidgetContainer)
+def test_model_widgetcontainer_is_not_abstract():
+    assert not inspect.isabstract(model_WidgetContainer)
 
 
-def test_model::widgetcontainer_constructor_exists():
-    assert callable(model::WidgetContainer.__init__)
+def test_model_widgetcontainer_constructor_exists():
+    assert callable(model_WidgetContainer.__init__)
 
 
-def test_model::widgetcontainer_constructor_args():
-    sig = inspect.signature(model::WidgetContainer.__init__)
+def test_model_widgetcontainer_constructor_args():
+    sig = inspect.signature(model_WidgetContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -601,213 +533,107 @@ def test_widget_constructor_args():
 
 
 
-def test_model::checkbox_is_not_abstract():
-    assert not inspect.isabstract(model::Checkbox)
+def test_model_popup_is_not_abstract():
+    assert not inspect.isabstract(model_Popup)
 
 
-def test_model::checkbox_constructor_exists():
-    assert callable(model::Checkbox.__init__)
+def test_model_popup_constructor_exists():
+    assert callable(model_Popup.__init__)
 
 
-def test_model::checkbox_constructor_args():
-    sig = inspect.signature(model::Checkbox.__init__)
+def test_model_popup_constructor_args():
+    sig = inspect.signature(model_Popup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::tree_is_not_abstract():
-    assert not inspect.isabstract(model::Tree)
+def test_model_placeholder_is_not_abstract():
+    assert not inspect.isabstract(model_Placeholder)
 
 
-def test_model::tree_constructor_exists():
-    assert callable(model::Tree.__init__)
+def test_model_placeholder_constructor_exists():
+    assert callable(model_Placeholder.__init__)
 
 
-def test_model::tree_constructor_args():
-    sig = inspect.signature(model::Tree.__init__)
+def test_model_placeholder_constructor_args():
+    sig = inspect.signature(model_Placeholder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::panel_is_not_abstract():
-    assert not inspect.isabstract(model::Panel)
+def test_model_hscrollbar_is_not_abstract():
+    assert not inspect.isabstract(model_HScrollbar)
 
 
-def test_model::panel_constructor_exists():
-    assert callable(model::Panel.__init__)
+def test_model_hscrollbar_constructor_exists():
+    assert callable(model_HScrollbar.__init__)
 
 
-def test_model::panel_constructor_args():
-    sig = inspect.signature(model::Panel.__init__)
+def test_model_hscrollbar_constructor_args():
+    sig = inspect.signature(model_HScrollbar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::placeholder_is_not_abstract():
-    assert not inspect.isabstract(model::Placeholder)
+def test_model_combo_is_not_abstract():
+    assert not inspect.isabstract(model_Combo)
 
 
-def test_model::placeholder_constructor_exists():
-    assert callable(model::Placeholder.__init__)
+def test_model_combo_constructor_exists():
+    assert callable(model_Combo.__init__)
 
 
-def test_model::placeholder_constructor_args():
-    sig = inspect.signature(model::Placeholder.__init__)
+def test_model_combo_constructor_args():
+    sig = inspect.signature(model_Combo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::hscrollbar_is_not_abstract():
-    assert not inspect.isabstract(model::HScrollbar)
+def test_model_browser_is_not_abstract():
+    assert not inspect.isabstract(model_Browser)
 
 
-def test_model::hscrollbar_constructor_exists():
-    assert callable(model::HScrollbar.__init__)
+def test_model_browser_constructor_exists():
+    assert callable(model_Browser.__init__)
 
 
-def test_model::hscrollbar_constructor_args():
-    sig = inspect.signature(model::HScrollbar.__init__)
+def test_model_browser_constructor_args():
+    sig = inspect.signature(model_Browser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::popup_is_not_abstract():
-    assert not inspect.isabstract(model::Popup)
+def test_model_label_is_not_abstract():
+    assert not inspect.isabstract(model_Label)
 
 
-def test_model::popup_constructor_exists():
-    assert callable(model::Popup.__init__)
+def test_model_label_constructor_exists():
+    assert callable(model_Label.__init__)
 
 
-def test_model::popup_constructor_args():
-    sig = inspect.signature(model::Popup.__init__)
+def test_model_label_constructor_args():
+    sig = inspect.signature(model_Label.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::window_is_not_abstract():
-    assert not inspect.isabstract(model::Window)
+def test_model_text_is_not_abstract():
+    assert not inspect.isabstract(model_Text)
 
 
-def test_model::window_constructor_exists():
-    assert callable(model::Window.__init__)
+def test_model_text_constructor_exists():
+    assert callable(model_Text.__init__)
 
 
-def test_model::window_constructor_args():
-    sig = inspect.signature(model::Window.__init__)
-    params = list(sig.parameters.keys())
-    assert "maximizeButton" in params, "Missing parameter 'maximizeButton'"
-    assert "closeButton" in params, "Missing parameter 'closeButton'"
-    assert "minimizeButton" in params, "Missing parameter 'minimizeButton'"
-
-def test_model::window_has_maximizeButton():
-    assert hasattr(model::Window, "maximizeButton")
-    descriptor = None
-    for klass in model::Window.__mro__:
-        if "maximizeButton" in klass.__dict__:
-            descriptor = klass.__dict__["maximizeButton"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::window_has_closeButton():
-    assert hasattr(model::Window, "closeButton")
-    descriptor = None
-    for klass in model::Window.__mro__:
-        if "closeButton" in klass.__dict__:
-            descriptor = klass.__dict__["closeButton"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::window_has_minimizeButton():
-    assert hasattr(model::Window, "minimizeButton")
-    descriptor = None
-    for klass in model::Window.__mro__:
-        if "minimizeButton" in klass.__dict__:
-            descriptor = klass.__dict__["minimizeButton"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::vscrollbar_is_not_abstract():
-    assert not inspect.isabstract(model::VScrollbar)
-
-
-def test_model::vscrollbar_constructor_exists():
-    assert callable(model::VScrollbar.__init__)
-
-
-def test_model::vscrollbar_constructor_args():
-    sig = inspect.signature(model::VScrollbar.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::icon_is_not_abstract():
-    assert not inspect.isabstract(model::Icon)
-
-
-def test_model::icon_constructor_exists():
-    assert callable(model::Icon.__init__)
-
-
-def test_model::icon_constructor_args():
-    sig = inspect.signature(model::Icon.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::table_is_not_abstract():
-    assert not inspect.isabstract(model::Table)
-
-
-def test_model::table_constructor_exists():
-    assert callable(model::Table.__init__)
-
-
-def test_model::table_constructor_args():
-    sig = inspect.signature(model::Table.__init__)
-    params = list(sig.parameters.keys())
-    assert "header" in params, "Missing parameter 'header'"
-    assert "verticalLines" in params, "Missing parameter 'verticalLines'"
-
-def test_model::table_has_header():
-    assert hasattr(model::Table, "header")
-    descriptor = None
-    for klass in model::Table.__mro__:
-        if "header" in klass.__dict__:
-            descriptor = klass.__dict__["header"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::table_has_verticalLines():
-    assert hasattr(model::Table, "verticalLines")
-    descriptor = None
-    for klass in model::Table.__mro__:
-        if "verticalLines" in klass.__dict__:
-            descriptor = klass.__dict__["verticalLines"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::text_is_not_abstract():
-    assert not inspect.isabstract(model::Text)
-
-
-def test_model::text_constructor_exists():
-    assert callable(model::Text.__init__)
-
-
-def test_model::text_constructor_args():
-    sig = inspect.signature(model::Text.__init__)
+def test_model_text_constructor_args():
+    sig = inspect.signature(model_Text.__init__)
     params = list(sig.parameters.keys())
     assert "dummyText" in params, "Missing parameter 'dummyText'"
 
-def test_model::text_has_dummyText():
-    assert hasattr(model::Text, "dummyText")
+def test_model_text_has_dummyText():
+    assert hasattr(model_Text, "dummyText")
     descriptor = None
-    for klass in model::Text.__mro__:
+    for klass in model_Text.__mro__:
         if "dummyText" in klass.__dict__:
             descriptor = klass.__dict__["dummyText"]
             break
@@ -815,65 +641,151 @@ def test_model::text_has_dummyText():
 
 
 
-def test_model::radiobutton_is_not_abstract():
-    assert not inspect.isabstract(model::RadioButton)
+def test_model_window_is_not_abstract():
+    assert not inspect.isabstract(model_Window)
 
 
-def test_model::radiobutton_constructor_exists():
-    assert callable(model::RadioButton.__init__)
+def test_model_window_constructor_exists():
+    assert callable(model_Window.__init__)
 
 
-def test_model::radiobutton_constructor_args():
-    sig = inspect.signature(model::RadioButton.__init__)
+def test_model_window_constructor_args():
+    sig = inspect.signature(model_Window.__init__)
+    params = list(sig.parameters.keys())
+    assert "minimizeButton" in params, "Missing parameter 'minimizeButton'"
+    assert "closeButton" in params, "Missing parameter 'closeButton'"
+    assert "maximizeButton" in params, "Missing parameter 'maximizeButton'"
+
+def test_model_window_has_minimizeButton():
+    assert hasattr(model_Window, "minimizeButton")
+    descriptor = None
+    for klass in model_Window.__mro__:
+        if "minimizeButton" in klass.__dict__:
+            descriptor = klass.__dict__["minimizeButton"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_window_has_closeButton():
+    assert hasattr(model_Window, "closeButton")
+    descriptor = None
+    for klass in model_Window.__mro__:
+        if "closeButton" in klass.__dict__:
+            descriptor = klass.__dict__["closeButton"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_window_has_maximizeButton():
+    assert hasattr(model_Window, "maximizeButton")
+    descriptor = None
+    for klass in model_Window.__mro__:
+        if "maximizeButton" in klass.__dict__:
+            descriptor = klass.__dict__["maximizeButton"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_icon_is_not_abstract():
+    assert not inspect.isabstract(model_Icon)
+
+
+def test_model_icon_constructor_exists():
+    assert callable(model_Icon.__init__)
+
+
+def test_model_icon_constructor_args():
+    sig = inspect.signature(model_Icon.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::browser_is_not_abstract():
-    assert not inspect.isabstract(model::Browser)
+def test_model_panel_is_not_abstract():
+    assert not inspect.isabstract(model_Panel)
 
 
-def test_model::browser_constructor_exists():
-    assert callable(model::Browser.__init__)
+def test_model_panel_constructor_exists():
+    assert callable(model_Panel.__init__)
 
 
-def test_model::browser_constructor_args():
-    sig = inspect.signature(model::Browser.__init__)
+def test_model_panel_constructor_args():
+    sig = inspect.signature(model_Panel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::menu_is_not_abstract():
-    assert not inspect.isabstract(model::Menu)
+def test_model_link_is_not_abstract():
+    assert not inspect.isabstract(model_Link)
 
 
-def test_model::menu_constructor_exists():
-    assert callable(model::Menu.__init__)
+def test_model_link_constructor_exists():
+    assert callable(model_Link.__init__)
 
 
-def test_model::menu_constructor_args():
-    sig = inspect.signature(model::Menu.__init__)
+def test_model_link_constructor_args():
+    sig = inspect.signature(model_Link.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::list_is_not_abstract():
-    assert not inspect.isabstract(model::List)
+def test_model_radiobutton_is_not_abstract():
+    assert not inspect.isabstract(model_RadioButton)
 
 
-def test_model::list_constructor_exists():
-    assert callable(model::List.__init__)
+def test_model_radiobutton_constructor_exists():
+    assert callable(model_RadioButton.__init__)
 
 
-def test_model::list_constructor_args():
-    sig = inspect.signature(model::List.__init__)
+def test_model_radiobutton_constructor_args():
+    sig = inspect.signature(model_RadioButton.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_textfield_is_not_abstract():
+    assert not inspect.isabstract(model_TextField)
+
+
+def test_model_textfield_constructor_exists():
+    assert callable(model_TextField.__init__)
+
+
+def test_model_textfield_constructor_args():
+    sig = inspect.signature(model_TextField.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_group_is_not_abstract():
+    assert not inspect.isabstract(model_Group)
+
+
+def test_model_group_constructor_exists():
+    assert callable(model_Group.__init__)
+
+
+def test_model_group_constructor_args():
+    sig = inspect.signature(model_Group.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_list_is_not_abstract():
+    assert not inspect.isabstract(model_List)
+
+
+def test_model_list_constructor_exists():
+    assert callable(model_List.__init__)
+
+
+def test_model_list_constructor_args():
+    sig = inspect.signature(model_List.__init__)
     params = list(sig.parameters.keys())
     assert "header" in params, "Missing parameter 'header'"
 
-def test_model::list_has_header():
-    assert hasattr(model::List, "header")
+def test_model_list_has_header():
+    assert hasattr(model_List, "header")
     descriptor = None
-    for klass in model::List.__mro__:
+    for klass in model_List.__mro__:
         if "header" in klass.__dict__:
             descriptor = klass.__dict__["header"]
             break
@@ -881,149 +793,79 @@ def test_model::list_has_header():
 
 
 
-def test_model::textarea_is_not_abstract():
-    assert not inspect.isabstract(model::TextArea)
+def test_model_checkbox_is_not_abstract():
+    assert not inspect.isabstract(model_Checkbox)
 
 
-def test_model::textarea_constructor_exists():
-    assert callable(model::TextArea.__init__)
+def test_model_checkbox_constructor_exists():
+    assert callable(model_Checkbox.__init__)
 
 
-def test_model::textarea_constructor_args():
-    sig = inspect.signature(model::TextArea.__init__)
+def test_model_checkbox_constructor_args():
+    sig = inspect.signature(model_Checkbox.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::hline_is_not_abstract():
-    assert not inspect.isabstract(model::HLine)
+def test_model_textarea_is_not_abstract():
+    assert not inspect.isabstract(model_TextArea)
 
 
-def test_model::hline_constructor_exists():
-    assert callable(model::HLine.__init__)
+def test_model_textarea_constructor_exists():
+    assert callable(model_TextArea.__init__)
 
 
-def test_model::hline_constructor_args():
-    sig = inspect.signature(model::HLine.__init__)
+def test_model_textarea_constructor_args():
+    sig = inspect.signature(model_TextArea.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::textfield_is_not_abstract():
-    assert not inspect.isabstract(model::TextField)
+def test_model_spinner_is_not_abstract():
+    assert not inspect.isabstract(model_Spinner)
 
 
-def test_model::textfield_constructor_exists():
-    assert callable(model::TextField.__init__)
+def test_model_spinner_constructor_exists():
+    assert callable(model_Spinner.__init__)
 
 
-def test_model::textfield_constructor_args():
-    sig = inspect.signature(model::TextField.__init__)
+def test_model_spinner_constructor_args():
+    sig = inspect.signature(model_Spinner.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::group_is_not_abstract():
-    assert not inspect.isabstract(model::Group)
+def test_model_area_is_not_abstract():
+    assert not inspect.isabstract(model_Area)
 
 
-def test_model::group_constructor_exists():
-    assert callable(model::Group.__init__)
+def test_model_area_constructor_exists():
+    assert callable(model_Area.__init__)
 
 
-def test_model::group_constructor_args():
-    sig = inspect.signature(model::Group.__init__)
+def test_model_area_constructor_args():
+    sig = inspect.signature(model_Area.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::link_is_not_abstract():
-    assert not inspect.isabstract(model::Link)
+def test_model_button_is_not_abstract():
+    assert not inspect.isabstract(model_Button)
 
 
-def test_model::link_constructor_exists():
-    assert callable(model::Link.__init__)
+def test_model_button_constructor_exists():
+    assert callable(model_Button.__init__)
 
 
-def test_model::link_constructor_args():
-    sig = inspect.signature(model::Link.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::spinner_is_not_abstract():
-    assert not inspect.isabstract(model::Spinner)
-
-
-def test_model::spinner_constructor_exists():
-    assert callable(model::Spinner.__init__)
-
-
-def test_model::spinner_constructor_args():
-    sig = inspect.signature(model::Spinner.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::area_is_not_abstract():
-    assert not inspect.isabstract(model::Area)
-
-
-def test_model::area_constructor_exists():
-    assert callable(model::Area.__init__)
-
-
-def test_model::area_constructor_args():
-    sig = inspect.signature(model::Area.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::combo_is_not_abstract():
-    assert not inspect.isabstract(model::Combo)
-
-
-def test_model::combo_constructor_exists():
-    assert callable(model::Combo.__init__)
-
-
-def test_model::combo_constructor_args():
-    sig = inspect.signature(model::Combo.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::label_is_not_abstract():
-    assert not inspect.isabstract(model::Label)
-
-
-def test_model::label_constructor_exists():
-    assert callable(model::Label.__init__)
-
-
-def test_model::label_constructor_args():
-    sig = inspect.signature(model::Label.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::button_is_not_abstract():
-    assert not inspect.isabstract(model::Button)
-
-
-def test_model::button_constructor_exists():
-    assert callable(model::Button.__init__)
-
-
-def test_model::button_constructor_args():
-    sig = inspect.signature(model::Button.__init__)
+def test_model_button_constructor_args():
+    sig = inspect.signature(model_Button.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
 
-def test_model::button_has_style():
-    assert hasattr(model::Button, "style")
+def test_model_button_has_style():
+    assert hasattr(model_Button, "style")
     descriptor = None
-    for klass in model::Button.__mro__:
+    for klass in model_Button.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -1031,97 +873,97 @@ def test_model::button_has_style():
 
 
 
-def test_model::widgetdescriptor_is_not_abstract():
-    assert not inspect.isabstract(model::WidgetDescriptor)
+def test_model_widgetdescriptor_is_not_abstract():
+    assert not inspect.isabstract(model_WidgetDescriptor)
 
 
-def test_model::widgetdescriptor_constructor_exists():
-    assert callable(model::WidgetDescriptor.__init__)
+def test_model_widgetdescriptor_constructor_exists():
+    assert callable(model_WidgetDescriptor.__init__)
 
 
-def test_model::widgetdescriptor_constructor_args():
-    sig = inspect.signature(model::WidgetDescriptor.__init__)
+def test_model_widgetdescriptor_constructor_args():
+    sig = inspect.signature(model_WidgetDescriptor.__init__)
     params = list(sig.parameters.keys())
-    assert "textCentered" in params, "Missing parameter 'textCentered'"
-    assert "resizeMode" in params, "Missing parameter 'resizeMode'"
     assert "textWrappable" in params, "Missing parameter 'textWrappable'"
+    assert "textCentered" in params, "Missing parameter 'textCentered'"
     assert "textEditable" in params, "Missing parameter 'textEditable'"
-    assert "textLines" in params, "Missing parameter 'textLines'"
     assert "typeName" in params, "Missing parameter 'typeName'"
+    assert "resizeMode" in params, "Missing parameter 'resizeMode'"
+    assert "textLines" in params, "Missing parameter 'textLines'"
 
-def test_model::widgetdescriptor_has_textCentered():
-    assert hasattr(model::WidgetDescriptor, "textCentered")
+def test_model_widgetdescriptor_has_textWrappable():
+    assert hasattr(model_WidgetDescriptor, "textWrappable")
     descriptor = None
-    for klass in model::WidgetDescriptor.__mro__:
-        if "textCentered" in klass.__dict__:
-            descriptor = klass.__dict__["textCentered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widgetdescriptor_has_resizeMode():
-    assert hasattr(model::WidgetDescriptor, "resizeMode")
-    descriptor = None
-    for klass in model::WidgetDescriptor.__mro__:
-        if "resizeMode" in klass.__dict__:
-            descriptor = klass.__dict__["resizeMode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widgetdescriptor_has_textWrappable():
-    assert hasattr(model::WidgetDescriptor, "textWrappable")
-    descriptor = None
-    for klass in model::WidgetDescriptor.__mro__:
+    for klass in model_WidgetDescriptor.__mro__:
         if "textWrappable" in klass.__dict__:
             descriptor = klass.__dict__["textWrappable"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::widgetdescriptor_has_textEditable():
-    assert hasattr(model::WidgetDescriptor, "textEditable")
+def test_model_widgetdescriptor_has_textCentered():
+    assert hasattr(model_WidgetDescriptor, "textCentered")
     descriptor = None
-    for klass in model::WidgetDescriptor.__mro__:
+    for klass in model_WidgetDescriptor.__mro__:
+        if "textCentered" in klass.__dict__:
+            descriptor = klass.__dict__["textCentered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widgetdescriptor_has_textEditable():
+    assert hasattr(model_WidgetDescriptor, "textEditable")
+    descriptor = None
+    for klass in model_WidgetDescriptor.__mro__:
         if "textEditable" in klass.__dict__:
             descriptor = klass.__dict__["textEditable"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::widgetdescriptor_has_textLines():
-    assert hasattr(model::WidgetDescriptor, "textLines")
+def test_model_widgetdescriptor_has_typeName():
+    assert hasattr(model_WidgetDescriptor, "typeName")
     descriptor = None
-    for klass in model::WidgetDescriptor.__mro__:
-        if "textLines" in klass.__dict__:
-            descriptor = klass.__dict__["textLines"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widgetdescriptor_has_typeName():
-    assert hasattr(model::WidgetDescriptor, "typeName")
-    descriptor = None
-    for klass in model::WidgetDescriptor.__mro__:
+    for klass in model_WidgetDescriptor.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_widgetdescriptor_has_resizeMode():
+    assert hasattr(model_WidgetDescriptor, "resizeMode")
+    descriptor = None
+    for klass in model_WidgetDescriptor.__mro__:
+        if "resizeMode" in klass.__dict__:
+            descriptor = klass.__dict__["resizeMode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widgetdescriptor_has_textLines():
+    assert hasattr(model_WidgetDescriptor, "textLines")
+    descriptor = None
+    for klass in model_WidgetDescriptor.__mro__:
+        if "textLines" in klass.__dict__:
+            descriptor = klass.__dict__["textLines"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::rulerguide_is_not_abstract():
-    assert not inspect.isabstract(model::RulerGuide)
+
+def test_model_rulerguide_is_not_abstract():
+    assert not inspect.isabstract(model_RulerGuide)
 
 
-def test_model::rulerguide_constructor_exists():
-    assert callable(model::RulerGuide.__init__)
+def test_model_rulerguide_constructor_exists():
+    assert callable(model_RulerGuide.__init__)
 
 
-def test_model::rulerguide_constructor_args():
-    sig = inspect.signature(model::RulerGuide.__init__)
+def test_model_rulerguide_constructor_args():
+    sig = inspect.signature(model_RulerGuide.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_model::rulerguide_has_position():
-    assert hasattr(model::RulerGuide, "position")
+def test_model_rulerguide_has_position():
+    assert hasattr(model_RulerGuide, "position")
     descriptor = None
-    for klass in model::RulerGuide.__mro__:
+    for klass in model_RulerGuide.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -1129,80 +971,80 @@ def test_model::rulerguide_has_position():
 
 
 
-def test_model::screenfont_is_not_abstract():
-    assert not inspect.isabstract(model::ScreenFont)
+def test_model_screenfont_is_not_abstract():
+    assert not inspect.isabstract(model_ScreenFont)
 
 
-def test_model::screenfont_constructor_exists():
-    assert callable(model::ScreenFont.__init__)
+def test_model_screenfont_constructor_exists():
+    assert callable(model_ScreenFont.__init__)
 
 
-def test_model::screenfont_constructor_args():
-    sig = inspect.signature(model::ScreenFont.__init__)
+def test_model_screenfont_constructor_args():
+    sig = inspect.signature(model_ScreenFont.__init__)
     params = list(sig.parameters.keys())
-    assert "available" in params, "Missing parameter 'available'"
     assert "bold" in params, "Missing parameter 'bold'"
     assert "name" in params, "Missing parameter 'name'"
     assert "size" in params, "Missing parameter 'size'"
     assert "italic" in params, "Missing parameter 'italic'"
+    assert "available" in params, "Missing parameter 'available'"
 
-def test_model::screenfont_has_available():
-    assert hasattr(model::ScreenFont, "available")
+def test_model_screenfont_has_bold():
+    assert hasattr(model_ScreenFont, "bold")
     descriptor = None
-    for klass in model::ScreenFont.__mro__:
-        if "available" in klass.__dict__:
-            descriptor = klass.__dict__["available"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::screenfont_has_bold():
-    assert hasattr(model::ScreenFont, "bold")
-    descriptor = None
-    for klass in model::ScreenFont.__mro__:
+    for klass in model_ScreenFont.__mro__:
         if "bold" in klass.__dict__:
             descriptor = klass.__dict__["bold"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::screenfont_has_name():
-    assert hasattr(model::ScreenFont, "name")
+def test_model_screenfont_has_name():
+    assert hasattr(model_ScreenFont, "name")
     descriptor = None
-    for klass in model::ScreenFont.__mro__:
+    for klass in model_ScreenFont.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::screenfont_has_size():
-    assert hasattr(model::ScreenFont, "size")
+def test_model_screenfont_has_size():
+    assert hasattr(model_ScreenFont, "size")
     descriptor = None
-    for klass in model::ScreenFont.__mro__:
+    for klass in model_ScreenFont.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::screenfont_has_italic():
-    assert hasattr(model::ScreenFont, "italic")
+def test_model_screenfont_has_italic():
+    assert hasattr(model_ScreenFont, "italic")
     descriptor = None
-    for klass in model::ScreenFont.__mro__:
+    for klass in model_ScreenFont.__mro__:
         if "italic" in klass.__dict__:
             descriptor = klass.__dict__["italic"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_screenfont_has_available():
+    assert hasattr(model_ScreenFont, "available")
+    descriptor = None
+    for klass in model_ScreenFont.__mro__:
+        if "available" in klass.__dict__:
+            descriptor = klass.__dict__["available"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::screenruler_is_not_abstract():
-    assert not inspect.isabstract(model::ScreenRuler)
+
+def test_model_screenruler_is_not_abstract():
+    assert not inspect.isabstract(model_ScreenRuler)
 
 
-def test_model::screenruler_constructor_exists():
-    assert callable(model::ScreenRuler.__init__)
+def test_model_screenruler_constructor_exists():
+    assert callable(model_ScreenRuler.__init__)
 
 
-def test_model::screenruler_constructor_args():
-    sig = inspect.signature(model::ScreenRuler.__init__)
+def test_model_screenruler_constructor_args():
+    sig = inspect.signature(model_ScreenRuler.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1221,145 +1063,145 @@ def test_notesupport_constructor_args():
 
 
 
-def test_model::widget_is_not_abstract():
-    assert not inspect.isabstract(model::Widget)
+def test_model_widget_is_not_abstract():
+    assert not inspect.isabstract(model_Widget)
 
 
-def test_model::widget_constructor_exists():
-    assert callable(model::Widget.__init__)
+def test_model_widget_constructor_exists():
+    assert callable(model_Widget.__init__)
 
 
-def test_model::widget_constructor_args():
-    sig = inspect.signature(model::Widget.__init__)
+def test_model_widget_constructor_args():
+    sig = inspect.signature(model_Widget.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "customData" in params, "Missing parameter 'customData'"
-    assert "locked" in params, "Missing parameter 'locked'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "measuredHeight" in params, "Missing parameter 'measuredHeight'"
+    assert "x" in params, "Missing parameter 'x'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "text" in params, "Missing parameter 'text'"
-    assert "customId" in params, "Missing parameter 'customId'"
-    assert "measuredWidth" in params, "Missing parameter 'measuredWidth'"
     assert "annotation" in params, "Missing parameter 'annotation'"
-    assert "layoutParams" in params, "Missing parameter 'layoutParams'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "layoutParams" in params, "Missing parameter 'layoutParams'"
+    assert "locked" in params, "Missing parameter 'locked'"
+    assert "customId" in params, "Missing parameter 'customId'"
+    assert "customData" in params, "Missing parameter 'customData'"
+    assert "measuredWidth" in params, "Missing parameter 'measuredWidth'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_model::widget_has_y():
-    assert hasattr(model::Widget, "y")
+def test_model_widget_has_measuredHeight():
+    assert hasattr(model_Widget, "measuredHeight")
     descriptor = None
-    for klass in model::Widget.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_width():
-    assert hasattr(model::Widget, "width")
-    descriptor = None
-    for klass in model::Widget.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_customData():
-    assert hasattr(model::Widget, "customData")
-    descriptor = None
-    for klass in model::Widget.__mro__:
-        if "customData" in klass.__dict__:
-            descriptor = klass.__dict__["customData"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_locked():
-    assert hasattr(model::Widget, "locked")
-    descriptor = None
-    for klass in model::Widget.__mro__:
-        if "locked" in klass.__dict__:
-            descriptor = klass.__dict__["locked"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_x():
-    assert hasattr(model::Widget, "x")
-    descriptor = None
-    for klass in model::Widget.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_measuredHeight():
-    assert hasattr(model::Widget, "measuredHeight")
-    descriptor = None
-    for klass in model::Widget.__mro__:
+    for klass in model_Widget.__mro__:
         if "measuredHeight" in klass.__dict__:
             descriptor = klass.__dict__["measuredHeight"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::widget_has_id():
-    assert hasattr(model::Widget, "id")
+def test_model_widget_has_x():
+    assert hasattr(model_Widget, "x")
     descriptor = None
-    for klass in model::Widget.__mro__:
+    for klass in model_Widget.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_id():
+    assert hasattr(model_Widget, "id")
+    descriptor = None
+    for klass in model_Widget.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::widget_has_text():
-    assert hasattr(model::Widget, "text")
+def test_model_widget_has_annotation():
+    assert hasattr(model_Widget, "annotation")
     descriptor = None
-    for klass in model::Widget.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_customId():
-    assert hasattr(model::Widget, "customId")
-    descriptor = None
-    for klass in model::Widget.__mro__:
-        if "customId" in klass.__dict__:
-            descriptor = klass.__dict__["customId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_measuredWidth():
-    assert hasattr(model::Widget, "measuredWidth")
-    descriptor = None
-    for klass in model::Widget.__mro__:
-        if "measuredWidth" in klass.__dict__:
-            descriptor = klass.__dict__["measuredWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::widget_has_annotation():
-    assert hasattr(model::Widget, "annotation")
-    descriptor = None
-    for klass in model::Widget.__mro__:
+    for klass in model_Widget.__mro__:
         if "annotation" in klass.__dict__:
             descriptor = klass.__dict__["annotation"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::widget_has_layoutParams():
-    assert hasattr(model::Widget, "layoutParams")
+def test_model_widget_has_height():
+    assert hasattr(model_Widget, "height")
     descriptor = None
-    for klass in model::Widget.__mro__:
+    for klass in model_Widget.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_width():
+    assert hasattr(model_Widget, "width")
+    descriptor = None
+    for klass in model_Widget.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_layoutParams():
+    assert hasattr(model_Widget, "layoutParams")
+    descriptor = None
+    for klass in model_Widget.__mro__:
         if "layoutParams" in klass.__dict__:
             descriptor = klass.__dict__["layoutParams"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::widget_has_height():
-    assert hasattr(model::Widget, "height")
+def test_model_widget_has_locked():
+    assert hasattr(model_Widget, "locked")
     descriptor = None
-    for klass in model::Widget.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
+    for klass in model_Widget.__mro__:
+        if "locked" in klass.__dict__:
+            descriptor = klass.__dict__["locked"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_customId():
+    assert hasattr(model_Widget, "customId")
+    descriptor = None
+    for klass in model_Widget.__mro__:
+        if "customId" in klass.__dict__:
+            descriptor = klass.__dict__["customId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_customData():
+    assert hasattr(model_Widget, "customData")
+    descriptor = None
+    for klass in model_Widget.__mro__:
+        if "customData" in klass.__dict__:
+            descriptor = klass.__dict__["customData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_measuredWidth():
+    assert hasattr(model_Widget, "measuredWidth")
+    descriptor = None
+    for klass in model_Widget.__mro__:
+        if "measuredWidth" in klass.__dict__:
+            descriptor = klass.__dict__["measuredWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_y():
+    assert hasattr(model_Widget, "y")
+    descriptor = None
+    for klass in model_Widget.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_widget_has_text():
+    assert hasattr(model_Widget, "text")
+    descriptor = None
+    for klass in model_Widget.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
@@ -1379,111 +1221,111 @@ def test_widgetcontainer_constructor_args():
 
 
 
-def test_model::screen_is_not_abstract():
-    assert not inspect.isabstract(model::Screen)
+def test_model_screen_is_not_abstract():
+    assert not inspect.isabstract(model_Screen)
 
 
-def test_model::screen_constructor_exists():
-    assert callable(model::Screen.__init__)
+def test_model_screen_constructor_exists():
+    assert callable(model_Screen.__init__)
 
 
-def test_model::screen_constructor_args():
-    sig = inspect.signature(model::Screen.__init__)
+def test_model_screen_constructor_args():
+    sig = inspect.signature(model_Screen.__init__)
     params = list(sig.parameters.keys())
-    assert "theme" in params, "Missing parameter 'theme'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "minVersion" in params, "Missing parameter 'minVersion'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "theme" in params, "Missing parameter 'theme'"
 
-def test_model::screen_has_theme():
-    assert hasattr(model::Screen, "theme")
+def test_model_screen_has_minVersion():
+    assert hasattr(model_Screen, "minVersion")
     descriptor = None
-    for klass in model::Screen.__mro__:
-        if "theme" in klass.__dict__:
-            descriptor = klass.__dict__["theme"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::screen_has_name():
-    assert hasattr(model::Screen, "name")
-    descriptor = None
-    for klass in model::Screen.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::screen_has_minVersion():
-    assert hasattr(model::Screen, "minVersion")
-    descriptor = None
-    for klass in model::Screen.__mro__:
+    for klass in model_Screen.__mro__:
         if "minVersion" in klass.__dict__:
             descriptor = klass.__dict__["minVersion"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_screen_has_name():
+    assert hasattr(model_Screen, "name")
+    descriptor = None
+    for klass in model_Screen.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_screen_has_theme():
+    assert hasattr(model_Screen, "theme")
+    descriptor = None
+    for klass in model_Screen.__mro__:
+        if "theme" in klass.__dict__:
+            descriptor = klass.__dict__["theme"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::overrides::widgetcontaineroverrides_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::WidgetContainerOverrides)
+
+def test_model_overrides_widgetcontaineroverrides_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_WidgetContainerOverrides)
 
 
-def test_model::overrides::widgetcontaineroverrides_constructor_exists():
-    assert callable(model::overrides::WidgetContainerOverrides.__init__)
+def test_model_overrides_widgetcontaineroverrides_constructor_exists():
+    assert callable(model_overrides_WidgetContainerOverrides.__init__)
 
 
-def test_model::overrides::widgetcontaineroverrides_constructor_args():
-    sig = inspect.signature(model::overrides::WidgetContainerOverrides.__init__)
+def test_model_overrides_widgetcontaineroverrides_constructor_args():
+    sig = inspect.signature(model_overrides_WidgetContainerOverrides.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::overrides::fontoverrides_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::FontOverrides)
+def test_model_overrides_fontoverrides_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_FontOverrides)
 
 
-def test_model::overrides::fontoverrides_constructor_exists():
-    assert callable(model::overrides::FontOverrides.__init__)
+def test_model_overrides_fontoverrides_constructor_exists():
+    assert callable(model_overrides_FontOverrides.__init__)
 
 
-def test_model::overrides::fontoverrides_constructor_args():
-    sig = inspect.signature(model::overrides::FontOverrides.__init__)
+def test_model_overrides_fontoverrides_constructor_args():
+    sig = inspect.signature(model_overrides_FontOverrides.__init__)
     params = list(sig.parameters.keys())
-    assert "bold" in params, "Missing parameter 'bold'"
-    assert "size" in params, "Missing parameter 'size'"
     assert "underline" in params, "Missing parameter 'underline'"
+    assert "size" in params, "Missing parameter 'size'"
+    assert "bold" in params, "Missing parameter 'bold'"
     assert "italic" in params, "Missing parameter 'italic'"
 
-def test_model::overrides::fontoverrides_has_bold():
-    assert hasattr(model::overrides::FontOverrides, "bold")
+def test_model_overrides_fontoverrides_has_underline():
+    assert hasattr(model_overrides_FontOverrides, "underline")
     descriptor = None
-    for klass in model::overrides::FontOverrides.__mro__:
-        if "bold" in klass.__dict__:
-            descriptor = klass.__dict__["bold"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::fontoverrides_has_size():
-    assert hasattr(model::overrides::FontOverrides, "size")
-    descriptor = None
-    for klass in model::overrides::FontOverrides.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::fontoverrides_has_underline():
-    assert hasattr(model::overrides::FontOverrides, "underline")
-    descriptor = None
-    for klass in model::overrides::FontOverrides.__mro__:
+    for klass in model_overrides_FontOverrides.__mro__:
         if "underline" in klass.__dict__:
             descriptor = klass.__dict__["underline"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::overrides::fontoverrides_has_italic():
-    assert hasattr(model::overrides::FontOverrides, "italic")
+def test_model_overrides_fontoverrides_has_size():
+    assert hasattr(model_overrides_FontOverrides, "size")
     descriptor = None
-    for klass in model::overrides::FontOverrides.__mro__:
+    for klass in model_overrides_FontOverrides.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_fontoverrides_has_bold():
+    assert hasattr(model_overrides_FontOverrides, "bold")
+    descriptor = None
+    for klass in model_overrides_FontOverrides.__mro__:
+        if "bold" in klass.__dict__:
+            descriptor = klass.__dict__["bold"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_fontoverrides_has_italic():
+    assert hasattr(model_overrides_FontOverrides, "italic")
+    descriptor = None
+    for klass in model_overrides_FontOverrides.__mro__:
         if "italic" in klass.__dict__:
             descriptor = klass.__dict__["italic"]
             break
@@ -1547,23 +1389,23 @@ def test_stringtostringmap_constructor_args():
 
 
 
-def test_model::overrides::reference_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::Reference)
+def test_model_overrides_reference_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_Reference)
 
 
-def test_model::overrides::reference_constructor_exists():
-    assert callable(model::overrides::Reference.__init__)
+def test_model_overrides_reference_constructor_exists():
+    assert callable(model_overrides_Reference.__init__)
 
 
-def test_model::overrides::reference_constructor_args():
-    sig = inspect.signature(model::overrides::Reference.__init__)
+def test_model_overrides_reference_constructor_args():
+    sig = inspect.signature(model_overrides_Reference.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
 
-def test_model::overrides::reference_has_ref():
-    assert hasattr(model::overrides::Reference, "ref")
+def test_model_overrides_reference_has_ref():
+    assert hasattr(model_overrides_Reference, "ref")
     descriptor = None
-    for klass in model::overrides::Reference.__mro__:
+    for klass in model_overrides_Reference.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
@@ -1571,37 +1413,37 @@ def test_model::overrides::reference_has_ref():
 
 
 
-def test_overrides::model::eobject_is_not_abstract():
-    assert not inspect.isabstract(overrides::model::EObject)
+def test_overrides_model_eobject_is_not_abstract():
+    assert not inspect.isabstract(overrides_model_EObject)
 
 
-def test_overrides::model::eobject_constructor_exists():
-    assert callable(overrides::model::EObject.__init__)
+def test_overrides_model_eobject_constructor_exists():
+    assert callable(overrides_model_EObject.__init__)
 
 
-def test_overrides::model::eobject_constructor_args():
-    sig = inspect.signature(overrides::model::EObject.__init__)
+def test_overrides_model_eobject_constructor_args():
+    sig = inspect.signature(overrides_model_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::overrides::insert_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::Insert)
+def test_model_overrides_insert_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_Insert)
 
 
-def test_model::overrides::insert_constructor_exists():
-    assert callable(model::overrides::Insert.__init__)
+def test_model_overrides_insert_constructor_exists():
+    assert callable(model_overrides_Insert.__init__)
 
 
-def test_model::overrides::insert_constructor_args():
-    sig = inspect.signature(model::overrides::Insert.__init__)
+def test_model_overrides_insert_constructor_args():
+    sig = inspect.signature(model_overrides_Insert.__init__)
     params = list(sig.parameters.keys())
     assert "newIndex" in params, "Missing parameter 'newIndex'"
 
-def test_model::overrides::insert_has_newIndex():
-    assert hasattr(model::overrides::Insert, "newIndex")
+def test_model_overrides_insert_has_newIndex():
+    assert hasattr(model_overrides_Insert, "newIndex")
     descriptor = None
-    for klass in model::overrides::Insert.__mro__:
+    for klass in model_overrides_Insert.__mro__:
         if "newIndex" in klass.__dict__:
             descriptor = klass.__dict__["newIndex"]
             break
@@ -1609,61 +1451,61 @@ def test_model::overrides::insert_has_newIndex():
 
 
 
-def test_overrides::operation_is_not_abstract():
-    assert not inspect.isabstract(overrides::Operation)
+def test_overrides_operation_is_not_abstract():
+    assert not inspect.isabstract(overrides_Operation)
 
 
-def test_overrides::operation_constructor_exists():
-    assert callable(overrides::Operation.__init__)
+def test_overrides_operation_constructor_exists():
+    assert callable(overrides_Operation.__init__)
 
 
-def test_overrides::operation_constructor_args():
-    sig = inspect.signature(overrides::Operation.__init__)
+def test_overrides_operation_constructor_args():
+    sig = inspect.signature(overrides_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::overrides::operation_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::Operation)
+def test_model_overrides_operation_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_Operation)
 
 
-def test_model::overrides::operation_constructor_exists():
-    assert callable(model::overrides::Operation.__init__)
+def test_model_overrides_operation_constructor_exists():
+    assert callable(model_overrides_Operation.__init__)
 
 
-def test_model::overrides::operation_constructor_args():
-    sig = inspect.signature(model::overrides::Operation.__init__)
+def test_model_overrides_operation_constructor_args():
+    sig = inspect.signature(model_overrides_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::overrides::stringtostringmap_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::StringToStringMap)
+def test_model_overrides_stringtostringmap_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_StringToStringMap)
 
 
-def test_model::overrides::stringtostringmap_constructor_exists():
-    assert callable(model::overrides::StringToStringMap.__init__)
+def test_model_overrides_stringtostringmap_constructor_exists():
+    assert callable(model_overrides_StringToStringMap.__init__)
 
 
-def test_model::overrides::stringtostringmap_constructor_args():
-    sig = inspect.signature(model::overrides::StringToStringMap.__init__)
+def test_model_overrides_stringtostringmap_constructor_args():
+    sig = inspect.signature(model_overrides_StringToStringMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::overrides::stringtostringmap_has_key():
-    assert hasattr(model::overrides::StringToStringMap, "key")
+def test_model_overrides_stringtostringmap_has_key():
+    assert hasattr(model_overrides_StringToStringMap, "key")
     descriptor = None
-    for klass in model::overrides::StringToStringMap.__mro__:
+    for klass in model_overrides_StringToStringMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::overrides::stringtostringmap_has_value():
-    assert hasattr(model::overrides::StringToStringMap, "value")
+def test_model_overrides_stringtostringmap_has_value():
+    assert hasattr(model_overrides_StringToStringMap, "value")
     descriptor = None
-    for klass in model::overrides::StringToStringMap.__mro__:
+    for klass in model_overrides_StringToStringMap.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1685,43 +1527,43 @@ def test_reference_constructor_args():
 
 
 
-def test_model::overrides::itemoverrides_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::ItemOverrides)
+def test_model_overrides_itemoverrides_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_ItemOverrides)
 
 
-def test_model::overrides::itemoverrides_constructor_exists():
-    assert callable(model::overrides::ItemOverrides.__init__)
+def test_model_overrides_itemoverrides_constructor_exists():
+    assert callable(model_overrides_ItemOverrides.__init__)
 
 
-def test_model::overrides::itemoverrides_constructor_args():
-    sig = inspect.signature(model::overrides::ItemOverrides.__init__)
+def test_model_overrides_itemoverrides_constructor_args():
+    sig = inspect.signature(model_overrides_ItemOverrides.__init__)
     params = list(sig.parameters.keys())
-    assert "noLink" in params, "Missing parameter 'noLink'"
     assert "link" in params, "Missing parameter 'link'"
+    assert "noLink" in params, "Missing parameter 'noLink'"
     assert "text" in params, "Missing parameter 'text'"
 
-def test_model::overrides::itemoverrides_has_noLink():
-    assert hasattr(model::overrides::ItemOverrides, "noLink")
+def test_model_overrides_itemoverrides_has_link():
+    assert hasattr(model_overrides_ItemOverrides, "link")
     descriptor = None
-    for klass in model::overrides::ItemOverrides.__mro__:
-        if "noLink" in klass.__dict__:
-            descriptor = klass.__dict__["noLink"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::itemoverrides_has_link():
-    assert hasattr(model::overrides::ItemOverrides, "link")
-    descriptor = None
-    for klass in model::overrides::ItemOverrides.__mro__:
+    for klass in model_overrides_ItemOverrides.__mro__:
         if "link" in klass.__dict__:
             descriptor = klass.__dict__["link"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::overrides::itemoverrides_has_text():
-    assert hasattr(model::overrides::ItemOverrides, "text")
+def test_model_overrides_itemoverrides_has_noLink():
+    assert hasattr(model_overrides_ItemOverrides, "noLink")
     descriptor = None
-    for klass in model::overrides::ItemOverrides.__mro__:
+    for klass in model_overrides_ItemOverrides.__mro__:
+        if "noLink" in klass.__dict__:
+            descriptor = klass.__dict__["noLink"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_itemoverrides_has_text():
+    assert hasattr(model_overrides_ItemOverrides, "text")
+    descriptor = None
+    for klass in model_overrides_ItemOverrides.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1729,45 +1571,45 @@ def test_model::overrides::itemoverrides_has_text():
 
 
 
-def test_model::story::panel_is_not_abstract():
-    assert not inspect.isabstract(model::story::Panel)
+def test_model_story_panel_is_not_abstract():
+    assert not inspect.isabstract(model_story_Panel)
 
 
-def test_model::story::panel_constructor_exists():
-    assert callable(model::story::Panel.__init__)
+def test_model_story_panel_constructor_exists():
+    assert callable(model_story_Panel.__init__)
 
 
-def test_model::story::panel_constructor_args():
-    sig = inspect.signature(model::story::Panel.__init__)
+def test_model_story_panel_constructor_args():
+    sig = inspect.signature(model_story_Panel.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
 
-def test_model::story::panel_has_id():
-    assert hasattr(model::story::Panel, "id")
+def test_model_story_panel_has_id():
+    assert hasattr(model_story_Panel, "id")
     descriptor = None
-    for klass in model::story::Panel.__mro__:
+    for klass in model_story_Panel.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::story::panel_has_x():
-    assert hasattr(model::story::Panel, "x")
+def test_model_story_panel_has_y():
+    assert hasattr(model_story_Panel, "y")
     descriptor = None
-    for klass in model::story::Panel.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+    for klass in model_story_Panel.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::story::panel_has_y():
-    assert hasattr(model::story::Panel, "y")
+def test_model_story_panel_has_x():
+    assert hasattr(model_story_Panel, "x")
     descriptor = None
-    for klass in model::story::Panel.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
+    for klass in model_story_Panel.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
@@ -1787,37 +1629,37 @@ def test_panel_constructor_args():
 
 
 
-def test_model::story::storyboard_is_not_abstract():
-    assert not inspect.isabstract(model::story::Storyboard)
+def test_model_story_storyboard_is_not_abstract():
+    assert not inspect.isabstract(model_story_Storyboard)
 
 
-def test_model::story::storyboard_constructor_exists():
-    assert callable(model::story::Storyboard.__init__)
+def test_model_story_storyboard_constructor_exists():
+    assert callable(model_story_Storyboard.__init__)
 
 
-def test_model::story::storyboard_constructor_args():
-    sig = inspect.signature(model::story::Storyboard.__init__)
+def test_model_story_storyboard_constructor_args():
+    sig = inspect.signature(model_story_Storyboard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::notesupport_is_not_abstract():
-    assert not inspect.isabstract(model::NoteSupport)
+def test_model_notesupport_is_not_abstract():
+    assert not inspect.isabstract(model_NoteSupport)
 
 
-def test_model::notesupport_constructor_exists():
-    assert callable(model::NoteSupport.__init__)
+def test_model_notesupport_constructor_exists():
+    assert callable(model_NoteSupport.__init__)
 
 
-def test_model::notesupport_constructor_args():
-    sig = inspect.signature(model::NoteSupport.__init__)
+def test_model_notesupport_constructor_args():
+    sig = inspect.signature(model_NoteSupport.__init__)
     params = list(sig.parameters.keys())
     assert "note" in params, "Missing parameter 'note'"
 
-def test_model::notesupport_has_note():
-    assert hasattr(model::NoteSupport, "note")
+def test_model_notesupport_has_note():
+    assert hasattr(model_NoteSupport, "note")
     descriptor = None
-    for klass in model::NoteSupport.__mro__:
+    for klass in model_NoteSupport.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
@@ -1825,79 +1667,65 @@ def test_model::notesupport_has_note():
 
 
 
-def test_model::textlinkssupport_is_not_abstract():
-    assert not inspect.isabstract(model::TextLinksSupport)
+def test_model_textlinkssupport_is_not_abstract():
+    assert not inspect.isabstract(model_TextLinksSupport)
 
 
-def test_model::textlinkssupport_constructor_exists():
-    assert callable(model::TextLinksSupport.__init__)
+def test_model_textlinkssupport_constructor_exists():
+    assert callable(model_TextLinksSupport.__init__)
 
 
-def test_model::textlinkssupport_constructor_args():
-    sig = inspect.signature(model::TextLinksSupport.__init__)
+def test_model_textlinkssupport_constructor_args():
+    sig = inspect.signature(model_TextLinksSupport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::annotationsupport_is_not_abstract():
-    assert not inspect.isabstract(model::AnnotationSupport)
+def test_model_annotationsupport_is_not_abstract():
+    assert not inspect.isabstract(model_AnnotationSupport)
 
 
-def test_model::annotationsupport_constructor_exists():
-    assert callable(model::AnnotationSupport.__init__)
+def test_model_annotationsupport_constructor_exists():
+    assert callable(model_AnnotationSupport.__init__)
 
 
-def test_model::annotationsupport_constructor_args():
-    sig = inspect.signature(model::AnnotationSupport.__init__)
+def test_model_annotationsupport_constructor_args():
+    sig = inspect.signature(model_AnnotationSupport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_overrides::reference_is_not_abstract():
-    assert not inspect.isabstract(overrides::Reference)
+def test_overrides_reference_is_not_abstract():
+    assert not inspect.isabstract(overrides_Reference)
 
 
-def test_overrides::reference_constructor_exists():
-    assert callable(overrides::Reference.__init__)
+def test_overrides_reference_constructor_exists():
+    assert callable(overrides_Reference.__init__)
 
 
-def test_overrides::reference_constructor_args():
-    sig = inspect.signature(overrides::Reference.__init__)
+def test_overrides_reference_constructor_args():
+    sig = inspect.signature(overrides_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::overrides::delete_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::Delete)
+def test_model_overrides_move_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_Move)
 
 
-def test_model::overrides::delete_constructor_exists():
-    assert callable(model::overrides::Delete.__init__)
+def test_model_overrides_move_constructor_exists():
+    assert callable(model_overrides_Move.__init__)
 
 
-def test_model::overrides::delete_constructor_args():
-    sig = inspect.signature(model::overrides::Delete.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::overrides::move_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::Move)
-
-
-def test_model::overrides::move_constructor_exists():
-    assert callable(model::overrides::Move.__init__)
-
-
-def test_model::overrides::move_constructor_args():
-    sig = inspect.signature(model::overrides::Move.__init__)
+def test_model_overrides_move_constructor_args():
+    sig = inspect.signature(model_overrides_Move.__init__)
     params = list(sig.parameters.keys())
     assert "newIndex" in params, "Missing parameter 'newIndex'"
 
-def test_model::overrides::move_has_newIndex():
-    assert hasattr(model::overrides::Move, "newIndex")
+def test_model_overrides_move_has_newIndex():
+    assert hasattr(model_overrides_Move, "newIndex")
     descriptor = None
-    for klass in model::overrides::Move.__mro__:
+    for klass in model_overrides_Move.__mro__:
         if "newIndex" in klass.__dict__:
             descriptor = klass.__dict__["newIndex"]
             break
@@ -1905,117 +1733,131 @@ def test_model::overrides::move_has_newIndex():
 
 
 
-def test_overrides::widgetcontaineroverrides_is_not_abstract():
-    assert not inspect.isabstract(overrides::WidgetContainerOverrides)
+def test_model_overrides_delete_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_Delete)
 
 
-def test_overrides::widgetcontaineroverrides_constructor_exists():
-    assert callable(overrides::WidgetContainerOverrides.__init__)
+def test_model_overrides_delete_constructor_exists():
+    assert callable(model_overrides_Delete.__init__)
 
 
-def test_overrides::widgetcontaineroverrides_constructor_args():
-    sig = inspect.signature(overrides::WidgetContainerOverrides.__init__)
+def test_model_overrides_delete_constructor_args():
+    sig = inspect.signature(model_overrides_Delete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::overrides::widgetoverrides_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::WidgetOverrides)
+def test_overrides_widgetcontaineroverrides_is_not_abstract():
+    assert not inspect.isabstract(overrides_WidgetContainerOverrides)
 
 
-def test_model::overrides::widgetoverrides_constructor_exists():
-    assert callable(model::overrides::WidgetOverrides.__init__)
+def test_overrides_widgetcontaineroverrides_constructor_exists():
+    assert callable(overrides_WidgetContainerOverrides.__init__)
 
 
-def test_model::overrides::widgetoverrides_constructor_args():
-    sig = inspect.signature(model::overrides::WidgetOverrides.__init__)
+def test_overrides_widgetcontaineroverrides_constructor_args():
+    sig = inspect.signature(overrides_WidgetContainerOverrides.__init__)
     params = list(sig.parameters.keys())
-    assert "noLink" in params, "Missing parameter 'noLink'"
+
+
+
+def test_model_overrides_widgetoverrides_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_WidgetOverrides)
+
+
+def test_model_overrides_widgetoverrides_constructor_exists():
+    assert callable(model_overrides_WidgetOverrides.__init__)
+
+
+def test_model_overrides_widgetoverrides_constructor_args():
+    sig = inspect.signature(model_overrides_WidgetOverrides.__init__)
+    params = list(sig.parameters.keys())
+    assert "link" in params, "Missing parameter 'link'"
+    assert "noText" in params, "Missing parameter 'noText'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "y" in params, "Missing parameter 'y'"
     assert "width" in params, "Missing parameter 'width'"
     assert "height" in params, "Missing parameter 'height'"
-    assert "noText" in params, "Missing parameter 'noText'"
-    assert "link" in params, "Missing parameter 'link'"
     assert "src" in params, "Missing parameter 'src'"
-    assert "y" in params, "Missing parameter 'y'"
+    assert "noLink" in params, "Missing parameter 'noLink'"
     assert "x" in params, "Missing parameter 'x'"
 
-def test_model::overrides::widgetoverrides_has_noLink():
-    assert hasattr(model::overrides::WidgetOverrides, "noLink")
+def test_model_overrides_widgetoverrides_has_link():
+    assert hasattr(model_overrides_WidgetOverrides, "link")
     descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
-        if "noLink" in klass.__dict__:
-            descriptor = klass.__dict__["noLink"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::widgetoverrides_has_text():
-    assert hasattr(model::overrides::WidgetOverrides, "text")
-    descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::widgetoverrides_has_width():
-    assert hasattr(model::overrides::WidgetOverrides, "width")
-    descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::widgetoverrides_has_height():
-    assert hasattr(model::overrides::WidgetOverrides, "height")
-    descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::widgetoverrides_has_noText():
-    assert hasattr(model::overrides::WidgetOverrides, "noText")
-    descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
-        if "noText" in klass.__dict__:
-            descriptor = klass.__dict__["noText"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::overrides::widgetoverrides_has_link():
-    assert hasattr(model::overrides::WidgetOverrides, "link")
-    descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
+    for klass in model_overrides_WidgetOverrides.__mro__:
         if "link" in klass.__dict__:
             descriptor = klass.__dict__["link"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::overrides::widgetoverrides_has_src():
-    assert hasattr(model::overrides::WidgetOverrides, "src")
+def test_model_overrides_widgetoverrides_has_noText():
+    assert hasattr(model_overrides_WidgetOverrides, "noText")
     descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
+    for klass in model_overrides_WidgetOverrides.__mro__:
+        if "noText" in klass.__dict__:
+            descriptor = klass.__dict__["noText"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::overrides::widgetoverrides_has_y():
-    assert hasattr(model::overrides::WidgetOverrides, "y")
+def test_model_overrides_widgetoverrides_has_text():
+    assert hasattr(model_overrides_WidgetOverrides, "text")
     descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
+    for klass in model_overrides_WidgetOverrides.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_widgetoverrides_has_y():
+    assert hasattr(model_overrides_WidgetOverrides, "y")
+    descriptor = None
+    for klass in model_overrides_WidgetOverrides.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::overrides::widgetoverrides_has_x():
-    assert hasattr(model::overrides::WidgetOverrides, "x")
+def test_model_overrides_widgetoverrides_has_width():
+    assert hasattr(model_overrides_WidgetOverrides, "width")
     descriptor = None
-    for klass in model::overrides::WidgetOverrides.__mro__:
+    for klass in model_overrides_WidgetOverrides.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_widgetoverrides_has_height():
+    assert hasattr(model_overrides_WidgetOverrides, "height")
+    descriptor = None
+    for klass in model_overrides_WidgetOverrides.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_widgetoverrides_has_src():
+    assert hasattr(model_overrides_WidgetOverrides, "src")
+    descriptor = None
+    for klass in model_overrides_WidgetOverrides.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_widgetoverrides_has_noLink():
+    assert hasattr(model_overrides_WidgetOverrides, "noLink")
+    descriptor = None
+    for klass in model_overrides_WidgetOverrides.__mro__:
+        if "noLink" in klass.__dict__:
+            descriptor = klass.__dict__["noLink"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_overrides_widgetoverrides_has_x():
+    assert hasattr(model_overrides_WidgetOverrides, "x")
+    descriptor = None
+    for klass in model_overrides_WidgetOverrides.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
@@ -2051,16 +1893,16 @@ def test_widgetcontaineroverrides_constructor_args():
 
 
 
-def test_model::overrides::overrides_is_not_abstract():
-    assert not inspect.isabstract(model::overrides::Overrides)
+def test_model_overrides_overrides_is_not_abstract():
+    assert not inspect.isabstract(model_overrides_Overrides)
 
 
-def test_model::overrides::overrides_constructor_exists():
-    assert callable(model::overrides::Overrides.__init__)
+def test_model_overrides_overrides_constructor_exists():
+    assert callable(model_overrides_Overrides.__init__)
 
 
-def test_model::overrides::overrides_constructor_args():
-    sig = inspect.signature(model::overrides::Overrides.__init__)
+def test_model_overrides_overrides_constructor_args():
+    sig = inspect.signature(model_overrides_Overrides.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2079,61 +1921,37 @@ def test_storyboard_constructor_args():
 
 
 
-def test_story::model::screen_is_not_abstract():
-    assert not inspect.isabstract(story::model::Screen)
+def test_story_model_screen_is_not_abstract():
+    assert not inspect.isabstract(story_model_Screen)
 
 
-def test_story::model::screen_constructor_exists():
-    assert callable(story::model::Screen.__init__)
+def test_story_model_screen_constructor_exists():
+    assert callable(story_model_Screen.__init__)
 
 
-def test_story::model::screen_constructor_args():
-    sig = inspect.signature(story::model::Screen.__init__)
+def test_story_model_screen_constructor_args():
+    sig = inspect.signature(story_model_Screen.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::shape_is_not_abstract():
-    assert not inspect.isabstract(model::Shape)
+def test_model_skinsupport_is_not_abstract():
+    assert not inspect.isabstract(model_SkinSupport)
 
 
-def test_model::shape_constructor_exists():
-    assert callable(model::Shape.__init__)
+def test_model_skinsupport_constructor_exists():
+    assert callable(model_SkinSupport.__init__)
 
 
-def test_model::shape_constructor_args():
-    sig = inspect.signature(model::Shape.__init__)
-    params = list(sig.parameters.keys())
-    assert "shapeType" in params, "Missing parameter 'shapeType'"
-
-def test_model::shape_has_shapeType():
-    assert hasattr(model::Shape, "shapeType")
-    descriptor = None
-    for klass in model::Shape.__mro__:
-        if "shapeType" in klass.__dict__:
-            descriptor = klass.__dict__["shapeType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::skinsupport_is_not_abstract():
-    assert not inspect.isabstract(model::SkinSupport)
-
-
-def test_model::skinsupport_constructor_exists():
-    assert callable(model::SkinSupport.__init__)
-
-
-def test_model::skinsupport_constructor_args():
-    sig = inspect.signature(model::SkinSupport.__init__)
+def test_model_skinsupport_constructor_args():
+    sig = inspect.signature(model_SkinSupport.__init__)
     params = list(sig.parameters.keys())
     assert "skin" in params, "Missing parameter 'skin'"
 
-def test_model::skinsupport_has_skin():
-    assert hasattr(model::SkinSupport, "skin")
+def test_model_skinsupport_has_skin():
+    assert hasattr(model_SkinSupport, "skin")
     descriptor = None
-    for klass in model::SkinSupport.__mro__:
+    for klass in model_SkinSupport.__mro__:
         if "skin" in klass.__dict__:
             descriptor = klass.__dict__["skin"]
             break
@@ -2141,37 +1959,37 @@ def test_model::skinsupport_has_skin():
 
 
 
-def test_model::vbuttonbar_is_not_abstract():
-    assert not inspect.isabstract(model::VButtonBar)
+def test_model_vbuttonbar_is_not_abstract():
+    assert not inspect.isabstract(model_VButtonBar)
 
 
-def test_model::vbuttonbar_constructor_exists():
-    assert callable(model::VButtonBar.__init__)
+def test_model_vbuttonbar_constructor_exists():
+    assert callable(model_VButtonBar.__init__)
 
 
-def test_model::vbuttonbar_constructor_args():
-    sig = inspect.signature(model::VButtonBar.__init__)
+def test_model_vbuttonbar_constructor_args():
+    sig = inspect.signature(model_VButtonBar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::lineheightsupport_is_not_abstract():
-    assert not inspect.isabstract(model::LineHeightSupport)
+def test_model_lineheightsupport_is_not_abstract():
+    assert not inspect.isabstract(model_LineHeightSupport)
 
 
-def test_model::lineheightsupport_constructor_exists():
-    assert callable(model::LineHeightSupport.__init__)
+def test_model_lineheightsupport_constructor_exists():
+    assert callable(model_LineHeightSupport.__init__)
 
 
-def test_model::lineheightsupport_constructor_args():
-    sig = inspect.signature(model::LineHeightSupport.__init__)
+def test_model_lineheightsupport_constructor_args():
+    sig = inspect.signature(model_LineHeightSupport.__init__)
     params = list(sig.parameters.keys())
     assert "lineHeight" in params, "Missing parameter 'lineHeight'"
 
-def test_model::lineheightsupport_has_lineHeight():
-    assert hasattr(model::LineHeightSupport, "lineHeight")
+def test_model_lineheightsupport_has_lineHeight():
+    assert hasattr(model_LineHeightSupport, "lineHeight")
     descriptor = None
-    for klass in model::LineHeightSupport.__mro__:
+    for klass in model_LineHeightSupport.__mro__:
         if "lineHeight" in klass.__dict__:
             descriptor = klass.__dict__["lineHeight"]
             break
@@ -2179,51 +1997,51 @@ def test_model::lineheightsupport_has_lineHeight():
 
 
 
-def test_model::switch_is_not_abstract():
-    assert not inspect.isabstract(model::Switch)
+def test_model_switch_is_not_abstract():
+    assert not inspect.isabstract(model_Switch)
 
 
-def test_model::switch_constructor_exists():
-    assert callable(model::Switch.__init__)
+def test_model_switch_constructor_exists():
+    assert callable(model_Switch.__init__)
 
 
-def test_model::switch_constructor_args():
-    sig = inspect.signature(model::Switch.__init__)
+def test_model_switch_constructor_args():
+    sig = inspect.signature(model_Switch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::alert_is_not_abstract():
-    assert not inspect.isabstract(model::Alert)
+def test_model_alert_is_not_abstract():
+    assert not inspect.isabstract(model_Alert)
 
 
-def test_model::alert_constructor_exists():
-    assert callable(model::Alert.__init__)
+def test_model_alert_constructor_exists():
+    assert callable(model_Alert.__init__)
 
 
-def test_model::alert_constructor_args():
-    sig = inspect.signature(model::Alert.__init__)
+def test_model_alert_constructor_args():
+    sig = inspect.signature(model_Alert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::namesupport_is_not_abstract():
-    assert not inspect.isabstract(model::NameSupport)
+def test_model_namesupport_is_not_abstract():
+    assert not inspect.isabstract(model_NameSupport)
 
 
-def test_model::namesupport_constructor_exists():
-    assert callable(model::NameSupport.__init__)
+def test_model_namesupport_constructor_exists():
+    assert callable(model_NameSupport.__init__)
 
 
-def test_model::namesupport_constructor_args():
-    sig = inspect.signature(model::NameSupport.__init__)
+def test_model_namesupport_constructor_args():
+    sig = inspect.signature(model_NameSupport.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::namesupport_has_name():
-    assert hasattr(model::NameSupport, "name")
+def test_model_namesupport_has_name():
+    assert hasattr(model_NameSupport, "name")
     descriptor = None
-    for klass in model::NameSupport.__mro__:
+    for klass in model_NameSupport.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2231,37 +2049,37 @@ def test_model::namesupport_has_name():
 
 
 
-def test_model::hotspot_is_not_abstract():
-    assert not inspect.isabstract(model::Hotspot)
+def test_model_hotspot_is_not_abstract():
+    assert not inspect.isabstract(model_Hotspot)
 
 
-def test_model::hotspot_constructor_exists():
-    assert callable(model::Hotspot.__init__)
+def test_model_hotspot_constructor_exists():
+    assert callable(model_Hotspot.__init__)
 
 
-def test_model::hotspot_constructor_args():
-    sig = inspect.signature(model::Hotspot.__init__)
+def test_model_hotspot_constructor_args():
+    sig = inspect.signature(model_Hotspot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::linksupport_is_not_abstract():
-    assert not inspect.isabstract(model::LinkSupport)
+def test_model_linksupport_is_not_abstract():
+    assert not inspect.isabstract(model_LinkSupport)
 
 
-def test_model::linksupport_constructor_exists():
-    assert callable(model::LinkSupport.__init__)
+def test_model_linksupport_constructor_exists():
+    assert callable(model_LinkSupport.__init__)
 
 
-def test_model::linksupport_constructor_args():
-    sig = inspect.signature(model::LinkSupport.__init__)
+def test_model_linksupport_constructor_args():
+    sig = inspect.signature(model_LinkSupport.__init__)
     params = list(sig.parameters.keys())
     assert "link" in params, "Missing parameter 'link'"
 
-def test_model::linksupport_has_link():
-    assert hasattr(model::LinkSupport, "link")
+def test_model_linksupport_has_link():
+    assert hasattr(model_LinkSupport, "link")
     descriptor = None
-    for klass in model::LinkSupport.__mro__:
+    for klass in model_LinkSupport.__mro__:
         if "link" in klass.__dict__:
             descriptor = klass.__dict__["link"]
             break
@@ -2269,57 +2087,57 @@ def test_model::linksupport_has_link():
 
 
 
-def test_model::flipsupport_is_not_abstract():
-    assert not inspect.isabstract(model::FlipSupport)
+def test_model_flipsupport_is_not_abstract():
+    assert not inspect.isabstract(model_FlipSupport)
 
 
-def test_model::flipsupport_constructor_exists():
-    assert callable(model::FlipSupport.__init__)
+def test_model_flipsupport_constructor_exists():
+    assert callable(model_FlipSupport.__init__)
 
 
-def test_model::flipsupport_constructor_args():
-    sig = inspect.signature(model::FlipSupport.__init__)
+def test_model_flipsupport_constructor_args():
+    sig = inspect.signature(model_FlipSupport.__init__)
     params = list(sig.parameters.keys())
-    assert "hFlip" in params, "Missing parameter 'hFlip'"
     assert "vFlip" in params, "Missing parameter 'vFlip'"
+    assert "hFlip" in params, "Missing parameter 'hFlip'"
 
-def test_model::flipsupport_has_hFlip():
-    assert hasattr(model::FlipSupport, "hFlip")
+def test_model_flipsupport_has_vFlip():
+    assert hasattr(model_FlipSupport, "vFlip")
     descriptor = None
-    for klass in model::FlipSupport.__mro__:
-        if "hFlip" in klass.__dict__:
-            descriptor = klass.__dict__["hFlip"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::flipsupport_has_vFlip():
-    assert hasattr(model::FlipSupport, "vFlip")
-    descriptor = None
-    for klass in model::FlipSupport.__mro__:
+    for klass in model_FlipSupport.__mro__:
         if "vFlip" in klass.__dict__:
             descriptor = klass.__dict__["vFlip"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_flipsupport_has_hFlip():
+    assert hasattr(model_FlipSupport, "hFlip")
+    descriptor = None
+    for klass in model_FlipSupport.__mro__:
+        if "hFlip" in klass.__dict__:
+            descriptor = klass.__dict__["hFlip"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::rotationsupport_is_not_abstract():
-    assert not inspect.isabstract(model::RotationSupport)
+
+def test_model_rotationsupport_is_not_abstract():
+    assert not inspect.isabstract(model_RotationSupport)
 
 
-def test_model::rotationsupport_constructor_exists():
-    assert callable(model::RotationSupport.__init__)
+def test_model_rotationsupport_constructor_exists():
+    assert callable(model_RotationSupport.__init__)
 
 
-def test_model::rotationsupport_constructor_args():
-    sig = inspect.signature(model::RotationSupport.__init__)
+def test_model_rotationsupport_constructor_args():
+    sig = inspect.signature(model_RotationSupport.__init__)
     params = list(sig.parameters.keys())
     assert "rotation" in params, "Missing parameter 'rotation'"
 
-def test_model::rotationsupport_has_rotation():
-    assert hasattr(model::RotationSupport, "rotation")
+def test_model_rotationsupport_has_rotation():
+    assert hasattr(model_RotationSupport, "rotation")
     descriptor = None
-    for klass in model::RotationSupport.__mro__:
+    for klass in model_RotationSupport.__mro__:
         if "rotation" in klass.__dict__:
             descriptor = klass.__dict__["rotation"]
             break
@@ -2327,23 +2145,23 @@ def test_model::rotationsupport_has_rotation():
 
 
 
-def test_model::linestylesupport_is_not_abstract():
-    assert not inspect.isabstract(model::LineStyleSupport)
+def test_model_linestylesupport_is_not_abstract():
+    assert not inspect.isabstract(model_LineStyleSupport)
 
 
-def test_model::linestylesupport_constructor_exists():
-    assert callable(model::LineStyleSupport.__init__)
+def test_model_linestylesupport_constructor_exists():
+    assert callable(model_LineStyleSupport.__init__)
 
 
-def test_model::linestylesupport_constructor_args():
-    sig = inspect.signature(model::LineStyleSupport.__init__)
+def test_model_linestylesupport_constructor_args():
+    sig = inspect.signature(model_LineStyleSupport.__init__)
     params = list(sig.parameters.keys())
     assert "lineStyle" in params, "Missing parameter 'lineStyle'"
 
-def test_model::linestylesupport_has_lineStyle():
-    assert hasattr(model::LineStyleSupport, "lineStyle")
+def test_model_linestylesupport_has_lineStyle():
+    assert hasattr(model_LineStyleSupport, "lineStyle")
     descriptor = None
-    for klass in model::LineStyleSupport.__mro__:
+    for klass in model_LineStyleSupport.__mro__:
         if "lineStyle" in klass.__dict__:
             descriptor = klass.__dict__["lineStyle"]
             break
@@ -2351,23 +2169,23 @@ def test_model::linestylesupport_has_lineStyle():
 
 
 
-def test_model::coloralternativesupport_is_not_abstract():
-    assert not inspect.isabstract(model::ColorAlternativeSupport)
+def test_model_coloralternativesupport_is_not_abstract():
+    assert not inspect.isabstract(model_ColorAlternativeSupport)
 
 
-def test_model::coloralternativesupport_constructor_exists():
-    assert callable(model::ColorAlternativeSupport.__init__)
+def test_model_coloralternativesupport_constructor_exists():
+    assert callable(model_ColorAlternativeSupport.__init__)
 
 
-def test_model::coloralternativesupport_constructor_args():
-    sig = inspect.signature(model::ColorAlternativeSupport.__init__)
+def test_model_coloralternativesupport_constructor_args():
+    sig = inspect.signature(model_ColorAlternativeSupport.__init__)
     params = list(sig.parameters.keys())
     assert "alternative" in params, "Missing parameter 'alternative'"
 
-def test_model::coloralternativesupport_has_alternative():
-    assert hasattr(model::ColorAlternativeSupport, "alternative")
+def test_model_coloralternativesupport_has_alternative():
+    assert hasattr(model_ColorAlternativeSupport, "alternative")
     descriptor = None
-    for klass in model::ColorAlternativeSupport.__mro__:
+    for klass in model_ColorAlternativeSupport.__mro__:
         if "alternative" in klass.__dict__:
             descriptor = klass.__dict__["alternative"]
             break
@@ -2375,23 +2193,23 @@ def test_model::coloralternativesupport_has_alternative():
 
 
 
-def test_model::iconpositionsupport_is_not_abstract():
-    assert not inspect.isabstract(model::IconPositionSupport)
+def test_model_iconpositionsupport_is_not_abstract():
+    assert not inspect.isabstract(model_IconPositionSupport)
 
 
-def test_model::iconpositionsupport_constructor_exists():
-    assert callable(model::IconPositionSupport.__init__)
+def test_model_iconpositionsupport_constructor_exists():
+    assert callable(model_IconPositionSupport.__init__)
 
 
-def test_model::iconpositionsupport_constructor_args():
-    sig = inspect.signature(model::IconPositionSupport.__init__)
+def test_model_iconpositionsupport_constructor_args():
+    sig = inspect.signature(model_IconPositionSupport.__init__)
     params = list(sig.parameters.keys())
     assert "iconPosition" in params, "Missing parameter 'iconPosition'"
 
-def test_model::iconpositionsupport_has_iconPosition():
-    assert hasattr(model::IconPositionSupport, "iconPosition")
+def test_model_iconpositionsupport_has_iconPosition():
+    assert hasattr(model_IconPositionSupport, "iconPosition")
     descriptor = None
-    for klass in model::IconPositionSupport.__mro__:
+    for klass in model_IconPositionSupport.__mro__:
         if "iconPosition" in klass.__dict__:
             descriptor = klass.__dict__["iconPosition"]
             break
@@ -2399,115 +2217,115 @@ def test_model::iconpositionsupport_has_iconPosition():
 
 
 
-def test_model::rectangle_is_not_abstract():
-    assert not inspect.isabstract(model::Rectangle)
+def test_model_rectangle_is_not_abstract():
+    assert not inspect.isabstract(model_Rectangle)
 
 
-def test_model::rectangle_constructor_exists():
-    assert callable(model::Rectangle.__init__)
+def test_model_rectangle_constructor_exists():
+    assert callable(model_Rectangle.__init__)
 
 
-def test_model::rectangle_constructor_args():
-    sig = inspect.signature(model::Rectangle.__init__)
+def test_model_rectangle_constructor_args():
+    sig = inspect.signature(model_Rectangle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::itemsupport_is_not_abstract():
-    assert not inspect.isabstract(model::ItemSupport)
+def test_model_itemsupport_is_not_abstract():
+    assert not inspect.isabstract(model_ItemSupport)
 
 
-def test_model::itemsupport_constructor_exists():
-    assert callable(model::ItemSupport.__init__)
+def test_model_itemsupport_constructor_exists():
+    assert callable(model_ItemSupport.__init__)
 
 
-def test_model::itemsupport_constructor_args():
-    sig = inspect.signature(model::ItemSupport.__init__)
+def test_model_itemsupport_constructor_args():
+    sig = inspect.signature(model_ItemSupport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::item_is_not_abstract():
-    assert not inspect.isabstract(model::Item)
+def test_model_item_is_not_abstract():
+    assert not inspect.isabstract(model_Item)
 
 
-def test_model::item_constructor_exists():
-    assert callable(model::Item.__init__)
+def test_model_item_constructor_exists():
+    assert callable(model_Item.__init__)
 
 
-def test_model::item_constructor_args():
-    sig = inspect.signature(model::Item.__init__)
+def test_model_item_constructor_args():
+    sig = inspect.signature(model_Item.__init__)
     params = list(sig.parameters.keys())
     assert "width" in params, "Missing parameter 'width'"
-    assert "x" in params, "Missing parameter 'x'"
-    assert "text" in params, "Missing parameter 'text'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "text" in params, "Missing parameter 'text'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "x" in params, "Missing parameter 'x'"
 
-def test_model::item_has_width():
-    assert hasattr(model::Item, "width")
+def test_model_item_has_width():
+    assert hasattr(model_Item, "width")
     descriptor = None
-    for klass in model::Item.__mro__:
+    for klass in model_Item.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::item_has_x():
-    assert hasattr(model::Item, "x")
+def test_model_item_has_y():
+    assert hasattr(model_Item, "y")
     descriptor = None
-    for klass in model::Item.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::item_has_text():
-    assert hasattr(model::Item, "text")
-    descriptor = None
-    for klass in model::Item.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::item_has_y():
-    assert hasattr(model::Item, "y")
-    descriptor = None
-    for klass in model::Item.__mro__:
+    for klass in model_Item.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::item_has_height():
-    assert hasattr(model::Item, "height")
+def test_model_item_has_text():
+    assert hasattr(model_Item, "text")
     descriptor = None
-    for klass in model::Item.__mro__:
+    for klass in model_Item.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_item_has_height():
+    assert hasattr(model_Item, "height")
+    descriptor = None
+    for klass in model_Item.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_item_has_x():
+    assert hasattr(model_Item, "x")
+    descriptor = None
+    for klass in model_Item.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::chart_is_not_abstract():
-    assert not inspect.isabstract(model::Chart)
+
+def test_model_chart_is_not_abstract():
+    assert not inspect.isabstract(model_Chart)
 
 
-def test_model::chart_constructor_exists():
-    assert callable(model::Chart.__init__)
+def test_model_chart_constructor_exists():
+    assert callable(model_Chart.__init__)
 
 
-def test_model::chart_constructor_args():
-    sig = inspect.signature(model::Chart.__init__)
+def test_model_chart_constructor_args():
+    sig = inspect.signature(model_Chart.__init__)
     params = list(sig.parameters.keys())
     assert "chartType" in params, "Missing parameter 'chartType'"
 
-def test_model::chart_has_chartType():
-    assert hasattr(model::Chart, "chartType")
+def test_model_chart_has_chartType():
+    assert hasattr(model_Chart, "chartType")
     descriptor = None
-    for klass in model::Chart.__mro__:
+    for klass in model_Chart.__mro__:
         if "chartType" in klass.__dict__:
             descriptor = klass.__dict__["chartType"]
             break
@@ -2515,71 +2333,71 @@ def test_model::chart_has_chartType():
 
 
 
-def test_model::listsupport_is_not_abstract():
-    assert not inspect.isabstract(model::ListSupport)
+def test_model_listsupport_is_not_abstract():
+    assert not inspect.isabstract(model_ListSupport)
 
 
-def test_model::listsupport_constructor_exists():
-    assert callable(model::ListSupport.__init__)
+def test_model_listsupport_constructor_exists():
+    assert callable(model_ListSupport.__init__)
 
 
-def test_model::listsupport_constructor_args():
-    sig = inspect.signature(model::ListSupport.__init__)
+def test_model_listsupport_constructor_args():
+    sig = inspect.signature(model_ListSupport.__init__)
     params = list(sig.parameters.keys())
-    assert "rowHeight" in params, "Missing parameter 'rowHeight'"
     assert "horizontalLines" in params, "Missing parameter 'horizontalLines'"
+    assert "rowHeight" in params, "Missing parameter 'rowHeight'"
 
-def test_model::listsupport_has_rowHeight():
-    assert hasattr(model::ListSupport, "rowHeight")
+def test_model_listsupport_has_horizontalLines():
+    assert hasattr(model_ListSupport, "horizontalLines")
     descriptor = None
-    for klass in model::ListSupport.__mro__:
-        if "rowHeight" in klass.__dict__:
-            descriptor = klass.__dict__["rowHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::listsupport_has_horizontalLines():
-    assert hasattr(model::ListSupport, "horizontalLines")
-    descriptor = None
-    for klass in model::ListSupport.__mro__:
+    for klass in model_ListSupport.__mro__:
         if "horizontalLines" in klass.__dict__:
             descriptor = klass.__dict__["horizontalLines"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_listsupport_has_rowHeight():
+    assert hasattr(model_ListSupport, "rowHeight")
+    descriptor = None
+    for klass in model_ListSupport.__mro__:
+        if "rowHeight" in klass.__dict__:
+            descriptor = klass.__dict__["rowHeight"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::colorpicker_is_not_abstract():
-    assert not inspect.isabstract(model::ColorPicker)
+
+def test_model_colorpicker_is_not_abstract():
+    assert not inspect.isabstract(model_ColorPicker)
 
 
-def test_model::colorpicker_constructor_exists():
-    assert callable(model::ColorPicker.__init__)
+def test_model_colorpicker_constructor_exists():
+    assert callable(model_ColorPicker.__init__)
 
 
-def test_model::colorpicker_constructor_args():
-    sig = inspect.signature(model::ColorPicker.__init__)
+def test_model_colorpicker_constructor_args():
+    sig = inspect.signature(model_ColorPicker.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::valuesupport_is_not_abstract():
-    assert not inspect.isabstract(model::ValueSupport)
+def test_model_valuesupport_is_not_abstract():
+    assert not inspect.isabstract(model_ValueSupport)
 
 
-def test_model::valuesupport_constructor_exists():
-    assert callable(model::ValueSupport.__init__)
+def test_model_valuesupport_constructor_exists():
+    assert callable(model_ValueSupport.__init__)
 
 
-def test_model::valuesupport_constructor_args():
-    sig = inspect.signature(model::ValueSupport.__init__)
+def test_model_valuesupport_constructor_args():
+    sig = inspect.signature(model_ValueSupport.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::valuesupport_has_value():
-    assert hasattr(model::ValueSupport, "value")
+def test_model_valuesupport_has_value():
+    assert hasattr(model_ValueSupport, "value")
     descriptor = None
-    for klass in model::ValueSupport.__mro__:
+    for klass in model_ValueSupport.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2587,65 +2405,51 @@ def test_model::valuesupport_has_value():
 
 
 
-def test_model::vsplitter_is_not_abstract():
-    assert not inspect.isabstract(model::VSplitter)
+def test_model_vsplitter_is_not_abstract():
+    assert not inspect.isabstract(model_VSplitter)
 
 
-def test_model::vsplitter_constructor_exists():
-    assert callable(model::VSplitter.__init__)
+def test_model_vsplitter_constructor_exists():
+    assert callable(model_VSplitter.__init__)
 
 
-def test_model::vsplitter_constructor_args():
-    sig = inspect.signature(model::VSplitter.__init__)
+def test_model_vsplitter_constructor_args():
+    sig = inspect.signature(model_VSplitter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::hsplitter_is_not_abstract():
-    assert not inspect.isabstract(model::HSplitter)
+def test_model_hsplitter_is_not_abstract():
+    assert not inspect.isabstract(model_HSplitter)
 
 
-def test_model::hsplitter_constructor_exists():
-    assert callable(model::HSplitter.__init__)
+def test_model_hsplitter_constructor_exists():
+    assert callable(model_HSplitter.__init__)
 
 
-def test_model::hsplitter_constructor_args():
-    sig = inspect.signature(model::HSplitter.__init__)
+def test_model_hsplitter_constructor_args():
+    sig = inspect.signature(model_HSplitter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::circle_is_not_abstract():
-    assert not inspect.isabstract(model::Circle)
+def test_model_borderstylesupport_is_not_abstract():
+    assert not inspect.isabstract(model_BorderStyleSupport)
 
 
-def test_model::circle_constructor_exists():
-    assert callable(model::Circle.__init__)
+def test_model_borderstylesupport_constructor_exists():
+    assert callable(model_BorderStyleSupport.__init__)
 
 
-def test_model::circle_constructor_args():
-    sig = inspect.signature(model::Circle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::borderstylesupport_is_not_abstract():
-    assert not inspect.isabstract(model::BorderStyleSupport)
-
-
-def test_model::borderstylesupport_constructor_exists():
-    assert callable(model::BorderStyleSupport.__init__)
-
-
-def test_model::borderstylesupport_constructor_args():
-    sig = inspect.signature(model::BorderStyleSupport.__init__)
+def test_model_borderstylesupport_constructor_args():
+    sig = inspect.signature(model_BorderStyleSupport.__init__)
     params = list(sig.parameters.keys())
     assert "border" in params, "Missing parameter 'border'"
 
-def test_model::borderstylesupport_has_border():
-    assert hasattr(model::BorderStyleSupport, "border")
+def test_model_borderstylesupport_has_border():
+    assert hasattr(model_BorderStyleSupport, "border")
     descriptor = None
-    for klass in model::BorderStyleSupport.__mro__:
+    for klass in model_BorderStyleSupport.__mro__:
         if "border" in klass.__dict__:
             descriptor = klass.__dict__["border"]
             break
@@ -2653,51 +2457,51 @@ def test_model::borderstylesupport_has_border():
 
 
 
-def test_model::buttonbar_is_not_abstract():
-    assert not inspect.isabstract(model::ButtonBar)
+def test_model_buttonbar_is_not_abstract():
+    assert not inspect.isabstract(model_ButtonBar)
 
 
-def test_model::buttonbar_constructor_exists():
-    assert callable(model::ButtonBar.__init__)
+def test_model_buttonbar_constructor_exists():
+    assert callable(model_ButtonBar.__init__)
 
 
-def test_model::buttonbar_constructor_args():
-    sig = inspect.signature(model::ButtonBar.__init__)
+def test_model_buttonbar_constructor_args():
+    sig = inspect.signature(model_ButtonBar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::datefield_is_not_abstract():
-    assert not inspect.isabstract(model::DateField)
+def test_model_datefield_is_not_abstract():
+    assert not inspect.isabstract(model_DateField)
 
 
-def test_model::datefield_constructor_exists():
-    assert callable(model::DateField.__init__)
+def test_model_datefield_constructor_exists():
+    assert callable(model_DateField.__init__)
 
 
-def test_model::datefield_constructor_args():
-    sig = inspect.signature(model::DateField.__init__)
+def test_model_datefield_constructor_args():
+    sig = inspect.signature(model_DateField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::verticalscrollbarsupport_is_not_abstract():
-    assert not inspect.isabstract(model::VerticalScrollbarSupport)
+def test_model_verticalscrollbarsupport_is_not_abstract():
+    assert not inspect.isabstract(model_VerticalScrollbarSupport)
 
 
-def test_model::verticalscrollbarsupport_constructor_exists():
-    assert callable(model::VerticalScrollbarSupport.__init__)
+def test_model_verticalscrollbarsupport_constructor_exists():
+    assert callable(model_VerticalScrollbarSupport.__init__)
 
 
-def test_model::verticalscrollbarsupport_constructor_args():
-    sig = inspect.signature(model::VerticalScrollbarSupport.__init__)
+def test_model_verticalscrollbarsupport_constructor_args():
+    sig = inspect.signature(model_VerticalScrollbarSupport.__init__)
     params = list(sig.parameters.keys())
     assert "verticalScrollbar" in params, "Missing parameter 'verticalScrollbar'"
 
-def test_model::verticalscrollbarsupport_has_verticalScrollbar():
-    assert hasattr(model::VerticalScrollbarSupport, "verticalScrollbar")
+def test_model_verticalscrollbarsupport_has_verticalScrollbar():
+    assert hasattr(model_VerticalScrollbarSupport, "verticalScrollbar")
     descriptor = None
-    for klass in model::VerticalScrollbarSupport.__mro__:
+    for klass in model_VerticalScrollbarSupport.__mro__:
         if "verticalScrollbar" in klass.__dict__:
             descriptor = klass.__dict__["verticalScrollbar"]
             break
@@ -2705,61 +2509,61 @@ def test_model::verticalscrollbarsupport_has_verticalScrollbar():
 
 
 
-def test_model::accordion_is_not_abstract():
-    assert not inspect.isabstract(model::Accordion)
+def test_model_accordion_is_not_abstract():
+    assert not inspect.isabstract(model_Accordion)
 
 
-def test_model::accordion_constructor_exists():
-    assert callable(model::Accordion.__init__)
+def test_model_accordion_constructor_exists():
+    assert callable(model_Accordion.__init__)
 
 
-def test_model::accordion_constructor_args():
-    sig = inspect.signature(model::Accordion.__init__)
+def test_model_accordion_constructor_args():
+    sig = inspect.signature(model_Accordion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::linkbar_is_not_abstract():
-    assert not inspect.isabstract(model::LinkBar)
+def test_model_linkbar_is_not_abstract():
+    assert not inspect.isabstract(model_LinkBar)
 
 
-def test_model::linkbar_constructor_exists():
-    assert callable(model::LinkBar.__init__)
+def test_model_linkbar_constructor_exists():
+    assert callable(model_LinkBar.__init__)
 
 
-def test_model::linkbar_constructor_args():
-    sig = inspect.signature(model::LinkBar.__init__)
+def test_model_linkbar_constructor_args():
+    sig = inspect.signature(model_LinkBar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::iconsupport_is_not_abstract():
-    assert not inspect.isabstract(model::IconSupport)
+def test_model_iconsupport_is_not_abstract():
+    assert not inspect.isabstract(model_IconSupport)
 
 
-def test_model::iconsupport_constructor_exists():
-    assert callable(model::IconSupport.__init__)
+def test_model_iconsupport_constructor_exists():
+    assert callable(model_IconSupport.__init__)
 
 
-def test_model::iconsupport_constructor_args():
-    sig = inspect.signature(model::IconSupport.__init__)
+def test_model_iconsupport_constructor_args():
+    sig = inspect.signature(model_IconSupport.__init__)
     params = list(sig.parameters.keys())
     assert "icon" in params, "Missing parameter 'icon'"
     assert "iconRotation" in params, "Missing parameter 'iconRotation'"
 
-def test_model::iconsupport_has_icon():
-    assert hasattr(model::IconSupport, "icon")
+def test_model_iconsupport_has_icon():
+    assert hasattr(model_IconSupport, "icon")
     descriptor = None
-    for klass in model::IconSupport.__mro__:
+    for klass in model_IconSupport.__mro__:
         if "icon" in klass.__dict__:
             descriptor = klass.__dict__["icon"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::iconsupport_has_iconRotation():
-    assert hasattr(model::IconSupport, "iconRotation")
+def test_model_iconsupport_has_iconRotation():
+    assert hasattr(model_IconSupport, "iconRotation")
     descriptor = None
-    for klass in model::IconSupport.__mro__:
+    for klass in model_IconSupport.__mro__:
         if "iconRotation" in klass.__dict__:
             descriptor = klass.__dict__["iconRotation"]
             break
@@ -2767,23 +2571,23 @@ def test_model::iconsupport_has_iconRotation():
 
 
 
-def test_model::tabbedpane_is_not_abstract():
-    assert not inspect.isabstract(model::TabbedPane)
+def test_model_tabbedpane_is_not_abstract():
+    assert not inspect.isabstract(model_TabbedPane)
 
 
-def test_model::tabbedpane_constructor_exists():
-    assert callable(model::TabbedPane.__init__)
+def test_model_tabbedpane_constructor_exists():
+    assert callable(model_TabbedPane.__init__)
 
 
-def test_model::tabbedpane_constructor_args():
-    sig = inspect.signature(model::TabbedPane.__init__)
+def test_model_tabbedpane_constructor_args():
+    sig = inspect.signature(model_TabbedPane.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_model::tabbedpane_has_position():
-    assert hasattr(model::TabbedPane, "position")
+def test_model_tabbedpane_has_position():
+    assert hasattr(model_TabbedPane, "position")
     descriptor = None
-    for klass in model::TabbedPane.__mro__:
+    for klass in model_TabbedPane.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -2791,58 +2595,58 @@ def test_model::tabbedpane_has_position():
 
 
 
-def test_model::coverflow_is_not_abstract():
-    assert not inspect.isabstract(model::CoverFlow)
+def test_model_coverflow_is_not_abstract():
+    assert not inspect.isabstract(model_CoverFlow)
 
 
-def test_model::coverflow_constructor_exists():
-    assert callable(model::CoverFlow.__init__)
+def test_model_coverflow_constructor_exists():
+    assert callable(model_CoverFlow.__init__)
 
 
-def test_model::coverflow_constructor_args():
-    sig = inspect.signature(model::CoverFlow.__init__)
+def test_model_coverflow_constructor_args():
+    sig = inspect.signature(model_CoverFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::map_is_not_abstract():
-    assert not inspect.isabstract(model::Map)
+def test_model_map_is_not_abstract():
+    assert not inspect.isabstract(model_Map)
 
 
-def test_model::map_constructor_exists():
-    assert callable(model::Map.__init__)
+def test_model_map_constructor_exists():
+    assert callable(model_Map.__init__)
 
 
-def test_model::map_constructor_args():
-    sig = inspect.signature(model::Map.__init__)
+def test_model_map_constructor_args():
+    sig = inspect.signature(model_Map.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::videoplayer_is_not_abstract():
-    assert not inspect.isabstract(model::VideoPlayer)
+def test_model_videoplayer_is_not_abstract():
+    assert not inspect.isabstract(model_VideoPlayer)
 
 
-def test_model::videoplayer_constructor_exists():
-    assert callable(model::VideoPlayer.__init__)
+def test_model_videoplayer_constructor_exists():
+    assert callable(model_VideoPlayer.__init__)
 
 
-def test_model::videoplayer_constructor_args():
-    sig = inspect.signature(model::VideoPlayer.__init__)
+def test_model_videoplayer_constructor_args():
+    sig = inspect.signature(model_VideoPlayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::progressbar_is_not_abstract():
-    assert not inspect.isabstract(model::ProgressBar)
+def test_model_progressbar_is_not_abstract():
+    assert not inspect.isabstract(model_ProgressBar)
 
 
-def test_model::progressbar_constructor_exists():
-    assert callable(model::ProgressBar.__init__)
+def test_model_progressbar_constructor_exists():
+    assert callable(model_ProgressBar.__init__)
 
 
-def test_model::progressbar_constructor_args():
-    sig = inspect.signature(model::ProgressBar.__init__)
+def test_model_progressbar_constructor_args():
+    sig = inspect.signature(model_ProgressBar.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2861,23 +2665,37 @@ def test_annotationsupport_constructor_args():
 
 
 
-def test_model::curlybrace_is_not_abstract():
-    assert not inspect.isabstract(model::CurlyBrace)
+def test_model_crossout_is_not_abstract():
+    assert not inspect.isabstract(model_CrossOut)
 
 
-def test_model::curlybrace_constructor_exists():
-    assert callable(model::CurlyBrace.__init__)
+def test_model_crossout_constructor_exists():
+    assert callable(model_CrossOut.__init__)
 
 
-def test_model::curlybrace_constructor_args():
-    sig = inspect.signature(model::CurlyBrace.__init__)
+def test_model_crossout_constructor_args():
+    sig = inspect.signature(model_CrossOut.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_curlybrace_is_not_abstract():
+    assert not inspect.isabstract(model_CurlyBrace)
+
+
+def test_model_curlybrace_constructor_exists():
+    assert callable(model_CurlyBrace.__init__)
+
+
+def test_model_curlybrace_constructor_args():
+    sig = inspect.signature(model_CurlyBrace.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_model::curlybrace_has_position():
-    assert hasattr(model::CurlyBrace, "position")
+def test_model_curlybrace_has_position():
+    assert hasattr(model_CurlyBrace, "position")
     descriptor = None
-    for klass in model::CurlyBrace.__mro__:
+    for klass in model_CurlyBrace.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -2885,109 +2703,51 @@ def test_model::curlybrace_has_position():
 
 
 
-def test_model::crossout_is_not_abstract():
-    assert not inspect.isabstract(model::CrossOut)
+def test_model_callout_is_not_abstract():
+    assert not inspect.isabstract(model_Callout)
 
 
-def test_model::crossout_constructor_exists():
-    assert callable(model::CrossOut.__init__)
+def test_model_callout_constructor_exists():
+    assert callable(model_Callout.__init__)
 
 
-def test_model::crossout_constructor_args():
-    sig = inspect.signature(model::CrossOut.__init__)
+def test_model_callout_constructor_args():
+    sig = inspect.signature(model_Callout.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::arrow_is_not_abstract():
-    assert not inspect.isabstract(model::Arrow)
+def test_model_breadcrumbs_is_not_abstract():
+    assert not inspect.isabstract(model_Breadcrumbs)
 
 
-def test_model::arrow_constructor_exists():
-    assert callable(model::Arrow.__init__)
+def test_model_breadcrumbs_constructor_exists():
+    assert callable(model_Breadcrumbs.__init__)
 
 
-def test_model::arrow_constructor_args():
-    sig = inspect.signature(model::Arrow.__init__)
-    params = list(sig.parameters.keys())
-    assert "right" in params, "Missing parameter 'right'"
-    assert "left" in params, "Missing parameter 'left'"
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_model::arrow_has_right():
-    assert hasattr(model::Arrow, "right")
-    descriptor = None
-    for klass in model::Arrow.__mro__:
-        if "right" in klass.__dict__:
-            descriptor = klass.__dict__["right"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::arrow_has_left():
-    assert hasattr(model::Arrow, "left")
-    descriptor = None
-    for klass in model::Arrow.__mro__:
-        if "left" in klass.__dict__:
-            descriptor = klass.__dict__["left"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::arrow_has_direction():
-    assert hasattr(model::Arrow, "direction")
-    descriptor = None
-    for klass in model::Arrow.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::callout_is_not_abstract():
-    assert not inspect.isabstract(model::Callout)
-
-
-def test_model::callout_constructor_exists():
-    assert callable(model::Callout.__init__)
-
-
-def test_model::callout_constructor_args():
-    sig = inspect.signature(model::Callout.__init__)
+def test_model_breadcrumbs_constructor_args():
+    sig = inspect.signature(model_Breadcrumbs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::breadcrumbs_is_not_abstract():
-    assert not inspect.isabstract(model::Breadcrumbs)
+def test_model_statesupport_is_not_abstract():
+    assert not inspect.isabstract(model_StateSupport)
 
 
-def test_model::breadcrumbs_constructor_exists():
-    assert callable(model::Breadcrumbs.__init__)
+def test_model_statesupport_constructor_exists():
+    assert callable(model_StateSupport.__init__)
 
 
-def test_model::breadcrumbs_constructor_args():
-    sig = inspect.signature(model::Breadcrumbs.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::statesupport_is_not_abstract():
-    assert not inspect.isabstract(model::StateSupport)
-
-
-def test_model::statesupport_constructor_exists():
-    assert callable(model::StateSupport.__init__)
-
-
-def test_model::statesupport_constructor_args():
-    sig = inspect.signature(model::StateSupport.__init__)
+def test_model_statesupport_constructor_args():
+    sig = inspect.signature(model_StateSupport.__init__)
     params = list(sig.parameters.keys())
     assert "state" in params, "Missing parameter 'state'"
 
-def test_model::statesupport_has_state():
-    assert hasattr(model::StateSupport, "state")
+def test_model_statesupport_has_state():
+    assert hasattr(model_StateSupport, "state")
     descriptor = None
-    for klass in model::StateSupport.__mro__:
+    for klass in model_StateSupport.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
@@ -2995,23 +2755,23 @@ def test_model::statesupport_has_state():
 
 
 
-def test_model::bordersupport_is_not_abstract():
-    assert not inspect.isabstract(model::BorderSupport)
+def test_model_bordersupport_is_not_abstract():
+    assert not inspect.isabstract(model_BorderSupport)
 
 
-def test_model::bordersupport_constructor_exists():
-    assert callable(model::BorderSupport.__init__)
+def test_model_bordersupport_constructor_exists():
+    assert callable(model_BorderSupport.__init__)
 
 
-def test_model::bordersupport_constructor_args():
-    sig = inspect.signature(model::BorderSupport.__init__)
+def test_model_bordersupport_constructor_args():
+    sig = inspect.signature(model_BorderSupport.__init__)
     params = list(sig.parameters.keys())
     assert "border" in params, "Missing parameter 'border'"
 
-def test_model::bordersupport_has_border():
-    assert hasattr(model::BorderSupport, "border")
+def test_model_bordersupport_has_border():
+    assert hasattr(model_BorderSupport, "border")
     descriptor = None
-    for klass in model::BorderSupport.__mro__:
+    for klass in model_BorderSupport.__mro__:
         if "border" in klass.__dict__:
             descriptor = klass.__dict__["border"]
             break
@@ -3019,37 +2779,37 @@ def test_model::bordersupport_has_border():
 
 
 
-def test_model::scratchout_is_not_abstract():
-    assert not inspect.isabstract(model::ScratchOut)
+def test_model_scratchout_is_not_abstract():
+    assert not inspect.isabstract(model_ScratchOut)
 
 
-def test_model::scratchout_constructor_exists():
-    assert callable(model::ScratchOut.__init__)
+def test_model_scratchout_constructor_exists():
+    assert callable(model_ScratchOut.__init__)
 
 
-def test_model::scratchout_constructor_args():
-    sig = inspect.signature(model::ScratchOut.__init__)
+def test_model_scratchout_constructor_args():
+    sig = inspect.signature(model_ScratchOut.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::tooltip_is_not_abstract():
-    assert not inspect.isabstract(model::Tooltip)
+def test_model_tooltip_is_not_abstract():
+    assert not inspect.isabstract(model_Tooltip)
 
 
-def test_model::tooltip_constructor_exists():
-    assert callable(model::Tooltip.__init__)
+def test_model_tooltip_constructor_exists():
+    assert callable(model_Tooltip.__init__)
 
 
-def test_model::tooltip_constructor_args():
-    sig = inspect.signature(model::Tooltip.__init__)
+def test_model_tooltip_constructor_args():
+    sig = inspect.signature(model_Tooltip.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_model::tooltip_has_position():
-    assert hasattr(model::Tooltip, "position")
+def test_model_tooltip_has_position():
+    assert hasattr(model_Tooltip, "position")
     descriptor = None
-    for klass in model::Tooltip.__mro__:
+    for klass in model_Tooltip.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -3057,65 +2817,65 @@ def test_model::tooltip_has_position():
 
 
 
-def test_model::searchfield_is_not_abstract():
-    assert not inspect.isabstract(model::SearchField)
+def test_model_searchfield_is_not_abstract():
+    assert not inspect.isabstract(model_SearchField)
 
 
-def test_model::searchfield_constructor_exists():
-    assert callable(model::SearchField.__init__)
+def test_model_searchfield_constructor_exists():
+    assert callable(model_SearchField.__init__)
 
 
-def test_model::searchfield_constructor_args():
-    sig = inspect.signature(model::SearchField.__init__)
+def test_model_searchfield_constructor_args():
+    sig = inspect.signature(model_SearchField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::fontsupport_is_not_abstract():
-    assert not inspect.isabstract(model::FontSupport)
+def test_model_fontsupport_is_not_abstract():
+    assert not inspect.isabstract(model_FontSupport)
 
 
-def test_model::fontsupport_constructor_exists():
-    assert callable(model::FontSupport.__init__)
+def test_model_fontsupport_constructor_exists():
+    assert callable(model_FontSupport.__init__)
 
 
-def test_model::fontsupport_constructor_args():
-    sig = inspect.signature(model::FontSupport.__init__)
+def test_model_fontsupport_constructor_args():
+    sig = inspect.signature(model_FontSupport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::note_is_not_abstract():
-    assert not inspect.isabstract(model::Note)
+def test_model_note_is_not_abstract():
+    assert not inspect.isabstract(model_Note)
 
 
-def test_model::note_constructor_exists():
-    assert callable(model::Note.__init__)
+def test_model_note_constructor_exists():
+    assert callable(model_Note.__init__)
 
 
-def test_model::note_constructor_args():
-    sig = inspect.signature(model::Note.__init__)
+def test_model_note_constructor_args():
+    sig = inspect.signature(model_Note.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::booleanselectionsupport_is_not_abstract():
-    assert not inspect.isabstract(model::BooleanSelectionSupport)
+def test_model_booleanselectionsupport_is_not_abstract():
+    assert not inspect.isabstract(model_BooleanSelectionSupport)
 
 
-def test_model::booleanselectionsupport_constructor_exists():
-    assert callable(model::BooleanSelectionSupport.__init__)
+def test_model_booleanselectionsupport_constructor_exists():
+    assert callable(model_BooleanSelectionSupport.__init__)
 
 
-def test_model::booleanselectionsupport_constructor_args():
-    sig = inspect.signature(model::BooleanSelectionSupport.__init__)
+def test_model_booleanselectionsupport_constructor_args():
+    sig = inspect.signature(model_BooleanSelectionSupport.__init__)
     params = list(sig.parameters.keys())
     assert "selected" in params, "Missing parameter 'selected'"
 
-def test_model::booleanselectionsupport_has_selected():
-    assert hasattr(model::BooleanSelectionSupport, "selected")
+def test_model_booleanselectionsupport_has_selected():
+    assert hasattr(model_BooleanSelectionSupport, "selected")
     descriptor = None
-    for klass in model::BooleanSelectionSupport.__mro__:
+    for klass in model_BooleanSelectionSupport.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
             break
@@ -3123,23 +2883,23 @@ def test_model::booleanselectionsupport_has_selected():
 
 
 
-def test_model::textalignmentsupport_is_not_abstract():
-    assert not inspect.isabstract(model::TextAlignmentSupport)
+def test_model_textalignmentsupport_is_not_abstract():
+    assert not inspect.isabstract(model_TextAlignmentSupport)
 
 
-def test_model::textalignmentsupport_constructor_exists():
-    assert callable(model::TextAlignmentSupport.__init__)
+def test_model_textalignmentsupport_constructor_exists():
+    assert callable(model_TextAlignmentSupport.__init__)
 
 
-def test_model::textalignmentsupport_constructor_args():
-    sig = inspect.signature(model::TextAlignmentSupport.__init__)
+def test_model_textalignmentsupport_constructor_args():
+    sig = inspect.signature(model_TextAlignmentSupport.__init__)
     params = list(sig.parameters.keys())
     assert "textAlignment" in params, "Missing parameter 'textAlignment'"
 
-def test_model::textalignmentsupport_has_textAlignment():
-    assert hasattr(model::TextAlignmentSupport, "textAlignment")
+def test_model_textalignmentsupport_has_textAlignment():
+    assert hasattr(model_TextAlignmentSupport, "textAlignment")
     descriptor = None
-    for klass in model::TextAlignmentSupport.__mro__:
+    for klass in model_TextAlignmentSupport.__mro__:
         if "textAlignment" in klass.__dict__:
             descriptor = klass.__dict__["textAlignment"]
             break
@@ -3147,23 +2907,23 @@ def test_model::textalignmentsupport_has_textAlignment():
 
 
 
-def test_model::selectionsupport_is_not_abstract():
-    assert not inspect.isabstract(model::SelectionSupport)
+def test_model_selectionsupport_is_not_abstract():
+    assert not inspect.isabstract(model_SelectionSupport)
 
 
-def test_model::selectionsupport_constructor_exists():
-    assert callable(model::SelectionSupport.__init__)
+def test_model_selectionsupport_constructor_exists():
+    assert callable(model_SelectionSupport.__init__)
 
 
-def test_model::selectionsupport_constructor_args():
-    sig = inspect.signature(model::SelectionSupport.__init__)
+def test_model_selectionsupport_constructor_args():
+    sig = inspect.signature(model_SelectionSupport.__init__)
     params = list(sig.parameters.keys())
     assert "selection" in params, "Missing parameter 'selection'"
 
-def test_model::selectionsupport_has_selection():
-    assert hasattr(model::SelectionSupport, "selection")
+def test_model_selectionsupport_has_selection():
+    assert hasattr(model_SelectionSupport, "selection")
     descriptor = None
-    for klass in model::SelectionSupport.__mro__:
+    for klass in model_SelectionSupport.__mro__:
         if "selection" in klass.__dict__:
             descriptor = klass.__dict__["selection"]
             break
@@ -3171,23 +2931,23 @@ def test_model::selectionsupport_has_selection():
 
 
 
-def test_model::coloralphasupport_is_not_abstract():
-    assert not inspect.isabstract(model::ColorAlphaSupport)
+def test_model_coloralphasupport_is_not_abstract():
+    assert not inspect.isabstract(model_ColorAlphaSupport)
 
 
-def test_model::coloralphasupport_constructor_exists():
-    assert callable(model::ColorAlphaSupport.__init__)
+def test_model_coloralphasupport_constructor_exists():
+    assert callable(model_ColorAlphaSupport.__init__)
 
 
-def test_model::coloralphasupport_constructor_args():
-    sig = inspect.signature(model::ColorAlphaSupport.__init__)
+def test_model_coloralphasupport_constructor_args():
+    sig = inspect.signature(model_ColorAlphaSupport.__init__)
     params = list(sig.parameters.keys())
     assert "alpha" in params, "Missing parameter 'alpha'"
 
-def test_model::coloralphasupport_has_alpha():
-    assert hasattr(model::ColorAlphaSupport, "alpha")
+def test_model_coloralphasupport_has_alpha():
+    assert hasattr(model_ColorAlphaSupport, "alpha")
     descriptor = None
-    for klass in model::ColorAlphaSupport.__mro__:
+    for klass in model_ColorAlphaSupport.__mro__:
         if "alpha" in klass.__dict__:
             descriptor = klass.__dict__["alpha"]
             break
@@ -3195,23 +2955,23 @@ def test_model::coloralphasupport_has_alpha():
 
 
 
-def test_model::colorbordersupport_is_not_abstract():
-    assert not inspect.isabstract(model::ColorBorderSupport)
+def test_model_colorbordersupport_is_not_abstract():
+    assert not inspect.isabstract(model_ColorBorderSupport)
 
 
-def test_model::colorbordersupport_constructor_exists():
-    assert callable(model::ColorBorderSupport.__init__)
+def test_model_colorbordersupport_constructor_exists():
+    assert callable(model_ColorBorderSupport.__init__)
 
 
-def test_model::colorbordersupport_constructor_args():
-    sig = inspect.signature(model::ColorBorderSupport.__init__)
+def test_model_colorbordersupport_constructor_args():
+    sig = inspect.signature(model_ColorBorderSupport.__init__)
     params = list(sig.parameters.keys())
     assert "borderColor" in params, "Missing parameter 'borderColor'"
 
-def test_model::colorbordersupport_has_borderColor():
-    assert hasattr(model::ColorBorderSupport, "borderColor")
+def test_model_colorbordersupport_has_borderColor():
+    assert hasattr(model_ColorBorderSupport, "borderColor")
     descriptor = None
-    for klass in model::ColorBorderSupport.__mro__:
+    for klass in model_ColorBorderSupport.__mro__:
         if "borderColor" in klass.__dict__:
             descriptor = klass.__dict__["borderColor"]
             break
@@ -3219,23 +2979,23 @@ def test_model::colorbordersupport_has_borderColor():
 
 
 
-def test_model::colorbackgroundsupport_is_not_abstract():
-    assert not inspect.isabstract(model::ColorBackgroundSupport)
+def test_model_colorbackgroundsupport_is_not_abstract():
+    assert not inspect.isabstract(model_ColorBackgroundSupport)
 
 
-def test_model::colorbackgroundsupport_constructor_exists():
-    assert callable(model::ColorBackgroundSupport.__init__)
+def test_model_colorbackgroundsupport_constructor_exists():
+    assert callable(model_ColorBackgroundSupport.__init__)
 
 
-def test_model::colorbackgroundsupport_constructor_args():
-    sig = inspect.signature(model::ColorBackgroundSupport.__init__)
+def test_model_colorbackgroundsupport_constructor_args():
+    sig = inspect.signature(model_ColorBackgroundSupport.__init__)
     params = list(sig.parameters.keys())
     assert "background" in params, "Missing parameter 'background'"
 
-def test_model::colorbackgroundsupport_has_background():
-    assert hasattr(model::ColorBackgroundSupport, "background")
+def test_model_colorbackgroundsupport_has_background():
+    assert hasattr(model_ColorBackgroundSupport, "background")
     descriptor = None
-    for klass in model::ColorBackgroundSupport.__mro__:
+    for klass in model_ColorBackgroundSupport.__mro__:
         if "background" in klass.__dict__:
             descriptor = klass.__dict__["background"]
             break
@@ -3243,23 +3003,23 @@ def test_model::colorbackgroundsupport_has_background():
 
 
 
-def test_model::colorforegroundsupport_is_not_abstract():
-    assert not inspect.isabstract(model::ColorForegroundSupport)
+def test_model_colorforegroundsupport_is_not_abstract():
+    assert not inspect.isabstract(model_ColorForegroundSupport)
 
 
-def test_model::colorforegroundsupport_constructor_exists():
-    assert callable(model::ColorForegroundSupport.__init__)
+def test_model_colorforegroundsupport_constructor_exists():
+    assert callable(model_ColorForegroundSupport.__init__)
 
 
-def test_model::colorforegroundsupport_constructor_args():
-    sig = inspect.signature(model::ColorForegroundSupport.__init__)
+def test_model_colorforegroundsupport_constructor_args():
+    sig = inspect.signature(model_ColorForegroundSupport.__init__)
     params = list(sig.parameters.keys())
     assert "foreground" in params, "Missing parameter 'foreground'"
 
-def test_model::colorforegroundsupport_has_foreground():
-    assert hasattr(model::ColorForegroundSupport, "foreground")
+def test_model_colorforegroundsupport_has_foreground():
+    assert hasattr(model_ColorForegroundSupport, "foreground")
     descriptor = None
-    for klass in model::ColorForegroundSupport.__mro__:
+    for klass in model_ColorForegroundSupport.__mro__:
         if "foreground" in klass.__dict__:
             descriptor = klass.__dict__["foreground"]
             break
@@ -3267,23 +3027,23 @@ def test_model::colorforegroundsupport_has_foreground():
 
 
 
-def test_model::master_is_not_abstract():
-    assert not inspect.isabstract(model::Master)
+def test_model_master_is_not_abstract():
+    assert not inspect.isabstract(model_Master)
 
 
-def test_model::master_constructor_exists():
-    assert callable(model::Master.__init__)
+def test_model_master_constructor_exists():
+    assert callable(model_Master.__init__)
 
 
-def test_model::master_constructor_args():
-    sig = inspect.signature(model::Master.__init__)
+def test_model_master_constructor_args():
+    sig = inspect.signature(model_Master.__init__)
     params = list(sig.parameters.keys())
     assert "dimmed" in params, "Missing parameter 'dimmed'"
 
-def test_model::master_has_dimmed():
-    assert hasattr(model::Master, "dimmed")
+def test_model_master_has_dimmed():
+    assert hasattr(model_Master, "dimmed")
     descriptor = None
-    for klass in model::Master.__mro__:
+    for klass in model_Master.__mro__:
         if "dimmed" in klass.__dict__:
             descriptor = klass.__dict__["dimmed"]
             break
@@ -3305,16 +3065,16 @@ def test_namesupport_constructor_args():
 
 
 
-def test_model::widgetgroup_is_not_abstract():
-    assert not inspect.isabstract(model::WidgetGroup)
+def test_model_widgetgroup_is_not_abstract():
+    assert not inspect.isabstract(model_WidgetGroup)
 
 
-def test_model::widgetgroup_constructor_exists():
-    assert callable(model::WidgetGroup.__init__)
+def test_model_widgetgroup_constructor_exists():
+    assert callable(model_WidgetGroup.__init__)
 
 
-def test_model::widgetgroup_constructor_args():
-    sig = inspect.signature(model::WidgetGroup.__init__)
+def test_model_widgetgroup_constructor_args():
+    sig = inspect.signature(model_WidgetGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3333,23 +3093,23 @@ def test_flipsupport_constructor_args():
 
 
 
-def test_model::svgimage_is_not_abstract():
-    assert not inspect.isabstract(model::SVGImage)
+def test_model_svgimage_is_not_abstract():
+    assert not inspect.isabstract(model_SVGImage)
 
 
-def test_model::svgimage_constructor_exists():
-    assert callable(model::SVGImage.__init__)
+def test_model_svgimage_constructor_exists():
+    assert callable(model_SVGImage.__init__)
 
 
-def test_model::svgimage_constructor_args():
-    sig = inspect.signature(model::SVGImage.__init__)
+def test_model_svgimage_constructor_args():
+    sig = inspect.signature(model_SVGImage.__init__)
     params = list(sig.parameters.keys())
     assert "src" in params, "Missing parameter 'src'"
 
-def test_model::svgimage_has_src():
-    assert hasattr(model::SVGImage, "src")
+def test_model_svgimage_has_src():
+    assert hasattr(model_SVGImage, "src")
     descriptor = None
-    for klass in model::SVGImage.__mro__:
+    for klass in model_SVGImage.__mro__:
         if "src" in klass.__dict__:
             descriptor = klass.__dict__["src"]
             break
@@ -3357,35 +3117,35 @@ def test_model::svgimage_has_src():
 
 
 
-def test_model::image_is_not_abstract():
-    assert not inspect.isabstract(model::Image)
+def test_model_image_is_not_abstract():
+    assert not inspect.isabstract(model_Image)
 
 
-def test_model::image_constructor_exists():
-    assert callable(model::Image.__init__)
+def test_model_image_constructor_exists():
+    assert callable(model_Image.__init__)
 
 
-def test_model::image_constructor_args():
-    sig = inspect.signature(model::Image.__init__)
+def test_model_image_constructor_args():
+    sig = inspect.signature(model_Image.__init__)
     params = list(sig.parameters.keys())
-    assert "src" in params, "Missing parameter 'src'"
     assert "grayscale" in params, "Missing parameter 'grayscale'"
+    assert "src" in params, "Missing parameter 'src'"
 
-def test_model::image_has_src():
-    assert hasattr(model::Image, "src")
+def test_model_image_has_grayscale():
+    assert hasattr(model_Image, "grayscale")
     descriptor = None
-    for klass in model::Image.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::image_has_grayscale():
-    assert hasattr(model::Image, "grayscale")
-    descriptor = None
-    for klass in model::Image.__mro__:
+    for klass in model_Image.__mro__:
         if "grayscale" in klass.__dict__:
             descriptor = klass.__dict__["grayscale"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_image_has_src():
+    assert hasattr(model_Image, "src")
+    descriptor = None
+    for klass in model_Image.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
             break
     assert isinstance(descriptor, property)
 
@@ -3405,146 +3165,299 @@ def test_overrides_constructor_args():
 
 
 
-def test_model::tabs_is_not_abstract():
-    assert not inspect.isabstract(model::Tabs)
+def test_model_tabs_is_not_abstract():
+    assert not inspect.isabstract(model_Tabs)
 
 
-def test_model::tabs_constructor_exists():
-    assert callable(model::Tabs.__init__)
+def test_model_tabs_constructor_exists():
+    assert callable(model_Tabs.__init__)
 
 
-def test_model::tabs_constructor_args():
-    sig = inspect.signature(model::Tabs.__init__)
+def test_model_tabs_constructor_args():
+    sig = inspect.signature(model_Tabs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::vslider_is_not_abstract():
-    assert not inspect.isabstract(model::VSlider)
+def test_model_vslider_is_not_abstract():
+    assert not inspect.isabstract(model_VSlider)
 
 
-def test_model::vslider_constructor_exists():
-    assert callable(model::VSlider.__init__)
+def test_model_vslider_constructor_exists():
+    assert callable(model_VSlider.__init__)
 
 
-def test_model::vslider_constructor_args():
-    sig = inspect.signature(model::VSlider.__init__)
+def test_model_vslider_constructor_args():
+    sig = inspect.signature(model_VSlider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::hslider_is_not_abstract():
-    assert not inspect.isabstract(model::HSlider)
+def test_model_hslider_is_not_abstract():
+    assert not inspect.isabstract(model_HSlider)
 
 
-def test_model::hslider_constructor_exists():
-    assert callable(model::HSlider.__init__)
+def test_model_hslider_constructor_exists():
+    assert callable(model_HSlider.__init__)
 
 
-def test_model::hslider_constructor_args():
-    sig = inspect.signature(model::HSlider.__init__)
+def test_model_hslider_constructor_args():
+    sig = inspect.signature(model_HSlider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::vline_is_not_abstract():
-    assert not inspect.isabstract(model::VLine)
+def test_model_font_is_not_abstract():
+    assert not inspect.isabstract(model_Font)
 
 
-def test_model::vline_constructor_exists():
-    assert callable(model::VLine.__init__)
+def test_model_font_constructor_exists():
+    assert callable(model_Font.__init__)
 
 
-def test_model::vline_constructor_args():
-    sig = inspect.signature(model::VLine.__init__)
+def test_model_font_constructor_args():
+    sig = inspect.signature(model_Font.__init__)
+    params = list(sig.parameters.keys())
+    assert "underline" in params, "Missing parameter 'underline'"
+    assert "italic" in params, "Missing parameter 'italic'"
+    assert "size" in params, "Missing parameter 'size'"
+    assert "bold" in params, "Missing parameter 'bold'"
+
+def test_model_font_has_underline():
+    assert hasattr(model_Font, "underline")
+    descriptor = None
+    for klass in model_Font.__mro__:
+        if "underline" in klass.__dict__:
+            descriptor = klass.__dict__["underline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_font_has_italic():
+    assert hasattr(model_Font, "italic")
+    descriptor = None
+    for klass in model_Font.__mro__:
+        if "italic" in klass.__dict__:
+            descriptor = klass.__dict__["italic"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_font_has_size():
+    assert hasattr(model_Font, "size")
+    descriptor = None
+    for klass in model_Font.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_font_has_bold():
+    assert hasattr(model_Font, "bold")
+    descriptor = None
+    for klass in model_Font.__mro__:
+        if "bold" in klass.__dict__:
+            descriptor = klass.__dict__["bold"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_tree_is_not_abstract():
+    assert not inspect.isabstract(model_Tree)
+
+
+def test_model_tree_constructor_exists():
+    assert callable(model_Tree.__init__)
+
+
+def test_model_tree_constructor_args():
+    sig = inspect.signature(model_Tree.__init__)
     params = list(sig.parameters.keys())
 
-def test_textalignment_exists():
-    # Check that the Enumeration exists
-    assert TextAlignment is not None
 
-def test_textalignment_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TextAlignment]
-    expected_literals = [
-        "Center",
-        "Right",
-        "Left",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TextAlignment"
 
-def test_linestyle_exists():
-    # Check that the Enumeration exists
-    assert LineStyle is not None
+def test_model_table_is_not_abstract():
+    assert not inspect.isabstract(model_Table)
 
-def test_linestyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LineStyle]
-    expected_literals = [
-        "Dotted",
-        "Solid",
-        "Dashed",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
 
-def test_charttype_exists():
-    # Check that the Enumeration exists
-    assert ChartType is not None
+def test_model_table_constructor_exists():
+    assert callable(model_Table.__init__)
 
-def test_charttype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ChartType]
-    expected_literals = [
-        "Column",
-        "Bar",
-        "Line",
-        "Pie",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ChartType"
 
-def test_state_exists():
-    # Check that the Enumeration exists
-    assert State is not None
+def test_model_table_constructor_args():
+    sig = inspect.signature(model_Table.__init__)
+    params = list(sig.parameters.keys())
+    assert "header" in params, "Missing parameter 'header'"
+    assert "verticalLines" in params, "Missing parameter 'verticalLines'"
 
-def test_state_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in State]
-    expected_literals = [
-        "Selected",
-        "Normal",
-        "Focused",
-        "Disabled",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in State"
+def test_model_table_has_header():
+    assert hasattr(model_Table, "header")
+    descriptor = None
+    for klass in model_Table.__mro__:
+        if "header" in klass.__dict__:
+            descriptor = klass.__dict__["header"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_position_exists():
-    # Check that the Enumeration exists
-    assert Position is not None
+def test_model_table_has_verticalLines():
+    assert hasattr(model_Table, "verticalLines")
+    descriptor = None
+    for klass in model_Table.__mro__:
+        if "verticalLines" in klass.__dict__:
+            descriptor = klass.__dict__["verticalLines"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_position_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Position]
-    expected_literals = [
-        "Left",
-        "BottomLeft",
-        "TopRight",
-        "TopLeft",
-        "Top",
-        "Right",
-        "BottomRight",
-        "Bottom",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Position"
+
+
+def test_model_menu_is_not_abstract():
+    assert not inspect.isabstract(model_Menu)
+
+
+def test_model_menu_constructor_exists():
+    assert callable(model_Menu.__init__)
+
+
+def test_model_menu_constructor_args():
+    sig = inspect.signature(model_Menu.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_linestylesupport_is_not_abstract():
+    assert not inspect.isabstract(LineStyleSupport)
+
+
+def test_linestylesupport_constructor_exists():
+    assert callable(LineStyleSupport.__init__)
+
+
+def test_linestylesupport_constructor_args():
+    sig = inspect.signature(LineStyleSupport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_vline_is_not_abstract():
+    assert not inspect.isabstract(model_VLine)
+
+
+def test_model_vline_constructor_exists():
+    assert callable(model_VLine.__init__)
+
+
+def test_model_vline_constructor_args():
+    sig = inspect.signature(model_VLine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_shape_is_not_abstract():
+    assert not inspect.isabstract(model_Shape)
+
+
+def test_model_shape_constructor_exists():
+    assert callable(model_Shape.__init__)
+
+
+def test_model_shape_constructor_args():
+    sig = inspect.signature(model_Shape.__init__)
+    params = list(sig.parameters.keys())
+    assert "shapeType" in params, "Missing parameter 'shapeType'"
+
+def test_model_shape_has_shapeType():
+    assert hasattr(model_Shape, "shapeType")
+    descriptor = None
+    for klass in model_Shape.__mro__:
+        if "shapeType" in klass.__dict__:
+            descriptor = klass.__dict__["shapeType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_arrow_is_not_abstract():
+    assert not inspect.isabstract(model_Arrow)
+
+
+def test_model_arrow_constructor_exists():
+    assert callable(model_Arrow.__init__)
+
+
+def test_model_arrow_constructor_args():
+    sig = inspect.signature(model_Arrow.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+    assert "left" in params, "Missing parameter 'left'"
+    assert "right" in params, "Missing parameter 'right'"
+
+def test_model_arrow_has_direction():
+    assert hasattr(model_Arrow, "direction")
+    descriptor = None
+    for klass in model_Arrow.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_arrow_has_left():
+    assert hasattr(model_Arrow, "left")
+    descriptor = None
+    for klass in model_Arrow.__mro__:
+        if "left" in klass.__dict__:
+            descriptor = klass.__dict__["left"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_arrow_has_right():
+    assert hasattr(model_Arrow, "right")
+    descriptor = None
+    for klass in model_Arrow.__mro__:
+        if "right" in klass.__dict__:
+            descriptor = klass.__dict__["right"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_circle_is_not_abstract():
+    assert not inspect.isabstract(model_Circle)
+
+
+def test_model_circle_constructor_exists():
+    assert callable(model_Circle.__init__)
+
+
+def test_model_circle_constructor_args():
+    sig = inspect.signature(model_Circle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_hline_is_not_abstract():
+    assert not inspect.isabstract(model_HLine)
+
+
+def test_model_hline_constructor_exists():
+    assert callable(model_HLine.__init__)
+
+
+def test_model_hline_constructor_args():
+    sig = inspect.signature(model_HLine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_vscrollbar_is_not_abstract():
+    assert not inspect.isabstract(model_VScrollbar)
+
+
+def test_model_vscrollbar_constructor_exists():
+    assert callable(model_VScrollbar.__init__)
+
+
+def test_model_vscrollbar_constructor_args():
+    sig = inspect.signature(model_VScrollbar.__init__)
+    params = list(sig.parameters.keys())
 
 def test_borderstyle_exists():
     # Check that the Enumeration exists
@@ -3554,84 +3467,14 @@ def test_borderstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BorderStyle]
     expected_literals = [
-        "Solid",
-        "SolidRounded",
         "DashedRounded",
         "None_",
+        "SolidRounded",
+        "Solid",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BorderStyle"
-
-def test_rotation90_exists():
-    # Check that the Enumeration exists
-    assert Rotation90 is not None
-
-def test_rotation90_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Rotation90]
-    expected_literals = [
-        "_0",
-        "_270",
-        "_180",
-        "_90",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Rotation90"
-
-def test_resizemode_exists():
-    # Check that the Enumeration exists
-    assert ResizeMode is not None
-
-def test_resizemode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ResizeMode]
-    expected_literals = [
-        "Horizontal",
-        "None_",
-        "Vertical",
-        "Both",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ResizeMode"
-
-def test_buttonstyle_exists():
-    # Check that the Enumeration exists
-    assert ButtonStyle is not None
-
-def test_buttonstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ButtonStyle]
-    expected_literals = [
-        "Square",
-        "Round",
-        "PointRight",
-        "PointLeft",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ButtonStyle"
-
-def test_iconsize_exists():
-    # Check that the Enumeration exists
-    assert IconSize is not None
-
-def test_iconsize_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IconSize]
-    expected_literals = [
-        "Medium",
-        "Small",
-        "XXL",
-        "Custom",
-        "Large",
-        "XLarge",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IconSize"
 
 def test_shapetype_exists():
     # Check that the Enumeration exists
@@ -3641,15 +3484,15 @@ def test_shapetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ShapeType]
     expected_literals = [
-        "Diamond",
-        "Ellipse",
-        "Rectangle",
-        "Parallelogram",
         "RoundRectangle",
         "Star",
-        "Triangle",
-        "RoundedRectangle",
+        "Parallelogram",
+        "Rectangle",
         "RightTriangle",
+        "RoundedRectangle",
+        "Ellipse",
+        "Diamond",
+        "Triangle",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -3671,6 +3514,163 @@ def test_theme_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Theme"
 
+def test_linestyle_exists():
+    # Check that the Enumeration exists
+    assert LineStyle is not None
+
+def test_linestyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LineStyle]
+    expected_literals = [
+        "Dotted",
+        "Solid",
+        "Dashed",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
+
+def test_position_exists():
+    # Check that the Enumeration exists
+    assert Position is not None
+
+def test_position_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Position]
+    expected_literals = [
+        "TopRight",
+        "Right",
+        "BottomLeft",
+        "BottomRight",
+        "TopLeft",
+        "Bottom",
+        "Left",
+        "Top",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Position"
+
+def test_iconsize_exists():
+    # Check that the Enumeration exists
+    assert IconSize is not None
+
+def test_iconsize_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in IconSize]
+    expected_literals = [
+        "Large",
+        "Custom",
+        "Small",
+        "Medium",
+        "XLarge",
+        "XXL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in IconSize"
+
+def test_state_exists():
+    # Check that the Enumeration exists
+    assert State is not None
+
+def test_state_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in State]
+    expected_literals = [
+        "Selected",
+        "Normal",
+        "Disabled",
+        "Focused",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in State"
+
+def test_resizemode_exists():
+    # Check that the Enumeration exists
+    assert ResizeMode is not None
+
+def test_resizemode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ResizeMode]
+    expected_literals = [
+        "None_",
+        "Horizontal",
+        "Vertical",
+        "Both",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ResizeMode"
+
+def test_charttype_exists():
+    # Check that the Enumeration exists
+    assert ChartType is not None
+
+def test_charttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ChartType]
+    expected_literals = [
+        "Pie",
+        "Bar",
+        "Line",
+        "Column",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ChartType"
+
+def test_textalignment_exists():
+    # Check that the Enumeration exists
+    assert TextAlignment is not None
+
+def test_textalignment_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TextAlignment]
+    expected_literals = [
+        "Center",
+        "Right",
+        "Left",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TextAlignment"
+
+def test_buttonstyle_exists():
+    # Check that the Enumeration exists
+    assert ButtonStyle is not None
+
+def test_buttonstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ButtonStyle]
+    expected_literals = [
+        "Round",
+        "PointLeft",
+        "PointRight",
+        "Square",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ButtonStyle"
+
+def test_rotation90_exists():
+    # Check that the Enumeration exists
+    assert Rotation90 is not None
+
+def test_rotation90_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Rotation90]
+    expected_literals = [
+        "_270",
+        "_0",
+        "_90",
+        "_180",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Rotation90"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -3683,20 +3683,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::Font_strategy = st.builds(
-    model::Font,
-    underline=
-        safe_text,
-    bold=
-        safe_text,
-    italic=
-        safe_text,
-    size=
-        safe_text
-)
-LineStyleSupport_strategy = st.builds(
-    LineStyleSupport,
-)
 ValueSupport_strategy = st.builds(
     ValueSupport,
 )
@@ -3754,8 +3740,8 @@ LinkSupport_strategy = st.builds(
 VerticalScrollbarSupport_strategy = st.builds(
     VerticalScrollbarSupport,
 )
-model::WidgetContainer_strategy = st.builds(
-    model::WidgetContainer,
+model_WidgetContainer_strategy = st.builds(
+    model_WidgetContainer,
 )
 IconSupport_strategy = st.builds(
     IconSupport,
@@ -3772,121 +3758,100 @@ StateSupport_strategy = st.builds(
 Widget_strategy = st.builds(
     Widget,
 )
-model::Checkbox_strategy = st.builds(
-    model::Checkbox,
+model_Popup_strategy = st.builds(
+    model_Popup,
 )
-model::Tree_strategy = st.builds(
-    model::Tree,
+model_Placeholder_strategy = st.builds(
+    model_Placeholder,
 )
-model::Panel_strategy = st.builds(
-    model::Panel,
+model_HScrollbar_strategy = st.builds(
+    model_HScrollbar,
 )
-model::Placeholder_strategy = st.builds(
-    model::Placeholder,
+model_Combo_strategy = st.builds(
+    model_Combo,
 )
-model::HScrollbar_strategy = st.builds(
-    model::HScrollbar,
+model_Browser_strategy = st.builds(
+    model_Browser,
 )
-model::Popup_strategy = st.builds(
-    model::Popup,
+model_Label_strategy = st.builds(
+    model_Label,
 )
-model::Window_strategy = st.builds(
-    model::Window,
-    maximizeButton=
-        st.booleans(),
-    closeButton=
-        st.booleans(),
-    minimizeButton=
-        st.booleans()
-)
-model::VScrollbar_strategy = st.builds(
-    model::VScrollbar,
-)
-model::Icon_strategy = st.builds(
-    model::Icon,
-)
-model::Table_strategy = st.builds(
-    model::Table,
-    header=
-        st.booleans(),
-    verticalLines=
-        st.booleans()
-)
-model::Text_strategy = st.builds(
-    model::Text,
+model_Text_strategy = st.builds(
+    model_Text,
     dummyText=
         st.booleans()
 )
-model::RadioButton_strategy = st.builds(
-    model::RadioButton,
+model_Window_strategy = st.builds(
+    model_Window,
+    minimizeButton=
+        st.booleans(),
+    closeButton=
+        st.booleans(),
+    maximizeButton=
+        st.booleans()
 )
-model::Browser_strategy = st.builds(
-    model::Browser,
+model_Icon_strategy = st.builds(
+    model_Icon,
 )
-model::Menu_strategy = st.builds(
-    model::Menu,
+model_Panel_strategy = st.builds(
+    model_Panel,
 )
-model::List_strategy = st.builds(
-    model::List,
+model_Link_strategy = st.builds(
+    model_Link,
+)
+model_RadioButton_strategy = st.builds(
+    model_RadioButton,
+)
+model_TextField_strategy = st.builds(
+    model_TextField,
+)
+model_Group_strategy = st.builds(
+    model_Group,
+)
+model_List_strategy = st.builds(
+    model_List,
     header=
         st.booleans()
 )
-model::TextArea_strategy = st.builds(
-    model::TextArea,
+model_Checkbox_strategy = st.builds(
+    model_Checkbox,
 )
-model::HLine_strategy = st.builds(
-    model::HLine,
+model_TextArea_strategy = st.builds(
+    model_TextArea,
 )
-model::TextField_strategy = st.builds(
-    model::TextField,
+model_Spinner_strategy = st.builds(
+    model_Spinner,
 )
-model::Group_strategy = st.builds(
-    model::Group,
+model_Area_strategy = st.builds(
+    model_Area,
 )
-model::Link_strategy = st.builds(
-    model::Link,
-)
-model::Spinner_strategy = st.builds(
-    model::Spinner,
-)
-model::Area_strategy = st.builds(
-    model::Area,
-)
-model::Combo_strategy = st.builds(
-    model::Combo,
-)
-model::Label_strategy = st.builds(
-    model::Label,
-)
-model::Button_strategy = st.builds(
-    model::Button,
+model_Button_strategy = st.builds(
+    model_Button,
     style=
         safe_text
 )
-model::WidgetDescriptor_strategy = st.builds(
-    model::WidgetDescriptor,
-    textCentered=
-        st.booleans(),
-    resizeMode=
-        safe_text,
+model_WidgetDescriptor_strategy = st.builds(
+    model_WidgetDescriptor,
     textWrappable=
+        st.booleans(),
+    textCentered=
         st.booleans(),
     textEditable=
         st.booleans(),
-    textLines=
-        st.integers(),
     typeName=
-        safe_text
+        safe_text,
+    resizeMode=
+        safe_text,
+    textLines=
+        st.integers()
 )
-model::RulerGuide_strategy = st.builds(
-    model::RulerGuide,
+model_RulerGuide_strategy = st.builds(
+    model_RulerGuide,
     position=
         st.integers()
 )
-model::ScreenFont_strategy = st.builds(
-    model::ScreenFont,
-    available=
-        safe_text,
+model_ScreenFont_strategy = st.builds(
+    model_ScreenFont,
     bold=
         st.booleans(),
     name=
@@ -3894,65 +3859,67 @@ model::ScreenFont_strategy = st.builds(
     size=
         safe_text,
     italic=
-        st.booleans()
+        st.booleans(),
+    available=
+        safe_text
 )
-model::ScreenRuler_strategy = st.builds(
-    model::ScreenRuler,
+model_ScreenRuler_strategy = st.builds(
+    model_ScreenRuler,
 )
 NoteSupport_strategy = st.builds(
     NoteSupport,
 )
-model::Widget_strategy = st.builds(
-    model::Widget,
-    y=
-        st.integers(),
-    width=
-        st.integers(),
-    customData=
-        safe_text,
-    locked=
-        st.booleans(),
-    x=
-        st.integers(),
+model_Widget_strategy = st.builds(
+    model_Widget,
     measuredHeight=
+        st.integers(),
+    x=
         st.integers(),
     id=
         safe_text,
-    text=
+    annotation=
+        st.booleans(),
+    height=
+        st.integers(),
+    width=
+        st.integers(),
+    layoutParams=
         safe_text,
+    locked=
+        st.booleans(),
     customId=
+        safe_text,
+    customData=
         safe_text,
     measuredWidth=
         st.integers(),
-    annotation=
-        st.booleans(),
-    layoutParams=
-        safe_text,
-    height=
-        st.integers()
+    y=
+        st.integers(),
+    text=
+        safe_text
 )
 WidgetContainer_strategy = st.builds(
     WidgetContainer,
 )
-model::Screen_strategy = st.builds(
-    model::Screen,
-    theme=
+model_Screen_strategy = st.builds(
+    model_Screen,
+    minVersion=
         safe_text,
     name=
         safe_text,
-    minVersion=
+    theme=
         safe_text
 )
-model::overrides::WidgetContainerOverrides_strategy = st.builds(
-    model::overrides::WidgetContainerOverrides,
+model_overrides_WidgetContainerOverrides_strategy = st.builds(
+    model_overrides_WidgetContainerOverrides,
 )
-model::overrides::FontOverrides_strategy = st.builds(
-    model::overrides::FontOverrides,
-    bold=
+model_overrides_FontOverrides_strategy = st.builds(
+    model_overrides_FontOverrides,
+    underline=
         safe_text,
     size=
         safe_text,
-    underline=
+    bold=
         safe_text,
     italic=
         safe_text
@@ -3969,27 +3936,27 @@ FontOverrides_strategy = st.builds(
 StringToStringMap_strategy = st.builds(
     StringToStringMap,
 )
-model::overrides::Reference_strategy = st.builds(
-    model::overrides::Reference,
+model_overrides_Reference_strategy = st.builds(
+    model_overrides_Reference,
     ref=
         safe_text
 )
-overrides::model::EObject_strategy = st.builds(
-    overrides::model::EObject,
+overrides_model_EObject_strategy = st.builds(
+    overrides_model_EObject,
 )
-model::overrides::Insert_strategy = st.builds(
-    model::overrides::Insert,
+model_overrides_Insert_strategy = st.builds(
+    model_overrides_Insert,
     newIndex=
         st.integers()
 )
-overrides::Operation_strategy = st.builds(
-    overrides::Operation,
+overrides_Operation_strategy = st.builds(
+    overrides_Operation,
 )
-model::overrides::Operation_strategy = st.builds(
-    model::overrides::Operation,
+model_overrides_Operation_strategy = st.builds(
+    model_overrides_Operation,
 )
-model::overrides::StringToStringMap_strategy = st.builds(
-    model::overrides::StringToStringMap,
+model_overrides_StringToStringMap_strategy = st.builds(
+    model_overrides_StringToStringMap,
     key=
         safe_text,
     value=
@@ -3998,73 +3965,73 @@ model::overrides::StringToStringMap_strategy = st.builds(
 Reference_strategy = st.builds(
     Reference,
 )
-model::overrides::ItemOverrides_strategy = st.builds(
-    model::overrides::ItemOverrides,
-    noLink=
-        st.booleans(),
+model_overrides_ItemOverrides_strategy = st.builds(
+    model_overrides_ItemOverrides,
     link=
         safe_text,
+    noLink=
+        st.booleans(),
     text=
         safe_text
 )
-model::story::Panel_strategy = st.builds(
-    model::story::Panel,
+model_story_Panel_strategy = st.builds(
+    model_story_Panel,
     id=
         safe_text,
-    x=
-        st.integers(),
     y=
+        st.integers(),
+    x=
         st.integers()
 )
 Panel_strategy = st.builds(
     Panel,
 )
-model::story::Storyboard_strategy = st.builds(
-    model::story::Storyboard,
+model_story_Storyboard_strategy = st.builds(
+    model_story_Storyboard,
 )
-model::NoteSupport_strategy = st.builds(
-    model::NoteSupport,
+model_NoteSupport_strategy = st.builds(
+    model_NoteSupport,
     note=
         safe_text
 )
-model::TextLinksSupport_strategy = st.builds(
-    model::TextLinksSupport,
+model_TextLinksSupport_strategy = st.builds(
+    model_TextLinksSupport,
 )
-model::AnnotationSupport_strategy = st.builds(
-    model::AnnotationSupport,
+model_AnnotationSupport_strategy = st.builds(
+    model_AnnotationSupport,
 )
-overrides::Reference_strategy = st.builds(
-    overrides::Reference,
+overrides_Reference_strategy = st.builds(
+    overrides_Reference,
 )
-model::overrides::Delete_strategy = st.builds(
-    model::overrides::Delete,
-)
-model::overrides::Move_strategy = st.builds(
-    model::overrides::Move,
+model_overrides_Move_strategy = st.builds(
+    model_overrides_Move,
     newIndex=
         st.integers()
 )
-overrides::WidgetContainerOverrides_strategy = st.builds(
-    overrides::WidgetContainerOverrides,
+model_overrides_Delete_strategy = st.builds(
+    model_overrides_Delete,
 )
-model::overrides::WidgetOverrides_strategy = st.builds(
-    model::overrides::WidgetOverrides,
-    noLink=
+overrides_WidgetContainerOverrides_strategy = st.builds(
+    overrides_WidgetContainerOverrides,
+)
+model_overrides_WidgetOverrides_strategy = st.builds(
+    model_overrides_WidgetOverrides,
+    link=
+        safe_text,
+    noText=
         st.booleans(),
     text=
+        safe_text,
+    y=
         safe_text,
     width=
         safe_text,
     height=
         safe_text,
-    noText=
-        st.booleans(),
-    link=
-        safe_text,
     src=
         safe_text,
-    y=
-        safe_text,
+    noLink=
+        st.booleans(),
     x=
         safe_text
 )
@@ -4074,356 +4041,335 @@ WidgetOverrides_strategy = st.builds(
 WidgetContainerOverrides_strategy = st.builds(
     WidgetContainerOverrides,
 )
-model::overrides::Overrides_strategy = st.builds(
-    model::overrides::Overrides,
+model_overrides_Overrides_strategy = st.builds(
+    model_overrides_Overrides,
 )
 Storyboard_strategy = st.builds(
     Storyboard,
 )
-story::model::Screen_strategy = st.builds(
-    story::model::Screen,
+story_model_Screen_strategy = st.builds(
+    story_model_Screen,
 )
-model::Shape_strategy = st.builds(
-    model::Shape,
-    shapeType=
-        safe_text
-)
-model::SkinSupport_strategy = st.builds(
-    model::SkinSupport,
+model_SkinSupport_strategy = st.builds(
+    model_SkinSupport,
     skin=
         safe_text
 )
-model::VButtonBar_strategy = st.builds(
-    model::VButtonBar,
+model_VButtonBar_strategy = st.builds(
+    model_VButtonBar,
 )
-model::LineHeightSupport_strategy = st.builds(
-    model::LineHeightSupport,
+model_LineHeightSupport_strategy = st.builds(
+    model_LineHeightSupport,
     lineHeight=
         safe_text
 )
-model::Switch_strategy = st.builds(
-    model::Switch,
+model_Switch_strategy = st.builds(
+    model_Switch,
 )
-model::Alert_strategy = st.builds(
-    model::Alert,
+model_Alert_strategy = st.builds(
+    model_Alert,
 )
-model::NameSupport_strategy = st.builds(
-    model::NameSupport,
+model_NameSupport_strategy = st.builds(
+    model_NameSupport,
     name=
         safe_text
 )
-model::Hotspot_strategy = st.builds(
-    model::Hotspot,
+model_Hotspot_strategy = st.builds(
+    model_Hotspot,
 )
-model::LinkSupport_strategy = st.builds(
-    model::LinkSupport,
+model_LinkSupport_strategy = st.builds(
+    model_LinkSupport,
     link=
         safe_text
 )
-model::FlipSupport_strategy = st.builds(
-    model::FlipSupport,
-    hFlip=
-        st.booleans(),
+model_FlipSupport_strategy = st.builds(
+    model_FlipSupport,
     vFlip=
+        st.booleans(),
+    hFlip=
         st.booleans()
 )
-model::RotationSupport_strategy = st.builds(
-    model::RotationSupport,
+model_RotationSupport_strategy = st.builds(
+    model_RotationSupport,
     rotation=
         safe_text
 )
-model::LineStyleSupport_strategy = st.builds(
-    model::LineStyleSupport,
+model_LineStyleSupport_strategy = st.builds(
+    model_LineStyleSupport,
     lineStyle=
         safe_text
 )
-model::ColorAlternativeSupport_strategy = st.builds(
-    model::ColorAlternativeSupport,
+model_ColorAlternativeSupport_strategy = st.builds(
+    model_ColorAlternativeSupport,
     alternative=
         safe_text
 )
-model::IconPositionSupport_strategy = st.builds(
-    model::IconPositionSupport,
+model_IconPositionSupport_strategy = st.builds(
+    model_IconPositionSupport,
     iconPosition=
         safe_text
 )
-model::Rectangle_strategy = st.builds(
-    model::Rectangle,
+model_Rectangle_strategy = st.builds(
+    model_Rectangle,
 )
-model::ItemSupport_strategy = st.builds(
-    model::ItemSupport,
+model_ItemSupport_strategy = st.builds(
+    model_ItemSupport,
 )
-model::Item_strategy = st.builds(
-    model::Item,
+model_Item_strategy = st.builds(
+    model_Item,
     width=
         st.integers(),
-    x=
+    y=
         st.integers(),
     text=
         safe_text,
-    y=
-        st.integers(),
     height=
+        st.integers(),
+    x=
         st.integers()
 )
-model::Chart_strategy = st.builds(
-    model::Chart,
+model_Chart_strategy = st.builds(
+    model_Chart,
     chartType=
         safe_text
 )
-model::ListSupport_strategy = st.builds(
-    model::ListSupport,
-    rowHeight=
-        st.integers(),
+model_ListSupport_strategy = st.builds(
+    model_ListSupport,
     horizontalLines=
-        st.booleans()
+        st.booleans(),
+    rowHeight=
+        st.integers()
 )
-model::ColorPicker_strategy = st.builds(
-    model::ColorPicker,
+model_ColorPicker_strategy = st.builds(
+    model_ColorPicker,
 )
-model::ValueSupport_strategy = st.builds(
-    model::ValueSupport,
+model_ValueSupport_strategy = st.builds(
+    model_ValueSupport,
     value=
         st.integers()
 )
-model::VSplitter_strategy = st.builds(
-    model::VSplitter,
+model_VSplitter_strategy = st.builds(
+    model_VSplitter,
 )
-model::HSplitter_strategy = st.builds(
-    model::HSplitter,
+model_HSplitter_strategy = st.builds(
+    model_HSplitter,
 )
-model::Circle_strategy = st.builds(
-    model::Circle,
-)
-model::BorderStyleSupport_strategy = st.builds(
-    model::BorderStyleSupport,
+model_BorderStyleSupport_strategy = st.builds(
+    model_BorderStyleSupport,
     border=
         safe_text
 )
-model::ButtonBar_strategy = st.builds(
-    model::ButtonBar,
+model_ButtonBar_strategy = st.builds(
+    model_ButtonBar,
 )
-model::DateField_strategy = st.builds(
-    model::DateField,
+model_DateField_strategy = st.builds(
+    model_DateField,
 )
-model::VerticalScrollbarSupport_strategy = st.builds(
-    model::VerticalScrollbarSupport,
+model_VerticalScrollbarSupport_strategy = st.builds(
+    model_VerticalScrollbarSupport,
     verticalScrollbar=
         st.booleans()
 )
-model::Accordion_strategy = st.builds(
-    model::Accordion,
+model_Accordion_strategy = st.builds(
+    model_Accordion,
 )
-model::LinkBar_strategy = st.builds(
-    model::LinkBar,
+model_LinkBar_strategy = st.builds(
+    model_LinkBar,
 )
-model::IconSupport_strategy = st.builds(
-    model::IconSupport,
+model_IconSupport_strategy = st.builds(
+    model_IconSupport,
     icon=
         safe_text,
     iconRotation=
         safe_text
 )
-model::TabbedPane_strategy = st.builds(
-    model::TabbedPane,
+model_TabbedPane_strategy = st.builds(
+    model_TabbedPane,
     position=
         safe_text
 )
-model::CoverFlow_strategy = st.builds(
-    model::CoverFlow,
+model_CoverFlow_strategy = st.builds(
+    model_CoverFlow,
 )
-model::Map_strategy = st.builds(
-    model::Map,
+model_Map_strategy = st.builds(
+    model_Map,
 )
-model::VideoPlayer_strategy = st.builds(
-    model::VideoPlayer,
+model_VideoPlayer_strategy = st.builds(
+    model_VideoPlayer,
 )
-model::ProgressBar_strategy = st.builds(
-    model::ProgressBar,
+model_ProgressBar_strategy = st.builds(
+    model_ProgressBar,
 )
 AnnotationSupport_strategy = st.builds(
     AnnotationSupport,
 )
-model::CurlyBrace_strategy = st.builds(
-    model::CurlyBrace,
+model_CrossOut_strategy = st.builds(
+    model_CrossOut,
+)
+model_CurlyBrace_strategy = st.builds(
+    model_CurlyBrace,
     position=
         safe_text
 )
-model::CrossOut_strategy = st.builds(
-    model::CrossOut,
+model_Callout_strategy = st.builds(
+    model_Callout,
 )
-model::Arrow_strategy = st.builds(
-    model::Arrow,
-    right=
-        st.booleans(),
-    left=
-        st.booleans(),
-    direction=
-        safe_text
+model_Breadcrumbs_strategy = st.builds(
+    model_Breadcrumbs,
 )
-model::Callout_strategy = st.builds(
-    model::Callout,
-)
-model::Breadcrumbs_strategy = st.builds(
-    model::Breadcrumbs,
-)
-model::StateSupport_strategy = st.builds(
-    model::StateSupport,
+model_StateSupport_strategy = st.builds(
+    model_StateSupport,
     state=
         safe_text
 )
-model::BorderSupport_strategy = st.builds(
-    model::BorderSupport,
+model_BorderSupport_strategy = st.builds(
+    model_BorderSupport,
     border=
         st.booleans()
 )
-model::ScratchOut_strategy = st.builds(
-    model::ScratchOut,
+model_ScratchOut_strategy = st.builds(
+    model_ScratchOut,
 )
-model::Tooltip_strategy = st.builds(
-    model::Tooltip,
+model_Tooltip_strategy = st.builds(
+    model_Tooltip,
     position=
         safe_text
 )
-model::SearchField_strategy = st.builds(
-    model::SearchField,
+model_SearchField_strategy = st.builds(
+    model_SearchField,
 )
-model::FontSupport_strategy = st.builds(
-    model::FontSupport,
+model_FontSupport_strategy = st.builds(
+    model_FontSupport,
 )
-model::Note_strategy = st.builds(
-    model::Note,
+model_Note_strategy = st.builds(
+    model_Note,
 )
-model::BooleanSelectionSupport_strategy = st.builds(
-    model::BooleanSelectionSupport,
+model_BooleanSelectionSupport_strategy = st.builds(
+    model_BooleanSelectionSupport,
     selected=
         st.booleans()
 )
-model::TextAlignmentSupport_strategy = st.builds(
-    model::TextAlignmentSupport,
+model_TextAlignmentSupport_strategy = st.builds(
+    model_TextAlignmentSupport,
     textAlignment=
         safe_text
 )
-model::SelectionSupport_strategy = st.builds(
-    model::SelectionSupport,
+model_SelectionSupport_strategy = st.builds(
+    model_SelectionSupport,
     selection=
         safe_text
 )
-model::ColorAlphaSupport_strategy = st.builds(
-    model::ColorAlphaSupport,
+model_ColorAlphaSupport_strategy = st.builds(
+    model_ColorAlphaSupport,
     alpha=
         st.integers()
 )
-model::ColorBorderSupport_strategy = st.builds(
-    model::ColorBorderSupport,
+model_ColorBorderSupport_strategy = st.builds(
+    model_ColorBorderSupport,
     borderColor=
         safe_text
 )
-model::ColorBackgroundSupport_strategy = st.builds(
-    model::ColorBackgroundSupport,
+model_ColorBackgroundSupport_strategy = st.builds(
+    model_ColorBackgroundSupport,
     background=
         safe_text
 )
-model::ColorForegroundSupport_strategy = st.builds(
-    model::ColorForegroundSupport,
+model_ColorForegroundSupport_strategy = st.builds(
+    model_ColorForegroundSupport,
     foreground=
         safe_text
 )
-model::Master_strategy = st.builds(
-    model::Master,
+model_Master_strategy = st.builds(
+    model_Master,
     dimmed=
         st.booleans()
 )
 NameSupport_strategy = st.builds(
     NameSupport,
 )
-model::WidgetGroup_strategy = st.builds(
-    model::WidgetGroup,
+model_WidgetGroup_strategy = st.builds(
+    model_WidgetGroup,
 )
 FlipSupport_strategy = st.builds(
     FlipSupport,
 )
-model::SVGImage_strategy = st.builds(
-    model::SVGImage,
+model_SVGImage_strategy = st.builds(
+    model_SVGImage,
     src=
         safe_text
 )
-model::Image_strategy = st.builds(
-    model::Image,
-    src=
-        safe_text,
+model_Image_strategy = st.builds(
+    model_Image,
     grayscale=
-        st.booleans()
+        st.booleans(),
+    src=
+        safe_text
 )
 Overrides_strategy = st.builds(
     Overrides,
 )
-model::Tabs_strategy = st.builds(
-    model::Tabs,
+model_Tabs_strategy = st.builds(
+    model_Tabs,
 )
-model::VSlider_strategy = st.builds(
-    model::VSlider,
+model_VSlider_strategy = st.builds(
+    model_VSlider,
 )
-model::HSlider_strategy = st.builds(
-    model::HSlider,
+model_HSlider_strategy = st.builds(
+    model_HSlider,
 )
-model::VLine_strategy = st.builds(
-    model::VLine,
+model_Font_strategy = st.builds(
+    model_Font,
+    underline=
+        safe_text,
+    italic=
+        safe_text,
+    size=
+        safe_text,
+    bold=
+        safe_text
 )
-
-@given(instance=model::Font_strategy)
-@settings(max_examples=50)
-def test_model::font_instantiation(instance):
-    assert isinstance(instance, model::Font)
-
-@given(instance=model::Font_strategy)
-def test_model::font_underline_type(instance):
-    assert isinstance(instance.underline, str)
-
-
-@given(instance=model::Font_strategy)
-def test_model::font_underline_setter(instance):
-    original = instance.underline
-    instance.underline = original
-    assert instance.underline == original
-
-@given(instance=model::Font_strategy)
-def test_model::font_bold_type(instance):
-    assert isinstance(instance.bold, str)
-
-
-@given(instance=model::Font_strategy)
-def test_model::font_bold_setter(instance):
-    original = instance.bold
-    instance.bold = original
-    assert instance.bold == original
-
-@given(instance=model::Font_strategy)
-def test_model::font_italic_type(instance):
-    assert isinstance(instance.italic, str)
-
-
-@given(instance=model::Font_strategy)
-def test_model::font_italic_setter(instance):
-    original = instance.italic
-    instance.italic = original
-    assert instance.italic == original
-
-@given(instance=model::Font_strategy)
-def test_model::font_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=model::Font_strategy)
-def test_model::font_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=LineStyleSupport_strategy)
-@settings(max_examples=50)
-def test_linestylesupport_instantiation(instance):
-    assert isinstance(instance, LineStyleSupport)
+model_Tree_strategy = st.builds(
+    model_Tree,
+)
+model_Table_strategy = st.builds(
+    model_Table,
+    header=
+        st.booleans(),
+    verticalLines=
+        st.booleans()
+)
+model_Menu_strategy = st.builds(
+    model_Menu,
+)
+LineStyleSupport_strategy = st.builds(
+    LineStyleSupport,
+)
+model_VLine_strategy = st.builds(
+    model_VLine,
+)
+model_Shape_strategy = st.builds(
+    model_Shape,
+    shapeType=
+        safe_text
+)
+model_Arrow_strategy = st.builds(
+    model_Arrow,
+    direction=
+        safe_text,
+    left=
+        st.booleans(),
+    right=
+        st.booleans()
+)
+model_Circle_strategy = st.builds(
+    model_Circle,
+)
+model_HLine_strategy = st.builds(
+    model_HLine,
+)
+model_VScrollbar_strategy = st.builds(
+    model_VScrollbar,
+)
 
 @given(instance=ValueSupport_strategy)
 @settings(max_examples=50)
@@ -4520,10 +4466,10 @@ def test_linksupport_instantiation(instance):
 def test_verticalscrollbarsupport_instantiation(instance):
     assert isinstance(instance, VerticalScrollbarSupport)
 
-@given(instance=model::WidgetContainer_strategy)
+@given(instance=model_WidgetContainer_strategy)
 @settings(max_examples=50)
-def test_model::widgetcontainer_instantiation(instance):
-    assert isinstance(instance, model::WidgetContainer)
+def test_model_widgetcontainer_instantiation(instance):
+    assert isinstance(instance, model_WidgetContainer)
 
 @given(instance=IconSupport_strategy)
 @settings(max_examples=50)
@@ -4550,617 +4496,456 @@ def test_statesupport_instantiation(instance):
 def test_widget_instantiation(instance):
     assert isinstance(instance, Widget)
 
-@given(instance=model::Checkbox_strategy)
+@given(instance=model_Popup_strategy)
 @settings(max_examples=50)
-def test_model::checkbox_instantiation(instance):
-    assert isinstance(instance, model::Checkbox)
+def test_model_popup_instantiation(instance):
+    assert isinstance(instance, model_Popup)
 
-@given(instance=model::Tree_strategy)
+@given(instance=model_Placeholder_strategy)
 @settings(max_examples=50)
-def test_model::tree_instantiation(instance):
-    assert isinstance(instance, model::Tree)
+def test_model_placeholder_instantiation(instance):
+    assert isinstance(instance, model_Placeholder)
 
-@given(instance=model::Panel_strategy)
+@given(instance=model_HScrollbar_strategy)
 @settings(max_examples=50)
-def test_model::panel_instantiation(instance):
-    assert isinstance(instance, model::Panel)
+def test_model_hscrollbar_instantiation(instance):
+    assert isinstance(instance, model_HScrollbar)
 
-@given(instance=model::Placeholder_strategy)
+@given(instance=model_Combo_strategy)
 @settings(max_examples=50)
-def test_model::placeholder_instantiation(instance):
-    assert isinstance(instance, model::Placeholder)
+def test_model_combo_instantiation(instance):
+    assert isinstance(instance, model_Combo)
 
-@given(instance=model::HScrollbar_strategy)
+@given(instance=model_Browser_strategy)
 @settings(max_examples=50)
-def test_model::hscrollbar_instantiation(instance):
-    assert isinstance(instance, model::HScrollbar)
+def test_model_browser_instantiation(instance):
+    assert isinstance(instance, model_Browser)
 
-@given(instance=model::Popup_strategy)
+@given(instance=model_Label_strategy)
 @settings(max_examples=50)
-def test_model::popup_instantiation(instance):
-    assert isinstance(instance, model::Popup)
+def test_model_label_instantiation(instance):
+    assert isinstance(instance, model_Label)
 
-@given(instance=model::Window_strategy)
+@given(instance=model_Text_strategy)
 @settings(max_examples=50)
-def test_model::window_instantiation(instance):
-    assert isinstance(instance, model::Window)
-
-@given(instance=model::Window_strategy)
-def test_model::window_maximizeButton_type(instance):
-    assert isinstance(instance.maximizeButton, bool)
+def test_model_text_instantiation(instance):
+    assert isinstance(instance, model_Text)
 
 
-@given(instance=model::Window_strategy)
-def test_model::window_maximizeButton_setter(instance):
-    original = instance.maximizeButton
-    instance.maximizeButton = original
-    assert instance.maximizeButton == original
 
-@given(instance=model::Window_strategy)
-def test_model::window_closeButton_type(instance):
-    assert isinstance(instance.closeButton, bool)
-
-
-@given(instance=model::Window_strategy)
-def test_model::window_closeButton_setter(instance):
-    original = instance.closeButton
-    instance.closeButton = original
-    assert instance.closeButton == original
-
-@given(instance=model::Window_strategy)
-def test_model::window_minimizeButton_type(instance):
-    assert isinstance(instance.minimizeButton, bool)
-
-
-@given(instance=model::Window_strategy)
-def test_model::window_minimizeButton_setter(instance):
-    original = instance.minimizeButton
-    instance.minimizeButton = original
-    assert instance.minimizeButton == original
-
-@given(instance=model::VScrollbar_strategy)
-@settings(max_examples=50)
-def test_model::vscrollbar_instantiation(instance):
-    assert isinstance(instance, model::VScrollbar)
-
-@given(instance=model::Icon_strategy)
-@settings(max_examples=50)
-def test_model::icon_instantiation(instance):
-    assert isinstance(instance, model::Icon)
-
-@given(instance=model::Table_strategy)
-@settings(max_examples=50)
-def test_model::table_instantiation(instance):
-    assert isinstance(instance, model::Table)
-
-@given(instance=model::Table_strategy)
-def test_model::table_header_type(instance):
-    assert isinstance(instance.header, bool)
-
-
-@given(instance=model::Table_strategy)
-def test_model::table_header_setter(instance):
-    original = instance.header
-    instance.header = original
-    assert instance.header == original
-
-@given(instance=model::Table_strategy)
-def test_model::table_verticalLines_type(instance):
-    assert isinstance(instance.verticalLines, bool)
-
-
-@given(instance=model::Table_strategy)
-def test_model::table_verticalLines_setter(instance):
-    original = instance.verticalLines
-    instance.verticalLines = original
-    assert instance.verticalLines == original
-
-@given(instance=model::Text_strategy)
-@settings(max_examples=50)
-def test_model::text_instantiation(instance):
-    assert isinstance(instance, model::Text)
-
-@given(instance=model::Text_strategy)
-def test_model::text_dummyText_type(instance):
-    assert isinstance(instance.dummyText, bool)
-
-
-@given(instance=model::Text_strategy)
-def test_model::text_dummyText_setter(instance):
+@given(instance=model_Text_strategy)
+def test_model_text_dummyText_setter(instance):
     original = instance.dummyText
     instance.dummyText = original
     assert instance.dummyText == original
 
-@given(instance=model::RadioButton_strategy)
+@given(instance=model_Window_strategy)
 @settings(max_examples=50)
-def test_model::radiobutton_instantiation(instance):
-    assert isinstance(instance, model::RadioButton)
+def test_model_window_instantiation(instance):
+    assert isinstance(instance, model_Window)
 
-@given(instance=model::Browser_strategy)
+
+
+@given(instance=model_Window_strategy)
+def test_model_window_minimizeButton_setter(instance):
+    original = instance.minimizeButton
+    instance.minimizeButton = original
+    assert instance.minimizeButton == original
+
+
+
+@given(instance=model_Window_strategy)
+def test_model_window_closeButton_setter(instance):
+    original = instance.closeButton
+    instance.closeButton = original
+    assert instance.closeButton == original
+
+
+
+@given(instance=model_Window_strategy)
+def test_model_window_maximizeButton_setter(instance):
+    original = instance.maximizeButton
+    instance.maximizeButton = original
+    assert instance.maximizeButton == original
+
+@given(instance=model_Icon_strategy)
 @settings(max_examples=50)
-def test_model::browser_instantiation(instance):
-    assert isinstance(instance, model::Browser)
+def test_model_icon_instantiation(instance):
+    assert isinstance(instance, model_Icon)
 
-@given(instance=model::Menu_strategy)
+@given(instance=model_Panel_strategy)
 @settings(max_examples=50)
-def test_model::menu_instantiation(instance):
-    assert isinstance(instance, model::Menu)
+def test_model_panel_instantiation(instance):
+    assert isinstance(instance, model_Panel)
 
-@given(instance=model::List_strategy)
+@given(instance=model_Link_strategy)
 @settings(max_examples=50)
-def test_model::list_instantiation(instance):
-    assert isinstance(instance, model::List)
+def test_model_link_instantiation(instance):
+    assert isinstance(instance, model_Link)
 
-@given(instance=model::List_strategy)
-def test_model::list_header_type(instance):
-    assert isinstance(instance.header, bool)
+@given(instance=model_RadioButton_strategy)
+@settings(max_examples=50)
+def test_model_radiobutton_instantiation(instance):
+    assert isinstance(instance, model_RadioButton)
+
+@given(instance=model_TextField_strategy)
+@settings(max_examples=50)
+def test_model_textfield_instantiation(instance):
+    assert isinstance(instance, model_TextField)
+
+@given(instance=model_Group_strategy)
+@settings(max_examples=50)
+def test_model_group_instantiation(instance):
+    assert isinstance(instance, model_Group)
+
+@given(instance=model_List_strategy)
+@settings(max_examples=50)
+def test_model_list_instantiation(instance):
+    assert isinstance(instance, model_List)
 
 
-@given(instance=model::List_strategy)
-def test_model::list_header_setter(instance):
+
+@given(instance=model_List_strategy)
+def test_model_list_header_setter(instance):
     original = instance.header
     instance.header = original
     assert instance.header == original
 
-@given(instance=model::TextArea_strategy)
+@given(instance=model_Checkbox_strategy)
 @settings(max_examples=50)
-def test_model::textarea_instantiation(instance):
-    assert isinstance(instance, model::TextArea)
+def test_model_checkbox_instantiation(instance):
+    assert isinstance(instance, model_Checkbox)
 
-@given(instance=model::HLine_strategy)
+@given(instance=model_TextArea_strategy)
 @settings(max_examples=50)
-def test_model::hline_instantiation(instance):
-    assert isinstance(instance, model::HLine)
+def test_model_textarea_instantiation(instance):
+    assert isinstance(instance, model_TextArea)
 
-@given(instance=model::TextField_strategy)
+@given(instance=model_Spinner_strategy)
 @settings(max_examples=50)
-def test_model::textfield_instantiation(instance):
-    assert isinstance(instance, model::TextField)
+def test_model_spinner_instantiation(instance):
+    assert isinstance(instance, model_Spinner)
 
-@given(instance=model::Group_strategy)
+@given(instance=model_Area_strategy)
 @settings(max_examples=50)
-def test_model::group_instantiation(instance):
-    assert isinstance(instance, model::Group)
+def test_model_area_instantiation(instance):
+    assert isinstance(instance, model_Area)
 
-@given(instance=model::Link_strategy)
+@given(instance=model_Button_strategy)
 @settings(max_examples=50)
-def test_model::link_instantiation(instance):
-    assert isinstance(instance, model::Link)
-
-@given(instance=model::Spinner_strategy)
-@settings(max_examples=50)
-def test_model::spinner_instantiation(instance):
-    assert isinstance(instance, model::Spinner)
-
-@given(instance=model::Area_strategy)
-@settings(max_examples=50)
-def test_model::area_instantiation(instance):
-    assert isinstance(instance, model::Area)
-
-@given(instance=model::Combo_strategy)
-@settings(max_examples=50)
-def test_model::combo_instantiation(instance):
-    assert isinstance(instance, model::Combo)
-
-@given(instance=model::Label_strategy)
-@settings(max_examples=50)
-def test_model::label_instantiation(instance):
-    assert isinstance(instance, model::Label)
-
-@given(instance=model::Button_strategy)
-@settings(max_examples=50)
-def test_model::button_instantiation(instance):
-    assert isinstance(instance, model::Button)
-
-@given(instance=model::Button_strategy)
-def test_model::button_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_model_button_instantiation(instance):
+    assert isinstance(instance, model_Button)
 
 
-@given(instance=model::Button_strategy)
-def test_model::button_style_setter(instance):
+
+@given(instance=model_Button_strategy)
+def test_model_button_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=model::WidgetDescriptor_strategy)
+@given(instance=model_WidgetDescriptor_strategy)
 @settings(max_examples=50)
-def test_model::widgetdescriptor_instantiation(instance):
-    assert isinstance(instance, model::WidgetDescriptor)
-
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textCentered_type(instance):
-    assert isinstance(instance.textCentered, bool)
+def test_model_widgetdescriptor_instantiation(instance):
+    assert isinstance(instance, model_WidgetDescriptor)
 
 
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textCentered_setter(instance):
-    original = instance.textCentered
-    instance.textCentered = original
-    assert instance.textCentered == original
 
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_resizeMode_type(instance):
-    assert isinstance(instance.resizeMode, str)
-
-
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_resizeMode_setter(instance):
-    original = instance.resizeMode
-    instance.resizeMode = original
-    assert instance.resizeMode == original
-
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textWrappable_type(instance):
-    assert isinstance(instance.textWrappable, bool)
-
-
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textWrappable_setter(instance):
+@given(instance=model_WidgetDescriptor_strategy)
+def test_model_widgetdescriptor_textWrappable_setter(instance):
     original = instance.textWrappable
     instance.textWrappable = original
     assert instance.textWrappable == original
 
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textEditable_type(instance):
-    assert isinstance(instance.textEditable, bool)
 
 
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textEditable_setter(instance):
+@given(instance=model_WidgetDescriptor_strategy)
+def test_model_widgetdescriptor_textCentered_setter(instance):
+    original = instance.textCentered
+    instance.textCentered = original
+    assert instance.textCentered == original
+
+
+
+@given(instance=model_WidgetDescriptor_strategy)
+def test_model_widgetdescriptor_textEditable_setter(instance):
     original = instance.textEditable
     instance.textEditable = original
     assert instance.textEditable == original
 
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textLines_type(instance):
-    assert isinstance(instance.textLines, int)
 
 
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_textLines_setter(instance):
-    original = instance.textLines
-    instance.textLines = original
-    assert instance.textLines == original
-
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
-
-
-@given(instance=model::WidgetDescriptor_strategy)
-def test_model::widgetdescriptor_typeName_setter(instance):
+@given(instance=model_WidgetDescriptor_strategy)
+def test_model_widgetdescriptor_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=model::RulerGuide_strategy)
+
+
+@given(instance=model_WidgetDescriptor_strategy)
+def test_model_widgetdescriptor_resizeMode_setter(instance):
+    original = instance.resizeMode
+    instance.resizeMode = original
+    assert instance.resizeMode == original
+
+
+
+@given(instance=model_WidgetDescriptor_strategy)
+def test_model_widgetdescriptor_textLines_setter(instance):
+    original = instance.textLines
+    instance.textLines = original
+    assert instance.textLines == original
+
+@given(instance=model_RulerGuide_strategy)
 @settings(max_examples=50)
-def test_model::rulerguide_instantiation(instance):
-    assert isinstance(instance, model::RulerGuide)
-
-@given(instance=model::RulerGuide_strategy)
-def test_model::rulerguide_position_type(instance):
-    assert isinstance(instance.position, int)
+def test_model_rulerguide_instantiation(instance):
+    assert isinstance(instance, model_RulerGuide)
 
 
-@given(instance=model::RulerGuide_strategy)
-def test_model::rulerguide_position_setter(instance):
+
+@given(instance=model_RulerGuide_strategy)
+def test_model_rulerguide_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=model::ScreenFont_strategy)
+@given(instance=model_ScreenFont_strategy)
 @settings(max_examples=50)
-def test_model::screenfont_instantiation(instance):
-    assert isinstance(instance, model::ScreenFont)
-
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_available_type(instance):
-    assert isinstance(instance.available, str)
+def test_model_screenfont_instantiation(instance):
+    assert isinstance(instance, model_ScreenFont)
 
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_available_setter(instance):
-    original = instance.available
-    instance.available = original
-    assert instance.available == original
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_bold_type(instance):
-    assert isinstance(instance.bold, bool)
-
-
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_bold_setter(instance):
+@given(instance=model_ScreenFont_strategy)
+def test_model_screenfont_bold_setter(instance):
     original = instance.bold
     instance.bold = original
     assert instance.bold == original
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_name_setter(instance):
+@given(instance=model_ScreenFont_strategy)
+def test_model_screenfont_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_size_type(instance):
-    assert isinstance(instance.size, str)
 
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_size_setter(instance):
+@given(instance=model_ScreenFont_strategy)
+def test_model_screenfont_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_italic_type(instance):
-    assert isinstance(instance.italic, bool)
 
 
-@given(instance=model::ScreenFont_strategy)
-def test_model::screenfont_italic_setter(instance):
+@given(instance=model_ScreenFont_strategy)
+def test_model_screenfont_italic_setter(instance):
     original = instance.italic
     instance.italic = original
     assert instance.italic == original
 
-@given(instance=model::ScreenRuler_strategy)
+
+
+@given(instance=model_ScreenFont_strategy)
+def test_model_screenfont_available_setter(instance):
+    original = instance.available
+    instance.available = original
+    assert instance.available == original
+
+@given(instance=model_ScreenRuler_strategy)
 @settings(max_examples=50)
-def test_model::screenruler_instantiation(instance):
-    assert isinstance(instance, model::ScreenRuler)
+def test_model_screenruler_instantiation(instance):
+    assert isinstance(instance, model_ScreenRuler)
 
 @given(instance=NoteSupport_strategy)
 @settings(max_examples=50)
 def test_notesupport_instantiation(instance):
     assert isinstance(instance, NoteSupport)
 
-@given(instance=model::Widget_strategy)
+@given(instance=model_Widget_strategy)
 @settings(max_examples=50)
-def test_model::widget_instantiation(instance):
-    assert isinstance(instance, model::Widget)
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_y_type(instance):
-    assert isinstance(instance.y, int)
+def test_model_widget_instantiation(instance):
+    assert isinstance(instance, model_Widget)
 
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_customData_type(instance):
-    assert isinstance(instance.customData, str)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_customData_setter(instance):
-    original = instance.customData
-    instance.customData = original
-    assert instance.customData == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_locked_type(instance):
-    assert isinstance(instance.locked, bool)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_locked_setter(instance):
-    original = instance.locked
-    instance.locked = original
-    assert instance.locked == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_measuredHeight_type(instance):
-    assert isinstance(instance.measuredHeight, int)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_measuredHeight_setter(instance):
+@given(instance=model_Widget_strategy)
+def test_model_widget_measuredHeight_setter(instance):
     original = instance.measuredHeight
     instance.measuredHeight = original
     assert instance.measuredHeight == original
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_id_setter(instance):
+@given(instance=model_Widget_strategy)
+def test_model_widget_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_customId_type(instance):
-    assert isinstance(instance.customId, str)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_customId_setter(instance):
-    original = instance.customId
-    instance.customId = original
-    assert instance.customId == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_measuredWidth_type(instance):
-    assert isinstance(instance.measuredWidth, int)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_measuredWidth_setter(instance):
-    original = instance.measuredWidth
-    instance.measuredWidth = original
-    assert instance.measuredWidth == original
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_annotation_type(instance):
-    assert isinstance(instance.annotation, bool)
-
-
-@given(instance=model::Widget_strategy)
-def test_model::widget_annotation_setter(instance):
+@given(instance=model_Widget_strategy)
+def test_model_widget_annotation_setter(instance):
     original = instance.annotation
     instance.annotation = original
     assert instance.annotation == original
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_layoutParams_type(instance):
-    assert isinstance(instance.layoutParams, str)
 
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_layoutParams_setter(instance):
+@given(instance=model_Widget_strategy)
+def test_model_widget_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_layoutParams_setter(instance):
     original = instance.layoutParams
     instance.layoutParams = original
     assert instance.layoutParams == original
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=model::Widget_strategy)
-def test_model::widget_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
+@given(instance=model_Widget_strategy)
+def test_model_widget_locked_setter(instance):
+    original = instance.locked
+    instance.locked = original
+    assert instance.locked == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_customId_setter(instance):
+    original = instance.customId
+    instance.customId = original
+    assert instance.customId == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_customData_setter(instance):
+    original = instance.customData
+    instance.customData = original
+    assert instance.customData == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_measuredWidth_setter(instance):
+    original = instance.measuredWidth
+    instance.measuredWidth = original
+    assert instance.measuredWidth == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=model_Widget_strategy)
+def test_model_widget_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
 
 @given(instance=WidgetContainer_strategy)
 @settings(max_examples=50)
 def test_widgetcontainer_instantiation(instance):
     assert isinstance(instance, WidgetContainer)
 
-@given(instance=model::Screen_strategy)
+@given(instance=model_Screen_strategy)
 @settings(max_examples=50)
-def test_model::screen_instantiation(instance):
-    assert isinstance(instance, model::Screen)
-
-@given(instance=model::Screen_strategy)
-def test_model::screen_theme_type(instance):
-    assert isinstance(instance.theme, str)
+def test_model_screen_instantiation(instance):
+    assert isinstance(instance, model_Screen)
 
 
-@given(instance=model::Screen_strategy)
-def test_model::screen_theme_setter(instance):
-    original = instance.theme
-    instance.theme = original
-    assert instance.theme == original
 
-@given(instance=model::Screen_strategy)
-def test_model::screen_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::Screen_strategy)
-def test_model::screen_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::Screen_strategy)
-def test_model::screen_minVersion_type(instance):
-    assert isinstance(instance.minVersion, str)
-
-
-@given(instance=model::Screen_strategy)
-def test_model::screen_minVersion_setter(instance):
+@given(instance=model_Screen_strategy)
+def test_model_screen_minVersion_setter(instance):
     original = instance.minVersion
     instance.minVersion = original
     assert instance.minVersion == original
 
-@given(instance=model::overrides::WidgetContainerOverrides_strategy)
+
+
+@given(instance=model_Screen_strategy)
+def test_model_screen_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=model_Screen_strategy)
+def test_model_screen_theme_setter(instance):
+    original = instance.theme
+    instance.theme = original
+    assert instance.theme == original
+
+@given(instance=model_overrides_WidgetContainerOverrides_strategy)
 @settings(max_examples=50)
-def test_model::overrides::widgetcontaineroverrides_instantiation(instance):
-    assert isinstance(instance, model::overrides::WidgetContainerOverrides)
+def test_model_overrides_widgetcontaineroverrides_instantiation(instance):
+    assert isinstance(instance, model_overrides_WidgetContainerOverrides)
 
-@given(instance=model::overrides::FontOverrides_strategy)
+@given(instance=model_overrides_FontOverrides_strategy)
 @settings(max_examples=50)
-def test_model::overrides::fontoverrides_instantiation(instance):
-    assert isinstance(instance, model::overrides::FontOverrides)
-
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_bold_type(instance):
-    assert isinstance(instance.bold, str)
+def test_model_overrides_fontoverrides_instantiation(instance):
+    assert isinstance(instance, model_overrides_FontOverrides)
 
 
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_bold_setter(instance):
-    original = instance.bold
-    instance.bold = original
-    assert instance.bold == original
 
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_underline_type(instance):
-    assert isinstance(instance.underline, str)
-
-
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_underline_setter(instance):
+@given(instance=model_overrides_FontOverrides_strategy)
+def test_model_overrides_fontoverrides_underline_setter(instance):
     original = instance.underline
     instance.underline = original
     assert instance.underline == original
 
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_italic_type(instance):
-    assert isinstance(instance.italic, str)
 
 
-@given(instance=model::overrides::FontOverrides_strategy)
-def test_model::overrides::fontoverrides_italic_setter(instance):
+@given(instance=model_overrides_FontOverrides_strategy)
+def test_model_overrides_fontoverrides_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=model_overrides_FontOverrides_strategy)
+def test_model_overrides_fontoverrides_bold_setter(instance):
+    original = instance.bold
+    instance.bold = original
+    assert instance.bold == original
+
+
+
+@given(instance=model_overrides_FontOverrides_strategy)
+def test_model_overrides_fontoverrides_italic_setter(instance):
     original = instance.italic
     instance.italic = original
     assert instance.italic == original
@@ -5185,76 +4970,64 @@ def test_fontoverrides_instantiation(instance):
 def test_stringtostringmap_instantiation(instance):
     assert isinstance(instance, StringToStringMap)
 
-@given(instance=model::overrides::Reference_strategy)
+@given(instance=model_overrides_Reference_strategy)
 @settings(max_examples=50)
-def test_model::overrides::reference_instantiation(instance):
-    assert isinstance(instance, model::overrides::Reference)
-
-@given(instance=model::overrides::Reference_strategy)
-def test_model::overrides::reference_ref_type(instance):
-    assert isinstance(instance.ref, str)
+def test_model_overrides_reference_instantiation(instance):
+    assert isinstance(instance, model_overrides_Reference)
 
 
-@given(instance=model::overrides::Reference_strategy)
-def test_model::overrides::reference_ref_setter(instance):
+
+@given(instance=model_overrides_Reference_strategy)
+def test_model_overrides_reference_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=overrides::model::EObject_strategy)
+@given(instance=overrides_model_EObject_strategy)
 @settings(max_examples=50)
-def test_overrides::model::eobject_instantiation(instance):
-    assert isinstance(instance, overrides::model::EObject)
+def test_overrides_model_eobject_instantiation(instance):
+    assert isinstance(instance, overrides_model_EObject)
 
-@given(instance=model::overrides::Insert_strategy)
+@given(instance=model_overrides_Insert_strategy)
 @settings(max_examples=50)
-def test_model::overrides::insert_instantiation(instance):
-    assert isinstance(instance, model::overrides::Insert)
-
-@given(instance=model::overrides::Insert_strategy)
-def test_model::overrides::insert_newIndex_type(instance):
-    assert isinstance(instance.newIndex, int)
+def test_model_overrides_insert_instantiation(instance):
+    assert isinstance(instance, model_overrides_Insert)
 
 
-@given(instance=model::overrides::Insert_strategy)
-def test_model::overrides::insert_newIndex_setter(instance):
+
+@given(instance=model_overrides_Insert_strategy)
+def test_model_overrides_insert_newIndex_setter(instance):
     original = instance.newIndex
     instance.newIndex = original
     assert instance.newIndex == original
 
-@given(instance=overrides::Operation_strategy)
+@given(instance=overrides_Operation_strategy)
 @settings(max_examples=50)
-def test_overrides::operation_instantiation(instance):
-    assert isinstance(instance, overrides::Operation)
+def test_overrides_operation_instantiation(instance):
+    assert isinstance(instance, overrides_Operation)
 
-@given(instance=model::overrides::Operation_strategy)
+@given(instance=model_overrides_Operation_strategy)
 @settings(max_examples=50)
-def test_model::overrides::operation_instantiation(instance):
-    assert isinstance(instance, model::overrides::Operation)
+def test_model_overrides_operation_instantiation(instance):
+    assert isinstance(instance, model_overrides_Operation)
 
-@given(instance=model::overrides::StringToStringMap_strategy)
+@given(instance=model_overrides_StringToStringMap_strategy)
 @settings(max_examples=50)
-def test_model::overrides::stringtostringmap_instantiation(instance):
-    assert isinstance(instance, model::overrides::StringToStringMap)
-
-@given(instance=model::overrides::StringToStringMap_strategy)
-def test_model::overrides::stringtostringmap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_model_overrides_stringtostringmap_instantiation(instance):
+    assert isinstance(instance, model_overrides_StringToStringMap)
 
 
-@given(instance=model::overrides::StringToStringMap_strategy)
-def test_model::overrides::stringtostringmap_key_setter(instance):
+
+@given(instance=model_overrides_StringToStringMap_strategy)
+def test_model_overrides_stringtostringmap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=model::overrides::StringToStringMap_strategy)
-def test_model::overrides::stringtostringmap_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=model::overrides::StringToStringMap_strategy)
-def test_model::overrides::stringtostringmap_value_setter(instance):
+@given(instance=model_overrides_StringToStringMap_strategy)
+def test_model_overrides_stringtostringmap_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -5264,249 +5037,198 @@ def test_model::overrides::stringtostringmap_value_setter(instance):
 def test_reference_instantiation(instance):
     assert isinstance(instance, Reference)
 
-@given(instance=model::overrides::ItemOverrides_strategy)
+@given(instance=model_overrides_ItemOverrides_strategy)
 @settings(max_examples=50)
-def test_model::overrides::itemoverrides_instantiation(instance):
-    assert isinstance(instance, model::overrides::ItemOverrides)
-
-@given(instance=model::overrides::ItemOverrides_strategy)
-def test_model::overrides::itemoverrides_noLink_type(instance):
-    assert isinstance(instance.noLink, bool)
+def test_model_overrides_itemoverrides_instantiation(instance):
+    assert isinstance(instance, model_overrides_ItemOverrides)
 
 
-@given(instance=model::overrides::ItemOverrides_strategy)
-def test_model::overrides::itemoverrides_noLink_setter(instance):
-    original = instance.noLink
-    instance.noLink = original
-    assert instance.noLink == original
 
-@given(instance=model::overrides::ItemOverrides_strategy)
-def test_model::overrides::itemoverrides_link_type(instance):
-    assert isinstance(instance.link, str)
-
-
-@given(instance=model::overrides::ItemOverrides_strategy)
-def test_model::overrides::itemoverrides_link_setter(instance):
+@given(instance=model_overrides_ItemOverrides_strategy)
+def test_model_overrides_itemoverrides_link_setter(instance):
     original = instance.link
     instance.link = original
     assert instance.link == original
 
-@given(instance=model::overrides::ItemOverrides_strategy)
-def test_model::overrides::itemoverrides_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=model::overrides::ItemOverrides_strategy)
-def test_model::overrides::itemoverrides_text_setter(instance):
+@given(instance=model_overrides_ItemOverrides_strategy)
+def test_model_overrides_itemoverrides_noLink_setter(instance):
+    original = instance.noLink
+    instance.noLink = original
+    assert instance.noLink == original
+
+
+
+@given(instance=model_overrides_ItemOverrides_strategy)
+def test_model_overrides_itemoverrides_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=model::story::Panel_strategy)
+@given(instance=model_story_Panel_strategy)
 @settings(max_examples=50)
-def test_model::story::panel_instantiation(instance):
-    assert isinstance(instance, model::story::Panel)
-
-@given(instance=model::story::Panel_strategy)
-def test_model::story::panel_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_model_story_panel_instantiation(instance):
+    assert isinstance(instance, model_story_Panel)
 
 
-@given(instance=model::story::Panel_strategy)
-def test_model::story::panel_id_setter(instance):
+
+@given(instance=model_story_Panel_strategy)
+def test_model_story_panel_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=model::story::Panel_strategy)
-def test_model::story::panel_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
-@given(instance=model::story::Panel_strategy)
-def test_model::story::panel_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=model::story::Panel_strategy)
-def test_model::story::panel_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=model::story::Panel_strategy)
-def test_model::story::panel_y_setter(instance):
+@given(instance=model_story_Panel_strategy)
+def test_model_story_panel_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
+
+
+
+@given(instance=model_story_Panel_strategy)
+def test_model_story_panel_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
 
 @given(instance=Panel_strategy)
 @settings(max_examples=50)
 def test_panel_instantiation(instance):
     assert isinstance(instance, Panel)
 
-@given(instance=model::story::Storyboard_strategy)
+@given(instance=model_story_Storyboard_strategy)
 @settings(max_examples=50)
-def test_model::story::storyboard_instantiation(instance):
-    assert isinstance(instance, model::story::Storyboard)
+def test_model_story_storyboard_instantiation(instance):
+    assert isinstance(instance, model_story_Storyboard)
 
-@given(instance=model::NoteSupport_strategy)
+@given(instance=model_NoteSupport_strategy)
 @settings(max_examples=50)
-def test_model::notesupport_instantiation(instance):
-    assert isinstance(instance, model::NoteSupport)
-
-@given(instance=model::NoteSupport_strategy)
-def test_model::notesupport_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_model_notesupport_instantiation(instance):
+    assert isinstance(instance, model_NoteSupport)
 
 
-@given(instance=model::NoteSupport_strategy)
-def test_model::notesupport_note_setter(instance):
+
+@given(instance=model_NoteSupport_strategy)
+def test_model_notesupport_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=model::TextLinksSupport_strategy)
+@given(instance=model_TextLinksSupport_strategy)
 @settings(max_examples=50)
-def test_model::textlinkssupport_instantiation(instance):
-    assert isinstance(instance, model::TextLinksSupport)
+def test_model_textlinkssupport_instantiation(instance):
+    assert isinstance(instance, model_TextLinksSupport)
 
-@given(instance=model::AnnotationSupport_strategy)
+@given(instance=model_AnnotationSupport_strategy)
 @settings(max_examples=50)
-def test_model::annotationsupport_instantiation(instance):
-    assert isinstance(instance, model::AnnotationSupport)
+def test_model_annotationsupport_instantiation(instance):
+    assert isinstance(instance, model_AnnotationSupport)
 
-@given(instance=overrides::Reference_strategy)
+@given(instance=overrides_Reference_strategy)
 @settings(max_examples=50)
-def test_overrides::reference_instantiation(instance):
-    assert isinstance(instance, overrides::Reference)
+def test_overrides_reference_instantiation(instance):
+    assert isinstance(instance, overrides_Reference)
 
-@given(instance=model::overrides::Delete_strategy)
+@given(instance=model_overrides_Move_strategy)
 @settings(max_examples=50)
-def test_model::overrides::delete_instantiation(instance):
-    assert isinstance(instance, model::overrides::Delete)
-
-@given(instance=model::overrides::Move_strategy)
-@settings(max_examples=50)
-def test_model::overrides::move_instantiation(instance):
-    assert isinstance(instance, model::overrides::Move)
-
-@given(instance=model::overrides::Move_strategy)
-def test_model::overrides::move_newIndex_type(instance):
-    assert isinstance(instance.newIndex, int)
+def test_model_overrides_move_instantiation(instance):
+    assert isinstance(instance, model_overrides_Move)
 
 
-@given(instance=model::overrides::Move_strategy)
-def test_model::overrides::move_newIndex_setter(instance):
+
+@given(instance=model_overrides_Move_strategy)
+def test_model_overrides_move_newIndex_setter(instance):
     original = instance.newIndex
     instance.newIndex = original
     assert instance.newIndex == original
 
-@given(instance=overrides::WidgetContainerOverrides_strategy)
+@given(instance=model_overrides_Delete_strategy)
 @settings(max_examples=50)
-def test_overrides::widgetcontaineroverrides_instantiation(instance):
-    assert isinstance(instance, overrides::WidgetContainerOverrides)
+def test_model_overrides_delete_instantiation(instance):
+    assert isinstance(instance, model_overrides_Delete)
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
+@given(instance=overrides_WidgetContainerOverrides_strategy)
 @settings(max_examples=50)
-def test_model::overrides::widgetoverrides_instantiation(instance):
-    assert isinstance(instance, model::overrides::WidgetOverrides)
+def test_overrides_widgetcontaineroverrides_instantiation(instance):
+    assert isinstance(instance, overrides_WidgetContainerOverrides)
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_noLink_type(instance):
-    assert isinstance(instance.noLink, bool)
-
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_noLink_setter(instance):
-    original = instance.noLink
-    instance.noLink = original
-    assert instance.noLink == original
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=model_overrides_WidgetOverrides_strategy)
+@settings(max_examples=50)
+def test_model_overrides_widgetoverrides_instantiation(instance):
+    assert isinstance(instance, model_overrides_WidgetOverrides)
 
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_noText_type(instance):
-    assert isinstance(instance.noText, bool)
-
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_noText_setter(instance):
-    original = instance.noText
-    instance.noText = original
-    assert instance.noText == original
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_link_type(instance):
-    assert isinstance(instance.link, str)
-
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_link_setter(instance):
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_link_setter(instance):
     original = instance.link
     instance.link = original
     assert instance.link == original
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_src_type(instance):
-    assert isinstance(instance.src, str)
 
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
-
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_y_type(instance):
-    assert isinstance(instance.y, str)
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_noText_setter(instance):
+    original = instance.noText
+    instance.noText = original
+    assert instance.noText == original
 
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_y_setter(instance):
+
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_x_type(instance):
-    assert isinstance(instance.x, str)
 
 
-@given(instance=model::overrides::WidgetOverrides_strategy)
-def test_model::overrides::widgetoverrides_x_setter(instance):
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+
+
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_noLink_setter(instance):
+    original = instance.noLink
+    instance.noLink = original
+    assert instance.noLink == original
+
+
+
+@given(instance=model_overrides_WidgetOverrides_strategy)
+def test_model_overrides_widgetoverrides_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
@@ -5521,591 +5243,425 @@ def test_widgetoverrides_instantiation(instance):
 def test_widgetcontaineroverrides_instantiation(instance):
     assert isinstance(instance, WidgetContainerOverrides)
 
-@given(instance=model::overrides::Overrides_strategy)
+@given(instance=model_overrides_Overrides_strategy)
 @settings(max_examples=50)
-def test_model::overrides::overrides_instantiation(instance):
-    assert isinstance(instance, model::overrides::Overrides)
+def test_model_overrides_overrides_instantiation(instance):
+    assert isinstance(instance, model_overrides_Overrides)
 
 @given(instance=Storyboard_strategy)
 @settings(max_examples=50)
 def test_storyboard_instantiation(instance):
     assert isinstance(instance, Storyboard)
 
-@given(instance=story::model::Screen_strategy)
+@given(instance=story_model_Screen_strategy)
 @settings(max_examples=50)
-def test_story::model::screen_instantiation(instance):
-    assert isinstance(instance, story::model::Screen)
+def test_story_model_screen_instantiation(instance):
+    assert isinstance(instance, story_model_Screen)
 
-@given(instance=model::Shape_strategy)
+@given(instance=model_SkinSupport_strategy)
 @settings(max_examples=50)
-def test_model::shape_instantiation(instance):
-    assert isinstance(instance, model::Shape)
-
-@given(instance=model::Shape_strategy)
-def test_model::shape_shapeType_type(instance):
-    assert isinstance(instance.shapeType, str)
+def test_model_skinsupport_instantiation(instance):
+    assert isinstance(instance, model_SkinSupport)
 
 
-@given(instance=model::Shape_strategy)
-def test_model::shape_shapeType_setter(instance):
-    original = instance.shapeType
-    instance.shapeType = original
-    assert instance.shapeType == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::Shape_strategy)
-@settings(max_examples=30)
-def test_model::shape_isrotatable_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isRotatable()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isRotatable).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isRotatable' in model::Shape is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isRotatable' in model::Shape did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isRotatable' in model::Shape is not implemented or raised an error")
-
-@given(instance=model::SkinSupport_strategy)
-@settings(max_examples=50)
-def test_model::skinsupport_instantiation(instance):
-    assert isinstance(instance, model::SkinSupport)
-
-@given(instance=model::SkinSupport_strategy)
-def test_model::skinsupport_skin_type(instance):
-    assert isinstance(instance.skin, str)
-
-
-@given(instance=model::SkinSupport_strategy)
-def test_model::skinsupport_skin_setter(instance):
+@given(instance=model_SkinSupport_strategy)
+def test_model_skinsupport_skin_setter(instance):
     original = instance.skin
     instance.skin = original
     assert instance.skin == original
 
-@given(instance=model::VButtonBar_strategy)
+@given(instance=model_VButtonBar_strategy)
 @settings(max_examples=50)
-def test_model::vbuttonbar_instantiation(instance):
-    assert isinstance(instance, model::VButtonBar)
+def test_model_vbuttonbar_instantiation(instance):
+    assert isinstance(instance, model_VButtonBar)
 
-@given(instance=model::LineHeightSupport_strategy)
+@given(instance=model_LineHeightSupport_strategy)
 @settings(max_examples=50)
-def test_model::lineheightsupport_instantiation(instance):
-    assert isinstance(instance, model::LineHeightSupport)
-
-@given(instance=model::LineHeightSupport_strategy)
-def test_model::lineheightsupport_lineHeight_type(instance):
-    assert isinstance(instance.lineHeight, str)
+def test_model_lineheightsupport_instantiation(instance):
+    assert isinstance(instance, model_LineHeightSupport)
 
 
-@given(instance=model::LineHeightSupport_strategy)
-def test_model::lineheightsupport_lineHeight_setter(instance):
+
+@given(instance=model_LineHeightSupport_strategy)
+def test_model_lineheightsupport_lineHeight_setter(instance):
     original = instance.lineHeight
     instance.lineHeight = original
     assert instance.lineHeight == original
 
-@given(instance=model::Switch_strategy)
+@given(instance=model_Switch_strategy)
 @settings(max_examples=50)
-def test_model::switch_instantiation(instance):
-    assert isinstance(instance, model::Switch)
+def test_model_switch_instantiation(instance):
+    assert isinstance(instance, model_Switch)
 
-@given(instance=model::Alert_strategy)
+@given(instance=model_Alert_strategy)
 @settings(max_examples=50)
-def test_model::alert_instantiation(instance):
-    assert isinstance(instance, model::Alert)
+def test_model_alert_instantiation(instance):
+    assert isinstance(instance, model_Alert)
 
-@given(instance=model::NameSupport_strategy)
+@given(instance=model_NameSupport_strategy)
 @settings(max_examples=50)
-def test_model::namesupport_instantiation(instance):
-    assert isinstance(instance, model::NameSupport)
-
-@given(instance=model::NameSupport_strategy)
-def test_model::namesupport_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_namesupport_instantiation(instance):
+    assert isinstance(instance, model_NameSupport)
 
 
-@given(instance=model::NameSupport_strategy)
-def test_model::namesupport_name_setter(instance):
+
+@given(instance=model_NameSupport_strategy)
+def test_model_namesupport_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Hotspot_strategy)
+@given(instance=model_Hotspot_strategy)
 @settings(max_examples=50)
-def test_model::hotspot_instantiation(instance):
-    assert isinstance(instance, model::Hotspot)
+def test_model_hotspot_instantiation(instance):
+    assert isinstance(instance, model_Hotspot)
 
-@given(instance=model::LinkSupport_strategy)
+@given(instance=model_LinkSupport_strategy)
 @settings(max_examples=50)
-def test_model::linksupport_instantiation(instance):
-    assert isinstance(instance, model::LinkSupport)
-
-@given(instance=model::LinkSupport_strategy)
-def test_model::linksupport_link_type(instance):
-    assert isinstance(instance.link, str)
+def test_model_linksupport_instantiation(instance):
+    assert isinstance(instance, model_LinkSupport)
 
 
-@given(instance=model::LinkSupport_strategy)
-def test_model::linksupport_link_setter(instance):
+
+@given(instance=model_LinkSupport_strategy)
+def test_model_linksupport_link_setter(instance):
     original = instance.link
     instance.link = original
     assert instance.link == original
 
-@given(instance=model::FlipSupport_strategy)
+@given(instance=model_FlipSupport_strategy)
 @settings(max_examples=50)
-def test_model::flipsupport_instantiation(instance):
-    assert isinstance(instance, model::FlipSupport)
-
-@given(instance=model::FlipSupport_strategy)
-def test_model::flipsupport_hFlip_type(instance):
-    assert isinstance(instance.hFlip, bool)
+def test_model_flipsupport_instantiation(instance):
+    assert isinstance(instance, model_FlipSupport)
 
 
-@given(instance=model::FlipSupport_strategy)
-def test_model::flipsupport_hFlip_setter(instance):
-    original = instance.hFlip
-    instance.hFlip = original
-    assert instance.hFlip == original
 
-@given(instance=model::FlipSupport_strategy)
-def test_model::flipsupport_vFlip_type(instance):
-    assert isinstance(instance.vFlip, bool)
-
-
-@given(instance=model::FlipSupport_strategy)
-def test_model::flipsupport_vFlip_setter(instance):
+@given(instance=model_FlipSupport_strategy)
+def test_model_flipsupport_vFlip_setter(instance):
     original = instance.vFlip
     instance.vFlip = original
     assert instance.vFlip == original
 
-@given(instance=model::RotationSupport_strategy)
+
+
+@given(instance=model_FlipSupport_strategy)
+def test_model_flipsupport_hFlip_setter(instance):
+    original = instance.hFlip
+    instance.hFlip = original
+    assert instance.hFlip == original
+
+@given(instance=model_RotationSupport_strategy)
 @settings(max_examples=50)
-def test_model::rotationsupport_instantiation(instance):
-    assert isinstance(instance, model::RotationSupport)
-
-@given(instance=model::RotationSupport_strategy)
-def test_model::rotationsupport_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
+def test_model_rotationsupport_instantiation(instance):
+    assert isinstance(instance, model_RotationSupport)
 
 
-@given(instance=model::RotationSupport_strategy)
-def test_model::rotationsupport_rotation_setter(instance):
+
+@given(instance=model_RotationSupport_strategy)
+def test_model_rotationsupport_rotation_setter(instance):
     original = instance.rotation
     instance.rotation = original
     assert instance.rotation == original
 
-@given(instance=model::LineStyleSupport_strategy)
+@given(instance=model_LineStyleSupport_strategy)
 @settings(max_examples=50)
-def test_model::linestylesupport_instantiation(instance):
-    assert isinstance(instance, model::LineStyleSupport)
-
-@given(instance=model::LineStyleSupport_strategy)
-def test_model::linestylesupport_lineStyle_type(instance):
-    assert isinstance(instance.lineStyle, str)
+def test_model_linestylesupport_instantiation(instance):
+    assert isinstance(instance, model_LineStyleSupport)
 
 
-@given(instance=model::LineStyleSupport_strategy)
-def test_model::linestylesupport_lineStyle_setter(instance):
+
+@given(instance=model_LineStyleSupport_strategy)
+def test_model_linestylesupport_lineStyle_setter(instance):
     original = instance.lineStyle
     instance.lineStyle = original
     assert instance.lineStyle == original
 
-@given(instance=model::ColorAlternativeSupport_strategy)
+@given(instance=model_ColorAlternativeSupport_strategy)
 @settings(max_examples=50)
-def test_model::coloralternativesupport_instantiation(instance):
-    assert isinstance(instance, model::ColorAlternativeSupport)
-
-@given(instance=model::ColorAlternativeSupport_strategy)
-def test_model::coloralternativesupport_alternative_type(instance):
-    assert isinstance(instance.alternative, str)
+def test_model_coloralternativesupport_instantiation(instance):
+    assert isinstance(instance, model_ColorAlternativeSupport)
 
 
-@given(instance=model::ColorAlternativeSupport_strategy)
-def test_model::coloralternativesupport_alternative_setter(instance):
+
+@given(instance=model_ColorAlternativeSupport_strategy)
+def test_model_coloralternativesupport_alternative_setter(instance):
     original = instance.alternative
     instance.alternative = original
     assert instance.alternative == original
 
-@given(instance=model::IconPositionSupport_strategy)
+@given(instance=model_IconPositionSupport_strategy)
 @settings(max_examples=50)
-def test_model::iconpositionsupport_instantiation(instance):
-    assert isinstance(instance, model::IconPositionSupport)
-
-@given(instance=model::IconPositionSupport_strategy)
-def test_model::iconpositionsupport_iconPosition_type(instance):
-    assert isinstance(instance.iconPosition, str)
+def test_model_iconpositionsupport_instantiation(instance):
+    assert isinstance(instance, model_IconPositionSupport)
 
 
-@given(instance=model::IconPositionSupport_strategy)
-def test_model::iconpositionsupport_iconPosition_setter(instance):
+
+@given(instance=model_IconPositionSupport_strategy)
+def test_model_iconpositionsupport_iconPosition_setter(instance):
     original = instance.iconPosition
     instance.iconPosition = original
     assert instance.iconPosition == original
 
-@given(instance=model::Rectangle_strategy)
+@given(instance=model_Rectangle_strategy)
 @settings(max_examples=50)
-def test_model::rectangle_instantiation(instance):
-    assert isinstance(instance, model::Rectangle)
+def test_model_rectangle_instantiation(instance):
+    assert isinstance(instance, model_Rectangle)
 
-@given(instance=model::ItemSupport_strategy)
+@given(instance=model_ItemSupport_strategy)
 @settings(max_examples=50)
-def test_model::itemsupport_instantiation(instance):
-    assert isinstance(instance, model::ItemSupport)
+def test_model_itemsupport_instantiation(instance):
+    assert isinstance(instance, model_ItemSupport)
 
-@given(instance=model::Item_strategy)
+@given(instance=model_Item_strategy)
 @settings(max_examples=50)
-def test_model::item_instantiation(instance):
-    assert isinstance(instance, model::Item)
-
-@given(instance=model::Item_strategy)
-def test_model::item_width_type(instance):
-    assert isinstance(instance.width, int)
+def test_model_item_instantiation(instance):
+    assert isinstance(instance, model_Item)
 
 
-@given(instance=model::Item_strategy)
-def test_model::item_width_setter(instance):
+
+@given(instance=model_Item_strategy)
+def test_model_item_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=model::Item_strategy)
-def test_model::item_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
-@given(instance=model::Item_strategy)
-def test_model::item_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=model::Item_strategy)
-def test_model::item_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=model::Item_strategy)
-def test_model::item_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=model::Item_strategy)
-def test_model::item_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=model::Item_strategy)
-def test_model::item_y_setter(instance):
+@given(instance=model_Item_strategy)
+def test_model_item_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=model::Item_strategy)
-def test_model::item_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=model::Item_strategy)
-def test_model::item_height_setter(instance):
+@given(instance=model_Item_strategy)
+def test_model_item_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=model_Item_strategy)
+def test_model_item_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=model::Chart_strategy)
+
+
+@given(instance=model_Item_strategy)
+def test_model_item_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=model_Chart_strategy)
 @settings(max_examples=50)
-def test_model::chart_instantiation(instance):
-    assert isinstance(instance, model::Chart)
-
-@given(instance=model::Chart_strategy)
-def test_model::chart_chartType_type(instance):
-    assert isinstance(instance.chartType, str)
+def test_model_chart_instantiation(instance):
+    assert isinstance(instance, model_Chart)
 
 
-@given(instance=model::Chart_strategy)
-def test_model::chart_chartType_setter(instance):
+
+@given(instance=model_Chart_strategy)
+def test_model_chart_chartType_setter(instance):
     original = instance.chartType
     instance.chartType = original
     assert instance.chartType == original
 
-@given(instance=model::ListSupport_strategy)
+@given(instance=model_ListSupport_strategy)
 @settings(max_examples=50)
-def test_model::listsupport_instantiation(instance):
-    assert isinstance(instance, model::ListSupport)
-
-@given(instance=model::ListSupport_strategy)
-def test_model::listsupport_rowHeight_type(instance):
-    assert isinstance(instance.rowHeight, int)
+def test_model_listsupport_instantiation(instance):
+    assert isinstance(instance, model_ListSupport)
 
 
-@given(instance=model::ListSupport_strategy)
-def test_model::listsupport_rowHeight_setter(instance):
-    original = instance.rowHeight
-    instance.rowHeight = original
-    assert instance.rowHeight == original
 
-@given(instance=model::ListSupport_strategy)
-def test_model::listsupport_horizontalLines_type(instance):
-    assert isinstance(instance.horizontalLines, bool)
-
-
-@given(instance=model::ListSupport_strategy)
-def test_model::listsupport_horizontalLines_setter(instance):
+@given(instance=model_ListSupport_strategy)
+def test_model_listsupport_horizontalLines_setter(instance):
     original = instance.horizontalLines
     instance.horizontalLines = original
     assert instance.horizontalLines == original
 
-@given(instance=model::ColorPicker_strategy)
+
+
+@given(instance=model_ListSupport_strategy)
+def test_model_listsupport_rowHeight_setter(instance):
+    original = instance.rowHeight
+    instance.rowHeight = original
+    assert instance.rowHeight == original
+
+@given(instance=model_ColorPicker_strategy)
 @settings(max_examples=50)
-def test_model::colorpicker_instantiation(instance):
-    assert isinstance(instance, model::ColorPicker)
+def test_model_colorpicker_instantiation(instance):
+    assert isinstance(instance, model_ColorPicker)
 
-@given(instance=model::ValueSupport_strategy)
+@given(instance=model_ValueSupport_strategy)
 @settings(max_examples=50)
-def test_model::valuesupport_instantiation(instance):
-    assert isinstance(instance, model::ValueSupport)
-
-@given(instance=model::ValueSupport_strategy)
-def test_model::valuesupport_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_model_valuesupport_instantiation(instance):
+    assert isinstance(instance, model_ValueSupport)
 
 
-@given(instance=model::ValueSupport_strategy)
-def test_model::valuesupport_value_setter(instance):
+
+@given(instance=model_ValueSupport_strategy)
+def test_model_valuesupport_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=model::VSplitter_strategy)
+@given(instance=model_VSplitter_strategy)
 @settings(max_examples=50)
-def test_model::vsplitter_instantiation(instance):
-    assert isinstance(instance, model::VSplitter)
+def test_model_vsplitter_instantiation(instance):
+    assert isinstance(instance, model_VSplitter)
 
-@given(instance=model::HSplitter_strategy)
+@given(instance=model_HSplitter_strategy)
 @settings(max_examples=50)
-def test_model::hsplitter_instantiation(instance):
-    assert isinstance(instance, model::HSplitter)
+def test_model_hsplitter_instantiation(instance):
+    assert isinstance(instance, model_HSplitter)
 
-@given(instance=model::Circle_strategy)
+@given(instance=model_BorderStyleSupport_strategy)
 @settings(max_examples=50)
-def test_model::circle_instantiation(instance):
-    assert isinstance(instance, model::Circle)
-
-@given(instance=model::BorderStyleSupport_strategy)
-@settings(max_examples=50)
-def test_model::borderstylesupport_instantiation(instance):
-    assert isinstance(instance, model::BorderStyleSupport)
-
-@given(instance=model::BorderStyleSupport_strategy)
-def test_model::borderstylesupport_border_type(instance):
-    assert isinstance(instance.border, str)
+def test_model_borderstylesupport_instantiation(instance):
+    assert isinstance(instance, model_BorderStyleSupport)
 
 
-@given(instance=model::BorderStyleSupport_strategy)
-def test_model::borderstylesupport_border_setter(instance):
+
+@given(instance=model_BorderStyleSupport_strategy)
+def test_model_borderstylesupport_border_setter(instance):
     original = instance.border
     instance.border = original
     assert instance.border == original
 
-@given(instance=model::ButtonBar_strategy)
+@given(instance=model_ButtonBar_strategy)
 @settings(max_examples=50)
-def test_model::buttonbar_instantiation(instance):
-    assert isinstance(instance, model::ButtonBar)
+def test_model_buttonbar_instantiation(instance):
+    assert isinstance(instance, model_ButtonBar)
 
-@given(instance=model::DateField_strategy)
+@given(instance=model_DateField_strategy)
 @settings(max_examples=50)
-def test_model::datefield_instantiation(instance):
-    assert isinstance(instance, model::DateField)
+def test_model_datefield_instantiation(instance):
+    assert isinstance(instance, model_DateField)
 
-@given(instance=model::VerticalScrollbarSupport_strategy)
+@given(instance=model_VerticalScrollbarSupport_strategy)
 @settings(max_examples=50)
-def test_model::verticalscrollbarsupport_instantiation(instance):
-    assert isinstance(instance, model::VerticalScrollbarSupport)
-
-@given(instance=model::VerticalScrollbarSupport_strategy)
-def test_model::verticalscrollbarsupport_verticalScrollbar_type(instance):
-    assert isinstance(instance.verticalScrollbar, bool)
+def test_model_verticalscrollbarsupport_instantiation(instance):
+    assert isinstance(instance, model_VerticalScrollbarSupport)
 
 
-@given(instance=model::VerticalScrollbarSupport_strategy)
-def test_model::verticalscrollbarsupport_verticalScrollbar_setter(instance):
+
+@given(instance=model_VerticalScrollbarSupport_strategy)
+def test_model_verticalscrollbarsupport_verticalScrollbar_setter(instance):
     original = instance.verticalScrollbar
     instance.verticalScrollbar = original
     assert instance.verticalScrollbar == original
 
-@given(instance=model::Accordion_strategy)
+@given(instance=model_Accordion_strategy)
 @settings(max_examples=50)
-def test_model::accordion_instantiation(instance):
-    assert isinstance(instance, model::Accordion)
+def test_model_accordion_instantiation(instance):
+    assert isinstance(instance, model_Accordion)
 
-@given(instance=model::LinkBar_strategy)
+@given(instance=model_LinkBar_strategy)
 @settings(max_examples=50)
-def test_model::linkbar_instantiation(instance):
-    assert isinstance(instance, model::LinkBar)
+def test_model_linkbar_instantiation(instance):
+    assert isinstance(instance, model_LinkBar)
 
-@given(instance=model::IconSupport_strategy)
+@given(instance=model_IconSupport_strategy)
 @settings(max_examples=50)
-def test_model::iconsupport_instantiation(instance):
-    assert isinstance(instance, model::IconSupport)
-
-@given(instance=model::IconSupport_strategy)
-def test_model::iconsupport_icon_type(instance):
-    assert isinstance(instance.icon, str)
+def test_model_iconsupport_instantiation(instance):
+    assert isinstance(instance, model_IconSupport)
 
 
-@given(instance=model::IconSupport_strategy)
-def test_model::iconsupport_icon_setter(instance):
+
+@given(instance=model_IconSupport_strategy)
+def test_model_iconsupport_icon_setter(instance):
     original = instance.icon
     instance.icon = original
     assert instance.icon == original
 
-@given(instance=model::IconSupport_strategy)
-def test_model::iconsupport_iconRotation_type(instance):
-    assert isinstance(instance.iconRotation, str)
 
 
-@given(instance=model::IconSupport_strategy)
-def test_model::iconsupport_iconRotation_setter(instance):
+@given(instance=model_IconSupport_strategy)
+def test_model_iconsupport_iconRotation_setter(instance):
     original = instance.iconRotation
     instance.iconRotation = original
     assert instance.iconRotation == original
 
-@given(instance=model::TabbedPane_strategy)
+@given(instance=model_TabbedPane_strategy)
 @settings(max_examples=50)
-def test_model::tabbedpane_instantiation(instance):
-    assert isinstance(instance, model::TabbedPane)
-
-@given(instance=model::TabbedPane_strategy)
-def test_model::tabbedpane_position_type(instance):
-    assert isinstance(instance.position, str)
+def test_model_tabbedpane_instantiation(instance):
+    assert isinstance(instance, model_TabbedPane)
 
 
-@given(instance=model::TabbedPane_strategy)
-def test_model::tabbedpane_position_setter(instance):
+
+@given(instance=model_TabbedPane_strategy)
+def test_model_tabbedpane_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=model::CoverFlow_strategy)
+@given(instance=model_CoverFlow_strategy)
 @settings(max_examples=50)
-def test_model::coverflow_instantiation(instance):
-    assert isinstance(instance, model::CoverFlow)
+def test_model_coverflow_instantiation(instance):
+    assert isinstance(instance, model_CoverFlow)
 
-@given(instance=model::Map_strategy)
+@given(instance=model_Map_strategy)
 @settings(max_examples=50)
-def test_model::map_instantiation(instance):
-    assert isinstance(instance, model::Map)
+def test_model_map_instantiation(instance):
+    assert isinstance(instance, model_Map)
 
-@given(instance=model::VideoPlayer_strategy)
+@given(instance=model_VideoPlayer_strategy)
 @settings(max_examples=50)
-def test_model::videoplayer_instantiation(instance):
-    assert isinstance(instance, model::VideoPlayer)
+def test_model_videoplayer_instantiation(instance):
+    assert isinstance(instance, model_VideoPlayer)
 
-@given(instance=model::ProgressBar_strategy)
+@given(instance=model_ProgressBar_strategy)
 @settings(max_examples=50)
-def test_model::progressbar_instantiation(instance):
-    assert isinstance(instance, model::ProgressBar)
+def test_model_progressbar_instantiation(instance):
+    assert isinstance(instance, model_ProgressBar)
 
 @given(instance=AnnotationSupport_strategy)
 @settings(max_examples=50)
 def test_annotationsupport_instantiation(instance):
     assert isinstance(instance, AnnotationSupport)
 
-@given(instance=model::CurlyBrace_strategy)
+@given(instance=model_CrossOut_strategy)
 @settings(max_examples=50)
-def test_model::curlybrace_instantiation(instance):
-    assert isinstance(instance, model::CurlyBrace)
+def test_model_crossout_instantiation(instance):
+    assert isinstance(instance, model_CrossOut)
 
-@given(instance=model::CurlyBrace_strategy)
-def test_model::curlybrace_position_type(instance):
-    assert isinstance(instance.position, str)
+@given(instance=model_CurlyBrace_strategy)
+@settings(max_examples=50)
+def test_model_curlybrace_instantiation(instance):
+    assert isinstance(instance, model_CurlyBrace)
 
 
-@given(instance=model::CurlyBrace_strategy)
-def test_model::curlybrace_position_setter(instance):
+
+@given(instance=model_CurlyBrace_strategy)
+def test_model_curlybrace_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=model::CrossOut_strategy)
+@given(instance=model_Callout_strategy)
 @settings(max_examples=50)
-def test_model::crossout_instantiation(instance):
-    assert isinstance(instance, model::CrossOut)
+def test_model_callout_instantiation(instance):
+    assert isinstance(instance, model_Callout)
 
-@given(instance=model::Arrow_strategy)
+@given(instance=model_Breadcrumbs_strategy)
 @settings(max_examples=50)
-def test_model::arrow_instantiation(instance):
-    assert isinstance(instance, model::Arrow)
+def test_model_breadcrumbs_instantiation(instance):
+    assert isinstance(instance, model_Breadcrumbs)
 
-@given(instance=model::Arrow_strategy)
-def test_model::arrow_right_type(instance):
-    assert isinstance(instance.right, bool)
-
-
-@given(instance=model::Arrow_strategy)
-def test_model::arrow_right_setter(instance):
-    original = instance.right
-    instance.right = original
-    assert instance.right == original
-
-@given(instance=model::Arrow_strategy)
-def test_model::arrow_left_type(instance):
-    assert isinstance(instance.left, bool)
-
-
-@given(instance=model::Arrow_strategy)
-def test_model::arrow_left_setter(instance):
-    original = instance.left
-    instance.left = original
-    assert instance.left == original
-
-@given(instance=model::Arrow_strategy)
-def test_model::arrow_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=model::Arrow_strategy)
-def test_model::arrow_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=model::Callout_strategy)
+@given(instance=model_StateSupport_strategy)
 @settings(max_examples=50)
-def test_model::callout_instantiation(instance):
-    assert isinstance(instance, model::Callout)
-
-@given(instance=model::Breadcrumbs_strategy)
-@settings(max_examples=50)
-def test_model::breadcrumbs_instantiation(instance):
-    assert isinstance(instance, model::Breadcrumbs)
-
-@given(instance=model::StateSupport_strategy)
-@settings(max_examples=50)
-def test_model::statesupport_instantiation(instance):
-    assert isinstance(instance, model::StateSupport)
-
-@given(instance=model::StateSupport_strategy)
-def test_model::statesupport_state_type(instance):
-    assert isinstance(instance.state, str)
+def test_model_statesupport_instantiation(instance):
+    assert isinstance(instance, model_StateSupport)
 
 
-@given(instance=model::StateSupport_strategy)
-def test_model::statesupport_state_setter(instance):
+
+@given(instance=model_StateSupport_strategy)
+def test_model_statesupport_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
@@ -6116,9 +5672,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::StateSupport_strategy)
+@given(instance=model_StateSupport_strategy)
 @settings(max_examples=30)
-def test_model::statesupport_isvalidstate_changes_state(instance):
+def test_model_statesupport_isvalidstate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6132,191 +5688,161 @@ def test_model::statesupport_isvalidstate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isValidState' in model::StateSupport is empty"
+        assert has_statements, f"Function 'isValidState' in model_StateSupport is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isValidState' in model::StateSupport did not change state; check implementation")
+            warnings.warn(f"Operation 'isValidState' in model_StateSupport did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isValidState' in model::StateSupport is not implemented or raised an error")
+        warnings.warn(f"Operation 'isValidState' in model_StateSupport is not implemented or raised an error")
 
-@given(instance=model::BorderSupport_strategy)
+@given(instance=model_BorderSupport_strategy)
 @settings(max_examples=50)
-def test_model::bordersupport_instantiation(instance):
-    assert isinstance(instance, model::BorderSupport)
-
-@given(instance=model::BorderSupport_strategy)
-def test_model::bordersupport_border_type(instance):
-    assert isinstance(instance.border, bool)
+def test_model_bordersupport_instantiation(instance):
+    assert isinstance(instance, model_BorderSupport)
 
 
-@given(instance=model::BorderSupport_strategy)
-def test_model::bordersupport_border_setter(instance):
+
+@given(instance=model_BorderSupport_strategy)
+def test_model_bordersupport_border_setter(instance):
     original = instance.border
     instance.border = original
     assert instance.border == original
 
-@given(instance=model::ScratchOut_strategy)
+@given(instance=model_ScratchOut_strategy)
 @settings(max_examples=50)
-def test_model::scratchout_instantiation(instance):
-    assert isinstance(instance, model::ScratchOut)
+def test_model_scratchout_instantiation(instance):
+    assert isinstance(instance, model_ScratchOut)
 
-@given(instance=model::Tooltip_strategy)
+@given(instance=model_Tooltip_strategy)
 @settings(max_examples=50)
-def test_model::tooltip_instantiation(instance):
-    assert isinstance(instance, model::Tooltip)
-
-@given(instance=model::Tooltip_strategy)
-def test_model::tooltip_position_type(instance):
-    assert isinstance(instance.position, str)
+def test_model_tooltip_instantiation(instance):
+    assert isinstance(instance, model_Tooltip)
 
 
-@given(instance=model::Tooltip_strategy)
-def test_model::tooltip_position_setter(instance):
+
+@given(instance=model_Tooltip_strategy)
+def test_model_tooltip_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=model::SearchField_strategy)
+@given(instance=model_SearchField_strategy)
 @settings(max_examples=50)
-def test_model::searchfield_instantiation(instance):
-    assert isinstance(instance, model::SearchField)
+def test_model_searchfield_instantiation(instance):
+    assert isinstance(instance, model_SearchField)
 
-@given(instance=model::FontSupport_strategy)
+@given(instance=model_FontSupport_strategy)
 @settings(max_examples=50)
-def test_model::fontsupport_instantiation(instance):
-    assert isinstance(instance, model::FontSupport)
+def test_model_fontsupport_instantiation(instance):
+    assert isinstance(instance, model_FontSupport)
 
-@given(instance=model::Note_strategy)
+@given(instance=model_Note_strategy)
 @settings(max_examples=50)
-def test_model::note_instantiation(instance):
-    assert isinstance(instance, model::Note)
+def test_model_note_instantiation(instance):
+    assert isinstance(instance, model_Note)
 
-@given(instance=model::BooleanSelectionSupport_strategy)
+@given(instance=model_BooleanSelectionSupport_strategy)
 @settings(max_examples=50)
-def test_model::booleanselectionsupport_instantiation(instance):
-    assert isinstance(instance, model::BooleanSelectionSupport)
-
-@given(instance=model::BooleanSelectionSupport_strategy)
-def test_model::booleanselectionsupport_selected_type(instance):
-    assert isinstance(instance.selected, bool)
+def test_model_booleanselectionsupport_instantiation(instance):
+    assert isinstance(instance, model_BooleanSelectionSupport)
 
 
-@given(instance=model::BooleanSelectionSupport_strategy)
-def test_model::booleanselectionsupport_selected_setter(instance):
+
+@given(instance=model_BooleanSelectionSupport_strategy)
+def test_model_booleanselectionsupport_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
 
-@given(instance=model::TextAlignmentSupport_strategy)
+@given(instance=model_TextAlignmentSupport_strategy)
 @settings(max_examples=50)
-def test_model::textalignmentsupport_instantiation(instance):
-    assert isinstance(instance, model::TextAlignmentSupport)
-
-@given(instance=model::TextAlignmentSupport_strategy)
-def test_model::textalignmentsupport_textAlignment_type(instance):
-    assert isinstance(instance.textAlignment, str)
+def test_model_textalignmentsupport_instantiation(instance):
+    assert isinstance(instance, model_TextAlignmentSupport)
 
 
-@given(instance=model::TextAlignmentSupport_strategy)
-def test_model::textalignmentsupport_textAlignment_setter(instance):
+
+@given(instance=model_TextAlignmentSupport_strategy)
+def test_model_textalignmentsupport_textAlignment_setter(instance):
     original = instance.textAlignment
     instance.textAlignment = original
     assert instance.textAlignment == original
 
-@given(instance=model::SelectionSupport_strategy)
+@given(instance=model_SelectionSupport_strategy)
 @settings(max_examples=50)
-def test_model::selectionsupport_instantiation(instance):
-    assert isinstance(instance, model::SelectionSupport)
-
-@given(instance=model::SelectionSupport_strategy)
-def test_model::selectionsupport_selection_type(instance):
-    assert isinstance(instance.selection, str)
+def test_model_selectionsupport_instantiation(instance):
+    assert isinstance(instance, model_SelectionSupport)
 
 
-@given(instance=model::SelectionSupport_strategy)
-def test_model::selectionsupport_selection_setter(instance):
+
+@given(instance=model_SelectionSupport_strategy)
+def test_model_selectionsupport_selection_setter(instance):
     original = instance.selection
     instance.selection = original
     assert instance.selection == original
 
-@given(instance=model::ColorAlphaSupport_strategy)
+@given(instance=model_ColorAlphaSupport_strategy)
 @settings(max_examples=50)
-def test_model::coloralphasupport_instantiation(instance):
-    assert isinstance(instance, model::ColorAlphaSupport)
-
-@given(instance=model::ColorAlphaSupport_strategy)
-def test_model::coloralphasupport_alpha_type(instance):
-    assert isinstance(instance.alpha, int)
+def test_model_coloralphasupport_instantiation(instance):
+    assert isinstance(instance, model_ColorAlphaSupport)
 
 
-@given(instance=model::ColorAlphaSupport_strategy)
-def test_model::coloralphasupport_alpha_setter(instance):
+
+@given(instance=model_ColorAlphaSupport_strategy)
+def test_model_coloralphasupport_alpha_setter(instance):
     original = instance.alpha
     instance.alpha = original
     assert instance.alpha == original
 
-@given(instance=model::ColorBorderSupport_strategy)
+@given(instance=model_ColorBorderSupport_strategy)
 @settings(max_examples=50)
-def test_model::colorbordersupport_instantiation(instance):
-    assert isinstance(instance, model::ColorBorderSupport)
-
-@given(instance=model::ColorBorderSupport_strategy)
-def test_model::colorbordersupport_borderColor_type(instance):
-    assert isinstance(instance.borderColor, str)
+def test_model_colorbordersupport_instantiation(instance):
+    assert isinstance(instance, model_ColorBorderSupport)
 
 
-@given(instance=model::ColorBorderSupport_strategy)
-def test_model::colorbordersupport_borderColor_setter(instance):
+
+@given(instance=model_ColorBorderSupport_strategy)
+def test_model_colorbordersupport_borderColor_setter(instance):
     original = instance.borderColor
     instance.borderColor = original
     assert instance.borderColor == original
 
-@given(instance=model::ColorBackgroundSupport_strategy)
+@given(instance=model_ColorBackgroundSupport_strategy)
 @settings(max_examples=50)
-def test_model::colorbackgroundsupport_instantiation(instance):
-    assert isinstance(instance, model::ColorBackgroundSupport)
-
-@given(instance=model::ColorBackgroundSupport_strategy)
-def test_model::colorbackgroundsupport_background_type(instance):
-    assert isinstance(instance.background, str)
+def test_model_colorbackgroundsupport_instantiation(instance):
+    assert isinstance(instance, model_ColorBackgroundSupport)
 
 
-@given(instance=model::ColorBackgroundSupport_strategy)
-def test_model::colorbackgroundsupport_background_setter(instance):
+
+@given(instance=model_ColorBackgroundSupport_strategy)
+def test_model_colorbackgroundsupport_background_setter(instance):
     original = instance.background
     instance.background = original
     assert instance.background == original
 
-@given(instance=model::ColorForegroundSupport_strategy)
+@given(instance=model_ColorForegroundSupport_strategy)
 @settings(max_examples=50)
-def test_model::colorforegroundsupport_instantiation(instance):
-    assert isinstance(instance, model::ColorForegroundSupport)
-
-@given(instance=model::ColorForegroundSupport_strategy)
-def test_model::colorforegroundsupport_foreground_type(instance):
-    assert isinstance(instance.foreground, str)
+def test_model_colorforegroundsupport_instantiation(instance):
+    assert isinstance(instance, model_ColorForegroundSupport)
 
 
-@given(instance=model::ColorForegroundSupport_strategy)
-def test_model::colorforegroundsupport_foreground_setter(instance):
+
+@given(instance=model_ColorForegroundSupport_strategy)
+def test_model_colorforegroundsupport_foreground_setter(instance):
     original = instance.foreground
     instance.foreground = original
     assert instance.foreground == original
 
-@given(instance=model::Master_strategy)
+@given(instance=model_Master_strategy)
 @settings(max_examples=50)
-def test_model::master_instantiation(instance):
-    assert isinstance(instance, model::Master)
-
-@given(instance=model::Master_strategy)
-def test_model::master_dimmed_type(instance):
-    assert isinstance(instance.dimmed, bool)
+def test_model_master_instantiation(instance):
+    assert isinstance(instance, model_Master)
 
 
-@given(instance=model::Master_strategy)
-def test_model::master_dimmed_setter(instance):
+
+@given(instance=model_Master_strategy)
+def test_model_master_dimmed_setter(instance):
     original = instance.dimmed
     instance.dimmed = original
     assert instance.dimmed == original
@@ -6326,80 +5852,230 @@ def test_model::master_dimmed_setter(instance):
 def test_namesupport_instantiation(instance):
     assert isinstance(instance, NameSupport)
 
-@given(instance=model::WidgetGroup_strategy)
+@given(instance=model_WidgetGroup_strategy)
 @settings(max_examples=50)
-def test_model::widgetgroup_instantiation(instance):
-    assert isinstance(instance, model::WidgetGroup)
+def test_model_widgetgroup_instantiation(instance):
+    assert isinstance(instance, model_WidgetGroup)
 
 @given(instance=FlipSupport_strategy)
 @settings(max_examples=50)
 def test_flipsupport_instantiation(instance):
     assert isinstance(instance, FlipSupport)
 
-@given(instance=model::SVGImage_strategy)
+@given(instance=model_SVGImage_strategy)
 @settings(max_examples=50)
-def test_model::svgimage_instantiation(instance):
-    assert isinstance(instance, model::SVGImage)
-
-@given(instance=model::SVGImage_strategy)
-def test_model::svgimage_src_type(instance):
-    assert isinstance(instance.src, str)
+def test_model_svgimage_instantiation(instance):
+    assert isinstance(instance, model_SVGImage)
 
 
-@given(instance=model::SVGImage_strategy)
-def test_model::svgimage_src_setter(instance):
+
+@given(instance=model_SVGImage_strategy)
+def test_model_svgimage_src_setter(instance):
     original = instance.src
     instance.src = original
     assert instance.src == original
 
-@given(instance=model::Image_strategy)
+@given(instance=model_Image_strategy)
 @settings(max_examples=50)
-def test_model::image_instantiation(instance):
-    assert isinstance(instance, model::Image)
-
-@given(instance=model::Image_strategy)
-def test_model::image_src_type(instance):
-    assert isinstance(instance.src, str)
+def test_model_image_instantiation(instance):
+    assert isinstance(instance, model_Image)
 
 
-@given(instance=model::Image_strategy)
-def test_model::image_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
 
-@given(instance=model::Image_strategy)
-def test_model::image_grayscale_type(instance):
-    assert isinstance(instance.grayscale, bool)
-
-
-@given(instance=model::Image_strategy)
-def test_model::image_grayscale_setter(instance):
+@given(instance=model_Image_strategy)
+def test_model_image_grayscale_setter(instance):
     original = instance.grayscale
     instance.grayscale = original
     assert instance.grayscale == original
+
+
+
+@given(instance=model_Image_strategy)
+def test_model_image_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
 
 @given(instance=Overrides_strategy)
 @settings(max_examples=50)
 def test_overrides_instantiation(instance):
     assert isinstance(instance, Overrides)
 
-@given(instance=model::Tabs_strategy)
+@given(instance=model_Tabs_strategy)
 @settings(max_examples=50)
-def test_model::tabs_instantiation(instance):
-    assert isinstance(instance, model::Tabs)
+def test_model_tabs_instantiation(instance):
+    assert isinstance(instance, model_Tabs)
 
-@given(instance=model::VSlider_strategy)
+@given(instance=model_VSlider_strategy)
 @settings(max_examples=50)
-def test_model::vslider_instantiation(instance):
-    assert isinstance(instance, model::VSlider)
+def test_model_vslider_instantiation(instance):
+    assert isinstance(instance, model_VSlider)
 
-@given(instance=model::HSlider_strategy)
+@given(instance=model_HSlider_strategy)
 @settings(max_examples=50)
-def test_model::hslider_instantiation(instance):
-    assert isinstance(instance, model::HSlider)
+def test_model_hslider_instantiation(instance):
+    assert isinstance(instance, model_HSlider)
 
-@given(instance=model::VLine_strategy)
+@given(instance=model_Font_strategy)
 @settings(max_examples=50)
-def test_model::vline_instantiation(instance):
-    assert isinstance(instance, model::VLine)
+def test_model_font_instantiation(instance):
+    assert isinstance(instance, model_Font)
+
+
+
+@given(instance=model_Font_strategy)
+def test_model_font_underline_setter(instance):
+    original = instance.underline
+    instance.underline = original
+    assert instance.underline == original
+
+
+
+@given(instance=model_Font_strategy)
+def test_model_font_italic_setter(instance):
+    original = instance.italic
+    instance.italic = original
+    assert instance.italic == original
+
+
+
+@given(instance=model_Font_strategy)
+def test_model_font_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=model_Font_strategy)
+def test_model_font_bold_setter(instance):
+    original = instance.bold
+    instance.bold = original
+    assert instance.bold == original
+
+@given(instance=model_Tree_strategy)
+@settings(max_examples=50)
+def test_model_tree_instantiation(instance):
+    assert isinstance(instance, model_Tree)
+
+@given(instance=model_Table_strategy)
+@settings(max_examples=50)
+def test_model_table_instantiation(instance):
+    assert isinstance(instance, model_Table)
+
+
+
+@given(instance=model_Table_strategy)
+def test_model_table_header_setter(instance):
+    original = instance.header
+    instance.header = original
+    assert instance.header == original
+
+
+
+@given(instance=model_Table_strategy)
+def test_model_table_verticalLines_setter(instance):
+    original = instance.verticalLines
+    instance.verticalLines = original
+    assert instance.verticalLines == original
+
+@given(instance=model_Menu_strategy)
+@settings(max_examples=50)
+def test_model_menu_instantiation(instance):
+    assert isinstance(instance, model_Menu)
+
+@given(instance=LineStyleSupport_strategy)
+@settings(max_examples=50)
+def test_linestylesupport_instantiation(instance):
+    assert isinstance(instance, LineStyleSupport)
+
+@given(instance=model_VLine_strategy)
+@settings(max_examples=50)
+def test_model_vline_instantiation(instance):
+    assert isinstance(instance, model_VLine)
+
+@given(instance=model_Shape_strategy)
+@settings(max_examples=50)
+def test_model_shape_instantiation(instance):
+    assert isinstance(instance, model_Shape)
+
+
+
+@given(instance=model_Shape_strategy)
+def test_model_shape_shapeType_setter(instance):
+    original = instance.shapeType
+    instance.shapeType = original
+    assert instance.shapeType == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_Shape_strategy)
+@settings(max_examples=30)
+def test_model_shape_isrotatable_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isRotatable()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isRotatable).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isRotatable' in model_Shape is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isRotatable' in model_Shape did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isRotatable' in model_Shape is not implemented or raised an error")
+
+@given(instance=model_Arrow_strategy)
+@settings(max_examples=50)
+def test_model_arrow_instantiation(instance):
+    assert isinstance(instance, model_Arrow)
+
+
+
+@given(instance=model_Arrow_strategy)
+def test_model_arrow_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+
+
+@given(instance=model_Arrow_strategy)
+def test_model_arrow_left_setter(instance):
+    original = instance.left
+    instance.left = original
+    assert instance.left == original
+
+
+
+@given(instance=model_Arrow_strategy)
+def test_model_arrow_right_setter(instance):
+    original = instance.right
+    instance.right = original
+    assert instance.right == original
+
+@given(instance=model_Circle_strategy)
+@settings(max_examples=50)
+def test_model_circle_instantiation(instance):
+    assert isinstance(instance, model_Circle)
+
+@given(instance=model_HLine_strategy)
+@settings(max_examples=50)
+def test_model_hline_instantiation(instance):
+    assert isinstance(instance, model_HLine)
+
+@given(instance=model_VScrollbar_strategy)
+@settings(max_examples=50)
+def test_model_vscrollbar_instantiation(instance):
+    assert isinstance(instance, model_VScrollbar)

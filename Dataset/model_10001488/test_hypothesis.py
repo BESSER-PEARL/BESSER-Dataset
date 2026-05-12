@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Insurance,
@@ -31,17 +31,8 @@ def test_insurance_constructor_exists():
 def test_insurance_constructor_args():
     sig = inspect.signature(Insurance.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_insurance_has_email():
-    assert hasattr(Insurance, "email")
-    descriptor = None
-    for klass in Insurance.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "email" in params, "Missing parameter 'email'"
 
 def test_insurance_has_password():
     assert hasattr(Insurance, "password")
@@ -49,6 +40,15 @@ def test_insurance_has_password():
     for klass in Insurance.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_insurance_has_email():
+    assert hasattr(Insurance, "email")
+    descriptor = None
+    for klass in Insurance.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -65,17 +65,8 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "uname" in params, "Missing parameter 'uname'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_admin_has_uname():
-    assert hasattr(Admin, "uname")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "uname" in klass.__dict__:
-            descriptor = klass.__dict__["uname"]
-            break
-    assert isinstance(descriptor, property)
+    assert "uname" in params, "Missing parameter 'uname'"
 
 def test_admin_has_password():
     assert hasattr(Admin, "password")
@@ -83,6 +74,15 @@ def test_admin_has_password():
     for klass in Admin.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_uname():
+    assert hasattr(Admin, "uname")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "uname" in klass.__dict__:
+            descriptor = klass.__dict__["uname"]
             break
     assert isinstance(descriptor, property)
 
@@ -167,11 +167,29 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(user.__init__)
     params = list(sig.parameters.keys())
+    assert "phone_number" in params, "Missing parameter 'phone_number'"
+    assert "address" in params, "Missing parameter 'address'"
     assert "email" in params, "Missing parameter 'email'"
     assert "password" in params, "Missing parameter 'password'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "phone_number" in params, "Missing parameter 'phone_number'"
-    assert "address" in params, "Missing parameter 'address'"
+
+def test_user_has_phone_number():
+    assert hasattr(user, "phone_number")
+    descriptor = None
+    for klass in user.__mro__:
+        if "phone_number" in klass.__dict__:
+            descriptor = klass.__dict__["phone_number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_address():
+    assert hasattr(user, "address")
+    descriptor = None
+    for klass in user.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_user_has_email():
     assert hasattr(user, "email")
@@ -197,24 +215,6 @@ def test_user_has_name():
     for klass in user.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_phone_number():
-    assert hasattr(user, "phone_number")
-    descriptor = None
-    for klass in user.__mro__:
-        if "phone_number" in klass.__dict__:
-            descriptor = klass.__dict__["phone_number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_address():
-    assert hasattr(user, "address")
-    descriptor = None
-    for klass in user.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -246,16 +246,16 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Insurance_strategy = st.builds(
     Insurance,
-    email=
-        safe_text,
     password=
+        safe_text,
+    email=
         safe_text
 )
 Admin_strategy = st.builds(
     Admin,
-    uname=
-        safe_text,
     password=
+        safe_text,
+    uname=
         safe_text
 )
 Patient_strategy = st.builds(
@@ -274,15 +274,15 @@ Doctor_strategy = st.builds(
 )
 user_strategy = st.builds(
     user,
+    phone_number=
+        st.integers(),
+    address=
+        safe_text,
     email=
         safe_text,
     password=
         safe_text,
     name=
-        safe_text,
-    phone_number=
-        st.integers(),
-    address=
         safe_text
 )
 UseCase3_UseCase_strategy = st.builds(
@@ -294,20 +294,6 @@ UseCase3_UseCase_strategy = st.builds(
 def test_insurance_instantiation(instance):
     assert isinstance(instance, Insurance)
 
-@given(instance=Insurance_strategy)
-def test_insurance_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=Insurance_strategy)
-def test_insurance_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Insurance_strategy)
-def test_insurance_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Insurance_strategy)
@@ -316,25 +302,19 @@ def test_insurance_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=Insurance_strategy)
+def test_insurance_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 @given(instance=Admin_strategy)
 @settings(max_examples=50)
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_uname_type(instance):
-    assert isinstance(instance.uname, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_uname_setter(instance):
-    original = instance.uname
-    instance.uname = original
-    assert instance.uname == original
-
-@given(instance=Admin_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Admin_strategy)
@@ -343,14 +323,19 @@ def test_admin_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=Admin_strategy)
+def test_admin_uname_setter(instance):
+    original = instance.uname
+    instance.uname = original
+    assert instance.uname == original
+
 @given(instance=Patient_strategy)
 @settings(max_examples=50)
 def test_patient_instantiation(instance):
     assert isinstance(instance, Patient)
 
-@given(instance=Patient_strategy)
-def test_patient_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Patient_strategy)
@@ -359,9 +344,6 @@ def test_patient_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Patient_strategy)
-def test_patient_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Patient_strategy)
@@ -375,9 +357,6 @@ def test_patient_email_setter(instance):
 def test_doctor_instantiation(instance):
     assert isinstance(instance, Doctor)
 
-@given(instance=Doctor_strategy)
-def test_doctor_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Doctor_strategy)
@@ -386,9 +365,6 @@ def test_doctor_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Doctor_strategy)
-def test_doctor_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Doctor_strategy)
@@ -402,42 +378,6 @@ def test_doctor_email_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, user)
 
-@given(instance=user_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=user_strategy)
-def test_user_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=user_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=user_strategy)
-def test_user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=user_strategy)
-def test_user_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=user_strategy)
-def test_user_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=user_strategy)
-def test_user_phone_number_type(instance):
-    assert isinstance(instance.phone_number, int)
 
 
 @given(instance=user_strategy)
@@ -446,9 +386,6 @@ def test_user_phone_number_setter(instance):
     instance.phone_number = original
     assert instance.phone_number == original
 
-@given(instance=user_strategy)
-def test_user_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=user_strategy)
@@ -456,6 +393,30 @@ def test_user_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
+
+
+
+@given(instance=user_strategy)
+def test_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=user_strategy)
+def test_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=user_strategy)
+def test_user_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=UseCase3_UseCase_strategy)
 @settings(max_examples=50)

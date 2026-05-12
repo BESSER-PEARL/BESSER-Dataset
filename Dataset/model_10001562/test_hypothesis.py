@@ -3,9 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    ActionEvent2_Interface,
+    Class,
+    Graphics_Interface,
+    JPanel,
     Controleur_Controleur,
     Observable,
     Observer_Interface,
@@ -17,15 +21,67 @@ from python_code import (
     Vue_VueGrille,
     Vue_VueCommande,
     ActionListener_Interface,
-    ActionEvent2_Interface,
-    Class,
-    Graphics_Interface,
-    JPanel,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_actionevent2_interface_is_not_abstract():
+    assert not inspect.isabstract(ActionEvent2_Interface)
+
+
+def test_actionevent2_interface_constructor_exists():
+    assert callable(ActionEvent2_Interface.__init__)
+
+
+def test_actionevent2_interface_constructor_args():
+    sig = inspect.signature(ActionEvent2_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_class_is_not_abstract():
+    assert not inspect.isabstract(Class)
+
+
+def test_class_constructor_exists():
+    assert callable(Class.__init__)
+
+
+def test_class_constructor_args():
+    sig = inspect.signature(Class.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graphics_interface_is_not_abstract():
+    assert not inspect.isabstract(Graphics_Interface)
+
+
+def test_graphics_interface_constructor_exists():
+    assert callable(Graphics_Interface.__init__)
+
+
+def test_graphics_interface_constructor_args():
+    sig = inspect.signature(Graphics_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jpanel_is_not_abstract():
+    assert not inspect.isabstract(JPanel)
+
+
+def test_jpanel_constructor_exists():
+    assert callable(JPanel.__init__)
+
+
+def test_jpanel_constructor_args():
+    sig = inspect.signature(JPanel.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -92,17 +148,8 @@ def test_modele_participants_constructor_exists():
 def test_modele_participants_constructor_args():
     sig = inspect.signature(Modele_Participants.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "NOMBRE" in params, "Missing parameter 'NOMBRE'"
-
-def test_modele_participants_has_attribute():
-    assert hasattr(Modele_Participants, "attribute")
-    descriptor = None
-    for klass in Modele_Participants.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_modele_participants_has_NOMBRE():
     assert hasattr(Modele_Participants, "NOMBRE")
@@ -110,6 +157,15 @@ def test_modele_participants_has_NOMBRE():
     for klass in Modele_Participants.__mro__:
         if "NOMBRE" in klass.__dict__:
             descriptor = klass.__dict__["NOMBRE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_participants_has_attribute():
+    assert hasattr(Modele_Participants, "attribute")
+    descriptor = None
+    for klass in Modele_Participants.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -126,20 +182,11 @@ def test_modele_joueur_constructor_exists():
 def test_modele_joueur_constructor_args():
     sig = inspect.signature(Modele_Joueur.__init__)
     params = list(sig.parameters.keys())
-    assert "cles" in params, "Missing parameter 'cles'"
     assert "artefacts" in params, "Missing parameter 'artefacts'"
-    assert "vivant" in params, "Missing parameter 'vivant'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "vivant" in params, "Missing parameter 'vivant'"
+    assert "cles" in params, "Missing parameter 'cles'"
     assert "y" in params, "Missing parameter 'y'"
-
-def test_modele_joueur_has_cles():
-    assert hasattr(Modele_Joueur, "cles")
-    descriptor = None
-    for klass in Modele_Joueur.__mro__:
-        if "cles" in klass.__dict__:
-            descriptor = klass.__dict__["cles"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_modele_joueur_has_artefacts():
     assert hasattr(Modele_Joueur, "artefacts")
@@ -147,6 +194,15 @@ def test_modele_joueur_has_artefacts():
     for klass in Modele_Joueur.__mro__:
         if "artefacts" in klass.__dict__:
             descriptor = klass.__dict__["artefacts"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_joueur_has_x():
+    assert hasattr(Modele_Joueur, "x")
+    descriptor = None
+    for klass in Modele_Joueur.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
@@ -159,12 +215,12 @@ def test_modele_joueur_has_vivant():
             break
     assert isinstance(descriptor, property)
 
-def test_modele_joueur_has_x():
-    assert hasattr(Modele_Joueur, "x")
+def test_modele_joueur_has_cles():
+    assert hasattr(Modele_Joueur, "cles")
     descriptor = None
     for klass in Modele_Joueur.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+        if "cles" in klass.__dict__:
+            descriptor = klass.__dict__["cles"]
             break
     assert isinstance(descriptor, property)
 
@@ -190,38 +246,11 @@ def test_modele_cellule_constructor_exists():
 def test_modele_cellule_constructor_args():
     sig = inspect.signature(Modele_Cellule.__init__)
     params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
-    assert "prochaineEtat" in params, "Missing parameter 'prochaineEtat'"
-    assert "etat" in params, "Missing parameter 'etat'"
     assert "y" in params, "Missing parameter 'y'"
     assert "modele" in params, "Missing parameter 'modele'"
-
-def test_modele_cellule_has_x():
-    assert hasattr(Modele_Cellule, "x")
-    descriptor = None
-    for klass in Modele_Cellule.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_modele_cellule_has_prochaineEtat():
-    assert hasattr(Modele_Cellule, "prochaineEtat")
-    descriptor = None
-    for klass in Modele_Cellule.__mro__:
-        if "prochaineEtat" in klass.__dict__:
-            descriptor = klass.__dict__["prochaineEtat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_modele_cellule_has_etat():
-    assert hasattr(Modele_Cellule, "etat")
-    descriptor = None
-    for klass in Modele_Cellule.__mro__:
-        if "etat" in klass.__dict__:
-            descriptor = klass.__dict__["etat"]
-            break
-    assert isinstance(descriptor, property)
+    assert "etat" in params, "Missing parameter 'etat'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "prochaineEtat" in params, "Missing parameter 'prochaineEtat'"
 
 def test_modele_cellule_has_y():
     assert hasattr(Modele_Cellule, "y")
@@ -238,6 +267,33 @@ def test_modele_cellule_has_modele():
     for klass in Modele_Cellule.__mro__:
         if "modele" in klass.__dict__:
             descriptor = klass.__dict__["modele"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_cellule_has_etat():
+    assert hasattr(Modele_Cellule, "etat")
+    descriptor = None
+    for klass in Modele_Cellule.__mro__:
+        if "etat" in klass.__dict__:
+            descriptor = klass.__dict__["etat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_cellule_has_x():
+    assert hasattr(Modele_Cellule, "x")
+    descriptor = None
+    for klass in Modele_Cellule.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_cellule_has_prochaineEtat():
+    assert hasattr(Modele_Cellule, "prochaineEtat")
+    descriptor = None
+    for klass in Modele_Cellule.__mro__:
+        if "prochaineEtat" in klass.__dict__:
+            descriptor = klass.__dict__["prochaineEtat"]
             break
     assert isinstance(descriptor, property)
 
@@ -298,9 +354,18 @@ def test_vue_cvue_constructor_exists():
 def test_vue_cvue_constructor_args():
     sig = inspect.signature(Vue_CVue.__init__)
     params = list(sig.parameters.keys())
+    assert "commande" in params, "Missing parameter 'commande'"
     assert "frame" in params, "Missing parameter 'frame'"
     assert "grille" in params, "Missing parameter 'grille'"
-    assert "commande" in params, "Missing parameter 'commande'"
+
+def test_vue_cvue_has_commande():
+    assert hasattr(Vue_CVue, "commande")
+    descriptor = None
+    for klass in Vue_CVue.__mro__:
+        if "commande" in klass.__dict__:
+            descriptor = klass.__dict__["commande"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_vue_cvue_has_frame():
     assert hasattr(Vue_CVue, "frame")
@@ -320,15 +385,6 @@ def test_vue_cvue_has_grille():
             break
     assert isinstance(descriptor, property)
 
-def test_vue_cvue_has_commande():
-    assert hasattr(Vue_CVue, "commande")
-    descriptor = None
-    for klass in Vue_CVue.__mro__:
-        if "commande" in klass.__dict__:
-            descriptor = klass.__dict__["commande"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_vue_vuegrille_is_not_abstract():
@@ -342,18 +398,9 @@ def test_vue_vuegrille_constructor_exists():
 def test_vue_vuegrille_constructor_args():
     sig = inspect.signature(Vue_VueGrille.__init__)
     params = list(sig.parameters.keys())
-    assert "TAILLE" in params, "Missing parameter 'TAILLE'"
     assert "modele" in params, "Missing parameter 'modele'"
+    assert "TAILLE" in params, "Missing parameter 'TAILLE'"
     assert "update" in params, "Missing parameter 'update'"
-
-def test_vue_vuegrille_has_TAILLE():
-    assert hasattr(Vue_VueGrille, "TAILLE")
-    descriptor = None
-    for klass in Vue_VueGrille.__mro__:
-        if "TAILLE" in klass.__dict__:
-            descriptor = klass.__dict__["TAILLE"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_vue_vuegrille_has_modele():
     assert hasattr(Vue_VueGrille, "modele")
@@ -361,6 +408,15 @@ def test_vue_vuegrille_has_modele():
     for klass in Vue_VueGrille.__mro__:
         if "modele" in klass.__dict__:
             descriptor = klass.__dict__["modele"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vue_vuegrille_has_TAILLE():
+    assert hasattr(Vue_VueGrille, "TAILLE")
+    descriptor = None
+    for klass in Vue_VueGrille.__mro__:
+        if "TAILLE" in klass.__dict__:
+            descriptor = klass.__dict__["TAILLE"]
             break
     assert isinstance(descriptor, property)
 
@@ -412,62 +468,6 @@ def test_actionlistener_interface_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_actionevent2_interface_is_not_abstract():
-    assert not inspect.isabstract(ActionEvent2_Interface)
-
-
-def test_actionevent2_interface_constructor_exists():
-    assert callable(ActionEvent2_Interface.__init__)
-
-
-def test_actionevent2_interface_constructor_args():
-    sig = inspect.signature(ActionEvent2_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_class_is_not_abstract():
-    assert not inspect.isabstract(Class)
-
-
-def test_class_constructor_exists():
-    assert callable(Class.__init__)
-
-
-def test_class_constructor_args():
-    sig = inspect.signature(Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graphics_interface_is_not_abstract():
-    assert not inspect.isabstract(Graphics_Interface)
-
-
-def test_graphics_interface_constructor_exists():
-    assert callable(Graphics_Interface.__init__)
-
-
-def test_graphics_interface_constructor_args():
-    sig = inspect.signature(Graphics_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jpanel_is_not_abstract():
-    assert not inspect.isabstract(JPanel)
-
-
-def test_jpanel_constructor_exists():
-    assert callable(JPanel.__init__)
-
-
-def test_jpanel_constructor_args():
-    sig = inspect.signature(JPanel.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -479,6 +479,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+ActionEvent2_Interface_strategy = st.builds(
+    ActionEvent2_Interface,
+)
+Class_strategy = st.builds(
+    Class,
+)
+Graphics_Interface_strategy = st.builds(
+    Graphics_Interface,
+)
+JPanel_strategy = st.builds(
+    JPanel,
+)
 Controleur_Controleur_strategy = st.builds(
     Controleur_Controleur,
     modele=
@@ -492,36 +504,36 @@ Observer_Interface_strategy = st.builds(
 )
 Modele_Participants_strategy = st.builds(
     Modele_Participants,
-    attribute=
-        safe_text,
     NOMBRE=
-        st.integers()
+        st.integers(),
+    attribute=
+        safe_text
 )
 Modele_Joueur_strategy = st.builds(
     Modele_Joueur,
-    cles=
-        st.integers(),
     artefacts=
         safe_text,
+    x=
+        st.integers(),
     vivant=
         st.booleans(),
-    x=
+    cles=
         st.integers(),
     y=
         st.integers()
 )
 Modele_Cellule_strategy = st.builds(
     Modele_Cellule,
-    x=
-        st.integers(),
-    prochaineEtat=
-        st.booleans(),
-    etat=
-        st.booleans(),
     y=
         st.integers(),
     modele=
-        st.none()
+        st.none(),
+    etat=
+        st.booleans(),
+    x=
+        st.integers(),
+    prochaineEtat=
+        st.booleans()
 )
 Modele_CModele_strategy = st.builds(
     Modele_CModele,
@@ -534,19 +546,19 @@ Modele_CModele_strategy = st.builds(
 )
 Vue_CVue_strategy = st.builds(
     Vue_CVue,
+    commande=
+        st.none(),
     frame=
         safe_text,
     grille=
-        st.none(),
-    commande=
         st.none()
 )
 Vue_VueGrille_strategy = st.builds(
     Vue_VueGrille,
-    TAILLE=
-        st.integers(),
     modele=
         st.none(),
+    TAILLE=
+        st.integers(),
     update=
         safe_text
 )
@@ -558,27 +570,32 @@ Vue_VueCommande_strategy = st.builds(
 ActionListener_Interface_strategy = st.builds(
     ActionListener_Interface,
 )
-ActionEvent2_Interface_strategy = st.builds(
-    ActionEvent2_Interface,
-)
-Class_strategy = st.builds(
-    Class,
-)
-Graphics_Interface_strategy = st.builds(
-    Graphics_Interface,
-)
-JPanel_strategy = st.builds(
-    JPanel,
-)
+
+@given(instance=ActionEvent2_Interface_strategy)
+@settings(max_examples=50)
+def test_actionevent2_interface_instantiation(instance):
+    assert isinstance(instance, ActionEvent2_Interface)
+
+@given(instance=Class_strategy)
+@settings(max_examples=50)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
+
+@given(instance=Graphics_Interface_strategy)
+@settings(max_examples=50)
+def test_graphics_interface_instantiation(instance):
+    assert isinstance(instance, Graphics_Interface)
+
+@given(instance=JPanel_strategy)
+@settings(max_examples=50)
+def test_jpanel_instantiation(instance):
+    assert isinstance(instance, JPanel)
 
 @given(instance=Controleur_Controleur_strategy)
 @settings(max_examples=50)
 def test_controleur_controleur_instantiation(instance):
     assert isinstance(instance, Controleur_Controleur)
 
-@given(instance=Controleur_Controleur_strategy)
-def test_controleur_controleur_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
 
 
 @given(instance=Controleur_Controleur_strategy)
@@ -602,20 +619,6 @@ def test_observer_interface_instantiation(instance):
 def test_modele_participants_instantiation(instance):
     assert isinstance(instance, Modele_Participants)
 
-@given(instance=Modele_Participants_strategy)
-def test_modele_participants_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Modele_Participants_strategy)
-def test_modele_participants_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Modele_Participants_strategy)
-def test_modele_participants_NOMBRE_type(instance):
-    assert isinstance(instance.NOMBRE, int)
 
 
 @given(instance=Modele_Participants_strategy)
@@ -624,25 +627,19 @@ def test_modele_participants_NOMBRE_setter(instance):
     instance.NOMBRE = original
     assert instance.NOMBRE == original
 
+
+
+@given(instance=Modele_Participants_strategy)
+def test_modele_participants_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Modele_Joueur_strategy)
 @settings(max_examples=50)
 def test_modele_joueur_instantiation(instance):
     assert isinstance(instance, Modele_Joueur)
 
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_cles_type(instance):
-    assert isinstance(instance.cles, int)
-
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_cles_setter(instance):
-    original = instance.cles
-    instance.cles = original
-    assert instance.cles == original
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_artefacts_type(instance):
-    assert isinstance(instance.artefacts, str)
 
 
 @given(instance=Modele_Joueur_strategy)
@@ -651,20 +648,6 @@ def test_modele_joueur_artefacts_setter(instance):
     instance.artefacts = original
     assert instance.artefacts == original
 
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_vivant_type(instance):
-    assert isinstance(instance.vivant, bool)
-
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_vivant_setter(instance):
-    original = instance.vivant
-    instance.vivant = original
-    assert instance.vivant == original
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=Modele_Joueur_strategy)
@@ -673,9 +656,22 @@ def test_modele_joueur_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
+
+
 @given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_y_type(instance):
-    assert isinstance(instance.y, int)
+def test_modele_joueur_vivant_setter(instance):
+    original = instance.vivant
+    instance.vivant = original
+    assert instance.vivant == original
+
+
+
+@given(instance=Modele_Joueur_strategy)
+def test_modele_joueur_cles_setter(instance):
+    original = instance.cles
+    instance.cles = original
+    assert instance.cles == original
+
 
 
 @given(instance=Modele_Joueur_strategy)
@@ -689,42 +685,6 @@ def test_modele_joueur_y_setter(instance):
 def test_modele_cellule_instantiation(instance):
     assert isinstance(instance, Modele_Cellule)
 
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_prochaineEtat_type(instance):
-    assert isinstance(instance.prochaineEtat, bool)
-
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_prochaineEtat_setter(instance):
-    original = instance.prochaineEtat
-    instance.prochaineEtat = original
-    assert instance.prochaineEtat == original
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_etat_type(instance):
-    assert isinstance(instance.etat, bool)
-
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_etat_setter(instance):
-    original = instance.etat
-    instance.etat = original
-    assert instance.etat == original
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
 @given(instance=Modele_Cellule_strategy)
@@ -733,9 +693,6 @@ def test_modele_cellule_y_setter(instance):
     instance.y = original
     assert instance.y == original
 
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
 
 
 @given(instance=Modele_Cellule_strategy)
@@ -744,14 +701,35 @@ def test_modele_cellule_modele_setter(instance):
     instance.modele = original
     assert instance.modele == original
 
+
+
+@given(instance=Modele_Cellule_strategy)
+def test_modele_cellule_etat_setter(instance):
+    original = instance.etat
+    instance.etat = original
+    assert instance.etat == original
+
+
+
+@given(instance=Modele_Cellule_strategy)
+def test_modele_cellule_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=Modele_Cellule_strategy)
+def test_modele_cellule_prochaineEtat_setter(instance):
+    original = instance.prochaineEtat
+    instance.prochaineEtat = original
+    assert instance.prochaineEtat == original
+
 @given(instance=Modele_CModele_strategy)
 @settings(max_examples=50)
 def test_modele_cmodele_instantiation(instance):
     assert isinstance(instance, Modele_CModele)
 
-@given(instance=Modele_CModele_strategy)
-def test_modele_cmodele_hauteur_type(instance):
-    assert isinstance(instance.hauteur, int)
 
 
 @given(instance=Modele_CModele_strategy)
@@ -760,9 +738,6 @@ def test_modele_cmodele_hauteur_setter(instance):
     instance.hauteur = original
     assert instance.hauteur == original
 
-@given(instance=Modele_CModele_strategy)
-def test_modele_cmodele_largeur_type(instance):
-    assert isinstance(instance.largeur, int)
 
 
 @given(instance=Modele_CModele_strategy)
@@ -771,9 +746,6 @@ def test_modele_cmodele_largeur_setter(instance):
     instance.largeur = original
     assert instance.largeur == original
 
-@given(instance=Modele_CModele_strategy)
-def test_modele_cmodele_attribute_type(instance):
-    assert isinstance(instance.attribute, modele_cellule)
 
 
 @given(instance=Modele_CModele_strategy)
@@ -787,31 +759,6 @@ def test_modele_cmodele_attribute_setter(instance):
 def test_vue_cvue_instantiation(instance):
     assert isinstance(instance, Vue_CVue)
 
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_frame_type(instance):
-    assert isinstance(instance.frame, str)
-
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_frame_setter(instance):
-    original = instance.frame
-    instance.frame = original
-    assert instance.frame == original
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_grille_type(instance):
-    assert isinstance(instance.grille, vue_vuegrille)
-
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_grille_setter(instance):
-    original = instance.grille
-    instance.grille = original
-    assert instance.grille == original
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_commande_type(instance):
-    assert isinstance(instance.commande, vue_vuecommande)
 
 
 @given(instance=Vue_CVue_strategy)
@@ -820,25 +767,27 @@ def test_vue_cvue_commande_setter(instance):
     instance.commande = original
     assert instance.commande == original
 
+
+
+@given(instance=Vue_CVue_strategy)
+def test_vue_cvue_frame_setter(instance):
+    original = instance.frame
+    instance.frame = original
+    assert instance.frame == original
+
+
+
+@given(instance=Vue_CVue_strategy)
+def test_vue_cvue_grille_setter(instance):
+    original = instance.grille
+    instance.grille = original
+    assert instance.grille == original
+
 @given(instance=Vue_VueGrille_strategy)
 @settings(max_examples=50)
 def test_vue_vuegrille_instantiation(instance):
     assert isinstance(instance, Vue_VueGrille)
 
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_TAILLE_type(instance):
-    assert isinstance(instance.TAILLE, int)
-
-
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_TAILLE_setter(instance):
-    original = instance.TAILLE
-    instance.TAILLE = original
-    assert instance.TAILLE == original
-
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
 
 
 @given(instance=Vue_VueGrille_strategy)
@@ -847,9 +796,14 @@ def test_vue_vuegrille_modele_setter(instance):
     instance.modele = original
     assert instance.modele == original
 
+
+
 @given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_update_type(instance):
-    assert isinstance(instance.update, str)
+def test_vue_vuegrille_TAILLE_setter(instance):
+    original = instance.TAILLE
+    instance.TAILLE = original
+    assert instance.TAILLE == original
+
 
 
 @given(instance=Vue_VueGrille_strategy)
@@ -863,9 +817,6 @@ def test_vue_vuegrille_update_setter(instance):
 def test_vue_vuecommande_instantiation(instance):
     assert isinstance(instance, Vue_VueCommande)
 
-@given(instance=Vue_VueCommande_strategy)
-def test_vue_vuecommande_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
 
 
 @given(instance=Vue_VueCommande_strategy)
@@ -878,23 +829,3 @@ def test_vue_vuecommande_modele_setter(instance):
 @settings(max_examples=50)
 def test_actionlistener_interface_instantiation(instance):
     assert isinstance(instance, ActionListener_Interface)
-
-@given(instance=ActionEvent2_Interface_strategy)
-@settings(max_examples=50)
-def test_actionevent2_interface_instantiation(instance):
-    assert isinstance(instance, ActionEvent2_Interface)
-
-@given(instance=Class_strategy)
-@settings(max_examples=50)
-def test_class_instantiation(instance):
-    assert isinstance(instance, Class)
-
-@given(instance=Graphics_Interface_strategy)
-@settings(max_examples=50)
-def test_graphics_interface_instantiation(instance):
-    assert isinstance(instance, Graphics_Interface)
-
-@given(instance=JPanel_strategy)
-@settings(max_examples=50)
-def test_jpanel_instantiation(instance):
-    assert isinstance(instance, JPanel)

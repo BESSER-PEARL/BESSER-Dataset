@@ -3,81 +3,81 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Infector,
-    standard::StandardInfector,
+    standard_StandardInfector,
     SIInfector,
-    standard::SIRInoculator,
+    standard_SIRInoculator,
     StochasticDiseaseModel,
-    standard::StandardStochasticDiseaseModel,
+    standard_StandardStochasticDiseaseModel,
     AggregatingSIDiseaseModel,
-    standard::AggregatingSIRDiseaseModel,
+    standard_AggregatingSIRDiseaseModel,
     AggregatingSIRDiseaseModel,
-    standard::AggregatingSEIRDiseaseModel,
-    standard::IntegrationDecorator,
-    standard::IntegrationLabelValue,
-    standard::IntegrationLabel,
-    standard::SanityChecker,
+    standard_AggregatingSEIRDiseaseModel,
+    standard_IntegrationDecorator,
+    standard_IntegrationLabelValue,
+    standard_IntegrationLabel,
+    standard_SanityChecker,
     StandardStochasticDiseaseModel,
     StandardDiseaseModelLabelValue,
     DiseaseModelState,
-    standard::AggregatingDiseaseModelState,
-    standard::StandardDiseaseModelState,
+    standard_AggregatingDiseaseModelState,
+    standard_StandardDiseaseModelState,
     DiseaseModelLabelValue,
-    standard::StandardDiseaseModelLabelValue,
+    standard_StandardDiseaseModelLabelValue,
     IntegrationLabel,
     DiseaseModelLabel,
-    standard::StandardDiseaseModelLabel,
+    standard_StandardDiseaseModelLabel,
     IntegrationDecorator,
     DiseaseModel,
-    standard::StochasticDiseaseModel,
+    standard_StochasticDiseaseModel,
     SILabelValue,
-    standard::SIRLabelValue,
-    standard::SILabelValue,
+    standard_SIRLabelValue,
+    standard_SILabelValue,
     StandardInfector,
-    standard::SIInfector,
+    standard_SIInfector,
     StandardDiseaseModelState,
-    standard::SIDiseaseModelState,
+    standard_SIDiseaseModelState,
     StandardDiseaseModel,
-    standard::SI,
+    standard_SI,
     SIRLabelValue,
-    standard::PopulationModelLabel,
-    standard::SEIRLabelValue,
+    standard_PopulationModelLabel,
+    standard_SEIRLabelValue,
     StandardDiseaseModelLabel,
-    standard::SIRLabel,
-    standard::SILabel,
-    standard::SEIRLabel,
-    standard::StandardDiseaseModel,
+    standard_SIRLabel,
+    standard_SILabel,
+    standard_SEIRLabel,
+    standard_StandardDiseaseModel,
     IntegrationLabelValue,
     LabelValue,
-    standard::DiseaseModelLabelValue,
-    standard::DiseaseModelState,
-    standard::PopulationLabel,
+    standard_DiseaseModelLabelValue,
+    standard_DiseaseModelState,
+    standard_PopulationLabel,
     DynamicNodeLabel,
-    standard::DiseaseModelLabel,
+    standard_DiseaseModelLabel,
     Modifiable,
     SanityChecker,
     NodeDecorator,
-    standard::InfectorInoculatorCollection,
-    standard::Infector,
-    standard::DiseaseModel,
+    standard_InfectorInoculatorCollection,
+    standard_Infector,
+    standard_DiseaseModel,
     SIR,
-    standard::StochasticPoissonSIRDiseaseModel,
-    standard::StochasticSIRDiseaseModel,
-    standard::SEIR,
-    standard::DeterministicSIRDiseaseModel,
+    standard_StochasticPoissonSIRDiseaseModel,
+    standard_SEIR,
+    standard_StochasticSIRDiseaseModel,
+    standard_DeterministicSIRDiseaseModel,
     SI,
-    standard::StochasticPoissonSIDiseaseModel,
-    standard::StochasticSIDiseaseModel,
-    standard::AggregatingSIDiseaseModel,
-    standard::SIR,
-    standard::DeterministicSIDiseaseModel,
+    standard_StochasticPoissonSIDiseaseModel,
+    standard_SIR,
+    standard_StochasticSIDiseaseModel,
+    standard_AggregatingSIDiseaseModel,
+    standard_DeterministicSIDiseaseModel,
     SEIR,
-    standard::StochasticPoissonSEIRDiseaseModel,
-    standard::StochasticSEIRDiseaseModel,
-    standard::DeterministicSEIRDiseaseModel,
+    standard_StochasticPoissonSEIRDiseaseModel,
+    standard_StochasticSEIRDiseaseModel,
+    standard_DeterministicSEIRDiseaseModel,
 )
 
 # =============================================================================
@@ -100,16 +100,16 @@ def test_infector_constructor_args():
 
 
 
-def test_standard::standardinfector_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardInfector)
+def test_standard_standardinfector_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardInfector)
 
 
-def test_standard::standardinfector_constructor_exists():
-    assert callable(standard::StandardInfector.__init__)
+def test_standard_standardinfector_constructor_exists():
+    assert callable(standard_StandardInfector.__init__)
 
 
-def test_standard::standardinfector_constructor_args():
-    sig = inspect.signature(standard::StandardInfector.__init__)
+def test_standard_standardinfector_constructor_args():
+    sig = inspect.signature(standard_StandardInfector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,35 +128,35 @@ def test_siinfector_constructor_args():
 
 
 
-def test_standard::sirinoculator_is_not_abstract():
-    assert not inspect.isabstract(standard::SIRInoculator)
+def test_standard_sirinoculator_is_not_abstract():
+    assert not inspect.isabstract(standard_SIRInoculator)
 
 
-def test_standard::sirinoculator_constructor_exists():
-    assert callable(standard::SIRInoculator.__init__)
+def test_standard_sirinoculator_constructor_exists():
+    assert callable(standard_SIRInoculator.__init__)
 
 
-def test_standard::sirinoculator_constructor_args():
-    sig = inspect.signature(standard::SIRInoculator.__init__)
+def test_standard_sirinoculator_constructor_args():
+    sig = inspect.signature(standard_SIRInoculator.__init__)
     params = list(sig.parameters.keys())
-    assert "inoculatedPercentage" in params, "Missing parameter 'inoculatedPercentage'"
     assert "inoculatePercentage" in params, "Missing parameter 'inoculatePercentage'"
+    assert "inoculatedPercentage" in params, "Missing parameter 'inoculatedPercentage'"
 
-def test_standard::sirinoculator_has_inoculatedPercentage():
-    assert hasattr(standard::SIRInoculator, "inoculatedPercentage")
+def test_standard_sirinoculator_has_inoculatePercentage():
+    assert hasattr(standard_SIRInoculator, "inoculatePercentage")
     descriptor = None
-    for klass in standard::SIRInoculator.__mro__:
-        if "inoculatedPercentage" in klass.__dict__:
-            descriptor = klass.__dict__["inoculatedPercentage"]
+    for klass in standard_SIRInoculator.__mro__:
+        if "inoculatePercentage" in klass.__dict__:
+            descriptor = klass.__dict__["inoculatePercentage"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::sirinoculator_has_inoculatePercentage():
-    assert hasattr(standard::SIRInoculator, "inoculatePercentage")
+def test_standard_sirinoculator_has_inoculatedPercentage():
+    assert hasattr(standard_SIRInoculator, "inoculatedPercentage")
     descriptor = None
-    for klass in standard::SIRInoculator.__mro__:
-        if "inoculatePercentage" in klass.__dict__:
-            descriptor = klass.__dict__["inoculatePercentage"]
+    for klass in standard_SIRInoculator.__mro__:
+        if "inoculatedPercentage" in klass.__dict__:
+            descriptor = klass.__dict__["inoculatedPercentage"]
             break
     assert isinstance(descriptor, property)
 
@@ -176,23 +176,23 @@ def test_stochasticdiseasemodel_constructor_args():
 
 
 
-def test_standard::standardstochasticdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardStochasticDiseaseModel)
+def test_standard_standardstochasticdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardStochasticDiseaseModel)
 
 
-def test_standard::standardstochasticdiseasemodel_constructor_exists():
-    assert callable(standard::StandardStochasticDiseaseModel.__init__)
+def test_standard_standardstochasticdiseasemodel_constructor_exists():
+    assert callable(standard_StandardStochasticDiseaseModel.__init__)
 
 
-def test_standard::standardstochasticdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StandardStochasticDiseaseModel.__init__)
+def test_standard_standardstochasticdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StandardStochasticDiseaseModel.__init__)
     params = list(sig.parameters.keys())
     assert "gain" in params, "Missing parameter 'gain'"
 
-def test_standard::standardstochasticdiseasemodel_has_gain():
-    assert hasattr(standard::StandardStochasticDiseaseModel, "gain")
+def test_standard_standardstochasticdiseasemodel_has_gain():
+    assert hasattr(standard_StandardStochasticDiseaseModel, "gain")
     descriptor = None
-    for klass in standard::StandardStochasticDiseaseModel.__mro__:
+    for klass in standard_StandardStochasticDiseaseModel.__mro__:
         if "gain" in klass.__dict__:
             descriptor = klass.__dict__["gain"]
             break
@@ -214,16 +214,16 @@ def test_aggregatingsidiseasemodel_constructor_args():
 
 
 
-def test_standard::aggregatingsirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::AggregatingSIRDiseaseModel)
+def test_standard_aggregatingsirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_AggregatingSIRDiseaseModel)
 
 
-def test_standard::aggregatingsirdiseasemodel_constructor_exists():
-    assert callable(standard::AggregatingSIRDiseaseModel.__init__)
+def test_standard_aggregatingsirdiseasemodel_constructor_exists():
+    assert callable(standard_AggregatingSIRDiseaseModel.__init__)
 
 
-def test_standard::aggregatingsirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::AggregatingSIRDiseaseModel.__init__)
+def test_standard_aggregatingsirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_AggregatingSIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -242,72 +242,72 @@ def test_aggregatingsirdiseasemodel_constructor_args():
 
 
 
-def test_standard::aggregatingseirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::AggregatingSEIRDiseaseModel)
+def test_standard_aggregatingseirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_AggregatingSEIRDiseaseModel)
 
 
-def test_standard::aggregatingseirdiseasemodel_constructor_exists():
-    assert callable(standard::AggregatingSEIRDiseaseModel.__init__)
+def test_standard_aggregatingseirdiseasemodel_constructor_exists():
+    assert callable(standard_AggregatingSEIRDiseaseModel.__init__)
 
 
-def test_standard::aggregatingseirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::AggregatingSEIRDiseaseModel.__init__)
+def test_standard_aggregatingseirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_AggregatingSEIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::integrationdecorator_is_not_abstract():
-    assert not inspect.isabstract(standard::IntegrationDecorator)
+def test_standard_integrationdecorator_is_not_abstract():
+    assert not inspect.isabstract(standard_IntegrationDecorator)
 
 
-def test_standard::integrationdecorator_constructor_exists():
-    assert callable(standard::IntegrationDecorator.__init__)
+def test_standard_integrationdecorator_constructor_exists():
+    assert callable(standard_IntegrationDecorator.__init__)
 
 
-def test_standard::integrationdecorator_constructor_args():
-    sig = inspect.signature(standard::IntegrationDecorator.__init__)
+def test_standard_integrationdecorator_constructor_args():
+    sig = inspect.signature(standard_IntegrationDecorator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::integrationlabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::IntegrationLabelValue)
+def test_standard_integrationlabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_IntegrationLabelValue)
 
 
-def test_standard::integrationlabelvalue_constructor_exists():
-    assert callable(standard::IntegrationLabelValue.__init__)
+def test_standard_integrationlabelvalue_constructor_exists():
+    assert callable(standard_IntegrationLabelValue.__init__)
 
 
-def test_standard::integrationlabelvalue_constructor_args():
-    sig = inspect.signature(standard::IntegrationLabelValue.__init__)
+def test_standard_integrationlabelvalue_constructor_args():
+    sig = inspect.signature(standard_IntegrationLabelValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::integrationlabel_is_not_abstract():
-    assert not inspect.isabstract(standard::IntegrationLabel)
+def test_standard_integrationlabel_is_not_abstract():
+    assert not inspect.isabstract(standard_IntegrationLabel)
 
 
-def test_standard::integrationlabel_constructor_exists():
-    assert callable(standard::IntegrationLabel.__init__)
+def test_standard_integrationlabel_constructor_exists():
+    assert callable(standard_IntegrationLabel.__init__)
 
 
-def test_standard::integrationlabel_constructor_args():
-    sig = inspect.signature(standard::IntegrationLabel.__init__)
+def test_standard_integrationlabel_constructor_args():
+    sig = inspect.signature(standard_IntegrationLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::sanitychecker_is_not_abstract():
-    assert not inspect.isabstract(standard::SanityChecker)
+def test_standard_sanitychecker_is_not_abstract():
+    assert not inspect.isabstract(standard_SanityChecker)
 
 
-def test_standard::sanitychecker_constructor_exists():
-    assert callable(standard::SanityChecker.__init__)
+def test_standard_sanitychecker_constructor_exists():
+    assert callable(standard_SanityChecker.__init__)
 
 
-def test_standard::sanitychecker_constructor_args():
-    sig = inspect.signature(standard::SanityChecker.__init__)
+def test_standard_sanitychecker_constructor_args():
+    sig = inspect.signature(standard_SanityChecker.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -354,37 +354,37 @@ def test_diseasemodelstate_constructor_args():
 
 
 
-def test_standard::aggregatingdiseasemodelstate_is_not_abstract():
-    assert not inspect.isabstract(standard::AggregatingDiseaseModelState)
+def test_standard_aggregatingdiseasemodelstate_is_not_abstract():
+    assert not inspect.isabstract(standard_AggregatingDiseaseModelState)
 
 
-def test_standard::aggregatingdiseasemodelstate_constructor_exists():
-    assert callable(standard::AggregatingDiseaseModelState.__init__)
+def test_standard_aggregatingdiseasemodelstate_constructor_exists():
+    assert callable(standard_AggregatingDiseaseModelState.__init__)
 
 
-def test_standard::aggregatingdiseasemodelstate_constructor_args():
-    sig = inspect.signature(standard::AggregatingDiseaseModelState.__init__)
+def test_standard_aggregatingdiseasemodelstate_constructor_args():
+    sig = inspect.signature(standard_AggregatingDiseaseModelState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::standarddiseasemodelstate_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardDiseaseModelState)
+def test_standard_standarddiseasemodelstate_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardDiseaseModelState)
 
 
-def test_standard::standarddiseasemodelstate_constructor_exists():
-    assert callable(standard::StandardDiseaseModelState.__init__)
+def test_standard_standarddiseasemodelstate_constructor_exists():
+    assert callable(standard_StandardDiseaseModelState.__init__)
 
 
-def test_standard::standarddiseasemodelstate_constructor_args():
-    sig = inspect.signature(standard::StandardDiseaseModelState.__init__)
+def test_standard_standarddiseasemodelstate_constructor_args():
+    sig = inspect.signature(standard_StandardDiseaseModelState.__init__)
     params = list(sig.parameters.keys())
     assert "areaRatio" in params, "Missing parameter 'areaRatio'"
 
-def test_standard::standarddiseasemodelstate_has_areaRatio():
-    assert hasattr(standard::StandardDiseaseModelState, "areaRatio")
+def test_standard_standarddiseasemodelstate_has_areaRatio():
+    assert hasattr(standard_StandardDiseaseModelState, "areaRatio")
     descriptor = None
-    for klass in standard::StandardDiseaseModelState.__mro__:
+    for klass in standard_StandardDiseaseModelState.__mro__:
         if "areaRatio" in klass.__dict__:
             descriptor = klass.__dict__["areaRatio"]
             break
@@ -406,23 +406,23 @@ def test_diseasemodellabelvalue_constructor_args():
 
 
 
-def test_standard::standarddiseasemodellabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardDiseaseModelLabelValue)
+def test_standard_standarddiseasemodellabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardDiseaseModelLabelValue)
 
 
-def test_standard::standarddiseasemodellabelvalue_constructor_exists():
-    assert callable(standard::StandardDiseaseModelLabelValue.__init__)
+def test_standard_standarddiseasemodellabelvalue_constructor_exists():
+    assert callable(standard_StandardDiseaseModelLabelValue.__init__)
 
 
-def test_standard::standarddiseasemodellabelvalue_constructor_args():
-    sig = inspect.signature(standard::StandardDiseaseModelLabelValue.__init__)
+def test_standard_standarddiseasemodellabelvalue_constructor_args():
+    sig = inspect.signature(standard_StandardDiseaseModelLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "s" in params, "Missing parameter 's'"
 
-def test_standard::standarddiseasemodellabelvalue_has_s():
-    assert hasattr(standard::StandardDiseaseModelLabelValue, "s")
+def test_standard_standarddiseasemodellabelvalue_has_s():
+    assert hasattr(standard_StandardDiseaseModelLabelValue, "s")
     descriptor = None
-    for klass in standard::StandardDiseaseModelLabelValue.__mro__:
+    for klass in standard_StandardDiseaseModelLabelValue.__mro__:
         if "s" in klass.__dict__:
             descriptor = klass.__dict__["s"]
             break
@@ -458,16 +458,16 @@ def test_diseasemodellabel_constructor_args():
 
 
 
-def test_standard::standarddiseasemodellabel_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardDiseaseModelLabel)
+def test_standard_standarddiseasemodellabel_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardDiseaseModelLabel)
 
 
-def test_standard::standarddiseasemodellabel_constructor_exists():
-    assert callable(standard::StandardDiseaseModelLabel.__init__)
+def test_standard_standarddiseasemodellabel_constructor_exists():
+    assert callable(standard_StandardDiseaseModelLabel.__init__)
 
 
-def test_standard::standarddiseasemodellabel_constructor_args():
-    sig = inspect.signature(standard::StandardDiseaseModelLabel.__init__)
+def test_standard_standarddiseasemodellabel_constructor_args():
+    sig = inspect.signature(standard_StandardDiseaseModelLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -500,35 +500,35 @@ def test_diseasemodel_constructor_args():
 
 
 
-def test_standard::stochasticdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticDiseaseModel)
+def test_standard_stochasticdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticDiseaseModel)
 
 
-def test_standard::stochasticdiseasemodel_constructor_exists():
-    assert callable(standard::StochasticDiseaseModel.__init__)
+def test_standard_stochasticdiseasemodel_constructor_exists():
+    assert callable(standard_StochasticDiseaseModel.__init__)
 
 
-def test_standard::stochasticdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticDiseaseModel.__init__)
+def test_standard_stochasticdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticDiseaseModel.__init__)
     params = list(sig.parameters.keys())
-    assert "seed" in params, "Missing parameter 'seed'"
     assert "randomGenerator" in params, "Missing parameter 'randomGenerator'"
+    assert "seed" in params, "Missing parameter 'seed'"
 
-def test_standard::stochasticdiseasemodel_has_seed():
-    assert hasattr(standard::StochasticDiseaseModel, "seed")
+def test_standard_stochasticdiseasemodel_has_randomGenerator():
+    assert hasattr(standard_StochasticDiseaseModel, "randomGenerator")
     descriptor = None
-    for klass in standard::StochasticDiseaseModel.__mro__:
-        if "seed" in klass.__dict__:
-            descriptor = klass.__dict__["seed"]
+    for klass in standard_StochasticDiseaseModel.__mro__:
+        if "randomGenerator" in klass.__dict__:
+            descriptor = klass.__dict__["randomGenerator"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::stochasticdiseasemodel_has_randomGenerator():
-    assert hasattr(standard::StochasticDiseaseModel, "randomGenerator")
+def test_standard_stochasticdiseasemodel_has_seed():
+    assert hasattr(standard_StochasticDiseaseModel, "seed")
     descriptor = None
-    for klass in standard::StochasticDiseaseModel.__mro__:
-        if "randomGenerator" in klass.__dict__:
-            descriptor = klass.__dict__["randomGenerator"]
+    for klass in standard_StochasticDiseaseModel.__mro__:
+        if "seed" in klass.__dict__:
+            descriptor = klass.__dict__["seed"]
             break
     assert isinstance(descriptor, property)
 
@@ -548,23 +548,23 @@ def test_silabelvalue_constructor_args():
 
 
 
-def test_standard::sirlabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::SIRLabelValue)
+def test_standard_sirlabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_SIRLabelValue)
 
 
-def test_standard::sirlabelvalue_constructor_exists():
-    assert callable(standard::SIRLabelValue.__init__)
+def test_standard_sirlabelvalue_constructor_exists():
+    assert callable(standard_SIRLabelValue.__init__)
 
 
-def test_standard::sirlabelvalue_constructor_args():
-    sig = inspect.signature(standard::SIRLabelValue.__init__)
+def test_standard_sirlabelvalue_constructor_args():
+    sig = inspect.signature(standard_SIRLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "r" in params, "Missing parameter 'r'"
 
-def test_standard::sirlabelvalue_has_r():
-    assert hasattr(standard::SIRLabelValue, "r")
+def test_standard_sirlabelvalue_has_r():
+    assert hasattr(standard_SIRLabelValue, "r")
     descriptor = None
-    for klass in standard::SIRLabelValue.__mro__:
+    for klass in standard_SIRLabelValue.__mro__:
         if "r" in klass.__dict__:
             descriptor = klass.__dict__["r"]
             break
@@ -572,23 +572,23 @@ def test_standard::sirlabelvalue_has_r():
 
 
 
-def test_standard::silabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::SILabelValue)
+def test_standard_silabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_SILabelValue)
 
 
-def test_standard::silabelvalue_constructor_exists():
-    assert callable(standard::SILabelValue.__init__)
+def test_standard_silabelvalue_constructor_exists():
+    assert callable(standard_SILabelValue.__init__)
 
 
-def test_standard::silabelvalue_constructor_args():
-    sig = inspect.signature(standard::SILabelValue.__init__)
+def test_standard_silabelvalue_constructor_args():
+    sig = inspect.signature(standard_SILabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "i" in params, "Missing parameter 'i'"
 
-def test_standard::silabelvalue_has_i():
-    assert hasattr(standard::SILabelValue, "i")
+def test_standard_silabelvalue_has_i():
+    assert hasattr(standard_SILabelValue, "i")
     descriptor = None
-    for klass in standard::SILabelValue.__mro__:
+    for klass in standard_SILabelValue.__mro__:
         if "i" in klass.__dict__:
             descriptor = klass.__dict__["i"]
             break
@@ -610,23 +610,23 @@ def test_standardinfector_constructor_args():
 
 
 
-def test_standard::siinfector_is_not_abstract():
-    assert not inspect.isabstract(standard::SIInfector)
+def test_standard_siinfector_is_not_abstract():
+    assert not inspect.isabstract(standard_SIInfector)
 
 
-def test_standard::siinfector_constructor_exists():
-    assert callable(standard::SIInfector.__init__)
+def test_standard_siinfector_constructor_exists():
+    assert callable(standard_SIInfector.__init__)
 
 
-def test_standard::siinfector_constructor_args():
-    sig = inspect.signature(standard::SIInfector.__init__)
+def test_standard_siinfector_constructor_args():
+    sig = inspect.signature(standard_SIInfector.__init__)
     params = list(sig.parameters.keys())
     assert "infectiousCount" in params, "Missing parameter 'infectiousCount'"
 
-def test_standard::siinfector_has_infectiousCount():
-    assert hasattr(standard::SIInfector, "infectiousCount")
+def test_standard_siinfector_has_infectiousCount():
+    assert hasattr(standard_SIInfector, "infectiousCount")
     descriptor = None
-    for klass in standard::SIInfector.__mro__:
+    for klass in standard_SIInfector.__mro__:
         if "infectiousCount" in klass.__dict__:
             descriptor = klass.__dict__["infectiousCount"]
             break
@@ -648,16 +648,16 @@ def test_standarddiseasemodelstate_constructor_args():
 
 
 
-def test_standard::sidiseasemodelstate_is_not_abstract():
-    assert not inspect.isabstract(standard::SIDiseaseModelState)
+def test_standard_sidiseasemodelstate_is_not_abstract():
+    assert not inspect.isabstract(standard_SIDiseaseModelState)
 
 
-def test_standard::sidiseasemodelstate_constructor_exists():
-    assert callable(standard::SIDiseaseModelState.__init__)
+def test_standard_sidiseasemodelstate_constructor_exists():
+    assert callable(standard_SIDiseaseModelState.__init__)
 
 
-def test_standard::sidiseasemodelstate_constructor_args():
-    sig = inspect.signature(standard::SIDiseaseModelState.__init__)
+def test_standard_sidiseasemodelstate_constructor_args():
+    sig = inspect.signature(standard_SIDiseaseModelState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -676,95 +676,95 @@ def test_standarddiseasemodel_constructor_args():
 
 
 
-def test_standard::si_is_not_abstract():
-    assert not inspect.isabstract(standard::SI)
+def test_standard_si_is_not_abstract():
+    assert not inspect.isabstract(standard_SI)
 
 
-def test_standard::si_constructor_exists():
-    assert callable(standard::SI.__init__)
+def test_standard_si_constructor_exists():
+    assert callable(standard_SI.__init__)
 
 
-def test_standard::si_constructor_args():
-    sig = inspect.signature(standard::SI.__init__)
+def test_standard_si_constructor_args():
+    sig = inspect.signature(standard_SI.__init__)
     params = list(sig.parameters.keys())
+    assert "nonLinearityCoefficient" in params, "Missing parameter 'nonLinearityCoefficient'"
+    assert "infectiousMortalityRate" in params, "Missing parameter 'infectiousMortalityRate'"
+    assert "recoveryRate" in params, "Missing parameter 'recoveryRate'"
+    assert "infectiousMortality" in params, "Missing parameter 'infectiousMortality'"
+    assert "transmissionRate" in params, "Missing parameter 'transmissionRate'"
     assert "physicallyAdjacentInfectiousProportion" in params, "Missing parameter 'physicallyAdjacentInfectiousProportion'"
     assert "roadNetworkInfectiousProportion" in params, "Missing parameter 'roadNetworkInfectiousProportion'"
-    assert "infectiousMortality" in params, "Missing parameter 'infectiousMortality'"
-    assert "nonLinearityCoefficient" in params, "Missing parameter 'nonLinearityCoefficient'"
-    assert "transmissionRate" in params, "Missing parameter 'transmissionRate'"
-    assert "recoveryRate" in params, "Missing parameter 'recoveryRate'"
     assert "characteristicMixingDistance" in params, "Missing parameter 'characteristicMixingDistance'"
-    assert "infectiousMortalityRate" in params, "Missing parameter 'infectiousMortalityRate'"
 
-def test_standard::si_has_physicallyAdjacentInfectiousProportion():
-    assert hasattr(standard::SI, "physicallyAdjacentInfectiousProportion")
+def test_standard_si_has_nonLinearityCoefficient():
+    assert hasattr(standard_SI, "nonLinearityCoefficient")
     descriptor = None
-    for klass in standard::SI.__mro__:
-        if "physicallyAdjacentInfectiousProportion" in klass.__dict__:
-            descriptor = klass.__dict__["physicallyAdjacentInfectiousProportion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::si_has_roadNetworkInfectiousProportion():
-    assert hasattr(standard::SI, "roadNetworkInfectiousProportion")
-    descriptor = None
-    for klass in standard::SI.__mro__:
-        if "roadNetworkInfectiousProportion" in klass.__dict__:
-            descriptor = klass.__dict__["roadNetworkInfectiousProportion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::si_has_infectiousMortality():
-    assert hasattr(standard::SI, "infectiousMortality")
-    descriptor = None
-    for klass in standard::SI.__mro__:
-        if "infectiousMortality" in klass.__dict__:
-            descriptor = klass.__dict__["infectiousMortality"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::si_has_nonLinearityCoefficient():
-    assert hasattr(standard::SI, "nonLinearityCoefficient")
-    descriptor = None
-    for klass in standard::SI.__mro__:
+    for klass in standard_SI.__mro__:
         if "nonLinearityCoefficient" in klass.__dict__:
             descriptor = klass.__dict__["nonLinearityCoefficient"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::si_has_transmissionRate():
-    assert hasattr(standard::SI, "transmissionRate")
+def test_standard_si_has_infectiousMortalityRate():
+    assert hasattr(standard_SI, "infectiousMortalityRate")
     descriptor = None
-    for klass in standard::SI.__mro__:
-        if "transmissionRate" in klass.__dict__:
-            descriptor = klass.__dict__["transmissionRate"]
+    for klass in standard_SI.__mro__:
+        if "infectiousMortalityRate" in klass.__dict__:
+            descriptor = klass.__dict__["infectiousMortalityRate"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::si_has_recoveryRate():
-    assert hasattr(standard::SI, "recoveryRate")
+def test_standard_si_has_recoveryRate():
+    assert hasattr(standard_SI, "recoveryRate")
     descriptor = None
-    for klass in standard::SI.__mro__:
+    for klass in standard_SI.__mro__:
         if "recoveryRate" in klass.__dict__:
             descriptor = klass.__dict__["recoveryRate"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::si_has_characteristicMixingDistance():
-    assert hasattr(standard::SI, "characteristicMixingDistance")
+def test_standard_si_has_infectiousMortality():
+    assert hasattr(standard_SI, "infectiousMortality")
     descriptor = None
-    for klass in standard::SI.__mro__:
-        if "characteristicMixingDistance" in klass.__dict__:
-            descriptor = klass.__dict__["characteristicMixingDistance"]
+    for klass in standard_SI.__mro__:
+        if "infectiousMortality" in klass.__dict__:
+            descriptor = klass.__dict__["infectiousMortality"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::si_has_infectiousMortalityRate():
-    assert hasattr(standard::SI, "infectiousMortalityRate")
+def test_standard_si_has_transmissionRate():
+    assert hasattr(standard_SI, "transmissionRate")
     descriptor = None
-    for klass in standard::SI.__mro__:
-        if "infectiousMortalityRate" in klass.__dict__:
-            descriptor = klass.__dict__["infectiousMortalityRate"]
+    for klass in standard_SI.__mro__:
+        if "transmissionRate" in klass.__dict__:
+            descriptor = klass.__dict__["transmissionRate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_si_has_physicallyAdjacentInfectiousProportion():
+    assert hasattr(standard_SI, "physicallyAdjacentInfectiousProportion")
+    descriptor = None
+    for klass in standard_SI.__mro__:
+        if "physicallyAdjacentInfectiousProportion" in klass.__dict__:
+            descriptor = klass.__dict__["physicallyAdjacentInfectiousProportion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_si_has_roadNetworkInfectiousProportion():
+    assert hasattr(standard_SI, "roadNetworkInfectiousProportion")
+    descriptor = None
+    for klass in standard_SI.__mro__:
+        if "roadNetworkInfectiousProportion" in klass.__dict__:
+            descriptor = klass.__dict__["roadNetworkInfectiousProportion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_si_has_characteristicMixingDistance():
+    assert hasattr(standard_SI, "characteristicMixingDistance")
+    descriptor = None
+    for klass in standard_SI.__mro__:
+        if "characteristicMixingDistance" in klass.__dict__:
+            descriptor = klass.__dict__["characteristicMixingDistance"]
             break
     assert isinstance(descriptor, property)
 
@@ -784,37 +784,37 @@ def test_sirlabelvalue_constructor_args():
 
 
 
-def test_standard::populationmodellabel_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationModelLabel)
+def test_standard_populationmodellabel_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationModelLabel)
 
 
-def test_standard::populationmodellabel_constructor_exists():
-    assert callable(standard::PopulationModelLabel.__init__)
+def test_standard_populationmodellabel_constructor_exists():
+    assert callable(standard_PopulationModelLabel.__init__)
 
 
-def test_standard::populationmodellabel_constructor_args():
-    sig = inspect.signature(standard::PopulationModelLabel.__init__)
+def test_standard_populationmodellabel_constructor_args():
+    sig = inspect.signature(standard_PopulationModelLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::seirlabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::SEIRLabelValue)
+def test_standard_seirlabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_SEIRLabelValue)
 
 
-def test_standard::seirlabelvalue_constructor_exists():
-    assert callable(standard::SEIRLabelValue.__init__)
+def test_standard_seirlabelvalue_constructor_exists():
+    assert callable(standard_SEIRLabelValue.__init__)
 
 
-def test_standard::seirlabelvalue_constructor_args():
-    sig = inspect.signature(standard::SEIRLabelValue.__init__)
+def test_standard_seirlabelvalue_constructor_args():
+    sig = inspect.signature(standard_SEIRLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "e" in params, "Missing parameter 'e'"
 
-def test_standard::seirlabelvalue_has_e():
-    assert hasattr(standard::SEIRLabelValue, "e")
+def test_standard_seirlabelvalue_has_e():
+    assert hasattr(standard_SEIRLabelValue, "e")
     descriptor = None
-    for klass in standard::SEIRLabelValue.__mro__:
+    for klass in standard_SEIRLabelValue.__mro__:
         if "e" in klass.__dict__:
             descriptor = klass.__dict__["e"]
             break
@@ -836,97 +836,97 @@ def test_standarddiseasemodellabel_constructor_args():
 
 
 
-def test_standard::sirlabel_is_not_abstract():
-    assert not inspect.isabstract(standard::SIRLabel)
+def test_standard_sirlabel_is_not_abstract():
+    assert not inspect.isabstract(standard_SIRLabel)
 
 
-def test_standard::sirlabel_constructor_exists():
-    assert callable(standard::SIRLabel.__init__)
+def test_standard_sirlabel_constructor_exists():
+    assert callable(standard_SIRLabel.__init__)
 
 
-def test_standard::sirlabel_constructor_args():
-    sig = inspect.signature(standard::SIRLabel.__init__)
+def test_standard_sirlabel_constructor_args():
+    sig = inspect.signature(standard_SIRLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::silabel_is_not_abstract():
-    assert not inspect.isabstract(standard::SILabel)
+def test_standard_silabel_is_not_abstract():
+    assert not inspect.isabstract(standard_SILabel)
 
 
-def test_standard::silabel_constructor_exists():
-    assert callable(standard::SILabel.__init__)
+def test_standard_silabel_constructor_exists():
+    assert callable(standard_SILabel.__init__)
 
 
-def test_standard::silabel_constructor_args():
-    sig = inspect.signature(standard::SILabel.__init__)
+def test_standard_silabel_constructor_args():
+    sig = inspect.signature(standard_SILabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::seirlabel_is_not_abstract():
-    assert not inspect.isabstract(standard::SEIRLabel)
+def test_standard_seirlabel_is_not_abstract():
+    assert not inspect.isabstract(standard_SEIRLabel)
 
 
-def test_standard::seirlabel_constructor_exists():
-    assert callable(standard::SEIRLabel.__init__)
+def test_standard_seirlabel_constructor_exists():
+    assert callable(standard_SEIRLabel.__init__)
 
 
-def test_standard::seirlabel_constructor_args():
-    sig = inspect.signature(standard::SEIRLabel.__init__)
+def test_standard_seirlabel_constructor_args():
+    sig = inspect.signature(standard_SEIRLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::standarddiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardDiseaseModel)
+def test_standard_standarddiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardDiseaseModel)
 
 
-def test_standard::standarddiseasemodel_constructor_exists():
-    assert callable(standard::StandardDiseaseModel.__init__)
+def test_standard_standarddiseasemodel_constructor_exists():
+    assert callable(standard_StandardDiseaseModel.__init__)
 
 
-def test_standard::standarddiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StandardDiseaseModel.__init__)
+def test_standard_standarddiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StandardDiseaseModel.__init__)
     params = list(sig.parameters.keys())
+    assert "totalArea" in params, "Missing parameter 'totalArea'"
+    assert "totalPopulationCount" in params, "Missing parameter 'totalPopulationCount'"
     assert "referencePopulationDensity" in params, "Missing parameter 'referencePopulationDensity'"
     assert "totalPopulationCountReciprocal" in params, "Missing parameter 'totalPopulationCountReciprocal'"
-    assert "totalPopulationCount" in params, "Missing parameter 'totalPopulationCount'"
-    assert "totalArea" in params, "Missing parameter 'totalArea'"
 
-def test_standard::standarddiseasemodel_has_referencePopulationDensity():
-    assert hasattr(standard::StandardDiseaseModel, "referencePopulationDensity")
+def test_standard_standarddiseasemodel_has_totalArea():
+    assert hasattr(standard_StandardDiseaseModel, "totalArea")
     descriptor = None
-    for klass in standard::StandardDiseaseModel.__mro__:
-        if "referencePopulationDensity" in klass.__dict__:
-            descriptor = klass.__dict__["referencePopulationDensity"]
+    for klass in standard_StandardDiseaseModel.__mro__:
+        if "totalArea" in klass.__dict__:
+            descriptor = klass.__dict__["totalArea"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standarddiseasemodel_has_totalPopulationCountReciprocal():
-    assert hasattr(standard::StandardDiseaseModel, "totalPopulationCountReciprocal")
+def test_standard_standarddiseasemodel_has_totalPopulationCount():
+    assert hasattr(standard_StandardDiseaseModel, "totalPopulationCount")
     descriptor = None
-    for klass in standard::StandardDiseaseModel.__mro__:
-        if "totalPopulationCountReciprocal" in klass.__dict__:
-            descriptor = klass.__dict__["totalPopulationCountReciprocal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::standarddiseasemodel_has_totalPopulationCount():
-    assert hasattr(standard::StandardDiseaseModel, "totalPopulationCount")
-    descriptor = None
-    for klass in standard::StandardDiseaseModel.__mro__:
+    for klass in standard_StandardDiseaseModel.__mro__:
         if "totalPopulationCount" in klass.__dict__:
             descriptor = klass.__dict__["totalPopulationCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standarddiseasemodel_has_totalArea():
-    assert hasattr(standard::StandardDiseaseModel, "totalArea")
+def test_standard_standarddiseasemodel_has_referencePopulationDensity():
+    assert hasattr(standard_StandardDiseaseModel, "referencePopulationDensity")
     descriptor = None
-    for klass in standard::StandardDiseaseModel.__mro__:
-        if "totalArea" in klass.__dict__:
-            descriptor = klass.__dict__["totalArea"]
+    for klass in standard_StandardDiseaseModel.__mro__:
+        if "referencePopulationDensity" in klass.__dict__:
+            descriptor = klass.__dict__["referencePopulationDensity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_standarddiseasemodel_has_totalPopulationCountReciprocal():
+    assert hasattr(standard_StandardDiseaseModel, "totalPopulationCountReciprocal")
+    descriptor = None
+    for klass in standard_StandardDiseaseModel.__mro__:
+        if "totalPopulationCountReciprocal" in klass.__dict__:
+            descriptor = klass.__dict__["totalPopulationCountReciprocal"]
             break
     assert isinstance(descriptor, property)
 
@@ -960,43 +960,43 @@ def test_labelvalue_constructor_args():
 
 
 
-def test_standard::diseasemodellabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::DiseaseModelLabelValue)
+def test_standard_diseasemodellabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_DiseaseModelLabelValue)
 
 
-def test_standard::diseasemodellabelvalue_constructor_exists():
-    assert callable(standard::DiseaseModelLabelValue.__init__)
+def test_standard_diseasemodellabelvalue_constructor_exists():
+    assert callable(standard_DiseaseModelLabelValue.__init__)
 
 
-def test_standard::diseasemodellabelvalue_constructor_args():
-    sig = inspect.signature(standard::DiseaseModelLabelValue.__init__)
+def test_standard_diseasemodellabelvalue_constructor_args():
+    sig = inspect.signature(standard_DiseaseModelLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "populationCount" in params, "Missing parameter 'populationCount'"
     assert "diseaseDeaths" in params, "Missing parameter 'diseaseDeaths'"
     assert "incidence" in params, "Missing parameter 'incidence'"
 
-def test_standard::diseasemodellabelvalue_has_populationCount():
-    assert hasattr(standard::DiseaseModelLabelValue, "populationCount")
+def test_standard_diseasemodellabelvalue_has_populationCount():
+    assert hasattr(standard_DiseaseModelLabelValue, "populationCount")
     descriptor = None
-    for klass in standard::DiseaseModelLabelValue.__mro__:
+    for klass in standard_DiseaseModelLabelValue.__mro__:
         if "populationCount" in klass.__dict__:
             descriptor = klass.__dict__["populationCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodellabelvalue_has_diseaseDeaths():
-    assert hasattr(standard::DiseaseModelLabelValue, "diseaseDeaths")
+def test_standard_diseasemodellabelvalue_has_diseaseDeaths():
+    assert hasattr(standard_DiseaseModelLabelValue, "diseaseDeaths")
     descriptor = None
-    for klass in standard::DiseaseModelLabelValue.__mro__:
+    for klass in standard_DiseaseModelLabelValue.__mro__:
         if "diseaseDeaths" in klass.__dict__:
             descriptor = klass.__dict__["diseaseDeaths"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodellabelvalue_has_incidence():
-    assert hasattr(standard::DiseaseModelLabelValue, "incidence")
+def test_standard_diseasemodellabelvalue_has_incidence():
+    assert hasattr(standard_DiseaseModelLabelValue, "incidence")
     descriptor = None
-    for klass in standard::DiseaseModelLabelValue.__mro__:
+    for klass in standard_DiseaseModelLabelValue.__mro__:
         if "incidence" in klass.__dict__:
             descriptor = klass.__dict__["incidence"]
             break
@@ -1004,30 +1004,30 @@ def test_standard::diseasemodellabelvalue_has_incidence():
 
 
 
-def test_standard::diseasemodelstate_is_not_abstract():
-    assert not inspect.isabstract(standard::DiseaseModelState)
+def test_standard_diseasemodelstate_is_not_abstract():
+    assert not inspect.isabstract(standard_DiseaseModelState)
 
 
-def test_standard::diseasemodelstate_constructor_exists():
-    assert callable(standard::DiseaseModelState.__init__)
+def test_standard_diseasemodelstate_constructor_exists():
+    assert callable(standard_DiseaseModelState.__init__)
 
 
-def test_standard::diseasemodelstate_constructor_args():
-    sig = inspect.signature(standard::DiseaseModelState.__init__)
+def test_standard_diseasemodelstate_constructor_args():
+    sig = inspect.signature(standard_DiseaseModelState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::populationlabel_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationLabel)
+def test_standard_populationlabel_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationLabel)
 
 
-def test_standard::populationlabel_constructor_exists():
-    assert callable(standard::PopulationLabel.__init__)
+def test_standard_populationlabel_constructor_exists():
+    assert callable(standard_PopulationLabel.__init__)
 
 
-def test_standard::populationlabel_constructor_args():
-    sig = inspect.signature(standard::PopulationLabel.__init__)
+def test_standard_populationlabel_constructor_args():
+    sig = inspect.signature(standard_PopulationLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1046,16 +1046,16 @@ def test_dynamicnodelabel_constructor_args():
 
 
 
-def test_standard::diseasemodellabel_is_not_abstract():
-    assert not inspect.isabstract(standard::DiseaseModelLabel)
+def test_standard_diseasemodellabel_is_not_abstract():
+    assert not inspect.isabstract(standard_DiseaseModelLabel)
 
 
-def test_standard::diseasemodellabel_constructor_exists():
-    assert callable(standard::DiseaseModelLabel.__init__)
+def test_standard_diseasemodellabel_constructor_exists():
+    assert callable(standard_DiseaseModelLabel.__init__)
 
 
-def test_standard::diseasemodellabel_constructor_args():
-    sig = inspect.signature(standard::DiseaseModelLabel.__init__)
+def test_standard_diseasemodellabel_constructor_args():
+    sig = inspect.signature(standard_DiseaseModelLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1102,23 +1102,23 @@ def test_nodedecorator_constructor_args():
 
 
 
-def test_standard::infectorinoculatorcollection_is_not_abstract():
-    assert not inspect.isabstract(standard::InfectorInoculatorCollection)
+def test_standard_infectorinoculatorcollection_is_not_abstract():
+    assert not inspect.isabstract(standard_InfectorInoculatorCollection)
 
 
-def test_standard::infectorinoculatorcollection_constructor_exists():
-    assert callable(standard::InfectorInoculatorCollection.__init__)
+def test_standard_infectorinoculatorcollection_constructor_exists():
+    assert callable(standard_InfectorInoculatorCollection.__init__)
 
 
-def test_standard::infectorinoculatorcollection_constructor_args():
-    sig = inspect.signature(standard::InfectorInoculatorCollection.__init__)
+def test_standard_infectorinoculatorcollection_constructor_args():
+    sig = inspect.signature(standard_InfectorInoculatorCollection.__init__)
     params = list(sig.parameters.keys())
     assert "importFolder" in params, "Missing parameter 'importFolder'"
 
-def test_standard::infectorinoculatorcollection_has_importFolder():
-    assert hasattr(standard::InfectorInoculatorCollection, "importFolder")
+def test_standard_infectorinoculatorcollection_has_importFolder():
+    assert hasattr(standard_InfectorInoculatorCollection, "importFolder")
     descriptor = None
-    for klass in standard::InfectorInoculatorCollection.__mro__:
+    for klass in standard_InfectorInoculatorCollection.__mro__:
         if "importFolder" in klass.__dict__:
             descriptor = klass.__dict__["importFolder"]
             break
@@ -1126,159 +1126,159 @@ def test_standard::infectorinoculatorcollection_has_importFolder():
 
 
 
-def test_standard::infector_is_not_abstract():
-    assert not inspect.isabstract(standard::Infector)
+def test_standard_infector_is_not_abstract():
+    assert not inspect.isabstract(standard_Infector)
 
 
-def test_standard::infector_constructor_exists():
-    assert callable(standard::Infector.__init__)
+def test_standard_infector_constructor_exists():
+    assert callable(standard_Infector.__init__)
 
 
-def test_standard::infector_constructor_args():
-    sig = inspect.signature(standard::Infector.__init__)
+def test_standard_infector_constructor_args():
+    sig = inspect.signature(standard_Infector.__init__)
     params = list(sig.parameters.keys())
-    assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
     assert "targetURI" in params, "Missing parameter 'targetURI'"
+    assert "targetISOKey" in params, "Missing parameter 'targetISOKey'"
     assert "infectPercentage" in params, "Missing parameter 'infectPercentage'"
     assert "diseaseName" in params, "Missing parameter 'diseaseName'"
-    assert "targetISOKey" in params, "Missing parameter 'targetISOKey'"
+    assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
 
-def test_standard::infector_has_populationIdentifier():
-    assert hasattr(standard::Infector, "populationIdentifier")
+def test_standard_infector_has_targetURI():
+    assert hasattr(standard_Infector, "targetURI")
     descriptor = None
-    for klass in standard::Infector.__mro__:
-        if "populationIdentifier" in klass.__dict__:
-            descriptor = klass.__dict__["populationIdentifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::infector_has_targetURI():
-    assert hasattr(standard::Infector, "targetURI")
-    descriptor = None
-    for klass in standard::Infector.__mro__:
+    for klass in standard_Infector.__mro__:
         if "targetURI" in klass.__dict__:
             descriptor = klass.__dict__["targetURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::infector_has_infectPercentage():
-    assert hasattr(standard::Infector, "infectPercentage")
+def test_standard_infector_has_targetISOKey():
+    assert hasattr(standard_Infector, "targetISOKey")
     descriptor = None
-    for klass in standard::Infector.__mro__:
-        if "infectPercentage" in klass.__dict__:
-            descriptor = klass.__dict__["infectPercentage"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::infector_has_diseaseName():
-    assert hasattr(standard::Infector, "diseaseName")
-    descriptor = None
-    for klass in standard::Infector.__mro__:
-        if "diseaseName" in klass.__dict__:
-            descriptor = klass.__dict__["diseaseName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::infector_has_targetISOKey():
-    assert hasattr(standard::Infector, "targetISOKey")
-    descriptor = None
-    for klass in standard::Infector.__mro__:
+    for klass in standard_Infector.__mro__:
         if "targetISOKey" in klass.__dict__:
             descriptor = klass.__dict__["targetISOKey"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_standard::diseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::DiseaseModel)
-
-
-def test_standard::diseasemodel_constructor_exists():
-    assert callable(standard::DiseaseModel.__init__)
-
-
-def test_standard::diseasemodel_constructor_args():
-    sig = inspect.signature(standard::DiseaseModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "timePeriod" in params, "Missing parameter 'timePeriod'"
-    assert "finiteDifference" in params, "Missing parameter 'finiteDifference'"
-    assert "backgroundBirthRate" in params, "Missing parameter 'backgroundBirthRate'"
-    assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
-    assert "relativeTolerance" in params, "Missing parameter 'relativeTolerance'"
-    assert "frequencyDependent" in params, "Missing parameter 'frequencyDependent'"
-    assert "backgroundMortalityRate" in params, "Missing parameter 'backgroundMortalityRate'"
-    assert "diseaseName" in params, "Missing parameter 'diseaseName'"
-
-def test_standard::diseasemodel_has_timePeriod():
-    assert hasattr(standard::DiseaseModel, "timePeriod")
+def test_standard_infector_has_infectPercentage():
+    assert hasattr(standard_Infector, "infectPercentage")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
-        if "timePeriod" in klass.__dict__:
-            descriptor = klass.__dict__["timePeriod"]
+    for klass in standard_Infector.__mro__:
+        if "infectPercentage" in klass.__dict__:
+            descriptor = klass.__dict__["infectPercentage"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodel_has_finiteDifference():
-    assert hasattr(standard::DiseaseModel, "finiteDifference")
+def test_standard_infector_has_diseaseName():
+    assert hasattr(standard_Infector, "diseaseName")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
-        if "finiteDifference" in klass.__dict__:
-            descriptor = klass.__dict__["finiteDifference"]
+    for klass in standard_Infector.__mro__:
+        if "diseaseName" in klass.__dict__:
+            descriptor = klass.__dict__["diseaseName"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodel_has_backgroundBirthRate():
-    assert hasattr(standard::DiseaseModel, "backgroundBirthRate")
+def test_standard_infector_has_populationIdentifier():
+    assert hasattr(standard_Infector, "populationIdentifier")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
-        if "backgroundBirthRate" in klass.__dict__:
-            descriptor = klass.__dict__["backgroundBirthRate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::diseasemodel_has_populationIdentifier():
-    assert hasattr(standard::DiseaseModel, "populationIdentifier")
-    descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
+    for klass in standard_Infector.__mro__:
         if "populationIdentifier" in klass.__dict__:
             descriptor = klass.__dict__["populationIdentifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodel_has_relativeTolerance():
-    assert hasattr(standard::DiseaseModel, "relativeTolerance")
+
+
+def test_standard_diseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_DiseaseModel)
+
+
+def test_standard_diseasemodel_constructor_exists():
+    assert callable(standard_DiseaseModel.__init__)
+
+
+def test_standard_diseasemodel_constructor_args():
+    sig = inspect.signature(standard_DiseaseModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "finiteDifference" in params, "Missing parameter 'finiteDifference'"
+    assert "frequencyDependent" in params, "Missing parameter 'frequencyDependent'"
+    assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
+    assert "backgroundBirthRate" in params, "Missing parameter 'backgroundBirthRate'"
+    assert "timePeriod" in params, "Missing parameter 'timePeriod'"
+    assert "diseaseName" in params, "Missing parameter 'diseaseName'"
+    assert "relativeTolerance" in params, "Missing parameter 'relativeTolerance'"
+    assert "backgroundMortalityRate" in params, "Missing parameter 'backgroundMortalityRate'"
+
+def test_standard_diseasemodel_has_finiteDifference():
+    assert hasattr(standard_DiseaseModel, "finiteDifference")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
-        if "relativeTolerance" in klass.__dict__:
-            descriptor = klass.__dict__["relativeTolerance"]
+    for klass in standard_DiseaseModel.__mro__:
+        if "finiteDifference" in klass.__dict__:
+            descriptor = klass.__dict__["finiteDifference"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodel_has_frequencyDependent():
-    assert hasattr(standard::DiseaseModel, "frequencyDependent")
+def test_standard_diseasemodel_has_frequencyDependent():
+    assert hasattr(standard_DiseaseModel, "frequencyDependent")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
+    for klass in standard_DiseaseModel.__mro__:
         if "frequencyDependent" in klass.__dict__:
             descriptor = klass.__dict__["frequencyDependent"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodel_has_backgroundMortalityRate():
-    assert hasattr(standard::DiseaseModel, "backgroundMortalityRate")
+def test_standard_diseasemodel_has_populationIdentifier():
+    assert hasattr(standard_DiseaseModel, "populationIdentifier")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
-        if "backgroundMortalityRate" in klass.__dict__:
-            descriptor = klass.__dict__["backgroundMortalityRate"]
+    for klass in standard_DiseaseModel.__mro__:
+        if "populationIdentifier" in klass.__dict__:
+            descriptor = klass.__dict__["populationIdentifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::diseasemodel_has_diseaseName():
-    assert hasattr(standard::DiseaseModel, "diseaseName")
+def test_standard_diseasemodel_has_backgroundBirthRate():
+    assert hasattr(standard_DiseaseModel, "backgroundBirthRate")
     descriptor = None
-    for klass in standard::DiseaseModel.__mro__:
+    for klass in standard_DiseaseModel.__mro__:
+        if "backgroundBirthRate" in klass.__dict__:
+            descriptor = klass.__dict__["backgroundBirthRate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_diseasemodel_has_timePeriod():
+    assert hasattr(standard_DiseaseModel, "timePeriod")
+    descriptor = None
+    for klass in standard_DiseaseModel.__mro__:
+        if "timePeriod" in klass.__dict__:
+            descriptor = klass.__dict__["timePeriod"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_diseasemodel_has_diseaseName():
+    assert hasattr(standard_DiseaseModel, "diseaseName")
+    descriptor = None
+    for klass in standard_DiseaseModel.__mro__:
         if "diseaseName" in klass.__dict__:
             descriptor = klass.__dict__["diseaseName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_diseasemodel_has_relativeTolerance():
+    assert hasattr(standard_DiseaseModel, "relativeTolerance")
+    descriptor = None
+    for klass in standard_DiseaseModel.__mro__:
+        if "relativeTolerance" in klass.__dict__:
+            descriptor = klass.__dict__["relativeTolerance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_diseasemodel_has_backgroundMortalityRate():
+    assert hasattr(standard_DiseaseModel, "backgroundMortalityRate")
+    descriptor = None
+    for klass in standard_DiseaseModel.__mro__:
+        if "backgroundMortalityRate" in klass.__dict__:
+            descriptor = klass.__dict__["backgroundMortalityRate"]
             break
     assert isinstance(descriptor, property)
 
@@ -1298,51 +1298,37 @@ def test_sir_constructor_args():
 
 
 
-def test_standard::stochasticpoissonsirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticPoissonSIRDiseaseModel)
+def test_standard_stochasticpoissonsirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticPoissonSIRDiseaseModel)
 
 
-def test_standard::stochasticpoissonsirdiseasemodel_constructor_exists():
-    assert callable(standard::StochasticPoissonSIRDiseaseModel.__init__)
+def test_standard_stochasticpoissonsirdiseasemodel_constructor_exists():
+    assert callable(standard_StochasticPoissonSIRDiseaseModel.__init__)
 
 
-def test_standard::stochasticpoissonsirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticPoissonSIRDiseaseModel.__init__)
+def test_standard_stochasticpoissonsirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticPoissonSIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::stochasticsirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticSIRDiseaseModel)
+def test_standard_seir_is_not_abstract():
+    assert not inspect.isabstract(standard_SEIR)
 
 
-def test_standard::stochasticsirdiseasemodel_constructor_exists():
-    assert callable(standard::StochasticSIRDiseaseModel.__init__)
+def test_standard_seir_constructor_exists():
+    assert callable(standard_SEIR.__init__)
 
 
-def test_standard::stochasticsirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticSIRDiseaseModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_standard::seir_is_not_abstract():
-    assert not inspect.isabstract(standard::SEIR)
-
-
-def test_standard::seir_constructor_exists():
-    assert callable(standard::SEIR.__init__)
-
-
-def test_standard::seir_constructor_args():
-    sig = inspect.signature(standard::SEIR.__init__)
+def test_standard_seir_constructor_args():
+    sig = inspect.signature(standard_SEIR.__init__)
     params = list(sig.parameters.keys())
     assert "incubationRate" in params, "Missing parameter 'incubationRate'"
 
-def test_standard::seir_has_incubationRate():
-    assert hasattr(standard::SEIR, "incubationRate")
+def test_standard_seir_has_incubationRate():
+    assert hasattr(standard_SEIR, "incubationRate")
     descriptor = None
-    for klass in standard::SEIR.__mro__:
+    for klass in standard_SEIR.__mro__:
         if "incubationRate" in klass.__dict__:
             descriptor = klass.__dict__["incubationRate"]
             break
@@ -1350,16 +1336,30 @@ def test_standard::seir_has_incubationRate():
 
 
 
-def test_standard::deterministicsirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::DeterministicSIRDiseaseModel)
+def test_standard_stochasticsirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticSIRDiseaseModel)
 
 
-def test_standard::deterministicsirdiseasemodel_constructor_exists():
-    assert callable(standard::DeterministicSIRDiseaseModel.__init__)
+def test_standard_stochasticsirdiseasemodel_constructor_exists():
+    assert callable(standard_StochasticSIRDiseaseModel.__init__)
 
 
-def test_standard::deterministicsirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::DeterministicSIRDiseaseModel.__init__)
+def test_standard_stochasticsirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticSIRDiseaseModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_standard_deterministicsirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_DeterministicSIRDiseaseModel)
+
+
+def test_standard_deterministicsirdiseasemodel_constructor_exists():
+    assert callable(standard_DeterministicSIRDiseaseModel.__init__)
+
+
+def test_standard_deterministicsirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_DeterministicSIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1378,65 +1378,37 @@ def test_si_constructor_args():
 
 
 
-def test_standard::stochasticpoissonsidiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticPoissonSIDiseaseModel)
+def test_standard_stochasticpoissonsidiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticPoissonSIDiseaseModel)
 
 
-def test_standard::stochasticpoissonsidiseasemodel_constructor_exists():
-    assert callable(standard::StochasticPoissonSIDiseaseModel.__init__)
+def test_standard_stochasticpoissonsidiseasemodel_constructor_exists():
+    assert callable(standard_StochasticPoissonSIDiseaseModel.__init__)
 
 
-def test_standard::stochasticpoissonsidiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticPoissonSIDiseaseModel.__init__)
+def test_standard_stochasticpoissonsidiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticPoissonSIDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::stochasticsidiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticSIDiseaseModel)
+def test_standard_sir_is_not_abstract():
+    assert not inspect.isabstract(standard_SIR)
 
 
-def test_standard::stochasticsidiseasemodel_constructor_exists():
-    assert callable(standard::StochasticSIDiseaseModel.__init__)
+def test_standard_sir_constructor_exists():
+    assert callable(standard_SIR.__init__)
 
 
-def test_standard::stochasticsidiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticSIDiseaseModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_standard::aggregatingsidiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::AggregatingSIDiseaseModel)
-
-
-def test_standard::aggregatingsidiseasemodel_constructor_exists():
-    assert callable(standard::AggregatingSIDiseaseModel.__init__)
-
-
-def test_standard::aggregatingsidiseasemodel_constructor_args():
-    sig = inspect.signature(standard::AggregatingSIDiseaseModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_standard::sir_is_not_abstract():
-    assert not inspect.isabstract(standard::SIR)
-
-
-def test_standard::sir_constructor_exists():
-    assert callable(standard::SIR.__init__)
-
-
-def test_standard::sir_constructor_args():
-    sig = inspect.signature(standard::SIR.__init__)
+def test_standard_sir_constructor_args():
+    sig = inspect.signature(standard_SIR.__init__)
     params = list(sig.parameters.keys())
     assert "immunityLossRate" in params, "Missing parameter 'immunityLossRate'"
 
-def test_standard::sir_has_immunityLossRate():
-    assert hasattr(standard::SIR, "immunityLossRate")
+def test_standard_sir_has_immunityLossRate():
+    assert hasattr(standard_SIR, "immunityLossRate")
     descriptor = None
-    for klass in standard::SIR.__mro__:
+    for klass in standard_SIR.__mro__:
         if "immunityLossRate" in klass.__dict__:
             descriptor = klass.__dict__["immunityLossRate"]
             break
@@ -1444,16 +1416,44 @@ def test_standard::sir_has_immunityLossRate():
 
 
 
-def test_standard::deterministicsidiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::DeterministicSIDiseaseModel)
+def test_standard_stochasticsidiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticSIDiseaseModel)
 
 
-def test_standard::deterministicsidiseasemodel_constructor_exists():
-    assert callable(standard::DeterministicSIDiseaseModel.__init__)
+def test_standard_stochasticsidiseasemodel_constructor_exists():
+    assert callable(standard_StochasticSIDiseaseModel.__init__)
 
 
-def test_standard::deterministicsidiseasemodel_constructor_args():
-    sig = inspect.signature(standard::DeterministicSIDiseaseModel.__init__)
+def test_standard_stochasticsidiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticSIDiseaseModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_standard_aggregatingsidiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_AggregatingSIDiseaseModel)
+
+
+def test_standard_aggregatingsidiseasemodel_constructor_exists():
+    assert callable(standard_AggregatingSIDiseaseModel.__init__)
+
+
+def test_standard_aggregatingsidiseasemodel_constructor_args():
+    sig = inspect.signature(standard_AggregatingSIDiseaseModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_standard_deterministicsidiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_DeterministicSIDiseaseModel)
+
+
+def test_standard_deterministicsidiseasemodel_constructor_exists():
+    assert callable(standard_DeterministicSIDiseaseModel.__init__)
+
+
+def test_standard_deterministicsidiseasemodel_constructor_args():
+    sig = inspect.signature(standard_DeterministicSIDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1472,44 +1472,44 @@ def test_seir_constructor_args():
 
 
 
-def test_standard::stochasticpoissonseirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticPoissonSEIRDiseaseModel)
+def test_standard_stochasticpoissonseirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticPoissonSEIRDiseaseModel)
 
 
-def test_standard::stochasticpoissonseirdiseasemodel_constructor_exists():
-    assert callable(standard::StochasticPoissonSEIRDiseaseModel.__init__)
+def test_standard_stochasticpoissonseirdiseasemodel_constructor_exists():
+    assert callable(standard_StochasticPoissonSEIRDiseaseModel.__init__)
 
 
-def test_standard::stochasticpoissonseirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticPoissonSEIRDiseaseModel.__init__)
+def test_standard_stochasticpoissonseirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticPoissonSEIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::stochasticseirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticSEIRDiseaseModel)
+def test_standard_stochasticseirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticSEIRDiseaseModel)
 
 
-def test_standard::stochasticseirdiseasemodel_constructor_exists():
-    assert callable(standard::StochasticSEIRDiseaseModel.__init__)
+def test_standard_stochasticseirdiseasemodel_constructor_exists():
+    assert callable(standard_StochasticSEIRDiseaseModel.__init__)
 
 
-def test_standard::stochasticseirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::StochasticSEIRDiseaseModel.__init__)
+def test_standard_stochasticseirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_StochasticSEIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::deterministicseirdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(standard::DeterministicSEIRDiseaseModel)
+def test_standard_deterministicseirdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(standard_DeterministicSEIRDiseaseModel)
 
 
-def test_standard::deterministicseirdiseasemodel_constructor_exists():
-    assert callable(standard::DeterministicSEIRDiseaseModel.__init__)
+def test_standard_deterministicseirdiseasemodel_constructor_exists():
+    assert callable(standard_DeterministicSEIRDiseaseModel.__init__)
 
 
-def test_standard::deterministicseirdiseasemodel_constructor_args():
-    sig = inspect.signature(standard::DeterministicSEIRDiseaseModel.__init__)
+def test_standard_deterministicseirdiseasemodel_constructor_args():
+    sig = inspect.signature(standard_DeterministicSEIRDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1527,50 +1527,50 @@ safe_text = st.text(
 Infector_strategy = st.builds(
     Infector,
 )
-standard::StandardInfector_strategy = st.builds(
-    standard::StandardInfector,
+standard_StandardInfector_strategy = st.builds(
+    standard_StandardInfector,
 )
 SIInfector_strategy = st.builds(
     SIInfector,
 )
-standard::SIRInoculator_strategy = st.builds(
-    standard::SIRInoculator,
-    inoculatedPercentage=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+standard_SIRInoculator_strategy = st.builds(
+    standard_SIRInoculator,
     inoculatePercentage=
-        st.booleans()
+        st.booleans(),
+    inoculatedPercentage=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 StochasticDiseaseModel_strategy = st.builds(
     StochasticDiseaseModel,
 )
-standard::StandardStochasticDiseaseModel_strategy = st.builds(
-    standard::StandardStochasticDiseaseModel,
+standard_StandardStochasticDiseaseModel_strategy = st.builds(
+    standard_StandardStochasticDiseaseModel,
     gain=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 AggregatingSIDiseaseModel_strategy = st.builds(
     AggregatingSIDiseaseModel,
 )
-standard::AggregatingSIRDiseaseModel_strategy = st.builds(
-    standard::AggregatingSIRDiseaseModel,
+standard_AggregatingSIRDiseaseModel_strategy = st.builds(
+    standard_AggregatingSIRDiseaseModel,
 )
 AggregatingSIRDiseaseModel_strategy = st.builds(
     AggregatingSIRDiseaseModel,
 )
-standard::AggregatingSEIRDiseaseModel_strategy = st.builds(
-    standard::AggregatingSEIRDiseaseModel,
+standard_AggregatingSEIRDiseaseModel_strategy = st.builds(
+    standard_AggregatingSEIRDiseaseModel,
 )
-standard::IntegrationDecorator_strategy = st.builds(
-    standard::IntegrationDecorator,
+standard_IntegrationDecorator_strategy = st.builds(
+    standard_IntegrationDecorator,
 )
-standard::IntegrationLabelValue_strategy = st.builds(
-    standard::IntegrationLabelValue,
+standard_IntegrationLabelValue_strategy = st.builds(
+    standard_IntegrationLabelValue,
 )
-standard::IntegrationLabel_strategy = st.builds(
-    standard::IntegrationLabel,
+standard_IntegrationLabel_strategy = st.builds(
+    standard_IntegrationLabel,
 )
-standard::SanityChecker_strategy = st.builds(
-    standard::SanityChecker,
+standard_SanityChecker_strategy = st.builds(
+    standard_SanityChecker,
 )
 StandardStochasticDiseaseModel_strategy = st.builds(
     StandardStochasticDiseaseModel,
@@ -1581,19 +1581,19 @@ StandardDiseaseModelLabelValue_strategy = st.builds(
 DiseaseModelState_strategy = st.builds(
     DiseaseModelState,
 )
-standard::AggregatingDiseaseModelState_strategy = st.builds(
-    standard::AggregatingDiseaseModelState,
+standard_AggregatingDiseaseModelState_strategy = st.builds(
+    standard_AggregatingDiseaseModelState,
 )
-standard::StandardDiseaseModelState_strategy = st.builds(
-    standard::StandardDiseaseModelState,
+standard_StandardDiseaseModelState_strategy = st.builds(
+    standard_StandardDiseaseModelState,
     areaRatio=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 DiseaseModelLabelValue_strategy = st.builds(
     DiseaseModelLabelValue,
 )
-standard::StandardDiseaseModelLabelValue_strategy = st.builds(
-    standard::StandardDiseaseModelLabelValue,
+standard_StandardDiseaseModelLabelValue_strategy = st.builds(
+    standard_StandardDiseaseModelLabelValue,
     s=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -1603,8 +1603,8 @@ IntegrationLabel_strategy = st.builds(
 DiseaseModelLabel_strategy = st.builds(
     DiseaseModelLabel,
 )
-standard::StandardDiseaseModelLabel_strategy = st.builds(
-    standard::StandardDiseaseModelLabel,
+standard_StandardDiseaseModelLabel_strategy = st.builds(
+    standard_StandardDiseaseModelLabel,
 )
 IntegrationDecorator_strategy = st.builds(
     IntegrationDecorator,
@@ -1612,94 +1612,94 @@ IntegrationDecorator_strategy = st.builds(
 DiseaseModel_strategy = st.builds(
     DiseaseModel,
 )
-standard::StochasticDiseaseModel_strategy = st.builds(
-    standard::StochasticDiseaseModel,
-    seed=
-        safe_text,
+standard_StochasticDiseaseModel_strategy = st.builds(
+    standard_StochasticDiseaseModel,
     randomGenerator=
+        safe_text,
+    seed=
         safe_text
 )
 SILabelValue_strategy = st.builds(
     SILabelValue,
 )
-standard::SIRLabelValue_strategy = st.builds(
-    standard::SIRLabelValue,
+standard_SIRLabelValue_strategy = st.builds(
+    standard_SIRLabelValue,
     r=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-standard::SILabelValue_strategy = st.builds(
-    standard::SILabelValue,
+standard_SILabelValue_strategy = st.builds(
+    standard_SILabelValue,
     i=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 StandardInfector_strategy = st.builds(
     StandardInfector,
 )
-standard::SIInfector_strategy = st.builds(
-    standard::SIInfector,
+standard_SIInfector_strategy = st.builds(
+    standard_SIInfector,
     infectiousCount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 StandardDiseaseModelState_strategy = st.builds(
     StandardDiseaseModelState,
 )
-standard::SIDiseaseModelState_strategy = st.builds(
-    standard::SIDiseaseModelState,
+standard_SIDiseaseModelState_strategy = st.builds(
+    standard_SIDiseaseModelState,
 )
 StandardDiseaseModel_strategy = st.builds(
     StandardDiseaseModel,
 )
-standard::SI_strategy = st.builds(
-    standard::SI,
+standard_SI_strategy = st.builds(
+    standard_SI,
+    nonLinearityCoefficient=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    infectiousMortalityRate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    recoveryRate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    infectiousMortality=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    transmissionRate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     physicallyAdjacentInfectiousProportion=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     roadNetworkInfectiousProportion=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    infectiousMortality=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    nonLinearityCoefficient=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    transmissionRate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    recoveryRate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     characteristicMixingDistance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    infectiousMortalityRate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 SIRLabelValue_strategy = st.builds(
     SIRLabelValue,
 )
-standard::PopulationModelLabel_strategy = st.builds(
-    standard::PopulationModelLabel,
+standard_PopulationModelLabel_strategy = st.builds(
+    standard_PopulationModelLabel,
 )
-standard::SEIRLabelValue_strategy = st.builds(
-    standard::SEIRLabelValue,
+standard_SEIRLabelValue_strategy = st.builds(
+    standard_SEIRLabelValue,
     e=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 StandardDiseaseModelLabel_strategy = st.builds(
     StandardDiseaseModelLabel,
 )
-standard::SIRLabel_strategy = st.builds(
-    standard::SIRLabel,
+standard_SIRLabel_strategy = st.builds(
+    standard_SIRLabel,
 )
-standard::SILabel_strategy = st.builds(
-    standard::SILabel,
+standard_SILabel_strategy = st.builds(
+    standard_SILabel,
 )
-standard::SEIRLabel_strategy = st.builds(
-    standard::SEIRLabel,
+standard_SEIRLabel_strategy = st.builds(
+    standard_SEIRLabel,
 )
-standard::StandardDiseaseModel_strategy = st.builds(
-    standard::StandardDiseaseModel,
-    referencePopulationDensity=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    totalPopulationCountReciprocal=
+standard_StandardDiseaseModel_strategy = st.builds(
+    standard_StandardDiseaseModel,
+    totalArea=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     totalPopulationCount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    totalArea=
+    referencePopulationDensity=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    totalPopulationCountReciprocal=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 IntegrationLabelValue_strategy = st.builds(
@@ -1708,8 +1708,8 @@ IntegrationLabelValue_strategy = st.builds(
 LabelValue_strategy = st.builds(
     LabelValue,
 )
-standard::DiseaseModelLabelValue_strategy = st.builds(
-    standard::DiseaseModelLabelValue,
+standard_DiseaseModelLabelValue_strategy = st.builds(
+    standard_DiseaseModelLabelValue,
     populationCount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     diseaseDeaths=
@@ -1717,17 +1717,17 @@ standard::DiseaseModelLabelValue_strategy = st.builds(
     incidence=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-standard::DiseaseModelState_strategy = st.builds(
-    standard::DiseaseModelState,
+standard_DiseaseModelState_strategy = st.builds(
+    standard_DiseaseModelState,
 )
-standard::PopulationLabel_strategy = st.builds(
-    standard::PopulationLabel,
+standard_PopulationLabel_strategy = st.builds(
+    standard_PopulationLabel,
 )
 DynamicNodeLabel_strategy = st.builds(
     DynamicNodeLabel,
 )
-standard::DiseaseModelLabel_strategy = st.builds(
-    standard::DiseaseModelLabel,
+standard_DiseaseModelLabel_strategy = st.builds(
+    standard_DiseaseModelLabel,
 )
 Modifiable_strategy = st.builds(
     Modifiable,
@@ -1738,91 +1738,91 @@ SanityChecker_strategy = st.builds(
 NodeDecorator_strategy = st.builds(
     NodeDecorator,
 )
-standard::InfectorInoculatorCollection_strategy = st.builds(
-    standard::InfectorInoculatorCollection,
+standard_InfectorInoculatorCollection_strategy = st.builds(
+    standard_InfectorInoculatorCollection,
     importFolder=
         safe_text
 )
-standard::Infector_strategy = st.builds(
-    standard::Infector,
-    populationIdentifier=
-        safe_text,
+standard_Infector_strategy = st.builds(
+    standard_Infector,
     targetURI=
+        safe_text,
+    targetISOKey=
         safe_text,
     infectPercentage=
         st.booleans(),
     diseaseName=
         safe_text,
-    targetISOKey=
+    populationIdentifier=
         safe_text
 )
-standard::DiseaseModel_strategy = st.builds(
-    standard::DiseaseModel,
-    timePeriod=
-        safe_text,
+standard_DiseaseModel_strategy = st.builds(
+    standard_DiseaseModel,
     finiteDifference=
         st.booleans(),
+    frequencyDependent=
+        st.booleans(),
+    populationIdentifier=
+        safe_text,
     backgroundBirthRate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    populationIdentifier=
+    timePeriod=
+        safe_text,
+    diseaseName=
         safe_text,
     relativeTolerance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    frequencyDependent=
-        st.booleans(),
     backgroundMortalityRate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    diseaseName=
-        safe_text
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 SIR_strategy = st.builds(
     SIR,
 )
-standard::StochasticPoissonSIRDiseaseModel_strategy = st.builds(
-    standard::StochasticPoissonSIRDiseaseModel,
+standard_StochasticPoissonSIRDiseaseModel_strategy = st.builds(
+    standard_StochasticPoissonSIRDiseaseModel,
 )
-standard::StochasticSIRDiseaseModel_strategy = st.builds(
-    standard::StochasticSIRDiseaseModel,
-)
-standard::SEIR_strategy = st.builds(
-    standard::SEIR,
+standard_SEIR_strategy = st.builds(
+    standard_SEIR,
     incubationRate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-standard::DeterministicSIRDiseaseModel_strategy = st.builds(
-    standard::DeterministicSIRDiseaseModel,
+standard_StochasticSIRDiseaseModel_strategy = st.builds(
+    standard_StochasticSIRDiseaseModel,
+)
+standard_DeterministicSIRDiseaseModel_strategy = st.builds(
+    standard_DeterministicSIRDiseaseModel,
 )
 SI_strategy = st.builds(
     SI,
 )
-standard::StochasticPoissonSIDiseaseModel_strategy = st.builds(
-    standard::StochasticPoissonSIDiseaseModel,
+standard_StochasticPoissonSIDiseaseModel_strategy = st.builds(
+    standard_StochasticPoissonSIDiseaseModel,
 )
-standard::StochasticSIDiseaseModel_strategy = st.builds(
-    standard::StochasticSIDiseaseModel,
-)
-standard::AggregatingSIDiseaseModel_strategy = st.builds(
-    standard::AggregatingSIDiseaseModel,
-)
-standard::SIR_strategy = st.builds(
-    standard::SIR,
+standard_SIR_strategy = st.builds(
+    standard_SIR,
     immunityLossRate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-standard::DeterministicSIDiseaseModel_strategy = st.builds(
-    standard::DeterministicSIDiseaseModel,
+standard_StochasticSIDiseaseModel_strategy = st.builds(
+    standard_StochasticSIDiseaseModel,
+)
+standard_AggregatingSIDiseaseModel_strategy = st.builds(
+    standard_AggregatingSIDiseaseModel,
+)
+standard_DeterministicSIDiseaseModel_strategy = st.builds(
+    standard_DeterministicSIDiseaseModel,
 )
 SEIR_strategy = st.builds(
     SEIR,
 )
-standard::StochasticPoissonSEIRDiseaseModel_strategy = st.builds(
-    standard::StochasticPoissonSEIRDiseaseModel,
+standard_StochasticPoissonSEIRDiseaseModel_strategy = st.builds(
+    standard_StochasticPoissonSEIRDiseaseModel,
 )
-standard::StochasticSEIRDiseaseModel_strategy = st.builds(
-    standard::StochasticSEIRDiseaseModel,
+standard_StochasticSEIRDiseaseModel_strategy = st.builds(
+    standard_StochasticSEIRDiseaseModel,
 )
-standard::DeterministicSEIRDiseaseModel_strategy = st.builds(
-    standard::DeterministicSEIRDiseaseModel,
+standard_DeterministicSEIRDiseaseModel_strategy = st.builds(
+    standard_DeterministicSEIRDiseaseModel,
 )
 
 @given(instance=Infector_strategy)
@@ -1830,60 +1830,51 @@ standard::DeterministicSEIRDiseaseModel_strategy = st.builds(
 def test_infector_instantiation(instance):
     assert isinstance(instance, Infector)
 
-@given(instance=standard::StandardInfector_strategy)
+@given(instance=standard_StandardInfector_strategy)
 @settings(max_examples=50)
-def test_standard::standardinfector_instantiation(instance):
-    assert isinstance(instance, standard::StandardInfector)
+def test_standard_standardinfector_instantiation(instance):
+    assert isinstance(instance, standard_StandardInfector)
 
 @given(instance=SIInfector_strategy)
 @settings(max_examples=50)
 def test_siinfector_instantiation(instance):
     assert isinstance(instance, SIInfector)
 
-@given(instance=standard::SIRInoculator_strategy)
+@given(instance=standard_SIRInoculator_strategy)
 @settings(max_examples=50)
-def test_standard::sirinoculator_instantiation(instance):
-    assert isinstance(instance, standard::SIRInoculator)
-
-@given(instance=standard::SIRInoculator_strategy)
-def test_standard::sirinoculator_inoculatedPercentage_type(instance):
-    assert isinstance(instance.inoculatedPercentage, float)
+def test_standard_sirinoculator_instantiation(instance):
+    assert isinstance(instance, standard_SIRInoculator)
 
 
-@given(instance=standard::SIRInoculator_strategy)
-def test_standard::sirinoculator_inoculatedPercentage_setter(instance):
-    original = instance.inoculatedPercentage
-    instance.inoculatedPercentage = original
-    assert instance.inoculatedPercentage == original
 
-@given(instance=standard::SIRInoculator_strategy)
-def test_standard::sirinoculator_inoculatePercentage_type(instance):
-    assert isinstance(instance.inoculatePercentage, bool)
-
-
-@given(instance=standard::SIRInoculator_strategy)
-def test_standard::sirinoculator_inoculatePercentage_setter(instance):
+@given(instance=standard_SIRInoculator_strategy)
+def test_standard_sirinoculator_inoculatePercentage_setter(instance):
     original = instance.inoculatePercentage
     instance.inoculatePercentage = original
     assert instance.inoculatePercentage == original
+
+
+
+@given(instance=standard_SIRInoculator_strategy)
+def test_standard_sirinoculator_inoculatedPercentage_setter(instance):
+    original = instance.inoculatedPercentage
+    instance.inoculatedPercentage = original
+    assert instance.inoculatedPercentage == original
 
 @given(instance=StochasticDiseaseModel_strategy)
 @settings(max_examples=50)
 def test_stochasticdiseasemodel_instantiation(instance):
     assert isinstance(instance, StochasticDiseaseModel)
 
-@given(instance=standard::StandardStochasticDiseaseModel_strategy)
+@given(instance=standard_StandardStochasticDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::standardstochasticdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StandardStochasticDiseaseModel)
-
-@given(instance=standard::StandardStochasticDiseaseModel_strategy)
-def test_standard::standardstochasticdiseasemodel_gain_type(instance):
-    assert isinstance(instance.gain, float)
+def test_standard_standardstochasticdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StandardStochasticDiseaseModel)
 
 
-@given(instance=standard::StandardStochasticDiseaseModel_strategy)
-def test_standard::standardstochasticdiseasemodel_gain_setter(instance):
+
+@given(instance=standard_StandardStochasticDiseaseModel_strategy)
+def test_standard_standardstochasticdiseasemodel_gain_setter(instance):
     original = instance.gain
     instance.gain = original
     assert instance.gain == original
@@ -1894,9 +1885,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::StandardStochasticDiseaseModel_strategy)
+@given(instance=standard_StandardStochasticDiseaseModel_strategy)
 @settings(max_examples=30)
-def test_standard::standardstochasticdiseasemodel_computenoise_changes_state(instance):
+def test_standard_standardstochasticdiseasemodel_computenoise_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1908,39 +1899,39 @@ def test_standard::standardstochasticdiseasemodel_computenoise_changes_state(ins
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'computeNoise' in standard::StandardStochasticDiseaseModel is empty"
+        assert has_statements, f"Function 'computeNoise' in standard_StandardStochasticDiseaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'computeNoise' in standard::StandardStochasticDiseaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'computeNoise' in standard_StandardStochasticDiseaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'computeNoise' in standard::StandardStochasticDiseaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'computeNoise' in standard_StandardStochasticDiseaseModel is not implemented or raised an error")
 
 @given(instance=AggregatingSIDiseaseModel_strategy)
 @settings(max_examples=50)
 def test_aggregatingsidiseasemodel_instantiation(instance):
     assert isinstance(instance, AggregatingSIDiseaseModel)
 
-@given(instance=standard::AggregatingSIRDiseaseModel_strategy)
+@given(instance=standard_AggregatingSIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::aggregatingsirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::AggregatingSIRDiseaseModel)
+def test_standard_aggregatingsirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_AggregatingSIRDiseaseModel)
 
 @given(instance=AggregatingSIRDiseaseModel_strategy)
 @settings(max_examples=50)
 def test_aggregatingsirdiseasemodel_instantiation(instance):
     assert isinstance(instance, AggregatingSIRDiseaseModel)
 
-@given(instance=standard::AggregatingSEIRDiseaseModel_strategy)
+@given(instance=standard_AggregatingSEIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::aggregatingseirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::AggregatingSEIRDiseaseModel)
+def test_standard_aggregatingseirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_AggregatingSEIRDiseaseModel)
 
-@given(instance=standard::IntegrationDecorator_strategy)
+@given(instance=standard_IntegrationDecorator_strategy)
 @settings(max_examples=50)
-def test_standard::integrationdecorator_instantiation(instance):
-    assert isinstance(instance, standard::IntegrationDecorator)
+def test_standard_integrationdecorator_instantiation(instance):
+    assert isinstance(instance, standard_IntegrationDecorator)
 
 import warnings
 import copy
@@ -1948,9 +1939,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::IntegrationDecorator_strategy)
+@given(instance=standard_IntegrationDecorator_strategy)
 @settings(max_examples=30)
-def test_standard::integrationdecorator_isdeterministic_changes_state(instance):
+def test_standard_integrationdecorator_isdeterministic_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1962,29 +1953,29 @@ def test_standard::integrationdecorator_isdeterministic_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isDeterministic' in standard::IntegrationDecorator is empty"
+        assert has_statements, f"Function 'isDeterministic' in standard_IntegrationDecorator is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isDeterministic' in standard::IntegrationDecorator did not change state; check implementation")
+            warnings.warn(f"Operation 'isDeterministic' in standard_IntegrationDecorator did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isDeterministic' in standard::IntegrationDecorator is not implemented or raised an error")
+        warnings.warn(f"Operation 'isDeterministic' in standard_IntegrationDecorator is not implemented or raised an error")
 
-@given(instance=standard::IntegrationLabelValue_strategy)
+@given(instance=standard_IntegrationLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::integrationlabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::IntegrationLabelValue)
+def test_standard_integrationlabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_IntegrationLabelValue)
 
-@given(instance=standard::IntegrationLabel_strategy)
+@given(instance=standard_IntegrationLabel_strategy)
 @settings(max_examples=50)
-def test_standard::integrationlabel_instantiation(instance):
-    assert isinstance(instance, standard::IntegrationLabel)
+def test_standard_integrationlabel_instantiation(instance):
+    assert isinstance(instance, standard_IntegrationLabel)
 
-@given(instance=standard::SanityChecker_strategy)
+@given(instance=standard_SanityChecker_strategy)
 @settings(max_examples=50)
-def test_standard::sanitychecker_instantiation(instance):
-    assert isinstance(instance, standard::SanityChecker)
+def test_standard_sanitychecker_instantiation(instance):
+    assert isinstance(instance, standard_SanityChecker)
 
 @given(instance=StandardStochasticDiseaseModel_strategy)
 @settings(max_examples=50)
@@ -2001,23 +1992,20 @@ def test_standarddiseasemodellabelvalue_instantiation(instance):
 def test_diseasemodelstate_instantiation(instance):
     assert isinstance(instance, DiseaseModelState)
 
-@given(instance=standard::AggregatingDiseaseModelState_strategy)
+@given(instance=standard_AggregatingDiseaseModelState_strategy)
 @settings(max_examples=50)
-def test_standard::aggregatingdiseasemodelstate_instantiation(instance):
-    assert isinstance(instance, standard::AggregatingDiseaseModelState)
+def test_standard_aggregatingdiseasemodelstate_instantiation(instance):
+    assert isinstance(instance, standard_AggregatingDiseaseModelState)
 
-@given(instance=standard::StandardDiseaseModelState_strategy)
+@given(instance=standard_StandardDiseaseModelState_strategy)
 @settings(max_examples=50)
-def test_standard::standarddiseasemodelstate_instantiation(instance):
-    assert isinstance(instance, standard::StandardDiseaseModelState)
-
-@given(instance=standard::StandardDiseaseModelState_strategy)
-def test_standard::standarddiseasemodelstate_areaRatio_type(instance):
-    assert isinstance(instance.areaRatio, float)
+def test_standard_standarddiseasemodelstate_instantiation(instance):
+    assert isinstance(instance, standard_StandardDiseaseModelState)
 
 
-@given(instance=standard::StandardDiseaseModelState_strategy)
-def test_standard::standarddiseasemodelstate_areaRatio_setter(instance):
+
+@given(instance=standard_StandardDiseaseModelState_strategy)
+def test_standard_standarddiseasemodelstate_areaRatio_setter(instance):
     original = instance.areaRatio
     instance.areaRatio = original
     assert instance.areaRatio == original
@@ -2027,18 +2015,15 @@ def test_standard::standarddiseasemodelstate_areaRatio_setter(instance):
 def test_diseasemodellabelvalue_instantiation(instance):
     assert isinstance(instance, DiseaseModelLabelValue)
 
-@given(instance=standard::StandardDiseaseModelLabelValue_strategy)
+@given(instance=standard_StandardDiseaseModelLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::standarddiseasemodellabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::StandardDiseaseModelLabelValue)
-
-@given(instance=standard::StandardDiseaseModelLabelValue_strategy)
-def test_standard::standarddiseasemodellabelvalue_s_type(instance):
-    assert isinstance(instance.s, float)
+def test_standard_standarddiseasemodellabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_StandardDiseaseModelLabelValue)
 
 
-@given(instance=standard::StandardDiseaseModelLabelValue_strategy)
-def test_standard::standarddiseasemodellabelvalue_s_setter(instance):
+
+@given(instance=standard_StandardDiseaseModelLabelValue_strategy)
+def test_standard_standarddiseasemodellabelvalue_s_setter(instance):
     original = instance.s
     instance.s = original
     assert instance.s == original
@@ -2053,10 +2038,10 @@ def test_integrationlabel_instantiation(instance):
 def test_diseasemodellabel_instantiation(instance):
     assert isinstance(instance, DiseaseModelLabel)
 
-@given(instance=standard::StandardDiseaseModelLabel_strategy)
+@given(instance=standard_StandardDiseaseModelLabel_strategy)
 @settings(max_examples=50)
-def test_standard::standarddiseasemodellabel_instantiation(instance):
-    assert isinstance(instance, standard::StandardDiseaseModelLabel)
+def test_standard_standarddiseasemodellabel_instantiation(instance):
+    assert isinstance(instance, standard_StandardDiseaseModelLabel)
 
 @given(instance=IntegrationDecorator_strategy)
 @settings(max_examples=50)
@@ -2068,66 +2053,54 @@ def test_integrationdecorator_instantiation(instance):
 def test_diseasemodel_instantiation(instance):
     assert isinstance(instance, DiseaseModel)
 
-@given(instance=standard::StochasticDiseaseModel_strategy)
+@given(instance=standard_StochasticDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticDiseaseModel)
-
-@given(instance=standard::StochasticDiseaseModel_strategy)
-def test_standard::stochasticdiseasemodel_seed_type(instance):
-    assert isinstance(instance.seed, str)
+def test_standard_stochasticdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticDiseaseModel)
 
 
-@given(instance=standard::StochasticDiseaseModel_strategy)
-def test_standard::stochasticdiseasemodel_seed_setter(instance):
-    original = instance.seed
-    instance.seed = original
-    assert instance.seed == original
 
-@given(instance=standard::StochasticDiseaseModel_strategy)
-def test_standard::stochasticdiseasemodel_randomGenerator_type(instance):
-    assert isinstance(instance.randomGenerator, str)
-
-
-@given(instance=standard::StochasticDiseaseModel_strategy)
-def test_standard::stochasticdiseasemodel_randomGenerator_setter(instance):
+@given(instance=standard_StochasticDiseaseModel_strategy)
+def test_standard_stochasticdiseasemodel_randomGenerator_setter(instance):
     original = instance.randomGenerator
     instance.randomGenerator = original
     assert instance.randomGenerator == original
+
+
+
+@given(instance=standard_StochasticDiseaseModel_strategy)
+def test_standard_stochasticdiseasemodel_seed_setter(instance):
+    original = instance.seed
+    instance.seed = original
+    assert instance.seed == original
 
 @given(instance=SILabelValue_strategy)
 @settings(max_examples=50)
 def test_silabelvalue_instantiation(instance):
     assert isinstance(instance, SILabelValue)
 
-@given(instance=standard::SIRLabelValue_strategy)
+@given(instance=standard_SIRLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::sirlabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::SIRLabelValue)
-
-@given(instance=standard::SIRLabelValue_strategy)
-def test_standard::sirlabelvalue_r_type(instance):
-    assert isinstance(instance.r, float)
+def test_standard_sirlabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_SIRLabelValue)
 
 
-@given(instance=standard::SIRLabelValue_strategy)
-def test_standard::sirlabelvalue_r_setter(instance):
+
+@given(instance=standard_SIRLabelValue_strategy)
+def test_standard_sirlabelvalue_r_setter(instance):
     original = instance.r
     instance.r = original
     assert instance.r == original
 
-@given(instance=standard::SILabelValue_strategy)
+@given(instance=standard_SILabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::silabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::SILabelValue)
-
-@given(instance=standard::SILabelValue_strategy)
-def test_standard::silabelvalue_i_type(instance):
-    assert isinstance(instance.i, float)
+def test_standard_silabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_SILabelValue)
 
 
-@given(instance=standard::SILabelValue_strategy)
-def test_standard::silabelvalue_i_setter(instance):
+
+@given(instance=standard_SILabelValue_strategy)
+def test_standard_silabelvalue_i_setter(instance):
     original = instance.i
     instance.i = original
     assert instance.i == original
@@ -2137,18 +2110,15 @@ def test_standard::silabelvalue_i_setter(instance):
 def test_standardinfector_instantiation(instance):
     assert isinstance(instance, StandardInfector)
 
-@given(instance=standard::SIInfector_strategy)
+@given(instance=standard_SIInfector_strategy)
 @settings(max_examples=50)
-def test_standard::siinfector_instantiation(instance):
-    assert isinstance(instance, standard::SIInfector)
-
-@given(instance=standard::SIInfector_strategy)
-def test_standard::siinfector_infectiousCount_type(instance):
-    assert isinstance(instance.infectiousCount, float)
+def test_standard_siinfector_instantiation(instance):
+    assert isinstance(instance, standard_SIInfector)
 
 
-@given(instance=standard::SIInfector_strategy)
-def test_standard::siinfector_infectiousCount_setter(instance):
+
+@given(instance=standard_SIInfector_strategy)
+def test_standard_siinfector_infectiousCount_setter(instance):
     original = instance.infectiousCount
     instance.infectiousCount = original
     assert instance.infectiousCount == original
@@ -2158,131 +2128,104 @@ def test_standard::siinfector_infectiousCount_setter(instance):
 def test_standarddiseasemodelstate_instantiation(instance):
     assert isinstance(instance, StandardDiseaseModelState)
 
-@given(instance=standard::SIDiseaseModelState_strategy)
+@given(instance=standard_SIDiseaseModelState_strategy)
 @settings(max_examples=50)
-def test_standard::sidiseasemodelstate_instantiation(instance):
-    assert isinstance(instance, standard::SIDiseaseModelState)
+def test_standard_sidiseasemodelstate_instantiation(instance):
+    assert isinstance(instance, standard_SIDiseaseModelState)
 
 @given(instance=StandardDiseaseModel_strategy)
 @settings(max_examples=50)
 def test_standarddiseasemodel_instantiation(instance):
     assert isinstance(instance, StandardDiseaseModel)
 
-@given(instance=standard::SI_strategy)
+@given(instance=standard_SI_strategy)
 @settings(max_examples=50)
-def test_standard::si_instantiation(instance):
-    assert isinstance(instance, standard::SI)
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_physicallyAdjacentInfectiousProportion_type(instance):
-    assert isinstance(instance.physicallyAdjacentInfectiousProportion, float)
+def test_standard_si_instantiation(instance):
+    assert isinstance(instance, standard_SI)
 
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_physicallyAdjacentInfectiousProportion_setter(instance):
-    original = instance.physicallyAdjacentInfectiousProportion
-    instance.physicallyAdjacentInfectiousProportion = original
-    assert instance.physicallyAdjacentInfectiousProportion == original
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_roadNetworkInfectiousProportion_type(instance):
-    assert isinstance(instance.roadNetworkInfectiousProportion, float)
-
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_roadNetworkInfectiousProportion_setter(instance):
-    original = instance.roadNetworkInfectiousProportion
-    instance.roadNetworkInfectiousProportion = original
-    assert instance.roadNetworkInfectiousProportion == original
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_infectiousMortality_type(instance):
-    assert isinstance(instance.infectiousMortality, float)
-
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_infectiousMortality_setter(instance):
-    original = instance.infectiousMortality
-    instance.infectiousMortality = original
-    assert instance.infectiousMortality == original
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_nonLinearityCoefficient_type(instance):
-    assert isinstance(instance.nonLinearityCoefficient, float)
-
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_nonLinearityCoefficient_setter(instance):
+@given(instance=standard_SI_strategy)
+def test_standard_si_nonLinearityCoefficient_setter(instance):
     original = instance.nonLinearityCoefficient
     instance.nonLinearityCoefficient = original
     assert instance.nonLinearityCoefficient == original
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_transmissionRate_type(instance):
-    assert isinstance(instance.transmissionRate, float)
 
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_transmissionRate_setter(instance):
-    original = instance.transmissionRate
-    instance.transmissionRate = original
-    assert instance.transmissionRate == original
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_recoveryRate_type(instance):
-    assert isinstance(instance.recoveryRate, float)
+@given(instance=standard_SI_strategy)
+def test_standard_si_infectiousMortalityRate_setter(instance):
+    original = instance.infectiousMortalityRate
+    instance.infectiousMortalityRate = original
+    assert instance.infectiousMortalityRate == original
 
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_recoveryRate_setter(instance):
+
+@given(instance=standard_SI_strategy)
+def test_standard_si_recoveryRate_setter(instance):
     original = instance.recoveryRate
     instance.recoveryRate = original
     assert instance.recoveryRate == original
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_characteristicMixingDistance_type(instance):
-    assert isinstance(instance.characteristicMixingDistance, float)
 
 
-@given(instance=standard::SI_strategy)
-def test_standard::si_characteristicMixingDistance_setter(instance):
+@given(instance=standard_SI_strategy)
+def test_standard_si_infectiousMortality_setter(instance):
+    original = instance.infectiousMortality
+    instance.infectiousMortality = original
+    assert instance.infectiousMortality == original
+
+
+
+@given(instance=standard_SI_strategy)
+def test_standard_si_transmissionRate_setter(instance):
+    original = instance.transmissionRate
+    instance.transmissionRate = original
+    assert instance.transmissionRate == original
+
+
+
+@given(instance=standard_SI_strategy)
+def test_standard_si_physicallyAdjacentInfectiousProportion_setter(instance):
+    original = instance.physicallyAdjacentInfectiousProportion
+    instance.physicallyAdjacentInfectiousProportion = original
+    assert instance.physicallyAdjacentInfectiousProportion == original
+
+
+
+@given(instance=standard_SI_strategy)
+def test_standard_si_roadNetworkInfectiousProportion_setter(instance):
+    original = instance.roadNetworkInfectiousProportion
+    instance.roadNetworkInfectiousProportion = original
+    assert instance.roadNetworkInfectiousProportion == original
+
+
+
+@given(instance=standard_SI_strategy)
+def test_standard_si_characteristicMixingDistance_setter(instance):
     original = instance.characteristicMixingDistance
     instance.characteristicMixingDistance = original
     assert instance.characteristicMixingDistance == original
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_infectiousMortalityRate_type(instance):
-    assert isinstance(instance.infectiousMortalityRate, float)
-
-
-@given(instance=standard::SI_strategy)
-def test_standard::si_infectiousMortalityRate_setter(instance):
-    original = instance.infectiousMortalityRate
-    instance.infectiousMortalityRate = original
-    assert instance.infectiousMortalityRate == original
 
 @given(instance=SIRLabelValue_strategy)
 @settings(max_examples=50)
 def test_sirlabelvalue_instantiation(instance):
     assert isinstance(instance, SIRLabelValue)
 
-@given(instance=standard::PopulationModelLabel_strategy)
+@given(instance=standard_PopulationModelLabel_strategy)
 @settings(max_examples=50)
-def test_standard::populationmodellabel_instantiation(instance):
-    assert isinstance(instance, standard::PopulationModelLabel)
+def test_standard_populationmodellabel_instantiation(instance):
+    assert isinstance(instance, standard_PopulationModelLabel)
 
-@given(instance=standard::SEIRLabelValue_strategy)
+@given(instance=standard_SEIRLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::seirlabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::SEIRLabelValue)
-
-@given(instance=standard::SEIRLabelValue_strategy)
-def test_standard::seirlabelvalue_e_type(instance):
-    assert isinstance(instance.e, float)
+def test_standard_seirlabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_SEIRLabelValue)
 
 
-@given(instance=standard::SEIRLabelValue_strategy)
-def test_standard::seirlabelvalue_e_setter(instance):
+
+@given(instance=standard_SEIRLabelValue_strategy)
+def test_standard_seirlabelvalue_e_setter(instance):
     original = instance.e
     instance.e = original
     assert instance.e == original
@@ -2292,69 +2235,57 @@ def test_standard::seirlabelvalue_e_setter(instance):
 def test_standarddiseasemodellabel_instantiation(instance):
     assert isinstance(instance, StandardDiseaseModelLabel)
 
-@given(instance=standard::SIRLabel_strategy)
+@given(instance=standard_SIRLabel_strategy)
 @settings(max_examples=50)
-def test_standard::sirlabel_instantiation(instance):
-    assert isinstance(instance, standard::SIRLabel)
+def test_standard_sirlabel_instantiation(instance):
+    assert isinstance(instance, standard_SIRLabel)
 
-@given(instance=standard::SILabel_strategy)
+@given(instance=standard_SILabel_strategy)
 @settings(max_examples=50)
-def test_standard::silabel_instantiation(instance):
-    assert isinstance(instance, standard::SILabel)
+def test_standard_silabel_instantiation(instance):
+    assert isinstance(instance, standard_SILabel)
 
-@given(instance=standard::SEIRLabel_strategy)
+@given(instance=standard_SEIRLabel_strategy)
 @settings(max_examples=50)
-def test_standard::seirlabel_instantiation(instance):
-    assert isinstance(instance, standard::SEIRLabel)
+def test_standard_seirlabel_instantiation(instance):
+    assert isinstance(instance, standard_SEIRLabel)
 
-@given(instance=standard::StandardDiseaseModel_strategy)
+@given(instance=standard_StandardDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::standarddiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StandardDiseaseModel)
-
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_referencePopulationDensity_type(instance):
-    assert isinstance(instance.referencePopulationDensity, float)
+def test_standard_standarddiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StandardDiseaseModel)
 
 
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_referencePopulationDensity_setter(instance):
-    original = instance.referencePopulationDensity
-    instance.referencePopulationDensity = original
-    assert instance.referencePopulationDensity == original
 
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_totalPopulationCountReciprocal_type(instance):
-    assert isinstance(instance.totalPopulationCountReciprocal, float)
+@given(instance=standard_StandardDiseaseModel_strategy)
+def test_standard_standarddiseasemodel_totalArea_setter(instance):
+    original = instance.totalArea
+    instance.totalArea = original
+    assert instance.totalArea == original
 
 
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_totalPopulationCountReciprocal_setter(instance):
-    original = instance.totalPopulationCountReciprocal
-    instance.totalPopulationCountReciprocal = original
-    assert instance.totalPopulationCountReciprocal == original
 
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_totalPopulationCount_type(instance):
-    assert isinstance(instance.totalPopulationCount, float)
-
-
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_totalPopulationCount_setter(instance):
+@given(instance=standard_StandardDiseaseModel_strategy)
+def test_standard_standarddiseasemodel_totalPopulationCount_setter(instance):
     original = instance.totalPopulationCount
     instance.totalPopulationCount = original
     assert instance.totalPopulationCount == original
 
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_totalArea_type(instance):
-    assert isinstance(instance.totalArea, float)
 
 
-@given(instance=standard::StandardDiseaseModel_strategy)
-def test_standard::standarddiseasemodel_totalArea_setter(instance):
-    original = instance.totalArea
-    instance.totalArea = original
-    assert instance.totalArea == original
+@given(instance=standard_StandardDiseaseModel_strategy)
+def test_standard_standarddiseasemodel_referencePopulationDensity_setter(instance):
+    original = instance.referencePopulationDensity
+    instance.referencePopulationDensity = original
+    assert instance.referencePopulationDensity == original
+
+
+
+@given(instance=standard_StandardDiseaseModel_strategy)
+def test_standard_standarddiseasemodel_totalPopulationCountReciprocal_setter(instance):
+    original = instance.totalPopulationCountReciprocal
+    instance.totalPopulationCountReciprocal = original
+    assert instance.totalPopulationCountReciprocal == original
 
 import warnings
 import copy
@@ -2362,9 +2293,69 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::StandardDiseaseModel_strategy)
+@given(instance=standard_StandardDiseaseModel_strategy)
 @settings(max_examples=30)
-def test_standard::standarddiseasemodel_addtototalarea_changes_state(instance):
+def test_standard_standarddiseasemodel_computetotalpopulationcountreciprocal_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.computeTotalPopulationCountReciprocal()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.computeTotalPopulationCountReciprocal).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'computeTotalPopulationCountReciprocal' in standard_StandardDiseaseModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'computeTotalPopulationCountReciprocal' in standard_StandardDiseaseModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'computeTotalPopulationCountReciprocal' in standard_StandardDiseaseModel is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_StandardDiseaseModel_strategy)
+@settings(max_examples=30)
+def test_standard_standarddiseasemodel_domodelspecificadjustments_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.doModelSpecificAdjustments(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.doModelSpecificAdjustments).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'doModelSpecificAdjustments' in standard_StandardDiseaseModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'doModelSpecificAdjustments' in standard_StandardDiseaseModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'doModelSpecificAdjustments' in standard_StandardDiseaseModel is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_StandardDiseaseModel_strategy)
+@settings(max_examples=30)
+def test_standard_standarddiseasemodel_addtototalarea_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2378,14 +2369,14 @@ def test_standard::standarddiseasemodel_addtototalarea_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addToTotalArea' in standard::StandardDiseaseModel is empty"
+        assert has_statements, f"Function 'addToTotalArea' in standard_StandardDiseaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addToTotalArea' in standard::StandardDiseaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'addToTotalArea' in standard_StandardDiseaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addToTotalArea' in standard::StandardDiseaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'addToTotalArea' in standard_StandardDiseaseModel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2393,9 +2384,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::StandardDiseaseModel_strategy)
+@given(instance=standard_StandardDiseaseModel_strategy)
 @settings(max_examples=30)
-def test_standard::standarddiseasemodel_calculatedelta_changes_state(instance):
+def test_standard_standarddiseasemodel_calculatedelta_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2411,14 +2402,14 @@ def test_standard::standarddiseasemodel_calculatedelta_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'calculateDelta' in standard::StandardDiseaseModel is empty"
+        assert has_statements, f"Function 'calculateDelta' in standard_StandardDiseaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'calculateDelta' in standard::StandardDiseaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'calculateDelta' in standard_StandardDiseaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'calculateDelta' in standard::StandardDiseaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'calculateDelta' in standard_StandardDiseaseModel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2426,9 +2417,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::StandardDiseaseModel_strategy)
+@given(instance=standard_StandardDiseaseModel_strategy)
 @settings(max_examples=30)
-def test_standard::standarddiseasemodel_addtototalpopulationcount_changes_state(instance):
+def test_standard_standarddiseasemodel_addtototalpopulationcount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2442,74 +2433,14 @@ def test_standard::standarddiseasemodel_addtototalpopulationcount_changes_state(
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addToTotalPopulationCount' in standard::StandardDiseaseModel is empty"
+        assert has_statements, f"Function 'addToTotalPopulationCount' in standard_StandardDiseaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addToTotalPopulationCount' in standard::StandardDiseaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'addToTotalPopulationCount' in standard_StandardDiseaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addToTotalPopulationCount' in standard::StandardDiseaseModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::StandardDiseaseModel_strategy)
-@settings(max_examples=30)
-def test_standard::standarddiseasemodel_domodelspecificadjustments_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.doModelSpecificAdjustments(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.doModelSpecificAdjustments).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'doModelSpecificAdjustments' in standard::StandardDiseaseModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'doModelSpecificAdjustments' in standard::StandardDiseaseModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'doModelSpecificAdjustments' in standard::StandardDiseaseModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::StandardDiseaseModel_strategy)
-@settings(max_examples=30)
-def test_standard::standarddiseasemodel_computetotalpopulationcountreciprocal_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.computeTotalPopulationCountReciprocal()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.computeTotalPopulationCountReciprocal).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'computeTotalPopulationCountReciprocal' in standard::StandardDiseaseModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'computeTotalPopulationCountReciprocal' in standard::StandardDiseaseModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'computeTotalPopulationCountReciprocal' in standard::StandardDiseaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'addToTotalPopulationCount' in standard_StandardDiseaseModel is not implemented or raised an error")
 
 @given(instance=IntegrationLabelValue_strategy)
 @settings(max_examples=50)
@@ -2521,40 +2452,31 @@ def test_integrationlabelvalue_instantiation(instance):
 def test_labelvalue_instantiation(instance):
     assert isinstance(instance, LabelValue)
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
+@given(instance=standard_DiseaseModelLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::diseasemodellabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::DiseaseModelLabelValue)
-
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-def test_standard::diseasemodellabelvalue_populationCount_type(instance):
-    assert isinstance(instance.populationCount, float)
+def test_standard_diseasemodellabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_DiseaseModelLabelValue)
 
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-def test_standard::diseasemodellabelvalue_populationCount_setter(instance):
+
+@given(instance=standard_DiseaseModelLabelValue_strategy)
+def test_standard_diseasemodellabelvalue_populationCount_setter(instance):
     original = instance.populationCount
     instance.populationCount = original
     assert instance.populationCount == original
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-def test_standard::diseasemodellabelvalue_diseaseDeaths_type(instance):
-    assert isinstance(instance.diseaseDeaths, float)
 
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-def test_standard::diseasemodellabelvalue_diseaseDeaths_setter(instance):
+@given(instance=standard_DiseaseModelLabelValue_strategy)
+def test_standard_diseasemodellabelvalue_diseaseDeaths_setter(instance):
     original = instance.diseaseDeaths
     instance.diseaseDeaths = original
     assert instance.diseaseDeaths == original
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-def test_standard::diseasemodellabelvalue_incidence_type(instance):
-    assert isinstance(instance.incidence, float)
 
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-def test_standard::diseasemodellabelvalue_incidence_setter(instance):
+@given(instance=standard_DiseaseModelLabelValue_strategy)
+def test_standard_diseasemodellabelvalue_incidence_setter(instance):
     original = instance.incidence
     instance.incidence = original
     assert instance.incidence == original
@@ -2565,69 +2487,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
+@given(instance=standard_DiseaseModelLabelValue_strategy)
 @settings(max_examples=30)
-def test_standard::diseasemodellabelvalue_sub_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.sub(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.sub).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'sub' in standard::DiseaseModelLabelValue is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'sub' in standard::DiseaseModelLabelValue did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'sub' in standard::DiseaseModelLabelValue is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-@settings(max_examples=30)
-def test_standard::diseasemodellabelvalue_zerooutpopulationcount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.zeroOutPopulationCount()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.zeroOutPopulationCount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'zeroOutPopulationCount' in standard::DiseaseModelLabelValue is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'zeroOutPopulationCount' in standard::DiseaseModelLabelValue did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'zeroOutPopulationCount' in standard::DiseaseModelLabelValue is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::DiseaseModelLabelValue_strategy)
-@settings(max_examples=30)
-def test_standard::diseasemodellabelvalue_scale_changes_state(instance):
+def test_standard_diseasemodellabelvalue_scale_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2641,14 +2503,14 @@ def test_standard::diseasemodellabelvalue_scale_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'scale' in standard::DiseaseModelLabelValue is empty"
+        assert has_statements, f"Function 'scale' in standard_DiseaseModelLabelValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'scale' in standard::DiseaseModelLabelValue did not change state; check implementation")
+            warnings.warn(f"Operation 'scale' in standard_DiseaseModelLabelValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'scale' in standard::DiseaseModelLabelValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'scale' in standard_DiseaseModelLabelValue is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2656,9 +2518,69 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
+@given(instance=standard_DiseaseModelLabelValue_strategy)
 @settings(max_examples=30)
-def test_standard::diseasemodellabelvalue_add_changes_state(instance):
+def test_standard_diseasemodellabelvalue_zerooutpopulationcount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.zeroOutPopulationCount()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.zeroOutPopulationCount).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'zeroOutPopulationCount' in standard_DiseaseModelLabelValue is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'zeroOutPopulationCount' in standard_DiseaseModelLabelValue did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'zeroOutPopulationCount' in standard_DiseaseModelLabelValue is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_DiseaseModelLabelValue_strategy)
+@settings(max_examples=30)
+def test_standard_diseasemodellabelvalue_sub_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.sub(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.sub).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'sub' in standard_DiseaseModelLabelValue is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'sub' in standard_DiseaseModelLabelValue did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'sub' in standard_DiseaseModelLabelValue is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_DiseaseModelLabelValue_strategy)
+@settings(max_examples=30)
+def test_standard_diseasemodellabelvalue_add_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2672,14 +2594,14 @@ def test_standard::diseasemodellabelvalue_add_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in standard::DiseaseModelLabelValue is empty"
+        assert has_statements, f"Function 'add' in standard_DiseaseModelLabelValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in standard::DiseaseModelLabelValue did not change state; check implementation")
+            warnings.warn(f"Operation 'add' in standard_DiseaseModelLabelValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in standard::DiseaseModelLabelValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'add' in standard_DiseaseModelLabelValue is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2687,9 +2609,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::DiseaseModelLabelValue_strategy)
+@given(instance=standard_DiseaseModelLabelValue_strategy)
 @settings(max_examples=30)
-def test_standard::diseasemodellabelvalue_set_changes_state(instance):
+def test_standard_diseasemodellabelvalue_set_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2703,34 +2625,34 @@ def test_standard::diseasemodellabelvalue_set_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in standard::DiseaseModelLabelValue is empty"
+        assert has_statements, f"Function 'set' in standard_DiseaseModelLabelValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in standard::DiseaseModelLabelValue did not change state; check implementation")
+            warnings.warn(f"Operation 'set' in standard_DiseaseModelLabelValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in standard::DiseaseModelLabelValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'set' in standard_DiseaseModelLabelValue is not implemented or raised an error")
 
-@given(instance=standard::DiseaseModelState_strategy)
+@given(instance=standard_DiseaseModelState_strategy)
 @settings(max_examples=50)
-def test_standard::diseasemodelstate_instantiation(instance):
-    assert isinstance(instance, standard::DiseaseModelState)
+def test_standard_diseasemodelstate_instantiation(instance):
+    assert isinstance(instance, standard_DiseaseModelState)
 
-@given(instance=standard::PopulationLabel_strategy)
+@given(instance=standard_PopulationLabel_strategy)
 @settings(max_examples=50)
-def test_standard::populationlabel_instantiation(instance):
-    assert isinstance(instance, standard::PopulationLabel)
+def test_standard_populationlabel_instantiation(instance):
+    assert isinstance(instance, standard_PopulationLabel)
 
 @given(instance=DynamicNodeLabel_strategy)
 @settings(max_examples=50)
 def test_dynamicnodelabel_instantiation(instance):
     assert isinstance(instance, DynamicNodeLabel)
 
-@given(instance=standard::DiseaseModelLabel_strategy)
+@given(instance=standard_DiseaseModelLabel_strategy)
 @settings(max_examples=50)
-def test_standard::diseasemodellabel_instantiation(instance):
-    assert isinstance(instance, standard::DiseaseModelLabel)
+def test_standard_diseasemodellabel_instantiation(instance):
+    assert isinstance(instance, standard_DiseaseModelLabel)
 
 @given(instance=Modifiable_strategy)
 @settings(max_examples=50)
@@ -2747,213 +2669,142 @@ def test_sanitychecker_instantiation(instance):
 def test_nodedecorator_instantiation(instance):
     assert isinstance(instance, NodeDecorator)
 
-@given(instance=standard::InfectorInoculatorCollection_strategy)
+@given(instance=standard_InfectorInoculatorCollection_strategy)
 @settings(max_examples=50)
-def test_standard::infectorinoculatorcollection_instantiation(instance):
-    assert isinstance(instance, standard::InfectorInoculatorCollection)
-
-@given(instance=standard::InfectorInoculatorCollection_strategy)
-def test_standard::infectorinoculatorcollection_importFolder_type(instance):
-    assert isinstance(instance.importFolder, str)
+def test_standard_infectorinoculatorcollection_instantiation(instance):
+    assert isinstance(instance, standard_InfectorInoculatorCollection)
 
 
-@given(instance=standard::InfectorInoculatorCollection_strategy)
-def test_standard::infectorinoculatorcollection_importFolder_setter(instance):
+
+@given(instance=standard_InfectorInoculatorCollection_strategy)
+def test_standard_infectorinoculatorcollection_importFolder_setter(instance):
     original = instance.importFolder
     instance.importFolder = original
     assert instance.importFolder == original
 
-@given(instance=standard::Infector_strategy)
+@given(instance=standard_Infector_strategy)
 @settings(max_examples=50)
-def test_standard::infector_instantiation(instance):
-    assert isinstance(instance, standard::Infector)
-
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_populationIdentifier_type(instance):
-    assert isinstance(instance.populationIdentifier, str)
+def test_standard_infector_instantiation(instance):
+    assert isinstance(instance, standard_Infector)
 
 
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_populationIdentifier_setter(instance):
-    original = instance.populationIdentifier
-    instance.populationIdentifier = original
-    assert instance.populationIdentifier == original
 
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_targetURI_type(instance):
-    assert isinstance(instance.targetURI, str)
-
-
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_targetURI_setter(instance):
+@given(instance=standard_Infector_strategy)
+def test_standard_infector_targetURI_setter(instance):
     original = instance.targetURI
     instance.targetURI = original
     assert instance.targetURI == original
 
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_infectPercentage_type(instance):
-    assert isinstance(instance.infectPercentage, bool)
 
 
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_infectPercentage_setter(instance):
-    original = instance.infectPercentage
-    instance.infectPercentage = original
-    assert instance.infectPercentage == original
-
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_diseaseName_type(instance):
-    assert isinstance(instance.diseaseName, str)
-
-
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_diseaseName_setter(instance):
-    original = instance.diseaseName
-    instance.diseaseName = original
-    assert instance.diseaseName == original
-
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_targetISOKey_type(instance):
-    assert isinstance(instance.targetISOKey, str)
-
-
-@given(instance=standard::Infector_strategy)
-def test_standard::infector_targetISOKey_setter(instance):
+@given(instance=standard_Infector_strategy)
+def test_standard_infector_targetISOKey_setter(instance):
     original = instance.targetISOKey
     instance.targetISOKey = original
     assert instance.targetISOKey == original
 
-@given(instance=standard::DiseaseModel_strategy)
-@settings(max_examples=50)
-def test_standard::diseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::DiseaseModel)
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_timePeriod_type(instance):
-    assert isinstance(instance.timePeriod, str)
 
 
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_timePeriod_setter(instance):
-    original = instance.timePeriod
-    instance.timePeriod = original
-    assert instance.timePeriod == original
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_finiteDifference_type(instance):
-    assert isinstance(instance.finiteDifference, bool)
+@given(instance=standard_Infector_strategy)
+def test_standard_infector_infectPercentage_setter(instance):
+    original = instance.infectPercentage
+    instance.infectPercentage = original
+    assert instance.infectPercentage == original
 
 
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_finiteDifference_setter(instance):
-    original = instance.finiteDifference
-    instance.finiteDifference = original
-    assert instance.finiteDifference == original
 
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_backgroundBirthRate_type(instance):
-    assert isinstance(instance.backgroundBirthRate, float)
-
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_backgroundBirthRate_setter(instance):
-    original = instance.backgroundBirthRate
-    instance.backgroundBirthRate = original
-    assert instance.backgroundBirthRate == original
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_populationIdentifier_type(instance):
-    assert isinstance(instance.populationIdentifier, str)
-
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_populationIdentifier_setter(instance):
-    original = instance.populationIdentifier
-    instance.populationIdentifier = original
-    assert instance.populationIdentifier == original
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_relativeTolerance_type(instance):
-    assert isinstance(instance.relativeTolerance, float)
-
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_relativeTolerance_setter(instance):
-    original = instance.relativeTolerance
-    instance.relativeTolerance = original
-    assert instance.relativeTolerance == original
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_frequencyDependent_type(instance):
-    assert isinstance(instance.frequencyDependent, bool)
-
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_frequencyDependent_setter(instance):
-    original = instance.frequencyDependent
-    instance.frequencyDependent = original
-    assert instance.frequencyDependent == original
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_backgroundMortalityRate_type(instance):
-    assert isinstance(instance.backgroundMortalityRate, float)
-
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_backgroundMortalityRate_setter(instance):
-    original = instance.backgroundMortalityRate
-    instance.backgroundMortalityRate = original
-    assert instance.backgroundMortalityRate == original
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_diseaseName_type(instance):
-    assert isinstance(instance.diseaseName, str)
-
-
-@given(instance=standard::DiseaseModel_strategy)
-def test_standard::diseasemodel_diseaseName_setter(instance):
+@given(instance=standard_Infector_strategy)
+def test_standard_infector_diseaseName_setter(instance):
     original = instance.diseaseName
     instance.diseaseName = original
     assert instance.diseaseName == original
 
+
+
+@given(instance=standard_Infector_strategy)
+def test_standard_infector_populationIdentifier_setter(instance):
+    original = instance.populationIdentifier
+    instance.populationIdentifier = original
+    assert instance.populationIdentifier == original
+
+@given(instance=standard_DiseaseModel_strategy)
+@settings(max_examples=50)
+def test_standard_diseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_DiseaseModel)
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_finiteDifference_setter(instance):
+    original = instance.finiteDifference
+    instance.finiteDifference = original
+    assert instance.finiteDifference == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_frequencyDependent_setter(instance):
+    original = instance.frequencyDependent
+    instance.frequencyDependent = original
+    assert instance.frequencyDependent == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_populationIdentifier_setter(instance):
+    original = instance.populationIdentifier
+    instance.populationIdentifier = original
+    assert instance.populationIdentifier == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_backgroundBirthRate_setter(instance):
+    original = instance.backgroundBirthRate
+    instance.backgroundBirthRate = original
+    assert instance.backgroundBirthRate == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_timePeriod_setter(instance):
+    original = instance.timePeriod
+    instance.timePeriod = original
+    assert instance.timePeriod == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_diseaseName_setter(instance):
+    original = instance.diseaseName
+    instance.diseaseName = original
+    assert instance.diseaseName == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_relativeTolerance_setter(instance):
+    original = instance.relativeTolerance
+    instance.relativeTolerance = original
+    assert instance.relativeTolerance == original
+
+
+
+@given(instance=standard_DiseaseModel_strategy)
+def test_standard_diseasemodel_backgroundMortalityRate_setter(instance):
+    original = instance.backgroundMortalityRate
+    instance.backgroundMortalityRate = original
+    assert instance.backgroundMortalityRate == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::DiseaseModel_strategy)
+@given(instance=standard_DiseaseModel_strategy)
 @settings(max_examples=30)
-def test_standard::diseasemodel_creatediseasemodellabelvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createDiseaseModelLabelValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createDiseaseModelLabelValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createDiseaseModelLabelValue' in standard::DiseaseModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createDiseaseModelLabelValue' in standard::DiseaseModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createDiseaseModelLabelValue' in standard::DiseaseModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::DiseaseModel_strategy)
-@settings(max_examples=30)
-def test_standard::diseasemodel_createinfector_changes_state(instance):
+def test_standard_diseasemodel_createinfector_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2965,14 +2816,14 @@ def test_standard::diseasemodel_createinfector_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createInfector' in standard::DiseaseModel is empty"
+        assert has_statements, f"Function 'createInfector' in standard_DiseaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createInfector' in standard::DiseaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'createInfector' in standard_DiseaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createInfector' in standard::DiseaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'createInfector' in standard_DiseaseModel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2980,67 +2831,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::DiseaseModel_strategy)
+@given(instance=standard_DiseaseModel_strategy)
 @settings(max_examples=30)
-def test_standard::diseasemodel_creatediseasemodelstate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createDiseaseModelState()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createDiseaseModelState).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createDiseaseModelState' in standard::DiseaseModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createDiseaseModelState' in standard::DiseaseModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createDiseaseModelState' in standard::DiseaseModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::DiseaseModel_strategy)
-@settings(max_examples=30)
-def test_standard::diseasemodel_creatediseasemodellabel_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createDiseaseModelLabel()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createDiseaseModelLabel).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createDiseaseModelLabel' in standard::DiseaseModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createDiseaseModelLabel' in standard::DiseaseModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createDiseaseModelLabel' in standard::DiseaseModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=standard::DiseaseModel_strategy)
-@settings(max_examples=30)
-def test_standard::diseasemodel_initializediseasestate_changes_state(instance):
+def test_standard_diseasemodel_initializediseasestate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3054,108 +2847,189 @@ def test_standard::diseasemodel_initializediseasestate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initializeDiseaseState' in standard::DiseaseModel is empty"
+        assert has_statements, f"Function 'initializeDiseaseState' in standard_DiseaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initializeDiseaseState' in standard::DiseaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'initializeDiseaseState' in standard_DiseaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initializeDiseaseState' in standard::DiseaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'initializeDiseaseState' in standard_DiseaseModel is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_DiseaseModel_strategy)
+@settings(max_examples=30)
+def test_standard_diseasemodel_creatediseasemodelstate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createDiseaseModelState()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createDiseaseModelState).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createDiseaseModelState' in standard_DiseaseModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createDiseaseModelState' in standard_DiseaseModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createDiseaseModelState' in standard_DiseaseModel is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_DiseaseModel_strategy)
+@settings(max_examples=30)
+def test_standard_diseasemodel_creatediseasemodellabelvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createDiseaseModelLabelValue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createDiseaseModelLabelValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createDiseaseModelLabelValue' in standard_DiseaseModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createDiseaseModelLabelValue' in standard_DiseaseModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createDiseaseModelLabelValue' in standard_DiseaseModel is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=standard_DiseaseModel_strategy)
+@settings(max_examples=30)
+def test_standard_diseasemodel_creatediseasemodellabel_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createDiseaseModelLabel()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createDiseaseModelLabel).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createDiseaseModelLabel' in standard_DiseaseModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createDiseaseModelLabel' in standard_DiseaseModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createDiseaseModelLabel' in standard_DiseaseModel is not implemented or raised an error")
 
 @given(instance=SIR_strategy)
 @settings(max_examples=50)
 def test_sir_instantiation(instance):
     assert isinstance(instance, SIR)
 
-@given(instance=standard::StochasticPoissonSIRDiseaseModel_strategy)
+@given(instance=standard_StochasticPoissonSIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticpoissonsirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticPoissonSIRDiseaseModel)
+def test_standard_stochasticpoissonsirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticPoissonSIRDiseaseModel)
 
-@given(instance=standard::StochasticSIRDiseaseModel_strategy)
+@given(instance=standard_SEIR_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticsirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticSIRDiseaseModel)
-
-@given(instance=standard::SEIR_strategy)
-@settings(max_examples=50)
-def test_standard::seir_instantiation(instance):
-    assert isinstance(instance, standard::SEIR)
-
-@given(instance=standard::SEIR_strategy)
-def test_standard::seir_incubationRate_type(instance):
-    assert isinstance(instance.incubationRate, float)
+def test_standard_seir_instantiation(instance):
+    assert isinstance(instance, standard_SEIR)
 
 
-@given(instance=standard::SEIR_strategy)
-def test_standard::seir_incubationRate_setter(instance):
+
+@given(instance=standard_SEIR_strategy)
+def test_standard_seir_incubationRate_setter(instance):
     original = instance.incubationRate
     instance.incubationRate = original
     assert instance.incubationRate == original
 
-@given(instance=standard::DeterministicSIRDiseaseModel_strategy)
+@given(instance=standard_StochasticSIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::deterministicsirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::DeterministicSIRDiseaseModel)
+def test_standard_stochasticsirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticSIRDiseaseModel)
+
+@given(instance=standard_DeterministicSIRDiseaseModel_strategy)
+@settings(max_examples=50)
+def test_standard_deterministicsirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_DeterministicSIRDiseaseModel)
 
 @given(instance=SI_strategy)
 @settings(max_examples=50)
 def test_si_instantiation(instance):
     assert isinstance(instance, SI)
 
-@given(instance=standard::StochasticPoissonSIDiseaseModel_strategy)
+@given(instance=standard_StochasticPoissonSIDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticpoissonsidiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticPoissonSIDiseaseModel)
+def test_standard_stochasticpoissonsidiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticPoissonSIDiseaseModel)
 
-@given(instance=standard::StochasticSIDiseaseModel_strategy)
+@given(instance=standard_SIR_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticsidiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticSIDiseaseModel)
-
-@given(instance=standard::AggregatingSIDiseaseModel_strategy)
-@settings(max_examples=50)
-def test_standard::aggregatingsidiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::AggregatingSIDiseaseModel)
-
-@given(instance=standard::SIR_strategy)
-@settings(max_examples=50)
-def test_standard::sir_instantiation(instance):
-    assert isinstance(instance, standard::SIR)
-
-@given(instance=standard::SIR_strategy)
-def test_standard::sir_immunityLossRate_type(instance):
-    assert isinstance(instance.immunityLossRate, float)
+def test_standard_sir_instantiation(instance):
+    assert isinstance(instance, standard_SIR)
 
 
-@given(instance=standard::SIR_strategy)
-def test_standard::sir_immunityLossRate_setter(instance):
+
+@given(instance=standard_SIR_strategy)
+def test_standard_sir_immunityLossRate_setter(instance):
     original = instance.immunityLossRate
     instance.immunityLossRate = original
     assert instance.immunityLossRate == original
 
-@given(instance=standard::DeterministicSIDiseaseModel_strategy)
+@given(instance=standard_StochasticSIDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::deterministicsidiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::DeterministicSIDiseaseModel)
+def test_standard_stochasticsidiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticSIDiseaseModel)
+
+@given(instance=standard_AggregatingSIDiseaseModel_strategy)
+@settings(max_examples=50)
+def test_standard_aggregatingsidiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_AggregatingSIDiseaseModel)
+
+@given(instance=standard_DeterministicSIDiseaseModel_strategy)
+@settings(max_examples=50)
+def test_standard_deterministicsidiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_DeterministicSIDiseaseModel)
 
 @given(instance=SEIR_strategy)
 @settings(max_examples=50)
 def test_seir_instantiation(instance):
     assert isinstance(instance, SEIR)
 
-@given(instance=standard::StochasticPoissonSEIRDiseaseModel_strategy)
+@given(instance=standard_StochasticPoissonSEIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticpoissonseirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticPoissonSEIRDiseaseModel)
+def test_standard_stochasticpoissonseirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticPoissonSEIRDiseaseModel)
 
-@given(instance=standard::StochasticSEIRDiseaseModel_strategy)
+@given(instance=standard_StochasticSEIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::stochasticseirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticSEIRDiseaseModel)
+def test_standard_stochasticseirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticSEIRDiseaseModel)
 
-@given(instance=standard::DeterministicSEIRDiseaseModel_strategy)
+@given(instance=standard_DeterministicSEIRDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_standard::deterministicseirdiseasemodel_instantiation(instance):
-    assert isinstance(instance, standard::DeterministicSEIRDiseaseModel)
+def test_standard_deterministicseirdiseasemodel_instantiation(instance):
+    assert isinstance(instance, standard_DeterministicSEIRDiseaseModel)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Organization,
-    project::University,
+    project_University,
     Person,
-    project::Teenager,
-    project::Student,
-    project::Adult,
-    project::Child,
-    project::Organization,
-    project::Person,
-    project::Enrollment,
-    project::Integer,
+    project_Student,
+    project_Adult,
+    project_Teenager,
+    project_Child,
+    project_Organization,
+    project_Person,
+    project_Enrollment,
+    project_Integer,
 )
 
 # =============================================================================
@@ -39,16 +39,16 @@ def test_organization_constructor_args():
 
 
 
-def test_project::university_is_not_abstract():
-    assert not inspect.isabstract(project::University)
+def test_project_university_is_not_abstract():
+    assert not inspect.isabstract(project_University)
 
 
-def test_project::university_constructor_exists():
-    assert callable(project::University.__init__)
+def test_project_university_constructor_exists():
+    assert callable(project_University.__init__)
 
 
-def test_project::university_constructor_args():
-    sig = inspect.signature(project::University.__init__)
+def test_project_university_constructor_args():
+    sig = inspect.signature(project_University.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -67,114 +67,114 @@ def test_person_constructor_args():
 
 
 
-def test_project::teenager_is_not_abstract():
-    assert not inspect.isabstract(project::Teenager)
+def test_project_student_is_not_abstract():
+    assert not inspect.isabstract(project_Student)
 
 
-def test_project::teenager_constructor_exists():
-    assert callable(project::Teenager.__init__)
+def test_project_student_constructor_exists():
+    assert callable(project_Student.__init__)
 
 
-def test_project::teenager_constructor_args():
-    sig = inspect.signature(project::Teenager.__init__)
+def test_project_student_constructor_args():
+    sig = inspect.signature(project_Student.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::student_is_not_abstract():
-    assert not inspect.isabstract(project::Student)
+def test_project_adult_is_not_abstract():
+    assert not inspect.isabstract(project_Adult)
 
 
-def test_project::student_constructor_exists():
-    assert callable(project::Student.__init__)
+def test_project_adult_constructor_exists():
+    assert callable(project_Adult.__init__)
 
 
-def test_project::student_constructor_args():
-    sig = inspect.signature(project::Student.__init__)
+def test_project_adult_constructor_args():
+    sig = inspect.signature(project_Adult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::adult_is_not_abstract():
-    assert not inspect.isabstract(project::Adult)
+def test_project_teenager_is_not_abstract():
+    assert not inspect.isabstract(project_Teenager)
 
 
-def test_project::adult_constructor_exists():
-    assert callable(project::Adult.__init__)
+def test_project_teenager_constructor_exists():
+    assert callable(project_Teenager.__init__)
 
 
-def test_project::adult_constructor_args():
-    sig = inspect.signature(project::Adult.__init__)
+def test_project_teenager_constructor_args():
+    sig = inspect.signature(project_Teenager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::child_is_not_abstract():
-    assert not inspect.isabstract(project::Child)
+def test_project_child_is_not_abstract():
+    assert not inspect.isabstract(project_Child)
 
 
-def test_project::child_constructor_exists():
-    assert callable(project::Child.__init__)
+def test_project_child_constructor_exists():
+    assert callable(project_Child.__init__)
 
 
-def test_project::child_constructor_args():
-    sig = inspect.signature(project::Child.__init__)
+def test_project_child_constructor_args():
+    sig = inspect.signature(project_Child.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::organization_is_not_abstract():
-    assert not inspect.isabstract(project::Organization)
+def test_project_organization_is_not_abstract():
+    assert not inspect.isabstract(project_Organization)
 
 
-def test_project::organization_constructor_exists():
-    assert callable(project::Organization.__init__)
+def test_project_organization_constructor_exists():
+    assert callable(project_Organization.__init__)
 
 
-def test_project::organization_constructor_args():
-    sig = inspect.signature(project::Organization.__init__)
+def test_project_organization_constructor_args():
+    sig = inspect.signature(project_Organization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::person_is_not_abstract():
-    assert not inspect.isabstract(project::Person)
+def test_project_person_is_not_abstract():
+    assert not inspect.isabstract(project_Person)
 
 
-def test_project::person_constructor_exists():
-    assert callable(project::Person.__init__)
+def test_project_person_constructor_exists():
+    assert callable(project_Person.__init__)
 
 
-def test_project::person_constructor_args():
-    sig = inspect.signature(project::Person.__init__)
+def test_project_person_constructor_args():
+    sig = inspect.signature(project_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::enrollment_is_not_abstract():
-    assert not inspect.isabstract(project::Enrollment)
+def test_project_enrollment_is_not_abstract():
+    assert not inspect.isabstract(project_Enrollment)
 
 
-def test_project::enrollment_constructor_exists():
-    assert callable(project::Enrollment.__init__)
+def test_project_enrollment_constructor_exists():
+    assert callable(project_Enrollment.__init__)
 
 
-def test_project::enrollment_constructor_args():
-    sig = inspect.signature(project::Enrollment.__init__)
+def test_project_enrollment_constructor_args():
+    sig = inspect.signature(project_Enrollment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::integer_is_not_abstract():
-    assert not inspect.isabstract(project::Integer)
+def test_project_integer_is_not_abstract():
+    assert not inspect.isabstract(project_Integer)
 
 
-def test_project::integer_constructor_exists():
-    assert callable(project::Integer.__init__)
+def test_project_integer_constructor_exists():
+    assert callable(project_Integer.__init__)
 
 
-def test_project::integer_constructor_args():
-    sig = inspect.signature(project::Integer.__init__)
+def test_project_integer_constructor_args():
+    sig = inspect.signature(project_Integer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,35 +192,35 @@ safe_text = st.text(
 Organization_strategy = st.builds(
     Organization,
 )
-project::University_strategy = st.builds(
-    project::University,
+project_University_strategy = st.builds(
+    project_University,
 )
 Person_strategy = st.builds(
     Person,
 )
-project::Teenager_strategy = st.builds(
-    project::Teenager,
+project_Student_strategy = st.builds(
+    project_Student,
 )
-project::Student_strategy = st.builds(
-    project::Student,
+project_Adult_strategy = st.builds(
+    project_Adult,
 )
-project::Adult_strategy = st.builds(
-    project::Adult,
+project_Teenager_strategy = st.builds(
+    project_Teenager,
 )
-project::Child_strategy = st.builds(
-    project::Child,
+project_Child_strategy = st.builds(
+    project_Child,
 )
-project::Organization_strategy = st.builds(
-    project::Organization,
+project_Organization_strategy = st.builds(
+    project_Organization,
 )
-project::Person_strategy = st.builds(
-    project::Person,
+project_Person_strategy = st.builds(
+    project_Person,
 )
-project::Enrollment_strategy = st.builds(
-    project::Enrollment,
+project_Enrollment_strategy = st.builds(
+    project_Enrollment,
 )
-project::Integer_strategy = st.builds(
-    project::Integer,
+project_Integer_strategy = st.builds(
+    project_Integer,
 )
 
 @given(instance=Organization_strategy)
@@ -228,52 +228,52 @@ project::Integer_strategy = st.builds(
 def test_organization_instantiation(instance):
     assert isinstance(instance, Organization)
 
-@given(instance=project::University_strategy)
+@given(instance=project_University_strategy)
 @settings(max_examples=50)
-def test_project::university_instantiation(instance):
-    assert isinstance(instance, project::University)
+def test_project_university_instantiation(instance):
+    assert isinstance(instance, project_University)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=project::Teenager_strategy)
+@given(instance=project_Student_strategy)
 @settings(max_examples=50)
-def test_project::teenager_instantiation(instance):
-    assert isinstance(instance, project::Teenager)
+def test_project_student_instantiation(instance):
+    assert isinstance(instance, project_Student)
 
-@given(instance=project::Student_strategy)
+@given(instance=project_Adult_strategy)
 @settings(max_examples=50)
-def test_project::student_instantiation(instance):
-    assert isinstance(instance, project::Student)
+def test_project_adult_instantiation(instance):
+    assert isinstance(instance, project_Adult)
 
-@given(instance=project::Adult_strategy)
+@given(instance=project_Teenager_strategy)
 @settings(max_examples=50)
-def test_project::adult_instantiation(instance):
-    assert isinstance(instance, project::Adult)
+def test_project_teenager_instantiation(instance):
+    assert isinstance(instance, project_Teenager)
 
-@given(instance=project::Child_strategy)
+@given(instance=project_Child_strategy)
 @settings(max_examples=50)
-def test_project::child_instantiation(instance):
-    assert isinstance(instance, project::Child)
+def test_project_child_instantiation(instance):
+    assert isinstance(instance, project_Child)
 
-@given(instance=project::Organization_strategy)
+@given(instance=project_Organization_strategy)
 @settings(max_examples=50)
-def test_project::organization_instantiation(instance):
-    assert isinstance(instance, project::Organization)
+def test_project_organization_instantiation(instance):
+    assert isinstance(instance, project_Organization)
 
-@given(instance=project::Person_strategy)
+@given(instance=project_Person_strategy)
 @settings(max_examples=50)
-def test_project::person_instantiation(instance):
-    assert isinstance(instance, project::Person)
+def test_project_person_instantiation(instance):
+    assert isinstance(instance, project_Person)
 
-@given(instance=project::Enrollment_strategy)
+@given(instance=project_Enrollment_strategy)
 @settings(max_examples=50)
-def test_project::enrollment_instantiation(instance):
-    assert isinstance(instance, project::Enrollment)
+def test_project_enrollment_instantiation(instance):
+    assert isinstance(instance, project_Enrollment)
 
-@given(instance=project::Integer_strategy)
+@given(instance=project_Integer_strategy)
 @settings(max_examples=50)
-def test_project::integer_instantiation(instance):
-    assert isinstance(instance, project::Integer)
+def test_project_integer_instantiation(instance):
+    assert isinstance(instance, project_Integer)

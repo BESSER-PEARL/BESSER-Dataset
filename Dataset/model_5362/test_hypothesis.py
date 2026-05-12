@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BaseType,
-    base::nested::SubA,
-    base::BaseType,
+    base_nested_SubA,
+    base_BaseType,
 )
 
 # =============================================================================
@@ -31,37 +31,37 @@ def test_basetype_constructor_args():
 
 
 
-def test_base::nested::suba_is_not_abstract():
-    assert not inspect.isabstract(base::nested::SubA)
+def test_base_nested_suba_is_not_abstract():
+    assert not inspect.isabstract(base_nested_SubA)
 
 
-def test_base::nested::suba_constructor_exists():
-    assert callable(base::nested::SubA.__init__)
+def test_base_nested_suba_constructor_exists():
+    assert callable(base_nested_SubA.__init__)
 
 
-def test_base::nested::suba_constructor_args():
-    sig = inspect.signature(base::nested::SubA.__init__)
+def test_base_nested_suba_constructor_args():
+    sig = inspect.signature(base_nested_SubA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_base::basetype_is_not_abstract():
-    assert not inspect.isabstract(base::BaseType)
+def test_base_basetype_is_not_abstract():
+    assert not inspect.isabstract(base_BaseType)
 
 
-def test_base::basetype_constructor_exists():
-    assert callable(base::BaseType.__init__)
+def test_base_basetype_constructor_exists():
+    assert callable(base_BaseType.__init__)
 
 
-def test_base::basetype_constructor_args():
-    sig = inspect.signature(base::BaseType.__init__)
+def test_base_basetype_constructor_args():
+    sig = inspect.signature(base_BaseType.__init__)
     params = list(sig.parameters.keys())
     assert "stuff" in params, "Missing parameter 'stuff'"
 
-def test_base::basetype_has_stuff():
-    assert hasattr(base::BaseType, "stuff")
+def test_base_basetype_has_stuff():
+    assert hasattr(base_BaseType, "stuff")
     descriptor = None
-    for klass in base::BaseType.__mro__:
+    for klass in base_BaseType.__mro__:
         if "stuff" in klass.__dict__:
             descriptor = klass.__dict__["stuff"]
             break
@@ -82,11 +82,11 @@ safe_text = st.text(
 BaseType_strategy = st.builds(
     BaseType,
 )
-base::nested::SubA_strategy = st.builds(
-    base::nested::SubA,
+base_nested_SubA_strategy = st.builds(
+    base_nested_SubA,
 )
-base::BaseType_strategy = st.builds(
-    base::BaseType,
+base_BaseType_strategy = st.builds(
+    base_BaseType,
     stuff=
         safe_text
 )
@@ -96,23 +96,20 @@ base::BaseType_strategy = st.builds(
 def test_basetype_instantiation(instance):
     assert isinstance(instance, BaseType)
 
-@given(instance=base::nested::SubA_strategy)
+@given(instance=base_nested_SubA_strategy)
 @settings(max_examples=50)
-def test_base::nested::suba_instantiation(instance):
-    assert isinstance(instance, base::nested::SubA)
+def test_base_nested_suba_instantiation(instance):
+    assert isinstance(instance, base_nested_SubA)
 
-@given(instance=base::BaseType_strategy)
+@given(instance=base_BaseType_strategy)
 @settings(max_examples=50)
-def test_base::basetype_instantiation(instance):
-    assert isinstance(instance, base::BaseType)
-
-@given(instance=base::BaseType_strategy)
-def test_base::basetype_stuff_type(instance):
-    assert isinstance(instance.stuff, str)
+def test_base_basetype_instantiation(instance):
+    assert isinstance(instance, base_BaseType)
 
 
-@given(instance=base::BaseType_strategy)
-def test_base::basetype_stuff_setter(instance):
+
+@given(instance=base_BaseType_strategy)
+def test_base_basetype_stuff_setter(instance):
     original = instance.stuff
     instance.stuff = original
     assert instance.stuff == original

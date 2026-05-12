@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    prosjekt::Semester,
-    prosjekt::CourseCoordinator,
-    prosjekt::Course,
-    prosjekt::Institute,
+from python_code import (
+    prosjekt_Semester,
+    prosjekt_CourseCoordinator,
+    prosjekt_Course,
+    prosjekt_Institute,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_prosjekt::semester_is_not_abstract():
-    assert not inspect.isabstract(prosjekt::Semester)
+def test_prosjekt_semester_is_not_abstract():
+    assert not inspect.isabstract(prosjekt_Semester)
 
 
-def test_prosjekt::semester_constructor_exists():
-    assert callable(prosjekt::Semester.__init__)
+def test_prosjekt_semester_constructor_exists():
+    assert callable(prosjekt_Semester.__init__)
 
 
-def test_prosjekt::semester_constructor_args():
-    sig = inspect.signature(prosjekt::Semester.__init__)
+def test_prosjekt_semester_constructor_args():
+    sig = inspect.signature(prosjekt_Semester.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_prosjekt::semester_has_name():
-    assert hasattr(prosjekt::Semester, "name")
+def test_prosjekt_semester_has_name():
+    assert hasattr(prosjekt_Semester, "name")
     descriptor = None
-    for klass in prosjekt::Semester.__mro__:
+    for klass in prosjekt_Semester.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_prosjekt::semester_has_name():
 
 
 
-def test_prosjekt::coursecoordinator_is_not_abstract():
-    assert not inspect.isabstract(prosjekt::CourseCoordinator)
+def test_prosjekt_coursecoordinator_is_not_abstract():
+    assert not inspect.isabstract(prosjekt_CourseCoordinator)
 
 
-def test_prosjekt::coursecoordinator_constructor_exists():
-    assert callable(prosjekt::CourseCoordinator.__init__)
+def test_prosjekt_coursecoordinator_constructor_exists():
+    assert callable(prosjekt_CourseCoordinator.__init__)
 
 
-def test_prosjekt::coursecoordinator_constructor_args():
-    sig = inspect.signature(prosjekt::CourseCoordinator.__init__)
+def test_prosjekt_coursecoordinator_constructor_args():
+    sig = inspect.signature(prosjekt_CourseCoordinator.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_prosjekt::coursecoordinator_has_name():
-    assert hasattr(prosjekt::CourseCoordinator, "name")
+def test_prosjekt_coursecoordinator_has_name():
+    assert hasattr(prosjekt_CourseCoordinator, "name")
     descriptor = None
-    for klass in prosjekt::CourseCoordinator.__mro__:
+    for klass in prosjekt_CourseCoordinator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,89 +66,89 @@ def test_prosjekt::coursecoordinator_has_name():
 
 
 
-def test_prosjekt::course_is_not_abstract():
-    assert not inspect.isabstract(prosjekt::Course)
+def test_prosjekt_course_is_not_abstract():
+    assert not inspect.isabstract(prosjekt_Course)
 
 
-def test_prosjekt::course_constructor_exists():
-    assert callable(prosjekt::Course.__init__)
+def test_prosjekt_course_constructor_exists():
+    assert callable(prosjekt_Course.__init__)
 
 
-def test_prosjekt::course_constructor_args():
-    sig = inspect.signature(prosjekt::Course.__init__)
+def test_prosjekt_course_constructor_args():
+    sig = inspect.signature(prosjekt_Course.__init__)
     params = list(sig.parameters.keys())
-    assert "code" in params, "Missing parameter 'code'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "avgGrade" in params, "Missing parameter 'avgGrade'"
     assert "studyPoints" in params, "Missing parameter 'studyPoints'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "code" in params, "Missing parameter 'code'"
 
-def test_prosjekt::course_has_code():
-    assert hasattr(prosjekt::Course, "code")
+def test_prosjekt_course_has_avgGrade():
+    assert hasattr(prosjekt_Course, "avgGrade")
     descriptor = None
-    for klass in prosjekt::Course.__mro__:
-        if "code" in klass.__dict__:
-            descriptor = klass.__dict__["code"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prosjekt::course_has_name():
-    assert hasattr(prosjekt::Course, "name")
-    descriptor = None
-    for klass in prosjekt::Course.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prosjekt::course_has_avgGrade():
-    assert hasattr(prosjekt::Course, "avgGrade")
-    descriptor = None
-    for klass in prosjekt::Course.__mro__:
+    for klass in prosjekt_Course.__mro__:
         if "avgGrade" in klass.__dict__:
             descriptor = klass.__dict__["avgGrade"]
             break
     assert isinstance(descriptor, property)
 
-def test_prosjekt::course_has_studyPoints():
-    assert hasattr(prosjekt::Course, "studyPoints")
+def test_prosjekt_course_has_studyPoints():
+    assert hasattr(prosjekt_Course, "studyPoints")
     descriptor = None
-    for klass in prosjekt::Course.__mro__:
+    for klass in prosjekt_Course.__mro__:
         if "studyPoints" in klass.__dict__:
             descriptor = klass.__dict__["studyPoints"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_prosjekt::institute_is_not_abstract():
-    assert not inspect.isabstract(prosjekt::Institute)
-
-
-def test_prosjekt::institute_constructor_exists():
-    assert callable(prosjekt::Institute.__init__)
-
-
-def test_prosjekt::institute_constructor_args():
-    sig = inspect.signature(prosjekt::Institute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "shortName" in params, "Missing parameter 'shortName'"
-
-def test_prosjekt::institute_has_name():
-    assert hasattr(prosjekt::Institute, "name")
+def test_prosjekt_course_has_name():
+    assert hasattr(prosjekt_Course, "name")
     descriptor = None
-    for klass in prosjekt::Institute.__mro__:
+    for klass in prosjekt_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_prosjekt::institute_has_shortName():
-    assert hasattr(prosjekt::Institute, "shortName")
+def test_prosjekt_course_has_code():
+    assert hasattr(prosjekt_Course, "code")
     descriptor = None
-    for klass in prosjekt::Institute.__mro__:
+    for klass in prosjekt_Course.__mro__:
+        if "code" in klass.__dict__:
+            descriptor = klass.__dict__["code"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_prosjekt_institute_is_not_abstract():
+    assert not inspect.isabstract(prosjekt_Institute)
+
+
+def test_prosjekt_institute_constructor_exists():
+    assert callable(prosjekt_Institute.__init__)
+
+
+def test_prosjekt_institute_constructor_args():
+    sig = inspect.signature(prosjekt_Institute.__init__)
+    params = list(sig.parameters.keys())
+    assert "shortName" in params, "Missing parameter 'shortName'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_prosjekt_institute_has_shortName():
+    assert hasattr(prosjekt_Institute, "shortName")
+    descriptor = None
+    for klass in prosjekt_Institute.__mro__:
         if "shortName" in klass.__dict__:
             descriptor = klass.__dict__["shortName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prosjekt_institute_has_name():
+    assert hasattr(prosjekt_Institute, "name")
+    descriptor = None
+    for klass in prosjekt_Institute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -164,139 +164,115 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-prosjekt::Semester_strategy = st.builds(
-    prosjekt::Semester,
+prosjekt_Semester_strategy = st.builds(
+    prosjekt_Semester,
     name=
         safe_text
 )
-prosjekt::CourseCoordinator_strategy = st.builds(
-    prosjekt::CourseCoordinator,
+prosjekt_CourseCoordinator_strategy = st.builds(
+    prosjekt_CourseCoordinator,
     name=
         safe_text
 )
-prosjekt::Course_strategy = st.builds(
-    prosjekt::Course,
-    code=
-        safe_text,
-    name=
-        safe_text,
+prosjekt_Course_strategy = st.builds(
+    prosjekt_Course,
     avgGrade=
         st.integers(),
     studyPoints=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-prosjekt::Institute_strategy = st.builds(
-    prosjekt::Institute,
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
         safe_text,
+    code=
+        safe_text
+)
+prosjekt_Institute_strategy = st.builds(
+    prosjekt_Institute,
     shortName=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=prosjekt::Semester_strategy)
+@given(instance=prosjekt_Semester_strategy)
 @settings(max_examples=50)
-def test_prosjekt::semester_instantiation(instance):
-    assert isinstance(instance, prosjekt::Semester)
-
-@given(instance=prosjekt::Semester_strategy)
-def test_prosjekt::semester_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_prosjekt_semester_instantiation(instance):
+    assert isinstance(instance, prosjekt_Semester)
 
 
-@given(instance=prosjekt::Semester_strategy)
-def test_prosjekt::semester_name_setter(instance):
+
+@given(instance=prosjekt_Semester_strategy)
+def test_prosjekt_semester_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=prosjekt::CourseCoordinator_strategy)
+@given(instance=prosjekt_CourseCoordinator_strategy)
 @settings(max_examples=50)
-def test_prosjekt::coursecoordinator_instantiation(instance):
-    assert isinstance(instance, prosjekt::CourseCoordinator)
-
-@given(instance=prosjekt::CourseCoordinator_strategy)
-def test_prosjekt::coursecoordinator_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_prosjekt_coursecoordinator_instantiation(instance):
+    assert isinstance(instance, prosjekt_CourseCoordinator)
 
 
-@given(instance=prosjekt::CourseCoordinator_strategy)
-def test_prosjekt::coursecoordinator_name_setter(instance):
+
+@given(instance=prosjekt_CourseCoordinator_strategy)
+def test_prosjekt_coursecoordinator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=prosjekt::Course_strategy)
+@given(instance=prosjekt_Course_strategy)
 @settings(max_examples=50)
-def test_prosjekt::course_instantiation(instance):
-    assert isinstance(instance, prosjekt::Course)
-
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_prosjekt_course_instantiation(instance):
+    assert isinstance(instance, prosjekt_Course)
 
 
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_code_setter(instance):
-    original = instance.code
-    instance.code = original
-    assert instance.code == original
 
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_avgGrade_type(instance):
-    assert isinstance(instance.avgGrade, int)
-
-
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_avgGrade_setter(instance):
+@given(instance=prosjekt_Course_strategy)
+def test_prosjekt_course_avgGrade_setter(instance):
     original = instance.avgGrade
     instance.avgGrade = original
     assert instance.avgGrade == original
 
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_studyPoints_type(instance):
-    assert isinstance(instance.studyPoints, float)
 
 
-@given(instance=prosjekt::Course_strategy)
-def test_prosjekt::course_studyPoints_setter(instance):
+@given(instance=prosjekt_Course_strategy)
+def test_prosjekt_course_studyPoints_setter(instance):
     original = instance.studyPoints
     instance.studyPoints = original
     assert instance.studyPoints == original
 
-@given(instance=prosjekt::Institute_strategy)
-@settings(max_examples=50)
-def test_prosjekt::institute_instantiation(instance):
-    assert isinstance(instance, prosjekt::Institute)
-
-@given(instance=prosjekt::Institute_strategy)
-def test_prosjekt::institute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=prosjekt::Institute_strategy)
-def test_prosjekt::institute_name_setter(instance):
+@given(instance=prosjekt_Course_strategy)
+def test_prosjekt_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=prosjekt::Institute_strategy)
-def test_prosjekt::institute_shortName_type(instance):
-    assert isinstance(instance.shortName, str)
 
 
-@given(instance=prosjekt::Institute_strategy)
-def test_prosjekt::institute_shortName_setter(instance):
+@given(instance=prosjekt_Course_strategy)
+def test_prosjekt_course_code_setter(instance):
+    original = instance.code
+    instance.code = original
+    assert instance.code == original
+
+@given(instance=prosjekt_Institute_strategy)
+@settings(max_examples=50)
+def test_prosjekt_institute_instantiation(instance):
+    assert isinstance(instance, prosjekt_Institute)
+
+
+
+@given(instance=prosjekt_Institute_strategy)
+def test_prosjekt_institute_shortName_setter(instance):
     original = instance.shortName
     instance.shortName = original
     assert instance.shortName == original
+
+
+
+@given(instance=prosjekt_Institute_strategy)
+def test_prosjekt_institute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

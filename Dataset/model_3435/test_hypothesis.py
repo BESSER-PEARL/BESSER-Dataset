@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    school::School,
-    school::Diagram,
-    school::Student,
-    school::Classroom,
+from python_code import (
+    school_School,
+    school_Diagram,
+    school_Student,
+    school_Classroom,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_school::school_is_not_abstract():
-    assert not inspect.isabstract(school::School)
+def test_school_school_is_not_abstract():
+    assert not inspect.isabstract(school_School)
 
 
-def test_school::school_constructor_exists():
-    assert callable(school::School.__init__)
+def test_school_school_constructor_exists():
+    assert callable(school_School.__init__)
 
 
-def test_school::school_constructor_args():
-    sig = inspect.signature(school::School.__init__)
+def test_school_school_constructor_args():
+    sig = inspect.signature(school_School.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_school::school_has_name():
-    assert hasattr(school::School, "name")
+def test_school_school_has_name():
+    assert hasattr(school_School, "name")
     descriptor = None
-    for klass in school::School.__mro__:
+    for klass in school_School.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,37 +42,37 @@ def test_school::school_has_name():
 
 
 
-def test_school::diagram_is_not_abstract():
-    assert not inspect.isabstract(school::Diagram)
+def test_school_diagram_is_not_abstract():
+    assert not inspect.isabstract(school_Diagram)
 
 
-def test_school::diagram_constructor_exists():
-    assert callable(school::Diagram.__init__)
+def test_school_diagram_constructor_exists():
+    assert callable(school_Diagram.__init__)
 
 
-def test_school::diagram_constructor_args():
-    sig = inspect.signature(school::Diagram.__init__)
+def test_school_diagram_constructor_args():
+    sig = inspect.signature(school_Diagram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_school::student_is_not_abstract():
-    assert not inspect.isabstract(school::Student)
+def test_school_student_is_not_abstract():
+    assert not inspect.isabstract(school_Student)
 
 
-def test_school::student_constructor_exists():
-    assert callable(school::Student.__init__)
+def test_school_student_constructor_exists():
+    assert callable(school_Student.__init__)
 
 
-def test_school::student_constructor_args():
-    sig = inspect.signature(school::Student.__init__)
+def test_school_student_constructor_args():
+    sig = inspect.signature(school_Student.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_school::student_has_name():
-    assert hasattr(school::Student, "name")
+def test_school_student_has_name():
+    assert hasattr(school_Student, "name")
     descriptor = None
-    for klass in school::Student.__mro__:
+    for klass in school_Student.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,23 +80,23 @@ def test_school::student_has_name():
 
 
 
-def test_school::classroom_is_not_abstract():
-    assert not inspect.isabstract(school::Classroom)
+def test_school_classroom_is_not_abstract():
+    assert not inspect.isabstract(school_Classroom)
 
 
-def test_school::classroom_constructor_exists():
-    assert callable(school::Classroom.__init__)
+def test_school_classroom_constructor_exists():
+    assert callable(school_Classroom.__init__)
 
 
-def test_school::classroom_constructor_args():
-    sig = inspect.signature(school::Classroom.__init__)
+def test_school_classroom_constructor_args():
+    sig = inspect.signature(school_Classroom.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_school::classroom_has_name():
-    assert hasattr(school::Classroom, "name")
+def test_school_classroom_has_name():
+    assert hasattr(school_Classroom, "name")
     descriptor = None
-    for klass in school::Classroom.__mro__:
+    for klass in school_Classroom.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-school::School_strategy = st.builds(
-    school::School,
+school_School_strategy = st.builds(
+    school_School,
     name=
         safe_text
 )
-school::Diagram_strategy = st.builds(
-    school::Diagram,
+school_Diagram_strategy = st.builds(
+    school_Diagram,
 )
-school::Student_strategy = st.builds(
-    school::Student,
+school_Student_strategy = st.builds(
+    school_Student,
     name=
         safe_text
 )
-school::Classroom_strategy = st.builds(
-    school::Classroom,
+school_Classroom_strategy = st.builds(
+    school_Classroom,
     name=
         safe_text
 )
 
-@given(instance=school::School_strategy)
+@given(instance=school_School_strategy)
 @settings(max_examples=50)
-def test_school::school_instantiation(instance):
-    assert isinstance(instance, school::School)
-
-@given(instance=school::School_strategy)
-def test_school::school_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_school_school_instantiation(instance):
+    assert isinstance(instance, school_School)
 
 
-@given(instance=school::School_strategy)
-def test_school::school_name_setter(instance):
+
+@given(instance=school_School_strategy)
+def test_school_school_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=school::Diagram_strategy)
+@given(instance=school_Diagram_strategy)
 @settings(max_examples=50)
-def test_school::diagram_instantiation(instance):
-    assert isinstance(instance, school::Diagram)
+def test_school_diagram_instantiation(instance):
+    assert isinstance(instance, school_Diagram)
 
-@given(instance=school::Student_strategy)
+@given(instance=school_Student_strategy)
 @settings(max_examples=50)
-def test_school::student_instantiation(instance):
-    assert isinstance(instance, school::Student)
-
-@given(instance=school::Student_strategy)
-def test_school::student_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_school_student_instantiation(instance):
+    assert isinstance(instance, school_Student)
 
 
-@given(instance=school::Student_strategy)
-def test_school::student_name_setter(instance):
+
+@given(instance=school_Student_strategy)
+def test_school_student_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=school::Classroom_strategy)
+@given(instance=school_Classroom_strategy)
 @settings(max_examples=50)
-def test_school::classroom_instantiation(instance):
-    assert isinstance(instance, school::Classroom)
-
-@given(instance=school::Classroom_strategy)
-def test_school::classroom_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_school_classroom_instantiation(instance):
+    assert isinstance(instance, school_Classroom)
 
 
-@given(instance=school::Classroom_strategy)
-def test_school::classroom_name_setter(instance):
+
+@given(instance=school_Classroom_strategy)
+def test_school_classroom_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

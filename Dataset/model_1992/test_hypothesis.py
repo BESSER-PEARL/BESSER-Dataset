@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     GenNodeTrace,
     MatchingTrace,
-    trace::GenLinkLabelTrace,
-    trace::GenCompartmentTrace,
+    trace_GenCompartmentTrace,
+    trace_GenLinkLabelTrace,
     AbstractTrace,
-    trace::MatchingTrace,
-    trace::AbstractTrace,
-    trace::ToolGroupTrace,
-    trace::GenLinkTrace,
-    trace::GenChildNodeTrace,
-    trace::GenNodeTrace,
-    trace::TraceModel,
-    trace::GenNodeLabelTrace,
+    trace_MatchingTrace,
+    trace_AbstractTrace,
+    trace_ToolGroupTrace,
+    trace_GenLinkTrace,
+    trace_GenChildNodeTrace,
+    trace_GenNodeTrace,
+    trace_TraceModel,
+    trace_GenNodeLabelTrace,
 )
 
 # =============================================================================
@@ -55,30 +55,30 @@ def test_matchingtrace_constructor_args():
 
 
 
-def test_trace::genlinklabeltrace_is_not_abstract():
-    assert not inspect.isabstract(trace::GenLinkLabelTrace)
+def test_trace_gencompartmenttrace_is_not_abstract():
+    assert not inspect.isabstract(trace_GenCompartmentTrace)
 
 
-def test_trace::genlinklabeltrace_constructor_exists():
-    assert callable(trace::GenLinkLabelTrace.__init__)
+def test_trace_gencompartmenttrace_constructor_exists():
+    assert callable(trace_GenCompartmentTrace.__init__)
 
 
-def test_trace::genlinklabeltrace_constructor_args():
-    sig = inspect.signature(trace::GenLinkLabelTrace.__init__)
+def test_trace_gencompartmenttrace_constructor_args():
+    sig = inspect.signature(trace_GenCompartmentTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::gencompartmenttrace_is_not_abstract():
-    assert not inspect.isabstract(trace::GenCompartmentTrace)
+def test_trace_genlinklabeltrace_is_not_abstract():
+    assert not inspect.isabstract(trace_GenLinkLabelTrace)
 
 
-def test_trace::gencompartmenttrace_constructor_exists():
-    assert callable(trace::GenCompartmentTrace.__init__)
+def test_trace_genlinklabeltrace_constructor_exists():
+    assert callable(trace_GenLinkLabelTrace.__init__)
 
 
-def test_trace::gencompartmenttrace_constructor_args():
-    sig = inspect.signature(trace::GenCompartmentTrace.__init__)
+def test_trace_genlinklabeltrace_constructor_args():
+    sig = inspect.signature(trace_GenLinkLabelTrace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -97,23 +97,23 @@ def test_abstracttrace_constructor_args():
 
 
 
-def test_trace::matchingtrace_is_not_abstract():
-    assert not inspect.isabstract(trace::MatchingTrace)
+def test_trace_matchingtrace_is_not_abstract():
+    assert not inspect.isabstract(trace_MatchingTrace)
 
 
-def test_trace::matchingtrace_constructor_exists():
-    assert callable(trace::MatchingTrace.__init__)
+def test_trace_matchingtrace_constructor_exists():
+    assert callable(trace_MatchingTrace.__init__)
 
 
-def test_trace::matchingtrace_constructor_args():
-    sig = inspect.signature(trace::MatchingTrace.__init__)
+def test_trace_matchingtrace_constructor_args():
+    sig = inspect.signature(trace_MatchingTrace.__init__)
     params = list(sig.parameters.keys())
     assert "queryText" in params, "Missing parameter 'queryText'"
 
-def test_trace::matchingtrace_has_queryText():
-    assert hasattr(trace::MatchingTrace, "queryText")
+def test_trace_matchingtrace_has_queryText():
+    assert hasattr(trace_MatchingTrace, "queryText")
     descriptor = None
-    for klass in trace::MatchingTrace.__mro__:
+    for klass in trace_MatchingTrace.__mro__:
         if "queryText" in klass.__dict__:
             descriptor = klass.__dict__["queryText"]
             break
@@ -121,33 +121,33 @@ def test_trace::matchingtrace_has_queryText():
 
 
 
-def test_trace::abstracttrace_is_not_abstract():
-    assert not inspect.isabstract(trace::AbstractTrace)
+def test_trace_abstracttrace_is_not_abstract():
+    assert not inspect.isabstract(trace_AbstractTrace)
 
 
-def test_trace::abstracttrace_constructor_exists():
-    assert callable(trace::AbstractTrace.__init__)
+def test_trace_abstracttrace_constructor_exists():
+    assert callable(trace_AbstractTrace.__init__)
 
 
-def test_trace::abstracttrace_constructor_args():
-    sig = inspect.signature(trace::AbstractTrace.__init__)
+def test_trace_abstracttrace_constructor_args():
+    sig = inspect.signature(trace_AbstractTrace.__init__)
     params = list(sig.parameters.keys())
     assert "visualID" in params, "Missing parameter 'visualID'"
     assert "processed" in params, "Missing parameter 'processed'"
 
-def test_trace::abstracttrace_has_visualID():
-    assert hasattr(trace::AbstractTrace, "visualID")
+def test_trace_abstracttrace_has_visualID():
+    assert hasattr(trace_AbstractTrace, "visualID")
     descriptor = None
-    for klass in trace::AbstractTrace.__mro__:
+    for klass in trace_AbstractTrace.__mro__:
         if "visualID" in klass.__dict__:
             descriptor = klass.__dict__["visualID"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::abstracttrace_has_processed():
-    assert hasattr(trace::AbstractTrace, "processed")
+def test_trace_abstracttrace_has_processed():
+    assert hasattr(trace_AbstractTrace, "processed")
     descriptor = None
-    for klass in trace::AbstractTrace.__mro__:
+    for klass in trace_AbstractTrace.__mro__:
         if "processed" in klass.__dict__:
             descriptor = klass.__dict__["processed"]
             break
@@ -155,86 +155,86 @@ def test_trace::abstracttrace_has_processed():
 
 
 
-def test_trace::toolgrouptrace_is_not_abstract():
-    assert not inspect.isabstract(trace::ToolGroupTrace)
+def test_trace_toolgrouptrace_is_not_abstract():
+    assert not inspect.isabstract(trace_ToolGroupTrace)
 
 
-def test_trace::toolgrouptrace_constructor_exists():
-    assert callable(trace::ToolGroupTrace.__init__)
+def test_trace_toolgrouptrace_constructor_exists():
+    assert callable(trace_ToolGroupTrace.__init__)
 
 
-def test_trace::toolgrouptrace_constructor_args():
-    sig = inspect.signature(trace::ToolGroupTrace.__init__)
+def test_trace_toolgrouptrace_constructor_args():
+    sig = inspect.signature(trace_ToolGroupTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::genlinktrace_is_not_abstract():
-    assert not inspect.isabstract(trace::GenLinkTrace)
+def test_trace_genlinktrace_is_not_abstract():
+    assert not inspect.isabstract(trace_GenLinkTrace)
 
 
-def test_trace::genlinktrace_constructor_exists():
-    assert callable(trace::GenLinkTrace.__init__)
+def test_trace_genlinktrace_constructor_exists():
+    assert callable(trace_GenLinkTrace.__init__)
 
 
-def test_trace::genlinktrace_constructor_args():
-    sig = inspect.signature(trace::GenLinkTrace.__init__)
+def test_trace_genlinktrace_constructor_args():
+    sig = inspect.signature(trace_GenLinkTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::genchildnodetrace_is_not_abstract():
-    assert not inspect.isabstract(trace::GenChildNodeTrace)
+def test_trace_genchildnodetrace_is_not_abstract():
+    assert not inspect.isabstract(trace_GenChildNodeTrace)
 
 
-def test_trace::genchildnodetrace_constructor_exists():
-    assert callable(trace::GenChildNodeTrace.__init__)
+def test_trace_genchildnodetrace_constructor_exists():
+    assert callable(trace_GenChildNodeTrace.__init__)
 
 
-def test_trace::genchildnodetrace_constructor_args():
-    sig = inspect.signature(trace::GenChildNodeTrace.__init__)
+def test_trace_genchildnodetrace_constructor_args():
+    sig = inspect.signature(trace_GenChildNodeTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::gennodetrace_is_not_abstract():
-    assert not inspect.isabstract(trace::GenNodeTrace)
+def test_trace_gennodetrace_is_not_abstract():
+    assert not inspect.isabstract(trace_GenNodeTrace)
 
 
-def test_trace::gennodetrace_constructor_exists():
-    assert callable(trace::GenNodeTrace.__init__)
+def test_trace_gennodetrace_constructor_exists():
+    assert callable(trace_GenNodeTrace.__init__)
 
 
-def test_trace::gennodetrace_constructor_args():
-    sig = inspect.signature(trace::GenNodeTrace.__init__)
+def test_trace_gennodetrace_constructor_args():
+    sig = inspect.signature(trace_GenNodeTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::tracemodel_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceModel)
+def test_trace_tracemodel_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceModel)
 
 
-def test_trace::tracemodel_constructor_exists():
-    assert callable(trace::TraceModel.__init__)
+def test_trace_tracemodel_constructor_exists():
+    assert callable(trace_TraceModel.__init__)
 
 
-def test_trace::tracemodel_constructor_args():
-    sig = inspect.signature(trace::TraceModel.__init__)
+def test_trace_tracemodel_constructor_args():
+    sig = inspect.signature(trace_TraceModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::gennodelabeltrace_is_not_abstract():
-    assert not inspect.isabstract(trace::GenNodeLabelTrace)
+def test_trace_gennodelabeltrace_is_not_abstract():
+    assert not inspect.isabstract(trace_GenNodeLabelTrace)
 
 
-def test_trace::gennodelabeltrace_constructor_exists():
-    assert callable(trace::GenNodeLabelTrace.__init__)
+def test_trace_gennodelabeltrace_constructor_exists():
+    assert callable(trace_GenNodeLabelTrace.__init__)
 
 
-def test_trace::gennodelabeltrace_constructor_args():
-    sig = inspect.signature(trace::GenNodeLabelTrace.__init__)
+def test_trace_gennodelabeltrace_constructor_args():
+    sig = inspect.signature(trace_GenNodeLabelTrace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -255,44 +255,44 @@ GenNodeTrace_strategy = st.builds(
 MatchingTrace_strategy = st.builds(
     MatchingTrace,
 )
-trace::GenLinkLabelTrace_strategy = st.builds(
-    trace::GenLinkLabelTrace,
+trace_GenCompartmentTrace_strategy = st.builds(
+    trace_GenCompartmentTrace,
 )
-trace::GenCompartmentTrace_strategy = st.builds(
-    trace::GenCompartmentTrace,
+trace_GenLinkLabelTrace_strategy = st.builds(
+    trace_GenLinkLabelTrace,
 )
 AbstractTrace_strategy = st.builds(
     AbstractTrace,
 )
-trace::MatchingTrace_strategy = st.builds(
-    trace::MatchingTrace,
+trace_MatchingTrace_strategy = st.builds(
+    trace_MatchingTrace,
     queryText=
         safe_text
 )
-trace::AbstractTrace_strategy = st.builds(
-    trace::AbstractTrace,
+trace_AbstractTrace_strategy = st.builds(
+    trace_AbstractTrace,
     visualID=
         st.integers(),
     processed=
         st.booleans()
 )
-trace::ToolGroupTrace_strategy = st.builds(
-    trace::ToolGroupTrace,
+trace_ToolGroupTrace_strategy = st.builds(
+    trace_ToolGroupTrace,
 )
-trace::GenLinkTrace_strategy = st.builds(
-    trace::GenLinkTrace,
+trace_GenLinkTrace_strategy = st.builds(
+    trace_GenLinkTrace,
 )
-trace::GenChildNodeTrace_strategy = st.builds(
-    trace::GenChildNodeTrace,
+trace_GenChildNodeTrace_strategy = st.builds(
+    trace_GenChildNodeTrace,
 )
-trace::GenNodeTrace_strategy = st.builds(
-    trace::GenNodeTrace,
+trace_GenNodeTrace_strategy = st.builds(
+    trace_GenNodeTrace,
 )
-trace::TraceModel_strategy = st.builds(
-    trace::TraceModel,
+trace_TraceModel_strategy = st.builds(
+    trace_TraceModel,
 )
-trace::GenNodeLabelTrace_strategy = st.builds(
-    trace::GenNodeLabelTrace,
+trace_GenNodeLabelTrace_strategy = st.builds(
+    trace_GenNodeLabelTrace,
 )
 
 @given(instance=GenNodeTrace_strategy)
@@ -305,10 +305,10 @@ def test_gennodetrace_instantiation(instance):
 def test_matchingtrace_instantiation(instance):
     assert isinstance(instance, MatchingTrace)
 
-@given(instance=trace::GenLinkLabelTrace_strategy)
+@given(instance=trace_GenCompartmentTrace_strategy)
 @settings(max_examples=50)
-def test_trace::genlinklabeltrace_instantiation(instance):
-    assert isinstance(instance, trace::GenLinkLabelTrace)
+def test_trace_gencompartmenttrace_instantiation(instance):
+    assert isinstance(instance, trace_GenCompartmentTrace)
 
 import warnings
 import copy
@@ -316,9 +316,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::GenLinkLabelTrace_strategy)
+@given(instance=trace_GenCompartmentTrace_strategy)
 @settings(max_examples=30)
-def test_trace::genlinklabeltrace_setcontext_changes_state(instance):
+def test_trace_gencompartmenttrace_setcontext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -332,19 +332,19 @@ def test_trace::genlinklabeltrace_setcontext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setContext' in trace::GenLinkLabelTrace is empty"
+        assert has_statements, f"Function 'setContext' in trace_GenCompartmentTrace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setContext' in trace::GenLinkLabelTrace did not change state; check implementation")
+            warnings.warn(f"Operation 'setContext' in trace_GenCompartmentTrace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setContext' in trace::GenLinkLabelTrace is not implemented or raised an error")
+        warnings.warn(f"Operation 'setContext' in trace_GenCompartmentTrace is not implemented or raised an error")
 
-@given(instance=trace::GenCompartmentTrace_strategy)
+@given(instance=trace_GenLinkLabelTrace_strategy)
 @settings(max_examples=50)
-def test_trace::gencompartmenttrace_instantiation(instance):
-    assert isinstance(instance, trace::GenCompartmentTrace)
+def test_trace_genlinklabeltrace_instantiation(instance):
+    assert isinstance(instance, trace_GenLinkLabelTrace)
 
 import warnings
 import copy
@@ -352,9 +352,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::GenCompartmentTrace_strategy)
+@given(instance=trace_GenLinkLabelTrace_strategy)
 @settings(max_examples=30)
-def test_trace::gencompartmenttrace_setcontext_changes_state(instance):
+def test_trace_genlinklabeltrace_setcontext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -368,67 +368,58 @@ def test_trace::gencompartmenttrace_setcontext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setContext' in trace::GenCompartmentTrace is empty"
+        assert has_statements, f"Function 'setContext' in trace_GenLinkLabelTrace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setContext' in trace::GenCompartmentTrace did not change state; check implementation")
+            warnings.warn(f"Operation 'setContext' in trace_GenLinkLabelTrace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setContext' in trace::GenCompartmentTrace is not implemented or raised an error")
+        warnings.warn(f"Operation 'setContext' in trace_GenLinkLabelTrace is not implemented or raised an error")
 
 @given(instance=AbstractTrace_strategy)
 @settings(max_examples=50)
 def test_abstracttrace_instantiation(instance):
     assert isinstance(instance, AbstractTrace)
 
-@given(instance=trace::MatchingTrace_strategy)
+@given(instance=trace_MatchingTrace_strategy)
 @settings(max_examples=50)
-def test_trace::matchingtrace_instantiation(instance):
-    assert isinstance(instance, trace::MatchingTrace)
-
-@given(instance=trace::MatchingTrace_strategy)
-def test_trace::matchingtrace_queryText_type(instance):
-    assert isinstance(instance.queryText, str)
+def test_trace_matchingtrace_instantiation(instance):
+    assert isinstance(instance, trace_MatchingTrace)
 
 
-@given(instance=trace::MatchingTrace_strategy)
-def test_trace::matchingtrace_queryText_setter(instance):
+
+@given(instance=trace_MatchingTrace_strategy)
+def test_trace_matchingtrace_queryText_setter(instance):
     original = instance.queryText
     instance.queryText = original
     assert instance.queryText == original
 
-@given(instance=trace::AbstractTrace_strategy)
+@given(instance=trace_AbstractTrace_strategy)
 @settings(max_examples=50)
-def test_trace::abstracttrace_instantiation(instance):
-    assert isinstance(instance, trace::AbstractTrace)
-
-@given(instance=trace::AbstractTrace_strategy)
-def test_trace::abstracttrace_visualID_type(instance):
-    assert isinstance(instance.visualID, int)
+def test_trace_abstracttrace_instantiation(instance):
+    assert isinstance(instance, trace_AbstractTrace)
 
 
-@given(instance=trace::AbstractTrace_strategy)
-def test_trace::abstracttrace_visualID_setter(instance):
+
+@given(instance=trace_AbstractTrace_strategy)
+def test_trace_abstracttrace_visualID_setter(instance):
     original = instance.visualID
     instance.visualID = original
     assert instance.visualID == original
 
-@given(instance=trace::AbstractTrace_strategy)
-def test_trace::abstracttrace_processed_type(instance):
-    assert isinstance(instance.processed, bool)
 
 
-@given(instance=trace::AbstractTrace_strategy)
-def test_trace::abstracttrace_processed_setter(instance):
+@given(instance=trace_AbstractTrace_strategy)
+def test_trace_abstracttrace_processed_setter(instance):
     original = instance.processed
     instance.processed = original
     assert instance.processed == original
 
-@given(instance=trace::ToolGroupTrace_strategy)
+@given(instance=trace_ToolGroupTrace_strategy)
 @settings(max_examples=50)
-def test_trace::toolgrouptrace_instantiation(instance):
-    assert isinstance(instance, trace::ToolGroupTrace)
+def test_trace_toolgrouptrace_instantiation(instance):
+    assert isinstance(instance, trace_ToolGroupTrace)
 
 import warnings
 import copy
@@ -436,9 +427,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::ToolGroupTrace_strategy)
+@given(instance=trace_ToolGroupTrace_strategy)
 @settings(max_examples=30)
-def test_trace::toolgrouptrace_setcontext_changes_state(instance):
+def test_trace_toolgrouptrace_setcontext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -452,19 +443,19 @@ def test_trace::toolgrouptrace_setcontext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setContext' in trace::ToolGroupTrace is empty"
+        assert has_statements, f"Function 'setContext' in trace_ToolGroupTrace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setContext' in trace::ToolGroupTrace did not change state; check implementation")
+            warnings.warn(f"Operation 'setContext' in trace_ToolGroupTrace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setContext' in trace::ToolGroupTrace is not implemented or raised an error")
+        warnings.warn(f"Operation 'setContext' in trace_ToolGroupTrace is not implemented or raised an error")
 
-@given(instance=trace::GenLinkTrace_strategy)
+@given(instance=trace_GenLinkTrace_strategy)
 @settings(max_examples=50)
-def test_trace::genlinktrace_instantiation(instance):
-    assert isinstance(instance, trace::GenLinkTrace)
+def test_trace_genlinktrace_instantiation(instance):
+    assert isinstance(instance, trace_GenLinkTrace)
 
 import warnings
 import copy
@@ -472,9 +463,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::GenLinkTrace_strategy)
+@given(instance=trace_GenLinkTrace_strategy)
 @settings(max_examples=30)
-def test_trace::genlinktrace_setcontext_changes_state(instance):
+def test_trace_genlinktrace_setcontext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -488,24 +479,24 @@ def test_trace::genlinktrace_setcontext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setContext' in trace::GenLinkTrace is empty"
+        assert has_statements, f"Function 'setContext' in trace_GenLinkTrace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setContext' in trace::GenLinkTrace did not change state; check implementation")
+            warnings.warn(f"Operation 'setContext' in trace_GenLinkTrace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setContext' in trace::GenLinkTrace is not implemented or raised an error")
+        warnings.warn(f"Operation 'setContext' in trace_GenLinkTrace is not implemented or raised an error")
 
-@given(instance=trace::GenChildNodeTrace_strategy)
+@given(instance=trace_GenChildNodeTrace_strategy)
 @settings(max_examples=50)
-def test_trace::genchildnodetrace_instantiation(instance):
-    assert isinstance(instance, trace::GenChildNodeTrace)
+def test_trace_genchildnodetrace_instantiation(instance):
+    assert isinstance(instance, trace_GenChildNodeTrace)
 
-@given(instance=trace::GenNodeTrace_strategy)
+@given(instance=trace_GenNodeTrace_strategy)
 @settings(max_examples=50)
-def test_trace::gennodetrace_instantiation(instance):
-    assert isinstance(instance, trace::GenNodeTrace)
+def test_trace_gennodetrace_instantiation(instance):
+    assert isinstance(instance, trace_GenNodeTrace)
 
 import warnings
 import copy
@@ -513,9 +504,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::GenNodeTrace_strategy)
+@given(instance=trace_GenNodeTrace_strategy)
 @settings(max_examples=30)
-def test_trace::gennodetrace_setcontext_changes_state(instance):
+def test_trace_gennodetrace_setcontext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -529,19 +520,19 @@ def test_trace::gennodetrace_setcontext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setContext' in trace::GenNodeTrace is empty"
+        assert has_statements, f"Function 'setContext' in trace_GenNodeTrace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setContext' in trace::GenNodeTrace did not change state; check implementation")
+            warnings.warn(f"Operation 'setContext' in trace_GenNodeTrace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setContext' in trace::GenNodeTrace is not implemented or raised an error")
+        warnings.warn(f"Operation 'setContext' in trace_GenNodeTrace is not implemented or raised an error")
 
-@given(instance=trace::TraceModel_strategy)
+@given(instance=trace_TraceModel_strategy)
 @settings(max_examples=50)
-def test_trace::tracemodel_instantiation(instance):
-    assert isinstance(instance, trace::TraceModel)
+def test_trace_tracemodel_instantiation(instance):
+    assert isinstance(instance, trace_TraceModel)
 
 import warnings
 import copy
@@ -549,9 +540,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::TraceModel_strategy)
+@given(instance=trace_TraceModel_strategy)
 @settings(max_examples=30)
-def test_trace::tracemodel_purgeunprocessedtraces_changes_state(instance):
+def test_trace_tracemodel_purgeunprocessedtraces_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -563,19 +554,19 @@ def test_trace::tracemodel_purgeunprocessedtraces_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'purgeUnprocessedTraces' in trace::TraceModel is empty"
+        assert has_statements, f"Function 'purgeUnprocessedTraces' in trace_TraceModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'purgeUnprocessedTraces' in trace::TraceModel did not change state; check implementation")
+            warnings.warn(f"Operation 'purgeUnprocessedTraces' in trace_TraceModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'purgeUnprocessedTraces' in trace::TraceModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'purgeUnprocessedTraces' in trace_TraceModel is not implemented or raised an error")
 
-@given(instance=trace::GenNodeLabelTrace_strategy)
+@given(instance=trace_GenNodeLabelTrace_strategy)
 @settings(max_examples=50)
-def test_trace::gennodelabeltrace_instantiation(instance):
-    assert isinstance(instance, trace::GenNodeLabelTrace)
+def test_trace_gennodelabeltrace_instantiation(instance):
+    assert isinstance(instance, trace_GenNodeLabelTrace)
 
 import warnings
 import copy
@@ -583,9 +574,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=trace::GenNodeLabelTrace_strategy)
+@given(instance=trace_GenNodeLabelTrace_strategy)
 @settings(max_examples=30)
-def test_trace::gennodelabeltrace_setcontext_changes_state(instance):
+def test_trace_gennodelabeltrace_setcontext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -599,11 +590,11 @@ def test_trace::gennodelabeltrace_setcontext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setContext' in trace::GenNodeLabelTrace is empty"
+        assert has_statements, f"Function 'setContext' in trace_GenNodeLabelTrace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setContext' in trace::GenNodeLabelTrace did not change state; check implementation")
+            warnings.warn(f"Operation 'setContext' in trace_GenNodeLabelTrace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setContext' in trace::GenNodeLabelTrace is not implemented or raised an error")
+        warnings.warn(f"Operation 'setContext' in trace_GenNodeLabelTrace is not implemented or raised an error")

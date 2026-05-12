@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Search_for_Books_external,
@@ -104,22 +104,13 @@ def test_librarymanagementsystem_library_constructor_exists():
 def test_librarymanagementsystem_library_constructor_args():
     sig = inspect.signature(librarymanagementsystem_Library.__init__)
     params = list(sig.parameters.keys())
-    assert "CDs" in params, "Missing parameter 'CDs'"
     assert "fine" in params, "Missing parameter 'fine'"
-    assert "software" in params, "Missing parameter 'software'"
     assert "books" in params, "Missing parameter 'books'"
-    assert "maxFine" in params, "Missing parameter 'maxFine'"
-    assert "videos" in params, "Missing parameter 'videos'"
     assert "computers" in params, "Missing parameter 'computers'"
-
-def test_librarymanagementsystem_library_has_CDs():
-    assert hasattr(librarymanagementsystem_Library, "CDs")
-    descriptor = None
-    for klass in librarymanagementsystem_Library.__mro__:
-        if "CDs" in klass.__dict__:
-            descriptor = klass.__dict__["CDs"]
-            break
-    assert isinstance(descriptor, property)
+    assert "videos" in params, "Missing parameter 'videos'"
+    assert "CDs" in params, "Missing parameter 'CDs'"
+    assert "software" in params, "Missing parameter 'software'"
+    assert "maxFine" in params, "Missing parameter 'maxFine'"
 
 def test_librarymanagementsystem_library_has_fine():
     assert hasattr(librarymanagementsystem_Library, "fine")
@@ -127,15 +118,6 @@ def test_librarymanagementsystem_library_has_fine():
     for klass in librarymanagementsystem_Library.__mro__:
         if "fine" in klass.__dict__:
             descriptor = klass.__dict__["fine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_librarymanagementsystem_library_has_software():
-    assert hasattr(librarymanagementsystem_Library, "software")
-    descriptor = None
-    for klass in librarymanagementsystem_Library.__mro__:
-        if "software" in klass.__dict__:
-            descriptor = klass.__dict__["software"]
             break
     assert isinstance(descriptor, property)
 
@@ -148,12 +130,12 @@ def test_librarymanagementsystem_library_has_books():
             break
     assert isinstance(descriptor, property)
 
-def test_librarymanagementsystem_library_has_maxFine():
-    assert hasattr(librarymanagementsystem_Library, "maxFine")
+def test_librarymanagementsystem_library_has_computers():
+    assert hasattr(librarymanagementsystem_Library, "computers")
     descriptor = None
     for klass in librarymanagementsystem_Library.__mro__:
-        if "maxFine" in klass.__dict__:
-            descriptor = klass.__dict__["maxFine"]
+        if "computers" in klass.__dict__:
+            descriptor = klass.__dict__["computers"]
             break
     assert isinstance(descriptor, property)
 
@@ -166,12 +148,30 @@ def test_librarymanagementsystem_library_has_videos():
             break
     assert isinstance(descriptor, property)
 
-def test_librarymanagementsystem_library_has_computers():
-    assert hasattr(librarymanagementsystem_Library, "computers")
+def test_librarymanagementsystem_library_has_CDs():
+    assert hasattr(librarymanagementsystem_Library, "CDs")
     descriptor = None
     for klass in librarymanagementsystem_Library.__mro__:
-        if "computers" in klass.__dict__:
-            descriptor = klass.__dict__["computers"]
+        if "CDs" in klass.__dict__:
+            descriptor = klass.__dict__["CDs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_librarymanagementsystem_library_has_software():
+    assert hasattr(librarymanagementsystem_Library, "software")
+    descriptor = None
+    for klass in librarymanagementsystem_Library.__mro__:
+        if "software" in klass.__dict__:
+            descriptor = klass.__dict__["software"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_librarymanagementsystem_library_has_maxFine():
+    assert hasattr(librarymanagementsystem_Library, "maxFine")
+    descriptor = None
+    for klass in librarymanagementsystem_Library.__mro__:
+        if "maxFine" in klass.__dict__:
+            descriptor = klass.__dict__["maxFine"]
             break
     assert isinstance(descriptor, property)
 
@@ -246,20 +246,20 @@ Send_Book_external_strategy = st.builds(
 )
 librarymanagementsystem_Library_strategy = st.builds(
     librarymanagementsystem_Library,
-    CDs=
-        safe_text,
     fine=
-        safe_text,
-    software=
         safe_text,
     books=
         safe_text,
-    maxFine=
-        safe_text,
+    computers=
+        st.integers(),
     videos=
         safe_text,
-    computers=
-        st.integers()
+    CDs=
+        safe_text,
+    software=
+        safe_text,
+    maxFine=
+        safe_text
 )
 Library_Staff_Actor_strategy = st.builds(
     Library_Staff_Actor,
@@ -301,20 +301,6 @@ def test_send_book_external_instantiation(instance):
 def test_librarymanagementsystem_library_instantiation(instance):
     assert isinstance(instance, librarymanagementsystem_Library)
 
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_CDs_type(instance):
-    assert isinstance(instance.CDs, str)
-
-
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_CDs_setter(instance):
-    original = instance.CDs
-    instance.CDs = original
-    assert instance.CDs == original
-
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_fine_type(instance):
-    assert isinstance(instance.fine, str)
 
 
 @given(instance=librarymanagementsystem_Library_strategy)
@@ -323,20 +309,6 @@ def test_librarymanagementsystem_library_fine_setter(instance):
     instance.fine = original
     assert instance.fine == original
 
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_software_type(instance):
-    assert isinstance(instance.software, str)
-
-
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_software_setter(instance):
-    original = instance.software
-    instance.software = original
-    assert instance.software == original
-
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_books_type(instance):
-    assert isinstance(instance.books, str)
 
 
 @given(instance=librarymanagementsystem_Library_strategy)
@@ -345,20 +317,14 @@ def test_librarymanagementsystem_library_books_setter(instance):
     instance.books = original
     assert instance.books == original
 
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_maxFine_type(instance):
-    assert isinstance(instance.maxFine, str)
 
 
 @given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_maxFine_setter(instance):
-    original = instance.maxFine
-    instance.maxFine = original
-    assert instance.maxFine == original
+def test_librarymanagementsystem_library_computers_setter(instance):
+    original = instance.computers
+    instance.computers = original
+    assert instance.computers == original
 
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_videos_type(instance):
-    assert isinstance(instance.videos, str)
 
 
 @given(instance=librarymanagementsystem_Library_strategy)
@@ -367,16 +333,29 @@ def test_librarymanagementsystem_library_videos_setter(instance):
     instance.videos = original
     assert instance.videos == original
 
-@given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_computers_type(instance):
-    assert isinstance(instance.computers, int)
 
 
 @given(instance=librarymanagementsystem_Library_strategy)
-def test_librarymanagementsystem_library_computers_setter(instance):
-    original = instance.computers
-    instance.computers = original
-    assert instance.computers == original
+def test_librarymanagementsystem_library_CDs_setter(instance):
+    original = instance.CDs
+    instance.CDs = original
+    assert instance.CDs == original
+
+
+
+@given(instance=librarymanagementsystem_Library_strategy)
+def test_librarymanagementsystem_library_software_setter(instance):
+    original = instance.software
+    instance.software = original
+    assert instance.software == original
+
+
+
+@given(instance=librarymanagementsystem_Library_strategy)
+def test_librarymanagementsystem_library_maxFine_setter(instance):
+    original = instance.maxFine
+    instance.maxFine = original
+    assert instance.maxFine == original
 
 @given(instance=Library_Staff_Actor_strategy)
 @settings(max_examples=50)

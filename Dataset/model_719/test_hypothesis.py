@@ -3,118 +3,118 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    structure::Filter,
-    structure::ModelingUnit,
-    structure::TypeVariableBinding,
-    Type,
-    kermeta::structure::ParameterizedType,
-    TypeDefinition,
-    kermeta::structure::GenericTypeDefinition,
-    structure::GenericTypeDefinition,
-    structure::Using,
-    structure::Require,
-    structure::DataType,
-    structure::Package,
-    structure::TypeDefinitionContainer,
-    structure::NamedElement,
-    kermeta::structure::Package,
-    DataType,
-    kermeta::structure::Enumeration,
-    TypedElement,
-    kermeta::structure::MultiplicityElement,
-    structure::Enumeration,
-    NamedElement,
-    kermeta::structure::Constraint,
-    kermeta::structure::TypeDefinition,
-    kermeta::structure::EnumerationLiteral,
-    structure::Constraint,
-    structure::Parameter,
-    structure::TypeVariable,
-    structure::ClassDefinition,
-    kermeta::structure::Object,
-    structure::Class,
-    structure::TypeDefinition,
-    structure::Tag,
-    ParameterizedType,
-    kermeta::structure::Class,
-    Literal,
-    kermeta::behavior::VoidLiteral,
-    kermeta::behavior::TypeLiteral,
-    kermeta::behavior::BooleanLiteral,
-    kermeta::behavior::StringLiteral,
-    kermeta::behavior::IntegerLiteral,
-    behavior::LambdaParameter,
-    CallVariable,
-    kermeta::behavior::CallResult,
-    MultiplicityElement,
-    kermeta::structure::Parameter,
-    kermeta::structure::Property,
-    kermeta::structure::Operation,
-    kermeta::behavior::TypeReference,
-    behavior::TypeReference,
-    Object,
-    kermeta::structure::ModelingUnit,
-    kermeta::structure::Type,
-    kermeta::structure::Require,
-    kermeta::structure::Model,
-    kermeta::structure::TypeContainer,
-    kermeta::structure::NamedElement,
-    kermeta::structure::Using,
-    kermeta::structure::Filter,
-    kermeta::behavior::LambdaParameter,
-    kermeta::structure::Tag,
-    kermeta::behavior::Rescue,
-    structure::EnumerationLiteral,
-    structure::Operation,
-    structure::Property,
-    kermeta::structure::TypeDefinitionContainer,
-    kermeta::structure::VoidType,
-    structure::ModelTypeVariable,
+from python_code import (
+    structure_ModelTypeVariable,
     ObjectTypeVariable,
-    kermeta::structure::VirtualType,
-    structure::VirtualType,
+    kermeta_structure_VirtualType,
+    structure_VirtualType,
     TypeVariable,
-    kermeta::structure::ModelTypeVariable,
-    kermeta::structure::ObjectTypeVariable,
+    kermeta_structure_ModelTypeVariable,
+    kermeta_structure_ObjectTypeVariable,
+    structure_Filter,
+    structure_ModelingUnit,
+    structure_TypeVariableBinding,
+    Type,
+    kermeta_structure_VoidType,
+    kermeta_structure_ParameterizedType,
+    TypeDefinition,
+    kermeta_structure_GenericTypeDefinition,
+    structure_GenericTypeDefinition,
+    structure_Using,
+    structure_Require,
+    structure_DataType,
+    structure_Package,
+    structure_TypeDefinitionContainer,
+    structure_NamedElement,
+    kermeta_structure_Package,
+    DataType,
+    kermeta_structure_Enumeration,
+    TypedElement,
+    kermeta_structure_MultiplicityElement,
+    structure_Enumeration,
+    NamedElement,
+    kermeta_structure_Constraint,
+    kermeta_structure_TypeDefinitionContainer,
+    kermeta_structure_TypeDefinition,
+    kermeta_structure_EnumerationLiteral,
+    structure_Constraint,
+    structure_Parameter,
+    structure_TypeVariable,
+    structure_ClassDefinition,
+    kermeta_structure_Object,
+    structure_Class,
+    structure_TypeDefinition,
+    structure_Tag,
+    ParameterizedType,
+    kermeta_structure_Class,
+    Literal,
+    kermeta_behavior_TypeLiteral,
+    kermeta_behavior_StringLiteral,
+    kermeta_behavior_VoidLiteral,
+    kermeta_behavior_BooleanLiteral,
+    kermeta_behavior_IntegerLiteral,
+    behavior_LambdaParameter,
+    CallVariable,
+    kermeta_behavior_CallResult,
+    MultiplicityElement,
+    kermeta_structure_Property,
+    kermeta_structure_Operation,
+    kermeta_structure_Parameter,
+    kermeta_behavior_TypeReference,
+    behavior_TypeReference,
+    Object,
+    kermeta_behavior_LambdaParameter,
+    kermeta_structure_TypeContainer,
+    kermeta_structure_Using,
+    kermeta_structure_Filter,
+    kermeta_structure_ModelingUnit,
+    kermeta_structure_Tag,
+    kermeta_structure_Model,
+    kermeta_structure_NamedElement,
+    kermeta_structure_Type,
+    kermeta_structure_Require,
+    kermeta_behavior_Rescue,
+    structure_EnumerationLiteral,
+    structure_Operation,
+    structure_Property,
     CallExpression,
-    kermeta::behavior::CallFeature,
-    kermeta::behavior::CallValue,
-    kermeta::behavior::CallSuperOperation,
-    kermeta::behavior::CallVariable,
-    behavior::Rescue,
-    structure::Type,
-    kermeta::structure::ModelType,
-    kermeta::structure::DataType,
-    structure::TypeContainer,
-    kermeta::structure::TypedElement,
-    kermeta::structure::ClassDefinition,
-    kermeta::structure::ProductType,
-    kermeta::structure::TypeVariable,
-    kermeta::structure::PrimitiveType,
-    kermeta::structure::FunctionType,
-    structure::Object,
-    kermeta::structure::TypeVariableBinding,
-    kermeta::behavior::Expression,
-    behavior::Expression,
-    behavior::CallExpression,
+    kermeta_behavior_CallSuperOperation,
+    kermeta_behavior_CallValue,
+    kermeta_behavior_CallFeature,
+    kermeta_behavior_CallVariable,
+    behavior_Rescue,
+    structure_Type,
+    kermeta_structure_ModelType,
+    kermeta_structure_DataType,
+    structure_TypeContainer,
+    kermeta_structure_PrimitiveType,
+    kermeta_structure_TypeVariable,
+    kermeta_structure_FunctionType,
+    kermeta_structure_ClassDefinition,
+    kermeta_structure_ProductType,
+    kermeta_structure_TypedElement,
+    structure_Object,
+    kermeta_structure_TypeVariableBinding,
+    kermeta_behavior_Expression,
+    behavior_Expression,
+    behavior_CallExpression,
     Expression,
-    kermeta::behavior::Literal,
-    kermeta::behavior::LambdaExpression,
-    kermeta::behavior::VariableDecl,
-    kermeta::behavior::Block,
-    kermeta::behavior::JavaStaticCall,
-    kermeta::behavior::CallExpression,
-    kermeta::behavior::SelfExpression,
-    kermeta::behavior::Loop,
-    kermeta::behavior::Raise,
-    kermeta::behavior::Conditional,
-    kermeta::behavior::EmptyExpression,
-    kermeta::behavior::Assignment,
-    kermeta::language::DummyClass,
-    kermeta::DummyClass,
+    kermeta_behavior_Loop,
+    kermeta_behavior_Raise,
+    kermeta_behavior_SelfExpression,
+    kermeta_behavior_VariableDecl,
+    kermeta_behavior_EmptyExpression,
+    kermeta_behavior_LambdaExpression,
+    kermeta_behavior_JavaStaticCall,
+    kermeta_behavior_Conditional,
+    kermeta_behavior_Block,
+    kermeta_behavior_CallExpression,
+    kermeta_behavior_Literal,
+    kermeta_behavior_Assignment,
+    kermeta_language_DummyClass,
+    kermeta_DummyClass,
     ConstraintType,
     ConstraintLanguage,
 )
@@ -125,44 +125,142 @@ from classes import (
 
 
 
-def test_structure::filter_is_not_abstract():
-    assert not inspect.isabstract(structure::Filter)
+def test_structure_modeltypevariable_is_not_abstract():
+    assert not inspect.isabstract(structure_ModelTypeVariable)
 
 
-def test_structure::filter_constructor_exists():
-    assert callable(structure::Filter.__init__)
+def test_structure_modeltypevariable_constructor_exists():
+    assert callable(structure_ModelTypeVariable.__init__)
 
 
-def test_structure::filter_constructor_args():
-    sig = inspect.signature(structure::Filter.__init__)
+def test_structure_modeltypevariable_constructor_args():
+    sig = inspect.signature(structure_ModelTypeVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::modelingunit_is_not_abstract():
-    assert not inspect.isabstract(structure::ModelingUnit)
+def test_objecttypevariable_is_not_abstract():
+    assert not inspect.isabstract(ObjectTypeVariable)
 
 
-def test_structure::modelingunit_constructor_exists():
-    assert callable(structure::ModelingUnit.__init__)
+def test_objecttypevariable_constructor_exists():
+    assert callable(ObjectTypeVariable.__init__)
 
 
-def test_structure::modelingunit_constructor_args():
-    sig = inspect.signature(structure::ModelingUnit.__init__)
+def test_objecttypevariable_constructor_args():
+    sig = inspect.signature(ObjectTypeVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::typevariablebinding_is_not_abstract():
-    assert not inspect.isabstract(structure::TypeVariableBinding)
+def test_kermeta_structure_virtualtype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_VirtualType)
 
 
-def test_structure::typevariablebinding_constructor_exists():
-    assert callable(structure::TypeVariableBinding.__init__)
+def test_kermeta_structure_virtualtype_constructor_exists():
+    assert callable(kermeta_structure_VirtualType.__init__)
 
 
-def test_structure::typevariablebinding_constructor_args():
-    sig = inspect.signature(structure::TypeVariableBinding.__init__)
+def test_kermeta_structure_virtualtype_constructor_args():
+    sig = inspect.signature(kermeta_structure_VirtualType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structure_virtualtype_is_not_abstract():
+    assert not inspect.isabstract(structure_VirtualType)
+
+
+def test_structure_virtualtype_constructor_exists():
+    assert callable(structure_VirtualType.__init__)
+
+
+def test_structure_virtualtype_constructor_args():
+    sig = inspect.signature(structure_VirtualType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_typevariable_is_not_abstract():
+    assert not inspect.isabstract(TypeVariable)
+
+
+def test_typevariable_constructor_exists():
+    assert callable(TypeVariable.__init__)
+
+
+def test_typevariable_constructor_args():
+    sig = inspect.signature(TypeVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_modeltypevariable_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ModelTypeVariable)
+
+
+def test_kermeta_structure_modeltypevariable_constructor_exists():
+    assert callable(kermeta_structure_ModelTypeVariable.__init__)
+
+
+def test_kermeta_structure_modeltypevariable_constructor_args():
+    sig = inspect.signature(kermeta_structure_ModelTypeVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_objecttypevariable_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ObjectTypeVariable)
+
+
+def test_kermeta_structure_objecttypevariable_constructor_exists():
+    assert callable(kermeta_structure_ObjectTypeVariable.__init__)
+
+
+def test_kermeta_structure_objecttypevariable_constructor_args():
+    sig = inspect.signature(kermeta_structure_ObjectTypeVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structure_filter_is_not_abstract():
+    assert not inspect.isabstract(structure_Filter)
+
+
+def test_structure_filter_constructor_exists():
+    assert callable(structure_Filter.__init__)
+
+
+def test_structure_filter_constructor_args():
+    sig = inspect.signature(structure_Filter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structure_modelingunit_is_not_abstract():
+    assert not inspect.isabstract(structure_ModelingUnit)
+
+
+def test_structure_modelingunit_constructor_exists():
+    assert callable(structure_ModelingUnit.__init__)
+
+
+def test_structure_modelingunit_constructor_args():
+    sig = inspect.signature(structure_ModelingUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structure_typevariablebinding_is_not_abstract():
+    assert not inspect.isabstract(structure_TypeVariableBinding)
+
+
+def test_structure_typevariablebinding_constructor_exists():
+    assert callable(structure_TypeVariableBinding.__init__)
+
+
+def test_structure_typevariablebinding_constructor_args():
+    sig = inspect.signature(structure_TypeVariableBinding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -181,16 +279,30 @@ def test_type_constructor_args():
 
 
 
-def test_kermeta::structure::parameterizedtype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ParameterizedType)
+def test_kermeta_structure_voidtype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_VoidType)
 
 
-def test_kermeta::structure::parameterizedtype_constructor_exists():
-    assert callable(kermeta::structure::ParameterizedType.__init__)
+def test_kermeta_structure_voidtype_constructor_exists():
+    assert callable(kermeta_structure_VoidType.__init__)
 
 
-def test_kermeta::structure::parameterizedtype_constructor_args():
-    sig = inspect.signature(kermeta::structure::ParameterizedType.__init__)
+def test_kermeta_structure_voidtype_constructor_args():
+    sig = inspect.signature(kermeta_structure_VoidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_parameterizedtype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ParameterizedType)
+
+
+def test_kermeta_structure_parameterizedtype_constructor_exists():
+    assert callable(kermeta_structure_ParameterizedType.__init__)
+
+
+def test_kermeta_structure_parameterizedtype_constructor_args():
+    sig = inspect.signature(kermeta_structure_ParameterizedType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -209,135 +321,135 @@ def test_typedefinition_constructor_args():
 
 
 
-def test_kermeta::structure::generictypedefinition_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::GenericTypeDefinition)
+def test_kermeta_structure_generictypedefinition_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_GenericTypeDefinition)
 
 
-def test_kermeta::structure::generictypedefinition_constructor_exists():
-    assert callable(kermeta::structure::GenericTypeDefinition.__init__)
+def test_kermeta_structure_generictypedefinition_constructor_exists():
+    assert callable(kermeta_structure_GenericTypeDefinition.__init__)
 
 
-def test_kermeta::structure::generictypedefinition_constructor_args():
-    sig = inspect.signature(kermeta::structure::GenericTypeDefinition.__init__)
+def test_kermeta_structure_generictypedefinition_constructor_args():
+    sig = inspect.signature(kermeta_structure_GenericTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::generictypedefinition_is_not_abstract():
-    assert not inspect.isabstract(structure::GenericTypeDefinition)
+def test_structure_generictypedefinition_is_not_abstract():
+    assert not inspect.isabstract(structure_GenericTypeDefinition)
 
 
-def test_structure::generictypedefinition_constructor_exists():
-    assert callable(structure::GenericTypeDefinition.__init__)
+def test_structure_generictypedefinition_constructor_exists():
+    assert callable(structure_GenericTypeDefinition.__init__)
 
 
-def test_structure::generictypedefinition_constructor_args():
-    sig = inspect.signature(structure::GenericTypeDefinition.__init__)
+def test_structure_generictypedefinition_constructor_args():
+    sig = inspect.signature(structure_GenericTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::using_is_not_abstract():
-    assert not inspect.isabstract(structure::Using)
+def test_structure_using_is_not_abstract():
+    assert not inspect.isabstract(structure_Using)
 
 
-def test_structure::using_constructor_exists():
-    assert callable(structure::Using.__init__)
+def test_structure_using_constructor_exists():
+    assert callable(structure_Using.__init__)
 
 
-def test_structure::using_constructor_args():
-    sig = inspect.signature(structure::Using.__init__)
+def test_structure_using_constructor_args():
+    sig = inspect.signature(structure_Using.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::require_is_not_abstract():
-    assert not inspect.isabstract(structure::Require)
+def test_structure_require_is_not_abstract():
+    assert not inspect.isabstract(structure_Require)
 
 
-def test_structure::require_constructor_exists():
-    assert callable(structure::Require.__init__)
+def test_structure_require_constructor_exists():
+    assert callable(structure_Require.__init__)
 
 
-def test_structure::require_constructor_args():
-    sig = inspect.signature(structure::Require.__init__)
+def test_structure_require_constructor_args():
+    sig = inspect.signature(structure_Require.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::datatype_is_not_abstract():
-    assert not inspect.isabstract(structure::DataType)
+def test_structure_datatype_is_not_abstract():
+    assert not inspect.isabstract(structure_DataType)
 
 
-def test_structure::datatype_constructor_exists():
-    assert callable(structure::DataType.__init__)
+def test_structure_datatype_constructor_exists():
+    assert callable(structure_DataType.__init__)
 
 
-def test_structure::datatype_constructor_args():
-    sig = inspect.signature(structure::DataType.__init__)
+def test_structure_datatype_constructor_args():
+    sig = inspect.signature(structure_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::package_is_not_abstract():
-    assert not inspect.isabstract(structure::Package)
+def test_structure_package_is_not_abstract():
+    assert not inspect.isabstract(structure_Package)
 
 
-def test_structure::package_constructor_exists():
-    assert callable(structure::Package.__init__)
+def test_structure_package_constructor_exists():
+    assert callable(structure_Package.__init__)
 
 
-def test_structure::package_constructor_args():
-    sig = inspect.signature(structure::Package.__init__)
+def test_structure_package_constructor_args():
+    sig = inspect.signature(structure_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::typedefinitioncontainer_is_not_abstract():
-    assert not inspect.isabstract(structure::TypeDefinitionContainer)
+def test_structure_typedefinitioncontainer_is_not_abstract():
+    assert not inspect.isabstract(structure_TypeDefinitionContainer)
 
 
-def test_structure::typedefinitioncontainer_constructor_exists():
-    assert callable(structure::TypeDefinitionContainer.__init__)
+def test_structure_typedefinitioncontainer_constructor_exists():
+    assert callable(structure_TypeDefinitionContainer.__init__)
 
 
-def test_structure::typedefinitioncontainer_constructor_args():
-    sig = inspect.signature(structure::TypeDefinitionContainer.__init__)
+def test_structure_typedefinitioncontainer_constructor_args():
+    sig = inspect.signature(structure_TypeDefinitionContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::namedelement_is_not_abstract():
-    assert not inspect.isabstract(structure::NamedElement)
+def test_structure_namedelement_is_not_abstract():
+    assert not inspect.isabstract(structure_NamedElement)
 
 
-def test_structure::namedelement_constructor_exists():
-    assert callable(structure::NamedElement.__init__)
+def test_structure_namedelement_constructor_exists():
+    assert callable(structure_NamedElement.__init__)
 
 
-def test_structure::namedelement_constructor_args():
-    sig = inspect.signature(structure::NamedElement.__init__)
+def test_structure_namedelement_constructor_args():
+    sig = inspect.signature(structure_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::package_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Package)
+def test_kermeta_structure_package_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Package)
 
 
-def test_kermeta::structure::package_constructor_exists():
-    assert callable(kermeta::structure::Package.__init__)
+def test_kermeta_structure_package_constructor_exists():
+    assert callable(kermeta_structure_Package.__init__)
 
 
-def test_kermeta::structure::package_constructor_args():
-    sig = inspect.signature(kermeta::structure::Package.__init__)
+def test_kermeta_structure_package_constructor_args():
+    sig = inspect.signature(kermeta_structure_Package.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_kermeta::structure::package_has_uri():
-    assert hasattr(kermeta::structure::Package, "uri")
+def test_kermeta_structure_package_has_uri():
+    assert hasattr(kermeta_structure_Package, "uri")
     descriptor = None
-    for klass in kermeta::structure::Package.__mro__:
+    for klass in kermeta_structure_Package.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -359,16 +471,16 @@ def test_datatype_constructor_args():
 
 
 
-def test_kermeta::structure::enumeration_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Enumeration)
+def test_kermeta_structure_enumeration_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Enumeration)
 
 
-def test_kermeta::structure::enumeration_constructor_exists():
-    assert callable(kermeta::structure::Enumeration.__init__)
+def test_kermeta_structure_enumeration_constructor_exists():
+    assert callable(kermeta_structure_Enumeration.__init__)
 
 
-def test_kermeta::structure::enumeration_constructor_args():
-    sig = inspect.signature(kermeta::structure::Enumeration.__init__)
+def test_kermeta_structure_enumeration_constructor_args():
+    sig = inspect.signature(kermeta_structure_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -387,70 +499,70 @@ def test_typedelement_constructor_args():
 
 
 
-def test_kermeta::structure::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::MultiplicityElement)
+def test_kermeta_structure_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_MultiplicityElement)
 
 
-def test_kermeta::structure::multiplicityelement_constructor_exists():
-    assert callable(kermeta::structure::MultiplicityElement.__init__)
+def test_kermeta_structure_multiplicityelement_constructor_exists():
+    assert callable(kermeta_structure_MultiplicityElement.__init__)
 
 
-def test_kermeta::structure::multiplicityelement_constructor_args():
-    sig = inspect.signature(kermeta::structure::MultiplicityElement.__init__)
+def test_kermeta_structure_multiplicityelement_constructor_args():
+    sig = inspect.signature(kermeta_structure_MultiplicityElement.__init__)
     params = list(sig.parameters.keys())
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
     assert "lower" in params, "Missing parameter 'lower'"
-    assert "isUnique" in params, "Missing parameter 'isUnique'"
     assert "upper" in params, "Missing parameter 'upper'"
+    assert "isUnique" in params, "Missing parameter 'isUnique'"
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
 
-def test_kermeta::structure::multiplicityelement_has_isOrdered():
-    assert hasattr(kermeta::structure::MultiplicityElement, "isOrdered")
+def test_kermeta_structure_multiplicityelement_has_lower():
+    assert hasattr(kermeta_structure_MultiplicityElement, "lower")
     descriptor = None
-    for klass in kermeta::structure::MultiplicityElement.__mro__:
-        if "isOrdered" in klass.__dict__:
-            descriptor = klass.__dict__["isOrdered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::multiplicityelement_has_lower():
-    assert hasattr(kermeta::structure::MultiplicityElement, "lower")
-    descriptor = None
-    for klass in kermeta::structure::MultiplicityElement.__mro__:
+    for klass in kermeta_structure_MultiplicityElement.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
-def test_kermeta::structure::multiplicityelement_has_isUnique():
-    assert hasattr(kermeta::structure::MultiplicityElement, "isUnique")
+def test_kermeta_structure_multiplicityelement_has_upper():
+    assert hasattr(kermeta_structure_MultiplicityElement, "upper")
     descriptor = None
-    for klass in kermeta::structure::MultiplicityElement.__mro__:
-        if "isUnique" in klass.__dict__:
-            descriptor = klass.__dict__["isUnique"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::multiplicityelement_has_upper():
-    assert hasattr(kermeta::structure::MultiplicityElement, "upper")
-    descriptor = None
-    for klass in kermeta::structure::MultiplicityElement.__mro__:
+    for klass in kermeta_structure_MultiplicityElement.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
+def test_kermeta_structure_multiplicityelement_has_isUnique():
+    assert hasattr(kermeta_structure_MultiplicityElement, "isUnique")
+    descriptor = None
+    for klass in kermeta_structure_MultiplicityElement.__mro__:
+        if "isUnique" in klass.__dict__:
+            descriptor = klass.__dict__["isUnique"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_kermeta_structure_multiplicityelement_has_isOrdered():
+    assert hasattr(kermeta_structure_MultiplicityElement, "isOrdered")
+    descriptor = None
+    for klass in kermeta_structure_MultiplicityElement.__mro__:
+        if "isOrdered" in klass.__dict__:
+            descriptor = klass.__dict__["isOrdered"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_structure::enumeration_is_not_abstract():
-    assert not inspect.isabstract(structure::Enumeration)
+
+def test_structure_enumeration_is_not_abstract():
+    assert not inspect.isabstract(structure_Enumeration)
 
 
-def test_structure::enumeration_constructor_exists():
-    assert callable(structure::Enumeration.__init__)
+def test_structure_enumeration_constructor_exists():
+    assert callable(structure_Enumeration.__init__)
 
 
-def test_structure::enumeration_constructor_args():
-    sig = inspect.signature(structure::Enumeration.__init__)
+def test_structure_enumeration_constructor_args():
+    sig = inspect.signature(structure_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -469,33 +581,33 @@ def test_namedelement_constructor_args():
 
 
 
-def test_kermeta::structure::constraint_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Constraint)
+def test_kermeta_structure_constraint_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Constraint)
 
 
-def test_kermeta::structure::constraint_constructor_exists():
-    assert callable(kermeta::structure::Constraint.__init__)
+def test_kermeta_structure_constraint_constructor_exists():
+    assert callable(kermeta_structure_Constraint.__init__)
 
 
-def test_kermeta::structure::constraint_constructor_args():
-    sig = inspect.signature(kermeta::structure::Constraint.__init__)
+def test_kermeta_structure_constraint_constructor_args():
+    sig = inspect.signature(kermeta_structure_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "stereotype" in params, "Missing parameter 'stereotype'"
     assert "language" in params, "Missing parameter 'language'"
 
-def test_kermeta::structure::constraint_has_stereotype():
-    assert hasattr(kermeta::structure::Constraint, "stereotype")
+def test_kermeta_structure_constraint_has_stereotype():
+    assert hasattr(kermeta_structure_Constraint, "stereotype")
     descriptor = None
-    for klass in kermeta::structure::Constraint.__mro__:
+    for klass in kermeta_structure_Constraint.__mro__:
         if "stereotype" in klass.__dict__:
             descriptor = klass.__dict__["stereotype"]
             break
     assert isinstance(descriptor, property)
 
-def test_kermeta::structure::constraint_has_language():
-    assert hasattr(kermeta::structure::Constraint, "language")
+def test_kermeta_structure_constraint_has_language():
+    assert hasattr(kermeta_structure_Constraint, "language")
     descriptor = None
-    for klass in kermeta::structure::Constraint.__mro__:
+    for klass in kermeta_structure_Constraint.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
@@ -503,23 +615,37 @@ def test_kermeta::structure::constraint_has_language():
 
 
 
-def test_kermeta::structure::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::TypeDefinition)
+def test_kermeta_structure_typedefinitioncontainer_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_TypeDefinitionContainer)
 
 
-def test_kermeta::structure::typedefinition_constructor_exists():
-    assert callable(kermeta::structure::TypeDefinition.__init__)
+def test_kermeta_structure_typedefinitioncontainer_constructor_exists():
+    assert callable(kermeta_structure_TypeDefinitionContainer.__init__)
 
 
-def test_kermeta::structure::typedefinition_constructor_args():
-    sig = inspect.signature(kermeta::structure::TypeDefinition.__init__)
+def test_kermeta_structure_typedefinitioncontainer_constructor_args():
+    sig = inspect.signature(kermeta_structure_TypeDefinitionContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_TypeDefinition)
+
+
+def test_kermeta_structure_typedefinition_constructor_exists():
+    assert callable(kermeta_structure_TypeDefinition.__init__)
+
+
+def test_kermeta_structure_typedefinition_constructor_args():
+    sig = inspect.signature(kermeta_structure_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "isAspect" in params, "Missing parameter 'isAspect'"
 
-def test_kermeta::structure::typedefinition_has_isAspect():
-    assert hasattr(kermeta::structure::TypeDefinition, "isAspect")
+def test_kermeta_structure_typedefinition_has_isAspect():
+    assert hasattr(kermeta_structure_TypeDefinition, "isAspect")
     descriptor = None
-    for klass in kermeta::structure::TypeDefinition.__mro__:
+    for klass in kermeta_structure_TypeDefinition.__mro__:
         if "isAspect" in klass.__dict__:
             descriptor = klass.__dict__["isAspect"]
             break
@@ -527,128 +653,128 @@ def test_kermeta::structure::typedefinition_has_isAspect():
 
 
 
-def test_kermeta::structure::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::EnumerationLiteral)
+def test_kermeta_structure_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_EnumerationLiteral)
 
 
-def test_kermeta::structure::enumerationliteral_constructor_exists():
-    assert callable(kermeta::structure::EnumerationLiteral.__init__)
+def test_kermeta_structure_enumerationliteral_constructor_exists():
+    assert callable(kermeta_structure_EnumerationLiteral.__init__)
 
 
-def test_kermeta::structure::enumerationliteral_constructor_args():
-    sig = inspect.signature(kermeta::structure::EnumerationLiteral.__init__)
+def test_kermeta_structure_enumerationliteral_constructor_args():
+    sig = inspect.signature(kermeta_structure_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::constraint_is_not_abstract():
-    assert not inspect.isabstract(structure::Constraint)
+def test_structure_constraint_is_not_abstract():
+    assert not inspect.isabstract(structure_Constraint)
 
 
-def test_structure::constraint_constructor_exists():
-    assert callable(structure::Constraint.__init__)
+def test_structure_constraint_constructor_exists():
+    assert callable(structure_Constraint.__init__)
 
 
-def test_structure::constraint_constructor_args():
-    sig = inspect.signature(structure::Constraint.__init__)
+def test_structure_constraint_constructor_args():
+    sig = inspect.signature(structure_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::parameter_is_not_abstract():
-    assert not inspect.isabstract(structure::Parameter)
+def test_structure_parameter_is_not_abstract():
+    assert not inspect.isabstract(structure_Parameter)
 
 
-def test_structure::parameter_constructor_exists():
-    assert callable(structure::Parameter.__init__)
+def test_structure_parameter_constructor_exists():
+    assert callable(structure_Parameter.__init__)
 
 
-def test_structure::parameter_constructor_args():
-    sig = inspect.signature(structure::Parameter.__init__)
+def test_structure_parameter_constructor_args():
+    sig = inspect.signature(structure_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::typevariable_is_not_abstract():
-    assert not inspect.isabstract(structure::TypeVariable)
+def test_structure_typevariable_is_not_abstract():
+    assert not inspect.isabstract(structure_TypeVariable)
 
 
-def test_structure::typevariable_constructor_exists():
-    assert callable(structure::TypeVariable.__init__)
+def test_structure_typevariable_constructor_exists():
+    assert callable(structure_TypeVariable.__init__)
 
 
-def test_structure::typevariable_constructor_args():
-    sig = inspect.signature(structure::TypeVariable.__init__)
+def test_structure_typevariable_constructor_args():
+    sig = inspect.signature(structure_TypeVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::classdefinition_is_not_abstract():
-    assert not inspect.isabstract(structure::ClassDefinition)
+def test_structure_classdefinition_is_not_abstract():
+    assert not inspect.isabstract(structure_ClassDefinition)
 
 
-def test_structure::classdefinition_constructor_exists():
-    assert callable(structure::ClassDefinition.__init__)
+def test_structure_classdefinition_constructor_exists():
+    assert callable(structure_ClassDefinition.__init__)
 
 
-def test_structure::classdefinition_constructor_args():
-    sig = inspect.signature(structure::ClassDefinition.__init__)
+def test_structure_classdefinition_constructor_args():
+    sig = inspect.signature(structure_ClassDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::object_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Object)
+def test_kermeta_structure_object_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Object)
 
 
-def test_kermeta::structure::object_constructor_exists():
-    assert callable(kermeta::structure::Object.__init__)
+def test_kermeta_structure_object_constructor_exists():
+    assert callable(kermeta_structure_Object.__init__)
 
 
-def test_kermeta::structure::object_constructor_args():
-    sig = inspect.signature(kermeta::structure::Object.__init__)
+def test_kermeta_structure_object_constructor_args():
+    sig = inspect.signature(kermeta_structure_Object.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::class_is_not_abstract():
-    assert not inspect.isabstract(structure::Class)
+def test_structure_class_is_not_abstract():
+    assert not inspect.isabstract(structure_Class)
 
 
-def test_structure::class_constructor_exists():
-    assert callable(structure::Class.__init__)
+def test_structure_class_constructor_exists():
+    assert callable(structure_Class.__init__)
 
 
-def test_structure::class_constructor_args():
-    sig = inspect.signature(structure::Class.__init__)
+def test_structure_class_constructor_args():
+    sig = inspect.signature(structure_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(structure::TypeDefinition)
+def test_structure_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(structure_TypeDefinition)
 
 
-def test_structure::typedefinition_constructor_exists():
-    assert callable(structure::TypeDefinition.__init__)
+def test_structure_typedefinition_constructor_exists():
+    assert callable(structure_TypeDefinition.__init__)
 
 
-def test_structure::typedefinition_constructor_args():
-    sig = inspect.signature(structure::TypeDefinition.__init__)
+def test_structure_typedefinition_constructor_args():
+    sig = inspect.signature(structure_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::tag_is_not_abstract():
-    assert not inspect.isabstract(structure::Tag)
+def test_structure_tag_is_not_abstract():
+    assert not inspect.isabstract(structure_Tag)
 
 
-def test_structure::tag_constructor_exists():
-    assert callable(structure::Tag.__init__)
+def test_structure_tag_constructor_exists():
+    assert callable(structure_Tag.__init__)
 
 
-def test_structure::tag_constructor_args():
-    sig = inspect.signature(structure::Tag.__init__)
+def test_structure_tag_constructor_args():
+    sig = inspect.signature(structure_Tag.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -667,35 +793,35 @@ def test_parameterizedtype_constructor_args():
 
 
 
-def test_kermeta::structure::class_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Class)
+def test_kermeta_structure_class_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Class)
 
 
-def test_kermeta::structure::class_constructor_exists():
-    assert callable(kermeta::structure::Class.__init__)
+def test_kermeta_structure_class_constructor_exists():
+    assert callable(kermeta_structure_Class.__init__)
 
 
-def test_kermeta::structure::class_constructor_args():
-    sig = inspect.signature(kermeta::structure::Class.__init__)
+def test_kermeta_structure_class_constructor_args():
+    sig = inspect.signature(kermeta_structure_Class.__init__)
     params = list(sig.parameters.keys())
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_kermeta::structure::class_has_isAbstract():
-    assert hasattr(kermeta::structure::Class, "isAbstract")
+def test_kermeta_structure_class_has_name():
+    assert hasattr(kermeta_structure_Class, "name")
     descriptor = None
-    for klass in kermeta::structure::Class.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
+    for klass in kermeta_structure_Class.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_kermeta::structure::class_has_name():
-    assert hasattr(kermeta::structure::Class, "name")
+def test_kermeta_structure_class_has_isAbstract():
+    assert hasattr(kermeta_structure_Class, "isAbstract")
     descriptor = None
-    for klass in kermeta::structure::Class.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in kermeta_structure_Class.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
 
@@ -715,51 +841,37 @@ def test_literal_constructor_args():
 
 
 
-def test_kermeta::behavior::voidliteral_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::VoidLiteral)
+def test_kermeta_behavior_typeliteral_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_TypeLiteral)
 
 
-def test_kermeta::behavior::voidliteral_constructor_exists():
-    assert callable(kermeta::behavior::VoidLiteral.__init__)
+def test_kermeta_behavior_typeliteral_constructor_exists():
+    assert callable(kermeta_behavior_TypeLiteral.__init__)
 
 
-def test_kermeta::behavior::voidliteral_constructor_args():
-    sig = inspect.signature(kermeta::behavior::VoidLiteral.__init__)
+def test_kermeta_behavior_typeliteral_constructor_args():
+    sig = inspect.signature(kermeta_behavior_TypeLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::behavior::typeliteral_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::TypeLiteral)
+def test_kermeta_behavior_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_StringLiteral)
 
 
-def test_kermeta::behavior::typeliteral_constructor_exists():
-    assert callable(kermeta::behavior::TypeLiteral.__init__)
+def test_kermeta_behavior_stringliteral_constructor_exists():
+    assert callable(kermeta_behavior_StringLiteral.__init__)
 
 
-def test_kermeta::behavior::typeliteral_constructor_args():
-    sig = inspect.signature(kermeta::behavior::TypeLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::BooleanLiteral)
-
-
-def test_kermeta::behavior::booleanliteral_constructor_exists():
-    assert callable(kermeta::behavior::BooleanLiteral.__init__)
-
-
-def test_kermeta::behavior::booleanliteral_constructor_args():
-    sig = inspect.signature(kermeta::behavior::BooleanLiteral.__init__)
+def test_kermeta_behavior_stringliteral_constructor_args():
+    sig = inspect.signature(kermeta_behavior_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_kermeta::behavior::booleanliteral_has_value():
-    assert hasattr(kermeta::behavior::BooleanLiteral, "value")
+def test_kermeta_behavior_stringliteral_has_value():
+    assert hasattr(kermeta_behavior_StringLiteral, "value")
     descriptor = None
-    for klass in kermeta::behavior::BooleanLiteral.__mro__:
+    for klass in kermeta_behavior_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -767,23 +879,37 @@ def test_kermeta::behavior::booleanliteral_has_value():
 
 
 
-def test_kermeta::behavior::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::StringLiteral)
+def test_kermeta_behavior_voidliteral_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_VoidLiteral)
 
 
-def test_kermeta::behavior::stringliteral_constructor_exists():
-    assert callable(kermeta::behavior::StringLiteral.__init__)
+def test_kermeta_behavior_voidliteral_constructor_exists():
+    assert callable(kermeta_behavior_VoidLiteral.__init__)
 
 
-def test_kermeta::behavior::stringliteral_constructor_args():
-    sig = inspect.signature(kermeta::behavior::StringLiteral.__init__)
+def test_kermeta_behavior_voidliteral_constructor_args():
+    sig = inspect.signature(kermeta_behavior_VoidLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_BooleanLiteral)
+
+
+def test_kermeta_behavior_booleanliteral_constructor_exists():
+    assert callable(kermeta_behavior_BooleanLiteral.__init__)
+
+
+def test_kermeta_behavior_booleanliteral_constructor_args():
+    sig = inspect.signature(kermeta_behavior_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_kermeta::behavior::stringliteral_has_value():
-    assert hasattr(kermeta::behavior::StringLiteral, "value")
+def test_kermeta_behavior_booleanliteral_has_value():
+    assert hasattr(kermeta_behavior_BooleanLiteral, "value")
     descriptor = None
-    for klass in kermeta::behavior::StringLiteral.__mro__:
+    for klass in kermeta_behavior_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -791,23 +917,23 @@ def test_kermeta::behavior::stringliteral_has_value():
 
 
 
-def test_kermeta::behavior::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::IntegerLiteral)
+def test_kermeta_behavior_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_IntegerLiteral)
 
 
-def test_kermeta::behavior::integerliteral_constructor_exists():
-    assert callable(kermeta::behavior::IntegerLiteral.__init__)
+def test_kermeta_behavior_integerliteral_constructor_exists():
+    assert callable(kermeta_behavior_IntegerLiteral.__init__)
 
 
-def test_kermeta::behavior::integerliteral_constructor_args():
-    sig = inspect.signature(kermeta::behavior::IntegerLiteral.__init__)
+def test_kermeta_behavior_integerliteral_constructor_args():
+    sig = inspect.signature(kermeta_behavior_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_kermeta::behavior::integerliteral_has_value():
-    assert hasattr(kermeta::behavior::IntegerLiteral, "value")
+def test_kermeta_behavior_integerliteral_has_value():
+    assert hasattr(kermeta_behavior_IntegerLiteral, "value")
     descriptor = None
-    for klass in kermeta::behavior::IntegerLiteral.__mro__:
+    for klass in kermeta_behavior_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -815,16 +941,16 @@ def test_kermeta::behavior::integerliteral_has_value():
 
 
 
-def test_behavior::lambdaparameter_is_not_abstract():
-    assert not inspect.isabstract(behavior::LambdaParameter)
+def test_behavior_lambdaparameter_is_not_abstract():
+    assert not inspect.isabstract(behavior_LambdaParameter)
 
 
-def test_behavior::lambdaparameter_constructor_exists():
-    assert callable(behavior::LambdaParameter.__init__)
+def test_behavior_lambdaparameter_constructor_exists():
+    assert callable(behavior_LambdaParameter.__init__)
 
 
-def test_behavior::lambdaparameter_constructor_args():
-    sig = inspect.signature(behavior::LambdaParameter.__init__)
+def test_behavior_lambdaparameter_constructor_args():
+    sig = inspect.signature(behavior_LambdaParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -843,16 +969,16 @@ def test_callvariable_constructor_args():
 
 
 
-def test_kermeta::behavior::callresult_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::CallResult)
+def test_kermeta_behavior_callresult_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_CallResult)
 
 
-def test_kermeta::behavior::callresult_constructor_exists():
-    assert callable(kermeta::behavior::CallResult.__init__)
+def test_kermeta_behavior_callresult_constructor_exists():
+    assert callable(kermeta_behavior_CallResult.__init__)
 
 
-def test_kermeta::behavior::callresult_constructor_args():
-    sig = inspect.signature(kermeta::behavior::CallResult.__init__)
+def test_kermeta_behavior_callresult_constructor_args():
+    sig = inspect.signature(kermeta_behavior_CallResult.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -871,121 +997,107 @@ def test_multiplicityelement_constructor_args():
 
 
 
-def test_kermeta::structure::parameter_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Parameter)
+def test_kermeta_structure_property_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Property)
 
 
-def test_kermeta::structure::parameter_constructor_exists():
-    assert callable(kermeta::structure::Parameter.__init__)
+def test_kermeta_structure_property_constructor_exists():
+    assert callable(kermeta_structure_Property.__init__)
 
 
-def test_kermeta::structure::parameter_constructor_args():
-    sig = inspect.signature(kermeta::structure::Parameter.__init__)
+def test_kermeta_structure_property_constructor_args():
+    sig = inspect.signature(kermeta_structure_Property.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::property_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Property)
-
-
-def test_kermeta::structure::property_constructor_exists():
-    assert callable(kermeta::structure::Property.__init__)
-
-
-def test_kermeta::structure::property_constructor_args():
-    sig = inspect.signature(kermeta::structure::Property.__init__)
-    params = list(sig.parameters.keys())
-    assert "default" in params, "Missing parameter 'default'"
     assert "isGetterAbstract" in params, "Missing parameter 'isGetterAbstract'"
-    assert "isDerived" in params, "Missing parameter 'isDerived'"
-    assert "isID" in params, "Missing parameter 'isID'"
-    assert "isSetterAbstract" in params, "Missing parameter 'isSetterAbstract'"
-    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
     assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "isID" in params, "Missing parameter 'isID'"
+    assert "default" in params, "Missing parameter 'default'"
+    assert "isSetterAbstract" in params, "Missing parameter 'isSetterAbstract'"
+    assert "isDerived" in params, "Missing parameter 'isDerived'"
+    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
 
-def test_kermeta::structure::property_has_default():
-    assert hasattr(kermeta::structure::Property, "default")
+def test_kermeta_structure_property_has_isGetterAbstract():
+    assert hasattr(kermeta_structure_Property, "isGetterAbstract")
     descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::property_has_isGetterAbstract():
-    assert hasattr(kermeta::structure::Property, "isGetterAbstract")
-    descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
+    for klass in kermeta_structure_Property.__mro__:
         if "isGetterAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isGetterAbstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_kermeta::structure::property_has_isDerived():
-    assert hasattr(kermeta::structure::Property, "isDerived")
+def test_kermeta_structure_property_has_isComposite():
+    assert hasattr(kermeta_structure_Property, "isComposite")
     descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
-        if "isDerived" in klass.__dict__:
-            descriptor = klass.__dict__["isDerived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::property_has_isID():
-    assert hasattr(kermeta::structure::Property, "isID")
-    descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
-        if "isID" in klass.__dict__:
-            descriptor = klass.__dict__["isID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::property_has_isSetterAbstract():
-    assert hasattr(kermeta::structure::Property, "isSetterAbstract")
-    descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
-        if "isSetterAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isSetterAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::property_has_isReadOnly():
-    assert hasattr(kermeta::structure::Property, "isReadOnly")
-    descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::property_has_isComposite():
-    assert hasattr(kermeta::structure::Property, "isComposite")
-    descriptor = None
-    for klass in kermeta::structure::Property.__mro__:
+    for klass in kermeta_structure_Property.__mro__:
         if "isComposite" in klass.__dict__:
             descriptor = klass.__dict__["isComposite"]
             break
     assert isinstance(descriptor, property)
 
+def test_kermeta_structure_property_has_isID():
+    assert hasattr(kermeta_structure_Property, "isID")
+    descriptor = None
+    for klass in kermeta_structure_Property.__mro__:
+        if "isID" in klass.__dict__:
+            descriptor = klass.__dict__["isID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_kermeta_structure_property_has_default():
+    assert hasattr(kermeta_structure_Property, "default")
+    descriptor = None
+    for klass in kermeta_structure_Property.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_kermeta_structure_property_has_isSetterAbstract():
+    assert hasattr(kermeta_structure_Property, "isSetterAbstract")
+    descriptor = None
+    for klass in kermeta_structure_Property.__mro__:
+        if "isSetterAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isSetterAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_kermeta_structure_property_has_isDerived():
+    assert hasattr(kermeta_structure_Property, "isDerived")
+    descriptor = None
+    for klass in kermeta_structure_Property.__mro__:
+        if "isDerived" in klass.__dict__:
+            descriptor = klass.__dict__["isDerived"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_kermeta_structure_property_has_isReadOnly():
+    assert hasattr(kermeta_structure_Property, "isReadOnly")
+    descriptor = None
+    for klass in kermeta_structure_Property.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_kermeta::structure::operation_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Operation)
+
+def test_kermeta_structure_operation_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Operation)
 
 
-def test_kermeta::structure::operation_constructor_exists():
-    assert callable(kermeta::structure::Operation.__init__)
+def test_kermeta_structure_operation_constructor_exists():
+    assert callable(kermeta_structure_Operation.__init__)
 
 
-def test_kermeta::structure::operation_constructor_args():
-    sig = inspect.signature(kermeta::structure::Operation.__init__)
+def test_kermeta_structure_operation_constructor_args():
+    sig = inspect.signature(kermeta_structure_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_kermeta::structure::operation_has_isAbstract():
-    assert hasattr(kermeta::structure::Operation, "isAbstract")
+def test_kermeta_structure_operation_has_isAbstract():
+    assert hasattr(kermeta_structure_Operation, "isAbstract")
     descriptor = None
-    for klass in kermeta::structure::Operation.__mro__:
+    for klass in kermeta_structure_Operation.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -993,30 +1105,44 @@ def test_kermeta::structure::operation_has_isAbstract():
 
 
 
-def test_kermeta::behavior::typereference_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::TypeReference)
+def test_kermeta_structure_parameter_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Parameter)
 
 
-def test_kermeta::behavior::typereference_constructor_exists():
-    assert callable(kermeta::behavior::TypeReference.__init__)
+def test_kermeta_structure_parameter_constructor_exists():
+    assert callable(kermeta_structure_Parameter.__init__)
 
 
-def test_kermeta::behavior::typereference_constructor_args():
-    sig = inspect.signature(kermeta::behavior::TypeReference.__init__)
+def test_kermeta_structure_parameter_constructor_args():
+    sig = inspect.signature(kermeta_structure_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavior::typereference_is_not_abstract():
-    assert not inspect.isabstract(behavior::TypeReference)
+def test_kermeta_behavior_typereference_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_TypeReference)
 
 
-def test_behavior::typereference_constructor_exists():
-    assert callable(behavior::TypeReference.__init__)
+def test_kermeta_behavior_typereference_constructor_exists():
+    assert callable(kermeta_behavior_TypeReference.__init__)
 
 
-def test_behavior::typereference_constructor_args():
-    sig = inspect.signature(behavior::TypeReference.__init__)
+def test_kermeta_behavior_typereference_constructor_args():
+    sig = inspect.signature(kermeta_behavior_TypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavior_typereference_is_not_abstract():
+    assert not inspect.isabstract(behavior_TypeReference)
+
+
+def test_behavior_typereference_constructor_exists():
+    assert callable(behavior_TypeReference.__init__)
+
+
+def test_behavior_typereference_constructor_args():
+    sig = inspect.signature(behavior_TypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1035,51 +1161,209 @@ def test_object_constructor_args():
 
 
 
-def test_kermeta::structure::modelingunit_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ModelingUnit)
+def test_kermeta_behavior_lambdaparameter_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_LambdaParameter)
 
 
-def test_kermeta::structure::modelingunit_constructor_exists():
-    assert callable(kermeta::structure::ModelingUnit.__init__)
+def test_kermeta_behavior_lambdaparameter_constructor_exists():
+    assert callable(kermeta_behavior_LambdaParameter.__init__)
 
 
-def test_kermeta::structure::modelingunit_constructor_args():
-    sig = inspect.signature(kermeta::structure::ModelingUnit.__init__)
+def test_kermeta_behavior_lambdaparameter_constructor_args():
+    sig = inspect.signature(kermeta_behavior_LambdaParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_kermeta_behavior_lambdaparameter_has_name():
+    assert hasattr(kermeta_behavior_LambdaParameter, "name")
+    descriptor = None
+    for klass in kermeta_behavior_LambdaParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_kermeta_structure_typecontainer_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_TypeContainer)
+
+
+def test_kermeta_structure_typecontainer_constructor_exists():
+    assert callable(kermeta_structure_TypeContainer.__init__)
+
+
+def test_kermeta_structure_typecontainer_constructor_args():
+    sig = inspect.signature(kermeta_structure_TypeContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::type_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Type)
+def test_kermeta_structure_using_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Using)
 
 
-def test_kermeta::structure::type_constructor_exists():
-    assert callable(kermeta::structure::Type.__init__)
+def test_kermeta_structure_using_constructor_exists():
+    assert callable(kermeta_structure_Using.__init__)
 
 
-def test_kermeta::structure::type_constructor_args():
-    sig = inspect.signature(kermeta::structure::Type.__init__)
+def test_kermeta_structure_using_constructor_args():
+    sig = inspect.signature(kermeta_structure_Using.__init__)
+    params = list(sig.parameters.keys())
+    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
+
+def test_kermeta_structure_using_has_qualifiedName():
+    assert hasattr(kermeta_structure_Using, "qualifiedName")
+    descriptor = None
+    for klass in kermeta_structure_Using.__mro__:
+        if "qualifiedName" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiedName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_kermeta_structure_filter_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Filter)
+
+
+def test_kermeta_structure_filter_constructor_exists():
+    assert callable(kermeta_structure_Filter.__init__)
+
+
+def test_kermeta_structure_filter_constructor_args():
+    sig = inspect.signature(kermeta_structure_Filter.__init__)
+    params = list(sig.parameters.keys())
+    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
+
+def test_kermeta_structure_filter_has_qualifiedName():
+    assert hasattr(kermeta_structure_Filter, "qualifiedName")
+    descriptor = None
+    for klass in kermeta_structure_Filter.__mro__:
+        if "qualifiedName" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiedName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_kermeta_structure_modelingunit_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ModelingUnit)
+
+
+def test_kermeta_structure_modelingunit_constructor_exists():
+    assert callable(kermeta_structure_ModelingUnit.__init__)
+
+
+def test_kermeta_structure_modelingunit_constructor_args():
+    sig = inspect.signature(kermeta_structure_ModelingUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::require_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Require)
+def test_kermeta_structure_tag_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Tag)
 
 
-def test_kermeta::structure::require_constructor_exists():
-    assert callable(kermeta::structure::Require.__init__)
+def test_kermeta_structure_tag_constructor_exists():
+    assert callable(kermeta_structure_Tag.__init__)
 
 
-def test_kermeta::structure::require_constructor_args():
-    sig = inspect.signature(kermeta::structure::Require.__init__)
+def test_kermeta_structure_tag_constructor_args():
+    sig = inspect.signature(kermeta_structure_Tag.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_kermeta_structure_tag_has_name():
+    assert hasattr(kermeta_structure_Tag, "name")
+    descriptor = None
+    for klass in kermeta_structure_Tag.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_kermeta_structure_tag_has_value():
+    assert hasattr(kermeta_structure_Tag, "value")
+    descriptor = None
+    for klass in kermeta_structure_Tag.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_kermeta_structure_model_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Model)
+
+
+def test_kermeta_structure_model_constructor_exists():
+    assert callable(kermeta_structure_Model.__init__)
+
+
+def test_kermeta_structure_model_constructor_args():
+    sig = inspect.signature(kermeta_structure_Model.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_namedelement_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_NamedElement)
+
+
+def test_kermeta_structure_namedelement_constructor_exists():
+    assert callable(kermeta_structure_NamedElement.__init__)
+
+
+def test_kermeta_structure_namedelement_constructor_args():
+    sig = inspect.signature(kermeta_structure_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_kermeta_structure_namedelement_has_name():
+    assert hasattr(kermeta_structure_NamedElement, "name")
+    descriptor = None
+    for klass in kermeta_structure_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_kermeta_structure_type_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Type)
+
+
+def test_kermeta_structure_type_constructor_exists():
+    assert callable(kermeta_structure_Type.__init__)
+
+
+def test_kermeta_structure_type_constructor_args():
+    sig = inspect.signature(kermeta_structure_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_require_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_Require)
+
+
+def test_kermeta_structure_require_constructor_exists():
+    assert callable(kermeta_structure_Require.__init__)
+
+
+def test_kermeta_structure_require_constructor_args():
+    sig = inspect.signature(kermeta_structure_Require.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_kermeta::structure::require_has_uri():
-    assert hasattr(kermeta::structure::Require, "uri")
+def test_kermeta_structure_require_has_uri():
+    assert hasattr(kermeta_structure_Require, "uri")
     descriptor = None
-    for klass in kermeta::structure::Require.__mro__:
+    for klass in kermeta_structure_Require.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -1087,181 +1371,23 @@ def test_kermeta::structure::require_has_uri():
 
 
 
-def test_kermeta::structure::model_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Model)
+def test_kermeta_behavior_rescue_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Rescue)
 
 
-def test_kermeta::structure::model_constructor_exists():
-    assert callable(kermeta::structure::Model.__init__)
+def test_kermeta_behavior_rescue_constructor_exists():
+    assert callable(kermeta_behavior_Rescue.__init__)
 
 
-def test_kermeta::structure::model_constructor_args():
-    sig = inspect.signature(kermeta::structure::Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::typecontainer_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::TypeContainer)
-
-
-def test_kermeta::structure::typecontainer_constructor_exists():
-    assert callable(kermeta::structure::TypeContainer.__init__)
-
-
-def test_kermeta::structure::typecontainer_constructor_args():
-    sig = inspect.signature(kermeta::structure::TypeContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::namedelement_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::NamedElement)
-
-
-def test_kermeta::structure::namedelement_constructor_exists():
-    assert callable(kermeta::structure::NamedElement.__init__)
-
-
-def test_kermeta::structure::namedelement_constructor_args():
-    sig = inspect.signature(kermeta::structure::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_kermeta::structure::namedelement_has_name():
-    assert hasattr(kermeta::structure::NamedElement, "name")
-    descriptor = None
-    for klass in kermeta::structure::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_kermeta::structure::using_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Using)
-
-
-def test_kermeta::structure::using_constructor_exists():
-    assert callable(kermeta::structure::Using.__init__)
-
-
-def test_kermeta::structure::using_constructor_args():
-    sig = inspect.signature(kermeta::structure::Using.__init__)
-    params = list(sig.parameters.keys())
-    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
-
-def test_kermeta::structure::using_has_qualifiedName():
-    assert hasattr(kermeta::structure::Using, "qualifiedName")
-    descriptor = None
-    for klass in kermeta::structure::Using.__mro__:
-        if "qualifiedName" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiedName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_kermeta::structure::filter_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Filter)
-
-
-def test_kermeta::structure::filter_constructor_exists():
-    assert callable(kermeta::structure::Filter.__init__)
-
-
-def test_kermeta::structure::filter_constructor_args():
-    sig = inspect.signature(kermeta::structure::Filter.__init__)
-    params = list(sig.parameters.keys())
-    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
-
-def test_kermeta::structure::filter_has_qualifiedName():
-    assert hasattr(kermeta::structure::Filter, "qualifiedName")
-    descriptor = None
-    for klass in kermeta::structure::Filter.__mro__:
-        if "qualifiedName" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiedName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_kermeta::behavior::lambdaparameter_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::LambdaParameter)
-
-
-def test_kermeta::behavior::lambdaparameter_constructor_exists():
-    assert callable(kermeta::behavior::LambdaParameter.__init__)
-
-
-def test_kermeta::behavior::lambdaparameter_constructor_args():
-    sig = inspect.signature(kermeta::behavior::LambdaParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_kermeta::behavior::lambdaparameter_has_name():
-    assert hasattr(kermeta::behavior::LambdaParameter, "name")
-    descriptor = None
-    for klass in kermeta::behavior::LambdaParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_kermeta::structure::tag_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::Tag)
-
-
-def test_kermeta::structure::tag_constructor_exists():
-    assert callable(kermeta::structure::Tag.__init__)
-
-
-def test_kermeta::structure::tag_constructor_args():
-    sig = inspect.signature(kermeta::structure::Tag.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_kermeta::structure::tag_has_value():
-    assert hasattr(kermeta::structure::Tag, "value")
-    descriptor = None
-    for klass in kermeta::structure::Tag.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kermeta::structure::tag_has_name():
-    assert hasattr(kermeta::structure::Tag, "name")
-    descriptor = None
-    for klass in kermeta::structure::Tag.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_kermeta::behavior::rescue_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Rescue)
-
-
-def test_kermeta::behavior::rescue_constructor_exists():
-    assert callable(kermeta::behavior::Rescue.__init__)
-
-
-def test_kermeta::behavior::rescue_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Rescue.__init__)
+def test_kermeta_behavior_rescue_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Rescue.__init__)
     params = list(sig.parameters.keys())
     assert "exceptionName" in params, "Missing parameter 'exceptionName'"
 
-def test_kermeta::behavior::rescue_has_exceptionName():
-    assert hasattr(kermeta::behavior::Rescue, "exceptionName")
+def test_kermeta_behavior_rescue_has_exceptionName():
+    assert hasattr(kermeta_behavior_Rescue, "exceptionName")
     descriptor = None
-    for klass in kermeta::behavior::Rescue.__mro__:
+    for klass in kermeta_behavior_Rescue.__mro__:
         if "exceptionName" in klass.__dict__:
             descriptor = klass.__dict__["exceptionName"]
             break
@@ -1269,170 +1395,44 @@ def test_kermeta::behavior::rescue_has_exceptionName():
 
 
 
-def test_structure::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(structure::EnumerationLiteral)
+def test_structure_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(structure_EnumerationLiteral)
 
 
-def test_structure::enumerationliteral_constructor_exists():
-    assert callable(structure::EnumerationLiteral.__init__)
+def test_structure_enumerationliteral_constructor_exists():
+    assert callable(structure_EnumerationLiteral.__init__)
 
 
-def test_structure::enumerationliteral_constructor_args():
-    sig = inspect.signature(structure::EnumerationLiteral.__init__)
+def test_structure_enumerationliteral_constructor_args():
+    sig = inspect.signature(structure_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::operation_is_not_abstract():
-    assert not inspect.isabstract(structure::Operation)
+def test_structure_operation_is_not_abstract():
+    assert not inspect.isabstract(structure_Operation)
 
 
-def test_structure::operation_constructor_exists():
-    assert callable(structure::Operation.__init__)
+def test_structure_operation_constructor_exists():
+    assert callable(structure_Operation.__init__)
 
 
-def test_structure::operation_constructor_args():
-    sig = inspect.signature(structure::Operation.__init__)
+def test_structure_operation_constructor_args():
+    sig = inspect.signature(structure_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::property_is_not_abstract():
-    assert not inspect.isabstract(structure::Property)
+def test_structure_property_is_not_abstract():
+    assert not inspect.isabstract(structure_Property)
 
 
-def test_structure::property_constructor_exists():
-    assert callable(structure::Property.__init__)
+def test_structure_property_constructor_exists():
+    assert callable(structure_Property.__init__)
 
 
-def test_structure::property_constructor_args():
-    sig = inspect.signature(structure::Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::typedefinitioncontainer_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::TypeDefinitionContainer)
-
-
-def test_kermeta::structure::typedefinitioncontainer_constructor_exists():
-    assert callable(kermeta::structure::TypeDefinitionContainer.__init__)
-
-
-def test_kermeta::structure::typedefinitioncontainer_constructor_args():
-    sig = inspect.signature(kermeta::structure::TypeDefinitionContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::voidtype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::VoidType)
-
-
-def test_kermeta::structure::voidtype_constructor_exists():
-    assert callable(kermeta::structure::VoidType.__init__)
-
-
-def test_kermeta::structure::voidtype_constructor_args():
-    sig = inspect.signature(kermeta::structure::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structure::modeltypevariable_is_not_abstract():
-    assert not inspect.isabstract(structure::ModelTypeVariable)
-
-
-def test_structure::modeltypevariable_constructor_exists():
-    assert callable(structure::ModelTypeVariable.__init__)
-
-
-def test_structure::modeltypevariable_constructor_args():
-    sig = inspect.signature(structure::ModelTypeVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_objecttypevariable_is_not_abstract():
-    assert not inspect.isabstract(ObjectTypeVariable)
-
-
-def test_objecttypevariable_constructor_exists():
-    assert callable(ObjectTypeVariable.__init__)
-
-
-def test_objecttypevariable_constructor_args():
-    sig = inspect.signature(ObjectTypeVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::virtualtype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::VirtualType)
-
-
-def test_kermeta::structure::virtualtype_constructor_exists():
-    assert callable(kermeta::structure::VirtualType.__init__)
-
-
-def test_kermeta::structure::virtualtype_constructor_args():
-    sig = inspect.signature(kermeta::structure::VirtualType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structure::virtualtype_is_not_abstract():
-    assert not inspect.isabstract(structure::VirtualType)
-
-
-def test_structure::virtualtype_constructor_exists():
-    assert callable(structure::VirtualType.__init__)
-
-
-def test_structure::virtualtype_constructor_args():
-    sig = inspect.signature(structure::VirtualType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_typevariable_is_not_abstract():
-    assert not inspect.isabstract(TypeVariable)
-
-
-def test_typevariable_constructor_exists():
-    assert callable(TypeVariable.__init__)
-
-
-def test_typevariable_constructor_args():
-    sig = inspect.signature(TypeVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::modeltypevariable_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ModelTypeVariable)
-
-
-def test_kermeta::structure::modeltypevariable_constructor_exists():
-    assert callable(kermeta::structure::ModelTypeVariable.__init__)
-
-
-def test_kermeta::structure::modeltypevariable_constructor_args():
-    sig = inspect.signature(kermeta::structure::ModelTypeVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::structure::objecttypevariable_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ObjectTypeVariable)
-
-
-def test_kermeta::structure::objecttypevariable_constructor_exists():
-    assert callable(kermeta::structure::ObjectTypeVariable.__init__)
-
-
-def test_kermeta::structure::objecttypevariable_constructor_args():
-    sig = inspect.signature(kermeta::structure::ObjectTypeVariable.__init__)
+def test_structure_property_constructor_args():
+    sig = inspect.signature(structure_Property.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1451,23 +1451,51 @@ def test_callexpression_constructor_args():
 
 
 
-def test_kermeta::behavior::callfeature_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::CallFeature)
+def test_kermeta_behavior_callsuperoperation_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_CallSuperOperation)
 
 
-def test_kermeta::behavior::callfeature_constructor_exists():
-    assert callable(kermeta::behavior::CallFeature.__init__)
+def test_kermeta_behavior_callsuperoperation_constructor_exists():
+    assert callable(kermeta_behavior_CallSuperOperation.__init__)
 
 
-def test_kermeta::behavior::callfeature_constructor_args():
-    sig = inspect.signature(kermeta::behavior::CallFeature.__init__)
+def test_kermeta_behavior_callsuperoperation_constructor_args():
+    sig = inspect.signature(kermeta_behavior_CallSuperOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_callvalue_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_CallValue)
+
+
+def test_kermeta_behavior_callvalue_constructor_exists():
+    assert callable(kermeta_behavior_CallValue.__init__)
+
+
+def test_kermeta_behavior_callvalue_constructor_args():
+    sig = inspect.signature(kermeta_behavior_CallValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_callfeature_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_CallFeature)
+
+
+def test_kermeta_behavior_callfeature_constructor_exists():
+    assert callable(kermeta_behavior_CallFeature.__init__)
+
+
+def test_kermeta_behavior_callfeature_constructor_args():
+    sig = inspect.signature(kermeta_behavior_CallFeature.__init__)
     params = list(sig.parameters.keys())
     assert "isAtpre" in params, "Missing parameter 'isAtpre'"
 
-def test_kermeta::behavior::callfeature_has_isAtpre():
-    assert hasattr(kermeta::behavior::CallFeature, "isAtpre")
+def test_kermeta_behavior_callfeature_has_isAtpre():
+    assert hasattr(kermeta_behavior_CallFeature, "isAtpre")
     descriptor = None
-    for klass in kermeta::behavior::CallFeature.__mro__:
+    for klass in kermeta_behavior_CallFeature.__mro__:
         if "isAtpre" in klass.__dict__:
             descriptor = klass.__dict__["isAtpre"]
             break
@@ -1475,51 +1503,23 @@ def test_kermeta::behavior::callfeature_has_isAtpre():
 
 
 
-def test_kermeta::behavior::callvalue_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::CallValue)
+def test_kermeta_behavior_callvariable_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_CallVariable)
 
 
-def test_kermeta::behavior::callvalue_constructor_exists():
-    assert callable(kermeta::behavior::CallValue.__init__)
+def test_kermeta_behavior_callvariable_constructor_exists():
+    assert callable(kermeta_behavior_CallVariable.__init__)
 
 
-def test_kermeta::behavior::callvalue_constructor_args():
-    sig = inspect.signature(kermeta::behavior::CallValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::callsuperoperation_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::CallSuperOperation)
-
-
-def test_kermeta::behavior::callsuperoperation_constructor_exists():
-    assert callable(kermeta::behavior::CallSuperOperation.__init__)
-
-
-def test_kermeta::behavior::callsuperoperation_constructor_args():
-    sig = inspect.signature(kermeta::behavior::CallSuperOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::callvariable_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::CallVariable)
-
-
-def test_kermeta::behavior::callvariable_constructor_exists():
-    assert callable(kermeta::behavior::CallVariable.__init__)
-
-
-def test_kermeta::behavior::callvariable_constructor_args():
-    sig = inspect.signature(kermeta::behavior::CallVariable.__init__)
+def test_kermeta_behavior_callvariable_constructor_args():
+    sig = inspect.signature(kermeta_behavior_CallVariable.__init__)
     params = list(sig.parameters.keys())
     assert "isAtpre" in params, "Missing parameter 'isAtpre'"
 
-def test_kermeta::behavior::callvariable_has_isAtpre():
-    assert hasattr(kermeta::behavior::CallVariable, "isAtpre")
+def test_kermeta_behavior_callvariable_has_isAtpre():
+    assert hasattr(kermeta_behavior_CallVariable, "isAtpre")
     descriptor = None
-    for klass in kermeta::behavior::CallVariable.__mro__:
+    for klass in kermeta_behavior_CallVariable.__mro__:
         if "isAtpre" in klass.__dict__:
             descriptor = klass.__dict__["isAtpre"]
             break
@@ -1527,107 +1527,135 @@ def test_kermeta::behavior::callvariable_has_isAtpre():
 
 
 
-def test_behavior::rescue_is_not_abstract():
-    assert not inspect.isabstract(behavior::Rescue)
+def test_behavior_rescue_is_not_abstract():
+    assert not inspect.isabstract(behavior_Rescue)
 
 
-def test_behavior::rescue_constructor_exists():
-    assert callable(behavior::Rescue.__init__)
+def test_behavior_rescue_constructor_exists():
+    assert callable(behavior_Rescue.__init__)
 
 
-def test_behavior::rescue_constructor_args():
-    sig = inspect.signature(behavior::Rescue.__init__)
+def test_behavior_rescue_constructor_args():
+    sig = inspect.signature(behavior_Rescue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::type_is_not_abstract():
-    assert not inspect.isabstract(structure::Type)
+def test_structure_type_is_not_abstract():
+    assert not inspect.isabstract(structure_Type)
 
 
-def test_structure::type_constructor_exists():
-    assert callable(structure::Type.__init__)
+def test_structure_type_constructor_exists():
+    assert callable(structure_Type.__init__)
 
 
-def test_structure::type_constructor_args():
-    sig = inspect.signature(structure::Type.__init__)
+def test_structure_type_constructor_args():
+    sig = inspect.signature(structure_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::modeltype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ModelType)
+def test_kermeta_structure_modeltype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ModelType)
 
 
-def test_kermeta::structure::modeltype_constructor_exists():
-    assert callable(kermeta::structure::ModelType.__init__)
+def test_kermeta_structure_modeltype_constructor_exists():
+    assert callable(kermeta_structure_ModelType.__init__)
 
 
-def test_kermeta::structure::modeltype_constructor_args():
-    sig = inspect.signature(kermeta::structure::ModelType.__init__)
+def test_kermeta_structure_modeltype_constructor_args():
+    sig = inspect.signature(kermeta_structure_ModelType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::datatype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::DataType)
+def test_kermeta_structure_datatype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_DataType)
 
 
-def test_kermeta::structure::datatype_constructor_exists():
-    assert callable(kermeta::structure::DataType.__init__)
+def test_kermeta_structure_datatype_constructor_exists():
+    assert callable(kermeta_structure_DataType.__init__)
 
 
-def test_kermeta::structure::datatype_constructor_args():
-    sig = inspect.signature(kermeta::structure::DataType.__init__)
+def test_kermeta_structure_datatype_constructor_args():
+    sig = inspect.signature(kermeta_structure_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::typecontainer_is_not_abstract():
-    assert not inspect.isabstract(structure::TypeContainer)
+def test_structure_typecontainer_is_not_abstract():
+    assert not inspect.isabstract(structure_TypeContainer)
 
 
-def test_structure::typecontainer_constructor_exists():
-    assert callable(structure::TypeContainer.__init__)
+def test_structure_typecontainer_constructor_exists():
+    assert callable(structure_TypeContainer.__init__)
 
 
-def test_structure::typecontainer_constructor_args():
-    sig = inspect.signature(structure::TypeContainer.__init__)
+def test_structure_typecontainer_constructor_args():
+    sig = inspect.signature(structure_TypeContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::typedelement_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::TypedElement)
+def test_kermeta_structure_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_PrimitiveType)
 
 
-def test_kermeta::structure::typedelement_constructor_exists():
-    assert callable(kermeta::structure::TypedElement.__init__)
+def test_kermeta_structure_primitivetype_constructor_exists():
+    assert callable(kermeta_structure_PrimitiveType.__init__)
 
 
-def test_kermeta::structure::typedelement_constructor_args():
-    sig = inspect.signature(kermeta::structure::TypedElement.__init__)
+def test_kermeta_structure_primitivetype_constructor_args():
+    sig = inspect.signature(kermeta_structure_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::classdefinition_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ClassDefinition)
+def test_kermeta_structure_typevariable_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_TypeVariable)
 
 
-def test_kermeta::structure::classdefinition_constructor_exists():
-    assert callable(kermeta::structure::ClassDefinition.__init__)
+def test_kermeta_structure_typevariable_constructor_exists():
+    assert callable(kermeta_structure_TypeVariable.__init__)
 
 
-def test_kermeta::structure::classdefinition_constructor_args():
-    sig = inspect.signature(kermeta::structure::ClassDefinition.__init__)
+def test_kermeta_structure_typevariable_constructor_args():
+    sig = inspect.signature(kermeta_structure_TypeVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_functiontype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_FunctionType)
+
+
+def test_kermeta_structure_functiontype_constructor_exists():
+    assert callable(kermeta_structure_FunctionType.__init__)
+
+
+def test_kermeta_structure_functiontype_constructor_args():
+    sig = inspect.signature(kermeta_structure_FunctionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_structure_classdefinition_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ClassDefinition)
+
+
+def test_kermeta_structure_classdefinition_constructor_exists():
+    assert callable(kermeta_structure_ClassDefinition.__init__)
+
+
+def test_kermeta_structure_classdefinition_constructor_args():
+    sig = inspect.signature(kermeta_structure_ClassDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_kermeta::structure::classdefinition_has_isAbstract():
-    assert hasattr(kermeta::structure::ClassDefinition, "isAbstract")
+def test_kermeta_structure_classdefinition_has_isAbstract():
+    assert hasattr(kermeta_structure_ClassDefinition, "isAbstract")
     descriptor = None
-    for klass in kermeta::structure::ClassDefinition.__mro__:
+    for klass in kermeta_structure_ClassDefinition.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -1635,128 +1663,100 @@ def test_kermeta::structure::classdefinition_has_isAbstract():
 
 
 
-def test_kermeta::structure::producttype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::ProductType)
+def test_kermeta_structure_producttype_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_ProductType)
 
 
-def test_kermeta::structure::producttype_constructor_exists():
-    assert callable(kermeta::structure::ProductType.__init__)
+def test_kermeta_structure_producttype_constructor_exists():
+    assert callable(kermeta_structure_ProductType.__init__)
 
 
-def test_kermeta::structure::producttype_constructor_args():
-    sig = inspect.signature(kermeta::structure::ProductType.__init__)
+def test_kermeta_structure_producttype_constructor_args():
+    sig = inspect.signature(kermeta_structure_ProductType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::typevariable_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::TypeVariable)
+def test_kermeta_structure_typedelement_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_TypedElement)
 
 
-def test_kermeta::structure::typevariable_constructor_exists():
-    assert callable(kermeta::structure::TypeVariable.__init__)
+def test_kermeta_structure_typedelement_constructor_exists():
+    assert callable(kermeta_structure_TypedElement.__init__)
 
 
-def test_kermeta::structure::typevariable_constructor_args():
-    sig = inspect.signature(kermeta::structure::TypeVariable.__init__)
+def test_kermeta_structure_typedelement_constructor_args():
+    sig = inspect.signature(kermeta_structure_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::PrimitiveType)
+def test_structure_object_is_not_abstract():
+    assert not inspect.isabstract(structure_Object)
 
 
-def test_kermeta::structure::primitivetype_constructor_exists():
-    assert callable(kermeta::structure::PrimitiveType.__init__)
+def test_structure_object_constructor_exists():
+    assert callable(structure_Object.__init__)
 
 
-def test_kermeta::structure::primitivetype_constructor_args():
-    sig = inspect.signature(kermeta::structure::PrimitiveType.__init__)
+def test_structure_object_constructor_args():
+    sig = inspect.signature(structure_Object.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::functiontype_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::FunctionType)
+def test_kermeta_structure_typevariablebinding_is_not_abstract():
+    assert not inspect.isabstract(kermeta_structure_TypeVariableBinding)
 
 
-def test_kermeta::structure::functiontype_constructor_exists():
-    assert callable(kermeta::structure::FunctionType.__init__)
+def test_kermeta_structure_typevariablebinding_constructor_exists():
+    assert callable(kermeta_structure_TypeVariableBinding.__init__)
 
 
-def test_kermeta::structure::functiontype_constructor_args():
-    sig = inspect.signature(kermeta::structure::FunctionType.__init__)
+def test_kermeta_structure_typevariablebinding_constructor_args():
+    sig = inspect.signature(kermeta_structure_TypeVariableBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structure::object_is_not_abstract():
-    assert not inspect.isabstract(structure::Object)
+def test_kermeta_behavior_expression_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Expression)
 
 
-def test_structure::object_constructor_exists():
-    assert callable(structure::Object.__init__)
+def test_kermeta_behavior_expression_constructor_exists():
+    assert callable(kermeta_behavior_Expression.__init__)
 
 
-def test_structure::object_constructor_args():
-    sig = inspect.signature(structure::Object.__init__)
+def test_kermeta_behavior_expression_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::structure::typevariablebinding_is_not_abstract():
-    assert not inspect.isabstract(kermeta::structure::TypeVariableBinding)
+def test_behavior_expression_is_not_abstract():
+    assert not inspect.isabstract(behavior_Expression)
 
 
-def test_kermeta::structure::typevariablebinding_constructor_exists():
-    assert callable(kermeta::structure::TypeVariableBinding.__init__)
+def test_behavior_expression_constructor_exists():
+    assert callable(behavior_Expression.__init__)
 
 
-def test_kermeta::structure::typevariablebinding_constructor_args():
-    sig = inspect.signature(kermeta::structure::TypeVariableBinding.__init__)
+def test_behavior_expression_constructor_args():
+    sig = inspect.signature(behavior_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::behavior::expression_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Expression)
+def test_behavior_callexpression_is_not_abstract():
+    assert not inspect.isabstract(behavior_CallExpression)
 
 
-def test_kermeta::behavior::expression_constructor_exists():
-    assert callable(kermeta::behavior::Expression.__init__)
+def test_behavior_callexpression_constructor_exists():
+    assert callable(behavior_CallExpression.__init__)
 
 
-def test_kermeta::behavior::expression_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavior::expression_is_not_abstract():
-    assert not inspect.isabstract(behavior::Expression)
-
-
-def test_behavior::expression_constructor_exists():
-    assert callable(behavior::Expression.__init__)
-
-
-def test_behavior::expression_constructor_args():
-    sig = inspect.signature(behavior::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavior::callexpression_is_not_abstract():
-    assert not inspect.isabstract(behavior::CallExpression)
-
-
-def test_behavior::callexpression_constructor_exists():
-    assert callable(behavior::CallExpression.__init__)
-
-
-def test_behavior::callexpression_constructor_args():
-    sig = inspect.signature(behavior::CallExpression.__init__)
+def test_behavior_callexpression_constructor_args():
+    sig = inspect.signature(behavior_CallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1775,51 +1775,65 @@ def test_expression_constructor_args():
 
 
 
-def test_kermeta::behavior::literal_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Literal)
+def test_kermeta_behavior_loop_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Loop)
 
 
-def test_kermeta::behavior::literal_constructor_exists():
-    assert callable(kermeta::behavior::Literal.__init__)
+def test_kermeta_behavior_loop_constructor_exists():
+    assert callable(kermeta_behavior_Loop.__init__)
 
 
-def test_kermeta::behavior::literal_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Literal.__init__)
+def test_kermeta_behavior_loop_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::behavior::lambdaexpression_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::LambdaExpression)
+def test_kermeta_behavior_raise_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Raise)
 
 
-def test_kermeta::behavior::lambdaexpression_constructor_exists():
-    assert callable(kermeta::behavior::LambdaExpression.__init__)
+def test_kermeta_behavior_raise_constructor_exists():
+    assert callable(kermeta_behavior_Raise.__init__)
 
 
-def test_kermeta::behavior::lambdaexpression_constructor_args():
-    sig = inspect.signature(kermeta::behavior::LambdaExpression.__init__)
+def test_kermeta_behavior_raise_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Raise.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::behavior::variabledecl_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::VariableDecl)
+def test_kermeta_behavior_selfexpression_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_SelfExpression)
 
 
-def test_kermeta::behavior::variabledecl_constructor_exists():
-    assert callable(kermeta::behavior::VariableDecl.__init__)
+def test_kermeta_behavior_selfexpression_constructor_exists():
+    assert callable(kermeta_behavior_SelfExpression.__init__)
 
 
-def test_kermeta::behavior::variabledecl_constructor_args():
-    sig = inspect.signature(kermeta::behavior::VariableDecl.__init__)
+def test_kermeta_behavior_selfexpression_constructor_args():
+    sig = inspect.signature(kermeta_behavior_SelfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_variabledecl_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_VariableDecl)
+
+
+def test_kermeta_behavior_variabledecl_constructor_exists():
+    assert callable(kermeta_behavior_VariableDecl.__init__)
+
+
+def test_kermeta_behavior_variabledecl_constructor_args():
+    sig = inspect.signature(kermeta_behavior_VariableDecl.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_kermeta::behavior::variabledecl_has_identifier():
-    assert hasattr(kermeta::behavior::VariableDecl, "identifier")
+def test_kermeta_behavior_variabledecl_has_identifier():
+    assert hasattr(kermeta_behavior_VariableDecl, "identifier")
     descriptor = None
-    for klass in kermeta::behavior::VariableDecl.__mro__:
+    for klass in kermeta_behavior_VariableDecl.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -1827,47 +1841,61 @@ def test_kermeta::behavior::variabledecl_has_identifier():
 
 
 
-def test_kermeta::behavior::block_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Block)
+def test_kermeta_behavior_emptyexpression_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_EmptyExpression)
 
 
-def test_kermeta::behavior::block_constructor_exists():
-    assert callable(kermeta::behavior::Block.__init__)
+def test_kermeta_behavior_emptyexpression_constructor_exists():
+    assert callable(kermeta_behavior_EmptyExpression.__init__)
 
 
-def test_kermeta::behavior::block_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Block.__init__)
+def test_kermeta_behavior_emptyexpression_constructor_args():
+    sig = inspect.signature(kermeta_behavior_EmptyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::behavior::javastaticcall_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::JavaStaticCall)
+def test_kermeta_behavior_lambdaexpression_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_LambdaExpression)
 
 
-def test_kermeta::behavior::javastaticcall_constructor_exists():
-    assert callable(kermeta::behavior::JavaStaticCall.__init__)
+def test_kermeta_behavior_lambdaexpression_constructor_exists():
+    assert callable(kermeta_behavior_LambdaExpression.__init__)
 
 
-def test_kermeta::behavior::javastaticcall_constructor_args():
-    sig = inspect.signature(kermeta::behavior::JavaStaticCall.__init__)
+def test_kermeta_behavior_lambdaexpression_constructor_args():
+    sig = inspect.signature(kermeta_behavior_LambdaExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_javastaticcall_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_JavaStaticCall)
+
+
+def test_kermeta_behavior_javastaticcall_constructor_exists():
+    assert callable(kermeta_behavior_JavaStaticCall.__init__)
+
+
+def test_kermeta_behavior_javastaticcall_constructor_args():
+    sig = inspect.signature(kermeta_behavior_JavaStaticCall.__init__)
     params = list(sig.parameters.keys())
     assert "jmethod" in params, "Missing parameter 'jmethod'"
     assert "jclass" in params, "Missing parameter 'jclass'"
 
-def test_kermeta::behavior::javastaticcall_has_jmethod():
-    assert hasattr(kermeta::behavior::JavaStaticCall, "jmethod")
+def test_kermeta_behavior_javastaticcall_has_jmethod():
+    assert hasattr(kermeta_behavior_JavaStaticCall, "jmethod")
     descriptor = None
-    for klass in kermeta::behavior::JavaStaticCall.__mro__:
+    for klass in kermeta_behavior_JavaStaticCall.__mro__:
         if "jmethod" in klass.__dict__:
             descriptor = klass.__dict__["jmethod"]
             break
     assert isinstance(descriptor, property)
 
-def test_kermeta::behavior::javastaticcall_has_jclass():
-    assert hasattr(kermeta::behavior::JavaStaticCall, "jclass")
+def test_kermeta_behavior_javastaticcall_has_jclass():
+    assert hasattr(kermeta_behavior_JavaStaticCall, "jclass")
     descriptor = None
-    for klass in kermeta::behavior::JavaStaticCall.__mro__:
+    for klass in kermeta_behavior_JavaStaticCall.__mro__:
         if "jclass" in klass.__dict__:
             descriptor = klass.__dict__["jclass"]
             break
@@ -1875,23 +1903,51 @@ def test_kermeta::behavior::javastaticcall_has_jclass():
 
 
 
-def test_kermeta::behavior::callexpression_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::CallExpression)
+def test_kermeta_behavior_conditional_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Conditional)
 
 
-def test_kermeta::behavior::callexpression_constructor_exists():
-    assert callable(kermeta::behavior::CallExpression.__init__)
+def test_kermeta_behavior_conditional_constructor_exists():
+    assert callable(kermeta_behavior_Conditional.__init__)
 
 
-def test_kermeta::behavior::callexpression_constructor_args():
-    sig = inspect.signature(kermeta::behavior::CallExpression.__init__)
+def test_kermeta_behavior_conditional_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_block_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Block)
+
+
+def test_kermeta_behavior_block_constructor_exists():
+    assert callable(kermeta_behavior_Block.__init__)
+
+
+def test_kermeta_behavior_block_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kermeta_behavior_callexpression_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_CallExpression)
+
+
+def test_kermeta_behavior_callexpression_constructor_exists():
+    assert callable(kermeta_behavior_CallExpression.__init__)
+
+
+def test_kermeta_behavior_callexpression_constructor_args():
+    sig = inspect.signature(kermeta_behavior_CallExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_kermeta::behavior::callexpression_has_name():
-    assert hasattr(kermeta::behavior::CallExpression, "name")
+def test_kermeta_behavior_callexpression_has_name():
+    assert hasattr(kermeta_behavior_CallExpression, "name")
     descriptor = None
-    for klass in kermeta::behavior::CallExpression.__mro__:
+    for klass in kermeta_behavior_CallExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1899,93 +1955,37 @@ def test_kermeta::behavior::callexpression_has_name():
 
 
 
-def test_kermeta::behavior::selfexpression_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::SelfExpression)
+def test_kermeta_behavior_literal_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Literal)
 
 
-def test_kermeta::behavior::selfexpression_constructor_exists():
-    assert callable(kermeta::behavior::SelfExpression.__init__)
+def test_kermeta_behavior_literal_constructor_exists():
+    assert callable(kermeta_behavior_Literal.__init__)
 
 
-def test_kermeta::behavior::selfexpression_constructor_args():
-    sig = inspect.signature(kermeta::behavior::SelfExpression.__init__)
+def test_kermeta_behavior_literal_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::behavior::loop_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Loop)
+def test_kermeta_behavior_assignment_is_not_abstract():
+    assert not inspect.isabstract(kermeta_behavior_Assignment)
 
 
-def test_kermeta::behavior::loop_constructor_exists():
-    assert callable(kermeta::behavior::Loop.__init__)
+def test_kermeta_behavior_assignment_constructor_exists():
+    assert callable(kermeta_behavior_Assignment.__init__)
 
 
-def test_kermeta::behavior::loop_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Loop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::raise_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Raise)
-
-
-def test_kermeta::behavior::raise_constructor_exists():
-    assert callable(kermeta::behavior::Raise.__init__)
-
-
-def test_kermeta::behavior::raise_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Raise.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::conditional_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Conditional)
-
-
-def test_kermeta::behavior::conditional_constructor_exists():
-    assert callable(kermeta::behavior::Conditional.__init__)
-
-
-def test_kermeta::behavior::conditional_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Conditional.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::emptyexpression_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::EmptyExpression)
-
-
-def test_kermeta::behavior::emptyexpression_constructor_exists():
-    assert callable(kermeta::behavior::EmptyExpression.__init__)
-
-
-def test_kermeta::behavior::emptyexpression_constructor_args():
-    sig = inspect.signature(kermeta::behavior::EmptyExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kermeta::behavior::assignment_is_not_abstract():
-    assert not inspect.isabstract(kermeta::behavior::Assignment)
-
-
-def test_kermeta::behavior::assignment_constructor_exists():
-    assert callable(kermeta::behavior::Assignment.__init__)
-
-
-def test_kermeta::behavior::assignment_constructor_args():
-    sig = inspect.signature(kermeta::behavior::Assignment.__init__)
+def test_kermeta_behavior_assignment_constructor_args():
+    sig = inspect.signature(kermeta_behavior_Assignment.__init__)
     params = list(sig.parameters.keys())
     assert "isCast" in params, "Missing parameter 'isCast'"
 
-def test_kermeta::behavior::assignment_has_isCast():
-    assert hasattr(kermeta::behavior::Assignment, "isCast")
+def test_kermeta_behavior_assignment_has_isCast():
+    assert hasattr(kermeta_behavior_Assignment, "isCast")
     descriptor = None
-    for klass in kermeta::behavior::Assignment.__mro__:
+    for klass in kermeta_behavior_Assignment.__mro__:
         if "isCast" in klass.__dict__:
             descriptor = klass.__dict__["isCast"]
             break
@@ -1993,30 +1993,30 @@ def test_kermeta::behavior::assignment_has_isCast():
 
 
 
-def test_kermeta::language::dummyclass_is_not_abstract():
-    assert not inspect.isabstract(kermeta::language::DummyClass)
+def test_kermeta_language_dummyclass_is_not_abstract():
+    assert not inspect.isabstract(kermeta_language_DummyClass)
 
 
-def test_kermeta::language::dummyclass_constructor_exists():
-    assert callable(kermeta::language::DummyClass.__init__)
+def test_kermeta_language_dummyclass_constructor_exists():
+    assert callable(kermeta_language_DummyClass.__init__)
 
 
-def test_kermeta::language::dummyclass_constructor_args():
-    sig = inspect.signature(kermeta::language::DummyClass.__init__)
+def test_kermeta_language_dummyclass_constructor_args():
+    sig = inspect.signature(kermeta_language_DummyClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kermeta::dummyclass_is_not_abstract():
-    assert not inspect.isabstract(kermeta::DummyClass)
+def test_kermeta_dummyclass_is_not_abstract():
+    assert not inspect.isabstract(kermeta_DummyClass)
 
 
-def test_kermeta::dummyclass_constructor_exists():
-    assert callable(kermeta::DummyClass.__init__)
+def test_kermeta_dummyclass_constructor_exists():
+    assert callable(kermeta_DummyClass.__init__)
 
 
-def test_kermeta::dummyclass_constructor_args():
-    sig = inspect.signature(kermeta::DummyClass.__init__)
+def test_kermeta_dummyclass_constructor_args():
+    sig = inspect.signature(kermeta_DummyClass.__init__)
     params = list(sig.parameters.keys())
 
 def test_constrainttype_exists():
@@ -2027,8 +2027,8 @@ def test_constrainttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ConstraintType]
     expected_literals = [
-        "pre",
         "inv",
+        "pre",
         "post",
     ]
     # Check that all expected literals exist
@@ -2043,8 +2043,8 @@ def test_constraintlanguage_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ConstraintLanguage]
     expected_literals = [
-        "ocl",
         "kermeta",
+        "ocl",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2062,490 +2062,527 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-structure::Filter_strategy = st.builds(
-    structure::Filter,
+structure_ModelTypeVariable_strategy = st.builds(
+    structure_ModelTypeVariable,
 )
-structure::ModelingUnit_strategy = st.builds(
-    structure::ModelingUnit,
+ObjectTypeVariable_strategy = st.builds(
+    ObjectTypeVariable,
 )
-structure::TypeVariableBinding_strategy = st.builds(
-    structure::TypeVariableBinding,
+kermeta_structure_VirtualType_strategy = st.builds(
+    kermeta_structure_VirtualType,
+)
+structure_VirtualType_strategy = st.builds(
+    structure_VirtualType,
+)
+TypeVariable_strategy = st.builds(
+    TypeVariable,
+)
+kermeta_structure_ModelTypeVariable_strategy = st.builds(
+    kermeta_structure_ModelTypeVariable,
+)
+kermeta_structure_ObjectTypeVariable_strategy = st.builds(
+    kermeta_structure_ObjectTypeVariable,
+)
+structure_Filter_strategy = st.builds(
+    structure_Filter,
+)
+structure_ModelingUnit_strategy = st.builds(
+    structure_ModelingUnit,
+)
+structure_TypeVariableBinding_strategy = st.builds(
+    structure_TypeVariableBinding,
 )
 Type_strategy = st.builds(
     Type,
 )
-kermeta::structure::ParameterizedType_strategy = st.builds(
-    kermeta::structure::ParameterizedType,
+kermeta_structure_VoidType_strategy = st.builds(
+    kermeta_structure_VoidType,
+)
+kermeta_structure_ParameterizedType_strategy = st.builds(
+    kermeta_structure_ParameterizedType,
 )
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-kermeta::structure::GenericTypeDefinition_strategy = st.builds(
-    kermeta::structure::GenericTypeDefinition,
+kermeta_structure_GenericTypeDefinition_strategy = st.builds(
+    kermeta_structure_GenericTypeDefinition,
 )
-structure::GenericTypeDefinition_strategy = st.builds(
-    structure::GenericTypeDefinition,
+structure_GenericTypeDefinition_strategy = st.builds(
+    structure_GenericTypeDefinition,
 )
-structure::Using_strategy = st.builds(
-    structure::Using,
+structure_Using_strategy = st.builds(
+    structure_Using,
 )
-structure::Require_strategy = st.builds(
-    structure::Require,
+structure_Require_strategy = st.builds(
+    structure_Require,
 )
-structure::DataType_strategy = st.builds(
-    structure::DataType,
+structure_DataType_strategy = st.builds(
+    structure_DataType,
 )
-structure::Package_strategy = st.builds(
-    structure::Package,
+structure_Package_strategy = st.builds(
+    structure_Package,
 )
-structure::TypeDefinitionContainer_strategy = st.builds(
-    structure::TypeDefinitionContainer,
+structure_TypeDefinitionContainer_strategy = st.builds(
+    structure_TypeDefinitionContainer,
 )
-structure::NamedElement_strategy = st.builds(
-    structure::NamedElement,
+structure_NamedElement_strategy = st.builds(
+    structure_NamedElement,
 )
-kermeta::structure::Package_strategy = st.builds(
-    kermeta::structure::Package,
+kermeta_structure_Package_strategy = st.builds(
+    kermeta_structure_Package,
     uri=
         safe_text
 )
 DataType_strategy = st.builds(
     DataType,
 )
-kermeta::structure::Enumeration_strategy = st.builds(
-    kermeta::structure::Enumeration,
+kermeta_structure_Enumeration_strategy = st.builds(
+    kermeta_structure_Enumeration,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-kermeta::structure::MultiplicityElement_strategy = st.builds(
-    kermeta::structure::MultiplicityElement,
-    isOrdered=
-        safe_text,
+kermeta_structure_MultiplicityElement_strategy = st.builds(
+    kermeta_structure_MultiplicityElement,
     lower=
+        safe_text,
+    upper=
         safe_text,
     isUnique=
         safe_text,
-    upper=
+    isOrdered=
         safe_text
 )
-structure::Enumeration_strategy = st.builds(
-    structure::Enumeration,
+structure_Enumeration_strategy = st.builds(
+    structure_Enumeration,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-kermeta::structure::Constraint_strategy = st.builds(
-    kermeta::structure::Constraint,
+kermeta_structure_Constraint_strategy = st.builds(
+    kermeta_structure_Constraint,
     stereotype=
         safe_text,
     language=
         safe_text
 )
-kermeta::structure::TypeDefinition_strategy = st.builds(
-    kermeta::structure::TypeDefinition,
+kermeta_structure_TypeDefinitionContainer_strategy = st.builds(
+    kermeta_structure_TypeDefinitionContainer,
+)
+kermeta_structure_TypeDefinition_strategy = st.builds(
+    kermeta_structure_TypeDefinition,
     isAspect=
         safe_text
 )
-kermeta::structure::EnumerationLiteral_strategy = st.builds(
-    kermeta::structure::EnumerationLiteral,
+kermeta_structure_EnumerationLiteral_strategy = st.builds(
+    kermeta_structure_EnumerationLiteral,
 )
-structure::Constraint_strategy = st.builds(
-    structure::Constraint,
+structure_Constraint_strategy = st.builds(
+    structure_Constraint,
 )
-structure::Parameter_strategy = st.builds(
-    structure::Parameter,
+structure_Parameter_strategy = st.builds(
+    structure_Parameter,
 )
-structure::TypeVariable_strategy = st.builds(
-    structure::TypeVariable,
+structure_TypeVariable_strategy = st.builds(
+    structure_TypeVariable,
 )
-structure::ClassDefinition_strategy = st.builds(
-    structure::ClassDefinition,
+structure_ClassDefinition_strategy = st.builds(
+    structure_ClassDefinition,
 )
-kermeta::structure::Object_strategy = st.builds(
-    kermeta::structure::Object,
+kermeta_structure_Object_strategy = st.builds(
+    kermeta_structure_Object,
 )
-structure::Class_strategy = st.builds(
-    structure::Class,
+structure_Class_strategy = st.builds(
+    structure_Class,
 )
-structure::TypeDefinition_strategy = st.builds(
-    structure::TypeDefinition,
+structure_TypeDefinition_strategy = st.builds(
+    structure_TypeDefinition,
 )
-structure::Tag_strategy = st.builds(
-    structure::Tag,
+structure_Tag_strategy = st.builds(
+    structure_Tag,
 )
 ParameterizedType_strategy = st.builds(
     ParameterizedType,
 )
-kermeta::structure::Class_strategy = st.builds(
-    kermeta::structure::Class,
-    isAbstract=
-        safe_text,
+kermeta_structure_Class_strategy = st.builds(
+    kermeta_structure_Class,
     name=
+        safe_text,
+    isAbstract=
         safe_text
 )
 Literal_strategy = st.builds(
     Literal,
 )
-kermeta::behavior::VoidLiteral_strategy = st.builds(
-    kermeta::behavior::VoidLiteral,
+kermeta_behavior_TypeLiteral_strategy = st.builds(
+    kermeta_behavior_TypeLiteral,
 )
-kermeta::behavior::TypeLiteral_strategy = st.builds(
-    kermeta::behavior::TypeLiteral,
-)
-kermeta::behavior::BooleanLiteral_strategy = st.builds(
-    kermeta::behavior::BooleanLiteral,
+kermeta_behavior_StringLiteral_strategy = st.builds(
+    kermeta_behavior_StringLiteral,
     value=
         safe_text
 )
-kermeta::behavior::StringLiteral_strategy = st.builds(
-    kermeta::behavior::StringLiteral,
+kermeta_behavior_VoidLiteral_strategy = st.builds(
+    kermeta_behavior_VoidLiteral,
+)
+kermeta_behavior_BooleanLiteral_strategy = st.builds(
+    kermeta_behavior_BooleanLiteral,
     value=
         safe_text
 )
-kermeta::behavior::IntegerLiteral_strategy = st.builds(
-    kermeta::behavior::IntegerLiteral,
+kermeta_behavior_IntegerLiteral_strategy = st.builds(
+    kermeta_behavior_IntegerLiteral,
     value=
         safe_text
 )
-behavior::LambdaParameter_strategy = st.builds(
-    behavior::LambdaParameter,
+behavior_LambdaParameter_strategy = st.builds(
+    behavior_LambdaParameter,
 )
 CallVariable_strategy = st.builds(
     CallVariable,
 )
-kermeta::behavior::CallResult_strategy = st.builds(
-    kermeta::behavior::CallResult,
+kermeta_behavior_CallResult_strategy = st.builds(
+    kermeta_behavior_CallResult,
 )
 MultiplicityElement_strategy = st.builds(
     MultiplicityElement,
 )
-kermeta::structure::Parameter_strategy = st.builds(
-    kermeta::structure::Parameter,
-)
-kermeta::structure::Property_strategy = st.builds(
-    kermeta::structure::Property,
-    default=
-        safe_text,
+kermeta_structure_Property_strategy = st.builds(
+    kermeta_structure_Property,
     isGetterAbstract=
         safe_text,
-    isDerived=
+    isComposite=
         safe_text,
     isID=
         safe_text,
+    default=
+        safe_text,
     isSetterAbstract=
         safe_text,
-    isReadOnly=
+    isDerived=
         safe_text,
-    isComposite=
+    isReadOnly=
         safe_text
 )
-kermeta::structure::Operation_strategy = st.builds(
-    kermeta::structure::Operation,
+kermeta_structure_Operation_strategy = st.builds(
+    kermeta_structure_Operation,
     isAbstract=
         safe_text
 )
-kermeta::behavior::TypeReference_strategy = st.builds(
-    kermeta::behavior::TypeReference,
+kermeta_structure_Parameter_strategy = st.builds(
+    kermeta_structure_Parameter,
 )
-behavior::TypeReference_strategy = st.builds(
-    behavior::TypeReference,
+kermeta_behavior_TypeReference_strategy = st.builds(
+    kermeta_behavior_TypeReference,
+)
+behavior_TypeReference_strategy = st.builds(
+    behavior_TypeReference,
 )
 Object_strategy = st.builds(
     Object,
 )
-kermeta::structure::ModelingUnit_strategy = st.builds(
-    kermeta::structure::ModelingUnit,
+kermeta_behavior_LambdaParameter_strategy = st.builds(
+    kermeta_behavior_LambdaParameter,
+    name=
+        safe_text
 )
-kermeta::structure::Type_strategy = st.builds(
-    kermeta::structure::Type,
+kermeta_structure_TypeContainer_strategy = st.builds(
+    kermeta_structure_TypeContainer,
 )
-kermeta::structure::Require_strategy = st.builds(
-    kermeta::structure::Require,
+kermeta_structure_Using_strategy = st.builds(
+    kermeta_structure_Using,
+    qualifiedName=
+        safe_text
+)
+kermeta_structure_Filter_strategy = st.builds(
+    kermeta_structure_Filter,
+    qualifiedName=
+        safe_text
+)
+kermeta_structure_ModelingUnit_strategy = st.builds(
+    kermeta_structure_ModelingUnit,
+)
+kermeta_structure_Tag_strategy = st.builds(
+    kermeta_structure_Tag,
+    name=
+        safe_text,
+    value=
+        safe_text
+)
+kermeta_structure_Model_strategy = st.builds(
+    kermeta_structure_Model,
+)
+kermeta_structure_NamedElement_strategy = st.builds(
+    kermeta_structure_NamedElement,
+    name=
+        safe_text
+)
+kermeta_structure_Type_strategy = st.builds(
+    kermeta_structure_Type,
+)
+kermeta_structure_Require_strategy = st.builds(
+    kermeta_structure_Require,
     uri=
         safe_text
 )
-kermeta::structure::Model_strategy = st.builds(
-    kermeta::structure::Model,
-)
-kermeta::structure::TypeContainer_strategy = st.builds(
-    kermeta::structure::TypeContainer,
-)
-kermeta::structure::NamedElement_strategy = st.builds(
-    kermeta::structure::NamedElement,
-    name=
-        safe_text
-)
-kermeta::structure::Using_strategy = st.builds(
-    kermeta::structure::Using,
-    qualifiedName=
-        safe_text
-)
-kermeta::structure::Filter_strategy = st.builds(
-    kermeta::structure::Filter,
-    qualifiedName=
-        safe_text
-)
-kermeta::behavior::LambdaParameter_strategy = st.builds(
-    kermeta::behavior::LambdaParameter,
-    name=
-        safe_text
-)
-kermeta::structure::Tag_strategy = st.builds(
-    kermeta::structure::Tag,
-    value=
-        safe_text,
-    name=
-        safe_text
-)
-kermeta::behavior::Rescue_strategy = st.builds(
-    kermeta::behavior::Rescue,
+kermeta_behavior_Rescue_strategy = st.builds(
+    kermeta_behavior_Rescue,
     exceptionName=
         safe_text
 )
-structure::EnumerationLiteral_strategy = st.builds(
-    structure::EnumerationLiteral,
+structure_EnumerationLiteral_strategy = st.builds(
+    structure_EnumerationLiteral,
 )
-structure::Operation_strategy = st.builds(
-    structure::Operation,
+structure_Operation_strategy = st.builds(
+    structure_Operation,
 )
-structure::Property_strategy = st.builds(
-    structure::Property,
-)
-kermeta::structure::TypeDefinitionContainer_strategy = st.builds(
-    kermeta::structure::TypeDefinitionContainer,
-)
-kermeta::structure::VoidType_strategy = st.builds(
-    kermeta::structure::VoidType,
-)
-structure::ModelTypeVariable_strategy = st.builds(
-    structure::ModelTypeVariable,
-)
-ObjectTypeVariable_strategy = st.builds(
-    ObjectTypeVariable,
-)
-kermeta::structure::VirtualType_strategy = st.builds(
-    kermeta::structure::VirtualType,
-)
-structure::VirtualType_strategy = st.builds(
-    structure::VirtualType,
-)
-TypeVariable_strategy = st.builds(
-    TypeVariable,
-)
-kermeta::structure::ModelTypeVariable_strategy = st.builds(
-    kermeta::structure::ModelTypeVariable,
-)
-kermeta::structure::ObjectTypeVariable_strategy = st.builds(
-    kermeta::structure::ObjectTypeVariable,
+structure_Property_strategy = st.builds(
+    structure_Property,
 )
 CallExpression_strategy = st.builds(
     CallExpression,
 )
-kermeta::behavior::CallFeature_strategy = st.builds(
-    kermeta::behavior::CallFeature,
+kermeta_behavior_CallSuperOperation_strategy = st.builds(
+    kermeta_behavior_CallSuperOperation,
+)
+kermeta_behavior_CallValue_strategy = st.builds(
+    kermeta_behavior_CallValue,
+)
+kermeta_behavior_CallFeature_strategy = st.builds(
+    kermeta_behavior_CallFeature,
     isAtpre=
         safe_text
 )
-kermeta::behavior::CallValue_strategy = st.builds(
-    kermeta::behavior::CallValue,
-)
-kermeta::behavior::CallSuperOperation_strategy = st.builds(
-    kermeta::behavior::CallSuperOperation,
-)
-kermeta::behavior::CallVariable_strategy = st.builds(
-    kermeta::behavior::CallVariable,
+kermeta_behavior_CallVariable_strategy = st.builds(
+    kermeta_behavior_CallVariable,
     isAtpre=
         safe_text
 )
-behavior::Rescue_strategy = st.builds(
-    behavior::Rescue,
+behavior_Rescue_strategy = st.builds(
+    behavior_Rescue,
 )
-structure::Type_strategy = st.builds(
-    structure::Type,
+structure_Type_strategy = st.builds(
+    structure_Type,
 )
-kermeta::structure::ModelType_strategy = st.builds(
-    kermeta::structure::ModelType,
+kermeta_structure_ModelType_strategy = st.builds(
+    kermeta_structure_ModelType,
 )
-kermeta::structure::DataType_strategy = st.builds(
-    kermeta::structure::DataType,
+kermeta_structure_DataType_strategy = st.builds(
+    kermeta_structure_DataType,
 )
-structure::TypeContainer_strategy = st.builds(
-    structure::TypeContainer,
+structure_TypeContainer_strategy = st.builds(
+    structure_TypeContainer,
 )
-kermeta::structure::TypedElement_strategy = st.builds(
-    kermeta::structure::TypedElement,
+kermeta_structure_PrimitiveType_strategy = st.builds(
+    kermeta_structure_PrimitiveType,
 )
-kermeta::structure::ClassDefinition_strategy = st.builds(
-    kermeta::structure::ClassDefinition,
+kermeta_structure_TypeVariable_strategy = st.builds(
+    kermeta_structure_TypeVariable,
+)
+kermeta_structure_FunctionType_strategy = st.builds(
+    kermeta_structure_FunctionType,
+)
+kermeta_structure_ClassDefinition_strategy = st.builds(
+    kermeta_structure_ClassDefinition,
     isAbstract=
         safe_text
 )
-kermeta::structure::ProductType_strategy = st.builds(
-    kermeta::structure::ProductType,
+kermeta_structure_ProductType_strategy = st.builds(
+    kermeta_structure_ProductType,
 )
-kermeta::structure::TypeVariable_strategy = st.builds(
-    kermeta::structure::TypeVariable,
+kermeta_structure_TypedElement_strategy = st.builds(
+    kermeta_structure_TypedElement,
 )
-kermeta::structure::PrimitiveType_strategy = st.builds(
-    kermeta::structure::PrimitiveType,
+structure_Object_strategy = st.builds(
+    structure_Object,
 )
-kermeta::structure::FunctionType_strategy = st.builds(
-    kermeta::structure::FunctionType,
+kermeta_structure_TypeVariableBinding_strategy = st.builds(
+    kermeta_structure_TypeVariableBinding,
 )
-structure::Object_strategy = st.builds(
-    structure::Object,
+kermeta_behavior_Expression_strategy = st.builds(
+    kermeta_behavior_Expression,
 )
-kermeta::structure::TypeVariableBinding_strategy = st.builds(
-    kermeta::structure::TypeVariableBinding,
+behavior_Expression_strategy = st.builds(
+    behavior_Expression,
 )
-kermeta::behavior::Expression_strategy = st.builds(
-    kermeta::behavior::Expression,
-)
-behavior::Expression_strategy = st.builds(
-    behavior::Expression,
-)
-behavior::CallExpression_strategy = st.builds(
-    behavior::CallExpression,
+behavior_CallExpression_strategy = st.builds(
+    behavior_CallExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-kermeta::behavior::Literal_strategy = st.builds(
-    kermeta::behavior::Literal,
+kermeta_behavior_Loop_strategy = st.builds(
+    kermeta_behavior_Loop,
 )
-kermeta::behavior::LambdaExpression_strategy = st.builds(
-    kermeta::behavior::LambdaExpression,
+kermeta_behavior_Raise_strategy = st.builds(
+    kermeta_behavior_Raise,
 )
-kermeta::behavior::VariableDecl_strategy = st.builds(
-    kermeta::behavior::VariableDecl,
+kermeta_behavior_SelfExpression_strategy = st.builds(
+    kermeta_behavior_SelfExpression,
+)
+kermeta_behavior_VariableDecl_strategy = st.builds(
+    kermeta_behavior_VariableDecl,
     identifier=
         safe_text
 )
-kermeta::behavior::Block_strategy = st.builds(
-    kermeta::behavior::Block,
+kermeta_behavior_EmptyExpression_strategy = st.builds(
+    kermeta_behavior_EmptyExpression,
 )
-kermeta::behavior::JavaStaticCall_strategy = st.builds(
-    kermeta::behavior::JavaStaticCall,
+kermeta_behavior_LambdaExpression_strategy = st.builds(
+    kermeta_behavior_LambdaExpression,
+)
+kermeta_behavior_JavaStaticCall_strategy = st.builds(
+    kermeta_behavior_JavaStaticCall,
     jmethod=
         safe_text,
     jclass=
         safe_text
 )
-kermeta::behavior::CallExpression_strategy = st.builds(
-    kermeta::behavior::CallExpression,
+kermeta_behavior_Conditional_strategy = st.builds(
+    kermeta_behavior_Conditional,
+)
+kermeta_behavior_Block_strategy = st.builds(
+    kermeta_behavior_Block,
+)
+kermeta_behavior_CallExpression_strategy = st.builds(
+    kermeta_behavior_CallExpression,
     name=
         safe_text
 )
-kermeta::behavior::SelfExpression_strategy = st.builds(
-    kermeta::behavior::SelfExpression,
+kermeta_behavior_Literal_strategy = st.builds(
+    kermeta_behavior_Literal,
 )
-kermeta::behavior::Loop_strategy = st.builds(
-    kermeta::behavior::Loop,
-)
-kermeta::behavior::Raise_strategy = st.builds(
-    kermeta::behavior::Raise,
-)
-kermeta::behavior::Conditional_strategy = st.builds(
-    kermeta::behavior::Conditional,
-)
-kermeta::behavior::EmptyExpression_strategy = st.builds(
-    kermeta::behavior::EmptyExpression,
-)
-kermeta::behavior::Assignment_strategy = st.builds(
-    kermeta::behavior::Assignment,
+kermeta_behavior_Assignment_strategy = st.builds(
+    kermeta_behavior_Assignment,
     isCast=
         safe_text
 )
-kermeta::language::DummyClass_strategy = st.builds(
-    kermeta::language::DummyClass,
+kermeta_language_DummyClass_strategy = st.builds(
+    kermeta_language_DummyClass,
 )
-kermeta::DummyClass_strategy = st.builds(
-    kermeta::DummyClass,
+kermeta_DummyClass_strategy = st.builds(
+    kermeta_DummyClass,
 )
 
-@given(instance=structure::Filter_strategy)
+@given(instance=structure_ModelTypeVariable_strategy)
 @settings(max_examples=50)
-def test_structure::filter_instantiation(instance):
-    assert isinstance(instance, structure::Filter)
+def test_structure_modeltypevariable_instantiation(instance):
+    assert isinstance(instance, structure_ModelTypeVariable)
 
-@given(instance=structure::ModelingUnit_strategy)
+@given(instance=ObjectTypeVariable_strategy)
 @settings(max_examples=50)
-def test_structure::modelingunit_instantiation(instance):
-    assert isinstance(instance, structure::ModelingUnit)
+def test_objecttypevariable_instantiation(instance):
+    assert isinstance(instance, ObjectTypeVariable)
 
-@given(instance=structure::TypeVariableBinding_strategy)
+@given(instance=kermeta_structure_VirtualType_strategy)
 @settings(max_examples=50)
-def test_structure::typevariablebinding_instantiation(instance):
-    assert isinstance(instance, structure::TypeVariableBinding)
+def test_kermeta_structure_virtualtype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_VirtualType)
+
+@given(instance=structure_VirtualType_strategy)
+@settings(max_examples=50)
+def test_structure_virtualtype_instantiation(instance):
+    assert isinstance(instance, structure_VirtualType)
+
+@given(instance=TypeVariable_strategy)
+@settings(max_examples=50)
+def test_typevariable_instantiation(instance):
+    assert isinstance(instance, TypeVariable)
+
+@given(instance=kermeta_structure_ModelTypeVariable_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_modeltypevariable_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ModelTypeVariable)
+
+@given(instance=kermeta_structure_ObjectTypeVariable_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_objecttypevariable_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ObjectTypeVariable)
+
+@given(instance=structure_Filter_strategy)
+@settings(max_examples=50)
+def test_structure_filter_instantiation(instance):
+    assert isinstance(instance, structure_Filter)
+
+@given(instance=structure_ModelingUnit_strategy)
+@settings(max_examples=50)
+def test_structure_modelingunit_instantiation(instance):
+    assert isinstance(instance, structure_ModelingUnit)
+
+@given(instance=structure_TypeVariableBinding_strategy)
+@settings(max_examples=50)
+def test_structure_typevariablebinding_instantiation(instance):
+    assert isinstance(instance, structure_TypeVariableBinding)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=kermeta::structure::ParameterizedType_strategy)
+@given(instance=kermeta_structure_VoidType_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::parameterizedtype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ParameterizedType)
+def test_kermeta_structure_voidtype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_VoidType)
+
+@given(instance=kermeta_structure_ParameterizedType_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_parameterizedtype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ParameterizedType)
 
 @given(instance=TypeDefinition_strategy)
 @settings(max_examples=50)
 def test_typedefinition_instantiation(instance):
     assert isinstance(instance, TypeDefinition)
 
-@given(instance=kermeta::structure::GenericTypeDefinition_strategy)
+@given(instance=kermeta_structure_GenericTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::generictypedefinition_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::GenericTypeDefinition)
+def test_kermeta_structure_generictypedefinition_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_GenericTypeDefinition)
 
-@given(instance=structure::GenericTypeDefinition_strategy)
+@given(instance=structure_GenericTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_structure::generictypedefinition_instantiation(instance):
-    assert isinstance(instance, structure::GenericTypeDefinition)
+def test_structure_generictypedefinition_instantiation(instance):
+    assert isinstance(instance, structure_GenericTypeDefinition)
 
-@given(instance=structure::Using_strategy)
+@given(instance=structure_Using_strategy)
 @settings(max_examples=50)
-def test_structure::using_instantiation(instance):
-    assert isinstance(instance, structure::Using)
+def test_structure_using_instantiation(instance):
+    assert isinstance(instance, structure_Using)
 
-@given(instance=structure::Require_strategy)
+@given(instance=structure_Require_strategy)
 @settings(max_examples=50)
-def test_structure::require_instantiation(instance):
-    assert isinstance(instance, structure::Require)
+def test_structure_require_instantiation(instance):
+    assert isinstance(instance, structure_Require)
 
-@given(instance=structure::DataType_strategy)
+@given(instance=structure_DataType_strategy)
 @settings(max_examples=50)
-def test_structure::datatype_instantiation(instance):
-    assert isinstance(instance, structure::DataType)
+def test_structure_datatype_instantiation(instance):
+    assert isinstance(instance, structure_DataType)
 
-@given(instance=structure::Package_strategy)
+@given(instance=structure_Package_strategy)
 @settings(max_examples=50)
-def test_structure::package_instantiation(instance):
-    assert isinstance(instance, structure::Package)
+def test_structure_package_instantiation(instance):
+    assert isinstance(instance, structure_Package)
 
-@given(instance=structure::TypeDefinitionContainer_strategy)
+@given(instance=structure_TypeDefinitionContainer_strategy)
 @settings(max_examples=50)
-def test_structure::typedefinitioncontainer_instantiation(instance):
-    assert isinstance(instance, structure::TypeDefinitionContainer)
+def test_structure_typedefinitioncontainer_instantiation(instance):
+    assert isinstance(instance, structure_TypeDefinitionContainer)
 
-@given(instance=structure::NamedElement_strategy)
+@given(instance=structure_NamedElement_strategy)
 @settings(max_examples=50)
-def test_structure::namedelement_instantiation(instance):
-    assert isinstance(instance, structure::NamedElement)
+def test_structure_namedelement_instantiation(instance):
+    assert isinstance(instance, structure_NamedElement)
 
-@given(instance=kermeta::structure::Package_strategy)
+@given(instance=kermeta_structure_Package_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::package_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Package)
-
-@given(instance=kermeta::structure::Package_strategy)
-def test_kermeta::structure::package_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_kermeta_structure_package_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Package)
 
 
-@given(instance=kermeta::structure::Package_strategy)
-def test_kermeta::structure::package_uri_setter(instance):
+
+@given(instance=kermeta_structure_Package_strategy)
+def test_kermeta_structure_package_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
@@ -2555,194 +2592,172 @@ def test_kermeta::structure::package_uri_setter(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=kermeta::structure::Enumeration_strategy)
+@given(instance=kermeta_structure_Enumeration_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::enumeration_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Enumeration)
+def test_kermeta_structure_enumeration_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Enumeration)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
+@given(instance=kermeta_structure_MultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::MultiplicityElement)
-
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, str)
+def test_kermeta_structure_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_MultiplicityElement)
 
 
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_isOrdered_setter(instance):
-    original = instance.isOrdered
-    instance.isOrdered = original
-    assert instance.isOrdered == original
 
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_lower_type(instance):
-    assert isinstance(instance.lower, str)
-
-
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_lower_setter(instance):
+@given(instance=kermeta_structure_MultiplicityElement_strategy)
+def test_kermeta_structure_multiplicityelement_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, str)
 
 
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_isUnique_setter(instance):
-    original = instance.isUnique
-    instance.isUnique = original
-    assert instance.isUnique == original
-
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=kermeta::structure::MultiplicityElement_strategy)
-def test_kermeta::structure::multiplicityelement_upper_setter(instance):
+@given(instance=kermeta_structure_MultiplicityElement_strategy)
+def test_kermeta_structure_multiplicityelement_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=structure::Enumeration_strategy)
+
+
+@given(instance=kermeta_structure_MultiplicityElement_strategy)
+def test_kermeta_structure_multiplicityelement_isUnique_setter(instance):
+    original = instance.isUnique
+    instance.isUnique = original
+    assert instance.isUnique == original
+
+
+
+@given(instance=kermeta_structure_MultiplicityElement_strategy)
+def test_kermeta_structure_multiplicityelement_isOrdered_setter(instance):
+    original = instance.isOrdered
+    instance.isOrdered = original
+    assert instance.isOrdered == original
+
+@given(instance=structure_Enumeration_strategy)
 @settings(max_examples=50)
-def test_structure::enumeration_instantiation(instance):
-    assert isinstance(instance, structure::Enumeration)
+def test_structure_enumeration_instantiation(instance):
+    assert isinstance(instance, structure_Enumeration)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=kermeta::structure::Constraint_strategy)
+@given(instance=kermeta_structure_Constraint_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::constraint_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Constraint)
-
-@given(instance=kermeta::structure::Constraint_strategy)
-def test_kermeta::structure::constraint_stereotype_type(instance):
-    assert isinstance(instance.stereotype, str)
+def test_kermeta_structure_constraint_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Constraint)
 
 
-@given(instance=kermeta::structure::Constraint_strategy)
-def test_kermeta::structure::constraint_stereotype_setter(instance):
+
+@given(instance=kermeta_structure_Constraint_strategy)
+def test_kermeta_structure_constraint_stereotype_setter(instance):
     original = instance.stereotype
     instance.stereotype = original
     assert instance.stereotype == original
 
-@given(instance=kermeta::structure::Constraint_strategy)
-def test_kermeta::structure::constraint_language_type(instance):
-    assert isinstance(instance.language, str)
 
 
-@given(instance=kermeta::structure::Constraint_strategy)
-def test_kermeta::structure::constraint_language_setter(instance):
+@given(instance=kermeta_structure_Constraint_strategy)
+def test_kermeta_structure_constraint_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=kermeta::structure::TypeDefinition_strategy)
+@given(instance=kermeta_structure_TypeDefinitionContainer_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::typedefinition_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::TypeDefinition)
+def test_kermeta_structure_typedefinitioncontainer_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_TypeDefinitionContainer)
 
-@given(instance=kermeta::structure::TypeDefinition_strategy)
-def test_kermeta::structure::typedefinition_isAspect_type(instance):
-    assert isinstance(instance.isAspect, str)
+@given(instance=kermeta_structure_TypeDefinition_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_typedefinition_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_TypeDefinition)
 
 
-@given(instance=kermeta::structure::TypeDefinition_strategy)
-def test_kermeta::structure::typedefinition_isAspect_setter(instance):
+
+@given(instance=kermeta_structure_TypeDefinition_strategy)
+def test_kermeta_structure_typedefinition_isAspect_setter(instance):
     original = instance.isAspect
     instance.isAspect = original
     assert instance.isAspect == original
 
-@given(instance=kermeta::structure::EnumerationLiteral_strategy)
+@given(instance=kermeta_structure_EnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::EnumerationLiteral)
+def test_kermeta_structure_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_EnumerationLiteral)
 
-@given(instance=structure::Constraint_strategy)
+@given(instance=structure_Constraint_strategy)
 @settings(max_examples=50)
-def test_structure::constraint_instantiation(instance):
-    assert isinstance(instance, structure::Constraint)
+def test_structure_constraint_instantiation(instance):
+    assert isinstance(instance, structure_Constraint)
 
-@given(instance=structure::Parameter_strategy)
+@given(instance=structure_Parameter_strategy)
 @settings(max_examples=50)
-def test_structure::parameter_instantiation(instance):
-    assert isinstance(instance, structure::Parameter)
+def test_structure_parameter_instantiation(instance):
+    assert isinstance(instance, structure_Parameter)
 
-@given(instance=structure::TypeVariable_strategy)
+@given(instance=structure_TypeVariable_strategy)
 @settings(max_examples=50)
-def test_structure::typevariable_instantiation(instance):
-    assert isinstance(instance, structure::TypeVariable)
+def test_structure_typevariable_instantiation(instance):
+    assert isinstance(instance, structure_TypeVariable)
 
-@given(instance=structure::ClassDefinition_strategy)
+@given(instance=structure_ClassDefinition_strategy)
 @settings(max_examples=50)
-def test_structure::classdefinition_instantiation(instance):
-    assert isinstance(instance, structure::ClassDefinition)
+def test_structure_classdefinition_instantiation(instance):
+    assert isinstance(instance, structure_ClassDefinition)
 
-@given(instance=kermeta::structure::Object_strategy)
+@given(instance=kermeta_structure_Object_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::object_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Object)
+def test_kermeta_structure_object_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Object)
 
-@given(instance=structure::Class_strategy)
+@given(instance=structure_Class_strategy)
 @settings(max_examples=50)
-def test_structure::class_instantiation(instance):
-    assert isinstance(instance, structure::Class)
+def test_structure_class_instantiation(instance):
+    assert isinstance(instance, structure_Class)
 
-@given(instance=structure::TypeDefinition_strategy)
+@given(instance=structure_TypeDefinition_strategy)
 @settings(max_examples=50)
-def test_structure::typedefinition_instantiation(instance):
-    assert isinstance(instance, structure::TypeDefinition)
+def test_structure_typedefinition_instantiation(instance):
+    assert isinstance(instance, structure_TypeDefinition)
 
-@given(instance=structure::Tag_strategy)
+@given(instance=structure_Tag_strategy)
 @settings(max_examples=50)
-def test_structure::tag_instantiation(instance):
-    assert isinstance(instance, structure::Tag)
+def test_structure_tag_instantiation(instance):
+    assert isinstance(instance, structure_Tag)
 
 @given(instance=ParameterizedType_strategy)
 @settings(max_examples=50)
 def test_parameterizedtype_instantiation(instance):
     assert isinstance(instance, ParameterizedType)
 
-@given(instance=kermeta::structure::Class_strategy)
+@given(instance=kermeta_structure_Class_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::class_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Class)
-
-@given(instance=kermeta::structure::Class_strategy)
-def test_kermeta::structure::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_kermeta_structure_class_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Class)
 
 
-@given(instance=kermeta::structure::Class_strategy)
-def test_kermeta::structure::class_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
 
-@given(instance=kermeta::structure::Class_strategy)
-def test_kermeta::structure::class_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=kermeta::structure::Class_strategy)
-def test_kermeta::structure::class_name_setter(instance):
+@given(instance=kermeta_structure_Class_strategy)
+def test_kermeta_structure_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=kermeta_structure_Class_strategy)
+def test_kermeta_structure_class_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
 
 import warnings
 import copy
@@ -2750,9 +2765,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=kermeta::structure::Class_strategy)
+@given(instance=kermeta_structure_Class_strategy)
 @settings(max_examples=30)
-def test_kermeta::structure::class__new_changes_state(instance):
+def test_kermeta_structure_class__new_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2764,480 +2779,372 @@ def test_kermeta::structure::class__new_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function '_new' in kermeta::structure::Class is empty"
+        assert has_statements, f"Function '_new' in kermeta_structure_Class is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation '_new' in kermeta::structure::Class did not change state; check implementation")
+            warnings.warn(f"Operation '_new' in kermeta_structure_Class did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation '_new' in kermeta::structure::Class is not implemented or raised an error")
+        warnings.warn(f"Operation '_new' in kermeta_structure_Class is not implemented or raised an error")
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=kermeta::behavior::VoidLiteral_strategy)
+@given(instance=kermeta_behavior_TypeLiteral_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::voidliteral_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::VoidLiteral)
+def test_kermeta_behavior_typeliteral_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_TypeLiteral)
 
-@given(instance=kermeta::behavior::TypeLiteral_strategy)
+@given(instance=kermeta_behavior_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::typeliteral_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::TypeLiteral)
-
-@given(instance=kermeta::behavior::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::booleanliteral_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::BooleanLiteral)
-
-@given(instance=kermeta::behavior::BooleanLiteral_strategy)
-def test_kermeta::behavior::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_kermeta_behavior_stringliteral_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_StringLiteral)
 
 
-@given(instance=kermeta::behavior::BooleanLiteral_strategy)
-def test_kermeta::behavior::booleanliteral_value_setter(instance):
+
+@given(instance=kermeta_behavior_StringLiteral_strategy)
+def test_kermeta_behavior_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=kermeta::behavior::StringLiteral_strategy)
+@given(instance=kermeta_behavior_VoidLiteral_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::stringliteral_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::StringLiteral)
+def test_kermeta_behavior_voidliteral_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_VoidLiteral)
 
-@given(instance=kermeta::behavior::StringLiteral_strategy)
-def test_kermeta::behavior::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=kermeta_behavior_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_booleanliteral_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_BooleanLiteral)
 
 
-@given(instance=kermeta::behavior::StringLiteral_strategy)
-def test_kermeta::behavior::stringliteral_value_setter(instance):
+
+@given(instance=kermeta_behavior_BooleanLiteral_strategy)
+def test_kermeta_behavior_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=kermeta::behavior::IntegerLiteral_strategy)
+@given(instance=kermeta_behavior_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::integerliteral_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::IntegerLiteral)
-
-@given(instance=kermeta::behavior::IntegerLiteral_strategy)
-def test_kermeta::behavior::integerliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_kermeta_behavior_integerliteral_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_IntegerLiteral)
 
 
-@given(instance=kermeta::behavior::IntegerLiteral_strategy)
-def test_kermeta::behavior::integerliteral_value_setter(instance):
+
+@given(instance=kermeta_behavior_IntegerLiteral_strategy)
+def test_kermeta_behavior_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=behavior::LambdaParameter_strategy)
+@given(instance=behavior_LambdaParameter_strategy)
 @settings(max_examples=50)
-def test_behavior::lambdaparameter_instantiation(instance):
-    assert isinstance(instance, behavior::LambdaParameter)
+def test_behavior_lambdaparameter_instantiation(instance):
+    assert isinstance(instance, behavior_LambdaParameter)
 
 @given(instance=CallVariable_strategy)
 @settings(max_examples=50)
 def test_callvariable_instantiation(instance):
     assert isinstance(instance, CallVariable)
 
-@given(instance=kermeta::behavior::CallResult_strategy)
+@given(instance=kermeta_behavior_CallResult_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::callresult_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::CallResult)
+def test_kermeta_behavior_callresult_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_CallResult)
 
 @given(instance=MultiplicityElement_strategy)
 @settings(max_examples=50)
 def test_multiplicityelement_instantiation(instance):
     assert isinstance(instance, MultiplicityElement)
 
-@given(instance=kermeta::structure::Parameter_strategy)
+@given(instance=kermeta_structure_Property_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::parameter_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Parameter)
-
-@given(instance=kermeta::structure::Property_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::property_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Property)
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_default_type(instance):
-    assert isinstance(instance.default, str)
+def test_kermeta_structure_property_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Property)
 
 
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
 
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isGetterAbstract_type(instance):
-    assert isinstance(instance.isGetterAbstract, str)
-
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isGetterAbstract_setter(instance):
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_isGetterAbstract_setter(instance):
     original = instance.isGetterAbstract
     instance.isGetterAbstract = original
     assert instance.isGetterAbstract == original
 
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isDerived_type(instance):
-    assert isinstance(instance.isDerived, str)
 
 
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isDerived_setter(instance):
-    original = instance.isDerived
-    instance.isDerived = original
-    assert instance.isDerived == original
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isID_type(instance):
-    assert isinstance(instance.isID, str)
-
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isID_setter(instance):
-    original = instance.isID
-    instance.isID = original
-    assert instance.isID == original
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isSetterAbstract_type(instance):
-    assert isinstance(instance.isSetterAbstract, str)
-
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isSetterAbstract_setter(instance):
-    original = instance.isSetterAbstract
-    instance.isSetterAbstract = original
-    assert instance.isSetterAbstract == original
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, str)
-
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isReadOnly_setter(instance):
-    original = instance.isReadOnly
-    instance.isReadOnly = original
-    assert instance.isReadOnly == original
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isComposite_type(instance):
-    assert isinstance(instance.isComposite, str)
-
-
-@given(instance=kermeta::structure::Property_strategy)
-def test_kermeta::structure::property_isComposite_setter(instance):
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_isComposite_setter(instance):
     original = instance.isComposite
     instance.isComposite = original
     assert instance.isComposite == original
 
-@given(instance=kermeta::structure::Operation_strategy)
+
+
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_isID_setter(instance):
+    original = instance.isID
+    instance.isID = original
+    assert instance.isID == original
+
+
+
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+
+
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_isSetterAbstract_setter(instance):
+    original = instance.isSetterAbstract
+    instance.isSetterAbstract = original
+    assert instance.isSetterAbstract == original
+
+
+
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_isDerived_setter(instance):
+    original = instance.isDerived
+    instance.isDerived = original
+    assert instance.isDerived == original
+
+
+
+@given(instance=kermeta_structure_Property_strategy)
+def test_kermeta_structure_property_isReadOnly_setter(instance):
+    original = instance.isReadOnly
+    instance.isReadOnly = original
+    assert instance.isReadOnly == original
+
+@given(instance=kermeta_structure_Operation_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::operation_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Operation)
-
-@given(instance=kermeta::structure::Operation_strategy)
-def test_kermeta::structure::operation_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_kermeta_structure_operation_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Operation)
 
 
-@given(instance=kermeta::structure::Operation_strategy)
-def test_kermeta::structure::operation_isAbstract_setter(instance):
+
+@given(instance=kermeta_structure_Operation_strategy)
+def test_kermeta_structure_operation_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=kermeta::behavior::TypeReference_strategy)
+@given(instance=kermeta_structure_Parameter_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::typereference_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::TypeReference)
+def test_kermeta_structure_parameter_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Parameter)
 
-@given(instance=behavior::TypeReference_strategy)
+@given(instance=kermeta_behavior_TypeReference_strategy)
 @settings(max_examples=50)
-def test_behavior::typereference_instantiation(instance):
-    assert isinstance(instance, behavior::TypeReference)
+def test_kermeta_behavior_typereference_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_TypeReference)
+
+@given(instance=behavior_TypeReference_strategy)
+@settings(max_examples=50)
+def test_behavior_typereference_instantiation(instance):
+    assert isinstance(instance, behavior_TypeReference)
 
 @given(instance=Object_strategy)
 @settings(max_examples=50)
 def test_object_instantiation(instance):
     assert isinstance(instance, Object)
 
-@given(instance=kermeta::structure::ModelingUnit_strategy)
+@given(instance=kermeta_behavior_LambdaParameter_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::modelingunit_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ModelingUnit)
-
-@given(instance=kermeta::structure::Type_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::type_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Type)
-
-@given(instance=kermeta::structure::Require_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::require_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Require)
-
-@given(instance=kermeta::structure::Require_strategy)
-def test_kermeta::structure::require_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_kermeta_behavior_lambdaparameter_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_LambdaParameter)
 
 
-@given(instance=kermeta::structure::Require_strategy)
-def test_kermeta::structure::require_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
 
-@given(instance=kermeta::structure::Model_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::model_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Model)
-
-@given(instance=kermeta::structure::TypeContainer_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::typecontainer_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::TypeContainer)
-
-@given(instance=kermeta::structure::NamedElement_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::namedelement_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::NamedElement)
-
-@given(instance=kermeta::structure::NamedElement_strategy)
-def test_kermeta::structure::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=kermeta::structure::NamedElement_strategy)
-def test_kermeta::structure::namedelement_name_setter(instance):
+@given(instance=kermeta_behavior_LambdaParameter_strategy)
+def test_kermeta_behavior_lambdaparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=kermeta::structure::Using_strategy)
+@given(instance=kermeta_structure_TypeContainer_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::using_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Using)
+def test_kermeta_structure_typecontainer_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_TypeContainer)
 
-@given(instance=kermeta::structure::Using_strategy)
-def test_kermeta::structure::using_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+@given(instance=kermeta_structure_Using_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_using_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Using)
 
 
-@given(instance=kermeta::structure::Using_strategy)
-def test_kermeta::structure::using_qualifiedName_setter(instance):
+
+@given(instance=kermeta_structure_Using_strategy)
+def test_kermeta_structure_using_qualifiedName_setter(instance):
     original = instance.qualifiedName
     instance.qualifiedName = original
     assert instance.qualifiedName == original
 
-@given(instance=kermeta::structure::Filter_strategy)
+@given(instance=kermeta_structure_Filter_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::filter_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Filter)
-
-@given(instance=kermeta::structure::Filter_strategy)
-def test_kermeta::structure::filter_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+def test_kermeta_structure_filter_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Filter)
 
 
-@given(instance=kermeta::structure::Filter_strategy)
-def test_kermeta::structure::filter_qualifiedName_setter(instance):
+
+@given(instance=kermeta_structure_Filter_strategy)
+def test_kermeta_structure_filter_qualifiedName_setter(instance):
     original = instance.qualifiedName
     instance.qualifiedName = original
     assert instance.qualifiedName == original
 
-@given(instance=kermeta::behavior::LambdaParameter_strategy)
+@given(instance=kermeta_structure_ModelingUnit_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::lambdaparameter_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::LambdaParameter)
+def test_kermeta_structure_modelingunit_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ModelingUnit)
 
-@given(instance=kermeta::behavior::LambdaParameter_strategy)
-def test_kermeta::behavior::lambdaparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=kermeta_structure_Tag_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_tag_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Tag)
 
 
-@given(instance=kermeta::behavior::LambdaParameter_strategy)
-def test_kermeta::behavior::lambdaparameter_name_setter(instance):
+
+@given(instance=kermeta_structure_Tag_strategy)
+def test_kermeta_structure_tag_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=kermeta::structure::Tag_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::tag_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::Tag)
-
-@given(instance=kermeta::structure::Tag_strategy)
-def test_kermeta::structure::tag_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=kermeta::structure::Tag_strategy)
-def test_kermeta::structure::tag_value_setter(instance):
+@given(instance=kermeta_structure_Tag_strategy)
+def test_kermeta_structure_tag_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=kermeta::structure::Tag_strategy)
-def test_kermeta::structure::tag_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=kermeta_structure_Model_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_model_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Model)
+
+@given(instance=kermeta_structure_NamedElement_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_namedelement_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_NamedElement)
 
 
-@given(instance=kermeta::structure::Tag_strategy)
-def test_kermeta::structure::tag_name_setter(instance):
+
+@given(instance=kermeta_structure_NamedElement_strategy)
+def test_kermeta_structure_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=kermeta::behavior::Rescue_strategy)
+@given(instance=kermeta_structure_Type_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::rescue_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Rescue)
+def test_kermeta_structure_type_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Type)
 
-@given(instance=kermeta::behavior::Rescue_strategy)
-def test_kermeta::behavior::rescue_exceptionName_type(instance):
-    assert isinstance(instance.exceptionName, str)
+@given(instance=kermeta_structure_Require_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_require_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_Require)
 
 
-@given(instance=kermeta::behavior::Rescue_strategy)
-def test_kermeta::behavior::rescue_exceptionName_setter(instance):
+
+@given(instance=kermeta_structure_Require_strategy)
+def test_kermeta_structure_require_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
+
+@given(instance=kermeta_behavior_Rescue_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_rescue_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Rescue)
+
+
+
+@given(instance=kermeta_behavior_Rescue_strategy)
+def test_kermeta_behavior_rescue_exceptionName_setter(instance):
     original = instance.exceptionName
     instance.exceptionName = original
     assert instance.exceptionName == original
 
-@given(instance=structure::EnumerationLiteral_strategy)
+@given(instance=structure_EnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_structure::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, structure::EnumerationLiteral)
+def test_structure_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, structure_EnumerationLiteral)
 
-@given(instance=structure::Operation_strategy)
+@given(instance=structure_Operation_strategy)
 @settings(max_examples=50)
-def test_structure::operation_instantiation(instance):
-    assert isinstance(instance, structure::Operation)
+def test_structure_operation_instantiation(instance):
+    assert isinstance(instance, structure_Operation)
 
-@given(instance=structure::Property_strategy)
+@given(instance=structure_Property_strategy)
 @settings(max_examples=50)
-def test_structure::property_instantiation(instance):
-    assert isinstance(instance, structure::Property)
-
-@given(instance=kermeta::structure::TypeDefinitionContainer_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::typedefinitioncontainer_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::TypeDefinitionContainer)
-
-@given(instance=kermeta::structure::VoidType_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::voidtype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::VoidType)
-
-@given(instance=structure::ModelTypeVariable_strategy)
-@settings(max_examples=50)
-def test_structure::modeltypevariable_instantiation(instance):
-    assert isinstance(instance, structure::ModelTypeVariable)
-
-@given(instance=ObjectTypeVariable_strategy)
-@settings(max_examples=50)
-def test_objecttypevariable_instantiation(instance):
-    assert isinstance(instance, ObjectTypeVariable)
-
-@given(instance=kermeta::structure::VirtualType_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::virtualtype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::VirtualType)
-
-@given(instance=structure::VirtualType_strategy)
-@settings(max_examples=50)
-def test_structure::virtualtype_instantiation(instance):
-    assert isinstance(instance, structure::VirtualType)
-
-@given(instance=TypeVariable_strategy)
-@settings(max_examples=50)
-def test_typevariable_instantiation(instance):
-    assert isinstance(instance, TypeVariable)
-
-@given(instance=kermeta::structure::ModelTypeVariable_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::modeltypevariable_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ModelTypeVariable)
-
-@given(instance=kermeta::structure::ObjectTypeVariable_strategy)
-@settings(max_examples=50)
-def test_kermeta::structure::objecttypevariable_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ObjectTypeVariable)
+def test_structure_property_instantiation(instance):
+    assert isinstance(instance, structure_Property)
 
 @given(instance=CallExpression_strategy)
 @settings(max_examples=50)
 def test_callexpression_instantiation(instance):
     assert isinstance(instance, CallExpression)
 
-@given(instance=kermeta::behavior::CallFeature_strategy)
+@given(instance=kermeta_behavior_CallSuperOperation_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::callfeature_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::CallFeature)
+def test_kermeta_behavior_callsuperoperation_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_CallSuperOperation)
 
-@given(instance=kermeta::behavior::CallFeature_strategy)
-def test_kermeta::behavior::callfeature_isAtpre_type(instance):
-    assert isinstance(instance.isAtpre, str)
+@given(instance=kermeta_behavior_CallValue_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_callvalue_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_CallValue)
+
+@given(instance=kermeta_behavior_CallFeature_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_callfeature_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_CallFeature)
 
 
-@given(instance=kermeta::behavior::CallFeature_strategy)
-def test_kermeta::behavior::callfeature_isAtpre_setter(instance):
+
+@given(instance=kermeta_behavior_CallFeature_strategy)
+def test_kermeta_behavior_callfeature_isAtpre_setter(instance):
     original = instance.isAtpre
     instance.isAtpre = original
     assert instance.isAtpre == original
 
-@given(instance=kermeta::behavior::CallValue_strategy)
+@given(instance=kermeta_behavior_CallVariable_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::callvalue_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::CallValue)
-
-@given(instance=kermeta::behavior::CallSuperOperation_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::callsuperoperation_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::CallSuperOperation)
-
-@given(instance=kermeta::behavior::CallVariable_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::callvariable_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::CallVariable)
-
-@given(instance=kermeta::behavior::CallVariable_strategy)
-def test_kermeta::behavior::callvariable_isAtpre_type(instance):
-    assert isinstance(instance.isAtpre, str)
+def test_kermeta_behavior_callvariable_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_CallVariable)
 
 
-@given(instance=kermeta::behavior::CallVariable_strategy)
-def test_kermeta::behavior::callvariable_isAtpre_setter(instance):
+
+@given(instance=kermeta_behavior_CallVariable_strategy)
+def test_kermeta_behavior_callvariable_isAtpre_setter(instance):
     original = instance.isAtpre
     instance.isAtpre = original
     assert instance.isAtpre == original
 
-@given(instance=behavior::Rescue_strategy)
+@given(instance=behavior_Rescue_strategy)
 @settings(max_examples=50)
-def test_behavior::rescue_instantiation(instance):
-    assert isinstance(instance, behavior::Rescue)
+def test_behavior_rescue_instantiation(instance):
+    assert isinstance(instance, behavior_Rescue)
 
-@given(instance=structure::Type_strategy)
+@given(instance=structure_Type_strategy)
 @settings(max_examples=50)
-def test_structure::type_instantiation(instance):
-    assert isinstance(instance, structure::Type)
+def test_structure_type_instantiation(instance):
+    assert isinstance(instance, structure_Type)
 
-@given(instance=kermeta::structure::ModelType_strategy)
+@given(instance=kermeta_structure_ModelType_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::modeltype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ModelType)
+def test_kermeta_structure_modeltype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ModelType)
 
 import warnings
 import copy
@@ -3245,9 +3152,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=kermeta::structure::ModelType_strategy)
+@given(instance=kermeta_structure_ModelType_strategy)
 @settings(max_examples=30)
-def test_kermeta::structure::modeltype__new_changes_state(instance):
+def test_kermeta_structure_modeltype__new_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3259,217 +3166,199 @@ def test_kermeta::structure::modeltype__new_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function '_new' in kermeta::structure::ModelType is empty"
+        assert has_statements, f"Function '_new' in kermeta_structure_ModelType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation '_new' in kermeta::structure::ModelType did not change state; check implementation")
+            warnings.warn(f"Operation '_new' in kermeta_structure_ModelType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation '_new' in kermeta::structure::ModelType is not implemented or raised an error")
+        warnings.warn(f"Operation '_new' in kermeta_structure_ModelType is not implemented or raised an error")
 
-@given(instance=kermeta::structure::DataType_strategy)
+@given(instance=kermeta_structure_DataType_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::datatype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::DataType)
+def test_kermeta_structure_datatype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_DataType)
 
-@given(instance=structure::TypeContainer_strategy)
+@given(instance=structure_TypeContainer_strategy)
 @settings(max_examples=50)
-def test_structure::typecontainer_instantiation(instance):
-    assert isinstance(instance, structure::TypeContainer)
+def test_structure_typecontainer_instantiation(instance):
+    assert isinstance(instance, structure_TypeContainer)
 
-@given(instance=kermeta::structure::TypedElement_strategy)
+@given(instance=kermeta_structure_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::typedelement_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::TypedElement)
+def test_kermeta_structure_primitivetype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_PrimitiveType)
 
-@given(instance=kermeta::structure::ClassDefinition_strategy)
+@given(instance=kermeta_structure_TypeVariable_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::classdefinition_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ClassDefinition)
+def test_kermeta_structure_typevariable_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_TypeVariable)
 
-@given(instance=kermeta::structure::ClassDefinition_strategy)
-def test_kermeta::structure::classdefinition_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+@given(instance=kermeta_structure_FunctionType_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_functiontype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_FunctionType)
+
+@given(instance=kermeta_structure_ClassDefinition_strategy)
+@settings(max_examples=50)
+def test_kermeta_structure_classdefinition_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ClassDefinition)
 
 
-@given(instance=kermeta::structure::ClassDefinition_strategy)
-def test_kermeta::structure::classdefinition_isAbstract_setter(instance):
+
+@given(instance=kermeta_structure_ClassDefinition_strategy)
+def test_kermeta_structure_classdefinition_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=kermeta::structure::ProductType_strategy)
+@given(instance=kermeta_structure_ProductType_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::producttype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::ProductType)
+def test_kermeta_structure_producttype_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_ProductType)
 
-@given(instance=kermeta::structure::TypeVariable_strategy)
+@given(instance=kermeta_structure_TypedElement_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::typevariable_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::TypeVariable)
+def test_kermeta_structure_typedelement_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_TypedElement)
 
-@given(instance=kermeta::structure::PrimitiveType_strategy)
+@given(instance=structure_Object_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::primitivetype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::PrimitiveType)
+def test_structure_object_instantiation(instance):
+    assert isinstance(instance, structure_Object)
 
-@given(instance=kermeta::structure::FunctionType_strategy)
+@given(instance=kermeta_structure_TypeVariableBinding_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::functiontype_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::FunctionType)
+def test_kermeta_structure_typevariablebinding_instantiation(instance):
+    assert isinstance(instance, kermeta_structure_TypeVariableBinding)
 
-@given(instance=structure::Object_strategy)
+@given(instance=kermeta_behavior_Expression_strategy)
 @settings(max_examples=50)
-def test_structure::object_instantiation(instance):
-    assert isinstance(instance, structure::Object)
+def test_kermeta_behavior_expression_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Expression)
 
-@given(instance=kermeta::structure::TypeVariableBinding_strategy)
+@given(instance=behavior_Expression_strategy)
 @settings(max_examples=50)
-def test_kermeta::structure::typevariablebinding_instantiation(instance):
-    assert isinstance(instance, kermeta::structure::TypeVariableBinding)
+def test_behavior_expression_instantiation(instance):
+    assert isinstance(instance, behavior_Expression)
 
-@given(instance=kermeta::behavior::Expression_strategy)
+@given(instance=behavior_CallExpression_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::expression_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Expression)
-
-@given(instance=behavior::Expression_strategy)
-@settings(max_examples=50)
-def test_behavior::expression_instantiation(instance):
-    assert isinstance(instance, behavior::Expression)
-
-@given(instance=behavior::CallExpression_strategy)
-@settings(max_examples=50)
-def test_behavior::callexpression_instantiation(instance):
-    assert isinstance(instance, behavior::CallExpression)
+def test_behavior_callexpression_instantiation(instance):
+    assert isinstance(instance, behavior_CallExpression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=kermeta::behavior::Literal_strategy)
+@given(instance=kermeta_behavior_Loop_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::literal_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Literal)
+def test_kermeta_behavior_loop_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Loop)
 
-@given(instance=kermeta::behavior::LambdaExpression_strategy)
+@given(instance=kermeta_behavior_Raise_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::lambdaexpression_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::LambdaExpression)
+def test_kermeta_behavior_raise_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Raise)
 
-@given(instance=kermeta::behavior::VariableDecl_strategy)
+@given(instance=kermeta_behavior_SelfExpression_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::variabledecl_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::VariableDecl)
+def test_kermeta_behavior_selfexpression_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_SelfExpression)
 
-@given(instance=kermeta::behavior::VariableDecl_strategy)
-def test_kermeta::behavior::variabledecl_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+@given(instance=kermeta_behavior_VariableDecl_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_variabledecl_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_VariableDecl)
 
 
-@given(instance=kermeta::behavior::VariableDecl_strategy)
-def test_kermeta::behavior::variabledecl_identifier_setter(instance):
+
+@given(instance=kermeta_behavior_VariableDecl_strategy)
+def test_kermeta_behavior_variabledecl_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=kermeta::behavior::Block_strategy)
+@given(instance=kermeta_behavior_EmptyExpression_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::block_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Block)
+def test_kermeta_behavior_emptyexpression_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_EmptyExpression)
 
-@given(instance=kermeta::behavior::JavaStaticCall_strategy)
+@given(instance=kermeta_behavior_LambdaExpression_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::javastaticcall_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::JavaStaticCall)
+def test_kermeta_behavior_lambdaexpression_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_LambdaExpression)
 
-@given(instance=kermeta::behavior::JavaStaticCall_strategy)
-def test_kermeta::behavior::javastaticcall_jmethod_type(instance):
-    assert isinstance(instance.jmethod, str)
+@given(instance=kermeta_behavior_JavaStaticCall_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_javastaticcall_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_JavaStaticCall)
 
 
-@given(instance=kermeta::behavior::JavaStaticCall_strategy)
-def test_kermeta::behavior::javastaticcall_jmethod_setter(instance):
+
+@given(instance=kermeta_behavior_JavaStaticCall_strategy)
+def test_kermeta_behavior_javastaticcall_jmethod_setter(instance):
     original = instance.jmethod
     instance.jmethod = original
     assert instance.jmethod == original
 
-@given(instance=kermeta::behavior::JavaStaticCall_strategy)
-def test_kermeta::behavior::javastaticcall_jclass_type(instance):
-    assert isinstance(instance.jclass, str)
 
 
-@given(instance=kermeta::behavior::JavaStaticCall_strategy)
-def test_kermeta::behavior::javastaticcall_jclass_setter(instance):
+@given(instance=kermeta_behavior_JavaStaticCall_strategy)
+def test_kermeta_behavior_javastaticcall_jclass_setter(instance):
     original = instance.jclass
     instance.jclass = original
     assert instance.jclass == original
 
-@given(instance=kermeta::behavior::CallExpression_strategy)
+@given(instance=kermeta_behavior_Conditional_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::callexpression_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::CallExpression)
+def test_kermeta_behavior_conditional_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Conditional)
 
-@given(instance=kermeta::behavior::CallExpression_strategy)
-def test_kermeta::behavior::callexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=kermeta_behavior_Block_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_block_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Block)
+
+@given(instance=kermeta_behavior_CallExpression_strategy)
+@settings(max_examples=50)
+def test_kermeta_behavior_callexpression_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_CallExpression)
 
 
-@given(instance=kermeta::behavior::CallExpression_strategy)
-def test_kermeta::behavior::callexpression_name_setter(instance):
+
+@given(instance=kermeta_behavior_CallExpression_strategy)
+def test_kermeta_behavior_callexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=kermeta::behavior::SelfExpression_strategy)
+@given(instance=kermeta_behavior_Literal_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::selfexpression_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::SelfExpression)
+def test_kermeta_behavior_literal_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Literal)
 
-@given(instance=kermeta::behavior::Loop_strategy)
+@given(instance=kermeta_behavior_Assignment_strategy)
 @settings(max_examples=50)
-def test_kermeta::behavior::loop_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Loop)
-
-@given(instance=kermeta::behavior::Raise_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::raise_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Raise)
-
-@given(instance=kermeta::behavior::Conditional_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::conditional_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Conditional)
-
-@given(instance=kermeta::behavior::EmptyExpression_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::emptyexpression_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::EmptyExpression)
-
-@given(instance=kermeta::behavior::Assignment_strategy)
-@settings(max_examples=50)
-def test_kermeta::behavior::assignment_instantiation(instance):
-    assert isinstance(instance, kermeta::behavior::Assignment)
-
-@given(instance=kermeta::behavior::Assignment_strategy)
-def test_kermeta::behavior::assignment_isCast_type(instance):
-    assert isinstance(instance.isCast, str)
+def test_kermeta_behavior_assignment_instantiation(instance):
+    assert isinstance(instance, kermeta_behavior_Assignment)
 
 
-@given(instance=kermeta::behavior::Assignment_strategy)
-def test_kermeta::behavior::assignment_isCast_setter(instance):
+
+@given(instance=kermeta_behavior_Assignment_strategy)
+def test_kermeta_behavior_assignment_isCast_setter(instance):
     original = instance.isCast
     instance.isCast = original
     assert instance.isCast == original
 
-@given(instance=kermeta::language::DummyClass_strategy)
+@given(instance=kermeta_language_DummyClass_strategy)
 @settings(max_examples=50)
-def test_kermeta::language::dummyclass_instantiation(instance):
-    assert isinstance(instance, kermeta::language::DummyClass)
+def test_kermeta_language_dummyclass_instantiation(instance):
+    assert isinstance(instance, kermeta_language_DummyClass)
 
-@given(instance=kermeta::DummyClass_strategy)
+@given(instance=kermeta_DummyClass_strategy)
 @settings(max_examples=50)
-def test_kermeta::dummyclass_instantiation(instance):
-    assert isinstance(instance, kermeta::DummyClass)
+def test_kermeta_dummyclass_instantiation(instance):
+    assert isinstance(instance, kermeta_DummyClass)

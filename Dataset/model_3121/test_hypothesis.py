@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Package,
     Attribute,
     Classifier,
-    ClassDiagram::Class,
-    ClassDiagram::DataType,
+    ClassDiagram_Class,
+    ClassDiagram_DataType,
     Class,
     NamedElement,
-    ClassDiagram::Classifier,
-    ClassDiagram::Attribute,
-    ClassDiagram::System,
-    ClassDiagram::Package,
-    ClassDiagram::NamedElement,
+    ClassDiagram_Attribute,
+    ClassDiagram_System,
+    ClassDiagram_Classifier,
+    ClassDiagram_Package,
+    ClassDiagram_NamedElement,
 )
 
 # =============================================================================
@@ -68,23 +68,23 @@ def test_classifier_constructor_args():
 
 
 
-def test_classdiagram::class_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Class)
+def test_classdiagram_class_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Class)
 
 
-def test_classdiagram::class_constructor_exists():
-    assert callable(ClassDiagram::Class.__init__)
+def test_classdiagram_class_constructor_exists():
+    assert callable(ClassDiagram_Class.__init__)
 
 
-def test_classdiagram::class_constructor_args():
-    sig = inspect.signature(ClassDiagram::Class.__init__)
+def test_classdiagram_class_constructor_args():
+    sig = inspect.signature(ClassDiagram_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_classdiagram::class_has_isAbstract():
-    assert hasattr(ClassDiagram::Class, "isAbstract")
+def test_classdiagram_class_has_isAbstract():
+    assert hasattr(ClassDiagram_Class, "isAbstract")
     descriptor = None
-    for klass in ClassDiagram::Class.__mro__:
+    for klass in ClassDiagram_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -92,16 +92,16 @@ def test_classdiagram::class_has_isAbstract():
 
 
 
-def test_classdiagram::datatype_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::DataType)
+def test_classdiagram_datatype_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_DataType)
 
 
-def test_classdiagram::datatype_constructor_exists():
-    assert callable(ClassDiagram::DataType.__init__)
+def test_classdiagram_datatype_constructor_exists():
+    assert callable(ClassDiagram_DataType.__init__)
 
 
-def test_classdiagram::datatype_constructor_args():
-    sig = inspect.signature(ClassDiagram::DataType.__init__)
+def test_classdiagram_datatype_constructor_args():
+    sig = inspect.signature(ClassDiagram_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,37 +134,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_classdiagram::classifier_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Classifier)
+def test_classdiagram_attribute_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Attribute)
 
 
-def test_classdiagram::classifier_constructor_exists():
-    assert callable(ClassDiagram::Classifier.__init__)
+def test_classdiagram_attribute_constructor_exists():
+    assert callable(ClassDiagram_Attribute.__init__)
 
 
-def test_classdiagram::classifier_constructor_args():
-    sig = inspect.signature(ClassDiagram::Classifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classdiagram::attribute_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Attribute)
-
-
-def test_classdiagram::attribute_constructor_exists():
-    assert callable(ClassDiagram::Attribute.__init__)
-
-
-def test_classdiagram::attribute_constructor_args():
-    sig = inspect.signature(ClassDiagram::Attribute.__init__)
+def test_classdiagram_attribute_constructor_args():
+    sig = inspect.signature(ClassDiagram_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "multiValued" in params, "Missing parameter 'multiValued'"
 
-def test_classdiagram::attribute_has_multiValued():
-    assert hasattr(ClassDiagram::Attribute, "multiValued")
+def test_classdiagram_attribute_has_multiValued():
+    assert hasattr(ClassDiagram_Attribute, "multiValued")
     descriptor = None
-    for klass in ClassDiagram::Attribute.__mro__:
+    for klass in ClassDiagram_Attribute.__mro__:
         if "multiValued" in klass.__dict__:
             descriptor = klass.__dict__["multiValued"]
             break
@@ -172,51 +158,65 @@ def test_classdiagram::attribute_has_multiValued():
 
 
 
-def test_classdiagram::system_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::System)
+def test_classdiagram_system_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_System)
 
 
-def test_classdiagram::system_constructor_exists():
-    assert callable(ClassDiagram::System.__init__)
+def test_classdiagram_system_constructor_exists():
+    assert callable(ClassDiagram_System.__init__)
 
 
-def test_classdiagram::system_constructor_args():
-    sig = inspect.signature(ClassDiagram::System.__init__)
+def test_classdiagram_system_constructor_args():
+    sig = inspect.signature(ClassDiagram_System.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::package_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Package)
+def test_classdiagram_classifier_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Classifier)
 
 
-def test_classdiagram::package_constructor_exists():
-    assert callable(ClassDiagram::Package.__init__)
+def test_classdiagram_classifier_constructor_exists():
+    assert callable(ClassDiagram_Classifier.__init__)
 
 
-def test_classdiagram::package_constructor_args():
-    sig = inspect.signature(ClassDiagram::Package.__init__)
+def test_classdiagram_classifier_constructor_args():
+    sig = inspect.signature(ClassDiagram_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::NamedElement)
+def test_classdiagram_package_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Package)
 
 
-def test_classdiagram::namedelement_constructor_exists():
-    assert callable(ClassDiagram::NamedElement.__init__)
+def test_classdiagram_package_constructor_exists():
+    assert callable(ClassDiagram_Package.__init__)
 
 
-def test_classdiagram::namedelement_constructor_args():
-    sig = inspect.signature(ClassDiagram::NamedElement.__init__)
+def test_classdiagram_package_constructor_args():
+    sig = inspect.signature(ClassDiagram_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classdiagram_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_NamedElement)
+
+
+def test_classdiagram_namedelement_constructor_exists():
+    assert callable(ClassDiagram_NamedElement.__init__)
+
+
+def test_classdiagram_namedelement_constructor_args():
+    sig = inspect.signature(ClassDiagram_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::namedelement_has_name():
-    assert hasattr(ClassDiagram::NamedElement, "name")
+def test_classdiagram_namedelement_has_name():
+    assert hasattr(ClassDiagram_NamedElement, "name")
     descriptor = None
-    for klass in ClassDiagram::NamedElement.__mro__:
+    for klass in ClassDiagram_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -243,13 +243,13 @@ Attribute_strategy = st.builds(
 Classifier_strategy = st.builds(
     Classifier,
 )
-ClassDiagram::Class_strategy = st.builds(
-    ClassDiagram::Class,
+ClassDiagram_Class_strategy = st.builds(
+    ClassDiagram_Class,
     isAbstract=
         safe_text
 )
-ClassDiagram::DataType_strategy = st.builds(
-    ClassDiagram::DataType,
+ClassDiagram_DataType_strategy = st.builds(
+    ClassDiagram_DataType,
 )
 Class_strategy = st.builds(
     Class,
@@ -257,22 +257,22 @@ Class_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ClassDiagram::Classifier_strategy = st.builds(
-    ClassDiagram::Classifier,
-)
-ClassDiagram::Attribute_strategy = st.builds(
-    ClassDiagram::Attribute,
+ClassDiagram_Attribute_strategy = st.builds(
+    ClassDiagram_Attribute,
     multiValued=
         safe_text
 )
-ClassDiagram::System_strategy = st.builds(
-    ClassDiagram::System,
+ClassDiagram_System_strategy = st.builds(
+    ClassDiagram_System,
 )
-ClassDiagram::Package_strategy = st.builds(
-    ClassDiagram::Package,
+ClassDiagram_Classifier_strategy = st.builds(
+    ClassDiagram_Classifier,
 )
-ClassDiagram::NamedElement_strategy = st.builds(
-    ClassDiagram::NamedElement,
+ClassDiagram_Package_strategy = st.builds(
+    ClassDiagram_Package,
+)
+ClassDiagram_NamedElement_strategy = st.builds(
+    ClassDiagram_NamedElement,
     name=
         safe_text
 )
@@ -292,26 +292,23 @@ def test_attribute_instantiation(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=ClassDiagram::Class_strategy)
+@given(instance=ClassDiagram_Class_strategy)
 @settings(max_examples=50)
-def test_classdiagram::class_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Class)
-
-@given(instance=ClassDiagram::Class_strategy)
-def test_classdiagram::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_classdiagram_class_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Class)
 
 
-@given(instance=ClassDiagram::Class_strategy)
-def test_classdiagram::class_isAbstract_setter(instance):
+
+@given(instance=ClassDiagram_Class_strategy)
+def test_classdiagram_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=ClassDiagram::DataType_strategy)
+@given(instance=ClassDiagram_DataType_strategy)
 @settings(max_examples=50)
-def test_classdiagram::datatype_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::DataType)
+def test_classdiagram_datatype_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_DataType)
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
@@ -323,49 +320,43 @@ def test_class_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ClassDiagram::Classifier_strategy)
+@given(instance=ClassDiagram_Attribute_strategy)
 @settings(max_examples=50)
-def test_classdiagram::classifier_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Classifier)
-
-@given(instance=ClassDiagram::Attribute_strategy)
-@settings(max_examples=50)
-def test_classdiagram::attribute_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Attribute)
-
-@given(instance=ClassDiagram::Attribute_strategy)
-def test_classdiagram::attribute_multiValued_type(instance):
-    assert isinstance(instance.multiValued, str)
+def test_classdiagram_attribute_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Attribute)
 
 
-@given(instance=ClassDiagram::Attribute_strategy)
-def test_classdiagram::attribute_multiValued_setter(instance):
+
+@given(instance=ClassDiagram_Attribute_strategy)
+def test_classdiagram_attribute_multiValued_setter(instance):
     original = instance.multiValued
     instance.multiValued = original
     assert instance.multiValued == original
 
-@given(instance=ClassDiagram::System_strategy)
+@given(instance=ClassDiagram_System_strategy)
 @settings(max_examples=50)
-def test_classdiagram::system_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::System)
+def test_classdiagram_system_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_System)
 
-@given(instance=ClassDiagram::Package_strategy)
+@given(instance=ClassDiagram_Classifier_strategy)
 @settings(max_examples=50)
-def test_classdiagram::package_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Package)
+def test_classdiagram_classifier_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Classifier)
 
-@given(instance=ClassDiagram::NamedElement_strategy)
+@given(instance=ClassDiagram_Package_strategy)
 @settings(max_examples=50)
-def test_classdiagram::namedelement_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::NamedElement)
+def test_classdiagram_package_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Package)
 
-@given(instance=ClassDiagram::NamedElement_strategy)
-def test_classdiagram::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=ClassDiagram_NamedElement_strategy)
+@settings(max_examples=50)
+def test_classdiagram_namedelement_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_NamedElement)
 
 
-@given(instance=ClassDiagram::NamedElement_strategy)
-def test_classdiagram::namedelement_name_setter(instance):
+
+@given(instance=ClassDiagram_NamedElement_strategy)
+def test_classdiagram_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

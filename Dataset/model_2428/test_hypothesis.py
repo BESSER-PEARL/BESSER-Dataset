@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    database::Column,
-    database::Table,
-    database::ForeignKey,
-    database::Database,
+from python_code import (
+    database_Column,
+    database_Table,
+    database_ForeignKey,
+    database_Database,
     DataType,
 )
 
@@ -19,67 +19,67 @@ from classes import (
 
 
 
-def test_database::column_is_not_abstract():
-    assert not inspect.isabstract(database::Column)
+def test_database_column_is_not_abstract():
+    assert not inspect.isabstract(database_Column)
 
 
-def test_database::column_constructor_exists():
-    assert callable(database::Column.__init__)
+def test_database_column_constructor_exists():
+    assert callable(database_Column.__init__)
 
 
-def test_database::column_constructor_args():
-    sig = inspect.signature(database::Column.__init__)
+def test_database_column_constructor_args():
+    sig = inspect.signature(database_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "IsPrimaryKey" in params, "Missing parameter 'IsPrimaryKey'"
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Type" in params, "Missing parameter 'Type'"
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "IsPrimaryKey" in params, "Missing parameter 'IsPrimaryKey'"
 
-def test_database::column_has_IsPrimaryKey():
-    assert hasattr(database::Column, "IsPrimaryKey")
+def test_database_column_has_Type():
+    assert hasattr(database_Column, "Type")
     descriptor = None
-    for klass in database::Column.__mro__:
-        if "IsPrimaryKey" in klass.__dict__:
-            descriptor = klass.__dict__["IsPrimaryKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::column_has_Name():
-    assert hasattr(database::Column, "Name")
-    descriptor = None
-    for klass in database::Column.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::column_has_Type():
-    assert hasattr(database::Column, "Type")
-    descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Column.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
             break
     assert isinstance(descriptor, property)
 
+def test_database_column_has_Name():
+    assert hasattr(database_Column, "Name")
+    descriptor = None
+    for klass in database_Column.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_IsPrimaryKey():
+    assert hasattr(database_Column, "IsPrimaryKey")
+    descriptor = None
+    for klass in database_Column.__mro__:
+        if "IsPrimaryKey" in klass.__dict__:
+            descriptor = klass.__dict__["IsPrimaryKey"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_database::table_is_not_abstract():
-    assert not inspect.isabstract(database::Table)
+
+def test_database_table_is_not_abstract():
+    assert not inspect.isabstract(database_Table)
 
 
-def test_database::table_constructor_exists():
-    assert callable(database::Table.__init__)
+def test_database_table_constructor_exists():
+    assert callable(database_Table.__init__)
 
 
-def test_database::table_constructor_args():
-    sig = inspect.signature(database::Table.__init__)
+def test_database_table_constructor_args():
+    sig = inspect.signature(database_Table.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_database::table_has_Name():
-    assert hasattr(database::Table, "Name")
+def test_database_table_has_Name():
+    assert hasattr(database_Table, "Name")
     descriptor = None
-    for klass in database::Table.__mro__:
+    for klass in database_Table.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -87,23 +87,23 @@ def test_database::table_has_Name():
 
 
 
-def test_database::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(database::ForeignKey)
+def test_database_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(database_ForeignKey)
 
 
-def test_database::foreignkey_constructor_exists():
-    assert callable(database::ForeignKey.__init__)
+def test_database_foreignkey_constructor_exists():
+    assert callable(database_ForeignKey.__init__)
 
 
-def test_database::foreignkey_constructor_args():
-    sig = inspect.signature(database::ForeignKey.__init__)
+def test_database_foreignkey_constructor_args():
+    sig = inspect.signature(database_ForeignKey.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_database::foreignkey_has_Name():
-    assert hasattr(database::ForeignKey, "Name")
+def test_database_foreignkey_has_Name():
+    assert hasattr(database_ForeignKey, "Name")
     descriptor = None
-    for klass in database::ForeignKey.__mro__:
+    for klass in database_ForeignKey.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -111,16 +111,16 @@ def test_database::foreignkey_has_Name():
 
 
 
-def test_database::database_is_not_abstract():
-    assert not inspect.isabstract(database::Database)
+def test_database_database_is_not_abstract():
+    assert not inspect.isabstract(database_Database)
 
 
-def test_database::database_constructor_exists():
-    assert callable(database::Database.__init__)
+def test_database_database_constructor_exists():
+    assert callable(database_Database.__init__)
 
 
-def test_database::database_constructor_args():
-    sig = inspect.signature(database::Database.__init__)
+def test_database_database_constructor_args():
+    sig = inspect.signature(database_Database.__init__)
     params = list(sig.parameters.keys())
 
 def test_datatype_exists():
@@ -133,8 +133,8 @@ def test_datatype_has_all_literals():
     expected_literals = [
         "String",
         "Date",
-        "Float",
         "Int",
+        "Float",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -152,100 +152,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-database::Column_strategy = st.builds(
-    database::Column,
-    IsPrimaryKey=
-        st.booleans(),
+database_Column_strategy = st.builds(
+    database_Column,
+    Type=
+        safe_text,
     Name=
         safe_text,
-    Type=
-        safe_text
+    IsPrimaryKey=
+        st.booleans()
 )
-database::Table_strategy = st.builds(
-    database::Table,
+database_Table_strategy = st.builds(
+    database_Table,
     Name=
         safe_text
 )
-database::ForeignKey_strategy = st.builds(
-    database::ForeignKey,
+database_ForeignKey_strategy = st.builds(
+    database_ForeignKey,
     Name=
         safe_text
 )
-database::Database_strategy = st.builds(
-    database::Database,
+database_Database_strategy = st.builds(
+    database_Database,
 )
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=50)
-def test_database::column_instantiation(instance):
-    assert isinstance(instance, database::Column)
-
-@given(instance=database::Column_strategy)
-def test_database::column_IsPrimaryKey_type(instance):
-    assert isinstance(instance.IsPrimaryKey, bool)
+def test_database_column_instantiation(instance):
+    assert isinstance(instance, database_Column)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_IsPrimaryKey_setter(instance):
-    original = instance.IsPrimaryKey
-    instance.IsPrimaryKey = original
-    assert instance.IsPrimaryKey == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=database::Column_strategy)
-def test_database::column_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=database::Column_strategy)
-def test_database::column_Type_type(instance):
-    assert isinstance(instance.Type, str)
-
-
-@given(instance=database::Column_strategy)
-def test_database::column_Type_setter(instance):
+@given(instance=database_Column_strategy)
+def test_database_column_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
 
-@given(instance=database::Table_strategy)
-@settings(max_examples=50)
-def test_database::table_instantiation(instance):
-    assert isinstance(instance, database::Table)
-
-@given(instance=database::Table_strategy)
-def test_database::table_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
-@given(instance=database::Table_strategy)
-def test_database::table_Name_setter(instance):
+@given(instance=database_Column_strategy)
+def test_database_column_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=database::ForeignKey_strategy)
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_IsPrimaryKey_setter(instance):
+    original = instance.IsPrimaryKey
+    instance.IsPrimaryKey = original
+    assert instance.IsPrimaryKey == original
+
+@given(instance=database_Table_strategy)
 @settings(max_examples=50)
-def test_database::foreignkey_instantiation(instance):
-    assert isinstance(instance, database::ForeignKey)
-
-@given(instance=database::ForeignKey_strategy)
-def test_database::foreignkey_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_database_table_instantiation(instance):
+    assert isinstance(instance, database_Table)
 
 
-@given(instance=database::ForeignKey_strategy)
-def test_database::foreignkey_Name_setter(instance):
+
+@given(instance=database_Table_strategy)
+def test_database_table_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=database::Database_strategy)
+@given(instance=database_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_database::database_instantiation(instance):
-    assert isinstance(instance, database::Database)
+def test_database_foreignkey_instantiation(instance):
+    assert isinstance(instance, database_ForeignKey)
+
+
+
+@given(instance=database_ForeignKey_strategy)
+def test_database_foreignkey_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+@given(instance=database_Database_strategy)
+@settings(max_examples=50)
+def test_database_database_instantiation(instance):
+    assert isinstance(instance, database_Database)

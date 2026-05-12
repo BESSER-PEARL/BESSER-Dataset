@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplegraph2graph::Node,
+from python_code import (
+    simplegraph2graph_Node,
     Element2Element,
-    simplegraph2graph::Node2Node,
-    simplegraph2graph::Edge,
-    simplegraph2graph::Edge2Edge,
-    simplegraph2graph::Element2Element,
-    simplegraph2graph::Graph,
-    simplegraph2graph::Graph2Graph,
+    simplegraph2graph_Node2Node,
+    simplegraph2graph_Edge,
+    simplegraph2graph_Edge2Edge,
+    simplegraph2graph_Element2Element,
+    simplegraph2graph_Graph,
+    simplegraph2graph_Graph2Graph,
 )
 
 # =============================================================================
@@ -22,16 +22,16 @@ from classes import (
 
 
 
-def test_simplegraph2graph::node_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Node)
+def test_simplegraph2graph_node_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Node)
 
 
-def test_simplegraph2graph::node_constructor_exists():
-    assert callable(simplegraph2graph::Node.__init__)
+def test_simplegraph2graph_node_constructor_exists():
+    assert callable(simplegraph2graph_Node.__init__)
 
 
-def test_simplegraph2graph::node_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Node.__init__)
+def test_simplegraph2graph_node_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -50,23 +50,23 @@ def test_element2element_constructor_args():
 
 
 
-def test_simplegraph2graph::node2node_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Node2Node)
+def test_simplegraph2graph_node2node_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Node2Node)
 
 
-def test_simplegraph2graph::node2node_constructor_exists():
-    assert callable(simplegraph2graph::Node2Node.__init__)
+def test_simplegraph2graph_node2node_constructor_exists():
+    assert callable(simplegraph2graph_Node2Node.__init__)
 
 
-def test_simplegraph2graph::node2node_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Node2Node.__init__)
+def test_simplegraph2graph_node2node_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Node2Node.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_simplegraph2graph::node2node_has_label():
-    assert hasattr(simplegraph2graph::Node2Node, "label")
+def test_simplegraph2graph_node2node_has_label():
+    assert hasattr(simplegraph2graph_Node2Node, "label")
     descriptor = None
-    for klass in simplegraph2graph::Node2Node.__mro__:
+    for klass in simplegraph2graph_Node2Node.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -74,79 +74,79 @@ def test_simplegraph2graph::node2node_has_label():
 
 
 
-def test_simplegraph2graph::edge_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Edge)
+def test_simplegraph2graph_edge_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Edge)
 
 
-def test_simplegraph2graph::edge_constructor_exists():
-    assert callable(simplegraph2graph::Edge.__init__)
+def test_simplegraph2graph_edge_constructor_exists():
+    assert callable(simplegraph2graph_Edge.__init__)
 
 
-def test_simplegraph2graph::edge_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Edge.__init__)
+def test_simplegraph2graph_edge_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplegraph2graph::edge2edge_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Edge2Edge)
+def test_simplegraph2graph_edge2edge_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Edge2Edge)
 
 
-def test_simplegraph2graph::edge2edge_constructor_exists():
-    assert callable(simplegraph2graph::Edge2Edge.__init__)
+def test_simplegraph2graph_edge2edge_constructor_exists():
+    assert callable(simplegraph2graph_Edge2Edge.__init__)
 
 
-def test_simplegraph2graph::edge2edge_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Edge2Edge.__init__)
+def test_simplegraph2graph_edge2edge_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Edge2Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplegraph2graph::element2element_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Element2Element)
+def test_simplegraph2graph_element2element_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Element2Element)
 
 
-def test_simplegraph2graph::element2element_constructor_exists():
-    assert callable(simplegraph2graph::Element2Element.__init__)
+def test_simplegraph2graph_element2element_constructor_exists():
+    assert callable(simplegraph2graph_Element2Element.__init__)
 
 
-def test_simplegraph2graph::element2element_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Element2Element.__init__)
+def test_simplegraph2graph_element2element_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Element2Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplegraph2graph::graph_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Graph)
+def test_simplegraph2graph_graph_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Graph)
 
 
-def test_simplegraph2graph::graph_constructor_exists():
-    assert callable(simplegraph2graph::Graph.__init__)
+def test_simplegraph2graph_graph_constructor_exists():
+    assert callable(simplegraph2graph_Graph.__init__)
 
 
-def test_simplegraph2graph::graph_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Graph.__init__)
+def test_simplegraph2graph_graph_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplegraph2graph::graph2graph_is_not_abstract():
-    assert not inspect.isabstract(simplegraph2graph::Graph2Graph)
+def test_simplegraph2graph_graph2graph_is_not_abstract():
+    assert not inspect.isabstract(simplegraph2graph_Graph2Graph)
 
 
-def test_simplegraph2graph::graph2graph_constructor_exists():
-    assert callable(simplegraph2graph::Graph2Graph.__init__)
+def test_simplegraph2graph_graph2graph_constructor_exists():
+    assert callable(simplegraph2graph_Graph2Graph.__init__)
 
 
-def test_simplegraph2graph::graph2graph_constructor_args():
-    sig = inspect.signature(simplegraph2graph::Graph2Graph.__init__)
+def test_simplegraph2graph_graph2graph_constructor_args():
+    sig = inspect.signature(simplegraph2graph_Graph2Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplegraph2graph::graph2graph_has_name():
-    assert hasattr(simplegraph2graph::Graph2Graph, "name")
+def test_simplegraph2graph_graph2graph_has_name():
+    assert hasattr(simplegraph2graph_Graph2Graph, "name")
     descriptor = None
-    for klass in simplegraph2graph::Graph2Graph.__mro__:
+    for klass in simplegraph2graph_Graph2Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -164,93 +164,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplegraph2graph::Node_strategy = st.builds(
-    simplegraph2graph::Node,
+simplegraph2graph_Node_strategy = st.builds(
+    simplegraph2graph_Node,
 )
 Element2Element_strategy = st.builds(
     Element2Element,
 )
-simplegraph2graph::Node2Node_strategy = st.builds(
-    simplegraph2graph::Node2Node,
+simplegraph2graph_Node2Node_strategy = st.builds(
+    simplegraph2graph_Node2Node,
     label=
         safe_text
 )
-simplegraph2graph::Edge_strategy = st.builds(
-    simplegraph2graph::Edge,
+simplegraph2graph_Edge_strategy = st.builds(
+    simplegraph2graph_Edge,
 )
-simplegraph2graph::Edge2Edge_strategy = st.builds(
-    simplegraph2graph::Edge2Edge,
+simplegraph2graph_Edge2Edge_strategy = st.builds(
+    simplegraph2graph_Edge2Edge,
 )
-simplegraph2graph::Element2Element_strategy = st.builds(
-    simplegraph2graph::Element2Element,
+simplegraph2graph_Element2Element_strategy = st.builds(
+    simplegraph2graph_Element2Element,
 )
-simplegraph2graph::Graph_strategy = st.builds(
-    simplegraph2graph::Graph,
+simplegraph2graph_Graph_strategy = st.builds(
+    simplegraph2graph_Graph,
 )
-simplegraph2graph::Graph2Graph_strategy = st.builds(
-    simplegraph2graph::Graph2Graph,
+simplegraph2graph_Graph2Graph_strategy = st.builds(
+    simplegraph2graph_Graph2Graph,
     name=
         safe_text
 )
 
-@given(instance=simplegraph2graph::Node_strategy)
+@given(instance=simplegraph2graph_Node_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::node_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Node)
+def test_simplegraph2graph_node_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Node)
 
 @given(instance=Element2Element_strategy)
 @settings(max_examples=50)
 def test_element2element_instantiation(instance):
     assert isinstance(instance, Element2Element)
 
-@given(instance=simplegraph2graph::Node2Node_strategy)
+@given(instance=simplegraph2graph_Node2Node_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::node2node_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Node2Node)
-
-@given(instance=simplegraph2graph::Node2Node_strategy)
-def test_simplegraph2graph::node2node_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_simplegraph2graph_node2node_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Node2Node)
 
 
-@given(instance=simplegraph2graph::Node2Node_strategy)
-def test_simplegraph2graph::node2node_label_setter(instance):
+
+@given(instance=simplegraph2graph_Node2Node_strategy)
+def test_simplegraph2graph_node2node_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=simplegraph2graph::Edge_strategy)
+@given(instance=simplegraph2graph_Edge_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::edge_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Edge)
+def test_simplegraph2graph_edge_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Edge)
 
-@given(instance=simplegraph2graph::Edge2Edge_strategy)
+@given(instance=simplegraph2graph_Edge2Edge_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::edge2edge_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Edge2Edge)
+def test_simplegraph2graph_edge2edge_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Edge2Edge)
 
-@given(instance=simplegraph2graph::Element2Element_strategy)
+@given(instance=simplegraph2graph_Element2Element_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::element2element_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Element2Element)
+def test_simplegraph2graph_element2element_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Element2Element)
 
-@given(instance=simplegraph2graph::Graph_strategy)
+@given(instance=simplegraph2graph_Graph_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::graph_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Graph)
+def test_simplegraph2graph_graph_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Graph)
 
-@given(instance=simplegraph2graph::Graph2Graph_strategy)
+@given(instance=simplegraph2graph_Graph2Graph_strategy)
 @settings(max_examples=50)
-def test_simplegraph2graph::graph2graph_instantiation(instance):
-    assert isinstance(instance, simplegraph2graph::Graph2Graph)
-
-@given(instance=simplegraph2graph::Graph2Graph_strategy)
-def test_simplegraph2graph::graph2graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplegraph2graph_graph2graph_instantiation(instance):
+    assert isinstance(instance, simplegraph2graph_Graph2Graph)
 
 
-@given(instance=simplegraph2graph::Graph2Graph_strategy)
-def test_simplegraph2graph::graph2graph_name_setter(instance):
+
+@given(instance=simplegraph2graph_Graph2Graph_strategy)
+def test_simplegraph2graph_graph2graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

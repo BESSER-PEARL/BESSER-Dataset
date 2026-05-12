@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Error,
     Message,
     BaseElement,
-    services::services::Operation,
-    services::services::EObject,
+    services_services_Operation,
+    services_services_EObject,
     Operation,
     RootElement,
-    services::services::Interface,
-    services::services::EndPoint,
+    services_services_Interface,
+    services_services_EndPoint,
 )
 
 # =============================================================================
@@ -65,23 +65,23 @@ def test_baseelement_constructor_args():
 
 
 
-def test_services::services::operation_is_not_abstract():
-    assert not inspect.isabstract(services::services::Operation)
+def test_services_services_operation_is_not_abstract():
+    assert not inspect.isabstract(services_services_Operation)
 
 
-def test_services::services::operation_constructor_exists():
-    assert callable(services::services::Operation.__init__)
+def test_services_services_operation_constructor_exists():
+    assert callable(services_services_Operation.__init__)
 
 
-def test_services::services::operation_constructor_args():
-    sig = inspect.signature(services::services::Operation.__init__)
+def test_services_services_operation_constructor_args():
+    sig = inspect.signature(services_services_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_services::services::operation_has_name():
-    assert hasattr(services::services::Operation, "name")
+def test_services_services_operation_has_name():
+    assert hasattr(services_services_Operation, "name")
     descriptor = None
-    for klass in services::services::Operation.__mro__:
+    for klass in services_services_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -89,16 +89,16 @@ def test_services::services::operation_has_name():
 
 
 
-def test_services::services::eobject_is_not_abstract():
-    assert not inspect.isabstract(services::services::EObject)
+def test_services_services_eobject_is_not_abstract():
+    assert not inspect.isabstract(services_services_EObject)
 
 
-def test_services::services::eobject_constructor_exists():
-    assert callable(services::services::EObject.__init__)
+def test_services_services_eobject_constructor_exists():
+    assert callable(services_services_EObject.__init__)
 
 
-def test_services::services::eobject_constructor_args():
-    sig = inspect.signature(services::services::EObject.__init__)
+def test_services_services_eobject_constructor_args():
+    sig = inspect.signature(services_services_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -131,23 +131,23 @@ def test_rootelement_constructor_args():
 
 
 
-def test_services::services::interface_is_not_abstract():
-    assert not inspect.isabstract(services::services::Interface)
+def test_services_services_interface_is_not_abstract():
+    assert not inspect.isabstract(services_services_Interface)
 
 
-def test_services::services::interface_constructor_exists():
-    assert callable(services::services::Interface.__init__)
+def test_services_services_interface_constructor_exists():
+    assert callable(services_services_Interface.__init__)
 
 
-def test_services::services::interface_constructor_args():
-    sig = inspect.signature(services::services::Interface.__init__)
+def test_services_services_interface_constructor_args():
+    sig = inspect.signature(services_services_Interface.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_services::services::interface_has_name():
-    assert hasattr(services::services::Interface, "name")
+def test_services_services_interface_has_name():
+    assert hasattr(services_services_Interface, "name")
     descriptor = None
-    for klass in services::services::Interface.__mro__:
+    for klass in services_services_Interface.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -155,16 +155,16 @@ def test_services::services::interface_has_name():
 
 
 
-def test_services::services::endpoint_is_not_abstract():
-    assert not inspect.isabstract(services::services::EndPoint)
+def test_services_services_endpoint_is_not_abstract():
+    assert not inspect.isabstract(services_services_EndPoint)
 
 
-def test_services::services::endpoint_constructor_exists():
-    assert callable(services::services::EndPoint.__init__)
+def test_services_services_endpoint_constructor_exists():
+    assert callable(services_services_EndPoint.__init__)
 
 
-def test_services::services::endpoint_constructor_args():
-    sig = inspect.signature(services::services::EndPoint.__init__)
+def test_services_services_endpoint_constructor_args():
+    sig = inspect.signature(services_services_EndPoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -188,13 +188,13 @@ Message_strategy = st.builds(
 BaseElement_strategy = st.builds(
     BaseElement,
 )
-services::services::Operation_strategy = st.builds(
-    services::services::Operation,
+services_services_Operation_strategy = st.builds(
+    services_services_Operation,
     name=
         safe_text
 )
-services::services::EObject_strategy = st.builds(
-    services::services::EObject,
+services_services_EObject_strategy = st.builds(
+    services_services_EObject,
 )
 Operation_strategy = st.builds(
     Operation,
@@ -202,13 +202,13 @@ Operation_strategy = st.builds(
 RootElement_strategy = st.builds(
     RootElement,
 )
-services::services::Interface_strategy = st.builds(
-    services::services::Interface,
+services_services_Interface_strategy = st.builds(
+    services_services_Interface,
     name=
         safe_text
 )
-services::services::EndPoint_strategy = st.builds(
-    services::services::EndPoint,
+services_services_EndPoint_strategy = st.builds(
+    services_services_EndPoint,
 )
 
 @given(instance=Error_strategy)
@@ -226,26 +226,23 @@ def test_message_instantiation(instance):
 def test_baseelement_instantiation(instance):
     assert isinstance(instance, BaseElement)
 
-@given(instance=services::services::Operation_strategy)
+@given(instance=services_services_Operation_strategy)
 @settings(max_examples=50)
-def test_services::services::operation_instantiation(instance):
-    assert isinstance(instance, services::services::Operation)
-
-@given(instance=services::services::Operation_strategy)
-def test_services::services::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_services_services_operation_instantiation(instance):
+    assert isinstance(instance, services_services_Operation)
 
 
-@given(instance=services::services::Operation_strategy)
-def test_services::services::operation_name_setter(instance):
+
+@given(instance=services_services_Operation_strategy)
+def test_services_services_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=services::services::EObject_strategy)
+@given(instance=services_services_EObject_strategy)
 @settings(max_examples=50)
-def test_services::services::eobject_instantiation(instance):
-    assert isinstance(instance, services::services::EObject)
+def test_services_services_eobject_instantiation(instance):
+    assert isinstance(instance, services_services_EObject)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
@@ -257,23 +254,20 @@ def test_operation_instantiation(instance):
 def test_rootelement_instantiation(instance):
     assert isinstance(instance, RootElement)
 
-@given(instance=services::services::Interface_strategy)
+@given(instance=services_services_Interface_strategy)
 @settings(max_examples=50)
-def test_services::services::interface_instantiation(instance):
-    assert isinstance(instance, services::services::Interface)
-
-@given(instance=services::services::Interface_strategy)
-def test_services::services::interface_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_services_services_interface_instantiation(instance):
+    assert isinstance(instance, services_services_Interface)
 
 
-@given(instance=services::services::Interface_strategy)
-def test_services::services::interface_name_setter(instance):
+
+@given(instance=services_services_Interface_strategy)
+def test_services_services_interface_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=services::services::EndPoint_strategy)
+@given(instance=services_services_EndPoint_strategy)
 @settings(max_examples=50)
-def test_services::services::endpoint_instantiation(instance):
-    assert isinstance(instance, services::services::EndPoint)
+def test_services_services_endpoint_instantiation(instance):
+    assert isinstance(instance, services_services_EndPoint)

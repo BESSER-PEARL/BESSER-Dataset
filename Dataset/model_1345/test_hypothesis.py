@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    qvtimperativecs::QueryCS,
-    qvtimperativecs::TransformationCS,
+from python_code import (
+    qvtimperativecs_QueryCS,
+    qvtimperativecs_TransformationCS,
     RootPackageCS,
-    qvtimperativecs::TopLevelCS,
+    qvtimperativecs_TopLevelCS,
     ModelElementCS,
-    qvtimperativecs::MappingStatementCS,
-    qvtimperativecs::VariableCS,
+    qvtimperativecs_MappingStatementCS,
+    qvtimperativecs_VariableCS,
     AbstractMappingCS,
-    qvtimperativecs::MappingCS,
+    qvtimperativecs_MappingCS,
     PredicateOrAssignmentCS,
-    qvtimperativecs::ImperativePredicateOrAssignmentCS,
-    qvtimperativecs::PathNameCS,
+    qvtimperativecs_ImperativePredicateOrAssignmentCS,
+    qvtimperativecs_PathNameCS,
     DomainCS,
-    qvtimperativecs::ImperativeDomainCS,
-    qvtimperativecs::Mapping,
+    qvtimperativecs_ImperativeDomainCS,
+    qvtimperativecs_Mapping,
     MappingStatementCS,
-    qvtimperativecs::MappingLoopCS,
-    qvtimperativecs::MappingSequenceCS,
-    qvtimperativecs::Variable,
-    qvtimperativecs::MappingCallCS,
-    qvtimperativecs::ExpCS,
+    qvtimperativecs_MappingSequenceCS,
+    qvtimperativecs_MappingLoopCS,
+    qvtimperativecs_Variable,
+    qvtimperativecs_MappingCallCS,
+    qvtimperativecs_ExpCS,
     ExpCS,
-    qvtimperativecs::MappingCallBindingCS,
+    qvtimperativecs_MappingCallBindingCS,
 )
 
 # =============================================================================
@@ -37,30 +37,30 @@ from classes import (
 
 
 
-def test_qvtimperativecs::querycs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::QueryCS)
+def test_qvtimperativecs_querycs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_QueryCS)
 
 
-def test_qvtimperativecs::querycs_constructor_exists():
-    assert callable(qvtimperativecs::QueryCS.__init__)
+def test_qvtimperativecs_querycs_constructor_exists():
+    assert callable(qvtimperativecs_QueryCS.__init__)
 
 
-def test_qvtimperativecs::querycs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::QueryCS.__init__)
+def test_qvtimperativecs_querycs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_QueryCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtimperativecs::transformationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::TransformationCS)
+def test_qvtimperativecs_transformationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_TransformationCS)
 
 
-def test_qvtimperativecs::transformationcs_constructor_exists():
-    assert callable(qvtimperativecs::TransformationCS.__init__)
+def test_qvtimperativecs_transformationcs_constructor_exists():
+    assert callable(qvtimperativecs_TransformationCS.__init__)
 
 
-def test_qvtimperativecs::transformationcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::TransformationCS.__init__)
+def test_qvtimperativecs_transformationcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_TransformationCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,16 +79,16 @@ def test_rootpackagecs_constructor_args():
 
 
 
-def test_qvtimperativecs::toplevelcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::TopLevelCS)
+def test_qvtimperativecs_toplevelcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_TopLevelCS)
 
 
-def test_qvtimperativecs::toplevelcs_constructor_exists():
-    assert callable(qvtimperativecs::TopLevelCS.__init__)
+def test_qvtimperativecs_toplevelcs_constructor_exists():
+    assert callable(qvtimperativecs_TopLevelCS.__init__)
 
 
-def test_qvtimperativecs::toplevelcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::TopLevelCS.__init__)
+def test_qvtimperativecs_toplevelcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_TopLevelCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -107,30 +107,30 @@ def test_modelelementcs_constructor_args():
 
 
 
-def test_qvtimperativecs::mappingstatementcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::MappingStatementCS)
+def test_qvtimperativecs_mappingstatementcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_MappingStatementCS)
 
 
-def test_qvtimperativecs::mappingstatementcs_constructor_exists():
-    assert callable(qvtimperativecs::MappingStatementCS.__init__)
+def test_qvtimperativecs_mappingstatementcs_constructor_exists():
+    assert callable(qvtimperativecs_MappingStatementCS.__init__)
 
 
-def test_qvtimperativecs::mappingstatementcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::MappingStatementCS.__init__)
+def test_qvtimperativecs_mappingstatementcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_MappingStatementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtimperativecs::variablecs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::VariableCS)
+def test_qvtimperativecs_variablecs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_VariableCS)
 
 
-def test_qvtimperativecs::variablecs_constructor_exists():
-    assert callable(qvtimperativecs::VariableCS.__init__)
+def test_qvtimperativecs_variablecs_constructor_exists():
+    assert callable(qvtimperativecs_VariableCS.__init__)
 
 
-def test_qvtimperativecs::variablecs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::VariableCS.__init__)
+def test_qvtimperativecs_variablecs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_VariableCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,16 +149,16 @@ def test_abstractmappingcs_constructor_args():
 
 
 
-def test_qvtimperativecs::mappingcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::MappingCS)
+def test_qvtimperativecs_mappingcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_MappingCS)
 
 
-def test_qvtimperativecs::mappingcs_constructor_exists():
-    assert callable(qvtimperativecs::MappingCS.__init__)
+def test_qvtimperativecs_mappingcs_constructor_exists():
+    assert callable(qvtimperativecs_MappingCS.__init__)
 
 
-def test_qvtimperativecs::mappingcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::MappingCS.__init__)
+def test_qvtimperativecs_mappingcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_MappingCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,23 +177,23 @@ def test_predicateorassignmentcs_constructor_args():
 
 
 
-def test_qvtimperativecs::imperativepredicateorassignmentcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::ImperativePredicateOrAssignmentCS)
+def test_qvtimperativecs_imperativepredicateorassignmentcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_ImperativePredicateOrAssignmentCS)
 
 
-def test_qvtimperativecs::imperativepredicateorassignmentcs_constructor_exists():
-    assert callable(qvtimperativecs::ImperativePredicateOrAssignmentCS.__init__)
+def test_qvtimperativecs_imperativepredicateorassignmentcs_constructor_exists():
+    assert callable(qvtimperativecs_ImperativePredicateOrAssignmentCS.__init__)
 
 
-def test_qvtimperativecs::imperativepredicateorassignmentcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::ImperativePredicateOrAssignmentCS.__init__)
+def test_qvtimperativecs_imperativepredicateorassignmentcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_ImperativePredicateOrAssignmentCS.__init__)
     params = list(sig.parameters.keys())
     assert "isAccumulate" in params, "Missing parameter 'isAccumulate'"
 
-def test_qvtimperativecs::imperativepredicateorassignmentcs_has_isAccumulate():
-    assert hasattr(qvtimperativecs::ImperativePredicateOrAssignmentCS, "isAccumulate")
+def test_qvtimperativecs_imperativepredicateorassignmentcs_has_isAccumulate():
+    assert hasattr(qvtimperativecs_ImperativePredicateOrAssignmentCS, "isAccumulate")
     descriptor = None
-    for klass in qvtimperativecs::ImperativePredicateOrAssignmentCS.__mro__:
+    for klass in qvtimperativecs_ImperativePredicateOrAssignmentCS.__mro__:
         if "isAccumulate" in klass.__dict__:
             descriptor = klass.__dict__["isAccumulate"]
             break
@@ -201,16 +201,16 @@ def test_qvtimperativecs::imperativepredicateorassignmentcs_has_isAccumulate():
 
 
 
-def test_qvtimperativecs::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::PathNameCS)
+def test_qvtimperativecs_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_PathNameCS)
 
 
-def test_qvtimperativecs::pathnamecs_constructor_exists():
-    assert callable(qvtimperativecs::PathNameCS.__init__)
+def test_qvtimperativecs_pathnamecs_constructor_exists():
+    assert callable(qvtimperativecs_PathNameCS.__init__)
 
 
-def test_qvtimperativecs::pathnamecs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::PathNameCS.__init__)
+def test_qvtimperativecs_pathnamecs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_PathNameCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -229,30 +229,30 @@ def test_domaincs_constructor_args():
 
 
 
-def test_qvtimperativecs::imperativedomaincs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::ImperativeDomainCS)
+def test_qvtimperativecs_imperativedomaincs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_ImperativeDomainCS)
 
 
-def test_qvtimperativecs::imperativedomaincs_constructor_exists():
-    assert callable(qvtimperativecs::ImperativeDomainCS.__init__)
+def test_qvtimperativecs_imperativedomaincs_constructor_exists():
+    assert callable(qvtimperativecs_ImperativeDomainCS.__init__)
 
 
-def test_qvtimperativecs::imperativedomaincs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::ImperativeDomainCS.__init__)
+def test_qvtimperativecs_imperativedomaincs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_ImperativeDomainCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtimperativecs::mapping_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::Mapping)
+def test_qvtimperativecs_mapping_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_Mapping)
 
 
-def test_qvtimperativecs::mapping_constructor_exists():
-    assert callable(qvtimperativecs::Mapping.__init__)
+def test_qvtimperativecs_mapping_constructor_exists():
+    assert callable(qvtimperativecs_Mapping.__init__)
 
 
-def test_qvtimperativecs::mapping_constructor_args():
-    sig = inspect.signature(qvtimperativecs::Mapping.__init__)
+def test_qvtimperativecs_mapping_constructor_args():
+    sig = inspect.signature(qvtimperativecs_Mapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -271,65 +271,65 @@ def test_mappingstatementcs_constructor_args():
 
 
 
-def test_qvtimperativecs::mappingloopcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::MappingLoopCS)
+def test_qvtimperativecs_mappingsequencecs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_MappingSequenceCS)
 
 
-def test_qvtimperativecs::mappingloopcs_constructor_exists():
-    assert callable(qvtimperativecs::MappingLoopCS.__init__)
+def test_qvtimperativecs_mappingsequencecs_constructor_exists():
+    assert callable(qvtimperativecs_MappingSequenceCS.__init__)
 
 
-def test_qvtimperativecs::mappingloopcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::MappingLoopCS.__init__)
+def test_qvtimperativecs_mappingsequencecs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_MappingSequenceCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtimperativecs::mappingsequencecs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::MappingSequenceCS)
+def test_qvtimperativecs_mappingloopcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_MappingLoopCS)
 
 
-def test_qvtimperativecs::mappingsequencecs_constructor_exists():
-    assert callable(qvtimperativecs::MappingSequenceCS.__init__)
+def test_qvtimperativecs_mappingloopcs_constructor_exists():
+    assert callable(qvtimperativecs_MappingLoopCS.__init__)
 
 
-def test_qvtimperativecs::mappingsequencecs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::MappingSequenceCS.__init__)
+def test_qvtimperativecs_mappingloopcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_MappingLoopCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtimperativecs::variable_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::Variable)
+def test_qvtimperativecs_variable_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_Variable)
 
 
-def test_qvtimperativecs::variable_constructor_exists():
-    assert callable(qvtimperativecs::Variable.__init__)
+def test_qvtimperativecs_variable_constructor_exists():
+    assert callable(qvtimperativecs_Variable.__init__)
 
 
-def test_qvtimperativecs::variable_constructor_args():
-    sig = inspect.signature(qvtimperativecs::Variable.__init__)
+def test_qvtimperativecs_variable_constructor_args():
+    sig = inspect.signature(qvtimperativecs_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtimperativecs::mappingcallcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::MappingCallCS)
+def test_qvtimperativecs_mappingcallcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_MappingCallCS)
 
 
-def test_qvtimperativecs::mappingcallcs_constructor_exists():
-    assert callable(qvtimperativecs::MappingCallCS.__init__)
+def test_qvtimperativecs_mappingcallcs_constructor_exists():
+    assert callable(qvtimperativecs_MappingCallCS.__init__)
 
 
-def test_qvtimperativecs::mappingcallcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::MappingCallCS.__init__)
+def test_qvtimperativecs_mappingcallcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_MappingCallCS.__init__)
     params = list(sig.parameters.keys())
     assert "isInfinite" in params, "Missing parameter 'isInfinite'"
 
-def test_qvtimperativecs::mappingcallcs_has_isInfinite():
-    assert hasattr(qvtimperativecs::MappingCallCS, "isInfinite")
+def test_qvtimperativecs_mappingcallcs_has_isInfinite():
+    assert hasattr(qvtimperativecs_MappingCallCS, "isInfinite")
     descriptor = None
-    for klass in qvtimperativecs::MappingCallCS.__mro__:
+    for klass in qvtimperativecs_MappingCallCS.__mro__:
         if "isInfinite" in klass.__dict__:
             descriptor = klass.__dict__["isInfinite"]
             break
@@ -337,16 +337,16 @@ def test_qvtimperativecs::mappingcallcs_has_isInfinite():
 
 
 
-def test_qvtimperativecs::expcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::ExpCS)
+def test_qvtimperativecs_expcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_ExpCS)
 
 
-def test_qvtimperativecs::expcs_constructor_exists():
-    assert callable(qvtimperativecs::ExpCS.__init__)
+def test_qvtimperativecs_expcs_constructor_exists():
+    assert callable(qvtimperativecs_ExpCS.__init__)
 
 
-def test_qvtimperativecs::expcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::ExpCS.__init__)
+def test_qvtimperativecs_expcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_ExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -365,23 +365,23 @@ def test_expcs_constructor_args():
 
 
 
-def test_qvtimperativecs::mappingcallbindingcs_is_not_abstract():
-    assert not inspect.isabstract(qvtimperativecs::MappingCallBindingCS)
+def test_qvtimperativecs_mappingcallbindingcs_is_not_abstract():
+    assert not inspect.isabstract(qvtimperativecs_MappingCallBindingCS)
 
 
-def test_qvtimperativecs::mappingcallbindingcs_constructor_exists():
-    assert callable(qvtimperativecs::MappingCallBindingCS.__init__)
+def test_qvtimperativecs_mappingcallbindingcs_constructor_exists():
+    assert callable(qvtimperativecs_MappingCallBindingCS.__init__)
 
 
-def test_qvtimperativecs::mappingcallbindingcs_constructor_args():
-    sig = inspect.signature(qvtimperativecs::MappingCallBindingCS.__init__)
+def test_qvtimperativecs_mappingcallbindingcs_constructor_args():
+    sig = inspect.signature(qvtimperativecs_MappingCallBindingCS.__init__)
     params = list(sig.parameters.keys())
     assert "isPolled" in params, "Missing parameter 'isPolled'"
 
-def test_qvtimperativecs::mappingcallbindingcs_has_isPolled():
-    assert hasattr(qvtimperativecs::MappingCallBindingCS, "isPolled")
+def test_qvtimperativecs_mappingcallbindingcs_has_isPolled():
+    assert hasattr(qvtimperativecs_MappingCallBindingCS, "isPolled")
     descriptor = None
-    for klass in qvtimperativecs::MappingCallBindingCS.__mro__:
+    for klass in qvtimperativecs_MappingCallBindingCS.__mro__:
         if "isPolled" in klass.__dict__:
             descriptor = klass.__dict__["isPolled"]
             break
@@ -399,226 +399,217 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-qvtimperativecs::QueryCS_strategy = st.builds(
-    qvtimperativecs::QueryCS,
+qvtimperativecs_QueryCS_strategy = st.builds(
+    qvtimperativecs_QueryCS,
 )
-qvtimperativecs::TransformationCS_strategy = st.builds(
-    qvtimperativecs::TransformationCS,
+qvtimperativecs_TransformationCS_strategy = st.builds(
+    qvtimperativecs_TransformationCS,
 )
 RootPackageCS_strategy = st.builds(
     RootPackageCS,
 )
-qvtimperativecs::TopLevelCS_strategy = st.builds(
-    qvtimperativecs::TopLevelCS,
+qvtimperativecs_TopLevelCS_strategy = st.builds(
+    qvtimperativecs_TopLevelCS,
 )
 ModelElementCS_strategy = st.builds(
     ModelElementCS,
 )
-qvtimperativecs::MappingStatementCS_strategy = st.builds(
-    qvtimperativecs::MappingStatementCS,
+qvtimperativecs_MappingStatementCS_strategy = st.builds(
+    qvtimperativecs_MappingStatementCS,
 )
-qvtimperativecs::VariableCS_strategy = st.builds(
-    qvtimperativecs::VariableCS,
+qvtimperativecs_VariableCS_strategy = st.builds(
+    qvtimperativecs_VariableCS,
 )
 AbstractMappingCS_strategy = st.builds(
     AbstractMappingCS,
 )
-qvtimperativecs::MappingCS_strategy = st.builds(
-    qvtimperativecs::MappingCS,
+qvtimperativecs_MappingCS_strategy = st.builds(
+    qvtimperativecs_MappingCS,
 )
 PredicateOrAssignmentCS_strategy = st.builds(
     PredicateOrAssignmentCS,
 )
-qvtimperativecs::ImperativePredicateOrAssignmentCS_strategy = st.builds(
-    qvtimperativecs::ImperativePredicateOrAssignmentCS,
+qvtimperativecs_ImperativePredicateOrAssignmentCS_strategy = st.builds(
+    qvtimperativecs_ImperativePredicateOrAssignmentCS,
     isAccumulate=
         st.booleans()
 )
-qvtimperativecs::PathNameCS_strategy = st.builds(
-    qvtimperativecs::PathNameCS,
+qvtimperativecs_PathNameCS_strategy = st.builds(
+    qvtimperativecs_PathNameCS,
 )
 DomainCS_strategy = st.builds(
     DomainCS,
 )
-qvtimperativecs::ImperativeDomainCS_strategy = st.builds(
-    qvtimperativecs::ImperativeDomainCS,
+qvtimperativecs_ImperativeDomainCS_strategy = st.builds(
+    qvtimperativecs_ImperativeDomainCS,
 )
-qvtimperativecs::Mapping_strategy = st.builds(
-    qvtimperativecs::Mapping,
+qvtimperativecs_Mapping_strategy = st.builds(
+    qvtimperativecs_Mapping,
 )
 MappingStatementCS_strategy = st.builds(
     MappingStatementCS,
 )
-qvtimperativecs::MappingLoopCS_strategy = st.builds(
-    qvtimperativecs::MappingLoopCS,
+qvtimperativecs_MappingSequenceCS_strategy = st.builds(
+    qvtimperativecs_MappingSequenceCS,
 )
-qvtimperativecs::MappingSequenceCS_strategy = st.builds(
-    qvtimperativecs::MappingSequenceCS,
+qvtimperativecs_MappingLoopCS_strategy = st.builds(
+    qvtimperativecs_MappingLoopCS,
 )
-qvtimperativecs::Variable_strategy = st.builds(
-    qvtimperativecs::Variable,
+qvtimperativecs_Variable_strategy = st.builds(
+    qvtimperativecs_Variable,
 )
-qvtimperativecs::MappingCallCS_strategy = st.builds(
-    qvtimperativecs::MappingCallCS,
+qvtimperativecs_MappingCallCS_strategy = st.builds(
+    qvtimperativecs_MappingCallCS,
     isInfinite=
         st.booleans()
 )
-qvtimperativecs::ExpCS_strategy = st.builds(
-    qvtimperativecs::ExpCS,
+qvtimperativecs_ExpCS_strategy = st.builds(
+    qvtimperativecs_ExpCS,
 )
 ExpCS_strategy = st.builds(
     ExpCS,
 )
-qvtimperativecs::MappingCallBindingCS_strategy = st.builds(
-    qvtimperativecs::MappingCallBindingCS,
+qvtimperativecs_MappingCallBindingCS_strategy = st.builds(
+    qvtimperativecs_MappingCallBindingCS,
     isPolled=
         st.booleans()
 )
 
-@given(instance=qvtimperativecs::QueryCS_strategy)
+@given(instance=qvtimperativecs_QueryCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::querycs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::QueryCS)
+def test_qvtimperativecs_querycs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_QueryCS)
 
-@given(instance=qvtimperativecs::TransformationCS_strategy)
+@given(instance=qvtimperativecs_TransformationCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::transformationcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::TransformationCS)
+def test_qvtimperativecs_transformationcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_TransformationCS)
 
 @given(instance=RootPackageCS_strategy)
 @settings(max_examples=50)
 def test_rootpackagecs_instantiation(instance):
     assert isinstance(instance, RootPackageCS)
 
-@given(instance=qvtimperativecs::TopLevelCS_strategy)
+@given(instance=qvtimperativecs_TopLevelCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::toplevelcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::TopLevelCS)
+def test_qvtimperativecs_toplevelcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_TopLevelCS)
 
 @given(instance=ModelElementCS_strategy)
 @settings(max_examples=50)
 def test_modelelementcs_instantiation(instance):
     assert isinstance(instance, ModelElementCS)
 
-@given(instance=qvtimperativecs::MappingStatementCS_strategy)
+@given(instance=qvtimperativecs_MappingStatementCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mappingstatementcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::MappingStatementCS)
+def test_qvtimperativecs_mappingstatementcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_MappingStatementCS)
 
-@given(instance=qvtimperativecs::VariableCS_strategy)
+@given(instance=qvtimperativecs_VariableCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::variablecs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::VariableCS)
+def test_qvtimperativecs_variablecs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_VariableCS)
 
 @given(instance=AbstractMappingCS_strategy)
 @settings(max_examples=50)
 def test_abstractmappingcs_instantiation(instance):
     assert isinstance(instance, AbstractMappingCS)
 
-@given(instance=qvtimperativecs::MappingCS_strategy)
+@given(instance=qvtimperativecs_MappingCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mappingcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::MappingCS)
+def test_qvtimperativecs_mappingcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_MappingCS)
 
 @given(instance=PredicateOrAssignmentCS_strategy)
 @settings(max_examples=50)
 def test_predicateorassignmentcs_instantiation(instance):
     assert isinstance(instance, PredicateOrAssignmentCS)
 
-@given(instance=qvtimperativecs::ImperativePredicateOrAssignmentCS_strategy)
+@given(instance=qvtimperativecs_ImperativePredicateOrAssignmentCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::imperativepredicateorassignmentcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::ImperativePredicateOrAssignmentCS)
-
-@given(instance=qvtimperativecs::ImperativePredicateOrAssignmentCS_strategy)
-def test_qvtimperativecs::imperativepredicateorassignmentcs_isAccumulate_type(instance):
-    assert isinstance(instance.isAccumulate, bool)
+def test_qvtimperativecs_imperativepredicateorassignmentcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_ImperativePredicateOrAssignmentCS)
 
 
-@given(instance=qvtimperativecs::ImperativePredicateOrAssignmentCS_strategy)
-def test_qvtimperativecs::imperativepredicateorassignmentcs_isAccumulate_setter(instance):
+
+@given(instance=qvtimperativecs_ImperativePredicateOrAssignmentCS_strategy)
+def test_qvtimperativecs_imperativepredicateorassignmentcs_isAccumulate_setter(instance):
     original = instance.isAccumulate
     instance.isAccumulate = original
     assert instance.isAccumulate == original
 
-@given(instance=qvtimperativecs::PathNameCS_strategy)
+@given(instance=qvtimperativecs_PathNameCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::pathnamecs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::PathNameCS)
+def test_qvtimperativecs_pathnamecs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_PathNameCS)
 
 @given(instance=DomainCS_strategy)
 @settings(max_examples=50)
 def test_domaincs_instantiation(instance):
     assert isinstance(instance, DomainCS)
 
-@given(instance=qvtimperativecs::ImperativeDomainCS_strategy)
+@given(instance=qvtimperativecs_ImperativeDomainCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::imperativedomaincs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::ImperativeDomainCS)
+def test_qvtimperativecs_imperativedomaincs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_ImperativeDomainCS)
 
-@given(instance=qvtimperativecs::Mapping_strategy)
+@given(instance=qvtimperativecs_Mapping_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mapping_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::Mapping)
+def test_qvtimperativecs_mapping_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_Mapping)
 
 @given(instance=MappingStatementCS_strategy)
 @settings(max_examples=50)
 def test_mappingstatementcs_instantiation(instance):
     assert isinstance(instance, MappingStatementCS)
 
-@given(instance=qvtimperativecs::MappingLoopCS_strategy)
+@given(instance=qvtimperativecs_MappingSequenceCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mappingloopcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::MappingLoopCS)
+def test_qvtimperativecs_mappingsequencecs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_MappingSequenceCS)
 
-@given(instance=qvtimperativecs::MappingSequenceCS_strategy)
+@given(instance=qvtimperativecs_MappingLoopCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mappingsequencecs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::MappingSequenceCS)
+def test_qvtimperativecs_mappingloopcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_MappingLoopCS)
 
-@given(instance=qvtimperativecs::Variable_strategy)
+@given(instance=qvtimperativecs_Variable_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::variable_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::Variable)
+def test_qvtimperativecs_variable_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_Variable)
 
-@given(instance=qvtimperativecs::MappingCallCS_strategy)
+@given(instance=qvtimperativecs_MappingCallCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mappingcallcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::MappingCallCS)
-
-@given(instance=qvtimperativecs::MappingCallCS_strategy)
-def test_qvtimperativecs::mappingcallcs_isInfinite_type(instance):
-    assert isinstance(instance.isInfinite, bool)
+def test_qvtimperativecs_mappingcallcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_MappingCallCS)
 
 
-@given(instance=qvtimperativecs::MappingCallCS_strategy)
-def test_qvtimperativecs::mappingcallcs_isInfinite_setter(instance):
+
+@given(instance=qvtimperativecs_MappingCallCS_strategy)
+def test_qvtimperativecs_mappingcallcs_isInfinite_setter(instance):
     original = instance.isInfinite
     instance.isInfinite = original
     assert instance.isInfinite == original
 
-@given(instance=qvtimperativecs::ExpCS_strategy)
+@given(instance=qvtimperativecs_ExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::expcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::ExpCS)
+def test_qvtimperativecs_expcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_ExpCS)
 
 @given(instance=ExpCS_strategy)
 @settings(max_examples=50)
 def test_expcs_instantiation(instance):
     assert isinstance(instance, ExpCS)
 
-@given(instance=qvtimperativecs::MappingCallBindingCS_strategy)
+@given(instance=qvtimperativecs_MappingCallBindingCS_strategy)
 @settings(max_examples=50)
-def test_qvtimperativecs::mappingcallbindingcs_instantiation(instance):
-    assert isinstance(instance, qvtimperativecs::MappingCallBindingCS)
-
-@given(instance=qvtimperativecs::MappingCallBindingCS_strategy)
-def test_qvtimperativecs::mappingcallbindingcs_isPolled_type(instance):
-    assert isinstance(instance.isPolled, bool)
+def test_qvtimperativecs_mappingcallbindingcs_instantiation(instance):
+    assert isinstance(instance, qvtimperativecs_MappingCallBindingCS)
 
 
-@given(instance=qvtimperativecs::MappingCallBindingCS_strategy)
-def test_qvtimperativecs::mappingcallbindingcs_isPolled_setter(instance):
+
+@given(instance=qvtimperativecs_MappingCallBindingCS_strategy)
+def test_qvtimperativecs_mappingcallbindingcs_isPolled_setter(instance):
     original = instance.isPolled
     instance.isPolled = original
     assert instance.isPolled == original

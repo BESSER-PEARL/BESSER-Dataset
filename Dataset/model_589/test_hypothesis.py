@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    AssistantMVC::Observer,
-    AssistantMVC::Observable,
+from python_code import (
+    AssistantMVC_Observer,
+    AssistantMVC_Observable,
     ExamItem,
-    AssistantMVC::MultipleChoice,
-    AssistantMVC::Open,
+    AssistantMVC_MultipleChoice,
+    AssistantMVC_Open,
     ExamItemView,
-    AssistantMVC::MultipleChoiceView,
+    AssistantMVC_MultipleChoiceView,
     ExamView,
-    AssistantMVC::OpenView,
+    AssistantMVC_OpenView,
     View,
-    AssistantMVC::ExamItemView,
-    AssistantMVC::ExamView,
+    AssistantMVC_ExamItemView,
+    AssistantMVC_ExamView,
     ExamItemController,
-    AssistantMVC::OpenController,
-    AssistantMVC::MultipleChoiceController,
+    AssistantMVC_OpenController,
+    AssistantMVC_MultipleChoiceController,
     Controller,
-    AssistantMVC::ExamItemController,
-    AssistantMVC::ExamController,
+    AssistantMVC_ExamItemController,
+    AssistantMVC_ExamController,
     Observer,
-    AssistantMVC::Controller,
-    AssistantMVC::View,
+    AssistantMVC_View,
+    AssistantMVC_Controller,
     Observable,
-    AssistantMVC::ExamItem,
-    AssistantMVC::Exam,
+    AssistantMVC_ExamItem,
+    AssistantMVC_Exam,
 )
 
 # =============================================================================
@@ -38,30 +38,30 @@ from classes import (
 
 
 
-def test_assistantmvc::observer_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::Observer)
+def test_assistantmvc_observer_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_Observer)
 
 
-def test_assistantmvc::observer_constructor_exists():
-    assert callable(AssistantMVC::Observer.__init__)
+def test_assistantmvc_observer_constructor_exists():
+    assert callable(AssistantMVC_Observer.__init__)
 
 
-def test_assistantmvc::observer_constructor_args():
-    sig = inspect.signature(AssistantMVC::Observer.__init__)
+def test_assistantmvc_observer_constructor_args():
+    sig = inspect.signature(AssistantMVC_Observer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assistantmvc::observable_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::Observable)
+def test_assistantmvc_observable_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_Observable)
 
 
-def test_assistantmvc::observable_constructor_exists():
-    assert callable(AssistantMVC::Observable.__init__)
+def test_assistantmvc_observable_constructor_exists():
+    assert callable(AssistantMVC_Observable.__init__)
 
 
-def test_assistantmvc::observable_constructor_args():
-    sig = inspect.signature(AssistantMVC::Observable.__init__)
+def test_assistantmvc_observable_constructor_args():
+    sig = inspect.signature(AssistantMVC_Observable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -80,30 +80,30 @@ def test_examitem_constructor_args():
 
 
 
-def test_assistantmvc::multiplechoice_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::MultipleChoice)
+def test_assistantmvc_multiplechoice_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_MultipleChoice)
 
 
-def test_assistantmvc::multiplechoice_constructor_exists():
-    assert callable(AssistantMVC::MultipleChoice.__init__)
+def test_assistantmvc_multiplechoice_constructor_exists():
+    assert callable(AssistantMVC_MultipleChoice.__init__)
 
 
-def test_assistantmvc::multiplechoice_constructor_args():
-    sig = inspect.signature(AssistantMVC::MultipleChoice.__init__)
+def test_assistantmvc_multiplechoice_constructor_args():
+    sig = inspect.signature(AssistantMVC_MultipleChoice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assistantmvc::open_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::Open)
+def test_assistantmvc_open_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_Open)
 
 
-def test_assistantmvc::open_constructor_exists():
-    assert callable(AssistantMVC::Open.__init__)
+def test_assistantmvc_open_constructor_exists():
+    assert callable(AssistantMVC_Open.__init__)
 
 
-def test_assistantmvc::open_constructor_args():
-    sig = inspect.signature(AssistantMVC::Open.__init__)
+def test_assistantmvc_open_constructor_args():
+    sig = inspect.signature(AssistantMVC_Open.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -122,16 +122,16 @@ def test_examitemview_constructor_args():
 
 
 
-def test_assistantmvc::multiplechoiceview_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::MultipleChoiceView)
+def test_assistantmvc_multiplechoiceview_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_MultipleChoiceView)
 
 
-def test_assistantmvc::multiplechoiceview_constructor_exists():
-    assert callable(AssistantMVC::MultipleChoiceView.__init__)
+def test_assistantmvc_multiplechoiceview_constructor_exists():
+    assert callable(AssistantMVC_MultipleChoiceView.__init__)
 
 
-def test_assistantmvc::multiplechoiceview_constructor_args():
-    sig = inspect.signature(AssistantMVC::MultipleChoiceView.__init__)
+def test_assistantmvc_multiplechoiceview_constructor_args():
+    sig = inspect.signature(AssistantMVC_MultipleChoiceView.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -150,16 +150,16 @@ def test_examview_constructor_args():
 
 
 
-def test_assistantmvc::openview_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::OpenView)
+def test_assistantmvc_openview_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_OpenView)
 
 
-def test_assistantmvc::openview_constructor_exists():
-    assert callable(AssistantMVC::OpenView.__init__)
+def test_assistantmvc_openview_constructor_exists():
+    assert callable(AssistantMVC_OpenView.__init__)
 
 
-def test_assistantmvc::openview_constructor_args():
-    sig = inspect.signature(AssistantMVC::OpenView.__init__)
+def test_assistantmvc_openview_constructor_args():
+    sig = inspect.signature(AssistantMVC_OpenView.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,30 +178,30 @@ def test_view_constructor_args():
 
 
 
-def test_assistantmvc::examitemview_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::ExamItemView)
+def test_assistantmvc_examitemview_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_ExamItemView)
 
 
-def test_assistantmvc::examitemview_constructor_exists():
-    assert callable(AssistantMVC::ExamItemView.__init__)
+def test_assistantmvc_examitemview_constructor_exists():
+    assert callable(AssistantMVC_ExamItemView.__init__)
 
 
-def test_assistantmvc::examitemview_constructor_args():
-    sig = inspect.signature(AssistantMVC::ExamItemView.__init__)
+def test_assistantmvc_examitemview_constructor_args():
+    sig = inspect.signature(AssistantMVC_ExamItemView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assistantmvc::examview_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::ExamView)
+def test_assistantmvc_examview_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_ExamView)
 
 
-def test_assistantmvc::examview_constructor_exists():
-    assert callable(AssistantMVC::ExamView.__init__)
+def test_assistantmvc_examview_constructor_exists():
+    assert callable(AssistantMVC_ExamView.__init__)
 
 
-def test_assistantmvc::examview_constructor_args():
-    sig = inspect.signature(AssistantMVC::ExamView.__init__)
+def test_assistantmvc_examview_constructor_args():
+    sig = inspect.signature(AssistantMVC_ExamView.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -220,30 +220,30 @@ def test_examitemcontroller_constructor_args():
 
 
 
-def test_assistantmvc::opencontroller_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::OpenController)
+def test_assistantmvc_opencontroller_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_OpenController)
 
 
-def test_assistantmvc::opencontroller_constructor_exists():
-    assert callable(AssistantMVC::OpenController.__init__)
+def test_assistantmvc_opencontroller_constructor_exists():
+    assert callable(AssistantMVC_OpenController.__init__)
 
 
-def test_assistantmvc::opencontroller_constructor_args():
-    sig = inspect.signature(AssistantMVC::OpenController.__init__)
+def test_assistantmvc_opencontroller_constructor_args():
+    sig = inspect.signature(AssistantMVC_OpenController.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assistantmvc::multiplechoicecontroller_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::MultipleChoiceController)
+def test_assistantmvc_multiplechoicecontroller_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_MultipleChoiceController)
 
 
-def test_assistantmvc::multiplechoicecontroller_constructor_exists():
-    assert callable(AssistantMVC::MultipleChoiceController.__init__)
+def test_assistantmvc_multiplechoicecontroller_constructor_exists():
+    assert callable(AssistantMVC_MultipleChoiceController.__init__)
 
 
-def test_assistantmvc::multiplechoicecontroller_constructor_args():
-    sig = inspect.signature(AssistantMVC::MultipleChoiceController.__init__)
+def test_assistantmvc_multiplechoicecontroller_constructor_args():
+    sig = inspect.signature(AssistantMVC_MultipleChoiceController.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -262,30 +262,30 @@ def test_controller_constructor_args():
 
 
 
-def test_assistantmvc::examitemcontroller_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::ExamItemController)
+def test_assistantmvc_examitemcontroller_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_ExamItemController)
 
 
-def test_assistantmvc::examitemcontroller_constructor_exists():
-    assert callable(AssistantMVC::ExamItemController.__init__)
+def test_assistantmvc_examitemcontroller_constructor_exists():
+    assert callable(AssistantMVC_ExamItemController.__init__)
 
 
-def test_assistantmvc::examitemcontroller_constructor_args():
-    sig = inspect.signature(AssistantMVC::ExamItemController.__init__)
+def test_assistantmvc_examitemcontroller_constructor_args():
+    sig = inspect.signature(AssistantMVC_ExamItemController.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assistantmvc::examcontroller_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::ExamController)
+def test_assistantmvc_examcontroller_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_ExamController)
 
 
-def test_assistantmvc::examcontroller_constructor_exists():
-    assert callable(AssistantMVC::ExamController.__init__)
+def test_assistantmvc_examcontroller_constructor_exists():
+    assert callable(AssistantMVC_ExamController.__init__)
 
 
-def test_assistantmvc::examcontroller_constructor_args():
-    sig = inspect.signature(AssistantMVC::ExamController.__init__)
+def test_assistantmvc_examcontroller_constructor_args():
+    sig = inspect.signature(AssistantMVC_ExamController.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -304,51 +304,51 @@ def test_observer_constructor_args():
 
 
 
-def test_assistantmvc::controller_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::Controller)
+def test_assistantmvc_view_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_View)
 
 
-def test_assistantmvc::controller_constructor_exists():
-    assert callable(AssistantMVC::Controller.__init__)
+def test_assistantmvc_view_constructor_exists():
+    assert callable(AssistantMVC_View.__init__)
 
 
-def test_assistantmvc::controller_constructor_args():
-    sig = inspect.signature(AssistantMVC::Controller.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_assistantmvc::view_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::View)
-
-
-def test_assistantmvc::view_constructor_exists():
-    assert callable(AssistantMVC::View.__init__)
-
-
-def test_assistantmvc::view_constructor_args():
-    sig = inspect.signature(AssistantMVC::View.__init__)
+def test_assistantmvc_view_constructor_args():
+    sig = inspect.signature(AssistantMVC_View.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_assistantmvc::view_has_color():
-    assert hasattr(AssistantMVC::View, "color")
+def test_assistantmvc_view_has_color():
+    assert hasattr(AssistantMVC_View, "color")
     descriptor = None
-    for klass in AssistantMVC::View.__mro__:
+    for klass in AssistantMVC_View.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
-def test_assistantmvc::view_has_name():
-    assert hasattr(AssistantMVC::View, "name")
+def test_assistantmvc_view_has_name():
+    assert hasattr(AssistantMVC_View, "name")
     descriptor = None
-    for klass in AssistantMVC::View.__mro__:
+    for klass in AssistantMVC_View.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_assistantmvc_controller_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_Controller)
+
+
+def test_assistantmvc_controller_constructor_exists():
+    assert callable(AssistantMVC_Controller.__init__)
+
+
+def test_assistantmvc_controller_constructor_args():
+    sig = inspect.signature(AssistantMVC_Controller.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -366,23 +366,23 @@ def test_observable_constructor_args():
 
 
 
-def test_assistantmvc::examitem_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::ExamItem)
+def test_assistantmvc_examitem_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_ExamItem)
 
 
-def test_assistantmvc::examitem_constructor_exists():
-    assert callable(AssistantMVC::ExamItem.__init__)
+def test_assistantmvc_examitem_constructor_exists():
+    assert callable(AssistantMVC_ExamItem.__init__)
 
 
-def test_assistantmvc::examitem_constructor_args():
-    sig = inspect.signature(AssistantMVC::ExamItem.__init__)
+def test_assistantmvc_examitem_constructor_args():
+    sig = inspect.signature(AssistantMVC_ExamItem.__init__)
     params = list(sig.parameters.keys())
     assert "question" in params, "Missing parameter 'question'"
 
-def test_assistantmvc::examitem_has_question():
-    assert hasattr(AssistantMVC::ExamItem, "question")
+def test_assistantmvc_examitem_has_question():
+    assert hasattr(AssistantMVC_ExamItem, "question")
     descriptor = None
-    for klass in AssistantMVC::ExamItem.__mro__:
+    for klass in AssistantMVC_ExamItem.__mro__:
         if "question" in klass.__dict__:
             descriptor = klass.__dict__["question"]
             break
@@ -390,16 +390,16 @@ def test_assistantmvc::examitem_has_question():
 
 
 
-def test_assistantmvc::exam_is_not_abstract():
-    assert not inspect.isabstract(AssistantMVC::Exam)
+def test_assistantmvc_exam_is_not_abstract():
+    assert not inspect.isabstract(AssistantMVC_Exam)
 
 
-def test_assistantmvc::exam_constructor_exists():
-    assert callable(AssistantMVC::Exam.__init__)
+def test_assistantmvc_exam_constructor_exists():
+    assert callable(AssistantMVC_Exam.__init__)
 
 
-def test_assistantmvc::exam_constructor_args():
-    sig = inspect.signature(AssistantMVC::Exam.__init__)
+def test_assistantmvc_exam_constructor_args():
+    sig = inspect.signature(AssistantMVC_Exam.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -414,234 +414,225 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-AssistantMVC::Observer_strategy = st.builds(
-    AssistantMVC::Observer,
+AssistantMVC_Observer_strategy = st.builds(
+    AssistantMVC_Observer,
 )
-AssistantMVC::Observable_strategy = st.builds(
-    AssistantMVC::Observable,
+AssistantMVC_Observable_strategy = st.builds(
+    AssistantMVC_Observable,
 )
 ExamItem_strategy = st.builds(
     ExamItem,
 )
-AssistantMVC::MultipleChoice_strategy = st.builds(
-    AssistantMVC::MultipleChoice,
+AssistantMVC_MultipleChoice_strategy = st.builds(
+    AssistantMVC_MultipleChoice,
 )
-AssistantMVC::Open_strategy = st.builds(
-    AssistantMVC::Open,
+AssistantMVC_Open_strategy = st.builds(
+    AssistantMVC_Open,
 )
 ExamItemView_strategy = st.builds(
     ExamItemView,
 )
-AssistantMVC::MultipleChoiceView_strategy = st.builds(
-    AssistantMVC::MultipleChoiceView,
+AssistantMVC_MultipleChoiceView_strategy = st.builds(
+    AssistantMVC_MultipleChoiceView,
 )
 ExamView_strategy = st.builds(
     ExamView,
 )
-AssistantMVC::OpenView_strategy = st.builds(
-    AssistantMVC::OpenView,
+AssistantMVC_OpenView_strategy = st.builds(
+    AssistantMVC_OpenView,
 )
 View_strategy = st.builds(
     View,
 )
-AssistantMVC::ExamItemView_strategy = st.builds(
-    AssistantMVC::ExamItemView,
+AssistantMVC_ExamItemView_strategy = st.builds(
+    AssistantMVC_ExamItemView,
 )
-AssistantMVC::ExamView_strategy = st.builds(
-    AssistantMVC::ExamView,
+AssistantMVC_ExamView_strategy = st.builds(
+    AssistantMVC_ExamView,
 )
 ExamItemController_strategy = st.builds(
     ExamItemController,
 )
-AssistantMVC::OpenController_strategy = st.builds(
-    AssistantMVC::OpenController,
+AssistantMVC_OpenController_strategy = st.builds(
+    AssistantMVC_OpenController,
 )
-AssistantMVC::MultipleChoiceController_strategy = st.builds(
-    AssistantMVC::MultipleChoiceController,
+AssistantMVC_MultipleChoiceController_strategy = st.builds(
+    AssistantMVC_MultipleChoiceController,
 )
 Controller_strategy = st.builds(
     Controller,
 )
-AssistantMVC::ExamItemController_strategy = st.builds(
-    AssistantMVC::ExamItemController,
+AssistantMVC_ExamItemController_strategy = st.builds(
+    AssistantMVC_ExamItemController,
 )
-AssistantMVC::ExamController_strategy = st.builds(
-    AssistantMVC::ExamController,
+AssistantMVC_ExamController_strategy = st.builds(
+    AssistantMVC_ExamController,
 )
 Observer_strategy = st.builds(
     Observer,
 )
-AssistantMVC::Controller_strategy = st.builds(
-    AssistantMVC::Controller,
-)
-AssistantMVC::View_strategy = st.builds(
-    AssistantMVC::View,
+AssistantMVC_View_strategy = st.builds(
+    AssistantMVC_View,
     color=
         safe_text,
     name=
         safe_text
 )
+AssistantMVC_Controller_strategy = st.builds(
+    AssistantMVC_Controller,
+)
 Observable_strategy = st.builds(
     Observable,
 )
-AssistantMVC::ExamItem_strategy = st.builds(
-    AssistantMVC::ExamItem,
+AssistantMVC_ExamItem_strategy = st.builds(
+    AssistantMVC_ExamItem,
     question=
         safe_text
 )
-AssistantMVC::Exam_strategy = st.builds(
-    AssistantMVC::Exam,
+AssistantMVC_Exam_strategy = st.builds(
+    AssistantMVC_Exam,
 )
 
-@given(instance=AssistantMVC::Observer_strategy)
+@given(instance=AssistantMVC_Observer_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::observer_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::Observer)
+def test_assistantmvc_observer_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_Observer)
 
-@given(instance=AssistantMVC::Observable_strategy)
+@given(instance=AssistantMVC_Observable_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::observable_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::Observable)
+def test_assistantmvc_observable_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_Observable)
 
 @given(instance=ExamItem_strategy)
 @settings(max_examples=50)
 def test_examitem_instantiation(instance):
     assert isinstance(instance, ExamItem)
 
-@given(instance=AssistantMVC::MultipleChoice_strategy)
+@given(instance=AssistantMVC_MultipleChoice_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::multiplechoice_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::MultipleChoice)
+def test_assistantmvc_multiplechoice_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_MultipleChoice)
 
-@given(instance=AssistantMVC::Open_strategy)
+@given(instance=AssistantMVC_Open_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::open_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::Open)
+def test_assistantmvc_open_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_Open)
 
 @given(instance=ExamItemView_strategy)
 @settings(max_examples=50)
 def test_examitemview_instantiation(instance):
     assert isinstance(instance, ExamItemView)
 
-@given(instance=AssistantMVC::MultipleChoiceView_strategy)
+@given(instance=AssistantMVC_MultipleChoiceView_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::multiplechoiceview_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::MultipleChoiceView)
+def test_assistantmvc_multiplechoiceview_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_MultipleChoiceView)
 
 @given(instance=ExamView_strategy)
 @settings(max_examples=50)
 def test_examview_instantiation(instance):
     assert isinstance(instance, ExamView)
 
-@given(instance=AssistantMVC::OpenView_strategy)
+@given(instance=AssistantMVC_OpenView_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::openview_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::OpenView)
+def test_assistantmvc_openview_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_OpenView)
 
 @given(instance=View_strategy)
 @settings(max_examples=50)
 def test_view_instantiation(instance):
     assert isinstance(instance, View)
 
-@given(instance=AssistantMVC::ExamItemView_strategy)
+@given(instance=AssistantMVC_ExamItemView_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::examitemview_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::ExamItemView)
+def test_assistantmvc_examitemview_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_ExamItemView)
 
-@given(instance=AssistantMVC::ExamView_strategy)
+@given(instance=AssistantMVC_ExamView_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::examview_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::ExamView)
+def test_assistantmvc_examview_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_ExamView)
 
 @given(instance=ExamItemController_strategy)
 @settings(max_examples=50)
 def test_examitemcontroller_instantiation(instance):
     assert isinstance(instance, ExamItemController)
 
-@given(instance=AssistantMVC::OpenController_strategy)
+@given(instance=AssistantMVC_OpenController_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::opencontroller_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::OpenController)
+def test_assistantmvc_opencontroller_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_OpenController)
 
-@given(instance=AssistantMVC::MultipleChoiceController_strategy)
+@given(instance=AssistantMVC_MultipleChoiceController_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::multiplechoicecontroller_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::MultipleChoiceController)
+def test_assistantmvc_multiplechoicecontroller_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_MultipleChoiceController)
 
 @given(instance=Controller_strategy)
 @settings(max_examples=50)
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=AssistantMVC::ExamItemController_strategy)
+@given(instance=AssistantMVC_ExamItemController_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::examitemcontroller_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::ExamItemController)
+def test_assistantmvc_examitemcontroller_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_ExamItemController)
 
-@given(instance=AssistantMVC::ExamController_strategy)
+@given(instance=AssistantMVC_ExamController_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::examcontroller_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::ExamController)
+def test_assistantmvc_examcontroller_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_ExamController)
 
 @given(instance=Observer_strategy)
 @settings(max_examples=50)
 def test_observer_instantiation(instance):
     assert isinstance(instance, Observer)
 
-@given(instance=AssistantMVC::Controller_strategy)
+@given(instance=AssistantMVC_View_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::controller_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::Controller)
-
-@given(instance=AssistantMVC::View_strategy)
-@settings(max_examples=50)
-def test_assistantmvc::view_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::View)
-
-@given(instance=AssistantMVC::View_strategy)
-def test_assistantmvc::view_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_assistantmvc_view_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_View)
 
 
-@given(instance=AssistantMVC::View_strategy)
-def test_assistantmvc::view_color_setter(instance):
+
+@given(instance=AssistantMVC_View_strategy)
+def test_assistantmvc_view_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=AssistantMVC::View_strategy)
-def test_assistantmvc::view_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=AssistantMVC::View_strategy)
-def test_assistantmvc::view_name_setter(instance):
+@given(instance=AssistantMVC_View_strategy)
+def test_assistantmvc_view_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=AssistantMVC_Controller_strategy)
+@settings(max_examples=50)
+def test_assistantmvc_controller_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_Controller)
 
 @given(instance=Observable_strategy)
 @settings(max_examples=50)
 def test_observable_instantiation(instance):
     assert isinstance(instance, Observable)
 
-@given(instance=AssistantMVC::ExamItem_strategy)
+@given(instance=AssistantMVC_ExamItem_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::examitem_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::ExamItem)
-
-@given(instance=AssistantMVC::ExamItem_strategy)
-def test_assistantmvc::examitem_question_type(instance):
-    assert isinstance(instance.question, str)
+def test_assistantmvc_examitem_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_ExamItem)
 
 
-@given(instance=AssistantMVC::ExamItem_strategy)
-def test_assistantmvc::examitem_question_setter(instance):
+
+@given(instance=AssistantMVC_ExamItem_strategy)
+def test_assistantmvc_examitem_question_setter(instance):
     original = instance.question
     instance.question = original
     assert instance.question == original
 
-@given(instance=AssistantMVC::Exam_strategy)
+@given(instance=AssistantMVC_Exam_strategy)
 @settings(max_examples=50)
-def test_assistantmvc::exam_instantiation(instance):
-    assert isinstance(instance, AssistantMVC::Exam)
+def test_assistantmvc_exam_instantiation(instance):
+    assert isinstance(instance, AssistantMVC_Exam)

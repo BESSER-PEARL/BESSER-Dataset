@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsm::Transition,
-    fsm::State,
-    fsm::FiniteStateMachine,
+from python_code import (
+    fsm_Transition,
+    fsm_State,
+    fsm_FiniteStateMachine,
 )
 
 # =============================================================================
@@ -17,43 +17,43 @@ from classes import (
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "output" in params, "Missing parameter 'output'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "output" in params, "Missing parameter 'output'"
     assert "input" in params, "Missing parameter 'input'"
 
-def test_fsm::transition_has_output():
-    assert hasattr(fsm::Transition, "output")
+def test_fsm_transition_has_name():
+    assert hasattr(fsm_Transition, "name")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fsm::transition_has_name():
-    assert hasattr(fsm::Transition, "name")
-    descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_fsm::transition_has_input():
-    assert hasattr(fsm::Transition, "input")
+def test_fsm_transition_has_output():
+    assert hasattr(fsm_Transition, "output")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fsm_transition_has_input():
+    assert hasattr(fsm_Transition, "input")
+    descriptor = None
+    for klass in fsm_Transition.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
@@ -61,33 +61,33 @@ def test_fsm::transition_has_input():
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "isInitialState" in params, "Missing parameter 'isInitialState'"
 
-def test_fsm::state_has_name():
-    assert hasattr(fsm::State, "name")
+def test_fsm_state_has_name():
+    assert hasattr(fsm_State, "name")
     descriptor = None
-    for klass in fsm::State.__mro__:
+    for klass in fsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_fsm::state_has_isInitialState():
-    assert hasattr(fsm::State, "isInitialState")
+def test_fsm_state_has_isInitialState():
+    assert hasattr(fsm_State, "isInitialState")
     descriptor = None
-    for klass in fsm::State.__mro__:
+    for klass in fsm_State.__mro__:
         if "isInitialState" in klass.__dict__:
             descriptor = klass.__dict__["isInitialState"]
             break
@@ -95,23 +95,23 @@ def test_fsm::state_has_isInitialState():
 
 
 
-def test_fsm::finitestatemachine_is_not_abstract():
-    assert not inspect.isabstract(fsm::FiniteStateMachine)
+def test_fsm_finitestatemachine_is_not_abstract():
+    assert not inspect.isabstract(fsm_FiniteStateMachine)
 
 
-def test_fsm::finitestatemachine_constructor_exists():
-    assert callable(fsm::FiniteStateMachine.__init__)
+def test_fsm_finitestatemachine_constructor_exists():
+    assert callable(fsm_FiniteStateMachine.__init__)
 
 
-def test_fsm::finitestatemachine_constructor_args():
-    sig = inspect.signature(fsm::FiniteStateMachine.__init__)
+def test_fsm_finitestatemachine_constructor_args():
+    sig = inspect.signature(fsm_FiniteStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::finitestatemachine_has_name():
-    assert hasattr(fsm::FiniteStateMachine, "name")
+def test_fsm_finitestatemachine_has_name():
+    assert hasattr(fsm_FiniteStateMachine, "name")
     descriptor = None
-    for klass in fsm::FiniteStateMachine.__mro__:
+    for klass in fsm_FiniteStateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -129,105 +129,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
-    output=
-        safe_text,
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
     name=
+        safe_text,
+    output=
         safe_text,
     input=
         safe_text
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
+fsm_State_strategy = st.builds(
+    fsm_State,
     name=
         safe_text,
     isInitialState=
         st.booleans()
 )
-fsm::FiniteStateMachine_strategy = st.builds(
-    fsm::FiniteStateMachine,
+fsm_FiniteStateMachine_strategy = st.builds(
+    fsm_FiniteStateMachine,
     name=
         safe_text
 )
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_output_type(instance):
-    assert isinstance(instance.output, str)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_output_setter(instance):
+
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_output_setter(instance):
     original = instance.output
     instance.output = original
     assert instance.output == original
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_input_type(instance):
-    assert isinstance(instance.input, str)
-
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_input_setter(instance):
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_input_setter(instance):
     original = instance.input
     instance.input = original
     assert instance.input == original
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
-
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)
 
 
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_setter(instance):
+
+@given(instance=fsm_State_strategy)
+def test_fsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsm::State_strategy)
-def test_fsm::state_isInitialState_type(instance):
-    assert isinstance(instance.isInitialState, bool)
 
 
-@given(instance=fsm::State_strategy)
-def test_fsm::state_isInitialState_setter(instance):
+@given(instance=fsm_State_strategy)
+def test_fsm_state_isInitialState_setter(instance):
     original = instance.isInitialState
     instance.isInitialState = original
     assert instance.isInitialState == original
 
-@given(instance=fsm::FiniteStateMachine_strategy)
+@given(instance=fsm_FiniteStateMachine_strategy)
 @settings(max_examples=50)
-def test_fsm::finitestatemachine_instantiation(instance):
-    assert isinstance(instance, fsm::FiniteStateMachine)
-
-@given(instance=fsm::FiniteStateMachine_strategy)
-def test_fsm::finitestatemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_finitestatemachine_instantiation(instance):
+    assert isinstance(instance, fsm_FiniteStateMachine)
 
 
-@given(instance=fsm::FiniteStateMachine_strategy)
-def test_fsm::finitestatemachine_name_setter(instance):
+
+@given(instance=fsm_FiniteStateMachine_strategy)
+def test_fsm_finitestatemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Product,
-    ordersystem::special::LimitedEditionProduct,
+    ordersystem_special_LimitedEditionProduct,
     Customer,
-    ordersystem::special::PreferredCustomer,
-    ordersystem::Account,
-    ordersystem::Warehouse,
-    ordersystem::OrderSystem,
-    ordersystem::Product,
-    ordersystem::LineItem,
-    ordersystem::Customer,
-    ordersystem::Order,
-    ordersystem::Address,
-    ordersystem::InventoryItem,
+    ordersystem_special_PreferredCustomer,
+    ordersystem_Account,
+    ordersystem_Warehouse,
+    ordersystem_OrderSystem,
+    ordersystem_Product,
+    ordersystem_LineItem,
+    ordersystem_Customer,
+    ordersystem_Order,
+    ordersystem_Address,
+    ordersystem_InventoryItem,
 )
 
 # =============================================================================
@@ -41,23 +41,23 @@ def test_product_constructor_args():
 
 
 
-def test_ordersystem::special::limitededitionproduct_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::special::LimitedEditionProduct)
+def test_ordersystem_special_limitededitionproduct_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_special_LimitedEditionProduct)
 
 
-def test_ordersystem::special::limitededitionproduct_constructor_exists():
-    assert callable(ordersystem::special::LimitedEditionProduct.__init__)
+def test_ordersystem_special_limitededitionproduct_constructor_exists():
+    assert callable(ordersystem_special_LimitedEditionProduct.__init__)
 
 
-def test_ordersystem::special::limitededitionproduct_constructor_args():
-    sig = inspect.signature(ordersystem::special::LimitedEditionProduct.__init__)
+def test_ordersystem_special_limitededitionproduct_constructor_args():
+    sig = inspect.signature(ordersystem_special_LimitedEditionProduct.__init__)
     params = list(sig.parameters.keys())
     assert "availableUntil" in params, "Missing parameter 'availableUntil'"
 
-def test_ordersystem::special::limitededitionproduct_has_availableUntil():
-    assert hasattr(ordersystem::special::LimitedEditionProduct, "availableUntil")
+def test_ordersystem_special_limitededitionproduct_has_availableUntil():
+    assert hasattr(ordersystem_special_LimitedEditionProduct, "availableUntil")
     descriptor = None
-    for klass in ordersystem::special::LimitedEditionProduct.__mro__:
+    for klass in ordersystem_special_LimitedEditionProduct.__mro__:
         if "availableUntil" in klass.__dict__:
             descriptor = klass.__dict__["availableUntil"]
             break
@@ -79,23 +79,23 @@ def test_customer_constructor_args():
 
 
 
-def test_ordersystem::special::preferredcustomer_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::special::PreferredCustomer)
+def test_ordersystem_special_preferredcustomer_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_special_PreferredCustomer)
 
 
-def test_ordersystem::special::preferredcustomer_constructor_exists():
-    assert callable(ordersystem::special::PreferredCustomer.__init__)
+def test_ordersystem_special_preferredcustomer_constructor_exists():
+    assert callable(ordersystem_special_PreferredCustomer.__init__)
 
 
-def test_ordersystem::special::preferredcustomer_constructor_args():
-    sig = inspect.signature(ordersystem::special::PreferredCustomer.__init__)
+def test_ordersystem_special_preferredcustomer_constructor_args():
+    sig = inspect.signature(ordersystem_special_PreferredCustomer.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_ordersystem::special::preferredcustomer_has_since():
-    assert hasattr(ordersystem::special::PreferredCustomer, "since")
+def test_ordersystem_special_preferredcustomer_has_since():
+    assert hasattr(ordersystem_special_PreferredCustomer, "since")
     descriptor = None
-    for klass in ordersystem::special::PreferredCustomer.__mro__:
+    for klass in ordersystem_special_PreferredCustomer.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -103,57 +103,57 @@ def test_ordersystem::special::preferredcustomer_has_since():
 
 
 
-def test_ordersystem::account_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::Account)
+def test_ordersystem_account_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_Account)
 
 
-def test_ordersystem::account_constructor_exists():
-    assert callable(ordersystem::Account.__init__)
+def test_ordersystem_account_constructor_exists():
+    assert callable(ordersystem_Account.__init__)
 
 
-def test_ordersystem::account_constructor_args():
-    sig = inspect.signature(ordersystem::Account.__init__)
+def test_ordersystem_account_constructor_args():
+    sig = inspect.signature(ordersystem_Account.__init__)
     params = list(sig.parameters.keys())
-    assert "paymentMethod" in params, "Missing parameter 'paymentMethod'"
     assert "accountNumber" in params, "Missing parameter 'accountNumber'"
+    assert "paymentMethod" in params, "Missing parameter 'paymentMethod'"
 
-def test_ordersystem::account_has_paymentMethod():
-    assert hasattr(ordersystem::Account, "paymentMethod")
+def test_ordersystem_account_has_accountNumber():
+    assert hasattr(ordersystem_Account, "accountNumber")
     descriptor = None
-    for klass in ordersystem::Account.__mro__:
-        if "paymentMethod" in klass.__dict__:
-            descriptor = klass.__dict__["paymentMethod"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::account_has_accountNumber():
-    assert hasattr(ordersystem::Account, "accountNumber")
-    descriptor = None
-    for klass in ordersystem::Account.__mro__:
+    for klass in ordersystem_Account.__mro__:
         if "accountNumber" in klass.__dict__:
             descriptor = klass.__dict__["accountNumber"]
             break
     assert isinstance(descriptor, property)
 
+def test_ordersystem_account_has_paymentMethod():
+    assert hasattr(ordersystem_Account, "paymentMethod")
+    descriptor = None
+    for klass in ordersystem_Account.__mro__:
+        if "paymentMethod" in klass.__dict__:
+            descriptor = klass.__dict__["paymentMethod"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ordersystem::warehouse_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::Warehouse)
+
+def test_ordersystem_warehouse_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_Warehouse)
 
 
-def test_ordersystem::warehouse_constructor_exists():
-    assert callable(ordersystem::Warehouse.__init__)
+def test_ordersystem_warehouse_constructor_exists():
+    assert callable(ordersystem_Warehouse.__init__)
 
 
-def test_ordersystem::warehouse_constructor_args():
-    sig = inspect.signature(ordersystem::Warehouse.__init__)
+def test_ordersystem_warehouse_constructor_args():
+    sig = inspect.signature(ordersystem_Warehouse.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ordersystem::warehouse_has_name():
-    assert hasattr(ordersystem::Warehouse, "name")
+def test_ordersystem_warehouse_has_name():
+    assert hasattr(ordersystem_Warehouse, "name")
     descriptor = None
-    for klass in ordersystem::Warehouse.__mro__:
+    for klass in ordersystem_Warehouse.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -161,23 +161,23 @@ def test_ordersystem::warehouse_has_name():
 
 
 
-def test_ordersystem::ordersystem_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::OrderSystem)
+def test_ordersystem_ordersystem_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_OrderSystem)
 
 
-def test_ordersystem::ordersystem_constructor_exists():
-    assert callable(ordersystem::OrderSystem.__init__)
+def test_ordersystem_ordersystem_constructor_exists():
+    assert callable(ordersystem_OrderSystem.__init__)
 
 
-def test_ordersystem::ordersystem_constructor_args():
-    sig = inspect.signature(ordersystem::OrderSystem.__init__)
+def test_ordersystem_ordersystem_constructor_args():
+    sig = inspect.signature(ordersystem_OrderSystem.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
 
-def test_ordersystem::ordersystem_has_version():
-    assert hasattr(ordersystem::OrderSystem, "version")
+def test_ordersystem_ordersystem_has_version():
+    assert hasattr(ordersystem_OrderSystem, "version")
     descriptor = None
-    for klass in ordersystem::OrderSystem.__mro__:
+    for klass in ordersystem_OrderSystem.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -185,77 +185,77 @@ def test_ordersystem::ordersystem_has_version():
 
 
 
-def test_ordersystem::product_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::Product)
+def test_ordersystem_product_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_Product)
 
 
-def test_ordersystem::product_constructor_exists():
-    assert callable(ordersystem::Product.__init__)
+def test_ordersystem_product_constructor_exists():
+    assert callable(ordersystem_Product.__init__)
 
 
-def test_ordersystem::product_constructor_args():
-    sig = inspect.signature(ordersystem::Product.__init__)
+def test_ordersystem_product_constructor_args():
+    sig = inspect.signature(ordersystem_Product.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
-    assert "sku" in params, "Missing parameter 'sku'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "sku" in params, "Missing parameter 'sku'"
+    assert "price" in params, "Missing parameter 'price'"
 
-def test_ordersystem::product_has_price():
-    assert hasattr(ordersystem::Product, "price")
+def test_ordersystem_product_has_name():
+    assert hasattr(ordersystem_Product, "name")
     descriptor = None
-    for klass in ordersystem::Product.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::product_has_sku():
-    assert hasattr(ordersystem::Product, "sku")
-    descriptor = None
-    for klass in ordersystem::Product.__mro__:
-        if "sku" in klass.__dict__:
-            descriptor = klass.__dict__["sku"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::product_has_name():
-    assert hasattr(ordersystem::Product, "name")
-    descriptor = None
-    for klass in ordersystem::Product.__mro__:
+    for klass in ordersystem_Product.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_ordersystem_product_has_sku():
+    assert hasattr(ordersystem_Product, "sku")
+    descriptor = None
+    for klass in ordersystem_Product.__mro__:
+        if "sku" in klass.__dict__:
+            descriptor = klass.__dict__["sku"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordersystem_product_has_price():
+    assert hasattr(ordersystem_Product, "price")
+    descriptor = None
+    for klass in ordersystem_Product.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ordersystem::lineitem_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::LineItem)
+
+def test_ordersystem_lineitem_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_LineItem)
 
 
-def test_ordersystem::lineitem_constructor_exists():
-    assert callable(ordersystem::LineItem.__init__)
+def test_ordersystem_lineitem_constructor_exists():
+    assert callable(ordersystem_LineItem.__init__)
 
 
-def test_ordersystem::lineitem_constructor_args():
-    sig = inspect.signature(ordersystem::LineItem.__init__)
+def test_ordersystem_lineitem_constructor_args():
+    sig = inspect.signature(ordersystem_LineItem.__init__)
     params = list(sig.parameters.keys())
     assert "quantity" in params, "Missing parameter 'quantity'"
     assert "discount" in params, "Missing parameter 'discount'"
 
-def test_ordersystem::lineitem_has_quantity():
-    assert hasattr(ordersystem::LineItem, "quantity")
+def test_ordersystem_lineitem_has_quantity():
+    assert hasattr(ordersystem_LineItem, "quantity")
     descriptor = None
-    for klass in ordersystem::LineItem.__mro__:
+    for klass in ordersystem_LineItem.__mro__:
         if "quantity" in klass.__dict__:
             descriptor = klass.__dict__["quantity"]
             break
     assert isinstance(descriptor, property)
 
-def test_ordersystem::lineitem_has_discount():
-    assert hasattr(ordersystem::LineItem, "discount")
+def test_ordersystem_lineitem_has_discount():
+    assert hasattr(ordersystem_LineItem, "discount")
     descriptor = None
-    for klass in ordersystem::LineItem.__mro__:
+    for klass in ordersystem_LineItem.__mro__:
         if "discount" in klass.__dict__:
             descriptor = klass.__dict__["discount"]
             break
@@ -263,217 +263,217 @@ def test_ordersystem::lineitem_has_discount():
 
 
 
-def test_ordersystem::customer_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::Customer)
+def test_ordersystem_customer_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_Customer)
 
 
-def test_ordersystem::customer_constructor_exists():
-    assert callable(ordersystem::Customer.__init__)
+def test_ordersystem_customer_constructor_exists():
+    assert callable(ordersystem_Customer.__init__)
 
 
-def test_ordersystem::customer_constructor_args():
-    sig = inspect.signature(ordersystem::Customer.__init__)
+def test_ordersystem_customer_constructor_args():
+    sig = inspect.signature(ordersystem_Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "lastName" in params, "Missing parameter 'lastName'"
     assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
 
-def test_ordersystem::customer_has_lastName():
-    assert hasattr(ordersystem::Customer, "lastName")
+def test_ordersystem_customer_has_firstName():
+    assert hasattr(ordersystem_Customer, "firstName")
     descriptor = None
-    for klass in ordersystem::Customer.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::customer_has_firstName():
-    assert hasattr(ordersystem::Customer, "firstName")
-    descriptor = None
-    for klass in ordersystem::Customer.__mro__:
+    for klass in ordersystem_Customer.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ordersystem::order_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::Order)
-
-
-def test_ordersystem::order_constructor_exists():
-    assert callable(ordersystem::Order.__init__)
-
-
-def test_ordersystem::order_constructor_args():
-    sig = inspect.signature(ordersystem::Order.__init__)
-    params = list(sig.parameters.keys())
-    assert "placedOn" in params, "Missing parameter 'placedOn'"
-    assert "filledOn" in params, "Missing parameter 'filledOn'"
-    assert "completed" in params, "Missing parameter 'completed'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_ordersystem::order_has_placedOn():
-    assert hasattr(ordersystem::Order, "placedOn")
+def test_ordersystem_customer_has_lastName():
+    assert hasattr(ordersystem_Customer, "lastName")
     descriptor = None
-    for klass in ordersystem::Order.__mro__:
-        if "placedOn" in klass.__dict__:
-            descriptor = klass.__dict__["placedOn"]
+    for klass in ordersystem_Customer.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_ordersystem::order_has_filledOn():
-    assert hasattr(ordersystem::Order, "filledOn")
+
+
+def test_ordersystem_order_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_Order)
+
+
+def test_ordersystem_order_constructor_exists():
+    assert callable(ordersystem_Order.__init__)
+
+
+def test_ordersystem_order_constructor_args():
+    sig = inspect.signature(ordersystem_Order.__init__)
+    params = list(sig.parameters.keys())
+    assert "filledOn" in params, "Missing parameter 'filledOn'"
+    assert "placedOn" in params, "Missing parameter 'placedOn'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "completed" in params, "Missing parameter 'completed'"
+
+def test_ordersystem_order_has_filledOn():
+    assert hasattr(ordersystem_Order, "filledOn")
     descriptor = None
-    for klass in ordersystem::Order.__mro__:
+    for klass in ordersystem_Order.__mro__:
         if "filledOn" in klass.__dict__:
             descriptor = klass.__dict__["filledOn"]
             break
     assert isinstance(descriptor, property)
 
-def test_ordersystem::order_has_completed():
-    assert hasattr(ordersystem::Order, "completed")
+def test_ordersystem_order_has_placedOn():
+    assert hasattr(ordersystem_Order, "placedOn")
     descriptor = None
-    for klass in ordersystem::Order.__mro__:
-        if "completed" in klass.__dict__:
-            descriptor = klass.__dict__["completed"]
+    for klass in ordersystem_Order.__mro__:
+        if "placedOn" in klass.__dict__:
+            descriptor = klass.__dict__["placedOn"]
             break
     assert isinstance(descriptor, property)
 
-def test_ordersystem::order_has_id():
-    assert hasattr(ordersystem::Order, "id")
+def test_ordersystem_order_has_id():
+    assert hasattr(ordersystem_Order, "id")
     descriptor = None
-    for klass in ordersystem::Order.__mro__:
+    for klass in ordersystem_Order.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
+def test_ordersystem_order_has_completed():
+    assert hasattr(ordersystem_Order, "completed")
+    descriptor = None
+    for klass in ordersystem_Order.__mro__:
+        if "completed" in klass.__dict__:
+            descriptor = klass.__dict__["completed"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ordersystem::address_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::Address)
+
+def test_ordersystem_address_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_Address)
 
 
-def test_ordersystem::address_constructor_exists():
-    assert callable(ordersystem::Address.__init__)
+def test_ordersystem_address_constructor_exists():
+    assert callable(ordersystem_Address.__init__)
 
 
-def test_ordersystem::address_constructor_args():
-    sig = inspect.signature(ordersystem::Address.__init__)
+def test_ordersystem_address_constructor_args():
+    sig = inspect.signature(ordersystem_Address.__init__)
     params = list(sig.parameters.keys())
+    assert "street" in params, "Missing parameter 'street'"
+    assert "province" in params, "Missing parameter 'province'"
+    assert "country" in params, "Missing parameter 'country'"
+    assert "postalCode" in params, "Missing parameter 'postalCode'"
+    assert "number" in params, "Missing parameter 'number'"
     assert "city" in params, "Missing parameter 'city'"
     assert "apartment" in params, "Missing parameter 'apartment'"
-    assert "postalCode" in params, "Missing parameter 'postalCode'"
-    assert "province" in params, "Missing parameter 'province'"
-    assert "number" in params, "Missing parameter 'number'"
-    assert "country" in params, "Missing parameter 'country'"
-    assert "street" in params, "Missing parameter 'street'"
 
-def test_ordersystem::address_has_city():
-    assert hasattr(ordersystem::Address, "city")
+def test_ordersystem_address_has_street():
+    assert hasattr(ordersystem_Address, "street")
     descriptor = None
-    for klass in ordersystem::Address.__mro__:
-        if "city" in klass.__dict__:
-            descriptor = klass.__dict__["city"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::address_has_apartment():
-    assert hasattr(ordersystem::Address, "apartment")
-    descriptor = None
-    for klass in ordersystem::Address.__mro__:
-        if "apartment" in klass.__dict__:
-            descriptor = klass.__dict__["apartment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::address_has_postalCode():
-    assert hasattr(ordersystem::Address, "postalCode")
-    descriptor = None
-    for klass in ordersystem::Address.__mro__:
-        if "postalCode" in klass.__dict__:
-            descriptor = klass.__dict__["postalCode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::address_has_province():
-    assert hasattr(ordersystem::Address, "province")
-    descriptor = None
-    for klass in ordersystem::Address.__mro__:
-        if "province" in klass.__dict__:
-            descriptor = klass.__dict__["province"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::address_has_number():
-    assert hasattr(ordersystem::Address, "number")
-    descriptor = None
-    for klass in ordersystem::Address.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::address_has_country():
-    assert hasattr(ordersystem::Address, "country")
-    descriptor = None
-    for klass in ordersystem::Address.__mro__:
-        if "country" in klass.__dict__:
-            descriptor = klass.__dict__["country"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ordersystem::address_has_street():
-    assert hasattr(ordersystem::Address, "street")
-    descriptor = None
-    for klass in ordersystem::Address.__mro__:
+    for klass in ordersystem_Address.__mro__:
         if "street" in klass.__dict__:
             descriptor = klass.__dict__["street"]
             break
     assert isinstance(descriptor, property)
 
+def test_ordersystem_address_has_province():
+    assert hasattr(ordersystem_Address, "province")
+    descriptor = None
+    for klass in ordersystem_Address.__mro__:
+        if "province" in klass.__dict__:
+            descriptor = klass.__dict__["province"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordersystem_address_has_country():
+    assert hasattr(ordersystem_Address, "country")
+    descriptor = None
+    for klass in ordersystem_Address.__mro__:
+        if "country" in klass.__dict__:
+            descriptor = klass.__dict__["country"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordersystem_address_has_postalCode():
+    assert hasattr(ordersystem_Address, "postalCode")
+    descriptor = None
+    for klass in ordersystem_Address.__mro__:
+        if "postalCode" in klass.__dict__:
+            descriptor = klass.__dict__["postalCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordersystem_address_has_number():
+    assert hasattr(ordersystem_Address, "number")
+    descriptor = None
+    for klass in ordersystem_Address.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordersystem_address_has_city():
+    assert hasattr(ordersystem_Address, "city")
+    descriptor = None
+    for klass in ordersystem_Address.__mro__:
+        if "city" in klass.__dict__:
+            descriptor = klass.__dict__["city"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordersystem_address_has_apartment():
+    assert hasattr(ordersystem_Address, "apartment")
+    descriptor = None
+    for klass in ordersystem_Address.__mro__:
+        if "apartment" in klass.__dict__:
+            descriptor = klass.__dict__["apartment"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ordersystem::inventoryitem_is_not_abstract():
-    assert not inspect.isabstract(ordersystem::InventoryItem)
+
+def test_ordersystem_inventoryitem_is_not_abstract():
+    assert not inspect.isabstract(ordersystem_InventoryItem)
 
 
-def test_ordersystem::inventoryitem_constructor_exists():
-    assert callable(ordersystem::InventoryItem.__init__)
+def test_ordersystem_inventoryitem_constructor_exists():
+    assert callable(ordersystem_InventoryItem.__init__)
 
 
-def test_ordersystem::inventoryitem_constructor_args():
-    sig = inspect.signature(ordersystem::InventoryItem.__init__)
+def test_ordersystem_inventoryitem_constructor_args():
+    sig = inspect.signature(ordersystem_InventoryItem.__init__)
     params = list(sig.parameters.keys())
     assert "nextStockDate" in params, "Missing parameter 'nextStockDate'"
-    assert "restockThreshold" in params, "Missing parameter 'restockThreshold'"
     assert "inStock" in params, "Missing parameter 'inStock'"
+    assert "restockThreshold" in params, "Missing parameter 'restockThreshold'"
 
-def test_ordersystem::inventoryitem_has_nextStockDate():
-    assert hasattr(ordersystem::InventoryItem, "nextStockDate")
+def test_ordersystem_inventoryitem_has_nextStockDate():
+    assert hasattr(ordersystem_InventoryItem, "nextStockDate")
     descriptor = None
-    for klass in ordersystem::InventoryItem.__mro__:
+    for klass in ordersystem_InventoryItem.__mro__:
         if "nextStockDate" in klass.__dict__:
             descriptor = klass.__dict__["nextStockDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_ordersystem::inventoryitem_has_restockThreshold():
-    assert hasattr(ordersystem::InventoryItem, "restockThreshold")
+def test_ordersystem_inventoryitem_has_inStock():
+    assert hasattr(ordersystem_InventoryItem, "inStock")
     descriptor = None
-    for klass in ordersystem::InventoryItem.__mro__:
-        if "restockThreshold" in klass.__dict__:
-            descriptor = klass.__dict__["restockThreshold"]
+    for klass in ordersystem_InventoryItem.__mro__:
+        if "inStock" in klass.__dict__:
+            descriptor = klass.__dict__["inStock"]
             break
     assert isinstance(descriptor, property)
 
-def test_ordersystem::inventoryitem_has_inStock():
-    assert hasattr(ordersystem::InventoryItem, "inStock")
+def test_ordersystem_inventoryitem_has_restockThreshold():
+    assert hasattr(ordersystem_InventoryItem, "restockThreshold")
     descriptor = None
-    for klass in ordersystem::InventoryItem.__mro__:
-        if "inStock" in klass.__dict__:
-            descriptor = klass.__dict__["inStock"]
+    for klass in ordersystem_InventoryItem.__mro__:
+        if "restockThreshold" in klass.__dict__:
+            descriptor = klass.__dict__["restockThreshold"]
             break
     assert isinstance(descriptor, property)
 
@@ -492,94 +492,94 @@ safe_text = st.text(
 Product_strategy = st.builds(
     Product,
 )
-ordersystem::special::LimitedEditionProduct_strategy = st.builds(
-    ordersystem::special::LimitedEditionProduct,
+ordersystem_special_LimitedEditionProduct_strategy = st.builds(
+    ordersystem_special_LimitedEditionProduct,
     availableUntil=
         safe_text
 )
 Customer_strategy = st.builds(
     Customer,
 )
-ordersystem::special::PreferredCustomer_strategy = st.builds(
-    ordersystem::special::PreferredCustomer,
+ordersystem_special_PreferredCustomer_strategy = st.builds(
+    ordersystem_special_PreferredCustomer,
     since=
         safe_text
 )
-ordersystem::Account_strategy = st.builds(
-    ordersystem::Account,
-    paymentMethod=
-        safe_text,
+ordersystem_Account_strategy = st.builds(
+    ordersystem_Account,
     accountNumber=
+        safe_text,
+    paymentMethod=
         safe_text
 )
-ordersystem::Warehouse_strategy = st.builds(
-    ordersystem::Warehouse,
+ordersystem_Warehouse_strategy = st.builds(
+    ordersystem_Warehouse,
     name=
         safe_text
 )
-ordersystem::OrderSystem_strategy = st.builds(
-    ordersystem::OrderSystem,
+ordersystem_OrderSystem_strategy = st.builds(
+    ordersystem_OrderSystem,
     version=
         st.integers()
 )
-ordersystem::Product_strategy = st.builds(
-    ordersystem::Product,
-    price=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+ordersystem_Product_strategy = st.builds(
+    ordersystem_Product,
+    name=
+        safe_text,
     sku=
         safe_text,
-    name=
-        safe_text
+    price=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ordersystem::LineItem_strategy = st.builds(
-    ordersystem::LineItem,
+ordersystem_LineItem_strategy = st.builds(
+    ordersystem_LineItem,
     quantity=
         st.integers(),
     discount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ordersystem::Customer_strategy = st.builds(
-    ordersystem::Customer,
-    lastName=
-        safe_text,
+ordersystem_Customer_strategy = st.builds(
+    ordersystem_Customer,
     firstName=
+        safe_text,
+    lastName=
         safe_text
 )
-ordersystem::Order_strategy = st.builds(
-    ordersystem::Order,
-    placedOn=
-        safe_text,
+ordersystem_Order_strategy = st.builds(
+    ordersystem_Order,
     filledOn=
         safe_text,
-    completed=
-        st.booleans(),
+    placedOn=
+        safe_text,
     id=
-        safe_text
+        safe_text,
+    completed=
+        st.booleans()
 )
-ordersystem::Address_strategy = st.builds(
-    ordersystem::Address,
-    city=
-        safe_text,
-    apartment=
-        safe_text,
-    postalCode=
+ordersystem_Address_strategy = st.builds(
+    ordersystem_Address,
+    street=
         safe_text,
     province=
         safe_text,
-    number=
-        safe_text,
     country=
         safe_text,
-    street=
+    postalCode=
+        safe_text,
+    number=
+        safe_text,
+    city=
+        safe_text,
+    apartment=
         safe_text
 )
-ordersystem::InventoryItem_strategy = st.builds(
-    ordersystem::InventoryItem,
+ordersystem_InventoryItem_strategy = st.builds(
+    ordersystem_InventoryItem,
     nextStockDate=
         safe_text,
-    restockThreshold=
-        st.integers(),
     inStock=
+        st.integers(),
+    restockThreshold=
         st.integers()
 )
 
@@ -588,18 +588,15 @@ ordersystem::InventoryItem_strategy = st.builds(
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=ordersystem::special::LimitedEditionProduct_strategy)
+@given(instance=ordersystem_special_LimitedEditionProduct_strategy)
 @settings(max_examples=50)
-def test_ordersystem::special::limitededitionproduct_instantiation(instance):
-    assert isinstance(instance, ordersystem::special::LimitedEditionProduct)
-
-@given(instance=ordersystem::special::LimitedEditionProduct_strategy)
-def test_ordersystem::special::limitededitionproduct_availableUntil_type(instance):
-    assert isinstance(instance.availableUntil, str)
+def test_ordersystem_special_limitededitionproduct_instantiation(instance):
+    assert isinstance(instance, ordersystem_special_LimitedEditionProduct)
 
 
-@given(instance=ordersystem::special::LimitedEditionProduct_strategy)
-def test_ordersystem::special::limitededitionproduct_availableUntil_setter(instance):
+
+@given(instance=ordersystem_special_LimitedEditionProduct_strategy)
+def test_ordersystem_special_limitededitionproduct_availableUntil_setter(instance):
     original = instance.availableUntil
     instance.availableUntil = original
     assert instance.availableUntil == original
@@ -609,338 +606,260 @@ def test_ordersystem::special::limitededitionproduct_availableUntil_setter(insta
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=ordersystem::special::PreferredCustomer_strategy)
+@given(instance=ordersystem_special_PreferredCustomer_strategy)
 @settings(max_examples=50)
-def test_ordersystem::special::preferredcustomer_instantiation(instance):
-    assert isinstance(instance, ordersystem::special::PreferredCustomer)
-
-@given(instance=ordersystem::special::PreferredCustomer_strategy)
-def test_ordersystem::special::preferredcustomer_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_ordersystem_special_preferredcustomer_instantiation(instance):
+    assert isinstance(instance, ordersystem_special_PreferredCustomer)
 
 
-@given(instance=ordersystem::special::PreferredCustomer_strategy)
-def test_ordersystem::special::preferredcustomer_since_setter(instance):
+
+@given(instance=ordersystem_special_PreferredCustomer_strategy)
+def test_ordersystem_special_preferredcustomer_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=ordersystem::Account_strategy)
+@given(instance=ordersystem_Account_strategy)
 @settings(max_examples=50)
-def test_ordersystem::account_instantiation(instance):
-    assert isinstance(instance, ordersystem::Account)
-
-@given(instance=ordersystem::Account_strategy)
-def test_ordersystem::account_paymentMethod_type(instance):
-    assert isinstance(instance.paymentMethod, str)
+def test_ordersystem_account_instantiation(instance):
+    assert isinstance(instance, ordersystem_Account)
 
 
-@given(instance=ordersystem::Account_strategy)
-def test_ordersystem::account_paymentMethod_setter(instance):
-    original = instance.paymentMethod
-    instance.paymentMethod = original
-    assert instance.paymentMethod == original
 
-@given(instance=ordersystem::Account_strategy)
-def test_ordersystem::account_accountNumber_type(instance):
-    assert isinstance(instance.accountNumber, str)
-
-
-@given(instance=ordersystem::Account_strategy)
-def test_ordersystem::account_accountNumber_setter(instance):
+@given(instance=ordersystem_Account_strategy)
+def test_ordersystem_account_accountNumber_setter(instance):
     original = instance.accountNumber
     instance.accountNumber = original
     assert instance.accountNumber == original
 
-@given(instance=ordersystem::Warehouse_strategy)
+
+
+@given(instance=ordersystem_Account_strategy)
+def test_ordersystem_account_paymentMethod_setter(instance):
+    original = instance.paymentMethod
+    instance.paymentMethod = original
+    assert instance.paymentMethod == original
+
+@given(instance=ordersystem_Warehouse_strategy)
 @settings(max_examples=50)
-def test_ordersystem::warehouse_instantiation(instance):
-    assert isinstance(instance, ordersystem::Warehouse)
-
-@given(instance=ordersystem::Warehouse_strategy)
-def test_ordersystem::warehouse_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ordersystem_warehouse_instantiation(instance):
+    assert isinstance(instance, ordersystem_Warehouse)
 
 
-@given(instance=ordersystem::Warehouse_strategy)
-def test_ordersystem::warehouse_name_setter(instance):
+
+@given(instance=ordersystem_Warehouse_strategy)
+def test_ordersystem_warehouse_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ordersystem::OrderSystem_strategy)
+@given(instance=ordersystem_OrderSystem_strategy)
 @settings(max_examples=50)
-def test_ordersystem::ordersystem_instantiation(instance):
-    assert isinstance(instance, ordersystem::OrderSystem)
-
-@given(instance=ordersystem::OrderSystem_strategy)
-def test_ordersystem::ordersystem_version_type(instance):
-    assert isinstance(instance.version, int)
+def test_ordersystem_ordersystem_instantiation(instance):
+    assert isinstance(instance, ordersystem_OrderSystem)
 
 
-@given(instance=ordersystem::OrderSystem_strategy)
-def test_ordersystem::ordersystem_version_setter(instance):
+
+@given(instance=ordersystem_OrderSystem_strategy)
+def test_ordersystem_ordersystem_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=ordersystem::Product_strategy)
+@given(instance=ordersystem_Product_strategy)
 @settings(max_examples=50)
-def test_ordersystem::product_instantiation(instance):
-    assert isinstance(instance, ordersystem::Product)
-
-@given(instance=ordersystem::Product_strategy)
-def test_ordersystem::product_price_type(instance):
-    assert isinstance(instance.price, float)
+def test_ordersystem_product_instantiation(instance):
+    assert isinstance(instance, ordersystem_Product)
 
 
-@given(instance=ordersystem::Product_strategy)
-def test_ordersystem::product_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
 
-@given(instance=ordersystem::Product_strategy)
-def test_ordersystem::product_sku_type(instance):
-    assert isinstance(instance.sku, str)
-
-
-@given(instance=ordersystem::Product_strategy)
-def test_ordersystem::product_sku_setter(instance):
-    original = instance.sku
-    instance.sku = original
-    assert instance.sku == original
-
-@given(instance=ordersystem::Product_strategy)
-def test_ordersystem::product_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ordersystem::Product_strategy)
-def test_ordersystem::product_name_setter(instance):
+@given(instance=ordersystem_Product_strategy)
+def test_ordersystem_product_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ordersystem::LineItem_strategy)
+
+
+@given(instance=ordersystem_Product_strategy)
+def test_ordersystem_product_sku_setter(instance):
+    original = instance.sku
+    instance.sku = original
+    assert instance.sku == original
+
+
+
+@given(instance=ordersystem_Product_strategy)
+def test_ordersystem_product_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+@given(instance=ordersystem_LineItem_strategy)
 @settings(max_examples=50)
-def test_ordersystem::lineitem_instantiation(instance):
-    assert isinstance(instance, ordersystem::LineItem)
-
-@given(instance=ordersystem::LineItem_strategy)
-def test_ordersystem::lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
+def test_ordersystem_lineitem_instantiation(instance):
+    assert isinstance(instance, ordersystem_LineItem)
 
 
-@given(instance=ordersystem::LineItem_strategy)
-def test_ordersystem::lineitem_quantity_setter(instance):
+
+@given(instance=ordersystem_LineItem_strategy)
+def test_ordersystem_lineitem_quantity_setter(instance):
     original = instance.quantity
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=ordersystem::LineItem_strategy)
-def test_ordersystem::lineitem_discount_type(instance):
-    assert isinstance(instance.discount, float)
 
 
-@given(instance=ordersystem::LineItem_strategy)
-def test_ordersystem::lineitem_discount_setter(instance):
+@given(instance=ordersystem_LineItem_strategy)
+def test_ordersystem_lineitem_discount_setter(instance):
     original = instance.discount
     instance.discount = original
     assert instance.discount == original
 
-@given(instance=ordersystem::Customer_strategy)
+@given(instance=ordersystem_Customer_strategy)
 @settings(max_examples=50)
-def test_ordersystem::customer_instantiation(instance):
-    assert isinstance(instance, ordersystem::Customer)
-
-@given(instance=ordersystem::Customer_strategy)
-def test_ordersystem::customer_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_ordersystem_customer_instantiation(instance):
+    assert isinstance(instance, ordersystem_Customer)
 
 
-@given(instance=ordersystem::Customer_strategy)
-def test_ordersystem::customer_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
 
-@given(instance=ordersystem::Customer_strategy)
-def test_ordersystem::customer_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=ordersystem::Customer_strategy)
-def test_ordersystem::customer_firstName_setter(instance):
+@given(instance=ordersystem_Customer_strategy)
+def test_ordersystem_customer_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=ordersystem::Order_strategy)
+
+
+@given(instance=ordersystem_Customer_strategy)
+def test_ordersystem_customer_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+@given(instance=ordersystem_Order_strategy)
 @settings(max_examples=50)
-def test_ordersystem::order_instantiation(instance):
-    assert isinstance(instance, ordersystem::Order)
-
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_placedOn_type(instance):
-    assert isinstance(instance.placedOn, str)
+def test_ordersystem_order_instantiation(instance):
+    assert isinstance(instance, ordersystem_Order)
 
 
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_placedOn_setter(instance):
-    original = instance.placedOn
-    instance.placedOn = original
-    assert instance.placedOn == original
 
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_filledOn_type(instance):
-    assert isinstance(instance.filledOn, str)
-
-
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_filledOn_setter(instance):
+@given(instance=ordersystem_Order_strategy)
+def test_ordersystem_order_filledOn_setter(instance):
     original = instance.filledOn
     instance.filledOn = original
     assert instance.filledOn == original
 
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_completed_type(instance):
-    assert isinstance(instance.completed, bool)
 
 
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_completed_setter(instance):
-    original = instance.completed
-    instance.completed = original
-    assert instance.completed == original
-
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=ordersystem_Order_strategy)
+def test_ordersystem_order_placedOn_setter(instance):
+    original = instance.placedOn
+    instance.placedOn = original
+    assert instance.placedOn == original
 
 
-@given(instance=ordersystem::Order_strategy)
-def test_ordersystem::order_id_setter(instance):
+
+@given(instance=ordersystem_Order_strategy)
+def test_ordersystem_order_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ordersystem::Address_strategy)
+
+
+@given(instance=ordersystem_Order_strategy)
+def test_ordersystem_order_completed_setter(instance):
+    original = instance.completed
+    instance.completed = original
+    assert instance.completed == original
+
+@given(instance=ordersystem_Address_strategy)
 @settings(max_examples=50)
-def test_ordersystem::address_instantiation(instance):
-    assert isinstance(instance, ordersystem::Address)
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_city_type(instance):
-    assert isinstance(instance.city, str)
+def test_ordersystem_address_instantiation(instance):
+    assert isinstance(instance, ordersystem_Address)
 
 
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_city_setter(instance):
-    original = instance.city
-    instance.city = original
-    assert instance.city == original
 
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_apartment_type(instance):
-    assert isinstance(instance.apartment, str)
-
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_apartment_setter(instance):
-    original = instance.apartment
-    instance.apartment = original
-    assert instance.apartment == original
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_postalCode_type(instance):
-    assert isinstance(instance.postalCode, str)
-
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_postalCode_setter(instance):
-    original = instance.postalCode
-    instance.postalCode = original
-    assert instance.postalCode == original
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_province_type(instance):
-    assert isinstance(instance.province, str)
-
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_province_setter(instance):
-    original = instance.province
-    instance.province = original
-    assert instance.province == original
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_number_type(instance):
-    assert isinstance(instance.number, str)
-
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_country_type(instance):
-    assert isinstance(instance.country, str)
-
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_country_setter(instance):
-    original = instance.country
-    instance.country = original
-    assert instance.country == original
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_street_type(instance):
-    assert isinstance(instance.street, str)
-
-
-@given(instance=ordersystem::Address_strategy)
-def test_ordersystem::address_street_setter(instance):
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_street_setter(instance):
     original = instance.street
     instance.street = original
     assert instance.street == original
 
-@given(instance=ordersystem::InventoryItem_strategy)
+
+
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_province_setter(instance):
+    original = instance.province
+    instance.province = original
+    assert instance.province == original
+
+
+
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_country_setter(instance):
+    original = instance.country
+    instance.country = original
+    assert instance.country == original
+
+
+
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_postalCode_setter(instance):
+    original = instance.postalCode
+    instance.postalCode = original
+    assert instance.postalCode == original
+
+
+
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_city_setter(instance):
+    original = instance.city
+    instance.city = original
+    assert instance.city == original
+
+
+
+@given(instance=ordersystem_Address_strategy)
+def test_ordersystem_address_apartment_setter(instance):
+    original = instance.apartment
+    instance.apartment = original
+    assert instance.apartment == original
+
+@given(instance=ordersystem_InventoryItem_strategy)
 @settings(max_examples=50)
-def test_ordersystem::inventoryitem_instantiation(instance):
-    assert isinstance(instance, ordersystem::InventoryItem)
-
-@given(instance=ordersystem::InventoryItem_strategy)
-def test_ordersystem::inventoryitem_nextStockDate_type(instance):
-    assert isinstance(instance.nextStockDate, str)
+def test_ordersystem_inventoryitem_instantiation(instance):
+    assert isinstance(instance, ordersystem_InventoryItem)
 
 
-@given(instance=ordersystem::InventoryItem_strategy)
-def test_ordersystem::inventoryitem_nextStockDate_setter(instance):
+
+@given(instance=ordersystem_InventoryItem_strategy)
+def test_ordersystem_inventoryitem_nextStockDate_setter(instance):
     original = instance.nextStockDate
     instance.nextStockDate = original
     assert instance.nextStockDate == original
 
-@given(instance=ordersystem::InventoryItem_strategy)
-def test_ordersystem::inventoryitem_restockThreshold_type(instance):
-    assert isinstance(instance.restockThreshold, int)
 
 
-@given(instance=ordersystem::InventoryItem_strategy)
-def test_ordersystem::inventoryitem_restockThreshold_setter(instance):
-    original = instance.restockThreshold
-    instance.restockThreshold = original
-    assert instance.restockThreshold == original
-
-@given(instance=ordersystem::InventoryItem_strategy)
-def test_ordersystem::inventoryitem_inStock_type(instance):
-    assert isinstance(instance.inStock, int)
-
-
-@given(instance=ordersystem::InventoryItem_strategy)
-def test_ordersystem::inventoryitem_inStock_setter(instance):
+@given(instance=ordersystem_InventoryItem_strategy)
+def test_ordersystem_inventoryitem_inStock_setter(instance):
     original = instance.inStock
     instance.inStock = original
     assert instance.inStock == original
+
+
+
+@given(instance=ordersystem_InventoryItem_strategy)
+def test_ordersystem_inventoryitem_restockThreshold_setter(instance):
+    original = instance.restockThreshold
+    instance.restockThreshold = original
+    assert instance.restockThreshold == original

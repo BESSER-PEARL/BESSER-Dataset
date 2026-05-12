@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Transition,
-    statemachine::State,
-    statemachine::FSM,
+from python_code import (
+    statemachine_Transition,
+    statemachine_State,
+    statemachine_FSM,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::fsm_is_not_abstract():
-    assert not inspect.isabstract(statemachine::FSM)
+def test_statemachine_fsm_is_not_abstract():
+    assert not inspect.isabstract(statemachine_FSM)
 
 
-def test_statemachine::fsm_constructor_exists():
-    assert callable(statemachine::FSM.__init__)
+def test_statemachine_fsm_constructor_exists():
+    assert callable(statemachine_FSM.__init__)
 
 
-def test_statemachine::fsm_constructor_args():
-    sig = inspect.signature(statemachine::FSM.__init__)
+def test_statemachine_fsm_constructor_args():
+    sig = inspect.signature(statemachine_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,20 +69,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
+statemachine_State_strategy = st.builds(
+    statemachine_State,
 )
-statemachine::FSM_strategy = st.builds(
-    statemachine::FSM,
+statemachine_FSM_strategy = st.builds(
+    statemachine_FSM,
 )
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
 import warnings
 import copy
@@ -90,38 +90,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=30)
-def test_statemachine::transition_src_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.src()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.src).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'src' in statemachine::Transition is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'src' in statemachine::Transition did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'src' in statemachine::Transition is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::Transition_strategy)
-@settings(max_examples=30)
-def test_statemachine::transition_tar_changes_state(instance):
+def test_statemachine_transition_tar_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -133,24 +104,14 @@ def test_statemachine::transition_tar_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'tar' in statemachine::Transition is empty"
+        assert has_statements, f"Function 'tar' in statemachine_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'tar' in statemachine::Transition did not change state; check implementation")
+            warnings.warn(f"Operation 'tar' in statemachine_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'tar' in statemachine::Transition is not implemented or raised an error")
-
-@given(instance=statemachine::State_strategy)
-@settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::FSM_strategy)
-@settings(max_examples=50)
-def test_statemachine::fsm_instantiation(instance):
-    assert isinstance(instance, statemachine::FSM)
+        warnings.warn(f"Operation 'tar' in statemachine_Transition is not implemented or raised an error")
 
 import warnings
 import copy
@@ -158,28 +119,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::FSM_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=30)
-def test_statemachine::fsm_states_changes_state(instance):
+def test_statemachine_transition_src_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.states()
+        instance.src()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.states).strip()
+        source = inspect.getsource(instance.src).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'states' in statemachine::FSM is empty"
+        assert has_statements, f"Function 'src' in statemachine_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'states' in statemachine::FSM did not change state; check implementation")
+            warnings.warn(f"Operation 'src' in statemachine_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'states' in statemachine::FSM is not implemented or raised an error")
+        warnings.warn(f"Operation 'src' in statemachine_Transition is not implemented or raised an error")
+
+@given(instance=statemachine_State_strategy)
+@settings(max_examples=50)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
+
+@given(instance=statemachine_FSM_strategy)
+@settings(max_examples=50)
+def test_statemachine_fsm_instantiation(instance):
+    assert isinstance(instance, statemachine_FSM)
 
 import warnings
 import copy
@@ -187,9 +158,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::FSM_strategy)
+@given(instance=statemachine_FSM_strategy)
 @settings(max_examples=30)
-def test_statemachine::fsm_transitions_changes_state(instance):
+def test_statemachine_fsm_transitions_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -201,11 +172,40 @@ def test_statemachine::fsm_transitions_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'transitions' in statemachine::FSM is empty"
+        assert has_statements, f"Function 'transitions' in statemachine_FSM is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'transitions' in statemachine::FSM did not change state; check implementation")
+            warnings.warn(f"Operation 'transitions' in statemachine_FSM did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'transitions' in statemachine::FSM is not implemented or raised an error")
+        warnings.warn(f"Operation 'transitions' in statemachine_FSM is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_FSM_strategy)
+@settings(max_examples=30)
+def test_statemachine_fsm_states_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.states()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.states).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'states' in statemachine_FSM is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'states' in statemachine_FSM did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'states' in statemachine_FSM is not implemented or raised an error")

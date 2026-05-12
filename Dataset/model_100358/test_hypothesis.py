@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Literal,
-    fmpl::StringLit,
-    fmpl::Field,
-    fmpl::IntegerLit,
+    fmpl_Field,
+    fmpl_StringLit,
+    fmpl_IntegerLit,
     Expression,
-    fmpl::Relational,
-    fmpl::Write,
-    fmpl::VarDeclaration,
-    fmpl::Init,
-    fmpl::VarReference,
-    fmpl::Literal,
-    fmpl::ArithmeticExpression,
-    fmpl::Cond,
-    fmpl::Read,
-    fmpl::Exec,
-    fmpl::Transition,
-    fmpl::State,
-    fmpl::Expression,
-    fmpl::Automata,
-    fmpl::Policy,
-    RelationalOperator,
+    fmpl_Literal,
+    fmpl_Cond,
+    fmpl_Write,
+    fmpl_Init,
+    fmpl_ArithmeticExpression,
+    fmpl_Relational,
+    fmpl_VarDeclaration,
+    fmpl_VarReference,
+    fmpl_Read,
+    fmpl_Exec,
+    fmpl_Transition,
+    fmpl_State,
+    fmpl_Expression,
+    fmpl_Automata,
+    fmpl_Policy,
     ArithmeticOperator,
+    RelationalOperator,
 )
 
 # =============================================================================
@@ -50,23 +50,37 @@ def test_literal_constructor_args():
 
 
 
-def test_fmpl::stringlit_is_not_abstract():
-    assert not inspect.isabstract(fmpl::StringLit)
+def test_fmpl_field_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Field)
 
 
-def test_fmpl::stringlit_constructor_exists():
-    assert callable(fmpl::StringLit.__init__)
+def test_fmpl_field_constructor_exists():
+    assert callable(fmpl_Field.__init__)
 
 
-def test_fmpl::stringlit_constructor_args():
-    sig = inspect.signature(fmpl::StringLit.__init__)
+def test_fmpl_field_constructor_args():
+    sig = inspect.signature(fmpl_Field.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fmpl_stringlit_is_not_abstract():
+    assert not inspect.isabstract(fmpl_StringLit)
+
+
+def test_fmpl_stringlit_constructor_exists():
+    assert callable(fmpl_StringLit.__init__)
+
+
+def test_fmpl_stringlit_constructor_args():
+    sig = inspect.signature(fmpl_StringLit.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fmpl::stringlit_has_value():
-    assert hasattr(fmpl::StringLit, "value")
+def test_fmpl_stringlit_has_value():
+    assert hasattr(fmpl_StringLit, "value")
     descriptor = None
-    for klass in fmpl::StringLit.__mro__:
+    for klass in fmpl_StringLit.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -74,37 +88,23 @@ def test_fmpl::stringlit_has_value():
 
 
 
-def test_fmpl::field_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Field)
+def test_fmpl_integerlit_is_not_abstract():
+    assert not inspect.isabstract(fmpl_IntegerLit)
 
 
-def test_fmpl::field_constructor_exists():
-    assert callable(fmpl::Field.__init__)
+def test_fmpl_integerlit_constructor_exists():
+    assert callable(fmpl_IntegerLit.__init__)
 
 
-def test_fmpl::field_constructor_args():
-    sig = inspect.signature(fmpl::Field.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fmpl::integerlit_is_not_abstract():
-    assert not inspect.isabstract(fmpl::IntegerLit)
-
-
-def test_fmpl::integerlit_constructor_exists():
-    assert callable(fmpl::IntegerLit.__init__)
-
-
-def test_fmpl::integerlit_constructor_args():
-    sig = inspect.signature(fmpl::IntegerLit.__init__)
+def test_fmpl_integerlit_constructor_args():
+    sig = inspect.signature(fmpl_IntegerLit.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fmpl::integerlit_has_value():
-    assert hasattr(fmpl::IntegerLit, "value")
+def test_fmpl_integerlit_has_value():
+    assert hasattr(fmpl_IntegerLit, "value")
     descriptor = None
-    for klass in fmpl::IntegerLit.__mro__:
+    for klass in fmpl_IntegerLit.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -126,57 +126,61 @@ def test_expression_constructor_args():
 
 
 
-def test_fmpl::relational_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Relational)
+def test_fmpl_literal_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Literal)
 
 
-def test_fmpl::relational_constructor_exists():
-    assert callable(fmpl::Relational.__init__)
+def test_fmpl_literal_constructor_exists():
+    assert callable(fmpl_Literal.__init__)
 
 
-def test_fmpl::relational_constructor_args():
-    sig = inspect.signature(fmpl::Relational.__init__)
+def test_fmpl_literal_constructor_args():
+    sig = inspect.signature(fmpl_Literal.__init__)
     params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_fmpl::relational_has_operator():
-    assert hasattr(fmpl::Relational, "operator")
-    descriptor = None
-    for klass in fmpl::Relational.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_fmpl::write_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Write)
+def test_fmpl_cond_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Cond)
 
 
-def test_fmpl::write_constructor_exists():
-    assert callable(fmpl::Write.__init__)
+def test_fmpl_cond_constructor_exists():
+    assert callable(fmpl_Cond.__init__)
 
 
-def test_fmpl::write_constructor_args():
-    sig = inspect.signature(fmpl::Write.__init__)
+def test_fmpl_cond_constructor_args():
+    sig = inspect.signature(fmpl_Cond.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fmpl_write_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Write)
+
+
+def test_fmpl_write_constructor_exists():
+    assert callable(fmpl_Write.__init__)
+
+
+def test_fmpl_write_constructor_args():
+    sig = inspect.signature(fmpl_Write.__init__)
     params = list(sig.parameters.keys())
     assert "initBit" in params, "Missing parameter 'initBit'"
     assert "length" in params, "Missing parameter 'length'"
 
-def test_fmpl::write_has_initBit():
-    assert hasattr(fmpl::Write, "initBit")
+def test_fmpl_write_has_initBit():
+    assert hasattr(fmpl_Write, "initBit")
     descriptor = None
-    for klass in fmpl::Write.__mro__:
+    for klass in fmpl_Write.__mro__:
         if "initBit" in klass.__dict__:
             descriptor = klass.__dict__["initBit"]
             break
     assert isinstance(descriptor, property)
 
-def test_fmpl::write_has_length():
-    assert hasattr(fmpl::Write, "length")
+def test_fmpl_write_has_length():
+    assert hasattr(fmpl_Write, "length")
     descriptor = None
-    for klass in fmpl::Write.__mro__:
+    for klass in fmpl_Write.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -184,89 +188,37 @@ def test_fmpl::write_has_length():
 
 
 
-def test_fmpl::vardeclaration_is_not_abstract():
-    assert not inspect.isabstract(fmpl::VarDeclaration)
+def test_fmpl_init_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Init)
 
 
-def test_fmpl::vardeclaration_constructor_exists():
-    assert callable(fmpl::VarDeclaration.__init__)
+def test_fmpl_init_constructor_exists():
+    assert callable(fmpl_Init.__init__)
 
 
-def test_fmpl::vardeclaration_constructor_args():
-    sig = inspect.signature(fmpl::VarDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_fmpl::vardeclaration_has_name():
-    assert hasattr(fmpl::VarDeclaration, "name")
-    descriptor = None
-    for klass in fmpl::VarDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_fmpl::init_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Init)
-
-
-def test_fmpl::init_constructor_exists():
-    assert callable(fmpl::Init.__init__)
-
-
-def test_fmpl::init_constructor_args():
-    sig = inspect.signature(fmpl::Init.__init__)
+def test_fmpl_init_constructor_args():
+    sig = inspect.signature(fmpl_Init.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fmpl::varreference_is_not_abstract():
-    assert not inspect.isabstract(fmpl::VarReference)
+def test_fmpl_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(fmpl_ArithmeticExpression)
 
 
-def test_fmpl::varreference_constructor_exists():
-    assert callable(fmpl::VarReference.__init__)
+def test_fmpl_arithmeticexpression_constructor_exists():
+    assert callable(fmpl_ArithmeticExpression.__init__)
 
 
-def test_fmpl::varreference_constructor_args():
-    sig = inspect.signature(fmpl::VarReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fmpl::literal_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Literal)
-
-
-def test_fmpl::literal_constructor_exists():
-    assert callable(fmpl::Literal.__init__)
-
-
-def test_fmpl::literal_constructor_args():
-    sig = inspect.signature(fmpl::Literal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fmpl::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(fmpl::ArithmeticExpression)
-
-
-def test_fmpl::arithmeticexpression_constructor_exists():
-    assert callable(fmpl::ArithmeticExpression.__init__)
-
-
-def test_fmpl::arithmeticexpression_constructor_args():
-    sig = inspect.signature(fmpl::ArithmeticExpression.__init__)
+def test_fmpl_arithmeticexpression_constructor_args():
+    sig = inspect.signature(fmpl_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_fmpl::arithmeticexpression_has_operator():
-    assert hasattr(fmpl::ArithmeticExpression, "operator")
+def test_fmpl_arithmeticexpression_has_operator():
+    assert hasattr(fmpl_ArithmeticExpression, "operator")
     descriptor = None
-    for klass in fmpl::ArithmeticExpression.__mro__:
+    for klass in fmpl_ArithmeticExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -274,47 +226,95 @@ def test_fmpl::arithmeticexpression_has_operator():
 
 
 
-def test_fmpl::cond_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Cond)
+def test_fmpl_relational_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Relational)
 
 
-def test_fmpl::cond_constructor_exists():
-    assert callable(fmpl::Cond.__init__)
+def test_fmpl_relational_constructor_exists():
+    assert callable(fmpl_Relational.__init__)
 
 
-def test_fmpl::cond_constructor_args():
-    sig = inspect.signature(fmpl::Cond.__init__)
+def test_fmpl_relational_constructor_args():
+    sig = inspect.signature(fmpl_Relational.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_fmpl_relational_has_operator():
+    assert hasattr(fmpl_Relational, "operator")
+    descriptor = None
+    for klass in fmpl_Relational.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fmpl_vardeclaration_is_not_abstract():
+    assert not inspect.isabstract(fmpl_VarDeclaration)
+
+
+def test_fmpl_vardeclaration_constructor_exists():
+    assert callable(fmpl_VarDeclaration.__init__)
+
+
+def test_fmpl_vardeclaration_constructor_args():
+    sig = inspect.signature(fmpl_VarDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_fmpl_vardeclaration_has_name():
+    assert hasattr(fmpl_VarDeclaration, "name")
+    descriptor = None
+    for klass in fmpl_VarDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fmpl_varreference_is_not_abstract():
+    assert not inspect.isabstract(fmpl_VarReference)
+
+
+def test_fmpl_varreference_constructor_exists():
+    assert callable(fmpl_VarReference.__init__)
+
+
+def test_fmpl_varreference_constructor_args():
+    sig = inspect.signature(fmpl_VarReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fmpl::read_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Read)
+def test_fmpl_read_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Read)
 
 
-def test_fmpl::read_constructor_exists():
-    assert callable(fmpl::Read.__init__)
+def test_fmpl_read_constructor_exists():
+    assert callable(fmpl_Read.__init__)
 
 
-def test_fmpl::read_constructor_args():
-    sig = inspect.signature(fmpl::Read.__init__)
+def test_fmpl_read_constructor_args():
+    sig = inspect.signature(fmpl_Read.__init__)
     params = list(sig.parameters.keys())
     assert "initBit" in params, "Missing parameter 'initBit'"
     assert "length" in params, "Missing parameter 'length'"
 
-def test_fmpl::read_has_initBit():
-    assert hasattr(fmpl::Read, "initBit")
+def test_fmpl_read_has_initBit():
+    assert hasattr(fmpl_Read, "initBit")
     descriptor = None
-    for klass in fmpl::Read.__mro__:
+    for klass in fmpl_Read.__mro__:
         if "initBit" in klass.__dict__:
             descriptor = klass.__dict__["initBit"]
             break
     assert isinstance(descriptor, property)
 
-def test_fmpl::read_has_length():
-    assert hasattr(fmpl::Read, "length")
+def test_fmpl_read_has_length():
+    assert hasattr(fmpl_Read, "length")
     descriptor = None
-    for klass in fmpl::Read.__mro__:
+    for klass in fmpl_Read.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -322,37 +322,37 @@ def test_fmpl::read_has_length():
 
 
 
-def test_fmpl::exec_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Exec)
+def test_fmpl_exec_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Exec)
 
 
-def test_fmpl::exec_constructor_exists():
-    assert callable(fmpl::Exec.__init__)
+def test_fmpl_exec_constructor_exists():
+    assert callable(fmpl_Exec.__init__)
 
 
-def test_fmpl::exec_constructor_args():
-    sig = inspect.signature(fmpl::Exec.__init__)
+def test_fmpl_exec_constructor_args():
+    sig = inspect.signature(fmpl_Exec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fmpl::transition_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Transition)
+def test_fmpl_transition_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Transition)
 
 
-def test_fmpl::transition_constructor_exists():
-    assert callable(fmpl::Transition.__init__)
+def test_fmpl_transition_constructor_exists():
+    assert callable(fmpl_Transition.__init__)
 
 
-def test_fmpl::transition_constructor_args():
-    sig = inspect.signature(fmpl::Transition.__init__)
+def test_fmpl_transition_constructor_args():
+    sig = inspect.signature(fmpl_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fmpl::transition_has_name():
-    assert hasattr(fmpl::Transition, "name")
+def test_fmpl_transition_has_name():
+    assert hasattr(fmpl_Transition, "name")
     descriptor = None
-    for klass in fmpl::Transition.__mro__:
+    for klass in fmpl_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -360,23 +360,23 @@ def test_fmpl::transition_has_name():
 
 
 
-def test_fmpl::state_is_not_abstract():
-    assert not inspect.isabstract(fmpl::State)
+def test_fmpl_state_is_not_abstract():
+    assert not inspect.isabstract(fmpl_State)
 
 
-def test_fmpl::state_constructor_exists():
-    assert callable(fmpl::State.__init__)
+def test_fmpl_state_constructor_exists():
+    assert callable(fmpl_State.__init__)
 
 
-def test_fmpl::state_constructor_args():
-    sig = inspect.signature(fmpl::State.__init__)
+def test_fmpl_state_constructor_args():
+    sig = inspect.signature(fmpl_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fmpl::state_has_name():
-    assert hasattr(fmpl::State, "name")
+def test_fmpl_state_has_name():
+    assert hasattr(fmpl_State, "name")
     descriptor = None
-    for klass in fmpl::State.__mro__:
+    for klass in fmpl_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -384,37 +384,37 @@ def test_fmpl::state_has_name():
 
 
 
-def test_fmpl::expression_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Expression)
+def test_fmpl_expression_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Expression)
 
 
-def test_fmpl::expression_constructor_exists():
-    assert callable(fmpl::Expression.__init__)
+def test_fmpl_expression_constructor_exists():
+    assert callable(fmpl_Expression.__init__)
 
 
-def test_fmpl::expression_constructor_args():
-    sig = inspect.signature(fmpl::Expression.__init__)
+def test_fmpl_expression_constructor_args():
+    sig = inspect.signature(fmpl_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fmpl::automata_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Automata)
+def test_fmpl_automata_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Automata)
 
 
-def test_fmpl::automata_constructor_exists():
-    assert callable(fmpl::Automata.__init__)
+def test_fmpl_automata_constructor_exists():
+    assert callable(fmpl_Automata.__init__)
 
 
-def test_fmpl::automata_constructor_args():
-    sig = inspect.signature(fmpl::Automata.__init__)
+def test_fmpl_automata_constructor_args():
+    sig = inspect.signature(fmpl_Automata.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fmpl::automata_has_name():
-    assert hasattr(fmpl::Automata, "name")
+def test_fmpl_automata_has_name():
+    assert hasattr(fmpl_Automata, "name")
     descriptor = None
-    for klass in fmpl::Automata.__mro__:
+    for klass in fmpl_Automata.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -422,56 +422,37 @@ def test_fmpl::automata_has_name():
 
 
 
-def test_fmpl::policy_is_not_abstract():
-    assert not inspect.isabstract(fmpl::Policy)
+def test_fmpl_policy_is_not_abstract():
+    assert not inspect.isabstract(fmpl_Policy)
 
 
-def test_fmpl::policy_constructor_exists():
-    assert callable(fmpl::Policy.__init__)
+def test_fmpl_policy_constructor_exists():
+    assert callable(fmpl_Policy.__init__)
 
 
-def test_fmpl::policy_constructor_args():
-    sig = inspect.signature(fmpl::Policy.__init__)
+def test_fmpl_policy_constructor_args():
+    sig = inspect.signature(fmpl_Policy.__init__)
     params = list(sig.parameters.keys())
     assert "parserURI" in params, "Missing parameter 'parserURI'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fmpl::policy_has_parserURI():
-    assert hasattr(fmpl::Policy, "parserURI")
+def test_fmpl_policy_has_parserURI():
+    assert hasattr(fmpl_Policy, "parserURI")
     descriptor = None
-    for klass in fmpl::Policy.__mro__:
+    for klass in fmpl_Policy.__mro__:
         if "parserURI" in klass.__dict__:
             descriptor = klass.__dict__["parserURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_fmpl::policy_has_name():
-    assert hasattr(fmpl::Policy, "name")
+def test_fmpl_policy_has_name():
+    assert hasattr(fmpl_Policy, "name")
     descriptor = None
-    for klass in fmpl::Policy.__mro__:
+    for klass in fmpl_Policy.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_relationaloperator_exists():
-    # Check that the Enumeration exists
-    assert RelationalOperator is not None
-
-def test_relationaloperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationalOperator]
-    expected_literals = [
-        "lessEqual",
-        "and_",
-        "greater",
-        "greaterEqual",
-        "equal",
-        "less",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
 
 def test_arithmeticoperator_exists():
     # Check that the Enumeration exists
@@ -481,14 +462,33 @@ def test_arithmeticoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ArithmeticOperator]
     expected_literals = [
-        "mult",
-        "minus",
-        "div",
         "plus",
+        "minus",
+        "mult",
+        "div",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ArithmeticOperator"
+
+def test_relationaloperator_exists():
+    # Check that the Enumeration exists
+    assert RelationalOperator is not None
+
+def test_relationaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RelationalOperator]
+    expected_literals = [
+        "and_",
+        "greaterEqual",
+        "lessEqual",
+        "equal",
+        "greater",
+        "less",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
 
 
 # =============================================================================
@@ -505,86 +505,86 @@ safe_text = st.text(
 Literal_strategy = st.builds(
     Literal,
 )
-fmpl::StringLit_strategy = st.builds(
-    fmpl::StringLit,
+fmpl_Field_strategy = st.builds(
+    fmpl_Field,
+)
+fmpl_StringLit_strategy = st.builds(
+    fmpl_StringLit,
     value=
         safe_text
 )
-fmpl::Field_strategy = st.builds(
-    fmpl::Field,
-)
-fmpl::IntegerLit_strategy = st.builds(
-    fmpl::IntegerLit,
+fmpl_IntegerLit_strategy = st.builds(
+    fmpl_IntegerLit,
     value=
         st.integers()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-fmpl::Relational_strategy = st.builds(
-    fmpl::Relational,
-    operator=
-        safe_text
+fmpl_Literal_strategy = st.builds(
+    fmpl_Literal,
 )
-fmpl::Write_strategy = st.builds(
-    fmpl::Write,
+fmpl_Cond_strategy = st.builds(
+    fmpl_Cond,
+)
+fmpl_Write_strategy = st.builds(
+    fmpl_Write,
     initBit=
         st.integers(),
     length=
         st.integers()
 )
-fmpl::VarDeclaration_strategy = st.builds(
-    fmpl::VarDeclaration,
-    name=
-        safe_text
+fmpl_Init_strategy = st.builds(
+    fmpl_Init,
 )
-fmpl::Init_strategy = st.builds(
-    fmpl::Init,
-)
-fmpl::VarReference_strategy = st.builds(
-    fmpl::VarReference,
-)
-fmpl::Literal_strategy = st.builds(
-    fmpl::Literal,
-)
-fmpl::ArithmeticExpression_strategy = st.builds(
-    fmpl::ArithmeticExpression,
+fmpl_ArithmeticExpression_strategy = st.builds(
+    fmpl_ArithmeticExpression,
     operator=
         safe_text
 )
-fmpl::Cond_strategy = st.builds(
-    fmpl::Cond,
+fmpl_Relational_strategy = st.builds(
+    fmpl_Relational,
+    operator=
+        safe_text
 )
-fmpl::Read_strategy = st.builds(
-    fmpl::Read,
+fmpl_VarDeclaration_strategy = st.builds(
+    fmpl_VarDeclaration,
+    name=
+        safe_text
+)
+fmpl_VarReference_strategy = st.builds(
+    fmpl_VarReference,
+)
+fmpl_Read_strategy = st.builds(
+    fmpl_Read,
     initBit=
         st.integers(),
     length=
         st.integers()
 )
-fmpl::Exec_strategy = st.builds(
-    fmpl::Exec,
+fmpl_Exec_strategy = st.builds(
+    fmpl_Exec,
 )
-fmpl::Transition_strategy = st.builds(
-    fmpl::Transition,
+fmpl_Transition_strategy = st.builds(
+    fmpl_Transition,
     name=
         safe_text
 )
-fmpl::State_strategy = st.builds(
-    fmpl::State,
+fmpl_State_strategy = st.builds(
+    fmpl_State,
     name=
         safe_text
 )
-fmpl::Expression_strategy = st.builds(
-    fmpl::Expression,
+fmpl_Expression_strategy = st.builds(
+    fmpl_Expression,
 )
-fmpl::Automata_strategy = st.builds(
-    fmpl::Automata,
+fmpl_Automata_strategy = st.builds(
+    fmpl_Automata,
     name=
         safe_text
 )
-fmpl::Policy_strategy = st.builds(
-    fmpl::Policy,
+fmpl_Policy_strategy = st.builds(
+    fmpl_Policy,
     parserURI=
         safe_text,
     name=
@@ -596,39 +596,33 @@ fmpl::Policy_strategy = st.builds(
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=fmpl::StringLit_strategy)
+@given(instance=fmpl_Field_strategy)
 @settings(max_examples=50)
-def test_fmpl::stringlit_instantiation(instance):
-    assert isinstance(instance, fmpl::StringLit)
+def test_fmpl_field_instantiation(instance):
+    assert isinstance(instance, fmpl_Field)
 
-@given(instance=fmpl::StringLit_strategy)
-def test_fmpl::stringlit_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=fmpl_StringLit_strategy)
+@settings(max_examples=50)
+def test_fmpl_stringlit_instantiation(instance):
+    assert isinstance(instance, fmpl_StringLit)
 
 
-@given(instance=fmpl::StringLit_strategy)
-def test_fmpl::stringlit_value_setter(instance):
+
+@given(instance=fmpl_StringLit_strategy)
+def test_fmpl_stringlit_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fmpl::Field_strategy)
+@given(instance=fmpl_IntegerLit_strategy)
 @settings(max_examples=50)
-def test_fmpl::field_instantiation(instance):
-    assert isinstance(instance, fmpl::Field)
-
-@given(instance=fmpl::IntegerLit_strategy)
-@settings(max_examples=50)
-def test_fmpl::integerlit_instantiation(instance):
-    assert isinstance(instance, fmpl::IntegerLit)
-
-@given(instance=fmpl::IntegerLit_strategy)
-def test_fmpl::integerlit_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_fmpl_integerlit_instantiation(instance):
+    assert isinstance(instance, fmpl_IntegerLit)
 
 
-@given(instance=fmpl::IntegerLit_strategy)
-def test_fmpl::integerlit_value_setter(instance):
+
+@given(instance=fmpl_IntegerLit_strategy)
+def test_fmpl_integerlit_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -638,209 +632,173 @@ def test_fmpl::integerlit_value_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=fmpl::Relational_strategy)
+@given(instance=fmpl_Literal_strategy)
 @settings(max_examples=50)
-def test_fmpl::relational_instantiation(instance):
-    assert isinstance(instance, fmpl::Relational)
+def test_fmpl_literal_instantiation(instance):
+    assert isinstance(instance, fmpl_Literal)
 
-@given(instance=fmpl::Relational_strategy)
-def test_fmpl::relational_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=fmpl::Relational_strategy)
-def test_fmpl::relational_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=fmpl::Write_strategy)
+@given(instance=fmpl_Cond_strategy)
 @settings(max_examples=50)
-def test_fmpl::write_instantiation(instance):
-    assert isinstance(instance, fmpl::Write)
+def test_fmpl_cond_instantiation(instance):
+    assert isinstance(instance, fmpl_Cond)
 
-@given(instance=fmpl::Write_strategy)
-def test_fmpl::write_initBit_type(instance):
-    assert isinstance(instance.initBit, int)
+@given(instance=fmpl_Write_strategy)
+@settings(max_examples=50)
+def test_fmpl_write_instantiation(instance):
+    assert isinstance(instance, fmpl_Write)
 
 
-@given(instance=fmpl::Write_strategy)
-def test_fmpl::write_initBit_setter(instance):
+
+@given(instance=fmpl_Write_strategy)
+def test_fmpl_write_initBit_setter(instance):
     original = instance.initBit
     instance.initBit = original
     assert instance.initBit == original
 
-@given(instance=fmpl::Write_strategy)
-def test_fmpl::write_length_type(instance):
-    assert isinstance(instance.length, int)
 
 
-@given(instance=fmpl::Write_strategy)
-def test_fmpl::write_length_setter(instance):
+@given(instance=fmpl_Write_strategy)
+def test_fmpl_write_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=fmpl::VarDeclaration_strategy)
+@given(instance=fmpl_Init_strategy)
 @settings(max_examples=50)
-def test_fmpl::vardeclaration_instantiation(instance):
-    assert isinstance(instance, fmpl::VarDeclaration)
+def test_fmpl_init_instantiation(instance):
+    assert isinstance(instance, fmpl_Init)
 
-@given(instance=fmpl::VarDeclaration_strategy)
-def test_fmpl::vardeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=fmpl::VarDeclaration_strategy)
-def test_fmpl::vardeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=fmpl::Init_strategy)
+@given(instance=fmpl_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_fmpl::init_instantiation(instance):
-    assert isinstance(instance, fmpl::Init)
-
-@given(instance=fmpl::VarReference_strategy)
-@settings(max_examples=50)
-def test_fmpl::varreference_instantiation(instance):
-    assert isinstance(instance, fmpl::VarReference)
-
-@given(instance=fmpl::Literal_strategy)
-@settings(max_examples=50)
-def test_fmpl::literal_instantiation(instance):
-    assert isinstance(instance, fmpl::Literal)
-
-@given(instance=fmpl::ArithmeticExpression_strategy)
-@settings(max_examples=50)
-def test_fmpl::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, fmpl::ArithmeticExpression)
-
-@given(instance=fmpl::ArithmeticExpression_strategy)
-def test_fmpl::arithmeticexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_fmpl_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, fmpl_ArithmeticExpression)
 
 
-@given(instance=fmpl::ArithmeticExpression_strategy)
-def test_fmpl::arithmeticexpression_operator_setter(instance):
+
+@given(instance=fmpl_ArithmeticExpression_strategy)
+def test_fmpl_arithmeticexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=fmpl::Cond_strategy)
+@given(instance=fmpl_Relational_strategy)
 @settings(max_examples=50)
-def test_fmpl::cond_instantiation(instance):
-    assert isinstance(instance, fmpl::Cond)
+def test_fmpl_relational_instantiation(instance):
+    assert isinstance(instance, fmpl_Relational)
 
-@given(instance=fmpl::Read_strategy)
+
+
+@given(instance=fmpl_Relational_strategy)
+def test_fmpl_relational_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=fmpl_VarDeclaration_strategy)
 @settings(max_examples=50)
-def test_fmpl::read_instantiation(instance):
-    assert isinstance(instance, fmpl::Read)
-
-@given(instance=fmpl::Read_strategy)
-def test_fmpl::read_initBit_type(instance):
-    assert isinstance(instance.initBit, int)
+def test_fmpl_vardeclaration_instantiation(instance):
+    assert isinstance(instance, fmpl_VarDeclaration)
 
 
-@given(instance=fmpl::Read_strategy)
-def test_fmpl::read_initBit_setter(instance):
+
+@given(instance=fmpl_VarDeclaration_strategy)
+def test_fmpl_vardeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=fmpl_VarReference_strategy)
+@settings(max_examples=50)
+def test_fmpl_varreference_instantiation(instance):
+    assert isinstance(instance, fmpl_VarReference)
+
+@given(instance=fmpl_Read_strategy)
+@settings(max_examples=50)
+def test_fmpl_read_instantiation(instance):
+    assert isinstance(instance, fmpl_Read)
+
+
+
+@given(instance=fmpl_Read_strategy)
+def test_fmpl_read_initBit_setter(instance):
     original = instance.initBit
     instance.initBit = original
     assert instance.initBit == original
 
-@given(instance=fmpl::Read_strategy)
-def test_fmpl::read_length_type(instance):
-    assert isinstance(instance.length, int)
 
 
-@given(instance=fmpl::Read_strategy)
-def test_fmpl::read_length_setter(instance):
+@given(instance=fmpl_Read_strategy)
+def test_fmpl_read_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=fmpl::Exec_strategy)
+@given(instance=fmpl_Exec_strategy)
 @settings(max_examples=50)
-def test_fmpl::exec_instantiation(instance):
-    assert isinstance(instance, fmpl::Exec)
+def test_fmpl_exec_instantiation(instance):
+    assert isinstance(instance, fmpl_Exec)
 
-@given(instance=fmpl::Transition_strategy)
+@given(instance=fmpl_Transition_strategy)
 @settings(max_examples=50)
-def test_fmpl::transition_instantiation(instance):
-    assert isinstance(instance, fmpl::Transition)
-
-@given(instance=fmpl::Transition_strategy)
-def test_fmpl::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fmpl_transition_instantiation(instance):
+    assert isinstance(instance, fmpl_Transition)
 
 
-@given(instance=fmpl::Transition_strategy)
-def test_fmpl::transition_name_setter(instance):
+
+@given(instance=fmpl_Transition_strategy)
+def test_fmpl_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fmpl::State_strategy)
+@given(instance=fmpl_State_strategy)
 @settings(max_examples=50)
-def test_fmpl::state_instantiation(instance):
-    assert isinstance(instance, fmpl::State)
-
-@given(instance=fmpl::State_strategy)
-def test_fmpl::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fmpl_state_instantiation(instance):
+    assert isinstance(instance, fmpl_State)
 
 
-@given(instance=fmpl::State_strategy)
-def test_fmpl::state_name_setter(instance):
+
+@given(instance=fmpl_State_strategy)
+def test_fmpl_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fmpl::Expression_strategy)
+@given(instance=fmpl_Expression_strategy)
 @settings(max_examples=50)
-def test_fmpl::expression_instantiation(instance):
-    assert isinstance(instance, fmpl::Expression)
+def test_fmpl_expression_instantiation(instance):
+    assert isinstance(instance, fmpl_Expression)
 
-@given(instance=fmpl::Automata_strategy)
+@given(instance=fmpl_Automata_strategy)
 @settings(max_examples=50)
-def test_fmpl::automata_instantiation(instance):
-    assert isinstance(instance, fmpl::Automata)
-
-@given(instance=fmpl::Automata_strategy)
-def test_fmpl::automata_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fmpl_automata_instantiation(instance):
+    assert isinstance(instance, fmpl_Automata)
 
 
-@given(instance=fmpl::Automata_strategy)
-def test_fmpl::automata_name_setter(instance):
+
+@given(instance=fmpl_Automata_strategy)
+def test_fmpl_automata_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fmpl::Policy_strategy)
+@given(instance=fmpl_Policy_strategy)
 @settings(max_examples=50)
-def test_fmpl::policy_instantiation(instance):
-    assert isinstance(instance, fmpl::Policy)
-
-@given(instance=fmpl::Policy_strategy)
-def test_fmpl::policy_parserURI_type(instance):
-    assert isinstance(instance.parserURI, str)
+def test_fmpl_policy_instantiation(instance):
+    assert isinstance(instance, fmpl_Policy)
 
 
-@given(instance=fmpl::Policy_strategy)
-def test_fmpl::policy_parserURI_setter(instance):
+
+@given(instance=fmpl_Policy_strategy)
+def test_fmpl_policy_parserURI_setter(instance):
     original = instance.parserURI
     instance.parserURI = original
     assert instance.parserURI == original
 
-@given(instance=fmpl::Policy_strategy)
-def test_fmpl::policy_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fmpl::Policy_strategy)
-def test_fmpl::policy_name_setter(instance):
+@given(instance=fmpl_Policy_strategy)
+def test_fmpl_policy_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Value,
-    statemachine::ConstantValue,
-    statemachine::GetParameter,
+    statemachine_ConstantValue,
+    statemachine_GetParameter,
     NumberValue,
-    statemachine::LongValue,
+    statemachine_LongValue,
     ConstantValue,
-    statemachine::NumberValue,
-    statemachine::BooleanValue,
-    statemachine::StringValue,
+    statemachine_NumberValue,
+    statemachine_BooleanValue,
+    statemachine_StringValue,
     GCompositeState,
-    statemachine::GStatemachine,
-    statemachine::Call,
+    statemachine_GStatemachine,
+    statemachine_Call,
     GAbstractAction,
-    statemachine::CallAction,
-    statemachine::Value,
+    statemachine_CallAction,
+    statemachine_Value,
     GAbstractState,
-    statemachine::GStartState,
-    statemachine::GStopState,
+    statemachine_GStartState,
+    statemachine_GStopState,
     Named,
-    statemachine::Parameter,
-    statemachine::Transition,
-    statemachine::GState,
+    statemachine_Parameter,
+    statemachine_Transition,
+    statemachine_GState,
     GState,
-    statemachine::GCompositeState,
-    statemachine::Named,
-    statemachine::GAbstractAction,
-    statemachine::GAbstractState,
+    statemachine_GCompositeState,
+    statemachine_Named,
+    statemachine_GAbstractAction,
+    statemachine_GAbstractState,
     ActionKind,
 )
 
@@ -56,23 +56,23 @@ def test_value_constructor_args():
 
 
 
-def test_statemachine::constantvalue_is_not_abstract():
-    assert not inspect.isabstract(statemachine::ConstantValue)
+def test_statemachine_constantvalue_is_not_abstract():
+    assert not inspect.isabstract(statemachine_ConstantValue)
 
 
-def test_statemachine::constantvalue_constructor_exists():
-    assert callable(statemachine::ConstantValue.__init__)
+def test_statemachine_constantvalue_constructor_exists():
+    assert callable(statemachine_ConstantValue.__init__)
 
 
-def test_statemachine::constantvalue_constructor_args():
-    sig = inspect.signature(statemachine::ConstantValue.__init__)
+def test_statemachine_constantvalue_constructor_args():
+    sig = inspect.signature(statemachine_ConstantValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statemachine::constantvalue_has_value():
-    assert hasattr(statemachine::ConstantValue, "value")
+def test_statemachine_constantvalue_has_value():
+    assert hasattr(statemachine_ConstantValue, "value")
     descriptor = None
-    for klass in statemachine::ConstantValue.__mro__:
+    for klass in statemachine_ConstantValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -80,16 +80,16 @@ def test_statemachine::constantvalue_has_value():
 
 
 
-def test_statemachine::getparameter_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GetParameter)
+def test_statemachine_getparameter_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GetParameter)
 
 
-def test_statemachine::getparameter_constructor_exists():
-    assert callable(statemachine::GetParameter.__init__)
+def test_statemachine_getparameter_constructor_exists():
+    assert callable(statemachine_GetParameter.__init__)
 
 
-def test_statemachine::getparameter_constructor_args():
-    sig = inspect.signature(statemachine::GetParameter.__init__)
+def test_statemachine_getparameter_constructor_args():
+    sig = inspect.signature(statemachine_GetParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,16 +108,16 @@ def test_numbervalue_constructor_args():
 
 
 
-def test_statemachine::longvalue_is_not_abstract():
-    assert not inspect.isabstract(statemachine::LongValue)
+def test_statemachine_longvalue_is_not_abstract():
+    assert not inspect.isabstract(statemachine_LongValue)
 
 
-def test_statemachine::longvalue_constructor_exists():
-    assert callable(statemachine::LongValue.__init__)
+def test_statemachine_longvalue_constructor_exists():
+    assert callable(statemachine_LongValue.__init__)
 
 
-def test_statemachine::longvalue_constructor_args():
-    sig = inspect.signature(statemachine::LongValue.__init__)
+def test_statemachine_longvalue_constructor_args():
+    sig = inspect.signature(statemachine_LongValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -136,44 +136,44 @@ def test_constantvalue_constructor_args():
 
 
 
-def test_statemachine::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(statemachine::NumberValue)
+def test_statemachine_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(statemachine_NumberValue)
 
 
-def test_statemachine::numbervalue_constructor_exists():
-    assert callable(statemachine::NumberValue.__init__)
+def test_statemachine_numbervalue_constructor_exists():
+    assert callable(statemachine_NumberValue.__init__)
 
 
-def test_statemachine::numbervalue_constructor_args():
-    sig = inspect.signature(statemachine::NumberValue.__init__)
+def test_statemachine_numbervalue_constructor_args():
+    sig = inspect.signature(statemachine_NumberValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(statemachine::BooleanValue)
+def test_statemachine_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(statemachine_BooleanValue)
 
 
-def test_statemachine::booleanvalue_constructor_exists():
-    assert callable(statemachine::BooleanValue.__init__)
+def test_statemachine_booleanvalue_constructor_exists():
+    assert callable(statemachine_BooleanValue.__init__)
 
 
-def test_statemachine::booleanvalue_constructor_args():
-    sig = inspect.signature(statemachine::BooleanValue.__init__)
+def test_statemachine_booleanvalue_constructor_args():
+    sig = inspect.signature(statemachine_BooleanValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(statemachine::StringValue)
+def test_statemachine_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(statemachine_StringValue)
 
 
-def test_statemachine::stringvalue_constructor_exists():
-    assert callable(statemachine::StringValue.__init__)
+def test_statemachine_stringvalue_constructor_exists():
+    assert callable(statemachine_StringValue.__init__)
 
 
-def test_statemachine::stringvalue_constructor_args():
-    sig = inspect.signature(statemachine::StringValue.__init__)
+def test_statemachine_stringvalue_constructor_args():
+    sig = inspect.signature(statemachine_StringValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,23 +192,23 @@ def test_gcompositestate_constructor_args():
 
 
 
-def test_statemachine::gstatemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GStatemachine)
+def test_statemachine_gstatemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GStatemachine)
 
 
-def test_statemachine::gstatemachine_constructor_exists():
-    assert callable(statemachine::GStatemachine.__init__)
+def test_statemachine_gstatemachine_constructor_exists():
+    assert callable(statemachine_GStatemachine.__init__)
 
 
-def test_statemachine::gstatemachine_constructor_args():
-    sig = inspect.signature(statemachine::GStatemachine.__init__)
+def test_statemachine_gstatemachine_constructor_args():
+    sig = inspect.signature(statemachine_GStatemachine.__init__)
     params = list(sig.parameters.keys())
     assert "package" in params, "Missing parameter 'package'"
 
-def test_statemachine::gstatemachine_has_package():
-    assert hasattr(statemachine::GStatemachine, "package")
+def test_statemachine_gstatemachine_has_package():
+    assert hasattr(statemachine_GStatemachine, "package")
     descriptor = None
-    for klass in statemachine::GStatemachine.__mro__:
+    for klass in statemachine_GStatemachine.__mro__:
         if "package" in klass.__dict__:
             descriptor = klass.__dict__["package"]
             break
@@ -216,23 +216,23 @@ def test_statemachine::gstatemachine_has_package():
 
 
 
-def test_statemachine::call_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Call)
+def test_statemachine_call_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Call)
 
 
-def test_statemachine::call_constructor_exists():
-    assert callable(statemachine::Call.__init__)
+def test_statemachine_call_constructor_exists():
+    assert callable(statemachine_Call.__init__)
 
 
-def test_statemachine::call_constructor_args():
-    sig = inspect.signature(statemachine::Call.__init__)
+def test_statemachine_call_constructor_args():
+    sig = inspect.signature(statemachine_Call.__init__)
     params = list(sig.parameters.keys())
     assert "actionId" in params, "Missing parameter 'actionId'"
 
-def test_statemachine::call_has_actionId():
-    assert hasattr(statemachine::Call, "actionId")
+def test_statemachine_call_has_actionId():
+    assert hasattr(statemachine_Call, "actionId")
     descriptor = None
-    for klass in statemachine::Call.__mro__:
+    for klass in statemachine_Call.__mro__:
         if "actionId" in klass.__dict__:
             descriptor = klass.__dict__["actionId"]
             break
@@ -254,30 +254,30 @@ def test_gabstractaction_constructor_args():
 
 
 
-def test_statemachine::callaction_is_not_abstract():
-    assert not inspect.isabstract(statemachine::CallAction)
+def test_statemachine_callaction_is_not_abstract():
+    assert not inspect.isabstract(statemachine_CallAction)
 
 
-def test_statemachine::callaction_constructor_exists():
-    assert callable(statemachine::CallAction.__init__)
+def test_statemachine_callaction_constructor_exists():
+    assert callable(statemachine_CallAction.__init__)
 
 
-def test_statemachine::callaction_constructor_args():
-    sig = inspect.signature(statemachine::CallAction.__init__)
+def test_statemachine_callaction_constructor_args():
+    sig = inspect.signature(statemachine_CallAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::value_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Value)
+def test_statemachine_value_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Value)
 
 
-def test_statemachine::value_constructor_exists():
-    assert callable(statemachine::Value.__init__)
+def test_statemachine_value_constructor_exists():
+    assert callable(statemachine_Value.__init__)
 
 
-def test_statemachine::value_constructor_args():
-    sig = inspect.signature(statemachine::Value.__init__)
+def test_statemachine_value_constructor_args():
+    sig = inspect.signature(statemachine_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -296,30 +296,30 @@ def test_gabstractstate_constructor_args():
 
 
 
-def test_statemachine::gstartstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GStartState)
+def test_statemachine_gstartstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GStartState)
 
 
-def test_statemachine::gstartstate_constructor_exists():
-    assert callable(statemachine::GStartState.__init__)
+def test_statemachine_gstartstate_constructor_exists():
+    assert callable(statemachine_GStartState.__init__)
 
 
-def test_statemachine::gstartstate_constructor_args():
-    sig = inspect.signature(statemachine::GStartState.__init__)
+def test_statemachine_gstartstate_constructor_args():
+    sig = inspect.signature(statemachine_GStartState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::gstopstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GStopState)
+def test_statemachine_gstopstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GStopState)
 
 
-def test_statemachine::gstopstate_constructor_exists():
-    assert callable(statemachine::GStopState.__init__)
+def test_statemachine_gstopstate_constructor_exists():
+    assert callable(statemachine_GStopState.__init__)
 
 
-def test_statemachine::gstopstate_constructor_args():
-    sig = inspect.signature(statemachine::GStopState.__init__)
+def test_statemachine_gstopstate_constructor_args():
+    sig = inspect.signature(statemachine_GStopState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -338,37 +338,37 @@ def test_named_constructor_args():
 
 
 
-def test_statemachine::parameter_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Parameter)
+def test_statemachine_parameter_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Parameter)
 
 
-def test_statemachine::parameter_constructor_exists():
-    assert callable(statemachine::Parameter.__init__)
+def test_statemachine_parameter_constructor_exists():
+    assert callable(statemachine_Parameter.__init__)
 
 
-def test_statemachine::parameter_constructor_args():
-    sig = inspect.signature(statemachine::Parameter.__init__)
+def test_statemachine_parameter_constructor_args():
+    sig = inspect.signature(statemachine_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "preserveTimers" in params, "Missing parameter 'preserveTimers'"
 
-def test_statemachine::transition_has_preserveTimers():
-    assert hasattr(statemachine::Transition, "preserveTimers")
+def test_statemachine_transition_has_preserveTimers():
+    assert hasattr(statemachine_Transition, "preserveTimers")
     descriptor = None
-    for klass in statemachine::Transition.__mro__:
+    for klass in statemachine_Transition.__mro__:
         if "preserveTimers" in klass.__dict__:
             descriptor = klass.__dict__["preserveTimers"]
             break
@@ -376,16 +376,16 @@ def test_statemachine::transition_has_preserveTimers():
 
 
 
-def test_statemachine::gstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GState)
+def test_statemachine_gstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GState)
 
 
-def test_statemachine::gstate_constructor_exists():
-    assert callable(statemachine::GState.__init__)
+def test_statemachine_gstate_constructor_exists():
+    assert callable(statemachine_GState.__init__)
 
 
-def test_statemachine::gstate_constructor_args():
-    sig = inspect.signature(statemachine::GState.__init__)
+def test_statemachine_gstate_constructor_args():
+    sig = inspect.signature(statemachine_GState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -404,47 +404,47 @@ def test_gstate_constructor_args():
 
 
 
-def test_statemachine::gcompositestate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GCompositeState)
+def test_statemachine_gcompositestate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GCompositeState)
 
 
-def test_statemachine::gcompositestate_constructor_exists():
-    assert callable(statemachine::GCompositeState.__init__)
+def test_statemachine_gcompositestate_constructor_exists():
+    assert callable(statemachine_GCompositeState.__init__)
 
 
-def test_statemachine::gcompositestate_constructor_args():
-    sig = inspect.signature(statemachine::GCompositeState.__init__)
+def test_statemachine_gcompositestate_constructor_args():
+    sig = inspect.signature(statemachine_GCompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::named_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Named)
+def test_statemachine_named_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Named)
 
 
-def test_statemachine::named_constructor_exists():
-    assert callable(statemachine::Named.__init__)
+def test_statemachine_named_constructor_exists():
+    assert callable(statemachine_Named.__init__)
 
 
-def test_statemachine::named_constructor_args():
-    sig = inspect.signature(statemachine::Named.__init__)
+def test_statemachine_named_constructor_args():
+    sig = inspect.signature(statemachine_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_statemachine::named_has_name():
-    assert hasattr(statemachine::Named, "name")
+def test_statemachine_named_has_name():
+    assert hasattr(statemachine_Named, "name")
     descriptor = None
-    for klass in statemachine::Named.__mro__:
+    for klass in statemachine_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachine::named_has_comment():
-    assert hasattr(statemachine::Named, "comment")
+def test_statemachine_named_has_comment():
+    assert hasattr(statemachine_Named, "comment")
     descriptor = None
-    for klass in statemachine::Named.__mro__:
+    for klass in statemachine_Named.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -452,23 +452,23 @@ def test_statemachine::named_has_comment():
 
 
 
-def test_statemachine::gabstractaction_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GAbstractAction)
+def test_statemachine_gabstractaction_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GAbstractAction)
 
 
-def test_statemachine::gabstractaction_constructor_exists():
-    assert callable(statemachine::GAbstractAction.__init__)
+def test_statemachine_gabstractaction_constructor_exists():
+    assert callable(statemachine_GAbstractAction.__init__)
 
 
-def test_statemachine::gabstractaction_constructor_args():
-    sig = inspect.signature(statemachine::GAbstractAction.__init__)
+def test_statemachine_gabstractaction_constructor_args():
+    sig = inspect.signature(statemachine_GAbstractAction.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_statemachine::gabstractaction_has_kind():
-    assert hasattr(statemachine::GAbstractAction, "kind")
+def test_statemachine_gabstractaction_has_kind():
+    assert hasattr(statemachine_GAbstractAction, "kind")
     descriptor = None
-    for klass in statemachine::GAbstractAction.__mro__:
+    for klass in statemachine_GAbstractAction.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -476,16 +476,16 @@ def test_statemachine::gabstractaction_has_kind():
 
 
 
-def test_statemachine::gabstractstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::GAbstractState)
+def test_statemachine_gabstractstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_GAbstractState)
 
 
-def test_statemachine::gabstractstate_constructor_exists():
-    assert callable(statemachine::GAbstractState.__init__)
+def test_statemachine_gabstractstate_constructor_exists():
+    assert callable(statemachine_GAbstractState.__init__)
 
 
-def test_statemachine::gabstractstate_constructor_args():
-    sig = inspect.signature(statemachine::GAbstractState.__init__)
+def test_statemachine_gabstractstate_constructor_args():
+    sig = inspect.signature(statemachine_GAbstractState.__init__)
     params = list(sig.parameters.keys())
 
 def test_actionkind_exists():
@@ -496,8 +496,8 @@ def test_actionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ActionKind]
     expected_literals = [
-        "ENTRY",
         "EXIT",
+        "ENTRY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -518,97 +518,97 @@ safe_text = st.text(
 Value_strategy = st.builds(
     Value,
 )
-statemachine::ConstantValue_strategy = st.builds(
-    statemachine::ConstantValue,
+statemachine_ConstantValue_strategy = st.builds(
+    statemachine_ConstantValue,
     value=
         safe_text
 )
-statemachine::GetParameter_strategy = st.builds(
-    statemachine::GetParameter,
+statemachine_GetParameter_strategy = st.builds(
+    statemachine_GetParameter,
 )
 NumberValue_strategy = st.builds(
     NumberValue,
 )
-statemachine::LongValue_strategy = st.builds(
-    statemachine::LongValue,
+statemachine_LongValue_strategy = st.builds(
+    statemachine_LongValue,
 )
 ConstantValue_strategy = st.builds(
     ConstantValue,
 )
-statemachine::NumberValue_strategy = st.builds(
-    statemachine::NumberValue,
+statemachine_NumberValue_strategy = st.builds(
+    statemachine_NumberValue,
 )
-statemachine::BooleanValue_strategy = st.builds(
-    statemachine::BooleanValue,
+statemachine_BooleanValue_strategy = st.builds(
+    statemachine_BooleanValue,
 )
-statemachine::StringValue_strategy = st.builds(
-    statemachine::StringValue,
+statemachine_StringValue_strategy = st.builds(
+    statemachine_StringValue,
 )
 GCompositeState_strategy = st.builds(
     GCompositeState,
 )
-statemachine::GStatemachine_strategy = st.builds(
-    statemachine::GStatemachine,
+statemachine_GStatemachine_strategy = st.builds(
+    statemachine_GStatemachine,
     package=
         safe_text
 )
-statemachine::Call_strategy = st.builds(
-    statemachine::Call,
+statemachine_Call_strategy = st.builds(
+    statemachine_Call,
     actionId=
         safe_text
 )
 GAbstractAction_strategy = st.builds(
     GAbstractAction,
 )
-statemachine::CallAction_strategy = st.builds(
-    statemachine::CallAction,
+statemachine_CallAction_strategy = st.builds(
+    statemachine_CallAction,
 )
-statemachine::Value_strategy = st.builds(
-    statemachine::Value,
+statemachine_Value_strategy = st.builds(
+    statemachine_Value,
 )
 GAbstractState_strategy = st.builds(
     GAbstractState,
 )
-statemachine::GStartState_strategy = st.builds(
-    statemachine::GStartState,
+statemachine_GStartState_strategy = st.builds(
+    statemachine_GStartState,
 )
-statemachine::GStopState_strategy = st.builds(
-    statemachine::GStopState,
+statemachine_GStopState_strategy = st.builds(
+    statemachine_GStopState,
 )
 Named_strategy = st.builds(
     Named,
 )
-statemachine::Parameter_strategy = st.builds(
-    statemachine::Parameter,
+statemachine_Parameter_strategy = st.builds(
+    statemachine_Parameter,
 )
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
     preserveTimers=
         st.booleans()
 )
-statemachine::GState_strategy = st.builds(
-    statemachine::GState,
+statemachine_GState_strategy = st.builds(
+    statemachine_GState,
 )
 GState_strategy = st.builds(
     GState,
 )
-statemachine::GCompositeState_strategy = st.builds(
-    statemachine::GCompositeState,
+statemachine_GCompositeState_strategy = st.builds(
+    statemachine_GCompositeState,
 )
-statemachine::Named_strategy = st.builds(
-    statemachine::Named,
+statemachine_Named_strategy = st.builds(
+    statemachine_Named,
     name=
         safe_text,
     comment=
         safe_text
 )
-statemachine::GAbstractAction_strategy = st.builds(
-    statemachine::GAbstractAction,
+statemachine_GAbstractAction_strategy = st.builds(
+    statemachine_GAbstractAction,
     kind=
         safe_text
 )
-statemachine::GAbstractState_strategy = st.builds(
-    statemachine::GAbstractState,
+statemachine_GAbstractState_strategy = st.builds(
+    statemachine_GAbstractState,
 )
 
 @given(instance=Value_strategy)
@@ -616,90 +616,81 @@ statemachine::GAbstractState_strategy = st.builds(
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=statemachine::ConstantValue_strategy)
+@given(instance=statemachine_ConstantValue_strategy)
 @settings(max_examples=50)
-def test_statemachine::constantvalue_instantiation(instance):
-    assert isinstance(instance, statemachine::ConstantValue)
-
-@given(instance=statemachine::ConstantValue_strategy)
-def test_statemachine::constantvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_statemachine_constantvalue_instantiation(instance):
+    assert isinstance(instance, statemachine_ConstantValue)
 
 
-@given(instance=statemachine::ConstantValue_strategy)
-def test_statemachine::constantvalue_value_setter(instance):
+
+@given(instance=statemachine_ConstantValue_strategy)
+def test_statemachine_constantvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=statemachine::GetParameter_strategy)
+@given(instance=statemachine_GetParameter_strategy)
 @settings(max_examples=50)
-def test_statemachine::getparameter_instantiation(instance):
-    assert isinstance(instance, statemachine::GetParameter)
+def test_statemachine_getparameter_instantiation(instance):
+    assert isinstance(instance, statemachine_GetParameter)
 
 @given(instance=NumberValue_strategy)
 @settings(max_examples=50)
 def test_numbervalue_instantiation(instance):
     assert isinstance(instance, NumberValue)
 
-@given(instance=statemachine::LongValue_strategy)
+@given(instance=statemachine_LongValue_strategy)
 @settings(max_examples=50)
-def test_statemachine::longvalue_instantiation(instance):
-    assert isinstance(instance, statemachine::LongValue)
+def test_statemachine_longvalue_instantiation(instance):
+    assert isinstance(instance, statemachine_LongValue)
 
 @given(instance=ConstantValue_strategy)
 @settings(max_examples=50)
 def test_constantvalue_instantiation(instance):
     assert isinstance(instance, ConstantValue)
 
-@given(instance=statemachine::NumberValue_strategy)
+@given(instance=statemachine_NumberValue_strategy)
 @settings(max_examples=50)
-def test_statemachine::numbervalue_instantiation(instance):
-    assert isinstance(instance, statemachine::NumberValue)
+def test_statemachine_numbervalue_instantiation(instance):
+    assert isinstance(instance, statemachine_NumberValue)
 
-@given(instance=statemachine::BooleanValue_strategy)
+@given(instance=statemachine_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_statemachine::booleanvalue_instantiation(instance):
-    assert isinstance(instance, statemachine::BooleanValue)
+def test_statemachine_booleanvalue_instantiation(instance):
+    assert isinstance(instance, statemachine_BooleanValue)
 
-@given(instance=statemachine::StringValue_strategy)
+@given(instance=statemachine_StringValue_strategy)
 @settings(max_examples=50)
-def test_statemachine::stringvalue_instantiation(instance):
-    assert isinstance(instance, statemachine::StringValue)
+def test_statemachine_stringvalue_instantiation(instance):
+    assert isinstance(instance, statemachine_StringValue)
 
 @given(instance=GCompositeState_strategy)
 @settings(max_examples=50)
 def test_gcompositestate_instantiation(instance):
     assert isinstance(instance, GCompositeState)
 
-@given(instance=statemachine::GStatemachine_strategy)
+@given(instance=statemachine_GStatemachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::gstatemachine_instantiation(instance):
-    assert isinstance(instance, statemachine::GStatemachine)
-
-@given(instance=statemachine::GStatemachine_strategy)
-def test_statemachine::gstatemachine_package_type(instance):
-    assert isinstance(instance.package, str)
+def test_statemachine_gstatemachine_instantiation(instance):
+    assert isinstance(instance, statemachine_GStatemachine)
 
 
-@given(instance=statemachine::GStatemachine_strategy)
-def test_statemachine::gstatemachine_package_setter(instance):
+
+@given(instance=statemachine_GStatemachine_strategy)
+def test_statemachine_gstatemachine_package_setter(instance):
     original = instance.package
     instance.package = original
     assert instance.package == original
 
-@given(instance=statemachine::Call_strategy)
+@given(instance=statemachine_Call_strategy)
 @settings(max_examples=50)
-def test_statemachine::call_instantiation(instance):
-    assert isinstance(instance, statemachine::Call)
-
-@given(instance=statemachine::Call_strategy)
-def test_statemachine::call_actionId_type(instance):
-    assert isinstance(instance.actionId, str)
+def test_statemachine_call_instantiation(instance):
+    assert isinstance(instance, statemachine_Call)
 
 
-@given(instance=statemachine::Call_strategy)
-def test_statemachine::call_actionId_setter(instance):
+
+@given(instance=statemachine_Call_strategy)
+def test_statemachine_call_actionId_setter(instance):
     original = instance.actionId
     instance.actionId = original
     assert instance.actionId == original
@@ -709,116 +700,104 @@ def test_statemachine::call_actionId_setter(instance):
 def test_gabstractaction_instantiation(instance):
     assert isinstance(instance, GAbstractAction)
 
-@given(instance=statemachine::CallAction_strategy)
+@given(instance=statemachine_CallAction_strategy)
 @settings(max_examples=50)
-def test_statemachine::callaction_instantiation(instance):
-    assert isinstance(instance, statemachine::CallAction)
+def test_statemachine_callaction_instantiation(instance):
+    assert isinstance(instance, statemachine_CallAction)
 
-@given(instance=statemachine::Value_strategy)
+@given(instance=statemachine_Value_strategy)
 @settings(max_examples=50)
-def test_statemachine::value_instantiation(instance):
-    assert isinstance(instance, statemachine::Value)
+def test_statemachine_value_instantiation(instance):
+    assert isinstance(instance, statemachine_Value)
 
 @given(instance=GAbstractState_strategy)
 @settings(max_examples=50)
 def test_gabstractstate_instantiation(instance):
     assert isinstance(instance, GAbstractState)
 
-@given(instance=statemachine::GStartState_strategy)
+@given(instance=statemachine_GStartState_strategy)
 @settings(max_examples=50)
-def test_statemachine::gstartstate_instantiation(instance):
-    assert isinstance(instance, statemachine::GStartState)
+def test_statemachine_gstartstate_instantiation(instance):
+    assert isinstance(instance, statemachine_GStartState)
 
-@given(instance=statemachine::GStopState_strategy)
+@given(instance=statemachine_GStopState_strategy)
 @settings(max_examples=50)
-def test_statemachine::gstopstate_instantiation(instance):
-    assert isinstance(instance, statemachine::GStopState)
+def test_statemachine_gstopstate_instantiation(instance):
+    assert isinstance(instance, statemachine_GStopState)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=statemachine::Parameter_strategy)
+@given(instance=statemachine_Parameter_strategy)
 @settings(max_examples=50)
-def test_statemachine::parameter_instantiation(instance):
-    assert isinstance(instance, statemachine::Parameter)
+def test_statemachine_parameter_instantiation(instance):
+    assert isinstance(instance, statemachine_Parameter)
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_preserveTimers_type(instance):
-    assert isinstance(instance.preserveTimers, bool)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
 
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_preserveTimers_setter(instance):
+
+@given(instance=statemachine_Transition_strategy)
+def test_statemachine_transition_preserveTimers_setter(instance):
     original = instance.preserveTimers
     instance.preserveTimers = original
     assert instance.preserveTimers == original
 
-@given(instance=statemachine::GState_strategy)
+@given(instance=statemachine_GState_strategy)
 @settings(max_examples=50)
-def test_statemachine::gstate_instantiation(instance):
-    assert isinstance(instance, statemachine::GState)
+def test_statemachine_gstate_instantiation(instance):
+    assert isinstance(instance, statemachine_GState)
 
 @given(instance=GState_strategy)
 @settings(max_examples=50)
 def test_gstate_instantiation(instance):
     assert isinstance(instance, GState)
 
-@given(instance=statemachine::GCompositeState_strategy)
+@given(instance=statemachine_GCompositeState_strategy)
 @settings(max_examples=50)
-def test_statemachine::gcompositestate_instantiation(instance):
-    assert isinstance(instance, statemachine::GCompositeState)
+def test_statemachine_gcompositestate_instantiation(instance):
+    assert isinstance(instance, statemachine_GCompositeState)
 
-@given(instance=statemachine::Named_strategy)
+@given(instance=statemachine_Named_strategy)
 @settings(max_examples=50)
-def test_statemachine::named_instantiation(instance):
-    assert isinstance(instance, statemachine::Named)
-
-@given(instance=statemachine::Named_strategy)
-def test_statemachine::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_named_instantiation(instance):
+    assert isinstance(instance, statemachine_Named)
 
 
-@given(instance=statemachine::Named_strategy)
-def test_statemachine::named_name_setter(instance):
+
+@given(instance=statemachine_Named_strategy)
+def test_statemachine_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachine::Named_strategy)
-def test_statemachine::named_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=statemachine::Named_strategy)
-def test_statemachine::named_comment_setter(instance):
+@given(instance=statemachine_Named_strategy)
+def test_statemachine_named_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=statemachine::GAbstractAction_strategy)
+@given(instance=statemachine_GAbstractAction_strategy)
 @settings(max_examples=50)
-def test_statemachine::gabstractaction_instantiation(instance):
-    assert isinstance(instance, statemachine::GAbstractAction)
-
-@given(instance=statemachine::GAbstractAction_strategy)
-def test_statemachine::gabstractaction_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_statemachine_gabstractaction_instantiation(instance):
+    assert isinstance(instance, statemachine_GAbstractAction)
 
 
-@given(instance=statemachine::GAbstractAction_strategy)
-def test_statemachine::gabstractaction_kind_setter(instance):
+
+@given(instance=statemachine_GAbstractAction_strategy)
+def test_statemachine_gabstractaction_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=statemachine::GAbstractState_strategy)
+@given(instance=statemachine_GAbstractState_strategy)
 @settings(max_examples=50)
-def test_statemachine::gabstractstate_instantiation(instance):
-    assert isinstance(instance, statemachine::GAbstractState)
+def test_statemachine_gabstractstate_instantiation(instance):
+    assert isinstance(instance, statemachine_GAbstractState)

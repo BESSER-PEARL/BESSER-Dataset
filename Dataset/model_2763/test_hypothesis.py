@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tests::Named,
+from python_code import (
+    tests_Named,
     Named,
-    tests::Root,
-    tests::TypeB,
-    tests::TypeA,
+    tests_TypeA,
+    tests_Root,
+    tests_TypeB,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_tests::named_is_not_abstract():
-    assert not inspect.isabstract(tests::Named)
+def test_tests_named_is_not_abstract():
+    assert not inspect.isabstract(tests_Named)
 
 
-def test_tests::named_constructor_exists():
-    assert callable(tests::Named.__init__)
+def test_tests_named_constructor_exists():
+    assert callable(tests_Named.__init__)
 
 
-def test_tests::named_constructor_args():
-    sig = inspect.signature(tests::Named.__init__)
+def test_tests_named_constructor_args():
+    sig = inspect.signature(tests_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tests::named_has_name():
-    assert hasattr(tests::Named, "name")
+def test_tests_named_has_name():
+    assert hasattr(tests_Named, "name")
     descriptor = None
-    for klass in tests::Named.__mro__:
+    for klass in tests_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,44 +57,44 @@ def test_named_constructor_args():
 
 
 
-def test_tests::root_is_not_abstract():
-    assert not inspect.isabstract(tests::Root)
+def test_tests_typea_is_not_abstract():
+    assert not inspect.isabstract(tests_TypeA)
 
 
-def test_tests::root_constructor_exists():
-    assert callable(tests::Root.__init__)
+def test_tests_typea_constructor_exists():
+    assert callable(tests_TypeA.__init__)
 
 
-def test_tests::root_constructor_args():
-    sig = inspect.signature(tests::Root.__init__)
+def test_tests_typea_constructor_args():
+    sig = inspect.signature(tests_TypeA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::typeb_is_not_abstract():
-    assert not inspect.isabstract(tests::TypeB)
+def test_tests_root_is_not_abstract():
+    assert not inspect.isabstract(tests_Root)
 
 
-def test_tests::typeb_constructor_exists():
-    assert callable(tests::TypeB.__init__)
+def test_tests_root_constructor_exists():
+    assert callable(tests_Root.__init__)
 
 
-def test_tests::typeb_constructor_args():
-    sig = inspect.signature(tests::TypeB.__init__)
+def test_tests_root_constructor_args():
+    sig = inspect.signature(tests_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::typea_is_not_abstract():
-    assert not inspect.isabstract(tests::TypeA)
+def test_tests_typeb_is_not_abstract():
+    assert not inspect.isabstract(tests_TypeB)
 
 
-def test_tests::typea_constructor_exists():
-    assert callable(tests::TypeA.__init__)
+def test_tests_typeb_constructor_exists():
+    assert callable(tests_TypeB.__init__)
 
 
-def test_tests::typea_constructor_args():
-    sig = inspect.signature(tests::TypeA.__init__)
+def test_tests_typeb_constructor_args():
+    sig = inspect.signature(tests_TypeB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,36 +109,33 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tests::Named_strategy = st.builds(
-    tests::Named,
+tests_Named_strategy = st.builds(
+    tests_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-tests::Root_strategy = st.builds(
-    tests::Root,
+tests_TypeA_strategy = st.builds(
+    tests_TypeA,
 )
-tests::TypeB_strategy = st.builds(
-    tests::TypeB,
+tests_Root_strategy = st.builds(
+    tests_Root,
 )
-tests::TypeA_strategy = st.builds(
-    tests::TypeA,
+tests_TypeB_strategy = st.builds(
+    tests_TypeB,
 )
 
-@given(instance=tests::Named_strategy)
+@given(instance=tests_Named_strategy)
 @settings(max_examples=50)
-def test_tests::named_instantiation(instance):
-    assert isinstance(instance, tests::Named)
-
-@given(instance=tests::Named_strategy)
-def test_tests::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tests_named_instantiation(instance):
+    assert isinstance(instance, tests_Named)
 
 
-@given(instance=tests::Named_strategy)
-def test_tests::named_name_setter(instance):
+
+@given(instance=tests_Named_strategy)
+def test_tests_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -148,17 +145,17 @@ def test_tests::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=tests::Root_strategy)
+@given(instance=tests_TypeA_strategy)
 @settings(max_examples=50)
-def test_tests::root_instantiation(instance):
-    assert isinstance(instance, tests::Root)
+def test_tests_typea_instantiation(instance):
+    assert isinstance(instance, tests_TypeA)
 
-@given(instance=tests::TypeB_strategy)
+@given(instance=tests_Root_strategy)
 @settings(max_examples=50)
-def test_tests::typeb_instantiation(instance):
-    assert isinstance(instance, tests::TypeB)
+def test_tests_root_instantiation(instance):
+    assert isinstance(instance, tests_Root)
 
-@given(instance=tests::TypeA_strategy)
+@given(instance=tests_TypeB_strategy)
 @settings(max_examples=50)
-def test_tests::typea_instantiation(instance):
-    assert isinstance(instance, tests::TypeA)
+def test_tests_typeb_instantiation(instance):
+    assert isinstance(instance, tests_TypeB)

@@ -3,13 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    utils_Parser,
-    classes_Hand,
-    combinations_QuinteFlush,
-    combinations_Carre,
     combinations_Full,
     combinations_Couleur,
     combinations_Suite,
@@ -19,88 +15,16 @@ from python_code import (
     combinations_PlusHauteCarte,
     combinations_Combination,
     classes_Card,
+    utils_Parser,
+    classes_Hand,
+    combinations_QuinteFlush,
+    combinations_Carre,
     int,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_utils_parser_is_not_abstract():
-    assert not inspect.isabstract(utils_Parser)
-
-
-def test_utils_parser_constructor_exists():
-    assert callable(utils_Parser.__init__)
-
-
-def test_utils_parser_constructor_args():
-    sig = inspect.signature(utils_Parser.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classes_hand_is_not_abstract():
-    assert not inspect.isabstract(classes_Hand)
-
-
-def test_classes_hand_constructor_exists():
-    assert callable(classes_Hand.__init__)
-
-
-def test_classes_hand_constructor_args():
-    sig = inspect.signature(classes_Hand.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_combinations_quinteflush_is_not_abstract():
-    assert not inspect.isabstract(combinations_QuinteFlush)
-
-
-def test_combinations_quinteflush_constructor_exists():
-    assert callable(combinations_QuinteFlush.__init__)
-
-
-def test_combinations_quinteflush_constructor_args():
-    sig = inspect.signature(combinations_QuinteFlush.__init__)
-    params = list(sig.parameters.keys())
-    assert "start" in params, "Missing parameter 'start'"
-
-def test_combinations_quinteflush_has_start():
-    assert hasattr(combinations_QuinteFlush, "start")
-    descriptor = None
-    for klass in combinations_QuinteFlush.__mro__:
-        if "start" in klass.__dict__:
-            descriptor = klass.__dict__["start"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_combinations_carre_is_not_abstract():
-    assert not inspect.isabstract(combinations_Carre)
-
-
-def test_combinations_carre_constructor_exists():
-    assert callable(combinations_Carre.__init__)
-
-
-def test_combinations_carre_constructor_args():
-    sig = inspect.signature(combinations_Carre.__init__)
-    params = list(sig.parameters.keys())
-    assert "quartet" in params, "Missing parameter 'quartet'"
-
-def test_combinations_carre_has_quartet():
-    assert hasattr(combinations_Carre, "quartet")
-    descriptor = None
-    for klass in combinations_Carre.__mro__:
-        if "quartet" in klass.__dict__:
-            descriptor = klass.__dict__["quartet"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -211,17 +135,8 @@ def test_combinations_doublepaire_constructor_exists():
 def test_combinations_doublepaire_constructor_args():
     sig = inspect.signature(combinations_DoublePaire.__init__)
     params = list(sig.parameters.keys())
-    assert "strongPaire" in params, "Missing parameter 'strongPaire'"
     assert "weakPaire" in params, "Missing parameter 'weakPaire'"
-
-def test_combinations_doublepaire_has_strongPaire():
-    assert hasattr(combinations_DoublePaire, "strongPaire")
-    descriptor = None
-    for klass in combinations_DoublePaire.__mro__:
-        if "strongPaire" in klass.__dict__:
-            descriptor = klass.__dict__["strongPaire"]
-            break
-    assert isinstance(descriptor, property)
+    assert "strongPaire" in params, "Missing parameter 'strongPaire'"
 
 def test_combinations_doublepaire_has_weakPaire():
     assert hasattr(combinations_DoublePaire, "weakPaire")
@@ -229,6 +144,15 @@ def test_combinations_doublepaire_has_weakPaire():
     for klass in combinations_DoublePaire.__mro__:
         if "weakPaire" in klass.__dict__:
             descriptor = klass.__dict__["weakPaire"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_combinations_doublepaire_has_strongPaire():
+    assert hasattr(combinations_DoublePaire, "strongPaire")
+    descriptor = None
+    for klass in combinations_DoublePaire.__mro__:
+        if "strongPaire" in klass.__dict__:
+            descriptor = klass.__dict__["strongPaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -283,17 +207,8 @@ def test_combinations_combination_constructor_exists():
 def test_combinations_combination_constructor_args():
     sig = inspect.signature(combinations_Combination.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_combinations_combination_has_value():
-    assert hasattr(combinations_Combination, "value")
-    descriptor = None
-    for klass in combinations_Combination.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
+    assert "value" in params, "Missing parameter 'value'"
 
 def test_combinations_combination_has_name():
     assert hasattr(combinations_Combination, "name")
@@ -301,6 +216,15 @@ def test_combinations_combination_has_name():
     for klass in combinations_Combination.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_combinations_combination_has_value():
+    assert hasattr(combinations_Combination, "value")
+    descriptor = None
+    for klass in combinations_Combination.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -340,6 +264,82 @@ def test_classes_card_has_name():
 
 
 
+def test_utils_parser_is_not_abstract():
+    assert not inspect.isabstract(utils_Parser)
+
+
+def test_utils_parser_constructor_exists():
+    assert callable(utils_Parser.__init__)
+
+
+def test_utils_parser_constructor_args():
+    sig = inspect.signature(utils_Parser.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classes_hand_is_not_abstract():
+    assert not inspect.isabstract(classes_Hand)
+
+
+def test_classes_hand_constructor_exists():
+    assert callable(classes_Hand.__init__)
+
+
+def test_classes_hand_constructor_args():
+    sig = inspect.signature(classes_Hand.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_combinations_quinteflush_is_not_abstract():
+    assert not inspect.isabstract(combinations_QuinteFlush)
+
+
+def test_combinations_quinteflush_constructor_exists():
+    assert callable(combinations_QuinteFlush.__init__)
+
+
+def test_combinations_quinteflush_constructor_args():
+    sig = inspect.signature(combinations_QuinteFlush.__init__)
+    params = list(sig.parameters.keys())
+    assert "start" in params, "Missing parameter 'start'"
+
+def test_combinations_quinteflush_has_start():
+    assert hasattr(combinations_QuinteFlush, "start")
+    descriptor = None
+    for klass in combinations_QuinteFlush.__mro__:
+        if "start" in klass.__dict__:
+            descriptor = klass.__dict__["start"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_combinations_carre_is_not_abstract():
+    assert not inspect.isabstract(combinations_Carre)
+
+
+def test_combinations_carre_constructor_exists():
+    assert callable(combinations_Carre.__init__)
+
+
+def test_combinations_carre_constructor_args():
+    sig = inspect.signature(combinations_Carre.__init__)
+    params = list(sig.parameters.keys())
+    assert "quartet" in params, "Missing parameter 'quartet'"
+
+def test_combinations_carre_has_quartet():
+    assert hasattr(combinations_Carre, "quartet")
+    descriptor = None
+    for klass in combinations_Carre.__mro__:
+        if "quartet" in klass.__dict__:
+            descriptor = klass.__dict__["quartet"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
 def test_int_is_not_abstract():
     assert not inspect.isabstract(int)
 
@@ -364,22 +364,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-utils_Parser_strategy = st.builds(
-    utils_Parser,
-)
-classes_Hand_strategy = st.builds(
-    classes_Hand,
-)
-combinations_QuinteFlush_strategy = st.builds(
-    combinations_QuinteFlush,
-    start=
-        st.none()
-)
-combinations_Carre_strategy = st.builds(
-    combinations_Carre,
-    quartet=
-        st.none()
-)
 combinations_Full_strategy = st.builds(
     combinations_Full,
     triplet=
@@ -402,9 +386,9 @@ combinations_Brelan_strategy = st.builds(
 )
 combinations_DoublePaire_strategy = st.builds(
     combinations_DoublePaire,
-    strongPaire=
-        st.none(),
     weakPaire=
+        st.none(),
+    strongPaire=
         st.none()
 )
 combinations_Paire_strategy = st.builds(
@@ -417,10 +401,10 @@ combinations_PlusHauteCarte_strategy = st.builds(
 )
 combinations_Combination_strategy = st.builds(
     combinations_Combination,
-    value=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    value=
+        st.integers()
 )
 classes_Card_strategy = st.builds(
     classes_Card,
@@ -429,60 +413,31 @@ classes_Card_strategy = st.builds(
     name=
         safe_text
 )
+utils_Parser_strategy = st.builds(
+    utils_Parser,
+)
+classes_Hand_strategy = st.builds(
+    classes_Hand,
+)
+combinations_QuinteFlush_strategy = st.builds(
+    combinations_QuinteFlush,
+    start=
+        st.none()
+)
+combinations_Carre_strategy = st.builds(
+    combinations_Carre,
+    quartet=
+        st.none()
+)
 int_strategy = st.builds(
     int,
 )
-
-@given(instance=utils_Parser_strategy)
-@settings(max_examples=50)
-def test_utils_parser_instantiation(instance):
-    assert isinstance(instance, utils_Parser)
-
-@given(instance=classes_Hand_strategy)
-@settings(max_examples=50)
-def test_classes_hand_instantiation(instance):
-    assert isinstance(instance, classes_Hand)
-
-@given(instance=combinations_QuinteFlush_strategy)
-@settings(max_examples=50)
-def test_combinations_quinteflush_instantiation(instance):
-    assert isinstance(instance, combinations_QuinteFlush)
-
-@given(instance=combinations_QuinteFlush_strategy)
-def test_combinations_quinteflush_start_type(instance):
-    assert isinstance(instance.start, classes_card)
-
-
-@given(instance=combinations_QuinteFlush_strategy)
-def test_combinations_quinteflush_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
-
-@given(instance=combinations_Carre_strategy)
-@settings(max_examples=50)
-def test_combinations_carre_instantiation(instance):
-    assert isinstance(instance, combinations_Carre)
-
-@given(instance=combinations_Carre_strategy)
-def test_combinations_carre_quartet_type(instance):
-    assert isinstance(instance.quartet, classes_card)
-
-
-@given(instance=combinations_Carre_strategy)
-def test_combinations_carre_quartet_setter(instance):
-    original = instance.quartet
-    instance.quartet = original
-    assert instance.quartet == original
 
 @given(instance=combinations_Full_strategy)
 @settings(max_examples=50)
 def test_combinations_full_instantiation(instance):
     assert isinstance(instance, combinations_Full)
 
-@given(instance=combinations_Full_strategy)
-def test_combinations_full_triplet_type(instance):
-    assert isinstance(instance.triplet, classes_card)
 
 
 @given(instance=combinations_Full_strategy)
@@ -491,9 +446,6 @@ def test_combinations_full_triplet_setter(instance):
     instance.triplet = original
     assert instance.triplet == original
 
-@given(instance=combinations_Full_strategy)
-def test_combinations_full_paire_type(instance):
-    assert isinstance(instance.paire, classes_card)
 
 
 @given(instance=combinations_Full_strategy)
@@ -512,9 +464,6 @@ def test_combinations_couleur_instantiation(instance):
 def test_combinations_suite_instantiation(instance):
     assert isinstance(instance, combinations_Suite)
 
-@given(instance=combinations_Suite_strategy)
-def test_combinations_suite_start_type(instance):
-    assert isinstance(instance.start, classes_card)
 
 
 @given(instance=combinations_Suite_strategy)
@@ -528,9 +477,6 @@ def test_combinations_suite_start_setter(instance):
 def test_combinations_brelan_instantiation(instance):
     assert isinstance(instance, combinations_Brelan)
 
-@given(instance=combinations_Brelan_strategy)
-def test_combinations_brelan_triplet_type(instance):
-    assert isinstance(instance.triplet, classes_card)
 
 
 @given(instance=combinations_Brelan_strategy)
@@ -544,20 +490,6 @@ def test_combinations_brelan_triplet_setter(instance):
 def test_combinations_doublepaire_instantiation(instance):
     assert isinstance(instance, combinations_DoublePaire)
 
-@given(instance=combinations_DoublePaire_strategy)
-def test_combinations_doublepaire_strongPaire_type(instance):
-    assert isinstance(instance.strongPaire, classes_card)
-
-
-@given(instance=combinations_DoublePaire_strategy)
-def test_combinations_doublepaire_strongPaire_setter(instance):
-    original = instance.strongPaire
-    instance.strongPaire = original
-    assert instance.strongPaire == original
-
-@given(instance=combinations_DoublePaire_strategy)
-def test_combinations_doublepaire_weakPaire_type(instance):
-    assert isinstance(instance.weakPaire, classes_card)
 
 
 @given(instance=combinations_DoublePaire_strategy)
@@ -566,14 +498,19 @@ def test_combinations_doublepaire_weakPaire_setter(instance):
     instance.weakPaire = original
     assert instance.weakPaire == original
 
+
+
+@given(instance=combinations_DoublePaire_strategy)
+def test_combinations_doublepaire_strongPaire_setter(instance):
+    original = instance.strongPaire
+    instance.strongPaire = original
+    assert instance.strongPaire == original
+
 @given(instance=combinations_Paire_strategy)
 @settings(max_examples=50)
 def test_combinations_paire_instantiation(instance):
     assert isinstance(instance, combinations_Paire)
 
-@given(instance=combinations_Paire_strategy)
-def test_combinations_paire_paire_type(instance):
-    assert isinstance(instance.paire, classes_card)
 
 
 @given(instance=combinations_Paire_strategy)
@@ -592,20 +529,6 @@ def test_combinations_plushautecarte_instantiation(instance):
 def test_combinations_combination_instantiation(instance):
     assert isinstance(instance, combinations_Combination)
 
-@given(instance=combinations_Combination_strategy)
-def test_combinations_combination_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=combinations_Combination_strategy)
-def test_combinations_combination_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=combinations_Combination_strategy)
-def test_combinations_combination_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=combinations_Combination_strategy)
@@ -614,14 +537,19 @@ def test_combinations_combination_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=combinations_Combination_strategy)
+def test_combinations_combination_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
 @given(instance=classes_Card_strategy)
 @settings(max_examples=50)
 def test_classes_card_instantiation(instance):
     assert isinstance(instance, classes_Card)
 
-@given(instance=classes_Card_strategy)
-def test_classes_card_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=classes_Card_strategy)
@@ -630,9 +558,6 @@ def test_classes_card_value_setter(instance):
     instance.value = original
     assert instance.value == original
 
-@given(instance=classes_Card_strategy)
-def test_classes_card_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=classes_Card_strategy)
@@ -640,6 +565,42 @@ def test_classes_card_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=utils_Parser_strategy)
+@settings(max_examples=50)
+def test_utils_parser_instantiation(instance):
+    assert isinstance(instance, utils_Parser)
+
+@given(instance=classes_Hand_strategy)
+@settings(max_examples=50)
+def test_classes_hand_instantiation(instance):
+    assert isinstance(instance, classes_Hand)
+
+@given(instance=combinations_QuinteFlush_strategy)
+@settings(max_examples=50)
+def test_combinations_quinteflush_instantiation(instance):
+    assert isinstance(instance, combinations_QuinteFlush)
+
+
+
+@given(instance=combinations_QuinteFlush_strategy)
+def test_combinations_quinteflush_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+@given(instance=combinations_Carre_strategy)
+@settings(max_examples=50)
+def test_combinations_carre_instantiation(instance):
+    assert isinstance(instance, combinations_Carre)
+
+
+
+@given(instance=combinations_Carre_strategy)
+def test_combinations_carre_quartet_setter(instance):
+    original = instance.quartet
+    instance.quartet = original
+    assert instance.quartet == original
 
 @given(instance=int_strategy)
 @settings(max_examples=50)

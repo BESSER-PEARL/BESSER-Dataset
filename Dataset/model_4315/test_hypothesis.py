@@ -3,617 +3,85 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    BinaryMeasurement,
-    smm::RatioMeasurement,
-    BinaryMeasure,
-    smm::RatioMeasure,
-    smm::SmmElement,
-    smm::MofElement,
-    Measurement,
-    smm::Grade,
-    Measure,
-    smm::Ranking,
-    DirectMeasurement,
-    smm::Count,
-    AbstractMeasureElement,
-    smm::Measure,
-    smm::Scope,
-    smm::OCLOperation,
-    smm::Operation,
-    smm::Characteristic,
-    smm::MeasureCategory,
-    SmmRelationship,
-    smm::ObservedMeasure,
-    smm::MeasurementRelationship,
-    smm::MeasureRelationship,
-    smm::CategoryRelationship,
-    DimensionalMeasurement,
-    smm::NamedMeasurement,
-    smm::RescaledMeasurement,
-    smm::DirectMeasurement,
+from python_code import (
     DimensionalMeasure,
-    smm::DirectMeasure,
-    smm::RescaledMeasure,
-    smm::NamedMeasure,
-    smm::CollectiveMeasurement,
-    smm::CollectiveMeasure,
+    smm_CollectiveMeasure,
     DirectMeasure,
-    smm::Counting,
-    smm::DimensionalMeasurement,
-    smm::BinaryMeasurement,
+    smm_Counting,
     MeasurementRelationship,
-    smm::BaseMeasurementRelationship,
-    smm::RescaleMeasurementRelationship,
-    smm::EquivalentMeasurementRelationship,
-    smm::RefinementMeasurementRelationship,
-    smm::Base2MeasurementRelationship,
-    smm::RecursiveMeasurementRelationship,
-    smm::RankingMeasurementRelationship,
-    smm::Base1MeasurementRelationship,
-    smm::DimensionalMeasure,
-    smm::BinaryMeasure,
+    smm_Base2MeasurementRelationship,
+    smm_BaseMeasurementRelationship,
+    smm_Base1MeasurementRelationship,
+    smm_BinaryMeasure,
     MeasureRelationship,
-    smm::EquivalentMeasureRelationship,
-    smm::RecursiveMeasureRelationship,
-    smm::RescaleMeasureRelationship,
-    smm::Base2MeasureRelationship,
-    smm::RankingMeasureRelationship,
-    smm::RefinementMeasureRelationship,
-    smm::Base1MeasureRelationship,
+    smm_Base2MeasureRelationship,
+    smm_Base1MeasureRelationship,
     SmmElement,
-    smm::Argument,
-    smm::RankingInterval,
-    smm::MeasureLibrary,
-    smm::Attribute,
-    smm::SmmModel,
-    smm::SmmRelationship,
-    smm::ObservationScope,
-    smm::Observation,
-    smm::Annotation,
-    smm::Measurement,
-    smm::AbstractMeasureElement,
-    smm::BaseMeasureRelationship,
+    smm_Annotation,
+    smm_Attribute,
+    smm_Argument,
+    smm_AbstractMeasureElement,
+    smm_BaseMeasureRelationship,
+    smm_SmmModel,
+    smm_RescaledMeasure,
+    BinaryMeasurement,
+    smm_RatioMeasurement,
+    BinaryMeasure,
+    smm_RatioMeasure,
+    smm_RankingInterval,
+    smm_SmmRelationship,
+    smm_SmmElement,
+    smm_ObservationScope,
+    smm_NamedMeasure,
+    smm_RecursiveMeasurementRelationship,
+    smm_RefinementMeasurementRelationship,
+    smm_MofElement,
+    smm_Observation,
+    smm_MeasureLibrary,
+    smm_RecursiveMeasureRelationship,
+    smm_RefinementMeasureRelationship,
+    smm_Measurement,
+    smm_EquivalentMeasurementRelationship,
+    smm_EquivalentMeasureRelationship,
+    smm_DirectMeasure,
+    smm_RankingMeasurementRelationship,
+    smm_RescaleMeasurementRelationship,
+    Measurement,
+    smm_DimensionalMeasurement,
+    smm_Grade,
+    smm_RankingMeasureRelationship,
+    smm_RescaleMeasureRelationship,
+    Measure,
+    smm_DimensionalMeasure,
+    smm_Ranking,
+    DirectMeasurement,
+    smm_Count,
+    AbstractMeasureElement,
+    smm_OCLOperation,
+    smm_Scope,
+    smm_Measure,
+    smm_Operation,
+    smm_Characteristic,
+    smm_MeasureCategory,
+    SmmRelationship,
+    smm_MeasurementRelationship,
+    smm_ObservedMeasure,
+    smm_MeasureRelationship,
+    smm_CategoryRelationship,
+    DimensionalMeasurement,
+    smm_DirectMeasurement,
+    smm_NamedMeasurement,
+    smm_CollectiveMeasurement,
+    smm_RescaledMeasurement,
+    smm_BinaryMeasurement,
     Accumulator,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_binarymeasurement_is_not_abstract():
-    assert not inspect.isabstract(BinaryMeasurement)
-
-
-def test_binarymeasurement_constructor_exists():
-    assert callable(BinaryMeasurement.__init__)
-
-
-def test_binarymeasurement_constructor_args():
-    sig = inspect.signature(BinaryMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::ratiomeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::RatioMeasurement)
-
-
-def test_smm::ratiomeasurement_constructor_exists():
-    assert callable(smm::RatioMeasurement.__init__)
-
-
-def test_smm::ratiomeasurement_constructor_args():
-    sig = inspect.signature(smm::RatioMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_binarymeasure_is_not_abstract():
-    assert not inspect.isabstract(BinaryMeasure)
-
-
-def test_binarymeasure_constructor_exists():
-    assert callable(BinaryMeasure.__init__)
-
-
-def test_binarymeasure_constructor_args():
-    sig = inspect.signature(BinaryMeasure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::ratiomeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::RatioMeasure)
-
-
-def test_smm::ratiomeasure_constructor_exists():
-    assert callable(smm::RatioMeasure.__init__)
-
-
-def test_smm::ratiomeasure_constructor_args():
-    sig = inspect.signature(smm::RatioMeasure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::smmelement_is_not_abstract():
-    assert not inspect.isabstract(smm::SmmElement)
-
-
-def test_smm::smmelement_constructor_exists():
-    assert callable(smm::SmmElement.__init__)
-
-
-def test_smm::smmelement_constructor_args():
-    sig = inspect.signature(smm::SmmElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-    assert "shortDescription" in params, "Missing parameter 'shortDescription'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_smm::smmelement_has_description():
-    assert hasattr(smm::SmmElement, "description")
-    descriptor = None
-    for klass in smm::SmmElement.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::smmelement_has_shortDescription():
-    assert hasattr(smm::SmmElement, "shortDescription")
-    descriptor = None
-    for klass in smm::SmmElement.__mro__:
-        if "shortDescription" in klass.__dict__:
-            descriptor = klass.__dict__["shortDescription"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::smmelement_has_name():
-    assert hasattr(smm::SmmElement, "name")
-    descriptor = None
-    for klass in smm::SmmElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::mofelement_is_not_abstract():
-    assert not inspect.isabstract(smm::MofElement)
-
-
-def test_smm::mofelement_constructor_exists():
-    assert callable(smm::MofElement.__init__)
-
-
-def test_smm::mofelement_constructor_args():
-    sig = inspect.signature(smm::MofElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_measurement_is_not_abstract():
-    assert not inspect.isabstract(Measurement)
-
-
-def test_measurement_constructor_exists():
-    assert callable(Measurement.__init__)
-
-
-def test_measurement_constructor_args():
-    sig = inspect.signature(Measurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::grade_is_not_abstract():
-    assert not inspect.isabstract(smm::Grade)
-
-
-def test_smm::grade_constructor_exists():
-    assert callable(smm::Grade.__init__)
-
-
-def test_smm::grade_constructor_args():
-    sig = inspect.signature(smm::Grade.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
-
-def test_smm::grade_has_value():
-    assert hasattr(smm::Grade, "value")
-    descriptor = None
-    for klass in smm::Grade.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::grade_has_isBaseSupplied():
-    assert hasattr(smm::Grade, "isBaseSupplied")
-    descriptor = None
-    for klass in smm::Grade.__mro__:
-        if "isBaseSupplied" in klass.__dict__:
-            descriptor = klass.__dict__["isBaseSupplied"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_measure_is_not_abstract():
-    assert not inspect.isabstract(Measure)
-
-
-def test_measure_constructor_exists():
-    assert callable(Measure.__init__)
-
-
-def test_measure_constructor_args():
-    sig = inspect.signature(Measure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::ranking_is_not_abstract():
-    assert not inspect.isabstract(smm::Ranking)
-
-
-def test_smm::ranking_constructor_exists():
-    assert callable(smm::Ranking.__init__)
-
-
-def test_smm::ranking_constructor_args():
-    sig = inspect.signature(smm::Ranking.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_directmeasurement_is_not_abstract():
-    assert not inspect.isabstract(DirectMeasurement)
-
-
-def test_directmeasurement_constructor_exists():
-    assert callable(DirectMeasurement.__init__)
-
-
-def test_directmeasurement_constructor_args():
-    sig = inspect.signature(DirectMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::count_is_not_abstract():
-    assert not inspect.isabstract(smm::Count)
-
-
-def test_smm::count_constructor_exists():
-    assert callable(smm::Count.__init__)
-
-
-def test_smm::count_constructor_args():
-    sig = inspect.signature(smm::Count.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_abstractmeasureelement_is_not_abstract():
-    assert not inspect.isabstract(AbstractMeasureElement)
-
-
-def test_abstractmeasureelement_constructor_exists():
-    assert callable(AbstractMeasureElement.__init__)
-
-
-def test_abstractmeasureelement_constructor_args():
-    sig = inspect.signature(AbstractMeasureElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::measure_is_not_abstract():
-    assert not inspect.isabstract(smm::Measure)
-
-
-def test_smm::measure_constructor_exists():
-    assert callable(smm::Measure.__init__)
-
-
-def test_smm::measure_constructor_args():
-    sig = inspect.signature(smm::Measure.__init__)
-    params = list(sig.parameters.keys())
-    assert "visible" in params, "Missing parameter 'visible'"
-    assert "measurementLabelFormat" in params, "Missing parameter 'measurementLabelFormat'"
-    assert "measureLabelFormat" in params, "Missing parameter 'measureLabelFormat'"
-
-def test_smm::measure_has_visible():
-    assert hasattr(smm::Measure, "visible")
-    descriptor = None
-    for klass in smm::Measure.__mro__:
-        if "visible" in klass.__dict__:
-            descriptor = klass.__dict__["visible"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::measure_has_measurementLabelFormat():
-    assert hasattr(smm::Measure, "measurementLabelFormat")
-    descriptor = None
-    for klass in smm::Measure.__mro__:
-        if "measurementLabelFormat" in klass.__dict__:
-            descriptor = klass.__dict__["measurementLabelFormat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::measure_has_measureLabelFormat():
-    assert hasattr(smm::Measure, "measureLabelFormat")
-    descriptor = None
-    for klass in smm::Measure.__mro__:
-        if "measureLabelFormat" in klass.__dict__:
-            descriptor = klass.__dict__["measureLabelFormat"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::scope_is_not_abstract():
-    assert not inspect.isabstract(smm::Scope)
-
-
-def test_smm::scope_constructor_exists():
-    assert callable(smm::Scope.__init__)
-
-
-def test_smm::scope_constructor_args():
-    sig = inspect.signature(smm::Scope.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_smm::scope_has_class_():
-    assert hasattr(smm::Scope, "class_")
-    descriptor = None
-    for klass in smm::Scope.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::ocloperation_is_not_abstract():
-    assert not inspect.isabstract(smm::OCLOperation)
-
-
-def test_smm::ocloperation_constructor_exists():
-    assert callable(smm::OCLOperation.__init__)
-
-
-def test_smm::ocloperation_constructor_args():
-    sig = inspect.signature(smm::OCLOperation.__init__)
-    params = list(sig.parameters.keys())
-    assert "context" in params, "Missing parameter 'context'"
-    assert "body" in params, "Missing parameter 'body'"
-
-def test_smm::ocloperation_has_context():
-    assert hasattr(smm::OCLOperation, "context")
-    descriptor = None
-    for klass in smm::OCLOperation.__mro__:
-        if "context" in klass.__dict__:
-            descriptor = klass.__dict__["context"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::ocloperation_has_body():
-    assert hasattr(smm::OCLOperation, "body")
-    descriptor = None
-    for klass in smm::OCLOperation.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::operation_is_not_abstract():
-    assert not inspect.isabstract(smm::Operation)
-
-
-def test_smm::operation_constructor_exists():
-    assert callable(smm::Operation.__init__)
-
-
-def test_smm::operation_constructor_args():
-    sig = inspect.signature(smm::Operation.__init__)
-    params = list(sig.parameters.keys())
-    assert "body" in params, "Missing parameter 'body'"
-    assert "language" in params, "Missing parameter 'language'"
-
-def test_smm::operation_has_body():
-    assert hasattr(smm::Operation, "body")
-    descriptor = None
-    for klass in smm::Operation.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::operation_has_language():
-    assert hasattr(smm::Operation, "language")
-    descriptor = None
-    for klass in smm::Operation.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::characteristic_is_not_abstract():
-    assert not inspect.isabstract(smm::Characteristic)
-
-
-def test_smm::characteristic_constructor_exists():
-    assert callable(smm::Characteristic.__init__)
-
-
-def test_smm::characteristic_constructor_args():
-    sig = inspect.signature(smm::Characteristic.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::measurecategory_is_not_abstract():
-    assert not inspect.isabstract(smm::MeasureCategory)
-
-
-def test_smm::measurecategory_constructor_exists():
-    assert callable(smm::MeasureCategory.__init__)
-
-
-def test_smm::measurecategory_constructor_args():
-    sig = inspect.signature(smm::MeasureCategory.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smmrelationship_is_not_abstract():
-    assert not inspect.isabstract(SmmRelationship)
-
-
-def test_smmrelationship_constructor_exists():
-    assert callable(SmmRelationship.__init__)
-
-
-def test_smmrelationship_constructor_args():
-    sig = inspect.signature(SmmRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::observedmeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::ObservedMeasure)
-
-
-def test_smm::observedmeasure_constructor_exists():
-    assert callable(smm::ObservedMeasure.__init__)
-
-
-def test_smm::observedmeasure_constructor_args():
-    sig = inspect.signature(smm::ObservedMeasure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::measurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::MeasurementRelationship)
-
-
-def test_smm::measurementrelationship_constructor_exists():
-    assert callable(smm::MeasurementRelationship.__init__)
-
-
-def test_smm::measurementrelationship_constructor_args():
-    sig = inspect.signature(smm::MeasurementRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::measurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::MeasureRelationship)
-
-
-def test_smm::measurerelationship_constructor_exists():
-    assert callable(smm::MeasureRelationship.__init__)
-
-
-def test_smm::measurerelationship_constructor_args():
-    sig = inspect.signature(smm::MeasureRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::categoryrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::CategoryRelationship)
-
-
-def test_smm::categoryrelationship_constructor_exists():
-    assert callable(smm::CategoryRelationship.__init__)
-
-
-def test_smm::categoryrelationship_constructor_args():
-    sig = inspect.signature(smm::CategoryRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dimensionalmeasurement_is_not_abstract():
-    assert not inspect.isabstract(DimensionalMeasurement)
-
-
-def test_dimensionalmeasurement_constructor_exists():
-    assert callable(DimensionalMeasurement.__init__)
-
-
-def test_dimensionalmeasurement_constructor_args():
-    sig = inspect.signature(DimensionalMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::namedmeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::NamedMeasurement)
-
-
-def test_smm::namedmeasurement_constructor_exists():
-    assert callable(smm::NamedMeasurement.__init__)
-
-
-def test_smm::namedmeasurement_constructor_args():
-    sig = inspect.signature(smm::NamedMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::rescaledmeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::RescaledMeasurement)
-
-
-def test_smm::rescaledmeasurement_constructor_exists():
-    assert callable(smm::RescaledMeasurement.__init__)
-
-
-def test_smm::rescaledmeasurement_constructor_args():
-    sig = inspect.signature(smm::RescaledMeasurement.__init__)
-    params = list(sig.parameters.keys())
-    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
-
-def test_smm::rescaledmeasurement_has_isBaseSupplied():
-    assert hasattr(smm::RescaledMeasurement, "isBaseSupplied")
-    descriptor = None
-    for klass in smm::RescaledMeasurement.__mro__:
-        if "isBaseSupplied" in klass.__dict__:
-            descriptor = klass.__dict__["isBaseSupplied"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::directmeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::DirectMeasurement)
-
-
-def test_smm::directmeasurement_constructor_exists():
-    assert callable(smm::DirectMeasurement.__init__)
-
-
-def test_smm::directmeasurement_constructor_args():
-    sig = inspect.signature(smm::DirectMeasurement.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -631,109 +99,23 @@ def test_dimensionalmeasure_constructor_args():
 
 
 
-def test_smm::directmeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::DirectMeasure)
+def test_smm_collectivemeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_CollectiveMeasure)
 
 
-def test_smm::directmeasure_constructor_exists():
-    assert callable(smm::DirectMeasure.__init__)
+def test_smm_collectivemeasure_constructor_exists():
+    assert callable(smm_CollectiveMeasure.__init__)
 
 
-def test_smm::directmeasure_constructor_args():
-    sig = inspect.signature(smm::DirectMeasure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::rescaledmeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::RescaledMeasure)
-
-
-def test_smm::rescaledmeasure_constructor_exists():
-    assert callable(smm::RescaledMeasure.__init__)
-
-
-def test_smm::rescaledmeasure_constructor_args():
-    sig = inspect.signature(smm::RescaledMeasure.__init__)
-    params = list(sig.parameters.keys())
-    assert "formula" in params, "Missing parameter 'formula'"
-
-def test_smm::rescaledmeasure_has_formula():
-    assert hasattr(smm::RescaledMeasure, "formula")
-    descriptor = None
-    for klass in smm::RescaledMeasure.__mro__:
-        if "formula" in klass.__dict__:
-            descriptor = klass.__dict__["formula"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::namedmeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::NamedMeasure)
-
-
-def test_smm::namedmeasure_constructor_exists():
-    assert callable(smm::NamedMeasure.__init__)
-
-
-def test_smm::namedmeasure_constructor_args():
-    sig = inspect.signature(smm::NamedMeasure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::collectivemeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::CollectiveMeasurement)
-
-
-def test_smm::collectivemeasurement_constructor_exists():
-    assert callable(smm::CollectiveMeasurement.__init__)
-
-
-def test_smm::collectivemeasurement_constructor_args():
-    sig = inspect.signature(smm::CollectiveMeasurement.__init__)
-    params = list(sig.parameters.keys())
-    assert "accumulator" in params, "Missing parameter 'accumulator'"
-    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
-
-def test_smm::collectivemeasurement_has_accumulator():
-    assert hasattr(smm::CollectiveMeasurement, "accumulator")
-    descriptor = None
-    for klass in smm::CollectiveMeasurement.__mro__:
-        if "accumulator" in klass.__dict__:
-            descriptor = klass.__dict__["accumulator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::collectivemeasurement_has_isBaseSupplied():
-    assert hasattr(smm::CollectiveMeasurement, "isBaseSupplied")
-    descriptor = None
-    for klass in smm::CollectiveMeasurement.__mro__:
-        if "isBaseSupplied" in klass.__dict__:
-            descriptor = klass.__dict__["isBaseSupplied"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::collectivemeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::CollectiveMeasure)
-
-
-def test_smm::collectivemeasure_constructor_exists():
-    assert callable(smm::CollectiveMeasure.__init__)
-
-
-def test_smm::collectivemeasure_constructor_args():
-    sig = inspect.signature(smm::CollectiveMeasure.__init__)
+def test_smm_collectivemeasure_constructor_args():
+    sig = inspect.signature(smm_CollectiveMeasure.__init__)
     params = list(sig.parameters.keys())
     assert "accumulator" in params, "Missing parameter 'accumulator'"
 
-def test_smm::collectivemeasure_has_accumulator():
-    assert hasattr(smm::CollectiveMeasure, "accumulator")
+def test_smm_collectivemeasure_has_accumulator():
+    assert hasattr(smm_CollectiveMeasure, "accumulator")
     descriptor = None
-    for klass in smm::CollectiveMeasure.__mro__:
+    for klass in smm_CollectiveMeasure.__mro__:
         if "accumulator" in klass.__dict__:
             descriptor = klass.__dict__["accumulator"]
             break
@@ -755,65 +137,17 @@ def test_directmeasure_constructor_args():
 
 
 
-def test_smm::counting_is_not_abstract():
-    assert not inspect.isabstract(smm::Counting)
+def test_smm_counting_is_not_abstract():
+    assert not inspect.isabstract(smm_Counting)
 
 
-def test_smm::counting_constructor_exists():
-    assert callable(smm::Counting.__init__)
+def test_smm_counting_constructor_exists():
+    assert callable(smm_Counting.__init__)
 
 
-def test_smm::counting_constructor_args():
-    sig = inspect.signature(smm::Counting.__init__)
+def test_smm_counting_constructor_args():
+    sig = inspect.signature(smm_Counting.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_smm::dimensionalmeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::DimensionalMeasurement)
-
-
-def test_smm::dimensionalmeasurement_constructor_exists():
-    assert callable(smm::DimensionalMeasurement.__init__)
-
-
-def test_smm::dimensionalmeasurement_constructor_args():
-    sig = inspect.signature(smm::DimensionalMeasurement.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smm::dimensionalmeasurement_has_value():
-    assert hasattr(smm::DimensionalMeasurement, "value")
-    descriptor = None
-    for klass in smm::DimensionalMeasurement.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::binarymeasurement_is_not_abstract():
-    assert not inspect.isabstract(smm::BinaryMeasurement)
-
-
-def test_smm::binarymeasurement_constructor_exists():
-    assert callable(smm::BinaryMeasurement.__init__)
-
-
-def test_smm::binarymeasurement_constructor_args():
-    sig = inspect.signature(smm::BinaryMeasurement.__init__)
-    params = list(sig.parameters.keys())
-    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
-
-def test_smm::binarymeasurement_has_isBaseSupplied():
-    assert hasattr(smm::BinaryMeasurement, "isBaseSupplied")
-    descriptor = None
-    for klass in smm::BinaryMeasurement.__mro__:
-        if "isBaseSupplied" in klass.__dict__:
-            descriptor = klass.__dict__["isBaseSupplied"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -831,159 +165,65 @@ def test_measurementrelationship_constructor_args():
 
 
 
-def test_smm::basemeasurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::BaseMeasurementRelationship)
+def test_smm_base2measurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_Base2MeasurementRelationship)
 
 
-def test_smm::basemeasurementrelationship_constructor_exists():
-    assert callable(smm::BaseMeasurementRelationship.__init__)
+def test_smm_base2measurementrelationship_constructor_exists():
+    assert callable(smm_Base2MeasurementRelationship.__init__)
 
 
-def test_smm::basemeasurementrelationship_constructor_args():
-    sig = inspect.signature(smm::BaseMeasurementRelationship.__init__)
+def test_smm_base2measurementrelationship_constructor_args():
+    sig = inspect.signature(smm_Base2MeasurementRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smm::rescalemeasurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RescaleMeasurementRelationship)
+def test_smm_basemeasurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_BaseMeasurementRelationship)
 
 
-def test_smm::rescalemeasurementrelationship_constructor_exists():
-    assert callable(smm::RescaleMeasurementRelationship.__init__)
+def test_smm_basemeasurementrelationship_constructor_exists():
+    assert callable(smm_BaseMeasurementRelationship.__init__)
 
 
-def test_smm::rescalemeasurementrelationship_constructor_args():
-    sig = inspect.signature(smm::RescaleMeasurementRelationship.__init__)
+def test_smm_basemeasurementrelationship_constructor_args():
+    sig = inspect.signature(smm_BaseMeasurementRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smm::equivalentmeasurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::EquivalentMeasurementRelationship)
+def test_smm_base1measurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_Base1MeasurementRelationship)
 
 
-def test_smm::equivalentmeasurementrelationship_constructor_exists():
-    assert callable(smm::EquivalentMeasurementRelationship.__init__)
+def test_smm_base1measurementrelationship_constructor_exists():
+    assert callable(smm_Base1MeasurementRelationship.__init__)
 
 
-def test_smm::equivalentmeasurementrelationship_constructor_args():
-    sig = inspect.signature(smm::EquivalentMeasurementRelationship.__init__)
+def test_smm_base1measurementrelationship_constructor_args():
+    sig = inspect.signature(smm_Base1MeasurementRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smm::refinementmeasurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RefinementMeasurementRelationship)
+def test_smm_binarymeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_BinaryMeasure)
 
 
-def test_smm::refinementmeasurementrelationship_constructor_exists():
-    assert callable(smm::RefinementMeasurementRelationship.__init__)
+def test_smm_binarymeasure_constructor_exists():
+    assert callable(smm_BinaryMeasure.__init__)
 
 
-def test_smm::refinementmeasurementrelationship_constructor_args():
-    sig = inspect.signature(smm::RefinementMeasurementRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::base2measurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::Base2MeasurementRelationship)
-
-
-def test_smm::base2measurementrelationship_constructor_exists():
-    assert callable(smm::Base2MeasurementRelationship.__init__)
-
-
-def test_smm::base2measurementrelationship_constructor_args():
-    sig = inspect.signature(smm::Base2MeasurementRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::recursivemeasurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RecursiveMeasurementRelationship)
-
-
-def test_smm::recursivemeasurementrelationship_constructor_exists():
-    assert callable(smm::RecursiveMeasurementRelationship.__init__)
-
-
-def test_smm::recursivemeasurementrelationship_constructor_args():
-    sig = inspect.signature(smm::RecursiveMeasurementRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::rankingmeasurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RankingMeasurementRelationship)
-
-
-def test_smm::rankingmeasurementrelationship_constructor_exists():
-    assert callable(smm::RankingMeasurementRelationship.__init__)
-
-
-def test_smm::rankingmeasurementrelationship_constructor_args():
-    sig = inspect.signature(smm::RankingMeasurementRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::base1measurementrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::Base1MeasurementRelationship)
-
-
-def test_smm::base1measurementrelationship_constructor_exists():
-    assert callable(smm::Base1MeasurementRelationship.__init__)
-
-
-def test_smm::base1measurementrelationship_constructor_args():
-    sig = inspect.signature(smm::Base1MeasurementRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::dimensionalmeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::DimensionalMeasure)
-
-
-def test_smm::dimensionalmeasure_constructor_exists():
-    assert callable(smm::DimensionalMeasure.__init__)
-
-
-def test_smm::dimensionalmeasure_constructor_args():
-    sig = inspect.signature(smm::DimensionalMeasure.__init__)
-    params = list(sig.parameters.keys())
-    assert "unit" in params, "Missing parameter 'unit'"
-
-def test_smm::dimensionalmeasure_has_unit():
-    assert hasattr(smm::DimensionalMeasure, "unit")
-    descriptor = None
-    for klass in smm::DimensionalMeasure.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::binarymeasure_is_not_abstract():
-    assert not inspect.isabstract(smm::BinaryMeasure)
-
-
-def test_smm::binarymeasure_constructor_exists():
-    assert callable(smm::BinaryMeasure.__init__)
-
-
-def test_smm::binarymeasure_constructor_args():
-    sig = inspect.signature(smm::BinaryMeasure.__init__)
+def test_smm_binarymeasure_constructor_args():
+    sig = inspect.signature(smm_BinaryMeasure.__init__)
     params = list(sig.parameters.keys())
     assert "functor" in params, "Missing parameter 'functor'"
 
-def test_smm::binarymeasure_has_functor():
-    assert hasattr(smm::BinaryMeasure, "functor")
+def test_smm_binarymeasure_has_functor():
+    assert hasattr(smm_BinaryMeasure, "functor")
     descriptor = None
-    for klass in smm::BinaryMeasure.__mro__:
+    for klass in smm_BinaryMeasure.__mro__:
         if "functor" in klass.__dict__:
             descriptor = klass.__dict__["functor"]
             break
@@ -1005,100 +245,30 @@ def test_measurerelationship_constructor_args():
 
 
 
-def test_smm::equivalentmeasurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::EquivalentMeasureRelationship)
+def test_smm_base2measurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_Base2MeasureRelationship)
 
 
-def test_smm::equivalentmeasurerelationship_constructor_exists():
-    assert callable(smm::EquivalentMeasureRelationship.__init__)
+def test_smm_base2measurerelationship_constructor_exists():
+    assert callable(smm_Base2MeasureRelationship.__init__)
 
 
-def test_smm::equivalentmeasurerelationship_constructor_args():
-    sig = inspect.signature(smm::EquivalentMeasureRelationship.__init__)
+def test_smm_base2measurerelationship_constructor_args():
+    sig = inspect.signature(smm_Base2MeasureRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smm::recursivemeasurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RecursiveMeasureRelationship)
+def test_smm_base1measurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_Base1MeasureRelationship)
 
 
-def test_smm::recursivemeasurerelationship_constructor_exists():
-    assert callable(smm::RecursiveMeasureRelationship.__init__)
+def test_smm_base1measurerelationship_constructor_exists():
+    assert callable(smm_Base1MeasureRelationship.__init__)
 
 
-def test_smm::recursivemeasurerelationship_constructor_args():
-    sig = inspect.signature(smm::RecursiveMeasureRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::rescalemeasurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RescaleMeasureRelationship)
-
-
-def test_smm::rescalemeasurerelationship_constructor_exists():
-    assert callable(smm::RescaleMeasureRelationship.__init__)
-
-
-def test_smm::rescalemeasurerelationship_constructor_args():
-    sig = inspect.signature(smm::RescaleMeasureRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::base2measurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::Base2MeasureRelationship)
-
-
-def test_smm::base2measurerelationship_constructor_exists():
-    assert callable(smm::Base2MeasureRelationship.__init__)
-
-
-def test_smm::base2measurerelationship_constructor_args():
-    sig = inspect.signature(smm::Base2MeasureRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::rankingmeasurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RankingMeasureRelationship)
-
-
-def test_smm::rankingmeasurerelationship_constructor_exists():
-    assert callable(smm::RankingMeasureRelationship.__init__)
-
-
-def test_smm::rankingmeasurerelationship_constructor_args():
-    sig = inspect.signature(smm::RankingMeasureRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::refinementmeasurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::RefinementMeasureRelationship)
-
-
-def test_smm::refinementmeasurerelationship_constructor_exists():
-    assert callable(smm::RefinementMeasureRelationship.__init__)
-
-
-def test_smm::refinementmeasurerelationship_constructor_args():
-    sig = inspect.signature(smm::RefinementMeasureRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::base1measurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::Base1MeasureRelationship)
-
-
-def test_smm::base1measurerelationship_constructor_exists():
-    assert callable(smm::Base1MeasureRelationship.__init__)
-
-
-def test_smm::base1measurerelationship_constructor_args():
-    sig = inspect.signature(smm::Base1MeasureRelationship.__init__)
+def test_smm_base1measurerelationship_constructor_args():
+    sig = inspect.signature(smm_Base1MeasureRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1117,265 +287,23 @@ def test_smmelement_constructor_args():
 
 
 
-def test_smm::argument_is_not_abstract():
-    assert not inspect.isabstract(smm::Argument)
+def test_smm_annotation_is_not_abstract():
+    assert not inspect.isabstract(smm_Annotation)
 
 
-def test_smm::argument_constructor_exists():
-    assert callable(smm::Argument.__init__)
+def test_smm_annotation_constructor_exists():
+    assert callable(smm_Annotation.__init__)
 
 
-def test_smm::argument_constructor_args():
-    sig = inspect.signature(smm::Argument.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_smm::argument_has_value():
-    assert hasattr(smm::Argument, "value")
-    descriptor = None
-    for klass in smm::Argument.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::argument_has_type():
-    assert hasattr(smm::Argument, "type")
-    descriptor = None
-    for klass in smm::Argument.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::rankinginterval_is_not_abstract():
-    assert not inspect.isabstract(smm::RankingInterval)
-
-
-def test_smm::rankinginterval_constructor_exists():
-    assert callable(smm::RankingInterval.__init__)
-
-
-def test_smm::rankinginterval_constructor_args():
-    sig = inspect.signature(smm::RankingInterval.__init__)
-    params = list(sig.parameters.keys())
-    assert "maximumOpen" in params, "Missing parameter 'maximumOpen'"
-    assert "minimumEndpoint" in params, "Missing parameter 'minimumEndpoint'"
-    assert "symbol" in params, "Missing parameter 'symbol'"
-    assert "minimumOpen" in params, "Missing parameter 'minimumOpen'"
-    assert "maximumEndpoint" in params, "Missing parameter 'maximumEndpoint'"
-
-def test_smm::rankinginterval_has_maximumOpen():
-    assert hasattr(smm::RankingInterval, "maximumOpen")
-    descriptor = None
-    for klass in smm::RankingInterval.__mro__:
-        if "maximumOpen" in klass.__dict__:
-            descriptor = klass.__dict__["maximumOpen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::rankinginterval_has_minimumEndpoint():
-    assert hasattr(smm::RankingInterval, "minimumEndpoint")
-    descriptor = None
-    for klass in smm::RankingInterval.__mro__:
-        if "minimumEndpoint" in klass.__dict__:
-            descriptor = klass.__dict__["minimumEndpoint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::rankinginterval_has_symbol():
-    assert hasattr(smm::RankingInterval, "symbol")
-    descriptor = None
-    for klass in smm::RankingInterval.__mro__:
-        if "symbol" in klass.__dict__:
-            descriptor = klass.__dict__["symbol"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::rankinginterval_has_minimumOpen():
-    assert hasattr(smm::RankingInterval, "minimumOpen")
-    descriptor = None
-    for klass in smm::RankingInterval.__mro__:
-        if "minimumOpen" in klass.__dict__:
-            descriptor = klass.__dict__["minimumOpen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::rankinginterval_has_maximumEndpoint():
-    assert hasattr(smm::RankingInterval, "maximumEndpoint")
-    descriptor = None
-    for klass in smm::RankingInterval.__mro__:
-        if "maximumEndpoint" in klass.__dict__:
-            descriptor = klass.__dict__["maximumEndpoint"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::measurelibrary_is_not_abstract():
-    assert not inspect.isabstract(smm::MeasureLibrary)
-
-
-def test_smm::measurelibrary_constructor_exists():
-    assert callable(smm::MeasureLibrary.__init__)
-
-
-def test_smm::measurelibrary_constructor_args():
-    sig = inspect.signature(smm::MeasureLibrary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::attribute_is_not_abstract():
-    assert not inspect.isabstract(smm::Attribute)
-
-
-def test_smm::attribute_constructor_exists():
-    assert callable(smm::Attribute.__init__)
-
-
-def test_smm::attribute_constructor_args():
-    sig = inspect.signature(smm::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "tag" in params, "Missing parameter 'tag'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smm::attribute_has_tag():
-    assert hasattr(smm::Attribute, "tag")
-    descriptor = None
-    for klass in smm::Attribute.__mro__:
-        if "tag" in klass.__dict__:
-            descriptor = klass.__dict__["tag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::attribute_has_value():
-    assert hasattr(smm::Attribute, "value")
-    descriptor = None
-    for klass in smm::Attribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::smmmodel_is_not_abstract():
-    assert not inspect.isabstract(smm::SmmModel)
-
-
-def test_smm::smmmodel_constructor_exists():
-    assert callable(smm::SmmModel.__init__)
-
-
-def test_smm::smmmodel_constructor_args():
-    sig = inspect.signature(smm::SmmModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::smmrelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::SmmRelationship)
-
-
-def test_smm::smmrelationship_constructor_exists():
-    assert callable(smm::SmmRelationship.__init__)
-
-
-def test_smm::smmrelationship_constructor_args():
-    sig = inspect.signature(smm::SmmRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smm::observationscope_is_not_abstract():
-    assert not inspect.isabstract(smm::ObservationScope)
-
-
-def test_smm::observationscope_constructor_exists():
-    assert callable(smm::ObservationScope.__init__)
-
-
-def test_smm::observationscope_constructor_args():
-    sig = inspect.signature(smm::ObservationScope.__init__)
-    params = list(sig.parameters.keys())
-    assert "scopeUri" in params, "Missing parameter 'scopeUri'"
-
-def test_smm::observationscope_has_scopeUri():
-    assert hasattr(smm::ObservationScope, "scopeUri")
-    descriptor = None
-    for klass in smm::ObservationScope.__mro__:
-        if "scopeUri" in klass.__dict__:
-            descriptor = klass.__dict__["scopeUri"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::observation_is_not_abstract():
-    assert not inspect.isabstract(smm::Observation)
-
-
-def test_smm::observation_constructor_exists():
-    assert callable(smm::Observation.__init__)
-
-
-def test_smm::observation_constructor_args():
-    sig = inspect.signature(smm::Observation.__init__)
-    params = list(sig.parameters.keys())
-    assert "whenObserved" in params, "Missing parameter 'whenObserved'"
-    assert "observer" in params, "Missing parameter 'observer'"
-    assert "tool" in params, "Missing parameter 'tool'"
-
-def test_smm::observation_has_whenObserved():
-    assert hasattr(smm::Observation, "whenObserved")
-    descriptor = None
-    for klass in smm::Observation.__mro__:
-        if "whenObserved" in klass.__dict__:
-            descriptor = klass.__dict__["whenObserved"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::observation_has_observer():
-    assert hasattr(smm::Observation, "observer")
-    descriptor = None
-    for klass in smm::Observation.__mro__:
-        if "observer" in klass.__dict__:
-            descriptor = klass.__dict__["observer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smm::observation_has_tool():
-    assert hasattr(smm::Observation, "tool")
-    descriptor = None
-    for klass in smm::Observation.__mro__:
-        if "tool" in klass.__dict__:
-            descriptor = klass.__dict__["tool"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smm::annotation_is_not_abstract():
-    assert not inspect.isabstract(smm::Annotation)
-
-
-def test_smm::annotation_constructor_exists():
-    assert callable(smm::Annotation.__init__)
-
-
-def test_smm::annotation_constructor_args():
-    sig = inspect.signature(smm::Annotation.__init__)
+def test_smm_annotation_constructor_args():
+    sig = inspect.signature(smm_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_smm::annotation_has_text():
-    assert hasattr(smm::Annotation, "text")
+def test_smm_annotation_has_text():
+    assert hasattr(smm_Annotation, "text")
     descriptor = None
-    for klass in smm::Annotation.__mro__:
+    for klass in smm_Annotation.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1383,65 +311,1137 @@ def test_smm::annotation_has_text():
 
 
 
-def test_smm::measurement_is_not_abstract():
-    assert not inspect.isabstract(smm::Measurement)
+def test_smm_attribute_is_not_abstract():
+    assert not inspect.isabstract(smm_Attribute)
 
 
-def test_smm::measurement_constructor_exists():
-    assert callable(smm::Measurement.__init__)
+def test_smm_attribute_constructor_exists():
+    assert callable(smm_Attribute.__init__)
 
 
-def test_smm::measurement_constructor_args():
-    sig = inspect.signature(smm::Measurement.__init__)
+def test_smm_attribute_constructor_args():
+    sig = inspect.signature(smm_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "breakValue" in params, "Missing parameter 'breakValue'"
-    assert "error" in params, "Missing parameter 'error'"
+    assert "tag" in params, "Missing parameter 'tag'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_smm::measurement_has_breakValue():
-    assert hasattr(smm::Measurement, "breakValue")
+def test_smm_attribute_has_tag():
+    assert hasattr(smm_Attribute, "tag")
     descriptor = None
-    for klass in smm::Measurement.__mro__:
-        if "breakValue" in klass.__dict__:
-            descriptor = klass.__dict__["breakValue"]
+    for klass in smm_Attribute.__mro__:
+        if "tag" in klass.__dict__:
+            descriptor = klass.__dict__["tag"]
             break
     assert isinstance(descriptor, property)
 
-def test_smm::measurement_has_error():
-    assert hasattr(smm::Measurement, "error")
+def test_smm_attribute_has_value():
+    assert hasattr(smm_Attribute, "value")
     descriptor = None
-    for klass in smm::Measurement.__mro__:
+    for klass in smm_Attribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_argument_is_not_abstract():
+    assert not inspect.isabstract(smm_Argument)
+
+
+def test_smm_argument_constructor_exists():
+    assert callable(smm_Argument.__init__)
+
+
+def test_smm_argument_constructor_args():
+    sig = inspect.signature(smm_Argument.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smm_argument_has_type():
+    assert hasattr(smm_Argument, "type")
+    descriptor = None
+    for klass in smm_Argument.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_argument_has_value():
+    assert hasattr(smm_Argument, "value")
+    descriptor = None
+    for klass in smm_Argument.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_abstractmeasureelement_is_not_abstract():
+    assert not inspect.isabstract(smm_AbstractMeasureElement)
+
+
+def test_smm_abstractmeasureelement_constructor_exists():
+    assert callable(smm_AbstractMeasureElement.__init__)
+
+
+def test_smm_abstractmeasureelement_constructor_args():
+    sig = inspect.signature(smm_AbstractMeasureElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_basemeasurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_BaseMeasureRelationship)
+
+
+def test_smm_basemeasurerelationship_constructor_exists():
+    assert callable(smm_BaseMeasureRelationship.__init__)
+
+
+def test_smm_basemeasurerelationship_constructor_args():
+    sig = inspect.signature(smm_BaseMeasureRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_smmmodel_is_not_abstract():
+    assert not inspect.isabstract(smm_SmmModel)
+
+
+def test_smm_smmmodel_constructor_exists():
+    assert callable(smm_SmmModel.__init__)
+
+
+def test_smm_smmmodel_constructor_args():
+    sig = inspect.signature(smm_SmmModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_rescaledmeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_RescaledMeasure)
+
+
+def test_smm_rescaledmeasure_constructor_exists():
+    assert callable(smm_RescaledMeasure.__init__)
+
+
+def test_smm_rescaledmeasure_constructor_args():
+    sig = inspect.signature(smm_RescaledMeasure.__init__)
+    params = list(sig.parameters.keys())
+    assert "formula" in params, "Missing parameter 'formula'"
+
+def test_smm_rescaledmeasure_has_formula():
+    assert hasattr(smm_RescaledMeasure, "formula")
+    descriptor = None
+    for klass in smm_RescaledMeasure.__mro__:
+        if "formula" in klass.__dict__:
+            descriptor = klass.__dict__["formula"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_binarymeasurement_is_not_abstract():
+    assert not inspect.isabstract(BinaryMeasurement)
+
+
+def test_binarymeasurement_constructor_exists():
+    assert callable(BinaryMeasurement.__init__)
+
+
+def test_binarymeasurement_constructor_args():
+    sig = inspect.signature(BinaryMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_ratiomeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_RatioMeasurement)
+
+
+def test_smm_ratiomeasurement_constructor_exists():
+    assert callable(smm_RatioMeasurement.__init__)
+
+
+def test_smm_ratiomeasurement_constructor_args():
+    sig = inspect.signature(smm_RatioMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_binarymeasure_is_not_abstract():
+    assert not inspect.isabstract(BinaryMeasure)
+
+
+def test_binarymeasure_constructor_exists():
+    assert callable(BinaryMeasure.__init__)
+
+
+def test_binarymeasure_constructor_args():
+    sig = inspect.signature(BinaryMeasure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_ratiomeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_RatioMeasure)
+
+
+def test_smm_ratiomeasure_constructor_exists():
+    assert callable(smm_RatioMeasure.__init__)
+
+
+def test_smm_ratiomeasure_constructor_args():
+    sig = inspect.signature(smm_RatioMeasure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_rankinginterval_is_not_abstract():
+    assert not inspect.isabstract(smm_RankingInterval)
+
+
+def test_smm_rankinginterval_constructor_exists():
+    assert callable(smm_RankingInterval.__init__)
+
+
+def test_smm_rankinginterval_constructor_args():
+    sig = inspect.signature(smm_RankingInterval.__init__)
+    params = list(sig.parameters.keys())
+    assert "maximumEndpoint" in params, "Missing parameter 'maximumEndpoint'"
+    assert "minimumOpen" in params, "Missing parameter 'minimumOpen'"
+    assert "symbol" in params, "Missing parameter 'symbol'"
+    assert "minimumEndpoint" in params, "Missing parameter 'minimumEndpoint'"
+    assert "maximumOpen" in params, "Missing parameter 'maximumOpen'"
+
+def test_smm_rankinginterval_has_maximumEndpoint():
+    assert hasattr(smm_RankingInterval, "maximumEndpoint")
+    descriptor = None
+    for klass in smm_RankingInterval.__mro__:
+        if "maximumEndpoint" in klass.__dict__:
+            descriptor = klass.__dict__["maximumEndpoint"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_rankinginterval_has_minimumOpen():
+    assert hasattr(smm_RankingInterval, "minimumOpen")
+    descriptor = None
+    for klass in smm_RankingInterval.__mro__:
+        if "minimumOpen" in klass.__dict__:
+            descriptor = klass.__dict__["minimumOpen"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_rankinginterval_has_symbol():
+    assert hasattr(smm_RankingInterval, "symbol")
+    descriptor = None
+    for klass in smm_RankingInterval.__mro__:
+        if "symbol" in klass.__dict__:
+            descriptor = klass.__dict__["symbol"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_rankinginterval_has_minimumEndpoint():
+    assert hasattr(smm_RankingInterval, "minimumEndpoint")
+    descriptor = None
+    for klass in smm_RankingInterval.__mro__:
+        if "minimumEndpoint" in klass.__dict__:
+            descriptor = klass.__dict__["minimumEndpoint"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_rankinginterval_has_maximumOpen():
+    assert hasattr(smm_RankingInterval, "maximumOpen")
+    descriptor = None
+    for klass in smm_RankingInterval.__mro__:
+        if "maximumOpen" in klass.__dict__:
+            descriptor = klass.__dict__["maximumOpen"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_smmrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_SmmRelationship)
+
+
+def test_smm_smmrelationship_constructor_exists():
+    assert callable(smm_SmmRelationship.__init__)
+
+
+def test_smm_smmrelationship_constructor_args():
+    sig = inspect.signature(smm_SmmRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_smmelement_is_not_abstract():
+    assert not inspect.isabstract(smm_SmmElement)
+
+
+def test_smm_smmelement_constructor_exists():
+    assert callable(smm_SmmElement.__init__)
+
+
+def test_smm_smmelement_constructor_args():
+    sig = inspect.signature(smm_SmmElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "shortDescription" in params, "Missing parameter 'shortDescription'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_smm_smmelement_has_description():
+    assert hasattr(smm_SmmElement, "description")
+    descriptor = None
+    for klass in smm_SmmElement.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_smmelement_has_shortDescription():
+    assert hasattr(smm_SmmElement, "shortDescription")
+    descriptor = None
+    for klass in smm_SmmElement.__mro__:
+        if "shortDescription" in klass.__dict__:
+            descriptor = klass.__dict__["shortDescription"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_smmelement_has_name():
+    assert hasattr(smm_SmmElement, "name")
+    descriptor = None
+    for klass in smm_SmmElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_observationscope_is_not_abstract():
+    assert not inspect.isabstract(smm_ObservationScope)
+
+
+def test_smm_observationscope_constructor_exists():
+    assert callable(smm_ObservationScope.__init__)
+
+
+def test_smm_observationscope_constructor_args():
+    sig = inspect.signature(smm_ObservationScope.__init__)
+    params = list(sig.parameters.keys())
+    assert "scopeUri" in params, "Missing parameter 'scopeUri'"
+
+def test_smm_observationscope_has_scopeUri():
+    assert hasattr(smm_ObservationScope, "scopeUri")
+    descriptor = None
+    for klass in smm_ObservationScope.__mro__:
+        if "scopeUri" in klass.__dict__:
+            descriptor = klass.__dict__["scopeUri"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_namedmeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_NamedMeasure)
+
+
+def test_smm_namedmeasure_constructor_exists():
+    assert callable(smm_NamedMeasure.__init__)
+
+
+def test_smm_namedmeasure_constructor_args():
+    sig = inspect.signature(smm_NamedMeasure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_recursivemeasurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RecursiveMeasurementRelationship)
+
+
+def test_smm_recursivemeasurementrelationship_constructor_exists():
+    assert callable(smm_RecursiveMeasurementRelationship.__init__)
+
+
+def test_smm_recursivemeasurementrelationship_constructor_args():
+    sig = inspect.signature(smm_RecursiveMeasurementRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_refinementmeasurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RefinementMeasurementRelationship)
+
+
+def test_smm_refinementmeasurementrelationship_constructor_exists():
+    assert callable(smm_RefinementMeasurementRelationship.__init__)
+
+
+def test_smm_refinementmeasurementrelationship_constructor_args():
+    sig = inspect.signature(smm_RefinementMeasurementRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_mofelement_is_not_abstract():
+    assert not inspect.isabstract(smm_MofElement)
+
+
+def test_smm_mofelement_constructor_exists():
+    assert callable(smm_MofElement.__init__)
+
+
+def test_smm_mofelement_constructor_args():
+    sig = inspect.signature(smm_MofElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_observation_is_not_abstract():
+    assert not inspect.isabstract(smm_Observation)
+
+
+def test_smm_observation_constructor_exists():
+    assert callable(smm_Observation.__init__)
+
+
+def test_smm_observation_constructor_args():
+    sig = inspect.signature(smm_Observation.__init__)
+    params = list(sig.parameters.keys())
+    assert "observer" in params, "Missing parameter 'observer'"
+    assert "tool" in params, "Missing parameter 'tool'"
+    assert "whenObserved" in params, "Missing parameter 'whenObserved'"
+
+def test_smm_observation_has_observer():
+    assert hasattr(smm_Observation, "observer")
+    descriptor = None
+    for klass in smm_Observation.__mro__:
+        if "observer" in klass.__dict__:
+            descriptor = klass.__dict__["observer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_observation_has_tool():
+    assert hasattr(smm_Observation, "tool")
+    descriptor = None
+    for klass in smm_Observation.__mro__:
+        if "tool" in klass.__dict__:
+            descriptor = klass.__dict__["tool"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_observation_has_whenObserved():
+    assert hasattr(smm_Observation, "whenObserved")
+    descriptor = None
+    for klass in smm_Observation.__mro__:
+        if "whenObserved" in klass.__dict__:
+            descriptor = klass.__dict__["whenObserved"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_measurelibrary_is_not_abstract():
+    assert not inspect.isabstract(smm_MeasureLibrary)
+
+
+def test_smm_measurelibrary_constructor_exists():
+    assert callable(smm_MeasureLibrary.__init__)
+
+
+def test_smm_measurelibrary_constructor_args():
+    sig = inspect.signature(smm_MeasureLibrary.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_recursivemeasurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RecursiveMeasureRelationship)
+
+
+def test_smm_recursivemeasurerelationship_constructor_exists():
+    assert callable(smm_RecursiveMeasureRelationship.__init__)
+
+
+def test_smm_recursivemeasurerelationship_constructor_args():
+    sig = inspect.signature(smm_RecursiveMeasureRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_refinementmeasurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RefinementMeasureRelationship)
+
+
+def test_smm_refinementmeasurerelationship_constructor_exists():
+    assert callable(smm_RefinementMeasureRelationship.__init__)
+
+
+def test_smm_refinementmeasurerelationship_constructor_args():
+    sig = inspect.signature(smm_RefinementMeasureRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_measurement_is_not_abstract():
+    assert not inspect.isabstract(smm_Measurement)
+
+
+def test_smm_measurement_constructor_exists():
+    assert callable(smm_Measurement.__init__)
+
+
+def test_smm_measurement_constructor_args():
+    sig = inspect.signature(smm_Measurement.__init__)
+    params = list(sig.parameters.keys())
+    assert "error" in params, "Missing parameter 'error'"
+    assert "breakValue" in params, "Missing parameter 'breakValue'"
+
+def test_smm_measurement_has_error():
+    assert hasattr(smm_Measurement, "error")
+    descriptor = None
+    for klass in smm_Measurement.__mro__:
         if "error" in klass.__dict__:
             descriptor = klass.__dict__["error"]
             break
     assert isinstance(descriptor, property)
 
+def test_smm_measurement_has_breakValue():
+    assert hasattr(smm_Measurement, "breakValue")
+    descriptor = None
+    for klass in smm_Measurement.__mro__:
+        if "breakValue" in klass.__dict__:
+            descriptor = klass.__dict__["breakValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_smm::abstractmeasureelement_is_not_abstract():
-    assert not inspect.isabstract(smm::AbstractMeasureElement)
+
+def test_smm_equivalentmeasurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_EquivalentMeasurementRelationship)
 
 
-def test_smm::abstractmeasureelement_constructor_exists():
-    assert callable(smm::AbstractMeasureElement.__init__)
+def test_smm_equivalentmeasurementrelationship_constructor_exists():
+    assert callable(smm_EquivalentMeasurementRelationship.__init__)
 
 
-def test_smm::abstractmeasureelement_constructor_args():
-    sig = inspect.signature(smm::AbstractMeasureElement.__init__)
+def test_smm_equivalentmeasurementrelationship_constructor_args():
+    sig = inspect.signature(smm_EquivalentMeasurementRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smm::basemeasurerelationship_is_not_abstract():
-    assert not inspect.isabstract(smm::BaseMeasureRelationship)
+def test_smm_equivalentmeasurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_EquivalentMeasureRelationship)
 
 
-def test_smm::basemeasurerelationship_constructor_exists():
-    assert callable(smm::BaseMeasureRelationship.__init__)
+def test_smm_equivalentmeasurerelationship_constructor_exists():
+    assert callable(smm_EquivalentMeasureRelationship.__init__)
 
 
-def test_smm::basemeasurerelationship_constructor_args():
-    sig = inspect.signature(smm::BaseMeasureRelationship.__init__)
+def test_smm_equivalentmeasurerelationship_constructor_args():
+    sig = inspect.signature(smm_EquivalentMeasureRelationship.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_smm_directmeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_DirectMeasure)
+
+
+def test_smm_directmeasure_constructor_exists():
+    assert callable(smm_DirectMeasure.__init__)
+
+
+def test_smm_directmeasure_constructor_args():
+    sig = inspect.signature(smm_DirectMeasure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_rankingmeasurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RankingMeasurementRelationship)
+
+
+def test_smm_rankingmeasurementrelationship_constructor_exists():
+    assert callable(smm_RankingMeasurementRelationship.__init__)
+
+
+def test_smm_rankingmeasurementrelationship_constructor_args():
+    sig = inspect.signature(smm_RankingMeasurementRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_rescalemeasurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RescaleMeasurementRelationship)
+
+
+def test_smm_rescalemeasurementrelationship_constructor_exists():
+    assert callable(smm_RescaleMeasurementRelationship.__init__)
+
+
+def test_smm_rescalemeasurementrelationship_constructor_args():
+    sig = inspect.signature(smm_RescaleMeasurementRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_measurement_is_not_abstract():
+    assert not inspect.isabstract(Measurement)
+
+
+def test_measurement_constructor_exists():
+    assert callable(Measurement.__init__)
+
+
+def test_measurement_constructor_args():
+    sig = inspect.signature(Measurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_dimensionalmeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_DimensionalMeasurement)
+
+
+def test_smm_dimensionalmeasurement_constructor_exists():
+    assert callable(smm_DimensionalMeasurement.__init__)
+
+
+def test_smm_dimensionalmeasurement_constructor_args():
+    sig = inspect.signature(smm_DimensionalMeasurement.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smm_dimensionalmeasurement_has_value():
+    assert hasattr(smm_DimensionalMeasurement, "value")
+    descriptor = None
+    for klass in smm_DimensionalMeasurement.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_grade_is_not_abstract():
+    assert not inspect.isabstract(smm_Grade)
+
+
+def test_smm_grade_constructor_exists():
+    assert callable(smm_Grade.__init__)
+
+
+def test_smm_grade_constructor_args():
+    sig = inspect.signature(smm_Grade.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
+
+def test_smm_grade_has_value():
+    assert hasattr(smm_Grade, "value")
+    descriptor = None
+    for klass in smm_Grade.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_grade_has_isBaseSupplied():
+    assert hasattr(smm_Grade, "isBaseSupplied")
+    descriptor = None
+    for klass in smm_Grade.__mro__:
+        if "isBaseSupplied" in klass.__dict__:
+            descriptor = klass.__dict__["isBaseSupplied"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_rankingmeasurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RankingMeasureRelationship)
+
+
+def test_smm_rankingmeasurerelationship_constructor_exists():
+    assert callable(smm_RankingMeasureRelationship.__init__)
+
+
+def test_smm_rankingmeasurerelationship_constructor_args():
+    sig = inspect.signature(smm_RankingMeasureRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_rescalemeasurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_RescaleMeasureRelationship)
+
+
+def test_smm_rescalemeasurerelationship_constructor_exists():
+    assert callable(smm_RescaleMeasureRelationship.__init__)
+
+
+def test_smm_rescalemeasurerelationship_constructor_args():
+    sig = inspect.signature(smm_RescaleMeasureRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_measure_is_not_abstract():
+    assert not inspect.isabstract(Measure)
+
+
+def test_measure_constructor_exists():
+    assert callable(Measure.__init__)
+
+
+def test_measure_constructor_args():
+    sig = inspect.signature(Measure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_dimensionalmeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_DimensionalMeasure)
+
+
+def test_smm_dimensionalmeasure_constructor_exists():
+    assert callable(smm_DimensionalMeasure.__init__)
+
+
+def test_smm_dimensionalmeasure_constructor_args():
+    sig = inspect.signature(smm_DimensionalMeasure.__init__)
+    params = list(sig.parameters.keys())
+    assert "unit" in params, "Missing parameter 'unit'"
+
+def test_smm_dimensionalmeasure_has_unit():
+    assert hasattr(smm_DimensionalMeasure, "unit")
+    descriptor = None
+    for klass in smm_DimensionalMeasure.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_ranking_is_not_abstract():
+    assert not inspect.isabstract(smm_Ranking)
+
+
+def test_smm_ranking_constructor_exists():
+    assert callable(smm_Ranking.__init__)
+
+
+def test_smm_ranking_constructor_args():
+    sig = inspect.signature(smm_Ranking.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_directmeasurement_is_not_abstract():
+    assert not inspect.isabstract(DirectMeasurement)
+
+
+def test_directmeasurement_constructor_exists():
+    assert callable(DirectMeasurement.__init__)
+
+
+def test_directmeasurement_constructor_args():
+    sig = inspect.signature(DirectMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_count_is_not_abstract():
+    assert not inspect.isabstract(smm_Count)
+
+
+def test_smm_count_constructor_exists():
+    assert callable(smm_Count.__init__)
+
+
+def test_smm_count_constructor_args():
+    sig = inspect.signature(smm_Count.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_abstractmeasureelement_is_not_abstract():
+    assert not inspect.isabstract(AbstractMeasureElement)
+
+
+def test_abstractmeasureelement_constructor_exists():
+    assert callable(AbstractMeasureElement.__init__)
+
+
+def test_abstractmeasureelement_constructor_args():
+    sig = inspect.signature(AbstractMeasureElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_ocloperation_is_not_abstract():
+    assert not inspect.isabstract(smm_OCLOperation)
+
+
+def test_smm_ocloperation_constructor_exists():
+    assert callable(smm_OCLOperation.__init__)
+
+
+def test_smm_ocloperation_constructor_args():
+    sig = inspect.signature(smm_OCLOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "context" in params, "Missing parameter 'context'"
+    assert "body" in params, "Missing parameter 'body'"
+
+def test_smm_ocloperation_has_context():
+    assert hasattr(smm_OCLOperation, "context")
+    descriptor = None
+    for klass in smm_OCLOperation.__mro__:
+        if "context" in klass.__dict__:
+            descriptor = klass.__dict__["context"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_ocloperation_has_body():
+    assert hasattr(smm_OCLOperation, "body")
+    descriptor = None
+    for klass in smm_OCLOperation.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_scope_is_not_abstract():
+    assert not inspect.isabstract(smm_Scope)
+
+
+def test_smm_scope_constructor_exists():
+    assert callable(smm_Scope.__init__)
+
+
+def test_smm_scope_constructor_args():
+    sig = inspect.signature(smm_Scope.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+
+def test_smm_scope_has_class_():
+    assert hasattr(smm_Scope, "class_")
+    descriptor = None
+    for klass in smm_Scope.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_measure_is_not_abstract():
+    assert not inspect.isabstract(smm_Measure)
+
+
+def test_smm_measure_constructor_exists():
+    assert callable(smm_Measure.__init__)
+
+
+def test_smm_measure_constructor_args():
+    sig = inspect.signature(smm_Measure.__init__)
+    params = list(sig.parameters.keys())
+    assert "measurementLabelFormat" in params, "Missing parameter 'measurementLabelFormat'"
+    assert "visible" in params, "Missing parameter 'visible'"
+    assert "measureLabelFormat" in params, "Missing parameter 'measureLabelFormat'"
+
+def test_smm_measure_has_measurementLabelFormat():
+    assert hasattr(smm_Measure, "measurementLabelFormat")
+    descriptor = None
+    for klass in smm_Measure.__mro__:
+        if "measurementLabelFormat" in klass.__dict__:
+            descriptor = klass.__dict__["measurementLabelFormat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_measure_has_visible():
+    assert hasattr(smm_Measure, "visible")
+    descriptor = None
+    for klass in smm_Measure.__mro__:
+        if "visible" in klass.__dict__:
+            descriptor = klass.__dict__["visible"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_measure_has_measureLabelFormat():
+    assert hasattr(smm_Measure, "measureLabelFormat")
+    descriptor = None
+    for klass in smm_Measure.__mro__:
+        if "measureLabelFormat" in klass.__dict__:
+            descriptor = klass.__dict__["measureLabelFormat"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_operation_is_not_abstract():
+    assert not inspect.isabstract(smm_Operation)
+
+
+def test_smm_operation_constructor_exists():
+    assert callable(smm_Operation.__init__)
+
+
+def test_smm_operation_constructor_args():
+    sig = inspect.signature(smm_Operation.__init__)
+    params = list(sig.parameters.keys())
+    assert "body" in params, "Missing parameter 'body'"
+    assert "language" in params, "Missing parameter 'language'"
+
+def test_smm_operation_has_body():
+    assert hasattr(smm_Operation, "body")
+    descriptor = None
+    for klass in smm_Operation.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_operation_has_language():
+    assert hasattr(smm_Operation, "language")
+    descriptor = None
+    for klass in smm_Operation.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_characteristic_is_not_abstract():
+    assert not inspect.isabstract(smm_Characteristic)
+
+
+def test_smm_characteristic_constructor_exists():
+    assert callable(smm_Characteristic.__init__)
+
+
+def test_smm_characteristic_constructor_args():
+    sig = inspect.signature(smm_Characteristic.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_measurecategory_is_not_abstract():
+    assert not inspect.isabstract(smm_MeasureCategory)
+
+
+def test_smm_measurecategory_constructor_exists():
+    assert callable(smm_MeasureCategory.__init__)
+
+
+def test_smm_measurecategory_constructor_args():
+    sig = inspect.signature(smm_MeasureCategory.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smmrelationship_is_not_abstract():
+    assert not inspect.isabstract(SmmRelationship)
+
+
+def test_smmrelationship_constructor_exists():
+    assert callable(SmmRelationship.__init__)
+
+
+def test_smmrelationship_constructor_args():
+    sig = inspect.signature(SmmRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_measurementrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_MeasurementRelationship)
+
+
+def test_smm_measurementrelationship_constructor_exists():
+    assert callable(smm_MeasurementRelationship.__init__)
+
+
+def test_smm_measurementrelationship_constructor_args():
+    sig = inspect.signature(smm_MeasurementRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_observedmeasure_is_not_abstract():
+    assert not inspect.isabstract(smm_ObservedMeasure)
+
+
+def test_smm_observedmeasure_constructor_exists():
+    assert callable(smm_ObservedMeasure.__init__)
+
+
+def test_smm_observedmeasure_constructor_args():
+    sig = inspect.signature(smm_ObservedMeasure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_measurerelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_MeasureRelationship)
+
+
+def test_smm_measurerelationship_constructor_exists():
+    assert callable(smm_MeasureRelationship.__init__)
+
+
+def test_smm_measurerelationship_constructor_args():
+    sig = inspect.signature(smm_MeasureRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_categoryrelationship_is_not_abstract():
+    assert not inspect.isabstract(smm_CategoryRelationship)
+
+
+def test_smm_categoryrelationship_constructor_exists():
+    assert callable(smm_CategoryRelationship.__init__)
+
+
+def test_smm_categoryrelationship_constructor_args():
+    sig = inspect.signature(smm_CategoryRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dimensionalmeasurement_is_not_abstract():
+    assert not inspect.isabstract(DimensionalMeasurement)
+
+
+def test_dimensionalmeasurement_constructor_exists():
+    assert callable(DimensionalMeasurement.__init__)
+
+
+def test_dimensionalmeasurement_constructor_args():
+    sig = inspect.signature(DimensionalMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_directmeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_DirectMeasurement)
+
+
+def test_smm_directmeasurement_constructor_exists():
+    assert callable(smm_DirectMeasurement.__init__)
+
+
+def test_smm_directmeasurement_constructor_args():
+    sig = inspect.signature(smm_DirectMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_namedmeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_NamedMeasurement)
+
+
+def test_smm_namedmeasurement_constructor_exists():
+    assert callable(smm_NamedMeasurement.__init__)
+
+
+def test_smm_namedmeasurement_constructor_args():
+    sig = inspect.signature(smm_NamedMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smm_collectivemeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_CollectiveMeasurement)
+
+
+def test_smm_collectivemeasurement_constructor_exists():
+    assert callable(smm_CollectiveMeasurement.__init__)
+
+
+def test_smm_collectivemeasurement_constructor_args():
+    sig = inspect.signature(smm_CollectiveMeasurement.__init__)
+    params = list(sig.parameters.keys())
+    assert "accumulator" in params, "Missing parameter 'accumulator'"
+    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
+
+def test_smm_collectivemeasurement_has_accumulator():
+    assert hasattr(smm_CollectiveMeasurement, "accumulator")
+    descriptor = None
+    for klass in smm_CollectiveMeasurement.__mro__:
+        if "accumulator" in klass.__dict__:
+            descriptor = klass.__dict__["accumulator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smm_collectivemeasurement_has_isBaseSupplied():
+    assert hasattr(smm_CollectiveMeasurement, "isBaseSupplied")
+    descriptor = None
+    for klass in smm_CollectiveMeasurement.__mro__:
+        if "isBaseSupplied" in klass.__dict__:
+            descriptor = klass.__dict__["isBaseSupplied"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_rescaledmeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_RescaledMeasurement)
+
+
+def test_smm_rescaledmeasurement_constructor_exists():
+    assert callable(smm_RescaledMeasurement.__init__)
+
+
+def test_smm_rescaledmeasurement_constructor_args():
+    sig = inspect.signature(smm_RescaledMeasurement.__init__)
+    params = list(sig.parameters.keys())
+    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
+
+def test_smm_rescaledmeasurement_has_isBaseSupplied():
+    assert hasattr(smm_RescaledMeasurement, "isBaseSupplied")
+    descriptor = None
+    for klass in smm_RescaledMeasurement.__mro__:
+        if "isBaseSupplied" in klass.__dict__:
+            descriptor = klass.__dict__["isBaseSupplied"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smm_binarymeasurement_is_not_abstract():
+    assert not inspect.isabstract(smm_BinaryMeasurement)
+
+
+def test_smm_binarymeasurement_constructor_exists():
+    assert callable(smm_BinaryMeasurement.__init__)
+
+
+def test_smm_binarymeasurement_constructor_args():
+    sig = inspect.signature(smm_BinaryMeasurement.__init__)
+    params = list(sig.parameters.keys())
+    assert "isBaseSupplied" in params, "Missing parameter 'isBaseSupplied'"
+
+def test_smm_binarymeasurement_has_isBaseSupplied():
+    assert hasattr(smm_BinaryMeasurement, "isBaseSupplied")
+    descriptor = None
+    for klass in smm_BinaryMeasurement.__mro__:
+        if "isBaseSupplied" in klass.__dict__:
+            descriptor = klass.__dict__["isBaseSupplied"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_accumulator_exists():
     # Check that the Enumeration exists
@@ -1451,11 +1451,11 @@ def test_accumulator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Accumulator]
     expected_literals = [
-        "maximum",
-        "sum",
-        "average",
         "standardDeviation",
         "minimum",
+        "sum",
+        "maximum",
+        "average",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1473,20 +1473,112 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+DimensionalMeasure_strategy = st.builds(
+    DimensionalMeasure,
+)
+smm_CollectiveMeasure_strategy = st.builds(
+    smm_CollectiveMeasure,
+    accumulator=
+        safe_text
+)
+DirectMeasure_strategy = st.builds(
+    DirectMeasure,
+)
+smm_Counting_strategy = st.builds(
+    smm_Counting,
+)
+MeasurementRelationship_strategy = st.builds(
+    MeasurementRelationship,
+)
+smm_Base2MeasurementRelationship_strategy = st.builds(
+    smm_Base2MeasurementRelationship,
+)
+smm_BaseMeasurementRelationship_strategy = st.builds(
+    smm_BaseMeasurementRelationship,
+)
+smm_Base1MeasurementRelationship_strategy = st.builds(
+    smm_Base1MeasurementRelationship,
+)
+smm_BinaryMeasure_strategy = st.builds(
+    smm_BinaryMeasure,
+    functor=
+        safe_text
+)
+MeasureRelationship_strategy = st.builds(
+    MeasureRelationship,
+)
+smm_Base2MeasureRelationship_strategy = st.builds(
+    smm_Base2MeasureRelationship,
+)
+smm_Base1MeasureRelationship_strategy = st.builds(
+    smm_Base1MeasureRelationship,
+)
+SmmElement_strategy = st.builds(
+    SmmElement,
+)
+smm_Annotation_strategy = st.builds(
+    smm_Annotation,
+    text=
+        safe_text
+)
+smm_Attribute_strategy = st.builds(
+    smm_Attribute,
+    tag=
+        safe_text,
+    value=
+        safe_text
+)
+smm_Argument_strategy = st.builds(
+    smm_Argument,
+    type=
+        safe_text,
+    value=
+        safe_text
+)
+smm_AbstractMeasureElement_strategy = st.builds(
+    smm_AbstractMeasureElement,
+)
+smm_BaseMeasureRelationship_strategy = st.builds(
+    smm_BaseMeasureRelationship,
+)
+smm_SmmModel_strategy = st.builds(
+    smm_SmmModel,
+)
+smm_RescaledMeasure_strategy = st.builds(
+    smm_RescaledMeasure,
+    formula=
+        safe_text
+)
 BinaryMeasurement_strategy = st.builds(
     BinaryMeasurement,
 )
-smm::RatioMeasurement_strategy = st.builds(
-    smm::RatioMeasurement,
+smm_RatioMeasurement_strategy = st.builds(
+    smm_RatioMeasurement,
 )
 BinaryMeasure_strategy = st.builds(
     BinaryMeasure,
 )
-smm::RatioMeasure_strategy = st.builds(
-    smm::RatioMeasure,
+smm_RatioMeasure_strategy = st.builds(
+    smm_RatioMeasure,
 )
-smm::SmmElement_strategy = st.builds(
-    smm::SmmElement,
+smm_RankingInterval_strategy = st.builds(
+    smm_RankingInterval,
+    maximumEndpoint=
+        safe_text,
+    minimumOpen=
+        safe_text,
+    symbol=
+        safe_text,
+    minimumEndpoint=
+        safe_text,
+    maximumOpen=
+        safe_text
+)
+smm_SmmRelationship_strategy = st.builds(
+    smm_SmmRelationship,
+)
+smm_SmmElement_strategy = st.builds(
+    smm_SmmElement,
     description=
         safe_text,
     shortDescription=
@@ -1494,636 +1586,194 @@ smm::SmmElement_strategy = st.builds(
     name=
         safe_text
 )
-smm::MofElement_strategy = st.builds(
-    smm::MofElement,
+smm_ObservationScope_strategy = st.builds(
+    smm_ObservationScope,
+    scopeUri=
+        safe_text
+)
+smm_NamedMeasure_strategy = st.builds(
+    smm_NamedMeasure,
+)
+smm_RecursiveMeasurementRelationship_strategy = st.builds(
+    smm_RecursiveMeasurementRelationship,
+)
+smm_RefinementMeasurementRelationship_strategy = st.builds(
+    smm_RefinementMeasurementRelationship,
+)
+smm_MofElement_strategy = st.builds(
+    smm_MofElement,
+)
+smm_Observation_strategy = st.builds(
+    smm_Observation,
+    observer=
+        safe_text,
+    tool=
+        safe_text,
+    whenObserved=
+        safe_text
+)
+smm_MeasureLibrary_strategy = st.builds(
+    smm_MeasureLibrary,
+)
+smm_RecursiveMeasureRelationship_strategy = st.builds(
+    smm_RecursiveMeasureRelationship,
+)
+smm_RefinementMeasureRelationship_strategy = st.builds(
+    smm_RefinementMeasureRelationship,
+)
+smm_Measurement_strategy = st.builds(
+    smm_Measurement,
+    error=
+        safe_text,
+    breakValue=
+        safe_text
+)
+smm_EquivalentMeasurementRelationship_strategy = st.builds(
+    smm_EquivalentMeasurementRelationship,
+)
+smm_EquivalentMeasureRelationship_strategy = st.builds(
+    smm_EquivalentMeasureRelationship,
+)
+smm_DirectMeasure_strategy = st.builds(
+    smm_DirectMeasure,
+)
+smm_RankingMeasurementRelationship_strategy = st.builds(
+    smm_RankingMeasurementRelationship,
+)
+smm_RescaleMeasurementRelationship_strategy = st.builds(
+    smm_RescaleMeasurementRelationship,
 )
 Measurement_strategy = st.builds(
     Measurement,
 )
-smm::Grade_strategy = st.builds(
-    smm::Grade,
+smm_DimensionalMeasurement_strategy = st.builds(
+    smm_DimensionalMeasurement,
+    value=
+        safe_text
+)
+smm_Grade_strategy = st.builds(
+    smm_Grade,
     value=
         safe_text,
     isBaseSupplied=
         safe_text
 )
+smm_RankingMeasureRelationship_strategy = st.builds(
+    smm_RankingMeasureRelationship,
+)
+smm_RescaleMeasureRelationship_strategy = st.builds(
+    smm_RescaleMeasureRelationship,
+)
 Measure_strategy = st.builds(
     Measure,
 )
-smm::Ranking_strategy = st.builds(
-    smm::Ranking,
+smm_DimensionalMeasure_strategy = st.builds(
+    smm_DimensionalMeasure,
+    unit=
+        safe_text
+)
+smm_Ranking_strategy = st.builds(
+    smm_Ranking,
 )
 DirectMeasurement_strategy = st.builds(
     DirectMeasurement,
 )
-smm::Count_strategy = st.builds(
-    smm::Count,
+smm_Count_strategy = st.builds(
+    smm_Count,
 )
 AbstractMeasureElement_strategy = st.builds(
     AbstractMeasureElement,
 )
-smm::Measure_strategy = st.builds(
-    smm::Measure,
-    visible=
-        safe_text,
-    measurementLabelFormat=
-        safe_text,
-    measureLabelFormat=
-        safe_text
-)
-smm::Scope_strategy = st.builds(
-    smm::Scope,
-    class_=
-        safe_text
-)
-smm::OCLOperation_strategy = st.builds(
-    smm::OCLOperation,
+smm_OCLOperation_strategy = st.builds(
+    smm_OCLOperation,
     context=
         safe_text,
     body=
         safe_text
 )
-smm::Operation_strategy = st.builds(
-    smm::Operation,
+smm_Scope_strategy = st.builds(
+    smm_Scope,
+    class_=
+        safe_text
+)
+smm_Measure_strategy = st.builds(
+    smm_Measure,
+    measurementLabelFormat=
+        safe_text,
+    visible=
+        safe_text,
+    measureLabelFormat=
+        safe_text
+)
+smm_Operation_strategy = st.builds(
+    smm_Operation,
     body=
         safe_text,
     language=
         safe_text
 )
-smm::Characteristic_strategy = st.builds(
-    smm::Characteristic,
+smm_Characteristic_strategy = st.builds(
+    smm_Characteristic,
 )
-smm::MeasureCategory_strategy = st.builds(
-    smm::MeasureCategory,
+smm_MeasureCategory_strategy = st.builds(
+    smm_MeasureCategory,
 )
 SmmRelationship_strategy = st.builds(
     SmmRelationship,
 )
-smm::ObservedMeasure_strategy = st.builds(
-    smm::ObservedMeasure,
+smm_MeasurementRelationship_strategy = st.builds(
+    smm_MeasurementRelationship,
 )
-smm::MeasurementRelationship_strategy = st.builds(
-    smm::MeasurementRelationship,
+smm_ObservedMeasure_strategy = st.builds(
+    smm_ObservedMeasure,
 )
-smm::MeasureRelationship_strategy = st.builds(
-    smm::MeasureRelationship,
+smm_MeasureRelationship_strategy = st.builds(
+    smm_MeasureRelationship,
 )
-smm::CategoryRelationship_strategy = st.builds(
-    smm::CategoryRelationship,
+smm_CategoryRelationship_strategy = st.builds(
+    smm_CategoryRelationship,
 )
 DimensionalMeasurement_strategy = st.builds(
     DimensionalMeasurement,
 )
-smm::NamedMeasurement_strategy = st.builds(
-    smm::NamedMeasurement,
+smm_DirectMeasurement_strategy = st.builds(
+    smm_DirectMeasurement,
 )
-smm::RescaledMeasurement_strategy = st.builds(
-    smm::RescaledMeasurement,
-    isBaseSupplied=
-        safe_text
+smm_NamedMeasurement_strategy = st.builds(
+    smm_NamedMeasurement,
 )
-smm::DirectMeasurement_strategy = st.builds(
-    smm::DirectMeasurement,
-)
-DimensionalMeasure_strategy = st.builds(
-    DimensionalMeasure,
-)
-smm::DirectMeasure_strategy = st.builds(
-    smm::DirectMeasure,
-)
-smm::RescaledMeasure_strategy = st.builds(
-    smm::RescaledMeasure,
-    formula=
-        safe_text
-)
-smm::NamedMeasure_strategy = st.builds(
-    smm::NamedMeasure,
-)
-smm::CollectiveMeasurement_strategy = st.builds(
-    smm::CollectiveMeasurement,
+smm_CollectiveMeasurement_strategy = st.builds(
+    smm_CollectiveMeasurement,
     accumulator=
         safe_text,
     isBaseSupplied=
         safe_text
 )
-smm::CollectiveMeasure_strategy = st.builds(
-    smm::CollectiveMeasure,
-    accumulator=
-        safe_text
-)
-DirectMeasure_strategy = st.builds(
-    DirectMeasure,
-)
-smm::Counting_strategy = st.builds(
-    smm::Counting,
-)
-smm::DimensionalMeasurement_strategy = st.builds(
-    smm::DimensionalMeasurement,
-    value=
-        safe_text
-)
-smm::BinaryMeasurement_strategy = st.builds(
-    smm::BinaryMeasurement,
+smm_RescaledMeasurement_strategy = st.builds(
+    smm_RescaledMeasurement,
     isBaseSupplied=
         safe_text
 )
-MeasurementRelationship_strategy = st.builds(
-    MeasurementRelationship,
-)
-smm::BaseMeasurementRelationship_strategy = st.builds(
-    smm::BaseMeasurementRelationship,
-)
-smm::RescaleMeasurementRelationship_strategy = st.builds(
-    smm::RescaleMeasurementRelationship,
-)
-smm::EquivalentMeasurementRelationship_strategy = st.builds(
-    smm::EquivalentMeasurementRelationship,
-)
-smm::RefinementMeasurementRelationship_strategy = st.builds(
-    smm::RefinementMeasurementRelationship,
-)
-smm::Base2MeasurementRelationship_strategy = st.builds(
-    smm::Base2MeasurementRelationship,
-)
-smm::RecursiveMeasurementRelationship_strategy = st.builds(
-    smm::RecursiveMeasurementRelationship,
-)
-smm::RankingMeasurementRelationship_strategy = st.builds(
-    smm::RankingMeasurementRelationship,
-)
-smm::Base1MeasurementRelationship_strategy = st.builds(
-    smm::Base1MeasurementRelationship,
-)
-smm::DimensionalMeasure_strategy = st.builds(
-    smm::DimensionalMeasure,
-    unit=
+smm_BinaryMeasurement_strategy = st.builds(
+    smm_BinaryMeasurement,
+    isBaseSupplied=
         safe_text
 )
-smm::BinaryMeasure_strategy = st.builds(
-    smm::BinaryMeasure,
-    functor=
-        safe_text
-)
-MeasureRelationship_strategy = st.builds(
-    MeasureRelationship,
-)
-smm::EquivalentMeasureRelationship_strategy = st.builds(
-    smm::EquivalentMeasureRelationship,
-)
-smm::RecursiveMeasureRelationship_strategy = st.builds(
-    smm::RecursiveMeasureRelationship,
-)
-smm::RescaleMeasureRelationship_strategy = st.builds(
-    smm::RescaleMeasureRelationship,
-)
-smm::Base2MeasureRelationship_strategy = st.builds(
-    smm::Base2MeasureRelationship,
-)
-smm::RankingMeasureRelationship_strategy = st.builds(
-    smm::RankingMeasureRelationship,
-)
-smm::RefinementMeasureRelationship_strategy = st.builds(
-    smm::RefinementMeasureRelationship,
-)
-smm::Base1MeasureRelationship_strategy = st.builds(
-    smm::Base1MeasureRelationship,
-)
-SmmElement_strategy = st.builds(
-    SmmElement,
-)
-smm::Argument_strategy = st.builds(
-    smm::Argument,
-    value=
-        safe_text,
-    type=
-        safe_text
-)
-smm::RankingInterval_strategy = st.builds(
-    smm::RankingInterval,
-    maximumOpen=
-        safe_text,
-    minimumEndpoint=
-        safe_text,
-    symbol=
-        safe_text,
-    minimumOpen=
-        safe_text,
-    maximumEndpoint=
-        safe_text
-)
-smm::MeasureLibrary_strategy = st.builds(
-    smm::MeasureLibrary,
-)
-smm::Attribute_strategy = st.builds(
-    smm::Attribute,
-    tag=
-        safe_text,
-    value=
-        safe_text
-)
-smm::SmmModel_strategy = st.builds(
-    smm::SmmModel,
-)
-smm::SmmRelationship_strategy = st.builds(
-    smm::SmmRelationship,
-)
-smm::ObservationScope_strategy = st.builds(
-    smm::ObservationScope,
-    scopeUri=
-        safe_text
-)
-smm::Observation_strategy = st.builds(
-    smm::Observation,
-    whenObserved=
-        safe_text,
-    observer=
-        safe_text,
-    tool=
-        safe_text
-)
-smm::Annotation_strategy = st.builds(
-    smm::Annotation,
-    text=
-        safe_text
-)
-smm::Measurement_strategy = st.builds(
-    smm::Measurement,
-    breakValue=
-        safe_text,
-    error=
-        safe_text
-)
-smm::AbstractMeasureElement_strategy = st.builds(
-    smm::AbstractMeasureElement,
-)
-smm::BaseMeasureRelationship_strategy = st.builds(
-    smm::BaseMeasureRelationship,
-)
-
-@given(instance=BinaryMeasurement_strategy)
-@settings(max_examples=50)
-def test_binarymeasurement_instantiation(instance):
-    assert isinstance(instance, BinaryMeasurement)
-
-@given(instance=smm::RatioMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::ratiomeasurement_instantiation(instance):
-    assert isinstance(instance, smm::RatioMeasurement)
-
-@given(instance=BinaryMeasure_strategy)
-@settings(max_examples=50)
-def test_binarymeasure_instantiation(instance):
-    assert isinstance(instance, BinaryMeasure)
-
-@given(instance=smm::RatioMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::ratiomeasure_instantiation(instance):
-    assert isinstance(instance, smm::RatioMeasure)
-
-@given(instance=smm::SmmElement_strategy)
-@settings(max_examples=50)
-def test_smm::smmelement_instantiation(instance):
-    assert isinstance(instance, smm::SmmElement)
-
-@given(instance=smm::SmmElement_strategy)
-def test_smm::smmelement_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=smm::SmmElement_strategy)
-def test_smm::smmelement_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=smm::SmmElement_strategy)
-def test_smm::smmelement_shortDescription_type(instance):
-    assert isinstance(instance.shortDescription, str)
-
-
-@given(instance=smm::SmmElement_strategy)
-def test_smm::smmelement_shortDescription_setter(instance):
-    original = instance.shortDescription
-    instance.shortDescription = original
-    assert instance.shortDescription == original
-
-@given(instance=smm::SmmElement_strategy)
-def test_smm::smmelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=smm::SmmElement_strategy)
-def test_smm::smmelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=smm::MofElement_strategy)
-@settings(max_examples=50)
-def test_smm::mofelement_instantiation(instance):
-    assert isinstance(instance, smm::MofElement)
-
-@given(instance=Measurement_strategy)
-@settings(max_examples=50)
-def test_measurement_instantiation(instance):
-    assert isinstance(instance, Measurement)
-
-@given(instance=smm::Grade_strategy)
-@settings(max_examples=50)
-def test_smm::grade_instantiation(instance):
-    assert isinstance(instance, smm::Grade)
-
-@given(instance=smm::Grade_strategy)
-def test_smm::grade_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smm::Grade_strategy)
-def test_smm::grade_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smm::Grade_strategy)
-def test_smm::grade_isBaseSupplied_type(instance):
-    assert isinstance(instance.isBaseSupplied, str)
-
-
-@given(instance=smm::Grade_strategy)
-def test_smm::grade_isBaseSupplied_setter(instance):
-    original = instance.isBaseSupplied
-    instance.isBaseSupplied = original
-    assert instance.isBaseSupplied == original
-
-@given(instance=Measure_strategy)
-@settings(max_examples=50)
-def test_measure_instantiation(instance):
-    assert isinstance(instance, Measure)
-
-@given(instance=smm::Ranking_strategy)
-@settings(max_examples=50)
-def test_smm::ranking_instantiation(instance):
-    assert isinstance(instance, smm::Ranking)
-
-@given(instance=DirectMeasurement_strategy)
-@settings(max_examples=50)
-def test_directmeasurement_instantiation(instance):
-    assert isinstance(instance, DirectMeasurement)
-
-@given(instance=smm::Count_strategy)
-@settings(max_examples=50)
-def test_smm::count_instantiation(instance):
-    assert isinstance(instance, smm::Count)
-
-@given(instance=AbstractMeasureElement_strategy)
-@settings(max_examples=50)
-def test_abstractmeasureelement_instantiation(instance):
-    assert isinstance(instance, AbstractMeasureElement)
-
-@given(instance=smm::Measure_strategy)
-@settings(max_examples=50)
-def test_smm::measure_instantiation(instance):
-    assert isinstance(instance, smm::Measure)
-
-@given(instance=smm::Measure_strategy)
-def test_smm::measure_visible_type(instance):
-    assert isinstance(instance.visible, str)
-
-
-@given(instance=smm::Measure_strategy)
-def test_smm::measure_visible_setter(instance):
-    original = instance.visible
-    instance.visible = original
-    assert instance.visible == original
-
-@given(instance=smm::Measure_strategy)
-def test_smm::measure_measurementLabelFormat_type(instance):
-    assert isinstance(instance.measurementLabelFormat, str)
-
-
-@given(instance=smm::Measure_strategy)
-def test_smm::measure_measurementLabelFormat_setter(instance):
-    original = instance.measurementLabelFormat
-    instance.measurementLabelFormat = original
-    assert instance.measurementLabelFormat == original
-
-@given(instance=smm::Measure_strategy)
-def test_smm::measure_measureLabelFormat_type(instance):
-    assert isinstance(instance.measureLabelFormat, str)
-
-
-@given(instance=smm::Measure_strategy)
-def test_smm::measure_measureLabelFormat_setter(instance):
-    original = instance.measureLabelFormat
-    instance.measureLabelFormat = original
-    assert instance.measureLabelFormat == original
-
-@given(instance=smm::Scope_strategy)
-@settings(max_examples=50)
-def test_smm::scope_instantiation(instance):
-    assert isinstance(instance, smm::Scope)
-
-@given(instance=smm::Scope_strategy)
-def test_smm::scope_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=smm::Scope_strategy)
-def test_smm::scope_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=smm::OCLOperation_strategy)
-@settings(max_examples=50)
-def test_smm::ocloperation_instantiation(instance):
-    assert isinstance(instance, smm::OCLOperation)
-
-@given(instance=smm::OCLOperation_strategy)
-def test_smm::ocloperation_context_type(instance):
-    assert isinstance(instance.context, str)
-
-
-@given(instance=smm::OCLOperation_strategy)
-def test_smm::ocloperation_context_setter(instance):
-    original = instance.context
-    instance.context = original
-    assert instance.context == original
-
-@given(instance=smm::OCLOperation_strategy)
-def test_smm::ocloperation_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=smm::OCLOperation_strategy)
-def test_smm::ocloperation_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=smm::Operation_strategy)
-@settings(max_examples=50)
-def test_smm::operation_instantiation(instance):
-    assert isinstance(instance, smm::Operation)
-
-@given(instance=smm::Operation_strategy)
-def test_smm::operation_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=smm::Operation_strategy)
-def test_smm::operation_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=smm::Operation_strategy)
-def test_smm::operation_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=smm::Operation_strategy)
-def test_smm::operation_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=smm::Characteristic_strategy)
-@settings(max_examples=50)
-def test_smm::characteristic_instantiation(instance):
-    assert isinstance(instance, smm::Characteristic)
-
-@given(instance=smm::MeasureCategory_strategy)
-@settings(max_examples=50)
-def test_smm::measurecategory_instantiation(instance):
-    assert isinstance(instance, smm::MeasureCategory)
-
-@given(instance=SmmRelationship_strategy)
-@settings(max_examples=50)
-def test_smmrelationship_instantiation(instance):
-    assert isinstance(instance, SmmRelationship)
-
-@given(instance=smm::ObservedMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::observedmeasure_instantiation(instance):
-    assert isinstance(instance, smm::ObservedMeasure)
-
-@given(instance=smm::MeasurementRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::measurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::MeasurementRelationship)
-
-@given(instance=smm::MeasureRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::measurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::MeasureRelationship)
-
-@given(instance=smm::CategoryRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::categoryrelationship_instantiation(instance):
-    assert isinstance(instance, smm::CategoryRelationship)
-
-@given(instance=DimensionalMeasurement_strategy)
-@settings(max_examples=50)
-def test_dimensionalmeasurement_instantiation(instance):
-    assert isinstance(instance, DimensionalMeasurement)
-
-@given(instance=smm::NamedMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::namedmeasurement_instantiation(instance):
-    assert isinstance(instance, smm::NamedMeasurement)
-
-@given(instance=smm::RescaledMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::rescaledmeasurement_instantiation(instance):
-    assert isinstance(instance, smm::RescaledMeasurement)
-
-@given(instance=smm::RescaledMeasurement_strategy)
-def test_smm::rescaledmeasurement_isBaseSupplied_type(instance):
-    assert isinstance(instance.isBaseSupplied, str)
-
-
-@given(instance=smm::RescaledMeasurement_strategy)
-def test_smm::rescaledmeasurement_isBaseSupplied_setter(instance):
-    original = instance.isBaseSupplied
-    instance.isBaseSupplied = original
-    assert instance.isBaseSupplied == original
-
-@given(instance=smm::DirectMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::directmeasurement_instantiation(instance):
-    assert isinstance(instance, smm::DirectMeasurement)
 
 @given(instance=DimensionalMeasure_strategy)
 @settings(max_examples=50)
 def test_dimensionalmeasure_instantiation(instance):
     assert isinstance(instance, DimensionalMeasure)
 
-@given(instance=smm::DirectMeasure_strategy)
+@given(instance=smm_CollectiveMeasure_strategy)
 @settings(max_examples=50)
-def test_smm::directmeasure_instantiation(instance):
-    assert isinstance(instance, smm::DirectMeasure)
-
-@given(instance=smm::RescaledMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::rescaledmeasure_instantiation(instance):
-    assert isinstance(instance, smm::RescaledMeasure)
-
-@given(instance=smm::RescaledMeasure_strategy)
-def test_smm::rescaledmeasure_formula_type(instance):
-    assert isinstance(instance.formula, str)
+def test_smm_collectivemeasure_instantiation(instance):
+    assert isinstance(instance, smm_CollectiveMeasure)
 
 
-@given(instance=smm::RescaledMeasure_strategy)
-def test_smm::rescaledmeasure_formula_setter(instance):
-    original = instance.formula
-    instance.formula = original
-    assert instance.formula == original
 
-@given(instance=smm::NamedMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::namedmeasure_instantiation(instance):
-    assert isinstance(instance, smm::NamedMeasure)
-
-@given(instance=smm::CollectiveMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::collectivemeasurement_instantiation(instance):
-    assert isinstance(instance, smm::CollectiveMeasurement)
-
-@given(instance=smm::CollectiveMeasurement_strategy)
-def test_smm::collectivemeasurement_accumulator_type(instance):
-    assert isinstance(instance.accumulator, str)
-
-
-@given(instance=smm::CollectiveMeasurement_strategy)
-def test_smm::collectivemeasurement_accumulator_setter(instance):
-    original = instance.accumulator
-    instance.accumulator = original
-    assert instance.accumulator == original
-
-@given(instance=smm::CollectiveMeasurement_strategy)
-def test_smm::collectivemeasurement_isBaseSupplied_type(instance):
-    assert isinstance(instance.isBaseSupplied, str)
-
-
-@given(instance=smm::CollectiveMeasurement_strategy)
-def test_smm::collectivemeasurement_isBaseSupplied_setter(instance):
-    original = instance.isBaseSupplied
-    instance.isBaseSupplied = original
-    assert instance.isBaseSupplied == original
-
-@given(instance=smm::CollectiveMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::collectivemeasure_instantiation(instance):
-    assert isinstance(instance, smm::CollectiveMeasure)
-
-@given(instance=smm::CollectiveMeasure_strategy)
-def test_smm::collectivemeasure_accumulator_type(instance):
-    assert isinstance(instance.accumulator, str)
-
-
-@given(instance=smm::CollectiveMeasure_strategy)
-def test_smm::collectivemeasure_accumulator_setter(instance):
+@given(instance=smm_CollectiveMeasure_strategy)
+def test_smm_collectivemeasure_accumulator_setter(instance):
     original = instance.accumulator
     instance.accumulator = original
     assert instance.accumulator == original
@@ -2133,116 +1783,40 @@ def test_smm::collectivemeasure_accumulator_setter(instance):
 def test_directmeasure_instantiation(instance):
     assert isinstance(instance, DirectMeasure)
 
-@given(instance=smm::Counting_strategy)
+@given(instance=smm_Counting_strategy)
 @settings(max_examples=50)
-def test_smm::counting_instantiation(instance):
-    assert isinstance(instance, smm::Counting)
-
-@given(instance=smm::DimensionalMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::dimensionalmeasurement_instantiation(instance):
-    assert isinstance(instance, smm::DimensionalMeasurement)
-
-@given(instance=smm::DimensionalMeasurement_strategy)
-def test_smm::dimensionalmeasurement_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smm::DimensionalMeasurement_strategy)
-def test_smm::dimensionalmeasurement_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smm::BinaryMeasurement_strategy)
-@settings(max_examples=50)
-def test_smm::binarymeasurement_instantiation(instance):
-    assert isinstance(instance, smm::BinaryMeasurement)
-
-@given(instance=smm::BinaryMeasurement_strategy)
-def test_smm::binarymeasurement_isBaseSupplied_type(instance):
-    assert isinstance(instance.isBaseSupplied, str)
-
-
-@given(instance=smm::BinaryMeasurement_strategy)
-def test_smm::binarymeasurement_isBaseSupplied_setter(instance):
-    original = instance.isBaseSupplied
-    instance.isBaseSupplied = original
-    assert instance.isBaseSupplied == original
+def test_smm_counting_instantiation(instance):
+    assert isinstance(instance, smm_Counting)
 
 @given(instance=MeasurementRelationship_strategy)
 @settings(max_examples=50)
 def test_measurementrelationship_instantiation(instance):
     assert isinstance(instance, MeasurementRelationship)
 
-@given(instance=smm::BaseMeasurementRelationship_strategy)
+@given(instance=smm_Base2MeasurementRelationship_strategy)
 @settings(max_examples=50)
-def test_smm::basemeasurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::BaseMeasurementRelationship)
+def test_smm_base2measurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_Base2MeasurementRelationship)
 
-@given(instance=smm::RescaleMeasurementRelationship_strategy)
+@given(instance=smm_BaseMeasurementRelationship_strategy)
 @settings(max_examples=50)
-def test_smm::rescalemeasurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::RescaleMeasurementRelationship)
+def test_smm_basemeasurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_BaseMeasurementRelationship)
 
-@given(instance=smm::EquivalentMeasurementRelationship_strategy)
+@given(instance=smm_Base1MeasurementRelationship_strategy)
 @settings(max_examples=50)
-def test_smm::equivalentmeasurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::EquivalentMeasurementRelationship)
+def test_smm_base1measurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_Base1MeasurementRelationship)
 
-@given(instance=smm::RefinementMeasurementRelationship_strategy)
+@given(instance=smm_BinaryMeasure_strategy)
 @settings(max_examples=50)
-def test_smm::refinementmeasurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::RefinementMeasurementRelationship)
-
-@given(instance=smm::Base2MeasurementRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::base2measurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::Base2MeasurementRelationship)
-
-@given(instance=smm::RecursiveMeasurementRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::recursivemeasurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::RecursiveMeasurementRelationship)
-
-@given(instance=smm::RankingMeasurementRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::rankingmeasurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::RankingMeasurementRelationship)
-
-@given(instance=smm::Base1MeasurementRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::base1measurementrelationship_instantiation(instance):
-    assert isinstance(instance, smm::Base1MeasurementRelationship)
-
-@given(instance=smm::DimensionalMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::dimensionalmeasure_instantiation(instance):
-    assert isinstance(instance, smm::DimensionalMeasure)
-
-@given(instance=smm::DimensionalMeasure_strategy)
-def test_smm::dimensionalmeasure_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_smm_binarymeasure_instantiation(instance):
+    assert isinstance(instance, smm_BinaryMeasure)
 
 
-@given(instance=smm::DimensionalMeasure_strategy)
-def test_smm::dimensionalmeasure_unit_setter(instance):
-    original = instance.unit
-    instance.unit = original
-    assert instance.unit == original
 
-@given(instance=smm::BinaryMeasure_strategy)
-@settings(max_examples=50)
-def test_smm::binarymeasure_instantiation(instance):
-    assert isinstance(instance, smm::BinaryMeasure)
-
-@given(instance=smm::BinaryMeasure_strategy)
-def test_smm::binarymeasure_functor_type(instance):
-    assert isinstance(instance.functor, str)
-
-
-@given(instance=smm::BinaryMeasure_strategy)
-def test_smm::binarymeasure_functor_setter(instance):
+@given(instance=smm_BinaryMeasure_strategy)
+def test_smm_binarymeasure_functor_setter(instance):
     original = instance.functor
     instance.functor = original
     assert instance.functor == original
@@ -2252,278 +1826,590 @@ def test_smm::binarymeasure_functor_setter(instance):
 def test_measurerelationship_instantiation(instance):
     assert isinstance(instance, MeasureRelationship)
 
-@given(instance=smm::EquivalentMeasureRelationship_strategy)
+@given(instance=smm_Base2MeasureRelationship_strategy)
 @settings(max_examples=50)
-def test_smm::equivalentmeasurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::EquivalentMeasureRelationship)
+def test_smm_base2measurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_Base2MeasureRelationship)
 
-@given(instance=smm::RecursiveMeasureRelationship_strategy)
+@given(instance=smm_Base1MeasureRelationship_strategy)
 @settings(max_examples=50)
-def test_smm::recursivemeasurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::RecursiveMeasureRelationship)
-
-@given(instance=smm::RescaleMeasureRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::rescalemeasurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::RescaleMeasureRelationship)
-
-@given(instance=smm::Base2MeasureRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::base2measurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::Base2MeasureRelationship)
-
-@given(instance=smm::RankingMeasureRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::rankingmeasurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::RankingMeasureRelationship)
-
-@given(instance=smm::RefinementMeasureRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::refinementmeasurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::RefinementMeasureRelationship)
-
-@given(instance=smm::Base1MeasureRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::base1measurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::Base1MeasureRelationship)
+def test_smm_base1measurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_Base1MeasureRelationship)
 
 @given(instance=SmmElement_strategy)
 @settings(max_examples=50)
 def test_smmelement_instantiation(instance):
     assert isinstance(instance, SmmElement)
 
-@given(instance=smm::Argument_strategy)
+@given(instance=smm_Annotation_strategy)
 @settings(max_examples=50)
-def test_smm::argument_instantiation(instance):
-    assert isinstance(instance, smm::Argument)
-
-@given(instance=smm::Argument_strategy)
-def test_smm::argument_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_smm_annotation_instantiation(instance):
+    assert isinstance(instance, smm_Annotation)
 
 
-@given(instance=smm::Argument_strategy)
-def test_smm::argument_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=smm::Argument_strategy)
-def test_smm::argument_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=smm::Argument_strategy)
-def test_smm::argument_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=smm::RankingInterval_strategy)
-@settings(max_examples=50)
-def test_smm::rankinginterval_instantiation(instance):
-    assert isinstance(instance, smm::RankingInterval)
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_maximumOpen_type(instance):
-    assert isinstance(instance.maximumOpen, str)
-
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_maximumOpen_setter(instance):
-    original = instance.maximumOpen
-    instance.maximumOpen = original
-    assert instance.maximumOpen == original
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_minimumEndpoint_type(instance):
-    assert isinstance(instance.minimumEndpoint, str)
-
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_minimumEndpoint_setter(instance):
-    original = instance.minimumEndpoint
-    instance.minimumEndpoint = original
-    assert instance.minimumEndpoint == original
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
-
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_symbol_setter(instance):
-    original = instance.symbol
-    instance.symbol = original
-    assert instance.symbol == original
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_minimumOpen_type(instance):
-    assert isinstance(instance.minimumOpen, str)
-
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_minimumOpen_setter(instance):
-    original = instance.minimumOpen
-    instance.minimumOpen = original
-    assert instance.minimumOpen == original
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_maximumEndpoint_type(instance):
-    assert isinstance(instance.maximumEndpoint, str)
-
-
-@given(instance=smm::RankingInterval_strategy)
-def test_smm::rankinginterval_maximumEndpoint_setter(instance):
-    original = instance.maximumEndpoint
-    instance.maximumEndpoint = original
-    assert instance.maximumEndpoint == original
-
-@given(instance=smm::MeasureLibrary_strategy)
-@settings(max_examples=50)
-def test_smm::measurelibrary_instantiation(instance):
-    assert isinstance(instance, smm::MeasureLibrary)
-
-@given(instance=smm::Attribute_strategy)
-@settings(max_examples=50)
-def test_smm::attribute_instantiation(instance):
-    assert isinstance(instance, smm::Attribute)
-
-@given(instance=smm::Attribute_strategy)
-def test_smm::attribute_tag_type(instance):
-    assert isinstance(instance.tag, str)
-
-
-@given(instance=smm::Attribute_strategy)
-def test_smm::attribute_tag_setter(instance):
-    original = instance.tag
-    instance.tag = original
-    assert instance.tag == original
-
-@given(instance=smm::Attribute_strategy)
-def test_smm::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smm::Attribute_strategy)
-def test_smm::attribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smm::SmmModel_strategy)
-@settings(max_examples=50)
-def test_smm::smmmodel_instantiation(instance):
-    assert isinstance(instance, smm::SmmModel)
-
-@given(instance=smm::SmmRelationship_strategy)
-@settings(max_examples=50)
-def test_smm::smmrelationship_instantiation(instance):
-    assert isinstance(instance, smm::SmmRelationship)
-
-@given(instance=smm::ObservationScope_strategy)
-@settings(max_examples=50)
-def test_smm::observationscope_instantiation(instance):
-    assert isinstance(instance, smm::ObservationScope)
-
-@given(instance=smm::ObservationScope_strategy)
-def test_smm::observationscope_scopeUri_type(instance):
-    assert isinstance(instance.scopeUri, str)
-
-
-@given(instance=smm::ObservationScope_strategy)
-def test_smm::observationscope_scopeUri_setter(instance):
-    original = instance.scopeUri
-    instance.scopeUri = original
-    assert instance.scopeUri == original
-
-@given(instance=smm::Observation_strategy)
-@settings(max_examples=50)
-def test_smm::observation_instantiation(instance):
-    assert isinstance(instance, smm::Observation)
-
-@given(instance=smm::Observation_strategy)
-def test_smm::observation_whenObserved_type(instance):
-    assert isinstance(instance.whenObserved, str)
-
-
-@given(instance=smm::Observation_strategy)
-def test_smm::observation_whenObserved_setter(instance):
-    original = instance.whenObserved
-    instance.whenObserved = original
-    assert instance.whenObserved == original
-
-@given(instance=smm::Observation_strategy)
-def test_smm::observation_observer_type(instance):
-    assert isinstance(instance.observer, str)
-
-
-@given(instance=smm::Observation_strategy)
-def test_smm::observation_observer_setter(instance):
-    original = instance.observer
-    instance.observer = original
-    assert instance.observer == original
-
-@given(instance=smm::Observation_strategy)
-def test_smm::observation_tool_type(instance):
-    assert isinstance(instance.tool, str)
-
-
-@given(instance=smm::Observation_strategy)
-def test_smm::observation_tool_setter(instance):
-    original = instance.tool
-    instance.tool = original
-    assert instance.tool == original
-
-@given(instance=smm::Annotation_strategy)
-@settings(max_examples=50)
-def test_smm::annotation_instantiation(instance):
-    assert isinstance(instance, smm::Annotation)
-
-@given(instance=smm::Annotation_strategy)
-def test_smm::annotation_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=smm::Annotation_strategy)
-def test_smm::annotation_text_setter(instance):
+@given(instance=smm_Annotation_strategy)
+def test_smm_annotation_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=smm::Measurement_strategy)
+@given(instance=smm_Attribute_strategy)
 @settings(max_examples=50)
-def test_smm::measurement_instantiation(instance):
-    assert isinstance(instance, smm::Measurement)
-
-@given(instance=smm::Measurement_strategy)
-def test_smm::measurement_breakValue_type(instance):
-    assert isinstance(instance.breakValue, str)
+def test_smm_attribute_instantiation(instance):
+    assert isinstance(instance, smm_Attribute)
 
 
-@given(instance=smm::Measurement_strategy)
-def test_smm::measurement_breakValue_setter(instance):
-    original = instance.breakValue
-    instance.breakValue = original
-    assert instance.breakValue == original
 
-@given(instance=smm::Measurement_strategy)
-def test_smm::measurement_error_type(instance):
-    assert isinstance(instance.error, str)
+@given(instance=smm_Attribute_strategy)
+def test_smm_attribute_tag_setter(instance):
+    original = instance.tag
+    instance.tag = original
+    assert instance.tag == original
 
 
-@given(instance=smm::Measurement_strategy)
-def test_smm::measurement_error_setter(instance):
+
+@given(instance=smm_Attribute_strategy)
+def test_smm_attribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smm_Argument_strategy)
+@settings(max_examples=50)
+def test_smm_argument_instantiation(instance):
+    assert isinstance(instance, smm_Argument)
+
+
+
+@given(instance=smm_Argument_strategy)
+def test_smm_argument_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=smm_Argument_strategy)
+def test_smm_argument_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smm_AbstractMeasureElement_strategy)
+@settings(max_examples=50)
+def test_smm_abstractmeasureelement_instantiation(instance):
+    assert isinstance(instance, smm_AbstractMeasureElement)
+
+@given(instance=smm_BaseMeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_basemeasurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_BaseMeasureRelationship)
+
+@given(instance=smm_SmmModel_strategy)
+@settings(max_examples=50)
+def test_smm_smmmodel_instantiation(instance):
+    assert isinstance(instance, smm_SmmModel)
+
+@given(instance=smm_RescaledMeasure_strategy)
+@settings(max_examples=50)
+def test_smm_rescaledmeasure_instantiation(instance):
+    assert isinstance(instance, smm_RescaledMeasure)
+
+
+
+@given(instance=smm_RescaledMeasure_strategy)
+def test_smm_rescaledmeasure_formula_setter(instance):
+    original = instance.formula
+    instance.formula = original
+    assert instance.formula == original
+
+@given(instance=BinaryMeasurement_strategy)
+@settings(max_examples=50)
+def test_binarymeasurement_instantiation(instance):
+    assert isinstance(instance, BinaryMeasurement)
+
+@given(instance=smm_RatioMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_ratiomeasurement_instantiation(instance):
+    assert isinstance(instance, smm_RatioMeasurement)
+
+@given(instance=BinaryMeasure_strategy)
+@settings(max_examples=50)
+def test_binarymeasure_instantiation(instance):
+    assert isinstance(instance, BinaryMeasure)
+
+@given(instance=smm_RatioMeasure_strategy)
+@settings(max_examples=50)
+def test_smm_ratiomeasure_instantiation(instance):
+    assert isinstance(instance, smm_RatioMeasure)
+
+@given(instance=smm_RankingInterval_strategy)
+@settings(max_examples=50)
+def test_smm_rankinginterval_instantiation(instance):
+    assert isinstance(instance, smm_RankingInterval)
+
+
+
+@given(instance=smm_RankingInterval_strategy)
+def test_smm_rankinginterval_maximumEndpoint_setter(instance):
+    original = instance.maximumEndpoint
+    instance.maximumEndpoint = original
+    assert instance.maximumEndpoint == original
+
+
+
+@given(instance=smm_RankingInterval_strategy)
+def test_smm_rankinginterval_minimumOpen_setter(instance):
+    original = instance.minimumOpen
+    instance.minimumOpen = original
+    assert instance.minimumOpen == original
+
+
+
+@given(instance=smm_RankingInterval_strategy)
+def test_smm_rankinginterval_symbol_setter(instance):
+    original = instance.symbol
+    instance.symbol = original
+    assert instance.symbol == original
+
+
+
+@given(instance=smm_RankingInterval_strategy)
+def test_smm_rankinginterval_minimumEndpoint_setter(instance):
+    original = instance.minimumEndpoint
+    instance.minimumEndpoint = original
+    assert instance.minimumEndpoint == original
+
+
+
+@given(instance=smm_RankingInterval_strategy)
+def test_smm_rankinginterval_maximumOpen_setter(instance):
+    original = instance.maximumOpen
+    instance.maximumOpen = original
+    assert instance.maximumOpen == original
+
+@given(instance=smm_SmmRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_smmrelationship_instantiation(instance):
+    assert isinstance(instance, smm_SmmRelationship)
+
+@given(instance=smm_SmmElement_strategy)
+@settings(max_examples=50)
+def test_smm_smmelement_instantiation(instance):
+    assert isinstance(instance, smm_SmmElement)
+
+
+
+@given(instance=smm_SmmElement_strategy)
+def test_smm_smmelement_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=smm_SmmElement_strategy)
+def test_smm_smmelement_shortDescription_setter(instance):
+    original = instance.shortDescription
+    instance.shortDescription = original
+    assert instance.shortDescription == original
+
+
+
+@given(instance=smm_SmmElement_strategy)
+def test_smm_smmelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=smm_ObservationScope_strategy)
+@settings(max_examples=50)
+def test_smm_observationscope_instantiation(instance):
+    assert isinstance(instance, smm_ObservationScope)
+
+
+
+@given(instance=smm_ObservationScope_strategy)
+def test_smm_observationscope_scopeUri_setter(instance):
+    original = instance.scopeUri
+    instance.scopeUri = original
+    assert instance.scopeUri == original
+
+@given(instance=smm_NamedMeasure_strategy)
+@settings(max_examples=50)
+def test_smm_namedmeasure_instantiation(instance):
+    assert isinstance(instance, smm_NamedMeasure)
+
+@given(instance=smm_RecursiveMeasurementRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_recursivemeasurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_RecursiveMeasurementRelationship)
+
+@given(instance=smm_RefinementMeasurementRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_refinementmeasurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_RefinementMeasurementRelationship)
+
+@given(instance=smm_MofElement_strategy)
+@settings(max_examples=50)
+def test_smm_mofelement_instantiation(instance):
+    assert isinstance(instance, smm_MofElement)
+
+@given(instance=smm_Observation_strategy)
+@settings(max_examples=50)
+def test_smm_observation_instantiation(instance):
+    assert isinstance(instance, smm_Observation)
+
+
+
+@given(instance=smm_Observation_strategy)
+def test_smm_observation_observer_setter(instance):
+    original = instance.observer
+    instance.observer = original
+    assert instance.observer == original
+
+
+
+@given(instance=smm_Observation_strategy)
+def test_smm_observation_tool_setter(instance):
+    original = instance.tool
+    instance.tool = original
+    assert instance.tool == original
+
+
+
+@given(instance=smm_Observation_strategy)
+def test_smm_observation_whenObserved_setter(instance):
+    original = instance.whenObserved
+    instance.whenObserved = original
+    assert instance.whenObserved == original
+
+@given(instance=smm_MeasureLibrary_strategy)
+@settings(max_examples=50)
+def test_smm_measurelibrary_instantiation(instance):
+    assert isinstance(instance, smm_MeasureLibrary)
+
+@given(instance=smm_RecursiveMeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_recursivemeasurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_RecursiveMeasureRelationship)
+
+@given(instance=smm_RefinementMeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_refinementmeasurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_RefinementMeasureRelationship)
+
+@given(instance=smm_Measurement_strategy)
+@settings(max_examples=50)
+def test_smm_measurement_instantiation(instance):
+    assert isinstance(instance, smm_Measurement)
+
+
+
+@given(instance=smm_Measurement_strategy)
+def test_smm_measurement_error_setter(instance):
     original = instance.error
     instance.error = original
     assert instance.error == original
 
-@given(instance=smm::AbstractMeasureElement_strategy)
-@settings(max_examples=50)
-def test_smm::abstractmeasureelement_instantiation(instance):
-    assert isinstance(instance, smm::AbstractMeasureElement)
 
-@given(instance=smm::BaseMeasureRelationship_strategy)
+
+@given(instance=smm_Measurement_strategy)
+def test_smm_measurement_breakValue_setter(instance):
+    original = instance.breakValue
+    instance.breakValue = original
+    assert instance.breakValue == original
+
+@given(instance=smm_EquivalentMeasurementRelationship_strategy)
 @settings(max_examples=50)
-def test_smm::basemeasurerelationship_instantiation(instance):
-    assert isinstance(instance, smm::BaseMeasureRelationship)
+def test_smm_equivalentmeasurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_EquivalentMeasurementRelationship)
+
+@given(instance=smm_EquivalentMeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_equivalentmeasurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_EquivalentMeasureRelationship)
+
+@given(instance=smm_DirectMeasure_strategy)
+@settings(max_examples=50)
+def test_smm_directmeasure_instantiation(instance):
+    assert isinstance(instance, smm_DirectMeasure)
+
+@given(instance=smm_RankingMeasurementRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_rankingmeasurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_RankingMeasurementRelationship)
+
+@given(instance=smm_RescaleMeasurementRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_rescalemeasurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_RescaleMeasurementRelationship)
+
+@given(instance=Measurement_strategy)
+@settings(max_examples=50)
+def test_measurement_instantiation(instance):
+    assert isinstance(instance, Measurement)
+
+@given(instance=smm_DimensionalMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_dimensionalmeasurement_instantiation(instance):
+    assert isinstance(instance, smm_DimensionalMeasurement)
+
+
+
+@given(instance=smm_DimensionalMeasurement_strategy)
+def test_smm_dimensionalmeasurement_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smm_Grade_strategy)
+@settings(max_examples=50)
+def test_smm_grade_instantiation(instance):
+    assert isinstance(instance, smm_Grade)
+
+
+
+@given(instance=smm_Grade_strategy)
+def test_smm_grade_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=smm_Grade_strategy)
+def test_smm_grade_isBaseSupplied_setter(instance):
+    original = instance.isBaseSupplied
+    instance.isBaseSupplied = original
+    assert instance.isBaseSupplied == original
+
+@given(instance=smm_RankingMeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_rankingmeasurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_RankingMeasureRelationship)
+
+@given(instance=smm_RescaleMeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_rescalemeasurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_RescaleMeasureRelationship)
+
+@given(instance=Measure_strategy)
+@settings(max_examples=50)
+def test_measure_instantiation(instance):
+    assert isinstance(instance, Measure)
+
+@given(instance=smm_DimensionalMeasure_strategy)
+@settings(max_examples=50)
+def test_smm_dimensionalmeasure_instantiation(instance):
+    assert isinstance(instance, smm_DimensionalMeasure)
+
+
+
+@given(instance=smm_DimensionalMeasure_strategy)
+def test_smm_dimensionalmeasure_unit_setter(instance):
+    original = instance.unit
+    instance.unit = original
+    assert instance.unit == original
+
+@given(instance=smm_Ranking_strategy)
+@settings(max_examples=50)
+def test_smm_ranking_instantiation(instance):
+    assert isinstance(instance, smm_Ranking)
+
+@given(instance=DirectMeasurement_strategy)
+@settings(max_examples=50)
+def test_directmeasurement_instantiation(instance):
+    assert isinstance(instance, DirectMeasurement)
+
+@given(instance=smm_Count_strategy)
+@settings(max_examples=50)
+def test_smm_count_instantiation(instance):
+    assert isinstance(instance, smm_Count)
+
+@given(instance=AbstractMeasureElement_strategy)
+@settings(max_examples=50)
+def test_abstractmeasureelement_instantiation(instance):
+    assert isinstance(instance, AbstractMeasureElement)
+
+@given(instance=smm_OCLOperation_strategy)
+@settings(max_examples=50)
+def test_smm_ocloperation_instantiation(instance):
+    assert isinstance(instance, smm_OCLOperation)
+
+
+
+@given(instance=smm_OCLOperation_strategy)
+def test_smm_ocloperation_context_setter(instance):
+    original = instance.context
+    instance.context = original
+    assert instance.context == original
+
+
+
+@given(instance=smm_OCLOperation_strategy)
+def test_smm_ocloperation_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+@given(instance=smm_Scope_strategy)
+@settings(max_examples=50)
+def test_smm_scope_instantiation(instance):
+    assert isinstance(instance, smm_Scope)
+
+
+
+@given(instance=smm_Scope_strategy)
+def test_smm_scope_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=smm_Measure_strategy)
+@settings(max_examples=50)
+def test_smm_measure_instantiation(instance):
+    assert isinstance(instance, smm_Measure)
+
+
+
+@given(instance=smm_Measure_strategy)
+def test_smm_measure_measurementLabelFormat_setter(instance):
+    original = instance.measurementLabelFormat
+    instance.measurementLabelFormat = original
+    assert instance.measurementLabelFormat == original
+
+
+
+@given(instance=smm_Measure_strategy)
+def test_smm_measure_visible_setter(instance):
+    original = instance.visible
+    instance.visible = original
+    assert instance.visible == original
+
+
+
+@given(instance=smm_Measure_strategy)
+def test_smm_measure_measureLabelFormat_setter(instance):
+    original = instance.measureLabelFormat
+    instance.measureLabelFormat = original
+    assert instance.measureLabelFormat == original
+
+@given(instance=smm_Operation_strategy)
+@settings(max_examples=50)
+def test_smm_operation_instantiation(instance):
+    assert isinstance(instance, smm_Operation)
+
+
+
+@given(instance=smm_Operation_strategy)
+def test_smm_operation_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+
+
+@given(instance=smm_Operation_strategy)
+def test_smm_operation_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+@given(instance=smm_Characteristic_strategy)
+@settings(max_examples=50)
+def test_smm_characteristic_instantiation(instance):
+    assert isinstance(instance, smm_Characteristic)
+
+@given(instance=smm_MeasureCategory_strategy)
+@settings(max_examples=50)
+def test_smm_measurecategory_instantiation(instance):
+    assert isinstance(instance, smm_MeasureCategory)
+
+@given(instance=SmmRelationship_strategy)
+@settings(max_examples=50)
+def test_smmrelationship_instantiation(instance):
+    assert isinstance(instance, SmmRelationship)
+
+@given(instance=smm_MeasurementRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_measurementrelationship_instantiation(instance):
+    assert isinstance(instance, smm_MeasurementRelationship)
+
+@given(instance=smm_ObservedMeasure_strategy)
+@settings(max_examples=50)
+def test_smm_observedmeasure_instantiation(instance):
+    assert isinstance(instance, smm_ObservedMeasure)
+
+@given(instance=smm_MeasureRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_measurerelationship_instantiation(instance):
+    assert isinstance(instance, smm_MeasureRelationship)
+
+@given(instance=smm_CategoryRelationship_strategy)
+@settings(max_examples=50)
+def test_smm_categoryrelationship_instantiation(instance):
+    assert isinstance(instance, smm_CategoryRelationship)
+
+@given(instance=DimensionalMeasurement_strategy)
+@settings(max_examples=50)
+def test_dimensionalmeasurement_instantiation(instance):
+    assert isinstance(instance, DimensionalMeasurement)
+
+@given(instance=smm_DirectMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_directmeasurement_instantiation(instance):
+    assert isinstance(instance, smm_DirectMeasurement)
+
+@given(instance=smm_NamedMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_namedmeasurement_instantiation(instance):
+    assert isinstance(instance, smm_NamedMeasurement)
+
+@given(instance=smm_CollectiveMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_collectivemeasurement_instantiation(instance):
+    assert isinstance(instance, smm_CollectiveMeasurement)
+
+
+
+@given(instance=smm_CollectiveMeasurement_strategy)
+def test_smm_collectivemeasurement_accumulator_setter(instance):
+    original = instance.accumulator
+    instance.accumulator = original
+    assert instance.accumulator == original
+
+
+
+@given(instance=smm_CollectiveMeasurement_strategy)
+def test_smm_collectivemeasurement_isBaseSupplied_setter(instance):
+    original = instance.isBaseSupplied
+    instance.isBaseSupplied = original
+    assert instance.isBaseSupplied == original
+
+@given(instance=smm_RescaledMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_rescaledmeasurement_instantiation(instance):
+    assert isinstance(instance, smm_RescaledMeasurement)
+
+
+
+@given(instance=smm_RescaledMeasurement_strategy)
+def test_smm_rescaledmeasurement_isBaseSupplied_setter(instance):
+    original = instance.isBaseSupplied
+    instance.isBaseSupplied = original
+    assert instance.isBaseSupplied == original
+
+@given(instance=smm_BinaryMeasurement_strategy)
+@settings(max_examples=50)
+def test_smm_binarymeasurement_instantiation(instance):
+    assert isinstance(instance, smm_BinaryMeasurement)
+
+
+
+@given(instance=smm_BinaryMeasurement_strategy)
+def test_smm_binarymeasurement_isBaseSupplied_setter(instance):
+    original = instance.isBaseSupplied
+    instance.isBaseSupplied = original
+    assert instance.isBaseSupplied == original

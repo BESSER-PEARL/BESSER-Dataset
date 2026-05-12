@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    diva::DiVAModelElement,
-    diva::Annotation,
-    Rule,
-    diva::PriorityRule,
-    Expression,
-    diva::ContextExpression,
-    diva::VariantExpression,
-    Term,
-    diva::NotTerm,
-    NaryTerm,
-    diva::OrTerm,
-    diva::AndTerm,
-    Variable,
-    diva::BooleanVariable,
-    diva::EnumVariable,
-    Model,
-    diva::AspectModel,
-    NamedElement,
-    diva::EnumLiteral,
-    VariableTerm,
-    diva::BooleanTerm,
-    diva::EnumTerm,
-    diva::VariableTerm,
-    diva::Variant,
-    diva::VariantTerm,
-    diva::NaryTerm,
-    DiVAModelElement,
-    diva::PropertyPriority,
-    diva::Term,
-    diva::NamedElement,
-    diva::Model,
-    diva::PropertyValue,
-    diva::VariabilityModel,
-    diva::Expression,
+from python_code import (
     Constraint,
-    diva::MultiplicityConstraint,
-    diva::Invariant,
-    diva::Constraint,
-    diva::Rule,
-    diva::Dimension,
-    diva::Property,
-    diva::Variable,
-    diva::BaseModel,
+    diva_Invariant,
+    diva_DiVAModelElement,
+    diva_Annotation,
+    Rule,
+    diva_PriorityRule,
+    Expression,
+    diva_VariantExpression,
+    diva_ContextExpression,
+    diva_MultiplicityConstraint,
+    Term,
+    diva_NotTerm,
+    NaryTerm,
+    diva_OrTerm,
+    diva_AndTerm,
+    Variable,
+    diva_BooleanVariable,
+    diva_EnumVariable,
+    Model,
+    diva_BaseModel,
+    diva_AspectModel,
+    NamedElement,
+    diva_EnumLiteral,
+    diva_Constraint,
+    diva_Variable,
+    diva_Rule,
+    diva_Dimension,
+    diva_Property,
+    VariableTerm,
+    diva_BooleanTerm,
+    diva_EnumTerm,
+    diva_VariableTerm,
+    diva_Variant,
+    diva_VariantTerm,
+    diva_NaryTerm,
+    DiVAModelElement,
+    diva_Model,
+    diva_PropertyValue,
+    diva_Expression,
+    diva_PropertyPriority,
+    diva_Term,
+    diva_NamedElement,
+    diva_VariabilityModel,
 )
 
 # =============================================================================
@@ -57,47 +57,75 @@ from classes import (
 
 
 
-def test_diva::divamodelelement_is_not_abstract():
-    assert not inspect.isabstract(diva::DiVAModelElement)
+def test_constraint_is_not_abstract():
+    assert not inspect.isabstract(Constraint)
 
 
-def test_diva::divamodelelement_constructor_exists():
-    assert callable(diva::DiVAModelElement.__init__)
+def test_constraint_constructor_exists():
+    assert callable(Constraint.__init__)
 
 
-def test_diva::divamodelelement_constructor_args():
-    sig = inspect.signature(diva::DiVAModelElement.__init__)
+def test_constraint_constructor_args():
+    sig = inspect.signature(Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::annotation_is_not_abstract():
-    assert not inspect.isabstract(diva::Annotation)
+def test_diva_invariant_is_not_abstract():
+    assert not inspect.isabstract(diva_Invariant)
 
 
-def test_diva::annotation_constructor_exists():
-    assert callable(diva::Annotation.__init__)
+def test_diva_invariant_constructor_exists():
+    assert callable(diva_Invariant.__init__)
 
 
-def test_diva::annotation_constructor_args():
-    sig = inspect.signature(diva::Annotation.__init__)
+def test_diva_invariant_constructor_args():
+    sig = inspect.signature(diva_Invariant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diva_divamodelelement_is_not_abstract():
+    assert not inspect.isabstract(diva_DiVAModelElement)
+
+
+def test_diva_divamodelelement_constructor_exists():
+    assert callable(diva_DiVAModelElement.__init__)
+
+
+def test_diva_divamodelelement_constructor_args():
+    sig = inspect.signature(diva_DiVAModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diva_annotation_is_not_abstract():
+    assert not inspect.isabstract(diva_Annotation)
+
+
+def test_diva_annotation_constructor_exists():
+    assert callable(diva_Annotation.__init__)
+
+
+def test_diva_annotation_constructor_args():
+    sig = inspect.signature(diva_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
 
-def test_diva::annotation_has_value():
-    assert hasattr(diva::Annotation, "value")
+def test_diva_annotation_has_value():
+    assert hasattr(diva_Annotation, "value")
     descriptor = None
-    for klass in diva::Annotation.__mro__:
+    for klass in diva_Annotation.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_diva::annotation_has_key():
-    assert hasattr(diva::Annotation, "key")
+def test_diva_annotation_has_key():
+    assert hasattr(diva_Annotation, "key")
     descriptor = None
-    for klass in diva::Annotation.__mro__:
+    for klass in diva_Annotation.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -119,16 +147,16 @@ def test_rule_constructor_args():
 
 
 
-def test_diva::priorityrule_is_not_abstract():
-    assert not inspect.isabstract(diva::PriorityRule)
+def test_diva_priorityrule_is_not_abstract():
+    assert not inspect.isabstract(diva_PriorityRule)
 
 
-def test_diva::priorityrule_constructor_exists():
-    assert callable(diva::PriorityRule.__init__)
+def test_diva_priorityrule_constructor_exists():
+    assert callable(diva_PriorityRule.__init__)
 
 
-def test_diva::priorityrule_constructor_args():
-    sig = inspect.signature(diva::PriorityRule.__init__)
+def test_diva_priorityrule_constructor_args():
+    sig = inspect.signature(diva_PriorityRule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,31 +175,65 @@ def test_expression_constructor_args():
 
 
 
-def test_diva::contextexpression_is_not_abstract():
-    assert not inspect.isabstract(diva::ContextExpression)
+def test_diva_variantexpression_is_not_abstract():
+    assert not inspect.isabstract(diva_VariantExpression)
 
 
-def test_diva::contextexpression_constructor_exists():
-    assert callable(diva::ContextExpression.__init__)
+def test_diva_variantexpression_constructor_exists():
+    assert callable(diva_VariantExpression.__init__)
 
 
-def test_diva::contextexpression_constructor_args():
-    sig = inspect.signature(diva::ContextExpression.__init__)
+def test_diva_variantexpression_constructor_args():
+    sig = inspect.signature(diva_VariantExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::variantexpression_is_not_abstract():
-    assert not inspect.isabstract(diva::VariantExpression)
+def test_diva_contextexpression_is_not_abstract():
+    assert not inspect.isabstract(diva_ContextExpression)
 
 
-def test_diva::variantexpression_constructor_exists():
-    assert callable(diva::VariantExpression.__init__)
+def test_diva_contextexpression_constructor_exists():
+    assert callable(diva_ContextExpression.__init__)
 
 
-def test_diva::variantexpression_constructor_args():
-    sig = inspect.signature(diva::VariantExpression.__init__)
+def test_diva_contextexpression_constructor_args():
+    sig = inspect.signature(diva_ContextExpression.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_diva_multiplicityconstraint_is_not_abstract():
+    assert not inspect.isabstract(diva_MultiplicityConstraint)
+
+
+def test_diva_multiplicityconstraint_constructor_exists():
+    assert callable(diva_MultiplicityConstraint.__init__)
+
+
+def test_diva_multiplicityconstraint_constructor_args():
+    sig = inspect.signature(diva_MultiplicityConstraint.__init__)
+    params = list(sig.parameters.keys())
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "upper" in params, "Missing parameter 'upper'"
+
+def test_diva_multiplicityconstraint_has_lower():
+    assert hasattr(diva_MultiplicityConstraint, "lower")
+    descriptor = None
+    for klass in diva_MultiplicityConstraint.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diva_multiplicityconstraint_has_upper():
+    assert hasattr(diva_MultiplicityConstraint, "upper")
+    descriptor = None
+    for klass in diva_MultiplicityConstraint.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -189,16 +251,16 @@ def test_term_constructor_args():
 
 
 
-def test_diva::notterm_is_not_abstract():
-    assert not inspect.isabstract(diva::NotTerm)
+def test_diva_notterm_is_not_abstract():
+    assert not inspect.isabstract(diva_NotTerm)
 
 
-def test_diva::notterm_constructor_exists():
-    assert callable(diva::NotTerm.__init__)
+def test_diva_notterm_constructor_exists():
+    assert callable(diva_NotTerm.__init__)
 
 
-def test_diva::notterm_constructor_args():
-    sig = inspect.signature(diva::NotTerm.__init__)
+def test_diva_notterm_constructor_args():
+    sig = inspect.signature(diva_NotTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,30 +279,30 @@ def test_naryterm_constructor_args():
 
 
 
-def test_diva::orterm_is_not_abstract():
-    assert not inspect.isabstract(diva::OrTerm)
+def test_diva_orterm_is_not_abstract():
+    assert not inspect.isabstract(diva_OrTerm)
 
 
-def test_diva::orterm_constructor_exists():
-    assert callable(diva::OrTerm.__init__)
+def test_diva_orterm_constructor_exists():
+    assert callable(diva_OrTerm.__init__)
 
 
-def test_diva::orterm_constructor_args():
-    sig = inspect.signature(diva::OrTerm.__init__)
+def test_diva_orterm_constructor_args():
+    sig = inspect.signature(diva_OrTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::andterm_is_not_abstract():
-    assert not inspect.isabstract(diva::AndTerm)
+def test_diva_andterm_is_not_abstract():
+    assert not inspect.isabstract(diva_AndTerm)
 
 
-def test_diva::andterm_constructor_exists():
-    assert callable(diva::AndTerm.__init__)
+def test_diva_andterm_constructor_exists():
+    assert callable(diva_AndTerm.__init__)
 
 
-def test_diva::andterm_constructor_args():
-    sig = inspect.signature(diva::AndTerm.__init__)
+def test_diva_andterm_constructor_args():
+    sig = inspect.signature(diva_AndTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -259,30 +321,30 @@ def test_variable_constructor_args():
 
 
 
-def test_diva::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(diva::BooleanVariable)
+def test_diva_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(diva_BooleanVariable)
 
 
-def test_diva::booleanvariable_constructor_exists():
-    assert callable(diva::BooleanVariable.__init__)
+def test_diva_booleanvariable_constructor_exists():
+    assert callable(diva_BooleanVariable.__init__)
 
 
-def test_diva::booleanvariable_constructor_args():
-    sig = inspect.signature(diva::BooleanVariable.__init__)
+def test_diva_booleanvariable_constructor_args():
+    sig = inspect.signature(diva_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::enumvariable_is_not_abstract():
-    assert not inspect.isabstract(diva::EnumVariable)
+def test_diva_enumvariable_is_not_abstract():
+    assert not inspect.isabstract(diva_EnumVariable)
 
 
-def test_diva::enumvariable_constructor_exists():
-    assert callable(diva::EnumVariable.__init__)
+def test_diva_enumvariable_constructor_exists():
+    assert callable(diva_EnumVariable.__init__)
 
 
-def test_diva::enumvariable_constructor_args():
-    sig = inspect.signature(diva::EnumVariable.__init__)
+def test_diva_enumvariable_constructor_args():
+    sig = inspect.signature(diva_EnumVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -301,16 +363,30 @@ def test_model_constructor_args():
 
 
 
-def test_diva::aspectmodel_is_not_abstract():
-    assert not inspect.isabstract(diva::AspectModel)
+def test_diva_basemodel_is_not_abstract():
+    assert not inspect.isabstract(diva_BaseModel)
 
 
-def test_diva::aspectmodel_constructor_exists():
-    assert callable(diva::AspectModel.__init__)
+def test_diva_basemodel_constructor_exists():
+    assert callable(diva_BaseModel.__init__)
 
 
-def test_diva::aspectmodel_constructor_args():
-    sig = inspect.signature(diva::AspectModel.__init__)
+def test_diva_basemodel_constructor_args():
+    sig = inspect.signature(diva_BaseModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diva_aspectmodel_is_not_abstract():
+    assert not inspect.isabstract(diva_AspectModel)
+
+
+def test_diva_aspectmodel_constructor_exists():
+    assert callable(diva_AspectModel.__init__)
+
+
+def test_diva_aspectmodel_constructor_args():
+    sig = inspect.signature(diva_AspectModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -329,17 +405,117 @@ def test_namedelement_constructor_args():
 
 
 
-def test_diva::enumliteral_is_not_abstract():
-    assert not inspect.isabstract(diva::EnumLiteral)
+def test_diva_enumliteral_is_not_abstract():
+    assert not inspect.isabstract(diva_EnumLiteral)
 
 
-def test_diva::enumliteral_constructor_exists():
-    assert callable(diva::EnumLiteral.__init__)
+def test_diva_enumliteral_constructor_exists():
+    assert callable(diva_EnumLiteral.__init__)
 
 
-def test_diva::enumliteral_constructor_args():
-    sig = inspect.signature(diva::EnumLiteral.__init__)
+def test_diva_enumliteral_constructor_args():
+    sig = inspect.signature(diva_EnumLiteral.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_diva_constraint_is_not_abstract():
+    assert not inspect.isabstract(diva_Constraint)
+
+
+def test_diva_constraint_constructor_exists():
+    assert callable(diva_Constraint.__init__)
+
+
+def test_diva_constraint_constructor_args():
+    sig = inspect.signature(diva_Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diva_variable_is_not_abstract():
+    assert not inspect.isabstract(diva_Variable)
+
+
+def test_diva_variable_constructor_exists():
+    assert callable(diva_Variable.__init__)
+
+
+def test_diva_variable_constructor_args():
+    sig = inspect.signature(diva_Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diva_rule_is_not_abstract():
+    assert not inspect.isabstract(diva_Rule)
+
+
+def test_diva_rule_constructor_exists():
+    assert callable(diva_Rule.__init__)
+
+
+def test_diva_rule_constructor_args():
+    sig = inspect.signature(diva_Rule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diva_dimension_is_not_abstract():
+    assert not inspect.isabstract(diva_Dimension)
+
+
+def test_diva_dimension_constructor_exists():
+    assert callable(diva_Dimension.__init__)
+
+
+def test_diva_dimension_constructor_args():
+    sig = inspect.signature(diva_Dimension.__init__)
+    params = list(sig.parameters.keys())
+    assert "upper" in params, "Missing parameter 'upper'"
+    assert "lower" in params, "Missing parameter 'lower'"
+
+def test_diva_dimension_has_upper():
+    assert hasattr(diva_Dimension, "upper")
+    descriptor = None
+    for klass in diva_Dimension.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diva_dimension_has_lower():
+    assert hasattr(diva_Dimension, "lower")
+    descriptor = None
+    for klass in diva_Dimension.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diva_property_is_not_abstract():
+    assert not inspect.isabstract(diva_Property)
+
+
+def test_diva_property_constructor_exists():
+    assert callable(diva_Property.__init__)
+
+
+def test_diva_property_constructor_args():
+    sig = inspect.signature(diva_Property.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_diva_property_has_direction():
+    assert hasattr(diva_Property, "direction")
+    descriptor = None
+    for klass in diva_Property.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -357,86 +533,86 @@ def test_variableterm_constructor_args():
 
 
 
-def test_diva::booleanterm_is_not_abstract():
-    assert not inspect.isabstract(diva::BooleanTerm)
+def test_diva_booleanterm_is_not_abstract():
+    assert not inspect.isabstract(diva_BooleanTerm)
 
 
-def test_diva::booleanterm_constructor_exists():
-    assert callable(diva::BooleanTerm.__init__)
+def test_diva_booleanterm_constructor_exists():
+    assert callable(diva_BooleanTerm.__init__)
 
 
-def test_diva::booleanterm_constructor_args():
-    sig = inspect.signature(diva::BooleanTerm.__init__)
+def test_diva_booleanterm_constructor_args():
+    sig = inspect.signature(diva_BooleanTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::enumterm_is_not_abstract():
-    assert not inspect.isabstract(diva::EnumTerm)
+def test_diva_enumterm_is_not_abstract():
+    assert not inspect.isabstract(diva_EnumTerm)
 
 
-def test_diva::enumterm_constructor_exists():
-    assert callable(diva::EnumTerm.__init__)
+def test_diva_enumterm_constructor_exists():
+    assert callable(diva_EnumTerm.__init__)
 
 
-def test_diva::enumterm_constructor_args():
-    sig = inspect.signature(diva::EnumTerm.__init__)
+def test_diva_enumterm_constructor_args():
+    sig = inspect.signature(diva_EnumTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::variableterm_is_not_abstract():
-    assert not inspect.isabstract(diva::VariableTerm)
+def test_diva_variableterm_is_not_abstract():
+    assert not inspect.isabstract(diva_VariableTerm)
 
 
-def test_diva::variableterm_constructor_exists():
-    assert callable(diva::VariableTerm.__init__)
+def test_diva_variableterm_constructor_exists():
+    assert callable(diva_VariableTerm.__init__)
 
 
-def test_diva::variableterm_constructor_args():
-    sig = inspect.signature(diva::VariableTerm.__init__)
+def test_diva_variableterm_constructor_args():
+    sig = inspect.signature(diva_VariableTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::variant_is_not_abstract():
-    assert not inspect.isabstract(diva::Variant)
+def test_diva_variant_is_not_abstract():
+    assert not inspect.isabstract(diva_Variant)
 
 
-def test_diva::variant_constructor_exists():
-    assert callable(diva::Variant.__init__)
+def test_diva_variant_constructor_exists():
+    assert callable(diva_Variant.__init__)
 
 
-def test_diva::variant_constructor_args():
-    sig = inspect.signature(diva::Variant.__init__)
+def test_diva_variant_constructor_args():
+    sig = inspect.signature(diva_Variant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::variantterm_is_not_abstract():
-    assert not inspect.isabstract(diva::VariantTerm)
+def test_diva_variantterm_is_not_abstract():
+    assert not inspect.isabstract(diva_VariantTerm)
 
 
-def test_diva::variantterm_constructor_exists():
-    assert callable(diva::VariantTerm.__init__)
+def test_diva_variantterm_constructor_exists():
+    assert callable(diva_VariantTerm.__init__)
 
 
-def test_diva::variantterm_constructor_args():
-    sig = inspect.signature(diva::VariantTerm.__init__)
+def test_diva_variantterm_constructor_args():
+    sig = inspect.signature(diva_VariantTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::naryterm_is_not_abstract():
-    assert not inspect.isabstract(diva::NaryTerm)
+def test_diva_naryterm_is_not_abstract():
+    assert not inspect.isabstract(diva_NaryTerm)
 
 
-def test_diva::naryterm_constructor_exists():
-    assert callable(diva::NaryTerm.__init__)
+def test_diva_naryterm_constructor_exists():
+    assert callable(diva_NaryTerm.__init__)
 
 
-def test_diva::naryterm_constructor_args():
-    sig = inspect.signature(diva::NaryTerm.__init__)
+def test_diva_naryterm_constructor_args():
+    sig = inspect.signature(diva_NaryTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -455,109 +631,37 @@ def test_divamodelelement_constructor_args():
 
 
 
-def test_diva::propertypriority_is_not_abstract():
-    assert not inspect.isabstract(diva::PropertyPriority)
+def test_diva_model_is_not_abstract():
+    assert not inspect.isabstract(diva_Model)
 
 
-def test_diva::propertypriority_constructor_exists():
-    assert callable(diva::PropertyPriority.__init__)
+def test_diva_model_constructor_exists():
+    assert callable(diva_Model.__init__)
 
 
-def test_diva::propertypriority_constructor_args():
-    sig = inspect.signature(diva::PropertyPriority.__init__)
-    params = list(sig.parameters.keys())
-    assert "priority" in params, "Missing parameter 'priority'"
-
-def test_diva::propertypriority_has_priority():
-    assert hasattr(diva::PropertyPriority, "priority")
-    descriptor = None
-    for klass in diva::PropertyPriority.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diva::term_is_not_abstract():
-    assert not inspect.isabstract(diva::Term)
-
-
-def test_diva::term_constructor_exists():
-    assert callable(diva::Term.__init__)
-
-
-def test_diva::term_constructor_args():
-    sig = inspect.signature(diva::Term.__init__)
+def test_diva_model_constructor_args():
+    sig = inspect.signature(diva_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::namedelement_is_not_abstract():
-    assert not inspect.isabstract(diva::NamedElement)
+def test_diva_propertyvalue_is_not_abstract():
+    assert not inspect.isabstract(diva_PropertyValue)
 
 
-def test_diva::namedelement_constructor_exists():
-    assert callable(diva::NamedElement.__init__)
+def test_diva_propertyvalue_constructor_exists():
+    assert callable(diva_PropertyValue.__init__)
 
 
-def test_diva::namedelement_constructor_args():
-    sig = inspect.signature(diva::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_diva::namedelement_has_id():
-    assert hasattr(diva::NamedElement, "id")
-    descriptor = None
-    for klass in diva::NamedElement.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diva::namedelement_has_name():
-    assert hasattr(diva::NamedElement, "name")
-    descriptor = None
-    for klass in diva::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diva::model_is_not_abstract():
-    assert not inspect.isabstract(diva::Model)
-
-
-def test_diva::model_constructor_exists():
-    assert callable(diva::Model.__init__)
-
-
-def test_diva::model_constructor_args():
-    sig = inspect.signature(diva::Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diva::propertyvalue_is_not_abstract():
-    assert not inspect.isabstract(diva::PropertyValue)
-
-
-def test_diva::propertyvalue_constructor_exists():
-    assert callable(diva::PropertyValue.__init__)
-
-
-def test_diva::propertyvalue_constructor_args():
-    sig = inspect.signature(diva::PropertyValue.__init__)
+def test_diva_propertyvalue_constructor_args():
+    sig = inspect.signature(diva_PropertyValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_diva::propertyvalue_has_value():
-    assert hasattr(diva::PropertyValue, "value")
+def test_diva_propertyvalue_has_value():
+    assert hasattr(diva_PropertyValue, "value")
     descriptor = None
-    for klass in diva::PropertyValue.__mro__:
+    for klass in diva_PropertyValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -565,37 +669,23 @@ def test_diva::propertyvalue_has_value():
 
 
 
-def test_diva::variabilitymodel_is_not_abstract():
-    assert not inspect.isabstract(diva::VariabilityModel)
+def test_diva_expression_is_not_abstract():
+    assert not inspect.isabstract(diva_Expression)
 
 
-def test_diva::variabilitymodel_constructor_exists():
-    assert callable(diva::VariabilityModel.__init__)
+def test_diva_expression_constructor_exists():
+    assert callable(diva_Expression.__init__)
 
 
-def test_diva::variabilitymodel_constructor_args():
-    sig = inspect.signature(diva::VariabilityModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diva::expression_is_not_abstract():
-    assert not inspect.isabstract(diva::Expression)
-
-
-def test_diva::expression_constructor_exists():
-    assert callable(diva::Expression.__init__)
-
-
-def test_diva::expression_constructor_args():
-    sig = inspect.signature(diva::Expression.__init__)
+def test_diva_expression_constructor_args():
+    sig = inspect.signature(diva_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_diva::expression_has_text():
-    assert hasattr(diva::Expression, "text")
+def test_diva_expression_has_text():
+    assert hasattr(diva_Expression, "text")
     descriptor = None
-    for klass in diva::Expression.__mro__:
+    for klass in diva_Expression.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -603,178 +693,88 @@ def test_diva::expression_has_text():
 
 
 
-def test_constraint_is_not_abstract():
-    assert not inspect.isabstract(Constraint)
+def test_diva_propertypriority_is_not_abstract():
+    assert not inspect.isabstract(diva_PropertyPriority)
 
 
-def test_constraint_constructor_exists():
-    assert callable(Constraint.__init__)
+def test_diva_propertypriority_constructor_exists():
+    assert callable(diva_PropertyPriority.__init__)
 
 
-def test_constraint_constructor_args():
-    sig = inspect.signature(Constraint.__init__)
+def test_diva_propertypriority_constructor_args():
+    sig = inspect.signature(diva_PropertyPriority.__init__)
     params = list(sig.parameters.keys())
+    assert "priority" in params, "Missing parameter 'priority'"
 
-
-
-def test_diva::multiplicityconstraint_is_not_abstract():
-    assert not inspect.isabstract(diva::MultiplicityConstraint)
-
-
-def test_diva::multiplicityconstraint_constructor_exists():
-    assert callable(diva::MultiplicityConstraint.__init__)
-
-
-def test_diva::multiplicityconstraint_constructor_args():
-    sig = inspect.signature(diva::MultiplicityConstraint.__init__)
-    params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
-    assert "upper" in params, "Missing parameter 'upper'"
-
-def test_diva::multiplicityconstraint_has_lower():
-    assert hasattr(diva::MultiplicityConstraint, "lower")
+def test_diva_propertypriority_has_priority():
+    assert hasattr(diva_PropertyPriority, "priority")
     descriptor = None
-    for klass in diva::MultiplicityConstraint.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diva::multiplicityconstraint_has_upper():
-    assert hasattr(diva::MultiplicityConstraint, "upper")
-    descriptor = None
-    for klass in diva::MultiplicityConstraint.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
+    for klass in diva_PropertyPriority.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_diva::invariant_is_not_abstract():
-    assert not inspect.isabstract(diva::Invariant)
+def test_diva_term_is_not_abstract():
+    assert not inspect.isabstract(diva_Term)
 
 
-def test_diva::invariant_constructor_exists():
-    assert callable(diva::Invariant.__init__)
+def test_diva_term_constructor_exists():
+    assert callable(diva_Term.__init__)
 
 
-def test_diva::invariant_constructor_args():
-    sig = inspect.signature(diva::Invariant.__init__)
+def test_diva_term_constructor_args():
+    sig = inspect.signature(diva_Term.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diva::constraint_is_not_abstract():
-    assert not inspect.isabstract(diva::Constraint)
+def test_diva_namedelement_is_not_abstract():
+    assert not inspect.isabstract(diva_NamedElement)
 
 
-def test_diva::constraint_constructor_exists():
-    assert callable(diva::Constraint.__init__)
+def test_diva_namedelement_constructor_exists():
+    assert callable(diva_NamedElement.__init__)
 
 
-def test_diva::constraint_constructor_args():
-    sig = inspect.signature(diva::Constraint.__init__)
+def test_diva_namedelement_constructor_args():
+    sig = inspect.signature(diva_NamedElement.__init__)
     params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-
-
-def test_diva::rule_is_not_abstract():
-    assert not inspect.isabstract(diva::Rule)
-
-
-def test_diva::rule_constructor_exists():
-    assert callable(diva::Rule.__init__)
-
-
-def test_diva::rule_constructor_args():
-    sig = inspect.signature(diva::Rule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diva::dimension_is_not_abstract():
-    assert not inspect.isabstract(diva::Dimension)
-
-
-def test_diva::dimension_constructor_exists():
-    assert callable(diva::Dimension.__init__)
-
-
-def test_diva::dimension_constructor_args():
-    sig = inspect.signature(diva::Dimension.__init__)
-    params = list(sig.parameters.keys())
-    assert "upper" in params, "Missing parameter 'upper'"
-    assert "lower" in params, "Missing parameter 'lower'"
-
-def test_diva::dimension_has_upper():
-    assert hasattr(diva::Dimension, "upper")
+def test_diva_namedelement_has_id():
+    assert hasattr(diva_NamedElement, "id")
     descriptor = None
-    for klass in diva::Dimension.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
+    for klass in diva_NamedElement.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_diva::dimension_has_lower():
-    assert hasattr(diva::Dimension, "lower")
+def test_diva_namedelement_has_name():
+    assert hasattr(diva_NamedElement, "name")
     descriptor = None
-    for klass in diva::Dimension.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
+    for klass in diva_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_diva::property_is_not_abstract():
-    assert not inspect.isabstract(diva::Property)
+def test_diva_variabilitymodel_is_not_abstract():
+    assert not inspect.isabstract(diva_VariabilityModel)
 
 
-def test_diva::property_constructor_exists():
-    assert callable(diva::Property.__init__)
+def test_diva_variabilitymodel_constructor_exists():
+    assert callable(diva_VariabilityModel.__init__)
 
 
-def test_diva::property_constructor_args():
-    sig = inspect.signature(diva::Property.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_diva::property_has_direction():
-    assert hasattr(diva::Property, "direction")
-    descriptor = None
-    for klass in diva::Property.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_diva::variable_is_not_abstract():
-    assert not inspect.isabstract(diva::Variable)
-
-
-def test_diva::variable_constructor_exists():
-    assert callable(diva::Variable.__init__)
-
-
-def test_diva::variable_constructor_args():
-    sig = inspect.signature(diva::Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diva::basemodel_is_not_abstract():
-    assert not inspect.isabstract(diva::BaseModel)
-
-
-def test_diva::basemodel_constructor_exists():
-    assert callable(diva::BaseModel.__init__)
-
-
-def test_diva::basemodel_constructor_args():
-    sig = inspect.signature(diva::BaseModel.__init__)
+def test_diva_variabilitymodel_constructor_args():
+    sig = inspect.signature(diva_VariabilityModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -789,11 +789,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-diva::DiVAModelElement_strategy = st.builds(
-    diva::DiVAModelElement,
+Constraint_strategy = st.builds(
+    Constraint,
 )
-diva::Annotation_strategy = st.builds(
-    diva::Annotation,
+diva_Invariant_strategy = st.builds(
+    diva_Invariant,
+)
+diva_DiVAModelElement_strategy = st.builds(
+    diva_DiVAModelElement,
+)
+diva_Annotation_strategy = st.builds(
+    diva_Annotation,
     value=
         safe_text,
     key=
@@ -802,175 +808,173 @@ diva::Annotation_strategy = st.builds(
 Rule_strategy = st.builds(
     Rule,
 )
-diva::PriorityRule_strategy = st.builds(
-    diva::PriorityRule,
+diva_PriorityRule_strategy = st.builds(
+    diva_PriorityRule,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-diva::ContextExpression_strategy = st.builds(
-    diva::ContextExpression,
+diva_VariantExpression_strategy = st.builds(
+    diva_VariantExpression,
 )
-diva::VariantExpression_strategy = st.builds(
-    diva::VariantExpression,
+diva_ContextExpression_strategy = st.builds(
+    diva_ContextExpression,
+)
+diva_MultiplicityConstraint_strategy = st.builds(
+    diva_MultiplicityConstraint,
+    lower=
+        safe_text,
+    upper=
+        safe_text
 )
 Term_strategy = st.builds(
     Term,
 )
-diva::NotTerm_strategy = st.builds(
-    diva::NotTerm,
+diva_NotTerm_strategy = st.builds(
+    diva_NotTerm,
 )
 NaryTerm_strategy = st.builds(
     NaryTerm,
 )
-diva::OrTerm_strategy = st.builds(
-    diva::OrTerm,
+diva_OrTerm_strategy = st.builds(
+    diva_OrTerm,
 )
-diva::AndTerm_strategy = st.builds(
-    diva::AndTerm,
+diva_AndTerm_strategy = st.builds(
+    diva_AndTerm,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-diva::BooleanVariable_strategy = st.builds(
-    diva::BooleanVariable,
+diva_BooleanVariable_strategy = st.builds(
+    diva_BooleanVariable,
 )
-diva::EnumVariable_strategy = st.builds(
-    diva::EnumVariable,
+diva_EnumVariable_strategy = st.builds(
+    diva_EnumVariable,
 )
 Model_strategy = st.builds(
     Model,
 )
-diva::AspectModel_strategy = st.builds(
-    diva::AspectModel,
+diva_BaseModel_strategy = st.builds(
+    diva_BaseModel,
+)
+diva_AspectModel_strategy = st.builds(
+    diva_AspectModel,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-diva::EnumLiteral_strategy = st.builds(
-    diva::EnumLiteral,
+diva_EnumLiteral_strategy = st.builds(
+    diva_EnumLiteral,
+)
+diva_Constraint_strategy = st.builds(
+    diva_Constraint,
+)
+diva_Variable_strategy = st.builds(
+    diva_Variable,
+)
+diva_Rule_strategy = st.builds(
+    diva_Rule,
+)
+diva_Dimension_strategy = st.builds(
+    diva_Dimension,
+    upper=
+        safe_text,
+    lower=
+        safe_text
+)
+diva_Property_strategy = st.builds(
+    diva_Property,
+    direction=
+        safe_text
 )
 VariableTerm_strategy = st.builds(
     VariableTerm,
 )
-diva::BooleanTerm_strategy = st.builds(
-    diva::BooleanTerm,
+diva_BooleanTerm_strategy = st.builds(
+    diva_BooleanTerm,
 )
-diva::EnumTerm_strategy = st.builds(
-    diva::EnumTerm,
+diva_EnumTerm_strategy = st.builds(
+    diva_EnumTerm,
 )
-diva::VariableTerm_strategy = st.builds(
-    diva::VariableTerm,
+diva_VariableTerm_strategy = st.builds(
+    diva_VariableTerm,
 )
-diva::Variant_strategy = st.builds(
-    diva::Variant,
+diva_Variant_strategy = st.builds(
+    diva_Variant,
 )
-diva::VariantTerm_strategy = st.builds(
-    diva::VariantTerm,
+diva_VariantTerm_strategy = st.builds(
+    diva_VariantTerm,
 )
-diva::NaryTerm_strategy = st.builds(
-    diva::NaryTerm,
+diva_NaryTerm_strategy = st.builds(
+    diva_NaryTerm,
 )
 DiVAModelElement_strategy = st.builds(
     DiVAModelElement,
 )
-diva::PropertyPriority_strategy = st.builds(
-    diva::PropertyPriority,
+diva_Model_strategy = st.builds(
+    diva_Model,
+)
+diva_PropertyValue_strategy = st.builds(
+    diva_PropertyValue,
+    value=
+        safe_text
+)
+diva_Expression_strategy = st.builds(
+    diva_Expression,
+    text=
+        safe_text
+)
+diva_PropertyPriority_strategy = st.builds(
+    diva_PropertyPriority,
     priority=
         safe_text
 )
-diva::Term_strategy = st.builds(
-    diva::Term,
+diva_Term_strategy = st.builds(
+    diva_Term,
 )
-diva::NamedElement_strategy = st.builds(
-    diva::NamedElement,
+diva_NamedElement_strategy = st.builds(
+    diva_NamedElement,
     id=
         safe_text,
     name=
         safe_text
 )
-diva::Model_strategy = st.builds(
-    diva::Model,
-)
-diva::PropertyValue_strategy = st.builds(
-    diva::PropertyValue,
-    value=
-        safe_text
-)
-diva::VariabilityModel_strategy = st.builds(
-    diva::VariabilityModel,
-)
-diva::Expression_strategy = st.builds(
-    diva::Expression,
-    text=
-        safe_text
-)
-Constraint_strategy = st.builds(
-    Constraint,
-)
-diva::MultiplicityConstraint_strategy = st.builds(
-    diva::MultiplicityConstraint,
-    lower=
-        safe_text,
-    upper=
-        safe_text
-)
-diva::Invariant_strategy = st.builds(
-    diva::Invariant,
-)
-diva::Constraint_strategy = st.builds(
-    diva::Constraint,
-)
-diva::Rule_strategy = st.builds(
-    diva::Rule,
-)
-diva::Dimension_strategy = st.builds(
-    diva::Dimension,
-    upper=
-        safe_text,
-    lower=
-        safe_text
-)
-diva::Property_strategy = st.builds(
-    diva::Property,
-    direction=
-        safe_text
-)
-diva::Variable_strategy = st.builds(
-    diva::Variable,
-)
-diva::BaseModel_strategy = st.builds(
-    diva::BaseModel,
+diva_VariabilityModel_strategy = st.builds(
+    diva_VariabilityModel,
 )
 
-@given(instance=diva::DiVAModelElement_strategy)
+@given(instance=Constraint_strategy)
 @settings(max_examples=50)
-def test_diva::divamodelelement_instantiation(instance):
-    assert isinstance(instance, diva::DiVAModelElement)
+def test_constraint_instantiation(instance):
+    assert isinstance(instance, Constraint)
 
-@given(instance=diva::Annotation_strategy)
+@given(instance=diva_Invariant_strategy)
 @settings(max_examples=50)
-def test_diva::annotation_instantiation(instance):
-    assert isinstance(instance, diva::Annotation)
+def test_diva_invariant_instantiation(instance):
+    assert isinstance(instance, diva_Invariant)
 
-@given(instance=diva::Annotation_strategy)
-def test_diva::annotation_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=diva_DiVAModelElement_strategy)
+@settings(max_examples=50)
+def test_diva_divamodelelement_instantiation(instance):
+    assert isinstance(instance, diva_DiVAModelElement)
+
+@given(instance=diva_Annotation_strategy)
+@settings(max_examples=50)
+def test_diva_annotation_instantiation(instance):
+    assert isinstance(instance, diva_Annotation)
 
 
-@given(instance=diva::Annotation_strategy)
-def test_diva::annotation_value_setter(instance):
+
+@given(instance=diva_Annotation_strategy)
+def test_diva_annotation_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=diva::Annotation_strategy)
-def test_diva::annotation_key_type(instance):
-    assert isinstance(instance.key, str)
 
 
-@given(instance=diva::Annotation_strategy)
-def test_diva::annotation_key_setter(instance):
+@given(instance=diva_Annotation_strategy)
+def test_diva_annotation_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
@@ -980,315 +984,96 @@ def test_diva::annotation_key_setter(instance):
 def test_rule_instantiation(instance):
     assert isinstance(instance, Rule)
 
-@given(instance=diva::PriorityRule_strategy)
+@given(instance=diva_PriorityRule_strategy)
 @settings(max_examples=50)
-def test_diva::priorityrule_instantiation(instance):
-    assert isinstance(instance, diva::PriorityRule)
+def test_diva_priorityrule_instantiation(instance):
+    assert isinstance(instance, diva_PriorityRule)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=diva::ContextExpression_strategy)
+@given(instance=diva_VariantExpression_strategy)
 @settings(max_examples=50)
-def test_diva::contextexpression_instantiation(instance):
-    assert isinstance(instance, diva::ContextExpression)
+def test_diva_variantexpression_instantiation(instance):
+    assert isinstance(instance, diva_VariantExpression)
 
-@given(instance=diva::VariantExpression_strategy)
+@given(instance=diva_ContextExpression_strategy)
 @settings(max_examples=50)
-def test_diva::variantexpression_instantiation(instance):
-    assert isinstance(instance, diva::VariantExpression)
+def test_diva_contextexpression_instantiation(instance):
+    assert isinstance(instance, diva_ContextExpression)
+
+@given(instance=diva_MultiplicityConstraint_strategy)
+@settings(max_examples=50)
+def test_diva_multiplicityconstraint_instantiation(instance):
+    assert isinstance(instance, diva_MultiplicityConstraint)
+
+
+
+@given(instance=diva_MultiplicityConstraint_strategy)
+def test_diva_multiplicityconstraint_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=diva_MultiplicityConstraint_strategy)
+def test_diva_multiplicityconstraint_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
 
 @given(instance=Term_strategy)
 @settings(max_examples=50)
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=diva::NotTerm_strategy)
+@given(instance=diva_NotTerm_strategy)
 @settings(max_examples=50)
-def test_diva::notterm_instantiation(instance):
-    assert isinstance(instance, diva::NotTerm)
+def test_diva_notterm_instantiation(instance):
+    assert isinstance(instance, diva_NotTerm)
 
 @given(instance=NaryTerm_strategy)
 @settings(max_examples=50)
 def test_naryterm_instantiation(instance):
     assert isinstance(instance, NaryTerm)
 
-@given(instance=diva::OrTerm_strategy)
+@given(instance=diva_OrTerm_strategy)
 @settings(max_examples=50)
-def test_diva::orterm_instantiation(instance):
-    assert isinstance(instance, diva::OrTerm)
+def test_diva_orterm_instantiation(instance):
+    assert isinstance(instance, diva_OrTerm)
 
-@given(instance=diva::AndTerm_strategy)
+@given(instance=diva_AndTerm_strategy)
 @settings(max_examples=50)
-def test_diva::andterm_instantiation(instance):
-    assert isinstance(instance, diva::AndTerm)
+def test_diva_andterm_instantiation(instance):
+    assert isinstance(instance, diva_AndTerm)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=diva::BooleanVariable_strategy)
+@given(instance=diva_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_diva::booleanvariable_instantiation(instance):
-    assert isinstance(instance, diva::BooleanVariable)
+def test_diva_booleanvariable_instantiation(instance):
+    assert isinstance(instance, diva_BooleanVariable)
 
-@given(instance=diva::EnumVariable_strategy)
+@given(instance=diva_EnumVariable_strategy)
 @settings(max_examples=50)
-def test_diva::enumvariable_instantiation(instance):
-    assert isinstance(instance, diva::EnumVariable)
+def test_diva_enumvariable_instantiation(instance):
+    assert isinstance(instance, diva_EnumVariable)
 
 @given(instance=Model_strategy)
 @settings(max_examples=50)
 def test_model_instantiation(instance):
     assert isinstance(instance, Model)
 
-@given(instance=diva::AspectModel_strategy)
+@given(instance=diva_BaseModel_strategy)
 @settings(max_examples=50)
-def test_diva::aspectmodel_instantiation(instance):
-    assert isinstance(instance, diva::AspectModel)
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=diva::EnumLiteral_strategy)
-@settings(max_examples=50)
-def test_diva::enumliteral_instantiation(instance):
-    assert isinstance(instance, diva::EnumLiteral)
-
-@given(instance=VariableTerm_strategy)
-@settings(max_examples=50)
-def test_variableterm_instantiation(instance):
-    assert isinstance(instance, VariableTerm)
-
-@given(instance=diva::BooleanTerm_strategy)
-@settings(max_examples=50)
-def test_diva::booleanterm_instantiation(instance):
-    assert isinstance(instance, diva::BooleanTerm)
-
-@given(instance=diva::EnumTerm_strategy)
-@settings(max_examples=50)
-def test_diva::enumterm_instantiation(instance):
-    assert isinstance(instance, diva::EnumTerm)
-
-@given(instance=diva::VariableTerm_strategy)
-@settings(max_examples=50)
-def test_diva::variableterm_instantiation(instance):
-    assert isinstance(instance, diva::VariableTerm)
-
-@given(instance=diva::Variant_strategy)
-@settings(max_examples=50)
-def test_diva::variant_instantiation(instance):
-    assert isinstance(instance, diva::Variant)
-
-@given(instance=diva::VariantTerm_strategy)
-@settings(max_examples=50)
-def test_diva::variantterm_instantiation(instance):
-    assert isinstance(instance, diva::VariantTerm)
-
-@given(instance=diva::NaryTerm_strategy)
-@settings(max_examples=50)
-def test_diva::naryterm_instantiation(instance):
-    assert isinstance(instance, diva::NaryTerm)
-
-@given(instance=DiVAModelElement_strategy)
-@settings(max_examples=50)
-def test_divamodelelement_instantiation(instance):
-    assert isinstance(instance, DiVAModelElement)
-
-@given(instance=diva::PropertyPriority_strategy)
-@settings(max_examples=50)
-def test_diva::propertypriority_instantiation(instance):
-    assert isinstance(instance, diva::PropertyPriority)
-
-@given(instance=diva::PropertyPriority_strategy)
-def test_diva::propertypriority_priority_type(instance):
-    assert isinstance(instance.priority, str)
-
-
-@given(instance=diva::PropertyPriority_strategy)
-def test_diva::propertypriority_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=diva::Term_strategy)
-@settings(max_examples=50)
-def test_diva::term_instantiation(instance):
-    assert isinstance(instance, diva::Term)
-
-@given(instance=diva::NamedElement_strategy)
-@settings(max_examples=50)
-def test_diva::namedelement_instantiation(instance):
-    assert isinstance(instance, diva::NamedElement)
-
-@given(instance=diva::NamedElement_strategy)
-def test_diva::namedelement_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=diva::NamedElement_strategy)
-def test_diva::namedelement_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=diva::NamedElement_strategy)
-def test_diva::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=diva::NamedElement_strategy)
-def test_diva::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=diva::Model_strategy)
-@settings(max_examples=50)
-def test_diva::model_instantiation(instance):
-    assert isinstance(instance, diva::Model)
-
-@given(instance=diva::PropertyValue_strategy)
-@settings(max_examples=50)
-def test_diva::propertyvalue_instantiation(instance):
-    assert isinstance(instance, diva::PropertyValue)
-
-@given(instance=diva::PropertyValue_strategy)
-def test_diva::propertyvalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=diva::PropertyValue_strategy)
-def test_diva::propertyvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=diva::VariabilityModel_strategy)
-@settings(max_examples=50)
-def test_diva::variabilitymodel_instantiation(instance):
-    assert isinstance(instance, diva::VariabilityModel)
-
-@given(instance=diva::Expression_strategy)
-@settings(max_examples=50)
-def test_diva::expression_instantiation(instance):
-    assert isinstance(instance, diva::Expression)
-
-@given(instance=diva::Expression_strategy)
-def test_diva::expression_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=diva::Expression_strategy)
-def test_diva::expression_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=Constraint_strategy)
-@settings(max_examples=50)
-def test_constraint_instantiation(instance):
-    assert isinstance(instance, Constraint)
-
-@given(instance=diva::MultiplicityConstraint_strategy)
-@settings(max_examples=50)
-def test_diva::multiplicityconstraint_instantiation(instance):
-    assert isinstance(instance, diva::MultiplicityConstraint)
-
-@given(instance=diva::MultiplicityConstraint_strategy)
-def test_diva::multiplicityconstraint_lower_type(instance):
-    assert isinstance(instance.lower, str)
-
-
-@given(instance=diva::MultiplicityConstraint_strategy)
-def test_diva::multiplicityconstraint_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=diva::MultiplicityConstraint_strategy)
-def test_diva::multiplicityconstraint_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=diva::MultiplicityConstraint_strategy)
-def test_diva::multiplicityconstraint_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=diva::Invariant_strategy)
-@settings(max_examples=50)
-def test_diva::invariant_instantiation(instance):
-    assert isinstance(instance, diva::Invariant)
-
-@given(instance=diva::Constraint_strategy)
-@settings(max_examples=50)
-def test_diva::constraint_instantiation(instance):
-    assert isinstance(instance, diva::Constraint)
-
-@given(instance=diva::Rule_strategy)
-@settings(max_examples=50)
-def test_diva::rule_instantiation(instance):
-    assert isinstance(instance, diva::Rule)
-
-@given(instance=diva::Dimension_strategy)
-@settings(max_examples=50)
-def test_diva::dimension_instantiation(instance):
-    assert isinstance(instance, diva::Dimension)
-
-@given(instance=diva::Dimension_strategy)
-def test_diva::dimension_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=diva::Dimension_strategy)
-def test_diva::dimension_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=diva::Dimension_strategy)
-def test_diva::dimension_lower_type(instance):
-    assert isinstance(instance.lower, str)
-
-
-@given(instance=diva::Dimension_strategy)
-def test_diva::dimension_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=diva::Property_strategy)
-@settings(max_examples=50)
-def test_diva::property_instantiation(instance):
-    assert isinstance(instance, diva::Property)
-
-@given(instance=diva::Property_strategy)
-def test_diva::property_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=diva::Property_strategy)
-def test_diva::property_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=diva::Variable_strategy)
-@settings(max_examples=50)
-def test_diva::variable_instantiation(instance):
-    assert isinstance(instance, diva::Variable)
-
-@given(instance=diva::BaseModel_strategy)
-@settings(max_examples=50)
-def test_diva::basemodel_instantiation(instance):
-    assert isinstance(instance, diva::BaseModel)
+def test_diva_basemodel_instantiation(instance):
+    assert isinstance(instance, diva_BaseModel)
 
 import warnings
 import copy
@@ -1296,9 +1081,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=diva::BaseModel_strategy)
+@given(instance=diva_BaseModel_strategy)
 @settings(max_examples=30)
-def test_diva::basemodel_weave_changes_state(instance):
+def test_diva_basemodel_weave_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1310,11 +1095,190 @@ def test_diva::basemodel_weave_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'weave' in diva::BaseModel is empty"
+        assert has_statements, f"Function 'weave' in diva_BaseModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'weave' in diva::BaseModel did not change state; check implementation")
+            warnings.warn(f"Operation 'weave' in diva_BaseModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'weave' in diva::BaseModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'weave' in diva_BaseModel is not implemented or raised an error")
+
+@given(instance=diva_AspectModel_strategy)
+@settings(max_examples=50)
+def test_diva_aspectmodel_instantiation(instance):
+    assert isinstance(instance, diva_AspectModel)
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=diva_EnumLiteral_strategy)
+@settings(max_examples=50)
+def test_diva_enumliteral_instantiation(instance):
+    assert isinstance(instance, diva_EnumLiteral)
+
+@given(instance=diva_Constraint_strategy)
+@settings(max_examples=50)
+def test_diva_constraint_instantiation(instance):
+    assert isinstance(instance, diva_Constraint)
+
+@given(instance=diva_Variable_strategy)
+@settings(max_examples=50)
+def test_diva_variable_instantiation(instance):
+    assert isinstance(instance, diva_Variable)
+
+@given(instance=diva_Rule_strategy)
+@settings(max_examples=50)
+def test_diva_rule_instantiation(instance):
+    assert isinstance(instance, diva_Rule)
+
+@given(instance=diva_Dimension_strategy)
+@settings(max_examples=50)
+def test_diva_dimension_instantiation(instance):
+    assert isinstance(instance, diva_Dimension)
+
+
+
+@given(instance=diva_Dimension_strategy)
+def test_diva_dimension_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+
+
+@given(instance=diva_Dimension_strategy)
+def test_diva_dimension_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+@given(instance=diva_Property_strategy)
+@settings(max_examples=50)
+def test_diva_property_instantiation(instance):
+    assert isinstance(instance, diva_Property)
+
+
+
+@given(instance=diva_Property_strategy)
+def test_diva_property_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=VariableTerm_strategy)
+@settings(max_examples=50)
+def test_variableterm_instantiation(instance):
+    assert isinstance(instance, VariableTerm)
+
+@given(instance=diva_BooleanTerm_strategy)
+@settings(max_examples=50)
+def test_diva_booleanterm_instantiation(instance):
+    assert isinstance(instance, diva_BooleanTerm)
+
+@given(instance=diva_EnumTerm_strategy)
+@settings(max_examples=50)
+def test_diva_enumterm_instantiation(instance):
+    assert isinstance(instance, diva_EnumTerm)
+
+@given(instance=diva_VariableTerm_strategy)
+@settings(max_examples=50)
+def test_diva_variableterm_instantiation(instance):
+    assert isinstance(instance, diva_VariableTerm)
+
+@given(instance=diva_Variant_strategy)
+@settings(max_examples=50)
+def test_diva_variant_instantiation(instance):
+    assert isinstance(instance, diva_Variant)
+
+@given(instance=diva_VariantTerm_strategy)
+@settings(max_examples=50)
+def test_diva_variantterm_instantiation(instance):
+    assert isinstance(instance, diva_VariantTerm)
+
+@given(instance=diva_NaryTerm_strategy)
+@settings(max_examples=50)
+def test_diva_naryterm_instantiation(instance):
+    assert isinstance(instance, diva_NaryTerm)
+
+@given(instance=DiVAModelElement_strategy)
+@settings(max_examples=50)
+def test_divamodelelement_instantiation(instance):
+    assert isinstance(instance, DiVAModelElement)
+
+@given(instance=diva_Model_strategy)
+@settings(max_examples=50)
+def test_diva_model_instantiation(instance):
+    assert isinstance(instance, diva_Model)
+
+@given(instance=diva_PropertyValue_strategy)
+@settings(max_examples=50)
+def test_diva_propertyvalue_instantiation(instance):
+    assert isinstance(instance, diva_PropertyValue)
+
+
+
+@given(instance=diva_PropertyValue_strategy)
+def test_diva_propertyvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=diva_Expression_strategy)
+@settings(max_examples=50)
+def test_diva_expression_instantiation(instance):
+    assert isinstance(instance, diva_Expression)
+
+
+
+@given(instance=diva_Expression_strategy)
+def test_diva_expression_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=diva_PropertyPriority_strategy)
+@settings(max_examples=50)
+def test_diva_propertypriority_instantiation(instance):
+    assert isinstance(instance, diva_PropertyPriority)
+
+
+
+@given(instance=diva_PropertyPriority_strategy)
+def test_diva_propertypriority_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+@given(instance=diva_Term_strategy)
+@settings(max_examples=50)
+def test_diva_term_instantiation(instance):
+    assert isinstance(instance, diva_Term)
+
+@given(instance=diva_NamedElement_strategy)
+@settings(max_examples=50)
+def test_diva_namedelement_instantiation(instance):
+    assert isinstance(instance, diva_NamedElement)
+
+
+
+@given(instance=diva_NamedElement_strategy)
+def test_diva_namedelement_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=diva_NamedElement_strategy)
+def test_diva_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=diva_VariabilityModel_strategy)
+@settings(max_examples=50)
+def test_diva_variabilitymodel_instantiation(instance):
+    assert isinstance(instance, diva_VariabilityModel)

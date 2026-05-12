@@ -3,74 +3,74 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    vql::EStructuralFeature,
+from python_code import (
+    vql_XBooleanLiteral,
+    vql_XNumberLiteral,
+    vql_JvmType,
+    ComputationValue,
+    vql_AggregatedValue,
+    vql_PatternImport,
+    vql_PackageImport,
+    vql_EStructuralFeature,
     RelationType,
-    vql::ReferenceType,
-    vql::EClassifier,
+    vql_ReferenceType,
+    vql_EClassifier,
     EntityType,
-    vql::ClassType,
-    vql::PatternModel,
-    vql::EEnumLiteral,
-    vql::EEnum,
+    vql_ClassType,
+    vql_PatternModel,
+    vql_EEnumLiteral,
+    vql_EEnum,
     ValueReference,
-    vql::EnumValue,
+    vql_EnumValue,
     UnaryTypeConstraint,
     Constraint,
-    vql::EClassifierConstraint,
-    vql::Pattern,
+    vql_EClassifierConstraint,
+    vql_Pattern,
     XImportSection,
-    vql::VQLImportSection,
-    vql::XBooleanLiteral,
-    vql::XNumberLiteral,
-    vql::JvmType,
-    ComputationValue,
-    vql::AggregatedValue,
-    vql::FunctionEvaluationValue,
-    vql::TypeCheckConstraint,
-    vql::JvmDeclaredType,
+    vql_VQLImportSection,
+    vql_FunctionEvaluationValue,
+    vql_TypeCheckConstraint,
+    vql_JvmDeclaredType,
     LiteralValueReference,
-    vql::NumberValue,
-    vql::BoolValue,
-    vql::ListValue,
-    vql::StringValue,
-    vql::XExpression,
-    vql::CheckConstraint,
-    vql::CompareConstraint,
-    vql::CallableRelation,
-    vql::PatternCompositionConstraint,
+    vql_BoolValue,
+    vql_NumberValue,
+    vql_ListValue,
+    vql_StringValue,
+    vql_XExpression,
+    vql_CheckConstraint,
+    vql_CompareConstraint,
+    vql_CallableRelation,
+    vql_PatternCompositionConstraint,
     Type,
-    vql::RelationType,
-    vql::EntityType,
-    vql::JavaType,
+    vql_RelationType,
+    vql_EntityType,
+    vql_JavaType,
     Variable,
-    vql::Parameter,
-    vql::LocalVariable,
-    vql::ParameterRef,
-    vql::ComputationValue,
-    vql::LiteralValueReference,
+    vql_Parameter,
+    vql_LocalVariable,
+    vql_ParameterRef,
+    vql_ComputationValue,
+    vql_LiteralValueReference,
     CallableRelation,
-    vql::UnaryTypeConstraint,
-    vql::PathExpressionConstraint,
-    vql::PatternCall,
-    vql::Constraint,
-    vql::Modifiers,
-    vql::Annotation,
-    vql::VariableReference,
-    vql::Type,
+    vql_PathExpressionConstraint,
+    vql_UnaryTypeConstraint,
+    vql_PatternCall,
+    vql_Constraint,
+    vql_Modifiers,
+    vql_Annotation,
+    vql_VariableReference,
+    vql_Type,
     Expression,
-    vql::Variable,
-    vql::Expression,
-    vql::ValueReference,
-    vql::AnnotationParameter,
-    vql::PatternBody,
-    vql::EPackage,
-    vql::PatternImport,
-    vql::PackageImport,
-    ExecutionType,
+    vql_Variable,
+    vql_Expression,
+    vql_ValueReference,
+    vql_AnnotationParameter,
+    vql_PatternBody,
+    vql_EPackage,
     CompareFeature,
+    ExecutionType,
     ClosureType,
     ParameterDirection,
 )
@@ -81,16 +81,134 @@ from classes import (
 
 
 
-def test_vql::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(vql::EStructuralFeature)
+def test_vql_xbooleanliteral_is_not_abstract():
+    assert not inspect.isabstract(vql_XBooleanLiteral)
 
 
-def test_vql::estructuralfeature_constructor_exists():
-    assert callable(vql::EStructuralFeature.__init__)
+def test_vql_xbooleanliteral_constructor_exists():
+    assert callable(vql_XBooleanLiteral.__init__)
 
 
-def test_vql::estructuralfeature_constructor_args():
-    sig = inspect.signature(vql::EStructuralFeature.__init__)
+def test_vql_xbooleanliteral_constructor_args():
+    sig = inspect.signature(vql_XBooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vql_xnumberliteral_is_not_abstract():
+    assert not inspect.isabstract(vql_XNumberLiteral)
+
+
+def test_vql_xnumberliteral_constructor_exists():
+    assert callable(vql_XNumberLiteral.__init__)
+
+
+def test_vql_xnumberliteral_constructor_args():
+    sig = inspect.signature(vql_XNumberLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vql_jvmtype_is_not_abstract():
+    assert not inspect.isabstract(vql_JvmType)
+
+
+def test_vql_jvmtype_constructor_exists():
+    assert callable(vql_JvmType.__init__)
+
+
+def test_vql_jvmtype_constructor_args():
+    sig = inspect.signature(vql_JvmType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_computationvalue_is_not_abstract():
+    assert not inspect.isabstract(ComputationValue)
+
+
+def test_computationvalue_constructor_exists():
+    assert callable(ComputationValue.__init__)
+
+
+def test_computationvalue_constructor_args():
+    sig = inspect.signature(ComputationValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vql_aggregatedvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_AggregatedValue)
+
+
+def test_vql_aggregatedvalue_constructor_exists():
+    assert callable(vql_AggregatedValue.__init__)
+
+
+def test_vql_aggregatedvalue_constructor_args():
+    sig = inspect.signature(vql_AggregatedValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vql_patternimport_is_not_abstract():
+    assert not inspect.isabstract(vql_PatternImport)
+
+
+def test_vql_patternimport_constructor_exists():
+    assert callable(vql_PatternImport.__init__)
+
+
+def test_vql_patternimport_constructor_args():
+    sig = inspect.signature(vql_PatternImport.__init__)
+    params = list(sig.parameters.keys())
+    assert "packageName" in params, "Missing parameter 'packageName'"
+
+def test_vql_patternimport_has_packageName():
+    assert hasattr(vql_PatternImport, "packageName")
+    descriptor = None
+    for klass in vql_PatternImport.__mro__:
+        if "packageName" in klass.__dict__:
+            descriptor = klass.__dict__["packageName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vql_packageimport_is_not_abstract():
+    assert not inspect.isabstract(vql_PackageImport)
+
+
+def test_vql_packageimport_constructor_exists():
+    assert callable(vql_PackageImport.__init__)
+
+
+def test_vql_packageimport_constructor_args():
+    sig = inspect.signature(vql_PackageImport.__init__)
+    params = list(sig.parameters.keys())
+    assert "alias" in params, "Missing parameter 'alias'"
+
+def test_vql_packageimport_has_alias():
+    assert hasattr(vql_PackageImport, "alias")
+    descriptor = None
+    for klass in vql_PackageImport.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vql_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(vql_EStructuralFeature)
+
+
+def test_vql_estructuralfeature_constructor_exists():
+    assert callable(vql_EStructuralFeature.__init__)
+
+
+def test_vql_estructuralfeature_constructor_args():
+    sig = inspect.signature(vql_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,30 +227,30 @@ def test_relationtype_constructor_args():
 
 
 
-def test_vql::referencetype_is_not_abstract():
-    assert not inspect.isabstract(vql::ReferenceType)
+def test_vql_referencetype_is_not_abstract():
+    assert not inspect.isabstract(vql_ReferenceType)
 
 
-def test_vql::referencetype_constructor_exists():
-    assert callable(vql::ReferenceType.__init__)
+def test_vql_referencetype_constructor_exists():
+    assert callable(vql_ReferenceType.__init__)
 
 
-def test_vql::referencetype_constructor_args():
-    sig = inspect.signature(vql::ReferenceType.__init__)
+def test_vql_referencetype_constructor_args():
+    sig = inspect.signature(vql_ReferenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(vql::EClassifier)
+def test_vql_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(vql_EClassifier)
 
 
-def test_vql::eclassifier_constructor_exists():
-    assert callable(vql::EClassifier.__init__)
+def test_vql_eclassifier_constructor_exists():
+    assert callable(vql_EClassifier.__init__)
 
 
-def test_vql::eclassifier_constructor_args():
-    sig = inspect.signature(vql::EClassifier.__init__)
+def test_vql_eclassifier_constructor_args():
+    sig = inspect.signature(vql_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -151,37 +269,37 @@ def test_entitytype_constructor_args():
 
 
 
-def test_vql::classtype_is_not_abstract():
-    assert not inspect.isabstract(vql::ClassType)
+def test_vql_classtype_is_not_abstract():
+    assert not inspect.isabstract(vql_ClassType)
 
 
-def test_vql::classtype_constructor_exists():
-    assert callable(vql::ClassType.__init__)
+def test_vql_classtype_constructor_exists():
+    assert callable(vql_ClassType.__init__)
 
 
-def test_vql::classtype_constructor_args():
-    sig = inspect.signature(vql::ClassType.__init__)
+def test_vql_classtype_constructor_args():
+    sig = inspect.signature(vql_ClassType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::patternmodel_is_not_abstract():
-    assert not inspect.isabstract(vql::PatternModel)
+def test_vql_patternmodel_is_not_abstract():
+    assert not inspect.isabstract(vql_PatternModel)
 
 
-def test_vql::patternmodel_constructor_exists():
-    assert callable(vql::PatternModel.__init__)
+def test_vql_patternmodel_constructor_exists():
+    assert callable(vql_PatternModel.__init__)
 
 
-def test_vql::patternmodel_constructor_args():
-    sig = inspect.signature(vql::PatternModel.__init__)
+def test_vql_patternmodel_constructor_args():
+    sig = inspect.signature(vql_PatternModel.__init__)
     params = list(sig.parameters.keys())
     assert "packageName" in params, "Missing parameter 'packageName'"
 
-def test_vql::patternmodel_has_packageName():
-    assert hasattr(vql::PatternModel, "packageName")
+def test_vql_patternmodel_has_packageName():
+    assert hasattr(vql_PatternModel, "packageName")
     descriptor = None
-    for klass in vql::PatternModel.__mro__:
+    for klass in vql_PatternModel.__mro__:
         if "packageName" in klass.__dict__:
             descriptor = klass.__dict__["packageName"]
             break
@@ -189,30 +307,30 @@ def test_vql::patternmodel_has_packageName():
 
 
 
-def test_vql::eenumliteral_is_not_abstract():
-    assert not inspect.isabstract(vql::EEnumLiteral)
+def test_vql_eenumliteral_is_not_abstract():
+    assert not inspect.isabstract(vql_EEnumLiteral)
 
 
-def test_vql::eenumliteral_constructor_exists():
-    assert callable(vql::EEnumLiteral.__init__)
+def test_vql_eenumliteral_constructor_exists():
+    assert callable(vql_EEnumLiteral.__init__)
 
 
-def test_vql::eenumliteral_constructor_args():
-    sig = inspect.signature(vql::EEnumLiteral.__init__)
+def test_vql_eenumliteral_constructor_args():
+    sig = inspect.signature(vql_EEnumLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::eenum_is_not_abstract():
-    assert not inspect.isabstract(vql::EEnum)
+def test_vql_eenum_is_not_abstract():
+    assert not inspect.isabstract(vql_EEnum)
 
 
-def test_vql::eenum_constructor_exists():
-    assert callable(vql::EEnum.__init__)
+def test_vql_eenum_constructor_exists():
+    assert callable(vql_EEnum.__init__)
 
 
-def test_vql::eenum_constructor_args():
-    sig = inspect.signature(vql::EEnum.__init__)
+def test_vql_eenum_constructor_args():
+    sig = inspect.signature(vql_EEnum.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -231,16 +349,16 @@ def test_valuereference_constructor_args():
 
 
 
-def test_vql::enumvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::EnumValue)
+def test_vql_enumvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_EnumValue)
 
 
-def test_vql::enumvalue_constructor_exists():
-    assert callable(vql::EnumValue.__init__)
+def test_vql_enumvalue_constructor_exists():
+    assert callable(vql_EnumValue.__init__)
 
 
-def test_vql::enumvalue_constructor_args():
-    sig = inspect.signature(vql::EnumValue.__init__)
+def test_vql_enumvalue_constructor_args():
+    sig = inspect.signature(vql_EnumValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -273,37 +391,37 @@ def test_constraint_constructor_args():
 
 
 
-def test_vql::eclassifierconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::EClassifierConstraint)
+def test_vql_eclassifierconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_EClassifierConstraint)
 
 
-def test_vql::eclassifierconstraint_constructor_exists():
-    assert callable(vql::EClassifierConstraint.__init__)
+def test_vql_eclassifierconstraint_constructor_exists():
+    assert callable(vql_EClassifierConstraint.__init__)
 
 
-def test_vql::eclassifierconstraint_constructor_args():
-    sig = inspect.signature(vql::EClassifierConstraint.__init__)
+def test_vql_eclassifierconstraint_constructor_args():
+    sig = inspect.signature(vql_EClassifierConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::pattern_is_not_abstract():
-    assert not inspect.isabstract(vql::Pattern)
+def test_vql_pattern_is_not_abstract():
+    assert not inspect.isabstract(vql_Pattern)
 
 
-def test_vql::pattern_constructor_exists():
-    assert callable(vql::Pattern.__init__)
+def test_vql_pattern_constructor_exists():
+    assert callable(vql_Pattern.__init__)
 
 
-def test_vql::pattern_constructor_args():
-    sig = inspect.signature(vql::Pattern.__init__)
+def test_vql_pattern_constructor_args():
+    sig = inspect.signature(vql_Pattern.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vql::pattern_has_name():
-    assert hasattr(vql::Pattern, "name")
+def test_vql_pattern_has_name():
+    assert hasattr(vql_Pattern, "name")
     descriptor = None
-    for klass in vql::Pattern.__mro__:
+    for klass in vql_Pattern.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -325,128 +443,58 @@ def test_ximportsection_constructor_args():
 
 
 
-def test_vql::vqlimportsection_is_not_abstract():
-    assert not inspect.isabstract(vql::VQLImportSection)
+def test_vql_vqlimportsection_is_not_abstract():
+    assert not inspect.isabstract(vql_VQLImportSection)
 
 
-def test_vql::vqlimportsection_constructor_exists():
-    assert callable(vql::VQLImportSection.__init__)
+def test_vql_vqlimportsection_constructor_exists():
+    assert callable(vql_VQLImportSection.__init__)
 
 
-def test_vql::vqlimportsection_constructor_args():
-    sig = inspect.signature(vql::VQLImportSection.__init__)
+def test_vql_vqlimportsection_constructor_args():
+    sig = inspect.signature(vql_VQLImportSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::xbooleanliteral_is_not_abstract():
-    assert not inspect.isabstract(vql::XBooleanLiteral)
+def test_vql_functionevaluationvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_FunctionEvaluationValue)
 
 
-def test_vql::xbooleanliteral_constructor_exists():
-    assert callable(vql::XBooleanLiteral.__init__)
+def test_vql_functionevaluationvalue_constructor_exists():
+    assert callable(vql_FunctionEvaluationValue.__init__)
 
 
-def test_vql::xbooleanliteral_constructor_args():
-    sig = inspect.signature(vql::XBooleanLiteral.__init__)
+def test_vql_functionevaluationvalue_constructor_args():
+    sig = inspect.signature(vql_FunctionEvaluationValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::xnumberliteral_is_not_abstract():
-    assert not inspect.isabstract(vql::XNumberLiteral)
+def test_vql_typecheckconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_TypeCheckConstraint)
 
 
-def test_vql::xnumberliteral_constructor_exists():
-    assert callable(vql::XNumberLiteral.__init__)
+def test_vql_typecheckconstraint_constructor_exists():
+    assert callable(vql_TypeCheckConstraint.__init__)
 
 
-def test_vql::xnumberliteral_constructor_args():
-    sig = inspect.signature(vql::XNumberLiteral.__init__)
+def test_vql_typecheckconstraint_constructor_args():
+    sig = inspect.signature(vql_TypeCheckConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::jvmtype_is_not_abstract():
-    assert not inspect.isabstract(vql::JvmType)
+def test_vql_jvmdeclaredtype_is_not_abstract():
+    assert not inspect.isabstract(vql_JvmDeclaredType)
 
 
-def test_vql::jvmtype_constructor_exists():
-    assert callable(vql::JvmType.__init__)
+def test_vql_jvmdeclaredtype_constructor_exists():
+    assert callable(vql_JvmDeclaredType.__init__)
 
 
-def test_vql::jvmtype_constructor_args():
-    sig = inspect.signature(vql::JvmType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_computationvalue_is_not_abstract():
-    assert not inspect.isabstract(ComputationValue)
-
-
-def test_computationvalue_constructor_exists():
-    assert callable(ComputationValue.__init__)
-
-
-def test_computationvalue_constructor_args():
-    sig = inspect.signature(ComputationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vql::aggregatedvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::AggregatedValue)
-
-
-def test_vql::aggregatedvalue_constructor_exists():
-    assert callable(vql::AggregatedValue.__init__)
-
-
-def test_vql::aggregatedvalue_constructor_args():
-    sig = inspect.signature(vql::AggregatedValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vql::functionevaluationvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::FunctionEvaluationValue)
-
-
-def test_vql::functionevaluationvalue_constructor_exists():
-    assert callable(vql::FunctionEvaluationValue.__init__)
-
-
-def test_vql::functionevaluationvalue_constructor_args():
-    sig = inspect.signature(vql::FunctionEvaluationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vql::typecheckconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::TypeCheckConstraint)
-
-
-def test_vql::typecheckconstraint_constructor_exists():
-    assert callable(vql::TypeCheckConstraint.__init__)
-
-
-def test_vql::typecheckconstraint_constructor_args():
-    sig = inspect.signature(vql::TypeCheckConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vql::jvmdeclaredtype_is_not_abstract():
-    assert not inspect.isabstract(vql::JvmDeclaredType)
-
-
-def test_vql::jvmdeclaredtype_constructor_exists():
-    assert callable(vql::JvmDeclaredType.__init__)
-
-
-def test_vql::jvmdeclaredtype_constructor_args():
-    sig = inspect.signature(vql::JvmDeclaredType.__init__)
+def test_vql_jvmdeclaredtype_constructor_args():
+    sig = inspect.signature(vql_JvmDeclaredType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -465,23 +513,37 @@ def test_literalvaluereference_constructor_args():
 
 
 
-def test_vql::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(vql::NumberValue)
+def test_vql_boolvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_BoolValue)
 
 
-def test_vql::numbervalue_constructor_exists():
-    assert callable(vql::NumberValue.__init__)
+def test_vql_boolvalue_constructor_exists():
+    assert callable(vql_BoolValue.__init__)
 
 
-def test_vql::numbervalue_constructor_args():
-    sig = inspect.signature(vql::NumberValue.__init__)
+def test_vql_boolvalue_constructor_args():
+    sig = inspect.signature(vql_BoolValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vql_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(vql_NumberValue)
+
+
+def test_vql_numbervalue_constructor_exists():
+    assert callable(vql_NumberValue.__init__)
+
+
+def test_vql_numbervalue_constructor_args():
+    sig = inspect.signature(vql_NumberValue.__init__)
     params = list(sig.parameters.keys())
     assert "negative" in params, "Missing parameter 'negative'"
 
-def test_vql::numbervalue_has_negative():
-    assert hasattr(vql::NumberValue, "negative")
+def test_vql_numbervalue_has_negative():
+    assert hasattr(vql_NumberValue, "negative")
     descriptor = None
-    for klass in vql::NumberValue.__mro__:
+    for klass in vql_NumberValue.__mro__:
         if "negative" in klass.__dict__:
             descriptor = klass.__dict__["negative"]
             break
@@ -489,51 +551,37 @@ def test_vql::numbervalue_has_negative():
 
 
 
-def test_vql::boolvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::BoolValue)
+def test_vql_listvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_ListValue)
 
 
-def test_vql::boolvalue_constructor_exists():
-    assert callable(vql::BoolValue.__init__)
+def test_vql_listvalue_constructor_exists():
+    assert callable(vql_ListValue.__init__)
 
 
-def test_vql::boolvalue_constructor_args():
-    sig = inspect.signature(vql::BoolValue.__init__)
+def test_vql_listvalue_constructor_args():
+    sig = inspect.signature(vql_ListValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::listvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::ListValue)
+def test_vql_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_StringValue)
 
 
-def test_vql::listvalue_constructor_exists():
-    assert callable(vql::ListValue.__init__)
+def test_vql_stringvalue_constructor_exists():
+    assert callable(vql_StringValue.__init__)
 
 
-def test_vql::listvalue_constructor_args():
-    sig = inspect.signature(vql::ListValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vql::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::StringValue)
-
-
-def test_vql::stringvalue_constructor_exists():
-    assert callable(vql::StringValue.__init__)
-
-
-def test_vql::stringvalue_constructor_args():
-    sig = inspect.signature(vql::StringValue.__init__)
+def test_vql_stringvalue_constructor_args():
+    sig = inspect.signature(vql_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vql::stringvalue_has_value():
-    assert hasattr(vql::StringValue, "value")
+def test_vql_stringvalue_has_value():
+    assert hasattr(vql_StringValue, "value")
     descriptor = None
-    for klass in vql::StringValue.__mro__:
+    for klass in vql_StringValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -541,51 +589,51 @@ def test_vql::stringvalue_has_value():
 
 
 
-def test_vql::xexpression_is_not_abstract():
-    assert not inspect.isabstract(vql::XExpression)
+def test_vql_xexpression_is_not_abstract():
+    assert not inspect.isabstract(vql_XExpression)
 
 
-def test_vql::xexpression_constructor_exists():
-    assert callable(vql::XExpression.__init__)
+def test_vql_xexpression_constructor_exists():
+    assert callable(vql_XExpression.__init__)
 
 
-def test_vql::xexpression_constructor_args():
-    sig = inspect.signature(vql::XExpression.__init__)
+def test_vql_xexpression_constructor_args():
+    sig = inspect.signature(vql_XExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::checkconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::CheckConstraint)
+def test_vql_checkconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_CheckConstraint)
 
 
-def test_vql::checkconstraint_constructor_exists():
-    assert callable(vql::CheckConstraint.__init__)
+def test_vql_checkconstraint_constructor_exists():
+    assert callable(vql_CheckConstraint.__init__)
 
 
-def test_vql::checkconstraint_constructor_args():
-    sig = inspect.signature(vql::CheckConstraint.__init__)
+def test_vql_checkconstraint_constructor_args():
+    sig = inspect.signature(vql_CheckConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::compareconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::CompareConstraint)
+def test_vql_compareconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_CompareConstraint)
 
 
-def test_vql::compareconstraint_constructor_exists():
-    assert callable(vql::CompareConstraint.__init__)
+def test_vql_compareconstraint_constructor_exists():
+    assert callable(vql_CompareConstraint.__init__)
 
 
-def test_vql::compareconstraint_constructor_args():
-    sig = inspect.signature(vql::CompareConstraint.__init__)
+def test_vql_compareconstraint_constructor_args():
+    sig = inspect.signature(vql_CompareConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "feature" in params, "Missing parameter 'feature'"
 
-def test_vql::compareconstraint_has_feature():
-    assert hasattr(vql::CompareConstraint, "feature")
+def test_vql_compareconstraint_has_feature():
+    assert hasattr(vql_CompareConstraint, "feature")
     descriptor = None
-    for klass in vql::CompareConstraint.__mro__:
+    for klass in vql_CompareConstraint.__mro__:
         if "feature" in klass.__dict__:
             descriptor = klass.__dict__["feature"]
             break
@@ -593,23 +641,23 @@ def test_vql::compareconstraint_has_feature():
 
 
 
-def test_vql::callablerelation_is_not_abstract():
-    assert not inspect.isabstract(vql::CallableRelation)
+def test_vql_callablerelation_is_not_abstract():
+    assert not inspect.isabstract(vql_CallableRelation)
 
 
-def test_vql::callablerelation_constructor_exists():
-    assert callable(vql::CallableRelation.__init__)
+def test_vql_callablerelation_constructor_exists():
+    assert callable(vql_CallableRelation.__init__)
 
 
-def test_vql::callablerelation_constructor_args():
-    sig = inspect.signature(vql::CallableRelation.__init__)
+def test_vql_callablerelation_constructor_args():
+    sig = inspect.signature(vql_CallableRelation.__init__)
     params = list(sig.parameters.keys())
     assert "transitive" in params, "Missing parameter 'transitive'"
 
-def test_vql::callablerelation_has_transitive():
-    assert hasattr(vql::CallableRelation, "transitive")
+def test_vql_callablerelation_has_transitive():
+    assert hasattr(vql_CallableRelation, "transitive")
     descriptor = None
-    for klass in vql::CallableRelation.__mro__:
+    for klass in vql_CallableRelation.__mro__:
         if "transitive" in klass.__dict__:
             descriptor = klass.__dict__["transitive"]
             break
@@ -617,23 +665,23 @@ def test_vql::callablerelation_has_transitive():
 
 
 
-def test_vql::patterncompositionconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::PatternCompositionConstraint)
+def test_vql_patterncompositionconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_PatternCompositionConstraint)
 
 
-def test_vql::patterncompositionconstraint_constructor_exists():
-    assert callable(vql::PatternCompositionConstraint.__init__)
+def test_vql_patterncompositionconstraint_constructor_exists():
+    assert callable(vql_PatternCompositionConstraint.__init__)
 
 
-def test_vql::patterncompositionconstraint_constructor_args():
-    sig = inspect.signature(vql::PatternCompositionConstraint.__init__)
+def test_vql_patterncompositionconstraint_constructor_args():
+    sig = inspect.signature(vql_PatternCompositionConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "negative" in params, "Missing parameter 'negative'"
 
-def test_vql::patterncompositionconstraint_has_negative():
-    assert hasattr(vql::PatternCompositionConstraint, "negative")
+def test_vql_patterncompositionconstraint_has_negative():
+    assert hasattr(vql_PatternCompositionConstraint, "negative")
     descriptor = None
-    for klass in vql::PatternCompositionConstraint.__mro__:
+    for klass in vql_PatternCompositionConstraint.__mro__:
         if "negative" in klass.__dict__:
             descriptor = klass.__dict__["negative"]
             break
@@ -655,44 +703,44 @@ def test_type_constructor_args():
 
 
 
-def test_vql::relationtype_is_not_abstract():
-    assert not inspect.isabstract(vql::RelationType)
+def test_vql_relationtype_is_not_abstract():
+    assert not inspect.isabstract(vql_RelationType)
 
 
-def test_vql::relationtype_constructor_exists():
-    assert callable(vql::RelationType.__init__)
+def test_vql_relationtype_constructor_exists():
+    assert callable(vql_RelationType.__init__)
 
 
-def test_vql::relationtype_constructor_args():
-    sig = inspect.signature(vql::RelationType.__init__)
+def test_vql_relationtype_constructor_args():
+    sig = inspect.signature(vql_RelationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::entitytype_is_not_abstract():
-    assert not inspect.isabstract(vql::EntityType)
+def test_vql_entitytype_is_not_abstract():
+    assert not inspect.isabstract(vql_EntityType)
 
 
-def test_vql::entitytype_constructor_exists():
-    assert callable(vql::EntityType.__init__)
+def test_vql_entitytype_constructor_exists():
+    assert callable(vql_EntityType.__init__)
 
 
-def test_vql::entitytype_constructor_args():
-    sig = inspect.signature(vql::EntityType.__init__)
+def test_vql_entitytype_constructor_args():
+    sig = inspect.signature(vql_EntityType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::javatype_is_not_abstract():
-    assert not inspect.isabstract(vql::JavaType)
+def test_vql_javatype_is_not_abstract():
+    assert not inspect.isabstract(vql_JavaType)
 
 
-def test_vql::javatype_constructor_exists():
-    assert callable(vql::JavaType.__init__)
+def test_vql_javatype_constructor_exists():
+    assert callable(vql_JavaType.__init__)
 
 
-def test_vql::javatype_constructor_args():
-    sig = inspect.signature(vql::JavaType.__init__)
+def test_vql_javatype_constructor_args():
+    sig = inspect.signature(vql_JavaType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -711,23 +759,23 @@ def test_variable_constructor_args():
 
 
 
-def test_vql::parameter_is_not_abstract():
-    assert not inspect.isabstract(vql::Parameter)
+def test_vql_parameter_is_not_abstract():
+    assert not inspect.isabstract(vql_Parameter)
 
 
-def test_vql::parameter_constructor_exists():
-    assert callable(vql::Parameter.__init__)
+def test_vql_parameter_constructor_exists():
+    assert callable(vql_Parameter.__init__)
 
 
-def test_vql::parameter_constructor_args():
-    sig = inspect.signature(vql::Parameter.__init__)
+def test_vql_parameter_constructor_args():
+    sig = inspect.signature(vql_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_vql::parameter_has_direction():
-    assert hasattr(vql::Parameter, "direction")
+def test_vql_parameter_has_direction():
+    assert hasattr(vql_Parameter, "direction")
     descriptor = None
-    for klass in vql::Parameter.__mro__:
+    for klass in vql_Parameter.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -735,58 +783,58 @@ def test_vql::parameter_has_direction():
 
 
 
-def test_vql::localvariable_is_not_abstract():
-    assert not inspect.isabstract(vql::LocalVariable)
+def test_vql_localvariable_is_not_abstract():
+    assert not inspect.isabstract(vql_LocalVariable)
 
 
-def test_vql::localvariable_constructor_exists():
-    assert callable(vql::LocalVariable.__init__)
+def test_vql_localvariable_constructor_exists():
+    assert callable(vql_LocalVariable.__init__)
 
 
-def test_vql::localvariable_constructor_args():
-    sig = inspect.signature(vql::LocalVariable.__init__)
+def test_vql_localvariable_constructor_args():
+    sig = inspect.signature(vql_LocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::parameterref_is_not_abstract():
-    assert not inspect.isabstract(vql::ParameterRef)
+def test_vql_parameterref_is_not_abstract():
+    assert not inspect.isabstract(vql_ParameterRef)
 
 
-def test_vql::parameterref_constructor_exists():
-    assert callable(vql::ParameterRef.__init__)
+def test_vql_parameterref_constructor_exists():
+    assert callable(vql_ParameterRef.__init__)
 
 
-def test_vql::parameterref_constructor_args():
-    sig = inspect.signature(vql::ParameterRef.__init__)
+def test_vql_parameterref_constructor_args():
+    sig = inspect.signature(vql_ParameterRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::computationvalue_is_not_abstract():
-    assert not inspect.isabstract(vql::ComputationValue)
+def test_vql_computationvalue_is_not_abstract():
+    assert not inspect.isabstract(vql_ComputationValue)
 
 
-def test_vql::computationvalue_constructor_exists():
-    assert callable(vql::ComputationValue.__init__)
+def test_vql_computationvalue_constructor_exists():
+    assert callable(vql_ComputationValue.__init__)
 
 
-def test_vql::computationvalue_constructor_args():
-    sig = inspect.signature(vql::ComputationValue.__init__)
+def test_vql_computationvalue_constructor_args():
+    sig = inspect.signature(vql_ComputationValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::literalvaluereference_is_not_abstract():
-    assert not inspect.isabstract(vql::LiteralValueReference)
+def test_vql_literalvaluereference_is_not_abstract():
+    assert not inspect.isabstract(vql_LiteralValueReference)
 
 
-def test_vql::literalvaluereference_constructor_exists():
-    assert callable(vql::LiteralValueReference.__init__)
+def test_vql_literalvaluereference_constructor_exists():
+    assert callable(vql_LiteralValueReference.__init__)
 
 
-def test_vql::literalvaluereference_constructor_args():
-    sig = inspect.signature(vql::LiteralValueReference.__init__)
+def test_vql_literalvaluereference_constructor_args():
+    sig = inspect.signature(vql_LiteralValueReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -805,113 +853,113 @@ def test_callablerelation_constructor_args():
 
 
 
-def test_vql::unarytypeconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::UnaryTypeConstraint)
+def test_vql_pathexpressionconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_PathExpressionConstraint)
 
 
-def test_vql::unarytypeconstraint_constructor_exists():
-    assert callable(vql::UnaryTypeConstraint.__init__)
+def test_vql_pathexpressionconstraint_constructor_exists():
+    assert callable(vql_PathExpressionConstraint.__init__)
 
 
-def test_vql::unarytypeconstraint_constructor_args():
-    sig = inspect.signature(vql::UnaryTypeConstraint.__init__)
+def test_vql_pathexpressionconstraint_constructor_args():
+    sig = inspect.signature(vql_PathExpressionConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::pathexpressionconstraint_is_not_abstract():
-    assert not inspect.isabstract(vql::PathExpressionConstraint)
+def test_vql_unarytypeconstraint_is_not_abstract():
+    assert not inspect.isabstract(vql_UnaryTypeConstraint)
 
 
-def test_vql::pathexpressionconstraint_constructor_exists():
-    assert callable(vql::PathExpressionConstraint.__init__)
+def test_vql_unarytypeconstraint_constructor_exists():
+    assert callable(vql_UnaryTypeConstraint.__init__)
 
 
-def test_vql::pathexpressionconstraint_constructor_args():
-    sig = inspect.signature(vql::PathExpressionConstraint.__init__)
+def test_vql_unarytypeconstraint_constructor_args():
+    sig = inspect.signature(vql_UnaryTypeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::patterncall_is_not_abstract():
-    assert not inspect.isabstract(vql::PatternCall)
+def test_vql_patterncall_is_not_abstract():
+    assert not inspect.isabstract(vql_PatternCall)
 
 
-def test_vql::patterncall_constructor_exists():
-    assert callable(vql::PatternCall.__init__)
+def test_vql_patterncall_constructor_exists():
+    assert callable(vql_PatternCall.__init__)
 
 
-def test_vql::patterncall_constructor_args():
-    sig = inspect.signature(vql::PatternCall.__init__)
+def test_vql_patterncall_constructor_args():
+    sig = inspect.signature(vql_PatternCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::constraint_is_not_abstract():
-    assert not inspect.isabstract(vql::Constraint)
+def test_vql_constraint_is_not_abstract():
+    assert not inspect.isabstract(vql_Constraint)
 
 
-def test_vql::constraint_constructor_exists():
-    assert callable(vql::Constraint.__init__)
+def test_vql_constraint_constructor_exists():
+    assert callable(vql_Constraint.__init__)
 
 
-def test_vql::constraint_constructor_args():
-    sig = inspect.signature(vql::Constraint.__init__)
+def test_vql_constraint_constructor_args():
+    sig = inspect.signature(vql_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::modifiers_is_not_abstract():
-    assert not inspect.isabstract(vql::Modifiers)
+def test_vql_modifiers_is_not_abstract():
+    assert not inspect.isabstract(vql_Modifiers)
 
 
-def test_vql::modifiers_constructor_exists():
-    assert callable(vql::Modifiers.__init__)
+def test_vql_modifiers_constructor_exists():
+    assert callable(vql_Modifiers.__init__)
 
 
-def test_vql::modifiers_constructor_args():
-    sig = inspect.signature(vql::Modifiers.__init__)
+def test_vql_modifiers_constructor_args():
+    sig = inspect.signature(vql_Modifiers.__init__)
     params = list(sig.parameters.keys())
-    assert "private" in params, "Missing parameter 'private'"
     assert "execution" in params, "Missing parameter 'execution'"
+    assert "private" in params, "Missing parameter 'private'"
 
-def test_vql::modifiers_has_private():
-    assert hasattr(vql::Modifiers, "private")
+def test_vql_modifiers_has_execution():
+    assert hasattr(vql_Modifiers, "execution")
     descriptor = None
-    for klass in vql::Modifiers.__mro__:
-        if "private" in klass.__dict__:
-            descriptor = klass.__dict__["private"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vql::modifiers_has_execution():
-    assert hasattr(vql::Modifiers, "execution")
-    descriptor = None
-    for klass in vql::Modifiers.__mro__:
+    for klass in vql_Modifiers.__mro__:
         if "execution" in klass.__dict__:
             descriptor = klass.__dict__["execution"]
             break
     assert isinstance(descriptor, property)
 
+def test_vql_modifiers_has_private():
+    assert hasattr(vql_Modifiers, "private")
+    descriptor = None
+    for klass in vql_Modifiers.__mro__:
+        if "private" in klass.__dict__:
+            descriptor = klass.__dict__["private"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_vql::annotation_is_not_abstract():
-    assert not inspect.isabstract(vql::Annotation)
+
+def test_vql_annotation_is_not_abstract():
+    assert not inspect.isabstract(vql_Annotation)
 
 
-def test_vql::annotation_constructor_exists():
-    assert callable(vql::Annotation.__init__)
+def test_vql_annotation_constructor_exists():
+    assert callable(vql_Annotation.__init__)
 
 
-def test_vql::annotation_constructor_args():
-    sig = inspect.signature(vql::Annotation.__init__)
+def test_vql_annotation_constructor_args():
+    sig = inspect.signature(vql_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vql::annotation_has_name():
-    assert hasattr(vql::Annotation, "name")
+def test_vql_annotation_has_name():
+    assert hasattr(vql_Annotation, "name")
     descriptor = None
-    for klass in vql::Annotation.__mro__:
+    for klass in vql_Annotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -919,33 +967,33 @@ def test_vql::annotation_has_name():
 
 
 
-def test_vql::variablereference_is_not_abstract():
-    assert not inspect.isabstract(vql::VariableReference)
+def test_vql_variablereference_is_not_abstract():
+    assert not inspect.isabstract(vql_VariableReference)
 
 
-def test_vql::variablereference_constructor_exists():
-    assert callable(vql::VariableReference.__init__)
+def test_vql_variablereference_constructor_exists():
+    assert callable(vql_VariableReference.__init__)
 
 
-def test_vql::variablereference_constructor_args():
-    sig = inspect.signature(vql::VariableReference.__init__)
+def test_vql_variablereference_constructor_args():
+    sig = inspect.signature(vql_VariableReference.__init__)
     params = list(sig.parameters.keys())
     assert "aggregator" in params, "Missing parameter 'aggregator'"
     assert "var" in params, "Missing parameter 'var'"
 
-def test_vql::variablereference_has_aggregator():
-    assert hasattr(vql::VariableReference, "aggregator")
+def test_vql_variablereference_has_aggregator():
+    assert hasattr(vql_VariableReference, "aggregator")
     descriptor = None
-    for klass in vql::VariableReference.__mro__:
+    for klass in vql_VariableReference.__mro__:
         if "aggregator" in klass.__dict__:
             descriptor = klass.__dict__["aggregator"]
             break
     assert isinstance(descriptor, property)
 
-def test_vql::variablereference_has_var():
-    assert hasattr(vql::VariableReference, "var")
+def test_vql_variablereference_has_var():
+    assert hasattr(vql_VariableReference, "var")
     descriptor = None
-    for klass in vql::VariableReference.__mro__:
+    for klass in vql_VariableReference.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
             break
@@ -953,23 +1001,23 @@ def test_vql::variablereference_has_var():
 
 
 
-def test_vql::type_is_not_abstract():
-    assert not inspect.isabstract(vql::Type)
+def test_vql_type_is_not_abstract():
+    assert not inspect.isabstract(vql_Type)
 
 
-def test_vql::type_constructor_exists():
-    assert callable(vql::Type.__init__)
+def test_vql_type_constructor_exists():
+    assert callable(vql_Type.__init__)
 
 
-def test_vql::type_constructor_args():
-    sig = inspect.signature(vql::Type.__init__)
+def test_vql_type_constructor_args():
+    sig = inspect.signature(vql_Type.__init__)
     params = list(sig.parameters.keys())
     assert "typename" in params, "Missing parameter 'typename'"
 
-def test_vql::type_has_typename():
-    assert hasattr(vql::Type, "typename")
+def test_vql_type_has_typename():
+    assert hasattr(vql_Type, "typename")
     descriptor = None
-    for klass in vql::Type.__mro__:
+    for klass in vql_Type.__mro__:
         if "typename" in klass.__dict__:
             descriptor = klass.__dict__["typename"]
             break
@@ -991,23 +1039,23 @@ def test_expression_constructor_args():
 
 
 
-def test_vql::variable_is_not_abstract():
-    assert not inspect.isabstract(vql::Variable)
+def test_vql_variable_is_not_abstract():
+    assert not inspect.isabstract(vql_Variable)
 
 
-def test_vql::variable_constructor_exists():
-    assert callable(vql::Variable.__init__)
+def test_vql_variable_constructor_exists():
+    assert callable(vql_Variable.__init__)
 
 
-def test_vql::variable_constructor_args():
-    sig = inspect.signature(vql::Variable.__init__)
+def test_vql_variable_constructor_args():
+    sig = inspect.signature(vql_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vql::variable_has_name():
-    assert hasattr(vql::Variable, "name")
+def test_vql_variable_has_name():
+    assert hasattr(vql_Variable, "name")
     descriptor = None
-    for klass in vql::Variable.__mro__:
+    for klass in vql_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1015,51 +1063,51 @@ def test_vql::variable_has_name():
 
 
 
-def test_vql::expression_is_not_abstract():
-    assert not inspect.isabstract(vql::Expression)
+def test_vql_expression_is_not_abstract():
+    assert not inspect.isabstract(vql_Expression)
 
 
-def test_vql::expression_constructor_exists():
-    assert callable(vql::Expression.__init__)
+def test_vql_expression_constructor_exists():
+    assert callable(vql_Expression.__init__)
 
 
-def test_vql::expression_constructor_args():
-    sig = inspect.signature(vql::Expression.__init__)
+def test_vql_expression_constructor_args():
+    sig = inspect.signature(vql_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::valuereference_is_not_abstract():
-    assert not inspect.isabstract(vql::ValueReference)
+def test_vql_valuereference_is_not_abstract():
+    assert not inspect.isabstract(vql_ValueReference)
 
 
-def test_vql::valuereference_constructor_exists():
-    assert callable(vql::ValueReference.__init__)
+def test_vql_valuereference_constructor_exists():
+    assert callable(vql_ValueReference.__init__)
 
 
-def test_vql::valuereference_constructor_args():
-    sig = inspect.signature(vql::ValueReference.__init__)
+def test_vql_valuereference_constructor_args():
+    sig = inspect.signature(vql_ValueReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vql::annotationparameter_is_not_abstract():
-    assert not inspect.isabstract(vql::AnnotationParameter)
+def test_vql_annotationparameter_is_not_abstract():
+    assert not inspect.isabstract(vql_AnnotationParameter)
 
 
-def test_vql::annotationparameter_constructor_exists():
-    assert callable(vql::AnnotationParameter.__init__)
+def test_vql_annotationparameter_constructor_exists():
+    assert callable(vql_AnnotationParameter.__init__)
 
 
-def test_vql::annotationparameter_constructor_args():
-    sig = inspect.signature(vql::AnnotationParameter.__init__)
+def test_vql_annotationparameter_constructor_args():
+    sig = inspect.signature(vql_AnnotationParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vql::annotationparameter_has_name():
-    assert hasattr(vql::AnnotationParameter, "name")
+def test_vql_annotationparameter_has_name():
+    assert hasattr(vql_AnnotationParameter, "name")
     descriptor = None
-    for klass in vql::AnnotationParameter.__mro__:
+    for klass in vql_AnnotationParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1067,23 +1115,23 @@ def test_vql::annotationparameter_has_name():
 
 
 
-def test_vql::patternbody_is_not_abstract():
-    assert not inspect.isabstract(vql::PatternBody)
+def test_vql_patternbody_is_not_abstract():
+    assert not inspect.isabstract(vql_PatternBody)
 
 
-def test_vql::patternbody_constructor_exists():
-    assert callable(vql::PatternBody.__init__)
+def test_vql_patternbody_constructor_exists():
+    assert callable(vql_PatternBody.__init__)
 
 
-def test_vql::patternbody_constructor_args():
-    sig = inspect.signature(vql::PatternBody.__init__)
+def test_vql_patternbody_constructor_args():
+    sig = inspect.signature(vql_PatternBody.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vql::patternbody_has_name():
-    assert hasattr(vql::PatternBody, "name")
+def test_vql_patternbody_has_name():
+    assert hasattr(vql_PatternBody, "name")
     descriptor = None
-    for klass in vql::PatternBody.__mro__:
+    for klass in vql_PatternBody.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1091,81 +1139,17 @@ def test_vql::patternbody_has_name():
 
 
 
-def test_vql::epackage_is_not_abstract():
-    assert not inspect.isabstract(vql::EPackage)
+def test_vql_epackage_is_not_abstract():
+    assert not inspect.isabstract(vql_EPackage)
 
 
-def test_vql::epackage_constructor_exists():
-    assert callable(vql::EPackage.__init__)
+def test_vql_epackage_constructor_exists():
+    assert callable(vql_EPackage.__init__)
 
 
-def test_vql::epackage_constructor_args():
-    sig = inspect.signature(vql::EPackage.__init__)
+def test_vql_epackage_constructor_args():
+    sig = inspect.signature(vql_EPackage.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_vql::patternimport_is_not_abstract():
-    assert not inspect.isabstract(vql::PatternImport)
-
-
-def test_vql::patternimport_constructor_exists():
-    assert callable(vql::PatternImport.__init__)
-
-
-def test_vql::patternimport_constructor_args():
-    sig = inspect.signature(vql::PatternImport.__init__)
-    params = list(sig.parameters.keys())
-    assert "packageName" in params, "Missing parameter 'packageName'"
-
-def test_vql::patternimport_has_packageName():
-    assert hasattr(vql::PatternImport, "packageName")
-    descriptor = None
-    for klass in vql::PatternImport.__mro__:
-        if "packageName" in klass.__dict__:
-            descriptor = klass.__dict__["packageName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vql::packageimport_is_not_abstract():
-    assert not inspect.isabstract(vql::PackageImport)
-
-
-def test_vql::packageimport_constructor_exists():
-    assert callable(vql::PackageImport.__init__)
-
-
-def test_vql::packageimport_constructor_args():
-    sig = inspect.signature(vql::PackageImport.__init__)
-    params = list(sig.parameters.keys())
-    assert "alias" in params, "Missing parameter 'alias'"
-
-def test_vql::packageimport_has_alias():
-    assert hasattr(vql::PackageImport, "alias")
-    descriptor = None
-    for klass in vql::PackageImport.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_executiontype_exists():
-    # Check that the Enumeration exists
-    assert ExecutionType is not None
-
-def test_executiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExecutionType]
-    expected_literals = [
-        "unspecified",
-        "search",
-        "incremental",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExecutionType"
 
 def test_comparefeature_exists():
     # Check that the Enumeration exists
@@ -1175,12 +1159,28 @@ def test_comparefeature_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CompareFeature]
     expected_literals = [
-        "equality",
         "inequality",
+        "equality",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CompareFeature"
+
+def test_executiontype_exists():
+    # Check that the Enumeration exists
+    assert ExecutionType is not None
+
+def test_executiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ExecutionType]
+    expected_literals = [
+        "search",
+        "incremental",
+        "unspecified",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ExecutionType"
 
 def test_closuretype_exists():
     # Check that the Enumeration exists
@@ -1190,9 +1190,9 @@ def test_closuretype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ClosureType]
     expected_literals = [
-        "original",
         "transitive",
         "reflexive_transitive",
+        "original",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1206,8 +1206,8 @@ def test_parameterdirection_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParameterDirection]
     expected_literals = [
-        "out",
         "inout",
+        "out",
         "in_",
     ]
     # Check that all expected literals exist
@@ -1226,40 +1226,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-vql::EStructuralFeature_strategy = st.builds(
-    vql::EStructuralFeature,
+vql_XBooleanLiteral_strategy = st.builds(
+    vql_XBooleanLiteral,
+)
+vql_XNumberLiteral_strategy = st.builds(
+    vql_XNumberLiteral,
+)
+vql_JvmType_strategy = st.builds(
+    vql_JvmType,
+)
+ComputationValue_strategy = st.builds(
+    ComputationValue,
+)
+vql_AggregatedValue_strategy = st.builds(
+    vql_AggregatedValue,
+)
+vql_PatternImport_strategy = st.builds(
+    vql_PatternImport,
+    packageName=
+        safe_text
+)
+vql_PackageImport_strategy = st.builds(
+    vql_PackageImport,
+    alias=
+        safe_text
+)
+vql_EStructuralFeature_strategy = st.builds(
+    vql_EStructuralFeature,
 )
 RelationType_strategy = st.builds(
     RelationType,
 )
-vql::ReferenceType_strategy = st.builds(
-    vql::ReferenceType,
+vql_ReferenceType_strategy = st.builds(
+    vql_ReferenceType,
 )
-vql::EClassifier_strategy = st.builds(
-    vql::EClassifier,
+vql_EClassifier_strategy = st.builds(
+    vql_EClassifier,
 )
 EntityType_strategy = st.builds(
     EntityType,
 )
-vql::ClassType_strategy = st.builds(
-    vql::ClassType,
+vql_ClassType_strategy = st.builds(
+    vql_ClassType,
 )
-vql::PatternModel_strategy = st.builds(
-    vql::PatternModel,
+vql_PatternModel_strategy = st.builds(
+    vql_PatternModel,
     packageName=
         safe_text
 )
-vql::EEnumLiteral_strategy = st.builds(
-    vql::EEnumLiteral,
+vql_EEnumLiteral_strategy = st.builds(
+    vql_EEnumLiteral,
 )
-vql::EEnum_strategy = st.builds(
-    vql::EEnum,
+vql_EEnum_strategy = st.builds(
+    vql_EEnum,
 )
 ValueReference_strategy = st.builds(
     ValueReference,
 )
-vql::EnumValue_strategy = st.builds(
-    vql::EnumValue,
+vql_EnumValue_strategy = st.builds(
+    vql_EnumValue,
 )
 UnaryTypeConstraint_strategy = st.builds(
     UnaryTypeConstraint,
@@ -1267,207 +1292,192 @@ UnaryTypeConstraint_strategy = st.builds(
 Constraint_strategy = st.builds(
     Constraint,
 )
-vql::EClassifierConstraint_strategy = st.builds(
-    vql::EClassifierConstraint,
+vql_EClassifierConstraint_strategy = st.builds(
+    vql_EClassifierConstraint,
 )
-vql::Pattern_strategy = st.builds(
-    vql::Pattern,
+vql_Pattern_strategy = st.builds(
+    vql_Pattern,
     name=
         safe_text
 )
 XImportSection_strategy = st.builds(
     XImportSection,
 )
-vql::VQLImportSection_strategy = st.builds(
-    vql::VQLImportSection,
+vql_VQLImportSection_strategy = st.builds(
+    vql_VQLImportSection,
 )
-vql::XBooleanLiteral_strategy = st.builds(
-    vql::XBooleanLiteral,
+vql_FunctionEvaluationValue_strategy = st.builds(
+    vql_FunctionEvaluationValue,
 )
-vql::XNumberLiteral_strategy = st.builds(
-    vql::XNumberLiteral,
+vql_TypeCheckConstraint_strategy = st.builds(
+    vql_TypeCheckConstraint,
 )
-vql::JvmType_strategy = st.builds(
-    vql::JvmType,
-)
-ComputationValue_strategy = st.builds(
-    ComputationValue,
-)
-vql::AggregatedValue_strategy = st.builds(
-    vql::AggregatedValue,
-)
-vql::FunctionEvaluationValue_strategy = st.builds(
-    vql::FunctionEvaluationValue,
-)
-vql::TypeCheckConstraint_strategy = st.builds(
-    vql::TypeCheckConstraint,
-)
-vql::JvmDeclaredType_strategy = st.builds(
-    vql::JvmDeclaredType,
+vql_JvmDeclaredType_strategy = st.builds(
+    vql_JvmDeclaredType,
 )
 LiteralValueReference_strategy = st.builds(
     LiteralValueReference,
 )
-vql::NumberValue_strategy = st.builds(
-    vql::NumberValue,
+vql_BoolValue_strategy = st.builds(
+    vql_BoolValue,
+)
+vql_NumberValue_strategy = st.builds(
+    vql_NumberValue,
     negative=
         st.booleans()
 )
-vql::BoolValue_strategy = st.builds(
-    vql::BoolValue,
+vql_ListValue_strategy = st.builds(
+    vql_ListValue,
 )
-vql::ListValue_strategy = st.builds(
-    vql::ListValue,
-)
-vql::StringValue_strategy = st.builds(
-    vql::StringValue,
+vql_StringValue_strategy = st.builds(
+    vql_StringValue,
     value=
         safe_text
 )
-vql::XExpression_strategy = st.builds(
-    vql::XExpression,
+vql_XExpression_strategy = st.builds(
+    vql_XExpression,
 )
-vql::CheckConstraint_strategy = st.builds(
-    vql::CheckConstraint,
+vql_CheckConstraint_strategy = st.builds(
+    vql_CheckConstraint,
 )
-vql::CompareConstraint_strategy = st.builds(
-    vql::CompareConstraint,
+vql_CompareConstraint_strategy = st.builds(
+    vql_CompareConstraint,
     feature=
         safe_text
 )
-vql::CallableRelation_strategy = st.builds(
-    vql::CallableRelation,
+vql_CallableRelation_strategy = st.builds(
+    vql_CallableRelation,
     transitive=
         safe_text
 )
-vql::PatternCompositionConstraint_strategy = st.builds(
-    vql::PatternCompositionConstraint,
+vql_PatternCompositionConstraint_strategy = st.builds(
+    vql_PatternCompositionConstraint,
     negative=
         st.booleans()
 )
 Type_strategy = st.builds(
     Type,
 )
-vql::RelationType_strategy = st.builds(
-    vql::RelationType,
+vql_RelationType_strategy = st.builds(
+    vql_RelationType,
 )
-vql::EntityType_strategy = st.builds(
-    vql::EntityType,
+vql_EntityType_strategy = st.builds(
+    vql_EntityType,
 )
-vql::JavaType_strategy = st.builds(
-    vql::JavaType,
+vql_JavaType_strategy = st.builds(
+    vql_JavaType,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-vql::Parameter_strategy = st.builds(
-    vql::Parameter,
+vql_Parameter_strategy = st.builds(
+    vql_Parameter,
     direction=
         safe_text
 )
-vql::LocalVariable_strategy = st.builds(
-    vql::LocalVariable,
+vql_LocalVariable_strategy = st.builds(
+    vql_LocalVariable,
 )
-vql::ParameterRef_strategy = st.builds(
-    vql::ParameterRef,
+vql_ParameterRef_strategy = st.builds(
+    vql_ParameterRef,
 )
-vql::ComputationValue_strategy = st.builds(
-    vql::ComputationValue,
+vql_ComputationValue_strategy = st.builds(
+    vql_ComputationValue,
 )
-vql::LiteralValueReference_strategy = st.builds(
-    vql::LiteralValueReference,
+vql_LiteralValueReference_strategy = st.builds(
+    vql_LiteralValueReference,
 )
 CallableRelation_strategy = st.builds(
     CallableRelation,
 )
-vql::UnaryTypeConstraint_strategy = st.builds(
-    vql::UnaryTypeConstraint,
+vql_PathExpressionConstraint_strategy = st.builds(
+    vql_PathExpressionConstraint,
 )
-vql::PathExpressionConstraint_strategy = st.builds(
-    vql::PathExpressionConstraint,
+vql_UnaryTypeConstraint_strategy = st.builds(
+    vql_UnaryTypeConstraint,
 )
-vql::PatternCall_strategy = st.builds(
-    vql::PatternCall,
+vql_PatternCall_strategy = st.builds(
+    vql_PatternCall,
 )
-vql::Constraint_strategy = st.builds(
-    vql::Constraint,
+vql_Constraint_strategy = st.builds(
+    vql_Constraint,
 )
-vql::Modifiers_strategy = st.builds(
-    vql::Modifiers,
-    private=
-        st.booleans(),
+vql_Modifiers_strategy = st.builds(
+    vql_Modifiers,
     execution=
-        safe_text
+        safe_text,
+    private=
+        st.booleans()
 )
-vql::Annotation_strategy = st.builds(
-    vql::Annotation,
+vql_Annotation_strategy = st.builds(
+    vql_Annotation,
     name=
         safe_text
 )
-vql::VariableReference_strategy = st.builds(
-    vql::VariableReference,
+vql_VariableReference_strategy = st.builds(
+    vql_VariableReference,
     aggregator=
         st.booleans(),
     var=
         safe_text
 )
-vql::Type_strategy = st.builds(
-    vql::Type,
+vql_Type_strategy = st.builds(
+    vql_Type,
     typename=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-vql::Variable_strategy = st.builds(
-    vql::Variable,
+vql_Variable_strategy = st.builds(
+    vql_Variable,
     name=
         safe_text
 )
-vql::Expression_strategy = st.builds(
-    vql::Expression,
+vql_Expression_strategy = st.builds(
+    vql_Expression,
 )
-vql::ValueReference_strategy = st.builds(
-    vql::ValueReference,
+vql_ValueReference_strategy = st.builds(
+    vql_ValueReference,
 )
-vql::AnnotationParameter_strategy = st.builds(
-    vql::AnnotationParameter,
+vql_AnnotationParameter_strategy = st.builds(
+    vql_AnnotationParameter,
     name=
         safe_text
 )
-vql::PatternBody_strategy = st.builds(
-    vql::PatternBody,
+vql_PatternBody_strategy = st.builds(
+    vql_PatternBody,
     name=
         safe_text
 )
-vql::EPackage_strategy = st.builds(
-    vql::EPackage,
-)
-vql::PatternImport_strategy = st.builds(
-    vql::PatternImport,
-    packageName=
-        safe_text
-)
-vql::PackageImport_strategy = st.builds(
-    vql::PackageImport,
-    alias=
-        safe_text
+vql_EPackage_strategy = st.builds(
+    vql_EPackage,
 )
 
-@given(instance=vql::EStructuralFeature_strategy)
+@given(instance=vql_XBooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_vql::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, vql::EStructuralFeature)
+def test_vql_xbooleanliteral_instantiation(instance):
+    assert isinstance(instance, vql_XBooleanLiteral)
 
-@given(instance=RelationType_strategy)
+@given(instance=vql_XNumberLiteral_strategy)
 @settings(max_examples=50)
-def test_relationtype_instantiation(instance):
-    assert isinstance(instance, RelationType)
+def test_vql_xnumberliteral_instantiation(instance):
+    assert isinstance(instance, vql_XNumberLiteral)
 
-@given(instance=vql::ReferenceType_strategy)
+@given(instance=vql_JvmType_strategy)
 @settings(max_examples=50)
-def test_vql::referencetype_instantiation(instance):
-    assert isinstance(instance, vql::ReferenceType)
+def test_vql_jvmtype_instantiation(instance):
+    assert isinstance(instance, vql_JvmType)
+
+@given(instance=ComputationValue_strategy)
+@settings(max_examples=50)
+def test_computationvalue_instantiation(instance):
+    assert isinstance(instance, ComputationValue)
+
+@given(instance=vql_AggregatedValue_strategy)
+@settings(max_examples=50)
+def test_vql_aggregatedvalue_instantiation(instance):
+    assert isinstance(instance, vql_AggregatedValue)
 
 import warnings
 import copy
@@ -1475,9 +1485,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::ReferenceType_strategy)
+@given(instance=vql_AggregatedValue_strategy)
 @settings(max_examples=30)
-def test_vql::referencetype_tostring_changes_state(instance):
+def test_vql_aggregatedvalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1489,71 +1499,24 @@ def test_vql::referencetype_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::ReferenceType is empty"
+        assert has_statements, f"Function 'toString' in vql_AggregatedValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::ReferenceType did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_AggregatedValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::ReferenceType is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_AggregatedValue is not implemented or raised an error")
 
-@given(instance=vql::EClassifier_strategy)
+@given(instance=vql_PatternImport_strategy)
 @settings(max_examples=50)
-def test_vql::eclassifier_instantiation(instance):
-    assert isinstance(instance, vql::EClassifier)
-
-@given(instance=EntityType_strategy)
-@settings(max_examples=50)
-def test_entitytype_instantiation(instance):
-    assert isinstance(instance, EntityType)
-
-@given(instance=vql::ClassType_strategy)
-@settings(max_examples=50)
-def test_vql::classtype_instantiation(instance):
-    assert isinstance(instance, vql::ClassType)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=vql::ClassType_strategy)
-@settings(max_examples=30)
-def test_vql::classtype_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::ClassType is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::ClassType did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::ClassType is not implemented or raised an error")
-
-@given(instance=vql::PatternModel_strategy)
-@settings(max_examples=50)
-def test_vql::patternmodel_instantiation(instance):
-    assert isinstance(instance, vql::PatternModel)
-
-@given(instance=vql::PatternModel_strategy)
-def test_vql::patternmodel_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_vql_patternimport_instantiation(instance):
+    assert isinstance(instance, vql_PatternImport)
 
 
-@given(instance=vql::PatternModel_strategy)
-def test_vql::patternmodel_packageName_setter(instance):
+
+@given(instance=vql_PatternImport_strategy)
+def test_vql_patternimport_packageName_setter(instance):
     original = instance.packageName
     instance.packageName = original
     assert instance.packageName == original
@@ -1564,9 +1527,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::PatternModel_strategy)
+@given(instance=vql_PatternImport_strategy)
 @settings(max_examples=30)
-def test_vql::patternmodel_tostring_changes_state(instance):
+def test_vql_patternimport_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1578,34 +1541,27 @@ def test_vql::patternmodel_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PatternModel is empty"
+        assert has_statements, f"Function 'toString' in vql_PatternImport is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PatternModel did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_PatternImport did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PatternModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_PatternImport is not implemented or raised an error")
 
-@given(instance=vql::EEnumLiteral_strategy)
+@given(instance=vql_PackageImport_strategy)
 @settings(max_examples=50)
-def test_vql::eenumliteral_instantiation(instance):
-    assert isinstance(instance, vql::EEnumLiteral)
+def test_vql_packageimport_instantiation(instance):
+    assert isinstance(instance, vql_PackageImport)
 
-@given(instance=vql::EEnum_strategy)
-@settings(max_examples=50)
-def test_vql::eenum_instantiation(instance):
-    assert isinstance(instance, vql::EEnum)
 
-@given(instance=ValueReference_strategy)
-@settings(max_examples=50)
-def test_valuereference_instantiation(instance):
-    assert isinstance(instance, ValueReference)
 
-@given(instance=vql::EnumValue_strategy)
-@settings(max_examples=50)
-def test_vql::enumvalue_instantiation(instance):
-    assert isinstance(instance, vql::EnumValue)
+@given(instance=vql_PackageImport_strategy)
+def test_vql_packageimport_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
 
 import warnings
 import copy
@@ -1613,9 +1569,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::EnumValue_strategy)
+@given(instance=vql_PackageImport_strategy)
 @settings(max_examples=30)
-def test_vql::enumvalue_tostring_changes_state(instance):
+def test_vql_packageimport_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1627,14 +1583,193 @@ def test_vql::enumvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::EnumValue is empty"
+        assert has_statements, f"Function 'toString' in vql_PackageImport is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::EnumValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_PackageImport did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::EnumValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_PackageImport is not implemented or raised an error")
+
+@given(instance=vql_EStructuralFeature_strategy)
+@settings(max_examples=50)
+def test_vql_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, vql_EStructuralFeature)
+
+@given(instance=RelationType_strategy)
+@settings(max_examples=50)
+def test_relationtype_instantiation(instance):
+    assert isinstance(instance, RelationType)
+
+@given(instance=vql_ReferenceType_strategy)
+@settings(max_examples=50)
+def test_vql_referencetype_instantiation(instance):
+    assert isinstance(instance, vql_ReferenceType)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=vql_ReferenceType_strategy)
+@settings(max_examples=30)
+def test_vql_referencetype_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in vql_ReferenceType is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in vql_ReferenceType did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in vql_ReferenceType is not implemented or raised an error")
+
+@given(instance=vql_EClassifier_strategy)
+@settings(max_examples=50)
+def test_vql_eclassifier_instantiation(instance):
+    assert isinstance(instance, vql_EClassifier)
+
+@given(instance=EntityType_strategy)
+@settings(max_examples=50)
+def test_entitytype_instantiation(instance):
+    assert isinstance(instance, EntityType)
+
+@given(instance=vql_ClassType_strategy)
+@settings(max_examples=50)
+def test_vql_classtype_instantiation(instance):
+    assert isinstance(instance, vql_ClassType)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=vql_ClassType_strategy)
+@settings(max_examples=30)
+def test_vql_classtype_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in vql_ClassType is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in vql_ClassType did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in vql_ClassType is not implemented or raised an error")
+
+@given(instance=vql_PatternModel_strategy)
+@settings(max_examples=50)
+def test_vql_patternmodel_instantiation(instance):
+    assert isinstance(instance, vql_PatternModel)
+
+
+
+@given(instance=vql_PatternModel_strategy)
+def test_vql_patternmodel_packageName_setter(instance):
+    original = instance.packageName
+    instance.packageName = original
+    assert instance.packageName == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=vql_PatternModel_strategy)
+@settings(max_examples=30)
+def test_vql_patternmodel_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in vql_PatternModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in vql_PatternModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in vql_PatternModel is not implemented or raised an error")
+
+@given(instance=vql_EEnumLiteral_strategy)
+@settings(max_examples=50)
+def test_vql_eenumliteral_instantiation(instance):
+    assert isinstance(instance, vql_EEnumLiteral)
+
+@given(instance=vql_EEnum_strategy)
+@settings(max_examples=50)
+def test_vql_eenum_instantiation(instance):
+    assert isinstance(instance, vql_EEnum)
+
+@given(instance=ValueReference_strategy)
+@settings(max_examples=50)
+def test_valuereference_instantiation(instance):
+    assert isinstance(instance, ValueReference)
+
+@given(instance=vql_EnumValue_strategy)
+@settings(max_examples=50)
+def test_vql_enumvalue_instantiation(instance):
+    assert isinstance(instance, vql_EnumValue)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=vql_EnumValue_strategy)
+@settings(max_examples=30)
+def test_vql_enumvalue_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in vql_EnumValue is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in vql_EnumValue did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in vql_EnumValue is not implemented or raised an error")
 
 @given(instance=UnaryTypeConstraint_strategy)
 @settings(max_examples=50)
@@ -1646,10 +1781,10 @@ def test_unarytypeconstraint_instantiation(instance):
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=vql::EClassifierConstraint_strategy)
+@given(instance=vql_EClassifierConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::eclassifierconstraint_instantiation(instance):
-    assert isinstance(instance, vql::EClassifierConstraint)
+def test_vql_eclassifierconstraint_instantiation(instance):
+    assert isinstance(instance, vql_EClassifierConstraint)
 
 import warnings
 import copy
@@ -1657,9 +1792,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::EClassifierConstraint_strategy)
+@given(instance=vql_EClassifierConstraint_strategy)
 @settings(max_examples=30)
-def test_vql::eclassifierconstraint_tostring_changes_state(instance):
+def test_vql_eclassifierconstraint_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1671,27 +1806,24 @@ def test_vql::eclassifierconstraint_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::EClassifierConstraint is empty"
+        assert has_statements, f"Function 'toString' in vql_EClassifierConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::EClassifierConstraint did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_EClassifierConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::EClassifierConstraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_EClassifierConstraint is not implemented or raised an error")
 
-@given(instance=vql::Pattern_strategy)
+@given(instance=vql_Pattern_strategy)
 @settings(max_examples=50)
-def test_vql::pattern_instantiation(instance):
-    assert isinstance(instance, vql::Pattern)
-
-@given(instance=vql::Pattern_strategy)
-def test_vql::pattern_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vql_pattern_instantiation(instance):
+    assert isinstance(instance, vql_Pattern)
 
 
-@given(instance=vql::Pattern_strategy)
-def test_vql::pattern_name_setter(instance):
+
+@given(instance=vql_Pattern_strategy)
+def test_vql_pattern_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1702,9 +1834,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Pattern_strategy)
+@given(instance=vql_Pattern_strategy)
 @settings(max_examples=30)
-def test_vql::pattern_tostring_changes_state(instance):
+def test_vql_pattern_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1716,24 +1848,24 @@ def test_vql::pattern_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Pattern is empty"
+        assert has_statements, f"Function 'toString' in vql_Pattern is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Pattern did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Pattern did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Pattern is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Pattern is not implemented or raised an error")
 
 @given(instance=XImportSection_strategy)
 @settings(max_examples=50)
 def test_ximportsection_instantiation(instance):
     assert isinstance(instance, XImportSection)
 
-@given(instance=vql::VQLImportSection_strategy)
+@given(instance=vql_VQLImportSection_strategy)
 @settings(max_examples=50)
-def test_vql::vqlimportsection_instantiation(instance):
-    assert isinstance(instance, vql::VQLImportSection)
+def test_vql_vqlimportsection_instantiation(instance):
+    assert isinstance(instance, vql_VQLImportSection)
 
 import warnings
 import copy
@@ -1741,9 +1873,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::VQLImportSection_strategy)
+@given(instance=vql_VQLImportSection_strategy)
 @settings(max_examples=30)
-def test_vql::vqlimportsection_tostring_changes_state(instance):
+def test_vql_vqlimportsection_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1755,39 +1887,19 @@ def test_vql::vqlimportsection_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::VQLImportSection is empty"
+        assert has_statements, f"Function 'toString' in vql_VQLImportSection is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::VQLImportSection did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_VQLImportSection did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::VQLImportSection is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_VQLImportSection is not implemented or raised an error")
 
-@given(instance=vql::XBooleanLiteral_strategy)
+@given(instance=vql_FunctionEvaluationValue_strategy)
 @settings(max_examples=50)
-def test_vql::xbooleanliteral_instantiation(instance):
-    assert isinstance(instance, vql::XBooleanLiteral)
-
-@given(instance=vql::XNumberLiteral_strategy)
-@settings(max_examples=50)
-def test_vql::xnumberliteral_instantiation(instance):
-    assert isinstance(instance, vql::XNumberLiteral)
-
-@given(instance=vql::JvmType_strategy)
-@settings(max_examples=50)
-def test_vql::jvmtype_instantiation(instance):
-    assert isinstance(instance, vql::JvmType)
-
-@given(instance=ComputationValue_strategy)
-@settings(max_examples=50)
-def test_computationvalue_instantiation(instance):
-    assert isinstance(instance, ComputationValue)
-
-@given(instance=vql::AggregatedValue_strategy)
-@settings(max_examples=50)
-def test_vql::aggregatedvalue_instantiation(instance):
-    assert isinstance(instance, vql::AggregatedValue)
+def test_vql_functionevaluationvalue_instantiation(instance):
+    assert isinstance(instance, vql_FunctionEvaluationValue)
 
 import warnings
 import copy
@@ -1795,9 +1907,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::AggregatedValue_strategy)
+@given(instance=vql_FunctionEvaluationValue_strategy)
 @settings(max_examples=30)
-def test_vql::aggregatedvalue_tostring_changes_state(instance):
+def test_vql_functionevaluationvalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1809,19 +1921,19 @@ def test_vql::aggregatedvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::AggregatedValue is empty"
+        assert has_statements, f"Function 'toString' in vql_FunctionEvaluationValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::AggregatedValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_FunctionEvaluationValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::AggregatedValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_FunctionEvaluationValue is not implemented or raised an error")
 
-@given(instance=vql::FunctionEvaluationValue_strategy)
+@given(instance=vql_TypeCheckConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::functionevaluationvalue_instantiation(instance):
-    assert isinstance(instance, vql::FunctionEvaluationValue)
+def test_vql_typecheckconstraint_instantiation(instance):
+    assert isinstance(instance, vql_TypeCheckConstraint)
 
 import warnings
 import copy
@@ -1829,9 +1941,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::FunctionEvaluationValue_strategy)
+@given(instance=vql_TypeCheckConstraint_strategy)
 @settings(max_examples=30)
-def test_vql::functionevaluationvalue_tostring_changes_state(instance):
+def test_vql_typecheckconstraint_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1843,71 +1955,68 @@ def test_vql::functionevaluationvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::FunctionEvaluationValue is empty"
+        assert has_statements, f"Function 'toString' in vql_TypeCheckConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::FunctionEvaluationValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_TypeCheckConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::FunctionEvaluationValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_TypeCheckConstraint is not implemented or raised an error")
 
-@given(instance=vql::TypeCheckConstraint_strategy)
+@given(instance=vql_JvmDeclaredType_strategy)
 @settings(max_examples=50)
-def test_vql::typecheckconstraint_instantiation(instance):
-    assert isinstance(instance, vql::TypeCheckConstraint)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=vql::TypeCheckConstraint_strategy)
-@settings(max_examples=30)
-def test_vql::typecheckconstraint_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::TypeCheckConstraint is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::TypeCheckConstraint did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::TypeCheckConstraint is not implemented or raised an error")
-
-@given(instance=vql::JvmDeclaredType_strategy)
-@settings(max_examples=50)
-def test_vql::jvmdeclaredtype_instantiation(instance):
-    assert isinstance(instance, vql::JvmDeclaredType)
+def test_vql_jvmdeclaredtype_instantiation(instance):
+    assert isinstance(instance, vql_JvmDeclaredType)
 
 @given(instance=LiteralValueReference_strategy)
 @settings(max_examples=50)
 def test_literalvaluereference_instantiation(instance):
     assert isinstance(instance, LiteralValueReference)
 
-@given(instance=vql::NumberValue_strategy)
+@given(instance=vql_BoolValue_strategy)
 @settings(max_examples=50)
-def test_vql::numbervalue_instantiation(instance):
-    assert isinstance(instance, vql::NumberValue)
+def test_vql_boolvalue_instantiation(instance):
+    assert isinstance(instance, vql_BoolValue)
 
-@given(instance=vql::NumberValue_strategy)
-def test_vql::numbervalue_negative_type(instance):
-    assert isinstance(instance.negative, bool)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=vql_BoolValue_strategy)
+@settings(max_examples=30)
+def test_vql_boolvalue_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in vql_BoolValue is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in vql_BoolValue did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in vql_BoolValue is not implemented or raised an error")
+
+@given(instance=vql_NumberValue_strategy)
+@settings(max_examples=50)
+def test_vql_numbervalue_instantiation(instance):
+    assert isinstance(instance, vql_NumberValue)
 
 
-@given(instance=vql::NumberValue_strategy)
-def test_vql::numbervalue_negative_setter(instance):
+
+@given(instance=vql_NumberValue_strategy)
+def test_vql_numbervalue_negative_setter(instance):
     original = instance.negative
     instance.negative = original
     assert instance.negative == original
@@ -1918,9 +2027,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::NumberValue_strategy)
+@given(instance=vql_NumberValue_strategy)
 @settings(max_examples=30)
-def test_vql::numbervalue_tostring_changes_state(instance):
+def test_vql_numbervalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1932,19 +2041,19 @@ def test_vql::numbervalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::NumberValue is empty"
+        assert has_statements, f"Function 'toString' in vql_NumberValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::NumberValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_NumberValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::NumberValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_NumberValue is not implemented or raised an error")
 
-@given(instance=vql::BoolValue_strategy)
+@given(instance=vql_ListValue_strategy)
 @settings(max_examples=50)
-def test_vql::boolvalue_instantiation(instance):
-    assert isinstance(instance, vql::BoolValue)
+def test_vql_listvalue_instantiation(instance):
+    assert isinstance(instance, vql_ListValue)
 
 import warnings
 import copy
@@ -1952,9 +2061,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::BoolValue_strategy)
+@given(instance=vql_ListValue_strategy)
 @settings(max_examples=30)
-def test_vql::boolvalue_tostring_changes_state(instance):
+def test_vql_listvalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1966,61 +2075,24 @@ def test_vql::boolvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::BoolValue is empty"
+        assert has_statements, f"Function 'toString' in vql_ListValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::BoolValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_ListValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::BoolValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_ListValue is not implemented or raised an error")
 
-@given(instance=vql::ListValue_strategy)
+@given(instance=vql_StringValue_strategy)
 @settings(max_examples=50)
-def test_vql::listvalue_instantiation(instance):
-    assert isinstance(instance, vql::ListValue)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=vql::ListValue_strategy)
-@settings(max_examples=30)
-def test_vql::listvalue_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::ListValue is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::ListValue did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::ListValue is not implemented or raised an error")
-
-@given(instance=vql::StringValue_strategy)
-@settings(max_examples=50)
-def test_vql::stringvalue_instantiation(instance):
-    assert isinstance(instance, vql::StringValue)
-
-@given(instance=vql::StringValue_strategy)
-def test_vql::stringvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vql_stringvalue_instantiation(instance):
+    assert isinstance(instance, vql_StringValue)
 
 
-@given(instance=vql::StringValue_strategy)
-def test_vql::stringvalue_value_setter(instance):
+
+@given(instance=vql_StringValue_strategy)
+def test_vql_stringvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2031,9 +2103,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::StringValue_strategy)
+@given(instance=vql_StringValue_strategy)
 @settings(max_examples=30)
-def test_vql::stringvalue_tostring_changes_state(instance):
+def test_vql_stringvalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2045,24 +2117,24 @@ def test_vql::stringvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::StringValue is empty"
+        assert has_statements, f"Function 'toString' in vql_StringValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::StringValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_StringValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::StringValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_StringValue is not implemented or raised an error")
 
-@given(instance=vql::XExpression_strategy)
+@given(instance=vql_XExpression_strategy)
 @settings(max_examples=50)
-def test_vql::xexpression_instantiation(instance):
-    assert isinstance(instance, vql::XExpression)
+def test_vql_xexpression_instantiation(instance):
+    assert isinstance(instance, vql_XExpression)
 
-@given(instance=vql::CheckConstraint_strategy)
+@given(instance=vql_CheckConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::checkconstraint_instantiation(instance):
-    assert isinstance(instance, vql::CheckConstraint)
+def test_vql_checkconstraint_instantiation(instance):
+    assert isinstance(instance, vql_CheckConstraint)
 
 import warnings
 import copy
@@ -2070,9 +2142,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::CheckConstraint_strategy)
+@given(instance=vql_CheckConstraint_strategy)
 @settings(max_examples=30)
-def test_vql::checkconstraint_tostring_changes_state(instance):
+def test_vql_checkconstraint_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2084,27 +2156,24 @@ def test_vql::checkconstraint_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::CheckConstraint is empty"
+        assert has_statements, f"Function 'toString' in vql_CheckConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::CheckConstraint did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_CheckConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::CheckConstraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_CheckConstraint is not implemented or raised an error")
 
-@given(instance=vql::CompareConstraint_strategy)
+@given(instance=vql_CompareConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::compareconstraint_instantiation(instance):
-    assert isinstance(instance, vql::CompareConstraint)
-
-@given(instance=vql::CompareConstraint_strategy)
-def test_vql::compareconstraint_feature_type(instance):
-    assert isinstance(instance.feature, str)
+def test_vql_compareconstraint_instantiation(instance):
+    assert isinstance(instance, vql_CompareConstraint)
 
 
-@given(instance=vql::CompareConstraint_strategy)
-def test_vql::compareconstraint_feature_setter(instance):
+
+@given(instance=vql_CompareConstraint_strategy)
+def test_vql_compareconstraint_feature_setter(instance):
     original = instance.feature
     instance.feature = original
     assert instance.feature == original
@@ -2115,9 +2184,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::CompareConstraint_strategy)
+@given(instance=vql_CompareConstraint_strategy)
 @settings(max_examples=30)
-def test_vql::compareconstraint_tostring_changes_state(instance):
+def test_vql_compareconstraint_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2129,43 +2198,37 @@ def test_vql::compareconstraint_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::CompareConstraint is empty"
+        assert has_statements, f"Function 'toString' in vql_CompareConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::CompareConstraint did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_CompareConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::CompareConstraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_CompareConstraint is not implemented or raised an error")
 
-@given(instance=vql::CallableRelation_strategy)
+@given(instance=vql_CallableRelation_strategy)
 @settings(max_examples=50)
-def test_vql::callablerelation_instantiation(instance):
-    assert isinstance(instance, vql::CallableRelation)
-
-@given(instance=vql::CallableRelation_strategy)
-def test_vql::callablerelation_transitive_type(instance):
-    assert isinstance(instance.transitive, str)
+def test_vql_callablerelation_instantiation(instance):
+    assert isinstance(instance, vql_CallableRelation)
 
 
-@given(instance=vql::CallableRelation_strategy)
-def test_vql::callablerelation_transitive_setter(instance):
+
+@given(instance=vql_CallableRelation_strategy)
+def test_vql_callablerelation_transitive_setter(instance):
     original = instance.transitive
     instance.transitive = original
     assert instance.transitive == original
 
-@given(instance=vql::PatternCompositionConstraint_strategy)
+@given(instance=vql_PatternCompositionConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::patterncompositionconstraint_instantiation(instance):
-    assert isinstance(instance, vql::PatternCompositionConstraint)
-
-@given(instance=vql::PatternCompositionConstraint_strategy)
-def test_vql::patterncompositionconstraint_negative_type(instance):
-    assert isinstance(instance.negative, bool)
+def test_vql_patterncompositionconstraint_instantiation(instance):
+    assert isinstance(instance, vql_PatternCompositionConstraint)
 
 
-@given(instance=vql::PatternCompositionConstraint_strategy)
-def test_vql::patterncompositionconstraint_negative_setter(instance):
+
+@given(instance=vql_PatternCompositionConstraint_strategy)
+def test_vql_patterncompositionconstraint_negative_setter(instance):
     original = instance.negative
     instance.negative = original
     assert instance.negative == original
@@ -2176,9 +2239,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::PatternCompositionConstraint_strategy)
+@given(instance=vql_PatternCompositionConstraint_strategy)
 @settings(max_examples=30)
-def test_vql::patterncompositionconstraint_tostring_changes_state(instance):
+def test_vql_patterncompositionconstraint_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2190,24 +2253,24 @@ def test_vql::patterncompositionconstraint_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PatternCompositionConstraint is empty"
+        assert has_statements, f"Function 'toString' in vql_PatternCompositionConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PatternCompositionConstraint did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_PatternCompositionConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PatternCompositionConstraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_PatternCompositionConstraint is not implemented or raised an error")
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=vql::RelationType_strategy)
+@given(instance=vql_RelationType_strategy)
 @settings(max_examples=50)
-def test_vql::relationtype_instantiation(instance):
-    assert isinstance(instance, vql::RelationType)
+def test_vql_relationtype_instantiation(instance):
+    assert isinstance(instance, vql_RelationType)
 
 import warnings
 import copy
@@ -2215,9 +2278,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::RelationType_strategy)
+@given(instance=vql_RelationType_strategy)
 @settings(max_examples=30)
-def test_vql::relationtype_tostring_changes_state(instance):
+def test_vql_relationtype_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2229,24 +2292,24 @@ def test_vql::relationtype_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::RelationType is empty"
+        assert has_statements, f"Function 'toString' in vql_RelationType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::RelationType did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_RelationType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::RelationType is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_RelationType is not implemented or raised an error")
 
-@given(instance=vql::EntityType_strategy)
+@given(instance=vql_EntityType_strategy)
 @settings(max_examples=50)
-def test_vql::entitytype_instantiation(instance):
-    assert isinstance(instance, vql::EntityType)
+def test_vql_entitytype_instantiation(instance):
+    assert isinstance(instance, vql_EntityType)
 
-@given(instance=vql::JavaType_strategy)
+@given(instance=vql_JavaType_strategy)
 @settings(max_examples=50)
-def test_vql::javatype_instantiation(instance):
-    assert isinstance(instance, vql::JavaType)
+def test_vql_javatype_instantiation(instance):
+    assert isinstance(instance, vql_JavaType)
 
 import warnings
 import copy
@@ -2254,9 +2317,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::JavaType_strategy)
+@given(instance=vql_JavaType_strategy)
 @settings(max_examples=30)
-def test_vql::javatype_tostring_changes_state(instance):
+def test_vql_javatype_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2268,32 +2331,29 @@ def test_vql::javatype_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::JavaType is empty"
+        assert has_statements, f"Function 'toString' in vql_JavaType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::JavaType did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_JavaType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::JavaType is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_JavaType is not implemented or raised an error")
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=vql::Parameter_strategy)
+@given(instance=vql_Parameter_strategy)
 @settings(max_examples=50)
-def test_vql::parameter_instantiation(instance):
-    assert isinstance(instance, vql::Parameter)
-
-@given(instance=vql::Parameter_strategy)
-def test_vql::parameter_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_vql_parameter_instantiation(instance):
+    assert isinstance(instance, vql_Parameter)
 
 
-@given(instance=vql::Parameter_strategy)
-def test_vql::parameter_direction_setter(instance):
+
+@given(instance=vql_Parameter_strategy)
+def test_vql_parameter_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
@@ -2304,9 +2364,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Parameter_strategy)
+@given(instance=vql_Parameter_strategy)
 @settings(max_examples=30)
-def test_vql::parameter_tostring_changes_state(instance):
+def test_vql_parameter_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2318,19 +2378,19 @@ def test_vql::parameter_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Parameter is empty"
+        assert has_statements, f"Function 'toString' in vql_Parameter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Parameter did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Parameter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Parameter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Parameter is not implemented or raised an error")
 
-@given(instance=vql::LocalVariable_strategy)
+@given(instance=vql_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_vql::localvariable_instantiation(instance):
-    assert isinstance(instance, vql::LocalVariable)
+def test_vql_localvariable_instantiation(instance):
+    assert isinstance(instance, vql_LocalVariable)
 
 import warnings
 import copy
@@ -2338,9 +2398,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::LocalVariable_strategy)
+@given(instance=vql_LocalVariable_strategy)
 @settings(max_examples=30)
-def test_vql::localvariable_tostring_changes_state(instance):
+def test_vql_localvariable_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2352,19 +2412,19 @@ def test_vql::localvariable_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::LocalVariable is empty"
+        assert has_statements, f"Function 'toString' in vql_LocalVariable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::LocalVariable did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_LocalVariable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::LocalVariable is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_LocalVariable is not implemented or raised an error")
 
-@given(instance=vql::ParameterRef_strategy)
+@given(instance=vql_ParameterRef_strategy)
 @settings(max_examples=50)
-def test_vql::parameterref_instantiation(instance):
-    assert isinstance(instance, vql::ParameterRef)
+def test_vql_parameterref_instantiation(instance):
+    assert isinstance(instance, vql_ParameterRef)
 
 import warnings
 import copy
@@ -2372,9 +2432,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::ParameterRef_strategy)
+@given(instance=vql_ParameterRef_strategy)
 @settings(max_examples=30)
-def test_vql::parameterref_tostring_changes_state(instance):
+def test_vql_parameterref_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2386,19 +2446,19 @@ def test_vql::parameterref_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::ParameterRef is empty"
+        assert has_statements, f"Function 'toString' in vql_ParameterRef is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::ParameterRef did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_ParameterRef did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::ParameterRef is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_ParameterRef is not implemented or raised an error")
 
-@given(instance=vql::ComputationValue_strategy)
+@given(instance=vql_ComputationValue_strategy)
 @settings(max_examples=50)
-def test_vql::computationvalue_instantiation(instance):
-    assert isinstance(instance, vql::ComputationValue)
+def test_vql_computationvalue_instantiation(instance):
+    assert isinstance(instance, vql_ComputationValue)
 
 import warnings
 import copy
@@ -2406,9 +2466,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::ComputationValue_strategy)
+@given(instance=vql_ComputationValue_strategy)
 @settings(max_examples=30)
-def test_vql::computationvalue_tostring_changes_state(instance):
+def test_vql_computationvalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2420,19 +2480,19 @@ def test_vql::computationvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::ComputationValue is empty"
+        assert has_statements, f"Function 'toString' in vql_ComputationValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::ComputationValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_ComputationValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::ComputationValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_ComputationValue is not implemented or raised an error")
 
-@given(instance=vql::LiteralValueReference_strategy)
+@given(instance=vql_LiteralValueReference_strategy)
 @settings(max_examples=50)
-def test_vql::literalvaluereference_instantiation(instance):
-    assert isinstance(instance, vql::LiteralValueReference)
+def test_vql_literalvaluereference_instantiation(instance):
+    assert isinstance(instance, vql_LiteralValueReference)
 
 import warnings
 import copy
@@ -2440,9 +2500,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::LiteralValueReference_strategy)
+@given(instance=vql_LiteralValueReference_strategy)
 @settings(max_examples=30)
-def test_vql::literalvaluereference_tostring_changes_state(instance):
+def test_vql_literalvaluereference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2454,29 +2514,24 @@ def test_vql::literalvaluereference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::LiteralValueReference is empty"
+        assert has_statements, f"Function 'toString' in vql_LiteralValueReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::LiteralValueReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_LiteralValueReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::LiteralValueReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_LiteralValueReference is not implemented or raised an error")
 
 @given(instance=CallableRelation_strategy)
 @settings(max_examples=50)
 def test_callablerelation_instantiation(instance):
     assert isinstance(instance, CallableRelation)
 
-@given(instance=vql::UnaryTypeConstraint_strategy)
+@given(instance=vql_PathExpressionConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::unarytypeconstraint_instantiation(instance):
-    assert isinstance(instance, vql::UnaryTypeConstraint)
-
-@given(instance=vql::PathExpressionConstraint_strategy)
-@settings(max_examples=50)
-def test_vql::pathexpressionconstraint_instantiation(instance):
-    assert isinstance(instance, vql::PathExpressionConstraint)
+def test_vql_pathexpressionconstraint_instantiation(instance):
+    assert isinstance(instance, vql_PathExpressionConstraint)
 
 import warnings
 import copy
@@ -2484,9 +2539,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::PathExpressionConstraint_strategy)
+@given(instance=vql_PathExpressionConstraint_strategy)
 @settings(max_examples=30)
-def test_vql::pathexpressionconstraint_tostring_changes_state(instance):
+def test_vql_pathexpressionconstraint_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2498,19 +2553,24 @@ def test_vql::pathexpressionconstraint_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PathExpressionConstraint is empty"
+        assert has_statements, f"Function 'toString' in vql_PathExpressionConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PathExpressionConstraint did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_PathExpressionConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PathExpressionConstraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_PathExpressionConstraint is not implemented or raised an error")
 
-@given(instance=vql::PatternCall_strategy)
+@given(instance=vql_UnaryTypeConstraint_strategy)
 @settings(max_examples=50)
-def test_vql::patterncall_instantiation(instance):
-    assert isinstance(instance, vql::PatternCall)
+def test_vql_unarytypeconstraint_instantiation(instance):
+    assert isinstance(instance, vql_UnaryTypeConstraint)
+
+@given(instance=vql_PatternCall_strategy)
+@settings(max_examples=50)
+def test_vql_patterncall_instantiation(instance):
+    assert isinstance(instance, vql_PatternCall)
 
 import warnings
 import copy
@@ -2518,9 +2578,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::PatternCall_strategy)
+@given(instance=vql_PatternCall_strategy)
 @settings(max_examples=30)
-def test_vql::patterncall_tostring_changes_state(instance):
+def test_vql_patterncall_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2532,56 +2592,50 @@ def test_vql::patterncall_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PatternCall is empty"
+        assert has_statements, f"Function 'toString' in vql_PatternCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PatternCall did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_PatternCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PatternCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_PatternCall is not implemented or raised an error")
 
-@given(instance=vql::Constraint_strategy)
+@given(instance=vql_Constraint_strategy)
 @settings(max_examples=50)
-def test_vql::constraint_instantiation(instance):
-    assert isinstance(instance, vql::Constraint)
+def test_vql_constraint_instantiation(instance):
+    assert isinstance(instance, vql_Constraint)
 
-@given(instance=vql::Modifiers_strategy)
+@given(instance=vql_Modifiers_strategy)
 @settings(max_examples=50)
-def test_vql::modifiers_instantiation(instance):
-    assert isinstance(instance, vql::Modifiers)
-
-@given(instance=vql::Modifiers_strategy)
-def test_vql::modifiers_private_type(instance):
-    assert isinstance(instance.private, bool)
+def test_vql_modifiers_instantiation(instance):
+    assert isinstance(instance, vql_Modifiers)
 
 
-@given(instance=vql::Modifiers_strategy)
-def test_vql::modifiers_private_setter(instance):
-    original = instance.private
-    instance.private = original
-    assert instance.private == original
 
-@given(instance=vql::Modifiers_strategy)
-def test_vql::modifiers_execution_type(instance):
-    assert isinstance(instance.execution, str)
-
-
-@given(instance=vql::Modifiers_strategy)
-def test_vql::modifiers_execution_setter(instance):
+@given(instance=vql_Modifiers_strategy)
+def test_vql_modifiers_execution_setter(instance):
     original = instance.execution
     instance.execution = original
     assert instance.execution == original
 
+
+
+@given(instance=vql_Modifiers_strategy)
+def test_vql_modifiers_private_setter(instance):
+    original = instance.private
+    instance.private = original
+    assert instance.private == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Modifiers_strategy)
+@given(instance=vql_Modifiers_strategy)
 @settings(max_examples=30)
-def test_vql::modifiers_tostring_changes_state(instance):
+def test_vql_modifiers_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2593,27 +2647,24 @@ def test_vql::modifiers_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Modifiers is empty"
+        assert has_statements, f"Function 'toString' in vql_Modifiers is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Modifiers did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Modifiers did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Modifiers is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Modifiers is not implemented or raised an error")
 
-@given(instance=vql::Annotation_strategy)
+@given(instance=vql_Annotation_strategy)
 @settings(max_examples=50)
-def test_vql::annotation_instantiation(instance):
-    assert isinstance(instance, vql::Annotation)
-
-@given(instance=vql::Annotation_strategy)
-def test_vql::annotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vql_annotation_instantiation(instance):
+    assert isinstance(instance, vql_Annotation)
 
 
-@given(instance=vql::Annotation_strategy)
-def test_vql::annotation_name_setter(instance):
+
+@given(instance=vql_Annotation_strategy)
+def test_vql_annotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2624,9 +2675,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Annotation_strategy)
+@given(instance=vql_Annotation_strategy)
 @settings(max_examples=30)
-def test_vql::annotation_tostring_changes_state(instance):
+def test_vql_annotation_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2638,38 +2689,32 @@ def test_vql::annotation_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Annotation is empty"
+        assert has_statements, f"Function 'toString' in vql_Annotation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Annotation did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Annotation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Annotation is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Annotation is not implemented or raised an error")
 
-@given(instance=vql::VariableReference_strategy)
+@given(instance=vql_VariableReference_strategy)
 @settings(max_examples=50)
-def test_vql::variablereference_instantiation(instance):
-    assert isinstance(instance, vql::VariableReference)
-
-@given(instance=vql::VariableReference_strategy)
-def test_vql::variablereference_aggregator_type(instance):
-    assert isinstance(instance.aggregator, bool)
+def test_vql_variablereference_instantiation(instance):
+    assert isinstance(instance, vql_VariableReference)
 
 
-@given(instance=vql::VariableReference_strategy)
-def test_vql::variablereference_aggregator_setter(instance):
+
+@given(instance=vql_VariableReference_strategy)
+def test_vql_variablereference_aggregator_setter(instance):
     original = instance.aggregator
     instance.aggregator = original
     assert instance.aggregator == original
 
-@given(instance=vql::VariableReference_strategy)
-def test_vql::variablereference_var_type(instance):
-    assert isinstance(instance.var, str)
 
 
-@given(instance=vql::VariableReference_strategy)
-def test_vql::variablereference_var_setter(instance):
+@given(instance=vql_VariableReference_strategy)
+def test_vql_variablereference_var_setter(instance):
     original = instance.var
     instance.var = original
     assert instance.var == original
@@ -2680,9 +2725,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::VariableReference_strategy)
+@given(instance=vql_VariableReference_strategy)
 @settings(max_examples=30)
-def test_vql::variablereference_tostring_changes_state(instance):
+def test_vql_variablereference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2694,27 +2739,24 @@ def test_vql::variablereference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::VariableReference is empty"
+        assert has_statements, f"Function 'toString' in vql_VariableReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::VariableReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_VariableReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::VariableReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_VariableReference is not implemented or raised an error")
 
-@given(instance=vql::Type_strategy)
+@given(instance=vql_Type_strategy)
 @settings(max_examples=50)
-def test_vql::type_instantiation(instance):
-    assert isinstance(instance, vql::Type)
-
-@given(instance=vql::Type_strategy)
-def test_vql::type_typename_type(instance):
-    assert isinstance(instance.typename, str)
+def test_vql_type_instantiation(instance):
+    assert isinstance(instance, vql_Type)
 
 
-@given(instance=vql::Type_strategy)
-def test_vql::type_typename_setter(instance):
+
+@given(instance=vql_Type_strategy)
+def test_vql_type_typename_setter(instance):
     original = instance.typename
     instance.typename = original
     assert instance.typename == original
@@ -2725,9 +2767,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Type_strategy)
+@given(instance=vql_Type_strategy)
 @settings(max_examples=30)
-def test_vql::type_tostring_changes_state(instance):
+def test_vql_type_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2739,32 +2781,29 @@ def test_vql::type_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Type is empty"
+        assert has_statements, f"Function 'toString' in vql_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Type is not implemented or raised an error")
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=vql::Variable_strategy)
+@given(instance=vql_Variable_strategy)
 @settings(max_examples=50)
-def test_vql::variable_instantiation(instance):
-    assert isinstance(instance, vql::Variable)
-
-@given(instance=vql::Variable_strategy)
-def test_vql::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vql_variable_instantiation(instance):
+    assert isinstance(instance, vql_Variable)
 
 
-@given(instance=vql::Variable_strategy)
-def test_vql::variable_name_setter(instance):
+
+@given(instance=vql_Variable_strategy)
+def test_vql_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2775,9 +2814,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Variable_strategy)
+@given(instance=vql_Variable_strategy)
 @settings(max_examples=30)
-def test_vql::variable_tostring_changes_state(instance):
+def test_vql_variable_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2789,19 +2828,19 @@ def test_vql::variable_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Variable is empty"
+        assert has_statements, f"Function 'toString' in vql_Variable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Variable did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Variable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Variable is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Variable is not implemented or raised an error")
 
-@given(instance=vql::Expression_strategy)
+@given(instance=vql_Expression_strategy)
 @settings(max_examples=50)
-def test_vql::expression_instantiation(instance):
-    assert isinstance(instance, vql::Expression)
+def test_vql_expression_instantiation(instance):
+    assert isinstance(instance, vql_Expression)
 
 import warnings
 import copy
@@ -2809,9 +2848,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::Expression_strategy)
+@given(instance=vql_Expression_strategy)
 @settings(max_examples=30)
-def test_vql::expression_tostring_changes_state(instance):
+def test_vql_expression_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2823,19 +2862,19 @@ def test_vql::expression_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::Expression is empty"
+        assert has_statements, f"Function 'toString' in vql_Expression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::Expression did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_Expression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::Expression is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_Expression is not implemented or raised an error")
 
-@given(instance=vql::ValueReference_strategy)
+@given(instance=vql_ValueReference_strategy)
 @settings(max_examples=50)
-def test_vql::valuereference_instantiation(instance):
-    assert isinstance(instance, vql::ValueReference)
+def test_vql_valuereference_instantiation(instance):
+    assert isinstance(instance, vql_ValueReference)
 
 import warnings
 import copy
@@ -2843,9 +2882,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::ValueReference_strategy)
+@given(instance=vql_ValueReference_strategy)
 @settings(max_examples=30)
-def test_vql::valuereference_tostring_changes_state(instance):
+def test_vql_valuereference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2857,27 +2896,24 @@ def test_vql::valuereference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::ValueReference is empty"
+        assert has_statements, f"Function 'toString' in vql_ValueReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::ValueReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_ValueReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::ValueReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_ValueReference is not implemented or raised an error")
 
-@given(instance=vql::AnnotationParameter_strategy)
+@given(instance=vql_AnnotationParameter_strategy)
 @settings(max_examples=50)
-def test_vql::annotationparameter_instantiation(instance):
-    assert isinstance(instance, vql::AnnotationParameter)
-
-@given(instance=vql::AnnotationParameter_strategy)
-def test_vql::annotationparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vql_annotationparameter_instantiation(instance):
+    assert isinstance(instance, vql_AnnotationParameter)
 
 
-@given(instance=vql::AnnotationParameter_strategy)
-def test_vql::annotationparameter_name_setter(instance):
+
+@given(instance=vql_AnnotationParameter_strategy)
+def test_vql_annotationparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2888,9 +2924,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::AnnotationParameter_strategy)
+@given(instance=vql_AnnotationParameter_strategy)
 @settings(max_examples=30)
-def test_vql::annotationparameter_tostring_changes_state(instance):
+def test_vql_annotationparameter_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2902,27 +2938,24 @@ def test_vql::annotationparameter_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::AnnotationParameter is empty"
+        assert has_statements, f"Function 'toString' in vql_AnnotationParameter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::AnnotationParameter did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_AnnotationParameter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::AnnotationParameter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_AnnotationParameter is not implemented or raised an error")
 
-@given(instance=vql::PatternBody_strategy)
+@given(instance=vql_PatternBody_strategy)
 @settings(max_examples=50)
-def test_vql::patternbody_instantiation(instance):
-    assert isinstance(instance, vql::PatternBody)
-
-@given(instance=vql::PatternBody_strategy)
-def test_vql::patternbody_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vql_patternbody_instantiation(instance):
+    assert isinstance(instance, vql_PatternBody)
 
 
-@given(instance=vql::PatternBody_strategy)
-def test_vql::patternbody_name_setter(instance):
+
+@given(instance=vql_PatternBody_strategy)
+def test_vql_patternbody_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2933,9 +2966,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=vql::PatternBody_strategy)
+@given(instance=vql_PatternBody_strategy)
 @settings(max_examples=30)
-def test_vql::patternbody_tostring_changes_state(instance):
+def test_vql_patternbody_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2947,106 +2980,16 @@ def test_vql::patternbody_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PatternBody is empty"
+        assert has_statements, f"Function 'toString' in vql_PatternBody is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PatternBody did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in vql_PatternBody did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PatternBody is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in vql_PatternBody is not implemented or raised an error")
 
-@given(instance=vql::EPackage_strategy)
+@given(instance=vql_EPackage_strategy)
 @settings(max_examples=50)
-def test_vql::epackage_instantiation(instance):
-    assert isinstance(instance, vql::EPackage)
-
-@given(instance=vql::PatternImport_strategy)
-@settings(max_examples=50)
-def test_vql::patternimport_instantiation(instance):
-    assert isinstance(instance, vql::PatternImport)
-
-@given(instance=vql::PatternImport_strategy)
-def test_vql::patternimport_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
-
-
-@given(instance=vql::PatternImport_strategy)
-def test_vql::patternimport_packageName_setter(instance):
-    original = instance.packageName
-    instance.packageName = original
-    assert instance.packageName == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=vql::PatternImport_strategy)
-@settings(max_examples=30)
-def test_vql::patternimport_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PatternImport is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PatternImport did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PatternImport is not implemented or raised an error")
-
-@given(instance=vql::PackageImport_strategy)
-@settings(max_examples=50)
-def test_vql::packageimport_instantiation(instance):
-    assert isinstance(instance, vql::PackageImport)
-
-@given(instance=vql::PackageImport_strategy)
-def test_vql::packageimport_alias_type(instance):
-    assert isinstance(instance.alias, str)
-
-
-@given(instance=vql::PackageImport_strategy)
-def test_vql::packageimport_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=vql::PackageImport_strategy)
-@settings(max_examples=30)
-def test_vql::packageimport_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in vql::PackageImport is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in vql::PackageImport did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in vql::PackageImport is not implemented or raised an error")
+def test_vql_epackage_instantiation(instance):
+    assert isinstance(instance, vql_EPackage)

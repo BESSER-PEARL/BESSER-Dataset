@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Families::Family,
-    Families::FamilyRegister,
-    Families::FamilyMember,
+from python_code import (
+    Families_Family,
+    Families_FamilyRegister,
+    Families_FamilyMember,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_families::family_is_not_abstract():
-    assert not inspect.isabstract(Families::Family)
+def test_families_family_is_not_abstract():
+    assert not inspect.isabstract(Families_Family)
 
 
-def test_families::family_constructor_exists():
-    assert callable(Families::Family.__init__)
+def test_families_family_constructor_exists():
+    assert callable(Families_Family.__init__)
 
 
-def test_families::family_constructor_args():
-    sig = inspect.signature(Families::Family.__init__)
+def test_families_family_constructor_args():
+    sig = inspect.signature(Families_Family.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_families::family_has_name():
-    assert hasattr(Families::Family, "name")
+def test_families_family_has_name():
+    assert hasattr(Families_Family, "name")
     descriptor = None
-    for klass in Families::Family.__mro__:
+    for klass in Families_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,37 +41,37 @@ def test_families::family_has_name():
 
 
 
-def test_families::familyregister_is_not_abstract():
-    assert not inspect.isabstract(Families::FamilyRegister)
+def test_families_familyregister_is_not_abstract():
+    assert not inspect.isabstract(Families_FamilyRegister)
 
 
-def test_families::familyregister_constructor_exists():
-    assert callable(Families::FamilyRegister.__init__)
+def test_families_familyregister_constructor_exists():
+    assert callable(Families_FamilyRegister.__init__)
 
 
-def test_families::familyregister_constructor_args():
-    sig = inspect.signature(Families::FamilyRegister.__init__)
+def test_families_familyregister_constructor_args():
+    sig = inspect.signature(Families_FamilyRegister.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families::familymember_is_not_abstract():
-    assert not inspect.isabstract(Families::FamilyMember)
+def test_families_familymember_is_not_abstract():
+    assert not inspect.isabstract(Families_FamilyMember)
 
 
-def test_families::familymember_constructor_exists():
-    assert callable(Families::FamilyMember.__init__)
+def test_families_familymember_constructor_exists():
+    assert callable(Families_FamilyMember.__init__)
 
 
-def test_families::familymember_constructor_args():
-    sig = inspect.signature(Families::FamilyMember.__init__)
+def test_families_familymember_constructor_args():
+    sig = inspect.signature(Families_FamilyMember.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_families::familymember_has_name():
-    assert hasattr(Families::FamilyMember, "name")
+def test_families_familymember_has_name():
+    assert hasattr(Families_FamilyMember, "name")
     descriptor = None
-    for klass in Families::FamilyMember.__mro__:
+    for klass in Families_FamilyMember.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Families::Family_strategy = st.builds(
-    Families::Family,
+Families_Family_strategy = st.builds(
+    Families_Family,
     name=
         safe_text
 )
-Families::FamilyRegister_strategy = st.builds(
-    Families::FamilyRegister,
+Families_FamilyRegister_strategy = st.builds(
+    Families_FamilyRegister,
 )
-Families::FamilyMember_strategy = st.builds(
-    Families::FamilyMember,
+Families_FamilyMember_strategy = st.builds(
+    Families_FamilyMember,
     name=
         safe_text
 )
 
-@given(instance=Families::Family_strategy)
+@given(instance=Families_Family_strategy)
 @settings(max_examples=50)
-def test_families::family_instantiation(instance):
-    assert isinstance(instance, Families::Family)
-
-@given(instance=Families::Family_strategy)
-def test_families::family_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_families_family_instantiation(instance):
+    assert isinstance(instance, Families_Family)
 
 
-@given(instance=Families::Family_strategy)
-def test_families::family_name_setter(instance):
+
+@given(instance=Families_Family_strategy)
+def test_families_family_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Families::FamilyRegister_strategy)
+@given(instance=Families_FamilyRegister_strategy)
 @settings(max_examples=50)
-def test_families::familyregister_instantiation(instance):
-    assert isinstance(instance, Families::FamilyRegister)
+def test_families_familyregister_instantiation(instance):
+    assert isinstance(instance, Families_FamilyRegister)
 
-@given(instance=Families::FamilyMember_strategy)
+@given(instance=Families_FamilyMember_strategy)
 @settings(max_examples=50)
-def test_families::familymember_instantiation(instance):
-    assert isinstance(instance, Families::FamilyMember)
-
-@given(instance=Families::FamilyMember_strategy)
-def test_families::familymember_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_families_familymember_instantiation(instance):
+    assert isinstance(instance, Families_FamilyMember)
 
 
-@given(instance=Families::FamilyMember_strategy)
-def test_families::familymember_name_setter(instance):
+
+@given(instance=Families_FamilyMember_strategy)
+def test_families_familymember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

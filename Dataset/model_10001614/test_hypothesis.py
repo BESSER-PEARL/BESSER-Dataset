@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     fsdf,
@@ -690,9 +690,6 @@ Customer1_Actor_strategy = st.builds(
 def test_fsdf_instantiation(instance):
     assert isinstance(instance, fsdf)
 
-@given(instance=fsdf_strategy)
-def test_fsdf_fdasf_type(instance):
-    assert isinstance(instance.fdasf, int)
 
 
 @given(instance=fsdf_strategy)

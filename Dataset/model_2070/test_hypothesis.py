@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpletree::Tree,
+from python_code import (
+    simpletree_Tree,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_simpletree::tree_is_not_abstract():
-    assert not inspect.isabstract(simpletree::Tree)
+def test_simpletree_tree_is_not_abstract():
+    assert not inspect.isabstract(simpletree_Tree)
 
 
-def test_simpletree::tree_constructor_exists():
-    assert callable(simpletree::Tree.__init__)
+def test_simpletree_tree_constructor_exists():
+    assert callable(simpletree_Tree.__init__)
 
 
-def test_simpletree::tree_constructor_args():
-    sig = inspect.signature(simpletree::Tree.__init__)
+def test_simpletree_tree_constructor_args():
+    sig = inspect.signature(simpletree_Tree.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_simpletree::tree_has_label():
-    assert hasattr(simpletree::Tree, "label")
+def test_simpletree_tree_has_label():
+    assert hasattr(simpletree_Tree, "label")
     descriptor = None
-    for klass in simpletree::Tree.__mro__:
+    for klass in simpletree_Tree.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpletree::Tree_strategy = st.builds(
-    simpletree::Tree,
+simpletree_Tree_strategy = st.builds(
+    simpletree_Tree,
     label=
         safe_text
 )
 
-@given(instance=simpletree::Tree_strategy)
+@given(instance=simpletree_Tree_strategy)
 @settings(max_examples=50)
-def test_simpletree::tree_instantiation(instance):
-    assert isinstance(instance, simpletree::Tree)
-
-@given(instance=simpletree::Tree_strategy)
-def test_simpletree::tree_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_simpletree_tree_instantiation(instance):
+    assert isinstance(instance, simpletree_Tree)
 
 
-@given(instance=simpletree::Tree_strategy)
-def test_simpletree::tree_label_setter(instance):
+
+@given(instance=simpletree_Tree_strategy)
+def test_simpletree_tree_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

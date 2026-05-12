@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    l2::C,
+from python_code import (
+    l2_C,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_l2::c_is_not_abstract():
-    assert not inspect.isabstract(l2::C)
+def test_l2_c_is_not_abstract():
+    assert not inspect.isabstract(l2_C)
 
 
-def test_l2::c_constructor_exists():
-    assert callable(l2::C.__init__)
+def test_l2_c_constructor_exists():
+    assert callable(l2_C.__init__)
 
 
-def test_l2::c_constructor_args():
-    sig = inspect.signature(l2::C.__init__)
+def test_l2_c_constructor_args():
+    sig = inspect.signature(l2_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-l2::C_strategy = st.builds(
-    l2::C,
+l2_C_strategy = st.builds(
+    l2_C,
 )
 
-@given(instance=l2::C_strategy)
+@given(instance=l2_C_strategy)
 @settings(max_examples=50)
-def test_l2::c_instantiation(instance):
-    assert isinstance(instance, l2::C)
+def test_l2_c_instantiation(instance):
+    assert isinstance(instance, l2_C)

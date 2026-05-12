@@ -3,107 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SpreadsheetMLSimplified::DateTimeType,
+from python_code import (
     ColOrRowElement,
-    SpreadsheetMLSimplified::Table,
+    SpreadsheetMLSimplified_Table,
     TableElement,
-    SpreadsheetMLSimplified::Cell,
-    SpreadsheetMLSimplified::ColOrRowElement,
-    SpreadsheetMLSimplified::TableElement,
-    SpreadsheetMLSimplified::Row,
-    SpreadsheetMLSimplified::Column,
+    SpreadsheetMLSimplified_Cell,
+    SpreadsheetMLSimplified_ColOrRowElement,
+    SpreadsheetMLSimplified_TableElement,
+    SpreadsheetMLSimplified_Row,
+    SpreadsheetMLSimplified_Column,
     ValueType,
-    SpreadsheetMLSimplified::NumberValue,
-    SpreadsheetMLSimplified::StringValue,
-    SpreadsheetMLSimplified::Data,
-    SpreadsheetMLSimplified::Worksheet,
-    SpreadsheetMLSimplified::Workbook,
-    SpreadsheetMLSimplified::ErrorValue,
-    SpreadsheetMLSimplified::BooleanValue,
-    SpreadsheetMLSimplified::DateTimeTypeValue,
-    SpreadsheetMLSimplified::ValueType,
+    SpreadsheetMLSimplified_NumberValue,
+    SpreadsheetMLSimplified_StringValue,
+    SpreadsheetMLSimplified_Data,
+    SpreadsheetMLSimplified_Worksheet,
+    SpreadsheetMLSimplified_Workbook,
+    SpreadsheetMLSimplified_ErrorValue,
+    SpreadsheetMLSimplified_BooleanValue,
+    SpreadsheetMLSimplified_DateTimeTypeValue,
+    SpreadsheetMLSimplified_ValueType,
+    SpreadsheetMLSimplified_DateTimeType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_spreadsheetmlsimplified::datetimetype_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::DateTimeType)
-
-
-def test_spreadsheetmlsimplified::datetimetype_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::DateTimeType.__init__)
-
-
-def test_spreadsheetmlsimplified::datetimetype_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::DateTimeType.__init__)
-    params = list(sig.parameters.keys())
-    assert "hour" in params, "Missing parameter 'hour'"
-    assert "second" in params, "Missing parameter 'second'"
-    assert "minute" in params, "Missing parameter 'minute'"
-    assert "year" in params, "Missing parameter 'year'"
-    assert "month" in params, "Missing parameter 'month'"
-    assert "day" in params, "Missing parameter 'day'"
-
-def test_spreadsheetmlsimplified::datetimetype_has_hour():
-    assert hasattr(SpreadsheetMLSimplified::DateTimeType, "hour")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::DateTimeType.__mro__:
-        if "hour" in klass.__dict__:
-            descriptor = klass.__dict__["hour"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::datetimetype_has_second():
-    assert hasattr(SpreadsheetMLSimplified::DateTimeType, "second")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::DateTimeType.__mro__:
-        if "second" in klass.__dict__:
-            descriptor = klass.__dict__["second"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::datetimetype_has_minute():
-    assert hasattr(SpreadsheetMLSimplified::DateTimeType, "minute")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::DateTimeType.__mro__:
-        if "minute" in klass.__dict__:
-            descriptor = klass.__dict__["minute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::datetimetype_has_year():
-    assert hasattr(SpreadsheetMLSimplified::DateTimeType, "year")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::DateTimeType.__mro__:
-        if "year" in klass.__dict__:
-            descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::datetimetype_has_month():
-    assert hasattr(SpreadsheetMLSimplified::DateTimeType, "month")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::DateTimeType.__mro__:
-        if "month" in klass.__dict__:
-            descriptor = klass.__dict__["month"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::datetimetype_has_day():
-    assert hasattr(SpreadsheetMLSimplified::DateTimeType, "day")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::DateTimeType.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -121,16 +47,16 @@ def test_colorrowelement_constructor_args():
 
 
 
-def test_spreadsheetmlsimplified::table_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Table)
+def test_spreadsheetmlsimplified_table_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Table)
 
 
-def test_spreadsheetmlsimplified::table_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Table.__init__)
+def test_spreadsheetmlsimplified_table_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Table.__init__)
 
 
-def test_spreadsheetmlsimplified::table_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Table.__init__)
+def test_spreadsheetmlsimplified_table_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,121 +75,121 @@ def test_tableelement_constructor_args():
 
 
 
-def test_spreadsheetmlsimplified::cell_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Cell)
+def test_spreadsheetmlsimplified_cell_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Cell)
 
 
-def test_spreadsheetmlsimplified::cell_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Cell.__init__)
+def test_spreadsheetmlsimplified_cell_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Cell.__init__)
 
 
-def test_spreadsheetmlsimplified::cell_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Cell.__init__)
+def test_spreadsheetmlsimplified_cell_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Cell.__init__)
     params = list(sig.parameters.keys())
-    assert "hRef" in params, "Missing parameter 'hRef'"
     assert "formula" in params, "Missing parameter 'formula'"
-    assert "arrayRange" in params, "Missing parameter 'arrayRange'"
-    assert "mergeAcross" in params, "Missing parameter 'mergeAcross'"
     assert "mergeDown" in params, "Missing parameter 'mergeDown'"
+    assert "mergeAcross" in params, "Missing parameter 'mergeAcross'"
+    assert "hRef" in params, "Missing parameter 'hRef'"
+    assert "arrayRange" in params, "Missing parameter 'arrayRange'"
 
-def test_spreadsheetmlsimplified::cell_has_hRef():
-    assert hasattr(SpreadsheetMLSimplified::Cell, "hRef")
+def test_spreadsheetmlsimplified_cell_has_formula():
+    assert hasattr(SpreadsheetMLSimplified_Cell, "formula")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Cell.__mro__:
-        if "hRef" in klass.__dict__:
-            descriptor = klass.__dict__["hRef"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::cell_has_formula():
-    assert hasattr(SpreadsheetMLSimplified::Cell, "formula")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::Cell.__mro__:
+    for klass in SpreadsheetMLSimplified_Cell.__mro__:
         if "formula" in klass.__dict__:
             descriptor = klass.__dict__["formula"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheetmlsimplified::cell_has_arrayRange():
-    assert hasattr(SpreadsheetMLSimplified::Cell, "arrayRange")
+def test_spreadsheetmlsimplified_cell_has_mergeDown():
+    assert hasattr(SpreadsheetMLSimplified_Cell, "mergeDown")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Cell.__mro__:
-        if "arrayRange" in klass.__dict__:
-            descriptor = klass.__dict__["arrayRange"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::cell_has_mergeAcross():
-    assert hasattr(SpreadsheetMLSimplified::Cell, "mergeAcross")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::Cell.__mro__:
-        if "mergeAcross" in klass.__dict__:
-            descriptor = klass.__dict__["mergeAcross"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheetmlsimplified::cell_has_mergeDown():
-    assert hasattr(SpreadsheetMLSimplified::Cell, "mergeDown")
-    descriptor = None
-    for klass in SpreadsheetMLSimplified::Cell.__mro__:
+    for klass in SpreadsheetMLSimplified_Cell.__mro__:
         if "mergeDown" in klass.__dict__:
             descriptor = klass.__dict__["mergeDown"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_spreadsheetmlsimplified::colorrowelement_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::ColOrRowElement)
-
-
-def test_spreadsheetmlsimplified::colorrowelement_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::ColOrRowElement.__init__)
-
-
-def test_spreadsheetmlsimplified::colorrowelement_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::ColOrRowElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "hidden" in params, "Missing parameter 'hidden'"
-    assert "span" in params, "Missing parameter 'span'"
-
-def test_spreadsheetmlsimplified::colorrowelement_has_hidden():
-    assert hasattr(SpreadsheetMLSimplified::ColOrRowElement, "hidden")
+def test_spreadsheetmlsimplified_cell_has_mergeAcross():
+    assert hasattr(SpreadsheetMLSimplified_Cell, "mergeAcross")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::ColOrRowElement.__mro__:
-        if "hidden" in klass.__dict__:
-            descriptor = klass.__dict__["hidden"]
+    for klass in SpreadsheetMLSimplified_Cell.__mro__:
+        if "mergeAcross" in klass.__dict__:
+            descriptor = klass.__dict__["mergeAcross"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheetmlsimplified::colorrowelement_has_span():
-    assert hasattr(SpreadsheetMLSimplified::ColOrRowElement, "span")
+def test_spreadsheetmlsimplified_cell_has_hRef():
+    assert hasattr(SpreadsheetMLSimplified_Cell, "hRef")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::ColOrRowElement.__mro__:
+    for klass in SpreadsheetMLSimplified_Cell.__mro__:
+        if "hRef" in klass.__dict__:
+            descriptor = klass.__dict__["hRef"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spreadsheetmlsimplified_cell_has_arrayRange():
+    assert hasattr(SpreadsheetMLSimplified_Cell, "arrayRange")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_Cell.__mro__:
+        if "arrayRange" in klass.__dict__:
+            descriptor = klass.__dict__["arrayRange"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_spreadsheetmlsimplified_colorrowelement_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_ColOrRowElement)
+
+
+def test_spreadsheetmlsimplified_colorrowelement_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_ColOrRowElement.__init__)
+
+
+def test_spreadsheetmlsimplified_colorrowelement_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_ColOrRowElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "span" in params, "Missing parameter 'span'"
+    assert "hidden" in params, "Missing parameter 'hidden'"
+
+def test_spreadsheetmlsimplified_colorrowelement_has_span():
+    assert hasattr(SpreadsheetMLSimplified_ColOrRowElement, "span")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_ColOrRowElement.__mro__:
         if "span" in klass.__dict__:
             descriptor = klass.__dict__["span"]
             break
     assert isinstance(descriptor, property)
 
+def test_spreadsheetmlsimplified_colorrowelement_has_hidden():
+    assert hasattr(SpreadsheetMLSimplified_ColOrRowElement, "hidden")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_ColOrRowElement.__mro__:
+        if "hidden" in klass.__dict__:
+            descriptor = klass.__dict__["hidden"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_spreadsheetmlsimplified::tableelement_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::TableElement)
+
+def test_spreadsheetmlsimplified_tableelement_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_TableElement)
 
 
-def test_spreadsheetmlsimplified::tableelement_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::TableElement.__init__)
+def test_spreadsheetmlsimplified_tableelement_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_TableElement.__init__)
 
 
-def test_spreadsheetmlsimplified::tableelement_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::TableElement.__init__)
+def test_spreadsheetmlsimplified_tableelement_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_TableElement.__init__)
     params = list(sig.parameters.keys())
     assert "index" in params, "Missing parameter 'index'"
 
-def test_spreadsheetmlsimplified::tableelement_has_index():
-    assert hasattr(SpreadsheetMLSimplified::TableElement, "index")
+def test_spreadsheetmlsimplified_tableelement_has_index():
+    assert hasattr(SpreadsheetMLSimplified_TableElement, "index")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::TableElement.__mro__:
+    for klass in SpreadsheetMLSimplified_TableElement.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
@@ -271,33 +197,33 @@ def test_spreadsheetmlsimplified::tableelement_has_index():
 
 
 
-def test_spreadsheetmlsimplified::row_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Row)
+def test_spreadsheetmlsimplified_row_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Row)
 
 
-def test_spreadsheetmlsimplified::row_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Row.__init__)
+def test_spreadsheetmlsimplified_row_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Row.__init__)
 
 
-def test_spreadsheetmlsimplified::row_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Row.__init__)
+def test_spreadsheetmlsimplified_row_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Row.__init__)
     params = list(sig.parameters.keys())
     assert "autoFitHeight" in params, "Missing parameter 'autoFitHeight'"
     assert "height" in params, "Missing parameter 'height'"
 
-def test_spreadsheetmlsimplified::row_has_autoFitHeight():
-    assert hasattr(SpreadsheetMLSimplified::Row, "autoFitHeight")
+def test_spreadsheetmlsimplified_row_has_autoFitHeight():
+    assert hasattr(SpreadsheetMLSimplified_Row, "autoFitHeight")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Row.__mro__:
+    for klass in SpreadsheetMLSimplified_Row.__mro__:
         if "autoFitHeight" in klass.__dict__:
             descriptor = klass.__dict__["autoFitHeight"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheetmlsimplified::row_has_height():
-    assert hasattr(SpreadsheetMLSimplified::Row, "height")
+def test_spreadsheetmlsimplified_row_has_height():
+    assert hasattr(SpreadsheetMLSimplified_Row, "height")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Row.__mro__:
+    for klass in SpreadsheetMLSimplified_Row.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
@@ -305,33 +231,33 @@ def test_spreadsheetmlsimplified::row_has_height():
 
 
 
-def test_spreadsheetmlsimplified::column_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Column)
+def test_spreadsheetmlsimplified_column_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Column)
 
 
-def test_spreadsheetmlsimplified::column_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Column.__init__)
+def test_spreadsheetmlsimplified_column_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Column.__init__)
 
 
-def test_spreadsheetmlsimplified::column_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Column.__init__)
+def test_spreadsheetmlsimplified_column_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Column.__init__)
     params = list(sig.parameters.keys())
     assert "width" in params, "Missing parameter 'width'"
     assert "autoFitWidth" in params, "Missing parameter 'autoFitWidth'"
 
-def test_spreadsheetmlsimplified::column_has_width():
-    assert hasattr(SpreadsheetMLSimplified::Column, "width")
+def test_spreadsheetmlsimplified_column_has_width():
+    assert hasattr(SpreadsheetMLSimplified_Column, "width")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Column.__mro__:
+    for klass in SpreadsheetMLSimplified_Column.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheetmlsimplified::column_has_autoFitWidth():
-    assert hasattr(SpreadsheetMLSimplified::Column, "autoFitWidth")
+def test_spreadsheetmlsimplified_column_has_autoFitWidth():
+    assert hasattr(SpreadsheetMLSimplified_Column, "autoFitWidth")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Column.__mro__:
+    for klass in SpreadsheetMLSimplified_Column.__mro__:
         if "autoFitWidth" in klass.__dict__:
             descriptor = klass.__dict__["autoFitWidth"]
             break
@@ -353,23 +279,23 @@ def test_valuetype_constructor_args():
 
 
 
-def test_spreadsheetmlsimplified::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::NumberValue)
+def test_spreadsheetmlsimplified_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_NumberValue)
 
 
-def test_spreadsheetmlsimplified::numbervalue_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::NumberValue.__init__)
+def test_spreadsheetmlsimplified_numbervalue_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_NumberValue.__init__)
 
 
-def test_spreadsheetmlsimplified::numbervalue_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::NumberValue.__init__)
+def test_spreadsheetmlsimplified_numbervalue_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_NumberValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_spreadsheetmlsimplified::numbervalue_has_value():
-    assert hasattr(SpreadsheetMLSimplified::NumberValue, "value")
+def test_spreadsheetmlsimplified_numbervalue_has_value():
+    assert hasattr(SpreadsheetMLSimplified_NumberValue, "value")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::NumberValue.__mro__:
+    for klass in SpreadsheetMLSimplified_NumberValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -377,23 +303,23 @@ def test_spreadsheetmlsimplified::numbervalue_has_value():
 
 
 
-def test_spreadsheetmlsimplified::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::StringValue)
+def test_spreadsheetmlsimplified_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_StringValue)
 
 
-def test_spreadsheetmlsimplified::stringvalue_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::StringValue.__init__)
+def test_spreadsheetmlsimplified_stringvalue_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_StringValue.__init__)
 
 
-def test_spreadsheetmlsimplified::stringvalue_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::StringValue.__init__)
+def test_spreadsheetmlsimplified_stringvalue_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_spreadsheetmlsimplified::stringvalue_has_value():
-    assert hasattr(SpreadsheetMLSimplified::StringValue, "value")
+def test_spreadsheetmlsimplified_stringvalue_has_value():
+    assert hasattr(SpreadsheetMLSimplified_StringValue, "value")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::StringValue.__mro__:
+    for klass in SpreadsheetMLSimplified_StringValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -401,37 +327,37 @@ def test_spreadsheetmlsimplified::stringvalue_has_value():
 
 
 
-def test_spreadsheetmlsimplified::data_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Data)
+def test_spreadsheetmlsimplified_data_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Data)
 
 
-def test_spreadsheetmlsimplified::data_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Data.__init__)
+def test_spreadsheetmlsimplified_data_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Data.__init__)
 
 
-def test_spreadsheetmlsimplified::data_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Data.__init__)
+def test_spreadsheetmlsimplified_data_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Data.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spreadsheetmlsimplified::worksheet_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Worksheet)
+def test_spreadsheetmlsimplified_worksheet_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Worksheet)
 
 
-def test_spreadsheetmlsimplified::worksheet_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Worksheet.__init__)
+def test_spreadsheetmlsimplified_worksheet_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Worksheet.__init__)
 
 
-def test_spreadsheetmlsimplified::worksheet_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Worksheet.__init__)
+def test_spreadsheetmlsimplified_worksheet_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Worksheet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spreadsheetmlsimplified::worksheet_has_name():
-    assert hasattr(SpreadsheetMLSimplified::Worksheet, "name")
+def test_spreadsheetmlsimplified_worksheet_has_name():
+    assert hasattr(SpreadsheetMLSimplified_Worksheet, "name")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::Worksheet.__mro__:
+    for klass in SpreadsheetMLSimplified_Worksheet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -439,51 +365,51 @@ def test_spreadsheetmlsimplified::worksheet_has_name():
 
 
 
-def test_spreadsheetmlsimplified::workbook_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::Workbook)
+def test_spreadsheetmlsimplified_workbook_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_Workbook)
 
 
-def test_spreadsheetmlsimplified::workbook_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::Workbook.__init__)
+def test_spreadsheetmlsimplified_workbook_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_Workbook.__init__)
 
 
-def test_spreadsheetmlsimplified::workbook_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::Workbook.__init__)
+def test_spreadsheetmlsimplified_workbook_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_Workbook.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spreadsheetmlsimplified::errorvalue_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::ErrorValue)
+def test_spreadsheetmlsimplified_errorvalue_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_ErrorValue)
 
 
-def test_spreadsheetmlsimplified::errorvalue_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::ErrorValue.__init__)
+def test_spreadsheetmlsimplified_errorvalue_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_ErrorValue.__init__)
 
 
-def test_spreadsheetmlsimplified::errorvalue_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::ErrorValue.__init__)
+def test_spreadsheetmlsimplified_errorvalue_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_ErrorValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spreadsheetmlsimplified::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::BooleanValue)
+def test_spreadsheetmlsimplified_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_BooleanValue)
 
 
-def test_spreadsheetmlsimplified::booleanvalue_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::BooleanValue.__init__)
+def test_spreadsheetmlsimplified_booleanvalue_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_BooleanValue.__init__)
 
 
-def test_spreadsheetmlsimplified::booleanvalue_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::BooleanValue.__init__)
+def test_spreadsheetmlsimplified_booleanvalue_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_spreadsheetmlsimplified::booleanvalue_has_value():
-    assert hasattr(SpreadsheetMLSimplified::BooleanValue, "value")
+def test_spreadsheetmlsimplified_booleanvalue_has_value():
+    assert hasattr(SpreadsheetMLSimplified_BooleanValue, "value")
     descriptor = None
-    for klass in SpreadsheetMLSimplified::BooleanValue.__mro__:
+    for klass in SpreadsheetMLSimplified_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -491,31 +417,105 @@ def test_spreadsheetmlsimplified::booleanvalue_has_value():
 
 
 
-def test_spreadsheetmlsimplified::datetimetypevalue_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::DateTimeTypeValue)
+def test_spreadsheetmlsimplified_datetimetypevalue_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_DateTimeTypeValue)
 
 
-def test_spreadsheetmlsimplified::datetimetypevalue_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::DateTimeTypeValue.__init__)
+def test_spreadsheetmlsimplified_datetimetypevalue_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_DateTimeTypeValue.__init__)
 
 
-def test_spreadsheetmlsimplified::datetimetypevalue_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::DateTimeTypeValue.__init__)
+def test_spreadsheetmlsimplified_datetimetypevalue_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_DateTimeTypeValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spreadsheetmlsimplified::valuetype_is_not_abstract():
-    assert not inspect.isabstract(SpreadsheetMLSimplified::ValueType)
+def test_spreadsheetmlsimplified_valuetype_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_ValueType)
 
 
-def test_spreadsheetmlsimplified::valuetype_constructor_exists():
-    assert callable(SpreadsheetMLSimplified::ValueType.__init__)
+def test_spreadsheetmlsimplified_valuetype_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_ValueType.__init__)
 
 
-def test_spreadsheetmlsimplified::valuetype_constructor_args():
-    sig = inspect.signature(SpreadsheetMLSimplified::ValueType.__init__)
+def test_spreadsheetmlsimplified_valuetype_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_ValueType.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_spreadsheetmlsimplified_datetimetype_is_not_abstract():
+    assert not inspect.isabstract(SpreadsheetMLSimplified_DateTimeType)
+
+
+def test_spreadsheetmlsimplified_datetimetype_constructor_exists():
+    assert callable(SpreadsheetMLSimplified_DateTimeType.__init__)
+
+
+def test_spreadsheetmlsimplified_datetimetype_constructor_args():
+    sig = inspect.signature(SpreadsheetMLSimplified_DateTimeType.__init__)
+    params = list(sig.parameters.keys())
+    assert "day" in params, "Missing parameter 'day'"
+    assert "month" in params, "Missing parameter 'month'"
+    assert "minute" in params, "Missing parameter 'minute'"
+    assert "hour" in params, "Missing parameter 'hour'"
+    assert "second" in params, "Missing parameter 'second'"
+    assert "year" in params, "Missing parameter 'year'"
+
+def test_spreadsheetmlsimplified_datetimetype_has_day():
+    assert hasattr(SpreadsheetMLSimplified_DateTimeType, "day")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_DateTimeType.__mro__:
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spreadsheetmlsimplified_datetimetype_has_month():
+    assert hasattr(SpreadsheetMLSimplified_DateTimeType, "month")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_DateTimeType.__mro__:
+        if "month" in klass.__dict__:
+            descriptor = klass.__dict__["month"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spreadsheetmlsimplified_datetimetype_has_minute():
+    assert hasattr(SpreadsheetMLSimplified_DateTimeType, "minute")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_DateTimeType.__mro__:
+        if "minute" in klass.__dict__:
+            descriptor = klass.__dict__["minute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spreadsheetmlsimplified_datetimetype_has_hour():
+    assert hasattr(SpreadsheetMLSimplified_DateTimeType, "hour")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_DateTimeType.__mro__:
+        if "hour" in klass.__dict__:
+            descriptor = klass.__dict__["hour"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spreadsheetmlsimplified_datetimetype_has_second():
+    assert hasattr(SpreadsheetMLSimplified_DateTimeType, "second")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_DateTimeType.__mro__:
+        if "second" in klass.__dict__:
+            descriptor = klass.__dict__["second"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spreadsheetmlsimplified_datetimetype_has_year():
+    assert hasattr(SpreadsheetMLSimplified_DateTimeType, "year")
+    descriptor = None
+    for klass in SpreadsheetMLSimplified_DateTimeType.__mro__:
+        if "year" in klass.__dict__:
+            descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -529,64 +529,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SpreadsheetMLSimplified::DateTimeType_strategy = st.builds(
-    SpreadsheetMLSimplified::DateTimeType,
-    hour=
-        st.integers(),
-    second=
-        st.integers(),
-    minute=
-        st.integers(),
-    year=
-        st.integers(),
-    month=
-        st.integers(),
-    day=
-        st.integers()
-)
 ColOrRowElement_strategy = st.builds(
     ColOrRowElement,
 )
-SpreadsheetMLSimplified::Table_strategy = st.builds(
-    SpreadsheetMLSimplified::Table,
+SpreadsheetMLSimplified_Table_strategy = st.builds(
+    SpreadsheetMLSimplified_Table,
 )
 TableElement_strategy = st.builds(
     TableElement,
 )
-SpreadsheetMLSimplified::Cell_strategy = st.builds(
-    SpreadsheetMLSimplified::Cell,
-    hRef=
-        safe_text,
+SpreadsheetMLSimplified_Cell_strategy = st.builds(
+    SpreadsheetMLSimplified_Cell,
     formula=
         safe_text,
-    arrayRange=
-        safe_text,
+    mergeDown=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     mergeAcross=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    mergeDown=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+    hRef=
+        safe_text,
+    arrayRange=
+        safe_text
 )
-SpreadsheetMLSimplified::ColOrRowElement_strategy = st.builds(
-    SpreadsheetMLSimplified::ColOrRowElement,
-    hidden=
-        st.booleans(),
+SpreadsheetMLSimplified_ColOrRowElement_strategy = st.builds(
+    SpreadsheetMLSimplified_ColOrRowElement,
     span=
-        st.integers()
+        st.integers(),
+    hidden=
+        st.booleans()
 )
-SpreadsheetMLSimplified::TableElement_strategy = st.builds(
-    SpreadsheetMLSimplified::TableElement,
+SpreadsheetMLSimplified_TableElement_strategy = st.builds(
+    SpreadsheetMLSimplified_TableElement,
     index=
         st.integers()
 )
-SpreadsheetMLSimplified::Row_strategy = st.builds(
-    SpreadsheetMLSimplified::Row,
+SpreadsheetMLSimplified_Row_strategy = st.builds(
+    SpreadsheetMLSimplified_Row,
     autoFitHeight=
         st.booleans(),
     height=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-SpreadsheetMLSimplified::Column_strategy = st.builds(
-    SpreadsheetMLSimplified::Column,
+SpreadsheetMLSimplified_Column_strategy = st.builds(
+    SpreadsheetMLSimplified_Column,
     width=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     autoFitWidth=
@@ -595,281 +580,189 @@ SpreadsheetMLSimplified::Column_strategy = st.builds(
 ValueType_strategy = st.builds(
     ValueType,
 )
-SpreadsheetMLSimplified::NumberValue_strategy = st.builds(
-    SpreadsheetMLSimplified::NumberValue,
+SpreadsheetMLSimplified_NumberValue_strategy = st.builds(
+    SpreadsheetMLSimplified_NumberValue,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-SpreadsheetMLSimplified::StringValue_strategy = st.builds(
-    SpreadsheetMLSimplified::StringValue,
+SpreadsheetMLSimplified_StringValue_strategy = st.builds(
+    SpreadsheetMLSimplified_StringValue,
     value=
         safe_text
 )
-SpreadsheetMLSimplified::Data_strategy = st.builds(
-    SpreadsheetMLSimplified::Data,
+SpreadsheetMLSimplified_Data_strategy = st.builds(
+    SpreadsheetMLSimplified_Data,
 )
-SpreadsheetMLSimplified::Worksheet_strategy = st.builds(
-    SpreadsheetMLSimplified::Worksheet,
+SpreadsheetMLSimplified_Worksheet_strategy = st.builds(
+    SpreadsheetMLSimplified_Worksheet,
     name=
         safe_text
 )
-SpreadsheetMLSimplified::Workbook_strategy = st.builds(
-    SpreadsheetMLSimplified::Workbook,
+SpreadsheetMLSimplified_Workbook_strategy = st.builds(
+    SpreadsheetMLSimplified_Workbook,
 )
-SpreadsheetMLSimplified::ErrorValue_strategy = st.builds(
-    SpreadsheetMLSimplified::ErrorValue,
+SpreadsheetMLSimplified_ErrorValue_strategy = st.builds(
+    SpreadsheetMLSimplified_ErrorValue,
 )
-SpreadsheetMLSimplified::BooleanValue_strategy = st.builds(
-    SpreadsheetMLSimplified::BooleanValue,
+SpreadsheetMLSimplified_BooleanValue_strategy = st.builds(
+    SpreadsheetMLSimplified_BooleanValue,
     value=
         st.booleans()
 )
-SpreadsheetMLSimplified::DateTimeTypeValue_strategy = st.builds(
-    SpreadsheetMLSimplified::DateTimeTypeValue,
+SpreadsheetMLSimplified_DateTimeTypeValue_strategy = st.builds(
+    SpreadsheetMLSimplified_DateTimeTypeValue,
 )
-SpreadsheetMLSimplified::ValueType_strategy = st.builds(
-    SpreadsheetMLSimplified::ValueType,
+SpreadsheetMLSimplified_ValueType_strategy = st.builds(
+    SpreadsheetMLSimplified_ValueType,
 )
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-@settings(max_examples=50)
-def test_spreadsheetmlsimplified::datetimetype_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::DateTimeType)
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_hour_type(instance):
-    assert isinstance(instance.hour, int)
-
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_hour_setter(instance):
-    original = instance.hour
-    instance.hour = original
-    assert instance.hour == original
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_second_type(instance):
-    assert isinstance(instance.second, int)
-
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_second_setter(instance):
-    original = instance.second
-    instance.second = original
-    assert instance.second == original
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_minute_type(instance):
-    assert isinstance(instance.minute, int)
-
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_minute_setter(instance):
-    original = instance.minute
-    instance.minute = original
-    assert instance.minute == original
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_year_type(instance):
-    assert isinstance(instance.year, int)
-
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_month_type(instance):
-    assert isinstance(instance.month, int)
-
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_month_setter(instance):
-    original = instance.month
-    instance.month = original
-    assert instance.month == original
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_day_type(instance):
-    assert isinstance(instance.day, int)
-
-
-@given(instance=SpreadsheetMLSimplified::DateTimeType_strategy)
-def test_spreadsheetmlsimplified::datetimetype_day_setter(instance):
-    original = instance.day
-    instance.day = original
-    assert instance.day == original
+SpreadsheetMLSimplified_DateTimeType_strategy = st.builds(
+    SpreadsheetMLSimplified_DateTimeType,
+    day=
+        st.integers(),
+    month=
+        st.integers(),
+    minute=
+        st.integers(),
+    hour=
+        st.integers(),
+    second=
+        st.integers(),
+    year=
+        st.integers()
+)
 
 @given(instance=ColOrRowElement_strategy)
 @settings(max_examples=50)
 def test_colorrowelement_instantiation(instance):
     assert isinstance(instance, ColOrRowElement)
 
-@given(instance=SpreadsheetMLSimplified::Table_strategy)
+@given(instance=SpreadsheetMLSimplified_Table_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::table_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Table)
+def test_spreadsheetmlsimplified_table_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Table)
 
 @given(instance=TableElement_strategy)
 @settings(max_examples=50)
 def test_tableelement_instantiation(instance):
     assert isinstance(instance, TableElement)
 
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
+@given(instance=SpreadsheetMLSimplified_Cell_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::cell_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Cell)
-
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_hRef_type(instance):
-    assert isinstance(instance.hRef, str)
+def test_spreadsheetmlsimplified_cell_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Cell)
 
 
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_hRef_setter(instance):
-    original = instance.hRef
-    instance.hRef = original
-    assert instance.hRef == original
 
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_formula_type(instance):
-    assert isinstance(instance.formula, str)
-
-
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_formula_setter(instance):
+@given(instance=SpreadsheetMLSimplified_Cell_strategy)
+def test_spreadsheetmlsimplified_cell_formula_setter(instance):
     original = instance.formula
     instance.formula = original
     assert instance.formula == original
 
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_arrayRange_type(instance):
-    assert isinstance(instance.arrayRange, str)
 
 
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_arrayRange_setter(instance):
-    original = instance.arrayRange
-    instance.arrayRange = original
-    assert instance.arrayRange == original
-
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_mergeAcross_type(instance):
-    assert isinstance(instance.mergeAcross, float)
-
-
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_mergeAcross_setter(instance):
-    original = instance.mergeAcross
-    instance.mergeAcross = original
-    assert instance.mergeAcross == original
-
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_mergeDown_type(instance):
-    assert isinstance(instance.mergeDown, float)
-
-
-@given(instance=SpreadsheetMLSimplified::Cell_strategy)
-def test_spreadsheetmlsimplified::cell_mergeDown_setter(instance):
+@given(instance=SpreadsheetMLSimplified_Cell_strategy)
+def test_spreadsheetmlsimplified_cell_mergeDown_setter(instance):
     original = instance.mergeDown
     instance.mergeDown = original
     assert instance.mergeDown == original
 
-@given(instance=SpreadsheetMLSimplified::ColOrRowElement_strategy)
+
+
+@given(instance=SpreadsheetMLSimplified_Cell_strategy)
+def test_spreadsheetmlsimplified_cell_mergeAcross_setter(instance):
+    original = instance.mergeAcross
+    instance.mergeAcross = original
+    assert instance.mergeAcross == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_Cell_strategy)
+def test_spreadsheetmlsimplified_cell_hRef_setter(instance):
+    original = instance.hRef
+    instance.hRef = original
+    assert instance.hRef == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_Cell_strategy)
+def test_spreadsheetmlsimplified_cell_arrayRange_setter(instance):
+    original = instance.arrayRange
+    instance.arrayRange = original
+    assert instance.arrayRange == original
+
+@given(instance=SpreadsheetMLSimplified_ColOrRowElement_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::colorrowelement_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::ColOrRowElement)
-
-@given(instance=SpreadsheetMLSimplified::ColOrRowElement_strategy)
-def test_spreadsheetmlsimplified::colorrowelement_hidden_type(instance):
-    assert isinstance(instance.hidden, bool)
+def test_spreadsheetmlsimplified_colorrowelement_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_ColOrRowElement)
 
 
-@given(instance=SpreadsheetMLSimplified::ColOrRowElement_strategy)
-def test_spreadsheetmlsimplified::colorrowelement_hidden_setter(instance):
-    original = instance.hidden
-    instance.hidden = original
-    assert instance.hidden == original
 
-@given(instance=SpreadsheetMLSimplified::ColOrRowElement_strategy)
-def test_spreadsheetmlsimplified::colorrowelement_span_type(instance):
-    assert isinstance(instance.span, int)
-
-
-@given(instance=SpreadsheetMLSimplified::ColOrRowElement_strategy)
-def test_spreadsheetmlsimplified::colorrowelement_span_setter(instance):
+@given(instance=SpreadsheetMLSimplified_ColOrRowElement_strategy)
+def test_spreadsheetmlsimplified_colorrowelement_span_setter(instance):
     original = instance.span
     instance.span = original
     assert instance.span == original
 
-@given(instance=SpreadsheetMLSimplified::TableElement_strategy)
+
+
+@given(instance=SpreadsheetMLSimplified_ColOrRowElement_strategy)
+def test_spreadsheetmlsimplified_colorrowelement_hidden_setter(instance):
+    original = instance.hidden
+    instance.hidden = original
+    assert instance.hidden == original
+
+@given(instance=SpreadsheetMLSimplified_TableElement_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::tableelement_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::TableElement)
-
-@given(instance=SpreadsheetMLSimplified::TableElement_strategy)
-def test_spreadsheetmlsimplified::tableelement_index_type(instance):
-    assert isinstance(instance.index, int)
+def test_spreadsheetmlsimplified_tableelement_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_TableElement)
 
 
-@given(instance=SpreadsheetMLSimplified::TableElement_strategy)
-def test_spreadsheetmlsimplified::tableelement_index_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_TableElement_strategy)
+def test_spreadsheetmlsimplified_tableelement_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
 
-@given(instance=SpreadsheetMLSimplified::Row_strategy)
+@given(instance=SpreadsheetMLSimplified_Row_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::row_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Row)
-
-@given(instance=SpreadsheetMLSimplified::Row_strategy)
-def test_spreadsheetmlsimplified::row_autoFitHeight_type(instance):
-    assert isinstance(instance.autoFitHeight, bool)
+def test_spreadsheetmlsimplified_row_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Row)
 
 
-@given(instance=SpreadsheetMLSimplified::Row_strategy)
-def test_spreadsheetmlsimplified::row_autoFitHeight_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_Row_strategy)
+def test_spreadsheetmlsimplified_row_autoFitHeight_setter(instance):
     original = instance.autoFitHeight
     instance.autoFitHeight = original
     assert instance.autoFitHeight == original
 
-@given(instance=SpreadsheetMLSimplified::Row_strategy)
-def test_spreadsheetmlsimplified::row_height_type(instance):
-    assert isinstance(instance.height, float)
 
 
-@given(instance=SpreadsheetMLSimplified::Row_strategy)
-def test_spreadsheetmlsimplified::row_height_setter(instance):
+@given(instance=SpreadsheetMLSimplified_Row_strategy)
+def test_spreadsheetmlsimplified_row_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=SpreadsheetMLSimplified::Column_strategy)
+@given(instance=SpreadsheetMLSimplified_Column_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::column_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Column)
-
-@given(instance=SpreadsheetMLSimplified::Column_strategy)
-def test_spreadsheetmlsimplified::column_width_type(instance):
-    assert isinstance(instance.width, float)
+def test_spreadsheetmlsimplified_column_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Column)
 
 
-@given(instance=SpreadsheetMLSimplified::Column_strategy)
-def test_spreadsheetmlsimplified::column_width_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_Column_strategy)
+def test_spreadsheetmlsimplified_column_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=SpreadsheetMLSimplified::Column_strategy)
-def test_spreadsheetmlsimplified::column_autoFitWidth_type(instance):
-    assert isinstance(instance.autoFitWidth, bool)
 
 
-@given(instance=SpreadsheetMLSimplified::Column_strategy)
-def test_spreadsheetmlsimplified::column_autoFitWidth_setter(instance):
+@given(instance=SpreadsheetMLSimplified_Column_strategy)
+def test_spreadsheetmlsimplified_column_autoFitWidth_setter(instance):
     original = instance.autoFitWidth
     instance.autoFitWidth = original
     assert instance.autoFitWidth == original
@@ -879,91 +772,132 @@ def test_spreadsheetmlsimplified::column_autoFitWidth_setter(instance):
 def test_valuetype_instantiation(instance):
     assert isinstance(instance, ValueType)
 
-@given(instance=SpreadsheetMLSimplified::NumberValue_strategy)
+@given(instance=SpreadsheetMLSimplified_NumberValue_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::numbervalue_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::NumberValue)
-
-@given(instance=SpreadsheetMLSimplified::NumberValue_strategy)
-def test_spreadsheetmlsimplified::numbervalue_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_spreadsheetmlsimplified_numbervalue_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_NumberValue)
 
 
-@given(instance=SpreadsheetMLSimplified::NumberValue_strategy)
-def test_spreadsheetmlsimplified::numbervalue_value_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_NumberValue_strategy)
+def test_spreadsheetmlsimplified_numbervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=SpreadsheetMLSimplified::StringValue_strategy)
+@given(instance=SpreadsheetMLSimplified_StringValue_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::stringvalue_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::StringValue)
-
-@given(instance=SpreadsheetMLSimplified::StringValue_strategy)
-def test_spreadsheetmlsimplified::stringvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_spreadsheetmlsimplified_stringvalue_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_StringValue)
 
 
-@given(instance=SpreadsheetMLSimplified::StringValue_strategy)
-def test_spreadsheetmlsimplified::stringvalue_value_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_StringValue_strategy)
+def test_spreadsheetmlsimplified_stringvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=SpreadsheetMLSimplified::Data_strategy)
+@given(instance=SpreadsheetMLSimplified_Data_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::data_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Data)
+def test_spreadsheetmlsimplified_data_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Data)
 
-@given(instance=SpreadsheetMLSimplified::Worksheet_strategy)
+@given(instance=SpreadsheetMLSimplified_Worksheet_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::worksheet_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Worksheet)
-
-@given(instance=SpreadsheetMLSimplified::Worksheet_strategy)
-def test_spreadsheetmlsimplified::worksheet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spreadsheetmlsimplified_worksheet_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Worksheet)
 
 
-@given(instance=SpreadsheetMLSimplified::Worksheet_strategy)
-def test_spreadsheetmlsimplified::worksheet_name_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_Worksheet_strategy)
+def test_spreadsheetmlsimplified_worksheet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SpreadsheetMLSimplified::Workbook_strategy)
+@given(instance=SpreadsheetMLSimplified_Workbook_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::workbook_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::Workbook)
+def test_spreadsheetmlsimplified_workbook_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_Workbook)
 
-@given(instance=SpreadsheetMLSimplified::ErrorValue_strategy)
+@given(instance=SpreadsheetMLSimplified_ErrorValue_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::errorvalue_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::ErrorValue)
+def test_spreadsheetmlsimplified_errorvalue_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_ErrorValue)
 
-@given(instance=SpreadsheetMLSimplified::BooleanValue_strategy)
+@given(instance=SpreadsheetMLSimplified_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::booleanvalue_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::BooleanValue)
-
-@given(instance=SpreadsheetMLSimplified::BooleanValue_strategy)
-def test_spreadsheetmlsimplified::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_spreadsheetmlsimplified_booleanvalue_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_BooleanValue)
 
 
-@given(instance=SpreadsheetMLSimplified::BooleanValue_strategy)
-def test_spreadsheetmlsimplified::booleanvalue_value_setter(instance):
+
+@given(instance=SpreadsheetMLSimplified_BooleanValue_strategy)
+def test_spreadsheetmlsimplified_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=SpreadsheetMLSimplified::DateTimeTypeValue_strategy)
+@given(instance=SpreadsheetMLSimplified_DateTimeTypeValue_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::datetimetypevalue_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::DateTimeTypeValue)
+def test_spreadsheetmlsimplified_datetimetypevalue_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_DateTimeTypeValue)
 
-@given(instance=SpreadsheetMLSimplified::ValueType_strategy)
+@given(instance=SpreadsheetMLSimplified_ValueType_strategy)
 @settings(max_examples=50)
-def test_spreadsheetmlsimplified::valuetype_instantiation(instance):
-    assert isinstance(instance, SpreadsheetMLSimplified::ValueType)
+def test_spreadsheetmlsimplified_valuetype_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_ValueType)
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+@settings(max_examples=50)
+def test_spreadsheetmlsimplified_datetimetype_instantiation(instance):
+    assert isinstance(instance, SpreadsheetMLSimplified_DateTimeType)
+
+
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+def test_spreadsheetmlsimplified_datetimetype_day_setter(instance):
+    original = instance.day
+    instance.day = original
+    assert instance.day == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+def test_spreadsheetmlsimplified_datetimetype_month_setter(instance):
+    original = instance.month
+    instance.month = original
+    assert instance.month == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+def test_spreadsheetmlsimplified_datetimetype_minute_setter(instance):
+    original = instance.minute
+    instance.minute = original
+    assert instance.minute == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+def test_spreadsheetmlsimplified_datetimetype_hour_setter(instance):
+    original = instance.hour
+    instance.hour = original
+    assert instance.hour == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+def test_spreadsheetmlsimplified_datetimetype_second_setter(instance):
+    original = instance.second
+    instance.second = original
+    assert instance.second == original
+
+
+
+@given(instance=SpreadsheetMLSimplified_DateTimeType_strategy)
+def test_spreadsheetmlsimplified_datetimetype_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original

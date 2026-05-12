@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    gametournament::Pool,
-    gametournament::QualificationPhase,
-    gametournament::FinalPhase,
-    gametournament::Gamer,
-    gametournament::Game,
-    gametournament::Tournament,
+from python_code import (
+    gametournament_Pool,
+    gametournament_QualificationPhase,
+    gametournament_FinalPhase,
+    gametournament_Gamer,
+    gametournament_Game,
+    gametournament_Tournament,
     GameType,
 )
 
@@ -21,205 +21,205 @@ from classes import (
 
 
 
-def test_gametournament::pool_is_not_abstract():
-    assert not inspect.isabstract(gametournament::Pool)
+def test_gametournament_pool_is_not_abstract():
+    assert not inspect.isabstract(gametournament_Pool)
 
 
-def test_gametournament::pool_constructor_exists():
-    assert callable(gametournament::Pool.__init__)
+def test_gametournament_pool_constructor_exists():
+    assert callable(gametournament_Pool.__init__)
 
 
-def test_gametournament::pool_constructor_args():
-    sig = inspect.signature(gametournament::Pool.__init__)
+def test_gametournament_pool_constructor_args():
+    sig = inspect.signature(gametournament_Pool.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gametournament::qualificationphase_is_not_abstract():
-    assert not inspect.isabstract(gametournament::QualificationPhase)
+def test_gametournament_qualificationphase_is_not_abstract():
+    assert not inspect.isabstract(gametournament_QualificationPhase)
 
 
-def test_gametournament::qualificationphase_constructor_exists():
-    assert callable(gametournament::QualificationPhase.__init__)
+def test_gametournament_qualificationphase_constructor_exists():
+    assert callable(gametournament_QualificationPhase.__init__)
 
 
-def test_gametournament::qualificationphase_constructor_args():
-    sig = inspect.signature(gametournament::QualificationPhase.__init__)
+def test_gametournament_qualificationphase_constructor_args():
+    sig = inspect.signature(gametournament_QualificationPhase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gametournament::finalphase_is_not_abstract():
-    assert not inspect.isabstract(gametournament::FinalPhase)
+def test_gametournament_finalphase_is_not_abstract():
+    assert not inspect.isabstract(gametournament_FinalPhase)
 
 
-def test_gametournament::finalphase_constructor_exists():
-    assert callable(gametournament::FinalPhase.__init__)
+def test_gametournament_finalphase_constructor_exists():
+    assert callable(gametournament_FinalPhase.__init__)
 
 
-def test_gametournament::finalphase_constructor_args():
-    sig = inspect.signature(gametournament::FinalPhase.__init__)
+def test_gametournament_finalphase_constructor_args():
+    sig = inspect.signature(gametournament_FinalPhase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gametournament::gamer_is_not_abstract():
-    assert not inspect.isabstract(gametournament::Gamer)
+def test_gametournament_gamer_is_not_abstract():
+    assert not inspect.isabstract(gametournament_Gamer)
 
 
-def test_gametournament::gamer_constructor_exists():
-    assert callable(gametournament::Gamer.__init__)
+def test_gametournament_gamer_constructor_exists():
+    assert callable(gametournament_Gamer.__init__)
 
 
-def test_gametournament::gamer_constructor_args():
-    sig = inspect.signature(gametournament::Gamer.__init__)
+def test_gametournament_gamer_constructor_args():
+    sig = inspect.signature(gametournament_Gamer.__init__)
     params = list(sig.parameters.keys())
     assert "pseudo" in params, "Missing parameter 'pseudo'"
-    assert "victories" in params, "Missing parameter 'victories'"
-    assert "matches" in params, "Missing parameter 'matches'"
-    assert "lastName" in params, "Missing parameter 'lastName'"
     assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "victories" in params, "Missing parameter 'victories'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "matches" in params, "Missing parameter 'matches'"
 
-def test_gametournament::gamer_has_pseudo():
-    assert hasattr(gametournament::Gamer, "pseudo")
+def test_gametournament_gamer_has_pseudo():
+    assert hasattr(gametournament_Gamer, "pseudo")
     descriptor = None
-    for klass in gametournament::Gamer.__mro__:
+    for klass in gametournament_Gamer.__mro__:
         if "pseudo" in klass.__dict__:
             descriptor = klass.__dict__["pseudo"]
             break
     assert isinstance(descriptor, property)
 
-def test_gametournament::gamer_has_victories():
-    assert hasattr(gametournament::Gamer, "victories")
+def test_gametournament_gamer_has_firstName():
+    assert hasattr(gametournament_Gamer, "firstName")
     descriptor = None
-    for klass in gametournament::Gamer.__mro__:
-        if "victories" in klass.__dict__:
-            descriptor = klass.__dict__["victories"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gametournament::gamer_has_matches():
-    assert hasattr(gametournament::Gamer, "matches")
-    descriptor = None
-    for klass in gametournament::Gamer.__mro__:
-        if "matches" in klass.__dict__:
-            descriptor = klass.__dict__["matches"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gametournament::gamer_has_lastName():
-    assert hasattr(gametournament::Gamer, "lastName")
-    descriptor = None
-    for klass in gametournament::Gamer.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gametournament::gamer_has_firstName():
-    assert hasattr(gametournament::Gamer, "firstName")
-    descriptor = None
-    for klass in gametournament::Gamer.__mro__:
+    for klass in gametournament_Gamer.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_gametournament::game_is_not_abstract():
-    assert not inspect.isabstract(gametournament::Game)
-
-
-def test_gametournament::game_constructor_exists():
-    assert callable(gametournament::Game.__init__)
-
-
-def test_gametournament::game_constructor_args():
-    sig = inspect.signature(gametournament::Game.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_gametournament::game_has_type():
-    assert hasattr(gametournament::Game, "type")
+def test_gametournament_gamer_has_victories():
+    assert hasattr(gametournament_Gamer, "victories")
     descriptor = None
-    for klass in gametournament::Game.__mro__:
+    for klass in gametournament_Gamer.__mro__:
+        if "victories" in klass.__dict__:
+            descriptor = klass.__dict__["victories"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gametournament_gamer_has_lastName():
+    assert hasattr(gametournament_Gamer, "lastName")
+    descriptor = None
+    for klass in gametournament_Gamer.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gametournament_gamer_has_matches():
+    assert hasattr(gametournament_Gamer, "matches")
+    descriptor = None
+    for klass in gametournament_Gamer.__mro__:
+        if "matches" in klass.__dict__:
+            descriptor = klass.__dict__["matches"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gametournament_game_is_not_abstract():
+    assert not inspect.isabstract(gametournament_Game)
+
+
+def test_gametournament_game_constructor_exists():
+    assert callable(gametournament_Game.__init__)
+
+
+def test_gametournament_game_constructor_args():
+    sig = inspect.signature(gametournament_Game.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_gametournament_game_has_name():
+    assert hasattr(gametournament_Game, "name")
+    descriptor = None
+    for klass in gametournament_Game.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gametournament_game_has_type():
+    assert hasattr(gametournament_Game, "type")
+    descriptor = None
+    for klass in gametournament_Game.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_gametournament::game_has_name():
-    assert hasattr(gametournament::Game, "name")
-    descriptor = None
-    for klass in gametournament::Game.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_gametournament::tournament_is_not_abstract():
-    assert not inspect.isabstract(gametournament::Tournament)
-
-
-def test_gametournament::tournament_constructor_exists():
-    assert callable(gametournament::Tournament.__init__)
+def test_gametournament_tournament_is_not_abstract():
+    assert not inspect.isabstract(gametournament_Tournament)
 
 
-def test_gametournament::tournament_constructor_args():
-    sig = inspect.signature(gametournament::Tournament.__init__)
+def test_gametournament_tournament_constructor_exists():
+    assert callable(gametournament_Tournament.__init__)
+
+
+def test_gametournament_tournament_constructor_args():
+    sig = inspect.signature(gametournament_Tournament.__init__)
     params = list(sig.parameters.keys())
-    assert "startDate" in params, "Missing parameter 'startDate'"
     assert "prize" in params, "Missing parameter 'prize'"
-    assert "endDate" in params, "Missing parameter 'endDate'"
-    assert "location" in params, "Missing parameter 'location'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "location" in params, "Missing parameter 'location'"
+    assert "startDate" in params, "Missing parameter 'startDate'"
+    assert "endDate" in params, "Missing parameter 'endDate'"
 
-def test_gametournament::tournament_has_startDate():
-    assert hasattr(gametournament::Tournament, "startDate")
+def test_gametournament_tournament_has_prize():
+    assert hasattr(gametournament_Tournament, "prize")
     descriptor = None
-    for klass in gametournament::Tournament.__mro__:
-        if "startDate" in klass.__dict__:
-            descriptor = klass.__dict__["startDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gametournament::tournament_has_prize():
-    assert hasattr(gametournament::Tournament, "prize")
-    descriptor = None
-    for klass in gametournament::Tournament.__mro__:
+    for klass in gametournament_Tournament.__mro__:
         if "prize" in klass.__dict__:
             descriptor = klass.__dict__["prize"]
             break
     assert isinstance(descriptor, property)
 
-def test_gametournament::tournament_has_endDate():
-    assert hasattr(gametournament::Tournament, "endDate")
+def test_gametournament_tournament_has_name():
+    assert hasattr(gametournament_Tournament, "name")
     descriptor = None
-    for klass in gametournament::Tournament.__mro__:
-        if "endDate" in klass.__dict__:
-            descriptor = klass.__dict__["endDate"]
+    for klass in gametournament_Tournament.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_gametournament::tournament_has_location():
-    assert hasattr(gametournament::Tournament, "location")
+def test_gametournament_tournament_has_location():
+    assert hasattr(gametournament_Tournament, "location")
     descriptor = None
-    for klass in gametournament::Tournament.__mro__:
+    for klass in gametournament_Tournament.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_gametournament::tournament_has_name():
-    assert hasattr(gametournament::Tournament, "name")
+def test_gametournament_tournament_has_startDate():
+    assert hasattr(gametournament_Tournament, "startDate")
     descriptor = None
-    for klass in gametournament::Tournament.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in gametournament_Tournament.__mro__:
+        if "startDate" in klass.__dict__:
+            descriptor = klass.__dict__["startDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gametournament_tournament_has_endDate():
+    assert hasattr(gametournament_Tournament, "endDate")
+    descriptor = None
+    for klass in gametournament_Tournament.__mro__:
+        if "endDate" in klass.__dict__:
+            descriptor = klass.__dict__["endDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -231,8 +231,8 @@ def test_gametype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in GameType]
     expected_literals = [
-        "RPG",
         "COMBAT",
+        "RPG",
         "FPS",
         "STRATEGIC",
         "ACTION",
@@ -253,53 +253,53 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-gametournament::Pool_strategy = st.builds(
-    gametournament::Pool,
+gametournament_Pool_strategy = st.builds(
+    gametournament_Pool,
 )
-gametournament::QualificationPhase_strategy = st.builds(
-    gametournament::QualificationPhase,
+gametournament_QualificationPhase_strategy = st.builds(
+    gametournament_QualificationPhase,
 )
-gametournament::FinalPhase_strategy = st.builds(
-    gametournament::FinalPhase,
+gametournament_FinalPhase_strategy = st.builds(
+    gametournament_FinalPhase,
 )
-gametournament::Gamer_strategy = st.builds(
-    gametournament::Gamer,
+gametournament_Gamer_strategy = st.builds(
+    gametournament_Gamer,
     pseudo=
+        safe_text,
+    firstName=
         safe_text,
     victories=
         st.integers(),
-    matches=
-        st.integers(),
     lastName=
         safe_text,
-    firstName=
-        safe_text
+    matches=
+        st.integers()
 )
-gametournament::Game_strategy = st.builds(
-    gametournament::Game,
-    type=
-        safe_text,
+gametournament_Game_strategy = st.builds(
+    gametournament_Game,
     name=
+        safe_text,
+    type=
         safe_text
 )
-gametournament::Tournament_strategy = st.builds(
-    gametournament::Tournament,
-    startDate=
-        st.dates(),
+gametournament_Tournament_strategy = st.builds(
+    gametournament_Tournament,
     prize=
         st.integers(),
-    endDate=
-        st.dates(),
+    name=
+        safe_text,
     location=
         safe_text,
-    name=
-        safe_text
+    startDate=
+        st.dates(),
+    endDate=
+        st.dates()
 )
 
-@given(instance=gametournament::Pool_strategy)
+@given(instance=gametournament_Pool_strategy)
 @settings(max_examples=50)
-def test_gametournament::pool_instantiation(instance):
-    assert isinstance(instance, gametournament::Pool)
+def test_gametournament_pool_instantiation(instance):
+    assert isinstance(instance, gametournament_Pool)
 
 import warnings
 import copy
@@ -307,9 +307,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gametournament::Pool_strategy)
+@given(instance=gametournament_Pool_strategy)
 @settings(max_examples=30)
-def test_gametournament::pool_generateclassment_changes_state(instance):
+def test_gametournament_pool_generateclassment_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -321,19 +321,19 @@ def test_gametournament::pool_generateclassment_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'generateClassment' in gametournament::Pool is empty"
+        assert has_statements, f"Function 'generateClassment' in gametournament_Pool is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'generateClassment' in gametournament::Pool did not change state; check implementation")
+            warnings.warn(f"Operation 'generateClassment' in gametournament_Pool did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'generateClassment' in gametournament::Pool is not implemented or raised an error")
+        warnings.warn(f"Operation 'generateClassment' in gametournament_Pool is not implemented or raised an error")
 
-@given(instance=gametournament::QualificationPhase_strategy)
+@given(instance=gametournament_QualificationPhase_strategy)
 @settings(max_examples=50)
-def test_gametournament::qualificationphase_instantiation(instance):
-    assert isinstance(instance, gametournament::QualificationPhase)
+def test_gametournament_qualificationphase_instantiation(instance):
+    assert isinstance(instance, gametournament_QualificationPhase)
 
 import warnings
 import copy
@@ -341,9 +341,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gametournament::QualificationPhase_strategy)
+@given(instance=gametournament_QualificationPhase_strategy)
 @settings(max_examples=30)
-def test_gametournament::qualificationphase_createpools_changes_state(instance):
+def test_gametournament_qualificationphase_createpools_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -355,163 +355,127 @@ def test_gametournament::qualificationphase_createpools_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createPools' in gametournament::QualificationPhase is empty"
+        assert has_statements, f"Function 'createPools' in gametournament_QualificationPhase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createPools' in gametournament::QualificationPhase did not change state; check implementation")
+            warnings.warn(f"Operation 'createPools' in gametournament_QualificationPhase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createPools' in gametournament::QualificationPhase is not implemented or raised an error")
+        warnings.warn(f"Operation 'createPools' in gametournament_QualificationPhase is not implemented or raised an error")
 
-@given(instance=gametournament::FinalPhase_strategy)
+@given(instance=gametournament_FinalPhase_strategy)
 @settings(max_examples=50)
-def test_gametournament::finalphase_instantiation(instance):
-    assert isinstance(instance, gametournament::FinalPhase)
+def test_gametournament_finalphase_instantiation(instance):
+    assert isinstance(instance, gametournament_FinalPhase)
 
-@given(instance=gametournament::Gamer_strategy)
+@given(instance=gametournament_Gamer_strategy)
 @settings(max_examples=50)
-def test_gametournament::gamer_instantiation(instance):
-    assert isinstance(instance, gametournament::Gamer)
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_pseudo_type(instance):
-    assert isinstance(instance.pseudo, str)
+def test_gametournament_gamer_instantiation(instance):
+    assert isinstance(instance, gametournament_Gamer)
 
 
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_pseudo_setter(instance):
+
+@given(instance=gametournament_Gamer_strategy)
+def test_gametournament_gamer_pseudo_setter(instance):
     original = instance.pseudo
     instance.pseudo = original
     assert instance.pseudo == original
 
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_victories_type(instance):
-    assert isinstance(instance.victories, int)
 
 
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_victories_setter(instance):
-    original = instance.victories
-    instance.victories = original
-    assert instance.victories == original
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_matches_type(instance):
-    assert isinstance(instance.matches, int)
-
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_matches_setter(instance):
-    original = instance.matches
-    instance.matches = original
-    assert instance.matches == original
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=gametournament::Gamer_strategy)
-def test_gametournament::gamer_firstName_setter(instance):
+@given(instance=gametournament_Gamer_strategy)
+def test_gametournament_gamer_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=gametournament::Game_strategy)
+
+
+@given(instance=gametournament_Gamer_strategy)
+def test_gametournament_gamer_victories_setter(instance):
+    original = instance.victories
+    instance.victories = original
+    assert instance.victories == original
+
+
+
+@given(instance=gametournament_Gamer_strategy)
+def test_gametournament_gamer_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+
+
+@given(instance=gametournament_Gamer_strategy)
+def test_gametournament_gamer_matches_setter(instance):
+    original = instance.matches
+    instance.matches = original
+    assert instance.matches == original
+
+@given(instance=gametournament_Game_strategy)
 @settings(max_examples=50)
-def test_gametournament::game_instantiation(instance):
-    assert isinstance(instance, gametournament::Game)
-
-@given(instance=gametournament::Game_strategy)
-def test_gametournament::game_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_gametournament_game_instantiation(instance):
+    assert isinstance(instance, gametournament_Game)
 
 
-@given(instance=gametournament::Game_strategy)
-def test_gametournament::game_type_setter(instance):
+
+@given(instance=gametournament_Game_strategy)
+def test_gametournament_game_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=gametournament_Game_strategy)
+def test_gametournament_game_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=gametournament::Game_strategy)
-def test_gametournament::game_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=gametournament::Game_strategy)
-def test_gametournament::game_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=gametournament::Tournament_strategy)
+@given(instance=gametournament_Tournament_strategy)
 @settings(max_examples=50)
-def test_gametournament::tournament_instantiation(instance):
-    assert isinstance(instance, gametournament::Tournament)
-
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_startDate_type(instance):
-    assert isinstance(instance.startDate, date)
+def test_gametournament_tournament_instantiation(instance):
+    assert isinstance(instance, gametournament_Tournament)
 
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_startDate_setter(instance):
-    original = instance.startDate
-    instance.startDate = original
-    assert instance.startDate == original
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_prize_type(instance):
-    assert isinstance(instance.prize, int)
-
-
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_prize_setter(instance):
+@given(instance=gametournament_Tournament_strategy)
+def test_gametournament_tournament_prize_setter(instance):
     original = instance.prize
     instance.prize = original
     assert instance.prize == original
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_endDate_type(instance):
-    assert isinstance(instance.endDate, date)
 
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_endDate_setter(instance):
-    original = instance.endDate
-    instance.endDate = original
-    assert instance.endDate == original
-
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_location_type(instance):
-    assert isinstance(instance.location, str)
+@given(instance=gametournament_Tournament_strategy)
+def test_gametournament_tournament_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_location_setter(instance):
+
+@given(instance=gametournament_Tournament_strategy)
+def test_gametournament_tournament_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=gametournament::Tournament_strategy)
-def test_gametournament::tournament_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=gametournament_Tournament_strategy)
+def test_gametournament_tournament_startDate_setter(instance):
+    original = instance.startDate
+    instance.startDate = original
+    assert instance.startDate == original
+
+
+
+@given(instance=gametournament_Tournament_strategy)
+def test_gametournament_tournament_endDate_setter(instance):
+    original = instance.endDate
+    instance.endDate = original
+    assert instance.endDate == original

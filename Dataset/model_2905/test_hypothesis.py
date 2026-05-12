@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ube::EntityModel,
+from python_code import (
+    ube_EntityModel,
     Type,
-    ube::Entity,
-    ube::DataType,
+    ube_Entity,
+    ube_DataType,
     NamedElement,
-    ube::Feature,
-    ube::Type,
-    ube::NamedElement,
+    ube_Feature,
+    ube_Type,
+    ube_NamedElement,
     FeatureKind,
 )
 
@@ -23,16 +23,16 @@ from classes import (
 
 
 
-def test_ube::entitymodel_is_not_abstract():
-    assert not inspect.isabstract(ube::EntityModel)
+def test_ube_entitymodel_is_not_abstract():
+    assert not inspect.isabstract(ube_EntityModel)
 
 
-def test_ube::entitymodel_constructor_exists():
-    assert callable(ube::EntityModel.__init__)
+def test_ube_entitymodel_constructor_exists():
+    assert callable(ube_EntityModel.__init__)
 
 
-def test_ube::entitymodel_constructor_args():
-    sig = inspect.signature(ube::EntityModel.__init__)
+def test_ube_entitymodel_constructor_args():
+    sig = inspect.signature(ube_EntityModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -51,23 +51,23 @@ def test_type_constructor_args():
 
 
 
-def test_ube::entity_is_not_abstract():
-    assert not inspect.isabstract(ube::Entity)
+def test_ube_entity_is_not_abstract():
+    assert not inspect.isabstract(ube_Entity)
 
 
-def test_ube::entity_constructor_exists():
-    assert callable(ube::Entity.__init__)
+def test_ube_entity_constructor_exists():
+    assert callable(ube_Entity.__init__)
 
 
-def test_ube::entity_constructor_args():
-    sig = inspect.signature(ube::Entity.__init__)
+def test_ube_entity_constructor_args():
+    sig = inspect.signature(ube_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_ube::entity_has_abstract():
-    assert hasattr(ube::Entity, "abstract")
+def test_ube_entity_has_abstract():
+    assert hasattr(ube_Entity, "abstract")
     descriptor = None
-    for klass in ube::Entity.__mro__:
+    for klass in ube_Entity.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -75,16 +75,16 @@ def test_ube::entity_has_abstract():
 
 
 
-def test_ube::datatype_is_not_abstract():
-    assert not inspect.isabstract(ube::DataType)
+def test_ube_datatype_is_not_abstract():
+    assert not inspect.isabstract(ube_DataType)
 
 
-def test_ube::datatype_constructor_exists():
-    assert callable(ube::DataType.__init__)
+def test_ube_datatype_constructor_exists():
+    assert callable(ube_DataType.__init__)
 
 
-def test_ube::datatype_constructor_args():
-    sig = inspect.signature(ube::DataType.__init__)
+def test_ube_datatype_constructor_args():
+    sig = inspect.signature(ube_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -103,23 +103,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_ube::feature_is_not_abstract():
-    assert not inspect.isabstract(ube::Feature)
+def test_ube_feature_is_not_abstract():
+    assert not inspect.isabstract(ube_Feature)
 
 
-def test_ube::feature_constructor_exists():
-    assert callable(ube::Feature.__init__)
+def test_ube_feature_constructor_exists():
+    assert callable(ube_Feature.__init__)
 
 
-def test_ube::feature_constructor_args():
-    sig = inspect.signature(ube::Feature.__init__)
+def test_ube_feature_constructor_args():
+    sig = inspect.signature(ube_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_ube::feature_has_kind():
-    assert hasattr(ube::Feature, "kind")
+def test_ube_feature_has_kind():
+    assert hasattr(ube_Feature, "kind")
     descriptor = None
-    for klass in ube::Feature.__mro__:
+    for klass in ube_Feature.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -127,37 +127,37 @@ def test_ube::feature_has_kind():
 
 
 
-def test_ube::type_is_not_abstract():
-    assert not inspect.isabstract(ube::Type)
+def test_ube_type_is_not_abstract():
+    assert not inspect.isabstract(ube_Type)
 
 
-def test_ube::type_constructor_exists():
-    assert callable(ube::Type.__init__)
+def test_ube_type_constructor_exists():
+    assert callable(ube_Type.__init__)
 
 
-def test_ube::type_constructor_args():
-    sig = inspect.signature(ube::Type.__init__)
+def test_ube_type_constructor_args():
+    sig = inspect.signature(ube_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ube::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ube::NamedElement)
+def test_ube_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ube_NamedElement)
 
 
-def test_ube::namedelement_constructor_exists():
-    assert callable(ube::NamedElement.__init__)
+def test_ube_namedelement_constructor_exists():
+    assert callable(ube_NamedElement.__init__)
 
 
-def test_ube::namedelement_constructor_args():
-    sig = inspect.signature(ube::NamedElement.__init__)
+def test_ube_namedelement_constructor_args():
+    sig = inspect.signature(ube_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ube::namedelement_has_name():
-    assert hasattr(ube::NamedElement, "name")
+def test_ube_namedelement_has_name():
+    assert hasattr(ube_NamedElement, "name")
     descriptor = None
-    for klass in ube::NamedElement.__mro__:
+    for klass in ube_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -171,9 +171,9 @@ def test_featurekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FeatureKind]
     expected_literals = [
-        "reference",
         "containment",
         "attribute",
+        "reference",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -191,106 +191,97 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ube::EntityModel_strategy = st.builds(
-    ube::EntityModel,
+ube_EntityModel_strategy = st.builds(
+    ube_EntityModel,
 )
 Type_strategy = st.builds(
     Type,
 )
-ube::Entity_strategy = st.builds(
-    ube::Entity,
+ube_Entity_strategy = st.builds(
+    ube_Entity,
     abstract=
         st.booleans()
 )
-ube::DataType_strategy = st.builds(
-    ube::DataType,
+ube_DataType_strategy = st.builds(
+    ube_DataType,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ube::Feature_strategy = st.builds(
-    ube::Feature,
+ube_Feature_strategy = st.builds(
+    ube_Feature,
     kind=
         safe_text
 )
-ube::Type_strategy = st.builds(
-    ube::Type,
+ube_Type_strategy = st.builds(
+    ube_Type,
 )
-ube::NamedElement_strategy = st.builds(
-    ube::NamedElement,
+ube_NamedElement_strategy = st.builds(
+    ube_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=ube::EntityModel_strategy)
+@given(instance=ube_EntityModel_strategy)
 @settings(max_examples=50)
-def test_ube::entitymodel_instantiation(instance):
-    assert isinstance(instance, ube::EntityModel)
+def test_ube_entitymodel_instantiation(instance):
+    assert isinstance(instance, ube_EntityModel)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=ube::Entity_strategy)
+@given(instance=ube_Entity_strategy)
 @settings(max_examples=50)
-def test_ube::entity_instantiation(instance):
-    assert isinstance(instance, ube::Entity)
-
-@given(instance=ube::Entity_strategy)
-def test_ube::entity_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+def test_ube_entity_instantiation(instance):
+    assert isinstance(instance, ube_Entity)
 
 
-@given(instance=ube::Entity_strategy)
-def test_ube::entity_abstract_setter(instance):
+
+@given(instance=ube_Entity_strategy)
+def test_ube_entity_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=ube::DataType_strategy)
+@given(instance=ube_DataType_strategy)
 @settings(max_examples=50)
-def test_ube::datatype_instantiation(instance):
-    assert isinstance(instance, ube::DataType)
+def test_ube_datatype_instantiation(instance):
+    assert isinstance(instance, ube_DataType)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ube::Feature_strategy)
+@given(instance=ube_Feature_strategy)
 @settings(max_examples=50)
-def test_ube::feature_instantiation(instance):
-    assert isinstance(instance, ube::Feature)
-
-@given(instance=ube::Feature_strategy)
-def test_ube::feature_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_ube_feature_instantiation(instance):
+    assert isinstance(instance, ube_Feature)
 
 
-@given(instance=ube::Feature_strategy)
-def test_ube::feature_kind_setter(instance):
+
+@given(instance=ube_Feature_strategy)
+def test_ube_feature_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=ube::Type_strategy)
+@given(instance=ube_Type_strategy)
 @settings(max_examples=50)
-def test_ube::type_instantiation(instance):
-    assert isinstance(instance, ube::Type)
+def test_ube_type_instantiation(instance):
+    assert isinstance(instance, ube_Type)
 
-@given(instance=ube::NamedElement_strategy)
+@given(instance=ube_NamedElement_strategy)
 @settings(max_examples=50)
-def test_ube::namedelement_instantiation(instance):
-    assert isinstance(instance, ube::NamedElement)
-
-@given(instance=ube::NamedElement_strategy)
-def test_ube::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ube_namedelement_instantiation(instance):
+    assert isinstance(instance, ube_NamedElement)
 
 
-@given(instance=ube::NamedElement_strategy)
-def test_ube::namedelement_name_setter(instance):
+
+@given(instance=ube_NamedElement_strategy)
+def test_ube_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

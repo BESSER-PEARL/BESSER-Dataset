@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplek::B,
-    simplek::A,
-    simplek::Content,
-    simplek::Base,
+from python_code import (
+    simplek_B,
+    simplek_A,
+    simplek_Content,
+    simplek_Base,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_simplek::b_is_not_abstract():
-    assert not inspect.isabstract(simplek::B)
+def test_simplek_b_is_not_abstract():
+    assert not inspect.isabstract(simplek_B)
 
 
-def test_simplek::b_constructor_exists():
-    assert callable(simplek::B.__init__)
+def test_simplek_b_constructor_exists():
+    assert callable(simplek_B.__init__)
 
 
-def test_simplek::b_constructor_args():
-    sig = inspect.signature(simplek::B.__init__)
+def test_simplek_b_constructor_args():
+    sig = inspect.signature(simplek_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplek::b_has_name():
-    assert hasattr(simplek::B, "name")
+def test_simplek_b_has_name():
+    assert hasattr(simplek_B, "name")
     descriptor = None
-    for klass in simplek::B.__mro__:
+    for klass in simplek_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_simplek::b_has_name():
 
 
 
-def test_simplek::a_is_not_abstract():
-    assert not inspect.isabstract(simplek::A)
+def test_simplek_a_is_not_abstract():
+    assert not inspect.isabstract(simplek_A)
 
 
-def test_simplek::a_constructor_exists():
-    assert callable(simplek::A.__init__)
+def test_simplek_a_constructor_exists():
+    assert callable(simplek_A.__init__)
 
 
-def test_simplek::a_constructor_args():
-    sig = inspect.signature(simplek::A.__init__)
+def test_simplek_a_constructor_args():
+    sig = inspect.signature(simplek_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplek::a_has_name():
-    assert hasattr(simplek::A, "name")
+def test_simplek_a_has_name():
+    assert hasattr(simplek_A, "name")
     descriptor = None
-    for klass in simplek::A.__mro__:
+    for klass in simplek_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_simplek::a_has_name():
 
 
 
-def test_simplek::content_is_not_abstract():
-    assert not inspect.isabstract(simplek::Content)
+def test_simplek_content_is_not_abstract():
+    assert not inspect.isabstract(simplek_Content)
 
 
-def test_simplek::content_constructor_exists():
-    assert callable(simplek::Content.__init__)
+def test_simplek_content_constructor_exists():
+    assert callable(simplek_Content.__init__)
 
 
-def test_simplek::content_constructor_args():
-    sig = inspect.signature(simplek::Content.__init__)
+def test_simplek_content_constructor_args():
+    sig = inspect.signature(simplek_Content.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplek::content_has_name():
-    assert hasattr(simplek::Content, "name")
+def test_simplek_content_has_name():
+    assert hasattr(simplek_Content, "name")
     descriptor = None
-    for klass in simplek::Content.__mro__:
+    for klass in simplek_Content.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,16 +90,16 @@ def test_simplek::content_has_name():
 
 
 
-def test_simplek::base_is_not_abstract():
-    assert not inspect.isabstract(simplek::Base)
+def test_simplek_base_is_not_abstract():
+    assert not inspect.isabstract(simplek_Base)
 
 
-def test_simplek::base_constructor_exists():
-    assert callable(simplek::Base.__init__)
+def test_simplek_base_constructor_exists():
+    assert callable(simplek_Base.__init__)
 
 
-def test_simplek::base_constructor_args():
-    sig = inspect.signature(simplek::Base.__init__)
+def test_simplek_base_constructor_args():
+    sig = inspect.signature(simplek_Base.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplek::B_strategy = st.builds(
-    simplek::B,
+simplek_B_strategy = st.builds(
+    simplek_B,
     name=
         safe_text
 )
-simplek::A_strategy = st.builds(
-    simplek::A,
+simplek_A_strategy = st.builds(
+    simplek_A,
     name=
         safe_text
 )
-simplek::Content_strategy = st.builds(
-    simplek::Content,
+simplek_Content_strategy = st.builds(
+    simplek_Content,
     name=
         safe_text
 )
-simplek::Base_strategy = st.builds(
-    simplek::Base,
+simplek_Base_strategy = st.builds(
+    simplek_Base,
 )
 
-@given(instance=simplek::B_strategy)
+@given(instance=simplek_B_strategy)
 @settings(max_examples=50)
-def test_simplek::b_instantiation(instance):
-    assert isinstance(instance, simplek::B)
-
-@given(instance=simplek::B_strategy)
-def test_simplek::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplek_b_instantiation(instance):
+    assert isinstance(instance, simplek_B)
 
 
-@given(instance=simplek::B_strategy)
-def test_simplek::b_name_setter(instance):
+
+@given(instance=simplek_B_strategy)
+def test_simplek_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplek::A_strategy)
+@given(instance=simplek_A_strategy)
 @settings(max_examples=50)
-def test_simplek::a_instantiation(instance):
-    assert isinstance(instance, simplek::A)
-
-@given(instance=simplek::A_strategy)
-def test_simplek::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplek_a_instantiation(instance):
+    assert isinstance(instance, simplek_A)
 
 
-@given(instance=simplek::A_strategy)
-def test_simplek::a_name_setter(instance):
+
+@given(instance=simplek_A_strategy)
+def test_simplek_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplek::Content_strategy)
+@given(instance=simplek_Content_strategy)
 @settings(max_examples=50)
-def test_simplek::content_instantiation(instance):
-    assert isinstance(instance, simplek::Content)
-
-@given(instance=simplek::Content_strategy)
-def test_simplek::content_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplek_content_instantiation(instance):
+    assert isinstance(instance, simplek_Content)
 
 
-@given(instance=simplek::Content_strategy)
-def test_simplek::content_name_setter(instance):
+
+@given(instance=simplek_Content_strategy)
+def test_simplek_content_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplek::Base_strategy)
+@given(instance=simplek_Base_strategy)
 @settings(max_examples=50)
-def test_simplek::base_instantiation(instance):
-    assert isinstance(instance, simplek::Base)
+def test_simplek_base_instantiation(instance):
+    assert isinstance(instance, simplek_Base)

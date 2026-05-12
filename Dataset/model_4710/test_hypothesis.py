@@ -3,139 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SOS::Condition,
-    Variable,
-    SOS::Conclusion,
-    SOS::PremisseList,
-    ADT,
+from python_code import (
     SetMembership,
-    SOS::set::ForAllIn,
-    SOS::set::ExistsIn,
+    SOS_set_ForAllIn,
+    SOS_set_ExistsIn,
     VariableRef,
     SetOperator,
-    SOS::set::Excluding,
-    SOS::set::Intersection,
-    SOS::set::Union,
-    set::SOS::AlgebraicConditionList,
-    SOS::adtmm::AbstractEquation,
+    SOS_set_Intersection,
+    SOS_set_Excluding,
+    SOS_set_Union,
+    set_SOS_AlgebraicConditionList,
+    SOS_adtmm_AbstractEquation,
     SetTerm,
-    SOS::set::ModelSet,
-    SOS::set::SetOperator,
-    SOS::set::SetConstructor,
-    SOS::set::SetMembership,
-    SOS::adtmm::AbstractOperation,
-    SOS::adtmm::SortDeclaration,
-    SOS::adtmm::AbstractSort,
+    SOS_set_ModelSet,
+    SOS_set_SetConstructor,
+    SOS_set_SetOperator,
+    SOS_set_SetMembership,
+    SOS_adtmm_AbstractOperation,
+    SOS_adtmm_SortDeclaration,
+    SOS_adtmm_AbstractSort,
     Sort,
-    SOS::adtmm::AtomicSort,
-    SOS::set::Set,
-    SOS::set::ModelSort,
+    SOS_adtmm_AtomicSort,
+    SOS_set_ModelSort,
+    SOS_set_Set,
     AbstractOperation,
-    SOS::adtmm::AbstractGenericOp,
-    SOS::adtmm::Operation,
-    SOS::adtmm::Sort,
+    SOS_adtmm_AbstractGenericOp,
+    SOS_adtmm_Operation,
+    SOS_adtmm_Sort,
     CondEquation,
-    SOS::adtmm::Term,
+    SOS_adtmm_Term,
     Equation,
-    SOS::adtmm::CondEquation,
-    SOS::adtmm::Variable,
+    SOS_adtmm_CondEquation,
+    SOS_adtmm_Variable,
     Term,
-    SOS::set::ModelClassAttribute,
-    SOS::adtmm::CTerm,
-    SOS::set::SetTerm,
-    SOS::set::ModelRelation,
-    SOS::adtmm::VariableRef,
+    SOS_set_ModelClassAttribute,
+    SOS_set_SetTerm,
+    SOS_set_ModelRelation,
+    SOS_adtmm_CTerm,
+    SOS_adtmm_VariableRef,
     Operation,
     SortDeclaration,
-    SOS::adtmm::ADT,
-    SOS::AlgebraicConditionList,
+    SOS_adtmm_ADT,
+    SOS_AlgebraicConditionList,
     AbstractEquation,
-    SOS::adtmm::Inequation,
-    SOS::adtmm::Equation,
-    SOS::Rule,
-    SOS::Semantics,
+    SOS_adtmm_Equation,
+    SOS_adtmm_Inequation,
+    SOS_Rule,
+    SOS_Semantics,
     Condition,
-    SOS::TypeJudment,
-    SOS::AlgebraicCondition,
-    SOS::Transition,
+    SOS_AlgebraicCondition,
+    SOS_TypeJudment,
+    SOS_Transition,
+    SOS_Condition,
+    Variable,
+    SOS_Conclusion,
+    SOS_PremisseList,
+    ADT,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_sos::condition_is_not_abstract():
-    assert not inspect.isabstract(SOS::Condition)
-
-
-def test_sos::condition_constructor_exists():
-    assert callable(SOS::Condition.__init__)
-
-
-def test_sos::condition_constructor_args():
-    sig = inspect.signature(SOS::Condition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_variable_is_not_abstract():
-    assert not inspect.isabstract(Variable)
-
-
-def test_variable_constructor_exists():
-    assert callable(Variable.__init__)
-
-
-def test_variable_constructor_args():
-    sig = inspect.signature(Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sos::conclusion_is_not_abstract():
-    assert not inspect.isabstract(SOS::Conclusion)
-
-
-def test_sos::conclusion_constructor_exists():
-    assert callable(SOS::Conclusion.__init__)
-
-
-def test_sos::conclusion_constructor_args():
-    sig = inspect.signature(SOS::Conclusion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sos::premisselist_is_not_abstract():
-    assert not inspect.isabstract(SOS::PremisseList)
-
-
-def test_sos::premisselist_constructor_exists():
-    assert callable(SOS::PremisseList.__init__)
-
-
-def test_sos::premisselist_constructor_args():
-    sig = inspect.signature(SOS::PremisseList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adt_is_not_abstract():
-    assert not inspect.isabstract(ADT)
-
-
-def test_adt_constructor_exists():
-    assert callable(ADT.__init__)
-
-
-def test_adt_constructor_args():
-    sig = inspect.signature(ADT.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -153,30 +83,30 @@ def test_setmembership_constructor_args():
 
 
 
-def test_sos::set::forallin_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::ForAllIn)
+def test_sos_set_forallin_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_ForAllIn)
 
 
-def test_sos::set::forallin_constructor_exists():
-    assert callable(SOS::set::ForAllIn.__init__)
+def test_sos_set_forallin_constructor_exists():
+    assert callable(SOS_set_ForAllIn.__init__)
 
 
-def test_sos::set::forallin_constructor_args():
-    sig = inspect.signature(SOS::set::ForAllIn.__init__)
+def test_sos_set_forallin_constructor_args():
+    sig = inspect.signature(SOS_set_ForAllIn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::existsin_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::ExistsIn)
+def test_sos_set_existsin_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_ExistsIn)
 
 
-def test_sos::set::existsin_constructor_exists():
-    assert callable(SOS::set::ExistsIn.__init__)
+def test_sos_set_existsin_constructor_exists():
+    assert callable(SOS_set_ExistsIn.__init__)
 
 
-def test_sos::set::existsin_constructor_args():
-    sig = inspect.signature(SOS::set::ExistsIn.__init__)
+def test_sos_set_existsin_constructor_args():
+    sig = inspect.signature(SOS_set_ExistsIn.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -209,72 +139,72 @@ def test_setoperator_constructor_args():
 
 
 
-def test_sos::set::excluding_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::Excluding)
+def test_sos_set_intersection_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_Intersection)
 
 
-def test_sos::set::excluding_constructor_exists():
-    assert callable(SOS::set::Excluding.__init__)
+def test_sos_set_intersection_constructor_exists():
+    assert callable(SOS_set_Intersection.__init__)
 
 
-def test_sos::set::excluding_constructor_args():
-    sig = inspect.signature(SOS::set::Excluding.__init__)
+def test_sos_set_intersection_constructor_args():
+    sig = inspect.signature(SOS_set_Intersection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::intersection_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::Intersection)
+def test_sos_set_excluding_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_Excluding)
 
 
-def test_sos::set::intersection_constructor_exists():
-    assert callable(SOS::set::Intersection.__init__)
+def test_sos_set_excluding_constructor_exists():
+    assert callable(SOS_set_Excluding.__init__)
 
 
-def test_sos::set::intersection_constructor_args():
-    sig = inspect.signature(SOS::set::Intersection.__init__)
+def test_sos_set_excluding_constructor_args():
+    sig = inspect.signature(SOS_set_Excluding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::union_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::Union)
+def test_sos_set_union_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_Union)
 
 
-def test_sos::set::union_constructor_exists():
-    assert callable(SOS::set::Union.__init__)
+def test_sos_set_union_constructor_exists():
+    assert callable(SOS_set_Union.__init__)
 
 
-def test_sos::set::union_constructor_args():
-    sig = inspect.signature(SOS::set::Union.__init__)
+def test_sos_set_union_constructor_args():
+    sig = inspect.signature(SOS_set_Union.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_set::sos::algebraicconditionlist_is_not_abstract():
-    assert not inspect.isabstract(set::SOS::AlgebraicConditionList)
+def test_set_sos_algebraicconditionlist_is_not_abstract():
+    assert not inspect.isabstract(set_SOS_AlgebraicConditionList)
 
 
-def test_set::sos::algebraicconditionlist_constructor_exists():
-    assert callable(set::SOS::AlgebraicConditionList.__init__)
+def test_set_sos_algebraicconditionlist_constructor_exists():
+    assert callable(set_SOS_AlgebraicConditionList.__init__)
 
 
-def test_set::sos::algebraicconditionlist_constructor_args():
-    sig = inspect.signature(set::SOS::AlgebraicConditionList.__init__)
+def test_set_sos_algebraicconditionlist_constructor_args():
+    sig = inspect.signature(set_SOS_AlgebraicConditionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::adtmm::abstractequation_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::AbstractEquation)
+def test_sos_adtmm_abstractequation_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_AbstractEquation)
 
 
-def test_sos::adtmm::abstractequation_constructor_exists():
-    assert callable(SOS::adtmm::AbstractEquation.__init__)
+def test_sos_adtmm_abstractequation_constructor_exists():
+    assert callable(SOS_adtmm_AbstractEquation.__init__)
 
 
-def test_sos::adtmm::abstractequation_constructor_args():
-    sig = inspect.signature(SOS::adtmm::AbstractEquation.__init__)
+def test_sos_adtmm_abstractequation_constructor_args():
+    sig = inspect.signature(SOS_adtmm_AbstractEquation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -293,79 +223,79 @@ def test_setterm_constructor_args():
 
 
 
-def test_sos::set::modelset_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::ModelSet)
+def test_sos_set_modelset_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_ModelSet)
 
 
-def test_sos::set::modelset_constructor_exists():
-    assert callable(SOS::set::ModelSet.__init__)
+def test_sos_set_modelset_constructor_exists():
+    assert callable(SOS_set_ModelSet.__init__)
 
 
-def test_sos::set::modelset_constructor_args():
-    sig = inspect.signature(SOS::set::ModelSet.__init__)
+def test_sos_set_modelset_constructor_args():
+    sig = inspect.signature(SOS_set_ModelSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::setoperator_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::SetOperator)
+def test_sos_set_setconstructor_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_SetConstructor)
 
 
-def test_sos::set::setoperator_constructor_exists():
-    assert callable(SOS::set::SetOperator.__init__)
+def test_sos_set_setconstructor_constructor_exists():
+    assert callable(SOS_set_SetConstructor.__init__)
 
 
-def test_sos::set::setoperator_constructor_args():
-    sig = inspect.signature(SOS::set::SetOperator.__init__)
+def test_sos_set_setconstructor_constructor_args():
+    sig = inspect.signature(SOS_set_SetConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::setconstructor_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::SetConstructor)
+def test_sos_set_setoperator_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_SetOperator)
 
 
-def test_sos::set::setconstructor_constructor_exists():
-    assert callable(SOS::set::SetConstructor.__init__)
+def test_sos_set_setoperator_constructor_exists():
+    assert callable(SOS_set_SetOperator.__init__)
 
 
-def test_sos::set::setconstructor_constructor_args():
-    sig = inspect.signature(SOS::set::SetConstructor.__init__)
+def test_sos_set_setoperator_constructor_args():
+    sig = inspect.signature(SOS_set_SetOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::setmembership_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::SetMembership)
+def test_sos_set_setmembership_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_SetMembership)
 
 
-def test_sos::set::setmembership_constructor_exists():
-    assert callable(SOS::set::SetMembership.__init__)
+def test_sos_set_setmembership_constructor_exists():
+    assert callable(SOS_set_SetMembership.__init__)
 
 
-def test_sos::set::setmembership_constructor_args():
-    sig = inspect.signature(SOS::set::SetMembership.__init__)
+def test_sos_set_setmembership_constructor_args():
+    sig = inspect.signature(SOS_set_SetMembership.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::adtmm::abstractoperation_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::AbstractOperation)
+def test_sos_adtmm_abstractoperation_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_AbstractOperation)
 
 
-def test_sos::adtmm::abstractoperation_constructor_exists():
-    assert callable(SOS::adtmm::AbstractOperation.__init__)
+def test_sos_adtmm_abstractoperation_constructor_exists():
+    assert callable(SOS_adtmm_AbstractOperation.__init__)
 
 
-def test_sos::adtmm::abstractoperation_constructor_args():
-    sig = inspect.signature(SOS::adtmm::AbstractOperation.__init__)
+def test_sos_adtmm_abstractoperation_constructor_args():
+    sig = inspect.signature(SOS_adtmm_AbstractOperation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sos::adtmm::abstractoperation_has_name():
-    assert hasattr(SOS::adtmm::AbstractOperation, "name")
+def test_sos_adtmm_abstractoperation_has_name():
+    assert hasattr(SOS_adtmm_AbstractOperation, "name")
     descriptor = None
-    for klass in SOS::adtmm::AbstractOperation.__mro__:
+    for klass in SOS_adtmm_AbstractOperation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -373,23 +303,23 @@ def test_sos::adtmm::abstractoperation_has_name():
 
 
 
-def test_sos::adtmm::sortdeclaration_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::SortDeclaration)
+def test_sos_adtmm_sortdeclaration_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_SortDeclaration)
 
 
-def test_sos::adtmm::sortdeclaration_constructor_exists():
-    assert callable(SOS::adtmm::SortDeclaration.__init__)
+def test_sos_adtmm_sortdeclaration_constructor_exists():
+    assert callable(SOS_adtmm_SortDeclaration.__init__)
 
 
-def test_sos::adtmm::sortdeclaration_constructor_args():
-    sig = inspect.signature(SOS::adtmm::SortDeclaration.__init__)
+def test_sos_adtmm_sortdeclaration_constructor_args():
+    sig = inspect.signature(SOS_adtmm_SortDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sos::adtmm::sortdeclaration_has_name():
-    assert hasattr(SOS::adtmm::SortDeclaration, "name")
+def test_sos_adtmm_sortdeclaration_has_name():
+    assert hasattr(SOS_adtmm_SortDeclaration, "name")
     descriptor = None
-    for klass in SOS::adtmm::SortDeclaration.__mro__:
+    for klass in SOS_adtmm_SortDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -397,16 +327,16 @@ def test_sos::adtmm::sortdeclaration_has_name():
 
 
 
-def test_sos::adtmm::abstractsort_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::AbstractSort)
+def test_sos_adtmm_abstractsort_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_AbstractSort)
 
 
-def test_sos::adtmm::abstractsort_constructor_exists():
-    assert callable(SOS::adtmm::AbstractSort.__init__)
+def test_sos_adtmm_abstractsort_constructor_exists():
+    assert callable(SOS_adtmm_AbstractSort.__init__)
 
 
-def test_sos::adtmm::abstractsort_constructor_args():
-    sig = inspect.signature(SOS::adtmm::AbstractSort.__init__)
+def test_sos_adtmm_abstractsort_constructor_args():
+    sig = inspect.signature(SOS_adtmm_AbstractSort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -425,65 +355,65 @@ def test_sort_constructor_args():
 
 
 
-def test_sos::adtmm::atomicsort_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::AtomicSort)
+def test_sos_adtmm_atomicsort_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_AtomicSort)
 
 
-def test_sos::adtmm::atomicsort_constructor_exists():
-    assert callable(SOS::adtmm::AtomicSort.__init__)
+def test_sos_adtmm_atomicsort_constructor_exists():
+    assert callable(SOS_adtmm_AtomicSort.__init__)
 
 
-def test_sos::adtmm::atomicsort_constructor_args():
-    sig = inspect.signature(SOS::adtmm::AtomicSort.__init__)
+def test_sos_adtmm_atomicsort_constructor_args():
+    sig = inspect.signature(SOS_adtmm_AtomicSort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::set_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::Set)
+def test_sos_set_modelsort_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_ModelSort)
 
 
-def test_sos::set::set_constructor_exists():
-    assert callable(SOS::set::Set.__init__)
+def test_sos_set_modelsort_constructor_exists():
+    assert callable(SOS_set_ModelSort.__init__)
 
 
-def test_sos::set::set_constructor_args():
-    sig = inspect.signature(SOS::set::Set.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sos::set::modelsort_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::ModelSort)
-
-
-def test_sos::set::modelsort_constructor_exists():
-    assert callable(SOS::set::ModelSort.__init__)
-
-
-def test_sos::set::modelsort_constructor_args():
-    sig = inspect.signature(SOS::set::ModelSort.__init__)
+def test_sos_set_modelsort_constructor_args():
+    sig = inspect.signature(SOS_set_ModelSort.__init__)
     params = list(sig.parameters.keys())
     assert "packageName" in params, "Missing parameter 'packageName'"
     assert "className" in params, "Missing parameter 'className'"
 
-def test_sos::set::modelsort_has_packageName():
-    assert hasattr(SOS::set::ModelSort, "packageName")
+def test_sos_set_modelsort_has_packageName():
+    assert hasattr(SOS_set_ModelSort, "packageName")
     descriptor = None
-    for klass in SOS::set::ModelSort.__mro__:
+    for klass in SOS_set_ModelSort.__mro__:
         if "packageName" in klass.__dict__:
             descriptor = klass.__dict__["packageName"]
             break
     assert isinstance(descriptor, property)
 
-def test_sos::set::modelsort_has_className():
-    assert hasattr(SOS::set::ModelSort, "className")
+def test_sos_set_modelsort_has_className():
+    assert hasattr(SOS_set_ModelSort, "className")
     descriptor = None
-    for klass in SOS::set::ModelSort.__mro__:
+    for klass in SOS_set_ModelSort.__mro__:
         if "className" in klass.__dict__:
             descriptor = klass.__dict__["className"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_sos_set_set_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_Set)
+
+
+def test_sos_set_set_constructor_exists():
+    assert callable(SOS_set_Set.__init__)
+
+
+def test_sos_set_set_constructor_args():
+    sig = inspect.signature(SOS_set_Set.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -501,44 +431,44 @@ def test_abstractoperation_constructor_args():
 
 
 
-def test_sos::adtmm::abstractgenericop_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::AbstractGenericOp)
+def test_sos_adtmm_abstractgenericop_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_AbstractGenericOp)
 
 
-def test_sos::adtmm::abstractgenericop_constructor_exists():
-    assert callable(SOS::adtmm::AbstractGenericOp.__init__)
+def test_sos_adtmm_abstractgenericop_constructor_exists():
+    assert callable(SOS_adtmm_AbstractGenericOp.__init__)
 
 
-def test_sos::adtmm::abstractgenericop_constructor_args():
-    sig = inspect.signature(SOS::adtmm::AbstractGenericOp.__init__)
+def test_sos_adtmm_abstractgenericop_constructor_args():
+    sig = inspect.signature(SOS_adtmm_AbstractGenericOp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::adtmm::operation_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::Operation)
+def test_sos_adtmm_operation_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_Operation)
 
 
-def test_sos::adtmm::operation_constructor_exists():
-    assert callable(SOS::adtmm::Operation.__init__)
+def test_sos_adtmm_operation_constructor_exists():
+    assert callable(SOS_adtmm_Operation.__init__)
 
 
-def test_sos::adtmm::operation_constructor_args():
-    sig = inspect.signature(SOS::adtmm::Operation.__init__)
+def test_sos_adtmm_operation_constructor_args():
+    sig = inspect.signature(SOS_adtmm_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::adtmm::sort_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::Sort)
+def test_sos_adtmm_sort_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_Sort)
 
 
-def test_sos::adtmm::sort_constructor_exists():
-    assert callable(SOS::adtmm::Sort.__init__)
+def test_sos_adtmm_sort_constructor_exists():
+    assert callable(SOS_adtmm_Sort.__init__)
 
 
-def test_sos::adtmm::sort_constructor_args():
-    sig = inspect.signature(SOS::adtmm::Sort.__init__)
+def test_sos_adtmm_sort_constructor_args():
+    sig = inspect.signature(SOS_adtmm_Sort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -557,16 +487,16 @@ def test_condequation_constructor_args():
 
 
 
-def test_sos::adtmm::term_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::Term)
+def test_sos_adtmm_term_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_Term)
 
 
-def test_sos::adtmm::term_constructor_exists():
-    assert callable(SOS::adtmm::Term.__init__)
+def test_sos_adtmm_term_constructor_exists():
+    assert callable(SOS_adtmm_Term.__init__)
 
 
-def test_sos::adtmm::term_constructor_args():
-    sig = inspect.signature(SOS::adtmm::Term.__init__)
+def test_sos_adtmm_term_constructor_args():
+    sig = inspect.signature(SOS_adtmm_Term.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -585,37 +515,37 @@ def test_equation_constructor_args():
 
 
 
-def test_sos::adtmm::condequation_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::CondEquation)
+def test_sos_adtmm_condequation_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_CondEquation)
 
 
-def test_sos::adtmm::condequation_constructor_exists():
-    assert callable(SOS::adtmm::CondEquation.__init__)
+def test_sos_adtmm_condequation_constructor_exists():
+    assert callable(SOS_adtmm_CondEquation.__init__)
 
 
-def test_sos::adtmm::condequation_constructor_args():
-    sig = inspect.signature(SOS::adtmm::CondEquation.__init__)
+def test_sos_adtmm_condequation_constructor_args():
+    sig = inspect.signature(SOS_adtmm_CondEquation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::adtmm::variable_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::Variable)
+def test_sos_adtmm_variable_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_Variable)
 
 
-def test_sos::adtmm::variable_constructor_exists():
-    assert callable(SOS::adtmm::Variable.__init__)
+def test_sos_adtmm_variable_constructor_exists():
+    assert callable(SOS_adtmm_Variable.__init__)
 
 
-def test_sos::adtmm::variable_constructor_args():
-    sig = inspect.signature(SOS::adtmm::Variable.__init__)
+def test_sos_adtmm_variable_constructor_args():
+    sig = inspect.signature(SOS_adtmm_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sos::adtmm::variable_has_name():
-    assert hasattr(SOS::adtmm::Variable, "name")
+def test_sos_adtmm_variable_has_name():
+    assert hasattr(SOS_adtmm_Variable, "name")
     descriptor = None
-    for klass in SOS::adtmm::Variable.__mro__:
+    for klass in SOS_adtmm_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -637,23 +567,23 @@ def test_term_constructor_args():
 
 
 
-def test_sos::set::modelclassattribute_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::ModelClassAttribute)
+def test_sos_set_modelclassattribute_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_ModelClassAttribute)
 
 
-def test_sos::set::modelclassattribute_constructor_exists():
-    assert callable(SOS::set::ModelClassAttribute.__init__)
+def test_sos_set_modelclassattribute_constructor_exists():
+    assert callable(SOS_set_ModelClassAttribute.__init__)
 
 
-def test_sos::set::modelclassattribute_constructor_args():
-    sig = inspect.signature(SOS::set::ModelClassAttribute.__init__)
+def test_sos_set_modelclassattribute_constructor_args():
+    sig = inspect.signature(SOS_set_ModelClassAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "attributeName" in params, "Missing parameter 'attributeName'"
 
-def test_sos::set::modelclassattribute_has_attributeName():
-    assert hasattr(SOS::set::ModelClassAttribute, "attributeName")
+def test_sos_set_modelclassattribute_has_attributeName():
+    assert hasattr(SOS_set_ModelClassAttribute, "attributeName")
     descriptor = None
-    for klass in SOS::set::ModelClassAttribute.__mro__:
+    for klass in SOS_set_ModelClassAttribute.__mro__:
         if "attributeName" in klass.__dict__:
             descriptor = klass.__dict__["attributeName"]
             break
@@ -661,61 +591,37 @@ def test_sos::set::modelclassattribute_has_attributeName():
 
 
 
-def test_sos::adtmm::cterm_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::CTerm)
+def test_sos_set_setterm_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_SetTerm)
 
 
-def test_sos::adtmm::cterm_constructor_exists():
-    assert callable(SOS::adtmm::CTerm.__init__)
+def test_sos_set_setterm_constructor_exists():
+    assert callable(SOS_set_SetTerm.__init__)
 
 
-def test_sos::adtmm::cterm_constructor_args():
-    sig = inspect.signature(SOS::adtmm::CTerm.__init__)
-    params = list(sig.parameters.keys())
-    assert "iter" in params, "Missing parameter 'iter'"
-
-def test_sos::adtmm::cterm_has_iter():
-    assert hasattr(SOS::adtmm::CTerm, "iter")
-    descriptor = None
-    for klass in SOS::adtmm::CTerm.__mro__:
-        if "iter" in klass.__dict__:
-            descriptor = klass.__dict__["iter"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sos::set::setterm_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::SetTerm)
-
-
-def test_sos::set::setterm_constructor_exists():
-    assert callable(SOS::set::SetTerm.__init__)
-
-
-def test_sos::set::setterm_constructor_args():
-    sig = inspect.signature(SOS::set::SetTerm.__init__)
+def test_sos_set_setterm_constructor_args():
+    sig = inspect.signature(SOS_set_SetTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::set::modelrelation_is_not_abstract():
-    assert not inspect.isabstract(SOS::set::ModelRelation)
+def test_sos_set_modelrelation_is_not_abstract():
+    assert not inspect.isabstract(SOS_set_ModelRelation)
 
 
-def test_sos::set::modelrelation_constructor_exists():
-    assert callable(SOS::set::ModelRelation.__init__)
+def test_sos_set_modelrelation_constructor_exists():
+    assert callable(SOS_set_ModelRelation.__init__)
 
 
-def test_sos::set::modelrelation_constructor_args():
-    sig = inspect.signature(SOS::set::ModelRelation.__init__)
+def test_sos_set_modelrelation_constructor_args():
+    sig = inspect.signature(SOS_set_ModelRelation.__init__)
     params = list(sig.parameters.keys())
     assert "referenceName" in params, "Missing parameter 'referenceName'"
 
-def test_sos::set::modelrelation_has_referenceName():
-    assert hasattr(SOS::set::ModelRelation, "referenceName")
+def test_sos_set_modelrelation_has_referenceName():
+    assert hasattr(SOS_set_ModelRelation, "referenceName")
     descriptor = None
-    for klass in SOS::set::ModelRelation.__mro__:
+    for klass in SOS_set_ModelRelation.__mro__:
         if "referenceName" in klass.__dict__:
             descriptor = klass.__dict__["referenceName"]
             break
@@ -723,16 +629,40 @@ def test_sos::set::modelrelation_has_referenceName():
 
 
 
-def test_sos::adtmm::variableref_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::VariableRef)
+def test_sos_adtmm_cterm_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_CTerm)
 
 
-def test_sos::adtmm::variableref_constructor_exists():
-    assert callable(SOS::adtmm::VariableRef.__init__)
+def test_sos_adtmm_cterm_constructor_exists():
+    assert callable(SOS_adtmm_CTerm.__init__)
 
 
-def test_sos::adtmm::variableref_constructor_args():
-    sig = inspect.signature(SOS::adtmm::VariableRef.__init__)
+def test_sos_adtmm_cterm_constructor_args():
+    sig = inspect.signature(SOS_adtmm_CTerm.__init__)
+    params = list(sig.parameters.keys())
+    assert "iter" in params, "Missing parameter 'iter'"
+
+def test_sos_adtmm_cterm_has_iter():
+    assert hasattr(SOS_adtmm_CTerm, "iter")
+    descriptor = None
+    for klass in SOS_adtmm_CTerm.__mro__:
+        if "iter" in klass.__dict__:
+            descriptor = klass.__dict__["iter"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sos_adtmm_variableref_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_VariableRef)
+
+
+def test_sos_adtmm_variableref_constructor_exists():
+    assert callable(SOS_adtmm_VariableRef.__init__)
+
+
+def test_sos_adtmm_variableref_constructor_args():
+    sig = inspect.signature(SOS_adtmm_VariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -765,23 +695,23 @@ def test_sortdeclaration_constructor_args():
 
 
 
-def test_sos::adtmm::adt_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::ADT)
+def test_sos_adtmm_adt_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_ADT)
 
 
-def test_sos::adtmm::adt_constructor_exists():
-    assert callable(SOS::adtmm::ADT.__init__)
+def test_sos_adtmm_adt_constructor_exists():
+    assert callable(SOS_adtmm_ADT.__init__)
 
 
-def test_sos::adtmm::adt_constructor_args():
-    sig = inspect.signature(SOS::adtmm::ADT.__init__)
+def test_sos_adtmm_adt_constructor_args():
+    sig = inspect.signature(SOS_adtmm_ADT.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sos::adtmm::adt_has_name():
-    assert hasattr(SOS::adtmm::ADT, "name")
+def test_sos_adtmm_adt_has_name():
+    assert hasattr(SOS_adtmm_ADT, "name")
     descriptor = None
-    for klass in SOS::adtmm::ADT.__mro__:
+    for klass in SOS_adtmm_ADT.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -789,16 +719,16 @@ def test_sos::adtmm::adt_has_name():
 
 
 
-def test_sos::algebraicconditionlist_is_not_abstract():
-    assert not inspect.isabstract(SOS::AlgebraicConditionList)
+def test_sos_algebraicconditionlist_is_not_abstract():
+    assert not inspect.isabstract(SOS_AlgebraicConditionList)
 
 
-def test_sos::algebraicconditionlist_constructor_exists():
-    assert callable(SOS::AlgebraicConditionList.__init__)
+def test_sos_algebraicconditionlist_constructor_exists():
+    assert callable(SOS_AlgebraicConditionList.__init__)
 
 
-def test_sos::algebraicconditionlist_constructor_args():
-    sig = inspect.signature(SOS::AlgebraicConditionList.__init__)
+def test_sos_algebraicconditionlist_constructor_args():
+    sig = inspect.signature(SOS_AlgebraicConditionList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -817,58 +747,58 @@ def test_abstractequation_constructor_args():
 
 
 
-def test_sos::adtmm::inequation_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::Inequation)
+def test_sos_adtmm_equation_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_Equation)
 
 
-def test_sos::adtmm::inequation_constructor_exists():
-    assert callable(SOS::adtmm::Inequation.__init__)
+def test_sos_adtmm_equation_constructor_exists():
+    assert callable(SOS_adtmm_Equation.__init__)
 
 
-def test_sos::adtmm::inequation_constructor_args():
-    sig = inspect.signature(SOS::adtmm::Inequation.__init__)
+def test_sos_adtmm_equation_constructor_args():
+    sig = inspect.signature(SOS_adtmm_Equation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::adtmm::equation_is_not_abstract():
-    assert not inspect.isabstract(SOS::adtmm::Equation)
+def test_sos_adtmm_inequation_is_not_abstract():
+    assert not inspect.isabstract(SOS_adtmm_Inequation)
 
 
-def test_sos::adtmm::equation_constructor_exists():
-    assert callable(SOS::adtmm::Equation.__init__)
+def test_sos_adtmm_inequation_constructor_exists():
+    assert callable(SOS_adtmm_Inequation.__init__)
 
 
-def test_sos::adtmm::equation_constructor_args():
-    sig = inspect.signature(SOS::adtmm::Equation.__init__)
+def test_sos_adtmm_inequation_constructor_args():
+    sig = inspect.signature(SOS_adtmm_Inequation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::rule_is_not_abstract():
-    assert not inspect.isabstract(SOS::Rule)
+def test_sos_rule_is_not_abstract():
+    assert not inspect.isabstract(SOS_Rule)
 
 
-def test_sos::rule_constructor_exists():
-    assert callable(SOS::Rule.__init__)
+def test_sos_rule_constructor_exists():
+    assert callable(SOS_Rule.__init__)
 
 
-def test_sos::rule_constructor_args():
-    sig = inspect.signature(SOS::Rule.__init__)
+def test_sos_rule_constructor_args():
+    sig = inspect.signature(SOS_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::semantics_is_not_abstract():
-    assert not inspect.isabstract(SOS::Semantics)
+def test_sos_semantics_is_not_abstract():
+    assert not inspect.isabstract(SOS_Semantics)
 
 
-def test_sos::semantics_constructor_exists():
-    assert callable(SOS::Semantics.__init__)
+def test_sos_semantics_constructor_exists():
+    assert callable(SOS_Semantics.__init__)
 
 
-def test_sos::semantics_constructor_args():
-    sig = inspect.signature(SOS::Semantics.__init__)
+def test_sos_semantics_constructor_args():
+    sig = inspect.signature(SOS_Semantics.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -887,44 +817,114 @@ def test_condition_constructor_args():
 
 
 
-def test_sos::typejudment_is_not_abstract():
-    assert not inspect.isabstract(SOS::TypeJudment)
+def test_sos_algebraiccondition_is_not_abstract():
+    assert not inspect.isabstract(SOS_AlgebraicCondition)
 
 
-def test_sos::typejudment_constructor_exists():
-    assert callable(SOS::TypeJudment.__init__)
+def test_sos_algebraiccondition_constructor_exists():
+    assert callable(SOS_AlgebraicCondition.__init__)
 
 
-def test_sos::typejudment_constructor_args():
-    sig = inspect.signature(SOS::TypeJudment.__init__)
+def test_sos_algebraiccondition_constructor_args():
+    sig = inspect.signature(SOS_AlgebraicCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::algebraiccondition_is_not_abstract():
-    assert not inspect.isabstract(SOS::AlgebraicCondition)
+def test_sos_typejudment_is_not_abstract():
+    assert not inspect.isabstract(SOS_TypeJudment)
 
 
-def test_sos::algebraiccondition_constructor_exists():
-    assert callable(SOS::AlgebraicCondition.__init__)
+def test_sos_typejudment_constructor_exists():
+    assert callable(SOS_TypeJudment.__init__)
 
 
-def test_sos::algebraiccondition_constructor_args():
-    sig = inspect.signature(SOS::AlgebraicCondition.__init__)
+def test_sos_typejudment_constructor_args():
+    sig = inspect.signature(SOS_TypeJudment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sos::transition_is_not_abstract():
-    assert not inspect.isabstract(SOS::Transition)
+def test_sos_transition_is_not_abstract():
+    assert not inspect.isabstract(SOS_Transition)
 
 
-def test_sos::transition_constructor_exists():
-    assert callable(SOS::Transition.__init__)
+def test_sos_transition_constructor_exists():
+    assert callable(SOS_Transition.__init__)
 
 
-def test_sos::transition_constructor_args():
-    sig = inspect.signature(SOS::Transition.__init__)
+def test_sos_transition_constructor_args():
+    sig = inspect.signature(SOS_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sos_condition_is_not_abstract():
+    assert not inspect.isabstract(SOS_Condition)
+
+
+def test_sos_condition_constructor_exists():
+    assert callable(SOS_Condition.__init__)
+
+
+def test_sos_condition_constructor_args():
+    sig = inspect.signature(SOS_Condition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variable_is_not_abstract():
+    assert not inspect.isabstract(Variable)
+
+
+def test_variable_constructor_exists():
+    assert callable(Variable.__init__)
+
+
+def test_variable_constructor_args():
+    sig = inspect.signature(Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sos_conclusion_is_not_abstract():
+    assert not inspect.isabstract(SOS_Conclusion)
+
+
+def test_sos_conclusion_constructor_exists():
+    assert callable(SOS_Conclusion.__init__)
+
+
+def test_sos_conclusion_constructor_args():
+    sig = inspect.signature(SOS_Conclusion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sos_premisselist_is_not_abstract():
+    assert not inspect.isabstract(SOS_PremisseList)
+
+
+def test_sos_premisselist_constructor_exists():
+    assert callable(SOS_PremisseList.__init__)
+
+
+def test_sos_premisselist_constructor_args():
+    sig = inspect.signature(SOS_PremisseList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adt_is_not_abstract():
+    assert not inspect.isabstract(ADT)
+
+
+def test_adt_constructor_exists():
+    assert callable(ADT.__init__)
+
+
+def test_adt_constructor_args():
+    sig = inspect.signature(ADT.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -939,29 +939,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SOS::Condition_strategy = st.builds(
-    SOS::Condition,
-)
-Variable_strategy = st.builds(
-    Variable,
-)
-SOS::Conclusion_strategy = st.builds(
-    SOS::Conclusion,
-)
-SOS::PremisseList_strategy = st.builds(
-    SOS::PremisseList,
-)
-ADT_strategy = st.builds(
-    ADT,
-)
 SetMembership_strategy = st.builds(
     SetMembership,
 )
-SOS::set::ForAllIn_strategy = st.builds(
-    SOS::set::ForAllIn,
+SOS_set_ForAllIn_strategy = st.builds(
+    SOS_set_ForAllIn,
 )
-SOS::set::ExistsIn_strategy = st.builds(
-    SOS::set::ExistsIn,
+SOS_set_ExistsIn_strategy = st.builds(
+    SOS_set_ExistsIn,
 )
 VariableRef_strategy = st.builds(
     VariableRef,
@@ -969,117 +954,117 @@ VariableRef_strategy = st.builds(
 SetOperator_strategy = st.builds(
     SetOperator,
 )
-SOS::set::Excluding_strategy = st.builds(
-    SOS::set::Excluding,
+SOS_set_Intersection_strategy = st.builds(
+    SOS_set_Intersection,
 )
-SOS::set::Intersection_strategy = st.builds(
-    SOS::set::Intersection,
+SOS_set_Excluding_strategy = st.builds(
+    SOS_set_Excluding,
 )
-SOS::set::Union_strategy = st.builds(
-    SOS::set::Union,
+SOS_set_Union_strategy = st.builds(
+    SOS_set_Union,
 )
-set::SOS::AlgebraicConditionList_strategy = st.builds(
-    set::SOS::AlgebraicConditionList,
+set_SOS_AlgebraicConditionList_strategy = st.builds(
+    set_SOS_AlgebraicConditionList,
 )
-SOS::adtmm::AbstractEquation_strategy = st.builds(
-    SOS::adtmm::AbstractEquation,
+SOS_adtmm_AbstractEquation_strategy = st.builds(
+    SOS_adtmm_AbstractEquation,
 )
 SetTerm_strategy = st.builds(
     SetTerm,
 )
-SOS::set::ModelSet_strategy = st.builds(
-    SOS::set::ModelSet,
+SOS_set_ModelSet_strategy = st.builds(
+    SOS_set_ModelSet,
 )
-SOS::set::SetOperator_strategy = st.builds(
-    SOS::set::SetOperator,
+SOS_set_SetConstructor_strategy = st.builds(
+    SOS_set_SetConstructor,
 )
-SOS::set::SetConstructor_strategy = st.builds(
-    SOS::set::SetConstructor,
+SOS_set_SetOperator_strategy = st.builds(
+    SOS_set_SetOperator,
 )
-SOS::set::SetMembership_strategy = st.builds(
-    SOS::set::SetMembership,
+SOS_set_SetMembership_strategy = st.builds(
+    SOS_set_SetMembership,
 )
-SOS::adtmm::AbstractOperation_strategy = st.builds(
-    SOS::adtmm::AbstractOperation,
+SOS_adtmm_AbstractOperation_strategy = st.builds(
+    SOS_adtmm_AbstractOperation,
     name=
         safe_text
 )
-SOS::adtmm::SortDeclaration_strategy = st.builds(
-    SOS::adtmm::SortDeclaration,
+SOS_adtmm_SortDeclaration_strategy = st.builds(
+    SOS_adtmm_SortDeclaration,
     name=
         safe_text
 )
-SOS::adtmm::AbstractSort_strategy = st.builds(
-    SOS::adtmm::AbstractSort,
+SOS_adtmm_AbstractSort_strategy = st.builds(
+    SOS_adtmm_AbstractSort,
 )
 Sort_strategy = st.builds(
     Sort,
 )
-SOS::adtmm::AtomicSort_strategy = st.builds(
-    SOS::adtmm::AtomicSort,
+SOS_adtmm_AtomicSort_strategy = st.builds(
+    SOS_adtmm_AtomicSort,
 )
-SOS::set::Set_strategy = st.builds(
-    SOS::set::Set,
-)
-SOS::set::ModelSort_strategy = st.builds(
-    SOS::set::ModelSort,
+SOS_set_ModelSort_strategy = st.builds(
+    SOS_set_ModelSort,
     packageName=
         safe_text,
     className=
         safe_text
 )
+SOS_set_Set_strategy = st.builds(
+    SOS_set_Set,
+)
 AbstractOperation_strategy = st.builds(
     AbstractOperation,
 )
-SOS::adtmm::AbstractGenericOp_strategy = st.builds(
-    SOS::adtmm::AbstractGenericOp,
+SOS_adtmm_AbstractGenericOp_strategy = st.builds(
+    SOS_adtmm_AbstractGenericOp,
 )
-SOS::adtmm::Operation_strategy = st.builds(
-    SOS::adtmm::Operation,
+SOS_adtmm_Operation_strategy = st.builds(
+    SOS_adtmm_Operation,
 )
-SOS::adtmm::Sort_strategy = st.builds(
-    SOS::adtmm::Sort,
+SOS_adtmm_Sort_strategy = st.builds(
+    SOS_adtmm_Sort,
 )
 CondEquation_strategy = st.builds(
     CondEquation,
 )
-SOS::adtmm::Term_strategy = st.builds(
-    SOS::adtmm::Term,
+SOS_adtmm_Term_strategy = st.builds(
+    SOS_adtmm_Term,
 )
 Equation_strategy = st.builds(
     Equation,
 )
-SOS::adtmm::CondEquation_strategy = st.builds(
-    SOS::adtmm::CondEquation,
+SOS_adtmm_CondEquation_strategy = st.builds(
+    SOS_adtmm_CondEquation,
 )
-SOS::adtmm::Variable_strategy = st.builds(
-    SOS::adtmm::Variable,
+SOS_adtmm_Variable_strategy = st.builds(
+    SOS_adtmm_Variable,
     name=
         safe_text
 )
 Term_strategy = st.builds(
     Term,
 )
-SOS::set::ModelClassAttribute_strategy = st.builds(
-    SOS::set::ModelClassAttribute,
+SOS_set_ModelClassAttribute_strategy = st.builds(
+    SOS_set_ModelClassAttribute,
     attributeName=
         safe_text
 )
-SOS::adtmm::CTerm_strategy = st.builds(
-    SOS::adtmm::CTerm,
-    iter=
-        st.integers()
+SOS_set_SetTerm_strategy = st.builds(
+    SOS_set_SetTerm,
 )
-SOS::set::SetTerm_strategy = st.builds(
-    SOS::set::SetTerm,
-)
-SOS::set::ModelRelation_strategy = st.builds(
-    SOS::set::ModelRelation,
+SOS_set_ModelRelation_strategy = st.builds(
+    SOS_set_ModelRelation,
     referenceName=
         safe_text
 )
-SOS::adtmm::VariableRef_strategy = st.builds(
-    SOS::adtmm::VariableRef,
+SOS_adtmm_CTerm_strategy = st.builds(
+    SOS_adtmm_CTerm,
+    iter=
+        st.integers()
+)
+SOS_adtmm_VariableRef_strategy = st.builds(
+    SOS_adtmm_VariableRef,
 )
 Operation_strategy = st.builds(
     Operation,
@@ -1087,81 +1072,71 @@ Operation_strategy = st.builds(
 SortDeclaration_strategy = st.builds(
     SortDeclaration,
 )
-SOS::adtmm::ADT_strategy = st.builds(
-    SOS::adtmm::ADT,
+SOS_adtmm_ADT_strategy = st.builds(
+    SOS_adtmm_ADT,
     name=
         safe_text
 )
-SOS::AlgebraicConditionList_strategy = st.builds(
-    SOS::AlgebraicConditionList,
+SOS_AlgebraicConditionList_strategy = st.builds(
+    SOS_AlgebraicConditionList,
 )
 AbstractEquation_strategy = st.builds(
     AbstractEquation,
 )
-SOS::adtmm::Inequation_strategy = st.builds(
-    SOS::adtmm::Inequation,
+SOS_adtmm_Equation_strategy = st.builds(
+    SOS_adtmm_Equation,
 )
-SOS::adtmm::Equation_strategy = st.builds(
-    SOS::adtmm::Equation,
+SOS_adtmm_Inequation_strategy = st.builds(
+    SOS_adtmm_Inequation,
 )
-SOS::Rule_strategy = st.builds(
-    SOS::Rule,
+SOS_Rule_strategy = st.builds(
+    SOS_Rule,
 )
-SOS::Semantics_strategy = st.builds(
-    SOS::Semantics,
+SOS_Semantics_strategy = st.builds(
+    SOS_Semantics,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-SOS::TypeJudment_strategy = st.builds(
-    SOS::TypeJudment,
+SOS_AlgebraicCondition_strategy = st.builds(
+    SOS_AlgebraicCondition,
 )
-SOS::AlgebraicCondition_strategy = st.builds(
-    SOS::AlgebraicCondition,
+SOS_TypeJudment_strategy = st.builds(
+    SOS_TypeJudment,
 )
-SOS::Transition_strategy = st.builds(
-    SOS::Transition,
+SOS_Transition_strategy = st.builds(
+    SOS_Transition,
 )
-
-@given(instance=SOS::Condition_strategy)
-@settings(max_examples=50)
-def test_sos::condition_instantiation(instance):
-    assert isinstance(instance, SOS::Condition)
-
-@given(instance=Variable_strategy)
-@settings(max_examples=50)
-def test_variable_instantiation(instance):
-    assert isinstance(instance, Variable)
-
-@given(instance=SOS::Conclusion_strategy)
-@settings(max_examples=50)
-def test_sos::conclusion_instantiation(instance):
-    assert isinstance(instance, SOS::Conclusion)
-
-@given(instance=SOS::PremisseList_strategy)
-@settings(max_examples=50)
-def test_sos::premisselist_instantiation(instance):
-    assert isinstance(instance, SOS::PremisseList)
-
-@given(instance=ADT_strategy)
-@settings(max_examples=50)
-def test_adt_instantiation(instance):
-    assert isinstance(instance, ADT)
+SOS_Condition_strategy = st.builds(
+    SOS_Condition,
+)
+Variable_strategy = st.builds(
+    Variable,
+)
+SOS_Conclusion_strategy = st.builds(
+    SOS_Conclusion,
+)
+SOS_PremisseList_strategy = st.builds(
+    SOS_PremisseList,
+)
+ADT_strategy = st.builds(
+    ADT,
+)
 
 @given(instance=SetMembership_strategy)
 @settings(max_examples=50)
 def test_setmembership_instantiation(instance):
     assert isinstance(instance, SetMembership)
 
-@given(instance=SOS::set::ForAllIn_strategy)
+@given(instance=SOS_set_ForAllIn_strategy)
 @settings(max_examples=50)
-def test_sos::set::forallin_instantiation(instance):
-    assert isinstance(instance, SOS::set::ForAllIn)
+def test_sos_set_forallin_instantiation(instance):
+    assert isinstance(instance, SOS_set_ForAllIn)
 
-@given(instance=SOS::set::ExistsIn_strategy)
+@given(instance=SOS_set_ExistsIn_strategy)
 @settings(max_examples=50)
-def test_sos::set::existsin_instantiation(instance):
-    assert isinstance(instance, SOS::set::ExistsIn)
+def test_sos_set_existsin_instantiation(instance):
+    assert isinstance(instance, SOS_set_ExistsIn)
 
 @given(instance=VariableRef_strategy)
 @settings(max_examples=50)
@@ -1173,187 +1148,172 @@ def test_variableref_instantiation(instance):
 def test_setoperator_instantiation(instance):
     assert isinstance(instance, SetOperator)
 
-@given(instance=SOS::set::Excluding_strategy)
+@given(instance=SOS_set_Intersection_strategy)
 @settings(max_examples=50)
-def test_sos::set::excluding_instantiation(instance):
-    assert isinstance(instance, SOS::set::Excluding)
+def test_sos_set_intersection_instantiation(instance):
+    assert isinstance(instance, SOS_set_Intersection)
 
-@given(instance=SOS::set::Intersection_strategy)
+@given(instance=SOS_set_Excluding_strategy)
 @settings(max_examples=50)
-def test_sos::set::intersection_instantiation(instance):
-    assert isinstance(instance, SOS::set::Intersection)
+def test_sos_set_excluding_instantiation(instance):
+    assert isinstance(instance, SOS_set_Excluding)
 
-@given(instance=SOS::set::Union_strategy)
+@given(instance=SOS_set_Union_strategy)
 @settings(max_examples=50)
-def test_sos::set::union_instantiation(instance):
-    assert isinstance(instance, SOS::set::Union)
+def test_sos_set_union_instantiation(instance):
+    assert isinstance(instance, SOS_set_Union)
 
-@given(instance=set::SOS::AlgebraicConditionList_strategy)
+@given(instance=set_SOS_AlgebraicConditionList_strategy)
 @settings(max_examples=50)
-def test_set::sos::algebraicconditionlist_instantiation(instance):
-    assert isinstance(instance, set::SOS::AlgebraicConditionList)
+def test_set_sos_algebraicconditionlist_instantiation(instance):
+    assert isinstance(instance, set_SOS_AlgebraicConditionList)
 
-@given(instance=SOS::adtmm::AbstractEquation_strategy)
+@given(instance=SOS_adtmm_AbstractEquation_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::abstractequation_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::AbstractEquation)
+def test_sos_adtmm_abstractequation_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_AbstractEquation)
 
 @given(instance=SetTerm_strategy)
 @settings(max_examples=50)
 def test_setterm_instantiation(instance):
     assert isinstance(instance, SetTerm)
 
-@given(instance=SOS::set::ModelSet_strategy)
+@given(instance=SOS_set_ModelSet_strategy)
 @settings(max_examples=50)
-def test_sos::set::modelset_instantiation(instance):
-    assert isinstance(instance, SOS::set::ModelSet)
+def test_sos_set_modelset_instantiation(instance):
+    assert isinstance(instance, SOS_set_ModelSet)
 
-@given(instance=SOS::set::SetOperator_strategy)
+@given(instance=SOS_set_SetConstructor_strategy)
 @settings(max_examples=50)
-def test_sos::set::setoperator_instantiation(instance):
-    assert isinstance(instance, SOS::set::SetOperator)
+def test_sos_set_setconstructor_instantiation(instance):
+    assert isinstance(instance, SOS_set_SetConstructor)
 
-@given(instance=SOS::set::SetConstructor_strategy)
+@given(instance=SOS_set_SetOperator_strategy)
 @settings(max_examples=50)
-def test_sos::set::setconstructor_instantiation(instance):
-    assert isinstance(instance, SOS::set::SetConstructor)
+def test_sos_set_setoperator_instantiation(instance):
+    assert isinstance(instance, SOS_set_SetOperator)
 
-@given(instance=SOS::set::SetMembership_strategy)
+@given(instance=SOS_set_SetMembership_strategy)
 @settings(max_examples=50)
-def test_sos::set::setmembership_instantiation(instance):
-    assert isinstance(instance, SOS::set::SetMembership)
+def test_sos_set_setmembership_instantiation(instance):
+    assert isinstance(instance, SOS_set_SetMembership)
 
-@given(instance=SOS::adtmm::AbstractOperation_strategy)
+@given(instance=SOS_adtmm_AbstractOperation_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::abstractoperation_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::AbstractOperation)
-
-@given(instance=SOS::adtmm::AbstractOperation_strategy)
-def test_sos::adtmm::abstractoperation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sos_adtmm_abstractoperation_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_AbstractOperation)
 
 
-@given(instance=SOS::adtmm::AbstractOperation_strategy)
-def test_sos::adtmm::abstractoperation_name_setter(instance):
+
+@given(instance=SOS_adtmm_AbstractOperation_strategy)
+def test_sos_adtmm_abstractoperation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SOS::adtmm::SortDeclaration_strategy)
+@given(instance=SOS_adtmm_SortDeclaration_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::sortdeclaration_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::SortDeclaration)
-
-@given(instance=SOS::adtmm::SortDeclaration_strategy)
-def test_sos::adtmm::sortdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sos_adtmm_sortdeclaration_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_SortDeclaration)
 
 
-@given(instance=SOS::adtmm::SortDeclaration_strategy)
-def test_sos::adtmm::sortdeclaration_name_setter(instance):
+
+@given(instance=SOS_adtmm_SortDeclaration_strategy)
+def test_sos_adtmm_sortdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SOS::adtmm::AbstractSort_strategy)
+@given(instance=SOS_adtmm_AbstractSort_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::abstractsort_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::AbstractSort)
+def test_sos_adtmm_abstractsort_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_AbstractSort)
 
 @given(instance=Sort_strategy)
 @settings(max_examples=50)
 def test_sort_instantiation(instance):
     assert isinstance(instance, Sort)
 
-@given(instance=SOS::adtmm::AtomicSort_strategy)
+@given(instance=SOS_adtmm_AtomicSort_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::atomicsort_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::AtomicSort)
+def test_sos_adtmm_atomicsort_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_AtomicSort)
 
-@given(instance=SOS::set::Set_strategy)
+@given(instance=SOS_set_ModelSort_strategy)
 @settings(max_examples=50)
-def test_sos::set::set_instantiation(instance):
-    assert isinstance(instance, SOS::set::Set)
-
-@given(instance=SOS::set::ModelSort_strategy)
-@settings(max_examples=50)
-def test_sos::set::modelsort_instantiation(instance):
-    assert isinstance(instance, SOS::set::ModelSort)
-
-@given(instance=SOS::set::ModelSort_strategy)
-def test_sos::set::modelsort_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_sos_set_modelsort_instantiation(instance):
+    assert isinstance(instance, SOS_set_ModelSort)
 
 
-@given(instance=SOS::set::ModelSort_strategy)
-def test_sos::set::modelsort_packageName_setter(instance):
+
+@given(instance=SOS_set_ModelSort_strategy)
+def test_sos_set_modelsort_packageName_setter(instance):
     original = instance.packageName
     instance.packageName = original
     assert instance.packageName == original
 
-@given(instance=SOS::set::ModelSort_strategy)
-def test_sos::set::modelsort_className_type(instance):
-    assert isinstance(instance.className, str)
 
 
-@given(instance=SOS::set::ModelSort_strategy)
-def test_sos::set::modelsort_className_setter(instance):
+@given(instance=SOS_set_ModelSort_strategy)
+def test_sos_set_modelsort_className_setter(instance):
     original = instance.className
     instance.className = original
     assert instance.className == original
+
+@given(instance=SOS_set_Set_strategy)
+@settings(max_examples=50)
+def test_sos_set_set_instantiation(instance):
+    assert isinstance(instance, SOS_set_Set)
 
 @given(instance=AbstractOperation_strategy)
 @settings(max_examples=50)
 def test_abstractoperation_instantiation(instance):
     assert isinstance(instance, AbstractOperation)
 
-@given(instance=SOS::adtmm::AbstractGenericOp_strategy)
+@given(instance=SOS_adtmm_AbstractGenericOp_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::abstractgenericop_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::AbstractGenericOp)
+def test_sos_adtmm_abstractgenericop_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_AbstractGenericOp)
 
-@given(instance=SOS::adtmm::Operation_strategy)
+@given(instance=SOS_adtmm_Operation_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::operation_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::Operation)
+def test_sos_adtmm_operation_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_Operation)
 
-@given(instance=SOS::adtmm::Sort_strategy)
+@given(instance=SOS_adtmm_Sort_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::sort_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::Sort)
+def test_sos_adtmm_sort_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_Sort)
 
 @given(instance=CondEquation_strategy)
 @settings(max_examples=50)
 def test_condequation_instantiation(instance):
     assert isinstance(instance, CondEquation)
 
-@given(instance=SOS::adtmm::Term_strategy)
+@given(instance=SOS_adtmm_Term_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::term_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::Term)
+def test_sos_adtmm_term_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_Term)
 
 @given(instance=Equation_strategy)
 @settings(max_examples=50)
 def test_equation_instantiation(instance):
     assert isinstance(instance, Equation)
 
-@given(instance=SOS::adtmm::CondEquation_strategy)
+@given(instance=SOS_adtmm_CondEquation_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::condequation_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::CondEquation)
+def test_sos_adtmm_condequation_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_CondEquation)
 
-@given(instance=SOS::adtmm::Variable_strategy)
+@given(instance=SOS_adtmm_Variable_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::variable_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::Variable)
-
-@given(instance=SOS::adtmm::Variable_strategy)
-def test_sos::adtmm::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sos_adtmm_variable_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_Variable)
 
 
-@given(instance=SOS::adtmm::Variable_strategy)
-def test_sos::adtmm::variable_name_setter(instance):
+
+@given(instance=SOS_adtmm_Variable_strategy)
+def test_sos_adtmm_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1363,63 +1323,54 @@ def test_sos::adtmm::variable_name_setter(instance):
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=SOS::set::ModelClassAttribute_strategy)
+@given(instance=SOS_set_ModelClassAttribute_strategy)
 @settings(max_examples=50)
-def test_sos::set::modelclassattribute_instantiation(instance):
-    assert isinstance(instance, SOS::set::ModelClassAttribute)
-
-@given(instance=SOS::set::ModelClassAttribute_strategy)
-def test_sos::set::modelclassattribute_attributeName_type(instance):
-    assert isinstance(instance.attributeName, str)
+def test_sos_set_modelclassattribute_instantiation(instance):
+    assert isinstance(instance, SOS_set_ModelClassAttribute)
 
 
-@given(instance=SOS::set::ModelClassAttribute_strategy)
-def test_sos::set::modelclassattribute_attributeName_setter(instance):
+
+@given(instance=SOS_set_ModelClassAttribute_strategy)
+def test_sos_set_modelclassattribute_attributeName_setter(instance):
     original = instance.attributeName
     instance.attributeName = original
     assert instance.attributeName == original
 
-@given(instance=SOS::adtmm::CTerm_strategy)
+@given(instance=SOS_set_SetTerm_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::cterm_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::CTerm)
+def test_sos_set_setterm_instantiation(instance):
+    assert isinstance(instance, SOS_set_SetTerm)
 
-@given(instance=SOS::adtmm::CTerm_strategy)
-def test_sos::adtmm::cterm_iter_type(instance):
-    assert isinstance(instance.iter, int)
-
-
-@given(instance=SOS::adtmm::CTerm_strategy)
-def test_sos::adtmm::cterm_iter_setter(instance):
-    original = instance.iter
-    instance.iter = original
-    assert instance.iter == original
-
-@given(instance=SOS::set::SetTerm_strategy)
+@given(instance=SOS_set_ModelRelation_strategy)
 @settings(max_examples=50)
-def test_sos::set::setterm_instantiation(instance):
-    assert isinstance(instance, SOS::set::SetTerm)
-
-@given(instance=SOS::set::ModelRelation_strategy)
-@settings(max_examples=50)
-def test_sos::set::modelrelation_instantiation(instance):
-    assert isinstance(instance, SOS::set::ModelRelation)
-
-@given(instance=SOS::set::ModelRelation_strategy)
-def test_sos::set::modelrelation_referenceName_type(instance):
-    assert isinstance(instance.referenceName, str)
+def test_sos_set_modelrelation_instantiation(instance):
+    assert isinstance(instance, SOS_set_ModelRelation)
 
 
-@given(instance=SOS::set::ModelRelation_strategy)
-def test_sos::set::modelrelation_referenceName_setter(instance):
+
+@given(instance=SOS_set_ModelRelation_strategy)
+def test_sos_set_modelrelation_referenceName_setter(instance):
     original = instance.referenceName
     instance.referenceName = original
     assert instance.referenceName == original
 
-@given(instance=SOS::adtmm::VariableRef_strategy)
+@given(instance=SOS_adtmm_CTerm_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::variableref_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::VariableRef)
+def test_sos_adtmm_cterm_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_CTerm)
+
+
+
+@given(instance=SOS_adtmm_CTerm_strategy)
+def test_sos_adtmm_cterm_iter_setter(instance):
+    original = instance.iter
+    instance.iter = original
+    assert instance.iter == original
+
+@given(instance=SOS_adtmm_VariableRef_strategy)
+@settings(max_examples=50)
+def test_sos_adtmm_variableref_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_VariableRef)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
@@ -1431,68 +1382,90 @@ def test_operation_instantiation(instance):
 def test_sortdeclaration_instantiation(instance):
     assert isinstance(instance, SortDeclaration)
 
-@given(instance=SOS::adtmm::ADT_strategy)
+@given(instance=SOS_adtmm_ADT_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::adt_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::ADT)
-
-@given(instance=SOS::adtmm::ADT_strategy)
-def test_sos::adtmm::adt_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sos_adtmm_adt_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_ADT)
 
 
-@given(instance=SOS::adtmm::ADT_strategy)
-def test_sos::adtmm::adt_name_setter(instance):
+
+@given(instance=SOS_adtmm_ADT_strategy)
+def test_sos_adtmm_adt_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SOS::AlgebraicConditionList_strategy)
+@given(instance=SOS_AlgebraicConditionList_strategy)
 @settings(max_examples=50)
-def test_sos::algebraicconditionlist_instantiation(instance):
-    assert isinstance(instance, SOS::AlgebraicConditionList)
+def test_sos_algebraicconditionlist_instantiation(instance):
+    assert isinstance(instance, SOS_AlgebraicConditionList)
 
 @given(instance=AbstractEquation_strategy)
 @settings(max_examples=50)
 def test_abstractequation_instantiation(instance):
     assert isinstance(instance, AbstractEquation)
 
-@given(instance=SOS::adtmm::Inequation_strategy)
+@given(instance=SOS_adtmm_Equation_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::inequation_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::Inequation)
+def test_sos_adtmm_equation_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_Equation)
 
-@given(instance=SOS::adtmm::Equation_strategy)
+@given(instance=SOS_adtmm_Inequation_strategy)
 @settings(max_examples=50)
-def test_sos::adtmm::equation_instantiation(instance):
-    assert isinstance(instance, SOS::adtmm::Equation)
+def test_sos_adtmm_inequation_instantiation(instance):
+    assert isinstance(instance, SOS_adtmm_Inequation)
 
-@given(instance=SOS::Rule_strategy)
+@given(instance=SOS_Rule_strategy)
 @settings(max_examples=50)
-def test_sos::rule_instantiation(instance):
-    assert isinstance(instance, SOS::Rule)
+def test_sos_rule_instantiation(instance):
+    assert isinstance(instance, SOS_Rule)
 
-@given(instance=SOS::Semantics_strategy)
+@given(instance=SOS_Semantics_strategy)
 @settings(max_examples=50)
-def test_sos::semantics_instantiation(instance):
-    assert isinstance(instance, SOS::Semantics)
+def test_sos_semantics_instantiation(instance):
+    assert isinstance(instance, SOS_Semantics)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=SOS::TypeJudment_strategy)
+@given(instance=SOS_AlgebraicCondition_strategy)
 @settings(max_examples=50)
-def test_sos::typejudment_instantiation(instance):
-    assert isinstance(instance, SOS::TypeJudment)
+def test_sos_algebraiccondition_instantiation(instance):
+    assert isinstance(instance, SOS_AlgebraicCondition)
 
-@given(instance=SOS::AlgebraicCondition_strategy)
+@given(instance=SOS_TypeJudment_strategy)
 @settings(max_examples=50)
-def test_sos::algebraiccondition_instantiation(instance):
-    assert isinstance(instance, SOS::AlgebraicCondition)
+def test_sos_typejudment_instantiation(instance):
+    assert isinstance(instance, SOS_TypeJudment)
 
-@given(instance=SOS::Transition_strategy)
+@given(instance=SOS_Transition_strategy)
 @settings(max_examples=50)
-def test_sos::transition_instantiation(instance):
-    assert isinstance(instance, SOS::Transition)
+def test_sos_transition_instantiation(instance):
+    assert isinstance(instance, SOS_Transition)
+
+@given(instance=SOS_Condition_strategy)
+@settings(max_examples=50)
+def test_sos_condition_instantiation(instance):
+    assert isinstance(instance, SOS_Condition)
+
+@given(instance=Variable_strategy)
+@settings(max_examples=50)
+def test_variable_instantiation(instance):
+    assert isinstance(instance, Variable)
+
+@given(instance=SOS_Conclusion_strategy)
+@settings(max_examples=50)
+def test_sos_conclusion_instantiation(instance):
+    assert isinstance(instance, SOS_Conclusion)
+
+@given(instance=SOS_PremisseList_strategy)
+@settings(max_examples=50)
+def test_sos_premisselist_instantiation(instance):
+    assert isinstance(instance, SOS_PremisseList)
+
+@given(instance=ADT_strategy)
+@settings(max_examples=50)
+def test_adt_instantiation(instance):
+    assert isinstance(instance, ADT)

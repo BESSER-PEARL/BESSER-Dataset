@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Transaction,
-    budgeting::CardTransaction,
-    budgeting::CashTransaction,
+    budgeting_CardTransaction,
+    budgeting_CashTransaction,
     ActualEntry,
-    budgeting::ActualTransactionEntry,
-    budgeting::ActualAmountEntry,
+    budgeting_ActualTransactionEntry,
+    budgeting_ActualAmountEntry,
     BudgetEntry,
-    budgeting::BudgetFactorEntry,
-    budgeting::BudgetAmountEntry,
+    budgeting_BudgetFactorEntry,
+    budgeting_BudgetAmountEntry,
     Category,
-    budgeting::ExpenseCategory,
-    budgeting::IncomeCategory,
-    budgeting::Transaction,
-    budgeting::ActualEntry,
-    budgeting::BudgetEntry,
-    budgeting::Month,
+    budgeting_ExpenseCategory,
+    budgeting_IncomeCategory,
+    budgeting_Transaction,
+    budgeting_ActualEntry,
+    budgeting_BudgetEntry,
+    budgeting_Month,
     BudgetingFile,
-    budgeting::Year,
-    budgeting::Library,
-    budgeting::BudgetingFile,
-    budgeting::Category,
+    budgeting_Year,
+    budgeting_Library,
+    budgeting_BudgetingFile,
+    budgeting_Category,
     MonthEnum,
 )
 
@@ -50,33 +50,33 @@ def test_transaction_constructor_args():
 
 
 
-def test_budgeting::cardtransaction_is_not_abstract():
-    assert not inspect.isabstract(budgeting::CardTransaction)
+def test_budgeting_cardtransaction_is_not_abstract():
+    assert not inspect.isabstract(budgeting_CardTransaction)
 
 
-def test_budgeting::cardtransaction_constructor_exists():
-    assert callable(budgeting::CardTransaction.__init__)
+def test_budgeting_cardtransaction_constructor_exists():
+    assert callable(budgeting_CardTransaction.__init__)
 
 
-def test_budgeting::cardtransaction_constructor_args():
-    sig = inspect.signature(budgeting::CardTransaction.__init__)
+def test_budgeting_cardtransaction_constructor_args():
+    sig = inspect.signature(budgeting_CardTransaction.__init__)
     params = list(sig.parameters.keys())
     assert "day" in params, "Missing parameter 'day'"
     assert "from_" in params, "Missing parameter 'from_'"
 
-def test_budgeting::cardtransaction_has_day():
-    assert hasattr(budgeting::CardTransaction, "day")
+def test_budgeting_cardtransaction_has_day():
+    assert hasattr(budgeting_CardTransaction, "day")
     descriptor = None
-    for klass in budgeting::CardTransaction.__mro__:
+    for klass in budgeting_CardTransaction.__mro__:
         if "day" in klass.__dict__:
             descriptor = klass.__dict__["day"]
             break
     assert isinstance(descriptor, property)
 
-def test_budgeting::cardtransaction_has_from_():
-    assert hasattr(budgeting::CardTransaction, "from_")
+def test_budgeting_cardtransaction_has_from_():
+    assert hasattr(budgeting_CardTransaction, "from_")
     descriptor = None
-    for klass in budgeting::CardTransaction.__mro__:
+    for klass in budgeting_CardTransaction.__mro__:
         if "from_" in klass.__dict__:
             descriptor = klass.__dict__["from_"]
             break
@@ -84,23 +84,23 @@ def test_budgeting::cardtransaction_has_from_():
 
 
 
-def test_budgeting::cashtransaction_is_not_abstract():
-    assert not inspect.isabstract(budgeting::CashTransaction)
+def test_budgeting_cashtransaction_is_not_abstract():
+    assert not inspect.isabstract(budgeting_CashTransaction)
 
 
-def test_budgeting::cashtransaction_constructor_exists():
-    assert callable(budgeting::CashTransaction.__init__)
+def test_budgeting_cashtransaction_constructor_exists():
+    assert callable(budgeting_CashTransaction.__init__)
 
 
-def test_budgeting::cashtransaction_constructor_args():
-    sig = inspect.signature(budgeting::CashTransaction.__init__)
+def test_budgeting_cashtransaction_constructor_args():
+    sig = inspect.signature(budgeting_CashTransaction.__init__)
     params = list(sig.parameters.keys())
     assert "day" in params, "Missing parameter 'day'"
 
-def test_budgeting::cashtransaction_has_day():
-    assert hasattr(budgeting::CashTransaction, "day")
+def test_budgeting_cashtransaction_has_day():
+    assert hasattr(budgeting_CashTransaction, "day")
     descriptor = None
-    for klass in budgeting::CashTransaction.__mro__:
+    for klass in budgeting_CashTransaction.__mro__:
         if "day" in klass.__dict__:
             descriptor = klass.__dict__["day"]
             break
@@ -122,37 +122,37 @@ def test_actualentry_constructor_args():
 
 
 
-def test_budgeting::actualtransactionentry_is_not_abstract():
-    assert not inspect.isabstract(budgeting::ActualTransactionEntry)
+def test_budgeting_actualtransactionentry_is_not_abstract():
+    assert not inspect.isabstract(budgeting_ActualTransactionEntry)
 
 
-def test_budgeting::actualtransactionentry_constructor_exists():
-    assert callable(budgeting::ActualTransactionEntry.__init__)
+def test_budgeting_actualtransactionentry_constructor_exists():
+    assert callable(budgeting_ActualTransactionEntry.__init__)
 
 
-def test_budgeting::actualtransactionentry_constructor_args():
-    sig = inspect.signature(budgeting::ActualTransactionEntry.__init__)
+def test_budgeting_actualtransactionentry_constructor_args():
+    sig = inspect.signature(budgeting_ActualTransactionEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_budgeting::actualamountentry_is_not_abstract():
-    assert not inspect.isabstract(budgeting::ActualAmountEntry)
+def test_budgeting_actualamountentry_is_not_abstract():
+    assert not inspect.isabstract(budgeting_ActualAmountEntry)
 
 
-def test_budgeting::actualamountentry_constructor_exists():
-    assert callable(budgeting::ActualAmountEntry.__init__)
+def test_budgeting_actualamountentry_constructor_exists():
+    assert callable(budgeting_ActualAmountEntry.__init__)
 
 
-def test_budgeting::actualamountentry_constructor_args():
-    sig = inspect.signature(budgeting::ActualAmountEntry.__init__)
+def test_budgeting_actualamountentry_constructor_args():
+    sig = inspect.signature(budgeting_ActualAmountEntry.__init__)
     params = list(sig.parameters.keys())
     assert "amount" in params, "Missing parameter 'amount'"
 
-def test_budgeting::actualamountentry_has_amount():
-    assert hasattr(budgeting::ActualAmountEntry, "amount")
+def test_budgeting_actualamountentry_has_amount():
+    assert hasattr(budgeting_ActualAmountEntry, "amount")
     descriptor = None
-    for klass in budgeting::ActualAmountEntry.__mro__:
+    for klass in budgeting_ActualAmountEntry.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
@@ -174,23 +174,23 @@ def test_budgetentry_constructor_args():
 
 
 
-def test_budgeting::budgetfactorentry_is_not_abstract():
-    assert not inspect.isabstract(budgeting::BudgetFactorEntry)
+def test_budgeting_budgetfactorentry_is_not_abstract():
+    assert not inspect.isabstract(budgeting_BudgetFactorEntry)
 
 
-def test_budgeting::budgetfactorentry_constructor_exists():
-    assert callable(budgeting::BudgetFactorEntry.__init__)
+def test_budgeting_budgetfactorentry_constructor_exists():
+    assert callable(budgeting_BudgetFactorEntry.__init__)
 
 
-def test_budgeting::budgetfactorentry_constructor_args():
-    sig = inspect.signature(budgeting::BudgetFactorEntry.__init__)
+def test_budgeting_budgetfactorentry_constructor_args():
+    sig = inspect.signature(budgeting_BudgetFactorEntry.__init__)
     params = list(sig.parameters.keys())
     assert "factor" in params, "Missing parameter 'factor'"
 
-def test_budgeting::budgetfactorentry_has_factor():
-    assert hasattr(budgeting::BudgetFactorEntry, "factor")
+def test_budgeting_budgetfactorentry_has_factor():
+    assert hasattr(budgeting_BudgetFactorEntry, "factor")
     descriptor = None
-    for klass in budgeting::BudgetFactorEntry.__mro__:
+    for klass in budgeting_BudgetFactorEntry.__mro__:
         if "factor" in klass.__dict__:
             descriptor = klass.__dict__["factor"]
             break
@@ -198,23 +198,23 @@ def test_budgeting::budgetfactorentry_has_factor():
 
 
 
-def test_budgeting::budgetamountentry_is_not_abstract():
-    assert not inspect.isabstract(budgeting::BudgetAmountEntry)
+def test_budgeting_budgetamountentry_is_not_abstract():
+    assert not inspect.isabstract(budgeting_BudgetAmountEntry)
 
 
-def test_budgeting::budgetamountentry_constructor_exists():
-    assert callable(budgeting::BudgetAmountEntry.__init__)
+def test_budgeting_budgetamountentry_constructor_exists():
+    assert callable(budgeting_BudgetAmountEntry.__init__)
 
 
-def test_budgeting::budgetamountentry_constructor_args():
-    sig = inspect.signature(budgeting::BudgetAmountEntry.__init__)
+def test_budgeting_budgetamountentry_constructor_args():
+    sig = inspect.signature(budgeting_BudgetAmountEntry.__init__)
     params = list(sig.parameters.keys())
     assert "amount" in params, "Missing parameter 'amount'"
 
-def test_budgeting::budgetamountentry_has_amount():
-    assert hasattr(budgeting::BudgetAmountEntry, "amount")
+def test_budgeting_budgetamountentry_has_amount():
+    assert hasattr(budgeting_BudgetAmountEntry, "amount")
     descriptor = None
-    for klass in budgeting::BudgetAmountEntry.__mro__:
+    for klass in budgeting_BudgetAmountEntry.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
@@ -236,23 +236,23 @@ def test_category_constructor_args():
 
 
 
-def test_budgeting::expensecategory_is_not_abstract():
-    assert not inspect.isabstract(budgeting::ExpenseCategory)
+def test_budgeting_expensecategory_is_not_abstract():
+    assert not inspect.isabstract(budgeting_ExpenseCategory)
 
 
-def test_budgeting::expensecategory_constructor_exists():
-    assert callable(budgeting::ExpenseCategory.__init__)
+def test_budgeting_expensecategory_constructor_exists():
+    assert callable(budgeting_ExpenseCategory.__init__)
 
 
-def test_budgeting::expensecategory_constructor_args():
-    sig = inspect.signature(budgeting::ExpenseCategory.__init__)
+def test_budgeting_expensecategory_constructor_args():
+    sig = inspect.signature(budgeting_ExpenseCategory.__init__)
     params = list(sig.parameters.keys())
     assert "patterns" in params, "Missing parameter 'patterns'"
 
-def test_budgeting::expensecategory_has_patterns():
-    assert hasattr(budgeting::ExpenseCategory, "patterns")
+def test_budgeting_expensecategory_has_patterns():
+    assert hasattr(budgeting_ExpenseCategory, "patterns")
     descriptor = None
-    for klass in budgeting::ExpenseCategory.__mro__:
+    for klass in budgeting_ExpenseCategory.__mro__:
         if "patterns" in klass.__dict__:
             descriptor = klass.__dict__["patterns"]
             break
@@ -260,37 +260,37 @@ def test_budgeting::expensecategory_has_patterns():
 
 
 
-def test_budgeting::incomecategory_is_not_abstract():
-    assert not inspect.isabstract(budgeting::IncomeCategory)
+def test_budgeting_incomecategory_is_not_abstract():
+    assert not inspect.isabstract(budgeting_IncomeCategory)
 
 
-def test_budgeting::incomecategory_constructor_exists():
-    assert callable(budgeting::IncomeCategory.__init__)
+def test_budgeting_incomecategory_constructor_exists():
+    assert callable(budgeting_IncomeCategory.__init__)
 
 
-def test_budgeting::incomecategory_constructor_args():
-    sig = inspect.signature(budgeting::IncomeCategory.__init__)
+def test_budgeting_incomecategory_constructor_args():
+    sig = inspect.signature(budgeting_IncomeCategory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_budgeting::transaction_is_not_abstract():
-    assert not inspect.isabstract(budgeting::Transaction)
+def test_budgeting_transaction_is_not_abstract():
+    assert not inspect.isabstract(budgeting_Transaction)
 
 
-def test_budgeting::transaction_constructor_exists():
-    assert callable(budgeting::Transaction.__init__)
+def test_budgeting_transaction_constructor_exists():
+    assert callable(budgeting_Transaction.__init__)
 
 
-def test_budgeting::transaction_constructor_args():
-    sig = inspect.signature(budgeting::Transaction.__init__)
+def test_budgeting_transaction_constructor_args():
+    sig = inspect.signature(budgeting_Transaction.__init__)
     params = list(sig.parameters.keys())
     assert "amount" in params, "Missing parameter 'amount'"
 
-def test_budgeting::transaction_has_amount():
-    assert hasattr(budgeting::Transaction, "amount")
+def test_budgeting_transaction_has_amount():
+    assert hasattr(budgeting_Transaction, "amount")
     descriptor = None
-    for klass in budgeting::Transaction.__mro__:
+    for klass in budgeting_Transaction.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
@@ -298,51 +298,51 @@ def test_budgeting::transaction_has_amount():
 
 
 
-def test_budgeting::actualentry_is_not_abstract():
-    assert not inspect.isabstract(budgeting::ActualEntry)
+def test_budgeting_actualentry_is_not_abstract():
+    assert not inspect.isabstract(budgeting_ActualEntry)
 
 
-def test_budgeting::actualentry_constructor_exists():
-    assert callable(budgeting::ActualEntry.__init__)
+def test_budgeting_actualentry_constructor_exists():
+    assert callable(budgeting_ActualEntry.__init__)
 
 
-def test_budgeting::actualentry_constructor_args():
-    sig = inspect.signature(budgeting::ActualEntry.__init__)
+def test_budgeting_actualentry_constructor_args():
+    sig = inspect.signature(budgeting_ActualEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_budgeting::budgetentry_is_not_abstract():
-    assert not inspect.isabstract(budgeting::BudgetEntry)
+def test_budgeting_budgetentry_is_not_abstract():
+    assert not inspect.isabstract(budgeting_BudgetEntry)
 
 
-def test_budgeting::budgetentry_constructor_exists():
-    assert callable(budgeting::BudgetEntry.__init__)
+def test_budgeting_budgetentry_constructor_exists():
+    assert callable(budgeting_BudgetEntry.__init__)
 
 
-def test_budgeting::budgetentry_constructor_args():
-    sig = inspect.signature(budgeting::BudgetEntry.__init__)
+def test_budgeting_budgetentry_constructor_args():
+    sig = inspect.signature(budgeting_BudgetEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_budgeting::month_is_not_abstract():
-    assert not inspect.isabstract(budgeting::Month)
+def test_budgeting_month_is_not_abstract():
+    assert not inspect.isabstract(budgeting_Month)
 
 
-def test_budgeting::month_constructor_exists():
-    assert callable(budgeting::Month.__init__)
+def test_budgeting_month_constructor_exists():
+    assert callable(budgeting_Month.__init__)
 
 
-def test_budgeting::month_constructor_args():
-    sig = inspect.signature(budgeting::Month.__init__)
+def test_budgeting_month_constructor_args():
+    sig = inspect.signature(budgeting_Month.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_budgeting::month_has_name():
-    assert hasattr(budgeting::Month, "name")
+def test_budgeting_month_has_name():
+    assert hasattr(budgeting_Month, "name")
     descriptor = None
-    for klass in budgeting::Month.__mro__:
+    for klass in budgeting_Month.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -364,23 +364,23 @@ def test_budgetingfile_constructor_args():
 
 
 
-def test_budgeting::year_is_not_abstract():
-    assert not inspect.isabstract(budgeting::Year)
+def test_budgeting_year_is_not_abstract():
+    assert not inspect.isabstract(budgeting_Year)
 
 
-def test_budgeting::year_constructor_exists():
-    assert callable(budgeting::Year.__init__)
+def test_budgeting_year_constructor_exists():
+    assert callable(budgeting_Year.__init__)
 
 
-def test_budgeting::year_constructor_args():
-    sig = inspect.signature(budgeting::Year.__init__)
+def test_budgeting_year_constructor_args():
+    sig = inspect.signature(budgeting_Year.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_budgeting::year_has_name():
-    assert hasattr(budgeting::Year, "name")
+def test_budgeting_year_has_name():
+    assert hasattr(budgeting_Year, "name")
     descriptor = None
-    for klass in budgeting::Year.__mro__:
+    for klass in budgeting_Year.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -388,23 +388,23 @@ def test_budgeting::year_has_name():
 
 
 
-def test_budgeting::library_is_not_abstract():
-    assert not inspect.isabstract(budgeting::Library)
+def test_budgeting_library_is_not_abstract():
+    assert not inspect.isabstract(budgeting_Library)
 
 
-def test_budgeting::library_constructor_exists():
-    assert callable(budgeting::Library.__init__)
+def test_budgeting_library_constructor_exists():
+    assert callable(budgeting_Library.__init__)
 
 
-def test_budgeting::library_constructor_args():
-    sig = inspect.signature(budgeting::Library.__init__)
+def test_budgeting_library_constructor_args():
+    sig = inspect.signature(budgeting_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_budgeting::library_has_name():
-    assert hasattr(budgeting::Library, "name")
+def test_budgeting_library_has_name():
+    assert hasattr(budgeting_Library, "name")
     descriptor = None
-    for klass in budgeting::Library.__mro__:
+    for klass in budgeting_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -412,37 +412,37 @@ def test_budgeting::library_has_name():
 
 
 
-def test_budgeting::budgetingfile_is_not_abstract():
-    assert not inspect.isabstract(budgeting::BudgetingFile)
+def test_budgeting_budgetingfile_is_not_abstract():
+    assert not inspect.isabstract(budgeting_BudgetingFile)
 
 
-def test_budgeting::budgetingfile_constructor_exists():
-    assert callable(budgeting::BudgetingFile.__init__)
+def test_budgeting_budgetingfile_constructor_exists():
+    assert callable(budgeting_BudgetingFile.__init__)
 
 
-def test_budgeting::budgetingfile_constructor_args():
-    sig = inspect.signature(budgeting::BudgetingFile.__init__)
+def test_budgeting_budgetingfile_constructor_args():
+    sig = inspect.signature(budgeting_BudgetingFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_budgeting::category_is_not_abstract():
-    assert not inspect.isabstract(budgeting::Category)
+def test_budgeting_category_is_not_abstract():
+    assert not inspect.isabstract(budgeting_Category)
 
 
-def test_budgeting::category_constructor_exists():
-    assert callable(budgeting::Category.__init__)
+def test_budgeting_category_constructor_exists():
+    assert callable(budgeting_Category.__init__)
 
 
-def test_budgeting::category_constructor_args():
-    sig = inspect.signature(budgeting::Category.__init__)
+def test_budgeting_category_constructor_args():
+    sig = inspect.signature(budgeting_Category.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_budgeting::category_has_name():
-    assert hasattr(budgeting::Category, "name")
+def test_budgeting_category_has_name():
+    assert hasattr(budgeting_Category, "name")
     descriptor = None
-    for klass in budgeting::Category.__mro__:
+    for klass in budgeting_Category.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -456,18 +456,18 @@ def test_monthenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MonthEnum]
     expected_literals = [
-        "JULY",
-        "DECEMBER",
-        "SEPTEMBER",
         "JANUARY",
         "APRIL",
-        "MARCH",
-        "NOVEMBER",
-        "FEBRUARY",
+        "DECEMBER",
         "MAY",
-        "OCTOBER",
+        "MARCH",
+        "JULY",
         "AUGUST",
+        "NOVEMBER",
+        "OCTOBER",
+        "SEPTEMBER",
         "JUNE",
+        "FEBRUARY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -488,87 +488,87 @@ safe_text = st.text(
 Transaction_strategy = st.builds(
     Transaction,
 )
-budgeting::CardTransaction_strategy = st.builds(
-    budgeting::CardTransaction,
+budgeting_CardTransaction_strategy = st.builds(
+    budgeting_CardTransaction,
     day=
         st.integers(),
     from_=
         safe_text
 )
-budgeting::CashTransaction_strategy = st.builds(
-    budgeting::CashTransaction,
+budgeting_CashTransaction_strategy = st.builds(
+    budgeting_CashTransaction,
     day=
         safe_text
 )
 ActualEntry_strategy = st.builds(
     ActualEntry,
 )
-budgeting::ActualTransactionEntry_strategy = st.builds(
-    budgeting::ActualTransactionEntry,
+budgeting_ActualTransactionEntry_strategy = st.builds(
+    budgeting_ActualTransactionEntry,
 )
-budgeting::ActualAmountEntry_strategy = st.builds(
-    budgeting::ActualAmountEntry,
+budgeting_ActualAmountEntry_strategy = st.builds(
+    budgeting_ActualAmountEntry,
     amount=
         safe_text
 )
 BudgetEntry_strategy = st.builds(
     BudgetEntry,
 )
-budgeting::BudgetFactorEntry_strategy = st.builds(
-    budgeting::BudgetFactorEntry,
+budgeting_BudgetFactorEntry_strategy = st.builds(
+    budgeting_BudgetFactorEntry,
     factor=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-budgeting::BudgetAmountEntry_strategy = st.builds(
-    budgeting::BudgetAmountEntry,
+budgeting_BudgetAmountEntry_strategy = st.builds(
+    budgeting_BudgetAmountEntry,
     amount=
         safe_text
 )
 Category_strategy = st.builds(
     Category,
 )
-budgeting::ExpenseCategory_strategy = st.builds(
-    budgeting::ExpenseCategory,
+budgeting_ExpenseCategory_strategy = st.builds(
+    budgeting_ExpenseCategory,
     patterns=
         safe_text
 )
-budgeting::IncomeCategory_strategy = st.builds(
-    budgeting::IncomeCategory,
+budgeting_IncomeCategory_strategy = st.builds(
+    budgeting_IncomeCategory,
 )
-budgeting::Transaction_strategy = st.builds(
-    budgeting::Transaction,
+budgeting_Transaction_strategy = st.builds(
+    budgeting_Transaction,
     amount=
         safe_text
 )
-budgeting::ActualEntry_strategy = st.builds(
-    budgeting::ActualEntry,
+budgeting_ActualEntry_strategy = st.builds(
+    budgeting_ActualEntry,
 )
-budgeting::BudgetEntry_strategy = st.builds(
-    budgeting::BudgetEntry,
+budgeting_BudgetEntry_strategy = st.builds(
+    budgeting_BudgetEntry,
 )
-budgeting::Month_strategy = st.builds(
-    budgeting::Month,
+budgeting_Month_strategy = st.builds(
+    budgeting_Month,
     name=
         safe_text
 )
 BudgetingFile_strategy = st.builds(
     BudgetingFile,
 )
-budgeting::Year_strategy = st.builds(
-    budgeting::Year,
+budgeting_Year_strategy = st.builds(
+    budgeting_Year,
     name=
         st.integers()
 )
-budgeting::Library_strategy = st.builds(
-    budgeting::Library,
+budgeting_Library_strategy = st.builds(
+    budgeting_Library,
     name=
         safe_text
 )
-budgeting::BudgetingFile_strategy = st.builds(
-    budgeting::BudgetingFile,
+budgeting_BudgetingFile_strategy = st.builds(
+    budgeting_BudgetingFile,
 )
-budgeting::Category_strategy = st.builds(
-    budgeting::Category,
+budgeting_Category_strategy = st.builds(
+    budgeting_Category,
     name=
         safe_text
 )
@@ -578,45 +578,36 @@ budgeting::Category_strategy = st.builds(
 def test_transaction_instantiation(instance):
     assert isinstance(instance, Transaction)
 
-@given(instance=budgeting::CardTransaction_strategy)
+@given(instance=budgeting_CardTransaction_strategy)
 @settings(max_examples=50)
-def test_budgeting::cardtransaction_instantiation(instance):
-    assert isinstance(instance, budgeting::CardTransaction)
-
-@given(instance=budgeting::CardTransaction_strategy)
-def test_budgeting::cardtransaction_day_type(instance):
-    assert isinstance(instance.day, int)
+def test_budgeting_cardtransaction_instantiation(instance):
+    assert isinstance(instance, budgeting_CardTransaction)
 
 
-@given(instance=budgeting::CardTransaction_strategy)
-def test_budgeting::cardtransaction_day_setter(instance):
+
+@given(instance=budgeting_CardTransaction_strategy)
+def test_budgeting_cardtransaction_day_setter(instance):
     original = instance.day
     instance.day = original
     assert instance.day == original
 
-@given(instance=budgeting::CardTransaction_strategy)
-def test_budgeting::cardtransaction_from__type(instance):
-    assert isinstance(instance.from_, str)
 
 
-@given(instance=budgeting::CardTransaction_strategy)
-def test_budgeting::cardtransaction_from__setter(instance):
+@given(instance=budgeting_CardTransaction_strategy)
+def test_budgeting_cardtransaction_from__setter(instance):
     original = instance.from_
     instance.from_ = original
     assert instance.from_ == original
 
-@given(instance=budgeting::CashTransaction_strategy)
+@given(instance=budgeting_CashTransaction_strategy)
 @settings(max_examples=50)
-def test_budgeting::cashtransaction_instantiation(instance):
-    assert isinstance(instance, budgeting::CashTransaction)
-
-@given(instance=budgeting::CashTransaction_strategy)
-def test_budgeting::cashtransaction_day_type(instance):
-    assert isinstance(instance.day, str)
+def test_budgeting_cashtransaction_instantiation(instance):
+    assert isinstance(instance, budgeting_CashTransaction)
 
 
-@given(instance=budgeting::CashTransaction_strategy)
-def test_budgeting::cashtransaction_day_setter(instance):
+
+@given(instance=budgeting_CashTransaction_strategy)
+def test_budgeting_cashtransaction_day_setter(instance):
     original = instance.day
     instance.day = original
     assert instance.day == original
@@ -626,23 +617,20 @@ def test_budgeting::cashtransaction_day_setter(instance):
 def test_actualentry_instantiation(instance):
     assert isinstance(instance, ActualEntry)
 
-@given(instance=budgeting::ActualTransactionEntry_strategy)
+@given(instance=budgeting_ActualTransactionEntry_strategy)
 @settings(max_examples=50)
-def test_budgeting::actualtransactionentry_instantiation(instance):
-    assert isinstance(instance, budgeting::ActualTransactionEntry)
+def test_budgeting_actualtransactionentry_instantiation(instance):
+    assert isinstance(instance, budgeting_ActualTransactionEntry)
 
-@given(instance=budgeting::ActualAmountEntry_strategy)
+@given(instance=budgeting_ActualAmountEntry_strategy)
 @settings(max_examples=50)
-def test_budgeting::actualamountentry_instantiation(instance):
-    assert isinstance(instance, budgeting::ActualAmountEntry)
-
-@given(instance=budgeting::ActualAmountEntry_strategy)
-def test_budgeting::actualamountentry_amount_type(instance):
-    assert isinstance(instance.amount, str)
+def test_budgeting_actualamountentry_instantiation(instance):
+    assert isinstance(instance, budgeting_ActualAmountEntry)
 
 
-@given(instance=budgeting::ActualAmountEntry_strategy)
-def test_budgeting::actualamountentry_amount_setter(instance):
+
+@given(instance=budgeting_ActualAmountEntry_strategy)
+def test_budgeting_actualamountentry_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
@@ -652,34 +640,28 @@ def test_budgeting::actualamountentry_amount_setter(instance):
 def test_budgetentry_instantiation(instance):
     assert isinstance(instance, BudgetEntry)
 
-@given(instance=budgeting::BudgetFactorEntry_strategy)
+@given(instance=budgeting_BudgetFactorEntry_strategy)
 @settings(max_examples=50)
-def test_budgeting::budgetfactorentry_instantiation(instance):
-    assert isinstance(instance, budgeting::BudgetFactorEntry)
-
-@given(instance=budgeting::BudgetFactorEntry_strategy)
-def test_budgeting::budgetfactorentry_factor_type(instance):
-    assert isinstance(instance.factor, float)
+def test_budgeting_budgetfactorentry_instantiation(instance):
+    assert isinstance(instance, budgeting_BudgetFactorEntry)
 
 
-@given(instance=budgeting::BudgetFactorEntry_strategy)
-def test_budgeting::budgetfactorentry_factor_setter(instance):
+
+@given(instance=budgeting_BudgetFactorEntry_strategy)
+def test_budgeting_budgetfactorentry_factor_setter(instance):
     original = instance.factor
     instance.factor = original
     assert instance.factor == original
 
-@given(instance=budgeting::BudgetAmountEntry_strategy)
+@given(instance=budgeting_BudgetAmountEntry_strategy)
 @settings(max_examples=50)
-def test_budgeting::budgetamountentry_instantiation(instance):
-    assert isinstance(instance, budgeting::BudgetAmountEntry)
-
-@given(instance=budgeting::BudgetAmountEntry_strategy)
-def test_budgeting::budgetamountentry_amount_type(instance):
-    assert isinstance(instance.amount, str)
+def test_budgeting_budgetamountentry_instantiation(instance):
+    assert isinstance(instance, budgeting_BudgetAmountEntry)
 
 
-@given(instance=budgeting::BudgetAmountEntry_strategy)
-def test_budgeting::budgetamountentry_amount_setter(instance):
+
+@given(instance=budgeting_BudgetAmountEntry_strategy)
+def test_budgeting_budgetamountentry_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
@@ -689,65 +671,56 @@ def test_budgeting::budgetamountentry_amount_setter(instance):
 def test_category_instantiation(instance):
     assert isinstance(instance, Category)
 
-@given(instance=budgeting::ExpenseCategory_strategy)
+@given(instance=budgeting_ExpenseCategory_strategy)
 @settings(max_examples=50)
-def test_budgeting::expensecategory_instantiation(instance):
-    assert isinstance(instance, budgeting::ExpenseCategory)
-
-@given(instance=budgeting::ExpenseCategory_strategy)
-def test_budgeting::expensecategory_patterns_type(instance):
-    assert isinstance(instance.patterns, str)
+def test_budgeting_expensecategory_instantiation(instance):
+    assert isinstance(instance, budgeting_ExpenseCategory)
 
 
-@given(instance=budgeting::ExpenseCategory_strategy)
-def test_budgeting::expensecategory_patterns_setter(instance):
+
+@given(instance=budgeting_ExpenseCategory_strategy)
+def test_budgeting_expensecategory_patterns_setter(instance):
     original = instance.patterns
     instance.patterns = original
     assert instance.patterns == original
 
-@given(instance=budgeting::IncomeCategory_strategy)
+@given(instance=budgeting_IncomeCategory_strategy)
 @settings(max_examples=50)
-def test_budgeting::incomecategory_instantiation(instance):
-    assert isinstance(instance, budgeting::IncomeCategory)
+def test_budgeting_incomecategory_instantiation(instance):
+    assert isinstance(instance, budgeting_IncomeCategory)
 
-@given(instance=budgeting::Transaction_strategy)
+@given(instance=budgeting_Transaction_strategy)
 @settings(max_examples=50)
-def test_budgeting::transaction_instantiation(instance):
-    assert isinstance(instance, budgeting::Transaction)
-
-@given(instance=budgeting::Transaction_strategy)
-def test_budgeting::transaction_amount_type(instance):
-    assert isinstance(instance.amount, str)
+def test_budgeting_transaction_instantiation(instance):
+    assert isinstance(instance, budgeting_Transaction)
 
 
-@given(instance=budgeting::Transaction_strategy)
-def test_budgeting::transaction_amount_setter(instance):
+
+@given(instance=budgeting_Transaction_strategy)
+def test_budgeting_transaction_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
 
-@given(instance=budgeting::ActualEntry_strategy)
+@given(instance=budgeting_ActualEntry_strategy)
 @settings(max_examples=50)
-def test_budgeting::actualentry_instantiation(instance):
-    assert isinstance(instance, budgeting::ActualEntry)
+def test_budgeting_actualentry_instantiation(instance):
+    assert isinstance(instance, budgeting_ActualEntry)
 
-@given(instance=budgeting::BudgetEntry_strategy)
+@given(instance=budgeting_BudgetEntry_strategy)
 @settings(max_examples=50)
-def test_budgeting::budgetentry_instantiation(instance):
-    assert isinstance(instance, budgeting::BudgetEntry)
+def test_budgeting_budgetentry_instantiation(instance):
+    assert isinstance(instance, budgeting_BudgetEntry)
 
-@given(instance=budgeting::Month_strategy)
+@given(instance=budgeting_Month_strategy)
 @settings(max_examples=50)
-def test_budgeting::month_instantiation(instance):
-    assert isinstance(instance, budgeting::Month)
-
-@given(instance=budgeting::Month_strategy)
-def test_budgeting::month_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_budgeting_month_instantiation(instance):
+    assert isinstance(instance, budgeting_Month)
 
 
-@given(instance=budgeting::Month_strategy)
-def test_budgeting::month_name_setter(instance):
+
+@given(instance=budgeting_Month_strategy)
+def test_budgeting_month_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -757,55 +730,46 @@ def test_budgeting::month_name_setter(instance):
 def test_budgetingfile_instantiation(instance):
     assert isinstance(instance, BudgetingFile)
 
-@given(instance=budgeting::Year_strategy)
+@given(instance=budgeting_Year_strategy)
 @settings(max_examples=50)
-def test_budgeting::year_instantiation(instance):
-    assert isinstance(instance, budgeting::Year)
-
-@given(instance=budgeting::Year_strategy)
-def test_budgeting::year_name_type(instance):
-    assert isinstance(instance.name, int)
+def test_budgeting_year_instantiation(instance):
+    assert isinstance(instance, budgeting_Year)
 
 
-@given(instance=budgeting::Year_strategy)
-def test_budgeting::year_name_setter(instance):
+
+@given(instance=budgeting_Year_strategy)
+def test_budgeting_year_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=budgeting::Library_strategy)
+@given(instance=budgeting_Library_strategy)
 @settings(max_examples=50)
-def test_budgeting::library_instantiation(instance):
-    assert isinstance(instance, budgeting::Library)
-
-@given(instance=budgeting::Library_strategy)
-def test_budgeting::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_budgeting_library_instantiation(instance):
+    assert isinstance(instance, budgeting_Library)
 
 
-@given(instance=budgeting::Library_strategy)
-def test_budgeting::library_name_setter(instance):
+
+@given(instance=budgeting_Library_strategy)
+def test_budgeting_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=budgeting::BudgetingFile_strategy)
+@given(instance=budgeting_BudgetingFile_strategy)
 @settings(max_examples=50)
-def test_budgeting::budgetingfile_instantiation(instance):
-    assert isinstance(instance, budgeting::BudgetingFile)
+def test_budgeting_budgetingfile_instantiation(instance):
+    assert isinstance(instance, budgeting_BudgetingFile)
 
-@given(instance=budgeting::Category_strategy)
+@given(instance=budgeting_Category_strategy)
 @settings(max_examples=50)
-def test_budgeting::category_instantiation(instance):
-    assert isinstance(instance, budgeting::Category)
-
-@given(instance=budgeting::Category_strategy)
-def test_budgeting::category_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_budgeting_category_instantiation(instance):
+    assert isinstance(instance, budgeting_Category)
 
 
-@given(instance=budgeting::Category_strategy)
-def test_budgeting::category_name_setter(instance):
+
+@given(instance=budgeting_Category_strategy)
+def test_budgeting_category_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

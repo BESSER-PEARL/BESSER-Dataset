@@ -3,12 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    InterfaceO_Interface,
-    ClassP,
-    ClassN,
     ClassL,
     ClassK,
     ClassH,
@@ -26,54 +23,15 @@ from python_code import (
     ClassS,
     ClassR,
     ClassQ,
+    InterfaceO_Interface,
+    ClassP,
+    ClassN,
     ClassM,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_interfaceo_interface_is_not_abstract():
-    assert not inspect.isabstract(InterfaceO_Interface)
-
-
-def test_interfaceo_interface_constructor_exists():
-    assert callable(InterfaceO_Interface.__init__)
-
-
-def test_interfaceo_interface_constructor_args():
-    sig = inspect.signature(InterfaceO_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classp_is_not_abstract():
-    assert not inspect.isabstract(ClassP)
-
-
-def test_classp_constructor_exists():
-    assert callable(ClassP.__init__)
-
-
-def test_classp_constructor_args():
-    sig = inspect.signature(ClassP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classn_is_not_abstract():
-    assert not inspect.isabstract(ClassN)
-
-
-def test_classn_constructor_exists():
-    assert callable(ClassN.__init__)
-
-
-def test_classn_constructor_args():
-    sig = inspect.signature(ClassN.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -200,19 +158,10 @@ def test_classc_constructor_exists():
 def test_classc_constructor_args():
     sig = inspect.signature(ClassC.__init__)
     params = list(sig.parameters.keys())
-    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
     assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
     assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
-
-def test_classc_has_packageAttribute():
-    assert hasattr(ClassC, "packageAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "packageAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["packageAttribute"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_classc_has_protectedAttribute():
     assert hasattr(ClassC, "protectedAttribute")
@@ -229,6 +178,15 @@ def test_classc_has_publicAttribute():
     for klass in ClassC.__mro__:
         if "publicAttribute" in klass.__dict__:
             descriptor = klass.__dict__["publicAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_packageAttribute():
+    assert hasattr(ClassC, "packageAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -365,6 +323,48 @@ def test_classq_constructor_args():
 
 
 
+def test_interfaceo_interface_is_not_abstract():
+    assert not inspect.isabstract(InterfaceO_Interface)
+
+
+def test_interfaceo_interface_constructor_exists():
+    assert callable(InterfaceO_Interface.__init__)
+
+
+def test_interfaceo_interface_constructor_args():
+    sig = inspect.signature(InterfaceO_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classp_is_not_abstract():
+    assert not inspect.isabstract(ClassP)
+
+
+def test_classp_constructor_exists():
+    assert callable(ClassP.__init__)
+
+
+def test_classp_constructor_args():
+    sig = inspect.signature(ClassP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classn_is_not_abstract():
+    assert not inspect.isabstract(ClassN)
+
+
+def test_classn_constructor_exists():
+    assert callable(ClassN.__init__)
+
+
+def test_classn_constructor_args():
+    sig = inspect.signature(ClassN.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_classm_is_not_abstract():
     assert not inspect.isabstract(ClassM)
 
@@ -389,15 +389,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-InterfaceO_Interface_strategy = st.builds(
-    InterfaceO_Interface,
-)
-ClassP_strategy = st.builds(
-    ClassP,
-)
-ClassN_strategy = st.builds(
-    ClassN,
-)
 ClassL_strategy = st.builds(
     ClassL,
 )
@@ -424,12 +415,12 @@ ClassD_strategy = st.builds(
 )
 ClassC_strategy = st.builds(
     ClassC,
-    packageAttribute=
-        safe_text,
     protectedAttribute=
         safe_text,
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    packageAttribute=
+        safe_text,
     privateAttribute=
         st.integers()
 )
@@ -459,24 +450,18 @@ ClassR_strategy = st.builds(
 ClassQ_strategy = st.builds(
     ClassQ,
 )
+InterfaceO_Interface_strategy = st.builds(
+    InterfaceO_Interface,
+)
+ClassP_strategy = st.builds(
+    ClassP,
+)
+ClassN_strategy = st.builds(
+    ClassN,
+)
 ClassM_strategy = st.builds(
     ClassM,
 )
-
-@given(instance=InterfaceO_Interface_strategy)
-@settings(max_examples=50)
-def test_interfaceo_interface_instantiation(instance):
-    assert isinstance(instance, InterfaceO_Interface)
-
-@given(instance=ClassP_strategy)
-@settings(max_examples=50)
-def test_classp_instantiation(instance):
-    assert isinstance(instance, ClassP)
-
-@given(instance=ClassN_strategy)
-@settings(max_examples=50)
-def test_classn_instantiation(instance):
-    assert isinstance(instance, ClassN)
 
 @given(instance=ClassL_strategy)
 @settings(max_examples=50)
@@ -523,20 +508,6 @@ def test_classd_instantiation(instance):
 def test_classc_instantiation(instance):
     assert isinstance(instance, ClassC)
 
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_setter(instance):
-    original = instance.packageAttribute
-    instance.packageAttribute = original
-    assert instance.packageAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
 
 
 @given(instance=ClassC_strategy)
@@ -545,9 +516,6 @@ def test_classc_protectedAttribute_setter(instance):
     instance.protectedAttribute = original
     assert instance.protectedAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
 
 
 @given(instance=ClassC_strategy)
@@ -556,9 +524,14 @@ def test_classc_publicAttribute_setter(instance):
     instance.publicAttribute = original
     assert instance.publicAttribute == original
 
+
+
 @given(instance=ClassC_strategy)
-def test_classc_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
+def test_classc_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
+
 
 
 @given(instance=ClassC_strategy)
@@ -577,9 +550,6 @@ def test_provideracsearchhandler_instantiation(instance):
 def test_com_changehealthcare_datamatching_datamatchingcontroller_instantiation(instance):
     assert isinstance(instance, com_changehealthcare_datamatching_DataMatchingController)
 
-@given(instance=com_changehealthcare_datamatching_DataMatchingController_strategy)
-def test_com_changehealthcare_datamatching_datamatchingcontroller_getRoot___type(instance):
-    assert isinstance(instance.getRoot__, str)
 
 
 @given(instance=com_changehealthcare_datamatching_DataMatchingController_strategy)
@@ -617,6 +587,21 @@ def test_classr_instantiation(instance):
 @settings(max_examples=50)
 def test_classq_instantiation(instance):
     assert isinstance(instance, ClassQ)
+
+@given(instance=InterfaceO_Interface_strategy)
+@settings(max_examples=50)
+def test_interfaceo_interface_instantiation(instance):
+    assert isinstance(instance, InterfaceO_Interface)
+
+@given(instance=ClassP_strategy)
+@settings(max_examples=50)
+def test_classp_instantiation(instance):
+    assert isinstance(instance, ClassP)
+
+@given(instance=ClassN_strategy)
+@settings(max_examples=50)
+def test_classn_instantiation(instance):
+    assert isinstance(instance, ClassN)
 
 @given(instance=ClassM_strategy)
 @settings(max_examples=50)

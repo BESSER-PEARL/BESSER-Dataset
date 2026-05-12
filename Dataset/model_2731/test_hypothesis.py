@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hExample::6::LHS::C,
-    hExample::6::LHS::B,
-    hExample::6::LHS::A,
-    hExample::6::LHS::model,
+from python_code import (
+    hExample_6_LHS_C,
+    hExample_6_LHS_B,
+    hExample_6_LHS_A,
+    hExample_6_LHS_model,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_hexample::6::lhs::c_is_not_abstract():
-    assert not inspect.isabstract(hExample::6::LHS::C)
+def test_hexample_6_lhs_c_is_not_abstract():
+    assert not inspect.isabstract(hExample_6_LHS_C)
 
 
-def test_hexample::6::lhs::c_constructor_exists():
-    assert callable(hExample::6::LHS::C.__init__)
+def test_hexample_6_lhs_c_constructor_exists():
+    assert callable(hExample_6_LHS_C.__init__)
 
 
-def test_hexample::6::lhs::c_constructor_args():
-    sig = inspect.signature(hExample::6::LHS::C.__init__)
+def test_hexample_6_lhs_c_constructor_args():
+    sig = inspect.signature(hExample_6_LHS_C.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hexample::6::lhs::c_has_name():
-    assert hasattr(hExample::6::LHS::C, "name")
+def test_hexample_6_lhs_c_has_name():
+    assert hasattr(hExample_6_LHS_C, "name")
     descriptor = None
-    for klass in hExample::6::LHS::C.__mro__:
+    for klass in hExample_6_LHS_C.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_hexample::6::lhs::c_has_name():
 
 
 
-def test_hexample::6::lhs::b_is_not_abstract():
-    assert not inspect.isabstract(hExample::6::LHS::B)
+def test_hexample_6_lhs_b_is_not_abstract():
+    assert not inspect.isabstract(hExample_6_LHS_B)
 
 
-def test_hexample::6::lhs::b_constructor_exists():
-    assert callable(hExample::6::LHS::B.__init__)
+def test_hexample_6_lhs_b_constructor_exists():
+    assert callable(hExample_6_LHS_B.__init__)
 
 
-def test_hexample::6::lhs::b_constructor_args():
-    sig = inspect.signature(hExample::6::LHS::B.__init__)
+def test_hexample_6_lhs_b_constructor_args():
+    sig = inspect.signature(hExample_6_LHS_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hexample::6::lhs::b_has_name():
-    assert hasattr(hExample::6::LHS::B, "name")
+def test_hexample_6_lhs_b_has_name():
+    assert hasattr(hExample_6_LHS_B, "name")
     descriptor = None
-    for klass in hExample::6::LHS::B.__mro__:
+    for klass in hExample_6_LHS_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_hexample::6::lhs::b_has_name():
 
 
 
-def test_hexample::6::lhs::a_is_not_abstract():
-    assert not inspect.isabstract(hExample::6::LHS::A)
+def test_hexample_6_lhs_a_is_not_abstract():
+    assert not inspect.isabstract(hExample_6_LHS_A)
 
 
-def test_hexample::6::lhs::a_constructor_exists():
-    assert callable(hExample::6::LHS::A.__init__)
+def test_hexample_6_lhs_a_constructor_exists():
+    assert callable(hExample_6_LHS_A.__init__)
 
 
-def test_hexample::6::lhs::a_constructor_args():
-    sig = inspect.signature(hExample::6::LHS::A.__init__)
+def test_hexample_6_lhs_a_constructor_args():
+    sig = inspect.signature(hExample_6_LHS_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hexample::6::lhs::a_has_name():
-    assert hasattr(hExample::6::LHS::A, "name")
+def test_hexample_6_lhs_a_has_name():
+    assert hasattr(hExample_6_LHS_A, "name")
     descriptor = None
-    for klass in hExample::6::LHS::A.__mro__:
+    for klass in hExample_6_LHS_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,16 +90,16 @@ def test_hexample::6::lhs::a_has_name():
 
 
 
-def test_hexample::6::lhs::model_is_not_abstract():
-    assert not inspect.isabstract(hExample::6::LHS::model)
+def test_hexample_6_lhs_model_is_not_abstract():
+    assert not inspect.isabstract(hExample_6_LHS_model)
 
 
-def test_hexample::6::lhs::model_constructor_exists():
-    assert callable(hExample::6::LHS::model.__init__)
+def test_hexample_6_lhs_model_constructor_exists():
+    assert callable(hExample_6_LHS_model.__init__)
 
 
-def test_hexample::6::lhs::model_constructor_args():
-    sig = inspect.signature(hExample::6::LHS::model.__init__)
+def test_hexample_6_lhs_model_constructor_args():
+    sig = inspect.signature(hExample_6_LHS_model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hExample::6::LHS::C_strategy = st.builds(
-    hExample::6::LHS::C,
+hExample_6_LHS_C_strategy = st.builds(
+    hExample_6_LHS_C,
     name=
         safe_text
 )
-hExample::6::LHS::B_strategy = st.builds(
-    hExample::6::LHS::B,
+hExample_6_LHS_B_strategy = st.builds(
+    hExample_6_LHS_B,
     name=
         safe_text
 )
-hExample::6::LHS::A_strategy = st.builds(
-    hExample::6::LHS::A,
+hExample_6_LHS_A_strategy = st.builds(
+    hExample_6_LHS_A,
     name=
         safe_text
 )
-hExample::6::LHS::model_strategy = st.builds(
-    hExample::6::LHS::model,
+hExample_6_LHS_model_strategy = st.builds(
+    hExample_6_LHS_model,
 )
 
-@given(instance=hExample::6::LHS::C_strategy)
+@given(instance=hExample_6_LHS_C_strategy)
 @settings(max_examples=50)
-def test_hexample::6::lhs::c_instantiation(instance):
-    assert isinstance(instance, hExample::6::LHS::C)
-
-@given(instance=hExample::6::LHS::C_strategy)
-def test_hexample::6::lhs::c_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hexample_6_lhs_c_instantiation(instance):
+    assert isinstance(instance, hExample_6_LHS_C)
 
 
-@given(instance=hExample::6::LHS::C_strategy)
-def test_hexample::6::lhs::c_name_setter(instance):
+
+@given(instance=hExample_6_LHS_C_strategy)
+def test_hexample_6_lhs_c_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hExample::6::LHS::B_strategy)
+@given(instance=hExample_6_LHS_B_strategy)
 @settings(max_examples=50)
-def test_hexample::6::lhs::b_instantiation(instance):
-    assert isinstance(instance, hExample::6::LHS::B)
-
-@given(instance=hExample::6::LHS::B_strategy)
-def test_hexample::6::lhs::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hexample_6_lhs_b_instantiation(instance):
+    assert isinstance(instance, hExample_6_LHS_B)
 
 
-@given(instance=hExample::6::LHS::B_strategy)
-def test_hexample::6::lhs::b_name_setter(instance):
+
+@given(instance=hExample_6_LHS_B_strategy)
+def test_hexample_6_lhs_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hExample::6::LHS::A_strategy)
+@given(instance=hExample_6_LHS_A_strategy)
 @settings(max_examples=50)
-def test_hexample::6::lhs::a_instantiation(instance):
-    assert isinstance(instance, hExample::6::LHS::A)
-
-@given(instance=hExample::6::LHS::A_strategy)
-def test_hexample::6::lhs::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hexample_6_lhs_a_instantiation(instance):
+    assert isinstance(instance, hExample_6_LHS_A)
 
 
-@given(instance=hExample::6::LHS::A_strategy)
-def test_hexample::6::lhs::a_name_setter(instance):
+
+@given(instance=hExample_6_LHS_A_strategy)
+def test_hexample_6_lhs_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hExample::6::LHS::model_strategy)
+@given(instance=hExample_6_LHS_model_strategy)
 @settings(max_examples=50)
-def test_hexample::6::lhs::model_instantiation(instance):
-    assert isinstance(instance, hExample::6::LHS::model)
+def test_hexample_6_lhs_model_instantiation(instance):
+    assert isinstance(instance, hExample_6_LHS_model)

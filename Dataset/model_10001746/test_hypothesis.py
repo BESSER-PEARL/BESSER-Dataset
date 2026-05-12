@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Shopping_Cart,
@@ -55,30 +55,12 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "PaymentMethod" in params, "Missing parameter 'PaymentMethod'"
-    assert "OrderNumber" in params, "Missing parameter 'OrderNumber'"
     assert "Products" in params, "Missing parameter 'Products'"
-    assert "Date" in params, "Missing parameter 'Date'"
+    assert "PaymentMethod" in params, "Missing parameter 'PaymentMethod'"
     assert "HomeAddress" in params, "Missing parameter 'HomeAddress'"
+    assert "OrderNumber" in params, "Missing parameter 'OrderNumber'"
     assert "CustomerName" in params, "Missing parameter 'CustomerName'"
-
-def test_order_has_PaymentMethod():
-    assert hasattr(Order, "PaymentMethod")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "PaymentMethod" in klass.__dict__:
-            descriptor = klass.__dict__["PaymentMethod"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_OrderNumber():
-    assert hasattr(Order, "OrderNumber")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "OrderNumber" in klass.__dict__:
-            descriptor = klass.__dict__["OrderNumber"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Date" in params, "Missing parameter 'Date'"
 
 def test_order_has_Products():
     assert hasattr(Order, "Products")
@@ -89,12 +71,12 @@ def test_order_has_Products():
             break
     assert isinstance(descriptor, property)
 
-def test_order_has_Date():
-    assert hasattr(Order, "Date")
+def test_order_has_PaymentMethod():
+    assert hasattr(Order, "PaymentMethod")
     descriptor = None
     for klass in Order.__mro__:
-        if "Date" in klass.__dict__:
-            descriptor = klass.__dict__["Date"]
+        if "PaymentMethod" in klass.__dict__:
+            descriptor = klass.__dict__["PaymentMethod"]
             break
     assert isinstance(descriptor, property)
 
@@ -107,12 +89,30 @@ def test_order_has_HomeAddress():
             break
     assert isinstance(descriptor, property)
 
+def test_order_has_OrderNumber():
+    assert hasattr(Order, "OrderNumber")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "OrderNumber" in klass.__dict__:
+            descriptor = klass.__dict__["OrderNumber"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_order_has_CustomerName():
     assert hasattr(Order, "CustomerName")
     descriptor = None
     for klass in Order.__mro__:
         if "CustomerName" in klass.__dict__:
             descriptor = klass.__dict__["CustomerName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_Date():
+    assert hasattr(Order, "Date")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "Date" in klass.__dict__:
+            descriptor = klass.__dict__["Date"]
             break
     assert isinstance(descriptor, property)
 
@@ -167,20 +167,11 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "Surname" in params, "Missing parameter 'Surname'"
     assert "Age" in params, "Missing parameter 'Age'"
     assert "HomeAddress" in params, "Missing parameter 'HomeAddress'"
-    assert "Email" in params, "Missing parameter 'Email'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_user_has_Surname():
-    assert hasattr(User, "Surname")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Surname" in klass.__dict__:
-            descriptor = klass.__dict__["Surname"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Email" in params, "Missing parameter 'Email'"
+    assert "Surname" in params, "Missing parameter 'Surname'"
 
 def test_user_has_Age():
     assert hasattr(User, "Age")
@@ -200,6 +191,15 @@ def test_user_has_HomeAddress():
             break
     assert isinstance(descriptor, property)
 
+def test_user_has_Name():
+    assert hasattr(User, "Name")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_user_has_Email():
     assert hasattr(User, "Email")
     descriptor = None
@@ -209,12 +209,12 @@ def test_user_has_Email():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Name():
-    assert hasattr(User, "Name")
+def test_user_has_Surname():
+    assert hasattr(User, "Surname")
     descriptor = None
     for klass in User.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "Surname" in klass.__dict__:
+            descriptor = klass.__dict__["Surname"]
             break
     assert isinstance(descriptor, property)
 
@@ -231,39 +231,12 @@ def test_product_constructor_exists():
 def test_product_constructor_args():
     sig = inspect.signature(Product.__init__)
     params = list(sig.parameters.keys())
-    assert "ProductID" in params, "Missing parameter 'ProductID'"
-    assert "ProductImage" in params, "Missing parameter 'ProductImage'"
-    assert "ProductType" in params, "Missing parameter 'ProductType'"
     assert "ProductDescription" in params, "Missing parameter 'ProductDescription'"
     assert "ProductName" in params, "Missing parameter 'ProductName'"
+    assert "ProductType" in params, "Missing parameter 'ProductType'"
     assert "ProductPrice" in params, "Missing parameter 'ProductPrice'"
-
-def test_product_has_ProductID():
-    assert hasattr(Product, "ProductID")
-    descriptor = None
-    for klass in Product.__mro__:
-        if "ProductID" in klass.__dict__:
-            descriptor = klass.__dict__["ProductID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_product_has_ProductImage():
-    assert hasattr(Product, "ProductImage")
-    descriptor = None
-    for klass in Product.__mro__:
-        if "ProductImage" in klass.__dict__:
-            descriptor = klass.__dict__["ProductImage"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_product_has_ProductType():
-    assert hasattr(Product, "ProductType")
-    descriptor = None
-    for klass in Product.__mro__:
-        if "ProductType" in klass.__dict__:
-            descriptor = klass.__dict__["ProductType"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ProductID" in params, "Missing parameter 'ProductID'"
+    assert "ProductImage" in params, "Missing parameter 'ProductImage'"
 
 def test_product_has_ProductDescription():
     assert hasattr(Product, "ProductDescription")
@@ -283,12 +256,39 @@ def test_product_has_ProductName():
             break
     assert isinstance(descriptor, property)
 
+def test_product_has_ProductType():
+    assert hasattr(Product, "ProductType")
+    descriptor = None
+    for klass in Product.__mro__:
+        if "ProductType" in klass.__dict__:
+            descriptor = klass.__dict__["ProductType"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_product_has_ProductPrice():
     assert hasattr(Product, "ProductPrice")
     descriptor = None
     for klass in Product.__mro__:
         if "ProductPrice" in klass.__dict__:
             descriptor = klass.__dict__["ProductPrice"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_product_has_ProductID():
+    assert hasattr(Product, "ProductID")
+    descriptor = None
+    for klass in Product.__mro__:
+        if "ProductID" in klass.__dict__:
+            descriptor = klass.__dict__["ProductID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_product_has_ProductImage():
+    assert hasattr(Product, "ProductImage")
+    descriptor = None
+    for klass in Product.__mro__:
+        if "ProductImage" in klass.__dict__:
+            descriptor = klass.__dict__["ProductImage"]
             break
     assert isinstance(descriptor, property)
 
@@ -311,18 +311,18 @@ Shopping_Cart_strategy = st.builds(
 )
 Order_strategy = st.builds(
     Order,
-    PaymentMethod=
-        safe_text,
-    OrderNumber=
-        st.integers(),
     Products=
         st.none(),
-    Date=
+    PaymentMethod=
         safe_text,
     HomeAddress=
         st.none(),
+    OrderNumber=
+        st.integers(),
     CustomerName=
-        st.none()
+        st.none(),
+    Date=
+        safe_text
 )
 Double_Interface_strategy = st.builds(
     Double_Interface,
@@ -334,31 +334,31 @@ ClientAccount_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    Surname=
-        safe_text,
     Age=
         st.integers(),
     HomeAddress=
         safe_text,
+    Name=
+        safe_text,
     Email=
         safe_text,
-    Name=
+    Surname=
         safe_text
 )
 Product_strategy = st.builds(
     Product,
-    ProductID=
-        st.integers(),
-    ProductImage=
-        safe_text,
-    ProductType=
-        safe_text,
     ProductDescription=
         safe_text,
     ProductName=
         safe_text,
+    ProductType=
+        safe_text,
     ProductPrice=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    ProductID=
+        st.integers(),
+    ProductImage=
+        safe_text
 )
 
 @given(instance=Shopping_Cart_strategy)
@@ -366,9 +366,6 @@ Product_strategy = st.builds(
 def test_shopping_cart_instantiation(instance):
     assert isinstance(instance, Shopping_Cart)
 
-@given(instance=Shopping_Cart_strategy)
-def test_shopping_cart_ProductPurchased_type(instance):
-    assert isinstance(instance.ProductPurchased, str)
 
 
 @given(instance=Shopping_Cart_strategy)
@@ -382,31 +379,6 @@ def test_shopping_cart_ProductPurchased_setter(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_PaymentMethod_type(instance):
-    assert isinstance(instance.PaymentMethod, str)
-
-
-@given(instance=Order_strategy)
-def test_order_PaymentMethod_setter(instance):
-    original = instance.PaymentMethod
-    instance.PaymentMethod = original
-    assert instance.PaymentMethod == original
-
-@given(instance=Order_strategy)
-def test_order_OrderNumber_type(instance):
-    assert isinstance(instance.OrderNumber, int)
-
-
-@given(instance=Order_strategy)
-def test_order_OrderNumber_setter(instance):
-    original = instance.OrderNumber
-    instance.OrderNumber = original
-    assert instance.OrderNumber == original
-
-@given(instance=Order_strategy)
-def test_order_Products_type(instance):
-    assert isinstance(instance.Products, shopping_cart)
 
 
 @given(instance=Order_strategy)
@@ -415,20 +387,14 @@ def test_order_Products_setter(instance):
     instance.Products = original
     assert instance.Products == original
 
-@given(instance=Order_strategy)
-def test_order_Date_type(instance):
-    assert isinstance(instance.Date, str)
 
 
 @given(instance=Order_strategy)
-def test_order_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
+def test_order_PaymentMethod_setter(instance):
+    original = instance.PaymentMethod
+    instance.PaymentMethod = original
+    assert instance.PaymentMethod == original
 
-@given(instance=Order_strategy)
-def test_order_HomeAddress_type(instance):
-    assert isinstance(instance.HomeAddress, user)
 
 
 @given(instance=Order_strategy)
@@ -437,9 +403,14 @@ def test_order_HomeAddress_setter(instance):
     instance.HomeAddress = original
     assert instance.HomeAddress == original
 
+
+
 @given(instance=Order_strategy)
-def test_order_CustomerName_type(instance):
-    assert isinstance(instance.CustomerName, user)
+def test_order_OrderNumber_setter(instance):
+    original = instance.OrderNumber
+    instance.OrderNumber = original
+    assert instance.OrderNumber == original
+
 
 
 @given(instance=Order_strategy)
@@ -447,6 +418,14 @@ def test_order_CustomerName_setter(instance):
     original = instance.CustomerName
     instance.CustomerName = original
     assert instance.CustomerName == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
 
 @given(instance=Double_Interface_strategy)
 @settings(max_examples=50)
@@ -458,9 +437,6 @@ def test_double_interface_instantiation(instance):
 def test_clientaccount_instantiation(instance):
     assert isinstance(instance, ClientAccount)
 
-@given(instance=ClientAccount_strategy)
-def test_clientaccount_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=ClientAccount_strategy)
@@ -474,20 +450,6 @@ def test_clientaccount_Password_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Surname_type(instance):
-    assert isinstance(instance.Surname, str)
-
-
-@given(instance=User_strategy)
-def test_user_Surname_setter(instance):
-    original = instance.Surname
-    instance.Surname = original
-    assert instance.Surname == original
-
-@given(instance=User_strategy)
-def test_user_Age_type(instance):
-    assert isinstance(instance.Age, int)
 
 
 @given(instance=User_strategy)
@@ -496,9 +458,6 @@ def test_user_Age_setter(instance):
     instance.Age = original
     assert instance.Age == original
 
-@given(instance=User_strategy)
-def test_user_HomeAddress_type(instance):
-    assert isinstance(instance.HomeAddress, str)
 
 
 @given(instance=User_strategy)
@@ -507,20 +466,6 @@ def test_user_HomeAddress_setter(instance):
     instance.HomeAddress = original
     assert instance.HomeAddress == original
 
-@given(instance=User_strategy)
-def test_user_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=User_strategy)
-def test_user_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=User_strategy)
-def test_user_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=User_strategy)
@@ -529,47 +474,27 @@ def test_user_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=User_strategy)
+def test_user_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Surname_setter(instance):
+    original = instance.Surname
+    instance.Surname = original
+    assert instance.Surname == original
+
 @given(instance=Product_strategy)
 @settings(max_examples=50)
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=Product_strategy)
-def test_product_ProductID_type(instance):
-    assert isinstance(instance.ProductID, int)
-
-
-@given(instance=Product_strategy)
-def test_product_ProductID_setter(instance):
-    original = instance.ProductID
-    instance.ProductID = original
-    assert instance.ProductID == original
-
-@given(instance=Product_strategy)
-def test_product_ProductImage_type(instance):
-    assert isinstance(instance.ProductImage, str)
-
-
-@given(instance=Product_strategy)
-def test_product_ProductImage_setter(instance):
-    original = instance.ProductImage
-    instance.ProductImage = original
-    assert instance.ProductImage == original
-
-@given(instance=Product_strategy)
-def test_product_ProductType_type(instance):
-    assert isinstance(instance.ProductType, str)
-
-
-@given(instance=Product_strategy)
-def test_product_ProductType_setter(instance):
-    original = instance.ProductType
-    instance.ProductType = original
-    assert instance.ProductType == original
-
-@given(instance=Product_strategy)
-def test_product_ProductDescription_type(instance):
-    assert isinstance(instance.ProductDescription, str)
 
 
 @given(instance=Product_strategy)
@@ -578,9 +503,6 @@ def test_product_ProductDescription_setter(instance):
     instance.ProductDescription = original
     assert instance.ProductDescription == original
 
-@given(instance=Product_strategy)
-def test_product_ProductName_type(instance):
-    assert isinstance(instance.ProductName, str)
 
 
 @given(instance=Product_strategy)
@@ -589,9 +511,14 @@ def test_product_ProductName_setter(instance):
     instance.ProductName = original
     assert instance.ProductName == original
 
+
+
 @given(instance=Product_strategy)
-def test_product_ProductPrice_type(instance):
-    assert isinstance(instance.ProductPrice, float)
+def test_product_ProductType_setter(instance):
+    original = instance.ProductType
+    instance.ProductType = original
+    assert instance.ProductType == original
+
 
 
 @given(instance=Product_strategy)
@@ -599,3 +526,19 @@ def test_product_ProductPrice_setter(instance):
     original = instance.ProductPrice
     instance.ProductPrice = original
     assert instance.ProductPrice == original
+
+
+
+@given(instance=Product_strategy)
+def test_product_ProductID_setter(instance):
+    original = instance.ProductID
+    instance.ProductID = original
+    assert instance.ProductID == original
+
+
+
+@given(instance=Product_strategy)
+def test_product_ProductImage_setter(instance):
+    original = instance.ProductImage
+    instance.ProductImage = original
+    assert instance.ProductImage == original

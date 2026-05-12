@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     A,
-    MM1::B,
-    MM1::D,
-    MM1::C,
-    MM1::A,
-    MM1::ContainerMM1,
+    MM1_B,
+    MM1_D,
+    MM1_C,
+    MM1_A,
+    MM1_ContainerMM1,
 )
 
 # =============================================================================
@@ -34,23 +34,23 @@ def test_a_constructor_args():
 
 
 
-def test_mm1::b_is_not_abstract():
-    assert not inspect.isabstract(MM1::B)
+def test_mm1_b_is_not_abstract():
+    assert not inspect.isabstract(MM1_B)
 
 
-def test_mm1::b_constructor_exists():
-    assert callable(MM1::B.__init__)
+def test_mm1_b_constructor_exists():
+    assert callable(MM1_B.__init__)
 
 
-def test_mm1::b_constructor_args():
-    sig = inspect.signature(MM1::B.__init__)
+def test_mm1_b_constructor_args():
+    sig = inspect.signature(MM1_B.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mm1::b_has_value():
-    assert hasattr(MM1::B, "value")
+def test_mm1_b_has_value():
+    assert hasattr(MM1_B, "value")
     descriptor = None
-    for klass in MM1::B.__mro__:
+    for klass in MM1_B.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -58,37 +58,37 @@ def test_mm1::b_has_value():
 
 
 
-def test_mm1::d_is_not_abstract():
-    assert not inspect.isabstract(MM1::D)
+def test_mm1_d_is_not_abstract():
+    assert not inspect.isabstract(MM1_D)
 
 
-def test_mm1::d_constructor_exists():
-    assert callable(MM1::D.__init__)
+def test_mm1_d_constructor_exists():
+    assert callable(MM1_D.__init__)
 
 
-def test_mm1::d_constructor_args():
-    sig = inspect.signature(MM1::D.__init__)
+def test_mm1_d_constructor_args():
+    sig = inspect.signature(MM1_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm1::c_is_not_abstract():
-    assert not inspect.isabstract(MM1::C)
+def test_mm1_c_is_not_abstract():
+    assert not inspect.isabstract(MM1_C)
 
 
-def test_mm1::c_constructor_exists():
-    assert callable(MM1::C.__init__)
+def test_mm1_c_constructor_exists():
+    assert callable(MM1_C.__init__)
 
 
-def test_mm1::c_constructor_args():
-    sig = inspect.signature(MM1::C.__init__)
+def test_mm1_c_constructor_args():
+    sig = inspect.signature(MM1_C.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mm1::c_has_value():
-    assert hasattr(MM1::C, "value")
+def test_mm1_c_has_value():
+    assert hasattr(MM1_C, "value")
     descriptor = None
-    for klass in MM1::C.__mro__:
+    for klass in MM1_C.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -96,23 +96,23 @@ def test_mm1::c_has_value():
 
 
 
-def test_mm1::a_is_not_abstract():
-    assert not inspect.isabstract(MM1::A)
+def test_mm1_a_is_not_abstract():
+    assert not inspect.isabstract(MM1_A)
 
 
-def test_mm1::a_constructor_exists():
-    assert callable(MM1::A.__init__)
+def test_mm1_a_constructor_exists():
+    assert callable(MM1_A.__init__)
 
 
-def test_mm1::a_constructor_args():
-    sig = inspect.signature(MM1::A.__init__)
+def test_mm1_a_constructor_args():
+    sig = inspect.signature(MM1_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm1::a_has_name():
-    assert hasattr(MM1::A, "name")
+def test_mm1_a_has_name():
+    assert hasattr(MM1_A, "name")
     descriptor = None
-    for klass in MM1::A.__mro__:
+    for klass in MM1_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -120,23 +120,23 @@ def test_mm1::a_has_name():
 
 
 
-def test_mm1::containermm1_is_not_abstract():
-    assert not inspect.isabstract(MM1::ContainerMM1)
+def test_mm1_containermm1_is_not_abstract():
+    assert not inspect.isabstract(MM1_ContainerMM1)
 
 
-def test_mm1::containermm1_constructor_exists():
-    assert callable(MM1::ContainerMM1.__init__)
+def test_mm1_containermm1_constructor_exists():
+    assert callable(MM1_ContainerMM1.__init__)
 
 
-def test_mm1::containermm1_constructor_args():
-    sig = inspect.signature(MM1::ContainerMM1.__init__)
+def test_mm1_containermm1_constructor_args():
+    sig = inspect.signature(MM1_ContainerMM1.__init__)
     params = list(sig.parameters.keys())
     assert "aname" in params, "Missing parameter 'aname'"
 
-def test_mm1::containermm1_has_aname():
-    assert hasattr(MM1::ContainerMM1, "aname")
+def test_mm1_containermm1_has_aname():
+    assert hasattr(MM1_ContainerMM1, "aname")
     descriptor = None
-    for klass in MM1::ContainerMM1.__mro__:
+    for klass in MM1_ContainerMM1.__mro__:
         if "aname" in klass.__dict__:
             descriptor = klass.__dict__["aname"]
             break
@@ -157,26 +157,26 @@ safe_text = st.text(
 A_strategy = st.builds(
     A,
 )
-MM1::B_strategy = st.builds(
-    MM1::B,
+MM1_B_strategy = st.builds(
+    MM1_B,
     value=
         st.integers()
 )
-MM1::D_strategy = st.builds(
-    MM1::D,
+MM1_D_strategy = st.builds(
+    MM1_D,
 )
-MM1::C_strategy = st.builds(
-    MM1::C,
+MM1_C_strategy = st.builds(
+    MM1_C,
     value=
         st.booleans()
 )
-MM1::A_strategy = st.builds(
-    MM1::A,
+MM1_A_strategy = st.builds(
+    MM1_A,
     name=
         safe_text
 )
-MM1::ContainerMM1_strategy = st.builds(
-    MM1::ContainerMM1,
+MM1_ContainerMM1_strategy = st.builds(
+    MM1_ContainerMM1,
     aname=
         st.integers()
 )
@@ -186,71 +186,59 @@ MM1::ContainerMM1_strategy = st.builds(
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=MM1::B_strategy)
+@given(instance=MM1_B_strategy)
 @settings(max_examples=50)
-def test_mm1::b_instantiation(instance):
-    assert isinstance(instance, MM1::B)
-
-@given(instance=MM1::B_strategy)
-def test_mm1::b_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_mm1_b_instantiation(instance):
+    assert isinstance(instance, MM1_B)
 
 
-@given(instance=MM1::B_strategy)
-def test_mm1::b_value_setter(instance):
+
+@given(instance=MM1_B_strategy)
+def test_mm1_b_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=MM1::D_strategy)
+@given(instance=MM1_D_strategy)
 @settings(max_examples=50)
-def test_mm1::d_instantiation(instance):
-    assert isinstance(instance, MM1::D)
+def test_mm1_d_instantiation(instance):
+    assert isinstance(instance, MM1_D)
 
-@given(instance=MM1::C_strategy)
+@given(instance=MM1_C_strategy)
 @settings(max_examples=50)
-def test_mm1::c_instantiation(instance):
-    assert isinstance(instance, MM1::C)
-
-@given(instance=MM1::C_strategy)
-def test_mm1::c_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_mm1_c_instantiation(instance):
+    assert isinstance(instance, MM1_C)
 
 
-@given(instance=MM1::C_strategy)
-def test_mm1::c_value_setter(instance):
+
+@given(instance=MM1_C_strategy)
+def test_mm1_c_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=MM1::A_strategy)
+@given(instance=MM1_A_strategy)
 @settings(max_examples=50)
-def test_mm1::a_instantiation(instance):
-    assert isinstance(instance, MM1::A)
-
-@given(instance=MM1::A_strategy)
-def test_mm1::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm1_a_instantiation(instance):
+    assert isinstance(instance, MM1_A)
 
 
-@given(instance=MM1::A_strategy)
-def test_mm1::a_name_setter(instance):
+
+@given(instance=MM1_A_strategy)
+def test_mm1_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MM1::ContainerMM1_strategy)
+@given(instance=MM1_ContainerMM1_strategy)
 @settings(max_examples=50)
-def test_mm1::containermm1_instantiation(instance):
-    assert isinstance(instance, MM1::ContainerMM1)
-
-@given(instance=MM1::ContainerMM1_strategy)
-def test_mm1::containermm1_aname_type(instance):
-    assert isinstance(instance.aname, int)
+def test_mm1_containermm1_instantiation(instance):
+    assert isinstance(instance, MM1_ContainerMM1)
 
 
-@given(instance=MM1::ContainerMM1_strategy)
-def test_mm1::containermm1_aname_setter(instance):
+
+@given(instance=MM1_ContainerMM1_strategy)
+def test_mm1_containermm1_aname_setter(instance):
     original = instance.aname
     instance.aname = original
     assert instance.aname == original

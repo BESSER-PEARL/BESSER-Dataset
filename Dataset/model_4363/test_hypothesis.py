@@ -3,55 +3,55 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ArithmeticExpression,
-    workflow::Multiplication,
-    workflow::Subtraction,
-    workflow::Division,
-    workflow::Addition,
+    workflow_Division,
+    workflow_Multiplication,
+    workflow_Subtraction,
+    workflow_Addition,
     UnaryExpression,
-    workflow::UMinus,
-    workflow::Not,
+    workflow_UMinus,
+    workflow_Not,
     EqualityExpression,
-    workflow::LessThan,
-    workflow::GreaterThanOrEqual,
-    workflow::LessThanOrEqual,
-    workflow::NotEqual,
-    workflow::GreaterThan,
-    workflow::Equal,
+    workflow_LessThanOrEqual,
+    workflow_LessThan,
+    workflow_NotEqual,
+    workflow_GreaterThanOrEqual,
+    workflow_GreaterThan,
+    workflow_Equal,
+    workflow_Statement,
+    workflow_CompilationUnit,
     LogicExpression,
-    workflow::Or,
-    workflow::And,
+    workflow_Or,
+    workflow_And,
     BinaryExpression,
-    workflow::EqualityExpression,
-    workflow::ArithmeticExpression,
-    workflow::LogicExpression,
+    workflow_EqualityExpression,
+    workflow_ArithmeticExpression,
+    workflow_LogicExpression,
     Declaration,
-    workflow::VariableDeclaration,
+    workflow_ProcedureDeclaration,
+    workflow_VariableDeclaration,
     Expression,
-    workflow::BinaryExpression,
-    workflow::UnaryExpression,
-    workflow::ProcedureCall,
-    workflow::Constant,
-    workflow::ParameterDeclaration,
-    workflow::Variable,
+    workflow_ProcedureCall,
+    workflow_BinaryExpression,
+    workflow_UnaryExpression,
+    workflow_Constant,
+    workflow_ParameterDeclaration,
+    workflow_Variable,
     Statement,
-    workflow::Read,
-    workflow::Write,
-    workflow::While,
-    workflow::Expression,
-    workflow::If,
-    workflow::VariableAssignment,
-    workflow::Declaration,
-    workflow::ProcedureReturn,
-    workflow::Block,
-    workflow::Statement,
-    workflow::ProcedureDeclaration,
-    workflow::CompilationUnit,
-    Languages,
+    workflow_VariableAssignment,
+    workflow_Declaration,
+    workflow_ProcedureReturn,
+    workflow_Block,
+    workflow_Expression,
+    workflow_While,
+    workflow_Read,
+    workflow_Write,
+    workflow_If,
     AccessModifiers,
+    Languages,
     Type,
 )
 
@@ -75,58 +75,58 @@ def test_arithmeticexpression_constructor_args():
 
 
 
-def test_workflow::multiplication_is_not_abstract():
-    assert not inspect.isabstract(workflow::Multiplication)
+def test_workflow_division_is_not_abstract():
+    assert not inspect.isabstract(workflow_Division)
 
 
-def test_workflow::multiplication_constructor_exists():
-    assert callable(workflow::Multiplication.__init__)
+def test_workflow_division_constructor_exists():
+    assert callable(workflow_Division.__init__)
 
 
-def test_workflow::multiplication_constructor_args():
-    sig = inspect.signature(workflow::Multiplication.__init__)
+def test_workflow_division_constructor_args():
+    sig = inspect.signature(workflow_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::subtraction_is_not_abstract():
-    assert not inspect.isabstract(workflow::Subtraction)
+def test_workflow_multiplication_is_not_abstract():
+    assert not inspect.isabstract(workflow_Multiplication)
 
 
-def test_workflow::subtraction_constructor_exists():
-    assert callable(workflow::Subtraction.__init__)
+def test_workflow_multiplication_constructor_exists():
+    assert callable(workflow_Multiplication.__init__)
 
 
-def test_workflow::subtraction_constructor_args():
-    sig = inspect.signature(workflow::Subtraction.__init__)
+def test_workflow_multiplication_constructor_args():
+    sig = inspect.signature(workflow_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::division_is_not_abstract():
-    assert not inspect.isabstract(workflow::Division)
+def test_workflow_subtraction_is_not_abstract():
+    assert not inspect.isabstract(workflow_Subtraction)
 
 
-def test_workflow::division_constructor_exists():
-    assert callable(workflow::Division.__init__)
+def test_workflow_subtraction_constructor_exists():
+    assert callable(workflow_Subtraction.__init__)
 
 
-def test_workflow::division_constructor_args():
-    sig = inspect.signature(workflow::Division.__init__)
+def test_workflow_subtraction_constructor_args():
+    sig = inspect.signature(workflow_Subtraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::addition_is_not_abstract():
-    assert not inspect.isabstract(workflow::Addition)
+def test_workflow_addition_is_not_abstract():
+    assert not inspect.isabstract(workflow_Addition)
 
 
-def test_workflow::addition_constructor_exists():
-    assert callable(workflow::Addition.__init__)
+def test_workflow_addition_constructor_exists():
+    assert callable(workflow_Addition.__init__)
 
 
-def test_workflow::addition_constructor_args():
-    sig = inspect.signature(workflow::Addition.__init__)
+def test_workflow_addition_constructor_args():
+    sig = inspect.signature(workflow_Addition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -145,30 +145,30 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_workflow::uminus_is_not_abstract():
-    assert not inspect.isabstract(workflow::UMinus)
+def test_workflow_uminus_is_not_abstract():
+    assert not inspect.isabstract(workflow_UMinus)
 
 
-def test_workflow::uminus_constructor_exists():
-    assert callable(workflow::UMinus.__init__)
+def test_workflow_uminus_constructor_exists():
+    assert callable(workflow_UMinus.__init__)
 
 
-def test_workflow::uminus_constructor_args():
-    sig = inspect.signature(workflow::UMinus.__init__)
+def test_workflow_uminus_constructor_args():
+    sig = inspect.signature(workflow_UMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::not_is_not_abstract():
-    assert not inspect.isabstract(workflow::Not)
+def test_workflow_not_is_not_abstract():
+    assert not inspect.isabstract(workflow_Not)
 
 
-def test_workflow::not_constructor_exists():
-    assert callable(workflow::Not.__init__)
+def test_workflow_not_constructor_exists():
+    assert callable(workflow_Not.__init__)
 
 
-def test_workflow::not_constructor_args():
-    sig = inspect.signature(workflow::Not.__init__)
+def test_workflow_not_constructor_args():
+    sig = inspect.signature(workflow_Not.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,87 +187,135 @@ def test_equalityexpression_constructor_args():
 
 
 
-def test_workflow::lessthan_is_not_abstract():
-    assert not inspect.isabstract(workflow::LessThan)
+def test_workflow_lessthanorequal_is_not_abstract():
+    assert not inspect.isabstract(workflow_LessThanOrEqual)
 
 
-def test_workflow::lessthan_constructor_exists():
-    assert callable(workflow::LessThan.__init__)
+def test_workflow_lessthanorequal_constructor_exists():
+    assert callable(workflow_LessThanOrEqual.__init__)
 
 
-def test_workflow::lessthan_constructor_args():
-    sig = inspect.signature(workflow::LessThan.__init__)
+def test_workflow_lessthanorequal_constructor_args():
+    sig = inspect.signature(workflow_LessThanOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::greaterthanorequal_is_not_abstract():
-    assert not inspect.isabstract(workflow::GreaterThanOrEqual)
+def test_workflow_lessthan_is_not_abstract():
+    assert not inspect.isabstract(workflow_LessThan)
 
 
-def test_workflow::greaterthanorequal_constructor_exists():
-    assert callable(workflow::GreaterThanOrEqual.__init__)
+def test_workflow_lessthan_constructor_exists():
+    assert callable(workflow_LessThan.__init__)
 
 
-def test_workflow::greaterthanorequal_constructor_args():
-    sig = inspect.signature(workflow::GreaterThanOrEqual.__init__)
+def test_workflow_lessthan_constructor_args():
+    sig = inspect.signature(workflow_LessThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::lessthanorequal_is_not_abstract():
-    assert not inspect.isabstract(workflow::LessThanOrEqual)
+def test_workflow_notequal_is_not_abstract():
+    assert not inspect.isabstract(workflow_NotEqual)
 
 
-def test_workflow::lessthanorequal_constructor_exists():
-    assert callable(workflow::LessThanOrEqual.__init__)
+def test_workflow_notequal_constructor_exists():
+    assert callable(workflow_NotEqual.__init__)
 
 
-def test_workflow::lessthanorequal_constructor_args():
-    sig = inspect.signature(workflow::LessThanOrEqual.__init__)
+def test_workflow_notequal_constructor_args():
+    sig = inspect.signature(workflow_NotEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::notequal_is_not_abstract():
-    assert not inspect.isabstract(workflow::NotEqual)
+def test_workflow_greaterthanorequal_is_not_abstract():
+    assert not inspect.isabstract(workflow_GreaterThanOrEqual)
 
 
-def test_workflow::notequal_constructor_exists():
-    assert callable(workflow::NotEqual.__init__)
+def test_workflow_greaterthanorequal_constructor_exists():
+    assert callable(workflow_GreaterThanOrEqual.__init__)
 
 
-def test_workflow::notequal_constructor_args():
-    sig = inspect.signature(workflow::NotEqual.__init__)
+def test_workflow_greaterthanorequal_constructor_args():
+    sig = inspect.signature(workflow_GreaterThanOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(workflow::GreaterThan)
+def test_workflow_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(workflow_GreaterThan)
 
 
-def test_workflow::greaterthan_constructor_exists():
-    assert callable(workflow::GreaterThan.__init__)
+def test_workflow_greaterthan_constructor_exists():
+    assert callable(workflow_GreaterThan.__init__)
 
 
-def test_workflow::greaterthan_constructor_args():
-    sig = inspect.signature(workflow::GreaterThan.__init__)
+def test_workflow_greaterthan_constructor_args():
+    sig = inspect.signature(workflow_GreaterThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::equal_is_not_abstract():
-    assert not inspect.isabstract(workflow::Equal)
+def test_workflow_equal_is_not_abstract():
+    assert not inspect.isabstract(workflow_Equal)
 
 
-def test_workflow::equal_constructor_exists():
-    assert callable(workflow::Equal.__init__)
+def test_workflow_equal_constructor_exists():
+    assert callable(workflow_Equal.__init__)
 
 
-def test_workflow::equal_constructor_args():
-    sig = inspect.signature(workflow::Equal.__init__)
+def test_workflow_equal_constructor_args():
+    sig = inspect.signature(workflow_Equal.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_workflow_statement_is_not_abstract():
+    assert not inspect.isabstract(workflow_Statement)
+
+
+def test_workflow_statement_constructor_exists():
+    assert callable(workflow_Statement.__init__)
+
+
+def test_workflow_statement_constructor_args():
+    sig = inspect.signature(workflow_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(workflow_CompilationUnit)
+
+
+def test_workflow_compilationunit_constructor_exists():
+    assert callable(workflow_CompilationUnit.__init__)
+
+
+def test_workflow_compilationunit_constructor_args():
+    sig = inspect.signature(workflow_CompilationUnit.__init__)
+    params = list(sig.parameters.keys())
+    assert "language" in params, "Missing parameter 'language'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_workflow_compilationunit_has_language():
+    assert hasattr(workflow_CompilationUnit, "language")
+    descriptor = None
+    for klass in workflow_CompilationUnit.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_compilationunit_has_name():
+    assert hasattr(workflow_CompilationUnit, "name")
+    descriptor = None
+    for klass in workflow_CompilationUnit.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -285,30 +333,30 @@ def test_logicexpression_constructor_args():
 
 
 
-def test_workflow::or_is_not_abstract():
-    assert not inspect.isabstract(workflow::Or)
+def test_workflow_or_is_not_abstract():
+    assert not inspect.isabstract(workflow_Or)
 
 
-def test_workflow::or_constructor_exists():
-    assert callable(workflow::Or.__init__)
+def test_workflow_or_constructor_exists():
+    assert callable(workflow_Or.__init__)
 
 
-def test_workflow::or_constructor_args():
-    sig = inspect.signature(workflow::Or.__init__)
+def test_workflow_or_constructor_args():
+    sig = inspect.signature(workflow_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::and_is_not_abstract():
-    assert not inspect.isabstract(workflow::And)
+def test_workflow_and_is_not_abstract():
+    assert not inspect.isabstract(workflow_And)
 
 
-def test_workflow::and_constructor_exists():
-    assert callable(workflow::And.__init__)
+def test_workflow_and_constructor_exists():
+    assert callable(workflow_And.__init__)
 
 
-def test_workflow::and_constructor_args():
-    sig = inspect.signature(workflow::And.__init__)
+def test_workflow_and_constructor_args():
+    sig = inspect.signature(workflow_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -327,44 +375,44 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_workflow::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(workflow::EqualityExpression)
+def test_workflow_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(workflow_EqualityExpression)
 
 
-def test_workflow::equalityexpression_constructor_exists():
-    assert callable(workflow::EqualityExpression.__init__)
+def test_workflow_equalityexpression_constructor_exists():
+    assert callable(workflow_EqualityExpression.__init__)
 
 
-def test_workflow::equalityexpression_constructor_args():
-    sig = inspect.signature(workflow::EqualityExpression.__init__)
+def test_workflow_equalityexpression_constructor_args():
+    sig = inspect.signature(workflow_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(workflow::ArithmeticExpression)
+def test_workflow_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(workflow_ArithmeticExpression)
 
 
-def test_workflow::arithmeticexpression_constructor_exists():
-    assert callable(workflow::ArithmeticExpression.__init__)
+def test_workflow_arithmeticexpression_constructor_exists():
+    assert callable(workflow_ArithmeticExpression.__init__)
 
 
-def test_workflow::arithmeticexpression_constructor_args():
-    sig = inspect.signature(workflow::ArithmeticExpression.__init__)
+def test_workflow_arithmeticexpression_constructor_args():
+    sig = inspect.signature(workflow_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::logicexpression_is_not_abstract():
-    assert not inspect.isabstract(workflow::LogicExpression)
+def test_workflow_logicexpression_is_not_abstract():
+    assert not inspect.isabstract(workflow_LogicExpression)
 
 
-def test_workflow::logicexpression_constructor_exists():
-    assert callable(workflow::LogicExpression.__init__)
+def test_workflow_logicexpression_constructor_exists():
+    assert callable(workflow_LogicExpression.__init__)
 
 
-def test_workflow::logicexpression_constructor_args():
-    sig = inspect.signature(workflow::LogicExpression.__init__)
+def test_workflow_logicexpression_constructor_args():
+    sig = inspect.signature(workflow_LogicExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -383,33 +431,67 @@ def test_declaration_constructor_args():
 
 
 
-def test_workflow::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(workflow::VariableDeclaration)
+def test_workflow_proceduredeclaration_is_not_abstract():
+    assert not inspect.isabstract(workflow_ProcedureDeclaration)
 
 
-def test_workflow::variabledeclaration_constructor_exists():
-    assert callable(workflow::VariableDeclaration.__init__)
+def test_workflow_proceduredeclaration_constructor_exists():
+    assert callable(workflow_ProcedureDeclaration.__init__)
 
 
-def test_workflow::variabledeclaration_constructor_args():
-    sig = inspect.signature(workflow::VariableDeclaration.__init__)
+def test_workflow_proceduredeclaration_constructor_args():
+    sig = inspect.signature(workflow_ProcedureDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "returnType" in params, "Missing parameter 'returnType'"
+    assert "accessModifier" in params, "Missing parameter 'accessModifier'"
+
+def test_workflow_proceduredeclaration_has_returnType():
+    assert hasattr(workflow_ProcedureDeclaration, "returnType")
+    descriptor = None
+    for klass in workflow_ProcedureDeclaration.__mro__:
+        if "returnType" in klass.__dict__:
+            descriptor = klass.__dict__["returnType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_proceduredeclaration_has_accessModifier():
+    assert hasattr(workflow_ProcedureDeclaration, "accessModifier")
+    descriptor = None
+    for klass in workflow_ProcedureDeclaration.__mro__:
+        if "accessModifier" in klass.__dict__:
+            descriptor = klass.__dict__["accessModifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_workflow_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(workflow_VariableDeclaration)
+
+
+def test_workflow_variabledeclaration_constructor_exists():
+    assert callable(workflow_VariableDeclaration.__init__)
+
+
+def test_workflow_variabledeclaration_constructor_args():
+    sig = inspect.signature(workflow_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "isConstant" in params, "Missing parameter 'isConstant'"
 
-def test_workflow::variabledeclaration_has_type():
-    assert hasattr(workflow::VariableDeclaration, "type")
+def test_workflow_variabledeclaration_has_type():
+    assert hasattr(workflow_VariableDeclaration, "type")
     descriptor = None
-    for klass in workflow::VariableDeclaration.__mro__:
+    for klass in workflow_VariableDeclaration.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_workflow::variabledeclaration_has_isConstant():
-    assert hasattr(workflow::VariableDeclaration, "isConstant")
+def test_workflow_variabledeclaration_has_isConstant():
+    assert hasattr(workflow_VariableDeclaration, "isConstant")
     descriptor = None
-    for klass in workflow::VariableDeclaration.__mro__:
+    for klass in workflow_VariableDeclaration.__mro__:
         if "isConstant" in klass.__dict__:
             descriptor = klass.__dict__["isConstant"]
             break
@@ -431,51 +513,23 @@ def test_expression_constructor_args():
 
 
 
-def test_workflow::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(workflow::BinaryExpression)
+def test_workflow_procedurecall_is_not_abstract():
+    assert not inspect.isabstract(workflow_ProcedureCall)
 
 
-def test_workflow::binaryexpression_constructor_exists():
-    assert callable(workflow::BinaryExpression.__init__)
+def test_workflow_procedurecall_constructor_exists():
+    assert callable(workflow_ProcedureCall.__init__)
 
 
-def test_workflow::binaryexpression_constructor_args():
-    sig = inspect.signature(workflow::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(workflow::UnaryExpression)
-
-
-def test_workflow::unaryexpression_constructor_exists():
-    assert callable(workflow::UnaryExpression.__init__)
-
-
-def test_workflow::unaryexpression_constructor_args():
-    sig = inspect.signature(workflow::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::procedurecall_is_not_abstract():
-    assert not inspect.isabstract(workflow::ProcedureCall)
-
-
-def test_workflow::procedurecall_constructor_exists():
-    assert callable(workflow::ProcedureCall.__init__)
-
-
-def test_workflow::procedurecall_constructor_args():
-    sig = inspect.signature(workflow::ProcedureCall.__init__)
+def test_workflow_procedurecall_constructor_args():
+    sig = inspect.signature(workflow_ProcedureCall.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_workflow::procedurecall_has_name():
-    assert hasattr(workflow::ProcedureCall, "name")
+def test_workflow_procedurecall_has_name():
+    assert hasattr(workflow_ProcedureCall, "name")
     descriptor = None
-    for klass in workflow::ProcedureCall.__mro__:
+    for klass in workflow_ProcedureCall.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -483,53 +537,81 @@ def test_workflow::procedurecall_has_name():
 
 
 
-def test_workflow::constant_is_not_abstract():
-    assert not inspect.isabstract(workflow::Constant)
+def test_workflow_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(workflow_BinaryExpression)
 
 
-def test_workflow::constant_constructor_exists():
-    assert callable(workflow::Constant.__init__)
+def test_workflow_binaryexpression_constructor_exists():
+    assert callable(workflow_BinaryExpression.__init__)
 
 
-def test_workflow::constant_constructor_args():
-    sig = inspect.signature(workflow::Constant.__init__)
+def test_workflow_binaryexpression_constructor_args():
+    sig = inspect.signature(workflow_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "asInteger" in params, "Missing parameter 'asInteger'"
+
+
+
+def test_workflow_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(workflow_UnaryExpression)
+
+
+def test_workflow_unaryexpression_constructor_exists():
+    assert callable(workflow_UnaryExpression.__init__)
+
+
+def test_workflow_unaryexpression_constructor_args():
+    sig = inspect.signature(workflow_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_constant_is_not_abstract():
+    assert not inspect.isabstract(workflow_Constant)
+
+
+def test_workflow_constant_constructor_exists():
+    assert callable(workflow_Constant.__init__)
+
+
+def test_workflow_constant_constructor_args():
+    sig = inspect.signature(workflow_Constant.__init__)
+    params = list(sig.parameters.keys())
     assert "asString" in params, "Missing parameter 'asString'"
+    assert "asInteger" in params, "Missing parameter 'asInteger'"
     assert "asBoolean" in params, "Missing parameter 'asBoolean'"
     assert "asReal" in params, "Missing parameter 'asReal'"
 
-def test_workflow::constant_has_asInteger():
-    assert hasattr(workflow::Constant, "asInteger")
+def test_workflow_constant_has_asString():
+    assert hasattr(workflow_Constant, "asString")
     descriptor = None
-    for klass in workflow::Constant.__mro__:
-        if "asInteger" in klass.__dict__:
-            descriptor = klass.__dict__["asInteger"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::constant_has_asString():
-    assert hasattr(workflow::Constant, "asString")
-    descriptor = None
-    for klass in workflow::Constant.__mro__:
+    for klass in workflow_Constant.__mro__:
         if "asString" in klass.__dict__:
             descriptor = klass.__dict__["asString"]
             break
     assert isinstance(descriptor, property)
 
-def test_workflow::constant_has_asBoolean():
-    assert hasattr(workflow::Constant, "asBoolean")
+def test_workflow_constant_has_asInteger():
+    assert hasattr(workflow_Constant, "asInteger")
     descriptor = None
-    for klass in workflow::Constant.__mro__:
+    for klass in workflow_Constant.__mro__:
+        if "asInteger" in klass.__dict__:
+            descriptor = klass.__dict__["asInteger"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_constant_has_asBoolean():
+    assert hasattr(workflow_Constant, "asBoolean")
+    descriptor = None
+    for klass in workflow_Constant.__mro__:
         if "asBoolean" in klass.__dict__:
             descriptor = klass.__dict__["asBoolean"]
             break
     assert isinstance(descriptor, property)
 
-def test_workflow::constant_has_asReal():
-    assert hasattr(workflow::Constant, "asReal")
+def test_workflow_constant_has_asReal():
+    assert hasattr(workflow_Constant, "asReal")
     descriptor = None
-    for klass in workflow::Constant.__mro__:
+    for klass in workflow_Constant.__mro__:
         if "asReal" in klass.__dict__:
             descriptor = klass.__dict__["asReal"]
             break
@@ -537,23 +619,23 @@ def test_workflow::constant_has_asReal():
 
 
 
-def test_workflow::parameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(workflow::ParameterDeclaration)
+def test_workflow_parameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(workflow_ParameterDeclaration)
 
 
-def test_workflow::parameterdeclaration_constructor_exists():
-    assert callable(workflow::ParameterDeclaration.__init__)
+def test_workflow_parameterdeclaration_constructor_exists():
+    assert callable(workflow_ParameterDeclaration.__init__)
 
 
-def test_workflow::parameterdeclaration_constructor_args():
-    sig = inspect.signature(workflow::ParameterDeclaration.__init__)
+def test_workflow_parameterdeclaration_constructor_args():
+    sig = inspect.signature(workflow_ParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_workflow::parameterdeclaration_has_type():
-    assert hasattr(workflow::ParameterDeclaration, "type")
+def test_workflow_parameterdeclaration_has_type():
+    assert hasattr(workflow_ParameterDeclaration, "type")
     descriptor = None
-    for klass in workflow::ParameterDeclaration.__mro__:
+    for klass in workflow_ParameterDeclaration.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -561,23 +643,23 @@ def test_workflow::parameterdeclaration_has_type():
 
 
 
-def test_workflow::variable_is_not_abstract():
-    assert not inspect.isabstract(workflow::Variable)
+def test_workflow_variable_is_not_abstract():
+    assert not inspect.isabstract(workflow_Variable)
 
 
-def test_workflow::variable_constructor_exists():
-    assert callable(workflow::Variable.__init__)
+def test_workflow_variable_constructor_exists():
+    assert callable(workflow_Variable.__init__)
 
 
-def test_workflow::variable_constructor_args():
-    sig = inspect.signature(workflow::Variable.__init__)
+def test_workflow_variable_constructor_args():
+    sig = inspect.signature(workflow_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_workflow::variable_has_name():
-    assert hasattr(workflow::Variable, "name")
+def test_workflow_variable_has_name():
+    assert hasattr(workflow_Variable, "name")
     descriptor = None
-    for klass in workflow::Variable.__mro__:
+    for klass in workflow_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -599,23 +681,117 @@ def test_statement_constructor_args():
 
 
 
-def test_workflow::read_is_not_abstract():
-    assert not inspect.isabstract(workflow::Read)
+def test_workflow_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(workflow_VariableAssignment)
 
 
-def test_workflow::read_constructor_exists():
-    assert callable(workflow::Read.__init__)
+def test_workflow_variableassignment_constructor_exists():
+    assert callable(workflow_VariableAssignment.__init__)
 
 
-def test_workflow::read_constructor_args():
-    sig = inspect.signature(workflow::Read.__init__)
+def test_workflow_variableassignment_constructor_args():
+    sig = inspect.signature(workflow_VariableAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_declaration_is_not_abstract():
+    assert not inspect.isabstract(workflow_Declaration)
+
+
+def test_workflow_declaration_constructor_exists():
+    assert callable(workflow_Declaration.__init__)
+
+
+def test_workflow_declaration_constructor_args():
+    sig = inspect.signature(workflow_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_workflow_declaration_has_name():
+    assert hasattr(workflow_Declaration, "name")
+    descriptor = None
+    for klass in workflow_Declaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_workflow_procedurereturn_is_not_abstract():
+    assert not inspect.isabstract(workflow_ProcedureReturn)
+
+
+def test_workflow_procedurereturn_constructor_exists():
+    assert callable(workflow_ProcedureReturn.__init__)
+
+
+def test_workflow_procedurereturn_constructor_args():
+    sig = inspect.signature(workflow_ProcedureReturn.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_block_is_not_abstract():
+    assert not inspect.isabstract(workflow_Block)
+
+
+def test_workflow_block_constructor_exists():
+    assert callable(workflow_Block.__init__)
+
+
+def test_workflow_block_constructor_args():
+    sig = inspect.signature(workflow_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_expression_is_not_abstract():
+    assert not inspect.isabstract(workflow_Expression)
+
+
+def test_workflow_expression_constructor_exists():
+    assert callable(workflow_Expression.__init__)
+
+
+def test_workflow_expression_constructor_args():
+    sig = inspect.signature(workflow_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_while_is_not_abstract():
+    assert not inspect.isabstract(workflow_While)
+
+
+def test_workflow_while_constructor_exists():
+    assert callable(workflow_While.__init__)
+
+
+def test_workflow_while_constructor_args():
+    sig = inspect.signature(workflow_While.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_read_is_not_abstract():
+    assert not inspect.isabstract(workflow_Read)
+
+
+def test_workflow_read_constructor_exists():
+    assert callable(workflow_Read.__init__)
+
+
+def test_workflow_read_constructor_args():
+    sig = inspect.signature(workflow_Read.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_workflow::read_has_type():
-    assert hasattr(workflow::Read, "type")
+def test_workflow_read_has_type():
+    assert hasattr(workflow_Read, "type")
     descriptor = None
-    for klass in workflow::Read.__mro__:
+    for klass in workflow_Read.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -623,224 +799,31 @@ def test_workflow::read_has_type():
 
 
 
-def test_workflow::write_is_not_abstract():
-    assert not inspect.isabstract(workflow::Write)
+def test_workflow_write_is_not_abstract():
+    assert not inspect.isabstract(workflow_Write)
 
 
-def test_workflow::write_constructor_exists():
-    assert callable(workflow::Write.__init__)
+def test_workflow_write_constructor_exists():
+    assert callable(workflow_Write.__init__)
 
 
-def test_workflow::write_constructor_args():
-    sig = inspect.signature(workflow::Write.__init__)
+def test_workflow_write_constructor_args():
+    sig = inspect.signature(workflow_Write.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::while_is_not_abstract():
-    assert not inspect.isabstract(workflow::While)
+def test_workflow_if_is_not_abstract():
+    assert not inspect.isabstract(workflow_If)
 
 
-def test_workflow::while_constructor_exists():
-    assert callable(workflow::While.__init__)
+def test_workflow_if_constructor_exists():
+    assert callable(workflow_If.__init__)
 
 
-def test_workflow::while_constructor_args():
-    sig = inspect.signature(workflow::While.__init__)
+def test_workflow_if_constructor_args():
+    sig = inspect.signature(workflow_If.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_workflow::expression_is_not_abstract():
-    assert not inspect.isabstract(workflow::Expression)
-
-
-def test_workflow::expression_constructor_exists():
-    assert callable(workflow::Expression.__init__)
-
-
-def test_workflow::expression_constructor_args():
-    sig = inspect.signature(workflow::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::if_is_not_abstract():
-    assert not inspect.isabstract(workflow::If)
-
-
-def test_workflow::if_constructor_exists():
-    assert callable(workflow::If.__init__)
-
-
-def test_workflow::if_constructor_args():
-    sig = inspect.signature(workflow::If.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(workflow::VariableAssignment)
-
-
-def test_workflow::variableassignment_constructor_exists():
-    assert callable(workflow::VariableAssignment.__init__)
-
-
-def test_workflow::variableassignment_constructor_args():
-    sig = inspect.signature(workflow::VariableAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::declaration_is_not_abstract():
-    assert not inspect.isabstract(workflow::Declaration)
-
-
-def test_workflow::declaration_constructor_exists():
-    assert callable(workflow::Declaration.__init__)
-
-
-def test_workflow::declaration_constructor_args():
-    sig = inspect.signature(workflow::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_workflow::declaration_has_name():
-    assert hasattr(workflow::Declaration, "name")
-    descriptor = None
-    for klass in workflow::Declaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_workflow::procedurereturn_is_not_abstract():
-    assert not inspect.isabstract(workflow::ProcedureReturn)
-
-
-def test_workflow::procedurereturn_constructor_exists():
-    assert callable(workflow::ProcedureReturn.__init__)
-
-
-def test_workflow::procedurereturn_constructor_args():
-    sig = inspect.signature(workflow::ProcedureReturn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::block_is_not_abstract():
-    assert not inspect.isabstract(workflow::Block)
-
-
-def test_workflow::block_constructor_exists():
-    assert callable(workflow::Block.__init__)
-
-
-def test_workflow::block_constructor_args():
-    sig = inspect.signature(workflow::Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::statement_is_not_abstract():
-    assert not inspect.isabstract(workflow::Statement)
-
-
-def test_workflow::statement_constructor_exists():
-    assert callable(workflow::Statement.__init__)
-
-
-def test_workflow::statement_constructor_args():
-    sig = inspect.signature(workflow::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::proceduredeclaration_is_not_abstract():
-    assert not inspect.isabstract(workflow::ProcedureDeclaration)
-
-
-def test_workflow::proceduredeclaration_constructor_exists():
-    assert callable(workflow::ProcedureDeclaration.__init__)
-
-
-def test_workflow::proceduredeclaration_constructor_args():
-    sig = inspect.signature(workflow::ProcedureDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "returnType" in params, "Missing parameter 'returnType'"
-    assert "accessModifier" in params, "Missing parameter 'accessModifier'"
-
-def test_workflow::proceduredeclaration_has_returnType():
-    assert hasattr(workflow::ProcedureDeclaration, "returnType")
-    descriptor = None
-    for klass in workflow::ProcedureDeclaration.__mro__:
-        if "returnType" in klass.__dict__:
-            descriptor = klass.__dict__["returnType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::proceduredeclaration_has_accessModifier():
-    assert hasattr(workflow::ProcedureDeclaration, "accessModifier")
-    descriptor = None
-    for klass in workflow::ProcedureDeclaration.__mro__:
-        if "accessModifier" in klass.__dict__:
-            descriptor = klass.__dict__["accessModifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_workflow::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(workflow::CompilationUnit)
-
-
-def test_workflow::compilationunit_constructor_exists():
-    assert callable(workflow::CompilationUnit.__init__)
-
-
-def test_workflow::compilationunit_constructor_args():
-    sig = inspect.signature(workflow::CompilationUnit.__init__)
-    params = list(sig.parameters.keys())
-    assert "language" in params, "Missing parameter 'language'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_workflow::compilationunit_has_language():
-    assert hasattr(workflow::CompilationUnit, "language")
-    descriptor = None
-    for klass in workflow::CompilationUnit.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::compilationunit_has_name():
-    assert hasattr(workflow::CompilationUnit, "name")
-    descriptor = None
-    for klass in workflow::CompilationUnit.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_languages_exists():
-    # Check that the Enumeration exists
-    assert Languages is not None
-
-def test_languages_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Languages]
-    expected_literals = [
-        "Java",
-        "CS",
-        "Python",
-        "CPP",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Languages"
 
 def test_accessmodifiers_exists():
     # Check that the Enumeration exists
@@ -850,14 +833,31 @@ def test_accessmodifiers_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AccessModifiers]
     expected_literals = [
-        "public",
-        "private",
-        "default",
         "protected",
+        "public",
+        "default",
+        "private",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AccessModifiers"
+
+def test_languages_exists():
+    # Check that the Enumeration exists
+    assert Languages is not None
+
+def test_languages_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Languages]
+    expected_literals = [
+        "CPP",
+        "Java",
+        "CS",
+        "Python",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Languages"
 
 def test_type_exists():
     # Check that the Enumeration exists
@@ -868,12 +868,12 @@ def test_type_has_all_literals():
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
         "double",
-        "float",
-        "int",
         "long",
+        "int",
+        "float",
         "string",
-        "boolean",
         "void",
+        "boolean",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -894,74 +894,91 @@ safe_text = st.text(
 ArithmeticExpression_strategy = st.builds(
     ArithmeticExpression,
 )
-workflow::Multiplication_strategy = st.builds(
-    workflow::Multiplication,
+workflow_Division_strategy = st.builds(
+    workflow_Division,
 )
-workflow::Subtraction_strategy = st.builds(
-    workflow::Subtraction,
+workflow_Multiplication_strategy = st.builds(
+    workflow_Multiplication,
 )
-workflow::Division_strategy = st.builds(
-    workflow::Division,
+workflow_Subtraction_strategy = st.builds(
+    workflow_Subtraction,
 )
-workflow::Addition_strategy = st.builds(
-    workflow::Addition,
+workflow_Addition_strategy = st.builds(
+    workflow_Addition,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-workflow::UMinus_strategy = st.builds(
-    workflow::UMinus,
+workflow_UMinus_strategy = st.builds(
+    workflow_UMinus,
 )
-workflow::Not_strategy = st.builds(
-    workflow::Not,
+workflow_Not_strategy = st.builds(
+    workflow_Not,
 )
 EqualityExpression_strategy = st.builds(
     EqualityExpression,
 )
-workflow::LessThan_strategy = st.builds(
-    workflow::LessThan,
+workflow_LessThanOrEqual_strategy = st.builds(
+    workflow_LessThanOrEqual,
 )
-workflow::GreaterThanOrEqual_strategy = st.builds(
-    workflow::GreaterThanOrEqual,
+workflow_LessThan_strategy = st.builds(
+    workflow_LessThan,
 )
-workflow::LessThanOrEqual_strategy = st.builds(
-    workflow::LessThanOrEqual,
+workflow_NotEqual_strategy = st.builds(
+    workflow_NotEqual,
 )
-workflow::NotEqual_strategy = st.builds(
-    workflow::NotEqual,
+workflow_GreaterThanOrEqual_strategy = st.builds(
+    workflow_GreaterThanOrEqual,
 )
-workflow::GreaterThan_strategy = st.builds(
-    workflow::GreaterThan,
+workflow_GreaterThan_strategy = st.builds(
+    workflow_GreaterThan,
 )
-workflow::Equal_strategy = st.builds(
-    workflow::Equal,
+workflow_Equal_strategy = st.builds(
+    workflow_Equal,
+)
+workflow_Statement_strategy = st.builds(
+    workflow_Statement,
+)
+workflow_CompilationUnit_strategy = st.builds(
+    workflow_CompilationUnit,
+    language=
+        safe_text,
+    name=
+        safe_text
 )
 LogicExpression_strategy = st.builds(
     LogicExpression,
 )
-workflow::Or_strategy = st.builds(
-    workflow::Or,
+workflow_Or_strategy = st.builds(
+    workflow_Or,
 )
-workflow::And_strategy = st.builds(
-    workflow::And,
+workflow_And_strategy = st.builds(
+    workflow_And,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-workflow::EqualityExpression_strategy = st.builds(
-    workflow::EqualityExpression,
+workflow_EqualityExpression_strategy = st.builds(
+    workflow_EqualityExpression,
 )
-workflow::ArithmeticExpression_strategy = st.builds(
-    workflow::ArithmeticExpression,
+workflow_ArithmeticExpression_strategy = st.builds(
+    workflow_ArithmeticExpression,
 )
-workflow::LogicExpression_strategy = st.builds(
-    workflow::LogicExpression,
+workflow_LogicExpression_strategy = st.builds(
+    workflow_LogicExpression,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-workflow::VariableDeclaration_strategy = st.builds(
-    workflow::VariableDeclaration,
+workflow_ProcedureDeclaration_strategy = st.builds(
+    workflow_ProcedureDeclaration,
+    returnType=
+        safe_text,
+    accessModifier=
+        safe_text
+)
+workflow_VariableDeclaration_strategy = st.builds(
+    workflow_VariableDeclaration,
     type=
         safe_text,
     isConstant=
@@ -970,88 +987,71 @@ workflow::VariableDeclaration_strategy = st.builds(
 Expression_strategy = st.builds(
     Expression,
 )
-workflow::BinaryExpression_strategy = st.builds(
-    workflow::BinaryExpression,
-)
-workflow::UnaryExpression_strategy = st.builds(
-    workflow::UnaryExpression,
-)
-workflow::ProcedureCall_strategy = st.builds(
-    workflow::ProcedureCall,
+workflow_ProcedureCall_strategy = st.builds(
+    workflow_ProcedureCall,
     name=
         safe_text
 )
-workflow::Constant_strategy = st.builds(
-    workflow::Constant,
-    asInteger=
-        safe_text,
+workflow_BinaryExpression_strategy = st.builds(
+    workflow_BinaryExpression,
+)
+workflow_UnaryExpression_strategy = st.builds(
+    workflow_UnaryExpression,
+)
+workflow_Constant_strategy = st.builds(
+    workflow_Constant,
     asString=
+        safe_text,
+    asInteger=
         safe_text,
     asBoolean=
         safe_text,
     asReal=
         safe_text
 )
-workflow::ParameterDeclaration_strategy = st.builds(
-    workflow::ParameterDeclaration,
+workflow_ParameterDeclaration_strategy = st.builds(
+    workflow_ParameterDeclaration,
     type=
         safe_text
 )
-workflow::Variable_strategy = st.builds(
-    workflow::Variable,
+workflow_Variable_strategy = st.builds(
+    workflow_Variable,
     name=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-workflow::Read_strategy = st.builds(
-    workflow::Read,
+workflow_VariableAssignment_strategy = st.builds(
+    workflow_VariableAssignment,
+)
+workflow_Declaration_strategy = st.builds(
+    workflow_Declaration,
+    name=
+        safe_text
+)
+workflow_ProcedureReturn_strategy = st.builds(
+    workflow_ProcedureReturn,
+)
+workflow_Block_strategy = st.builds(
+    workflow_Block,
+)
+workflow_Expression_strategy = st.builds(
+    workflow_Expression,
+)
+workflow_While_strategy = st.builds(
+    workflow_While,
+)
+workflow_Read_strategy = st.builds(
+    workflow_Read,
     type=
         safe_text
 )
-workflow::Write_strategy = st.builds(
-    workflow::Write,
+workflow_Write_strategy = st.builds(
+    workflow_Write,
 )
-workflow::While_strategy = st.builds(
-    workflow::While,
-)
-workflow::Expression_strategy = st.builds(
-    workflow::Expression,
-)
-workflow::If_strategy = st.builds(
-    workflow::If,
-)
-workflow::VariableAssignment_strategy = st.builds(
-    workflow::VariableAssignment,
-)
-workflow::Declaration_strategy = st.builds(
-    workflow::Declaration,
-    name=
-        safe_text
-)
-workflow::ProcedureReturn_strategy = st.builds(
-    workflow::ProcedureReturn,
-)
-workflow::Block_strategy = st.builds(
-    workflow::Block,
-)
-workflow::Statement_strategy = st.builds(
-    workflow::Statement,
-)
-workflow::ProcedureDeclaration_strategy = st.builds(
-    workflow::ProcedureDeclaration,
-    returnType=
-        safe_text,
-    accessModifier=
-        safe_text
-)
-workflow::CompilationUnit_strategy = st.builds(
-    workflow::CompilationUnit,
-    language=
-        safe_text,
-    name=
-        safe_text
+workflow_If_strategy = st.builds(
+    workflow_If,
 )
 
 @given(instance=ArithmeticExpression_strategy)
@@ -1059,139 +1059,180 @@ workflow::CompilationUnit_strategy = st.builds(
 def test_arithmeticexpression_instantiation(instance):
     assert isinstance(instance, ArithmeticExpression)
 
-@given(instance=workflow::Multiplication_strategy)
+@given(instance=workflow_Division_strategy)
 @settings(max_examples=50)
-def test_workflow::multiplication_instantiation(instance):
-    assert isinstance(instance, workflow::Multiplication)
+def test_workflow_division_instantiation(instance):
+    assert isinstance(instance, workflow_Division)
 
-@given(instance=workflow::Subtraction_strategy)
+@given(instance=workflow_Multiplication_strategy)
 @settings(max_examples=50)
-def test_workflow::subtraction_instantiation(instance):
-    assert isinstance(instance, workflow::Subtraction)
+def test_workflow_multiplication_instantiation(instance):
+    assert isinstance(instance, workflow_Multiplication)
 
-@given(instance=workflow::Division_strategy)
+@given(instance=workflow_Subtraction_strategy)
 @settings(max_examples=50)
-def test_workflow::division_instantiation(instance):
-    assert isinstance(instance, workflow::Division)
+def test_workflow_subtraction_instantiation(instance):
+    assert isinstance(instance, workflow_Subtraction)
 
-@given(instance=workflow::Addition_strategy)
+@given(instance=workflow_Addition_strategy)
 @settings(max_examples=50)
-def test_workflow::addition_instantiation(instance):
-    assert isinstance(instance, workflow::Addition)
+def test_workflow_addition_instantiation(instance):
+    assert isinstance(instance, workflow_Addition)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=workflow::UMinus_strategy)
+@given(instance=workflow_UMinus_strategy)
 @settings(max_examples=50)
-def test_workflow::uminus_instantiation(instance):
-    assert isinstance(instance, workflow::UMinus)
+def test_workflow_uminus_instantiation(instance):
+    assert isinstance(instance, workflow_UMinus)
 
-@given(instance=workflow::Not_strategy)
+@given(instance=workflow_Not_strategy)
 @settings(max_examples=50)
-def test_workflow::not_instantiation(instance):
-    assert isinstance(instance, workflow::Not)
+def test_workflow_not_instantiation(instance):
+    assert isinstance(instance, workflow_Not)
 
 @given(instance=EqualityExpression_strategy)
 @settings(max_examples=50)
 def test_equalityexpression_instantiation(instance):
     assert isinstance(instance, EqualityExpression)
 
-@given(instance=workflow::LessThan_strategy)
+@given(instance=workflow_LessThanOrEqual_strategy)
 @settings(max_examples=50)
-def test_workflow::lessthan_instantiation(instance):
-    assert isinstance(instance, workflow::LessThan)
+def test_workflow_lessthanorequal_instantiation(instance):
+    assert isinstance(instance, workflow_LessThanOrEqual)
 
-@given(instance=workflow::GreaterThanOrEqual_strategy)
+@given(instance=workflow_LessThan_strategy)
 @settings(max_examples=50)
-def test_workflow::greaterthanorequal_instantiation(instance):
-    assert isinstance(instance, workflow::GreaterThanOrEqual)
+def test_workflow_lessthan_instantiation(instance):
+    assert isinstance(instance, workflow_LessThan)
 
-@given(instance=workflow::LessThanOrEqual_strategy)
+@given(instance=workflow_NotEqual_strategy)
 @settings(max_examples=50)
-def test_workflow::lessthanorequal_instantiation(instance):
-    assert isinstance(instance, workflow::LessThanOrEqual)
+def test_workflow_notequal_instantiation(instance):
+    assert isinstance(instance, workflow_NotEqual)
 
-@given(instance=workflow::NotEqual_strategy)
+@given(instance=workflow_GreaterThanOrEqual_strategy)
 @settings(max_examples=50)
-def test_workflow::notequal_instantiation(instance):
-    assert isinstance(instance, workflow::NotEqual)
+def test_workflow_greaterthanorequal_instantiation(instance):
+    assert isinstance(instance, workflow_GreaterThanOrEqual)
 
-@given(instance=workflow::GreaterThan_strategy)
+@given(instance=workflow_GreaterThan_strategy)
 @settings(max_examples=50)
-def test_workflow::greaterthan_instantiation(instance):
-    assert isinstance(instance, workflow::GreaterThan)
+def test_workflow_greaterthan_instantiation(instance):
+    assert isinstance(instance, workflow_GreaterThan)
 
-@given(instance=workflow::Equal_strategy)
+@given(instance=workflow_Equal_strategy)
 @settings(max_examples=50)
-def test_workflow::equal_instantiation(instance):
-    assert isinstance(instance, workflow::Equal)
+def test_workflow_equal_instantiation(instance):
+    assert isinstance(instance, workflow_Equal)
+
+@given(instance=workflow_Statement_strategy)
+@settings(max_examples=50)
+def test_workflow_statement_instantiation(instance):
+    assert isinstance(instance, workflow_Statement)
+
+@given(instance=workflow_CompilationUnit_strategy)
+@settings(max_examples=50)
+def test_workflow_compilationunit_instantiation(instance):
+    assert isinstance(instance, workflow_CompilationUnit)
+
+
+
+@given(instance=workflow_CompilationUnit_strategy)
+def test_workflow_compilationunit_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+
+
+@given(instance=workflow_CompilationUnit_strategy)
+def test_workflow_compilationunit_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=LogicExpression_strategy)
 @settings(max_examples=50)
 def test_logicexpression_instantiation(instance):
     assert isinstance(instance, LogicExpression)
 
-@given(instance=workflow::Or_strategy)
+@given(instance=workflow_Or_strategy)
 @settings(max_examples=50)
-def test_workflow::or_instantiation(instance):
-    assert isinstance(instance, workflow::Or)
+def test_workflow_or_instantiation(instance):
+    assert isinstance(instance, workflow_Or)
 
-@given(instance=workflow::And_strategy)
+@given(instance=workflow_And_strategy)
 @settings(max_examples=50)
-def test_workflow::and_instantiation(instance):
-    assert isinstance(instance, workflow::And)
+def test_workflow_and_instantiation(instance):
+    assert isinstance(instance, workflow_And)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=workflow::EqualityExpression_strategy)
+@given(instance=workflow_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_workflow::equalityexpression_instantiation(instance):
-    assert isinstance(instance, workflow::EqualityExpression)
+def test_workflow_equalityexpression_instantiation(instance):
+    assert isinstance(instance, workflow_EqualityExpression)
 
-@given(instance=workflow::ArithmeticExpression_strategy)
+@given(instance=workflow_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_workflow::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, workflow::ArithmeticExpression)
+def test_workflow_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, workflow_ArithmeticExpression)
 
-@given(instance=workflow::LogicExpression_strategy)
+@given(instance=workflow_LogicExpression_strategy)
 @settings(max_examples=50)
-def test_workflow::logicexpression_instantiation(instance):
-    assert isinstance(instance, workflow::LogicExpression)
+def test_workflow_logicexpression_instantiation(instance):
+    assert isinstance(instance, workflow_LogicExpression)
 
 @given(instance=Declaration_strategy)
 @settings(max_examples=50)
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=workflow::VariableDeclaration_strategy)
+@given(instance=workflow_ProcedureDeclaration_strategy)
 @settings(max_examples=50)
-def test_workflow::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, workflow::VariableDeclaration)
-
-@given(instance=workflow::VariableDeclaration_strategy)
-def test_workflow::variabledeclaration_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_workflow_proceduredeclaration_instantiation(instance):
+    assert isinstance(instance, workflow_ProcedureDeclaration)
 
 
-@given(instance=workflow::VariableDeclaration_strategy)
-def test_workflow::variabledeclaration_type_setter(instance):
+
+@given(instance=workflow_ProcedureDeclaration_strategy)
+def test_workflow_proceduredeclaration_returnType_setter(instance):
+    original = instance.returnType
+    instance.returnType = original
+    assert instance.returnType == original
+
+
+
+@given(instance=workflow_ProcedureDeclaration_strategy)
+def test_workflow_proceduredeclaration_accessModifier_setter(instance):
+    original = instance.accessModifier
+    instance.accessModifier = original
+    assert instance.accessModifier == original
+
+@given(instance=workflow_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_workflow_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, workflow_VariableDeclaration)
+
+
+
+@given(instance=workflow_VariableDeclaration_strategy)
+def test_workflow_variabledeclaration_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=workflow::VariableDeclaration_strategy)
-def test_workflow::variabledeclaration_isConstant_type(instance):
-    assert isinstance(instance.isConstant, str)
 
 
-@given(instance=workflow::VariableDeclaration_strategy)
-def test_workflow::variabledeclaration_isConstant_setter(instance):
+@given(instance=workflow_VariableDeclaration_strategy)
+def test_workflow_variabledeclaration_isConstant_setter(instance):
     original = instance.isConstant
     instance.isConstant = original
     assert instance.isConstant == original
@@ -1201,109 +1242,88 @@ def test_workflow::variabledeclaration_isConstant_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=workflow::BinaryExpression_strategy)
+@given(instance=workflow_ProcedureCall_strategy)
 @settings(max_examples=50)
-def test_workflow::binaryexpression_instantiation(instance):
-    assert isinstance(instance, workflow::BinaryExpression)
-
-@given(instance=workflow::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_workflow::unaryexpression_instantiation(instance):
-    assert isinstance(instance, workflow::UnaryExpression)
-
-@given(instance=workflow::ProcedureCall_strategy)
-@settings(max_examples=50)
-def test_workflow::procedurecall_instantiation(instance):
-    assert isinstance(instance, workflow::ProcedureCall)
-
-@given(instance=workflow::ProcedureCall_strategy)
-def test_workflow::procedurecall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_workflow_procedurecall_instantiation(instance):
+    assert isinstance(instance, workflow_ProcedureCall)
 
 
-@given(instance=workflow::ProcedureCall_strategy)
-def test_workflow::procedurecall_name_setter(instance):
+
+@given(instance=workflow_ProcedureCall_strategy)
+def test_workflow_procedurecall_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=workflow::Constant_strategy)
+@given(instance=workflow_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_workflow::constant_instantiation(instance):
-    assert isinstance(instance, workflow::Constant)
+def test_workflow_binaryexpression_instantiation(instance):
+    assert isinstance(instance, workflow_BinaryExpression)
 
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asInteger_type(instance):
-    assert isinstance(instance.asInteger, str)
+@given(instance=workflow_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_workflow_unaryexpression_instantiation(instance):
+    assert isinstance(instance, workflow_UnaryExpression)
 
-
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asInteger_setter(instance):
-    original = instance.asInteger
-    instance.asInteger = original
-    assert instance.asInteger == original
-
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asString_type(instance):
-    assert isinstance(instance.asString, str)
+@given(instance=workflow_Constant_strategy)
+@settings(max_examples=50)
+def test_workflow_constant_instantiation(instance):
+    assert isinstance(instance, workflow_Constant)
 
 
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asString_setter(instance):
+
+@given(instance=workflow_Constant_strategy)
+def test_workflow_constant_asString_setter(instance):
     original = instance.asString
     instance.asString = original
     assert instance.asString == original
 
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asBoolean_type(instance):
-    assert isinstance(instance.asBoolean, str)
 
 
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asBoolean_setter(instance):
+@given(instance=workflow_Constant_strategy)
+def test_workflow_constant_asInteger_setter(instance):
+    original = instance.asInteger
+    instance.asInteger = original
+    assert instance.asInteger == original
+
+
+
+@given(instance=workflow_Constant_strategy)
+def test_workflow_constant_asBoolean_setter(instance):
     original = instance.asBoolean
     instance.asBoolean = original
     assert instance.asBoolean == original
 
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asReal_type(instance):
-    assert isinstance(instance.asReal, str)
 
 
-@given(instance=workflow::Constant_strategy)
-def test_workflow::constant_asReal_setter(instance):
+@given(instance=workflow_Constant_strategy)
+def test_workflow_constant_asReal_setter(instance):
     original = instance.asReal
     instance.asReal = original
     assert instance.asReal == original
 
-@given(instance=workflow::ParameterDeclaration_strategy)
+@given(instance=workflow_ParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_workflow::parameterdeclaration_instantiation(instance):
-    assert isinstance(instance, workflow::ParameterDeclaration)
-
-@given(instance=workflow::ParameterDeclaration_strategy)
-def test_workflow::parameterdeclaration_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_workflow_parameterdeclaration_instantiation(instance):
+    assert isinstance(instance, workflow_ParameterDeclaration)
 
 
-@given(instance=workflow::ParameterDeclaration_strategy)
-def test_workflow::parameterdeclaration_type_setter(instance):
+
+@given(instance=workflow_ParameterDeclaration_strategy)
+def test_workflow_parameterdeclaration_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=workflow::Variable_strategy)
+@given(instance=workflow_Variable_strategy)
 @settings(max_examples=50)
-def test_workflow::variable_instantiation(instance):
-    assert isinstance(instance, workflow::Variable)
-
-@given(instance=workflow::Variable_strategy)
-def test_workflow::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_workflow_variable_instantiation(instance):
+    assert isinstance(instance, workflow_Variable)
 
 
-@given(instance=workflow::Variable_strategy)
-def test_workflow::variable_name_setter(instance):
+
+@given(instance=workflow_Variable_strategy)
+def test_workflow_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1313,128 +1333,63 @@ def test_workflow::variable_name_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=workflow::Read_strategy)
+@given(instance=workflow_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_workflow::read_instantiation(instance):
-    assert isinstance(instance, workflow::Read)
+def test_workflow_variableassignment_instantiation(instance):
+    assert isinstance(instance, workflow_VariableAssignment)
 
-@given(instance=workflow::Read_strategy)
-def test_workflow::read_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=workflow_Declaration_strategy)
+@settings(max_examples=50)
+def test_workflow_declaration_instantiation(instance):
+    assert isinstance(instance, workflow_Declaration)
 
 
-@given(instance=workflow::Read_strategy)
-def test_workflow::read_type_setter(instance):
+
+@given(instance=workflow_Declaration_strategy)
+def test_workflow_declaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=workflow_ProcedureReturn_strategy)
+@settings(max_examples=50)
+def test_workflow_procedurereturn_instantiation(instance):
+    assert isinstance(instance, workflow_ProcedureReturn)
+
+@given(instance=workflow_Block_strategy)
+@settings(max_examples=50)
+def test_workflow_block_instantiation(instance):
+    assert isinstance(instance, workflow_Block)
+
+@given(instance=workflow_Expression_strategy)
+@settings(max_examples=50)
+def test_workflow_expression_instantiation(instance):
+    assert isinstance(instance, workflow_Expression)
+
+@given(instance=workflow_While_strategy)
+@settings(max_examples=50)
+def test_workflow_while_instantiation(instance):
+    assert isinstance(instance, workflow_While)
+
+@given(instance=workflow_Read_strategy)
+@settings(max_examples=50)
+def test_workflow_read_instantiation(instance):
+    assert isinstance(instance, workflow_Read)
+
+
+
+@given(instance=workflow_Read_strategy)
+def test_workflow_read_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=workflow::Write_strategy)
+@given(instance=workflow_Write_strategy)
 @settings(max_examples=50)
-def test_workflow::write_instantiation(instance):
-    assert isinstance(instance, workflow::Write)
+def test_workflow_write_instantiation(instance):
+    assert isinstance(instance, workflow_Write)
 
-@given(instance=workflow::While_strategy)
+@given(instance=workflow_If_strategy)
 @settings(max_examples=50)
-def test_workflow::while_instantiation(instance):
-    assert isinstance(instance, workflow::While)
-
-@given(instance=workflow::Expression_strategy)
-@settings(max_examples=50)
-def test_workflow::expression_instantiation(instance):
-    assert isinstance(instance, workflow::Expression)
-
-@given(instance=workflow::If_strategy)
-@settings(max_examples=50)
-def test_workflow::if_instantiation(instance):
-    assert isinstance(instance, workflow::If)
-
-@given(instance=workflow::VariableAssignment_strategy)
-@settings(max_examples=50)
-def test_workflow::variableassignment_instantiation(instance):
-    assert isinstance(instance, workflow::VariableAssignment)
-
-@given(instance=workflow::Declaration_strategy)
-@settings(max_examples=50)
-def test_workflow::declaration_instantiation(instance):
-    assert isinstance(instance, workflow::Declaration)
-
-@given(instance=workflow::Declaration_strategy)
-def test_workflow::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=workflow::Declaration_strategy)
-def test_workflow::declaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=workflow::ProcedureReturn_strategy)
-@settings(max_examples=50)
-def test_workflow::procedurereturn_instantiation(instance):
-    assert isinstance(instance, workflow::ProcedureReturn)
-
-@given(instance=workflow::Block_strategy)
-@settings(max_examples=50)
-def test_workflow::block_instantiation(instance):
-    assert isinstance(instance, workflow::Block)
-
-@given(instance=workflow::Statement_strategy)
-@settings(max_examples=50)
-def test_workflow::statement_instantiation(instance):
-    assert isinstance(instance, workflow::Statement)
-
-@given(instance=workflow::ProcedureDeclaration_strategy)
-@settings(max_examples=50)
-def test_workflow::proceduredeclaration_instantiation(instance):
-    assert isinstance(instance, workflow::ProcedureDeclaration)
-
-@given(instance=workflow::ProcedureDeclaration_strategy)
-def test_workflow::proceduredeclaration_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
-
-
-@given(instance=workflow::ProcedureDeclaration_strategy)
-def test_workflow::proceduredeclaration_returnType_setter(instance):
-    original = instance.returnType
-    instance.returnType = original
-    assert instance.returnType == original
-
-@given(instance=workflow::ProcedureDeclaration_strategy)
-def test_workflow::proceduredeclaration_accessModifier_type(instance):
-    assert isinstance(instance.accessModifier, str)
-
-
-@given(instance=workflow::ProcedureDeclaration_strategy)
-def test_workflow::proceduredeclaration_accessModifier_setter(instance):
-    original = instance.accessModifier
-    instance.accessModifier = original
-    assert instance.accessModifier == original
-
-@given(instance=workflow::CompilationUnit_strategy)
-@settings(max_examples=50)
-def test_workflow::compilationunit_instantiation(instance):
-    assert isinstance(instance, workflow::CompilationUnit)
-
-@given(instance=workflow::CompilationUnit_strategy)
-def test_workflow::compilationunit_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=workflow::CompilationUnit_strategy)
-def test_workflow::compilationunit_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=workflow::CompilationUnit_strategy)
-def test_workflow::compilationunit_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=workflow::CompilationUnit_strategy)
-def test_workflow::compilationunit_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+def test_workflow_if_instantiation(instance):
+    assert isinstance(instance, workflow_If)

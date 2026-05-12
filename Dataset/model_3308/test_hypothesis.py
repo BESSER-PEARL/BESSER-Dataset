@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StochasticSEIRDiseaseModel,
-    experimental::PerculationDiseaseModel,
+    experimental_PerculationDiseaseModel,
 )
 
 # =============================================================================
@@ -30,16 +30,16 @@ def test_stochasticseirdiseasemodel_constructor_args():
 
 
 
-def test_experimental::perculationdiseasemodel_is_not_abstract():
-    assert not inspect.isabstract(experimental::PerculationDiseaseModel)
+def test_experimental_perculationdiseasemodel_is_not_abstract():
+    assert not inspect.isabstract(experimental_PerculationDiseaseModel)
 
 
-def test_experimental::perculationdiseasemodel_constructor_exists():
-    assert callable(experimental::PerculationDiseaseModel.__init__)
+def test_experimental_perculationdiseasemodel_constructor_exists():
+    assert callable(experimental_PerculationDiseaseModel.__init__)
 
 
-def test_experimental::perculationdiseasemodel_constructor_args():
-    sig = inspect.signature(experimental::PerculationDiseaseModel.__init__)
+def test_experimental_perculationdiseasemodel_constructor_args():
+    sig = inspect.signature(experimental_PerculationDiseaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -57,8 +57,8 @@ safe_text = st.text(
 StochasticSEIRDiseaseModel_strategy = st.builds(
     StochasticSEIRDiseaseModel,
 )
-experimental::PerculationDiseaseModel_strategy = st.builds(
-    experimental::PerculationDiseaseModel,
+experimental_PerculationDiseaseModel_strategy = st.builds(
+    experimental_PerculationDiseaseModel,
 )
 
 @given(instance=StochasticSEIRDiseaseModel_strategy)
@@ -66,7 +66,7 @@ experimental::PerculationDiseaseModel_strategy = st.builds(
 def test_stochasticseirdiseasemodel_instantiation(instance):
     assert isinstance(instance, StochasticSEIRDiseaseModel)
 
-@given(instance=experimental::PerculationDiseaseModel_strategy)
+@given(instance=experimental_PerculationDiseaseModel_strategy)
 @settings(max_examples=50)
-def test_experimental::perculationdiseasemodel_instantiation(instance):
-    assert isinstance(instance, experimental::PerculationDiseaseModel)
+def test_experimental_perculationdiseasemodel_instantiation(instance):
+    assert isinstance(instance, experimental_PerculationDiseaseModel)

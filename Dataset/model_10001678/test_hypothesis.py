@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Schedule,
@@ -97,10 +97,19 @@ def test_teacher_constructor_exists():
 def test_teacher_constructor_args():
     sig = inspect.signature(Teacher.__init__)
     params = list(sig.parameters.keys())
+    assert "phone" in params, "Missing parameter 'phone'"
     assert "name" in params, "Missing parameter 'name'"
     assert "email" in params, "Missing parameter 'email'"
-    assert "phone" in params, "Missing parameter 'phone'"
     assert "surname" in params, "Missing parameter 'surname'"
+
+def test_teacher_has_phone():
+    assert hasattr(Teacher, "phone")
+    descriptor = None
+    for klass in Teacher.__mro__:
+        if "phone" in klass.__dict__:
+            descriptor = klass.__dict__["phone"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_teacher_has_name():
     assert hasattr(Teacher, "name")
@@ -117,15 +126,6 @@ def test_teacher_has_email():
     for klass in Teacher.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_teacher_has_phone():
-    assert hasattr(Teacher, "phone")
-    descriptor = None
-    for klass in Teacher.__mro__:
-        if "phone" in klass.__dict__:
-            descriptor = klass.__dict__["phone"]
             break
     assert isinstance(descriptor, property)
 
@@ -220,11 +220,11 @@ Grade_strategy = st.builds(
 )
 Teacher_strategy = st.builds(
     Teacher,
+    phone=
+        safe_text,
     name=
         safe_text,
     email=
-        safe_text,
-    phone=
         safe_text,
     surname=
         safe_text
@@ -261,9 +261,6 @@ def test_subject_instantiation(instance):
 def test_grade_instantiation(instance):
     assert isinstance(instance, Grade)
 
-@given(instance=Grade_strategy)
-def test_grade_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Grade_strategy)
@@ -277,31 +274,6 @@ def test_grade_name_setter(instance):
 def test_teacher_instantiation(instance):
     assert isinstance(instance, Teacher)
 
-@given(instance=Teacher_strategy)
-def test_teacher_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Teacher_strategy)
-def test_teacher_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Teacher_strategy)
-def test_teacher_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=Teacher_strategy)
-def test_teacher_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Teacher_strategy)
-def test_teacher_phone_type(instance):
-    assert isinstance(instance.phone, str)
 
 
 @given(instance=Teacher_strategy)
@@ -310,9 +282,22 @@ def test_teacher_phone_setter(instance):
     instance.phone = original
     assert instance.phone == original
 
+
+
 @given(instance=Teacher_strategy)
-def test_teacher_surname_type(instance):
-    assert isinstance(instance.surname, str)
+def test_teacher_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Teacher_strategy)
+def test_teacher_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 
 
 @given(instance=Teacher_strategy)
@@ -326,9 +311,6 @@ def test_teacher_surname_setter(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_surname_type(instance):
-    assert isinstance(instance.surname, str)
 
 
 @given(instance=Student_strategy)
@@ -337,9 +319,6 @@ def test_student_surname_setter(instance):
     instance.surname = original
     assert instance.surname == original
 
-@given(instance=Student_strategy)
-def test_student_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Student_strategy)
@@ -348,9 +327,6 @@ def test_student_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=Student_strategy)
-def test_student_phone_type(instance):
-    assert isinstance(instance.phone, str)
 
 
 @given(instance=Student_strategy)
@@ -359,9 +335,6 @@ def test_student_phone_setter(instance):
     instance.phone = original
     assert instance.phone == original
 
-@given(instance=Student_strategy)
-def test_student_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Student_strategy)

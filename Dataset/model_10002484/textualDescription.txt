@@ -1,0 +1,21 @@
+The model has 11 class(es).
+The class 'FACULTY' has the following attributes: 'id' of type str; 'password' of type str.
+The class 'PARENT' has the following attributes: 'phoneNumber' of type int; 'password' of type str; 'id' of type str.
+The class 'view_cumiliative_attendance_external' has no attributes.
+The class 'admin_Actor' has no attributes.
+The class 'modify_list_of_students_external' has no attributes.
+The class 'view_subject_wise_attendance_external' has no attributes.
+The class '_Component' has no attributes.
+The class 'STUDENT' has the following attributes: 'password' of type str; 'id' of type str.
+The class 'student_Actor' has no attributes.
+The class 'login_external' has no attributes.
+The class 'ADMIN' has the following attributes: 'password' of type str; 'id' of type str.
+'admin_Actor' (role 'modify_list_of_students8', cardinality 0..*) is associated with 'modify_list_of_students_external' (role 'admin9', cardinality 0..*).
+'login_external' (role 'student5', cardinality 0..*) is associated with 'student_Actor' (role 'login4', cardinality 0..*).
+'login_external' (role 'admin7', cardinality 0..*) is associated with 'admin_Actor' (role 'login6', cardinality 0..*).
+'STUDENT' (role 'aDMIN14', cardinality 0..*) is associated with 'ADMIN' (role 'sTUDENT15', cardinality 0..*).
+'student_Actor' (role 'view_cumiliative_attendance2', cardinality 0..*) is associated with 'view_cumiliative_attendance_external' (role 'student3', cardinality 0..*).
+'student_Actor' (role 'view_subject_wise_attendance0', cardinality 0..*) is associated with 'view_subject_wise_attendance_external' (role 'student1', cardinality 0..*).
+'STUDENT' (role 'fACULTY11', cardinality 0..*) is associated with 'FACULTY' (role 'sTUDENT10', cardinality 0..*).
+'PARENT' (role 'aDMIN16', cardinality 0..*) is associated with 'ADMIN' (role 'pARENT17', cardinality 0..*).
+'FACULTY' (role 'aDMIN12', cardinality 0..*) is associated with 'ADMIN' (role 'fACULTY13', cardinality 0..*).

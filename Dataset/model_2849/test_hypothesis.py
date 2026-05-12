@@ -3,73 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    XVariableDeclaration,
-    model::ss::XtendVariableDeclaration,
-    model::ss::CreateExtensionInfo,
-    model::ss::RichStringElseIf,
-    RichStringElseIf,
-    XBlockExpression,
-    model::ss::RichString,
-    XForEachExpression,
-    model::ss::RichStringForLoop,
-    XStringLiteral,
-    model::ss::RichStringLiteral,
-    CreateExtensionInfo,
-    XtendParameter,
-    XtendMember,
-    model::ss::XtendEnumLiteral,
-    model::ss::XtendConstructor,
-    model::ss::XtendField,
-    model::ss::XtendFunction,
-    XtendAnnotationTarget,
-    model::ss::XtendParameter,
-    model::ss::XtendMember,
-    XAnnotation,
-    model::ss::XtendAnnotationTarget,
-    XObjectLiteralPart,
-    ss::model::EObject,
-    XtendTypeDeclaration,
-    model::ss::XtendClass,
-    model::ss::XtendEnum,
-    model::ss::XtendInterface,
-    model::ss::XtendAnnotationType,
-    model::ss::XtendFile,
-    model::xbase::XObjectLiteralPart,
-    model::xbase::XCatchClause,
-    XCatchClause,
-    XAbstractWhileExpression,
-    model::xbase::XDoWhileExpression,
-    model::xbase::XWhileExpression,
-    XCollectionLiteral,
-    model::xbase::XListLiteral,
-    model::xbase::XSetLiteral,
-    JvmConstructor,
-    XAbstractFeatureCall,
-    model::xbase::XMemberFeatureCall1,
-    model::xbase::XPostfixOperation,
-    model::xbase::XBinaryOperation,
-    model::xbase::XIndexOperation,
-    model::xbase::XAssignment,
-    model::xbase::XPrefixOperation,
-    model::xbase::XFeatureCall,
-    model::xbase::XUnaryOperation,
-    model::xbase::XMemberFeatureCall,
-    model::xbase::XExpression,
-    model::xbase::XCasePart,
-    XCasePart,
-    types::JvmIdentifiableElement,
-    xbase::XExpression,
-    model::xbase::XVariableDeclaration,
-    model::xbase::XClosure,
-    model::xbase::XSwitchExpression,
+from python_code import (
     IfConditionStart,
     Line,
     RichString,
-    model::richstring::ProcessedRichString,
-    model::xtype::XExportItem,
+    model_richstring_ProcessedRichString,
+    model_xtype_XExportItem,
     EndIf,
     ElseIfCondition,
     ElseStart,
@@ -78,1368 +19,221 @@ from classes import (
     ForLoopEnd,
     RichStringForLoop,
     Literal,
-    model::richstring::LineBreak,
+    model_richstring_LineBreak,
     RichStringLiteral,
-    model::richstring::LinePart,
+    model_richstring_LinePart,
     ProcessedRichString,
     LinePart,
-    model::richstring::EndIf,
-    model::richstring::ElseIfCondition,
-    model::richstring::Literal,
-    model::richstring::ForLoopEnd,
-    model::richstring::ForLoopStart,
-    model::richstring::PrintedExpression,
-    model::richstring::IfConditionStart,
-    model::richstring::ElseStart,
-    model::richstring::Line,
+    model_richstring_Literal,
+    model_richstring_PrintedExpression,
+    model_richstring_EndIf,
+    model_richstring_IfConditionStart,
+    model_richstring_ForLoopEnd,
+    model_richstring_ElseIfCondition,
+    model_richstring_ElseStart,
+    model_richstring_ForLoopStart,
+    model_richstring_Line,
     XImportDeclaration1,
-    model::xtype::XImportSection1,
-    model::xtype::XImportDeclaration,
+    model_xtype_XImportSection1,
+    model_xtype_XImportDeclaration,
     XImportDeclaration,
     XExportItem,
-    model::xtype::XExportDeclaration,
+    model_xtype_XExportDeclaration,
     XExportDeclaration,
-    model::xtype::XExportSection,
-    model::xtype::XImportItem,
+    model_xtype_XExportSection,
+    model_xtype_XImportItem,
     XImportItem,
-    model::xtype::XImportDeclaration1,
+    model_xtype_XImportDeclaration1,
     XAnnotationElementValuePair,
-    model::xtype::XImportSection,
+    model_xtype_XImportSection,
     JvmSpecializedTypeReference,
-    model::xtype::XComputedTypeReference,
-    model::xtype::XFunctionTypeRef,
-    model::xannotation::XAnnotationElementValuePair,
-    model::ss::XtendTypeDeclaration,
-    model::ss::XtendEvent,
-    model::ss::XtendDelegate,
+    model_xtype_XComputedTypeReference,
+    model_xtype_XFunctionTypeRef,
+    model_xannotation_XAnnotationElementValuePair,
     JvmAnnotationValue,
-    model::types::JvmTypeAnnotationValue,
-    model::types::JvmAnnotationAnnotationValue,
-    model::types::JvmStringAnnotationValue,
-    model::types::JvmShortAnnotationValue,
-    model::types::JvmDoubleAnnotationValue,
-    model::types::JvmEnumAnnotationValue,
-    model::types::JvmLongAnnotationValue,
-    model::types::JvmCustomAnnotationValue,
-    model::types::JvmCharAnnotationValue,
-    model::types::JvmFloatAnnotationValue,
-    model::types::JvmByteAnnotationValue,
-    model::types::JvmBooleanAnnotationValue,
-    model::types::JvmIntAnnotationValue,
+    model_types_JvmTypeAnnotationValue,
+    model_types_JvmShortAnnotationValue,
+    model_types_JvmStringAnnotationValue,
+    model_types_JvmAnnotationAnnotationValue,
+    model_types_JvmEnumAnnotationValue,
+    model_types_JvmByteAnnotationValue,
+    model_types_JvmBooleanAnnotationValue,
+    model_types_JvmIntAnnotationValue,
     JvmOperation,
-    model::types::JvmAnnotationValue,
+    model_types_JvmAnnotationValue,
     JvmAnnotationType,
-    model::types::JvmAnnotationReference,
+    model_types_JvmAnnotationReference,
     JvmAnnotationReference,
     JvmAnnotationTarget,
-    model::types::JvmFormalParameter,
-    model::types::JvmMember,
+    model_types_JvmFormalParameter,
+    model_types_JvmMember,
     JvmCompoundTypeReference,
-    model::types::JvmSynonymTypeReference,
-    model::types::JvmMultiTypeReference,
+    model_types_JvmSynonymTypeReference,
+    model_types_JvmMultiTypeReference,
     JvmExecutable,
-    model::types::JvmOperation,
-    model::types::JvmConstructor,
+    model_types_JvmOperation,
+    model_types_JvmConstructor,
     JvmFormalParameter,
-    model::ss::XtendFormalParameter,
-    types::JvmFeature,
+    types_JvmFeature,
     XExpression,
-    model::xannotation::XAnnotation,
-    model::xbase::XBreakExpression,
-    model::xbase::XStringLiteral,
-    model::xbase::XInstanceOfExpression,
-    model::ss::RichStringIf,
-    model::xbase::XAbstractWhileExpression,
-    model::xbase::XBlockExpression,
-    model::xbase::XObjectLiteral,
-    model::xbase::XVariableDeclarationList,
-    model::xbase::XFunctionDeclaration,
-    model::xbase::XArrayLiteral,
-    model::xbase::XNullLiteral,
-    model::xbase::XForEachExpression,
-    model::xbase::XTryCatchFinallyExpression,
-    model::xbase::XCastedExpression,
-    model::xbase::XTypeLiteral,
-    model::xbase::XThrowExpression,
-    model::xbase::XKeyValuePair,
-    model::xbase::XCollectionLiteral,
-    model::xbase::XNumberLiteral,
-    model::xbase::XContinueExpression,
-    model::xbase::XAbstractFeatureCall,
-    model::xbase::XForLoopExpression,
-    model::xbase::XBooleanLiteral,
-    model::xbase::XTernaryOperation,
-    model::xbase::XReturnExpression,
-    model::xbase::XConstructorCall,
-    model::xbase::XIfExpression,
+    model_xannotation_XAnnotation,
     JvmFeature,
-    model::types::JvmField,
-    model::types::JvmTypeReference,
-    types::JvmTypeReference,
+    model_types_JvmField,
+    model_types_JvmTypeReference,
+    types_JvmTypeReference,
     JvmConstraintOwner,
-    model::types::JvmTypeConstraint,
+    model_types_JvmTypeConstraint,
     JvmTypeConstraint,
-    model::types::JvmConstraintOwner,
+    model_types_JvmConstraintOwner,
     JvmParameterizedTypeReference,
     JvmTypeParameter,
-    types::JvmTypeParameterDeclarator,
-    model::types::JvmExecutable,
-    types::JvmDeclaredType,
-    model::types::JvmGenericType,
+    types_JvmTypeParameterDeclarator,
+    model_types_JvmExecutable,
+    types_JvmDeclaredType,
+    model_types_JvmGenericType,
     JvmField,
-    model::types::JvmEnumerationLiteral,
+    model_types_JvmEnumerationLiteral,
     JvmEnumerationLiteral,
     JvmDeclaredType,
-    model::types::JvmEnumerationType,
-    model::types::JvmAnnotationType,
-    model::types::JvmLowerBound,
-    model::types::JvmUpperBound,
-    model::types::JvmTypeParameterDeclarator,
+    model_types_JvmEnumerationType,
+    model_types_JvmAnnotationType,
+    model_types_JvmLowerBound,
+    model_types_JvmUpperBound,
+    model_types_JvmTypeParameterDeclarator,
     JvmTypeParameterDeclarator,
-    types::JvmConstraintOwner,
-    model::types::JvmWildcardTypeReference,
+    types_JvmConstraintOwner,
+    model_types_JvmWildcardTypeReference,
     JvmMember,
-    model::types::JvmFeature,
+    model_types_JvmFeature,
     JvmTypeReference,
-    model::types::JvmCompoundTypeReference,
-    model::types::JvmGenericArrayTypeReference,
-    model::types::JvmAnyTypeReference,
-    model::types::JvmUnknownTypeReference,
-    model::types::JvmDelegateTypeReference,
-    model::types::JvmParameterizedTypeReference,
-    model::types::JvmSpecializedTypeReference,
-    types::JvmComponentType,
-    model::types::JvmTypeParameter,
-    types::JvmMember,
-    model::types::JvmDeclaredType,
+    model_types_JvmParameterizedTypeReference,
+    model_types_JvmSpecializedTypeReference,
+    model_types_JvmCompoundTypeReference,
+    model_types_JvmAnyTypeReference,
+    model_types_JvmDelegateTypeReference,
+    model_types_JvmGenericArrayTypeReference,
+    model_types_JvmUnknownTypeReference,
+    types_JvmComponentType,
+    model_types_JvmTypeParameter,
+    types_JvmMember,
+    model_types_JvmDeclaredType,
     JvmComponentType,
-    model::types::JvmArrayType,
-    model::types::JvmPrimitiveType,
+    model_types_JvmArrayType,
+    model_types_JvmPrimitiveType,
     JvmArrayType,
     JvmType,
-    model::types::JvmComponentType,
-    model::types::JvmVoid,
-    model::types::JvmNoModule,
+    model_types_JvmComponentType,
+    model_types_JvmVoid,
+    model_types_JvmNoModule,
     XExportSection,
-    types::model::EObject,
+    types_model_EObject,
     XImportSection1,
     JvmIdentifiableElement,
-    model::types::JvmType,
-    model::types::JvmAnnotationTarget,
-    model::types::JvmModule,
-    model::types::JvmIdentifiableElement,
+    model_types_JvmAnnotationTarget,
+    model_types_JvmType,
+    model_types_JvmModule,
+    model_types_JvmIdentifiableElement,
+    model_ss_XtendFormalParameter,
+    XVariableDeclaration,
+    model_ss_XtendVariableDeclaration,
+    model_ss_CreateExtensionInfo,
+    model_ss_RichStringElseIf,
+    RichStringElseIf,
+    XBlockExpression,
+    model_ss_RichString,
+    model_ss_RichStringIf,
+    XForEachExpression,
+    model_ss_RichStringForLoop,
+    XStringLiteral,
+    model_ss_RichStringLiteral,
+    CreateExtensionInfo,
+    XtendParameter,
+    XtendMember,
+    model_ss_XtendField,
+    model_ss_XtendEnumLiteral,
+    model_ss_XtendConstructor,
+    model_ss_XtendTypeDeclaration,
+    model_ss_XtendEvent,
+    model_ss_XtendFunction,
+    XtendAnnotationTarget,
+    model_ss_XtendParameter,
+    model_ss_XtendMember,
+    XAnnotation,
+    model_ss_XtendAnnotationTarget,
+    XObjectLiteralPart,
+    model_xbase_XObjectLiteral,
+    ss_model_EObject,
+    XtendTypeDeclaration,
+    model_ss_XtendDelegate,
+    model_ss_XtendEnum,
+    model_ss_XtendAnnotationType,
+    model_ss_XtendInterface,
+    model_ss_XtendClass,
+    model_ss_XtendFile,
+    model_xbase_XArrayLiteral,
+    model_xbase_XObjectLiteralPart,
+    model_xbase_XTernaryOperation,
+    model_xbase_XFunctionDeclaration,
+    model_xbase_XCatchClause,
+    XCatchClause,
+    model_xbase_XContinueExpression,
+    model_xbase_XBreakExpression,
+    model_xbase_XReturnExpression,
+    XAbstractWhileExpression,
+    model_xbase_XDoWhileExpression,
+    model_xbase_XAbstractWhileExpression,
+    model_xbase_XTryCatchFinallyExpression,
+    model_xbase_XThrowExpression,
+    model_xbase_XInstanceOfExpression,
+    model_xbase_XTypeLiteral,
+    model_xbase_XWhileExpression,
+    model_xbase_XForEachExpression,
+    model_xbase_XForLoopExpression,
+    model_xbase_XKeyValuePair,
+    XCollectionLiteral,
+    model_xbase_XListLiteral,
+    model_xbase_XCollectionLiteral,
+    model_xbase_XStringLiteral,
+    model_xbase_XNumberLiteral,
+    model_xbase_XNullLiteral,
+    model_xbase_XBooleanLiteral,
+    model_xbase_XCastedExpression,
+    model_xbase_XSetLiteral,
+    JvmConstructor,
+    model_xbase_XConstructorCall,
+    model_xbase_XAbstractFeatureCall,
+    model_xbase_XVariableDeclarationList,
+    XAbstractFeatureCall,
+    model_xbase_XAssignment,
+    model_xbase_XUnaryOperation,
+    model_xbase_XPrefixOperation,
+    model_xbase_XMemberFeatureCall1,
+    model_xbase_XBinaryOperation,
+    model_xbase_XFeatureCall,
+    model_xbase_XIndexOperation,
+    model_xbase_XPostfixOperation,
+    model_xbase_XMemberFeatureCall,
+    model_xbase_XIfExpression,
+    model_xbase_XExpression,
+    model_types_JvmCustomAnnotationValue,
+    model_xbase_XBlockExpression,
+    model_xbase_XCasePart,
+    XCasePart,
+    types_JvmIdentifiableElement,
+    xbase_XExpression,
+    model_xbase_XClosure,
+    model_xbase_XVariableDeclaration,
+    model_xbase_XSwitchExpression,
+    model_types_JvmCharAnnotationValue,
+    model_types_JvmFloatAnnotationValue,
+    model_types_JvmDoubleAnnotationValue,
+    model_types_JvmLongAnnotationValue,
     JvmVisibility,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_xvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(XVariableDeclaration)
-
-
-def test_xvariabledeclaration_constructor_exists():
-    assert callable(XVariableDeclaration.__init__)
-
-
-def test_xvariabledeclaration_constructor_args():
-    sig = inspect.signature(XVariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendVariableDeclaration)
-
-
-def test_model::ss::xtendvariabledeclaration_constructor_exists():
-    assert callable(model::ss::XtendVariableDeclaration.__init__)
-
-
-def test_model::ss::xtendvariabledeclaration_constructor_args():
-    sig = inspect.signature(model::ss::XtendVariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "extension" in params, "Missing parameter 'extension'"
-
-def test_model::ss::xtendvariabledeclaration_has_extension():
-    assert hasattr(model::ss::XtendVariableDeclaration, "extension")
-    descriptor = None
-    for klass in model::ss::XtendVariableDeclaration.__mro__:
-        if "extension" in klass.__dict__:
-            descriptor = klass.__dict__["extension"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::createextensioninfo_is_not_abstract():
-    assert not inspect.isabstract(model::ss::CreateExtensionInfo)
-
-
-def test_model::ss::createextensioninfo_constructor_exists():
-    assert callable(model::ss::CreateExtensionInfo.__init__)
-
-
-def test_model::ss::createextensioninfo_constructor_args():
-    sig = inspect.signature(model::ss::CreateExtensionInfo.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::ss::createextensioninfo_has_name():
-    assert hasattr(model::ss::CreateExtensionInfo, "name")
-    descriptor = None
-    for klass in model::ss::CreateExtensionInfo.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::richstringelseif_is_not_abstract():
-    assert not inspect.isabstract(model::ss::RichStringElseIf)
-
-
-def test_model::ss::richstringelseif_constructor_exists():
-    assert callable(model::ss::RichStringElseIf.__init__)
-
-
-def test_model::ss::richstringelseif_constructor_args():
-    sig = inspect.signature(model::ss::RichStringElseIf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_richstringelseif_is_not_abstract():
-    assert not inspect.isabstract(RichStringElseIf)
-
-
-def test_richstringelseif_constructor_exists():
-    assert callable(RichStringElseIf.__init__)
-
-
-def test_richstringelseif_constructor_args():
-    sig = inspect.signature(RichStringElseIf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xblockexpression_is_not_abstract():
-    assert not inspect.isabstract(XBlockExpression)
-
-
-def test_xblockexpression_constructor_exists():
-    assert callable(XBlockExpression.__init__)
-
-
-def test_xblockexpression_constructor_args():
-    sig = inspect.signature(XBlockExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::richstring_is_not_abstract():
-    assert not inspect.isabstract(model::ss::RichString)
-
-
-def test_model::ss::richstring_constructor_exists():
-    assert callable(model::ss::RichString.__init__)
-
-
-def test_model::ss::richstring_constructor_args():
-    sig = inspect.signature(model::ss::RichString.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xforeachexpression_is_not_abstract():
-    assert not inspect.isabstract(XForEachExpression)
-
-
-def test_xforeachexpression_constructor_exists():
-    assert callable(XForEachExpression.__init__)
-
-
-def test_xforeachexpression_constructor_args():
-    sig = inspect.signature(XForEachExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::richstringforloop_is_not_abstract():
-    assert not inspect.isabstract(model::ss::RichStringForLoop)
-
-
-def test_model::ss::richstringforloop_constructor_exists():
-    assert callable(model::ss::RichStringForLoop.__init__)
-
-
-def test_model::ss::richstringforloop_constructor_args():
-    sig = inspect.signature(model::ss::RichStringForLoop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xstringliteral_is_not_abstract():
-    assert not inspect.isabstract(XStringLiteral)
-
-
-def test_xstringliteral_constructor_exists():
-    assert callable(XStringLiteral.__init__)
-
-
-def test_xstringliteral_constructor_args():
-    sig = inspect.signature(XStringLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::richstringliteral_is_not_abstract():
-    assert not inspect.isabstract(model::ss::RichStringLiteral)
-
-
-def test_model::ss::richstringliteral_constructor_exists():
-    assert callable(model::ss::RichStringLiteral.__init__)
-
-
-def test_model::ss::richstringliteral_constructor_args():
-    sig = inspect.signature(model::ss::RichStringLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_createextensioninfo_is_not_abstract():
-    assert not inspect.isabstract(CreateExtensionInfo)
-
-
-def test_createextensioninfo_constructor_exists():
-    assert callable(CreateExtensionInfo.__init__)
-
-
-def test_createextensioninfo_constructor_args():
-    sig = inspect.signature(CreateExtensionInfo.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xtendparameter_is_not_abstract():
-    assert not inspect.isabstract(XtendParameter)
-
-
-def test_xtendparameter_constructor_exists():
-    assert callable(XtendParameter.__init__)
-
-
-def test_xtendparameter_constructor_args():
-    sig = inspect.signature(XtendParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xtendmember_is_not_abstract():
-    assert not inspect.isabstract(XtendMember)
-
-
-def test_xtendmember_constructor_exists():
-    assert callable(XtendMember.__init__)
-
-
-def test_xtendmember_constructor_args():
-    sig = inspect.signature(XtendMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendenumliteral_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendEnumLiteral)
-
-
-def test_model::ss::xtendenumliteral_constructor_exists():
-    assert callable(model::ss::XtendEnumLiteral.__init__)
-
-
-def test_model::ss::xtendenumliteral_constructor_args():
-    sig = inspect.signature(model::ss::XtendEnumLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::ss::xtendenumliteral_has_name():
-    assert hasattr(model::ss::XtendEnumLiteral, "name")
-    descriptor = None
-    for klass in model::ss::XtendEnumLiteral.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::xtendconstructor_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendConstructor)
-
-
-def test_model::ss::xtendconstructor_constructor_exists():
-    assert callable(model::ss::XtendConstructor.__init__)
-
-
-def test_model::ss::xtendconstructor_constructor_args():
-    sig = inspect.signature(model::ss::XtendConstructor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendfield_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendField)
-
-
-def test_model::ss::xtendfield_constructor_exists():
-    assert callable(model::ss::XtendField.__init__)
-
-
-def test_model::ss::xtendfield_constructor_args():
-    sig = inspect.signature(model::ss::XtendField.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::ss::xtendfield_has_name():
-    assert hasattr(model::ss::XtendField, "name")
-    descriptor = None
-    for klass in model::ss::XtendField.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::xtendfunction_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendFunction)
-
-
-def test_model::ss::xtendfunction_constructor_exists():
-    assert callable(model::ss::XtendFunction.__init__)
-
-
-def test_model::ss::xtendfunction_constructor_args():
-    sig = inspect.signature(model::ss::XtendFunction.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::ss::xtendfunction_has_name():
-    assert hasattr(model::ss::XtendFunction, "name")
-    descriptor = None
-    for klass in model::ss::XtendFunction.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xtendannotationtarget_is_not_abstract():
-    assert not inspect.isabstract(XtendAnnotationTarget)
-
-
-def test_xtendannotationtarget_constructor_exists():
-    assert callable(XtendAnnotationTarget.__init__)
-
-
-def test_xtendannotationtarget_constructor_args():
-    sig = inspect.signature(XtendAnnotationTarget.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendparameter_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendParameter)
-
-
-def test_model::ss::xtendparameter_constructor_exists():
-    assert callable(model::ss::XtendParameter.__init__)
-
-
-def test_model::ss::xtendparameter_constructor_args():
-    sig = inspect.signature(model::ss::XtendParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "varArg" in params, "Missing parameter 'varArg'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "extension" in params, "Missing parameter 'extension'"
-
-def test_model::ss::xtendparameter_has_varArg():
-    assert hasattr(model::ss::XtendParameter, "varArg")
-    descriptor = None
-    for klass in model::ss::XtendParameter.__mro__:
-        if "varArg" in klass.__dict__:
-            descriptor = klass.__dict__["varArg"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::ss::xtendparameter_has_name():
-    assert hasattr(model::ss::XtendParameter, "name")
-    descriptor = None
-    for klass in model::ss::XtendParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::ss::xtendparameter_has_extension():
-    assert hasattr(model::ss::XtendParameter, "extension")
-    descriptor = None
-    for klass in model::ss::XtendParameter.__mro__:
-        if "extension" in klass.__dict__:
-            descriptor = klass.__dict__["extension"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::xtendmember_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendMember)
-
-
-def test_model::ss::xtendmember_constructor_exists():
-    assert callable(model::ss::XtendMember.__init__)
-
-
-def test_model::ss::xtendmember_constructor_args():
-    sig = inspect.signature(model::ss::XtendMember.__init__)
-    params = list(sig.parameters.keys())
-    assert "modifiers" in params, "Missing parameter 'modifiers'"
-
-def test_model::ss::xtendmember_has_modifiers():
-    assert hasattr(model::ss::XtendMember, "modifiers")
-    descriptor = None
-    for klass in model::ss::XtendMember.__mro__:
-        if "modifiers" in klass.__dict__:
-            descriptor = klass.__dict__["modifiers"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xannotation_is_not_abstract():
-    assert not inspect.isabstract(XAnnotation)
-
-
-def test_xannotation_constructor_exists():
-    assert callable(XAnnotation.__init__)
-
-
-def test_xannotation_constructor_args():
-    sig = inspect.signature(XAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendannotationtarget_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendAnnotationTarget)
-
-
-def test_model::ss::xtendannotationtarget_constructor_exists():
-    assert callable(model::ss::XtendAnnotationTarget.__init__)
-
-
-def test_model::ss::xtendannotationtarget_constructor_args():
-    sig = inspect.signature(model::ss::XtendAnnotationTarget.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xobjectliteralpart_is_not_abstract():
-    assert not inspect.isabstract(XObjectLiteralPart)
-
-
-def test_xobjectliteralpart_constructor_exists():
-    assert callable(XObjectLiteralPart.__init__)
-
-
-def test_xobjectliteralpart_constructor_args():
-    sig = inspect.signature(XObjectLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ss::model::eobject_is_not_abstract():
-    assert not inspect.isabstract(ss::model::EObject)
-
-
-def test_ss::model::eobject_constructor_exists():
-    assert callable(ss::model::EObject.__init__)
-
-
-def test_ss::model::eobject_constructor_args():
-    sig = inspect.signature(ss::model::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xtendtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(XtendTypeDeclaration)
-
-
-def test_xtendtypedeclaration_constructor_exists():
-    assert callable(XtendTypeDeclaration.__init__)
-
-
-def test_xtendtypedeclaration_constructor_args():
-    sig = inspect.signature(XtendTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendclass_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendClass)
-
-
-def test_model::ss::xtendclass_constructor_exists():
-    assert callable(model::ss::XtendClass.__init__)
-
-
-def test_model::ss::xtendclass_constructor_args():
-    sig = inspect.signature(model::ss::XtendClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendenum_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendEnum)
-
-
-def test_model::ss::xtendenum_constructor_exists():
-    assert callable(model::ss::XtendEnum.__init__)
-
-
-def test_model::ss::xtendenum_constructor_args():
-    sig = inspect.signature(model::ss::XtendEnum.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendinterface_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendInterface)
-
-
-def test_model::ss::xtendinterface_constructor_exists():
-    assert callable(model::ss::XtendInterface.__init__)
-
-
-def test_model::ss::xtendinterface_constructor_args():
-    sig = inspect.signature(model::ss::XtendInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendannotationtype_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendAnnotationType)
-
-
-def test_model::ss::xtendannotationtype_constructor_exists():
-    assert callable(model::ss::XtendAnnotationType.__init__)
-
-
-def test_model::ss::xtendannotationtype_constructor_args():
-    sig = inspect.signature(model::ss::XtendAnnotationType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendfile_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendFile)
-
-
-def test_model::ss::xtendfile_constructor_exists():
-    assert callable(model::ss::XtendFile.__init__)
-
-
-def test_model::ss::xtendfile_constructor_args():
-    sig = inspect.signature(model::ss::XtendFile.__init__)
-    params = list(sig.parameters.keys())
-    assert "package" in params, "Missing parameter 'package'"
-
-def test_model::ss::xtendfile_has_package():
-    assert hasattr(model::ss::XtendFile, "package")
-    descriptor = None
-    for klass in model::ss::XtendFile.__mro__:
-        if "package" in klass.__dict__:
-            descriptor = klass.__dict__["package"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xobjectliteralpart_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XObjectLiteralPart)
-
-
-def test_model::xbase::xobjectliteralpart_constructor_exists():
-    assert callable(model::xbase::XObjectLiteralPart.__init__)
-
-
-def test_model::xbase::xobjectliteralpart_constructor_args():
-    sig = inspect.signature(model::xbase::XObjectLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::xbase::xobjectliteralpart_has_name():
-    assert hasattr(model::xbase::XObjectLiteralPart, "name")
-    descriptor = None
-    for klass in model::xbase::XObjectLiteralPart.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xcatchclause_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XCatchClause)
-
-
-def test_model::xbase::xcatchclause_constructor_exists():
-    assert callable(model::xbase::XCatchClause.__init__)
-
-
-def test_model::xbase::xcatchclause_constructor_args():
-    sig = inspect.signature(model::xbase::XCatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xcatchclause_is_not_abstract():
-    assert not inspect.isabstract(XCatchClause)
-
-
-def test_xcatchclause_constructor_exists():
-    assert callable(XCatchClause.__init__)
-
-
-def test_xcatchclause_constructor_args():
-    sig = inspect.signature(XCatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xabstractwhileexpression_is_not_abstract():
-    assert not inspect.isabstract(XAbstractWhileExpression)
-
-
-def test_xabstractwhileexpression_constructor_exists():
-    assert callable(XAbstractWhileExpression.__init__)
-
-
-def test_xabstractwhileexpression_constructor_args():
-    sig = inspect.signature(XAbstractWhileExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xdowhileexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XDoWhileExpression)
-
-
-def test_model::xbase::xdowhileexpression_constructor_exists():
-    assert callable(model::xbase::XDoWhileExpression.__init__)
-
-
-def test_model::xbase::xdowhileexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XDoWhileExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xwhileexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XWhileExpression)
-
-
-def test_model::xbase::xwhileexpression_constructor_exists():
-    assert callable(model::xbase::XWhileExpression.__init__)
-
-
-def test_model::xbase::xwhileexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XWhileExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xcollectionliteral_is_not_abstract():
-    assert not inspect.isabstract(XCollectionLiteral)
-
-
-def test_xcollectionliteral_constructor_exists():
-    assert callable(XCollectionLiteral.__init__)
-
-
-def test_xcollectionliteral_constructor_args():
-    sig = inspect.signature(XCollectionLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xlistliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XListLiteral)
-
-
-def test_model::xbase::xlistliteral_constructor_exists():
-    assert callable(model::xbase::XListLiteral.__init__)
-
-
-def test_model::xbase::xlistliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XListLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xsetliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XSetLiteral)
-
-
-def test_model::xbase::xsetliteral_constructor_exists():
-    assert callable(model::xbase::XSetLiteral.__init__)
-
-
-def test_model::xbase::xsetliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XSetLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jvmconstructor_is_not_abstract():
-    assert not inspect.isabstract(JvmConstructor)
-
-
-def test_jvmconstructor_constructor_exists():
-    assert callable(JvmConstructor.__init__)
-
-
-def test_jvmconstructor_constructor_args():
-    sig = inspect.signature(JvmConstructor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xabstractfeaturecall_is_not_abstract():
-    assert not inspect.isabstract(XAbstractFeatureCall)
-
-
-def test_xabstractfeaturecall_constructor_exists():
-    assert callable(XAbstractFeatureCall.__init__)
-
-
-def test_xabstractfeaturecall_constructor_args():
-    sig = inspect.signature(XAbstractFeatureCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xmemberfeaturecall1_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XMemberFeatureCall1)
-
-
-def test_model::xbase::xmemberfeaturecall1_constructor_exists():
-    assert callable(model::xbase::XMemberFeatureCall1.__init__)
-
-
-def test_model::xbase::xmemberfeaturecall1_constructor_args():
-    sig = inspect.signature(model::xbase::XMemberFeatureCall1.__init__)
-    params = list(sig.parameters.keys())
-    assert "staticWithDeclaringType" in params, "Missing parameter 'staticWithDeclaringType'"
-    assert "explicitOperationCall" in params, "Missing parameter 'explicitOperationCall'"
-    assert "indexedOperation" in params, "Missing parameter 'indexedOperation'"
-    assert "typeLiteral" in params, "Missing parameter 'typeLiteral'"
-    assert "explicitStatic" in params, "Missing parameter 'explicitStatic'"
-    assert "packageFragment" in params, "Missing parameter 'packageFragment'"
-    assert "nullSafe" in params, "Missing parameter 'nullSafe'"
-
-def test_model::xbase::xmemberfeaturecall1_has_staticWithDeclaringType():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "staticWithDeclaringType")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "staticWithDeclaringType" in klass.__dict__:
-            descriptor = klass.__dict__["staticWithDeclaringType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall1_has_explicitOperationCall():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "explicitOperationCall")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "explicitOperationCall" in klass.__dict__:
-            descriptor = klass.__dict__["explicitOperationCall"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall1_has_indexedOperation():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "indexedOperation")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "indexedOperation" in klass.__dict__:
-            descriptor = klass.__dict__["indexedOperation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall1_has_typeLiteral():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "typeLiteral")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "typeLiteral" in klass.__dict__:
-            descriptor = klass.__dict__["typeLiteral"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall1_has_explicitStatic():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "explicitStatic")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "explicitStatic" in klass.__dict__:
-            descriptor = klass.__dict__["explicitStatic"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall1_has_packageFragment():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "packageFragment")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "packageFragment" in klass.__dict__:
-            descriptor = klass.__dict__["packageFragment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall1_has_nullSafe():
-    assert hasattr(model::xbase::XMemberFeatureCall1, "nullSafe")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall1.__mro__:
-        if "nullSafe" in klass.__dict__:
-            descriptor = klass.__dict__["nullSafe"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xpostfixoperation_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XPostfixOperation)
-
-
-def test_model::xbase::xpostfixoperation_constructor_exists():
-    assert callable(model::xbase::XPostfixOperation.__init__)
-
-
-def test_model::xbase::xpostfixoperation_constructor_args():
-    sig = inspect.signature(model::xbase::XPostfixOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xbinaryoperation_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XBinaryOperation)
-
-
-def test_model::xbase::xbinaryoperation_constructor_exists():
-    assert callable(model::xbase::XBinaryOperation.__init__)
-
-
-def test_model::xbase::xbinaryoperation_constructor_args():
-    sig = inspect.signature(model::xbase::XBinaryOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xindexoperation_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XIndexOperation)
-
-
-def test_model::xbase::xindexoperation_constructor_exists():
-    assert callable(model::xbase::XIndexOperation.__init__)
-
-
-def test_model::xbase::xindexoperation_constructor_args():
-    sig = inspect.signature(model::xbase::XIndexOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xassignment_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XAssignment)
-
-
-def test_model::xbase::xassignment_constructor_exists():
-    assert callable(model::xbase::XAssignment.__init__)
-
-
-def test_model::xbase::xassignment_constructor_args():
-    sig = inspect.signature(model::xbase::XAssignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "explicitStatic" in params, "Missing parameter 'explicitStatic'"
-
-def test_model::xbase::xassignment_has_explicitStatic():
-    assert hasattr(model::xbase::XAssignment, "explicitStatic")
-    descriptor = None
-    for klass in model::xbase::XAssignment.__mro__:
-        if "explicitStatic" in klass.__dict__:
-            descriptor = klass.__dict__["explicitStatic"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xprefixoperation_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XPrefixOperation)
-
-
-def test_model::xbase::xprefixoperation_constructor_exists():
-    assert callable(model::xbase::XPrefixOperation.__init__)
-
-
-def test_model::xbase::xprefixoperation_constructor_args():
-    sig = inspect.signature(model::xbase::XPrefixOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xfeaturecall_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XFeatureCall)
-
-
-def test_model::xbase::xfeaturecall_constructor_exists():
-    assert callable(model::xbase::XFeatureCall.__init__)
-
-
-def test_model::xbase::xfeaturecall_constructor_args():
-    sig = inspect.signature(model::xbase::XFeatureCall.__init__)
-    params = list(sig.parameters.keys())
-    assert "indexedOperation" in params, "Missing parameter 'indexedOperation'"
-    assert "typeLiteral" in params, "Missing parameter 'typeLiteral'"
-    assert "explicitOperationCall" in params, "Missing parameter 'explicitOperationCall'"
-    assert "packageFragment" in params, "Missing parameter 'packageFragment'"
-
-def test_model::xbase::xfeaturecall_has_indexedOperation():
-    assert hasattr(model::xbase::XFeatureCall, "indexedOperation")
-    descriptor = None
-    for klass in model::xbase::XFeatureCall.__mro__:
-        if "indexedOperation" in klass.__dict__:
-            descriptor = klass.__dict__["indexedOperation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xfeaturecall_has_typeLiteral():
-    assert hasattr(model::xbase::XFeatureCall, "typeLiteral")
-    descriptor = None
-    for klass in model::xbase::XFeatureCall.__mro__:
-        if "typeLiteral" in klass.__dict__:
-            descriptor = klass.__dict__["typeLiteral"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xfeaturecall_has_explicitOperationCall():
-    assert hasattr(model::xbase::XFeatureCall, "explicitOperationCall")
-    descriptor = None
-    for klass in model::xbase::XFeatureCall.__mro__:
-        if "explicitOperationCall" in klass.__dict__:
-            descriptor = klass.__dict__["explicitOperationCall"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xfeaturecall_has_packageFragment():
-    assert hasattr(model::xbase::XFeatureCall, "packageFragment")
-    descriptor = None
-    for klass in model::xbase::XFeatureCall.__mro__:
-        if "packageFragment" in klass.__dict__:
-            descriptor = klass.__dict__["packageFragment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xunaryoperation_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XUnaryOperation)
-
-
-def test_model::xbase::xunaryoperation_constructor_exists():
-    assert callable(model::xbase::XUnaryOperation.__init__)
-
-
-def test_model::xbase::xunaryoperation_constructor_args():
-    sig = inspect.signature(model::xbase::XUnaryOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xmemberfeaturecall_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XMemberFeatureCall)
-
-
-def test_model::xbase::xmemberfeaturecall_constructor_exists():
-    assert callable(model::xbase::XMemberFeatureCall.__init__)
-
-
-def test_model::xbase::xmemberfeaturecall_constructor_args():
-    sig = inspect.signature(model::xbase::XMemberFeatureCall.__init__)
-    params = list(sig.parameters.keys())
-    assert "nullSafe" in params, "Missing parameter 'nullSafe'"
-    assert "packageFragment" in params, "Missing parameter 'packageFragment'"
-    assert "typeLiteral" in params, "Missing parameter 'typeLiteral'"
-    assert "staticWithDeclaringType" in params, "Missing parameter 'staticWithDeclaringType'"
-    assert "indexedOperation" in params, "Missing parameter 'indexedOperation'"
-    assert "explicitStatic" in params, "Missing parameter 'explicitStatic'"
-    assert "explicitOperationCall" in params, "Missing parameter 'explicitOperationCall'"
-
-def test_model::xbase::xmemberfeaturecall_has_nullSafe():
-    assert hasattr(model::xbase::XMemberFeatureCall, "nullSafe")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "nullSafe" in klass.__dict__:
-            descriptor = klass.__dict__["nullSafe"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall_has_packageFragment():
-    assert hasattr(model::xbase::XMemberFeatureCall, "packageFragment")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "packageFragment" in klass.__dict__:
-            descriptor = klass.__dict__["packageFragment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall_has_typeLiteral():
-    assert hasattr(model::xbase::XMemberFeatureCall, "typeLiteral")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "typeLiteral" in klass.__dict__:
-            descriptor = klass.__dict__["typeLiteral"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall_has_staticWithDeclaringType():
-    assert hasattr(model::xbase::XMemberFeatureCall, "staticWithDeclaringType")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "staticWithDeclaringType" in klass.__dict__:
-            descriptor = klass.__dict__["staticWithDeclaringType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall_has_indexedOperation():
-    assert hasattr(model::xbase::XMemberFeatureCall, "indexedOperation")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "indexedOperation" in klass.__dict__:
-            descriptor = klass.__dict__["indexedOperation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall_has_explicitStatic():
-    assert hasattr(model::xbase::XMemberFeatureCall, "explicitStatic")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "explicitStatic" in klass.__dict__:
-            descriptor = klass.__dict__["explicitStatic"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xmemberfeaturecall_has_explicitOperationCall():
-    assert hasattr(model::xbase::XMemberFeatureCall, "explicitOperationCall")
-    descriptor = None
-    for klass in model::xbase::XMemberFeatureCall.__mro__:
-        if "explicitOperationCall" in klass.__dict__:
-            descriptor = klass.__dict__["explicitOperationCall"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XExpression)
-
-
-def test_model::xbase::xexpression_constructor_exists():
-    assert callable(model::xbase::XExpression.__init__)
-
-
-def test_model::xbase::xexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xcasepart_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XCasePart)
-
-
-def test_model::xbase::xcasepart_constructor_exists():
-    assert callable(model::xbase::XCasePart.__init__)
-
-
-def test_model::xbase::xcasepart_constructor_args():
-    sig = inspect.signature(model::xbase::XCasePart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xcasepart_is_not_abstract():
-    assert not inspect.isabstract(XCasePart)
-
-
-def test_xcasepart_constructor_exists():
-    assert callable(XCasePart.__init__)
-
-
-def test_xcasepart_constructor_args():
-    sig = inspect.signature(XCasePart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::jvmidentifiableelement_is_not_abstract():
-    assert not inspect.isabstract(types::JvmIdentifiableElement)
-
-
-def test_types::jvmidentifiableelement_constructor_exists():
-    assert callable(types::JvmIdentifiableElement.__init__)
-
-
-def test_types::jvmidentifiableelement_constructor_args():
-    sig = inspect.signature(types::JvmIdentifiableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xbase::xexpression_is_not_abstract():
-    assert not inspect.isabstract(xbase::XExpression)
-
-
-def test_xbase::xexpression_constructor_exists():
-    assert callable(xbase::XExpression.__init__)
-
-
-def test_xbase::xexpression_constructor_args():
-    sig = inspect.signature(xbase::XExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XVariableDeclaration)
-
-
-def test_model::xbase::xvariabledeclaration_constructor_exists():
-    assert callable(model::xbase::XVariableDeclaration.__init__)
-
-
-def test_model::xbase::xvariabledeclaration_constructor_args():
-    sig = inspect.signature(model::xbase::XVariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "writeable" in params, "Missing parameter 'writeable'"
-    assert "exported" in params, "Missing parameter 'exported'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::xbase::xvariabledeclaration_has_writeable():
-    assert hasattr(model::xbase::XVariableDeclaration, "writeable")
-    descriptor = None
-    for klass in model::xbase::XVariableDeclaration.__mro__:
-        if "writeable" in klass.__dict__:
-            descriptor = klass.__dict__["writeable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xvariabledeclaration_has_exported():
-    assert hasattr(model::xbase::XVariableDeclaration, "exported")
-    descriptor = None
-    for klass in model::xbase::XVariableDeclaration.__mro__:
-        if "exported" in klass.__dict__:
-            descriptor = klass.__dict__["exported"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xvariabledeclaration_has_name():
-    assert hasattr(model::xbase::XVariableDeclaration, "name")
-    descriptor = None
-    for klass in model::xbase::XVariableDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xclosure_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XClosure)
-
-
-def test_model::xbase::xclosure_constructor_exists():
-    assert callable(model::xbase::XClosure.__init__)
-
-
-def test_model::xbase::xclosure_constructor_args():
-    sig = inspect.signature(model::xbase::XClosure.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "operator" in params, "Missing parameter 'operator'"
-    assert "exported" in params, "Missing parameter 'exported'"
-    assert "explicitSyntax" in params, "Missing parameter 'explicitSyntax'"
-
-def test_model::xbase::xclosure_has_name():
-    assert hasattr(model::xbase::XClosure, "name")
-    descriptor = None
-    for klass in model::xbase::XClosure.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xclosure_has_operator():
-    assert hasattr(model::xbase::XClosure, "operator")
-    descriptor = None
-    for klass in model::xbase::XClosure.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xclosure_has_exported():
-    assert hasattr(model::xbase::XClosure, "exported")
-    descriptor = None
-    for klass in model::xbase::XClosure.__mro__:
-        if "exported" in klass.__dict__:
-            descriptor = klass.__dict__["exported"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xclosure_has_explicitSyntax():
-    assert hasattr(model::xbase::XClosure, "explicitSyntax")
-    descriptor = None
-    for klass in model::xbase::XClosure.__mro__:
-        if "explicitSyntax" in klass.__dict__:
-            descriptor = klass.__dict__["explicitSyntax"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xswitchexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XSwitchExpression)
-
-
-def test_model::xbase::xswitchexpression_constructor_exists():
-    assert callable(model::xbase::XSwitchExpression.__init__)
-
-
-def test_model::xbase::xswitchexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XSwitchExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "localVarName" in params, "Missing parameter 'localVarName'"
-
-def test_model::xbase::xswitchexpression_has_localVarName():
-    assert hasattr(model::xbase::XSwitchExpression, "localVarName")
-    descriptor = None
-    for klass in model::xbase::XSwitchExpression.__mro__:
-        if "localVarName" in klass.__dict__:
-            descriptor = klass.__dict__["localVarName"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1485,37 +279,37 @@ def test_richstring_constructor_args():
 
 
 
-def test_model::richstring::processedrichstring_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::ProcessedRichString)
+def test_model_richstring_processedrichstring_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_ProcessedRichString)
 
 
-def test_model::richstring::processedrichstring_constructor_exists():
-    assert callable(model::richstring::ProcessedRichString.__init__)
+def test_model_richstring_processedrichstring_constructor_exists():
+    assert callable(model_richstring_ProcessedRichString.__init__)
 
 
-def test_model::richstring::processedrichstring_constructor_args():
-    sig = inspect.signature(model::richstring::ProcessedRichString.__init__)
+def test_model_richstring_processedrichstring_constructor_args():
+    sig = inspect.signature(model_richstring_ProcessedRichString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::xtype::xexportitem_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XExportItem)
+def test_model_xtype_xexportitem_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XExportItem)
 
 
-def test_model::xtype::xexportitem_constructor_exists():
-    assert callable(model::xtype::XExportItem.__init__)
+def test_model_xtype_xexportitem_constructor_exists():
+    assert callable(model_xtype_XExportItem.__init__)
 
 
-def test_model::xtype::xexportitem_constructor_args():
-    sig = inspect.signature(model::xtype::XExportItem.__init__)
+def test_model_xtype_xexportitem_constructor_args():
+    sig = inspect.signature(model_xtype_XExportItem.__init__)
     params = list(sig.parameters.keys())
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_model::xtype::xexportitem_has_alias():
-    assert hasattr(model::xtype::XExportItem, "alias")
+def test_model_xtype_xexportitem_has_alias():
+    assert hasattr(model_xtype_XExportItem, "alias")
     descriptor = None
-    for klass in model::xtype::XExportItem.__mro__:
+    for klass in model_xtype_XExportItem.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -1635,16 +429,16 @@ def test_literal_constructor_args():
 
 
 
-def test_model::richstring::linebreak_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::LineBreak)
+def test_model_richstring_linebreak_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_LineBreak)
 
 
-def test_model::richstring::linebreak_constructor_exists():
-    assert callable(model::richstring::LineBreak.__init__)
+def test_model_richstring_linebreak_constructor_exists():
+    assert callable(model_richstring_LineBreak.__init__)
 
 
-def test_model::richstring::linebreak_constructor_args():
-    sig = inspect.signature(model::richstring::LineBreak.__init__)
+def test_model_richstring_linebreak_constructor_args():
+    sig = inspect.signature(model_richstring_LineBreak.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1663,16 +457,16 @@ def test_richstringliteral_constructor_args():
 
 
 
-def test_model::richstring::linepart_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::LinePart)
+def test_model_richstring_linepart_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_LinePart)
 
 
-def test_model::richstring::linepart_constructor_exists():
-    assert callable(model::richstring::LinePart.__init__)
+def test_model_richstring_linepart_constructor_exists():
+    assert callable(model_richstring_LinePart.__init__)
 
 
-def test_model::richstring::linepart_constructor_args():
-    sig = inspect.signature(model::richstring::LinePart.__init__)
+def test_model_richstring_linepart_constructor_args():
+    sig = inspect.signature(model_richstring_LinePart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1705,148 +499,148 @@ def test_linepart_constructor_args():
 
 
 
-def test_model::richstring::endif_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::EndIf)
+def test_model_richstring_literal_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_Literal)
 
 
-def test_model::richstring::endif_constructor_exists():
-    assert callable(model::richstring::EndIf.__init__)
+def test_model_richstring_literal_constructor_exists():
+    assert callable(model_richstring_Literal.__init__)
 
 
-def test_model::richstring::endif_constructor_args():
-    sig = inspect.signature(model::richstring::EndIf.__init__)
+def test_model_richstring_literal_constructor_args():
+    sig = inspect.signature(model_richstring_Literal.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_model::richstring::elseifcondition_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::ElseIfCondition)
-
-
-def test_model::richstring::elseifcondition_constructor_exists():
-    assert callable(model::richstring::ElseIfCondition.__init__)
-
-
-def test_model::richstring::elseifcondition_constructor_args():
-    sig = inspect.signature(model::richstring::ElseIfCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::richstring::literal_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::Literal)
-
-
-def test_model::richstring::literal_constructor_exists():
-    assert callable(model::richstring::Literal.__init__)
-
-
-def test_model::richstring::literal_constructor_args():
-    sig = inspect.signature(model::richstring::Literal.__init__)
-    params = list(sig.parameters.keys())
-    assert "offset" in params, "Missing parameter 'offset'"
     assert "length" in params, "Missing parameter 'length'"
+    assert "offset" in params, "Missing parameter 'offset'"
 
-def test_model::richstring::literal_has_offset():
-    assert hasattr(model::richstring::Literal, "offset")
+def test_model_richstring_literal_has_length():
+    assert hasattr(model_richstring_Literal, "length")
     descriptor = None
-    for klass in model::richstring::Literal.__mro__:
-        if "offset" in klass.__dict__:
-            descriptor = klass.__dict__["offset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::richstring::literal_has_length():
-    assert hasattr(model::richstring::Literal, "length")
-    descriptor = None
-    for klass in model::richstring::Literal.__mro__:
+    for klass in model_richstring_Literal.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_richstring_literal_has_offset():
+    assert hasattr(model_richstring_Literal, "offset")
+    descriptor = None
+    for klass in model_richstring_Literal.__mro__:
+        if "offset" in klass.__dict__:
+            descriptor = klass.__dict__["offset"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::richstring::forloopend_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::ForLoopEnd)
+
+def test_model_richstring_printedexpression_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_PrintedExpression)
 
 
-def test_model::richstring::forloopend_constructor_exists():
-    assert callable(model::richstring::ForLoopEnd.__init__)
+def test_model_richstring_printedexpression_constructor_exists():
+    assert callable(model_richstring_PrintedExpression.__init__)
 
 
-def test_model::richstring::forloopend_constructor_args():
-    sig = inspect.signature(model::richstring::ForLoopEnd.__init__)
+def test_model_richstring_printedexpression_constructor_args():
+    sig = inspect.signature(model_richstring_PrintedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::richstring::forloopstart_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::ForLoopStart)
+def test_model_richstring_endif_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_EndIf)
 
 
-def test_model::richstring::forloopstart_constructor_exists():
-    assert callable(model::richstring::ForLoopStart.__init__)
+def test_model_richstring_endif_constructor_exists():
+    assert callable(model_richstring_EndIf.__init__)
 
 
-def test_model::richstring::forloopstart_constructor_args():
-    sig = inspect.signature(model::richstring::ForLoopStart.__init__)
+def test_model_richstring_endif_constructor_args():
+    sig = inspect.signature(model_richstring_EndIf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::richstring::printedexpression_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::PrintedExpression)
+def test_model_richstring_ifconditionstart_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_IfConditionStart)
 
 
-def test_model::richstring::printedexpression_constructor_exists():
-    assert callable(model::richstring::PrintedExpression.__init__)
+def test_model_richstring_ifconditionstart_constructor_exists():
+    assert callable(model_richstring_IfConditionStart.__init__)
 
 
-def test_model::richstring::printedexpression_constructor_args():
-    sig = inspect.signature(model::richstring::PrintedExpression.__init__)
+def test_model_richstring_ifconditionstart_constructor_args():
+    sig = inspect.signature(model_richstring_IfConditionStart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::richstring::ifconditionstart_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::IfConditionStart)
+def test_model_richstring_forloopend_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_ForLoopEnd)
 
 
-def test_model::richstring::ifconditionstart_constructor_exists():
-    assert callable(model::richstring::IfConditionStart.__init__)
+def test_model_richstring_forloopend_constructor_exists():
+    assert callable(model_richstring_ForLoopEnd.__init__)
 
 
-def test_model::richstring::ifconditionstart_constructor_args():
-    sig = inspect.signature(model::richstring::IfConditionStart.__init__)
+def test_model_richstring_forloopend_constructor_args():
+    sig = inspect.signature(model_richstring_ForLoopEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::richstring::elsestart_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::ElseStart)
+def test_model_richstring_elseifcondition_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_ElseIfCondition)
 
 
-def test_model::richstring::elsestart_constructor_exists():
-    assert callable(model::richstring::ElseStart.__init__)
+def test_model_richstring_elseifcondition_constructor_exists():
+    assert callable(model_richstring_ElseIfCondition.__init__)
 
 
-def test_model::richstring::elsestart_constructor_args():
-    sig = inspect.signature(model::richstring::ElseStart.__init__)
+def test_model_richstring_elseifcondition_constructor_args():
+    sig = inspect.signature(model_richstring_ElseIfCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::richstring::line_is_not_abstract():
-    assert not inspect.isabstract(model::richstring::Line)
+def test_model_richstring_elsestart_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_ElseStart)
 
 
-def test_model::richstring::line_constructor_exists():
-    assert callable(model::richstring::Line.__init__)
+def test_model_richstring_elsestart_constructor_exists():
+    assert callable(model_richstring_ElseStart.__init__)
 
 
-def test_model::richstring::line_constructor_args():
-    sig = inspect.signature(model::richstring::Line.__init__)
+def test_model_richstring_elsestart_constructor_args():
+    sig = inspect.signature(model_richstring_ElseStart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_richstring_forloopstart_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_ForLoopStart)
+
+
+def test_model_richstring_forloopstart_constructor_exists():
+    assert callable(model_richstring_ForLoopStart.__init__)
+
+
+def test_model_richstring_forloopstart_constructor_args():
+    sig = inspect.signature(model_richstring_ForLoopStart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_richstring_line_is_not_abstract():
+    assert not inspect.isabstract(model_richstring_Line)
+
+
+def test_model_richstring_line_constructor_exists():
+    assert callable(model_richstring_Line.__init__)
+
+
+def test_model_richstring_line_constructor_args():
+    sig = inspect.signature(model_richstring_Line.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1865,69 +659,69 @@ def test_ximportdeclaration1_constructor_args():
 
 
 
-def test_model::xtype::ximportsection1_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XImportSection1)
+def test_model_xtype_ximportsection1_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XImportSection1)
 
 
-def test_model::xtype::ximportsection1_constructor_exists():
-    assert callable(model::xtype::XImportSection1.__init__)
+def test_model_xtype_ximportsection1_constructor_exists():
+    assert callable(model_xtype_XImportSection1.__init__)
 
 
-def test_model::xtype::ximportsection1_constructor_args():
-    sig = inspect.signature(model::xtype::XImportSection1.__init__)
+def test_model_xtype_ximportsection1_constructor_args():
+    sig = inspect.signature(model_xtype_XImportSection1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::xtype::ximportdeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XImportDeclaration)
+def test_model_xtype_ximportdeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XImportDeclaration)
 
 
-def test_model::xtype::ximportdeclaration_constructor_exists():
-    assert callable(model::xtype::XImportDeclaration.__init__)
+def test_model_xtype_ximportdeclaration_constructor_exists():
+    assert callable(model_xtype_XImportDeclaration.__init__)
 
 
-def test_model::xtype::ximportdeclaration_constructor_args():
-    sig = inspect.signature(model::xtype::XImportDeclaration.__init__)
+def test_model_xtype_ximportdeclaration_constructor_args():
+    sig = inspect.signature(model_xtype_XImportDeclaration.__init__)
     params = list(sig.parameters.keys())
-    assert "wildcard" in params, "Missing parameter 'wildcard'"
-    assert "extension" in params, "Missing parameter 'extension'"
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
     assert "static" in params, "Missing parameter 'static'"
+    assert "wildcard" in params, "Missing parameter 'wildcard'"
+    assert "extension" in params, "Missing parameter 'extension'"
 
-def test_model::xtype::ximportdeclaration_has_wildcard():
-    assert hasattr(model::xtype::XImportDeclaration, "wildcard")
+def test_model_xtype_ximportdeclaration_has_importedNamespace():
+    assert hasattr(model_xtype_XImportDeclaration, "importedNamespace")
     descriptor = None
-    for klass in model::xtype::XImportDeclaration.__mro__:
-        if "wildcard" in klass.__dict__:
-            descriptor = klass.__dict__["wildcard"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xtype::ximportdeclaration_has_extension():
-    assert hasattr(model::xtype::XImportDeclaration, "extension")
-    descriptor = None
-    for klass in model::xtype::XImportDeclaration.__mro__:
-        if "extension" in klass.__dict__:
-            descriptor = klass.__dict__["extension"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xtype::ximportdeclaration_has_importedNamespace():
-    assert hasattr(model::xtype::XImportDeclaration, "importedNamespace")
-    descriptor = None
-    for klass in model::xtype::XImportDeclaration.__mro__:
+    for klass in model_xtype_XImportDeclaration.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::xtype::ximportdeclaration_has_static():
-    assert hasattr(model::xtype::XImportDeclaration, "static")
+def test_model_xtype_ximportdeclaration_has_static():
+    assert hasattr(model_xtype_XImportDeclaration, "static")
     descriptor = None
-    for klass in model::xtype::XImportDeclaration.__mro__:
+    for klass in model_xtype_XImportDeclaration.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xtype_ximportdeclaration_has_wildcard():
+    assert hasattr(model_xtype_XImportDeclaration, "wildcard")
+    descriptor = None
+    for klass in model_xtype_XImportDeclaration.__mro__:
+        if "wildcard" in klass.__dict__:
+            descriptor = klass.__dict__["wildcard"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xtype_ximportdeclaration_has_extension():
+    assert hasattr(model_xtype_XImportDeclaration, "extension")
+    descriptor = None
+    for klass in model_xtype_XImportDeclaration.__mro__:
+        if "extension" in klass.__dict__:
+            descriptor = klass.__dict__["extension"]
             break
     assert isinstance(descriptor, property)
 
@@ -1961,45 +755,45 @@ def test_xexportitem_constructor_args():
 
 
 
-def test_model::xtype::xexportdeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XExportDeclaration)
+def test_model_xtype_xexportdeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XExportDeclaration)
 
 
-def test_model::xtype::xexportdeclaration_constructor_exists():
-    assert callable(model::xtype::XExportDeclaration.__init__)
+def test_model_xtype_xexportdeclaration_constructor_exists():
+    assert callable(model_xtype_XExportDeclaration.__init__)
 
 
-def test_model::xtype::xexportdeclaration_constructor_args():
-    sig = inspect.signature(model::xtype::XExportDeclaration.__init__)
+def test_model_xtype_xexportdeclaration_constructor_args():
+    sig = inspect.signature(model_xtype_XExportDeclaration.__init__)
     params = list(sig.parameters.keys())
-    assert "importURI" in params, "Missing parameter 'importURI'"
-    assert "alias" in params, "Missing parameter 'alias'"
     assert "wildcard" in params, "Missing parameter 'wildcard'"
+    assert "alias" in params, "Missing parameter 'alias'"
+    assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_model::xtype::xexportdeclaration_has_importURI():
-    assert hasattr(model::xtype::XExportDeclaration, "importURI")
+def test_model_xtype_xexportdeclaration_has_wildcard():
+    assert hasattr(model_xtype_XExportDeclaration, "wildcard")
     descriptor = None
-    for klass in model::xtype::XExportDeclaration.__mro__:
-        if "importURI" in klass.__dict__:
-            descriptor = klass.__dict__["importURI"]
+    for klass in model_xtype_XExportDeclaration.__mro__:
+        if "wildcard" in klass.__dict__:
+            descriptor = klass.__dict__["wildcard"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::xtype::xexportdeclaration_has_alias():
-    assert hasattr(model::xtype::XExportDeclaration, "alias")
+def test_model_xtype_xexportdeclaration_has_alias():
+    assert hasattr(model_xtype_XExportDeclaration, "alias")
     descriptor = None
-    for klass in model::xtype::XExportDeclaration.__mro__:
+    for klass in model_xtype_XExportDeclaration.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::xtype::xexportdeclaration_has_wildcard():
-    assert hasattr(model::xtype::XExportDeclaration, "wildcard")
+def test_model_xtype_xexportdeclaration_has_importURI():
+    assert hasattr(model_xtype_XExportDeclaration, "importURI")
     descriptor = None
-    for klass in model::xtype::XExportDeclaration.__mro__:
-        if "wildcard" in klass.__dict__:
-            descriptor = klass.__dict__["wildcard"]
+    for klass in model_xtype_XExportDeclaration.__mro__:
+        if "importURI" in klass.__dict__:
+            descriptor = klass.__dict__["importURI"]
             break
     assert isinstance(descriptor, property)
 
@@ -2019,37 +813,37 @@ def test_xexportdeclaration_constructor_args():
 
 
 
-def test_model::xtype::xexportsection_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XExportSection)
+def test_model_xtype_xexportsection_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XExportSection)
 
 
-def test_model::xtype::xexportsection_constructor_exists():
-    assert callable(model::xtype::XExportSection.__init__)
+def test_model_xtype_xexportsection_constructor_exists():
+    assert callable(model_xtype_XExportSection.__init__)
 
 
-def test_model::xtype::xexportsection_constructor_args():
-    sig = inspect.signature(model::xtype::XExportSection.__init__)
+def test_model_xtype_xexportsection_constructor_args():
+    sig = inspect.signature(model_xtype_XExportSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::xtype::ximportitem_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XImportItem)
+def test_model_xtype_ximportitem_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XImportItem)
 
 
-def test_model::xtype::ximportitem_constructor_exists():
-    assert callable(model::xtype::XImportItem.__init__)
+def test_model_xtype_ximportitem_constructor_exists():
+    assert callable(model_xtype_XImportItem.__init__)
 
 
-def test_model::xtype::ximportitem_constructor_args():
-    sig = inspect.signature(model::xtype::XImportItem.__init__)
+def test_model_xtype_ximportitem_constructor_args():
+    sig = inspect.signature(model_xtype_XImportItem.__init__)
     params = list(sig.parameters.keys())
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_model::xtype::ximportitem_has_alias():
-    assert hasattr(model::xtype::XImportItem, "alias")
+def test_model_xtype_ximportitem_has_alias():
+    assert hasattr(model_xtype_XImportItem, "alias")
     descriptor = None
-    for klass in model::xtype::XImportItem.__mro__:
+    for klass in model_xtype_XImportItem.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -2071,35 +865,35 @@ def test_ximportitem_constructor_args():
 
 
 
-def test_model::xtype::ximportdeclaration1_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XImportDeclaration1)
+def test_model_xtype_ximportdeclaration1_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XImportDeclaration1)
 
 
-def test_model::xtype::ximportdeclaration1_constructor_exists():
-    assert callable(model::xtype::XImportDeclaration1.__init__)
+def test_model_xtype_ximportdeclaration1_constructor_exists():
+    assert callable(model_xtype_XImportDeclaration1.__init__)
 
 
-def test_model::xtype::ximportdeclaration1_constructor_args():
-    sig = inspect.signature(model::xtype::XImportDeclaration1.__init__)
+def test_model_xtype_ximportdeclaration1_constructor_args():
+    sig = inspect.signature(model_xtype_XImportDeclaration1.__init__)
     params = list(sig.parameters.keys())
-    assert "importURI" in params, "Missing parameter 'importURI'"
     assert "alias" in params, "Missing parameter 'alias'"
+    assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_model::xtype::ximportdeclaration1_has_importURI():
-    assert hasattr(model::xtype::XImportDeclaration1, "importURI")
+def test_model_xtype_ximportdeclaration1_has_alias():
+    assert hasattr(model_xtype_XImportDeclaration1, "alias")
     descriptor = None
-    for klass in model::xtype::XImportDeclaration1.__mro__:
-        if "importURI" in klass.__dict__:
-            descriptor = klass.__dict__["importURI"]
+    for klass in model_xtype_XImportDeclaration1.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::xtype::ximportdeclaration1_has_alias():
-    assert hasattr(model::xtype::XImportDeclaration1, "alias")
+def test_model_xtype_ximportdeclaration1_has_importURI():
+    assert hasattr(model_xtype_XImportDeclaration1, "importURI")
     descriptor = None
-    for klass in model::xtype::XImportDeclaration1.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
+    for klass in model_xtype_XImportDeclaration1.__mro__:
+        if "importURI" in klass.__dict__:
+            descriptor = klass.__dict__["importURI"]
             break
     assert isinstance(descriptor, property)
 
@@ -2119,16 +913,16 @@ def test_xannotationelementvaluepair_constructor_args():
 
 
 
-def test_model::xtype::ximportsection_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XImportSection)
+def test_model_xtype_ximportsection_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XImportSection)
 
 
-def test_model::xtype::ximportsection_constructor_exists():
-    assert callable(model::xtype::XImportSection.__init__)
+def test_model_xtype_ximportsection_constructor_exists():
+    assert callable(model_xtype_XImportSection.__init__)
 
 
-def test_model::xtype::ximportsection_constructor_args():
-    sig = inspect.signature(model::xtype::XImportSection.__init__)
+def test_model_xtype_ximportsection_constructor_args():
+    sig = inspect.signature(model_xtype_XImportSection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2147,23 +941,23 @@ def test_jvmspecializedtypereference_constructor_args():
 
 
 
-def test_model::xtype::xcomputedtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XComputedTypeReference)
+def test_model_xtype_xcomputedtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XComputedTypeReference)
 
 
-def test_model::xtype::xcomputedtypereference_constructor_exists():
-    assert callable(model::xtype::XComputedTypeReference.__init__)
+def test_model_xtype_xcomputedtypereference_constructor_exists():
+    assert callable(model_xtype_XComputedTypeReference.__init__)
 
 
-def test_model::xtype::xcomputedtypereference_constructor_args():
-    sig = inspect.signature(model::xtype::XComputedTypeReference.__init__)
+def test_model_xtype_xcomputedtypereference_constructor_args():
+    sig = inspect.signature(model_xtype_XComputedTypeReference.__init__)
     params = list(sig.parameters.keys())
     assert "typeProvider" in params, "Missing parameter 'typeProvider'"
 
-def test_model::xtype::xcomputedtypereference_has_typeProvider():
-    assert hasattr(model::xtype::XComputedTypeReference, "typeProvider")
+def test_model_xtype_xcomputedtypereference_has_typeProvider():
+    assert hasattr(model_xtype_XComputedTypeReference, "typeProvider")
     descriptor = None
-    for klass in model::xtype::XComputedTypeReference.__mro__:
+    for klass in model_xtype_XComputedTypeReference.__mro__:
         if "typeProvider" in klass.__dict__:
             descriptor = klass.__dict__["typeProvider"]
             break
@@ -2171,23 +965,23 @@ def test_model::xtype::xcomputedtypereference_has_typeProvider():
 
 
 
-def test_model::xtype::xfunctiontyperef_is_not_abstract():
-    assert not inspect.isabstract(model::xtype::XFunctionTypeRef)
+def test_model_xtype_xfunctiontyperef_is_not_abstract():
+    assert not inspect.isabstract(model_xtype_XFunctionTypeRef)
 
 
-def test_model::xtype::xfunctiontyperef_constructor_exists():
-    assert callable(model::xtype::XFunctionTypeRef.__init__)
+def test_model_xtype_xfunctiontyperef_constructor_exists():
+    assert callable(model_xtype_XFunctionTypeRef.__init__)
 
 
-def test_model::xtype::xfunctiontyperef_constructor_args():
-    sig = inspect.signature(model::xtype::XFunctionTypeRef.__init__)
+def test_model_xtype_xfunctiontyperef_constructor_args():
+    sig = inspect.signature(model_xtype_XFunctionTypeRef.__init__)
     params = list(sig.parameters.keys())
     assert "instanceContext" in params, "Missing parameter 'instanceContext'"
 
-def test_model::xtype::xfunctiontyperef_has_instanceContext():
-    assert hasattr(model::xtype::XFunctionTypeRef, "instanceContext")
+def test_model_xtype_xfunctiontyperef_has_instanceContext():
+    assert hasattr(model_xtype_XFunctionTypeRef, "instanceContext")
     descriptor = None
-    for klass in model::xtype::XFunctionTypeRef.__mro__:
+    for klass in model_xtype_XFunctionTypeRef.__mro__:
         if "instanceContext" in klass.__dict__:
             descriptor = klass.__dict__["instanceContext"]
             break
@@ -2195,78 +989,16 @@ def test_model::xtype::xfunctiontyperef_has_instanceContext():
 
 
 
-def test_model::xannotation::xannotationelementvaluepair_is_not_abstract():
-    assert not inspect.isabstract(model::xannotation::XAnnotationElementValuePair)
+def test_model_xannotation_xannotationelementvaluepair_is_not_abstract():
+    assert not inspect.isabstract(model_xannotation_XAnnotationElementValuePair)
 
 
-def test_model::xannotation::xannotationelementvaluepair_constructor_exists():
-    assert callable(model::xannotation::XAnnotationElementValuePair.__init__)
+def test_model_xannotation_xannotationelementvaluepair_constructor_exists():
+    assert callable(model_xannotation_XAnnotationElementValuePair.__init__)
 
 
-def test_model::xannotation::xannotationelementvaluepair_constructor_args():
-    sig = inspect.signature(model::xannotation::XAnnotationElementValuePair.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::xtendtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendTypeDeclaration)
-
-
-def test_model::ss::xtendtypedeclaration_constructor_exists():
-    assert callable(model::ss::XtendTypeDeclaration.__init__)
-
-
-def test_model::ss::xtendtypedeclaration_constructor_args():
-    sig = inspect.signature(model::ss::XtendTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::ss::xtendtypedeclaration_has_name():
-    assert hasattr(model::ss::XtendTypeDeclaration, "name")
-    descriptor = None
-    for klass in model::ss::XtendTypeDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::xtendevent_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendEvent)
-
-
-def test_model::ss::xtendevent_constructor_exists():
-    assert callable(model::ss::XtendEvent.__init__)
-
-
-def test_model::ss::xtendevent_constructor_args():
-    sig = inspect.signature(model::ss::XtendEvent.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::ss::xtendevent_has_name():
-    assert hasattr(model::ss::XtendEvent, "name")
-    descriptor = None
-    for klass in model::ss::XtendEvent.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::ss::xtenddelegate_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendDelegate)
-
-
-def test_model::ss::xtenddelegate_constructor_exists():
-    assert callable(model::ss::XtendDelegate.__init__)
-
-
-def test_model::ss::xtenddelegate_constructor_args():
-    sig = inspect.signature(model::ss::XtendDelegate.__init__)
+def test_model_xannotation_xannotationelementvaluepair_constructor_args():
+    sig = inspect.signature(model_xannotation_XAnnotationElementValuePair.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2285,51 +1017,37 @@ def test_jvmannotationvalue_constructor_args():
 
 
 
-def test_model::types::jvmtypeannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmTypeAnnotationValue)
+def test_model_types_jvmtypeannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmTypeAnnotationValue)
 
 
-def test_model::types::jvmtypeannotationvalue_constructor_exists():
-    assert callable(model::types::JvmTypeAnnotationValue.__init__)
+def test_model_types_jvmtypeannotationvalue_constructor_exists():
+    assert callable(model_types_JvmTypeAnnotationValue.__init__)
 
 
-def test_model::types::jvmtypeannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmTypeAnnotationValue.__init__)
+def test_model_types_jvmtypeannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmTypeAnnotationValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmannotationannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmAnnotationAnnotationValue)
+def test_model_types_jvmshortannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmShortAnnotationValue)
 
 
-def test_model::types::jvmannotationannotationvalue_constructor_exists():
-    assert callable(model::types::JvmAnnotationAnnotationValue.__init__)
+def test_model_types_jvmshortannotationvalue_constructor_exists():
+    assert callable(model_types_JvmShortAnnotationValue.__init__)
 
 
-def test_model::types::jvmannotationannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmAnnotationAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::types::jvmstringannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmStringAnnotationValue)
-
-
-def test_model::types::jvmstringannotationvalue_constructor_exists():
-    assert callable(model::types::JvmStringAnnotationValue.__init__)
-
-
-def test_model::types::jvmstringannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmStringAnnotationValue.__init__)
+def test_model_types_jvmshortannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmShortAnnotationValue.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_model::types::jvmstringannotationvalue_has_values():
-    assert hasattr(model::types::JvmStringAnnotationValue, "values")
+def test_model_types_jvmshortannotationvalue_has_values():
+    assert hasattr(model_types_JvmShortAnnotationValue, "values")
     descriptor = None
-    for klass in model::types::JvmStringAnnotationValue.__mro__:
+    for klass in model_types_JvmShortAnnotationValue.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -2337,23 +1055,23 @@ def test_model::types::jvmstringannotationvalue_has_values():
 
 
 
-def test_model::types::jvmshortannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmShortAnnotationValue)
+def test_model_types_jvmstringannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmStringAnnotationValue)
 
 
-def test_model::types::jvmshortannotationvalue_constructor_exists():
-    assert callable(model::types::JvmShortAnnotationValue.__init__)
+def test_model_types_jvmstringannotationvalue_constructor_exists():
+    assert callable(model_types_JvmStringAnnotationValue.__init__)
 
 
-def test_model::types::jvmshortannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmShortAnnotationValue.__init__)
+def test_model_types_jvmstringannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmStringAnnotationValue.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_model::types::jvmshortannotationvalue_has_values():
-    assert hasattr(model::types::JvmShortAnnotationValue, "values")
+def test_model_types_jvmstringannotationvalue_has_values():
+    assert hasattr(model_types_JvmStringAnnotationValue, "values")
     descriptor = None
-    for klass in model::types::JvmShortAnnotationValue.__mro__:
+    for klass in model_types_JvmStringAnnotationValue.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -2361,23 +1079,51 @@ def test_model::types::jvmshortannotationvalue_has_values():
 
 
 
-def test_model::types::jvmdoubleannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmDoubleAnnotationValue)
+def test_model_types_jvmannotationannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmAnnotationAnnotationValue)
 
 
-def test_model::types::jvmdoubleannotationvalue_constructor_exists():
-    assert callable(model::types::JvmDoubleAnnotationValue.__init__)
+def test_model_types_jvmannotationannotationvalue_constructor_exists():
+    assert callable(model_types_JvmAnnotationAnnotationValue.__init__)
 
 
-def test_model::types::jvmdoubleannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmDoubleAnnotationValue.__init__)
+def test_model_types_jvmannotationannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmAnnotationAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_types_jvmenumannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmEnumAnnotationValue)
+
+
+def test_model_types_jvmenumannotationvalue_constructor_exists():
+    assert callable(model_types_JvmEnumAnnotationValue.__init__)
+
+
+def test_model_types_jvmenumannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmEnumAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_types_jvmbyteannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmByteAnnotationValue)
+
+
+def test_model_types_jvmbyteannotationvalue_constructor_exists():
+    assert callable(model_types_JvmByteAnnotationValue.__init__)
+
+
+def test_model_types_jvmbyteannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmByteAnnotationValue.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_model::types::jvmdoubleannotationvalue_has_values():
-    assert hasattr(model::types::JvmDoubleAnnotationValue, "values")
+def test_model_types_jvmbyteannotationvalue_has_values():
+    assert hasattr(model_types_JvmByteAnnotationValue, "values")
     descriptor = None
-    for klass in model::types::JvmDoubleAnnotationValue.__mro__:
+    for klass in model_types_JvmByteAnnotationValue.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -2385,37 +1131,23 @@ def test_model::types::jvmdoubleannotationvalue_has_values():
 
 
 
-def test_model::types::jvmenumannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmEnumAnnotationValue)
+def test_model_types_jvmbooleanannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmBooleanAnnotationValue)
 
 
-def test_model::types::jvmenumannotationvalue_constructor_exists():
-    assert callable(model::types::JvmEnumAnnotationValue.__init__)
+def test_model_types_jvmbooleanannotationvalue_constructor_exists():
+    assert callable(model_types_JvmBooleanAnnotationValue.__init__)
 
 
-def test_model::types::jvmenumannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmEnumAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::types::jvmlongannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmLongAnnotationValue)
-
-
-def test_model::types::jvmlongannotationvalue_constructor_exists():
-    assert callable(model::types::JvmLongAnnotationValue.__init__)
-
-
-def test_model::types::jvmlongannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmLongAnnotationValue.__init__)
+def test_model_types_jvmbooleanannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmBooleanAnnotationValue.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_model::types::jvmlongannotationvalue_has_values():
-    assert hasattr(model::types::JvmLongAnnotationValue, "values")
+def test_model_types_jvmbooleanannotationvalue_has_values():
+    assert hasattr(model_types_JvmBooleanAnnotationValue, "values")
     descriptor = None
-    for klass in model::types::JvmLongAnnotationValue.__mro__:
+    for klass in model_types_JvmBooleanAnnotationValue.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -2423,143 +1155,23 @@ def test_model::types::jvmlongannotationvalue_has_values():
 
 
 
-def test_model::types::jvmcustomannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmCustomAnnotationValue)
+def test_model_types_jvmintannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmIntAnnotationValue)
 
 
-def test_model::types::jvmcustomannotationvalue_constructor_exists():
-    assert callable(model::types::JvmCustomAnnotationValue.__init__)
+def test_model_types_jvmintannotationvalue_constructor_exists():
+    assert callable(model_types_JvmIntAnnotationValue.__init__)
 
 
-def test_model::types::jvmcustomannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmCustomAnnotationValue.__init__)
+def test_model_types_jvmintannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmIntAnnotationValue.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_model::types::jvmcustomannotationvalue_has_values():
-    assert hasattr(model::types::JvmCustomAnnotationValue, "values")
+def test_model_types_jvmintannotationvalue_has_values():
+    assert hasattr(model_types_JvmIntAnnotationValue, "values")
     descriptor = None
-    for klass in model::types::JvmCustomAnnotationValue.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::types::jvmcharannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmCharAnnotationValue)
-
-
-def test_model::types::jvmcharannotationvalue_constructor_exists():
-    assert callable(model::types::JvmCharAnnotationValue.__init__)
-
-
-def test_model::types::jvmcharannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmCharAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "values" in params, "Missing parameter 'values'"
-
-def test_model::types::jvmcharannotationvalue_has_values():
-    assert hasattr(model::types::JvmCharAnnotationValue, "values")
-    descriptor = None
-    for klass in model::types::JvmCharAnnotationValue.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::types::jvmfloatannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmFloatAnnotationValue)
-
-
-def test_model::types::jvmfloatannotationvalue_constructor_exists():
-    assert callable(model::types::JvmFloatAnnotationValue.__init__)
-
-
-def test_model::types::jvmfloatannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmFloatAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "values" in params, "Missing parameter 'values'"
-
-def test_model::types::jvmfloatannotationvalue_has_values():
-    assert hasattr(model::types::JvmFloatAnnotationValue, "values")
-    descriptor = None
-    for klass in model::types::JvmFloatAnnotationValue.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::types::jvmbyteannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmByteAnnotationValue)
-
-
-def test_model::types::jvmbyteannotationvalue_constructor_exists():
-    assert callable(model::types::JvmByteAnnotationValue.__init__)
-
-
-def test_model::types::jvmbyteannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmByteAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "values" in params, "Missing parameter 'values'"
-
-def test_model::types::jvmbyteannotationvalue_has_values():
-    assert hasattr(model::types::JvmByteAnnotationValue, "values")
-    descriptor = None
-    for klass in model::types::JvmByteAnnotationValue.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::types::jvmbooleanannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmBooleanAnnotationValue)
-
-
-def test_model::types::jvmbooleanannotationvalue_constructor_exists():
-    assert callable(model::types::JvmBooleanAnnotationValue.__init__)
-
-
-def test_model::types::jvmbooleanannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmBooleanAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "values" in params, "Missing parameter 'values'"
-
-def test_model::types::jvmbooleanannotationvalue_has_values():
-    assert hasattr(model::types::JvmBooleanAnnotationValue, "values")
-    descriptor = None
-    for klass in model::types::JvmBooleanAnnotationValue.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::types::jvmintannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmIntAnnotationValue)
-
-
-def test_model::types::jvmintannotationvalue_constructor_exists():
-    assert callable(model::types::JvmIntAnnotationValue.__init__)
-
-
-def test_model::types::jvmintannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmIntAnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "values" in params, "Missing parameter 'values'"
-
-def test_model::types::jvmintannotationvalue_has_values():
-    assert hasattr(model::types::JvmIntAnnotationValue, "values")
-    descriptor = None
-    for klass in model::types::JvmIntAnnotationValue.__mro__:
+    for klass in model_types_JvmIntAnnotationValue.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -2581,16 +1193,16 @@ def test_jvmoperation_constructor_args():
 
 
 
-def test_model::types::jvmannotationvalue_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmAnnotationValue)
+def test_model_types_jvmannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmAnnotationValue)
 
 
-def test_model::types::jvmannotationvalue_constructor_exists():
-    assert callable(model::types::JvmAnnotationValue.__init__)
+def test_model_types_jvmannotationvalue_constructor_exists():
+    assert callable(model_types_JvmAnnotationValue.__init__)
 
 
-def test_model::types::jvmannotationvalue_constructor_args():
-    sig = inspect.signature(model::types::JvmAnnotationValue.__init__)
+def test_model_types_jvmannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmAnnotationValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2609,16 +1221,16 @@ def test_jvmannotationtype_constructor_args():
 
 
 
-def test_model::types::jvmannotationreference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmAnnotationReference)
+def test_model_types_jvmannotationreference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmAnnotationReference)
 
 
-def test_model::types::jvmannotationreference_constructor_exists():
-    assert callable(model::types::JvmAnnotationReference.__init__)
+def test_model_types_jvmannotationreference_constructor_exists():
+    assert callable(model_types_JvmAnnotationReference.__init__)
 
 
-def test_model::types::jvmannotationreference_constructor_args():
-    sig = inspect.signature(model::types::JvmAnnotationReference.__init__)
+def test_model_types_jvmannotationreference_constructor_args():
+    sig = inspect.signature(model_types_JvmAnnotationReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2651,87 +1263,87 @@ def test_jvmannotationtarget_constructor_args():
 
 
 
-def test_model::types::jvmformalparameter_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmFormalParameter)
+def test_model_types_jvmformalparameter_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmFormalParameter)
 
 
-def test_model::types::jvmformalparameter_constructor_exists():
-    assert callable(model::types::JvmFormalParameter.__init__)
+def test_model_types_jvmformalparameter_constructor_exists():
+    assert callable(model_types_JvmFormalParameter.__init__)
 
 
-def test_model::types::jvmformalparameter_constructor_args():
-    sig = inspect.signature(model::types::JvmFormalParameter.__init__)
+def test_model_types_jvmformalparameter_constructor_args():
+    sig = inspect.signature(model_types_JvmFormalParameter.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "varArg" in params, "Missing parameter 'varArg'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_model::types::jvmformalparameter_has_name():
-    assert hasattr(model::types::JvmFormalParameter, "name")
+def test_model_types_jvmformalparameter_has_varArg():
+    assert hasattr(model_types_JvmFormalParameter, "varArg")
     descriptor = None
-    for klass in model::types::JvmFormalParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmformalparameter_has_varArg():
-    assert hasattr(model::types::JvmFormalParameter, "varArg")
-    descriptor = None
-    for klass in model::types::JvmFormalParameter.__mro__:
+    for klass in model_types_JvmFormalParameter.__mro__:
         if "varArg" in klass.__dict__:
             descriptor = klass.__dict__["varArg"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_types_jvmformalparameter_has_name():
+    assert hasattr(model_types_JvmFormalParameter, "name")
+    descriptor = None
+    for klass in model_types_JvmFormalParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::types::jvmmember_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmMember)
+
+def test_model_types_jvmmember_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmMember)
 
 
-def test_model::types::jvmmember_constructor_exists():
-    assert callable(model::types::JvmMember.__init__)
+def test_model_types_jvmmember_constructor_exists():
+    assert callable(model_types_JvmMember.__init__)
 
 
-def test_model::types::jvmmember_constructor_args():
-    sig = inspect.signature(model::types::JvmMember.__init__)
+def test_model_types_jvmmember_constructor_args():
+    sig = inspect.signature(model_types_JvmMember.__init__)
     params = list(sig.parameters.keys())
+    assert "modifiers" in params, "Missing parameter 'modifiers'"
     assert "identifier" in params, "Missing parameter 'identifier'"
     assert "simpleName" in params, "Missing parameter 'simpleName'"
-    assert "modifiers" in params, "Missing parameter 'modifiers'"
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_model::types::jvmmember_has_identifier():
-    assert hasattr(model::types::JvmMember, "identifier")
+def test_model_types_jvmmember_has_modifiers():
+    assert hasattr(model_types_JvmMember, "modifiers")
     descriptor = None
-    for klass in model::types::JvmMember.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmmember_has_simpleName():
-    assert hasattr(model::types::JvmMember, "simpleName")
-    descriptor = None
-    for klass in model::types::JvmMember.__mro__:
-        if "simpleName" in klass.__dict__:
-            descriptor = klass.__dict__["simpleName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmmember_has_modifiers():
-    assert hasattr(model::types::JvmMember, "modifiers")
-    descriptor = None
-    for klass in model::types::JvmMember.__mro__:
+    for klass in model_types_JvmMember.__mro__:
         if "modifiers" in klass.__dict__:
             descriptor = klass.__dict__["modifiers"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::types::jvmmember_has_visibility():
-    assert hasattr(model::types::JvmMember, "visibility")
+def test_model_types_jvmmember_has_identifier():
+    assert hasattr(model_types_JvmMember, "identifier")
     descriptor = None
-    for klass in model::types::JvmMember.__mro__:
+    for klass in model_types_JvmMember.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmmember_has_simpleName():
+    assert hasattr(model_types_JvmMember, "simpleName")
+    descriptor = None
+    for klass in model_types_JvmMember.__mro__:
+        if "simpleName" in klass.__dict__:
+            descriptor = klass.__dict__["simpleName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmmember_has_visibility():
+    assert hasattr(model_types_JvmMember, "visibility")
+    descriptor = None
+    for klass in model_types_JvmMember.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -2753,30 +1365,30 @@ def test_jvmcompoundtypereference_constructor_args():
 
 
 
-def test_model::types::jvmsynonymtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmSynonymTypeReference)
+def test_model_types_jvmsynonymtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmSynonymTypeReference)
 
 
-def test_model::types::jvmsynonymtypereference_constructor_exists():
-    assert callable(model::types::JvmSynonymTypeReference.__init__)
+def test_model_types_jvmsynonymtypereference_constructor_exists():
+    assert callable(model_types_JvmSynonymTypeReference.__init__)
 
 
-def test_model::types::jvmsynonymtypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmSynonymTypeReference.__init__)
+def test_model_types_jvmsynonymtypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmSynonymTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmmultitypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmMultiTypeReference)
+def test_model_types_jvmmultitypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmMultiTypeReference)
 
 
-def test_model::types::jvmmultitypereference_constructor_exists():
-    assert callable(model::types::JvmMultiTypeReference.__init__)
+def test_model_types_jvmmultitypereference_constructor_exists():
+    assert callable(model_types_JvmMultiTypeReference.__init__)
 
 
-def test_model::types::jvmmultitypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmMultiTypeReference.__init__)
+def test_model_types_jvmmultitypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmMultiTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2795,100 +1407,100 @@ def test_jvmexecutable_constructor_args():
 
 
 
-def test_model::types::jvmoperation_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmOperation)
+def test_model_types_jvmoperation_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmOperation)
 
 
-def test_model::types::jvmoperation_constructor_exists():
-    assert callable(model::types::JvmOperation.__init__)
+def test_model_types_jvmoperation_constructor_exists():
+    assert callable(model_types_JvmOperation.__init__)
 
 
-def test_model::types::jvmoperation_constructor_args():
-    sig = inspect.signature(model::types::JvmOperation.__init__)
+def test_model_types_jvmoperation_constructor_args():
+    sig = inspect.signature(model_types_JvmOperation.__init__)
     params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "native" in params, "Missing parameter 'native'"
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "final" in params, "Missing parameter 'final'"
     assert "strictFloatingPoint" in params, "Missing parameter 'strictFloatingPoint'"
+    assert "final" in params, "Missing parameter 'final'"
+    assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
+    assert "static" in params, "Missing parameter 'static'"
     assert "default" in params, "Missing parameter 'default'"
+    assert "native" in params, "Missing parameter 'native'"
 
-def test_model::types::jvmoperation_has_static():
-    assert hasattr(model::types::JvmOperation, "static")
+def test_model_types_jvmoperation_has_strictFloatingPoint():
+    assert hasattr(model_types_JvmOperation, "strictFloatingPoint")
     descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmoperation_has_abstract():
-    assert hasattr(model::types::JvmOperation, "abstract")
-    descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmoperation_has_native():
-    assert hasattr(model::types::JvmOperation, "native")
-    descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
-        if "native" in klass.__dict__:
-            descriptor = klass.__dict__["native"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmoperation_has_synchronized():
-    assert hasattr(model::types::JvmOperation, "synchronized")
-    descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmoperation_has_final():
-    assert hasattr(model::types::JvmOperation, "final")
-    descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmoperation_has_strictFloatingPoint():
-    assert hasattr(model::types::JvmOperation, "strictFloatingPoint")
-    descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
+    for klass in model_types_JvmOperation.__mro__:
         if "strictFloatingPoint" in klass.__dict__:
             descriptor = klass.__dict__["strictFloatingPoint"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::types::jvmoperation_has_default():
-    assert hasattr(model::types::JvmOperation, "default")
+def test_model_types_jvmoperation_has_final():
+    assert hasattr(model_types_JvmOperation, "final")
     descriptor = None
-    for klass in model::types::JvmOperation.__mro__:
+    for klass in model_types_JvmOperation.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmoperation_has_abstract():
+    assert hasattr(model_types_JvmOperation, "abstract")
+    descriptor = None
+    for klass in model_types_JvmOperation.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmoperation_has_synchronized():
+    assert hasattr(model_types_JvmOperation, "synchronized")
+    descriptor = None
+    for klass in model_types_JvmOperation.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmoperation_has_static():
+    assert hasattr(model_types_JvmOperation, "static")
+    descriptor = None
+    for klass in model_types_JvmOperation.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmoperation_has_default():
+    assert hasattr(model_types_JvmOperation, "default")
+    descriptor = None
+    for klass in model_types_JvmOperation.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_types_jvmoperation_has_native():
+    assert hasattr(model_types_JvmOperation, "native")
+    descriptor = None
+    for klass in model_types_JvmOperation.__mro__:
+        if "native" in klass.__dict__:
+            descriptor = klass.__dict__["native"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::types::jvmconstructor_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmConstructor)
+
+def test_model_types_jvmconstructor_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmConstructor)
 
 
-def test_model::types::jvmconstructor_constructor_exists():
-    assert callable(model::types::JvmConstructor.__init__)
+def test_model_types_jvmconstructor_constructor_exists():
+    assert callable(model_types_JvmConstructor.__init__)
 
 
-def test_model::types::jvmconstructor_constructor_args():
-    sig = inspect.signature(model::types::JvmConstructor.__init__)
+def test_model_types_jvmconstructor_constructor_args():
+    sig = inspect.signature(model_types_JvmConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2907,40 +1519,16 @@ def test_jvmformalparameter_constructor_args():
 
 
 
-def test_model::ss::xtendformalparameter_is_not_abstract():
-    assert not inspect.isabstract(model::ss::XtendFormalParameter)
+def test_types_jvmfeature_is_not_abstract():
+    assert not inspect.isabstract(types_JvmFeature)
 
 
-def test_model::ss::xtendformalparameter_constructor_exists():
-    assert callable(model::ss::XtendFormalParameter.__init__)
+def test_types_jvmfeature_constructor_exists():
+    assert callable(types_JvmFeature.__init__)
 
 
-def test_model::ss::xtendformalparameter_constructor_args():
-    sig = inspect.signature(model::ss::XtendFormalParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "extension" in params, "Missing parameter 'extension'"
-
-def test_model::ss::xtendformalparameter_has_extension():
-    assert hasattr(model::ss::XtendFormalParameter, "extension")
-    descriptor = None
-    for klass in model::ss::XtendFormalParameter.__mro__:
-        if "extension" in klass.__dict__:
-            descriptor = klass.__dict__["extension"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_types::jvmfeature_is_not_abstract():
-    assert not inspect.isabstract(types::JvmFeature)
-
-
-def test_types::jvmfeature_constructor_exists():
-    assert callable(types::JvmFeature.__init__)
-
-
-def test_types::jvmfeature_constructor_args():
-    sig = inspect.signature(types::JvmFeature.__init__)
+def test_types_jvmfeature_constructor_args():
+    sig = inspect.signature(types_JvmFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2959,514 +1547,16 @@ def test_xexpression_constructor_args():
 
 
 
-def test_model::xannotation::xannotation_is_not_abstract():
-    assert not inspect.isabstract(model::xannotation::XAnnotation)
+def test_model_xannotation_xannotation_is_not_abstract():
+    assert not inspect.isabstract(model_xannotation_XAnnotation)
 
 
-def test_model::xannotation::xannotation_constructor_exists():
-    assert callable(model::xannotation::XAnnotation.__init__)
+def test_model_xannotation_xannotation_constructor_exists():
+    assert callable(model_xannotation_XAnnotation.__init__)
 
 
-def test_model::xannotation::xannotation_constructor_args():
-    sig = inspect.signature(model::xannotation::XAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xbreakexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XBreakExpression)
-
-
-def test_model::xbase::xbreakexpression_constructor_exists():
-    assert callable(model::xbase::XBreakExpression.__init__)
-
-
-def test_model::xbase::xbreakexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XBreakExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xstringliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XStringLiteral)
-
-
-def test_model::xbase::xstringliteral_constructor_exists():
-    assert callable(model::xbase::XStringLiteral.__init__)
-
-
-def test_model::xbase::xstringliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XStringLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_model::xbase::xstringliteral_has_value():
-    assert hasattr(model::xbase::XStringLiteral, "value")
-    descriptor = None
-    for klass in model::xbase::XStringLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xinstanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XInstanceOfExpression)
-
-
-def test_model::xbase::xinstanceofexpression_constructor_exists():
-    assert callable(model::xbase::XInstanceOfExpression.__init__)
-
-
-def test_model::xbase::xinstanceofexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XInstanceOfExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::ss::richstringif_is_not_abstract():
-    assert not inspect.isabstract(model::ss::RichStringIf)
-
-
-def test_model::ss::richstringif_constructor_exists():
-    assert callable(model::ss::RichStringIf.__init__)
-
-
-def test_model::ss::richstringif_constructor_args():
-    sig = inspect.signature(model::ss::RichStringIf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xabstractwhileexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XAbstractWhileExpression)
-
-
-def test_model::xbase::xabstractwhileexpression_constructor_exists():
-    assert callable(model::xbase::XAbstractWhileExpression.__init__)
-
-
-def test_model::xbase::xabstractwhileexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XAbstractWhileExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xblockexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XBlockExpression)
-
-
-def test_model::xbase::xblockexpression_constructor_exists():
-    assert callable(model::xbase::XBlockExpression.__init__)
-
-
-def test_model::xbase::xblockexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XBlockExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xobjectliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XObjectLiteral)
-
-
-def test_model::xbase::xobjectliteral_constructor_exists():
-    assert callable(model::xbase::XObjectLiteral.__init__)
-
-
-def test_model::xbase::xobjectliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XObjectLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xvariabledeclarationlist_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XVariableDeclarationList)
-
-
-def test_model::xbase::xvariabledeclarationlist_constructor_exists():
-    assert callable(model::xbase::XVariableDeclarationList.__init__)
-
-
-def test_model::xbase::xvariabledeclarationlist_constructor_args():
-    sig = inspect.signature(model::xbase::XVariableDeclarationList.__init__)
-    params = list(sig.parameters.keys())
-    assert "writeable" in params, "Missing parameter 'writeable'"
-    assert "exported" in params, "Missing parameter 'exported'"
-
-def test_model::xbase::xvariabledeclarationlist_has_writeable():
-    assert hasattr(model::xbase::XVariableDeclarationList, "writeable")
-    descriptor = None
-    for klass in model::xbase::XVariableDeclarationList.__mro__:
-        if "writeable" in klass.__dict__:
-            descriptor = klass.__dict__["writeable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xvariabledeclarationlist_has_exported():
-    assert hasattr(model::xbase::XVariableDeclarationList, "exported")
-    descriptor = None
-    for klass in model::xbase::XVariableDeclarationList.__mro__:
-        if "exported" in klass.__dict__:
-            descriptor = klass.__dict__["exported"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xfunctiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XFunctionDeclaration)
-
-
-def test_model::xbase::xfunctiondeclaration_constructor_exists():
-    assert callable(model::xbase::XFunctionDeclaration.__init__)
-
-
-def test_model::xbase::xfunctiondeclaration_constructor_args():
-    sig = inspect.signature(model::xbase::XFunctionDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::xbase::xfunctiondeclaration_has_name():
-    assert hasattr(model::xbase::XFunctionDeclaration, "name")
-    descriptor = None
-    for klass in model::xbase::XFunctionDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xarrayliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XArrayLiteral)
-
-
-def test_model::xbase::xarrayliteral_constructor_exists():
-    assert callable(model::xbase::XArrayLiteral.__init__)
-
-
-def test_model::xbase::xarrayliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XArrayLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xnullliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XNullLiteral)
-
-
-def test_model::xbase::xnullliteral_constructor_exists():
-    assert callable(model::xbase::XNullLiteral.__init__)
-
-
-def test_model::xbase::xnullliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XNullLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xforeachexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XForEachExpression)
-
-
-def test_model::xbase::xforeachexpression_constructor_exists():
-    assert callable(model::xbase::XForEachExpression.__init__)
-
-
-def test_model::xbase::xforeachexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XForEachExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xtrycatchfinallyexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XTryCatchFinallyExpression)
-
-
-def test_model::xbase::xtrycatchfinallyexpression_constructor_exists():
-    assert callable(model::xbase::XTryCatchFinallyExpression.__init__)
-
-
-def test_model::xbase::xtrycatchfinallyexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XTryCatchFinallyExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xcastedexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XCastedExpression)
-
-
-def test_model::xbase::xcastedexpression_constructor_exists():
-    assert callable(model::xbase::XCastedExpression.__init__)
-
-
-def test_model::xbase::xcastedexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XCastedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xtypeliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XTypeLiteral)
-
-
-def test_model::xbase::xtypeliteral_constructor_exists():
-    assert callable(model::xbase::XTypeLiteral.__init__)
-
-
-def test_model::xbase::xtypeliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XTypeLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "arrayDimensions" in params, "Missing parameter 'arrayDimensions'"
-
-def test_model::xbase::xtypeliteral_has_arrayDimensions():
-    assert hasattr(model::xbase::XTypeLiteral, "arrayDimensions")
-    descriptor = None
-    for klass in model::xbase::XTypeLiteral.__mro__:
-        if "arrayDimensions" in klass.__dict__:
-            descriptor = klass.__dict__["arrayDimensions"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xthrowexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XThrowExpression)
-
-
-def test_model::xbase::xthrowexpression_constructor_exists():
-    assert callable(model::xbase::XThrowExpression.__init__)
-
-
-def test_model::xbase::xthrowexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XThrowExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xkeyvaluepair_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XKeyValuePair)
-
-
-def test_model::xbase::xkeyvaluepair_constructor_exists():
-    assert callable(model::xbase::XKeyValuePair.__init__)
-
-
-def test_model::xbase::xkeyvaluepair_constructor_args():
-    sig = inspect.signature(model::xbase::XKeyValuePair.__init__)
-    params = list(sig.parameters.keys())
-    assert "key1" in params, "Missing parameter 'key1'"
-
-def test_model::xbase::xkeyvaluepair_has_key1():
-    assert hasattr(model::xbase::XKeyValuePair, "key1")
-    descriptor = None
-    for klass in model::xbase::XKeyValuePair.__mro__:
-        if "key1" in klass.__dict__:
-            descriptor = klass.__dict__["key1"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xcollectionliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XCollectionLiteral)
-
-
-def test_model::xbase::xcollectionliteral_constructor_exists():
-    assert callable(model::xbase::XCollectionLiteral.__init__)
-
-
-def test_model::xbase::xcollectionliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XCollectionLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xnumberliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XNumberLiteral)
-
-
-def test_model::xbase::xnumberliteral_constructor_exists():
-    assert callable(model::xbase::XNumberLiteral.__init__)
-
-
-def test_model::xbase::xnumberliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XNumberLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_model::xbase::xnumberliteral_has_value():
-    assert hasattr(model::xbase::XNumberLiteral, "value")
-    descriptor = None
-    for klass in model::xbase::XNumberLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xcontinueexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XContinueExpression)
-
-
-def test_model::xbase::xcontinueexpression_constructor_exists():
-    assert callable(model::xbase::XContinueExpression.__init__)
-
-
-def test_model::xbase::xcontinueexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XContinueExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xabstractfeaturecall_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XAbstractFeatureCall)
-
-
-def test_model::xbase::xabstractfeaturecall_constructor_exists():
-    assert callable(model::xbase::XAbstractFeatureCall.__init__)
-
-
-def test_model::xbase::xabstractfeaturecall_constructor_args():
-    sig = inspect.signature(model::xbase::XAbstractFeatureCall.__init__)
-    params = list(sig.parameters.keys())
-    assert "validFeature" in params, "Missing parameter 'validFeature'"
-    assert "invalidFeatureIssueCode" in params, "Missing parameter 'invalidFeatureIssueCode'"
-
-def test_model::xbase::xabstractfeaturecall_has_validFeature():
-    assert hasattr(model::xbase::XAbstractFeatureCall, "validFeature")
-    descriptor = None
-    for klass in model::xbase::XAbstractFeatureCall.__mro__:
-        if "validFeature" in klass.__dict__:
-            descriptor = klass.__dict__["validFeature"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xabstractfeaturecall_has_invalidFeatureIssueCode():
-    assert hasattr(model::xbase::XAbstractFeatureCall, "invalidFeatureIssueCode")
-    descriptor = None
-    for klass in model::xbase::XAbstractFeatureCall.__mro__:
-        if "invalidFeatureIssueCode" in klass.__dict__:
-            descriptor = klass.__dict__["invalidFeatureIssueCode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xforloopexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XForLoopExpression)
-
-
-def test_model::xbase::xforloopexpression_constructor_exists():
-    assert callable(model::xbase::XForLoopExpression.__init__)
-
-
-def test_model::xbase::xforloopexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XForLoopExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xbooleanliteral_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XBooleanLiteral)
-
-
-def test_model::xbase::xbooleanliteral_constructor_exists():
-    assert callable(model::xbase::XBooleanLiteral.__init__)
-
-
-def test_model::xbase::xbooleanliteral_constructor_args():
-    sig = inspect.signature(model::xbase::XBooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "isTrue" in params, "Missing parameter 'isTrue'"
-
-def test_model::xbase::xbooleanliteral_has_isTrue():
-    assert hasattr(model::xbase::XBooleanLiteral, "isTrue")
-    descriptor = None
-    for klass in model::xbase::XBooleanLiteral.__mro__:
-        if "isTrue" in klass.__dict__:
-            descriptor = klass.__dict__["isTrue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xternaryoperation_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XTernaryOperation)
-
-
-def test_model::xbase::xternaryoperation_constructor_exists():
-    assert callable(model::xbase::XTernaryOperation.__init__)
-
-
-def test_model::xbase::xternaryoperation_constructor_args():
-    sig = inspect.signature(model::xbase::XTernaryOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xreturnexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XReturnExpression)
-
-
-def test_model::xbase::xreturnexpression_constructor_exists():
-    assert callable(model::xbase::XReturnExpression.__init__)
-
-
-def test_model::xbase::xreturnexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XReturnExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::xbase::xconstructorcall_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XConstructorCall)
-
-
-def test_model::xbase::xconstructorcall_constructor_exists():
-    assert callable(model::xbase::XConstructorCall.__init__)
-
-
-def test_model::xbase::xconstructorcall_constructor_args():
-    sig = inspect.signature(model::xbase::XConstructorCall.__init__)
-    params = list(sig.parameters.keys())
-    assert "validFeature" in params, "Missing parameter 'validFeature'"
-    assert "invalidFeatureIssueCode" in params, "Missing parameter 'invalidFeatureIssueCode'"
-
-def test_model::xbase::xconstructorcall_has_validFeature():
-    assert hasattr(model::xbase::XConstructorCall, "validFeature")
-    descriptor = None
-    for klass in model::xbase::XConstructorCall.__mro__:
-        if "validFeature" in klass.__dict__:
-            descriptor = klass.__dict__["validFeature"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::xbase::xconstructorcall_has_invalidFeatureIssueCode():
-    assert hasattr(model::xbase::XConstructorCall, "invalidFeatureIssueCode")
-    descriptor = None
-    for klass in model::xbase::XConstructorCall.__mro__:
-        if "invalidFeatureIssueCode" in klass.__dict__:
-            descriptor = klass.__dict__["invalidFeatureIssueCode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::xbase::xifexpression_is_not_abstract():
-    assert not inspect.isabstract(model::xbase::XIfExpression)
-
-
-def test_model::xbase::xifexpression_constructor_exists():
-    assert callable(model::xbase::XIfExpression.__init__)
-
-
-def test_model::xbase::xifexpression_constructor_args():
-    sig = inspect.signature(model::xbase::XIfExpression.__init__)
+def test_model_xannotation_xannotation_constructor_args():
+    sig = inspect.signature(model_xannotation_XAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3485,84 +1575,84 @@ def test_jvmfeature_constructor_args():
 
 
 
-def test_model::types::jvmfield_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmField)
+def test_model_types_jvmfield_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmField)
 
 
-def test_model::types::jvmfield_constructor_exists():
-    assert callable(model::types::JvmField.__init__)
+def test_model_types_jvmfield_constructor_exists():
+    assert callable(model_types_JvmField.__init__)
 
 
-def test_model::types::jvmfield_constructor_args():
-    sig = inspect.signature(model::types::JvmField.__init__)
+def test_model_types_jvmfield_constructor_args():
+    sig = inspect.signature(model_types_JvmField.__init__)
     params = list(sig.parameters.keys())
-    assert "transient" in params, "Missing parameter 'transient'"
+    assert "static" in params, "Missing parameter 'static'"
     assert "volatile" in params, "Missing parameter 'volatile'"
     assert "final" in params, "Missing parameter 'final'"
-    assert "static" in params, "Missing parameter 'static'"
+    assert "transient" in params, "Missing parameter 'transient'"
 
-def test_model::types::jvmfield_has_transient():
-    assert hasattr(model::types::JvmField, "transient")
+def test_model_types_jvmfield_has_static():
+    assert hasattr(model_types_JvmField, "static")
     descriptor = None
-    for klass in model::types::JvmField.__mro__:
-        if "transient" in klass.__dict__:
-            descriptor = klass.__dict__["transient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmfield_has_volatile():
-    assert hasattr(model::types::JvmField, "volatile")
-    descriptor = None
-    for klass in model::types::JvmField.__mro__:
-        if "volatile" in klass.__dict__:
-            descriptor = klass.__dict__["volatile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmfield_has_final():
-    assert hasattr(model::types::JvmField, "final")
-    descriptor = None
-    for klass in model::types::JvmField.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmfield_has_static():
-    assert hasattr(model::types::JvmField, "static")
-    descriptor = None
-    for klass in model::types::JvmField.__mro__:
+    for klass in model_types_JvmField.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_types_jvmfield_has_volatile():
+    assert hasattr(model_types_JvmField, "volatile")
+    descriptor = None
+    for klass in model_types_JvmField.__mro__:
+        if "volatile" in klass.__dict__:
+            descriptor = klass.__dict__["volatile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmfield_has_final():
+    assert hasattr(model_types_JvmField, "final")
+    descriptor = None
+    for klass in model_types_JvmField.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmfield_has_transient():
+    assert hasattr(model_types_JvmField, "transient")
+    descriptor = None
+    for klass in model_types_JvmField.__mro__:
+        if "transient" in klass.__dict__:
+            descriptor = klass.__dict__["transient"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::types::jvmtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmTypeReference)
+
+def test_model_types_jvmtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmTypeReference)
 
 
-def test_model::types::jvmtypereference_constructor_exists():
-    assert callable(model::types::JvmTypeReference.__init__)
+def test_model_types_jvmtypereference_constructor_exists():
+    assert callable(model_types_JvmTypeReference.__init__)
 
 
-def test_model::types::jvmtypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmTypeReference.__init__)
+def test_model_types_jvmtypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::jvmtypereference_is_not_abstract():
-    assert not inspect.isabstract(types::JvmTypeReference)
+def test_types_jvmtypereference_is_not_abstract():
+    assert not inspect.isabstract(types_JvmTypeReference)
 
 
-def test_types::jvmtypereference_constructor_exists():
-    assert callable(types::JvmTypeReference.__init__)
+def test_types_jvmtypereference_constructor_exists():
+    assert callable(types_JvmTypeReference.__init__)
 
 
-def test_types::jvmtypereference_constructor_args():
-    sig = inspect.signature(types::JvmTypeReference.__init__)
+def test_types_jvmtypereference_constructor_args():
+    sig = inspect.signature(types_JvmTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3581,16 +1671,16 @@ def test_jvmconstraintowner_constructor_args():
 
 
 
-def test_model::types::jvmtypeconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmTypeConstraint)
+def test_model_types_jvmtypeconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmTypeConstraint)
 
 
-def test_model::types::jvmtypeconstraint_constructor_exists():
-    assert callable(model::types::JvmTypeConstraint.__init__)
+def test_model_types_jvmtypeconstraint_constructor_exists():
+    assert callable(model_types_JvmTypeConstraint.__init__)
 
 
-def test_model::types::jvmtypeconstraint_constructor_args():
-    sig = inspect.signature(model::types::JvmTypeConstraint.__init__)
+def test_model_types_jvmtypeconstraint_constructor_args():
+    sig = inspect.signature(model_types_JvmTypeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3609,16 +1699,16 @@ def test_jvmtypeconstraint_constructor_args():
 
 
 
-def test_model::types::jvmconstraintowner_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmConstraintOwner)
+def test_model_types_jvmconstraintowner_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmConstraintOwner)
 
 
-def test_model::types::jvmconstraintowner_constructor_exists():
-    assert callable(model::types::JvmConstraintOwner.__init__)
+def test_model_types_jvmconstraintowner_constructor_exists():
+    assert callable(model_types_JvmConstraintOwner.__init__)
 
 
-def test_model::types::jvmconstraintowner_constructor_args():
-    sig = inspect.signature(model::types::JvmConstraintOwner.__init__)
+def test_model_types_jvmconstraintowner_constructor_args():
+    sig = inspect.signature(model_types_JvmConstraintOwner.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3651,37 +1741,37 @@ def test_jvmtypeparameter_constructor_args():
 
 
 
-def test_types::jvmtypeparameterdeclarator_is_not_abstract():
-    assert not inspect.isabstract(types::JvmTypeParameterDeclarator)
+def test_types_jvmtypeparameterdeclarator_is_not_abstract():
+    assert not inspect.isabstract(types_JvmTypeParameterDeclarator)
 
 
-def test_types::jvmtypeparameterdeclarator_constructor_exists():
-    assert callable(types::JvmTypeParameterDeclarator.__init__)
+def test_types_jvmtypeparameterdeclarator_constructor_exists():
+    assert callable(types_JvmTypeParameterDeclarator.__init__)
 
 
-def test_types::jvmtypeparameterdeclarator_constructor_args():
-    sig = inspect.signature(types::JvmTypeParameterDeclarator.__init__)
+def test_types_jvmtypeparameterdeclarator_constructor_args():
+    sig = inspect.signature(types_JvmTypeParameterDeclarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmexecutable_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmExecutable)
+def test_model_types_jvmexecutable_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmExecutable)
 
 
-def test_model::types::jvmexecutable_constructor_exists():
-    assert callable(model::types::JvmExecutable.__init__)
+def test_model_types_jvmexecutable_constructor_exists():
+    assert callable(model_types_JvmExecutable.__init__)
 
 
-def test_model::types::jvmexecutable_constructor_args():
-    sig = inspect.signature(model::types::JvmExecutable.__init__)
+def test_model_types_jvmexecutable_constructor_args():
+    sig = inspect.signature(model_types_JvmExecutable.__init__)
     params = list(sig.parameters.keys())
     assert "varArgs" in params, "Missing parameter 'varArgs'"
 
-def test_model::types::jvmexecutable_has_varArgs():
-    assert hasattr(model::types::JvmExecutable, "varArgs")
+def test_model_types_jvmexecutable_has_varArgs():
+    assert hasattr(model_types_JvmExecutable, "varArgs")
     descriptor = None
-    for klass in model::types::JvmExecutable.__mro__:
+    for klass in model_types_JvmExecutable.__mro__:
         if "varArgs" in klass.__dict__:
             descriptor = klass.__dict__["varArgs"]
             break
@@ -3689,47 +1779,47 @@ def test_model::types::jvmexecutable_has_varArgs():
 
 
 
-def test_types::jvmdeclaredtype_is_not_abstract():
-    assert not inspect.isabstract(types::JvmDeclaredType)
+def test_types_jvmdeclaredtype_is_not_abstract():
+    assert not inspect.isabstract(types_JvmDeclaredType)
 
 
-def test_types::jvmdeclaredtype_constructor_exists():
-    assert callable(types::JvmDeclaredType.__init__)
+def test_types_jvmdeclaredtype_constructor_exists():
+    assert callable(types_JvmDeclaredType.__init__)
 
 
-def test_types::jvmdeclaredtype_constructor_args():
-    sig = inspect.signature(types::JvmDeclaredType.__init__)
+def test_types_jvmdeclaredtype_constructor_args():
+    sig = inspect.signature(types_JvmDeclaredType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmgenerictype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmGenericType)
+def test_model_types_jvmgenerictype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmGenericType)
 
 
-def test_model::types::jvmgenerictype_constructor_exists():
-    assert callable(model::types::JvmGenericType.__init__)
+def test_model_types_jvmgenerictype_constructor_exists():
+    assert callable(model_types_JvmGenericType.__init__)
 
 
-def test_model::types::jvmgenerictype_constructor_args():
-    sig = inspect.signature(model::types::JvmGenericType.__init__)
+def test_model_types_jvmgenerictype_constructor_args():
+    sig = inspect.signature(model_types_JvmGenericType.__init__)
     params = list(sig.parameters.keys())
     assert "interface" in params, "Missing parameter 'interface'"
     assert "strictFloatingPoint" in params, "Missing parameter 'strictFloatingPoint'"
 
-def test_model::types::jvmgenerictype_has_interface():
-    assert hasattr(model::types::JvmGenericType, "interface")
+def test_model_types_jvmgenerictype_has_interface():
+    assert hasattr(model_types_JvmGenericType, "interface")
     descriptor = None
-    for klass in model::types::JvmGenericType.__mro__:
+    for klass in model_types_JvmGenericType.__mro__:
         if "interface" in klass.__dict__:
             descriptor = klass.__dict__["interface"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::types::jvmgenerictype_has_strictFloatingPoint():
-    assert hasattr(model::types::JvmGenericType, "strictFloatingPoint")
+def test_model_types_jvmgenerictype_has_strictFloatingPoint():
+    assert hasattr(model_types_JvmGenericType, "strictFloatingPoint")
     descriptor = None
-    for klass in model::types::JvmGenericType.__mro__:
+    for klass in model_types_JvmGenericType.__mro__:
         if "strictFloatingPoint" in klass.__dict__:
             descriptor = klass.__dict__["strictFloatingPoint"]
             break
@@ -3751,16 +1841,16 @@ def test_jvmfield_constructor_args():
 
 
 
-def test_model::types::jvmenumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmEnumerationLiteral)
+def test_model_types_jvmenumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmEnumerationLiteral)
 
 
-def test_model::types::jvmenumerationliteral_constructor_exists():
-    assert callable(model::types::JvmEnumerationLiteral.__init__)
+def test_model_types_jvmenumerationliteral_constructor_exists():
+    assert callable(model_types_JvmEnumerationLiteral.__init__)
 
 
-def test_model::types::jvmenumerationliteral_constructor_args():
-    sig = inspect.signature(model::types::JvmEnumerationLiteral.__init__)
+def test_model_types_jvmenumerationliteral_constructor_args():
+    sig = inspect.signature(model_types_JvmEnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3793,72 +1883,72 @@ def test_jvmdeclaredtype_constructor_args():
 
 
 
-def test_model::types::jvmenumerationtype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmEnumerationType)
+def test_model_types_jvmenumerationtype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmEnumerationType)
 
 
-def test_model::types::jvmenumerationtype_constructor_exists():
-    assert callable(model::types::JvmEnumerationType.__init__)
+def test_model_types_jvmenumerationtype_constructor_exists():
+    assert callable(model_types_JvmEnumerationType.__init__)
 
 
-def test_model::types::jvmenumerationtype_constructor_args():
-    sig = inspect.signature(model::types::JvmEnumerationType.__init__)
+def test_model_types_jvmenumerationtype_constructor_args():
+    sig = inspect.signature(model_types_JvmEnumerationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmannotationtype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmAnnotationType)
+def test_model_types_jvmannotationtype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmAnnotationType)
 
 
-def test_model::types::jvmannotationtype_constructor_exists():
-    assert callable(model::types::JvmAnnotationType.__init__)
+def test_model_types_jvmannotationtype_constructor_exists():
+    assert callable(model_types_JvmAnnotationType.__init__)
 
 
-def test_model::types::jvmannotationtype_constructor_args():
-    sig = inspect.signature(model::types::JvmAnnotationType.__init__)
+def test_model_types_jvmannotationtype_constructor_args():
+    sig = inspect.signature(model_types_JvmAnnotationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmlowerbound_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmLowerBound)
+def test_model_types_jvmlowerbound_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmLowerBound)
 
 
-def test_model::types::jvmlowerbound_constructor_exists():
-    assert callable(model::types::JvmLowerBound.__init__)
+def test_model_types_jvmlowerbound_constructor_exists():
+    assert callable(model_types_JvmLowerBound.__init__)
 
 
-def test_model::types::jvmlowerbound_constructor_args():
-    sig = inspect.signature(model::types::JvmLowerBound.__init__)
+def test_model_types_jvmlowerbound_constructor_args():
+    sig = inspect.signature(model_types_JvmLowerBound.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmupperbound_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmUpperBound)
+def test_model_types_jvmupperbound_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmUpperBound)
 
 
-def test_model::types::jvmupperbound_constructor_exists():
-    assert callable(model::types::JvmUpperBound.__init__)
+def test_model_types_jvmupperbound_constructor_exists():
+    assert callable(model_types_JvmUpperBound.__init__)
 
 
-def test_model::types::jvmupperbound_constructor_args():
-    sig = inspect.signature(model::types::JvmUpperBound.__init__)
+def test_model_types_jvmupperbound_constructor_args():
+    sig = inspect.signature(model_types_JvmUpperBound.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmtypeparameterdeclarator_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmTypeParameterDeclarator)
+def test_model_types_jvmtypeparameterdeclarator_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmTypeParameterDeclarator)
 
 
-def test_model::types::jvmtypeparameterdeclarator_constructor_exists():
-    assert callable(model::types::JvmTypeParameterDeclarator.__init__)
+def test_model_types_jvmtypeparameterdeclarator_constructor_exists():
+    assert callable(model_types_JvmTypeParameterDeclarator.__init__)
 
 
-def test_model::types::jvmtypeparameterdeclarator_constructor_args():
-    sig = inspect.signature(model::types::JvmTypeParameterDeclarator.__init__)
+def test_model_types_jvmtypeparameterdeclarator_constructor_args():
+    sig = inspect.signature(model_types_JvmTypeParameterDeclarator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3877,30 +1967,30 @@ def test_jvmtypeparameterdeclarator_constructor_args():
 
 
 
-def test_types::jvmconstraintowner_is_not_abstract():
-    assert not inspect.isabstract(types::JvmConstraintOwner)
+def test_types_jvmconstraintowner_is_not_abstract():
+    assert not inspect.isabstract(types_JvmConstraintOwner)
 
 
-def test_types::jvmconstraintowner_constructor_exists():
-    assert callable(types::JvmConstraintOwner.__init__)
+def test_types_jvmconstraintowner_constructor_exists():
+    assert callable(types_JvmConstraintOwner.__init__)
 
 
-def test_types::jvmconstraintowner_constructor_args():
-    sig = inspect.signature(types::JvmConstraintOwner.__init__)
+def test_types_jvmconstraintowner_constructor_args():
+    sig = inspect.signature(types_JvmConstraintOwner.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmwildcardtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmWildcardTypeReference)
+def test_model_types_jvmwildcardtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmWildcardTypeReference)
 
 
-def test_model::types::jvmwildcardtypereference_constructor_exists():
-    assert callable(model::types::JvmWildcardTypeReference.__init__)
+def test_model_types_jvmwildcardtypereference_constructor_exists():
+    assert callable(model_types_JvmWildcardTypeReference.__init__)
 
 
-def test_model::types::jvmwildcardtypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmWildcardTypeReference.__init__)
+def test_model_types_jvmwildcardtypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmWildcardTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3919,16 +2009,16 @@ def test_jvmmember_constructor_args():
 
 
 
-def test_model::types::jvmfeature_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmFeature)
+def test_model_types_jvmfeature_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmFeature)
 
 
-def test_model::types::jvmfeature_constructor_exists():
-    assert callable(model::types::JvmFeature.__init__)
+def test_model_types_jvmfeature_constructor_exists():
+    assert callable(model_types_JvmFeature.__init__)
 
 
-def test_model::types::jvmfeature_constructor_args():
-    sig = inspect.signature(model::types::JvmFeature.__init__)
+def test_model_types_jvmfeature_constructor_args():
+    sig = inspect.signature(model_types_JvmFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3947,65 +2037,107 @@ def test_jvmtypereference_constructor_args():
 
 
 
-def test_model::types::jvmcompoundtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmCompoundTypeReference)
+def test_model_types_jvmparameterizedtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmParameterizedTypeReference)
 
 
-def test_model::types::jvmcompoundtypereference_constructor_exists():
-    assert callable(model::types::JvmCompoundTypeReference.__init__)
+def test_model_types_jvmparameterizedtypereference_constructor_exists():
+    assert callable(model_types_JvmParameterizedTypeReference.__init__)
 
 
-def test_model::types::jvmcompoundtypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmCompoundTypeReference.__init__)
+def test_model_types_jvmparameterizedtypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmParameterizedTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmgenericarraytypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmGenericArrayTypeReference)
+def test_model_types_jvmspecializedtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmSpecializedTypeReference)
 
 
-def test_model::types::jvmgenericarraytypereference_constructor_exists():
-    assert callable(model::types::JvmGenericArrayTypeReference.__init__)
+def test_model_types_jvmspecializedtypereference_constructor_exists():
+    assert callable(model_types_JvmSpecializedTypeReference.__init__)
 
 
-def test_model::types::jvmgenericarraytypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmGenericArrayTypeReference.__init__)
+def test_model_types_jvmspecializedtypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmSpecializedTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmanytypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmAnyTypeReference)
+def test_model_types_jvmcompoundtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmCompoundTypeReference)
 
 
-def test_model::types::jvmanytypereference_constructor_exists():
-    assert callable(model::types::JvmAnyTypeReference.__init__)
+def test_model_types_jvmcompoundtypereference_constructor_exists():
+    assert callable(model_types_JvmCompoundTypeReference.__init__)
 
 
-def test_model::types::jvmanytypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmAnyTypeReference.__init__)
+def test_model_types_jvmcompoundtypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmCompoundTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmunknowntypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmUnknownTypeReference)
+def test_model_types_jvmanytypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmAnyTypeReference)
 
 
-def test_model::types::jvmunknowntypereference_constructor_exists():
-    assert callable(model::types::JvmUnknownTypeReference.__init__)
+def test_model_types_jvmanytypereference_constructor_exists():
+    assert callable(model_types_JvmAnyTypeReference.__init__)
 
 
-def test_model::types::jvmunknowntypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmUnknownTypeReference.__init__)
+def test_model_types_jvmanytypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmAnyTypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_types_jvmdelegatetypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmDelegateTypeReference)
+
+
+def test_model_types_jvmdelegatetypereference_constructor_exists():
+    assert callable(model_types_JvmDelegateTypeReference.__init__)
+
+
+def test_model_types_jvmdelegatetypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmDelegateTypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_types_jvmgenericarraytypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmGenericArrayTypeReference)
+
+
+def test_model_types_jvmgenericarraytypereference_constructor_exists():
+    assert callable(model_types_JvmGenericArrayTypeReference.__init__)
+
+
+def test_model_types_jvmgenericarraytypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmGenericArrayTypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_types_jvmunknowntypereference_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmUnknownTypeReference)
+
+
+def test_model_types_jvmunknowntypereference_constructor_exists():
+    assert callable(model_types_JvmUnknownTypeReference.__init__)
+
+
+def test_model_types_jvmunknowntypereference_constructor_args():
+    sig = inspect.signature(model_types_JvmUnknownTypeReference.__init__)
     params = list(sig.parameters.keys())
     assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
 
-def test_model::types::jvmunknowntypereference_has_qualifiedName():
-    assert hasattr(model::types::JvmUnknownTypeReference, "qualifiedName")
+def test_model_types_jvmunknowntypereference_has_qualifiedName():
+    assert hasattr(model_types_JvmUnknownTypeReference, "qualifiedName")
     descriptor = None
-    for klass in model::types::JvmUnknownTypeReference.__mro__:
+    for klass in model_types_JvmUnknownTypeReference.__mro__:
         if "qualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["qualifiedName"]
             break
@@ -4013,79 +2145,37 @@ def test_model::types::jvmunknowntypereference_has_qualifiedName():
 
 
 
-def test_model::types::jvmdelegatetypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmDelegateTypeReference)
+def test_types_jvmcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(types_JvmComponentType)
 
 
-def test_model::types::jvmdelegatetypereference_constructor_exists():
-    assert callable(model::types::JvmDelegateTypeReference.__init__)
+def test_types_jvmcomponenttype_constructor_exists():
+    assert callable(types_JvmComponentType.__init__)
 
 
-def test_model::types::jvmdelegatetypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmDelegateTypeReference.__init__)
+def test_types_jvmcomponenttype_constructor_args():
+    sig = inspect.signature(types_JvmComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmparameterizedtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmParameterizedTypeReference)
+def test_model_types_jvmtypeparameter_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmTypeParameter)
 
 
-def test_model::types::jvmparameterizedtypereference_constructor_exists():
-    assert callable(model::types::JvmParameterizedTypeReference.__init__)
+def test_model_types_jvmtypeparameter_constructor_exists():
+    assert callable(model_types_JvmTypeParameter.__init__)
 
 
-def test_model::types::jvmparameterizedtypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmParameterizedTypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::types::jvmspecializedtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmSpecializedTypeReference)
-
-
-def test_model::types::jvmspecializedtypereference_constructor_exists():
-    assert callable(model::types::JvmSpecializedTypeReference.__init__)
-
-
-def test_model::types::jvmspecializedtypereference_constructor_args():
-    sig = inspect.signature(model::types::JvmSpecializedTypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::jvmcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(types::JvmComponentType)
-
-
-def test_types::jvmcomponenttype_constructor_exists():
-    assert callable(types::JvmComponentType.__init__)
-
-
-def test_types::jvmcomponenttype_constructor_args():
-    sig = inspect.signature(types::JvmComponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::types::jvmtypeparameter_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmTypeParameter)
-
-
-def test_model::types::jvmtypeparameter_constructor_exists():
-    assert callable(model::types::JvmTypeParameter.__init__)
-
-
-def test_model::types::jvmtypeparameter_constructor_args():
-    sig = inspect.signature(model::types::JvmTypeParameter.__init__)
+def test_model_types_jvmtypeparameter_constructor_args():
+    sig = inspect.signature(model_types_JvmTypeParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::types::jvmtypeparameter_has_name():
-    assert hasattr(model::types::JvmTypeParameter, "name")
+def test_model_types_jvmtypeparameter_has_name():
+    assert hasattr(model_types_JvmTypeParameter, "name")
     descriptor = None
-    for klass in model::types::JvmTypeParameter.__mro__:
+    for klass in model_types_JvmTypeParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4093,79 +2183,79 @@ def test_model::types::jvmtypeparameter_has_name():
 
 
 
-def test_types::jvmmember_is_not_abstract():
-    assert not inspect.isabstract(types::JvmMember)
+def test_types_jvmmember_is_not_abstract():
+    assert not inspect.isabstract(types_JvmMember)
 
 
-def test_types::jvmmember_constructor_exists():
-    assert callable(types::JvmMember.__init__)
+def test_types_jvmmember_constructor_exists():
+    assert callable(types_JvmMember.__init__)
 
 
-def test_types::jvmmember_constructor_args():
-    sig = inspect.signature(types::JvmMember.__init__)
+def test_types_jvmmember_constructor_args():
+    sig = inspect.signature(types_JvmMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmdeclaredtype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmDeclaredType)
+def test_model_types_jvmdeclaredtype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmDeclaredType)
 
 
-def test_model::types::jvmdeclaredtype_constructor_exists():
-    assert callable(model::types::JvmDeclaredType.__init__)
+def test_model_types_jvmdeclaredtype_constructor_exists():
+    assert callable(model_types_JvmDeclaredType.__init__)
 
 
-def test_model::types::jvmdeclaredtype_constructor_args():
-    sig = inspect.signature(model::types::JvmDeclaredType.__init__)
+def test_model_types_jvmdeclaredtype_constructor_args():
+    sig = inspect.signature(model_types_JvmDeclaredType.__init__)
     params = list(sig.parameters.keys())
-    assert "packageName" in params, "Missing parameter 'packageName'"
-    assert "exported" in params, "Missing parameter 'exported'"
     assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "final" in params, "Missing parameter 'final'"
     assert "static" in params, "Missing parameter 'static'"
+    assert "exported" in params, "Missing parameter 'exported'"
+    assert "packageName" in params, "Missing parameter 'packageName'"
+    assert "final" in params, "Missing parameter 'final'"
 
-def test_model::types::jvmdeclaredtype_has_packageName():
-    assert hasattr(model::types::JvmDeclaredType, "packageName")
+def test_model_types_jvmdeclaredtype_has_abstract():
+    assert hasattr(model_types_JvmDeclaredType, "abstract")
     descriptor = None
-    for klass in model::types::JvmDeclaredType.__mro__:
-        if "packageName" in klass.__dict__:
-            descriptor = klass.__dict__["packageName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmdeclaredtype_has_exported():
-    assert hasattr(model::types::JvmDeclaredType, "exported")
-    descriptor = None
-    for klass in model::types::JvmDeclaredType.__mro__:
-        if "exported" in klass.__dict__:
-            descriptor = klass.__dict__["exported"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::types::jvmdeclaredtype_has_abstract():
-    assert hasattr(model::types::JvmDeclaredType, "abstract")
-    descriptor = None
-    for klass in model::types::JvmDeclaredType.__mro__:
+    for klass in model_types_JvmDeclaredType.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::types::jvmdeclaredtype_has_final():
-    assert hasattr(model::types::JvmDeclaredType, "final")
+def test_model_types_jvmdeclaredtype_has_static():
+    assert hasattr(model_types_JvmDeclaredType, "static")
     descriptor = None
-    for klass in model::types::JvmDeclaredType.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
+    for klass in model_types_JvmDeclaredType.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::types::jvmdeclaredtype_has_static():
-    assert hasattr(model::types::JvmDeclaredType, "static")
+def test_model_types_jvmdeclaredtype_has_exported():
+    assert hasattr(model_types_JvmDeclaredType, "exported")
     descriptor = None
-    for klass in model::types::JvmDeclaredType.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
+    for klass in model_types_JvmDeclaredType.__mro__:
+        if "exported" in klass.__dict__:
+            descriptor = klass.__dict__["exported"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmdeclaredtype_has_packageName():
+    assert hasattr(model_types_JvmDeclaredType, "packageName")
+    descriptor = None
+    for klass in model_types_JvmDeclaredType.__mro__:
+        if "packageName" in klass.__dict__:
+            descriptor = klass.__dict__["packageName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_types_jvmdeclaredtype_has_final():
+    assert hasattr(model_types_JvmDeclaredType, "final")
+    descriptor = None
+    for klass in model_types_JvmDeclaredType.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
             break
     assert isinstance(descriptor, property)
 
@@ -4185,37 +2275,37 @@ def test_jvmcomponenttype_constructor_args():
 
 
 
-def test_model::types::jvmarraytype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmArrayType)
+def test_model_types_jvmarraytype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmArrayType)
 
 
-def test_model::types::jvmarraytype_constructor_exists():
-    assert callable(model::types::JvmArrayType.__init__)
+def test_model_types_jvmarraytype_constructor_exists():
+    assert callable(model_types_JvmArrayType.__init__)
 
 
-def test_model::types::jvmarraytype_constructor_args():
-    sig = inspect.signature(model::types::JvmArrayType.__init__)
+def test_model_types_jvmarraytype_constructor_args():
+    sig = inspect.signature(model_types_JvmArrayType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmPrimitiveType)
+def test_model_types_jvmprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmPrimitiveType)
 
 
-def test_model::types::jvmprimitivetype_constructor_exists():
-    assert callable(model::types::JvmPrimitiveType.__init__)
+def test_model_types_jvmprimitivetype_constructor_exists():
+    assert callable(model_types_JvmPrimitiveType.__init__)
 
 
-def test_model::types::jvmprimitivetype_constructor_args():
-    sig = inspect.signature(model::types::JvmPrimitiveType.__init__)
+def test_model_types_jvmprimitivetype_constructor_args():
+    sig = inspect.signature(model_types_JvmPrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "simpleName" in params, "Missing parameter 'simpleName'"
 
-def test_model::types::jvmprimitivetype_has_simpleName():
-    assert hasattr(model::types::JvmPrimitiveType, "simpleName")
+def test_model_types_jvmprimitivetype_has_simpleName():
+    assert hasattr(model_types_JvmPrimitiveType, "simpleName")
     descriptor = None
-    for klass in model::types::JvmPrimitiveType.__mro__:
+    for klass in model_types_JvmPrimitiveType.__mro__:
         if "simpleName" in klass.__dict__:
             descriptor = klass.__dict__["simpleName"]
             break
@@ -4251,44 +2341,44 @@ def test_jvmtype_constructor_args():
 
 
 
-def test_model::types::jvmcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmComponentType)
+def test_model_types_jvmcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmComponentType)
 
 
-def test_model::types::jvmcomponenttype_constructor_exists():
-    assert callable(model::types::JvmComponentType.__init__)
+def test_model_types_jvmcomponenttype_constructor_exists():
+    assert callable(model_types_JvmComponentType.__init__)
 
 
-def test_model::types::jvmcomponenttype_constructor_args():
-    sig = inspect.signature(model::types::JvmComponentType.__init__)
+def test_model_types_jvmcomponenttype_constructor_args():
+    sig = inspect.signature(model_types_JvmComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmvoid_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmVoid)
+def test_model_types_jvmvoid_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmVoid)
 
 
-def test_model::types::jvmvoid_constructor_exists():
-    assert callable(model::types::JvmVoid.__init__)
+def test_model_types_jvmvoid_constructor_exists():
+    assert callable(model_types_JvmVoid.__init__)
 
 
-def test_model::types::jvmvoid_constructor_args():
-    sig = inspect.signature(model::types::JvmVoid.__init__)
+def test_model_types_jvmvoid_constructor_args():
+    sig = inspect.signature(model_types_JvmVoid.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmnomodule_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmNoModule)
+def test_model_types_jvmnomodule_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmNoModule)
 
 
-def test_model::types::jvmnomodule_constructor_exists():
-    assert callable(model::types::JvmNoModule.__init__)
+def test_model_types_jvmnomodule_constructor_exists():
+    assert callable(model_types_JvmNoModule.__init__)
 
 
-def test_model::types::jvmnomodule_constructor_args():
-    sig = inspect.signature(model::types::JvmNoModule.__init__)
+def test_model_types_jvmnomodule_constructor_args():
+    sig = inspect.signature(model_types_JvmNoModule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4307,16 +2397,16 @@ def test_xexportsection_constructor_args():
 
 
 
-def test_types::model::eobject_is_not_abstract():
-    assert not inspect.isabstract(types::model::EObject)
+def test_types_model_eobject_is_not_abstract():
+    assert not inspect.isabstract(types_model_EObject)
 
 
-def test_types::model::eobject_constructor_exists():
-    assert callable(types::model::EObject.__init__)
+def test_types_model_eobject_constructor_exists():
+    assert callable(types_model_EObject.__init__)
 
 
-def test_types::model::eobject_constructor_args():
-    sig = inspect.signature(types::model::EObject.__init__)
+def test_types_model_eobject_constructor_args():
+    sig = inspect.signature(types_model_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4349,51 +2439,51 @@ def test_jvmidentifiableelement_constructor_args():
 
 
 
-def test_model::types::jvmtype_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmType)
+def test_model_types_jvmannotationtarget_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmAnnotationTarget)
 
 
-def test_model::types::jvmtype_constructor_exists():
-    assert callable(model::types::JvmType.__init__)
+def test_model_types_jvmannotationtarget_constructor_exists():
+    assert callable(model_types_JvmAnnotationTarget.__init__)
 
 
-def test_model::types::jvmtype_constructor_args():
-    sig = inspect.signature(model::types::JvmType.__init__)
+def test_model_types_jvmannotationtarget_constructor_args():
+    sig = inspect.signature(model_types_JvmAnnotationTarget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmannotationtarget_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmAnnotationTarget)
+def test_model_types_jvmtype_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmType)
 
 
-def test_model::types::jvmannotationtarget_constructor_exists():
-    assert callable(model::types::JvmAnnotationTarget.__init__)
+def test_model_types_jvmtype_constructor_exists():
+    assert callable(model_types_JvmType.__init__)
 
 
-def test_model::types::jvmannotationtarget_constructor_args():
-    sig = inspect.signature(model::types::JvmAnnotationTarget.__init__)
+def test_model_types_jvmtype_constructor_args():
+    sig = inspect.signature(model_types_JvmType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::types::jvmmodule_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmModule)
+def test_model_types_jvmmodule_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmModule)
 
 
-def test_model::types::jvmmodule_constructor_exists():
-    assert callable(model::types::JvmModule.__init__)
+def test_model_types_jvmmodule_constructor_exists():
+    assert callable(model_types_JvmModule.__init__)
 
 
-def test_model::types::jvmmodule_constructor_args():
-    sig = inspect.signature(model::types::JvmModule.__init__)
+def test_model_types_jvmmodule_constructor_args():
+    sig = inspect.signature(model_types_JvmModule.__init__)
     params = list(sig.parameters.keys())
     assert "simpleName" in params, "Missing parameter 'simpleName'"
 
-def test_model::types::jvmmodule_has_simpleName():
-    assert hasattr(model::types::JvmModule, "simpleName")
+def test_model_types_jvmmodule_has_simpleName():
+    assert hasattr(model_types_JvmModule, "simpleName")
     descriptor = None
-    for klass in model::types::JvmModule.__mro__:
+    for klass in model_types_JvmModule.__mro__:
         if "simpleName" in klass.__dict__:
             descriptor = klass.__dict__["simpleName"]
             break
@@ -4401,17 +2491,1927 @@ def test_model::types::jvmmodule_has_simpleName():
 
 
 
-def test_model::types::jvmidentifiableelement_is_not_abstract():
-    assert not inspect.isabstract(model::types::JvmIdentifiableElement)
+def test_model_types_jvmidentifiableelement_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmIdentifiableElement)
 
 
-def test_model::types::jvmidentifiableelement_constructor_exists():
-    assert callable(model::types::JvmIdentifiableElement.__init__)
+def test_model_types_jvmidentifiableelement_constructor_exists():
+    assert callable(model_types_JvmIdentifiableElement.__init__)
 
 
-def test_model::types::jvmidentifiableelement_constructor_args():
-    sig = inspect.signature(model::types::JvmIdentifiableElement.__init__)
+def test_model_types_jvmidentifiableelement_constructor_args():
+    sig = inspect.signature(model_types_JvmIdentifiableElement.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendformalparameter_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendFormalParameter)
+
+
+def test_model_ss_xtendformalparameter_constructor_exists():
+    assert callable(model_ss_XtendFormalParameter.__init__)
+
+
+def test_model_ss_xtendformalparameter_constructor_args():
+    sig = inspect.signature(model_ss_XtendFormalParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "extension" in params, "Missing parameter 'extension'"
+
+def test_model_ss_xtendformalparameter_has_extension():
+    assert hasattr(model_ss_XtendFormalParameter, "extension")
+    descriptor = None
+    for klass in model_ss_XtendFormalParameter.__mro__:
+        if "extension" in klass.__dict__:
+            descriptor = klass.__dict__["extension"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(XVariableDeclaration)
+
+
+def test_xvariabledeclaration_constructor_exists():
+    assert callable(XVariableDeclaration.__init__)
+
+
+def test_xvariabledeclaration_constructor_args():
+    sig = inspect.signature(XVariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendVariableDeclaration)
+
+
+def test_model_ss_xtendvariabledeclaration_constructor_exists():
+    assert callable(model_ss_XtendVariableDeclaration.__init__)
+
+
+def test_model_ss_xtendvariabledeclaration_constructor_args():
+    sig = inspect.signature(model_ss_XtendVariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "extension" in params, "Missing parameter 'extension'"
+
+def test_model_ss_xtendvariabledeclaration_has_extension():
+    assert hasattr(model_ss_XtendVariableDeclaration, "extension")
+    descriptor = None
+    for klass in model_ss_XtendVariableDeclaration.__mro__:
+        if "extension" in klass.__dict__:
+            descriptor = klass.__dict__["extension"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_createextensioninfo_is_not_abstract():
+    assert not inspect.isabstract(model_ss_CreateExtensionInfo)
+
+
+def test_model_ss_createextensioninfo_constructor_exists():
+    assert callable(model_ss_CreateExtensionInfo.__init__)
+
+
+def test_model_ss_createextensioninfo_constructor_args():
+    sig = inspect.signature(model_ss_CreateExtensionInfo.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_createextensioninfo_has_name():
+    assert hasattr(model_ss_CreateExtensionInfo, "name")
+    descriptor = None
+    for klass in model_ss_CreateExtensionInfo.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_richstringelseif_is_not_abstract():
+    assert not inspect.isabstract(model_ss_RichStringElseIf)
+
+
+def test_model_ss_richstringelseif_constructor_exists():
+    assert callable(model_ss_RichStringElseIf.__init__)
+
+
+def test_model_ss_richstringelseif_constructor_args():
+    sig = inspect.signature(model_ss_RichStringElseIf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_richstringelseif_is_not_abstract():
+    assert not inspect.isabstract(RichStringElseIf)
+
+
+def test_richstringelseif_constructor_exists():
+    assert callable(RichStringElseIf.__init__)
+
+
+def test_richstringelseif_constructor_args():
+    sig = inspect.signature(RichStringElseIf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xblockexpression_is_not_abstract():
+    assert not inspect.isabstract(XBlockExpression)
+
+
+def test_xblockexpression_constructor_exists():
+    assert callable(XBlockExpression.__init__)
+
+
+def test_xblockexpression_constructor_args():
+    sig = inspect.signature(XBlockExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_richstring_is_not_abstract():
+    assert not inspect.isabstract(model_ss_RichString)
+
+
+def test_model_ss_richstring_constructor_exists():
+    assert callable(model_ss_RichString.__init__)
+
+
+def test_model_ss_richstring_constructor_args():
+    sig = inspect.signature(model_ss_RichString.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_richstringif_is_not_abstract():
+    assert not inspect.isabstract(model_ss_RichStringIf)
+
+
+def test_model_ss_richstringif_constructor_exists():
+    assert callable(model_ss_RichStringIf.__init__)
+
+
+def test_model_ss_richstringif_constructor_args():
+    sig = inspect.signature(model_ss_RichStringIf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xforeachexpression_is_not_abstract():
+    assert not inspect.isabstract(XForEachExpression)
+
+
+def test_xforeachexpression_constructor_exists():
+    assert callable(XForEachExpression.__init__)
+
+
+def test_xforeachexpression_constructor_args():
+    sig = inspect.signature(XForEachExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_richstringforloop_is_not_abstract():
+    assert not inspect.isabstract(model_ss_RichStringForLoop)
+
+
+def test_model_ss_richstringforloop_constructor_exists():
+    assert callable(model_ss_RichStringForLoop.__init__)
+
+
+def test_model_ss_richstringforloop_constructor_args():
+    sig = inspect.signature(model_ss_RichStringForLoop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xstringliteral_is_not_abstract():
+    assert not inspect.isabstract(XStringLiteral)
+
+
+def test_xstringliteral_constructor_exists():
+    assert callable(XStringLiteral.__init__)
+
+
+def test_xstringliteral_constructor_args():
+    sig = inspect.signature(XStringLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_richstringliteral_is_not_abstract():
+    assert not inspect.isabstract(model_ss_RichStringLiteral)
+
+
+def test_model_ss_richstringliteral_constructor_exists():
+    assert callable(model_ss_RichStringLiteral.__init__)
+
+
+def test_model_ss_richstringliteral_constructor_args():
+    sig = inspect.signature(model_ss_RichStringLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_createextensioninfo_is_not_abstract():
+    assert not inspect.isabstract(CreateExtensionInfo)
+
+
+def test_createextensioninfo_constructor_exists():
+    assert callable(CreateExtensionInfo.__init__)
+
+
+def test_createextensioninfo_constructor_args():
+    sig = inspect.signature(CreateExtensionInfo.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xtendparameter_is_not_abstract():
+    assert not inspect.isabstract(XtendParameter)
+
+
+def test_xtendparameter_constructor_exists():
+    assert callable(XtendParameter.__init__)
+
+
+def test_xtendparameter_constructor_args():
+    sig = inspect.signature(XtendParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xtendmember_is_not_abstract():
+    assert not inspect.isabstract(XtendMember)
+
+
+def test_xtendmember_constructor_exists():
+    assert callable(XtendMember.__init__)
+
+
+def test_xtendmember_constructor_args():
+    sig = inspect.signature(XtendMember.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendfield_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendField)
+
+
+def test_model_ss_xtendfield_constructor_exists():
+    assert callable(model_ss_XtendField.__init__)
+
+
+def test_model_ss_xtendfield_constructor_args():
+    sig = inspect.signature(model_ss_XtendField.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_xtendfield_has_name():
+    assert hasattr(model_ss_XtendField, "name")
+    descriptor = None
+    for klass in model_ss_XtendField.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_xtendenumliteral_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendEnumLiteral)
+
+
+def test_model_ss_xtendenumliteral_constructor_exists():
+    assert callable(model_ss_XtendEnumLiteral.__init__)
+
+
+def test_model_ss_xtendenumliteral_constructor_args():
+    sig = inspect.signature(model_ss_XtendEnumLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_xtendenumliteral_has_name():
+    assert hasattr(model_ss_XtendEnumLiteral, "name")
+    descriptor = None
+    for klass in model_ss_XtendEnumLiteral.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_xtendconstructor_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendConstructor)
+
+
+def test_model_ss_xtendconstructor_constructor_exists():
+    assert callable(model_ss_XtendConstructor.__init__)
+
+
+def test_model_ss_xtendconstructor_constructor_args():
+    sig = inspect.signature(model_ss_XtendConstructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendTypeDeclaration)
+
+
+def test_model_ss_xtendtypedeclaration_constructor_exists():
+    assert callable(model_ss_XtendTypeDeclaration.__init__)
+
+
+def test_model_ss_xtendtypedeclaration_constructor_args():
+    sig = inspect.signature(model_ss_XtendTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_xtendtypedeclaration_has_name():
+    assert hasattr(model_ss_XtendTypeDeclaration, "name")
+    descriptor = None
+    for klass in model_ss_XtendTypeDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_xtendevent_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendEvent)
+
+
+def test_model_ss_xtendevent_constructor_exists():
+    assert callable(model_ss_XtendEvent.__init__)
+
+
+def test_model_ss_xtendevent_constructor_args():
+    sig = inspect.signature(model_ss_XtendEvent.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_xtendevent_has_name():
+    assert hasattr(model_ss_XtendEvent, "name")
+    descriptor = None
+    for klass in model_ss_XtendEvent.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_xtendfunction_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendFunction)
+
+
+def test_model_ss_xtendfunction_constructor_exists():
+    assert callable(model_ss_XtendFunction.__init__)
+
+
+def test_model_ss_xtendfunction_constructor_args():
+    sig = inspect.signature(model_ss_XtendFunction.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_xtendfunction_has_name():
+    assert hasattr(model_ss_XtendFunction, "name")
+    descriptor = None
+    for klass in model_ss_XtendFunction.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xtendannotationtarget_is_not_abstract():
+    assert not inspect.isabstract(XtendAnnotationTarget)
+
+
+def test_xtendannotationtarget_constructor_exists():
+    assert callable(XtendAnnotationTarget.__init__)
+
+
+def test_xtendannotationtarget_constructor_args():
+    sig = inspect.signature(XtendAnnotationTarget.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendparameter_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendParameter)
+
+
+def test_model_ss_xtendparameter_constructor_exists():
+    assert callable(model_ss_XtendParameter.__init__)
+
+
+def test_model_ss_xtendparameter_constructor_args():
+    sig = inspect.signature(model_ss_XtendParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "varArg" in params, "Missing parameter 'varArg'"
+    assert "extension" in params, "Missing parameter 'extension'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_ss_xtendparameter_has_varArg():
+    assert hasattr(model_ss_XtendParameter, "varArg")
+    descriptor = None
+    for klass in model_ss_XtendParameter.__mro__:
+        if "varArg" in klass.__dict__:
+            descriptor = klass.__dict__["varArg"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_ss_xtendparameter_has_extension():
+    assert hasattr(model_ss_XtendParameter, "extension")
+    descriptor = None
+    for klass in model_ss_XtendParameter.__mro__:
+        if "extension" in klass.__dict__:
+            descriptor = klass.__dict__["extension"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_ss_xtendparameter_has_name():
+    assert hasattr(model_ss_XtendParameter, "name")
+    descriptor = None
+    for klass in model_ss_XtendParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_ss_xtendmember_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendMember)
+
+
+def test_model_ss_xtendmember_constructor_exists():
+    assert callable(model_ss_XtendMember.__init__)
+
+
+def test_model_ss_xtendmember_constructor_args():
+    sig = inspect.signature(model_ss_XtendMember.__init__)
+    params = list(sig.parameters.keys())
+    assert "modifiers" in params, "Missing parameter 'modifiers'"
+
+def test_model_ss_xtendmember_has_modifiers():
+    assert hasattr(model_ss_XtendMember, "modifiers")
+    descriptor = None
+    for klass in model_ss_XtendMember.__mro__:
+        if "modifiers" in klass.__dict__:
+            descriptor = klass.__dict__["modifiers"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xannotation_is_not_abstract():
+    assert not inspect.isabstract(XAnnotation)
+
+
+def test_xannotation_constructor_exists():
+    assert callable(XAnnotation.__init__)
+
+
+def test_xannotation_constructor_args():
+    sig = inspect.signature(XAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendannotationtarget_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendAnnotationTarget)
+
+
+def test_model_ss_xtendannotationtarget_constructor_exists():
+    assert callable(model_ss_XtendAnnotationTarget.__init__)
+
+
+def test_model_ss_xtendannotationtarget_constructor_args():
+    sig = inspect.signature(model_ss_XtendAnnotationTarget.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xobjectliteralpart_is_not_abstract():
+    assert not inspect.isabstract(XObjectLiteralPart)
+
+
+def test_xobjectliteralpart_constructor_exists():
+    assert callable(XObjectLiteralPart.__init__)
+
+
+def test_xobjectliteralpart_constructor_args():
+    sig = inspect.signature(XObjectLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xobjectliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XObjectLiteral)
+
+
+def test_model_xbase_xobjectliteral_constructor_exists():
+    assert callable(model_xbase_XObjectLiteral.__init__)
+
+
+def test_model_xbase_xobjectliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XObjectLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ss_model_eobject_is_not_abstract():
+    assert not inspect.isabstract(ss_model_EObject)
+
+
+def test_ss_model_eobject_constructor_exists():
+    assert callable(ss_model_EObject.__init__)
+
+
+def test_ss_model_eobject_constructor_args():
+    sig = inspect.signature(ss_model_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xtendtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(XtendTypeDeclaration)
+
+
+def test_xtendtypedeclaration_constructor_exists():
+    assert callable(XtendTypeDeclaration.__init__)
+
+
+def test_xtendtypedeclaration_constructor_args():
+    sig = inspect.signature(XtendTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtenddelegate_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendDelegate)
+
+
+def test_model_ss_xtenddelegate_constructor_exists():
+    assert callable(model_ss_XtendDelegate.__init__)
+
+
+def test_model_ss_xtenddelegate_constructor_args():
+    sig = inspect.signature(model_ss_XtendDelegate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendenum_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendEnum)
+
+
+def test_model_ss_xtendenum_constructor_exists():
+    assert callable(model_ss_XtendEnum.__init__)
+
+
+def test_model_ss_xtendenum_constructor_args():
+    sig = inspect.signature(model_ss_XtendEnum.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendannotationtype_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendAnnotationType)
+
+
+def test_model_ss_xtendannotationtype_constructor_exists():
+    assert callable(model_ss_XtendAnnotationType.__init__)
+
+
+def test_model_ss_xtendannotationtype_constructor_args():
+    sig = inspect.signature(model_ss_XtendAnnotationType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendinterface_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendInterface)
+
+
+def test_model_ss_xtendinterface_constructor_exists():
+    assert callable(model_ss_XtendInterface.__init__)
+
+
+def test_model_ss_xtendinterface_constructor_args():
+    sig = inspect.signature(model_ss_XtendInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendclass_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendClass)
+
+
+def test_model_ss_xtendclass_constructor_exists():
+    assert callable(model_ss_XtendClass.__init__)
+
+
+def test_model_ss_xtendclass_constructor_args():
+    sig = inspect.signature(model_ss_XtendClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_ss_xtendfile_is_not_abstract():
+    assert not inspect.isabstract(model_ss_XtendFile)
+
+
+def test_model_ss_xtendfile_constructor_exists():
+    assert callable(model_ss_XtendFile.__init__)
+
+
+def test_model_ss_xtendfile_constructor_args():
+    sig = inspect.signature(model_ss_XtendFile.__init__)
+    params = list(sig.parameters.keys())
+    assert "package" in params, "Missing parameter 'package'"
+
+def test_model_ss_xtendfile_has_package():
+    assert hasattr(model_ss_XtendFile, "package")
+    descriptor = None
+    for klass in model_ss_XtendFile.__mro__:
+        if "package" in klass.__dict__:
+            descriptor = klass.__dict__["package"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xarrayliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XArrayLiteral)
+
+
+def test_model_xbase_xarrayliteral_constructor_exists():
+    assert callable(model_xbase_XArrayLiteral.__init__)
+
+
+def test_model_xbase_xarrayliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XArrayLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xobjectliteralpart_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XObjectLiteralPart)
+
+
+def test_model_xbase_xobjectliteralpart_constructor_exists():
+    assert callable(model_xbase_XObjectLiteralPart.__init__)
+
+
+def test_model_xbase_xobjectliteralpart_constructor_args():
+    sig = inspect.signature(model_xbase_XObjectLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_xbase_xobjectliteralpart_has_name():
+    assert hasattr(model_xbase_XObjectLiteralPart, "name")
+    descriptor = None
+    for klass in model_xbase_XObjectLiteralPart.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xternaryoperation_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XTernaryOperation)
+
+
+def test_model_xbase_xternaryoperation_constructor_exists():
+    assert callable(model_xbase_XTernaryOperation.__init__)
+
+
+def test_model_xbase_xternaryoperation_constructor_args():
+    sig = inspect.signature(model_xbase_XTernaryOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xfunctiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XFunctionDeclaration)
+
+
+def test_model_xbase_xfunctiondeclaration_constructor_exists():
+    assert callable(model_xbase_XFunctionDeclaration.__init__)
+
+
+def test_model_xbase_xfunctiondeclaration_constructor_args():
+    sig = inspect.signature(model_xbase_XFunctionDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_model_xbase_xfunctiondeclaration_has_name():
+    assert hasattr(model_xbase_XFunctionDeclaration, "name")
+    descriptor = None
+    for klass in model_xbase_XFunctionDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xcatchclause_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XCatchClause)
+
+
+def test_model_xbase_xcatchclause_constructor_exists():
+    assert callable(model_xbase_XCatchClause.__init__)
+
+
+def test_model_xbase_xcatchclause_constructor_args():
+    sig = inspect.signature(model_xbase_XCatchClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xcatchclause_is_not_abstract():
+    assert not inspect.isabstract(XCatchClause)
+
+
+def test_xcatchclause_constructor_exists():
+    assert callable(XCatchClause.__init__)
+
+
+def test_xcatchclause_constructor_args():
+    sig = inspect.signature(XCatchClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xcontinueexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XContinueExpression)
+
+
+def test_model_xbase_xcontinueexpression_constructor_exists():
+    assert callable(model_xbase_XContinueExpression.__init__)
+
+
+def test_model_xbase_xcontinueexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XContinueExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xbreakexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XBreakExpression)
+
+
+def test_model_xbase_xbreakexpression_constructor_exists():
+    assert callable(model_xbase_XBreakExpression.__init__)
+
+
+def test_model_xbase_xbreakexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XBreakExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xreturnexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XReturnExpression)
+
+
+def test_model_xbase_xreturnexpression_constructor_exists():
+    assert callable(model_xbase_XReturnExpression.__init__)
+
+
+def test_model_xbase_xreturnexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XReturnExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xabstractwhileexpression_is_not_abstract():
+    assert not inspect.isabstract(XAbstractWhileExpression)
+
+
+def test_xabstractwhileexpression_constructor_exists():
+    assert callable(XAbstractWhileExpression.__init__)
+
+
+def test_xabstractwhileexpression_constructor_args():
+    sig = inspect.signature(XAbstractWhileExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xdowhileexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XDoWhileExpression)
+
+
+def test_model_xbase_xdowhileexpression_constructor_exists():
+    assert callable(model_xbase_XDoWhileExpression.__init__)
+
+
+def test_model_xbase_xdowhileexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XDoWhileExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xabstractwhileexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XAbstractWhileExpression)
+
+
+def test_model_xbase_xabstractwhileexpression_constructor_exists():
+    assert callable(model_xbase_XAbstractWhileExpression.__init__)
+
+
+def test_model_xbase_xabstractwhileexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XAbstractWhileExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xtrycatchfinallyexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XTryCatchFinallyExpression)
+
+
+def test_model_xbase_xtrycatchfinallyexpression_constructor_exists():
+    assert callable(model_xbase_XTryCatchFinallyExpression.__init__)
+
+
+def test_model_xbase_xtrycatchfinallyexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XTryCatchFinallyExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xthrowexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XThrowExpression)
+
+
+def test_model_xbase_xthrowexpression_constructor_exists():
+    assert callable(model_xbase_XThrowExpression.__init__)
+
+
+def test_model_xbase_xthrowexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XThrowExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xinstanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XInstanceOfExpression)
+
+
+def test_model_xbase_xinstanceofexpression_constructor_exists():
+    assert callable(model_xbase_XInstanceOfExpression.__init__)
+
+
+def test_model_xbase_xinstanceofexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XInstanceOfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xtypeliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XTypeLiteral)
+
+
+def test_model_xbase_xtypeliteral_constructor_exists():
+    assert callable(model_xbase_XTypeLiteral.__init__)
+
+
+def test_model_xbase_xtypeliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XTypeLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "arrayDimensions" in params, "Missing parameter 'arrayDimensions'"
+
+def test_model_xbase_xtypeliteral_has_arrayDimensions():
+    assert hasattr(model_xbase_XTypeLiteral, "arrayDimensions")
+    descriptor = None
+    for klass in model_xbase_XTypeLiteral.__mro__:
+        if "arrayDimensions" in klass.__dict__:
+            descriptor = klass.__dict__["arrayDimensions"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xwhileexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XWhileExpression)
+
+
+def test_model_xbase_xwhileexpression_constructor_exists():
+    assert callable(model_xbase_XWhileExpression.__init__)
+
+
+def test_model_xbase_xwhileexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XWhileExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xforeachexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XForEachExpression)
+
+
+def test_model_xbase_xforeachexpression_constructor_exists():
+    assert callable(model_xbase_XForEachExpression.__init__)
+
+
+def test_model_xbase_xforeachexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XForEachExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xforloopexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XForLoopExpression)
+
+
+def test_model_xbase_xforloopexpression_constructor_exists():
+    assert callable(model_xbase_XForLoopExpression.__init__)
+
+
+def test_model_xbase_xforloopexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XForLoopExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xkeyvaluepair_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XKeyValuePair)
+
+
+def test_model_xbase_xkeyvaluepair_constructor_exists():
+    assert callable(model_xbase_XKeyValuePair.__init__)
+
+
+def test_model_xbase_xkeyvaluepair_constructor_args():
+    sig = inspect.signature(model_xbase_XKeyValuePair.__init__)
+    params = list(sig.parameters.keys())
+    assert "key1" in params, "Missing parameter 'key1'"
+
+def test_model_xbase_xkeyvaluepair_has_key1():
+    assert hasattr(model_xbase_XKeyValuePair, "key1")
+    descriptor = None
+    for klass in model_xbase_XKeyValuePair.__mro__:
+        if "key1" in klass.__dict__:
+            descriptor = klass.__dict__["key1"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xcollectionliteral_is_not_abstract():
+    assert not inspect.isabstract(XCollectionLiteral)
+
+
+def test_xcollectionliteral_constructor_exists():
+    assert callable(XCollectionLiteral.__init__)
+
+
+def test_xcollectionliteral_constructor_args():
+    sig = inspect.signature(XCollectionLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xlistliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XListLiteral)
+
+
+def test_model_xbase_xlistliteral_constructor_exists():
+    assert callable(model_xbase_XListLiteral.__init__)
+
+
+def test_model_xbase_xlistliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XListLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xcollectionliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XCollectionLiteral)
+
+
+def test_model_xbase_xcollectionliteral_constructor_exists():
+    assert callable(model_xbase_XCollectionLiteral.__init__)
+
+
+def test_model_xbase_xcollectionliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XCollectionLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xstringliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XStringLiteral)
+
+
+def test_model_xbase_xstringliteral_constructor_exists():
+    assert callable(model_xbase_XStringLiteral.__init__)
+
+
+def test_model_xbase_xstringliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XStringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_model_xbase_xstringliteral_has_value():
+    assert hasattr(model_xbase_XStringLiteral, "value")
+    descriptor = None
+    for klass in model_xbase_XStringLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xnumberliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XNumberLiteral)
+
+
+def test_model_xbase_xnumberliteral_constructor_exists():
+    assert callable(model_xbase_XNumberLiteral.__init__)
+
+
+def test_model_xbase_xnumberliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XNumberLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_model_xbase_xnumberliteral_has_value():
+    assert hasattr(model_xbase_XNumberLiteral, "value")
+    descriptor = None
+    for klass in model_xbase_XNumberLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xnullliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XNullLiteral)
+
+
+def test_model_xbase_xnullliteral_constructor_exists():
+    assert callable(model_xbase_XNullLiteral.__init__)
+
+
+def test_model_xbase_xnullliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XNullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xbooleanliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XBooleanLiteral)
+
+
+def test_model_xbase_xbooleanliteral_constructor_exists():
+    assert callable(model_xbase_XBooleanLiteral.__init__)
+
+
+def test_model_xbase_xbooleanliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XBooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "isTrue" in params, "Missing parameter 'isTrue'"
+
+def test_model_xbase_xbooleanliteral_has_isTrue():
+    assert hasattr(model_xbase_XBooleanLiteral, "isTrue")
+    descriptor = None
+    for klass in model_xbase_XBooleanLiteral.__mro__:
+        if "isTrue" in klass.__dict__:
+            descriptor = klass.__dict__["isTrue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xcastedexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XCastedExpression)
+
+
+def test_model_xbase_xcastedexpression_constructor_exists():
+    assert callable(model_xbase_XCastedExpression.__init__)
+
+
+def test_model_xbase_xcastedexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XCastedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xsetliteral_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XSetLiteral)
+
+
+def test_model_xbase_xsetliteral_constructor_exists():
+    assert callable(model_xbase_XSetLiteral.__init__)
+
+
+def test_model_xbase_xsetliteral_constructor_args():
+    sig = inspect.signature(model_xbase_XSetLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jvmconstructor_is_not_abstract():
+    assert not inspect.isabstract(JvmConstructor)
+
+
+def test_jvmconstructor_constructor_exists():
+    assert callable(JvmConstructor.__init__)
+
+
+def test_jvmconstructor_constructor_args():
+    sig = inspect.signature(JvmConstructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xconstructorcall_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XConstructorCall)
+
+
+def test_model_xbase_xconstructorcall_constructor_exists():
+    assert callable(model_xbase_XConstructorCall.__init__)
+
+
+def test_model_xbase_xconstructorcall_constructor_args():
+    sig = inspect.signature(model_xbase_XConstructorCall.__init__)
+    params = list(sig.parameters.keys())
+    assert "validFeature" in params, "Missing parameter 'validFeature'"
+    assert "invalidFeatureIssueCode" in params, "Missing parameter 'invalidFeatureIssueCode'"
+
+def test_model_xbase_xconstructorcall_has_validFeature():
+    assert hasattr(model_xbase_XConstructorCall, "validFeature")
+    descriptor = None
+    for klass in model_xbase_XConstructorCall.__mro__:
+        if "validFeature" in klass.__dict__:
+            descriptor = klass.__dict__["validFeature"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xconstructorcall_has_invalidFeatureIssueCode():
+    assert hasattr(model_xbase_XConstructorCall, "invalidFeatureIssueCode")
+    descriptor = None
+    for klass in model_xbase_XConstructorCall.__mro__:
+        if "invalidFeatureIssueCode" in klass.__dict__:
+            descriptor = klass.__dict__["invalidFeatureIssueCode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xabstractfeaturecall_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XAbstractFeatureCall)
+
+
+def test_model_xbase_xabstractfeaturecall_constructor_exists():
+    assert callable(model_xbase_XAbstractFeatureCall.__init__)
+
+
+def test_model_xbase_xabstractfeaturecall_constructor_args():
+    sig = inspect.signature(model_xbase_XAbstractFeatureCall.__init__)
+    params = list(sig.parameters.keys())
+    assert "invalidFeatureIssueCode" in params, "Missing parameter 'invalidFeatureIssueCode'"
+    assert "validFeature" in params, "Missing parameter 'validFeature'"
+
+def test_model_xbase_xabstractfeaturecall_has_invalidFeatureIssueCode():
+    assert hasattr(model_xbase_XAbstractFeatureCall, "invalidFeatureIssueCode")
+    descriptor = None
+    for klass in model_xbase_XAbstractFeatureCall.__mro__:
+        if "invalidFeatureIssueCode" in klass.__dict__:
+            descriptor = klass.__dict__["invalidFeatureIssueCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xabstractfeaturecall_has_validFeature():
+    assert hasattr(model_xbase_XAbstractFeatureCall, "validFeature")
+    descriptor = None
+    for klass in model_xbase_XAbstractFeatureCall.__mro__:
+        if "validFeature" in klass.__dict__:
+            descriptor = klass.__dict__["validFeature"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xvariabledeclarationlist_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XVariableDeclarationList)
+
+
+def test_model_xbase_xvariabledeclarationlist_constructor_exists():
+    assert callable(model_xbase_XVariableDeclarationList.__init__)
+
+
+def test_model_xbase_xvariabledeclarationlist_constructor_args():
+    sig = inspect.signature(model_xbase_XVariableDeclarationList.__init__)
+    params = list(sig.parameters.keys())
+    assert "writeable" in params, "Missing parameter 'writeable'"
+    assert "exported" in params, "Missing parameter 'exported'"
+
+def test_model_xbase_xvariabledeclarationlist_has_writeable():
+    assert hasattr(model_xbase_XVariableDeclarationList, "writeable")
+    descriptor = None
+    for klass in model_xbase_XVariableDeclarationList.__mro__:
+        if "writeable" in klass.__dict__:
+            descriptor = klass.__dict__["writeable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xvariabledeclarationlist_has_exported():
+    assert hasattr(model_xbase_XVariableDeclarationList, "exported")
+    descriptor = None
+    for klass in model_xbase_XVariableDeclarationList.__mro__:
+        if "exported" in klass.__dict__:
+            descriptor = klass.__dict__["exported"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xabstractfeaturecall_is_not_abstract():
+    assert not inspect.isabstract(XAbstractFeatureCall)
+
+
+def test_xabstractfeaturecall_constructor_exists():
+    assert callable(XAbstractFeatureCall.__init__)
+
+
+def test_xabstractfeaturecall_constructor_args():
+    sig = inspect.signature(XAbstractFeatureCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xassignment_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XAssignment)
+
+
+def test_model_xbase_xassignment_constructor_exists():
+    assert callable(model_xbase_XAssignment.__init__)
+
+
+def test_model_xbase_xassignment_constructor_args():
+    sig = inspect.signature(model_xbase_XAssignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "explicitStatic" in params, "Missing parameter 'explicitStatic'"
+
+def test_model_xbase_xassignment_has_explicitStatic():
+    assert hasattr(model_xbase_XAssignment, "explicitStatic")
+    descriptor = None
+    for klass in model_xbase_XAssignment.__mro__:
+        if "explicitStatic" in klass.__dict__:
+            descriptor = klass.__dict__["explicitStatic"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xunaryoperation_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XUnaryOperation)
+
+
+def test_model_xbase_xunaryoperation_constructor_exists():
+    assert callable(model_xbase_XUnaryOperation.__init__)
+
+
+def test_model_xbase_xunaryoperation_constructor_args():
+    sig = inspect.signature(model_xbase_XUnaryOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xprefixoperation_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XPrefixOperation)
+
+
+def test_model_xbase_xprefixoperation_constructor_exists():
+    assert callable(model_xbase_XPrefixOperation.__init__)
+
+
+def test_model_xbase_xprefixoperation_constructor_args():
+    sig = inspect.signature(model_xbase_XPrefixOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xmemberfeaturecall1_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XMemberFeatureCall1)
+
+
+def test_model_xbase_xmemberfeaturecall1_constructor_exists():
+    assert callable(model_xbase_XMemberFeatureCall1.__init__)
+
+
+def test_model_xbase_xmemberfeaturecall1_constructor_args():
+    sig = inspect.signature(model_xbase_XMemberFeatureCall1.__init__)
+    params = list(sig.parameters.keys())
+    assert "typeLiteral" in params, "Missing parameter 'typeLiteral'"
+    assert "nullSafe" in params, "Missing parameter 'nullSafe'"
+    assert "indexedOperation" in params, "Missing parameter 'indexedOperation'"
+    assert "explicitStatic" in params, "Missing parameter 'explicitStatic'"
+    assert "packageFragment" in params, "Missing parameter 'packageFragment'"
+    assert "staticWithDeclaringType" in params, "Missing parameter 'staticWithDeclaringType'"
+    assert "explicitOperationCall" in params, "Missing parameter 'explicitOperationCall'"
+
+def test_model_xbase_xmemberfeaturecall1_has_typeLiteral():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "typeLiteral")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "typeLiteral" in klass.__dict__:
+            descriptor = klass.__dict__["typeLiteral"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall1_has_nullSafe():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "nullSafe")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "nullSafe" in klass.__dict__:
+            descriptor = klass.__dict__["nullSafe"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall1_has_indexedOperation():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "indexedOperation")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "indexedOperation" in klass.__dict__:
+            descriptor = klass.__dict__["indexedOperation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall1_has_explicitStatic():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "explicitStatic")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "explicitStatic" in klass.__dict__:
+            descriptor = klass.__dict__["explicitStatic"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall1_has_packageFragment():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "packageFragment")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "packageFragment" in klass.__dict__:
+            descriptor = klass.__dict__["packageFragment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall1_has_staticWithDeclaringType():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "staticWithDeclaringType")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "staticWithDeclaringType" in klass.__dict__:
+            descriptor = klass.__dict__["staticWithDeclaringType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall1_has_explicitOperationCall():
+    assert hasattr(model_xbase_XMemberFeatureCall1, "explicitOperationCall")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall1.__mro__:
+        if "explicitOperationCall" in klass.__dict__:
+            descriptor = klass.__dict__["explicitOperationCall"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xbinaryoperation_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XBinaryOperation)
+
+
+def test_model_xbase_xbinaryoperation_constructor_exists():
+    assert callable(model_xbase_XBinaryOperation.__init__)
+
+
+def test_model_xbase_xbinaryoperation_constructor_args():
+    sig = inspect.signature(model_xbase_XBinaryOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xfeaturecall_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XFeatureCall)
+
+
+def test_model_xbase_xfeaturecall_constructor_exists():
+    assert callable(model_xbase_XFeatureCall.__init__)
+
+
+def test_model_xbase_xfeaturecall_constructor_args():
+    sig = inspect.signature(model_xbase_XFeatureCall.__init__)
+    params = list(sig.parameters.keys())
+    assert "typeLiteral" in params, "Missing parameter 'typeLiteral'"
+    assert "packageFragment" in params, "Missing parameter 'packageFragment'"
+    assert "indexedOperation" in params, "Missing parameter 'indexedOperation'"
+    assert "explicitOperationCall" in params, "Missing parameter 'explicitOperationCall'"
+
+def test_model_xbase_xfeaturecall_has_typeLiteral():
+    assert hasattr(model_xbase_XFeatureCall, "typeLiteral")
+    descriptor = None
+    for klass in model_xbase_XFeatureCall.__mro__:
+        if "typeLiteral" in klass.__dict__:
+            descriptor = klass.__dict__["typeLiteral"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xfeaturecall_has_packageFragment():
+    assert hasattr(model_xbase_XFeatureCall, "packageFragment")
+    descriptor = None
+    for klass in model_xbase_XFeatureCall.__mro__:
+        if "packageFragment" in klass.__dict__:
+            descriptor = klass.__dict__["packageFragment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xfeaturecall_has_indexedOperation():
+    assert hasattr(model_xbase_XFeatureCall, "indexedOperation")
+    descriptor = None
+    for klass in model_xbase_XFeatureCall.__mro__:
+        if "indexedOperation" in klass.__dict__:
+            descriptor = klass.__dict__["indexedOperation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xfeaturecall_has_explicitOperationCall():
+    assert hasattr(model_xbase_XFeatureCall, "explicitOperationCall")
+    descriptor = None
+    for klass in model_xbase_XFeatureCall.__mro__:
+        if "explicitOperationCall" in klass.__dict__:
+            descriptor = klass.__dict__["explicitOperationCall"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xindexoperation_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XIndexOperation)
+
+
+def test_model_xbase_xindexoperation_constructor_exists():
+    assert callable(model_xbase_XIndexOperation.__init__)
+
+
+def test_model_xbase_xindexoperation_constructor_args():
+    sig = inspect.signature(model_xbase_XIndexOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xpostfixoperation_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XPostfixOperation)
+
+
+def test_model_xbase_xpostfixoperation_constructor_exists():
+    assert callable(model_xbase_XPostfixOperation.__init__)
+
+
+def test_model_xbase_xpostfixoperation_constructor_args():
+    sig = inspect.signature(model_xbase_XPostfixOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xmemberfeaturecall_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XMemberFeatureCall)
+
+
+def test_model_xbase_xmemberfeaturecall_constructor_exists():
+    assert callable(model_xbase_XMemberFeatureCall.__init__)
+
+
+def test_model_xbase_xmemberfeaturecall_constructor_args():
+    sig = inspect.signature(model_xbase_XMemberFeatureCall.__init__)
+    params = list(sig.parameters.keys())
+    assert "explicitOperationCall" in params, "Missing parameter 'explicitOperationCall'"
+    assert "packageFragment" in params, "Missing parameter 'packageFragment'"
+    assert "explicitStatic" in params, "Missing parameter 'explicitStatic'"
+    assert "indexedOperation" in params, "Missing parameter 'indexedOperation'"
+    assert "typeLiteral" in params, "Missing parameter 'typeLiteral'"
+    assert "staticWithDeclaringType" in params, "Missing parameter 'staticWithDeclaringType'"
+    assert "nullSafe" in params, "Missing parameter 'nullSafe'"
+
+def test_model_xbase_xmemberfeaturecall_has_explicitOperationCall():
+    assert hasattr(model_xbase_XMemberFeatureCall, "explicitOperationCall")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "explicitOperationCall" in klass.__dict__:
+            descriptor = klass.__dict__["explicitOperationCall"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall_has_packageFragment():
+    assert hasattr(model_xbase_XMemberFeatureCall, "packageFragment")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "packageFragment" in klass.__dict__:
+            descriptor = klass.__dict__["packageFragment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall_has_explicitStatic():
+    assert hasattr(model_xbase_XMemberFeatureCall, "explicitStatic")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "explicitStatic" in klass.__dict__:
+            descriptor = klass.__dict__["explicitStatic"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall_has_indexedOperation():
+    assert hasattr(model_xbase_XMemberFeatureCall, "indexedOperation")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "indexedOperation" in klass.__dict__:
+            descriptor = klass.__dict__["indexedOperation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall_has_typeLiteral():
+    assert hasattr(model_xbase_XMemberFeatureCall, "typeLiteral")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "typeLiteral" in klass.__dict__:
+            descriptor = klass.__dict__["typeLiteral"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall_has_staticWithDeclaringType():
+    assert hasattr(model_xbase_XMemberFeatureCall, "staticWithDeclaringType")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "staticWithDeclaringType" in klass.__dict__:
+            descriptor = klass.__dict__["staticWithDeclaringType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xmemberfeaturecall_has_nullSafe():
+    assert hasattr(model_xbase_XMemberFeatureCall, "nullSafe")
+    descriptor = None
+    for klass in model_xbase_XMemberFeatureCall.__mro__:
+        if "nullSafe" in klass.__dict__:
+            descriptor = klass.__dict__["nullSafe"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xifexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XIfExpression)
+
+
+def test_model_xbase_xifexpression_constructor_exists():
+    assert callable(model_xbase_XIfExpression.__init__)
+
+
+def test_model_xbase_xifexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XIfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XExpression)
+
+
+def test_model_xbase_xexpression_constructor_exists():
+    assert callable(model_xbase_XExpression.__init__)
+
+
+def test_model_xbase_xexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_types_jvmcustomannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmCustomAnnotationValue)
+
+
+def test_model_types_jvmcustomannotationvalue_constructor_exists():
+    assert callable(model_types_JvmCustomAnnotationValue.__init__)
+
+
+def test_model_types_jvmcustomannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmCustomAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "values" in params, "Missing parameter 'values'"
+
+def test_model_types_jvmcustomannotationvalue_has_values():
+    assert hasattr(model_types_JvmCustomAnnotationValue, "values")
+    descriptor = None
+    for klass in model_types_JvmCustomAnnotationValue.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xblockexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XBlockExpression)
+
+
+def test_model_xbase_xblockexpression_constructor_exists():
+    assert callable(model_xbase_XBlockExpression.__init__)
+
+
+def test_model_xbase_xblockexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XBlockExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xcasepart_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XCasePart)
+
+
+def test_model_xbase_xcasepart_constructor_exists():
+    assert callable(model_xbase_XCasePart.__init__)
+
+
+def test_model_xbase_xcasepart_constructor_args():
+    sig = inspect.signature(model_xbase_XCasePart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xcasepart_is_not_abstract():
+    assert not inspect.isabstract(XCasePart)
+
+
+def test_xcasepart_constructor_exists():
+    assert callable(XCasePart.__init__)
+
+
+def test_xcasepart_constructor_args():
+    sig = inspect.signature(XCasePart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_jvmidentifiableelement_is_not_abstract():
+    assert not inspect.isabstract(types_JvmIdentifiableElement)
+
+
+def test_types_jvmidentifiableelement_constructor_exists():
+    assert callable(types_JvmIdentifiableElement.__init__)
+
+
+def test_types_jvmidentifiableelement_constructor_args():
+    sig = inspect.signature(types_JvmIdentifiableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xbase_xexpression_is_not_abstract():
+    assert not inspect.isabstract(xbase_XExpression)
+
+
+def test_xbase_xexpression_constructor_exists():
+    assert callable(xbase_XExpression.__init__)
+
+
+def test_xbase_xexpression_constructor_args():
+    sig = inspect.signature(xbase_XExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_xbase_xclosure_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XClosure)
+
+
+def test_model_xbase_xclosure_constructor_exists():
+    assert callable(model_xbase_XClosure.__init__)
+
+
+def test_model_xbase_xclosure_constructor_args():
+    sig = inspect.signature(model_xbase_XClosure.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "operator" in params, "Missing parameter 'operator'"
+    assert "explicitSyntax" in params, "Missing parameter 'explicitSyntax'"
+    assert "exported" in params, "Missing parameter 'exported'"
+
+def test_model_xbase_xclosure_has_name():
+    assert hasattr(model_xbase_XClosure, "name")
+    descriptor = None
+    for klass in model_xbase_XClosure.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xclosure_has_operator():
+    assert hasattr(model_xbase_XClosure, "operator")
+    descriptor = None
+    for klass in model_xbase_XClosure.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xclosure_has_explicitSyntax():
+    assert hasattr(model_xbase_XClosure, "explicitSyntax")
+    descriptor = None
+    for klass in model_xbase_XClosure.__mro__:
+        if "explicitSyntax" in klass.__dict__:
+            descriptor = klass.__dict__["explicitSyntax"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xclosure_has_exported():
+    assert hasattr(model_xbase_XClosure, "exported")
+    descriptor = None
+    for klass in model_xbase_XClosure.__mro__:
+        if "exported" in klass.__dict__:
+            descriptor = klass.__dict__["exported"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XVariableDeclaration)
+
+
+def test_model_xbase_xvariabledeclaration_constructor_exists():
+    assert callable(model_xbase_XVariableDeclaration.__init__)
+
+
+def test_model_xbase_xvariabledeclaration_constructor_args():
+    sig = inspect.signature(model_xbase_XVariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "exported" in params, "Missing parameter 'exported'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "writeable" in params, "Missing parameter 'writeable'"
+
+def test_model_xbase_xvariabledeclaration_has_exported():
+    assert hasattr(model_xbase_XVariableDeclaration, "exported")
+    descriptor = None
+    for klass in model_xbase_XVariableDeclaration.__mro__:
+        if "exported" in klass.__dict__:
+            descriptor = klass.__dict__["exported"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xvariabledeclaration_has_name():
+    assert hasattr(model_xbase_XVariableDeclaration, "name")
+    descriptor = None
+    for klass in model_xbase_XVariableDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_xbase_xvariabledeclaration_has_writeable():
+    assert hasattr(model_xbase_XVariableDeclaration, "writeable")
+    descriptor = None
+    for klass in model_xbase_XVariableDeclaration.__mro__:
+        if "writeable" in klass.__dict__:
+            descriptor = klass.__dict__["writeable"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_xbase_xswitchexpression_is_not_abstract():
+    assert not inspect.isabstract(model_xbase_XSwitchExpression)
+
+
+def test_model_xbase_xswitchexpression_constructor_exists():
+    assert callable(model_xbase_XSwitchExpression.__init__)
+
+
+def test_model_xbase_xswitchexpression_constructor_args():
+    sig = inspect.signature(model_xbase_XSwitchExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "localVarName" in params, "Missing parameter 'localVarName'"
+
+def test_model_xbase_xswitchexpression_has_localVarName():
+    assert hasattr(model_xbase_XSwitchExpression, "localVarName")
+    descriptor = None
+    for klass in model_xbase_XSwitchExpression.__mro__:
+        if "localVarName" in klass.__dict__:
+            descriptor = klass.__dict__["localVarName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_types_jvmcharannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmCharAnnotationValue)
+
+
+def test_model_types_jvmcharannotationvalue_constructor_exists():
+    assert callable(model_types_JvmCharAnnotationValue.__init__)
+
+
+def test_model_types_jvmcharannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmCharAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "values" in params, "Missing parameter 'values'"
+
+def test_model_types_jvmcharannotationvalue_has_values():
+    assert hasattr(model_types_JvmCharAnnotationValue, "values")
+    descriptor = None
+    for klass in model_types_JvmCharAnnotationValue.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_types_jvmfloatannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmFloatAnnotationValue)
+
+
+def test_model_types_jvmfloatannotationvalue_constructor_exists():
+    assert callable(model_types_JvmFloatAnnotationValue.__init__)
+
+
+def test_model_types_jvmfloatannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmFloatAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "values" in params, "Missing parameter 'values'"
+
+def test_model_types_jvmfloatannotationvalue_has_values():
+    assert hasattr(model_types_JvmFloatAnnotationValue, "values")
+    descriptor = None
+    for klass in model_types_JvmFloatAnnotationValue.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_types_jvmdoubleannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmDoubleAnnotationValue)
+
+
+def test_model_types_jvmdoubleannotationvalue_constructor_exists():
+    assert callable(model_types_JvmDoubleAnnotationValue.__init__)
+
+
+def test_model_types_jvmdoubleannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmDoubleAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "values" in params, "Missing parameter 'values'"
+
+def test_model_types_jvmdoubleannotationvalue_has_values():
+    assert hasattr(model_types_JvmDoubleAnnotationValue, "values")
+    descriptor = None
+    for klass in model_types_JvmDoubleAnnotationValue.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_types_jvmlongannotationvalue_is_not_abstract():
+    assert not inspect.isabstract(model_types_JvmLongAnnotationValue)
+
+
+def test_model_types_jvmlongannotationvalue_constructor_exists():
+    assert callable(model_types_JvmLongAnnotationValue.__init__)
+
+
+def test_model_types_jvmlongannotationvalue_constructor_args():
+    sig = inspect.signature(model_types_JvmLongAnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "values" in params, "Missing parameter 'values'"
+
+def test_model_types_jvmlongannotationvalue_has_values():
+    assert hasattr(model_types_JvmLongAnnotationValue, "values")
+    descriptor = None
+    for klass in model_types_JvmLongAnnotationValue.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_jvmvisibility_exists():
     # Check that the Enumeration exists
@@ -4421,8 +4421,8 @@ def test_jvmvisibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in JvmVisibility]
     expected_literals = [
-        "PRIVATE",
         "PUBLIC",
+        "PRIVATE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -4440,259 +4440,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-XVariableDeclaration_strategy = st.builds(
-    XVariableDeclaration,
-)
-model::ss::XtendVariableDeclaration_strategy = st.builds(
-    model::ss::XtendVariableDeclaration,
-    extension=
-        st.booleans()
-)
-model::ss::CreateExtensionInfo_strategy = st.builds(
-    model::ss::CreateExtensionInfo,
-    name=
-        safe_text
-)
-model::ss::RichStringElseIf_strategy = st.builds(
-    model::ss::RichStringElseIf,
-)
-RichStringElseIf_strategy = st.builds(
-    RichStringElseIf,
-)
-XBlockExpression_strategy = st.builds(
-    XBlockExpression,
-)
-model::ss::RichString_strategy = st.builds(
-    model::ss::RichString,
-)
-XForEachExpression_strategy = st.builds(
-    XForEachExpression,
-)
-model::ss::RichStringForLoop_strategy = st.builds(
-    model::ss::RichStringForLoop,
-)
-XStringLiteral_strategy = st.builds(
-    XStringLiteral,
-)
-model::ss::RichStringLiteral_strategy = st.builds(
-    model::ss::RichStringLiteral,
-)
-CreateExtensionInfo_strategy = st.builds(
-    CreateExtensionInfo,
-)
-XtendParameter_strategy = st.builds(
-    XtendParameter,
-)
-XtendMember_strategy = st.builds(
-    XtendMember,
-)
-model::ss::XtendEnumLiteral_strategy = st.builds(
-    model::ss::XtendEnumLiteral,
-    name=
-        safe_text
-)
-model::ss::XtendConstructor_strategy = st.builds(
-    model::ss::XtendConstructor,
-)
-model::ss::XtendField_strategy = st.builds(
-    model::ss::XtendField,
-    name=
-        safe_text
-)
-model::ss::XtendFunction_strategy = st.builds(
-    model::ss::XtendFunction,
-    name=
-        safe_text
-)
-XtendAnnotationTarget_strategy = st.builds(
-    XtendAnnotationTarget,
-)
-model::ss::XtendParameter_strategy = st.builds(
-    model::ss::XtendParameter,
-    varArg=
-        st.booleans(),
-    name=
-        safe_text,
-    extension=
-        st.booleans()
-)
-model::ss::XtendMember_strategy = st.builds(
-    model::ss::XtendMember,
-    modifiers=
-        safe_text
-)
-XAnnotation_strategy = st.builds(
-    XAnnotation,
-)
-model::ss::XtendAnnotationTarget_strategy = st.builds(
-    model::ss::XtendAnnotationTarget,
-)
-XObjectLiteralPart_strategy = st.builds(
-    XObjectLiteralPart,
-)
-ss::model::EObject_strategy = st.builds(
-    ss::model::EObject,
-)
-XtendTypeDeclaration_strategy = st.builds(
-    XtendTypeDeclaration,
-)
-model::ss::XtendClass_strategy = st.builds(
-    model::ss::XtendClass,
-)
-model::ss::XtendEnum_strategy = st.builds(
-    model::ss::XtendEnum,
-)
-model::ss::XtendInterface_strategy = st.builds(
-    model::ss::XtendInterface,
-)
-model::ss::XtendAnnotationType_strategy = st.builds(
-    model::ss::XtendAnnotationType,
-)
-model::ss::XtendFile_strategy = st.builds(
-    model::ss::XtendFile,
-    package=
-        safe_text
-)
-model::xbase::XObjectLiteralPart_strategy = st.builds(
-    model::xbase::XObjectLiteralPart,
-    name=
-        safe_text
-)
-model::xbase::XCatchClause_strategy = st.builds(
-    model::xbase::XCatchClause,
-)
-XCatchClause_strategy = st.builds(
-    XCatchClause,
-)
-XAbstractWhileExpression_strategy = st.builds(
-    XAbstractWhileExpression,
-)
-model::xbase::XDoWhileExpression_strategy = st.builds(
-    model::xbase::XDoWhileExpression,
-)
-model::xbase::XWhileExpression_strategy = st.builds(
-    model::xbase::XWhileExpression,
-)
-XCollectionLiteral_strategy = st.builds(
-    XCollectionLiteral,
-)
-model::xbase::XListLiteral_strategy = st.builds(
-    model::xbase::XListLiteral,
-)
-model::xbase::XSetLiteral_strategy = st.builds(
-    model::xbase::XSetLiteral,
-)
-JvmConstructor_strategy = st.builds(
-    JvmConstructor,
-)
-XAbstractFeatureCall_strategy = st.builds(
-    XAbstractFeatureCall,
-)
-model::xbase::XMemberFeatureCall1_strategy = st.builds(
-    model::xbase::XMemberFeatureCall1,
-    staticWithDeclaringType=
-        st.booleans(),
-    explicitOperationCall=
-        st.booleans(),
-    indexedOperation=
-        st.booleans(),
-    typeLiteral=
-        st.booleans(),
-    explicitStatic=
-        st.booleans(),
-    packageFragment=
-        st.booleans(),
-    nullSafe=
-        st.booleans()
-)
-model::xbase::XPostfixOperation_strategy = st.builds(
-    model::xbase::XPostfixOperation,
-)
-model::xbase::XBinaryOperation_strategy = st.builds(
-    model::xbase::XBinaryOperation,
-)
-model::xbase::XIndexOperation_strategy = st.builds(
-    model::xbase::XIndexOperation,
-)
-model::xbase::XAssignment_strategy = st.builds(
-    model::xbase::XAssignment,
-    explicitStatic=
-        st.booleans()
-)
-model::xbase::XPrefixOperation_strategy = st.builds(
-    model::xbase::XPrefixOperation,
-)
-model::xbase::XFeatureCall_strategy = st.builds(
-    model::xbase::XFeatureCall,
-    indexedOperation=
-        st.booleans(),
-    typeLiteral=
-        st.booleans(),
-    explicitOperationCall=
-        st.booleans(),
-    packageFragment=
-        st.booleans()
-)
-model::xbase::XUnaryOperation_strategy = st.builds(
-    model::xbase::XUnaryOperation,
-)
-model::xbase::XMemberFeatureCall_strategy = st.builds(
-    model::xbase::XMemberFeatureCall,
-    nullSafe=
-        st.booleans(),
-    packageFragment=
-        st.booleans(),
-    typeLiteral=
-        st.booleans(),
-    staticWithDeclaringType=
-        st.booleans(),
-    indexedOperation=
-        st.booleans(),
-    explicitStatic=
-        st.booleans(),
-    explicitOperationCall=
-        st.booleans()
-)
-model::xbase::XExpression_strategy = st.builds(
-    model::xbase::XExpression,
-)
-model::xbase::XCasePart_strategy = st.builds(
-    model::xbase::XCasePart,
-)
-XCasePart_strategy = st.builds(
-    XCasePart,
-)
-types::JvmIdentifiableElement_strategy = st.builds(
-    types::JvmIdentifiableElement,
-)
-xbase::XExpression_strategy = st.builds(
-    xbase::XExpression,
-)
-model::xbase::XVariableDeclaration_strategy = st.builds(
-    model::xbase::XVariableDeclaration,
-    writeable=
-        st.booleans(),
-    exported=
-        st.booleans(),
-    name=
-        safe_text
-)
-model::xbase::XClosure_strategy = st.builds(
-    model::xbase::XClosure,
-    name=
-        safe_text,
-    operator=
-        st.booleans(),
-    exported=
-        st.booleans(),
-    explicitSyntax=
-        st.booleans()
-)
-model::xbase::XSwitchExpression_strategy = st.builds(
-    model::xbase::XSwitchExpression,
-    localVarName=
-        safe_text
-)
 IfConditionStart_strategy = st.builds(
     IfConditionStart,
 )
@@ -4702,11 +4449,11 @@ Line_strategy = st.builds(
 RichString_strategy = st.builds(
     RichString,
 )
-model::richstring::ProcessedRichString_strategy = st.builds(
-    model::richstring::ProcessedRichString,
+model_richstring_ProcessedRichString_strategy = st.builds(
+    model_richstring_ProcessedRichString,
 )
-model::xtype::XExportItem_strategy = st.builds(
-    model::xtype::XExportItem,
+model_xtype_XExportItem_strategy = st.builds(
+    model_xtype_XExportItem,
     alias=
         safe_text
 )
@@ -4734,14 +4481,14 @@ RichStringForLoop_strategy = st.builds(
 Literal_strategy = st.builds(
     Literal,
 )
-model::richstring::LineBreak_strategy = st.builds(
-    model::richstring::LineBreak,
+model_richstring_LineBreak_strategy = st.builds(
+    model_richstring_LineBreak,
 )
 RichStringLiteral_strategy = st.builds(
     RichStringLiteral,
 )
-model::richstring::LinePart_strategy = st.builds(
-    model::richstring::LinePart,
+model_richstring_LinePart_strategy = st.builds(
+    model_richstring_LinePart,
 )
 ProcessedRichString_strategy = st.builds(
     ProcessedRichString,
@@ -4749,52 +4496,52 @@ ProcessedRichString_strategy = st.builds(
 LinePart_strategy = st.builds(
     LinePart,
 )
-model::richstring::EndIf_strategy = st.builds(
-    model::richstring::EndIf,
-)
-model::richstring::ElseIfCondition_strategy = st.builds(
-    model::richstring::ElseIfCondition,
-)
-model::richstring::Literal_strategy = st.builds(
-    model::richstring::Literal,
-    offset=
-        st.integers(),
+model_richstring_Literal_strategy = st.builds(
+    model_richstring_Literal,
     length=
+        st.integers(),
+    offset=
         st.integers()
 )
-model::richstring::ForLoopEnd_strategy = st.builds(
-    model::richstring::ForLoopEnd,
+model_richstring_PrintedExpression_strategy = st.builds(
+    model_richstring_PrintedExpression,
 )
-model::richstring::ForLoopStart_strategy = st.builds(
-    model::richstring::ForLoopStart,
+model_richstring_EndIf_strategy = st.builds(
+    model_richstring_EndIf,
 )
-model::richstring::PrintedExpression_strategy = st.builds(
-    model::richstring::PrintedExpression,
+model_richstring_IfConditionStart_strategy = st.builds(
+    model_richstring_IfConditionStart,
 )
-model::richstring::IfConditionStart_strategy = st.builds(
-    model::richstring::IfConditionStart,
+model_richstring_ForLoopEnd_strategy = st.builds(
+    model_richstring_ForLoopEnd,
 )
-model::richstring::ElseStart_strategy = st.builds(
-    model::richstring::ElseStart,
+model_richstring_ElseIfCondition_strategy = st.builds(
+    model_richstring_ElseIfCondition,
 )
-model::richstring::Line_strategy = st.builds(
-    model::richstring::Line,
+model_richstring_ElseStart_strategy = st.builds(
+    model_richstring_ElseStart,
+)
+model_richstring_ForLoopStart_strategy = st.builds(
+    model_richstring_ForLoopStart,
+)
+model_richstring_Line_strategy = st.builds(
+    model_richstring_Line,
 )
 XImportDeclaration1_strategy = st.builds(
     XImportDeclaration1,
 )
-model::xtype::XImportSection1_strategy = st.builds(
-    model::xtype::XImportSection1,
+model_xtype_XImportSection1_strategy = st.builds(
+    model_xtype_XImportSection1,
 )
-model::xtype::XImportDeclaration_strategy = st.builds(
-    model::xtype::XImportDeclaration,
-    wildcard=
-        st.booleans(),
-    extension=
-        st.booleans(),
+model_xtype_XImportDeclaration_strategy = st.builds(
+    model_xtype_XImportDeclaration,
     importedNamespace=
         safe_text,
     static=
+        st.booleans(),
+    wildcard=
+        st.booleans(),
+    extension=
         st.booleans()
 )
 XImportDeclaration_strategy = st.builds(
@@ -4803,144 +4550,106 @@ XImportDeclaration_strategy = st.builds(
 XExportItem_strategy = st.builds(
     XExportItem,
 )
-model::xtype::XExportDeclaration_strategy = st.builds(
-    model::xtype::XExportDeclaration,
-    importURI=
-        safe_text,
+model_xtype_XExportDeclaration_strategy = st.builds(
+    model_xtype_XExportDeclaration,
+    wildcard=
+        st.booleans(),
     alias=
         safe_text,
-    wildcard=
-        st.booleans()
+    importURI=
+        safe_text
 )
 XExportDeclaration_strategy = st.builds(
     XExportDeclaration,
 )
-model::xtype::XExportSection_strategy = st.builds(
-    model::xtype::XExportSection,
+model_xtype_XExportSection_strategy = st.builds(
+    model_xtype_XExportSection,
 )
-model::xtype::XImportItem_strategy = st.builds(
-    model::xtype::XImportItem,
+model_xtype_XImportItem_strategy = st.builds(
+    model_xtype_XImportItem,
     alias=
         safe_text
 )
 XImportItem_strategy = st.builds(
     XImportItem,
 )
-model::xtype::XImportDeclaration1_strategy = st.builds(
-    model::xtype::XImportDeclaration1,
-    importURI=
-        safe_text,
+model_xtype_XImportDeclaration1_strategy = st.builds(
+    model_xtype_XImportDeclaration1,
     alias=
+        safe_text,
+    importURI=
         safe_text
 )
 XAnnotationElementValuePair_strategy = st.builds(
     XAnnotationElementValuePair,
 )
-model::xtype::XImportSection_strategy = st.builds(
-    model::xtype::XImportSection,
+model_xtype_XImportSection_strategy = st.builds(
+    model_xtype_XImportSection,
 )
 JvmSpecializedTypeReference_strategy = st.builds(
     JvmSpecializedTypeReference,
 )
-model::xtype::XComputedTypeReference_strategy = st.builds(
-    model::xtype::XComputedTypeReference,
+model_xtype_XComputedTypeReference_strategy = st.builds(
+    model_xtype_XComputedTypeReference,
     typeProvider=
         safe_text
 )
-model::xtype::XFunctionTypeRef_strategy = st.builds(
-    model::xtype::XFunctionTypeRef,
+model_xtype_XFunctionTypeRef_strategy = st.builds(
+    model_xtype_XFunctionTypeRef,
     instanceContext=
         st.booleans()
 )
-model::xannotation::XAnnotationElementValuePair_strategy = st.builds(
-    model::xannotation::XAnnotationElementValuePair,
-)
-model::ss::XtendTypeDeclaration_strategy = st.builds(
-    model::ss::XtendTypeDeclaration,
-    name=
-        safe_text
-)
-model::ss::XtendEvent_strategy = st.builds(
-    model::ss::XtendEvent,
-    name=
-        safe_text
-)
-model::ss::XtendDelegate_strategy = st.builds(
-    model::ss::XtendDelegate,
+model_xannotation_XAnnotationElementValuePair_strategy = st.builds(
+    model_xannotation_XAnnotationElementValuePair,
 )
 JvmAnnotationValue_strategy = st.builds(
     JvmAnnotationValue,
 )
-model::types::JvmTypeAnnotationValue_strategy = st.builds(
-    model::types::JvmTypeAnnotationValue,
+model_types_JvmTypeAnnotationValue_strategy = st.builds(
+    model_types_JvmTypeAnnotationValue,
 )
-model::types::JvmAnnotationAnnotationValue_strategy = st.builds(
-    model::types::JvmAnnotationAnnotationValue,
-)
-model::types::JvmStringAnnotationValue_strategy = st.builds(
-    model::types::JvmStringAnnotationValue,
+model_types_JvmShortAnnotationValue_strategy = st.builds(
+    model_types_JvmShortAnnotationValue,
     values=
         safe_text
 )
-model::types::JvmShortAnnotationValue_strategy = st.builds(
-    model::types::JvmShortAnnotationValue,
+model_types_JvmStringAnnotationValue_strategy = st.builds(
+    model_types_JvmStringAnnotationValue,
     values=
         safe_text
 )
-model::types::JvmDoubleAnnotationValue_strategy = st.builds(
-    model::types::JvmDoubleAnnotationValue,
-    values=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+model_types_JvmAnnotationAnnotationValue_strategy = st.builds(
+    model_types_JvmAnnotationAnnotationValue,
 )
-model::types::JvmEnumAnnotationValue_strategy = st.builds(
-    model::types::JvmEnumAnnotationValue,
+model_types_JvmEnumAnnotationValue_strategy = st.builds(
+    model_types_JvmEnumAnnotationValue,
 )
-model::types::JvmLongAnnotationValue_strategy = st.builds(
-    model::types::JvmLongAnnotationValue,
+model_types_JvmByteAnnotationValue_strategy = st.builds(
+    model_types_JvmByteAnnotationValue,
     values=
         safe_text
 )
-model::types::JvmCustomAnnotationValue_strategy = st.builds(
-    model::types::JvmCustomAnnotationValue,
-    values=
-        safe_text
-)
-model::types::JvmCharAnnotationValue_strategy = st.builds(
-    model::types::JvmCharAnnotationValue,
-    values=
-        safe_text
-)
-model::types::JvmFloatAnnotationValue_strategy = st.builds(
-    model::types::JvmFloatAnnotationValue,
-    values=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-model::types::JvmByteAnnotationValue_strategy = st.builds(
-    model::types::JvmByteAnnotationValue,
-    values=
-        safe_text
-)
-model::types::JvmBooleanAnnotationValue_strategy = st.builds(
-    model::types::JvmBooleanAnnotationValue,
+model_types_JvmBooleanAnnotationValue_strategy = st.builds(
+    model_types_JvmBooleanAnnotationValue,
     values=
         st.booleans()
 )
-model::types::JvmIntAnnotationValue_strategy = st.builds(
-    model::types::JvmIntAnnotationValue,
+model_types_JvmIntAnnotationValue_strategy = st.builds(
+    model_types_JvmIntAnnotationValue,
     values=
         st.integers()
 )
 JvmOperation_strategy = st.builds(
     JvmOperation,
 )
-model::types::JvmAnnotationValue_strategy = st.builds(
-    model::types::JvmAnnotationValue,
+model_types_JvmAnnotationValue_strategy = st.builds(
+    model_types_JvmAnnotationValue,
 )
 JvmAnnotationType_strategy = st.builds(
     JvmAnnotationType,
 )
-model::types::JvmAnnotationReference_strategy = st.builds(
-    model::types::JvmAnnotationReference,
+model_types_JvmAnnotationReference_strategy = st.builds(
+    model_types_JvmAnnotationReference,
 )
 JvmAnnotationReference_strategy = st.builds(
     JvmAnnotationReference,
@@ -4948,20 +4657,20 @@ JvmAnnotationReference_strategy = st.builds(
 JvmAnnotationTarget_strategy = st.builds(
     JvmAnnotationTarget,
 )
-model::types::JvmFormalParameter_strategy = st.builds(
-    model::types::JvmFormalParameter,
-    name=
-        safe_text,
+model_types_JvmFormalParameter_strategy = st.builds(
+    model_types_JvmFormalParameter,
     varArg=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
-model::types::JvmMember_strategy = st.builds(
-    model::types::JvmMember,
+model_types_JvmMember_strategy = st.builds(
+    model_types_JvmMember,
+    modifiers=
+        safe_text,
     identifier=
         safe_text,
     simpleName=
-        safe_text,
-    modifiers=
         safe_text,
     visibility=
         safe_text
@@ -4969,188 +4678,78 @@ model::types::JvmMember_strategy = st.builds(
 JvmCompoundTypeReference_strategy = st.builds(
     JvmCompoundTypeReference,
 )
-model::types::JvmSynonymTypeReference_strategy = st.builds(
-    model::types::JvmSynonymTypeReference,
+model_types_JvmSynonymTypeReference_strategy = st.builds(
+    model_types_JvmSynonymTypeReference,
 )
-model::types::JvmMultiTypeReference_strategy = st.builds(
-    model::types::JvmMultiTypeReference,
+model_types_JvmMultiTypeReference_strategy = st.builds(
+    model_types_JvmMultiTypeReference,
 )
 JvmExecutable_strategy = st.builds(
     JvmExecutable,
 )
-model::types::JvmOperation_strategy = st.builds(
-    model::types::JvmOperation,
-    static=
-        st.booleans(),
-    abstract=
-        st.booleans(),
-    native=
-        st.booleans(),
-    synchronized=
+model_types_JvmOperation_strategy = st.builds(
+    model_types_JvmOperation,
+    strictFloatingPoint=
         st.booleans(),
     final=
         st.booleans(),
-    strictFloatingPoint=
+    abstract=
+        st.booleans(),
+    synchronized=
+        st.booleans(),
+    static=
         st.booleans(),
     default=
+        st.booleans(),
+    native=
         st.booleans()
 )
-model::types::JvmConstructor_strategy = st.builds(
-    model::types::JvmConstructor,
+model_types_JvmConstructor_strategy = st.builds(
+    model_types_JvmConstructor,
 )
 JvmFormalParameter_strategy = st.builds(
     JvmFormalParameter,
 )
-model::ss::XtendFormalParameter_strategy = st.builds(
-    model::ss::XtendFormalParameter,
-    extension=
-        st.booleans()
-)
-types::JvmFeature_strategy = st.builds(
-    types::JvmFeature,
+types_JvmFeature_strategy = st.builds(
+    types_JvmFeature,
 )
 XExpression_strategy = st.builds(
     XExpression,
 )
-model::xannotation::XAnnotation_strategy = st.builds(
-    model::xannotation::XAnnotation,
-)
-model::xbase::XBreakExpression_strategy = st.builds(
-    model::xbase::XBreakExpression,
-)
-model::xbase::XStringLiteral_strategy = st.builds(
-    model::xbase::XStringLiteral,
-    value=
-        safe_text
-)
-model::xbase::XInstanceOfExpression_strategy = st.builds(
-    model::xbase::XInstanceOfExpression,
-)
-model::ss::RichStringIf_strategy = st.builds(
-    model::ss::RichStringIf,
-)
-model::xbase::XAbstractWhileExpression_strategy = st.builds(
-    model::xbase::XAbstractWhileExpression,
-)
-model::xbase::XBlockExpression_strategy = st.builds(
-    model::xbase::XBlockExpression,
-)
-model::xbase::XObjectLiteral_strategy = st.builds(
-    model::xbase::XObjectLiteral,
-)
-model::xbase::XVariableDeclarationList_strategy = st.builds(
-    model::xbase::XVariableDeclarationList,
-    writeable=
-        st.booleans(),
-    exported=
-        st.booleans()
-)
-model::xbase::XFunctionDeclaration_strategy = st.builds(
-    model::xbase::XFunctionDeclaration,
-    name=
-        safe_text
-)
-model::xbase::XArrayLiteral_strategy = st.builds(
-    model::xbase::XArrayLiteral,
-)
-model::xbase::XNullLiteral_strategy = st.builds(
-    model::xbase::XNullLiteral,
-)
-model::xbase::XForEachExpression_strategy = st.builds(
-    model::xbase::XForEachExpression,
-)
-model::xbase::XTryCatchFinallyExpression_strategy = st.builds(
-    model::xbase::XTryCatchFinallyExpression,
-)
-model::xbase::XCastedExpression_strategy = st.builds(
-    model::xbase::XCastedExpression,
-)
-model::xbase::XTypeLiteral_strategy = st.builds(
-    model::xbase::XTypeLiteral,
-    arrayDimensions=
-        safe_text
-)
-model::xbase::XThrowExpression_strategy = st.builds(
-    model::xbase::XThrowExpression,
-)
-model::xbase::XKeyValuePair_strategy = st.builds(
-    model::xbase::XKeyValuePair,
-    key1=
-        safe_text
-)
-model::xbase::XCollectionLiteral_strategy = st.builds(
-    model::xbase::XCollectionLiteral,
-)
-model::xbase::XNumberLiteral_strategy = st.builds(
-    model::xbase::XNumberLiteral,
-    value=
-        safe_text
-)
-model::xbase::XContinueExpression_strategy = st.builds(
-    model::xbase::XContinueExpression,
-)
-model::xbase::XAbstractFeatureCall_strategy = st.builds(
-    model::xbase::XAbstractFeatureCall,
-    validFeature=
-        st.booleans(),
-    invalidFeatureIssueCode=
-        safe_text
-)
-model::xbase::XForLoopExpression_strategy = st.builds(
-    model::xbase::XForLoopExpression,
-)
-model::xbase::XBooleanLiteral_strategy = st.builds(
-    model::xbase::XBooleanLiteral,
-    isTrue=
-        st.booleans()
-)
-model::xbase::XTernaryOperation_strategy = st.builds(
-    model::xbase::XTernaryOperation,
-)
-model::xbase::XReturnExpression_strategy = st.builds(
-    model::xbase::XReturnExpression,
-)
-model::xbase::XConstructorCall_strategy = st.builds(
-    model::xbase::XConstructorCall,
-    validFeature=
-        st.booleans(),
-    invalidFeatureIssueCode=
-        safe_text
-)
-model::xbase::XIfExpression_strategy = st.builds(
-    model::xbase::XIfExpression,
+model_xannotation_XAnnotation_strategy = st.builds(
+    model_xannotation_XAnnotation,
 )
 JvmFeature_strategy = st.builds(
     JvmFeature,
 )
-model::types::JvmField_strategy = st.builds(
-    model::types::JvmField,
-    transient=
+model_types_JvmField_strategy = st.builds(
+    model_types_JvmField,
+    static=
         st.booleans(),
     volatile=
         st.booleans(),
     final=
         st.booleans(),
-    static=
+    transient=
         st.booleans()
 )
-model::types::JvmTypeReference_strategy = st.builds(
-    model::types::JvmTypeReference,
+model_types_JvmTypeReference_strategy = st.builds(
+    model_types_JvmTypeReference,
 )
-types::JvmTypeReference_strategy = st.builds(
-    types::JvmTypeReference,
+types_JvmTypeReference_strategy = st.builds(
+    types_JvmTypeReference,
 )
 JvmConstraintOwner_strategy = st.builds(
     JvmConstraintOwner,
 )
-model::types::JvmTypeConstraint_strategy = st.builds(
-    model::types::JvmTypeConstraint,
+model_types_JvmTypeConstraint_strategy = st.builds(
+    model_types_JvmTypeConstraint,
 )
 JvmTypeConstraint_strategy = st.builds(
     JvmTypeConstraint,
 )
-model::types::JvmConstraintOwner_strategy = st.builds(
-    model::types::JvmConstraintOwner,
+model_types_JvmConstraintOwner_strategy = st.builds(
+    model_types_JvmConstraintOwner,
 )
 JvmParameterizedTypeReference_strategy = st.builds(
     JvmParameterizedTypeReference,
@@ -5158,19 +4757,19 @@ JvmParameterizedTypeReference_strategy = st.builds(
 JvmTypeParameter_strategy = st.builds(
     JvmTypeParameter,
 )
-types::JvmTypeParameterDeclarator_strategy = st.builds(
-    types::JvmTypeParameterDeclarator,
+types_JvmTypeParameterDeclarator_strategy = st.builds(
+    types_JvmTypeParameterDeclarator,
 )
-model::types::JvmExecutable_strategy = st.builds(
-    model::types::JvmExecutable,
+model_types_JvmExecutable_strategy = st.builds(
+    model_types_JvmExecutable,
     varArgs=
         st.booleans()
 )
-types::JvmDeclaredType_strategy = st.builds(
-    types::JvmDeclaredType,
+types_JvmDeclaredType_strategy = st.builds(
+    types_JvmDeclaredType,
 )
-model::types::JvmGenericType_strategy = st.builds(
-    model::types::JvmGenericType,
+model_types_JvmGenericType_strategy = st.builds(
+    model_types_JvmGenericType,
     interface=
         st.booleans(),
     strictFloatingPoint=
@@ -5179,8 +4778,8 @@ model::types::JvmGenericType_strategy = st.builds(
 JvmField_strategy = st.builds(
     JvmField,
 )
-model::types::JvmEnumerationLiteral_strategy = st.builds(
-    model::types::JvmEnumerationLiteral,
+model_types_JvmEnumerationLiteral_strategy = st.builds(
+    model_types_JvmEnumerationLiteral,
 )
 JvmEnumerationLiteral_strategy = st.builds(
     JvmEnumerationLiteral,
@@ -5188,94 +4787,94 @@ JvmEnumerationLiteral_strategy = st.builds(
 JvmDeclaredType_strategy = st.builds(
     JvmDeclaredType,
 )
-model::types::JvmEnumerationType_strategy = st.builds(
-    model::types::JvmEnumerationType,
+model_types_JvmEnumerationType_strategy = st.builds(
+    model_types_JvmEnumerationType,
 )
-model::types::JvmAnnotationType_strategy = st.builds(
-    model::types::JvmAnnotationType,
+model_types_JvmAnnotationType_strategy = st.builds(
+    model_types_JvmAnnotationType,
 )
-model::types::JvmLowerBound_strategy = st.builds(
-    model::types::JvmLowerBound,
+model_types_JvmLowerBound_strategy = st.builds(
+    model_types_JvmLowerBound,
 )
-model::types::JvmUpperBound_strategy = st.builds(
-    model::types::JvmUpperBound,
+model_types_JvmUpperBound_strategy = st.builds(
+    model_types_JvmUpperBound,
 )
-model::types::JvmTypeParameterDeclarator_strategy = st.builds(
-    model::types::JvmTypeParameterDeclarator,
+model_types_JvmTypeParameterDeclarator_strategy = st.builds(
+    model_types_JvmTypeParameterDeclarator,
 )
 JvmTypeParameterDeclarator_strategy = st.builds(
     JvmTypeParameterDeclarator,
 )
-types::JvmConstraintOwner_strategy = st.builds(
-    types::JvmConstraintOwner,
+types_JvmConstraintOwner_strategy = st.builds(
+    types_JvmConstraintOwner,
 )
-model::types::JvmWildcardTypeReference_strategy = st.builds(
-    model::types::JvmWildcardTypeReference,
+model_types_JvmWildcardTypeReference_strategy = st.builds(
+    model_types_JvmWildcardTypeReference,
 )
 JvmMember_strategy = st.builds(
     JvmMember,
 )
-model::types::JvmFeature_strategy = st.builds(
-    model::types::JvmFeature,
+model_types_JvmFeature_strategy = st.builds(
+    model_types_JvmFeature,
 )
 JvmTypeReference_strategy = st.builds(
     JvmTypeReference,
 )
-model::types::JvmCompoundTypeReference_strategy = st.builds(
-    model::types::JvmCompoundTypeReference,
+model_types_JvmParameterizedTypeReference_strategy = st.builds(
+    model_types_JvmParameterizedTypeReference,
 )
-model::types::JvmGenericArrayTypeReference_strategy = st.builds(
-    model::types::JvmGenericArrayTypeReference,
+model_types_JvmSpecializedTypeReference_strategy = st.builds(
+    model_types_JvmSpecializedTypeReference,
 )
-model::types::JvmAnyTypeReference_strategy = st.builds(
-    model::types::JvmAnyTypeReference,
+model_types_JvmCompoundTypeReference_strategy = st.builds(
+    model_types_JvmCompoundTypeReference,
 )
-model::types::JvmUnknownTypeReference_strategy = st.builds(
-    model::types::JvmUnknownTypeReference,
+model_types_JvmAnyTypeReference_strategy = st.builds(
+    model_types_JvmAnyTypeReference,
+)
+model_types_JvmDelegateTypeReference_strategy = st.builds(
+    model_types_JvmDelegateTypeReference,
+)
+model_types_JvmGenericArrayTypeReference_strategy = st.builds(
+    model_types_JvmGenericArrayTypeReference,
+)
+model_types_JvmUnknownTypeReference_strategy = st.builds(
+    model_types_JvmUnknownTypeReference,
     qualifiedName=
         safe_text
 )
-model::types::JvmDelegateTypeReference_strategy = st.builds(
-    model::types::JvmDelegateTypeReference,
+types_JvmComponentType_strategy = st.builds(
+    types_JvmComponentType,
 )
-model::types::JvmParameterizedTypeReference_strategy = st.builds(
-    model::types::JvmParameterizedTypeReference,
-)
-model::types::JvmSpecializedTypeReference_strategy = st.builds(
-    model::types::JvmSpecializedTypeReference,
-)
-types::JvmComponentType_strategy = st.builds(
-    types::JvmComponentType,
-)
-model::types::JvmTypeParameter_strategy = st.builds(
-    model::types::JvmTypeParameter,
+model_types_JvmTypeParameter_strategy = st.builds(
+    model_types_JvmTypeParameter,
     name=
         safe_text
 )
-types::JvmMember_strategy = st.builds(
-    types::JvmMember,
+types_JvmMember_strategy = st.builds(
+    types_JvmMember,
 )
-model::types::JvmDeclaredType_strategy = st.builds(
-    model::types::JvmDeclaredType,
-    packageName=
-        safe_text,
-    exported=
-        st.booleans(),
+model_types_JvmDeclaredType_strategy = st.builds(
+    model_types_JvmDeclaredType,
     abstract=
         st.booleans(),
-    final=
-        st.booleans(),
     static=
+        st.booleans(),
+    exported=
+        st.booleans(),
+    packageName=
+        safe_text,
+    final=
         st.booleans()
 )
 JvmComponentType_strategy = st.builds(
     JvmComponentType,
 )
-model::types::JvmArrayType_strategy = st.builds(
-    model::types::JvmArrayType,
+model_types_JvmArrayType_strategy = st.builds(
+    model_types_JvmArrayType,
 )
-model::types::JvmPrimitiveType_strategy = st.builds(
-    model::types::JvmPrimitiveType,
+model_types_JvmPrimitiveType_strategy = st.builds(
+    model_types_JvmPrimitiveType,
     simpleName=
         safe_text
 )
@@ -5285,20 +4884,20 @@ JvmArrayType_strategy = st.builds(
 JvmType_strategy = st.builds(
     JvmType,
 )
-model::types::JvmComponentType_strategy = st.builds(
-    model::types::JvmComponentType,
+model_types_JvmComponentType_strategy = st.builds(
+    model_types_JvmComponentType,
 )
-model::types::JvmVoid_strategy = st.builds(
-    model::types::JvmVoid,
+model_types_JvmVoid_strategy = st.builds(
+    model_types_JvmVoid,
 )
-model::types::JvmNoModule_strategy = st.builds(
-    model::types::JvmNoModule,
+model_types_JvmNoModule_strategy = st.builds(
+    model_types_JvmNoModule,
 )
 XExportSection_strategy = st.builds(
     XExportSection,
 )
-types::model::EObject_strategy = st.builds(
-    types::model::EObject,
+types_model_EObject_strategy = st.builds(
+    types_model_EObject,
 )
 XImportSection1_strategy = st.builds(
     XImportSection1,
@@ -5306,936 +4905,421 @@ XImportSection1_strategy = st.builds(
 JvmIdentifiableElement_strategy = st.builds(
     JvmIdentifiableElement,
 )
-model::types::JvmType_strategy = st.builds(
-    model::types::JvmType,
+model_types_JvmAnnotationTarget_strategy = st.builds(
+    model_types_JvmAnnotationTarget,
 )
-model::types::JvmAnnotationTarget_strategy = st.builds(
-    model::types::JvmAnnotationTarget,
+model_types_JvmType_strategy = st.builds(
+    model_types_JvmType,
 )
-model::types::JvmModule_strategy = st.builds(
-    model::types::JvmModule,
+model_types_JvmModule_strategy = st.builds(
+    model_types_JvmModule,
     simpleName=
         safe_text
 )
-model::types::JvmIdentifiableElement_strategy = st.builds(
-    model::types::JvmIdentifiableElement,
+model_types_JvmIdentifiableElement_strategy = st.builds(
+    model_types_JvmIdentifiableElement,
 )
-
-@given(instance=XVariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_xvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, XVariableDeclaration)
-
-@given(instance=model::ss::XtendVariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendVariableDeclaration)
-
-@given(instance=model::ss::XtendVariableDeclaration_strategy)
-def test_model::ss::xtendvariabledeclaration_extension_type(instance):
-    assert isinstance(instance.extension, bool)
-
-
-@given(instance=model::ss::XtendVariableDeclaration_strategy)
-def test_model::ss::xtendvariabledeclaration_extension_setter(instance):
-    original = instance.extension
-    instance.extension = original
-    assert instance.extension == original
-
-@given(instance=model::ss::CreateExtensionInfo_strategy)
-@settings(max_examples=50)
-def test_model::ss::createextensioninfo_instantiation(instance):
-    assert isinstance(instance, model::ss::CreateExtensionInfo)
-
-@given(instance=model::ss::CreateExtensionInfo_strategy)
-def test_model::ss::createextensioninfo_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::CreateExtensionInfo_strategy)
-def test_model::ss::createextensioninfo_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::ss::RichStringElseIf_strategy)
-@settings(max_examples=50)
-def test_model::ss::richstringelseif_instantiation(instance):
-    assert isinstance(instance, model::ss::RichStringElseIf)
-
-@given(instance=RichStringElseIf_strategy)
-@settings(max_examples=50)
-def test_richstringelseif_instantiation(instance):
-    assert isinstance(instance, RichStringElseIf)
-
-@given(instance=XBlockExpression_strategy)
-@settings(max_examples=50)
-def test_xblockexpression_instantiation(instance):
-    assert isinstance(instance, XBlockExpression)
-
-@given(instance=model::ss::RichString_strategy)
-@settings(max_examples=50)
-def test_model::ss::richstring_instantiation(instance):
-    assert isinstance(instance, model::ss::RichString)
-
-@given(instance=XForEachExpression_strategy)
-@settings(max_examples=50)
-def test_xforeachexpression_instantiation(instance):
-    assert isinstance(instance, XForEachExpression)
-
-@given(instance=model::ss::RichStringForLoop_strategy)
-@settings(max_examples=50)
-def test_model::ss::richstringforloop_instantiation(instance):
-    assert isinstance(instance, model::ss::RichStringForLoop)
-
-@given(instance=XStringLiteral_strategy)
-@settings(max_examples=50)
-def test_xstringliteral_instantiation(instance):
-    assert isinstance(instance, XStringLiteral)
-
-@given(instance=model::ss::RichStringLiteral_strategy)
-@settings(max_examples=50)
-def test_model::ss::richstringliteral_instantiation(instance):
-    assert isinstance(instance, model::ss::RichStringLiteral)
-
-@given(instance=CreateExtensionInfo_strategy)
-@settings(max_examples=50)
-def test_createextensioninfo_instantiation(instance):
-    assert isinstance(instance, CreateExtensionInfo)
-
-@given(instance=XtendParameter_strategy)
-@settings(max_examples=50)
-def test_xtendparameter_instantiation(instance):
-    assert isinstance(instance, XtendParameter)
-
-@given(instance=XtendMember_strategy)
-@settings(max_examples=50)
-def test_xtendmember_instantiation(instance):
-    assert isinstance(instance, XtendMember)
-
-@given(instance=model::ss::XtendEnumLiteral_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendenumliteral_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendEnumLiteral)
-
-@given(instance=model::ss::XtendEnumLiteral_strategy)
-def test_model::ss::xtendenumliteral_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::XtendEnumLiteral_strategy)
-def test_model::ss::xtendenumliteral_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::ss::XtendConstructor_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendconstructor_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendConstructor)
-
-@given(instance=model::ss::XtendField_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendfield_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendField)
-
-@given(instance=model::ss::XtendField_strategy)
-def test_model::ss::xtendfield_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::XtendField_strategy)
-def test_model::ss::xtendfield_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendField_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendfield_isextension_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isExtension()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isExtension).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExtension' in model::ss::XtendField is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExtension' in model::ss::XtendField did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExtension' in model::ss::XtendField is not implemented or raised an error")
-
-@given(instance=model::ss::XtendFunction_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendfunction_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendFunction)
-
-@given(instance=model::ss::XtendFunction_strategy)
-def test_model::ss::xtendfunction_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::XtendFunction_strategy)
-def test_model::ss::xtendfunction_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendFunction_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendfunction_isoverride_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isOverride()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isOverride).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isOverride' in model::ss::XtendFunction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isOverride' in model::ss::XtendFunction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isOverride' in model::ss::XtendFunction is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendFunction_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendfunction_isdispatch_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isDispatch()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isDispatch).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isDispatch' in model::ss::XtendFunction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isDispatch' in model::ss::XtendFunction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isDispatch' in model::ss::XtendFunction is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendFunction_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendfunction_isabstract_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isAbstract()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isAbstract).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isAbstract' in model::ss::XtendFunction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isAbstract' in model::ss::XtendFunction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isAbstract' in model::ss::XtendFunction is not implemented or raised an error")
-
-@given(instance=XtendAnnotationTarget_strategy)
-@settings(max_examples=50)
-def test_xtendannotationtarget_instantiation(instance):
-    assert isinstance(instance, XtendAnnotationTarget)
-
-@given(instance=model::ss::XtendParameter_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendparameter_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendParameter)
-
-@given(instance=model::ss::XtendParameter_strategy)
-def test_model::ss::xtendparameter_varArg_type(instance):
-    assert isinstance(instance.varArg, bool)
-
-
-@given(instance=model::ss::XtendParameter_strategy)
-def test_model::ss::xtendparameter_varArg_setter(instance):
-    original = instance.varArg
-    instance.varArg = original
-    assert instance.varArg == original
-
-@given(instance=model::ss::XtendParameter_strategy)
-def test_model::ss::xtendparameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::XtendParameter_strategy)
-def test_model::ss::xtendparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::ss::XtendParameter_strategy)
-def test_model::ss::xtendparameter_extension_type(instance):
-    assert isinstance(instance.extension, bool)
-
-
-@given(instance=model::ss::XtendParameter_strategy)
-def test_model::ss::xtendparameter_extension_setter(instance):
-    original = instance.extension
-    instance.extension = original
-    assert instance.extension == original
-
-@given(instance=model::ss::XtendMember_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendmember_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendMember)
-
-@given(instance=model::ss::XtendMember_strategy)
-def test_model::ss::xtendmember_modifiers_type(instance):
-    assert isinstance(instance.modifiers, str)
-
-
-@given(instance=model::ss::XtendMember_strategy)
-def test_model::ss::xtendmember_modifiers_setter(instance):
-    original = instance.modifiers
-    instance.modifiers = original
-    assert instance.modifiers == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendMember_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendmember_isstatic_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isStatic()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isStatic).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isStatic' in model::ss::XtendMember is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isStatic' in model::ss::XtendMember did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isStatic' in model::ss::XtendMember is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendMember_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendmember_isfinal_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isFinal()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isFinal).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isFinal' in model::ss::XtendMember is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isFinal' in model::ss::XtendMember did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isFinal' in model::ss::XtendMember is not implemented or raised an error")
-
-@given(instance=XAnnotation_strategy)
-@settings(max_examples=50)
-def test_xannotation_instantiation(instance):
-    assert isinstance(instance, XAnnotation)
-
-@given(instance=model::ss::XtendAnnotationTarget_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendannotationtarget_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendAnnotationTarget)
-
-@given(instance=XObjectLiteralPart_strategy)
-@settings(max_examples=50)
-def test_xobjectliteralpart_instantiation(instance):
-    assert isinstance(instance, XObjectLiteralPart)
-
-@given(instance=ss::model::EObject_strategy)
-@settings(max_examples=50)
-def test_ss::model::eobject_instantiation(instance):
-    assert isinstance(instance, ss::model::EObject)
-
-@given(instance=XtendTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_xtendtypedeclaration_instantiation(instance):
-    assert isinstance(instance, XtendTypeDeclaration)
-
-@given(instance=model::ss::XtendClass_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendclass_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendClass)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendClass_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendclass_isabstract_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isAbstract()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isAbstract).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isAbstract' in model::ss::XtendClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isAbstract' in model::ss::XtendClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isAbstract' in model::ss::XtendClass is not implemented or raised an error")
-
-@given(instance=model::ss::XtendEnum_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendenum_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendEnum)
-
-@given(instance=model::ss::XtendInterface_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendinterface_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendInterface)
-
-@given(instance=model::ss::XtendAnnotationType_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendannotationtype_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendAnnotationType)
-
-@given(instance=model::ss::XtendFile_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendfile_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendFile)
-
-@given(instance=model::ss::XtendFile_strategy)
-def test_model::ss::xtendfile_package_type(instance):
-    assert isinstance(instance.package, str)
-
-
-@given(instance=model::ss::XtendFile_strategy)
-def test_model::ss::xtendfile_package_setter(instance):
-    original = instance.package
-    instance.package = original
-    assert instance.package == original
-
-@given(instance=model::xbase::XObjectLiteralPart_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xobjectliteralpart_instantiation(instance):
-    assert isinstance(instance, model::xbase::XObjectLiteralPart)
-
-@given(instance=model::xbase::XObjectLiteralPart_strategy)
-def test_model::xbase::xobjectliteralpart_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::xbase::XObjectLiteralPart_strategy)
-def test_model::xbase::xobjectliteralpart_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::xbase::XCatchClause_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xcatchclause_instantiation(instance):
-    assert isinstance(instance, model::xbase::XCatchClause)
-
-@given(instance=XCatchClause_strategy)
-@settings(max_examples=50)
-def test_xcatchclause_instantiation(instance):
-    assert isinstance(instance, XCatchClause)
-
-@given(instance=XAbstractWhileExpression_strategy)
-@settings(max_examples=50)
-def test_xabstractwhileexpression_instantiation(instance):
-    assert isinstance(instance, XAbstractWhileExpression)
-
-@given(instance=model::xbase::XDoWhileExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xdowhileexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XDoWhileExpression)
-
-@given(instance=model::xbase::XWhileExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xwhileexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XWhileExpression)
-
-@given(instance=XCollectionLiteral_strategy)
-@settings(max_examples=50)
-def test_xcollectionliteral_instantiation(instance):
-    assert isinstance(instance, XCollectionLiteral)
-
-@given(instance=model::xbase::XListLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xlistliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XListLiteral)
-
-@given(instance=model::xbase::XSetLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xsetliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XSetLiteral)
-
-@given(instance=JvmConstructor_strategy)
-@settings(max_examples=50)
-def test_jvmconstructor_instantiation(instance):
-    assert isinstance(instance, JvmConstructor)
-
-@given(instance=XAbstractFeatureCall_strategy)
-@settings(max_examples=50)
-def test_xabstractfeaturecall_instantiation(instance):
-    assert isinstance(instance, XAbstractFeatureCall)
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xmemberfeaturecall1_instantiation(instance):
-    assert isinstance(instance, model::xbase::XMemberFeatureCall1)
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_staticWithDeclaringType_type(instance):
-    assert isinstance(instance.staticWithDeclaringType, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_staticWithDeclaringType_setter(instance):
-    original = instance.staticWithDeclaringType
-    instance.staticWithDeclaringType = original
-    assert instance.staticWithDeclaringType == original
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_explicitOperationCall_type(instance):
-    assert isinstance(instance.explicitOperationCall, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_explicitOperationCall_setter(instance):
-    original = instance.explicitOperationCall
-    instance.explicitOperationCall = original
-    assert instance.explicitOperationCall == original
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_indexedOperation_type(instance):
-    assert isinstance(instance.indexedOperation, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_indexedOperation_setter(instance):
-    original = instance.indexedOperation
-    instance.indexedOperation = original
-    assert instance.indexedOperation == original
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_typeLiteral_type(instance):
-    assert isinstance(instance.typeLiteral, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_typeLiteral_setter(instance):
-    original = instance.typeLiteral
-    instance.typeLiteral = original
-    assert instance.typeLiteral == original
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_explicitStatic_type(instance):
-    assert isinstance(instance.explicitStatic, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_explicitStatic_setter(instance):
-    original = instance.explicitStatic
-    instance.explicitStatic = original
-    assert instance.explicitStatic == original
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_packageFragment_type(instance):
-    assert isinstance(instance.packageFragment, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_packageFragment_setter(instance):
-    original = instance.packageFragment
-    instance.packageFragment = original
-    assert instance.packageFragment == original
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_nullSafe_type(instance):
-    assert isinstance(instance.nullSafe, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall1_strategy)
-def test_model::xbase::xmemberfeaturecall1_nullSafe_setter(instance):
-    original = instance.nullSafe
-    instance.nullSafe = original
-    assert instance.nullSafe == original
-
-@given(instance=model::xbase::XPostfixOperation_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xpostfixoperation_instantiation(instance):
-    assert isinstance(instance, model::xbase::XPostfixOperation)
-
-@given(instance=model::xbase::XBinaryOperation_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xbinaryoperation_instantiation(instance):
-    assert isinstance(instance, model::xbase::XBinaryOperation)
-
-@given(instance=model::xbase::XIndexOperation_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xindexoperation_instantiation(instance):
-    assert isinstance(instance, model::xbase::XIndexOperation)
-
-@given(instance=model::xbase::XAssignment_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xassignment_instantiation(instance):
-    assert isinstance(instance, model::xbase::XAssignment)
-
-@given(instance=model::xbase::XAssignment_strategy)
-def test_model::xbase::xassignment_explicitStatic_type(instance):
-    assert isinstance(instance.explicitStatic, bool)
-
-
-@given(instance=model::xbase::XAssignment_strategy)
-def test_model::xbase::xassignment_explicitStatic_setter(instance):
-    original = instance.explicitStatic
-    instance.explicitStatic = original
-    assert instance.explicitStatic == original
-
-@given(instance=model::xbase::XPrefixOperation_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xprefixoperation_instantiation(instance):
-    assert isinstance(instance, model::xbase::XPrefixOperation)
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xfeaturecall_instantiation(instance):
-    assert isinstance(instance, model::xbase::XFeatureCall)
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_indexedOperation_type(instance):
-    assert isinstance(instance.indexedOperation, bool)
-
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_indexedOperation_setter(instance):
-    original = instance.indexedOperation
-    instance.indexedOperation = original
-    assert instance.indexedOperation == original
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_typeLiteral_type(instance):
-    assert isinstance(instance.typeLiteral, bool)
-
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_typeLiteral_setter(instance):
-    original = instance.typeLiteral
-    instance.typeLiteral = original
-    assert instance.typeLiteral == original
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_explicitOperationCall_type(instance):
-    assert isinstance(instance.explicitOperationCall, bool)
-
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_explicitOperationCall_setter(instance):
-    original = instance.explicitOperationCall
-    instance.explicitOperationCall = original
-    assert instance.explicitOperationCall == original
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_packageFragment_type(instance):
-    assert isinstance(instance.packageFragment, bool)
-
-
-@given(instance=model::xbase::XFeatureCall_strategy)
-def test_model::xbase::xfeaturecall_packageFragment_setter(instance):
-    original = instance.packageFragment
-    instance.packageFragment = original
-    assert instance.packageFragment == original
-
-@given(instance=model::xbase::XUnaryOperation_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xunaryoperation_instantiation(instance):
-    assert isinstance(instance, model::xbase::XUnaryOperation)
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xmemberfeaturecall_instantiation(instance):
-    assert isinstance(instance, model::xbase::XMemberFeatureCall)
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_nullSafe_type(instance):
-    assert isinstance(instance.nullSafe, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_nullSafe_setter(instance):
-    original = instance.nullSafe
-    instance.nullSafe = original
-    assert instance.nullSafe == original
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_packageFragment_type(instance):
-    assert isinstance(instance.packageFragment, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_packageFragment_setter(instance):
-    original = instance.packageFragment
-    instance.packageFragment = original
-    assert instance.packageFragment == original
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_typeLiteral_type(instance):
-    assert isinstance(instance.typeLiteral, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_typeLiteral_setter(instance):
-    original = instance.typeLiteral
-    instance.typeLiteral = original
-    assert instance.typeLiteral == original
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_staticWithDeclaringType_type(instance):
-    assert isinstance(instance.staticWithDeclaringType, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_staticWithDeclaringType_setter(instance):
-    original = instance.staticWithDeclaringType
-    instance.staticWithDeclaringType = original
-    assert instance.staticWithDeclaringType == original
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_indexedOperation_type(instance):
-    assert isinstance(instance.indexedOperation, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_indexedOperation_setter(instance):
-    original = instance.indexedOperation
-    instance.indexedOperation = original
-    assert instance.indexedOperation == original
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_explicitStatic_type(instance):
-    assert isinstance(instance.explicitStatic, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_explicitStatic_setter(instance):
-    original = instance.explicitStatic
-    instance.explicitStatic = original
-    assert instance.explicitStatic == original
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_explicitOperationCall_type(instance):
-    assert isinstance(instance.explicitOperationCall, bool)
-
-
-@given(instance=model::xbase::XMemberFeatureCall_strategy)
-def test_model::xbase::xmemberfeaturecall_explicitOperationCall_setter(instance):
-    original = instance.explicitOperationCall
-    instance.explicitOperationCall = original
-    assert instance.explicitOperationCall == original
-
-@given(instance=model::xbase::XExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XExpression)
-
-@given(instance=model::xbase::XCasePart_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xcasepart_instantiation(instance):
-    assert isinstance(instance, model::xbase::XCasePart)
-
-@given(instance=XCasePart_strategy)
-@settings(max_examples=50)
-def test_xcasepart_instantiation(instance):
-    assert isinstance(instance, XCasePart)
-
-@given(instance=types::JvmIdentifiableElement_strategy)
-@settings(max_examples=50)
-def test_types::jvmidentifiableelement_instantiation(instance):
-    assert isinstance(instance, types::JvmIdentifiableElement)
-
-@given(instance=xbase::XExpression_strategy)
-@settings(max_examples=50)
-def test_xbase::xexpression_instantiation(instance):
-    assert isinstance(instance, xbase::XExpression)
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, model::xbase::XVariableDeclaration)
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-def test_model::xbase::xvariabledeclaration_writeable_type(instance):
-    assert isinstance(instance.writeable, bool)
-
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-def test_model::xbase::xvariabledeclaration_writeable_setter(instance):
-    original = instance.writeable
-    instance.writeable = original
-    assert instance.writeable == original
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-def test_model::xbase::xvariabledeclaration_exported_type(instance):
-    assert isinstance(instance.exported, bool)
-
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-def test_model::xbase::xvariabledeclaration_exported_setter(instance):
-    original = instance.exported
-    instance.exported = original
-    assert instance.exported == original
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-def test_model::xbase::xvariabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::xbase::XVariableDeclaration_strategy)
-def test_model::xbase::xvariabledeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::xbase::XClosure_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xclosure_instantiation(instance):
-    assert isinstance(instance, model::xbase::XClosure)
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_operator_type(instance):
-    assert isinstance(instance.operator, bool)
-
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_exported_type(instance):
-    assert isinstance(instance.exported, bool)
-
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_exported_setter(instance):
-    original = instance.exported
-    instance.exported = original
-    assert instance.exported == original
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_explicitSyntax_type(instance):
-    assert isinstance(instance.explicitSyntax, bool)
-
-
-@given(instance=model::xbase::XClosure_strategy)
-def test_model::xbase::xclosure_explicitSyntax_setter(instance):
-    original = instance.explicitSyntax
-    instance.explicitSyntax = original
-    assert instance.explicitSyntax == original
-
-@given(instance=model::xbase::XSwitchExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xswitchexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XSwitchExpression)
-
-@given(instance=model::xbase::XSwitchExpression_strategy)
-def test_model::xbase::xswitchexpression_localVarName_type(instance):
-    assert isinstance(instance.localVarName, str)
-
-
-@given(instance=model::xbase::XSwitchExpression_strategy)
-def test_model::xbase::xswitchexpression_localVarName_setter(instance):
-    original = instance.localVarName
-    instance.localVarName = original
-    assert instance.localVarName == original
+model_ss_XtendFormalParameter_strategy = st.builds(
+    model_ss_XtendFormalParameter,
+    extension=
+        st.booleans()
+)
+XVariableDeclaration_strategy = st.builds(
+    XVariableDeclaration,
+)
+model_ss_XtendVariableDeclaration_strategy = st.builds(
+    model_ss_XtendVariableDeclaration,
+    extension=
+        st.booleans()
+)
+model_ss_CreateExtensionInfo_strategy = st.builds(
+    model_ss_CreateExtensionInfo,
+    name=
+        safe_text
+)
+model_ss_RichStringElseIf_strategy = st.builds(
+    model_ss_RichStringElseIf,
+)
+RichStringElseIf_strategy = st.builds(
+    RichStringElseIf,
+)
+XBlockExpression_strategy = st.builds(
+    XBlockExpression,
+)
+model_ss_RichString_strategy = st.builds(
+    model_ss_RichString,
+)
+model_ss_RichStringIf_strategy = st.builds(
+    model_ss_RichStringIf,
+)
+XForEachExpression_strategy = st.builds(
+    XForEachExpression,
+)
+model_ss_RichStringForLoop_strategy = st.builds(
+    model_ss_RichStringForLoop,
+)
+XStringLiteral_strategy = st.builds(
+    XStringLiteral,
+)
+model_ss_RichStringLiteral_strategy = st.builds(
+    model_ss_RichStringLiteral,
+)
+CreateExtensionInfo_strategy = st.builds(
+    CreateExtensionInfo,
+)
+XtendParameter_strategy = st.builds(
+    XtendParameter,
+)
+XtendMember_strategy = st.builds(
+    XtendMember,
+)
+model_ss_XtendField_strategy = st.builds(
+    model_ss_XtendField,
+    name=
+        safe_text
+)
+model_ss_XtendEnumLiteral_strategy = st.builds(
+    model_ss_XtendEnumLiteral,
+    name=
+        safe_text
+)
+model_ss_XtendConstructor_strategy = st.builds(
+    model_ss_XtendConstructor,
+)
+model_ss_XtendTypeDeclaration_strategy = st.builds(
+    model_ss_XtendTypeDeclaration,
+    name=
+        safe_text
+)
+model_ss_XtendEvent_strategy = st.builds(
+    model_ss_XtendEvent,
+    name=
+        safe_text
+)
+model_ss_XtendFunction_strategy = st.builds(
+    model_ss_XtendFunction,
+    name=
+        safe_text
+)
+XtendAnnotationTarget_strategy = st.builds(
+    XtendAnnotationTarget,
+)
+model_ss_XtendParameter_strategy = st.builds(
+    model_ss_XtendParameter,
+    varArg=
+        st.booleans(),
+    extension=
+        st.booleans(),
+    name=
+        safe_text
+)
+model_ss_XtendMember_strategy = st.builds(
+    model_ss_XtendMember,
+    modifiers=
+        safe_text
+)
+XAnnotation_strategy = st.builds(
+    XAnnotation,
+)
+model_ss_XtendAnnotationTarget_strategy = st.builds(
+    model_ss_XtendAnnotationTarget,
+)
+XObjectLiteralPart_strategy = st.builds(
+    XObjectLiteralPart,
+)
+model_xbase_XObjectLiteral_strategy = st.builds(
+    model_xbase_XObjectLiteral,
+)
+ss_model_EObject_strategy = st.builds(
+    ss_model_EObject,
+)
+XtendTypeDeclaration_strategy = st.builds(
+    XtendTypeDeclaration,
+)
+model_ss_XtendDelegate_strategy = st.builds(
+    model_ss_XtendDelegate,
+)
+model_ss_XtendEnum_strategy = st.builds(
+    model_ss_XtendEnum,
+)
+model_ss_XtendAnnotationType_strategy = st.builds(
+    model_ss_XtendAnnotationType,
+)
+model_ss_XtendInterface_strategy = st.builds(
+    model_ss_XtendInterface,
+)
+model_ss_XtendClass_strategy = st.builds(
+    model_ss_XtendClass,
+)
+model_ss_XtendFile_strategy = st.builds(
+    model_ss_XtendFile,
+    package=
+        safe_text
+)
+model_xbase_XArrayLiteral_strategy = st.builds(
+    model_xbase_XArrayLiteral,
+)
+model_xbase_XObjectLiteralPart_strategy = st.builds(
+    model_xbase_XObjectLiteralPart,
+    name=
+        safe_text
+)
+model_xbase_XTernaryOperation_strategy = st.builds(
+    model_xbase_XTernaryOperation,
+)
+model_xbase_XFunctionDeclaration_strategy = st.builds(
+    model_xbase_XFunctionDeclaration,
+    name=
+        safe_text
+)
+model_xbase_XCatchClause_strategy = st.builds(
+    model_xbase_XCatchClause,
+)
+XCatchClause_strategy = st.builds(
+    XCatchClause,
+)
+model_xbase_XContinueExpression_strategy = st.builds(
+    model_xbase_XContinueExpression,
+)
+model_xbase_XBreakExpression_strategy = st.builds(
+    model_xbase_XBreakExpression,
+)
+model_xbase_XReturnExpression_strategy = st.builds(
+    model_xbase_XReturnExpression,
+)
+XAbstractWhileExpression_strategy = st.builds(
+    XAbstractWhileExpression,
+)
+model_xbase_XDoWhileExpression_strategy = st.builds(
+    model_xbase_XDoWhileExpression,
+)
+model_xbase_XAbstractWhileExpression_strategy = st.builds(
+    model_xbase_XAbstractWhileExpression,
+)
+model_xbase_XTryCatchFinallyExpression_strategy = st.builds(
+    model_xbase_XTryCatchFinallyExpression,
+)
+model_xbase_XThrowExpression_strategy = st.builds(
+    model_xbase_XThrowExpression,
+)
+model_xbase_XInstanceOfExpression_strategy = st.builds(
+    model_xbase_XInstanceOfExpression,
+)
+model_xbase_XTypeLiteral_strategy = st.builds(
+    model_xbase_XTypeLiteral,
+    arrayDimensions=
+        safe_text
+)
+model_xbase_XWhileExpression_strategy = st.builds(
+    model_xbase_XWhileExpression,
+)
+model_xbase_XForEachExpression_strategy = st.builds(
+    model_xbase_XForEachExpression,
+)
+model_xbase_XForLoopExpression_strategy = st.builds(
+    model_xbase_XForLoopExpression,
+)
+model_xbase_XKeyValuePair_strategy = st.builds(
+    model_xbase_XKeyValuePair,
+    key1=
+        safe_text
+)
+XCollectionLiteral_strategy = st.builds(
+    XCollectionLiteral,
+)
+model_xbase_XListLiteral_strategy = st.builds(
+    model_xbase_XListLiteral,
+)
+model_xbase_XCollectionLiteral_strategy = st.builds(
+    model_xbase_XCollectionLiteral,
+)
+model_xbase_XStringLiteral_strategy = st.builds(
+    model_xbase_XStringLiteral,
+    value=
+        safe_text
+)
+model_xbase_XNumberLiteral_strategy = st.builds(
+    model_xbase_XNumberLiteral,
+    value=
+        safe_text
+)
+model_xbase_XNullLiteral_strategy = st.builds(
+    model_xbase_XNullLiteral,
+)
+model_xbase_XBooleanLiteral_strategy = st.builds(
+    model_xbase_XBooleanLiteral,
+    isTrue=
+        st.booleans()
+)
+model_xbase_XCastedExpression_strategy = st.builds(
+    model_xbase_XCastedExpression,
+)
+model_xbase_XSetLiteral_strategy = st.builds(
+    model_xbase_XSetLiteral,
+)
+JvmConstructor_strategy = st.builds(
+    JvmConstructor,
+)
+model_xbase_XConstructorCall_strategy = st.builds(
+    model_xbase_XConstructorCall,
+    validFeature=
+        st.booleans(),
+    invalidFeatureIssueCode=
+        safe_text
+)
+model_xbase_XAbstractFeatureCall_strategy = st.builds(
+    model_xbase_XAbstractFeatureCall,
+    invalidFeatureIssueCode=
+        safe_text,
+    validFeature=
+        st.booleans()
+)
+model_xbase_XVariableDeclarationList_strategy = st.builds(
+    model_xbase_XVariableDeclarationList,
+    writeable=
+        st.booleans(),
+    exported=
+        st.booleans()
+)
+XAbstractFeatureCall_strategy = st.builds(
+    XAbstractFeatureCall,
+)
+model_xbase_XAssignment_strategy = st.builds(
+    model_xbase_XAssignment,
+    explicitStatic=
+        st.booleans()
+)
+model_xbase_XUnaryOperation_strategy = st.builds(
+    model_xbase_XUnaryOperation,
+)
+model_xbase_XPrefixOperation_strategy = st.builds(
+    model_xbase_XPrefixOperation,
+)
+model_xbase_XMemberFeatureCall1_strategy = st.builds(
+    model_xbase_XMemberFeatureCall1,
+    typeLiteral=
+        st.booleans(),
+    nullSafe=
+        st.booleans(),
+    indexedOperation=
+        st.booleans(),
+    explicitStatic=
+        st.booleans(),
+    packageFragment=
+        st.booleans(),
+    staticWithDeclaringType=
+        st.booleans(),
+    explicitOperationCall=
+        st.booleans()
+)
+model_xbase_XBinaryOperation_strategy = st.builds(
+    model_xbase_XBinaryOperation,
+)
+model_xbase_XFeatureCall_strategy = st.builds(
+    model_xbase_XFeatureCall,
+    typeLiteral=
+        st.booleans(),
+    packageFragment=
+        st.booleans(),
+    indexedOperation=
+        st.booleans(),
+    explicitOperationCall=
+        st.booleans()
+)
+model_xbase_XIndexOperation_strategy = st.builds(
+    model_xbase_XIndexOperation,
+)
+model_xbase_XPostfixOperation_strategy = st.builds(
+    model_xbase_XPostfixOperation,
+)
+model_xbase_XMemberFeatureCall_strategy = st.builds(
+    model_xbase_XMemberFeatureCall,
+    explicitOperationCall=
+        st.booleans(),
+    packageFragment=
+        st.booleans(),
+    explicitStatic=
+        st.booleans(),
+    indexedOperation=
+        st.booleans(),
+    typeLiteral=
+        st.booleans(),
+    staticWithDeclaringType=
+        st.booleans(),
+    nullSafe=
+        st.booleans()
+)
+model_xbase_XIfExpression_strategy = st.builds(
+    model_xbase_XIfExpression,
+)
+model_xbase_XExpression_strategy = st.builds(
+    model_xbase_XExpression,
+)
+model_types_JvmCustomAnnotationValue_strategy = st.builds(
+    model_types_JvmCustomAnnotationValue,
+    values=
+        safe_text
+)
+model_xbase_XBlockExpression_strategy = st.builds(
+    model_xbase_XBlockExpression,
+)
+model_xbase_XCasePart_strategy = st.builds(
+    model_xbase_XCasePart,
+)
+XCasePart_strategy = st.builds(
+    XCasePart,
+)
+types_JvmIdentifiableElement_strategy = st.builds(
+    types_JvmIdentifiableElement,
+)
+xbase_XExpression_strategy = st.builds(
+    xbase_XExpression,
+)
+model_xbase_XClosure_strategy = st.builds(
+    model_xbase_XClosure,
+    name=
+        safe_text,
+    operator=
+        st.booleans(),
+    explicitSyntax=
+        st.booleans(),
+    exported=
+        st.booleans()
+)
+model_xbase_XVariableDeclaration_strategy = st.builds(
+    model_xbase_XVariableDeclaration,
+    exported=
+        st.booleans(),
+    name=
+        safe_text,
+    writeable=
+        st.booleans()
+)
+model_xbase_XSwitchExpression_strategy = st.builds(
+    model_xbase_XSwitchExpression,
+    localVarName=
+        safe_text
+)
+model_types_JvmCharAnnotationValue_strategy = st.builds(
+    model_types_JvmCharAnnotationValue,
+    values=
+        safe_text
+)
+model_types_JvmFloatAnnotationValue_strategy = st.builds(
+    model_types_JvmFloatAnnotationValue,
+    values=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+model_types_JvmDoubleAnnotationValue_strategy = st.builds(
+    model_types_JvmDoubleAnnotationValue,
+    values=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+model_types_JvmLongAnnotationValue_strategy = st.builds(
+    model_types_JvmLongAnnotationValue,
+    values=
+        safe_text
+)
 
 @given(instance=IfConditionStart_strategy)
 @settings(max_examples=50)
@@ -6252,23 +5336,20 @@ def test_line_instantiation(instance):
 def test_richstring_instantiation(instance):
     assert isinstance(instance, RichString)
 
-@given(instance=model::richstring::ProcessedRichString_strategy)
+@given(instance=model_richstring_ProcessedRichString_strategy)
 @settings(max_examples=50)
-def test_model::richstring::processedrichstring_instantiation(instance):
-    assert isinstance(instance, model::richstring::ProcessedRichString)
+def test_model_richstring_processedrichstring_instantiation(instance):
+    assert isinstance(instance, model_richstring_ProcessedRichString)
 
-@given(instance=model::xtype::XExportItem_strategy)
+@given(instance=model_xtype_XExportItem_strategy)
 @settings(max_examples=50)
-def test_model::xtype::xexportitem_instantiation(instance):
-    assert isinstance(instance, model::xtype::XExportItem)
-
-@given(instance=model::xtype::XExportItem_strategy)
-def test_model::xtype::xexportitem_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_model_xtype_xexportitem_instantiation(instance):
+    assert isinstance(instance, model_xtype_XExportItem)
 
 
-@given(instance=model::xtype::XExportItem_strategy)
-def test_model::xtype::xexportitem_alias_setter(instance):
+
+@given(instance=model_xtype_XExportItem_strategy)
+def test_model_xtype_xexportitem_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
@@ -6313,20 +5394,20 @@ def test_richstringforloop_instantiation(instance):
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=model::richstring::LineBreak_strategy)
+@given(instance=model_richstring_LineBreak_strategy)
 @settings(max_examples=50)
-def test_model::richstring::linebreak_instantiation(instance):
-    assert isinstance(instance, model::richstring::LineBreak)
+def test_model_richstring_linebreak_instantiation(instance):
+    assert isinstance(instance, model_richstring_LineBreak)
 
 @given(instance=RichStringLiteral_strategy)
 @settings(max_examples=50)
 def test_richstringliteral_instantiation(instance):
     assert isinstance(instance, RichStringLiteral)
 
-@given(instance=model::richstring::LinePart_strategy)
+@given(instance=model_richstring_LinePart_strategy)
 @settings(max_examples=50)
-def test_model::richstring::linepart_instantiation(instance):
-    assert isinstance(instance, model::richstring::LinePart)
+def test_model_richstring_linepart_instantiation(instance):
+    assert isinstance(instance, model_richstring_LinePart)
 
 @given(instance=ProcessedRichString_strategy)
 @settings(max_examples=50)
@@ -6338,131 +5419,113 @@ def test_processedrichstring_instantiation(instance):
 def test_linepart_instantiation(instance):
     assert isinstance(instance, LinePart)
 
-@given(instance=model::richstring::EndIf_strategy)
+@given(instance=model_richstring_Literal_strategy)
 @settings(max_examples=50)
-def test_model::richstring::endif_instantiation(instance):
-    assert isinstance(instance, model::richstring::EndIf)
-
-@given(instance=model::richstring::ElseIfCondition_strategy)
-@settings(max_examples=50)
-def test_model::richstring::elseifcondition_instantiation(instance):
-    assert isinstance(instance, model::richstring::ElseIfCondition)
-
-@given(instance=model::richstring::Literal_strategy)
-@settings(max_examples=50)
-def test_model::richstring::literal_instantiation(instance):
-    assert isinstance(instance, model::richstring::Literal)
-
-@given(instance=model::richstring::Literal_strategy)
-def test_model::richstring::literal_offset_type(instance):
-    assert isinstance(instance.offset, int)
+def test_model_richstring_literal_instantiation(instance):
+    assert isinstance(instance, model_richstring_Literal)
 
 
-@given(instance=model::richstring::Literal_strategy)
-def test_model::richstring::literal_offset_setter(instance):
-    original = instance.offset
-    instance.offset = original
-    assert instance.offset == original
 
-@given(instance=model::richstring::Literal_strategy)
-def test_model::richstring::literal_length_type(instance):
-    assert isinstance(instance.length, int)
-
-
-@given(instance=model::richstring::Literal_strategy)
-def test_model::richstring::literal_length_setter(instance):
+@given(instance=model_richstring_Literal_strategy)
+def test_model_richstring_literal_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=model::richstring::ForLoopEnd_strategy)
-@settings(max_examples=50)
-def test_model::richstring::forloopend_instantiation(instance):
-    assert isinstance(instance, model::richstring::ForLoopEnd)
 
-@given(instance=model::richstring::ForLoopStart_strategy)
-@settings(max_examples=50)
-def test_model::richstring::forloopstart_instantiation(instance):
-    assert isinstance(instance, model::richstring::ForLoopStart)
 
-@given(instance=model::richstring::PrintedExpression_strategy)
-@settings(max_examples=50)
-def test_model::richstring::printedexpression_instantiation(instance):
-    assert isinstance(instance, model::richstring::PrintedExpression)
+@given(instance=model_richstring_Literal_strategy)
+def test_model_richstring_literal_offset_setter(instance):
+    original = instance.offset
+    instance.offset = original
+    assert instance.offset == original
 
-@given(instance=model::richstring::IfConditionStart_strategy)
+@given(instance=model_richstring_PrintedExpression_strategy)
 @settings(max_examples=50)
-def test_model::richstring::ifconditionstart_instantiation(instance):
-    assert isinstance(instance, model::richstring::IfConditionStart)
+def test_model_richstring_printedexpression_instantiation(instance):
+    assert isinstance(instance, model_richstring_PrintedExpression)
 
-@given(instance=model::richstring::ElseStart_strategy)
+@given(instance=model_richstring_EndIf_strategy)
 @settings(max_examples=50)
-def test_model::richstring::elsestart_instantiation(instance):
-    assert isinstance(instance, model::richstring::ElseStart)
+def test_model_richstring_endif_instantiation(instance):
+    assert isinstance(instance, model_richstring_EndIf)
 
-@given(instance=model::richstring::Line_strategy)
+@given(instance=model_richstring_IfConditionStart_strategy)
 @settings(max_examples=50)
-def test_model::richstring::line_instantiation(instance):
-    assert isinstance(instance, model::richstring::Line)
+def test_model_richstring_ifconditionstart_instantiation(instance):
+    assert isinstance(instance, model_richstring_IfConditionStart)
+
+@given(instance=model_richstring_ForLoopEnd_strategy)
+@settings(max_examples=50)
+def test_model_richstring_forloopend_instantiation(instance):
+    assert isinstance(instance, model_richstring_ForLoopEnd)
+
+@given(instance=model_richstring_ElseIfCondition_strategy)
+@settings(max_examples=50)
+def test_model_richstring_elseifcondition_instantiation(instance):
+    assert isinstance(instance, model_richstring_ElseIfCondition)
+
+@given(instance=model_richstring_ElseStart_strategy)
+@settings(max_examples=50)
+def test_model_richstring_elsestart_instantiation(instance):
+    assert isinstance(instance, model_richstring_ElseStart)
+
+@given(instance=model_richstring_ForLoopStart_strategy)
+@settings(max_examples=50)
+def test_model_richstring_forloopstart_instantiation(instance):
+    assert isinstance(instance, model_richstring_ForLoopStart)
+
+@given(instance=model_richstring_Line_strategy)
+@settings(max_examples=50)
+def test_model_richstring_line_instantiation(instance):
+    assert isinstance(instance, model_richstring_Line)
 
 @given(instance=XImportDeclaration1_strategy)
 @settings(max_examples=50)
 def test_ximportdeclaration1_instantiation(instance):
     assert isinstance(instance, XImportDeclaration1)
 
-@given(instance=model::xtype::XImportSection1_strategy)
+@given(instance=model_xtype_XImportSection1_strategy)
 @settings(max_examples=50)
-def test_model::xtype::ximportsection1_instantiation(instance):
-    assert isinstance(instance, model::xtype::XImportSection1)
+def test_model_xtype_ximportsection1_instantiation(instance):
+    assert isinstance(instance, model_xtype_XImportSection1)
 
-@given(instance=model::xtype::XImportDeclaration_strategy)
+@given(instance=model_xtype_XImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::xtype::ximportdeclaration_instantiation(instance):
-    assert isinstance(instance, model::xtype::XImportDeclaration)
-
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_wildcard_type(instance):
-    assert isinstance(instance.wildcard, bool)
+def test_model_xtype_ximportdeclaration_instantiation(instance):
+    assert isinstance(instance, model_xtype_XImportDeclaration)
 
 
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_wildcard_setter(instance):
-    original = instance.wildcard
-    instance.wildcard = original
-    assert instance.wildcard == original
 
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_extension_type(instance):
-    assert isinstance(instance.extension, bool)
-
-
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_extension_setter(instance):
-    original = instance.extension
-    instance.extension = original
-    assert instance.extension == original
-
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
-
-
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_importedNamespace_setter(instance):
+@given(instance=model_xtype_XImportDeclaration_strategy)
+def test_model_xtype_ximportdeclaration_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_static_type(instance):
-    assert isinstance(instance.static, bool)
 
 
-@given(instance=model::xtype::XImportDeclaration_strategy)
-def test_model::xtype::ximportdeclaration_static_setter(instance):
+@given(instance=model_xtype_XImportDeclaration_strategy)
+def test_model_xtype_ximportdeclaration_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
+
+
+
+@given(instance=model_xtype_XImportDeclaration_strategy)
+def test_model_xtype_ximportdeclaration_wildcard_setter(instance):
+    original = instance.wildcard
+    instance.wildcard = original
+    assert instance.wildcard == original
+
+
+
+@given(instance=model_xtype_XImportDeclaration_strategy)
+def test_model_xtype_ximportdeclaration_extension_setter(instance):
+    original = instance.extension
+    instance.extension = original
+    assert instance.extension == original
 
 @given(instance=XImportDeclaration_strategy)
 @settings(max_examples=50)
@@ -6474,66 +5537,54 @@ def test_ximportdeclaration_instantiation(instance):
 def test_xexportitem_instantiation(instance):
     assert isinstance(instance, XExportItem)
 
-@given(instance=model::xtype::XExportDeclaration_strategy)
+@given(instance=model_xtype_XExportDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::xtype::xexportdeclaration_instantiation(instance):
-    assert isinstance(instance, model::xtype::XExportDeclaration)
-
-@given(instance=model::xtype::XExportDeclaration_strategy)
-def test_model::xtype::xexportdeclaration_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_model_xtype_xexportdeclaration_instantiation(instance):
+    assert isinstance(instance, model_xtype_XExportDeclaration)
 
 
-@given(instance=model::xtype::XExportDeclaration_strategy)
-def test_model::xtype::xexportdeclaration_importURI_setter(instance):
-    original = instance.importURI
-    instance.importURI = original
-    assert instance.importURI == original
 
-@given(instance=model::xtype::XExportDeclaration_strategy)
-def test_model::xtype::xexportdeclaration_alias_type(instance):
-    assert isinstance(instance.alias, str)
+@given(instance=model_xtype_XExportDeclaration_strategy)
+def test_model_xtype_xexportdeclaration_wildcard_setter(instance):
+    original = instance.wildcard
+    instance.wildcard = original
+    assert instance.wildcard == original
 
 
-@given(instance=model::xtype::XExportDeclaration_strategy)
-def test_model::xtype::xexportdeclaration_alias_setter(instance):
+
+@given(instance=model_xtype_XExportDeclaration_strategy)
+def test_model_xtype_xexportdeclaration_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
 
-@given(instance=model::xtype::XExportDeclaration_strategy)
-def test_model::xtype::xexportdeclaration_wildcard_type(instance):
-    assert isinstance(instance.wildcard, bool)
 
 
-@given(instance=model::xtype::XExportDeclaration_strategy)
-def test_model::xtype::xexportdeclaration_wildcard_setter(instance):
-    original = instance.wildcard
-    instance.wildcard = original
-    assert instance.wildcard == original
+@given(instance=model_xtype_XExportDeclaration_strategy)
+def test_model_xtype_xexportdeclaration_importURI_setter(instance):
+    original = instance.importURI
+    instance.importURI = original
+    assert instance.importURI == original
 
 @given(instance=XExportDeclaration_strategy)
 @settings(max_examples=50)
 def test_xexportdeclaration_instantiation(instance):
     assert isinstance(instance, XExportDeclaration)
 
-@given(instance=model::xtype::XExportSection_strategy)
+@given(instance=model_xtype_XExportSection_strategy)
 @settings(max_examples=50)
-def test_model::xtype::xexportsection_instantiation(instance):
-    assert isinstance(instance, model::xtype::XExportSection)
+def test_model_xtype_xexportsection_instantiation(instance):
+    assert isinstance(instance, model_xtype_XExportSection)
 
-@given(instance=model::xtype::XImportItem_strategy)
+@given(instance=model_xtype_XImportItem_strategy)
 @settings(max_examples=50)
-def test_model::xtype::ximportitem_instantiation(instance):
-    assert isinstance(instance, model::xtype::XImportItem)
-
-@given(instance=model::xtype::XImportItem_strategy)
-def test_model::xtype::ximportitem_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_model_xtype_ximportitem_instantiation(instance):
+    assert isinstance(instance, model_xtype_XImportItem)
 
 
-@given(instance=model::xtype::XImportItem_strategy)
-def test_model::xtype::ximportitem_alias_setter(instance):
+
+@given(instance=model_xtype_XImportItem_strategy)
+def test_model_xtype_ximportitem_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
@@ -6543,32 +5594,26 @@ def test_model::xtype::ximportitem_alias_setter(instance):
 def test_ximportitem_instantiation(instance):
     assert isinstance(instance, XImportItem)
 
-@given(instance=model::xtype::XImportDeclaration1_strategy)
+@given(instance=model_xtype_XImportDeclaration1_strategy)
 @settings(max_examples=50)
-def test_model::xtype::ximportdeclaration1_instantiation(instance):
-    assert isinstance(instance, model::xtype::XImportDeclaration1)
-
-@given(instance=model::xtype::XImportDeclaration1_strategy)
-def test_model::xtype::ximportdeclaration1_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_model_xtype_ximportdeclaration1_instantiation(instance):
+    assert isinstance(instance, model_xtype_XImportDeclaration1)
 
 
-@given(instance=model::xtype::XImportDeclaration1_strategy)
-def test_model::xtype::ximportdeclaration1_importURI_setter(instance):
-    original = instance.importURI
-    instance.importURI = original
-    assert instance.importURI == original
 
-@given(instance=model::xtype::XImportDeclaration1_strategy)
-def test_model::xtype::ximportdeclaration1_alias_type(instance):
-    assert isinstance(instance.alias, str)
-
-
-@given(instance=model::xtype::XImportDeclaration1_strategy)
-def test_model::xtype::ximportdeclaration1_alias_setter(instance):
+@given(instance=model_xtype_XImportDeclaration1_strategy)
+def test_model_xtype_ximportdeclaration1_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
+
+
+
+@given(instance=model_xtype_XImportDeclaration1_strategy)
+def test_model_xtype_ximportdeclaration1_importURI_setter(instance):
+    original = instance.importURI
+    instance.importURI = original
+    assert instance.importURI == original
 
 import warnings
 import copy
@@ -6576,9 +5621,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::xtype::XImportDeclaration1_strategy)
+@given(instance=model_xtype_XImportDeclaration1_strategy)
 @settings(max_examples=30)
-def test_model::xtype::ximportdeclaration1_iswildcard_changes_state(instance):
+def test_model_xtype_ximportdeclaration1_iswildcard_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6590,309 +5635,142 @@ def test_model::xtype::ximportdeclaration1_iswildcard_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isWildcard' in model::xtype::XImportDeclaration1 is empty"
+        assert has_statements, f"Function 'isWildcard' in model_xtype_XImportDeclaration1 is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isWildcard' in model::xtype::XImportDeclaration1 did not change state; check implementation")
+            warnings.warn(f"Operation 'isWildcard' in model_xtype_XImportDeclaration1 did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isWildcard' in model::xtype::XImportDeclaration1 is not implemented or raised an error")
+        warnings.warn(f"Operation 'isWildcard' in model_xtype_XImportDeclaration1 is not implemented or raised an error")
 
 @given(instance=XAnnotationElementValuePair_strategy)
 @settings(max_examples=50)
 def test_xannotationelementvaluepair_instantiation(instance):
     assert isinstance(instance, XAnnotationElementValuePair)
 
-@given(instance=model::xtype::XImportSection_strategy)
+@given(instance=model_xtype_XImportSection_strategy)
 @settings(max_examples=50)
-def test_model::xtype::ximportsection_instantiation(instance):
-    assert isinstance(instance, model::xtype::XImportSection)
+def test_model_xtype_ximportsection_instantiation(instance):
+    assert isinstance(instance, model_xtype_XImportSection)
 
 @given(instance=JvmSpecializedTypeReference_strategy)
 @settings(max_examples=50)
 def test_jvmspecializedtypereference_instantiation(instance):
     assert isinstance(instance, JvmSpecializedTypeReference)
 
-@given(instance=model::xtype::XComputedTypeReference_strategy)
+@given(instance=model_xtype_XComputedTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::xtype::xcomputedtypereference_instantiation(instance):
-    assert isinstance(instance, model::xtype::XComputedTypeReference)
-
-@given(instance=model::xtype::XComputedTypeReference_strategy)
-def test_model::xtype::xcomputedtypereference_typeProvider_type(instance):
-    assert isinstance(instance.typeProvider, str)
+def test_model_xtype_xcomputedtypereference_instantiation(instance):
+    assert isinstance(instance, model_xtype_XComputedTypeReference)
 
 
-@given(instance=model::xtype::XComputedTypeReference_strategy)
-def test_model::xtype::xcomputedtypereference_typeProvider_setter(instance):
+
+@given(instance=model_xtype_XComputedTypeReference_strategy)
+def test_model_xtype_xcomputedtypereference_typeProvider_setter(instance):
     original = instance.typeProvider
     instance.typeProvider = original
     assert instance.typeProvider == original
 
-@given(instance=model::xtype::XFunctionTypeRef_strategy)
+@given(instance=model_xtype_XFunctionTypeRef_strategy)
 @settings(max_examples=50)
-def test_model::xtype::xfunctiontyperef_instantiation(instance):
-    assert isinstance(instance, model::xtype::XFunctionTypeRef)
-
-@given(instance=model::xtype::XFunctionTypeRef_strategy)
-def test_model::xtype::xfunctiontyperef_instanceContext_type(instance):
-    assert isinstance(instance.instanceContext, bool)
+def test_model_xtype_xfunctiontyperef_instantiation(instance):
+    assert isinstance(instance, model_xtype_XFunctionTypeRef)
 
 
-@given(instance=model::xtype::XFunctionTypeRef_strategy)
-def test_model::xtype::xfunctiontyperef_instanceContext_setter(instance):
+
+@given(instance=model_xtype_XFunctionTypeRef_strategy)
+def test_model_xtype_xfunctiontyperef_instanceContext_setter(instance):
     original = instance.instanceContext
     instance.instanceContext = original
     assert instance.instanceContext == original
 
-@given(instance=model::xannotation::XAnnotationElementValuePair_strategy)
+@given(instance=model_xannotation_XAnnotationElementValuePair_strategy)
 @settings(max_examples=50)
-def test_model::xannotation::xannotationelementvaluepair_instantiation(instance):
-    assert isinstance(instance, model::xannotation::XAnnotationElementValuePair)
-
-@given(instance=model::ss::XtendTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendtypedeclaration_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendTypeDeclaration)
-
-@given(instance=model::ss::XtendTypeDeclaration_strategy)
-def test_model::ss::xtendtypedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::XtendTypeDeclaration_strategy)
-def test_model::ss::xtendtypedeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::ss::XtendEvent_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtendevent_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendEvent)
-
-@given(instance=model::ss::XtendEvent_strategy)
-def test_model::ss::xtendevent_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::ss::XtendEvent_strategy)
-def test_model::ss::xtendevent_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ss::XtendEvent_strategy)
-@settings(max_examples=30)
-def test_model::ss::xtendevent_isextension_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isExtension()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isExtension).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExtension' in model::ss::XtendEvent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExtension' in model::ss::XtendEvent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExtension' in model::ss::XtendEvent is not implemented or raised an error")
-
-@given(instance=model::ss::XtendDelegate_strategy)
-@settings(max_examples=50)
-def test_model::ss::xtenddelegate_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendDelegate)
+def test_model_xannotation_xannotationelementvaluepair_instantiation(instance):
+    assert isinstance(instance, model_xannotation_XAnnotationElementValuePair)
 
 @given(instance=JvmAnnotationValue_strategy)
 @settings(max_examples=50)
 def test_jvmannotationvalue_instantiation(instance):
     assert isinstance(instance, JvmAnnotationValue)
 
-@given(instance=model::types::JvmTypeAnnotationValue_strategy)
+@given(instance=model_types_JvmTypeAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmtypeannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmTypeAnnotationValue)
+def test_model_types_jvmtypeannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmTypeAnnotationValue)
 
-@given(instance=model::types::JvmAnnotationAnnotationValue_strategy)
+@given(instance=model_types_JvmShortAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmannotationannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmAnnotationAnnotationValue)
-
-@given(instance=model::types::JvmStringAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmstringannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmStringAnnotationValue)
-
-@given(instance=model::types::JvmStringAnnotationValue_strategy)
-def test_model::types::jvmstringannotationvalue_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_model_types_jvmshortannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmShortAnnotationValue)
 
 
-@given(instance=model::types::JvmStringAnnotationValue_strategy)
-def test_model::types::jvmstringannotationvalue_values_setter(instance):
+
+@given(instance=model_types_JvmShortAnnotationValue_strategy)
+def test_model_types_jvmshortannotationvalue_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=model::types::JvmShortAnnotationValue_strategy)
+@given(instance=model_types_JvmStringAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmshortannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmShortAnnotationValue)
-
-@given(instance=model::types::JvmShortAnnotationValue_strategy)
-def test_model::types::jvmshortannotationvalue_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_model_types_jvmstringannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmStringAnnotationValue)
 
 
-@given(instance=model::types::JvmShortAnnotationValue_strategy)
-def test_model::types::jvmshortannotationvalue_values_setter(instance):
+
+@given(instance=model_types_JvmStringAnnotationValue_strategy)
+def test_model_types_jvmstringannotationvalue_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=model::types::JvmDoubleAnnotationValue_strategy)
+@given(instance=model_types_JvmAnnotationAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmdoubleannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmDoubleAnnotationValue)
+def test_model_types_jvmannotationannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmAnnotationAnnotationValue)
 
-@given(instance=model::types::JvmDoubleAnnotationValue_strategy)
-def test_model::types::jvmdoubleannotationvalue_values_type(instance):
-    assert isinstance(instance.values, float)
+@given(instance=model_types_JvmEnumAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmenumannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmEnumAnnotationValue)
+
+@given(instance=model_types_JvmByteAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmbyteannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmByteAnnotationValue)
 
 
-@given(instance=model::types::JvmDoubleAnnotationValue_strategy)
-def test_model::types::jvmdoubleannotationvalue_values_setter(instance):
+
+@given(instance=model_types_JvmByteAnnotationValue_strategy)
+def test_model_types_jvmbyteannotationvalue_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=model::types::JvmEnumAnnotationValue_strategy)
+@given(instance=model_types_JvmBooleanAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmenumannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmEnumAnnotationValue)
-
-@given(instance=model::types::JvmLongAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmlongannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmLongAnnotationValue)
-
-@given(instance=model::types::JvmLongAnnotationValue_strategy)
-def test_model::types::jvmlongannotationvalue_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_model_types_jvmbooleanannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmBooleanAnnotationValue)
 
 
-@given(instance=model::types::JvmLongAnnotationValue_strategy)
-def test_model::types::jvmlongannotationvalue_values_setter(instance):
+
+@given(instance=model_types_JvmBooleanAnnotationValue_strategy)
+def test_model_types_jvmbooleanannotationvalue_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=model::types::JvmCustomAnnotationValue_strategy)
+@given(instance=model_types_JvmIntAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmcustomannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmCustomAnnotationValue)
-
-@given(instance=model::types::JvmCustomAnnotationValue_strategy)
-def test_model::types::jvmcustomannotationvalue_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_model_types_jvmintannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmIntAnnotationValue)
 
 
-@given(instance=model::types::JvmCustomAnnotationValue_strategy)
-def test_model::types::jvmcustomannotationvalue_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
 
-@given(instance=model::types::JvmCharAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmcharannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmCharAnnotationValue)
-
-@given(instance=model::types::JvmCharAnnotationValue_strategy)
-def test_model::types::jvmcharannotationvalue_values_type(instance):
-    assert isinstance(instance.values, str)
-
-
-@given(instance=model::types::JvmCharAnnotationValue_strategy)
-def test_model::types::jvmcharannotationvalue_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=model::types::JvmFloatAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmfloatannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmFloatAnnotationValue)
-
-@given(instance=model::types::JvmFloatAnnotationValue_strategy)
-def test_model::types::jvmfloatannotationvalue_values_type(instance):
-    assert isinstance(instance.values, float)
-
-
-@given(instance=model::types::JvmFloatAnnotationValue_strategy)
-def test_model::types::jvmfloatannotationvalue_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=model::types::JvmByteAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmbyteannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmByteAnnotationValue)
-
-@given(instance=model::types::JvmByteAnnotationValue_strategy)
-def test_model::types::jvmbyteannotationvalue_values_type(instance):
-    assert isinstance(instance.values, str)
-
-
-@given(instance=model::types::JvmByteAnnotationValue_strategy)
-def test_model::types::jvmbyteannotationvalue_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=model::types::JvmBooleanAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmbooleanannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmBooleanAnnotationValue)
-
-@given(instance=model::types::JvmBooleanAnnotationValue_strategy)
-def test_model::types::jvmbooleanannotationvalue_values_type(instance):
-    assert isinstance(instance.values, bool)
-
-
-@given(instance=model::types::JvmBooleanAnnotationValue_strategy)
-def test_model::types::jvmbooleanannotationvalue_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=model::types::JvmIntAnnotationValue_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmintannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmIntAnnotationValue)
-
-@given(instance=model::types::JvmIntAnnotationValue_strategy)
-def test_model::types::jvmintannotationvalue_values_type(instance):
-    assert isinstance(instance.values, int)
-
-
-@given(instance=model::types::JvmIntAnnotationValue_strategy)
-def test_model::types::jvmintannotationvalue_values_setter(instance):
+@given(instance=model_types_JvmIntAnnotationValue_strategy)
+def test_model_types_jvmintannotationvalue_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
@@ -6902,20 +5780,20 @@ def test_model::types::jvmintannotationvalue_values_setter(instance):
 def test_jvmoperation_instantiation(instance):
     assert isinstance(instance, JvmOperation)
 
-@given(instance=model::types::JvmAnnotationValue_strategy)
+@given(instance=model_types_JvmAnnotationValue_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmannotationvalue_instantiation(instance):
-    assert isinstance(instance, model::types::JvmAnnotationValue)
+def test_model_types_jvmannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmAnnotationValue)
 
 @given(instance=JvmAnnotationType_strategy)
 @settings(max_examples=50)
 def test_jvmannotationtype_instantiation(instance):
     assert isinstance(instance, JvmAnnotationType)
 
-@given(instance=model::types::JvmAnnotationReference_strategy)
+@given(instance=model_types_JvmAnnotationReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmannotationreference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmAnnotationReference)
+def test_model_types_jvmannotationreference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmAnnotationReference)
 
 @given(instance=JvmAnnotationReference_strategy)
 @settings(max_examples=50)
@@ -6927,78 +5805,60 @@ def test_jvmannotationreference_instantiation(instance):
 def test_jvmannotationtarget_instantiation(instance):
     assert isinstance(instance, JvmAnnotationTarget)
 
-@given(instance=model::types::JvmFormalParameter_strategy)
+@given(instance=model_types_JvmFormalParameter_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmformalparameter_instantiation(instance):
-    assert isinstance(instance, model::types::JvmFormalParameter)
-
-@given(instance=model::types::JvmFormalParameter_strategy)
-def test_model::types::jvmformalparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_types_jvmformalparameter_instantiation(instance):
+    assert isinstance(instance, model_types_JvmFormalParameter)
 
 
-@given(instance=model::types::JvmFormalParameter_strategy)
-def test_model::types::jvmformalparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=model::types::JvmFormalParameter_strategy)
-def test_model::types::jvmformalparameter_varArg_type(instance):
-    assert isinstance(instance.varArg, bool)
-
-
-@given(instance=model::types::JvmFormalParameter_strategy)
-def test_model::types::jvmformalparameter_varArg_setter(instance):
+@given(instance=model_types_JvmFormalParameter_strategy)
+def test_model_types_jvmformalparameter_varArg_setter(instance):
     original = instance.varArg
     instance.varArg = original
     assert instance.varArg == original
 
-@given(instance=model::types::JvmMember_strategy)
+
+
+@given(instance=model_types_JvmFormalParameter_strategy)
+def test_model_types_jvmformalparameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_types_JvmMember_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmmember_instantiation(instance):
-    assert isinstance(instance, model::types::JvmMember)
-
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_model_types_jvmmember_instantiation(instance):
+    assert isinstance(instance, model_types_JvmMember)
 
 
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
 
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_simpleName_type(instance):
-    assert isinstance(instance.simpleName, str)
-
-
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_simpleName_setter(instance):
-    original = instance.simpleName
-    instance.simpleName = original
-    assert instance.simpleName == original
-
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_modifiers_type(instance):
-    assert isinstance(instance.modifiers, str)
-
-
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_modifiers_setter(instance):
+@given(instance=model_types_JvmMember_strategy)
+def test_model_types_jvmmember_modifiers_setter(instance):
     original = instance.modifiers
     instance.modifiers = original
     assert instance.modifiers == original
 
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
 
 
-@given(instance=model::types::JvmMember_strategy)
-def test_model::types::jvmmember_visibility_setter(instance):
+@given(instance=model_types_JvmMember_strategy)
+def test_model_types_jvmmember_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+
+
+@given(instance=model_types_JvmMember_strategy)
+def test_model_types_jvmmember_simpleName_setter(instance):
+    original = instance.simpleName
+    instance.simpleName = original
+    assert instance.simpleName == original
+
+
+
+@given(instance=model_types_JvmMember_strategy)
+def test_model_types_jvmmember_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
@@ -7009,9 +5869,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::types::JvmMember_strategy)
+@given(instance=model_types_JvmMember_strategy)
 @settings(max_examples=30)
-def test_model::types::jvmmember_internalsetidentifier_changes_state(instance):
+def test_model_types_jvmmember_internalsetidentifier_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7025,628 +5885,167 @@ def test_model::types::jvmmember_internalsetidentifier_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'internalSetIdentifier' in model::types::JvmMember is empty"
+        assert has_statements, f"Function 'internalSetIdentifier' in model_types_JvmMember is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'internalSetIdentifier' in model::types::JvmMember did not change state; check implementation")
+            warnings.warn(f"Operation 'internalSetIdentifier' in model_types_JvmMember did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'internalSetIdentifier' in model::types::JvmMember is not implemented or raised an error")
+        warnings.warn(f"Operation 'internalSetIdentifier' in model_types_JvmMember is not implemented or raised an error")
 
 @given(instance=JvmCompoundTypeReference_strategy)
 @settings(max_examples=50)
 def test_jvmcompoundtypereference_instantiation(instance):
     assert isinstance(instance, JvmCompoundTypeReference)
 
-@given(instance=model::types::JvmSynonymTypeReference_strategy)
+@given(instance=model_types_JvmSynonymTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmsynonymtypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmSynonymTypeReference)
+def test_model_types_jvmsynonymtypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmSynonymTypeReference)
 
-@given(instance=model::types::JvmMultiTypeReference_strategy)
+@given(instance=model_types_JvmMultiTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmmultitypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmMultiTypeReference)
+def test_model_types_jvmmultitypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmMultiTypeReference)
 
 @given(instance=JvmExecutable_strategy)
 @settings(max_examples=50)
 def test_jvmexecutable_instantiation(instance):
     assert isinstance(instance, JvmExecutable)
 
-@given(instance=model::types::JvmOperation_strategy)
+@given(instance=model_types_JvmOperation_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmoperation_instantiation(instance):
-    assert isinstance(instance, model::types::JvmOperation)
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_static_type(instance):
-    assert isinstance(instance.static, bool)
+def test_model_types_jvmoperation_instantiation(instance):
+    assert isinstance(instance, model_types_JvmOperation)
 
 
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
 
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_native_type(instance):
-    assert isinstance(instance.native, bool)
-
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_native_setter(instance):
-    original = instance.native
-    instance.native = original
-    assert instance.native == original
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
-
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_synchronized_setter(instance):
-    original = instance.synchronized
-    instance.synchronized = original
-    assert instance.synchronized == original
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_final_type(instance):
-    assert isinstance(instance.final, bool)
-
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_strictFloatingPoint_type(instance):
-    assert isinstance(instance.strictFloatingPoint, bool)
-
-
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_strictFloatingPoint_setter(instance):
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_strictFloatingPoint_setter(instance):
     original = instance.strictFloatingPoint
     instance.strictFloatingPoint = original
     assert instance.strictFloatingPoint == original
 
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_default_type(instance):
-    assert isinstance(instance.default, bool)
 
 
-@given(instance=model::types::JvmOperation_strategy)
-def test_model::types::jvmoperation_default_setter(instance):
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
+
+
+
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+
+
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_synchronized_setter(instance):
+    original = instance.synchronized
+    instance.synchronized = original
+    assert instance.synchronized == original
+
+
+
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+
+
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=model::types::JvmConstructor_strategy)
+
+
+@given(instance=model_types_JvmOperation_strategy)
+def test_model_types_jvmoperation_native_setter(instance):
+    original = instance.native
+    instance.native = original
+    assert instance.native == original
+
+@given(instance=model_types_JvmConstructor_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmconstructor_instantiation(instance):
-    assert isinstance(instance, model::types::JvmConstructor)
+def test_model_types_jvmconstructor_instantiation(instance):
+    assert isinstance(instance, model_types_JvmConstructor)
 
 @given(instance=JvmFormalParameter_strategy)
 @settings(max_examples=50)
 def test_jvmformalparameter_instantiation(instance):
     assert isinstance(instance, JvmFormalParameter)
 
-@given(instance=model::ss::XtendFormalParameter_strategy)
+@given(instance=types_JvmFeature_strategy)
 @settings(max_examples=50)
-def test_model::ss::xtendformalparameter_instantiation(instance):
-    assert isinstance(instance, model::ss::XtendFormalParameter)
-
-@given(instance=model::ss::XtendFormalParameter_strategy)
-def test_model::ss::xtendformalparameter_extension_type(instance):
-    assert isinstance(instance.extension, bool)
-
-
-@given(instance=model::ss::XtendFormalParameter_strategy)
-def test_model::ss::xtendformalparameter_extension_setter(instance):
-    original = instance.extension
-    instance.extension = original
-    assert instance.extension == original
-
-@given(instance=types::JvmFeature_strategy)
-@settings(max_examples=50)
-def test_types::jvmfeature_instantiation(instance):
-    assert isinstance(instance, types::JvmFeature)
+def test_types_jvmfeature_instantiation(instance):
+    assert isinstance(instance, types_JvmFeature)
 
 @given(instance=XExpression_strategy)
 @settings(max_examples=50)
 def test_xexpression_instantiation(instance):
     assert isinstance(instance, XExpression)
 
-@given(instance=model::xannotation::XAnnotation_strategy)
+@given(instance=model_xannotation_XAnnotation_strategy)
 @settings(max_examples=50)
-def test_model::xannotation::xannotation_instantiation(instance):
-    assert isinstance(instance, model::xannotation::XAnnotation)
-
-@given(instance=model::xbase::XBreakExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xbreakexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XBreakExpression)
-
-@given(instance=model::xbase::XStringLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xstringliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XStringLiteral)
-
-@given(instance=model::xbase::XStringLiteral_strategy)
-def test_model::xbase::xstringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=model::xbase::XStringLiteral_strategy)
-def test_model::xbase::xstringliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=model::xbase::XInstanceOfExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xinstanceofexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XInstanceOfExpression)
-
-@given(instance=model::ss::RichStringIf_strategy)
-@settings(max_examples=50)
-def test_model::ss::richstringif_instantiation(instance):
-    assert isinstance(instance, model::ss::RichStringIf)
-
-@given(instance=model::xbase::XAbstractWhileExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xabstractwhileexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XAbstractWhileExpression)
-
-@given(instance=model::xbase::XBlockExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xblockexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XBlockExpression)
-
-@given(instance=model::xbase::XObjectLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xobjectliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XObjectLiteral)
-
-@given(instance=model::xbase::XVariableDeclarationList_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xvariabledeclarationlist_instantiation(instance):
-    assert isinstance(instance, model::xbase::XVariableDeclarationList)
-
-@given(instance=model::xbase::XVariableDeclarationList_strategy)
-def test_model::xbase::xvariabledeclarationlist_writeable_type(instance):
-    assert isinstance(instance.writeable, bool)
-
-
-@given(instance=model::xbase::XVariableDeclarationList_strategy)
-def test_model::xbase::xvariabledeclarationlist_writeable_setter(instance):
-    original = instance.writeable
-    instance.writeable = original
-    assert instance.writeable == original
-
-@given(instance=model::xbase::XVariableDeclarationList_strategy)
-def test_model::xbase::xvariabledeclarationlist_exported_type(instance):
-    assert isinstance(instance.exported, bool)
-
-
-@given(instance=model::xbase::XVariableDeclarationList_strategy)
-def test_model::xbase::xvariabledeclarationlist_exported_setter(instance):
-    original = instance.exported
-    instance.exported = original
-    assert instance.exported == original
-
-@given(instance=model::xbase::XFunctionDeclaration_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xfunctiondeclaration_instantiation(instance):
-    assert isinstance(instance, model::xbase::XFunctionDeclaration)
-
-@given(instance=model::xbase::XFunctionDeclaration_strategy)
-def test_model::xbase::xfunctiondeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::xbase::XFunctionDeclaration_strategy)
-def test_model::xbase::xfunctiondeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::xbase::XArrayLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xarrayliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XArrayLiteral)
-
-@given(instance=model::xbase::XNullLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xnullliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XNullLiteral)
-
-@given(instance=model::xbase::XForEachExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xforeachexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XForEachExpression)
-
-@given(instance=model::xbase::XTryCatchFinallyExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xtrycatchfinallyexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XTryCatchFinallyExpression)
-
-@given(instance=model::xbase::XCastedExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xcastedexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XCastedExpression)
-
-@given(instance=model::xbase::XTypeLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xtypeliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XTypeLiteral)
-
-@given(instance=model::xbase::XTypeLiteral_strategy)
-def test_model::xbase::xtypeliteral_arrayDimensions_type(instance):
-    assert isinstance(instance.arrayDimensions, str)
-
-
-@given(instance=model::xbase::XTypeLiteral_strategy)
-def test_model::xbase::xtypeliteral_arrayDimensions_setter(instance):
-    original = instance.arrayDimensions
-    instance.arrayDimensions = original
-    assert instance.arrayDimensions == original
-
-@given(instance=model::xbase::XThrowExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xthrowexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XThrowExpression)
-
-@given(instance=model::xbase::XKeyValuePair_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xkeyvaluepair_instantiation(instance):
-    assert isinstance(instance, model::xbase::XKeyValuePair)
-
-@given(instance=model::xbase::XKeyValuePair_strategy)
-def test_model::xbase::xkeyvaluepair_key1_type(instance):
-    assert isinstance(instance.key1, str)
-
-
-@given(instance=model::xbase::XKeyValuePair_strategy)
-def test_model::xbase::xkeyvaluepair_key1_setter(instance):
-    original = instance.key1
-    instance.key1 = original
-    assert instance.key1 == original
-
-@given(instance=model::xbase::XCollectionLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xcollectionliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XCollectionLiteral)
-
-@given(instance=model::xbase::XNumberLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xnumberliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XNumberLiteral)
-
-@given(instance=model::xbase::XNumberLiteral_strategy)
-def test_model::xbase::xnumberliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=model::xbase::XNumberLiteral_strategy)
-def test_model::xbase::xnumberliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=model::xbase::XContinueExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xcontinueexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XContinueExpression)
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xabstractfeaturecall_instantiation(instance):
-    assert isinstance(instance, model::xbase::XAbstractFeatureCall)
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-def test_model::xbase::xabstractfeaturecall_validFeature_type(instance):
-    assert isinstance(instance.validFeature, bool)
-
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-def test_model::xbase::xabstractfeaturecall_validFeature_setter(instance):
-    original = instance.validFeature
-    instance.validFeature = original
-    assert instance.validFeature == original
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-def test_model::xbase::xabstractfeaturecall_invalidFeatureIssueCode_type(instance):
-    assert isinstance(instance.invalidFeatureIssueCode, str)
-
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-def test_model::xbase::xabstractfeaturecall_invalidFeatureIssueCode_setter(instance):
-    original = instance.invalidFeatureIssueCode
-    instance.invalidFeatureIssueCode = original
-    assert instance.invalidFeatureIssueCode == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-@settings(max_examples=30)
-def test_model::xbase::xabstractfeaturecall_ispackagefragment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isPackageFragment()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isPackageFragment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isPackageFragment' in model::xbase::XAbstractFeatureCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isPackageFragment' in model::xbase::XAbstractFeatureCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isPackageFragment' in model::xbase::XAbstractFeatureCall is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-@settings(max_examples=30)
-def test_model::xbase::xabstractfeaturecall_isexplicitoperationcallorbuildersyntax_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isExplicitOperationCallOrBuilderSyntax()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isExplicitOperationCallOrBuilderSyntax).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExplicitOperationCallOrBuilderSyntax' in model::xbase::XAbstractFeatureCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExplicitOperationCallOrBuilderSyntax' in model::xbase::XAbstractFeatureCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExplicitOperationCallOrBuilderSyntax' in model::xbase::XAbstractFeatureCall is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-@settings(max_examples=30)
-def test_model::xbase::xabstractfeaturecall_isextension_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isExtension()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isExtension).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExtension' in model::xbase::XAbstractFeatureCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExtension' in model::xbase::XAbstractFeatureCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExtension' in model::xbase::XAbstractFeatureCall is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-@settings(max_examples=30)
-def test_model::xbase::xabstractfeaturecall_istypeliteral_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isTypeLiteral()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isTypeLiteral).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isTypeLiteral' in model::xbase::XAbstractFeatureCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isTypeLiteral' in model::xbase::XAbstractFeatureCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isTypeLiteral' in model::xbase::XAbstractFeatureCall is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::xbase::XAbstractFeatureCall_strategy)
-@settings(max_examples=30)
-def test_model::xbase::xabstractfeaturecall_isstatic_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isStatic()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isStatic).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isStatic' in model::xbase::XAbstractFeatureCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isStatic' in model::xbase::XAbstractFeatureCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isStatic' in model::xbase::XAbstractFeatureCall is not implemented or raised an error")
-
-@given(instance=model::xbase::XForLoopExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xforloopexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XForLoopExpression)
-
-@given(instance=model::xbase::XBooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xbooleanliteral_instantiation(instance):
-    assert isinstance(instance, model::xbase::XBooleanLiteral)
-
-@given(instance=model::xbase::XBooleanLiteral_strategy)
-def test_model::xbase::xbooleanliteral_isTrue_type(instance):
-    assert isinstance(instance.isTrue, bool)
-
-
-@given(instance=model::xbase::XBooleanLiteral_strategy)
-def test_model::xbase::xbooleanliteral_isTrue_setter(instance):
-    original = instance.isTrue
-    instance.isTrue = original
-    assert instance.isTrue == original
-
-@given(instance=model::xbase::XTernaryOperation_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xternaryoperation_instantiation(instance):
-    assert isinstance(instance, model::xbase::XTernaryOperation)
-
-@given(instance=model::xbase::XReturnExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xreturnexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XReturnExpression)
-
-@given(instance=model::xbase::XConstructorCall_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xconstructorcall_instantiation(instance):
-    assert isinstance(instance, model::xbase::XConstructorCall)
-
-@given(instance=model::xbase::XConstructorCall_strategy)
-def test_model::xbase::xconstructorcall_validFeature_type(instance):
-    assert isinstance(instance.validFeature, bool)
-
-
-@given(instance=model::xbase::XConstructorCall_strategy)
-def test_model::xbase::xconstructorcall_validFeature_setter(instance):
-    original = instance.validFeature
-    instance.validFeature = original
-    assert instance.validFeature == original
-
-@given(instance=model::xbase::XConstructorCall_strategy)
-def test_model::xbase::xconstructorcall_invalidFeatureIssueCode_type(instance):
-    assert isinstance(instance.invalidFeatureIssueCode, str)
-
-
-@given(instance=model::xbase::XConstructorCall_strategy)
-def test_model::xbase::xconstructorcall_invalidFeatureIssueCode_setter(instance):
-    original = instance.invalidFeatureIssueCode
-    instance.invalidFeatureIssueCode = original
-    assert instance.invalidFeatureIssueCode == original
-
-@given(instance=model::xbase::XIfExpression_strategy)
-@settings(max_examples=50)
-def test_model::xbase::xifexpression_instantiation(instance):
-    assert isinstance(instance, model::xbase::XIfExpression)
+def test_model_xannotation_xannotation_instantiation(instance):
+    assert isinstance(instance, model_xannotation_XAnnotation)
 
 @given(instance=JvmFeature_strategy)
 @settings(max_examples=50)
 def test_jvmfeature_instantiation(instance):
     assert isinstance(instance, JvmFeature)
 
-@given(instance=model::types::JvmField_strategy)
+@given(instance=model_types_JvmField_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmfield_instantiation(instance):
-    assert isinstance(instance, model::types::JvmField)
-
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_transient_type(instance):
-    assert isinstance(instance.transient, bool)
+def test_model_types_jvmfield_instantiation(instance):
+    assert isinstance(instance, model_types_JvmField)
 
 
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_transient_setter(instance):
-    original = instance.transient
-    instance.transient = original
-    assert instance.transient == original
 
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_volatile_type(instance):
-    assert isinstance(instance.volatile, bool)
-
-
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_volatile_setter(instance):
-    original = instance.volatile
-    instance.volatile = original
-    assert instance.volatile == original
-
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_final_type(instance):
-    assert isinstance(instance.final, bool)
-
-
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
-
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=model::types::JvmField_strategy)
-def test_model::types::jvmfield_static_setter(instance):
+@given(instance=model_types_JvmField_strategy)
+def test_model_types_jvmfield_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=model::types::JvmTypeReference_strategy)
+
+
+@given(instance=model_types_JvmField_strategy)
+def test_model_types_jvmfield_volatile_setter(instance):
+    original = instance.volatile
+    instance.volatile = original
+    assert instance.volatile == original
+
+
+
+@given(instance=model_types_JvmField_strategy)
+def test_model_types_jvmfield_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
+
+
+
+@given(instance=model_types_JvmField_strategy)
+def test_model_types_jvmfield_transient_setter(instance):
+    original = instance.transient
+    instance.transient = original
+    assert instance.transient == original
+
+@given(instance=model_types_JvmTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmtypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmTypeReference)
+def test_model_types_jvmtypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmTypeReference)
 
 import warnings
 import copy
@@ -7654,9 +6053,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::types::JvmTypeReference_strategy)
+@given(instance=model_types_JvmTypeReference_strategy)
 @settings(max_examples=30)
-def test_model::types::jvmtypereference_accept_changes_state(instance):
+def test_model_types_jvmtypereference_accept_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7670,39 +6069,39 @@ def test_model::types::jvmtypereference_accept_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'accept' in model::types::JvmTypeReference is empty"
+        assert has_statements, f"Function 'accept' in model_types_JvmTypeReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'accept' in model::types::JvmTypeReference did not change state; check implementation")
+            warnings.warn(f"Operation 'accept' in model_types_JvmTypeReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'accept' in model::types::JvmTypeReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'accept' in model_types_JvmTypeReference is not implemented or raised an error")
 
-@given(instance=types::JvmTypeReference_strategy)
+@given(instance=types_JvmTypeReference_strategy)
 @settings(max_examples=50)
-def test_types::jvmtypereference_instantiation(instance):
-    assert isinstance(instance, types::JvmTypeReference)
+def test_types_jvmtypereference_instantiation(instance):
+    assert isinstance(instance, types_JvmTypeReference)
 
 @given(instance=JvmConstraintOwner_strategy)
 @settings(max_examples=50)
 def test_jvmconstraintowner_instantiation(instance):
     assert isinstance(instance, JvmConstraintOwner)
 
-@given(instance=model::types::JvmTypeConstraint_strategy)
+@given(instance=model_types_JvmTypeConstraint_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmtypeconstraint_instantiation(instance):
-    assert isinstance(instance, model::types::JvmTypeConstraint)
+def test_model_types_jvmtypeconstraint_instantiation(instance):
+    assert isinstance(instance, model_types_JvmTypeConstraint)
 
 @given(instance=JvmTypeConstraint_strategy)
 @settings(max_examples=50)
 def test_jvmtypeconstraint_instantiation(instance):
     assert isinstance(instance, JvmTypeConstraint)
 
-@given(instance=model::types::JvmConstraintOwner_strategy)
+@given(instance=model_types_JvmConstraintOwner_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmconstraintowner_instantiation(instance):
-    assert isinstance(instance, model::types::JvmConstraintOwner)
+def test_model_types_jvmconstraintowner_instantiation(instance):
+    assert isinstance(instance, model_types_JvmConstraintOwner)
 
 @given(instance=JvmParameterizedTypeReference_strategy)
 @settings(max_examples=50)
@@ -7714,55 +6113,46 @@ def test_jvmparameterizedtypereference_instantiation(instance):
 def test_jvmtypeparameter_instantiation(instance):
     assert isinstance(instance, JvmTypeParameter)
 
-@given(instance=types::JvmTypeParameterDeclarator_strategy)
+@given(instance=types_JvmTypeParameterDeclarator_strategy)
 @settings(max_examples=50)
-def test_types::jvmtypeparameterdeclarator_instantiation(instance):
-    assert isinstance(instance, types::JvmTypeParameterDeclarator)
+def test_types_jvmtypeparameterdeclarator_instantiation(instance):
+    assert isinstance(instance, types_JvmTypeParameterDeclarator)
 
-@given(instance=model::types::JvmExecutable_strategy)
+@given(instance=model_types_JvmExecutable_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmexecutable_instantiation(instance):
-    assert isinstance(instance, model::types::JvmExecutable)
-
-@given(instance=model::types::JvmExecutable_strategy)
-def test_model::types::jvmexecutable_varArgs_type(instance):
-    assert isinstance(instance.varArgs, bool)
+def test_model_types_jvmexecutable_instantiation(instance):
+    assert isinstance(instance, model_types_JvmExecutable)
 
 
-@given(instance=model::types::JvmExecutable_strategy)
-def test_model::types::jvmexecutable_varArgs_setter(instance):
+
+@given(instance=model_types_JvmExecutable_strategy)
+def test_model_types_jvmexecutable_varArgs_setter(instance):
     original = instance.varArgs
     instance.varArgs = original
     assert instance.varArgs == original
 
-@given(instance=types::JvmDeclaredType_strategy)
+@given(instance=types_JvmDeclaredType_strategy)
 @settings(max_examples=50)
-def test_types::jvmdeclaredtype_instantiation(instance):
-    assert isinstance(instance, types::JvmDeclaredType)
+def test_types_jvmdeclaredtype_instantiation(instance):
+    assert isinstance(instance, types_JvmDeclaredType)
 
-@given(instance=model::types::JvmGenericType_strategy)
+@given(instance=model_types_JvmGenericType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmgenerictype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmGenericType)
-
-@given(instance=model::types::JvmGenericType_strategy)
-def test_model::types::jvmgenerictype_interface_type(instance):
-    assert isinstance(instance.interface, bool)
+def test_model_types_jvmgenerictype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmGenericType)
 
 
-@given(instance=model::types::JvmGenericType_strategy)
-def test_model::types::jvmgenerictype_interface_setter(instance):
+
+@given(instance=model_types_JvmGenericType_strategy)
+def test_model_types_jvmgenerictype_interface_setter(instance):
     original = instance.interface
     instance.interface = original
     assert instance.interface == original
 
-@given(instance=model::types::JvmGenericType_strategy)
-def test_model::types::jvmgenerictype_strictFloatingPoint_type(instance):
-    assert isinstance(instance.strictFloatingPoint, bool)
 
 
-@given(instance=model::types::JvmGenericType_strategy)
-def test_model::types::jvmgenerictype_strictFloatingPoint_setter(instance):
+@given(instance=model_types_JvmGenericType_strategy)
+def test_model_types_jvmgenerictype_strictFloatingPoint_setter(instance):
     original = instance.strictFloatingPoint
     instance.strictFloatingPoint = original
     assert instance.strictFloatingPoint == original
@@ -7773,9 +6163,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::types::JvmGenericType_strategy)
+@given(instance=model_types_JvmGenericType_strategy)
 @settings(max_examples=30)
-def test_model::types::jvmgenerictype_isinstantiateable_changes_state(instance):
+def test_model_types_jvmgenerictype_isinstantiateable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7787,24 +6177,24 @@ def test_model::types::jvmgenerictype_isinstantiateable_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInstantiateable' in model::types::JvmGenericType is empty"
+        assert has_statements, f"Function 'isInstantiateable' in model_types_JvmGenericType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInstantiateable' in model::types::JvmGenericType did not change state; check implementation")
+            warnings.warn(f"Operation 'isInstantiateable' in model_types_JvmGenericType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInstantiateable' in model::types::JvmGenericType is not implemented or raised an error")
+        warnings.warn(f"Operation 'isInstantiateable' in model_types_JvmGenericType is not implemented or raised an error")
 
 @given(instance=JvmField_strategy)
 @settings(max_examples=50)
 def test_jvmfield_instantiation(instance):
     assert isinstance(instance, JvmField)
 
-@given(instance=model::types::JvmEnumerationLiteral_strategy)
+@given(instance=model_types_JvmEnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmenumerationliteral_instantiation(instance):
-    assert isinstance(instance, model::types::JvmEnumerationLiteral)
+def test_model_types_jvmenumerationliteral_instantiation(instance):
+    assert isinstance(instance, model_types_JvmEnumerationLiteral)
 
 @given(instance=JvmEnumerationLiteral_strategy)
 @settings(max_examples=50)
@@ -7816,55 +6206,55 @@ def test_jvmenumerationliteral_instantiation(instance):
 def test_jvmdeclaredtype_instantiation(instance):
     assert isinstance(instance, JvmDeclaredType)
 
-@given(instance=model::types::JvmEnumerationType_strategy)
+@given(instance=model_types_JvmEnumerationType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmenumerationtype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmEnumerationType)
+def test_model_types_jvmenumerationtype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmEnumerationType)
 
-@given(instance=model::types::JvmAnnotationType_strategy)
+@given(instance=model_types_JvmAnnotationType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmannotationtype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmAnnotationType)
+def test_model_types_jvmannotationtype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmAnnotationType)
 
-@given(instance=model::types::JvmLowerBound_strategy)
+@given(instance=model_types_JvmLowerBound_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmlowerbound_instantiation(instance):
-    assert isinstance(instance, model::types::JvmLowerBound)
+def test_model_types_jvmlowerbound_instantiation(instance):
+    assert isinstance(instance, model_types_JvmLowerBound)
 
-@given(instance=model::types::JvmUpperBound_strategy)
+@given(instance=model_types_JvmUpperBound_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmupperbound_instantiation(instance):
-    assert isinstance(instance, model::types::JvmUpperBound)
+def test_model_types_jvmupperbound_instantiation(instance):
+    assert isinstance(instance, model_types_JvmUpperBound)
 
-@given(instance=model::types::JvmTypeParameterDeclarator_strategy)
+@given(instance=model_types_JvmTypeParameterDeclarator_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmtypeparameterdeclarator_instantiation(instance):
-    assert isinstance(instance, model::types::JvmTypeParameterDeclarator)
+def test_model_types_jvmtypeparameterdeclarator_instantiation(instance):
+    assert isinstance(instance, model_types_JvmTypeParameterDeclarator)
 
 @given(instance=JvmTypeParameterDeclarator_strategy)
 @settings(max_examples=50)
 def test_jvmtypeparameterdeclarator_instantiation(instance):
     assert isinstance(instance, JvmTypeParameterDeclarator)
 
-@given(instance=types::JvmConstraintOwner_strategy)
+@given(instance=types_JvmConstraintOwner_strategy)
 @settings(max_examples=50)
-def test_types::jvmconstraintowner_instantiation(instance):
-    assert isinstance(instance, types::JvmConstraintOwner)
+def test_types_jvmconstraintowner_instantiation(instance):
+    assert isinstance(instance, types_JvmConstraintOwner)
 
-@given(instance=model::types::JvmWildcardTypeReference_strategy)
+@given(instance=model_types_JvmWildcardTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmwildcardtypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmWildcardTypeReference)
+def test_model_types_jvmwildcardtypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmWildcardTypeReference)
 
 @given(instance=JvmMember_strategy)
 @settings(max_examples=50)
 def test_jvmmember_instantiation(instance):
     assert isinstance(instance, JvmMember)
 
-@given(instance=model::types::JvmFeature_strategy)
+@given(instance=model_types_JvmFeature_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmfeature_instantiation(instance):
-    assert isinstance(instance, model::types::JvmFeature)
+def test_model_types_jvmfeature_instantiation(instance):
+    assert isinstance(instance, model_types_JvmFeature)
 
 import warnings
 import copy
@@ -7872,9 +6262,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::types::JvmFeature_strategy)
+@given(instance=model_types_JvmFeature_strategy)
 @settings(max_examples=30)
-def test_model::types::jvmfeature_isstatic_changes_state(instance):
+def test_model_types_jvmfeature_isstatic_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7886,151 +6276,130 @@ def test_model::types::jvmfeature_isstatic_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isStatic' in model::types::JvmFeature is empty"
+        assert has_statements, f"Function 'isStatic' in model_types_JvmFeature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isStatic' in model::types::JvmFeature did not change state; check implementation")
+            warnings.warn(f"Operation 'isStatic' in model_types_JvmFeature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isStatic' in model::types::JvmFeature is not implemented or raised an error")
+        warnings.warn(f"Operation 'isStatic' in model_types_JvmFeature is not implemented or raised an error")
 
 @given(instance=JvmTypeReference_strategy)
 @settings(max_examples=50)
 def test_jvmtypereference_instantiation(instance):
     assert isinstance(instance, JvmTypeReference)
 
-@given(instance=model::types::JvmCompoundTypeReference_strategy)
+@given(instance=model_types_JvmParameterizedTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmcompoundtypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmCompoundTypeReference)
+def test_model_types_jvmparameterizedtypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmParameterizedTypeReference)
 
-@given(instance=model::types::JvmGenericArrayTypeReference_strategy)
+@given(instance=model_types_JvmSpecializedTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmgenericarraytypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmGenericArrayTypeReference)
+def test_model_types_jvmspecializedtypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmSpecializedTypeReference)
 
-@given(instance=model::types::JvmAnyTypeReference_strategy)
+@given(instance=model_types_JvmCompoundTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmanytypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmAnyTypeReference)
+def test_model_types_jvmcompoundtypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmCompoundTypeReference)
 
-@given(instance=model::types::JvmUnknownTypeReference_strategy)
+@given(instance=model_types_JvmAnyTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmunknowntypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmUnknownTypeReference)
+def test_model_types_jvmanytypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmAnyTypeReference)
 
-@given(instance=model::types::JvmUnknownTypeReference_strategy)
-def test_model::types::jvmunknowntypereference_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+@given(instance=model_types_JvmDelegateTypeReference_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmdelegatetypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmDelegateTypeReference)
+
+@given(instance=model_types_JvmGenericArrayTypeReference_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmgenericarraytypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmGenericArrayTypeReference)
+
+@given(instance=model_types_JvmUnknownTypeReference_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmunknowntypereference_instantiation(instance):
+    assert isinstance(instance, model_types_JvmUnknownTypeReference)
 
 
-@given(instance=model::types::JvmUnknownTypeReference_strategy)
-def test_model::types::jvmunknowntypereference_qualifiedName_setter(instance):
+
+@given(instance=model_types_JvmUnknownTypeReference_strategy)
+def test_model_types_jvmunknowntypereference_qualifiedName_setter(instance):
     original = instance.qualifiedName
     instance.qualifiedName = original
     assert instance.qualifiedName == original
 
-@given(instance=model::types::JvmDelegateTypeReference_strategy)
+@given(instance=types_JvmComponentType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmdelegatetypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmDelegateTypeReference)
+def test_types_jvmcomponenttype_instantiation(instance):
+    assert isinstance(instance, types_JvmComponentType)
 
-@given(instance=model::types::JvmParameterizedTypeReference_strategy)
+@given(instance=model_types_JvmTypeParameter_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmparameterizedtypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmParameterizedTypeReference)
-
-@given(instance=model::types::JvmSpecializedTypeReference_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmspecializedtypereference_instantiation(instance):
-    assert isinstance(instance, model::types::JvmSpecializedTypeReference)
-
-@given(instance=types::JvmComponentType_strategy)
-@settings(max_examples=50)
-def test_types::jvmcomponenttype_instantiation(instance):
-    assert isinstance(instance, types::JvmComponentType)
-
-@given(instance=model::types::JvmTypeParameter_strategy)
-@settings(max_examples=50)
-def test_model::types::jvmtypeparameter_instantiation(instance):
-    assert isinstance(instance, model::types::JvmTypeParameter)
-
-@given(instance=model::types::JvmTypeParameter_strategy)
-def test_model::types::jvmtypeparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_types_jvmtypeparameter_instantiation(instance):
+    assert isinstance(instance, model_types_JvmTypeParameter)
 
 
-@given(instance=model::types::JvmTypeParameter_strategy)
-def test_model::types::jvmtypeparameter_name_setter(instance):
+
+@given(instance=model_types_JvmTypeParameter_strategy)
+def test_model_types_jvmtypeparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=types::JvmMember_strategy)
+@given(instance=types_JvmMember_strategy)
 @settings(max_examples=50)
-def test_types::jvmmember_instantiation(instance):
-    assert isinstance(instance, types::JvmMember)
+def test_types_jvmmember_instantiation(instance):
+    assert isinstance(instance, types_JvmMember)
 
-@given(instance=model::types::JvmDeclaredType_strategy)
+@given(instance=model_types_JvmDeclaredType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmdeclaredtype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmDeclaredType)
-
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_model_types_jvmdeclaredtype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmDeclaredType)
 
 
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_packageName_setter(instance):
-    original = instance.packageName
-    instance.packageName = original
-    assert instance.packageName == original
 
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_exported_type(instance):
-    assert isinstance(instance.exported, bool)
-
-
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_exported_setter(instance):
-    original = instance.exported
-    instance.exported = original
-    assert instance.exported == original
-
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_abstract_setter(instance):
+@given(instance=model_types_JvmDeclaredType_strategy)
+def test_model_types_jvmdeclaredtype_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_final_type(instance):
-    assert isinstance(instance.final, bool)
 
 
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
-
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=model::types::JvmDeclaredType_strategy)
-def test_model::types::jvmdeclaredtype_static_setter(instance):
+@given(instance=model_types_JvmDeclaredType_strategy)
+def test_model_types_jvmdeclaredtype_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
+
+
+
+@given(instance=model_types_JvmDeclaredType_strategy)
+def test_model_types_jvmdeclaredtype_exported_setter(instance):
+    original = instance.exported
+    instance.exported = original
+    assert instance.exported == original
+
+
+
+@given(instance=model_types_JvmDeclaredType_strategy)
+def test_model_types_jvmdeclaredtype_packageName_setter(instance):
+    original = instance.packageName
+    instance.packageName = original
+    assert instance.packageName == original
+
+
+
+@given(instance=model_types_JvmDeclaredType_strategy)
+def test_model_types_jvmdeclaredtype_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
 
 import warnings
 import copy
@@ -8038,9 +6407,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::types::JvmDeclaredType_strategy)
+@given(instance=model_types_JvmDeclaredType_strategy)
 @settings(max_examples=30)
-def test_model::types::jvmdeclaredtype_findallfeaturesbyname_changes_state(instance):
+def test_model_types_jvmdeclaredtype_findallfeaturesbyname_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8054,37 +6423,34 @@ def test_model::types::jvmdeclaredtype_findallfeaturesbyname_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findAllFeaturesByName' in model::types::JvmDeclaredType is empty"
+        assert has_statements, f"Function 'findAllFeaturesByName' in model_types_JvmDeclaredType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findAllFeaturesByName' in model::types::JvmDeclaredType did not change state; check implementation")
+            warnings.warn(f"Operation 'findAllFeaturesByName' in model_types_JvmDeclaredType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findAllFeaturesByName' in model::types::JvmDeclaredType is not implemented or raised an error")
+        warnings.warn(f"Operation 'findAllFeaturesByName' in model_types_JvmDeclaredType is not implemented or raised an error")
 
 @given(instance=JvmComponentType_strategy)
 @settings(max_examples=50)
 def test_jvmcomponenttype_instantiation(instance):
     assert isinstance(instance, JvmComponentType)
 
-@given(instance=model::types::JvmArrayType_strategy)
+@given(instance=model_types_JvmArrayType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmarraytype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmArrayType)
+def test_model_types_jvmarraytype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmArrayType)
 
-@given(instance=model::types::JvmPrimitiveType_strategy)
+@given(instance=model_types_JvmPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmprimitivetype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmPrimitiveType)
-
-@given(instance=model::types::JvmPrimitiveType_strategy)
-def test_model::types::jvmprimitivetype_simpleName_type(instance):
-    assert isinstance(instance.simpleName, str)
+def test_model_types_jvmprimitivetype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmPrimitiveType)
 
 
-@given(instance=model::types::JvmPrimitiveType_strategy)
-def test_model::types::jvmprimitivetype_simpleName_setter(instance):
+
+@given(instance=model_types_JvmPrimitiveType_strategy)
+def test_model_types_jvmprimitivetype_simpleName_setter(instance):
     original = instance.simpleName
     instance.simpleName = original
     assert instance.simpleName == original
@@ -8099,30 +6465,30 @@ def test_jvmarraytype_instantiation(instance):
 def test_jvmtype_instantiation(instance):
     assert isinstance(instance, JvmType)
 
-@given(instance=model::types::JvmComponentType_strategy)
+@given(instance=model_types_JvmComponentType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmcomponenttype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmComponentType)
+def test_model_types_jvmcomponenttype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmComponentType)
 
-@given(instance=model::types::JvmVoid_strategy)
+@given(instance=model_types_JvmVoid_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmvoid_instantiation(instance):
-    assert isinstance(instance, model::types::JvmVoid)
+def test_model_types_jvmvoid_instantiation(instance):
+    assert isinstance(instance, model_types_JvmVoid)
 
-@given(instance=model::types::JvmNoModule_strategy)
+@given(instance=model_types_JvmNoModule_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmnomodule_instantiation(instance):
-    assert isinstance(instance, model::types::JvmNoModule)
+def test_model_types_jvmnomodule_instantiation(instance):
+    assert isinstance(instance, model_types_JvmNoModule)
 
 @given(instance=XExportSection_strategy)
 @settings(max_examples=50)
 def test_xexportsection_instantiation(instance):
     assert isinstance(instance, XExportSection)
 
-@given(instance=types::model::EObject_strategy)
+@given(instance=types_model_EObject_strategy)
 @settings(max_examples=50)
-def test_types::model::eobject_instantiation(instance):
-    assert isinstance(instance, types::model::EObject)
+def test_types_model_eobject_instantiation(instance):
+    assert isinstance(instance, types_model_EObject)
 
 @given(instance=XImportSection1_strategy)
 @settings(max_examples=50)
@@ -8134,36 +6500,33 @@ def test_ximportsection1_instantiation(instance):
 def test_jvmidentifiableelement_instantiation(instance):
     assert isinstance(instance, JvmIdentifiableElement)
 
-@given(instance=model::types::JvmType_strategy)
+@given(instance=model_types_JvmAnnotationTarget_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmtype_instantiation(instance):
-    assert isinstance(instance, model::types::JvmType)
+def test_model_types_jvmannotationtarget_instantiation(instance):
+    assert isinstance(instance, model_types_JvmAnnotationTarget)
 
-@given(instance=model::types::JvmAnnotationTarget_strategy)
+@given(instance=model_types_JvmType_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmannotationtarget_instantiation(instance):
-    assert isinstance(instance, model::types::JvmAnnotationTarget)
+def test_model_types_jvmtype_instantiation(instance):
+    assert isinstance(instance, model_types_JvmType)
 
-@given(instance=model::types::JvmModule_strategy)
+@given(instance=model_types_JvmModule_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmmodule_instantiation(instance):
-    assert isinstance(instance, model::types::JvmModule)
-
-@given(instance=model::types::JvmModule_strategy)
-def test_model::types::jvmmodule_simpleName_type(instance):
-    assert isinstance(instance.simpleName, str)
+def test_model_types_jvmmodule_instantiation(instance):
+    assert isinstance(instance, model_types_JvmModule)
 
 
-@given(instance=model::types::JvmModule_strategy)
-def test_model::types::jvmmodule_simpleName_setter(instance):
+
+@given(instance=model_types_JvmModule_strategy)
+def test_model_types_jvmmodule_simpleName_setter(instance):
     original = instance.simpleName
     instance.simpleName = original
     assert instance.simpleName == original
 
-@given(instance=model::types::JvmIdentifiableElement_strategy)
+@given(instance=model_types_JvmIdentifiableElement_strategy)
 @settings(max_examples=50)
-def test_model::types::jvmidentifiableelement_instantiation(instance):
-    assert isinstance(instance, model::types::JvmIdentifiableElement)
+def test_model_types_jvmidentifiableelement_instantiation(instance):
+    assert isinstance(instance, model_types_JvmIdentifiableElement)
 
 import warnings
 import copy
@@ -8171,9 +6534,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::types::JvmIdentifiableElement_strategy)
+@given(instance=model_types_JvmIdentifiableElement_strategy)
 @settings(max_examples=30)
-def test_model::types::jvmidentifiableelement_isexported_changes_state(instance):
+def test_model_types_jvmidentifiableelement_isexported_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8185,11 +6548,1327 @@ def test_model::types::jvmidentifiableelement_isexported_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExported' in model::types::JvmIdentifiableElement is empty"
+        assert has_statements, f"Function 'isExported' in model_types_JvmIdentifiableElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExported' in model::types::JvmIdentifiableElement did not change state; check implementation")
+            warnings.warn(f"Operation 'isExported' in model_types_JvmIdentifiableElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExported' in model::types::JvmIdentifiableElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'isExported' in model_types_JvmIdentifiableElement is not implemented or raised an error")
+
+@given(instance=model_ss_XtendFormalParameter_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendformalparameter_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendFormalParameter)
+
+
+
+@given(instance=model_ss_XtendFormalParameter_strategy)
+def test_model_ss_xtendformalparameter_extension_setter(instance):
+    original = instance.extension
+    instance.extension = original
+    assert instance.extension == original
+
+@given(instance=XVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_xvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, XVariableDeclaration)
+
+@given(instance=model_ss_XtendVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendVariableDeclaration)
+
+
+
+@given(instance=model_ss_XtendVariableDeclaration_strategy)
+def test_model_ss_xtendvariabledeclaration_extension_setter(instance):
+    original = instance.extension
+    instance.extension = original
+    assert instance.extension == original
+
+@given(instance=model_ss_CreateExtensionInfo_strategy)
+@settings(max_examples=50)
+def test_model_ss_createextensioninfo_instantiation(instance):
+    assert isinstance(instance, model_ss_CreateExtensionInfo)
+
+
+
+@given(instance=model_ss_CreateExtensionInfo_strategy)
+def test_model_ss_createextensioninfo_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_ss_RichStringElseIf_strategy)
+@settings(max_examples=50)
+def test_model_ss_richstringelseif_instantiation(instance):
+    assert isinstance(instance, model_ss_RichStringElseIf)
+
+@given(instance=RichStringElseIf_strategy)
+@settings(max_examples=50)
+def test_richstringelseif_instantiation(instance):
+    assert isinstance(instance, RichStringElseIf)
+
+@given(instance=XBlockExpression_strategy)
+@settings(max_examples=50)
+def test_xblockexpression_instantiation(instance):
+    assert isinstance(instance, XBlockExpression)
+
+@given(instance=model_ss_RichString_strategy)
+@settings(max_examples=50)
+def test_model_ss_richstring_instantiation(instance):
+    assert isinstance(instance, model_ss_RichString)
+
+@given(instance=model_ss_RichStringIf_strategy)
+@settings(max_examples=50)
+def test_model_ss_richstringif_instantiation(instance):
+    assert isinstance(instance, model_ss_RichStringIf)
+
+@given(instance=XForEachExpression_strategy)
+@settings(max_examples=50)
+def test_xforeachexpression_instantiation(instance):
+    assert isinstance(instance, XForEachExpression)
+
+@given(instance=model_ss_RichStringForLoop_strategy)
+@settings(max_examples=50)
+def test_model_ss_richstringforloop_instantiation(instance):
+    assert isinstance(instance, model_ss_RichStringForLoop)
+
+@given(instance=XStringLiteral_strategy)
+@settings(max_examples=50)
+def test_xstringliteral_instantiation(instance):
+    assert isinstance(instance, XStringLiteral)
+
+@given(instance=model_ss_RichStringLiteral_strategy)
+@settings(max_examples=50)
+def test_model_ss_richstringliteral_instantiation(instance):
+    assert isinstance(instance, model_ss_RichStringLiteral)
+
+@given(instance=CreateExtensionInfo_strategy)
+@settings(max_examples=50)
+def test_createextensioninfo_instantiation(instance):
+    assert isinstance(instance, CreateExtensionInfo)
+
+@given(instance=XtendParameter_strategy)
+@settings(max_examples=50)
+def test_xtendparameter_instantiation(instance):
+    assert isinstance(instance, XtendParameter)
+
+@given(instance=XtendMember_strategy)
+@settings(max_examples=50)
+def test_xtendmember_instantiation(instance):
+    assert isinstance(instance, XtendMember)
+
+@given(instance=model_ss_XtendField_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendfield_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendField)
+
+
+
+@given(instance=model_ss_XtendField_strategy)
+def test_model_ss_xtendfield_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendField_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendfield_isextension_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isExtension()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isExtension).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isExtension' in model_ss_XtendField is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isExtension' in model_ss_XtendField did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isExtension' in model_ss_XtendField is not implemented or raised an error")
+
+@given(instance=model_ss_XtendEnumLiteral_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendenumliteral_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendEnumLiteral)
+
+
+
+@given(instance=model_ss_XtendEnumLiteral_strategy)
+def test_model_ss_xtendenumliteral_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_ss_XtendConstructor_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendconstructor_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendConstructor)
+
+@given(instance=model_ss_XtendTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendtypedeclaration_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendTypeDeclaration)
+
+
+
+@given(instance=model_ss_XtendTypeDeclaration_strategy)
+def test_model_ss_xtendtypedeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_ss_XtendEvent_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendevent_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendEvent)
+
+
+
+@given(instance=model_ss_XtendEvent_strategy)
+def test_model_ss_xtendevent_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendEvent_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendevent_isextension_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isExtension()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isExtension).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isExtension' in model_ss_XtendEvent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isExtension' in model_ss_XtendEvent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isExtension' in model_ss_XtendEvent is not implemented or raised an error")
+
+@given(instance=model_ss_XtendFunction_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendfunction_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendFunction)
+
+
+
+@given(instance=model_ss_XtendFunction_strategy)
+def test_model_ss_xtendfunction_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendFunction_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendfunction_isabstract_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isAbstract()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isAbstract).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isAbstract' in model_ss_XtendFunction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isAbstract' in model_ss_XtendFunction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isAbstract' in model_ss_XtendFunction is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendFunction_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendfunction_isoverride_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isOverride()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isOverride).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isOverride' in model_ss_XtendFunction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isOverride' in model_ss_XtendFunction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isOverride' in model_ss_XtendFunction is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendFunction_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendfunction_isdispatch_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isDispatch()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isDispatch).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isDispatch' in model_ss_XtendFunction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isDispatch' in model_ss_XtendFunction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isDispatch' in model_ss_XtendFunction is not implemented or raised an error")
+
+@given(instance=XtendAnnotationTarget_strategy)
+@settings(max_examples=50)
+def test_xtendannotationtarget_instantiation(instance):
+    assert isinstance(instance, XtendAnnotationTarget)
+
+@given(instance=model_ss_XtendParameter_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendparameter_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendParameter)
+
+
+
+@given(instance=model_ss_XtendParameter_strategy)
+def test_model_ss_xtendparameter_varArg_setter(instance):
+    original = instance.varArg
+    instance.varArg = original
+    assert instance.varArg == original
+
+
+
+@given(instance=model_ss_XtendParameter_strategy)
+def test_model_ss_xtendparameter_extension_setter(instance):
+    original = instance.extension
+    instance.extension = original
+    assert instance.extension == original
+
+
+
+@given(instance=model_ss_XtendParameter_strategy)
+def test_model_ss_xtendparameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_ss_XtendMember_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendmember_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendMember)
+
+
+
+@given(instance=model_ss_XtendMember_strategy)
+def test_model_ss_xtendmember_modifiers_setter(instance):
+    original = instance.modifiers
+    instance.modifiers = original
+    assert instance.modifiers == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendMember_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendmember_isstatic_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isStatic()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isStatic).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isStatic' in model_ss_XtendMember is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isStatic' in model_ss_XtendMember did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isStatic' in model_ss_XtendMember is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendMember_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendmember_isfinal_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isFinal()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isFinal).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isFinal' in model_ss_XtendMember is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isFinal' in model_ss_XtendMember did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isFinal' in model_ss_XtendMember is not implemented or raised an error")
+
+@given(instance=XAnnotation_strategy)
+@settings(max_examples=50)
+def test_xannotation_instantiation(instance):
+    assert isinstance(instance, XAnnotation)
+
+@given(instance=model_ss_XtendAnnotationTarget_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendannotationtarget_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendAnnotationTarget)
+
+@given(instance=XObjectLiteralPart_strategy)
+@settings(max_examples=50)
+def test_xobjectliteralpart_instantiation(instance):
+    assert isinstance(instance, XObjectLiteralPart)
+
+@given(instance=model_xbase_XObjectLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xobjectliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XObjectLiteral)
+
+@given(instance=ss_model_EObject_strategy)
+@settings(max_examples=50)
+def test_ss_model_eobject_instantiation(instance):
+    assert isinstance(instance, ss_model_EObject)
+
+@given(instance=XtendTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_xtendtypedeclaration_instantiation(instance):
+    assert isinstance(instance, XtendTypeDeclaration)
+
+@given(instance=model_ss_XtendDelegate_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtenddelegate_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendDelegate)
+
+@given(instance=model_ss_XtendEnum_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendenum_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendEnum)
+
+@given(instance=model_ss_XtendAnnotationType_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendannotationtype_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendAnnotationType)
+
+@given(instance=model_ss_XtendInterface_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendinterface_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendInterface)
+
+@given(instance=model_ss_XtendClass_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendclass_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendClass)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_ss_XtendClass_strategy)
+@settings(max_examples=30)
+def test_model_ss_xtendclass_isabstract_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isAbstract()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isAbstract).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isAbstract' in model_ss_XtendClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isAbstract' in model_ss_XtendClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isAbstract' in model_ss_XtendClass is not implemented or raised an error")
+
+@given(instance=model_ss_XtendFile_strategy)
+@settings(max_examples=50)
+def test_model_ss_xtendfile_instantiation(instance):
+    assert isinstance(instance, model_ss_XtendFile)
+
+
+
+@given(instance=model_ss_XtendFile_strategy)
+def test_model_ss_xtendfile_package_setter(instance):
+    original = instance.package
+    instance.package = original
+    assert instance.package == original
+
+@given(instance=model_xbase_XArrayLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xarrayliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XArrayLiteral)
+
+@given(instance=model_xbase_XObjectLiteralPart_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xobjectliteralpart_instantiation(instance):
+    assert isinstance(instance, model_xbase_XObjectLiteralPart)
+
+
+
+@given(instance=model_xbase_XObjectLiteralPart_strategy)
+def test_model_xbase_xobjectliteralpart_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_xbase_XTernaryOperation_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xternaryoperation_instantiation(instance):
+    assert isinstance(instance, model_xbase_XTernaryOperation)
+
+@given(instance=model_xbase_XFunctionDeclaration_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xfunctiondeclaration_instantiation(instance):
+    assert isinstance(instance, model_xbase_XFunctionDeclaration)
+
+
+
+@given(instance=model_xbase_XFunctionDeclaration_strategy)
+def test_model_xbase_xfunctiondeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_xbase_XCatchClause_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xcatchclause_instantiation(instance):
+    assert isinstance(instance, model_xbase_XCatchClause)
+
+@given(instance=XCatchClause_strategy)
+@settings(max_examples=50)
+def test_xcatchclause_instantiation(instance):
+    assert isinstance(instance, XCatchClause)
+
+@given(instance=model_xbase_XContinueExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xcontinueexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XContinueExpression)
+
+@given(instance=model_xbase_XBreakExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xbreakexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XBreakExpression)
+
+@given(instance=model_xbase_XReturnExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xreturnexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XReturnExpression)
+
+@given(instance=XAbstractWhileExpression_strategy)
+@settings(max_examples=50)
+def test_xabstractwhileexpression_instantiation(instance):
+    assert isinstance(instance, XAbstractWhileExpression)
+
+@given(instance=model_xbase_XDoWhileExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xdowhileexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XDoWhileExpression)
+
+@given(instance=model_xbase_XAbstractWhileExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xabstractwhileexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XAbstractWhileExpression)
+
+@given(instance=model_xbase_XTryCatchFinallyExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xtrycatchfinallyexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XTryCatchFinallyExpression)
+
+@given(instance=model_xbase_XThrowExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xthrowexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XThrowExpression)
+
+@given(instance=model_xbase_XInstanceOfExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xinstanceofexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XInstanceOfExpression)
+
+@given(instance=model_xbase_XTypeLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xtypeliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XTypeLiteral)
+
+
+
+@given(instance=model_xbase_XTypeLiteral_strategy)
+def test_model_xbase_xtypeliteral_arrayDimensions_setter(instance):
+    original = instance.arrayDimensions
+    instance.arrayDimensions = original
+    assert instance.arrayDimensions == original
+
+@given(instance=model_xbase_XWhileExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xwhileexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XWhileExpression)
+
+@given(instance=model_xbase_XForEachExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xforeachexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XForEachExpression)
+
+@given(instance=model_xbase_XForLoopExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xforloopexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XForLoopExpression)
+
+@given(instance=model_xbase_XKeyValuePair_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xkeyvaluepair_instantiation(instance):
+    assert isinstance(instance, model_xbase_XKeyValuePair)
+
+
+
+@given(instance=model_xbase_XKeyValuePair_strategy)
+def test_model_xbase_xkeyvaluepair_key1_setter(instance):
+    original = instance.key1
+    instance.key1 = original
+    assert instance.key1 == original
+
+@given(instance=XCollectionLiteral_strategy)
+@settings(max_examples=50)
+def test_xcollectionliteral_instantiation(instance):
+    assert isinstance(instance, XCollectionLiteral)
+
+@given(instance=model_xbase_XListLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xlistliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XListLiteral)
+
+@given(instance=model_xbase_XCollectionLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xcollectionliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XCollectionLiteral)
+
+@given(instance=model_xbase_XStringLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xstringliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XStringLiteral)
+
+
+
+@given(instance=model_xbase_XStringLiteral_strategy)
+def test_model_xbase_xstringliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=model_xbase_XNumberLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xnumberliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XNumberLiteral)
+
+
+
+@given(instance=model_xbase_XNumberLiteral_strategy)
+def test_model_xbase_xnumberliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=model_xbase_XNullLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xnullliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XNullLiteral)
+
+@given(instance=model_xbase_XBooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xbooleanliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XBooleanLiteral)
+
+
+
+@given(instance=model_xbase_XBooleanLiteral_strategy)
+def test_model_xbase_xbooleanliteral_isTrue_setter(instance):
+    original = instance.isTrue
+    instance.isTrue = original
+    assert instance.isTrue == original
+
+@given(instance=model_xbase_XCastedExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xcastedexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XCastedExpression)
+
+@given(instance=model_xbase_XSetLiteral_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xsetliteral_instantiation(instance):
+    assert isinstance(instance, model_xbase_XSetLiteral)
+
+@given(instance=JvmConstructor_strategy)
+@settings(max_examples=50)
+def test_jvmconstructor_instantiation(instance):
+    assert isinstance(instance, JvmConstructor)
+
+@given(instance=model_xbase_XConstructorCall_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xconstructorcall_instantiation(instance):
+    assert isinstance(instance, model_xbase_XConstructorCall)
+
+
+
+@given(instance=model_xbase_XConstructorCall_strategy)
+def test_model_xbase_xconstructorcall_validFeature_setter(instance):
+    original = instance.validFeature
+    instance.validFeature = original
+    assert instance.validFeature == original
+
+
+
+@given(instance=model_xbase_XConstructorCall_strategy)
+def test_model_xbase_xconstructorcall_invalidFeatureIssueCode_setter(instance):
+    original = instance.invalidFeatureIssueCode
+    instance.invalidFeatureIssueCode = original
+    assert instance.invalidFeatureIssueCode == original
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xabstractfeaturecall_instantiation(instance):
+    assert isinstance(instance, model_xbase_XAbstractFeatureCall)
+
+
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+def test_model_xbase_xabstractfeaturecall_invalidFeatureIssueCode_setter(instance):
+    original = instance.invalidFeatureIssueCode
+    instance.invalidFeatureIssueCode = original
+    assert instance.invalidFeatureIssueCode == original
+
+
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+def test_model_xbase_xabstractfeaturecall_validFeature_setter(instance):
+    original = instance.validFeature
+    instance.validFeature = original
+    assert instance.validFeature == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+@settings(max_examples=30)
+def test_model_xbase_xabstractfeaturecall_isextension_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isExtension()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isExtension).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isExtension' in model_xbase_XAbstractFeatureCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isExtension' in model_xbase_XAbstractFeatureCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isExtension' in model_xbase_XAbstractFeatureCall is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+@settings(max_examples=30)
+def test_model_xbase_xabstractfeaturecall_ispackagefragment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isPackageFragment()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isPackageFragment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isPackageFragment' in model_xbase_XAbstractFeatureCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isPackageFragment' in model_xbase_XAbstractFeatureCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isPackageFragment' in model_xbase_XAbstractFeatureCall is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+@settings(max_examples=30)
+def test_model_xbase_xabstractfeaturecall_istypeliteral_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isTypeLiteral()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isTypeLiteral).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isTypeLiteral' in model_xbase_XAbstractFeatureCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isTypeLiteral' in model_xbase_XAbstractFeatureCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isTypeLiteral' in model_xbase_XAbstractFeatureCall is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+@settings(max_examples=30)
+def test_model_xbase_xabstractfeaturecall_isstatic_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isStatic()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isStatic).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isStatic' in model_xbase_XAbstractFeatureCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isStatic' in model_xbase_XAbstractFeatureCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isStatic' in model_xbase_XAbstractFeatureCall is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_xbase_XAbstractFeatureCall_strategy)
+@settings(max_examples=30)
+def test_model_xbase_xabstractfeaturecall_isexplicitoperationcallorbuildersyntax_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isExplicitOperationCallOrBuilderSyntax()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isExplicitOperationCallOrBuilderSyntax).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isExplicitOperationCallOrBuilderSyntax' in model_xbase_XAbstractFeatureCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isExplicitOperationCallOrBuilderSyntax' in model_xbase_XAbstractFeatureCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isExplicitOperationCallOrBuilderSyntax' in model_xbase_XAbstractFeatureCall is not implemented or raised an error")
+
+@given(instance=model_xbase_XVariableDeclarationList_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xvariabledeclarationlist_instantiation(instance):
+    assert isinstance(instance, model_xbase_XVariableDeclarationList)
+
+
+
+@given(instance=model_xbase_XVariableDeclarationList_strategy)
+def test_model_xbase_xvariabledeclarationlist_writeable_setter(instance):
+    original = instance.writeable
+    instance.writeable = original
+    assert instance.writeable == original
+
+
+
+@given(instance=model_xbase_XVariableDeclarationList_strategy)
+def test_model_xbase_xvariabledeclarationlist_exported_setter(instance):
+    original = instance.exported
+    instance.exported = original
+    assert instance.exported == original
+
+@given(instance=XAbstractFeatureCall_strategy)
+@settings(max_examples=50)
+def test_xabstractfeaturecall_instantiation(instance):
+    assert isinstance(instance, XAbstractFeatureCall)
+
+@given(instance=model_xbase_XAssignment_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xassignment_instantiation(instance):
+    assert isinstance(instance, model_xbase_XAssignment)
+
+
+
+@given(instance=model_xbase_XAssignment_strategy)
+def test_model_xbase_xassignment_explicitStatic_setter(instance):
+    original = instance.explicitStatic
+    instance.explicitStatic = original
+    assert instance.explicitStatic == original
+
+@given(instance=model_xbase_XUnaryOperation_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xunaryoperation_instantiation(instance):
+    assert isinstance(instance, model_xbase_XUnaryOperation)
+
+@given(instance=model_xbase_XPrefixOperation_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xprefixoperation_instantiation(instance):
+    assert isinstance(instance, model_xbase_XPrefixOperation)
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xmemberfeaturecall1_instantiation(instance):
+    assert isinstance(instance, model_xbase_XMemberFeatureCall1)
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_typeLiteral_setter(instance):
+    original = instance.typeLiteral
+    instance.typeLiteral = original
+    assert instance.typeLiteral == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_nullSafe_setter(instance):
+    original = instance.nullSafe
+    instance.nullSafe = original
+    assert instance.nullSafe == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_indexedOperation_setter(instance):
+    original = instance.indexedOperation
+    instance.indexedOperation = original
+    assert instance.indexedOperation == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_explicitStatic_setter(instance):
+    original = instance.explicitStatic
+    instance.explicitStatic = original
+    assert instance.explicitStatic == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_packageFragment_setter(instance):
+    original = instance.packageFragment
+    instance.packageFragment = original
+    assert instance.packageFragment == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_staticWithDeclaringType_setter(instance):
+    original = instance.staticWithDeclaringType
+    instance.staticWithDeclaringType = original
+    assert instance.staticWithDeclaringType == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall1_strategy)
+def test_model_xbase_xmemberfeaturecall1_explicitOperationCall_setter(instance):
+    original = instance.explicitOperationCall
+    instance.explicitOperationCall = original
+    assert instance.explicitOperationCall == original
+
+@given(instance=model_xbase_XBinaryOperation_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xbinaryoperation_instantiation(instance):
+    assert isinstance(instance, model_xbase_XBinaryOperation)
+
+@given(instance=model_xbase_XFeatureCall_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xfeaturecall_instantiation(instance):
+    assert isinstance(instance, model_xbase_XFeatureCall)
+
+
+
+@given(instance=model_xbase_XFeatureCall_strategy)
+def test_model_xbase_xfeaturecall_typeLiteral_setter(instance):
+    original = instance.typeLiteral
+    instance.typeLiteral = original
+    assert instance.typeLiteral == original
+
+
+
+@given(instance=model_xbase_XFeatureCall_strategy)
+def test_model_xbase_xfeaturecall_packageFragment_setter(instance):
+    original = instance.packageFragment
+    instance.packageFragment = original
+    assert instance.packageFragment == original
+
+
+
+@given(instance=model_xbase_XFeatureCall_strategy)
+def test_model_xbase_xfeaturecall_indexedOperation_setter(instance):
+    original = instance.indexedOperation
+    instance.indexedOperation = original
+    assert instance.indexedOperation == original
+
+
+
+@given(instance=model_xbase_XFeatureCall_strategy)
+def test_model_xbase_xfeaturecall_explicitOperationCall_setter(instance):
+    original = instance.explicitOperationCall
+    instance.explicitOperationCall = original
+    assert instance.explicitOperationCall == original
+
+@given(instance=model_xbase_XIndexOperation_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xindexoperation_instantiation(instance):
+    assert isinstance(instance, model_xbase_XIndexOperation)
+
+@given(instance=model_xbase_XPostfixOperation_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xpostfixoperation_instantiation(instance):
+    assert isinstance(instance, model_xbase_XPostfixOperation)
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xmemberfeaturecall_instantiation(instance):
+    assert isinstance(instance, model_xbase_XMemberFeatureCall)
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_explicitOperationCall_setter(instance):
+    original = instance.explicitOperationCall
+    instance.explicitOperationCall = original
+    assert instance.explicitOperationCall == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_packageFragment_setter(instance):
+    original = instance.packageFragment
+    instance.packageFragment = original
+    assert instance.packageFragment == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_explicitStatic_setter(instance):
+    original = instance.explicitStatic
+    instance.explicitStatic = original
+    assert instance.explicitStatic == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_indexedOperation_setter(instance):
+    original = instance.indexedOperation
+    instance.indexedOperation = original
+    assert instance.indexedOperation == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_typeLiteral_setter(instance):
+    original = instance.typeLiteral
+    instance.typeLiteral = original
+    assert instance.typeLiteral == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_staticWithDeclaringType_setter(instance):
+    original = instance.staticWithDeclaringType
+    instance.staticWithDeclaringType = original
+    assert instance.staticWithDeclaringType == original
+
+
+
+@given(instance=model_xbase_XMemberFeatureCall_strategy)
+def test_model_xbase_xmemberfeaturecall_nullSafe_setter(instance):
+    original = instance.nullSafe
+    instance.nullSafe = original
+    assert instance.nullSafe == original
+
+@given(instance=model_xbase_XIfExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xifexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XIfExpression)
+
+@given(instance=model_xbase_XExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XExpression)
+
+@given(instance=model_types_JvmCustomAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmcustomannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmCustomAnnotationValue)
+
+
+
+@given(instance=model_types_JvmCustomAnnotationValue_strategy)
+def test_model_types_jvmcustomannotationvalue_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+@given(instance=model_xbase_XBlockExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xblockexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XBlockExpression)
+
+@given(instance=model_xbase_XCasePart_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xcasepart_instantiation(instance):
+    assert isinstance(instance, model_xbase_XCasePart)
+
+@given(instance=XCasePart_strategy)
+@settings(max_examples=50)
+def test_xcasepart_instantiation(instance):
+    assert isinstance(instance, XCasePart)
+
+@given(instance=types_JvmIdentifiableElement_strategy)
+@settings(max_examples=50)
+def test_types_jvmidentifiableelement_instantiation(instance):
+    assert isinstance(instance, types_JvmIdentifiableElement)
+
+@given(instance=xbase_XExpression_strategy)
+@settings(max_examples=50)
+def test_xbase_xexpression_instantiation(instance):
+    assert isinstance(instance, xbase_XExpression)
+
+@given(instance=model_xbase_XClosure_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xclosure_instantiation(instance):
+    assert isinstance(instance, model_xbase_XClosure)
+
+
+
+@given(instance=model_xbase_XClosure_strategy)
+def test_model_xbase_xclosure_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=model_xbase_XClosure_strategy)
+def test_model_xbase_xclosure_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+
+
+@given(instance=model_xbase_XClosure_strategy)
+def test_model_xbase_xclosure_explicitSyntax_setter(instance):
+    original = instance.explicitSyntax
+    instance.explicitSyntax = original
+    assert instance.explicitSyntax == original
+
+
+
+@given(instance=model_xbase_XClosure_strategy)
+def test_model_xbase_xclosure_exported_setter(instance):
+    original = instance.exported
+    instance.exported = original
+    assert instance.exported == original
+
+@given(instance=model_xbase_XVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, model_xbase_XVariableDeclaration)
+
+
+
+@given(instance=model_xbase_XVariableDeclaration_strategy)
+def test_model_xbase_xvariabledeclaration_exported_setter(instance):
+    original = instance.exported
+    instance.exported = original
+    assert instance.exported == original
+
+
+
+@given(instance=model_xbase_XVariableDeclaration_strategy)
+def test_model_xbase_xvariabledeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=model_xbase_XVariableDeclaration_strategy)
+def test_model_xbase_xvariabledeclaration_writeable_setter(instance):
+    original = instance.writeable
+    instance.writeable = original
+    assert instance.writeable == original
+
+@given(instance=model_xbase_XSwitchExpression_strategy)
+@settings(max_examples=50)
+def test_model_xbase_xswitchexpression_instantiation(instance):
+    assert isinstance(instance, model_xbase_XSwitchExpression)
+
+
+
+@given(instance=model_xbase_XSwitchExpression_strategy)
+def test_model_xbase_xswitchexpression_localVarName_setter(instance):
+    original = instance.localVarName
+    instance.localVarName = original
+    assert instance.localVarName == original
+
+@given(instance=model_types_JvmCharAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmcharannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmCharAnnotationValue)
+
+
+
+@given(instance=model_types_JvmCharAnnotationValue_strategy)
+def test_model_types_jvmcharannotationvalue_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+@given(instance=model_types_JvmFloatAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmfloatannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmFloatAnnotationValue)
+
+
+
+@given(instance=model_types_JvmFloatAnnotationValue_strategy)
+def test_model_types_jvmfloatannotationvalue_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+@given(instance=model_types_JvmDoubleAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmdoubleannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmDoubleAnnotationValue)
+
+
+
+@given(instance=model_types_JvmDoubleAnnotationValue_strategy)
+def test_model_types_jvmdoubleannotationvalue_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+@given(instance=model_types_JvmLongAnnotationValue_strategy)
+@settings(max_examples=50)
+def test_model_types_jvmlongannotationvalue_instantiation(instance):
+    assert isinstance(instance, model_types_JvmLongAnnotationValue)
+
+
+
+@given(instance=model_types_JvmLongAnnotationValue_strategy)
+def test_model_types_jvmlongannotationvalue_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original

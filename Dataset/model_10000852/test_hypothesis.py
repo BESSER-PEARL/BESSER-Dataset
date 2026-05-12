@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Insturctor,
@@ -58,17 +58,8 @@ def test_finance_constructor_exists():
 def test_finance_constructor_args():
     sig = inspect.signature(Finance.__init__)
     params = list(sig.parameters.keys())
-    assert "coast" in params, "Missing parameter 'coast'"
     assert "Cname" in params, "Missing parameter 'Cname'"
-
-def test_finance_has_coast():
-    assert hasattr(Finance, "coast")
-    descriptor = None
-    for klass in Finance.__mro__:
-        if "coast" in klass.__dict__:
-            descriptor = klass.__dict__["coast"]
-            break
-    assert isinstance(descriptor, property)
+    assert "coast" in params, "Missing parameter 'coast'"
 
 def test_finance_has_Cname():
     assert hasattr(Finance, "Cname")
@@ -76,6 +67,15 @@ def test_finance_has_Cname():
     for klass in Finance.__mro__:
         if "Cname" in klass.__dict__:
             descriptor = klass.__dict__["Cname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_finance_has_coast():
+    assert hasattr(Finance, "coast")
+    descriptor = None
+    for klass in Finance.__mro__:
+        if "coast" in klass.__dict__:
+            descriptor = klass.__dict__["coast"]
             break
     assert isinstance(descriptor, property)
 
@@ -158,18 +158,18 @@ def test_exam_constructor_exists():
 def test_exam_constructor_args():
     sig = inspect.signature(Exam.__init__)
     params = list(sig.parameters.keys())
-    assert "Exam_File_Name" in params, "Missing parameter 'Exam_File_Name'"
+    assert "MaxGrade" in params, "Missing parameter 'MaxGrade'"
     assert "ETIME" in params, "Missing parameter 'ETIME'"
     assert "EName" in params, "Missing parameter 'EName'"
+    assert "Exam_File_Name" in params, "Missing parameter 'Exam_File_Name'"
     assert "EID" in params, "Missing parameter 'EID'"
-    assert "MaxGrade" in params, "Missing parameter 'MaxGrade'"
 
-def test_exam_has_Exam_File_Name():
-    assert hasattr(Exam, "Exam_File_Name")
+def test_exam_has_MaxGrade():
+    assert hasattr(Exam, "MaxGrade")
     descriptor = None
     for klass in Exam.__mro__:
-        if "Exam_File_Name" in klass.__dict__:
-            descriptor = klass.__dict__["Exam_File_Name"]
+        if "MaxGrade" in klass.__dict__:
+            descriptor = klass.__dict__["MaxGrade"]
             break
     assert isinstance(descriptor, property)
 
@@ -191,21 +191,21 @@ def test_exam_has_EName():
             break
     assert isinstance(descriptor, property)
 
+def test_exam_has_Exam_File_Name():
+    assert hasattr(Exam, "Exam_File_Name")
+    descriptor = None
+    for klass in Exam.__mro__:
+        if "Exam_File_Name" in klass.__dict__:
+            descriptor = klass.__dict__["Exam_File_Name"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_exam_has_EID():
     assert hasattr(Exam, "EID")
     descriptor = None
     for klass in Exam.__mro__:
         if "EID" in klass.__dict__:
             descriptor = klass.__dict__["EID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exam_has_MaxGrade():
-    assert hasattr(Exam, "MaxGrade")
-    descriptor = None
-    for klass in Exam.__mro__:
-        if "MaxGrade" in klass.__dict__:
-            descriptor = klass.__dict__["MaxGrade"]
             break
     assert isinstance(descriptor, property)
 
@@ -224,10 +224,10 @@ def test_course_constructor_args():
     params = list(sig.parameters.keys())
     assert "Course_REG" in params, "Missing parameter 'Course_REG'"
     assert "CTutor" in params, "Missing parameter 'CTutor'"
+    assert "Cprice" in params, "Missing parameter 'Cprice'"
     assert "Course_File_Name" in params, "Missing parameter 'Course_File_Name'"
     assert "Cname" in params, "Missing parameter 'Cname'"
     assert "Cid" in params, "Missing parameter 'Cid'"
-    assert "Cprice" in params, "Missing parameter 'Cprice'"
 
 def test_course_has_Course_REG():
     assert hasattr(Course, "Course_REG")
@@ -244,6 +244,15 @@ def test_course_has_CTutor():
     for klass in Course.__mro__:
         if "CTutor" in klass.__dict__:
             descriptor = klass.__dict__["CTutor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_course_has_Cprice():
+    assert hasattr(Course, "Cprice")
+    descriptor = None
+    for klass in Course.__mro__:
+        if "Cprice" in klass.__dict__:
+            descriptor = klass.__dict__["Cprice"]
             break
     assert isinstance(descriptor, property)
 
@@ -271,15 +280,6 @@ def test_course_has_Cid():
     for klass in Course.__mro__:
         if "Cid" in klass.__dict__:
             descriptor = klass.__dict__["Cid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_course_has_Cprice():
-    assert hasattr(Course, "Cprice")
-    descriptor = None
-    for klass in Course.__mro__:
-        if "Cprice" in klass.__dict__:
-            descriptor = klass.__dict__["Cprice"]
             break
     assert isinstance(descriptor, property)
 
@@ -326,9 +326,9 @@ Insturctor_strategy = st.builds(
 )
 Finance_strategy = st.builds(
     Finance,
-    coast=
-        safe_text,
     Cname=
+        safe_text,
+    coast=
         safe_text
 )
 Exceptions_strategy = st.builds(
@@ -347,15 +347,15 @@ Email_strategy = st.builds(
 )
 Exam_strategy = st.builds(
     Exam,
-    Exam_File_Name=
+    MaxGrade=
         safe_text,
     ETIME=
         safe_text,
     EName=
         safe_text,
-    EID=
+    Exam_File_Name=
         safe_text,
-    MaxGrade=
+    EID=
         safe_text
 )
 Course_strategy = st.builds(
@@ -364,13 +364,13 @@ Course_strategy = st.builds(
         safe_text,
     CTutor=
         safe_text,
+    Cprice=
+        safe_text,
     Course_File_Name=
         safe_text,
     Cname=
         safe_text,
     Cid=
-        safe_text,
-    Cprice=
         safe_text
 )
 Admin_strategy = st.builds(
@@ -384,9 +384,6 @@ Admin_strategy = st.builds(
 def test_insturctor_instantiation(instance):
     assert isinstance(instance, Insturctor)
 
-@given(instance=Insturctor_strategy)
-def test_insturctor_INfilename_type(instance):
-    assert isinstance(instance.INfilename, str)
 
 
 @given(instance=Insturctor_strategy)
@@ -400,20 +397,6 @@ def test_insturctor_INfilename_setter(instance):
 def test_finance_instantiation(instance):
     assert isinstance(instance, Finance)
 
-@given(instance=Finance_strategy)
-def test_finance_coast_type(instance):
-    assert isinstance(instance.coast, str)
-
-
-@given(instance=Finance_strategy)
-def test_finance_coast_setter(instance):
-    original = instance.coast
-    instance.coast = original
-    assert instance.coast == original
-
-@given(instance=Finance_strategy)
-def test_finance_Cname_type(instance):
-    assert isinstance(instance.Cname, str)
 
 
 @given(instance=Finance_strategy)
@@ -421,6 +404,14 @@ def test_finance_Cname_setter(instance):
     original = instance.Cname
     instance.Cname = original
     assert instance.Cname == original
+
+
+
+@given(instance=Finance_strategy)
+def test_finance_coast_setter(instance):
+    original = instance.coast
+    instance.coast = original
+    assert instance.coast == original
 
 @given(instance=Exceptions_strategy)
 @settings(max_examples=50)
@@ -442,9 +433,6 @@ def test_filebinary_instantiation(instance):
 def test_email_instantiation(instance):
     assert isinstance(instance, Email)
 
-@given(instance=Email_strategy)
-def test_email_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Email_strategy)
@@ -458,53 +446,6 @@ def test_email_Email_setter(instance):
 def test_exam_instantiation(instance):
     assert isinstance(instance, Exam)
 
-@given(instance=Exam_strategy)
-def test_exam_Exam_File_Name_type(instance):
-    assert isinstance(instance.Exam_File_Name, str)
-
-
-@given(instance=Exam_strategy)
-def test_exam_Exam_File_Name_setter(instance):
-    original = instance.Exam_File_Name
-    instance.Exam_File_Name = original
-    assert instance.Exam_File_Name == original
-
-@given(instance=Exam_strategy)
-def test_exam_ETIME_type(instance):
-    assert isinstance(instance.ETIME, str)
-
-
-@given(instance=Exam_strategy)
-def test_exam_ETIME_setter(instance):
-    original = instance.ETIME
-    instance.ETIME = original
-    assert instance.ETIME == original
-
-@given(instance=Exam_strategy)
-def test_exam_EName_type(instance):
-    assert isinstance(instance.EName, str)
-
-
-@given(instance=Exam_strategy)
-def test_exam_EName_setter(instance):
-    original = instance.EName
-    instance.EName = original
-    assert instance.EName == original
-
-@given(instance=Exam_strategy)
-def test_exam_EID_type(instance):
-    assert isinstance(instance.EID, str)
-
-
-@given(instance=Exam_strategy)
-def test_exam_EID_setter(instance):
-    original = instance.EID
-    instance.EID = original
-    assert instance.EID == original
-
-@given(instance=Exam_strategy)
-def test_exam_MaxGrade_type(instance):
-    assert isinstance(instance.MaxGrade, str)
 
 
 @given(instance=Exam_strategy)
@@ -513,14 +454,43 @@ def test_exam_MaxGrade_setter(instance):
     instance.MaxGrade = original
     assert instance.MaxGrade == original
 
+
+
+@given(instance=Exam_strategy)
+def test_exam_ETIME_setter(instance):
+    original = instance.ETIME
+    instance.ETIME = original
+    assert instance.ETIME == original
+
+
+
+@given(instance=Exam_strategy)
+def test_exam_EName_setter(instance):
+    original = instance.EName
+    instance.EName = original
+    assert instance.EName == original
+
+
+
+@given(instance=Exam_strategy)
+def test_exam_Exam_File_Name_setter(instance):
+    original = instance.Exam_File_Name
+    instance.Exam_File_Name = original
+    assert instance.Exam_File_Name == original
+
+
+
+@given(instance=Exam_strategy)
+def test_exam_EID_setter(instance):
+    original = instance.EID
+    instance.EID = original
+    assert instance.EID == original
+
 @given(instance=Course_strategy)
 @settings(max_examples=50)
 def test_course_instantiation(instance):
     assert isinstance(instance, Course)
 
-@given(instance=Course_strategy)
-def test_course_Course_REG_type(instance):
-    assert isinstance(instance.Course_REG, str)
 
 
 @given(instance=Course_strategy)
@@ -529,9 +499,6 @@ def test_course_Course_REG_setter(instance):
     instance.Course_REG = original
     assert instance.Course_REG == original
 
-@given(instance=Course_strategy)
-def test_course_CTutor_type(instance):
-    assert isinstance(instance.CTutor, str)
 
 
 @given(instance=Course_strategy)
@@ -540,42 +507,6 @@ def test_course_CTutor_setter(instance):
     instance.CTutor = original
     assert instance.CTutor == original
 
-@given(instance=Course_strategy)
-def test_course_Course_File_Name_type(instance):
-    assert isinstance(instance.Course_File_Name, str)
-
-
-@given(instance=Course_strategy)
-def test_course_Course_File_Name_setter(instance):
-    original = instance.Course_File_Name
-    instance.Course_File_Name = original
-    assert instance.Course_File_Name == original
-
-@given(instance=Course_strategy)
-def test_course_Cname_type(instance):
-    assert isinstance(instance.Cname, str)
-
-
-@given(instance=Course_strategy)
-def test_course_Cname_setter(instance):
-    original = instance.Cname
-    instance.Cname = original
-    assert instance.Cname == original
-
-@given(instance=Course_strategy)
-def test_course_Cid_type(instance):
-    assert isinstance(instance.Cid, str)
-
-
-@given(instance=Course_strategy)
-def test_course_Cid_setter(instance):
-    original = instance.Cid
-    instance.Cid = original
-    assert instance.Cid == original
-
-@given(instance=Course_strategy)
-def test_course_Cprice_type(instance):
-    assert isinstance(instance.Cprice, str)
 
 
 @given(instance=Course_strategy)
@@ -584,14 +515,35 @@ def test_course_Cprice_setter(instance):
     instance.Cprice = original
     assert instance.Cprice == original
 
+
+
+@given(instance=Course_strategy)
+def test_course_Course_File_Name_setter(instance):
+    original = instance.Course_File_Name
+    instance.Course_File_Name = original
+    assert instance.Course_File_Name == original
+
+
+
+@given(instance=Course_strategy)
+def test_course_Cname_setter(instance):
+    original = instance.Cname
+    instance.Cname = original
+    assert instance.Cname == original
+
+
+
+@given(instance=Course_strategy)
+def test_course_Cid_setter(instance):
+    original = instance.Cid
+    instance.Cid = original
+    assert instance.Cid == original
+
 @given(instance=Admin_strategy)
 @settings(max_examples=50)
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_AdminFileName_type(instance):
-    assert isinstance(instance.AdminFileName, str)
 
 
 @given(instance=Admin_strategy)

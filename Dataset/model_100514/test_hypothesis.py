@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    RequirementSourceConf::Scope,
-    RequirementSourceConf::MappingElement,
-    RequirementSourceConf::EStringToStringMapEntry,
-    RequirementSourceConf::RequirementSource,
-    RequirementSourceConf::RequirementSources,
-    RequirementSourceConf::RequirementsContainer,
+from python_code import (
+    RequirementSourceConf_Scope,
+    RequirementSourceConf_MappingElement,
+    RequirementSourceConf_EStringToStringMapEntry,
+    RequirementSourceConf_RequirementSource,
+    RequirementSourceConf_RequirementSources,
+    RequirementSourceConf_RequirementsContainer,
 )
 
 # =============================================================================
@@ -20,105 +20,105 @@ from classes import (
 
 
 
-def test_requirementsourceconf::scope_is_not_abstract():
-    assert not inspect.isabstract(RequirementSourceConf::Scope)
+def test_requirementsourceconf_scope_is_not_abstract():
+    assert not inspect.isabstract(RequirementSourceConf_Scope)
 
 
-def test_requirementsourceconf::scope_constructor_exists():
-    assert callable(RequirementSourceConf::Scope.__init__)
+def test_requirementsourceconf_scope_constructor_exists():
+    assert callable(RequirementSourceConf_Scope.__init__)
 
 
-def test_requirementsourceconf::scope_constructor_args():
-    sig = inspect.signature(RequirementSourceConf::Scope.__init__)
+def test_requirementsourceconf_scope_constructor_args():
+    sig = inspect.signature(RequirementSourceConf_Scope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirementsourceconf::mappingelement_is_not_abstract():
-    assert not inspect.isabstract(RequirementSourceConf::MappingElement)
+def test_requirementsourceconf_mappingelement_is_not_abstract():
+    assert not inspect.isabstract(RequirementSourceConf_MappingElement)
 
 
-def test_requirementsourceconf::mappingelement_constructor_exists():
-    assert callable(RequirementSourceConf::MappingElement.__init__)
+def test_requirementsourceconf_mappingelement_constructor_exists():
+    assert callable(RequirementSourceConf_MappingElement.__init__)
 
 
-def test_requirementsourceconf::mappingelement_constructor_args():
-    sig = inspect.signature(RequirementSourceConf::MappingElement.__init__)
+def test_requirementsourceconf_mappingelement_constructor_args():
+    sig = inspect.signature(RequirementSourceConf_MappingElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirementsourceconf::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(RequirementSourceConf::EStringToStringMapEntry)
+def test_requirementsourceconf_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(RequirementSourceConf_EStringToStringMapEntry)
 
 
-def test_requirementsourceconf::estringtostringmapentry_constructor_exists():
-    assert callable(RequirementSourceConf::EStringToStringMapEntry.__init__)
+def test_requirementsourceconf_estringtostringmapentry_constructor_exists():
+    assert callable(RequirementSourceConf_EStringToStringMapEntry.__init__)
 
 
-def test_requirementsourceconf::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(RequirementSourceConf::EStringToStringMapEntry.__init__)
+def test_requirementsourceconf_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(RequirementSourceConf_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirementsourceconf::requirementsource_is_not_abstract():
-    assert not inspect.isabstract(RequirementSourceConf::RequirementSource)
+def test_requirementsourceconf_requirementsource_is_not_abstract():
+    assert not inspect.isabstract(RequirementSourceConf_RequirementSource)
 
 
-def test_requirementsourceconf::requirementsource_constructor_exists():
-    assert callable(RequirementSourceConf::RequirementSource.__init__)
+def test_requirementsourceconf_requirementsource_constructor_exists():
+    assert callable(RequirementSourceConf_RequirementSource.__init__)
 
 
-def test_requirementsourceconf::requirementsource_constructor_args():
-    sig = inspect.signature(RequirementSourceConf::RequirementSource.__init__)
+def test_requirementsourceconf_requirementsource_constructor_args():
+    sig = inspect.signature(RequirementSourceConf_RequirementSource.__init__)
     params = list(sig.parameters.keys())
     assert "repositoryURI" in params, "Missing parameter 'repositoryURI'"
     assert "dataModelURI" in params, "Missing parameter 'dataModelURI'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "destinationURI" in params, "Missing parameter 'destinationURI'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "connectorId" in params, "Missing parameter 'connectorId'"
 
-def test_requirementsourceconf::requirementsource_has_repositoryURI():
-    assert hasattr(RequirementSourceConf::RequirementSource, "repositoryURI")
+def test_requirementsourceconf_requirementsource_has_repositoryURI():
+    assert hasattr(RequirementSourceConf_RequirementSource, "repositoryURI")
     descriptor = None
-    for klass in RequirementSourceConf::RequirementSource.__mro__:
+    for klass in RequirementSourceConf_RequirementSource.__mro__:
         if "repositoryURI" in klass.__dict__:
             descriptor = klass.__dict__["repositoryURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirementsourceconf::requirementsource_has_dataModelURI():
-    assert hasattr(RequirementSourceConf::RequirementSource, "dataModelURI")
+def test_requirementsourceconf_requirementsource_has_dataModelURI():
+    assert hasattr(RequirementSourceConf_RequirementSource, "dataModelURI")
     descriptor = None
-    for klass in RequirementSourceConf::RequirementSource.__mro__:
+    for klass in RequirementSourceConf_RequirementSource.__mro__:
         if "dataModelURI" in klass.__dict__:
             descriptor = klass.__dict__["dataModelURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirementsourceconf::requirementsource_has_name():
-    assert hasattr(RequirementSourceConf::RequirementSource, "name")
+def test_requirementsourceconf_requirementsource_has_destinationURI():
+    assert hasattr(RequirementSourceConf_RequirementSource, "destinationURI")
     descriptor = None
-    for klass in RequirementSourceConf::RequirementSource.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_requirementsourceconf::requirementsource_has_destinationURI():
-    assert hasattr(RequirementSourceConf::RequirementSource, "destinationURI")
-    descriptor = None
-    for klass in RequirementSourceConf::RequirementSource.__mro__:
+    for klass in RequirementSourceConf_RequirementSource.__mro__:
         if "destinationURI" in klass.__dict__:
             descriptor = klass.__dict__["destinationURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirementsourceconf::requirementsource_has_connectorId():
-    assert hasattr(RequirementSourceConf::RequirementSource, "connectorId")
+def test_requirementsourceconf_requirementsource_has_name():
+    assert hasattr(RequirementSourceConf_RequirementSource, "name")
     descriptor = None
-    for klass in RequirementSourceConf::RequirementSource.__mro__:
+    for klass in RequirementSourceConf_RequirementSource.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_requirementsourceconf_requirementsource_has_connectorId():
+    assert hasattr(RequirementSourceConf_RequirementSource, "connectorId")
+    descriptor = None
+    for klass in RequirementSourceConf_RequirementSource.__mro__:
         if "connectorId" in klass.__dict__:
             descriptor = klass.__dict__["connectorId"]
             break
@@ -126,30 +126,30 @@ def test_requirementsourceconf::requirementsource_has_connectorId():
 
 
 
-def test_requirementsourceconf::requirementsources_is_not_abstract():
-    assert not inspect.isabstract(RequirementSourceConf::RequirementSources)
+def test_requirementsourceconf_requirementsources_is_not_abstract():
+    assert not inspect.isabstract(RequirementSourceConf_RequirementSources)
 
 
-def test_requirementsourceconf::requirementsources_constructor_exists():
-    assert callable(RequirementSourceConf::RequirementSources.__init__)
+def test_requirementsourceconf_requirementsources_constructor_exists():
+    assert callable(RequirementSourceConf_RequirementSources.__init__)
 
 
-def test_requirementsourceconf::requirementsources_constructor_args():
-    sig = inspect.signature(RequirementSourceConf::RequirementSources.__init__)
+def test_requirementsourceconf_requirementsources_constructor_args():
+    sig = inspect.signature(RequirementSourceConf_RequirementSources.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirementsourceconf::requirementscontainer_is_not_abstract():
-    assert not inspect.isabstract(RequirementSourceConf::RequirementsContainer)
+def test_requirementsourceconf_requirementscontainer_is_not_abstract():
+    assert not inspect.isabstract(RequirementSourceConf_RequirementsContainer)
 
 
-def test_requirementsourceconf::requirementscontainer_constructor_exists():
-    assert callable(RequirementSourceConf::RequirementsContainer.__init__)
+def test_requirementsourceconf_requirementscontainer_constructor_exists():
+    assert callable(RequirementSourceConf_RequirementsContainer.__init__)
 
 
-def test_requirementsourceconf::requirementscontainer_constructor_args():
-    sig = inspect.signature(RequirementSourceConf::RequirementsContainer.__init__)
+def test_requirementsourceconf_requirementscontainer_constructor_args():
+    sig = inspect.signature(RequirementSourceConf_RequirementsContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,116 +164,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-RequirementSourceConf::Scope_strategy = st.builds(
-    RequirementSourceConf::Scope,
+RequirementSourceConf_Scope_strategy = st.builds(
+    RequirementSourceConf_Scope,
 )
-RequirementSourceConf::MappingElement_strategy = st.builds(
-    RequirementSourceConf::MappingElement,
+RequirementSourceConf_MappingElement_strategy = st.builds(
+    RequirementSourceConf_MappingElement,
 )
-RequirementSourceConf::EStringToStringMapEntry_strategy = st.builds(
-    RequirementSourceConf::EStringToStringMapEntry,
+RequirementSourceConf_EStringToStringMapEntry_strategy = st.builds(
+    RequirementSourceConf_EStringToStringMapEntry,
 )
-RequirementSourceConf::RequirementSource_strategy = st.builds(
-    RequirementSourceConf::RequirementSource,
+RequirementSourceConf_RequirementSource_strategy = st.builds(
+    RequirementSourceConf_RequirementSource,
     repositoryURI=
         safe_text,
     dataModelURI=
         safe_text,
-    name=
-        safe_text,
     destinationURI=
+        safe_text,
+    name=
         safe_text,
     connectorId=
         safe_text
 )
-RequirementSourceConf::RequirementSources_strategy = st.builds(
-    RequirementSourceConf::RequirementSources,
+RequirementSourceConf_RequirementSources_strategy = st.builds(
+    RequirementSourceConf_RequirementSources,
 )
-RequirementSourceConf::RequirementsContainer_strategy = st.builds(
-    RequirementSourceConf::RequirementsContainer,
+RequirementSourceConf_RequirementsContainer_strategy = st.builds(
+    RequirementSourceConf_RequirementsContainer,
 )
 
-@given(instance=RequirementSourceConf::Scope_strategy)
+@given(instance=RequirementSourceConf_Scope_strategy)
 @settings(max_examples=50)
-def test_requirementsourceconf::scope_instantiation(instance):
-    assert isinstance(instance, RequirementSourceConf::Scope)
+def test_requirementsourceconf_scope_instantiation(instance):
+    assert isinstance(instance, RequirementSourceConf_Scope)
 
-@given(instance=RequirementSourceConf::MappingElement_strategy)
+@given(instance=RequirementSourceConf_MappingElement_strategy)
 @settings(max_examples=50)
-def test_requirementsourceconf::mappingelement_instantiation(instance):
-    assert isinstance(instance, RequirementSourceConf::MappingElement)
+def test_requirementsourceconf_mappingelement_instantiation(instance):
+    assert isinstance(instance, RequirementSourceConf_MappingElement)
 
-@given(instance=RequirementSourceConf::EStringToStringMapEntry_strategy)
+@given(instance=RequirementSourceConf_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_requirementsourceconf::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, RequirementSourceConf::EStringToStringMapEntry)
+def test_requirementsourceconf_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, RequirementSourceConf_EStringToStringMapEntry)
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
+@given(instance=RequirementSourceConf_RequirementSource_strategy)
 @settings(max_examples=50)
-def test_requirementsourceconf::requirementsource_instantiation(instance):
-    assert isinstance(instance, RequirementSourceConf::RequirementSource)
-
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_repositoryURI_type(instance):
-    assert isinstance(instance.repositoryURI, str)
+def test_requirementsourceconf_requirementsource_instantiation(instance):
+    assert isinstance(instance, RequirementSourceConf_RequirementSource)
 
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_repositoryURI_setter(instance):
+
+@given(instance=RequirementSourceConf_RequirementSource_strategy)
+def test_requirementsourceconf_requirementsource_repositoryURI_setter(instance):
     original = instance.repositoryURI
     instance.repositoryURI = original
     assert instance.repositoryURI == original
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_dataModelURI_type(instance):
-    assert isinstance(instance.dataModelURI, str)
 
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_dataModelURI_setter(instance):
+@given(instance=RequirementSourceConf_RequirementSource_strategy)
+def test_requirementsourceconf_requirementsource_dataModelURI_setter(instance):
     original = instance.dataModelURI
     instance.dataModelURI = original
     assert instance.dataModelURI == original
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_destinationURI_type(instance):
-    assert isinstance(instance.destinationURI, str)
-
-
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_destinationURI_setter(instance):
+@given(instance=RequirementSourceConf_RequirementSource_strategy)
+def test_requirementsourceconf_requirementsource_destinationURI_setter(instance):
     original = instance.destinationURI
     instance.destinationURI = original
     assert instance.destinationURI == original
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_connectorId_type(instance):
-    assert isinstance(instance.connectorId, str)
 
 
-@given(instance=RequirementSourceConf::RequirementSource_strategy)
-def test_requirementsourceconf::requirementsource_connectorId_setter(instance):
+@given(instance=RequirementSourceConf_RequirementSource_strategy)
+def test_requirementsourceconf_requirementsource_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=RequirementSourceConf_RequirementSource_strategy)
+def test_requirementsourceconf_requirementsource_connectorId_setter(instance):
     original = instance.connectorId
     instance.connectorId = original
     assert instance.connectorId == original
 
-@given(instance=RequirementSourceConf::RequirementSources_strategy)
+@given(instance=RequirementSourceConf_RequirementSources_strategy)
 @settings(max_examples=50)
-def test_requirementsourceconf::requirementsources_instantiation(instance):
-    assert isinstance(instance, RequirementSourceConf::RequirementSources)
+def test_requirementsourceconf_requirementsources_instantiation(instance):
+    assert isinstance(instance, RequirementSourceConf_RequirementSources)
 
-@given(instance=RequirementSourceConf::RequirementsContainer_strategy)
+@given(instance=RequirementSourceConf_RequirementsContainer_strategy)
 @settings(max_examples=50)
-def test_requirementsourceconf::requirementscontainer_instantiation(instance):
-    assert isinstance(instance, RequirementSourceConf::RequirementsContainer)
+def test_requirementsourceconf_requirementscontainer_instantiation(instance):
+    assert isinstance(instance, RequirementSourceConf_RequirementsContainer)

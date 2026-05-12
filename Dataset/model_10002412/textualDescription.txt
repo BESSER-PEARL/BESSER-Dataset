@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'Money' has the following attributes: 'money' of type int.
+The class 'AIPlayer' has no attributes.
+The class 'FreeParking' has no attributes.
+The class 'Random' has no attributes.
+The class 'Board1' has the following attributes: 'boardSize' of type int.
+The class 'Board' has no attributes.
+The class 'Class' has no attributes.
+The class 'Player' has the following attributes: 'INITIAL_MONEY' of type int; 'name' of type str; 'position' of type int; 'isRetire' of type bool; 'board' of type Board; 'INITIAL_POSITION' of type int; 'isAI' of type bool; 'rand' of type Random; 'property' of type str; 'isBankrupt' of type bool; 'money' of type Money; 'PASS_GO_MONEY' of type int.
+The class 'Dice' has the following attributes: 'randomNumber' of type Random; 'secondValue' of type int; 'firstValue' of type int.
+The enumeration 'Property' does not specify any literals.
+'Board1' (role 'dice6', cardinality 0..*) is associated with 'Dice' (role 'board7', cardinality 0..*).
+'Board1' (role 'player2', cardinality 0..*) is associated with 'Player' (role 'board3', cardinality 0..*).
+'Board1' (role 'freeParking4', cardinality 0..*) is associated with 'FreeParking' (role 'board5', cardinality 0..*).
+'Money' (role 'player0', cardinality 0..*) is associated with 'Player' (role 'money1', cardinality 0..*).

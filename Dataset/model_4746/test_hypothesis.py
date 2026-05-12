@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sWML::IndexPage,
-    sWML::ContentLayer,
-    sWML::HypertextLayer,
-    sWML::WebModel,
-    sWML::Attribute,
-    sWML::Class,
+from python_code import (
+    sWML_IndexPage,
+    sWML_ContentLayer,
+    sWML_HypertextLayer,
+    sWML_WebModel,
+    sWML_Attribute,
+    sWML_Class,
     SWMLTypes,
 )
 
@@ -21,33 +21,33 @@ from classes import (
 
 
 
-def test_swml::indexpage_is_not_abstract():
-    assert not inspect.isabstract(sWML::IndexPage)
+def test_swml_indexpage_is_not_abstract():
+    assert not inspect.isabstract(sWML_IndexPage)
 
 
-def test_swml::indexpage_constructor_exists():
-    assert callable(sWML::IndexPage.__init__)
+def test_swml_indexpage_constructor_exists():
+    assert callable(sWML_IndexPage.__init__)
 
 
-def test_swml::indexpage_constructor_args():
-    sig = inspect.signature(sWML::IndexPage.__init__)
+def test_swml_indexpage_constructor_args():
+    sig = inspect.signature(sWML_IndexPage.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::indexpage_has_size():
-    assert hasattr(sWML::IndexPage, "size")
+def test_swml_indexpage_has_size():
+    assert hasattr(sWML_IndexPage, "size")
     descriptor = None
-    for klass in sWML::IndexPage.__mro__:
+    for klass in sWML_IndexPage.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_swml::indexpage_has_name():
-    assert hasattr(sWML::IndexPage, "name")
+def test_swml_indexpage_has_name():
+    assert hasattr(sWML_IndexPage, "name")
     descriptor = None
-    for klass in sWML::IndexPage.__mro__:
+    for klass in sWML_IndexPage.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -55,51 +55,51 @@ def test_swml::indexpage_has_name():
 
 
 
-def test_swml::contentlayer_is_not_abstract():
-    assert not inspect.isabstract(sWML::ContentLayer)
+def test_swml_contentlayer_is_not_abstract():
+    assert not inspect.isabstract(sWML_ContentLayer)
 
 
-def test_swml::contentlayer_constructor_exists():
-    assert callable(sWML::ContentLayer.__init__)
+def test_swml_contentlayer_constructor_exists():
+    assert callable(sWML_ContentLayer.__init__)
 
 
-def test_swml::contentlayer_constructor_args():
-    sig = inspect.signature(sWML::ContentLayer.__init__)
+def test_swml_contentlayer_constructor_args():
+    sig = inspect.signature(sWML_ContentLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::hypertextlayer_is_not_abstract():
-    assert not inspect.isabstract(sWML::HypertextLayer)
+def test_swml_hypertextlayer_is_not_abstract():
+    assert not inspect.isabstract(sWML_HypertextLayer)
 
 
-def test_swml::hypertextlayer_constructor_exists():
-    assert callable(sWML::HypertextLayer.__init__)
+def test_swml_hypertextlayer_constructor_exists():
+    assert callable(sWML_HypertextLayer.__init__)
 
 
-def test_swml::hypertextlayer_constructor_args():
-    sig = inspect.signature(sWML::HypertextLayer.__init__)
+def test_swml_hypertextlayer_constructor_args():
+    sig = inspect.signature(sWML_HypertextLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::webmodel_is_not_abstract():
-    assert not inspect.isabstract(sWML::WebModel)
+def test_swml_webmodel_is_not_abstract():
+    assert not inspect.isabstract(sWML_WebModel)
 
 
-def test_swml::webmodel_constructor_exists():
-    assert callable(sWML::WebModel.__init__)
+def test_swml_webmodel_constructor_exists():
+    assert callable(sWML_WebModel.__init__)
 
 
-def test_swml::webmodel_constructor_args():
-    sig = inspect.signature(sWML::WebModel.__init__)
+def test_swml_webmodel_constructor_args():
+    sig = inspect.signature(sWML_WebModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::webmodel_has_name():
-    assert hasattr(sWML::WebModel, "name")
+def test_swml_webmodel_has_name():
+    assert hasattr(sWML_WebModel, "name")
     descriptor = None
-    for klass in sWML::WebModel.__mro__:
+    for klass in sWML_WebModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,57 +107,57 @@ def test_swml::webmodel_has_name():
 
 
 
-def test_swml::attribute_is_not_abstract():
-    assert not inspect.isabstract(sWML::Attribute)
+def test_swml_attribute_is_not_abstract():
+    assert not inspect.isabstract(sWML_Attribute)
 
 
-def test_swml::attribute_constructor_exists():
-    assert callable(sWML::Attribute.__init__)
+def test_swml_attribute_constructor_exists():
+    assert callable(sWML_Attribute.__init__)
 
 
-def test_swml::attribute_constructor_args():
-    sig = inspect.signature(sWML::Attribute.__init__)
+def test_swml_attribute_constructor_args():
+    sig = inspect.signature(sWML_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::attribute_has_name():
-    assert hasattr(sWML::Attribute, "name")
+def test_swml_attribute_has_type():
+    assert hasattr(sWML_Attribute, "type")
     descriptor = None
-    for klass in sWML::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swml::attribute_has_type():
-    assert hasattr(sWML::Attribute, "type")
-    descriptor = None
-    for klass in sWML::Attribute.__mro__:
+    for klass in sWML_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_swml_attribute_has_name():
+    assert hasattr(sWML_Attribute, "name")
+    descriptor = None
+    for klass in sWML_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swml::class_is_not_abstract():
-    assert not inspect.isabstract(sWML::Class)
+
+def test_swml_class_is_not_abstract():
+    assert not inspect.isabstract(sWML_Class)
 
 
-def test_swml::class_constructor_exists():
-    assert callable(sWML::Class.__init__)
+def test_swml_class_constructor_exists():
+    assert callable(sWML_Class.__init__)
 
 
-def test_swml::class_constructor_args():
-    sig = inspect.signature(sWML::Class.__init__)
+def test_swml_class_constructor_args():
+    sig = inspect.signature(sWML_Class.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::class_has_name():
-    assert hasattr(sWML::Class, "name")
+def test_swml_class_has_name():
+    assert hasattr(sWML_Class, "name")
     descriptor = None
-    for klass in sWML::Class.__mro__:
+    for klass in sWML_Class.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -171,10 +171,10 @@ def test_swmltypes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SWMLTypes]
     expected_literals = [
-        "Float",
-        "Email",
-        "String",
         "Integer",
+        "Float",
+        "String",
+        "Email",
         "Boolean",
     ]
     # Check that all expected literals exist
@@ -193,129 +193,111 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sWML::IndexPage_strategy = st.builds(
-    sWML::IndexPage,
+sWML_IndexPage_strategy = st.builds(
+    sWML_IndexPage,
     size=
         st.integers(),
     name=
         safe_text
 )
-sWML::ContentLayer_strategy = st.builds(
-    sWML::ContentLayer,
+sWML_ContentLayer_strategy = st.builds(
+    sWML_ContentLayer,
 )
-sWML::HypertextLayer_strategy = st.builds(
-    sWML::HypertextLayer,
+sWML_HypertextLayer_strategy = st.builds(
+    sWML_HypertextLayer,
 )
-sWML::WebModel_strategy = st.builds(
-    sWML::WebModel,
+sWML_WebModel_strategy = st.builds(
+    sWML_WebModel,
     name=
         safe_text
 )
-sWML::Attribute_strategy = st.builds(
-    sWML::Attribute,
-    name=
-        safe_text,
+sWML_Attribute_strategy = st.builds(
+    sWML_Attribute,
     type=
+        safe_text,
+    name=
         safe_text
 )
-sWML::Class_strategy = st.builds(
-    sWML::Class,
+sWML_Class_strategy = st.builds(
+    sWML_Class,
     name=
         safe_text
 )
 
-@given(instance=sWML::IndexPage_strategy)
+@given(instance=sWML_IndexPage_strategy)
 @settings(max_examples=50)
-def test_swml::indexpage_instantiation(instance):
-    assert isinstance(instance, sWML::IndexPage)
-
-@given(instance=sWML::IndexPage_strategy)
-def test_swml::indexpage_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_swml_indexpage_instantiation(instance):
+    assert isinstance(instance, sWML_IndexPage)
 
 
-@given(instance=sWML::IndexPage_strategy)
-def test_swml::indexpage_size_setter(instance):
+
+@given(instance=sWML_IndexPage_strategy)
+def test_swml_indexpage_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=sWML::IndexPage_strategy)
-def test_swml::indexpage_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sWML::IndexPage_strategy)
-def test_swml::indexpage_name_setter(instance):
+@given(instance=sWML_IndexPage_strategy)
+def test_swml_indexpage_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sWML::ContentLayer_strategy)
+@given(instance=sWML_ContentLayer_strategy)
 @settings(max_examples=50)
-def test_swml::contentlayer_instantiation(instance):
-    assert isinstance(instance, sWML::ContentLayer)
+def test_swml_contentlayer_instantiation(instance):
+    assert isinstance(instance, sWML_ContentLayer)
 
-@given(instance=sWML::HypertextLayer_strategy)
+@given(instance=sWML_HypertextLayer_strategy)
 @settings(max_examples=50)
-def test_swml::hypertextlayer_instantiation(instance):
-    assert isinstance(instance, sWML::HypertextLayer)
+def test_swml_hypertextlayer_instantiation(instance):
+    assert isinstance(instance, sWML_HypertextLayer)
 
-@given(instance=sWML::WebModel_strategy)
+@given(instance=sWML_WebModel_strategy)
 @settings(max_examples=50)
-def test_swml::webmodel_instantiation(instance):
-    assert isinstance(instance, sWML::WebModel)
-
-@given(instance=sWML::WebModel_strategy)
-def test_swml::webmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_webmodel_instantiation(instance):
+    assert isinstance(instance, sWML_WebModel)
 
 
-@given(instance=sWML::WebModel_strategy)
-def test_swml::webmodel_name_setter(instance):
+
+@given(instance=sWML_WebModel_strategy)
+def test_swml_webmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sWML::Attribute_strategy)
+@given(instance=sWML_Attribute_strategy)
 @settings(max_examples=50)
-def test_swml::attribute_instantiation(instance):
-    assert isinstance(instance, sWML::Attribute)
-
-@given(instance=sWML::Attribute_strategy)
-def test_swml::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_attribute_instantiation(instance):
+    assert isinstance(instance, sWML_Attribute)
 
 
-@given(instance=sWML::Attribute_strategy)
-def test_swml::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=sWML::Attribute_strategy)
-def test_swml::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=sWML::Attribute_strategy)
-def test_swml::attribute_type_setter(instance):
+@given(instance=sWML_Attribute_strategy)
+def test_swml_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=sWML::Class_strategy)
+
+
+@given(instance=sWML_Attribute_strategy)
+def test_swml_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=sWML_Class_strategy)
 @settings(max_examples=50)
-def test_swml::class_instantiation(instance):
-    assert isinstance(instance, sWML::Class)
-
-@given(instance=sWML::Class_strategy)
-def test_swml::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_class_instantiation(instance):
+    assert isinstance(instance, sWML_Class)
 
 
-@given(instance=sWML::Class_strategy)
-def test_swml::class_name_setter(instance):
+
+@given(instance=sWML_Class_strategy)
+def test_swml_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

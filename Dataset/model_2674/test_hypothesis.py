@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    reference::Named,
+from python_code import (
+    reference_Named,
     Named,
-    reference::F,
-    reference::C,
-    reference::H,
-    reference::E,
-    reference::B,
-    reference::G,
-    reference::A,
+    reference_B,
+    reference_E,
+    reference_C,
+    reference_F,
+    reference_H,
+    reference_G,
+    reference_A,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_reference::named_is_not_abstract():
-    assert not inspect.isabstract(reference::Named)
+def test_reference_named_is_not_abstract():
+    assert not inspect.isabstract(reference_Named)
 
 
-def test_reference::named_constructor_exists():
-    assert callable(reference::Named.__init__)
+def test_reference_named_constructor_exists():
+    assert callable(reference_Named.__init__)
 
 
-def test_reference::named_constructor_args():
-    sig = inspect.signature(reference::Named.__init__)
+def test_reference_named_constructor_args():
+    sig = inspect.signature(reference_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_reference::named_has_name():
-    assert hasattr(reference::Named, "name")
+def test_reference_named_has_name():
+    assert hasattr(reference_Named, "name")
     descriptor = None
-    for klass in reference::Named.__mro__:
+    for klass in reference_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -61,100 +61,100 @@ def test_named_constructor_args():
 
 
 
-def test_reference::f_is_not_abstract():
-    assert not inspect.isabstract(reference::F)
+def test_reference_b_is_not_abstract():
+    assert not inspect.isabstract(reference_B)
 
 
-def test_reference::f_constructor_exists():
-    assert callable(reference::F.__init__)
+def test_reference_b_constructor_exists():
+    assert callable(reference_B.__init__)
 
 
-def test_reference::f_constructor_args():
-    sig = inspect.signature(reference::F.__init__)
+def test_reference_b_constructor_args():
+    sig = inspect.signature(reference_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reference::c_is_not_abstract():
-    assert not inspect.isabstract(reference::C)
+def test_reference_e_is_not_abstract():
+    assert not inspect.isabstract(reference_E)
 
 
-def test_reference::c_constructor_exists():
-    assert callable(reference::C.__init__)
+def test_reference_e_constructor_exists():
+    assert callable(reference_E.__init__)
 
 
-def test_reference::c_constructor_args():
-    sig = inspect.signature(reference::C.__init__)
+def test_reference_e_constructor_args():
+    sig = inspect.signature(reference_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reference::h_is_not_abstract():
-    assert not inspect.isabstract(reference::H)
+def test_reference_c_is_not_abstract():
+    assert not inspect.isabstract(reference_C)
 
 
-def test_reference::h_constructor_exists():
-    assert callable(reference::H.__init__)
+def test_reference_c_constructor_exists():
+    assert callable(reference_C.__init__)
 
 
-def test_reference::h_constructor_args():
-    sig = inspect.signature(reference::H.__init__)
+def test_reference_c_constructor_args():
+    sig = inspect.signature(reference_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reference::e_is_not_abstract():
-    assert not inspect.isabstract(reference::E)
+def test_reference_f_is_not_abstract():
+    assert not inspect.isabstract(reference_F)
 
 
-def test_reference::e_constructor_exists():
-    assert callable(reference::E.__init__)
+def test_reference_f_constructor_exists():
+    assert callable(reference_F.__init__)
 
 
-def test_reference::e_constructor_args():
-    sig = inspect.signature(reference::E.__init__)
+def test_reference_f_constructor_args():
+    sig = inspect.signature(reference_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reference::b_is_not_abstract():
-    assert not inspect.isabstract(reference::B)
+def test_reference_h_is_not_abstract():
+    assert not inspect.isabstract(reference_H)
 
 
-def test_reference::b_constructor_exists():
-    assert callable(reference::B.__init__)
+def test_reference_h_constructor_exists():
+    assert callable(reference_H.__init__)
 
 
-def test_reference::b_constructor_args():
-    sig = inspect.signature(reference::B.__init__)
+def test_reference_h_constructor_args():
+    sig = inspect.signature(reference_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reference::g_is_not_abstract():
-    assert not inspect.isabstract(reference::G)
+def test_reference_g_is_not_abstract():
+    assert not inspect.isabstract(reference_G)
 
 
-def test_reference::g_constructor_exists():
-    assert callable(reference::G.__init__)
+def test_reference_g_constructor_exists():
+    assert callable(reference_G.__init__)
 
 
-def test_reference::g_constructor_args():
-    sig = inspect.signature(reference::G.__init__)
+def test_reference_g_constructor_args():
+    sig = inspect.signature(reference_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reference::a_is_not_abstract():
-    assert not inspect.isabstract(reference::A)
+def test_reference_a_is_not_abstract():
+    assert not inspect.isabstract(reference_A)
 
 
-def test_reference::a_constructor_exists():
-    assert callable(reference::A.__init__)
+def test_reference_a_constructor_exists():
+    assert callable(reference_A.__init__)
 
 
-def test_reference::a_constructor_args():
-    sig = inspect.signature(reference::A.__init__)
+def test_reference_a_constructor_args():
+    sig = inspect.signature(reference_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,48 +169,45 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-reference::Named_strategy = st.builds(
-    reference::Named,
+reference_Named_strategy = st.builds(
+    reference_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-reference::F_strategy = st.builds(
-    reference::F,
+reference_B_strategy = st.builds(
+    reference_B,
 )
-reference::C_strategy = st.builds(
-    reference::C,
+reference_E_strategy = st.builds(
+    reference_E,
 )
-reference::H_strategy = st.builds(
-    reference::H,
+reference_C_strategy = st.builds(
+    reference_C,
 )
-reference::E_strategy = st.builds(
-    reference::E,
+reference_F_strategy = st.builds(
+    reference_F,
 )
-reference::B_strategy = st.builds(
-    reference::B,
+reference_H_strategy = st.builds(
+    reference_H,
 )
-reference::G_strategy = st.builds(
-    reference::G,
+reference_G_strategy = st.builds(
+    reference_G,
 )
-reference::A_strategy = st.builds(
-    reference::A,
+reference_A_strategy = st.builds(
+    reference_A,
 )
 
-@given(instance=reference::Named_strategy)
+@given(instance=reference_Named_strategy)
 @settings(max_examples=50)
-def test_reference::named_instantiation(instance):
-    assert isinstance(instance, reference::Named)
-
-@given(instance=reference::Named_strategy)
-def test_reference::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_reference_named_instantiation(instance):
+    assert isinstance(instance, reference_Named)
 
 
-@given(instance=reference::Named_strategy)
-def test_reference::named_name_setter(instance):
+
+@given(instance=reference_Named_strategy)
+def test_reference_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -220,37 +217,37 @@ def test_reference::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=reference::F_strategy)
+@given(instance=reference_B_strategy)
 @settings(max_examples=50)
-def test_reference::f_instantiation(instance):
-    assert isinstance(instance, reference::F)
+def test_reference_b_instantiation(instance):
+    assert isinstance(instance, reference_B)
 
-@given(instance=reference::C_strategy)
+@given(instance=reference_E_strategy)
 @settings(max_examples=50)
-def test_reference::c_instantiation(instance):
-    assert isinstance(instance, reference::C)
+def test_reference_e_instantiation(instance):
+    assert isinstance(instance, reference_E)
 
-@given(instance=reference::H_strategy)
+@given(instance=reference_C_strategy)
 @settings(max_examples=50)
-def test_reference::h_instantiation(instance):
-    assert isinstance(instance, reference::H)
+def test_reference_c_instantiation(instance):
+    assert isinstance(instance, reference_C)
 
-@given(instance=reference::E_strategy)
+@given(instance=reference_F_strategy)
 @settings(max_examples=50)
-def test_reference::e_instantiation(instance):
-    assert isinstance(instance, reference::E)
+def test_reference_f_instantiation(instance):
+    assert isinstance(instance, reference_F)
 
-@given(instance=reference::B_strategy)
+@given(instance=reference_H_strategy)
 @settings(max_examples=50)
-def test_reference::b_instantiation(instance):
-    assert isinstance(instance, reference::B)
+def test_reference_h_instantiation(instance):
+    assert isinstance(instance, reference_H)
 
-@given(instance=reference::G_strategy)
+@given(instance=reference_G_strategy)
 @settings(max_examples=50)
-def test_reference::g_instantiation(instance):
-    assert isinstance(instance, reference::G)
+def test_reference_g_instantiation(instance):
+    assert isinstance(instance, reference_G)
 
-@given(instance=reference::A_strategy)
+@given(instance=reference_A_strategy)
 @settings(max_examples=50)
-def test_reference::a_instantiation(instance):
-    assert isinstance(instance, reference::A)
+def test_reference_a_instantiation(instance):
+    assert isinstance(instance, reference_A)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Transition,
-    statemachine::State,
-    statemachine::StateMachine,
+from python_code import (
+    statemachine_StateMachine,
+    statemachine_Transition,
+    statemachine_State,
 )
 
 # =============================================================================
@@ -17,75 +17,75 @@ from classes import (
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachine_StateMachine)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_statemachine_constructor_exists():
+    assert callable(statemachine_StateMachine.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(statemachine_StateMachine.__init__)
     params = list(sig.parameters.keys())
-    assert "action" in params, "Missing parameter 'action'"
+
+
+
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
+
+
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
+
+
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
+    params = list(sig.parameters.keys())
     assert "trigger" in params, "Missing parameter 'trigger'"
+    assert "action" in params, "Missing parameter 'action'"
 
-def test_statemachine::transition_has_action():
-    assert hasattr(statemachine::Transition, "action")
+def test_statemachine_transition_has_trigger():
+    assert hasattr(statemachine_Transition, "trigger")
     descriptor = None
-    for klass in statemachine::Transition.__mro__:
-        if "action" in klass.__dict__:
-            descriptor = klass.__dict__["action"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachine::transition_has_trigger():
-    assert hasattr(statemachine::Transition, "trigger")
-    descriptor = None
-    for klass in statemachine::Transition.__mro__:
+    for klass in statemachine_Transition.__mro__:
         if "trigger" in klass.__dict__:
             descriptor = klass.__dict__["trigger"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
-
-
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
-
-
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_statemachine::state_has_name():
-    assert hasattr(statemachine::State, "name")
+def test_statemachine_transition_has_action():
+    assert hasattr(statemachine_Transition, "action")
     descriptor = None
-    for klass in statemachine::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in statemachine_Transition.__mro__:
+        if "action" in klass.__dict__:
+            descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachine::StateMachine)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::statemachine_constructor_exists():
-    assert callable(statemachine::StateMachine.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::statemachine_constructor_args():
-    sig = inspect.signature(statemachine::StateMachine.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_statemachine_state_has_name():
+    assert hasattr(statemachine_State, "name")
+    descriptor = None
+    for klass in statemachine_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
-    action=
-        safe_text,
+statemachine_StateMachine_strategy = st.builds(
+    statemachine_StateMachine,
+)
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
     trigger=
+        safe_text,
+    action=
         safe_text
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
+statemachine_State_strategy = st.builds(
+    statemachine_State,
     name=
         safe_text
 )
-statemachine::StateMachine_strategy = st.builds(
-    statemachine::StateMachine,
-)
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
+def test_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachine_StateMachine)
 
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_action_type(instance):
-    assert isinstance(instance.action, str)
-
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_action_setter(instance):
-    original = instance.action
-    instance.action = original
-    assert instance.action == original
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
+@given(instance=statemachine_Transition_strategy)
+@settings(max_examples=50)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
 
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_trigger_setter(instance):
+
+@given(instance=statemachine_Transition_strategy)
+def test_statemachine_transition_trigger_setter(instance):
     original = instance.trigger
     instance.trigger = original
     assert instance.trigger == original
 
-@given(instance=statemachine::State_strategy)
+
+
+@given(instance=statemachine_Transition_strategy)
+def test_statemachine_transition_action_setter(instance):
+    original = instance.action
+    instance.action = original
+    assert instance.action == original
+
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_setter(instance):
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=50)
-def test_statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachine::StateMachine)

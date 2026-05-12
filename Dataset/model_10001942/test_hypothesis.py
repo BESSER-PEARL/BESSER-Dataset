@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Set_time_external,
@@ -21,6 +21,7 @@ from python_code import (
     Fire_Department__Actor,
     Building_Owner__Actor,
     Fire_Alarm_System__Component,
+    Firebase,
     Arduino,
     Count_Sensor,
     Notification,
@@ -28,7 +29,6 @@ from python_code import (
     Temperature_Sensor,
     Gas_Smoke_Sensor,
     Sensor,
-    Firebase,
 )
 
 # =============================================================================
@@ -132,11 +132,29 @@ def test_webpage_constructor_exists():
 def test_webpage_constructor_args():
     sig = inspect.signature(WebPage.__init__)
     params = list(sig.parameters.keys())
+    assert "OwnerData" in params, "Missing parameter 'OwnerData'"
+    assert "TempValue" in params, "Missing parameter 'TempValue'"
     assert "SmokeValue" in params, "Missing parameter 'SmokeValue'"
     assert "HomeLoc" in params, "Missing parameter 'HomeLoc'"
-    assert "TempValue" in params, "Missing parameter 'TempValue'"
-    assert "OwnerData" in params, "Missing parameter 'OwnerData'"
     assert "People_" in params, "Missing parameter 'People_'"
+
+def test_webpage_has_OwnerData():
+    assert hasattr(WebPage, "OwnerData")
+    descriptor = None
+    for klass in WebPage.__mro__:
+        if "OwnerData" in klass.__dict__:
+            descriptor = klass.__dict__["OwnerData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webpage_has_TempValue():
+    assert hasattr(WebPage, "TempValue")
+    descriptor = None
+    for klass in WebPage.__mro__:
+        if "TempValue" in klass.__dict__:
+            descriptor = klass.__dict__["TempValue"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_webpage_has_SmokeValue():
     assert hasattr(WebPage, "SmokeValue")
@@ -153,24 +171,6 @@ def test_webpage_has_HomeLoc():
     for klass in WebPage.__mro__:
         if "HomeLoc" in klass.__dict__:
             descriptor = klass.__dict__["HomeLoc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webpage_has_TempValue():
-    assert hasattr(WebPage, "TempValue")
-    descriptor = None
-    for klass in WebPage.__mro__:
-        if "TempValue" in klass.__dict__:
-            descriptor = klass.__dict__["TempValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webpage_has_OwnerData():
-    assert hasattr(WebPage, "OwnerData")
-    descriptor = None
-    for klass in WebPage.__mro__:
-        if "OwnerData" in klass.__dict__:
-            descriptor = klass.__dict__["OwnerData"]
             break
     assert isinstance(descriptor, property)
 
@@ -337,6 +337,20 @@ def test_fire_alarm_system__component_constructor_args():
 
 
 
+def test_firebase_is_not_abstract():
+    assert not inspect.isabstract(Firebase)
+
+
+def test_firebase_constructor_exists():
+    assert callable(Firebase.__init__)
+
+
+def test_firebase_constructor_args():
+    sig = inspect.signature(Firebase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_arduino_is_not_abstract():
     assert not inspect.isabstract(Arduino)
 
@@ -386,17 +400,8 @@ def test_notification_constructor_exists():
 def test_notification_constructor_args():
     sig = inspect.signature(Notification.__init__)
     params = list(sig.parameters.keys())
-    assert "TempThreshold" in params, "Missing parameter 'TempThreshold'"
     assert "SmokeThreshold" in params, "Missing parameter 'SmokeThreshold'"
-
-def test_notification_has_TempThreshold():
-    assert hasattr(Notification, "TempThreshold")
-    descriptor = None
-    for klass in Notification.__mro__:
-        if "TempThreshold" in klass.__dict__:
-            descriptor = klass.__dict__["TempThreshold"]
-            break
-    assert isinstance(descriptor, property)
+    assert "TempThreshold" in params, "Missing parameter 'TempThreshold'"
 
 def test_notification_has_SmokeThreshold():
     assert hasattr(Notification, "SmokeThreshold")
@@ -404,6 +409,15 @@ def test_notification_has_SmokeThreshold():
     for klass in Notification.__mro__:
         if "SmokeThreshold" in klass.__dict__:
             descriptor = klass.__dict__["SmokeThreshold"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notification_has_TempThreshold():
+    assert hasattr(Notification, "TempThreshold")
+    descriptor = None
+    for klass in Notification.__mro__:
+        if "TempThreshold" in klass.__dict__:
+            descriptor = klass.__dict__["TempThreshold"]
             break
     assert isinstance(descriptor, property)
 
@@ -420,17 +434,8 @@ def test_mobileapp_constructor_exists():
 def test_mobileapp_constructor_args():
     sig = inspect.signature(MobileApp.__init__)
     params = list(sig.parameters.keys())
-    assert "UserID" in params, "Missing parameter 'UserID'"
     assert "AlarmID" in params, "Missing parameter 'AlarmID'"
-
-def test_mobileapp_has_UserID():
-    assert hasattr(MobileApp, "UserID")
-    descriptor = None
-    for klass in MobileApp.__mro__:
-        if "UserID" in klass.__dict__:
-            descriptor = klass.__dict__["UserID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "UserID" in params, "Missing parameter 'UserID'"
 
 def test_mobileapp_has_AlarmID():
     assert hasattr(MobileApp, "AlarmID")
@@ -438,6 +443,15 @@ def test_mobileapp_has_AlarmID():
     for klass in MobileApp.__mro__:
         if "AlarmID" in klass.__dict__:
             descriptor = klass.__dict__["AlarmID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mobileapp_has_UserID():
+    assert hasattr(MobileApp, "UserID")
+    descriptor = None
+    for klass in MobileApp.__mro__:
+        if "UserID" in klass.__dict__:
+            descriptor = klass.__dict__["UserID"]
             break
     assert isinstance(descriptor, property)
 
@@ -468,17 +482,8 @@ def test_gas_smoke_sensor_constructor_exists():
 def test_gas_smoke_sensor_constructor_args():
     sig = inspect.signature(Gas_Smoke_Sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "SmokeAlarm" in params, "Missing parameter 'SmokeAlarm'"
     assert "CheckSmoke" in params, "Missing parameter 'CheckSmoke'"
-
-def test_gas_smoke_sensor_has_SmokeAlarm():
-    assert hasattr(Gas_Smoke_Sensor, "SmokeAlarm")
-    descriptor = None
-    for klass in Gas_Smoke_Sensor.__mro__:
-        if "SmokeAlarm" in klass.__dict__:
-            descriptor = klass.__dict__["SmokeAlarm"]
-            break
-    assert isinstance(descriptor, property)
+    assert "SmokeAlarm" in params, "Missing parameter 'SmokeAlarm'"
 
 def test_gas_smoke_sensor_has_CheckSmoke():
     assert hasattr(Gas_Smoke_Sensor, "CheckSmoke")
@@ -486,6 +491,15 @@ def test_gas_smoke_sensor_has_CheckSmoke():
     for klass in Gas_Smoke_Sensor.__mro__:
         if "CheckSmoke" in klass.__dict__:
             descriptor = klass.__dict__["CheckSmoke"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gas_smoke_sensor_has_SmokeAlarm():
+    assert hasattr(Gas_Smoke_Sensor, "SmokeAlarm")
+    descriptor = None
+    for klass in Gas_Smoke_Sensor.__mro__:
+        if "SmokeAlarm" in klass.__dict__:
+            descriptor = klass.__dict__["SmokeAlarm"]
             break
     assert isinstance(descriptor, property)
 
@@ -502,17 +516,8 @@ def test_sensor_constructor_exists():
 def test_sensor_constructor_args():
     sig = inspect.signature(Sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "SensorID" in params, "Missing parameter 'SensorID'"
     assert "SensorType" in params, "Missing parameter 'SensorType'"
-
-def test_sensor_has_SensorID():
-    assert hasattr(Sensor, "SensorID")
-    descriptor = None
-    for klass in Sensor.__mro__:
-        if "SensorID" in klass.__dict__:
-            descriptor = klass.__dict__["SensorID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "SensorID" in params, "Missing parameter 'SensorID'"
 
 def test_sensor_has_SensorType():
     assert hasattr(Sensor, "SensorType")
@@ -523,19 +528,14 @@ def test_sensor_has_SensorType():
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_firebase_is_not_abstract():
-    assert not inspect.isabstract(Firebase)
-
-
-def test_firebase_constructor_exists():
-    assert callable(Firebase.__init__)
-
-
-def test_firebase_constructor_args():
-    sig = inspect.signature(Firebase.__init__)
-    params = list(sig.parameters.keys())
+def test_sensor_has_SensorID():
+    assert hasattr(Sensor, "SensorID")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorID" in klass.__dict__:
+            descriptor = klass.__dict__["SensorID"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -569,13 +569,13 @@ Notify_User_of_fire_external_strategy = st.builds(
 )
 WebPage_strategy = st.builds(
     WebPage,
-    SmokeValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    HomeLoc=
+    OwnerData=
         safe_text,
     TempValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    OwnerData=
+    SmokeValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    HomeLoc=
         safe_text,
     People_=
         st.integers()
@@ -612,6 +612,9 @@ Building_Owner__Actor_strategy = st.builds(
 Fire_Alarm_System__Component_strategy = st.builds(
     Fire_Alarm_System__Component,
 )
+Firebase_strategy = st.builds(
+    Firebase,
+)
 Arduino_strategy = st.builds(
     Arduino,
 )
@@ -622,16 +625,16 @@ Count_Sensor_strategy = st.builds(
 )
 Notification_strategy = st.builds(
     Notification,
-    TempThreshold=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     SmokeThreshold=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    TempThreshold=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 MobileApp_strategy = st.builds(
     MobileApp,
-    UserID=
-        st.integers(),
     AlarmID=
+        st.integers(),
+    UserID=
         st.integers()
 )
 Temperature_Sensor_strategy = st.builds(
@@ -639,20 +642,17 @@ Temperature_Sensor_strategy = st.builds(
 )
 Gas_Smoke_Sensor_strategy = st.builds(
     Gas_Smoke_Sensor,
-    SmokeAlarm=
-        st.booleans(),
     CheckSmoke=
+        st.booleans(),
+    SmokeAlarm=
         st.booleans()
 )
 Sensor_strategy = st.builds(
     Sensor,
-    SensorID=
-        st.integers(),
     SensorType=
+        st.integers(),
+    SensorID=
         st.integers()
-)
-Firebase_strategy = st.builds(
-    Firebase,
 )
 
 @given(instance=Set_time_external_strategy)
@@ -690,42 +690,6 @@ def test_notify_user_of_fire_external_instantiation(instance):
 def test_webpage_instantiation(instance):
     assert isinstance(instance, WebPage)
 
-@given(instance=WebPage_strategy)
-def test_webpage_SmokeValue_type(instance):
-    assert isinstance(instance.SmokeValue, float)
-
-
-@given(instance=WebPage_strategy)
-def test_webpage_SmokeValue_setter(instance):
-    original = instance.SmokeValue
-    instance.SmokeValue = original
-    assert instance.SmokeValue == original
-
-@given(instance=WebPage_strategy)
-def test_webpage_HomeLoc_type(instance):
-    assert isinstance(instance.HomeLoc, str)
-
-
-@given(instance=WebPage_strategy)
-def test_webpage_HomeLoc_setter(instance):
-    original = instance.HomeLoc
-    instance.HomeLoc = original
-    assert instance.HomeLoc == original
-
-@given(instance=WebPage_strategy)
-def test_webpage_TempValue_type(instance):
-    assert isinstance(instance.TempValue, float)
-
-
-@given(instance=WebPage_strategy)
-def test_webpage_TempValue_setter(instance):
-    original = instance.TempValue
-    instance.TempValue = original
-    assert instance.TempValue == original
-
-@given(instance=WebPage_strategy)
-def test_webpage_OwnerData_type(instance):
-    assert isinstance(instance.OwnerData, str)
 
 
 @given(instance=WebPage_strategy)
@@ -734,9 +698,30 @@ def test_webpage_OwnerData_setter(instance):
     instance.OwnerData = original
     assert instance.OwnerData == original
 
+
+
 @given(instance=WebPage_strategy)
-def test_webpage_People__type(instance):
-    assert isinstance(instance.People_, int)
+def test_webpage_TempValue_setter(instance):
+    original = instance.TempValue
+    instance.TempValue = original
+    assert instance.TempValue == original
+
+
+
+@given(instance=WebPage_strategy)
+def test_webpage_SmokeValue_setter(instance):
+    original = instance.SmokeValue
+    instance.SmokeValue = original
+    assert instance.SmokeValue == original
+
+
+
+@given(instance=WebPage_strategy)
+def test_webpage_HomeLoc_setter(instance):
+    original = instance.HomeLoc
+    instance.HomeLoc = original
+    assert instance.HomeLoc == original
+
 
 
 @given(instance=WebPage_strategy)
@@ -750,9 +735,6 @@ def test_webpage_People__setter(instance):
 def test_alarm_instantiation(instance):
     assert isinstance(instance, Alarm)
 
-@given(instance=Alarm_strategy)
-def test_alarm_AlarmID_type(instance):
-    assert isinstance(instance.AlarmID, str)
 
 
 @given(instance=Alarm_strategy)
@@ -766,9 +748,6 @@ def test_alarm_AlarmID_setter(instance):
 def test_viewtemp_smoke_instantiation(instance):
     assert isinstance(instance, ViewTemp_Smoke)
 
-@given(instance=ViewTemp_Smoke_strategy)
-def test_viewtemp_smoke_SmokeValue_type(instance):
-    assert isinstance(instance.SmokeValue, float)
 
 
 @given(instance=ViewTemp_Smoke_strategy)
@@ -777,9 +756,6 @@ def test_viewtemp_smoke_SmokeValue_setter(instance):
     instance.SmokeValue = original
     assert instance.SmokeValue == original
 
-@given(instance=ViewTemp_Smoke_strategy)
-def test_viewtemp_smoke_TempValue_type(instance):
-    assert isinstance(instance.TempValue, float)
 
 
 @given(instance=ViewTemp_Smoke_strategy)
@@ -793,9 +769,6 @@ def test_viewtemp_smoke_TempValue_setter(instance):
 def test_addalarm_instantiation(instance):
     assert isinstance(instance, AddAlarm)
 
-@given(instance=AddAlarm_strategy)
-def test_addalarm_AlarmName_type(instance):
-    assert isinstance(instance.AlarmName, str)
 
 
 @given(instance=AddAlarm_strategy)
@@ -829,6 +802,11 @@ def test_building_owner__actor_instantiation(instance):
 def test_fire_alarm_system__component_instantiation(instance):
     assert isinstance(instance, Fire_Alarm_System__Component)
 
+@given(instance=Firebase_strategy)
+@settings(max_examples=50)
+def test_firebase_instantiation(instance):
+    assert isinstance(instance, Firebase)
+
 @given(instance=Arduino_strategy)
 @settings(max_examples=50)
 def test_arduino_instantiation(instance):
@@ -839,9 +817,6 @@ def test_arduino_instantiation(instance):
 def test_count_sensor_instantiation(instance):
     assert isinstance(instance, Count_Sensor)
 
-@given(instance=Count_Sensor_strategy)
-def test_count_sensor_People__type(instance):
-    assert isinstance(instance.People_, int)
 
 
 @given(instance=Count_Sensor_strategy)
@@ -855,20 +830,6 @@ def test_count_sensor_People__setter(instance):
 def test_notification_instantiation(instance):
     assert isinstance(instance, Notification)
 
-@given(instance=Notification_strategy)
-def test_notification_TempThreshold_type(instance):
-    assert isinstance(instance.TempThreshold, float)
-
-
-@given(instance=Notification_strategy)
-def test_notification_TempThreshold_setter(instance):
-    original = instance.TempThreshold
-    instance.TempThreshold = original
-    assert instance.TempThreshold == original
-
-@given(instance=Notification_strategy)
-def test_notification_SmokeThreshold_type(instance):
-    assert isinstance(instance.SmokeThreshold, float)
 
 
 @given(instance=Notification_strategy)
@@ -877,25 +838,19 @@ def test_notification_SmokeThreshold_setter(instance):
     instance.SmokeThreshold = original
     assert instance.SmokeThreshold == original
 
+
+
+@given(instance=Notification_strategy)
+def test_notification_TempThreshold_setter(instance):
+    original = instance.TempThreshold
+    instance.TempThreshold = original
+    assert instance.TempThreshold == original
+
 @given(instance=MobileApp_strategy)
 @settings(max_examples=50)
 def test_mobileapp_instantiation(instance):
     assert isinstance(instance, MobileApp)
 
-@given(instance=MobileApp_strategy)
-def test_mobileapp_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
-
-
-@given(instance=MobileApp_strategy)
-def test_mobileapp_UserID_setter(instance):
-    original = instance.UserID
-    instance.UserID = original
-    assert instance.UserID == original
-
-@given(instance=MobileApp_strategy)
-def test_mobileapp_AlarmID_type(instance):
-    assert isinstance(instance.AlarmID, int)
 
 
 @given(instance=MobileApp_strategy)
@@ -903,6 +858,14 @@ def test_mobileapp_AlarmID_setter(instance):
     original = instance.AlarmID
     instance.AlarmID = original
     assert instance.AlarmID == original
+
+
+
+@given(instance=MobileApp_strategy)
+def test_mobileapp_UserID_setter(instance):
+    original = instance.UserID
+    instance.UserID = original
+    assert instance.UserID == original
 
 @given(instance=Temperature_Sensor_strategy)
 @settings(max_examples=50)
@@ -914,20 +877,6 @@ def test_temperature_sensor_instantiation(instance):
 def test_gas_smoke_sensor_instantiation(instance):
     assert isinstance(instance, Gas_Smoke_Sensor)
 
-@given(instance=Gas_Smoke_Sensor_strategy)
-def test_gas_smoke_sensor_SmokeAlarm_type(instance):
-    assert isinstance(instance.SmokeAlarm, bool)
-
-
-@given(instance=Gas_Smoke_Sensor_strategy)
-def test_gas_smoke_sensor_SmokeAlarm_setter(instance):
-    original = instance.SmokeAlarm
-    instance.SmokeAlarm = original
-    assert instance.SmokeAlarm == original
-
-@given(instance=Gas_Smoke_Sensor_strategy)
-def test_gas_smoke_sensor_CheckSmoke_type(instance):
-    assert isinstance(instance.CheckSmoke, bool)
 
 
 @given(instance=Gas_Smoke_Sensor_strategy)
@@ -936,25 +885,19 @@ def test_gas_smoke_sensor_CheckSmoke_setter(instance):
     instance.CheckSmoke = original
     assert instance.CheckSmoke == original
 
+
+
+@given(instance=Gas_Smoke_Sensor_strategy)
+def test_gas_smoke_sensor_SmokeAlarm_setter(instance):
+    original = instance.SmokeAlarm
+    instance.SmokeAlarm = original
+    assert instance.SmokeAlarm == original
+
 @given(instance=Sensor_strategy)
 @settings(max_examples=50)
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
-
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_setter(instance):
-    original = instance.SensorID
-    instance.SensorID = original
-    assert instance.SensorID == original
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
 
 
 @given(instance=Sensor_strategy)
@@ -963,7 +906,10 @@ def test_sensor_SensorType_setter(instance):
     instance.SensorType = original
     assert instance.SensorType == original
 
-@given(instance=Firebase_strategy)
-@settings(max_examples=50)
-def test_firebase_instantiation(instance):
-    assert isinstance(instance, Firebase)
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorID_setter(instance):
+    original = instance.SensorID
+    instance.SensorID = original
+    assert instance.SensorID == original

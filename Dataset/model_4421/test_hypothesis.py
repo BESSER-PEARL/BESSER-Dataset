@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Command,
-    robo::command::Drive,
-    robo::command::Command,
-    robo::Motor,
-    robo::Setup,
-    robo::Program,
-    robo::Robot,
-    robo::Sensor,
-    robo::condition::Condition,
-    robo::expression::Expr,
-    robo::command::Assignment,
-    robo::command::Branch,
-    robo::command::Loop,
+from python_code import (
+    robo_condition_Condition,
+    robo_expression_Expr,
     Condition,
-    robo::condition::Comparison,
+    robo_condition_Comparison,
     Expr,
-    robo::expression::Operation,
-    robo::expression::Literal,
-    robo::expression::Variable,
-    Direction,
-    MotorType,
-    SensorType,
-    ComparisonOperator,
+    robo_expression_Operation,
+    robo_expression_Literal,
+    robo_expression_Variable,
+    Command,
+    robo_command_Loop,
+    robo_command_Assignment,
+    robo_command_Branch,
+    robo_command_Drive,
+    robo_command_Command,
+    robo_Motor,
+    robo_Setup,
+    robo_Program,
+    robo_Robot,
+    robo_Sensor,
     MotorPort,
-    SensorMode,
+    Direction,
+    SensorType,
     ExprOperation,
+    SensorMode,
+    MotorType,
     SensorPort,
+    ComparisonOperator,
 )
 
 # =============================================================================
@@ -41,294 +41,30 @@ from classes import (
 
 
 
-def test_command_is_not_abstract():
-    assert not inspect.isabstract(Command)
+def test_robo_condition_condition_is_not_abstract():
+    assert not inspect.isabstract(robo_condition_Condition)
 
 
-def test_command_constructor_exists():
-    assert callable(Command.__init__)
+def test_robo_condition_condition_constructor_exists():
+    assert callable(robo_condition_Condition.__init__)
 
 
-def test_command_constructor_args():
-    sig = inspect.signature(Command.__init__)
+def test_robo_condition_condition_constructor_args():
+    sig = inspect.signature(robo_condition_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robo::command::drive_is_not_abstract():
-    assert not inspect.isabstract(robo::command::Drive)
+def test_robo_expression_expr_is_not_abstract():
+    assert not inspect.isabstract(robo_expression_Expr)
 
 
-def test_robo::command::drive_constructor_exists():
-    assert callable(robo::command::Drive.__init__)
+def test_robo_expression_expr_constructor_exists():
+    assert callable(robo_expression_Expr.__init__)
 
 
-def test_robo::command::drive_constructor_args():
-    sig = inspect.signature(robo::command::Drive.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_robo::command::drive_has_direction():
-    assert hasattr(robo::command::Drive, "direction")
-    descriptor = None
-    for klass in robo::command::Drive.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robo::command::command_is_not_abstract():
-    assert not inspect.isabstract(robo::command::Command)
-
-
-def test_robo::command::command_constructor_exists():
-    assert callable(robo::command::Command.__init__)
-
-
-def test_robo::command::command_constructor_args():
-    sig = inspect.signature(robo::command::Command.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robo::motor_is_not_abstract():
-    assert not inspect.isabstract(robo::Motor)
-
-
-def test_robo::motor_constructor_exists():
-    assert callable(robo::Motor.__init__)
-
-
-def test_robo::motor_constructor_args():
-    sig = inspect.signature(robo::Motor.__init__)
-    params = list(sig.parameters.keys())
-    assert "reversed" in params, "Missing parameter 'reversed'"
-    assert "speed" in params, "Missing parameter 'speed'"
-    assert "port" in params, "Missing parameter 'port'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_robo::motor_has_reversed():
-    assert hasattr(robo::Motor, "reversed")
-    descriptor = None
-    for klass in robo::Motor.__mro__:
-        if "reversed" in klass.__dict__:
-            descriptor = klass.__dict__["reversed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robo::motor_has_speed():
-    assert hasattr(robo::Motor, "speed")
-    descriptor = None
-    for klass in robo::Motor.__mro__:
-        if "speed" in klass.__dict__:
-            descriptor = klass.__dict__["speed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robo::motor_has_port():
-    assert hasattr(robo::Motor, "port")
-    descriptor = None
-    for klass in robo::Motor.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robo::motor_has_type():
-    assert hasattr(robo::Motor, "type")
-    descriptor = None
-    for klass in robo::Motor.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robo::setup_is_not_abstract():
-    assert not inspect.isabstract(robo::Setup)
-
-
-def test_robo::setup_constructor_exists():
-    assert callable(robo::Setup.__init__)
-
-
-def test_robo::setup_constructor_args():
-    sig = inspect.signature(robo::Setup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robo::program_is_not_abstract():
-    assert not inspect.isabstract(robo::Program)
-
-
-def test_robo::program_constructor_exists():
-    assert callable(robo::Program.__init__)
-
-
-def test_robo::program_constructor_args():
-    sig = inspect.signature(robo::Program.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robo::program_has_name():
-    assert hasattr(robo::Program, "name")
-    descriptor = None
-    for klass in robo::Program.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robo::robot_is_not_abstract():
-    assert not inspect.isabstract(robo::Robot)
-
-
-def test_robo::robot_constructor_exists():
-    assert callable(robo::Robot.__init__)
-
-
-def test_robo::robot_constructor_args():
-    sig = inspect.signature(robo::Robot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robo::sensor_is_not_abstract():
-    assert not inspect.isabstract(robo::Sensor)
-
-
-def test_robo::sensor_constructor_exists():
-    assert callable(robo::Sensor.__init__)
-
-
-def test_robo::sensor_constructor_args():
-    sig = inspect.signature(robo::Sensor.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "mode" in params, "Missing parameter 'mode'"
-
-def test_robo::sensor_has_port():
-    assert hasattr(robo::Sensor, "port")
-    descriptor = None
-    for klass in robo::Sensor.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robo::sensor_has_name():
-    assert hasattr(robo::Sensor, "name")
-    descriptor = None
-    for klass in robo::Sensor.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robo::sensor_has_type():
-    assert hasattr(robo::Sensor, "type")
-    descriptor = None
-    for klass in robo::Sensor.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robo::sensor_has_mode():
-    assert hasattr(robo::Sensor, "mode")
-    descriptor = None
-    for klass in robo::Sensor.__mro__:
-        if "mode" in klass.__dict__:
-            descriptor = klass.__dict__["mode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robo::condition::condition_is_not_abstract():
-    assert not inspect.isabstract(robo::condition::Condition)
-
-
-def test_robo::condition::condition_constructor_exists():
-    assert callable(robo::condition::Condition.__init__)
-
-
-def test_robo::condition::condition_constructor_args():
-    sig = inspect.signature(robo::condition::Condition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robo::expression::expr_is_not_abstract():
-    assert not inspect.isabstract(robo::expression::Expr)
-
-
-def test_robo::expression::expr_constructor_exists():
-    assert callable(robo::expression::Expr.__init__)
-
-
-def test_robo::expression::expr_constructor_args():
-    sig = inspect.signature(robo::expression::Expr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robo::command::assignment_is_not_abstract():
-    assert not inspect.isabstract(robo::command::Assignment)
-
-
-def test_robo::command::assignment_constructor_exists():
-    assert callable(robo::command::Assignment.__init__)
-
-
-def test_robo::command::assignment_constructor_args():
-    sig = inspect.signature(robo::command::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "variable" in params, "Missing parameter 'variable'"
-
-def test_robo::command::assignment_has_variable():
-    assert hasattr(robo::command::Assignment, "variable")
-    descriptor = None
-    for klass in robo::command::Assignment.__mro__:
-        if "variable" in klass.__dict__:
-            descriptor = klass.__dict__["variable"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robo::command::branch_is_not_abstract():
-    assert not inspect.isabstract(robo::command::Branch)
-
-
-def test_robo::command::branch_constructor_exists():
-    assert callable(robo::command::Branch.__init__)
-
-
-def test_robo::command::branch_constructor_args():
-    sig = inspect.signature(robo::command::Branch.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robo::command::loop_is_not_abstract():
-    assert not inspect.isabstract(robo::command::Loop)
-
-
-def test_robo::command::loop_constructor_exists():
-    assert callable(robo::command::Loop.__init__)
-
-
-def test_robo::command::loop_constructor_args():
-    sig = inspect.signature(robo::command::Loop.__init__)
+def test_robo_expression_expr_constructor_args():
+    sig = inspect.signature(robo_expression_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -347,23 +83,23 @@ def test_condition_constructor_args():
 
 
 
-def test_robo::condition::comparison_is_not_abstract():
-    assert not inspect.isabstract(robo::condition::Comparison)
+def test_robo_condition_comparison_is_not_abstract():
+    assert not inspect.isabstract(robo_condition_Comparison)
 
 
-def test_robo::condition::comparison_constructor_exists():
-    assert callable(robo::condition::Comparison.__init__)
+def test_robo_condition_comparison_constructor_exists():
+    assert callable(robo_condition_Comparison.__init__)
 
 
-def test_robo::condition::comparison_constructor_args():
-    sig = inspect.signature(robo::condition::Comparison.__init__)
+def test_robo_condition_comparison_constructor_args():
+    sig = inspect.signature(robo_condition_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_robo::condition::comparison_has_operator():
-    assert hasattr(robo::condition::Comparison, "operator")
+def test_robo_condition_comparison_has_operator():
+    assert hasattr(robo_condition_Comparison, "operator")
     descriptor = None
-    for klass in robo::condition::Comparison.__mro__:
+    for klass in robo_condition_Comparison.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -385,23 +121,23 @@ def test_expr_constructor_args():
 
 
 
-def test_robo::expression::operation_is_not_abstract():
-    assert not inspect.isabstract(robo::expression::Operation)
+def test_robo_expression_operation_is_not_abstract():
+    assert not inspect.isabstract(robo_expression_Operation)
 
 
-def test_robo::expression::operation_constructor_exists():
-    assert callable(robo::expression::Operation.__init__)
+def test_robo_expression_operation_constructor_exists():
+    assert callable(robo_expression_Operation.__init__)
 
 
-def test_robo::expression::operation_constructor_args():
-    sig = inspect.signature(robo::expression::Operation.__init__)
+def test_robo_expression_operation_constructor_args():
+    sig = inspect.signature(robo_expression_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_robo::expression::operation_has_operator():
-    assert hasattr(robo::expression::Operation, "operator")
+def test_robo_expression_operation_has_operator():
+    assert hasattr(robo_expression_Operation, "operator")
     descriptor = None
-    for klass in robo::expression::Operation.__mro__:
+    for klass in robo_expression_Operation.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -409,23 +145,23 @@ def test_robo::expression::operation_has_operator():
 
 
 
-def test_robo::expression::literal_is_not_abstract():
-    assert not inspect.isabstract(robo::expression::Literal)
+def test_robo_expression_literal_is_not_abstract():
+    assert not inspect.isabstract(robo_expression_Literal)
 
 
-def test_robo::expression::literal_constructor_exists():
-    assert callable(robo::expression::Literal.__init__)
+def test_robo_expression_literal_constructor_exists():
+    assert callable(robo_expression_Literal.__init__)
 
 
-def test_robo::expression::literal_constructor_args():
-    sig = inspect.signature(robo::expression::Literal.__init__)
+def test_robo_expression_literal_constructor_args():
+    sig = inspect.signature(robo_expression_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_robo::expression::literal_has_value():
-    assert hasattr(robo::expression::Literal, "value")
+def test_robo_expression_literal_has_value():
+    assert hasattr(robo_expression_Literal, "value")
     descriptor = None
-    for klass in robo::expression::Literal.__mro__:
+    for klass in robo_expression_Literal.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -433,27 +169,308 @@ def test_robo::expression::literal_has_value():
 
 
 
-def test_robo::expression::variable_is_not_abstract():
-    assert not inspect.isabstract(robo::expression::Variable)
+def test_robo_expression_variable_is_not_abstract():
+    assert not inspect.isabstract(robo_expression_Variable)
 
 
-def test_robo::expression::variable_constructor_exists():
-    assert callable(robo::expression::Variable.__init__)
+def test_robo_expression_variable_constructor_exists():
+    assert callable(robo_expression_Variable.__init__)
 
 
-def test_robo::expression::variable_constructor_args():
-    sig = inspect.signature(robo::expression::Variable.__init__)
+def test_robo_expression_variable_constructor_args():
+    sig = inspect.signature(robo_expression_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_robo::expression::variable_has_name():
-    assert hasattr(robo::expression::Variable, "name")
+def test_robo_expression_variable_has_name():
+    assert hasattr(robo_expression_Variable, "name")
     descriptor = None
-    for klass in robo::expression::Variable.__mro__:
+    for klass in robo_expression_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_command_is_not_abstract():
+    assert not inspect.isabstract(Command)
+
+
+def test_command_constructor_exists():
+    assert callable(Command.__init__)
+
+
+def test_command_constructor_args():
+    sig = inspect.signature(Command.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robo_command_loop_is_not_abstract():
+    assert not inspect.isabstract(robo_command_Loop)
+
+
+def test_robo_command_loop_constructor_exists():
+    assert callable(robo_command_Loop.__init__)
+
+
+def test_robo_command_loop_constructor_args():
+    sig = inspect.signature(robo_command_Loop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robo_command_assignment_is_not_abstract():
+    assert not inspect.isabstract(robo_command_Assignment)
+
+
+def test_robo_command_assignment_constructor_exists():
+    assert callable(robo_command_Assignment.__init__)
+
+
+def test_robo_command_assignment_constructor_args():
+    sig = inspect.signature(robo_command_Assignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "variable" in params, "Missing parameter 'variable'"
+
+def test_robo_command_assignment_has_variable():
+    assert hasattr(robo_command_Assignment, "variable")
+    descriptor = None
+    for klass in robo_command_Assignment.__mro__:
+        if "variable" in klass.__dict__:
+            descriptor = klass.__dict__["variable"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robo_command_branch_is_not_abstract():
+    assert not inspect.isabstract(robo_command_Branch)
+
+
+def test_robo_command_branch_constructor_exists():
+    assert callable(robo_command_Branch.__init__)
+
+
+def test_robo_command_branch_constructor_args():
+    sig = inspect.signature(robo_command_Branch.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robo_command_drive_is_not_abstract():
+    assert not inspect.isabstract(robo_command_Drive)
+
+
+def test_robo_command_drive_constructor_exists():
+    assert callable(robo_command_Drive.__init__)
+
+
+def test_robo_command_drive_constructor_args():
+    sig = inspect.signature(robo_command_Drive.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_robo_command_drive_has_direction():
+    assert hasattr(robo_command_Drive, "direction")
+    descriptor = None
+    for klass in robo_command_Drive.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robo_command_command_is_not_abstract():
+    assert not inspect.isabstract(robo_command_Command)
+
+
+def test_robo_command_command_constructor_exists():
+    assert callable(robo_command_Command.__init__)
+
+
+def test_robo_command_command_constructor_args():
+    sig = inspect.signature(robo_command_Command.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robo_motor_is_not_abstract():
+    assert not inspect.isabstract(robo_Motor)
+
+
+def test_robo_motor_constructor_exists():
+    assert callable(robo_Motor.__init__)
+
+
+def test_robo_motor_constructor_args():
+    sig = inspect.signature(robo_Motor.__init__)
+    params = list(sig.parameters.keys())
+    assert "reversed" in params, "Missing parameter 'reversed'"
+    assert "speed" in params, "Missing parameter 'speed'"
+    assert "port" in params, "Missing parameter 'port'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_robo_motor_has_reversed():
+    assert hasattr(robo_Motor, "reversed")
+    descriptor = None
+    for klass in robo_Motor.__mro__:
+        if "reversed" in klass.__dict__:
+            descriptor = klass.__dict__["reversed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robo_motor_has_speed():
+    assert hasattr(robo_Motor, "speed")
+    descriptor = None
+    for klass in robo_Motor.__mro__:
+        if "speed" in klass.__dict__:
+            descriptor = klass.__dict__["speed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robo_motor_has_port():
+    assert hasattr(robo_Motor, "port")
+    descriptor = None
+    for klass in robo_Motor.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robo_motor_has_type():
+    assert hasattr(robo_Motor, "type")
+    descriptor = None
+    for klass in robo_Motor.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robo_setup_is_not_abstract():
+    assert not inspect.isabstract(robo_Setup)
+
+
+def test_robo_setup_constructor_exists():
+    assert callable(robo_Setup.__init__)
+
+
+def test_robo_setup_constructor_args():
+    sig = inspect.signature(robo_Setup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robo_program_is_not_abstract():
+    assert not inspect.isabstract(robo_Program)
+
+
+def test_robo_program_constructor_exists():
+    assert callable(robo_Program.__init__)
+
+
+def test_robo_program_constructor_args():
+    sig = inspect.signature(robo_Program.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robo_program_has_name():
+    assert hasattr(robo_Program, "name")
+    descriptor = None
+    for klass in robo_Program.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robo_robot_is_not_abstract():
+    assert not inspect.isabstract(robo_Robot)
+
+
+def test_robo_robot_constructor_exists():
+    assert callable(robo_Robot.__init__)
+
+
+def test_robo_robot_constructor_args():
+    sig = inspect.signature(robo_Robot.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robo_sensor_is_not_abstract():
+    assert not inspect.isabstract(robo_Sensor)
+
+
+def test_robo_sensor_constructor_exists():
+    assert callable(robo_Sensor.__init__)
+
+
+def test_robo_sensor_constructor_args():
+    sig = inspect.signature(robo_Sensor.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "mode" in params, "Missing parameter 'mode'"
+    assert "port" in params, "Missing parameter 'port'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robo_sensor_has_type():
+    assert hasattr(robo_Sensor, "type")
+    descriptor = None
+    for klass in robo_Sensor.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robo_sensor_has_mode():
+    assert hasattr(robo_Sensor, "mode")
+    descriptor = None
+    for klass in robo_Sensor.__mro__:
+        if "mode" in klass.__dict__:
+            descriptor = klass.__dict__["mode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robo_sensor_has_port():
+    assert hasattr(robo_Sensor, "port")
+    descriptor = None
+    for klass in robo_Sensor.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robo_sensor_has_name():
+    assert hasattr(robo_Sensor, "name")
+    descriptor = None
+    for klass in robo_Sensor.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_motorport_exists():
+    # Check that the Enumeration exists
+    assert MotorPort is not None
+
+def test_motorport_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MotorPort]
+    expected_literals = [
+        "A",
+        "C",
+        "B",
+        "D",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MotorPort"
 
 def test_direction_exists():
     # Check that the Enumeration exists
@@ -463,14 +480,61 @@ def test_direction_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Direction]
     expected_literals = [
-        "RIGHT",
         "LEFT",
-        "FORWARD",
         "BACKWARD",
+        "RIGHT",
+        "FORWARD",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Direction"
+
+def test_sensortype_exists():
+    # Check that the Enumeration exists
+    assert SensorType is not None
+
+def test_sensortype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SensorType]
+    expected_literals = [
+        "COLOR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SensorType"
+
+def test_exproperation_exists():
+    # Check that the Enumeration exists
+    assert ExprOperation is not None
+
+def test_exproperation_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ExprOperation]
+    expected_literals = [
+        "DIVIDE",
+        "MINUS",
+        "MULTIPLY",
+        "PLUS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ExprOperation"
+
+def test_sensormode_exists():
+    # Check that the Enumeration exists
+    assert SensorMode is not None
+
+def test_sensormode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SensorMode]
+    expected_literals = [
+        "COLOR_ID",
+        "AMBIENT",
+        "RED",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SensorMode"
 
 def test_motortype_exists():
     # Check that the Enumeration exists
@@ -487,19 +551,22 @@ def test_motortype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MotorType"
 
-def test_sensortype_exists():
+def test_sensorport_exists():
     # Check that the Enumeration exists
-    assert SensorType is not None
+    assert SensorPort is not None
 
-def test_sensortype_has_all_literals():
+def test_sensorport_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SensorType]
+    enum_literals = [lit.name for lit in SensorPort]
     expected_literals = [
-        "COLOR",
+        "S3",
+        "S1",
+        "S2",
+        "S4",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SensorType"
+        assert lit_name in enum_literals, f"Literal '' missing in SensorPort"
 
 def test_comparisonoperator_exists():
     # Check that the Enumeration exists
@@ -509,83 +576,16 @@ def test_comparisonoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ComparisonOperator]
     expected_literals = [
-        "EQUAL",
-        "GREATER_OR_EQUAL",
-        "GREATER",
-        "LESS_OR_EQUAL",
-        "UNEQUAL",
         "LESS",
+        "EQUAL",
+        "UNEQUAL",
+        "LESS_OR_EQUAL",
+        "GREATER",
+        "GREATER_OR_EQUAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperator"
-
-def test_motorport_exists():
-    # Check that the Enumeration exists
-    assert MotorPort is not None
-
-def test_motorport_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MotorPort]
-    expected_literals = [
-        "A",
-        "D",
-        "C",
-        "B",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MotorPort"
-
-def test_sensormode_exists():
-    # Check that the Enumeration exists
-    assert SensorMode is not None
-
-def test_sensormode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SensorMode]
-    expected_literals = [
-        "RED",
-        "COLOR_ID",
-        "AMBIENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SensorMode"
-
-def test_exproperation_exists():
-    # Check that the Enumeration exists
-    assert ExprOperation is not None
-
-def test_exproperation_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExprOperation]
-    expected_literals = [
-        "PLUS",
-        "MULTIPLY",
-        "DIVIDE",
-        "MINUS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExprOperation"
-
-def test_sensorport_exists():
-    # Check that the Enumeration exists
-    assert SensorPort is not None
-
-def test_sensorport_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SensorPort]
-    expected_literals = [
-        "S1",
-        "S2",
-        "S4",
-        "S3",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SensorPort"
 
 
 # =============================================================================
@@ -599,19 +599,62 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+robo_condition_Condition_strategy = st.builds(
+    robo_condition_Condition,
+)
+robo_expression_Expr_strategy = st.builds(
+    robo_expression_Expr,
+)
+Condition_strategy = st.builds(
+    Condition,
+)
+robo_condition_Comparison_strategy = st.builds(
+    robo_condition_Comparison,
+    operator=
+        safe_text
+)
+Expr_strategy = st.builds(
+    Expr,
+)
+robo_expression_Operation_strategy = st.builds(
+    robo_expression_Operation,
+    operator=
+        safe_text
+)
+robo_expression_Literal_strategy = st.builds(
+    robo_expression_Literal,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+robo_expression_Variable_strategy = st.builds(
+    robo_expression_Variable,
+    name=
+        safe_text
+)
 Command_strategy = st.builds(
     Command,
 )
-robo::command::Drive_strategy = st.builds(
-    robo::command::Drive,
+robo_command_Loop_strategy = st.builds(
+    robo_command_Loop,
+)
+robo_command_Assignment_strategy = st.builds(
+    robo_command_Assignment,
+    variable=
+        safe_text
+)
+robo_command_Branch_strategy = st.builds(
+    robo_command_Branch,
+)
+robo_command_Drive_strategy = st.builds(
+    robo_command_Drive,
     direction=
         safe_text
 )
-robo::command::Command_strategy = st.builds(
-    robo::command::Command,
+robo_command_Command_strategy = st.builds(
+    robo_command_Command,
 )
-robo::Motor_strategy = st.builds(
-    robo::Motor,
+robo_Motor_strategy = st.builds(
+    robo_Motor,
     reversed=
         st.booleans(),
     speed=
@@ -621,226 +664,33 @@ robo::Motor_strategy = st.builds(
     type=
         safe_text
 )
-robo::Setup_strategy = st.builds(
-    robo::Setup,
+robo_Setup_strategy = st.builds(
+    robo_Setup,
 )
-robo::Program_strategy = st.builds(
-    robo::Program,
+robo_Program_strategy = st.builds(
+    robo_Program,
     name=
         safe_text
 )
-robo::Robot_strategy = st.builds(
-    robo::Robot,
+robo_Robot_strategy = st.builds(
+    robo_Robot,
 )
-robo::Sensor_strategy = st.builds(
-    robo::Sensor,
-    port=
-        safe_text,
-    name=
-        safe_text,
+robo_Sensor_strategy = st.builds(
+    robo_Sensor,
     type=
         safe_text,
     mode=
-        safe_text
-)
-robo::condition::Condition_strategy = st.builds(
-    robo::condition::Condition,
-)
-robo::expression::Expr_strategy = st.builds(
-    robo::expression::Expr,
-)
-robo::command::Assignment_strategy = st.builds(
-    robo::command::Assignment,
-    variable=
-        safe_text
-)
-robo::command::Branch_strategy = st.builds(
-    robo::command::Branch,
-)
-robo::command::Loop_strategy = st.builds(
-    robo::command::Loop,
-)
-Condition_strategy = st.builds(
-    Condition,
-)
-robo::condition::Comparison_strategy = st.builds(
-    robo::condition::Comparison,
-    operator=
-        safe_text
-)
-Expr_strategy = st.builds(
-    Expr,
-)
-robo::expression::Operation_strategy = st.builds(
-    robo::expression::Operation,
-    operator=
-        safe_text
-)
-robo::expression::Literal_strategy = st.builds(
-    robo::expression::Literal,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-robo::expression::Variable_strategy = st.builds(
-    robo::expression::Variable,
+        safe_text,
+    port=
+        safe_text,
     name=
         safe_text
 )
 
-@given(instance=Command_strategy)
+@given(instance=robo_condition_Condition_strategy)
 @settings(max_examples=50)
-def test_command_instantiation(instance):
-    assert isinstance(instance, Command)
-
-@given(instance=robo::command::Drive_strategy)
-@settings(max_examples=50)
-def test_robo::command::drive_instantiation(instance):
-    assert isinstance(instance, robo::command::Drive)
-
-@given(instance=robo::command::Drive_strategy)
-def test_robo::command::drive_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=robo::command::Drive_strategy)
-def test_robo::command::drive_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=robo::command::Command_strategy)
-@settings(max_examples=50)
-def test_robo::command::command_instantiation(instance):
-    assert isinstance(instance, robo::command::Command)
-
-@given(instance=robo::Motor_strategy)
-@settings(max_examples=50)
-def test_robo::motor_instantiation(instance):
-    assert isinstance(instance, robo::Motor)
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_reversed_type(instance):
-    assert isinstance(instance.reversed, bool)
-
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_reversed_setter(instance):
-    original = instance.reversed
-    instance.reversed = original
-    assert instance.reversed == original
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_speed_type(instance):
-    assert isinstance(instance.speed, float)
-
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_speed_setter(instance):
-    original = instance.speed
-    instance.speed = original
-    assert instance.speed == original
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=robo::Motor_strategy)
-def test_robo::motor_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=robo::Setup_strategy)
-@settings(max_examples=50)
-def test_robo::setup_instantiation(instance):
-    assert isinstance(instance, robo::Setup)
-
-@given(instance=robo::Program_strategy)
-@settings(max_examples=50)
-def test_robo::program_instantiation(instance):
-    assert isinstance(instance, robo::Program)
-
-@given(instance=robo::Program_strategy)
-def test_robo::program_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robo::Program_strategy)
-def test_robo::program_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robo::Robot_strategy)
-@settings(max_examples=50)
-def test_robo::robot_instantiation(instance):
-    assert isinstance(instance, robo::Robot)
-
-@given(instance=robo::Sensor_strategy)
-@settings(max_examples=50)
-def test_robo::sensor_instantiation(instance):
-    assert isinstance(instance, robo::Sensor)
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_mode_type(instance):
-    assert isinstance(instance.mode, str)
-
-
-@given(instance=robo::Sensor_strategy)
-def test_robo::sensor_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
-
-@given(instance=robo::condition::Condition_strategy)
-@settings(max_examples=50)
-def test_robo::condition::condition_instantiation(instance):
-    assert isinstance(instance, robo::condition::Condition)
+def test_robo_condition_condition_instantiation(instance):
+    assert isinstance(instance, robo_condition_Condition)
 
 import warnings
 import copy
@@ -848,9 +698,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robo::condition::Condition_strategy)
+@given(instance=robo_condition_Condition_strategy)
 @settings(max_examples=30)
-def test_robo::condition::condition_evaluate_changes_state(instance):
+def test_robo_condition_condition_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -862,19 +712,19 @@ def test_robo::condition::condition_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in robo::condition::Condition is empty"
+        assert has_statements, f"Function 'evaluate' in robo_condition_Condition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in robo::condition::Condition did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in robo_condition_Condition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in robo::condition::Condition is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in robo_condition_Condition is not implemented or raised an error")
 
-@given(instance=robo::expression::Expr_strategy)
+@given(instance=robo_expression_Expr_strategy)
 @settings(max_examples=50)
-def test_robo::expression::expr_instantiation(instance):
-    assert isinstance(instance, robo::expression::Expr)
+def test_robo_expression_expr_instantiation(instance):
+    assert isinstance(instance, robo_expression_Expr)
 
 import warnings
 import copy
@@ -882,9 +732,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robo::expression::Expr_strategy)
+@given(instance=robo_expression_Expr_strategy)
 @settings(max_examples=30)
-def test_robo::expression::expr_evaluate_changes_state(instance):
+def test_robo_expression_expr_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -896,58 +746,29 @@ def test_robo::expression::expr_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in robo::expression::Expr is empty"
+        assert has_statements, f"Function 'evaluate' in robo_expression_Expr is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in robo::expression::Expr did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in robo_expression_Expr did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in robo::expression::Expr is not implemented or raised an error")
-
-@given(instance=robo::command::Assignment_strategy)
-@settings(max_examples=50)
-def test_robo::command::assignment_instantiation(instance):
-    assert isinstance(instance, robo::command::Assignment)
-
-@given(instance=robo::command::Assignment_strategy)
-def test_robo::command::assignment_variable_type(instance):
-    assert isinstance(instance.variable, str)
-
-
-@given(instance=robo::command::Assignment_strategy)
-def test_robo::command::assignment_variable_setter(instance):
-    original = instance.variable
-    instance.variable = original
-    assert instance.variable == original
-
-@given(instance=robo::command::Branch_strategy)
-@settings(max_examples=50)
-def test_robo::command::branch_instantiation(instance):
-    assert isinstance(instance, robo::command::Branch)
-
-@given(instance=robo::command::Loop_strategy)
-@settings(max_examples=50)
-def test_robo::command::loop_instantiation(instance):
-    assert isinstance(instance, robo::command::Loop)
+        warnings.warn(f"Operation 'evaluate' in robo_expression_Expr is not implemented or raised an error")
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=robo::condition::Comparison_strategy)
+@given(instance=robo_condition_Comparison_strategy)
 @settings(max_examples=50)
-def test_robo::condition::comparison_instantiation(instance):
-    assert isinstance(instance, robo::condition::Comparison)
-
-@given(instance=robo::condition::Comparison_strategy)
-def test_robo::condition::comparison_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_robo_condition_comparison_instantiation(instance):
+    assert isinstance(instance, robo_condition_Comparison)
 
 
-@given(instance=robo::condition::Comparison_strategy)
-def test_robo::condition::comparison_operator_setter(instance):
+
+@given(instance=robo_condition_Comparison_strategy)
+def test_robo_condition_comparison_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -957,50 +778,184 @@ def test_robo::condition::comparison_operator_setter(instance):
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=robo::expression::Operation_strategy)
+@given(instance=robo_expression_Operation_strategy)
 @settings(max_examples=50)
-def test_robo::expression::operation_instantiation(instance):
-    assert isinstance(instance, robo::expression::Operation)
-
-@given(instance=robo::expression::Operation_strategy)
-def test_robo::expression::operation_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_robo_expression_operation_instantiation(instance):
+    assert isinstance(instance, robo_expression_Operation)
 
 
-@given(instance=robo::expression::Operation_strategy)
-def test_robo::expression::operation_operator_setter(instance):
+
+@given(instance=robo_expression_Operation_strategy)
+def test_robo_expression_operation_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=robo::expression::Literal_strategy)
+@given(instance=robo_expression_Literal_strategy)
 @settings(max_examples=50)
-def test_robo::expression::literal_instantiation(instance):
-    assert isinstance(instance, robo::expression::Literal)
-
-@given(instance=robo::expression::Literal_strategy)
-def test_robo::expression::literal_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_robo_expression_literal_instantiation(instance):
+    assert isinstance(instance, robo_expression_Literal)
 
 
-@given(instance=robo::expression::Literal_strategy)
-def test_robo::expression::literal_value_setter(instance):
+
+@given(instance=robo_expression_Literal_strategy)
+def test_robo_expression_literal_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=robo::expression::Variable_strategy)
+@given(instance=robo_expression_Variable_strategy)
 @settings(max_examples=50)
-def test_robo::expression::variable_instantiation(instance):
-    assert isinstance(instance, robo::expression::Variable)
-
-@given(instance=robo::expression::Variable_strategy)
-def test_robo::expression::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_robo_expression_variable_instantiation(instance):
+    assert isinstance(instance, robo_expression_Variable)
 
 
-@given(instance=robo::expression::Variable_strategy)
-def test_robo::expression::variable_name_setter(instance):
+
+@given(instance=robo_expression_Variable_strategy)
+def test_robo_expression_variable_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Command_strategy)
+@settings(max_examples=50)
+def test_command_instantiation(instance):
+    assert isinstance(instance, Command)
+
+@given(instance=robo_command_Loop_strategy)
+@settings(max_examples=50)
+def test_robo_command_loop_instantiation(instance):
+    assert isinstance(instance, robo_command_Loop)
+
+@given(instance=robo_command_Assignment_strategy)
+@settings(max_examples=50)
+def test_robo_command_assignment_instantiation(instance):
+    assert isinstance(instance, robo_command_Assignment)
+
+
+
+@given(instance=robo_command_Assignment_strategy)
+def test_robo_command_assignment_variable_setter(instance):
+    original = instance.variable
+    instance.variable = original
+    assert instance.variable == original
+
+@given(instance=robo_command_Branch_strategy)
+@settings(max_examples=50)
+def test_robo_command_branch_instantiation(instance):
+    assert isinstance(instance, robo_command_Branch)
+
+@given(instance=robo_command_Drive_strategy)
+@settings(max_examples=50)
+def test_robo_command_drive_instantiation(instance):
+    assert isinstance(instance, robo_command_Drive)
+
+
+
+@given(instance=robo_command_Drive_strategy)
+def test_robo_command_drive_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=robo_command_Command_strategy)
+@settings(max_examples=50)
+def test_robo_command_command_instantiation(instance):
+    assert isinstance(instance, robo_command_Command)
+
+@given(instance=robo_Motor_strategy)
+@settings(max_examples=50)
+def test_robo_motor_instantiation(instance):
+    assert isinstance(instance, robo_Motor)
+
+
+
+@given(instance=robo_Motor_strategy)
+def test_robo_motor_reversed_setter(instance):
+    original = instance.reversed
+    instance.reversed = original
+    assert instance.reversed == original
+
+
+
+@given(instance=robo_Motor_strategy)
+def test_robo_motor_speed_setter(instance):
+    original = instance.speed
+    instance.speed = original
+    assert instance.speed == original
+
+
+
+@given(instance=robo_Motor_strategy)
+def test_robo_motor_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+
+
+@given(instance=robo_Motor_strategy)
+def test_robo_motor_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=robo_Setup_strategy)
+@settings(max_examples=50)
+def test_robo_setup_instantiation(instance):
+    assert isinstance(instance, robo_Setup)
+
+@given(instance=robo_Program_strategy)
+@settings(max_examples=50)
+def test_robo_program_instantiation(instance):
+    assert isinstance(instance, robo_Program)
+
+
+
+@given(instance=robo_Program_strategy)
+def test_robo_program_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robo_Robot_strategy)
+@settings(max_examples=50)
+def test_robo_robot_instantiation(instance):
+    assert isinstance(instance, robo_Robot)
+
+@given(instance=robo_Sensor_strategy)
+@settings(max_examples=50)
+def test_robo_sensor_instantiation(instance):
+    assert isinstance(instance, robo_Sensor)
+
+
+
+@given(instance=robo_Sensor_strategy)
+def test_robo_sensor_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=robo_Sensor_strategy)
+def test_robo_sensor_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+
+
+@given(instance=robo_Sensor_strategy)
+def test_robo_sensor_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+
+
+@given(instance=robo_Sensor_strategy)
+def test_robo_sensor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

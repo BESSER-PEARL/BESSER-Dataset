@@ -3,44 +3,44 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     MultiplyDivide,
-    mathinterpreter::Divide,
-    mathinterpreter::Multiply,
+    mathinterpreter_Divide,
+    mathinterpreter_Multiply,
     PlusMinus,
-    mathinterpreter::Minus,
-    mathinterpreter::Plus,
+    mathinterpreter_Minus,
+    mathinterpreter_Plus,
     PowExpression,
-    mathinterpreter::MultiplyDivide,
-    mathinterpreter::PlusMinus,
-    mathinterpreter::Power,
+    mathinterpreter_MultiplyDivide,
+    mathinterpreter_PlusMinus,
+    mathinterpreter_Power,
     MDExpression,
-    mathinterpreter::PowExpression,
+    mathinterpreter_PowExpression,
     PMExpression,
-    mathinterpreter::MDExpression,
-    mathinterpreter::EObject,
-    mathinterpreter::Primary,
+    mathinterpreter_MDExpression,
+    mathinterpreter_EObject,
+    mathinterpreter_Primary,
     Primary,
-    mathinterpreter::VariableName,
-    mathinterpreter::External,
-    mathinterpreter::Variable,
+    mathinterpreter_VariableName,
+    mathinterpreter_External,
+    mathinterpreter_Variable,
     DefParenthesis,
     MathExpression,
-    mathinterpreter::DefineExpr,
-    mathinterpreter::Function,
+    mathinterpreter_DefineExpr,
+    mathinterpreter_Function,
     Power,
-    mathinterpreter::Pow,
-    mathinterpreter::DefParenthesis,
-    mathinterpreter::PMParenthesis,
+    mathinterpreter_Pow,
+    mathinterpreter_DefParenthesis,
+    mathinterpreter_PMParenthesis,
     Number,
-    mathinterpreter::Negative,
-    mathinterpreter::Positive,
-    mathinterpreter::Number,
-    mathinterpreter::PMExpression,
-    mathinterpreter::MathExpression,
-    mathinterpreter::Model,
+    mathinterpreter_Negative,
+    mathinterpreter_Positive,
+    mathinterpreter_Number,
+    mathinterpreter_PMExpression,
+    mathinterpreter_MathExpression,
+    mathinterpreter_Model,
 )
 
 # =============================================================================
@@ -63,30 +63,30 @@ def test_multiplydivide_constructor_args():
 
 
 
-def test_mathinterpreter::divide_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Divide)
+def test_mathinterpreter_divide_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Divide)
 
 
-def test_mathinterpreter::divide_constructor_exists():
-    assert callable(mathinterpreter::Divide.__init__)
+def test_mathinterpreter_divide_constructor_exists():
+    assert callable(mathinterpreter_Divide.__init__)
 
 
-def test_mathinterpreter::divide_constructor_args():
-    sig = inspect.signature(mathinterpreter::Divide.__init__)
+def test_mathinterpreter_divide_constructor_args():
+    sig = inspect.signature(mathinterpreter_Divide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::multiply_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Multiply)
+def test_mathinterpreter_multiply_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Multiply)
 
 
-def test_mathinterpreter::multiply_constructor_exists():
-    assert callable(mathinterpreter::Multiply.__init__)
+def test_mathinterpreter_multiply_constructor_exists():
+    assert callable(mathinterpreter_Multiply.__init__)
 
 
-def test_mathinterpreter::multiply_constructor_args():
-    sig = inspect.signature(mathinterpreter::Multiply.__init__)
+def test_mathinterpreter_multiply_constructor_args():
+    sig = inspect.signature(mathinterpreter_Multiply.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,30 +105,30 @@ def test_plusminus_constructor_args():
 
 
 
-def test_mathinterpreter::minus_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Minus)
+def test_mathinterpreter_minus_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Minus)
 
 
-def test_mathinterpreter::minus_constructor_exists():
-    assert callable(mathinterpreter::Minus.__init__)
+def test_mathinterpreter_minus_constructor_exists():
+    assert callable(mathinterpreter_Minus.__init__)
 
 
-def test_mathinterpreter::minus_constructor_args():
-    sig = inspect.signature(mathinterpreter::Minus.__init__)
+def test_mathinterpreter_minus_constructor_args():
+    sig = inspect.signature(mathinterpreter_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::plus_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Plus)
+def test_mathinterpreter_plus_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Plus)
 
 
-def test_mathinterpreter::plus_constructor_exists():
-    assert callable(mathinterpreter::Plus.__init__)
+def test_mathinterpreter_plus_constructor_exists():
+    assert callable(mathinterpreter_Plus.__init__)
 
 
-def test_mathinterpreter::plus_constructor_args():
-    sig = inspect.signature(mathinterpreter::Plus.__init__)
+def test_mathinterpreter_plus_constructor_args():
+    sig = inspect.signature(mathinterpreter_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,44 +147,44 @@ def test_powexpression_constructor_args():
 
 
 
-def test_mathinterpreter::multiplydivide_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::MultiplyDivide)
+def test_mathinterpreter_multiplydivide_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_MultiplyDivide)
 
 
-def test_mathinterpreter::multiplydivide_constructor_exists():
-    assert callable(mathinterpreter::MultiplyDivide.__init__)
+def test_mathinterpreter_multiplydivide_constructor_exists():
+    assert callable(mathinterpreter_MultiplyDivide.__init__)
 
 
-def test_mathinterpreter::multiplydivide_constructor_args():
-    sig = inspect.signature(mathinterpreter::MultiplyDivide.__init__)
+def test_mathinterpreter_multiplydivide_constructor_args():
+    sig = inspect.signature(mathinterpreter_MultiplyDivide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::plusminus_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::PlusMinus)
+def test_mathinterpreter_plusminus_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_PlusMinus)
 
 
-def test_mathinterpreter::plusminus_constructor_exists():
-    assert callable(mathinterpreter::PlusMinus.__init__)
+def test_mathinterpreter_plusminus_constructor_exists():
+    assert callable(mathinterpreter_PlusMinus.__init__)
 
 
-def test_mathinterpreter::plusminus_constructor_args():
-    sig = inspect.signature(mathinterpreter::PlusMinus.__init__)
+def test_mathinterpreter_plusminus_constructor_args():
+    sig = inspect.signature(mathinterpreter_PlusMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::power_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Power)
+def test_mathinterpreter_power_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Power)
 
 
-def test_mathinterpreter::power_constructor_exists():
-    assert callable(mathinterpreter::Power.__init__)
+def test_mathinterpreter_power_constructor_exists():
+    assert callable(mathinterpreter_Power.__init__)
 
 
-def test_mathinterpreter::power_constructor_args():
-    sig = inspect.signature(mathinterpreter::Power.__init__)
+def test_mathinterpreter_power_constructor_args():
+    sig = inspect.signature(mathinterpreter_Power.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -203,16 +203,16 @@ def test_mdexpression_constructor_args():
 
 
 
-def test_mathinterpreter::powexpression_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::PowExpression)
+def test_mathinterpreter_powexpression_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_PowExpression)
 
 
-def test_mathinterpreter::powexpression_constructor_exists():
-    assert callable(mathinterpreter::PowExpression.__init__)
+def test_mathinterpreter_powexpression_constructor_exists():
+    assert callable(mathinterpreter_PowExpression.__init__)
 
 
-def test_mathinterpreter::powexpression_constructor_args():
-    sig = inspect.signature(mathinterpreter::PowExpression.__init__)
+def test_mathinterpreter_powexpression_constructor_args():
+    sig = inspect.signature(mathinterpreter_PowExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -231,44 +231,44 @@ def test_pmexpression_constructor_args():
 
 
 
-def test_mathinterpreter::mdexpression_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::MDExpression)
+def test_mathinterpreter_mdexpression_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_MDExpression)
 
 
-def test_mathinterpreter::mdexpression_constructor_exists():
-    assert callable(mathinterpreter::MDExpression.__init__)
+def test_mathinterpreter_mdexpression_constructor_exists():
+    assert callable(mathinterpreter_MDExpression.__init__)
 
 
-def test_mathinterpreter::mdexpression_constructor_args():
-    sig = inspect.signature(mathinterpreter::MDExpression.__init__)
+def test_mathinterpreter_mdexpression_constructor_args():
+    sig = inspect.signature(mathinterpreter_MDExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::eobject_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::EObject)
+def test_mathinterpreter_eobject_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_EObject)
 
 
-def test_mathinterpreter::eobject_constructor_exists():
-    assert callable(mathinterpreter::EObject.__init__)
+def test_mathinterpreter_eobject_constructor_exists():
+    assert callable(mathinterpreter_EObject.__init__)
 
 
-def test_mathinterpreter::eobject_constructor_args():
-    sig = inspect.signature(mathinterpreter::EObject.__init__)
+def test_mathinterpreter_eobject_constructor_args():
+    sig = inspect.signature(mathinterpreter_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::primary_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Primary)
+def test_mathinterpreter_primary_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Primary)
 
 
-def test_mathinterpreter::primary_constructor_exists():
-    assert callable(mathinterpreter::Primary.__init__)
+def test_mathinterpreter_primary_constructor_exists():
+    assert callable(mathinterpreter_Primary.__init__)
 
 
-def test_mathinterpreter::primary_constructor_args():
-    sig = inspect.signature(mathinterpreter::Primary.__init__)
+def test_mathinterpreter_primary_constructor_args():
+    sig = inspect.signature(mathinterpreter_Primary.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -287,23 +287,23 @@ def test_primary_constructor_args():
 
 
 
-def test_mathinterpreter::variablename_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::VariableName)
+def test_mathinterpreter_variablename_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_VariableName)
 
 
-def test_mathinterpreter::variablename_constructor_exists():
-    assert callable(mathinterpreter::VariableName.__init__)
+def test_mathinterpreter_variablename_constructor_exists():
+    assert callable(mathinterpreter_VariableName.__init__)
 
 
-def test_mathinterpreter::variablename_constructor_args():
-    sig = inspect.signature(mathinterpreter::VariableName.__init__)
+def test_mathinterpreter_variablename_constructor_args():
+    sig = inspect.signature(mathinterpreter_VariableName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mathinterpreter::variablename_has_name():
-    assert hasattr(mathinterpreter::VariableName, "name")
+def test_mathinterpreter_variablename_has_name():
+    assert hasattr(mathinterpreter_VariableName, "name")
     descriptor = None
-    for klass in mathinterpreter::VariableName.__mro__:
+    for klass in mathinterpreter_VariableName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -311,23 +311,23 @@ def test_mathinterpreter::variablename_has_name():
 
 
 
-def test_mathinterpreter::external_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::External)
+def test_mathinterpreter_external_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_External)
 
 
-def test_mathinterpreter::external_constructor_exists():
-    assert callable(mathinterpreter::External.__init__)
+def test_mathinterpreter_external_constructor_exists():
+    assert callable(mathinterpreter_External.__init__)
 
 
-def test_mathinterpreter::external_constructor_args():
-    sig = inspect.signature(mathinterpreter::External.__init__)
+def test_mathinterpreter_external_constructor_args():
+    sig = inspect.signature(mathinterpreter_External.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mathinterpreter::external_has_name():
-    assert hasattr(mathinterpreter::External, "name")
+def test_mathinterpreter_external_has_name():
+    assert hasattr(mathinterpreter_External, "name")
     descriptor = None
-    for klass in mathinterpreter::External.__mro__:
+    for klass in mathinterpreter_External.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -335,23 +335,23 @@ def test_mathinterpreter::external_has_name():
 
 
 
-def test_mathinterpreter::variable_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Variable)
+def test_mathinterpreter_variable_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Variable)
 
 
-def test_mathinterpreter::variable_constructor_exists():
-    assert callable(mathinterpreter::Variable.__init__)
+def test_mathinterpreter_variable_constructor_exists():
+    assert callable(mathinterpreter_Variable.__init__)
 
 
-def test_mathinterpreter::variable_constructor_args():
-    sig = inspect.signature(mathinterpreter::Variable.__init__)
+def test_mathinterpreter_variable_constructor_args():
+    sig = inspect.signature(mathinterpreter_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mathinterpreter::variable_has_name():
-    assert hasattr(mathinterpreter::Variable, "name")
+def test_mathinterpreter_variable_has_name():
+    assert hasattr(mathinterpreter_Variable, "name")
     descriptor = None
-    for klass in mathinterpreter::Variable.__mro__:
+    for klass in mathinterpreter_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -387,30 +387,30 @@ def test_mathexpression_constructor_args():
 
 
 
-def test_mathinterpreter::defineexpr_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::DefineExpr)
+def test_mathinterpreter_defineexpr_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_DefineExpr)
 
 
-def test_mathinterpreter::defineexpr_constructor_exists():
-    assert callable(mathinterpreter::DefineExpr.__init__)
+def test_mathinterpreter_defineexpr_constructor_exists():
+    assert callable(mathinterpreter_DefineExpr.__init__)
 
 
-def test_mathinterpreter::defineexpr_constructor_args():
-    sig = inspect.signature(mathinterpreter::DefineExpr.__init__)
+def test_mathinterpreter_defineexpr_constructor_args():
+    sig = inspect.signature(mathinterpreter_DefineExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::function_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Function)
+def test_mathinterpreter_function_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Function)
 
 
-def test_mathinterpreter::function_constructor_exists():
-    assert callable(mathinterpreter::Function.__init__)
+def test_mathinterpreter_function_constructor_exists():
+    assert callable(mathinterpreter_Function.__init__)
 
 
-def test_mathinterpreter::function_constructor_args():
-    sig = inspect.signature(mathinterpreter::Function.__init__)
+def test_mathinterpreter_function_constructor_args():
+    sig = inspect.signature(mathinterpreter_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -429,44 +429,44 @@ def test_power_constructor_args():
 
 
 
-def test_mathinterpreter::pow_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Pow)
+def test_mathinterpreter_pow_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Pow)
 
 
-def test_mathinterpreter::pow_constructor_exists():
-    assert callable(mathinterpreter::Pow.__init__)
+def test_mathinterpreter_pow_constructor_exists():
+    assert callable(mathinterpreter_Pow.__init__)
 
 
-def test_mathinterpreter::pow_constructor_args():
-    sig = inspect.signature(mathinterpreter::Pow.__init__)
+def test_mathinterpreter_pow_constructor_args():
+    sig = inspect.signature(mathinterpreter_Pow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::defparenthesis_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::DefParenthesis)
+def test_mathinterpreter_defparenthesis_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_DefParenthesis)
 
 
-def test_mathinterpreter::defparenthesis_constructor_exists():
-    assert callable(mathinterpreter::DefParenthesis.__init__)
+def test_mathinterpreter_defparenthesis_constructor_exists():
+    assert callable(mathinterpreter_DefParenthesis.__init__)
 
 
-def test_mathinterpreter::defparenthesis_constructor_args():
-    sig = inspect.signature(mathinterpreter::DefParenthesis.__init__)
+def test_mathinterpreter_defparenthesis_constructor_args():
+    sig = inspect.signature(mathinterpreter_DefParenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::pmparenthesis_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::PMParenthesis)
+def test_mathinterpreter_pmparenthesis_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_PMParenthesis)
 
 
-def test_mathinterpreter::pmparenthesis_constructor_exists():
-    assert callable(mathinterpreter::PMParenthesis.__init__)
+def test_mathinterpreter_pmparenthesis_constructor_exists():
+    assert callable(mathinterpreter_PMParenthesis.__init__)
 
 
-def test_mathinterpreter::pmparenthesis_constructor_args():
-    sig = inspect.signature(mathinterpreter::PMParenthesis.__init__)
+def test_mathinterpreter_pmparenthesis_constructor_args():
+    sig = inspect.signature(mathinterpreter_PMParenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -485,51 +485,51 @@ def test_number_constructor_args():
 
 
 
-def test_mathinterpreter::negative_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Negative)
+def test_mathinterpreter_negative_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Negative)
 
 
-def test_mathinterpreter::negative_constructor_exists():
-    assert callable(mathinterpreter::Negative.__init__)
+def test_mathinterpreter_negative_constructor_exists():
+    assert callable(mathinterpreter_Negative.__init__)
 
 
-def test_mathinterpreter::negative_constructor_args():
-    sig = inspect.signature(mathinterpreter::Negative.__init__)
+def test_mathinterpreter_negative_constructor_args():
+    sig = inspect.signature(mathinterpreter_Negative.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::positive_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Positive)
+def test_mathinterpreter_positive_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Positive)
 
 
-def test_mathinterpreter::positive_constructor_exists():
-    assert callable(mathinterpreter::Positive.__init__)
+def test_mathinterpreter_positive_constructor_exists():
+    assert callable(mathinterpreter_Positive.__init__)
 
 
-def test_mathinterpreter::positive_constructor_args():
-    sig = inspect.signature(mathinterpreter::Positive.__init__)
+def test_mathinterpreter_positive_constructor_args():
+    sig = inspect.signature(mathinterpreter_Positive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::number_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Number)
+def test_mathinterpreter_number_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Number)
 
 
-def test_mathinterpreter::number_constructor_exists():
-    assert callable(mathinterpreter::Number.__init__)
+def test_mathinterpreter_number_constructor_exists():
+    assert callable(mathinterpreter_Number.__init__)
 
 
-def test_mathinterpreter::number_constructor_args():
-    sig = inspect.signature(mathinterpreter::Number.__init__)
+def test_mathinterpreter_number_constructor_args():
+    sig = inspect.signature(mathinterpreter_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mathinterpreter::number_has_value():
-    assert hasattr(mathinterpreter::Number, "value")
+def test_mathinterpreter_number_has_value():
+    assert hasattr(mathinterpreter_Number, "value")
     descriptor = None
-    for klass in mathinterpreter::Number.__mro__:
+    for klass in mathinterpreter_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -537,37 +537,37 @@ def test_mathinterpreter::number_has_value():
 
 
 
-def test_mathinterpreter::pmexpression_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::PMExpression)
+def test_mathinterpreter_pmexpression_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_PMExpression)
 
 
-def test_mathinterpreter::pmexpression_constructor_exists():
-    assert callable(mathinterpreter::PMExpression.__init__)
+def test_mathinterpreter_pmexpression_constructor_exists():
+    assert callable(mathinterpreter_PMExpression.__init__)
 
 
-def test_mathinterpreter::pmexpression_constructor_args():
-    sig = inspect.signature(mathinterpreter::PMExpression.__init__)
+def test_mathinterpreter_pmexpression_constructor_args():
+    sig = inspect.signature(mathinterpreter_PMExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::mathexpression_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::MathExpression)
+def test_mathinterpreter_mathexpression_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_MathExpression)
 
 
-def test_mathinterpreter::mathexpression_constructor_exists():
-    assert callable(mathinterpreter::MathExpression.__init__)
+def test_mathinterpreter_mathexpression_constructor_exists():
+    assert callable(mathinterpreter_MathExpression.__init__)
 
 
-def test_mathinterpreter::mathexpression_constructor_args():
-    sig = inspect.signature(mathinterpreter::MathExpression.__init__)
+def test_mathinterpreter_mathexpression_constructor_args():
+    sig = inspect.signature(mathinterpreter_MathExpression.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_mathinterpreter::mathexpression_has_description():
-    assert hasattr(mathinterpreter::MathExpression, "description")
+def test_mathinterpreter_mathexpression_has_description():
+    assert hasattr(mathinterpreter_MathExpression, "description")
     descriptor = None
-    for klass in mathinterpreter::MathExpression.__mro__:
+    for klass in mathinterpreter_MathExpression.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -575,16 +575,16 @@ def test_mathinterpreter::mathexpression_has_description():
 
 
 
-def test_mathinterpreter::model_is_not_abstract():
-    assert not inspect.isabstract(mathinterpreter::Model)
+def test_mathinterpreter_model_is_not_abstract():
+    assert not inspect.isabstract(mathinterpreter_Model)
 
 
-def test_mathinterpreter::model_constructor_exists():
-    assert callable(mathinterpreter::Model.__init__)
+def test_mathinterpreter_model_constructor_exists():
+    assert callable(mathinterpreter_Model.__init__)
 
 
-def test_mathinterpreter::model_constructor_args():
-    sig = inspect.signature(mathinterpreter::Model.__init__)
+def test_mathinterpreter_model_constructor_args():
+    sig = inspect.signature(mathinterpreter_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -602,66 +602,66 @@ safe_text = st.text(
 MultiplyDivide_strategy = st.builds(
     MultiplyDivide,
 )
-mathinterpreter::Divide_strategy = st.builds(
-    mathinterpreter::Divide,
+mathinterpreter_Divide_strategy = st.builds(
+    mathinterpreter_Divide,
 )
-mathinterpreter::Multiply_strategy = st.builds(
-    mathinterpreter::Multiply,
+mathinterpreter_Multiply_strategy = st.builds(
+    mathinterpreter_Multiply,
 )
 PlusMinus_strategy = st.builds(
     PlusMinus,
 )
-mathinterpreter::Minus_strategy = st.builds(
-    mathinterpreter::Minus,
+mathinterpreter_Minus_strategy = st.builds(
+    mathinterpreter_Minus,
 )
-mathinterpreter::Plus_strategy = st.builds(
-    mathinterpreter::Plus,
+mathinterpreter_Plus_strategy = st.builds(
+    mathinterpreter_Plus,
 )
 PowExpression_strategy = st.builds(
     PowExpression,
 )
-mathinterpreter::MultiplyDivide_strategy = st.builds(
-    mathinterpreter::MultiplyDivide,
+mathinterpreter_MultiplyDivide_strategy = st.builds(
+    mathinterpreter_MultiplyDivide,
 )
-mathinterpreter::PlusMinus_strategy = st.builds(
-    mathinterpreter::PlusMinus,
+mathinterpreter_PlusMinus_strategy = st.builds(
+    mathinterpreter_PlusMinus,
 )
-mathinterpreter::Power_strategy = st.builds(
-    mathinterpreter::Power,
+mathinterpreter_Power_strategy = st.builds(
+    mathinterpreter_Power,
 )
 MDExpression_strategy = st.builds(
     MDExpression,
 )
-mathinterpreter::PowExpression_strategy = st.builds(
-    mathinterpreter::PowExpression,
+mathinterpreter_PowExpression_strategy = st.builds(
+    mathinterpreter_PowExpression,
 )
 PMExpression_strategy = st.builds(
     PMExpression,
 )
-mathinterpreter::MDExpression_strategy = st.builds(
-    mathinterpreter::MDExpression,
+mathinterpreter_MDExpression_strategy = st.builds(
+    mathinterpreter_MDExpression,
 )
-mathinterpreter::EObject_strategy = st.builds(
-    mathinterpreter::EObject,
+mathinterpreter_EObject_strategy = st.builds(
+    mathinterpreter_EObject,
 )
-mathinterpreter::Primary_strategy = st.builds(
-    mathinterpreter::Primary,
+mathinterpreter_Primary_strategy = st.builds(
+    mathinterpreter_Primary,
 )
 Primary_strategy = st.builds(
     Primary,
 )
-mathinterpreter::VariableName_strategy = st.builds(
-    mathinterpreter::VariableName,
+mathinterpreter_VariableName_strategy = st.builds(
+    mathinterpreter_VariableName,
     name=
         safe_text
 )
-mathinterpreter::External_strategy = st.builds(
-    mathinterpreter::External,
+mathinterpreter_External_strategy = st.builds(
+    mathinterpreter_External,
     name=
         safe_text
 )
-mathinterpreter::Variable_strategy = st.builds(
-    mathinterpreter::Variable,
+mathinterpreter_Variable_strategy = st.builds(
+    mathinterpreter_Variable,
     name=
         safe_text
 )
@@ -671,48 +671,48 @@ DefParenthesis_strategy = st.builds(
 MathExpression_strategy = st.builds(
     MathExpression,
 )
-mathinterpreter::DefineExpr_strategy = st.builds(
-    mathinterpreter::DefineExpr,
+mathinterpreter_DefineExpr_strategy = st.builds(
+    mathinterpreter_DefineExpr,
 )
-mathinterpreter::Function_strategy = st.builds(
-    mathinterpreter::Function,
+mathinterpreter_Function_strategy = st.builds(
+    mathinterpreter_Function,
 )
 Power_strategy = st.builds(
     Power,
 )
-mathinterpreter::Pow_strategy = st.builds(
-    mathinterpreter::Pow,
+mathinterpreter_Pow_strategy = st.builds(
+    mathinterpreter_Pow,
 )
-mathinterpreter::DefParenthesis_strategy = st.builds(
-    mathinterpreter::DefParenthesis,
+mathinterpreter_DefParenthesis_strategy = st.builds(
+    mathinterpreter_DefParenthesis,
 )
-mathinterpreter::PMParenthesis_strategy = st.builds(
-    mathinterpreter::PMParenthesis,
+mathinterpreter_PMParenthesis_strategy = st.builds(
+    mathinterpreter_PMParenthesis,
 )
 Number_strategy = st.builds(
     Number,
 )
-mathinterpreter::Negative_strategy = st.builds(
-    mathinterpreter::Negative,
+mathinterpreter_Negative_strategy = st.builds(
+    mathinterpreter_Negative,
 )
-mathinterpreter::Positive_strategy = st.builds(
-    mathinterpreter::Positive,
+mathinterpreter_Positive_strategy = st.builds(
+    mathinterpreter_Positive,
 )
-mathinterpreter::Number_strategy = st.builds(
-    mathinterpreter::Number,
+mathinterpreter_Number_strategy = st.builds(
+    mathinterpreter_Number,
     value=
         st.integers()
 )
-mathinterpreter::PMExpression_strategy = st.builds(
-    mathinterpreter::PMExpression,
+mathinterpreter_PMExpression_strategy = st.builds(
+    mathinterpreter_PMExpression,
 )
-mathinterpreter::MathExpression_strategy = st.builds(
-    mathinterpreter::MathExpression,
+mathinterpreter_MathExpression_strategy = st.builds(
+    mathinterpreter_MathExpression,
     description=
         safe_text
 )
-mathinterpreter::Model_strategy = st.builds(
-    mathinterpreter::Model,
+mathinterpreter_Model_strategy = st.builds(
+    mathinterpreter_Model,
 )
 
 @given(instance=MultiplyDivide_strategy)
@@ -720,130 +720,121 @@ mathinterpreter::Model_strategy = st.builds(
 def test_multiplydivide_instantiation(instance):
     assert isinstance(instance, MultiplyDivide)
 
-@given(instance=mathinterpreter::Divide_strategy)
+@given(instance=mathinterpreter_Divide_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::divide_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Divide)
+def test_mathinterpreter_divide_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Divide)
 
-@given(instance=mathinterpreter::Multiply_strategy)
+@given(instance=mathinterpreter_Multiply_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::multiply_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Multiply)
+def test_mathinterpreter_multiply_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Multiply)
 
 @given(instance=PlusMinus_strategy)
 @settings(max_examples=50)
 def test_plusminus_instantiation(instance):
     assert isinstance(instance, PlusMinus)
 
-@given(instance=mathinterpreter::Minus_strategy)
+@given(instance=mathinterpreter_Minus_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::minus_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Minus)
+def test_mathinterpreter_minus_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Minus)
 
-@given(instance=mathinterpreter::Plus_strategy)
+@given(instance=mathinterpreter_Plus_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::plus_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Plus)
+def test_mathinterpreter_plus_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Plus)
 
 @given(instance=PowExpression_strategy)
 @settings(max_examples=50)
 def test_powexpression_instantiation(instance):
     assert isinstance(instance, PowExpression)
 
-@given(instance=mathinterpreter::MultiplyDivide_strategy)
+@given(instance=mathinterpreter_MultiplyDivide_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::multiplydivide_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::MultiplyDivide)
+def test_mathinterpreter_multiplydivide_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_MultiplyDivide)
 
-@given(instance=mathinterpreter::PlusMinus_strategy)
+@given(instance=mathinterpreter_PlusMinus_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::plusminus_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::PlusMinus)
+def test_mathinterpreter_plusminus_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_PlusMinus)
 
-@given(instance=mathinterpreter::Power_strategy)
+@given(instance=mathinterpreter_Power_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::power_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Power)
+def test_mathinterpreter_power_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Power)
 
 @given(instance=MDExpression_strategy)
 @settings(max_examples=50)
 def test_mdexpression_instantiation(instance):
     assert isinstance(instance, MDExpression)
 
-@given(instance=mathinterpreter::PowExpression_strategy)
+@given(instance=mathinterpreter_PowExpression_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::powexpression_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::PowExpression)
+def test_mathinterpreter_powexpression_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_PowExpression)
 
 @given(instance=PMExpression_strategy)
 @settings(max_examples=50)
 def test_pmexpression_instantiation(instance):
     assert isinstance(instance, PMExpression)
 
-@given(instance=mathinterpreter::MDExpression_strategy)
+@given(instance=mathinterpreter_MDExpression_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::mdexpression_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::MDExpression)
+def test_mathinterpreter_mdexpression_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_MDExpression)
 
-@given(instance=mathinterpreter::EObject_strategy)
+@given(instance=mathinterpreter_EObject_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::eobject_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::EObject)
+def test_mathinterpreter_eobject_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_EObject)
 
-@given(instance=mathinterpreter::Primary_strategy)
+@given(instance=mathinterpreter_Primary_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::primary_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Primary)
+def test_mathinterpreter_primary_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Primary)
 
 @given(instance=Primary_strategy)
 @settings(max_examples=50)
 def test_primary_instantiation(instance):
     assert isinstance(instance, Primary)
 
-@given(instance=mathinterpreter::VariableName_strategy)
+@given(instance=mathinterpreter_VariableName_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::variablename_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::VariableName)
-
-@given(instance=mathinterpreter::VariableName_strategy)
-def test_mathinterpreter::variablename_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mathinterpreter_variablename_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_VariableName)
 
 
-@given(instance=mathinterpreter::VariableName_strategy)
-def test_mathinterpreter::variablename_name_setter(instance):
+
+@given(instance=mathinterpreter_VariableName_strategy)
+def test_mathinterpreter_variablename_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mathinterpreter::External_strategy)
+@given(instance=mathinterpreter_External_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::external_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::External)
-
-@given(instance=mathinterpreter::External_strategy)
-def test_mathinterpreter::external_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mathinterpreter_external_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_External)
 
 
-@given(instance=mathinterpreter::External_strategy)
-def test_mathinterpreter::external_name_setter(instance):
+
+@given(instance=mathinterpreter_External_strategy)
+def test_mathinterpreter_external_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mathinterpreter::Variable_strategy)
+@given(instance=mathinterpreter_Variable_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::variable_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Variable)
-
-@given(instance=mathinterpreter::Variable_strategy)
-def test_mathinterpreter::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mathinterpreter_variable_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Variable)
 
 
-@given(instance=mathinterpreter::Variable_strategy)
-def test_mathinterpreter::variable_name_setter(instance):
+
+@given(instance=mathinterpreter_Variable_strategy)
+def test_mathinterpreter_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -858,89 +849,83 @@ def test_defparenthesis_instantiation(instance):
 def test_mathexpression_instantiation(instance):
     assert isinstance(instance, MathExpression)
 
-@given(instance=mathinterpreter::DefineExpr_strategy)
+@given(instance=mathinterpreter_DefineExpr_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::defineexpr_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::DefineExpr)
+def test_mathinterpreter_defineexpr_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_DefineExpr)
 
-@given(instance=mathinterpreter::Function_strategy)
+@given(instance=mathinterpreter_Function_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::function_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Function)
+def test_mathinterpreter_function_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Function)
 
 @given(instance=Power_strategy)
 @settings(max_examples=50)
 def test_power_instantiation(instance):
     assert isinstance(instance, Power)
 
-@given(instance=mathinterpreter::Pow_strategy)
+@given(instance=mathinterpreter_Pow_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::pow_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Pow)
+def test_mathinterpreter_pow_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Pow)
 
-@given(instance=mathinterpreter::DefParenthesis_strategy)
+@given(instance=mathinterpreter_DefParenthesis_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::defparenthesis_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::DefParenthesis)
+def test_mathinterpreter_defparenthesis_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_DefParenthesis)
 
-@given(instance=mathinterpreter::PMParenthesis_strategy)
+@given(instance=mathinterpreter_PMParenthesis_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::pmparenthesis_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::PMParenthesis)
+def test_mathinterpreter_pmparenthesis_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_PMParenthesis)
 
 @given(instance=Number_strategy)
 @settings(max_examples=50)
 def test_number_instantiation(instance):
     assert isinstance(instance, Number)
 
-@given(instance=mathinterpreter::Negative_strategy)
+@given(instance=mathinterpreter_Negative_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::negative_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Negative)
+def test_mathinterpreter_negative_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Negative)
 
-@given(instance=mathinterpreter::Positive_strategy)
+@given(instance=mathinterpreter_Positive_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::positive_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Positive)
+def test_mathinterpreter_positive_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Positive)
 
-@given(instance=mathinterpreter::Number_strategy)
+@given(instance=mathinterpreter_Number_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::number_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Number)
-
-@given(instance=mathinterpreter::Number_strategy)
-def test_mathinterpreter::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_mathinterpreter_number_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Number)
 
 
-@given(instance=mathinterpreter::Number_strategy)
-def test_mathinterpreter::number_value_setter(instance):
+
+@given(instance=mathinterpreter_Number_strategy)
+def test_mathinterpreter_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mathinterpreter::PMExpression_strategy)
+@given(instance=mathinterpreter_PMExpression_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::pmexpression_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::PMExpression)
+def test_mathinterpreter_pmexpression_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_PMExpression)
 
-@given(instance=mathinterpreter::MathExpression_strategy)
+@given(instance=mathinterpreter_MathExpression_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::mathexpression_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::MathExpression)
-
-@given(instance=mathinterpreter::MathExpression_strategy)
-def test_mathinterpreter::mathexpression_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_mathinterpreter_mathexpression_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_MathExpression)
 
 
-@given(instance=mathinterpreter::MathExpression_strategy)
-def test_mathinterpreter::mathexpression_description_setter(instance):
+
+@given(instance=mathinterpreter_MathExpression_strategy)
+def test_mathinterpreter_mathexpression_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=mathinterpreter::Model_strategy)
+@given(instance=mathinterpreter_Model_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::model_instantiation(instance):
-    assert isinstance(instance, mathinterpreter::Model)
+def test_mathinterpreter_model_instantiation(instance):
+    assert isinstance(instance, mathinterpreter_Model)

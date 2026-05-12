@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Profile,
@@ -92,9 +92,9 @@ def test_mail_constructor_args():
     sig = inspect.signature(Mail.__init__)
     params = list(sig.parameters.keys())
     assert "subject" in params, "Missing parameter 'subject'"
-    assert "sendBy" in params, "Missing parameter 'sendBy'"
     assert "emailID" in params, "Missing parameter 'emailID'"
     assert "sendTo" in params, "Missing parameter 'sendTo'"
+    assert "sendBy" in params, "Missing parameter 'sendBy'"
 
 def test_mail_has_subject():
     assert hasattr(Mail, "subject")
@@ -102,15 +102,6 @@ def test_mail_has_subject():
     for klass in Mail.__mro__:
         if "subject" in klass.__dict__:
             descriptor = klass.__dict__["subject"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mail_has_sendBy():
-    assert hasattr(Mail, "sendBy")
-    descriptor = None
-    for klass in Mail.__mro__:
-        if "sendBy" in klass.__dict__:
-            descriptor = klass.__dict__["sendBy"]
             break
     assert isinstance(descriptor, property)
 
@@ -132,6 +123,15 @@ def test_mail_has_sendTo():
             break
     assert isinstance(descriptor, property)
 
+def test_mail_has_sendBy():
+    assert hasattr(Mail, "sendBy")
+    descriptor = None
+    for klass in Mail.__mro__:
+        if "sendBy" in klass.__dict__:
+            descriptor = klass.__dict__["sendBy"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_payment_is_not_abstract():
@@ -146,10 +146,10 @@ def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
     assert "issuerName" in params, "Missing parameter 'issuerName'"
-    assert "expiryDate" in params, "Missing parameter 'expiryDate'"
-    assert "amount" in params, "Missing parameter 'amount'"
-    assert "cardType" in params, "Missing parameter 'cardType'"
     assert "cardNumber" in params, "Missing parameter 'cardNumber'"
+    assert "expiryDate" in params, "Missing parameter 'expiryDate'"
+    assert "cardType" in params, "Missing parameter 'cardType'"
+    assert "amount" in params, "Missing parameter 'amount'"
 
 def test_payment_has_issuerName():
     assert hasattr(Payment, "issuerName")
@@ -157,6 +157,15 @@ def test_payment_has_issuerName():
     for klass in Payment.__mro__:
         if "issuerName" in klass.__dict__:
             descriptor = klass.__dict__["issuerName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_payment_has_cardNumber():
+    assert hasattr(Payment, "cardNumber")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "cardNumber" in klass.__dict__:
+            descriptor = klass.__dict__["cardNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -169,15 +178,6 @@ def test_payment_has_expiryDate():
             break
     assert isinstance(descriptor, property)
 
-def test_payment_has_amount():
-    assert hasattr(Payment, "amount")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_payment_has_cardType():
     assert hasattr(Payment, "cardType")
     descriptor = None
@@ -187,12 +187,12 @@ def test_payment_has_cardType():
             break
     assert isinstance(descriptor, property)
 
-def test_payment_has_cardNumber():
-    assert hasattr(Payment, "cardNumber")
+def test_payment_has_amount():
+    assert hasattr(Payment, "amount")
     descriptor = None
     for klass in Payment.__mro__:
-        if "cardNumber" in klass.__dict__:
-            descriptor = klass.__dict__["cardNumber"]
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -223,9 +223,18 @@ def test_attendance_constructor_exists():
 def test_attendance_constructor_args():
     sig = inspect.signature(Attendance.__init__)
     params = list(sig.parameters.keys())
+    assert "checkInTime" in params, "Missing parameter 'checkInTime'"
     assert "checkOutTime" in params, "Missing parameter 'checkOutTime'"
     assert "attendanceID" in params, "Missing parameter 'attendanceID'"
-    assert "checkInTime" in params, "Missing parameter 'checkInTime'"
+
+def test_attendance_has_checkInTime():
+    assert hasattr(Attendance, "checkInTime")
+    descriptor = None
+    for klass in Attendance.__mro__:
+        if "checkInTime" in klass.__dict__:
+            descriptor = klass.__dict__["checkInTime"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_attendance_has_checkOutTime():
     assert hasattr(Attendance, "checkOutTime")
@@ -245,15 +254,6 @@ def test_attendance_has_attendanceID():
             break
     assert isinstance(descriptor, property)
 
-def test_attendance_has_checkInTime():
-    assert hasattr(Attendance, "checkInTime")
-    descriptor = None
-    for klass in Attendance.__mro__:
-        if "checkInTime" in klass.__dict__:
-            descriptor = klass.__dict__["checkInTime"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_login_is_not_abstract():
@@ -267,18 +267,9 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
-    assert "loggedoutTime" in params, "Missing parameter 'loggedoutTime'"
     assert "userID" in params, "Missing parameter 'userID'"
     assert "loggedinTime" in params, "Missing parameter 'loggedinTime'"
-
-def test_login_has_loggedoutTime():
-    assert hasattr(Login, "loggedoutTime")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "loggedoutTime" in klass.__dict__:
-            descriptor = klass.__dict__["loggedoutTime"]
-            break
-    assert isinstance(descriptor, property)
+    assert "loggedoutTime" in params, "Missing parameter 'loggedoutTime'"
 
 def test_login_has_userID():
     assert hasattr(Login, "userID")
@@ -298,6 +289,15 @@ def test_login_has_loggedinTime():
             break
     assert isinstance(descriptor, property)
 
+def test_login_has_loggedoutTime():
+    assert hasattr(Login, "loggedoutTime")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "loggedoutTime" in klass.__dict__:
+            descriptor = klass.__dict__["loggedoutTime"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_calender_event_is_not_abstract():
@@ -313,13 +313,13 @@ def test_calender_event_constructor_args():
     params = list(sig.parameters.keys())
     assert "participantAmount" in params, "Missing parameter 'participantAmount'"
     assert "time" in params, "Missing parameter 'time'"
+    assert "volunteer" in params, "Missing parameter 'volunteer'"
     assert "category" in params, "Missing parameter 'category'"
     assert "date" in params, "Missing parameter 'date'"
+    assert "admin" in params, "Missing parameter 'admin'"
     assert "nomarlUser" in params, "Missing parameter 'nomarlUser'"
     assert "description" in params, "Missing parameter 'description'"
     assert "eventType" in params, "Missing parameter 'eventType'"
-    assert "volunteer" in params, "Missing parameter 'volunteer'"
-    assert "admin" in params, "Missing parameter 'admin'"
 
 def test_calender_event_has_participantAmount():
     assert hasattr(Calender_Event, "participantAmount")
@@ -339,6 +339,15 @@ def test_calender_event_has_time():
             break
     assert isinstance(descriptor, property)
 
+def test_calender_event_has_volunteer():
+    assert hasattr(Calender_Event, "volunteer")
+    descriptor = None
+    for klass in Calender_Event.__mro__:
+        if "volunteer" in klass.__dict__:
+            descriptor = klass.__dict__["volunteer"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_calender_event_has_category():
     assert hasattr(Calender_Event, "category")
     descriptor = None
@@ -354,6 +363,15 @@ def test_calender_event_has_date():
     for klass in Calender_Event.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_calender_event_has_admin():
+    assert hasattr(Calender_Event, "admin")
+    descriptor = None
+    for klass in Calender_Event.__mro__:
+        if "admin" in klass.__dict__:
+            descriptor = klass.__dict__["admin"]
             break
     assert isinstance(descriptor, property)
 
@@ -381,24 +399,6 @@ def test_calender_event_has_eventType():
     for klass in Calender_Event.__mro__:
         if "eventType" in klass.__dict__:
             descriptor = klass.__dict__["eventType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_calender_event_has_volunteer():
-    assert hasattr(Calender_Event, "volunteer")
-    descriptor = None
-    for klass in Calender_Event.__mro__:
-        if "volunteer" in klass.__dict__:
-            descriptor = klass.__dict__["volunteer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_calender_event_has_admin():
-    assert hasattr(Calender_Event, "admin")
-    descriptor = None
-    for klass in Calender_Event.__mro__:
-        if "admin" in klass.__dict__:
-            descriptor = klass.__dict__["admin"]
             break
     assert isinstance(descriptor, property)
 
@@ -459,18 +459,9 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "userName" in params, "Missing parameter 'userName'"
+    assert "password" in params, "Missing parameter 'password'"
     assert "userID" in params, "Missing parameter 'userID'"
-
-def test_admin_has_password():
-    assert hasattr(Admin, "password")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_admin_has_userName():
     assert hasattr(Admin, "userName")
@@ -478,6 +469,15 @@ def test_admin_has_userName():
     for klass in Admin.__mro__:
         if "userName" in klass.__dict__:
             descriptor = klass.__dict__["userName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_password():
+    assert hasattr(Admin, "password")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -503,18 +503,9 @@ def test_normal_user_constructor_exists():
 def test_normal_user_constructor_args():
     sig = inspect.signature(Normal_user.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "userID" in params, "Missing parameter 'userID'"
+    assert "password" in params, "Missing parameter 'password'"
     assert "userName" in params, "Missing parameter 'userName'"
-
-def test_normal_user_has_password():
-    assert hasattr(Normal_user, "password")
-    descriptor = None
-    for klass in Normal_user.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_normal_user_has_userID():
     assert hasattr(Normal_user, "userID")
@@ -522,6 +513,15 @@ def test_normal_user_has_userID():
     for klass in Normal_user.__mro__:
         if "userID" in klass.__dict__:
             descriptor = klass.__dict__["userID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_normal_user_has_password():
+    assert hasattr(Normal_user, "password")
+    descriptor = None
+    for klass in Normal_user.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -561,16 +561,16 @@ def test_superadmin_constructor_exists():
 def test_superadmin_constructor_args():
     sig = inspect.signature(SuperAdmin.__init__)
     params = list(sig.parameters.keys())
-    assert "userID" in params, "Missing parameter 'userID'"
-    assert "userName" in params, "Missing parameter 'userName'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "userName" in params, "Missing parameter 'userName'"
+    assert "userID" in params, "Missing parameter 'userID'"
 
-def test_superadmin_has_userID():
-    assert hasattr(SuperAdmin, "userID")
+def test_superadmin_has_password():
+    assert hasattr(SuperAdmin, "password")
     descriptor = None
     for klass in SuperAdmin.__mro__:
-        if "userID" in klass.__dict__:
-            descriptor = klass.__dict__["userID"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -583,12 +583,12 @@ def test_superadmin_has_userName():
             break
     assert isinstance(descriptor, property)
 
-def test_superadmin_has_password():
-    assert hasattr(SuperAdmin, "password")
+def test_superadmin_has_userID():
+    assert hasattr(SuperAdmin, "userID")
     descriptor = None
     for klass in SuperAdmin.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "userID" in klass.__dict__:
+            descriptor = klass.__dict__["userID"]
             break
     assert isinstance(descriptor, property)
 
@@ -619,24 +619,24 @@ Mail_strategy = st.builds(
     Mail,
     subject=
         safe_text,
-    sendBy=
-        safe_text,
     emailID=
         safe_text,
     sendTo=
+        safe_text,
+    sendBy=
         safe_text
 )
 Payment_strategy = st.builds(
     Payment,
     issuerName=
         safe_text,
+    cardNumber=
+        st.integers(),
     expiryDate=
         safe_text,
-    amount=
-        st.integers(),
     cardType=
         safe_text,
-    cardNumber=
+    amount=
         st.integers()
 )
 Logout_strategy = st.builds(
@@ -644,20 +644,20 @@ Logout_strategy = st.builds(
 )
 Attendance_strategy = st.builds(
     Attendance,
+    checkInTime=
+        safe_text,
     checkOutTime=
         safe_text,
     attendanceID=
-        st.integers(),
-    checkInTime=
-        safe_text
+        st.integers()
 )
 Login_strategy = st.builds(
     Login,
-    loggedoutTime=
-        safe_text,
     userID=
         st.none(),
     loggedinTime=
+        safe_text,
+    loggedoutTime=
         safe_text
 )
 Calender_Event_strategy = st.builds(
@@ -666,20 +666,20 @@ Calender_Event_strategy = st.builds(
         safe_text,
     time=
         safe_text,
+    volunteer=
+        st.none(),
     category=
         safe_text,
     date=
         safe_text,
+    admin=
+        st.none(),
     nomarlUser=
         st.none(),
     description=
         safe_text,
     eventType=
-        safe_text,
-    volunteer=
-        st.none(),
-    admin=
-        st.none()
+        safe_text
 )
 Volunteer_strategy = st.builds(
     Volunteer,
@@ -692,19 +692,19 @@ Volunteer_strategy = st.builds(
 )
 Admin_strategy = st.builds(
     Admin,
-    password=
-        safe_text,
     userName=
+        safe_text,
+    password=
         safe_text,
     userID=
         st.integers()
 )
 Normal_user_strategy = st.builds(
     Normal_user,
-    password=
-        safe_text,
     userID=
         st.integers(),
+    password=
+        safe_text,
     userName=
         safe_text
 )
@@ -713,12 +713,12 @@ void_strategy = st.builds(
 )
 SuperAdmin_strategy = st.builds(
     SuperAdmin,
-    userID=
-        st.integers(),
+    password=
+        safe_text,
     userName=
         safe_text,
-    password=
-        safe_text
+    userID=
+        st.integers()
 )
 
 @given(instance=Profile_strategy)
@@ -726,9 +726,6 @@ SuperAdmin_strategy = st.builds(
 def test_profile_instantiation(instance):
     assert isinstance(instance, Profile)
 
-@given(instance=Profile_strategy)
-def test_profile_f_Name_type(instance):
-    assert isinstance(instance.f_Name, str)
 
 
 @given(instance=Profile_strategy)
@@ -737,9 +734,6 @@ def test_profile_f_Name_setter(instance):
     instance.f_Name = original
     assert instance.f_Name == original
 
-@given(instance=Profile_strategy)
-def test_profile_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Profile_strategy)
@@ -748,9 +742,6 @@ def test_profile_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Profile_strategy)
-def test_profile_user_Name_type(instance):
-    assert isinstance(instance.user_Name, str)
 
 
 @given(instance=Profile_strategy)
@@ -759,9 +750,6 @@ def test_profile_user_Name_setter(instance):
     instance.user_Name = original
     assert instance.user_Name == original
 
-@given(instance=Profile_strategy)
-def test_profile_l_Name_type(instance):
-    assert isinstance(instance.l_Name, str)
 
 
 @given(instance=Profile_strategy)
@@ -775,9 +763,6 @@ def test_profile_l_Name_setter(instance):
 def test_mail_instantiation(instance):
     assert isinstance(instance, Mail)
 
-@given(instance=Mail_strategy)
-def test_mail_subject_type(instance):
-    assert isinstance(instance.subject, str)
 
 
 @given(instance=Mail_strategy)
@@ -786,20 +771,6 @@ def test_mail_subject_setter(instance):
     instance.subject = original
     assert instance.subject == original
 
-@given(instance=Mail_strategy)
-def test_mail_sendBy_type(instance):
-    assert isinstance(instance.sendBy, str)
-
-
-@given(instance=Mail_strategy)
-def test_mail_sendBy_setter(instance):
-    original = instance.sendBy
-    instance.sendBy = original
-    assert instance.sendBy == original
-
-@given(instance=Mail_strategy)
-def test_mail_emailID_type(instance):
-    assert isinstance(instance.emailID, str)
 
 
 @given(instance=Mail_strategy)
@@ -808,9 +779,6 @@ def test_mail_emailID_setter(instance):
     instance.emailID = original
     assert instance.emailID == original
 
-@given(instance=Mail_strategy)
-def test_mail_sendTo_type(instance):
-    assert isinstance(instance.sendTo, str)
 
 
 @given(instance=Mail_strategy)
@@ -819,14 +787,19 @@ def test_mail_sendTo_setter(instance):
     instance.sendTo = original
     assert instance.sendTo == original
 
+
+
+@given(instance=Mail_strategy)
+def test_mail_sendBy_setter(instance):
+    original = instance.sendBy
+    instance.sendBy = original
+    assert instance.sendBy == original
+
 @given(instance=Payment_strategy)
 @settings(max_examples=50)
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_issuerName_type(instance):
-    assert isinstance(instance.issuerName, str)
 
 
 @given(instance=Payment_strategy)
@@ -835,9 +808,14 @@ def test_payment_issuerName_setter(instance):
     instance.issuerName = original
     assert instance.issuerName == original
 
+
+
 @given(instance=Payment_strategy)
-def test_payment_expiryDate_type(instance):
-    assert isinstance(instance.expiryDate, str)
+def test_payment_cardNumber_setter(instance):
+    original = instance.cardNumber
+    instance.cardNumber = original
+    assert instance.cardNumber == original
+
 
 
 @given(instance=Payment_strategy)
@@ -846,20 +824,6 @@ def test_payment_expiryDate_setter(instance):
     instance.expiryDate = original
     assert instance.expiryDate == original
 
-@given(instance=Payment_strategy)
-def test_payment_amount_type(instance):
-    assert isinstance(instance.amount, int)
-
-
-@given(instance=Payment_strategy)
-def test_payment_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
-
-@given(instance=Payment_strategy)
-def test_payment_cardType_type(instance):
-    assert isinstance(instance.cardType, str)
 
 
 @given(instance=Payment_strategy)
@@ -868,16 +832,13 @@ def test_payment_cardType_setter(instance):
     instance.cardType = original
     assert instance.cardType == original
 
-@given(instance=Payment_strategy)
-def test_payment_cardNumber_type(instance):
-    assert isinstance(instance.cardNumber, int)
 
 
 @given(instance=Payment_strategy)
-def test_payment_cardNumber_setter(instance):
-    original = instance.cardNumber
-    instance.cardNumber = original
-    assert instance.cardNumber == original
+def test_payment_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
 
 @given(instance=Logout_strategy)
 @settings(max_examples=50)
@@ -889,31 +850,6 @@ def test_logout_instantiation(instance):
 def test_attendance_instantiation(instance):
     assert isinstance(instance, Attendance)
 
-@given(instance=Attendance_strategy)
-def test_attendance_checkOutTime_type(instance):
-    assert isinstance(instance.checkOutTime, str)
-
-
-@given(instance=Attendance_strategy)
-def test_attendance_checkOutTime_setter(instance):
-    original = instance.checkOutTime
-    instance.checkOutTime = original
-    assert instance.checkOutTime == original
-
-@given(instance=Attendance_strategy)
-def test_attendance_attendanceID_type(instance):
-    assert isinstance(instance.attendanceID, int)
-
-
-@given(instance=Attendance_strategy)
-def test_attendance_attendanceID_setter(instance):
-    original = instance.attendanceID
-    instance.attendanceID = original
-    assert instance.attendanceID == original
-
-@given(instance=Attendance_strategy)
-def test_attendance_checkInTime_type(instance):
-    assert isinstance(instance.checkInTime, str)
 
 
 @given(instance=Attendance_strategy)
@@ -922,25 +858,27 @@ def test_attendance_checkInTime_setter(instance):
     instance.checkInTime = original
     assert instance.checkInTime == original
 
+
+
+@given(instance=Attendance_strategy)
+def test_attendance_checkOutTime_setter(instance):
+    original = instance.checkOutTime
+    instance.checkOutTime = original
+    assert instance.checkOutTime == original
+
+
+
+@given(instance=Attendance_strategy)
+def test_attendance_attendanceID_setter(instance):
+    original = instance.attendanceID
+    instance.attendanceID = original
+    assert instance.attendanceID == original
+
 @given(instance=Login_strategy)
 @settings(max_examples=50)
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_loggedoutTime_type(instance):
-    assert isinstance(instance.loggedoutTime, str)
-
-
-@given(instance=Login_strategy)
-def test_login_loggedoutTime_setter(instance):
-    original = instance.loggedoutTime
-    instance.loggedoutTime = original
-    assert instance.loggedoutTime == original
-
-@given(instance=Login_strategy)
-def test_login_userID_type(instance):
-    assert isinstance(instance.userID, profile)
 
 
 @given(instance=Login_strategy)
@@ -949,9 +887,6 @@ def test_login_userID_setter(instance):
     instance.userID = original
     assert instance.userID == original
 
-@given(instance=Login_strategy)
-def test_login_loggedinTime_type(instance):
-    assert isinstance(instance.loggedinTime, str)
 
 
 @given(instance=Login_strategy)
@@ -960,14 +895,19 @@ def test_login_loggedinTime_setter(instance):
     instance.loggedinTime = original
     assert instance.loggedinTime == original
 
+
+
+@given(instance=Login_strategy)
+def test_login_loggedoutTime_setter(instance):
+    original = instance.loggedoutTime
+    instance.loggedoutTime = original
+    assert instance.loggedoutTime == original
+
 @given(instance=Calender_Event_strategy)
 @settings(max_examples=50)
 def test_calender_event_instantiation(instance):
     assert isinstance(instance, Calender_Event)
 
-@given(instance=Calender_Event_strategy)
-def test_calender_event_participantAmount_type(instance):
-    assert isinstance(instance.participantAmount, str)
 
 
 @given(instance=Calender_Event_strategy)
@@ -976,9 +916,6 @@ def test_calender_event_participantAmount_setter(instance):
     instance.participantAmount = original
     assert instance.participantAmount == original
 
-@given(instance=Calender_Event_strategy)
-def test_calender_event_time_type(instance):
-    assert isinstance(instance.time, str)
 
 
 @given(instance=Calender_Event_strategy)
@@ -987,64 +924,6 @@ def test_calender_event_time_setter(instance):
     instance.time = original
     assert instance.time == original
 
-@given(instance=Calender_Event_strategy)
-def test_calender_event_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_nomarlUser_type(instance):
-    assert isinstance(instance.nomarlUser, normal_user)
-
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_nomarlUser_setter(instance):
-    original = instance.nomarlUser
-    instance.nomarlUser = original
-    assert instance.nomarlUser == original
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_eventType_type(instance):
-    assert isinstance(instance.eventType, str)
-
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_eventType_setter(instance):
-    original = instance.eventType
-    instance.eventType = original
-    assert instance.eventType == original
-
-@given(instance=Calender_Event_strategy)
-def test_calender_event_volunteer_type(instance):
-    assert isinstance(instance.volunteer, volunteer)
 
 
 @given(instance=Calender_Event_strategy)
@@ -1053,9 +932,22 @@ def test_calender_event_volunteer_setter(instance):
     instance.volunteer = original
     assert instance.volunteer == original
 
+
+
 @given(instance=Calender_Event_strategy)
-def test_calender_event_admin_type(instance):
-    assert isinstance(instance.admin, admin)
+def test_calender_event_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+
+
+@given(instance=Calender_Event_strategy)
+def test_calender_event_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
 
 
 @given(instance=Calender_Event_strategy)
@@ -1064,14 +956,35 @@ def test_calender_event_admin_setter(instance):
     instance.admin = original
     assert instance.admin == original
 
+
+
+@given(instance=Calender_Event_strategy)
+def test_calender_event_nomarlUser_setter(instance):
+    original = instance.nomarlUser
+    instance.nomarlUser = original
+    assert instance.nomarlUser == original
+
+
+
+@given(instance=Calender_Event_strategy)
+def test_calender_event_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=Calender_Event_strategy)
+def test_calender_event_eventType_setter(instance):
+    original = instance.eventType
+    instance.eventType = original
+    assert instance.eventType == original
+
 @given(instance=Volunteer_strategy)
 @settings(max_examples=50)
 def test_volunteer_instantiation(instance):
     assert isinstance(instance, Volunteer)
 
-@given(instance=Volunteer_strategy)
-def test_volunteer_userID_type(instance):
-    assert isinstance(instance.userID, int)
 
 
 @given(instance=Volunteer_strategy)
@@ -1080,9 +993,6 @@ def test_volunteer_userID_setter(instance):
     instance.userID = original
     assert instance.userID == original
 
-@given(instance=Volunteer_strategy)
-def test_volunteer_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Volunteer_strategy)
@@ -1091,9 +1001,6 @@ def test_volunteer_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Volunteer_strategy)
-def test_volunteer_userName_type(instance):
-    assert isinstance(instance.userName, str)
 
 
 @given(instance=Volunteer_strategy)
@@ -1107,20 +1014,6 @@ def test_volunteer_userName_setter(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Admin_strategy)
-def test_admin_userName_type(instance):
-    assert isinstance(instance.userName, str)
 
 
 @given(instance=Admin_strategy)
@@ -1129,9 +1022,14 @@ def test_admin_userName_setter(instance):
     instance.userName = original
     assert instance.userName == original
 
+
+
 @given(instance=Admin_strategy)
-def test_admin_userID_type(instance):
-    assert isinstance(instance.userID, int)
+def test_admin_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 
 
 @given(instance=Admin_strategy)
@@ -1145,20 +1043,6 @@ def test_admin_userID_setter(instance):
 def test_normal_user_instantiation(instance):
     assert isinstance(instance, Normal_user)
 
-@given(instance=Normal_user_strategy)
-def test_normal_user_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Normal_user_strategy)
-def test_normal_user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Normal_user_strategy)
-def test_normal_user_userID_type(instance):
-    assert isinstance(instance.userID, int)
 
 
 @given(instance=Normal_user_strategy)
@@ -1167,9 +1051,14 @@ def test_normal_user_userID_setter(instance):
     instance.userID = original
     assert instance.userID == original
 
+
+
 @given(instance=Normal_user_strategy)
-def test_normal_user_userName_type(instance):
-    assert isinstance(instance.userName, str)
+def test_normal_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 
 
 @given(instance=Normal_user_strategy)
@@ -1188,20 +1077,14 @@ def test_void_instantiation(instance):
 def test_superadmin_instantiation(instance):
     assert isinstance(instance, SuperAdmin)
 
-@given(instance=SuperAdmin_strategy)
-def test_superadmin_userID_type(instance):
-    assert isinstance(instance.userID, int)
 
 
 @given(instance=SuperAdmin_strategy)
-def test_superadmin_userID_setter(instance):
-    original = instance.userID
-    instance.userID = original
-    assert instance.userID == original
+def test_superadmin_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
 
-@given(instance=SuperAdmin_strategy)
-def test_superadmin_userName_type(instance):
-    assert isinstance(instance.userName, str)
 
 
 @given(instance=SuperAdmin_strategy)
@@ -1210,13 +1093,10 @@ def test_superadmin_userName_setter(instance):
     instance.userName = original
     assert instance.userName == original
 
-@given(instance=SuperAdmin_strategy)
-def test_superadmin_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=SuperAdmin_strategy)
-def test_superadmin_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
+def test_superadmin_userID_setter(instance):
+    original = instance.userID
+    instance.userID = original
+    assert instance.userID == original

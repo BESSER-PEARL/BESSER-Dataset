@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    b::Y,
-    b::B,
-    b::Model,
+from python_code import (
+    b_Y,
+    b_B,
+    b_Model,
 )
 
 # =============================================================================
@@ -17,57 +17,57 @@ from classes import (
 
 
 
-def test_b::y_is_not_abstract():
-    assert not inspect.isabstract(b::Y)
+def test_b_y_is_not_abstract():
+    assert not inspect.isabstract(b_Y)
 
 
-def test_b::y_constructor_exists():
-    assert callable(b::Y.__init__)
+def test_b_y_constructor_exists():
+    assert callable(b_Y.__init__)
 
 
-def test_b::y_constructor_args():
-    sig = inspect.signature(b::Y.__init__)
+def test_b_y_constructor_args():
+    sig = inspect.signature(b_Y.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "info" in params, "Missing parameter 'info'"
+    assert "label" in params, "Missing parameter 'label'"
 
-def test_b::y_has_label():
-    assert hasattr(b::Y, "label")
+def test_b_y_has_info():
+    assert hasattr(b_Y, "info")
     descriptor = None
-    for klass in b::Y.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_b::y_has_info():
-    assert hasattr(b::Y, "info")
-    descriptor = None
-    for klass in b::Y.__mro__:
+    for klass in b_Y.__mro__:
         if "info" in klass.__dict__:
             descriptor = klass.__dict__["info"]
             break
     assert isinstance(descriptor, property)
 
+def test_b_y_has_label():
+    assert hasattr(b_Y, "label")
+    descriptor = None
+    for klass in b_Y.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_b::b_is_not_abstract():
-    assert not inspect.isabstract(b::B)
+
+def test_b_b_is_not_abstract():
+    assert not inspect.isabstract(b_B)
 
 
-def test_b::b_constructor_exists():
-    assert callable(b::B.__init__)
+def test_b_b_constructor_exists():
+    assert callable(b_B.__init__)
 
 
-def test_b::b_constructor_args():
-    sig = inspect.signature(b::B.__init__)
+def test_b_b_constructor_args():
+    sig = inspect.signature(b_B.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_b::b_has_id():
-    assert hasattr(b::B, "id")
+def test_b_b_has_id():
+    assert hasattr(b_B, "id")
     descriptor = None
-    for klass in b::B.__mro__:
+    for klass in b_B.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -75,16 +75,16 @@ def test_b::b_has_id():
 
 
 
-def test_b::model_is_not_abstract():
-    assert not inspect.isabstract(b::Model)
+def test_b_model_is_not_abstract():
+    assert not inspect.isabstract(b_Model)
 
 
-def test_b::model_constructor_exists():
-    assert callable(b::Model.__init__)
+def test_b_model_constructor_exists():
+    assert callable(b_Model.__init__)
 
 
-def test_b::model_constructor_args():
-    sig = inspect.signature(b::Model.__init__)
+def test_b_model_constructor_args():
+    sig = inspect.signature(b_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-b::Y_strategy = st.builds(
-    b::Y,
-    label=
-        safe_text,
+b_Y_strategy = st.builds(
+    b_Y,
     info=
+        safe_text,
+    label=
         safe_text
 )
-b::B_strategy = st.builds(
-    b::B,
+b_B_strategy = st.builds(
+    b_B,
     id=
         safe_text
 )
-b::Model_strategy = st.builds(
-    b::Model,
+b_Model_strategy = st.builds(
+    b_Model,
 )
 
-@given(instance=b::Y_strategy)
+@given(instance=b_Y_strategy)
 @settings(max_examples=50)
-def test_b::y_instantiation(instance):
-    assert isinstance(instance, b::Y)
-
-@given(instance=b::Y_strategy)
-def test_b::y_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_b_y_instantiation(instance):
+    assert isinstance(instance, b_Y)
 
 
-@given(instance=b::Y_strategy)
-def test_b::y_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=b::Y_strategy)
-def test_b::y_info_type(instance):
-    assert isinstance(instance.info, str)
-
-
-@given(instance=b::Y_strategy)
-def test_b::y_info_setter(instance):
+@given(instance=b_Y_strategy)
+def test_b_y_info_setter(instance):
     original = instance.info
     instance.info = original
     assert instance.info == original
 
-@given(instance=b::B_strategy)
+
+
+@given(instance=b_Y_strategy)
+def test_b_y_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+@given(instance=b_B_strategy)
 @settings(max_examples=50)
-def test_b::b_instantiation(instance):
-    assert isinstance(instance, b::B)
-
-@given(instance=b::B_strategy)
-def test_b::b_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_b_b_instantiation(instance):
+    assert isinstance(instance, b_B)
 
 
-@given(instance=b::B_strategy)
-def test_b::b_id_setter(instance):
+
+@given(instance=b_B_strategy)
+def test_b_b_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=b::Model_strategy)
+@given(instance=b_Model_strategy)
 @settings(max_examples=50)
-def test_b::model_instantiation(instance):
-    assert isinstance(instance, b::Model)
+def test_b_model_instantiation(instance):
+    assert isinstance(instance, b_Model)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     const_zutat,
@@ -34,8 +34,8 @@ from python_code import (
     plaetzchen,
     teig,
     lager,
-    form,
     enum_form,
+    form,
 )
 
 # =============================================================================
@@ -296,8 +296,8 @@ def test_teigmaschine_constructor_args():
     assert "anzPlaetzchenLetzesBlech" in params, "Missing parameter 'anzPlaetzchenLetzesBlech'"
     assert "blechgroesse" in params, "Missing parameter 'blechgroesse'"
     assert "anzBleche" in params, "Missing parameter 'anzBleche'"
-    assert "anzBlechePlaetzchen" in params, "Missing parameter 'anzBlechePlaetzchen'"
     assert "abstand" in params, "Missing parameter 'abstand'"
+    assert "anzBlechePlaetzchen" in params, "Missing parameter 'anzBlechePlaetzchen'"
 
 def test_teigmaschine_has_anzPlaetzchenLetzesBlech():
     assert hasattr(teigmaschine, "anzPlaetzchenLetzesBlech")
@@ -326,21 +326,21 @@ def test_teigmaschine_has_anzBleche():
             break
     assert isinstance(descriptor, property)
 
-def test_teigmaschine_has_anzBlechePlaetzchen():
-    assert hasattr(teigmaschine, "anzBlechePlaetzchen")
-    descriptor = None
-    for klass in teigmaschine.__mro__:
-        if "anzBlechePlaetzchen" in klass.__dict__:
-            descriptor = klass.__dict__["anzBlechePlaetzchen"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_teigmaschine_has_abstand():
     assert hasattr(teigmaschine, "abstand")
     descriptor = None
     for klass in teigmaschine.__mro__:
         if "abstand" in klass.__dict__:
             descriptor = klass.__dict__["abstand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_teigmaschine_has_anzBlechePlaetzchen():
+    assert hasattr(teigmaschine, "anzBlechePlaetzchen")
+    descriptor = None
+    for klass in teigmaschine.__mro__:
+        if "anzBlechePlaetzchen" in klass.__dict__:
+            descriptor = klass.__dict__["anzBlechePlaetzchen"]
             break
     assert isinstance(descriptor, property)
 
@@ -381,17 +381,8 @@ def test_prozessheizen_constructor_exists():
 def test_prozessheizen_constructor_args():
     sig = inspect.signature(prozessHeizen.__init__)
     params = list(sig.parameters.keys())
-    assert "temperatur_ist" in params, "Missing parameter 'temperatur_ist'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_prozessheizen_has_temperatur_ist():
-    assert hasattr(prozessHeizen, "temperatur_ist")
-    descriptor = None
-    for klass in prozessHeizen.__mro__:
-        if "temperatur_ist" in klass.__dict__:
-            descriptor = klass.__dict__["temperatur_ist"]
-            break
-    assert isinstance(descriptor, property)
+    assert "temperatur_ist" in params, "Missing parameter 'temperatur_ist'"
 
 def test_prozessheizen_has_attribute():
     assert hasattr(prozessHeizen, "attribute")
@@ -399,6 +390,15 @@ def test_prozessheizen_has_attribute():
     for klass in prozessHeizen.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prozessheizen_has_temperatur_ist():
+    assert hasattr(prozessHeizen, "temperatur_ist")
+    descriptor = None
+    for klass in prozessHeizen.__mro__:
+        if "temperatur_ist" in klass.__dict__:
+            descriptor = klass.__dict__["temperatur_ist"]
             break
     assert isinstance(descriptor, property)
 
@@ -415,29 +415,11 @@ def test_backofen_constructor_exists():
 def test_backofen_constructor_args():
     sig = inspect.signature(backofen.__init__)
     params = list(sig.parameters.keys())
-    assert "bandgeschwindigkeit" in params, "Missing parameter 'bandgeschwindigkeit'"
-    assert "teigmaschine" in params, "Missing parameter 'teigmaschine'"
     assert "ofenlaenge" in params, "Missing parameter 'ofenlaenge'"
-    assert "backtemp" in params, "Missing parameter 'backtemp'"
     assert "backzeit" in params, "Missing parameter 'backzeit'"
-
-def test_backofen_has_bandgeschwindigkeit():
-    assert hasattr(backofen, "bandgeschwindigkeit")
-    descriptor = None
-    for klass in backofen.__mro__:
-        if "bandgeschwindigkeit" in klass.__dict__:
-            descriptor = klass.__dict__["bandgeschwindigkeit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_backofen_has_teigmaschine():
-    assert hasattr(backofen, "teigmaschine")
-    descriptor = None
-    for klass in backofen.__mro__:
-        if "teigmaschine" in klass.__dict__:
-            descriptor = klass.__dict__["teigmaschine"]
-            break
-    assert isinstance(descriptor, property)
+    assert "bandgeschwindigkeit" in params, "Missing parameter 'bandgeschwindigkeit'"
+    assert "backtemp" in params, "Missing parameter 'backtemp'"
+    assert "teigmaschine" in params, "Missing parameter 'teigmaschine'"
 
 def test_backofen_has_ofenlaenge():
     assert hasattr(backofen, "ofenlaenge")
@@ -445,6 +427,24 @@ def test_backofen_has_ofenlaenge():
     for klass in backofen.__mro__:
         if "ofenlaenge" in klass.__dict__:
             descriptor = klass.__dict__["ofenlaenge"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_backofen_has_backzeit():
+    assert hasattr(backofen, "backzeit")
+    descriptor = None
+    for klass in backofen.__mro__:
+        if "backzeit" in klass.__dict__:
+            descriptor = klass.__dict__["backzeit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_backofen_has_bandgeschwindigkeit():
+    assert hasattr(backofen, "bandgeschwindigkeit")
+    descriptor = None
+    for klass in backofen.__mro__:
+        if "bandgeschwindigkeit" in klass.__dict__:
+            descriptor = klass.__dict__["bandgeschwindigkeit"]
             break
     assert isinstance(descriptor, property)
 
@@ -457,12 +457,12 @@ def test_backofen_has_backtemp():
             break
     assert isinstance(descriptor, property)
 
-def test_backofen_has_backzeit():
-    assert hasattr(backofen, "backzeit")
+def test_backofen_has_teigmaschine():
+    assert hasattr(backofen, "teigmaschine")
     descriptor = None
     for klass in backofen.__mro__:
-        if "backzeit" in klass.__dict__:
-            descriptor = klass.__dict__["backzeit"]
+        if "teigmaschine" in klass.__dict__:
+            descriptor = klass.__dict__["teigmaschine"]
             break
     assert isinstance(descriptor, property)
 
@@ -479,17 +479,17 @@ def test_groesse_constructor_exists():
 def test_groesse_constructor_args():
     sig = inspect.signature(groesse.__init__)
     params = list(sig.parameters.keys())
-    assert "laenge" in params, "Missing parameter 'laenge'"
+    assert "name1" in params, "Missing parameter 'name1'"
     assert "name" in params, "Missing parameter 'name'"
     assert "breite" in params, "Missing parameter 'breite'"
-    assert "name1" in params, "Missing parameter 'name1'"
+    assert "laenge" in params, "Missing parameter 'laenge'"
 
-def test_groesse_has_laenge():
-    assert hasattr(groesse, "laenge")
+def test_groesse_has_name1():
+    assert hasattr(groesse, "name1")
     descriptor = None
     for klass in groesse.__mro__:
-        if "laenge" in klass.__dict__:
-            descriptor = klass.__dict__["laenge"]
+        if "name1" in klass.__dict__:
+            descriptor = klass.__dict__["name1"]
             break
     assert isinstance(descriptor, property)
 
@@ -511,12 +511,12 @@ def test_groesse_has_breite():
             break
     assert isinstance(descriptor, property)
 
-def test_groesse_has_name1():
-    assert hasattr(groesse, "name1")
+def test_groesse_has_laenge():
+    assert hasattr(groesse, "laenge")
     descriptor = None
     for klass in groesse.__mro__:
-        if "name1" in klass.__dict__:
-            descriptor = klass.__dict__["name1"]
+        if "laenge" in klass.__dict__:
+            descriptor = klass.__dict__["laenge"]
             break
     assert isinstance(descriptor, property)
 
@@ -533,17 +533,8 @@ def test_plaetzchenform_constructor_exists():
 def test_plaetzchenform_constructor_args():
     sig = inspect.signature(plaetzchenForm.__init__)
     params = list(sig.parameters.keys())
-    assert "form" in params, "Missing parameter 'form'"
     assert "groesse" in params, "Missing parameter 'groesse'"
-
-def test_plaetzchenform_has_form():
-    assert hasattr(plaetzchenForm, "form")
-    descriptor = None
-    for klass in plaetzchenForm.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
-            break
-    assert isinstance(descriptor, property)
+    assert "form" in params, "Missing parameter 'form'"
 
 def test_plaetzchenform_has_groesse():
     assert hasattr(plaetzchenForm, "groesse")
@@ -551,6 +542,15 @@ def test_plaetzchenform_has_groesse():
     for klass in plaetzchenForm.__mro__:
         if "groesse" in klass.__dict__:
             descriptor = klass.__dict__["groesse"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchenform_has_form():
+    assert hasattr(plaetzchenForm, "form")
+    descriptor = None
+    for klass in plaetzchenForm.__mro__:
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
             break
     assert isinstance(descriptor, property)
 
@@ -611,18 +611,36 @@ def test_auftrag_constructor_exists():
 def test_auftrag_constructor_args():
     sig = inspect.signature(auftrag.__init__)
     params = list(sig.parameters.keys())
+    assert "backtemp" in params, "Missing parameter 'backtemp'"
+    assert "pdeko" in params, "Missing parameter 'pdeko'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "pform" in params, "Missing parameter 'pform'"
     assert "backzeit" in params, "Missing parameter 'backzeit'"
     assert "pteig" in params, "Missing parameter 'pteig'"
+    assert "pguss" in params, "Missing parameter 'pguss'"
+    assert "belagmaschine" in params, "Missing parameter 'belagmaschine'"
     assert "backofen" in params, "Missing parameter 'backofen'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "pteigmaschine" in params, "Missing parameter 'pteigmaschine'"
     assert "menge" in params, "Missing parameter 'menge'"
-    assert "pform" in params, "Missing parameter 'pform'"
-    assert "belagmaschine" in params, "Missing parameter 'belagmaschine'"
-    assert "pguss" in params, "Missing parameter 'pguss'"
-    assert "pdeko" in params, "Missing parameter 'pdeko'"
-    assert "backtemp" in params, "Missing parameter 'backtemp'"
+    assert "pteigmaschine" in params, "Missing parameter 'pteigmaschine'"
+
+def test_auftrag_has_backtemp():
+    assert hasattr(auftrag, "backtemp")
+    descriptor = None
+    for klass in auftrag.__mro__:
+        if "backtemp" in klass.__dict__:
+            descriptor = klass.__dict__["backtemp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_auftrag_has_pdeko():
+    assert hasattr(auftrag, "pdeko")
+    descriptor = None
+    for klass in auftrag.__mro__:
+        if "pdeko" in klass.__dict__:
+            descriptor = klass.__dict__["pdeko"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_auftrag_has_name():
     assert hasattr(auftrag, "name")
@@ -630,6 +648,15 @@ def test_auftrag_has_name():
     for klass in auftrag.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_auftrag_has_pform():
+    assert hasattr(auftrag, "pform")
+    descriptor = None
+    for klass in auftrag.__mro__:
+        if "pform" in klass.__dict__:
+            descriptor = klass.__dict__["pform"]
             break
     assert isinstance(descriptor, property)
 
@@ -651,6 +678,24 @@ def test_auftrag_has_pteig():
             break
     assert isinstance(descriptor, property)
 
+def test_auftrag_has_pguss():
+    assert hasattr(auftrag, "pguss")
+    descriptor = None
+    for klass in auftrag.__mro__:
+        if "pguss" in klass.__dict__:
+            descriptor = klass.__dict__["pguss"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_auftrag_has_belagmaschine():
+    assert hasattr(auftrag, "belagmaschine")
+    descriptor = None
+    for klass in auftrag.__mro__:
+        if "belagmaschine" in klass.__dict__:
+            descriptor = klass.__dict__["belagmaschine"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_auftrag_has_backofen():
     assert hasattr(auftrag, "backofen")
     descriptor = None
@@ -669,15 +714,6 @@ def test_auftrag_has_attribute():
             break
     assert isinstance(descriptor, property)
 
-def test_auftrag_has_pteigmaschine():
-    assert hasattr(auftrag, "pteigmaschine")
-    descriptor = None
-    for klass in auftrag.__mro__:
-        if "pteigmaschine" in klass.__dict__:
-            descriptor = klass.__dict__["pteigmaschine"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_auftrag_has_menge():
     assert hasattr(auftrag, "menge")
     descriptor = None
@@ -687,48 +723,12 @@ def test_auftrag_has_menge():
             break
     assert isinstance(descriptor, property)
 
-def test_auftrag_has_pform():
-    assert hasattr(auftrag, "pform")
+def test_auftrag_has_pteigmaschine():
+    assert hasattr(auftrag, "pteigmaschine")
     descriptor = None
     for klass in auftrag.__mro__:
-        if "pform" in klass.__dict__:
-            descriptor = klass.__dict__["pform"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_auftrag_has_belagmaschine():
-    assert hasattr(auftrag, "belagmaschine")
-    descriptor = None
-    for klass in auftrag.__mro__:
-        if "belagmaschine" in klass.__dict__:
-            descriptor = klass.__dict__["belagmaschine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_auftrag_has_pguss():
-    assert hasattr(auftrag, "pguss")
-    descriptor = None
-    for klass in auftrag.__mro__:
-        if "pguss" in klass.__dict__:
-            descriptor = klass.__dict__["pguss"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_auftrag_has_pdeko():
-    assert hasattr(auftrag, "pdeko")
-    descriptor = None
-    for klass in auftrag.__mro__:
-        if "pdeko" in klass.__dict__:
-            descriptor = klass.__dict__["pdeko"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_auftrag_has_backtemp():
-    assert hasattr(auftrag, "backtemp")
-    descriptor = None
-    for klass in auftrag.__mro__:
-        if "backtemp" in klass.__dict__:
-            descriptor = klass.__dict__["backtemp"]
+        if "pteigmaschine" in klass.__dict__:
+            descriptor = klass.__dict__["pteigmaschine"]
             break
     assert isinstance(descriptor, property)
 
@@ -745,17 +745,17 @@ def test_plaetzchen_constructor_exists():
 def test_plaetzchen_constructor_args():
     sig = inspect.signature(plaetzchen.__init__)
     params = list(sig.parameters.keys())
-    assert "pteig" in params, "Missing parameter 'pteig'"
-    assert "pguss" in params, "Missing parameter 'pguss'"
     assert "pdeko" in params, "Missing parameter 'pdeko'"
+    assert "pguss" in params, "Missing parameter 'pguss'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "pteig" in params, "Missing parameter 'pteig'"
 
-def test_plaetzchen_has_pteig():
-    assert hasattr(plaetzchen, "pteig")
+def test_plaetzchen_has_pdeko():
+    assert hasattr(plaetzchen, "pdeko")
     descriptor = None
     for klass in plaetzchen.__mro__:
-        if "pteig" in klass.__dict__:
-            descriptor = klass.__dict__["pteig"]
+        if "pdeko" in klass.__dict__:
+            descriptor = klass.__dict__["pdeko"]
             break
     assert isinstance(descriptor, property)
 
@@ -768,21 +768,21 @@ def test_plaetzchen_has_pguss():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchen_has_pdeko():
-    assert hasattr(plaetzchen, "pdeko")
-    descriptor = None
-    for klass in plaetzchen.__mro__:
-        if "pdeko" in klass.__dict__:
-            descriptor = klass.__dict__["pdeko"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_plaetzchen_has_name():
     assert hasattr(plaetzchen, "name")
     descriptor = None
     for klass in plaetzchen.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_pteig():
+    assert hasattr(plaetzchen, "pteig")
+    descriptor = None
+    for klass in plaetzchen.__mro__:
+        if "pteig" in klass.__dict__:
+            descriptor = klass.__dict__["pteig"]
             break
     assert isinstance(descriptor, property)
 
@@ -801,9 +801,9 @@ def test_teig_constructor_args():
     params = list(sig.parameters.keys())
     assert "zutaten" in params, "Missing parameter 'zutaten'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "menge" in params, "Missing parameter 'menge'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "form" in params, "Missing parameter 'form'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "menge" in params, "Missing parameter 'menge'"
 
 def test_teig_has_zutaten():
     assert hasattr(teig, "zutaten")
@@ -823,12 +823,12 @@ def test_teig_has_attribute():
             break
     assert isinstance(descriptor, property)
 
-def test_teig_has_menge():
-    assert hasattr(teig, "menge")
+def test_teig_has_form():
+    assert hasattr(teig, "form")
     descriptor = None
     for klass in teig.__mro__:
-        if "menge" in klass.__dict__:
-            descriptor = klass.__dict__["menge"]
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
             break
     assert isinstance(descriptor, property)
 
@@ -841,12 +841,12 @@ def test_teig_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_teig_has_form():
-    assert hasattr(teig, "form")
+def test_teig_has_menge():
+    assert hasattr(teig, "menge")
     descriptor = None
     for klass in teig.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
+        if "menge" in klass.__dict__:
+            descriptor = klass.__dict__["menge"]
             break
     assert isinstance(descriptor, property)
 
@@ -884,19 +884,6 @@ def test_lager_has_attribute():
             break
     assert isinstance(descriptor, property)
 
-def test_form_exists():
-    # Check that the Enumeration exists
-    assert form is not None
-
-def test_form_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in form]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in form"
-
 def test_enum_form_exists():
     # Check that the Enumeration exists
     assert enum_form is not None
@@ -909,6 +896,19 @@ def test_enum_form_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in enum_form"
+
+def test_form_exists():
+    # Check that the Enumeration exists
+    assert form is not None
+
+def test_form_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in form]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in form"
 
 
 # =============================================================================
@@ -981,10 +981,10 @@ teigmaschine_strategy = st.builds(
         st.none(),
     anzBleche=
         safe_text,
-    anzBlechePlaetzchen=
-        st.none(),
     abstand=
-        safe_text
+        safe_text,
+    anzBlechePlaetzchen=
+        st.none()
 )
 prozessBand_strategy = st.builds(
     prozessBand,
@@ -993,40 +993,40 @@ prozessBand_strategy = st.builds(
 )
 prozessHeizen_strategy = st.builds(
     prozessHeizen,
-    temperatur_ist=
-        safe_text,
     attribute=
+        safe_text,
+    temperatur_ist=
         safe_text
 )
 backofen_strategy = st.builds(
     backofen,
-    bandgeschwindigkeit=
-        safe_text,
-    teigmaschine=
-        st.none(),
     ofenlaenge=
+        safe_text,
+    backzeit=
+        safe_text,
+    bandgeschwindigkeit=
         safe_text,
     backtemp=
         safe_text,
-    backzeit=
-        safe_text
+    teigmaschine=
+        st.none()
 )
 groesse_strategy = st.builds(
     groesse,
-    laenge=
+    name1=
         safe_text,
     name=
         safe_text,
     breite=
         safe_text,
-    name1=
+    laenge=
         safe_text
 )
 plaetzchenForm_strategy = st.builds(
     plaetzchenForm,
-    form=
-        st.none(),
     groesse=
+        st.none(),
+    form=
         st.none()
 )
 zutat_strategy = st.builds(
@@ -1040,41 +1040,41 @@ zutat_strategy = st.builds(
 )
 auftrag_strategy = st.builds(
     auftrag,
+    backtemp=
+        safe_text,
+    pdeko=
+        st.none(),
     name=
         safe_text,
+    pform=
+        st.none(),
     backzeit=
         safe_text,
     pteig=
+        st.none(),
+    pguss=
+        st.none(),
+    belagmaschine=
         st.none(),
     backofen=
         st.none(),
     attribute=
         safe_text,
-    pteigmaschine=
-        st.none(),
     menge=
         safe_text,
-    pform=
-        st.none(),
-    belagmaschine=
-        st.none(),
-    pguss=
-        st.none(),
-    pdeko=
-        st.none(),
-    backtemp=
-        safe_text
+    pteigmaschine=
+        st.none()
 )
 plaetzchen_strategy = st.builds(
     plaetzchen,
-    pteig=
+    pdeko=
         st.none(),
     pguss=
         st.none(),
-    pdeko=
-        st.none(),
     name=
-        safe_text
+        safe_text,
+    pteig=
+        st.none()
 )
 teig_strategy = st.builds(
     teig,
@@ -1082,12 +1082,12 @@ teig_strategy = st.builds(
         safe_text,
     attribute=
         safe_text,
-    menge=
-        safe_text,
+    form=
+        st.none(),
     name=
         safe_text,
-    form=
-        st.none()
+    menge=
+        safe_text
 )
 lager_strategy = st.builds(
     lager,
@@ -1187,9 +1187,6 @@ def test_belagmaschine_instantiation(instance):
 def test_teigmaschine_instantiation(instance):
     assert isinstance(instance, teigmaschine)
 
-@given(instance=teigmaschine_strategy)
-def test_teigmaschine_anzPlaetzchenLetzesBlech_type(instance):
-    assert isinstance(instance.anzPlaetzchenLetzesBlech, str)
 
 
 @given(instance=teigmaschine_strategy)
@@ -1198,9 +1195,6 @@ def test_teigmaschine_anzPlaetzchenLetzesBlech_setter(instance):
     instance.anzPlaetzchenLetzesBlech = original
     assert instance.anzPlaetzchenLetzesBlech == original
 
-@given(instance=teigmaschine_strategy)
-def test_teigmaschine_blechgroesse_type(instance):
-    assert isinstance(instance.blechgroesse, groesse_)
 
 
 @given(instance=teigmaschine_strategy)
@@ -1209,9 +1203,6 @@ def test_teigmaschine_blechgroesse_setter(instance):
     instance.blechgroesse = original
     assert instance.blechgroesse == original
 
-@given(instance=teigmaschine_strategy)
-def test_teigmaschine_anzBleche_type(instance):
-    assert isinstance(instance.anzBleche, str)
 
 
 @given(instance=teigmaschine_strategy)
@@ -1220,20 +1211,6 @@ def test_teigmaschine_anzBleche_setter(instance):
     instance.anzBleche = original
     assert instance.anzBleche == original
 
-@given(instance=teigmaschine_strategy)
-def test_teigmaschine_anzBlechePlaetzchen_type(instance):
-    assert isinstance(instance.anzBlechePlaetzchen, array_int_3_)
-
-
-@given(instance=teigmaschine_strategy)
-def test_teigmaschine_anzBlechePlaetzchen_setter(instance):
-    original = instance.anzBlechePlaetzchen
-    instance.anzBlechePlaetzchen = original
-    assert instance.anzBlechePlaetzchen == original
-
-@given(instance=teigmaschine_strategy)
-def test_teigmaschine_abstand_type(instance):
-    assert isinstance(instance.abstand, str)
 
 
 @given(instance=teigmaschine_strategy)
@@ -1242,14 +1219,19 @@ def test_teigmaschine_abstand_setter(instance):
     instance.abstand = original
     assert instance.abstand == original
 
+
+
+@given(instance=teigmaschine_strategy)
+def test_teigmaschine_anzBlechePlaetzchen_setter(instance):
+    original = instance.anzBlechePlaetzchen
+    instance.anzBlechePlaetzchen = original
+    assert instance.anzBlechePlaetzchen == original
+
 @given(instance=prozessBand_strategy)
 @settings(max_examples=50)
 def test_prozessband_instantiation(instance):
     assert isinstance(instance, prozessBand)
 
-@given(instance=prozessBand_strategy)
-def test_prozessband_geschwindigkeit_ist_type(instance):
-    assert isinstance(instance.geschwindigkeit_ist, str)
 
 
 @given(instance=prozessBand_strategy)
@@ -1263,20 +1245,6 @@ def test_prozessband_geschwindigkeit_ist_setter(instance):
 def test_prozessheizen_instantiation(instance):
     assert isinstance(instance, prozessHeizen)
 
-@given(instance=prozessHeizen_strategy)
-def test_prozessheizen_temperatur_ist_type(instance):
-    assert isinstance(instance.temperatur_ist, str)
-
-
-@given(instance=prozessHeizen_strategy)
-def test_prozessheizen_temperatur_ist_setter(instance):
-    original = instance.temperatur_ist
-    instance.temperatur_ist = original
-    assert instance.temperatur_ist == original
-
-@given(instance=prozessHeizen_strategy)
-def test_prozessheizen_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=prozessHeizen_strategy)
@@ -1285,36 +1253,19 @@ def test_prozessheizen_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=prozessHeizen_strategy)
+def test_prozessheizen_temperatur_ist_setter(instance):
+    original = instance.temperatur_ist
+    instance.temperatur_ist = original
+    assert instance.temperatur_ist == original
+
 @given(instance=backofen_strategy)
 @settings(max_examples=50)
 def test_backofen_instantiation(instance):
     assert isinstance(instance, backofen)
 
-@given(instance=backofen_strategy)
-def test_backofen_bandgeschwindigkeit_type(instance):
-    assert isinstance(instance.bandgeschwindigkeit, str)
-
-
-@given(instance=backofen_strategy)
-def test_backofen_bandgeschwindigkeit_setter(instance):
-    original = instance.bandgeschwindigkeit
-    instance.bandgeschwindigkeit = original
-    assert instance.bandgeschwindigkeit == original
-
-@given(instance=backofen_strategy)
-def test_backofen_teigmaschine_type(instance):
-    assert isinstance(instance.teigmaschine, teigmaschine)
-
-
-@given(instance=backofen_strategy)
-def test_backofen_teigmaschine_setter(instance):
-    original = instance.teigmaschine
-    instance.teigmaschine = original
-    assert instance.teigmaschine == original
-
-@given(instance=backofen_strategy)
-def test_backofen_ofenlaenge_type(instance):
-    assert isinstance(instance.ofenlaenge, str)
 
 
 @given(instance=backofen_strategy)
@@ -1323,20 +1274,6 @@ def test_backofen_ofenlaenge_setter(instance):
     instance.ofenlaenge = original
     assert instance.ofenlaenge == original
 
-@given(instance=backofen_strategy)
-def test_backofen_backtemp_type(instance):
-    assert isinstance(instance.backtemp, str)
-
-
-@given(instance=backofen_strategy)
-def test_backofen_backtemp_setter(instance):
-    original = instance.backtemp
-    instance.backtemp = original
-    assert instance.backtemp == original
-
-@given(instance=backofen_strategy)
-def test_backofen_backzeit_type(instance):
-    assert isinstance(instance.backzeit, str)
 
 
 @given(instance=backofen_strategy)
@@ -1345,47 +1282,35 @@ def test_backofen_backzeit_setter(instance):
     instance.backzeit = original
     assert instance.backzeit == original
 
+
+
+@given(instance=backofen_strategy)
+def test_backofen_bandgeschwindigkeit_setter(instance):
+    original = instance.bandgeschwindigkeit
+    instance.bandgeschwindigkeit = original
+    assert instance.bandgeschwindigkeit == original
+
+
+
+@given(instance=backofen_strategy)
+def test_backofen_backtemp_setter(instance):
+    original = instance.backtemp
+    instance.backtemp = original
+    assert instance.backtemp == original
+
+
+
+@given(instance=backofen_strategy)
+def test_backofen_teigmaschine_setter(instance):
+    original = instance.teigmaschine
+    instance.teigmaschine = original
+    assert instance.teigmaschine == original
+
 @given(instance=groesse_strategy)
 @settings(max_examples=50)
 def test_groesse_instantiation(instance):
     assert isinstance(instance, groesse)
 
-@given(instance=groesse_strategy)
-def test_groesse_laenge_type(instance):
-    assert isinstance(instance.laenge, str)
-
-
-@given(instance=groesse_strategy)
-def test_groesse_laenge_setter(instance):
-    original = instance.laenge
-    instance.laenge = original
-    assert instance.laenge == original
-
-@given(instance=groesse_strategy)
-def test_groesse_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=groesse_strategy)
-def test_groesse_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=groesse_strategy)
-def test_groesse_breite_type(instance):
-    assert isinstance(instance.breite, str)
-
-
-@given(instance=groesse_strategy)
-def test_groesse_breite_setter(instance):
-    original = instance.breite
-    instance.breite = original
-    assert instance.breite == original
-
-@given(instance=groesse_strategy)
-def test_groesse_name1_type(instance):
-    assert isinstance(instance.name1, str)
 
 
 @given(instance=groesse_strategy)
@@ -1394,25 +1319,35 @@ def test_groesse_name1_setter(instance):
     instance.name1 = original
     assert instance.name1 == original
 
+
+
+@given(instance=groesse_strategy)
+def test_groesse_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=groesse_strategy)
+def test_groesse_breite_setter(instance):
+    original = instance.breite
+    instance.breite = original
+    assert instance.breite == original
+
+
+
+@given(instance=groesse_strategy)
+def test_groesse_laenge_setter(instance):
+    original = instance.laenge
+    instance.laenge = original
+    assert instance.laenge == original
+
 @given(instance=plaetzchenForm_strategy)
 @settings(max_examples=50)
 def test_plaetzchenform_instantiation(instance):
     assert isinstance(instance, plaetzchenForm)
 
-@given(instance=plaetzchenForm_strategy)
-def test_plaetzchenform_form_type(instance):
-    assert isinstance(instance.form, enum_form)
-
-
-@given(instance=plaetzchenForm_strategy)
-def test_plaetzchenform_form_setter(instance):
-    original = instance.form
-    instance.form = original
-    assert instance.form == original
-
-@given(instance=plaetzchenForm_strategy)
-def test_plaetzchenform_groesse_type(instance):
-    assert isinstance(instance.groesse, groesse)
 
 
 @given(instance=plaetzchenForm_strategy)
@@ -1421,14 +1356,19 @@ def test_plaetzchenform_groesse_setter(instance):
     instance.groesse = original
     assert instance.groesse == original
 
+
+
+@given(instance=plaetzchenForm_strategy)
+def test_plaetzchenform_form_setter(instance):
+    original = instance.form
+    instance.form = original
+    assert instance.form == original
+
 @given(instance=zutat_strategy)
 @settings(max_examples=50)
 def test_zutat_instantiation(instance):
     assert isinstance(instance, zutat)
 
-@given(instance=zutat_strategy)
-def test_zutat_einheit_type(instance):
-    assert isinstance(instance.einheit, str)
 
 
 @given(instance=zutat_strategy)
@@ -1437,9 +1377,6 @@ def test_zutat_einheit_setter(instance):
     instance.einheit = original
     assert instance.einheit == original
 
-@given(instance=zutat_strategy)
-def test_zutat_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=zutat_strategy)
@@ -1448,9 +1385,6 @@ def test_zutat_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=zutat_strategy)
-def test_zutat_menge_type(instance):
-    assert isinstance(instance.menge, str)
 
 
 @given(instance=zutat_strategy)
@@ -1464,130 +1398,6 @@ def test_zutat_menge_setter(instance):
 def test_auftrag_instantiation(instance):
     assert isinstance(instance, auftrag)
 
-@given(instance=auftrag_strategy)
-def test_auftrag_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_backzeit_type(instance):
-    assert isinstance(instance.backzeit, str)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_backzeit_setter(instance):
-    original = instance.backzeit
-    instance.backzeit = original
-    assert instance.backzeit == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pteig_type(instance):
-    assert isinstance(instance.pteig, teig_)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pteig_setter(instance):
-    original = instance.pteig
-    instance.pteig = original
-    assert instance.pteig == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_backofen_type(instance):
-    assert isinstance(instance.backofen, backofen)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_backofen_setter(instance):
-    original = instance.backofen
-    instance.backofen = original
-    assert instance.backofen == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pteigmaschine_type(instance):
-    assert isinstance(instance.pteigmaschine, teigmaschine_)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pteigmaschine_setter(instance):
-    original = instance.pteigmaschine
-    instance.pteigmaschine = original
-    assert instance.pteigmaschine == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_menge_type(instance):
-    assert isinstance(instance.menge, str)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_menge_setter(instance):
-    original = instance.menge
-    instance.menge = original
-    assert instance.menge == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pform_type(instance):
-    assert isinstance(instance.pform, plaetzchenform_)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pform_setter(instance):
-    original = instance.pform
-    instance.pform = original
-    assert instance.pform == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_belagmaschine_type(instance):
-    assert isinstance(instance.belagmaschine, belagmaschine)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_belagmaschine_setter(instance):
-    original = instance.belagmaschine
-    instance.belagmaschine = original
-    assert instance.belagmaschine == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pguss_type(instance):
-    assert isinstance(instance.pguss, zutat_)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pguss_setter(instance):
-    original = instance.pguss
-    instance.pguss = original
-    assert instance.pguss == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pdeko_type(instance):
-    assert isinstance(instance.pdeko, zutat_)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_pdeko_setter(instance):
-    original = instance.pdeko
-    instance.pdeko = original
-    assert instance.pdeko == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_backtemp_type(instance):
-    assert isinstance(instance.backtemp, str)
 
 
 @given(instance=auftrag_strategy)
@@ -1596,36 +1406,99 @@ def test_auftrag_backtemp_setter(instance):
     instance.backtemp = original
     assert instance.backtemp == original
 
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_pdeko_setter(instance):
+    original = instance.pdeko
+    instance.pdeko = original
+    assert instance.pdeko == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_pform_setter(instance):
+    original = instance.pform
+    instance.pform = original
+    assert instance.pform == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_backzeit_setter(instance):
+    original = instance.backzeit
+    instance.backzeit = original
+    assert instance.backzeit == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_pteig_setter(instance):
+    original = instance.pteig
+    instance.pteig = original
+    assert instance.pteig == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_pguss_setter(instance):
+    original = instance.pguss
+    instance.pguss = original
+    assert instance.pguss == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_belagmaschine_setter(instance):
+    original = instance.belagmaschine
+    instance.belagmaschine = original
+    assert instance.belagmaschine == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_backofen_setter(instance):
+    original = instance.backofen
+    instance.backofen = original
+    assert instance.backofen == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_menge_setter(instance):
+    original = instance.menge
+    instance.menge = original
+    assert instance.menge == original
+
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_pteigmaschine_setter(instance):
+    original = instance.pteigmaschine
+    instance.pteigmaschine = original
+    assert instance.pteigmaschine == original
+
 @given(instance=plaetzchen_strategy)
 @settings(max_examples=50)
 def test_plaetzchen_instantiation(instance):
     assert isinstance(instance, plaetzchen)
 
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_pteig_type(instance):
-    assert isinstance(instance.pteig, teig_)
-
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_pteig_setter(instance):
-    original = instance.pteig
-    instance.pteig = original
-    assert instance.pteig == original
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_pguss_type(instance):
-    assert isinstance(instance.pguss, zutat_)
-
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_pguss_setter(instance):
-    original = instance.pguss
-    instance.pguss = original
-    assert instance.pguss == original
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_pdeko_type(instance):
-    assert isinstance(instance.pdeko, zutat_)
 
 
 @given(instance=plaetzchen_strategy)
@@ -1634,9 +1507,14 @@ def test_plaetzchen_pdeko_setter(instance):
     instance.pdeko = original
     assert instance.pdeko == original
 
+
+
 @given(instance=plaetzchen_strategy)
-def test_plaetzchen_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_plaetzchen_pguss_setter(instance):
+    original = instance.pguss
+    instance.pguss = original
+    assert instance.pguss == original
+
 
 
 @given(instance=plaetzchen_strategy)
@@ -1645,14 +1523,19 @@ def test_plaetzchen_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=plaetzchen_strategy)
+def test_plaetzchen_pteig_setter(instance):
+    original = instance.pteig
+    instance.pteig = original
+    assert instance.pteig == original
+
 @given(instance=teig_strategy)
 @settings(max_examples=50)
 def test_teig_instantiation(instance):
     assert isinstance(instance, teig)
 
-@given(instance=teig_strategy)
-def test_teig_zutaten_type(instance):
-    assert isinstance(instance.zutaten, str)
 
 
 @given(instance=teig_strategy)
@@ -1661,9 +1544,6 @@ def test_teig_zutaten_setter(instance):
     instance.zutaten = original
     assert instance.zutaten == original
 
-@given(instance=teig_strategy)
-def test_teig_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=teig_strategy)
@@ -1672,31 +1552,6 @@ def test_teig_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=teig_strategy)
-def test_teig_menge_type(instance):
-    assert isinstance(instance.menge, str)
-
-
-@given(instance=teig_strategy)
-def test_teig_menge_setter(instance):
-    original = instance.menge
-    instance.menge = original
-    assert instance.menge == original
-
-@given(instance=teig_strategy)
-def test_teig_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=teig_strategy)
-def test_teig_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=teig_strategy)
-def test_teig_form_type(instance):
-    assert isinstance(instance.form, plaetzchenform)
 
 
 @given(instance=teig_strategy)
@@ -1705,14 +1560,27 @@ def test_teig_form_setter(instance):
     instance.form = original
     assert instance.form == original
 
+
+
+@given(instance=teig_strategy)
+def test_teig_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=teig_strategy)
+def test_teig_menge_setter(instance):
+    original = instance.menge
+    instance.menge = original
+    assert instance.menge == original
+
 @given(instance=lager_strategy)
 @settings(max_examples=50)
 def test_lager_instantiation(instance):
     assert isinstance(instance, lager)
 
-@given(instance=lager_strategy)
-def test_lager_bestandZutaten_type(instance):
-    assert isinstance(instance.bestandZutaten, str)
 
 
 @given(instance=lager_strategy)
@@ -1721,9 +1589,6 @@ def test_lager_bestandZutaten_setter(instance):
     instance.bestandZutaten = original
     assert instance.bestandZutaten == original
 
-@given(instance=lager_strategy)
-def test_lager_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=lager_strategy)

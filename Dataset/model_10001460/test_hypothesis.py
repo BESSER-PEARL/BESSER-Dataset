@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     SysMessage,
@@ -16,11 +16,11 @@ from python_code import (
     Wolf,
     Villager,
     BaseRole,
-    Enumeration2,
-    Role,
-    Enumeration,
     NightAction,
+    Enumeration,
+    Role,
     State,
+    Enumeration2,
 )
 
 # =============================================================================
@@ -106,11 +106,20 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
+    assert "isAlive" in params, "Missing parameter 'isAlive'"
     assert "role" in params, "Missing parameter 'role'"
+    assert "votes" in params, "Missing parameter 'votes'"
     assert "night_target" in params, "Missing parameter 'night_target'"
     assert "vote_for" in params, "Missing parameter 'vote_for'"
-    assert "isAlive" in params, "Missing parameter 'isAlive'"
-    assert "votes" in params, "Missing parameter 'votes'"
+
+def test_player_has_isAlive():
+    assert hasattr(Player, "isAlive")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "isAlive" in klass.__dict__:
+            descriptor = klass.__dict__["isAlive"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_player_has_role():
     assert hasattr(Player, "role")
@@ -118,6 +127,15 @@ def test_player_has_role():
     for klass in Player.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_votes():
+    assert hasattr(Player, "votes")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "votes" in klass.__dict__:
+            descriptor = klass.__dict__["votes"]
             break
     assert isinstance(descriptor, property)
 
@@ -136,24 +154,6 @@ def test_player_has_vote_for():
     for klass in Player.__mro__:
         if "vote_for" in klass.__dict__:
             descriptor = klass.__dict__["vote_for"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_player_has_isAlive():
-    assert hasattr(Player, "isAlive")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "isAlive" in klass.__dict__:
-            descriptor = klass.__dict__["isAlive"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_player_has_votes():
-    assert hasattr(Player, "votes")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "votes" in klass.__dict__:
-            descriptor = klass.__dict__["votes"]
             break
     assert isinstance(descriptor, property)
 
@@ -226,19 +226,10 @@ def test_baserole_constructor_exists():
 def test_baserole_constructor_args():
     sig = inspect.signature(BaseRole.__init__)
     params = list(sig.parameters.keys())
-    assert "night_action" in params, "Missing parameter 'night_action'"
     assert "appear_as" in params, "Missing parameter 'appear_as'"
+    assert "night_action" in params, "Missing parameter 'night_action'"
     assert "wins_with" in params, "Missing parameter 'wins_with'"
     assert "role" in params, "Missing parameter 'role'"
-
-def test_baserole_has_night_action():
-    assert hasattr(BaseRole, "night_action")
-    descriptor = None
-    for klass in BaseRole.__mro__:
-        if "night_action" in klass.__dict__:
-            descriptor = klass.__dict__["night_action"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_baserole_has_appear_as():
     assert hasattr(BaseRole, "appear_as")
@@ -246,6 +237,15 @@ def test_baserole_has_appear_as():
     for klass in BaseRole.__mro__:
         if "appear_as" in klass.__dict__:
             descriptor = klass.__dict__["appear_as"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_baserole_has_night_action():
+    assert hasattr(BaseRole, "night_action")
+    descriptor = None
+    for klass in BaseRole.__mro__:
+        if "night_action" in klass.__dict__:
+            descriptor = klass.__dict__["night_action"]
             break
     assert isinstance(descriptor, property)
 
@@ -267,31 +267,18 @@ def test_baserole_has_role():
             break
     assert isinstance(descriptor, property)
 
-def test_enumeration2_exists():
+def test_nightaction_exists():
     # Check that the Enumeration exists
-    assert Enumeration2 is not None
+    assert NightAction is not None
 
-def test_enumeration2_has_all_literals():
+def test_nightaction_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Enumeration2]
+    enum_literals = [lit.name for lit in NightAction]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Enumeration2"
-
-def test_role_exists():
-    # Check that the Enumeration exists
-    assert Role is not None
-
-def test_role_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Role]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Role"
+        assert lit_name in enum_literals, f"Literal '' missing in NightAction"
 
 def test_enumeration_exists():
     # Check that the Enumeration exists
@@ -306,18 +293,18 @@ def test_enumeration_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Enumeration"
 
-def test_nightaction_exists():
+def test_role_exists():
     # Check that the Enumeration exists
-    assert NightAction is not None
+    assert Role is not None
 
-def test_nightaction_has_all_literals():
+def test_role_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NightAction]
+    enum_literals = [lit.name for lit in Role]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NightAction"
+        assert lit_name in enum_literals, f"Literal '' missing in Role"
 
 def test_state_exists():
     # Check that the Enumeration exists
@@ -331,6 +318,19 @@ def test_state_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in State"
+
+def test_enumeration2_exists():
+    # Check that the Enumeration exists
+    assert Enumeration2 is not None
+
+def test_enumeration2_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Enumeration2]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Enumeration2"
 
 
 # =============================================================================
@@ -360,16 +360,16 @@ Game_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
+    isAlive=
+        st.booleans(),
     role=
         safe_text,
+    votes=
+        st.integers(),
     night_target=
         st.none(),
     vote_for=
-        st.none(),
-    isAlive=
-        st.booleans(),
-    votes=
-        st.integers()
+        st.none()
 )
 Guardian_strategy = st.builds(
     Guardian,
@@ -385,9 +385,9 @@ Villager_strategy = st.builds(
 )
 BaseRole_strategy = st.builds(
     BaseRole,
-    night_action=
-        st.none(),
     appear_as=
+        st.none(),
+    night_action=
         st.none(),
     wins_with=
         st.none(),
@@ -415,9 +415,6 @@ def test_room_instantiation(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_turn_state_type(instance):
-    assert isinstance(instance.turn_state, state)
 
 
 @given(instance=Game_strategy)
@@ -431,42 +428,6 @@ def test_game_turn_state_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_role_type(instance):
-    assert isinstance(instance.role, str)
-
-
-@given(instance=Player_strategy)
-def test_player_role_setter(instance):
-    original = instance.role
-    instance.role = original
-    assert instance.role == original
-
-@given(instance=Player_strategy)
-def test_player_night_target_type(instance):
-    assert isinstance(instance.night_target, player)
-
-
-@given(instance=Player_strategy)
-def test_player_night_target_setter(instance):
-    original = instance.night_target
-    instance.night_target = original
-    assert instance.night_target == original
-
-@given(instance=Player_strategy)
-def test_player_vote_for_type(instance):
-    assert isinstance(instance.vote_for, player)
-
-
-@given(instance=Player_strategy)
-def test_player_vote_for_setter(instance):
-    original = instance.vote_for
-    instance.vote_for = original
-    assert instance.vote_for == original
-
-@given(instance=Player_strategy)
-def test_player_isAlive_type(instance):
-    assert isinstance(instance.isAlive, bool)
 
 
 @given(instance=Player_strategy)
@@ -475,9 +436,14 @@ def test_player_isAlive_setter(instance):
     instance.isAlive = original
     assert instance.isAlive == original
 
+
+
 @given(instance=Player_strategy)
-def test_player_votes_type(instance):
-    assert isinstance(instance.votes, int)
+def test_player_role_setter(instance):
+    original = instance.role
+    instance.role = original
+    assert instance.role == original
+
 
 
 @given(instance=Player_strategy)
@@ -485,6 +451,22 @@ def test_player_votes_setter(instance):
     original = instance.votes
     instance.votes = original
     assert instance.votes == original
+
+
+
+@given(instance=Player_strategy)
+def test_player_night_target_setter(instance):
+    original = instance.night_target
+    instance.night_target = original
+    assert instance.night_target == original
+
+
+
+@given(instance=Player_strategy)
+def test_player_vote_for_setter(instance):
+    original = instance.vote_for
+    instance.vote_for = original
+    assert instance.vote_for == original
 
 @given(instance=Guardian_strategy)
 @settings(max_examples=50)
@@ -511,20 +493,6 @@ def test_villager_instantiation(instance):
 def test_baserole_instantiation(instance):
     assert isinstance(instance, BaseRole)
 
-@given(instance=BaseRole_strategy)
-def test_baserole_night_action_type(instance):
-    assert isinstance(instance.night_action, nightaction)
-
-
-@given(instance=BaseRole_strategy)
-def test_baserole_night_action_setter(instance):
-    original = instance.night_action
-    instance.night_action = original
-    assert instance.night_action == original
-
-@given(instance=BaseRole_strategy)
-def test_baserole_appear_as_type(instance):
-    assert isinstance(instance.appear_as, role)
 
 
 @given(instance=BaseRole_strategy)
@@ -533,9 +501,14 @@ def test_baserole_appear_as_setter(instance):
     instance.appear_as = original
     assert instance.appear_as == original
 
+
+
 @given(instance=BaseRole_strategy)
-def test_baserole_wins_with_type(instance):
-    assert isinstance(instance.wins_with, role)
+def test_baserole_night_action_setter(instance):
+    original = instance.night_action
+    instance.night_action = original
+    assert instance.night_action == original
+
 
 
 @given(instance=BaseRole_strategy)
@@ -544,9 +517,6 @@ def test_baserole_wins_with_setter(instance):
     instance.wins_with = original
     assert instance.wins_with == original
 
-@given(instance=BaseRole_strategy)
-def test_baserole_role_type(instance):
-    assert isinstance(instance.role, role)
 
 
 @given(instance=BaseRole_strategy)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hutnArticleFamilies::Family,
-    hutnArticleFamilies::Person,
+from python_code import (
+    hutnArticleFamilies_Family,
+    hutnArticleFamilies_Person,
 )
 
 # =============================================================================
@@ -16,77 +16,77 @@ from classes import (
 
 
 
-def test_hutnarticlefamilies::family_is_not_abstract():
-    assert not inspect.isabstract(hutnArticleFamilies::Family)
+def test_hutnarticlefamilies_family_is_not_abstract():
+    assert not inspect.isabstract(hutnArticleFamilies_Family)
 
 
-def test_hutnarticlefamilies::family_constructor_exists():
-    assert callable(hutnArticleFamilies::Family.__init__)
+def test_hutnarticlefamilies_family_constructor_exists():
+    assert callable(hutnArticleFamilies_Family.__init__)
 
 
-def test_hutnarticlefamilies::family_constructor_args():
-    sig = inspect.signature(hutnArticleFamilies::Family.__init__)
+def test_hutnarticlefamilies_family_constructor_args():
+    sig = inspect.signature(hutnArticleFamilies_Family.__init__)
     params = list(sig.parameters.keys())
-    assert "lotteryNumbers" in params, "Missing parameter 'lotteryNumbers'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "migrant" in params, "Missing parameter 'migrant'"
     assert "nuclear" in params, "Missing parameter 'nuclear'"
+    assert "migrant" in params, "Missing parameter 'migrant'"
+    assert "lotteryNumbers" in params, "Missing parameter 'lotteryNumbers'"
 
-def test_hutnarticlefamilies::family_has_lotteryNumbers():
-    assert hasattr(hutnArticleFamilies::Family, "lotteryNumbers")
+def test_hutnarticlefamilies_family_has_name():
+    assert hasattr(hutnArticleFamilies_Family, "name")
     descriptor = None
-    for klass in hutnArticleFamilies::Family.__mro__:
-        if "lotteryNumbers" in klass.__dict__:
-            descriptor = klass.__dict__["lotteryNumbers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hutnarticlefamilies::family_has_name():
-    assert hasattr(hutnArticleFamilies::Family, "name")
-    descriptor = None
-    for klass in hutnArticleFamilies::Family.__mro__:
+    for klass in hutnArticleFamilies_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_hutnarticlefamilies::family_has_migrant():
-    assert hasattr(hutnArticleFamilies::Family, "migrant")
+def test_hutnarticlefamilies_family_has_nuclear():
+    assert hasattr(hutnArticleFamilies_Family, "nuclear")
     descriptor = None
-    for klass in hutnArticleFamilies::Family.__mro__:
-        if "migrant" in klass.__dict__:
-            descriptor = klass.__dict__["migrant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hutnarticlefamilies::family_has_nuclear():
-    assert hasattr(hutnArticleFamilies::Family, "nuclear")
-    descriptor = None
-    for klass in hutnArticleFamilies::Family.__mro__:
+    for klass in hutnArticleFamilies_Family.__mro__:
         if "nuclear" in klass.__dict__:
             descriptor = klass.__dict__["nuclear"]
             break
     assert isinstance(descriptor, property)
 
+def test_hutnarticlefamilies_family_has_migrant():
+    assert hasattr(hutnArticleFamilies_Family, "migrant")
+    descriptor = None
+    for klass in hutnArticleFamilies_Family.__mro__:
+        if "migrant" in klass.__dict__:
+            descriptor = klass.__dict__["migrant"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hutnarticlefamilies_family_has_lotteryNumbers():
+    assert hasattr(hutnArticleFamilies_Family, "lotteryNumbers")
+    descriptor = None
+    for klass in hutnArticleFamilies_Family.__mro__:
+        if "lotteryNumbers" in klass.__dict__:
+            descriptor = klass.__dict__["lotteryNumbers"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_hutnarticlefamilies::person_is_not_abstract():
-    assert not inspect.isabstract(hutnArticleFamilies::Person)
+
+def test_hutnarticlefamilies_person_is_not_abstract():
+    assert not inspect.isabstract(hutnArticleFamilies_Person)
 
 
-def test_hutnarticlefamilies::person_constructor_exists():
-    assert callable(hutnArticleFamilies::Person.__init__)
+def test_hutnarticlefamilies_person_constructor_exists():
+    assert callable(hutnArticleFamilies_Person.__init__)
 
 
-def test_hutnarticlefamilies::person_constructor_args():
-    sig = inspect.signature(hutnArticleFamilies::Person.__init__)
+def test_hutnarticlefamilies_person_constructor_args():
+    sig = inspect.signature(hutnArticleFamilies_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hutnarticlefamilies::person_has_name():
-    assert hasattr(hutnArticleFamilies::Person, "name")
+def test_hutnarticlefamilies_person_has_name():
+    assert hasattr(hutnArticleFamilies_Person, "name")
     descriptor = None
-    for klass in hutnArticleFamilies::Person.__mro__:
+    for klass in hutnArticleFamilies_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,84 +104,69 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hutnArticleFamilies::Family_strategy = st.builds(
-    hutnArticleFamilies::Family,
-    lotteryNumbers=
-        st.integers(),
+hutnArticleFamilies_Family_strategy = st.builds(
+    hutnArticleFamilies_Family,
     name=
         safe_text,
+    nuclear=
+        st.booleans(),
     migrant=
         st.booleans(),
-    nuclear=
-        st.booleans()
+    lotteryNumbers=
+        st.integers()
 )
-hutnArticleFamilies::Person_strategy = st.builds(
-    hutnArticleFamilies::Person,
+hutnArticleFamilies_Person_strategy = st.builds(
+    hutnArticleFamilies_Person,
     name=
         safe_text
 )
 
-@given(instance=hutnArticleFamilies::Family_strategy)
+@given(instance=hutnArticleFamilies_Family_strategy)
 @settings(max_examples=50)
-def test_hutnarticlefamilies::family_instantiation(instance):
-    assert isinstance(instance, hutnArticleFamilies::Family)
-
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_lotteryNumbers_type(instance):
-    assert isinstance(instance.lotteryNumbers, int)
+def test_hutnarticlefamilies_family_instantiation(instance):
+    assert isinstance(instance, hutnArticleFamilies_Family)
 
 
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_lotteryNumbers_setter(instance):
-    original = instance.lotteryNumbers
-    instance.lotteryNumbers = original
-    assert instance.lotteryNumbers == original
 
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_name_setter(instance):
+@given(instance=hutnArticleFamilies_Family_strategy)
+def test_hutnarticlefamilies_family_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_migrant_type(instance):
-    assert isinstance(instance.migrant, bool)
 
 
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_migrant_setter(instance):
-    original = instance.migrant
-    instance.migrant = original
-    assert instance.migrant == original
-
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_nuclear_type(instance):
-    assert isinstance(instance.nuclear, bool)
-
-
-@given(instance=hutnArticleFamilies::Family_strategy)
-def test_hutnarticlefamilies::family_nuclear_setter(instance):
+@given(instance=hutnArticleFamilies_Family_strategy)
+def test_hutnarticlefamilies_family_nuclear_setter(instance):
     original = instance.nuclear
     instance.nuclear = original
     assert instance.nuclear == original
 
-@given(instance=hutnArticleFamilies::Person_strategy)
+
+
+@given(instance=hutnArticleFamilies_Family_strategy)
+def test_hutnarticlefamilies_family_migrant_setter(instance):
+    original = instance.migrant
+    instance.migrant = original
+    assert instance.migrant == original
+
+
+
+@given(instance=hutnArticleFamilies_Family_strategy)
+def test_hutnarticlefamilies_family_lotteryNumbers_setter(instance):
+    original = instance.lotteryNumbers
+    instance.lotteryNumbers = original
+    assert instance.lotteryNumbers == original
+
+@given(instance=hutnArticleFamilies_Person_strategy)
 @settings(max_examples=50)
-def test_hutnarticlefamilies::person_instantiation(instance):
-    assert isinstance(instance, hutnArticleFamilies::Person)
-
-@given(instance=hutnArticleFamilies::Person_strategy)
-def test_hutnarticlefamilies::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hutnarticlefamilies_person_instantiation(instance):
+    assert isinstance(instance, hutnArticleFamilies_Person)
 
 
-@given(instance=hutnArticleFamilies::Person_strategy)
-def test_hutnarticlefamilies::person_name_setter(instance):
+
+@given(instance=hutnArticleFamilies_Person_strategy)
+def test_hutnarticlefamilies_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

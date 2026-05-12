@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NodeLabel,
-    transport::PacketTransportLabel,
+    transport_PacketTransportLabel,
     TransportSystem,
-    transport::PacketStyleTransportSystem,
-    transport::STEMTime,
+    transport_PacketStyleTransportSystem,
+    transport_STEMTime,
     DynamicLabel,
     MigrationEdgeLabel,
-    transport::LoadUnloadEdgeLabel,
+    transport_LoadUnloadEdgeLabel,
     MigrationEdge,
-    transport::LoadUnloadEdge,
+    transport_LoadUnloadEdge,
     EdgeLabel,
-    transport::PipeTransportEdgeLabel,
+    transport_PipeTransportEdgeLabel,
     PopulationEdge,
     EdgeDecorator,
-    transport::PacketStyleTransportSystemDecorator,
+    transport_PacketStyleTransportSystemDecorator,
     LabelValue,
-    transport::PipeTransportEdgeLabelValue,
-    transport::PacketTransportLabelValue,
+    transport_PipeTransportEdgeLabelValue,
+    transport_PacketTransportLabelValue,
     Node,
-    transport::TransportSystem,
-    transport::PipeTransportEdge,
-    transport::PipeStyleTransportSystem,
+    transport_TransportSystem,
+    transport_PipeTransportEdge,
+    transport_PipeStyleTransportSystem,
 )
 
 # =============================================================================
@@ -50,16 +50,16 @@ def test_nodelabel_constructor_args():
 
 
 
-def test_transport::packettransportlabel_is_not_abstract():
-    assert not inspect.isabstract(transport::PacketTransportLabel)
+def test_transport_packettransportlabel_is_not_abstract():
+    assert not inspect.isabstract(transport_PacketTransportLabel)
 
 
-def test_transport::packettransportlabel_constructor_exists():
-    assert callable(transport::PacketTransportLabel.__init__)
+def test_transport_packettransportlabel_constructor_exists():
+    assert callable(transport_PacketTransportLabel.__init__)
 
 
-def test_transport::packettransportlabel_constructor_args():
-    sig = inspect.signature(transport::PacketTransportLabel.__init__)
+def test_transport_packettransportlabel_constructor_args():
+    sig = inspect.signature(transport_PacketTransportLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -78,30 +78,30 @@ def test_transportsystem_constructor_args():
 
 
 
-def test_transport::packetstyletransportsystem_is_not_abstract():
-    assert not inspect.isabstract(transport::PacketStyleTransportSystem)
+def test_transport_packetstyletransportsystem_is_not_abstract():
+    assert not inspect.isabstract(transport_PacketStyleTransportSystem)
 
 
-def test_transport::packetstyletransportsystem_constructor_exists():
-    assert callable(transport::PacketStyleTransportSystem.__init__)
+def test_transport_packetstyletransportsystem_constructor_exists():
+    assert callable(transport_PacketStyleTransportSystem.__init__)
 
 
-def test_transport::packetstyletransportsystem_constructor_args():
-    sig = inspect.signature(transport::PacketStyleTransportSystem.__init__)
+def test_transport_packetstyletransportsystem_constructor_args():
+    sig = inspect.signature(transport_PacketStyleTransportSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transport::stemtime_is_not_abstract():
-    assert not inspect.isabstract(transport::STEMTime)
+def test_transport_stemtime_is_not_abstract():
+    assert not inspect.isabstract(transport_STEMTime)
 
 
-def test_transport::stemtime_constructor_exists():
-    assert callable(transport::STEMTime.__init__)
+def test_transport_stemtime_constructor_exists():
+    assert callable(transport_STEMTime.__init__)
 
 
-def test_transport::stemtime_constructor_args():
-    sig = inspect.signature(transport::STEMTime.__init__)
+def test_transport_stemtime_constructor_args():
+    sig = inspect.signature(transport_STEMTime.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,23 +134,23 @@ def test_migrationedgelabel_constructor_args():
 
 
 
-def test_transport::loadunloadedgelabel_is_not_abstract():
-    assert not inspect.isabstract(transport::LoadUnloadEdgeLabel)
+def test_transport_loadunloadedgelabel_is_not_abstract():
+    assert not inspect.isabstract(transport_LoadUnloadEdgeLabel)
 
 
-def test_transport::loadunloadedgelabel_constructor_exists():
-    assert callable(transport::LoadUnloadEdgeLabel.__init__)
+def test_transport_loadunloadedgelabel_constructor_exists():
+    assert callable(transport_LoadUnloadEdgeLabel.__init__)
 
 
-def test_transport::loadunloadedgelabel_constructor_args():
-    sig = inspect.signature(transport::LoadUnloadEdgeLabel.__init__)
+def test_transport_loadunloadedgelabel_constructor_args():
+    sig = inspect.signature(transport_LoadUnloadEdgeLabel.__init__)
     params = list(sig.parameters.keys())
     assert "activatedRate" in params, "Missing parameter 'activatedRate'"
 
-def test_transport::loadunloadedgelabel_has_activatedRate():
-    assert hasattr(transport::LoadUnloadEdgeLabel, "activatedRate")
+def test_transport_loadunloadedgelabel_has_activatedRate():
+    assert hasattr(transport_LoadUnloadEdgeLabel, "activatedRate")
     descriptor = None
-    for klass in transport::LoadUnloadEdgeLabel.__mro__:
+    for klass in transport_LoadUnloadEdgeLabel.__mro__:
         if "activatedRate" in klass.__dict__:
             descriptor = klass.__dict__["activatedRate"]
             break
@@ -172,23 +172,23 @@ def test_migrationedge_constructor_args():
 
 
 
-def test_transport::loadunloadedge_is_not_abstract():
-    assert not inspect.isabstract(transport::LoadUnloadEdge)
+def test_transport_loadunloadedge_is_not_abstract():
+    assert not inspect.isabstract(transport_LoadUnloadEdge)
 
 
-def test_transport::loadunloadedge_constructor_exists():
-    assert callable(transport::LoadUnloadEdge.__init__)
+def test_transport_loadunloadedge_constructor_exists():
+    assert callable(transport_LoadUnloadEdge.__init__)
 
 
-def test_transport::loadunloadedge_constructor_args():
-    sig = inspect.signature(transport::LoadUnloadEdge.__init__)
+def test_transport_loadunloadedge_constructor_args():
+    sig = inspect.signature(transport_LoadUnloadEdge.__init__)
     params = list(sig.parameters.keys())
     assert "loadingEdge" in params, "Missing parameter 'loadingEdge'"
 
-def test_transport::loadunloadedge_has_loadingEdge():
-    assert hasattr(transport::LoadUnloadEdge, "loadingEdge")
+def test_transport_loadunloadedge_has_loadingEdge():
+    assert hasattr(transport_LoadUnloadEdge, "loadingEdge")
     descriptor = None
-    for klass in transport::LoadUnloadEdge.__mro__:
+    for klass in transport_LoadUnloadEdge.__mro__:
         if "loadingEdge" in klass.__dict__:
             descriptor = klass.__dict__["loadingEdge"]
             break
@@ -210,16 +210,16 @@ def test_edgelabel_constructor_args():
 
 
 
-def test_transport::pipetransportedgelabel_is_not_abstract():
-    assert not inspect.isabstract(transport::PipeTransportEdgeLabel)
+def test_transport_pipetransportedgelabel_is_not_abstract():
+    assert not inspect.isabstract(transport_PipeTransportEdgeLabel)
 
 
-def test_transport::pipetransportedgelabel_constructor_exists():
-    assert callable(transport::PipeTransportEdgeLabel.__init__)
+def test_transport_pipetransportedgelabel_constructor_exists():
+    assert callable(transport_PipeTransportEdgeLabel.__init__)
 
 
-def test_transport::pipetransportedgelabel_constructor_args():
-    sig = inspect.signature(transport::PipeTransportEdgeLabel.__init__)
+def test_transport_pipetransportedgelabel_constructor_args():
+    sig = inspect.signature(transport_PipeTransportEdgeLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,16 +252,16 @@ def test_edgedecorator_constructor_args():
 
 
 
-def test_transport::packetstyletransportsystemdecorator_is_not_abstract():
-    assert not inspect.isabstract(transport::PacketStyleTransportSystemDecorator)
+def test_transport_packetstyletransportsystemdecorator_is_not_abstract():
+    assert not inspect.isabstract(transport_PacketStyleTransportSystemDecorator)
 
 
-def test_transport::packetstyletransportsystemdecorator_constructor_exists():
-    assert callable(transport::PacketStyleTransportSystemDecorator.__init__)
+def test_transport_packetstyletransportsystemdecorator_constructor_exists():
+    assert callable(transport_PacketStyleTransportSystemDecorator.__init__)
 
 
-def test_transport::packetstyletransportsystemdecorator_constructor_args():
-    sig = inspect.signature(transport::PacketStyleTransportSystemDecorator.__init__)
+def test_transport_packetstyletransportsystemdecorator_constructor_args():
+    sig = inspect.signature(transport_PacketStyleTransportSystemDecorator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -280,33 +280,33 @@ def test_labelvalue_constructor_args():
 
 
 
-def test_transport::pipetransportedgelabelvalue_is_not_abstract():
-    assert not inspect.isabstract(transport::PipeTransportEdgeLabelValue)
+def test_transport_pipetransportedgelabelvalue_is_not_abstract():
+    assert not inspect.isabstract(transport_PipeTransportEdgeLabelValue)
 
 
-def test_transport::pipetransportedgelabelvalue_constructor_exists():
-    assert callable(transport::PipeTransportEdgeLabelValue.__init__)
+def test_transport_pipetransportedgelabelvalue_constructor_exists():
+    assert callable(transport_PipeTransportEdgeLabelValue.__init__)
 
 
-def test_transport::pipetransportedgelabelvalue_constructor_args():
-    sig = inspect.signature(transport::PipeTransportEdgeLabelValue.__init__)
+def test_transport_pipetransportedgelabelvalue_constructor_args():
+    sig = inspect.signature(transport_PipeTransportEdgeLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "maxFlow" in params, "Missing parameter 'maxFlow'"
     assert "timePeriod" in params, "Missing parameter 'timePeriod'"
 
-def test_transport::pipetransportedgelabelvalue_has_maxFlow():
-    assert hasattr(transport::PipeTransportEdgeLabelValue, "maxFlow")
+def test_transport_pipetransportedgelabelvalue_has_maxFlow():
+    assert hasattr(transport_PipeTransportEdgeLabelValue, "maxFlow")
     descriptor = None
-    for klass in transport::PipeTransportEdgeLabelValue.__mro__:
+    for klass in transport_PipeTransportEdgeLabelValue.__mro__:
         if "maxFlow" in klass.__dict__:
             descriptor = klass.__dict__["maxFlow"]
             break
     assert isinstance(descriptor, property)
 
-def test_transport::pipetransportedgelabelvalue_has_timePeriod():
-    assert hasattr(transport::PipeTransportEdgeLabelValue, "timePeriod")
+def test_transport_pipetransportedgelabelvalue_has_timePeriod():
+    assert hasattr(transport_PipeTransportEdgeLabelValue, "timePeriod")
     descriptor = None
-    for klass in transport::PipeTransportEdgeLabelValue.__mro__:
+    for klass in transport_PipeTransportEdgeLabelValue.__mro__:
         if "timePeriod" in klass.__dict__:
             descriptor = klass.__dict__["timePeriod"]
             break
@@ -314,23 +314,23 @@ def test_transport::pipetransportedgelabelvalue_has_timePeriod():
 
 
 
-def test_transport::packettransportlabelvalue_is_not_abstract():
-    assert not inspect.isabstract(transport::PacketTransportLabelValue)
+def test_transport_packettransportlabelvalue_is_not_abstract():
+    assert not inspect.isabstract(transport_PacketTransportLabelValue)
 
 
-def test_transport::packettransportlabelvalue_constructor_exists():
-    assert callable(transport::PacketTransportLabelValue.__init__)
+def test_transport_packettransportlabelvalue_constructor_exists():
+    assert callable(transport_PacketTransportLabelValue.__init__)
 
 
-def test_transport::packettransportlabelvalue_constructor_args():
-    sig = inspect.signature(transport::PacketTransportLabelValue.__init__)
+def test_transport_packettransportlabelvalue_constructor_args():
+    sig = inspect.signature(transport_PacketTransportLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "capacity" in params, "Missing parameter 'capacity'"
 
-def test_transport::packettransportlabelvalue_has_capacity():
-    assert hasattr(transport::PacketTransportLabelValue, "capacity")
+def test_transport_packettransportlabelvalue_has_capacity():
+    assert hasattr(transport_PacketTransportLabelValue, "capacity")
     descriptor = None
-    for klass in transport::PacketTransportLabelValue.__mro__:
+    for klass in transport_PacketTransportLabelValue.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
@@ -352,51 +352,51 @@ def test_node_constructor_args():
 
 
 
-def test_transport::transportsystem_is_not_abstract():
-    assert not inspect.isabstract(transport::TransportSystem)
+def test_transport_transportsystem_is_not_abstract():
+    assert not inspect.isabstract(transport_TransportSystem)
 
 
-def test_transport::transportsystem_constructor_exists():
-    assert callable(transport::TransportSystem.__init__)
+def test_transport_transportsystem_constructor_exists():
+    assert callable(transport_TransportSystem.__init__)
 
 
-def test_transport::transportsystem_constructor_args():
-    sig = inspect.signature(transport::TransportSystem.__init__)
+def test_transport_transportsystem_constructor_args():
+    sig = inspect.signature(transport_TransportSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transport::pipetransportedge_is_not_abstract():
-    assert not inspect.isabstract(transport::PipeTransportEdge)
+def test_transport_pipetransportedge_is_not_abstract():
+    assert not inspect.isabstract(transport_PipeTransportEdge)
 
 
-def test_transport::pipetransportedge_constructor_exists():
-    assert callable(transport::PipeTransportEdge.__init__)
+def test_transport_pipetransportedge_constructor_exists():
+    assert callable(transport_PipeTransportEdge.__init__)
 
 
-def test_transport::pipetransportedge_constructor_args():
-    sig = inspect.signature(transport::PipeTransportEdge.__init__)
+def test_transport_pipetransportedge_constructor_args():
+    sig = inspect.signature(transport_PipeTransportEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transport::pipestyletransportsystem_is_not_abstract():
-    assert not inspect.isabstract(transport::PipeStyleTransportSystem)
+def test_transport_pipestyletransportsystem_is_not_abstract():
+    assert not inspect.isabstract(transport_PipeStyleTransportSystem)
 
 
-def test_transport::pipestyletransportsystem_constructor_exists():
-    assert callable(transport::PipeStyleTransportSystem.__init__)
+def test_transport_pipestyletransportsystem_constructor_exists():
+    assert callable(transport_PipeStyleTransportSystem.__init__)
 
 
-def test_transport::pipestyletransportsystem_constructor_args():
-    sig = inspect.signature(transport::PipeStyleTransportSystem.__init__)
+def test_transport_pipestyletransportsystem_constructor_args():
+    sig = inspect.signature(transport_PipeStyleTransportSystem.__init__)
     params = list(sig.parameters.keys())
     assert "maxCapacity" in params, "Missing parameter 'maxCapacity'"
 
-def test_transport::pipestyletransportsystem_has_maxCapacity():
-    assert hasattr(transport::PipeStyleTransportSystem, "maxCapacity")
+def test_transport_pipestyletransportsystem_has_maxCapacity():
+    assert hasattr(transport_PipeStyleTransportSystem, "maxCapacity")
     descriptor = None
-    for klass in transport::PipeStyleTransportSystem.__mro__:
+    for klass in transport_PipeStyleTransportSystem.__mro__:
         if "maxCapacity" in klass.__dict__:
             descriptor = klass.__dict__["maxCapacity"]
             break
@@ -417,17 +417,17 @@ safe_text = st.text(
 NodeLabel_strategy = st.builds(
     NodeLabel,
 )
-transport::PacketTransportLabel_strategy = st.builds(
-    transport::PacketTransportLabel,
+transport_PacketTransportLabel_strategy = st.builds(
+    transport_PacketTransportLabel,
 )
 TransportSystem_strategy = st.builds(
     TransportSystem,
 )
-transport::PacketStyleTransportSystem_strategy = st.builds(
-    transport::PacketStyleTransportSystem,
+transport_PacketStyleTransportSystem_strategy = st.builds(
+    transport_PacketStyleTransportSystem,
 )
-transport::STEMTime_strategy = st.builds(
-    transport::STEMTime,
+transport_STEMTime_strategy = st.builds(
+    transport_STEMTime,
 )
 DynamicLabel_strategy = st.builds(
     DynamicLabel,
@@ -435,24 +435,24 @@ DynamicLabel_strategy = st.builds(
 MigrationEdgeLabel_strategy = st.builds(
     MigrationEdgeLabel,
 )
-transport::LoadUnloadEdgeLabel_strategy = st.builds(
-    transport::LoadUnloadEdgeLabel,
+transport_LoadUnloadEdgeLabel_strategy = st.builds(
+    transport_LoadUnloadEdgeLabel,
     activatedRate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 MigrationEdge_strategy = st.builds(
     MigrationEdge,
 )
-transport::LoadUnloadEdge_strategy = st.builds(
-    transport::LoadUnloadEdge,
+transport_LoadUnloadEdge_strategy = st.builds(
+    transport_LoadUnloadEdge,
     loadingEdge=
         st.booleans()
 )
 EdgeLabel_strategy = st.builds(
     EdgeLabel,
 )
-transport::PipeTransportEdgeLabel_strategy = st.builds(
-    transport::PipeTransportEdgeLabel,
+transport_PipeTransportEdgeLabel_strategy = st.builds(
+    transport_PipeTransportEdgeLabel,
 )
 PopulationEdge_strategy = st.builds(
     PopulationEdge,
@@ -460,35 +460,35 @@ PopulationEdge_strategy = st.builds(
 EdgeDecorator_strategy = st.builds(
     EdgeDecorator,
 )
-transport::PacketStyleTransportSystemDecorator_strategy = st.builds(
-    transport::PacketStyleTransportSystemDecorator,
+transport_PacketStyleTransportSystemDecorator_strategy = st.builds(
+    transport_PacketStyleTransportSystemDecorator,
 )
 LabelValue_strategy = st.builds(
     LabelValue,
 )
-transport::PipeTransportEdgeLabelValue_strategy = st.builds(
-    transport::PipeTransportEdgeLabelValue,
+transport_PipeTransportEdgeLabelValue_strategy = st.builds(
+    transport_PipeTransportEdgeLabelValue,
     maxFlow=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     timePeriod=
         safe_text
 )
-transport::PacketTransportLabelValue_strategy = st.builds(
-    transport::PacketTransportLabelValue,
+transport_PacketTransportLabelValue_strategy = st.builds(
+    transport_PacketTransportLabelValue,
     capacity=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Node_strategy = st.builds(
     Node,
 )
-transport::TransportSystem_strategy = st.builds(
-    transport::TransportSystem,
+transport_TransportSystem_strategy = st.builds(
+    transport_TransportSystem,
 )
-transport::PipeTransportEdge_strategy = st.builds(
-    transport::PipeTransportEdge,
+transport_PipeTransportEdge_strategy = st.builds(
+    transport_PipeTransportEdge,
 )
-transport::PipeStyleTransportSystem_strategy = st.builds(
-    transport::PipeStyleTransportSystem,
+transport_PipeStyleTransportSystem_strategy = st.builds(
+    transport_PipeStyleTransportSystem,
     maxCapacity=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -498,25 +498,25 @@ transport::PipeStyleTransportSystem_strategy = st.builds(
 def test_nodelabel_instantiation(instance):
     assert isinstance(instance, NodeLabel)
 
-@given(instance=transport::PacketTransportLabel_strategy)
+@given(instance=transport_PacketTransportLabel_strategy)
 @settings(max_examples=50)
-def test_transport::packettransportlabel_instantiation(instance):
-    assert isinstance(instance, transport::PacketTransportLabel)
+def test_transport_packettransportlabel_instantiation(instance):
+    assert isinstance(instance, transport_PacketTransportLabel)
 
 @given(instance=TransportSystem_strategy)
 @settings(max_examples=50)
 def test_transportsystem_instantiation(instance):
     assert isinstance(instance, TransportSystem)
 
-@given(instance=transport::PacketStyleTransportSystem_strategy)
+@given(instance=transport_PacketStyleTransportSystem_strategy)
 @settings(max_examples=50)
-def test_transport::packetstyletransportsystem_instantiation(instance):
-    assert isinstance(instance, transport::PacketStyleTransportSystem)
+def test_transport_packetstyletransportsystem_instantiation(instance):
+    assert isinstance(instance, transport_PacketStyleTransportSystem)
 
-@given(instance=transport::STEMTime_strategy)
+@given(instance=transport_STEMTime_strategy)
 @settings(max_examples=50)
-def test_transport::stemtime_instantiation(instance):
-    assert isinstance(instance, transport::STEMTime)
+def test_transport_stemtime_instantiation(instance):
+    assert isinstance(instance, transport_STEMTime)
 
 @given(instance=DynamicLabel_strategy)
 @settings(max_examples=50)
@@ -528,18 +528,15 @@ def test_dynamiclabel_instantiation(instance):
 def test_migrationedgelabel_instantiation(instance):
     assert isinstance(instance, MigrationEdgeLabel)
 
-@given(instance=transport::LoadUnloadEdgeLabel_strategy)
+@given(instance=transport_LoadUnloadEdgeLabel_strategy)
 @settings(max_examples=50)
-def test_transport::loadunloadedgelabel_instantiation(instance):
-    assert isinstance(instance, transport::LoadUnloadEdgeLabel)
-
-@given(instance=transport::LoadUnloadEdgeLabel_strategy)
-def test_transport::loadunloadedgelabel_activatedRate_type(instance):
-    assert isinstance(instance.activatedRate, float)
+def test_transport_loadunloadedgelabel_instantiation(instance):
+    assert isinstance(instance, transport_LoadUnloadEdgeLabel)
 
 
-@given(instance=transport::LoadUnloadEdgeLabel_strategy)
-def test_transport::loadunloadedgelabel_activatedRate_setter(instance):
+
+@given(instance=transport_LoadUnloadEdgeLabel_strategy)
+def test_transport_loadunloadedgelabel_activatedRate_setter(instance):
     original = instance.activatedRate
     instance.activatedRate = original
     assert instance.activatedRate == original
@@ -549,18 +546,15 @@ def test_transport::loadunloadedgelabel_activatedRate_setter(instance):
 def test_migrationedge_instantiation(instance):
     assert isinstance(instance, MigrationEdge)
 
-@given(instance=transport::LoadUnloadEdge_strategy)
+@given(instance=transport_LoadUnloadEdge_strategy)
 @settings(max_examples=50)
-def test_transport::loadunloadedge_instantiation(instance):
-    assert isinstance(instance, transport::LoadUnloadEdge)
-
-@given(instance=transport::LoadUnloadEdge_strategy)
-def test_transport::loadunloadedge_loadingEdge_type(instance):
-    assert isinstance(instance.loadingEdge, bool)
+def test_transport_loadunloadedge_instantiation(instance):
+    assert isinstance(instance, transport_LoadUnloadEdge)
 
 
-@given(instance=transport::LoadUnloadEdge_strategy)
-def test_transport::loadunloadedge_loadingEdge_setter(instance):
+
+@given(instance=transport_LoadUnloadEdge_strategy)
+def test_transport_loadunloadedge_loadingEdge_setter(instance):
     original = instance.loadingEdge
     instance.loadingEdge = original
     assert instance.loadingEdge == original
@@ -570,10 +564,10 @@ def test_transport::loadunloadedge_loadingEdge_setter(instance):
 def test_edgelabel_instantiation(instance):
     assert isinstance(instance, EdgeLabel)
 
-@given(instance=transport::PipeTransportEdgeLabel_strategy)
+@given(instance=transport_PipeTransportEdgeLabel_strategy)
 @settings(max_examples=50)
-def test_transport::pipetransportedgelabel_instantiation(instance):
-    assert isinstance(instance, transport::PipeTransportEdgeLabel)
+def test_transport_pipetransportedgelabel_instantiation(instance):
+    assert isinstance(instance, transport_PipeTransportEdgeLabel)
 
 @given(instance=PopulationEdge_strategy)
 @settings(max_examples=50)
@@ -585,55 +579,46 @@ def test_populationedge_instantiation(instance):
 def test_edgedecorator_instantiation(instance):
     assert isinstance(instance, EdgeDecorator)
 
-@given(instance=transport::PacketStyleTransportSystemDecorator_strategy)
+@given(instance=transport_PacketStyleTransportSystemDecorator_strategy)
 @settings(max_examples=50)
-def test_transport::packetstyletransportsystemdecorator_instantiation(instance):
-    assert isinstance(instance, transport::PacketStyleTransportSystemDecorator)
+def test_transport_packetstyletransportsystemdecorator_instantiation(instance):
+    assert isinstance(instance, transport_PacketStyleTransportSystemDecorator)
 
 @given(instance=LabelValue_strategy)
 @settings(max_examples=50)
 def test_labelvalue_instantiation(instance):
     assert isinstance(instance, LabelValue)
 
-@given(instance=transport::PipeTransportEdgeLabelValue_strategy)
+@given(instance=transport_PipeTransportEdgeLabelValue_strategy)
 @settings(max_examples=50)
-def test_transport::pipetransportedgelabelvalue_instantiation(instance):
-    assert isinstance(instance, transport::PipeTransportEdgeLabelValue)
-
-@given(instance=transport::PipeTransportEdgeLabelValue_strategy)
-def test_transport::pipetransportedgelabelvalue_maxFlow_type(instance):
-    assert isinstance(instance.maxFlow, float)
+def test_transport_pipetransportedgelabelvalue_instantiation(instance):
+    assert isinstance(instance, transport_PipeTransportEdgeLabelValue)
 
 
-@given(instance=transport::PipeTransportEdgeLabelValue_strategy)
-def test_transport::pipetransportedgelabelvalue_maxFlow_setter(instance):
+
+@given(instance=transport_PipeTransportEdgeLabelValue_strategy)
+def test_transport_pipetransportedgelabelvalue_maxFlow_setter(instance):
     original = instance.maxFlow
     instance.maxFlow = original
     assert instance.maxFlow == original
 
-@given(instance=transport::PipeTransportEdgeLabelValue_strategy)
-def test_transport::pipetransportedgelabelvalue_timePeriod_type(instance):
-    assert isinstance(instance.timePeriod, str)
 
 
-@given(instance=transport::PipeTransportEdgeLabelValue_strategy)
-def test_transport::pipetransportedgelabelvalue_timePeriod_setter(instance):
+@given(instance=transport_PipeTransportEdgeLabelValue_strategy)
+def test_transport_pipetransportedgelabelvalue_timePeriod_setter(instance):
     original = instance.timePeriod
     instance.timePeriod = original
     assert instance.timePeriod == original
 
-@given(instance=transport::PacketTransportLabelValue_strategy)
+@given(instance=transport_PacketTransportLabelValue_strategy)
 @settings(max_examples=50)
-def test_transport::packettransportlabelvalue_instantiation(instance):
-    assert isinstance(instance, transport::PacketTransportLabelValue)
-
-@given(instance=transport::PacketTransportLabelValue_strategy)
-def test_transport::packettransportlabelvalue_capacity_type(instance):
-    assert isinstance(instance.capacity, float)
+def test_transport_packettransportlabelvalue_instantiation(instance):
+    assert isinstance(instance, transport_PacketTransportLabelValue)
 
 
-@given(instance=transport::PacketTransportLabelValue_strategy)
-def test_transport::packettransportlabelvalue_capacity_setter(instance):
+
+@given(instance=transport_PacketTransportLabelValue_strategy)
+def test_transport_packettransportlabelvalue_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original
@@ -643,28 +628,25 @@ def test_transport::packettransportlabelvalue_capacity_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=transport::TransportSystem_strategy)
+@given(instance=transport_TransportSystem_strategy)
 @settings(max_examples=50)
-def test_transport::transportsystem_instantiation(instance):
-    assert isinstance(instance, transport::TransportSystem)
+def test_transport_transportsystem_instantiation(instance):
+    assert isinstance(instance, transport_TransportSystem)
 
-@given(instance=transport::PipeTransportEdge_strategy)
+@given(instance=transport_PipeTransportEdge_strategy)
 @settings(max_examples=50)
-def test_transport::pipetransportedge_instantiation(instance):
-    assert isinstance(instance, transport::PipeTransportEdge)
+def test_transport_pipetransportedge_instantiation(instance):
+    assert isinstance(instance, transport_PipeTransportEdge)
 
-@given(instance=transport::PipeStyleTransportSystem_strategy)
+@given(instance=transport_PipeStyleTransportSystem_strategy)
 @settings(max_examples=50)
-def test_transport::pipestyletransportsystem_instantiation(instance):
-    assert isinstance(instance, transport::PipeStyleTransportSystem)
-
-@given(instance=transport::PipeStyleTransportSystem_strategy)
-def test_transport::pipestyletransportsystem_maxCapacity_type(instance):
-    assert isinstance(instance.maxCapacity, float)
+def test_transport_pipestyletransportsystem_instantiation(instance):
+    assert isinstance(instance, transport_PipeStyleTransportSystem)
 
 
-@given(instance=transport::PipeStyleTransportSystem_strategy)
-def test_transport::pipestyletransportsystem_maxCapacity_setter(instance):
+
+@given(instance=transport_PipeStyleTransportSystem_strategy)
+def test_transport_pipestyletransportsystem_maxCapacity_setter(instance):
     original = instance.maxCapacity
     instance.maxCapacity = original
     assert instance.maxCapacity == original

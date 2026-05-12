@@ -3,54 +3,54 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ArithmeticExpression,
-    siple::Subtraction,
-    siple::Multiplication,
-    siple::Division,
-    siple::Addition,
+    siple_Subtraction,
+    siple_Division,
+    siple_Multiplication,
+    siple_Addition,
     EqualityExpression,
-    siple::GreaterThan,
-    siple::GreaterThanEqual,
-    siple::LesserThanEqual,
-    siple::LesserThan,
-    siple::Equal,
+    siple_LesserThan,
+    siple_LesserThanEqual,
+    siple_GreaterThan,
+    siple_GreaterThanEqual,
+    siple_Equal,
     LogicExpression,
-    siple::Or,
-    siple::And,
+    siple_Or,
+    siple_And,
     BinaryExpression,
-    siple::EqualityExpression,
-    siple::ArithmeticExpression,
-    siple::LogicExpression,
+    siple_ArithmeticExpression,
+    siple_EqualityExpression,
+    siple_LogicExpression,
     Declaration,
-    siple::VariableDeclaration,
+    siple_VariableDeclaration,
     UnaryExpression,
-    siple::Dereference,
-    siple::RealCoercion,
-    siple::UMinus,
-    siple::Not,
+    siple_Dereference,
+    siple_UMinus,
+    siple_RealCoercion,
+    siple_Not,
     Expression,
-    siple::UnaryExpression,
-    siple::BinaryExpression,
-    siple::Reference,
-    siple::NestedExpression,
-    siple::ProcedureCall,
-    siple::Constant,
+    siple_ProcedureCall,
+    siple_UnaryExpression,
+    siple_Reference,
+    siple_BinaryExpression,
+    siple_NestedExpression,
+    siple_Constant,
     Statement,
-    siple::Write,
-    siple::Expression,
-    siple::Read,
-    siple::If,
-    siple::Declaration,
-    siple::While,
-    siple::VariableAssignment,
-    siple::ProcedureReturn,
-    siple::Block,
-    siple::Statement,
-    siple::ProcedureDeclaration,
-    siple::CompilationUnit,
+    siple_Read,
+    siple_Declaration,
+    siple_ProcedureReturn,
+    siple_If,
+    siple_VariableAssignment,
+    siple_While,
+    siple_Expression,
+    siple_Write,
+    siple_Block,
+    siple_Statement,
+    siple_ProcedureDeclaration,
+    siple_CompilationUnit,
 )
 
 # =============================================================================
@@ -73,58 +73,58 @@ def test_arithmeticexpression_constructor_args():
 
 
 
-def test_siple::subtraction_is_not_abstract():
-    assert not inspect.isabstract(siple::Subtraction)
+def test_siple_subtraction_is_not_abstract():
+    assert not inspect.isabstract(siple_Subtraction)
 
 
-def test_siple::subtraction_constructor_exists():
-    assert callable(siple::Subtraction.__init__)
+def test_siple_subtraction_constructor_exists():
+    assert callable(siple_Subtraction.__init__)
 
 
-def test_siple::subtraction_constructor_args():
-    sig = inspect.signature(siple::Subtraction.__init__)
+def test_siple_subtraction_constructor_args():
+    sig = inspect.signature(siple_Subtraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::multiplication_is_not_abstract():
-    assert not inspect.isabstract(siple::Multiplication)
+def test_siple_division_is_not_abstract():
+    assert not inspect.isabstract(siple_Division)
 
 
-def test_siple::multiplication_constructor_exists():
-    assert callable(siple::Multiplication.__init__)
+def test_siple_division_constructor_exists():
+    assert callable(siple_Division.__init__)
 
 
-def test_siple::multiplication_constructor_args():
-    sig = inspect.signature(siple::Multiplication.__init__)
+def test_siple_division_constructor_args():
+    sig = inspect.signature(siple_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::division_is_not_abstract():
-    assert not inspect.isabstract(siple::Division)
+def test_siple_multiplication_is_not_abstract():
+    assert not inspect.isabstract(siple_Multiplication)
 
 
-def test_siple::division_constructor_exists():
-    assert callable(siple::Division.__init__)
+def test_siple_multiplication_constructor_exists():
+    assert callable(siple_Multiplication.__init__)
 
 
-def test_siple::division_constructor_args():
-    sig = inspect.signature(siple::Division.__init__)
+def test_siple_multiplication_constructor_args():
+    sig = inspect.signature(siple_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::addition_is_not_abstract():
-    assert not inspect.isabstract(siple::Addition)
+def test_siple_addition_is_not_abstract():
+    assert not inspect.isabstract(siple_Addition)
 
 
-def test_siple::addition_constructor_exists():
-    assert callable(siple::Addition.__init__)
+def test_siple_addition_constructor_exists():
+    assert callable(siple_Addition.__init__)
 
 
-def test_siple::addition_constructor_args():
-    sig = inspect.signature(siple::Addition.__init__)
+def test_siple_addition_constructor_args():
+    sig = inspect.signature(siple_Addition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -143,72 +143,72 @@ def test_equalityexpression_constructor_args():
 
 
 
-def test_siple::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(siple::GreaterThan)
+def test_siple_lesserthan_is_not_abstract():
+    assert not inspect.isabstract(siple_LesserThan)
 
 
-def test_siple::greaterthan_constructor_exists():
-    assert callable(siple::GreaterThan.__init__)
+def test_siple_lesserthan_constructor_exists():
+    assert callable(siple_LesserThan.__init__)
 
 
-def test_siple::greaterthan_constructor_args():
-    sig = inspect.signature(siple::GreaterThan.__init__)
+def test_siple_lesserthan_constructor_args():
+    sig = inspect.signature(siple_LesserThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::greaterthanequal_is_not_abstract():
-    assert not inspect.isabstract(siple::GreaterThanEqual)
+def test_siple_lesserthanequal_is_not_abstract():
+    assert not inspect.isabstract(siple_LesserThanEqual)
 
 
-def test_siple::greaterthanequal_constructor_exists():
-    assert callable(siple::GreaterThanEqual.__init__)
+def test_siple_lesserthanequal_constructor_exists():
+    assert callable(siple_LesserThanEqual.__init__)
 
 
-def test_siple::greaterthanequal_constructor_args():
-    sig = inspect.signature(siple::GreaterThanEqual.__init__)
+def test_siple_lesserthanequal_constructor_args():
+    sig = inspect.signature(siple_LesserThanEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::lesserthanequal_is_not_abstract():
-    assert not inspect.isabstract(siple::LesserThanEqual)
+def test_siple_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(siple_GreaterThan)
 
 
-def test_siple::lesserthanequal_constructor_exists():
-    assert callable(siple::LesserThanEqual.__init__)
+def test_siple_greaterthan_constructor_exists():
+    assert callable(siple_GreaterThan.__init__)
 
 
-def test_siple::lesserthanequal_constructor_args():
-    sig = inspect.signature(siple::LesserThanEqual.__init__)
+def test_siple_greaterthan_constructor_args():
+    sig = inspect.signature(siple_GreaterThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::lesserthan_is_not_abstract():
-    assert not inspect.isabstract(siple::LesserThan)
+def test_siple_greaterthanequal_is_not_abstract():
+    assert not inspect.isabstract(siple_GreaterThanEqual)
 
 
-def test_siple::lesserthan_constructor_exists():
-    assert callable(siple::LesserThan.__init__)
+def test_siple_greaterthanequal_constructor_exists():
+    assert callable(siple_GreaterThanEqual.__init__)
 
 
-def test_siple::lesserthan_constructor_args():
-    sig = inspect.signature(siple::LesserThan.__init__)
+def test_siple_greaterthanequal_constructor_args():
+    sig = inspect.signature(siple_GreaterThanEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::equal_is_not_abstract():
-    assert not inspect.isabstract(siple::Equal)
+def test_siple_equal_is_not_abstract():
+    assert not inspect.isabstract(siple_Equal)
 
 
-def test_siple::equal_constructor_exists():
-    assert callable(siple::Equal.__init__)
+def test_siple_equal_constructor_exists():
+    assert callable(siple_Equal.__init__)
 
 
-def test_siple::equal_constructor_args():
-    sig = inspect.signature(siple::Equal.__init__)
+def test_siple_equal_constructor_args():
+    sig = inspect.signature(siple_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,30 +227,30 @@ def test_logicexpression_constructor_args():
 
 
 
-def test_siple::or_is_not_abstract():
-    assert not inspect.isabstract(siple::Or)
+def test_siple_or_is_not_abstract():
+    assert not inspect.isabstract(siple_Or)
 
 
-def test_siple::or_constructor_exists():
-    assert callable(siple::Or.__init__)
+def test_siple_or_constructor_exists():
+    assert callable(siple_Or.__init__)
 
 
-def test_siple::or_constructor_args():
-    sig = inspect.signature(siple::Or.__init__)
+def test_siple_or_constructor_args():
+    sig = inspect.signature(siple_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::and_is_not_abstract():
-    assert not inspect.isabstract(siple::And)
+def test_siple_and_is_not_abstract():
+    assert not inspect.isabstract(siple_And)
 
 
-def test_siple::and_constructor_exists():
-    assert callable(siple::And.__init__)
+def test_siple_and_constructor_exists():
+    assert callable(siple_And.__init__)
 
 
-def test_siple::and_constructor_args():
-    sig = inspect.signature(siple::And.__init__)
+def test_siple_and_constructor_args():
+    sig = inspect.signature(siple_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -269,44 +269,44 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_siple::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(siple::EqualityExpression)
+def test_siple_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(siple_ArithmeticExpression)
 
 
-def test_siple::equalityexpression_constructor_exists():
-    assert callable(siple::EqualityExpression.__init__)
+def test_siple_arithmeticexpression_constructor_exists():
+    assert callable(siple_ArithmeticExpression.__init__)
 
 
-def test_siple::equalityexpression_constructor_args():
-    sig = inspect.signature(siple::EqualityExpression.__init__)
+def test_siple_arithmeticexpression_constructor_args():
+    sig = inspect.signature(siple_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(siple::ArithmeticExpression)
+def test_siple_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(siple_EqualityExpression)
 
 
-def test_siple::arithmeticexpression_constructor_exists():
-    assert callable(siple::ArithmeticExpression.__init__)
+def test_siple_equalityexpression_constructor_exists():
+    assert callable(siple_EqualityExpression.__init__)
 
 
-def test_siple::arithmeticexpression_constructor_args():
-    sig = inspect.signature(siple::ArithmeticExpression.__init__)
+def test_siple_equalityexpression_constructor_args():
+    sig = inspect.signature(siple_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::logicexpression_is_not_abstract():
-    assert not inspect.isabstract(siple::LogicExpression)
+def test_siple_logicexpression_is_not_abstract():
+    assert not inspect.isabstract(siple_LogicExpression)
 
 
-def test_siple::logicexpression_constructor_exists():
-    assert callable(siple::LogicExpression.__init__)
+def test_siple_logicexpression_constructor_exists():
+    assert callable(siple_LogicExpression.__init__)
 
 
-def test_siple::logicexpression_constructor_args():
-    sig = inspect.signature(siple::LogicExpression.__init__)
+def test_siple_logicexpression_constructor_args():
+    sig = inspect.signature(siple_LogicExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -325,23 +325,23 @@ def test_declaration_constructor_args():
 
 
 
-def test_siple::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(siple::VariableDeclaration)
+def test_siple_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(siple_VariableDeclaration)
 
 
-def test_siple::variabledeclaration_constructor_exists():
-    assert callable(siple::VariableDeclaration.__init__)
+def test_siple_variabledeclaration_constructor_exists():
+    assert callable(siple_VariableDeclaration.__init__)
 
 
-def test_siple::variabledeclaration_constructor_args():
-    sig = inspect.signature(siple::VariableDeclaration.__init__)
+def test_siple_variabledeclaration_constructor_args():
+    sig = inspect.signature(siple_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "DeclaredType" in params, "Missing parameter 'DeclaredType'"
 
-def test_siple::variabledeclaration_has_DeclaredType():
-    assert hasattr(siple::VariableDeclaration, "DeclaredType")
+def test_siple_variabledeclaration_has_DeclaredType():
+    assert hasattr(siple_VariableDeclaration, "DeclaredType")
     descriptor = None
-    for klass in siple::VariableDeclaration.__mro__:
+    for klass in siple_VariableDeclaration.__mro__:
         if "DeclaredType" in klass.__dict__:
             descriptor = klass.__dict__["DeclaredType"]
             break
@@ -363,58 +363,58 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_siple::dereference_is_not_abstract():
-    assert not inspect.isabstract(siple::Dereference)
+def test_siple_dereference_is_not_abstract():
+    assert not inspect.isabstract(siple_Dereference)
 
 
-def test_siple::dereference_constructor_exists():
-    assert callable(siple::Dereference.__init__)
+def test_siple_dereference_constructor_exists():
+    assert callable(siple_Dereference.__init__)
 
 
-def test_siple::dereference_constructor_args():
-    sig = inspect.signature(siple::Dereference.__init__)
+def test_siple_dereference_constructor_args():
+    sig = inspect.signature(siple_Dereference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::realcoercion_is_not_abstract():
-    assert not inspect.isabstract(siple::RealCoercion)
+def test_siple_uminus_is_not_abstract():
+    assert not inspect.isabstract(siple_UMinus)
 
 
-def test_siple::realcoercion_constructor_exists():
-    assert callable(siple::RealCoercion.__init__)
+def test_siple_uminus_constructor_exists():
+    assert callable(siple_UMinus.__init__)
 
 
-def test_siple::realcoercion_constructor_args():
-    sig = inspect.signature(siple::RealCoercion.__init__)
+def test_siple_uminus_constructor_args():
+    sig = inspect.signature(siple_UMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::uminus_is_not_abstract():
-    assert not inspect.isabstract(siple::UMinus)
+def test_siple_realcoercion_is_not_abstract():
+    assert not inspect.isabstract(siple_RealCoercion)
 
 
-def test_siple::uminus_constructor_exists():
-    assert callable(siple::UMinus.__init__)
+def test_siple_realcoercion_constructor_exists():
+    assert callable(siple_RealCoercion.__init__)
 
 
-def test_siple::uminus_constructor_args():
-    sig = inspect.signature(siple::UMinus.__init__)
+def test_siple_realcoercion_constructor_args():
+    sig = inspect.signature(siple_RealCoercion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::not_is_not_abstract():
-    assert not inspect.isabstract(siple::Not)
+def test_siple_not_is_not_abstract():
+    assert not inspect.isabstract(siple_Not)
 
 
-def test_siple::not_constructor_exists():
-    assert callable(siple::Not.__init__)
+def test_siple_not_constructor_exists():
+    assert callable(siple_Not.__init__)
 
 
-def test_siple::not_constructor_args():
-    sig = inspect.signature(siple::Not.__init__)
+def test_siple_not_constructor_args():
+    sig = inspect.signature(siple_Not.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -433,51 +433,51 @@ def test_expression_constructor_args():
 
 
 
-def test_siple::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(siple::UnaryExpression)
+def test_siple_procedurecall_is_not_abstract():
+    assert not inspect.isabstract(siple_ProcedureCall)
 
 
-def test_siple::unaryexpression_constructor_exists():
-    assert callable(siple::UnaryExpression.__init__)
+def test_siple_procedurecall_constructor_exists():
+    assert callable(siple_ProcedureCall.__init__)
 
 
-def test_siple::unaryexpression_constructor_args():
-    sig = inspect.signature(siple::UnaryExpression.__init__)
+def test_siple_procedurecall_constructor_args():
+    sig = inspect.signature(siple_ProcedureCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(siple::BinaryExpression)
+def test_siple_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(siple_UnaryExpression)
 
 
-def test_siple::binaryexpression_constructor_exists():
-    assert callable(siple::BinaryExpression.__init__)
+def test_siple_unaryexpression_constructor_exists():
+    assert callable(siple_UnaryExpression.__init__)
 
 
-def test_siple::binaryexpression_constructor_args():
-    sig = inspect.signature(siple::BinaryExpression.__init__)
+def test_siple_unaryexpression_constructor_args():
+    sig = inspect.signature(siple_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::reference_is_not_abstract():
-    assert not inspect.isabstract(siple::Reference)
+def test_siple_reference_is_not_abstract():
+    assert not inspect.isabstract(siple_Reference)
 
 
-def test_siple::reference_constructor_exists():
-    assert callable(siple::Reference.__init__)
+def test_siple_reference_constructor_exists():
+    assert callable(siple_Reference.__init__)
 
 
-def test_siple::reference_constructor_args():
-    sig = inspect.signature(siple::Reference.__init__)
+def test_siple_reference_constructor_args():
+    sig = inspect.signature(siple_Reference.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_siple::reference_has_Name():
-    assert hasattr(siple::Reference, "Name")
+def test_siple_reference_has_Name():
+    assert hasattr(siple_Reference, "Name")
     descriptor = None
-    for klass in siple::Reference.__mro__:
+    for klass in siple_Reference.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -485,83 +485,83 @@ def test_siple::reference_has_Name():
 
 
 
-def test_siple::nestedexpression_is_not_abstract():
-    assert not inspect.isabstract(siple::NestedExpression)
+def test_siple_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(siple_BinaryExpression)
 
 
-def test_siple::nestedexpression_constructor_exists():
-    assert callable(siple::NestedExpression.__init__)
+def test_siple_binaryexpression_constructor_exists():
+    assert callable(siple_BinaryExpression.__init__)
 
 
-def test_siple::nestedexpression_constructor_args():
-    sig = inspect.signature(siple::NestedExpression.__init__)
+def test_siple_binaryexpression_constructor_args():
+    sig = inspect.signature(siple_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::procedurecall_is_not_abstract():
-    assert not inspect.isabstract(siple::ProcedureCall)
+def test_siple_nestedexpression_is_not_abstract():
+    assert not inspect.isabstract(siple_NestedExpression)
 
 
-def test_siple::procedurecall_constructor_exists():
-    assert callable(siple::ProcedureCall.__init__)
+def test_siple_nestedexpression_constructor_exists():
+    assert callable(siple_NestedExpression.__init__)
 
 
-def test_siple::procedurecall_constructor_args():
-    sig = inspect.signature(siple::ProcedureCall.__init__)
+def test_siple_nestedexpression_constructor_args():
+    sig = inspect.signature(siple_NestedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::constant_is_not_abstract():
-    assert not inspect.isabstract(siple::Constant)
+def test_siple_constant_is_not_abstract():
+    assert not inspect.isabstract(siple_Constant)
 
 
-def test_siple::constant_constructor_exists():
-    assert callable(siple::Constant.__init__)
+def test_siple_constant_constructor_exists():
+    assert callable(siple_Constant.__init__)
 
 
-def test_siple::constant_constructor_args():
-    sig = inspect.signature(siple::Constant.__init__)
+def test_siple_constant_constructor_args():
+    sig = inspect.signature(siple_Constant.__init__)
     params = list(sig.parameters.keys())
-    assert "AsInteger" in params, "Missing parameter 'AsInteger'"
-    assert "AsBoolean" in params, "Missing parameter 'AsBoolean'"
-    assert "Lexem" in params, "Missing parameter 'Lexem'"
     assert "AsReal" in params, "Missing parameter 'AsReal'"
+    assert "AsBoolean" in params, "Missing parameter 'AsBoolean'"
+    assert "AsInteger" in params, "Missing parameter 'AsInteger'"
+    assert "Lexem" in params, "Missing parameter 'Lexem'"
 
-def test_siple::constant_has_AsInteger():
-    assert hasattr(siple::Constant, "AsInteger")
+def test_siple_constant_has_AsReal():
+    assert hasattr(siple_Constant, "AsReal")
     descriptor = None
-    for klass in siple::Constant.__mro__:
-        if "AsInteger" in klass.__dict__:
-            descriptor = klass.__dict__["AsInteger"]
+    for klass in siple_Constant.__mro__:
+        if "AsReal" in klass.__dict__:
+            descriptor = klass.__dict__["AsReal"]
             break
     assert isinstance(descriptor, property)
 
-def test_siple::constant_has_AsBoolean():
-    assert hasattr(siple::Constant, "AsBoolean")
+def test_siple_constant_has_AsBoolean():
+    assert hasattr(siple_Constant, "AsBoolean")
     descriptor = None
-    for klass in siple::Constant.__mro__:
+    for klass in siple_Constant.__mro__:
         if "AsBoolean" in klass.__dict__:
             descriptor = klass.__dict__["AsBoolean"]
             break
     assert isinstance(descriptor, property)
 
-def test_siple::constant_has_Lexem():
-    assert hasattr(siple::Constant, "Lexem")
+def test_siple_constant_has_AsInteger():
+    assert hasattr(siple_Constant, "AsInteger")
     descriptor = None
-    for klass in siple::Constant.__mro__:
-        if "Lexem" in klass.__dict__:
-            descriptor = klass.__dict__["Lexem"]
+    for klass in siple_Constant.__mro__:
+        if "AsInteger" in klass.__dict__:
+            descriptor = klass.__dict__["AsInteger"]
             break
     assert isinstance(descriptor, property)
 
-def test_siple::constant_has_AsReal():
-    assert hasattr(siple::Constant, "AsReal")
+def test_siple_constant_has_Lexem():
+    assert hasattr(siple_Constant, "Lexem")
     descriptor = None
-    for klass in siple::Constant.__mro__:
-        if "AsReal" in klass.__dict__:
-            descriptor = klass.__dict__["AsReal"]
+    for klass in siple_Constant.__mro__:
+        if "Lexem" in klass.__dict__:
+            descriptor = klass.__dict__["Lexem"]
             break
     assert isinstance(descriptor, property)
 
@@ -581,23 +581,23 @@ def test_statement_constructor_args():
 
 
 
-def test_siple::write_is_not_abstract():
-    assert not inspect.isabstract(siple::Write)
+def test_siple_read_is_not_abstract():
+    assert not inspect.isabstract(siple_Read)
 
 
-def test_siple::write_constructor_exists():
-    assert callable(siple::Write.__init__)
+def test_siple_read_constructor_exists():
+    assert callable(siple_Read.__init__)
 
 
-def test_siple::write_constructor_args():
-    sig = inspect.signature(siple::Write.__init__)
+def test_siple_read_constructor_args():
+    sig = inspect.signature(siple_Read.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
 
-def test_siple::write_has_Type():
-    assert hasattr(siple::Write, "Type")
+def test_siple_read_has_Type():
+    assert hasattr(siple_Read, "Type")
     descriptor = None
-    for klass in siple::Write.__mro__:
+    for klass in siple_Read.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
             break
@@ -605,143 +605,67 @@ def test_siple::write_has_Type():
 
 
 
-def test_siple::expression_is_not_abstract():
-    assert not inspect.isabstract(siple::Expression)
+def test_siple_declaration_is_not_abstract():
+    assert not inspect.isabstract(siple_Declaration)
 
 
-def test_siple::expression_constructor_exists():
-    assert callable(siple::Expression.__init__)
+def test_siple_declaration_constructor_exists():
+    assert callable(siple_Declaration.__init__)
 
 
-def test_siple::expression_constructor_args():
-    sig = inspect.signature(siple::Expression.__init__)
+def test_siple_declaration_constructor_args():
+    sig = inspect.signature(siple_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
-
-def test_siple::expression_has_Type():
-    assert hasattr(siple::Expression, "Type")
-    descriptor = None
-    for klass in siple::Expression.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siple::read_is_not_abstract():
-    assert not inspect.isabstract(siple::Read)
-
-
-def test_siple::read_constructor_exists():
-    assert callable(siple::Read.__init__)
-
-
-def test_siple::read_constructor_args():
-    sig = inspect.signature(siple::Read.__init__)
-    params = list(sig.parameters.keys())
-    assert "Type" in params, "Missing parameter 'Type'"
-
-def test_siple::read_has_Type():
-    assert hasattr(siple::Read, "Type")
-    descriptor = None
-    for klass in siple::Read.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siple::if_is_not_abstract():
-    assert not inspect.isabstract(siple::If)
-
-
-def test_siple::if_constructor_exists():
-    assert callable(siple::If.__init__)
-
-
-def test_siple::if_constructor_args():
-    sig = inspect.signature(siple::If.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siple::declaration_is_not_abstract():
-    assert not inspect.isabstract(siple::Declaration)
-
-
-def test_siple::declaration_constructor_exists():
-    assert callable(siple::Declaration.__init__)
-
-
-def test_siple::declaration_constructor_args():
-    sig = inspect.signature(siple::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "IsParameterDeclaration" in params, "Missing parameter 'IsParameterDeclaration'"
     assert "Name" in params, "Missing parameter 'Name'"
-    assert "Type" in params, "Missing parameter 'Type'"
+    assert "IsParameterDeclaration" in params, "Missing parameter 'IsParameterDeclaration'"
 
-def test_siple::declaration_has_IsParameterDeclaration():
-    assert hasattr(siple::Declaration, "IsParameterDeclaration")
+def test_siple_declaration_has_Type():
+    assert hasattr(siple_Declaration, "Type")
     descriptor = None
-    for klass in siple::Declaration.__mro__:
-        if "IsParameterDeclaration" in klass.__dict__:
-            descriptor = klass.__dict__["IsParameterDeclaration"]
+    for klass in siple_Declaration.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
             break
     assert isinstance(descriptor, property)
 
-def test_siple::declaration_has_Name():
-    assert hasattr(siple::Declaration, "Name")
+def test_siple_declaration_has_Name():
+    assert hasattr(siple_Declaration, "Name")
     descriptor = None
-    for klass in siple::Declaration.__mro__:
+    for klass in siple_Declaration.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_siple::declaration_has_Type():
-    assert hasattr(siple::Declaration, "Type")
+def test_siple_declaration_has_IsParameterDeclaration():
+    assert hasattr(siple_Declaration, "IsParameterDeclaration")
     descriptor = None
-    for klass in siple::Declaration.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
+    for klass in siple_Declaration.__mro__:
+        if "IsParameterDeclaration" in klass.__dict__:
+            descriptor = klass.__dict__["IsParameterDeclaration"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_siple::while_is_not_abstract():
-    assert not inspect.isabstract(siple::While)
+def test_siple_procedurereturn_is_not_abstract():
+    assert not inspect.isabstract(siple_ProcedureReturn)
 
 
-def test_siple::while_constructor_exists():
-    assert callable(siple::While.__init__)
+def test_siple_procedurereturn_constructor_exists():
+    assert callable(siple_ProcedureReturn.__init__)
 
 
-def test_siple::while_constructor_args():
-    sig = inspect.signature(siple::While.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siple::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(siple::VariableAssignment)
-
-
-def test_siple::variableassignment_constructor_exists():
-    assert callable(siple::VariableAssignment.__init__)
-
-
-def test_siple::variableassignment_constructor_args():
-    sig = inspect.signature(siple::VariableAssignment.__init__)
+def test_siple_procedurereturn_constructor_args():
+    sig = inspect.signature(siple_ProcedureReturn.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
 
-def test_siple::variableassignment_has_Type():
-    assert hasattr(siple::VariableAssignment, "Type")
+def test_siple_procedurereturn_has_Type():
+    assert hasattr(siple_ProcedureReturn, "Type")
     descriptor = None
-    for klass in siple::VariableAssignment.__mro__:
+    for klass in siple_ProcedureReturn.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
             break
@@ -749,23 +673,37 @@ def test_siple::variableassignment_has_Type():
 
 
 
-def test_siple::procedurereturn_is_not_abstract():
-    assert not inspect.isabstract(siple::ProcedureReturn)
+def test_siple_if_is_not_abstract():
+    assert not inspect.isabstract(siple_If)
 
 
-def test_siple::procedurereturn_constructor_exists():
-    assert callable(siple::ProcedureReturn.__init__)
+def test_siple_if_constructor_exists():
+    assert callable(siple_If.__init__)
 
 
-def test_siple::procedurereturn_constructor_args():
-    sig = inspect.signature(siple::ProcedureReturn.__init__)
+def test_siple_if_constructor_args():
+    sig = inspect.signature(siple_If.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siple_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(siple_VariableAssignment)
+
+
+def test_siple_variableassignment_constructor_exists():
+    assert callable(siple_VariableAssignment.__init__)
+
+
+def test_siple_variableassignment_constructor_args():
+    sig = inspect.signature(siple_VariableAssignment.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
 
-def test_siple::procedurereturn_has_Type():
-    assert hasattr(siple::ProcedureReturn, "Type")
+def test_siple_variableassignment_has_Type():
+    assert hasattr(siple_VariableAssignment, "Type")
     descriptor = None
-    for klass in siple::ProcedureReturn.__mro__:
+    for klass in siple_VariableAssignment.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
             break
@@ -773,51 +711,113 @@ def test_siple::procedurereturn_has_Type():
 
 
 
-def test_siple::block_is_not_abstract():
-    assert not inspect.isabstract(siple::Block)
+def test_siple_while_is_not_abstract():
+    assert not inspect.isabstract(siple_While)
 
 
-def test_siple::block_constructor_exists():
-    assert callable(siple::Block.__init__)
+def test_siple_while_constructor_exists():
+    assert callable(siple_While.__init__)
 
 
-def test_siple::block_constructor_args():
-    sig = inspect.signature(siple::Block.__init__)
+def test_siple_while_constructor_args():
+    sig = inspect.signature(siple_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::statement_is_not_abstract():
-    assert not inspect.isabstract(siple::Statement)
+def test_siple_expression_is_not_abstract():
+    assert not inspect.isabstract(siple_Expression)
 
 
-def test_siple::statement_constructor_exists():
-    assert callable(siple::Statement.__init__)
+def test_siple_expression_constructor_exists():
+    assert callable(siple_Expression.__init__)
 
 
-def test_siple::statement_constructor_args():
-    sig = inspect.signature(siple::Statement.__init__)
+def test_siple_expression_constructor_args():
+    sig = inspect.signature(siple_Expression.__init__)
+    params = list(sig.parameters.keys())
+    assert "Type" in params, "Missing parameter 'Type'"
+
+def test_siple_expression_has_Type():
+    assert hasattr(siple_Expression, "Type")
+    descriptor = None
+    for klass in siple_Expression.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siple_write_is_not_abstract():
+    assert not inspect.isabstract(siple_Write)
+
+
+def test_siple_write_constructor_exists():
+    assert callable(siple_Write.__init__)
+
+
+def test_siple_write_constructor_args():
+    sig = inspect.signature(siple_Write.__init__)
+    params = list(sig.parameters.keys())
+    assert "Type" in params, "Missing parameter 'Type'"
+
+def test_siple_write_has_Type():
+    assert hasattr(siple_Write, "Type")
+    descriptor = None
+    for klass in siple_Write.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siple_block_is_not_abstract():
+    assert not inspect.isabstract(siple_Block)
+
+
+def test_siple_block_constructor_exists():
+    assert callable(siple_Block.__init__)
+
+
+def test_siple_block_constructor_args():
+    sig = inspect.signature(siple_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siple::proceduredeclaration_is_not_abstract():
-    assert not inspect.isabstract(siple::ProcedureDeclaration)
+def test_siple_statement_is_not_abstract():
+    assert not inspect.isabstract(siple_Statement)
 
 
-def test_siple::proceduredeclaration_constructor_exists():
-    assert callable(siple::ProcedureDeclaration.__init__)
+def test_siple_statement_constructor_exists():
+    assert callable(siple_Statement.__init__)
 
 
-def test_siple::proceduredeclaration_constructor_args():
-    sig = inspect.signature(siple::ProcedureDeclaration.__init__)
+def test_siple_statement_constructor_args():
+    sig = inspect.signature(siple_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siple_proceduredeclaration_is_not_abstract():
+    assert not inspect.isabstract(siple_ProcedureDeclaration)
+
+
+def test_siple_proceduredeclaration_constructor_exists():
+    assert callable(siple_ProcedureDeclaration.__init__)
+
+
+def test_siple_proceduredeclaration_constructor_args():
+    sig = inspect.signature(siple_ProcedureDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "ReturnType" in params, "Missing parameter 'ReturnType'"
 
-def test_siple::proceduredeclaration_has_ReturnType():
-    assert hasattr(siple::ProcedureDeclaration, "ReturnType")
+def test_siple_proceduredeclaration_has_ReturnType():
+    assert hasattr(siple_ProcedureDeclaration, "ReturnType")
     descriptor = None
-    for klass in siple::ProcedureDeclaration.__mro__:
+    for klass in siple_ProcedureDeclaration.__mro__:
         if "ReturnType" in klass.__dict__:
             descriptor = klass.__dict__["ReturnType"]
             break
@@ -825,16 +825,16 @@ def test_siple::proceduredeclaration_has_ReturnType():
 
 
 
-def test_siple::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(siple::CompilationUnit)
+def test_siple_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(siple_CompilationUnit)
 
 
-def test_siple::compilationunit_constructor_exists():
-    assert callable(siple::CompilationUnit.__init__)
+def test_siple_compilationunit_constructor_exists():
+    assert callable(siple_CompilationUnit.__init__)
 
 
-def test_siple::compilationunit_constructor_args():
-    sig = inspect.signature(siple::CompilationUnit.__init__)
+def test_siple_compilationunit_constructor_args():
+    sig = inspect.signature(siple_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -852,167 +852,167 @@ safe_text = st.text(
 ArithmeticExpression_strategy = st.builds(
     ArithmeticExpression,
 )
-siple::Subtraction_strategy = st.builds(
-    siple::Subtraction,
+siple_Subtraction_strategy = st.builds(
+    siple_Subtraction,
 )
-siple::Multiplication_strategy = st.builds(
-    siple::Multiplication,
+siple_Division_strategy = st.builds(
+    siple_Division,
 )
-siple::Division_strategy = st.builds(
-    siple::Division,
+siple_Multiplication_strategy = st.builds(
+    siple_Multiplication,
 )
-siple::Addition_strategy = st.builds(
-    siple::Addition,
+siple_Addition_strategy = st.builds(
+    siple_Addition,
 )
 EqualityExpression_strategy = st.builds(
     EqualityExpression,
 )
-siple::GreaterThan_strategy = st.builds(
-    siple::GreaterThan,
+siple_LesserThan_strategy = st.builds(
+    siple_LesserThan,
 )
-siple::GreaterThanEqual_strategy = st.builds(
-    siple::GreaterThanEqual,
+siple_LesserThanEqual_strategy = st.builds(
+    siple_LesserThanEqual,
 )
-siple::LesserThanEqual_strategy = st.builds(
-    siple::LesserThanEqual,
+siple_GreaterThan_strategy = st.builds(
+    siple_GreaterThan,
 )
-siple::LesserThan_strategy = st.builds(
-    siple::LesserThan,
+siple_GreaterThanEqual_strategy = st.builds(
+    siple_GreaterThanEqual,
 )
-siple::Equal_strategy = st.builds(
-    siple::Equal,
+siple_Equal_strategy = st.builds(
+    siple_Equal,
 )
 LogicExpression_strategy = st.builds(
     LogicExpression,
 )
-siple::Or_strategy = st.builds(
-    siple::Or,
+siple_Or_strategy = st.builds(
+    siple_Or,
 )
-siple::And_strategy = st.builds(
-    siple::And,
+siple_And_strategy = st.builds(
+    siple_And,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-siple::EqualityExpression_strategy = st.builds(
-    siple::EqualityExpression,
+siple_ArithmeticExpression_strategy = st.builds(
+    siple_ArithmeticExpression,
 )
-siple::ArithmeticExpression_strategy = st.builds(
-    siple::ArithmeticExpression,
+siple_EqualityExpression_strategy = st.builds(
+    siple_EqualityExpression,
 )
-siple::LogicExpression_strategy = st.builds(
-    siple::LogicExpression,
+siple_LogicExpression_strategy = st.builds(
+    siple_LogicExpression,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-siple::VariableDeclaration_strategy = st.builds(
-    siple::VariableDeclaration,
+siple_VariableDeclaration_strategy = st.builds(
+    siple_VariableDeclaration,
     DeclaredType=
         safe_text
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-siple::Dereference_strategy = st.builds(
-    siple::Dereference,
+siple_Dereference_strategy = st.builds(
+    siple_Dereference,
 )
-siple::RealCoercion_strategy = st.builds(
-    siple::RealCoercion,
+siple_UMinus_strategy = st.builds(
+    siple_UMinus,
 )
-siple::UMinus_strategy = st.builds(
-    siple::UMinus,
+siple_RealCoercion_strategy = st.builds(
+    siple_RealCoercion,
 )
-siple::Not_strategy = st.builds(
-    siple::Not,
+siple_Not_strategy = st.builds(
+    siple_Not,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-siple::UnaryExpression_strategy = st.builds(
-    siple::UnaryExpression,
+siple_ProcedureCall_strategy = st.builds(
+    siple_ProcedureCall,
 )
-siple::BinaryExpression_strategy = st.builds(
-    siple::BinaryExpression,
+siple_UnaryExpression_strategy = st.builds(
+    siple_UnaryExpression,
 )
-siple::Reference_strategy = st.builds(
-    siple::Reference,
+siple_Reference_strategy = st.builds(
+    siple_Reference,
     Name=
         safe_text
 )
-siple::NestedExpression_strategy = st.builds(
-    siple::NestedExpression,
+siple_BinaryExpression_strategy = st.builds(
+    siple_BinaryExpression,
 )
-siple::ProcedureCall_strategy = st.builds(
-    siple::ProcedureCall,
+siple_NestedExpression_strategy = st.builds(
+    siple_NestedExpression,
 )
-siple::Constant_strategy = st.builds(
-    siple::Constant,
-    AsInteger=
+siple_Constant_strategy = st.builds(
+    siple_Constant,
+    AsReal=
         safe_text,
     AsBoolean=
         safe_text,
-    Lexem=
+    AsInteger=
         safe_text,
-    AsReal=
+    Lexem=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-siple::Write_strategy = st.builds(
-    siple::Write,
+siple_Read_strategy = st.builds(
+    siple_Read,
     Type=
         safe_text
 )
-siple::Expression_strategy = st.builds(
-    siple::Expression,
+siple_Declaration_strategy = st.builds(
+    siple_Declaration,
     Type=
-        safe_text
-)
-siple::Read_strategy = st.builds(
-    siple::Read,
-    Type=
-        safe_text
-)
-siple::If_strategy = st.builds(
-    siple::If,
-)
-siple::Declaration_strategy = st.builds(
-    siple::Declaration,
-    IsParameterDeclaration=
-        st.booleans(),
+        safe_text,
     Name=
         safe_text,
+    IsParameterDeclaration=
+        st.booleans()
+)
+siple_ProcedureReturn_strategy = st.builds(
+    siple_ProcedureReturn,
     Type=
         safe_text
 )
-siple::While_strategy = st.builds(
-    siple::While,
+siple_If_strategy = st.builds(
+    siple_If,
 )
-siple::VariableAssignment_strategy = st.builds(
-    siple::VariableAssignment,
+siple_VariableAssignment_strategy = st.builds(
+    siple_VariableAssignment,
     Type=
         safe_text
 )
-siple::ProcedureReturn_strategy = st.builds(
-    siple::ProcedureReturn,
+siple_While_strategy = st.builds(
+    siple_While,
+)
+siple_Expression_strategy = st.builds(
+    siple_Expression,
     Type=
         safe_text
 )
-siple::Block_strategy = st.builds(
-    siple::Block,
+siple_Write_strategy = st.builds(
+    siple_Write,
+    Type=
+        safe_text
 )
-siple::Statement_strategy = st.builds(
-    siple::Statement,
+siple_Block_strategy = st.builds(
+    siple_Block,
 )
-siple::ProcedureDeclaration_strategy = st.builds(
-    siple::ProcedureDeclaration,
+siple_Statement_strategy = st.builds(
+    siple_Statement,
+)
+siple_ProcedureDeclaration_strategy = st.builds(
+    siple_ProcedureDeclaration,
     ReturnType=
         safe_text
 )
-siple::CompilationUnit_strategy = st.builds(
-    siple::CompilationUnit,
+siple_CompilationUnit_strategy = st.builds(
+    siple_CompilationUnit,
 )
 
 @given(instance=ArithmeticExpression_strategy)
@@ -1020,108 +1020,105 @@ siple::CompilationUnit_strategy = st.builds(
 def test_arithmeticexpression_instantiation(instance):
     assert isinstance(instance, ArithmeticExpression)
 
-@given(instance=siple::Subtraction_strategy)
+@given(instance=siple_Subtraction_strategy)
 @settings(max_examples=50)
-def test_siple::subtraction_instantiation(instance):
-    assert isinstance(instance, siple::Subtraction)
+def test_siple_subtraction_instantiation(instance):
+    assert isinstance(instance, siple_Subtraction)
 
-@given(instance=siple::Multiplication_strategy)
+@given(instance=siple_Division_strategy)
 @settings(max_examples=50)
-def test_siple::multiplication_instantiation(instance):
-    assert isinstance(instance, siple::Multiplication)
+def test_siple_division_instantiation(instance):
+    assert isinstance(instance, siple_Division)
 
-@given(instance=siple::Division_strategy)
+@given(instance=siple_Multiplication_strategy)
 @settings(max_examples=50)
-def test_siple::division_instantiation(instance):
-    assert isinstance(instance, siple::Division)
+def test_siple_multiplication_instantiation(instance):
+    assert isinstance(instance, siple_Multiplication)
 
-@given(instance=siple::Addition_strategy)
+@given(instance=siple_Addition_strategy)
 @settings(max_examples=50)
-def test_siple::addition_instantiation(instance):
-    assert isinstance(instance, siple::Addition)
+def test_siple_addition_instantiation(instance):
+    assert isinstance(instance, siple_Addition)
 
 @given(instance=EqualityExpression_strategy)
 @settings(max_examples=50)
 def test_equalityexpression_instantiation(instance):
     assert isinstance(instance, EqualityExpression)
 
-@given(instance=siple::GreaterThan_strategy)
+@given(instance=siple_LesserThan_strategy)
 @settings(max_examples=50)
-def test_siple::greaterthan_instantiation(instance):
-    assert isinstance(instance, siple::GreaterThan)
+def test_siple_lesserthan_instantiation(instance):
+    assert isinstance(instance, siple_LesserThan)
 
-@given(instance=siple::GreaterThanEqual_strategy)
+@given(instance=siple_LesserThanEqual_strategy)
 @settings(max_examples=50)
-def test_siple::greaterthanequal_instantiation(instance):
-    assert isinstance(instance, siple::GreaterThanEqual)
+def test_siple_lesserthanequal_instantiation(instance):
+    assert isinstance(instance, siple_LesserThanEqual)
 
-@given(instance=siple::LesserThanEqual_strategy)
+@given(instance=siple_GreaterThan_strategy)
 @settings(max_examples=50)
-def test_siple::lesserthanequal_instantiation(instance):
-    assert isinstance(instance, siple::LesserThanEqual)
+def test_siple_greaterthan_instantiation(instance):
+    assert isinstance(instance, siple_GreaterThan)
 
-@given(instance=siple::LesserThan_strategy)
+@given(instance=siple_GreaterThanEqual_strategy)
 @settings(max_examples=50)
-def test_siple::lesserthan_instantiation(instance):
-    assert isinstance(instance, siple::LesserThan)
+def test_siple_greaterthanequal_instantiation(instance):
+    assert isinstance(instance, siple_GreaterThanEqual)
 
-@given(instance=siple::Equal_strategy)
+@given(instance=siple_Equal_strategy)
 @settings(max_examples=50)
-def test_siple::equal_instantiation(instance):
-    assert isinstance(instance, siple::Equal)
+def test_siple_equal_instantiation(instance):
+    assert isinstance(instance, siple_Equal)
 
 @given(instance=LogicExpression_strategy)
 @settings(max_examples=50)
 def test_logicexpression_instantiation(instance):
     assert isinstance(instance, LogicExpression)
 
-@given(instance=siple::Or_strategy)
+@given(instance=siple_Or_strategy)
 @settings(max_examples=50)
-def test_siple::or_instantiation(instance):
-    assert isinstance(instance, siple::Or)
+def test_siple_or_instantiation(instance):
+    assert isinstance(instance, siple_Or)
 
-@given(instance=siple::And_strategy)
+@given(instance=siple_And_strategy)
 @settings(max_examples=50)
-def test_siple::and_instantiation(instance):
-    assert isinstance(instance, siple::And)
+def test_siple_and_instantiation(instance):
+    assert isinstance(instance, siple_And)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=siple::EqualityExpression_strategy)
+@given(instance=siple_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_siple::equalityexpression_instantiation(instance):
-    assert isinstance(instance, siple::EqualityExpression)
+def test_siple_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, siple_ArithmeticExpression)
 
-@given(instance=siple::ArithmeticExpression_strategy)
+@given(instance=siple_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_siple::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, siple::ArithmeticExpression)
+def test_siple_equalityexpression_instantiation(instance):
+    assert isinstance(instance, siple_EqualityExpression)
 
-@given(instance=siple::LogicExpression_strategy)
+@given(instance=siple_LogicExpression_strategy)
 @settings(max_examples=50)
-def test_siple::logicexpression_instantiation(instance):
-    assert isinstance(instance, siple::LogicExpression)
+def test_siple_logicexpression_instantiation(instance):
+    assert isinstance(instance, siple_LogicExpression)
 
 @given(instance=Declaration_strategy)
 @settings(max_examples=50)
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=siple::VariableDeclaration_strategy)
+@given(instance=siple_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_siple::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, siple::VariableDeclaration)
-
-@given(instance=siple::VariableDeclaration_strategy)
-def test_siple::variabledeclaration_DeclaredType_type(instance):
-    assert isinstance(instance.DeclaredType, str)
+def test_siple_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, siple_VariableDeclaration)
 
 
-@given(instance=siple::VariableDeclaration_strategy)
-def test_siple::variabledeclaration_DeclaredType_setter(instance):
+
+@given(instance=siple_VariableDeclaration_strategy)
+def test_siple_variabledeclaration_DeclaredType_setter(instance):
     original = instance.DeclaredType
     instance.DeclaredType = original
     assert instance.DeclaredType == original
@@ -1131,149 +1128,193 @@ def test_siple::variabledeclaration_DeclaredType_setter(instance):
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=siple::Dereference_strategy)
+@given(instance=siple_Dereference_strategy)
 @settings(max_examples=50)
-def test_siple::dereference_instantiation(instance):
-    assert isinstance(instance, siple::Dereference)
+def test_siple_dereference_instantiation(instance):
+    assert isinstance(instance, siple_Dereference)
 
-@given(instance=siple::RealCoercion_strategy)
+@given(instance=siple_UMinus_strategy)
 @settings(max_examples=50)
-def test_siple::realcoercion_instantiation(instance):
-    assert isinstance(instance, siple::RealCoercion)
+def test_siple_uminus_instantiation(instance):
+    assert isinstance(instance, siple_UMinus)
 
-@given(instance=siple::UMinus_strategy)
+@given(instance=siple_RealCoercion_strategy)
 @settings(max_examples=50)
-def test_siple::uminus_instantiation(instance):
-    assert isinstance(instance, siple::UMinus)
+def test_siple_realcoercion_instantiation(instance):
+    assert isinstance(instance, siple_RealCoercion)
 
-@given(instance=siple::Not_strategy)
+@given(instance=siple_Not_strategy)
 @settings(max_examples=50)
-def test_siple::not_instantiation(instance):
-    assert isinstance(instance, siple::Not)
+def test_siple_not_instantiation(instance):
+    assert isinstance(instance, siple_Not)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=siple::UnaryExpression_strategy)
+@given(instance=siple_ProcedureCall_strategy)
 @settings(max_examples=50)
-def test_siple::unaryexpression_instantiation(instance):
-    assert isinstance(instance, siple::UnaryExpression)
+def test_siple_procedurecall_instantiation(instance):
+    assert isinstance(instance, siple_ProcedureCall)
 
-@given(instance=siple::BinaryExpression_strategy)
+@given(instance=siple_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_siple::binaryexpression_instantiation(instance):
-    assert isinstance(instance, siple::BinaryExpression)
+def test_siple_unaryexpression_instantiation(instance):
+    assert isinstance(instance, siple_UnaryExpression)
 
-@given(instance=siple::Reference_strategy)
+@given(instance=siple_Reference_strategy)
 @settings(max_examples=50)
-def test_siple::reference_instantiation(instance):
-    assert isinstance(instance, siple::Reference)
-
-@given(instance=siple::Reference_strategy)
-def test_siple::reference_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_siple_reference_instantiation(instance):
+    assert isinstance(instance, siple_Reference)
 
 
-@given(instance=siple::Reference_strategy)
-def test_siple::reference_Name_setter(instance):
+
+@given(instance=siple_Reference_strategy)
+def test_siple_reference_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=siple::NestedExpression_strategy)
+@given(instance=siple_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_siple::nestedexpression_instantiation(instance):
-    assert isinstance(instance, siple::NestedExpression)
+def test_siple_binaryexpression_instantiation(instance):
+    assert isinstance(instance, siple_BinaryExpression)
 
-@given(instance=siple::ProcedureCall_strategy)
+@given(instance=siple_NestedExpression_strategy)
 @settings(max_examples=50)
-def test_siple::procedurecall_instantiation(instance):
-    assert isinstance(instance, siple::ProcedureCall)
+def test_siple_nestedexpression_instantiation(instance):
+    assert isinstance(instance, siple_NestedExpression)
 
-@given(instance=siple::Constant_strategy)
+@given(instance=siple_Constant_strategy)
 @settings(max_examples=50)
-def test_siple::constant_instantiation(instance):
-    assert isinstance(instance, siple::Constant)
-
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_AsInteger_type(instance):
-    assert isinstance(instance.AsInteger, str)
+def test_siple_constant_instantiation(instance):
+    assert isinstance(instance, siple_Constant)
 
 
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_AsInteger_setter(instance):
-    original = instance.AsInteger
-    instance.AsInteger = original
-    assert instance.AsInteger == original
 
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_AsBoolean_type(instance):
-    assert isinstance(instance.AsBoolean, str)
+@given(instance=siple_Constant_strategy)
+def test_siple_constant_AsReal_setter(instance):
+    original = instance.AsReal
+    instance.AsReal = original
+    assert instance.AsReal == original
 
 
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_AsBoolean_setter(instance):
+
+@given(instance=siple_Constant_strategy)
+def test_siple_constant_AsBoolean_setter(instance):
     original = instance.AsBoolean
     instance.AsBoolean = original
     assert instance.AsBoolean == original
 
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_Lexem_type(instance):
-    assert isinstance(instance.Lexem, str)
 
 
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_Lexem_setter(instance):
+@given(instance=siple_Constant_strategy)
+def test_siple_constant_AsInteger_setter(instance):
+    original = instance.AsInteger
+    instance.AsInteger = original
+    assert instance.AsInteger == original
+
+
+
+@given(instance=siple_Constant_strategy)
+def test_siple_constant_Lexem_setter(instance):
     original = instance.Lexem
     instance.Lexem = original
     assert instance.Lexem == original
-
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_AsReal_type(instance):
-    assert isinstance(instance.AsReal, str)
-
-
-@given(instance=siple::Constant_strategy)
-def test_siple::constant_AsReal_setter(instance):
-    original = instance.AsReal
-    instance.AsReal = original
-    assert instance.AsReal == original
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=siple::Write_strategy)
+@given(instance=siple_Read_strategy)
 @settings(max_examples=50)
-def test_siple::write_instantiation(instance):
-    assert isinstance(instance, siple::Write)
-
-@given(instance=siple::Write_strategy)
-def test_siple::write_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_siple_read_instantiation(instance):
+    assert isinstance(instance, siple_Read)
 
 
-@given(instance=siple::Write_strategy)
-def test_siple::write_Type_setter(instance):
+
+@given(instance=siple_Read_strategy)
+def test_siple_read_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
 
-@given(instance=siple::Expression_strategy)
+@given(instance=siple_Declaration_strategy)
 @settings(max_examples=50)
-def test_siple::expression_instantiation(instance):
-    assert isinstance(instance, siple::Expression)
-
-@given(instance=siple::Expression_strategy)
-def test_siple::expression_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_siple_declaration_instantiation(instance):
+    assert isinstance(instance, siple_Declaration)
 
 
-@given(instance=siple::Expression_strategy)
-def test_siple::expression_Type_setter(instance):
+
+@given(instance=siple_Declaration_strategy)
+def test_siple_declaration_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
+
+
+
+@given(instance=siple_Declaration_strategy)
+def test_siple_declaration_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=siple_Declaration_strategy)
+def test_siple_declaration_IsParameterDeclaration_setter(instance):
+    original = instance.IsParameterDeclaration
+    instance.IsParameterDeclaration = original
+    assert instance.IsParameterDeclaration == original
+
+@given(instance=siple_ProcedureReturn_strategy)
+@settings(max_examples=50)
+def test_siple_procedurereturn_instantiation(instance):
+    assert isinstance(instance, siple_ProcedureReturn)
+
+
+
+@given(instance=siple_ProcedureReturn_strategy)
+def test_siple_procedurereturn_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
+
+@given(instance=siple_If_strategy)
+@settings(max_examples=50)
+def test_siple_if_instantiation(instance):
+    assert isinstance(instance, siple_If)
+
+@given(instance=siple_VariableAssignment_strategy)
+@settings(max_examples=50)
+def test_siple_variableassignment_instantiation(instance):
+    assert isinstance(instance, siple_VariableAssignment)
+
+
+
+@given(instance=siple_VariableAssignment_strategy)
+def test_siple_variableassignment_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
+
+@given(instance=siple_While_strategy)
+@settings(max_examples=50)
+def test_siple_while_instantiation(instance):
+    assert isinstance(instance, siple_While)
+
+@given(instance=siple_Expression_strategy)
+@settings(max_examples=50)
+def test_siple_expression_instantiation(instance):
+    assert isinstance(instance, siple_Expression)
+
+
+
+@given(instance=siple_Expression_strategy)
+def test_siple_expression_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
@@ -1284,9 +1325,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=siple::Expression_strategy)
+@given(instance=siple_Expression_strategy)
 @settings(max_examples=30)
-def test_siple::expression_value_changes_state(instance):
+def test_siple_expression_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1300,120 +1341,37 @@ def test_siple::expression_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Value' in siple::Expression is empty"
+        assert has_statements, f"Function 'Value' in siple_Expression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Value' in siple::Expression did not change state; check implementation")
+            warnings.warn(f"Operation 'Value' in siple_Expression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Value' in siple::Expression is not implemented or raised an error")
+        warnings.warn(f"Operation 'Value' in siple_Expression is not implemented or raised an error")
 
-@given(instance=siple::Read_strategy)
+@given(instance=siple_Write_strategy)
 @settings(max_examples=50)
-def test_siple::read_instantiation(instance):
-    assert isinstance(instance, siple::Read)
-
-@given(instance=siple::Read_strategy)
-def test_siple::read_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_siple_write_instantiation(instance):
+    assert isinstance(instance, siple_Write)
 
 
-@given(instance=siple::Read_strategy)
-def test_siple::read_Type_setter(instance):
+
+@given(instance=siple_Write_strategy)
+def test_siple_write_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
 
-@given(instance=siple::If_strategy)
+@given(instance=siple_Block_strategy)
 @settings(max_examples=50)
-def test_siple::if_instantiation(instance):
-    assert isinstance(instance, siple::If)
+def test_siple_block_instantiation(instance):
+    assert isinstance(instance, siple_Block)
 
-@given(instance=siple::Declaration_strategy)
+@given(instance=siple_Statement_strategy)
 @settings(max_examples=50)
-def test_siple::declaration_instantiation(instance):
-    assert isinstance(instance, siple::Declaration)
-
-@given(instance=siple::Declaration_strategy)
-def test_siple::declaration_IsParameterDeclaration_type(instance):
-    assert isinstance(instance.IsParameterDeclaration, bool)
-
-
-@given(instance=siple::Declaration_strategy)
-def test_siple::declaration_IsParameterDeclaration_setter(instance):
-    original = instance.IsParameterDeclaration
-    instance.IsParameterDeclaration = original
-    assert instance.IsParameterDeclaration == original
-
-@given(instance=siple::Declaration_strategy)
-def test_siple::declaration_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=siple::Declaration_strategy)
-def test_siple::declaration_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=siple::Declaration_strategy)
-def test_siple::declaration_Type_type(instance):
-    assert isinstance(instance.Type, str)
-
-
-@given(instance=siple::Declaration_strategy)
-def test_siple::declaration_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
-
-@given(instance=siple::While_strategy)
-@settings(max_examples=50)
-def test_siple::while_instantiation(instance):
-    assert isinstance(instance, siple::While)
-
-@given(instance=siple::VariableAssignment_strategy)
-@settings(max_examples=50)
-def test_siple::variableassignment_instantiation(instance):
-    assert isinstance(instance, siple::VariableAssignment)
-
-@given(instance=siple::VariableAssignment_strategy)
-def test_siple::variableassignment_Type_type(instance):
-    assert isinstance(instance.Type, str)
-
-
-@given(instance=siple::VariableAssignment_strategy)
-def test_siple::variableassignment_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
-
-@given(instance=siple::ProcedureReturn_strategy)
-@settings(max_examples=50)
-def test_siple::procedurereturn_instantiation(instance):
-    assert isinstance(instance, siple::ProcedureReturn)
-
-@given(instance=siple::ProcedureReturn_strategy)
-def test_siple::procedurereturn_Type_type(instance):
-    assert isinstance(instance.Type, str)
-
-
-@given(instance=siple::ProcedureReturn_strategy)
-def test_siple::procedurereturn_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
-
-@given(instance=siple::Block_strategy)
-@settings(max_examples=50)
-def test_siple::block_instantiation(instance):
-    assert isinstance(instance, siple::Block)
-
-@given(instance=siple::Statement_strategy)
-@settings(max_examples=50)
-def test_siple::statement_instantiation(instance):
-    assert isinstance(instance, siple::Statement)
+def test_siple_statement_instantiation(instance):
+    assert isinstance(instance, siple_Statement)
 
 import warnings
 import copy
@@ -1421,9 +1379,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=siple::Statement_strategy)
+@given(instance=siple_Statement_strategy)
 @settings(max_examples=30)
-def test_siple::statement_interpret_changes_state(instance):
+def test_siple_statement_interpret_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1437,35 +1395,32 @@ def test_siple::statement_interpret_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Interpret' in siple::Statement is empty"
+        assert has_statements, f"Function 'Interpret' in siple_Statement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Interpret' in siple::Statement did not change state; check implementation")
+            warnings.warn(f"Operation 'Interpret' in siple_Statement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Interpret' in siple::Statement is not implemented or raised an error")
+        warnings.warn(f"Operation 'Interpret' in siple_Statement is not implemented or raised an error")
 
-@given(instance=siple::ProcedureDeclaration_strategy)
+@given(instance=siple_ProcedureDeclaration_strategy)
 @settings(max_examples=50)
-def test_siple::proceduredeclaration_instantiation(instance):
-    assert isinstance(instance, siple::ProcedureDeclaration)
-
-@given(instance=siple::ProcedureDeclaration_strategy)
-def test_siple::proceduredeclaration_ReturnType_type(instance):
-    assert isinstance(instance.ReturnType, str)
+def test_siple_proceduredeclaration_instantiation(instance):
+    assert isinstance(instance, siple_ProcedureDeclaration)
 
 
-@given(instance=siple::ProcedureDeclaration_strategy)
-def test_siple::proceduredeclaration_ReturnType_setter(instance):
+
+@given(instance=siple_ProcedureDeclaration_strategy)
+def test_siple_proceduredeclaration_ReturnType_setter(instance):
     original = instance.ReturnType
     instance.ReturnType = original
     assert instance.ReturnType == original
 
-@given(instance=siple::CompilationUnit_strategy)
+@given(instance=siple_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_siple::compilationunit_instantiation(instance):
-    assert isinstance(instance, siple::CompilationUnit)
+def test_siple_compilationunit_instantiation(instance):
+    assert isinstance(instance, siple_CompilationUnit)
 
 import warnings
 import copy
@@ -1473,9 +1428,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=siple::CompilationUnit_strategy)
+@given(instance=siple_CompilationUnit_strategy)
 @settings(max_examples=30)
-def test_siple::compilationunit_interpret_changes_state(instance):
+def test_siple_compilationunit_interpret_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1487,11 +1442,11 @@ def test_siple::compilationunit_interpret_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Interpret' in siple::CompilationUnit is empty"
+        assert has_statements, f"Function 'Interpret' in siple_CompilationUnit is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Interpret' in siple::CompilationUnit did not change state; check implementation")
+            warnings.warn(f"Operation 'Interpret' in siple_CompilationUnit did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Interpret' in siple::CompilationUnit is not implemented or raised an error")
+        warnings.warn(f"Operation 'Interpret' in siple_CompilationUnit is not implemented or raised an error")

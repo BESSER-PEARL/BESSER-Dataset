@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    lts2::LTSGenerator,
+from python_code import (
+    lts2_LTSGenerator,
     UseCaseStep,
-    lts2::StateMachine,
-    lts2::Transition,
-    lts2::State,
+    lts2_StateMachine,
+    lts2_Transition,
+    lts2_State,
     State,
     TransitionalState,
-    lts2::InitialState,
-    lts2::AbortState,
-    lts2::FinalState,
-    lts2::TransitionalState,
+    lts2_InitialState,
+    lts2_AbortState,
+    lts2_FinalState,
+    lts2_TransitionalState,
 )
 
 # =============================================================================
@@ -25,16 +25,16 @@ from classes import (
 
 
 
-def test_lts2::ltsgenerator_is_not_abstract():
-    assert not inspect.isabstract(lts2::LTSGenerator)
+def test_lts2_ltsgenerator_is_not_abstract():
+    assert not inspect.isabstract(lts2_LTSGenerator)
 
 
-def test_lts2::ltsgenerator_constructor_exists():
-    assert callable(lts2::LTSGenerator.__init__)
+def test_lts2_ltsgenerator_constructor_exists():
+    assert callable(lts2_LTSGenerator.__init__)
 
 
-def test_lts2::ltsgenerator_constructor_args():
-    sig = inspect.signature(lts2::LTSGenerator.__init__)
+def test_lts2_ltsgenerator_constructor_args():
+    sig = inspect.signature(lts2_LTSGenerator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -53,44 +53,44 @@ def test_usecasestep_constructor_args():
 
 
 
-def test_lts2::statemachine_is_not_abstract():
-    assert not inspect.isabstract(lts2::StateMachine)
+def test_lts2_statemachine_is_not_abstract():
+    assert not inspect.isabstract(lts2_StateMachine)
 
 
-def test_lts2::statemachine_constructor_exists():
-    assert callable(lts2::StateMachine.__init__)
+def test_lts2_statemachine_constructor_exists():
+    assert callable(lts2_StateMachine.__init__)
 
 
-def test_lts2::statemachine_constructor_args():
-    sig = inspect.signature(lts2::StateMachine.__init__)
+def test_lts2_statemachine_constructor_args():
+    sig = inspect.signature(lts2_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts2::transition_is_not_abstract():
-    assert not inspect.isabstract(lts2::Transition)
+def test_lts2_transition_is_not_abstract():
+    assert not inspect.isabstract(lts2_Transition)
 
 
-def test_lts2::transition_constructor_exists():
-    assert callable(lts2::Transition.__init__)
+def test_lts2_transition_constructor_exists():
+    assert callable(lts2_Transition.__init__)
 
 
-def test_lts2::transition_constructor_args():
-    sig = inspect.signature(lts2::Transition.__init__)
+def test_lts2_transition_constructor_args():
+    sig = inspect.signature(lts2_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts2::state_is_not_abstract():
-    assert not inspect.isabstract(lts2::State)
+def test_lts2_state_is_not_abstract():
+    assert not inspect.isabstract(lts2_State)
 
 
-def test_lts2::state_constructor_exists():
-    assert callable(lts2::State.__init__)
+def test_lts2_state_constructor_exists():
+    assert callable(lts2_State.__init__)
 
 
-def test_lts2::state_constructor_args():
-    sig = inspect.signature(lts2::State.__init__)
+def test_lts2_state_constructor_args():
+    sig = inspect.signature(lts2_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,58 +123,58 @@ def test_transitionalstate_constructor_args():
 
 
 
-def test_lts2::initialstate_is_not_abstract():
-    assert not inspect.isabstract(lts2::InitialState)
+def test_lts2_initialstate_is_not_abstract():
+    assert not inspect.isabstract(lts2_InitialState)
 
 
-def test_lts2::initialstate_constructor_exists():
-    assert callable(lts2::InitialState.__init__)
+def test_lts2_initialstate_constructor_exists():
+    assert callable(lts2_InitialState.__init__)
 
 
-def test_lts2::initialstate_constructor_args():
-    sig = inspect.signature(lts2::InitialState.__init__)
+def test_lts2_initialstate_constructor_args():
+    sig = inspect.signature(lts2_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts2::abortstate_is_not_abstract():
-    assert not inspect.isabstract(lts2::AbortState)
+def test_lts2_abortstate_is_not_abstract():
+    assert not inspect.isabstract(lts2_AbortState)
 
 
-def test_lts2::abortstate_constructor_exists():
-    assert callable(lts2::AbortState.__init__)
+def test_lts2_abortstate_constructor_exists():
+    assert callable(lts2_AbortState.__init__)
 
 
-def test_lts2::abortstate_constructor_args():
-    sig = inspect.signature(lts2::AbortState.__init__)
+def test_lts2_abortstate_constructor_args():
+    sig = inspect.signature(lts2_AbortState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts2::finalstate_is_not_abstract():
-    assert not inspect.isabstract(lts2::FinalState)
+def test_lts2_finalstate_is_not_abstract():
+    assert not inspect.isabstract(lts2_FinalState)
 
 
-def test_lts2::finalstate_constructor_exists():
-    assert callable(lts2::FinalState.__init__)
+def test_lts2_finalstate_constructor_exists():
+    assert callable(lts2_FinalState.__init__)
 
 
-def test_lts2::finalstate_constructor_args():
-    sig = inspect.signature(lts2::FinalState.__init__)
+def test_lts2_finalstate_constructor_args():
+    sig = inspect.signature(lts2_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts2::transitionalstate_is_not_abstract():
-    assert not inspect.isabstract(lts2::TransitionalState)
+def test_lts2_transitionalstate_is_not_abstract():
+    assert not inspect.isabstract(lts2_TransitionalState)
 
 
-def test_lts2::transitionalstate_constructor_exists():
-    assert callable(lts2::TransitionalState.__init__)
+def test_lts2_transitionalstate_constructor_exists():
+    assert callable(lts2_TransitionalState.__init__)
 
 
-def test_lts2::transitionalstate_constructor_args():
-    sig = inspect.signature(lts2::TransitionalState.__init__)
+def test_lts2_transitionalstate_constructor_args():
+    sig = inspect.signature(lts2_TransitionalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,20 +189,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-lts2::LTSGenerator_strategy = st.builds(
-    lts2::LTSGenerator,
+lts2_LTSGenerator_strategy = st.builds(
+    lts2_LTSGenerator,
 )
 UseCaseStep_strategy = st.builds(
     UseCaseStep,
 )
-lts2::StateMachine_strategy = st.builds(
-    lts2::StateMachine,
+lts2_StateMachine_strategy = st.builds(
+    lts2_StateMachine,
 )
-lts2::Transition_strategy = st.builds(
-    lts2::Transition,
+lts2_Transition_strategy = st.builds(
+    lts2_Transition,
 )
-lts2::State_strategy = st.builds(
-    lts2::State,
+lts2_State_strategy = st.builds(
+    lts2_State,
 )
 State_strategy = st.builds(
     State,
@@ -210,23 +210,23 @@ State_strategy = st.builds(
 TransitionalState_strategy = st.builds(
     TransitionalState,
 )
-lts2::InitialState_strategy = st.builds(
-    lts2::InitialState,
+lts2_InitialState_strategy = st.builds(
+    lts2_InitialState,
 )
-lts2::AbortState_strategy = st.builds(
-    lts2::AbortState,
+lts2_AbortState_strategy = st.builds(
+    lts2_AbortState,
 )
-lts2::FinalState_strategy = st.builds(
-    lts2::FinalState,
+lts2_FinalState_strategy = st.builds(
+    lts2_FinalState,
 )
-lts2::TransitionalState_strategy = st.builds(
-    lts2::TransitionalState,
+lts2_TransitionalState_strategy = st.builds(
+    lts2_TransitionalState,
 )
 
-@given(instance=lts2::LTSGenerator_strategy)
+@given(instance=lts2_LTSGenerator_strategy)
 @settings(max_examples=50)
-def test_lts2::ltsgenerator_instantiation(instance):
-    assert isinstance(instance, lts2::LTSGenerator)
+def test_lts2_ltsgenerator_instantiation(instance):
+    assert isinstance(instance, lts2_LTSGenerator)
 
 import warnings
 import copy
@@ -234,9 +234,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=lts2::LTSGenerator_strategy)
+@given(instance=lts2_LTSGenerator_strategy)
 @settings(max_examples=30)
-def test_lts2::ltsgenerator_processusecase_changes_state(instance):
+def test_lts2_ltsgenerator_processusecase_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -250,34 +250,34 @@ def test_lts2::ltsgenerator_processusecase_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'processUseCase' in lts2::LTSGenerator is empty"
+        assert has_statements, f"Function 'processUseCase' in lts2_LTSGenerator is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'processUseCase' in lts2::LTSGenerator did not change state; check implementation")
+            warnings.warn(f"Operation 'processUseCase' in lts2_LTSGenerator did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'processUseCase' in lts2::LTSGenerator is not implemented or raised an error")
+        warnings.warn(f"Operation 'processUseCase' in lts2_LTSGenerator is not implemented or raised an error")
 
 @given(instance=UseCaseStep_strategy)
 @settings(max_examples=50)
 def test_usecasestep_instantiation(instance):
     assert isinstance(instance, UseCaseStep)
 
-@given(instance=lts2::StateMachine_strategy)
+@given(instance=lts2_StateMachine_strategy)
 @settings(max_examples=50)
-def test_lts2::statemachine_instantiation(instance):
-    assert isinstance(instance, lts2::StateMachine)
+def test_lts2_statemachine_instantiation(instance):
+    assert isinstance(instance, lts2_StateMachine)
 
-@given(instance=lts2::Transition_strategy)
+@given(instance=lts2_Transition_strategy)
 @settings(max_examples=50)
-def test_lts2::transition_instantiation(instance):
-    assert isinstance(instance, lts2::Transition)
+def test_lts2_transition_instantiation(instance):
+    assert isinstance(instance, lts2_Transition)
 
-@given(instance=lts2::State_strategy)
+@given(instance=lts2_State_strategy)
 @settings(max_examples=50)
-def test_lts2::state_instantiation(instance):
-    assert isinstance(instance, lts2::State)
+def test_lts2_state_instantiation(instance):
+    assert isinstance(instance, lts2_State)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
@@ -289,22 +289,22 @@ def test_state_instantiation(instance):
 def test_transitionalstate_instantiation(instance):
     assert isinstance(instance, TransitionalState)
 
-@given(instance=lts2::InitialState_strategy)
+@given(instance=lts2_InitialState_strategy)
 @settings(max_examples=50)
-def test_lts2::initialstate_instantiation(instance):
-    assert isinstance(instance, lts2::InitialState)
+def test_lts2_initialstate_instantiation(instance):
+    assert isinstance(instance, lts2_InitialState)
 
-@given(instance=lts2::AbortState_strategy)
+@given(instance=lts2_AbortState_strategy)
 @settings(max_examples=50)
-def test_lts2::abortstate_instantiation(instance):
-    assert isinstance(instance, lts2::AbortState)
+def test_lts2_abortstate_instantiation(instance):
+    assert isinstance(instance, lts2_AbortState)
 
-@given(instance=lts2::FinalState_strategy)
+@given(instance=lts2_FinalState_strategy)
 @settings(max_examples=50)
-def test_lts2::finalstate_instantiation(instance):
-    assert isinstance(instance, lts2::FinalState)
+def test_lts2_finalstate_instantiation(instance):
+    assert isinstance(instance, lts2_FinalState)
 
-@given(instance=lts2::TransitionalState_strategy)
+@given(instance=lts2_TransitionalState_strategy)
 @settings(max_examples=50)
-def test_lts2::transitionalstate_instantiation(instance):
-    assert isinstance(instance, lts2::TransitionalState)
+def test_lts2_transitionalstate_instantiation(instance):
+    assert isinstance(instance, lts2_TransitionalState)

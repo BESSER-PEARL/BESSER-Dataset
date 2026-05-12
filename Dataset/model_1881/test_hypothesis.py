@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Payment,
-    shop::ElectronicPayment,
-    shop::CashPayment,
-    shop::ChequePayment,
-    shop::Valuable,
-    shop::Person,
+    shop_ElectronicPayment,
+    shop_CashPayment,
+    shop_ChequePayment,
+    shop_Valuable,
+    shop_Person,
     Valuable,
-    shop::Payment,
-    shop::BankOperation,
-    shop::AccountBook,
-    shop::Sale,
-    shop::Shop,
+    shop_Payment,
+    shop_BankOperation,
+    shop_AccountBook,
+    shop_Sale,
+    shop_Shop,
     Person,
-    shop::Customer,
-    shop::Employee,
+    shop_Customer,
+    shop_Employee,
     PaymentType,
 )
 
@@ -44,61 +44,61 @@ def test_payment_constructor_args():
 
 
 
-def test_shop::electronicpayment_is_not_abstract():
-    assert not inspect.isabstract(shop::ElectronicPayment)
+def test_shop_electronicpayment_is_not_abstract():
+    assert not inspect.isabstract(shop_ElectronicPayment)
 
 
-def test_shop::electronicpayment_constructor_exists():
-    assert callable(shop::ElectronicPayment.__init__)
+def test_shop_electronicpayment_constructor_exists():
+    assert callable(shop_ElectronicPayment.__init__)
 
 
-def test_shop::electronicpayment_constructor_args():
-    sig = inspect.signature(shop::ElectronicPayment.__init__)
+def test_shop_electronicpayment_constructor_args():
+    sig = inspect.signature(shop_ElectronicPayment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shop::cashpayment_is_not_abstract():
-    assert not inspect.isabstract(shop::CashPayment)
+def test_shop_cashpayment_is_not_abstract():
+    assert not inspect.isabstract(shop_CashPayment)
 
 
-def test_shop::cashpayment_constructor_exists():
-    assert callable(shop::CashPayment.__init__)
+def test_shop_cashpayment_constructor_exists():
+    assert callable(shop_CashPayment.__init__)
 
 
-def test_shop::cashpayment_constructor_args():
-    sig = inspect.signature(shop::CashPayment.__init__)
+def test_shop_cashpayment_constructor_args():
+    sig = inspect.signature(shop_CashPayment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shop::chequepayment_is_not_abstract():
-    assert not inspect.isabstract(shop::ChequePayment)
+def test_shop_chequepayment_is_not_abstract():
+    assert not inspect.isabstract(shop_ChequePayment)
 
 
-def test_shop::chequepayment_constructor_exists():
-    assert callable(shop::ChequePayment.__init__)
+def test_shop_chequepayment_constructor_exists():
+    assert callable(shop_ChequePayment.__init__)
 
 
-def test_shop::chequepayment_constructor_args():
-    sig = inspect.signature(shop::ChequePayment.__init__)
+def test_shop_chequepayment_constructor_args():
+    sig = inspect.signature(shop_ChequePayment.__init__)
     params = list(sig.parameters.keys())
     assert "depositDate" in params, "Missing parameter 'depositDate'"
     assert "deposited" in params, "Missing parameter 'deposited'"
 
-def test_shop::chequepayment_has_depositDate():
-    assert hasattr(shop::ChequePayment, "depositDate")
+def test_shop_chequepayment_has_depositDate():
+    assert hasattr(shop_ChequePayment, "depositDate")
     descriptor = None
-    for klass in shop::ChequePayment.__mro__:
+    for klass in shop_ChequePayment.__mro__:
         if "depositDate" in klass.__dict__:
             descriptor = klass.__dict__["depositDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_shop::chequepayment_has_deposited():
-    assert hasattr(shop::ChequePayment, "deposited")
+def test_shop_chequepayment_has_deposited():
+    assert hasattr(shop_ChequePayment, "deposited")
     descriptor = None
-    for klass in shop::ChequePayment.__mro__:
+    for klass in shop_ChequePayment.__mro__:
         if "deposited" in klass.__dict__:
             descriptor = klass.__dict__["deposited"]
             break
@@ -106,109 +106,109 @@ def test_shop::chequepayment_has_deposited():
 
 
 
-def test_shop::valuable_is_not_abstract():
-    assert not inspect.isabstract(shop::Valuable)
+def test_shop_valuable_is_not_abstract():
+    assert not inspect.isabstract(shop_Valuable)
 
 
-def test_shop::valuable_constructor_exists():
-    assert callable(shop::Valuable.__init__)
+def test_shop_valuable_constructor_exists():
+    assert callable(shop_Valuable.__init__)
 
 
-def test_shop::valuable_constructor_args():
-    sig = inspect.signature(shop::Valuable.__init__)
+def test_shop_valuable_constructor_args():
+    sig = inspect.signature(shop_Valuable.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "date" in params, "Missing parameter 'date'"
 
-def test_shop::valuable_has_date():
-    assert hasattr(shop::Valuable, "date")
+def test_shop_valuable_has_value():
+    assert hasattr(shop_Valuable, "value")
     descriptor = None
-    for klass in shop::Valuable.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shop::valuable_has_value():
-    assert hasattr(shop::Valuable, "value")
-    descriptor = None
-    for klass in shop::Valuable.__mro__:
+    for klass in shop_Valuable.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_shop_valuable_has_date():
+    assert hasattr(shop_Valuable, "date")
+    descriptor = None
+    for klass in shop_Valuable.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_shop::person_is_not_abstract():
-    assert not inspect.isabstract(shop::Person)
+
+def test_shop_person_is_not_abstract():
+    assert not inspect.isabstract(shop_Person)
 
 
-def test_shop::person_constructor_exists():
-    assert callable(shop::Person.__init__)
+def test_shop_person_constructor_exists():
+    assert callable(shop_Person.__init__)
 
 
-def test_shop::person_constructor_args():
-    sig = inspect.signature(shop::Person.__init__)
+def test_shop_person_constructor_args():
+    sig = inspect.signature(shop_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "phoneNumbers" in params, "Missing parameter 'phoneNumbers'"
-    assert "emails" in params, "Missing parameter 'emails'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "birthDate" in params, "Missing parameter 'birthDate'"
     assert "lastName" in params, "Missing parameter 'lastName'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "address" in params, "Missing parameter 'address'"
+    assert "emails" in params, "Missing parameter 'emails'"
+    assert "phoneNumbers" in params, "Missing parameter 'phoneNumbers'"
 
-def test_shop::person_has_phoneNumbers():
-    assert hasattr(shop::Person, "phoneNumbers")
+def test_shop_person_has_firstName():
+    assert hasattr(shop_Person, "firstName")
     descriptor = None
-    for klass in shop::Person.__mro__:
-        if "phoneNumbers" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNumbers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shop::person_has_emails():
-    assert hasattr(shop::Person, "emails")
-    descriptor = None
-    for klass in shop::Person.__mro__:
-        if "emails" in klass.__dict__:
-            descriptor = klass.__dict__["emails"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shop::person_has_birthDate():
-    assert hasattr(shop::Person, "birthDate")
-    descriptor = None
-    for klass in shop::Person.__mro__:
-        if "birthDate" in klass.__dict__:
-            descriptor = klass.__dict__["birthDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shop::person_has_lastName():
-    assert hasattr(shop::Person, "lastName")
-    descriptor = None
-    for klass in shop::Person.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shop::person_has_firstName():
-    assert hasattr(shop::Person, "firstName")
-    descriptor = None
-    for klass in shop::Person.__mro__:
+    for klass in shop_Person.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
-def test_shop::person_has_address():
-    assert hasattr(shop::Person, "address")
+def test_shop_person_has_birthDate():
+    assert hasattr(shop_Person, "birthDate")
     descriptor = None
-    for klass in shop::Person.__mro__:
+    for klass in shop_Person.__mro__:
+        if "birthDate" in klass.__dict__:
+            descriptor = klass.__dict__["birthDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shop_person_has_lastName():
+    assert hasattr(shop_Person, "lastName")
+    descriptor = None
+    for klass in shop_Person.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shop_person_has_address():
+    assert hasattr(shop_Person, "address")
+    descriptor = None
+    for klass in shop_Person.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shop_person_has_emails():
+    assert hasattr(shop_Person, "emails")
+    descriptor = None
+    for klass in shop_Person.__mro__:
+        if "emails" in klass.__dict__:
+            descriptor = klass.__dict__["emails"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shop_person_has_phoneNumbers():
+    assert hasattr(shop_Person, "phoneNumbers")
+    descriptor = None
+    for klass in shop_Person.__mro__:
+        if "phoneNumbers" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNumbers"]
             break
     assert isinstance(descriptor, property)
 
@@ -228,23 +228,23 @@ def test_valuable_constructor_args():
 
 
 
-def test_shop::payment_is_not_abstract():
-    assert not inspect.isabstract(shop::Payment)
+def test_shop_payment_is_not_abstract():
+    assert not inspect.isabstract(shop_Payment)
 
 
-def test_shop::payment_constructor_exists():
-    assert callable(shop::Payment.__init__)
+def test_shop_payment_constructor_exists():
+    assert callable(shop_Payment.__init__)
 
 
-def test_shop::payment_constructor_args():
-    sig = inspect.signature(shop::Payment.__init__)
+def test_shop_payment_constructor_args():
+    sig = inspect.signature(shop_Payment.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_shop::payment_has_type():
-    assert hasattr(shop::Payment, "type")
+def test_shop_payment_has_type():
+    assert hasattr(shop_Payment, "type")
     descriptor = None
-    for klass in shop::Payment.__mro__:
+    for klass in shop_Payment.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -252,23 +252,23 @@ def test_shop::payment_has_type():
 
 
 
-def test_shop::bankoperation_is_not_abstract():
-    assert not inspect.isabstract(shop::BankOperation)
+def test_shop_bankoperation_is_not_abstract():
+    assert not inspect.isabstract(shop_BankOperation)
 
 
-def test_shop::bankoperation_constructor_exists():
-    assert callable(shop::BankOperation.__init__)
+def test_shop_bankoperation_constructor_exists():
+    assert callable(shop_BankOperation.__init__)
 
 
-def test_shop::bankoperation_constructor_args():
-    sig = inspect.signature(shop::BankOperation.__init__)
+def test_shop_bankoperation_constructor_args():
+    sig = inspect.signature(shop_BankOperation.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_shop::bankoperation_has_description():
-    assert hasattr(shop::BankOperation, "description")
+def test_shop_bankoperation_has_description():
+    assert hasattr(shop_BankOperation, "description")
     descriptor = None
-    for klass in shop::BankOperation.__mro__:
+    for klass in shop_BankOperation.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -276,23 +276,23 @@ def test_shop::bankoperation_has_description():
 
 
 
-def test_shop::accountbook_is_not_abstract():
-    assert not inspect.isabstract(shop::AccountBook)
+def test_shop_accountbook_is_not_abstract():
+    assert not inspect.isabstract(shop_AccountBook)
 
 
-def test_shop::accountbook_constructor_exists():
-    assert callable(shop::AccountBook.__init__)
+def test_shop_accountbook_constructor_exists():
+    assert callable(shop_AccountBook.__init__)
 
 
-def test_shop::accountbook_constructor_args():
-    sig = inspect.signature(shop::AccountBook.__init__)
+def test_shop_accountbook_constructor_args():
+    sig = inspect.signature(shop_AccountBook.__init__)
     params = list(sig.parameters.keys())
     assert "cashFlow" in params, "Missing parameter 'cashFlow'"
 
-def test_shop::accountbook_has_cashFlow():
-    assert hasattr(shop::AccountBook, "cashFlow")
+def test_shop_accountbook_has_cashFlow():
+    assert hasattr(shop_AccountBook, "cashFlow")
     descriptor = None
-    for klass in shop::AccountBook.__mro__:
+    for klass in shop_AccountBook.__mro__:
         if "cashFlow" in klass.__dict__:
             descriptor = klass.__dict__["cashFlow"]
             break
@@ -300,23 +300,23 @@ def test_shop::accountbook_has_cashFlow():
 
 
 
-def test_shop::sale_is_not_abstract():
-    assert not inspect.isabstract(shop::Sale)
+def test_shop_sale_is_not_abstract():
+    assert not inspect.isabstract(shop_Sale)
 
 
-def test_shop::sale_constructor_exists():
-    assert callable(shop::Sale.__init__)
+def test_shop_sale_constructor_exists():
+    assert callable(shop_Sale.__init__)
 
 
-def test_shop::sale_constructor_args():
-    sig = inspect.signature(shop::Sale.__init__)
+def test_shop_sale_constructor_args():
+    sig = inspect.signature(shop_Sale.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_shop::sale_has_description():
-    assert hasattr(shop::Sale, "description")
+def test_shop_sale_has_description():
+    assert hasattr(shop_Sale, "description")
     descriptor = None
-    for klass in shop::Sale.__mro__:
+    for klass in shop_Sale.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -324,16 +324,16 @@ def test_shop::sale_has_description():
 
 
 
-def test_shop::shop_is_not_abstract():
-    assert not inspect.isabstract(shop::Shop)
+def test_shop_shop_is_not_abstract():
+    assert not inspect.isabstract(shop_Shop)
 
 
-def test_shop::shop_constructor_exists():
-    assert callable(shop::Shop.__init__)
+def test_shop_shop_constructor_exists():
+    assert callable(shop_Shop.__init__)
 
 
-def test_shop::shop_constructor_args():
-    sig = inspect.signature(shop::Shop.__init__)
+def test_shop_shop_constructor_args():
+    sig = inspect.signature(shop_Shop.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -352,30 +352,30 @@ def test_person_constructor_args():
 
 
 
-def test_shop::customer_is_not_abstract():
-    assert not inspect.isabstract(shop::Customer)
+def test_shop_customer_is_not_abstract():
+    assert not inspect.isabstract(shop_Customer)
 
 
-def test_shop::customer_constructor_exists():
-    assert callable(shop::Customer.__init__)
+def test_shop_customer_constructor_exists():
+    assert callable(shop_Customer.__init__)
 
 
-def test_shop::customer_constructor_args():
-    sig = inspect.signature(shop::Customer.__init__)
+def test_shop_customer_constructor_args():
+    sig = inspect.signature(shop_Customer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shop::employee_is_not_abstract():
-    assert not inspect.isabstract(shop::Employee)
+def test_shop_employee_is_not_abstract():
+    assert not inspect.isabstract(shop_Employee)
 
 
-def test_shop::employee_constructor_exists():
-    assert callable(shop::Employee.__init__)
+def test_shop_employee_constructor_exists():
+    assert callable(shop_Employee.__init__)
 
 
-def test_shop::employee_constructor_args():
-    sig = inspect.signature(shop::Employee.__init__)
+def test_shop_employee_constructor_args():
+    sig = inspect.signature(shop_Employee.__init__)
     params = list(sig.parameters.keys())
 
 def test_paymenttype_exists():
@@ -386,9 +386,9 @@ def test_paymenttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PaymentType]
     expected_literals = [
-        "CHEQUE",
         "CASH",
         "ELECTRONIC",
+        "CHEQUE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -409,75 +409,75 @@ safe_text = st.text(
 Payment_strategy = st.builds(
     Payment,
 )
-shop::ElectronicPayment_strategy = st.builds(
-    shop::ElectronicPayment,
+shop_ElectronicPayment_strategy = st.builds(
+    shop_ElectronicPayment,
 )
-shop::CashPayment_strategy = st.builds(
-    shop::CashPayment,
+shop_CashPayment_strategy = st.builds(
+    shop_CashPayment,
 )
-shop::ChequePayment_strategy = st.builds(
-    shop::ChequePayment,
+shop_ChequePayment_strategy = st.builds(
+    shop_ChequePayment,
     depositDate=
         st.dates(),
     deposited=
         st.booleans()
 )
-shop::Valuable_strategy = st.builds(
-    shop::Valuable,
-    date=
-        st.dates(),
+shop_Valuable_strategy = st.builds(
+    shop_Valuable,
     value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    date=
+        st.dates()
 )
-shop::Person_strategy = st.builds(
-    shop::Person,
-    phoneNumbers=
-        safe_text,
-    emails=
+shop_Person_strategy = st.builds(
+    shop_Person,
+    firstName=
         safe_text,
     birthDate=
         st.dates(),
     lastName=
         safe_text,
-    firstName=
-        safe_text,
     address=
+        safe_text,
+    emails=
+        safe_text,
+    phoneNumbers=
         safe_text
 )
 Valuable_strategy = st.builds(
     Valuable,
 )
-shop::Payment_strategy = st.builds(
-    shop::Payment,
+shop_Payment_strategy = st.builds(
+    shop_Payment,
     type=
         safe_text
 )
-shop::BankOperation_strategy = st.builds(
-    shop::BankOperation,
+shop_BankOperation_strategy = st.builds(
+    shop_BankOperation,
     description=
         safe_text
 )
-shop::AccountBook_strategy = st.builds(
-    shop::AccountBook,
+shop_AccountBook_strategy = st.builds(
+    shop_AccountBook,
     cashFlow=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-shop::Sale_strategy = st.builds(
-    shop::Sale,
+shop_Sale_strategy = st.builds(
+    shop_Sale,
     description=
         safe_text
 )
-shop::Shop_strategy = st.builds(
-    shop::Shop,
+shop_Shop_strategy = st.builds(
+    shop_Shop,
 )
 Person_strategy = st.builds(
     Person,
 )
-shop::Customer_strategy = st.builds(
-    shop::Customer,
+shop_Customer_strategy = st.builds(
+    shop_Customer,
 )
-shop::Employee_strategy = st.builds(
-    shop::Employee,
+shop_Employee_strategy = st.builds(
+    shop_Employee,
 )
 
 @given(instance=Payment_strategy)
@@ -485,190 +485,151 @@ shop::Employee_strategy = st.builds(
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=shop::ElectronicPayment_strategy)
+@given(instance=shop_ElectronicPayment_strategy)
 @settings(max_examples=50)
-def test_shop::electronicpayment_instantiation(instance):
-    assert isinstance(instance, shop::ElectronicPayment)
+def test_shop_electronicpayment_instantiation(instance):
+    assert isinstance(instance, shop_ElectronicPayment)
 
-@given(instance=shop::CashPayment_strategy)
+@given(instance=shop_CashPayment_strategy)
 @settings(max_examples=50)
-def test_shop::cashpayment_instantiation(instance):
-    assert isinstance(instance, shop::CashPayment)
+def test_shop_cashpayment_instantiation(instance):
+    assert isinstance(instance, shop_CashPayment)
 
-@given(instance=shop::ChequePayment_strategy)
+@given(instance=shop_ChequePayment_strategy)
 @settings(max_examples=50)
-def test_shop::chequepayment_instantiation(instance):
-    assert isinstance(instance, shop::ChequePayment)
-
-@given(instance=shop::ChequePayment_strategy)
-def test_shop::chequepayment_depositDate_type(instance):
-    assert isinstance(instance.depositDate, date)
+def test_shop_chequepayment_instantiation(instance):
+    assert isinstance(instance, shop_ChequePayment)
 
 
-@given(instance=shop::ChequePayment_strategy)
-def test_shop::chequepayment_depositDate_setter(instance):
+
+@given(instance=shop_ChequePayment_strategy)
+def test_shop_chequepayment_depositDate_setter(instance):
     original = instance.depositDate
     instance.depositDate = original
     assert instance.depositDate == original
 
-@given(instance=shop::ChequePayment_strategy)
-def test_shop::chequepayment_deposited_type(instance):
-    assert isinstance(instance.deposited, bool)
 
 
-@given(instance=shop::ChequePayment_strategy)
-def test_shop::chequepayment_deposited_setter(instance):
+@given(instance=shop_ChequePayment_strategy)
+def test_shop_chequepayment_deposited_setter(instance):
     original = instance.deposited
     instance.deposited = original
     assert instance.deposited == original
 
-@given(instance=shop::Valuable_strategy)
+@given(instance=shop_Valuable_strategy)
 @settings(max_examples=50)
-def test_shop::valuable_instantiation(instance):
-    assert isinstance(instance, shop::Valuable)
-
-@given(instance=shop::Valuable_strategy)
-def test_shop::valuable_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_shop_valuable_instantiation(instance):
+    assert isinstance(instance, shop_Valuable)
 
 
-@given(instance=shop::Valuable_strategy)
-def test_shop::valuable_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
 
-@given(instance=shop::Valuable_strategy)
-def test_shop::valuable_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=shop::Valuable_strategy)
-def test_shop::valuable_value_setter(instance):
+@given(instance=shop_Valuable_strategy)
+def test_shop_valuable_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=shop::Person_strategy)
+
+
+@given(instance=shop_Valuable_strategy)
+def test_shop_valuable_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+@given(instance=shop_Person_strategy)
 @settings(max_examples=50)
-def test_shop::person_instantiation(instance):
-    assert isinstance(instance, shop::Person)
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_phoneNumbers_type(instance):
-    assert isinstance(instance.phoneNumbers, str)
+def test_shop_person_instantiation(instance):
+    assert isinstance(instance, shop_Person)
 
 
-@given(instance=shop::Person_strategy)
-def test_shop::person_phoneNumbers_setter(instance):
-    original = instance.phoneNumbers
-    instance.phoneNumbers = original
-    assert instance.phoneNumbers == original
 
-@given(instance=shop::Person_strategy)
-def test_shop::person_emails_type(instance):
-    assert isinstance(instance.emails, str)
-
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_emails_setter(instance):
-    original = instance.emails
-    instance.emails = original
-    assert instance.emails == original
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_birthDate_type(instance):
-    assert isinstance(instance.birthDate, date)
-
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_birthDate_setter(instance):
-    original = instance.birthDate
-    instance.birthDate = original
-    assert instance.birthDate == original
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=shop::Person_strategy)
-def test_shop::person_firstName_setter(instance):
+@given(instance=shop_Person_strategy)
+def test_shop_person_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=shop::Person_strategy)
-def test_shop::person_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=shop::Person_strategy)
-def test_shop::person_address_setter(instance):
+@given(instance=shop_Person_strategy)
+def test_shop_person_birthDate_setter(instance):
+    original = instance.birthDate
+    instance.birthDate = original
+    assert instance.birthDate == original
+
+
+
+@given(instance=shop_Person_strategy)
+def test_shop_person_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+
+
+@given(instance=shop_Person_strategy)
+def test_shop_person_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
+
+
+
+@given(instance=shop_Person_strategy)
+def test_shop_person_emails_setter(instance):
+    original = instance.emails
+    instance.emails = original
+    assert instance.emails == original
+
+
+
+@given(instance=shop_Person_strategy)
+def test_shop_person_phoneNumbers_setter(instance):
+    original = instance.phoneNumbers
+    instance.phoneNumbers = original
+    assert instance.phoneNumbers == original
 
 @given(instance=Valuable_strategy)
 @settings(max_examples=50)
 def test_valuable_instantiation(instance):
     assert isinstance(instance, Valuable)
 
-@given(instance=shop::Payment_strategy)
+@given(instance=shop_Payment_strategy)
 @settings(max_examples=50)
-def test_shop::payment_instantiation(instance):
-    assert isinstance(instance, shop::Payment)
-
-@given(instance=shop::Payment_strategy)
-def test_shop::payment_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_shop_payment_instantiation(instance):
+    assert isinstance(instance, shop_Payment)
 
 
-@given(instance=shop::Payment_strategy)
-def test_shop::payment_type_setter(instance):
+
+@given(instance=shop_Payment_strategy)
+def test_shop_payment_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=shop::BankOperation_strategy)
+@given(instance=shop_BankOperation_strategy)
 @settings(max_examples=50)
-def test_shop::bankoperation_instantiation(instance):
-    assert isinstance(instance, shop::BankOperation)
-
-@given(instance=shop::BankOperation_strategy)
-def test_shop::bankoperation_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_shop_bankoperation_instantiation(instance):
+    assert isinstance(instance, shop_BankOperation)
 
 
-@given(instance=shop::BankOperation_strategy)
-def test_shop::bankoperation_description_setter(instance):
+
+@given(instance=shop_BankOperation_strategy)
+def test_shop_bankoperation_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=shop::AccountBook_strategy)
+@given(instance=shop_AccountBook_strategy)
 @settings(max_examples=50)
-def test_shop::accountbook_instantiation(instance):
-    assert isinstance(instance, shop::AccountBook)
-
-@given(instance=shop::AccountBook_strategy)
-def test_shop::accountbook_cashFlow_type(instance):
-    assert isinstance(instance.cashFlow, float)
+def test_shop_accountbook_instantiation(instance):
+    assert isinstance(instance, shop_AccountBook)
 
 
-@given(instance=shop::AccountBook_strategy)
-def test_shop::accountbook_cashFlow_setter(instance):
+
+@given(instance=shop_AccountBook_strategy)
+def test_shop_accountbook_cashFlow_setter(instance):
     original = instance.cashFlow
     instance.cashFlow = original
     assert instance.cashFlow == original
@@ -679,9 +640,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=shop::AccountBook_strategy)
+@given(instance=shop_AccountBook_strategy)
 @settings(max_examples=30)
-def test_shop::accountbook_depositcash_changes_state(instance):
+def test_shop_accountbook_depositcash_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -696,14 +657,14 @@ def test_shop::accountbook_depositcash_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'depositCash' in shop::AccountBook is empty"
+        assert has_statements, f"Function 'depositCash' in shop_AccountBook is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'depositCash' in shop::AccountBook did not change state; check implementation")
+            warnings.warn(f"Operation 'depositCash' in shop_AccountBook did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'depositCash' in shop::AccountBook is not implemented or raised an error")
+        warnings.warn(f"Operation 'depositCash' in shop_AccountBook is not implemented or raised an error")
 
 import warnings
 import copy
@@ -711,9 +672,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=shop::AccountBook_strategy)
+@given(instance=shop_AccountBook_strategy)
 @settings(max_examples=30)
-def test_shop::accountbook_depositcheques_changes_state(instance):
+def test_shop_accountbook_depositcheques_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -728,47 +689,44 @@ def test_shop::accountbook_depositcheques_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'depositCheques' in shop::AccountBook is empty"
+        assert has_statements, f"Function 'depositCheques' in shop_AccountBook is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'depositCheques' in shop::AccountBook did not change state; check implementation")
+            warnings.warn(f"Operation 'depositCheques' in shop_AccountBook did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'depositCheques' in shop::AccountBook is not implemented or raised an error")
+        warnings.warn(f"Operation 'depositCheques' in shop_AccountBook is not implemented or raised an error")
 
-@given(instance=shop::Sale_strategy)
+@given(instance=shop_Sale_strategy)
 @settings(max_examples=50)
-def test_shop::sale_instantiation(instance):
-    assert isinstance(instance, shop::Sale)
-
-@given(instance=shop::Sale_strategy)
-def test_shop::sale_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_shop_sale_instantiation(instance):
+    assert isinstance(instance, shop_Sale)
 
 
-@given(instance=shop::Sale_strategy)
-def test_shop::sale_description_setter(instance):
+
+@given(instance=shop_Sale_strategy)
+def test_shop_sale_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=shop::Shop_strategy)
+@given(instance=shop_Shop_strategy)
 @settings(max_examples=50)
-def test_shop::shop_instantiation(instance):
-    assert isinstance(instance, shop::Shop)
+def test_shop_shop_instantiation(instance):
+    assert isinstance(instance, shop_Shop)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=shop::Customer_strategy)
+@given(instance=shop_Customer_strategy)
 @settings(max_examples=50)
-def test_shop::customer_instantiation(instance):
-    assert isinstance(instance, shop::Customer)
+def test_shop_customer_instantiation(instance):
+    assert isinstance(instance, shop_Customer)
 
-@given(instance=shop::Employee_strategy)
+@given(instance=shop_Employee_strategy)
 @settings(max_examples=50)
-def test_shop::employee_instantiation(instance):
-    assert isinstance(instance, shop::Employee)
+def test_shop_employee_instantiation(instance):
+    assert isinstance(instance, shop_Employee)

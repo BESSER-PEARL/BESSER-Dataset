@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Computer,
@@ -194,18 +194,9 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
-    assert "hand" in params, "Missing parameter 'hand'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "hand" in params, "Missing parameter 'hand'"
     assert "bank" in params, "Missing parameter 'bank'"
-
-def test_player_has_hand():
-    assert hasattr(Player, "hand")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "hand" in klass.__dict__:
-            descriptor = klass.__dict__["hand"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_player_has_name():
     assert hasattr(Player, "name")
@@ -213,6 +204,15 @@ def test_player_has_name():
     for klass in Player.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_hand():
+    assert hasattr(Player, "hand")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "hand" in klass.__dict__:
+            descriptor = klass.__dict__["hand"]
             break
     assert isinstance(descriptor, property)
 
@@ -262,10 +262,19 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
+    assert "suit" in params, "Missing parameter 'suit'"
     assert "val" in params, "Missing parameter 'val'"
     assert "name" in params, "Missing parameter 'name'"
     assert "img" in params, "Missing parameter 'img'"
-    assert "suit" in params, "Missing parameter 'suit'"
+
+def test_card_has_suit():
+    assert hasattr(Card, "suit")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "suit" in klass.__dict__:
+            descriptor = klass.__dict__["suit"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_card_has_val():
     assert hasattr(Card, "val")
@@ -294,15 +303,6 @@ def test_card_has_img():
             break
     assert isinstance(descriptor, property)
 
-def test_card_has_suit():
-    assert hasattr(Card, "suit")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "suit" in klass.__dict__:
-            descriptor = klass.__dict__["suit"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_poker_is_not_abstract():
@@ -316,18 +316,9 @@ def test_poker_constructor_exists():
 def test_poker_constructor_args():
     sig = inspect.signature(Poker.__init__)
     params = list(sig.parameters.keys())
-    assert "player2" in params, "Missing parameter 'player2'"
     assert "dealer" in params, "Missing parameter 'dealer'"
     assert "player1" in params, "Missing parameter 'player1'"
-
-def test_poker_has_player2():
-    assert hasattr(Poker, "player2")
-    descriptor = None
-    for klass in Poker.__mro__:
-        if "player2" in klass.__dict__:
-            descriptor = klass.__dict__["player2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "player2" in params, "Missing parameter 'player2'"
 
 def test_poker_has_dealer():
     assert hasattr(Poker, "dealer")
@@ -344,6 +335,15 @@ def test_poker_has_player1():
     for klass in Poker.__mro__:
         if "player1" in klass.__dict__:
             descriptor = klass.__dict__["player1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_poker_has_player2():
+    assert hasattr(Poker, "player2")
+    descriptor = None
+    for klass in Poker.__mro__:
+        if "player2" in klass.__dict__:
+            descriptor = klass.__dict__["player2"]
             break
     assert isinstance(descriptor, property)
 
@@ -394,10 +394,10 @@ RecordBook_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
-    hand=
-        st.none(),
     name=
         safe_text,
+    hand=
+        st.none(),
     bank=
         st.none()
 )
@@ -408,22 +408,22 @@ Hand_strategy = st.builds(
 )
 Card_strategy = st.builds(
     Card,
+    suit=
+        safe_text,
     val=
         safe_text,
     name=
         safe_text,
     img=
-        safe_text,
-    suit=
         safe_text
 )
 Poker_strategy = st.builds(
     Poker,
-    player2=
-        st.none(),
     dealer=
         st.none(),
     player1=
+        st.none(),
+    player2=
         st.none()
 )
 
@@ -442,9 +442,6 @@ def test_human_instantiation(instance):
 def test_bank_instantiation(instance):
     assert isinstance(instance, Bank)
 
-@given(instance=Bank_strategy)
-def test_bank_total_type(instance):
-    assert isinstance(instance.total, str)
 
 
 @given(instance=Bank_strategy)
@@ -458,9 +455,6 @@ def test_bank_total_setter(instance):
 def test_handstrength_instantiation(instance):
     assert isinstance(instance, HandStrength)
 
-@given(instance=HandStrength_strategy)
-def test_handstrength_STRAIGHT_FLUSH_type(instance):
-    assert isinstance(instance.STRAIGHT_FLUSH, int)
 
 
 @given(instance=HandStrength_strategy)
@@ -474,9 +468,6 @@ def test_handstrength_STRAIGHT_FLUSH_setter(instance):
 def test_dealer_instantiation(instance):
     assert isinstance(instance, Dealer)
 
-@given(instance=Dealer_strategy)
-def test_dealer_deck_type(instance):
-    assert isinstance(instance.deck, deck)
 
 
 @given(instance=Dealer_strategy)
@@ -485,9 +476,6 @@ def test_dealer_deck_setter(instance):
     instance.deck = original
     assert instance.deck == original
 
-@given(instance=Dealer_strategy)
-def test_dealer_analyzeHand_type(instance):
-    assert isinstance(instance.analyzeHand, handstrength)
 
 
 @given(instance=Dealer_strategy)
@@ -501,9 +489,6 @@ def test_dealer_analyzeHand_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_cards_type(instance):
-    assert isinstance(instance.cards, str)
 
 
 @given(instance=Deck_strategy)
@@ -517,9 +502,6 @@ def test_deck_cards_setter(instance):
 def test_recordbook_instantiation(instance):
     assert isinstance(instance, RecordBook)
 
-@given(instance=RecordBook_strategy)
-def test_recordbook_recordList_type(instance):
-    assert isinstance(instance.recordList, str)
 
 
 @given(instance=RecordBook_strategy)
@@ -533,20 +515,6 @@ def test_recordbook_recordList_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_hand_type(instance):
-    assert isinstance(instance.hand, hand)
-
-
-@given(instance=Player_strategy)
-def test_player_hand_setter(instance):
-    original = instance.hand
-    instance.hand = original
-    assert instance.hand == original
-
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -555,9 +523,14 @@ def test_player_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
 @given(instance=Player_strategy)
-def test_player_bank_type(instance):
-    assert isinstance(instance.bank, bank)
+def test_player_hand_setter(instance):
+    original = instance.hand
+    instance.hand = original
+    assert instance.hand == original
+
 
 
 @given(instance=Player_strategy)
@@ -571,9 +544,6 @@ def test_player_bank_setter(instance):
 def test_hand_instantiation(instance):
     assert isinstance(instance, Hand)
 
-@given(instance=Hand_strategy)
-def test_hand_handCollection_type(instance):
-    assert isinstance(instance.handCollection, str)
 
 
 @given(instance=Hand_strategy)
@@ -587,42 +557,6 @@ def test_hand_handCollection_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_val_type(instance):
-    assert isinstance(instance.val, str)
-
-
-@given(instance=Card_strategy)
-def test_card_val_setter(instance):
-    original = instance.val
-    instance.val = original
-    assert instance.val == original
-
-@given(instance=Card_strategy)
-def test_card_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Card_strategy)
-def test_card_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Card_strategy)
-def test_card_img_type(instance):
-    assert isinstance(instance.img, str)
-
-
-@given(instance=Card_strategy)
-def test_card_img_setter(instance):
-    original = instance.img
-    instance.img = original
-    assert instance.img == original
-
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, str)
 
 
 @given(instance=Card_strategy)
@@ -631,25 +565,35 @@ def test_card_suit_setter(instance):
     instance.suit = original
     assert instance.suit == original
 
+
+
+@given(instance=Card_strategy)
+def test_card_val_setter(instance):
+    original = instance.val
+    instance.val = original
+    assert instance.val == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_img_setter(instance):
+    original = instance.img
+    instance.img = original
+    assert instance.img == original
+
 @given(instance=Poker_strategy)
 @settings(max_examples=50)
 def test_poker_instantiation(instance):
     assert isinstance(instance, Poker)
 
-@given(instance=Poker_strategy)
-def test_poker_player2_type(instance):
-    assert isinstance(instance.player2, player)
-
-
-@given(instance=Poker_strategy)
-def test_poker_player2_setter(instance):
-    original = instance.player2
-    instance.player2 = original
-    assert instance.player2 == original
-
-@given(instance=Poker_strategy)
-def test_poker_dealer_type(instance):
-    assert isinstance(instance.dealer, dealer)
 
 
 @given(instance=Poker_strategy)
@@ -658,9 +602,6 @@ def test_poker_dealer_setter(instance):
     instance.dealer = original
     assert instance.dealer == original
 
-@given(instance=Poker_strategy)
-def test_poker_player1_type(instance):
-    assert isinstance(instance.player1, player)
 
 
 @given(instance=Poker_strategy)
@@ -668,3 +609,11 @@ def test_poker_player1_setter(instance):
     original = instance.player1
     instance.player1 = original
     assert instance.player1 == original
+
+
+
+@given(instance=Poker_strategy)
+def test_poker_player2_setter(instance):
+    original = instance.player2
+    instance.player2 = original
+    assert instance.player2 == original

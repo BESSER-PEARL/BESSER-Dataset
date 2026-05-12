@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Relational::EnumeratedLiteral,
+from python_code import (
+    Relational_EnumeratedLiteral,
     Domain,
-    Relational::EnumerationType,
-    Relational::PrimitiveType,
+    Relational_EnumerationType,
+    Relational_PrimitiveType,
     CandidateKey,
-    Relational::Schema,
-    Relational::ForeignKey,
-    Relational::Attribute,
-    Relational::CandidateKey,
-    Relational::Constraint,
-    Relational::Domain,
-    Relational::Table,
+    Relational_Schema,
+    Relational_ForeignKey,
+    Relational_Attribute,
+    Relational_CandidateKey,
+    Relational_Constraint,
+    Relational_Domain,
+    Relational_Table,
     AttributeType,
 )
 
@@ -27,23 +27,23 @@ from classes import (
 
 
 
-def test_relational::enumeratedliteral_is_not_abstract():
-    assert not inspect.isabstract(Relational::EnumeratedLiteral)
+def test_relational_enumeratedliteral_is_not_abstract():
+    assert not inspect.isabstract(Relational_EnumeratedLiteral)
 
 
-def test_relational::enumeratedliteral_constructor_exists():
-    assert callable(Relational::EnumeratedLiteral.__init__)
+def test_relational_enumeratedliteral_constructor_exists():
+    assert callable(Relational_EnumeratedLiteral.__init__)
 
 
-def test_relational::enumeratedliteral_constructor_args():
-    sig = inspect.signature(Relational::EnumeratedLiteral.__init__)
+def test_relational_enumeratedliteral_constructor_args():
+    sig = inspect.signature(Relational_EnumeratedLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::enumeratedliteral_has_name():
-    assert hasattr(Relational::EnumeratedLiteral, "name")
+def test_relational_enumeratedliteral_has_name():
+    assert hasattr(Relational_EnumeratedLiteral, "name")
     descriptor = None
-    for klass in Relational::EnumeratedLiteral.__mro__:
+    for klass in Relational_EnumeratedLiteral.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,30 +65,30 @@ def test_domain_constructor_args():
 
 
 
-def test_relational::enumerationtype_is_not_abstract():
-    assert not inspect.isabstract(Relational::EnumerationType)
+def test_relational_enumerationtype_is_not_abstract():
+    assert not inspect.isabstract(Relational_EnumerationType)
 
 
-def test_relational::enumerationtype_constructor_exists():
-    assert callable(Relational::EnumerationType.__init__)
+def test_relational_enumerationtype_constructor_exists():
+    assert callable(Relational_EnumerationType.__init__)
 
 
-def test_relational::enumerationtype_constructor_args():
-    sig = inspect.signature(Relational::EnumerationType.__init__)
+def test_relational_enumerationtype_constructor_args():
+    sig = inspect.signature(Relational_EnumerationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(Relational::PrimitiveType)
+def test_relational_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(Relational_PrimitiveType)
 
 
-def test_relational::primitivetype_constructor_exists():
-    assert callable(Relational::PrimitiveType.__init__)
+def test_relational_primitivetype_constructor_exists():
+    assert callable(Relational_PrimitiveType.__init__)
 
 
-def test_relational::primitivetype_constructor_args():
-    sig = inspect.signature(Relational::PrimitiveType.__init__)
+def test_relational_primitivetype_constructor_args():
+    sig = inspect.signature(Relational_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -107,23 +107,23 @@ def test_candidatekey_constructor_args():
 
 
 
-def test_relational::schema_is_not_abstract():
-    assert not inspect.isabstract(Relational::Schema)
+def test_relational_schema_is_not_abstract():
+    assert not inspect.isabstract(Relational_Schema)
 
 
-def test_relational::schema_constructor_exists():
-    assert callable(Relational::Schema.__init__)
+def test_relational_schema_constructor_exists():
+    assert callable(Relational_Schema.__init__)
 
 
-def test_relational::schema_constructor_args():
-    sig = inspect.signature(Relational::Schema.__init__)
+def test_relational_schema_constructor_args():
+    sig = inspect.signature(Relational_Schema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::schema_has_name():
-    assert hasattr(Relational::Schema, "name")
+def test_relational_schema_has_name():
+    assert hasattr(Relational_Schema, "name")
     descriptor = None
-    for klass in Relational::Schema.__mro__:
+    for klass in Relational_Schema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -131,91 +131,91 @@ def test_relational::schema_has_name():
 
 
 
-def test_relational::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(Relational::ForeignKey)
+def test_relational_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(Relational_ForeignKey)
 
 
-def test_relational::foreignkey_constructor_exists():
-    assert callable(Relational::ForeignKey.__init__)
+def test_relational_foreignkey_constructor_exists():
+    assert callable(Relational_ForeignKey.__init__)
 
 
-def test_relational::foreignkey_constructor_args():
-    sig = inspect.signature(Relational::ForeignKey.__init__)
+def test_relational_foreignkey_constructor_args():
+    sig = inspect.signature(Relational_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::attribute_is_not_abstract():
-    assert not inspect.isabstract(Relational::Attribute)
+def test_relational_attribute_is_not_abstract():
+    assert not inspect.isabstract(Relational_Attribute)
 
 
-def test_relational::attribute_constructor_exists():
-    assert callable(Relational::Attribute.__init__)
+def test_relational_attribute_constructor_exists():
+    assert callable(Relational_Attribute.__init__)
 
 
-def test_relational::attribute_constructor_args():
-    sig = inspect.signature(Relational::Attribute.__init__)
+def test_relational_attribute_constructor_args():
+    sig = inspect.signature(Relational_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+    assert "nullable" in params, "Missing parameter 'nullable'"
     assert "multiplicity" in params, "Missing parameter 'multiplicity'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_relational::attribute_has_name():
-    assert hasattr(Relational::Attribute, "name")
+def test_relational_attribute_has_name():
+    assert hasattr(Relational_Attribute, "name")
     descriptor = None
-    for klass in Relational::Attribute.__mro__:
+    for klass in Relational_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_relational::attribute_has_multiplicity():
-    assert hasattr(Relational::Attribute, "multiplicity")
+def test_relational_attribute_has_nullable():
+    assert hasattr(Relational_Attribute, "nullable")
     descriptor = None
-    for klass in Relational::Attribute.__mro__:
-        if "multiplicity" in klass.__dict__:
-            descriptor = klass.__dict__["multiplicity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_relational::attribute_has_type():
-    assert hasattr(Relational::Attribute, "type")
-    descriptor = None
-    for klass in Relational::Attribute.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_relational::attribute_has_nullable():
-    assert hasattr(Relational::Attribute, "nullable")
-    descriptor = None
-    for klass in Relational::Attribute.__mro__:
+    for klass in Relational_Attribute.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
     assert isinstance(descriptor, property)
 
+def test_relational_attribute_has_multiplicity():
+    assert hasattr(Relational_Attribute, "multiplicity")
+    descriptor = None
+    for klass in Relational_Attribute.__mro__:
+        if "multiplicity" in klass.__dict__:
+            descriptor = klass.__dict__["multiplicity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_relational_attribute_has_type():
+    assert hasattr(Relational_Attribute, "type")
+    descriptor = None
+    for klass in Relational_Attribute.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_relational::candidatekey_is_not_abstract():
-    assert not inspect.isabstract(Relational::CandidateKey)
+
+def test_relational_candidatekey_is_not_abstract():
+    assert not inspect.isabstract(Relational_CandidateKey)
 
 
-def test_relational::candidatekey_constructor_exists():
-    assert callable(Relational::CandidateKey.__init__)
+def test_relational_candidatekey_constructor_exists():
+    assert callable(Relational_CandidateKey.__init__)
 
 
-def test_relational::candidatekey_constructor_args():
-    sig = inspect.signature(Relational::CandidateKey.__init__)
+def test_relational_candidatekey_constructor_args():
+    sig = inspect.signature(Relational_CandidateKey.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::candidatekey_has_name():
-    assert hasattr(Relational::CandidateKey, "name")
+def test_relational_candidatekey_has_name():
+    assert hasattr(Relational_CandidateKey, "name")
     descriptor = None
-    for klass in Relational::CandidateKey.__mro__:
+    for klass in Relational_CandidateKey.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -223,33 +223,33 @@ def test_relational::candidatekey_has_name():
 
 
 
-def test_relational::constraint_is_not_abstract():
-    assert not inspect.isabstract(Relational::Constraint)
+def test_relational_constraint_is_not_abstract():
+    assert not inspect.isabstract(Relational_Constraint)
 
 
-def test_relational::constraint_constructor_exists():
-    assert callable(Relational::Constraint.__init__)
+def test_relational_constraint_constructor_exists():
+    assert callable(Relational_Constraint.__init__)
 
 
-def test_relational::constraint_constructor_args():
-    sig = inspect.signature(Relational::Constraint.__init__)
+def test_relational_constraint_constructor_args():
+    sig = inspect.signature(Relational_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::constraint_has_description():
-    assert hasattr(Relational::Constraint, "description")
+def test_relational_constraint_has_description():
+    assert hasattr(Relational_Constraint, "description")
     descriptor = None
-    for klass in Relational::Constraint.__mro__:
+    for klass in Relational_Constraint.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_relational::constraint_has_name():
-    assert hasattr(Relational::Constraint, "name")
+def test_relational_constraint_has_name():
+    assert hasattr(Relational_Constraint, "name")
     descriptor = None
-    for klass in Relational::Constraint.__mro__:
+    for klass in Relational_Constraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -257,23 +257,23 @@ def test_relational::constraint_has_name():
 
 
 
-def test_relational::domain_is_not_abstract():
-    assert not inspect.isabstract(Relational::Domain)
+def test_relational_domain_is_not_abstract():
+    assert not inspect.isabstract(Relational_Domain)
 
 
-def test_relational::domain_constructor_exists():
-    assert callable(Relational::Domain.__init__)
+def test_relational_domain_constructor_exists():
+    assert callable(Relational_Domain.__init__)
 
 
-def test_relational::domain_constructor_args():
-    sig = inspect.signature(Relational::Domain.__init__)
+def test_relational_domain_constructor_args():
+    sig = inspect.signature(Relational_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::domain_has_name():
-    assert hasattr(Relational::Domain, "name")
+def test_relational_domain_has_name():
+    assert hasattr(Relational_Domain, "name")
     descriptor = None
-    for klass in Relational::Domain.__mro__:
+    for klass in Relational_Domain.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -281,23 +281,23 @@ def test_relational::domain_has_name():
 
 
 
-def test_relational::table_is_not_abstract():
-    assert not inspect.isabstract(Relational::Table)
+def test_relational_table_is_not_abstract():
+    assert not inspect.isabstract(Relational_Table)
 
 
-def test_relational::table_constructor_exists():
-    assert callable(Relational::Table.__init__)
+def test_relational_table_constructor_exists():
+    assert callable(Relational_Table.__init__)
 
 
-def test_relational::table_constructor_args():
-    sig = inspect.signature(Relational::Table.__init__)
+def test_relational_table_constructor_args():
+    sig = inspect.signature(Relational_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::table_has_name():
-    assert hasattr(Relational::Table, "name")
+def test_relational_table_has_name():
+    assert hasattr(Relational_Table, "name")
     descriptor = None
-    for klass in Relational::Table.__mro__:
+    for klass in Relational_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -330,77 +330,74 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Relational::EnumeratedLiteral_strategy = st.builds(
-    Relational::EnumeratedLiteral,
+Relational_EnumeratedLiteral_strategy = st.builds(
+    Relational_EnumeratedLiteral,
     name=
         safe_text
 )
 Domain_strategy = st.builds(
     Domain,
 )
-Relational::EnumerationType_strategy = st.builds(
-    Relational::EnumerationType,
+Relational_EnumerationType_strategy = st.builds(
+    Relational_EnumerationType,
 )
-Relational::PrimitiveType_strategy = st.builds(
-    Relational::PrimitiveType,
+Relational_PrimitiveType_strategy = st.builds(
+    Relational_PrimitiveType,
 )
 CandidateKey_strategy = st.builds(
     CandidateKey,
 )
-Relational::Schema_strategy = st.builds(
-    Relational::Schema,
+Relational_Schema_strategy = st.builds(
+    Relational_Schema,
     name=
         safe_text
 )
-Relational::ForeignKey_strategy = st.builds(
-    Relational::ForeignKey,
+Relational_ForeignKey_strategy = st.builds(
+    Relational_ForeignKey,
 )
-Relational::Attribute_strategy = st.builds(
-    Relational::Attribute,
+Relational_Attribute_strategy = st.builds(
+    Relational_Attribute,
     name=
         safe_text,
+    nullable=
+        st.booleans(),
     multiplicity=
         st.integers(),
     type=
-        safe_text,
-    nullable=
-        st.booleans()
+        safe_text
 )
-Relational::CandidateKey_strategy = st.builds(
-    Relational::CandidateKey,
+Relational_CandidateKey_strategy = st.builds(
+    Relational_CandidateKey,
     name=
         safe_text
 )
-Relational::Constraint_strategy = st.builds(
-    Relational::Constraint,
+Relational_Constraint_strategy = st.builds(
+    Relational_Constraint,
     description=
         safe_text,
     name=
         safe_text
 )
-Relational::Domain_strategy = st.builds(
-    Relational::Domain,
+Relational_Domain_strategy = st.builds(
+    Relational_Domain,
     name=
         safe_text
 )
-Relational::Table_strategy = st.builds(
-    Relational::Table,
+Relational_Table_strategy = st.builds(
+    Relational_Table,
     name=
         safe_text
 )
 
-@given(instance=Relational::EnumeratedLiteral_strategy)
+@given(instance=Relational_EnumeratedLiteral_strategy)
 @settings(max_examples=50)
-def test_relational::enumeratedliteral_instantiation(instance):
-    assert isinstance(instance, Relational::EnumeratedLiteral)
-
-@given(instance=Relational::EnumeratedLiteral_strategy)
-def test_relational::enumeratedliteral_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_enumeratedliteral_instantiation(instance):
+    assert isinstance(instance, Relational_EnumeratedLiteral)
 
 
-@given(instance=Relational::EnumeratedLiteral_strategy)
-def test_relational::enumeratedliteral_name_setter(instance):
+
+@given(instance=Relational_EnumeratedLiteral_strategy)
+def test_relational_enumeratedliteral_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -410,162 +407,132 @@ def test_relational::enumeratedliteral_name_setter(instance):
 def test_domain_instantiation(instance):
     assert isinstance(instance, Domain)
 
-@given(instance=Relational::EnumerationType_strategy)
+@given(instance=Relational_EnumerationType_strategy)
 @settings(max_examples=50)
-def test_relational::enumerationtype_instantiation(instance):
-    assert isinstance(instance, Relational::EnumerationType)
+def test_relational_enumerationtype_instantiation(instance):
+    assert isinstance(instance, Relational_EnumerationType)
 
-@given(instance=Relational::PrimitiveType_strategy)
+@given(instance=Relational_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_relational::primitivetype_instantiation(instance):
-    assert isinstance(instance, Relational::PrimitiveType)
+def test_relational_primitivetype_instantiation(instance):
+    assert isinstance(instance, Relational_PrimitiveType)
 
 @given(instance=CandidateKey_strategy)
 @settings(max_examples=50)
 def test_candidatekey_instantiation(instance):
     assert isinstance(instance, CandidateKey)
 
-@given(instance=Relational::Schema_strategy)
+@given(instance=Relational_Schema_strategy)
 @settings(max_examples=50)
-def test_relational::schema_instantiation(instance):
-    assert isinstance(instance, Relational::Schema)
-
-@given(instance=Relational::Schema_strategy)
-def test_relational::schema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_schema_instantiation(instance):
+    assert isinstance(instance, Relational_Schema)
 
 
-@given(instance=Relational::Schema_strategy)
-def test_relational::schema_name_setter(instance):
+
+@given(instance=Relational_Schema_strategy)
+def test_relational_schema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Relational::ForeignKey_strategy)
+@given(instance=Relational_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_relational::foreignkey_instantiation(instance):
-    assert isinstance(instance, Relational::ForeignKey)
+def test_relational_foreignkey_instantiation(instance):
+    assert isinstance(instance, Relational_ForeignKey)
 
-@given(instance=Relational::Attribute_strategy)
+@given(instance=Relational_Attribute_strategy)
 @settings(max_examples=50)
-def test_relational::attribute_instantiation(instance):
-    assert isinstance(instance, Relational::Attribute)
-
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_attribute_instantiation(instance):
+    assert isinstance(instance, Relational_Attribute)
 
 
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_name_setter(instance):
+
+@given(instance=Relational_Attribute_strategy)
+def test_relational_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_multiplicity_type(instance):
-    assert isinstance(instance.multiplicity, int)
 
 
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_multiplicity_setter(instance):
-    original = instance.multiplicity
-    instance.multiplicity = original
-    assert instance.multiplicity == original
-
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
-
-
-@given(instance=Relational::Attribute_strategy)
-def test_relational::attribute_nullable_setter(instance):
+@given(instance=Relational_Attribute_strategy)
+def test_relational_attribute_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=Relational::CandidateKey_strategy)
+
+
+@given(instance=Relational_Attribute_strategy)
+def test_relational_attribute_multiplicity_setter(instance):
+    original = instance.multiplicity
+    instance.multiplicity = original
+    assert instance.multiplicity == original
+
+
+
+@given(instance=Relational_Attribute_strategy)
+def test_relational_attribute_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=Relational_CandidateKey_strategy)
 @settings(max_examples=50)
-def test_relational::candidatekey_instantiation(instance):
-    assert isinstance(instance, Relational::CandidateKey)
-
-@given(instance=Relational::CandidateKey_strategy)
-def test_relational::candidatekey_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_candidatekey_instantiation(instance):
+    assert isinstance(instance, Relational_CandidateKey)
 
 
-@given(instance=Relational::CandidateKey_strategy)
-def test_relational::candidatekey_name_setter(instance):
+
+@given(instance=Relational_CandidateKey_strategy)
+def test_relational_candidatekey_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Relational::Constraint_strategy)
+@given(instance=Relational_Constraint_strategy)
 @settings(max_examples=50)
-def test_relational::constraint_instantiation(instance):
-    assert isinstance(instance, Relational::Constraint)
-
-@given(instance=Relational::Constraint_strategy)
-def test_relational::constraint_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_relational_constraint_instantiation(instance):
+    assert isinstance(instance, Relational_Constraint)
 
 
-@given(instance=Relational::Constraint_strategy)
-def test_relational::constraint_description_setter(instance):
+
+@given(instance=Relational_Constraint_strategy)
+def test_relational_constraint_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=Relational::Constraint_strategy)
-def test_relational::constraint_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Relational::Constraint_strategy)
-def test_relational::constraint_name_setter(instance):
+@given(instance=Relational_Constraint_strategy)
+def test_relational_constraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Relational::Domain_strategy)
+@given(instance=Relational_Domain_strategy)
 @settings(max_examples=50)
-def test_relational::domain_instantiation(instance):
-    assert isinstance(instance, Relational::Domain)
-
-@given(instance=Relational::Domain_strategy)
-def test_relational::domain_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_domain_instantiation(instance):
+    assert isinstance(instance, Relational_Domain)
 
 
-@given(instance=Relational::Domain_strategy)
-def test_relational::domain_name_setter(instance):
+
+@given(instance=Relational_Domain_strategy)
+def test_relational_domain_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Relational::Table_strategy)
+@given(instance=Relational_Table_strategy)
 @settings(max_examples=50)
-def test_relational::table_instantiation(instance):
-    assert isinstance(instance, Relational::Table)
-
-@given(instance=Relational::Table_strategy)
-def test_relational::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_table_instantiation(instance):
+    assert isinstance(instance, Relational_Table)
 
 
-@given(instance=Relational::Table_strategy)
-def test_relational::table_name_setter(instance):
+
+@given(instance=Relational_Table_strategy)
+def test_relational_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

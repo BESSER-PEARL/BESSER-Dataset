@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Element,
-    subsetUnion::Element::Level3,
-    subsetUnion::Element::Level4,
-    subsetUnion::Element::Level2,
-    subsetUnion::Element::Level5,
-    subsetUnion::Element::Level1,
-    subsetUnion::Element::Level10,
-    subsetUnion::Element::Level9,
-    subsetUnion::Element::Level8,
-    subsetUnion::Element::Level7,
-    subsetUnion::Element::Level6,
-    subsetUnion::Element,
-    subsetUnion::Container,
+    subsetUnion_Element_Level5,
+    subsetUnion_Element_Level1,
+    subsetUnion_Element_Level3,
+    subsetUnion_Element_Level2,
+    subsetUnion_Element_Level4,
+    subsetUnion_Element_Level10,
+    subsetUnion_Element_Level9,
+    subsetUnion_Element_Level8,
+    subsetUnion_Element_Level7,
+    subsetUnion_Element_Level6,
+    subsetUnion_Element,
+    subsetUnion_Container,
 )
 
 # =============================================================================
@@ -41,163 +41,163 @@ def test_element_constructor_args():
 
 
 
-def test_subsetunion::element::level3_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level3)
+def test_subsetunion_element_level5_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level5)
 
 
-def test_subsetunion::element::level3_constructor_exists():
-    assert callable(subsetUnion::Element::Level3.__init__)
+def test_subsetunion_element_level5_constructor_exists():
+    assert callable(subsetUnion_Element_Level5.__init__)
 
 
-def test_subsetunion::element::level3_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level3.__init__)
+def test_subsetunion_element_level5_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level5.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level4_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level4)
+def test_subsetunion_element_level1_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level1)
 
 
-def test_subsetunion::element::level4_constructor_exists():
-    assert callable(subsetUnion::Element::Level4.__init__)
+def test_subsetunion_element_level1_constructor_exists():
+    assert callable(subsetUnion_Element_Level1.__init__)
 
 
-def test_subsetunion::element::level4_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level4.__init__)
+def test_subsetunion_element_level1_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level2_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level2)
+def test_subsetunion_element_level3_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level3)
 
 
-def test_subsetunion::element::level2_constructor_exists():
-    assert callable(subsetUnion::Element::Level2.__init__)
+def test_subsetunion_element_level3_constructor_exists():
+    assert callable(subsetUnion_Element_Level3.__init__)
 
 
-def test_subsetunion::element::level2_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level2.__init__)
+def test_subsetunion_element_level3_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level5_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level5)
+def test_subsetunion_element_level2_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level2)
 
 
-def test_subsetunion::element::level5_constructor_exists():
-    assert callable(subsetUnion::Element::Level5.__init__)
+def test_subsetunion_element_level2_constructor_exists():
+    assert callable(subsetUnion_Element_Level2.__init__)
 
 
-def test_subsetunion::element::level5_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level5.__init__)
+def test_subsetunion_element_level2_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level1_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level1)
+def test_subsetunion_element_level4_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level4)
 
 
-def test_subsetunion::element::level1_constructor_exists():
-    assert callable(subsetUnion::Element::Level1.__init__)
+def test_subsetunion_element_level4_constructor_exists():
+    assert callable(subsetUnion_Element_Level4.__init__)
 
 
-def test_subsetunion::element::level1_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level1.__init__)
+def test_subsetunion_element_level4_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level10_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level10)
+def test_subsetunion_element_level10_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level10)
 
 
-def test_subsetunion::element::level10_constructor_exists():
-    assert callable(subsetUnion::Element::Level10.__init__)
+def test_subsetunion_element_level10_constructor_exists():
+    assert callable(subsetUnion_Element_Level10.__init__)
 
 
-def test_subsetunion::element::level10_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level10.__init__)
+def test_subsetunion_element_level10_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level10.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level9_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level9)
+def test_subsetunion_element_level9_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level9)
 
 
-def test_subsetunion::element::level9_constructor_exists():
-    assert callable(subsetUnion::Element::Level9.__init__)
+def test_subsetunion_element_level9_constructor_exists():
+    assert callable(subsetUnion_Element_Level9.__init__)
 
 
-def test_subsetunion::element::level9_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level9.__init__)
+def test_subsetunion_element_level9_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level9.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level8_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level8)
+def test_subsetunion_element_level8_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level8)
 
 
-def test_subsetunion::element::level8_constructor_exists():
-    assert callable(subsetUnion::Element::Level8.__init__)
+def test_subsetunion_element_level8_constructor_exists():
+    assert callable(subsetUnion_Element_Level8.__init__)
 
 
-def test_subsetunion::element::level8_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level8.__init__)
+def test_subsetunion_element_level8_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level8.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level7_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level7)
+def test_subsetunion_element_level7_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level7)
 
 
-def test_subsetunion::element::level7_constructor_exists():
-    assert callable(subsetUnion::Element::Level7.__init__)
+def test_subsetunion_element_level7_constructor_exists():
+    assert callable(subsetUnion_Element_Level7.__init__)
 
 
-def test_subsetunion::element::level7_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level7.__init__)
+def test_subsetunion_element_level7_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level7.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element::level6_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element::Level6)
+def test_subsetunion_element_level6_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element_Level6)
 
 
-def test_subsetunion::element::level6_constructor_exists():
-    assert callable(subsetUnion::Element::Level6.__init__)
+def test_subsetunion_element_level6_constructor_exists():
+    assert callable(subsetUnion_Element_Level6.__init__)
 
 
-def test_subsetunion::element::level6_constructor_args():
-    sig = inspect.signature(subsetUnion::Element::Level6.__init__)
+def test_subsetunion_element_level6_constructor_args():
+    sig = inspect.signature(subsetUnion_Element_Level6.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsetunion::element_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Element)
+def test_subsetunion_element_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Element)
 
 
-def test_subsetunion::element_constructor_exists():
-    assert callable(subsetUnion::Element.__init__)
+def test_subsetunion_element_constructor_exists():
+    assert callable(subsetUnion_Element.__init__)
 
 
-def test_subsetunion::element_constructor_args():
-    sig = inspect.signature(subsetUnion::Element.__init__)
+def test_subsetunion_element_constructor_args():
+    sig = inspect.signature(subsetUnion_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_subsetunion::element_has_name():
-    assert hasattr(subsetUnion::Element, "name")
+def test_subsetunion_element_has_name():
+    assert hasattr(subsetUnion_Element, "name")
     descriptor = None
-    for klass in subsetUnion::Element.__mro__:
+    for klass in subsetUnion_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -205,23 +205,23 @@ def test_subsetunion::element_has_name():
 
 
 
-def test_subsetunion::container_is_not_abstract():
-    assert not inspect.isabstract(subsetUnion::Container)
+def test_subsetunion_container_is_not_abstract():
+    assert not inspect.isabstract(subsetUnion_Container)
 
 
-def test_subsetunion::container_constructor_exists():
-    assert callable(subsetUnion::Container.__init__)
+def test_subsetunion_container_constructor_exists():
+    assert callable(subsetUnion_Container.__init__)
 
 
-def test_subsetunion::container_constructor_args():
-    sig = inspect.signature(subsetUnion::Container.__init__)
+def test_subsetunion_container_constructor_args():
+    sig = inspect.signature(subsetUnion_Container.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_subsetunion::container_has_name():
-    assert hasattr(subsetUnion::Container, "name")
+def test_subsetunion_container_has_name():
+    assert hasattr(subsetUnion_Container, "name")
     descriptor = None
-    for klass in subsetUnion::Container.__mro__:
+    for klass in subsetUnion_Container.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -242,43 +242,43 @@ safe_text = st.text(
 Element_strategy = st.builds(
     Element,
 )
-subsetUnion::Element::Level3_strategy = st.builds(
-    subsetUnion::Element::Level3,
+subsetUnion_Element_Level5_strategy = st.builds(
+    subsetUnion_Element_Level5,
 )
-subsetUnion::Element::Level4_strategy = st.builds(
-    subsetUnion::Element::Level4,
+subsetUnion_Element_Level1_strategy = st.builds(
+    subsetUnion_Element_Level1,
 )
-subsetUnion::Element::Level2_strategy = st.builds(
-    subsetUnion::Element::Level2,
+subsetUnion_Element_Level3_strategy = st.builds(
+    subsetUnion_Element_Level3,
 )
-subsetUnion::Element::Level5_strategy = st.builds(
-    subsetUnion::Element::Level5,
+subsetUnion_Element_Level2_strategy = st.builds(
+    subsetUnion_Element_Level2,
 )
-subsetUnion::Element::Level1_strategy = st.builds(
-    subsetUnion::Element::Level1,
+subsetUnion_Element_Level4_strategy = st.builds(
+    subsetUnion_Element_Level4,
 )
-subsetUnion::Element::Level10_strategy = st.builds(
-    subsetUnion::Element::Level10,
+subsetUnion_Element_Level10_strategy = st.builds(
+    subsetUnion_Element_Level10,
 )
-subsetUnion::Element::Level9_strategy = st.builds(
-    subsetUnion::Element::Level9,
+subsetUnion_Element_Level9_strategy = st.builds(
+    subsetUnion_Element_Level9,
 )
-subsetUnion::Element::Level8_strategy = st.builds(
-    subsetUnion::Element::Level8,
+subsetUnion_Element_Level8_strategy = st.builds(
+    subsetUnion_Element_Level8,
 )
-subsetUnion::Element::Level7_strategy = st.builds(
-    subsetUnion::Element::Level7,
+subsetUnion_Element_Level7_strategy = st.builds(
+    subsetUnion_Element_Level7,
 )
-subsetUnion::Element::Level6_strategy = st.builds(
-    subsetUnion::Element::Level6,
+subsetUnion_Element_Level6_strategy = st.builds(
+    subsetUnion_Element_Level6,
 )
-subsetUnion::Element_strategy = st.builds(
-    subsetUnion::Element,
+subsetUnion_Element_strategy = st.builds(
+    subsetUnion_Element,
     name=
         safe_text
 )
-subsetUnion::Container_strategy = st.builds(
-    subsetUnion::Container,
+subsetUnion_Container_strategy = st.builds(
+    subsetUnion_Container,
     name=
         safe_text
 )
@@ -288,84 +288,78 @@ subsetUnion::Container_strategy = st.builds(
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=subsetUnion::Element::Level3_strategy)
+@given(instance=subsetUnion_Element_Level5_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level3_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level3)
+def test_subsetunion_element_level5_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level5)
 
-@given(instance=subsetUnion::Element::Level4_strategy)
+@given(instance=subsetUnion_Element_Level1_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level4_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level4)
+def test_subsetunion_element_level1_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level1)
 
-@given(instance=subsetUnion::Element::Level2_strategy)
+@given(instance=subsetUnion_Element_Level3_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level2_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level2)
+def test_subsetunion_element_level3_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level3)
 
-@given(instance=subsetUnion::Element::Level5_strategy)
+@given(instance=subsetUnion_Element_Level2_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level5_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level5)
+def test_subsetunion_element_level2_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level2)
 
-@given(instance=subsetUnion::Element::Level1_strategy)
+@given(instance=subsetUnion_Element_Level4_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level1_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level1)
+def test_subsetunion_element_level4_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level4)
 
-@given(instance=subsetUnion::Element::Level10_strategy)
+@given(instance=subsetUnion_Element_Level10_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level10_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level10)
+def test_subsetunion_element_level10_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level10)
 
-@given(instance=subsetUnion::Element::Level9_strategy)
+@given(instance=subsetUnion_Element_Level9_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level9_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level9)
+def test_subsetunion_element_level9_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level9)
 
-@given(instance=subsetUnion::Element::Level8_strategy)
+@given(instance=subsetUnion_Element_Level8_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level8_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level8)
+def test_subsetunion_element_level8_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level8)
 
-@given(instance=subsetUnion::Element::Level7_strategy)
+@given(instance=subsetUnion_Element_Level7_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level7_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level7)
+def test_subsetunion_element_level7_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level7)
 
-@given(instance=subsetUnion::Element::Level6_strategy)
+@given(instance=subsetUnion_Element_Level6_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element::level6_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element::Level6)
+def test_subsetunion_element_level6_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element_Level6)
 
-@given(instance=subsetUnion::Element_strategy)
+@given(instance=subsetUnion_Element_strategy)
 @settings(max_examples=50)
-def test_subsetunion::element_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Element)
-
-@given(instance=subsetUnion::Element_strategy)
-def test_subsetunion::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_subsetunion_element_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Element)
 
 
-@given(instance=subsetUnion::Element_strategy)
-def test_subsetunion::element_name_setter(instance):
+
+@given(instance=subsetUnion_Element_strategy)
+def test_subsetunion_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=subsetUnion::Container_strategy)
+@given(instance=subsetUnion_Container_strategy)
 @settings(max_examples=50)
-def test_subsetunion::container_instantiation(instance):
-    assert isinstance(instance, subsetUnion::Container)
-
-@given(instance=subsetUnion::Container_strategy)
-def test_subsetunion::container_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_subsetunion_container_instantiation(instance):
+    assert isinstance(instance, subsetUnion_Container)
 
 
-@given(instance=subsetUnion::Container_strategy)
-def test_subsetunion::container_name_setter(instance):
+
+@given(instance=subsetUnion_Container_strategy)
+def test_subsetunion_container_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

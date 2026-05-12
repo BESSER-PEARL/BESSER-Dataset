@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TreeMapItem,
-    TreeMapViewer::TreeMapContainer,
-    TreeMapViewer::TreeMapItem,
-    TreeMapViewer::TreeMapViewer,
+    TreeMapViewer_TreeMapContainer,
+    TreeMapViewer_TreeMapItem,
+    TreeMapViewer_TreeMapViewer,
     TreeMapType,
 )
 
@@ -33,71 +33,71 @@ def test_treemapitem_constructor_args():
 
 
 
-def test_treemapviewer::treemapcontainer_is_not_abstract():
-    assert not inspect.isabstract(TreeMapViewer::TreeMapContainer)
+def test_treemapviewer_treemapcontainer_is_not_abstract():
+    assert not inspect.isabstract(TreeMapViewer_TreeMapContainer)
 
 
-def test_treemapviewer::treemapcontainer_constructor_exists():
-    assert callable(TreeMapViewer::TreeMapContainer.__init__)
+def test_treemapviewer_treemapcontainer_constructor_exists():
+    assert callable(TreeMapViewer_TreeMapContainer.__init__)
 
 
-def test_treemapviewer::treemapcontainer_constructor_args():
-    sig = inspect.signature(TreeMapViewer::TreeMapContainer.__init__)
+def test_treemapviewer_treemapcontainer_constructor_args():
+    sig = inspect.signature(TreeMapViewer_TreeMapContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_treemapviewer::treemapitem_is_not_abstract():
-    assert not inspect.isabstract(TreeMapViewer::TreeMapItem)
+def test_treemapviewer_treemapitem_is_not_abstract():
+    assert not inspect.isabstract(TreeMapViewer_TreeMapItem)
 
 
-def test_treemapviewer::treemapitem_constructor_exists():
-    assert callable(TreeMapViewer::TreeMapItem.__init__)
+def test_treemapviewer_treemapitem_constructor_exists():
+    assert callable(TreeMapViewer_TreeMapItem.__init__)
 
 
-def test_treemapviewer::treemapitem_constructor_args():
-    sig = inspect.signature(TreeMapViewer::TreeMapItem.__init__)
+def test_treemapviewer_treemapitem_constructor_args():
+    sig = inspect.signature(TreeMapViewer_TreeMapItem.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "label" in params, "Missing parameter 'label'"
 
-def test_treemapviewer::treemapitem_has_label():
-    assert hasattr(TreeMapViewer::TreeMapItem, "label")
+def test_treemapviewer_treemapitem_has_value():
+    assert hasattr(TreeMapViewer_TreeMapItem, "value")
     descriptor = None
-    for klass in TreeMapViewer::TreeMapItem.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_treemapviewer::treemapitem_has_value():
-    assert hasattr(TreeMapViewer::TreeMapItem, "value")
-    descriptor = None
-    for klass in TreeMapViewer::TreeMapItem.__mro__:
+    for klass in TreeMapViewer_TreeMapItem.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_treemapviewer_treemapitem_has_label():
+    assert hasattr(TreeMapViewer_TreeMapItem, "label")
+    descriptor = None
+    for klass in TreeMapViewer_TreeMapItem.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_treemapviewer::treemapviewer_is_not_abstract():
-    assert not inspect.isabstract(TreeMapViewer::TreeMapViewer)
+
+def test_treemapviewer_treemapviewer_is_not_abstract():
+    assert not inspect.isabstract(TreeMapViewer_TreeMapViewer)
 
 
-def test_treemapviewer::treemapviewer_constructor_exists():
-    assert callable(TreeMapViewer::TreeMapViewer.__init__)
+def test_treemapviewer_treemapviewer_constructor_exists():
+    assert callable(TreeMapViewer_TreeMapViewer.__init__)
 
 
-def test_treemapviewer::treemapviewer_constructor_args():
-    sig = inspect.signature(TreeMapViewer::TreeMapViewer.__init__)
+def test_treemapviewer_treemapviewer_constructor_args():
+    sig = inspect.signature(TreeMapViewer_TreeMapViewer.__init__)
     params = list(sig.parameters.keys())
     assert "childLayoutStrategy" in params, "Missing parameter 'childLayoutStrategy'"
 
-def test_treemapviewer::treemapviewer_has_childLayoutStrategy():
-    assert hasattr(TreeMapViewer::TreeMapViewer, "childLayoutStrategy")
+def test_treemapviewer_treemapviewer_has_childLayoutStrategy():
+    assert hasattr(TreeMapViewer_TreeMapViewer, "childLayoutStrategy")
     descriptor = None
-    for klass in TreeMapViewer::TreeMapViewer.__mro__:
+    for klass in TreeMapViewer_TreeMapViewer.__mro__:
         if "childLayoutStrategy" in klass.__dict__:
             descriptor = klass.__dict__["childLayoutStrategy"]
             break
@@ -112,8 +112,8 @@ def test_treemaptype_has_all_literals():
     enum_literals = [lit.name for lit in TreeMapType]
     expected_literals = [
         "Linear",
-        "Ordred",
         "Quantum",
+        "Ordred",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -134,18 +134,18 @@ safe_text = st.text(
 TreeMapItem_strategy = st.builds(
     TreeMapItem,
 )
-TreeMapViewer::TreeMapContainer_strategy = st.builds(
-    TreeMapViewer::TreeMapContainer,
+TreeMapViewer_TreeMapContainer_strategy = st.builds(
+    TreeMapViewer_TreeMapContainer,
 )
-TreeMapViewer::TreeMapItem_strategy = st.builds(
-    TreeMapViewer::TreeMapItem,
-    label=
-        safe_text,
+TreeMapViewer_TreeMapItem_strategy = st.builds(
+    TreeMapViewer_TreeMapItem,
     value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    label=
+        safe_text
 )
-TreeMapViewer::TreeMapViewer_strategy = st.builds(
-    TreeMapViewer::TreeMapViewer,
+TreeMapViewer_TreeMapViewer_strategy = st.builds(
+    TreeMapViewer_TreeMapViewer,
     childLayoutStrategy=
         safe_text
 )
@@ -155,50 +155,41 @@ TreeMapViewer::TreeMapViewer_strategy = st.builds(
 def test_treemapitem_instantiation(instance):
     assert isinstance(instance, TreeMapItem)
 
-@given(instance=TreeMapViewer::TreeMapContainer_strategy)
+@given(instance=TreeMapViewer_TreeMapContainer_strategy)
 @settings(max_examples=50)
-def test_treemapviewer::treemapcontainer_instantiation(instance):
-    assert isinstance(instance, TreeMapViewer::TreeMapContainer)
+def test_treemapviewer_treemapcontainer_instantiation(instance):
+    assert isinstance(instance, TreeMapViewer_TreeMapContainer)
 
-@given(instance=TreeMapViewer::TreeMapItem_strategy)
+@given(instance=TreeMapViewer_TreeMapItem_strategy)
 @settings(max_examples=50)
-def test_treemapviewer::treemapitem_instantiation(instance):
-    assert isinstance(instance, TreeMapViewer::TreeMapItem)
-
-@given(instance=TreeMapViewer::TreeMapItem_strategy)
-def test_treemapviewer::treemapitem_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_treemapviewer_treemapitem_instantiation(instance):
+    assert isinstance(instance, TreeMapViewer_TreeMapItem)
 
 
-@given(instance=TreeMapViewer::TreeMapItem_strategy)
-def test_treemapviewer::treemapitem_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=TreeMapViewer::TreeMapItem_strategy)
-def test_treemapviewer::treemapitem_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=TreeMapViewer::TreeMapItem_strategy)
-def test_treemapviewer::treemapitem_value_setter(instance):
+@given(instance=TreeMapViewer_TreeMapItem_strategy)
+def test_treemapviewer_treemapitem_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=TreeMapViewer::TreeMapViewer_strategy)
+
+
+@given(instance=TreeMapViewer_TreeMapItem_strategy)
+def test_treemapviewer_treemapitem_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+@given(instance=TreeMapViewer_TreeMapViewer_strategy)
 @settings(max_examples=50)
-def test_treemapviewer::treemapviewer_instantiation(instance):
-    assert isinstance(instance, TreeMapViewer::TreeMapViewer)
-
-@given(instance=TreeMapViewer::TreeMapViewer_strategy)
-def test_treemapviewer::treemapviewer_childLayoutStrategy_type(instance):
-    assert isinstance(instance.childLayoutStrategy, str)
+def test_treemapviewer_treemapviewer_instantiation(instance):
+    assert isinstance(instance, TreeMapViewer_TreeMapViewer)
 
 
-@given(instance=TreeMapViewer::TreeMapViewer_strategy)
-def test_treemapviewer::treemapviewer_childLayoutStrategy_setter(instance):
+
+@given(instance=TreeMapViewer_TreeMapViewer_strategy)
+def test_treemapviewer_treemapviewer_childLayoutStrategy_setter(instance):
     original = instance.childLayoutStrategy
     instance.childLayoutStrategy = original
     assert instance.childLayoutStrategy == original

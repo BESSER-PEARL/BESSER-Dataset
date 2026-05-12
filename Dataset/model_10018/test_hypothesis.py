@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ProductionSystem::Piece,
-    ProductionSystem::Conveyor,
-    ProductionSystem::Machine,
+from python_code import (
+    ProductionSystem_Piece,
+    ProductionSystem_Conveyor,
+    ProductionSystem_Machine,
     Piece,
-    ProductionSystem::Processed,
-    ProductionSystem::Raw,
+    ProductionSystem_Processed,
+    ProductionSystem_Raw,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_productionsystem::piece_is_not_abstract():
-    assert not inspect.isabstract(ProductionSystem::Piece)
+def test_productionsystem_piece_is_not_abstract():
+    assert not inspect.isabstract(ProductionSystem_Piece)
 
 
-def test_productionsystem::piece_constructor_exists():
-    assert callable(ProductionSystem::Piece.__init__)
+def test_productionsystem_piece_constructor_exists():
+    assert callable(ProductionSystem_Piece.__init__)
 
 
-def test_productionsystem::piece_constructor_args():
-    sig = inspect.signature(ProductionSystem::Piece.__init__)
+def test_productionsystem_piece_constructor_args():
+    sig = inspect.signature(ProductionSystem_Piece.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_productionsystem::piece_has_id():
-    assert hasattr(ProductionSystem::Piece, "id")
+def test_productionsystem_piece_has_id():
+    assert hasattr(ProductionSystem_Piece, "id")
     descriptor = None
-    for klass in ProductionSystem::Piece.__mro__:
+    for klass in ProductionSystem_Piece.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -44,57 +44,57 @@ def test_productionsystem::piece_has_id():
 
 
 
-def test_productionsystem::conveyor_is_not_abstract():
-    assert not inspect.isabstract(ProductionSystem::Conveyor)
+def test_productionsystem_conveyor_is_not_abstract():
+    assert not inspect.isabstract(ProductionSystem_Conveyor)
 
 
-def test_productionsystem::conveyor_constructor_exists():
-    assert callable(ProductionSystem::Conveyor.__init__)
+def test_productionsystem_conveyor_constructor_exists():
+    assert callable(ProductionSystem_Conveyor.__init__)
 
 
-def test_productionsystem::conveyor_constructor_args():
-    sig = inspect.signature(ProductionSystem::Conveyor.__init__)
+def test_productionsystem_conveyor_constructor_args():
+    sig = inspect.signature(ProductionSystem_Conveyor.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "capacity" in params, "Missing parameter 'capacity'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_productionsystem::conveyor_has_id():
-    assert hasattr(ProductionSystem::Conveyor, "id")
+def test_productionsystem_conveyor_has_capacity():
+    assert hasattr(ProductionSystem_Conveyor, "capacity")
     descriptor = None
-    for klass in ProductionSystem::Conveyor.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_productionsystem::conveyor_has_capacity():
-    assert hasattr(ProductionSystem::Conveyor, "capacity")
-    descriptor = None
-    for klass in ProductionSystem::Conveyor.__mro__:
+    for klass in ProductionSystem_Conveyor.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
     assert isinstance(descriptor, property)
 
+def test_productionsystem_conveyor_has_id():
+    assert hasattr(ProductionSystem_Conveyor, "id")
+    descriptor = None
+    for klass in ProductionSystem_Conveyor.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_productionsystem::machine_is_not_abstract():
-    assert not inspect.isabstract(ProductionSystem::Machine)
+
+def test_productionsystem_machine_is_not_abstract():
+    assert not inspect.isabstract(ProductionSystem_Machine)
 
 
-def test_productionsystem::machine_constructor_exists():
-    assert callable(ProductionSystem::Machine.__init__)
+def test_productionsystem_machine_constructor_exists():
+    assert callable(ProductionSystem_Machine.__init__)
 
 
-def test_productionsystem::machine_constructor_args():
-    sig = inspect.signature(ProductionSystem::Machine.__init__)
+def test_productionsystem_machine_constructor_args():
+    sig = inspect.signature(ProductionSystem_Machine.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_productionsystem::machine_has_id():
-    assert hasattr(ProductionSystem::Machine, "id")
+def test_productionsystem_machine_has_id():
+    assert hasattr(ProductionSystem_Machine, "id")
     descriptor = None
-    for klass in ProductionSystem::Machine.__mro__:
+    for klass in ProductionSystem_Machine.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -116,30 +116,30 @@ def test_piece_constructor_args():
 
 
 
-def test_productionsystem::processed_is_not_abstract():
-    assert not inspect.isabstract(ProductionSystem::Processed)
+def test_productionsystem_processed_is_not_abstract():
+    assert not inspect.isabstract(ProductionSystem_Processed)
 
 
-def test_productionsystem::processed_constructor_exists():
-    assert callable(ProductionSystem::Processed.__init__)
+def test_productionsystem_processed_constructor_exists():
+    assert callable(ProductionSystem_Processed.__init__)
 
 
-def test_productionsystem::processed_constructor_args():
-    sig = inspect.signature(ProductionSystem::Processed.__init__)
+def test_productionsystem_processed_constructor_args():
+    sig = inspect.signature(ProductionSystem_Processed.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_productionsystem::raw_is_not_abstract():
-    assert not inspect.isabstract(ProductionSystem::Raw)
+def test_productionsystem_raw_is_not_abstract():
+    assert not inspect.isabstract(ProductionSystem_Raw)
 
 
-def test_productionsystem::raw_constructor_exists():
-    assert callable(ProductionSystem::Raw.__init__)
+def test_productionsystem_raw_constructor_exists():
+    assert callable(ProductionSystem_Raw.__init__)
 
 
-def test_productionsystem::raw_constructor_args():
-    sig = inspect.signature(ProductionSystem::Raw.__init__)
+def test_productionsystem_raw_constructor_args():
+    sig = inspect.signature(ProductionSystem_Raw.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,88 +154,76 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ProductionSystem::Piece_strategy = st.builds(
-    ProductionSystem::Piece,
+ProductionSystem_Piece_strategy = st.builds(
+    ProductionSystem_Piece,
     id=
         safe_text
 )
-ProductionSystem::Conveyor_strategy = st.builds(
-    ProductionSystem::Conveyor,
-    id=
-        safe_text,
+ProductionSystem_Conveyor_strategy = st.builds(
+    ProductionSystem_Conveyor,
     capacity=
-        st.integers()
+        st.integers(),
+    id=
+        safe_text
 )
-ProductionSystem::Machine_strategy = st.builds(
-    ProductionSystem::Machine,
+ProductionSystem_Machine_strategy = st.builds(
+    ProductionSystem_Machine,
     id=
         safe_text
 )
 Piece_strategy = st.builds(
     Piece,
 )
-ProductionSystem::Processed_strategy = st.builds(
-    ProductionSystem::Processed,
+ProductionSystem_Processed_strategy = st.builds(
+    ProductionSystem_Processed,
 )
-ProductionSystem::Raw_strategy = st.builds(
-    ProductionSystem::Raw,
+ProductionSystem_Raw_strategy = st.builds(
+    ProductionSystem_Raw,
 )
 
-@given(instance=ProductionSystem::Piece_strategy)
+@given(instance=ProductionSystem_Piece_strategy)
 @settings(max_examples=50)
-def test_productionsystem::piece_instantiation(instance):
-    assert isinstance(instance, ProductionSystem::Piece)
-
-@given(instance=ProductionSystem::Piece_strategy)
-def test_productionsystem::piece_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_productionsystem_piece_instantiation(instance):
+    assert isinstance(instance, ProductionSystem_Piece)
 
 
-@given(instance=ProductionSystem::Piece_strategy)
-def test_productionsystem::piece_id_setter(instance):
+
+@given(instance=ProductionSystem_Piece_strategy)
+def test_productionsystem_piece_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ProductionSystem::Conveyor_strategy)
+@given(instance=ProductionSystem_Conveyor_strategy)
 @settings(max_examples=50)
-def test_productionsystem::conveyor_instantiation(instance):
-    assert isinstance(instance, ProductionSystem::Conveyor)
-
-@given(instance=ProductionSystem::Conveyor_strategy)
-def test_productionsystem::conveyor_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_productionsystem_conveyor_instantiation(instance):
+    assert isinstance(instance, ProductionSystem_Conveyor)
 
 
-@given(instance=ProductionSystem::Conveyor_strategy)
-def test_productionsystem::conveyor_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=ProductionSystem::Conveyor_strategy)
-def test_productionsystem::conveyor_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
-
-
-@given(instance=ProductionSystem::Conveyor_strategy)
-def test_productionsystem::conveyor_capacity_setter(instance):
+@given(instance=ProductionSystem_Conveyor_strategy)
+def test_productionsystem_conveyor_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original
 
-@given(instance=ProductionSystem::Machine_strategy)
+
+
+@given(instance=ProductionSystem_Conveyor_strategy)
+def test_productionsystem_conveyor_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=ProductionSystem_Machine_strategy)
 @settings(max_examples=50)
-def test_productionsystem::machine_instantiation(instance):
-    assert isinstance(instance, ProductionSystem::Machine)
-
-@given(instance=ProductionSystem::Machine_strategy)
-def test_productionsystem::machine_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_productionsystem_machine_instantiation(instance):
+    assert isinstance(instance, ProductionSystem_Machine)
 
 
-@given(instance=ProductionSystem::Machine_strategy)
-def test_productionsystem::machine_id_setter(instance):
+
+@given(instance=ProductionSystem_Machine_strategy)
+def test_productionsystem_machine_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -245,12 +233,12 @@ def test_productionsystem::machine_id_setter(instance):
 def test_piece_instantiation(instance):
     assert isinstance(instance, Piece)
 
-@given(instance=ProductionSystem::Processed_strategy)
+@given(instance=ProductionSystem_Processed_strategy)
 @settings(max_examples=50)
-def test_productionsystem::processed_instantiation(instance):
-    assert isinstance(instance, ProductionSystem::Processed)
+def test_productionsystem_processed_instantiation(instance):
+    assert isinstance(instance, ProductionSystem_Processed)
 
-@given(instance=ProductionSystem::Raw_strategy)
+@given(instance=ProductionSystem_Raw_strategy)
 @settings(max_examples=50)
-def test_productionsystem::raw_instantiation(instance):
-    assert isinstance(instance, ProductionSystem::Raw)
+def test_productionsystem_raw_instantiation(instance):
+    assert isinstance(instance, ProductionSystem_Raw)

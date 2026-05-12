@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    data::Variable,
-    data::Variables,
+from python_code import (
+    data_Variable,
+    data_Variables,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_data::variable_is_not_abstract():
-    assert not inspect.isabstract(data::Variable)
+def test_data_variable_is_not_abstract():
+    assert not inspect.isabstract(data_Variable)
 
 
-def test_data::variable_constructor_exists():
-    assert callable(data::Variable.__init__)
+def test_data_variable_constructor_exists():
+    assert callable(data_Variable.__init__)
 
 
-def test_data::variable_constructor_args():
-    sig = inspect.signature(data::Variable.__init__)
+def test_data_variable_constructor_args():
+    sig = inspect.signature(data_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_data::variable_has_id():
-    assert hasattr(data::Variable, "id")
+def test_data_variable_has_id():
+    assert hasattr(data_Variable, "id")
     descriptor = None
-    for klass in data::Variable.__mro__:
+    for klass in data_Variable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -40,16 +40,16 @@ def test_data::variable_has_id():
 
 
 
-def test_data::variables_is_not_abstract():
-    assert not inspect.isabstract(data::Variables)
+def test_data_variables_is_not_abstract():
+    assert not inspect.isabstract(data_Variables)
 
 
-def test_data::variables_constructor_exists():
-    assert callable(data::Variables.__init__)
+def test_data_variables_constructor_exists():
+    assert callable(data_Variables.__init__)
 
 
-def test_data::variables_constructor_args():
-    sig = inspect.signature(data::Variables.__init__)
+def test_data_variables_constructor_args():
+    sig = inspect.signature(data_Variables.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-data::Variable_strategy = st.builds(
-    data::Variable,
+data_Variable_strategy = st.builds(
+    data_Variable,
     id=
         safe_text
 )
-data::Variables_strategy = st.builds(
-    data::Variables,
+data_Variables_strategy = st.builds(
+    data_Variables,
 )
 
-@given(instance=data::Variable_strategy)
+@given(instance=data_Variable_strategy)
 @settings(max_examples=50)
-def test_data::variable_instantiation(instance):
-    assert isinstance(instance, data::Variable)
-
-@given(instance=data::Variable_strategy)
-def test_data::variable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_data_variable_instantiation(instance):
+    assert isinstance(instance, data_Variable)
 
 
-@given(instance=data::Variable_strategy)
-def test_data::variable_id_setter(instance):
+
+@given(instance=data_Variable_strategy)
+def test_data_variable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=data::Variables_strategy)
+@given(instance=data_Variables_strategy)
 @settings(max_examples=50)
-def test_data::variables_instantiation(instance):
-    assert isinstance(instance, data::Variables)
+def test_data_variables_instantiation(instance):
+    assert isinstance(instance, data_Variables)

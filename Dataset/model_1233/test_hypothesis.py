@@ -3,88 +3,88 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     LoopExpCS,
-    ocl::cst::IterateExpCS,
-    ocl::cst::IteratorExpCS,
+    ocl_cst_IterateExpCS,
+    ocl_cst_IteratorExpCS,
     FeatureCallExpCS,
-    ocl::cst::OperationCallExpCS,
+    ocl_cst_OperationCallExpCS,
     CallExpCS,
-    ocl::cst::FeatureCallExpCS,
-    ocl::cst::LoopExpCS,
+    ocl_cst_FeatureCallExpCS,
+    ocl_cst_LoopExpCS,
     PrimitiveLiteralExpCS,
-    ocl::cst::BooleanLiteralExpCS,
-    ocl::cst::RealLiteralExpCS,
-    ocl::cst::StringLiteralExpCS,
-    ocl::cst::UnlimitedNaturalLiteralExpCS,
-    ocl::cst::IntegerLiteralExpCS,
+    ocl_cst_RealLiteralExpCS,
+    ocl_cst_StringLiteralExpCS,
+    ocl_cst_BooleanLiteralExpCS,
+    ocl_cst_UnlimitedNaturalLiteralExpCS,
+    ocl_cst_IntegerLiteralExpCS,
     CollectionLiteralPartCS,
-    ocl::cst::CollectionRangeCS,
+    ocl_cst_CollectionRangeCS,
     LiteralExpCS,
-    ocl::cst::NullLiteralExpCS,
-    ocl::cst::CollectionLiteralExpCS,
-    ocl::cst::PrimitiveLiteralExpCS,
-    ocl::cst::TupleLiteralExpCS,
-    ocl::cst::InvalidLiteralExpCS,
-    ocl::cst::EnumLiteralExpCS,
+    ocl_cst_InvalidLiteralExpCS,
+    ocl_cst_CollectionLiteralExpCS,
+    ocl_cst_NullLiteralExpCS,
+    ocl_cst_TupleLiteralExpCS,
+    ocl_cst_PrimitiveLiteralExpCS,
+    ocl_cst_EnumLiteralExpCS,
     OCLMessageArgCS,
     DefExpressionCS,
-    cst::TypeCS,
-    cst::SimpleNameCS,
-    ocl::cst::PrimitiveTypeCS,
+    cst_TypeCS,
+    cst_SimpleNameCS,
+    ocl_cst_PrimitiveTypeCS,
     IsMarkedPreCS,
     InvOrDefCS,
-    ocl::cst::InvCS,
-    ocl::cst::DefCS,
+    ocl_cst_InvCS,
+    ocl_cst_DefCS,
     VariableCS,
     PrePostOrBodyDeclCS,
     OperationCS,
     PathNameCS,
     CSTNode,
-    ocl::cst::OperationCS,
-    ocl::cst::IsMarkedPreCS,
-    ocl::cst::OCLDocumentCS,
-    ocl::cst::CollectionLiteralPartCS,
-    ocl::cst::OCLMessageArgCS,
-    ocl::cst::VariableCS,
-    ocl::cst::DefExpressionCS,
-    ocl::cst::PrePostOrBodyDeclCS,
-    ocl::cst::InvOrDefCS,
-    ocl::cst::PackageDeclarationCS,
-    ocl::cst::InitOrDerValueCS,
+    ocl_cst_PrePostOrBodyDeclCS,
+    ocl_cst_DefExpressionCS,
+    ocl_cst_OperationCS,
+    ocl_cst_OCLMessageArgCS,
+    ocl_cst_IsMarkedPreCS,
+    ocl_cst_CollectionLiteralPartCS,
+    ocl_cst_InvOrDefCS,
+    ocl_cst_OCLDocumentCS,
+    ocl_cst_VariableCS,
+    ocl_cst_PackageDeclarationCS,
+    ocl_cst_InitOrDerValueCS,
     InitOrDerValueCS,
-    ocl::cst::InitValueCS,
-    ocl::cst::DerValueCS,
+    ocl_cst_InitValueCS,
+    ocl_cst_DerValueCS,
     SimpleNameCS,
-    ocl::cst::ContextDeclCS,
-    ocl::cst::OCLExpressionCS,
+    ocl_cst_ContextDeclCS,
+    ocl_cst_OCLExpressionCS,
     OCLExpressionCS,
-    ocl::cst::CallExpCS,
-    ocl::cst::LiteralExpCS,
-    ocl::cst::IfExpCS,
-    ocl::cst::MessageExpCS,
-    ocl::cst::VariableExpCS,
-    ocl::cst::LetExpCS,
-    ocl::cst::SimpleNameCS,
-    ocl::cst::TypeCS,
+    ocl_cst_LiteralExpCS,
+    ocl_cst_SimpleNameCS,
+    ocl_cst_MessageExpCS,
+    ocl_cst_IfExpCS,
+    ocl_cst_VariableExpCS,
+    ocl_cst_CallExpCS,
+    ocl_cst_LetExpCS,
+    ocl_cst_TypeCS,
     TypeCS,
-    ocl::cst::TupleTypeCS,
-    ocl::cst::StateExpCS,
-    ocl::cst::CollectionTypeCS,
-    ocl::cst::PathNameCS,
+    ocl_cst_CollectionTypeCS,
+    ocl_cst_StateExpCS,
+    ocl_cst_TupleTypeCS,
+    ocl_cst_PathNameCS,
     PackageDeclarationCS,
     ContextDeclCS,
-    ocl::cst::OperationContextDeclCS,
-    ocl::cst::ClassifierContextDeclCS,
-    ocl::cst::PropertyContextCS,
-    ocl::cst::CSTNode,
-    MessageExpKind,
+    ocl_cst_OperationContextDeclCS,
+    ocl_cst_ClassifierContextDeclCS,
+    ocl_cst_PropertyContextCS,
+    ocl_cst_CSTNode,
+    DotOrArrowEnum,
     CollectionTypeIdentifierEnum,
     PrePostOrBodyEnum,
-    DotOrArrowEnum,
     SimpleTypeEnum,
+    MessageExpKind,
 )
 
 # =============================================================================
@@ -107,30 +107,30 @@ def test_loopexpcs_constructor_args():
 
 
 
-def test_ocl::cst::iterateexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::IterateExpCS)
+def test_ocl_cst_iterateexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_IterateExpCS)
 
 
-def test_ocl::cst::iterateexpcs_constructor_exists():
-    assert callable(ocl::cst::IterateExpCS.__init__)
+def test_ocl_cst_iterateexpcs_constructor_exists():
+    assert callable(ocl_cst_IterateExpCS.__init__)
 
 
-def test_ocl::cst::iterateexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::IterateExpCS.__init__)
+def test_ocl_cst_iterateexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_IterateExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::iteratorexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::IteratorExpCS)
+def test_ocl_cst_iteratorexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_IteratorExpCS)
 
 
-def test_ocl::cst::iteratorexpcs_constructor_exists():
-    assert callable(ocl::cst::IteratorExpCS.__init__)
+def test_ocl_cst_iteratorexpcs_constructor_exists():
+    assert callable(ocl_cst_IteratorExpCS.__init__)
 
 
-def test_ocl::cst::iteratorexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::IteratorExpCS.__init__)
+def test_ocl_cst_iteratorexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_IteratorExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,16 +149,16 @@ def test_featurecallexpcs_constructor_args():
 
 
 
-def test_ocl::cst::operationcallexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::OperationCallExpCS)
+def test_ocl_cst_operationcallexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_OperationCallExpCS)
 
 
-def test_ocl::cst::operationcallexpcs_constructor_exists():
-    assert callable(ocl::cst::OperationCallExpCS.__init__)
+def test_ocl_cst_operationcallexpcs_constructor_exists():
+    assert callable(ocl_cst_OperationCallExpCS.__init__)
 
 
-def test_ocl::cst::operationcallexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::OperationCallExpCS.__init__)
+def test_ocl_cst_operationcallexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_OperationCallExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,30 +177,30 @@ def test_callexpcs_constructor_args():
 
 
 
-def test_ocl::cst::featurecallexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::FeatureCallExpCS)
+def test_ocl_cst_featurecallexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_FeatureCallExpCS)
 
 
-def test_ocl::cst::featurecallexpcs_constructor_exists():
-    assert callable(ocl::cst::FeatureCallExpCS.__init__)
+def test_ocl_cst_featurecallexpcs_constructor_exists():
+    assert callable(ocl_cst_FeatureCallExpCS.__init__)
 
 
-def test_ocl::cst::featurecallexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::FeatureCallExpCS.__init__)
+def test_ocl_cst_featurecallexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_FeatureCallExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::loopexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::LoopExpCS)
+def test_ocl_cst_loopexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_LoopExpCS)
 
 
-def test_ocl::cst::loopexpcs_constructor_exists():
-    assert callable(ocl::cst::LoopExpCS.__init__)
+def test_ocl_cst_loopexpcs_constructor_exists():
+    assert callable(ocl_cst_LoopExpCS.__init__)
 
 
-def test_ocl::cst::loopexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::LoopExpCS.__init__)
+def test_ocl_cst_loopexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_LoopExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,47 +219,23 @@ def test_primitiveliteralexpcs_constructor_args():
 
 
 
-def test_ocl::cst::booleanliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::BooleanLiteralExpCS)
+def test_ocl_cst_realliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_RealLiteralExpCS)
 
 
-def test_ocl::cst::booleanliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::BooleanLiteralExpCS.__init__)
+def test_ocl_cst_realliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_RealLiteralExpCS.__init__)
 
 
-def test_ocl::cst::booleanliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::BooleanLiteralExpCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
-
-def test_ocl::cst::booleanliteralexpcs_has_booleanSymbol():
-    assert hasattr(ocl::cst::BooleanLiteralExpCS, "booleanSymbol")
-    descriptor = None
-    for klass in ocl::cst::BooleanLiteralExpCS.__mro__:
-        if "booleanSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["booleanSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::cst::realliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::RealLiteralExpCS)
-
-
-def test_ocl::cst::realliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::RealLiteralExpCS.__init__)
-
-
-def test_ocl::cst::realliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::RealLiteralExpCS.__init__)
+def test_ocl_cst_realliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_RealLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "realSymbol" in params, "Missing parameter 'realSymbol'"
 
-def test_ocl::cst::realliteralexpcs_has_realSymbol():
-    assert hasattr(ocl::cst::RealLiteralExpCS, "realSymbol")
+def test_ocl_cst_realliteralexpcs_has_realSymbol():
+    assert hasattr(ocl_cst_RealLiteralExpCS, "realSymbol")
     descriptor = None
-    for klass in ocl::cst::RealLiteralExpCS.__mro__:
+    for klass in ocl_cst_RealLiteralExpCS.__mro__:
         if "realSymbol" in klass.__dict__:
             descriptor = klass.__dict__["realSymbol"]
             break
@@ -267,57 +243,81 @@ def test_ocl::cst::realliteralexpcs_has_realSymbol():
 
 
 
-def test_ocl::cst::stringliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::StringLiteralExpCS)
+def test_ocl_cst_stringliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_StringLiteralExpCS)
 
 
-def test_ocl::cst::stringliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::StringLiteralExpCS.__init__)
+def test_ocl_cst_stringliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_StringLiteralExpCS.__init__)
 
 
-def test_ocl::cst::stringliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::StringLiteralExpCS.__init__)
+def test_ocl_cst_stringliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_StringLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
-    assert "unescapedStringSymbol" in params, "Missing parameter 'unescapedStringSymbol'"
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
+    assert "unescapedStringSymbol" in params, "Missing parameter 'unescapedStringSymbol'"
 
-def test_ocl::cst::stringliteralexpcs_has_unescapedStringSymbol():
-    assert hasattr(ocl::cst::StringLiteralExpCS, "unescapedStringSymbol")
+def test_ocl_cst_stringliteralexpcs_has_stringSymbol():
+    assert hasattr(ocl_cst_StringLiteralExpCS, "stringSymbol")
     descriptor = None
-    for klass in ocl::cst::StringLiteralExpCS.__mro__:
-        if "unescapedStringSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["unescapedStringSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ocl::cst::stringliteralexpcs_has_stringSymbol():
-    assert hasattr(ocl::cst::StringLiteralExpCS, "stringSymbol")
-    descriptor = None
-    for klass in ocl::cst::StringLiteralExpCS.__mro__:
+    for klass in ocl_cst_StringLiteralExpCS.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
     assert isinstance(descriptor, property)
 
+def test_ocl_cst_stringliteralexpcs_has_unescapedStringSymbol():
+    assert hasattr(ocl_cst_StringLiteralExpCS, "unescapedStringSymbol")
+    descriptor = None
+    for klass in ocl_cst_StringLiteralExpCS.__mro__:
+        if "unescapedStringSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["unescapedStringSymbol"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ocl::cst::unlimitednaturalliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::UnlimitedNaturalLiteralExpCS)
+
+def test_ocl_cst_booleanliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_BooleanLiteralExpCS)
 
 
-def test_ocl::cst::unlimitednaturalliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::UnlimitedNaturalLiteralExpCS.__init__)
+def test_ocl_cst_booleanliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_BooleanLiteralExpCS.__init__)
 
 
-def test_ocl::cst::unlimitednaturalliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::UnlimitedNaturalLiteralExpCS.__init__)
+def test_ocl_cst_booleanliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_BooleanLiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
+
+def test_ocl_cst_booleanliteralexpcs_has_booleanSymbol():
+    assert hasattr(ocl_cst_BooleanLiteralExpCS, "booleanSymbol")
+    descriptor = None
+    for klass in ocl_cst_BooleanLiteralExpCS.__mro__:
+        if "booleanSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["booleanSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_cst_unlimitednaturalliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_UnlimitedNaturalLiteralExpCS)
+
+
+def test_ocl_cst_unlimitednaturalliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_UnlimitedNaturalLiteralExpCS.__init__)
+
+
+def test_ocl_cst_unlimitednaturalliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_UnlimitedNaturalLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_ocl::cst::unlimitednaturalliteralexpcs_has_integerSymbol():
-    assert hasattr(ocl::cst::UnlimitedNaturalLiteralExpCS, "integerSymbol")
+def test_ocl_cst_unlimitednaturalliteralexpcs_has_integerSymbol():
+    assert hasattr(ocl_cst_UnlimitedNaturalLiteralExpCS, "integerSymbol")
     descriptor = None
-    for klass in ocl::cst::UnlimitedNaturalLiteralExpCS.__mro__:
+    for klass in ocl_cst_UnlimitedNaturalLiteralExpCS.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -325,23 +325,23 @@ def test_ocl::cst::unlimitednaturalliteralexpcs_has_integerSymbol():
 
 
 
-def test_ocl::cst::integerliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::IntegerLiteralExpCS)
+def test_ocl_cst_integerliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_IntegerLiteralExpCS)
 
 
-def test_ocl::cst::integerliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::IntegerLiteralExpCS.__init__)
+def test_ocl_cst_integerliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_IntegerLiteralExpCS.__init__)
 
 
-def test_ocl::cst::integerliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::IntegerLiteralExpCS.__init__)
+def test_ocl_cst_integerliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_IntegerLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_ocl::cst::integerliteralexpcs_has_integerSymbol():
-    assert hasattr(ocl::cst::IntegerLiteralExpCS, "integerSymbol")
+def test_ocl_cst_integerliteralexpcs_has_integerSymbol():
+    assert hasattr(ocl_cst_IntegerLiteralExpCS, "integerSymbol")
     descriptor = None
-    for klass in ocl::cst::IntegerLiteralExpCS.__mro__:
+    for klass in ocl_cst_IntegerLiteralExpCS.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -363,16 +363,16 @@ def test_collectionliteralpartcs_constructor_args():
 
 
 
-def test_ocl::cst::collectionrangecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::CollectionRangeCS)
+def test_ocl_cst_collectionrangecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_CollectionRangeCS)
 
 
-def test_ocl::cst::collectionrangecs_constructor_exists():
-    assert callable(ocl::cst::CollectionRangeCS.__init__)
+def test_ocl_cst_collectionrangecs_constructor_exists():
+    assert callable(ocl_cst_CollectionRangeCS.__init__)
 
 
-def test_ocl::cst::collectionrangecs_constructor_args():
-    sig = inspect.signature(ocl::cst::CollectionRangeCS.__init__)
+def test_ocl_cst_collectionrangecs_constructor_args():
+    sig = inspect.signature(ocl_cst_CollectionRangeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -391,23 +391,23 @@ def test_literalexpcs_constructor_args():
 
 
 
-def test_ocl::cst::nullliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::NullLiteralExpCS)
+def test_ocl_cst_invalidliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_InvalidLiteralExpCS)
 
 
-def test_ocl::cst::nullliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::NullLiteralExpCS.__init__)
+def test_ocl_cst_invalidliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_InvalidLiteralExpCS.__init__)
 
 
-def test_ocl::cst::nullliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::NullLiteralExpCS.__init__)
+def test_ocl_cst_invalidliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_InvalidLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_ocl::cst::nullliteralexpcs_has_symbol():
-    assert hasattr(ocl::cst::NullLiteralExpCS, "symbol")
+def test_ocl_cst_invalidliteralexpcs_has_symbol():
+    assert hasattr(ocl_cst_InvalidLiteralExpCS, "symbol")
     descriptor = None
-    for klass in ocl::cst::NullLiteralExpCS.__mro__:
+    for klass in ocl_cst_InvalidLiteralExpCS.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -415,23 +415,23 @@ def test_ocl::cst::nullliteralexpcs_has_symbol():
 
 
 
-def test_ocl::cst::collectionliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::CollectionLiteralExpCS)
+def test_ocl_cst_collectionliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_CollectionLiteralExpCS)
 
 
-def test_ocl::cst::collectionliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::CollectionLiteralExpCS.__init__)
+def test_ocl_cst_collectionliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_CollectionLiteralExpCS.__init__)
 
 
-def test_ocl::cst::collectionliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::CollectionLiteralExpCS.__init__)
+def test_ocl_cst_collectionliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_CollectionLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "collectionType" in params, "Missing parameter 'collectionType'"
 
-def test_ocl::cst::collectionliteralexpcs_has_collectionType():
-    assert hasattr(ocl::cst::CollectionLiteralExpCS, "collectionType")
+def test_ocl_cst_collectionliteralexpcs_has_collectionType():
+    assert hasattr(ocl_cst_CollectionLiteralExpCS, "collectionType")
     descriptor = None
-    for klass in ocl::cst::CollectionLiteralExpCS.__mro__:
+    for klass in ocl_cst_CollectionLiteralExpCS.__mro__:
         if "collectionType" in klass.__dict__:
             descriptor = klass.__dict__["collectionType"]
             break
@@ -439,23 +439,23 @@ def test_ocl::cst::collectionliteralexpcs_has_collectionType():
 
 
 
-def test_ocl::cst::primitiveliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::PrimitiveLiteralExpCS)
+def test_ocl_cst_nullliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_NullLiteralExpCS)
 
 
-def test_ocl::cst::primitiveliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::PrimitiveLiteralExpCS.__init__)
+def test_ocl_cst_nullliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_NullLiteralExpCS.__init__)
 
 
-def test_ocl::cst::primitiveliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::PrimitiveLiteralExpCS.__init__)
+def test_ocl_cst_nullliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_NullLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_ocl::cst::primitiveliteralexpcs_has_symbol():
-    assert hasattr(ocl::cst::PrimitiveLiteralExpCS, "symbol")
+def test_ocl_cst_nullliteralexpcs_has_symbol():
+    assert hasattr(ocl_cst_NullLiteralExpCS, "symbol")
     descriptor = None
-    for klass in ocl::cst::PrimitiveLiteralExpCS.__mro__:
+    for klass in ocl_cst_NullLiteralExpCS.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -463,37 +463,37 @@ def test_ocl::cst::primitiveliteralexpcs_has_symbol():
 
 
 
-def test_ocl::cst::tupleliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::TupleLiteralExpCS)
+def test_ocl_cst_tupleliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_TupleLiteralExpCS)
 
 
-def test_ocl::cst::tupleliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::TupleLiteralExpCS.__init__)
+def test_ocl_cst_tupleliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_TupleLiteralExpCS.__init__)
 
 
-def test_ocl::cst::tupleliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::TupleLiteralExpCS.__init__)
+def test_ocl_cst_tupleliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_TupleLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::invalidliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::InvalidLiteralExpCS)
+def test_ocl_cst_primitiveliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_PrimitiveLiteralExpCS)
 
 
-def test_ocl::cst::invalidliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::InvalidLiteralExpCS.__init__)
+def test_ocl_cst_primitiveliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_PrimitiveLiteralExpCS.__init__)
 
 
-def test_ocl::cst::invalidliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::InvalidLiteralExpCS.__init__)
+def test_ocl_cst_primitiveliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_PrimitiveLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_ocl::cst::invalidliteralexpcs_has_symbol():
-    assert hasattr(ocl::cst::InvalidLiteralExpCS, "symbol")
+def test_ocl_cst_primitiveliteralexpcs_has_symbol():
+    assert hasattr(ocl_cst_PrimitiveLiteralExpCS, "symbol")
     descriptor = None
-    for klass in ocl::cst::InvalidLiteralExpCS.__mro__:
+    for klass in ocl_cst_PrimitiveLiteralExpCS.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -501,16 +501,16 @@ def test_ocl::cst::invalidliteralexpcs_has_symbol():
 
 
 
-def test_ocl::cst::enumliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::EnumLiteralExpCS)
+def test_ocl_cst_enumliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_EnumLiteralExpCS)
 
 
-def test_ocl::cst::enumliteralexpcs_constructor_exists():
-    assert callable(ocl::cst::EnumLiteralExpCS.__init__)
+def test_ocl_cst_enumliteralexpcs_constructor_exists():
+    assert callable(ocl_cst_EnumLiteralExpCS.__init__)
 
 
-def test_ocl::cst::enumliteralexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::EnumLiteralExpCS.__init__)
+def test_ocl_cst_enumliteralexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_EnumLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -543,44 +543,44 @@ def test_defexpressioncs_constructor_args():
 
 
 
-def test_cst::typecs_is_not_abstract():
-    assert not inspect.isabstract(cst::TypeCS)
+def test_cst_typecs_is_not_abstract():
+    assert not inspect.isabstract(cst_TypeCS)
 
 
-def test_cst::typecs_constructor_exists():
-    assert callable(cst::TypeCS.__init__)
+def test_cst_typecs_constructor_exists():
+    assert callable(cst_TypeCS.__init__)
 
 
-def test_cst::typecs_constructor_args():
-    sig = inspect.signature(cst::TypeCS.__init__)
+def test_cst_typecs_constructor_args():
+    sig = inspect.signature(cst_TypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cst::simplenamecs_is_not_abstract():
-    assert not inspect.isabstract(cst::SimpleNameCS)
+def test_cst_simplenamecs_is_not_abstract():
+    assert not inspect.isabstract(cst_SimpleNameCS)
 
 
-def test_cst::simplenamecs_constructor_exists():
-    assert callable(cst::SimpleNameCS.__init__)
+def test_cst_simplenamecs_constructor_exists():
+    assert callable(cst_SimpleNameCS.__init__)
 
 
-def test_cst::simplenamecs_constructor_args():
-    sig = inspect.signature(cst::SimpleNameCS.__init__)
+def test_cst_simplenamecs_constructor_args():
+    sig = inspect.signature(cst_SimpleNameCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::primitivetypecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::PrimitiveTypeCS)
+def test_ocl_cst_primitivetypecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_PrimitiveTypeCS)
 
 
-def test_ocl::cst::primitivetypecs_constructor_exists():
-    assert callable(ocl::cst::PrimitiveTypeCS.__init__)
+def test_ocl_cst_primitivetypecs_constructor_exists():
+    assert callable(ocl_cst_PrimitiveTypeCS.__init__)
 
 
-def test_ocl::cst::primitivetypecs_constructor_args():
-    sig = inspect.signature(ocl::cst::PrimitiveTypeCS.__init__)
+def test_ocl_cst_primitivetypecs_constructor_args():
+    sig = inspect.signature(ocl_cst_PrimitiveTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -613,30 +613,30 @@ def test_invordefcs_constructor_args():
 
 
 
-def test_ocl::cst::invcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::InvCS)
+def test_ocl_cst_invcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_InvCS)
 
 
-def test_ocl::cst::invcs_constructor_exists():
-    assert callable(ocl::cst::InvCS.__init__)
+def test_ocl_cst_invcs_constructor_exists():
+    assert callable(ocl_cst_InvCS.__init__)
 
 
-def test_ocl::cst::invcs_constructor_args():
-    sig = inspect.signature(ocl::cst::InvCS.__init__)
+def test_ocl_cst_invcs_constructor_args():
+    sig = inspect.signature(ocl_cst_InvCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::defcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::DefCS)
+def test_ocl_cst_defcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_DefCS)
 
 
-def test_ocl::cst::defcs_constructor_exists():
-    assert callable(ocl::cst::DefCS.__init__)
+def test_ocl_cst_defcs_constructor_exists():
+    assert callable(ocl_cst_DefCS.__init__)
 
 
-def test_ocl::cst::defcs_constructor_args():
-    sig = inspect.signature(ocl::cst::DefCS.__init__)
+def test_ocl_cst_defcs_constructor_args():
+    sig = inspect.signature(ocl_cst_DefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -711,141 +711,23 @@ def test_cstnode_constructor_args():
 
 
 
-def test_ocl::cst::operationcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::OperationCS)
+def test_ocl_cst_prepostorbodydeclcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_PrePostOrBodyDeclCS)
 
 
-def test_ocl::cst::operationcs_constructor_exists():
-    assert callable(ocl::cst::OperationCS.__init__)
+def test_ocl_cst_prepostorbodydeclcs_constructor_exists():
+    assert callable(ocl_cst_PrePostOrBodyDeclCS.__init__)
 
 
-def test_ocl::cst::operationcs_constructor_args():
-    sig = inspect.signature(ocl::cst::OperationCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::ismarkedprecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::IsMarkedPreCS)
-
-
-def test_ocl::cst::ismarkedprecs_constructor_exists():
-    assert callable(ocl::cst::IsMarkedPreCS.__init__)
-
-
-def test_ocl::cst::ismarkedprecs_constructor_args():
-    sig = inspect.signature(ocl::cst::IsMarkedPreCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "pre" in params, "Missing parameter 'pre'"
-
-def test_ocl::cst::ismarkedprecs_has_pre():
-    assert hasattr(ocl::cst::IsMarkedPreCS, "pre")
-    descriptor = None
-    for klass in ocl::cst::IsMarkedPreCS.__mro__:
-        if "pre" in klass.__dict__:
-            descriptor = klass.__dict__["pre"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::cst::ocldocumentcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::OCLDocumentCS)
-
-
-def test_ocl::cst::ocldocumentcs_constructor_exists():
-    assert callable(ocl::cst::OCLDocumentCS.__init__)
-
-
-def test_ocl::cst::ocldocumentcs_constructor_args():
-    sig = inspect.signature(ocl::cst::OCLDocumentCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::collectionliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::CollectionLiteralPartCS)
-
-
-def test_ocl::cst::collectionliteralpartcs_constructor_exists():
-    assert callable(ocl::cst::CollectionLiteralPartCS.__init__)
-
-
-def test_ocl::cst::collectionliteralpartcs_constructor_args():
-    sig = inspect.signature(ocl::cst::CollectionLiteralPartCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::oclmessageargcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::OCLMessageArgCS)
-
-
-def test_ocl::cst::oclmessageargcs_constructor_exists():
-    assert callable(ocl::cst::OCLMessageArgCS.__init__)
-
-
-def test_ocl::cst::oclmessageargcs_constructor_args():
-    sig = inspect.signature(ocl::cst::OCLMessageArgCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::variablecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::VariableCS)
-
-
-def test_ocl::cst::variablecs_constructor_exists():
-    assert callable(ocl::cst::VariableCS.__init__)
-
-
-def test_ocl::cst::variablecs_constructor_args():
-    sig = inspect.signature(ocl::cst::VariableCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_ocl::cst::variablecs_has_name():
-    assert hasattr(ocl::cst::VariableCS, "name")
-    descriptor = None
-    for klass in ocl::cst::VariableCS.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::cst::defexpressioncs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::DefExpressionCS)
-
-
-def test_ocl::cst::defexpressioncs_constructor_exists():
-    assert callable(ocl::cst::DefExpressionCS.__init__)
-
-
-def test_ocl::cst::defexpressioncs_constructor_args():
-    sig = inspect.signature(ocl::cst::DefExpressionCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::prepostorbodydeclcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::PrePostOrBodyDeclCS)
-
-
-def test_ocl::cst::prepostorbodydeclcs_constructor_exists():
-    assert callable(ocl::cst::PrePostOrBodyDeclCS.__init__)
-
-
-def test_ocl::cst::prepostorbodydeclcs_constructor_args():
-    sig = inspect.signature(ocl::cst::PrePostOrBodyDeclCS.__init__)
+def test_ocl_cst_prepostorbodydeclcs_constructor_args():
+    sig = inspect.signature(ocl_cst_PrePostOrBodyDeclCS.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_ocl::cst::prepostorbodydeclcs_has_kind():
-    assert hasattr(ocl::cst::PrePostOrBodyDeclCS, "kind")
+def test_ocl_cst_prepostorbodydeclcs_has_kind():
+    assert hasattr(ocl_cst_PrePostOrBodyDeclCS, "kind")
     descriptor = None
-    for klass in ocl::cst::PrePostOrBodyDeclCS.__mro__:
+    for klass in ocl_cst_PrePostOrBodyDeclCS.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -853,44 +735,162 @@ def test_ocl::cst::prepostorbodydeclcs_has_kind():
 
 
 
-def test_ocl::cst::invordefcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::InvOrDefCS)
+def test_ocl_cst_defexpressioncs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_DefExpressionCS)
 
 
-def test_ocl::cst::invordefcs_constructor_exists():
-    assert callable(ocl::cst::InvOrDefCS.__init__)
+def test_ocl_cst_defexpressioncs_constructor_exists():
+    assert callable(ocl_cst_DefExpressionCS.__init__)
 
 
-def test_ocl::cst::invordefcs_constructor_args():
-    sig = inspect.signature(ocl::cst::InvOrDefCS.__init__)
+def test_ocl_cst_defexpressioncs_constructor_args():
+    sig = inspect.signature(ocl_cst_DefExpressionCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::packagedeclarationcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::PackageDeclarationCS)
+def test_ocl_cst_operationcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_OperationCS)
 
 
-def test_ocl::cst::packagedeclarationcs_constructor_exists():
-    assert callable(ocl::cst::PackageDeclarationCS.__init__)
+def test_ocl_cst_operationcs_constructor_exists():
+    assert callable(ocl_cst_OperationCS.__init__)
 
 
-def test_ocl::cst::packagedeclarationcs_constructor_args():
-    sig = inspect.signature(ocl::cst::PackageDeclarationCS.__init__)
+def test_ocl_cst_operationcs_constructor_args():
+    sig = inspect.signature(ocl_cst_OperationCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::initordervaluecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::InitOrDerValueCS)
+def test_ocl_cst_oclmessageargcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_OCLMessageArgCS)
 
 
-def test_ocl::cst::initordervaluecs_constructor_exists():
-    assert callable(ocl::cst::InitOrDerValueCS.__init__)
+def test_ocl_cst_oclmessageargcs_constructor_exists():
+    assert callable(ocl_cst_OCLMessageArgCS.__init__)
 
 
-def test_ocl::cst::initordervaluecs_constructor_args():
-    sig = inspect.signature(ocl::cst::InitOrDerValueCS.__init__)
+def test_ocl_cst_oclmessageargcs_constructor_args():
+    sig = inspect.signature(ocl_cst_OCLMessageArgCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_ismarkedprecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_IsMarkedPreCS)
+
+
+def test_ocl_cst_ismarkedprecs_constructor_exists():
+    assert callable(ocl_cst_IsMarkedPreCS.__init__)
+
+
+def test_ocl_cst_ismarkedprecs_constructor_args():
+    sig = inspect.signature(ocl_cst_IsMarkedPreCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "pre" in params, "Missing parameter 'pre'"
+
+def test_ocl_cst_ismarkedprecs_has_pre():
+    assert hasattr(ocl_cst_IsMarkedPreCS, "pre")
+    descriptor = None
+    for klass in ocl_cst_IsMarkedPreCS.__mro__:
+        if "pre" in klass.__dict__:
+            descriptor = klass.__dict__["pre"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_cst_collectionliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_CollectionLiteralPartCS)
+
+
+def test_ocl_cst_collectionliteralpartcs_constructor_exists():
+    assert callable(ocl_cst_CollectionLiteralPartCS.__init__)
+
+
+def test_ocl_cst_collectionliteralpartcs_constructor_args():
+    sig = inspect.signature(ocl_cst_CollectionLiteralPartCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_invordefcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_InvOrDefCS)
+
+
+def test_ocl_cst_invordefcs_constructor_exists():
+    assert callable(ocl_cst_InvOrDefCS.__init__)
+
+
+def test_ocl_cst_invordefcs_constructor_args():
+    sig = inspect.signature(ocl_cst_InvOrDefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_ocldocumentcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_OCLDocumentCS)
+
+
+def test_ocl_cst_ocldocumentcs_constructor_exists():
+    assert callable(ocl_cst_OCLDocumentCS.__init__)
+
+
+def test_ocl_cst_ocldocumentcs_constructor_args():
+    sig = inspect.signature(ocl_cst_OCLDocumentCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_variablecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_VariableCS)
+
+
+def test_ocl_cst_variablecs_constructor_exists():
+    assert callable(ocl_cst_VariableCS.__init__)
+
+
+def test_ocl_cst_variablecs_constructor_args():
+    sig = inspect.signature(ocl_cst_VariableCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_ocl_cst_variablecs_has_name():
+    assert hasattr(ocl_cst_VariableCS, "name")
+    descriptor = None
+    for klass in ocl_cst_VariableCS.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_cst_packagedeclarationcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_PackageDeclarationCS)
+
+
+def test_ocl_cst_packagedeclarationcs_constructor_exists():
+    assert callable(ocl_cst_PackageDeclarationCS.__init__)
+
+
+def test_ocl_cst_packagedeclarationcs_constructor_args():
+    sig = inspect.signature(ocl_cst_PackageDeclarationCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_initordervaluecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_InitOrDerValueCS)
+
+
+def test_ocl_cst_initordervaluecs_constructor_exists():
+    assert callable(ocl_cst_InitOrDerValueCS.__init__)
+
+
+def test_ocl_cst_initordervaluecs_constructor_args():
+    sig = inspect.signature(ocl_cst_InitOrDerValueCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -909,30 +909,30 @@ def test_initordervaluecs_constructor_args():
 
 
 
-def test_ocl::cst::initvaluecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::InitValueCS)
+def test_ocl_cst_initvaluecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_InitValueCS)
 
 
-def test_ocl::cst::initvaluecs_constructor_exists():
-    assert callable(ocl::cst::InitValueCS.__init__)
+def test_ocl_cst_initvaluecs_constructor_exists():
+    assert callable(ocl_cst_InitValueCS.__init__)
 
 
-def test_ocl::cst::initvaluecs_constructor_args():
-    sig = inspect.signature(ocl::cst::InitValueCS.__init__)
+def test_ocl_cst_initvaluecs_constructor_args():
+    sig = inspect.signature(ocl_cst_InitValueCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::dervaluecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::DerValueCS)
+def test_ocl_cst_dervaluecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_DerValueCS)
 
 
-def test_ocl::cst::dervaluecs_constructor_exists():
-    assert callable(ocl::cst::DerValueCS.__init__)
+def test_ocl_cst_dervaluecs_constructor_exists():
+    assert callable(ocl_cst_DerValueCS.__init__)
 
 
-def test_ocl::cst::dervaluecs_constructor_args():
-    sig = inspect.signature(ocl::cst::DerValueCS.__init__)
+def test_ocl_cst_dervaluecs_constructor_args():
+    sig = inspect.signature(ocl_cst_DerValueCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -951,30 +951,30 @@ def test_simplenamecs_constructor_args():
 
 
 
-def test_ocl::cst::contextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::ContextDeclCS)
+def test_ocl_cst_contextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_ContextDeclCS)
 
 
-def test_ocl::cst::contextdeclcs_constructor_exists():
-    assert callable(ocl::cst::ContextDeclCS.__init__)
+def test_ocl_cst_contextdeclcs_constructor_exists():
+    assert callable(ocl_cst_ContextDeclCS.__init__)
 
 
-def test_ocl::cst::contextdeclcs_constructor_args():
-    sig = inspect.signature(ocl::cst::ContextDeclCS.__init__)
+def test_ocl_cst_contextdeclcs_constructor_args():
+    sig = inspect.signature(ocl_cst_ContextDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::oclexpressioncs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::OCLExpressionCS)
+def test_ocl_cst_oclexpressioncs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_OCLExpressionCS)
 
 
-def test_ocl::cst::oclexpressioncs_constructor_exists():
-    assert callable(ocl::cst::OCLExpressionCS.__init__)
+def test_ocl_cst_oclexpressioncs_constructor_exists():
+    assert callable(ocl_cst_OCLExpressionCS.__init__)
 
 
-def test_ocl::cst::oclexpressioncs_constructor_args():
-    sig = inspect.signature(ocl::cst::OCLExpressionCS.__init__)
+def test_ocl_cst_oclexpressioncs_constructor_args():
+    sig = inspect.signature(ocl_cst_OCLExpressionCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -993,137 +993,47 @@ def test_oclexpressioncs_constructor_args():
 
 
 
-def test_ocl::cst::callexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::CallExpCS)
+def test_ocl_cst_literalexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_LiteralExpCS)
 
 
-def test_ocl::cst::callexpcs_constructor_exists():
-    assert callable(ocl::cst::CallExpCS.__init__)
+def test_ocl_cst_literalexpcs_constructor_exists():
+    assert callable(ocl_cst_LiteralExpCS.__init__)
 
 
-def test_ocl::cst::callexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::CallExpCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "accessor" in params, "Missing parameter 'accessor'"
-
-def test_ocl::cst::callexpcs_has_accessor():
-    assert hasattr(ocl::cst::CallExpCS, "accessor")
-    descriptor = None
-    for klass in ocl::cst::CallExpCS.__mro__:
-        if "accessor" in klass.__dict__:
-            descriptor = klass.__dict__["accessor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::cst::literalexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::LiteralExpCS)
-
-
-def test_ocl::cst::literalexpcs_constructor_exists():
-    assert callable(ocl::cst::LiteralExpCS.__init__)
-
-
-def test_ocl::cst::literalexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::LiteralExpCS.__init__)
+def test_ocl_cst_literalexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_LiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::ifexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::IfExpCS)
+def test_ocl_cst_simplenamecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_SimpleNameCS)
 
 
-def test_ocl::cst::ifexpcs_constructor_exists():
-    assert callable(ocl::cst::IfExpCS.__init__)
+def test_ocl_cst_simplenamecs_constructor_exists():
+    assert callable(ocl_cst_SimpleNameCS.__init__)
 
 
-def test_ocl::cst::ifexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::IfExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::messageexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::MessageExpCS)
-
-
-def test_ocl::cst::messageexpcs_constructor_exists():
-    assert callable(ocl::cst::MessageExpCS.__init__)
-
-
-def test_ocl::cst::messageexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::MessageExpCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_ocl::cst::messageexpcs_has_kind():
-    assert hasattr(ocl::cst::MessageExpCS, "kind")
-    descriptor = None
-    for klass in ocl::cst::MessageExpCS.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::cst::variableexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::VariableExpCS)
-
-
-def test_ocl::cst::variableexpcs_constructor_exists():
-    assert callable(ocl::cst::VariableExpCS.__init__)
-
-
-def test_ocl::cst::variableexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::VariableExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::letexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::LetExpCS)
-
-
-def test_ocl::cst::letexpcs_constructor_exists():
-    assert callable(ocl::cst::LetExpCS.__init__)
-
-
-def test_ocl::cst::letexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::LetExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::simplenamecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::SimpleNameCS)
-
-
-def test_ocl::cst::simplenamecs_constructor_exists():
-    assert callable(ocl::cst::SimpleNameCS.__init__)
-
-
-def test_ocl::cst::simplenamecs_constructor_args():
-    sig = inspect.signature(ocl::cst::SimpleNameCS.__init__)
+def test_ocl_cst_simplenamecs_constructor_args():
+    sig = inspect.signature(ocl_cst_SimpleNameCS.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ocl::cst::simplenamecs_has_type():
-    assert hasattr(ocl::cst::SimpleNameCS, "type")
+def test_ocl_cst_simplenamecs_has_type():
+    assert hasattr(ocl_cst_SimpleNameCS, "type")
     descriptor = None
-    for klass in ocl::cst::SimpleNameCS.__mro__:
+    for klass in ocl_cst_SimpleNameCS.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::cst::simplenamecs_has_value():
-    assert hasattr(ocl::cst::SimpleNameCS, "value")
+def test_ocl_cst_simplenamecs_has_value():
+    assert hasattr(ocl_cst_SimpleNameCS, "value")
     descriptor = None
-    for klass in ocl::cst::SimpleNameCS.__mro__:
+    for klass in ocl_cst_SimpleNameCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1131,16 +1041,106 @@ def test_ocl::cst::simplenamecs_has_value():
 
 
 
-def test_ocl::cst::typecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::TypeCS)
+def test_ocl_cst_messageexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_MessageExpCS)
 
 
-def test_ocl::cst::typecs_constructor_exists():
-    assert callable(ocl::cst::TypeCS.__init__)
+def test_ocl_cst_messageexpcs_constructor_exists():
+    assert callable(ocl_cst_MessageExpCS.__init__)
 
 
-def test_ocl::cst::typecs_constructor_args():
-    sig = inspect.signature(ocl::cst::TypeCS.__init__)
+def test_ocl_cst_messageexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_MessageExpCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_ocl_cst_messageexpcs_has_kind():
+    assert hasattr(ocl_cst_MessageExpCS, "kind")
+    descriptor = None
+    for klass in ocl_cst_MessageExpCS.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_cst_ifexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_IfExpCS)
+
+
+def test_ocl_cst_ifexpcs_constructor_exists():
+    assert callable(ocl_cst_IfExpCS.__init__)
+
+
+def test_ocl_cst_ifexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_IfExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_variableexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_VariableExpCS)
+
+
+def test_ocl_cst_variableexpcs_constructor_exists():
+    assert callable(ocl_cst_VariableExpCS.__init__)
+
+
+def test_ocl_cst_variableexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_VariableExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_callexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_CallExpCS)
+
+
+def test_ocl_cst_callexpcs_constructor_exists():
+    assert callable(ocl_cst_CallExpCS.__init__)
+
+
+def test_ocl_cst_callexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_CallExpCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "accessor" in params, "Missing parameter 'accessor'"
+
+def test_ocl_cst_callexpcs_has_accessor():
+    assert hasattr(ocl_cst_CallExpCS, "accessor")
+    descriptor = None
+    for klass in ocl_cst_CallExpCS.__mro__:
+        if "accessor" in klass.__dict__:
+            descriptor = klass.__dict__["accessor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_cst_letexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_LetExpCS)
+
+
+def test_ocl_cst_letexpcs_constructor_exists():
+    assert callable(ocl_cst_LetExpCS.__init__)
+
+
+def test_ocl_cst_letexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_LetExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_typecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_TypeCS)
+
+
+def test_ocl_cst_typecs_constructor_exists():
+    assert callable(ocl_cst_TypeCS.__init__)
+
+
+def test_ocl_cst_typecs_constructor_args():
+    sig = inspect.signature(ocl_cst_TypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1159,61 +1159,23 @@ def test_typecs_constructor_args():
 
 
 
-def test_ocl::cst::tupletypecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::TupleTypeCS)
+def test_ocl_cst_collectiontypecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_CollectionTypeCS)
 
 
-def test_ocl::cst::tupletypecs_constructor_exists():
-    assert callable(ocl::cst::TupleTypeCS.__init__)
+def test_ocl_cst_collectiontypecs_constructor_exists():
+    assert callable(ocl_cst_CollectionTypeCS.__init__)
 
 
-def test_ocl::cst::tupletypecs_constructor_args():
-    sig = inspect.signature(ocl::cst::TupleTypeCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::cst::stateexpcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::StateExpCS)
-
-
-def test_ocl::cst::stateexpcs_constructor_exists():
-    assert callable(ocl::cst::StateExpCS.__init__)
-
-
-def test_ocl::cst::stateexpcs_constructor_args():
-    sig = inspect.signature(ocl::cst::StateExpCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "sequenceOfNames" in params, "Missing parameter 'sequenceOfNames'"
-
-def test_ocl::cst::stateexpcs_has_sequenceOfNames():
-    assert hasattr(ocl::cst::StateExpCS, "sequenceOfNames")
-    descriptor = None
-    for klass in ocl::cst::StateExpCS.__mro__:
-        if "sequenceOfNames" in klass.__dict__:
-            descriptor = klass.__dict__["sequenceOfNames"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ocl::cst::collectiontypecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::CollectionTypeCS)
-
-
-def test_ocl::cst::collectiontypecs_constructor_exists():
-    assert callable(ocl::cst::CollectionTypeCS.__init__)
-
-
-def test_ocl::cst::collectiontypecs_constructor_args():
-    sig = inspect.signature(ocl::cst::CollectionTypeCS.__init__)
+def test_ocl_cst_collectiontypecs_constructor_args():
+    sig = inspect.signature(ocl_cst_CollectionTypeCS.__init__)
     params = list(sig.parameters.keys())
     assert "collectionTypeIdentifier" in params, "Missing parameter 'collectionTypeIdentifier'"
 
-def test_ocl::cst::collectiontypecs_has_collectionTypeIdentifier():
-    assert hasattr(ocl::cst::CollectionTypeCS, "collectionTypeIdentifier")
+def test_ocl_cst_collectiontypecs_has_collectionTypeIdentifier():
+    assert hasattr(ocl_cst_CollectionTypeCS, "collectionTypeIdentifier")
     descriptor = None
-    for klass in ocl::cst::CollectionTypeCS.__mro__:
+    for klass in ocl_cst_CollectionTypeCS.__mro__:
         if "collectionTypeIdentifier" in klass.__dict__:
             descriptor = klass.__dict__["collectionTypeIdentifier"]
             break
@@ -1221,23 +1183,61 @@ def test_ocl::cst::collectiontypecs_has_collectionTypeIdentifier():
 
 
 
-def test_ocl::cst::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::PathNameCS)
+def test_ocl_cst_stateexpcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_StateExpCS)
 
 
-def test_ocl::cst::pathnamecs_constructor_exists():
-    assert callable(ocl::cst::PathNameCS.__init__)
+def test_ocl_cst_stateexpcs_constructor_exists():
+    assert callable(ocl_cst_StateExpCS.__init__)
 
 
-def test_ocl::cst::pathnamecs_constructor_args():
-    sig = inspect.signature(ocl::cst::PathNameCS.__init__)
+def test_ocl_cst_stateexpcs_constructor_args():
+    sig = inspect.signature(ocl_cst_StateExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "sequenceOfNames" in params, "Missing parameter 'sequenceOfNames'"
 
-def test_ocl::cst::pathnamecs_has_sequenceOfNames():
-    assert hasattr(ocl::cst::PathNameCS, "sequenceOfNames")
+def test_ocl_cst_stateexpcs_has_sequenceOfNames():
+    assert hasattr(ocl_cst_StateExpCS, "sequenceOfNames")
     descriptor = None
-    for klass in ocl::cst::PathNameCS.__mro__:
+    for klass in ocl_cst_StateExpCS.__mro__:
+        if "sequenceOfNames" in klass.__dict__:
+            descriptor = klass.__dict__["sequenceOfNames"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ocl_cst_tupletypecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_TupleTypeCS)
+
+
+def test_ocl_cst_tupletypecs_constructor_exists():
+    assert callable(ocl_cst_TupleTypeCS.__init__)
+
+
+def test_ocl_cst_tupletypecs_constructor_args():
+    sig = inspect.signature(ocl_cst_TupleTypeCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_cst_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_PathNameCS)
+
+
+def test_ocl_cst_pathnamecs_constructor_exists():
+    assert callable(ocl_cst_PathNameCS.__init__)
+
+
+def test_ocl_cst_pathnamecs_constructor_args():
+    sig = inspect.signature(ocl_cst_PathNameCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "sequenceOfNames" in params, "Missing parameter 'sequenceOfNames'"
+
+def test_ocl_cst_pathnamecs_has_sequenceOfNames():
+    assert hasattr(ocl_cst_PathNameCS, "sequenceOfNames")
+    descriptor = None
+    for klass in ocl_cst_PathNameCS.__mro__:
         if "sequenceOfNames" in klass.__dict__:
             descriptor = klass.__dict__["sequenceOfNames"]
             break
@@ -1273,109 +1273,184 @@ def test_contextdeclcs_constructor_args():
 
 
 
-def test_ocl::cst::operationcontextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::OperationContextDeclCS)
+def test_ocl_cst_operationcontextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_OperationContextDeclCS)
 
 
-def test_ocl::cst::operationcontextdeclcs_constructor_exists():
-    assert callable(ocl::cst::OperationContextDeclCS.__init__)
+def test_ocl_cst_operationcontextdeclcs_constructor_exists():
+    assert callable(ocl_cst_OperationContextDeclCS.__init__)
 
 
-def test_ocl::cst::operationcontextdeclcs_constructor_args():
-    sig = inspect.signature(ocl::cst::OperationContextDeclCS.__init__)
+def test_ocl_cst_operationcontextdeclcs_constructor_args():
+    sig = inspect.signature(ocl_cst_OperationContextDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::classifiercontextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::ClassifierContextDeclCS)
+def test_ocl_cst_classifiercontextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_ClassifierContextDeclCS)
 
 
-def test_ocl::cst::classifiercontextdeclcs_constructor_exists():
-    assert callable(ocl::cst::ClassifierContextDeclCS.__init__)
+def test_ocl_cst_classifiercontextdeclcs_constructor_exists():
+    assert callable(ocl_cst_ClassifierContextDeclCS.__init__)
 
 
-def test_ocl::cst::classifiercontextdeclcs_constructor_args():
-    sig = inspect.signature(ocl::cst::ClassifierContextDeclCS.__init__)
+def test_ocl_cst_classifiercontextdeclcs_constructor_args():
+    sig = inspect.signature(ocl_cst_ClassifierContextDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::propertycontextcs_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::PropertyContextCS)
+def test_ocl_cst_propertycontextcs_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_PropertyContextCS)
 
 
-def test_ocl::cst::propertycontextcs_constructor_exists():
-    assert callable(ocl::cst::PropertyContextCS.__init__)
+def test_ocl_cst_propertycontextcs_constructor_exists():
+    assert callable(ocl_cst_PropertyContextCS.__init__)
 
 
-def test_ocl::cst::propertycontextcs_constructor_args():
-    sig = inspect.signature(ocl::cst::PropertyContextCS.__init__)
+def test_ocl_cst_propertycontextcs_constructor_args():
+    sig = inspect.signature(ocl_cst_PropertyContextCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::cst::cstnode_is_not_abstract():
-    assert not inspect.isabstract(ocl::cst::CSTNode)
+def test_ocl_cst_cstnode_is_not_abstract():
+    assert not inspect.isabstract(ocl_cst_CSTNode)
 
 
-def test_ocl::cst::cstnode_constructor_exists():
-    assert callable(ocl::cst::CSTNode.__init__)
+def test_ocl_cst_cstnode_constructor_exists():
+    assert callable(ocl_cst_CSTNode.__init__)
 
 
-def test_ocl::cst::cstnode_constructor_args():
-    sig = inspect.signature(ocl::cst::CSTNode.__init__)
+def test_ocl_cst_cstnode_constructor_args():
+    sig = inspect.signature(ocl_cst_CSTNode.__init__)
     params = list(sig.parameters.keys())
+    assert "startOffset" in params, "Missing parameter 'startOffset'"
     assert "endOffset" in params, "Missing parameter 'endOffset'"
     assert "ast" in params, "Missing parameter 'ast'"
-    assert "endToken" in params, "Missing parameter 'endToken'"
     assert "startToken" in params, "Missing parameter 'startToken'"
-    assert "startOffset" in params, "Missing parameter 'startOffset'"
+    assert "endToken" in params, "Missing parameter 'endToken'"
 
-def test_ocl::cst::cstnode_has_endOffset():
-    assert hasattr(ocl::cst::CSTNode, "endOffset")
+def test_ocl_cst_cstnode_has_startOffset():
+    assert hasattr(ocl_cst_CSTNode, "startOffset")
     descriptor = None
-    for klass in ocl::cst::CSTNode.__mro__:
+    for klass in ocl_cst_CSTNode.__mro__:
+        if "startOffset" in klass.__dict__:
+            descriptor = klass.__dict__["startOffset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ocl_cst_cstnode_has_endOffset():
+    assert hasattr(ocl_cst_CSTNode, "endOffset")
+    descriptor = None
+    for klass in ocl_cst_CSTNode.__mro__:
         if "endOffset" in klass.__dict__:
             descriptor = klass.__dict__["endOffset"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::cst::cstnode_has_ast():
-    assert hasattr(ocl::cst::CSTNode, "ast")
+def test_ocl_cst_cstnode_has_ast():
+    assert hasattr(ocl_cst_CSTNode, "ast")
     descriptor = None
-    for klass in ocl::cst::CSTNode.__mro__:
+    for klass in ocl_cst_CSTNode.__mro__:
         if "ast" in klass.__dict__:
             descriptor = klass.__dict__["ast"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::cst::cstnode_has_endToken():
-    assert hasattr(ocl::cst::CSTNode, "endToken")
+def test_ocl_cst_cstnode_has_startToken():
+    assert hasattr(ocl_cst_CSTNode, "startToken")
     descriptor = None
-    for klass in ocl::cst::CSTNode.__mro__:
-        if "endToken" in klass.__dict__:
-            descriptor = klass.__dict__["endToken"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ocl::cst::cstnode_has_startToken():
-    assert hasattr(ocl::cst::CSTNode, "startToken")
-    descriptor = None
-    for klass in ocl::cst::CSTNode.__mro__:
+    for klass in ocl_cst_CSTNode.__mro__:
         if "startToken" in klass.__dict__:
             descriptor = klass.__dict__["startToken"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocl::cst::cstnode_has_startOffset():
-    assert hasattr(ocl::cst::CSTNode, "startOffset")
+def test_ocl_cst_cstnode_has_endToken():
+    assert hasattr(ocl_cst_CSTNode, "endToken")
     descriptor = None
-    for klass in ocl::cst::CSTNode.__mro__:
-        if "startOffset" in klass.__dict__:
-            descriptor = klass.__dict__["startOffset"]
+    for klass in ocl_cst_CSTNode.__mro__:
+        if "endToken" in klass.__dict__:
+            descriptor = klass.__dict__["endToken"]
             break
     assert isinstance(descriptor, property)
+
+def test_dotorarrowenum_exists():
+    # Check that the Enumeration exists
+    assert DotOrArrowEnum is not None
+
+def test_dotorarrowenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DotOrArrowEnum]
+    expected_literals = [
+        "none",
+        "dot",
+        "arrow",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DotOrArrowEnum"
+
+def test_collectiontypeidentifierenum_exists():
+    # Check that the Enumeration exists
+    assert CollectionTypeIdentifierEnum is not None
+
+def test_collectiontypeidentifierenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CollectionTypeIdentifierEnum]
+    expected_literals = [
+        "Collection",
+        "Bag",
+        "Sequence",
+        "Set",
+        "OrderedSet",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CollectionTypeIdentifierEnum"
+
+def test_prepostorbodyenum_exists():
+    # Check that the Enumeration exists
+    assert PrePostOrBodyEnum is not None
+
+def test_prepostorbodyenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PrePostOrBodyEnum]
+    expected_literals = [
+        "post",
+        "pre",
+        "body",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PrePostOrBodyEnum"
+
+def test_simpletypeenum_exists():
+    # Check that the Enumeration exists
+    assert SimpleTypeEnum is not None
+
+def test_simpletypeenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SimpleTypeEnum]
+    expected_literals = [
+        "self",
+        "Invalid",
+        "OclVoid",
+        "Boolean",
+        "Real",
+        "Integer",
+        "String",
+        "keyword",
+        "identifier",
+        "OclMessage",
+        "UnlimitedNatural",
+        "OclAny",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SimpleTypeEnum"
 
 def test_messageexpkind_exists():
     # Check that the Enumeration exists
@@ -1392,81 +1467,6 @@ def test_messageexpkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MessageExpKind"
 
-def test_collectiontypeidentifierenum_exists():
-    # Check that the Enumeration exists
-    assert CollectionTypeIdentifierEnum is not None
-
-def test_collectiontypeidentifierenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CollectionTypeIdentifierEnum]
-    expected_literals = [
-        "Set",
-        "Collection",
-        "Sequence",
-        "OrderedSet",
-        "Bag",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CollectionTypeIdentifierEnum"
-
-def test_prepostorbodyenum_exists():
-    # Check that the Enumeration exists
-    assert PrePostOrBodyEnum is not None
-
-def test_prepostorbodyenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrePostOrBodyEnum]
-    expected_literals = [
-        "body",
-        "post",
-        "pre",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrePostOrBodyEnum"
-
-def test_dotorarrowenum_exists():
-    # Check that the Enumeration exists
-    assert DotOrArrowEnum is not None
-
-def test_dotorarrowenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DotOrArrowEnum]
-    expected_literals = [
-        "arrow",
-        "dot",
-        "none",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DotOrArrowEnum"
-
-def test_simpletypeenum_exists():
-    # Check that the Enumeration exists
-    assert SimpleTypeEnum is not None
-
-def test_simpletypeenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SimpleTypeEnum]
-    expected_literals = [
-        "identifier",
-        "String",
-        "Integer",
-        "Invalid",
-        "UnlimitedNatural",
-        "OclVoid",
-        "OclMessage",
-        "OclAny",
-        "keyword",
-        "Real",
-        "Boolean",
-        "self",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SimpleTypeEnum"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1482,91 +1482,91 @@ safe_text = st.text(
 LoopExpCS_strategy = st.builds(
     LoopExpCS,
 )
-ocl::cst::IterateExpCS_strategy = st.builds(
-    ocl::cst::IterateExpCS,
+ocl_cst_IterateExpCS_strategy = st.builds(
+    ocl_cst_IterateExpCS,
 )
-ocl::cst::IteratorExpCS_strategy = st.builds(
-    ocl::cst::IteratorExpCS,
+ocl_cst_IteratorExpCS_strategy = st.builds(
+    ocl_cst_IteratorExpCS,
 )
 FeatureCallExpCS_strategy = st.builds(
     FeatureCallExpCS,
 )
-ocl::cst::OperationCallExpCS_strategy = st.builds(
-    ocl::cst::OperationCallExpCS,
+ocl_cst_OperationCallExpCS_strategy = st.builds(
+    ocl_cst_OperationCallExpCS,
 )
 CallExpCS_strategy = st.builds(
     CallExpCS,
 )
-ocl::cst::FeatureCallExpCS_strategy = st.builds(
-    ocl::cst::FeatureCallExpCS,
+ocl_cst_FeatureCallExpCS_strategy = st.builds(
+    ocl_cst_FeatureCallExpCS,
 )
-ocl::cst::LoopExpCS_strategy = st.builds(
-    ocl::cst::LoopExpCS,
+ocl_cst_LoopExpCS_strategy = st.builds(
+    ocl_cst_LoopExpCS,
 )
 PrimitiveLiteralExpCS_strategy = st.builds(
     PrimitiveLiteralExpCS,
 )
-ocl::cst::BooleanLiteralExpCS_strategy = st.builds(
-    ocl::cst::BooleanLiteralExpCS,
-    booleanSymbol=
-        safe_text
-)
-ocl::cst::RealLiteralExpCS_strategy = st.builds(
-    ocl::cst::RealLiteralExpCS,
+ocl_cst_RealLiteralExpCS_strategy = st.builds(
+    ocl_cst_RealLiteralExpCS,
     realSymbol=
         safe_text
 )
-ocl::cst::StringLiteralExpCS_strategy = st.builds(
-    ocl::cst::StringLiteralExpCS,
-    unescapedStringSymbol=
-        safe_text,
+ocl_cst_StringLiteralExpCS_strategy = st.builds(
+    ocl_cst_StringLiteralExpCS,
     stringSymbol=
+        safe_text,
+    unescapedStringSymbol=
         safe_text
 )
-ocl::cst::UnlimitedNaturalLiteralExpCS_strategy = st.builds(
-    ocl::cst::UnlimitedNaturalLiteralExpCS,
+ocl_cst_BooleanLiteralExpCS_strategy = st.builds(
+    ocl_cst_BooleanLiteralExpCS,
+    booleanSymbol=
+        safe_text
+)
+ocl_cst_UnlimitedNaturalLiteralExpCS_strategy = st.builds(
+    ocl_cst_UnlimitedNaturalLiteralExpCS,
     integerSymbol=
         safe_text
 )
-ocl::cst::IntegerLiteralExpCS_strategy = st.builds(
-    ocl::cst::IntegerLiteralExpCS,
+ocl_cst_IntegerLiteralExpCS_strategy = st.builds(
+    ocl_cst_IntegerLiteralExpCS,
     integerSymbol=
         safe_text
 )
 CollectionLiteralPartCS_strategy = st.builds(
     CollectionLiteralPartCS,
 )
-ocl::cst::CollectionRangeCS_strategy = st.builds(
-    ocl::cst::CollectionRangeCS,
+ocl_cst_CollectionRangeCS_strategy = st.builds(
+    ocl_cst_CollectionRangeCS,
 )
 LiteralExpCS_strategy = st.builds(
     LiteralExpCS,
 )
-ocl::cst::NullLiteralExpCS_strategy = st.builds(
-    ocl::cst::NullLiteralExpCS,
+ocl_cst_InvalidLiteralExpCS_strategy = st.builds(
+    ocl_cst_InvalidLiteralExpCS,
     symbol=
         safe_text
 )
-ocl::cst::CollectionLiteralExpCS_strategy = st.builds(
-    ocl::cst::CollectionLiteralExpCS,
+ocl_cst_CollectionLiteralExpCS_strategy = st.builds(
+    ocl_cst_CollectionLiteralExpCS,
     collectionType=
         safe_text
 )
-ocl::cst::PrimitiveLiteralExpCS_strategy = st.builds(
-    ocl::cst::PrimitiveLiteralExpCS,
+ocl_cst_NullLiteralExpCS_strategy = st.builds(
+    ocl_cst_NullLiteralExpCS,
     symbol=
         safe_text
 )
-ocl::cst::TupleLiteralExpCS_strategy = st.builds(
-    ocl::cst::TupleLiteralExpCS,
+ocl_cst_TupleLiteralExpCS_strategy = st.builds(
+    ocl_cst_TupleLiteralExpCS,
 )
-ocl::cst::InvalidLiteralExpCS_strategy = st.builds(
-    ocl::cst::InvalidLiteralExpCS,
+ocl_cst_PrimitiveLiteralExpCS_strategy = st.builds(
+    ocl_cst_PrimitiveLiteralExpCS,
     symbol=
         safe_text
 )
-ocl::cst::EnumLiteralExpCS_strategy = st.builds(
-    ocl::cst::EnumLiteralExpCS,
+ocl_cst_EnumLiteralExpCS_strategy = st.builds(
+    ocl_cst_EnumLiteralExpCS,
 )
 OCLMessageArgCS_strategy = st.builds(
     OCLMessageArgCS,
@@ -1574,14 +1574,14 @@ OCLMessageArgCS_strategy = st.builds(
 DefExpressionCS_strategy = st.builds(
     DefExpressionCS,
 )
-cst::TypeCS_strategy = st.builds(
-    cst::TypeCS,
+cst_TypeCS_strategy = st.builds(
+    cst_TypeCS,
 )
-cst::SimpleNameCS_strategy = st.builds(
-    cst::SimpleNameCS,
+cst_SimpleNameCS_strategy = st.builds(
+    cst_SimpleNameCS,
 )
-ocl::cst::PrimitiveTypeCS_strategy = st.builds(
-    ocl::cst::PrimitiveTypeCS,
+ocl_cst_PrimitiveTypeCS_strategy = st.builds(
+    ocl_cst_PrimitiveTypeCS,
 )
 IsMarkedPreCS_strategy = st.builds(
     IsMarkedPreCS,
@@ -1589,11 +1589,11 @@ IsMarkedPreCS_strategy = st.builds(
 InvOrDefCS_strategy = st.builds(
     InvOrDefCS,
 )
-ocl::cst::InvCS_strategy = st.builds(
-    ocl::cst::InvCS,
+ocl_cst_InvCS_strategy = st.builds(
+    ocl_cst_InvCS,
 )
-ocl::cst::DefCS_strategy = st.builds(
-    ocl::cst::DefCS,
+ocl_cst_DefCS_strategy = st.builds(
+    ocl_cst_DefCS,
 )
 VariableCS_strategy = st.builds(
     VariableCS,
@@ -1610,116 +1610,116 @@ PathNameCS_strategy = st.builds(
 CSTNode_strategy = st.builds(
     CSTNode,
 )
-ocl::cst::OperationCS_strategy = st.builds(
-    ocl::cst::OperationCS,
-)
-ocl::cst::IsMarkedPreCS_strategy = st.builds(
-    ocl::cst::IsMarkedPreCS,
-    pre=
-        st.booleans()
-)
-ocl::cst::OCLDocumentCS_strategy = st.builds(
-    ocl::cst::OCLDocumentCS,
-)
-ocl::cst::CollectionLiteralPartCS_strategy = st.builds(
-    ocl::cst::CollectionLiteralPartCS,
-)
-ocl::cst::OCLMessageArgCS_strategy = st.builds(
-    ocl::cst::OCLMessageArgCS,
-)
-ocl::cst::VariableCS_strategy = st.builds(
-    ocl::cst::VariableCS,
-    name=
-        safe_text
-)
-ocl::cst::DefExpressionCS_strategy = st.builds(
-    ocl::cst::DefExpressionCS,
-)
-ocl::cst::PrePostOrBodyDeclCS_strategy = st.builds(
-    ocl::cst::PrePostOrBodyDeclCS,
+ocl_cst_PrePostOrBodyDeclCS_strategy = st.builds(
+    ocl_cst_PrePostOrBodyDeclCS,
     kind=
         safe_text
 )
-ocl::cst::InvOrDefCS_strategy = st.builds(
-    ocl::cst::InvOrDefCS,
+ocl_cst_DefExpressionCS_strategy = st.builds(
+    ocl_cst_DefExpressionCS,
 )
-ocl::cst::PackageDeclarationCS_strategy = st.builds(
-    ocl::cst::PackageDeclarationCS,
+ocl_cst_OperationCS_strategy = st.builds(
+    ocl_cst_OperationCS,
 )
-ocl::cst::InitOrDerValueCS_strategy = st.builds(
-    ocl::cst::InitOrDerValueCS,
+ocl_cst_OCLMessageArgCS_strategy = st.builds(
+    ocl_cst_OCLMessageArgCS,
+)
+ocl_cst_IsMarkedPreCS_strategy = st.builds(
+    ocl_cst_IsMarkedPreCS,
+    pre=
+        st.booleans()
+)
+ocl_cst_CollectionLiteralPartCS_strategy = st.builds(
+    ocl_cst_CollectionLiteralPartCS,
+)
+ocl_cst_InvOrDefCS_strategy = st.builds(
+    ocl_cst_InvOrDefCS,
+)
+ocl_cst_OCLDocumentCS_strategy = st.builds(
+    ocl_cst_OCLDocumentCS,
+)
+ocl_cst_VariableCS_strategy = st.builds(
+    ocl_cst_VariableCS,
+    name=
+        safe_text
+)
+ocl_cst_PackageDeclarationCS_strategy = st.builds(
+    ocl_cst_PackageDeclarationCS,
+)
+ocl_cst_InitOrDerValueCS_strategy = st.builds(
+    ocl_cst_InitOrDerValueCS,
 )
 InitOrDerValueCS_strategy = st.builds(
     InitOrDerValueCS,
 )
-ocl::cst::InitValueCS_strategy = st.builds(
-    ocl::cst::InitValueCS,
+ocl_cst_InitValueCS_strategy = st.builds(
+    ocl_cst_InitValueCS,
 )
-ocl::cst::DerValueCS_strategy = st.builds(
-    ocl::cst::DerValueCS,
+ocl_cst_DerValueCS_strategy = st.builds(
+    ocl_cst_DerValueCS,
 )
 SimpleNameCS_strategy = st.builds(
     SimpleNameCS,
 )
-ocl::cst::ContextDeclCS_strategy = st.builds(
-    ocl::cst::ContextDeclCS,
+ocl_cst_ContextDeclCS_strategy = st.builds(
+    ocl_cst_ContextDeclCS,
 )
-ocl::cst::OCLExpressionCS_strategy = st.builds(
-    ocl::cst::OCLExpressionCS,
+ocl_cst_OCLExpressionCS_strategy = st.builds(
+    ocl_cst_OCLExpressionCS,
 )
 OCLExpressionCS_strategy = st.builds(
     OCLExpressionCS,
 )
-ocl::cst::CallExpCS_strategy = st.builds(
-    ocl::cst::CallExpCS,
-    accessor=
-        safe_text
+ocl_cst_LiteralExpCS_strategy = st.builds(
+    ocl_cst_LiteralExpCS,
 )
-ocl::cst::LiteralExpCS_strategy = st.builds(
-    ocl::cst::LiteralExpCS,
-)
-ocl::cst::IfExpCS_strategy = st.builds(
-    ocl::cst::IfExpCS,
-)
-ocl::cst::MessageExpCS_strategy = st.builds(
-    ocl::cst::MessageExpCS,
-    kind=
-        safe_text
-)
-ocl::cst::VariableExpCS_strategy = st.builds(
-    ocl::cst::VariableExpCS,
-)
-ocl::cst::LetExpCS_strategy = st.builds(
-    ocl::cst::LetExpCS,
-)
-ocl::cst::SimpleNameCS_strategy = st.builds(
-    ocl::cst::SimpleNameCS,
+ocl_cst_SimpleNameCS_strategy = st.builds(
+    ocl_cst_SimpleNameCS,
     type=
         safe_text,
     value=
         safe_text
 )
-ocl::cst::TypeCS_strategy = st.builds(
-    ocl::cst::TypeCS,
+ocl_cst_MessageExpCS_strategy = st.builds(
+    ocl_cst_MessageExpCS,
+    kind=
+        safe_text
+)
+ocl_cst_IfExpCS_strategy = st.builds(
+    ocl_cst_IfExpCS,
+)
+ocl_cst_VariableExpCS_strategy = st.builds(
+    ocl_cst_VariableExpCS,
+)
+ocl_cst_CallExpCS_strategy = st.builds(
+    ocl_cst_CallExpCS,
+    accessor=
+        safe_text
+)
+ocl_cst_LetExpCS_strategy = st.builds(
+    ocl_cst_LetExpCS,
+)
+ocl_cst_TypeCS_strategy = st.builds(
+    ocl_cst_TypeCS,
 )
 TypeCS_strategy = st.builds(
     TypeCS,
 )
-ocl::cst::TupleTypeCS_strategy = st.builds(
-    ocl::cst::TupleTypeCS,
-)
-ocl::cst::StateExpCS_strategy = st.builds(
-    ocl::cst::StateExpCS,
-    sequenceOfNames=
-        safe_text
-)
-ocl::cst::CollectionTypeCS_strategy = st.builds(
-    ocl::cst::CollectionTypeCS,
+ocl_cst_CollectionTypeCS_strategy = st.builds(
+    ocl_cst_CollectionTypeCS,
     collectionTypeIdentifier=
         safe_text
 )
-ocl::cst::PathNameCS_strategy = st.builds(
-    ocl::cst::PathNameCS,
+ocl_cst_StateExpCS_strategy = st.builds(
+    ocl_cst_StateExpCS,
+    sequenceOfNames=
+        safe_text
+)
+ocl_cst_TupleTypeCS_strategy = st.builds(
+    ocl_cst_TupleTypeCS,
+)
+ocl_cst_PathNameCS_strategy = st.builds(
+    ocl_cst_PathNameCS,
     sequenceOfNames=
         safe_text
 )
@@ -1729,27 +1729,27 @@ PackageDeclarationCS_strategy = st.builds(
 ContextDeclCS_strategy = st.builds(
     ContextDeclCS,
 )
-ocl::cst::OperationContextDeclCS_strategy = st.builds(
-    ocl::cst::OperationContextDeclCS,
+ocl_cst_OperationContextDeclCS_strategy = st.builds(
+    ocl_cst_OperationContextDeclCS,
 )
-ocl::cst::ClassifierContextDeclCS_strategy = st.builds(
-    ocl::cst::ClassifierContextDeclCS,
+ocl_cst_ClassifierContextDeclCS_strategy = st.builds(
+    ocl_cst_ClassifierContextDeclCS,
 )
-ocl::cst::PropertyContextCS_strategy = st.builds(
-    ocl::cst::PropertyContextCS,
+ocl_cst_PropertyContextCS_strategy = st.builds(
+    ocl_cst_PropertyContextCS,
 )
-ocl::cst::CSTNode_strategy = st.builds(
-    ocl::cst::CSTNode,
+ocl_cst_CSTNode_strategy = st.builds(
+    ocl_cst_CSTNode,
+    startOffset=
+        st.integers(),
     endOffset=
         st.integers(),
     ast=
         safe_text,
-    endToken=
-        safe_text,
     startToken=
         safe_text,
-    startOffset=
-        st.integers()
+    endToken=
+        safe_text
 )
 
 @given(instance=LoopExpCS_strategy)
@@ -1757,133 +1757,115 @@ ocl::cst::CSTNode_strategy = st.builds(
 def test_loopexpcs_instantiation(instance):
     assert isinstance(instance, LoopExpCS)
 
-@given(instance=ocl::cst::IterateExpCS_strategy)
+@given(instance=ocl_cst_IterateExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::iterateexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::IterateExpCS)
+def test_ocl_cst_iterateexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_IterateExpCS)
 
-@given(instance=ocl::cst::IteratorExpCS_strategy)
+@given(instance=ocl_cst_IteratorExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::iteratorexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::IteratorExpCS)
+def test_ocl_cst_iteratorexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_IteratorExpCS)
 
 @given(instance=FeatureCallExpCS_strategy)
 @settings(max_examples=50)
 def test_featurecallexpcs_instantiation(instance):
     assert isinstance(instance, FeatureCallExpCS)
 
-@given(instance=ocl::cst::OperationCallExpCS_strategy)
+@given(instance=ocl_cst_OperationCallExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::operationcallexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::OperationCallExpCS)
+def test_ocl_cst_operationcallexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_OperationCallExpCS)
 
 @given(instance=CallExpCS_strategy)
 @settings(max_examples=50)
 def test_callexpcs_instantiation(instance):
     assert isinstance(instance, CallExpCS)
 
-@given(instance=ocl::cst::FeatureCallExpCS_strategy)
+@given(instance=ocl_cst_FeatureCallExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::featurecallexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::FeatureCallExpCS)
+def test_ocl_cst_featurecallexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_FeatureCallExpCS)
 
-@given(instance=ocl::cst::LoopExpCS_strategy)
+@given(instance=ocl_cst_LoopExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::loopexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::LoopExpCS)
+def test_ocl_cst_loopexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_LoopExpCS)
 
 @given(instance=PrimitiveLiteralExpCS_strategy)
 @settings(max_examples=50)
 def test_primitiveliteralexpcs_instantiation(instance):
     assert isinstance(instance, PrimitiveLiteralExpCS)
 
-@given(instance=ocl::cst::BooleanLiteralExpCS_strategy)
+@given(instance=ocl_cst_RealLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::booleanliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::BooleanLiteralExpCS)
-
-@given(instance=ocl::cst::BooleanLiteralExpCS_strategy)
-def test_ocl::cst::booleanliteralexpcs_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
+def test_ocl_cst_realliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_RealLiteralExpCS)
 
 
-@given(instance=ocl::cst::BooleanLiteralExpCS_strategy)
-def test_ocl::cst::booleanliteralexpcs_booleanSymbol_setter(instance):
-    original = instance.booleanSymbol
-    instance.booleanSymbol = original
-    assert instance.booleanSymbol == original
 
-@given(instance=ocl::cst::RealLiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::realliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::RealLiteralExpCS)
-
-@given(instance=ocl::cst::RealLiteralExpCS_strategy)
-def test_ocl::cst::realliteralexpcs_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
-
-
-@given(instance=ocl::cst::RealLiteralExpCS_strategy)
-def test_ocl::cst::realliteralexpcs_realSymbol_setter(instance):
+@given(instance=ocl_cst_RealLiteralExpCS_strategy)
+def test_ocl_cst_realliteralexpcs_realSymbol_setter(instance):
     original = instance.realSymbol
     instance.realSymbol = original
     assert instance.realSymbol == original
 
-@given(instance=ocl::cst::StringLiteralExpCS_strategy)
+@given(instance=ocl_cst_StringLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::stringliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::StringLiteralExpCS)
-
-@given(instance=ocl::cst::StringLiteralExpCS_strategy)
-def test_ocl::cst::stringliteralexpcs_unescapedStringSymbol_type(instance):
-    assert isinstance(instance.unescapedStringSymbol, str)
+def test_ocl_cst_stringliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_StringLiteralExpCS)
 
 
-@given(instance=ocl::cst::StringLiteralExpCS_strategy)
-def test_ocl::cst::stringliteralexpcs_unescapedStringSymbol_setter(instance):
-    original = instance.unescapedStringSymbol
-    instance.unescapedStringSymbol = original
-    assert instance.unescapedStringSymbol == original
 
-@given(instance=ocl::cst::StringLiteralExpCS_strategy)
-def test_ocl::cst::stringliteralexpcs_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
-
-
-@given(instance=ocl::cst::StringLiteralExpCS_strategy)
-def test_ocl::cst::stringliteralexpcs_stringSymbol_setter(instance):
+@given(instance=ocl_cst_StringLiteralExpCS_strategy)
+def test_ocl_cst_stringliteralexpcs_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
 
-@given(instance=ocl::cst::UnlimitedNaturalLiteralExpCS_strategy)
+
+
+@given(instance=ocl_cst_StringLiteralExpCS_strategy)
+def test_ocl_cst_stringliteralexpcs_unescapedStringSymbol_setter(instance):
+    original = instance.unescapedStringSymbol
+    instance.unescapedStringSymbol = original
+    assert instance.unescapedStringSymbol == original
+
+@given(instance=ocl_cst_BooleanLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::unlimitednaturalliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::UnlimitedNaturalLiteralExpCS)
-
-@given(instance=ocl::cst::UnlimitedNaturalLiteralExpCS_strategy)
-def test_ocl::cst::unlimitednaturalliteralexpcs_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_ocl_cst_booleanliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_BooleanLiteralExpCS)
 
 
-@given(instance=ocl::cst::UnlimitedNaturalLiteralExpCS_strategy)
-def test_ocl::cst::unlimitednaturalliteralexpcs_integerSymbol_setter(instance):
+
+@given(instance=ocl_cst_BooleanLiteralExpCS_strategy)
+def test_ocl_cst_booleanliteralexpcs_booleanSymbol_setter(instance):
+    original = instance.booleanSymbol
+    instance.booleanSymbol = original
+    assert instance.booleanSymbol == original
+
+@given(instance=ocl_cst_UnlimitedNaturalLiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_unlimitednaturalliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_UnlimitedNaturalLiteralExpCS)
+
+
+
+@given(instance=ocl_cst_UnlimitedNaturalLiteralExpCS_strategy)
+def test_ocl_cst_unlimitednaturalliteralexpcs_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
 
-@given(instance=ocl::cst::IntegerLiteralExpCS_strategy)
+@given(instance=ocl_cst_IntegerLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::integerliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::IntegerLiteralExpCS)
-
-@given(instance=ocl::cst::IntegerLiteralExpCS_strategy)
-def test_ocl::cst::integerliteralexpcs_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_ocl_cst_integerliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_IntegerLiteralExpCS)
 
 
-@given(instance=ocl::cst::IntegerLiteralExpCS_strategy)
-def test_ocl::cst::integerliteralexpcs_integerSymbol_setter(instance):
+
+@given(instance=ocl_cst_IntegerLiteralExpCS_strategy)
+def test_ocl_cst_integerliteralexpcs_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
@@ -1893,89 +1875,77 @@ def test_ocl::cst::integerliteralexpcs_integerSymbol_setter(instance):
 def test_collectionliteralpartcs_instantiation(instance):
     assert isinstance(instance, CollectionLiteralPartCS)
 
-@given(instance=ocl::cst::CollectionRangeCS_strategy)
+@given(instance=ocl_cst_CollectionRangeCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::collectionrangecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::CollectionRangeCS)
+def test_ocl_cst_collectionrangecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_CollectionRangeCS)
 
 @given(instance=LiteralExpCS_strategy)
 @settings(max_examples=50)
 def test_literalexpcs_instantiation(instance):
     assert isinstance(instance, LiteralExpCS)
 
-@given(instance=ocl::cst::NullLiteralExpCS_strategy)
+@given(instance=ocl_cst_InvalidLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::nullliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::NullLiteralExpCS)
-
-@given(instance=ocl::cst::NullLiteralExpCS_strategy)
-def test_ocl::cst::nullliteralexpcs_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_ocl_cst_invalidliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_InvalidLiteralExpCS)
 
 
-@given(instance=ocl::cst::NullLiteralExpCS_strategy)
-def test_ocl::cst::nullliteralexpcs_symbol_setter(instance):
+
+@given(instance=ocl_cst_InvalidLiteralExpCS_strategy)
+def test_ocl_cst_invalidliteralexpcs_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=ocl::cst::CollectionLiteralExpCS_strategy)
+@given(instance=ocl_cst_CollectionLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::collectionliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::CollectionLiteralExpCS)
-
-@given(instance=ocl::cst::CollectionLiteralExpCS_strategy)
-def test_ocl::cst::collectionliteralexpcs_collectionType_type(instance):
-    assert isinstance(instance.collectionType, str)
+def test_ocl_cst_collectionliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_CollectionLiteralExpCS)
 
 
-@given(instance=ocl::cst::CollectionLiteralExpCS_strategy)
-def test_ocl::cst::collectionliteralexpcs_collectionType_setter(instance):
+
+@given(instance=ocl_cst_CollectionLiteralExpCS_strategy)
+def test_ocl_cst_collectionliteralexpcs_collectionType_setter(instance):
     original = instance.collectionType
     instance.collectionType = original
     assert instance.collectionType == original
 
-@given(instance=ocl::cst::PrimitiveLiteralExpCS_strategy)
+@given(instance=ocl_cst_NullLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::primitiveliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::PrimitiveLiteralExpCS)
-
-@given(instance=ocl::cst::PrimitiveLiteralExpCS_strategy)
-def test_ocl::cst::primitiveliteralexpcs_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_ocl_cst_nullliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_NullLiteralExpCS)
 
 
-@given(instance=ocl::cst::PrimitiveLiteralExpCS_strategy)
-def test_ocl::cst::primitiveliteralexpcs_symbol_setter(instance):
+
+@given(instance=ocl_cst_NullLiteralExpCS_strategy)
+def test_ocl_cst_nullliteralexpcs_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=ocl::cst::TupleLiteralExpCS_strategy)
+@given(instance=ocl_cst_TupleLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::tupleliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::TupleLiteralExpCS)
+def test_ocl_cst_tupleliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_TupleLiteralExpCS)
 
-@given(instance=ocl::cst::InvalidLiteralExpCS_strategy)
+@given(instance=ocl_cst_PrimitiveLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::invalidliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::InvalidLiteralExpCS)
-
-@given(instance=ocl::cst::InvalidLiteralExpCS_strategy)
-def test_ocl::cst::invalidliteralexpcs_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_ocl_cst_primitiveliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_PrimitiveLiteralExpCS)
 
 
-@given(instance=ocl::cst::InvalidLiteralExpCS_strategy)
-def test_ocl::cst::invalidliteralexpcs_symbol_setter(instance):
+
+@given(instance=ocl_cst_PrimitiveLiteralExpCS_strategy)
+def test_ocl_cst_primitiveliteralexpcs_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=ocl::cst::EnumLiteralExpCS_strategy)
+@given(instance=ocl_cst_EnumLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::enumliteralexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::EnumLiteralExpCS)
+def test_ocl_cst_enumliteralexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_EnumLiteralExpCS)
 
 @given(instance=OCLMessageArgCS_strategy)
 @settings(max_examples=50)
@@ -1987,20 +1957,20 @@ def test_oclmessageargcs_instantiation(instance):
 def test_defexpressioncs_instantiation(instance):
     assert isinstance(instance, DefExpressionCS)
 
-@given(instance=cst::TypeCS_strategy)
+@given(instance=cst_TypeCS_strategy)
 @settings(max_examples=50)
-def test_cst::typecs_instantiation(instance):
-    assert isinstance(instance, cst::TypeCS)
+def test_cst_typecs_instantiation(instance):
+    assert isinstance(instance, cst_TypeCS)
 
-@given(instance=cst::SimpleNameCS_strategy)
+@given(instance=cst_SimpleNameCS_strategy)
 @settings(max_examples=50)
-def test_cst::simplenamecs_instantiation(instance):
-    assert isinstance(instance, cst::SimpleNameCS)
+def test_cst_simplenamecs_instantiation(instance):
+    assert isinstance(instance, cst_SimpleNameCS)
 
-@given(instance=ocl::cst::PrimitiveTypeCS_strategy)
+@given(instance=ocl_cst_PrimitiveTypeCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::primitivetypecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::PrimitiveTypeCS)
+def test_ocl_cst_primitivetypecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_PrimitiveTypeCS)
 
 @given(instance=IsMarkedPreCS_strategy)
 @settings(max_examples=50)
@@ -2012,15 +1982,15 @@ def test_ismarkedprecs_instantiation(instance):
 def test_invordefcs_instantiation(instance):
     assert isinstance(instance, InvOrDefCS)
 
-@given(instance=ocl::cst::InvCS_strategy)
+@given(instance=ocl_cst_InvCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::invcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::InvCS)
+def test_ocl_cst_invcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_InvCS)
 
-@given(instance=ocl::cst::DefCS_strategy)
+@given(instance=ocl_cst_DefCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::defcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::DefCS)
+def test_ocl_cst_defcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_DefCS)
 
 @given(instance=VariableCS_strategy)
 @settings(max_examples=50)
@@ -2047,267 +2017,237 @@ def test_pathnamecs_instantiation(instance):
 def test_cstnode_instantiation(instance):
     assert isinstance(instance, CSTNode)
 
-@given(instance=ocl::cst::OperationCS_strategy)
+@given(instance=ocl_cst_PrePostOrBodyDeclCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::operationcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::OperationCS)
-
-@given(instance=ocl::cst::IsMarkedPreCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::ismarkedprecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::IsMarkedPreCS)
-
-@given(instance=ocl::cst::IsMarkedPreCS_strategy)
-def test_ocl::cst::ismarkedprecs_pre_type(instance):
-    assert isinstance(instance.pre, bool)
+def test_ocl_cst_prepostorbodydeclcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_PrePostOrBodyDeclCS)
 
 
-@given(instance=ocl::cst::IsMarkedPreCS_strategy)
-def test_ocl::cst::ismarkedprecs_pre_setter(instance):
-    original = instance.pre
-    instance.pre = original
-    assert instance.pre == original
 
-@given(instance=ocl::cst::OCLDocumentCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::ocldocumentcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::OCLDocumentCS)
-
-@given(instance=ocl::cst::CollectionLiteralPartCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::collectionliteralpartcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::CollectionLiteralPartCS)
-
-@given(instance=ocl::cst::OCLMessageArgCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::oclmessageargcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::OCLMessageArgCS)
-
-@given(instance=ocl::cst::VariableCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::variablecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::VariableCS)
-
-@given(instance=ocl::cst::VariableCS_strategy)
-def test_ocl::cst::variablecs_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ocl::cst::VariableCS_strategy)
-def test_ocl::cst::variablecs_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ocl::cst::DefExpressionCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::defexpressioncs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::DefExpressionCS)
-
-@given(instance=ocl::cst::PrePostOrBodyDeclCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::prepostorbodydeclcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::PrePostOrBodyDeclCS)
-
-@given(instance=ocl::cst::PrePostOrBodyDeclCS_strategy)
-def test_ocl::cst::prepostorbodydeclcs_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=ocl::cst::PrePostOrBodyDeclCS_strategy)
-def test_ocl::cst::prepostorbodydeclcs_kind_setter(instance):
+@given(instance=ocl_cst_PrePostOrBodyDeclCS_strategy)
+def test_ocl_cst_prepostorbodydeclcs_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=ocl::cst::InvOrDefCS_strategy)
+@given(instance=ocl_cst_DefExpressionCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::invordefcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::InvOrDefCS)
+def test_ocl_cst_defexpressioncs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_DefExpressionCS)
 
-@given(instance=ocl::cst::PackageDeclarationCS_strategy)
+@given(instance=ocl_cst_OperationCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::packagedeclarationcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::PackageDeclarationCS)
+def test_ocl_cst_operationcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_OperationCS)
 
-@given(instance=ocl::cst::InitOrDerValueCS_strategy)
+@given(instance=ocl_cst_OCLMessageArgCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::initordervaluecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::InitOrDerValueCS)
+def test_ocl_cst_oclmessageargcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_OCLMessageArgCS)
+
+@given(instance=ocl_cst_IsMarkedPreCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_ismarkedprecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_IsMarkedPreCS)
+
+
+
+@given(instance=ocl_cst_IsMarkedPreCS_strategy)
+def test_ocl_cst_ismarkedprecs_pre_setter(instance):
+    original = instance.pre
+    instance.pre = original
+    assert instance.pre == original
+
+@given(instance=ocl_cst_CollectionLiteralPartCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_collectionliteralpartcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_CollectionLiteralPartCS)
+
+@given(instance=ocl_cst_InvOrDefCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_invordefcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_InvOrDefCS)
+
+@given(instance=ocl_cst_OCLDocumentCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_ocldocumentcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_OCLDocumentCS)
+
+@given(instance=ocl_cst_VariableCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_variablecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_VariableCS)
+
+
+
+@given(instance=ocl_cst_VariableCS_strategy)
+def test_ocl_cst_variablecs_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=ocl_cst_PackageDeclarationCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_packagedeclarationcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_PackageDeclarationCS)
+
+@given(instance=ocl_cst_InitOrDerValueCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_initordervaluecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_InitOrDerValueCS)
 
 @given(instance=InitOrDerValueCS_strategy)
 @settings(max_examples=50)
 def test_initordervaluecs_instantiation(instance):
     assert isinstance(instance, InitOrDerValueCS)
 
-@given(instance=ocl::cst::InitValueCS_strategy)
+@given(instance=ocl_cst_InitValueCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::initvaluecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::InitValueCS)
+def test_ocl_cst_initvaluecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_InitValueCS)
 
-@given(instance=ocl::cst::DerValueCS_strategy)
+@given(instance=ocl_cst_DerValueCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::dervaluecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::DerValueCS)
+def test_ocl_cst_dervaluecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_DerValueCS)
 
 @given(instance=SimpleNameCS_strategy)
 @settings(max_examples=50)
 def test_simplenamecs_instantiation(instance):
     assert isinstance(instance, SimpleNameCS)
 
-@given(instance=ocl::cst::ContextDeclCS_strategy)
+@given(instance=ocl_cst_ContextDeclCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::contextdeclcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::ContextDeclCS)
+def test_ocl_cst_contextdeclcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_ContextDeclCS)
 
-@given(instance=ocl::cst::OCLExpressionCS_strategy)
+@given(instance=ocl_cst_OCLExpressionCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::oclexpressioncs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::OCLExpressionCS)
+def test_ocl_cst_oclexpressioncs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_OCLExpressionCS)
 
 @given(instance=OCLExpressionCS_strategy)
 @settings(max_examples=50)
 def test_oclexpressioncs_instantiation(instance):
     assert isinstance(instance, OCLExpressionCS)
 
-@given(instance=ocl::cst::CallExpCS_strategy)
+@given(instance=ocl_cst_LiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::callexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::CallExpCS)
+def test_ocl_cst_literalexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_LiteralExpCS)
 
-@given(instance=ocl::cst::CallExpCS_strategy)
-def test_ocl::cst::callexpcs_accessor_type(instance):
-    assert isinstance(instance.accessor, str)
-
-
-@given(instance=ocl::cst::CallExpCS_strategy)
-def test_ocl::cst::callexpcs_accessor_setter(instance):
-    original = instance.accessor
-    instance.accessor = original
-    assert instance.accessor == original
-
-@given(instance=ocl::cst::LiteralExpCS_strategy)
+@given(instance=ocl_cst_SimpleNameCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::literalexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::LiteralExpCS)
-
-@given(instance=ocl::cst::IfExpCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::ifexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::IfExpCS)
-
-@given(instance=ocl::cst::MessageExpCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::messageexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::MessageExpCS)
-
-@given(instance=ocl::cst::MessageExpCS_strategy)
-def test_ocl::cst::messageexpcs_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_ocl_cst_simplenamecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_SimpleNameCS)
 
 
-@given(instance=ocl::cst::MessageExpCS_strategy)
-def test_ocl::cst::messageexpcs_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
 
-@given(instance=ocl::cst::VariableExpCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::variableexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::VariableExpCS)
-
-@given(instance=ocl::cst::LetExpCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::letexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::LetExpCS)
-
-@given(instance=ocl::cst::SimpleNameCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::simplenamecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::SimpleNameCS)
-
-@given(instance=ocl::cst::SimpleNameCS_strategy)
-def test_ocl::cst::simplenamecs_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=ocl::cst::SimpleNameCS_strategy)
-def test_ocl::cst::simplenamecs_type_setter(instance):
+@given(instance=ocl_cst_SimpleNameCS_strategy)
+def test_ocl_cst_simplenamecs_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ocl::cst::SimpleNameCS_strategy)
-def test_ocl::cst::simplenamecs_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=ocl::cst::SimpleNameCS_strategy)
-def test_ocl::cst::simplenamecs_value_setter(instance):
+@given(instance=ocl_cst_SimpleNameCS_strategy)
+def test_ocl_cst_simplenamecs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ocl::cst::TypeCS_strategy)
+@given(instance=ocl_cst_MessageExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::typecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::TypeCS)
+def test_ocl_cst_messageexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_MessageExpCS)
+
+
+
+@given(instance=ocl_cst_MessageExpCS_strategy)
+def test_ocl_cst_messageexpcs_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=ocl_cst_IfExpCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_ifexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_IfExpCS)
+
+@given(instance=ocl_cst_VariableExpCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_variableexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_VariableExpCS)
+
+@given(instance=ocl_cst_CallExpCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_callexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_CallExpCS)
+
+
+
+@given(instance=ocl_cst_CallExpCS_strategy)
+def test_ocl_cst_callexpcs_accessor_setter(instance):
+    original = instance.accessor
+    instance.accessor = original
+    assert instance.accessor == original
+
+@given(instance=ocl_cst_LetExpCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_letexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_LetExpCS)
+
+@given(instance=ocl_cst_TypeCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_typecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_TypeCS)
 
 @given(instance=TypeCS_strategy)
 @settings(max_examples=50)
 def test_typecs_instantiation(instance):
     assert isinstance(instance, TypeCS)
 
-@given(instance=ocl::cst::TupleTypeCS_strategy)
+@given(instance=ocl_cst_CollectionTypeCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::tupletypecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::TupleTypeCS)
-
-@given(instance=ocl::cst::StateExpCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::stateexpcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::StateExpCS)
-
-@given(instance=ocl::cst::StateExpCS_strategy)
-def test_ocl::cst::stateexpcs_sequenceOfNames_type(instance):
-    assert isinstance(instance.sequenceOfNames, str)
+def test_ocl_cst_collectiontypecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_CollectionTypeCS)
 
 
-@given(instance=ocl::cst::StateExpCS_strategy)
-def test_ocl::cst::stateexpcs_sequenceOfNames_setter(instance):
-    original = instance.sequenceOfNames
-    instance.sequenceOfNames = original
-    assert instance.sequenceOfNames == original
 
-@given(instance=ocl::cst::CollectionTypeCS_strategy)
-@settings(max_examples=50)
-def test_ocl::cst::collectiontypecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::CollectionTypeCS)
-
-@given(instance=ocl::cst::CollectionTypeCS_strategy)
-def test_ocl::cst::collectiontypecs_collectionTypeIdentifier_type(instance):
-    assert isinstance(instance.collectionTypeIdentifier, str)
-
-
-@given(instance=ocl::cst::CollectionTypeCS_strategy)
-def test_ocl::cst::collectiontypecs_collectionTypeIdentifier_setter(instance):
+@given(instance=ocl_cst_CollectionTypeCS_strategy)
+def test_ocl_cst_collectiontypecs_collectionTypeIdentifier_setter(instance):
     original = instance.collectionTypeIdentifier
     instance.collectionTypeIdentifier = original
     assert instance.collectionTypeIdentifier == original
 
-@given(instance=ocl::cst::PathNameCS_strategy)
+@given(instance=ocl_cst_StateExpCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::pathnamecs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::PathNameCS)
-
-@given(instance=ocl::cst::PathNameCS_strategy)
-def test_ocl::cst::pathnamecs_sequenceOfNames_type(instance):
-    assert isinstance(instance.sequenceOfNames, str)
+def test_ocl_cst_stateexpcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_StateExpCS)
 
 
-@given(instance=ocl::cst::PathNameCS_strategy)
-def test_ocl::cst::pathnamecs_sequenceOfNames_setter(instance):
+
+@given(instance=ocl_cst_StateExpCS_strategy)
+def test_ocl_cst_stateexpcs_sequenceOfNames_setter(instance):
+    original = instance.sequenceOfNames
+    instance.sequenceOfNames = original
+    assert instance.sequenceOfNames == original
+
+@given(instance=ocl_cst_TupleTypeCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_tupletypecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_TupleTypeCS)
+
+@given(instance=ocl_cst_PathNameCS_strategy)
+@settings(max_examples=50)
+def test_ocl_cst_pathnamecs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_PathNameCS)
+
+
+
+@given(instance=ocl_cst_PathNameCS_strategy)
+def test_ocl_cst_pathnamecs_sequenceOfNames_setter(instance):
     original = instance.sequenceOfNames
     instance.sequenceOfNames = original
     assert instance.sequenceOfNames == original
@@ -2322,77 +2262,62 @@ def test_packagedeclarationcs_instantiation(instance):
 def test_contextdeclcs_instantiation(instance):
     assert isinstance(instance, ContextDeclCS)
 
-@given(instance=ocl::cst::OperationContextDeclCS_strategy)
+@given(instance=ocl_cst_OperationContextDeclCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::operationcontextdeclcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::OperationContextDeclCS)
+def test_ocl_cst_operationcontextdeclcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_OperationContextDeclCS)
 
-@given(instance=ocl::cst::ClassifierContextDeclCS_strategy)
+@given(instance=ocl_cst_ClassifierContextDeclCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::classifiercontextdeclcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::ClassifierContextDeclCS)
+def test_ocl_cst_classifiercontextdeclcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_ClassifierContextDeclCS)
 
-@given(instance=ocl::cst::PropertyContextCS_strategy)
+@given(instance=ocl_cst_PropertyContextCS_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::propertycontextcs_instantiation(instance):
-    assert isinstance(instance, ocl::cst::PropertyContextCS)
+def test_ocl_cst_propertycontextcs_instantiation(instance):
+    assert isinstance(instance, ocl_cst_PropertyContextCS)
 
-@given(instance=ocl::cst::CSTNode_strategy)
+@given(instance=ocl_cst_CSTNode_strategy)
 @settings(max_examples=50)
-def test_ocl::cst::cstnode_instantiation(instance):
-    assert isinstance(instance, ocl::cst::CSTNode)
-
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_endOffset_type(instance):
-    assert isinstance(instance.endOffset, int)
+def test_ocl_cst_cstnode_instantiation(instance):
+    assert isinstance(instance, ocl_cst_CSTNode)
 
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_endOffset_setter(instance):
+
+@given(instance=ocl_cst_CSTNode_strategy)
+def test_ocl_cst_cstnode_startOffset_setter(instance):
+    original = instance.startOffset
+    instance.startOffset = original
+    assert instance.startOffset == original
+
+
+
+@given(instance=ocl_cst_CSTNode_strategy)
+def test_ocl_cst_cstnode_endOffset_setter(instance):
     original = instance.endOffset
     instance.endOffset = original
     assert instance.endOffset == original
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_ast_type(instance):
-    assert isinstance(instance.ast, str)
 
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_ast_setter(instance):
+@given(instance=ocl_cst_CSTNode_strategy)
+def test_ocl_cst_cstnode_ast_setter(instance):
     original = instance.ast
     instance.ast = original
     assert instance.ast == original
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_endToken_type(instance):
-    assert isinstance(instance.endToken, str)
 
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_endToken_setter(instance):
-    original = instance.endToken
-    instance.endToken = original
-    assert instance.endToken == original
-
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_startToken_type(instance):
-    assert isinstance(instance.startToken, str)
-
-
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_startToken_setter(instance):
+@given(instance=ocl_cst_CSTNode_strategy)
+def test_ocl_cst_cstnode_startToken_setter(instance):
     original = instance.startToken
     instance.startToken = original
     assert instance.startToken == original
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_startOffset_type(instance):
-    assert isinstance(instance.startOffset, int)
 
 
-@given(instance=ocl::cst::CSTNode_strategy)
-def test_ocl::cst::cstnode_startOffset_setter(instance):
-    original = instance.startOffset
-    instance.startOffset = original
-    assert instance.startOffset == original
+@given(instance=ocl_cst_CSTNode_strategy)
+def test_ocl_cst_cstnode_endToken_setter(instance):
+    original = instance.endToken
+    instance.endToken = original
+    assert instance.endToken == original

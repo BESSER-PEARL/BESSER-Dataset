@@ -3,55 +3,55 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    webapp::Attribute,
+from python_code import (
+    webapp_Attribute,
     Instruction,
-    webapp::Text,
-    webapp::Tag,
+    webapp_Text,
+    webapp_Tag,
     Tag,
-    webapp::Td,
-    webapp::Th,
-    webapp::Messages,
-    webapp::Form,
-    webapp::Instruction,
-    webapp::Tr,
-    webapp::TableHTML,
-    webapp::Field,
-    webapp::Input,
-    webapp::OnUpdate,
-    webapp::OnDelete,
-    webapp::ForeignKey,
-    webapp::Check,
-    webapp::Unique,
-    webapp::PrimaryKey,
-    webapp::Detail,
-    webapp::Constraint,
-    webapp::Column,
-    webapp::BusinessObject,
-    webapp::Table,
-    webapp::Navigation,
-    webapp::Page,
-    webapp::Resource,
-    webapp::Controller,
-    webapp::Mapping,
-    webapp::Properties,
-    webapp::File,
-    webapp::Image,
-    webapp::Action,
-    webapp::Validator,
-    webapp::Model,
-    webapp::View,
-    webapp::Library,
-    webapp::WebConfig,
-    webapp::AppConfig,
-    webapp::WebApp,
-    ColumnType,
+    webapp_Td,
+    webapp_Messages,
+    webapp_Th,
+    webapp_Form,
+    webapp_Instruction,
+    webapp_Tr,
+    webapp_TableHTML,
+    webapp_Field,
+    webapp_Input,
+    webapp_OnUpdate,
+    webapp_OnDelete,
+    webapp_ForeignKey,
+    webapp_Check,
+    webapp_Unique,
+    webapp_PrimaryKey,
+    webapp_Detail,
+    webapp_Constraint,
+    webapp_Column,
+    webapp_BusinessObject,
+    webapp_Table,
+    webapp_Navigation,
+    webapp_Page,
+    webapp_Resource,
+    webapp_Controller,
+    webapp_Mapping,
+    webapp_Properties,
+    webapp_File,
+    webapp_Image,
+    webapp_Action,
+    webapp_Validator,
+    webapp_Model,
+    webapp_View,
+    webapp_Library,
+    webapp_WebConfig,
+    webapp_AppConfig,
+    webapp_WebApp,
+    InputType,
     Behavior,
     Charset,
+    ColumnType,
     FormMethod,
-    InputType,
 )
 
 # =============================================================================
@@ -60,35 +60,35 @@ from classes import (
 
 
 
-def test_webapp::attribute_is_not_abstract():
-    assert not inspect.isabstract(webapp::Attribute)
+def test_webapp_attribute_is_not_abstract():
+    assert not inspect.isabstract(webapp_Attribute)
 
 
-def test_webapp::attribute_constructor_exists():
-    assert callable(webapp::Attribute.__init__)
+def test_webapp_attribute_constructor_exists():
+    assert callable(webapp_Attribute.__init__)
 
 
-def test_webapp::attribute_constructor_args():
-    sig = inspect.signature(webapp::Attribute.__init__)
+def test_webapp_attribute_constructor_args():
+    sig = inspect.signature(webapp_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::attribute_has_name():
-    assert hasattr(webapp::Attribute, "name")
+def test_webapp_attribute_has_value():
+    assert hasattr(webapp_Attribute, "value")
     descriptor = None
-    for klass in webapp::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in webapp_Attribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::attribute_has_value():
-    assert hasattr(webapp::Attribute, "value")
+def test_webapp_attribute_has_name():
+    assert hasattr(webapp_Attribute, "name")
     descriptor = None
-    for klass in webapp::Attribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in webapp_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -108,23 +108,23 @@ def test_instruction_constructor_args():
 
 
 
-def test_webapp::text_is_not_abstract():
-    assert not inspect.isabstract(webapp::Text)
+def test_webapp_text_is_not_abstract():
+    assert not inspect.isabstract(webapp_Text)
 
 
-def test_webapp::text_constructor_exists():
-    assert callable(webapp::Text.__init__)
+def test_webapp_text_constructor_exists():
+    assert callable(webapp_Text.__init__)
 
 
-def test_webapp::text_constructor_args():
-    sig = inspect.signature(webapp::Text.__init__)
+def test_webapp_text_constructor_args():
+    sig = inspect.signature(webapp_Text.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_webapp::text_has_content():
-    assert hasattr(webapp::Text, "content")
+def test_webapp_text_has_content():
+    assert hasattr(webapp_Text, "content")
     descriptor = None
-    for klass in webapp::Text.__mro__:
+    for klass in webapp_Text.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -132,23 +132,23 @@ def test_webapp::text_has_content():
 
 
 
-def test_webapp::tag_is_not_abstract():
-    assert not inspect.isabstract(webapp::Tag)
+def test_webapp_tag_is_not_abstract():
+    assert not inspect.isabstract(webapp_Tag)
 
 
-def test_webapp::tag_constructor_exists():
-    assert callable(webapp::Tag.__init__)
+def test_webapp_tag_constructor_exists():
+    assert callable(webapp_Tag.__init__)
 
 
-def test_webapp::tag_constructor_args():
-    sig = inspect.signature(webapp::Tag.__init__)
+def test_webapp_tag_constructor_args():
+    sig = inspect.signature(webapp_Tag.__init__)
     params = list(sig.parameters.keys())
     assert "_property" in params, "Missing parameter '_property'"
 
-def test_webapp::tag_has__property():
-    assert hasattr(webapp::Tag, "_property")
+def test_webapp_tag_has__property():
+    assert hasattr(webapp_Tag, "_property")
     descriptor = None
-    for klass in webapp::Tag.__mro__:
+    for klass in webapp_Tag.__mro__:
         if "_property" in klass.__dict__:
             descriptor = klass.__dict__["_property"]
             break
@@ -170,65 +170,65 @@ def test_tag_constructor_args():
 
 
 
-def test_webapp::td_is_not_abstract():
-    assert not inspect.isabstract(webapp::Td)
+def test_webapp_td_is_not_abstract():
+    assert not inspect.isabstract(webapp_Td)
 
 
-def test_webapp::td_constructor_exists():
-    assert callable(webapp::Td.__init__)
+def test_webapp_td_constructor_exists():
+    assert callable(webapp_Td.__init__)
 
 
-def test_webapp::td_constructor_args():
-    sig = inspect.signature(webapp::Td.__init__)
+def test_webapp_td_constructor_args():
+    sig = inspect.signature(webapp_Td.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::th_is_not_abstract():
-    assert not inspect.isabstract(webapp::Th)
+def test_webapp_messages_is_not_abstract():
+    assert not inspect.isabstract(webapp_Messages)
 
 
-def test_webapp::th_constructor_exists():
-    assert callable(webapp::Th.__init__)
+def test_webapp_messages_constructor_exists():
+    assert callable(webapp_Messages.__init__)
 
 
-def test_webapp::th_constructor_args():
-    sig = inspect.signature(webapp::Th.__init__)
+def test_webapp_messages_constructor_args():
+    sig = inspect.signature(webapp_Messages.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::messages_is_not_abstract():
-    assert not inspect.isabstract(webapp::Messages)
+def test_webapp_th_is_not_abstract():
+    assert not inspect.isabstract(webapp_Th)
 
 
-def test_webapp::messages_constructor_exists():
-    assert callable(webapp::Messages.__init__)
+def test_webapp_th_constructor_exists():
+    assert callable(webapp_Th.__init__)
 
 
-def test_webapp::messages_constructor_args():
-    sig = inspect.signature(webapp::Messages.__init__)
+def test_webapp_th_constructor_args():
+    sig = inspect.signature(webapp_Th.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::form_is_not_abstract():
-    assert not inspect.isabstract(webapp::Form)
+def test_webapp_form_is_not_abstract():
+    assert not inspect.isabstract(webapp_Form)
 
 
-def test_webapp::form_constructor_exists():
-    assert callable(webapp::Form.__init__)
+def test_webapp_form_constructor_exists():
+    assert callable(webapp_Form.__init__)
 
 
-def test_webapp::form_constructor_args():
-    sig = inspect.signature(webapp::Form.__init__)
+def test_webapp_form_constructor_args():
+    sig = inspect.signature(webapp_Form.__init__)
     params = list(sig.parameters.keys())
     assert "method" in params, "Missing parameter 'method'"
 
-def test_webapp::form_has_method():
-    assert hasattr(webapp::Form, "method")
+def test_webapp_form_has_method():
+    assert hasattr(webapp_Form, "method")
     descriptor = None
-    for klass in webapp::Form.__mro__:
+    for klass in webapp_Form.__mro__:
         if "method" in klass.__dict__:
             descriptor = klass.__dict__["method"]
             break
@@ -236,109 +236,85 @@ def test_webapp::form_has_method():
 
 
 
-def test_webapp::instruction_is_not_abstract():
-    assert not inspect.isabstract(webapp::Instruction)
+def test_webapp_instruction_is_not_abstract():
+    assert not inspect.isabstract(webapp_Instruction)
 
 
-def test_webapp::instruction_constructor_exists():
-    assert callable(webapp::Instruction.__init__)
+def test_webapp_instruction_constructor_exists():
+    assert callable(webapp_Instruction.__init__)
 
 
-def test_webapp::instruction_constructor_args():
-    sig = inspect.signature(webapp::Instruction.__init__)
+def test_webapp_instruction_constructor_args():
+    sig = inspect.signature(webapp_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::tr_is_not_abstract():
-    assert not inspect.isabstract(webapp::Tr)
+def test_webapp_tr_is_not_abstract():
+    assert not inspect.isabstract(webapp_Tr)
 
 
-def test_webapp::tr_constructor_exists():
-    assert callable(webapp::Tr.__init__)
+def test_webapp_tr_constructor_exists():
+    assert callable(webapp_Tr.__init__)
 
 
-def test_webapp::tr_constructor_args():
-    sig = inspect.signature(webapp::Tr.__init__)
+def test_webapp_tr_constructor_args():
+    sig = inspect.signature(webapp_Tr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::tablehtml_is_not_abstract():
-    assert not inspect.isabstract(webapp::TableHTML)
+def test_webapp_tablehtml_is_not_abstract():
+    assert not inspect.isabstract(webapp_TableHTML)
 
 
-def test_webapp::tablehtml_constructor_exists():
-    assert callable(webapp::TableHTML.__init__)
+def test_webapp_tablehtml_constructor_exists():
+    assert callable(webapp_TableHTML.__init__)
 
 
-def test_webapp::tablehtml_constructor_args():
-    sig = inspect.signature(webapp::TableHTML.__init__)
+def test_webapp_tablehtml_constructor_args():
+    sig = inspect.signature(webapp_TableHTML.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::field_is_not_abstract():
-    assert not inspect.isabstract(webapp::Field)
+def test_webapp_field_is_not_abstract():
+    assert not inspect.isabstract(webapp_Field)
 
 
-def test_webapp::field_constructor_exists():
-    assert callable(webapp::Field.__init__)
+def test_webapp_field_constructor_exists():
+    assert callable(webapp_Field.__init__)
 
 
-def test_webapp::field_constructor_args():
-    sig = inspect.signature(webapp::Field.__init__)
+def test_webapp_field_constructor_args():
+    sig = inspect.signature(webapp_Field.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_webapp::field_has_name():
-    assert hasattr(webapp::Field, "name")
+def test_webapp_field_has_name():
+    assert hasattr(webapp_Field, "name")
     descriptor = None
-    for klass in webapp::Field.__mro__:
+    for klass in webapp_Field.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::field_has_type():
-    assert hasattr(webapp::Field, "type")
+def test_webapp_field_has_defaultValue():
+    assert hasattr(webapp_Field, "defaultValue")
     descriptor = None
-    for klass in webapp::Field.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::field_has_defaultValue():
-    assert hasattr(webapp::Field, "defaultValue")
-    descriptor = None
-    for klass in webapp::Field.__mro__:
+    for klass in webapp_Field.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_webapp::input_is_not_abstract():
-    assert not inspect.isabstract(webapp::Input)
-
-
-def test_webapp::input_constructor_exists():
-    assert callable(webapp::Input.__init__)
-
-
-def test_webapp::input_constructor_args():
-    sig = inspect.signature(webapp::Input.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_webapp::input_has_type():
-    assert hasattr(webapp::Input, "type")
+def test_webapp_field_has_type():
+    assert hasattr(webapp_Field, "type")
     descriptor = None
-    for klass in webapp::Input.__mro__:
+    for klass in webapp_Field.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -346,23 +322,47 @@ def test_webapp::input_has_type():
 
 
 
-def test_webapp::onupdate_is_not_abstract():
-    assert not inspect.isabstract(webapp::OnUpdate)
+def test_webapp_input_is_not_abstract():
+    assert not inspect.isabstract(webapp_Input)
 
 
-def test_webapp::onupdate_constructor_exists():
-    assert callable(webapp::OnUpdate.__init__)
+def test_webapp_input_constructor_exists():
+    assert callable(webapp_Input.__init__)
 
 
-def test_webapp::onupdate_constructor_args():
-    sig = inspect.signature(webapp::OnUpdate.__init__)
+def test_webapp_input_constructor_args():
+    sig = inspect.signature(webapp_Input.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_webapp_input_has_type():
+    assert hasattr(webapp_Input, "type")
+    descriptor = None
+    for klass in webapp_Input.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_webapp_onupdate_is_not_abstract():
+    assert not inspect.isabstract(webapp_OnUpdate)
+
+
+def test_webapp_onupdate_constructor_exists():
+    assert callable(webapp_OnUpdate.__init__)
+
+
+def test_webapp_onupdate_constructor_args():
+    sig = inspect.signature(webapp_OnUpdate.__init__)
     params = list(sig.parameters.keys())
     assert "behavior" in params, "Missing parameter 'behavior'"
 
-def test_webapp::onupdate_has_behavior():
-    assert hasattr(webapp::OnUpdate, "behavior")
+def test_webapp_onupdate_has_behavior():
+    assert hasattr(webapp_OnUpdate, "behavior")
     descriptor = None
-    for klass in webapp::OnUpdate.__mro__:
+    for klass in webapp_OnUpdate.__mro__:
         if "behavior" in klass.__dict__:
             descriptor = klass.__dict__["behavior"]
             break
@@ -370,23 +370,23 @@ def test_webapp::onupdate_has_behavior():
 
 
 
-def test_webapp::ondelete_is_not_abstract():
-    assert not inspect.isabstract(webapp::OnDelete)
+def test_webapp_ondelete_is_not_abstract():
+    assert not inspect.isabstract(webapp_OnDelete)
 
 
-def test_webapp::ondelete_constructor_exists():
-    assert callable(webapp::OnDelete.__init__)
+def test_webapp_ondelete_constructor_exists():
+    assert callable(webapp_OnDelete.__init__)
 
 
-def test_webapp::ondelete_constructor_args():
-    sig = inspect.signature(webapp::OnDelete.__init__)
+def test_webapp_ondelete_constructor_args():
+    sig = inspect.signature(webapp_OnDelete.__init__)
     params = list(sig.parameters.keys())
     assert "behavior" in params, "Missing parameter 'behavior'"
 
-def test_webapp::ondelete_has_behavior():
-    assert hasattr(webapp::OnDelete, "behavior")
+def test_webapp_ondelete_has_behavior():
+    assert hasattr(webapp_OnDelete, "behavior")
     descriptor = None
-    for klass in webapp::OnDelete.__mro__:
+    for klass in webapp_OnDelete.__mro__:
         if "behavior" in klass.__dict__:
             descriptor = klass.__dict__["behavior"]
             break
@@ -394,37 +394,37 @@ def test_webapp::ondelete_has_behavior():
 
 
 
-def test_webapp::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(webapp::ForeignKey)
+def test_webapp_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(webapp_ForeignKey)
 
 
-def test_webapp::foreignkey_constructor_exists():
-    assert callable(webapp::ForeignKey.__init__)
+def test_webapp_foreignkey_constructor_exists():
+    assert callable(webapp_ForeignKey.__init__)
 
 
-def test_webapp::foreignkey_constructor_args():
-    sig = inspect.signature(webapp::ForeignKey.__init__)
+def test_webapp_foreignkey_constructor_args():
+    sig = inspect.signature(webapp_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::check_is_not_abstract():
-    assert not inspect.isabstract(webapp::Check)
+def test_webapp_check_is_not_abstract():
+    assert not inspect.isabstract(webapp_Check)
 
 
-def test_webapp::check_constructor_exists():
-    assert callable(webapp::Check.__init__)
+def test_webapp_check_constructor_exists():
+    assert callable(webapp_Check.__init__)
 
 
-def test_webapp::check_constructor_args():
-    sig = inspect.signature(webapp::Check.__init__)
+def test_webapp_check_constructor_args():
+    sig = inspect.signature(webapp_Check.__init__)
     params = list(sig.parameters.keys())
     assert "expr" in params, "Missing parameter 'expr'"
 
-def test_webapp::check_has_expr():
-    assert hasattr(webapp::Check, "expr")
+def test_webapp_check_has_expr():
+    assert hasattr(webapp_Check, "expr")
     descriptor = None
-    for klass in webapp::Check.__mro__:
+    for klass in webapp_Check.__mro__:
         if "expr" in klass.__dict__:
             descriptor = klass.__dict__["expr"]
             break
@@ -432,183 +432,183 @@ def test_webapp::check_has_expr():
 
 
 
-def test_webapp::unique_is_not_abstract():
-    assert not inspect.isabstract(webapp::Unique)
+def test_webapp_unique_is_not_abstract():
+    assert not inspect.isabstract(webapp_Unique)
 
 
-def test_webapp::unique_constructor_exists():
-    assert callable(webapp::Unique.__init__)
+def test_webapp_unique_constructor_exists():
+    assert callable(webapp_Unique.__init__)
 
 
-def test_webapp::unique_constructor_args():
-    sig = inspect.signature(webapp::Unique.__init__)
+def test_webapp_unique_constructor_args():
+    sig = inspect.signature(webapp_Unique.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::primarykey_is_not_abstract():
-    assert not inspect.isabstract(webapp::PrimaryKey)
+def test_webapp_primarykey_is_not_abstract():
+    assert not inspect.isabstract(webapp_PrimaryKey)
 
 
-def test_webapp::primarykey_constructor_exists():
-    assert callable(webapp::PrimaryKey.__init__)
+def test_webapp_primarykey_constructor_exists():
+    assert callable(webapp_PrimaryKey.__init__)
 
 
-def test_webapp::primarykey_constructor_args():
-    sig = inspect.signature(webapp::PrimaryKey.__init__)
+def test_webapp_primarykey_constructor_args():
+    sig = inspect.signature(webapp_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::detail_is_not_abstract():
-    assert not inspect.isabstract(webapp::Detail)
+def test_webapp_detail_is_not_abstract():
+    assert not inspect.isabstract(webapp_Detail)
 
 
-def test_webapp::detail_constructor_exists():
-    assert callable(webapp::Detail.__init__)
+def test_webapp_detail_constructor_exists():
+    assert callable(webapp_Detail.__init__)
 
 
-def test_webapp::detail_constructor_args():
-    sig = inspect.signature(webapp::Detail.__init__)
+def test_webapp_detail_constructor_args():
+    sig = inspect.signature(webapp_Detail.__init__)
     params = list(sig.parameters.keys())
-    assert "scale" in params, "Missing parameter 'scale'"
     assert "precision" in params, "Missing parameter 'precision'"
+    assert "scale" in params, "Missing parameter 'scale'"
 
-def test_webapp::detail_has_scale():
-    assert hasattr(webapp::Detail, "scale")
+def test_webapp_detail_has_precision():
+    assert hasattr(webapp_Detail, "precision")
     descriptor = None
-    for klass in webapp::Detail.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::detail_has_precision():
-    assert hasattr(webapp::Detail, "precision")
-    descriptor = None
-    for klass in webapp::Detail.__mro__:
+    for klass in webapp_Detail.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
+def test_webapp_detail_has_scale():
+    assert hasattr(webapp_Detail, "scale")
+    descriptor = None
+    for klass in webapp_Detail.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_webapp::constraint_is_not_abstract():
-    assert not inspect.isabstract(webapp::Constraint)
+
+def test_webapp_constraint_is_not_abstract():
+    assert not inspect.isabstract(webapp_Constraint)
 
 
-def test_webapp::constraint_constructor_exists():
-    assert callable(webapp::Constraint.__init__)
+def test_webapp_constraint_constructor_exists():
+    assert callable(webapp_Constraint.__init__)
 
 
-def test_webapp::constraint_constructor_args():
-    sig = inspect.signature(webapp::Constraint.__init__)
+def test_webapp_constraint_constructor_args():
+    sig = inspect.signature(webapp_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::column_is_not_abstract():
-    assert not inspect.isabstract(webapp::Column)
+def test_webapp_column_is_not_abstract():
+    assert not inspect.isabstract(webapp_Column)
 
 
-def test_webapp::column_constructor_exists():
-    assert callable(webapp::Column.__init__)
+def test_webapp_column_constructor_exists():
+    assert callable(webapp_Column.__init__)
 
 
-def test_webapp::column_constructor_args():
-    sig = inspect.signature(webapp::Column.__init__)
+def test_webapp_column_constructor_args():
+    sig = inspect.signature(webapp_Column.__init__)
     params = list(sig.parameters.keys())
     assert "isNotNull" in params, "Missing parameter 'isNotNull'"
-    assert "size" in params, "Missing parameter 'size'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "useZeroFill" in params, "Missing parameter 'useZeroFill'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "size" in params, "Missing parameter 'size'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "useZeroFill" in params, "Missing parameter 'useZeroFill'"
 
-def test_webapp::column_has_isNotNull():
-    assert hasattr(webapp::Column, "isNotNull")
+def test_webapp_column_has_isNotNull():
+    assert hasattr(webapp_Column, "isNotNull")
     descriptor = None
-    for klass in webapp::Column.__mro__:
+    for klass in webapp_Column.__mro__:
         if "isNotNull" in klass.__dict__:
             descriptor = klass.__dict__["isNotNull"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::column_has_size():
-    assert hasattr(webapp::Column, "size")
+def test_webapp_column_has_name():
+    assert hasattr(webapp_Column, "name")
     descriptor = None
-    for klass in webapp::Column.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::column_has_name():
-    assert hasattr(webapp::Column, "name")
-    descriptor = None
-    for klass in webapp::Column.__mro__:
+    for klass in webapp_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::column_has_useZeroFill():
-    assert hasattr(webapp::Column, "useZeroFill")
+def test_webapp_column_has_type():
+    assert hasattr(webapp_Column, "type")
     descriptor = None
-    for klass in webapp::Column.__mro__:
-        if "useZeroFill" in klass.__dict__:
-            descriptor = klass.__dict__["useZeroFill"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::column_has_type():
-    assert hasattr(webapp::Column, "type")
-    descriptor = None
-    for klass in webapp::Column.__mro__:
+    for klass in webapp_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::column_has_defaultValue():
-    assert hasattr(webapp::Column, "defaultValue")
+def test_webapp_column_has_size():
+    assert hasattr(webapp_Column, "size")
     descriptor = None
-    for klass in webapp::Column.__mro__:
+    for klass in webapp_Column.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_column_has_defaultValue():
+    assert hasattr(webapp_Column, "defaultValue")
+    descriptor = None
+    for klass in webapp_Column.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
 
+def test_webapp_column_has_useZeroFill():
+    assert hasattr(webapp_Column, "useZeroFill")
+    descriptor = None
+    for klass in webapp_Column.__mro__:
+        if "useZeroFill" in klass.__dict__:
+            descriptor = klass.__dict__["useZeroFill"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_webapp::businessobject_is_not_abstract():
-    assert not inspect.isabstract(webapp::BusinessObject)
+
+def test_webapp_businessobject_is_not_abstract():
+    assert not inspect.isabstract(webapp_BusinessObject)
 
 
-def test_webapp::businessobject_constructor_exists():
-    assert callable(webapp::BusinessObject.__init__)
+def test_webapp_businessobject_constructor_exists():
+    assert callable(webapp_BusinessObject.__init__)
 
 
-def test_webapp::businessobject_constructor_args():
-    sig = inspect.signature(webapp::BusinessObject.__init__)
+def test_webapp_businessobject_constructor_args():
+    sig = inspect.signature(webapp_BusinessObject.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "package" in params, "Missing parameter 'package'"
 
-def test_webapp::businessobject_has_name():
-    assert hasattr(webapp::BusinessObject, "name")
+def test_webapp_businessobject_has_name():
+    assert hasattr(webapp_BusinessObject, "name")
     descriptor = None
-    for klass in webapp::BusinessObject.__mro__:
+    for klass in webapp_BusinessObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::businessobject_has_package():
-    assert hasattr(webapp::BusinessObject, "package")
+def test_webapp_businessobject_has_package():
+    assert hasattr(webapp_BusinessObject, "package")
     descriptor = None
-    for klass in webapp::BusinessObject.__mro__:
+    for klass in webapp_BusinessObject.__mro__:
         if "package" in klass.__dict__:
             descriptor = klass.__dict__["package"]
             break
@@ -616,57 +616,57 @@ def test_webapp::businessobject_has_package():
 
 
 
-def test_webapp::table_is_not_abstract():
-    assert not inspect.isabstract(webapp::Table)
+def test_webapp_table_is_not_abstract():
+    assert not inspect.isabstract(webapp_Table)
 
 
-def test_webapp::table_constructor_exists():
-    assert callable(webapp::Table.__init__)
+def test_webapp_table_constructor_exists():
+    assert callable(webapp_Table.__init__)
 
 
-def test_webapp::table_constructor_args():
-    sig = inspect.signature(webapp::Table.__init__)
+def test_webapp_table_constructor_args():
+    sig = inspect.signature(webapp_Table.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "charset" in params, "Missing parameter 'charset'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::table_has_name():
-    assert hasattr(webapp::Table, "name")
+def test_webapp_table_has_charset():
+    assert hasattr(webapp_Table, "charset")
     descriptor = None
-    for klass in webapp::Table.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::table_has_charset():
-    assert hasattr(webapp::Table, "charset")
-    descriptor = None
-    for klass in webapp::Table.__mro__:
+    for klass in webapp_Table.__mro__:
         if "charset" in klass.__dict__:
             descriptor = klass.__dict__["charset"]
             break
     assert isinstance(descriptor, property)
 
+def test_webapp_table_has_name():
+    assert hasattr(webapp_Table, "name")
+    descriptor = None
+    for klass in webapp_Table.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_webapp::navigation_is_not_abstract():
-    assert not inspect.isabstract(webapp::Navigation)
+
+def test_webapp_navigation_is_not_abstract():
+    assert not inspect.isabstract(webapp_Navigation)
 
 
-def test_webapp::navigation_constructor_exists():
-    assert callable(webapp::Navigation.__init__)
+def test_webapp_navigation_constructor_exists():
+    assert callable(webapp_Navigation.__init__)
 
 
-def test_webapp::navigation_constructor_args():
-    sig = inspect.signature(webapp::Navigation.__init__)
+def test_webapp_navigation_constructor_args():
+    sig = inspect.signature(webapp_Navigation.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_webapp::navigation_has_message():
-    assert hasattr(webapp::Navigation, "message")
+def test_webapp_navigation_has_message():
+    assert hasattr(webapp_Navigation, "message")
     descriptor = None
-    for klass in webapp::Navigation.__mro__:
+    for klass in webapp_Navigation.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -674,95 +674,95 @@ def test_webapp::navigation_has_message():
 
 
 
-def test_webapp::page_is_not_abstract():
-    assert not inspect.isabstract(webapp::Page)
+def test_webapp_page_is_not_abstract():
+    assert not inspect.isabstract(webapp_Page)
 
 
-def test_webapp::page_constructor_exists():
-    assert callable(webapp::Page.__init__)
+def test_webapp_page_constructor_exists():
+    assert callable(webapp_Page.__init__)
 
 
-def test_webapp::page_constructor_args():
-    sig = inspect.signature(webapp::Page.__init__)
+def test_webapp_page_constructor_args():
+    sig = inspect.signature(webapp_Page.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "isMain" in params, "Missing parameter 'isMain'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::page_has_name():
-    assert hasattr(webapp::Page, "name")
+def test_webapp_page_has_isMain():
+    assert hasattr(webapp_Page, "isMain")
     descriptor = None
-    for klass in webapp::Page.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::page_has_isMain():
-    assert hasattr(webapp::Page, "isMain")
-    descriptor = None
-    for klass in webapp::Page.__mro__:
+    for klass in webapp_Page.__mro__:
         if "isMain" in klass.__dict__:
             descriptor = klass.__dict__["isMain"]
             break
     assert isinstance(descriptor, property)
 
+def test_webapp_page_has_name():
+    assert hasattr(webapp_Page, "name")
+    descriptor = None
+    for klass in webapp_Page.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_webapp::resource_is_not_abstract():
-    assert not inspect.isabstract(webapp::Resource)
+
+def test_webapp_resource_is_not_abstract():
+    assert not inspect.isabstract(webapp_Resource)
 
 
-def test_webapp::resource_constructor_exists():
-    assert callable(webapp::Resource.__init__)
+def test_webapp_resource_constructor_exists():
+    assert callable(webapp_Resource.__init__)
 
 
-def test_webapp::resource_constructor_args():
-    sig = inspect.signature(webapp::Resource.__init__)
+def test_webapp_resource_constructor_args():
+    sig = inspect.signature(webapp_Resource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::controller_is_not_abstract():
-    assert not inspect.isabstract(webapp::Controller)
+def test_webapp_controller_is_not_abstract():
+    assert not inspect.isabstract(webapp_Controller)
 
 
-def test_webapp::controller_constructor_exists():
-    assert callable(webapp::Controller.__init__)
+def test_webapp_controller_constructor_exists():
+    assert callable(webapp_Controller.__init__)
 
 
-def test_webapp::controller_constructor_args():
-    sig = inspect.signature(webapp::Controller.__init__)
+def test_webapp_controller_constructor_args():
+    sig = inspect.signature(webapp_Controller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::mapping_is_not_abstract():
-    assert not inspect.isabstract(webapp::Mapping)
+def test_webapp_mapping_is_not_abstract():
+    assert not inspect.isabstract(webapp_Mapping)
 
 
-def test_webapp::mapping_constructor_exists():
-    assert callable(webapp::Mapping.__init__)
+def test_webapp_mapping_constructor_exists():
+    assert callable(webapp_Mapping.__init__)
 
 
-def test_webapp::mapping_constructor_args():
-    sig = inspect.signature(webapp::Mapping.__init__)
+def test_webapp_mapping_constructor_args():
+    sig = inspect.signature(webapp_Mapping.__init__)
     params = list(sig.parameters.keys())
     assert "left" in params, "Missing parameter 'left'"
     assert "right" in params, "Missing parameter 'right'"
 
-def test_webapp::mapping_has_left():
-    assert hasattr(webapp::Mapping, "left")
+def test_webapp_mapping_has_left():
+    assert hasattr(webapp_Mapping, "left")
     descriptor = None
-    for klass in webapp::Mapping.__mro__:
+    for klass in webapp_Mapping.__mro__:
         if "left" in klass.__dict__:
             descriptor = klass.__dict__["left"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::mapping_has_right():
-    assert hasattr(webapp::Mapping, "right")
+def test_webapp_mapping_has_right():
+    assert hasattr(webapp_Mapping, "right")
     descriptor = None
-    for klass in webapp::Mapping.__mro__:
+    for klass in webapp_Mapping.__mro__:
         if "right" in klass.__dict__:
             descriptor = klass.__dict__["right"]
             break
@@ -770,33 +770,33 @@ def test_webapp::mapping_has_right():
 
 
 
-def test_webapp::properties_is_not_abstract():
-    assert not inspect.isabstract(webapp::Properties)
+def test_webapp_properties_is_not_abstract():
+    assert not inspect.isabstract(webapp_Properties)
 
 
-def test_webapp::properties_constructor_exists():
-    assert callable(webapp::Properties.__init__)
+def test_webapp_properties_constructor_exists():
+    assert callable(webapp_Properties.__init__)
 
 
-def test_webapp::properties_constructor_args():
-    sig = inspect.signature(webapp::Properties.__init__)
+def test_webapp_properties_constructor_args():
+    sig = inspect.signature(webapp_Properties.__init__)
     params = list(sig.parameters.keys())
     assert "package" in params, "Missing parameter 'package'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::properties_has_package():
-    assert hasattr(webapp::Properties, "package")
+def test_webapp_properties_has_package():
+    assert hasattr(webapp_Properties, "package")
     descriptor = None
-    for klass in webapp::Properties.__mro__:
+    for klass in webapp_Properties.__mro__:
         if "package" in klass.__dict__:
             descriptor = klass.__dict__["package"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::properties_has_name():
-    assert hasattr(webapp::Properties, "name")
+def test_webapp_properties_has_name():
+    assert hasattr(webapp_Properties, "name")
     descriptor = None
-    for klass in webapp::Properties.__mro__:
+    for klass in webapp_Properties.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -804,95 +804,95 @@ def test_webapp::properties_has_name():
 
 
 
-def test_webapp::file_is_not_abstract():
-    assert not inspect.isabstract(webapp::File)
+def test_webapp_file_is_not_abstract():
+    assert not inspect.isabstract(webapp_File)
 
 
-def test_webapp::file_constructor_exists():
-    assert callable(webapp::File.__init__)
+def test_webapp_file_constructor_exists():
+    assert callable(webapp_File.__init__)
 
 
-def test_webapp::file_constructor_args():
-    sig = inspect.signature(webapp::File.__init__)
+def test_webapp_file_constructor_args():
+    sig = inspect.signature(webapp_File.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::image_is_not_abstract():
-    assert not inspect.isabstract(webapp::Image)
+def test_webapp_image_is_not_abstract():
+    assert not inspect.isabstract(webapp_Image)
 
 
-def test_webapp::image_constructor_exists():
-    assert callable(webapp::Image.__init__)
+def test_webapp_image_constructor_exists():
+    assert callable(webapp_Image.__init__)
 
 
-def test_webapp::image_constructor_args():
-    sig = inspect.signature(webapp::Image.__init__)
+def test_webapp_image_constructor_args():
+    sig = inspect.signature(webapp_Image.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::action_is_not_abstract():
-    assert not inspect.isabstract(webapp::Action)
+def test_webapp_action_is_not_abstract():
+    assert not inspect.isabstract(webapp_Action)
 
 
-def test_webapp::action_constructor_exists():
-    assert callable(webapp::Action.__init__)
+def test_webapp_action_constructor_exists():
+    assert callable(webapp_Action.__init__)
 
 
-def test_webapp::action_constructor_args():
-    sig = inspect.signature(webapp::Action.__init__)
+def test_webapp_action_constructor_args():
+    sig = inspect.signature(webapp_Action.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "returnType" in params, "Missing parameter 'returnType'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::action_has_name():
-    assert hasattr(webapp::Action, "name")
+def test_webapp_action_has_returnType():
+    assert hasattr(webapp_Action, "returnType")
     descriptor = None
-    for klass in webapp::Action.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::action_has_returnType():
-    assert hasattr(webapp::Action, "returnType")
-    descriptor = None
-    for klass in webapp::Action.__mro__:
+    for klass in webapp_Action.__mro__:
         if "returnType" in klass.__dict__:
             descriptor = klass.__dict__["returnType"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_webapp::validator_is_not_abstract():
-    assert not inspect.isabstract(webapp::Validator)
-
-
-def test_webapp::validator_constructor_exists():
-    assert callable(webapp::Validator.__init__)
-
-
-def test_webapp::validator_constructor_args():
-    sig = inspect.signature(webapp::Validator.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "package" in params, "Missing parameter 'package'"
-
-def test_webapp::validator_has_name():
-    assert hasattr(webapp::Validator, "name")
+def test_webapp_action_has_name():
+    assert hasattr(webapp_Action, "name")
     descriptor = None
-    for klass in webapp::Validator.__mro__:
+    for klass in webapp_Action.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::validator_has_package():
-    assert hasattr(webapp::Validator, "package")
+
+
+def test_webapp_validator_is_not_abstract():
+    assert not inspect.isabstract(webapp_Validator)
+
+
+def test_webapp_validator_constructor_exists():
+    assert callable(webapp_Validator.__init__)
+
+
+def test_webapp_validator_constructor_args():
+    sig = inspect.signature(webapp_Validator.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "package" in params, "Missing parameter 'package'"
+
+def test_webapp_validator_has_name():
+    assert hasattr(webapp_Validator, "name")
     descriptor = None
-    for klass in webapp::Validator.__mro__:
+    for klass in webapp_Validator.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_validator_has_package():
+    assert hasattr(webapp_Validator, "package")
+    descriptor = None
+    for klass in webapp_Validator.__mro__:
         if "package" in klass.__dict__:
             descriptor = klass.__dict__["package"]
             break
@@ -900,53 +900,53 @@ def test_webapp::validator_has_package():
 
 
 
-def test_webapp::model_is_not_abstract():
-    assert not inspect.isabstract(webapp::Model)
+def test_webapp_model_is_not_abstract():
+    assert not inspect.isabstract(webapp_Model)
 
 
-def test_webapp::model_constructor_exists():
-    assert callable(webapp::Model.__init__)
+def test_webapp_model_constructor_exists():
+    assert callable(webapp_Model.__init__)
 
 
-def test_webapp::model_constructor_args():
-    sig = inspect.signature(webapp::Model.__init__)
+def test_webapp_model_constructor_args():
+    sig = inspect.signature(webapp_Model.__init__)
     params = list(sig.parameters.keys())
     assert "password" in params, "Missing parameter 'password'"
-    assert "databaseName" in params, "Missing parameter 'databaseName'"
     assert "userName" in params, "Missing parameter 'userName'"
+    assert "databaseName" in params, "Missing parameter 'databaseName'"
     assert "url" in params, "Missing parameter 'url'"
 
-def test_webapp::model_has_password():
-    assert hasattr(webapp::Model, "password")
+def test_webapp_model_has_password():
+    assert hasattr(webapp_Model, "password")
     descriptor = None
-    for klass in webapp::Model.__mro__:
+    for klass in webapp_Model.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::model_has_databaseName():
-    assert hasattr(webapp::Model, "databaseName")
+def test_webapp_model_has_userName():
+    assert hasattr(webapp_Model, "userName")
     descriptor = None
-    for klass in webapp::Model.__mro__:
-        if "databaseName" in klass.__dict__:
-            descriptor = klass.__dict__["databaseName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::model_has_userName():
-    assert hasattr(webapp::Model, "userName")
-    descriptor = None
-    for klass in webapp::Model.__mro__:
+    for klass in webapp_Model.__mro__:
         if "userName" in klass.__dict__:
             descriptor = klass.__dict__["userName"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::model_has_url():
-    assert hasattr(webapp::Model, "url")
+def test_webapp_model_has_databaseName():
+    assert hasattr(webapp_Model, "databaseName")
     descriptor = None
-    for klass in webapp::Model.__mro__:
+    for klass in webapp_Model.__mro__:
+        if "databaseName" in klass.__dict__:
+            descriptor = klass.__dict__["databaseName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_model_has_url():
+    assert hasattr(webapp_Model, "url")
+    descriptor = None
+    for klass in webapp_Model.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -954,51 +954,51 @@ def test_webapp::model_has_url():
 
 
 
-def test_webapp::view_is_not_abstract():
-    assert not inspect.isabstract(webapp::View)
+def test_webapp_view_is_not_abstract():
+    assert not inspect.isabstract(webapp_View)
 
 
-def test_webapp::view_constructor_exists():
-    assert callable(webapp::View.__init__)
+def test_webapp_view_constructor_exists():
+    assert callable(webapp_View.__init__)
 
 
-def test_webapp::view_constructor_args():
-    sig = inspect.signature(webapp::View.__init__)
+def test_webapp_view_constructor_args():
+    sig = inspect.signature(webapp_View.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::library_is_not_abstract():
-    assert not inspect.isabstract(webapp::Library)
+def test_webapp_library_is_not_abstract():
+    assert not inspect.isabstract(webapp_Library)
 
 
-def test_webapp::library_constructor_exists():
-    assert callable(webapp::Library.__init__)
+def test_webapp_library_constructor_exists():
+    assert callable(webapp_Library.__init__)
 
 
-def test_webapp::library_constructor_args():
-    sig = inspect.signature(webapp::Library.__init__)
+def test_webapp_library_constructor_args():
+    sig = inspect.signature(webapp_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::webconfig_is_not_abstract():
-    assert not inspect.isabstract(webapp::WebConfig)
+def test_webapp_webconfig_is_not_abstract():
+    assert not inspect.isabstract(webapp_WebConfig)
 
 
-def test_webapp::webconfig_constructor_exists():
-    assert callable(webapp::WebConfig.__init__)
+def test_webapp_webconfig_constructor_exists():
+    assert callable(webapp_WebConfig.__init__)
 
 
-def test_webapp::webconfig_constructor_args():
-    sig = inspect.signature(webapp::WebConfig.__init__)
+def test_webapp_webconfig_constructor_args():
+    sig = inspect.signature(webapp_WebConfig.__init__)
     params = list(sig.parameters.keys())
     assert "displayName" in params, "Missing parameter 'displayName'"
 
-def test_webapp::webconfig_has_displayName():
-    assert hasattr(webapp::WebConfig, "displayName")
+def test_webapp_webconfig_has_displayName():
+    assert hasattr(webapp_WebConfig, "displayName")
     descriptor = None
-    for klass in webapp::WebConfig.__mro__:
+    for klass in webapp_WebConfig.__mro__:
         if "displayName" in klass.__dict__:
             descriptor = klass.__dict__["displayName"]
             break
@@ -1006,92 +1006,66 @@ def test_webapp::webconfig_has_displayName():
 
 
 
-def test_webapp::appconfig_is_not_abstract():
-    assert not inspect.isabstract(webapp::AppConfig)
+def test_webapp_appconfig_is_not_abstract():
+    assert not inspect.isabstract(webapp_AppConfig)
 
 
-def test_webapp::appconfig_constructor_exists():
-    assert callable(webapp::AppConfig.__init__)
+def test_webapp_appconfig_constructor_exists():
+    assert callable(webapp_AppConfig.__init__)
 
 
-def test_webapp::appconfig_constructor_args():
-    sig = inspect.signature(webapp::AppConfig.__init__)
+def test_webapp_appconfig_constructor_args():
+    sig = inspect.signature(webapp_AppConfig.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::webapp_is_not_abstract():
-    assert not inspect.isabstract(webapp::WebApp)
+def test_webapp_webapp_is_not_abstract():
+    assert not inspect.isabstract(webapp_WebApp)
 
 
-def test_webapp::webapp_constructor_exists():
-    assert callable(webapp::WebApp.__init__)
+def test_webapp_webapp_constructor_exists():
+    assert callable(webapp_WebApp.__init__)
 
 
-def test_webapp::webapp_constructor_args():
-    sig = inspect.signature(webapp::WebApp.__init__)
+def test_webapp_webapp_constructor_args():
+    sig = inspect.signature(webapp_WebApp.__init__)
     params = list(sig.parameters.keys())
     assert "framework" in params, "Missing parameter 'framework'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::webapp_has_framework():
-    assert hasattr(webapp::WebApp, "framework")
+def test_webapp_webapp_has_framework():
+    assert hasattr(webapp_WebApp, "framework")
     descriptor = None
-    for klass in webapp::WebApp.__mro__:
+    for klass in webapp_WebApp.__mro__:
         if "framework" in klass.__dict__:
             descriptor = klass.__dict__["framework"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::webapp_has_name():
-    assert hasattr(webapp::WebApp, "name")
+def test_webapp_webapp_has_name():
+    assert hasattr(webapp_WebApp, "name")
     descriptor = None
-    for klass in webapp::WebApp.__mro__:
+    for klass in webapp_WebApp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_columntype_exists():
+def test_inputtype_exists():
     # Check that the Enumeration exists
-    assert ColumnType is not None
+    assert InputType is not None
 
-def test_columntype_has_all_literals():
+def test_inputtype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ColumnType]
+    enum_literals = [lit.name for lit in InputType]
     expected_literals = [
-        "VARCHAR",
-        "BINARY",
-        "BLOB",
-        "TINYTEXT",
-        "BIGINT",
-        "DATETIME",
-        "YEAR",
-        "MEDIUMTEXT",
-        "INTEGER",
-        "TIME",
-        "FLOAT",
-        "DECIMAL",
-        "TINYBLOB",
-        "DATE",
-        "TINYINT",
-        "CHAR",
-        "TIMESTAMP",
-        "LONGBLOB",
+        "BUTTON",
         "TEXT",
-        "MEDIUMINT",
-        "SMALLINT",
-        "LONGTEXT",
-        "BIT",
-        "MEDIUMBLOB",
-        "DOUBLE",
-        "VARBINARY",
-        "REAL",
-        "NUMERIC",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ColumnType"
+        assert lit_name in enum_literals, f"Literal '' missing in InputType"
 
 def test_behavior_exists():
     # Check that the Enumeration exists
@@ -1116,46 +1090,87 @@ def test_charset_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Charset]
     expected_literals = [
+        "UCS2",
+        "CP866",
+        "HEBREW",
+        "HP8",
+        "TIS620",
         "CP852",
-        "CP1257",
         "BIG5",
         "SWE7",
-        "CP1251",
-        "CP866",
-        "KEYBCS2",
-        "HP8",
-        "LATIN5",
-        "ASCII",
-        "CP850",
+        "LATIN2",
+        "GREEK",
+        "SJIS",
+        "CP1257",
+        "UJIS",
         "CP1250",
+        "GBK",
+        "LATIN1",
+        "MACROMAN",
+        "CP932",
+        "ARMSCII8",
+        "UTF8",
+        "ASCII",
+        "MACCE",
         "GB2312",
         "CP1256",
-        "GEOSTD8",
-        "MACROMAN",
+        "KEYBCS2",
         "EUCKR",
+        "CP1251",
+        "LATIN5",
         "LATIN7",
-        "LATIN1",
-        "UTF8",
-        "BINARY",
-        "UCS2",
+        "DEC8",
         "KOI8R",
         "KOI8U",
-        "ARMSCII8",
+        "BINARY",
         "EUCJMPS",
-        "MACCE",
-        "GREEK",
-        "HEBREW",
-        "UJIS",
-        "CP932",
-        "GBK",
-        "SJIS",
-        "DEC8",
-        "LATIN2",
-        "TIS620",
+        "GEOSTD8",
+        "CP850",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Charset"
+
+def test_columntype_exists():
+    # Check that the Enumeration exists
+    assert ColumnType is not None
+
+def test_columntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ColumnType]
+    expected_literals = [
+        "BIGINT",
+        "TEXT",
+        "INTEGER",
+        "DOUBLE",
+        "REAL",
+        "LONGTEXT",
+        "VARCHAR",
+        "TIMESTAMP",
+        "CHAR",
+        "VARBINARY",
+        "FLOAT",
+        "NUMERIC",
+        "TINYBLOB",
+        "DATETIME",
+        "BIT",
+        "TIME",
+        "TINYINT",
+        "MEDIUMTEXT",
+        "BLOB",
+        "YEAR",
+        "MEDIUMINT",
+        "DECIMAL",
+        "DATE",
+        "SMALLINT",
+        "MEDIUMBLOB",
+        "TINYTEXT",
+        "BINARY",
+        "LONGBLOB",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ColumnType"
 
 def test_formmethod_exists():
     # Check that the Enumeration exists
@@ -1172,21 +1187,6 @@ def test_formmethod_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FormMethod"
 
-def test_inputtype_exists():
-    # Check that the Enumeration exists
-    assert InputType is not None
-
-def test_inputtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InputType]
-    expected_literals = [
-        "TEXT",
-        "BUTTON",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InputType"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1199,274 +1199,262 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-webapp::Attribute_strategy = st.builds(
-    webapp::Attribute,
-    name=
-        safe_text,
+webapp_Attribute_strategy = st.builds(
+    webapp_Attribute,
     value=
+        safe_text,
+    name=
         safe_text
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-webapp::Text_strategy = st.builds(
-    webapp::Text,
+webapp_Text_strategy = st.builds(
+    webapp_Text,
     content=
         safe_text
 )
-webapp::Tag_strategy = st.builds(
-    webapp::Tag,
+webapp_Tag_strategy = st.builds(
+    webapp_Tag,
     _property=
         safe_text
 )
 Tag_strategy = st.builds(
     Tag,
 )
-webapp::Td_strategy = st.builds(
-    webapp::Td,
+webapp_Td_strategy = st.builds(
+    webapp_Td,
 )
-webapp::Th_strategy = st.builds(
-    webapp::Th,
+webapp_Messages_strategy = st.builds(
+    webapp_Messages,
 )
-webapp::Messages_strategy = st.builds(
-    webapp::Messages,
+webapp_Th_strategy = st.builds(
+    webapp_Th,
 )
-webapp::Form_strategy = st.builds(
-    webapp::Form,
+webapp_Form_strategy = st.builds(
+    webapp_Form,
     method=
         safe_text
 )
-webapp::Instruction_strategy = st.builds(
-    webapp::Instruction,
+webapp_Instruction_strategy = st.builds(
+    webapp_Instruction,
 )
-webapp::Tr_strategy = st.builds(
-    webapp::Tr,
+webapp_Tr_strategy = st.builds(
+    webapp_Tr,
 )
-webapp::TableHTML_strategy = st.builds(
-    webapp::TableHTML,
+webapp_TableHTML_strategy = st.builds(
+    webapp_TableHTML,
 )
-webapp::Field_strategy = st.builds(
-    webapp::Field,
+webapp_Field_strategy = st.builds(
+    webapp_Field,
     name=
         safe_text,
-    type=
-        safe_text,
     defaultValue=
-        safe_text
-)
-webapp::Input_strategy = st.builds(
-    webapp::Input,
+        safe_text,
     type=
         safe_text
 )
-webapp::OnUpdate_strategy = st.builds(
-    webapp::OnUpdate,
+webapp_Input_strategy = st.builds(
+    webapp_Input,
+    type=
+        safe_text
+)
+webapp_OnUpdate_strategy = st.builds(
+    webapp_OnUpdate,
     behavior=
         safe_text
 )
-webapp::OnDelete_strategy = st.builds(
-    webapp::OnDelete,
+webapp_OnDelete_strategy = st.builds(
+    webapp_OnDelete,
     behavior=
         safe_text
 )
-webapp::ForeignKey_strategy = st.builds(
-    webapp::ForeignKey,
+webapp_ForeignKey_strategy = st.builds(
+    webapp_ForeignKey,
 )
-webapp::Check_strategy = st.builds(
-    webapp::Check,
+webapp_Check_strategy = st.builds(
+    webapp_Check,
     expr=
         safe_text
 )
-webapp::Unique_strategy = st.builds(
-    webapp::Unique,
+webapp_Unique_strategy = st.builds(
+    webapp_Unique,
 )
-webapp::PrimaryKey_strategy = st.builds(
-    webapp::PrimaryKey,
+webapp_PrimaryKey_strategy = st.builds(
+    webapp_PrimaryKey,
 )
-webapp::Detail_strategy = st.builds(
-    webapp::Detail,
-    scale=
-        st.integers(),
+webapp_Detail_strategy = st.builds(
+    webapp_Detail,
     precision=
+        st.integers(),
+    scale=
         st.integers()
 )
-webapp::Constraint_strategy = st.builds(
-    webapp::Constraint,
+webapp_Constraint_strategy = st.builds(
+    webapp_Constraint,
 )
-webapp::Column_strategy = st.builds(
-    webapp::Column,
+webapp_Column_strategy = st.builds(
+    webapp_Column,
     isNotNull=
         st.booleans(),
-    size=
-        st.integers(),
     name=
         safe_text,
-    useZeroFill=
-        st.booleans(),
     type=
         safe_text,
+    size=
+        st.integers(),
     defaultValue=
-        safe_text
+        safe_text,
+    useZeroFill=
+        st.booleans()
 )
-webapp::BusinessObject_strategy = st.builds(
-    webapp::BusinessObject,
+webapp_BusinessObject_strategy = st.builds(
+    webapp_BusinessObject,
     name=
         safe_text,
     package=
         safe_text
 )
-webapp::Table_strategy = st.builds(
-    webapp::Table,
-    name=
-        safe_text,
+webapp_Table_strategy = st.builds(
+    webapp_Table,
     charset=
+        safe_text,
+    name=
         safe_text
 )
-webapp::Navigation_strategy = st.builds(
-    webapp::Navigation,
+webapp_Navigation_strategy = st.builds(
+    webapp_Navigation,
     message=
         safe_text
 )
-webapp::Page_strategy = st.builds(
-    webapp::Page,
-    name=
-        safe_text,
+webapp_Page_strategy = st.builds(
+    webapp_Page,
     isMain=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
-webapp::Resource_strategy = st.builds(
-    webapp::Resource,
+webapp_Resource_strategy = st.builds(
+    webapp_Resource,
 )
-webapp::Controller_strategy = st.builds(
-    webapp::Controller,
+webapp_Controller_strategy = st.builds(
+    webapp_Controller,
 )
-webapp::Mapping_strategy = st.builds(
-    webapp::Mapping,
+webapp_Mapping_strategy = st.builds(
+    webapp_Mapping,
     left=
         safe_text,
     right=
         safe_text
 )
-webapp::Properties_strategy = st.builds(
-    webapp::Properties,
+webapp_Properties_strategy = st.builds(
+    webapp_Properties,
     package=
         safe_text,
     name=
         safe_text
 )
-webapp::File_strategy = st.builds(
-    webapp::File,
+webapp_File_strategy = st.builds(
+    webapp_File,
 )
-webapp::Image_strategy = st.builds(
-    webapp::Image,
+webapp_Image_strategy = st.builds(
+    webapp_Image,
 )
-webapp::Action_strategy = st.builds(
-    webapp::Action,
-    name=
-        safe_text,
+webapp_Action_strategy = st.builds(
+    webapp_Action,
     returnType=
+        safe_text,
+    name=
         safe_text
 )
-webapp::Validator_strategy = st.builds(
-    webapp::Validator,
+webapp_Validator_strategy = st.builds(
+    webapp_Validator,
     name=
         safe_text,
     package=
         safe_text
 )
-webapp::Model_strategy = st.builds(
-    webapp::Model,
+webapp_Model_strategy = st.builds(
+    webapp_Model,
     password=
         safe_text,
-    databaseName=
-        safe_text,
     userName=
+        safe_text,
+    databaseName=
         safe_text,
     url=
         safe_text
 )
-webapp::View_strategy = st.builds(
-    webapp::View,
+webapp_View_strategy = st.builds(
+    webapp_View,
 )
-webapp::Library_strategy = st.builds(
-    webapp::Library,
+webapp_Library_strategy = st.builds(
+    webapp_Library,
 )
-webapp::WebConfig_strategy = st.builds(
-    webapp::WebConfig,
+webapp_WebConfig_strategy = st.builds(
+    webapp_WebConfig,
     displayName=
         safe_text
 )
-webapp::AppConfig_strategy = st.builds(
-    webapp::AppConfig,
+webapp_AppConfig_strategy = st.builds(
+    webapp_AppConfig,
 )
-webapp::WebApp_strategy = st.builds(
-    webapp::WebApp,
+webapp_WebApp_strategy = st.builds(
+    webapp_WebApp,
     framework=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=webapp::Attribute_strategy)
+@given(instance=webapp_Attribute_strategy)
 @settings(max_examples=50)
-def test_webapp::attribute_instantiation(instance):
-    assert isinstance(instance, webapp::Attribute)
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_attribute_instantiation(instance):
+    assert isinstance(instance, webapp_Attribute)
 
 
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_value_setter(instance):
+@given(instance=webapp_Attribute_strategy)
+def test_webapp_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+
+
+@given(instance=webapp_Attribute_strategy)
+def test_webapp_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Instruction_strategy)
 @settings(max_examples=50)
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=webapp::Text_strategy)
+@given(instance=webapp_Text_strategy)
 @settings(max_examples=50)
-def test_webapp::text_instantiation(instance):
-    assert isinstance(instance, webapp::Text)
-
-@given(instance=webapp::Text_strategy)
-def test_webapp::text_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_webapp_text_instantiation(instance):
+    assert isinstance(instance, webapp_Text)
 
 
-@given(instance=webapp::Text_strategy)
-def test_webapp::text_content_setter(instance):
+
+@given(instance=webapp_Text_strategy)
+def test_webapp_text_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=webapp::Tag_strategy)
+@given(instance=webapp_Tag_strategy)
 @settings(max_examples=50)
-def test_webapp::tag_instantiation(instance):
-    assert isinstance(instance, webapp::Tag)
-
-@given(instance=webapp::Tag_strategy)
-def test_webapp::tag__property_type(instance):
-    assert isinstance(instance._property, str)
+def test_webapp_tag_instantiation(instance):
+    assert isinstance(instance, webapp_Tag)
 
 
-@given(instance=webapp::Tag_strategy)
-def test_webapp::tag__property_setter(instance):
+
+@given(instance=webapp_Tag_strategy)
+def test_webapp_tag__property_setter(instance):
     original = instance._property
     instance._property = original
     assert instance._property == original
@@ -1476,600 +1464,486 @@ def test_webapp::tag__property_setter(instance):
 def test_tag_instantiation(instance):
     assert isinstance(instance, Tag)
 
-@given(instance=webapp::Td_strategy)
+@given(instance=webapp_Td_strategy)
 @settings(max_examples=50)
-def test_webapp::td_instantiation(instance):
-    assert isinstance(instance, webapp::Td)
+def test_webapp_td_instantiation(instance):
+    assert isinstance(instance, webapp_Td)
 
-@given(instance=webapp::Th_strategy)
+@given(instance=webapp_Messages_strategy)
 @settings(max_examples=50)
-def test_webapp::th_instantiation(instance):
-    assert isinstance(instance, webapp::Th)
+def test_webapp_messages_instantiation(instance):
+    assert isinstance(instance, webapp_Messages)
 
-@given(instance=webapp::Messages_strategy)
+@given(instance=webapp_Th_strategy)
 @settings(max_examples=50)
-def test_webapp::messages_instantiation(instance):
-    assert isinstance(instance, webapp::Messages)
+def test_webapp_th_instantiation(instance):
+    assert isinstance(instance, webapp_Th)
 
-@given(instance=webapp::Form_strategy)
+@given(instance=webapp_Form_strategy)
 @settings(max_examples=50)
-def test_webapp::form_instantiation(instance):
-    assert isinstance(instance, webapp::Form)
-
-@given(instance=webapp::Form_strategy)
-def test_webapp::form_method_type(instance):
-    assert isinstance(instance.method, str)
+def test_webapp_form_instantiation(instance):
+    assert isinstance(instance, webapp_Form)
 
 
-@given(instance=webapp::Form_strategy)
-def test_webapp::form_method_setter(instance):
+
+@given(instance=webapp_Form_strategy)
+def test_webapp_form_method_setter(instance):
     original = instance.method
     instance.method = original
     assert instance.method == original
 
-@given(instance=webapp::Instruction_strategy)
+@given(instance=webapp_Instruction_strategy)
 @settings(max_examples=50)
-def test_webapp::instruction_instantiation(instance):
-    assert isinstance(instance, webapp::Instruction)
+def test_webapp_instruction_instantiation(instance):
+    assert isinstance(instance, webapp_Instruction)
 
-@given(instance=webapp::Tr_strategy)
+@given(instance=webapp_Tr_strategy)
 @settings(max_examples=50)
-def test_webapp::tr_instantiation(instance):
-    assert isinstance(instance, webapp::Tr)
+def test_webapp_tr_instantiation(instance):
+    assert isinstance(instance, webapp_Tr)
 
-@given(instance=webapp::TableHTML_strategy)
+@given(instance=webapp_TableHTML_strategy)
 @settings(max_examples=50)
-def test_webapp::tablehtml_instantiation(instance):
-    assert isinstance(instance, webapp::TableHTML)
+def test_webapp_tablehtml_instantiation(instance):
+    assert isinstance(instance, webapp_TableHTML)
 
-@given(instance=webapp::Field_strategy)
+@given(instance=webapp_Field_strategy)
 @settings(max_examples=50)
-def test_webapp::field_instantiation(instance):
-    assert isinstance(instance, webapp::Field)
-
-@given(instance=webapp::Field_strategy)
-def test_webapp::field_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_field_instantiation(instance):
+    assert isinstance(instance, webapp_Field)
 
 
-@given(instance=webapp::Field_strategy)
-def test_webapp::field_name_setter(instance):
+
+@given(instance=webapp_Field_strategy)
+def test_webapp_field_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::Field_strategy)
-def test_webapp::field_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=webapp::Field_strategy)
-def test_webapp::field_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=webapp::Field_strategy)
-def test_webapp::field_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
-
-
-@given(instance=webapp::Field_strategy)
-def test_webapp::field_defaultValue_setter(instance):
+@given(instance=webapp_Field_strategy)
+def test_webapp_field_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=webapp::Input_strategy)
-@settings(max_examples=50)
-def test_webapp::input_instantiation(instance):
-    assert isinstance(instance, webapp::Input)
-
-@given(instance=webapp::Input_strategy)
-def test_webapp::input_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=webapp::Input_strategy)
-def test_webapp::input_type_setter(instance):
+@given(instance=webapp_Field_strategy)
+def test_webapp_field_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=webapp::OnUpdate_strategy)
+@given(instance=webapp_Input_strategy)
 @settings(max_examples=50)
-def test_webapp::onupdate_instantiation(instance):
-    assert isinstance(instance, webapp::OnUpdate)
-
-@given(instance=webapp::OnUpdate_strategy)
-def test_webapp::onupdate_behavior_type(instance):
-    assert isinstance(instance.behavior, str)
+def test_webapp_input_instantiation(instance):
+    assert isinstance(instance, webapp_Input)
 
 
-@given(instance=webapp::OnUpdate_strategy)
-def test_webapp::onupdate_behavior_setter(instance):
+
+@given(instance=webapp_Input_strategy)
+def test_webapp_input_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=webapp_OnUpdate_strategy)
+@settings(max_examples=50)
+def test_webapp_onupdate_instantiation(instance):
+    assert isinstance(instance, webapp_OnUpdate)
+
+
+
+@given(instance=webapp_OnUpdate_strategy)
+def test_webapp_onupdate_behavior_setter(instance):
     original = instance.behavior
     instance.behavior = original
     assert instance.behavior == original
 
-@given(instance=webapp::OnDelete_strategy)
+@given(instance=webapp_OnDelete_strategy)
 @settings(max_examples=50)
-def test_webapp::ondelete_instantiation(instance):
-    assert isinstance(instance, webapp::OnDelete)
-
-@given(instance=webapp::OnDelete_strategy)
-def test_webapp::ondelete_behavior_type(instance):
-    assert isinstance(instance.behavior, str)
+def test_webapp_ondelete_instantiation(instance):
+    assert isinstance(instance, webapp_OnDelete)
 
 
-@given(instance=webapp::OnDelete_strategy)
-def test_webapp::ondelete_behavior_setter(instance):
+
+@given(instance=webapp_OnDelete_strategy)
+def test_webapp_ondelete_behavior_setter(instance):
     original = instance.behavior
     instance.behavior = original
     assert instance.behavior == original
 
-@given(instance=webapp::ForeignKey_strategy)
+@given(instance=webapp_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_webapp::foreignkey_instantiation(instance):
-    assert isinstance(instance, webapp::ForeignKey)
+def test_webapp_foreignkey_instantiation(instance):
+    assert isinstance(instance, webapp_ForeignKey)
 
-@given(instance=webapp::Check_strategy)
+@given(instance=webapp_Check_strategy)
 @settings(max_examples=50)
-def test_webapp::check_instantiation(instance):
-    assert isinstance(instance, webapp::Check)
-
-@given(instance=webapp::Check_strategy)
-def test_webapp::check_expr_type(instance):
-    assert isinstance(instance.expr, str)
+def test_webapp_check_instantiation(instance):
+    assert isinstance(instance, webapp_Check)
 
 
-@given(instance=webapp::Check_strategy)
-def test_webapp::check_expr_setter(instance):
+
+@given(instance=webapp_Check_strategy)
+def test_webapp_check_expr_setter(instance):
     original = instance.expr
     instance.expr = original
     assert instance.expr == original
 
-@given(instance=webapp::Unique_strategy)
+@given(instance=webapp_Unique_strategy)
 @settings(max_examples=50)
-def test_webapp::unique_instantiation(instance):
-    assert isinstance(instance, webapp::Unique)
+def test_webapp_unique_instantiation(instance):
+    assert isinstance(instance, webapp_Unique)
 
-@given(instance=webapp::PrimaryKey_strategy)
+@given(instance=webapp_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_webapp::primarykey_instantiation(instance):
-    assert isinstance(instance, webapp::PrimaryKey)
+def test_webapp_primarykey_instantiation(instance):
+    assert isinstance(instance, webapp_PrimaryKey)
 
-@given(instance=webapp::Detail_strategy)
+@given(instance=webapp_Detail_strategy)
 @settings(max_examples=50)
-def test_webapp::detail_instantiation(instance):
-    assert isinstance(instance, webapp::Detail)
-
-@given(instance=webapp::Detail_strategy)
-def test_webapp::detail_scale_type(instance):
-    assert isinstance(instance.scale, int)
+def test_webapp_detail_instantiation(instance):
+    assert isinstance(instance, webapp_Detail)
 
 
-@given(instance=webapp::Detail_strategy)
-def test_webapp::detail_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
 
-@given(instance=webapp::Detail_strategy)
-def test_webapp::detail_precision_type(instance):
-    assert isinstance(instance.precision, int)
-
-
-@given(instance=webapp::Detail_strategy)
-def test_webapp::detail_precision_setter(instance):
+@given(instance=webapp_Detail_strategy)
+def test_webapp_detail_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=webapp::Constraint_strategy)
+
+
+@given(instance=webapp_Detail_strategy)
+def test_webapp_detail_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+@given(instance=webapp_Constraint_strategy)
 @settings(max_examples=50)
-def test_webapp::constraint_instantiation(instance):
-    assert isinstance(instance, webapp::Constraint)
+def test_webapp_constraint_instantiation(instance):
+    assert isinstance(instance, webapp_Constraint)
 
-@given(instance=webapp::Column_strategy)
+@given(instance=webapp_Column_strategy)
 @settings(max_examples=50)
-def test_webapp::column_instantiation(instance):
-    assert isinstance(instance, webapp::Column)
-
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_isNotNull_type(instance):
-    assert isinstance(instance.isNotNull, bool)
+def test_webapp_column_instantiation(instance):
+    assert isinstance(instance, webapp_Column)
 
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_isNotNull_setter(instance):
+
+@given(instance=webapp_Column_strategy)
+def test_webapp_column_isNotNull_setter(instance):
     original = instance.isNotNull
     instance.isNotNull = original
     assert instance.isNotNull == original
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_name_setter(instance):
+@given(instance=webapp_Column_strategy)
+def test_webapp_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_useZeroFill_type(instance):
-    assert isinstance(instance.useZeroFill, bool)
 
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_useZeroFill_setter(instance):
-    original = instance.useZeroFill
-    instance.useZeroFill = original
-    assert instance.useZeroFill == original
-
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_type_setter(instance):
+@given(instance=webapp_Column_strategy)
+def test_webapp_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
 
 
-@given(instance=webapp::Column_strategy)
-def test_webapp::column_defaultValue_setter(instance):
+@given(instance=webapp_Column_strategy)
+def test_webapp_column_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=webapp_Column_strategy)
+def test_webapp_column_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=webapp::BusinessObject_strategy)
+
+
+@given(instance=webapp_Column_strategy)
+def test_webapp_column_useZeroFill_setter(instance):
+    original = instance.useZeroFill
+    instance.useZeroFill = original
+    assert instance.useZeroFill == original
+
+@given(instance=webapp_BusinessObject_strategy)
 @settings(max_examples=50)
-def test_webapp::businessobject_instantiation(instance):
-    assert isinstance(instance, webapp::BusinessObject)
-
-@given(instance=webapp::BusinessObject_strategy)
-def test_webapp::businessobject_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_businessobject_instantiation(instance):
+    assert isinstance(instance, webapp_BusinessObject)
 
 
-@given(instance=webapp::BusinessObject_strategy)
-def test_webapp::businessobject_name_setter(instance):
+
+@given(instance=webapp_BusinessObject_strategy)
+def test_webapp_businessobject_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::BusinessObject_strategy)
-def test_webapp::businessobject_package_type(instance):
-    assert isinstance(instance.package, str)
 
 
-@given(instance=webapp::BusinessObject_strategy)
-def test_webapp::businessobject_package_setter(instance):
+@given(instance=webapp_BusinessObject_strategy)
+def test_webapp_businessobject_package_setter(instance):
     original = instance.package
     instance.package = original
     assert instance.package == original
 
-@given(instance=webapp::Table_strategy)
+@given(instance=webapp_Table_strategy)
 @settings(max_examples=50)
-def test_webapp::table_instantiation(instance):
-    assert isinstance(instance, webapp::Table)
-
-@given(instance=webapp::Table_strategy)
-def test_webapp::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_table_instantiation(instance):
+    assert isinstance(instance, webapp_Table)
 
 
-@given(instance=webapp::Table_strategy)
-def test_webapp::table_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=webapp::Table_strategy)
-def test_webapp::table_charset_type(instance):
-    assert isinstance(instance.charset, str)
-
-
-@given(instance=webapp::Table_strategy)
-def test_webapp::table_charset_setter(instance):
+@given(instance=webapp_Table_strategy)
+def test_webapp_table_charset_setter(instance):
     original = instance.charset
     instance.charset = original
     assert instance.charset == original
 
-@given(instance=webapp::Navigation_strategy)
+
+
+@given(instance=webapp_Table_strategy)
+def test_webapp_table_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=webapp_Navigation_strategy)
 @settings(max_examples=50)
-def test_webapp::navigation_instantiation(instance):
-    assert isinstance(instance, webapp::Navigation)
-
-@given(instance=webapp::Navigation_strategy)
-def test_webapp::navigation_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_webapp_navigation_instantiation(instance):
+    assert isinstance(instance, webapp_Navigation)
 
 
-@given(instance=webapp::Navigation_strategy)
-def test_webapp::navigation_message_setter(instance):
+
+@given(instance=webapp_Navigation_strategy)
+def test_webapp_navigation_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
 
-@given(instance=webapp::Page_strategy)
+@given(instance=webapp_Page_strategy)
 @settings(max_examples=50)
-def test_webapp::page_instantiation(instance):
-    assert isinstance(instance, webapp::Page)
-
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_page_instantiation(instance):
+    assert isinstance(instance, webapp_Page)
 
 
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_isMain_type(instance):
-    assert isinstance(instance.isMain, bool)
-
-
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_isMain_setter(instance):
+@given(instance=webapp_Page_strategy)
+def test_webapp_page_isMain_setter(instance):
     original = instance.isMain
     instance.isMain = original
     assert instance.isMain == original
 
-@given(instance=webapp::Resource_strategy)
+
+
+@given(instance=webapp_Page_strategy)
+def test_webapp_page_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=webapp_Resource_strategy)
 @settings(max_examples=50)
-def test_webapp::resource_instantiation(instance):
-    assert isinstance(instance, webapp::Resource)
+def test_webapp_resource_instantiation(instance):
+    assert isinstance(instance, webapp_Resource)
 
-@given(instance=webapp::Controller_strategy)
+@given(instance=webapp_Controller_strategy)
 @settings(max_examples=50)
-def test_webapp::controller_instantiation(instance):
-    assert isinstance(instance, webapp::Controller)
+def test_webapp_controller_instantiation(instance):
+    assert isinstance(instance, webapp_Controller)
 
-@given(instance=webapp::Mapping_strategy)
+@given(instance=webapp_Mapping_strategy)
 @settings(max_examples=50)
-def test_webapp::mapping_instantiation(instance):
-    assert isinstance(instance, webapp::Mapping)
-
-@given(instance=webapp::Mapping_strategy)
-def test_webapp::mapping_left_type(instance):
-    assert isinstance(instance.left, str)
+def test_webapp_mapping_instantiation(instance):
+    assert isinstance(instance, webapp_Mapping)
 
 
-@given(instance=webapp::Mapping_strategy)
-def test_webapp::mapping_left_setter(instance):
+
+@given(instance=webapp_Mapping_strategy)
+def test_webapp_mapping_left_setter(instance):
     original = instance.left
     instance.left = original
     assert instance.left == original
 
-@given(instance=webapp::Mapping_strategy)
-def test_webapp::mapping_right_type(instance):
-    assert isinstance(instance.right, str)
 
 
-@given(instance=webapp::Mapping_strategy)
-def test_webapp::mapping_right_setter(instance):
+@given(instance=webapp_Mapping_strategy)
+def test_webapp_mapping_right_setter(instance):
     original = instance.right
     instance.right = original
     assert instance.right == original
 
-@given(instance=webapp::Properties_strategy)
+@given(instance=webapp_Properties_strategy)
 @settings(max_examples=50)
-def test_webapp::properties_instantiation(instance):
-    assert isinstance(instance, webapp::Properties)
-
-@given(instance=webapp::Properties_strategy)
-def test_webapp::properties_package_type(instance):
-    assert isinstance(instance.package, str)
+def test_webapp_properties_instantiation(instance):
+    assert isinstance(instance, webapp_Properties)
 
 
-@given(instance=webapp::Properties_strategy)
-def test_webapp::properties_package_setter(instance):
+
+@given(instance=webapp_Properties_strategy)
+def test_webapp_properties_package_setter(instance):
     original = instance.package
     instance.package = original
     assert instance.package == original
 
-@given(instance=webapp::Properties_strategy)
-def test_webapp::properties_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=webapp::Properties_strategy)
-def test_webapp::properties_name_setter(instance):
+@given(instance=webapp_Properties_strategy)
+def test_webapp_properties_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::File_strategy)
+@given(instance=webapp_File_strategy)
 @settings(max_examples=50)
-def test_webapp::file_instantiation(instance):
-    assert isinstance(instance, webapp::File)
+def test_webapp_file_instantiation(instance):
+    assert isinstance(instance, webapp_File)
 
-@given(instance=webapp::Image_strategy)
+@given(instance=webapp_Image_strategy)
 @settings(max_examples=50)
-def test_webapp::image_instantiation(instance):
-    assert isinstance(instance, webapp::Image)
+def test_webapp_image_instantiation(instance):
+    assert isinstance(instance, webapp_Image)
 
-@given(instance=webapp::Action_strategy)
+@given(instance=webapp_Action_strategy)
 @settings(max_examples=50)
-def test_webapp::action_instantiation(instance):
-    assert isinstance(instance, webapp::Action)
-
-@given(instance=webapp::Action_strategy)
-def test_webapp::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_action_instantiation(instance):
+    assert isinstance(instance, webapp_Action)
 
 
-@given(instance=webapp::Action_strategy)
-def test_webapp::action_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=webapp::Action_strategy)
-def test_webapp::action_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
-
-
-@given(instance=webapp::Action_strategy)
-def test_webapp::action_returnType_setter(instance):
+@given(instance=webapp_Action_strategy)
+def test_webapp_action_returnType_setter(instance):
     original = instance.returnType
     instance.returnType = original
     assert instance.returnType == original
 
-@given(instance=webapp::Validator_strategy)
-@settings(max_examples=50)
-def test_webapp::validator_instantiation(instance):
-    assert isinstance(instance, webapp::Validator)
-
-@given(instance=webapp::Validator_strategy)
-def test_webapp::validator_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=webapp::Validator_strategy)
-def test_webapp::validator_name_setter(instance):
+@given(instance=webapp_Action_strategy)
+def test_webapp_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::Validator_strategy)
-def test_webapp::validator_package_type(instance):
-    assert isinstance(instance.package, str)
+@given(instance=webapp_Validator_strategy)
+@settings(max_examples=50)
+def test_webapp_validator_instantiation(instance):
+    assert isinstance(instance, webapp_Validator)
 
 
-@given(instance=webapp::Validator_strategy)
-def test_webapp::validator_package_setter(instance):
+
+@given(instance=webapp_Validator_strategy)
+def test_webapp_validator_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=webapp_Validator_strategy)
+def test_webapp_validator_package_setter(instance):
     original = instance.package
     instance.package = original
     assert instance.package == original
 
-@given(instance=webapp::Model_strategy)
+@given(instance=webapp_Model_strategy)
 @settings(max_examples=50)
-def test_webapp::model_instantiation(instance):
-    assert isinstance(instance, webapp::Model)
-
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_password_type(instance):
-    assert isinstance(instance.password, str)
+def test_webapp_model_instantiation(instance):
+    assert isinstance(instance, webapp_Model)
 
 
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_password_setter(instance):
+
+@given(instance=webapp_Model_strategy)
+def test_webapp_model_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_databaseName_type(instance):
-    assert isinstance(instance.databaseName, str)
 
 
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_databaseName_setter(instance):
-    original = instance.databaseName
-    instance.databaseName = original
-    assert instance.databaseName == original
-
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_userName_type(instance):
-    assert isinstance(instance.userName, str)
-
-
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_userName_setter(instance):
+@given(instance=webapp_Model_strategy)
+def test_webapp_model_userName_setter(instance):
     original = instance.userName
     instance.userName = original
     assert instance.userName == original
 
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_url_type(instance):
-    assert isinstance(instance.url, str)
 
 
-@given(instance=webapp::Model_strategy)
-def test_webapp::model_url_setter(instance):
+@given(instance=webapp_Model_strategy)
+def test_webapp_model_databaseName_setter(instance):
+    original = instance.databaseName
+    instance.databaseName = original
+    assert instance.databaseName == original
+
+
+
+@given(instance=webapp_Model_strategy)
+def test_webapp_model_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=webapp::View_strategy)
+@given(instance=webapp_View_strategy)
 @settings(max_examples=50)
-def test_webapp::view_instantiation(instance):
-    assert isinstance(instance, webapp::View)
+def test_webapp_view_instantiation(instance):
+    assert isinstance(instance, webapp_View)
 
-@given(instance=webapp::Library_strategy)
+@given(instance=webapp_Library_strategy)
 @settings(max_examples=50)
-def test_webapp::library_instantiation(instance):
-    assert isinstance(instance, webapp::Library)
+def test_webapp_library_instantiation(instance):
+    assert isinstance(instance, webapp_Library)
 
-@given(instance=webapp::WebConfig_strategy)
+@given(instance=webapp_WebConfig_strategy)
 @settings(max_examples=50)
-def test_webapp::webconfig_instantiation(instance):
-    assert isinstance(instance, webapp::WebConfig)
-
-@given(instance=webapp::WebConfig_strategy)
-def test_webapp::webconfig_displayName_type(instance):
-    assert isinstance(instance.displayName, str)
+def test_webapp_webconfig_instantiation(instance):
+    assert isinstance(instance, webapp_WebConfig)
 
 
-@given(instance=webapp::WebConfig_strategy)
-def test_webapp::webconfig_displayName_setter(instance):
+
+@given(instance=webapp_WebConfig_strategy)
+def test_webapp_webconfig_displayName_setter(instance):
     original = instance.displayName
     instance.displayName = original
     assert instance.displayName == original
 
-@given(instance=webapp::AppConfig_strategy)
+@given(instance=webapp_AppConfig_strategy)
 @settings(max_examples=50)
-def test_webapp::appconfig_instantiation(instance):
-    assert isinstance(instance, webapp::AppConfig)
+def test_webapp_appconfig_instantiation(instance):
+    assert isinstance(instance, webapp_AppConfig)
 
-@given(instance=webapp::WebApp_strategy)
+@given(instance=webapp_WebApp_strategy)
 @settings(max_examples=50)
-def test_webapp::webapp_instantiation(instance):
-    assert isinstance(instance, webapp::WebApp)
-
-@given(instance=webapp::WebApp_strategy)
-def test_webapp::webapp_framework_type(instance):
-    assert isinstance(instance.framework, str)
+def test_webapp_webapp_instantiation(instance):
+    assert isinstance(instance, webapp_WebApp)
 
 
-@given(instance=webapp::WebApp_strategy)
-def test_webapp::webapp_framework_setter(instance):
+
+@given(instance=webapp_WebApp_strategy)
+def test_webapp_webapp_framework_setter(instance):
     original = instance.framework
     instance.framework = original
     assert instance.framework == original
 
-@given(instance=webapp::WebApp_strategy)
-def test_webapp::webapp_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=webapp::WebApp_strategy)
-def test_webapp::webapp_name_setter(instance):
+@given(instance=webapp_WebApp_strategy)
+def test_webapp_webapp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

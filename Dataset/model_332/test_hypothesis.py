@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    extlibrary::::15N3gm60EeGkd4g88tZXfA,
-    extlibrary::Addressable,
-    extlibrary::::15IX8G60EeGkd4g88tZXfA,
-    extlibrary::::146VgG60EeGkd4g88tZXfA,
-    extlibrary::::15Hw4m60EeGkd4g88tZXfA,
-    extlibrary::Borrowable,
-    extlibrary::Item,
-    extlibrary::CirculatingItem,
-    ::15N3gm60EeGkd4g88tZXfA,
-    extlibrary::Employee,
-    extlibrary::Borrower,
-    extlibrary::Writer,
-    extlibrary::::148KsW60EeGkd4g88tZXfA,
-    extlibrary::::15NQcW60EeGkd4g88tZXfA,
-    extlibrary::::15OekG60EeGkd4g88tZXfA,
-    ::15OelG60EeGkd4g88tZXfA,
-    extlibrary::Person,
-    extlibrary::Library,
-    extlibrary::::15CRUW60EeGkd4g88tZXfA,
-    ::15LbQG60EeGkd4g88tZXfA,
-    extlibrary::AudioVisualItem,
-    extlibrary::BookOnTape,
-    extlibrary::VideoCassette,
-    extlibrary::Magazine,
-    extlibrary::Book,
+from python_code import (
+    extlibrary__15N3gm60EeGkd4g88tZXfA,
+    extlibrary_Addressable,
+    extlibrary__15IX8G60EeGkd4g88tZXfA,
+    extlibrary__146VgG60EeGkd4g88tZXfA,
+    extlibrary__15Hw4m60EeGkd4g88tZXfA,
+    extlibrary_Borrowable,
+    extlibrary_Item,
+    extlibrary_CirculatingItem,
+    _15N3gm60EeGkd4g88tZXfA,
+    extlibrary_Employee,
+    extlibrary_Borrower,
+    extlibrary_Writer,
+    extlibrary__148KsW60EeGkd4g88tZXfA,
+    extlibrary__15NQcW60EeGkd4g88tZXfA,
+    extlibrary__15OekG60EeGkd4g88tZXfA,
+    _15OelG60EeGkd4g88tZXfA,
+    extlibrary_Person,
+    extlibrary_Library,
+    extlibrary__15CRUW60EeGkd4g88tZXfA,
+    _15LbQG60EeGkd4g88tZXfA,
+    extlibrary_AudioVisualItem,
+    extlibrary_VideoCassette,
+    extlibrary_BookOnTape,
+    extlibrary_Magazine,
+    extlibrary_Book,
     BookCategory,
 )
 
@@ -40,37 +40,37 @@ from classes import (
 
 
 
-def test_extlibrary::::15n3gm60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::15N3gm60EeGkd4g88tZXfA)
+def test_extlibrary__15n3gm60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__15N3gm60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::15n3gm60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::15N3gm60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15n3gm60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__15N3gm60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::15n3gm60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::15N3gm60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15n3gm60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__15N3gm60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::addressable_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Addressable)
+def test_extlibrary_addressable_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Addressable)
 
 
-def test_extlibrary::addressable_constructor_exists():
-    assert callable(extlibrary::Addressable.__init__)
+def test_extlibrary_addressable_constructor_exists():
+    assert callable(extlibrary_Addressable.__init__)
 
 
-def test_extlibrary::addressable_constructor_args():
-    sig = inspect.signature(extlibrary::Addressable.__init__)
+def test_extlibrary_addressable_constructor_args():
+    sig = inspect.signature(extlibrary_Addressable.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_extlibrary::addressable_has_address():
-    assert hasattr(extlibrary::Addressable, "address")
+def test_extlibrary_addressable_has_address():
+    assert hasattr(extlibrary_Addressable, "address")
     descriptor = None
-    for klass in extlibrary::Addressable.__mro__:
+    for klass in extlibrary_Addressable.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -78,65 +78,65 @@ def test_extlibrary::addressable_has_address():
 
 
 
-def test_extlibrary::::15ix8g60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::15IX8G60EeGkd4g88tZXfA)
+def test_extlibrary__15ix8g60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__15IX8G60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::15ix8g60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::15IX8G60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15ix8g60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__15IX8G60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::15ix8g60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::15IX8G60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15ix8g60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__15IX8G60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::::146vgg60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::146VgG60EeGkd4g88tZXfA)
+def test_extlibrary__146vgg60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__146VgG60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::146vgg60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::146VgG60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__146vgg60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__146VgG60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::146vgg60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::146VgG60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__146vgg60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__146VgG60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::::15hw4m60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::15Hw4m60EeGkd4g88tZXfA)
+def test_extlibrary__15hw4m60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__15Hw4m60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::15hw4m60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::15Hw4m60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15hw4m60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__15Hw4m60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::15hw4m60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::15Hw4m60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15hw4m60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__15Hw4m60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::borrowable_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Borrowable)
+def test_extlibrary_borrowable_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Borrowable)
 
 
-def test_extlibrary::borrowable_constructor_exists():
-    assert callable(extlibrary::Borrowable.__init__)
+def test_extlibrary_borrowable_constructor_exists():
+    assert callable(extlibrary_Borrowable.__init__)
 
 
-def test_extlibrary::borrowable_constructor_args():
-    sig = inspect.signature(extlibrary::Borrowable.__init__)
+def test_extlibrary_borrowable_constructor_args():
+    sig = inspect.signature(extlibrary_Borrowable.__init__)
     params = list(sig.parameters.keys())
     assert "copies" in params, "Missing parameter 'copies'"
 
-def test_extlibrary::borrowable_has_copies():
-    assert hasattr(extlibrary::Borrowable, "copies")
+def test_extlibrary_borrowable_has_copies():
+    assert hasattr(extlibrary_Borrowable, "copies")
     descriptor = None
-    for klass in extlibrary::Borrowable.__mro__:
+    for klass in extlibrary_Borrowable.__mro__:
         if "copies" in klass.__dict__:
             descriptor = klass.__dict__["copies"]
             break
@@ -144,23 +144,23 @@ def test_extlibrary::borrowable_has_copies():
 
 
 
-def test_extlibrary::item_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Item)
+def test_extlibrary_item_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Item)
 
 
-def test_extlibrary::item_constructor_exists():
-    assert callable(extlibrary::Item.__init__)
+def test_extlibrary_item_constructor_exists():
+    assert callable(extlibrary_Item.__init__)
 
 
-def test_extlibrary::item_constructor_args():
-    sig = inspect.signature(extlibrary::Item.__init__)
+def test_extlibrary_item_constructor_args():
+    sig = inspect.signature(extlibrary_Item.__init__)
     params = list(sig.parameters.keys())
     assert "publicationDate" in params, "Missing parameter 'publicationDate'"
 
-def test_extlibrary::item_has_publicationDate():
-    assert hasattr(extlibrary::Item, "publicationDate")
+def test_extlibrary_item_has_publicationDate():
+    assert hasattr(extlibrary_Item, "publicationDate")
     descriptor = None
-    for klass in extlibrary::Item.__mro__:
+    for klass in extlibrary_Item.__mro__:
         if "publicationDate" in klass.__dict__:
             descriptor = klass.__dict__["publicationDate"]
             break
@@ -168,99 +168,99 @@ def test_extlibrary::item_has_publicationDate():
 
 
 
-def test_extlibrary::circulatingitem_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::CirculatingItem)
+def test_extlibrary_circulatingitem_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_CirculatingItem)
 
 
-def test_extlibrary::circulatingitem_constructor_exists():
-    assert callable(extlibrary::CirculatingItem.__init__)
+def test_extlibrary_circulatingitem_constructor_exists():
+    assert callable(extlibrary_CirculatingItem.__init__)
 
 
-def test_extlibrary::circulatingitem_constructor_args():
-    sig = inspect.signature(extlibrary::CirculatingItem.__init__)
+def test_extlibrary_circulatingitem_constructor_args():
+    sig = inspect.signature(extlibrary_CirculatingItem.__init__)
     params = list(sig.parameters.keys())
-    assert "publicationDate" in params, "Missing parameter 'publicationDate'"
     assert "copies" in params, "Missing parameter 'copies'"
+    assert "publicationDate" in params, "Missing parameter 'publicationDate'"
 
-def test_extlibrary::circulatingitem_has_publicationDate():
-    assert hasattr(extlibrary::CirculatingItem, "publicationDate")
+def test_extlibrary_circulatingitem_has_copies():
+    assert hasattr(extlibrary_CirculatingItem, "copies")
     descriptor = None
-    for klass in extlibrary::CirculatingItem.__mro__:
-        if "publicationDate" in klass.__dict__:
-            descriptor = klass.__dict__["publicationDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibrary::circulatingitem_has_copies():
-    assert hasattr(extlibrary::CirculatingItem, "copies")
-    descriptor = None
-    for klass in extlibrary::CirculatingItem.__mro__:
+    for klass in extlibrary_CirculatingItem.__mro__:
         if "copies" in klass.__dict__:
             descriptor = klass.__dict__["copies"]
             break
     assert isinstance(descriptor, property)
 
+def test_extlibrary_circulatingitem_has_publicationDate():
+    assert hasattr(extlibrary_CirculatingItem, "publicationDate")
+    descriptor = None
+    for klass in extlibrary_CirculatingItem.__mro__:
+        if "publicationDate" in klass.__dict__:
+            descriptor = klass.__dict__["publicationDate"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_::15n3gm60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(::15N3gm60EeGkd4g88tZXfA)
+
+def test__15n3gm60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(_15N3gm60EeGkd4g88tZXfA)
 
 
-def test_::15n3gm60eegkd4g88tzxfa_constructor_exists():
-    assert callable(::15N3gm60EeGkd4g88tZXfA.__init__)
+def test__15n3gm60eegkd4g88tzxfa_constructor_exists():
+    assert callable(_15N3gm60EeGkd4g88tZXfA.__init__)
 
 
-def test_::15n3gm60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(::15N3gm60EeGkd4g88tZXfA.__init__)
+def test__15n3gm60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(_15N3gm60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::employee_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Employee)
+def test_extlibrary_employee_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Employee)
 
 
-def test_extlibrary::employee_constructor_exists():
-    assert callable(extlibrary::Employee.__init__)
+def test_extlibrary_employee_constructor_exists():
+    assert callable(extlibrary_Employee.__init__)
 
 
-def test_extlibrary::employee_constructor_args():
-    sig = inspect.signature(extlibrary::Employee.__init__)
+def test_extlibrary_employee_constructor_args():
+    sig = inspect.signature(extlibrary_Employee.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::borrower_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Borrower)
+def test_extlibrary_borrower_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Borrower)
 
 
-def test_extlibrary::borrower_constructor_exists():
-    assert callable(extlibrary::Borrower.__init__)
+def test_extlibrary_borrower_constructor_exists():
+    assert callable(extlibrary_Borrower.__init__)
 
 
-def test_extlibrary::borrower_constructor_args():
-    sig = inspect.signature(extlibrary::Borrower.__init__)
+def test_extlibrary_borrower_constructor_args():
+    sig = inspect.signature(extlibrary_Borrower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::writer_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Writer)
+def test_extlibrary_writer_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Writer)
 
 
-def test_extlibrary::writer_constructor_exists():
-    assert callable(extlibrary::Writer.__init__)
+def test_extlibrary_writer_constructor_exists():
+    assert callable(extlibrary_Writer.__init__)
 
 
-def test_extlibrary::writer_constructor_args():
-    sig = inspect.signature(extlibrary::Writer.__init__)
+def test_extlibrary_writer_constructor_args():
+    sig = inspect.signature(extlibrary_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extlibrary::writer_has_name():
-    assert hasattr(extlibrary::Writer, "name")
+def test_extlibrary_writer_has_name():
+    assert hasattr(extlibrary_Writer, "name")
     descriptor = None
-    for klass in extlibrary::Writer.__mro__:
+    for klass in extlibrary_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -268,79 +268,79 @@ def test_extlibrary::writer_has_name():
 
 
 
-def test_extlibrary::::148ksw60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::148KsW60EeGkd4g88tZXfA)
+def test_extlibrary__148ksw60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__148KsW60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::148ksw60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::148KsW60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__148ksw60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__148KsW60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::148ksw60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::148KsW60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__148ksw60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__148KsW60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::::15nqcw60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::15NQcW60EeGkd4g88tZXfA)
+def test_extlibrary__15nqcw60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__15NQcW60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::15nqcw60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::15NQcW60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15nqcw60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__15NQcW60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::15nqcw60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::15NQcW60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15nqcw60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__15NQcW60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::::15oekg60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::15OekG60EeGkd4g88tZXfA)
+def test_extlibrary__15oekg60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__15OekG60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::15oekg60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::15OekG60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15oekg60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__15OekG60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::15oekg60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::15OekG60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15oekg60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__15OekG60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_::15oelg60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(::15OelG60EeGkd4g88tZXfA)
+def test__15oelg60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(_15OelG60EeGkd4g88tZXfA)
 
 
-def test_::15oelg60eegkd4g88tzxfa_constructor_exists():
-    assert callable(::15OelG60EeGkd4g88tZXfA.__init__)
+def test__15oelg60eegkd4g88tzxfa_constructor_exists():
+    assert callable(_15OelG60EeGkd4g88tZXfA.__init__)
 
 
-def test_::15oelg60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(::15OelG60EeGkd4g88tZXfA.__init__)
+def test__15oelg60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(_15OelG60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::person_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Person)
+def test_extlibrary_person_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Person)
 
 
-def test_extlibrary::person_constructor_exists():
-    assert callable(extlibrary::Person.__init__)
+def test_extlibrary_person_constructor_exists():
+    assert callable(extlibrary_Person.__init__)
 
 
-def test_extlibrary::person_constructor_args():
-    sig = inspect.signature(extlibrary::Person.__init__)
+def test_extlibrary_person_constructor_args():
+    sig = inspect.signature(extlibrary_Person.__init__)
     params = list(sig.parameters.keys())
     assert "fullName" in params, "Missing parameter 'fullName'"
 
-def test_extlibrary::person_has_fullName():
-    assert hasattr(extlibrary::Person, "fullName")
+def test_extlibrary_person_has_fullName():
+    assert hasattr(extlibrary_Person, "fullName")
     descriptor = None
-    for klass in extlibrary::Person.__mro__:
+    for klass in extlibrary_Person.__mro__:
         if "fullName" in klass.__dict__:
             descriptor = klass.__dict__["fullName"]
             break
@@ -348,33 +348,33 @@ def test_extlibrary::person_has_fullName():
 
 
 
-def test_extlibrary::library_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Library)
+def test_extlibrary_library_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Library)
 
 
-def test_extlibrary::library_constructor_exists():
-    assert callable(extlibrary::Library.__init__)
+def test_extlibrary_library_constructor_exists():
+    assert callable(extlibrary_Library.__init__)
 
 
-def test_extlibrary::library_constructor_args():
-    sig = inspect.signature(extlibrary::Library.__init__)
+def test_extlibrary_library_constructor_args():
+    sig = inspect.signature(extlibrary_Library.__init__)
     params = list(sig.parameters.keys())
     assert "people" in params, "Missing parameter 'people'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extlibrary::library_has_people():
-    assert hasattr(extlibrary::Library, "people")
+def test_extlibrary_library_has_people():
+    assert hasattr(extlibrary_Library, "people")
     descriptor = None
-    for klass in extlibrary::Library.__mro__:
+    for klass in extlibrary_Library.__mro__:
         if "people" in klass.__dict__:
             descriptor = klass.__dict__["people"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibrary::library_has_name():
-    assert hasattr(extlibrary::Library, "name")
+def test_extlibrary_library_has_name():
+    assert hasattr(extlibrary_Library, "name")
     descriptor = None
-    for klass in extlibrary::Library.__mro__:
+    for klass in extlibrary_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -382,193 +382,193 @@ def test_extlibrary::library_has_name():
 
 
 
-def test_extlibrary::::15cruw60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::::15CRUW60EeGkd4g88tZXfA)
+def test_extlibrary__15cruw60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(extlibrary__15CRUW60EeGkd4g88tZXfA)
 
 
-def test_extlibrary::::15cruw60eegkd4g88tzxfa_constructor_exists():
-    assert callable(extlibrary::::15CRUW60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15cruw60eegkd4g88tzxfa_constructor_exists():
+    assert callable(extlibrary__15CRUW60EeGkd4g88tZXfA.__init__)
 
 
-def test_extlibrary::::15cruw60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(extlibrary::::15CRUW60EeGkd4g88tZXfA.__init__)
+def test_extlibrary__15cruw60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(extlibrary__15CRUW60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_::15lbqg60eegkd4g88tzxfa_is_not_abstract():
-    assert not inspect.isabstract(::15LbQG60EeGkd4g88tZXfA)
+def test__15lbqg60eegkd4g88tzxfa_is_not_abstract():
+    assert not inspect.isabstract(_15LbQG60EeGkd4g88tZXfA)
 
 
-def test_::15lbqg60eegkd4g88tzxfa_constructor_exists():
-    assert callable(::15LbQG60EeGkd4g88tZXfA.__init__)
+def test__15lbqg60eegkd4g88tzxfa_constructor_exists():
+    assert callable(_15LbQG60EeGkd4g88tZXfA.__init__)
 
 
-def test_::15lbqg60eegkd4g88tzxfa_constructor_args():
-    sig = inspect.signature(::15LbQG60EeGkd4g88tZXfA.__init__)
+def test__15lbqg60eegkd4g88tzxfa_constructor_args():
+    sig = inspect.signature(_15LbQG60EeGkd4g88tZXfA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::audiovisualitem_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::AudioVisualItem)
+def test_extlibrary_audiovisualitem_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_AudioVisualItem)
 
 
-def test_extlibrary::audiovisualitem_constructor_exists():
-    assert callable(extlibrary::AudioVisualItem.__init__)
+def test_extlibrary_audiovisualitem_constructor_exists():
+    assert callable(extlibrary_AudioVisualItem.__init__)
 
 
-def test_extlibrary::audiovisualitem_constructor_args():
-    sig = inspect.signature(extlibrary::AudioVisualItem.__init__)
+def test_extlibrary_audiovisualitem_constructor_args():
+    sig = inspect.signature(extlibrary_AudioVisualItem.__init__)
     params = list(sig.parameters.keys())
-    assert "damaged" in params, "Missing parameter 'damaged'"
-    assert "title" in params, "Missing parameter 'title'"
     assert "length" in params, "Missing parameter 'length'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "damaged" in params, "Missing parameter 'damaged'"
 
-def test_extlibrary::audiovisualitem_has_damaged():
-    assert hasattr(extlibrary::AudioVisualItem, "damaged")
+def test_extlibrary_audiovisualitem_has_length():
+    assert hasattr(extlibrary_AudioVisualItem, "length")
     descriptor = None
-    for klass in extlibrary::AudioVisualItem.__mro__:
-        if "damaged" in klass.__dict__:
-            descriptor = klass.__dict__["damaged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibrary::audiovisualitem_has_title():
-    assert hasattr(extlibrary::AudioVisualItem, "title")
-    descriptor = None
-    for klass in extlibrary::AudioVisualItem.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibrary::audiovisualitem_has_length():
-    assert hasattr(extlibrary::AudioVisualItem, "length")
-    descriptor = None
-    for klass in extlibrary::AudioVisualItem.__mro__:
+    for klass in extlibrary_AudioVisualItem.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_extlibrary::bookontape_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::BookOnTape)
-
-
-def test_extlibrary::bookontape_constructor_exists():
-    assert callable(extlibrary::BookOnTape.__init__)
-
-
-def test_extlibrary::bookontape_constructor_args():
-    sig = inspect.signature(extlibrary::BookOnTape.__init__)
-    params = list(sig.parameters.keys())
-    assert "damaged" in params, "Missing parameter 'damaged'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "length" in params, "Missing parameter 'length'"
-
-def test_extlibrary::bookontape_has_damaged():
-    assert hasattr(extlibrary::BookOnTape, "damaged")
+def test_extlibrary_audiovisualitem_has_title():
+    assert hasattr(extlibrary_AudioVisualItem, "title")
     descriptor = None
-    for klass in extlibrary::BookOnTape.__mro__:
-        if "damaged" in klass.__dict__:
-            descriptor = klass.__dict__["damaged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibrary::bookontape_has_title():
-    assert hasattr(extlibrary::BookOnTape, "title")
-    descriptor = None
-    for klass in extlibrary::BookOnTape.__mro__:
+    for klass in extlibrary_AudioVisualItem.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibrary::bookontape_has_length():
-    assert hasattr(extlibrary::BookOnTape, "length")
+def test_extlibrary_audiovisualitem_has_damaged():
+    assert hasattr(extlibrary_AudioVisualItem, "damaged")
     descriptor = None
-    for klass in extlibrary::BookOnTape.__mro__:
-        if "length" in klass.__dict__:
-            descriptor = klass.__dict__["length"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_extlibrary::videocassette_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::VideoCassette)
-
-
-def test_extlibrary::videocassette_constructor_exists():
-    assert callable(extlibrary::VideoCassette.__init__)
-
-
-def test_extlibrary::videocassette_constructor_args():
-    sig = inspect.signature(extlibrary::VideoCassette.__init__)
-    params = list(sig.parameters.keys())
-    assert "damaged" in params, "Missing parameter 'damaged'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "length" in params, "Missing parameter 'length'"
-
-def test_extlibrary::videocassette_has_damaged():
-    assert hasattr(extlibrary::VideoCassette, "damaged")
-    descriptor = None
-    for klass in extlibrary::VideoCassette.__mro__:
+    for klass in extlibrary_AudioVisualItem.__mro__:
         if "damaged" in klass.__dict__:
             descriptor = klass.__dict__["damaged"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibrary::videocassette_has_title():
-    assert hasattr(extlibrary::VideoCassette, "title")
-    descriptor = None
-    for klass in extlibrary::VideoCassette.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_extlibrary::videocassette_has_length():
-    assert hasattr(extlibrary::VideoCassette, "length")
+
+def test_extlibrary_videocassette_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_VideoCassette)
+
+
+def test_extlibrary_videocassette_constructor_exists():
+    assert callable(extlibrary_VideoCassette.__init__)
+
+
+def test_extlibrary_videocassette_constructor_args():
+    sig = inspect.signature(extlibrary_VideoCassette.__init__)
+    params = list(sig.parameters.keys())
+    assert "length" in params, "Missing parameter 'length'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "damaged" in params, "Missing parameter 'damaged'"
+
+def test_extlibrary_videocassette_has_length():
+    assert hasattr(extlibrary_VideoCassette, "length")
     descriptor = None
-    for klass in extlibrary::VideoCassette.__mro__:
+    for klass in extlibrary_VideoCassette.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
+def test_extlibrary_videocassette_has_title():
+    assert hasattr(extlibrary_VideoCassette, "title")
+    descriptor = None
+    for klass in extlibrary_VideoCassette.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_extlibrary_videocassette_has_damaged():
+    assert hasattr(extlibrary_VideoCassette, "damaged")
+    descriptor = None
+    for klass in extlibrary_VideoCassette.__mro__:
+        if "damaged" in klass.__dict__:
+            descriptor = klass.__dict__["damaged"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extlibrary::magazine_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Magazine)
+
+def test_extlibrary_bookontape_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_BookOnTape)
 
 
-def test_extlibrary::magazine_constructor_exists():
-    assert callable(extlibrary::Magazine.__init__)
+def test_extlibrary_bookontape_constructor_exists():
+    assert callable(extlibrary_BookOnTape.__init__)
 
 
-def test_extlibrary::magazine_constructor_args():
-    sig = inspect.signature(extlibrary::Magazine.__init__)
+def test_extlibrary_bookontape_constructor_args():
+    sig = inspect.signature(extlibrary_BookOnTape.__init__)
+    params = list(sig.parameters.keys())
+    assert "length" in params, "Missing parameter 'length'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "damaged" in params, "Missing parameter 'damaged'"
+
+def test_extlibrary_bookontape_has_length():
+    assert hasattr(extlibrary_BookOnTape, "length")
+    descriptor = None
+    for klass in extlibrary_BookOnTape.__mro__:
+        if "length" in klass.__dict__:
+            descriptor = klass.__dict__["length"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_extlibrary_bookontape_has_title():
+    assert hasattr(extlibrary_BookOnTape, "title")
+    descriptor = None
+    for klass in extlibrary_BookOnTape.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_extlibrary_bookontape_has_damaged():
+    assert hasattr(extlibrary_BookOnTape, "damaged")
+    descriptor = None
+    for klass in extlibrary_BookOnTape.__mro__:
+        if "damaged" in klass.__dict__:
+            descriptor = klass.__dict__["damaged"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_extlibrary_magazine_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Magazine)
+
+
+def test_extlibrary_magazine_constructor_exists():
+    assert callable(extlibrary_Magazine.__init__)
+
+
+def test_extlibrary_magazine_constructor_args():
+    sig = inspect.signature(extlibrary_Magazine.__init__)
     params = list(sig.parameters.keys())
     assert "pages" in params, "Missing parameter 'pages'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_extlibrary::magazine_has_pages():
-    assert hasattr(extlibrary::Magazine, "pages")
+def test_extlibrary_magazine_has_pages():
+    assert hasattr(extlibrary_Magazine, "pages")
     descriptor = None
-    for klass in extlibrary::Magazine.__mro__:
+    for klass in extlibrary_Magazine.__mro__:
         if "pages" in klass.__dict__:
             descriptor = klass.__dict__["pages"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibrary::magazine_has_title():
-    assert hasattr(extlibrary::Magazine, "title")
+def test_extlibrary_magazine_has_title():
+    assert hasattr(extlibrary_Magazine, "title")
     descriptor = None
-    for klass in extlibrary::Magazine.__mro__:
+    for klass in extlibrary_Magazine.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -576,43 +576,43 @@ def test_extlibrary::magazine_has_title():
 
 
 
-def test_extlibrary::book_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Book)
+def test_extlibrary_book_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Book)
 
 
-def test_extlibrary::book_constructor_exists():
-    assert callable(extlibrary::Book.__init__)
+def test_extlibrary_book_constructor_exists():
+    assert callable(extlibrary_Book.__init__)
 
 
-def test_extlibrary::book_constructor_args():
-    sig = inspect.signature(extlibrary::Book.__init__)
+def test_extlibrary_book_constructor_args():
+    sig = inspect.signature(extlibrary_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "category" in params, "Missing parameter 'category'"
     assert "pages" in params, "Missing parameter 'pages'"
+    assert "category" in params, "Missing parameter 'category'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_extlibrary::book_has_category():
-    assert hasattr(extlibrary::Book, "category")
+def test_extlibrary_book_has_pages():
+    assert hasattr(extlibrary_Book, "pages")
     descriptor = None
-    for klass in extlibrary::Book.__mro__:
+    for klass in extlibrary_Book.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_extlibrary_book_has_category():
+    assert hasattr(extlibrary_Book, "category")
+    descriptor = None
+    for klass in extlibrary_Book.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibrary::book_has_pages():
-    assert hasattr(extlibrary::Book, "pages")
+def test_extlibrary_book_has_title():
+    assert hasattr(extlibrary_Book, "title")
     descriptor = None
-    for klass in extlibrary::Book.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibrary::book_has_title():
-    assert hasattr(extlibrary::Book, "title")
-    descriptor = None
-    for klass in extlibrary::Book.__mro__:
+    for klass in extlibrary_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -629,8 +629,8 @@ def test_bookcategory_has_all_literals():
         "Mystery",
         "Dictionary",
         "Encyclopedia",
-        "Biography",
         "ScienceFiction",
+        "Biography",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -648,502 +648,433 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-extlibrary::::15N3gm60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::15N3gm60EeGkd4g88tZXfA,
+extlibrary__15N3gm60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__15N3gm60EeGkd4g88tZXfA,
 )
-extlibrary::Addressable_strategy = st.builds(
-    extlibrary::Addressable,
+extlibrary_Addressable_strategy = st.builds(
+    extlibrary_Addressable,
     address=
         safe_text
 )
-extlibrary::::15IX8G60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::15IX8G60EeGkd4g88tZXfA,
+extlibrary__15IX8G60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__15IX8G60EeGkd4g88tZXfA,
 )
-extlibrary::::146VgG60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::146VgG60EeGkd4g88tZXfA,
+extlibrary__146VgG60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__146VgG60EeGkd4g88tZXfA,
 )
-extlibrary::::15Hw4m60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::15Hw4m60EeGkd4g88tZXfA,
+extlibrary__15Hw4m60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__15Hw4m60EeGkd4g88tZXfA,
 )
-extlibrary::Borrowable_strategy = st.builds(
-    extlibrary::Borrowable,
+extlibrary_Borrowable_strategy = st.builds(
+    extlibrary_Borrowable,
     copies=
         st.integers()
 )
-extlibrary::Item_strategy = st.builds(
-    extlibrary::Item,
+extlibrary_Item_strategy = st.builds(
+    extlibrary_Item,
     publicationDate=
         st.dates()
 )
-extlibrary::CirculatingItem_strategy = st.builds(
-    extlibrary::CirculatingItem,
-    publicationDate=
-        st.dates(),
+extlibrary_CirculatingItem_strategy = st.builds(
+    extlibrary_CirculatingItem,
     copies=
-        st.integers()
+        st.integers(),
+    publicationDate=
+        st.dates()
 )
-::15N3gm60EeGkd4g88tZXfA_strategy = st.builds(
-    ::15N3gm60EeGkd4g88tZXfA,
+_15N3gm60EeGkd4g88tZXfA_strategy = st.builds(
+    _15N3gm60EeGkd4g88tZXfA,
 )
-extlibrary::Employee_strategy = st.builds(
-    extlibrary::Employee,
+extlibrary_Employee_strategy = st.builds(
+    extlibrary_Employee,
 )
-extlibrary::Borrower_strategy = st.builds(
-    extlibrary::Borrower,
+extlibrary_Borrower_strategy = st.builds(
+    extlibrary_Borrower,
 )
-extlibrary::Writer_strategy = st.builds(
-    extlibrary::Writer,
+extlibrary_Writer_strategy = st.builds(
+    extlibrary_Writer,
     name=
         safe_text
 )
-extlibrary::::148KsW60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::148KsW60EeGkd4g88tZXfA,
+extlibrary__148KsW60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__148KsW60EeGkd4g88tZXfA,
 )
-extlibrary::::15NQcW60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::15NQcW60EeGkd4g88tZXfA,
+extlibrary__15NQcW60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__15NQcW60EeGkd4g88tZXfA,
 )
-extlibrary::::15OekG60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::15OekG60EeGkd4g88tZXfA,
+extlibrary__15OekG60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__15OekG60EeGkd4g88tZXfA,
 )
-::15OelG60EeGkd4g88tZXfA_strategy = st.builds(
-    ::15OelG60EeGkd4g88tZXfA,
+_15OelG60EeGkd4g88tZXfA_strategy = st.builds(
+    _15OelG60EeGkd4g88tZXfA,
 )
-extlibrary::Person_strategy = st.builds(
-    extlibrary::Person,
+extlibrary_Person_strategy = st.builds(
+    extlibrary_Person,
     fullName=
         safe_text
 )
-extlibrary::Library_strategy = st.builds(
-    extlibrary::Library,
+extlibrary_Library_strategy = st.builds(
+    extlibrary_Library,
     people=
         safe_text,
     name=
         safe_text
 )
-extlibrary::::15CRUW60EeGkd4g88tZXfA_strategy = st.builds(
-    extlibrary::::15CRUW60EeGkd4g88tZXfA,
+extlibrary__15CRUW60EeGkd4g88tZXfA_strategy = st.builds(
+    extlibrary__15CRUW60EeGkd4g88tZXfA,
 )
-::15LbQG60EeGkd4g88tZXfA_strategy = st.builds(
-    ::15LbQG60EeGkd4g88tZXfA,
+_15LbQG60EeGkd4g88tZXfA_strategy = st.builds(
+    _15LbQG60EeGkd4g88tZXfA,
 )
-extlibrary::AudioVisualItem_strategy = st.builds(
-    extlibrary::AudioVisualItem,
-    damaged=
-        st.booleans(),
+extlibrary_AudioVisualItem_strategy = st.builds(
+    extlibrary_AudioVisualItem,
+    length=
+        st.integers(),
     title=
         safe_text,
-    length=
-        st.integers()
-)
-extlibrary::BookOnTape_strategy = st.builds(
-    extlibrary::BookOnTape,
     damaged=
-        st.booleans(),
+        st.booleans()
+)
+extlibrary_VideoCassette_strategy = st.builds(
+    extlibrary_VideoCassette,
+    length=
+        st.integers(),
     title=
         safe_text,
-    length=
-        st.integers()
-)
-extlibrary::VideoCassette_strategy = st.builds(
-    extlibrary::VideoCassette,
     damaged=
-        st.booleans(),
+        st.booleans()
+)
+extlibrary_BookOnTape_strategy = st.builds(
+    extlibrary_BookOnTape,
+    length=
+        st.integers(),
     title=
         safe_text,
-    length=
-        st.integers()
+    damaged=
+        st.booleans()
 )
-extlibrary::Magazine_strategy = st.builds(
-    extlibrary::Magazine,
+extlibrary_Magazine_strategy = st.builds(
+    extlibrary_Magazine,
     pages=
         st.integers(),
     title=
         safe_text
 )
-extlibrary::Book_strategy = st.builds(
-    extlibrary::Book,
+extlibrary_Book_strategy = st.builds(
+    extlibrary_Book,
+    pages=
+        st.integers(),
     category=
         safe_text,
-    pages=
-        st.integers(),
     title=
         safe_text
 )
 
-@given(instance=extlibrary::::15N3gm60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__15N3gm60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::15n3gm60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::15N3gm60EeGkd4g88tZXfA)
+def test_extlibrary__15n3gm60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__15N3gm60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::Addressable_strategy)
+@given(instance=extlibrary_Addressable_strategy)
 @settings(max_examples=50)
-def test_extlibrary::addressable_instantiation(instance):
-    assert isinstance(instance, extlibrary::Addressable)
-
-@given(instance=extlibrary::Addressable_strategy)
-def test_extlibrary::addressable_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_extlibrary_addressable_instantiation(instance):
+    assert isinstance(instance, extlibrary_Addressable)
 
 
-@given(instance=extlibrary::Addressable_strategy)
-def test_extlibrary::addressable_address_setter(instance):
+
+@given(instance=extlibrary_Addressable_strategy)
+def test_extlibrary_addressable_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=extlibrary::::15IX8G60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__15IX8G60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::15ix8g60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::15IX8G60EeGkd4g88tZXfA)
+def test_extlibrary__15ix8g60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__15IX8G60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::::146VgG60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__146VgG60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::146vgg60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::146VgG60EeGkd4g88tZXfA)
+def test_extlibrary__146vgg60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__146VgG60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::::15Hw4m60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__15Hw4m60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::15hw4m60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::15Hw4m60EeGkd4g88tZXfA)
+def test_extlibrary__15hw4m60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__15Hw4m60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::Borrowable_strategy)
+@given(instance=extlibrary_Borrowable_strategy)
 @settings(max_examples=50)
-def test_extlibrary::borrowable_instantiation(instance):
-    assert isinstance(instance, extlibrary::Borrowable)
-
-@given(instance=extlibrary::Borrowable_strategy)
-def test_extlibrary::borrowable_copies_type(instance):
-    assert isinstance(instance.copies, int)
+def test_extlibrary_borrowable_instantiation(instance):
+    assert isinstance(instance, extlibrary_Borrowable)
 
 
-@given(instance=extlibrary::Borrowable_strategy)
-def test_extlibrary::borrowable_copies_setter(instance):
+
+@given(instance=extlibrary_Borrowable_strategy)
+def test_extlibrary_borrowable_copies_setter(instance):
     original = instance.copies
     instance.copies = original
     assert instance.copies == original
 
-@given(instance=extlibrary::Item_strategy)
+@given(instance=extlibrary_Item_strategy)
 @settings(max_examples=50)
-def test_extlibrary::item_instantiation(instance):
-    assert isinstance(instance, extlibrary::Item)
-
-@given(instance=extlibrary::Item_strategy)
-def test_extlibrary::item_publicationDate_type(instance):
-    assert isinstance(instance.publicationDate, date)
+def test_extlibrary_item_instantiation(instance):
+    assert isinstance(instance, extlibrary_Item)
 
 
-@given(instance=extlibrary::Item_strategy)
-def test_extlibrary::item_publicationDate_setter(instance):
+
+@given(instance=extlibrary_Item_strategy)
+def test_extlibrary_item_publicationDate_setter(instance):
     original = instance.publicationDate
     instance.publicationDate = original
     assert instance.publicationDate == original
 
-@given(instance=extlibrary::CirculatingItem_strategy)
+@given(instance=extlibrary_CirculatingItem_strategy)
 @settings(max_examples=50)
-def test_extlibrary::circulatingitem_instantiation(instance):
-    assert isinstance(instance, extlibrary::CirculatingItem)
-
-@given(instance=extlibrary::CirculatingItem_strategy)
-def test_extlibrary::circulatingitem_publicationDate_type(instance):
-    assert isinstance(instance.publicationDate, date)
+def test_extlibrary_circulatingitem_instantiation(instance):
+    assert isinstance(instance, extlibrary_CirculatingItem)
 
 
-@given(instance=extlibrary::CirculatingItem_strategy)
-def test_extlibrary::circulatingitem_publicationDate_setter(instance):
-    original = instance.publicationDate
-    instance.publicationDate = original
-    assert instance.publicationDate == original
 
-@given(instance=extlibrary::CirculatingItem_strategy)
-def test_extlibrary::circulatingitem_copies_type(instance):
-    assert isinstance(instance.copies, int)
-
-
-@given(instance=extlibrary::CirculatingItem_strategy)
-def test_extlibrary::circulatingitem_copies_setter(instance):
+@given(instance=extlibrary_CirculatingItem_strategy)
+def test_extlibrary_circulatingitem_copies_setter(instance):
     original = instance.copies
     instance.copies = original
     assert instance.copies == original
 
-@given(instance=::15N3gm60EeGkd4g88tZXfA_strategy)
+
+
+@given(instance=extlibrary_CirculatingItem_strategy)
+def test_extlibrary_circulatingitem_publicationDate_setter(instance):
+    original = instance.publicationDate
+    instance.publicationDate = original
+    assert instance.publicationDate == original
+
+@given(instance=_15N3gm60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_::15n3gm60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, ::15N3gm60EeGkd4g88tZXfA)
+def test__15n3gm60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, _15N3gm60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::Employee_strategy)
+@given(instance=extlibrary_Employee_strategy)
 @settings(max_examples=50)
-def test_extlibrary::employee_instantiation(instance):
-    assert isinstance(instance, extlibrary::Employee)
+def test_extlibrary_employee_instantiation(instance):
+    assert isinstance(instance, extlibrary_Employee)
 
-@given(instance=extlibrary::Borrower_strategy)
+@given(instance=extlibrary_Borrower_strategy)
 @settings(max_examples=50)
-def test_extlibrary::borrower_instantiation(instance):
-    assert isinstance(instance, extlibrary::Borrower)
+def test_extlibrary_borrower_instantiation(instance):
+    assert isinstance(instance, extlibrary_Borrower)
 
-@given(instance=extlibrary::Writer_strategy)
+@given(instance=extlibrary_Writer_strategy)
 @settings(max_examples=50)
-def test_extlibrary::writer_instantiation(instance):
-    assert isinstance(instance, extlibrary::Writer)
-
-@given(instance=extlibrary::Writer_strategy)
-def test_extlibrary::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extlibrary_writer_instantiation(instance):
+    assert isinstance(instance, extlibrary_Writer)
 
 
-@given(instance=extlibrary::Writer_strategy)
-def test_extlibrary::writer_name_setter(instance):
+
+@given(instance=extlibrary_Writer_strategy)
+def test_extlibrary_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extlibrary::::148KsW60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__148KsW60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::148ksw60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::148KsW60EeGkd4g88tZXfA)
+def test_extlibrary__148ksw60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__148KsW60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::::15NQcW60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__15NQcW60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::15nqcw60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::15NQcW60EeGkd4g88tZXfA)
+def test_extlibrary__15nqcw60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__15NQcW60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::::15OekG60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__15OekG60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::15oekg60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::15OekG60EeGkd4g88tZXfA)
+def test_extlibrary__15oekg60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__15OekG60EeGkd4g88tZXfA)
 
-@given(instance=::15OelG60EeGkd4g88tZXfA_strategy)
+@given(instance=_15OelG60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_::15oelg60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, ::15OelG60EeGkd4g88tZXfA)
+def test__15oelg60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, _15OelG60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::Person_strategy)
+@given(instance=extlibrary_Person_strategy)
 @settings(max_examples=50)
-def test_extlibrary::person_instantiation(instance):
-    assert isinstance(instance, extlibrary::Person)
-
-@given(instance=extlibrary::Person_strategy)
-def test_extlibrary::person_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
+def test_extlibrary_person_instantiation(instance):
+    assert isinstance(instance, extlibrary_Person)
 
 
-@given(instance=extlibrary::Person_strategy)
-def test_extlibrary::person_fullName_setter(instance):
+
+@given(instance=extlibrary_Person_strategy)
+def test_extlibrary_person_fullName_setter(instance):
     original = instance.fullName
     instance.fullName = original
     assert instance.fullName == original
 
-@given(instance=extlibrary::Library_strategy)
+@given(instance=extlibrary_Library_strategy)
 @settings(max_examples=50)
-def test_extlibrary::library_instantiation(instance):
-    assert isinstance(instance, extlibrary::Library)
-
-@given(instance=extlibrary::Library_strategy)
-def test_extlibrary::library_people_type(instance):
-    assert isinstance(instance.people, str)
+def test_extlibrary_library_instantiation(instance):
+    assert isinstance(instance, extlibrary_Library)
 
 
-@given(instance=extlibrary::Library_strategy)
-def test_extlibrary::library_people_setter(instance):
+
+@given(instance=extlibrary_Library_strategy)
+def test_extlibrary_library_people_setter(instance):
     original = instance.people
     instance.people = original
     assert instance.people == original
 
-@given(instance=extlibrary::Library_strategy)
-def test_extlibrary::library_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=extlibrary::Library_strategy)
-def test_extlibrary::library_name_setter(instance):
+@given(instance=extlibrary_Library_strategy)
+def test_extlibrary_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extlibrary::::15CRUW60EeGkd4g88tZXfA_strategy)
+@given(instance=extlibrary__15CRUW60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_extlibrary::::15cruw60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, extlibrary::::15CRUW60EeGkd4g88tZXfA)
+def test_extlibrary__15cruw60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, extlibrary__15CRUW60EeGkd4g88tZXfA)
 
-@given(instance=::15LbQG60EeGkd4g88tZXfA_strategy)
+@given(instance=_15LbQG60EeGkd4g88tZXfA_strategy)
 @settings(max_examples=50)
-def test_::15lbqg60eegkd4g88tzxfa_instantiation(instance):
-    assert isinstance(instance, ::15LbQG60EeGkd4g88tZXfA)
+def test__15lbqg60eegkd4g88tzxfa_instantiation(instance):
+    assert isinstance(instance, _15LbQG60EeGkd4g88tZXfA)
 
-@given(instance=extlibrary::AudioVisualItem_strategy)
+@given(instance=extlibrary_AudioVisualItem_strategy)
 @settings(max_examples=50)
-def test_extlibrary::audiovisualitem_instantiation(instance):
-    assert isinstance(instance, extlibrary::AudioVisualItem)
-
-@given(instance=extlibrary::AudioVisualItem_strategy)
-def test_extlibrary::audiovisualitem_damaged_type(instance):
-    assert isinstance(instance.damaged, bool)
+def test_extlibrary_audiovisualitem_instantiation(instance):
+    assert isinstance(instance, extlibrary_AudioVisualItem)
 
 
-@given(instance=extlibrary::AudioVisualItem_strategy)
-def test_extlibrary::audiovisualitem_damaged_setter(instance):
-    original = instance.damaged
-    instance.damaged = original
-    assert instance.damaged == original
 
-@given(instance=extlibrary::AudioVisualItem_strategy)
-def test_extlibrary::audiovisualitem_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=extlibrary::AudioVisualItem_strategy)
-def test_extlibrary::audiovisualitem_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=extlibrary::AudioVisualItem_strategy)
-def test_extlibrary::audiovisualitem_length_type(instance):
-    assert isinstance(instance.length, int)
-
-
-@given(instance=extlibrary::AudioVisualItem_strategy)
-def test_extlibrary::audiovisualitem_length_setter(instance):
+@given(instance=extlibrary_AudioVisualItem_strategy)
+def test_extlibrary_audiovisualitem_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=extlibrary::BookOnTape_strategy)
-@settings(max_examples=50)
-def test_extlibrary::bookontape_instantiation(instance):
-    assert isinstance(instance, extlibrary::BookOnTape)
-
-@given(instance=extlibrary::BookOnTape_strategy)
-def test_extlibrary::bookontape_damaged_type(instance):
-    assert isinstance(instance.damaged, bool)
 
 
-@given(instance=extlibrary::BookOnTape_strategy)
-def test_extlibrary::bookontape_damaged_setter(instance):
-    original = instance.damaged
-    instance.damaged = original
-    assert instance.damaged == original
-
-@given(instance=extlibrary::BookOnTape_strategy)
-def test_extlibrary::bookontape_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=extlibrary::BookOnTape_strategy)
-def test_extlibrary::bookontape_title_setter(instance):
+@given(instance=extlibrary_AudioVisualItem_strategy)
+def test_extlibrary_audiovisualitem_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=extlibrary::BookOnTape_strategy)
-def test_extlibrary::bookontape_length_type(instance):
-    assert isinstance(instance.length, int)
 
 
-@given(instance=extlibrary::BookOnTape_strategy)
-def test_extlibrary::bookontape_length_setter(instance):
-    original = instance.length
-    instance.length = original
-    assert instance.length == original
-
-@given(instance=extlibrary::VideoCassette_strategy)
-@settings(max_examples=50)
-def test_extlibrary::videocassette_instantiation(instance):
-    assert isinstance(instance, extlibrary::VideoCassette)
-
-@given(instance=extlibrary::VideoCassette_strategy)
-def test_extlibrary::videocassette_damaged_type(instance):
-    assert isinstance(instance.damaged, bool)
-
-
-@given(instance=extlibrary::VideoCassette_strategy)
-def test_extlibrary::videocassette_damaged_setter(instance):
+@given(instance=extlibrary_AudioVisualItem_strategy)
+def test_extlibrary_audiovisualitem_damaged_setter(instance):
     original = instance.damaged
     instance.damaged = original
     assert instance.damaged == original
 
-@given(instance=extlibrary::VideoCassette_strategy)
-def test_extlibrary::videocassette_title_type(instance):
-    assert isinstance(instance.title, str)
+@given(instance=extlibrary_VideoCassette_strategy)
+@settings(max_examples=50)
+def test_extlibrary_videocassette_instantiation(instance):
+    assert isinstance(instance, extlibrary_VideoCassette)
 
 
-@given(instance=extlibrary::VideoCassette_strategy)
-def test_extlibrary::videocassette_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=extlibrary::VideoCassette_strategy)
-def test_extlibrary::videocassette_length_type(instance):
-    assert isinstance(instance.length, int)
-
-
-@given(instance=extlibrary::VideoCassette_strategy)
-def test_extlibrary::videocassette_length_setter(instance):
+@given(instance=extlibrary_VideoCassette_strategy)
+def test_extlibrary_videocassette_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=extlibrary::Magazine_strategy)
+
+
+@given(instance=extlibrary_VideoCassette_strategy)
+def test_extlibrary_videocassette_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=extlibrary_VideoCassette_strategy)
+def test_extlibrary_videocassette_damaged_setter(instance):
+    original = instance.damaged
+    instance.damaged = original
+    assert instance.damaged == original
+
+@given(instance=extlibrary_BookOnTape_strategy)
 @settings(max_examples=50)
-def test_extlibrary::magazine_instantiation(instance):
-    assert isinstance(instance, extlibrary::Magazine)
-
-@given(instance=extlibrary::Magazine_strategy)
-def test_extlibrary::magazine_pages_type(instance):
-    assert isinstance(instance.pages, int)
+def test_extlibrary_bookontape_instantiation(instance):
+    assert isinstance(instance, extlibrary_BookOnTape)
 
 
-@given(instance=extlibrary::Magazine_strategy)
-def test_extlibrary::magazine_pages_setter(instance):
+
+@given(instance=extlibrary_BookOnTape_strategy)
+def test_extlibrary_bookontape_length_setter(instance):
+    original = instance.length
+    instance.length = original
+    assert instance.length == original
+
+
+
+@given(instance=extlibrary_BookOnTape_strategy)
+def test_extlibrary_bookontape_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=extlibrary_BookOnTape_strategy)
+def test_extlibrary_bookontape_damaged_setter(instance):
+    original = instance.damaged
+    instance.damaged = original
+    assert instance.damaged == original
+
+@given(instance=extlibrary_Magazine_strategy)
+@settings(max_examples=50)
+def test_extlibrary_magazine_instantiation(instance):
+    assert isinstance(instance, extlibrary_Magazine)
+
+
+
+@given(instance=extlibrary_Magazine_strategy)
+def test_extlibrary_magazine_pages_setter(instance):
     original = instance.pages
     instance.pages = original
     assert instance.pages == original
 
-@given(instance=extlibrary::Magazine_strategy)
-def test_extlibrary::magazine_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=extlibrary::Magazine_strategy)
-def test_extlibrary::magazine_title_setter(instance):
+@given(instance=extlibrary_Magazine_strategy)
+def test_extlibrary_magazine_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=extlibrary::Book_strategy)
+@given(instance=extlibrary_Book_strategy)
 @settings(max_examples=50)
-def test_extlibrary::book_instantiation(instance):
-    assert isinstance(instance, extlibrary::Book)
-
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_category_type(instance):
-    assert isinstance(instance.category, str)
+def test_extlibrary_book_instantiation(instance):
+    assert isinstance(instance, extlibrary_Book)
 
 
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_category_setter(instance):
+
+@given(instance=extlibrary_Book_strategy)
+def test_extlibrary_book_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+
+
+@given(instance=extlibrary_Book_strategy)
+def test_extlibrary_book_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
 
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_pages_type(instance):
-    assert isinstance(instance.pages, int)
 
 
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_title_setter(instance):
+@given(instance=extlibrary_Book_strategy)
+def test_extlibrary_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

@@ -3,96 +3,96 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     VariableRef,
-    altarica::NestedQualifiedVariableRef,
+    altarica_NestedQualifiedVariableRef,
     EventRef,
-    altarica::NestedQualifiedEventRef,
+    altarica_NestedQualifiedEventRef,
     Expression,
-    altarica::Upper,
-    altarica::Lower,
-    altarica::StrictLower,
-    altarica::NotEqual,
-    altarica::StrictUpper,
-    altarica::Imply,
-    altarica::EString,
-    altarica::Equal,
-    altarica::EBoolean,
-    altarica::VariableRef,
-    altarica::Or,
-    altarica::And,
-    altarica::Division,
-    altarica::Multiplication,
-    altarica::Minus,
-    altarica::Addition,
-    altarica::EInteger,
-    altarica::Transition,
-    altarica::NavigableVariable,
-    altarica::EObject,
-    altarica::CaseExpression,
+    altarica_Equal,
+    altarica_EBoolean,
+    altarica_Imply,
+    altarica_Upper,
+    altarica_StrictUpper,
+    altarica_EString,
+    altarica_Lower,
+    altarica_StrictLower,
+    altarica_NotEqual,
+    altarica_VariableRef,
+    altarica_Or,
+    altarica_And,
+    altarica_Division,
+    altarica_Multiplication,
+    altarica_Minus,
+    altarica_Addition,
+    altarica_EInteger,
+    altarica_Transition,
+    altarica_NavigableVariable,
+    altarica_EObject,
+    altarica_CaseExpression,
     AbstractBooleanExpression,
     AbstractExpression,
-    altarica::IfThenElse,
-    altarica::Switch,
-    altarica::StateDeclaration,
-    altarica::EventRef,
-    altarica::Cardinality,
-    altarica::VectorParameter,
-    altarica::Vector,
-    altarica::AbstractBooleanExpression,
-    altarica::Assert,
-    altarica::NodeInstanceDeclaration,
-    altarica::ExternalDirective,
-    altarica::Affectation,
-    altarica::InitStatement,
+    altarica_IfThenElse,
+    altarica_Switch,
+    altarica_StateDeclaration,
+    altarica_EventRef,
+    altarica_Cardinality,
+    altarica_VectorParameter,
+    altarica_Vector,
+    altarica_AbstractBooleanExpression,
+    altarica_Assert,
+    altarica_NodeInstanceDeclaration,
+    altarica_ExternalDirective,
+    altarica_Affectation,
+    altarica_InitStatement,
     AbstractSpecification,
-    altarica::TransitionSpecification,
-    altarica::AssertSpecification,
-    altarica::VectorSpecification,
-    altarica::ExternalSpecification,
-    altarica::NodeInstanceSpecification,
-    altarica::InitSpecification,
-    altarica::StateSpecification,
-    altarica::AbstractExpression,
-    altarica::Priority,
+    altarica_VectorSpecification,
+    altarica_AssertSpecification,
+    altarica_ExternalSpecification,
+    altarica_TransitionSpecification,
+    altarica_NodeInstanceSpecification,
+    altarica_InitSpecification,
+    altarica_StateSpecification,
+    altarica_AbstractExpression,
+    altarica_Priority,
     NavigableVariable,
-    altarica::NodeInstance,
-    altarica::NonNavigableVariable,
-    altarica::Event,
-    altarica::EventDeclaration,
-    altarica::EventSpecification,
-    altarica::AbstractTypeRef,
-    altarica::FlowDeclaration,
-    altarica::FlowSpecification,
-    altarica::Expression,
+    altarica_NodeInstance,
+    altarica_NonNavigableVariable,
+    altarica_Event,
+    altarica_EventDeclaration,
+    altarica_EventSpecification,
+    altarica_AbstractTypeRef,
+    altarica_FlowDeclaration,
+    altarica_FlowSpecification,
+    altarica_Expression,
     NonNavigableVariable,
-    altarica::Flow,
-    altarica::State,
-    altarica::AbstractDefinitionConstant,
-    altarica::Constant,
+    altarica_Flow,
+    altarica_State,
+    altarica_AbstractDefinitionConstant,
+    altarica_Constant,
     AbstractDeclaration,
-    altarica::ConstantDefinition,
-    altarica::VariableAttribute,
-    altarica::AbstractSpecification,
-    altarica::Node,
-    altarica::Literal,
+    altarica_ConstantDefinition,
+    altarica_VariableAttribute,
+    altarica_AbstractSpecification,
+    altarica_Node,
+    altarica_Literal,
     AbstractDomain,
-    altarica::Enumeration,
-    altarica::PrimitiveType,
-    altarica::Range,
+    altarica_PrimitiveType,
+    altarica_Enumeration,
+    altarica_Range,
     AbstractTypeRef,
-    altarica::DomainRef,
-    altarica::Domain,
-    altarica::AbstractDomain,
+    altarica_DomainRef,
+    altarica_Domain,
+    altarica_AbstractDomain,
     AbstractDefinitionConstant,
-    altarica::DomainConstant,
-    altarica::ExpressionConstant,
-    altarica::AbstractDeclaration,
-    altarica::System,
-    PrimitiveTypeKind,
+    altarica_DomainConstant,
+    altarica_ExpressionConstant,
+    altarica_AbstractDeclaration,
+    altarica_System,
     FlowKind,
+    PrimitiveTypeKind,
 )
 
 # =============================================================================
@@ -115,16 +115,16 @@ def test_variableref_constructor_args():
 
 
 
-def test_altarica::nestedqualifiedvariableref_is_not_abstract():
-    assert not inspect.isabstract(altarica::NestedQualifiedVariableRef)
+def test_altarica_nestedqualifiedvariableref_is_not_abstract():
+    assert not inspect.isabstract(altarica_NestedQualifiedVariableRef)
 
 
-def test_altarica::nestedqualifiedvariableref_constructor_exists():
-    assert callable(altarica::NestedQualifiedVariableRef.__init__)
+def test_altarica_nestedqualifiedvariableref_constructor_exists():
+    assert callable(altarica_NestedQualifiedVariableRef.__init__)
 
 
-def test_altarica::nestedqualifiedvariableref_constructor_args():
-    sig = inspect.signature(altarica::NestedQualifiedVariableRef.__init__)
+def test_altarica_nestedqualifiedvariableref_constructor_args():
+    sig = inspect.signature(altarica_NestedQualifiedVariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -143,16 +143,16 @@ def test_eventref_constructor_args():
 
 
 
-def test_altarica::nestedqualifiedeventref_is_not_abstract():
-    assert not inspect.isabstract(altarica::NestedQualifiedEventRef)
+def test_altarica_nestedqualifiedeventref_is_not_abstract():
+    assert not inspect.isabstract(altarica_NestedQualifiedEventRef)
 
 
-def test_altarica::nestedqualifiedeventref_constructor_exists():
-    assert callable(altarica::NestedQualifiedEventRef.__init__)
+def test_altarica_nestedqualifiedeventref_constructor_exists():
+    assert callable(altarica_NestedQualifiedEventRef.__init__)
 
 
-def test_altarica::nestedqualifiedeventref_constructor_args():
-    sig = inspect.signature(altarica::NestedQualifiedEventRef.__init__)
+def test_altarica_nestedqualifiedeventref_constructor_args():
+    sig = inspect.signature(altarica_NestedQualifiedEventRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -171,107 +171,37 @@ def test_expression_constructor_args():
 
 
 
-def test_altarica::upper_is_not_abstract():
-    assert not inspect.isabstract(altarica::Upper)
+def test_altarica_equal_is_not_abstract():
+    assert not inspect.isabstract(altarica_Equal)
 
 
-def test_altarica::upper_constructor_exists():
-    assert callable(altarica::Upper.__init__)
+def test_altarica_equal_constructor_exists():
+    assert callable(altarica_Equal.__init__)
 
 
-def test_altarica::upper_constructor_args():
-    sig = inspect.signature(altarica::Upper.__init__)
+def test_altarica_equal_constructor_args():
+    sig = inspect.signature(altarica_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::lower_is_not_abstract():
-    assert not inspect.isabstract(altarica::Lower)
+def test_altarica_eboolean_is_not_abstract():
+    assert not inspect.isabstract(altarica_EBoolean)
 
 
-def test_altarica::lower_constructor_exists():
-    assert callable(altarica::Lower.__init__)
+def test_altarica_eboolean_constructor_exists():
+    assert callable(altarica_EBoolean.__init__)
 
 
-def test_altarica::lower_constructor_args():
-    sig = inspect.signature(altarica::Lower.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_altarica::strictlower_is_not_abstract():
-    assert not inspect.isabstract(altarica::StrictLower)
-
-
-def test_altarica::strictlower_constructor_exists():
-    assert callable(altarica::StrictLower.__init__)
-
-
-def test_altarica::strictlower_constructor_args():
-    sig = inspect.signature(altarica::StrictLower.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_altarica::notequal_is_not_abstract():
-    assert not inspect.isabstract(altarica::NotEqual)
-
-
-def test_altarica::notequal_constructor_exists():
-    assert callable(altarica::NotEqual.__init__)
-
-
-def test_altarica::notequal_constructor_args():
-    sig = inspect.signature(altarica::NotEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_altarica::strictupper_is_not_abstract():
-    assert not inspect.isabstract(altarica::StrictUpper)
-
-
-def test_altarica::strictupper_constructor_exists():
-    assert callable(altarica::StrictUpper.__init__)
-
-
-def test_altarica::strictupper_constructor_args():
-    sig = inspect.signature(altarica::StrictUpper.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_altarica::imply_is_not_abstract():
-    assert not inspect.isabstract(altarica::Imply)
-
-
-def test_altarica::imply_constructor_exists():
-    assert callable(altarica::Imply.__init__)
-
-
-def test_altarica::imply_constructor_args():
-    sig = inspect.signature(altarica::Imply.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_altarica::estring_is_not_abstract():
-    assert not inspect.isabstract(altarica::EString)
-
-
-def test_altarica::estring_constructor_exists():
-    assert callable(altarica::EString.__init__)
-
-
-def test_altarica::estring_constructor_args():
-    sig = inspect.signature(altarica::EString.__init__)
+def test_altarica_eboolean_constructor_args():
+    sig = inspect.signature(altarica_EBoolean.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_altarica::estring_has_value():
-    assert hasattr(altarica::EString, "value")
+def test_altarica_eboolean_has_value():
+    assert hasattr(altarica_EBoolean, "value")
     descriptor = None
-    for klass in altarica::EString.__mro__:
+    for klass in altarica_EBoolean.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -279,37 +209,65 @@ def test_altarica::estring_has_value():
 
 
 
-def test_altarica::equal_is_not_abstract():
-    assert not inspect.isabstract(altarica::Equal)
+def test_altarica_imply_is_not_abstract():
+    assert not inspect.isabstract(altarica_Imply)
 
 
-def test_altarica::equal_constructor_exists():
-    assert callable(altarica::Equal.__init__)
+def test_altarica_imply_constructor_exists():
+    assert callable(altarica_Imply.__init__)
 
 
-def test_altarica::equal_constructor_args():
-    sig = inspect.signature(altarica::Equal.__init__)
+def test_altarica_imply_constructor_args():
+    sig = inspect.signature(altarica_Imply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::eboolean_is_not_abstract():
-    assert not inspect.isabstract(altarica::EBoolean)
+def test_altarica_upper_is_not_abstract():
+    assert not inspect.isabstract(altarica_Upper)
 
 
-def test_altarica::eboolean_constructor_exists():
-    assert callable(altarica::EBoolean.__init__)
+def test_altarica_upper_constructor_exists():
+    assert callable(altarica_Upper.__init__)
 
 
-def test_altarica::eboolean_constructor_args():
-    sig = inspect.signature(altarica::EBoolean.__init__)
+def test_altarica_upper_constructor_args():
+    sig = inspect.signature(altarica_Upper.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_altarica_strictupper_is_not_abstract():
+    assert not inspect.isabstract(altarica_StrictUpper)
+
+
+def test_altarica_strictupper_constructor_exists():
+    assert callable(altarica_StrictUpper.__init__)
+
+
+def test_altarica_strictupper_constructor_args():
+    sig = inspect.signature(altarica_StrictUpper.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_altarica_estring_is_not_abstract():
+    assert not inspect.isabstract(altarica_EString)
+
+
+def test_altarica_estring_constructor_exists():
+    assert callable(altarica_EString.__init__)
+
+
+def test_altarica_estring_constructor_args():
+    sig = inspect.signature(altarica_EString.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_altarica::eboolean_has_value():
-    assert hasattr(altarica::EBoolean, "value")
+def test_altarica_estring_has_value():
+    assert hasattr(altarica_EString, "value")
     descriptor = None
-    for klass in altarica::EBoolean.__mro__:
+    for klass in altarica_EString.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -317,121 +275,163 @@ def test_altarica::eboolean_has_value():
 
 
 
-def test_altarica::variableref_is_not_abstract():
-    assert not inspect.isabstract(altarica::VariableRef)
+def test_altarica_lower_is_not_abstract():
+    assert not inspect.isabstract(altarica_Lower)
 
 
-def test_altarica::variableref_constructor_exists():
-    assert callable(altarica::VariableRef.__init__)
+def test_altarica_lower_constructor_exists():
+    assert callable(altarica_Lower.__init__)
 
 
-def test_altarica::variableref_constructor_args():
-    sig = inspect.signature(altarica::VariableRef.__init__)
+def test_altarica_lower_constructor_args():
+    sig = inspect.signature(altarica_Lower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::or_is_not_abstract():
-    assert not inspect.isabstract(altarica::Or)
+def test_altarica_strictlower_is_not_abstract():
+    assert not inspect.isabstract(altarica_StrictLower)
 
 
-def test_altarica::or_constructor_exists():
-    assert callable(altarica::Or.__init__)
+def test_altarica_strictlower_constructor_exists():
+    assert callable(altarica_StrictLower.__init__)
 
 
-def test_altarica::or_constructor_args():
-    sig = inspect.signature(altarica::Or.__init__)
+def test_altarica_strictlower_constructor_args():
+    sig = inspect.signature(altarica_StrictLower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::and_is_not_abstract():
-    assert not inspect.isabstract(altarica::And)
+def test_altarica_notequal_is_not_abstract():
+    assert not inspect.isabstract(altarica_NotEqual)
 
 
-def test_altarica::and_constructor_exists():
-    assert callable(altarica::And.__init__)
+def test_altarica_notequal_constructor_exists():
+    assert callable(altarica_NotEqual.__init__)
 
 
-def test_altarica::and_constructor_args():
-    sig = inspect.signature(altarica::And.__init__)
+def test_altarica_notequal_constructor_args():
+    sig = inspect.signature(altarica_NotEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::division_is_not_abstract():
-    assert not inspect.isabstract(altarica::Division)
+def test_altarica_variableref_is_not_abstract():
+    assert not inspect.isabstract(altarica_VariableRef)
 
 
-def test_altarica::division_constructor_exists():
-    assert callable(altarica::Division.__init__)
+def test_altarica_variableref_constructor_exists():
+    assert callable(altarica_VariableRef.__init__)
 
 
-def test_altarica::division_constructor_args():
-    sig = inspect.signature(altarica::Division.__init__)
+def test_altarica_variableref_constructor_args():
+    sig = inspect.signature(altarica_VariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::multiplication_is_not_abstract():
-    assert not inspect.isabstract(altarica::Multiplication)
+def test_altarica_or_is_not_abstract():
+    assert not inspect.isabstract(altarica_Or)
 
 
-def test_altarica::multiplication_constructor_exists():
-    assert callable(altarica::Multiplication.__init__)
+def test_altarica_or_constructor_exists():
+    assert callable(altarica_Or.__init__)
 
 
-def test_altarica::multiplication_constructor_args():
-    sig = inspect.signature(altarica::Multiplication.__init__)
+def test_altarica_or_constructor_args():
+    sig = inspect.signature(altarica_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::minus_is_not_abstract():
-    assert not inspect.isabstract(altarica::Minus)
+def test_altarica_and_is_not_abstract():
+    assert not inspect.isabstract(altarica_And)
 
 
-def test_altarica::minus_constructor_exists():
-    assert callable(altarica::Minus.__init__)
+def test_altarica_and_constructor_exists():
+    assert callable(altarica_And.__init__)
 
 
-def test_altarica::minus_constructor_args():
-    sig = inspect.signature(altarica::Minus.__init__)
+def test_altarica_and_constructor_args():
+    sig = inspect.signature(altarica_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::addition_is_not_abstract():
-    assert not inspect.isabstract(altarica::Addition)
+def test_altarica_division_is_not_abstract():
+    assert not inspect.isabstract(altarica_Division)
 
 
-def test_altarica::addition_constructor_exists():
-    assert callable(altarica::Addition.__init__)
+def test_altarica_division_constructor_exists():
+    assert callable(altarica_Division.__init__)
 
 
-def test_altarica::addition_constructor_args():
-    sig = inspect.signature(altarica::Addition.__init__)
+def test_altarica_division_constructor_args():
+    sig = inspect.signature(altarica_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::einteger_is_not_abstract():
-    assert not inspect.isabstract(altarica::EInteger)
+def test_altarica_multiplication_is_not_abstract():
+    assert not inspect.isabstract(altarica_Multiplication)
 
 
-def test_altarica::einteger_constructor_exists():
-    assert callable(altarica::EInteger.__init__)
+def test_altarica_multiplication_constructor_exists():
+    assert callable(altarica_Multiplication.__init__)
 
 
-def test_altarica::einteger_constructor_args():
-    sig = inspect.signature(altarica::EInteger.__init__)
+def test_altarica_multiplication_constructor_args():
+    sig = inspect.signature(altarica_Multiplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_altarica_minus_is_not_abstract():
+    assert not inspect.isabstract(altarica_Minus)
+
+
+def test_altarica_minus_constructor_exists():
+    assert callable(altarica_Minus.__init__)
+
+
+def test_altarica_minus_constructor_args():
+    sig = inspect.signature(altarica_Minus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_altarica_addition_is_not_abstract():
+    assert not inspect.isabstract(altarica_Addition)
+
+
+def test_altarica_addition_constructor_exists():
+    assert callable(altarica_Addition.__init__)
+
+
+def test_altarica_addition_constructor_args():
+    sig = inspect.signature(altarica_Addition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_altarica_einteger_is_not_abstract():
+    assert not inspect.isabstract(altarica_EInteger)
+
+
+def test_altarica_einteger_constructor_exists():
+    assert callable(altarica_EInteger.__init__)
+
+
+def test_altarica_einteger_constructor_args():
+    sig = inspect.signature(altarica_EInteger.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_altarica::einteger_has_value():
-    assert hasattr(altarica::EInteger, "value")
+def test_altarica_einteger_has_value():
+    assert hasattr(altarica_EInteger, "value")
     descriptor = None
-    for klass in altarica::EInteger.__mro__:
+    for klass in altarica_EInteger.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -439,37 +439,37 @@ def test_altarica::einteger_has_value():
 
 
 
-def test_altarica::transition_is_not_abstract():
-    assert not inspect.isabstract(altarica::Transition)
+def test_altarica_transition_is_not_abstract():
+    assert not inspect.isabstract(altarica_Transition)
 
 
-def test_altarica::transition_constructor_exists():
-    assert callable(altarica::Transition.__init__)
+def test_altarica_transition_constructor_exists():
+    assert callable(altarica_Transition.__init__)
 
 
-def test_altarica::transition_constructor_args():
-    sig = inspect.signature(altarica::Transition.__init__)
+def test_altarica_transition_constructor_args():
+    sig = inspect.signature(altarica_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::navigablevariable_is_not_abstract():
-    assert not inspect.isabstract(altarica::NavigableVariable)
+def test_altarica_navigablevariable_is_not_abstract():
+    assert not inspect.isabstract(altarica_NavigableVariable)
 
 
-def test_altarica::navigablevariable_constructor_exists():
-    assert callable(altarica::NavigableVariable.__init__)
+def test_altarica_navigablevariable_constructor_exists():
+    assert callable(altarica_NavigableVariable.__init__)
 
 
-def test_altarica::navigablevariable_constructor_args():
-    sig = inspect.signature(altarica::NavigableVariable.__init__)
+def test_altarica_navigablevariable_constructor_args():
+    sig = inspect.signature(altarica_NavigableVariable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_altarica::navigablevariable_has_name():
-    assert hasattr(altarica::NavigableVariable, "name")
+def test_altarica_navigablevariable_has_name():
+    assert hasattr(altarica_NavigableVariable, "name")
     descriptor = None
-    for klass in altarica::NavigableVariable.__mro__:
+    for klass in altarica_NavigableVariable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -477,30 +477,30 @@ def test_altarica::navigablevariable_has_name():
 
 
 
-def test_altarica::eobject_is_not_abstract():
-    assert not inspect.isabstract(altarica::EObject)
+def test_altarica_eobject_is_not_abstract():
+    assert not inspect.isabstract(altarica_EObject)
 
 
-def test_altarica::eobject_constructor_exists():
-    assert callable(altarica::EObject.__init__)
+def test_altarica_eobject_constructor_exists():
+    assert callable(altarica_EObject.__init__)
 
 
-def test_altarica::eobject_constructor_args():
-    sig = inspect.signature(altarica::EObject.__init__)
+def test_altarica_eobject_constructor_args():
+    sig = inspect.signature(altarica_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::caseexpression_is_not_abstract():
-    assert not inspect.isabstract(altarica::CaseExpression)
+def test_altarica_caseexpression_is_not_abstract():
+    assert not inspect.isabstract(altarica_CaseExpression)
 
 
-def test_altarica::caseexpression_constructor_exists():
-    assert callable(altarica::CaseExpression.__init__)
+def test_altarica_caseexpression_constructor_exists():
+    assert callable(altarica_CaseExpression.__init__)
 
 
-def test_altarica::caseexpression_constructor_args():
-    sig = inspect.signature(altarica::CaseExpression.__init__)
+def test_altarica_caseexpression_constructor_args():
+    sig = inspect.signature(altarica_CaseExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -533,93 +533,93 @@ def test_abstractexpression_constructor_args():
 
 
 
-def test_altarica::ifthenelse_is_not_abstract():
-    assert not inspect.isabstract(altarica::IfThenElse)
+def test_altarica_ifthenelse_is_not_abstract():
+    assert not inspect.isabstract(altarica_IfThenElse)
 
 
-def test_altarica::ifthenelse_constructor_exists():
-    assert callable(altarica::IfThenElse.__init__)
+def test_altarica_ifthenelse_constructor_exists():
+    assert callable(altarica_IfThenElse.__init__)
 
 
-def test_altarica::ifthenelse_constructor_args():
-    sig = inspect.signature(altarica::IfThenElse.__init__)
+def test_altarica_ifthenelse_constructor_args():
+    sig = inspect.signature(altarica_IfThenElse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::switch_is_not_abstract():
-    assert not inspect.isabstract(altarica::Switch)
+def test_altarica_switch_is_not_abstract():
+    assert not inspect.isabstract(altarica_Switch)
 
 
-def test_altarica::switch_constructor_exists():
-    assert callable(altarica::Switch.__init__)
+def test_altarica_switch_constructor_exists():
+    assert callable(altarica_Switch.__init__)
 
 
-def test_altarica::switch_constructor_args():
-    sig = inspect.signature(altarica::Switch.__init__)
+def test_altarica_switch_constructor_args():
+    sig = inspect.signature(altarica_Switch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::statedeclaration_is_not_abstract():
-    assert not inspect.isabstract(altarica::StateDeclaration)
+def test_altarica_statedeclaration_is_not_abstract():
+    assert not inspect.isabstract(altarica_StateDeclaration)
 
 
-def test_altarica::statedeclaration_constructor_exists():
-    assert callable(altarica::StateDeclaration.__init__)
+def test_altarica_statedeclaration_constructor_exists():
+    assert callable(altarica_StateDeclaration.__init__)
 
 
-def test_altarica::statedeclaration_constructor_args():
-    sig = inspect.signature(altarica::StateDeclaration.__init__)
+def test_altarica_statedeclaration_constructor_args():
+    sig = inspect.signature(altarica_StateDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::eventref_is_not_abstract():
-    assert not inspect.isabstract(altarica::EventRef)
+def test_altarica_eventref_is_not_abstract():
+    assert not inspect.isabstract(altarica_EventRef)
 
 
-def test_altarica::eventref_constructor_exists():
-    assert callable(altarica::EventRef.__init__)
+def test_altarica_eventref_constructor_exists():
+    assert callable(altarica_EventRef.__init__)
 
 
-def test_altarica::eventref_constructor_args():
-    sig = inspect.signature(altarica::EventRef.__init__)
+def test_altarica_eventref_constructor_args():
+    sig = inspect.signature(altarica_EventRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::cardinality_is_not_abstract():
-    assert not inspect.isabstract(altarica::Cardinality)
+def test_altarica_cardinality_is_not_abstract():
+    assert not inspect.isabstract(altarica_Cardinality)
 
 
-def test_altarica::cardinality_constructor_exists():
-    assert callable(altarica::Cardinality.__init__)
+def test_altarica_cardinality_constructor_exists():
+    assert callable(altarica_Cardinality.__init__)
 
 
-def test_altarica::cardinality_constructor_args():
-    sig = inspect.signature(altarica::Cardinality.__init__)
+def test_altarica_cardinality_constructor_args():
+    sig = inspect.signature(altarica_Cardinality.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::vectorparameter_is_not_abstract():
-    assert not inspect.isabstract(altarica::VectorParameter)
+def test_altarica_vectorparameter_is_not_abstract():
+    assert not inspect.isabstract(altarica_VectorParameter)
 
 
-def test_altarica::vectorparameter_constructor_exists():
-    assert callable(altarica::VectorParameter.__init__)
+def test_altarica_vectorparameter_constructor_exists():
+    assert callable(altarica_VectorParameter.__init__)
 
 
-def test_altarica::vectorparameter_constructor_args():
-    sig = inspect.signature(altarica::VectorParameter.__init__)
+def test_altarica_vectorparameter_constructor_args():
+    sig = inspect.signature(altarica_VectorParameter.__init__)
     params = list(sig.parameters.keys())
     assert "isRequired" in params, "Missing parameter 'isRequired'"
 
-def test_altarica::vectorparameter_has_isRequired():
-    assert hasattr(altarica::VectorParameter, "isRequired")
+def test_altarica_vectorparameter_has_isRequired():
+    assert hasattr(altarica_VectorParameter, "isRequired")
     descriptor = None
-    for klass in altarica::VectorParameter.__mro__:
+    for klass in altarica_VectorParameter.__mro__:
         if "isRequired" in klass.__dict__:
             descriptor = klass.__dict__["isRequired"]
             break
@@ -627,79 +627,79 @@ def test_altarica::vectorparameter_has_isRequired():
 
 
 
-def test_altarica::vector_is_not_abstract():
-    assert not inspect.isabstract(altarica::Vector)
+def test_altarica_vector_is_not_abstract():
+    assert not inspect.isabstract(altarica_Vector)
 
 
-def test_altarica::vector_constructor_exists():
-    assert callable(altarica::Vector.__init__)
+def test_altarica_vector_constructor_exists():
+    assert callable(altarica_Vector.__init__)
 
 
-def test_altarica::vector_constructor_args():
-    sig = inspect.signature(altarica::Vector.__init__)
+def test_altarica_vector_constructor_args():
+    sig = inspect.signature(altarica_Vector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::abstractbooleanexpression_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractBooleanExpression)
+def test_altarica_abstractbooleanexpression_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractBooleanExpression)
 
 
-def test_altarica::abstractbooleanexpression_constructor_exists():
-    assert callable(altarica::AbstractBooleanExpression.__init__)
+def test_altarica_abstractbooleanexpression_constructor_exists():
+    assert callable(altarica_AbstractBooleanExpression.__init__)
 
 
-def test_altarica::abstractbooleanexpression_constructor_args():
-    sig = inspect.signature(altarica::AbstractBooleanExpression.__init__)
+def test_altarica_abstractbooleanexpression_constructor_args():
+    sig = inspect.signature(altarica_AbstractBooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::assert_is_not_abstract():
-    assert not inspect.isabstract(altarica::Assert)
+def test_altarica_assert_is_not_abstract():
+    assert not inspect.isabstract(altarica_Assert)
 
 
-def test_altarica::assert_constructor_exists():
-    assert callable(altarica::Assert.__init__)
+def test_altarica_assert_constructor_exists():
+    assert callable(altarica_Assert.__init__)
 
 
-def test_altarica::assert_constructor_args():
-    sig = inspect.signature(altarica::Assert.__init__)
+def test_altarica_assert_constructor_args():
+    sig = inspect.signature(altarica_Assert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::nodeinstancedeclaration_is_not_abstract():
-    assert not inspect.isabstract(altarica::NodeInstanceDeclaration)
+def test_altarica_nodeinstancedeclaration_is_not_abstract():
+    assert not inspect.isabstract(altarica_NodeInstanceDeclaration)
 
 
-def test_altarica::nodeinstancedeclaration_constructor_exists():
-    assert callable(altarica::NodeInstanceDeclaration.__init__)
+def test_altarica_nodeinstancedeclaration_constructor_exists():
+    assert callable(altarica_NodeInstanceDeclaration.__init__)
 
 
-def test_altarica::nodeinstancedeclaration_constructor_args():
-    sig = inspect.signature(altarica::NodeInstanceDeclaration.__init__)
+def test_altarica_nodeinstancedeclaration_constructor_args():
+    sig = inspect.signature(altarica_NodeInstanceDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::externaldirective_is_not_abstract():
-    assert not inspect.isabstract(altarica::ExternalDirective)
+def test_altarica_externaldirective_is_not_abstract():
+    assert not inspect.isabstract(altarica_ExternalDirective)
 
 
-def test_altarica::externaldirective_constructor_exists():
-    assert callable(altarica::ExternalDirective.__init__)
+def test_altarica_externaldirective_constructor_exists():
+    assert callable(altarica_ExternalDirective.__init__)
 
 
-def test_altarica::externaldirective_constructor_args():
-    sig = inspect.signature(altarica::ExternalDirective.__init__)
+def test_altarica_externaldirective_constructor_args():
+    sig = inspect.signature(altarica_ExternalDirective.__init__)
     params = list(sig.parameters.keys())
     assert "directive" in params, "Missing parameter 'directive'"
 
-def test_altarica::externaldirective_has_directive():
-    assert hasattr(altarica::ExternalDirective, "directive")
+def test_altarica_externaldirective_has_directive():
+    assert hasattr(altarica_ExternalDirective, "directive")
     descriptor = None
-    for klass in altarica::ExternalDirective.__mro__:
+    for klass in altarica_ExternalDirective.__mro__:
         if "directive" in klass.__dict__:
             descriptor = klass.__dict__["directive"]
             break
@@ -707,30 +707,30 @@ def test_altarica::externaldirective_has_directive():
 
 
 
-def test_altarica::affectation_is_not_abstract():
-    assert not inspect.isabstract(altarica::Affectation)
+def test_altarica_affectation_is_not_abstract():
+    assert not inspect.isabstract(altarica_Affectation)
 
 
-def test_altarica::affectation_constructor_exists():
-    assert callable(altarica::Affectation.__init__)
+def test_altarica_affectation_constructor_exists():
+    assert callable(altarica_Affectation.__init__)
 
 
-def test_altarica::affectation_constructor_args():
-    sig = inspect.signature(altarica::Affectation.__init__)
+def test_altarica_affectation_constructor_args():
+    sig = inspect.signature(altarica_Affectation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::initstatement_is_not_abstract():
-    assert not inspect.isabstract(altarica::InitStatement)
+def test_altarica_initstatement_is_not_abstract():
+    assert not inspect.isabstract(altarica_InitStatement)
 
 
-def test_altarica::initstatement_constructor_exists():
-    assert callable(altarica::InitStatement.__init__)
+def test_altarica_initstatement_constructor_exists():
+    assert callable(altarica_InitStatement.__init__)
 
 
-def test_altarica::initstatement_constructor_args():
-    sig = inspect.signature(altarica::InitStatement.__init__)
+def test_altarica_initstatement_constructor_args():
+    sig = inspect.signature(altarica_InitStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -749,128 +749,128 @@ def test_abstractspecification_constructor_args():
 
 
 
-def test_altarica::transitionspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::TransitionSpecification)
+def test_altarica_vectorspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_VectorSpecification)
 
 
-def test_altarica::transitionspecification_constructor_exists():
-    assert callable(altarica::TransitionSpecification.__init__)
+def test_altarica_vectorspecification_constructor_exists():
+    assert callable(altarica_VectorSpecification.__init__)
 
 
-def test_altarica::transitionspecification_constructor_args():
-    sig = inspect.signature(altarica::TransitionSpecification.__init__)
+def test_altarica_vectorspecification_constructor_args():
+    sig = inspect.signature(altarica_VectorSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::assertspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::AssertSpecification)
+def test_altarica_assertspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_AssertSpecification)
 
 
-def test_altarica::assertspecification_constructor_exists():
-    assert callable(altarica::AssertSpecification.__init__)
+def test_altarica_assertspecification_constructor_exists():
+    assert callable(altarica_AssertSpecification.__init__)
 
 
-def test_altarica::assertspecification_constructor_args():
-    sig = inspect.signature(altarica::AssertSpecification.__init__)
+def test_altarica_assertspecification_constructor_args():
+    sig = inspect.signature(altarica_AssertSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::vectorspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::VectorSpecification)
+def test_altarica_externalspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_ExternalSpecification)
 
 
-def test_altarica::vectorspecification_constructor_exists():
-    assert callable(altarica::VectorSpecification.__init__)
+def test_altarica_externalspecification_constructor_exists():
+    assert callable(altarica_ExternalSpecification.__init__)
 
 
-def test_altarica::vectorspecification_constructor_args():
-    sig = inspect.signature(altarica::VectorSpecification.__init__)
+def test_altarica_externalspecification_constructor_args():
+    sig = inspect.signature(altarica_ExternalSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::externalspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::ExternalSpecification)
+def test_altarica_transitionspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_TransitionSpecification)
 
 
-def test_altarica::externalspecification_constructor_exists():
-    assert callable(altarica::ExternalSpecification.__init__)
+def test_altarica_transitionspecification_constructor_exists():
+    assert callable(altarica_TransitionSpecification.__init__)
 
 
-def test_altarica::externalspecification_constructor_args():
-    sig = inspect.signature(altarica::ExternalSpecification.__init__)
+def test_altarica_transitionspecification_constructor_args():
+    sig = inspect.signature(altarica_TransitionSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::nodeinstancespecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::NodeInstanceSpecification)
+def test_altarica_nodeinstancespecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_NodeInstanceSpecification)
 
 
-def test_altarica::nodeinstancespecification_constructor_exists():
-    assert callable(altarica::NodeInstanceSpecification.__init__)
+def test_altarica_nodeinstancespecification_constructor_exists():
+    assert callable(altarica_NodeInstanceSpecification.__init__)
 
 
-def test_altarica::nodeinstancespecification_constructor_args():
-    sig = inspect.signature(altarica::NodeInstanceSpecification.__init__)
+def test_altarica_nodeinstancespecification_constructor_args():
+    sig = inspect.signature(altarica_NodeInstanceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::initspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::InitSpecification)
+def test_altarica_initspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_InitSpecification)
 
 
-def test_altarica::initspecification_constructor_exists():
-    assert callable(altarica::InitSpecification.__init__)
+def test_altarica_initspecification_constructor_exists():
+    assert callable(altarica_InitSpecification.__init__)
 
 
-def test_altarica::initspecification_constructor_args():
-    sig = inspect.signature(altarica::InitSpecification.__init__)
+def test_altarica_initspecification_constructor_args():
+    sig = inspect.signature(altarica_InitSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::statespecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::StateSpecification)
+def test_altarica_statespecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_StateSpecification)
 
 
-def test_altarica::statespecification_constructor_exists():
-    assert callable(altarica::StateSpecification.__init__)
+def test_altarica_statespecification_constructor_exists():
+    assert callable(altarica_StateSpecification.__init__)
 
 
-def test_altarica::statespecification_constructor_args():
-    sig = inspect.signature(altarica::StateSpecification.__init__)
+def test_altarica_statespecification_constructor_args():
+    sig = inspect.signature(altarica_StateSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::abstractexpression_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractExpression)
+def test_altarica_abstractexpression_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractExpression)
 
 
-def test_altarica::abstractexpression_constructor_exists():
-    assert callable(altarica::AbstractExpression.__init__)
+def test_altarica_abstractexpression_constructor_exists():
+    assert callable(altarica_AbstractExpression.__init__)
 
 
-def test_altarica::abstractexpression_constructor_args():
-    sig = inspect.signature(altarica::AbstractExpression.__init__)
+def test_altarica_abstractexpression_constructor_args():
+    sig = inspect.signature(altarica_AbstractExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::priority_is_not_abstract():
-    assert not inspect.isabstract(altarica::Priority)
+def test_altarica_priority_is_not_abstract():
+    assert not inspect.isabstract(altarica_Priority)
 
 
-def test_altarica::priority_constructor_exists():
-    assert callable(altarica::Priority.__init__)
+def test_altarica_priority_constructor_exists():
+    assert callable(altarica_Priority.__init__)
 
 
-def test_altarica::priority_constructor_args():
-    sig = inspect.signature(altarica::Priority.__init__)
+def test_altarica_priority_constructor_args():
+    sig = inspect.signature(altarica_Priority.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -889,107 +889,107 @@ def test_navigablevariable_constructor_args():
 
 
 
-def test_altarica::nodeinstance_is_not_abstract():
-    assert not inspect.isabstract(altarica::NodeInstance)
+def test_altarica_nodeinstance_is_not_abstract():
+    assert not inspect.isabstract(altarica_NodeInstance)
 
 
-def test_altarica::nodeinstance_constructor_exists():
-    assert callable(altarica::NodeInstance.__init__)
+def test_altarica_nodeinstance_constructor_exists():
+    assert callable(altarica_NodeInstance.__init__)
 
 
-def test_altarica::nodeinstance_constructor_args():
-    sig = inspect.signature(altarica::NodeInstance.__init__)
+def test_altarica_nodeinstance_constructor_args():
+    sig = inspect.signature(altarica_NodeInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::nonnavigablevariable_is_not_abstract():
-    assert not inspect.isabstract(altarica::NonNavigableVariable)
+def test_altarica_nonnavigablevariable_is_not_abstract():
+    assert not inspect.isabstract(altarica_NonNavigableVariable)
 
 
-def test_altarica::nonnavigablevariable_constructor_exists():
-    assert callable(altarica::NonNavigableVariable.__init__)
+def test_altarica_nonnavigablevariable_constructor_exists():
+    assert callable(altarica_NonNavigableVariable.__init__)
 
 
-def test_altarica::nonnavigablevariable_constructor_args():
-    sig = inspect.signature(altarica::NonNavigableVariable.__init__)
+def test_altarica_nonnavigablevariable_constructor_args():
+    sig = inspect.signature(altarica_NonNavigableVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::event_is_not_abstract():
-    assert not inspect.isabstract(altarica::Event)
+def test_altarica_event_is_not_abstract():
+    assert not inspect.isabstract(altarica_Event)
 
 
-def test_altarica::event_constructor_exists():
-    assert callable(altarica::Event.__init__)
+def test_altarica_event_constructor_exists():
+    assert callable(altarica_Event.__init__)
 
 
-def test_altarica::event_constructor_args():
-    sig = inspect.signature(altarica::Event.__init__)
+def test_altarica_event_constructor_args():
+    sig = inspect.signature(altarica_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::eventdeclaration_is_not_abstract():
-    assert not inspect.isabstract(altarica::EventDeclaration)
+def test_altarica_eventdeclaration_is_not_abstract():
+    assert not inspect.isabstract(altarica_EventDeclaration)
 
 
-def test_altarica::eventdeclaration_constructor_exists():
-    assert callable(altarica::EventDeclaration.__init__)
+def test_altarica_eventdeclaration_constructor_exists():
+    assert callable(altarica_EventDeclaration.__init__)
 
 
-def test_altarica::eventdeclaration_constructor_args():
-    sig = inspect.signature(altarica::EventDeclaration.__init__)
+def test_altarica_eventdeclaration_constructor_args():
+    sig = inspect.signature(altarica_EventDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::eventspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::EventSpecification)
+def test_altarica_eventspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_EventSpecification)
 
 
-def test_altarica::eventspecification_constructor_exists():
-    assert callable(altarica::EventSpecification.__init__)
+def test_altarica_eventspecification_constructor_exists():
+    assert callable(altarica_EventSpecification.__init__)
 
 
-def test_altarica::eventspecification_constructor_args():
-    sig = inspect.signature(altarica::EventSpecification.__init__)
+def test_altarica_eventspecification_constructor_args():
+    sig = inspect.signature(altarica_EventSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::abstracttyperef_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractTypeRef)
+def test_altarica_abstracttyperef_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractTypeRef)
 
 
-def test_altarica::abstracttyperef_constructor_exists():
-    assert callable(altarica::AbstractTypeRef.__init__)
+def test_altarica_abstracttyperef_constructor_exists():
+    assert callable(altarica_AbstractTypeRef.__init__)
 
 
-def test_altarica::abstracttyperef_constructor_args():
-    sig = inspect.signature(altarica::AbstractTypeRef.__init__)
+def test_altarica_abstracttyperef_constructor_args():
+    sig = inspect.signature(altarica_AbstractTypeRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::flowdeclaration_is_not_abstract():
-    assert not inspect.isabstract(altarica::FlowDeclaration)
+def test_altarica_flowdeclaration_is_not_abstract():
+    assert not inspect.isabstract(altarica_FlowDeclaration)
 
 
-def test_altarica::flowdeclaration_constructor_exists():
-    assert callable(altarica::FlowDeclaration.__init__)
+def test_altarica_flowdeclaration_constructor_exists():
+    assert callable(altarica_FlowDeclaration.__init__)
 
 
-def test_altarica::flowdeclaration_constructor_args():
-    sig = inspect.signature(altarica::FlowDeclaration.__init__)
+def test_altarica_flowdeclaration_constructor_args():
+    sig = inspect.signature(altarica_FlowDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_altarica::flowdeclaration_has_kind():
-    assert hasattr(altarica::FlowDeclaration, "kind")
+def test_altarica_flowdeclaration_has_kind():
+    assert hasattr(altarica_FlowDeclaration, "kind")
     descriptor = None
-    for klass in altarica::FlowDeclaration.__mro__:
+    for klass in altarica_FlowDeclaration.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -997,30 +997,30 @@ def test_altarica::flowdeclaration_has_kind():
 
 
 
-def test_altarica::flowspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::FlowSpecification)
+def test_altarica_flowspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_FlowSpecification)
 
 
-def test_altarica::flowspecification_constructor_exists():
-    assert callable(altarica::FlowSpecification.__init__)
+def test_altarica_flowspecification_constructor_exists():
+    assert callable(altarica_FlowSpecification.__init__)
 
 
-def test_altarica::flowspecification_constructor_args():
-    sig = inspect.signature(altarica::FlowSpecification.__init__)
+def test_altarica_flowspecification_constructor_args():
+    sig = inspect.signature(altarica_FlowSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::expression_is_not_abstract():
-    assert not inspect.isabstract(altarica::Expression)
+def test_altarica_expression_is_not_abstract():
+    assert not inspect.isabstract(altarica_Expression)
 
 
-def test_altarica::expression_constructor_exists():
-    assert callable(altarica::Expression.__init__)
+def test_altarica_expression_constructor_exists():
+    assert callable(altarica_Expression.__init__)
 
 
-def test_altarica::expression_constructor_args():
-    sig = inspect.signature(altarica::Expression.__init__)
+def test_altarica_expression_constructor_args():
+    sig = inspect.signature(altarica_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1039,58 +1039,58 @@ def test_nonnavigablevariable_constructor_args():
 
 
 
-def test_altarica::flow_is_not_abstract():
-    assert not inspect.isabstract(altarica::Flow)
+def test_altarica_flow_is_not_abstract():
+    assert not inspect.isabstract(altarica_Flow)
 
 
-def test_altarica::flow_constructor_exists():
-    assert callable(altarica::Flow.__init__)
+def test_altarica_flow_constructor_exists():
+    assert callable(altarica_Flow.__init__)
 
 
-def test_altarica::flow_constructor_args():
-    sig = inspect.signature(altarica::Flow.__init__)
+def test_altarica_flow_constructor_args():
+    sig = inspect.signature(altarica_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::state_is_not_abstract():
-    assert not inspect.isabstract(altarica::State)
+def test_altarica_state_is_not_abstract():
+    assert not inspect.isabstract(altarica_State)
 
 
-def test_altarica::state_constructor_exists():
-    assert callable(altarica::State.__init__)
+def test_altarica_state_constructor_exists():
+    assert callable(altarica_State.__init__)
 
 
-def test_altarica::state_constructor_args():
-    sig = inspect.signature(altarica::State.__init__)
+def test_altarica_state_constructor_args():
+    sig = inspect.signature(altarica_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::abstractdefinitionconstant_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractDefinitionConstant)
+def test_altarica_abstractdefinitionconstant_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractDefinitionConstant)
 
 
-def test_altarica::abstractdefinitionconstant_constructor_exists():
-    assert callable(altarica::AbstractDefinitionConstant.__init__)
+def test_altarica_abstractdefinitionconstant_constructor_exists():
+    assert callable(altarica_AbstractDefinitionConstant.__init__)
 
 
-def test_altarica::abstractdefinitionconstant_constructor_args():
-    sig = inspect.signature(altarica::AbstractDefinitionConstant.__init__)
+def test_altarica_abstractdefinitionconstant_constructor_args():
+    sig = inspect.signature(altarica_AbstractDefinitionConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::constant_is_not_abstract():
-    assert not inspect.isabstract(altarica::Constant)
+def test_altarica_constant_is_not_abstract():
+    assert not inspect.isabstract(altarica_Constant)
 
 
-def test_altarica::constant_constructor_exists():
-    assert callable(altarica::Constant.__init__)
+def test_altarica_constant_constructor_exists():
+    assert callable(altarica_Constant.__init__)
 
 
-def test_altarica::constant_constructor_args():
-    sig = inspect.signature(altarica::Constant.__init__)
+def test_altarica_constant_constructor_args():
+    sig = inspect.signature(altarica_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1109,37 +1109,37 @@ def test_abstractdeclaration_constructor_args():
 
 
 
-def test_altarica::constantdefinition_is_not_abstract():
-    assert not inspect.isabstract(altarica::ConstantDefinition)
+def test_altarica_constantdefinition_is_not_abstract():
+    assert not inspect.isabstract(altarica_ConstantDefinition)
 
 
-def test_altarica::constantdefinition_constructor_exists():
-    assert callable(altarica::ConstantDefinition.__init__)
+def test_altarica_constantdefinition_constructor_exists():
+    assert callable(altarica_ConstantDefinition.__init__)
 
 
-def test_altarica::constantdefinition_constructor_args():
-    sig = inspect.signature(altarica::ConstantDefinition.__init__)
+def test_altarica_constantdefinition_constructor_args():
+    sig = inspect.signature(altarica_ConstantDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::variableattribute_is_not_abstract():
-    assert not inspect.isabstract(altarica::VariableAttribute)
+def test_altarica_variableattribute_is_not_abstract():
+    assert not inspect.isabstract(altarica_VariableAttribute)
 
 
-def test_altarica::variableattribute_constructor_exists():
-    assert callable(altarica::VariableAttribute.__init__)
+def test_altarica_variableattribute_constructor_exists():
+    assert callable(altarica_VariableAttribute.__init__)
 
 
-def test_altarica::variableattribute_constructor_args():
-    sig = inspect.signature(altarica::VariableAttribute.__init__)
+def test_altarica_variableattribute_constructor_args():
+    sig = inspect.signature(altarica_VariableAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_altarica::variableattribute_has_name():
-    assert hasattr(altarica::VariableAttribute, "name")
+def test_altarica_variableattribute_has_name():
+    assert hasattr(altarica_VariableAttribute, "name")
     descriptor = None
-    for klass in altarica::VariableAttribute.__mro__:
+    for klass in altarica_VariableAttribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1147,47 +1147,47 @@ def test_altarica::variableattribute_has_name():
 
 
 
-def test_altarica::abstractspecification_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractSpecification)
+def test_altarica_abstractspecification_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractSpecification)
 
 
-def test_altarica::abstractspecification_constructor_exists():
-    assert callable(altarica::AbstractSpecification.__init__)
+def test_altarica_abstractspecification_constructor_exists():
+    assert callable(altarica_AbstractSpecification.__init__)
 
 
-def test_altarica::abstractspecification_constructor_args():
-    sig = inspect.signature(altarica::AbstractSpecification.__init__)
+def test_altarica_abstractspecification_constructor_args():
+    sig = inspect.signature(altarica_AbstractSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::node_is_not_abstract():
-    assert not inspect.isabstract(altarica::Node)
+def test_altarica_node_is_not_abstract():
+    assert not inspect.isabstract(altarica_Node)
 
 
-def test_altarica::node_constructor_exists():
-    assert callable(altarica::Node.__init__)
+def test_altarica_node_constructor_exists():
+    assert callable(altarica_Node.__init__)
 
 
-def test_altarica::node_constructor_args():
-    sig = inspect.signature(altarica::Node.__init__)
+def test_altarica_node_constructor_args():
+    sig = inspect.signature(altarica_Node.__init__)
     params = list(sig.parameters.keys())
     assert "isMain" in params, "Missing parameter 'isMain'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_altarica::node_has_isMain():
-    assert hasattr(altarica::Node, "isMain")
+def test_altarica_node_has_isMain():
+    assert hasattr(altarica_Node, "isMain")
     descriptor = None
-    for klass in altarica::Node.__mro__:
+    for klass in altarica_Node.__mro__:
         if "isMain" in klass.__dict__:
             descriptor = klass.__dict__["isMain"]
             break
     assert isinstance(descriptor, property)
 
-def test_altarica::node_has_name():
-    assert hasattr(altarica::Node, "name")
+def test_altarica_node_has_name():
+    assert hasattr(altarica_Node, "name")
     descriptor = None
-    for klass in altarica::Node.__mro__:
+    for klass in altarica_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1195,16 +1195,16 @@ def test_altarica::node_has_name():
 
 
 
-def test_altarica::literal_is_not_abstract():
-    assert not inspect.isabstract(altarica::Literal)
+def test_altarica_literal_is_not_abstract():
+    assert not inspect.isabstract(altarica_Literal)
 
 
-def test_altarica::literal_constructor_exists():
-    assert callable(altarica::Literal.__init__)
+def test_altarica_literal_constructor_exists():
+    assert callable(altarica_Literal.__init__)
 
 
-def test_altarica::literal_constructor_args():
-    sig = inspect.signature(altarica::Literal.__init__)
+def test_altarica_literal_constructor_args():
+    sig = inspect.signature(altarica_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1223,37 +1223,23 @@ def test_abstractdomain_constructor_args():
 
 
 
-def test_altarica::enumeration_is_not_abstract():
-    assert not inspect.isabstract(altarica::Enumeration)
+def test_altarica_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(altarica_PrimitiveType)
 
 
-def test_altarica::enumeration_constructor_exists():
-    assert callable(altarica::Enumeration.__init__)
+def test_altarica_primitivetype_constructor_exists():
+    assert callable(altarica_PrimitiveType.__init__)
 
 
-def test_altarica::enumeration_constructor_args():
-    sig = inspect.signature(altarica::Enumeration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_altarica::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(altarica::PrimitiveType)
-
-
-def test_altarica::primitivetype_constructor_exists():
-    assert callable(altarica::PrimitiveType.__init__)
-
-
-def test_altarica::primitivetype_constructor_args():
-    sig = inspect.signature(altarica::PrimitiveType.__init__)
+def test_altarica_primitivetype_constructor_args():
+    sig = inspect.signature(altarica_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_altarica::primitivetype_has_name():
-    assert hasattr(altarica::PrimitiveType, "name")
+def test_altarica_primitivetype_has_name():
+    assert hasattr(altarica_PrimitiveType, "name")
     descriptor = None
-    for klass in altarica::PrimitiveType.__mro__:
+    for klass in altarica_PrimitiveType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1261,16 +1247,30 @@ def test_altarica::primitivetype_has_name():
 
 
 
-def test_altarica::range_is_not_abstract():
-    assert not inspect.isabstract(altarica::Range)
+def test_altarica_enumeration_is_not_abstract():
+    assert not inspect.isabstract(altarica_Enumeration)
 
 
-def test_altarica::range_constructor_exists():
-    assert callable(altarica::Range.__init__)
+def test_altarica_enumeration_constructor_exists():
+    assert callable(altarica_Enumeration.__init__)
 
 
-def test_altarica::range_constructor_args():
-    sig = inspect.signature(altarica::Range.__init__)
+def test_altarica_enumeration_constructor_args():
+    sig = inspect.signature(altarica_Enumeration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_altarica_range_is_not_abstract():
+    assert not inspect.isabstract(altarica_Range)
+
+
+def test_altarica_range_constructor_exists():
+    assert callable(altarica_Range.__init__)
+
+
+def test_altarica_range_constructor_args():
+    sig = inspect.signature(altarica_Range.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1289,37 +1289,37 @@ def test_abstracttyperef_constructor_args():
 
 
 
-def test_altarica::domainref_is_not_abstract():
-    assert not inspect.isabstract(altarica::DomainRef)
+def test_altarica_domainref_is_not_abstract():
+    assert not inspect.isabstract(altarica_DomainRef)
 
 
-def test_altarica::domainref_constructor_exists():
-    assert callable(altarica::DomainRef.__init__)
+def test_altarica_domainref_constructor_exists():
+    assert callable(altarica_DomainRef.__init__)
 
 
-def test_altarica::domainref_constructor_args():
-    sig = inspect.signature(altarica::DomainRef.__init__)
+def test_altarica_domainref_constructor_args():
+    sig = inspect.signature(altarica_DomainRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::domain_is_not_abstract():
-    assert not inspect.isabstract(altarica::Domain)
+def test_altarica_domain_is_not_abstract():
+    assert not inspect.isabstract(altarica_Domain)
 
 
-def test_altarica::domain_constructor_exists():
-    assert callable(altarica::Domain.__init__)
+def test_altarica_domain_constructor_exists():
+    assert callable(altarica_Domain.__init__)
 
 
-def test_altarica::domain_constructor_args():
-    sig = inspect.signature(altarica::Domain.__init__)
+def test_altarica_domain_constructor_args():
+    sig = inspect.signature(altarica_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_altarica::domain_has_name():
-    assert hasattr(altarica::Domain, "name")
+def test_altarica_domain_has_name():
+    assert hasattr(altarica_Domain, "name")
     descriptor = None
-    for klass in altarica::Domain.__mro__:
+    for klass in altarica_Domain.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1327,16 +1327,16 @@ def test_altarica::domain_has_name():
 
 
 
-def test_altarica::abstractdomain_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractDomain)
+def test_altarica_abstractdomain_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractDomain)
 
 
-def test_altarica::abstractdomain_constructor_exists():
-    assert callable(altarica::AbstractDomain.__init__)
+def test_altarica_abstractdomain_constructor_exists():
+    assert callable(altarica_AbstractDomain.__init__)
 
 
-def test_altarica::abstractdomain_constructor_args():
-    sig = inspect.signature(altarica::AbstractDomain.__init__)
+def test_altarica_abstractdomain_constructor_args():
+    sig = inspect.signature(altarica_AbstractDomain.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1355,59 +1355,75 @@ def test_abstractdefinitionconstant_constructor_args():
 
 
 
-def test_altarica::domainconstant_is_not_abstract():
-    assert not inspect.isabstract(altarica::DomainConstant)
+def test_altarica_domainconstant_is_not_abstract():
+    assert not inspect.isabstract(altarica_DomainConstant)
 
 
-def test_altarica::domainconstant_constructor_exists():
-    assert callable(altarica::DomainConstant.__init__)
+def test_altarica_domainconstant_constructor_exists():
+    assert callable(altarica_DomainConstant.__init__)
 
 
-def test_altarica::domainconstant_constructor_args():
-    sig = inspect.signature(altarica::DomainConstant.__init__)
+def test_altarica_domainconstant_constructor_args():
+    sig = inspect.signature(altarica_DomainConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::expressionconstant_is_not_abstract():
-    assert not inspect.isabstract(altarica::ExpressionConstant)
+def test_altarica_expressionconstant_is_not_abstract():
+    assert not inspect.isabstract(altarica_ExpressionConstant)
 
 
-def test_altarica::expressionconstant_constructor_exists():
-    assert callable(altarica::ExpressionConstant.__init__)
+def test_altarica_expressionconstant_constructor_exists():
+    assert callable(altarica_ExpressionConstant.__init__)
 
 
-def test_altarica::expressionconstant_constructor_args():
-    sig = inspect.signature(altarica::ExpressionConstant.__init__)
+def test_altarica_expressionconstant_constructor_args():
+    sig = inspect.signature(altarica_ExpressionConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::abstractdeclaration_is_not_abstract():
-    assert not inspect.isabstract(altarica::AbstractDeclaration)
+def test_altarica_abstractdeclaration_is_not_abstract():
+    assert not inspect.isabstract(altarica_AbstractDeclaration)
 
 
-def test_altarica::abstractdeclaration_constructor_exists():
-    assert callable(altarica::AbstractDeclaration.__init__)
+def test_altarica_abstractdeclaration_constructor_exists():
+    assert callable(altarica_AbstractDeclaration.__init__)
 
 
-def test_altarica::abstractdeclaration_constructor_args():
-    sig = inspect.signature(altarica::AbstractDeclaration.__init__)
+def test_altarica_abstractdeclaration_constructor_args():
+    sig = inspect.signature(altarica_AbstractDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_altarica::system_is_not_abstract():
-    assert not inspect.isabstract(altarica::System)
+def test_altarica_system_is_not_abstract():
+    assert not inspect.isabstract(altarica_System)
 
 
-def test_altarica::system_constructor_exists():
-    assert callable(altarica::System.__init__)
+def test_altarica_system_constructor_exists():
+    assert callable(altarica_System.__init__)
 
 
-def test_altarica::system_constructor_args():
-    sig = inspect.signature(altarica::System.__init__)
+def test_altarica_system_constructor_args():
+    sig = inspect.signature(altarica_System.__init__)
     params = list(sig.parameters.keys())
+
+def test_flowkind_exists():
+    # Check that the Enumeration exists
+    assert FlowKind is not None
+
+def test_flowkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FlowKind]
+    expected_literals = [
+        "INOUT",
+        "IN",
+        "OUT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FlowKind"
 
 def test_primitivetypekind_exists():
     # Check that the Enumeration exists
@@ -1424,22 +1440,6 @@ def test_primitivetypekind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PrimitiveTypeKind"
 
-def test_flowkind_exists():
-    # Check that the Enumeration exists
-    assert FlowKind is not None
-
-def test_flowkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FlowKind]
-    expected_literals = [
-        "OUT",
-        "IN",
-        "INOUT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FlowKind"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1455,88 +1455,88 @@ safe_text = st.text(
 VariableRef_strategy = st.builds(
     VariableRef,
 )
-altarica::NestedQualifiedVariableRef_strategy = st.builds(
-    altarica::NestedQualifiedVariableRef,
+altarica_NestedQualifiedVariableRef_strategy = st.builds(
+    altarica_NestedQualifiedVariableRef,
 )
 EventRef_strategy = st.builds(
     EventRef,
 )
-altarica::NestedQualifiedEventRef_strategy = st.builds(
-    altarica::NestedQualifiedEventRef,
+altarica_NestedQualifiedEventRef_strategy = st.builds(
+    altarica_NestedQualifiedEventRef,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-altarica::Upper_strategy = st.builds(
-    altarica::Upper,
+altarica_Equal_strategy = st.builds(
+    altarica_Equal,
 )
-altarica::Lower_strategy = st.builds(
-    altarica::Lower,
-)
-altarica::StrictLower_strategy = st.builds(
-    altarica::StrictLower,
-)
-altarica::NotEqual_strategy = st.builds(
-    altarica::NotEqual,
-)
-altarica::StrictUpper_strategy = st.builds(
-    altarica::StrictUpper,
-)
-altarica::Imply_strategy = st.builds(
-    altarica::Imply,
-)
-altarica::EString_strategy = st.builds(
-    altarica::EString,
+altarica_EBoolean_strategy = st.builds(
+    altarica_EBoolean,
     value=
         safe_text
 )
-altarica::Equal_strategy = st.builds(
-    altarica::Equal,
+altarica_Imply_strategy = st.builds(
+    altarica_Imply,
 )
-altarica::EBoolean_strategy = st.builds(
-    altarica::EBoolean,
+altarica_Upper_strategy = st.builds(
+    altarica_Upper,
+)
+altarica_StrictUpper_strategy = st.builds(
+    altarica_StrictUpper,
+)
+altarica_EString_strategy = st.builds(
+    altarica_EString,
     value=
         safe_text
 )
-altarica::VariableRef_strategy = st.builds(
-    altarica::VariableRef,
+altarica_Lower_strategy = st.builds(
+    altarica_Lower,
 )
-altarica::Or_strategy = st.builds(
-    altarica::Or,
+altarica_StrictLower_strategy = st.builds(
+    altarica_StrictLower,
 )
-altarica::And_strategy = st.builds(
-    altarica::And,
+altarica_NotEqual_strategy = st.builds(
+    altarica_NotEqual,
 )
-altarica::Division_strategy = st.builds(
-    altarica::Division,
+altarica_VariableRef_strategy = st.builds(
+    altarica_VariableRef,
 )
-altarica::Multiplication_strategy = st.builds(
-    altarica::Multiplication,
+altarica_Or_strategy = st.builds(
+    altarica_Or,
 )
-altarica::Minus_strategy = st.builds(
-    altarica::Minus,
+altarica_And_strategy = st.builds(
+    altarica_And,
 )
-altarica::Addition_strategy = st.builds(
-    altarica::Addition,
+altarica_Division_strategy = st.builds(
+    altarica_Division,
 )
-altarica::EInteger_strategy = st.builds(
-    altarica::EInteger,
+altarica_Multiplication_strategy = st.builds(
+    altarica_Multiplication,
+)
+altarica_Minus_strategy = st.builds(
+    altarica_Minus,
+)
+altarica_Addition_strategy = st.builds(
+    altarica_Addition,
+)
+altarica_EInteger_strategy = st.builds(
+    altarica_EInteger,
     value=
         st.integers()
 )
-altarica::Transition_strategy = st.builds(
-    altarica::Transition,
+altarica_Transition_strategy = st.builds(
+    altarica_Transition,
 )
-altarica::NavigableVariable_strategy = st.builds(
-    altarica::NavigableVariable,
+altarica_NavigableVariable_strategy = st.builds(
+    altarica_NavigableVariable,
     name=
         safe_text
 )
-altarica::EObject_strategy = st.builds(
-    altarica::EObject,
+altarica_EObject_strategy = st.builds(
+    altarica_EObject,
 )
-altarica::CaseExpression_strategy = st.builds(
-    altarica::CaseExpression,
+altarica_CaseExpression_strategy = st.builds(
+    altarica_CaseExpression,
 )
 AbstractBooleanExpression_strategy = st.builds(
     AbstractBooleanExpression,
@@ -1544,192 +1544,192 @@ AbstractBooleanExpression_strategy = st.builds(
 AbstractExpression_strategy = st.builds(
     AbstractExpression,
 )
-altarica::IfThenElse_strategy = st.builds(
-    altarica::IfThenElse,
+altarica_IfThenElse_strategy = st.builds(
+    altarica_IfThenElse,
 )
-altarica::Switch_strategy = st.builds(
-    altarica::Switch,
+altarica_Switch_strategy = st.builds(
+    altarica_Switch,
 )
-altarica::StateDeclaration_strategy = st.builds(
-    altarica::StateDeclaration,
+altarica_StateDeclaration_strategy = st.builds(
+    altarica_StateDeclaration,
 )
-altarica::EventRef_strategy = st.builds(
-    altarica::EventRef,
+altarica_EventRef_strategy = st.builds(
+    altarica_EventRef,
 )
-altarica::Cardinality_strategy = st.builds(
-    altarica::Cardinality,
+altarica_Cardinality_strategy = st.builds(
+    altarica_Cardinality,
 )
-altarica::VectorParameter_strategy = st.builds(
-    altarica::VectorParameter,
+altarica_VectorParameter_strategy = st.builds(
+    altarica_VectorParameter,
     isRequired=
         st.booleans()
 )
-altarica::Vector_strategy = st.builds(
-    altarica::Vector,
+altarica_Vector_strategy = st.builds(
+    altarica_Vector,
 )
-altarica::AbstractBooleanExpression_strategy = st.builds(
-    altarica::AbstractBooleanExpression,
+altarica_AbstractBooleanExpression_strategy = st.builds(
+    altarica_AbstractBooleanExpression,
 )
-altarica::Assert_strategy = st.builds(
-    altarica::Assert,
+altarica_Assert_strategy = st.builds(
+    altarica_Assert,
 )
-altarica::NodeInstanceDeclaration_strategy = st.builds(
-    altarica::NodeInstanceDeclaration,
+altarica_NodeInstanceDeclaration_strategy = st.builds(
+    altarica_NodeInstanceDeclaration,
 )
-altarica::ExternalDirective_strategy = st.builds(
-    altarica::ExternalDirective,
+altarica_ExternalDirective_strategy = st.builds(
+    altarica_ExternalDirective,
     directive=
         safe_text
 )
-altarica::Affectation_strategy = st.builds(
-    altarica::Affectation,
+altarica_Affectation_strategy = st.builds(
+    altarica_Affectation,
 )
-altarica::InitStatement_strategy = st.builds(
-    altarica::InitStatement,
+altarica_InitStatement_strategy = st.builds(
+    altarica_InitStatement,
 )
 AbstractSpecification_strategy = st.builds(
     AbstractSpecification,
 )
-altarica::TransitionSpecification_strategy = st.builds(
-    altarica::TransitionSpecification,
+altarica_VectorSpecification_strategy = st.builds(
+    altarica_VectorSpecification,
 )
-altarica::AssertSpecification_strategy = st.builds(
-    altarica::AssertSpecification,
+altarica_AssertSpecification_strategy = st.builds(
+    altarica_AssertSpecification,
 )
-altarica::VectorSpecification_strategy = st.builds(
-    altarica::VectorSpecification,
+altarica_ExternalSpecification_strategy = st.builds(
+    altarica_ExternalSpecification,
 )
-altarica::ExternalSpecification_strategy = st.builds(
-    altarica::ExternalSpecification,
+altarica_TransitionSpecification_strategy = st.builds(
+    altarica_TransitionSpecification,
 )
-altarica::NodeInstanceSpecification_strategy = st.builds(
-    altarica::NodeInstanceSpecification,
+altarica_NodeInstanceSpecification_strategy = st.builds(
+    altarica_NodeInstanceSpecification,
 )
-altarica::InitSpecification_strategy = st.builds(
-    altarica::InitSpecification,
+altarica_InitSpecification_strategy = st.builds(
+    altarica_InitSpecification,
 )
-altarica::StateSpecification_strategy = st.builds(
-    altarica::StateSpecification,
+altarica_StateSpecification_strategy = st.builds(
+    altarica_StateSpecification,
 )
-altarica::AbstractExpression_strategy = st.builds(
-    altarica::AbstractExpression,
+altarica_AbstractExpression_strategy = st.builds(
+    altarica_AbstractExpression,
 )
-altarica::Priority_strategy = st.builds(
-    altarica::Priority,
+altarica_Priority_strategy = st.builds(
+    altarica_Priority,
 )
 NavigableVariable_strategy = st.builds(
     NavigableVariable,
 )
-altarica::NodeInstance_strategy = st.builds(
-    altarica::NodeInstance,
+altarica_NodeInstance_strategy = st.builds(
+    altarica_NodeInstance,
 )
-altarica::NonNavigableVariable_strategy = st.builds(
-    altarica::NonNavigableVariable,
+altarica_NonNavigableVariable_strategy = st.builds(
+    altarica_NonNavigableVariable,
 )
-altarica::Event_strategy = st.builds(
-    altarica::Event,
+altarica_Event_strategy = st.builds(
+    altarica_Event,
 )
-altarica::EventDeclaration_strategy = st.builds(
-    altarica::EventDeclaration,
+altarica_EventDeclaration_strategy = st.builds(
+    altarica_EventDeclaration,
 )
-altarica::EventSpecification_strategy = st.builds(
-    altarica::EventSpecification,
+altarica_EventSpecification_strategy = st.builds(
+    altarica_EventSpecification,
 )
-altarica::AbstractTypeRef_strategy = st.builds(
-    altarica::AbstractTypeRef,
+altarica_AbstractTypeRef_strategy = st.builds(
+    altarica_AbstractTypeRef,
 )
-altarica::FlowDeclaration_strategy = st.builds(
-    altarica::FlowDeclaration,
+altarica_FlowDeclaration_strategy = st.builds(
+    altarica_FlowDeclaration,
     kind=
         safe_text
 )
-altarica::FlowSpecification_strategy = st.builds(
-    altarica::FlowSpecification,
+altarica_FlowSpecification_strategy = st.builds(
+    altarica_FlowSpecification,
 )
-altarica::Expression_strategy = st.builds(
-    altarica::Expression,
+altarica_Expression_strategy = st.builds(
+    altarica_Expression,
 )
 NonNavigableVariable_strategy = st.builds(
     NonNavigableVariable,
 )
-altarica::Flow_strategy = st.builds(
-    altarica::Flow,
+altarica_Flow_strategy = st.builds(
+    altarica_Flow,
 )
-altarica::State_strategy = st.builds(
-    altarica::State,
+altarica_State_strategy = st.builds(
+    altarica_State,
 )
-altarica::AbstractDefinitionConstant_strategy = st.builds(
-    altarica::AbstractDefinitionConstant,
+altarica_AbstractDefinitionConstant_strategy = st.builds(
+    altarica_AbstractDefinitionConstant,
 )
-altarica::Constant_strategy = st.builds(
-    altarica::Constant,
+altarica_Constant_strategy = st.builds(
+    altarica_Constant,
 )
 AbstractDeclaration_strategy = st.builds(
     AbstractDeclaration,
 )
-altarica::ConstantDefinition_strategy = st.builds(
-    altarica::ConstantDefinition,
+altarica_ConstantDefinition_strategy = st.builds(
+    altarica_ConstantDefinition,
 )
-altarica::VariableAttribute_strategy = st.builds(
-    altarica::VariableAttribute,
+altarica_VariableAttribute_strategy = st.builds(
+    altarica_VariableAttribute,
     name=
         safe_text
 )
-altarica::AbstractSpecification_strategy = st.builds(
-    altarica::AbstractSpecification,
+altarica_AbstractSpecification_strategy = st.builds(
+    altarica_AbstractSpecification,
 )
-altarica::Node_strategy = st.builds(
-    altarica::Node,
+altarica_Node_strategy = st.builds(
+    altarica_Node,
     isMain=
         st.booleans(),
     name=
         safe_text
 )
-altarica::Literal_strategy = st.builds(
-    altarica::Literal,
+altarica_Literal_strategy = st.builds(
+    altarica_Literal,
 )
 AbstractDomain_strategy = st.builds(
     AbstractDomain,
 )
-altarica::Enumeration_strategy = st.builds(
-    altarica::Enumeration,
-)
-altarica::PrimitiveType_strategy = st.builds(
-    altarica::PrimitiveType,
+altarica_PrimitiveType_strategy = st.builds(
+    altarica_PrimitiveType,
     name=
         safe_text
 )
-altarica::Range_strategy = st.builds(
-    altarica::Range,
+altarica_Enumeration_strategy = st.builds(
+    altarica_Enumeration,
+)
+altarica_Range_strategy = st.builds(
+    altarica_Range,
 )
 AbstractTypeRef_strategy = st.builds(
     AbstractTypeRef,
 )
-altarica::DomainRef_strategy = st.builds(
-    altarica::DomainRef,
+altarica_DomainRef_strategy = st.builds(
+    altarica_DomainRef,
 )
-altarica::Domain_strategy = st.builds(
-    altarica::Domain,
+altarica_Domain_strategy = st.builds(
+    altarica_Domain,
     name=
         safe_text
 )
-altarica::AbstractDomain_strategy = st.builds(
-    altarica::AbstractDomain,
+altarica_AbstractDomain_strategy = st.builds(
+    altarica_AbstractDomain,
 )
 AbstractDefinitionConstant_strategy = st.builds(
     AbstractDefinitionConstant,
 )
-altarica::DomainConstant_strategy = st.builds(
-    altarica::DomainConstant,
+altarica_DomainConstant_strategy = st.builds(
+    altarica_DomainConstant,
 )
-altarica::ExpressionConstant_strategy = st.builds(
-    altarica::ExpressionConstant,
+altarica_ExpressionConstant_strategy = st.builds(
+    altarica_ExpressionConstant,
 )
-altarica::AbstractDeclaration_strategy = st.builds(
-    altarica::AbstractDeclaration,
+altarica_AbstractDeclaration_strategy = st.builds(
+    altarica_AbstractDeclaration,
 )
-altarica::System_strategy = st.builds(
-    altarica::System,
+altarica_System_strategy = st.builds(
+    altarica_System,
 )
 
 @given(instance=VariableRef_strategy)
@@ -1737,174 +1737,162 @@ altarica::System_strategy = st.builds(
 def test_variableref_instantiation(instance):
     assert isinstance(instance, VariableRef)
 
-@given(instance=altarica::NestedQualifiedVariableRef_strategy)
+@given(instance=altarica_NestedQualifiedVariableRef_strategy)
 @settings(max_examples=50)
-def test_altarica::nestedqualifiedvariableref_instantiation(instance):
-    assert isinstance(instance, altarica::NestedQualifiedVariableRef)
+def test_altarica_nestedqualifiedvariableref_instantiation(instance):
+    assert isinstance(instance, altarica_NestedQualifiedVariableRef)
 
 @given(instance=EventRef_strategy)
 @settings(max_examples=50)
 def test_eventref_instantiation(instance):
     assert isinstance(instance, EventRef)
 
-@given(instance=altarica::NestedQualifiedEventRef_strategy)
+@given(instance=altarica_NestedQualifiedEventRef_strategy)
 @settings(max_examples=50)
-def test_altarica::nestedqualifiedeventref_instantiation(instance):
-    assert isinstance(instance, altarica::NestedQualifiedEventRef)
+def test_altarica_nestedqualifiedeventref_instantiation(instance):
+    assert isinstance(instance, altarica_NestedQualifiedEventRef)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=altarica::Upper_strategy)
+@given(instance=altarica_Equal_strategy)
 @settings(max_examples=50)
-def test_altarica::upper_instantiation(instance):
-    assert isinstance(instance, altarica::Upper)
+def test_altarica_equal_instantiation(instance):
+    assert isinstance(instance, altarica_Equal)
 
-@given(instance=altarica::Lower_strategy)
+@given(instance=altarica_EBoolean_strategy)
 @settings(max_examples=50)
-def test_altarica::lower_instantiation(instance):
-    assert isinstance(instance, altarica::Lower)
-
-@given(instance=altarica::StrictLower_strategy)
-@settings(max_examples=50)
-def test_altarica::strictlower_instantiation(instance):
-    assert isinstance(instance, altarica::StrictLower)
-
-@given(instance=altarica::NotEqual_strategy)
-@settings(max_examples=50)
-def test_altarica::notequal_instantiation(instance):
-    assert isinstance(instance, altarica::NotEqual)
-
-@given(instance=altarica::StrictUpper_strategy)
-@settings(max_examples=50)
-def test_altarica::strictupper_instantiation(instance):
-    assert isinstance(instance, altarica::StrictUpper)
-
-@given(instance=altarica::Imply_strategy)
-@settings(max_examples=50)
-def test_altarica::imply_instantiation(instance):
-    assert isinstance(instance, altarica::Imply)
-
-@given(instance=altarica::EString_strategy)
-@settings(max_examples=50)
-def test_altarica::estring_instantiation(instance):
-    assert isinstance(instance, altarica::EString)
-
-@given(instance=altarica::EString_strategy)
-def test_altarica::estring_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_altarica_eboolean_instantiation(instance):
+    assert isinstance(instance, altarica_EBoolean)
 
 
-@given(instance=altarica::EString_strategy)
-def test_altarica::estring_value_setter(instance):
+
+@given(instance=altarica_EBoolean_strategy)
+def test_altarica_eboolean_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=altarica::Equal_strategy)
+@given(instance=altarica_Imply_strategy)
 @settings(max_examples=50)
-def test_altarica::equal_instantiation(instance):
-    assert isinstance(instance, altarica::Equal)
+def test_altarica_imply_instantiation(instance):
+    assert isinstance(instance, altarica_Imply)
 
-@given(instance=altarica::EBoolean_strategy)
+@given(instance=altarica_Upper_strategy)
 @settings(max_examples=50)
-def test_altarica::eboolean_instantiation(instance):
-    assert isinstance(instance, altarica::EBoolean)
+def test_altarica_upper_instantiation(instance):
+    assert isinstance(instance, altarica_Upper)
 
-@given(instance=altarica::EBoolean_strategy)
-def test_altarica::eboolean_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=altarica_StrictUpper_strategy)
+@settings(max_examples=50)
+def test_altarica_strictupper_instantiation(instance):
+    assert isinstance(instance, altarica_StrictUpper)
+
+@given(instance=altarica_EString_strategy)
+@settings(max_examples=50)
+def test_altarica_estring_instantiation(instance):
+    assert isinstance(instance, altarica_EString)
 
 
-@given(instance=altarica::EBoolean_strategy)
-def test_altarica::eboolean_value_setter(instance):
+
+@given(instance=altarica_EString_strategy)
+def test_altarica_estring_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=altarica::VariableRef_strategy)
+@given(instance=altarica_Lower_strategy)
 @settings(max_examples=50)
-def test_altarica::variableref_instantiation(instance):
-    assert isinstance(instance, altarica::VariableRef)
+def test_altarica_lower_instantiation(instance):
+    assert isinstance(instance, altarica_Lower)
 
-@given(instance=altarica::Or_strategy)
+@given(instance=altarica_StrictLower_strategy)
 @settings(max_examples=50)
-def test_altarica::or_instantiation(instance):
-    assert isinstance(instance, altarica::Or)
+def test_altarica_strictlower_instantiation(instance):
+    assert isinstance(instance, altarica_StrictLower)
 
-@given(instance=altarica::And_strategy)
+@given(instance=altarica_NotEqual_strategy)
 @settings(max_examples=50)
-def test_altarica::and_instantiation(instance):
-    assert isinstance(instance, altarica::And)
+def test_altarica_notequal_instantiation(instance):
+    assert isinstance(instance, altarica_NotEqual)
 
-@given(instance=altarica::Division_strategy)
+@given(instance=altarica_VariableRef_strategy)
 @settings(max_examples=50)
-def test_altarica::division_instantiation(instance):
-    assert isinstance(instance, altarica::Division)
+def test_altarica_variableref_instantiation(instance):
+    assert isinstance(instance, altarica_VariableRef)
 
-@given(instance=altarica::Multiplication_strategy)
+@given(instance=altarica_Or_strategy)
 @settings(max_examples=50)
-def test_altarica::multiplication_instantiation(instance):
-    assert isinstance(instance, altarica::Multiplication)
+def test_altarica_or_instantiation(instance):
+    assert isinstance(instance, altarica_Or)
 
-@given(instance=altarica::Minus_strategy)
+@given(instance=altarica_And_strategy)
 @settings(max_examples=50)
-def test_altarica::minus_instantiation(instance):
-    assert isinstance(instance, altarica::Minus)
+def test_altarica_and_instantiation(instance):
+    assert isinstance(instance, altarica_And)
 
-@given(instance=altarica::Addition_strategy)
+@given(instance=altarica_Division_strategy)
 @settings(max_examples=50)
-def test_altarica::addition_instantiation(instance):
-    assert isinstance(instance, altarica::Addition)
+def test_altarica_division_instantiation(instance):
+    assert isinstance(instance, altarica_Division)
 
-@given(instance=altarica::EInteger_strategy)
+@given(instance=altarica_Multiplication_strategy)
 @settings(max_examples=50)
-def test_altarica::einteger_instantiation(instance):
-    assert isinstance(instance, altarica::EInteger)
+def test_altarica_multiplication_instantiation(instance):
+    assert isinstance(instance, altarica_Multiplication)
 
-@given(instance=altarica::EInteger_strategy)
-def test_altarica::einteger_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=altarica_Minus_strategy)
+@settings(max_examples=50)
+def test_altarica_minus_instantiation(instance):
+    assert isinstance(instance, altarica_Minus)
+
+@given(instance=altarica_Addition_strategy)
+@settings(max_examples=50)
+def test_altarica_addition_instantiation(instance):
+    assert isinstance(instance, altarica_Addition)
+
+@given(instance=altarica_EInteger_strategy)
+@settings(max_examples=50)
+def test_altarica_einteger_instantiation(instance):
+    assert isinstance(instance, altarica_EInteger)
 
 
-@given(instance=altarica::EInteger_strategy)
-def test_altarica::einteger_value_setter(instance):
+
+@given(instance=altarica_EInteger_strategy)
+def test_altarica_einteger_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=altarica::Transition_strategy)
+@given(instance=altarica_Transition_strategy)
 @settings(max_examples=50)
-def test_altarica::transition_instantiation(instance):
-    assert isinstance(instance, altarica::Transition)
+def test_altarica_transition_instantiation(instance):
+    assert isinstance(instance, altarica_Transition)
 
-@given(instance=altarica::NavigableVariable_strategy)
+@given(instance=altarica_NavigableVariable_strategy)
 @settings(max_examples=50)
-def test_altarica::navigablevariable_instantiation(instance):
-    assert isinstance(instance, altarica::NavigableVariable)
-
-@given(instance=altarica::NavigableVariable_strategy)
-def test_altarica::navigablevariable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_altarica_navigablevariable_instantiation(instance):
+    assert isinstance(instance, altarica_NavigableVariable)
 
 
-@given(instance=altarica::NavigableVariable_strategy)
-def test_altarica::navigablevariable_name_setter(instance):
+
+@given(instance=altarica_NavigableVariable_strategy)
+def test_altarica_navigablevariable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=altarica::EObject_strategy)
+@given(instance=altarica_EObject_strategy)
 @settings(max_examples=50)
-def test_altarica::eobject_instantiation(instance):
-    assert isinstance(instance, altarica::EObject)
+def test_altarica_eobject_instantiation(instance):
+    assert isinstance(instance, altarica_EObject)
 
-@given(instance=altarica::CaseExpression_strategy)
+@given(instance=altarica_CaseExpression_strategy)
 @settings(max_examples=50)
-def test_altarica::caseexpression_instantiation(instance):
-    assert isinstance(instance, altarica::CaseExpression)
+def test_altarica_caseexpression_instantiation(instance):
+    assert isinstance(instance, altarica_CaseExpression)
 
 @given(instance=AbstractBooleanExpression_strategy)
 @settings(max_examples=50)
@@ -1916,375 +1904,351 @@ def test_abstractbooleanexpression_instantiation(instance):
 def test_abstractexpression_instantiation(instance):
     assert isinstance(instance, AbstractExpression)
 
-@given(instance=altarica::IfThenElse_strategy)
+@given(instance=altarica_IfThenElse_strategy)
 @settings(max_examples=50)
-def test_altarica::ifthenelse_instantiation(instance):
-    assert isinstance(instance, altarica::IfThenElse)
+def test_altarica_ifthenelse_instantiation(instance):
+    assert isinstance(instance, altarica_IfThenElse)
 
-@given(instance=altarica::Switch_strategy)
+@given(instance=altarica_Switch_strategy)
 @settings(max_examples=50)
-def test_altarica::switch_instantiation(instance):
-    assert isinstance(instance, altarica::Switch)
+def test_altarica_switch_instantiation(instance):
+    assert isinstance(instance, altarica_Switch)
 
-@given(instance=altarica::StateDeclaration_strategy)
+@given(instance=altarica_StateDeclaration_strategy)
 @settings(max_examples=50)
-def test_altarica::statedeclaration_instantiation(instance):
-    assert isinstance(instance, altarica::StateDeclaration)
+def test_altarica_statedeclaration_instantiation(instance):
+    assert isinstance(instance, altarica_StateDeclaration)
 
-@given(instance=altarica::EventRef_strategy)
+@given(instance=altarica_EventRef_strategy)
 @settings(max_examples=50)
-def test_altarica::eventref_instantiation(instance):
-    assert isinstance(instance, altarica::EventRef)
+def test_altarica_eventref_instantiation(instance):
+    assert isinstance(instance, altarica_EventRef)
 
-@given(instance=altarica::Cardinality_strategy)
+@given(instance=altarica_Cardinality_strategy)
 @settings(max_examples=50)
-def test_altarica::cardinality_instantiation(instance):
-    assert isinstance(instance, altarica::Cardinality)
+def test_altarica_cardinality_instantiation(instance):
+    assert isinstance(instance, altarica_Cardinality)
 
-@given(instance=altarica::VectorParameter_strategy)
+@given(instance=altarica_VectorParameter_strategy)
 @settings(max_examples=50)
-def test_altarica::vectorparameter_instantiation(instance):
-    assert isinstance(instance, altarica::VectorParameter)
-
-@given(instance=altarica::VectorParameter_strategy)
-def test_altarica::vectorparameter_isRequired_type(instance):
-    assert isinstance(instance.isRequired, bool)
+def test_altarica_vectorparameter_instantiation(instance):
+    assert isinstance(instance, altarica_VectorParameter)
 
 
-@given(instance=altarica::VectorParameter_strategy)
-def test_altarica::vectorparameter_isRequired_setter(instance):
+
+@given(instance=altarica_VectorParameter_strategy)
+def test_altarica_vectorparameter_isRequired_setter(instance):
     original = instance.isRequired
     instance.isRequired = original
     assert instance.isRequired == original
 
-@given(instance=altarica::Vector_strategy)
+@given(instance=altarica_Vector_strategy)
 @settings(max_examples=50)
-def test_altarica::vector_instantiation(instance):
-    assert isinstance(instance, altarica::Vector)
+def test_altarica_vector_instantiation(instance):
+    assert isinstance(instance, altarica_Vector)
 
-@given(instance=altarica::AbstractBooleanExpression_strategy)
+@given(instance=altarica_AbstractBooleanExpression_strategy)
 @settings(max_examples=50)
-def test_altarica::abstractbooleanexpression_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractBooleanExpression)
+def test_altarica_abstractbooleanexpression_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractBooleanExpression)
 
-@given(instance=altarica::Assert_strategy)
+@given(instance=altarica_Assert_strategy)
 @settings(max_examples=50)
-def test_altarica::assert_instantiation(instance):
-    assert isinstance(instance, altarica::Assert)
+def test_altarica_assert_instantiation(instance):
+    assert isinstance(instance, altarica_Assert)
 
-@given(instance=altarica::NodeInstanceDeclaration_strategy)
+@given(instance=altarica_NodeInstanceDeclaration_strategy)
 @settings(max_examples=50)
-def test_altarica::nodeinstancedeclaration_instantiation(instance):
-    assert isinstance(instance, altarica::NodeInstanceDeclaration)
+def test_altarica_nodeinstancedeclaration_instantiation(instance):
+    assert isinstance(instance, altarica_NodeInstanceDeclaration)
 
-@given(instance=altarica::ExternalDirective_strategy)
+@given(instance=altarica_ExternalDirective_strategy)
 @settings(max_examples=50)
-def test_altarica::externaldirective_instantiation(instance):
-    assert isinstance(instance, altarica::ExternalDirective)
-
-@given(instance=altarica::ExternalDirective_strategy)
-def test_altarica::externaldirective_directive_type(instance):
-    assert isinstance(instance.directive, str)
+def test_altarica_externaldirective_instantiation(instance):
+    assert isinstance(instance, altarica_ExternalDirective)
 
 
-@given(instance=altarica::ExternalDirective_strategy)
-def test_altarica::externaldirective_directive_setter(instance):
+
+@given(instance=altarica_ExternalDirective_strategy)
+def test_altarica_externaldirective_directive_setter(instance):
     original = instance.directive
     instance.directive = original
     assert instance.directive == original
 
-@given(instance=altarica::Affectation_strategy)
+@given(instance=altarica_Affectation_strategy)
 @settings(max_examples=50)
-def test_altarica::affectation_instantiation(instance):
-    assert isinstance(instance, altarica::Affectation)
+def test_altarica_affectation_instantiation(instance):
+    assert isinstance(instance, altarica_Affectation)
 
-@given(instance=altarica::InitStatement_strategy)
+@given(instance=altarica_InitStatement_strategy)
 @settings(max_examples=50)
-def test_altarica::initstatement_instantiation(instance):
-    assert isinstance(instance, altarica::InitStatement)
+def test_altarica_initstatement_instantiation(instance):
+    assert isinstance(instance, altarica_InitStatement)
 
 @given(instance=AbstractSpecification_strategy)
 @settings(max_examples=50)
 def test_abstractspecification_instantiation(instance):
     assert isinstance(instance, AbstractSpecification)
 
-@given(instance=altarica::TransitionSpecification_strategy)
+@given(instance=altarica_VectorSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::transitionspecification_instantiation(instance):
-    assert isinstance(instance, altarica::TransitionSpecification)
+def test_altarica_vectorspecification_instantiation(instance):
+    assert isinstance(instance, altarica_VectorSpecification)
 
-@given(instance=altarica::AssertSpecification_strategy)
+@given(instance=altarica_AssertSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::assertspecification_instantiation(instance):
-    assert isinstance(instance, altarica::AssertSpecification)
+def test_altarica_assertspecification_instantiation(instance):
+    assert isinstance(instance, altarica_AssertSpecification)
 
-@given(instance=altarica::VectorSpecification_strategy)
+@given(instance=altarica_ExternalSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::vectorspecification_instantiation(instance):
-    assert isinstance(instance, altarica::VectorSpecification)
+def test_altarica_externalspecification_instantiation(instance):
+    assert isinstance(instance, altarica_ExternalSpecification)
 
-@given(instance=altarica::ExternalSpecification_strategy)
+@given(instance=altarica_TransitionSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::externalspecification_instantiation(instance):
-    assert isinstance(instance, altarica::ExternalSpecification)
+def test_altarica_transitionspecification_instantiation(instance):
+    assert isinstance(instance, altarica_TransitionSpecification)
 
-@given(instance=altarica::NodeInstanceSpecification_strategy)
+@given(instance=altarica_NodeInstanceSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::nodeinstancespecification_instantiation(instance):
-    assert isinstance(instance, altarica::NodeInstanceSpecification)
+def test_altarica_nodeinstancespecification_instantiation(instance):
+    assert isinstance(instance, altarica_NodeInstanceSpecification)
 
-@given(instance=altarica::InitSpecification_strategy)
+@given(instance=altarica_InitSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::initspecification_instantiation(instance):
-    assert isinstance(instance, altarica::InitSpecification)
+def test_altarica_initspecification_instantiation(instance):
+    assert isinstance(instance, altarica_InitSpecification)
 
-@given(instance=altarica::StateSpecification_strategy)
+@given(instance=altarica_StateSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::statespecification_instantiation(instance):
-    assert isinstance(instance, altarica::StateSpecification)
+def test_altarica_statespecification_instantiation(instance):
+    assert isinstance(instance, altarica_StateSpecification)
 
-@given(instance=altarica::AbstractExpression_strategy)
+@given(instance=altarica_AbstractExpression_strategy)
 @settings(max_examples=50)
-def test_altarica::abstractexpression_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractExpression)
+def test_altarica_abstractexpression_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractExpression)
 
-@given(instance=altarica::Priority_strategy)
+@given(instance=altarica_Priority_strategy)
 @settings(max_examples=50)
-def test_altarica::priority_instantiation(instance):
-    assert isinstance(instance, altarica::Priority)
+def test_altarica_priority_instantiation(instance):
+    assert isinstance(instance, altarica_Priority)
 
 @given(instance=NavigableVariable_strategy)
 @settings(max_examples=50)
 def test_navigablevariable_instantiation(instance):
     assert isinstance(instance, NavigableVariable)
 
-@given(instance=altarica::NodeInstance_strategy)
+@given(instance=altarica_NodeInstance_strategy)
 @settings(max_examples=50)
-def test_altarica::nodeinstance_instantiation(instance):
-    assert isinstance(instance, altarica::NodeInstance)
+def test_altarica_nodeinstance_instantiation(instance):
+    assert isinstance(instance, altarica_NodeInstance)
 
-@given(instance=altarica::NonNavigableVariable_strategy)
+@given(instance=altarica_NonNavigableVariable_strategy)
 @settings(max_examples=50)
-def test_altarica::nonnavigablevariable_instantiation(instance):
-    assert isinstance(instance, altarica::NonNavigableVariable)
+def test_altarica_nonnavigablevariable_instantiation(instance):
+    assert isinstance(instance, altarica_NonNavigableVariable)
 
-@given(instance=altarica::Event_strategy)
+@given(instance=altarica_Event_strategy)
 @settings(max_examples=50)
-def test_altarica::event_instantiation(instance):
-    assert isinstance(instance, altarica::Event)
+def test_altarica_event_instantiation(instance):
+    assert isinstance(instance, altarica_Event)
 
-@given(instance=altarica::EventDeclaration_strategy)
+@given(instance=altarica_EventDeclaration_strategy)
 @settings(max_examples=50)
-def test_altarica::eventdeclaration_instantiation(instance):
-    assert isinstance(instance, altarica::EventDeclaration)
+def test_altarica_eventdeclaration_instantiation(instance):
+    assert isinstance(instance, altarica_EventDeclaration)
 
-@given(instance=altarica::EventSpecification_strategy)
+@given(instance=altarica_EventSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::eventspecification_instantiation(instance):
-    assert isinstance(instance, altarica::EventSpecification)
+def test_altarica_eventspecification_instantiation(instance):
+    assert isinstance(instance, altarica_EventSpecification)
 
-@given(instance=altarica::AbstractTypeRef_strategy)
+@given(instance=altarica_AbstractTypeRef_strategy)
 @settings(max_examples=50)
-def test_altarica::abstracttyperef_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractTypeRef)
+def test_altarica_abstracttyperef_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractTypeRef)
 
-@given(instance=altarica::FlowDeclaration_strategy)
+@given(instance=altarica_FlowDeclaration_strategy)
 @settings(max_examples=50)
-def test_altarica::flowdeclaration_instantiation(instance):
-    assert isinstance(instance, altarica::FlowDeclaration)
-
-@given(instance=altarica::FlowDeclaration_strategy)
-def test_altarica::flowdeclaration_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_altarica_flowdeclaration_instantiation(instance):
+    assert isinstance(instance, altarica_FlowDeclaration)
 
 
-@given(instance=altarica::FlowDeclaration_strategy)
-def test_altarica::flowdeclaration_kind_setter(instance):
+
+@given(instance=altarica_FlowDeclaration_strategy)
+def test_altarica_flowdeclaration_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=altarica::FlowSpecification_strategy)
+@given(instance=altarica_FlowSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::flowspecification_instantiation(instance):
-    assert isinstance(instance, altarica::FlowSpecification)
+def test_altarica_flowspecification_instantiation(instance):
+    assert isinstance(instance, altarica_FlowSpecification)
 
-@given(instance=altarica::Expression_strategy)
+@given(instance=altarica_Expression_strategy)
 @settings(max_examples=50)
-def test_altarica::expression_instantiation(instance):
-    assert isinstance(instance, altarica::Expression)
+def test_altarica_expression_instantiation(instance):
+    assert isinstance(instance, altarica_Expression)
 
 @given(instance=NonNavigableVariable_strategy)
 @settings(max_examples=50)
 def test_nonnavigablevariable_instantiation(instance):
     assert isinstance(instance, NonNavigableVariable)
 
-@given(instance=altarica::Flow_strategy)
+@given(instance=altarica_Flow_strategy)
 @settings(max_examples=50)
-def test_altarica::flow_instantiation(instance):
-    assert isinstance(instance, altarica::Flow)
+def test_altarica_flow_instantiation(instance):
+    assert isinstance(instance, altarica_Flow)
 
-@given(instance=altarica::State_strategy)
+@given(instance=altarica_State_strategy)
 @settings(max_examples=50)
-def test_altarica::state_instantiation(instance):
-    assert isinstance(instance, altarica::State)
+def test_altarica_state_instantiation(instance):
+    assert isinstance(instance, altarica_State)
 
-@given(instance=altarica::AbstractDefinitionConstant_strategy)
+@given(instance=altarica_AbstractDefinitionConstant_strategy)
 @settings(max_examples=50)
-def test_altarica::abstractdefinitionconstant_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractDefinitionConstant)
+def test_altarica_abstractdefinitionconstant_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractDefinitionConstant)
 
-@given(instance=altarica::Constant_strategy)
+@given(instance=altarica_Constant_strategy)
 @settings(max_examples=50)
-def test_altarica::constant_instantiation(instance):
-    assert isinstance(instance, altarica::Constant)
+def test_altarica_constant_instantiation(instance):
+    assert isinstance(instance, altarica_Constant)
 
 @given(instance=AbstractDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstractdeclaration_instantiation(instance):
     assert isinstance(instance, AbstractDeclaration)
 
-@given(instance=altarica::ConstantDefinition_strategy)
+@given(instance=altarica_ConstantDefinition_strategy)
 @settings(max_examples=50)
-def test_altarica::constantdefinition_instantiation(instance):
-    assert isinstance(instance, altarica::ConstantDefinition)
+def test_altarica_constantdefinition_instantiation(instance):
+    assert isinstance(instance, altarica_ConstantDefinition)
 
-@given(instance=altarica::VariableAttribute_strategy)
+@given(instance=altarica_VariableAttribute_strategy)
 @settings(max_examples=50)
-def test_altarica::variableattribute_instantiation(instance):
-    assert isinstance(instance, altarica::VariableAttribute)
-
-@given(instance=altarica::VariableAttribute_strategy)
-def test_altarica::variableattribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_altarica_variableattribute_instantiation(instance):
+    assert isinstance(instance, altarica_VariableAttribute)
 
 
-@given(instance=altarica::VariableAttribute_strategy)
-def test_altarica::variableattribute_name_setter(instance):
+
+@given(instance=altarica_VariableAttribute_strategy)
+def test_altarica_variableattribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=altarica::AbstractSpecification_strategy)
+@given(instance=altarica_AbstractSpecification_strategy)
 @settings(max_examples=50)
-def test_altarica::abstractspecification_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractSpecification)
+def test_altarica_abstractspecification_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractSpecification)
 
-@given(instance=altarica::Node_strategy)
+@given(instance=altarica_Node_strategy)
 @settings(max_examples=50)
-def test_altarica::node_instantiation(instance):
-    assert isinstance(instance, altarica::Node)
-
-@given(instance=altarica::Node_strategy)
-def test_altarica::node_isMain_type(instance):
-    assert isinstance(instance.isMain, bool)
+def test_altarica_node_instantiation(instance):
+    assert isinstance(instance, altarica_Node)
 
 
-@given(instance=altarica::Node_strategy)
-def test_altarica::node_isMain_setter(instance):
+
+@given(instance=altarica_Node_strategy)
+def test_altarica_node_isMain_setter(instance):
     original = instance.isMain
     instance.isMain = original
     assert instance.isMain == original
 
-@given(instance=altarica::Node_strategy)
-def test_altarica::node_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=altarica::Node_strategy)
-def test_altarica::node_name_setter(instance):
+@given(instance=altarica_Node_strategy)
+def test_altarica_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=altarica::Literal_strategy)
+@given(instance=altarica_Literal_strategy)
 @settings(max_examples=50)
-def test_altarica::literal_instantiation(instance):
-    assert isinstance(instance, altarica::Literal)
+def test_altarica_literal_instantiation(instance):
+    assert isinstance(instance, altarica_Literal)
 
 @given(instance=AbstractDomain_strategy)
 @settings(max_examples=50)
 def test_abstractdomain_instantiation(instance):
     assert isinstance(instance, AbstractDomain)
 
-@given(instance=altarica::Enumeration_strategy)
+@given(instance=altarica_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_altarica::enumeration_instantiation(instance):
-    assert isinstance(instance, altarica::Enumeration)
-
-@given(instance=altarica::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_altarica::primitivetype_instantiation(instance):
-    assert isinstance(instance, altarica::PrimitiveType)
-
-@given(instance=altarica::PrimitiveType_strategy)
-def test_altarica::primitivetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_altarica_primitivetype_instantiation(instance):
+    assert isinstance(instance, altarica_PrimitiveType)
 
 
-@given(instance=altarica::PrimitiveType_strategy)
-def test_altarica::primitivetype_name_setter(instance):
+
+@given(instance=altarica_PrimitiveType_strategy)
+def test_altarica_primitivetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=altarica::Range_strategy)
+@given(instance=altarica_Enumeration_strategy)
 @settings(max_examples=50)
-def test_altarica::range_instantiation(instance):
-    assert isinstance(instance, altarica::Range)
+def test_altarica_enumeration_instantiation(instance):
+    assert isinstance(instance, altarica_Enumeration)
+
+@given(instance=altarica_Range_strategy)
+@settings(max_examples=50)
+def test_altarica_range_instantiation(instance):
+    assert isinstance(instance, altarica_Range)
 
 @given(instance=AbstractTypeRef_strategy)
 @settings(max_examples=50)
 def test_abstracttyperef_instantiation(instance):
     assert isinstance(instance, AbstractTypeRef)
 
-@given(instance=altarica::DomainRef_strategy)
+@given(instance=altarica_DomainRef_strategy)
 @settings(max_examples=50)
-def test_altarica::domainref_instantiation(instance):
-    assert isinstance(instance, altarica::DomainRef)
+def test_altarica_domainref_instantiation(instance):
+    assert isinstance(instance, altarica_DomainRef)
 
-@given(instance=altarica::Domain_strategy)
+@given(instance=altarica_Domain_strategy)
 @settings(max_examples=50)
-def test_altarica::domain_instantiation(instance):
-    assert isinstance(instance, altarica::Domain)
-
-@given(instance=altarica::Domain_strategy)
-def test_altarica::domain_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_altarica_domain_instantiation(instance):
+    assert isinstance(instance, altarica_Domain)
 
 
-@given(instance=altarica::Domain_strategy)
-def test_altarica::domain_name_setter(instance):
+
+@given(instance=altarica_Domain_strategy)
+def test_altarica_domain_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=altarica::AbstractDomain_strategy)
+@given(instance=altarica_AbstractDomain_strategy)
 @settings(max_examples=50)
-def test_altarica::abstractdomain_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractDomain)
+def test_altarica_abstractdomain_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractDomain)
 
 @given(instance=AbstractDefinitionConstant_strategy)
 @settings(max_examples=50)
 def test_abstractdefinitionconstant_instantiation(instance):
     assert isinstance(instance, AbstractDefinitionConstant)
 
-@given(instance=altarica::DomainConstant_strategy)
+@given(instance=altarica_DomainConstant_strategy)
 @settings(max_examples=50)
-def test_altarica::domainconstant_instantiation(instance):
-    assert isinstance(instance, altarica::DomainConstant)
+def test_altarica_domainconstant_instantiation(instance):
+    assert isinstance(instance, altarica_DomainConstant)
 
-@given(instance=altarica::ExpressionConstant_strategy)
+@given(instance=altarica_ExpressionConstant_strategy)
 @settings(max_examples=50)
-def test_altarica::expressionconstant_instantiation(instance):
-    assert isinstance(instance, altarica::ExpressionConstant)
+def test_altarica_expressionconstant_instantiation(instance):
+    assert isinstance(instance, altarica_ExpressionConstant)
 
-@given(instance=altarica::AbstractDeclaration_strategy)
+@given(instance=altarica_AbstractDeclaration_strategy)
 @settings(max_examples=50)
-def test_altarica::abstractdeclaration_instantiation(instance):
-    assert isinstance(instance, altarica::AbstractDeclaration)
+def test_altarica_abstractdeclaration_instantiation(instance):
+    assert isinstance(instance, altarica_AbstractDeclaration)
 
-@given(instance=altarica::System_strategy)
+@given(instance=altarica_System_strategy)
 @settings(max_examples=50)
-def test_altarica::system_instantiation(instance):
-    assert isinstance(instance, altarica::System)
+def test_altarica_system_instantiation(instance):
+    assert isinstance(instance, altarica_System)

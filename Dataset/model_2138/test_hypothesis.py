@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    flowchart::Decision,
-    flowchart::Action,
-    flowchart::Transition,
-    flowchart::Node,
-    flowchart::Flowchart,
+from python_code import (
+    flowchart_Decision,
+    flowchart_Action,
+    flowchart_Transition,
+    flowchart_Node,
+    flowchart_Flowchart,
 )
 
 # =============================================================================
@@ -19,57 +19,57 @@ from classes import (
 
 
 
-def test_flowchart::decision_is_not_abstract():
-    assert not inspect.isabstract(flowchart::Decision)
+def test_flowchart_decision_is_not_abstract():
+    assert not inspect.isabstract(flowchart_Decision)
 
 
-def test_flowchart::decision_constructor_exists():
-    assert callable(flowchart::Decision.__init__)
+def test_flowchart_decision_constructor_exists():
+    assert callable(flowchart_Decision.__init__)
 
 
-def test_flowchart::decision_constructor_args():
-    sig = inspect.signature(flowchart::Decision.__init__)
+def test_flowchart_decision_constructor_args():
+    sig = inspect.signature(flowchart_Decision.__init__)
     params = list(sig.parameters.keys())
-    assert "condition" in params, "Missing parameter 'condition'"
     assert "isDecision" in params, "Missing parameter 'isDecision'"
+    assert "condition" in params, "Missing parameter 'condition'"
 
-def test_flowchart::decision_has_condition():
-    assert hasattr(flowchart::Decision, "condition")
+def test_flowchart_decision_has_isDecision():
+    assert hasattr(flowchart_Decision, "isDecision")
     descriptor = None
-    for klass in flowchart::Decision.__mro__:
-        if "condition" in klass.__dict__:
-            descriptor = klass.__dict__["condition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flowchart::decision_has_isDecision():
-    assert hasattr(flowchart::Decision, "isDecision")
-    descriptor = None
-    for klass in flowchart::Decision.__mro__:
+    for klass in flowchart_Decision.__mro__:
         if "isDecision" in klass.__dict__:
             descriptor = klass.__dict__["isDecision"]
             break
     assert isinstance(descriptor, property)
 
+def test_flowchart_decision_has_condition():
+    assert hasattr(flowchart_Decision, "condition")
+    descriptor = None
+    for klass in flowchart_Decision.__mro__:
+        if "condition" in klass.__dict__:
+            descriptor = klass.__dict__["condition"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_flowchart::action_is_not_abstract():
-    assert not inspect.isabstract(flowchart::Action)
+
+def test_flowchart_action_is_not_abstract():
+    assert not inspect.isabstract(flowchart_Action)
 
 
-def test_flowchart::action_constructor_exists():
-    assert callable(flowchart::Action.__init__)
+def test_flowchart_action_constructor_exists():
+    assert callable(flowchart_Action.__init__)
 
 
-def test_flowchart::action_constructor_args():
-    sig = inspect.signature(flowchart::Action.__init__)
+def test_flowchart_action_constructor_args():
+    sig = inspect.signature(flowchart_Action.__init__)
     params = list(sig.parameters.keys())
     assert "isAction" in params, "Missing parameter 'isAction'"
 
-def test_flowchart::action_has_isAction():
-    assert hasattr(flowchart::Action, "isAction")
+def test_flowchart_action_has_isAction():
+    assert hasattr(flowchart_Action, "isAction")
     descriptor = None
-    for klass in flowchart::Action.__mro__:
+    for klass in flowchart_Action.__mro__:
         if "isAction" in klass.__dict__:
             descriptor = klass.__dict__["isAction"]
             break
@@ -77,23 +77,23 @@ def test_flowchart::action_has_isAction():
 
 
 
-def test_flowchart::transition_is_not_abstract():
-    assert not inspect.isabstract(flowchart::Transition)
+def test_flowchart_transition_is_not_abstract():
+    assert not inspect.isabstract(flowchart_Transition)
 
 
-def test_flowchart::transition_constructor_exists():
-    assert callable(flowchart::Transition.__init__)
+def test_flowchart_transition_constructor_exists():
+    assert callable(flowchart_Transition.__init__)
 
 
-def test_flowchart::transition_constructor_args():
-    sig = inspect.signature(flowchart::Transition.__init__)
+def test_flowchart_transition_constructor_args():
+    sig = inspect.signature(flowchart_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_flowchart::transition_has_label():
-    assert hasattr(flowchart::Transition, "label")
+def test_flowchart_transition_has_label():
+    assert hasattr(flowchart_Transition, "label")
     descriptor = None
-    for klass in flowchart::Transition.__mro__:
+    for klass in flowchart_Transition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -101,23 +101,23 @@ def test_flowchart::transition_has_label():
 
 
 
-def test_flowchart::node_is_not_abstract():
-    assert not inspect.isabstract(flowchart::Node)
+def test_flowchart_node_is_not_abstract():
+    assert not inspect.isabstract(flowchart_Node)
 
 
-def test_flowchart::node_constructor_exists():
-    assert callable(flowchart::Node.__init__)
+def test_flowchart_node_constructor_exists():
+    assert callable(flowchart_Node.__init__)
 
 
-def test_flowchart::node_constructor_args():
-    sig = inspect.signature(flowchart::Node.__init__)
+def test_flowchart_node_constructor_args():
+    sig = inspect.signature(flowchart_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_flowchart::node_has_name():
-    assert hasattr(flowchart::Node, "name")
+def test_flowchart_node_has_name():
+    assert hasattr(flowchart_Node, "name")
     descriptor = None
-    for klass in flowchart::Node.__mro__:
+    for klass in flowchart_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,16 +125,16 @@ def test_flowchart::node_has_name():
 
 
 
-def test_flowchart::flowchart_is_not_abstract():
-    assert not inspect.isabstract(flowchart::Flowchart)
+def test_flowchart_flowchart_is_not_abstract():
+    assert not inspect.isabstract(flowchart_Flowchart)
 
 
-def test_flowchart::flowchart_constructor_exists():
-    assert callable(flowchart::Flowchart.__init__)
+def test_flowchart_flowchart_constructor_exists():
+    assert callable(flowchart_Flowchart.__init__)
 
 
-def test_flowchart::flowchart_constructor_args():
-    sig = inspect.signature(flowchart::Flowchart.__init__)
+def test_flowchart_flowchart_constructor_args():
+    sig = inspect.signature(flowchart_Flowchart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,108 +149,93 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-flowchart::Decision_strategy = st.builds(
-    flowchart::Decision,
-    condition=
-        safe_text,
+flowchart_Decision_strategy = st.builds(
+    flowchart_Decision,
     isDecision=
-        st.booleans()
+        st.booleans(),
+    condition=
+        safe_text
 )
-flowchart::Action_strategy = st.builds(
-    flowchart::Action,
+flowchart_Action_strategy = st.builds(
+    flowchart_Action,
     isAction=
         st.booleans()
 )
-flowchart::Transition_strategy = st.builds(
-    flowchart::Transition,
+flowchart_Transition_strategy = st.builds(
+    flowchart_Transition,
     label=
         safe_text
 )
-flowchart::Node_strategy = st.builds(
-    flowchart::Node,
+flowchart_Node_strategy = st.builds(
+    flowchart_Node,
     name=
         safe_text
 )
-flowchart::Flowchart_strategy = st.builds(
-    flowchart::Flowchart,
+flowchart_Flowchart_strategy = st.builds(
+    flowchart_Flowchart,
 )
 
-@given(instance=flowchart::Decision_strategy)
+@given(instance=flowchart_Decision_strategy)
 @settings(max_examples=50)
-def test_flowchart::decision_instantiation(instance):
-    assert isinstance(instance, flowchart::Decision)
-
-@given(instance=flowchart::Decision_strategy)
-def test_flowchart::decision_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_flowchart_decision_instantiation(instance):
+    assert isinstance(instance, flowchart_Decision)
 
 
-@given(instance=flowchart::Decision_strategy)
-def test_flowchart::decision_condition_setter(instance):
-    original = instance.condition
-    instance.condition = original
-    assert instance.condition == original
 
-@given(instance=flowchart::Decision_strategy)
-def test_flowchart::decision_isDecision_type(instance):
-    assert isinstance(instance.isDecision, bool)
-
-
-@given(instance=flowchart::Decision_strategy)
-def test_flowchart::decision_isDecision_setter(instance):
+@given(instance=flowchart_Decision_strategy)
+def test_flowchart_decision_isDecision_setter(instance):
     original = instance.isDecision
     instance.isDecision = original
     assert instance.isDecision == original
 
-@given(instance=flowchart::Action_strategy)
+
+
+@given(instance=flowchart_Decision_strategy)
+def test_flowchart_decision_condition_setter(instance):
+    original = instance.condition
+    instance.condition = original
+    assert instance.condition == original
+
+@given(instance=flowchart_Action_strategy)
 @settings(max_examples=50)
-def test_flowchart::action_instantiation(instance):
-    assert isinstance(instance, flowchart::Action)
-
-@given(instance=flowchart::Action_strategy)
-def test_flowchart::action_isAction_type(instance):
-    assert isinstance(instance.isAction, bool)
+def test_flowchart_action_instantiation(instance):
+    assert isinstance(instance, flowchart_Action)
 
 
-@given(instance=flowchart::Action_strategy)
-def test_flowchart::action_isAction_setter(instance):
+
+@given(instance=flowchart_Action_strategy)
+def test_flowchart_action_isAction_setter(instance):
     original = instance.isAction
     instance.isAction = original
     assert instance.isAction == original
 
-@given(instance=flowchart::Transition_strategy)
+@given(instance=flowchart_Transition_strategy)
 @settings(max_examples=50)
-def test_flowchart::transition_instantiation(instance):
-    assert isinstance(instance, flowchart::Transition)
-
-@given(instance=flowchart::Transition_strategy)
-def test_flowchart::transition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_flowchart_transition_instantiation(instance):
+    assert isinstance(instance, flowchart_Transition)
 
 
-@given(instance=flowchart::Transition_strategy)
-def test_flowchart::transition_label_setter(instance):
+
+@given(instance=flowchart_Transition_strategy)
+def test_flowchart_transition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=flowchart::Node_strategy)
+@given(instance=flowchart_Node_strategy)
 @settings(max_examples=50)
-def test_flowchart::node_instantiation(instance):
-    assert isinstance(instance, flowchart::Node)
-
-@given(instance=flowchart::Node_strategy)
-def test_flowchart::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_flowchart_node_instantiation(instance):
+    assert isinstance(instance, flowchart_Node)
 
 
-@given(instance=flowchart::Node_strategy)
-def test_flowchart::node_name_setter(instance):
+
+@given(instance=flowchart_Node_strategy)
+def test_flowchart_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=flowchart::Flowchart_strategy)
+@given(instance=flowchart_Flowchart_strategy)
 @settings(max_examples=50)
-def test_flowchart::flowchart_instantiation(instance):
-    assert isinstance(instance, flowchart::Flowchart)
+def test_flowchart_flowchart_instantiation(instance):
+    assert isinstance(instance, flowchart_Flowchart)

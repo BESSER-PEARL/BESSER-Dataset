@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rdbms::RModelElement,
+from python_code import (
+    rdbms_RModelElement,
     RModelElement,
-    rdbms::Table,
-    rdbms::ForeignKey,
-    rdbms::Schema,
-    rdbms::Column,
-    rdbms::Key,
+    rdbms_Table,
+    rdbms_ForeignKey,
+    rdbms_Schema,
+    rdbms_Column,
+    rdbms_Key,
 )
 
 # =============================================================================
@@ -21,33 +21,33 @@ from classes import (
 
 
 
-def test_rdbms::rmodelelement_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RModelElement)
+def test_rdbms_rmodelelement_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RModelElement)
 
 
-def test_rdbms::rmodelelement_constructor_exists():
-    assert callable(rdbms::RModelElement.__init__)
+def test_rdbms_rmodelelement_constructor_exists():
+    assert callable(rdbms_RModelElement.__init__)
 
 
-def test_rdbms::rmodelelement_constructor_args():
-    sig = inspect.signature(rdbms::RModelElement.__init__)
+def test_rdbms_rmodelelement_constructor_args():
+    sig = inspect.signature(rdbms_RModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rdbms::rmodelelement_has_kind():
-    assert hasattr(rdbms::RModelElement, "kind")
+def test_rdbms_rmodelelement_has_kind():
+    assert hasattr(rdbms_RModelElement, "kind")
     descriptor = None
-    for klass in rdbms::RModelElement.__mro__:
+    for klass in rdbms_RModelElement.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbms::rmodelelement_has_name():
-    assert hasattr(rdbms::RModelElement, "name")
+def test_rdbms_rmodelelement_has_name():
+    assert hasattr(rdbms_RModelElement, "name")
     descriptor = None
-    for klass in rdbms::RModelElement.__mro__:
+    for klass in rdbms_RModelElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -69,65 +69,65 @@ def test_rmodelelement_constructor_args():
 
 
 
-def test_rdbms::table_is_not_abstract():
-    assert not inspect.isabstract(rdbms::Table)
+def test_rdbms_table_is_not_abstract():
+    assert not inspect.isabstract(rdbms_Table)
 
 
-def test_rdbms::table_constructor_exists():
-    assert callable(rdbms::Table.__init__)
+def test_rdbms_table_constructor_exists():
+    assert callable(rdbms_Table.__init__)
 
 
-def test_rdbms::table_constructor_args():
-    sig = inspect.signature(rdbms::Table.__init__)
+def test_rdbms_table_constructor_args():
+    sig = inspect.signature(rdbms_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(rdbms::ForeignKey)
+def test_rdbms_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(rdbms_ForeignKey)
 
 
-def test_rdbms::foreignkey_constructor_exists():
-    assert callable(rdbms::ForeignKey.__init__)
+def test_rdbms_foreignkey_constructor_exists():
+    assert callable(rdbms_ForeignKey.__init__)
 
 
-def test_rdbms::foreignkey_constructor_args():
-    sig = inspect.signature(rdbms::ForeignKey.__init__)
+def test_rdbms_foreignkey_constructor_args():
+    sig = inspect.signature(rdbms_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::schema_is_not_abstract():
-    assert not inspect.isabstract(rdbms::Schema)
+def test_rdbms_schema_is_not_abstract():
+    assert not inspect.isabstract(rdbms_Schema)
 
 
-def test_rdbms::schema_constructor_exists():
-    assert callable(rdbms::Schema.__init__)
+def test_rdbms_schema_constructor_exists():
+    assert callable(rdbms_Schema.__init__)
 
 
-def test_rdbms::schema_constructor_args():
-    sig = inspect.signature(rdbms::Schema.__init__)
+def test_rdbms_schema_constructor_args():
+    sig = inspect.signature(rdbms_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::column_is_not_abstract():
-    assert not inspect.isabstract(rdbms::Column)
+def test_rdbms_column_is_not_abstract():
+    assert not inspect.isabstract(rdbms_Column)
 
 
-def test_rdbms::column_constructor_exists():
-    assert callable(rdbms::Column.__init__)
+def test_rdbms_column_constructor_exists():
+    assert callable(rdbms_Column.__init__)
 
 
-def test_rdbms::column_constructor_args():
-    sig = inspect.signature(rdbms::Column.__init__)
+def test_rdbms_column_constructor_args():
+    sig = inspect.signature(rdbms_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_rdbms::column_has_type():
-    assert hasattr(rdbms::Column, "type")
+def test_rdbms_column_has_type():
+    assert hasattr(rdbms_Column, "type")
     descriptor = None
-    for klass in rdbms::Column.__mro__:
+    for klass in rdbms_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -135,16 +135,16 @@ def test_rdbms::column_has_type():
 
 
 
-def test_rdbms::key_is_not_abstract():
-    assert not inspect.isabstract(rdbms::Key)
+def test_rdbms_key_is_not_abstract():
+    assert not inspect.isabstract(rdbms_Key)
 
 
-def test_rdbms::key_constructor_exists():
-    assert callable(rdbms::Key.__init__)
+def test_rdbms_key_constructor_exists():
+    assert callable(rdbms_Key.__init__)
 
 
-def test_rdbms::key_constructor_args():
-    sig = inspect.signature(rdbms::Key.__init__)
+def test_rdbms_key_constructor_args():
+    sig = inspect.signature(rdbms_Key.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,8 +159,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rdbms::RModelElement_strategy = st.builds(
-    rdbms::RModelElement,
+rdbms_RModelElement_strategy = st.builds(
+    rdbms_RModelElement,
     kind=
         safe_text,
     name=
@@ -169,47 +169,41 @@ rdbms::RModelElement_strategy = st.builds(
 RModelElement_strategy = st.builds(
     RModelElement,
 )
-rdbms::Table_strategy = st.builds(
-    rdbms::Table,
+rdbms_Table_strategy = st.builds(
+    rdbms_Table,
 )
-rdbms::ForeignKey_strategy = st.builds(
-    rdbms::ForeignKey,
+rdbms_ForeignKey_strategy = st.builds(
+    rdbms_ForeignKey,
 )
-rdbms::Schema_strategy = st.builds(
-    rdbms::Schema,
+rdbms_Schema_strategy = st.builds(
+    rdbms_Schema,
 )
-rdbms::Column_strategy = st.builds(
-    rdbms::Column,
+rdbms_Column_strategy = st.builds(
+    rdbms_Column,
     type=
         safe_text
 )
-rdbms::Key_strategy = st.builds(
-    rdbms::Key,
+rdbms_Key_strategy = st.builds(
+    rdbms_Key,
 )
 
-@given(instance=rdbms::RModelElement_strategy)
+@given(instance=rdbms_RModelElement_strategy)
 @settings(max_examples=50)
-def test_rdbms::rmodelelement_instantiation(instance):
-    assert isinstance(instance, rdbms::RModelElement)
-
-@given(instance=rdbms::RModelElement_strategy)
-def test_rdbms::rmodelelement_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_rdbms_rmodelelement_instantiation(instance):
+    assert isinstance(instance, rdbms_RModelElement)
 
 
-@given(instance=rdbms::RModelElement_strategy)
-def test_rdbms::rmodelelement_kind_setter(instance):
+
+@given(instance=rdbms_RModelElement_strategy)
+def test_rdbms_rmodelelement_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=rdbms::RModelElement_strategy)
-def test_rdbms::rmodelelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=rdbms::RModelElement_strategy)
-def test_rdbms::rmodelelement_name_setter(instance):
+@given(instance=rdbms_RModelElement_strategy)
+def test_rdbms_rmodelelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -219,38 +213,35 @@ def test_rdbms::rmodelelement_name_setter(instance):
 def test_rmodelelement_instantiation(instance):
     assert isinstance(instance, RModelElement)
 
-@given(instance=rdbms::Table_strategy)
+@given(instance=rdbms_Table_strategy)
 @settings(max_examples=50)
-def test_rdbms::table_instantiation(instance):
-    assert isinstance(instance, rdbms::Table)
+def test_rdbms_table_instantiation(instance):
+    assert isinstance(instance, rdbms_Table)
 
-@given(instance=rdbms::ForeignKey_strategy)
+@given(instance=rdbms_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_rdbms::foreignkey_instantiation(instance):
-    assert isinstance(instance, rdbms::ForeignKey)
+def test_rdbms_foreignkey_instantiation(instance):
+    assert isinstance(instance, rdbms_ForeignKey)
 
-@given(instance=rdbms::Schema_strategy)
+@given(instance=rdbms_Schema_strategy)
 @settings(max_examples=50)
-def test_rdbms::schema_instantiation(instance):
-    assert isinstance(instance, rdbms::Schema)
+def test_rdbms_schema_instantiation(instance):
+    assert isinstance(instance, rdbms_Schema)
 
-@given(instance=rdbms::Column_strategy)
+@given(instance=rdbms_Column_strategy)
 @settings(max_examples=50)
-def test_rdbms::column_instantiation(instance):
-    assert isinstance(instance, rdbms::Column)
-
-@given(instance=rdbms::Column_strategy)
-def test_rdbms::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_rdbms_column_instantiation(instance):
+    assert isinstance(instance, rdbms_Column)
 
 
-@given(instance=rdbms::Column_strategy)
-def test_rdbms::column_type_setter(instance):
+
+@given(instance=rdbms_Column_strategy)
+def test_rdbms_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=rdbms::Key_strategy)
+@given(instance=rdbms_Key_strategy)
 @settings(max_examples=50)
-def test_rdbms::key_instantiation(instance):
-    assert isinstance(instance, rdbms::Key)
+def test_rdbms_key_instantiation(instance):
+    assert isinstance(instance, rdbms_Key)

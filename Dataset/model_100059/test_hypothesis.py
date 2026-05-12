@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    itm::Issue,
-    itm::IssueDependency,
-    itm::IssueTrackingDatabase,
-    itm::Member,
-    itm::IssueCategory,
-    itm::Version,
-    itm::User,
-    itm::Role,
-    itm::Tracker,
-    itm::Project,
-    IssueStatus,
+from python_code import (
+    itm_Issue,
+    itm_IssueDependency,
+    itm_IssueTrackingDatabase,
+    itm_Member,
+    itm_IssueCategory,
+    itm_Version,
+    itm_User,
+    itm_Role,
+    itm_Tracker,
+    itm_Project,
     IssuePriority,
-    VersionStatus,
     DependencyType,
+    IssueStatus,
+    VersionStatus,
 )
 
 # =============================================================================
@@ -28,127 +28,127 @@ from classes import (
 
 
 
-def test_itm::issue_is_not_abstract():
-    assert not inspect.isabstract(itm::Issue)
+def test_itm_issue_is_not_abstract():
+    assert not inspect.isabstract(itm_Issue)
 
 
-def test_itm::issue_constructor_exists():
-    assert callable(itm::Issue.__init__)
+def test_itm_issue_constructor_exists():
+    assert callable(itm_Issue.__init__)
 
 
-def test_itm::issue_constructor_args():
-    sig = inspect.signature(itm::Issue.__init__)
+def test_itm_issue_constructor_args():
+    sig = inspect.signature(itm_Issue.__init__)
     params = list(sig.parameters.keys())
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "status" in params, "Missing parameter 'status'"
-    assert "estimatedHours" in params, "Missing parameter 'estimatedHours'"
-    assert "dueDate" in params, "Missing parameter 'dueDate'"
-    assert "elapsedHours" in params, "Missing parameter 'elapsedHours'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
     assert "doneRatio" in params, "Missing parameter 'doneRatio'"
     assert "completedDate" in params, "Missing parameter 'completedDate'"
+    assert "estimatedHours" in params, "Missing parameter 'estimatedHours'"
+    assert "elapsedHours" in params, "Missing parameter 'elapsedHours'"
+    assert "priority" in params, "Missing parameter 'priority'"
+    assert "dueDate" in params, "Missing parameter 'dueDate'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_itm::issue_has_priority():
-    assert hasattr(itm::Issue, "priority")
+def test_itm_issue_has_description():
+    assert hasattr(itm_Issue, "description")
     descriptor = None
-    for klass in itm::Issue.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::issue_has_status():
-    assert hasattr(itm::Issue, "status")
-    descriptor = None
-    for klass in itm::Issue.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::issue_has_estimatedHours():
-    assert hasattr(itm::Issue, "estimatedHours")
-    descriptor = None
-    for klass in itm::Issue.__mro__:
-        if "estimatedHours" in klass.__dict__:
-            descriptor = klass.__dict__["estimatedHours"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::issue_has_dueDate():
-    assert hasattr(itm::Issue, "dueDate")
-    descriptor = None
-    for klass in itm::Issue.__mro__:
-        if "dueDate" in klass.__dict__:
-            descriptor = klass.__dict__["dueDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::issue_has_elapsedHours():
-    assert hasattr(itm::Issue, "elapsedHours")
-    descriptor = None
-    for klass in itm::Issue.__mro__:
-        if "elapsedHours" in klass.__dict__:
-            descriptor = klass.__dict__["elapsedHours"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::issue_has_name():
-    assert hasattr(itm::Issue, "name")
-    descriptor = None
-    for klass in itm::Issue.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::issue_has_description():
-    assert hasattr(itm::Issue, "description")
-    descriptor = None
-    for klass in itm::Issue.__mro__:
+    for klass in itm_Issue.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_itm::issue_has_doneRatio():
-    assert hasattr(itm::Issue, "doneRatio")
+def test_itm_issue_has_doneRatio():
+    assert hasattr(itm_Issue, "doneRatio")
     descriptor = None
-    for klass in itm::Issue.__mro__:
+    for klass in itm_Issue.__mro__:
         if "doneRatio" in klass.__dict__:
             descriptor = klass.__dict__["doneRatio"]
             break
     assert isinstance(descriptor, property)
 
-def test_itm::issue_has_completedDate():
-    assert hasattr(itm::Issue, "completedDate")
+def test_itm_issue_has_completedDate():
+    assert hasattr(itm_Issue, "completedDate")
     descriptor = None
-    for klass in itm::Issue.__mro__:
+    for klass in itm_Issue.__mro__:
         if "completedDate" in klass.__dict__:
             descriptor = klass.__dict__["completedDate"]
             break
     assert isinstance(descriptor, property)
 
+def test_itm_issue_has_estimatedHours():
+    assert hasattr(itm_Issue, "estimatedHours")
+    descriptor = None
+    for klass in itm_Issue.__mro__:
+        if "estimatedHours" in klass.__dict__:
+            descriptor = klass.__dict__["estimatedHours"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_issue_has_elapsedHours():
+    assert hasattr(itm_Issue, "elapsedHours")
+    descriptor = None
+    for klass in itm_Issue.__mro__:
+        if "elapsedHours" in klass.__dict__:
+            descriptor = klass.__dict__["elapsedHours"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_issue_has_priority():
+    assert hasattr(itm_Issue, "priority")
+    descriptor = None
+    for klass in itm_Issue.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_issue_has_dueDate():
+    assert hasattr(itm_Issue, "dueDate")
+    descriptor = None
+    for klass in itm_Issue.__mro__:
+        if "dueDate" in klass.__dict__:
+            descriptor = klass.__dict__["dueDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_issue_has_status():
+    assert hasattr(itm_Issue, "status")
+    descriptor = None
+    for klass in itm_Issue.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_issue_has_name():
+    assert hasattr(itm_Issue, "name")
+    descriptor = None
+    for klass in itm_Issue.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_itm::issuedependency_is_not_abstract():
-    assert not inspect.isabstract(itm::IssueDependency)
+
+def test_itm_issuedependency_is_not_abstract():
+    assert not inspect.isabstract(itm_IssueDependency)
 
 
-def test_itm::issuedependency_constructor_exists():
-    assert callable(itm::IssueDependency.__init__)
+def test_itm_issuedependency_constructor_exists():
+    assert callable(itm_IssueDependency.__init__)
 
 
-def test_itm::issuedependency_constructor_args():
-    sig = inspect.signature(itm::IssueDependency.__init__)
+def test_itm_issuedependency_constructor_args():
+    sig = inspect.signature(itm_IssueDependency.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_itm::issuedependency_has_type():
-    assert hasattr(itm::IssueDependency, "type")
+def test_itm_issuedependency_has_type():
+    assert hasattr(itm_IssueDependency, "type")
     descriptor = None
-    for klass in itm::IssueDependency.__mro__:
+    for klass in itm_IssueDependency.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -156,51 +156,51 @@ def test_itm::issuedependency_has_type():
 
 
 
-def test_itm::issuetrackingdatabase_is_not_abstract():
-    assert not inspect.isabstract(itm::IssueTrackingDatabase)
+def test_itm_issuetrackingdatabase_is_not_abstract():
+    assert not inspect.isabstract(itm_IssueTrackingDatabase)
 
 
-def test_itm::issuetrackingdatabase_constructor_exists():
-    assert callable(itm::IssueTrackingDatabase.__init__)
+def test_itm_issuetrackingdatabase_constructor_exists():
+    assert callable(itm_IssueTrackingDatabase.__init__)
 
 
-def test_itm::issuetrackingdatabase_constructor_args():
-    sig = inspect.signature(itm::IssueTrackingDatabase.__init__)
+def test_itm_issuetrackingdatabase_constructor_args():
+    sig = inspect.signature(itm_IssueTrackingDatabase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_itm::member_is_not_abstract():
-    assert not inspect.isabstract(itm::Member)
+def test_itm_member_is_not_abstract():
+    assert not inspect.isabstract(itm_Member)
 
 
-def test_itm::member_constructor_exists():
-    assert callable(itm::Member.__init__)
+def test_itm_member_constructor_exists():
+    assert callable(itm_Member.__init__)
 
 
-def test_itm::member_constructor_args():
-    sig = inspect.signature(itm::Member.__init__)
+def test_itm_member_constructor_args():
+    sig = inspect.signature(itm_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_itm::issuecategory_is_not_abstract():
-    assert not inspect.isabstract(itm::IssueCategory)
+def test_itm_issuecategory_is_not_abstract():
+    assert not inspect.isabstract(itm_IssueCategory)
 
 
-def test_itm::issuecategory_constructor_exists():
-    assert callable(itm::IssueCategory.__init__)
+def test_itm_issuecategory_constructor_exists():
+    assert callable(itm_IssueCategory.__init__)
 
 
-def test_itm::issuecategory_constructor_args():
-    sig = inspect.signature(itm::IssueCategory.__init__)
+def test_itm_issuecategory_constructor_args():
+    sig = inspect.signature(itm_IssueCategory.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_itm::issuecategory_has_name():
-    assert hasattr(itm::IssueCategory, "name")
+def test_itm_issuecategory_has_name():
+    assert hasattr(itm_IssueCategory, "name")
     descriptor = None
-    for klass in itm::IssueCategory.__mro__:
+    for klass in itm_IssueCategory.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -208,87 +208,87 @@ def test_itm::issuecategory_has_name():
 
 
 
-def test_itm::version_is_not_abstract():
-    assert not inspect.isabstract(itm::Version)
+def test_itm_version_is_not_abstract():
+    assert not inspect.isabstract(itm_Version)
 
 
-def test_itm::version_constructor_exists():
-    assert callable(itm::Version.__init__)
+def test_itm_version_constructor_exists():
+    assert callable(itm_Version.__init__)
 
 
-def test_itm::version_constructor_args():
-    sig = inspect.signature(itm::Version.__init__)
+def test_itm_version_constructor_args():
+    sig = inspect.signature(itm_Version.__init__)
     params = list(sig.parameters.keys())
+    assert "status" in params, "Missing parameter 'status'"
+    assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
     assert "completedDate" in params, "Missing parameter 'completedDate'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "status" in params, "Missing parameter 'status'"
 
-def test_itm::version_has_name():
-    assert hasattr(itm::Version, "name")
+def test_itm_version_has_status():
+    assert hasattr(itm_Version, "status")
     descriptor = None
-    for klass in itm::Version.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::version_has_completedDate():
-    assert hasattr(itm::Version, "completedDate")
-    descriptor = None
-    for klass in itm::Version.__mro__:
-        if "completedDate" in klass.__dict__:
-            descriptor = klass.__dict__["completedDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::version_has_description():
-    assert hasattr(itm::Version, "description")
-    descriptor = None
-    for klass in itm::Version.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_itm::version_has_status():
-    assert hasattr(itm::Version, "status")
-    descriptor = None
-    for klass in itm::Version.__mro__:
+    for klass in itm_Version.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
+def test_itm_version_has_description():
+    assert hasattr(itm_Version, "description")
+    descriptor = None
+    for klass in itm_Version.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_version_has_name():
+    assert hasattr(itm_Version, "name")
+    descriptor = None
+    for klass in itm_Version.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_itm_version_has_completedDate():
+    assert hasattr(itm_Version, "completedDate")
+    descriptor = None
+    for klass in itm_Version.__mro__:
+        if "completedDate" in klass.__dict__:
+            descriptor = klass.__dict__["completedDate"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_itm::user_is_not_abstract():
-    assert not inspect.isabstract(itm::User)
+
+def test_itm_user_is_not_abstract():
+    assert not inspect.isabstract(itm_User)
 
 
-def test_itm::user_constructor_exists():
-    assert callable(itm::User.__init__)
+def test_itm_user_constructor_exists():
+    assert callable(itm_User.__init__)
 
 
-def test_itm::user_constructor_args():
-    sig = inspect.signature(itm::User.__init__)
+def test_itm_user_constructor_args():
+    sig = inspect.signature(itm_User.__init__)
     params = list(sig.parameters.keys())
     assert "login" in params, "Missing parameter 'login'"
     assert "language" in params, "Missing parameter 'language'"
 
-def test_itm::user_has_login():
-    assert hasattr(itm::User, "login")
+def test_itm_user_has_login():
+    assert hasattr(itm_User, "login")
     descriptor = None
-    for klass in itm::User.__mro__:
+    for klass in itm_User.__mro__:
         if "login" in klass.__dict__:
             descriptor = klass.__dict__["login"]
             break
     assert isinstance(descriptor, property)
 
-def test_itm::user_has_language():
-    assert hasattr(itm::User, "language")
+def test_itm_user_has_language():
+    assert hasattr(itm_User, "language")
     descriptor = None
-    for klass in itm::User.__mro__:
+    for klass in itm_User.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
@@ -296,33 +296,33 @@ def test_itm::user_has_language():
 
 
 
-def test_itm::role_is_not_abstract():
-    assert not inspect.isabstract(itm::Role)
+def test_itm_role_is_not_abstract():
+    assert not inspect.isabstract(itm_Role)
 
 
-def test_itm::role_constructor_exists():
-    assert callable(itm::Role.__init__)
+def test_itm_role_constructor_exists():
+    assert callable(itm_Role.__init__)
 
 
-def test_itm::role_constructor_args():
-    sig = inspect.signature(itm::Role.__init__)
+def test_itm_role_constructor_args():
+    sig = inspect.signature(itm_Role.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "permissions" in params, "Missing parameter 'permissions'"
 
-def test_itm::role_has_name():
-    assert hasattr(itm::Role, "name")
+def test_itm_role_has_name():
+    assert hasattr(itm_Role, "name")
     descriptor = None
-    for klass in itm::Role.__mro__:
+    for klass in itm_Role.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_itm::role_has_permissions():
-    assert hasattr(itm::Role, "permissions")
+def test_itm_role_has_permissions():
+    assert hasattr(itm_Role, "permissions")
     descriptor = None
-    for klass in itm::Role.__mro__:
+    for klass in itm_Role.__mro__:
         if "permissions" in klass.__dict__:
             descriptor = klass.__dict__["permissions"]
             break
@@ -330,23 +330,23 @@ def test_itm::role_has_permissions():
 
 
 
-def test_itm::tracker_is_not_abstract():
-    assert not inspect.isabstract(itm::Tracker)
+def test_itm_tracker_is_not_abstract():
+    assert not inspect.isabstract(itm_Tracker)
 
 
-def test_itm::tracker_constructor_exists():
-    assert callable(itm::Tracker.__init__)
+def test_itm_tracker_constructor_exists():
+    assert callable(itm_Tracker.__init__)
 
 
-def test_itm::tracker_constructor_args():
-    sig = inspect.signature(itm::Tracker.__init__)
+def test_itm_tracker_constructor_args():
+    sig = inspect.signature(itm_Tracker.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_itm::tracker_has_name():
-    assert hasattr(itm::Tracker, "name")
+def test_itm_tracker_has_name():
+    assert hasattr(itm_Tracker, "name")
     descriptor = None
-    for klass in itm::Tracker.__mro__:
+    for klass in itm_Tracker.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -354,54 +354,37 @@ def test_itm::tracker_has_name():
 
 
 
-def test_itm::project_is_not_abstract():
-    assert not inspect.isabstract(itm::Project)
+def test_itm_project_is_not_abstract():
+    assert not inspect.isabstract(itm_Project)
 
 
-def test_itm::project_constructor_exists():
-    assert callable(itm::Project.__init__)
+def test_itm_project_constructor_exists():
+    assert callable(itm_Project.__init__)
 
 
-def test_itm::project_constructor_args():
-    sig = inspect.signature(itm::Project.__init__)
+def test_itm_project_constructor_args():
+    sig = inspect.signature(itm_Project.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_itm::project_has_name():
-    assert hasattr(itm::Project, "name")
+def test_itm_project_has_name():
+    assert hasattr(itm_Project, "name")
     descriptor = None
-    for klass in itm::Project.__mro__:
+    for klass in itm_Project.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_itm::project_has_description():
-    assert hasattr(itm::Project, "description")
+def test_itm_project_has_description():
+    assert hasattr(itm_Project, "description")
     descriptor = None
-    for klass in itm::Project.__mro__:
+    for klass in itm_Project.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
-
-def test_issuestatus_exists():
-    # Check that the Enumeration exists
-    assert IssueStatus is not None
-
-def test_issuestatus_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IssueStatus]
-    expected_literals = [
-        "OPEN",
-        "CLOSED",
-        "RESOLVED",
-        "ASSIGNED",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IssueStatus"
 
 def test_issuepriority_exists():
     # Check that the Enumeration exists
@@ -411,31 +394,15 @@ def test_issuepriority_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in IssuePriority]
     expected_literals = [
-        "HIGH",
-        "NORMAL",
         "LOW",
+        "HIGH",
         "LOWER",
         "HIGHER",
+        "NORMAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in IssuePriority"
-
-def test_versionstatus_exists():
-    # Check that the Enumeration exists
-    assert VersionStatus is not None
-
-def test_versionstatus_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VersionStatus]
-    expected_literals = [
-        "CLOSED",
-        "OPEN",
-        "INPROGRESS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VersionStatus"
 
 def test_dependencytype_exists():
     # Check that the Enumeration exists
@@ -445,14 +412,47 @@ def test_dependencytype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DependencyType]
     expected_literals = [
-        "END_START",
         "START_END",
         "END_END",
+        "END_START",
         "START_START",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DependencyType"
+
+def test_issuestatus_exists():
+    # Check that the Enumeration exists
+    assert IssueStatus is not None
+
+def test_issuestatus_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in IssueStatus]
+    expected_literals = [
+        "ASSIGNED",
+        "RESOLVED",
+        "CLOSED",
+        "OPEN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in IssueStatus"
+
+def test_versionstatus_exists():
+    # Check that the Enumeration exists
+    assert VersionStatus is not None
+
+def test_versionstatus_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in VersionStatus]
+    expected_literals = [
+        "OPEN",
+        "CLOSED",
+        "INPROGRESS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in VersionStatus"
 
 
 # =============================================================================
@@ -466,369 +466,303 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-itm::Issue_strategy = st.builds(
-    itm::Issue,
-    priority=
-        safe_text,
-    status=
-        safe_text,
-    estimatedHours=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    dueDate=
-        st.dates(),
-    elapsedHours=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    name=
-        safe_text,
+itm_Issue_strategy = st.builds(
+    itm_Issue,
     description=
         safe_text,
     doneRatio=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     completedDate=
-        st.dates()
+        st.dates(),
+    estimatedHours=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    elapsedHours=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    priority=
+        safe_text,
+    dueDate=
+        st.dates(),
+    status=
+        safe_text,
+    name=
+        safe_text
 )
-itm::IssueDependency_strategy = st.builds(
-    itm::IssueDependency,
+itm_IssueDependency_strategy = st.builds(
+    itm_IssueDependency,
     type=
         safe_text
 )
-itm::IssueTrackingDatabase_strategy = st.builds(
-    itm::IssueTrackingDatabase,
+itm_IssueTrackingDatabase_strategy = st.builds(
+    itm_IssueTrackingDatabase,
 )
-itm::Member_strategy = st.builds(
-    itm::Member,
+itm_Member_strategy = st.builds(
+    itm_Member,
 )
-itm::IssueCategory_strategy = st.builds(
-    itm::IssueCategory,
+itm_IssueCategory_strategy = st.builds(
+    itm_IssueCategory,
     name=
         safe_text
 )
-itm::Version_strategy = st.builds(
-    itm::Version,
+itm_Version_strategy = st.builds(
+    itm_Version,
+    status=
+        safe_text,
+    description=
+        safe_text,
     name=
         safe_text,
     completedDate=
-        st.dates(),
-    description=
-        safe_text,
-    status=
-        safe_text
+        st.dates()
 )
-itm::User_strategy = st.builds(
-    itm::User,
+itm_User_strategy = st.builds(
+    itm_User,
     login=
         safe_text,
     language=
         safe_text
 )
-itm::Role_strategy = st.builds(
-    itm::Role,
+itm_Role_strategy = st.builds(
+    itm_Role,
     name=
         safe_text,
     permissions=
         safe_text
 )
-itm::Tracker_strategy = st.builds(
-    itm::Tracker,
+itm_Tracker_strategy = st.builds(
+    itm_Tracker,
     name=
         safe_text
 )
-itm::Project_strategy = st.builds(
-    itm::Project,
+itm_Project_strategy = st.builds(
+    itm_Project,
     name=
         safe_text,
     description=
         safe_text
 )
 
-@given(instance=itm::Issue_strategy)
+@given(instance=itm_Issue_strategy)
 @settings(max_examples=50)
-def test_itm::issue_instantiation(instance):
-    assert isinstance(instance, itm::Issue)
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_priority_type(instance):
-    assert isinstance(instance.priority, str)
+def test_itm_issue_instantiation(instance):
+    assert isinstance(instance, itm_Issue)
 
 
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
 
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_estimatedHours_type(instance):
-    assert isinstance(instance.estimatedHours, float)
-
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_estimatedHours_setter(instance):
-    original = instance.estimatedHours
-    instance.estimatedHours = original
-    assert instance.estimatedHours == original
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_dueDate_type(instance):
-    assert isinstance(instance.dueDate, date)
-
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_dueDate_setter(instance):
-    original = instance.dueDate
-    instance.dueDate = original
-    assert instance.dueDate == original
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_elapsedHours_type(instance):
-    assert isinstance(instance.elapsedHours, float)
-
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_elapsedHours_setter(instance):
-    original = instance.elapsedHours
-    instance.elapsedHours = original
-    assert instance.elapsedHours == original
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_description_setter(instance):
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_doneRatio_type(instance):
-    assert isinstance(instance.doneRatio, float)
 
 
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_doneRatio_setter(instance):
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_doneRatio_setter(instance):
     original = instance.doneRatio
     instance.doneRatio = original
     assert instance.doneRatio == original
 
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_completedDate_type(instance):
-    assert isinstance(instance.completedDate, date)
 
 
-@given(instance=itm::Issue_strategy)
-def test_itm::issue_completedDate_setter(instance):
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_completedDate_setter(instance):
     original = instance.completedDate
     instance.completedDate = original
     assert instance.completedDate == original
 
-@given(instance=itm::IssueDependency_strategy)
-@settings(max_examples=50)
-def test_itm::issuedependency_instantiation(instance):
-    assert isinstance(instance, itm::IssueDependency)
-
-@given(instance=itm::IssueDependency_strategy)
-def test_itm::issuedependency_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=itm::IssueDependency_strategy)
-def test_itm::issuedependency_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=itm::IssueTrackingDatabase_strategy)
-@settings(max_examples=50)
-def test_itm::issuetrackingdatabase_instantiation(instance):
-    assert isinstance(instance, itm::IssueTrackingDatabase)
-
-@given(instance=itm::Member_strategy)
-@settings(max_examples=50)
-def test_itm::member_instantiation(instance):
-    assert isinstance(instance, itm::Member)
-
-@given(instance=itm::IssueCategory_strategy)
-@settings(max_examples=50)
-def test_itm::issuecategory_instantiation(instance):
-    assert isinstance(instance, itm::IssueCategory)
-
-@given(instance=itm::IssueCategory_strategy)
-def test_itm::issuecategory_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_estimatedHours_setter(instance):
+    original = instance.estimatedHours
+    instance.estimatedHours = original
+    assert instance.estimatedHours == original
 
 
-@given(instance=itm::IssueCategory_strategy)
-def test_itm::issuecategory_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=itm::Version_strategy)
-@settings(max_examples=50)
-def test_itm::version_instantiation(instance):
-    assert isinstance(instance, itm::Version)
-
-@given(instance=itm::Version_strategy)
-def test_itm::version_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_elapsedHours_setter(instance):
+    original = instance.elapsedHours
+    instance.elapsedHours = original
+    assert instance.elapsedHours == original
 
 
-@given(instance=itm::Version_strategy)
-def test_itm::version_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=itm::Version_strategy)
-def test_itm::version_completedDate_type(instance):
-    assert isinstance(instance.completedDate, date)
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
 
 
-@given(instance=itm::Version_strategy)
-def test_itm::version_completedDate_setter(instance):
-    original = instance.completedDate
-    instance.completedDate = original
-    assert instance.completedDate == original
 
-@given(instance=itm::Version_strategy)
-def test_itm::version_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_dueDate_setter(instance):
+    original = instance.dueDate
+    instance.dueDate = original
+    assert instance.dueDate == original
 
 
-@given(instance=itm::Version_strategy)
-def test_itm::version_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=itm::Version_strategy)
-def test_itm::version_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=itm::Version_strategy)
-def test_itm::version_status_setter(instance):
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=itm::User_strategy)
+
+
+@given(instance=itm_Issue_strategy)
+def test_itm_issue_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=itm_IssueDependency_strategy)
 @settings(max_examples=50)
-def test_itm::user_instantiation(instance):
-    assert isinstance(instance, itm::User)
-
-@given(instance=itm::User_strategy)
-def test_itm::user_login_type(instance):
-    assert isinstance(instance.login, str)
+def test_itm_issuedependency_instantiation(instance):
+    assert isinstance(instance, itm_IssueDependency)
 
 
-@given(instance=itm::User_strategy)
-def test_itm::user_login_setter(instance):
+
+@given(instance=itm_IssueDependency_strategy)
+def test_itm_issuedependency_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=itm_IssueTrackingDatabase_strategy)
+@settings(max_examples=50)
+def test_itm_issuetrackingdatabase_instantiation(instance):
+    assert isinstance(instance, itm_IssueTrackingDatabase)
+
+@given(instance=itm_Member_strategy)
+@settings(max_examples=50)
+def test_itm_member_instantiation(instance):
+    assert isinstance(instance, itm_Member)
+
+@given(instance=itm_IssueCategory_strategy)
+@settings(max_examples=50)
+def test_itm_issuecategory_instantiation(instance):
+    assert isinstance(instance, itm_IssueCategory)
+
+
+
+@given(instance=itm_IssueCategory_strategy)
+def test_itm_issuecategory_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=itm_Version_strategy)
+@settings(max_examples=50)
+def test_itm_version_instantiation(instance):
+    assert isinstance(instance, itm_Version)
+
+
+
+@given(instance=itm_Version_strategy)
+def test_itm_version_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=itm_Version_strategy)
+def test_itm_version_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=itm_Version_strategy)
+def test_itm_version_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=itm_Version_strategy)
+def test_itm_version_completedDate_setter(instance):
+    original = instance.completedDate
+    instance.completedDate = original
+    assert instance.completedDate == original
+
+@given(instance=itm_User_strategy)
+@settings(max_examples=50)
+def test_itm_user_instantiation(instance):
+    assert isinstance(instance, itm_User)
+
+
+
+@given(instance=itm_User_strategy)
+def test_itm_user_login_setter(instance):
     original = instance.login
     instance.login = original
     assert instance.login == original
 
-@given(instance=itm::User_strategy)
-def test_itm::user_language_type(instance):
-    assert isinstance(instance.language, str)
 
 
-@given(instance=itm::User_strategy)
-def test_itm::user_language_setter(instance):
+@given(instance=itm_User_strategy)
+def test_itm_user_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=itm::Role_strategy)
+@given(instance=itm_Role_strategy)
 @settings(max_examples=50)
-def test_itm::role_instantiation(instance):
-    assert isinstance(instance, itm::Role)
-
-@given(instance=itm::Role_strategy)
-def test_itm::role_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_itm_role_instantiation(instance):
+    assert isinstance(instance, itm_Role)
 
 
-@given(instance=itm::Role_strategy)
-def test_itm::role_name_setter(instance):
+
+@given(instance=itm_Role_strategy)
+def test_itm_role_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=itm::Role_strategy)
-def test_itm::role_permissions_type(instance):
-    assert isinstance(instance.permissions, str)
 
 
-@given(instance=itm::Role_strategy)
-def test_itm::role_permissions_setter(instance):
+@given(instance=itm_Role_strategy)
+def test_itm_role_permissions_setter(instance):
     original = instance.permissions
     instance.permissions = original
     assert instance.permissions == original
 
-@given(instance=itm::Tracker_strategy)
+@given(instance=itm_Tracker_strategy)
 @settings(max_examples=50)
-def test_itm::tracker_instantiation(instance):
-    assert isinstance(instance, itm::Tracker)
-
-@given(instance=itm::Tracker_strategy)
-def test_itm::tracker_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_itm_tracker_instantiation(instance):
+    assert isinstance(instance, itm_Tracker)
 
 
-@given(instance=itm::Tracker_strategy)
-def test_itm::tracker_name_setter(instance):
+
+@given(instance=itm_Tracker_strategy)
+def test_itm_tracker_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=itm::Project_strategy)
+@given(instance=itm_Project_strategy)
 @settings(max_examples=50)
-def test_itm::project_instantiation(instance):
-    assert isinstance(instance, itm::Project)
-
-@given(instance=itm::Project_strategy)
-def test_itm::project_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_itm_project_instantiation(instance):
+    assert isinstance(instance, itm_Project)
 
 
-@given(instance=itm::Project_strategy)
-def test_itm::project_name_setter(instance):
+
+@given(instance=itm_Project_strategy)
+def test_itm_project_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=itm::Project_strategy)
-def test_itm::project_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=itm::Project_strategy)
-def test_itm::project_description_setter(instance):
+@given(instance=itm_Project_strategy)
+def test_itm_project_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rulegen::C,
-    rulegen::B,
-    rulegen::A,
-    rulegen::Context,
-    rulegen::D,
+from python_code import (
+    rulegen_C,
+    rulegen_B,
+    rulegen_A,
+    rulegen_Context,
+    rulegen_D,
 )
 
 # =============================================================================
@@ -19,72 +19,72 @@ from classes import (
 
 
 
-def test_rulegen::c_is_not_abstract():
-    assert not inspect.isabstract(rulegen::C)
+def test_rulegen_c_is_not_abstract():
+    assert not inspect.isabstract(rulegen_C)
 
 
-def test_rulegen::c_constructor_exists():
-    assert callable(rulegen::C.__init__)
+def test_rulegen_c_constructor_exists():
+    assert callable(rulegen_C.__init__)
 
 
-def test_rulegen::c_constructor_args():
-    sig = inspect.signature(rulegen::C.__init__)
+def test_rulegen_c_constructor_args():
+    sig = inspect.signature(rulegen_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rulegen::b_is_not_abstract():
-    assert not inspect.isabstract(rulegen::B)
+def test_rulegen_b_is_not_abstract():
+    assert not inspect.isabstract(rulegen_B)
 
 
-def test_rulegen::b_constructor_exists():
-    assert callable(rulegen::B.__init__)
+def test_rulegen_b_constructor_exists():
+    assert callable(rulegen_B.__init__)
 
 
-def test_rulegen::b_constructor_args():
-    sig = inspect.signature(rulegen::B.__init__)
+def test_rulegen_b_constructor_args():
+    sig = inspect.signature(rulegen_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rulegen::a_is_not_abstract():
-    assert not inspect.isabstract(rulegen::A)
+def test_rulegen_a_is_not_abstract():
+    assert not inspect.isabstract(rulegen_A)
 
 
-def test_rulegen::a_constructor_exists():
-    assert callable(rulegen::A.__init__)
+def test_rulegen_a_constructor_exists():
+    assert callable(rulegen_A.__init__)
 
 
-def test_rulegen::a_constructor_args():
-    sig = inspect.signature(rulegen::A.__init__)
+def test_rulegen_a_constructor_args():
+    sig = inspect.signature(rulegen_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rulegen::context_is_not_abstract():
-    assert not inspect.isabstract(rulegen::Context)
+def test_rulegen_context_is_not_abstract():
+    assert not inspect.isabstract(rulegen_Context)
 
 
-def test_rulegen::context_constructor_exists():
-    assert callable(rulegen::Context.__init__)
+def test_rulegen_context_constructor_exists():
+    assert callable(rulegen_Context.__init__)
 
 
-def test_rulegen::context_constructor_args():
-    sig = inspect.signature(rulegen::Context.__init__)
+def test_rulegen_context_constructor_args():
+    sig = inspect.signature(rulegen_Context.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rulegen::d_is_not_abstract():
-    assert not inspect.isabstract(rulegen::D)
+def test_rulegen_d_is_not_abstract():
+    assert not inspect.isabstract(rulegen_D)
 
 
-def test_rulegen::d_constructor_exists():
-    assert callable(rulegen::D.__init__)
+def test_rulegen_d_constructor_exists():
+    assert callable(rulegen_D.__init__)
 
 
-def test_rulegen::d_constructor_args():
-    sig = inspect.signature(rulegen::D.__init__)
+def test_rulegen_d_constructor_args():
+    sig = inspect.signature(rulegen_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,43 +99,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rulegen::C_strategy = st.builds(
-    rulegen::C,
+rulegen_C_strategy = st.builds(
+    rulegen_C,
 )
-rulegen::B_strategy = st.builds(
-    rulegen::B,
+rulegen_B_strategy = st.builds(
+    rulegen_B,
 )
-rulegen::A_strategy = st.builds(
-    rulegen::A,
+rulegen_A_strategy = st.builds(
+    rulegen_A,
 )
-rulegen::Context_strategy = st.builds(
-    rulegen::Context,
+rulegen_Context_strategy = st.builds(
+    rulegen_Context,
 )
-rulegen::D_strategy = st.builds(
-    rulegen::D,
+rulegen_D_strategy = st.builds(
+    rulegen_D,
 )
 
-@given(instance=rulegen::C_strategy)
+@given(instance=rulegen_C_strategy)
 @settings(max_examples=50)
-def test_rulegen::c_instantiation(instance):
-    assert isinstance(instance, rulegen::C)
+def test_rulegen_c_instantiation(instance):
+    assert isinstance(instance, rulegen_C)
 
-@given(instance=rulegen::B_strategy)
+@given(instance=rulegen_B_strategy)
 @settings(max_examples=50)
-def test_rulegen::b_instantiation(instance):
-    assert isinstance(instance, rulegen::B)
+def test_rulegen_b_instantiation(instance):
+    assert isinstance(instance, rulegen_B)
 
-@given(instance=rulegen::A_strategy)
+@given(instance=rulegen_A_strategy)
 @settings(max_examples=50)
-def test_rulegen::a_instantiation(instance):
-    assert isinstance(instance, rulegen::A)
+def test_rulegen_a_instantiation(instance):
+    assert isinstance(instance, rulegen_A)
 
-@given(instance=rulegen::Context_strategy)
+@given(instance=rulegen_Context_strategy)
 @settings(max_examples=50)
-def test_rulegen::context_instantiation(instance):
-    assert isinstance(instance, rulegen::Context)
+def test_rulegen_context_instantiation(instance):
+    assert isinstance(instance, rulegen_Context)
 
-@given(instance=rulegen::D_strategy)
+@given(instance=rulegen_D_strategy)
 @settings(max_examples=50)
-def test_rulegen::d_instantiation(instance):
-    assert isinstance(instance, rulegen::D)
+def test_rulegen_d_instantiation(instance):
+    assert isinstance(instance, rulegen_D)

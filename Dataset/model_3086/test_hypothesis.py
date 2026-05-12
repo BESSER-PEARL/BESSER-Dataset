@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Pin,
     ObjectNode,
-    activity::Pin,
-    activity::AbstractBehavior,
-    activity::IState,
+    activity_Pin,
+    activity_AbstractBehavior,
+    activity_IState,
     AbstractAction,
-    activity::AcceptEventAction,
-    activity::OutputPin,
-    activity::InputPin,
+    activity_AcceptEventAction,
+    activity_OutputPin,
+    activity_InputPin,
     ActivityNode,
     AbstractNamedElement,
-    activity::AbstractAction,
-    activity::ObjectNode,
+    activity_ObjectNode,
+    activity_AbstractAction,
     ActivityEdge,
-    activity::ObjectFlow,
-    activity::ActivityNode,
-    activity::ValueSpecification,
+    activity_ObjectFlow,
+    activity_ActivityNode,
+    activity_ValueSpecification,
     ModelElement,
-    activity::ActivityPartition,
-    activity::ActivityEdge,
+    activity_ActivityPartition,
+    activity_ActivityEdge,
     TraceableElement,
     AbstractBehavior,
-    activity::AbstractActivity,
+    activity_AbstractActivity,
     ObjectNodeKind,
     ObjectNodeOrderingKind,
 )
@@ -67,23 +67,23 @@ def test_objectnode_constructor_args():
 
 
 
-def test_activity::pin_is_not_abstract():
-    assert not inspect.isabstract(activity::Pin)
+def test_activity_pin_is_not_abstract():
+    assert not inspect.isabstract(activity_Pin)
 
 
-def test_activity::pin_constructor_exists():
-    assert callable(activity::Pin.__init__)
+def test_activity_pin_constructor_exists():
+    assert callable(activity_Pin.__init__)
 
 
-def test_activity::pin_constructor_args():
-    sig = inspect.signature(activity::Pin.__init__)
+def test_activity_pin_constructor_args():
+    sig = inspect.signature(activity_Pin.__init__)
     params = list(sig.parameters.keys())
     assert "isControl" in params, "Missing parameter 'isControl'"
 
-def test_activity::pin_has_isControl():
-    assert hasattr(activity::Pin, "isControl")
+def test_activity_pin_has_isControl():
+    assert hasattr(activity_Pin, "isControl")
     descriptor = None
-    for klass in activity::Pin.__mro__:
+    for klass in activity_Pin.__mro__:
         if "isControl" in klass.__dict__:
             descriptor = klass.__dict__["isControl"]
             break
@@ -91,30 +91,30 @@ def test_activity::pin_has_isControl():
 
 
 
-def test_activity::abstractbehavior_is_not_abstract():
-    assert not inspect.isabstract(activity::AbstractBehavior)
+def test_activity_abstractbehavior_is_not_abstract():
+    assert not inspect.isabstract(activity_AbstractBehavior)
 
 
-def test_activity::abstractbehavior_constructor_exists():
-    assert callable(activity::AbstractBehavior.__init__)
+def test_activity_abstractbehavior_constructor_exists():
+    assert callable(activity_AbstractBehavior.__init__)
 
 
-def test_activity::abstractbehavior_constructor_args():
-    sig = inspect.signature(activity::AbstractBehavior.__init__)
+def test_activity_abstractbehavior_constructor_args():
+    sig = inspect.signature(activity_AbstractBehavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::istate_is_not_abstract():
-    assert not inspect.isabstract(activity::IState)
+def test_activity_istate_is_not_abstract():
+    assert not inspect.isabstract(activity_IState)
 
 
-def test_activity::istate_constructor_exists():
-    assert callable(activity::IState.__init__)
+def test_activity_istate_constructor_exists():
+    assert callable(activity_IState.__init__)
 
 
-def test_activity::istate_constructor_args():
-    sig = inspect.signature(activity::IState.__init__)
+def test_activity_istate_constructor_args():
+    sig = inspect.signature(activity_IState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -133,23 +133,23 @@ def test_abstractaction_constructor_args():
 
 
 
-def test_activity::accepteventaction_is_not_abstract():
-    assert not inspect.isabstract(activity::AcceptEventAction)
+def test_activity_accepteventaction_is_not_abstract():
+    assert not inspect.isabstract(activity_AcceptEventAction)
 
 
-def test_activity::accepteventaction_constructor_exists():
-    assert callable(activity::AcceptEventAction.__init__)
+def test_activity_accepteventaction_constructor_exists():
+    assert callable(activity_AcceptEventAction.__init__)
 
 
-def test_activity::accepteventaction_constructor_args():
-    sig = inspect.signature(activity::AcceptEventAction.__init__)
+def test_activity_accepteventaction_constructor_args():
+    sig = inspect.signature(activity_AcceptEventAction.__init__)
     params = list(sig.parameters.keys())
     assert "isUnmarshall" in params, "Missing parameter 'isUnmarshall'"
 
-def test_activity::accepteventaction_has_isUnmarshall():
-    assert hasattr(activity::AcceptEventAction, "isUnmarshall")
+def test_activity_accepteventaction_has_isUnmarshall():
+    assert hasattr(activity_AcceptEventAction, "isUnmarshall")
     descriptor = None
-    for klass in activity::AcceptEventAction.__mro__:
+    for klass in activity_AcceptEventAction.__mro__:
         if "isUnmarshall" in klass.__dict__:
             descriptor = klass.__dict__["isUnmarshall"]
             break
@@ -157,30 +157,30 @@ def test_activity::accepteventaction_has_isUnmarshall():
 
 
 
-def test_activity::outputpin_is_not_abstract():
-    assert not inspect.isabstract(activity::OutputPin)
+def test_activity_outputpin_is_not_abstract():
+    assert not inspect.isabstract(activity_OutputPin)
 
 
-def test_activity::outputpin_constructor_exists():
-    assert callable(activity::OutputPin.__init__)
+def test_activity_outputpin_constructor_exists():
+    assert callable(activity_OutputPin.__init__)
 
 
-def test_activity::outputpin_constructor_args():
-    sig = inspect.signature(activity::OutputPin.__init__)
+def test_activity_outputpin_constructor_args():
+    sig = inspect.signature(activity_OutputPin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::inputpin_is_not_abstract():
-    assert not inspect.isabstract(activity::InputPin)
+def test_activity_inputpin_is_not_abstract():
+    assert not inspect.isabstract(activity_InputPin)
 
 
-def test_activity::inputpin_constructor_exists():
-    assert callable(activity::InputPin.__init__)
+def test_activity_inputpin_constructor_exists():
+    assert callable(activity_InputPin.__init__)
 
 
-def test_activity::inputpin_constructor_args():
-    sig = inspect.signature(activity::InputPin.__init__)
+def test_activity_inputpin_constructor_args():
+    sig = inspect.signature(activity_InputPin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -213,61 +213,61 @@ def test_abstractnamedelement_constructor_args():
 
 
 
-def test_activity::abstractaction_is_not_abstract():
-    assert not inspect.isabstract(activity::AbstractAction)
+def test_activity_objectnode_is_not_abstract():
+    assert not inspect.isabstract(activity_ObjectNode)
 
 
-def test_activity::abstractaction_constructor_exists():
-    assert callable(activity::AbstractAction.__init__)
+def test_activity_objectnode_constructor_exists():
+    assert callable(activity_ObjectNode.__init__)
 
 
-def test_activity::abstractaction_constructor_args():
-    sig = inspect.signature(activity::AbstractAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activity::objectnode_is_not_abstract():
-    assert not inspect.isabstract(activity::ObjectNode)
-
-
-def test_activity::objectnode_constructor_exists():
-    assert callable(activity::ObjectNode.__init__)
-
-
-def test_activity::objectnode_constructor_args():
-    sig = inspect.signature(activity::ObjectNode.__init__)
+def test_activity_objectnode_constructor_args():
+    sig = inspect.signature(activity_ObjectNode.__init__)
     params = list(sig.parameters.keys())
     assert "kindOfNode" in params, "Missing parameter 'kindOfNode'"
-    assert "isControlType" in params, "Missing parameter 'isControlType'"
     assert "ordering" in params, "Missing parameter 'ordering'"
+    assert "isControlType" in params, "Missing parameter 'isControlType'"
 
-def test_activity::objectnode_has_kindOfNode():
-    assert hasattr(activity::ObjectNode, "kindOfNode")
+def test_activity_objectnode_has_kindOfNode():
+    assert hasattr(activity_ObjectNode, "kindOfNode")
     descriptor = None
-    for klass in activity::ObjectNode.__mro__:
+    for klass in activity_ObjectNode.__mro__:
         if "kindOfNode" in klass.__dict__:
             descriptor = klass.__dict__["kindOfNode"]
             break
     assert isinstance(descriptor, property)
 
-def test_activity::objectnode_has_isControlType():
-    assert hasattr(activity::ObjectNode, "isControlType")
+def test_activity_objectnode_has_ordering():
+    assert hasattr(activity_ObjectNode, "ordering")
     descriptor = None
-    for klass in activity::ObjectNode.__mro__:
+    for klass in activity_ObjectNode.__mro__:
+        if "ordering" in klass.__dict__:
+            descriptor = klass.__dict__["ordering"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activity_objectnode_has_isControlType():
+    assert hasattr(activity_ObjectNode, "isControlType")
+    descriptor = None
+    for klass in activity_ObjectNode.__mro__:
         if "isControlType" in klass.__dict__:
             descriptor = klass.__dict__["isControlType"]
             break
     assert isinstance(descriptor, property)
 
-def test_activity::objectnode_has_ordering():
-    assert hasattr(activity::ObjectNode, "ordering")
-    descriptor = None
-    for klass in activity::ObjectNode.__mro__:
-        if "ordering" in klass.__dict__:
-            descriptor = klass.__dict__["ordering"]
-            break
-    assert isinstance(descriptor, property)
+
+
+def test_activity_abstractaction_is_not_abstract():
+    assert not inspect.isabstract(activity_AbstractAction)
+
+
+def test_activity_abstractaction_constructor_exists():
+    assert callable(activity_AbstractAction.__init__)
+
+
+def test_activity_abstractaction_constructor_args():
+    sig = inspect.signature(activity_AbstractAction.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -285,64 +285,64 @@ def test_activityedge_constructor_args():
 
 
 
-def test_activity::objectflow_is_not_abstract():
-    assert not inspect.isabstract(activity::ObjectFlow)
+def test_activity_objectflow_is_not_abstract():
+    assert not inspect.isabstract(activity_ObjectFlow)
 
 
-def test_activity::objectflow_constructor_exists():
-    assert callable(activity::ObjectFlow.__init__)
+def test_activity_objectflow_constructor_exists():
+    assert callable(activity_ObjectFlow.__init__)
 
 
-def test_activity::objectflow_constructor_args():
-    sig = inspect.signature(activity::ObjectFlow.__init__)
+def test_activity_objectflow_constructor_args():
+    sig = inspect.signature(activity_ObjectFlow.__init__)
     params = list(sig.parameters.keys())
-    assert "isMultireceive" in params, "Missing parameter 'isMultireceive'"
     assert "isMulticast" in params, "Missing parameter 'isMulticast'"
+    assert "isMultireceive" in params, "Missing parameter 'isMultireceive'"
 
-def test_activity::objectflow_has_isMultireceive():
-    assert hasattr(activity::ObjectFlow, "isMultireceive")
+def test_activity_objectflow_has_isMulticast():
+    assert hasattr(activity_ObjectFlow, "isMulticast")
     descriptor = None
-    for klass in activity::ObjectFlow.__mro__:
-        if "isMultireceive" in klass.__dict__:
-            descriptor = klass.__dict__["isMultireceive"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity::objectflow_has_isMulticast():
-    assert hasattr(activity::ObjectFlow, "isMulticast")
-    descriptor = None
-    for klass in activity::ObjectFlow.__mro__:
+    for klass in activity_ObjectFlow.__mro__:
         if "isMulticast" in klass.__dict__:
             descriptor = klass.__dict__["isMulticast"]
             break
     assert isinstance(descriptor, property)
 
+def test_activity_objectflow_has_isMultireceive():
+    assert hasattr(activity_ObjectFlow, "isMultireceive")
+    descriptor = None
+    for klass in activity_ObjectFlow.__mro__:
+        if "isMultireceive" in klass.__dict__:
+            descriptor = klass.__dict__["isMultireceive"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activity::activitynode_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityNode)
+
+def test_activity_activitynode_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityNode)
 
 
-def test_activity::activitynode_constructor_exists():
-    assert callable(activity::ActivityNode.__init__)
+def test_activity_activitynode_constructor_exists():
+    assert callable(activity_ActivityNode.__init__)
 
 
-def test_activity::activitynode_constructor_args():
-    sig = inspect.signature(activity::ActivityNode.__init__)
+def test_activity_activitynode_constructor_args():
+    sig = inspect.signature(activity_ActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(activity::ValueSpecification)
+def test_activity_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(activity_ValueSpecification)
 
 
-def test_activity::valuespecification_constructor_exists():
-    assert callable(activity::ValueSpecification.__init__)
+def test_activity_valuespecification_constructor_exists():
+    assert callable(activity_ValueSpecification.__init__)
 
 
-def test_activity::valuespecification_constructor_args():
-    sig = inspect.signature(activity::ValueSpecification.__init__)
+def test_activity_valuespecification_constructor_args():
+    sig = inspect.signature(activity_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -361,57 +361,57 @@ def test_modelelement_constructor_args():
 
 
 
-def test_activity::activitypartition_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityPartition)
+def test_activity_activitypartition_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityPartition)
 
 
-def test_activity::activitypartition_constructor_exists():
-    assert callable(activity::ActivityPartition.__init__)
+def test_activity_activitypartition_constructor_exists():
+    assert callable(activity_ActivityPartition.__init__)
 
 
-def test_activity::activitypartition_constructor_args():
-    sig = inspect.signature(activity::ActivityPartition.__init__)
+def test_activity_activitypartition_constructor_args():
+    sig = inspect.signature(activity_ActivityPartition.__init__)
     params = list(sig.parameters.keys())
-    assert "isDimension" in params, "Missing parameter 'isDimension'"
     assert "isExternal" in params, "Missing parameter 'isExternal'"
+    assert "isDimension" in params, "Missing parameter 'isDimension'"
 
-def test_activity::activitypartition_has_isDimension():
-    assert hasattr(activity::ActivityPartition, "isDimension")
+def test_activity_activitypartition_has_isExternal():
+    assert hasattr(activity_ActivityPartition, "isExternal")
     descriptor = None
-    for klass in activity::ActivityPartition.__mro__:
-        if "isDimension" in klass.__dict__:
-            descriptor = klass.__dict__["isDimension"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity::activitypartition_has_isExternal():
-    assert hasattr(activity::ActivityPartition, "isExternal")
-    descriptor = None
-    for klass in activity::ActivityPartition.__mro__:
+    for klass in activity_ActivityPartition.__mro__:
         if "isExternal" in klass.__dict__:
             descriptor = klass.__dict__["isExternal"]
             break
     assert isinstance(descriptor, property)
 
+def test_activity_activitypartition_has_isDimension():
+    assert hasattr(activity_ActivityPartition, "isDimension")
+    descriptor = None
+    for klass in activity_ActivityPartition.__mro__:
+        if "isDimension" in klass.__dict__:
+            descriptor = klass.__dict__["isDimension"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activity::activityedge_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityEdge)
+
+def test_activity_activityedge_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityEdge)
 
 
-def test_activity::activityedge_constructor_exists():
-    assert callable(activity::ActivityEdge.__init__)
+def test_activity_activityedge_constructor_exists():
+    assert callable(activity_ActivityEdge.__init__)
 
 
-def test_activity::activityedge_constructor_args():
-    sig = inspect.signature(activity::ActivityEdge.__init__)
+def test_activity_activityedge_constructor_args():
+    sig = inspect.signature(activity_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
     assert "kindOfRate" in params, "Missing parameter 'kindOfRate'"
 
-def test_activity::activityedge_has_kindOfRate():
-    assert hasattr(activity::ActivityEdge, "kindOfRate")
+def test_activity_activityedge_has_kindOfRate():
+    assert hasattr(activity_ActivityEdge, "kindOfRate")
     descriptor = None
-    for klass in activity::ActivityEdge.__mro__:
+    for klass in activity_ActivityEdge.__mro__:
         if "kindOfRate" in klass.__dict__:
             descriptor = klass.__dict__["kindOfRate"]
             break
@@ -447,35 +447,35 @@ def test_abstractbehavior_constructor_args():
 
 
 
-def test_activity::abstractactivity_is_not_abstract():
-    assert not inspect.isabstract(activity::AbstractActivity)
+def test_activity_abstractactivity_is_not_abstract():
+    assert not inspect.isabstract(activity_AbstractActivity)
 
 
-def test_activity::abstractactivity_constructor_exists():
-    assert callable(activity::AbstractActivity.__init__)
+def test_activity_abstractactivity_constructor_exists():
+    assert callable(activity_AbstractActivity.__init__)
 
 
-def test_activity::abstractactivity_constructor_args():
-    sig = inspect.signature(activity::AbstractActivity.__init__)
+def test_activity_abstractactivity_constructor_args():
+    sig = inspect.signature(activity_AbstractActivity.__init__)
     params = list(sig.parameters.keys())
-    assert "isSingleExecution" in params, "Missing parameter 'isSingleExecution'"
     assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
+    assert "isSingleExecution" in params, "Missing parameter 'isSingleExecution'"
 
-def test_activity::abstractactivity_has_isSingleExecution():
-    assert hasattr(activity::AbstractActivity, "isSingleExecution")
+def test_activity_abstractactivity_has_isReadOnly():
+    assert hasattr(activity_AbstractActivity, "isReadOnly")
     descriptor = None
-    for klass in activity::AbstractActivity.__mro__:
-        if "isSingleExecution" in klass.__dict__:
-            descriptor = klass.__dict__["isSingleExecution"]
+    for klass in activity_AbstractActivity.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
             break
     assert isinstance(descriptor, property)
 
-def test_activity::abstractactivity_has_isReadOnly():
-    assert hasattr(activity::AbstractActivity, "isReadOnly")
+def test_activity_abstractactivity_has_isSingleExecution():
+    assert hasattr(activity_AbstractActivity, "isSingleExecution")
     descriptor = None
-    for klass in activity::AbstractActivity.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
+    for klass in activity_AbstractActivity.__mro__:
+        if "isSingleExecution" in klass.__dict__:
+            descriptor = klass.__dict__["isSingleExecution"]
             break
     assert isinstance(descriptor, property)
 
@@ -487,8 +487,8 @@ def test_objectnodekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ObjectNodeKind]
     expected_literals = [
-        "Unspecified",
         "Overwrite",
+        "Unspecified",
         "NoBuffer",
     ]
     # Check that all expected literals exist
@@ -504,9 +504,9 @@ def test_objectnodeorderingkind_has_all_literals():
     enum_literals = [lit.name for lit in ObjectNodeOrderingKind]
     expected_literals = [
         "ordered",
-        "unordered",
         "FIFO",
         "LIFO",
+        "unordered",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -530,30 +530,30 @@ Pin_strategy = st.builds(
 ObjectNode_strategy = st.builds(
     ObjectNode,
 )
-activity::Pin_strategy = st.builds(
-    activity::Pin,
+activity_Pin_strategy = st.builds(
+    activity_Pin,
     isControl=
         st.booleans()
 )
-activity::AbstractBehavior_strategy = st.builds(
-    activity::AbstractBehavior,
+activity_AbstractBehavior_strategy = st.builds(
+    activity_AbstractBehavior,
 )
-activity::IState_strategy = st.builds(
-    activity::IState,
+activity_IState_strategy = st.builds(
+    activity_IState,
 )
 AbstractAction_strategy = st.builds(
     AbstractAction,
 )
-activity::AcceptEventAction_strategy = st.builds(
-    activity::AcceptEventAction,
+activity_AcceptEventAction_strategy = st.builds(
+    activity_AcceptEventAction,
     isUnmarshall=
         st.booleans()
 )
-activity::OutputPin_strategy = st.builds(
-    activity::OutputPin,
+activity_OutputPin_strategy = st.builds(
+    activity_OutputPin,
 )
-activity::InputPin_strategy = st.builds(
-    activity::InputPin,
+activity_InputPin_strategy = st.builds(
+    activity_InputPin,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
@@ -561,46 +561,46 @@ ActivityNode_strategy = st.builds(
 AbstractNamedElement_strategy = st.builds(
     AbstractNamedElement,
 )
-activity::AbstractAction_strategy = st.builds(
-    activity::AbstractAction,
-)
-activity::ObjectNode_strategy = st.builds(
-    activity::ObjectNode,
+activity_ObjectNode_strategy = st.builds(
+    activity_ObjectNode,
     kindOfNode=
         safe_text,
-    isControlType=
-        st.booleans(),
     ordering=
-        safe_text
+        safe_text,
+    isControlType=
+        st.booleans()
+)
+activity_AbstractAction_strategy = st.builds(
+    activity_AbstractAction,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-activity::ObjectFlow_strategy = st.builds(
-    activity::ObjectFlow,
-    isMultireceive=
-        st.booleans(),
+activity_ObjectFlow_strategy = st.builds(
+    activity_ObjectFlow,
     isMulticast=
+        st.booleans(),
+    isMultireceive=
         st.booleans()
 )
-activity::ActivityNode_strategy = st.builds(
-    activity::ActivityNode,
+activity_ActivityNode_strategy = st.builds(
+    activity_ActivityNode,
 )
-activity::ValueSpecification_strategy = st.builds(
-    activity::ValueSpecification,
+activity_ValueSpecification_strategy = st.builds(
+    activity_ValueSpecification,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-activity::ActivityPartition_strategy = st.builds(
-    activity::ActivityPartition,
-    isDimension=
-        st.booleans(),
+activity_ActivityPartition_strategy = st.builds(
+    activity_ActivityPartition,
     isExternal=
+        st.booleans(),
+    isDimension=
         st.booleans()
 )
-activity::ActivityEdge_strategy = st.builds(
-    activity::ActivityEdge,
+activity_ActivityEdge_strategy = st.builds(
+    activity_ActivityEdge,
     kindOfRate=
         safe_text
 )
@@ -610,11 +610,11 @@ TraceableElement_strategy = st.builds(
 AbstractBehavior_strategy = st.builds(
     AbstractBehavior,
 )
-activity::AbstractActivity_strategy = st.builds(
-    activity::AbstractActivity,
-    isSingleExecution=
-        st.booleans(),
+activity_AbstractActivity_strategy = st.builds(
+    activity_AbstractActivity,
     isReadOnly=
+        st.booleans(),
+    isSingleExecution=
         st.booleans()
 )
 
@@ -628,62 +628,56 @@ def test_pin_instantiation(instance):
 def test_objectnode_instantiation(instance):
     assert isinstance(instance, ObjectNode)
 
-@given(instance=activity::Pin_strategy)
+@given(instance=activity_Pin_strategy)
 @settings(max_examples=50)
-def test_activity::pin_instantiation(instance):
-    assert isinstance(instance, activity::Pin)
-
-@given(instance=activity::Pin_strategy)
-def test_activity::pin_isControl_type(instance):
-    assert isinstance(instance.isControl, bool)
+def test_activity_pin_instantiation(instance):
+    assert isinstance(instance, activity_Pin)
 
 
-@given(instance=activity::Pin_strategy)
-def test_activity::pin_isControl_setter(instance):
+
+@given(instance=activity_Pin_strategy)
+def test_activity_pin_isControl_setter(instance):
     original = instance.isControl
     instance.isControl = original
     assert instance.isControl == original
 
-@given(instance=activity::AbstractBehavior_strategy)
+@given(instance=activity_AbstractBehavior_strategy)
 @settings(max_examples=50)
-def test_activity::abstractbehavior_instantiation(instance):
-    assert isinstance(instance, activity::AbstractBehavior)
+def test_activity_abstractbehavior_instantiation(instance):
+    assert isinstance(instance, activity_AbstractBehavior)
 
-@given(instance=activity::IState_strategy)
+@given(instance=activity_IState_strategy)
 @settings(max_examples=50)
-def test_activity::istate_instantiation(instance):
-    assert isinstance(instance, activity::IState)
+def test_activity_istate_instantiation(instance):
+    assert isinstance(instance, activity_IState)
 
 @given(instance=AbstractAction_strategy)
 @settings(max_examples=50)
 def test_abstractaction_instantiation(instance):
     assert isinstance(instance, AbstractAction)
 
-@given(instance=activity::AcceptEventAction_strategy)
+@given(instance=activity_AcceptEventAction_strategy)
 @settings(max_examples=50)
-def test_activity::accepteventaction_instantiation(instance):
-    assert isinstance(instance, activity::AcceptEventAction)
-
-@given(instance=activity::AcceptEventAction_strategy)
-def test_activity::accepteventaction_isUnmarshall_type(instance):
-    assert isinstance(instance.isUnmarshall, bool)
+def test_activity_accepteventaction_instantiation(instance):
+    assert isinstance(instance, activity_AcceptEventAction)
 
 
-@given(instance=activity::AcceptEventAction_strategy)
-def test_activity::accepteventaction_isUnmarshall_setter(instance):
+
+@given(instance=activity_AcceptEventAction_strategy)
+def test_activity_accepteventaction_isUnmarshall_setter(instance):
     original = instance.isUnmarshall
     instance.isUnmarshall = original
     assert instance.isUnmarshall == original
 
-@given(instance=activity::OutputPin_strategy)
+@given(instance=activity_OutputPin_strategy)
 @settings(max_examples=50)
-def test_activity::outputpin_instantiation(instance):
-    assert isinstance(instance, activity::OutputPin)
+def test_activity_outputpin_instantiation(instance):
+    assert isinstance(instance, activity_OutputPin)
 
-@given(instance=activity::InputPin_strategy)
+@given(instance=activity_InputPin_strategy)
 @settings(max_examples=50)
-def test_activity::inputpin_instantiation(instance):
-    assert isinstance(instance, activity::InputPin)
+def test_activity_inputpin_instantiation(instance):
+    assert isinstance(instance, activity_InputPin)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
@@ -695,135 +689,111 @@ def test_activitynode_instantiation(instance):
 def test_abstractnamedelement_instantiation(instance):
     assert isinstance(instance, AbstractNamedElement)
 
-@given(instance=activity::AbstractAction_strategy)
+@given(instance=activity_ObjectNode_strategy)
 @settings(max_examples=50)
-def test_activity::abstractaction_instantiation(instance):
-    assert isinstance(instance, activity::AbstractAction)
-
-@given(instance=activity::ObjectNode_strategy)
-@settings(max_examples=50)
-def test_activity::objectnode_instantiation(instance):
-    assert isinstance(instance, activity::ObjectNode)
-
-@given(instance=activity::ObjectNode_strategy)
-def test_activity::objectnode_kindOfNode_type(instance):
-    assert isinstance(instance.kindOfNode, str)
+def test_activity_objectnode_instantiation(instance):
+    assert isinstance(instance, activity_ObjectNode)
 
 
-@given(instance=activity::ObjectNode_strategy)
-def test_activity::objectnode_kindOfNode_setter(instance):
+
+@given(instance=activity_ObjectNode_strategy)
+def test_activity_objectnode_kindOfNode_setter(instance):
     original = instance.kindOfNode
     instance.kindOfNode = original
     assert instance.kindOfNode == original
 
-@given(instance=activity::ObjectNode_strategy)
-def test_activity::objectnode_isControlType_type(instance):
-    assert isinstance(instance.isControlType, bool)
 
 
-@given(instance=activity::ObjectNode_strategy)
-def test_activity::objectnode_isControlType_setter(instance):
+@given(instance=activity_ObjectNode_strategy)
+def test_activity_objectnode_ordering_setter(instance):
+    original = instance.ordering
+    instance.ordering = original
+    assert instance.ordering == original
+
+
+
+@given(instance=activity_ObjectNode_strategy)
+def test_activity_objectnode_isControlType_setter(instance):
     original = instance.isControlType
     instance.isControlType = original
     assert instance.isControlType == original
 
-@given(instance=activity::ObjectNode_strategy)
-def test_activity::objectnode_ordering_type(instance):
-    assert isinstance(instance.ordering, str)
-
-
-@given(instance=activity::ObjectNode_strategy)
-def test_activity::objectnode_ordering_setter(instance):
-    original = instance.ordering
-    instance.ordering = original
-    assert instance.ordering == original
+@given(instance=activity_AbstractAction_strategy)
+@settings(max_examples=50)
+def test_activity_abstractaction_instantiation(instance):
+    assert isinstance(instance, activity_AbstractAction)
 
 @given(instance=ActivityEdge_strategy)
 @settings(max_examples=50)
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=activity::ObjectFlow_strategy)
+@given(instance=activity_ObjectFlow_strategy)
 @settings(max_examples=50)
-def test_activity::objectflow_instantiation(instance):
-    assert isinstance(instance, activity::ObjectFlow)
-
-@given(instance=activity::ObjectFlow_strategy)
-def test_activity::objectflow_isMultireceive_type(instance):
-    assert isinstance(instance.isMultireceive, bool)
+def test_activity_objectflow_instantiation(instance):
+    assert isinstance(instance, activity_ObjectFlow)
 
 
-@given(instance=activity::ObjectFlow_strategy)
-def test_activity::objectflow_isMultireceive_setter(instance):
-    original = instance.isMultireceive
-    instance.isMultireceive = original
-    assert instance.isMultireceive == original
 
-@given(instance=activity::ObjectFlow_strategy)
-def test_activity::objectflow_isMulticast_type(instance):
-    assert isinstance(instance.isMulticast, bool)
-
-
-@given(instance=activity::ObjectFlow_strategy)
-def test_activity::objectflow_isMulticast_setter(instance):
+@given(instance=activity_ObjectFlow_strategy)
+def test_activity_objectflow_isMulticast_setter(instance):
     original = instance.isMulticast
     instance.isMulticast = original
     assert instance.isMulticast == original
 
-@given(instance=activity::ActivityNode_strategy)
-@settings(max_examples=50)
-def test_activity::activitynode_instantiation(instance):
-    assert isinstance(instance, activity::ActivityNode)
 
-@given(instance=activity::ValueSpecification_strategy)
+
+@given(instance=activity_ObjectFlow_strategy)
+def test_activity_objectflow_isMultireceive_setter(instance):
+    original = instance.isMultireceive
+    instance.isMultireceive = original
+    assert instance.isMultireceive == original
+
+@given(instance=activity_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_activity::valuespecification_instantiation(instance):
-    assert isinstance(instance, activity::ValueSpecification)
+def test_activity_activitynode_instantiation(instance):
+    assert isinstance(instance, activity_ActivityNode)
+
+@given(instance=activity_ValueSpecification_strategy)
+@settings(max_examples=50)
+def test_activity_valuespecification_instantiation(instance):
+    assert isinstance(instance, activity_ValueSpecification)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=activity::ActivityPartition_strategy)
+@given(instance=activity_ActivityPartition_strategy)
 @settings(max_examples=50)
-def test_activity::activitypartition_instantiation(instance):
-    assert isinstance(instance, activity::ActivityPartition)
-
-@given(instance=activity::ActivityPartition_strategy)
-def test_activity::activitypartition_isDimension_type(instance):
-    assert isinstance(instance.isDimension, bool)
+def test_activity_activitypartition_instantiation(instance):
+    assert isinstance(instance, activity_ActivityPartition)
 
 
-@given(instance=activity::ActivityPartition_strategy)
-def test_activity::activitypartition_isDimension_setter(instance):
-    original = instance.isDimension
-    instance.isDimension = original
-    assert instance.isDimension == original
 
-@given(instance=activity::ActivityPartition_strategy)
-def test_activity::activitypartition_isExternal_type(instance):
-    assert isinstance(instance.isExternal, bool)
-
-
-@given(instance=activity::ActivityPartition_strategy)
-def test_activity::activitypartition_isExternal_setter(instance):
+@given(instance=activity_ActivityPartition_strategy)
+def test_activity_activitypartition_isExternal_setter(instance):
     original = instance.isExternal
     instance.isExternal = original
     assert instance.isExternal == original
 
-@given(instance=activity::ActivityEdge_strategy)
+
+
+@given(instance=activity_ActivityPartition_strategy)
+def test_activity_activitypartition_isDimension_setter(instance):
+    original = instance.isDimension
+    instance.isDimension = original
+    assert instance.isDimension == original
+
+@given(instance=activity_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_activity::activityedge_instantiation(instance):
-    assert isinstance(instance, activity::ActivityEdge)
-
-@given(instance=activity::ActivityEdge_strategy)
-def test_activity::activityedge_kindOfRate_type(instance):
-    assert isinstance(instance.kindOfRate, str)
+def test_activity_activityedge_instantiation(instance):
+    assert isinstance(instance, activity_ActivityEdge)
 
 
-@given(instance=activity::ActivityEdge_strategy)
-def test_activity::activityedge_kindOfRate_setter(instance):
+
+@given(instance=activity_ActivityEdge_strategy)
+def test_activity_activityedge_kindOfRate_setter(instance):
     original = instance.kindOfRate
     instance.kindOfRate = original
     assert instance.kindOfRate == original
@@ -838,29 +808,23 @@ def test_traceableelement_instantiation(instance):
 def test_abstractbehavior_instantiation(instance):
     assert isinstance(instance, AbstractBehavior)
 
-@given(instance=activity::AbstractActivity_strategy)
+@given(instance=activity_AbstractActivity_strategy)
 @settings(max_examples=50)
-def test_activity::abstractactivity_instantiation(instance):
-    assert isinstance(instance, activity::AbstractActivity)
-
-@given(instance=activity::AbstractActivity_strategy)
-def test_activity::abstractactivity_isSingleExecution_type(instance):
-    assert isinstance(instance.isSingleExecution, bool)
+def test_activity_abstractactivity_instantiation(instance):
+    assert isinstance(instance, activity_AbstractActivity)
 
 
-@given(instance=activity::AbstractActivity_strategy)
-def test_activity::abstractactivity_isSingleExecution_setter(instance):
-    original = instance.isSingleExecution
-    instance.isSingleExecution = original
-    assert instance.isSingleExecution == original
 
-@given(instance=activity::AbstractActivity_strategy)
-def test_activity::abstractactivity_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
-
-
-@given(instance=activity::AbstractActivity_strategy)
-def test_activity::abstractactivity_isReadOnly_setter(instance):
+@given(instance=activity_AbstractActivity_strategy)
+def test_activity_abstractactivity_isReadOnly_setter(instance):
     original = instance.isReadOnly
     instance.isReadOnly = original
     assert instance.isReadOnly == original
+
+
+
+@given(instance=activity_AbstractActivity_strategy)
+def test_activity_abstractactivity_isSingleExecution_setter(instance):
+    original = instance.isSingleExecution
+    instance.isSingleExecution = original
+    assert instance.isSingleExecution == original

@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trialStatemachine::Action,
+from python_code import (
+    trialStatemachine_Action,
     Region,
-    trialStatemachine::Statemachine,
-    trialStatemachine::Region,
+    trialStatemachine_Statemachine,
+    trialStatemachine_Region,
     State,
-    trialStatemachine::ComplexState,
-    trialStatemachine::LabeledTransition,
-    trialStatemachine::State,
+    trialStatemachine_ComplexState,
+    trialStatemachine_LabeledTransition,
+    trialStatemachine_State,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_trialstatemachine::action_is_not_abstract():
-    assert not inspect.isabstract(trialStatemachine::Action)
+def test_trialstatemachine_action_is_not_abstract():
+    assert not inspect.isabstract(trialStatemachine_Action)
 
 
-def test_trialstatemachine::action_constructor_exists():
-    assert callable(trialStatemachine::Action.__init__)
+def test_trialstatemachine_action_constructor_exists():
+    assert callable(trialStatemachine_Action.__init__)
 
 
-def test_trialstatemachine::action_constructor_args():
-    sig = inspect.signature(trialStatemachine::Action.__init__)
+def test_trialstatemachine_action_constructor_args():
+    sig = inspect.signature(trialStatemachine_Action.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_trialstatemachine::action_has_name():
-    assert hasattr(trialStatemachine::Action, "name")
+def test_trialstatemachine_action_has_name():
+    assert hasattr(trialStatemachine_Action, "name")
     descriptor = None
-    for klass in trialStatemachine::Action.__mro__:
+    for klass in trialStatemachine_Action.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,23 +60,23 @@ def test_region_constructor_args():
 
 
 
-def test_trialstatemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(trialStatemachine::Statemachine)
+def test_trialstatemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(trialStatemachine_Statemachine)
 
 
-def test_trialstatemachine::statemachine_constructor_exists():
-    assert callable(trialStatemachine::Statemachine.__init__)
+def test_trialstatemachine_statemachine_constructor_exists():
+    assert callable(trialStatemachine_Statemachine.__init__)
 
 
-def test_trialstatemachine::statemachine_constructor_args():
-    sig = inspect.signature(trialStatemachine::Statemachine.__init__)
+def test_trialstatemachine_statemachine_constructor_args():
+    sig = inspect.signature(trialStatemachine_Statemachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_trialstatemachine::statemachine_has_name():
-    assert hasattr(trialStatemachine::Statemachine, "name")
+def test_trialstatemachine_statemachine_has_name():
+    assert hasattr(trialStatemachine_Statemachine, "name")
     descriptor = None
-    for klass in trialStatemachine::Statemachine.__mro__:
+    for klass in trialStatemachine_Statemachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -84,23 +84,23 @@ def test_trialstatemachine::statemachine_has_name():
 
 
 
-def test_trialstatemachine::region_is_not_abstract():
-    assert not inspect.isabstract(trialStatemachine::Region)
+def test_trialstatemachine_region_is_not_abstract():
+    assert not inspect.isabstract(trialStatemachine_Region)
 
 
-def test_trialstatemachine::region_constructor_exists():
-    assert callable(trialStatemachine::Region.__init__)
+def test_trialstatemachine_region_constructor_exists():
+    assert callable(trialStatemachine_Region.__init__)
 
 
-def test_trialstatemachine::region_constructor_args():
-    sig = inspect.signature(trialStatemachine::Region.__init__)
+def test_trialstatemachine_region_constructor_args():
+    sig = inspect.signature(trialStatemachine_Region.__init__)
     params = list(sig.parameters.keys())
     assert "history" in params, "Missing parameter 'history'"
 
-def test_trialstatemachine::region_has_history():
-    assert hasattr(trialStatemachine::Region, "history")
+def test_trialstatemachine_region_has_history():
+    assert hasattr(trialStatemachine_Region, "history")
     descriptor = None
-    for klass in trialStatemachine::Region.__mro__:
+    for klass in trialStatemachine_Region.__mro__:
         if "history" in klass.__dict__:
             descriptor = klass.__dict__["history"]
             break
@@ -122,37 +122,37 @@ def test_state_constructor_args():
 
 
 
-def test_trialstatemachine::complexstate_is_not_abstract():
-    assert not inspect.isabstract(trialStatemachine::ComplexState)
+def test_trialstatemachine_complexstate_is_not_abstract():
+    assert not inspect.isabstract(trialStatemachine_ComplexState)
 
 
-def test_trialstatemachine::complexstate_constructor_exists():
-    assert callable(trialStatemachine::ComplexState.__init__)
+def test_trialstatemachine_complexstate_constructor_exists():
+    assert callable(trialStatemachine_ComplexState.__init__)
 
 
-def test_trialstatemachine::complexstate_constructor_args():
-    sig = inspect.signature(trialStatemachine::ComplexState.__init__)
+def test_trialstatemachine_complexstate_constructor_args():
+    sig = inspect.signature(trialStatemachine_ComplexState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trialstatemachine::labeledtransition_is_not_abstract():
-    assert not inspect.isabstract(trialStatemachine::LabeledTransition)
+def test_trialstatemachine_labeledtransition_is_not_abstract():
+    assert not inspect.isabstract(trialStatemachine_LabeledTransition)
 
 
-def test_trialstatemachine::labeledtransition_constructor_exists():
-    assert callable(trialStatemachine::LabeledTransition.__init__)
+def test_trialstatemachine_labeledtransition_constructor_exists():
+    assert callable(trialStatemachine_LabeledTransition.__init__)
 
 
-def test_trialstatemachine::labeledtransition_constructor_args():
-    sig = inspect.signature(trialStatemachine::LabeledTransition.__init__)
+def test_trialstatemachine_labeledtransition_constructor_args():
+    sig = inspect.signature(trialStatemachine_LabeledTransition.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_trialstatemachine::labeledtransition_has_id():
-    assert hasattr(trialStatemachine::LabeledTransition, "id")
+def test_trialstatemachine_labeledtransition_has_id():
+    assert hasattr(trialStatemachine_LabeledTransition, "id")
     descriptor = None
-    for klass in trialStatemachine::LabeledTransition.__mro__:
+    for klass in trialStatemachine_LabeledTransition.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -160,23 +160,23 @@ def test_trialstatemachine::labeledtransition_has_id():
 
 
 
-def test_trialstatemachine::state_is_not_abstract():
-    assert not inspect.isabstract(trialStatemachine::State)
+def test_trialstatemachine_state_is_not_abstract():
+    assert not inspect.isabstract(trialStatemachine_State)
 
 
-def test_trialstatemachine::state_constructor_exists():
-    assert callable(trialStatemachine::State.__init__)
+def test_trialstatemachine_state_constructor_exists():
+    assert callable(trialStatemachine_State.__init__)
 
 
-def test_trialstatemachine::state_constructor_args():
-    sig = inspect.signature(trialStatemachine::State.__init__)
+def test_trialstatemachine_state_constructor_args():
+    sig = inspect.signature(trialStatemachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_trialstatemachine::state_has_name():
-    assert hasattr(trialStatemachine::State, "name")
+def test_trialstatemachine_state_has_name():
+    assert hasattr(trialStatemachine_State, "name")
     descriptor = None
-    for klass in trialStatemachine::State.__mro__:
+    for klass in trialStatemachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -194,53 +194,50 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trialStatemachine::Action_strategy = st.builds(
-    trialStatemachine::Action,
+trialStatemachine_Action_strategy = st.builds(
+    trialStatemachine_Action,
     name=
         safe_text
 )
 Region_strategy = st.builds(
     Region,
 )
-trialStatemachine::Statemachine_strategy = st.builds(
-    trialStatemachine::Statemachine,
+trialStatemachine_Statemachine_strategy = st.builds(
+    trialStatemachine_Statemachine,
     name=
         safe_text
 )
-trialStatemachine::Region_strategy = st.builds(
-    trialStatemachine::Region,
+trialStatemachine_Region_strategy = st.builds(
+    trialStatemachine_Region,
     history=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-trialStatemachine::ComplexState_strategy = st.builds(
-    trialStatemachine::ComplexState,
+trialStatemachine_ComplexState_strategy = st.builds(
+    trialStatemachine_ComplexState,
 )
-trialStatemachine::LabeledTransition_strategy = st.builds(
-    trialStatemachine::LabeledTransition,
+trialStatemachine_LabeledTransition_strategy = st.builds(
+    trialStatemachine_LabeledTransition,
     id=
         safe_text
 )
-trialStatemachine::State_strategy = st.builds(
-    trialStatemachine::State,
+trialStatemachine_State_strategy = st.builds(
+    trialStatemachine_State,
     name=
         safe_text
 )
 
-@given(instance=trialStatemachine::Action_strategy)
+@given(instance=trialStatemachine_Action_strategy)
 @settings(max_examples=50)
-def test_trialstatemachine::action_instantiation(instance):
-    assert isinstance(instance, trialStatemachine::Action)
-
-@given(instance=trialStatemachine::Action_strategy)
-def test_trialstatemachine::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_trialstatemachine_action_instantiation(instance):
+    assert isinstance(instance, trialStatemachine_Action)
 
 
-@given(instance=trialStatemachine::Action_strategy)
-def test_trialstatemachine::action_name_setter(instance):
+
+@given(instance=trialStatemachine_Action_strategy)
+def test_trialstatemachine_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -250,34 +247,28 @@ def test_trialstatemachine::action_name_setter(instance):
 def test_region_instantiation(instance):
     assert isinstance(instance, Region)
 
-@given(instance=trialStatemachine::Statemachine_strategy)
+@given(instance=trialStatemachine_Statemachine_strategy)
 @settings(max_examples=50)
-def test_trialstatemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, trialStatemachine::Statemachine)
-
-@given(instance=trialStatemachine::Statemachine_strategy)
-def test_trialstatemachine::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_trialstatemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, trialStatemachine_Statemachine)
 
 
-@given(instance=trialStatemachine::Statemachine_strategy)
-def test_trialstatemachine::statemachine_name_setter(instance):
+
+@given(instance=trialStatemachine_Statemachine_strategy)
+def test_trialstatemachine_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=trialStatemachine::Region_strategy)
+@given(instance=trialStatemachine_Region_strategy)
 @settings(max_examples=50)
-def test_trialstatemachine::region_instantiation(instance):
-    assert isinstance(instance, trialStatemachine::Region)
-
-@given(instance=trialStatemachine::Region_strategy)
-def test_trialstatemachine::region_history_type(instance):
-    assert isinstance(instance.history, str)
+def test_trialstatemachine_region_instantiation(instance):
+    assert isinstance(instance, trialStatemachine_Region)
 
 
-@given(instance=trialStatemachine::Region_strategy)
-def test_trialstatemachine::region_history_setter(instance):
+
+@given(instance=trialStatemachine_Region_strategy)
+def test_trialstatemachine_region_history_setter(instance):
     original = instance.history
     instance.history = original
     assert instance.history == original
@@ -287,39 +278,33 @@ def test_trialstatemachine::region_history_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=trialStatemachine::ComplexState_strategy)
+@given(instance=trialStatemachine_ComplexState_strategy)
 @settings(max_examples=50)
-def test_trialstatemachine::complexstate_instantiation(instance):
-    assert isinstance(instance, trialStatemachine::ComplexState)
+def test_trialstatemachine_complexstate_instantiation(instance):
+    assert isinstance(instance, trialStatemachine_ComplexState)
 
-@given(instance=trialStatemachine::LabeledTransition_strategy)
+@given(instance=trialStatemachine_LabeledTransition_strategy)
 @settings(max_examples=50)
-def test_trialstatemachine::labeledtransition_instantiation(instance):
-    assert isinstance(instance, trialStatemachine::LabeledTransition)
-
-@given(instance=trialStatemachine::LabeledTransition_strategy)
-def test_trialstatemachine::labeledtransition_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_trialstatemachine_labeledtransition_instantiation(instance):
+    assert isinstance(instance, trialStatemachine_LabeledTransition)
 
 
-@given(instance=trialStatemachine::LabeledTransition_strategy)
-def test_trialstatemachine::labeledtransition_id_setter(instance):
+
+@given(instance=trialStatemachine_LabeledTransition_strategy)
+def test_trialstatemachine_labeledtransition_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=trialStatemachine::State_strategy)
+@given(instance=trialStatemachine_State_strategy)
 @settings(max_examples=50)
-def test_trialstatemachine::state_instantiation(instance):
-    assert isinstance(instance, trialStatemachine::State)
-
-@given(instance=trialStatemachine::State_strategy)
-def test_trialstatemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_trialstatemachine_state_instantiation(instance):
+    assert isinstance(instance, trialStatemachine_State)
 
 
-@given(instance=trialStatemachine::State_strategy)
-def test_trialstatemachine::state_name_setter(instance):
+
+@given(instance=trialStatemachine_State_strategy)
+def test_trialstatemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

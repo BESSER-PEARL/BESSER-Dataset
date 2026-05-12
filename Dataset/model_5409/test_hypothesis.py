@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fta::FTA,
+from python_code import (
+    fta_FTA,
     Diagram,
-    fta::Condition,
-    fta::Event,
-    fta::Hazard,
-    fta::Diagram,
+    fta_Condition,
+    fta_Event,
+    fta_Hazard,
+    fta_Diagram,
     GateType,
 )
 
@@ -21,16 +21,16 @@ from classes import (
 
 
 
-def test_fta::fta_is_not_abstract():
-    assert not inspect.isabstract(fta::FTA)
+def test_fta_fta_is_not_abstract():
+    assert not inspect.isabstract(fta_FTA)
 
 
-def test_fta::fta_constructor_exists():
-    assert callable(fta::FTA.__init__)
+def test_fta_fta_constructor_exists():
+    assert callable(fta_FTA.__init__)
 
 
-def test_fta::fta_constructor_args():
-    sig = inspect.signature(fta::FTA.__init__)
+def test_fta_fta_constructor_args():
+    sig = inspect.signature(fta_FTA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -49,23 +49,23 @@ def test_diagram_constructor_args():
 
 
 
-def test_fta::condition_is_not_abstract():
-    assert not inspect.isabstract(fta::Condition)
+def test_fta_condition_is_not_abstract():
+    assert not inspect.isabstract(fta_Condition)
 
 
-def test_fta::condition_constructor_exists():
-    assert callable(fta::Condition.__init__)
+def test_fta_condition_constructor_exists():
+    assert callable(fta_Condition.__init__)
 
 
-def test_fta::condition_constructor_args():
-    sig = inspect.signature(fta::Condition.__init__)
+def test_fta_condition_constructor_args():
+    sig = inspect.signature(fta_Condition.__init__)
     params = list(sig.parameters.keys())
     assert "GateKind" in params, "Missing parameter 'GateKind'"
 
-def test_fta::condition_has_GateKind():
-    assert hasattr(fta::Condition, "GateKind")
+def test_fta_condition_has_GateKind():
+    assert hasattr(fta_Condition, "GateKind")
     descriptor = None
-    for klass in fta::Condition.__mro__:
+    for klass in fta_Condition.__mro__:
         if "GateKind" in klass.__dict__:
             descriptor = klass.__dict__["GateKind"]
             break
@@ -73,23 +73,23 @@ def test_fta::condition_has_GateKind():
 
 
 
-def test_fta::event_is_not_abstract():
-    assert not inspect.isabstract(fta::Event)
+def test_fta_event_is_not_abstract():
+    assert not inspect.isabstract(fta_Event)
 
 
-def test_fta::event_constructor_exists():
-    assert callable(fta::Event.__init__)
+def test_fta_event_constructor_exists():
+    assert callable(fta_Event.__init__)
 
 
-def test_fta::event_constructor_args():
-    sig = inspect.signature(fta::Event.__init__)
+def test_fta_event_constructor_args():
+    sig = inspect.signature(fta_Event.__init__)
     params = list(sig.parameters.keys())
     assert "BaseEvent" in params, "Missing parameter 'BaseEvent'"
 
-def test_fta::event_has_BaseEvent():
-    assert hasattr(fta::Event, "BaseEvent")
+def test_fta_event_has_BaseEvent():
+    assert hasattr(fta_Event, "BaseEvent")
     descriptor = None
-    for klass in fta::Event.__mro__:
+    for klass in fta_Event.__mro__:
         if "BaseEvent" in klass.__dict__:
             descriptor = klass.__dict__["BaseEvent"]
             break
@@ -97,59 +97,59 @@ def test_fta::event_has_BaseEvent():
 
 
 
-def test_fta::hazard_is_not_abstract():
-    assert not inspect.isabstract(fta::Hazard)
+def test_fta_hazard_is_not_abstract():
+    assert not inspect.isabstract(fta_Hazard)
 
 
-def test_fta::hazard_constructor_exists():
-    assert callable(fta::Hazard.__init__)
+def test_fta_hazard_constructor_exists():
+    assert callable(fta_Hazard.__init__)
 
 
-def test_fta::hazard_constructor_args():
-    sig = inspect.signature(fta::Hazard.__init__)
+def test_fta_hazard_constructor_args():
+    sig = inspect.signature(fta_Hazard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fta::diagram_is_not_abstract():
-    assert not inspect.isabstract(fta::Diagram)
+def test_fta_diagram_is_not_abstract():
+    assert not inspect.isabstract(fta_Diagram)
 
 
-def test_fta::diagram_constructor_exists():
-    assert callable(fta::Diagram.__init__)
+def test_fta_diagram_constructor_exists():
+    assert callable(fta_Diagram.__init__)
 
 
-def test_fta::diagram_constructor_args():
-    sig = inspect.signature(fta::Diagram.__init__)
+def test_fta_diagram_constructor_args():
+    sig = inspect.signature(fta_Diagram.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "detail" in params, "Missing parameter 'detail'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_fta::diagram_has_id():
-    assert hasattr(fta::Diagram, "id")
+def test_fta_diagram_has_detail():
+    assert hasattr(fta_Diagram, "detail")
     descriptor = None
-    for klass in fta::Diagram.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fta::diagram_has_detail():
-    assert hasattr(fta::Diagram, "detail")
-    descriptor = None
-    for klass in fta::Diagram.__mro__:
+    for klass in fta_Diagram.__mro__:
         if "detail" in klass.__dict__:
             descriptor = klass.__dict__["detail"]
             break
     assert isinstance(descriptor, property)
 
-def test_fta::diagram_has_name():
-    assert hasattr(fta::Diagram, "name")
+def test_fta_diagram_has_name():
+    assert hasattr(fta_Diagram, "name")
     descriptor = None
-    for klass in fta::Diagram.__mro__:
+    for klass in fta_Diagram.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fta_diagram_has_id():
+    assert hasattr(fta_Diagram, "id")
+    descriptor = None
+    for klass in fta_Diagram.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -161,8 +161,8 @@ def test_gatetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in GateType]
     expected_literals = [
-        "ANDGate",
         "ORGate",
+        "ANDGate",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -180,116 +180,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fta::FTA_strategy = st.builds(
-    fta::FTA,
+fta_FTA_strategy = st.builds(
+    fta_FTA,
 )
 Diagram_strategy = st.builds(
     Diagram,
 )
-fta::Condition_strategy = st.builds(
-    fta::Condition,
+fta_Condition_strategy = st.builds(
+    fta_Condition,
     GateKind=
         safe_text
 )
-fta::Event_strategy = st.builds(
-    fta::Event,
+fta_Event_strategy = st.builds(
+    fta_Event,
     BaseEvent=
         st.booleans()
 )
-fta::Hazard_strategy = st.builds(
-    fta::Hazard,
+fta_Hazard_strategy = st.builds(
+    fta_Hazard,
 )
-fta::Diagram_strategy = st.builds(
-    fta::Diagram,
-    id=
-        safe_text,
+fta_Diagram_strategy = st.builds(
+    fta_Diagram,
     detail=
         safe_text,
     name=
+        safe_text,
+    id=
         safe_text
 )
 
-@given(instance=fta::FTA_strategy)
+@given(instance=fta_FTA_strategy)
 @settings(max_examples=50)
-def test_fta::fta_instantiation(instance):
-    assert isinstance(instance, fta::FTA)
+def test_fta_fta_instantiation(instance):
+    assert isinstance(instance, fta_FTA)
 
 @given(instance=Diagram_strategy)
 @settings(max_examples=50)
 def test_diagram_instantiation(instance):
     assert isinstance(instance, Diagram)
 
-@given(instance=fta::Condition_strategy)
+@given(instance=fta_Condition_strategy)
 @settings(max_examples=50)
-def test_fta::condition_instantiation(instance):
-    assert isinstance(instance, fta::Condition)
-
-@given(instance=fta::Condition_strategy)
-def test_fta::condition_GateKind_type(instance):
-    assert isinstance(instance.GateKind, str)
+def test_fta_condition_instantiation(instance):
+    assert isinstance(instance, fta_Condition)
 
 
-@given(instance=fta::Condition_strategy)
-def test_fta::condition_GateKind_setter(instance):
+
+@given(instance=fta_Condition_strategy)
+def test_fta_condition_GateKind_setter(instance):
     original = instance.GateKind
     instance.GateKind = original
     assert instance.GateKind == original
 
-@given(instance=fta::Event_strategy)
+@given(instance=fta_Event_strategy)
 @settings(max_examples=50)
-def test_fta::event_instantiation(instance):
-    assert isinstance(instance, fta::Event)
-
-@given(instance=fta::Event_strategy)
-def test_fta::event_BaseEvent_type(instance):
-    assert isinstance(instance.BaseEvent, bool)
+def test_fta_event_instantiation(instance):
+    assert isinstance(instance, fta_Event)
 
 
-@given(instance=fta::Event_strategy)
-def test_fta::event_BaseEvent_setter(instance):
+
+@given(instance=fta_Event_strategy)
+def test_fta_event_BaseEvent_setter(instance):
     original = instance.BaseEvent
     instance.BaseEvent = original
     assert instance.BaseEvent == original
 
-@given(instance=fta::Hazard_strategy)
+@given(instance=fta_Hazard_strategy)
 @settings(max_examples=50)
-def test_fta::hazard_instantiation(instance):
-    assert isinstance(instance, fta::Hazard)
+def test_fta_hazard_instantiation(instance):
+    assert isinstance(instance, fta_Hazard)
 
-@given(instance=fta::Diagram_strategy)
+@given(instance=fta_Diagram_strategy)
 @settings(max_examples=50)
-def test_fta::diagram_instantiation(instance):
-    assert isinstance(instance, fta::Diagram)
-
-@given(instance=fta::Diagram_strategy)
-def test_fta::diagram_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_fta_diagram_instantiation(instance):
+    assert isinstance(instance, fta_Diagram)
 
 
-@given(instance=fta::Diagram_strategy)
-def test_fta::diagram_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=fta::Diagram_strategy)
-def test_fta::diagram_detail_type(instance):
-    assert isinstance(instance.detail, str)
-
-
-@given(instance=fta::Diagram_strategy)
-def test_fta::diagram_detail_setter(instance):
+@given(instance=fta_Diagram_strategy)
+def test_fta_diagram_detail_setter(instance):
     original = instance.detail
     instance.detail = original
     assert instance.detail == original
 
-@given(instance=fta::Diagram_strategy)
-def test_fta::diagram_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fta::Diagram_strategy)
-def test_fta::diagram_name_setter(instance):
+@given(instance=fta_Diagram_strategy)
+def test_fta_diagram_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=fta_Diagram_strategy)
+def test_fta_diagram_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

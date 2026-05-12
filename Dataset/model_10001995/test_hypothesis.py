@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     techStaff_DeveloperTest,
@@ -91,8 +91,8 @@ def test_staff_employee_constructor_args():
     sig = inspect.signature(Staff_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "nationalInsurance" in params, "Missing parameter 'nationalInsurance'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "salary" in params, "Missing parameter 'salary'"
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_staff_employee_has_nationalInsurance():
     assert hasattr(Staff_Employee, "nationalInsurance")
@@ -103,21 +103,21 @@ def test_staff_employee_has_nationalInsurance():
             break
     assert isinstance(descriptor, property)
 
-def test_staff_employee_has_name():
-    assert hasattr(Staff_Employee, "name")
-    descriptor = None
-    for klass in Staff_Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_staff_employee_has_salary():
     assert hasattr(Staff_Employee, "salary")
     descriptor = None
     for klass in Staff_Employee.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_staff_employee_has_name():
+    assert hasattr(Staff_Employee, "name")
+    descriptor = None
+    for klass in Staff_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -225,10 +225,10 @@ Staff_Employee_strategy = st.builds(
     Staff_Employee,
     nationalInsurance=
         safe_text,
-    name=
-        safe_text,
     salary=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    name=
+        safe_text
 )
 Management_ManagerTest_strategy = st.builds(
     Management_ManagerTest,
@@ -272,9 +272,6 @@ def test_techstaff_databaseadmin_instantiation(instance):
 def test_staff_employee_instantiation(instance):
     assert isinstance(instance, Staff_Employee)
 
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_nationalInsurance_type(instance):
-    assert isinstance(instance.nationalInsurance, str)
 
 
 @given(instance=Staff_Employee_strategy)
@@ -283,20 +280,6 @@ def test_staff_employee_nationalInsurance_setter(instance):
     instance.nationalInsurance = original
     assert instance.nationalInsurance == original
 
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_salary_type(instance):
-    assert isinstance(instance.salary, float)
 
 
 @given(instance=Staff_Employee_strategy)
@@ -304,6 +287,14 @@ def test_staff_employee_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
+
+
+
+@given(instance=Staff_Employee_strategy)
+def test_staff_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Management_ManagerTest_strategy)
 @settings(max_examples=50)
@@ -320,9 +311,6 @@ def test_management_directortest_instantiation(instance):
 def test_management_manager_instantiation(instance):
     assert isinstance(instance, Management_Manager)
 
-@given(instance=Management_Manager_strategy)
-def test_management_manager_deptName_type(instance):
-    assert isinstance(instance.deptName, str)
 
 
 @given(instance=Management_Manager_strategy)
@@ -336,9 +324,6 @@ def test_management_manager_deptName_setter(instance):
 def test_management_director_instantiation(instance):
     assert isinstance(instance, Management_Director)
 
-@given(instance=Management_Director_strategy)
-def test_management_director_budget_type(instance):
-    assert isinstance(instance.budget, float)
 
 
 @given(instance=Management_Director_strategy)

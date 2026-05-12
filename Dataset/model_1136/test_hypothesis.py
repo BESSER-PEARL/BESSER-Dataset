@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IExtendible,
-    ea::extensions::ExtendibleElement,
-    ea::extensions::IExtension,
+    ea_extensions_ExtendibleElement,
+    ea_extensions_IExtension,
     IExtension,
     ExtensionElement,
-    ea::extensions::BooleanExtension,
-    ea::extensions::StringExtension,
-    ea::extensions::StringListExtension,
-    ea::extensions::IntegerExtension,
-    ea::extensions::ExtensionElement,
+    ea_extensions_StringExtension,
+    ea_extensions_BooleanExtension,
+    ea_extensions_StringListExtension,
+    ea_extensions_IntegerExtension,
+    ea_extensions_ExtensionElement,
     State,
     ExtendibleElement,
-    ea::automata::Automaton,
-    ea::extensions::IExtendible,
-    ea::automata::Module,
-    ea::automata::Transition,
+    ea_automata_Automaton,
+    ea_extensions_IExtendible,
+    ea_automata_Module,
+    ea_automata_Transition,
     Automaton,
-    ea::automata::State,
+    ea_automata_State,
     Module,
     Transition,
 )
@@ -48,37 +48,37 @@ def test_iextendible_constructor_args():
 
 
 
-def test_ea::extensions::extendibleelement_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::ExtendibleElement)
+def test_ea_extensions_extendibleelement_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_ExtendibleElement)
 
 
-def test_ea::extensions::extendibleelement_constructor_exists():
-    assert callable(ea::extensions::ExtendibleElement.__init__)
+def test_ea_extensions_extendibleelement_constructor_exists():
+    assert callable(ea_extensions_ExtendibleElement.__init__)
 
 
-def test_ea::extensions::extendibleelement_constructor_args():
-    sig = inspect.signature(ea::extensions::ExtendibleElement.__init__)
+def test_ea_extensions_extendibleelement_constructor_args():
+    sig = inspect.signature(ea_extensions_ExtendibleElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::extensions::iextension_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::IExtension)
+def test_ea_extensions_iextension_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_IExtension)
 
 
-def test_ea::extensions::iextension_constructor_exists():
-    assert callable(ea::extensions::IExtension.__init__)
+def test_ea_extensions_iextension_constructor_exists():
+    assert callable(ea_extensions_IExtension.__init__)
 
 
-def test_ea::extensions::iextension_constructor_args():
-    sig = inspect.signature(ea::extensions::IExtension.__init__)
+def test_ea_extensions_iextension_constructor_args():
+    sig = inspect.signature(ea_extensions_IExtension.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ea::extensions::iextension_has_id():
-    assert hasattr(ea::extensions::IExtension, "id")
+def test_ea_extensions_iextension_has_id():
+    assert hasattr(ea_extensions_IExtension, "id")
     descriptor = None
-    for klass in ea::extensions::IExtension.__mro__:
+    for klass in ea_extensions_IExtension.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -114,23 +114,23 @@ def test_extensionelement_constructor_args():
 
 
 
-def test_ea::extensions::booleanextension_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::BooleanExtension)
+def test_ea_extensions_stringextension_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_StringExtension)
 
 
-def test_ea::extensions::booleanextension_constructor_exists():
-    assert callable(ea::extensions::BooleanExtension.__init__)
+def test_ea_extensions_stringextension_constructor_exists():
+    assert callable(ea_extensions_StringExtension.__init__)
 
 
-def test_ea::extensions::booleanextension_constructor_args():
-    sig = inspect.signature(ea::extensions::BooleanExtension.__init__)
+def test_ea_extensions_stringextension_constructor_args():
+    sig = inspect.signature(ea_extensions_StringExtension.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ea::extensions::booleanextension_has_value():
-    assert hasattr(ea::extensions::BooleanExtension, "value")
+def test_ea_extensions_stringextension_has_value():
+    assert hasattr(ea_extensions_StringExtension, "value")
     descriptor = None
-    for klass in ea::extensions::BooleanExtension.__mro__:
+    for klass in ea_extensions_StringExtension.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -138,23 +138,23 @@ def test_ea::extensions::booleanextension_has_value():
 
 
 
-def test_ea::extensions::stringextension_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::StringExtension)
+def test_ea_extensions_booleanextension_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_BooleanExtension)
 
 
-def test_ea::extensions::stringextension_constructor_exists():
-    assert callable(ea::extensions::StringExtension.__init__)
+def test_ea_extensions_booleanextension_constructor_exists():
+    assert callable(ea_extensions_BooleanExtension.__init__)
 
 
-def test_ea::extensions::stringextension_constructor_args():
-    sig = inspect.signature(ea::extensions::StringExtension.__init__)
+def test_ea_extensions_booleanextension_constructor_args():
+    sig = inspect.signature(ea_extensions_BooleanExtension.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ea::extensions::stringextension_has_value():
-    assert hasattr(ea::extensions::StringExtension, "value")
+def test_ea_extensions_booleanextension_has_value():
+    assert hasattr(ea_extensions_BooleanExtension, "value")
     descriptor = None
-    for klass in ea::extensions::StringExtension.__mro__:
+    for klass in ea_extensions_BooleanExtension.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -162,23 +162,23 @@ def test_ea::extensions::stringextension_has_value():
 
 
 
-def test_ea::extensions::stringlistextension_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::StringListExtension)
+def test_ea_extensions_stringlistextension_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_StringListExtension)
 
 
-def test_ea::extensions::stringlistextension_constructor_exists():
-    assert callable(ea::extensions::StringListExtension.__init__)
+def test_ea_extensions_stringlistextension_constructor_exists():
+    assert callable(ea_extensions_StringListExtension.__init__)
 
 
-def test_ea::extensions::stringlistextension_constructor_args():
-    sig = inspect.signature(ea::extensions::StringListExtension.__init__)
+def test_ea_extensions_stringlistextension_constructor_args():
+    sig = inspect.signature(ea_extensions_StringListExtension.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_ea::extensions::stringlistextension_has_values():
-    assert hasattr(ea::extensions::StringListExtension, "values")
+def test_ea_extensions_stringlistextension_has_values():
+    assert hasattr(ea_extensions_StringListExtension, "values")
     descriptor = None
-    for klass in ea::extensions::StringListExtension.__mro__:
+    for klass in ea_extensions_StringListExtension.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -186,23 +186,23 @@ def test_ea::extensions::stringlistextension_has_values():
 
 
 
-def test_ea::extensions::integerextension_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::IntegerExtension)
+def test_ea_extensions_integerextension_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_IntegerExtension)
 
 
-def test_ea::extensions::integerextension_constructor_exists():
-    assert callable(ea::extensions::IntegerExtension.__init__)
+def test_ea_extensions_integerextension_constructor_exists():
+    assert callable(ea_extensions_IntegerExtension.__init__)
 
 
-def test_ea::extensions::integerextension_constructor_args():
-    sig = inspect.signature(ea::extensions::IntegerExtension.__init__)
+def test_ea_extensions_integerextension_constructor_args():
+    sig = inspect.signature(ea_extensions_IntegerExtension.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ea::extensions::integerextension_has_value():
-    assert hasattr(ea::extensions::IntegerExtension, "value")
+def test_ea_extensions_integerextension_has_value():
+    assert hasattr(ea_extensions_IntegerExtension, "value")
     descriptor = None
-    for klass in ea::extensions::IntegerExtension.__mro__:
+    for klass in ea_extensions_IntegerExtension.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -210,16 +210,16 @@ def test_ea::extensions::integerextension_has_value():
 
 
 
-def test_ea::extensions::extensionelement_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::ExtensionElement)
+def test_ea_extensions_extensionelement_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_ExtensionElement)
 
 
-def test_ea::extensions::extensionelement_constructor_exists():
-    assert callable(ea::extensions::ExtensionElement.__init__)
+def test_ea_extensions_extensionelement_constructor_exists():
+    assert callable(ea_extensions_ExtensionElement.__init__)
 
 
-def test_ea::extensions::extensionelement_constructor_args():
-    sig = inspect.signature(ea::extensions::ExtensionElement.__init__)
+def test_ea_extensions_extensionelement_constructor_args():
+    sig = inspect.signature(ea_extensions_ExtensionElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,95 +252,95 @@ def test_extendibleelement_constructor_args():
 
 
 
-def test_ea::automata::automaton_is_not_abstract():
-    assert not inspect.isabstract(ea::automata::Automaton)
+def test_ea_automata_automaton_is_not_abstract():
+    assert not inspect.isabstract(ea_automata_Automaton)
 
 
-def test_ea::automata::automaton_constructor_exists():
-    assert callable(ea::automata::Automaton.__init__)
+def test_ea_automata_automaton_constructor_exists():
+    assert callable(ea_automata_Automaton.__init__)
 
 
-def test_ea::automata::automaton_constructor_args():
-    sig = inspect.signature(ea::automata::Automaton.__init__)
+def test_ea_automata_automaton_constructor_args():
+    sig = inspect.signature(ea_automata_Automaton.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "usedExtensionIds" in params, "Missing parameter 'usedExtensionIds'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "usedExtensionIds" in params, "Missing parameter 'usedExtensionIds'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_ea::automata::automaton_has_id():
-    assert hasattr(ea::automata::Automaton, "id")
+def test_ea_automata_automaton_has_name():
+    assert hasattr(ea_automata_Automaton, "name")
     descriptor = None
-    for klass in ea::automata::Automaton.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ea::automata::automaton_has_usedExtensionIds():
-    assert hasattr(ea::automata::Automaton, "usedExtensionIds")
-    descriptor = None
-    for klass in ea::automata::Automaton.__mro__:
-        if "usedExtensionIds" in klass.__dict__:
-            descriptor = klass.__dict__["usedExtensionIds"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ea::automata::automaton_has_name():
-    assert hasattr(ea::automata::Automaton, "name")
-    descriptor = None
-    for klass in ea::automata::Automaton.__mro__:
+    for klass in ea_automata_Automaton.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_ea_automata_automaton_has_usedExtensionIds():
+    assert hasattr(ea_automata_Automaton, "usedExtensionIds")
+    descriptor = None
+    for klass in ea_automata_Automaton.__mro__:
+        if "usedExtensionIds" in klass.__dict__:
+            descriptor = klass.__dict__["usedExtensionIds"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ea_automata_automaton_has_id():
+    assert hasattr(ea_automata_Automaton, "id")
+    descriptor = None
+    for klass in ea_automata_Automaton.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ea::extensions::iextendible_is_not_abstract():
-    assert not inspect.isabstract(ea::extensions::IExtendible)
+
+def test_ea_extensions_iextendible_is_not_abstract():
+    assert not inspect.isabstract(ea_extensions_IExtendible)
 
 
-def test_ea::extensions::iextendible_constructor_exists():
-    assert callable(ea::extensions::IExtendible.__init__)
+def test_ea_extensions_iextendible_constructor_exists():
+    assert callable(ea_extensions_IExtendible.__init__)
 
 
-def test_ea::extensions::iextendible_constructor_args():
-    sig = inspect.signature(ea::extensions::IExtendible.__init__)
+def test_ea_extensions_iextendible_constructor_args():
+    sig = inspect.signature(ea_extensions_IExtendible.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::automata::module_is_not_abstract():
-    assert not inspect.isabstract(ea::automata::Module)
+def test_ea_automata_module_is_not_abstract():
+    assert not inspect.isabstract(ea_automata_Module)
 
 
-def test_ea::automata::module_constructor_exists():
-    assert callable(ea::automata::Module.__init__)
+def test_ea_automata_module_constructor_exists():
+    assert callable(ea_automata_Module.__init__)
 
 
-def test_ea::automata::module_constructor_args():
-    sig = inspect.signature(ea::automata::Module.__init__)
+def test_ea_automata_module_constructor_args():
+    sig = inspect.signature(ea_automata_Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::automata::transition_is_not_abstract():
-    assert not inspect.isabstract(ea::automata::Transition)
+def test_ea_automata_transition_is_not_abstract():
+    assert not inspect.isabstract(ea_automata_Transition)
 
 
-def test_ea::automata::transition_constructor_exists():
-    assert callable(ea::automata::Transition.__init__)
+def test_ea_automata_transition_constructor_exists():
+    assert callable(ea_automata_Transition.__init__)
 
 
-def test_ea::automata::transition_constructor_args():
-    sig = inspect.signature(ea::automata::Transition.__init__)
+def test_ea_automata_transition_constructor_args():
+    sig = inspect.signature(ea_automata_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ea::automata::transition_has_id():
-    assert hasattr(ea::automata::Transition, "id")
+def test_ea_automata_transition_has_id():
+    assert hasattr(ea_automata_Transition, "id")
     descriptor = None
-    for klass in ea::automata::Transition.__mro__:
+    for klass in ea_automata_Transition.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -362,35 +362,35 @@ def test_automaton_constructor_args():
 
 
 
-def test_ea::automata::state_is_not_abstract():
-    assert not inspect.isabstract(ea::automata::State)
+def test_ea_automata_state_is_not_abstract():
+    assert not inspect.isabstract(ea_automata_State)
 
 
-def test_ea::automata::state_constructor_exists():
-    assert callable(ea::automata::State.__init__)
+def test_ea_automata_state_constructor_exists():
+    assert callable(ea_automata_State.__init__)
 
 
-def test_ea::automata::state_constructor_args():
-    sig = inspect.signature(ea::automata::State.__init__)
+def test_ea_automata_state_constructor_args():
+    sig = inspect.signature(ea_automata_State.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_ea::automata::state_has_name():
-    assert hasattr(ea::automata::State, "name")
+def test_ea_automata_state_has_id():
+    assert hasattr(ea_automata_State, "id")
     descriptor = None
-    for klass in ea::automata::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in ea_automata_State.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_ea::automata::state_has_id():
-    assert hasattr(ea::automata::State, "id")
+def test_ea_automata_state_has_name():
+    assert hasattr(ea_automata_State, "name")
     descriptor = None
-    for klass in ea::automata::State.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in ea_automata_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -437,11 +437,11 @@ safe_text = st.text(
 IExtendible_strategy = st.builds(
     IExtendible,
 )
-ea::extensions::ExtendibleElement_strategy = st.builds(
-    ea::extensions::ExtendibleElement,
+ea_extensions_ExtendibleElement_strategy = st.builds(
+    ea_extensions_ExtendibleElement,
 )
-ea::extensions::IExtension_strategy = st.builds(
-    ea::extensions::IExtension,
+ea_extensions_IExtension_strategy = st.builds(
+    ea_extensions_IExtension,
     id=
         safe_text
 )
@@ -451,28 +451,28 @@ IExtension_strategy = st.builds(
 ExtensionElement_strategy = st.builds(
     ExtensionElement,
 )
-ea::extensions::BooleanExtension_strategy = st.builds(
-    ea::extensions::BooleanExtension,
+ea_extensions_StringExtension_strategy = st.builds(
+    ea_extensions_StringExtension,
+    value=
+        safe_text
+)
+ea_extensions_BooleanExtension_strategy = st.builds(
+    ea_extensions_BooleanExtension,
     value=
         st.booleans()
 )
-ea::extensions::StringExtension_strategy = st.builds(
-    ea::extensions::StringExtension,
-    value=
-        safe_text
-)
-ea::extensions::StringListExtension_strategy = st.builds(
-    ea::extensions::StringListExtension,
+ea_extensions_StringListExtension_strategy = st.builds(
+    ea_extensions_StringListExtension,
     values=
         safe_text
 )
-ea::extensions::IntegerExtension_strategy = st.builds(
-    ea::extensions::IntegerExtension,
+ea_extensions_IntegerExtension_strategy = st.builds(
+    ea_extensions_IntegerExtension,
     value=
         st.integers()
 )
-ea::extensions::ExtensionElement_strategy = st.builds(
-    ea::extensions::ExtensionElement,
+ea_extensions_ExtensionElement_strategy = st.builds(
+    ea_extensions_ExtensionElement,
 )
 State_strategy = st.builds(
     State,
@@ -480,34 +480,34 @@ State_strategy = st.builds(
 ExtendibleElement_strategy = st.builds(
     ExtendibleElement,
 )
-ea::automata::Automaton_strategy = st.builds(
-    ea::automata::Automaton,
-    id=
+ea_automata_Automaton_strategy = st.builds(
+    ea_automata_Automaton,
+    name=
         safe_text,
     usedExtensionIds=
         safe_text,
-    name=
+    id=
         safe_text
 )
-ea::extensions::IExtendible_strategy = st.builds(
-    ea::extensions::IExtendible,
+ea_extensions_IExtendible_strategy = st.builds(
+    ea_extensions_IExtendible,
 )
-ea::automata::Module_strategy = st.builds(
-    ea::automata::Module,
+ea_automata_Module_strategy = st.builds(
+    ea_automata_Module,
 )
-ea::automata::Transition_strategy = st.builds(
-    ea::automata::Transition,
+ea_automata_Transition_strategy = st.builds(
+    ea_automata_Transition,
     id=
         safe_text
 )
 Automaton_strategy = st.builds(
     Automaton,
 )
-ea::automata::State_strategy = st.builds(
-    ea::automata::State,
-    name=
-        safe_text,
+ea_automata_State_strategy = st.builds(
+    ea_automata_State,
     id=
+        safe_text,
+    name=
         safe_text
 )
 Module_strategy = st.builds(
@@ -522,23 +522,20 @@ Transition_strategy = st.builds(
 def test_iextendible_instantiation(instance):
     assert isinstance(instance, IExtendible)
 
-@given(instance=ea::extensions::ExtendibleElement_strategy)
+@given(instance=ea_extensions_ExtendibleElement_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::extendibleelement_instantiation(instance):
-    assert isinstance(instance, ea::extensions::ExtendibleElement)
+def test_ea_extensions_extendibleelement_instantiation(instance):
+    assert isinstance(instance, ea_extensions_ExtendibleElement)
 
-@given(instance=ea::extensions::IExtension_strategy)
+@given(instance=ea_extensions_IExtension_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::iextension_instantiation(instance):
-    assert isinstance(instance, ea::extensions::IExtension)
-
-@given(instance=ea::extensions::IExtension_strategy)
-def test_ea::extensions::iextension_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_ea_extensions_iextension_instantiation(instance):
+    assert isinstance(instance, ea_extensions_IExtension)
 
 
-@given(instance=ea::extensions::IExtension_strategy)
-def test_ea::extensions::iextension_id_setter(instance):
+
+@given(instance=ea_extensions_IExtension_strategy)
+def test_ea_extensions_iextension_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -553,74 +550,62 @@ def test_iextension_instantiation(instance):
 def test_extensionelement_instantiation(instance):
     assert isinstance(instance, ExtensionElement)
 
-@given(instance=ea::extensions::BooleanExtension_strategy)
+@given(instance=ea_extensions_StringExtension_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::booleanextension_instantiation(instance):
-    assert isinstance(instance, ea::extensions::BooleanExtension)
-
-@given(instance=ea::extensions::BooleanExtension_strategy)
-def test_ea::extensions::booleanextension_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_ea_extensions_stringextension_instantiation(instance):
+    assert isinstance(instance, ea_extensions_StringExtension)
 
 
-@given(instance=ea::extensions::BooleanExtension_strategy)
-def test_ea::extensions::booleanextension_value_setter(instance):
+
+@given(instance=ea_extensions_StringExtension_strategy)
+def test_ea_extensions_stringextension_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ea::extensions::StringExtension_strategy)
+@given(instance=ea_extensions_BooleanExtension_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::stringextension_instantiation(instance):
-    assert isinstance(instance, ea::extensions::StringExtension)
-
-@given(instance=ea::extensions::StringExtension_strategy)
-def test_ea::extensions::stringextension_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ea_extensions_booleanextension_instantiation(instance):
+    assert isinstance(instance, ea_extensions_BooleanExtension)
 
 
-@given(instance=ea::extensions::StringExtension_strategy)
-def test_ea::extensions::stringextension_value_setter(instance):
+
+@given(instance=ea_extensions_BooleanExtension_strategy)
+def test_ea_extensions_booleanextension_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ea::extensions::StringListExtension_strategy)
+@given(instance=ea_extensions_StringListExtension_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::stringlistextension_instantiation(instance):
-    assert isinstance(instance, ea::extensions::StringListExtension)
-
-@given(instance=ea::extensions::StringListExtension_strategy)
-def test_ea::extensions::stringlistextension_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_ea_extensions_stringlistextension_instantiation(instance):
+    assert isinstance(instance, ea_extensions_StringListExtension)
 
 
-@given(instance=ea::extensions::StringListExtension_strategy)
-def test_ea::extensions::stringlistextension_values_setter(instance):
+
+@given(instance=ea_extensions_StringListExtension_strategy)
+def test_ea_extensions_stringlistextension_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=ea::extensions::IntegerExtension_strategy)
+@given(instance=ea_extensions_IntegerExtension_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::integerextension_instantiation(instance):
-    assert isinstance(instance, ea::extensions::IntegerExtension)
-
-@given(instance=ea::extensions::IntegerExtension_strategy)
-def test_ea::extensions::integerextension_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_ea_extensions_integerextension_instantiation(instance):
+    assert isinstance(instance, ea_extensions_IntegerExtension)
 
 
-@given(instance=ea::extensions::IntegerExtension_strategy)
-def test_ea::extensions::integerextension_value_setter(instance):
+
+@given(instance=ea_extensions_IntegerExtension_strategy)
+def test_ea_extensions_integerextension_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ea::extensions::ExtensionElement_strategy)
+@given(instance=ea_extensions_ExtensionElement_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::extensionelement_instantiation(instance):
-    assert isinstance(instance, ea::extensions::ExtensionElement)
+def test_ea_extensions_extensionelement_instantiation(instance):
+    assert isinstance(instance, ea_extensions_ExtensionElement)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
@@ -632,48 +617,39 @@ def test_state_instantiation(instance):
 def test_extendibleelement_instantiation(instance):
     assert isinstance(instance, ExtendibleElement)
 
-@given(instance=ea::automata::Automaton_strategy)
+@given(instance=ea_automata_Automaton_strategy)
 @settings(max_examples=50)
-def test_ea::automata::automaton_instantiation(instance):
-    assert isinstance(instance, ea::automata::Automaton)
-
-@given(instance=ea::automata::Automaton_strategy)
-def test_ea::automata::automaton_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_ea_automata_automaton_instantiation(instance):
+    assert isinstance(instance, ea_automata_Automaton)
 
 
-@given(instance=ea::automata::Automaton_strategy)
-def test_ea::automata::automaton_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=ea::automata::Automaton_strategy)
-def test_ea::automata::automaton_usedExtensionIds_type(instance):
-    assert isinstance(instance.usedExtensionIds, str)
-
-
-@given(instance=ea::automata::Automaton_strategy)
-def test_ea::automata::automaton_usedExtensionIds_setter(instance):
-    original = instance.usedExtensionIds
-    instance.usedExtensionIds = original
-    assert instance.usedExtensionIds == original
-
-@given(instance=ea::automata::Automaton_strategy)
-def test_ea::automata::automaton_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ea::automata::Automaton_strategy)
-def test_ea::automata::automaton_name_setter(instance):
+@given(instance=ea_automata_Automaton_strategy)
+def test_ea_automata_automaton_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ea::extensions::IExtendible_strategy)
+
+
+@given(instance=ea_automata_Automaton_strategy)
+def test_ea_automata_automaton_usedExtensionIds_setter(instance):
+    original = instance.usedExtensionIds
+    instance.usedExtensionIds = original
+    assert instance.usedExtensionIds == original
+
+
+
+@given(instance=ea_automata_Automaton_strategy)
+def test_ea_automata_automaton_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=ea_extensions_IExtendible_strategy)
 @settings(max_examples=50)
-def test_ea::extensions::iextendible_instantiation(instance):
-    assert isinstance(instance, ea::extensions::IExtendible)
+def test_ea_extensions_iextendible_instantiation(instance):
+    assert isinstance(instance, ea_extensions_IExtendible)
 
 import warnings
 import copy
@@ -681,9 +657,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ea::extensions::IExtendible_strategy)
+@given(instance=ea_extensions_IExtendible_strategy)
 @settings(max_examples=30)
-def test_ea::extensions::iextendible_updateextension_changes_state(instance):
+def test_ea_extensions_iextendible_updateextension_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -697,14 +673,14 @@ def test_ea::extensions::iextendible_updateextension_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateExtension' in ea::extensions::IExtendible is empty"
+        assert has_statements, f"Function 'updateExtension' in ea_extensions_IExtendible is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateExtension' in ea::extensions::IExtendible did not change state; check implementation")
+            warnings.warn(f"Operation 'updateExtension' in ea_extensions_IExtendible did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateExtension' in ea::extensions::IExtendible is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateExtension' in ea_extensions_IExtendible is not implemented or raised an error")
 
 import warnings
 import copy
@@ -712,9 +688,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ea::extensions::IExtendible_strategy)
+@given(instance=ea_extensions_IExtendible_strategy)
 @settings(max_examples=30)
-def test_ea::extensions::iextendible_findextension_changes_state(instance):
+def test_ea_extensions_iextendible_findextension_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -728,32 +704,29 @@ def test_ea::extensions::iextendible_findextension_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findExtension' in ea::extensions::IExtendible is empty"
+        assert has_statements, f"Function 'findExtension' in ea_extensions_IExtendible is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findExtension' in ea::extensions::IExtendible did not change state; check implementation")
+            warnings.warn(f"Operation 'findExtension' in ea_extensions_IExtendible did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findExtension' in ea::extensions::IExtendible is not implemented or raised an error")
+        warnings.warn(f"Operation 'findExtension' in ea_extensions_IExtendible is not implemented or raised an error")
 
-@given(instance=ea::automata::Module_strategy)
+@given(instance=ea_automata_Module_strategy)
 @settings(max_examples=50)
-def test_ea::automata::module_instantiation(instance):
-    assert isinstance(instance, ea::automata::Module)
+def test_ea_automata_module_instantiation(instance):
+    assert isinstance(instance, ea_automata_Module)
 
-@given(instance=ea::automata::Transition_strategy)
+@given(instance=ea_automata_Transition_strategy)
 @settings(max_examples=50)
-def test_ea::automata::transition_instantiation(instance):
-    assert isinstance(instance, ea::automata::Transition)
-
-@given(instance=ea::automata::Transition_strategy)
-def test_ea::automata::transition_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_ea_automata_transition_instantiation(instance):
+    assert isinstance(instance, ea_automata_Transition)
 
 
-@given(instance=ea::automata::Transition_strategy)
-def test_ea::automata::transition_id_setter(instance):
+
+@given(instance=ea_automata_Transition_strategy)
+def test_ea_automata_transition_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -763,32 +736,26 @@ def test_ea::automata::transition_id_setter(instance):
 def test_automaton_instantiation(instance):
     assert isinstance(instance, Automaton)
 
-@given(instance=ea::automata::State_strategy)
+@given(instance=ea_automata_State_strategy)
 @settings(max_examples=50)
-def test_ea::automata::state_instantiation(instance):
-    assert isinstance(instance, ea::automata::State)
-
-@given(instance=ea::automata::State_strategy)
-def test_ea::automata::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ea_automata_state_instantiation(instance):
+    assert isinstance(instance, ea_automata_State)
 
 
-@given(instance=ea::automata::State_strategy)
-def test_ea::automata::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ea::automata::State_strategy)
-def test_ea::automata::state_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=ea::automata::State_strategy)
-def test_ea::automata::state_id_setter(instance):
+@given(instance=ea_automata_State_strategy)
+def test_ea_automata_state_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+
+
+@given(instance=ea_automata_State_strategy)
+def test_ea_automata_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Module_strategy)
 @settings(max_examples=50)

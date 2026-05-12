@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ArchimateTechnology::Relationship,
+from python_code import (
+    ArchimateTechnology_Relationship,
     Relationship,
-    ArchimateTechnology::Triggering,
-    ArchimateTechnology::UsedBy,
-    ArchimateTechnology::Assignment,
-    ArchimateTechnology::Realization,
-    ArchimateTechnology::Association,
-    ArchimateTechnology::Access,
-    ArchimateTechnology::Composition,
-    ArchimateTechnology::Specialization,
-    ArchimateTechnology::Aggregation,
-    ArchimateTechnology::Flow,
-    ArchimateTechnology::Junction,
+    ArchimateTechnology_Realization,
+    ArchimateTechnology_UsedBy,
+    ArchimateTechnology_Aggregation,
+    ArchimateTechnology_Association,
+    ArchimateTechnology_Assignment,
+    ArchimateTechnology_Access,
+    ArchimateTechnology_Flow,
+    ArchimateTechnology_Specialization,
+    ArchimateTechnology_Composition,
+    ArchimateTechnology_Triggering,
+    ArchimateTechnology_Junction,
     NodeElement,
-    ArchimateTechnology::CommunicationPath,
-    ArchimateTechnology::SystemSoftware,
-    ArchimateTechnology::InfrastructureService,
-    ArchimateTechnology::InfrastructureFunction,
-    ArchimateTechnology::Grouping,
-    ArchimateTechnology::Network,
-    ArchimateTechnology::Artifact,
-    ArchimateTechnology::InfrastructureInterface,
-    ArchimateTechnology::Device,
-    ArchimateTechnology::Node,
-    ArchimateTechnology::NodeElement,
+    ArchimateTechnology_CommunicationPath,
+    ArchimateTechnology_InfrastructureFunction,
+    ArchimateTechnology_Grouping,
+    ArchimateTechnology_Network,
+    ArchimateTechnology_SystemSoftware,
+    ArchimateTechnology_Artifact,
+    ArchimateTechnology_Device,
+    ArchimateTechnology_InfrastructureInterface,
+    ArchimateTechnology_InfrastructureService,
+    ArchimateTechnology_Node,
+    ArchimateTechnology_NodeElement,
 )
 
 # =============================================================================
@@ -39,16 +39,16 @@ from classes import (
 
 
 
-def test_archimatetechnology::relationship_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Relationship)
+def test_archimatetechnology_relationship_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Relationship)
 
 
-def test_archimatetechnology::relationship_constructor_exists():
-    assert callable(ArchimateTechnology::Relationship.__init__)
+def test_archimatetechnology_relationship_constructor_exists():
+    assert callable(ArchimateTechnology_Relationship.__init__)
 
 
-def test_archimatetechnology::relationship_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Relationship.__init__)
+def test_archimatetechnology_relationship_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Relationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -67,156 +67,156 @@ def test_relationship_constructor_args():
 
 
 
-def test_archimatetechnology::triggering_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Triggering)
+def test_archimatetechnology_realization_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Realization)
 
 
-def test_archimatetechnology::triggering_constructor_exists():
-    assert callable(ArchimateTechnology::Triggering.__init__)
+def test_archimatetechnology_realization_constructor_exists():
+    assert callable(ArchimateTechnology_Realization.__init__)
 
 
-def test_archimatetechnology::triggering_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Triggering.__init__)
+def test_archimatetechnology_realization_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::usedby_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::UsedBy)
+def test_archimatetechnology_usedby_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_UsedBy)
 
 
-def test_archimatetechnology::usedby_constructor_exists():
-    assert callable(ArchimateTechnology::UsedBy.__init__)
+def test_archimatetechnology_usedby_constructor_exists():
+    assert callable(ArchimateTechnology_UsedBy.__init__)
 
 
-def test_archimatetechnology::usedby_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::UsedBy.__init__)
+def test_archimatetechnology_usedby_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_UsedBy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::assignment_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Assignment)
+def test_archimatetechnology_aggregation_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Aggregation)
 
 
-def test_archimatetechnology::assignment_constructor_exists():
-    assert callable(ArchimateTechnology::Assignment.__init__)
+def test_archimatetechnology_aggregation_constructor_exists():
+    assert callable(ArchimateTechnology_Aggregation.__init__)
 
 
-def test_archimatetechnology::assignment_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Assignment.__init__)
+def test_archimatetechnology_aggregation_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Aggregation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::realization_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Realization)
+def test_archimatetechnology_association_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Association)
 
 
-def test_archimatetechnology::realization_constructor_exists():
-    assert callable(ArchimateTechnology::Realization.__init__)
+def test_archimatetechnology_association_constructor_exists():
+    assert callable(ArchimateTechnology_Association.__init__)
 
 
-def test_archimatetechnology::realization_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Realization.__init__)
+def test_archimatetechnology_association_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::association_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Association)
+def test_archimatetechnology_assignment_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Assignment)
 
 
-def test_archimatetechnology::association_constructor_exists():
-    assert callable(ArchimateTechnology::Association.__init__)
+def test_archimatetechnology_assignment_constructor_exists():
+    assert callable(ArchimateTechnology_Assignment.__init__)
 
 
-def test_archimatetechnology::association_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Association.__init__)
+def test_archimatetechnology_assignment_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::access_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Access)
+def test_archimatetechnology_access_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Access)
 
 
-def test_archimatetechnology::access_constructor_exists():
-    assert callable(ArchimateTechnology::Access.__init__)
+def test_archimatetechnology_access_constructor_exists():
+    assert callable(ArchimateTechnology_Access.__init__)
 
 
-def test_archimatetechnology::access_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Access.__init__)
+def test_archimatetechnology_access_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Access.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::composition_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Composition)
+def test_archimatetechnology_flow_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Flow)
 
 
-def test_archimatetechnology::composition_constructor_exists():
-    assert callable(ArchimateTechnology::Composition.__init__)
+def test_archimatetechnology_flow_constructor_exists():
+    assert callable(ArchimateTechnology_Flow.__init__)
 
 
-def test_archimatetechnology::composition_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Composition.__init__)
+def test_archimatetechnology_flow_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::specialization_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Specialization)
+def test_archimatetechnology_specialization_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Specialization)
 
 
-def test_archimatetechnology::specialization_constructor_exists():
-    assert callable(ArchimateTechnology::Specialization.__init__)
+def test_archimatetechnology_specialization_constructor_exists():
+    assert callable(ArchimateTechnology_Specialization.__init__)
 
 
-def test_archimatetechnology::specialization_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Specialization.__init__)
+def test_archimatetechnology_specialization_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Specialization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::aggregation_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Aggregation)
+def test_archimatetechnology_composition_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Composition)
 
 
-def test_archimatetechnology::aggregation_constructor_exists():
-    assert callable(ArchimateTechnology::Aggregation.__init__)
+def test_archimatetechnology_composition_constructor_exists():
+    assert callable(ArchimateTechnology_Composition.__init__)
 
 
-def test_archimatetechnology::aggregation_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Aggregation.__init__)
+def test_archimatetechnology_composition_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Composition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::flow_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Flow)
+def test_archimatetechnology_triggering_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Triggering)
 
 
-def test_archimatetechnology::flow_constructor_exists():
-    assert callable(ArchimateTechnology::Flow.__init__)
+def test_archimatetechnology_triggering_constructor_exists():
+    assert callable(ArchimateTechnology_Triggering.__init__)
 
 
-def test_archimatetechnology::flow_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Flow.__init__)
+def test_archimatetechnology_triggering_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Triggering.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::junction_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Junction)
+def test_archimatetechnology_junction_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Junction)
 
 
-def test_archimatetechnology::junction_constructor_exists():
-    assert callable(ArchimateTechnology::Junction.__init__)
+def test_archimatetechnology_junction_constructor_exists():
+    assert callable(ArchimateTechnology_Junction.__init__)
 
 
-def test_archimatetechnology::junction_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Junction.__init__)
+def test_archimatetechnology_junction_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Junction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -235,156 +235,156 @@ def test_nodeelement_constructor_args():
 
 
 
-def test_archimatetechnology::communicationpath_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::CommunicationPath)
+def test_archimatetechnology_communicationpath_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_CommunicationPath)
 
 
-def test_archimatetechnology::communicationpath_constructor_exists():
-    assert callable(ArchimateTechnology::CommunicationPath.__init__)
+def test_archimatetechnology_communicationpath_constructor_exists():
+    assert callable(ArchimateTechnology_CommunicationPath.__init__)
 
 
-def test_archimatetechnology::communicationpath_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::CommunicationPath.__init__)
+def test_archimatetechnology_communicationpath_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_CommunicationPath.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::systemsoftware_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::SystemSoftware)
+def test_archimatetechnology_infrastructurefunction_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_InfrastructureFunction)
 
 
-def test_archimatetechnology::systemsoftware_constructor_exists():
-    assert callable(ArchimateTechnology::SystemSoftware.__init__)
+def test_archimatetechnology_infrastructurefunction_constructor_exists():
+    assert callable(ArchimateTechnology_InfrastructureFunction.__init__)
 
 
-def test_archimatetechnology::systemsoftware_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::SystemSoftware.__init__)
+def test_archimatetechnology_infrastructurefunction_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_InfrastructureFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::infrastructureservice_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::InfrastructureService)
+def test_archimatetechnology_grouping_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Grouping)
 
 
-def test_archimatetechnology::infrastructureservice_constructor_exists():
-    assert callable(ArchimateTechnology::InfrastructureService.__init__)
+def test_archimatetechnology_grouping_constructor_exists():
+    assert callable(ArchimateTechnology_Grouping.__init__)
 
 
-def test_archimatetechnology::infrastructureservice_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::InfrastructureService.__init__)
+def test_archimatetechnology_grouping_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Grouping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::infrastructurefunction_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::InfrastructureFunction)
+def test_archimatetechnology_network_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Network)
 
 
-def test_archimatetechnology::infrastructurefunction_constructor_exists():
-    assert callable(ArchimateTechnology::InfrastructureFunction.__init__)
+def test_archimatetechnology_network_constructor_exists():
+    assert callable(ArchimateTechnology_Network.__init__)
 
 
-def test_archimatetechnology::infrastructurefunction_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::InfrastructureFunction.__init__)
+def test_archimatetechnology_network_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Network.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::grouping_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Grouping)
+def test_archimatetechnology_systemsoftware_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_SystemSoftware)
 
 
-def test_archimatetechnology::grouping_constructor_exists():
-    assert callable(ArchimateTechnology::Grouping.__init__)
+def test_archimatetechnology_systemsoftware_constructor_exists():
+    assert callable(ArchimateTechnology_SystemSoftware.__init__)
 
 
-def test_archimatetechnology::grouping_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Grouping.__init__)
+def test_archimatetechnology_systemsoftware_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_SystemSoftware.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::network_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Network)
+def test_archimatetechnology_artifact_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Artifact)
 
 
-def test_archimatetechnology::network_constructor_exists():
-    assert callable(ArchimateTechnology::Network.__init__)
+def test_archimatetechnology_artifact_constructor_exists():
+    assert callable(ArchimateTechnology_Artifact.__init__)
 
 
-def test_archimatetechnology::network_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Network.__init__)
+def test_archimatetechnology_artifact_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::artifact_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Artifact)
+def test_archimatetechnology_device_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Device)
 
 
-def test_archimatetechnology::artifact_constructor_exists():
-    assert callable(ArchimateTechnology::Artifact.__init__)
+def test_archimatetechnology_device_constructor_exists():
+    assert callable(ArchimateTechnology_Device.__init__)
 
 
-def test_archimatetechnology::artifact_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Artifact.__init__)
+def test_archimatetechnology_device_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Device.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::infrastructureinterface_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::InfrastructureInterface)
+def test_archimatetechnology_infrastructureinterface_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_InfrastructureInterface)
 
 
-def test_archimatetechnology::infrastructureinterface_constructor_exists():
-    assert callable(ArchimateTechnology::InfrastructureInterface.__init__)
+def test_archimatetechnology_infrastructureinterface_constructor_exists():
+    assert callable(ArchimateTechnology_InfrastructureInterface.__init__)
 
 
-def test_archimatetechnology::infrastructureinterface_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::InfrastructureInterface.__init__)
+def test_archimatetechnology_infrastructureinterface_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_InfrastructureInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::device_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Device)
+def test_archimatetechnology_infrastructureservice_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_InfrastructureService)
 
 
-def test_archimatetechnology::device_constructor_exists():
-    assert callable(ArchimateTechnology::Device.__init__)
+def test_archimatetechnology_infrastructureservice_constructor_exists():
+    assert callable(ArchimateTechnology_InfrastructureService.__init__)
 
 
-def test_archimatetechnology::device_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Device.__init__)
+def test_archimatetechnology_infrastructureservice_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_InfrastructureService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::node_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::Node)
+def test_archimatetechnology_node_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_Node)
 
 
-def test_archimatetechnology::node_constructor_exists():
-    assert callable(ArchimateTechnology::Node.__init__)
+def test_archimatetechnology_node_constructor_exists():
+    assert callable(ArchimateTechnology_Node.__init__)
 
 
-def test_archimatetechnology::node_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::Node.__init__)
+def test_archimatetechnology_node_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimatetechnology::nodeelement_is_not_abstract():
-    assert not inspect.isabstract(ArchimateTechnology::NodeElement)
+def test_archimatetechnology_nodeelement_is_not_abstract():
+    assert not inspect.isabstract(ArchimateTechnology_NodeElement)
 
 
-def test_archimatetechnology::nodeelement_constructor_exists():
-    assert callable(ArchimateTechnology::NodeElement.__init__)
+def test_archimatetechnology_nodeelement_constructor_exists():
+    assert callable(ArchimateTechnology_NodeElement.__init__)
 
 
-def test_archimatetechnology::nodeelement_constructor_args():
-    sig = inspect.signature(ArchimateTechnology::NodeElement.__init__)
+def test_archimatetechnology_nodeelement_constructor_args():
+    sig = inspect.signature(ArchimateTechnology_NodeElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -399,203 +399,203 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ArchimateTechnology::Relationship_strategy = st.builds(
-    ArchimateTechnology::Relationship,
+ArchimateTechnology_Relationship_strategy = st.builds(
+    ArchimateTechnology_Relationship,
 )
 Relationship_strategy = st.builds(
     Relationship,
 )
-ArchimateTechnology::Triggering_strategy = st.builds(
-    ArchimateTechnology::Triggering,
+ArchimateTechnology_Realization_strategy = st.builds(
+    ArchimateTechnology_Realization,
 )
-ArchimateTechnology::UsedBy_strategy = st.builds(
-    ArchimateTechnology::UsedBy,
+ArchimateTechnology_UsedBy_strategy = st.builds(
+    ArchimateTechnology_UsedBy,
 )
-ArchimateTechnology::Assignment_strategy = st.builds(
-    ArchimateTechnology::Assignment,
+ArchimateTechnology_Aggregation_strategy = st.builds(
+    ArchimateTechnology_Aggregation,
 )
-ArchimateTechnology::Realization_strategy = st.builds(
-    ArchimateTechnology::Realization,
+ArchimateTechnology_Association_strategy = st.builds(
+    ArchimateTechnology_Association,
 )
-ArchimateTechnology::Association_strategy = st.builds(
-    ArchimateTechnology::Association,
+ArchimateTechnology_Assignment_strategy = st.builds(
+    ArchimateTechnology_Assignment,
 )
-ArchimateTechnology::Access_strategy = st.builds(
-    ArchimateTechnology::Access,
+ArchimateTechnology_Access_strategy = st.builds(
+    ArchimateTechnology_Access,
 )
-ArchimateTechnology::Composition_strategy = st.builds(
-    ArchimateTechnology::Composition,
+ArchimateTechnology_Flow_strategy = st.builds(
+    ArchimateTechnology_Flow,
 )
-ArchimateTechnology::Specialization_strategy = st.builds(
-    ArchimateTechnology::Specialization,
+ArchimateTechnology_Specialization_strategy = st.builds(
+    ArchimateTechnology_Specialization,
 )
-ArchimateTechnology::Aggregation_strategy = st.builds(
-    ArchimateTechnology::Aggregation,
+ArchimateTechnology_Composition_strategy = st.builds(
+    ArchimateTechnology_Composition,
 )
-ArchimateTechnology::Flow_strategy = st.builds(
-    ArchimateTechnology::Flow,
+ArchimateTechnology_Triggering_strategy = st.builds(
+    ArchimateTechnology_Triggering,
 )
-ArchimateTechnology::Junction_strategy = st.builds(
-    ArchimateTechnology::Junction,
+ArchimateTechnology_Junction_strategy = st.builds(
+    ArchimateTechnology_Junction,
 )
 NodeElement_strategy = st.builds(
     NodeElement,
 )
-ArchimateTechnology::CommunicationPath_strategy = st.builds(
-    ArchimateTechnology::CommunicationPath,
+ArchimateTechnology_CommunicationPath_strategy = st.builds(
+    ArchimateTechnology_CommunicationPath,
 )
-ArchimateTechnology::SystemSoftware_strategy = st.builds(
-    ArchimateTechnology::SystemSoftware,
+ArchimateTechnology_InfrastructureFunction_strategy = st.builds(
+    ArchimateTechnology_InfrastructureFunction,
 )
-ArchimateTechnology::InfrastructureService_strategy = st.builds(
-    ArchimateTechnology::InfrastructureService,
+ArchimateTechnology_Grouping_strategy = st.builds(
+    ArchimateTechnology_Grouping,
 )
-ArchimateTechnology::InfrastructureFunction_strategy = st.builds(
-    ArchimateTechnology::InfrastructureFunction,
+ArchimateTechnology_Network_strategy = st.builds(
+    ArchimateTechnology_Network,
 )
-ArchimateTechnology::Grouping_strategy = st.builds(
-    ArchimateTechnology::Grouping,
+ArchimateTechnology_SystemSoftware_strategy = st.builds(
+    ArchimateTechnology_SystemSoftware,
 )
-ArchimateTechnology::Network_strategy = st.builds(
-    ArchimateTechnology::Network,
+ArchimateTechnology_Artifact_strategy = st.builds(
+    ArchimateTechnology_Artifact,
 )
-ArchimateTechnology::Artifact_strategy = st.builds(
-    ArchimateTechnology::Artifact,
+ArchimateTechnology_Device_strategy = st.builds(
+    ArchimateTechnology_Device,
 )
-ArchimateTechnology::InfrastructureInterface_strategy = st.builds(
-    ArchimateTechnology::InfrastructureInterface,
+ArchimateTechnology_InfrastructureInterface_strategy = st.builds(
+    ArchimateTechnology_InfrastructureInterface,
 )
-ArchimateTechnology::Device_strategy = st.builds(
-    ArchimateTechnology::Device,
+ArchimateTechnology_InfrastructureService_strategy = st.builds(
+    ArchimateTechnology_InfrastructureService,
 )
-ArchimateTechnology::Node_strategy = st.builds(
-    ArchimateTechnology::Node,
+ArchimateTechnology_Node_strategy = st.builds(
+    ArchimateTechnology_Node,
 )
-ArchimateTechnology::NodeElement_strategy = st.builds(
-    ArchimateTechnology::NodeElement,
+ArchimateTechnology_NodeElement_strategy = st.builds(
+    ArchimateTechnology_NodeElement,
 )
 
-@given(instance=ArchimateTechnology::Relationship_strategy)
+@given(instance=ArchimateTechnology_Relationship_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::relationship_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Relationship)
+def test_archimatetechnology_relationship_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Relationship)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=ArchimateTechnology::Triggering_strategy)
+@given(instance=ArchimateTechnology_Realization_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::triggering_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Triggering)
+def test_archimatetechnology_realization_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Realization)
 
-@given(instance=ArchimateTechnology::UsedBy_strategy)
+@given(instance=ArchimateTechnology_UsedBy_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::usedby_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::UsedBy)
+def test_archimatetechnology_usedby_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_UsedBy)
 
-@given(instance=ArchimateTechnology::Assignment_strategy)
+@given(instance=ArchimateTechnology_Aggregation_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::assignment_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Assignment)
+def test_archimatetechnology_aggregation_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Aggregation)
 
-@given(instance=ArchimateTechnology::Realization_strategy)
+@given(instance=ArchimateTechnology_Association_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::realization_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Realization)
+def test_archimatetechnology_association_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Association)
 
-@given(instance=ArchimateTechnology::Association_strategy)
+@given(instance=ArchimateTechnology_Assignment_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::association_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Association)
+def test_archimatetechnology_assignment_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Assignment)
 
-@given(instance=ArchimateTechnology::Access_strategy)
+@given(instance=ArchimateTechnology_Access_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::access_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Access)
+def test_archimatetechnology_access_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Access)
 
-@given(instance=ArchimateTechnology::Composition_strategy)
+@given(instance=ArchimateTechnology_Flow_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::composition_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Composition)
+def test_archimatetechnology_flow_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Flow)
 
-@given(instance=ArchimateTechnology::Specialization_strategy)
+@given(instance=ArchimateTechnology_Specialization_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::specialization_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Specialization)
+def test_archimatetechnology_specialization_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Specialization)
 
-@given(instance=ArchimateTechnology::Aggregation_strategy)
+@given(instance=ArchimateTechnology_Composition_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::aggregation_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Aggregation)
+def test_archimatetechnology_composition_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Composition)
 
-@given(instance=ArchimateTechnology::Flow_strategy)
+@given(instance=ArchimateTechnology_Triggering_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::flow_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Flow)
+def test_archimatetechnology_triggering_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Triggering)
 
-@given(instance=ArchimateTechnology::Junction_strategy)
+@given(instance=ArchimateTechnology_Junction_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::junction_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Junction)
+def test_archimatetechnology_junction_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Junction)
 
 @given(instance=NodeElement_strategy)
 @settings(max_examples=50)
 def test_nodeelement_instantiation(instance):
     assert isinstance(instance, NodeElement)
 
-@given(instance=ArchimateTechnology::CommunicationPath_strategy)
+@given(instance=ArchimateTechnology_CommunicationPath_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::communicationpath_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::CommunicationPath)
+def test_archimatetechnology_communicationpath_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_CommunicationPath)
 
-@given(instance=ArchimateTechnology::SystemSoftware_strategy)
+@given(instance=ArchimateTechnology_InfrastructureFunction_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::systemsoftware_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::SystemSoftware)
+def test_archimatetechnology_infrastructurefunction_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_InfrastructureFunction)
 
-@given(instance=ArchimateTechnology::InfrastructureService_strategy)
+@given(instance=ArchimateTechnology_Grouping_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::infrastructureservice_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::InfrastructureService)
+def test_archimatetechnology_grouping_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Grouping)
 
-@given(instance=ArchimateTechnology::InfrastructureFunction_strategy)
+@given(instance=ArchimateTechnology_Network_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::infrastructurefunction_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::InfrastructureFunction)
+def test_archimatetechnology_network_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Network)
 
-@given(instance=ArchimateTechnology::Grouping_strategy)
+@given(instance=ArchimateTechnology_SystemSoftware_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::grouping_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Grouping)
+def test_archimatetechnology_systemsoftware_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_SystemSoftware)
 
-@given(instance=ArchimateTechnology::Network_strategy)
+@given(instance=ArchimateTechnology_Artifact_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::network_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Network)
+def test_archimatetechnology_artifact_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Artifact)
 
-@given(instance=ArchimateTechnology::Artifact_strategy)
+@given(instance=ArchimateTechnology_Device_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::artifact_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Artifact)
+def test_archimatetechnology_device_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Device)
 
-@given(instance=ArchimateTechnology::InfrastructureInterface_strategy)
+@given(instance=ArchimateTechnology_InfrastructureInterface_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::infrastructureinterface_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::InfrastructureInterface)
+def test_archimatetechnology_infrastructureinterface_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_InfrastructureInterface)
 
-@given(instance=ArchimateTechnology::Device_strategy)
+@given(instance=ArchimateTechnology_InfrastructureService_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::device_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Device)
+def test_archimatetechnology_infrastructureservice_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_InfrastructureService)
 
-@given(instance=ArchimateTechnology::Node_strategy)
+@given(instance=ArchimateTechnology_Node_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::node_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::Node)
+def test_archimatetechnology_node_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_Node)
 
-@given(instance=ArchimateTechnology::NodeElement_strategy)
+@given(instance=ArchimateTechnology_NodeElement_strategy)
 @settings(max_examples=50)
-def test_archimatetechnology::nodeelement_instantiation(instance):
-    assert isinstance(instance, ArchimateTechnology::NodeElement)
+def test_archimatetechnology_nodeelement_instantiation(instance):
+    assert isinstance(instance, ArchimateTechnology_NodeElement)

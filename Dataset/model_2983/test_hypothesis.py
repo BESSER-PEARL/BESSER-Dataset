@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    turingmodel::Transition,
-    turingmodel::State,
-    turingmodel::TuringMachine,
+from python_code import (
+    turingmodel_Transition,
+    turingmodel_State,
+    turingmodel_TuringMachine,
     Direction,
 )
 
@@ -18,94 +18,94 @@ from classes import (
 
 
 
-def test_turingmodel::transition_is_not_abstract():
-    assert not inspect.isabstract(turingmodel::Transition)
+def test_turingmodel_transition_is_not_abstract():
+    assert not inspect.isabstract(turingmodel_Transition)
 
 
-def test_turingmodel::transition_constructor_exists():
-    assert callable(turingmodel::Transition.__init__)
+def test_turingmodel_transition_constructor_exists():
+    assert callable(turingmodel_Transition.__init__)
 
 
-def test_turingmodel::transition_constructor_args():
-    sig = inspect.signature(turingmodel::Transition.__init__)
+def test_turingmodel_transition_constructor_args():
+    sig = inspect.signature(turingmodel_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "condition" in params, "Missing parameter 'condition'"
-    assert "write" in params, "Missing parameter 'write'"
     assert "dir" in params, "Missing parameter 'dir'"
+    assert "write" in params, "Missing parameter 'write'"
 
-def test_turingmodel::transition_has_condition():
-    assert hasattr(turingmodel::Transition, "condition")
+def test_turingmodel_transition_has_condition():
+    assert hasattr(turingmodel_Transition, "condition")
     descriptor = None
-    for klass in turingmodel::Transition.__mro__:
+    for klass in turingmodel_Transition.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
     assert isinstance(descriptor, property)
 
-def test_turingmodel::transition_has_write():
-    assert hasattr(turingmodel::Transition, "write")
+def test_turingmodel_transition_has_dir():
+    assert hasattr(turingmodel_Transition, "dir")
     descriptor = None
-    for klass in turingmodel::Transition.__mro__:
-        if "write" in klass.__dict__:
-            descriptor = klass.__dict__["write"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_turingmodel::transition_has_dir():
-    assert hasattr(turingmodel::Transition, "dir")
-    descriptor = None
-    for klass in turingmodel::Transition.__mro__:
+    for klass in turingmodel_Transition.__mro__:
         if "dir" in klass.__dict__:
             descriptor = klass.__dict__["dir"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_turingmodel::state_is_not_abstract():
-    assert not inspect.isabstract(turingmodel::State)
-
-
-def test_turingmodel::state_constructor_exists():
-    assert callable(turingmodel::State.__init__)
-
-
-def test_turingmodel::state_constructor_args():
-    sig = inspect.signature(turingmodel::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "isEndState" in params, "Missing parameter 'isEndState'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_turingmodel::state_has_isEndState():
-    assert hasattr(turingmodel::State, "isEndState")
+def test_turingmodel_transition_has_write():
+    assert hasattr(turingmodel_Transition, "write")
     descriptor = None
-    for klass in turingmodel::State.__mro__:
-        if "isEndState" in klass.__dict__:
-            descriptor = klass.__dict__["isEndState"]
+    for klass in turingmodel_Transition.__mro__:
+        if "write" in klass.__dict__:
+            descriptor = klass.__dict__["write"]
             break
     assert isinstance(descriptor, property)
 
-def test_turingmodel::state_has_name():
-    assert hasattr(turingmodel::State, "name")
+
+
+def test_turingmodel_state_is_not_abstract():
+    assert not inspect.isabstract(turingmodel_State)
+
+
+def test_turingmodel_state_constructor_exists():
+    assert callable(turingmodel_State.__init__)
+
+
+def test_turingmodel_state_constructor_args():
+    sig = inspect.signature(turingmodel_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isEndState" in params, "Missing parameter 'isEndState'"
+
+def test_turingmodel_state_has_name():
+    assert hasattr(turingmodel_State, "name")
     descriptor = None
-    for klass in turingmodel::State.__mro__:
+    for klass in turingmodel_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_turingmodel_state_has_isEndState():
+    assert hasattr(turingmodel_State, "isEndState")
+    descriptor = None
+    for klass in turingmodel_State.__mro__:
+        if "isEndState" in klass.__dict__:
+            descriptor = klass.__dict__["isEndState"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_turingmodel::turingmachine_is_not_abstract():
-    assert not inspect.isabstract(turingmodel::TuringMachine)
+
+def test_turingmodel_turingmachine_is_not_abstract():
+    assert not inspect.isabstract(turingmodel_TuringMachine)
 
 
-def test_turingmodel::turingmachine_constructor_exists():
-    assert callable(turingmodel::TuringMachine.__init__)
+def test_turingmodel_turingmachine_constructor_exists():
+    assert callable(turingmodel_TuringMachine.__init__)
 
 
-def test_turingmodel::turingmachine_constructor_args():
-    sig = inspect.signature(turingmodel::TuringMachine.__init__)
+def test_turingmodel_turingmachine_constructor_args():
+    sig = inspect.signature(turingmodel_TuringMachine.__init__)
     params = list(sig.parameters.keys())
 
 def test_direction_exists():
@@ -136,92 +136,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-turingmodel::Transition_strategy = st.builds(
-    turingmodel::Transition,
+turingmodel_Transition_strategy = st.builds(
+    turingmodel_Transition,
     condition=
         safe_text,
-    write=
-        safe_text,
     dir=
+        safe_text,
+    write=
         safe_text
 )
-turingmodel::State_strategy = st.builds(
-    turingmodel::State,
-    isEndState=
-        st.booleans(),
+turingmodel_State_strategy = st.builds(
+    turingmodel_State,
     name=
-        safe_text
+        safe_text,
+    isEndState=
+        st.booleans()
 )
-turingmodel::TuringMachine_strategy = st.builds(
-    turingmodel::TuringMachine,
+turingmodel_TuringMachine_strategy = st.builds(
+    turingmodel_TuringMachine,
 )
 
-@given(instance=turingmodel::Transition_strategy)
+@given(instance=turingmodel_Transition_strategy)
 @settings(max_examples=50)
-def test_turingmodel::transition_instantiation(instance):
-    assert isinstance(instance, turingmodel::Transition)
-
-@given(instance=turingmodel::Transition_strategy)
-def test_turingmodel::transition_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_turingmodel_transition_instantiation(instance):
+    assert isinstance(instance, turingmodel_Transition)
 
 
-@given(instance=turingmodel::Transition_strategy)
-def test_turingmodel::transition_condition_setter(instance):
+
+@given(instance=turingmodel_Transition_strategy)
+def test_turingmodel_transition_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=turingmodel::Transition_strategy)
-def test_turingmodel::transition_write_type(instance):
-    assert isinstance(instance.write, str)
 
 
-@given(instance=turingmodel::Transition_strategy)
-def test_turingmodel::transition_write_setter(instance):
-    original = instance.write
-    instance.write = original
-    assert instance.write == original
-
-@given(instance=turingmodel::Transition_strategy)
-def test_turingmodel::transition_dir_type(instance):
-    assert isinstance(instance.dir, str)
-
-
-@given(instance=turingmodel::Transition_strategy)
-def test_turingmodel::transition_dir_setter(instance):
+@given(instance=turingmodel_Transition_strategy)
+def test_turingmodel_transition_dir_setter(instance):
     original = instance.dir
     instance.dir = original
     assert instance.dir == original
 
-@given(instance=turingmodel::State_strategy)
+
+
+@given(instance=turingmodel_Transition_strategy)
+def test_turingmodel_transition_write_setter(instance):
+    original = instance.write
+    instance.write = original
+    assert instance.write == original
+
+@given(instance=turingmodel_State_strategy)
 @settings(max_examples=50)
-def test_turingmodel::state_instantiation(instance):
-    assert isinstance(instance, turingmodel::State)
-
-@given(instance=turingmodel::State_strategy)
-def test_turingmodel::state_isEndState_type(instance):
-    assert isinstance(instance.isEndState, bool)
+def test_turingmodel_state_instantiation(instance):
+    assert isinstance(instance, turingmodel_State)
 
 
-@given(instance=turingmodel::State_strategy)
-def test_turingmodel::state_isEndState_setter(instance):
-    original = instance.isEndState
-    instance.isEndState = original
-    assert instance.isEndState == original
 
-@given(instance=turingmodel::State_strategy)
-def test_turingmodel::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=turingmodel::State_strategy)
-def test_turingmodel::state_name_setter(instance):
+@given(instance=turingmodel_State_strategy)
+def test_turingmodel_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=turingmodel::TuringMachine_strategy)
+
+
+@given(instance=turingmodel_State_strategy)
+def test_turingmodel_state_isEndState_setter(instance):
+    original = instance.isEndState
+    instance.isEndState = original
+    assert instance.isEndState == original
+
+@given(instance=turingmodel_TuringMachine_strategy)
 @settings(max_examples=50)
-def test_turingmodel::turingmachine_instantiation(instance):
-    assert isinstance(instance, turingmodel::TuringMachine)
+def test_turingmodel_turingmachine_instantiation(instance):
+    assert isinstance(instance, turingmodel_TuringMachine)

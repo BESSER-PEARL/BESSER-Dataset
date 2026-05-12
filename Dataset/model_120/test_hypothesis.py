@@ -3,102 +3,102 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     XmlFragment,
-    dom::XmlExpressionFragment,
-    dom::XmlTextFragment,
+    dom_XmlExpressionFragment,
+    dom_XmlTextFragment,
     IUnqualifiedSelector,
-    dom::ExpressionSelector,
-    dom::IPropertySelector,
+    dom_ExpressionSelector,
+    dom_IPropertySelector,
     ISelector,
-    dom::IUnqualifiedSelector,
+    dom_IUnqualifiedSelector,
     PropertyIdentifier,
-    dom::QualifiedIdentifier,
-    dom::AttributeIdentifier,
+    dom_QualifiedIdentifier,
+    dom_AttributeIdentifier,
     SwitchElement,
-    dom::DefaultClause,
-    dom::CaseClause,
+    dom_DefaultClause,
+    dom_CaseClause,
     IterationStatement,
-    dom::ForStatement,
-    dom::ForInStatement,
-    dom::ForEachInStatement,
-    dom::WhileStatement,
-    dom::DoStatement,
+    dom_ForEachInStatement,
+    dom_WhileStatement,
+    dom_ForStatement,
+    dom_ForInStatement,
+    dom_DoStatement,
     Statement,
-    dom::TryStatement,
-    dom::ContinueStatement,
-    dom::WithStatement,
-    dom::DefaultXmlNamespaceStatement,
-    dom::IterationStatement,
-    dom::ThrowStatement,
-    dom::BreakStatement,
-    dom::IfStatement,
-    dom::ReturnStatement,
-    dom::ConstStatement,
-    dom::LabeledStatement,
-    dom::SwitchStatement,
-    dom::ExpressionStatement,
-    dom::EmptyStatement,
+    dom_WithStatement,
+    dom_ThrowStatement,
+    dom_TryStatement,
+    dom_BreakStatement,
+    dom_ContinueStatement,
+    dom_LabeledStatement,
+    dom_DefaultXmlNamespaceStatement,
+    dom_IfStatement,
+    dom_ConstStatement,
+    dom_IterationStatement,
+    dom_ReturnStatement,
+    dom_SwitchStatement,
+    dom_ExpressionStatement,
+    dom_EmptyStatement,
     AccessorAssignment,
-    dom::SetterAssignment,
-    dom::GetterAssignment,
-    dom::BlockStatement,
+    dom_SetterAssignment,
+    dom_GetterAssignment,
+    dom_BlockStatement,
     PropertyAssignment,
-    dom::AccessorAssignment,
-    dom::SimplePropertyAssignment,
+    dom_AccessorAssignment,
+    dom_SimplePropertyAssignment,
     IForInitializer,
-    dom::VariableStatement,
+    dom_VariableStatement,
     IArrayElement,
-    dom::Elision,
+    dom_Elision,
     Expression,
-    dom::BooleanLiteral,
-    dom::UnaryExpression,
-    dom::XmlInitializer,
-    dom::PropertyAccessExpression,
-    dom::ParenthesizedExpression,
-    dom::CallExpression,
-    dom::RegularExpressionLiteral,
-    dom::FunctionExpression,
-    dom::FilterExpression,
-    dom::ConditionalExpression,
-    dom::ThisExpression,
-    dom::DescendantAccessExpression,
-    dom::ObjectLiteral,
-    dom::ArrayLiteral,
-    dom::BinaryExpression,
-    dom::NewExpression,
-    dom::NullLiteral,
-    dom::ArrayAccessExpression,
-    dom::VariableReference,
+    dom_FunctionExpression,
+    dom_PropertyAccessExpression,
+    dom_BinaryExpression,
+    dom_DescendantAccessExpression,
+    dom_UnaryExpression,
+    dom_FilterExpression,
+    dom_ParenthesizedExpression,
+    dom_ThisExpression,
+    dom_CallExpression,
+    dom_ObjectLiteral,
+    dom_BooleanLiteral,
+    dom_ArrayLiteral,
+    dom_ConditionalExpression,
+    dom_NullLiteral,
+    dom_XmlInitializer,
+    dom_ArrayAccessExpression,
+    dom_NewExpression,
+    dom_RegularExpressionLiteral,
+    dom_VariableReference,
     IProperty,
-    dom::PropertyIdentifier,
+    dom_PropertyIdentifier,
     IPropertySelector,
-    dom::WildcardIdentifier,
+    dom_WildcardIdentifier,
     IPropertyName,
-    dom::NumericLiteral,
-    dom::StringLiteral,
+    dom_NumericLiteral,
+    dom_StringLiteral,
     Node,
-    dom::IProperty,
-    dom::SwitchElement,
-    dom::Identifier,
-    dom::CatchClause,
-    dom::VariableDeclaration,
-    dom::ISelector,
-    dom::PropertyAssignment,
-    dom::FinallyClause,
-    dom::Expression,
-    dom::IForInitializer,
-    dom::Label,
-    dom::IArrayElement,
-    dom::XmlFragment,
-    dom::Parameter,
-    dom::IPropertyName,
-    dom::Statement,
-    dom::Source,
-    dom::Comment,
-    dom::Node,
+    dom_Source,
+    dom_SwitchElement,
+    dom_Parameter,
+    dom_IProperty,
+    dom_VariableDeclaration,
+    dom_FinallyClause,
+    dom_Label,
+    dom_IForInitializer,
+    dom_PropertyAssignment,
+    dom_Expression,
+    dom_CatchClause,
+    dom_Statement,
+    dom_ISelector,
+    dom_Identifier,
+    dom_IArrayElement,
+    dom_IPropertyName,
+    dom_XmlFragment,
+    dom_Comment,
+    dom_Node,
     UnaryOperator,
     BinaryOperator,
 )
@@ -123,37 +123,37 @@ def test_xmlfragment_constructor_args():
 
 
 
-def test_dom::xmlexpressionfragment_is_not_abstract():
-    assert not inspect.isabstract(dom::XmlExpressionFragment)
+def test_dom_xmlexpressionfragment_is_not_abstract():
+    assert not inspect.isabstract(dom_XmlExpressionFragment)
 
 
-def test_dom::xmlexpressionfragment_constructor_exists():
-    assert callable(dom::XmlExpressionFragment.__init__)
+def test_dom_xmlexpressionfragment_constructor_exists():
+    assert callable(dom_XmlExpressionFragment.__init__)
 
 
-def test_dom::xmlexpressionfragment_constructor_args():
-    sig = inspect.signature(dom::XmlExpressionFragment.__init__)
+def test_dom_xmlexpressionfragment_constructor_args():
+    sig = inspect.signature(dom_XmlExpressionFragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::xmltextfragment_is_not_abstract():
-    assert not inspect.isabstract(dom::XmlTextFragment)
+def test_dom_xmltextfragment_is_not_abstract():
+    assert not inspect.isabstract(dom_XmlTextFragment)
 
 
-def test_dom::xmltextfragment_constructor_exists():
-    assert callable(dom::XmlTextFragment.__init__)
+def test_dom_xmltextfragment_constructor_exists():
+    assert callable(dom_XmlTextFragment.__init__)
 
 
-def test_dom::xmltextfragment_constructor_args():
-    sig = inspect.signature(dom::XmlTextFragment.__init__)
+def test_dom_xmltextfragment_constructor_args():
+    sig = inspect.signature(dom_XmlTextFragment.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_dom::xmltextfragment_has_text():
-    assert hasattr(dom::XmlTextFragment, "text")
+def test_dom_xmltextfragment_has_text():
+    assert hasattr(dom_XmlTextFragment, "text")
     descriptor = None
-    for klass in dom::XmlTextFragment.__mro__:
+    for klass in dom_XmlTextFragment.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -175,30 +175,30 @@ def test_iunqualifiedselector_constructor_args():
 
 
 
-def test_dom::expressionselector_is_not_abstract():
-    assert not inspect.isabstract(dom::ExpressionSelector)
+def test_dom_expressionselector_is_not_abstract():
+    assert not inspect.isabstract(dom_ExpressionSelector)
 
 
-def test_dom::expressionselector_constructor_exists():
-    assert callable(dom::ExpressionSelector.__init__)
+def test_dom_expressionselector_constructor_exists():
+    assert callable(dom_ExpressionSelector.__init__)
 
 
-def test_dom::expressionselector_constructor_args():
-    sig = inspect.signature(dom::ExpressionSelector.__init__)
+def test_dom_expressionselector_constructor_args():
+    sig = inspect.signature(dom_ExpressionSelector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::ipropertyselector_is_not_abstract():
-    assert not inspect.isabstract(dom::IPropertySelector)
+def test_dom_ipropertyselector_is_not_abstract():
+    assert not inspect.isabstract(dom_IPropertySelector)
 
 
-def test_dom::ipropertyselector_constructor_exists():
-    assert callable(dom::IPropertySelector.__init__)
+def test_dom_ipropertyselector_constructor_exists():
+    assert callable(dom_IPropertySelector.__init__)
 
 
-def test_dom::ipropertyselector_constructor_args():
-    sig = inspect.signature(dom::IPropertySelector.__init__)
+def test_dom_ipropertyselector_constructor_args():
+    sig = inspect.signature(dom_IPropertySelector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,16 +217,16 @@ def test_iselector_constructor_args():
 
 
 
-def test_dom::iunqualifiedselector_is_not_abstract():
-    assert not inspect.isabstract(dom::IUnqualifiedSelector)
+def test_dom_iunqualifiedselector_is_not_abstract():
+    assert not inspect.isabstract(dom_IUnqualifiedSelector)
 
 
-def test_dom::iunqualifiedselector_constructor_exists():
-    assert callable(dom::IUnqualifiedSelector.__init__)
+def test_dom_iunqualifiedselector_constructor_exists():
+    assert callable(dom_IUnqualifiedSelector.__init__)
 
 
-def test_dom::iunqualifiedselector_constructor_args():
-    sig = inspect.signature(dom::IUnqualifiedSelector.__init__)
+def test_dom_iunqualifiedselector_constructor_args():
+    sig = inspect.signature(dom_IUnqualifiedSelector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -245,30 +245,30 @@ def test_propertyidentifier_constructor_args():
 
 
 
-def test_dom::qualifiedidentifier_is_not_abstract():
-    assert not inspect.isabstract(dom::QualifiedIdentifier)
+def test_dom_qualifiedidentifier_is_not_abstract():
+    assert not inspect.isabstract(dom_QualifiedIdentifier)
 
 
-def test_dom::qualifiedidentifier_constructor_exists():
-    assert callable(dom::QualifiedIdentifier.__init__)
+def test_dom_qualifiedidentifier_constructor_exists():
+    assert callable(dom_QualifiedIdentifier.__init__)
 
 
-def test_dom::qualifiedidentifier_constructor_args():
-    sig = inspect.signature(dom::QualifiedIdentifier.__init__)
+def test_dom_qualifiedidentifier_constructor_args():
+    sig = inspect.signature(dom_QualifiedIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::attributeidentifier_is_not_abstract():
-    assert not inspect.isabstract(dom::AttributeIdentifier)
+def test_dom_attributeidentifier_is_not_abstract():
+    assert not inspect.isabstract(dom_AttributeIdentifier)
 
 
-def test_dom::attributeidentifier_constructor_exists():
-    assert callable(dom::AttributeIdentifier.__init__)
+def test_dom_attributeidentifier_constructor_exists():
+    assert callable(dom_AttributeIdentifier.__init__)
 
 
-def test_dom::attributeidentifier_constructor_args():
-    sig = inspect.signature(dom::AttributeIdentifier.__init__)
+def test_dom_attributeidentifier_constructor_args():
+    sig = inspect.signature(dom_AttributeIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -287,30 +287,30 @@ def test_switchelement_constructor_args():
 
 
 
-def test_dom::defaultclause_is_not_abstract():
-    assert not inspect.isabstract(dom::DefaultClause)
+def test_dom_defaultclause_is_not_abstract():
+    assert not inspect.isabstract(dom_DefaultClause)
 
 
-def test_dom::defaultclause_constructor_exists():
-    assert callable(dom::DefaultClause.__init__)
+def test_dom_defaultclause_constructor_exists():
+    assert callable(dom_DefaultClause.__init__)
 
 
-def test_dom::defaultclause_constructor_args():
-    sig = inspect.signature(dom::DefaultClause.__init__)
+def test_dom_defaultclause_constructor_args():
+    sig = inspect.signature(dom_DefaultClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::caseclause_is_not_abstract():
-    assert not inspect.isabstract(dom::CaseClause)
+def test_dom_caseclause_is_not_abstract():
+    assert not inspect.isabstract(dom_CaseClause)
 
 
-def test_dom::caseclause_constructor_exists():
-    assert callable(dom::CaseClause.__init__)
+def test_dom_caseclause_constructor_exists():
+    assert callable(dom_CaseClause.__init__)
 
 
-def test_dom::caseclause_constructor_args():
-    sig = inspect.signature(dom::CaseClause.__init__)
+def test_dom_caseclause_constructor_args():
+    sig = inspect.signature(dom_CaseClause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -329,72 +329,72 @@ def test_iterationstatement_constructor_args():
 
 
 
-def test_dom::forstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ForStatement)
+def test_dom_foreachinstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ForEachInStatement)
 
 
-def test_dom::forstatement_constructor_exists():
-    assert callable(dom::ForStatement.__init__)
+def test_dom_foreachinstatement_constructor_exists():
+    assert callable(dom_ForEachInStatement.__init__)
 
 
-def test_dom::forstatement_constructor_args():
-    sig = inspect.signature(dom::ForStatement.__init__)
+def test_dom_foreachinstatement_constructor_args():
+    sig = inspect.signature(dom_ForEachInStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::forinstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ForInStatement)
+def test_dom_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(dom_WhileStatement)
 
 
-def test_dom::forinstatement_constructor_exists():
-    assert callable(dom::ForInStatement.__init__)
+def test_dom_whilestatement_constructor_exists():
+    assert callable(dom_WhileStatement.__init__)
 
 
-def test_dom::forinstatement_constructor_args():
-    sig = inspect.signature(dom::ForInStatement.__init__)
+def test_dom_whilestatement_constructor_args():
+    sig = inspect.signature(dom_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::foreachinstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ForEachInStatement)
+def test_dom_forstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ForStatement)
 
 
-def test_dom::foreachinstatement_constructor_exists():
-    assert callable(dom::ForEachInStatement.__init__)
+def test_dom_forstatement_constructor_exists():
+    assert callable(dom_ForStatement.__init__)
 
 
-def test_dom::foreachinstatement_constructor_args():
-    sig = inspect.signature(dom::ForEachInStatement.__init__)
+def test_dom_forstatement_constructor_args():
+    sig = inspect.signature(dom_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(dom::WhileStatement)
+def test_dom_forinstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ForInStatement)
 
 
-def test_dom::whilestatement_constructor_exists():
-    assert callable(dom::WhileStatement.__init__)
+def test_dom_forinstatement_constructor_exists():
+    assert callable(dom_ForInStatement.__init__)
 
 
-def test_dom::whilestatement_constructor_args():
-    sig = inspect.signature(dom::WhileStatement.__init__)
+def test_dom_forinstatement_constructor_args():
+    sig = inspect.signature(dom_ForInStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::dostatement_is_not_abstract():
-    assert not inspect.isabstract(dom::DoStatement)
+def test_dom_dostatement_is_not_abstract():
+    assert not inspect.isabstract(dom_DoStatement)
 
 
-def test_dom::dostatement_constructor_exists():
-    assert callable(dom::DoStatement.__init__)
+def test_dom_dostatement_constructor_exists():
+    assert callable(dom_DoStatement.__init__)
 
 
-def test_dom::dostatement_constructor_args():
-    sig = inspect.signature(dom::DoStatement.__init__)
+def test_dom_dostatement_constructor_args():
+    sig = inspect.signature(dom_DoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -413,198 +413,198 @@ def test_statement_constructor_args():
 
 
 
-def test_dom::trystatement_is_not_abstract():
-    assert not inspect.isabstract(dom::TryStatement)
+def test_dom_withstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_WithStatement)
 
 
-def test_dom::trystatement_constructor_exists():
-    assert callable(dom::TryStatement.__init__)
+def test_dom_withstatement_constructor_exists():
+    assert callable(dom_WithStatement.__init__)
 
 
-def test_dom::trystatement_constructor_args():
-    sig = inspect.signature(dom::TryStatement.__init__)
+def test_dom_withstatement_constructor_args():
+    sig = inspect.signature(dom_WithStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ContinueStatement)
+def test_dom_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ThrowStatement)
 
 
-def test_dom::continuestatement_constructor_exists():
-    assert callable(dom::ContinueStatement.__init__)
+def test_dom_throwstatement_constructor_exists():
+    assert callable(dom_ThrowStatement.__init__)
 
 
-def test_dom::continuestatement_constructor_args():
-    sig = inspect.signature(dom::ContinueStatement.__init__)
+def test_dom_throwstatement_constructor_args():
+    sig = inspect.signature(dom_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::withstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::WithStatement)
+def test_dom_trystatement_is_not_abstract():
+    assert not inspect.isabstract(dom_TryStatement)
 
 
-def test_dom::withstatement_constructor_exists():
-    assert callable(dom::WithStatement.__init__)
+def test_dom_trystatement_constructor_exists():
+    assert callable(dom_TryStatement.__init__)
 
 
-def test_dom::withstatement_constructor_args():
-    sig = inspect.signature(dom::WithStatement.__init__)
+def test_dom_trystatement_constructor_args():
+    sig = inspect.signature(dom_TryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::defaultxmlnamespacestatement_is_not_abstract():
-    assert not inspect.isabstract(dom::DefaultXmlNamespaceStatement)
+def test_dom_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_BreakStatement)
 
 
-def test_dom::defaultxmlnamespacestatement_constructor_exists():
-    assert callable(dom::DefaultXmlNamespaceStatement.__init__)
+def test_dom_breakstatement_constructor_exists():
+    assert callable(dom_BreakStatement.__init__)
 
 
-def test_dom::defaultxmlnamespacestatement_constructor_args():
-    sig = inspect.signature(dom::DefaultXmlNamespaceStatement.__init__)
+def test_dom_breakstatement_constructor_args():
+    sig = inspect.signature(dom_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::iterationstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::IterationStatement)
+def test_dom_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ContinueStatement)
 
 
-def test_dom::iterationstatement_constructor_exists():
-    assert callable(dom::IterationStatement.__init__)
+def test_dom_continuestatement_constructor_exists():
+    assert callable(dom_ContinueStatement.__init__)
 
 
-def test_dom::iterationstatement_constructor_args():
-    sig = inspect.signature(dom::IterationStatement.__init__)
+def test_dom_continuestatement_constructor_args():
+    sig = inspect.signature(dom_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ThrowStatement)
+def test_dom_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_LabeledStatement)
 
 
-def test_dom::throwstatement_constructor_exists():
-    assert callable(dom::ThrowStatement.__init__)
+def test_dom_labeledstatement_constructor_exists():
+    assert callable(dom_LabeledStatement.__init__)
 
 
-def test_dom::throwstatement_constructor_args():
-    sig = inspect.signature(dom::ThrowStatement.__init__)
+def test_dom_labeledstatement_constructor_args():
+    sig = inspect.signature(dom_LabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::BreakStatement)
+def test_dom_defaultxmlnamespacestatement_is_not_abstract():
+    assert not inspect.isabstract(dom_DefaultXmlNamespaceStatement)
 
 
-def test_dom::breakstatement_constructor_exists():
-    assert callable(dom::BreakStatement.__init__)
+def test_dom_defaultxmlnamespacestatement_constructor_exists():
+    assert callable(dom_DefaultXmlNamespaceStatement.__init__)
 
 
-def test_dom::breakstatement_constructor_args():
-    sig = inspect.signature(dom::BreakStatement.__init__)
+def test_dom_defaultxmlnamespacestatement_constructor_args():
+    sig = inspect.signature(dom_DefaultXmlNamespaceStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::IfStatement)
+def test_dom_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_IfStatement)
 
 
-def test_dom::ifstatement_constructor_exists():
-    assert callable(dom::IfStatement.__init__)
+def test_dom_ifstatement_constructor_exists():
+    assert callable(dom_IfStatement.__init__)
 
 
-def test_dom::ifstatement_constructor_args():
-    sig = inspect.signature(dom::IfStatement.__init__)
+def test_dom_ifstatement_constructor_args():
+    sig = inspect.signature(dom_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ReturnStatement)
+def test_dom_conststatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ConstStatement)
 
 
-def test_dom::returnstatement_constructor_exists():
-    assert callable(dom::ReturnStatement.__init__)
+def test_dom_conststatement_constructor_exists():
+    assert callable(dom_ConstStatement.__init__)
 
 
-def test_dom::returnstatement_constructor_args():
-    sig = inspect.signature(dom::ReturnStatement.__init__)
+def test_dom_conststatement_constructor_args():
+    sig = inspect.signature(dom_ConstStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::conststatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ConstStatement)
+def test_dom_iterationstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_IterationStatement)
 
 
-def test_dom::conststatement_constructor_exists():
-    assert callable(dom::ConstStatement.__init__)
+def test_dom_iterationstatement_constructor_exists():
+    assert callable(dom_IterationStatement.__init__)
 
 
-def test_dom::conststatement_constructor_args():
-    sig = inspect.signature(dom::ConstStatement.__init__)
+def test_dom_iterationstatement_constructor_args():
+    sig = inspect.signature(dom_IterationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::LabeledStatement)
+def test_dom_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ReturnStatement)
 
 
-def test_dom::labeledstatement_constructor_exists():
-    assert callable(dom::LabeledStatement.__init__)
+def test_dom_returnstatement_constructor_exists():
+    assert callable(dom_ReturnStatement.__init__)
 
 
-def test_dom::labeledstatement_constructor_args():
-    sig = inspect.signature(dom::LabeledStatement.__init__)
+def test_dom_returnstatement_constructor_args():
+    sig = inspect.signature(dom_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::SwitchStatement)
+def test_dom_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_SwitchStatement)
 
 
-def test_dom::switchstatement_constructor_exists():
-    assert callable(dom::SwitchStatement.__init__)
+def test_dom_switchstatement_constructor_exists():
+    assert callable(dom_SwitchStatement.__init__)
 
 
-def test_dom::switchstatement_constructor_args():
-    sig = inspect.signature(dom::SwitchStatement.__init__)
+def test_dom_switchstatement_constructor_args():
+    sig = inspect.signature(dom_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::ExpressionStatement)
+def test_dom_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_ExpressionStatement)
 
 
-def test_dom::expressionstatement_constructor_exists():
-    assert callable(dom::ExpressionStatement.__init__)
+def test_dom_expressionstatement_constructor_exists():
+    assert callable(dom_ExpressionStatement.__init__)
 
 
-def test_dom::expressionstatement_constructor_args():
-    sig = inspect.signature(dom::ExpressionStatement.__init__)
+def test_dom_expressionstatement_constructor_args():
+    sig = inspect.signature(dom_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(dom::EmptyStatement)
+def test_dom_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(dom_EmptyStatement)
 
 
-def test_dom::emptystatement_constructor_exists():
-    assert callable(dom::EmptyStatement.__init__)
+def test_dom_emptystatement_constructor_exists():
+    assert callable(dom_EmptyStatement.__init__)
 
 
-def test_dom::emptystatement_constructor_args():
-    sig = inspect.signature(dom::EmptyStatement.__init__)
+def test_dom_emptystatement_constructor_args():
+    sig = inspect.signature(dom_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -623,44 +623,44 @@ def test_accessorassignment_constructor_args():
 
 
 
-def test_dom::setterassignment_is_not_abstract():
-    assert not inspect.isabstract(dom::SetterAssignment)
+def test_dom_setterassignment_is_not_abstract():
+    assert not inspect.isabstract(dom_SetterAssignment)
 
 
-def test_dom::setterassignment_constructor_exists():
-    assert callable(dom::SetterAssignment.__init__)
+def test_dom_setterassignment_constructor_exists():
+    assert callable(dom_SetterAssignment.__init__)
 
 
-def test_dom::setterassignment_constructor_args():
-    sig = inspect.signature(dom::SetterAssignment.__init__)
+def test_dom_setterassignment_constructor_args():
+    sig = inspect.signature(dom_SetterAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::getterassignment_is_not_abstract():
-    assert not inspect.isabstract(dom::GetterAssignment)
+def test_dom_getterassignment_is_not_abstract():
+    assert not inspect.isabstract(dom_GetterAssignment)
 
 
-def test_dom::getterassignment_constructor_exists():
-    assert callable(dom::GetterAssignment.__init__)
+def test_dom_getterassignment_constructor_exists():
+    assert callable(dom_GetterAssignment.__init__)
 
 
-def test_dom::getterassignment_constructor_args():
-    sig = inspect.signature(dom::GetterAssignment.__init__)
+def test_dom_getterassignment_constructor_args():
+    sig = inspect.signature(dom_GetterAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(dom::BlockStatement)
+def test_dom_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(dom_BlockStatement)
 
 
-def test_dom::blockstatement_constructor_exists():
-    assert callable(dom::BlockStatement.__init__)
+def test_dom_blockstatement_constructor_exists():
+    assert callable(dom_BlockStatement.__init__)
 
 
-def test_dom::blockstatement_constructor_args():
-    sig = inspect.signature(dom::BlockStatement.__init__)
+def test_dom_blockstatement_constructor_args():
+    sig = inspect.signature(dom_BlockStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -679,30 +679,30 @@ def test_propertyassignment_constructor_args():
 
 
 
-def test_dom::accessorassignment_is_not_abstract():
-    assert not inspect.isabstract(dom::AccessorAssignment)
+def test_dom_accessorassignment_is_not_abstract():
+    assert not inspect.isabstract(dom_AccessorAssignment)
 
 
-def test_dom::accessorassignment_constructor_exists():
-    assert callable(dom::AccessorAssignment.__init__)
+def test_dom_accessorassignment_constructor_exists():
+    assert callable(dom_AccessorAssignment.__init__)
 
 
-def test_dom::accessorassignment_constructor_args():
-    sig = inspect.signature(dom::AccessorAssignment.__init__)
+def test_dom_accessorassignment_constructor_args():
+    sig = inspect.signature(dom_AccessorAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::simplepropertyassignment_is_not_abstract():
-    assert not inspect.isabstract(dom::SimplePropertyAssignment)
+def test_dom_simplepropertyassignment_is_not_abstract():
+    assert not inspect.isabstract(dom_SimplePropertyAssignment)
 
 
-def test_dom::simplepropertyassignment_constructor_exists():
-    assert callable(dom::SimplePropertyAssignment.__init__)
+def test_dom_simplepropertyassignment_constructor_exists():
+    assert callable(dom_SimplePropertyAssignment.__init__)
 
 
-def test_dom::simplepropertyassignment_constructor_args():
-    sig = inspect.signature(dom::SimplePropertyAssignment.__init__)
+def test_dom_simplepropertyassignment_constructor_args():
+    sig = inspect.signature(dom_SimplePropertyAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -721,16 +721,16 @@ def test_iforinitializer_constructor_args():
 
 
 
-def test_dom::variablestatement_is_not_abstract():
-    assert not inspect.isabstract(dom::VariableStatement)
+def test_dom_variablestatement_is_not_abstract():
+    assert not inspect.isabstract(dom_VariableStatement)
 
 
-def test_dom::variablestatement_constructor_exists():
-    assert callable(dom::VariableStatement.__init__)
+def test_dom_variablestatement_constructor_exists():
+    assert callable(dom_VariableStatement.__init__)
 
 
-def test_dom::variablestatement_constructor_args():
-    sig = inspect.signature(dom::VariableStatement.__init__)
+def test_dom_variablestatement_constructor_args():
+    sig = inspect.signature(dom_VariableStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -749,16 +749,16 @@ def test_iarrayelement_constructor_args():
 
 
 
-def test_dom::elision_is_not_abstract():
-    assert not inspect.isabstract(dom::Elision)
+def test_dom_elision_is_not_abstract():
+    assert not inspect.isabstract(dom_Elision)
 
 
-def test_dom::elision_constructor_exists():
-    assert callable(dom::Elision.__init__)
+def test_dom_elision_constructor_exists():
+    assert callable(dom_Elision.__init__)
 
 
-def test_dom::elision_constructor_args():
-    sig = inspect.signature(dom::Elision.__init__)
+def test_dom_elision_constructor_args():
+    sig = inspect.signature(dom_Elision.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -777,151 +777,23 @@ def test_expression_constructor_args():
 
 
 
-def test_dom::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::BooleanLiteral)
+def test_dom_functionexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_FunctionExpression)
 
 
-def test_dom::booleanliteral_constructor_exists():
-    assert callable(dom::BooleanLiteral.__init__)
+def test_dom_functionexpression_constructor_exists():
+    assert callable(dom_FunctionExpression.__init__)
 
 
-def test_dom::booleanliteral_constructor_args():
-    sig = inspect.signature(dom::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_dom::booleanliteral_has_text():
-    assert hasattr(dom::BooleanLiteral, "text")
-    descriptor = None
-    for klass in dom::BooleanLiteral.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::UnaryExpression)
-
-
-def test_dom::unaryexpression_constructor_exists():
-    assert callable(dom::UnaryExpression.__init__)
-
-
-def test_dom::unaryexpression_constructor_args():
-    sig = inspect.signature(dom::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operation" in params, "Missing parameter 'operation'"
-
-def test_dom::unaryexpression_has_operation():
-    assert hasattr(dom::UnaryExpression, "operation")
-    descriptor = None
-    for klass in dom::UnaryExpression.__mro__:
-        if "operation" in klass.__dict__:
-            descriptor = klass.__dict__["operation"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::xmlinitializer_is_not_abstract():
-    assert not inspect.isabstract(dom::XmlInitializer)
-
-
-def test_dom::xmlinitializer_constructor_exists():
-    assert callable(dom::XmlInitializer.__init__)
-
-
-def test_dom::xmlinitializer_constructor_args():
-    sig = inspect.signature(dom::XmlInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::propertyaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::PropertyAccessExpression)
-
-
-def test_dom::propertyaccessexpression_constructor_exists():
-    assert callable(dom::PropertyAccessExpression.__init__)
-
-
-def test_dom::propertyaccessexpression_constructor_args():
-    sig = inspect.signature(dom::PropertyAccessExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::ParenthesizedExpression)
-
-
-def test_dom::parenthesizedexpression_constructor_exists():
-    assert callable(dom::ParenthesizedExpression.__init__)
-
-
-def test_dom::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(dom::ParenthesizedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::callexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::CallExpression)
-
-
-def test_dom::callexpression_constructor_exists():
-    assert callable(dom::CallExpression.__init__)
-
-
-def test_dom::callexpression_constructor_args():
-    sig = inspect.signature(dom::CallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::regularexpressionliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::RegularExpressionLiteral)
-
-
-def test_dom::regularexpressionliteral_constructor_exists():
-    assert callable(dom::RegularExpressionLiteral.__init__)
-
-
-def test_dom::regularexpressionliteral_constructor_args():
-    sig = inspect.signature(dom::RegularExpressionLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_dom::regularexpressionliteral_has_text():
-    assert hasattr(dom::RegularExpressionLiteral, "text")
-    descriptor = None
-    for klass in dom::RegularExpressionLiteral.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::functionexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::FunctionExpression)
-
-
-def test_dom::functionexpression_constructor_exists():
-    assert callable(dom::FunctionExpression.__init__)
-
-
-def test_dom::functionexpression_constructor_args():
-    sig = inspect.signature(dom::FunctionExpression.__init__)
+def test_dom_functionexpression_constructor_args():
+    sig = inspect.signature(dom_FunctionExpression.__init__)
     params = list(sig.parameters.keys())
     assert "parametersPosition" in params, "Missing parameter 'parametersPosition'"
 
-def test_dom::functionexpression_has_parametersPosition():
-    assert hasattr(dom::FunctionExpression, "parametersPosition")
+def test_dom_functionexpression_has_parametersPosition():
+    assert hasattr(dom_FunctionExpression, "parametersPosition")
     descriptor = None
-    for klass in dom::FunctionExpression.__mro__:
+    for klass in dom_FunctionExpression.__mro__:
         if "parametersPosition" in klass.__dict__:
             descriptor = klass.__dict__["parametersPosition"]
             break
@@ -929,117 +801,85 @@ def test_dom::functionexpression_has_parametersPosition():
 
 
 
-def test_dom::filterexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::FilterExpression)
+def test_dom_propertyaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_PropertyAccessExpression)
 
 
-def test_dom::filterexpression_constructor_exists():
-    assert callable(dom::FilterExpression.__init__)
+def test_dom_propertyaccessexpression_constructor_exists():
+    assert callable(dom_PropertyAccessExpression.__init__)
 
 
-def test_dom::filterexpression_constructor_args():
-    sig = inspect.signature(dom::FilterExpression.__init__)
+def test_dom_propertyaccessexpression_constructor_args():
+    sig = inspect.signature(dom_PropertyAccessExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::ConditionalExpression)
+def test_dom_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_BinaryExpression)
 
 
-def test_dom::conditionalexpression_constructor_exists():
-    assert callable(dom::ConditionalExpression.__init__)
+def test_dom_binaryexpression_constructor_exists():
+    assert callable(dom_BinaryExpression.__init__)
 
 
-def test_dom::conditionalexpression_constructor_args():
-    sig = inspect.signature(dom::ConditionalExpression.__init__)
+def test_dom_binaryexpression_constructor_args():
+    sig = inspect.signature(dom_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_dom::thisexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::ThisExpression)
-
-
-def test_dom::thisexpression_constructor_exists():
-    assert callable(dom::ThisExpression.__init__)
-
-
-def test_dom::thisexpression_constructor_args():
-    sig = inspect.signature(dom::ThisExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::descendantaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::DescendantAccessExpression)
-
-
-def test_dom::descendantaccessexpression_constructor_exists():
-    assert callable(dom::DescendantAccessExpression.__init__)
-
-
-def test_dom::descendantaccessexpression_constructor_args():
-    sig = inspect.signature(dom::DescendantAccessExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::objectliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::ObjectLiteral)
-
-
-def test_dom::objectliteral_constructor_exists():
-    assert callable(dom::ObjectLiteral.__init__)
-
-
-def test_dom::objectliteral_constructor_args():
-    sig = inspect.signature(dom::ObjectLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::arrayliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::ArrayLiteral)
-
-
-def test_dom::arrayliteral_constructor_exists():
-    assert callable(dom::ArrayLiteral.__init__)
-
-
-def test_dom::arrayliteral_constructor_args():
-    sig = inspect.signature(dom::ArrayLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::BinaryExpression)
-
-
-def test_dom::binaryexpression_constructor_exists():
-    assert callable(dom::BinaryExpression.__init__)
-
-
-def test_dom::binaryexpression_constructor_args():
-    sig = inspect.signature(dom::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operatorPosition" in params, "Missing parameter 'operatorPosition'"
     assert "operation" in params, "Missing parameter 'operation'"
+    assert "operatorPosition" in params, "Missing parameter 'operatorPosition'"
 
-def test_dom::binaryexpression_has_operatorPosition():
-    assert hasattr(dom::BinaryExpression, "operatorPosition")
+def test_dom_binaryexpression_has_operation():
+    assert hasattr(dom_BinaryExpression, "operation")
     descriptor = None
-    for klass in dom::BinaryExpression.__mro__:
+    for klass in dom_BinaryExpression.__mro__:
+        if "operation" in klass.__dict__:
+            descriptor = klass.__dict__["operation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_binaryexpression_has_operatorPosition():
+    assert hasattr(dom_BinaryExpression, "operatorPosition")
+    descriptor = None
+    for klass in dom_BinaryExpression.__mro__:
         if "operatorPosition" in klass.__dict__:
             descriptor = klass.__dict__["operatorPosition"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::binaryexpression_has_operation():
-    assert hasattr(dom::BinaryExpression, "operation")
+
+
+def test_dom_descendantaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_DescendantAccessExpression)
+
+
+def test_dom_descendantaccessexpression_constructor_exists():
+    assert callable(dom_DescendantAccessExpression.__init__)
+
+
+def test_dom_descendantaccessexpression_constructor_args():
+    sig = inspect.signature(dom_DescendantAccessExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_UnaryExpression)
+
+
+def test_dom_unaryexpression_constructor_exists():
+    assert callable(dom_UnaryExpression.__init__)
+
+
+def test_dom_unaryexpression_constructor_args():
+    sig = inspect.signature(dom_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operation" in params, "Missing parameter 'operation'"
+
+def test_dom_unaryexpression_has_operation():
+    assert hasattr(dom_UnaryExpression, "operation")
     descriptor = None
-    for klass in dom::BinaryExpression.__mro__:
+    for klass in dom_UnaryExpression.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
             break
@@ -1047,58 +887,218 @@ def test_dom::binaryexpression_has_operation():
 
 
 
-def test_dom::newexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::NewExpression)
+def test_dom_filterexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_FilterExpression)
 
 
-def test_dom::newexpression_constructor_exists():
-    assert callable(dom::NewExpression.__init__)
+def test_dom_filterexpression_constructor_exists():
+    assert callable(dom_FilterExpression.__init__)
 
 
-def test_dom::newexpression_constructor_args():
-    sig = inspect.signature(dom::NewExpression.__init__)
+def test_dom_filterexpression_constructor_args():
+    sig = inspect.signature(dom_FilterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::NullLiteral)
+def test_dom_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_ParenthesizedExpression)
 
 
-def test_dom::nullliteral_constructor_exists():
-    assert callable(dom::NullLiteral.__init__)
+def test_dom_parenthesizedexpression_constructor_exists():
+    assert callable(dom_ParenthesizedExpression.__init__)
 
 
-def test_dom::nullliteral_constructor_args():
-    sig = inspect.signature(dom::NullLiteral.__init__)
+def test_dom_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(dom_ParenthesizedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::arrayaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(dom::ArrayAccessExpression)
+def test_dom_thisexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_ThisExpression)
 
 
-def test_dom::arrayaccessexpression_constructor_exists():
-    assert callable(dom::ArrayAccessExpression.__init__)
+def test_dom_thisexpression_constructor_exists():
+    assert callable(dom_ThisExpression.__init__)
 
 
-def test_dom::arrayaccessexpression_constructor_args():
-    sig = inspect.signature(dom::ArrayAccessExpression.__init__)
+def test_dom_thisexpression_constructor_args():
+    sig = inspect.signature(dom_ThisExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::variablereference_is_not_abstract():
-    assert not inspect.isabstract(dom::VariableReference)
+def test_dom_callexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_CallExpression)
 
 
-def test_dom::variablereference_constructor_exists():
-    assert callable(dom::VariableReference.__init__)
+def test_dom_callexpression_constructor_exists():
+    assert callable(dom_CallExpression.__init__)
 
 
-def test_dom::variablereference_constructor_args():
-    sig = inspect.signature(dom::VariableReference.__init__)
+def test_dom_callexpression_constructor_args():
+    sig = inspect.signature(dom_CallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_objectliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_ObjectLiteral)
+
+
+def test_dom_objectliteral_constructor_exists():
+    assert callable(dom_ObjectLiteral.__init__)
+
+
+def test_dom_objectliteral_constructor_args():
+    sig = inspect.signature(dom_ObjectLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_BooleanLiteral)
+
+
+def test_dom_booleanliteral_constructor_exists():
+    assert callable(dom_BooleanLiteral.__init__)
+
+
+def test_dom_booleanliteral_constructor_args():
+    sig = inspect.signature(dom_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_dom_booleanliteral_has_text():
+    assert hasattr(dom_BooleanLiteral, "text")
+    descriptor = None
+    for klass in dom_BooleanLiteral.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_arrayliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_ArrayLiteral)
+
+
+def test_dom_arrayliteral_constructor_exists():
+    assert callable(dom_ArrayLiteral.__init__)
+
+
+def test_dom_arrayliteral_constructor_args():
+    sig = inspect.signature(dom_ArrayLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_ConditionalExpression)
+
+
+def test_dom_conditionalexpression_constructor_exists():
+    assert callable(dom_ConditionalExpression.__init__)
+
+
+def test_dom_conditionalexpression_constructor_args():
+    sig = inspect.signature(dom_ConditionalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_NullLiteral)
+
+
+def test_dom_nullliteral_constructor_exists():
+    assert callable(dom_NullLiteral.__init__)
+
+
+def test_dom_nullliteral_constructor_args():
+    sig = inspect.signature(dom_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_xmlinitializer_is_not_abstract():
+    assert not inspect.isabstract(dom_XmlInitializer)
+
+
+def test_dom_xmlinitializer_constructor_exists():
+    assert callable(dom_XmlInitializer.__init__)
+
+
+def test_dom_xmlinitializer_constructor_args():
+    sig = inspect.signature(dom_XmlInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_arrayaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_ArrayAccessExpression)
+
+
+def test_dom_arrayaccessexpression_constructor_exists():
+    assert callable(dom_ArrayAccessExpression.__init__)
+
+
+def test_dom_arrayaccessexpression_constructor_args():
+    sig = inspect.signature(dom_ArrayAccessExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_newexpression_is_not_abstract():
+    assert not inspect.isabstract(dom_NewExpression)
+
+
+def test_dom_newexpression_constructor_exists():
+    assert callable(dom_NewExpression.__init__)
+
+
+def test_dom_newexpression_constructor_args():
+    sig = inspect.signature(dom_NewExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_regularexpressionliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_RegularExpressionLiteral)
+
+
+def test_dom_regularexpressionliteral_constructor_exists():
+    assert callable(dom_RegularExpressionLiteral.__init__)
+
+
+def test_dom_regularexpressionliteral_constructor_args():
+    sig = inspect.signature(dom_RegularExpressionLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_dom_regularexpressionliteral_has_text():
+    assert hasattr(dom_RegularExpressionLiteral, "text")
+    descriptor = None
+    for klass in dom_RegularExpressionLiteral.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_variablereference_is_not_abstract():
+    assert not inspect.isabstract(dom_VariableReference)
+
+
+def test_dom_variablereference_constructor_exists():
+    assert callable(dom_VariableReference.__init__)
+
+
+def test_dom_variablereference_constructor_args():
+    sig = inspect.signature(dom_VariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1117,16 +1117,16 @@ def test_iproperty_constructor_args():
 
 
 
-def test_dom::propertyidentifier_is_not_abstract():
-    assert not inspect.isabstract(dom::PropertyIdentifier)
+def test_dom_propertyidentifier_is_not_abstract():
+    assert not inspect.isabstract(dom_PropertyIdentifier)
 
 
-def test_dom::propertyidentifier_constructor_exists():
-    assert callable(dom::PropertyIdentifier.__init__)
+def test_dom_propertyidentifier_constructor_exists():
+    assert callable(dom_PropertyIdentifier.__init__)
 
 
-def test_dom::propertyidentifier_constructor_args():
-    sig = inspect.signature(dom::PropertyIdentifier.__init__)
+def test_dom_propertyidentifier_constructor_args():
+    sig = inspect.signature(dom_PropertyIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1145,16 +1145,16 @@ def test_ipropertyselector_constructor_args():
 
 
 
-def test_dom::wildcardidentifier_is_not_abstract():
-    assert not inspect.isabstract(dom::WildcardIdentifier)
+def test_dom_wildcardidentifier_is_not_abstract():
+    assert not inspect.isabstract(dom_WildcardIdentifier)
 
 
-def test_dom::wildcardidentifier_constructor_exists():
-    assert callable(dom::WildcardIdentifier.__init__)
+def test_dom_wildcardidentifier_constructor_exists():
+    assert callable(dom_WildcardIdentifier.__init__)
 
 
-def test_dom::wildcardidentifier_constructor_args():
-    sig = inspect.signature(dom::WildcardIdentifier.__init__)
+def test_dom_wildcardidentifier_constructor_args():
+    sig = inspect.signature(dom_WildcardIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1173,23 +1173,23 @@ def test_ipropertyname_constructor_args():
 
 
 
-def test_dom::numericliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::NumericLiteral)
+def test_dom_numericliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_NumericLiteral)
 
 
-def test_dom::numericliteral_constructor_exists():
-    assert callable(dom::NumericLiteral.__init__)
+def test_dom_numericliteral_constructor_exists():
+    assert callable(dom_NumericLiteral.__init__)
 
 
-def test_dom::numericliteral_constructor_args():
-    sig = inspect.signature(dom::NumericLiteral.__init__)
+def test_dom_numericliteral_constructor_args():
+    sig = inspect.signature(dom_NumericLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_dom::numericliteral_has_text():
-    assert hasattr(dom::NumericLiteral, "text")
+def test_dom_numericliteral_has_text():
+    assert hasattr(dom_NumericLiteral, "text")
     descriptor = None
-    for klass in dom::NumericLiteral.__mro__:
+    for klass in dom_NumericLiteral.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1197,23 +1197,23 @@ def test_dom::numericliteral_has_text():
 
 
 
-def test_dom::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(dom::StringLiteral)
+def test_dom_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(dom_StringLiteral)
 
 
-def test_dom::stringliteral_constructor_exists():
-    assert callable(dom::StringLiteral.__init__)
+def test_dom_stringliteral_constructor_exists():
+    assert callable(dom_StringLiteral.__init__)
 
 
-def test_dom::stringliteral_constructor_args():
-    sig = inspect.signature(dom::StringLiteral.__init__)
+def test_dom_stringliteral_constructor_args():
+    sig = inspect.signature(dom_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_dom::stringliteral_has_text():
-    assert hasattr(dom::StringLiteral, "text")
+def test_dom_stringliteral_has_text():
+    assert hasattr(dom_StringLiteral, "text")
     descriptor = None
-    for klass in dom::StringLiteral.__mro__:
+    for klass in dom_StringLiteral.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1235,51 +1235,107 @@ def test_node_constructor_args():
 
 
 
-def test_dom::iproperty_is_not_abstract():
-    assert not inspect.isabstract(dom::IProperty)
+def test_dom_source_is_not_abstract():
+    assert not inspect.isabstract(dom_Source)
 
 
-def test_dom::iproperty_constructor_exists():
-    assert callable(dom::IProperty.__init__)
+def test_dom_source_constructor_exists():
+    assert callable(dom_Source.__init__)
 
 
-def test_dom::iproperty_constructor_args():
-    sig = inspect.signature(dom::IProperty.__init__)
+def test_dom_source_constructor_args():
+    sig = inspect.signature(dom_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::switchelement_is_not_abstract():
-    assert not inspect.isabstract(dom::SwitchElement)
+def test_dom_switchelement_is_not_abstract():
+    assert not inspect.isabstract(dom_SwitchElement)
 
 
-def test_dom::switchelement_constructor_exists():
-    assert callable(dom::SwitchElement.__init__)
+def test_dom_switchelement_constructor_exists():
+    assert callable(dom_SwitchElement.__init__)
 
 
-def test_dom::switchelement_constructor_args():
-    sig = inspect.signature(dom::SwitchElement.__init__)
+def test_dom_switchelement_constructor_args():
+    sig = inspect.signature(dom_SwitchElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::identifier_is_not_abstract():
-    assert not inspect.isabstract(dom::Identifier)
+def test_dom_parameter_is_not_abstract():
+    assert not inspect.isabstract(dom_Parameter)
 
 
-def test_dom::identifier_constructor_exists():
-    assert callable(dom::Identifier.__init__)
+def test_dom_parameter_constructor_exists():
+    assert callable(dom_Parameter.__init__)
 
 
-def test_dom::identifier_constructor_args():
-    sig = inspect.signature(dom::Identifier.__init__)
+def test_dom_parameter_constructor_args():
+    sig = inspect.signature(dom_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_iproperty_is_not_abstract():
+    assert not inspect.isabstract(dom_IProperty)
+
+
+def test_dom_iproperty_constructor_exists():
+    assert callable(dom_IProperty.__init__)
+
+
+def test_dom_iproperty_constructor_args():
+    sig = inspect.signature(dom_IProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(dom_VariableDeclaration)
+
+
+def test_dom_variabledeclaration_constructor_exists():
+    assert callable(dom_VariableDeclaration.__init__)
+
+
+def test_dom_variabledeclaration_constructor_args():
+    sig = inspect.signature(dom_VariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_finallyclause_is_not_abstract():
+    assert not inspect.isabstract(dom_FinallyClause)
+
+
+def test_dom_finallyclause_constructor_exists():
+    assert callable(dom_FinallyClause.__init__)
+
+
+def test_dom_finallyclause_constructor_args():
+    sig = inspect.signature(dom_FinallyClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_label_is_not_abstract():
+    assert not inspect.isabstract(dom_Label)
+
+
+def test_dom_label_constructor_exists():
+    assert callable(dom_Label.__init__)
+
+
+def test_dom_label_constructor_args():
+    sig = inspect.signature(dom_Label.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dom::identifier_has_name():
-    assert hasattr(dom::Identifier, "name")
+def test_dom_label_has_name():
+    assert hasattr(dom_Label, "name")
     descriptor = None
-    for klass in dom::Identifier.__mro__:
+    for klass in dom_Label.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1287,121 +1343,107 @@ def test_dom::identifier_has_name():
 
 
 
-def test_dom::catchclause_is_not_abstract():
-    assert not inspect.isabstract(dom::CatchClause)
+def test_dom_iforinitializer_is_not_abstract():
+    assert not inspect.isabstract(dom_IForInitializer)
 
 
-def test_dom::catchclause_constructor_exists():
-    assert callable(dom::CatchClause.__init__)
+def test_dom_iforinitializer_constructor_exists():
+    assert callable(dom_IForInitializer.__init__)
 
 
-def test_dom::catchclause_constructor_args():
-    sig = inspect.signature(dom::CatchClause.__init__)
+def test_dom_iforinitializer_constructor_args():
+    sig = inspect.signature(dom_IForInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(dom::VariableDeclaration)
+def test_dom_propertyassignment_is_not_abstract():
+    assert not inspect.isabstract(dom_PropertyAssignment)
 
 
-def test_dom::variabledeclaration_constructor_exists():
-    assert callable(dom::VariableDeclaration.__init__)
+def test_dom_propertyassignment_constructor_exists():
+    assert callable(dom_PropertyAssignment.__init__)
 
 
-def test_dom::variabledeclaration_constructor_args():
-    sig = inspect.signature(dom::VariableDeclaration.__init__)
+def test_dom_propertyassignment_constructor_args():
+    sig = inspect.signature(dom_PropertyAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::iselector_is_not_abstract():
-    assert not inspect.isabstract(dom::ISelector)
+def test_dom_expression_is_not_abstract():
+    assert not inspect.isabstract(dom_Expression)
 
 
-def test_dom::iselector_constructor_exists():
-    assert callable(dom::ISelector.__init__)
+def test_dom_expression_constructor_exists():
+    assert callable(dom_Expression.__init__)
 
 
-def test_dom::iselector_constructor_args():
-    sig = inspect.signature(dom::ISelector.__init__)
+def test_dom_expression_constructor_args():
+    sig = inspect.signature(dom_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::propertyassignment_is_not_abstract():
-    assert not inspect.isabstract(dom::PropertyAssignment)
+def test_dom_catchclause_is_not_abstract():
+    assert not inspect.isabstract(dom_CatchClause)
 
 
-def test_dom::propertyassignment_constructor_exists():
-    assert callable(dom::PropertyAssignment.__init__)
+def test_dom_catchclause_constructor_exists():
+    assert callable(dom_CatchClause.__init__)
 
 
-def test_dom::propertyassignment_constructor_args():
-    sig = inspect.signature(dom::PropertyAssignment.__init__)
+def test_dom_catchclause_constructor_args():
+    sig = inspect.signature(dom_CatchClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::finallyclause_is_not_abstract():
-    assert not inspect.isabstract(dom::FinallyClause)
+def test_dom_statement_is_not_abstract():
+    assert not inspect.isabstract(dom_Statement)
 
 
-def test_dom::finallyclause_constructor_exists():
-    assert callable(dom::FinallyClause.__init__)
+def test_dom_statement_constructor_exists():
+    assert callable(dom_Statement.__init__)
 
 
-def test_dom::finallyclause_constructor_args():
-    sig = inspect.signature(dom::FinallyClause.__init__)
+def test_dom_statement_constructor_args():
+    sig = inspect.signature(dom_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::expression_is_not_abstract():
-    assert not inspect.isabstract(dom::Expression)
+def test_dom_iselector_is_not_abstract():
+    assert not inspect.isabstract(dom_ISelector)
 
 
-def test_dom::expression_constructor_exists():
-    assert callable(dom::Expression.__init__)
+def test_dom_iselector_constructor_exists():
+    assert callable(dom_ISelector.__init__)
 
 
-def test_dom::expression_constructor_args():
-    sig = inspect.signature(dom::Expression.__init__)
+def test_dom_iselector_constructor_args():
+    sig = inspect.signature(dom_ISelector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::iforinitializer_is_not_abstract():
-    assert not inspect.isabstract(dom::IForInitializer)
+def test_dom_identifier_is_not_abstract():
+    assert not inspect.isabstract(dom_Identifier)
 
 
-def test_dom::iforinitializer_constructor_exists():
-    assert callable(dom::IForInitializer.__init__)
+def test_dom_identifier_constructor_exists():
+    assert callable(dom_Identifier.__init__)
 
 
-def test_dom::iforinitializer_constructor_args():
-    sig = inspect.signature(dom::IForInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::label_is_not_abstract():
-    assert not inspect.isabstract(dom::Label)
-
-
-def test_dom::label_constructor_exists():
-    assert callable(dom::Label.__init__)
-
-
-def test_dom::label_constructor_args():
-    sig = inspect.signature(dom::Label.__init__)
+def test_dom_identifier_constructor_args():
+    sig = inspect.signature(dom_Identifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dom::label_has_name():
-    assert hasattr(dom::Label, "name")
+def test_dom_identifier_has_name():
+    assert hasattr(dom_Identifier, "name")
     descriptor = None
-    for klass in dom::Label.__mro__:
+    for klass in dom_Identifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1409,107 +1451,65 @@ def test_dom::label_has_name():
 
 
 
-def test_dom::iarrayelement_is_not_abstract():
-    assert not inspect.isabstract(dom::IArrayElement)
+def test_dom_iarrayelement_is_not_abstract():
+    assert not inspect.isabstract(dom_IArrayElement)
 
 
-def test_dom::iarrayelement_constructor_exists():
-    assert callable(dom::IArrayElement.__init__)
+def test_dom_iarrayelement_constructor_exists():
+    assert callable(dom_IArrayElement.__init__)
 
 
-def test_dom::iarrayelement_constructor_args():
-    sig = inspect.signature(dom::IArrayElement.__init__)
+def test_dom_iarrayelement_constructor_args():
+    sig = inspect.signature(dom_IArrayElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::xmlfragment_is_not_abstract():
-    assert not inspect.isabstract(dom::XmlFragment)
+def test_dom_ipropertyname_is_not_abstract():
+    assert not inspect.isabstract(dom_IPropertyName)
 
 
-def test_dom::xmlfragment_constructor_exists():
-    assert callable(dom::XmlFragment.__init__)
+def test_dom_ipropertyname_constructor_exists():
+    assert callable(dom_IPropertyName.__init__)
 
 
-def test_dom::xmlfragment_constructor_args():
-    sig = inspect.signature(dom::XmlFragment.__init__)
+def test_dom_ipropertyname_constructor_args():
+    sig = inspect.signature(dom_IPropertyName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::parameter_is_not_abstract():
-    assert not inspect.isabstract(dom::Parameter)
+def test_dom_xmlfragment_is_not_abstract():
+    assert not inspect.isabstract(dom_XmlFragment)
 
 
-def test_dom::parameter_constructor_exists():
-    assert callable(dom::Parameter.__init__)
+def test_dom_xmlfragment_constructor_exists():
+    assert callable(dom_XmlFragment.__init__)
 
 
-def test_dom::parameter_constructor_args():
-    sig = inspect.signature(dom::Parameter.__init__)
+def test_dom_xmlfragment_constructor_args():
+    sig = inspect.signature(dom_XmlFragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::ipropertyname_is_not_abstract():
-    assert not inspect.isabstract(dom::IPropertyName)
+def test_dom_comment_is_not_abstract():
+    assert not inspect.isabstract(dom_Comment)
 
 
-def test_dom::ipropertyname_constructor_exists():
-    assert callable(dom::IPropertyName.__init__)
+def test_dom_comment_constructor_exists():
+    assert callable(dom_Comment.__init__)
 
 
-def test_dom::ipropertyname_constructor_args():
-    sig = inspect.signature(dom::IPropertyName.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::statement_is_not_abstract():
-    assert not inspect.isabstract(dom::Statement)
-
-
-def test_dom::statement_constructor_exists():
-    assert callable(dom::Statement.__init__)
-
-
-def test_dom::statement_constructor_args():
-    sig = inspect.signature(dom::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::source_is_not_abstract():
-    assert not inspect.isabstract(dom::Source)
-
-
-def test_dom::source_constructor_exists():
-    assert callable(dom::Source.__init__)
-
-
-def test_dom::source_constructor_args():
-    sig = inspect.signature(dom::Source.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::comment_is_not_abstract():
-    assert not inspect.isabstract(dom::Comment)
-
-
-def test_dom::comment_constructor_exists():
-    assert callable(dom::Comment.__init__)
-
-
-def test_dom::comment_constructor_args():
-    sig = inspect.signature(dom::Comment.__init__)
+def test_dom_comment_constructor_args():
+    sig = inspect.signature(dom_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_dom::comment_has_text():
-    assert hasattr(dom::Comment, "text")
+def test_dom_comment_has_text():
+    assert hasattr(dom_Comment, "text")
     descriptor = None
-    for klass in dom::Comment.__mro__:
+    for klass in dom_Comment.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1517,35 +1517,35 @@ def test_dom::comment_has_text():
 
 
 
-def test_dom::node_is_not_abstract():
-    assert not inspect.isabstract(dom::Node)
+def test_dom_node_is_not_abstract():
+    assert not inspect.isabstract(dom_Node)
 
 
-def test_dom::node_constructor_exists():
-    assert callable(dom::Node.__init__)
+def test_dom_node_constructor_exists():
+    assert callable(dom_Node.__init__)
 
 
-def test_dom::node_constructor_args():
-    sig = inspect.signature(dom::Node.__init__)
+def test_dom_node_constructor_args():
+    sig = inspect.signature(dom_Node.__init__)
     params = list(sig.parameters.keys())
-    assert "begin" in params, "Missing parameter 'begin'"
     assert "end" in params, "Missing parameter 'end'"
+    assert "begin" in params, "Missing parameter 'begin'"
 
-def test_dom::node_has_begin():
-    assert hasattr(dom::Node, "begin")
+def test_dom_node_has_end():
+    assert hasattr(dom_Node, "end")
     descriptor = None
-    for klass in dom::Node.__mro__:
-        if "begin" in klass.__dict__:
-            descriptor = klass.__dict__["begin"]
+    for klass in dom_Node.__mro__:
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::node_has_end():
-    assert hasattr(dom::Node, "end")
+def test_dom_node_has_begin():
+    assert hasattr(dom_Node, "begin")
     descriptor = None
-    for klass in dom::Node.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
+    for klass in dom_Node.__mro__:
+        if "begin" in klass.__dict__:
+            descriptor = klass.__dict__["begin"]
             break
     assert isinstance(descriptor, property)
 
@@ -1557,17 +1557,17 @@ def test_unaryoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in UnaryOperator]
     expected_literals = [
-        "postfixDec",
-        "prefixInc",
-        "prefixDec",
-        "not_",
-        "delete",
-        "yield_",
-        "void",
-        "numNeg",
-        "unaryPlus",
-        "bwNot",
         "typeof",
+        "prefixDec",
+        "unaryPlus",
+        "prefixInc",
+        "delete",
+        "postfixDec",
+        "bwNot",
+        "void",
+        "yield_",
+        "numNeg",
+        "not_",
         "postfixInc",
     ]
     # Check that all expected literals exist
@@ -1582,42 +1582,42 @@ def test_binaryoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BinaryOperator]
     expected_literals = [
-        "modAssign",
-        "subAssign",
-        "rsh",
-        "assign",
-        "addAssign",
-        "orAssign",
-        "bwAnd",
-        "mulAssign",
-        "same",
-        "div",
-        "neq",
-        "logOr",
-        "eq",
-        "bwXor",
-        "logAnd",
-        "less",
-        "mul",
+        "nsame",
         "divAssign",
-        "instanceof",
-        "geq",
         "in_",
         "rshAssign",
-        "sub",
-        "xorAssign",
+        "geq",
+        "same",
+        "addAssign",
         "add",
-        "urshAssign",
-        "leq",
-        "greater",
+        "orAssign",
+        "logOr",
+        "less",
         "bwOr",
-        "mod",
-        "comma",
+        "leq",
+        "mul",
+        "mulAssign",
+        "div",
         "ursh",
+        "subAssign",
+        "xorAssign",
+        "greater",
         "andAssign",
-        "lshAssign",
-        "nsame",
         "lsh",
+        "lshAssign",
+        "modAssign",
+        "neq",
+        "mod",
+        "bwAnd",
+        "eq",
+        "urshAssign",
+        "bwXor",
+        "instanceof",
+        "sub",
+        "logAnd",
+        "comma",
+        "rsh",
+        "assign",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1638,308 +1638,308 @@ safe_text = st.text(
 XmlFragment_strategy = st.builds(
     XmlFragment,
 )
-dom::XmlExpressionFragment_strategy = st.builds(
-    dom::XmlExpressionFragment,
+dom_XmlExpressionFragment_strategy = st.builds(
+    dom_XmlExpressionFragment,
 )
-dom::XmlTextFragment_strategy = st.builds(
-    dom::XmlTextFragment,
+dom_XmlTextFragment_strategy = st.builds(
+    dom_XmlTextFragment,
     text=
         safe_text
 )
 IUnqualifiedSelector_strategy = st.builds(
     IUnqualifiedSelector,
 )
-dom::ExpressionSelector_strategy = st.builds(
-    dom::ExpressionSelector,
+dom_ExpressionSelector_strategy = st.builds(
+    dom_ExpressionSelector,
 )
-dom::IPropertySelector_strategy = st.builds(
-    dom::IPropertySelector,
+dom_IPropertySelector_strategy = st.builds(
+    dom_IPropertySelector,
 )
 ISelector_strategy = st.builds(
     ISelector,
 )
-dom::IUnqualifiedSelector_strategy = st.builds(
-    dom::IUnqualifiedSelector,
+dom_IUnqualifiedSelector_strategy = st.builds(
+    dom_IUnqualifiedSelector,
 )
 PropertyIdentifier_strategy = st.builds(
     PropertyIdentifier,
 )
-dom::QualifiedIdentifier_strategy = st.builds(
-    dom::QualifiedIdentifier,
+dom_QualifiedIdentifier_strategy = st.builds(
+    dom_QualifiedIdentifier,
 )
-dom::AttributeIdentifier_strategy = st.builds(
-    dom::AttributeIdentifier,
+dom_AttributeIdentifier_strategy = st.builds(
+    dom_AttributeIdentifier,
 )
 SwitchElement_strategy = st.builds(
     SwitchElement,
 )
-dom::DefaultClause_strategy = st.builds(
-    dom::DefaultClause,
+dom_DefaultClause_strategy = st.builds(
+    dom_DefaultClause,
 )
-dom::CaseClause_strategy = st.builds(
-    dom::CaseClause,
+dom_CaseClause_strategy = st.builds(
+    dom_CaseClause,
 )
 IterationStatement_strategy = st.builds(
     IterationStatement,
 )
-dom::ForStatement_strategy = st.builds(
-    dom::ForStatement,
+dom_ForEachInStatement_strategy = st.builds(
+    dom_ForEachInStatement,
 )
-dom::ForInStatement_strategy = st.builds(
-    dom::ForInStatement,
+dom_WhileStatement_strategy = st.builds(
+    dom_WhileStatement,
 )
-dom::ForEachInStatement_strategy = st.builds(
-    dom::ForEachInStatement,
+dom_ForStatement_strategy = st.builds(
+    dom_ForStatement,
 )
-dom::WhileStatement_strategy = st.builds(
-    dom::WhileStatement,
+dom_ForInStatement_strategy = st.builds(
+    dom_ForInStatement,
 )
-dom::DoStatement_strategy = st.builds(
-    dom::DoStatement,
+dom_DoStatement_strategy = st.builds(
+    dom_DoStatement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-dom::TryStatement_strategy = st.builds(
-    dom::TryStatement,
+dom_WithStatement_strategy = st.builds(
+    dom_WithStatement,
 )
-dom::ContinueStatement_strategy = st.builds(
-    dom::ContinueStatement,
+dom_ThrowStatement_strategy = st.builds(
+    dom_ThrowStatement,
 )
-dom::WithStatement_strategy = st.builds(
-    dom::WithStatement,
+dom_TryStatement_strategy = st.builds(
+    dom_TryStatement,
 )
-dom::DefaultXmlNamespaceStatement_strategy = st.builds(
-    dom::DefaultXmlNamespaceStatement,
+dom_BreakStatement_strategy = st.builds(
+    dom_BreakStatement,
 )
-dom::IterationStatement_strategy = st.builds(
-    dom::IterationStatement,
+dom_ContinueStatement_strategy = st.builds(
+    dom_ContinueStatement,
 )
-dom::ThrowStatement_strategy = st.builds(
-    dom::ThrowStatement,
+dom_LabeledStatement_strategy = st.builds(
+    dom_LabeledStatement,
 )
-dom::BreakStatement_strategy = st.builds(
-    dom::BreakStatement,
+dom_DefaultXmlNamespaceStatement_strategy = st.builds(
+    dom_DefaultXmlNamespaceStatement,
 )
-dom::IfStatement_strategy = st.builds(
-    dom::IfStatement,
+dom_IfStatement_strategy = st.builds(
+    dom_IfStatement,
 )
-dom::ReturnStatement_strategy = st.builds(
-    dom::ReturnStatement,
+dom_ConstStatement_strategy = st.builds(
+    dom_ConstStatement,
 )
-dom::ConstStatement_strategy = st.builds(
-    dom::ConstStatement,
+dom_IterationStatement_strategy = st.builds(
+    dom_IterationStatement,
 )
-dom::LabeledStatement_strategy = st.builds(
-    dom::LabeledStatement,
+dom_ReturnStatement_strategy = st.builds(
+    dom_ReturnStatement,
 )
-dom::SwitchStatement_strategy = st.builds(
-    dom::SwitchStatement,
+dom_SwitchStatement_strategy = st.builds(
+    dom_SwitchStatement,
 )
-dom::ExpressionStatement_strategy = st.builds(
-    dom::ExpressionStatement,
+dom_ExpressionStatement_strategy = st.builds(
+    dom_ExpressionStatement,
 )
-dom::EmptyStatement_strategy = st.builds(
-    dom::EmptyStatement,
+dom_EmptyStatement_strategy = st.builds(
+    dom_EmptyStatement,
 )
 AccessorAssignment_strategy = st.builds(
     AccessorAssignment,
 )
-dom::SetterAssignment_strategy = st.builds(
-    dom::SetterAssignment,
+dom_SetterAssignment_strategy = st.builds(
+    dom_SetterAssignment,
 )
-dom::GetterAssignment_strategy = st.builds(
-    dom::GetterAssignment,
+dom_GetterAssignment_strategy = st.builds(
+    dom_GetterAssignment,
 )
-dom::BlockStatement_strategy = st.builds(
-    dom::BlockStatement,
+dom_BlockStatement_strategy = st.builds(
+    dom_BlockStatement,
 )
 PropertyAssignment_strategy = st.builds(
     PropertyAssignment,
 )
-dom::AccessorAssignment_strategy = st.builds(
-    dom::AccessorAssignment,
+dom_AccessorAssignment_strategy = st.builds(
+    dom_AccessorAssignment,
 )
-dom::SimplePropertyAssignment_strategy = st.builds(
-    dom::SimplePropertyAssignment,
+dom_SimplePropertyAssignment_strategy = st.builds(
+    dom_SimplePropertyAssignment,
 )
 IForInitializer_strategy = st.builds(
     IForInitializer,
 )
-dom::VariableStatement_strategy = st.builds(
-    dom::VariableStatement,
+dom_VariableStatement_strategy = st.builds(
+    dom_VariableStatement,
 )
 IArrayElement_strategy = st.builds(
     IArrayElement,
 )
-dom::Elision_strategy = st.builds(
-    dom::Elision,
+dom_Elision_strategy = st.builds(
+    dom_Elision,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-dom::BooleanLiteral_strategy = st.builds(
-    dom::BooleanLiteral,
-    text=
-        safe_text
-)
-dom::UnaryExpression_strategy = st.builds(
-    dom::UnaryExpression,
-    operation=
-        safe_text
-)
-dom::XmlInitializer_strategy = st.builds(
-    dom::XmlInitializer,
-)
-dom::PropertyAccessExpression_strategy = st.builds(
-    dom::PropertyAccessExpression,
-)
-dom::ParenthesizedExpression_strategy = st.builds(
-    dom::ParenthesizedExpression,
-)
-dom::CallExpression_strategy = st.builds(
-    dom::CallExpression,
-)
-dom::RegularExpressionLiteral_strategy = st.builds(
-    dom::RegularExpressionLiteral,
-    text=
-        safe_text
-)
-dom::FunctionExpression_strategy = st.builds(
-    dom::FunctionExpression,
+dom_FunctionExpression_strategy = st.builds(
+    dom_FunctionExpression,
     parametersPosition=
         st.integers()
 )
-dom::FilterExpression_strategy = st.builds(
-    dom::FilterExpression,
+dom_PropertyAccessExpression_strategy = st.builds(
+    dom_PropertyAccessExpression,
 )
-dom::ConditionalExpression_strategy = st.builds(
-    dom::ConditionalExpression,
-)
-dom::ThisExpression_strategy = st.builds(
-    dom::ThisExpression,
-)
-dom::DescendantAccessExpression_strategy = st.builds(
-    dom::DescendantAccessExpression,
-)
-dom::ObjectLiteral_strategy = st.builds(
-    dom::ObjectLiteral,
-)
-dom::ArrayLiteral_strategy = st.builds(
-    dom::ArrayLiteral,
-)
-dom::BinaryExpression_strategy = st.builds(
-    dom::BinaryExpression,
+dom_BinaryExpression_strategy = st.builds(
+    dom_BinaryExpression,
+    operation=
+        safe_text,
     operatorPosition=
-        st.integers(),
+        st.integers()
+)
+dom_DescendantAccessExpression_strategy = st.builds(
+    dom_DescendantAccessExpression,
+)
+dom_UnaryExpression_strategy = st.builds(
+    dom_UnaryExpression,
     operation=
         safe_text
 )
-dom::NewExpression_strategy = st.builds(
-    dom::NewExpression,
+dom_FilterExpression_strategy = st.builds(
+    dom_FilterExpression,
 )
-dom::NullLiteral_strategy = st.builds(
-    dom::NullLiteral,
+dom_ParenthesizedExpression_strategy = st.builds(
+    dom_ParenthesizedExpression,
 )
-dom::ArrayAccessExpression_strategy = st.builds(
-    dom::ArrayAccessExpression,
+dom_ThisExpression_strategy = st.builds(
+    dom_ThisExpression,
 )
-dom::VariableReference_strategy = st.builds(
-    dom::VariableReference,
+dom_CallExpression_strategy = st.builds(
+    dom_CallExpression,
+)
+dom_ObjectLiteral_strategy = st.builds(
+    dom_ObjectLiteral,
+)
+dom_BooleanLiteral_strategy = st.builds(
+    dom_BooleanLiteral,
+    text=
+        safe_text
+)
+dom_ArrayLiteral_strategy = st.builds(
+    dom_ArrayLiteral,
+)
+dom_ConditionalExpression_strategy = st.builds(
+    dom_ConditionalExpression,
+)
+dom_NullLiteral_strategy = st.builds(
+    dom_NullLiteral,
+)
+dom_XmlInitializer_strategy = st.builds(
+    dom_XmlInitializer,
+)
+dom_ArrayAccessExpression_strategy = st.builds(
+    dom_ArrayAccessExpression,
+)
+dom_NewExpression_strategy = st.builds(
+    dom_NewExpression,
+)
+dom_RegularExpressionLiteral_strategy = st.builds(
+    dom_RegularExpressionLiteral,
+    text=
+        safe_text
+)
+dom_VariableReference_strategy = st.builds(
+    dom_VariableReference,
 )
 IProperty_strategy = st.builds(
     IProperty,
 )
-dom::PropertyIdentifier_strategy = st.builds(
-    dom::PropertyIdentifier,
+dom_PropertyIdentifier_strategy = st.builds(
+    dom_PropertyIdentifier,
 )
 IPropertySelector_strategy = st.builds(
     IPropertySelector,
 )
-dom::WildcardIdentifier_strategy = st.builds(
-    dom::WildcardIdentifier,
+dom_WildcardIdentifier_strategy = st.builds(
+    dom_WildcardIdentifier,
 )
 IPropertyName_strategy = st.builds(
     IPropertyName,
 )
-dom::NumericLiteral_strategy = st.builds(
-    dom::NumericLiteral,
+dom_NumericLiteral_strategy = st.builds(
+    dom_NumericLiteral,
     text=
         safe_text
 )
-dom::StringLiteral_strategy = st.builds(
-    dom::StringLiteral,
+dom_StringLiteral_strategy = st.builds(
+    dom_StringLiteral,
     text=
         safe_text
 )
 Node_strategy = st.builds(
     Node,
 )
-dom::IProperty_strategy = st.builds(
-    dom::IProperty,
+dom_Source_strategy = st.builds(
+    dom_Source,
 )
-dom::SwitchElement_strategy = st.builds(
-    dom::SwitchElement,
+dom_SwitchElement_strategy = st.builds(
+    dom_SwitchElement,
 )
-dom::Identifier_strategy = st.builds(
-    dom::Identifier,
+dom_Parameter_strategy = st.builds(
+    dom_Parameter,
+)
+dom_IProperty_strategy = st.builds(
+    dom_IProperty,
+)
+dom_VariableDeclaration_strategy = st.builds(
+    dom_VariableDeclaration,
+)
+dom_FinallyClause_strategy = st.builds(
+    dom_FinallyClause,
+)
+dom_Label_strategy = st.builds(
+    dom_Label,
     name=
         safe_text
 )
-dom::CatchClause_strategy = st.builds(
-    dom::CatchClause,
+dom_IForInitializer_strategy = st.builds(
+    dom_IForInitializer,
 )
-dom::VariableDeclaration_strategy = st.builds(
-    dom::VariableDeclaration,
+dom_PropertyAssignment_strategy = st.builds(
+    dom_PropertyAssignment,
 )
-dom::ISelector_strategy = st.builds(
-    dom::ISelector,
+dom_Expression_strategy = st.builds(
+    dom_Expression,
 )
-dom::PropertyAssignment_strategy = st.builds(
-    dom::PropertyAssignment,
+dom_CatchClause_strategy = st.builds(
+    dom_CatchClause,
 )
-dom::FinallyClause_strategy = st.builds(
-    dom::FinallyClause,
+dom_Statement_strategy = st.builds(
+    dom_Statement,
 )
-dom::Expression_strategy = st.builds(
-    dom::Expression,
+dom_ISelector_strategy = st.builds(
+    dom_ISelector,
 )
-dom::IForInitializer_strategy = st.builds(
-    dom::IForInitializer,
-)
-dom::Label_strategy = st.builds(
-    dom::Label,
+dom_Identifier_strategy = st.builds(
+    dom_Identifier,
     name=
         safe_text
 )
-dom::IArrayElement_strategy = st.builds(
-    dom::IArrayElement,
+dom_IArrayElement_strategy = st.builds(
+    dom_IArrayElement,
 )
-dom::XmlFragment_strategy = st.builds(
-    dom::XmlFragment,
+dom_IPropertyName_strategy = st.builds(
+    dom_IPropertyName,
 )
-dom::Parameter_strategy = st.builds(
-    dom::Parameter,
+dom_XmlFragment_strategy = st.builds(
+    dom_XmlFragment,
 )
-dom::IPropertyName_strategy = st.builds(
-    dom::IPropertyName,
-)
-dom::Statement_strategy = st.builds(
-    dom::Statement,
-)
-dom::Source_strategy = st.builds(
-    dom::Source,
-)
-dom::Comment_strategy = st.builds(
-    dom::Comment,
+dom_Comment_strategy = st.builds(
+    dom_Comment,
     text=
         safe_text
 )
-dom::Node_strategy = st.builds(
-    dom::Node,
-    begin=
-        st.integers(),
+dom_Node_strategy = st.builds(
+    dom_Node,
     end=
+        st.integers(),
+    begin=
         st.integers()
 )
 
@@ -1948,23 +1948,20 @@ dom::Node_strategy = st.builds(
 def test_xmlfragment_instantiation(instance):
     assert isinstance(instance, XmlFragment)
 
-@given(instance=dom::XmlExpressionFragment_strategy)
+@given(instance=dom_XmlExpressionFragment_strategy)
 @settings(max_examples=50)
-def test_dom::xmlexpressionfragment_instantiation(instance):
-    assert isinstance(instance, dom::XmlExpressionFragment)
+def test_dom_xmlexpressionfragment_instantiation(instance):
+    assert isinstance(instance, dom_XmlExpressionFragment)
 
-@given(instance=dom::XmlTextFragment_strategy)
+@given(instance=dom_XmlTextFragment_strategy)
 @settings(max_examples=50)
-def test_dom::xmltextfragment_instantiation(instance):
-    assert isinstance(instance, dom::XmlTextFragment)
-
-@given(instance=dom::XmlTextFragment_strategy)
-def test_dom::xmltextfragment_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_dom_xmltextfragment_instantiation(instance):
+    assert isinstance(instance, dom_XmlTextFragment)
 
 
-@given(instance=dom::XmlTextFragment_strategy)
-def test_dom::xmltextfragment_text_setter(instance):
+
+@given(instance=dom_XmlTextFragment_strategy)
+def test_dom_xmltextfragment_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -1974,435 +1971,411 @@ def test_dom::xmltextfragment_text_setter(instance):
 def test_iunqualifiedselector_instantiation(instance):
     assert isinstance(instance, IUnqualifiedSelector)
 
-@given(instance=dom::ExpressionSelector_strategy)
+@given(instance=dom_ExpressionSelector_strategy)
 @settings(max_examples=50)
-def test_dom::expressionselector_instantiation(instance):
-    assert isinstance(instance, dom::ExpressionSelector)
+def test_dom_expressionselector_instantiation(instance):
+    assert isinstance(instance, dom_ExpressionSelector)
 
-@given(instance=dom::IPropertySelector_strategy)
+@given(instance=dom_IPropertySelector_strategy)
 @settings(max_examples=50)
-def test_dom::ipropertyselector_instantiation(instance):
-    assert isinstance(instance, dom::IPropertySelector)
+def test_dom_ipropertyselector_instantiation(instance):
+    assert isinstance(instance, dom_IPropertySelector)
 
 @given(instance=ISelector_strategy)
 @settings(max_examples=50)
 def test_iselector_instantiation(instance):
     assert isinstance(instance, ISelector)
 
-@given(instance=dom::IUnqualifiedSelector_strategy)
+@given(instance=dom_IUnqualifiedSelector_strategy)
 @settings(max_examples=50)
-def test_dom::iunqualifiedselector_instantiation(instance):
-    assert isinstance(instance, dom::IUnqualifiedSelector)
+def test_dom_iunqualifiedselector_instantiation(instance):
+    assert isinstance(instance, dom_IUnqualifiedSelector)
 
 @given(instance=PropertyIdentifier_strategy)
 @settings(max_examples=50)
 def test_propertyidentifier_instantiation(instance):
     assert isinstance(instance, PropertyIdentifier)
 
-@given(instance=dom::QualifiedIdentifier_strategy)
+@given(instance=dom_QualifiedIdentifier_strategy)
 @settings(max_examples=50)
-def test_dom::qualifiedidentifier_instantiation(instance):
-    assert isinstance(instance, dom::QualifiedIdentifier)
+def test_dom_qualifiedidentifier_instantiation(instance):
+    assert isinstance(instance, dom_QualifiedIdentifier)
 
-@given(instance=dom::AttributeIdentifier_strategy)
+@given(instance=dom_AttributeIdentifier_strategy)
 @settings(max_examples=50)
-def test_dom::attributeidentifier_instantiation(instance):
-    assert isinstance(instance, dom::AttributeIdentifier)
+def test_dom_attributeidentifier_instantiation(instance):
+    assert isinstance(instance, dom_AttributeIdentifier)
 
 @given(instance=SwitchElement_strategy)
 @settings(max_examples=50)
 def test_switchelement_instantiation(instance):
     assert isinstance(instance, SwitchElement)
 
-@given(instance=dom::DefaultClause_strategy)
+@given(instance=dom_DefaultClause_strategy)
 @settings(max_examples=50)
-def test_dom::defaultclause_instantiation(instance):
-    assert isinstance(instance, dom::DefaultClause)
+def test_dom_defaultclause_instantiation(instance):
+    assert isinstance(instance, dom_DefaultClause)
 
-@given(instance=dom::CaseClause_strategy)
+@given(instance=dom_CaseClause_strategy)
 @settings(max_examples=50)
-def test_dom::caseclause_instantiation(instance):
-    assert isinstance(instance, dom::CaseClause)
+def test_dom_caseclause_instantiation(instance):
+    assert isinstance(instance, dom_CaseClause)
 
 @given(instance=IterationStatement_strategy)
 @settings(max_examples=50)
 def test_iterationstatement_instantiation(instance):
     assert isinstance(instance, IterationStatement)
 
-@given(instance=dom::ForStatement_strategy)
+@given(instance=dom_ForEachInStatement_strategy)
 @settings(max_examples=50)
-def test_dom::forstatement_instantiation(instance):
-    assert isinstance(instance, dom::ForStatement)
+def test_dom_foreachinstatement_instantiation(instance):
+    assert isinstance(instance, dom_ForEachInStatement)
 
-@given(instance=dom::ForInStatement_strategy)
+@given(instance=dom_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_dom::forinstatement_instantiation(instance):
-    assert isinstance(instance, dom::ForInStatement)
+def test_dom_whilestatement_instantiation(instance):
+    assert isinstance(instance, dom_WhileStatement)
 
-@given(instance=dom::ForEachInStatement_strategy)
+@given(instance=dom_ForStatement_strategy)
 @settings(max_examples=50)
-def test_dom::foreachinstatement_instantiation(instance):
-    assert isinstance(instance, dom::ForEachInStatement)
+def test_dom_forstatement_instantiation(instance):
+    assert isinstance(instance, dom_ForStatement)
 
-@given(instance=dom::WhileStatement_strategy)
+@given(instance=dom_ForInStatement_strategy)
 @settings(max_examples=50)
-def test_dom::whilestatement_instantiation(instance):
-    assert isinstance(instance, dom::WhileStatement)
+def test_dom_forinstatement_instantiation(instance):
+    assert isinstance(instance, dom_ForInStatement)
 
-@given(instance=dom::DoStatement_strategy)
+@given(instance=dom_DoStatement_strategy)
 @settings(max_examples=50)
-def test_dom::dostatement_instantiation(instance):
-    assert isinstance(instance, dom::DoStatement)
+def test_dom_dostatement_instantiation(instance):
+    assert isinstance(instance, dom_DoStatement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=dom::TryStatement_strategy)
+@given(instance=dom_WithStatement_strategy)
 @settings(max_examples=50)
-def test_dom::trystatement_instantiation(instance):
-    assert isinstance(instance, dom::TryStatement)
+def test_dom_withstatement_instantiation(instance):
+    assert isinstance(instance, dom_WithStatement)
 
-@given(instance=dom::ContinueStatement_strategy)
+@given(instance=dom_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_dom::continuestatement_instantiation(instance):
-    assert isinstance(instance, dom::ContinueStatement)
+def test_dom_throwstatement_instantiation(instance):
+    assert isinstance(instance, dom_ThrowStatement)
 
-@given(instance=dom::WithStatement_strategy)
+@given(instance=dom_TryStatement_strategy)
 @settings(max_examples=50)
-def test_dom::withstatement_instantiation(instance):
-    assert isinstance(instance, dom::WithStatement)
+def test_dom_trystatement_instantiation(instance):
+    assert isinstance(instance, dom_TryStatement)
 
-@given(instance=dom::DefaultXmlNamespaceStatement_strategy)
+@given(instance=dom_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_dom::defaultxmlnamespacestatement_instantiation(instance):
-    assert isinstance(instance, dom::DefaultXmlNamespaceStatement)
+def test_dom_breakstatement_instantiation(instance):
+    assert isinstance(instance, dom_BreakStatement)
 
-@given(instance=dom::IterationStatement_strategy)
+@given(instance=dom_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_dom::iterationstatement_instantiation(instance):
-    assert isinstance(instance, dom::IterationStatement)
+def test_dom_continuestatement_instantiation(instance):
+    assert isinstance(instance, dom_ContinueStatement)
 
-@given(instance=dom::ThrowStatement_strategy)
+@given(instance=dom_LabeledStatement_strategy)
 @settings(max_examples=50)
-def test_dom::throwstatement_instantiation(instance):
-    assert isinstance(instance, dom::ThrowStatement)
+def test_dom_labeledstatement_instantiation(instance):
+    assert isinstance(instance, dom_LabeledStatement)
 
-@given(instance=dom::BreakStatement_strategy)
+@given(instance=dom_DefaultXmlNamespaceStatement_strategy)
 @settings(max_examples=50)
-def test_dom::breakstatement_instantiation(instance):
-    assert isinstance(instance, dom::BreakStatement)
+def test_dom_defaultxmlnamespacestatement_instantiation(instance):
+    assert isinstance(instance, dom_DefaultXmlNamespaceStatement)
 
-@given(instance=dom::IfStatement_strategy)
+@given(instance=dom_IfStatement_strategy)
 @settings(max_examples=50)
-def test_dom::ifstatement_instantiation(instance):
-    assert isinstance(instance, dom::IfStatement)
+def test_dom_ifstatement_instantiation(instance):
+    assert isinstance(instance, dom_IfStatement)
 
-@given(instance=dom::ReturnStatement_strategy)
+@given(instance=dom_ConstStatement_strategy)
 @settings(max_examples=50)
-def test_dom::returnstatement_instantiation(instance):
-    assert isinstance(instance, dom::ReturnStatement)
+def test_dom_conststatement_instantiation(instance):
+    assert isinstance(instance, dom_ConstStatement)
 
-@given(instance=dom::ConstStatement_strategy)
+@given(instance=dom_IterationStatement_strategy)
 @settings(max_examples=50)
-def test_dom::conststatement_instantiation(instance):
-    assert isinstance(instance, dom::ConstStatement)
+def test_dom_iterationstatement_instantiation(instance):
+    assert isinstance(instance, dom_IterationStatement)
 
-@given(instance=dom::LabeledStatement_strategy)
+@given(instance=dom_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_dom::labeledstatement_instantiation(instance):
-    assert isinstance(instance, dom::LabeledStatement)
+def test_dom_returnstatement_instantiation(instance):
+    assert isinstance(instance, dom_ReturnStatement)
 
-@given(instance=dom::SwitchStatement_strategy)
+@given(instance=dom_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_dom::switchstatement_instantiation(instance):
-    assert isinstance(instance, dom::SwitchStatement)
+def test_dom_switchstatement_instantiation(instance):
+    assert isinstance(instance, dom_SwitchStatement)
 
-@given(instance=dom::ExpressionStatement_strategy)
+@given(instance=dom_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_dom::expressionstatement_instantiation(instance):
-    assert isinstance(instance, dom::ExpressionStatement)
+def test_dom_expressionstatement_instantiation(instance):
+    assert isinstance(instance, dom_ExpressionStatement)
 
-@given(instance=dom::EmptyStatement_strategy)
+@given(instance=dom_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_dom::emptystatement_instantiation(instance):
-    assert isinstance(instance, dom::EmptyStatement)
+def test_dom_emptystatement_instantiation(instance):
+    assert isinstance(instance, dom_EmptyStatement)
 
 @given(instance=AccessorAssignment_strategy)
 @settings(max_examples=50)
 def test_accessorassignment_instantiation(instance):
     assert isinstance(instance, AccessorAssignment)
 
-@given(instance=dom::SetterAssignment_strategy)
+@given(instance=dom_SetterAssignment_strategy)
 @settings(max_examples=50)
-def test_dom::setterassignment_instantiation(instance):
-    assert isinstance(instance, dom::SetterAssignment)
+def test_dom_setterassignment_instantiation(instance):
+    assert isinstance(instance, dom_SetterAssignment)
 
-@given(instance=dom::GetterAssignment_strategy)
+@given(instance=dom_GetterAssignment_strategy)
 @settings(max_examples=50)
-def test_dom::getterassignment_instantiation(instance):
-    assert isinstance(instance, dom::GetterAssignment)
+def test_dom_getterassignment_instantiation(instance):
+    assert isinstance(instance, dom_GetterAssignment)
 
-@given(instance=dom::BlockStatement_strategy)
+@given(instance=dom_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_dom::blockstatement_instantiation(instance):
-    assert isinstance(instance, dom::BlockStatement)
+def test_dom_blockstatement_instantiation(instance):
+    assert isinstance(instance, dom_BlockStatement)
 
 @given(instance=PropertyAssignment_strategy)
 @settings(max_examples=50)
 def test_propertyassignment_instantiation(instance):
     assert isinstance(instance, PropertyAssignment)
 
-@given(instance=dom::AccessorAssignment_strategy)
+@given(instance=dom_AccessorAssignment_strategy)
 @settings(max_examples=50)
-def test_dom::accessorassignment_instantiation(instance):
-    assert isinstance(instance, dom::AccessorAssignment)
+def test_dom_accessorassignment_instantiation(instance):
+    assert isinstance(instance, dom_AccessorAssignment)
 
-@given(instance=dom::SimplePropertyAssignment_strategy)
+@given(instance=dom_SimplePropertyAssignment_strategy)
 @settings(max_examples=50)
-def test_dom::simplepropertyassignment_instantiation(instance):
-    assert isinstance(instance, dom::SimplePropertyAssignment)
+def test_dom_simplepropertyassignment_instantiation(instance):
+    assert isinstance(instance, dom_SimplePropertyAssignment)
 
 @given(instance=IForInitializer_strategy)
 @settings(max_examples=50)
 def test_iforinitializer_instantiation(instance):
     assert isinstance(instance, IForInitializer)
 
-@given(instance=dom::VariableStatement_strategy)
+@given(instance=dom_VariableStatement_strategy)
 @settings(max_examples=50)
-def test_dom::variablestatement_instantiation(instance):
-    assert isinstance(instance, dom::VariableStatement)
+def test_dom_variablestatement_instantiation(instance):
+    assert isinstance(instance, dom_VariableStatement)
 
 @given(instance=IArrayElement_strategy)
 @settings(max_examples=50)
 def test_iarrayelement_instantiation(instance):
     assert isinstance(instance, IArrayElement)
 
-@given(instance=dom::Elision_strategy)
+@given(instance=dom_Elision_strategy)
 @settings(max_examples=50)
-def test_dom::elision_instantiation(instance):
-    assert isinstance(instance, dom::Elision)
+def test_dom_elision_instantiation(instance):
+    assert isinstance(instance, dom_Elision)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=dom::BooleanLiteral_strategy)
+@given(instance=dom_FunctionExpression_strategy)
 @settings(max_examples=50)
-def test_dom::booleanliteral_instantiation(instance):
-    assert isinstance(instance, dom::BooleanLiteral)
-
-@given(instance=dom::BooleanLiteral_strategy)
-def test_dom::booleanliteral_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_dom_functionexpression_instantiation(instance):
+    assert isinstance(instance, dom_FunctionExpression)
 
 
-@given(instance=dom::BooleanLiteral_strategy)
-def test_dom::booleanliteral_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=dom::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_dom::unaryexpression_instantiation(instance):
-    assert isinstance(instance, dom::UnaryExpression)
-
-@given(instance=dom::UnaryExpression_strategy)
-def test_dom::unaryexpression_operation_type(instance):
-    assert isinstance(instance.operation, str)
-
-
-@given(instance=dom::UnaryExpression_strategy)
-def test_dom::unaryexpression_operation_setter(instance):
-    original = instance.operation
-    instance.operation = original
-    assert instance.operation == original
-
-@given(instance=dom::XmlInitializer_strategy)
-@settings(max_examples=50)
-def test_dom::xmlinitializer_instantiation(instance):
-    assert isinstance(instance, dom::XmlInitializer)
-
-@given(instance=dom::PropertyAccessExpression_strategy)
-@settings(max_examples=50)
-def test_dom::propertyaccessexpression_instantiation(instance):
-    assert isinstance(instance, dom::PropertyAccessExpression)
-
-@given(instance=dom::ParenthesizedExpression_strategy)
-@settings(max_examples=50)
-def test_dom::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, dom::ParenthesizedExpression)
-
-@given(instance=dom::CallExpression_strategy)
-@settings(max_examples=50)
-def test_dom::callexpression_instantiation(instance):
-    assert isinstance(instance, dom::CallExpression)
-
-@given(instance=dom::RegularExpressionLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::regularexpressionliteral_instantiation(instance):
-    assert isinstance(instance, dom::RegularExpressionLiteral)
-
-@given(instance=dom::RegularExpressionLiteral_strategy)
-def test_dom::regularexpressionliteral_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=dom::RegularExpressionLiteral_strategy)
-def test_dom::regularexpressionliteral_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=dom::FunctionExpression_strategy)
-@settings(max_examples=50)
-def test_dom::functionexpression_instantiation(instance):
-    assert isinstance(instance, dom::FunctionExpression)
-
-@given(instance=dom::FunctionExpression_strategy)
-def test_dom::functionexpression_parametersPosition_type(instance):
-    assert isinstance(instance.parametersPosition, int)
-
-
-@given(instance=dom::FunctionExpression_strategy)
-def test_dom::functionexpression_parametersPosition_setter(instance):
+@given(instance=dom_FunctionExpression_strategy)
+def test_dom_functionexpression_parametersPosition_setter(instance):
     original = instance.parametersPosition
     instance.parametersPosition = original
     assert instance.parametersPosition == original
 
-@given(instance=dom::FilterExpression_strategy)
+@given(instance=dom_PropertyAccessExpression_strategy)
 @settings(max_examples=50)
-def test_dom::filterexpression_instantiation(instance):
-    assert isinstance(instance, dom::FilterExpression)
+def test_dom_propertyaccessexpression_instantiation(instance):
+    assert isinstance(instance, dom_PropertyAccessExpression)
 
-@given(instance=dom::ConditionalExpression_strategy)
+@given(instance=dom_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_dom::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, dom::ConditionalExpression)
-
-@given(instance=dom::ThisExpression_strategy)
-@settings(max_examples=50)
-def test_dom::thisexpression_instantiation(instance):
-    assert isinstance(instance, dom::ThisExpression)
-
-@given(instance=dom::DescendantAccessExpression_strategy)
-@settings(max_examples=50)
-def test_dom::descendantaccessexpression_instantiation(instance):
-    assert isinstance(instance, dom::DescendantAccessExpression)
-
-@given(instance=dom::ObjectLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::objectliteral_instantiation(instance):
-    assert isinstance(instance, dom::ObjectLiteral)
-
-@given(instance=dom::ArrayLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::arrayliteral_instantiation(instance):
-    assert isinstance(instance, dom::ArrayLiteral)
-
-@given(instance=dom::BinaryExpression_strategy)
-@settings(max_examples=50)
-def test_dom::binaryexpression_instantiation(instance):
-    assert isinstance(instance, dom::BinaryExpression)
-
-@given(instance=dom::BinaryExpression_strategy)
-def test_dom::binaryexpression_operatorPosition_type(instance):
-    assert isinstance(instance.operatorPosition, int)
+def test_dom_binaryexpression_instantiation(instance):
+    assert isinstance(instance, dom_BinaryExpression)
 
 
-@given(instance=dom::BinaryExpression_strategy)
-def test_dom::binaryexpression_operatorPosition_setter(instance):
-    original = instance.operatorPosition
-    instance.operatorPosition = original
-    assert instance.operatorPosition == original
 
-@given(instance=dom::BinaryExpression_strategy)
-def test_dom::binaryexpression_operation_type(instance):
-    assert isinstance(instance.operation, str)
-
-
-@given(instance=dom::BinaryExpression_strategy)
-def test_dom::binaryexpression_operation_setter(instance):
+@given(instance=dom_BinaryExpression_strategy)
+def test_dom_binaryexpression_operation_setter(instance):
     original = instance.operation
     instance.operation = original
     assert instance.operation == original
 
-@given(instance=dom::NewExpression_strategy)
-@settings(max_examples=50)
-def test_dom::newexpression_instantiation(instance):
-    assert isinstance(instance, dom::NewExpression)
 
-@given(instance=dom::NullLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::nullliteral_instantiation(instance):
-    assert isinstance(instance, dom::NullLiteral)
 
-@given(instance=dom::ArrayAccessExpression_strategy)
-@settings(max_examples=50)
-def test_dom::arrayaccessexpression_instantiation(instance):
-    assert isinstance(instance, dom::ArrayAccessExpression)
+@given(instance=dom_BinaryExpression_strategy)
+def test_dom_binaryexpression_operatorPosition_setter(instance):
+    original = instance.operatorPosition
+    instance.operatorPosition = original
+    assert instance.operatorPosition == original
 
-@given(instance=dom::VariableReference_strategy)
+@given(instance=dom_DescendantAccessExpression_strategy)
 @settings(max_examples=50)
-def test_dom::variablereference_instantiation(instance):
-    assert isinstance(instance, dom::VariableReference)
+def test_dom_descendantaccessexpression_instantiation(instance):
+    assert isinstance(instance, dom_DescendantAccessExpression)
+
+@given(instance=dom_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_dom_unaryexpression_instantiation(instance):
+    assert isinstance(instance, dom_UnaryExpression)
+
+
+
+@given(instance=dom_UnaryExpression_strategy)
+def test_dom_unaryexpression_operation_setter(instance):
+    original = instance.operation
+    instance.operation = original
+    assert instance.operation == original
+
+@given(instance=dom_FilterExpression_strategy)
+@settings(max_examples=50)
+def test_dom_filterexpression_instantiation(instance):
+    assert isinstance(instance, dom_FilterExpression)
+
+@given(instance=dom_ParenthesizedExpression_strategy)
+@settings(max_examples=50)
+def test_dom_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, dom_ParenthesizedExpression)
+
+@given(instance=dom_ThisExpression_strategy)
+@settings(max_examples=50)
+def test_dom_thisexpression_instantiation(instance):
+    assert isinstance(instance, dom_ThisExpression)
+
+@given(instance=dom_CallExpression_strategy)
+@settings(max_examples=50)
+def test_dom_callexpression_instantiation(instance):
+    assert isinstance(instance, dom_CallExpression)
+
+@given(instance=dom_ObjectLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_objectliteral_instantiation(instance):
+    assert isinstance(instance, dom_ObjectLiteral)
+
+@given(instance=dom_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_booleanliteral_instantiation(instance):
+    assert isinstance(instance, dom_BooleanLiteral)
+
+
+
+@given(instance=dom_BooleanLiteral_strategy)
+def test_dom_booleanliteral_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=dom_ArrayLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_arrayliteral_instantiation(instance):
+    assert isinstance(instance, dom_ArrayLiteral)
+
+@given(instance=dom_ConditionalExpression_strategy)
+@settings(max_examples=50)
+def test_dom_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, dom_ConditionalExpression)
+
+@given(instance=dom_NullLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_nullliteral_instantiation(instance):
+    assert isinstance(instance, dom_NullLiteral)
+
+@given(instance=dom_XmlInitializer_strategy)
+@settings(max_examples=50)
+def test_dom_xmlinitializer_instantiation(instance):
+    assert isinstance(instance, dom_XmlInitializer)
+
+@given(instance=dom_ArrayAccessExpression_strategy)
+@settings(max_examples=50)
+def test_dom_arrayaccessexpression_instantiation(instance):
+    assert isinstance(instance, dom_ArrayAccessExpression)
+
+@given(instance=dom_NewExpression_strategy)
+@settings(max_examples=50)
+def test_dom_newexpression_instantiation(instance):
+    assert isinstance(instance, dom_NewExpression)
+
+@given(instance=dom_RegularExpressionLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_regularexpressionliteral_instantiation(instance):
+    assert isinstance(instance, dom_RegularExpressionLiteral)
+
+
+
+@given(instance=dom_RegularExpressionLiteral_strategy)
+def test_dom_regularexpressionliteral_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=dom_VariableReference_strategy)
+@settings(max_examples=50)
+def test_dom_variablereference_instantiation(instance):
+    assert isinstance(instance, dom_VariableReference)
 
 @given(instance=IProperty_strategy)
 @settings(max_examples=50)
 def test_iproperty_instantiation(instance):
     assert isinstance(instance, IProperty)
 
-@given(instance=dom::PropertyIdentifier_strategy)
+@given(instance=dom_PropertyIdentifier_strategy)
 @settings(max_examples=50)
-def test_dom::propertyidentifier_instantiation(instance):
-    assert isinstance(instance, dom::PropertyIdentifier)
+def test_dom_propertyidentifier_instantiation(instance):
+    assert isinstance(instance, dom_PropertyIdentifier)
 
 @given(instance=IPropertySelector_strategy)
 @settings(max_examples=50)
 def test_ipropertyselector_instantiation(instance):
     assert isinstance(instance, IPropertySelector)
 
-@given(instance=dom::WildcardIdentifier_strategy)
+@given(instance=dom_WildcardIdentifier_strategy)
 @settings(max_examples=50)
-def test_dom::wildcardidentifier_instantiation(instance):
-    assert isinstance(instance, dom::WildcardIdentifier)
+def test_dom_wildcardidentifier_instantiation(instance):
+    assert isinstance(instance, dom_WildcardIdentifier)
 
 @given(instance=IPropertyName_strategy)
 @settings(max_examples=50)
 def test_ipropertyname_instantiation(instance):
     assert isinstance(instance, IPropertyName)
 
-@given(instance=dom::NumericLiteral_strategy)
+@given(instance=dom_NumericLiteral_strategy)
 @settings(max_examples=50)
-def test_dom::numericliteral_instantiation(instance):
-    assert isinstance(instance, dom::NumericLiteral)
-
-@given(instance=dom::NumericLiteral_strategy)
-def test_dom::numericliteral_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_dom_numericliteral_instantiation(instance):
+    assert isinstance(instance, dom_NumericLiteral)
 
 
-@given(instance=dom::NumericLiteral_strategy)
-def test_dom::numericliteral_text_setter(instance):
+
+@given(instance=dom_NumericLiteral_strategy)
+def test_dom_numericliteral_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=dom::StringLiteral_strategy)
+@given(instance=dom_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_dom::stringliteral_instantiation(instance):
-    assert isinstance(instance, dom::StringLiteral)
-
-@given(instance=dom::StringLiteral_strategy)
-def test_dom::stringliteral_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_dom_stringliteral_instantiation(instance):
+    assert isinstance(instance, dom_StringLiteral)
 
 
-@given(instance=dom::StringLiteral_strategy)
-def test_dom::stringliteral_text_setter(instance):
+
+@given(instance=dom_StringLiteral_strategy)
+def test_dom_stringliteral_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -2412,152 +2385,137 @@ def test_dom::stringliteral_text_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=dom::IProperty_strategy)
+@given(instance=dom_Source_strategy)
 @settings(max_examples=50)
-def test_dom::iproperty_instantiation(instance):
-    assert isinstance(instance, dom::IProperty)
+def test_dom_source_instantiation(instance):
+    assert isinstance(instance, dom_Source)
 
-@given(instance=dom::SwitchElement_strategy)
+@given(instance=dom_SwitchElement_strategy)
 @settings(max_examples=50)
-def test_dom::switchelement_instantiation(instance):
-    assert isinstance(instance, dom::SwitchElement)
+def test_dom_switchelement_instantiation(instance):
+    assert isinstance(instance, dom_SwitchElement)
 
-@given(instance=dom::Identifier_strategy)
+@given(instance=dom_Parameter_strategy)
 @settings(max_examples=50)
-def test_dom::identifier_instantiation(instance):
-    assert isinstance(instance, dom::Identifier)
+def test_dom_parameter_instantiation(instance):
+    assert isinstance(instance, dom_Parameter)
 
-@given(instance=dom::Identifier_strategy)
-def test_dom::identifier_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=dom_IProperty_strategy)
+@settings(max_examples=50)
+def test_dom_iproperty_instantiation(instance):
+    assert isinstance(instance, dom_IProperty)
+
+@given(instance=dom_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, dom_VariableDeclaration)
+
+@given(instance=dom_FinallyClause_strategy)
+@settings(max_examples=50)
+def test_dom_finallyclause_instantiation(instance):
+    assert isinstance(instance, dom_FinallyClause)
+
+@given(instance=dom_Label_strategy)
+@settings(max_examples=50)
+def test_dom_label_instantiation(instance):
+    assert isinstance(instance, dom_Label)
 
 
-@given(instance=dom::Identifier_strategy)
-def test_dom::identifier_name_setter(instance):
+
+@given(instance=dom_Label_strategy)
+def test_dom_label_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dom::CatchClause_strategy)
+@given(instance=dom_IForInitializer_strategy)
 @settings(max_examples=50)
-def test_dom::catchclause_instantiation(instance):
-    assert isinstance(instance, dom::CatchClause)
+def test_dom_iforinitializer_instantiation(instance):
+    assert isinstance(instance, dom_IForInitializer)
 
-@given(instance=dom::VariableDeclaration_strategy)
+@given(instance=dom_PropertyAssignment_strategy)
 @settings(max_examples=50)
-def test_dom::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, dom::VariableDeclaration)
+def test_dom_propertyassignment_instantiation(instance):
+    assert isinstance(instance, dom_PropertyAssignment)
 
-@given(instance=dom::ISelector_strategy)
+@given(instance=dom_Expression_strategy)
 @settings(max_examples=50)
-def test_dom::iselector_instantiation(instance):
-    assert isinstance(instance, dom::ISelector)
+def test_dom_expression_instantiation(instance):
+    assert isinstance(instance, dom_Expression)
 
-@given(instance=dom::PropertyAssignment_strategy)
+@given(instance=dom_CatchClause_strategy)
 @settings(max_examples=50)
-def test_dom::propertyassignment_instantiation(instance):
-    assert isinstance(instance, dom::PropertyAssignment)
+def test_dom_catchclause_instantiation(instance):
+    assert isinstance(instance, dom_CatchClause)
 
-@given(instance=dom::FinallyClause_strategy)
+@given(instance=dom_Statement_strategy)
 @settings(max_examples=50)
-def test_dom::finallyclause_instantiation(instance):
-    assert isinstance(instance, dom::FinallyClause)
+def test_dom_statement_instantiation(instance):
+    assert isinstance(instance, dom_Statement)
 
-@given(instance=dom::Expression_strategy)
+@given(instance=dom_ISelector_strategy)
 @settings(max_examples=50)
-def test_dom::expression_instantiation(instance):
-    assert isinstance(instance, dom::Expression)
+def test_dom_iselector_instantiation(instance):
+    assert isinstance(instance, dom_ISelector)
 
-@given(instance=dom::IForInitializer_strategy)
+@given(instance=dom_Identifier_strategy)
 @settings(max_examples=50)
-def test_dom::iforinitializer_instantiation(instance):
-    assert isinstance(instance, dom::IForInitializer)
-
-@given(instance=dom::Label_strategy)
-@settings(max_examples=50)
-def test_dom::label_instantiation(instance):
-    assert isinstance(instance, dom::Label)
-
-@given(instance=dom::Label_strategy)
-def test_dom::label_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dom_identifier_instantiation(instance):
+    assert isinstance(instance, dom_Identifier)
 
 
-@given(instance=dom::Label_strategy)
-def test_dom::label_name_setter(instance):
+
+@given(instance=dom_Identifier_strategy)
+def test_dom_identifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dom::IArrayElement_strategy)
+@given(instance=dom_IArrayElement_strategy)
 @settings(max_examples=50)
-def test_dom::iarrayelement_instantiation(instance):
-    assert isinstance(instance, dom::IArrayElement)
+def test_dom_iarrayelement_instantiation(instance):
+    assert isinstance(instance, dom_IArrayElement)
 
-@given(instance=dom::XmlFragment_strategy)
+@given(instance=dom_IPropertyName_strategy)
 @settings(max_examples=50)
-def test_dom::xmlfragment_instantiation(instance):
-    assert isinstance(instance, dom::XmlFragment)
+def test_dom_ipropertyname_instantiation(instance):
+    assert isinstance(instance, dom_IPropertyName)
 
-@given(instance=dom::Parameter_strategy)
+@given(instance=dom_XmlFragment_strategy)
 @settings(max_examples=50)
-def test_dom::parameter_instantiation(instance):
-    assert isinstance(instance, dom::Parameter)
+def test_dom_xmlfragment_instantiation(instance):
+    assert isinstance(instance, dom_XmlFragment)
 
-@given(instance=dom::IPropertyName_strategy)
+@given(instance=dom_Comment_strategy)
 @settings(max_examples=50)
-def test_dom::ipropertyname_instantiation(instance):
-    assert isinstance(instance, dom::IPropertyName)
-
-@given(instance=dom::Statement_strategy)
-@settings(max_examples=50)
-def test_dom::statement_instantiation(instance):
-    assert isinstance(instance, dom::Statement)
-
-@given(instance=dom::Source_strategy)
-@settings(max_examples=50)
-def test_dom::source_instantiation(instance):
-    assert isinstance(instance, dom::Source)
-
-@given(instance=dom::Comment_strategy)
-@settings(max_examples=50)
-def test_dom::comment_instantiation(instance):
-    assert isinstance(instance, dom::Comment)
-
-@given(instance=dom::Comment_strategy)
-def test_dom::comment_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_dom_comment_instantiation(instance):
+    assert isinstance(instance, dom_Comment)
 
 
-@given(instance=dom::Comment_strategy)
-def test_dom::comment_text_setter(instance):
+
+@given(instance=dom_Comment_strategy)
+def test_dom_comment_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=dom::Node_strategy)
+@given(instance=dom_Node_strategy)
 @settings(max_examples=50)
-def test_dom::node_instantiation(instance):
-    assert isinstance(instance, dom::Node)
-
-@given(instance=dom::Node_strategy)
-def test_dom::node_begin_type(instance):
-    assert isinstance(instance.begin, int)
+def test_dom_node_instantiation(instance):
+    assert isinstance(instance, dom_Node)
 
 
-@given(instance=dom::Node_strategy)
-def test_dom::node_begin_setter(instance):
-    original = instance.begin
-    instance.begin = original
-    assert instance.begin == original
 
-@given(instance=dom::Node_strategy)
-def test_dom::node_end_type(instance):
-    assert isinstance(instance.end, int)
-
-
-@given(instance=dom::Node_strategy)
-def test_dom::node_end_setter(instance):
+@given(instance=dom_Node_strategy)
+def test_dom_node_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
+
+
+
+@given(instance=dom_Node_strategy)
+def test_dom_node_begin_setter(instance):
+    original = instance.begin
+    instance.begin = original
+    assert instance.begin == original

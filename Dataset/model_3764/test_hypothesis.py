@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ecore::EPackage,
-    ecore::EClass,
+from python_code import (
+    ecore_EPackage,
+    ecore_EClass,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_ecore::epackage_is_not_abstract():
-    assert not inspect.isabstract(ecore::EPackage)
+def test_ecore_epackage_is_not_abstract():
+    assert not inspect.isabstract(ecore_EPackage)
 
 
-def test_ecore::epackage_constructor_exists():
-    assert callable(ecore::EPackage.__init__)
+def test_ecore_epackage_constructor_exists():
+    assert callable(ecore_EPackage.__init__)
 
 
-def test_ecore::epackage_constructor_args():
-    sig = inspect.signature(ecore::EPackage.__init__)
+def test_ecore_epackage_constructor_args():
+    sig = inspect.signature(ecore_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecore::eclass_is_not_abstract():
-    assert not inspect.isabstract(ecore::EClass)
+def test_ecore_eclass_is_not_abstract():
+    assert not inspect.isabstract(ecore_EClass)
 
 
-def test_ecore::eclass_constructor_exists():
-    assert callable(ecore::EClass.__init__)
+def test_ecore_eclass_constructor_exists():
+    assert callable(ecore_EClass.__init__)
 
 
-def test_ecore::eclass_constructor_args():
-    sig = inspect.signature(ecore::EClass.__init__)
+def test_ecore_eclass_constructor_args():
+    sig = inspect.signature(ecore_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ecore::EPackage_strategy = st.builds(
-    ecore::EPackage,
+ecore_EPackage_strategy = st.builds(
+    ecore_EPackage,
 )
-ecore::EClass_strategy = st.builds(
-    ecore::EClass,
+ecore_EClass_strategy = st.builds(
+    ecore_EClass,
 )
 
-@given(instance=ecore::EPackage_strategy)
+@given(instance=ecore_EPackage_strategy)
 @settings(max_examples=50)
-def test_ecore::epackage_instantiation(instance):
-    assert isinstance(instance, ecore::EPackage)
+def test_ecore_epackage_instantiation(instance):
+    assert isinstance(instance, ecore_EPackage)
 
-@given(instance=ecore::EClass_strategy)
+@given(instance=ecore_EClass_strategy)
 @settings(max_examples=50)
-def test_ecore::eclass_instantiation(instance):
-    assert isinstance(instance, ecore::EClass)
+def test_ecore_eclass_instantiation(instance):
+    assert isinstance(instance, ecore_EClass)

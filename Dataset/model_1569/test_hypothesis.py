@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Edge,
-    graph::Vertice,
-    graph::Graph,
+from python_code import (
+    graph_Edge,
+    graph_Vertice,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(graph::Edge)
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(graph_Edge)
 
 
-def test_graph::edge_constructor_exists():
-    assert callable(graph::Edge.__init__)
+def test_graph_edge_constructor_exists():
+    assert callable(graph_Edge.__init__)
 
 
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(graph::Edge.__init__)
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(graph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::vertice_is_not_abstract():
-    assert not inspect.isabstract(graph::Vertice)
+def test_graph_vertice_is_not_abstract():
+    assert not inspect.isabstract(graph_Vertice)
 
 
-def test_graph::vertice_constructor_exists():
-    assert callable(graph::Vertice.__init__)
+def test_graph_vertice_constructor_exists():
+    assert callable(graph_Vertice.__init__)
 
 
-def test_graph::vertice_constructor_args():
-    sig = inspect.signature(graph::Vertice.__init__)
+def test_graph_vertice_constructor_args():
+    sig = inspect.signature(graph_Vertice.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_graph::vertice_has_label():
-    assert hasattr(graph::Vertice, "label")
+def test_graph_vertice_has_label():
+    assert hasattr(graph_Vertice, "label")
     descriptor = None
-    for klass in graph::Vertice.__mro__:
+    for klass in graph_Vertice.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -55,16 +55,16 @@ def test_graph::vertice_has_label():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Edge_strategy = st.builds(
-    graph::Edge,
+graph_Edge_strategy = st.builds(
+    graph_Edge,
 )
-graph::Vertice_strategy = st.builds(
-    graph::Vertice,
+graph_Vertice_strategy = st.builds(
+    graph_Vertice,
     label=
         safe_text
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
 )
 
-@given(instance=graph::Edge_strategy)
+@given(instance=graph_Edge_strategy)
 @settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, graph::Edge)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, graph_Edge)
 
-@given(instance=graph::Vertice_strategy)
+@given(instance=graph_Vertice_strategy)
 @settings(max_examples=50)
-def test_graph::vertice_instantiation(instance):
-    assert isinstance(instance, graph::Vertice)
-
-@given(instance=graph::Vertice_strategy)
-def test_graph::vertice_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_graph_vertice_instantiation(instance):
+    assert isinstance(instance, graph_Vertice)
 
 
-@given(instance=graph::Vertice_strategy)
-def test_graph::vertice_label_setter(instance):
+
+@given(instance=graph_Vertice_strategy)
+def test_graph_vertice_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)

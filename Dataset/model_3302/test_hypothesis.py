@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trigger::Decorator,
-    trigger::Predicate,
+from python_code import (
+    trigger_Decorator,
+    trigger_Predicate,
     Decorator,
-    trigger::Trigger,
+    trigger_Trigger,
 )
 
 # =============================================================================
@@ -18,30 +18,30 @@ from classes import (
 
 
 
-def test_trigger::decorator_is_not_abstract():
-    assert not inspect.isabstract(trigger::Decorator)
+def test_trigger_decorator_is_not_abstract():
+    assert not inspect.isabstract(trigger_Decorator)
 
 
-def test_trigger::decorator_constructor_exists():
-    assert callable(trigger::Decorator.__init__)
+def test_trigger_decorator_constructor_exists():
+    assert callable(trigger_Decorator.__init__)
 
 
-def test_trigger::decorator_constructor_args():
-    sig = inspect.signature(trigger::Decorator.__init__)
+def test_trigger_decorator_constructor_args():
+    sig = inspect.signature(trigger_Decorator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trigger::predicate_is_not_abstract():
-    assert not inspect.isabstract(trigger::Predicate)
+def test_trigger_predicate_is_not_abstract():
+    assert not inspect.isabstract(trigger_Predicate)
 
 
-def test_trigger::predicate_constructor_exists():
-    assert callable(trigger::Predicate.__init__)
+def test_trigger_predicate_constructor_exists():
+    assert callable(trigger_Predicate.__init__)
 
 
-def test_trigger::predicate_constructor_args():
-    sig = inspect.signature(trigger::Predicate.__init__)
+def test_trigger_predicate_constructor_args():
+    sig = inspect.signature(trigger_Predicate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -60,16 +60,16 @@ def test_decorator_constructor_args():
 
 
 
-def test_trigger::trigger_is_not_abstract():
-    assert not inspect.isabstract(trigger::Trigger)
+def test_trigger_trigger_is_not_abstract():
+    assert not inspect.isabstract(trigger_Trigger)
 
 
-def test_trigger::trigger_constructor_exists():
-    assert callable(trigger::Trigger.__init__)
+def test_trigger_trigger_constructor_exists():
+    assert callable(trigger_Trigger.__init__)
 
 
-def test_trigger::trigger_constructor_args():
-    sig = inspect.signature(trigger::Trigger.__init__)
+def test_trigger_trigger_constructor_args():
+    sig = inspect.signature(trigger_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trigger::Decorator_strategy = st.builds(
-    trigger::Decorator,
+trigger_Decorator_strategy = st.builds(
+    trigger_Decorator,
 )
-trigger::Predicate_strategy = st.builds(
-    trigger::Predicate,
+trigger_Predicate_strategy = st.builds(
+    trigger_Predicate,
 )
 Decorator_strategy = st.builds(
     Decorator,
 )
-trigger::Trigger_strategy = st.builds(
-    trigger::Trigger,
+trigger_Trigger_strategy = st.builds(
+    trigger_Trigger,
 )
 
-@given(instance=trigger::Decorator_strategy)
+@given(instance=trigger_Decorator_strategy)
 @settings(max_examples=50)
-def test_trigger::decorator_instantiation(instance):
-    assert isinstance(instance, trigger::Decorator)
+def test_trigger_decorator_instantiation(instance):
+    assert isinstance(instance, trigger_Decorator)
 
-@given(instance=trigger::Predicate_strategy)
+@given(instance=trigger_Predicate_strategy)
 @settings(max_examples=50)
-def test_trigger::predicate_instantiation(instance):
-    assert isinstance(instance, trigger::Predicate)
+def test_trigger_predicate_instantiation(instance):
+    assert isinstance(instance, trigger_Predicate)
 
 @given(instance=Decorator_strategy)
 @settings(max_examples=50)
 def test_decorator_instantiation(instance):
     assert isinstance(instance, Decorator)
 
-@given(instance=trigger::Trigger_strategy)
+@given(instance=trigger_Trigger_strategy)
 @settings(max_examples=50)
-def test_trigger::trigger_instantiation(instance):
-    assert isinstance(instance, trigger::Trigger)
+def test_trigger_trigger_instantiation(instance):
+    assert isinstance(instance, trigger_Trigger)

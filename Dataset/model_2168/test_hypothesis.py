@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::ResourcePlot,
-    graph::ResourceGraph,
-    graph::ResourceGraphs,
+from python_code import (
+    graph_ResourcePlot,
+    graph_ResourceGraph,
+    graph_ResourceGraphs,
     FitPolicy,
 )
 
@@ -18,87 +18,87 @@ from classes import (
 
 
 
-def test_graph::resourceplot_is_not_abstract():
-    assert not inspect.isabstract(graph::ResourcePlot)
+def test_graph_resourceplot_is_not_abstract():
+    assert not inspect.isabstract(graph_ResourcePlot)
 
 
-def test_graph::resourceplot_constructor_exists():
-    assert callable(graph::ResourcePlot.__init__)
+def test_graph_resourceplot_constructor_exists():
+    assert callable(graph_ResourcePlot.__init__)
 
 
-def test_graph::resourceplot_constructor_args():
-    sig = inspect.signature(graph::ResourcePlot.__init__)
+def test_graph_resourceplot_constructor_args():
+    sig = inspect.signature(graph_ResourcePlot.__init__)
     params = list(sig.parameters.keys())
+    assert "max" in params, "Missing parameter 'max'"
+    assert "fit" in params, "Missing parameter 'fit'"
     assert "min" in params, "Missing parameter 'min'"
     assert "name" in params, "Missing parameter 'name'"
     assert "rgb" in params, "Missing parameter 'rgb'"
-    assert "max" in params, "Missing parameter 'max'"
-    assert "fit" in params, "Missing parameter 'fit'"
 
-def test_graph::resourceplot_has_min():
-    assert hasattr(graph::ResourcePlot, "min")
+def test_graph_resourceplot_has_max():
+    assert hasattr(graph_ResourcePlot, "max")
     descriptor = None
-    for klass in graph::ResourcePlot.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graph::resourceplot_has_name():
-    assert hasattr(graph::ResourcePlot, "name")
-    descriptor = None
-    for klass in graph::ResourcePlot.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graph::resourceplot_has_rgb():
-    assert hasattr(graph::ResourcePlot, "rgb")
-    descriptor = None
-    for klass in graph::ResourcePlot.__mro__:
-        if "rgb" in klass.__dict__:
-            descriptor = klass.__dict__["rgb"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graph::resourceplot_has_max():
-    assert hasattr(graph::ResourcePlot, "max")
-    descriptor = None
-    for klass in graph::ResourcePlot.__mro__:
+    for klass in graph_ResourcePlot.__mro__:
         if "max" in klass.__dict__:
             descriptor = klass.__dict__["max"]
             break
     assert isinstance(descriptor, property)
 
-def test_graph::resourceplot_has_fit():
-    assert hasattr(graph::ResourcePlot, "fit")
+def test_graph_resourceplot_has_fit():
+    assert hasattr(graph_ResourcePlot, "fit")
     descriptor = None
-    for klass in graph::ResourcePlot.__mro__:
+    for klass in graph_ResourcePlot.__mro__:
         if "fit" in klass.__dict__:
             descriptor = klass.__dict__["fit"]
             break
     assert isinstance(descriptor, property)
 
+def test_graph_resourceplot_has_min():
+    assert hasattr(graph_ResourcePlot, "min")
+    descriptor = None
+    for klass in graph_ResourcePlot.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graph_resourceplot_has_name():
+    assert hasattr(graph_ResourcePlot, "name")
+    descriptor = None
+    for klass in graph_ResourcePlot.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graph_resourceplot_has_rgb():
+    assert hasattr(graph_ResourcePlot, "rgb")
+    descriptor = None
+    for klass in graph_ResourcePlot.__mro__:
+        if "rgb" in klass.__dict__:
+            descriptor = klass.__dict__["rgb"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graph::resourcegraph_is_not_abstract():
-    assert not inspect.isabstract(graph::ResourceGraph)
+
+def test_graph_resourcegraph_is_not_abstract():
+    assert not inspect.isabstract(graph_ResourceGraph)
 
 
-def test_graph::resourcegraph_constructor_exists():
-    assert callable(graph::ResourceGraph.__init__)
+def test_graph_resourcegraph_constructor_exists():
+    assert callable(graph_ResourceGraph.__init__)
 
 
-def test_graph::resourcegraph_constructor_args():
-    sig = inspect.signature(graph::ResourceGraph.__init__)
+def test_graph_resourcegraph_constructor_args():
+    sig = inspect.signature(graph_ResourceGraph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::resourcegraph_has_name():
-    assert hasattr(graph::ResourceGraph, "name")
+def test_graph_resourcegraph_has_name():
+    assert hasattr(graph_ResourceGraph, "name")
     descriptor = None
-    for klass in graph::ResourceGraph.__mro__:
+    for klass in graph_ResourceGraph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,16 +106,16 @@ def test_graph::resourcegraph_has_name():
 
 
 
-def test_graph::resourcegraphs_is_not_abstract():
-    assert not inspect.isabstract(graph::ResourceGraphs)
+def test_graph_resourcegraphs_is_not_abstract():
+    assert not inspect.isabstract(graph_ResourceGraphs)
 
 
-def test_graph::resourcegraphs_constructor_exists():
-    assert callable(graph::ResourceGraphs.__init__)
+def test_graph_resourcegraphs_constructor_exists():
+    assert callable(graph_ResourceGraphs.__init__)
 
 
-def test_graph::resourcegraphs_constructor_args():
-    sig = inspect.signature(graph::ResourceGraphs.__init__)
+def test_graph_resourcegraphs_constructor_args():
+    sig = inspect.signature(graph_ResourceGraphs.__init__)
     params = list(sig.parameters.keys())
 
 def test_fitpolicy_exists():
@@ -126,8 +126,8 @@ def test_fitpolicy_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FitPolicy]
     expected_literals = [
-        "AUTO",
         "CUSTOM",
+        "AUTO",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -145,105 +145,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::ResourcePlot_strategy = st.builds(
-    graph::ResourcePlot,
+graph_ResourcePlot_strategy = st.builds(
+    graph_ResourcePlot,
+    max=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    fit=
+        safe_text,
     min=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
         safe_text,
     rgb=
-        safe_text,
-    max=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    fit=
         safe_text
 )
-graph::ResourceGraph_strategy = st.builds(
-    graph::ResourceGraph,
+graph_ResourceGraph_strategy = st.builds(
+    graph_ResourceGraph,
     name=
         safe_text
 )
-graph::ResourceGraphs_strategy = st.builds(
-    graph::ResourceGraphs,
+graph_ResourceGraphs_strategy = st.builds(
+    graph_ResourceGraphs,
 )
 
-@given(instance=graph::ResourcePlot_strategy)
+@given(instance=graph_ResourcePlot_strategy)
 @settings(max_examples=50)
-def test_graph::resourceplot_instantiation(instance):
-    assert isinstance(instance, graph::ResourcePlot)
-
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_min_type(instance):
-    assert isinstance(instance.min, float)
+def test_graph_resourceplot_instantiation(instance):
+    assert isinstance(instance, graph_ResourcePlot)
 
 
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_min_setter(instance):
-    original = instance.min
-    instance.min = original
-    assert instance.min == original
 
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_rgb_type(instance):
-    assert isinstance(instance.rgb, str)
-
-
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_rgb_setter(instance):
-    original = instance.rgb
-    instance.rgb = original
-    assert instance.rgb == original
-
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_max_type(instance):
-    assert isinstance(instance.max, float)
-
-
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_max_setter(instance):
+@given(instance=graph_ResourcePlot_strategy)
+def test_graph_resourceplot_max_setter(instance):
     original = instance.max
     instance.max = original
     assert instance.max == original
 
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_fit_type(instance):
-    assert isinstance(instance.fit, str)
 
 
-@given(instance=graph::ResourcePlot_strategy)
-def test_graph::resourceplot_fit_setter(instance):
+@given(instance=graph_ResourcePlot_strategy)
+def test_graph_resourceplot_fit_setter(instance):
     original = instance.fit
     instance.fit = original
     assert instance.fit == original
 
-@given(instance=graph::ResourceGraph_strategy)
-@settings(max_examples=50)
-def test_graph::resourcegraph_instantiation(instance):
-    assert isinstance(instance, graph::ResourceGraph)
-
-@given(instance=graph::ResourceGraph_strategy)
-def test_graph::resourcegraph_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=graph::ResourceGraph_strategy)
-def test_graph::resourcegraph_name_setter(instance):
+@given(instance=graph_ResourcePlot_strategy)
+def test_graph_resourceplot_min_setter(instance):
+    original = instance.min
+    instance.min = original
+    assert instance.min == original
+
+
+
+@given(instance=graph_ResourcePlot_strategy)
+def test_graph_resourceplot_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graph::ResourceGraphs_strategy)
+
+
+@given(instance=graph_ResourcePlot_strategy)
+def test_graph_resourceplot_rgb_setter(instance):
+    original = instance.rgb
+    instance.rgb = original
+    assert instance.rgb == original
+
+@given(instance=graph_ResourceGraph_strategy)
 @settings(max_examples=50)
-def test_graph::resourcegraphs_instantiation(instance):
-    assert isinstance(instance, graph::ResourceGraphs)
+def test_graph_resourcegraph_instantiation(instance):
+    assert isinstance(instance, graph_ResourceGraph)
+
+
+
+@given(instance=graph_ResourceGraph_strategy)
+def test_graph_resourcegraph_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=graph_ResourceGraphs_strategy)
+@settings(max_examples=50)
+def test_graph_resourcegraphs_instantiation(instance):
+    assert isinstance(instance, graph_ResourceGraphs)

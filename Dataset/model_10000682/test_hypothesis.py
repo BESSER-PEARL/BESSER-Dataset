@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Admin1,
@@ -63,9 +63,18 @@ def test_student1_constructor_exists():
 def test_student1_constructor_args():
     sig = inspect.signature(Student1.__init__)
     params = list(sig.parameters.keys())
+    assert "course" in params, "Missing parameter 'course'"
     assert "yearOfStudy" in params, "Missing parameter 'yearOfStudy'"
     assert "school" in params, "Missing parameter 'school'"
-    assert "course" in params, "Missing parameter 'course'"
+
+def test_student1_has_course():
+    assert hasattr(Student1, "course")
+    descriptor = None
+    for klass in Student1.__mro__:
+        if "course" in klass.__dict__:
+            descriptor = klass.__dict__["course"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_student1_has_yearOfStudy():
     assert hasattr(Student1, "yearOfStudy")
@@ -82,15 +91,6 @@ def test_student1_has_school():
     for klass in Student1.__mro__:
         if "school" in klass.__dict__:
             descriptor = klass.__dict__["school"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_student1_has_course():
-    assert hasattr(Student1, "course")
-    descriptor = None
-    for klass in Student1.__mro__:
-        if "course" in klass.__dict__:
-            descriptor = klass.__dict__["course"]
             break
     assert isinstance(descriptor, property)
 
@@ -155,9 +155,18 @@ def test_comment1_constructor_exists():
 def test_comment1_constructor_args():
     sig = inspect.signature(Comment1.__init__)
     params = list(sig.parameters.keys())
+    assert "body" in params, "Missing parameter 'body'"
     assert "date" in params, "Missing parameter 'date'"
     assert "author" in params, "Missing parameter 'author'"
-    assert "body" in params, "Missing parameter 'body'"
+
+def test_comment1_has_body():
+    assert hasattr(Comment1, "body")
+    descriptor = None
+    for klass in Comment1.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_comment1_has_date():
     assert hasattr(Comment1, "date")
@@ -177,15 +186,6 @@ def test_comment1_has_author():
             break
     assert isinstance(descriptor, property)
 
-def test_comment1_has_body():
-    assert hasattr(Comment1, "body")
-    descriptor = None
-    for klass in Comment1.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_location1_is_not_abstract():
@@ -199,9 +199,18 @@ def test_location1_constructor_exists():
 def test_location1_constructor_args():
     sig = inspect.signature(Location1.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "capacity" in params, "Missing parameter 'capacity'"
     assert "address" in params, "Missing parameter 'address'"
-    assert "name" in params, "Missing parameter 'name'"
+
+def test_location1_has_name():
+    assert hasattr(Location1, "name")
+    descriptor = None
+    for klass in Location1.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_location1_has_capacity():
     assert hasattr(Location1, "capacity")
@@ -221,15 +230,6 @@ def test_location1_has_address():
             break
     assert isinstance(descriptor, property)
 
-def test_location1_has_name():
-    assert hasattr(Location1, "name")
-    descriptor = None
-    for klass in Location1.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_event1_is_not_abstract():
@@ -243,58 +243,22 @@ def test_event1_constructor_exists():
 def test_event1_constructor_args():
     sig = inspect.signature(Event1.__init__)
     params = list(sig.parameters.keys())
-    assert "joined" in params, "Missing parameter 'joined'"
-    assert "isOpen" in params, "Missing parameter 'isOpen'"
-    assert "size" in params, "Missing parameter 'size'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "date" in params, "Missing parameter 'date'"
-    assert "invites" in params, "Missing parameter 'invites'"
-    assert "eventOwner" in params, "Missing parameter 'eventOwner'"
     assert "rating" in params, "Missing parameter 'rating'"
+    assert "invites" in params, "Missing parameter 'invites'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "joined" in params, "Missing parameter 'joined'"
+    assert "date" in params, "Missing parameter 'date'"
+    assert "eventOwner" in params, "Missing parameter 'eventOwner'"
     assert "location" in params, "Missing parameter 'location'"
+    assert "size" in params, "Missing parameter 'size'"
+    assert "isOpen" in params, "Missing parameter 'isOpen'"
 
-def test_event1_has_joined():
-    assert hasattr(Event1, "joined")
+def test_event1_has_rating():
+    assert hasattr(Event1, "rating")
     descriptor = None
     for klass in Event1.__mro__:
-        if "joined" in klass.__dict__:
-            descriptor = klass.__dict__["joined"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event1_has_isOpen():
-    assert hasattr(Event1, "isOpen")
-    descriptor = None
-    for klass in Event1.__mro__:
-        if "isOpen" in klass.__dict__:
-            descriptor = klass.__dict__["isOpen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event1_has_size():
-    assert hasattr(Event1, "size")
-    descriptor = None
-    for klass in Event1.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event1_has_name():
-    assert hasattr(Event1, "name")
-    descriptor = None
-    for klass in Event1.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event1_has_date():
-    assert hasattr(Event1, "date")
-    descriptor = None
-    for klass in Event1.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
+        if "rating" in klass.__dict__:
+            descriptor = klass.__dict__["rating"]
             break
     assert isinstance(descriptor, property)
 
@@ -307,6 +271,33 @@ def test_event1_has_invites():
             break
     assert isinstance(descriptor, property)
 
+def test_event1_has_name():
+    assert hasattr(Event1, "name")
+    descriptor = None
+    for klass in Event1.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event1_has_joined():
+    assert hasattr(Event1, "joined")
+    descriptor = None
+    for klass in Event1.__mro__:
+        if "joined" in klass.__dict__:
+            descriptor = klass.__dict__["joined"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event1_has_date():
+    assert hasattr(Event1, "date")
+    descriptor = None
+    for klass in Event1.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_event1_has_eventOwner():
     assert hasattr(Event1, "eventOwner")
     descriptor = None
@@ -316,21 +307,30 @@ def test_event1_has_eventOwner():
             break
     assert isinstance(descriptor, property)
 
-def test_event1_has_rating():
-    assert hasattr(Event1, "rating")
-    descriptor = None
-    for klass in Event1.__mro__:
-        if "rating" in klass.__dict__:
-            descriptor = klass.__dict__["rating"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_event1_has_location():
     assert hasattr(Event1, "location")
     descriptor = None
     for klass in Event1.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event1_has_size():
+    assert hasattr(Event1, "size")
+    descriptor = None
+    for klass in Event1.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event1_has_isOpen():
+    assert hasattr(Event1, "isOpen")
+    descriptor = None
+    for klass in Event1.__mro__:
+        if "isOpen" in klass.__dict__:
+            descriptor = klass.__dict__["isOpen"]
             break
     assert isinstance(descriptor, property)
 
@@ -347,20 +347,11 @@ def test_post1_constructor_exists():
 def test_post1_constructor_args():
     sig = inspect.signature(Post1.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "date" in params, "Missing parameter 'date'"
     assert "files" in params, "Missing parameter 'files'"
     assert "body" in params, "Missing parameter 'body'"
     assert "author" in params, "Missing parameter 'author'"
-
-def test_post1_has_date():
-    assert hasattr(Post1, "date")
-    descriptor = None
-    for klass in Post1.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_post1_has_title():
     assert hasattr(Post1, "title")
@@ -368,6 +359,15 @@ def test_post1_has_title():
     for klass in Post1.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_post1_has_date():
+    assert hasattr(Post1, "date")
+    descriptor = None
+    for klass in Post1.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -411,21 +411,12 @@ def test_user1_constructor_exists():
 def test_user1_constructor_args():
     sig = inspect.signature(User1.__init__)
     params = list(sig.parameters.keys())
-    assert "campus" in params, "Missing parameter 'campus'"
     assert "attribute" in params, "Missing parameter 'attribute'"
     assert "name" in params, "Missing parameter 'name'"
     assert "isStaff" in params, "Missing parameter 'isStaff'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "campus" in params, "Missing parameter 'campus'"
     assert "username" in params, "Missing parameter 'username'"
-
-def test_user1_has_campus():
-    assert hasattr(User1, "campus")
-    descriptor = None
-    for klass in User1.__mro__:
-        if "campus" in klass.__dict__:
-            descriptor = klass.__dict__["campus"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_user1_has_attribute():
     assert hasattr(User1, "attribute")
@@ -460,6 +451,15 @@ def test_user1_has_email():
     for klass in User1.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user1_has_campus():
+    assert hasattr(User1, "campus")
+    descriptor = None
+    for klass in User1.__mro__:
+        if "campus" in klass.__dict__:
+            descriptor = klass.__dict__["campus"]
             break
     assert isinstance(descriptor, property)
 
@@ -709,11 +709,11 @@ Admin1_strategy = st.builds(
 )
 Student1_strategy = st.builds(
     Student1,
+    course=
+        safe_text,
     yearOfStudy=
         st.integers(),
     school=
-        safe_text,
-    course=
         safe_text
 )
 Society1_strategy = st.builds(
@@ -728,48 +728,48 @@ Lecturer1_strategy = st.builds(
 )
 Comment1_strategy = st.builds(
     Comment1,
+    body=
+        safe_text,
     date=
         safe_text,
     author=
-        safe_text,
-    body=
         safe_text
 )
 Location1_strategy = st.builds(
     Location1,
+    name=
+        safe_text,
     capacity=
         st.integers(),
     address=
-        safe_text,
-    name=
         safe_text
 )
 Event1_strategy = st.builds(
     Event1,
-    joined=
-        safe_text,
-    isOpen=
-        st.booleans(),
-    size=
+    rating=
         st.integers(),
+    invites=
+        safe_text,
     name=
         safe_text,
-    date=
+    joined=
         safe_text,
-    invites=
+    date=
         safe_text,
     eventOwner=
         st.none(),
-    rating=
-        st.integers(),
     location=
-        st.none()
+        st.none(),
+    size=
+        st.integers(),
+    isOpen=
+        st.booleans()
 )
 Post1_strategy = st.builds(
     Post1,
-    date=
-        safe_text,
     title=
+        safe_text,
+    date=
         safe_text,
     files=
         safe_text,
@@ -780,8 +780,6 @@ Post1_strategy = st.builds(
 )
 User1_strategy = st.builds(
     User1,
-    campus=
-        safe_text,
     attribute=
         safe_text,
     name=
@@ -789,6 +787,8 @@ User1_strategy = st.builds(
     isStaff=
         st.booleans(),
     email=
+        safe_text,
+    campus=
         safe_text,
     username=
         safe_text
@@ -851,31 +851,6 @@ def test_admin1_instantiation(instance):
 def test_student1_instantiation(instance):
     assert isinstance(instance, Student1)
 
-@given(instance=Student1_strategy)
-def test_student1_yearOfStudy_type(instance):
-    assert isinstance(instance.yearOfStudy, int)
-
-
-@given(instance=Student1_strategy)
-def test_student1_yearOfStudy_setter(instance):
-    original = instance.yearOfStudy
-    instance.yearOfStudy = original
-    assert instance.yearOfStudy == original
-
-@given(instance=Student1_strategy)
-def test_student1_school_type(instance):
-    assert isinstance(instance.school, str)
-
-
-@given(instance=Student1_strategy)
-def test_student1_school_setter(instance):
-    original = instance.school
-    instance.school = original
-    assert instance.school == original
-
-@given(instance=Student1_strategy)
-def test_student1_course_type(instance):
-    assert isinstance(instance.course, str)
 
 
 @given(instance=Student1_strategy)
@@ -884,14 +859,27 @@ def test_student1_course_setter(instance):
     instance.course = original
     assert instance.course == original
 
+
+
+@given(instance=Student1_strategy)
+def test_student1_yearOfStudy_setter(instance):
+    original = instance.yearOfStudy
+    instance.yearOfStudy = original
+    assert instance.yearOfStudy == original
+
+
+
+@given(instance=Student1_strategy)
+def test_student1_school_setter(instance):
+    original = instance.school
+    instance.school = original
+    assert instance.school == original
+
 @given(instance=Society1_strategy)
 @settings(max_examples=50)
 def test_society1_instantiation(instance):
     assert isinstance(instance, Society1)
 
-@given(instance=Society1_strategy)
-def test_society1_yearEstablished_type(instance):
-    assert isinstance(instance.yearEstablished, int)
 
 
 @given(instance=Society1_strategy)
@@ -905,9 +893,6 @@ def test_society1_yearEstablished_setter(instance):
 def test_lecturer1_instantiation(instance):
     assert isinstance(instance, Lecturer1)
 
-@given(instance=Lecturer1_strategy)
-def test_lecturer1_school_type(instance):
-    assert isinstance(instance.school, str)
 
 
 @given(instance=Lecturer1_strategy)
@@ -921,31 +906,6 @@ def test_lecturer1_school_setter(instance):
 def test_comment1_instantiation(instance):
     assert isinstance(instance, Comment1)
 
-@given(instance=Comment1_strategy)
-def test_comment1_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=Comment1_strategy)
-def test_comment1_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Comment1_strategy)
-def test_comment1_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=Comment1_strategy)
-def test_comment1_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=Comment1_strategy)
-def test_comment1_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
 @given(instance=Comment1_strategy)
@@ -954,36 +914,27 @@ def test_comment1_body_setter(instance):
     instance.body = original
     assert instance.body == original
 
+
+
+@given(instance=Comment1_strategy)
+def test_comment1_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=Comment1_strategy)
+def test_comment1_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
 @given(instance=Location1_strategy)
 @settings(max_examples=50)
 def test_location1_instantiation(instance):
     assert isinstance(instance, Location1)
 
-@given(instance=Location1_strategy)
-def test_location1_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
-
-
-@given(instance=Location1_strategy)
-def test_location1_capacity_setter(instance):
-    original = instance.capacity
-    instance.capacity = original
-    assert instance.capacity == original
-
-@given(instance=Location1_strategy)
-def test_location1_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Location1_strategy)
-def test_location1_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Location1_strategy)
-def test_location1_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Location1_strategy)
@@ -992,91 +943,27 @@ def test_location1_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Location1_strategy)
+def test_location1_capacity_setter(instance):
+    original = instance.capacity
+    instance.capacity = original
+    assert instance.capacity == original
+
+
+
+@given(instance=Location1_strategy)
+def test_location1_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
 @given(instance=Event1_strategy)
 @settings(max_examples=50)
 def test_event1_instantiation(instance):
     assert isinstance(instance, Event1)
 
-@given(instance=Event1_strategy)
-def test_event1_joined_type(instance):
-    assert isinstance(instance.joined, str)
-
-
-@given(instance=Event1_strategy)
-def test_event1_joined_setter(instance):
-    original = instance.joined
-    instance.joined = original
-    assert instance.joined == original
-
-@given(instance=Event1_strategy)
-def test_event1_isOpen_type(instance):
-    assert isinstance(instance.isOpen, bool)
-
-
-@given(instance=Event1_strategy)
-def test_event1_isOpen_setter(instance):
-    original = instance.isOpen
-    instance.isOpen = original
-    assert instance.isOpen == original
-
-@given(instance=Event1_strategy)
-def test_event1_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=Event1_strategy)
-def test_event1_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=Event1_strategy)
-def test_event1_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Event1_strategy)
-def test_event1_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Event1_strategy)
-def test_event1_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=Event1_strategy)
-def test_event1_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Event1_strategy)
-def test_event1_invites_type(instance):
-    assert isinstance(instance.invites, str)
-
-
-@given(instance=Event1_strategy)
-def test_event1_invites_setter(instance):
-    original = instance.invites
-    instance.invites = original
-    assert instance.invites == original
-
-@given(instance=Event1_strategy)
-def test_event1_eventOwner_type(instance):
-    assert isinstance(instance.eventOwner, user1)
-
-
-@given(instance=Event1_strategy)
-def test_event1_eventOwner_setter(instance):
-    original = instance.eventOwner
-    instance.eventOwner = original
-    assert instance.eventOwner == original
-
-@given(instance=Event1_strategy)
-def test_event1_rating_type(instance):
-    assert isinstance(instance.rating, int)
 
 
 @given(instance=Event1_strategy)
@@ -1085,9 +972,46 @@ def test_event1_rating_setter(instance):
     instance.rating = original
     assert instance.rating == original
 
+
+
 @given(instance=Event1_strategy)
-def test_event1_location_type(instance):
-    assert isinstance(instance.location, location)
+def test_event1_invites_setter(instance):
+    original = instance.invites
+    instance.invites = original
+    assert instance.invites == original
+
+
+
+@given(instance=Event1_strategy)
+def test_event1_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Event1_strategy)
+def test_event1_joined_setter(instance):
+    original = instance.joined
+    instance.joined = original
+    assert instance.joined == original
+
+
+
+@given(instance=Event1_strategy)
+def test_event1_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=Event1_strategy)
+def test_event1_eventOwner_setter(instance):
+    original = instance.eventOwner
+    instance.eventOwner = original
+    assert instance.eventOwner == original
+
 
 
 @given(instance=Event1_strategy)
@@ -1096,25 +1020,27 @@ def test_event1_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
+
+
+@given(instance=Event1_strategy)
+def test_event1_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=Event1_strategy)
+def test_event1_isOpen_setter(instance):
+    original = instance.isOpen
+    instance.isOpen = original
+    assert instance.isOpen == original
+
 @given(instance=Post1_strategy)
 @settings(max_examples=50)
 def test_post1_instantiation(instance):
     assert isinstance(instance, Post1)
 
-@given(instance=Post1_strategy)
-def test_post1_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=Post1_strategy)
-def test_post1_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Post1_strategy)
-def test_post1_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Post1_strategy)
@@ -1123,9 +1049,14 @@ def test_post1_title_setter(instance):
     instance.title = original
     assert instance.title == original
 
+
+
 @given(instance=Post1_strategy)
-def test_post1_files_type(instance):
-    assert isinstance(instance.files, str)
+def test_post1_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
 
 
 @given(instance=Post1_strategy)
@@ -1134,9 +1065,6 @@ def test_post1_files_setter(instance):
     instance.files = original
     assert instance.files == original
 
-@given(instance=Post1_strategy)
-def test_post1_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
 @given(instance=Post1_strategy)
@@ -1145,9 +1073,6 @@ def test_post1_body_setter(instance):
     instance.body = original
     assert instance.body == original
 
-@given(instance=Post1_strategy)
-def test_post1_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
 @given(instance=Post1_strategy)
@@ -1161,20 +1086,6 @@ def test_post1_author_setter(instance):
 def test_user1_instantiation(instance):
     assert isinstance(instance, User1)
 
-@given(instance=User1_strategy)
-def test_user1_campus_type(instance):
-    assert isinstance(instance.campus, str)
-
-
-@given(instance=User1_strategy)
-def test_user1_campus_setter(instance):
-    original = instance.campus
-    instance.campus = original
-    assert instance.campus == original
-
-@given(instance=User1_strategy)
-def test_user1_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=User1_strategy)
@@ -1183,9 +1094,6 @@ def test_user1_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=User1_strategy)
-def test_user1_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=User1_strategy)
@@ -1194,9 +1102,6 @@ def test_user1_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=User1_strategy)
-def test_user1_isStaff_type(instance):
-    assert isinstance(instance.isStaff, bool)
 
 
 @given(instance=User1_strategy)
@@ -1205,9 +1110,6 @@ def test_user1_isStaff_setter(instance):
     instance.isStaff = original
     assert instance.isStaff == original
 
-@given(instance=User1_strategy)
-def test_user1_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=User1_strategy)
@@ -1216,9 +1118,14 @@ def test_user1_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
 @given(instance=User1_strategy)
-def test_user1_username_type(instance):
-    assert isinstance(instance.username, str)
+def test_user1_campus_setter(instance):
+    original = instance.campus
+    instance.campus = original
+    assert instance.campus == original
+
 
 
 @given(instance=User1_strategy)
@@ -1232,9 +1139,6 @@ def test_user1_username_setter(instance):
 def test_virtualtour1_instantiation(instance):
     assert isinstance(instance, VirtualTour1)
 
-@given(instance=VirtualTour1_strategy)
-def test_virtualtour1_URL_type(instance):
-    assert isinstance(instance.URL, str)
 
 
 @given(instance=VirtualTour1_strategy)

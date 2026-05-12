@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Brick,
-    arduinoML::Actuator,
-    arduinoML::Sensor,
-    arduinoML::Transition,
-    arduinoML::Action,
+    arduinoML_Actuator,
+    arduinoML_Sensor,
+    arduinoML_Transition,
+    arduinoML_Action,
     NamedElement,
-    arduinoML::Brick,
-    arduinoML::State,
-    arduinoML::App,
-    arduinoML::NamedElement,
+    arduinoML_Brick,
+    arduinoML_State,
+    arduinoML_App,
+    arduinoML_NamedElement,
     Signal,
 )
 
@@ -39,51 +39,51 @@ def test_brick_constructor_args():
 
 
 
-def test_arduinoml::actuator_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Actuator)
+def test_arduinoml_actuator_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Actuator)
 
 
-def test_arduinoml::actuator_constructor_exists():
-    assert callable(arduinoML::Actuator.__init__)
+def test_arduinoml_actuator_constructor_exists():
+    assert callable(arduinoML_Actuator.__init__)
 
 
-def test_arduinoml::actuator_constructor_args():
-    sig = inspect.signature(arduinoML::Actuator.__init__)
+def test_arduinoml_actuator_constructor_args():
+    sig = inspect.signature(arduinoML_Actuator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::sensor_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Sensor)
+def test_arduinoml_sensor_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Sensor)
 
 
-def test_arduinoml::sensor_constructor_exists():
-    assert callable(arduinoML::Sensor.__init__)
+def test_arduinoml_sensor_constructor_exists():
+    assert callable(arduinoML_Sensor.__init__)
 
 
-def test_arduinoml::sensor_constructor_args():
-    sig = inspect.signature(arduinoML::Sensor.__init__)
+def test_arduinoml_sensor_constructor_args():
+    sig = inspect.signature(arduinoML_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::transition_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Transition)
+def test_arduinoml_transition_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Transition)
 
 
-def test_arduinoml::transition_constructor_exists():
-    assert callable(arduinoML::Transition.__init__)
+def test_arduinoml_transition_constructor_exists():
+    assert callable(arduinoML_Transition.__init__)
 
 
-def test_arduinoml::transition_constructor_args():
-    sig = inspect.signature(arduinoML::Transition.__init__)
+def test_arduinoml_transition_constructor_args():
+    sig = inspect.signature(arduinoML_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arduinoml::transition_has_value():
-    assert hasattr(arduinoML::Transition, "value")
+def test_arduinoml_transition_has_value():
+    assert hasattr(arduinoML_Transition, "value")
     descriptor = None
-    for klass in arduinoML::Transition.__mro__:
+    for klass in arduinoML_Transition.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -91,23 +91,23 @@ def test_arduinoml::transition_has_value():
 
 
 
-def test_arduinoml::action_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Action)
+def test_arduinoml_action_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Action)
 
 
-def test_arduinoml::action_constructor_exists():
-    assert callable(arduinoML::Action.__init__)
+def test_arduinoml_action_constructor_exists():
+    assert callable(arduinoML_Action.__init__)
 
 
-def test_arduinoml::action_constructor_args():
-    sig = inspect.signature(arduinoML::Action.__init__)
+def test_arduinoml_action_constructor_args():
+    sig = inspect.signature(arduinoML_Action.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arduinoml::action_has_value():
-    assert hasattr(arduinoML::Action, "value")
+def test_arduinoml_action_has_value():
+    assert hasattr(arduinoML_Action, "value")
     descriptor = None
-    for klass in arduinoML::Action.__mro__:
+    for klass in arduinoML_Action.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -129,23 +129,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_arduinoml::brick_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Brick)
+def test_arduinoml_brick_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Brick)
 
 
-def test_arduinoml::brick_constructor_exists():
-    assert callable(arduinoML::Brick.__init__)
+def test_arduinoml_brick_constructor_exists():
+    assert callable(arduinoML_Brick.__init__)
 
 
-def test_arduinoml::brick_constructor_args():
-    sig = inspect.signature(arduinoML::Brick.__init__)
+def test_arduinoml_brick_constructor_args():
+    sig = inspect.signature(arduinoML_Brick.__init__)
     params = list(sig.parameters.keys())
     assert "pin" in params, "Missing parameter 'pin'"
 
-def test_arduinoml::brick_has_pin():
-    assert hasattr(arduinoML::Brick, "pin")
+def test_arduinoml_brick_has_pin():
+    assert hasattr(arduinoML_Brick, "pin")
     descriptor = None
-    for klass in arduinoML::Brick.__mro__:
+    for klass in arduinoML_Brick.__mro__:
         if "pin" in klass.__dict__:
             descriptor = klass.__dict__["pin"]
             break
@@ -153,51 +153,51 @@ def test_arduinoml::brick_has_pin():
 
 
 
-def test_arduinoml::state_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::State)
+def test_arduinoml_state_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_State)
 
 
-def test_arduinoml::state_constructor_exists():
-    assert callable(arduinoML::State.__init__)
+def test_arduinoml_state_constructor_exists():
+    assert callable(arduinoML_State.__init__)
 
 
-def test_arduinoml::state_constructor_args():
-    sig = inspect.signature(arduinoML::State.__init__)
+def test_arduinoml_state_constructor_args():
+    sig = inspect.signature(arduinoML_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::app_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::App)
+def test_arduinoml_app_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_App)
 
 
-def test_arduinoml::app_constructor_exists():
-    assert callable(arduinoML::App.__init__)
+def test_arduinoml_app_constructor_exists():
+    assert callable(arduinoML_App.__init__)
 
 
-def test_arduinoml::app_constructor_args():
-    sig = inspect.signature(arduinoML::App.__init__)
+def test_arduinoml_app_constructor_args():
+    sig = inspect.signature(arduinoML_App.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::NamedElement)
+def test_arduinoml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_NamedElement)
 
 
-def test_arduinoml::namedelement_constructor_exists():
-    assert callable(arduinoML::NamedElement.__init__)
+def test_arduinoml_namedelement_constructor_exists():
+    assert callable(arduinoML_NamedElement.__init__)
 
 
-def test_arduinoml::namedelement_constructor_args():
-    sig = inspect.signature(arduinoML::NamedElement.__init__)
+def test_arduinoml_namedelement_constructor_args():
+    sig = inspect.signature(arduinoML_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arduinoml::namedelement_has_name():
-    assert hasattr(arduinoML::NamedElement, "name")
+def test_arduinoml_namedelement_has_name():
+    assert hasattr(arduinoML_NamedElement, "name")
     descriptor = None
-    for klass in arduinoML::NamedElement.__mro__:
+    for klass in arduinoML_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -211,8 +211,8 @@ def test_signal_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Signal]
     expected_literals = [
-        "HIGH",
         "LOW",
+        "HIGH",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -233,38 +233,38 @@ safe_text = st.text(
 Brick_strategy = st.builds(
     Brick,
 )
-arduinoML::Actuator_strategy = st.builds(
-    arduinoML::Actuator,
+arduinoML_Actuator_strategy = st.builds(
+    arduinoML_Actuator,
 )
-arduinoML::Sensor_strategy = st.builds(
-    arduinoML::Sensor,
+arduinoML_Sensor_strategy = st.builds(
+    arduinoML_Sensor,
 )
-arduinoML::Transition_strategy = st.builds(
-    arduinoML::Transition,
+arduinoML_Transition_strategy = st.builds(
+    arduinoML_Transition,
     value=
         safe_text
 )
-arduinoML::Action_strategy = st.builds(
-    arduinoML::Action,
+arduinoML_Action_strategy = st.builds(
+    arduinoML_Action,
     value=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-arduinoML::Brick_strategy = st.builds(
-    arduinoML::Brick,
+arduinoML_Brick_strategy = st.builds(
+    arduinoML_Brick,
     pin=
         st.integers()
 )
-arduinoML::State_strategy = st.builds(
-    arduinoML::State,
+arduinoML_State_strategy = st.builds(
+    arduinoML_State,
 )
-arduinoML::App_strategy = st.builds(
-    arduinoML::App,
+arduinoML_App_strategy = st.builds(
+    arduinoML_App,
 )
-arduinoML::NamedElement_strategy = st.builds(
-    arduinoML::NamedElement,
+arduinoML_NamedElement_strategy = st.builds(
+    arduinoML_NamedElement,
     name=
         safe_text
 )
@@ -274,44 +274,38 @@ arduinoML::NamedElement_strategy = st.builds(
 def test_brick_instantiation(instance):
     assert isinstance(instance, Brick)
 
-@given(instance=arduinoML::Actuator_strategy)
+@given(instance=arduinoML_Actuator_strategy)
 @settings(max_examples=50)
-def test_arduinoml::actuator_instantiation(instance):
-    assert isinstance(instance, arduinoML::Actuator)
+def test_arduinoml_actuator_instantiation(instance):
+    assert isinstance(instance, arduinoML_Actuator)
 
-@given(instance=arduinoML::Sensor_strategy)
+@given(instance=arduinoML_Sensor_strategy)
 @settings(max_examples=50)
-def test_arduinoml::sensor_instantiation(instance):
-    assert isinstance(instance, arduinoML::Sensor)
+def test_arduinoml_sensor_instantiation(instance):
+    assert isinstance(instance, arduinoML_Sensor)
 
-@given(instance=arduinoML::Transition_strategy)
+@given(instance=arduinoML_Transition_strategy)
 @settings(max_examples=50)
-def test_arduinoml::transition_instantiation(instance):
-    assert isinstance(instance, arduinoML::Transition)
-
-@given(instance=arduinoML::Transition_strategy)
-def test_arduinoml::transition_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_arduinoml_transition_instantiation(instance):
+    assert isinstance(instance, arduinoML_Transition)
 
 
-@given(instance=arduinoML::Transition_strategy)
-def test_arduinoml::transition_value_setter(instance):
+
+@given(instance=arduinoML_Transition_strategy)
+def test_arduinoml_transition_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arduinoML::Action_strategy)
+@given(instance=arduinoML_Action_strategy)
 @settings(max_examples=50)
-def test_arduinoml::action_instantiation(instance):
-    assert isinstance(instance, arduinoML::Action)
-
-@given(instance=arduinoML::Action_strategy)
-def test_arduinoml::action_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_arduinoml_action_instantiation(instance):
+    assert isinstance(instance, arduinoML_Action)
 
 
-@given(instance=arduinoML::Action_strategy)
-def test_arduinoml::action_value_setter(instance):
+
+@given(instance=arduinoML_Action_strategy)
+def test_arduinoml_action_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -321,44 +315,38 @@ def test_arduinoml::action_value_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=arduinoML::Brick_strategy)
+@given(instance=arduinoML_Brick_strategy)
 @settings(max_examples=50)
-def test_arduinoml::brick_instantiation(instance):
-    assert isinstance(instance, arduinoML::Brick)
-
-@given(instance=arduinoML::Brick_strategy)
-def test_arduinoml::brick_pin_type(instance):
-    assert isinstance(instance.pin, int)
+def test_arduinoml_brick_instantiation(instance):
+    assert isinstance(instance, arduinoML_Brick)
 
 
-@given(instance=arduinoML::Brick_strategy)
-def test_arduinoml::brick_pin_setter(instance):
+
+@given(instance=arduinoML_Brick_strategy)
+def test_arduinoml_brick_pin_setter(instance):
     original = instance.pin
     instance.pin = original
     assert instance.pin == original
 
-@given(instance=arduinoML::State_strategy)
+@given(instance=arduinoML_State_strategy)
 @settings(max_examples=50)
-def test_arduinoml::state_instantiation(instance):
-    assert isinstance(instance, arduinoML::State)
+def test_arduinoml_state_instantiation(instance):
+    assert isinstance(instance, arduinoML_State)
 
-@given(instance=arduinoML::App_strategy)
+@given(instance=arduinoML_App_strategy)
 @settings(max_examples=50)
-def test_arduinoml::app_instantiation(instance):
-    assert isinstance(instance, arduinoML::App)
+def test_arduinoml_app_instantiation(instance):
+    assert isinstance(instance, arduinoML_App)
 
-@given(instance=arduinoML::NamedElement_strategy)
+@given(instance=arduinoML_NamedElement_strategy)
 @settings(max_examples=50)
-def test_arduinoml::namedelement_instantiation(instance):
-    assert isinstance(instance, arduinoML::NamedElement)
-
-@given(instance=arduinoML::NamedElement_strategy)
-def test_arduinoml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arduinoml_namedelement_instantiation(instance):
+    assert isinstance(instance, arduinoML_NamedElement)
 
 
-@given(instance=arduinoML::NamedElement_strategy)
-def test_arduinoml::namedelement_name_setter(instance):
+
+@given(instance=arduinoML_NamedElement_strategy)
+def test_arduinoml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

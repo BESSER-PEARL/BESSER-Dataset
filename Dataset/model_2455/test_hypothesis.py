@@ -3,46 +3,46 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    jpdl31::SubProcessType,
-    jpdl31::VariableType,
-    jpdl31::TransitionType,
-    jpdl31::SuperStateType,
-    jpdl31::StateType,
-    jpdl31::StartStateType,
-    jpdl31::TimerType,
-    jpdl31::TaskNodeType,
-    jpdl31::TaskType,
-    jpdl31::SwimlaneType,
-    jpdl31::ProcessDefinitionType,
-    jpdl31::NodeType,
-    jpdl31::ProcessStateType,
-    jpdl31::EndStateType,
-    jpdl31::JoinType,
-    jpdl31::ForkType,
-    jpdl31::EStringToStringMapEntry,
-    jpdl31::DocumentRoot,
-    jpdl31::TransitionType1,
-    jpdl31::ExceptionHandlerType,
-    jpdl31::EventType,
-    jpdl31::Delegation,
-    jpdl31::DecisionType,
-    jpdl31::ScriptType,
-    jpdl31::CreateTimerType,
-    jpdl31::ConditionType,
-    jpdl31::CancelTimerType,
+from python_code import (
+    jpdl31_SubProcessType,
+    jpdl31_VariableType,
+    jpdl31_TransitionType,
+    jpdl31_SuperStateType,
+    jpdl31_StateType,
+    jpdl31_StartStateType,
+    jpdl31_TimerType,
+    jpdl31_TaskNodeType,
+    jpdl31_TaskType,
+    jpdl31_SwimlaneType,
+    jpdl31_ProcessDefinitionType,
+    jpdl31_NodeType,
+    jpdl31_ProcessStateType,
+    jpdl31_EndStateType,
+    jpdl31_JoinType,
+    jpdl31_ForkType,
+    jpdl31_EStringToStringMapEntry,
+    jpdl31_DocumentRoot,
+    jpdl31_TransitionType1,
+    jpdl31_ExceptionHandlerType,
+    jpdl31_EventType,
+    jpdl31_Delegation,
+    jpdl31_DecisionType,
+    jpdl31_ScriptType,
+    jpdl31_CreateTimerType,
+    jpdl31_ConditionType,
+    jpdl31_CancelTimerType,
     Delegation,
-    jpdl31::AssignmentType,
-    jpdl31::ActionType,
-    BooleanType,
-    PriorityTypeMember0,
+    jpdl31_AssignmentType,
+    jpdl31_ActionType,
     ConfigTypeType1,
-    ConfigTypeType,
+    ConfigType,
     SignalType,
     TypeTypeMember1,
-    ConfigType,
+    ConfigTypeType,
+    PriorityTypeMember0,
+    BooleanType,
 )
 
 # =============================================================================
@@ -51,131 +51,131 @@ from classes import (
 
 
 
-def test_jpdl31::subprocesstype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::SubProcessType)
+def test_jpdl31_subprocesstype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_SubProcessType)
 
 
-def test_jpdl31::subprocesstype_constructor_exists():
-    assert callable(jpdl31::SubProcessType.__init__)
+def test_jpdl31_subprocesstype_constructor_exists():
+    assert callable(jpdl31_SubProcessType.__init__)
 
 
-def test_jpdl31::subprocesstype_constructor_args():
-    sig = inspect.signature(jpdl31::SubProcessType.__init__)
+def test_jpdl31_subprocesstype_constructor_args():
+    sig = inspect.signature(jpdl31_SubProcessType.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::subprocesstype_has_name():
-    assert hasattr(jpdl31::SubProcessType, "name")
+def test_jpdl31_subprocesstype_has_version():
+    assert hasattr(jpdl31_SubProcessType, "version")
     descriptor = None
-    for klass in jpdl31::SubProcessType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::subprocesstype_has_version():
-    assert hasattr(jpdl31::SubProcessType, "version")
-    descriptor = None
-    for klass in jpdl31::SubProcessType.__mro__:
+    for klass in jpdl31_SubProcessType.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::variabletype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::VariableType)
-
-
-def test_jpdl31::variabletype_constructor_exists():
-    assert callable(jpdl31::VariableType.__init__)
-
-
-def test_jpdl31::variabletype_constructor_args():
-    sig = inspect.signature(jpdl31::VariableType.__init__)
-    params = list(sig.parameters.keys())
-    assert "mappedName" in params, "Missing parameter 'mappedName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "any" in params, "Missing parameter 'any'"
-    assert "access" in params, "Missing parameter 'access'"
-
-def test_jpdl31::variabletype_has_mappedName():
-    assert hasattr(jpdl31::VariableType, "mappedName")
+def test_jpdl31_subprocesstype_has_name():
+    assert hasattr(jpdl31_SubProcessType, "name")
     descriptor = None
-    for klass in jpdl31::VariableType.__mro__:
+    for klass in jpdl31_SubProcessType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpdl31_variabletype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_VariableType)
+
+
+def test_jpdl31_variabletype_constructor_exists():
+    assert callable(jpdl31_VariableType.__init__)
+
+
+def test_jpdl31_variabletype_constructor_args():
+    sig = inspect.signature(jpdl31_VariableType.__init__)
+    params = list(sig.parameters.keys())
+    assert "any" in params, "Missing parameter 'any'"
+    assert "mappedName" in params, "Missing parameter 'mappedName'"
+    assert "access" in params, "Missing parameter 'access'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_jpdl31_variabletype_has_any():
+    assert hasattr(jpdl31_VariableType, "any")
+    descriptor = None
+    for klass in jpdl31_VariableType.__mro__:
+        if "any" in klass.__dict__:
+            descriptor = klass.__dict__["any"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_variabletype_has_mappedName():
+    assert hasattr(jpdl31_VariableType, "mappedName")
+    descriptor = None
+    for klass in jpdl31_VariableType.__mro__:
         if "mappedName" in klass.__dict__:
             descriptor = klass.__dict__["mappedName"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::variabletype_has_name():
-    assert hasattr(jpdl31::VariableType, "name")
+def test_jpdl31_variabletype_has_access():
+    assert hasattr(jpdl31_VariableType, "access")
     descriptor = None
-    for klass in jpdl31::VariableType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::variabletype_has_any():
-    assert hasattr(jpdl31::VariableType, "any")
-    descriptor = None
-    for klass in jpdl31::VariableType.__mro__:
-        if "any" in klass.__dict__:
-            descriptor = klass.__dict__["any"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::variabletype_has_access():
-    assert hasattr(jpdl31::VariableType, "access")
-    descriptor = None
-    for klass in jpdl31::VariableType.__mro__:
+    for klass in jpdl31_VariableType.__mro__:
         if "access" in klass.__dict__:
             descriptor = klass.__dict__["access"]
             break
     assert isinstance(descriptor, property)
 
+def test_jpdl31_variabletype_has_name():
+    assert hasattr(jpdl31_VariableType, "name")
+    descriptor = None
+    for klass in jpdl31_VariableType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_jpdl31::transitiontype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::TransitionType)
+
+def test_jpdl31_transitiontype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_TransitionType)
 
 
-def test_jpdl31::transitiontype_constructor_exists():
-    assert callable(jpdl31::TransitionType.__init__)
+def test_jpdl31_transitiontype_constructor_exists():
+    assert callable(jpdl31_TransitionType.__init__)
 
 
-def test_jpdl31::transitiontype_constructor_args():
-    sig = inspect.signature(jpdl31::TransitionType.__init__)
+def test_jpdl31_transitiontype_constructor_args():
+    sig = inspect.signature(jpdl31_TransitionType.__init__)
     params = list(sig.parameters.keys())
     assert "to" in params, "Missing parameter 'to'"
     assert "group" in params, "Missing parameter 'group'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::transitiontype_has_to():
-    assert hasattr(jpdl31::TransitionType, "to")
+def test_jpdl31_transitiontype_has_to():
+    assert hasattr(jpdl31_TransitionType, "to")
     descriptor = None
-    for klass in jpdl31::TransitionType.__mro__:
+    for klass in jpdl31_TransitionType.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::transitiontype_has_group():
-    assert hasattr(jpdl31::TransitionType, "group")
+def test_jpdl31_transitiontype_has_group():
+    assert hasattr(jpdl31_TransitionType, "group")
     descriptor = None
-    for klass in jpdl31::TransitionType.__mro__:
+    for klass in jpdl31_TransitionType.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::transitiontype_has_name():
-    assert hasattr(jpdl31::TransitionType, "name")
+def test_jpdl31_transitiontype_has_name():
+    assert hasattr(jpdl31_TransitionType, "name")
     descriptor = None
-    for klass in jpdl31::TransitionType.__mro__:
+    for klass in jpdl31_TransitionType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -183,121 +183,87 @@ def test_jpdl31::transitiontype_has_name():
 
 
 
-def test_jpdl31::superstatetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::SuperStateType)
+def test_jpdl31_superstatetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_SuperStateType)
 
 
-def test_jpdl31::superstatetype_constructor_exists():
-    assert callable(jpdl31::SuperStateType.__init__)
+def test_jpdl31_superstatetype_constructor_exists():
+    assert callable(jpdl31_SuperStateType.__init__)
 
 
-def test_jpdl31::superstatetype_constructor_args():
-    sig = inspect.signature(jpdl31::SuperStateType.__init__)
+def test_jpdl31_superstatetype_constructor_args():
+    sig = inspect.signature(jpdl31_SuperStateType.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "async_" in params, "Missing parameter 'async_'"
     assert "group" in params, "Missing parameter 'group'"
+    assert "async_" in params, "Missing parameter 'async_'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::superstatetype_has_name():
-    assert hasattr(jpdl31::SuperStateType, "name")
+def test_jpdl31_superstatetype_has_group():
+    assert hasattr(jpdl31_SuperStateType, "group")
     descriptor = None
-    for klass in jpdl31::SuperStateType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in jpdl31_SuperStateType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::superstatetype_has_async_():
-    assert hasattr(jpdl31::SuperStateType, "async_")
+def test_jpdl31_superstatetype_has_async_():
+    assert hasattr(jpdl31_SuperStateType, "async_")
     descriptor = None
-    for klass in jpdl31::SuperStateType.__mro__:
+    for klass in jpdl31_SuperStateType.__mro__:
         if "async_" in klass.__dict__:
             descriptor = klass.__dict__["async_"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::superstatetype_has_group():
-    assert hasattr(jpdl31::SuperStateType, "group")
+def test_jpdl31_superstatetype_has_name():
+    assert hasattr(jpdl31_SuperStateType, "name")
     descriptor = None
-    for klass in jpdl31::SuperStateType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
+    for klass in jpdl31_SuperStateType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_jpdl31::statetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::StateType)
+def test_jpdl31_statetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_StateType)
 
 
-def test_jpdl31::statetype_constructor_exists():
-    assert callable(jpdl31::StateType.__init__)
+def test_jpdl31_statetype_constructor_exists():
+    assert callable(jpdl31_StateType.__init__)
 
 
-def test_jpdl31::statetype_constructor_args():
-    sig = inspect.signature(jpdl31::StateType.__init__)
+def test_jpdl31_statetype_constructor_args():
+    sig = inspect.signature(jpdl31_StateType.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "async_" in params, "Missing parameter 'async_'"
     assert "nodeContentElements" in params, "Missing parameter 'nodeContentElements'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::statetype_has_name():
-    assert hasattr(jpdl31::StateType, "name")
+def test_jpdl31_statetype_has_async_():
+    assert hasattr(jpdl31_StateType, "async_")
     descriptor = None
-    for klass in jpdl31::StateType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::statetype_has_async_():
-    assert hasattr(jpdl31::StateType, "async_")
-    descriptor = None
-    for klass in jpdl31::StateType.__mro__:
+    for klass in jpdl31_StateType.__mro__:
         if "async_" in klass.__dict__:
             descriptor = klass.__dict__["async_"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::statetype_has_nodeContentElements():
-    assert hasattr(jpdl31::StateType, "nodeContentElements")
+def test_jpdl31_statetype_has_nodeContentElements():
+    assert hasattr(jpdl31_StateType, "nodeContentElements")
     descriptor = None
-    for klass in jpdl31::StateType.__mro__:
+    for klass in jpdl31_StateType.__mro__:
         if "nodeContentElements" in klass.__dict__:
             descriptor = klass.__dict__["nodeContentElements"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::startstatetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::StartStateType)
-
-
-def test_jpdl31::startstatetype_constructor_exists():
-    assert callable(jpdl31::StartStateType.__init__)
-
-
-def test_jpdl31::startstatetype_constructor_args():
-    sig = inspect.signature(jpdl31::StartStateType.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_jpdl31::startstatetype_has_group():
-    assert hasattr(jpdl31::StartStateType, "group")
+def test_jpdl31_statetype_has_name():
+    assert hasattr(jpdl31_StateType, "name")
     descriptor = None
-    for klass in jpdl31::StartStateType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::startstatetype_has_name():
-    assert hasattr(jpdl31::StartStateType, "name")
-    descriptor = None
-    for klass in jpdl31::StartStateType.__mro__:
+    for klass in jpdl31_StateType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -305,245 +271,279 @@ def test_jpdl31::startstatetype_has_name():
 
 
 
-def test_jpdl31::timertype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::TimerType)
+def test_jpdl31_startstatetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_StartStateType)
 
 
-def test_jpdl31::timertype_constructor_exists():
-    assert callable(jpdl31::TimerType.__init__)
+def test_jpdl31_startstatetype_constructor_exists():
+    assert callable(jpdl31_StartStateType.__init__)
 
 
-def test_jpdl31::timertype_constructor_args():
-    sig = inspect.signature(jpdl31::TimerType.__init__)
+def test_jpdl31_startstatetype_constructor_args():
+    sig = inspect.signature(jpdl31_StartStateType.__init__)
     params = list(sig.parameters.keys())
-    assert "repeat" in params, "Missing parameter 'repeat'"
-    assert "transition" in params, "Missing parameter 'transition'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_jpdl31_startstatetype_has_name():
+    assert hasattr(jpdl31_StartStateType, "name")
+    descriptor = None
+    for klass in jpdl31_StartStateType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_startstatetype_has_group():
+    assert hasattr(jpdl31_StartStateType, "group")
+    descriptor = None
+    for klass in jpdl31_StartStateType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpdl31_timertype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_TimerType)
+
+
+def test_jpdl31_timertype_constructor_exists():
+    assert callable(jpdl31_TimerType.__init__)
+
+
+def test_jpdl31_timertype_constructor_args():
+    sig = inspect.signature(jpdl31_TimerType.__init__)
+    params = list(sig.parameters.keys())
     assert "duedate" in params, "Missing parameter 'duedate'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "repeat" in params, "Missing parameter 'repeat'"
+    assert "transition" in params, "Missing parameter 'transition'"
 
-def test_jpdl31::timertype_has_repeat():
-    assert hasattr(jpdl31::TimerType, "repeat")
+def test_jpdl31_timertype_has_duedate():
+    assert hasattr(jpdl31_TimerType, "duedate")
     descriptor = None
-    for klass in jpdl31::TimerType.__mro__:
-        if "repeat" in klass.__dict__:
-            descriptor = klass.__dict__["repeat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::timertype_has_transition():
-    assert hasattr(jpdl31::TimerType, "transition")
-    descriptor = None
-    for klass in jpdl31::TimerType.__mro__:
-        if "transition" in klass.__dict__:
-            descriptor = klass.__dict__["transition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::timertype_has_duedate():
-    assert hasattr(jpdl31::TimerType, "duedate")
-    descriptor = None
-    for klass in jpdl31::TimerType.__mro__:
+    for klass in jpdl31_TimerType.__mro__:
         if "duedate" in klass.__dict__:
             descriptor = klass.__dict__["duedate"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::timertype_has_name():
-    assert hasattr(jpdl31::TimerType, "name")
+def test_jpdl31_timertype_has_name():
+    assert hasattr(jpdl31_TimerType, "name")
     descriptor = None
-    for klass in jpdl31::TimerType.__mro__:
+    for klass in jpdl31_TimerType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::tasknodetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::TaskNodeType)
-
-
-def test_jpdl31::tasknodetype_constructor_exists():
-    assert callable(jpdl31::TaskNodeType.__init__)
-
-
-def test_jpdl31::tasknodetype_constructor_args():
-    sig = inspect.signature(jpdl31::TaskNodeType.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-    assert "signal" in params, "Missing parameter 'signal'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "endTasks" in params, "Missing parameter 'endTasks'"
-    assert "async_" in params, "Missing parameter 'async_'"
-    assert "createTasks" in params, "Missing parameter 'createTasks'"
-
-def test_jpdl31::tasknodetype_has_group():
-    assert hasattr(jpdl31::TaskNodeType, "group")
+def test_jpdl31_timertype_has_repeat():
+    assert hasattr(jpdl31_TimerType, "repeat")
     descriptor = None
-    for klass in jpdl31::TaskNodeType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
+    for klass in jpdl31_TimerType.__mro__:
+        if "repeat" in klass.__dict__:
+            descriptor = klass.__dict__["repeat"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasknodetype_has_signal():
-    assert hasattr(jpdl31::TaskNodeType, "signal")
+def test_jpdl31_timertype_has_transition():
+    assert hasattr(jpdl31_TimerType, "transition")
     descriptor = None
-    for klass in jpdl31::TaskNodeType.__mro__:
+    for klass in jpdl31_TimerType.__mro__:
+        if "transition" in klass.__dict__:
+            descriptor = klass.__dict__["transition"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpdl31_tasknodetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_TaskNodeType)
+
+
+def test_jpdl31_tasknodetype_constructor_exists():
+    assert callable(jpdl31_TaskNodeType.__init__)
+
+
+def test_jpdl31_tasknodetype_constructor_args():
+    sig = inspect.signature(jpdl31_TaskNodeType.__init__)
+    params = list(sig.parameters.keys())
+    assert "signal" in params, "Missing parameter 'signal'"
+    assert "group" in params, "Missing parameter 'group'"
+    assert "async_" in params, "Missing parameter 'async_'"
+    assert "endTasks" in params, "Missing parameter 'endTasks'"
+    assert "createTasks" in params, "Missing parameter 'createTasks'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_jpdl31_tasknodetype_has_signal():
+    assert hasattr(jpdl31_TaskNodeType, "signal")
+    descriptor = None
+    for klass in jpdl31_TaskNodeType.__mro__:
         if "signal" in klass.__dict__:
             descriptor = klass.__dict__["signal"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasknodetype_has_name():
-    assert hasattr(jpdl31::TaskNodeType, "name")
+def test_jpdl31_tasknodetype_has_group():
+    assert hasattr(jpdl31_TaskNodeType, "group")
     descriptor = None
-    for klass in jpdl31::TaskNodeType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in jpdl31_TaskNodeType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasknodetype_has_endTasks():
-    assert hasattr(jpdl31::TaskNodeType, "endTasks")
+def test_jpdl31_tasknodetype_has_async_():
+    assert hasattr(jpdl31_TaskNodeType, "async_")
     descriptor = None
-    for klass in jpdl31::TaskNodeType.__mro__:
+    for klass in jpdl31_TaskNodeType.__mro__:
+        if "async_" in klass.__dict__:
+            descriptor = klass.__dict__["async_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_tasknodetype_has_endTasks():
+    assert hasattr(jpdl31_TaskNodeType, "endTasks")
+    descriptor = None
+    for klass in jpdl31_TaskNodeType.__mro__:
         if "endTasks" in klass.__dict__:
             descriptor = klass.__dict__["endTasks"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasknodetype_has_async_():
-    assert hasattr(jpdl31::TaskNodeType, "async_")
+def test_jpdl31_tasknodetype_has_createTasks():
+    assert hasattr(jpdl31_TaskNodeType, "createTasks")
     descriptor = None
-    for klass in jpdl31::TaskNodeType.__mro__:
-        if "async_" in klass.__dict__:
-            descriptor = klass.__dict__["async_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::tasknodetype_has_createTasks():
-    assert hasattr(jpdl31::TaskNodeType, "createTasks")
-    descriptor = None
-    for klass in jpdl31::TaskNodeType.__mro__:
+    for klass in jpdl31_TaskNodeType.__mro__:
         if "createTasks" in klass.__dict__:
             descriptor = klass.__dict__["createTasks"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::tasktype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::TaskType)
-
-
-def test_jpdl31::tasktype_constructor_exists():
-    assert callable(jpdl31::TaskType.__init__)
-
-
-def test_jpdl31::tasktype_constructor_args():
-    sig = inspect.signature(jpdl31::TaskType.__init__)
-    params = list(sig.parameters.keys())
-    assert "signalling" in params, "Missing parameter 'signalling'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "duedate" in params, "Missing parameter 'duedate'"
-    assert "swimlane" in params, "Missing parameter 'swimlane'"
-    assert "blocking" in params, "Missing parameter 'blocking'"
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_jpdl31::tasktype_has_signalling():
-    assert hasattr(jpdl31::TaskType, "signalling")
+def test_jpdl31_tasknodetype_has_name():
+    assert hasattr(jpdl31_TaskNodeType, "name")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
-        if "signalling" in klass.__dict__:
-            descriptor = klass.__dict__["signalling"]
+    for klass in jpdl31_TaskNodeType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_description():
-    assert hasattr(jpdl31::TaskType, "description")
+
+
+def test_jpdl31_tasktype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_TaskType)
+
+
+def test_jpdl31_tasktype_constructor_exists():
+    assert callable(jpdl31_TaskType.__init__)
+
+
+def test_jpdl31_tasktype_constructor_args():
+    sig = inspect.signature(jpdl31_TaskType.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "group" in params, "Missing parameter 'group'"
+    assert "duedate" in params, "Missing parameter 'duedate'"
+    assert "swimlane" in params, "Missing parameter 'swimlane'"
+    assert "blocking" in params, "Missing parameter 'blocking'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "signalling" in params, "Missing parameter 'signalling'"
+    assert "priority" in params, "Missing parameter 'priority'"
+
+def test_jpdl31_tasktype_has_description():
+    assert hasattr(jpdl31_TaskType, "description")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
+    for klass in jpdl31_TaskType.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_name():
-    assert hasattr(jpdl31::TaskType, "name")
+def test_jpdl31_tasktype_has_group():
+    assert hasattr(jpdl31_TaskType, "group")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in jpdl31_TaskType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_duedate():
-    assert hasattr(jpdl31::TaskType, "duedate")
+def test_jpdl31_tasktype_has_duedate():
+    assert hasattr(jpdl31_TaskType, "duedate")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
+    for klass in jpdl31_TaskType.__mro__:
         if "duedate" in klass.__dict__:
             descriptor = klass.__dict__["duedate"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_swimlane():
-    assert hasattr(jpdl31::TaskType, "swimlane")
+def test_jpdl31_tasktype_has_swimlane():
+    assert hasattr(jpdl31_TaskType, "swimlane")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
+    for klass in jpdl31_TaskType.__mro__:
         if "swimlane" in klass.__dict__:
             descriptor = klass.__dict__["swimlane"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_blocking():
-    assert hasattr(jpdl31::TaskType, "blocking")
+def test_jpdl31_tasktype_has_blocking():
+    assert hasattr(jpdl31_TaskType, "blocking")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
+    for klass in jpdl31_TaskType.__mro__:
         if "blocking" in klass.__dict__:
             descriptor = klass.__dict__["blocking"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_priority():
-    assert hasattr(jpdl31::TaskType, "priority")
+def test_jpdl31_tasktype_has_name():
+    assert hasattr(jpdl31_TaskType, "name")
     descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
+    for klass in jpdl31_TaskType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_tasktype_has_signalling():
+    assert hasattr(jpdl31_TaskType, "signalling")
+    descriptor = None
+    for klass in jpdl31_TaskType.__mro__:
+        if "signalling" in klass.__dict__:
+            descriptor = klass.__dict__["signalling"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_tasktype_has_priority():
+    assert hasattr(jpdl31_TaskType, "priority")
+    descriptor = None
+    for klass in jpdl31_TaskType.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::tasktype_has_group():
-    assert hasattr(jpdl31::TaskType, "group")
-    descriptor = None
-    for klass in jpdl31::TaskType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_jpdl31::swimlanetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::SwimlaneType)
-
-
-def test_jpdl31::swimlanetype_constructor_exists():
-    assert callable(jpdl31::SwimlaneType.__init__)
+def test_jpdl31_swimlanetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_SwimlaneType)
 
 
-def test_jpdl31::swimlanetype_constructor_args():
-    sig = inspect.signature(jpdl31::SwimlaneType.__init__)
+def test_jpdl31_swimlanetype_constructor_exists():
+    assert callable(jpdl31_SwimlaneType.__init__)
+
+
+def test_jpdl31_swimlanetype_constructor_args():
+    sig = inspect.signature(jpdl31_SwimlaneType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::swimlanetype_has_name():
-    assert hasattr(jpdl31::SwimlaneType, "name")
+def test_jpdl31_swimlanetype_has_name():
+    assert hasattr(jpdl31_SwimlaneType, "name")
     descriptor = None
-    for klass in jpdl31::SwimlaneType.__mro__:
+    for klass in jpdl31_SwimlaneType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -551,33 +551,33 @@ def test_jpdl31::swimlanetype_has_name():
 
 
 
-def test_jpdl31::processdefinitiontype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ProcessDefinitionType)
+def test_jpdl31_processdefinitiontype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ProcessDefinitionType)
 
 
-def test_jpdl31::processdefinitiontype_constructor_exists():
-    assert callable(jpdl31::ProcessDefinitionType.__init__)
+def test_jpdl31_processdefinitiontype_constructor_exists():
+    assert callable(jpdl31_ProcessDefinitionType.__init__)
 
 
-def test_jpdl31::processdefinitiontype_constructor_args():
-    sig = inspect.signature(jpdl31::ProcessDefinitionType.__init__)
+def test_jpdl31_processdefinitiontype_constructor_args():
+    sig = inspect.signature(jpdl31_ProcessDefinitionType.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::processdefinitiontype_has_group():
-    assert hasattr(jpdl31::ProcessDefinitionType, "group")
+def test_jpdl31_processdefinitiontype_has_group():
+    assert hasattr(jpdl31_ProcessDefinitionType, "group")
     descriptor = None
-    for klass in jpdl31::ProcessDefinitionType.__mro__:
+    for klass in jpdl31_ProcessDefinitionType.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::processdefinitiontype_has_name():
-    assert hasattr(jpdl31::ProcessDefinitionType, "name")
+def test_jpdl31_processdefinitiontype_has_name():
+    assert hasattr(jpdl31_ProcessDefinitionType, "name")
     descriptor = None
-    for klass in jpdl31::ProcessDefinitionType.__mro__:
+    for klass in jpdl31_ProcessDefinitionType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -585,43 +585,165 @@ def test_jpdl31::processdefinitiontype_has_name():
 
 
 
-def test_jpdl31::nodetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::NodeType)
+def test_jpdl31_nodetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_NodeType)
 
 
-def test_jpdl31::nodetype_constructor_exists():
-    assert callable(jpdl31::NodeType.__init__)
+def test_jpdl31_nodetype_constructor_exists():
+    assert callable(jpdl31_NodeType.__init__)
 
 
-def test_jpdl31::nodetype_constructor_args():
-    sig = inspect.signature(jpdl31::NodeType.__init__)
+def test_jpdl31_nodetype_constructor_args():
+    sig = inspect.signature(jpdl31_NodeType.__init__)
     params = list(sig.parameters.keys())
-    assert "async_" in params, "Missing parameter 'async_'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "nodeContentElements" in params, "Missing parameter 'nodeContentElements'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "async_" in params, "Missing parameter 'async_'"
 
-def test_jpdl31::nodetype_has_async_():
-    assert hasattr(jpdl31::NodeType, "async_")
+def test_jpdl31_nodetype_has_nodeContentElements():
+    assert hasattr(jpdl31_NodeType, "nodeContentElements")
     descriptor = None
-    for klass in jpdl31::NodeType.__mro__:
+    for klass in jpdl31_NodeType.__mro__:
+        if "nodeContentElements" in klass.__dict__:
+            descriptor = klass.__dict__["nodeContentElements"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_nodetype_has_name():
+    assert hasattr(jpdl31_NodeType, "name")
+    descriptor = None
+    for klass in jpdl31_NodeType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_nodetype_has_async_():
+    assert hasattr(jpdl31_NodeType, "async_")
+    descriptor = None
+    for klass in jpdl31_NodeType.__mro__:
         if "async_" in klass.__dict__:
             descriptor = klass.__dict__["async_"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::nodetype_has_name():
-    assert hasattr(jpdl31::NodeType, "name")
+
+
+def test_jpdl31_processstatetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ProcessStateType)
+
+
+def test_jpdl31_processstatetype_constructor_exists():
+    assert callable(jpdl31_ProcessStateType.__init__)
+
+
+def test_jpdl31_processstatetype_constructor_args():
+    sig = inspect.signature(jpdl31_ProcessStateType.__init__)
+    params = list(sig.parameters.keys())
+    assert "async_" in params, "Missing parameter 'async_'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_jpdl31_processstatetype_has_async_():
+    assert hasattr(jpdl31_ProcessStateType, "async_")
     descriptor = None
-    for klass in jpdl31::NodeType.__mro__:
+    for klass in jpdl31_ProcessStateType.__mro__:
+        if "async_" in klass.__dict__:
+            descriptor = klass.__dict__["async_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_processstatetype_has_name():
+    assert hasattr(jpdl31_ProcessStateType, "name")
+    descriptor = None
+    for klass in jpdl31_ProcessStateType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::nodetype_has_nodeContentElements():
-    assert hasattr(jpdl31::NodeType, "nodeContentElements")
+def test_jpdl31_processstatetype_has_group():
+    assert hasattr(jpdl31_ProcessStateType, "group")
     descriptor = None
-    for klass in jpdl31::NodeType.__mro__:
+    for klass in jpdl31_ProcessStateType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpdl31_endstatetype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_EndStateType)
+
+
+def test_jpdl31_endstatetype_constructor_exists():
+    assert callable(jpdl31_EndStateType.__init__)
+
+
+def test_jpdl31_endstatetype_constructor_args():
+    sig = inspect.signature(jpdl31_EndStateType.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_jpdl31_endstatetype_has_name():
+    assert hasattr(jpdl31_EndStateType, "name")
+    descriptor = None
+    for klass in jpdl31_EndStateType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_endstatetype_has_group():
+    assert hasattr(jpdl31_EndStateType, "group")
+    descriptor = None
+    for klass in jpdl31_EndStateType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpdl31_jointype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_JoinType)
+
+
+def test_jpdl31_jointype_constructor_exists():
+    assert callable(jpdl31_JoinType.__init__)
+
+
+def test_jpdl31_jointype_constructor_args():
+    sig = inspect.signature(jpdl31_JoinType.__init__)
+    params = list(sig.parameters.keys())
+    assert "async_" in params, "Missing parameter 'async_'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "nodeContentElements" in params, "Missing parameter 'nodeContentElements'"
+
+def test_jpdl31_jointype_has_async_():
+    assert hasattr(jpdl31_JoinType, "async_")
+    descriptor = None
+    for klass in jpdl31_JoinType.__mro__:
+        if "async_" in klass.__dict__:
+            descriptor = klass.__dict__["async_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_jointype_has_name():
+    assert hasattr(jpdl31_JoinType, "name")
+    descriptor = None
+    for klass in jpdl31_JoinType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_jointype_has_nodeContentElements():
+    assert hasattr(jpdl31_JoinType, "nodeContentElements")
+    descriptor = None
+    for klass in jpdl31_JoinType.__mro__:
         if "nodeContentElements" in klass.__dict__:
             descriptor = klass.__dict__["nodeContentElements"]
             break
@@ -629,203 +751,81 @@ def test_jpdl31::nodetype_has_nodeContentElements():
 
 
 
-def test_jpdl31::processstatetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ProcessStateType)
+def test_jpdl31_forktype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ForkType)
 
 
-def test_jpdl31::processstatetype_constructor_exists():
-    assert callable(jpdl31::ProcessStateType.__init__)
+def test_jpdl31_forktype_constructor_exists():
+    assert callable(jpdl31_ForkType.__init__)
 
 
-def test_jpdl31::processstatetype_constructor_args():
-    sig = inspect.signature(jpdl31::ProcessStateType.__init__)
+def test_jpdl31_forktype_constructor_args():
+    sig = inspect.signature(jpdl31_ForkType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "async_" in params, "Missing parameter 'async_'"
     assert "group" in params, "Missing parameter 'group'"
+    assert "async_" in params, "Missing parameter 'async_'"
 
-def test_jpdl31::processstatetype_has_name():
-    assert hasattr(jpdl31::ProcessStateType, "name")
+def test_jpdl31_forktype_has_name():
+    assert hasattr(jpdl31_ForkType, "name")
     descriptor = None
-    for klass in jpdl31::ProcessStateType.__mro__:
+    for klass in jpdl31_ForkType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::processstatetype_has_async_():
-    assert hasattr(jpdl31::ProcessStateType, "async_")
+def test_jpdl31_forktype_has_group():
+    assert hasattr(jpdl31_ForkType, "group")
     descriptor = None
-    for klass in jpdl31::ProcessStateType.__mro__:
-        if "async_" in klass.__dict__:
-            descriptor = klass.__dict__["async_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::processstatetype_has_group():
-    assert hasattr(jpdl31::ProcessStateType, "group")
-    descriptor = None
-    for klass in jpdl31::ProcessStateType.__mro__:
+    for klass in jpdl31_ForkType.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::endstatetype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::EndStateType)
-
-
-def test_jpdl31::endstatetype_constructor_exists():
-    assert callable(jpdl31::EndStateType.__init__)
-
-
-def test_jpdl31::endstatetype_constructor_args():
-    sig = inspect.signature(jpdl31::EndStateType.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_jpdl31::endstatetype_has_group():
-    assert hasattr(jpdl31::EndStateType, "group")
+def test_jpdl31_forktype_has_async_():
+    assert hasattr(jpdl31_ForkType, "async_")
     descriptor = None
-    for klass in jpdl31::EndStateType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::endstatetype_has_name():
-    assert hasattr(jpdl31::EndStateType, "name")
-    descriptor = None
-    for klass in jpdl31::EndStateType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jpdl31::jointype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::JoinType)
-
-
-def test_jpdl31::jointype_constructor_exists():
-    assert callable(jpdl31::JoinType.__init__)
-
-
-def test_jpdl31::jointype_constructor_args():
-    sig = inspect.signature(jpdl31::JoinType.__init__)
-    params = list(sig.parameters.keys())
-    assert "nodeContentElements" in params, "Missing parameter 'nodeContentElements'"
-    assert "async_" in params, "Missing parameter 'async_'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_jpdl31::jointype_has_nodeContentElements():
-    assert hasattr(jpdl31::JoinType, "nodeContentElements")
-    descriptor = None
-    for klass in jpdl31::JoinType.__mro__:
-        if "nodeContentElements" in klass.__dict__:
-            descriptor = klass.__dict__["nodeContentElements"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::jointype_has_async_():
-    assert hasattr(jpdl31::JoinType, "async_")
-    descriptor = None
-    for klass in jpdl31::JoinType.__mro__:
+    for klass in jpdl31_ForkType.__mro__:
         if "async_" in klass.__dict__:
             descriptor = klass.__dict__["async_"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::jointype_has_name():
-    assert hasattr(jpdl31::JoinType, "name")
-    descriptor = None
-    for klass in jpdl31::JoinType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_jpdl31::forktype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ForkType)
-
-
-def test_jpdl31::forktype_constructor_exists():
-    assert callable(jpdl31::ForkType.__init__)
+def test_jpdl31_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_EStringToStringMapEntry)
 
 
-def test_jpdl31::forktype_constructor_args():
-    sig = inspect.signature(jpdl31::ForkType.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "async_" in params, "Missing parameter 'async_'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_jpdl31::forktype_has_name():
-    assert hasattr(jpdl31::ForkType, "name")
-    descriptor = None
-    for klass in jpdl31::ForkType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::forktype_has_async_():
-    assert hasattr(jpdl31::ForkType, "async_")
-    descriptor = None
-    for klass in jpdl31::ForkType.__mro__:
-        if "async_" in klass.__dict__:
-            descriptor = klass.__dict__["async_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::forktype_has_group():
-    assert hasattr(jpdl31::ForkType, "group")
-    descriptor = None
-    for klass in jpdl31::ForkType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
+def test_jpdl31_estringtostringmapentry_constructor_exists():
+    assert callable(jpdl31_EStringToStringMapEntry.__init__)
 
 
-
-def test_jpdl31::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::EStringToStringMapEntry)
-
-
-def test_jpdl31::estringtostringmapentry_constructor_exists():
-    assert callable(jpdl31::EStringToStringMapEntry.__init__)
-
-
-def test_jpdl31::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(jpdl31::EStringToStringMapEntry.__init__)
+def test_jpdl31_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(jpdl31_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpdl31::documentroot_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::DocumentRoot)
+def test_jpdl31_documentroot_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_DocumentRoot)
 
 
-def test_jpdl31::documentroot_constructor_exists():
-    assert callable(jpdl31::DocumentRoot.__init__)
+def test_jpdl31_documentroot_constructor_exists():
+    assert callable(jpdl31_DocumentRoot.__init__)
 
 
-def test_jpdl31::documentroot_constructor_args():
-    sig = inspect.signature(jpdl31::DocumentRoot.__init__)
+def test_jpdl31_documentroot_constructor_args():
+    sig = inspect.signature(jpdl31_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_jpdl31::documentroot_has_mixed():
-    assert hasattr(jpdl31::DocumentRoot, "mixed")
+def test_jpdl31_documentroot_has_mixed():
+    assert hasattr(jpdl31_DocumentRoot, "mixed")
     descriptor = None
-    for klass in jpdl31::DocumentRoot.__mro__:
+    for klass in jpdl31_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -833,219 +833,219 @@ def test_jpdl31::documentroot_has_mixed():
 
 
 
-def test_jpdl31::transitiontype1_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::TransitionType1)
+def test_jpdl31_transitiontype1_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_TransitionType1)
 
 
-def test_jpdl31::transitiontype1_constructor_exists():
-    assert callable(jpdl31::TransitionType1.__init__)
+def test_jpdl31_transitiontype1_constructor_exists():
+    assert callable(jpdl31_TransitionType1.__init__)
 
 
-def test_jpdl31::transitiontype1_constructor_args():
-    sig = inspect.signature(jpdl31::TransitionType1.__init__)
+def test_jpdl31_transitiontype1_constructor_args():
+    sig = inspect.signature(jpdl31_TransitionType1.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "to" in params, "Missing parameter 'to'"
     assert "group" in params, "Missing parameter 'group'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::transitiontype1_has_to():
-    assert hasattr(jpdl31::TransitionType1, "to")
+def test_jpdl31_transitiontype1_has_name():
+    assert hasattr(jpdl31_TransitionType1, "name")
     descriptor = None
-    for klass in jpdl31::TransitionType1.__mro__:
+    for klass in jpdl31_TransitionType1.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_transitiontype1_has_to():
+    assert hasattr(jpdl31_TransitionType1, "to")
+    descriptor = None
+    for klass in jpdl31_TransitionType1.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::transitiontype1_has_group():
-    assert hasattr(jpdl31::TransitionType1, "group")
+def test_jpdl31_transitiontype1_has_group():
+    assert hasattr(jpdl31_TransitionType1, "group")
     descriptor = None
-    for klass in jpdl31::TransitionType1.__mro__:
+    for klass in jpdl31_TransitionType1.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::transitiontype1_has_name():
-    assert hasattr(jpdl31::TransitionType1, "name")
-    descriptor = None
-    for klass in jpdl31::TransitionType1.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_jpdl31::exceptionhandlertype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ExceptionHandlerType)
-
-
-def test_jpdl31::exceptionhandlertype_constructor_exists():
-    assert callable(jpdl31::ExceptionHandlerType.__init__)
+def test_jpdl31_exceptionhandlertype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ExceptionHandlerType)
 
 
-def test_jpdl31::exceptionhandlertype_constructor_args():
-    sig = inspect.signature(jpdl31::ExceptionHandlerType.__init__)
+def test_jpdl31_exceptionhandlertype_constructor_exists():
+    assert callable(jpdl31_ExceptionHandlerType.__init__)
+
+
+def test_jpdl31_exceptionhandlertype_constructor_args():
+    sig = inspect.signature(jpdl31_ExceptionHandlerType.__init__)
     params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
     assert "exceptionClass" in params, "Missing parameter 'exceptionClass'"
+    assert "group" in params, "Missing parameter 'group'"
 
-def test_jpdl31::exceptionhandlertype_has_group():
-    assert hasattr(jpdl31::ExceptionHandlerType, "group")
+def test_jpdl31_exceptionhandlertype_has_exceptionClass():
+    assert hasattr(jpdl31_ExceptionHandlerType, "exceptionClass")
     descriptor = None
-    for klass in jpdl31::ExceptionHandlerType.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::exceptionhandlertype_has_exceptionClass():
-    assert hasattr(jpdl31::ExceptionHandlerType, "exceptionClass")
-    descriptor = None
-    for klass in jpdl31::ExceptionHandlerType.__mro__:
+    for klass in jpdl31_ExceptionHandlerType.__mro__:
         if "exceptionClass" in klass.__dict__:
             descriptor = klass.__dict__["exceptionClass"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::eventtype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::EventType)
-
-
-def test_jpdl31::eventtype_constructor_exists():
-    assert callable(jpdl31::EventType.__init__)
-
-
-def test_jpdl31::eventtype_constructor_args():
-    sig = inspect.signature(jpdl31::EventType.__init__)
-    params = list(sig.parameters.keys())
-    assert "actionElements" in params, "Missing parameter 'actionElements'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_jpdl31::eventtype_has_actionElements():
-    assert hasattr(jpdl31::EventType, "actionElements")
+def test_jpdl31_exceptionhandlertype_has_group():
+    assert hasattr(jpdl31_ExceptionHandlerType, "group")
     descriptor = None
-    for klass in jpdl31::EventType.__mro__:
-        if "actionElements" in klass.__dict__:
-            descriptor = klass.__dict__["actionElements"]
+    for klass in jpdl31_ExceptionHandlerType.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::eventtype_has_type():
-    assert hasattr(jpdl31::EventType, "type")
+
+
+def test_jpdl31_eventtype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_EventType)
+
+
+def test_jpdl31_eventtype_constructor_exists():
+    assert callable(jpdl31_EventType.__init__)
+
+
+def test_jpdl31_eventtype_constructor_args():
+    sig = inspect.signature(jpdl31_EventType.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "actionElements" in params, "Missing parameter 'actionElements'"
+
+def test_jpdl31_eventtype_has_type():
+    assert hasattr(jpdl31_EventType, "type")
     descriptor = None
-    for klass in jpdl31::EventType.__mro__:
+    for klass in jpdl31_EventType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::delegation_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::Delegation)
-
-
-def test_jpdl31::delegation_constructor_exists():
-    assert callable(jpdl31::Delegation.__init__)
-
-
-def test_jpdl31::delegation_constructor_args():
-    sig = inspect.signature(jpdl31::Delegation.__init__)
-    params = list(sig.parameters.keys())
-    assert "any" in params, "Missing parameter 'any'"
-    assert "configType" in params, "Missing parameter 'configType'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "mixed" in params, "Missing parameter 'mixed'"
-
-def test_jpdl31::delegation_has_any():
-    assert hasattr(jpdl31::Delegation, "any")
+def test_jpdl31_eventtype_has_actionElements():
+    assert hasattr(jpdl31_EventType, "actionElements")
     descriptor = None
-    for klass in jpdl31::Delegation.__mro__:
-        if "any" in klass.__dict__:
-            descriptor = klass.__dict__["any"]
+    for klass in jpdl31_EventType.__mro__:
+        if "actionElements" in klass.__dict__:
+            descriptor = klass.__dict__["actionElements"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::delegation_has_configType():
-    assert hasattr(jpdl31::Delegation, "configType")
+
+
+def test_jpdl31_delegation_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_Delegation)
+
+
+def test_jpdl31_delegation_constructor_exists():
+    assert callable(jpdl31_Delegation.__init__)
+
+
+def test_jpdl31_delegation_constructor_args():
+    sig = inspect.signature(jpdl31_Delegation.__init__)
+    params = list(sig.parameters.keys())
+    assert "configType" in params, "Missing parameter 'configType'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "any" in params, "Missing parameter 'any'"
+
+def test_jpdl31_delegation_has_configType():
+    assert hasattr(jpdl31_Delegation, "configType")
     descriptor = None
-    for klass in jpdl31::Delegation.__mro__:
+    for klass in jpdl31_Delegation.__mro__:
         if "configType" in klass.__dict__:
             descriptor = klass.__dict__["configType"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::delegation_has_class_():
-    assert hasattr(jpdl31::Delegation, "class_")
+def test_jpdl31_delegation_has_mixed():
+    assert hasattr(jpdl31_Delegation, "mixed")
     descriptor = None
-    for klass in jpdl31::Delegation.__mro__:
+    for klass in jpdl31_Delegation.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_delegation_has_class_():
+    assert hasattr(jpdl31_Delegation, "class_")
+    descriptor = None
+    for klass in jpdl31_Delegation.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::delegation_has_mixed():
-    assert hasattr(jpdl31::Delegation, "mixed")
+def test_jpdl31_delegation_has_any():
+    assert hasattr(jpdl31_Delegation, "any")
     descriptor = None
-    for klass in jpdl31::Delegation.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
+    for klass in jpdl31_Delegation.__mro__:
+        if "any" in klass.__dict__:
+            descriptor = klass.__dict__["any"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_jpdl31::decisiontype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::DecisionType)
+def test_jpdl31_decisiontype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_DecisionType)
 
 
-def test_jpdl31::decisiontype_constructor_exists():
-    assert callable(jpdl31::DecisionType.__init__)
+def test_jpdl31_decisiontype_constructor_exists():
+    assert callable(jpdl31_DecisionType.__init__)
 
 
-def test_jpdl31::decisiontype_constructor_args():
-    sig = inspect.signature(jpdl31::DecisionType.__init__)
+def test_jpdl31_decisiontype_constructor_args():
+    sig = inspect.signature(jpdl31_DecisionType.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "group" in params, "Missing parameter 'group'"
     assert "async_" in params, "Missing parameter 'async_'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_jpdl31::decisiontype_has_group():
-    assert hasattr(jpdl31::DecisionType, "group")
+def test_jpdl31_decisiontype_has_name():
+    assert hasattr(jpdl31_DecisionType, "name")
     descriptor = None
-    for klass in jpdl31::DecisionType.__mro__:
+    for klass in jpdl31_DecisionType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_decisiontype_has_group():
+    assert hasattr(jpdl31_DecisionType, "group")
+    descriptor = None
+    for klass in jpdl31_DecisionType.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::decisiontype_has_async_():
-    assert hasattr(jpdl31::DecisionType, "async_")
+def test_jpdl31_decisiontype_has_async_():
+    assert hasattr(jpdl31_DecisionType, "async_")
     descriptor = None
-    for klass in jpdl31::DecisionType.__mro__:
+    for klass in jpdl31_DecisionType.__mro__:
         if "async_" in klass.__dict__:
             descriptor = klass.__dict__["async_"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::decisiontype_has_name():
-    assert hasattr(jpdl31::DecisionType, "name")
+def test_jpdl31_decisiontype_has_expression():
+    assert hasattr(jpdl31_DecisionType, "expression")
     descriptor = None
-    for klass in jpdl31::DecisionType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::decisiontype_has_expression():
-    assert hasattr(jpdl31::DecisionType, "expression")
-    descriptor = None
-    for klass in jpdl31::DecisionType.__mro__:
+    for klass in jpdl31_DecisionType.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -1053,185 +1053,185 @@ def test_jpdl31::decisiontype_has_expression():
 
 
 
-def test_jpdl31::scripttype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ScriptType)
+def test_jpdl31_scripttype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ScriptType)
 
 
-def test_jpdl31::scripttype_constructor_exists():
-    assert callable(jpdl31::ScriptType.__init__)
+def test_jpdl31_scripttype_constructor_exists():
+    assert callable(jpdl31_ScriptType.__init__)
 
 
-def test_jpdl31::scripttype_constructor_args():
-    sig = inspect.signature(jpdl31::ScriptType.__init__)
+def test_jpdl31_scripttype_constructor_args():
+    sig = inspect.signature(jpdl31_ScriptType.__init__)
     params = list(sig.parameters.keys())
-    assert "any" in params, "Missing parameter 'any'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "acceptPropagatedEvents" in params, "Missing parameter 'acceptPropagatedEvents'"
     assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "acceptPropagatedEvents" in params, "Missing parameter 'acceptPropagatedEvents'"
+    assert "any" in params, "Missing parameter 'any'"
 
-def test_jpdl31::scripttype_has_any():
-    assert hasattr(jpdl31::ScriptType, "any")
+def test_jpdl31_scripttype_has_name():
+    assert hasattr(jpdl31_ScriptType, "name")
     descriptor = None
-    for klass in jpdl31::ScriptType.__mro__:
-        if "any" in klass.__dict__:
-            descriptor = klass.__dict__["any"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::scripttype_has_name():
-    assert hasattr(jpdl31::ScriptType, "name")
-    descriptor = None
-    for klass in jpdl31::ScriptType.__mro__:
+    for klass in jpdl31_ScriptType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::scripttype_has_acceptPropagatedEvents():
-    assert hasattr(jpdl31::ScriptType, "acceptPropagatedEvents")
+def test_jpdl31_scripttype_has_mixed():
+    assert hasattr(jpdl31_ScriptType, "mixed")
     descriptor = None
-    for klass in jpdl31::ScriptType.__mro__:
+    for klass in jpdl31_ScriptType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_scripttype_has_acceptPropagatedEvents():
+    assert hasattr(jpdl31_ScriptType, "acceptPropagatedEvents")
+    descriptor = None
+    for klass in jpdl31_ScriptType.__mro__:
         if "acceptPropagatedEvents" in klass.__dict__:
             descriptor = klass.__dict__["acceptPropagatedEvents"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::scripttype_has_mixed():
-    assert hasattr(jpdl31::ScriptType, "mixed")
+def test_jpdl31_scripttype_has_any():
+    assert hasattr(jpdl31_ScriptType, "any")
     descriptor = None
-    for klass in jpdl31::ScriptType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jpdl31::createtimertype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::CreateTimerType)
-
-
-def test_jpdl31::createtimertype_constructor_exists():
-    assert callable(jpdl31::CreateTimerType.__init__)
-
-
-def test_jpdl31::createtimertype_constructor_args():
-    sig = inspect.signature(jpdl31::CreateTimerType.__init__)
-    params = list(sig.parameters.keys())
-    assert "duedate" in params, "Missing parameter 'duedate'"
-    assert "repeat" in params, "Missing parameter 'repeat'"
-    assert "transition" in params, "Missing parameter 'transition'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_jpdl31::createtimertype_has_duedate():
-    assert hasattr(jpdl31::CreateTimerType, "duedate")
-    descriptor = None
-    for klass in jpdl31::CreateTimerType.__mro__:
-        if "duedate" in klass.__dict__:
-            descriptor = klass.__dict__["duedate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::createtimertype_has_repeat():
-    assert hasattr(jpdl31::CreateTimerType, "repeat")
-    descriptor = None
-    for klass in jpdl31::CreateTimerType.__mro__:
-        if "repeat" in klass.__dict__:
-            descriptor = klass.__dict__["repeat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::createtimertype_has_transition():
-    assert hasattr(jpdl31::CreateTimerType, "transition")
-    descriptor = None
-    for klass in jpdl31::CreateTimerType.__mro__:
-        if "transition" in klass.__dict__:
-            descriptor = klass.__dict__["transition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::createtimertype_has_name():
-    assert hasattr(jpdl31::CreateTimerType, "name")
-    descriptor = None
-    for klass in jpdl31::CreateTimerType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jpdl31::conditiontype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ConditionType)
-
-
-def test_jpdl31::conditiontype_constructor_exists():
-    assert callable(jpdl31::ConditionType.__init__)
-
-
-def test_jpdl31::conditiontype_constructor_args():
-    sig = inspect.signature(jpdl31::ConditionType.__init__)
-    params = list(sig.parameters.keys())
-    assert "any" in params, "Missing parameter 'any'"
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "expression" in params, "Missing parameter 'expression'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_jpdl31::conditiontype_has_any():
-    assert hasattr(jpdl31::ConditionType, "any")
-    descriptor = None
-    for klass in jpdl31::ConditionType.__mro__:
+    for klass in jpdl31_ScriptType.__mro__:
         if "any" in klass.__dict__:
             descriptor = klass.__dict__["any"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::conditiontype_has_mixed():
-    assert hasattr(jpdl31::ConditionType, "mixed")
+
+
+def test_jpdl31_createtimertype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_CreateTimerType)
+
+
+def test_jpdl31_createtimertype_constructor_exists():
+    assert callable(jpdl31_CreateTimerType.__init__)
+
+
+def test_jpdl31_createtimertype_constructor_args():
+    sig = inspect.signature(jpdl31_CreateTimerType.__init__)
+    params = list(sig.parameters.keys())
+    assert "transition" in params, "Missing parameter 'transition'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "repeat" in params, "Missing parameter 'repeat'"
+    assert "duedate" in params, "Missing parameter 'duedate'"
+
+def test_jpdl31_createtimertype_has_transition():
+    assert hasattr(jpdl31_CreateTimerType, "transition")
     descriptor = None
-    for klass in jpdl31::ConditionType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
+    for klass in jpdl31_CreateTimerType.__mro__:
+        if "transition" in klass.__dict__:
+            descriptor = klass.__dict__["transition"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::conditiontype_has_expression():
-    assert hasattr(jpdl31::ConditionType, "expression")
+def test_jpdl31_createtimertype_has_name():
+    assert hasattr(jpdl31_CreateTimerType, "name")
     descriptor = None
-    for klass in jpdl31::ConditionType.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
+    for klass in jpdl31_CreateTimerType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::conditiontype_has_group():
-    assert hasattr(jpdl31::ConditionType, "group")
+def test_jpdl31_createtimertype_has_repeat():
+    assert hasattr(jpdl31_CreateTimerType, "repeat")
     descriptor = None
-    for klass in jpdl31::ConditionType.__mro__:
+    for klass in jpdl31_CreateTimerType.__mro__:
+        if "repeat" in klass.__dict__:
+            descriptor = klass.__dict__["repeat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_createtimertype_has_duedate():
+    assert hasattr(jpdl31_CreateTimerType, "duedate")
+    descriptor = None
+    for klass in jpdl31_CreateTimerType.__mro__:
+        if "duedate" in klass.__dict__:
+            descriptor = klass.__dict__["duedate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpdl31_conditiontype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ConditionType)
+
+
+def test_jpdl31_conditiontype_constructor_exists():
+    assert callable(jpdl31_ConditionType.__init__)
+
+
+def test_jpdl31_conditiontype_constructor_args():
+    sig = inspect.signature(jpdl31_ConditionType.__init__)
+    params = list(sig.parameters.keys())
+    assert "group" in params, "Missing parameter 'group'"
+    assert "any" in params, "Missing parameter 'any'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "expression" in params, "Missing parameter 'expression'"
+
+def test_jpdl31_conditiontype_has_group():
+    assert hasattr(jpdl31_ConditionType, "group")
+    descriptor = None
+    for klass in jpdl31_ConditionType.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
+def test_jpdl31_conditiontype_has_any():
+    assert hasattr(jpdl31_ConditionType, "any")
+    descriptor = None
+    for klass in jpdl31_ConditionType.__mro__:
+        if "any" in klass.__dict__:
+            descriptor = klass.__dict__["any"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_conditiontype_has_mixed():
+    assert hasattr(jpdl31_ConditionType, "mixed")
+    descriptor = None
+    for klass in jpdl31_ConditionType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_conditiontype_has_expression():
+    assert hasattr(jpdl31_ConditionType, "expression")
+    descriptor = None
+    for klass in jpdl31_ConditionType.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_jpdl31::canceltimertype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::CancelTimerType)
+
+def test_jpdl31_canceltimertype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_CancelTimerType)
 
 
-def test_jpdl31::canceltimertype_constructor_exists():
-    assert callable(jpdl31::CancelTimerType.__init__)
+def test_jpdl31_canceltimertype_constructor_exists():
+    assert callable(jpdl31_CancelTimerType.__init__)
 
 
-def test_jpdl31::canceltimertype_constructor_args():
-    sig = inspect.signature(jpdl31::CancelTimerType.__init__)
+def test_jpdl31_canceltimertype_constructor_args():
+    sig = inspect.signature(jpdl31_CancelTimerType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpdl31::canceltimertype_has_name():
-    assert hasattr(jpdl31::CancelTimerType, "name")
+def test_jpdl31_canceltimertype_has_name():
+    assert hasattr(jpdl31_CancelTimerType, "name")
     descriptor = None
-    for klass in jpdl31::CancelTimerType.__mro__:
+    for klass in jpdl31_CancelTimerType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1253,188 +1253,151 @@ def test_delegation_constructor_args():
 
 
 
-def test_jpdl31::assignmenttype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::AssignmentType)
+def test_jpdl31_assignmenttype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_AssignmentType)
 
 
-def test_jpdl31::assignmenttype_constructor_exists():
-    assert callable(jpdl31::AssignmentType.__init__)
+def test_jpdl31_assignmenttype_constructor_exists():
+    assert callable(jpdl31_AssignmentType.__init__)
 
 
-def test_jpdl31::assignmenttype_constructor_args():
-    sig = inspect.signature(jpdl31::AssignmentType.__init__)
+def test_jpdl31_assignmenttype_constructor_args():
+    sig = inspect.signature(jpdl31_AssignmentType.__init__)
     params = list(sig.parameters.keys())
+    assert "actorId" in params, "Missing parameter 'actorId'"
     assert "pooledActors" in params, "Missing parameter 'pooledActors'"
     assert "expression" in params, "Missing parameter 'expression'"
-    assert "actorId" in params, "Missing parameter 'actorId'"
 
-def test_jpdl31::assignmenttype_has_pooledActors():
-    assert hasattr(jpdl31::AssignmentType, "pooledActors")
+def test_jpdl31_assignmenttype_has_actorId():
+    assert hasattr(jpdl31_AssignmentType, "actorId")
     descriptor = None
-    for klass in jpdl31::AssignmentType.__mro__:
-        if "pooledActors" in klass.__dict__:
-            descriptor = klass.__dict__["pooledActors"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::assignmenttype_has_expression():
-    assert hasattr(jpdl31::AssignmentType, "expression")
-    descriptor = None
-    for klass in jpdl31::AssignmentType.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::assignmenttype_has_actorId():
-    assert hasattr(jpdl31::AssignmentType, "actorId")
-    descriptor = None
-    for klass in jpdl31::AssignmentType.__mro__:
+    for klass in jpdl31_AssignmentType.__mro__:
         if "actorId" in klass.__dict__:
             descriptor = klass.__dict__["actorId"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpdl31::actiontype_is_not_abstract():
-    assert not inspect.isabstract(jpdl31::ActionType)
-
-
-def test_jpdl31::actiontype_constructor_exists():
-    assert callable(jpdl31::ActionType.__init__)
-
-
-def test_jpdl31::actiontype_constructor_args():
-    sig = inspect.signature(jpdl31::ActionType.__init__)
-    params = list(sig.parameters.keys())
-    assert "any" in params, "Missing parameter 'any'"
-    assert "refName" in params, "Missing parameter 'refName'"
-    assert "async_" in params, "Missing parameter 'async_'"
-    assert "expression" in params, "Missing parameter 'expression'"
-    assert "acceptPropagatedEvents" in params, "Missing parameter 'acceptPropagatedEvents'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "configType" in params, "Missing parameter 'configType'"
-
-def test_jpdl31::actiontype_has_any():
-    assert hasattr(jpdl31::ActionType, "any")
+def test_jpdl31_assignmenttype_has_pooledActors():
+    assert hasattr(jpdl31_AssignmentType, "pooledActors")
     descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "any" in klass.__dict__:
-            descriptor = klass.__dict__["any"]
+    for klass in jpdl31_AssignmentType.__mro__:
+        if "pooledActors" in klass.__dict__:
+            descriptor = klass.__dict__["pooledActors"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::actiontype_has_refName():
-    assert hasattr(jpdl31::ActionType, "refName")
+def test_jpdl31_assignmenttype_has_expression():
+    assert hasattr(jpdl31_AssignmentType, "expression")
     descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "refName" in klass.__dict__:
-            descriptor = klass.__dict__["refName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::actiontype_has_async_():
-    assert hasattr(jpdl31::ActionType, "async_")
-    descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "async_" in klass.__dict__:
-            descriptor = klass.__dict__["async_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpdl31::actiontype_has_expression():
-    assert hasattr(jpdl31::ActionType, "expression")
-    descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
+    for klass in jpdl31_AssignmentType.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpdl31::actiontype_has_acceptPropagatedEvents():
-    assert hasattr(jpdl31::ActionType, "acceptPropagatedEvents")
-    descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "acceptPropagatedEvents" in klass.__dict__:
-            descriptor = klass.__dict__["acceptPropagatedEvents"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_jpdl31::actiontype_has_name():
-    assert hasattr(jpdl31::ActionType, "name")
-    descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_jpdl31::actiontype_has_class_():
-    assert hasattr(jpdl31::ActionType, "class_")
-    descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
+def test_jpdl31_actiontype_is_not_abstract():
+    assert not inspect.isabstract(jpdl31_ActionType)
 
-def test_jpdl31::actiontype_has_mixed():
-    assert hasattr(jpdl31::ActionType, "mixed")
-    descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_jpdl31::actiontype_has_configType():
-    assert hasattr(jpdl31::ActionType, "configType")
+def test_jpdl31_actiontype_constructor_exists():
+    assert callable(jpdl31_ActionType.__init__)
+
+
+def test_jpdl31_actiontype_constructor_args():
+    sig = inspect.signature(jpdl31_ActionType.__init__)
+    params = list(sig.parameters.keys())
+    assert "configType" in params, "Missing parameter 'configType'"
+    assert "expression" in params, "Missing parameter 'expression'"
+    assert "refName" in params, "Missing parameter 'refName'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "async_" in params, "Missing parameter 'async_'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "any" in params, "Missing parameter 'any'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "acceptPropagatedEvents" in params, "Missing parameter 'acceptPropagatedEvents'"
+
+def test_jpdl31_actiontype_has_configType():
+    assert hasattr(jpdl31_ActionType, "configType")
     descriptor = None
-    for klass in jpdl31::ActionType.__mro__:
+    for klass in jpdl31_ActionType.__mro__:
         if "configType" in klass.__dict__:
             descriptor = klass.__dict__["configType"]
             break
     assert isinstance(descriptor, property)
 
-def test_booleantype_exists():
-    # Check that the Enumeration exists
-    assert BooleanType is not None
+def test_jpdl31_actiontype_has_expression():
+    assert hasattr(jpdl31_ActionType, "expression")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_booleantype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanType]
-    expected_literals = [
-        "off",
-        "false",
-        "yes",
-        "no",
-        "true",
-        "on",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanType"
+def test_jpdl31_actiontype_has_refName():
+    assert hasattr(jpdl31_ActionType, "refName")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "refName" in klass.__dict__:
+            descriptor = klass.__dict__["refName"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_prioritytypemember0_exists():
-    # Check that the Enumeration exists
-    assert PriorityTypeMember0 is not None
+def test_jpdl31_actiontype_has_class_():
+    assert hasattr(jpdl31_ActionType, "class_")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_prioritytypemember0_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PriorityTypeMember0]
-    expected_literals = [
-        "lowest",
-        "low",
-        "highest",
-        "normal",
-        "high",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PriorityTypeMember0"
+def test_jpdl31_actiontype_has_async_():
+    assert hasattr(jpdl31_ActionType, "async_")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "async_" in klass.__dict__:
+            descriptor = klass.__dict__["async_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_actiontype_has_mixed():
+    assert hasattr(jpdl31_ActionType, "mixed")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_actiontype_has_any():
+    assert hasattr(jpdl31_ActionType, "any")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "any" in klass.__dict__:
+            descriptor = klass.__dict__["any"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_actiontype_has_name():
+    assert hasattr(jpdl31_ActionType, "name")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpdl31_actiontype_has_acceptPropagatedEvents():
+    assert hasattr(jpdl31_ActionType, "acceptPropagatedEvents")
+    descriptor = None
+    for klass in jpdl31_ActionType.__mro__:
+        if "acceptPropagatedEvents" in klass.__dict__:
+            descriptor = klass.__dict__["acceptPropagatedEvents"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_configtypetype1_exists():
     # Check that the Enumeration exists
@@ -1444,31 +1407,31 @@ def test_configtypetype1_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ConfigTypeType1]
     expected_literals = [
+        "bean",
         "field",
         "configurationProperty",
         "constructor",
-        "bean",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ConfigTypeType1"
 
-def test_configtypetype_exists():
+def test_configtype_exists():
     # Check that the Enumeration exists
-    assert ConfigTypeType is not None
+    assert ConfigType is not None
 
-def test_configtypetype_has_all_literals():
+def test_configtype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ConfigTypeType]
+    enum_literals = [lit.name for lit in ConfigType]
     expected_literals = [
-        "constructor",
+        "bean",
         "configurationProperty",
         "field",
-        "bean",
+        "constructor",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ConfigTypeType"
+        assert lit_name in enum_literals, f"Literal '' missing in ConfigType"
 
 def test_signaltype_exists():
     # Check that the Enumeration exists
@@ -1478,12 +1441,12 @@ def test_signaltype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SignalType]
     expected_literals = [
-        "firstWait",
         "first",
+        "firstWait",
+        "lastWait",
         "never",
         "last",
         "unsynchronized",
-        "lastWait",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1497,42 +1460,79 @@ def test_typetypemember1_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TypeTypeMember1]
     expected_literals = [
-        "subprocessCreated",
-        "nodeEnter",
-        "timerCreate",
-        "processEnd",
-        "subprocessEnd",
-        "processStart",
-        "afterSignal",
-        "taskStart",
-        "superstateEnter",
-        "superstateLeave",
-        "taskEnd",
-        "taskCreate",
-        "nodeLeave",
-        "beforeSignal",
         "taskAssign",
+        "taskCreate",
+        "afterSignal",
+        "nodeEnter",
+        "subprocessCreated",
+        "timerCreate",
+        "superstateLeave",
+        "taskStart",
+        "nodeLeave",
+        "taskEnd",
+        "subprocessEnd",
+        "superstateEnter",
+        "processStart",
+        "processEnd",
+        "beforeSignal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TypeTypeMember1"
 
-def test_configtype_exists():
+def test_configtypetype_exists():
     # Check that the Enumeration exists
-    assert ConfigType is not None
+    assert ConfigTypeType is not None
 
-def test_configtype_has_all_literals():
+def test_configtypetype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ConfigType]
+    enum_literals = [lit.name for lit in ConfigTypeType]
     expected_literals = [
-        "field",
-        "bean",
-        "configurationProperty",
         "constructor",
+        "field",
+        "configurationProperty",
+        "bean",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ConfigType"
+        assert lit_name in enum_literals, f"Literal '' missing in ConfigTypeType"
+
+def test_prioritytypemember0_exists():
+    # Check that the Enumeration exists
+    assert PriorityTypeMember0 is not None
+
+def test_prioritytypemember0_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PriorityTypeMember0]
+    expected_literals = [
+        "normal",
+        "lowest",
+        "high",
+        "highest",
+        "low",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PriorityTypeMember0"
+
+def test_booleantype_exists():
+    # Check that the Enumeration exists
+    assert BooleanType is not None
+
+def test_booleantype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BooleanType]
+    expected_literals = [
+        "true",
+        "on",
+        "off",
+        "false",
+        "yes",
+        "no",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanType"
 
 
 # =============================================================================
@@ -1546,26 +1546,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-jpdl31::SubProcessType_strategy = st.builds(
-    jpdl31::SubProcessType,
-    name=
-        safe_text,
+jpdl31_SubProcessType_strategy = st.builds(
+    jpdl31_SubProcessType,
     version=
+        safe_text,
+    name=
         safe_text
 )
-jpdl31::VariableType_strategy = st.builds(
-    jpdl31::VariableType,
-    mappedName=
-        safe_text,
-    name=
-        safe_text,
+jpdl31_VariableType_strategy = st.builds(
+    jpdl31_VariableType,
     any=
         safe_text,
+    mappedName=
+        safe_text,
     access=
+        safe_text,
+    name=
         safe_text
 )
-jpdl31::TransitionType_strategy = st.builds(
-    jpdl31::TransitionType,
+jpdl31_TransitionType_strategy = st.builds(
+    jpdl31_TransitionType,
     to=
         safe_text,
     group=
@@ -1573,64 +1573,62 @@ jpdl31::TransitionType_strategy = st.builds(
     name=
         safe_text
 )
-jpdl31::SuperStateType_strategy = st.builds(
-    jpdl31::SuperStateType,
-    name=
+jpdl31_SuperStateType_strategy = st.builds(
+    jpdl31_SuperStateType,
+    group=
         safe_text,
     async_=
         safe_text,
-    group=
+    name=
         safe_text
 )
-jpdl31::StateType_strategy = st.builds(
-    jpdl31::StateType,
-    name=
-        safe_text,
+jpdl31_StateType_strategy = st.builds(
+    jpdl31_StateType,
     async_=
         safe_text,
     nodeContentElements=
-        safe_text
-)
-jpdl31::StartStateType_strategy = st.builds(
-    jpdl31::StartStateType,
-    group=
         safe_text,
     name=
         safe_text
 )
-jpdl31::TimerType_strategy = st.builds(
-    jpdl31::TimerType,
-    repeat=
+jpdl31_StartStateType_strategy = st.builds(
+    jpdl31_StartStateType,
+    name=
         safe_text,
-    transition=
-        safe_text,
+    group=
+        safe_text
+)
+jpdl31_TimerType_strategy = st.builds(
+    jpdl31_TimerType,
     duedate=
         safe_text,
     name=
+        safe_text,
+    repeat=
+        safe_text,
+    transition=
         safe_text
 )
-jpdl31::TaskNodeType_strategy = st.builds(
-    jpdl31::TaskNodeType,
-    group=
-        safe_text,
+jpdl31_TaskNodeType_strategy = st.builds(
+    jpdl31_TaskNodeType,
     signal=
         safe_text,
-    name=
-        safe_text,
-    endTasks=
+    group=
         safe_text,
     async_=
         safe_text,
-    createTasks=
-        safe_text
-)
-jpdl31::TaskType_strategy = st.builds(
-    jpdl31::TaskType,
-    signalling=
+    endTasks=
         safe_text,
-    description=
+    createTasks=
         safe_text,
     name=
+        safe_text
+)
+jpdl31_TaskType_strategy = st.builds(
+    jpdl31_TaskType,
+    description=
+        safe_text,
+    group=
         safe_text,
     duedate=
         safe_text,
@@ -1638,25 +1636,52 @@ jpdl31::TaskType_strategy = st.builds(
         safe_text,
     blocking=
         safe_text,
+    name=
+        safe_text,
+    signalling=
+        safe_text,
     priority=
-        safe_text,
-    group=
         safe_text
 )
-jpdl31::SwimlaneType_strategy = st.builds(
-    jpdl31::SwimlaneType,
+jpdl31_SwimlaneType_strategy = st.builds(
+    jpdl31_SwimlaneType,
     name=
         safe_text
 )
-jpdl31::ProcessDefinitionType_strategy = st.builds(
-    jpdl31::ProcessDefinitionType,
+jpdl31_ProcessDefinitionType_strategy = st.builds(
+    jpdl31_ProcessDefinitionType,
     group=
         safe_text,
     name=
         safe_text
 )
-jpdl31::NodeType_strategy = st.builds(
-    jpdl31::NodeType,
+jpdl31_NodeType_strategy = st.builds(
+    jpdl31_NodeType,
+    nodeContentElements=
+        safe_text,
+    name=
+        safe_text,
+    async_=
+        safe_text
+)
+jpdl31_ProcessStateType_strategy = st.builds(
+    jpdl31_ProcessStateType,
+    async_=
+        safe_text,
+    name=
+        safe_text,
+    group=
+        safe_text
+)
+jpdl31_EndStateType_strategy = st.builds(
+    jpdl31_EndStateType,
+    name=
+        safe_text,
+    group=
+        safe_text
+)
+jpdl31_JoinType_strategy = st.builds(
+    jpdl31_JoinType,
     async_=
         safe_text,
     name=
@@ -1664,1187 +1689,919 @@ jpdl31::NodeType_strategy = st.builds(
     nodeContentElements=
         safe_text
 )
-jpdl31::ProcessStateType_strategy = st.builds(
-    jpdl31::ProcessStateType,
+jpdl31_ForkType_strategy = st.builds(
+    jpdl31_ForkType,
     name=
-        safe_text,
-    async_=
         safe_text,
     group=
-        safe_text
-)
-jpdl31::EndStateType_strategy = st.builds(
-    jpdl31::EndStateType,
-    group=
-        safe_text,
-    name=
-        safe_text
-)
-jpdl31::JoinType_strategy = st.builds(
-    jpdl31::JoinType,
-    nodeContentElements=
         safe_text,
     async_=
-        safe_text,
-    name=
         safe_text
 )
-jpdl31::ForkType_strategy = st.builds(
-    jpdl31::ForkType,
-    name=
-        safe_text,
-    async_=
-        safe_text,
-    group=
-        safe_text
+jpdl31_EStringToStringMapEntry_strategy = st.builds(
+    jpdl31_EStringToStringMapEntry,
 )
-jpdl31::EStringToStringMapEntry_strategy = st.builds(
-    jpdl31::EStringToStringMapEntry,
-)
-jpdl31::DocumentRoot_strategy = st.builds(
-    jpdl31::DocumentRoot,
+jpdl31_DocumentRoot_strategy = st.builds(
+    jpdl31_DocumentRoot,
     mixed=
         safe_text
 )
-jpdl31::TransitionType1_strategy = st.builds(
-    jpdl31::TransitionType1,
+jpdl31_TransitionType1_strategy = st.builds(
+    jpdl31_TransitionType1,
+    name=
+        safe_text,
     to=
         safe_text,
     group=
-        safe_text,
-    name=
         safe_text
 )
-jpdl31::ExceptionHandlerType_strategy = st.builds(
-    jpdl31::ExceptionHandlerType,
-    group=
-        safe_text,
+jpdl31_ExceptionHandlerType_strategy = st.builds(
+    jpdl31_ExceptionHandlerType,
     exceptionClass=
+        safe_text,
+    group=
         safe_text
 )
-jpdl31::EventType_strategy = st.builds(
-    jpdl31::EventType,
-    actionElements=
-        safe_text,
+jpdl31_EventType_strategy = st.builds(
+    jpdl31_EventType,
     type=
+        safe_text,
+    actionElements=
         safe_text
 )
-jpdl31::Delegation_strategy = st.builds(
-    jpdl31::Delegation,
-    any=
-        safe_text,
+jpdl31_Delegation_strategy = st.builds(
+    jpdl31_Delegation,
     configType=
+        safe_text,
+    mixed=
         safe_text,
     class_=
         safe_text,
-    mixed=
+    any=
         safe_text
 )
-jpdl31::DecisionType_strategy = st.builds(
-    jpdl31::DecisionType,
+jpdl31_DecisionType_strategy = st.builds(
+    jpdl31_DecisionType,
+    name=
+        safe_text,
     group=
         safe_text,
     async_=
         safe_text,
-    name=
-        safe_text,
     expression=
         safe_text
 )
-jpdl31::ScriptType_strategy = st.builds(
-    jpdl31::ScriptType,
-    any=
-        safe_text,
+jpdl31_ScriptType_strategy = st.builds(
+    jpdl31_ScriptType,
     name=
+        safe_text,
+    mixed=
         safe_text,
     acceptPropagatedEvents=
         safe_text,
-    mixed=
+    any=
         safe_text
 )
-jpdl31::CreateTimerType_strategy = st.builds(
-    jpdl31::CreateTimerType,
-    duedate=
-        safe_text,
-    repeat=
-        safe_text,
+jpdl31_CreateTimerType_strategy = st.builds(
+    jpdl31_CreateTimerType,
     transition=
         safe_text,
     name=
+        safe_text,
+    repeat=
+        safe_text,
+    duedate=
         safe_text
 )
-jpdl31::ConditionType_strategy = st.builds(
-    jpdl31::ConditionType,
+jpdl31_ConditionType_strategy = st.builds(
+    jpdl31_ConditionType,
+    group=
+        safe_text,
     any=
         safe_text,
     mixed=
         safe_text,
     expression=
-        safe_text,
-    group=
         safe_text
 )
-jpdl31::CancelTimerType_strategy = st.builds(
-    jpdl31::CancelTimerType,
+jpdl31_CancelTimerType_strategy = st.builds(
+    jpdl31_CancelTimerType,
     name=
         safe_text
 )
 Delegation_strategy = st.builds(
     Delegation,
 )
-jpdl31::AssignmentType_strategy = st.builds(
-    jpdl31::AssignmentType,
+jpdl31_AssignmentType_strategy = st.builds(
+    jpdl31_AssignmentType,
+    actorId=
+        safe_text,
     pooledActors=
         safe_text,
     expression=
-        safe_text,
-    actorId=
         safe_text
 )
-jpdl31::ActionType_strategy = st.builds(
-    jpdl31::ActionType,
-    any=
-        safe_text,
-    refName=
-        safe_text,
-    async_=
+jpdl31_ActionType_strategy = st.builds(
+    jpdl31_ActionType,
+    configType=
         safe_text,
     expression=
         safe_text,
-    acceptPropagatedEvents=
-        safe_text,
-    name=
+    refName=
         safe_text,
     class_=
         safe_text,
+    async_=
+        safe_text,
     mixed=
         safe_text,
-    configType=
+    any=
+        safe_text,
+    name=
+        safe_text,
+    acceptPropagatedEvents=
         safe_text
 )
 
-@given(instance=jpdl31::SubProcessType_strategy)
+@given(instance=jpdl31_SubProcessType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::subprocesstype_instantiation(instance):
-    assert isinstance(instance, jpdl31::SubProcessType)
-
-@given(instance=jpdl31::SubProcessType_strategy)
-def test_jpdl31::subprocesstype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpdl31_subprocesstype_instantiation(instance):
+    assert isinstance(instance, jpdl31_SubProcessType)
 
 
-@given(instance=jpdl31::SubProcessType_strategy)
-def test_jpdl31::subprocesstype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=jpdl31::SubProcessType_strategy)
-def test_jpdl31::subprocesstype_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=jpdl31::SubProcessType_strategy)
-def test_jpdl31::subprocesstype_version_setter(instance):
+@given(instance=jpdl31_SubProcessType_strategy)
+def test_jpdl31_subprocesstype_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=jpdl31::VariableType_strategy)
+
+
+@given(instance=jpdl31_SubProcessType_strategy)
+def test_jpdl31_subprocesstype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=jpdl31_VariableType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::variabletype_instantiation(instance):
-    assert isinstance(instance, jpdl31::VariableType)
-
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_mappedName_type(instance):
-    assert isinstance(instance.mappedName, str)
+def test_jpdl31_variabletype_instantiation(instance):
+    assert isinstance(instance, jpdl31_VariableType)
 
 
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_mappedName_setter(instance):
+
+@given(instance=jpdl31_VariableType_strategy)
+def test_jpdl31_variabletype_any_setter(instance):
+    original = instance.any
+    instance.any = original
+    assert instance.any == original
+
+
+
+@given(instance=jpdl31_VariableType_strategy)
+def test_jpdl31_variabletype_mappedName_setter(instance):
     original = instance.mappedName
     instance.mappedName = original
     assert instance.mappedName == original
 
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_any_type(instance):
-    assert isinstance(instance.any, str)
-
-
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_any_setter(instance):
-    original = instance.any
-    instance.any = original
-    assert instance.any == original
-
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_access_type(instance):
-    assert isinstance(instance.access, str)
-
-
-@given(instance=jpdl31::VariableType_strategy)
-def test_jpdl31::variabletype_access_setter(instance):
+@given(instance=jpdl31_VariableType_strategy)
+def test_jpdl31_variabletype_access_setter(instance):
     original = instance.access
     instance.access = original
     assert instance.access == original
 
-@given(instance=jpdl31::TransitionType_strategy)
+
+
+@given(instance=jpdl31_VariableType_strategy)
+def test_jpdl31_variabletype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=jpdl31_TransitionType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::transitiontype_instantiation(instance):
-    assert isinstance(instance, jpdl31::TransitionType)
-
-@given(instance=jpdl31::TransitionType_strategy)
-def test_jpdl31::transitiontype_to_type(instance):
-    assert isinstance(instance.to, str)
+def test_jpdl31_transitiontype_instantiation(instance):
+    assert isinstance(instance, jpdl31_TransitionType)
 
 
-@given(instance=jpdl31::TransitionType_strategy)
-def test_jpdl31::transitiontype_to_setter(instance):
+
+@given(instance=jpdl31_TransitionType_strategy)
+def test_jpdl31_transitiontype_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=jpdl31::TransitionType_strategy)
-def test_jpdl31::transitiontype_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=jpdl31::TransitionType_strategy)
-def test_jpdl31::transitiontype_group_setter(instance):
+@given(instance=jpdl31_TransitionType_strategy)
+def test_jpdl31_transitiontype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::TransitionType_strategy)
-def test_jpdl31::transitiontype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::TransitionType_strategy)
-def test_jpdl31::transitiontype_name_setter(instance):
+@given(instance=jpdl31_TransitionType_strategy)
+def test_jpdl31_transitiontype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::SuperStateType_strategy)
+@given(instance=jpdl31_SuperStateType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::superstatetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::SuperStateType)
-
-@given(instance=jpdl31::SuperStateType_strategy)
-def test_jpdl31::superstatetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpdl31_superstatetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_SuperStateType)
 
 
-@given(instance=jpdl31::SuperStateType_strategy)
-def test_jpdl31::superstatetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=jpdl31::SuperStateType_strategy)
-def test_jpdl31::superstatetype_async__type(instance):
-    assert isinstance(instance.async_, str)
-
-
-@given(instance=jpdl31::SuperStateType_strategy)
-def test_jpdl31::superstatetype_async__setter(instance):
-    original = instance.async_
-    instance.async_ = original
-    assert instance.async_ == original
-
-@given(instance=jpdl31::SuperStateType_strategy)
-def test_jpdl31::superstatetype_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=jpdl31::SuperStateType_strategy)
-def test_jpdl31::superstatetype_group_setter(instance):
+@given(instance=jpdl31_SuperStateType_strategy)
+def test_jpdl31_superstatetype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::StateType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::statetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::StateType)
-
-@given(instance=jpdl31::StateType_strategy)
-def test_jpdl31::statetype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::StateType_strategy)
-def test_jpdl31::statetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::StateType_strategy)
-def test_jpdl31::statetype_async__type(instance):
-    assert isinstance(instance.async_, str)
-
-
-@given(instance=jpdl31::StateType_strategy)
-def test_jpdl31::statetype_async__setter(instance):
+@given(instance=jpdl31_SuperStateType_strategy)
+def test_jpdl31_superstatetype_async__setter(instance):
     original = instance.async_
     instance.async_ = original
     assert instance.async_ == original
 
-@given(instance=jpdl31::StateType_strategy)
-def test_jpdl31::statetype_nodeContentElements_type(instance):
-    assert isinstance(instance.nodeContentElements, str)
 
 
-@given(instance=jpdl31::StateType_strategy)
-def test_jpdl31::statetype_nodeContentElements_setter(instance):
+@given(instance=jpdl31_SuperStateType_strategy)
+def test_jpdl31_superstatetype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=jpdl31_StateType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_statetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_StateType)
+
+
+
+@given(instance=jpdl31_StateType_strategy)
+def test_jpdl31_statetype_async__setter(instance):
+    original = instance.async_
+    instance.async_ = original
+    assert instance.async_ == original
+
+
+
+@given(instance=jpdl31_StateType_strategy)
+def test_jpdl31_statetype_nodeContentElements_setter(instance):
     original = instance.nodeContentElements
     instance.nodeContentElements = original
     assert instance.nodeContentElements == original
 
-@given(instance=jpdl31::StartStateType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::startstatetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::StartStateType)
-
-@given(instance=jpdl31::StartStateType_strategy)
-def test_jpdl31::startstatetype_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=jpdl31::StartStateType_strategy)
-def test_jpdl31::startstatetype_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=jpdl31::StartStateType_strategy)
-def test_jpdl31::startstatetype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::StartStateType_strategy)
-def test_jpdl31::startstatetype_name_setter(instance):
+@given(instance=jpdl31_StateType_strategy)
+def test_jpdl31_statetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::TimerType_strategy)
+@given(instance=jpdl31_StartStateType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::timertype_instantiation(instance):
-    assert isinstance(instance, jpdl31::TimerType)
-
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_repeat_type(instance):
-    assert isinstance(instance.repeat, str)
+def test_jpdl31_startstatetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_StartStateType)
 
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_repeat_setter(instance):
-    original = instance.repeat
-    instance.repeat = original
-    assert instance.repeat == original
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_transition_type(instance):
-    assert isinstance(instance.transition, str)
+@given(instance=jpdl31_StartStateType_strategy)
+def test_jpdl31_startstatetype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_transition_setter(instance):
-    original = instance.transition
-    instance.transition = original
-    assert instance.transition == original
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_duedate_type(instance):
-    assert isinstance(instance.duedate, str)
+@given(instance=jpdl31_StartStateType_strategy)
+def test_jpdl31_startstatetype_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=jpdl31_TimerType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_timertype_instantiation(instance):
+    assert isinstance(instance, jpdl31_TimerType)
 
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_duedate_setter(instance):
+
+@given(instance=jpdl31_TimerType_strategy)
+def test_jpdl31_timertype_duedate_setter(instance):
     original = instance.duedate
     instance.duedate = original
     assert instance.duedate == original
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::TimerType_strategy)
-def test_jpdl31::timertype_name_setter(instance):
+@given(instance=jpdl31_TimerType_strategy)
+def test_jpdl31_timertype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::TaskNodeType_strategy)
+
+
+@given(instance=jpdl31_TimerType_strategy)
+def test_jpdl31_timertype_repeat_setter(instance):
+    original = instance.repeat
+    instance.repeat = original
+    assert instance.repeat == original
+
+
+
+@given(instance=jpdl31_TimerType_strategy)
+def test_jpdl31_timertype_transition_setter(instance):
+    original = instance.transition
+    instance.transition = original
+    assert instance.transition == original
+
+@given(instance=jpdl31_TaskNodeType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::tasknodetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::TaskNodeType)
-
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_jpdl31_tasknodetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_TaskNodeType)
 
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_signal_type(instance):
-    assert isinstance(instance.signal, str)
-
-
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_signal_setter(instance):
+@given(instance=jpdl31_TaskNodeType_strategy)
+def test_jpdl31_tasknodetype_signal_setter(instance):
     original = instance.signal
     instance.signal = original
     assert instance.signal == original
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_endTasks_type(instance):
-    assert isinstance(instance.endTasks, str)
+@given(instance=jpdl31_TaskNodeType_strategy)
+def test_jpdl31_tasknodetype_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
 
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_endTasks_setter(instance):
+
+@given(instance=jpdl31_TaskNodeType_strategy)
+def test_jpdl31_tasknodetype_async__setter(instance):
+    original = instance.async_
+    instance.async_ = original
+    assert instance.async_ == original
+
+
+
+@given(instance=jpdl31_TaskNodeType_strategy)
+def test_jpdl31_tasknodetype_endTasks_setter(instance):
     original = instance.endTasks
     instance.endTasks = original
     assert instance.endTasks == original
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_async__type(instance):
-    assert isinstance(instance.async_, str)
 
 
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_async__setter(instance):
-    original = instance.async_
-    instance.async_ = original
-    assert instance.async_ == original
-
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_createTasks_type(instance):
-    assert isinstance(instance.createTasks, str)
-
-
-@given(instance=jpdl31::TaskNodeType_strategy)
-def test_jpdl31::tasknodetype_createTasks_setter(instance):
+@given(instance=jpdl31_TaskNodeType_strategy)
+def test_jpdl31_tasknodetype_createTasks_setter(instance):
     original = instance.createTasks
     instance.createTasks = original
     assert instance.createTasks == original
 
-@given(instance=jpdl31::TaskType_strategy)
+
+
+@given(instance=jpdl31_TaskNodeType_strategy)
+def test_jpdl31_tasknodetype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=jpdl31_TaskType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::tasktype_instantiation(instance):
-    assert isinstance(instance, jpdl31::TaskType)
-
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_signalling_type(instance):
-    assert isinstance(instance.signalling, str)
+def test_jpdl31_tasktype_instantiation(instance):
+    assert isinstance(instance, jpdl31_TaskType)
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_signalling_setter(instance):
-    original = instance.signalling
-    instance.signalling = original
-    assert instance.signalling == original
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_description_setter(instance):
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_duedate_type(instance):
-    assert isinstance(instance.duedate, str)
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_duedate_setter(instance):
+
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_duedate_setter(instance):
     original = instance.duedate
     instance.duedate = original
     assert instance.duedate == original
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_swimlane_type(instance):
-    assert isinstance(instance.swimlane, str)
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_swimlane_setter(instance):
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_swimlane_setter(instance):
     original = instance.swimlane
     instance.swimlane = original
     assert instance.swimlane == original
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_blocking_type(instance):
-    assert isinstance(instance.blocking, str)
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_blocking_setter(instance):
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_blocking_setter(instance):
     original = instance.blocking
     instance.blocking = original
     assert instance.blocking == original
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_priority_type(instance):
-    assert isinstance(instance.priority, str)
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_priority_setter(instance):
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_signalling_setter(instance):
+    original = instance.signalling
+    instance.signalling = original
+    assert instance.signalling == original
+
+
+
+@given(instance=jpdl31_TaskType_strategy)
+def test_jpdl31_tasktype_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_group_type(instance):
-    assert isinstance(instance.group, str)
+@given(instance=jpdl31_SwimlaneType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_swimlanetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_SwimlaneType)
 
 
-@given(instance=jpdl31::TaskType_strategy)
-def test_jpdl31::tasktype_group_setter(instance):
+
+@given(instance=jpdl31_SwimlaneType_strategy)
+def test_jpdl31_swimlanetype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=jpdl31_ProcessDefinitionType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_processdefinitiontype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ProcessDefinitionType)
+
+
+
+@given(instance=jpdl31_ProcessDefinitionType_strategy)
+def test_jpdl31_processdefinitiontype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::SwimlaneType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::swimlanetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::SwimlaneType)
-
-@given(instance=jpdl31::SwimlaneType_strategy)
-def test_jpdl31::swimlanetype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::SwimlaneType_strategy)
-def test_jpdl31::swimlanetype_name_setter(instance):
+@given(instance=jpdl31_ProcessDefinitionType_strategy)
+def test_jpdl31_processdefinitiontype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::ProcessDefinitionType_strategy)
+@given(instance=jpdl31_NodeType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::processdefinitiontype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ProcessDefinitionType)
-
-@given(instance=jpdl31::ProcessDefinitionType_strategy)
-def test_jpdl31::processdefinitiontype_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_jpdl31_nodetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_NodeType)
 
 
-@given(instance=jpdl31::ProcessDefinitionType_strategy)
-def test_jpdl31::processdefinitiontype_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
 
-@given(instance=jpdl31::ProcessDefinitionType_strategy)
-def test_jpdl31::processdefinitiontype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::ProcessDefinitionType_strategy)
-def test_jpdl31::processdefinitiontype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::NodeType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::nodetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::NodeType)
-
-@given(instance=jpdl31::NodeType_strategy)
-def test_jpdl31::nodetype_async__type(instance):
-    assert isinstance(instance.async_, str)
-
-
-@given(instance=jpdl31::NodeType_strategy)
-def test_jpdl31::nodetype_async__setter(instance):
-    original = instance.async_
-    instance.async_ = original
-    assert instance.async_ == original
-
-@given(instance=jpdl31::NodeType_strategy)
-def test_jpdl31::nodetype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::NodeType_strategy)
-def test_jpdl31::nodetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::NodeType_strategy)
-def test_jpdl31::nodetype_nodeContentElements_type(instance):
-    assert isinstance(instance.nodeContentElements, str)
-
-
-@given(instance=jpdl31::NodeType_strategy)
-def test_jpdl31::nodetype_nodeContentElements_setter(instance):
+@given(instance=jpdl31_NodeType_strategy)
+def test_jpdl31_nodetype_nodeContentElements_setter(instance):
     original = instance.nodeContentElements
     instance.nodeContentElements = original
     assert instance.nodeContentElements == original
 
-@given(instance=jpdl31::ProcessStateType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::processstatetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ProcessStateType)
-
-@given(instance=jpdl31::ProcessStateType_strategy)
-def test_jpdl31::processstatetype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::ProcessStateType_strategy)
-def test_jpdl31::processstatetype_name_setter(instance):
+@given(instance=jpdl31_NodeType_strategy)
+def test_jpdl31_nodetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::ProcessStateType_strategy)
-def test_jpdl31::processstatetype_async__type(instance):
-    assert isinstance(instance.async_, str)
 
 
-@given(instance=jpdl31::ProcessStateType_strategy)
-def test_jpdl31::processstatetype_async__setter(instance):
+@given(instance=jpdl31_NodeType_strategy)
+def test_jpdl31_nodetype_async__setter(instance):
     original = instance.async_
     instance.async_ = original
     assert instance.async_ == original
 
-@given(instance=jpdl31::ProcessStateType_strategy)
-def test_jpdl31::processstatetype_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=jpdl31::ProcessStateType_strategy)
-def test_jpdl31::processstatetype_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=jpdl31::EndStateType_strategy)
+@given(instance=jpdl31_ProcessStateType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::endstatetype_instantiation(instance):
-    assert isinstance(instance, jpdl31::EndStateType)
-
-@given(instance=jpdl31::EndStateType_strategy)
-def test_jpdl31::endstatetype_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_jpdl31_processstatetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ProcessStateType)
 
 
-@given(instance=jpdl31::EndStateType_strategy)
-def test_jpdl31::endstatetype_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
 
-@given(instance=jpdl31::EndStateType_strategy)
-def test_jpdl31::endstatetype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=jpdl31_ProcessStateType_strategy)
+def test_jpdl31_processstatetype_async__setter(instance):
+    original = instance.async_
+    instance.async_ = original
+    assert instance.async_ == original
 
 
-@given(instance=jpdl31::EndStateType_strategy)
-def test_jpdl31::endstatetype_name_setter(instance):
+
+@given(instance=jpdl31_ProcessStateType_strategy)
+def test_jpdl31_processstatetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::JoinType_strategy)
+
+
+@given(instance=jpdl31_ProcessStateType_strategy)
+def test_jpdl31_processstatetype_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=jpdl31_EndStateType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::jointype_instantiation(instance):
-    assert isinstance(instance, jpdl31::JoinType)
-
-@given(instance=jpdl31::JoinType_strategy)
-def test_jpdl31::jointype_nodeContentElements_type(instance):
-    assert isinstance(instance.nodeContentElements, str)
+def test_jpdl31_endstatetype_instantiation(instance):
+    assert isinstance(instance, jpdl31_EndStateType)
 
 
-@given(instance=jpdl31::JoinType_strategy)
-def test_jpdl31::jointype_nodeContentElements_setter(instance):
+
+@given(instance=jpdl31_EndStateType_strategy)
+def test_jpdl31_endstatetype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=jpdl31_EndStateType_strategy)
+def test_jpdl31_endstatetype_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=jpdl31_JoinType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_jointype_instantiation(instance):
+    assert isinstance(instance, jpdl31_JoinType)
+
+
+
+@given(instance=jpdl31_JoinType_strategy)
+def test_jpdl31_jointype_async__setter(instance):
+    original = instance.async_
+    instance.async_ = original
+    assert instance.async_ == original
+
+
+
+@given(instance=jpdl31_JoinType_strategy)
+def test_jpdl31_jointype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=jpdl31_JoinType_strategy)
+def test_jpdl31_jointype_nodeContentElements_setter(instance):
     original = instance.nodeContentElements
     instance.nodeContentElements = original
     assert instance.nodeContentElements == original
 
-@given(instance=jpdl31::JoinType_strategy)
-def test_jpdl31::jointype_async__type(instance):
-    assert isinstance(instance.async_, str)
-
-
-@given(instance=jpdl31::JoinType_strategy)
-def test_jpdl31::jointype_async__setter(instance):
-    original = instance.async_
-    instance.async_ = original
-    assert instance.async_ == original
-
-@given(instance=jpdl31::JoinType_strategy)
-def test_jpdl31::jointype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::JoinType_strategy)
-def test_jpdl31::jointype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::ForkType_strategy)
+@given(instance=jpdl31_ForkType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::forktype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ForkType)
-
-@given(instance=jpdl31::ForkType_strategy)
-def test_jpdl31::forktype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpdl31_forktype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ForkType)
 
 
-@given(instance=jpdl31::ForkType_strategy)
-def test_jpdl31::forktype_name_setter(instance):
+
+@given(instance=jpdl31_ForkType_strategy)
+def test_jpdl31_forktype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::ForkType_strategy)
-def test_jpdl31::forktype_async__type(instance):
-    assert isinstance(instance.async_, str)
 
 
-@given(instance=jpdl31::ForkType_strategy)
-def test_jpdl31::forktype_async__setter(instance):
-    original = instance.async_
-    instance.async_ = original
-    assert instance.async_ == original
-
-@given(instance=jpdl31::ForkType_strategy)
-def test_jpdl31::forktype_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=jpdl31::ForkType_strategy)
-def test_jpdl31::forktype_group_setter(instance):
+@given(instance=jpdl31_ForkType_strategy)
+def test_jpdl31_forktype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::EStringToStringMapEntry_strategy)
+
+
+@given(instance=jpdl31_ForkType_strategy)
+def test_jpdl31_forktype_async__setter(instance):
+    original = instance.async_
+    instance.async_ = original
+    assert instance.async_ == original
+
+@given(instance=jpdl31_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_jpdl31::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, jpdl31::EStringToStringMapEntry)
+def test_jpdl31_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, jpdl31_EStringToStringMapEntry)
 
-@given(instance=jpdl31::DocumentRoot_strategy)
+@given(instance=jpdl31_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_jpdl31::documentroot_instantiation(instance):
-    assert isinstance(instance, jpdl31::DocumentRoot)
-
-@given(instance=jpdl31::DocumentRoot_strategy)
-def test_jpdl31::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_jpdl31_documentroot_instantiation(instance):
+    assert isinstance(instance, jpdl31_DocumentRoot)
 
 
-@given(instance=jpdl31::DocumentRoot_strategy)
-def test_jpdl31::documentroot_mixed_setter(instance):
+
+@given(instance=jpdl31_DocumentRoot_strategy)
+def test_jpdl31_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=jpdl31::TransitionType1_strategy)
+@given(instance=jpdl31_TransitionType1_strategy)
 @settings(max_examples=50)
-def test_jpdl31::transitiontype1_instantiation(instance):
-    assert isinstance(instance, jpdl31::TransitionType1)
-
-@given(instance=jpdl31::TransitionType1_strategy)
-def test_jpdl31::transitiontype1_to_type(instance):
-    assert isinstance(instance.to, str)
+def test_jpdl31_transitiontype1_instantiation(instance):
+    assert isinstance(instance, jpdl31_TransitionType1)
 
 
-@given(instance=jpdl31::TransitionType1_strategy)
-def test_jpdl31::transitiontype1_to_setter(instance):
+
+@given(instance=jpdl31_TransitionType1_strategy)
+def test_jpdl31_transitiontype1_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=jpdl31_TransitionType1_strategy)
+def test_jpdl31_transitiontype1_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=jpdl31::TransitionType1_strategy)
-def test_jpdl31::transitiontype1_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=jpdl31::TransitionType1_strategy)
-def test_jpdl31::transitiontype1_group_setter(instance):
+@given(instance=jpdl31_TransitionType1_strategy)
+def test_jpdl31_transitiontype1_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::TransitionType1_strategy)
-def test_jpdl31::transitiontype1_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::TransitionType1_strategy)
-def test_jpdl31::transitiontype1_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::ExceptionHandlerType_strategy)
+@given(instance=jpdl31_ExceptionHandlerType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::exceptionhandlertype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ExceptionHandlerType)
-
-@given(instance=jpdl31::ExceptionHandlerType_strategy)
-def test_jpdl31::exceptionhandlertype_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_jpdl31_exceptionhandlertype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ExceptionHandlerType)
 
 
-@given(instance=jpdl31::ExceptionHandlerType_strategy)
-def test_jpdl31::exceptionhandlertype_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
 
-@given(instance=jpdl31::ExceptionHandlerType_strategy)
-def test_jpdl31::exceptionhandlertype_exceptionClass_type(instance):
-    assert isinstance(instance.exceptionClass, str)
-
-
-@given(instance=jpdl31::ExceptionHandlerType_strategy)
-def test_jpdl31::exceptionhandlertype_exceptionClass_setter(instance):
+@given(instance=jpdl31_ExceptionHandlerType_strategy)
+def test_jpdl31_exceptionhandlertype_exceptionClass_setter(instance):
     original = instance.exceptionClass
     instance.exceptionClass = original
     assert instance.exceptionClass == original
 
-@given(instance=jpdl31::EventType_strategy)
+
+
+@given(instance=jpdl31_ExceptionHandlerType_strategy)
+def test_jpdl31_exceptionhandlertype_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=jpdl31_EventType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::eventtype_instantiation(instance):
-    assert isinstance(instance, jpdl31::EventType)
-
-@given(instance=jpdl31::EventType_strategy)
-def test_jpdl31::eventtype_actionElements_type(instance):
-    assert isinstance(instance.actionElements, str)
+def test_jpdl31_eventtype_instantiation(instance):
+    assert isinstance(instance, jpdl31_EventType)
 
 
-@given(instance=jpdl31::EventType_strategy)
-def test_jpdl31::eventtype_actionElements_setter(instance):
-    original = instance.actionElements
-    instance.actionElements = original
-    assert instance.actionElements == original
 
-@given(instance=jpdl31::EventType_strategy)
-def test_jpdl31::eventtype_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=jpdl31::EventType_strategy)
-def test_jpdl31::eventtype_type_setter(instance):
+@given(instance=jpdl31_EventType_strategy)
+def test_jpdl31_eventtype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=jpdl31::Delegation_strategy)
+
+
+@given(instance=jpdl31_EventType_strategy)
+def test_jpdl31_eventtype_actionElements_setter(instance):
+    original = instance.actionElements
+    instance.actionElements = original
+    assert instance.actionElements == original
+
+@given(instance=jpdl31_Delegation_strategy)
 @settings(max_examples=50)
-def test_jpdl31::delegation_instantiation(instance):
-    assert isinstance(instance, jpdl31::Delegation)
-
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_any_type(instance):
-    assert isinstance(instance.any, str)
+def test_jpdl31_delegation_instantiation(instance):
+    assert isinstance(instance, jpdl31_Delegation)
 
 
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_any_setter(instance):
-    original = instance.any
-    instance.any = original
-    assert instance.any == original
 
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_configType_type(instance):
-    assert isinstance(instance.configType, str)
-
-
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_configType_setter(instance):
+@given(instance=jpdl31_Delegation_strategy)
+def test_jpdl31_delegation_configType_setter(instance):
     original = instance.configType
     instance.configType = original
     assert instance.configType == original
 
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_class__setter(instance):
+@given(instance=jpdl31_Delegation_strategy)
+def test_jpdl31_delegation_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=jpdl31_Delegation_strategy)
+def test_jpdl31_delegation_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=jpdl31::Delegation_strategy)
-def test_jpdl31::delegation_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
+@given(instance=jpdl31_Delegation_strategy)
+def test_jpdl31_delegation_any_setter(instance):
+    original = instance.any
+    instance.any = original
+    assert instance.any == original
 
-@given(instance=jpdl31::DecisionType_strategy)
+@given(instance=jpdl31_DecisionType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::decisiontype_instantiation(instance):
-    assert isinstance(instance, jpdl31::DecisionType)
-
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_jpdl31_decisiontype_instantiation(instance):
+    assert isinstance(instance, jpdl31_DecisionType)
 
 
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_group_setter(instance):
+
+@given(instance=jpdl31_DecisionType_strategy)
+def test_jpdl31_decisiontype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=jpdl31_DecisionType_strategy)
+def test_jpdl31_decisiontype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_async__type(instance):
-    assert isinstance(instance.async_, str)
 
 
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_async__setter(instance):
+@given(instance=jpdl31_DecisionType_strategy)
+def test_jpdl31_decisiontype_async__setter(instance):
     original = instance.async_
     instance.async_ = original
     assert instance.async_ == original
 
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=jpdl31::DecisionType_strategy)
-def test_jpdl31::decisiontype_expression_setter(instance):
+@given(instance=jpdl31_DecisionType_strategy)
+def test_jpdl31_decisiontype_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=jpdl31::ScriptType_strategy)
+@given(instance=jpdl31_ScriptType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::scripttype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ScriptType)
-
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_any_type(instance):
-    assert isinstance(instance.any, str)
+def test_jpdl31_scripttype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ScriptType)
 
 
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_any_setter(instance):
-    original = instance.any
-    instance.any = original
-    assert instance.any == original
 
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_name_setter(instance):
+@given(instance=jpdl31_ScriptType_strategy)
+def test_jpdl31_scripttype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_acceptPropagatedEvents_type(instance):
-    assert isinstance(instance.acceptPropagatedEvents, str)
 
 
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_acceptPropagatedEvents_setter(instance):
+@given(instance=jpdl31_ScriptType_strategy)
+def test_jpdl31_scripttype_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=jpdl31_ScriptType_strategy)
+def test_jpdl31_scripttype_acceptPropagatedEvents_setter(instance):
     original = instance.acceptPropagatedEvents
     instance.acceptPropagatedEvents = original
     assert instance.acceptPropagatedEvents == original
 
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=jpdl31::ScriptType_strategy)
-def test_jpdl31::scripttype_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::createtimertype_instantiation(instance):
-    assert isinstance(instance, jpdl31::CreateTimerType)
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_duedate_type(instance):
-    assert isinstance(instance.duedate, str)
-
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_duedate_setter(instance):
-    original = instance.duedate
-    instance.duedate = original
-    assert instance.duedate == original
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_repeat_type(instance):
-    assert isinstance(instance.repeat, str)
-
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_repeat_setter(instance):
-    original = instance.repeat
-    instance.repeat = original
-    assert instance.repeat == original
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_transition_type(instance):
-    assert isinstance(instance.transition, str)
-
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_transition_setter(instance):
-    original = instance.transition
-    instance.transition = original
-    assert instance.transition == original
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jpdl31::CreateTimerType_strategy)
-def test_jpdl31::createtimertype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=jpdl31::ConditionType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::conditiontype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ConditionType)
-
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_any_type(instance):
-    assert isinstance(instance.any, str)
-
-
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_any_setter(instance):
+@given(instance=jpdl31_ScriptType_strategy)
+def test_jpdl31_scripttype_any_setter(instance):
     original = instance.any
     instance.any = original
     assert instance.any == original
 
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+@given(instance=jpdl31_CreateTimerType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_createtimertype_instantiation(instance):
+    assert isinstance(instance, jpdl31_CreateTimerType)
 
 
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
 
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_expression_type(instance):
-    assert isinstance(instance.expression, str)
+@given(instance=jpdl31_CreateTimerType_strategy)
+def test_jpdl31_createtimertype_transition_setter(instance):
+    original = instance.transition
+    instance.transition = original
+    assert instance.transition == original
 
 
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_expression_setter(instance):
-    original = instance.expression
-    instance.expression = original
-    assert instance.expression == original
 
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_group_type(instance):
-    assert isinstance(instance.group, str)
+@given(instance=jpdl31_CreateTimerType_strategy)
+def test_jpdl31_createtimertype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=jpdl31::ConditionType_strategy)
-def test_jpdl31::conditiontype_group_setter(instance):
+
+@given(instance=jpdl31_CreateTimerType_strategy)
+def test_jpdl31_createtimertype_repeat_setter(instance):
+    original = instance.repeat
+    instance.repeat = original
+    assert instance.repeat == original
+
+
+
+@given(instance=jpdl31_CreateTimerType_strategy)
+def test_jpdl31_createtimertype_duedate_setter(instance):
+    original = instance.duedate
+    instance.duedate = original
+    assert instance.duedate == original
+
+@given(instance=jpdl31_ConditionType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_conditiontype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ConditionType)
+
+
+
+@given(instance=jpdl31_ConditionType_strategy)
+def test_jpdl31_conditiontype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=jpdl31::CancelTimerType_strategy)
+
+
+@given(instance=jpdl31_ConditionType_strategy)
+def test_jpdl31_conditiontype_any_setter(instance):
+    original = instance.any
+    instance.any = original
+    assert instance.any == original
+
+
+
+@given(instance=jpdl31_ConditionType_strategy)
+def test_jpdl31_conditiontype_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=jpdl31_ConditionType_strategy)
+def test_jpdl31_conditiontype_expression_setter(instance):
+    original = instance.expression
+    instance.expression = original
+    assert instance.expression == original
+
+@given(instance=jpdl31_CancelTimerType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::canceltimertype_instantiation(instance):
-    assert isinstance(instance, jpdl31::CancelTimerType)
-
-@given(instance=jpdl31::CancelTimerType_strategy)
-def test_jpdl31::canceltimertype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpdl31_canceltimertype_instantiation(instance):
+    assert isinstance(instance, jpdl31_CancelTimerType)
 
 
-@given(instance=jpdl31::CancelTimerType_strategy)
-def test_jpdl31::canceltimertype_name_setter(instance):
+
+@given(instance=jpdl31_CancelTimerType_strategy)
+def test_jpdl31_canceltimertype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2854,144 +2611,108 @@ def test_jpdl31::canceltimertype_name_setter(instance):
 def test_delegation_instantiation(instance):
     assert isinstance(instance, Delegation)
 
-@given(instance=jpdl31::AssignmentType_strategy)
+@given(instance=jpdl31_AssignmentType_strategy)
 @settings(max_examples=50)
-def test_jpdl31::assignmenttype_instantiation(instance):
-    assert isinstance(instance, jpdl31::AssignmentType)
-
-@given(instance=jpdl31::AssignmentType_strategy)
-def test_jpdl31::assignmenttype_pooledActors_type(instance):
-    assert isinstance(instance.pooledActors, str)
+def test_jpdl31_assignmenttype_instantiation(instance):
+    assert isinstance(instance, jpdl31_AssignmentType)
 
 
-@given(instance=jpdl31::AssignmentType_strategy)
-def test_jpdl31::assignmenttype_pooledActors_setter(instance):
-    original = instance.pooledActors
-    instance.pooledActors = original
-    assert instance.pooledActors == original
 
-@given(instance=jpdl31::AssignmentType_strategy)
-def test_jpdl31::assignmenttype_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=jpdl31::AssignmentType_strategy)
-def test_jpdl31::assignmenttype_expression_setter(instance):
-    original = instance.expression
-    instance.expression = original
-    assert instance.expression == original
-
-@given(instance=jpdl31::AssignmentType_strategy)
-def test_jpdl31::assignmenttype_actorId_type(instance):
-    assert isinstance(instance.actorId, str)
-
-
-@given(instance=jpdl31::AssignmentType_strategy)
-def test_jpdl31::assignmenttype_actorId_setter(instance):
+@given(instance=jpdl31_AssignmentType_strategy)
+def test_jpdl31_assignmenttype_actorId_setter(instance):
     original = instance.actorId
     instance.actorId = original
     assert instance.actorId == original
 
-@given(instance=jpdl31::ActionType_strategy)
-@settings(max_examples=50)
-def test_jpdl31::actiontype_instantiation(instance):
-    assert isinstance(instance, jpdl31::ActionType)
-
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_any_type(instance):
-    assert isinstance(instance.any, str)
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_any_setter(instance):
-    original = instance.any
-    instance.any = original
-    assert instance.any == original
-
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_refName_type(instance):
-    assert isinstance(instance.refName, str)
+@given(instance=jpdl31_AssignmentType_strategy)
+def test_jpdl31_assignmenttype_pooledActors_setter(instance):
+    original = instance.pooledActors
+    instance.pooledActors = original
+    assert instance.pooledActors == original
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_refName_setter(instance):
-    original = instance.refName
-    instance.refName = original
-    assert instance.refName == original
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_async__type(instance):
-    assert isinstance(instance.async_, str)
-
-
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_async__setter(instance):
-    original = instance.async_
-    instance.async_ = original
-    assert instance.async_ == original
-
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_expression_setter(instance):
+@given(instance=jpdl31_AssignmentType_strategy)
+def test_jpdl31_assignmenttype_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_acceptPropagatedEvents_type(instance):
-    assert isinstance(instance.acceptPropagatedEvents, str)
+@given(instance=jpdl31_ActionType_strategy)
+@settings(max_examples=50)
+def test_jpdl31_actiontype_instantiation(instance):
+    assert isinstance(instance, jpdl31_ActionType)
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_acceptPropagatedEvents_setter(instance):
-    original = instance.acceptPropagatedEvents
-    instance.acceptPropagatedEvents = original
-    assert instance.acceptPropagatedEvents == original
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_configType_setter(instance):
+    original = instance.configType
+    instance.configType = original
+    assert instance.configType == original
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_class__type(instance):
-    assert isinstance(instance.class_, str)
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_expression_setter(instance):
+    original = instance.expression
+    instance.expression = original
+    assert instance.expression == original
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_class__setter(instance):
+
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_refName_setter(instance):
+    original = instance.refName
+    instance.refName = original
+    assert instance.refName == original
+
+
+
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_mixed_setter(instance):
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_async__setter(instance):
+    original = instance.async_
+    instance.async_ = original
+    assert instance.async_ == original
+
+
+
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_configType_type(instance):
-    assert isinstance(instance.configType, str)
 
 
-@given(instance=jpdl31::ActionType_strategy)
-def test_jpdl31::actiontype_configType_setter(instance):
-    original = instance.configType
-    instance.configType = original
-    assert instance.configType == original
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_any_setter(instance):
+    original = instance.any
+    instance.any = original
+    assert instance.any == original
+
+
+
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=jpdl31_ActionType_strategy)
+def test_jpdl31_actiontype_acceptPropagatedEvents_setter(instance):
+    original = instance.acceptPropagatedEvents
+    instance.acceptPropagatedEvents = original
+    assert instance.acceptPropagatedEvents == original

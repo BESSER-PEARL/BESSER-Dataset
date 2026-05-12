@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Admin_,
@@ -34,8 +34,8 @@ def test_admin__constructor_args():
     sig = inspect.signature(Admin_.__init__)
     params = list(sig.parameters.keys())
     assert "ArrayList_member_" in params, "Missing parameter 'ArrayList_member_'"
-    assert "ArrayList_worker_" in params, "Missing parameter 'ArrayList_worker_'"
     assert "Password" in params, "Missing parameter 'Password'"
+    assert "ArrayList_worker_" in params, "Missing parameter 'ArrayList_worker_'"
 
 def test_admin__has_ArrayList_member_():
     assert hasattr(Admin_, "ArrayList_member_")
@@ -46,21 +46,21 @@ def test_admin__has_ArrayList_member_():
             break
     assert isinstance(descriptor, property)
 
-def test_admin__has_ArrayList_worker_():
-    assert hasattr(Admin_, "ArrayList_worker_")
-    descriptor = None
-    for klass in Admin_.__mro__:
-        if "ArrayList_worker_" in klass.__dict__:
-            descriptor = klass.__dict__["ArrayList_worker_"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_admin__has_Password():
     assert hasattr(Admin_, "Password")
     descriptor = None
     for klass in Admin_.__mro__:
         if "Password" in klass.__dict__:
             descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin__has_ArrayList_worker_():
+    assert hasattr(Admin_, "ArrayList_worker_")
+    descriptor = None
+    for klass in Admin_.__mro__:
+        if "ArrayList_worker_" in klass.__dict__:
+            descriptor = klass.__dict__["ArrayList_worker_"]
             break
     assert isinstance(descriptor, property)
 
@@ -77,16 +77,16 @@ def test_member_constructor_exists():
 def test_member_constructor_args():
     sig = inspect.signature(member.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "memberType" in params, "Missing parameter 'memberType'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "memberType" in params, "Missing parameter 'memberType'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_member_has_name():
-    assert hasattr(member, "name")
+def test_member_has_password():
+    assert hasattr(member, "password")
     descriptor = None
     for klass in member.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -99,12 +99,12 @@ def test_member_has_memberType():
             break
     assert isinstance(descriptor, property)
 
-def test_member_has_password():
-    assert hasattr(member, "password")
+def test_member_has_name():
+    assert hasattr(member, "name")
     descriptor = None
     for klass in member.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -121,19 +121,10 @@ def test_workers_constructor_exists():
 def test_workers_constructor_args():
     sig = inspect.signature(Workers.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "Password" in params, "Missing parameter 'Password'"
-    assert "Designation" in params, "Missing parameter 'Designation'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "salary" in params, "Missing parameter 'salary'"
-
-def test_workers_has_name():
-    assert hasattr(Workers, "name")
-    descriptor = None
-    for klass in Workers.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Designation" in params, "Missing parameter 'Designation'"
 
 def test_workers_has_Password():
     assert hasattr(Workers, "Password")
@@ -144,12 +135,12 @@ def test_workers_has_Password():
             break
     assert isinstance(descriptor, property)
 
-def test_workers_has_Designation():
-    assert hasattr(Workers, "Designation")
+def test_workers_has_name():
+    assert hasattr(Workers, "name")
     descriptor = None
     for klass in Workers.__mro__:
-        if "Designation" in klass.__dict__:
-            descriptor = klass.__dict__["Designation"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -159,6 +150,15 @@ def test_workers_has_salary():
     for klass in Workers.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workers_has_Designation():
+    assert hasattr(Workers, "Designation")
+    descriptor = None
+    for klass in Workers.__mro__:
+        if "Designation" in klass.__dict__:
+            descriptor = klass.__dict__["Designation"]
             break
     assert isinstance(descriptor, property)
 
@@ -175,17 +175,8 @@ def test_customers_constructor_exists():
 def test_customers_constructor_args():
     sig = inspect.signature(customers.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "shoppingCost" in params, "Missing parameter 'shoppingCost'"
-
-def test_customers_has_name():
-    assert hasattr(customers, "name")
-    descriptor = None
-    for klass in customers.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_customers_has_shoppingCost():
     assert hasattr(customers, "shoppingCost")
@@ -193,6 +184,15 @@ def test_customers_has_shoppingCost():
     for klass in customers.__mro__:
         if "shoppingCost" in klass.__dict__:
             descriptor = klass.__dict__["shoppingCost"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customers_has_name():
+    assert hasattr(customers, "name")
+    descriptor = None
+    for klass in customers.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -209,17 +209,8 @@ def test_food_constructor_exists():
 def test_food_constructor_args():
     sig = inspect.signature(food.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_food_has_price():
-    assert hasattr(food, "price")
-    descriptor = None
-    for klass in food.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "price" in params, "Missing parameter 'price'"
 
 def test_food_has_name():
     assert hasattr(food, "name")
@@ -227,6 +218,15 @@ def test_food_has_name():
     for klass in food.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_food_has_price():
+    assert hasattr(food, "price")
+    descriptor = None
+    for klass in food.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -277,17 +277,8 @@ def test_furniture_constructor_exists():
 def test_furniture_constructor_args():
     sig = inspect.signature(Furniture.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_furniture_has_price():
-    assert hasattr(Furniture, "price")
-    descriptor = None
-    for klass in Furniture.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "price" in params, "Missing parameter 'price'"
 
 def test_furniture_has_name():
     assert hasattr(Furniture, "name")
@@ -295,6 +286,15 @@ def test_furniture_has_name():
     for klass in Furniture.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_furniture_has_price():
+    assert hasattr(Furniture, "price")
+    descriptor = None
+    for klass in Furniture.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -311,10 +311,28 @@ def test_items_constructor_exists():
 def test_items_constructor_args():
     sig = inspect.signature(Items.__init__)
     params = list(sig.parameters.keys())
+    assert "ArrayList_food_" in params, "Missing parameter 'ArrayList_food_'"
+    assert "typeOfItems" in params, "Missing parameter 'typeOfItems'"
     assert "ArrayList_appliance_" in params, "Missing parameter 'ArrayList_appliance_'"
     assert "ArrayList_furniture_" in params, "Missing parameter 'ArrayList_furniture_'"
-    assert "typeOfItems" in params, "Missing parameter 'typeOfItems'"
-    assert "ArrayList_food_" in params, "Missing parameter 'ArrayList_food_'"
+
+def test_items_has_ArrayList_food_():
+    assert hasattr(Items, "ArrayList_food_")
+    descriptor = None
+    for klass in Items.__mro__:
+        if "ArrayList_food_" in klass.__dict__:
+            descriptor = klass.__dict__["ArrayList_food_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_items_has_typeOfItems():
+    assert hasattr(Items, "typeOfItems")
+    descriptor = None
+    for klass in Items.__mro__:
+        if "typeOfItems" in klass.__dict__:
+            descriptor = klass.__dict__["typeOfItems"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_items_has_ArrayList_appliance_():
     assert hasattr(Items, "ArrayList_appliance_")
@@ -334,24 +352,6 @@ def test_items_has_ArrayList_furniture_():
             break
     assert isinstance(descriptor, property)
 
-def test_items_has_typeOfItems():
-    assert hasattr(Items, "typeOfItems")
-    descriptor = None
-    for klass in Items.__mro__:
-        if "typeOfItems" in klass.__dict__:
-            descriptor = klass.__dict__["typeOfItems"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_items_has_ArrayList_food_():
-    assert hasattr(Items, "ArrayList_food_")
-    descriptor = None
-    for klass in Items.__mro__:
-        if "ArrayList_food_" in klass.__dict__:
-            descriptor = klass.__dict__["ArrayList_food_"]
-            break
-    assert isinstance(descriptor, property)
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -368,44 +368,44 @@ Admin__strategy = st.builds(
     Admin_,
     ArrayList_member_=
         safe_text,
-    ArrayList_worker_=
-        safe_text,
     Password=
+        safe_text,
+    ArrayList_worker_=
         safe_text
 )
 member_strategy = st.builds(
     member,
-    name=
+    password=
         safe_text,
     memberType=
         safe_text,
-    password=
+    name=
         safe_text
 )
 Workers_strategy = st.builds(
     Workers,
-    name=
-        safe_text,
     Password=
         safe_text,
-    Designation=
+    name=
         safe_text,
     salary=
-        st.integers()
+        st.integers(),
+    Designation=
+        safe_text
 )
 customers_strategy = st.builds(
     customers,
-    name=
-        safe_text,
     shoppingCost=
-        st.integers()
-)
-food_strategy = st.builds(
-    food,
-    price=
         st.integers(),
     name=
         safe_text
+)
+food_strategy = st.builds(
+    food,
+    name=
+        safe_text,
+    price=
+        st.integers()
 )
 Appliacne_strategy = st.builds(
     Appliacne,
@@ -416,20 +416,20 @@ Appliacne_strategy = st.builds(
 )
 Furniture_strategy = st.builds(
     Furniture,
-    price=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    price=
+        st.integers()
 )
 Items_strategy = st.builds(
     Items,
-    ArrayList_appliance_=
-        safe_text,
-    ArrayList_furniture_=
+    ArrayList_food_=
         safe_text,
     typeOfItems=
         st.integers(),
-    ArrayList_food_=
+    ArrayList_appliance_=
+        safe_text,
+    ArrayList_furniture_=
         safe_text
 )
 
@@ -438,9 +438,6 @@ Items_strategy = st.builds(
 def test_admin__instantiation(instance):
     assert isinstance(instance, Admin_)
 
-@given(instance=Admin__strategy)
-def test_admin__ArrayList_member__type(instance):
-    assert isinstance(instance.ArrayList_member_, str)
 
 
 @given(instance=Admin__strategy)
@@ -449,20 +446,6 @@ def test_admin__ArrayList_member__setter(instance):
     instance.ArrayList_member_ = original
     assert instance.ArrayList_member_ == original
 
-@given(instance=Admin__strategy)
-def test_admin__ArrayList_worker__type(instance):
-    assert isinstance(instance.ArrayList_worker_, str)
-
-
-@given(instance=Admin__strategy)
-def test_admin__ArrayList_worker__setter(instance):
-    original = instance.ArrayList_worker_
-    instance.ArrayList_worker_ = original
-    assert instance.ArrayList_worker_ == original
-
-@given(instance=Admin__strategy)
-def test_admin__Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Admin__strategy)
@@ -471,36 +454,19 @@ def test_admin__Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
+
+
+@given(instance=Admin__strategy)
+def test_admin__ArrayList_worker__setter(instance):
+    original = instance.ArrayList_worker_
+    instance.ArrayList_worker_ = original
+    assert instance.ArrayList_worker_ == original
+
 @given(instance=member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, member)
 
-@given(instance=member_strategy)
-def test_member_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=member_strategy)
-def test_member_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=member_strategy)
-def test_member_memberType_type(instance):
-    assert isinstance(instance.memberType, str)
-
-
-@given(instance=member_strategy)
-def test_member_memberType_setter(instance):
-    original = instance.memberType
-    instance.memberType = original
-    assert instance.memberType == original
-
-@given(instance=member_strategy)
-def test_member_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=member_strategy)
@@ -509,25 +475,27 @@ def test_member_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Workers_strategy)
-@settings(max_examples=50)
-def test_workers_instantiation(instance):
-    assert isinstance(instance, Workers)
-
-@given(instance=Workers_strategy)
-def test_workers_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Workers_strategy)
-def test_workers_name_setter(instance):
+@given(instance=member_strategy)
+def test_member_memberType_setter(instance):
+    original = instance.memberType
+    instance.memberType = original
+    assert instance.memberType == original
+
+
+
+@given(instance=member_strategy)
+def test_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
 @given(instance=Workers_strategy)
-def test_workers_Password_type(instance):
-    assert isinstance(instance.Password, str)
+@settings(max_examples=50)
+def test_workers_instantiation(instance):
+    assert isinstance(instance, Workers)
+
 
 
 @given(instance=Workers_strategy)
@@ -536,20 +504,14 @@ def test_workers_Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
-@given(instance=Workers_strategy)
-def test_workers_Designation_type(instance):
-    assert isinstance(instance.Designation, str)
 
 
 @given(instance=Workers_strategy)
-def test_workers_Designation_setter(instance):
-    original = instance.Designation
-    instance.Designation = original
-    assert instance.Designation == original
+def test_workers_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
-@given(instance=Workers_strategy)
-def test_workers_salary_type(instance):
-    assert isinstance(instance.salary, int)
 
 
 @given(instance=Workers_strategy)
@@ -558,25 +520,19 @@ def test_workers_salary_setter(instance):
     instance.salary = original
     assert instance.salary == original
 
+
+
+@given(instance=Workers_strategy)
+def test_workers_Designation_setter(instance):
+    original = instance.Designation
+    instance.Designation = original
+    assert instance.Designation == original
+
 @given(instance=customers_strategy)
 @settings(max_examples=50)
 def test_customers_instantiation(instance):
     assert isinstance(instance, customers)
 
-@given(instance=customers_strategy)
-def test_customers_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=customers_strategy)
-def test_customers_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=customers_strategy)
-def test_customers_shoppingCost_type(instance):
-    assert isinstance(instance.shoppingCost, int)
 
 
 @given(instance=customers_strategy)
@@ -585,25 +541,19 @@ def test_customers_shoppingCost_setter(instance):
     instance.shoppingCost = original
     assert instance.shoppingCost == original
 
+
+
+@given(instance=customers_strategy)
+def test_customers_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=food_strategy)
 @settings(max_examples=50)
 def test_food_instantiation(instance):
     assert isinstance(instance, food)
 
-@given(instance=food_strategy)
-def test_food_price_type(instance):
-    assert isinstance(instance.price, int)
-
-
-@given(instance=food_strategy)
-def test_food_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=food_strategy)
-def test_food_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=food_strategy)
@@ -612,14 +562,19 @@ def test_food_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=food_strategy)
+def test_food_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
 @given(instance=Appliacne_strategy)
 @settings(max_examples=50)
 def test_appliacne_instantiation(instance):
     assert isinstance(instance, Appliacne)
 
-@given(instance=Appliacne_strategy)
-def test_appliacne_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Appliacne_strategy)
@@ -628,9 +583,6 @@ def test_appliacne_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Appliacne_strategy)
-def test_appliacne_price_type(instance):
-    assert isinstance(instance.price, int)
 
 
 @given(instance=Appliacne_strategy)
@@ -644,20 +596,6 @@ def test_appliacne_price_setter(instance):
 def test_furniture_instantiation(instance):
     assert isinstance(instance, Furniture)
 
-@given(instance=Furniture_strategy)
-def test_furniture_price_type(instance):
-    assert isinstance(instance.price, int)
-
-
-@given(instance=Furniture_strategy)
-def test_furniture_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Furniture_strategy)
-def test_furniture_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Furniture_strategy)
@@ -666,36 +604,27 @@ def test_furniture_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Furniture_strategy)
+def test_furniture_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
 @given(instance=Items_strategy)
 @settings(max_examples=50)
 def test_items_instantiation(instance):
     assert isinstance(instance, Items)
 
-@given(instance=Items_strategy)
-def test_items_ArrayList_appliance__type(instance):
-    assert isinstance(instance.ArrayList_appliance_, str)
 
 
 @given(instance=Items_strategy)
-def test_items_ArrayList_appliance__setter(instance):
-    original = instance.ArrayList_appliance_
-    instance.ArrayList_appliance_ = original
-    assert instance.ArrayList_appliance_ == original
+def test_items_ArrayList_food__setter(instance):
+    original = instance.ArrayList_food_
+    instance.ArrayList_food_ = original
+    assert instance.ArrayList_food_ == original
 
-@given(instance=Items_strategy)
-def test_items_ArrayList_furniture__type(instance):
-    assert isinstance(instance.ArrayList_furniture_, str)
-
-
-@given(instance=Items_strategy)
-def test_items_ArrayList_furniture__setter(instance):
-    original = instance.ArrayList_furniture_
-    instance.ArrayList_furniture_ = original
-    assert instance.ArrayList_furniture_ == original
-
-@given(instance=Items_strategy)
-def test_items_typeOfItems_type(instance):
-    assert isinstance(instance.typeOfItems, int)
 
 
 @given(instance=Items_strategy)
@@ -704,13 +633,18 @@ def test_items_typeOfItems_setter(instance):
     instance.typeOfItems = original
     assert instance.typeOfItems == original
 
-@given(instance=Items_strategy)
-def test_items_ArrayList_food__type(instance):
-    assert isinstance(instance.ArrayList_food_, str)
 
 
 @given(instance=Items_strategy)
-def test_items_ArrayList_food__setter(instance):
-    original = instance.ArrayList_food_
-    instance.ArrayList_food_ = original
-    assert instance.ArrayList_food_ == original
+def test_items_ArrayList_appliance__setter(instance):
+    original = instance.ArrayList_appliance_
+    instance.ArrayList_appliance_ = original
+    assert instance.ArrayList_appliance_ == original
+
+
+
+@given(instance=Items_strategy)
+def test_items_ArrayList_furniture__setter(instance):
+    original = instance.ArrayList_furniture_
+    instance.ArrayList_furniture_ = original
+    assert instance.ArrayList_furniture_ == original

@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    scholar::ScholarManagement,
-    scholar::Named,
+from python_code import (
+    scholar_ScholarManagement,
+    scholar_Named,
     Named,
-    scholar::Exam,
-    scholar::Discipline,
-    scholar::Lecture,
-    scholar::Teacher,
-    scholar::Student,
+    scholar_Discipline,
+    scholar_Teacher,
+    scholar_Lecture,
+    scholar_Exam,
+    scholar_Student,
 )
 
 # =============================================================================
@@ -22,37 +22,37 @@ from classes import (
 
 
 
-def test_scholar::scholarmanagement_is_not_abstract():
-    assert not inspect.isabstract(scholar::ScholarManagement)
+def test_scholar_scholarmanagement_is_not_abstract():
+    assert not inspect.isabstract(scholar_ScholarManagement)
 
 
-def test_scholar::scholarmanagement_constructor_exists():
-    assert callable(scholar::ScholarManagement.__init__)
+def test_scholar_scholarmanagement_constructor_exists():
+    assert callable(scholar_ScholarManagement.__init__)
 
 
-def test_scholar::scholarmanagement_constructor_args():
-    sig = inspect.signature(scholar::ScholarManagement.__init__)
+def test_scholar_scholarmanagement_constructor_args():
+    sig = inspect.signature(scholar_ScholarManagement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scholar::named_is_not_abstract():
-    assert not inspect.isabstract(scholar::Named)
+def test_scholar_named_is_not_abstract():
+    assert not inspect.isabstract(scholar_Named)
 
 
-def test_scholar::named_constructor_exists():
-    assert callable(scholar::Named.__init__)
+def test_scholar_named_constructor_exists():
+    assert callable(scholar_Named.__init__)
 
 
-def test_scholar::named_constructor_args():
-    sig = inspect.signature(scholar::Named.__init__)
+def test_scholar_named_constructor_args():
+    sig = inspect.signature(scholar_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_scholar::named_has_name():
-    assert hasattr(scholar::Named, "name")
+def test_scholar_named_has_name():
+    assert hasattr(scholar_Named, "name")
     descriptor = None
-    for klass in scholar::Named.__mro__:
+    for klass in scholar_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,23 +74,65 @@ def test_named_constructor_args():
 
 
 
-def test_scholar::exam_is_not_abstract():
-    assert not inspect.isabstract(scholar::Exam)
+def test_scholar_discipline_is_not_abstract():
+    assert not inspect.isabstract(scholar_Discipline)
 
 
-def test_scholar::exam_constructor_exists():
-    assert callable(scholar::Exam.__init__)
+def test_scholar_discipline_constructor_exists():
+    assert callable(scholar_Discipline.__init__)
 
 
-def test_scholar::exam_constructor_args():
-    sig = inspect.signature(scholar::Exam.__init__)
+def test_scholar_discipline_constructor_args():
+    sig = inspect.signature(scholar_Discipline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scholar_teacher_is_not_abstract():
+    assert not inspect.isabstract(scholar_Teacher)
+
+
+def test_scholar_teacher_constructor_exists():
+    assert callable(scholar_Teacher.__init__)
+
+
+def test_scholar_teacher_constructor_args():
+    sig = inspect.signature(scholar_Teacher.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scholar_lecture_is_not_abstract():
+    assert not inspect.isabstract(scholar_Lecture)
+
+
+def test_scholar_lecture_constructor_exists():
+    assert callable(scholar_Lecture.__init__)
+
+
+def test_scholar_lecture_constructor_args():
+    sig = inspect.signature(scholar_Lecture.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scholar_exam_is_not_abstract():
+    assert not inspect.isabstract(scholar_Exam)
+
+
+def test_scholar_exam_constructor_exists():
+    assert callable(scholar_Exam.__init__)
+
+
+def test_scholar_exam_constructor_args():
+    sig = inspect.signature(scholar_Exam.__init__)
     params = list(sig.parameters.keys())
     assert "score" in params, "Missing parameter 'score'"
 
-def test_scholar::exam_has_score():
-    assert hasattr(scholar::Exam, "score")
+def test_scholar_exam_has_score():
+    assert hasattr(scholar_Exam, "score")
     descriptor = None
-    for klass in scholar::Exam.__mro__:
+    for klass in scholar_Exam.__mro__:
         if "score" in klass.__dict__:
             descriptor = klass.__dict__["score"]
             break
@@ -98,65 +140,23 @@ def test_scholar::exam_has_score():
 
 
 
-def test_scholar::discipline_is_not_abstract():
-    assert not inspect.isabstract(scholar::Discipline)
+def test_scholar_student_is_not_abstract():
+    assert not inspect.isabstract(scholar_Student)
 
 
-def test_scholar::discipline_constructor_exists():
-    assert callable(scholar::Discipline.__init__)
+def test_scholar_student_constructor_exists():
+    assert callable(scholar_Student.__init__)
 
 
-def test_scholar::discipline_constructor_args():
-    sig = inspect.signature(scholar::Discipline.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scholar::lecture_is_not_abstract():
-    assert not inspect.isabstract(scholar::Lecture)
-
-
-def test_scholar::lecture_constructor_exists():
-    assert callable(scholar::Lecture.__init__)
-
-
-def test_scholar::lecture_constructor_args():
-    sig = inspect.signature(scholar::Lecture.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scholar::teacher_is_not_abstract():
-    assert not inspect.isabstract(scholar::Teacher)
-
-
-def test_scholar::teacher_constructor_exists():
-    assert callable(scholar::Teacher.__init__)
-
-
-def test_scholar::teacher_constructor_args():
-    sig = inspect.signature(scholar::Teacher.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scholar::student_is_not_abstract():
-    assert not inspect.isabstract(scholar::Student)
-
-
-def test_scholar::student_constructor_exists():
-    assert callable(scholar::Student.__init__)
-
-
-def test_scholar::student_constructor_args():
-    sig = inspect.signature(scholar::Student.__init__)
+def test_scholar_student_constructor_args():
+    sig = inspect.signature(scholar_Student.__init__)
     params = list(sig.parameters.keys())
     assert "forname" in params, "Missing parameter 'forname'"
 
-def test_scholar::student_has_forname():
-    assert hasattr(scholar::Student, "forname")
+def test_scholar_student_has_forname():
+    assert hasattr(scholar_Student, "forname")
     descriptor = None
-    for klass in scholar::Student.__mro__:
+    for klass in scholar_Student.__mro__:
         if "forname" in klass.__dict__:
             descriptor = klass.__dict__["forname"]
             break
@@ -174,54 +174,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-scholar::ScholarManagement_strategy = st.builds(
-    scholar::ScholarManagement,
+scholar_ScholarManagement_strategy = st.builds(
+    scholar_ScholarManagement,
 )
-scholar::Named_strategy = st.builds(
-    scholar::Named,
+scholar_Named_strategy = st.builds(
+    scholar_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-scholar::Exam_strategy = st.builds(
-    scholar::Exam,
+scholar_Discipline_strategy = st.builds(
+    scholar_Discipline,
+)
+scholar_Teacher_strategy = st.builds(
+    scholar_Teacher,
+)
+scholar_Lecture_strategy = st.builds(
+    scholar_Lecture,
+)
+scholar_Exam_strategy = st.builds(
+    scholar_Exam,
     score=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-scholar::Discipline_strategy = st.builds(
-    scholar::Discipline,
-)
-scholar::Lecture_strategy = st.builds(
-    scholar::Lecture,
-)
-scholar::Teacher_strategy = st.builds(
-    scholar::Teacher,
-)
-scholar::Student_strategy = st.builds(
-    scholar::Student,
+scholar_Student_strategy = st.builds(
+    scholar_Student,
     forname=
         safe_text
 )
 
-@given(instance=scholar::ScholarManagement_strategy)
+@given(instance=scholar_ScholarManagement_strategy)
 @settings(max_examples=50)
-def test_scholar::scholarmanagement_instantiation(instance):
-    assert isinstance(instance, scholar::ScholarManagement)
+def test_scholar_scholarmanagement_instantiation(instance):
+    assert isinstance(instance, scholar_ScholarManagement)
 
-@given(instance=scholar::Named_strategy)
+@given(instance=scholar_Named_strategy)
 @settings(max_examples=50)
-def test_scholar::named_instantiation(instance):
-    assert isinstance(instance, scholar::Named)
-
-@given(instance=scholar::Named_strategy)
-def test_scholar::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_scholar_named_instantiation(instance):
+    assert isinstance(instance, scholar_Named)
 
 
-@given(instance=scholar::Named_strategy)
-def test_scholar::named_name_setter(instance):
+
+@given(instance=scholar_Named_strategy)
+def test_scholar_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -231,49 +228,43 @@ def test_scholar::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=scholar::Exam_strategy)
+@given(instance=scholar_Discipline_strategy)
 @settings(max_examples=50)
-def test_scholar::exam_instantiation(instance):
-    assert isinstance(instance, scholar::Exam)
+def test_scholar_discipline_instantiation(instance):
+    assert isinstance(instance, scholar_Discipline)
 
-@given(instance=scholar::Exam_strategy)
-def test_scholar::exam_score_type(instance):
-    assert isinstance(instance.score, float)
+@given(instance=scholar_Teacher_strategy)
+@settings(max_examples=50)
+def test_scholar_teacher_instantiation(instance):
+    assert isinstance(instance, scholar_Teacher)
+
+@given(instance=scholar_Lecture_strategy)
+@settings(max_examples=50)
+def test_scholar_lecture_instantiation(instance):
+    assert isinstance(instance, scholar_Lecture)
+
+@given(instance=scholar_Exam_strategy)
+@settings(max_examples=50)
+def test_scholar_exam_instantiation(instance):
+    assert isinstance(instance, scholar_Exam)
 
 
-@given(instance=scholar::Exam_strategy)
-def test_scholar::exam_score_setter(instance):
+
+@given(instance=scholar_Exam_strategy)
+def test_scholar_exam_score_setter(instance):
     original = instance.score
     instance.score = original
     assert instance.score == original
 
-@given(instance=scholar::Discipline_strategy)
+@given(instance=scholar_Student_strategy)
 @settings(max_examples=50)
-def test_scholar::discipline_instantiation(instance):
-    assert isinstance(instance, scholar::Discipline)
-
-@given(instance=scholar::Lecture_strategy)
-@settings(max_examples=50)
-def test_scholar::lecture_instantiation(instance):
-    assert isinstance(instance, scholar::Lecture)
-
-@given(instance=scholar::Teacher_strategy)
-@settings(max_examples=50)
-def test_scholar::teacher_instantiation(instance):
-    assert isinstance(instance, scholar::Teacher)
-
-@given(instance=scholar::Student_strategy)
-@settings(max_examples=50)
-def test_scholar::student_instantiation(instance):
-    assert isinstance(instance, scholar::Student)
-
-@given(instance=scholar::Student_strategy)
-def test_scholar::student_forname_type(instance):
-    assert isinstance(instance.forname, str)
+def test_scholar_student_instantiation(instance):
+    assert isinstance(instance, scholar_Student)
 
 
-@given(instance=scholar::Student_strategy)
-def test_scholar::student_forname_setter(instance):
+
+@given(instance=scholar_Student_strategy)
+def test_scholar_student_forname_setter(instance):
     original = instance.forname
     instance.forname = original
     assert instance.forname == original

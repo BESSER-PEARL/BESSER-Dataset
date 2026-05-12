@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    simpleparts::RelatedTo,
-    simpleparts::Thing,
-    simpleparts::World,
-    simpleparts::NamedElement,
-    simpleparts::Piece,
-    simpleparts::Item,
-    simpleparts::Element,
-    simpleparts::Part,
+    simpleparts_RelatedTo,
+    simpleparts_Thing,
+    simpleparts_World,
+    simpleparts_NamedElement,
+    simpleparts_Piece,
+    simpleparts_Item,
+    simpleparts_Element,
+    simpleparts_Part,
 )
 
 # =============================================================================
@@ -37,23 +37,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simpleparts::relatedto_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::RelatedTo)
+def test_simpleparts_relatedto_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_RelatedTo)
 
 
-def test_simpleparts::relatedto_constructor_exists():
-    assert callable(simpleparts::RelatedTo.__init__)
+def test_simpleparts_relatedto_constructor_exists():
+    assert callable(simpleparts_RelatedTo.__init__)
 
 
-def test_simpleparts::relatedto_constructor_args():
-    sig = inspect.signature(simpleparts::RelatedTo.__init__)
+def test_simpleparts_relatedto_constructor_args():
+    sig = inspect.signature(simpleparts_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_simpleparts::relatedto_has_since():
-    assert hasattr(simpleparts::RelatedTo, "since")
+def test_simpleparts_relatedto_has_since():
+    assert hasattr(simpleparts_RelatedTo, "since")
     descriptor = None
-    for klass in simpleparts::RelatedTo.__mro__:
+    for klass in simpleparts_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -61,23 +61,23 @@ def test_simpleparts::relatedto_has_since():
 
 
 
-def test_simpleparts::thing_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::Thing)
+def test_simpleparts_thing_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_Thing)
 
 
-def test_simpleparts::thing_constructor_exists():
-    assert callable(simpleparts::Thing.__init__)
+def test_simpleparts_thing_constructor_exists():
+    assert callable(simpleparts_Thing.__init__)
 
 
-def test_simpleparts::thing_constructor_args():
-    sig = inspect.signature(simpleparts::Thing.__init__)
+def test_simpleparts_thing_constructor_args():
+    sig = inspect.signature(simpleparts_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_simpleparts::thing_has_id():
-    assert hasattr(simpleparts::Thing, "id")
+def test_simpleparts_thing_has_id():
+    assert hasattr(simpleparts_Thing, "id")
     descriptor = None
-    for klass in simpleparts::Thing.__mro__:
+    for klass in simpleparts_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -85,37 +85,37 @@ def test_simpleparts::thing_has_id():
 
 
 
-def test_simpleparts::world_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::World)
+def test_simpleparts_world_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_World)
 
 
-def test_simpleparts::world_constructor_exists():
-    assert callable(simpleparts::World.__init__)
+def test_simpleparts_world_constructor_exists():
+    assert callable(simpleparts_World.__init__)
 
 
-def test_simpleparts::world_constructor_args():
-    sig = inspect.signature(simpleparts::World.__init__)
+def test_simpleparts_world_constructor_args():
+    sig = inspect.signature(simpleparts_World.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleparts::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::NamedElement)
+def test_simpleparts_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_NamedElement)
 
 
-def test_simpleparts::namedelement_constructor_exists():
-    assert callable(simpleparts::NamedElement.__init__)
+def test_simpleparts_namedelement_constructor_exists():
+    assert callable(simpleparts_NamedElement.__init__)
 
 
-def test_simpleparts::namedelement_constructor_args():
-    sig = inspect.signature(simpleparts::NamedElement.__init__)
+def test_simpleparts_namedelement_constructor_args():
+    sig = inspect.signature(simpleparts_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleparts::namedelement_has_name():
-    assert hasattr(simpleparts::NamedElement, "name")
+def test_simpleparts_namedelement_has_name():
+    assert hasattr(simpleparts_NamedElement, "name")
     descriptor = None
-    for klass in simpleparts::NamedElement.__mro__:
+    for klass in simpleparts_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -123,58 +123,58 @@ def test_simpleparts::namedelement_has_name():
 
 
 
-def test_simpleparts::piece_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::Piece)
+def test_simpleparts_piece_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_Piece)
 
 
-def test_simpleparts::piece_constructor_exists():
-    assert callable(simpleparts::Piece.__init__)
+def test_simpleparts_piece_constructor_exists():
+    assert callable(simpleparts_Piece.__init__)
 
 
-def test_simpleparts::piece_constructor_args():
-    sig = inspect.signature(simpleparts::Piece.__init__)
+def test_simpleparts_piece_constructor_args():
+    sig = inspect.signature(simpleparts_Piece.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleparts::item_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::Item)
+def test_simpleparts_item_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_Item)
 
 
-def test_simpleparts::item_constructor_exists():
-    assert callable(simpleparts::Item.__init__)
+def test_simpleparts_item_constructor_exists():
+    assert callable(simpleparts_Item.__init__)
 
 
-def test_simpleparts::item_constructor_args():
-    sig = inspect.signature(simpleparts::Item.__init__)
+def test_simpleparts_item_constructor_args():
+    sig = inspect.signature(simpleparts_Item.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleparts::element_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::Element)
+def test_simpleparts_element_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_Element)
 
 
-def test_simpleparts::element_constructor_exists():
-    assert callable(simpleparts::Element.__init__)
+def test_simpleparts_element_constructor_exists():
+    assert callable(simpleparts_Element.__init__)
 
 
-def test_simpleparts::element_constructor_args():
-    sig = inspect.signature(simpleparts::Element.__init__)
+def test_simpleparts_element_constructor_args():
+    sig = inspect.signature(simpleparts_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleparts::part_is_not_abstract():
-    assert not inspect.isabstract(simpleparts::Part)
+def test_simpleparts_part_is_not_abstract():
+    assert not inspect.isabstract(simpleparts_Part)
 
 
-def test_simpleparts::part_constructor_exists():
-    assert callable(simpleparts::Part.__init__)
+def test_simpleparts_part_constructor_exists():
+    assert callable(simpleparts_Part.__init__)
 
 
-def test_simpleparts::part_constructor_args():
-    sig = inspect.signature(simpleparts::Part.__init__)
+def test_simpleparts_part_constructor_args():
+    sig = inspect.signature(simpleparts_Part.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,35 +192,35 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-simpleparts::RelatedTo_strategy = st.builds(
-    simpleparts::RelatedTo,
+simpleparts_RelatedTo_strategy = st.builds(
+    simpleparts_RelatedTo,
     since=
         safe_text
 )
-simpleparts::Thing_strategy = st.builds(
-    simpleparts::Thing,
+simpleparts_Thing_strategy = st.builds(
+    simpleparts_Thing,
     id=
         st.integers()
 )
-simpleparts::World_strategy = st.builds(
-    simpleparts::World,
+simpleparts_World_strategy = st.builds(
+    simpleparts_World,
 )
-simpleparts::NamedElement_strategy = st.builds(
-    simpleparts::NamedElement,
+simpleparts_NamedElement_strategy = st.builds(
+    simpleparts_NamedElement,
     name=
         safe_text
 )
-simpleparts::Piece_strategy = st.builds(
-    simpleparts::Piece,
+simpleparts_Piece_strategy = st.builds(
+    simpleparts_Piece,
 )
-simpleparts::Item_strategy = st.builds(
-    simpleparts::Item,
+simpleparts_Item_strategy = st.builds(
+    simpleparts_Item,
 )
-simpleparts::Element_strategy = st.builds(
-    simpleparts::Element,
+simpleparts_Element_strategy = st.builds(
+    simpleparts_Element,
 )
-simpleparts::Part_strategy = st.builds(
-    simpleparts::Part,
+simpleparts_Part_strategy = st.builds(
+    simpleparts_Part,
 )
 
 @given(instance=NamedElement_strategy)
@@ -228,75 +228,66 @@ simpleparts::Part_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simpleparts::RelatedTo_strategy)
+@given(instance=simpleparts_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_simpleparts::relatedto_instantiation(instance):
-    assert isinstance(instance, simpleparts::RelatedTo)
-
-@given(instance=simpleparts::RelatedTo_strategy)
-def test_simpleparts::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_simpleparts_relatedto_instantiation(instance):
+    assert isinstance(instance, simpleparts_RelatedTo)
 
 
-@given(instance=simpleparts::RelatedTo_strategy)
-def test_simpleparts::relatedto_since_setter(instance):
+
+@given(instance=simpleparts_RelatedTo_strategy)
+def test_simpleparts_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=simpleparts::Thing_strategy)
+@given(instance=simpleparts_Thing_strategy)
 @settings(max_examples=50)
-def test_simpleparts::thing_instantiation(instance):
-    assert isinstance(instance, simpleparts::Thing)
-
-@given(instance=simpleparts::Thing_strategy)
-def test_simpleparts::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_simpleparts_thing_instantiation(instance):
+    assert isinstance(instance, simpleparts_Thing)
 
 
-@given(instance=simpleparts::Thing_strategy)
-def test_simpleparts::thing_id_setter(instance):
+
+@given(instance=simpleparts_Thing_strategy)
+def test_simpleparts_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=simpleparts::World_strategy)
+@given(instance=simpleparts_World_strategy)
 @settings(max_examples=50)
-def test_simpleparts::world_instantiation(instance):
-    assert isinstance(instance, simpleparts::World)
+def test_simpleparts_world_instantiation(instance):
+    assert isinstance(instance, simpleparts_World)
 
-@given(instance=simpleparts::NamedElement_strategy)
+@given(instance=simpleparts_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simpleparts::namedelement_instantiation(instance):
-    assert isinstance(instance, simpleparts::NamedElement)
-
-@given(instance=simpleparts::NamedElement_strategy)
-def test_simpleparts::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleparts_namedelement_instantiation(instance):
+    assert isinstance(instance, simpleparts_NamedElement)
 
 
-@given(instance=simpleparts::NamedElement_strategy)
-def test_simpleparts::namedelement_name_setter(instance):
+
+@given(instance=simpleparts_NamedElement_strategy)
+def test_simpleparts_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleparts::Piece_strategy)
+@given(instance=simpleparts_Piece_strategy)
 @settings(max_examples=50)
-def test_simpleparts::piece_instantiation(instance):
-    assert isinstance(instance, simpleparts::Piece)
+def test_simpleparts_piece_instantiation(instance):
+    assert isinstance(instance, simpleparts_Piece)
 
-@given(instance=simpleparts::Item_strategy)
+@given(instance=simpleparts_Item_strategy)
 @settings(max_examples=50)
-def test_simpleparts::item_instantiation(instance):
-    assert isinstance(instance, simpleparts::Item)
+def test_simpleparts_item_instantiation(instance):
+    assert isinstance(instance, simpleparts_Item)
 
-@given(instance=simpleparts::Element_strategy)
+@given(instance=simpleparts_Element_strategy)
 @settings(max_examples=50)
-def test_simpleparts::element_instantiation(instance):
-    assert isinstance(instance, simpleparts::Element)
+def test_simpleparts_element_instantiation(instance):
+    assert isinstance(instance, simpleparts_Element)
 
-@given(instance=simpleparts::Part_strategy)
+@given(instance=simpleparts_Part_strategy)
 @settings(max_examples=50)
-def test_simpleparts::part_instantiation(instance):
-    assert isinstance(instance, simpleparts::Part)
+def test_simpleparts_part_instantiation(instance):
+    assert isinstance(instance, simpleparts_Part)

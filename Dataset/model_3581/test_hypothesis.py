@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    typeA::PortA,
-    typeA::BlockA,
+from python_code import (
+    typeA_PortA,
+    typeA_BlockA,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_typea::porta_is_not_abstract():
-    assert not inspect.isabstract(typeA::PortA)
+def test_typea_porta_is_not_abstract():
+    assert not inspect.isabstract(typeA_PortA)
 
 
-def test_typea::porta_constructor_exists():
-    assert callable(typeA::PortA.__init__)
+def test_typea_porta_constructor_exists():
+    assert callable(typeA_PortA.__init__)
 
 
-def test_typea::porta_constructor_args():
-    sig = inspect.signature(typeA::PortA.__init__)
+def test_typea_porta_constructor_args():
+    sig = inspect.signature(typeA_PortA.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typea::porta_has_name():
-    assert hasattr(typeA::PortA, "name")
+def test_typea_porta_has_name():
+    assert hasattr(typeA_PortA, "name")
     descriptor = None
-    for klass in typeA::PortA.__mro__:
+    for klass in typeA_PortA.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_typea::porta_has_name():
 
 
 
-def test_typea::blocka_is_not_abstract():
-    assert not inspect.isabstract(typeA::BlockA)
+def test_typea_blocka_is_not_abstract():
+    assert not inspect.isabstract(typeA_BlockA)
 
 
-def test_typea::blocka_constructor_exists():
-    assert callable(typeA::BlockA.__init__)
+def test_typea_blocka_constructor_exists():
+    assert callable(typeA_BlockA.__init__)
 
 
-def test_typea::blocka_constructor_args():
-    sig = inspect.signature(typeA::BlockA.__init__)
+def test_typea_blocka_constructor_args():
+    sig = inspect.signature(typeA_BlockA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-typeA::PortA_strategy = st.builds(
-    typeA::PortA,
+typeA_PortA_strategy = st.builds(
+    typeA_PortA,
     name=
         safe_text
 )
-typeA::BlockA_strategy = st.builds(
-    typeA::BlockA,
+typeA_BlockA_strategy = st.builds(
+    typeA_BlockA,
 )
 
-@given(instance=typeA::PortA_strategy)
+@given(instance=typeA_PortA_strategy)
 @settings(max_examples=50)
-def test_typea::porta_instantiation(instance):
-    assert isinstance(instance, typeA::PortA)
-
-@given(instance=typeA::PortA_strategy)
-def test_typea::porta_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typea_porta_instantiation(instance):
+    assert isinstance(instance, typeA_PortA)
 
 
-@given(instance=typeA::PortA_strategy)
-def test_typea::porta_name_setter(instance):
+
+@given(instance=typeA_PortA_strategy)
+def test_typea_porta_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=typeA::BlockA_strategy)
+@given(instance=typeA_BlockA_strategy)
 @settings(max_examples=50)
-def test_typea::blocka_instantiation(instance):
-    assert isinstance(instance, typeA::BlockA)
+def test_typea_blocka_instantiation(instance):
+    assert isinstance(instance, typeA_BlockA)

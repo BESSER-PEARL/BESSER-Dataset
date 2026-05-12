@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     BowlingGame,
@@ -35,17 +35,17 @@ def test_bowlinggame_constructor_exists():
 def test_bowlinggame_constructor_args():
     sig = inspect.signature(BowlingGame.__init__)
     params = list(sig.parameters.keys())
-    assert "attempts" in params, "Missing parameter 'attempts'"
-    assert "nextGames" in params, "Missing parameter 'nextGames'"
     assert "previousGame" in params, "Missing parameter 'previousGame'"
+    assert "nextGames" in params, "Missing parameter 'nextGames'"
     assert "scoreType" in params, "Missing parameter 'scoreType'"
+    assert "attempts" in params, "Missing parameter 'attempts'"
 
-def test_bowlinggame_has_attempts():
-    assert hasattr(BowlingGame, "attempts")
+def test_bowlinggame_has_previousGame():
+    assert hasattr(BowlingGame, "previousGame")
     descriptor = None
     for klass in BowlingGame.__mro__:
-        if "attempts" in klass.__dict__:
-            descriptor = klass.__dict__["attempts"]
+        if "previousGame" in klass.__dict__:
+            descriptor = klass.__dict__["previousGame"]
             break
     assert isinstance(descriptor, property)
 
@@ -58,21 +58,21 @@ def test_bowlinggame_has_nextGames():
             break
     assert isinstance(descriptor, property)
 
-def test_bowlinggame_has_previousGame():
-    assert hasattr(BowlingGame, "previousGame")
-    descriptor = None
-    for klass in BowlingGame.__mro__:
-        if "previousGame" in klass.__dict__:
-            descriptor = klass.__dict__["previousGame"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_bowlinggame_has_scoreType():
     assert hasattr(BowlingGame, "scoreType")
     descriptor = None
     for klass in BowlingGame.__mro__:
         if "scoreType" in klass.__dict__:
             descriptor = klass.__dict__["scoreType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bowlinggame_has_attempts():
+    assert hasattr(BowlingGame, "attempts")
+    descriptor = None
+    for klass in BowlingGame.__mro__:
+        if "attempts" in klass.__dict__:
+            descriptor = klass.__dict__["attempts"]
             break
     assert isinstance(descriptor, property)
 
@@ -263,18 +263,9 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
-    assert "totalScore" in params, "Missing parameter 'totalScore'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "totalScore" in params, "Missing parameter 'totalScore'"
     assert "games" in params, "Missing parameter 'games'"
-
-def test_player_has_totalScore():
-    assert hasattr(Player, "totalScore")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "totalScore" in klass.__dict__:
-            descriptor = klass.__dict__["totalScore"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_player_has_name():
     assert hasattr(Player, "name")
@@ -282,6 +273,15 @@ def test_player_has_name():
     for klass in Player.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_totalScore():
+    assert hasattr(Player, "totalScore")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "totalScore" in klass.__dict__:
+            descriptor = klass.__dict__["totalScore"]
             break
     assert isinstance(descriptor, property)
 
@@ -307,19 +307,10 @@ def test_match_constructor_exists():
 def test_match_constructor_args():
     sig = inspect.signature(Match.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
     assert "winner" in params, "Missing parameter 'winner'"
-    assert "players" in params, "Missing parameter 'players'"
+    assert "date" in params, "Missing parameter 'date'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_match_has_date():
-    assert hasattr(Match, "date")
-    descriptor = None
-    for klass in Match.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
+    assert "players" in params, "Missing parameter 'players'"
 
 def test_match_has_winner():
     assert hasattr(Match, "winner")
@@ -330,12 +321,12 @@ def test_match_has_winner():
             break
     assert isinstance(descriptor, property)
 
-def test_match_has_players():
-    assert hasattr(Match, "players")
+def test_match_has_date():
+    assert hasattr(Match, "date")
     descriptor = None
     for klass in Match.__mro__:
-        if "players" in klass.__dict__:
-            descriptor = klass.__dict__["players"]
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -345,6 +336,15 @@ def test_match_has_name():
     for klass in Match.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_match_has_players():
+    assert hasattr(Match, "players")
+    descriptor = None
+    for klass in Match.__mro__:
+        if "players" in klass.__dict__:
+            descriptor = klass.__dict__["players"]
             break
     assert isinstance(descriptor, property)
 
@@ -375,14 +375,14 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 BowlingGame_strategy = st.builds(
     BowlingGame,
-    attempts=
-        safe_text,
-    nextGames=
-        safe_text,
     previousGame=
         st.none(),
+    nextGames=
+        safe_text,
     scoreType=
-        st.none()
+        st.none(),
+    attempts=
+        safe_text
 )
 Importer_Interface_strategy = st.builds(
     Importer_Interface,
@@ -422,22 +422,22 @@ Game_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
-    totalScore=
-        st.integers(),
     name=
         safe_text,
+    totalScore=
+        st.integers(),
     games=
         st.none()
 )
 Match_strategy = st.builds(
     Match,
-    date=
-        safe_text,
     winner=
         st.none(),
-    players=
+    date=
         safe_text,
     name=
+        safe_text,
+    players=
         safe_text
 )
 
@@ -446,31 +446,6 @@ Match_strategy = st.builds(
 def test_bowlinggame_instantiation(instance):
     assert isinstance(instance, BowlingGame)
 
-@given(instance=BowlingGame_strategy)
-def test_bowlinggame_attempts_type(instance):
-    assert isinstance(instance.attempts, str)
-
-
-@given(instance=BowlingGame_strategy)
-def test_bowlinggame_attempts_setter(instance):
-    original = instance.attempts
-    instance.attempts = original
-    assert instance.attempts == original
-
-@given(instance=BowlingGame_strategy)
-def test_bowlinggame_nextGames_type(instance):
-    assert isinstance(instance.nextGames, str)
-
-
-@given(instance=BowlingGame_strategy)
-def test_bowlinggame_nextGames_setter(instance):
-    original = instance.nextGames
-    instance.nextGames = original
-    assert instance.nextGames == original
-
-@given(instance=BowlingGame_strategy)
-def test_bowlinggame_previousGame_type(instance):
-    assert isinstance(instance.previousGame, game)
 
 
 @given(instance=BowlingGame_strategy)
@@ -479,9 +454,14 @@ def test_bowlinggame_previousGame_setter(instance):
     instance.previousGame = original
     assert instance.previousGame == original
 
+
+
 @given(instance=BowlingGame_strategy)
-def test_bowlinggame_scoreType_type(instance):
-    assert isinstance(instance.scoreType, scoretype)
+def test_bowlinggame_nextGames_setter(instance):
+    original = instance.nextGames
+    instance.nextGames = original
+    assert instance.nextGames == original
+
 
 
 @given(instance=BowlingGame_strategy)
@@ -489,6 +469,14 @@ def test_bowlinggame_scoreType_setter(instance):
     original = instance.scoreType
     instance.scoreType = original
     assert instance.scoreType == original
+
+
+
+@given(instance=BowlingGame_strategy)
+def test_bowlinggame_attempts_setter(instance):
+    original = instance.attempts
+    instance.attempts = original
+    assert instance.attempts == original
 
 @given(instance=Importer_Interface_strategy)
 @settings(max_examples=50)
@@ -500,9 +488,6 @@ def test_importer_interface_instantiation(instance):
 def test_result_instantiation(instance):
     assert isinstance(instance, Result)
 
-@given(instance=Result_strategy)
-def test_result_score_type(instance):
-    assert isinstance(instance.score, int)
 
 
 @given(instance=Result_strategy)
@@ -511,9 +496,6 @@ def test_result_score_setter(instance):
     instance.score = original
     assert instance.score == original
 
-@given(instance=Result_strategy)
-def test_result_player_type(instance):
-    assert isinstance(instance.player, str)
 
 
 @given(instance=Result_strategy)
@@ -527,9 +509,6 @@ def test_result_player_setter(instance):
 def test_initialdata_instantiation(instance):
     assert isinstance(instance, InitialData)
 
-@given(instance=InitialData_strategy)
-def test_initialdata_points_type(instance):
-    assert isinstance(instance.points, str)
 
 
 @given(instance=InitialData_strategy)
@@ -538,9 +517,6 @@ def test_initialdata_points_setter(instance):
     instance.points = original
     assert instance.points == original
 
-@given(instance=InitialData_strategy)
-def test_initialdata_playerName_type(instance):
-    assert isinstance(instance.playerName, str)
 
 
 @given(instance=InitialData_strategy)
@@ -554,9 +530,6 @@ def test_initialdata_playerName_setter(instance):
 def test_fileimporter_instantiation(instance):
     assert isinstance(instance, FileImporter)
 
-@given(instance=FileImporter_strategy)
-def test_fileimporter_INITIAL_DATAFILE_type(instance):
-    assert isinstance(instance.INITIAL_DATAFILE, str)
 
 
 @given(instance=FileImporter_strategy)
@@ -570,9 +543,6 @@ def test_fileimporter_INITIAL_DATAFILE_setter(instance):
 def test_attempt_instantiation(instance):
     assert isinstance(instance, Attempt)
 
-@given(instance=Attempt_strategy)
-def test_attempt_points_type(instance):
-    assert isinstance(instance.points, int)
 
 
 @given(instance=Attempt_strategy)
@@ -581,9 +551,6 @@ def test_attempt_points_setter(instance):
     instance.points = original
     assert instance.points == original
 
-@given(instance=Attempt_strategy)
-def test_attempt_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=Attempt_strategy)
@@ -597,9 +564,6 @@ def test_attempt_number_setter(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=Game_strategy)
@@ -608,9 +572,6 @@ def test_game_number_setter(instance):
     instance.number = original
     assert instance.number == original
 
-@given(instance=Game_strategy)
-def test_game_score_type(instance):
-    assert isinstance(instance.score, int)
 
 
 @given(instance=Game_strategy)
@@ -624,20 +585,6 @@ def test_game_score_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_totalScore_type(instance):
-    assert isinstance(instance.totalScore, int)
-
-
-@given(instance=Player_strategy)
-def test_player_totalScore_setter(instance):
-    original = instance.totalScore
-    instance.totalScore = original
-    assert instance.totalScore == original
-
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -646,9 +593,14 @@ def test_player_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
 @given(instance=Player_strategy)
-def test_player_games_type(instance):
-    assert isinstance(instance.games, game)
+def test_player_totalScore_setter(instance):
+    original = instance.totalScore
+    instance.totalScore = original
+    assert instance.totalScore == original
+
 
 
 @given(instance=Player_strategy)
@@ -662,20 +614,6 @@ def test_player_games_setter(instance):
 def test_match_instantiation(instance):
     assert isinstance(instance, Match)
 
-@given(instance=Match_strategy)
-def test_match_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=Match_strategy)
-def test_match_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Match_strategy)
-def test_match_winner_type(instance):
-    assert isinstance(instance.winner, result)
 
 
 @given(instance=Match_strategy)
@@ -684,20 +622,14 @@ def test_match_winner_setter(instance):
     instance.winner = original
     assert instance.winner == original
 
-@given(instance=Match_strategy)
-def test_match_players_type(instance):
-    assert isinstance(instance.players, str)
 
 
 @given(instance=Match_strategy)
-def test_match_players_setter(instance):
-    original = instance.players
-    instance.players = original
-    assert instance.players == original
+def test_match_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
 
-@given(instance=Match_strategy)
-def test_match_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Match_strategy)
@@ -705,3 +637,11 @@ def test_match_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Match_strategy)
+def test_match_players_setter(instance):
+    original = instance.players
+    instance.players = original
+    assert instance.players == original

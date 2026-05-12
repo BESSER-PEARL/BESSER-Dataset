@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    datasetload::TableRow,
+from python_code import (
+    datasetload_TableRow,
     DataSource,
-    datasetload::DataSourceJdbc,
-    datasetload::DataSource,
-    datasetload::Table,
-    datasetload::TableGroup,
+    datasetload_DataSourceJdbc,
+    datasetload_DataSource,
+    datasetload_Table,
+    datasetload_TableGroup,
 )
 
 # =============================================================================
@@ -20,45 +20,45 @@ from classes import (
 
 
 
-def test_datasetload::tablerow_is_not_abstract():
-    assert not inspect.isabstract(datasetload::TableRow)
+def test_datasetload_tablerow_is_not_abstract():
+    assert not inspect.isabstract(datasetload_TableRow)
 
 
-def test_datasetload::tablerow_constructor_exists():
-    assert callable(datasetload::TableRow.__init__)
+def test_datasetload_tablerow_constructor_exists():
+    assert callable(datasetload_TableRow.__init__)
 
 
-def test_datasetload::tablerow_constructor_args():
-    sig = inspect.signature(datasetload::TableRow.__init__)
+def test_datasetload_tablerow_constructor_args():
+    sig = inspect.signature(datasetload_TableRow.__init__)
     params = list(sig.parameters.keys())
-    assert "Key" in params, "Missing parameter 'Key'"
     assert "RowNumber" in params, "Missing parameter 'RowNumber'"
     assert "NewRow" in params, "Missing parameter 'NewRow'"
+    assert "Key" in params, "Missing parameter 'Key'"
 
-def test_datasetload::tablerow_has_Key():
-    assert hasattr(datasetload::TableRow, "Key")
+def test_datasetload_tablerow_has_RowNumber():
+    assert hasattr(datasetload_TableRow, "RowNumber")
     descriptor = None
-    for klass in datasetload::TableRow.__mro__:
-        if "Key" in klass.__dict__:
-            descriptor = klass.__dict__["Key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::tablerow_has_RowNumber():
-    assert hasattr(datasetload::TableRow, "RowNumber")
-    descriptor = None
-    for klass in datasetload::TableRow.__mro__:
+    for klass in datasetload_TableRow.__mro__:
         if "RowNumber" in klass.__dict__:
             descriptor = klass.__dict__["RowNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_datasetload::tablerow_has_NewRow():
-    assert hasattr(datasetload::TableRow, "NewRow")
+def test_datasetload_tablerow_has_NewRow():
+    assert hasattr(datasetload_TableRow, "NewRow")
     descriptor = None
-    for klass in datasetload::TableRow.__mro__:
+    for klass in datasetload_TableRow.__mro__:
         if "NewRow" in klass.__dict__:
             descriptor = klass.__dict__["NewRow"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datasetload_tablerow_has_Key():
+    assert hasattr(datasetload_TableRow, "Key")
+    descriptor = None
+    for klass in datasetload_TableRow.__mro__:
+        if "Key" in klass.__dict__:
+            descriptor = klass.__dict__["Key"]
             break
     assert isinstance(descriptor, property)
 
@@ -78,77 +78,77 @@ def test_datasource_constructor_args():
 
 
 
-def test_datasetload::datasourcejdbc_is_not_abstract():
-    assert not inspect.isabstract(datasetload::DataSourceJdbc)
+def test_datasetload_datasourcejdbc_is_not_abstract():
+    assert not inspect.isabstract(datasetload_DataSourceJdbc)
 
 
-def test_datasetload::datasourcejdbc_constructor_exists():
-    assert callable(datasetload::DataSourceJdbc.__init__)
+def test_datasetload_datasourcejdbc_constructor_exists():
+    assert callable(datasetload_DataSourceJdbc.__init__)
 
 
-def test_datasetload::datasourcejdbc_constructor_args():
-    sig = inspect.signature(datasetload::DataSourceJdbc.__init__)
+def test_datasetload_datasourcejdbc_constructor_args():
+    sig = inspect.signature(datasetload_DataSourceJdbc.__init__)
     params = list(sig.parameters.keys())
     assert "DataBaseUserPwd" in params, "Missing parameter 'DataBaseUserPwd'"
-    assert "DataBaseUser" in params, "Missing parameter 'DataBaseUser'"
     assert "DefaultSchema" in params, "Missing parameter 'DefaultSchema'"
+    assert "DataBaseUser" in params, "Missing parameter 'DataBaseUser'"
 
-def test_datasetload::datasourcejdbc_has_DataBaseUserPwd():
-    assert hasattr(datasetload::DataSourceJdbc, "DataBaseUserPwd")
+def test_datasetload_datasourcejdbc_has_DataBaseUserPwd():
+    assert hasattr(datasetload_DataSourceJdbc, "DataBaseUserPwd")
     descriptor = None
-    for klass in datasetload::DataSourceJdbc.__mro__:
+    for klass in datasetload_DataSourceJdbc.__mro__:
         if "DataBaseUserPwd" in klass.__dict__:
             descriptor = klass.__dict__["DataBaseUserPwd"]
             break
     assert isinstance(descriptor, property)
 
-def test_datasetload::datasourcejdbc_has_DataBaseUser():
-    assert hasattr(datasetload::DataSourceJdbc, "DataBaseUser")
+def test_datasetload_datasourcejdbc_has_DefaultSchema():
+    assert hasattr(datasetload_DataSourceJdbc, "DefaultSchema")
     descriptor = None
-    for klass in datasetload::DataSourceJdbc.__mro__:
-        if "DataBaseUser" in klass.__dict__:
-            descriptor = klass.__dict__["DataBaseUser"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::datasourcejdbc_has_DefaultSchema():
-    assert hasattr(datasetload::DataSourceJdbc, "DefaultSchema")
-    descriptor = None
-    for klass in datasetload::DataSourceJdbc.__mro__:
+    for klass in datasetload_DataSourceJdbc.__mro__:
         if "DefaultSchema" in klass.__dict__:
             descriptor = klass.__dict__["DefaultSchema"]
             break
     assert isinstance(descriptor, property)
 
+def test_datasetload_datasourcejdbc_has_DataBaseUser():
+    assert hasattr(datasetload_DataSourceJdbc, "DataBaseUser")
+    descriptor = None
+    for klass in datasetload_DataSourceJdbc.__mro__:
+        if "DataBaseUser" in klass.__dict__:
+            descriptor = klass.__dict__["DataBaseUser"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_datasetload::datasource_is_not_abstract():
-    assert not inspect.isabstract(datasetload::DataSource)
+
+def test_datasetload_datasource_is_not_abstract():
+    assert not inspect.isabstract(datasetload_DataSource)
 
 
-def test_datasetload::datasource_constructor_exists():
-    assert callable(datasetload::DataSource.__init__)
+def test_datasetload_datasource_constructor_exists():
+    assert callable(datasetload_DataSource.__init__)
 
 
-def test_datasetload::datasource_constructor_args():
-    sig = inspect.signature(datasetload::DataSource.__init__)
+def test_datasetload_datasource_constructor_args():
+    sig = inspect.signature(datasetload_DataSource.__init__)
     params = list(sig.parameters.keys())
     assert "Connected" in params, "Missing parameter 'Connected'"
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_datasetload::datasource_has_Connected():
-    assert hasattr(datasetload::DataSource, "Connected")
+def test_datasetload_datasource_has_Connected():
+    assert hasattr(datasetload_DataSource, "Connected")
     descriptor = None
-    for klass in datasetload::DataSource.__mro__:
+    for klass in datasetload_DataSource.__mro__:
         if "Connected" in klass.__dict__:
             descriptor = klass.__dict__["Connected"]
             break
     assert isinstance(descriptor, property)
 
-def test_datasetload::datasource_has_Name():
-    assert hasattr(datasetload::DataSource, "Name")
+def test_datasetload_datasource_has_Name():
+    assert hasattr(datasetload_DataSource, "Name")
     descriptor = None
-    for klass in datasetload::DataSource.__mro__:
+    for klass in datasetload_DataSource.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -156,107 +156,107 @@ def test_datasetload::datasource_has_Name():
 
 
 
-def test_datasetload::table_is_not_abstract():
-    assert not inspect.isabstract(datasetload::Table)
+def test_datasetload_table_is_not_abstract():
+    assert not inspect.isabstract(datasetload_Table)
 
 
-def test_datasetload::table_constructor_exists():
-    assert callable(datasetload::Table.__init__)
+def test_datasetload_table_constructor_exists():
+    assert callable(datasetload_Table.__init__)
 
 
-def test_datasetload::table_constructor_args():
-    sig = inspect.signature(datasetload::Table.__init__)
+def test_datasetload_table_constructor_args():
+    sig = inspect.signature(datasetload_Table.__init__)
     params = list(sig.parameters.keys())
-    assert "NumberOfRows" in params, "Missing parameter 'NumberOfRows'"
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "SQLStatement" in params, "Missing parameter 'SQLStatement'"
-    assert "ColumnTableRowAttributes" in params, "Missing parameter 'ColumnTableRowAttributes'"
+    assert "KeyColumns" in params, "Missing parameter 'KeyColumns'"
     assert "LastLoad" in params, "Missing parameter 'LastLoad'"
     assert "ParamTableGroupAttributes" in params, "Missing parameter 'ParamTableGroupAttributes'"
-    assert "KeyColumns" in params, "Missing parameter 'KeyColumns'"
+    assert "NumberOfRows" in params, "Missing parameter 'NumberOfRows'"
+    assert "ColumnTableRowAttributes" in params, "Missing parameter 'ColumnTableRowAttributes'"
+    assert "Name" in params, "Missing parameter 'Name'"
 
-def test_datasetload::table_has_NumberOfRows():
-    assert hasattr(datasetload::Table, "NumberOfRows")
+def test_datasetload_table_has_SQLStatement():
+    assert hasattr(datasetload_Table, "SQLStatement")
     descriptor = None
-    for klass in datasetload::Table.__mro__:
-        if "NumberOfRows" in klass.__dict__:
-            descriptor = klass.__dict__["NumberOfRows"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::table_has_Name():
-    assert hasattr(datasetload::Table, "Name")
-    descriptor = None
-    for klass in datasetload::Table.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::table_has_SQLStatement():
-    assert hasattr(datasetload::Table, "SQLStatement")
-    descriptor = None
-    for klass in datasetload::Table.__mro__:
+    for klass in datasetload_Table.__mro__:
         if "SQLStatement" in klass.__dict__:
             descriptor = klass.__dict__["SQLStatement"]
             break
     assert isinstance(descriptor, property)
 
-def test_datasetload::table_has_ColumnTableRowAttributes():
-    assert hasattr(datasetload::Table, "ColumnTableRowAttributes")
+def test_datasetload_table_has_KeyColumns():
+    assert hasattr(datasetload_Table, "KeyColumns")
     descriptor = None
-    for klass in datasetload::Table.__mro__:
-        if "ColumnTableRowAttributes" in klass.__dict__:
-            descriptor = klass.__dict__["ColumnTableRowAttributes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::table_has_LastLoad():
-    assert hasattr(datasetload::Table, "LastLoad")
-    descriptor = None
-    for klass in datasetload::Table.__mro__:
-        if "LastLoad" in klass.__dict__:
-            descriptor = klass.__dict__["LastLoad"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::table_has_ParamTableGroupAttributes():
-    assert hasattr(datasetload::Table, "ParamTableGroupAttributes")
-    descriptor = None
-    for klass in datasetload::Table.__mro__:
-        if "ParamTableGroupAttributes" in klass.__dict__:
-            descriptor = klass.__dict__["ParamTableGroupAttributes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datasetload::table_has_KeyColumns():
-    assert hasattr(datasetload::Table, "KeyColumns")
-    descriptor = None
-    for klass in datasetload::Table.__mro__:
+    for klass in datasetload_Table.__mro__:
         if "KeyColumns" in klass.__dict__:
             descriptor = klass.__dict__["KeyColumns"]
             break
     assert isinstance(descriptor, property)
 
+def test_datasetload_table_has_LastLoad():
+    assert hasattr(datasetload_Table, "LastLoad")
+    descriptor = None
+    for klass in datasetload_Table.__mro__:
+        if "LastLoad" in klass.__dict__:
+            descriptor = klass.__dict__["LastLoad"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datasetload_table_has_ParamTableGroupAttributes():
+    assert hasattr(datasetload_Table, "ParamTableGroupAttributes")
+    descriptor = None
+    for klass in datasetload_Table.__mro__:
+        if "ParamTableGroupAttributes" in klass.__dict__:
+            descriptor = klass.__dict__["ParamTableGroupAttributes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datasetload_table_has_NumberOfRows():
+    assert hasattr(datasetload_Table, "NumberOfRows")
+    descriptor = None
+    for klass in datasetload_Table.__mro__:
+        if "NumberOfRows" in klass.__dict__:
+            descriptor = klass.__dict__["NumberOfRows"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datasetload_table_has_ColumnTableRowAttributes():
+    assert hasattr(datasetload_Table, "ColumnTableRowAttributes")
+    descriptor = None
+    for klass in datasetload_Table.__mro__:
+        if "ColumnTableRowAttributes" in klass.__dict__:
+            descriptor = klass.__dict__["ColumnTableRowAttributes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datasetload_table_has_Name():
+    assert hasattr(datasetload_Table, "Name")
+    descriptor = None
+    for klass in datasetload_Table.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_datasetload::tablegroup_is_not_abstract():
-    assert not inspect.isabstract(datasetload::TableGroup)
+
+def test_datasetload_tablegroup_is_not_abstract():
+    assert not inspect.isabstract(datasetload_TableGroup)
 
 
-def test_datasetload::tablegroup_constructor_exists():
-    assert callable(datasetload::TableGroup.__init__)
+def test_datasetload_tablegroup_constructor_exists():
+    assert callable(datasetload_TableGroup.__init__)
 
 
-def test_datasetload::tablegroup_constructor_args():
-    sig = inspect.signature(datasetload::TableGroup.__init__)
+def test_datasetload_tablegroup_constructor_args():
+    sig = inspect.signature(datasetload_TableGroup.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_datasetload::tablegroup_has_Name():
-    assert hasattr(datasetload::TableGroup, "Name")
+def test_datasetload_tablegroup_has_Name():
+    assert hasattr(datasetload_TableGroup, "Name")
     descriptor = None
-    for klass in datasetload::TableGroup.__mro__:
+    for klass in datasetload_TableGroup.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -274,94 +274,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-datasetload::TableRow_strategy = st.builds(
-    datasetload::TableRow,
-    Key=
-        safe_text,
+datasetload_TableRow_strategy = st.builds(
+    datasetload_TableRow,
     RowNumber=
         st.integers(),
     NewRow=
-        st.booleans()
+        st.booleans(),
+    Key=
+        safe_text
 )
 DataSource_strategy = st.builds(
     DataSource,
 )
-datasetload::DataSourceJdbc_strategy = st.builds(
-    datasetload::DataSourceJdbc,
+datasetload_DataSourceJdbc_strategy = st.builds(
+    datasetload_DataSourceJdbc,
     DataBaseUserPwd=
         safe_text,
-    DataBaseUser=
-        safe_text,
     DefaultSchema=
+        safe_text,
+    DataBaseUser=
         safe_text
 )
-datasetload::DataSource_strategy = st.builds(
-    datasetload::DataSource,
+datasetload_DataSource_strategy = st.builds(
+    datasetload_DataSource,
     Connected=
         st.booleans(),
     Name=
         safe_text
 )
-datasetload::Table_strategy = st.builds(
-    datasetload::Table,
-    NumberOfRows=
-        st.integers(),
-    Name=
-        safe_text,
+datasetload_Table_strategy = st.builds(
+    datasetload_Table,
     SQLStatement=
         safe_text,
-    ColumnTableRowAttributes=
-        safe_text,
+    KeyColumns=
+        st.integers(),
     LastLoad=
         st.dates(),
     ParamTableGroupAttributes=
         safe_text,
-    KeyColumns=
-        st.integers()
+    NumberOfRows=
+        st.integers(),
+    ColumnTableRowAttributes=
+        safe_text,
+    Name=
+        safe_text
 )
-datasetload::TableGroup_strategy = st.builds(
-    datasetload::TableGroup,
+datasetload_TableGroup_strategy = st.builds(
+    datasetload_TableGroup,
     Name=
         safe_text
 )
 
-@given(instance=datasetload::TableRow_strategy)
+@given(instance=datasetload_TableRow_strategy)
 @settings(max_examples=50)
-def test_datasetload::tablerow_instantiation(instance):
-    assert isinstance(instance, datasetload::TableRow)
-
-@given(instance=datasetload::TableRow_strategy)
-def test_datasetload::tablerow_Key_type(instance):
-    assert isinstance(instance.Key, str)
+def test_datasetload_tablerow_instantiation(instance):
+    assert isinstance(instance, datasetload_TableRow)
 
 
-@given(instance=datasetload::TableRow_strategy)
-def test_datasetload::tablerow_Key_setter(instance):
-    original = instance.Key
-    instance.Key = original
-    assert instance.Key == original
 
-@given(instance=datasetload::TableRow_strategy)
-def test_datasetload::tablerow_RowNumber_type(instance):
-    assert isinstance(instance.RowNumber, int)
-
-
-@given(instance=datasetload::TableRow_strategy)
-def test_datasetload::tablerow_RowNumber_setter(instance):
+@given(instance=datasetload_TableRow_strategy)
+def test_datasetload_tablerow_RowNumber_setter(instance):
     original = instance.RowNumber
     instance.RowNumber = original
     assert instance.RowNumber == original
 
-@given(instance=datasetload::TableRow_strategy)
-def test_datasetload::tablerow_NewRow_type(instance):
-    assert isinstance(instance.NewRow, bool)
 
 
-@given(instance=datasetload::TableRow_strategy)
-def test_datasetload::tablerow_NewRow_setter(instance):
+@given(instance=datasetload_TableRow_strategy)
+def test_datasetload_tablerow_NewRow_setter(instance):
     original = instance.NewRow
     instance.NewRow = original
     assert instance.NewRow == original
+
+
+
+@given(instance=datasetload_TableRow_strategy)
+def test_datasetload_tablerow_Key_setter(instance):
+    original = instance.Key
+    instance.Key = original
+    assert instance.Key == original
 
 import warnings
 import copy
@@ -369,9 +360,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::TableRow_strategy)
+@given(instance=datasetload_TableRow_strategy)
 @settings(max_examples=30)
-def test_datasetload::tablerow_refresh_changes_state(instance):
+def test_datasetload_tablerow_refresh_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -383,81 +374,66 @@ def test_datasetload::tablerow_refresh_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'refresh' in datasetload::TableRow is empty"
+        assert has_statements, f"Function 'refresh' in datasetload_TableRow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'refresh' in datasetload::TableRow did not change state; check implementation")
+            warnings.warn(f"Operation 'refresh' in datasetload_TableRow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'refresh' in datasetload::TableRow is not implemented or raised an error")
+        warnings.warn(f"Operation 'refresh' in datasetload_TableRow is not implemented or raised an error")
 
 @given(instance=DataSource_strategy)
 @settings(max_examples=50)
 def test_datasource_instantiation(instance):
     assert isinstance(instance, DataSource)
 
-@given(instance=datasetload::DataSourceJdbc_strategy)
+@given(instance=datasetload_DataSourceJdbc_strategy)
 @settings(max_examples=50)
-def test_datasetload::datasourcejdbc_instantiation(instance):
-    assert isinstance(instance, datasetload::DataSourceJdbc)
-
-@given(instance=datasetload::DataSourceJdbc_strategy)
-def test_datasetload::datasourcejdbc_DataBaseUserPwd_type(instance):
-    assert isinstance(instance.DataBaseUserPwd, str)
+def test_datasetload_datasourcejdbc_instantiation(instance):
+    assert isinstance(instance, datasetload_DataSourceJdbc)
 
 
-@given(instance=datasetload::DataSourceJdbc_strategy)
-def test_datasetload::datasourcejdbc_DataBaseUserPwd_setter(instance):
+
+@given(instance=datasetload_DataSourceJdbc_strategy)
+def test_datasetload_datasourcejdbc_DataBaseUserPwd_setter(instance):
     original = instance.DataBaseUserPwd
     instance.DataBaseUserPwd = original
     assert instance.DataBaseUserPwd == original
 
-@given(instance=datasetload::DataSourceJdbc_strategy)
-def test_datasetload::datasourcejdbc_DataBaseUser_type(instance):
-    assert isinstance(instance.DataBaseUser, str)
 
 
-@given(instance=datasetload::DataSourceJdbc_strategy)
-def test_datasetload::datasourcejdbc_DataBaseUser_setter(instance):
-    original = instance.DataBaseUser
-    instance.DataBaseUser = original
-    assert instance.DataBaseUser == original
-
-@given(instance=datasetload::DataSourceJdbc_strategy)
-def test_datasetload::datasourcejdbc_DefaultSchema_type(instance):
-    assert isinstance(instance.DefaultSchema, str)
-
-
-@given(instance=datasetload::DataSourceJdbc_strategy)
-def test_datasetload::datasourcejdbc_DefaultSchema_setter(instance):
+@given(instance=datasetload_DataSourceJdbc_strategy)
+def test_datasetload_datasourcejdbc_DefaultSchema_setter(instance):
     original = instance.DefaultSchema
     instance.DefaultSchema = original
     assert instance.DefaultSchema == original
 
-@given(instance=datasetload::DataSource_strategy)
+
+
+@given(instance=datasetload_DataSourceJdbc_strategy)
+def test_datasetload_datasourcejdbc_DataBaseUser_setter(instance):
+    original = instance.DataBaseUser
+    instance.DataBaseUser = original
+    assert instance.DataBaseUser == original
+
+@given(instance=datasetload_DataSource_strategy)
 @settings(max_examples=50)
-def test_datasetload::datasource_instantiation(instance):
-    assert isinstance(instance, datasetload::DataSource)
-
-@given(instance=datasetload::DataSource_strategy)
-def test_datasetload::datasource_Connected_type(instance):
-    assert isinstance(instance.Connected, bool)
+def test_datasetload_datasource_instantiation(instance):
+    assert isinstance(instance, datasetload_DataSource)
 
 
-@given(instance=datasetload::DataSource_strategy)
-def test_datasetload::datasource_Connected_setter(instance):
+
+@given(instance=datasetload_DataSource_strategy)
+def test_datasetload_datasource_Connected_setter(instance):
     original = instance.Connected
     instance.Connected = original
     assert instance.Connected == original
 
-@given(instance=datasetload::DataSource_strategy)
-def test_datasetload::datasource_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
-@given(instance=datasetload::DataSource_strategy)
-def test_datasetload::datasource_Name_setter(instance):
+@given(instance=datasetload_DataSource_strategy)
+def test_datasetload_datasource_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
@@ -468,9 +444,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::DataSource_strategy)
+@given(instance=datasetload_DataSource_strategy)
 @settings(max_examples=30)
-def test_datasetload::datasource_disconnect_changes_state(instance):
+def test_datasetload_datasource_disconnect_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -482,14 +458,14 @@ def test_datasetload::datasource_disconnect_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'disconnect' in datasetload::DataSource is empty"
+        assert has_statements, f"Function 'disconnect' in datasetload_DataSource is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'disconnect' in datasetload::DataSource did not change state; check implementation")
+            warnings.warn(f"Operation 'disconnect' in datasetload_DataSource did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'disconnect' in datasetload::DataSource is not implemented or raised an error")
+        warnings.warn(f"Operation 'disconnect' in datasetload_DataSource is not implemented or raised an error")
 
 import warnings
 import copy
@@ -497,38 +473,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::DataSource_strategy)
+@given(instance=datasetload_DataSource_strategy)
 @settings(max_examples=30)
-def test_datasetload::datasource_connect_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.connect()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.connect).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'connect' in datasetload::DataSource is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'connect' in datasetload::DataSource did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'connect' in datasetload::DataSource is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=datasetload::DataSource_strategy)
-@settings(max_examples=30)
-def test_datasetload::datasource_loadtableimpl_changes_state(instance):
+def test_datasetload_datasource_loadtableimpl_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -542,127 +489,133 @@ def test_datasetload::datasource_loadtableimpl_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'loadTableImpl' in datasetload::DataSource is empty"
+        assert has_statements, f"Function 'loadTableImpl' in datasetload_DataSource is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'loadTableImpl' in datasetload::DataSource did not change state; check implementation")
+            warnings.warn(f"Operation 'loadTableImpl' in datasetload_DataSource did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'loadTableImpl' in datasetload::DataSource is not implemented or raised an error")
+        warnings.warn(f"Operation 'loadTableImpl' in datasetload_DataSource is not implemented or raised an error")
 
-@given(instance=datasetload::Table_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=datasetload_DataSource_strategy)
+@settings(max_examples=30)
+def test_datasetload_datasource_connect_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.connect()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.connect).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'connect' in datasetload_DataSource is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'connect' in datasetload_DataSource did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'connect' in datasetload_DataSource is not implemented or raised an error")
+
+@given(instance=datasetload_Table_strategy)
 @settings(max_examples=50)
-def test_datasetload::table_instantiation(instance):
-    assert isinstance(instance, datasetload::Table)
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_NumberOfRows_type(instance):
-    assert isinstance(instance.NumberOfRows, int)
+def test_datasetload_table_instantiation(instance):
+    assert isinstance(instance, datasetload_Table)
 
 
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_NumberOfRows_setter(instance):
-    original = instance.NumberOfRows
-    instance.NumberOfRows = original
-    assert instance.NumberOfRows == original
 
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_SQLStatement_type(instance):
-    assert isinstance(instance.SQLStatement, str)
-
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_SQLStatement_setter(instance):
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_SQLStatement_setter(instance):
     original = instance.SQLStatement
     instance.SQLStatement = original
     assert instance.SQLStatement == original
 
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_ColumnTableRowAttributes_type(instance):
-    assert isinstance(instance.ColumnTableRowAttributes, str)
 
 
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_ColumnTableRowAttributes_setter(instance):
-    original = instance.ColumnTableRowAttributes
-    instance.ColumnTableRowAttributes = original
-    assert instance.ColumnTableRowAttributes == original
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_LastLoad_type(instance):
-    assert isinstance(instance.LastLoad, date)
-
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_LastLoad_setter(instance):
-    original = instance.LastLoad
-    instance.LastLoad = original
-    assert instance.LastLoad == original
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_ParamTableGroupAttributes_type(instance):
-    assert isinstance(instance.ParamTableGroupAttributes, str)
-
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_ParamTableGroupAttributes_setter(instance):
-    original = instance.ParamTableGroupAttributes
-    instance.ParamTableGroupAttributes = original
-    assert instance.ParamTableGroupAttributes == original
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_KeyColumns_type(instance):
-    assert isinstance(instance.KeyColumns, int)
-
-
-@given(instance=datasetload::Table_strategy)
-def test_datasetload::table_KeyColumns_setter(instance):
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_KeyColumns_setter(instance):
     original = instance.KeyColumns
     instance.KeyColumns = original
     assert instance.KeyColumns == original
 
+
+
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_LastLoad_setter(instance):
+    original = instance.LastLoad
+    instance.LastLoad = original
+    assert instance.LastLoad == original
+
+
+
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_ParamTableGroupAttributes_setter(instance):
+    original = instance.ParamTableGroupAttributes
+    instance.ParamTableGroupAttributes = original
+    assert instance.ParamTableGroupAttributes == original
+
+
+
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_NumberOfRows_setter(instance):
+    original = instance.NumberOfRows
+    instance.NumberOfRows = original
+    assert instance.NumberOfRows == original
+
+
+
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_ColumnTableRowAttributes_setter(instance):
+    original = instance.ColumnTableRowAttributes
+    instance.ColumnTableRowAttributes = original
+    assert instance.ColumnTableRowAttributes == original
+
+
+
+@given(instance=datasetload_Table_strategy)
+def test_datasetload_table_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::Table_strategy)
+@given(instance=datasetload_Table_strategy)
 @settings(max_examples=30)
-def test_datasetload::table_addrow_changes_state(instance):
+def test_datasetload_table_refresh_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.addRow(
-            "test"
-        )
+        instance.refresh()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addRow).strip()
+        source = inspect.getsource(instance.refresh).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRow' in datasetload::Table is empty"
+        assert has_statements, f"Function 'refresh' in datasetload_Table is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRow' in datasetload::Table did not change state; check implementation")
+            warnings.warn(f"Operation 'refresh' in datasetload_Table did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRow' in datasetload::Table is not implemented or raised an error")
+        warnings.warn(f"Operation 'refresh' in datasetload_Table is not implemented or raised an error")
 
 import warnings
 import copy
@@ -670,9 +623,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::Table_strategy)
+@given(instance=datasetload_Table_strategy)
 @settings(max_examples=30)
-def test_datasetload::table_load_changes_state(instance):
+def test_datasetload_table_load_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -684,14 +637,14 @@ def test_datasetload::table_load_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'load' in datasetload::Table is empty"
+        assert has_statements, f"Function 'load' in datasetload_Table is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'load' in datasetload::Table did not change state; check implementation")
+            warnings.warn(f"Operation 'load' in datasetload_Table did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'load' in datasetload::Table is not implemented or raised an error")
+        warnings.warn(f"Operation 'load' in datasetload_Table is not implemented or raised an error")
 
 import warnings
 import copy
@@ -699,9 +652,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::Table_strategy)
+@given(instance=datasetload_Table_strategy)
 @settings(max_examples=30)
-def test_datasetload::table_removerow_changes_state(instance):
+def test_datasetload_table_removerow_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -715,14 +668,14 @@ def test_datasetload::table_removerow_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRow' in datasetload::Table is empty"
+        assert has_statements, f"Function 'removeRow' in datasetload_Table is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRow' in datasetload::Table did not change state; check implementation")
+            warnings.warn(f"Operation 'removeRow' in datasetload_Table did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRow' in datasetload::Table is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeRow' in datasetload_Table is not implemented or raised an error")
 
 import warnings
 import copy
@@ -730,28 +683,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::Table_strategy)
+@given(instance=datasetload_Table_strategy)
 @settings(max_examples=30)
-def test_datasetload::table_refresh_changes_state(instance):
+def test_datasetload_table_addrow_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.refresh()
+        instance.addRow(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.refresh).strip()
+        source = inspect.getsource(instance.addRow).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'refresh' in datasetload::Table is empty"
+        assert has_statements, f"Function 'addRow' in datasetload_Table is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'refresh' in datasetload::Table did not change state; check implementation")
+            warnings.warn(f"Operation 'addRow' in datasetload_Table did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'refresh' in datasetload::Table is not implemented or raised an error")
+        warnings.warn(f"Operation 'addRow' in datasetload_Table is not implemented or raised an error")
 
 import warnings
 import copy
@@ -759,9 +714,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::Table_strategy)
+@given(instance=datasetload_Table_strategy)
 @settings(max_examples=30)
-def test_datasetload::table_newrow_changes_state(instance):
+def test_datasetload_table_newrow_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -773,27 +728,24 @@ def test_datasetload::table_newrow_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'newRow' in datasetload::Table is empty"
+        assert has_statements, f"Function 'newRow' in datasetload_Table is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'newRow' in datasetload::Table did not change state; check implementation")
+            warnings.warn(f"Operation 'newRow' in datasetload_Table did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'newRow' in datasetload::Table is not implemented or raised an error")
+        warnings.warn(f"Operation 'newRow' in datasetload_Table is not implemented or raised an error")
 
-@given(instance=datasetload::TableGroup_strategy)
+@given(instance=datasetload_TableGroup_strategy)
 @settings(max_examples=50)
-def test_datasetload::tablegroup_instantiation(instance):
-    assert isinstance(instance, datasetload::TableGroup)
-
-@given(instance=datasetload::TableGroup_strategy)
-def test_datasetload::tablegroup_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_datasetload_tablegroup_instantiation(instance):
+    assert isinstance(instance, datasetload_TableGroup)
 
 
-@given(instance=datasetload::TableGroup_strategy)
-def test_datasetload::tablegroup_Name_setter(instance):
+
+@given(instance=datasetload_TableGroup_strategy)
+def test_datasetload_tablegroup_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
@@ -804,38 +756,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=datasetload::TableGroup_strategy)
+@given(instance=datasetload_TableGroup_strategy)
 @settings(max_examples=30)
-def test_datasetload::tablegroup_refresh_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.refresh()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.refresh).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'refresh' in datasetload::TableGroup is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'refresh' in datasetload::TableGroup did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'refresh' in datasetload::TableGroup is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=datasetload::TableGroup_strategy)
-@settings(max_examples=30)
-def test_datasetload::tablegroup_load_changes_state(instance):
+def test_datasetload_tablegroup_load_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -847,11 +770,40 @@ def test_datasetload::tablegroup_load_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'load' in datasetload::TableGroup is empty"
+        assert has_statements, f"Function 'load' in datasetload_TableGroup is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'load' in datasetload::TableGroup did not change state; check implementation")
+            warnings.warn(f"Operation 'load' in datasetload_TableGroup did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'load' in datasetload::TableGroup is not implemented or raised an error")
+        warnings.warn(f"Operation 'load' in datasetload_TableGroup is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=datasetload_TableGroup_strategy)
+@settings(max_examples=30)
+def test_datasetload_tablegroup_refresh_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.refresh()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.refresh).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'refresh' in datasetload_TableGroup is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'refresh' in datasetload_TableGroup did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'refresh' in datasetload_TableGroup is not implemented or raised an error")

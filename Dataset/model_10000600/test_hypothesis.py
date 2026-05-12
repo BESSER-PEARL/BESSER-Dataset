@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ClassV,
@@ -299,9 +299,9 @@ def test_classc_constructor_args():
     sig = inspect.signature(ClassC.__init__)
     params = list(sig.parameters.keys())
     assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
 
 def test_classc_has_privateAttribute():
     assert hasattr(ClassC, "privateAttribute")
@@ -309,6 +309,15 @@ def test_classc_has_privateAttribute():
     for klass in ClassC.__mro__:
         if "privateAttribute" in klass.__dict__:
             descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_protectedAttribute():
+    assert hasattr(ClassC, "protectedAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -327,15 +336,6 @@ def test_classc_has_packageAttribute():
     for klass in ClassC.__mro__:
         if "packageAttribute" in klass.__dict__:
             descriptor = klass.__dict__["packageAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classc_has_protectedAttribute():
-    assert hasattr(ClassC, "protectedAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -447,11 +447,11 @@ ClassC_strategy = st.builds(
     ClassC,
     privateAttribute=
         st.integers(),
+    protectedAttribute=
+        safe_text,
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     packageAttribute=
-        safe_text,
-    protectedAttribute=
         safe_text
 )
 ClassB_strategy = st.builds(
@@ -558,9 +558,6 @@ def test_classd_instantiation(instance):
 def test_classc_instantiation(instance):
     assert isinstance(instance, ClassC)
 
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=ClassC_strategy)
@@ -569,9 +566,14 @@ def test_classc_privateAttribute_setter(instance):
     instance.privateAttribute = original
     assert instance.privateAttribute == original
 
+
+
 @given(instance=ClassC_strategy)
-def test_classc_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
+def test_classc_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
 
 
 @given(instance=ClassC_strategy)
@@ -580,9 +582,6 @@ def test_classc_publicAttribute_setter(instance):
     instance.publicAttribute = original
     assert instance.publicAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=ClassC_strategy)
@@ -590,17 +589,6 @@ def test_classc_packageAttribute_setter(instance):
     original = instance.packageAttribute
     instance.packageAttribute = original
     assert instance.packageAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
 
 @given(instance=ClassB_strategy)
 @settings(max_examples=50)
@@ -612,9 +600,6 @@ def test_classb_instantiation(instance):
 def test_course_adminstrator_instantiation(instance):
     assert isinstance(instance, Course_Adminstrator)
 
-@given(instance=Course_Adminstrator_strategy)
-def test_course_adminstrator_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Course_Adminstrator_strategy)

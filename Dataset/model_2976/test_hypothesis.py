@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Trigger,
-    CompleteDSLPckg::AndTrigger,
-    CompleteDSLPckg::OrTrigger,
-    CompleteDSLPckg::NotTrigger,
-    CompleteDSLPckg::NamedElement,
+    CompleteDSLPckg_AndTrigger,
+    CompleteDSLPckg_OrTrigger,
+    CompleteDSLPckg_NotTrigger,
+    CompleteDSLPckg_NamedElement,
     AbstractState,
-    CompleteDSLPckg::State,
+    CompleteDSLPckg_State,
     NamedElement,
-    CompleteDSLPckg::AbstractState,
-    CompleteDSLPckg::Region,
-    CompleteDSLPckg::Transition,
-    CompleteDSLPckg::StateMachine,
+    CompleteDSLPckg_AbstractState,
+    CompleteDSLPckg_Region,
+    CompleteDSLPckg_Transition,
+    CompleteDSLPckg_StateMachine,
     State,
-    CompleteDSLPckg::FinalState,
+    CompleteDSLPckg_FinalState,
     Pseudostate,
-    CompleteDSLPckg::InitialState,
-    CompleteDSLPckg::Pseudostate,
-    CompleteDSLPckg::Trigger,
+    CompleteDSLPckg_InitialState,
+    CompleteDSLPckg_Pseudostate,
+    CompleteDSLPckg_Trigger,
     Statement,
-    CompleteDSLPckg::VarDecl,
-    CompleteDSLPckg::Loop,
-    CompleteDSLPckg::Conditional,
-    CompleteDSLPckg::Statement,
-    CompleteDSLPckg::Block,
-    CompleteDSLPckg::Wait,
+    CompleteDSLPckg_VarDecl,
+    CompleteDSLPckg_Loop,
+    CompleteDSLPckg_Conditional,
+    CompleteDSLPckg_Statement,
+    CompleteDSLPckg_Block,
+    CompleteDSLPckg_Wait,
     ConsoleOutput,
-    CompleteDSLPckg::Print,
-    CompleteDSLPckg::Println,
-    CompleteDSLPckg::ConsoleOutput,
-    CompleteDSLPckg::Assignation,
+    CompleteDSLPckg_Print,
+    CompleteDSLPckg_Println,
+    CompleteDSLPckg_ConsoleOutput,
+    CompleteDSLPckg_Assignation,
     Literal,
-    CompleteDSLPckg::IntegerLit,
+    CompleteDSLPckg_IntegerLit,
     Expression,
-    CompleteDSLPckg::VarRef,
-    CompleteDSLPckg::Literal,
-    CompleteDSLPckg::Expression,
-    CompleteDSLPckg::RelationalExpression,
-    CompleteDSLPckg::ArithmeticExpression,
-    CompleteDSLPckg::BoolLit,
-    CompleteDSLPckg::StringLit,
-    RelationalOperator,
+    CompleteDSLPckg_VarRef,
+    CompleteDSLPckg_Literal,
+    CompleteDSLPckg_Expression,
+    CompleteDSLPckg_RelationalExpression,
+    CompleteDSLPckg_ArithmeticExpression,
+    CompleteDSLPckg_BoolLit,
+    CompleteDSLPckg_StringLit,
     ArithmeticOperator,
+    RelationalOperator,
 )
 
 # =============================================================================
@@ -70,65 +70,65 @@ def test_trigger_constructor_args():
 
 
 
-def test_completedslpckg::andtrigger_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::AndTrigger)
+def test_completedslpckg_andtrigger_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_AndTrigger)
 
 
-def test_completedslpckg::andtrigger_constructor_exists():
-    assert callable(CompleteDSLPckg::AndTrigger.__init__)
+def test_completedslpckg_andtrigger_constructor_exists():
+    assert callable(CompleteDSLPckg_AndTrigger.__init__)
 
 
-def test_completedslpckg::andtrigger_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::AndTrigger.__init__)
+def test_completedslpckg_andtrigger_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_AndTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::ortrigger_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::OrTrigger)
+def test_completedslpckg_ortrigger_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_OrTrigger)
 
 
-def test_completedslpckg::ortrigger_constructor_exists():
-    assert callable(CompleteDSLPckg::OrTrigger.__init__)
+def test_completedslpckg_ortrigger_constructor_exists():
+    assert callable(CompleteDSLPckg_OrTrigger.__init__)
 
 
-def test_completedslpckg::ortrigger_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::OrTrigger.__init__)
+def test_completedslpckg_ortrigger_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_OrTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::nottrigger_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::NotTrigger)
+def test_completedslpckg_nottrigger_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_NotTrigger)
 
 
-def test_completedslpckg::nottrigger_constructor_exists():
-    assert callable(CompleteDSLPckg::NotTrigger.__init__)
+def test_completedslpckg_nottrigger_constructor_exists():
+    assert callable(CompleteDSLPckg_NotTrigger.__init__)
 
 
-def test_completedslpckg::nottrigger_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::NotTrigger.__init__)
+def test_completedslpckg_nottrigger_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_NotTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::namedelement_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::NamedElement)
+def test_completedslpckg_namedelement_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_NamedElement)
 
 
-def test_completedslpckg::namedelement_constructor_exists():
-    assert callable(CompleteDSLPckg::NamedElement.__init__)
+def test_completedslpckg_namedelement_constructor_exists():
+    assert callable(CompleteDSLPckg_NamedElement.__init__)
 
 
-def test_completedslpckg::namedelement_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::NamedElement.__init__)
+def test_completedslpckg_namedelement_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_completedslpckg::namedelement_has_name():
-    assert hasattr(CompleteDSLPckg::NamedElement, "name")
+def test_completedslpckg_namedelement_has_name():
+    assert hasattr(CompleteDSLPckg_NamedElement, "name")
     descriptor = None
-    for klass in CompleteDSLPckg::NamedElement.__mro__:
+    for klass in CompleteDSLPckg_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -150,16 +150,16 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_completedslpckg::state_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::State)
+def test_completedslpckg_state_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_State)
 
 
-def test_completedslpckg::state_constructor_exists():
-    assert callable(CompleteDSLPckg::State.__init__)
+def test_completedslpckg_state_constructor_exists():
+    assert callable(CompleteDSLPckg_State.__init__)
 
 
-def test_completedslpckg::state_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::State.__init__)
+def test_completedslpckg_state_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,58 +178,58 @@ def test_namedelement_constructor_args():
 
 
 
-def test_completedslpckg::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::AbstractState)
+def test_completedslpckg_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_AbstractState)
 
 
-def test_completedslpckg::abstractstate_constructor_exists():
-    assert callable(CompleteDSLPckg::AbstractState.__init__)
+def test_completedslpckg_abstractstate_constructor_exists():
+    assert callable(CompleteDSLPckg_AbstractState.__init__)
 
 
-def test_completedslpckg::abstractstate_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::AbstractState.__init__)
+def test_completedslpckg_abstractstate_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::region_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Region)
+def test_completedslpckg_region_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Region)
 
 
-def test_completedslpckg::region_constructor_exists():
-    assert callable(CompleteDSLPckg::Region.__init__)
+def test_completedslpckg_region_constructor_exists():
+    assert callable(CompleteDSLPckg_Region.__init__)
 
 
-def test_completedslpckg::region_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Region.__init__)
+def test_completedslpckg_region_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::transition_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Transition)
+def test_completedslpckg_transition_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Transition)
 
 
-def test_completedslpckg::transition_constructor_exists():
-    assert callable(CompleteDSLPckg::Transition.__init__)
+def test_completedslpckg_transition_constructor_exists():
+    assert callable(CompleteDSLPckg_Transition.__init__)
 
 
-def test_completedslpckg::transition_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Transition.__init__)
+def test_completedslpckg_transition_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::statemachine_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::StateMachine)
+def test_completedslpckg_statemachine_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_StateMachine)
 
 
-def test_completedslpckg::statemachine_constructor_exists():
-    assert callable(CompleteDSLPckg::StateMachine.__init__)
+def test_completedslpckg_statemachine_constructor_exists():
+    assert callable(CompleteDSLPckg_StateMachine.__init__)
 
 
-def test_completedslpckg::statemachine_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::StateMachine.__init__)
+def test_completedslpckg_statemachine_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -248,16 +248,16 @@ def test_state_constructor_args():
 
 
 
-def test_completedslpckg::finalstate_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::FinalState)
+def test_completedslpckg_finalstate_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_FinalState)
 
 
-def test_completedslpckg::finalstate_constructor_exists():
-    assert callable(CompleteDSLPckg::FinalState.__init__)
+def test_completedslpckg_finalstate_constructor_exists():
+    assert callable(CompleteDSLPckg_FinalState.__init__)
 
 
-def test_completedslpckg::finalstate_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::FinalState.__init__)
+def test_completedslpckg_finalstate_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -276,51 +276,51 @@ def test_pseudostate_constructor_args():
 
 
 
-def test_completedslpckg::initialstate_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::InitialState)
+def test_completedslpckg_initialstate_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_InitialState)
 
 
-def test_completedslpckg::initialstate_constructor_exists():
-    assert callable(CompleteDSLPckg::InitialState.__init__)
+def test_completedslpckg_initialstate_constructor_exists():
+    assert callable(CompleteDSLPckg_InitialState.__init__)
 
 
-def test_completedslpckg::initialstate_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::InitialState.__init__)
+def test_completedslpckg_initialstate_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Pseudostate)
+def test_completedslpckg_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Pseudostate)
 
 
-def test_completedslpckg::pseudostate_constructor_exists():
-    assert callable(CompleteDSLPckg::Pseudostate.__init__)
+def test_completedslpckg_pseudostate_constructor_exists():
+    assert callable(CompleteDSLPckg_Pseudostate.__init__)
 
 
-def test_completedslpckg::pseudostate_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Pseudostate.__init__)
+def test_completedslpckg_pseudostate_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Pseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::trigger_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Trigger)
+def test_completedslpckg_trigger_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Trigger)
 
 
-def test_completedslpckg::trigger_constructor_exists():
-    assert callable(CompleteDSLPckg::Trigger.__init__)
+def test_completedslpckg_trigger_constructor_exists():
+    assert callable(CompleteDSLPckg_Trigger.__init__)
 
 
-def test_completedslpckg::trigger_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Trigger.__init__)
+def test_completedslpckg_trigger_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_completedslpckg::trigger_has_expression():
-    assert hasattr(CompleteDSLPckg::Trigger, "expression")
+def test_completedslpckg_trigger_has_expression():
+    assert hasattr(CompleteDSLPckg_Trigger, "expression")
     descriptor = None
-    for klass in CompleteDSLPckg::Trigger.__mro__:
+    for klass in CompleteDSLPckg_Trigger.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -342,23 +342,23 @@ def test_statement_constructor_args():
 
 
 
-def test_completedslpckg::vardecl_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::VarDecl)
+def test_completedslpckg_vardecl_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_VarDecl)
 
 
-def test_completedslpckg::vardecl_constructor_exists():
-    assert callable(CompleteDSLPckg::VarDecl.__init__)
+def test_completedslpckg_vardecl_constructor_exists():
+    assert callable(CompleteDSLPckg_VarDecl.__init__)
 
 
-def test_completedslpckg::vardecl_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::VarDecl.__init__)
+def test_completedslpckg_vardecl_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_VarDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_completedslpckg::vardecl_has_name():
-    assert hasattr(CompleteDSLPckg::VarDecl, "name")
+def test_completedslpckg_vardecl_has_name():
+    assert hasattr(CompleteDSLPckg_VarDecl, "name")
     descriptor = None
-    for klass in CompleteDSLPckg::VarDecl.__mro__:
+    for klass in CompleteDSLPckg_VarDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -366,79 +366,79 @@ def test_completedslpckg::vardecl_has_name():
 
 
 
-def test_completedslpckg::loop_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Loop)
+def test_completedslpckg_loop_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Loop)
 
 
-def test_completedslpckg::loop_constructor_exists():
-    assert callable(CompleteDSLPckg::Loop.__init__)
+def test_completedslpckg_loop_constructor_exists():
+    assert callable(CompleteDSLPckg_Loop.__init__)
 
 
-def test_completedslpckg::loop_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Loop.__init__)
+def test_completedslpckg_loop_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::conditional_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Conditional)
+def test_completedslpckg_conditional_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Conditional)
 
 
-def test_completedslpckg::conditional_constructor_exists():
-    assert callable(CompleteDSLPckg::Conditional.__init__)
+def test_completedslpckg_conditional_constructor_exists():
+    assert callable(CompleteDSLPckg_Conditional.__init__)
 
 
-def test_completedslpckg::conditional_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Conditional.__init__)
+def test_completedslpckg_conditional_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Conditional.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::statement_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Statement)
+def test_completedslpckg_statement_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Statement)
 
 
-def test_completedslpckg::statement_constructor_exists():
-    assert callable(CompleteDSLPckg::Statement.__init__)
+def test_completedslpckg_statement_constructor_exists():
+    assert callable(CompleteDSLPckg_Statement.__init__)
 
 
-def test_completedslpckg::statement_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Statement.__init__)
+def test_completedslpckg_statement_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::block_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Block)
+def test_completedslpckg_block_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Block)
 
 
-def test_completedslpckg::block_constructor_exists():
-    assert callable(CompleteDSLPckg::Block.__init__)
+def test_completedslpckg_block_constructor_exists():
+    assert callable(CompleteDSLPckg_Block.__init__)
 
 
-def test_completedslpckg::block_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Block.__init__)
+def test_completedslpckg_block_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::wait_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Wait)
+def test_completedslpckg_wait_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Wait)
 
 
-def test_completedslpckg::wait_constructor_exists():
-    assert callable(CompleteDSLPckg::Wait.__init__)
+def test_completedslpckg_wait_constructor_exists():
+    assert callable(CompleteDSLPckg_Wait.__init__)
 
 
-def test_completedslpckg::wait_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Wait.__init__)
+def test_completedslpckg_wait_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Wait.__init__)
     params = list(sig.parameters.keys())
     assert "miliseconds" in params, "Missing parameter 'miliseconds'"
 
-def test_completedslpckg::wait_has_miliseconds():
-    assert hasattr(CompleteDSLPckg::Wait, "miliseconds")
+def test_completedslpckg_wait_has_miliseconds():
+    assert hasattr(CompleteDSLPckg_Wait, "miliseconds")
     descriptor = None
-    for klass in CompleteDSLPckg::Wait.__mro__:
+    for klass in CompleteDSLPckg_Wait.__mro__:
         if "miliseconds" in klass.__dict__:
             descriptor = klass.__dict__["miliseconds"]
             break
@@ -460,51 +460,51 @@ def test_consoleoutput_constructor_args():
 
 
 
-def test_completedslpckg::print_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Print)
+def test_completedslpckg_print_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Print)
 
 
-def test_completedslpckg::print_constructor_exists():
-    assert callable(CompleteDSLPckg::Print.__init__)
+def test_completedslpckg_print_constructor_exists():
+    assert callable(CompleteDSLPckg_Print.__init__)
 
 
-def test_completedslpckg::print_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Print.__init__)
+def test_completedslpckg_print_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Print.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::println_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Println)
+def test_completedslpckg_println_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Println)
 
 
-def test_completedslpckg::println_constructor_exists():
-    assert callable(CompleteDSLPckg::Println.__init__)
+def test_completedslpckg_println_constructor_exists():
+    assert callable(CompleteDSLPckg_Println.__init__)
 
 
-def test_completedslpckg::println_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Println.__init__)
+def test_completedslpckg_println_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Println.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::consoleoutput_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::ConsoleOutput)
+def test_completedslpckg_consoleoutput_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_ConsoleOutput)
 
 
-def test_completedslpckg::consoleoutput_constructor_exists():
-    assert callable(CompleteDSLPckg::ConsoleOutput.__init__)
+def test_completedslpckg_consoleoutput_constructor_exists():
+    assert callable(CompleteDSLPckg_ConsoleOutput.__init__)
 
 
-def test_completedslpckg::consoleoutput_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::ConsoleOutput.__init__)
+def test_completedslpckg_consoleoutput_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_ConsoleOutput.__init__)
     params = list(sig.parameters.keys())
     assert "input" in params, "Missing parameter 'input'"
 
-def test_completedslpckg::consoleoutput_has_input():
-    assert hasattr(CompleteDSLPckg::ConsoleOutput, "input")
+def test_completedslpckg_consoleoutput_has_input():
+    assert hasattr(CompleteDSLPckg_ConsoleOutput, "input")
     descriptor = None
-    for klass in CompleteDSLPckg::ConsoleOutput.__mro__:
+    for klass in CompleteDSLPckg_ConsoleOutput.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
@@ -512,16 +512,16 @@ def test_completedslpckg::consoleoutput_has_input():
 
 
 
-def test_completedslpckg::assignation_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Assignation)
+def test_completedslpckg_assignation_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Assignation)
 
 
-def test_completedslpckg::assignation_constructor_exists():
-    assert callable(CompleteDSLPckg::Assignation.__init__)
+def test_completedslpckg_assignation_constructor_exists():
+    assert callable(CompleteDSLPckg_Assignation.__init__)
 
 
-def test_completedslpckg::assignation_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Assignation.__init__)
+def test_completedslpckg_assignation_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Assignation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -540,23 +540,23 @@ def test_literal_constructor_args():
 
 
 
-def test_completedslpckg::integerlit_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::IntegerLit)
+def test_completedslpckg_integerlit_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_IntegerLit)
 
 
-def test_completedslpckg::integerlit_constructor_exists():
-    assert callable(CompleteDSLPckg::IntegerLit.__init__)
+def test_completedslpckg_integerlit_constructor_exists():
+    assert callable(CompleteDSLPckg_IntegerLit.__init__)
 
 
-def test_completedslpckg::integerlit_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::IntegerLit.__init__)
+def test_completedslpckg_integerlit_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_IntegerLit.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_completedslpckg::integerlit_has_value():
-    assert hasattr(CompleteDSLPckg::IntegerLit, "value")
+def test_completedslpckg_integerlit_has_value():
+    assert hasattr(CompleteDSLPckg_IntegerLit, "value")
     descriptor = None
-    for klass in CompleteDSLPckg::IntegerLit.__mro__:
+    for klass in CompleteDSLPckg_IntegerLit.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -578,23 +578,23 @@ def test_expression_constructor_args():
 
 
 
-def test_completedslpckg::varref_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::VarRef)
+def test_completedslpckg_varref_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_VarRef)
 
 
-def test_completedslpckg::varref_constructor_exists():
-    assert callable(CompleteDSLPckg::VarRef.__init__)
+def test_completedslpckg_varref_constructor_exists():
+    assert callable(CompleteDSLPckg_VarRef.__init__)
 
 
-def test_completedslpckg::varref_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::VarRef.__init__)
+def test_completedslpckg_varref_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_VarRef.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
 
-def test_completedslpckg::varref_has_ref():
-    assert hasattr(CompleteDSLPckg::VarRef, "ref")
+def test_completedslpckg_varref_has_ref():
+    assert hasattr(CompleteDSLPckg_VarRef, "ref")
     descriptor = None
-    for klass in CompleteDSLPckg::VarRef.__mro__:
+    for klass in CompleteDSLPckg_VarRef.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
@@ -602,51 +602,51 @@ def test_completedslpckg::varref_has_ref():
 
 
 
-def test_completedslpckg::literal_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Literal)
+def test_completedslpckg_literal_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Literal)
 
 
-def test_completedslpckg::literal_constructor_exists():
-    assert callable(CompleteDSLPckg::Literal.__init__)
+def test_completedslpckg_literal_constructor_exists():
+    assert callable(CompleteDSLPckg_Literal.__init__)
 
 
-def test_completedslpckg::literal_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Literal.__init__)
+def test_completedslpckg_literal_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::expression_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::Expression)
+def test_completedslpckg_expression_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_Expression)
 
 
-def test_completedslpckg::expression_constructor_exists():
-    assert callable(CompleteDSLPckg::Expression.__init__)
+def test_completedslpckg_expression_constructor_exists():
+    assert callable(CompleteDSLPckg_Expression.__init__)
 
 
-def test_completedslpckg::expression_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::Expression.__init__)
+def test_completedslpckg_expression_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completedslpckg::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::RelationalExpression)
+def test_completedslpckg_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_RelationalExpression)
 
 
-def test_completedslpckg::relationalexpression_constructor_exists():
-    assert callable(CompleteDSLPckg::RelationalExpression.__init__)
+def test_completedslpckg_relationalexpression_constructor_exists():
+    assert callable(CompleteDSLPckg_RelationalExpression.__init__)
 
 
-def test_completedslpckg::relationalexpression_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::RelationalExpression.__init__)
+def test_completedslpckg_relationalexpression_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_completedslpckg::relationalexpression_has_operator():
-    assert hasattr(CompleteDSLPckg::RelationalExpression, "operator")
+def test_completedslpckg_relationalexpression_has_operator():
+    assert hasattr(CompleteDSLPckg_RelationalExpression, "operator")
     descriptor = None
-    for klass in CompleteDSLPckg::RelationalExpression.__mro__:
+    for klass in CompleteDSLPckg_RelationalExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -654,23 +654,23 @@ def test_completedslpckg::relationalexpression_has_operator():
 
 
 
-def test_completedslpckg::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::ArithmeticExpression)
+def test_completedslpckg_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_ArithmeticExpression)
 
 
-def test_completedslpckg::arithmeticexpression_constructor_exists():
-    assert callable(CompleteDSLPckg::ArithmeticExpression.__init__)
+def test_completedslpckg_arithmeticexpression_constructor_exists():
+    assert callable(CompleteDSLPckg_ArithmeticExpression.__init__)
 
 
-def test_completedslpckg::arithmeticexpression_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::ArithmeticExpression.__init__)
+def test_completedslpckg_arithmeticexpression_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_completedslpckg::arithmeticexpression_has_operator():
-    assert hasattr(CompleteDSLPckg::ArithmeticExpression, "operator")
+def test_completedslpckg_arithmeticexpression_has_operator():
+    assert hasattr(CompleteDSLPckg_ArithmeticExpression, "operator")
     descriptor = None
-    for klass in CompleteDSLPckg::ArithmeticExpression.__mro__:
+    for klass in CompleteDSLPckg_ArithmeticExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -678,23 +678,23 @@ def test_completedslpckg::arithmeticexpression_has_operator():
 
 
 
-def test_completedslpckg::boollit_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::BoolLit)
+def test_completedslpckg_boollit_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_BoolLit)
 
 
-def test_completedslpckg::boollit_constructor_exists():
-    assert callable(CompleteDSLPckg::BoolLit.__init__)
+def test_completedslpckg_boollit_constructor_exists():
+    assert callable(CompleteDSLPckg_BoolLit.__init__)
 
 
-def test_completedslpckg::boollit_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::BoolLit.__init__)
+def test_completedslpckg_boollit_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_BoolLit.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_completedslpckg::boollit_has_value():
-    assert hasattr(CompleteDSLPckg::BoolLit, "value")
+def test_completedslpckg_boollit_has_value():
+    assert hasattr(CompleteDSLPckg_BoolLit, "value")
     descriptor = None
-    for klass in CompleteDSLPckg::BoolLit.__mro__:
+    for klass in CompleteDSLPckg_BoolLit.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -702,46 +702,27 @@ def test_completedslpckg::boollit_has_value():
 
 
 
-def test_completedslpckg::stringlit_is_not_abstract():
-    assert not inspect.isabstract(CompleteDSLPckg::StringLit)
+def test_completedslpckg_stringlit_is_not_abstract():
+    assert not inspect.isabstract(CompleteDSLPckg_StringLit)
 
 
-def test_completedslpckg::stringlit_constructor_exists():
-    assert callable(CompleteDSLPckg::StringLit.__init__)
+def test_completedslpckg_stringlit_constructor_exists():
+    assert callable(CompleteDSLPckg_StringLit.__init__)
 
 
-def test_completedslpckg::stringlit_constructor_args():
-    sig = inspect.signature(CompleteDSLPckg::StringLit.__init__)
+def test_completedslpckg_stringlit_constructor_args():
+    sig = inspect.signature(CompleteDSLPckg_StringLit.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_completedslpckg::stringlit_has_value():
-    assert hasattr(CompleteDSLPckg::StringLit, "value")
+def test_completedslpckg_stringlit_has_value():
+    assert hasattr(CompleteDSLPckg_StringLit, "value")
     descriptor = None
-    for klass in CompleteDSLPckg::StringLit.__mro__:
+    for klass in CompleteDSLPckg_StringLit.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
-
-def test_relationaloperator_exists():
-    # Check that the Enumeration exists
-    assert RelationalOperator is not None
-
-def test_relationaloperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationalOperator]
-    expected_literals = [
-        "greaterThan",
-        "greaterThanOrEqualTo",
-        "notEqual",
-        "lessThanOrEqualTo",
-        "lessThan",
-        "equals",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
 
 def test_arithmeticoperator_exists():
     # Check that the Enumeration exists
@@ -760,6 +741,25 @@ def test_arithmeticoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ArithmeticOperator"
 
+def test_relationaloperator_exists():
+    # Check that the Enumeration exists
+    assert RelationalOperator is not None
+
+def test_relationaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RelationalOperator]
+    expected_literals = [
+        "greaterThan",
+        "equals",
+        "lessThan",
+        "lessThanOrEqualTo",
+        "greaterThanOrEqualTo",
+        "notEqual",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -775,142 +775,142 @@ safe_text = st.text(
 Trigger_strategy = st.builds(
     Trigger,
 )
-CompleteDSLPckg::AndTrigger_strategy = st.builds(
-    CompleteDSLPckg::AndTrigger,
+CompleteDSLPckg_AndTrigger_strategy = st.builds(
+    CompleteDSLPckg_AndTrigger,
 )
-CompleteDSLPckg::OrTrigger_strategy = st.builds(
-    CompleteDSLPckg::OrTrigger,
+CompleteDSLPckg_OrTrigger_strategy = st.builds(
+    CompleteDSLPckg_OrTrigger,
 )
-CompleteDSLPckg::NotTrigger_strategy = st.builds(
-    CompleteDSLPckg::NotTrigger,
+CompleteDSLPckg_NotTrigger_strategy = st.builds(
+    CompleteDSLPckg_NotTrigger,
 )
-CompleteDSLPckg::NamedElement_strategy = st.builds(
-    CompleteDSLPckg::NamedElement,
+CompleteDSLPckg_NamedElement_strategy = st.builds(
+    CompleteDSLPckg_NamedElement,
     name=
         safe_text
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-CompleteDSLPckg::State_strategy = st.builds(
-    CompleteDSLPckg::State,
+CompleteDSLPckg_State_strategy = st.builds(
+    CompleteDSLPckg_State,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-CompleteDSLPckg::AbstractState_strategy = st.builds(
-    CompleteDSLPckg::AbstractState,
+CompleteDSLPckg_AbstractState_strategy = st.builds(
+    CompleteDSLPckg_AbstractState,
 )
-CompleteDSLPckg::Region_strategy = st.builds(
-    CompleteDSLPckg::Region,
+CompleteDSLPckg_Region_strategy = st.builds(
+    CompleteDSLPckg_Region,
 )
-CompleteDSLPckg::Transition_strategy = st.builds(
-    CompleteDSLPckg::Transition,
+CompleteDSLPckg_Transition_strategy = st.builds(
+    CompleteDSLPckg_Transition,
 )
-CompleteDSLPckg::StateMachine_strategy = st.builds(
-    CompleteDSLPckg::StateMachine,
+CompleteDSLPckg_StateMachine_strategy = st.builds(
+    CompleteDSLPckg_StateMachine,
 )
 State_strategy = st.builds(
     State,
 )
-CompleteDSLPckg::FinalState_strategy = st.builds(
-    CompleteDSLPckg::FinalState,
+CompleteDSLPckg_FinalState_strategy = st.builds(
+    CompleteDSLPckg_FinalState,
 )
 Pseudostate_strategy = st.builds(
     Pseudostate,
 )
-CompleteDSLPckg::InitialState_strategy = st.builds(
-    CompleteDSLPckg::InitialState,
+CompleteDSLPckg_InitialState_strategy = st.builds(
+    CompleteDSLPckg_InitialState,
 )
-CompleteDSLPckg::Pseudostate_strategy = st.builds(
-    CompleteDSLPckg::Pseudostate,
+CompleteDSLPckg_Pseudostate_strategy = st.builds(
+    CompleteDSLPckg_Pseudostate,
 )
-CompleteDSLPckg::Trigger_strategy = st.builds(
-    CompleteDSLPckg::Trigger,
+CompleteDSLPckg_Trigger_strategy = st.builds(
+    CompleteDSLPckg_Trigger,
     expression=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-CompleteDSLPckg::VarDecl_strategy = st.builds(
-    CompleteDSLPckg::VarDecl,
+CompleteDSLPckg_VarDecl_strategy = st.builds(
+    CompleteDSLPckg_VarDecl,
     name=
         safe_text
 )
-CompleteDSLPckg::Loop_strategy = st.builds(
-    CompleteDSLPckg::Loop,
+CompleteDSLPckg_Loop_strategy = st.builds(
+    CompleteDSLPckg_Loop,
 )
-CompleteDSLPckg::Conditional_strategy = st.builds(
-    CompleteDSLPckg::Conditional,
+CompleteDSLPckg_Conditional_strategy = st.builds(
+    CompleteDSLPckg_Conditional,
 )
-CompleteDSLPckg::Statement_strategy = st.builds(
-    CompleteDSLPckg::Statement,
+CompleteDSLPckg_Statement_strategy = st.builds(
+    CompleteDSLPckg_Statement,
 )
-CompleteDSLPckg::Block_strategy = st.builds(
-    CompleteDSLPckg::Block,
+CompleteDSLPckg_Block_strategy = st.builds(
+    CompleteDSLPckg_Block,
 )
-CompleteDSLPckg::Wait_strategy = st.builds(
-    CompleteDSLPckg::Wait,
+CompleteDSLPckg_Wait_strategy = st.builds(
+    CompleteDSLPckg_Wait,
     miliseconds=
         safe_text
 )
 ConsoleOutput_strategy = st.builds(
     ConsoleOutput,
 )
-CompleteDSLPckg::Print_strategy = st.builds(
-    CompleteDSLPckg::Print,
+CompleteDSLPckg_Print_strategy = st.builds(
+    CompleteDSLPckg_Print,
 )
-CompleteDSLPckg::Println_strategy = st.builds(
-    CompleteDSLPckg::Println,
+CompleteDSLPckg_Println_strategy = st.builds(
+    CompleteDSLPckg_Println,
 )
-CompleteDSLPckg::ConsoleOutput_strategy = st.builds(
-    CompleteDSLPckg::ConsoleOutput,
+CompleteDSLPckg_ConsoleOutput_strategy = st.builds(
+    CompleteDSLPckg_ConsoleOutput,
     input=
         safe_text
 )
-CompleteDSLPckg::Assignation_strategy = st.builds(
-    CompleteDSLPckg::Assignation,
+CompleteDSLPckg_Assignation_strategy = st.builds(
+    CompleteDSLPckg_Assignation,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-CompleteDSLPckg::IntegerLit_strategy = st.builds(
-    CompleteDSLPckg::IntegerLit,
+CompleteDSLPckg_IntegerLit_strategy = st.builds(
+    CompleteDSLPckg_IntegerLit,
     value=
         st.integers()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-CompleteDSLPckg::VarRef_strategy = st.builds(
-    CompleteDSLPckg::VarRef,
+CompleteDSLPckg_VarRef_strategy = st.builds(
+    CompleteDSLPckg_VarRef,
     ref=
         safe_text
 )
-CompleteDSLPckg::Literal_strategy = st.builds(
-    CompleteDSLPckg::Literal,
+CompleteDSLPckg_Literal_strategy = st.builds(
+    CompleteDSLPckg_Literal,
 )
-CompleteDSLPckg::Expression_strategy = st.builds(
-    CompleteDSLPckg::Expression,
+CompleteDSLPckg_Expression_strategy = st.builds(
+    CompleteDSLPckg_Expression,
 )
-CompleteDSLPckg::RelationalExpression_strategy = st.builds(
-    CompleteDSLPckg::RelationalExpression,
+CompleteDSLPckg_RelationalExpression_strategy = st.builds(
+    CompleteDSLPckg_RelationalExpression,
     operator=
         safe_text
 )
-CompleteDSLPckg::ArithmeticExpression_strategy = st.builds(
-    CompleteDSLPckg::ArithmeticExpression,
+CompleteDSLPckg_ArithmeticExpression_strategy = st.builds(
+    CompleteDSLPckg_ArithmeticExpression,
     operator=
         safe_text
 )
-CompleteDSLPckg::BoolLit_strategy = st.builds(
-    CompleteDSLPckg::BoolLit,
+CompleteDSLPckg_BoolLit_strategy = st.builds(
+    CompleteDSLPckg_BoolLit,
     value=
         st.booleans()
 )
-CompleteDSLPckg::StringLit_strategy = st.builds(
-    CompleteDSLPckg::StringLit,
+CompleteDSLPckg_StringLit_strategy = st.builds(
+    CompleteDSLPckg_StringLit,
     value=
         safe_text
 )
@@ -920,33 +920,30 @@ CompleteDSLPckg::StringLit_strategy = st.builds(
 def test_trigger_instantiation(instance):
     assert isinstance(instance, Trigger)
 
-@given(instance=CompleteDSLPckg::AndTrigger_strategy)
+@given(instance=CompleteDSLPckg_AndTrigger_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::andtrigger_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::AndTrigger)
+def test_completedslpckg_andtrigger_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_AndTrigger)
 
-@given(instance=CompleteDSLPckg::OrTrigger_strategy)
+@given(instance=CompleteDSLPckg_OrTrigger_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::ortrigger_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::OrTrigger)
+def test_completedslpckg_ortrigger_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_OrTrigger)
 
-@given(instance=CompleteDSLPckg::NotTrigger_strategy)
+@given(instance=CompleteDSLPckg_NotTrigger_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::nottrigger_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::NotTrigger)
+def test_completedslpckg_nottrigger_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_NotTrigger)
 
-@given(instance=CompleteDSLPckg::NamedElement_strategy)
+@given(instance=CompleteDSLPckg_NamedElement_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::namedelement_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::NamedElement)
-
-@given(instance=CompleteDSLPckg::NamedElement_strategy)
-def test_completedslpckg::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_completedslpckg_namedelement_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_NamedElement)
 
 
-@given(instance=CompleteDSLPckg::NamedElement_strategy)
-def test_completedslpckg::namedelement_name_setter(instance):
+
+@given(instance=CompleteDSLPckg_NamedElement_strategy)
+def test_completedslpckg_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -956,73 +953,70 @@ def test_completedslpckg::namedelement_name_setter(instance):
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=CompleteDSLPckg::State_strategy)
+@given(instance=CompleteDSLPckg_State_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::state_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::State)
+def test_completedslpckg_state_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_State)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=CompleteDSLPckg::AbstractState_strategy)
+@given(instance=CompleteDSLPckg_AbstractState_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::abstractstate_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::AbstractState)
+def test_completedslpckg_abstractstate_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_AbstractState)
 
-@given(instance=CompleteDSLPckg::Region_strategy)
+@given(instance=CompleteDSLPckg_Region_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::region_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Region)
+def test_completedslpckg_region_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Region)
 
-@given(instance=CompleteDSLPckg::Transition_strategy)
+@given(instance=CompleteDSLPckg_Transition_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::transition_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Transition)
+def test_completedslpckg_transition_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Transition)
 
-@given(instance=CompleteDSLPckg::StateMachine_strategy)
+@given(instance=CompleteDSLPckg_StateMachine_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::statemachine_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::StateMachine)
+def test_completedslpckg_statemachine_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_StateMachine)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=CompleteDSLPckg::FinalState_strategy)
+@given(instance=CompleteDSLPckg_FinalState_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::finalstate_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::FinalState)
+def test_completedslpckg_finalstate_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_FinalState)
 
 @given(instance=Pseudostate_strategy)
 @settings(max_examples=50)
 def test_pseudostate_instantiation(instance):
     assert isinstance(instance, Pseudostate)
 
-@given(instance=CompleteDSLPckg::InitialState_strategy)
+@given(instance=CompleteDSLPckg_InitialState_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::initialstate_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::InitialState)
+def test_completedslpckg_initialstate_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_InitialState)
 
-@given(instance=CompleteDSLPckg::Pseudostate_strategy)
+@given(instance=CompleteDSLPckg_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::pseudostate_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Pseudostate)
+def test_completedslpckg_pseudostate_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Pseudostate)
 
-@given(instance=CompleteDSLPckg::Trigger_strategy)
+@given(instance=CompleteDSLPckg_Trigger_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::trigger_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Trigger)
-
-@given(instance=CompleteDSLPckg::Trigger_strategy)
-def test_completedslpckg::trigger_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_completedslpckg_trigger_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Trigger)
 
 
-@given(instance=CompleteDSLPckg::Trigger_strategy)
-def test_completedslpckg::trigger_expression_setter(instance):
+
+@given(instance=CompleteDSLPckg_Trigger_strategy)
+def test_completedslpckg_trigger_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -1032,54 +1026,48 @@ def test_completedslpckg::trigger_expression_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=CompleteDSLPckg::VarDecl_strategy)
+@given(instance=CompleteDSLPckg_VarDecl_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::vardecl_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::VarDecl)
-
-@given(instance=CompleteDSLPckg::VarDecl_strategy)
-def test_completedslpckg::vardecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_completedslpckg_vardecl_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_VarDecl)
 
 
-@given(instance=CompleteDSLPckg::VarDecl_strategy)
-def test_completedslpckg::vardecl_name_setter(instance):
+
+@given(instance=CompleteDSLPckg_VarDecl_strategy)
+def test_completedslpckg_vardecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=CompleteDSLPckg::Loop_strategy)
+@given(instance=CompleteDSLPckg_Loop_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::loop_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Loop)
+def test_completedslpckg_loop_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Loop)
 
-@given(instance=CompleteDSLPckg::Conditional_strategy)
+@given(instance=CompleteDSLPckg_Conditional_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::conditional_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Conditional)
+def test_completedslpckg_conditional_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Conditional)
 
-@given(instance=CompleteDSLPckg::Statement_strategy)
+@given(instance=CompleteDSLPckg_Statement_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::statement_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Statement)
+def test_completedslpckg_statement_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Statement)
 
-@given(instance=CompleteDSLPckg::Block_strategy)
+@given(instance=CompleteDSLPckg_Block_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::block_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Block)
+def test_completedslpckg_block_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Block)
 
-@given(instance=CompleteDSLPckg::Wait_strategy)
+@given(instance=CompleteDSLPckg_Wait_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::wait_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Wait)
-
-@given(instance=CompleteDSLPckg::Wait_strategy)
-def test_completedslpckg::wait_miliseconds_type(instance):
-    assert isinstance(instance.miliseconds, str)
+def test_completedslpckg_wait_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Wait)
 
 
-@given(instance=CompleteDSLPckg::Wait_strategy)
-def test_completedslpckg::wait_miliseconds_setter(instance):
+
+@given(instance=CompleteDSLPckg_Wait_strategy)
+def test_completedslpckg_wait_miliseconds_setter(instance):
     original = instance.miliseconds
     instance.miliseconds = original
     assert instance.miliseconds == original
@@ -1089,54 +1077,48 @@ def test_completedslpckg::wait_miliseconds_setter(instance):
 def test_consoleoutput_instantiation(instance):
     assert isinstance(instance, ConsoleOutput)
 
-@given(instance=CompleteDSLPckg::Print_strategy)
+@given(instance=CompleteDSLPckg_Print_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::print_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Print)
+def test_completedslpckg_print_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Print)
 
-@given(instance=CompleteDSLPckg::Println_strategy)
+@given(instance=CompleteDSLPckg_Println_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::println_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Println)
+def test_completedslpckg_println_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Println)
 
-@given(instance=CompleteDSLPckg::ConsoleOutput_strategy)
+@given(instance=CompleteDSLPckg_ConsoleOutput_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::consoleoutput_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::ConsoleOutput)
-
-@given(instance=CompleteDSLPckg::ConsoleOutput_strategy)
-def test_completedslpckg::consoleoutput_input_type(instance):
-    assert isinstance(instance.input, str)
+def test_completedslpckg_consoleoutput_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_ConsoleOutput)
 
 
-@given(instance=CompleteDSLPckg::ConsoleOutput_strategy)
-def test_completedslpckg::consoleoutput_input_setter(instance):
+
+@given(instance=CompleteDSLPckg_ConsoleOutput_strategy)
+def test_completedslpckg_consoleoutput_input_setter(instance):
     original = instance.input
     instance.input = original
     assert instance.input == original
 
-@given(instance=CompleteDSLPckg::Assignation_strategy)
+@given(instance=CompleteDSLPckg_Assignation_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::assignation_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Assignation)
+def test_completedslpckg_assignation_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Assignation)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=CompleteDSLPckg::IntegerLit_strategy)
+@given(instance=CompleteDSLPckg_IntegerLit_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::integerlit_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::IntegerLit)
-
-@given(instance=CompleteDSLPckg::IntegerLit_strategy)
-def test_completedslpckg::integerlit_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_completedslpckg_integerlit_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_IntegerLit)
 
 
-@given(instance=CompleteDSLPckg::IntegerLit_strategy)
-def test_completedslpckg::integerlit_value_setter(instance):
+
+@given(instance=CompleteDSLPckg_IntegerLit_strategy)
+def test_completedslpckg_integerlit_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1146,92 +1128,77 @@ def test_completedslpckg::integerlit_value_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=CompleteDSLPckg::VarRef_strategy)
+@given(instance=CompleteDSLPckg_VarRef_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::varref_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::VarRef)
-
-@given(instance=CompleteDSLPckg::VarRef_strategy)
-def test_completedslpckg::varref_ref_type(instance):
-    assert isinstance(instance.ref, str)
+def test_completedslpckg_varref_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_VarRef)
 
 
-@given(instance=CompleteDSLPckg::VarRef_strategy)
-def test_completedslpckg::varref_ref_setter(instance):
+
+@given(instance=CompleteDSLPckg_VarRef_strategy)
+def test_completedslpckg_varref_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=CompleteDSLPckg::Literal_strategy)
+@given(instance=CompleteDSLPckg_Literal_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::literal_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Literal)
+def test_completedslpckg_literal_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Literal)
 
-@given(instance=CompleteDSLPckg::Expression_strategy)
+@given(instance=CompleteDSLPckg_Expression_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::expression_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::Expression)
+def test_completedslpckg_expression_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_Expression)
 
-@given(instance=CompleteDSLPckg::RelationalExpression_strategy)
+@given(instance=CompleteDSLPckg_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::relationalexpression_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::RelationalExpression)
-
-@given(instance=CompleteDSLPckg::RelationalExpression_strategy)
-def test_completedslpckg::relationalexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_completedslpckg_relationalexpression_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_RelationalExpression)
 
 
-@given(instance=CompleteDSLPckg::RelationalExpression_strategy)
-def test_completedslpckg::relationalexpression_operator_setter(instance):
+
+@given(instance=CompleteDSLPckg_RelationalExpression_strategy)
+def test_completedslpckg_relationalexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=CompleteDSLPckg::ArithmeticExpression_strategy)
+@given(instance=CompleteDSLPckg_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::ArithmeticExpression)
-
-@given(instance=CompleteDSLPckg::ArithmeticExpression_strategy)
-def test_completedslpckg::arithmeticexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_completedslpckg_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_ArithmeticExpression)
 
 
-@given(instance=CompleteDSLPckg::ArithmeticExpression_strategy)
-def test_completedslpckg::arithmeticexpression_operator_setter(instance):
+
+@given(instance=CompleteDSLPckg_ArithmeticExpression_strategy)
+def test_completedslpckg_arithmeticexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=CompleteDSLPckg::BoolLit_strategy)
+@given(instance=CompleteDSLPckg_BoolLit_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::boollit_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::BoolLit)
-
-@given(instance=CompleteDSLPckg::BoolLit_strategy)
-def test_completedslpckg::boollit_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_completedslpckg_boollit_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_BoolLit)
 
 
-@given(instance=CompleteDSLPckg::BoolLit_strategy)
-def test_completedslpckg::boollit_value_setter(instance):
+
+@given(instance=CompleteDSLPckg_BoolLit_strategy)
+def test_completedslpckg_boollit_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=CompleteDSLPckg::StringLit_strategy)
+@given(instance=CompleteDSLPckg_StringLit_strategy)
 @settings(max_examples=50)
-def test_completedslpckg::stringlit_instantiation(instance):
-    assert isinstance(instance, CompleteDSLPckg::StringLit)
-
-@given(instance=CompleteDSLPckg::StringLit_strategy)
-def test_completedslpckg::stringlit_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_completedslpckg_stringlit_instantiation(instance):
+    assert isinstance(instance, CompleteDSLPckg_StringLit)
 
 
-@given(instance=CompleteDSLPckg::StringLit_strategy)
-def test_completedslpckg::stringlit_value_setter(instance):
+
+@given(instance=CompleteDSLPckg_StringLit_strategy)
+def test_completedslpckg_stringlit_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original

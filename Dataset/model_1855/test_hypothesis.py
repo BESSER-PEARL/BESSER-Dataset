@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    netxstudio::Site,
-    netxstudio::Country,
-    netxstudio::Room,
-    netxstudio::MetricSource,
-    netxstudio::Meta,
-    netxstudio::RFSService,
-    netxstudio::Unit,
-    netxstudio::Metric,
-    netxstudio::Equipment,
-    netxstudio::Function,
-    netxstudio::User,
-    netxstudio::Expression,
-    netxstudio::Tolerance,
-    netxstudio::Company,
-    netxstudio::Protocol,
-    netxstudio::Parameter,
-    netxstudio::Network,
-    netxstudio::Library,
+from python_code import (
+    netxstudio_Site,
+    netxstudio_Country,
+    netxstudio_Room,
+    netxstudio_MetricSource,
+    netxstudio_Meta,
+    netxstudio_RFSService,
+    netxstudio_Unit,
+    netxstudio_Metric,
+    netxstudio_Equipment,
+    netxstudio_Function,
+    netxstudio_User,
+    netxstudio_Expression,
+    netxstudio_Tolerance,
+    netxstudio_Company,
+    netxstudio_Protocol,
+    netxstudio_Parameter,
+    netxstudio_Network,
+    netxstudio_Library,
 )
 
 # =============================================================================
@@ -32,283 +32,283 @@ from classes import (
 
 
 
-def test_netxstudio::site_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Site)
+def test_netxstudio_site_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Site)
 
 
-def test_netxstudio::site_constructor_exists():
-    assert callable(netxstudio::Site.__init__)
+def test_netxstudio_site_constructor_exists():
+    assert callable(netxstudio_Site.__init__)
 
 
-def test_netxstudio::site_constructor_args():
-    sig = inspect.signature(netxstudio::Site.__init__)
+def test_netxstudio_site_constructor_args():
+    sig = inspect.signature(netxstudio_Site.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::country_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Country)
+def test_netxstudio_country_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Country)
 
 
-def test_netxstudio::country_constructor_exists():
-    assert callable(netxstudio::Country.__init__)
+def test_netxstudio_country_constructor_exists():
+    assert callable(netxstudio_Country.__init__)
 
 
-def test_netxstudio::country_constructor_args():
-    sig = inspect.signature(netxstudio::Country.__init__)
+def test_netxstudio_country_constructor_args():
+    sig = inspect.signature(netxstudio_Country.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::room_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Room)
+def test_netxstudio_room_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Room)
 
 
-def test_netxstudio::room_constructor_exists():
-    assert callable(netxstudio::Room.__init__)
+def test_netxstudio_room_constructor_exists():
+    assert callable(netxstudio_Room.__init__)
 
 
-def test_netxstudio::room_constructor_args():
-    sig = inspect.signature(netxstudio::Room.__init__)
+def test_netxstudio_room_constructor_args():
+    sig = inspect.signature(netxstudio_Room.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::metricsource_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::MetricSource)
+def test_netxstudio_metricsource_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_MetricSource)
 
 
-def test_netxstudio::metricsource_constructor_exists():
-    assert callable(netxstudio::MetricSource.__init__)
+def test_netxstudio_metricsource_constructor_exists():
+    assert callable(netxstudio_MetricSource.__init__)
 
 
-def test_netxstudio::metricsource_constructor_args():
-    sig = inspect.signature(netxstudio::MetricSource.__init__)
+def test_netxstudio_metricsource_constructor_args():
+    sig = inspect.signature(netxstudio_MetricSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::meta_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Meta)
+def test_netxstudio_meta_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Meta)
 
 
-def test_netxstudio::meta_constructor_exists():
-    assert callable(netxstudio::Meta.__init__)
+def test_netxstudio_meta_constructor_exists():
+    assert callable(netxstudio_Meta.__init__)
 
 
-def test_netxstudio::meta_constructor_args():
-    sig = inspect.signature(netxstudio::Meta.__init__)
+def test_netxstudio_meta_constructor_args():
+    sig = inspect.signature(netxstudio_Meta.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::rfsservice_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::RFSService)
+def test_netxstudio_rfsservice_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_RFSService)
 
 
-def test_netxstudio::rfsservice_constructor_exists():
-    assert callable(netxstudio::RFSService.__init__)
+def test_netxstudio_rfsservice_constructor_exists():
+    assert callable(netxstudio_RFSService.__init__)
 
 
-def test_netxstudio::rfsservice_constructor_args():
-    sig = inspect.signature(netxstudio::RFSService.__init__)
+def test_netxstudio_rfsservice_constructor_args():
+    sig = inspect.signature(netxstudio_RFSService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::unit_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Unit)
+def test_netxstudio_unit_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Unit)
 
 
-def test_netxstudio::unit_constructor_exists():
-    assert callable(netxstudio::Unit.__init__)
+def test_netxstudio_unit_constructor_exists():
+    assert callable(netxstudio_Unit.__init__)
 
 
-def test_netxstudio::unit_constructor_args():
-    sig = inspect.signature(netxstudio::Unit.__init__)
+def test_netxstudio_unit_constructor_args():
+    sig = inspect.signature(netxstudio_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::metric_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Metric)
+def test_netxstudio_metric_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Metric)
 
 
-def test_netxstudio::metric_constructor_exists():
-    assert callable(netxstudio::Metric.__init__)
+def test_netxstudio_metric_constructor_exists():
+    assert callable(netxstudio_Metric.__init__)
 
 
-def test_netxstudio::metric_constructor_args():
-    sig = inspect.signature(netxstudio::Metric.__init__)
+def test_netxstudio_metric_constructor_args():
+    sig = inspect.signature(netxstudio_Metric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::equipment_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Equipment)
+def test_netxstudio_equipment_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Equipment)
 
 
-def test_netxstudio::equipment_constructor_exists():
-    assert callable(netxstudio::Equipment.__init__)
+def test_netxstudio_equipment_constructor_exists():
+    assert callable(netxstudio_Equipment.__init__)
 
 
-def test_netxstudio::equipment_constructor_args():
-    sig = inspect.signature(netxstudio::Equipment.__init__)
+def test_netxstudio_equipment_constructor_args():
+    sig = inspect.signature(netxstudio_Equipment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::function_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Function)
+def test_netxstudio_function_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Function)
 
 
-def test_netxstudio::function_constructor_exists():
-    assert callable(netxstudio::Function.__init__)
+def test_netxstudio_function_constructor_exists():
+    assert callable(netxstudio_Function.__init__)
 
 
-def test_netxstudio::function_constructor_args():
-    sig = inspect.signature(netxstudio::Function.__init__)
+def test_netxstudio_function_constructor_args():
+    sig = inspect.signature(netxstudio_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::user_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::User)
+def test_netxstudio_user_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_User)
 
 
-def test_netxstudio::user_constructor_exists():
-    assert callable(netxstudio::User.__init__)
+def test_netxstudio_user_constructor_exists():
+    assert callable(netxstudio_User.__init__)
 
 
-def test_netxstudio::user_constructor_args():
-    sig = inspect.signature(netxstudio::User.__init__)
+def test_netxstudio_user_constructor_args():
+    sig = inspect.signature(netxstudio_User.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::expression_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Expression)
+def test_netxstudio_expression_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Expression)
 
 
-def test_netxstudio::expression_constructor_exists():
-    assert callable(netxstudio::Expression.__init__)
+def test_netxstudio_expression_constructor_exists():
+    assert callable(netxstudio_Expression.__init__)
 
 
-def test_netxstudio::expression_constructor_args():
-    sig = inspect.signature(netxstudio::Expression.__init__)
+def test_netxstudio_expression_constructor_args():
+    sig = inspect.signature(netxstudio_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::tolerance_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Tolerance)
+def test_netxstudio_tolerance_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Tolerance)
 
 
-def test_netxstudio::tolerance_constructor_exists():
-    assert callable(netxstudio::Tolerance.__init__)
+def test_netxstudio_tolerance_constructor_exists():
+    assert callable(netxstudio_Tolerance.__init__)
 
 
-def test_netxstudio::tolerance_constructor_args():
-    sig = inspect.signature(netxstudio::Tolerance.__init__)
+def test_netxstudio_tolerance_constructor_args():
+    sig = inspect.signature(netxstudio_Tolerance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::company_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Company)
+def test_netxstudio_company_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Company)
 
 
-def test_netxstudio::company_constructor_exists():
-    assert callable(netxstudio::Company.__init__)
+def test_netxstudio_company_constructor_exists():
+    assert callable(netxstudio_Company.__init__)
 
 
-def test_netxstudio::company_constructor_args():
-    sig = inspect.signature(netxstudio::Company.__init__)
+def test_netxstudio_company_constructor_args():
+    sig = inspect.signature(netxstudio_Company.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::protocol_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Protocol)
+def test_netxstudio_protocol_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Protocol)
 
 
-def test_netxstudio::protocol_constructor_exists():
-    assert callable(netxstudio::Protocol.__init__)
+def test_netxstudio_protocol_constructor_exists():
+    assert callable(netxstudio_Protocol.__init__)
 
 
-def test_netxstudio::protocol_constructor_args():
-    sig = inspect.signature(netxstudio::Protocol.__init__)
+def test_netxstudio_protocol_constructor_args():
+    sig = inspect.signature(netxstudio_Protocol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::parameter_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Parameter)
+def test_netxstudio_parameter_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Parameter)
 
 
-def test_netxstudio::parameter_constructor_exists():
-    assert callable(netxstudio::Parameter.__init__)
+def test_netxstudio_parameter_constructor_exists():
+    assert callable(netxstudio_Parameter.__init__)
 
 
-def test_netxstudio::parameter_constructor_args():
-    sig = inspect.signature(netxstudio::Parameter.__init__)
+def test_netxstudio_parameter_constructor_args():
+    sig = inspect.signature(netxstudio_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::network_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Network)
+def test_netxstudio_network_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Network)
 
 
-def test_netxstudio::network_constructor_exists():
-    assert callable(netxstudio::Network.__init__)
+def test_netxstudio_network_constructor_exists():
+    assert callable(netxstudio_Network.__init__)
 
 
-def test_netxstudio::network_constructor_args():
-    sig = inspect.signature(netxstudio::Network.__init__)
+def test_netxstudio_network_constructor_args():
+    sig = inspect.signature(netxstudio_Network.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netxstudio::library_is_not_abstract():
-    assert not inspect.isabstract(netxstudio::Library)
+def test_netxstudio_library_is_not_abstract():
+    assert not inspect.isabstract(netxstudio_Library)
 
 
-def test_netxstudio::library_constructor_exists():
-    assert callable(netxstudio::Library.__init__)
+def test_netxstudio_library_constructor_exists():
+    assert callable(netxstudio_Library.__init__)
 
 
-def test_netxstudio::library_constructor_args():
-    sig = inspect.signature(netxstudio::Library.__init__)
+def test_netxstudio_library_constructor_args():
+    sig = inspect.signature(netxstudio_Library.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_netxstudio::library_has_name():
-    assert hasattr(netxstudio::Library, "name")
+def test_netxstudio_library_has_description():
+    assert hasattr(netxstudio_Library, "description")
     descriptor = None
-    for klass in netxstudio::Library.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_netxstudio::library_has_description():
-    assert hasattr(netxstudio::Library, "description")
-    descriptor = None
-    for klass in netxstudio::Library.__mro__:
+    for klass in netxstudio_Library.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_netxstudio::library_has_version():
-    assert hasattr(netxstudio::Library, "version")
+def test_netxstudio_library_has_version():
+    assert hasattr(netxstudio_Library, "version")
     descriptor = None
-    for klass in netxstudio::Library.__mro__:
+    for klass in netxstudio_Library.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_netxstudio_library_has_name():
+    assert hasattr(netxstudio_Library, "name")
+    descriptor = None
+    for klass in netxstudio_Library.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -324,186 +324,177 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-netxstudio::Site_strategy = st.builds(
-    netxstudio::Site,
+netxstudio_Site_strategy = st.builds(
+    netxstudio_Site,
 )
-netxstudio::Country_strategy = st.builds(
-    netxstudio::Country,
+netxstudio_Country_strategy = st.builds(
+    netxstudio_Country,
 )
-netxstudio::Room_strategy = st.builds(
-    netxstudio::Room,
+netxstudio_Room_strategy = st.builds(
+    netxstudio_Room,
 )
-netxstudio::MetricSource_strategy = st.builds(
-    netxstudio::MetricSource,
+netxstudio_MetricSource_strategy = st.builds(
+    netxstudio_MetricSource,
 )
-netxstudio::Meta_strategy = st.builds(
-    netxstudio::Meta,
+netxstudio_Meta_strategy = st.builds(
+    netxstudio_Meta,
 )
-netxstudio::RFSService_strategy = st.builds(
-    netxstudio::RFSService,
+netxstudio_RFSService_strategy = st.builds(
+    netxstudio_RFSService,
 )
-netxstudio::Unit_strategy = st.builds(
-    netxstudio::Unit,
+netxstudio_Unit_strategy = st.builds(
+    netxstudio_Unit,
 )
-netxstudio::Metric_strategy = st.builds(
-    netxstudio::Metric,
+netxstudio_Metric_strategy = st.builds(
+    netxstudio_Metric,
 )
-netxstudio::Equipment_strategy = st.builds(
-    netxstudio::Equipment,
+netxstudio_Equipment_strategy = st.builds(
+    netxstudio_Equipment,
 )
-netxstudio::Function_strategy = st.builds(
-    netxstudio::Function,
+netxstudio_Function_strategy = st.builds(
+    netxstudio_Function,
 )
-netxstudio::User_strategy = st.builds(
-    netxstudio::User,
+netxstudio_User_strategy = st.builds(
+    netxstudio_User,
 )
-netxstudio::Expression_strategy = st.builds(
-    netxstudio::Expression,
+netxstudio_Expression_strategy = st.builds(
+    netxstudio_Expression,
 )
-netxstudio::Tolerance_strategy = st.builds(
-    netxstudio::Tolerance,
+netxstudio_Tolerance_strategy = st.builds(
+    netxstudio_Tolerance,
 )
-netxstudio::Company_strategy = st.builds(
-    netxstudio::Company,
+netxstudio_Company_strategy = st.builds(
+    netxstudio_Company,
 )
-netxstudio::Protocol_strategy = st.builds(
-    netxstudio::Protocol,
+netxstudio_Protocol_strategy = st.builds(
+    netxstudio_Protocol,
 )
-netxstudio::Parameter_strategy = st.builds(
-    netxstudio::Parameter,
+netxstudio_Parameter_strategy = st.builds(
+    netxstudio_Parameter,
 )
-netxstudio::Network_strategy = st.builds(
-    netxstudio::Network,
+netxstudio_Network_strategy = st.builds(
+    netxstudio_Network,
 )
-netxstudio::Library_strategy = st.builds(
-    netxstudio::Library,
-    name=
-        safe_text,
+netxstudio_Library_strategy = st.builds(
+    netxstudio_Library,
     description=
         safe_text,
     version=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=netxstudio::Site_strategy)
+@given(instance=netxstudio_Site_strategy)
 @settings(max_examples=50)
-def test_netxstudio::site_instantiation(instance):
-    assert isinstance(instance, netxstudio::Site)
+def test_netxstudio_site_instantiation(instance):
+    assert isinstance(instance, netxstudio_Site)
 
-@given(instance=netxstudio::Country_strategy)
+@given(instance=netxstudio_Country_strategy)
 @settings(max_examples=50)
-def test_netxstudio::country_instantiation(instance):
-    assert isinstance(instance, netxstudio::Country)
+def test_netxstudio_country_instantiation(instance):
+    assert isinstance(instance, netxstudio_Country)
 
-@given(instance=netxstudio::Room_strategy)
+@given(instance=netxstudio_Room_strategy)
 @settings(max_examples=50)
-def test_netxstudio::room_instantiation(instance):
-    assert isinstance(instance, netxstudio::Room)
+def test_netxstudio_room_instantiation(instance):
+    assert isinstance(instance, netxstudio_Room)
 
-@given(instance=netxstudio::MetricSource_strategy)
+@given(instance=netxstudio_MetricSource_strategy)
 @settings(max_examples=50)
-def test_netxstudio::metricsource_instantiation(instance):
-    assert isinstance(instance, netxstudio::MetricSource)
+def test_netxstudio_metricsource_instantiation(instance):
+    assert isinstance(instance, netxstudio_MetricSource)
 
-@given(instance=netxstudio::Meta_strategy)
+@given(instance=netxstudio_Meta_strategy)
 @settings(max_examples=50)
-def test_netxstudio::meta_instantiation(instance):
-    assert isinstance(instance, netxstudio::Meta)
+def test_netxstudio_meta_instantiation(instance):
+    assert isinstance(instance, netxstudio_Meta)
 
-@given(instance=netxstudio::RFSService_strategy)
+@given(instance=netxstudio_RFSService_strategy)
 @settings(max_examples=50)
-def test_netxstudio::rfsservice_instantiation(instance):
-    assert isinstance(instance, netxstudio::RFSService)
+def test_netxstudio_rfsservice_instantiation(instance):
+    assert isinstance(instance, netxstudio_RFSService)
 
-@given(instance=netxstudio::Unit_strategy)
+@given(instance=netxstudio_Unit_strategy)
 @settings(max_examples=50)
-def test_netxstudio::unit_instantiation(instance):
-    assert isinstance(instance, netxstudio::Unit)
+def test_netxstudio_unit_instantiation(instance):
+    assert isinstance(instance, netxstudio_Unit)
 
-@given(instance=netxstudio::Metric_strategy)
+@given(instance=netxstudio_Metric_strategy)
 @settings(max_examples=50)
-def test_netxstudio::metric_instantiation(instance):
-    assert isinstance(instance, netxstudio::Metric)
+def test_netxstudio_metric_instantiation(instance):
+    assert isinstance(instance, netxstudio_Metric)
 
-@given(instance=netxstudio::Equipment_strategy)
+@given(instance=netxstudio_Equipment_strategy)
 @settings(max_examples=50)
-def test_netxstudio::equipment_instantiation(instance):
-    assert isinstance(instance, netxstudio::Equipment)
+def test_netxstudio_equipment_instantiation(instance):
+    assert isinstance(instance, netxstudio_Equipment)
 
-@given(instance=netxstudio::Function_strategy)
+@given(instance=netxstudio_Function_strategy)
 @settings(max_examples=50)
-def test_netxstudio::function_instantiation(instance):
-    assert isinstance(instance, netxstudio::Function)
+def test_netxstudio_function_instantiation(instance):
+    assert isinstance(instance, netxstudio_Function)
 
-@given(instance=netxstudio::User_strategy)
+@given(instance=netxstudio_User_strategy)
 @settings(max_examples=50)
-def test_netxstudio::user_instantiation(instance):
-    assert isinstance(instance, netxstudio::User)
+def test_netxstudio_user_instantiation(instance):
+    assert isinstance(instance, netxstudio_User)
 
-@given(instance=netxstudio::Expression_strategy)
+@given(instance=netxstudio_Expression_strategy)
 @settings(max_examples=50)
-def test_netxstudio::expression_instantiation(instance):
-    assert isinstance(instance, netxstudio::Expression)
+def test_netxstudio_expression_instantiation(instance):
+    assert isinstance(instance, netxstudio_Expression)
 
-@given(instance=netxstudio::Tolerance_strategy)
+@given(instance=netxstudio_Tolerance_strategy)
 @settings(max_examples=50)
-def test_netxstudio::tolerance_instantiation(instance):
-    assert isinstance(instance, netxstudio::Tolerance)
+def test_netxstudio_tolerance_instantiation(instance):
+    assert isinstance(instance, netxstudio_Tolerance)
 
-@given(instance=netxstudio::Company_strategy)
+@given(instance=netxstudio_Company_strategy)
 @settings(max_examples=50)
-def test_netxstudio::company_instantiation(instance):
-    assert isinstance(instance, netxstudio::Company)
+def test_netxstudio_company_instantiation(instance):
+    assert isinstance(instance, netxstudio_Company)
 
-@given(instance=netxstudio::Protocol_strategy)
+@given(instance=netxstudio_Protocol_strategy)
 @settings(max_examples=50)
-def test_netxstudio::protocol_instantiation(instance):
-    assert isinstance(instance, netxstudio::Protocol)
+def test_netxstudio_protocol_instantiation(instance):
+    assert isinstance(instance, netxstudio_Protocol)
 
-@given(instance=netxstudio::Parameter_strategy)
+@given(instance=netxstudio_Parameter_strategy)
 @settings(max_examples=50)
-def test_netxstudio::parameter_instantiation(instance):
-    assert isinstance(instance, netxstudio::Parameter)
+def test_netxstudio_parameter_instantiation(instance):
+    assert isinstance(instance, netxstudio_Parameter)
 
-@given(instance=netxstudio::Network_strategy)
+@given(instance=netxstudio_Network_strategy)
 @settings(max_examples=50)
-def test_netxstudio::network_instantiation(instance):
-    assert isinstance(instance, netxstudio::Network)
+def test_netxstudio_network_instantiation(instance):
+    assert isinstance(instance, netxstudio_Network)
 
-@given(instance=netxstudio::Library_strategy)
+@given(instance=netxstudio_Library_strategy)
 @settings(max_examples=50)
-def test_netxstudio::library_instantiation(instance):
-    assert isinstance(instance, netxstudio::Library)
-
-@given(instance=netxstudio::Library_strategy)
-def test_netxstudio::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_netxstudio_library_instantiation(instance):
+    assert isinstance(instance, netxstudio_Library)
 
 
-@given(instance=netxstudio::Library_strategy)
-def test_netxstudio::library_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=netxstudio::Library_strategy)
-def test_netxstudio::library_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=netxstudio::Library_strategy)
-def test_netxstudio::library_description_setter(instance):
+@given(instance=netxstudio_Library_strategy)
+def test_netxstudio_library_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=netxstudio::Library_strategy)
-def test_netxstudio::library_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=netxstudio::Library_strategy)
-def test_netxstudio::library_version_setter(instance):
+@given(instance=netxstudio_Library_strategy)
+def test_netxstudio_library_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
+
+
+
+@given(instance=netxstudio_Library_strategy)
+def test_netxstudio_library_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

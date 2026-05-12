@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fm::Attribute,
-    fm::EObject,
-    fm::Constraint,
-    fm::Feature,
-    fm::FeatureModel,
-    fm::Group,
+from python_code import (
+    fm_Attribute,
+    fm_EObject,
+    fm_Constraint,
+    fm_Feature,
+    fm_FeatureModel,
+    fm_Group,
     AttributeType,
     ObjectiveFunctionType,
 )
@@ -22,465 +22,465 @@ from classes import (
 
 
 
-def test_fm::attribute_is_not_abstract():
-    assert not inspect.isabstract(fm::Attribute)
+def test_fm_attribute_is_not_abstract():
+    assert not inspect.isabstract(fm_Attribute)
 
 
-def test_fm::attribute_constructor_exists():
-    assert callable(fm::Attribute.__init__)
+def test_fm_attribute_constructor_exists():
+    assert callable(fm_Attribute.__init__)
 
 
-def test_fm::attribute_constructor_args():
-    sig = inspect.signature(fm::Attribute.__init__)
+def test_fm_attribute_constructor_args():
+    sig = inspect.signature(fm_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "objectiveFunctionAggregator" in params, "Missing parameter 'objectiveFunctionAggregator'"
-    assert "qualityAttribute" in params, "Missing parameter 'qualityAttribute'"
-    assert "weight" in params, "Missing parameter 'weight'"
-    assert "minimize" in params, "Missing parameter 'minimize'"
-    assert "maxRangeValue" in params, "Missing parameter 'maxRangeValue'"
-    assert "minRangeValue" in params, "Missing parameter 'minRangeValue'"
-    assert "resourceAttribute" in params, "Missing parameter 'resourceAttribute'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "description" in params, "Missing parameter 'description'"
-    assert "id" in params, "Missing parameter 'id'"
+    assert "minimize" in params, "Missing parameter 'minimize'"
+    assert "weight" in params, "Missing parameter 'weight'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "qualityAttribute" in params, "Missing parameter 'qualityAttribute'"
+    assert "maxRangeValue" in params, "Missing parameter 'maxRangeValue'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "resourceAttribute" in params, "Missing parameter 'resourceAttribute'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "minRangeValue" in params, "Missing parameter 'minRangeValue'"
+    assert "objectiveFunctionAggregator" in params, "Missing parameter 'objectiveFunctionAggregator'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_fm::attribute_has_objectiveFunctionAggregator():
-    assert hasattr(fm::Attribute, "objectiveFunctionAggregator")
+def test_fm_attribute_has_description():
+    assert hasattr(fm_Attribute, "description")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "objectiveFunctionAggregator" in klass.__dict__:
-            descriptor = klass.__dict__["objectiveFunctionAggregator"]
+    for klass in fm_Attribute.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::attribute_has_qualityAttribute():
-    assert hasattr(fm::Attribute, "qualityAttribute")
+def test_fm_attribute_has_minimize():
+    assert hasattr(fm_Attribute, "minimize")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "qualityAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["qualityAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::attribute_has_weight():
-    assert hasattr(fm::Attribute, "weight")
-    descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::attribute_has_minimize():
-    assert hasattr(fm::Attribute, "minimize")
-    descriptor = None
-    for klass in fm::Attribute.__mro__:
+    for klass in fm_Attribute.__mro__:
         if "minimize" in klass.__dict__:
             descriptor = klass.__dict__["minimize"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::attribute_has_maxRangeValue():
-    assert hasattr(fm::Attribute, "maxRangeValue")
+def test_fm_attribute_has_weight():
+    assert hasattr(fm_Attribute, "weight")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
+    for klass in fm_Attribute.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_attribute_has_name():
+    assert hasattr(fm_Attribute, "name")
+    descriptor = None
+    for klass in fm_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_attribute_has_qualityAttribute():
+    assert hasattr(fm_Attribute, "qualityAttribute")
+    descriptor = None
+    for klass in fm_Attribute.__mro__:
+        if "qualityAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["qualityAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_attribute_has_maxRangeValue():
+    assert hasattr(fm_Attribute, "maxRangeValue")
+    descriptor = None
+    for klass in fm_Attribute.__mro__:
         if "maxRangeValue" in klass.__dict__:
             descriptor = klass.__dict__["maxRangeValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::attribute_has_minRangeValue():
-    assert hasattr(fm::Attribute, "minRangeValue")
+def test_fm_attribute_has_id():
+    assert hasattr(fm_Attribute, "id")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "minRangeValue" in klass.__dict__:
-            descriptor = klass.__dict__["minRangeValue"]
+    for klass in fm_Attribute.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::attribute_has_resourceAttribute():
-    assert hasattr(fm::Attribute, "resourceAttribute")
+def test_fm_attribute_has_resourceAttribute():
+    assert hasattr(fm_Attribute, "resourceAttribute")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
+    for klass in fm_Attribute.__mro__:
         if "resourceAttribute" in klass.__dict__:
             descriptor = klass.__dict__["resourceAttribute"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::attribute_has_type():
-    assert hasattr(fm::Attribute, "type")
+def test_fm_attribute_has_comment():
+    assert hasattr(fm_Attribute, "comment")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::attribute_has_comment():
-    assert hasattr(fm::Attribute, "comment")
-    descriptor = None
-    for klass in fm::Attribute.__mro__:
+    for klass in fm_Attribute.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::attribute_has_description():
-    assert hasattr(fm::Attribute, "description")
+def test_fm_attribute_has_defaultValue():
+    assert hasattr(fm_Attribute, "defaultValue")
     descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::attribute_has_id():
-    assert hasattr(fm::Attribute, "id")
-    descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::attribute_has_name():
-    assert hasattr(fm::Attribute, "name")
-    descriptor = None
-    for klass in fm::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::attribute_has_defaultValue():
-    assert hasattr(fm::Attribute, "defaultValue")
-    descriptor = None
-    for klass in fm::Attribute.__mro__:
+    for klass in fm_Attribute.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
 
+def test_fm_attribute_has_minRangeValue():
+    assert hasattr(fm_Attribute, "minRangeValue")
+    descriptor = None
+    for klass in fm_Attribute.__mro__:
+        if "minRangeValue" in klass.__dict__:
+            descriptor = klass.__dict__["minRangeValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_attribute_has_objectiveFunctionAggregator():
+    assert hasattr(fm_Attribute, "objectiveFunctionAggregator")
+    descriptor = None
+    for klass in fm_Attribute.__mro__:
+        if "objectiveFunctionAggregator" in klass.__dict__:
+            descriptor = klass.__dict__["objectiveFunctionAggregator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_attribute_has_type():
+    assert hasattr(fm_Attribute, "type")
+    descriptor = None
+    for klass in fm_Attribute.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fm::eobject_is_not_abstract():
-    assert not inspect.isabstract(fm::EObject)
+
+def test_fm_eobject_is_not_abstract():
+    assert not inspect.isabstract(fm_EObject)
 
 
-def test_fm::eobject_constructor_exists():
-    assert callable(fm::EObject.__init__)
+def test_fm_eobject_constructor_exists():
+    assert callable(fm_EObject.__init__)
 
 
-def test_fm::eobject_constructor_args():
-    sig = inspect.signature(fm::EObject.__init__)
+def test_fm_eobject_constructor_args():
+    sig = inspect.signature(fm_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fm::constraint_is_not_abstract():
-    assert not inspect.isabstract(fm::Constraint)
+def test_fm_constraint_is_not_abstract():
+    assert not inspect.isabstract(fm_Constraint)
 
 
-def test_fm::constraint_constructor_exists():
-    assert callable(fm::Constraint.__init__)
+def test_fm_constraint_constructor_exists():
+    assert callable(fm_Constraint.__init__)
 
 
-def test_fm::constraint_constructor_args():
-    sig = inspect.signature(fm::Constraint.__init__)
+def test_fm_constraint_constructor_args():
+    sig = inspect.signature(fm_Constraint.__init__)
     params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "language" in params, "Missing parameter 'language'"
     assert "description" in params, "Missing parameter 'description'"
     assert "value" in params, "Missing parameter 'value'"
-    assert "language" in params, "Missing parameter 'language'"
-    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_fm::constraint_has_description():
-    assert hasattr(fm::Constraint, "description")
+def test_fm_constraint_has_comment():
+    assert hasattr(fm_Constraint, "comment")
     descriptor = None
-    for klass in fm::Constraint.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in fm_Constraint.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::constraint_has_value():
-    assert hasattr(fm::Constraint, "value")
+def test_fm_constraint_has_language():
+    assert hasattr(fm_Constraint, "language")
     descriptor = None
-    for klass in fm::Constraint.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::constraint_has_language():
-    assert hasattr(fm::Constraint, "language")
-    descriptor = None
-    for klass in fm::Constraint.__mro__:
+    for klass in fm_Constraint.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::constraint_has_comment():
-    assert hasattr(fm::Constraint, "comment")
+def test_fm_constraint_has_description():
+    assert hasattr(fm_Constraint, "description")
     descriptor = None
-    for klass in fm::Constraint.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
+    for klass in fm_Constraint.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_constraint_has_value():
+    assert hasattr(fm_Constraint, "value")
+    descriptor = None
+    for klass in fm_Constraint.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_fm::feature_is_not_abstract():
-    assert not inspect.isabstract(fm::Feature)
+def test_fm_feature_is_not_abstract():
+    assert not inspect.isabstract(fm_Feature)
 
 
-def test_fm::feature_constructor_exists():
-    assert callable(fm::Feature.__init__)
+def test_fm_feature_constructor_exists():
+    assert callable(fm_Feature.__init__)
 
 
-def test_fm::feature_constructor_args():
-    sig = inspect.signature(fm::Feature.__init__)
+def test_fm_feature_constructor_args():
+    sig = inspect.signature(fm_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
-    assert "upper" in params, "Missing parameter 'upper'"
-    assert "mandatory" in params, "Missing parameter 'mandatory'"
-    assert "orphan" in params, "Missing parameter 'orphan'"
-    assert "root" in params, "Missing parameter 'root'"
     assert "optional" in params, "Missing parameter 'optional'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "comment" in params, "Missing parameter 'comment'"
+    assert "root" in params, "Missing parameter 'root'"
     assert "name" in params, "Missing parameter 'name'"
     assert "cloneable" in params, "Missing parameter 'cloneable'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "orphan" in params, "Missing parameter 'orphan'"
+    assert "upper" in params, "Missing parameter 'upper'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "mandatory" in params, "Missing parameter 'mandatory'"
 
-def test_fm::feature_has_lower():
-    assert hasattr(fm::Feature, "lower")
+def test_fm_feature_has_optional():
+    assert hasattr(fm_Feature, "optional")
     descriptor = None
-    for klass in fm::Feature.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::feature_has_upper():
-    assert hasattr(fm::Feature, "upper")
-    descriptor = None
-    for klass in fm::Feature.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::feature_has_mandatory():
-    assert hasattr(fm::Feature, "mandatory")
-    descriptor = None
-    for klass in fm::Feature.__mro__:
-        if "mandatory" in klass.__dict__:
-            descriptor = klass.__dict__["mandatory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::feature_has_orphan():
-    assert hasattr(fm::Feature, "orphan")
-    descriptor = None
-    for klass in fm::Feature.__mro__:
-        if "orphan" in klass.__dict__:
-            descriptor = klass.__dict__["orphan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::feature_has_root():
-    assert hasattr(fm::Feature, "root")
-    descriptor = None
-    for klass in fm::Feature.__mro__:
-        if "root" in klass.__dict__:
-            descriptor = klass.__dict__["root"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::feature_has_optional():
-    assert hasattr(fm::Feature, "optional")
-    descriptor = None
-    for klass in fm::Feature.__mro__:
+    for klass in fm_Feature.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::feature_has_id():
-    assert hasattr(fm::Feature, "id")
+def test_fm_feature_has_comment():
+    assert hasattr(fm_Feature, "comment")
     descriptor = None
-    for klass in fm::Feature.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::feature_has_comment():
-    assert hasattr(fm::Feature, "comment")
-    descriptor = None
-    for klass in fm::Feature.__mro__:
+    for klass in fm_Feature.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::feature_has_name():
-    assert hasattr(fm::Feature, "name")
+def test_fm_feature_has_root():
+    assert hasattr(fm_Feature, "root")
     descriptor = None
-    for klass in fm::Feature.__mro__:
+    for klass in fm_Feature.__mro__:
+        if "root" in klass.__dict__:
+            descriptor = klass.__dict__["root"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_feature_has_name():
+    assert hasattr(fm_Feature, "name")
+    descriptor = None
+    for klass in fm_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::feature_has_cloneable():
-    assert hasattr(fm::Feature, "cloneable")
+def test_fm_feature_has_cloneable():
+    assert hasattr(fm_Feature, "cloneable")
     descriptor = None
-    for klass in fm::Feature.__mro__:
+    for klass in fm_Feature.__mro__:
         if "cloneable" in klass.__dict__:
             descriptor = klass.__dict__["cloneable"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::feature_has_description():
-    assert hasattr(fm::Feature, "description")
+def test_fm_feature_has_description():
+    assert hasattr(fm_Feature, "description")
     descriptor = None
-    for klass in fm::Feature.__mro__:
+    for klass in fm_Feature.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_fm::featuremodel_is_not_abstract():
-    assert not inspect.isabstract(fm::FeatureModel)
-
-
-def test_fm::featuremodel_constructor_exists():
-    assert callable(fm::FeatureModel.__init__)
-
-
-def test_fm::featuremodel_constructor_args():
-    sig = inspect.signature(fm::FeatureModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-    assert "version" in params, "Missing parameter 'version'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_fm::featuremodel_has_description():
-    assert hasattr(fm::FeatureModel, "description")
+def test_fm_feature_has_orphan():
+    assert hasattr(fm_Feature, "orphan")
     descriptor = None
-    for klass in fm::FeatureModel.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in fm_Feature.__mro__:
+        if "orphan" in klass.__dict__:
+            descriptor = klass.__dict__["orphan"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::featuremodel_has_version():
-    assert hasattr(fm::FeatureModel, "version")
+def test_fm_feature_has_upper():
+    assert hasattr(fm_Feature, "upper")
     descriptor = None
-    for klass in fm::FeatureModel.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::featuremodel_has_comment():
-    assert hasattr(fm::FeatureModel, "comment")
-    descriptor = None
-    for klass in fm::FeatureModel.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::featuremodel_has_name():
-    assert hasattr(fm::FeatureModel, "name")
-    descriptor = None
-    for klass in fm::FeatureModel.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_fm::group_is_not_abstract():
-    assert not inspect.isabstract(fm::Group)
-
-
-def test_fm::group_constructor_exists():
-    assert callable(fm::Group.__init__)
-
-
-def test_fm::group_constructor_args():
-    sig = inspect.signature(fm::Group.__init__)
-    params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
-    assert "or_" in params, "Missing parameter 'or_'"
-    assert "upper" in params, "Missing parameter 'upper'"
-    assert "xor" in params, "Missing parameter 'xor'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_fm::group_has_lower():
-    assert hasattr(fm::Group, "lower")
-    descriptor = None
-    for klass in fm::Group.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::group_has_or_():
-    assert hasattr(fm::Group, "or_")
-    descriptor = None
-    for klass in fm::Group.__mro__:
-        if "or_" in klass.__dict__:
-            descriptor = klass.__dict__["or_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fm::group_has_upper():
-    assert hasattr(fm::Group, "upper")
-    descriptor = None
-    for klass in fm::Group.__mro__:
+    for klass in fm_Feature.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::group_has_xor():
-    assert hasattr(fm::Group, "xor")
+def test_fm_feature_has_id():
+    assert hasattr(fm_Feature, "id")
     descriptor = None
-    for klass in fm::Group.__mro__:
-        if "xor" in klass.__dict__:
-            descriptor = klass.__dict__["xor"]
+    for klass in fm_Feature.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::group_has_comment():
-    assert hasattr(fm::Group, "comment")
+def test_fm_feature_has_lower():
+    assert hasattr(fm_Feature, "lower")
     descriptor = None
-    for klass in fm::Group.__mro__:
+    for klass in fm_Feature.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_feature_has_mandatory():
+    assert hasattr(fm_Feature, "mandatory")
+    descriptor = None
+    for klass in fm_Feature.__mro__:
+        if "mandatory" in klass.__dict__:
+            descriptor = klass.__dict__["mandatory"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fm_featuremodel_is_not_abstract():
+    assert not inspect.isabstract(fm_FeatureModel)
+
+
+def test_fm_featuremodel_constructor_exists():
+    assert callable(fm_FeatureModel.__init__)
+
+
+def test_fm_featuremodel_constructor_args():
+    sig = inspect.signature(fm_FeatureModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "version" in params, "Missing parameter 'version'"
+
+def test_fm_featuremodel_has_description():
+    assert hasattr(fm_FeatureModel, "description")
+    descriptor = None
+    for klass in fm_FeatureModel.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_featuremodel_has_comment():
+    assert hasattr(fm_FeatureModel, "comment")
+    descriptor = None
+    for klass in fm_FeatureModel.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_fm::group_has_description():
-    assert hasattr(fm::Group, "description")
+def test_fm_featuremodel_has_name():
+    assert hasattr(fm_FeatureModel, "name")
     descriptor = None
-    for klass in fm::Group.__mro__:
+    for klass in fm_FeatureModel.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_featuremodel_has_version():
+    assert hasattr(fm_FeatureModel, "version")
+    descriptor = None
+    for klass in fm_FeatureModel.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fm_group_is_not_abstract():
+    assert not inspect.isabstract(fm_Group)
+
+
+def test_fm_group_constructor_exists():
+    assert callable(fm_Group.__init__)
+
+
+def test_fm_group_constructor_args():
+    sig = inspect.signature(fm_Group.__init__)
+    params = list(sig.parameters.keys())
+    assert "xor" in params, "Missing parameter 'xor'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "or_" in params, "Missing parameter 'or_'"
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "upper" in params, "Missing parameter 'upper'"
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_fm_group_has_xor():
+    assert hasattr(fm_Group, "xor")
+    descriptor = None
+    for klass in fm_Group.__mro__:
+        if "xor" in klass.__dict__:
+            descriptor = klass.__dict__["xor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_group_has_description():
+    assert hasattr(fm_Group, "description")
+    descriptor = None
+    for klass in fm_Group.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_group_has_or_():
+    assert hasattr(fm_Group, "or_")
+    descriptor = None
+    for klass in fm_Group.__mro__:
+        if "or_" in klass.__dict__:
+            descriptor = klass.__dict__["or_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_group_has_lower():
+    assert hasattr(fm_Group, "lower")
+    descriptor = None
+    for klass in fm_Group.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_group_has_upper():
+    assert hasattr(fm_Group, "upper")
+    descriptor = None
+    for klass in fm_Group.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fm_group_has_comment():
+    assert hasattr(fm_Group, "comment")
+    descriptor = None
+    for klass in fm_Group.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
@@ -492,10 +492,10 @@ def test_attributetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AttributeType]
     expected_literals = [
-        "BOOLEAN",
-        "DOUBLE",
         "STRING",
+        "DOUBLE",
         "INTEGER",
+        "BOOLEAN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -509,11 +509,11 @@ def test_objectivefunctiontype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ObjectiveFunctionType]
     expected_literals = [
+        "MINIMUM",
         "MAXIMUM",
         "NOT_ASSIGNED",
-        "PRODUCT",
         "SUM",
-        "MINIMUM",
+        "PRODUCT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -531,545 +531,431 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fm::Attribute_strategy = st.builds(
-    fm::Attribute,
-    objectiveFunctionAggregator=
-        safe_text,
-    qualityAttribute=
-        st.booleans(),
-    weight=
+fm_Attribute_strategy = st.builds(
+    fm_Attribute,
+    description=
         safe_text,
     minimize=
         st.booleans(),
-    maxRangeValue=
-        safe_text,
-    minRangeValue=
-        safe_text,
-    resourceAttribute=
-        st.booleans(),
-    type=
-        safe_text,
-    comment=
-        safe_text,
-    description=
-        safe_text,
-    id=
+    weight=
         safe_text,
     name=
         safe_text,
+    qualityAttribute=
+        st.booleans(),
+    maxRangeValue=
+        safe_text,
+    id=
+        safe_text,
+    resourceAttribute=
+        st.booleans(),
+    comment=
+        safe_text,
     defaultValue=
+        safe_text,
+    minRangeValue=
+        safe_text,
+    objectiveFunctionAggregator=
+        safe_text,
+    type=
         safe_text
 )
-fm::EObject_strategy = st.builds(
-    fm::EObject,
+fm_EObject_strategy = st.builds(
+    fm_EObject,
 )
-fm::Constraint_strategy = st.builds(
-    fm::Constraint,
-    description=
-        safe_text,
-    value=
+fm_Constraint_strategy = st.builds(
+    fm_Constraint,
+    comment=
         safe_text,
     language=
         safe_text,
-    comment=
+    description=
+        safe_text,
+    value=
         safe_text
 )
-fm::Feature_strategy = st.builds(
-    fm::Feature,
-    lower=
-        st.integers(),
-    upper=
-        st.integers(),
-    mandatory=
-        st.booleans(),
-    orphan=
-        st.booleans(),
-    root=
-        st.booleans(),
+fm_Feature_strategy = st.builds(
+    fm_Feature,
     optional=
         st.booleans(),
-    id=
-        safe_text,
     comment=
         safe_text,
+    root=
+        st.booleans(),
     name=
         safe_text,
     cloneable=
         st.booleans(),
     description=
-        safe_text
-)
-fm::FeatureModel_strategy = st.builds(
-    fm::FeatureModel,
-    description=
         safe_text,
-    version=
+    orphan=
+        st.booleans(),
+    upper=
+        st.integers(),
+    id=
+        safe_text,
+    lower=
+        st.integers(),
+    mandatory=
+        st.booleans()
+)
+fm_FeatureModel_strategy = st.builds(
+    fm_FeatureModel,
+    description=
         safe_text,
     comment=
         safe_text,
     name=
+        safe_text,
+    version=
         safe_text
 )
-fm::Group_strategy = st.builds(
-    fm::Group,
-    lower=
-        st.integers(),
-    or_=
-        st.booleans(),
-    upper=
-        st.integers(),
+fm_Group_strategy = st.builds(
+    fm_Group,
     xor=
         st.booleans(),
-    comment=
-        safe_text,
     description=
+        safe_text,
+    or_=
+        st.booleans(),
+    lower=
+        st.integers(),
+    upper=
+        st.integers(),
+    comment=
         safe_text
 )
 
-@given(instance=fm::Attribute_strategy)
+@given(instance=fm_Attribute_strategy)
 @settings(max_examples=50)
-def test_fm::attribute_instantiation(instance):
-    assert isinstance(instance, fm::Attribute)
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_objectiveFunctionAggregator_type(instance):
-    assert isinstance(instance.objectiveFunctionAggregator, str)
+def test_fm_attribute_instantiation(instance):
+    assert isinstance(instance, fm_Attribute)
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_objectiveFunctionAggregator_setter(instance):
-    original = instance.objectiveFunctionAggregator
-    instance.objectiveFunctionAggregator = original
-    assert instance.objectiveFunctionAggregator == original
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_qualityAttribute_type(instance):
-    assert isinstance(instance.qualityAttribute, bool)
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_qualityAttribute_setter(instance):
-    original = instance.qualityAttribute
-    instance.qualityAttribute = original
-    assert instance.qualityAttribute == original
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_weight_type(instance):
-    assert isinstance(instance.weight, str)
-
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_minimize_type(instance):
-    assert isinstance(instance.minimize, bool)
-
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_minimize_setter(instance):
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_minimize_setter(instance):
     original = instance.minimize
     instance.minimize = original
     assert instance.minimize == original
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_maxRangeValue_type(instance):
-    assert isinstance(instance.maxRangeValue, str)
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_maxRangeValue_setter(instance):
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_qualityAttribute_setter(instance):
+    original = instance.qualityAttribute
+    instance.qualityAttribute = original
+    assert instance.qualityAttribute == original
+
+
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_maxRangeValue_setter(instance):
     original = instance.maxRangeValue
     instance.maxRangeValue = original
     assert instance.maxRangeValue == original
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_minRangeValue_type(instance):
-    assert isinstance(instance.minRangeValue, str)
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_minRangeValue_setter(instance):
-    original = instance.minRangeValue
-    instance.minRangeValue = original
-    assert instance.minRangeValue == original
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_resourceAttribute_type(instance):
-    assert isinstance(instance.resourceAttribute, bool)
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_resourceAttribute_setter(instance):
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_resourceAttribute_setter(instance):
     original = instance.resourceAttribute
     instance.resourceAttribute = original
     assert instance.resourceAttribute == original
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_comment_setter(instance):
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
-
-
-@given(instance=fm::Attribute_strategy)
-def test_fm::attribute_defaultValue_setter(instance):
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=fm::EObject_strategy)
+
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_minRangeValue_setter(instance):
+    original = instance.minRangeValue
+    instance.minRangeValue = original
+    assert instance.minRangeValue == original
+
+
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_objectiveFunctionAggregator_setter(instance):
+    original = instance.objectiveFunctionAggregator
+    instance.objectiveFunctionAggregator = original
+    assert instance.objectiveFunctionAggregator == original
+
+
+
+@given(instance=fm_Attribute_strategy)
+def test_fm_attribute_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=fm_EObject_strategy)
 @settings(max_examples=50)
-def test_fm::eobject_instantiation(instance):
-    assert isinstance(instance, fm::EObject)
+def test_fm_eobject_instantiation(instance):
+    assert isinstance(instance, fm_EObject)
 
-@given(instance=fm::Constraint_strategy)
+@given(instance=fm_Constraint_strategy)
 @settings(max_examples=50)
-def test_fm::constraint_instantiation(instance):
-    assert isinstance(instance, fm::Constraint)
-
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_fm_constraint_instantiation(instance):
+    assert isinstance(instance, fm_Constraint)
 
 
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=fm_Constraint_strategy)
+def test_fm_constraint_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
 
 
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_language_setter(instance):
+@given(instance=fm_Constraint_strategy)
+def test_fm_constraint_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=fm::Constraint_strategy)
-def test_fm::constraint_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
+@given(instance=fm_Constraint_strategy)
+def test_fm_constraint_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
-@given(instance=fm::Feature_strategy)
+
+
+@given(instance=fm_Constraint_strategy)
+def test_fm_constraint_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=fm_Feature_strategy)
 @settings(max_examples=50)
-def test_fm::feature_instantiation(instance):
-    assert isinstance(instance, fm::Feature)
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_lower_type(instance):
-    assert isinstance(instance.lower, int)
+def test_fm_feature_instantiation(instance):
+    assert isinstance(instance, fm_Feature)
 
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_upper_type(instance):
-    assert isinstance(instance.upper, int)
-
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
-
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_mandatory_setter(instance):
-    original = instance.mandatory
-    instance.mandatory = original
-    assert instance.mandatory == original
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_orphan_type(instance):
-    assert isinstance(instance.orphan, bool)
-
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_orphan_setter(instance):
-    original = instance.orphan
-    instance.orphan = original
-    assert instance.orphan == original
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_root_type(instance):
-    assert isinstance(instance.root, bool)
-
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_root_setter(instance):
-    original = instance.root
-    instance.root = original
-    assert instance.root == original
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_optional_type(instance):
-    assert isinstance(instance.optional, bool)
-
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_optional_setter(instance):
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_comment_setter(instance):
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_name_setter(instance):
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_root_setter(instance):
+    original = instance.root
+    instance.root = original
+    assert instance.root == original
+
+
+
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_cloneable_type(instance):
-    assert isinstance(instance.cloneable, bool)
 
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_cloneable_setter(instance):
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_cloneable_setter(instance):
     original = instance.cloneable
     instance.cloneable = original
     assert instance.cloneable == original
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=fm::Feature_strategy)
-def test_fm::feature_description_setter(instance):
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=fm::FeatureModel_strategy)
-@settings(max_examples=50)
-def test_fm::featuremodel_instantiation(instance):
-    assert isinstance(instance, fm::FeatureModel)
-
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_version_type(instance):
-    assert isinstance(instance.version, str)
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_orphan_setter(instance):
+    original = instance.orphan
+    instance.orphan = original
+    assert instance.orphan == original
 
 
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=fm::FeatureModel_strategy)
-def test_fm::featuremodel_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=fm::Group_strategy)
-@settings(max_examples=50)
-def test_fm::group_instantiation(instance):
-    assert isinstance(instance, fm::Group)
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_lower_type(instance):
-    assert isinstance(instance.lower, int)
-
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_or__type(instance):
-    assert isinstance(instance.or_, bool)
-
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_or__setter(instance):
-    original = instance.or_
-    instance.or_ = original
-    assert instance.or_ == original
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_upper_type(instance):
-    assert isinstance(instance.upper, int)
-
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_upper_setter(instance):
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=fm::Group_strategy)
-def test_fm::group_xor_type(instance):
-    assert isinstance(instance.xor, bool)
 
 
-@given(instance=fm::Group_strategy)
-def test_fm::group_xor_setter(instance):
-    original = instance.xor
-    instance.xor = original
-    assert instance.xor == original
-
-@given(instance=fm::Group_strategy)
-def test_fm::group_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 
-@given(instance=fm::Group_strategy)
-def test_fm::group_comment_setter(instance):
+
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=fm_Feature_strategy)
+def test_fm_feature_mandatory_setter(instance):
+    original = instance.mandatory
+    instance.mandatory = original
+    assert instance.mandatory == original
+
+@given(instance=fm_FeatureModel_strategy)
+@settings(max_examples=50)
+def test_fm_featuremodel_instantiation(instance):
+    assert isinstance(instance, fm_FeatureModel)
+
+
+
+@given(instance=fm_FeatureModel_strategy)
+def test_fm_featuremodel_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=fm_FeatureModel_strategy)
+def test_fm_featuremodel_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=fm::Group_strategy)
-def test_fm::group_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=fm::Group_strategy)
-def test_fm::group_description_setter(instance):
+@given(instance=fm_FeatureModel_strategy)
+def test_fm_featuremodel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=fm_FeatureModel_strategy)
+def test_fm_featuremodel_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=fm_Group_strategy)
+@settings(max_examples=50)
+def test_fm_group_instantiation(instance):
+    assert isinstance(instance, fm_Group)
+
+
+
+@given(instance=fm_Group_strategy)
+def test_fm_group_xor_setter(instance):
+    original = instance.xor
+    instance.xor = original
+    assert instance.xor == original
+
+
+
+@given(instance=fm_Group_strategy)
+def test_fm_group_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=fm_Group_strategy)
+def test_fm_group_or__setter(instance):
+    original = instance.or_
+    instance.or_ = original
+    assert instance.or_ == original
+
+
+
+@given(instance=fm_Group_strategy)
+def test_fm_group_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=fm_Group_strategy)
+def test_fm_group_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+
+
+@given(instance=fm_Group_strategy)
+def test_fm_group_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original

@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::N,
+from python_code import (
+    test_N,
     B,
     N,
-    test::test2::B,
-    test::A,
+    test_test2_B,
+    test_A,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_test::n_is_not_abstract():
-    assert not inspect.isabstract(test::N)
+def test_test_n_is_not_abstract():
+    assert not inspect.isabstract(test_N)
 
 
-def test_test::n_constructor_exists():
-    assert callable(test::N.__init__)
+def test_test_n_constructor_exists():
+    assert callable(test_N.__init__)
 
 
-def test_test::n_constructor_args():
-    sig = inspect.signature(test::N.__init__)
+def test_test_n_constructor_args():
+    sig = inspect.signature(test_N.__init__)
     params = list(sig.parameters.keys())
     assert "n" in params, "Missing parameter 'n'"
 
-def test_test::n_has_n():
-    assert hasattr(test::N, "n")
+def test_test_n_has_n():
+    assert hasattr(test_N, "n")
     descriptor = None
-    for klass in test::N.__mro__:
+    for klass in test_N.__mro__:
         if "n" in klass.__dict__:
             descriptor = klass.__dict__["n"]
             break
@@ -71,50 +71,50 @@ def test_n_constructor_args():
 
 
 
-def test_test::test2::b_is_not_abstract():
-    assert not inspect.isabstract(test::test2::B)
+def test_test_test2_b_is_not_abstract():
+    assert not inspect.isabstract(test_test2_B)
 
 
-def test_test::test2::b_constructor_exists():
-    assert callable(test::test2::B.__init__)
+def test_test_test2_b_constructor_exists():
+    assert callable(test_test2_B.__init__)
 
 
-def test_test::test2::b_constructor_args():
-    sig = inspect.signature(test::test2::B.__init__)
+def test_test_test2_b_constructor_args():
+    sig = inspect.signature(test_test2_B.__init__)
     params = list(sig.parameters.keys())
-    assert "nb2" in params, "Missing parameter 'nb2'"
     assert "nb" in params, "Missing parameter 'nb'"
+    assert "nb2" in params, "Missing parameter 'nb2'"
 
-def test_test::test2::b_has_nb2():
-    assert hasattr(test::test2::B, "nb2")
+def test_test_test2_b_has_nb():
+    assert hasattr(test_test2_B, "nb")
     descriptor = None
-    for klass in test::test2::B.__mro__:
-        if "nb2" in klass.__dict__:
-            descriptor = klass.__dict__["nb2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test::test2::b_has_nb():
-    assert hasattr(test::test2::B, "nb")
-    descriptor = None
-    for klass in test::test2::B.__mro__:
+    for klass in test_test2_B.__mro__:
         if "nb" in klass.__dict__:
             descriptor = klass.__dict__["nb"]
             break
     assert isinstance(descriptor, property)
 
+def test_test_test2_b_has_nb2():
+    assert hasattr(test_test2_B, "nb2")
+    descriptor = None
+    for klass in test_test2_B.__mro__:
+        if "nb2" in klass.__dict__:
+            descriptor = klass.__dict__["nb2"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_test::a_is_not_abstract():
-    assert not inspect.isabstract(test::A)
+
+def test_test_a_is_not_abstract():
+    assert not inspect.isabstract(test_A)
 
 
-def test_test::a_constructor_exists():
-    assert callable(test::A.__init__)
+def test_test_a_constructor_exists():
+    assert callable(test_A.__init__)
 
 
-def test_test::a_constructor_args():
-    sig = inspect.signature(test::A.__init__)
+def test_test_a_constructor_args():
+    sig = inspect.signature(test_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,8 +129,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::N_strategy = st.builds(
-    test::N,
+test_N_strategy = st.builds(
+    test_N,
     n=
         safe_text
 )
@@ -140,29 +140,26 @@ B_strategy = st.builds(
 N_strategy = st.builds(
     N,
 )
-test::test2::B_strategy = st.builds(
-    test::test2::B,
-    nb2=
-        st.integers(),
+test_test2_B_strategy = st.builds(
+    test_test2_B,
     nb=
+        st.integers(),
+    nb2=
         st.integers()
 )
-test::A_strategy = st.builds(
-    test::A,
+test_A_strategy = st.builds(
+    test_A,
 )
 
-@given(instance=test::N_strategy)
+@given(instance=test_N_strategy)
 @settings(max_examples=50)
-def test_test::n_instantiation(instance):
-    assert isinstance(instance, test::N)
-
-@given(instance=test::N_strategy)
-def test_test::n_n_type(instance):
-    assert isinstance(instance.n, str)
+def test_test_n_instantiation(instance):
+    assert isinstance(instance, test_N)
 
 
-@given(instance=test::N_strategy)
-def test_test::n_n_setter(instance):
+
+@given(instance=test_N_strategy)
+def test_test_n_n_setter(instance):
     original = instance.n
     instance.n = original
     assert instance.n == original
@@ -177,34 +174,28 @@ def test_b_instantiation(instance):
 def test_n_instantiation(instance):
     assert isinstance(instance, N)
 
-@given(instance=test::test2::B_strategy)
+@given(instance=test_test2_B_strategy)
 @settings(max_examples=50)
-def test_test::test2::b_instantiation(instance):
-    assert isinstance(instance, test::test2::B)
-
-@given(instance=test::test2::B_strategy)
-def test_test::test2::b_nb2_type(instance):
-    assert isinstance(instance.nb2, int)
+def test_test_test2_b_instantiation(instance):
+    assert isinstance(instance, test_test2_B)
 
 
-@given(instance=test::test2::B_strategy)
-def test_test::test2::b_nb2_setter(instance):
-    original = instance.nb2
-    instance.nb2 = original
-    assert instance.nb2 == original
 
-@given(instance=test::test2::B_strategy)
-def test_test::test2::b_nb_type(instance):
-    assert isinstance(instance.nb, int)
-
-
-@given(instance=test::test2::B_strategy)
-def test_test::test2::b_nb_setter(instance):
+@given(instance=test_test2_B_strategy)
+def test_test_test2_b_nb_setter(instance):
     original = instance.nb
     instance.nb = original
     assert instance.nb == original
 
-@given(instance=test::A_strategy)
+
+
+@given(instance=test_test2_B_strategy)
+def test_test_test2_b_nb2_setter(instance):
+    original = instance.nb2
+    instance.nb2 = original
+    assert instance.nb2 == original
+
+@given(instance=test_A_strategy)
 @settings(max_examples=50)
-def test_test::a_instantiation(instance):
-    assert isinstance(instance, test::A)
+def test_test_a_instantiation(instance):
+    assert isinstance(instance, test_A)

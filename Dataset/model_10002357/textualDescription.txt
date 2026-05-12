@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'Reptile' has the following attributes: 'attribute' of type str.
+The class 'Waiter' has no attributes.
+The class 'Cashier' has no attributes.
+The class 'Mammal' has no attributes.
+The class 'Cook' has no attributes.
+The class 'Animal' has the following attributes: 'name' of type str.

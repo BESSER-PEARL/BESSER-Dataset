@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IValue,
-    mongodb::SubDocument,
-    mongodb::ValueList,
-    mongodb::Value,
-    mongodb::IValue,
-    mongodb::Document,
-    mongodb::Collection,
-    mongodb::Database,
-    mongodb::Field,
+    mongodb_ValueList,
+    mongodb_SubDocument,
+    mongodb_Value,
+    mongodb_IValue,
+    mongodb_Document,
+    mongodb_Collection,
+    mongodb_Database,
+    mongodb_Field,
     Type,
 )
 
@@ -38,61 +38,61 @@ def test_ivalue_constructor_args():
 
 
 
-def test_mongodb::subdocument_is_not_abstract():
-    assert not inspect.isabstract(mongodb::SubDocument)
+def test_mongodb_valuelist_is_not_abstract():
+    assert not inspect.isabstract(mongodb_ValueList)
 
 
-def test_mongodb::subdocument_constructor_exists():
-    assert callable(mongodb::SubDocument.__init__)
+def test_mongodb_valuelist_constructor_exists():
+    assert callable(mongodb_ValueList.__init__)
 
 
-def test_mongodb::subdocument_constructor_args():
-    sig = inspect.signature(mongodb::SubDocument.__init__)
+def test_mongodb_valuelist_constructor_args():
+    sig = inspect.signature(mongodb_ValueList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mongodb::valuelist_is_not_abstract():
-    assert not inspect.isabstract(mongodb::ValueList)
+def test_mongodb_subdocument_is_not_abstract():
+    assert not inspect.isabstract(mongodb_SubDocument)
 
 
-def test_mongodb::valuelist_constructor_exists():
-    assert callable(mongodb::ValueList.__init__)
+def test_mongodb_subdocument_constructor_exists():
+    assert callable(mongodb_SubDocument.__init__)
 
 
-def test_mongodb::valuelist_constructor_args():
-    sig = inspect.signature(mongodb::ValueList.__init__)
+def test_mongodb_subdocument_constructor_args():
+    sig = inspect.signature(mongodb_SubDocument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mongodb::value_is_not_abstract():
-    assert not inspect.isabstract(mongodb::Value)
+def test_mongodb_value_is_not_abstract():
+    assert not inspect.isabstract(mongodb_Value)
 
 
-def test_mongodb::value_constructor_exists():
-    assert callable(mongodb::Value.__init__)
+def test_mongodb_value_constructor_exists():
+    assert callable(mongodb_Value.__init__)
 
 
-def test_mongodb::value_constructor_args():
-    sig = inspect.signature(mongodb::Value.__init__)
+def test_mongodb_value_constructor_args():
+    sig = inspect.signature(mongodb_Value.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mongodb::value_has_type():
-    assert hasattr(mongodb::Value, "type")
+def test_mongodb_value_has_type():
+    assert hasattr(mongodb_Value, "type")
     descriptor = None
-    for klass in mongodb::Value.__mro__:
+    for klass in mongodb_Value.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_mongodb::value_has_value():
-    assert hasattr(mongodb::Value, "value")
+def test_mongodb_value_has_value():
+    assert hasattr(mongodb_Value, "value")
     descriptor = None
-    for klass in mongodb::Value.__mro__:
+    for klass in mongodb_Value.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -100,37 +100,37 @@ def test_mongodb::value_has_value():
 
 
 
-def test_mongodb::ivalue_is_not_abstract():
-    assert not inspect.isabstract(mongodb::IValue)
+def test_mongodb_ivalue_is_not_abstract():
+    assert not inspect.isabstract(mongodb_IValue)
 
 
-def test_mongodb::ivalue_constructor_exists():
-    assert callable(mongodb::IValue.__init__)
+def test_mongodb_ivalue_constructor_exists():
+    assert callable(mongodb_IValue.__init__)
 
 
-def test_mongodb::ivalue_constructor_args():
-    sig = inspect.signature(mongodb::IValue.__init__)
+def test_mongodb_ivalue_constructor_args():
+    sig = inspect.signature(mongodb_IValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mongodb::document_is_not_abstract():
-    assert not inspect.isabstract(mongodb::Document)
+def test_mongodb_document_is_not_abstract():
+    assert not inspect.isabstract(mongodb_Document)
 
 
-def test_mongodb::document_constructor_exists():
-    assert callable(mongodb::Document.__init__)
+def test_mongodb_document_constructor_exists():
+    assert callable(mongodb_Document.__init__)
 
 
-def test_mongodb::document_constructor_args():
-    sig = inspect.signature(mongodb::Document.__init__)
+def test_mongodb_document_constructor_args():
+    sig = inspect.signature(mongodb_Document.__init__)
     params = list(sig.parameters.keys())
     assert "_id" in params, "Missing parameter '_id'"
 
-def test_mongodb::document_has__id():
-    assert hasattr(mongodb::Document, "_id")
+def test_mongodb_document_has__id():
+    assert hasattr(mongodb_Document, "_id")
     descriptor = None
-    for klass in mongodb::Document.__mro__:
+    for klass in mongodb_Document.__mro__:
         if "_id" in klass.__dict__:
             descriptor = klass.__dict__["_id"]
             break
@@ -138,23 +138,23 @@ def test_mongodb::document_has__id():
 
 
 
-def test_mongodb::collection_is_not_abstract():
-    assert not inspect.isabstract(mongodb::Collection)
+def test_mongodb_collection_is_not_abstract():
+    assert not inspect.isabstract(mongodb_Collection)
 
 
-def test_mongodb::collection_constructor_exists():
-    assert callable(mongodb::Collection.__init__)
+def test_mongodb_collection_constructor_exists():
+    assert callable(mongodb_Collection.__init__)
 
 
-def test_mongodb::collection_constructor_args():
-    sig = inspect.signature(mongodb::Collection.__init__)
+def test_mongodb_collection_constructor_args():
+    sig = inspect.signature(mongodb_Collection.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mongodb::collection_has_name():
-    assert hasattr(mongodb::Collection, "name")
+def test_mongodb_collection_has_name():
+    assert hasattr(mongodb_Collection, "name")
     descriptor = None
-    for klass in mongodb::Collection.__mro__:
+    for klass in mongodb_Collection.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -162,23 +162,23 @@ def test_mongodb::collection_has_name():
 
 
 
-def test_mongodb::database_is_not_abstract():
-    assert not inspect.isabstract(mongodb::Database)
+def test_mongodb_database_is_not_abstract():
+    assert not inspect.isabstract(mongodb_Database)
 
 
-def test_mongodb::database_constructor_exists():
-    assert callable(mongodb::Database.__init__)
+def test_mongodb_database_constructor_exists():
+    assert callable(mongodb_Database.__init__)
 
 
-def test_mongodb::database_constructor_args():
-    sig = inspect.signature(mongodb::Database.__init__)
+def test_mongodb_database_constructor_args():
+    sig = inspect.signature(mongodb_Database.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mongodb::database_has_name():
-    assert hasattr(mongodb::Database, "name")
+def test_mongodb_database_has_name():
+    assert hasattr(mongodb_Database, "name")
     descriptor = None
-    for klass in mongodb::Database.__mro__:
+    for klass in mongodb_Database.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,23 +186,23 @@ def test_mongodb::database_has_name():
 
 
 
-def test_mongodb::field_is_not_abstract():
-    assert not inspect.isabstract(mongodb::Field)
+def test_mongodb_field_is_not_abstract():
+    assert not inspect.isabstract(mongodb_Field)
 
 
-def test_mongodb::field_constructor_exists():
-    assert callable(mongodb::Field.__init__)
+def test_mongodb_field_constructor_exists():
+    assert callable(mongodb_Field.__init__)
 
 
-def test_mongodb::field_constructor_args():
-    sig = inspect.signature(mongodb::Field.__init__)
+def test_mongodb_field_constructor_args():
+    sig = inspect.signature(mongodb_Field.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_mongodb::field_has_key():
-    assert hasattr(mongodb::Field, "key")
+def test_mongodb_field_has_key():
+    assert hasattr(mongodb_Field, "key")
     descriptor = None
-    for klass in mongodb::Field.__mro__:
+    for klass in mongodb_Field.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -216,14 +216,14 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
-        "NULL",
+        "TIMESTAMP",
+        "DATE",
+        "STRING",
         "JAVASCRIPT",
         "REGEXPR",
-        "DOUBLE",
-        "STRING",
         "BOOLEAN",
-        "DATE",
-        "TIMESTAMP",
+        "NULL",
+        "DOUBLE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -244,39 +244,39 @@ safe_text = st.text(
 IValue_strategy = st.builds(
     IValue,
 )
-mongodb::SubDocument_strategy = st.builds(
-    mongodb::SubDocument,
+mongodb_ValueList_strategy = st.builds(
+    mongodb_ValueList,
 )
-mongodb::ValueList_strategy = st.builds(
-    mongodb::ValueList,
+mongodb_SubDocument_strategy = st.builds(
+    mongodb_SubDocument,
 )
-mongodb::Value_strategy = st.builds(
-    mongodb::Value,
+mongodb_Value_strategy = st.builds(
+    mongodb_Value,
     type=
         safe_text,
     value=
         safe_text
 )
-mongodb::IValue_strategy = st.builds(
-    mongodb::IValue,
+mongodb_IValue_strategy = st.builds(
+    mongodb_IValue,
 )
-mongodb::Document_strategy = st.builds(
-    mongodb::Document,
+mongodb_Document_strategy = st.builds(
+    mongodb_Document,
     _id=
         safe_text
 )
-mongodb::Collection_strategy = st.builds(
-    mongodb::Collection,
+mongodb_Collection_strategy = st.builds(
+    mongodb_Collection,
     name=
         safe_text
 )
-mongodb::Database_strategy = st.builds(
-    mongodb::Database,
+mongodb_Database_strategy = st.builds(
+    mongodb_Database,
     name=
         safe_text
 )
-mongodb::Field_strategy = st.builds(
-    mongodb::Field,
+mongodb_Field_strategy = st.builds(
+    mongodb_Field,
     key=
         safe_text
 )
@@ -286,108 +286,90 @@ mongodb::Field_strategy = st.builds(
 def test_ivalue_instantiation(instance):
     assert isinstance(instance, IValue)
 
-@given(instance=mongodb::SubDocument_strategy)
+@given(instance=mongodb_ValueList_strategy)
 @settings(max_examples=50)
-def test_mongodb::subdocument_instantiation(instance):
-    assert isinstance(instance, mongodb::SubDocument)
+def test_mongodb_valuelist_instantiation(instance):
+    assert isinstance(instance, mongodb_ValueList)
 
-@given(instance=mongodb::ValueList_strategy)
+@given(instance=mongodb_SubDocument_strategy)
 @settings(max_examples=50)
-def test_mongodb::valuelist_instantiation(instance):
-    assert isinstance(instance, mongodb::ValueList)
+def test_mongodb_subdocument_instantiation(instance):
+    assert isinstance(instance, mongodb_SubDocument)
 
-@given(instance=mongodb::Value_strategy)
+@given(instance=mongodb_Value_strategy)
 @settings(max_examples=50)
-def test_mongodb::value_instantiation(instance):
-    assert isinstance(instance, mongodb::Value)
-
-@given(instance=mongodb::Value_strategy)
-def test_mongodb::value_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_mongodb_value_instantiation(instance):
+    assert isinstance(instance, mongodb_Value)
 
 
-@given(instance=mongodb::Value_strategy)
-def test_mongodb::value_type_setter(instance):
+
+@given(instance=mongodb_Value_strategy)
+def test_mongodb_value_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mongodb::Value_strategy)
-def test_mongodb::value_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=mongodb::Value_strategy)
-def test_mongodb::value_value_setter(instance):
+@given(instance=mongodb_Value_strategy)
+def test_mongodb_value_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mongodb::IValue_strategy)
+@given(instance=mongodb_IValue_strategy)
 @settings(max_examples=50)
-def test_mongodb::ivalue_instantiation(instance):
-    assert isinstance(instance, mongodb::IValue)
+def test_mongodb_ivalue_instantiation(instance):
+    assert isinstance(instance, mongodb_IValue)
 
-@given(instance=mongodb::Document_strategy)
+@given(instance=mongodb_Document_strategy)
 @settings(max_examples=50)
-def test_mongodb::document_instantiation(instance):
-    assert isinstance(instance, mongodb::Document)
-
-@given(instance=mongodb::Document_strategy)
-def test_mongodb::document__id_type(instance):
-    assert isinstance(instance._id, str)
+def test_mongodb_document_instantiation(instance):
+    assert isinstance(instance, mongodb_Document)
 
 
-@given(instance=mongodb::Document_strategy)
-def test_mongodb::document__id_setter(instance):
+
+@given(instance=mongodb_Document_strategy)
+def test_mongodb_document__id_setter(instance):
     original = instance._id
     instance._id = original
     assert instance._id == original
 
-@given(instance=mongodb::Collection_strategy)
+@given(instance=mongodb_Collection_strategy)
 @settings(max_examples=50)
-def test_mongodb::collection_instantiation(instance):
-    assert isinstance(instance, mongodb::Collection)
-
-@given(instance=mongodb::Collection_strategy)
-def test_mongodb::collection_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mongodb_collection_instantiation(instance):
+    assert isinstance(instance, mongodb_Collection)
 
 
-@given(instance=mongodb::Collection_strategy)
-def test_mongodb::collection_name_setter(instance):
+
+@given(instance=mongodb_Collection_strategy)
+def test_mongodb_collection_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mongodb::Database_strategy)
+@given(instance=mongodb_Database_strategy)
 @settings(max_examples=50)
-def test_mongodb::database_instantiation(instance):
-    assert isinstance(instance, mongodb::Database)
-
-@given(instance=mongodb::Database_strategy)
-def test_mongodb::database_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mongodb_database_instantiation(instance):
+    assert isinstance(instance, mongodb_Database)
 
 
-@given(instance=mongodb::Database_strategy)
-def test_mongodb::database_name_setter(instance):
+
+@given(instance=mongodb_Database_strategy)
+def test_mongodb_database_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mongodb::Field_strategy)
+@given(instance=mongodb_Field_strategy)
 @settings(max_examples=50)
-def test_mongodb::field_instantiation(instance):
-    assert isinstance(instance, mongodb::Field)
-
-@given(instance=mongodb::Field_strategy)
-def test_mongodb::field_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_mongodb_field_instantiation(instance):
+    assert isinstance(instance, mongodb_Field)
 
 
-@given(instance=mongodb::Field_strategy)
-def test_mongodb::field_key_setter(instance):
+
+@given(instance=mongodb_Field_strategy)
+def test_mongodb_field_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original

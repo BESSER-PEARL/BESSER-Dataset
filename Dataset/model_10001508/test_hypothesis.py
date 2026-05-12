@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Event__,
@@ -74,69 +74,24 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "tickets" in params, "Missing parameter 'tickets'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "birthdate" in params, "Missing parameter 'birthdate'"
-    assert "gender" in params, "Missing parameter 'gender'"
-    assert "events" in params, "Missing parameter 'events'"
-    assert "password" in params, "Missing parameter 'password'"
-    assert "friends" in params, "Missing parameter 'friends'"
-    assert "company" in params, "Missing parameter 'company'"
     assert "selfDescription" in params, "Missing parameter 'selfDescription'"
+    assert "friends" in params, "Missing parameter 'friends'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "tickets" in params, "Missing parameter 'tickets'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "gender" in params, "Missing parameter 'gender'"
+    assert "company" in params, "Missing parameter 'company'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "events" in params, "Missing parameter 'events'"
+    assert "birthdate" in params, "Missing parameter 'birthdate'"
     assert "userImage" in params, "Missing parameter 'userImage'"
 
-def test_user_has_tickets():
-    assert hasattr(User, "tickets")
+def test_user_has_selfDescription():
+    assert hasattr(User, "selfDescription")
     descriptor = None
     for klass in User.__mro__:
-        if "tickets" in klass.__dict__:
-            descriptor = klass.__dict__["tickets"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_id():
-    assert hasattr(User, "id")
-    descriptor = None
-    for klass in User.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_birthdate():
-    assert hasattr(User, "birthdate")
-    descriptor = None
-    for klass in User.__mro__:
-        if "birthdate" in klass.__dict__:
-            descriptor = klass.__dict__["birthdate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_gender():
-    assert hasattr(User, "gender")
-    descriptor = None
-    for klass in User.__mro__:
-        if "gender" in klass.__dict__:
-            descriptor = klass.__dict__["gender"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_events():
-    assert hasattr(User, "events")
-    descriptor = None
-    for klass in User.__mro__:
-        if "events" in klass.__dict__:
-            descriptor = klass.__dict__["events"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_password():
-    assert hasattr(User, "password")
-    descriptor = None
-    for klass in User.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "selfDescription" in klass.__dict__:
+            descriptor = klass.__dict__["selfDescription"]
             break
     assert isinstance(descriptor, property)
 
@@ -149,21 +104,21 @@ def test_user_has_friends():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_company():
-    assert hasattr(User, "company")
+def test_user_has_password():
+    assert hasattr(User, "password")
     descriptor = None
     for klass in User.__mro__:
-        if "company" in klass.__dict__:
-            descriptor = klass.__dict__["company"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_selfDescription():
-    assert hasattr(User, "selfDescription")
+def test_user_has_tickets():
+    assert hasattr(User, "tickets")
     descriptor = None
     for klass in User.__mro__:
-        if "selfDescription" in klass.__dict__:
-            descriptor = klass.__dict__["selfDescription"]
+        if "tickets" in klass.__dict__:
+            descriptor = klass.__dict__["tickets"]
             break
     assert isinstance(descriptor, property)
 
@@ -173,6 +128,51 @@ def test_user_has_name():
     for klass in User.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_gender():
+    assert hasattr(User, "gender")
+    descriptor = None
+    for klass in User.__mro__:
+        if "gender" in klass.__dict__:
+            descriptor = klass.__dict__["gender"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_company():
+    assert hasattr(User, "company")
+    descriptor = None
+    for klass in User.__mro__:
+        if "company" in klass.__dict__:
+            descriptor = klass.__dict__["company"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_id():
+    assert hasattr(User, "id")
+    descriptor = None
+    for klass in User.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_events():
+    assert hasattr(User, "events")
+    descriptor = None
+    for klass in User.__mro__:
+        if "events" in klass.__dict__:
+            descriptor = klass.__dict__["events"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_birthdate():
+    assert hasattr(User, "birthdate")
+    descriptor = None
+    for klass in User.__mro__:
+        if "birthdate" in klass.__dict__:
+            descriptor = klass.__dict__["birthdate"]
             break
     assert isinstance(descriptor, property)
 
@@ -232,42 +232,24 @@ def test_event_constructor_exists():
 def test_event_constructor_args():
     sig = inspect.signature(Event.__init__)
     params = list(sig.parameters.keys())
-    assert "time" in params, "Missing parameter 'time'"
-    assert "about" in params, "Missing parameter 'about'"
-    assert "participants" in params, "Missing parameter 'participants'"
-    assert "placeName" in params, "Missing parameter 'placeName'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "participantCount" in params, "Missing parameter 'participantCount'"
-    assert "type" in params, "Missing parameter 'type'"
+    assert "placeName" in params, "Missing parameter 'placeName'"
     assert "location" in params, "Missing parameter 'location'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "image" in params, "Missing parameter 'image'"
     assert "organizator" in params, "Missing parameter 'organizator'"
     assert "discussion" in params, "Missing parameter 'discussion'"
+    assert "participants" in params, "Missing parameter 'participants'"
+    assert "time" in params, "Missing parameter 'time'"
+    assert "participantCount" in params, "Missing parameter 'participantCount'"
+    assert "about" in params, "Missing parameter 'about'"
 
-def test_event_has_time():
-    assert hasattr(Event, "time")
+def test_event_has_id():
+    assert hasattr(Event, "id")
     descriptor = None
     for klass in Event.__mro__:
-        if "time" in klass.__dict__:
-            descriptor = klass.__dict__["time"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_about():
-    assert hasattr(Event, "about")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "about" in klass.__dict__:
-            descriptor = klass.__dict__["about"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_participants():
-    assert hasattr(Event, "participants")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "participants" in klass.__dict__:
-            descriptor = klass.__dict__["participants"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -280,21 +262,12 @@ def test_event_has_placeName():
             break
     assert isinstance(descriptor, property)
 
-def test_event_has_id():
-    assert hasattr(Event, "id")
+def test_event_has_location():
+    assert hasattr(Event, "location")
     descriptor = None
     for klass in Event.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_participantCount():
-    assert hasattr(Event, "participantCount")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "participantCount" in klass.__dict__:
-            descriptor = klass.__dict__["participantCount"]
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
@@ -304,15 +277,6 @@ def test_event_has_type():
     for klass in Event.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_location():
-    assert hasattr(Event, "location")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
@@ -340,6 +304,42 @@ def test_event_has_discussion():
     for klass in Event.__mro__:
         if "discussion" in klass.__dict__:
             descriptor = klass.__dict__["discussion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_participants():
+    assert hasattr(Event, "participants")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "participants" in klass.__dict__:
+            descriptor = klass.__dict__["participants"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_time():
+    assert hasattr(Event, "time")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "time" in klass.__dict__:
+            descriptor = klass.__dict__["time"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_participantCount():
+    assert hasattr(Event, "participantCount")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "participantCount" in klass.__dict__:
+            descriptor = klass.__dict__["participantCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_about():
+    assert hasattr(Event, "about")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "about" in klass.__dict__:
+            descriptor = klass.__dict__["about"]
             break
     assert isinstance(descriptor, property)
 
@@ -379,26 +379,26 @@ Date_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    tickets=
-        safe_text,
-    id=
-        safe_text,
-    birthdate=
-        st.dates(),
-    gender=
-        safe_text,
-    events=
-        st.none(),
-    password=
+    selfDescription=
         safe_text,
     friends=
         safe_text,
-    company=
+    password=
         safe_text,
-    selfDescription=
+    tickets=
         safe_text,
     name=
         safe_text,
+    gender=
+        safe_text,
+    company=
+        safe_text,
+    id=
+        safe_text,
+    events=
+        st.none(),
+    birthdate=
+        st.dates(),
     userImage=
         safe_text
 )
@@ -411,27 +411,27 @@ Ticket_strategy = st.builds(
 )
 Event_strategy = st.builds(
     Event,
-    time=
-        safe_text,
-    about=
-        safe_text,
-    participants=
-        safe_text,
-    placeName=
-        safe_text,
     id=
         st.none(),
-    participantCount=
-        st.integers(),
-    type=
+    placeName=
         safe_text,
     location=
+        safe_text,
+    type=
         safe_text,
     image=
         safe_text,
     organizator=
         st.none(),
     discussion=
+        safe_text,
+    participants=
+        safe_text,
+    time=
+        safe_text,
+    participantCount=
+        st.integers(),
+    about=
         safe_text
 )
 
@@ -455,97 +455,6 @@ def test_date_instantiation(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_tickets_type(instance):
-    assert isinstance(instance.tickets, str)
-
-
-@given(instance=User_strategy)
-def test_user_tickets_setter(instance):
-    original = instance.tickets
-    instance.tickets = original
-    assert instance.tickets == original
-
-@given(instance=User_strategy)
-def test_user_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=User_strategy)
-def test_user_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=User_strategy)
-def test_user_birthdate_type(instance):
-    assert isinstance(instance.birthdate, date)
-
-
-@given(instance=User_strategy)
-def test_user_birthdate_setter(instance):
-    original = instance.birthdate
-    instance.birthdate = original
-    assert instance.birthdate == original
-
-@given(instance=User_strategy)
-def test_user_gender_type(instance):
-    assert isinstance(instance.gender, str)
-
-
-@given(instance=User_strategy)
-def test_user_gender_setter(instance):
-    original = instance.gender
-    instance.gender = original
-    assert instance.gender == original
-
-@given(instance=User_strategy)
-def test_user_events_type(instance):
-    assert isinstance(instance.events, event__)
-
-
-@given(instance=User_strategy)
-def test_user_events_setter(instance):
-    original = instance.events
-    instance.events = original
-    assert instance.events == original
-
-@given(instance=User_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=User_strategy)
-def test_user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=User_strategy)
-def test_user_friends_type(instance):
-    assert isinstance(instance.friends, str)
-
-
-@given(instance=User_strategy)
-def test_user_friends_setter(instance):
-    original = instance.friends
-    instance.friends = original
-    assert instance.friends == original
-
-@given(instance=User_strategy)
-def test_user_company_type(instance):
-    assert isinstance(instance.company, str)
-
-
-@given(instance=User_strategy)
-def test_user_company_setter(instance):
-    original = instance.company
-    instance.company = original
-    assert instance.company == original
-
-@given(instance=User_strategy)
-def test_user_selfDescription_type(instance):
-    assert isinstance(instance.selfDescription, str)
 
 
 @given(instance=User_strategy)
@@ -554,9 +463,30 @@ def test_user_selfDescription_setter(instance):
     instance.selfDescription = original
     assert instance.selfDescription == original
 
+
+
 @given(instance=User_strategy)
-def test_user_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_user_friends_setter(instance):
+    original = instance.friends
+    instance.friends = original
+    assert instance.friends == original
+
+
+
+@given(instance=User_strategy)
+def test_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=User_strategy)
+def test_user_tickets_setter(instance):
+    original = instance.tickets
+    instance.tickets = original
+    assert instance.tickets == original
+
 
 
 @given(instance=User_strategy)
@@ -565,9 +495,46 @@ def test_user_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
 @given(instance=User_strategy)
-def test_user_userImage_type(instance):
-    assert isinstance(instance.userImage, str)
+def test_user_gender_setter(instance):
+    original = instance.gender
+    instance.gender = original
+    assert instance.gender == original
+
+
+
+@given(instance=User_strategy)
+def test_user_company_setter(instance):
+    original = instance.company
+    instance.company = original
+    assert instance.company == original
+
+
+
+@given(instance=User_strategy)
+def test_user_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=User_strategy)
+def test_user_events_setter(instance):
+    original = instance.events
+    instance.events = original
+    assert instance.events == original
+
+
+
+@given(instance=User_strategy)
+def test_user_birthdate_setter(instance):
+    original = instance.birthdate
+    instance.birthdate = original
+    assert instance.birthdate == original
+
 
 
 @given(instance=User_strategy)
@@ -581,9 +548,6 @@ def test_user_userImage_setter(instance):
 def test_ticket_instantiation(instance):
     assert isinstance(instance, Ticket)
 
-@given(instance=Ticket_strategy)
-def test_ticket_event_type(instance):
-    assert isinstance(instance.event, event)
 
 
 @given(instance=Ticket_strategy)
@@ -592,9 +556,6 @@ def test_ticket_event_setter(instance):
     instance.event = original
     assert instance.event == original
 
-@given(instance=Ticket_strategy)
-def test_ticket_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Ticket_strategy)
@@ -608,53 +569,6 @@ def test_ticket_id_setter(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=Event_strategy)
-def test_event_time_type(instance):
-    assert isinstance(instance.time, str)
-
-
-@given(instance=Event_strategy)
-def test_event_time_setter(instance):
-    original = instance.time
-    instance.time = original
-    assert instance.time == original
-
-@given(instance=Event_strategy)
-def test_event_about_type(instance):
-    assert isinstance(instance.about, str)
-
-
-@given(instance=Event_strategy)
-def test_event_about_setter(instance):
-    original = instance.about
-    instance.about = original
-    assert instance.about == original
-
-@given(instance=Event_strategy)
-def test_event_participants_type(instance):
-    assert isinstance(instance.participants, str)
-
-
-@given(instance=Event_strategy)
-def test_event_participants_setter(instance):
-    original = instance.participants
-    instance.participants = original
-    assert instance.participants == original
-
-@given(instance=Event_strategy)
-def test_event_placeName_type(instance):
-    assert isinstance(instance.placeName, str)
-
-
-@given(instance=Event_strategy)
-def test_event_placeName_setter(instance):
-    original = instance.placeName
-    instance.placeName = original
-    assert instance.placeName == original
-
-@given(instance=Event_strategy)
-def test_event_id_type(instance):
-    assert isinstance(instance.id, string)
 
 
 @given(instance=Event_strategy)
@@ -663,31 +577,14 @@ def test_event_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Event_strategy)
-def test_event_participantCount_type(instance):
-    assert isinstance(instance.participantCount, int)
 
 
 @given(instance=Event_strategy)
-def test_event_participantCount_setter(instance):
-    original = instance.participantCount
-    instance.participantCount = original
-    assert instance.participantCount == original
+def test_event_placeName_setter(instance):
+    original = instance.placeName
+    instance.placeName = original
+    assert instance.placeName == original
 
-@given(instance=Event_strategy)
-def test_event_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Event_strategy)
-def test_event_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Event_strategy)
-def test_event_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=Event_strategy)
@@ -696,9 +593,14 @@ def test_event_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
+
+
 @given(instance=Event_strategy)
-def test_event_image_type(instance):
-    assert isinstance(instance.image, str)
+def test_event_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
 
 
 @given(instance=Event_strategy)
@@ -707,9 +609,6 @@ def test_event_image_setter(instance):
     instance.image = original
     assert instance.image == original
 
-@given(instance=Event_strategy)
-def test_event_organizator_type(instance):
-    assert isinstance(instance.organizator, user)
 
 
 @given(instance=Event_strategy)
@@ -718,9 +617,6 @@ def test_event_organizator_setter(instance):
     instance.organizator = original
     assert instance.organizator == original
 
-@given(instance=Event_strategy)
-def test_event_discussion_type(instance):
-    assert isinstance(instance.discussion, str)
 
 
 @given(instance=Event_strategy)
@@ -728,3 +624,35 @@ def test_event_discussion_setter(instance):
     original = instance.discussion
     instance.discussion = original
     assert instance.discussion == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_participants_setter(instance):
+    original = instance.participants
+    instance.participants = original
+    assert instance.participants == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_time_setter(instance):
+    original = instance.time
+    instance.time = original
+    assert instance.time == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_participantCount_setter(instance):
+    original = instance.participantCount
+    instance.participantCount = original
+    assert instance.participantCount == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_about_setter(instance):
+    original = instance.about
+    instance.about = original
+    assert instance.about == original

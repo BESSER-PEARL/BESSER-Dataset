@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    standard::PopulationGroup,
+from python_code import (
+    standard_PopulationGroup,
     EarthSciencePopulationInitializer,
-    standard::YetiPopulationInitializer,
+    standard_YetiPopulationInitializer,
     PopulationInitializer,
-    standard::EarthSciencePopulationInitializer,
-    standard::StandardPopulationInitializer,
+    standard_EarthSciencePopulationInitializer,
+    standard_StandardPopulationInitializer,
     NodeDecorator,
     StandardPopulationModel,
-    standard::SeasonalPopulationModel,
-    standard::DemographicPopulationModel,
-    standard::StochasticStandardPopulationModel,
+    standard_DemographicPopulationModel,
+    standard_SeasonalPopulationModel,
+    standard_StochasticStandardPopulationModel,
     IntegrationLabelValue,
     PopulationModelLabelValue,
     LabelValue,
-    standard::PopulationModelLabelValue,
-    standard::IntegrationDecorator,
-    standard::IntegrationLabelValue,
-    standard::IntegrationLabel,
-    standard::StandardPopulationModelLabelValue,
+    standard_PopulationModelLabelValue,
+    standard_IntegrationDecorator,
+    standard_IntegrationLabelValue,
+    standard_IntegrationLabel,
+    standard_StandardPopulationModelLabelValue,
     IntegrationLabel,
     PopulationModelLabel,
-    standard::StandardPopulationModelLabel,
-    standard::PopulationLabel,
+    standard_StandardPopulationModelLabel,
+    standard_PopulationLabel,
     DynamicNodeLabel,
-    standard::PopulationModelLabel,
+    standard_PopulationModelLabel,
     IntegrationDecorator,
     PopulationModel,
-    standard::StandardPopulationModel,
+    standard_StandardPopulationModel,
     Modifiable,
-    standard::PopulationInitializer,
-    standard::PopulationModel,
+    standard_PopulationInitializer,
+    standard_PopulationModel,
 )
 
 # =============================================================================
@@ -45,35 +45,35 @@ from classes import (
 
 
 
-def test_standard::populationgroup_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationGroup)
+def test_standard_populationgroup_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationGroup)
 
 
-def test_standard::populationgroup_constructor_exists():
-    assert callable(standard::PopulationGroup.__init__)
+def test_standard_populationgroup_constructor_exists():
+    assert callable(standard_PopulationGroup.__init__)
 
 
-def test_standard::populationgroup_constructor_args():
-    sig = inspect.signature(standard::PopulationGroup.__init__)
+def test_standard_populationgroup_constructor_args():
+    sig = inspect.signature(standard_PopulationGroup.__init__)
     params = list(sig.parameters.keys())
-    assert "fraction" in params, "Missing parameter 'fraction'"
     assert "identifier" in params, "Missing parameter 'identifier'"
+    assert "fraction" in params, "Missing parameter 'fraction'"
 
-def test_standard::populationgroup_has_fraction():
-    assert hasattr(standard::PopulationGroup, "fraction")
+def test_standard_populationgroup_has_identifier():
+    assert hasattr(standard_PopulationGroup, "identifier")
     descriptor = None
-    for klass in standard::PopulationGroup.__mro__:
-        if "fraction" in klass.__dict__:
-            descriptor = klass.__dict__["fraction"]
+    for klass in standard_PopulationGroup.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::populationgroup_has_identifier():
-    assert hasattr(standard::PopulationGroup, "identifier")
+def test_standard_populationgroup_has_fraction():
+    assert hasattr(standard_PopulationGroup, "fraction")
     descriptor = None
-    for klass in standard::PopulationGroup.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
+    for klass in standard_PopulationGroup.__mro__:
+        if "fraction" in klass.__dict__:
+            descriptor = klass.__dict__["fraction"]
             break
     assert isinstance(descriptor, property)
 
@@ -93,16 +93,16 @@ def test_earthsciencepopulationinitializer_constructor_args():
 
 
 
-def test_standard::yetipopulationinitializer_is_not_abstract():
-    assert not inspect.isabstract(standard::YetiPopulationInitializer)
+def test_standard_yetipopulationinitializer_is_not_abstract():
+    assert not inspect.isabstract(standard_YetiPopulationInitializer)
 
 
-def test_standard::yetipopulationinitializer_constructor_exists():
-    assert callable(standard::YetiPopulationInitializer.__init__)
+def test_standard_yetipopulationinitializer_constructor_exists():
+    assert callable(standard_YetiPopulationInitializer.__init__)
 
 
-def test_standard::yetipopulationinitializer_constructor_args():
-    sig = inspect.signature(standard::YetiPopulationInitializer.__init__)
+def test_standard_yetipopulationinitializer_constructor_args():
+    sig = inspect.signature(standard_YetiPopulationInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -121,49 +121,49 @@ def test_populationinitializer_constructor_args():
 
 
 
-def test_standard::earthsciencepopulationinitializer_is_not_abstract():
-    assert not inspect.isabstract(standard::EarthSciencePopulationInitializer)
+def test_standard_earthsciencepopulationinitializer_is_not_abstract():
+    assert not inspect.isabstract(standard_EarthSciencePopulationInitializer)
 
 
-def test_standard::earthsciencepopulationinitializer_constructor_exists():
-    assert callable(standard::EarthSciencePopulationInitializer.__init__)
+def test_standard_earthsciencepopulationinitializer_constructor_exists():
+    assert callable(standard_EarthSciencePopulationInitializer.__init__)
 
 
-def test_standard::earthsciencepopulationinitializer_constructor_args():
-    sig = inspect.signature(standard::EarthSciencePopulationInitializer.__init__)
+def test_standard_earthsciencepopulationinitializer_constructor_args():
+    sig = inspect.signature(standard_EarthSciencePopulationInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::standardpopulationinitializer_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardPopulationInitializer)
+def test_standard_standardpopulationinitializer_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardPopulationInitializer)
 
 
-def test_standard::standardpopulationinitializer_constructor_exists():
-    assert callable(standard::StandardPopulationInitializer.__init__)
+def test_standard_standardpopulationinitializer_constructor_exists():
+    assert callable(standard_StandardPopulationInitializer.__init__)
 
 
-def test_standard::standardpopulationinitializer_constructor_args():
-    sig = inspect.signature(standard::StandardPopulationInitializer.__init__)
+def test_standard_standardpopulationinitializer_constructor_args():
+    sig = inspect.signature(standard_StandardPopulationInitializer.__init__)
     params = list(sig.parameters.keys())
-    assert "useDensity" in params, "Missing parameter 'useDensity'"
     assert "individuals" in params, "Missing parameter 'individuals'"
+    assert "useDensity" in params, "Missing parameter 'useDensity'"
 
-def test_standard::standardpopulationinitializer_has_useDensity():
-    assert hasattr(standard::StandardPopulationInitializer, "useDensity")
+def test_standard_standardpopulationinitializer_has_individuals():
+    assert hasattr(standard_StandardPopulationInitializer, "individuals")
     descriptor = None
-    for klass in standard::StandardPopulationInitializer.__mro__:
-        if "useDensity" in klass.__dict__:
-            descriptor = klass.__dict__["useDensity"]
+    for klass in standard_StandardPopulationInitializer.__mro__:
+        if "individuals" in klass.__dict__:
+            descriptor = klass.__dict__["individuals"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standardpopulationinitializer_has_individuals():
-    assert hasattr(standard::StandardPopulationInitializer, "individuals")
+def test_standard_standardpopulationinitializer_has_useDensity():
+    assert hasattr(standard_StandardPopulationInitializer, "useDensity")
     descriptor = None
-    for klass in standard::StandardPopulationInitializer.__mro__:
-        if "individuals" in klass.__dict__:
-            descriptor = klass.__dict__["individuals"]
+    for klass in standard_StandardPopulationInitializer.__mro__:
+        if "useDensity" in klass.__dict__:
+            descriptor = klass.__dict__["useDensity"]
             break
     assert isinstance(descriptor, property)
 
@@ -197,91 +197,91 @@ def test_standardpopulationmodel_constructor_args():
 
 
 
-def test_standard::seasonalpopulationmodel_is_not_abstract():
-    assert not inspect.isabstract(standard::SeasonalPopulationModel)
+def test_standard_demographicpopulationmodel_is_not_abstract():
+    assert not inspect.isabstract(standard_DemographicPopulationModel)
 
 
-def test_standard::seasonalpopulationmodel_constructor_exists():
-    assert callable(standard::SeasonalPopulationModel.__init__)
+def test_standard_demographicpopulationmodel_constructor_exists():
+    assert callable(standard_DemographicPopulationModel.__init__)
 
 
-def test_standard::seasonalpopulationmodel_constructor_args():
-    sig = inspect.signature(standard::SeasonalPopulationModel.__init__)
+def test_standard_demographicpopulationmodel_constructor_args():
+    sig = inspect.signature(standard_DemographicPopulationModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_standard_seasonalpopulationmodel_is_not_abstract():
+    assert not inspect.isabstract(standard_SeasonalPopulationModel)
+
+
+def test_standard_seasonalpopulationmodel_constructor_exists():
+    assert callable(standard_SeasonalPopulationModel.__init__)
+
+
+def test_standard_seasonalpopulationmodel_constructor_args():
+    sig = inspect.signature(standard_SeasonalPopulationModel.__init__)
     params = list(sig.parameters.keys())
     assert "modulationAmplitude" in params, "Missing parameter 'modulationAmplitude'"
-    assert "period" in params, "Missing parameter 'period'"
-    assert "useLatitude" in params, "Missing parameter 'useLatitude'"
     assert "phase" in params, "Missing parameter 'phase'"
+    assert "useLatitude" in params, "Missing parameter 'useLatitude'"
+    assert "period" in params, "Missing parameter 'period'"
 
-def test_standard::seasonalpopulationmodel_has_modulationAmplitude():
-    assert hasattr(standard::SeasonalPopulationModel, "modulationAmplitude")
+def test_standard_seasonalpopulationmodel_has_modulationAmplitude():
+    assert hasattr(standard_SeasonalPopulationModel, "modulationAmplitude")
     descriptor = None
-    for klass in standard::SeasonalPopulationModel.__mro__:
+    for klass in standard_SeasonalPopulationModel.__mro__:
         if "modulationAmplitude" in klass.__dict__:
             descriptor = klass.__dict__["modulationAmplitude"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::seasonalpopulationmodel_has_period():
-    assert hasattr(standard::SeasonalPopulationModel, "period")
+def test_standard_seasonalpopulationmodel_has_phase():
+    assert hasattr(standard_SeasonalPopulationModel, "phase")
     descriptor = None
-    for klass in standard::SeasonalPopulationModel.__mro__:
-        if "period" in klass.__dict__:
-            descriptor = klass.__dict__["period"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::seasonalpopulationmodel_has_useLatitude():
-    assert hasattr(standard::SeasonalPopulationModel, "useLatitude")
-    descriptor = None
-    for klass in standard::SeasonalPopulationModel.__mro__:
-        if "useLatitude" in klass.__dict__:
-            descriptor = klass.__dict__["useLatitude"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::seasonalpopulationmodel_has_phase():
-    assert hasattr(standard::SeasonalPopulationModel, "phase")
-    descriptor = None
-    for klass in standard::SeasonalPopulationModel.__mro__:
+    for klass in standard_SeasonalPopulationModel.__mro__:
         if "phase" in klass.__dict__:
             descriptor = klass.__dict__["phase"]
             break
     assert isinstance(descriptor, property)
 
+def test_standard_seasonalpopulationmodel_has_useLatitude():
+    assert hasattr(standard_SeasonalPopulationModel, "useLatitude")
+    descriptor = None
+    for klass in standard_SeasonalPopulationModel.__mro__:
+        if "useLatitude" in klass.__dict__:
+            descriptor = klass.__dict__["useLatitude"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_seasonalpopulationmodel_has_period():
+    assert hasattr(standard_SeasonalPopulationModel, "period")
+    descriptor = None
+    for klass in standard_SeasonalPopulationModel.__mro__:
+        if "period" in klass.__dict__:
+            descriptor = klass.__dict__["period"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_standard::demographicpopulationmodel_is_not_abstract():
-    assert not inspect.isabstract(standard::DemographicPopulationModel)
+
+def test_standard_stochasticstandardpopulationmodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StochasticStandardPopulationModel)
 
 
-def test_standard::demographicpopulationmodel_constructor_exists():
-    assert callable(standard::DemographicPopulationModel.__init__)
+def test_standard_stochasticstandardpopulationmodel_constructor_exists():
+    assert callable(standard_StochasticStandardPopulationModel.__init__)
 
 
-def test_standard::demographicpopulationmodel_constructor_args():
-    sig = inspect.signature(standard::DemographicPopulationModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_standard::stochasticstandardpopulationmodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StochasticStandardPopulationModel)
-
-
-def test_standard::stochasticstandardpopulationmodel_constructor_exists():
-    assert callable(standard::StochasticStandardPopulationModel.__init__)
-
-
-def test_standard::stochasticstandardpopulationmodel_constructor_args():
-    sig = inspect.signature(standard::StochasticStandardPopulationModel.__init__)
+def test_standard_stochasticstandardpopulationmodel_constructor_args():
+    sig = inspect.signature(standard_StochasticStandardPopulationModel.__init__)
     params = list(sig.parameters.keys())
     assert "gain" in params, "Missing parameter 'gain'"
 
-def test_standard::stochasticstandardpopulationmodel_has_gain():
-    assert hasattr(standard::StochasticStandardPopulationModel, "gain")
+def test_standard_stochasticstandardpopulationmodel_has_gain():
+    assert hasattr(standard_StochasticStandardPopulationModel, "gain")
     descriptor = None
-    for klass in standard::StochasticStandardPopulationModel.__mro__:
+    for klass in standard_StochasticStandardPopulationModel.__mro__:
         if "gain" in klass.__dict__:
             descriptor = klass.__dict__["gain"]
             break
@@ -331,121 +331,121 @@ def test_labelvalue_constructor_args():
 
 
 
-def test_standard::populationmodellabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationModelLabelValue)
+def test_standard_populationmodellabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationModelLabelValue)
 
 
-def test_standard::populationmodellabelvalue_constructor_exists():
-    assert callable(standard::PopulationModelLabelValue.__init__)
+def test_standard_populationmodellabelvalue_constructor_exists():
+    assert callable(standard_PopulationModelLabelValue.__init__)
 
 
-def test_standard::populationmodellabelvalue_constructor_args():
-    sig = inspect.signature(standard::PopulationModelLabelValue.__init__)
+def test_standard_populationmodellabelvalue_constructor_args():
+    sig = inspect.signature(standard_PopulationModelLabelValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::integrationdecorator_is_not_abstract():
-    assert not inspect.isabstract(standard::IntegrationDecorator)
+def test_standard_integrationdecorator_is_not_abstract():
+    assert not inspect.isabstract(standard_IntegrationDecorator)
 
 
-def test_standard::integrationdecorator_constructor_exists():
-    assert callable(standard::IntegrationDecorator.__init__)
+def test_standard_integrationdecorator_constructor_exists():
+    assert callable(standard_IntegrationDecorator.__init__)
 
 
-def test_standard::integrationdecorator_constructor_args():
-    sig = inspect.signature(standard::IntegrationDecorator.__init__)
+def test_standard_integrationdecorator_constructor_args():
+    sig = inspect.signature(standard_IntegrationDecorator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::integrationlabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::IntegrationLabelValue)
+def test_standard_integrationlabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_IntegrationLabelValue)
 
 
-def test_standard::integrationlabelvalue_constructor_exists():
-    assert callable(standard::IntegrationLabelValue.__init__)
+def test_standard_integrationlabelvalue_constructor_exists():
+    assert callable(standard_IntegrationLabelValue.__init__)
 
 
-def test_standard::integrationlabelvalue_constructor_args():
-    sig = inspect.signature(standard::IntegrationLabelValue.__init__)
+def test_standard_integrationlabelvalue_constructor_args():
+    sig = inspect.signature(standard_IntegrationLabelValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::integrationlabel_is_not_abstract():
-    assert not inspect.isabstract(standard::IntegrationLabel)
+def test_standard_integrationlabel_is_not_abstract():
+    assert not inspect.isabstract(standard_IntegrationLabel)
 
 
-def test_standard::integrationlabel_constructor_exists():
-    assert callable(standard::IntegrationLabel.__init__)
+def test_standard_integrationlabel_constructor_exists():
+    assert callable(standard_IntegrationLabel.__init__)
 
 
-def test_standard::integrationlabel_constructor_args():
-    sig = inspect.signature(standard::IntegrationLabel.__init__)
+def test_standard_integrationlabel_constructor_args():
+    sig = inspect.signature(standard_IntegrationLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::standardpopulationmodellabelvalue_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardPopulationModelLabelValue)
+def test_standard_standardpopulationmodellabelvalue_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardPopulationModelLabelValue)
 
 
-def test_standard::standardpopulationmodellabelvalue_constructor_exists():
-    assert callable(standard::StandardPopulationModelLabelValue.__init__)
+def test_standard_standardpopulationmodellabelvalue_constructor_exists():
+    assert callable(standard_StandardPopulationModelLabelValue.__init__)
 
 
-def test_standard::standardpopulationmodellabelvalue_constructor_args():
-    sig = inspect.signature(standard::StandardPopulationModelLabelValue.__init__)
+def test_standard_standardpopulationmodellabelvalue_constructor_args():
+    sig = inspect.signature(standard_StandardPopulationModelLabelValue.__init__)
     params = list(sig.parameters.keys())
     assert "deaths" in params, "Missing parameter 'deaths'"
-    assert "births" in params, "Missing parameter 'births'"
     assert "density" in params, "Missing parameter 'density'"
-    assert "incidence" in params, "Missing parameter 'incidence'"
+    assert "births" in params, "Missing parameter 'births'"
     assert "count" in params, "Missing parameter 'count'"
+    assert "incidence" in params, "Missing parameter 'incidence'"
 
-def test_standard::standardpopulationmodellabelvalue_has_deaths():
-    assert hasattr(standard::StandardPopulationModelLabelValue, "deaths")
+def test_standard_standardpopulationmodellabelvalue_has_deaths():
+    assert hasattr(standard_StandardPopulationModelLabelValue, "deaths")
     descriptor = None
-    for klass in standard::StandardPopulationModelLabelValue.__mro__:
+    for klass in standard_StandardPopulationModelLabelValue.__mro__:
         if "deaths" in klass.__dict__:
             descriptor = klass.__dict__["deaths"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standardpopulationmodellabelvalue_has_births():
-    assert hasattr(standard::StandardPopulationModelLabelValue, "births")
+def test_standard_standardpopulationmodellabelvalue_has_density():
+    assert hasattr(standard_StandardPopulationModelLabelValue, "density")
     descriptor = None
-    for klass in standard::StandardPopulationModelLabelValue.__mro__:
-        if "births" in klass.__dict__:
-            descriptor = klass.__dict__["births"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::standardpopulationmodellabelvalue_has_density():
-    assert hasattr(standard::StandardPopulationModelLabelValue, "density")
-    descriptor = None
-    for klass in standard::StandardPopulationModelLabelValue.__mro__:
+    for klass in standard_StandardPopulationModelLabelValue.__mro__:
         if "density" in klass.__dict__:
             descriptor = klass.__dict__["density"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standardpopulationmodellabelvalue_has_incidence():
-    assert hasattr(standard::StandardPopulationModelLabelValue, "incidence")
+def test_standard_standardpopulationmodellabelvalue_has_births():
+    assert hasattr(standard_StandardPopulationModelLabelValue, "births")
     descriptor = None
-    for klass in standard::StandardPopulationModelLabelValue.__mro__:
-        if "incidence" in klass.__dict__:
-            descriptor = klass.__dict__["incidence"]
+    for klass in standard_StandardPopulationModelLabelValue.__mro__:
+        if "births" in klass.__dict__:
+            descriptor = klass.__dict__["births"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standardpopulationmodellabelvalue_has_count():
-    assert hasattr(standard::StandardPopulationModelLabelValue, "count")
+def test_standard_standardpopulationmodellabelvalue_has_count():
+    assert hasattr(standard_StandardPopulationModelLabelValue, "count")
     descriptor = None
-    for klass in standard::StandardPopulationModelLabelValue.__mro__:
+    for klass in standard_StandardPopulationModelLabelValue.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_standardpopulationmodellabelvalue_has_incidence():
+    assert hasattr(standard_StandardPopulationModelLabelValue, "incidence")
+    descriptor = None
+    for klass in standard_StandardPopulationModelLabelValue.__mro__:
+        if "incidence" in klass.__dict__:
+            descriptor = klass.__dict__["incidence"]
             break
     assert isinstance(descriptor, property)
 
@@ -479,30 +479,30 @@ def test_populationmodellabel_constructor_args():
 
 
 
-def test_standard::standardpopulationmodellabel_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardPopulationModelLabel)
+def test_standard_standardpopulationmodellabel_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardPopulationModelLabel)
 
 
-def test_standard::standardpopulationmodellabel_constructor_exists():
-    assert callable(standard::StandardPopulationModelLabel.__init__)
+def test_standard_standardpopulationmodellabel_constructor_exists():
+    assert callable(standard_StandardPopulationModelLabel.__init__)
 
 
-def test_standard::standardpopulationmodellabel_constructor_args():
-    sig = inspect.signature(standard::StandardPopulationModelLabel.__init__)
+def test_standard_standardpopulationmodellabel_constructor_args():
+    sig = inspect.signature(standard_StandardPopulationModelLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::populationlabel_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationLabel)
+def test_standard_populationlabel_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationLabel)
 
 
-def test_standard::populationlabel_constructor_exists():
-    assert callable(standard::PopulationLabel.__init__)
+def test_standard_populationlabel_constructor_exists():
+    assert callable(standard_PopulationLabel.__init__)
 
 
-def test_standard::populationlabel_constructor_args():
-    sig = inspect.signature(standard::PopulationLabel.__init__)
+def test_standard_populationlabel_constructor_args():
+    sig = inspect.signature(standard_PopulationLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -521,23 +521,23 @@ def test_dynamicnodelabel_constructor_args():
 
 
 
-def test_standard::populationmodellabel_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationModelLabel)
+def test_standard_populationmodellabel_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationModelLabel)
 
 
-def test_standard::populationmodellabel_constructor_exists():
-    assert callable(standard::PopulationModelLabel.__init__)
+def test_standard_populationmodellabel_constructor_exists():
+    assert callable(standard_PopulationModelLabel.__init__)
 
 
-def test_standard::populationmodellabel_constructor_args():
-    sig = inspect.signature(standard::PopulationModelLabel.__init__)
+def test_standard_populationmodellabel_constructor_args():
+    sig = inspect.signature(standard_PopulationModelLabel.__init__)
     params = list(sig.parameters.keys())
     assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
 
-def test_standard::populationmodellabel_has_populationIdentifier():
-    assert hasattr(standard::PopulationModelLabel, "populationIdentifier")
+def test_standard_populationmodellabel_has_populationIdentifier():
+    assert hasattr(standard_PopulationModelLabel, "populationIdentifier")
     descriptor = None
-    for klass in standard::PopulationModelLabel.__mro__:
+    for klass in standard_PopulationModelLabel.__mro__:
         if "populationIdentifier" in klass.__dict__:
             descriptor = klass.__dict__["populationIdentifier"]
             break
@@ -573,45 +573,45 @@ def test_populationmodel_constructor_args():
 
 
 
-def test_standard::standardpopulationmodel_is_not_abstract():
-    assert not inspect.isabstract(standard::StandardPopulationModel)
+def test_standard_standardpopulationmodel_is_not_abstract():
+    assert not inspect.isabstract(standard_StandardPopulationModel)
 
 
-def test_standard::standardpopulationmodel_constructor_exists():
-    assert callable(standard::StandardPopulationModel.__init__)
+def test_standard_standardpopulationmodel_constructor_exists():
+    assert callable(standard_StandardPopulationModel.__init__)
 
 
-def test_standard::standardpopulationmodel_constructor_args():
-    sig = inspect.signature(standard::StandardPopulationModel.__init__)
+def test_standard_standardpopulationmodel_constructor_args():
+    sig = inspect.signature(standard_StandardPopulationModel.__init__)
     params = list(sig.parameters.keys())
-    assert "deathRate" in params, "Missing parameter 'deathRate'"
-    assert "birthRate" in params, "Missing parameter 'birthRate'"
     assert "timePeriod" in params, "Missing parameter 'timePeriod'"
+    assert "birthRate" in params, "Missing parameter 'birthRate'"
+    assert "deathRate" in params, "Missing parameter 'deathRate'"
 
-def test_standard::standardpopulationmodel_has_deathRate():
-    assert hasattr(standard::StandardPopulationModel, "deathRate")
+def test_standard_standardpopulationmodel_has_timePeriod():
+    assert hasattr(standard_StandardPopulationModel, "timePeriod")
     descriptor = None
-    for klass in standard::StandardPopulationModel.__mro__:
-        if "deathRate" in klass.__dict__:
-            descriptor = klass.__dict__["deathRate"]
+    for klass in standard_StandardPopulationModel.__mro__:
+        if "timePeriod" in klass.__dict__:
+            descriptor = klass.__dict__["timePeriod"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standardpopulationmodel_has_birthRate():
-    assert hasattr(standard::StandardPopulationModel, "birthRate")
+def test_standard_standardpopulationmodel_has_birthRate():
+    assert hasattr(standard_StandardPopulationModel, "birthRate")
     descriptor = None
-    for klass in standard::StandardPopulationModel.__mro__:
+    for klass in standard_StandardPopulationModel.__mro__:
         if "birthRate" in klass.__dict__:
             descriptor = klass.__dict__["birthRate"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::standardpopulationmodel_has_timePeriod():
-    assert hasattr(standard::StandardPopulationModel, "timePeriod")
+def test_standard_standardpopulationmodel_has_deathRate():
+    assert hasattr(standard_StandardPopulationModel, "deathRate")
     descriptor = None
-    for klass in standard::StandardPopulationModel.__mro__:
-        if "timePeriod" in klass.__dict__:
-            descriptor = klass.__dict__["timePeriod"]
+    for klass in standard_StandardPopulationModel.__mro__:
+        if "deathRate" in klass.__dict__:
+            descriptor = klass.__dict__["deathRate"]
             break
     assert isinstance(descriptor, property)
 
@@ -631,79 +631,79 @@ def test_modifiable_constructor_args():
 
 
 
-def test_standard::populationinitializer_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationInitializer)
+def test_standard_populationinitializer_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationInitializer)
 
 
-def test_standard::populationinitializer_constructor_exists():
-    assert callable(standard::PopulationInitializer.__init__)
+def test_standard_populationinitializer_constructor_exists():
+    assert callable(standard_PopulationInitializer.__init__)
 
 
-def test_standard::populationinitializer_constructor_args():
-    sig = inspect.signature(standard::PopulationInitializer.__init__)
+def test_standard_populationinitializer_constructor_args():
+    sig = inspect.signature(standard_PopulationInitializer.__init__)
     params = list(sig.parameters.keys())
-    assert "targetISOKey" in params, "Missing parameter 'targetISOKey'"
     assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
+    assert "targetISOKey" in params, "Missing parameter 'targetISOKey'"
 
-def test_standard::populationinitializer_has_targetISOKey():
-    assert hasattr(standard::PopulationInitializer, "targetISOKey")
+def test_standard_populationinitializer_has_populationIdentifier():
+    assert hasattr(standard_PopulationInitializer, "populationIdentifier")
     descriptor = None
-    for klass in standard::PopulationInitializer.__mro__:
-        if "targetISOKey" in klass.__dict__:
-            descriptor = klass.__dict__["targetISOKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::populationinitializer_has_populationIdentifier():
-    assert hasattr(standard::PopulationInitializer, "populationIdentifier")
-    descriptor = None
-    for klass in standard::PopulationInitializer.__mro__:
+    for klass in standard_PopulationInitializer.__mro__:
         if "populationIdentifier" in klass.__dict__:
             descriptor = klass.__dict__["populationIdentifier"]
             break
     assert isinstance(descriptor, property)
 
+def test_standard_populationinitializer_has_targetISOKey():
+    assert hasattr(standard_PopulationInitializer, "targetISOKey")
+    descriptor = None
+    for klass in standard_PopulationInitializer.__mro__:
+        if "targetISOKey" in klass.__dict__:
+            descriptor = klass.__dict__["targetISOKey"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_standard::populationmodel_is_not_abstract():
-    assert not inspect.isabstract(standard::PopulationModel)
+
+def test_standard_populationmodel_is_not_abstract():
+    assert not inspect.isabstract(standard_PopulationModel)
 
 
-def test_standard::populationmodel_constructor_exists():
-    assert callable(standard::PopulationModel.__init__)
+def test_standard_populationmodel_constructor_exists():
+    assert callable(standard_PopulationModel.__init__)
 
 
-def test_standard::populationmodel_constructor_args():
-    sig = inspect.signature(standard::PopulationModel.__init__)
+def test_standard_populationmodel_constructor_args():
+    sig = inspect.signature(standard_PopulationModel.__init__)
     params = list(sig.parameters.keys())
-    assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
     assert "targetISOKey" in params, "Missing parameter 'targetISOKey'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "populationIdentifier" in params, "Missing parameter 'populationIdentifier'"
 
-def test_standard::populationmodel_has_populationIdentifier():
-    assert hasattr(standard::PopulationModel, "populationIdentifier")
+def test_standard_populationmodel_has_targetISOKey():
+    assert hasattr(standard_PopulationModel, "targetISOKey")
     descriptor = None
-    for klass in standard::PopulationModel.__mro__:
-        if "populationIdentifier" in klass.__dict__:
-            descriptor = klass.__dict__["populationIdentifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_standard::populationmodel_has_targetISOKey():
-    assert hasattr(standard::PopulationModel, "targetISOKey")
-    descriptor = None
-    for klass in standard::PopulationModel.__mro__:
+    for klass in standard_PopulationModel.__mro__:
         if "targetISOKey" in klass.__dict__:
             descriptor = klass.__dict__["targetISOKey"]
             break
     assert isinstance(descriptor, property)
 
-def test_standard::populationmodel_has_name():
-    assert hasattr(standard::PopulationModel, "name")
+def test_standard_populationmodel_has_name():
+    assert hasattr(standard_PopulationModel, "name")
     descriptor = None
-    for klass in standard::PopulationModel.__mro__:
+    for klass in standard_PopulationModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_standard_populationmodel_has_populationIdentifier():
+    assert hasattr(standard_PopulationModel, "populationIdentifier")
+    descriptor = None
+    for klass in standard_PopulationModel.__mro__:
+        if "populationIdentifier" in klass.__dict__:
+            descriptor = klass.__dict__["populationIdentifier"]
             break
     assert isinstance(descriptor, property)
 
@@ -719,31 +719,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-standard::PopulationGroup_strategy = st.builds(
-    standard::PopulationGroup,
-    fraction=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+standard_PopulationGroup_strategy = st.builds(
+    standard_PopulationGroup,
     identifier=
-        safe_text
+        safe_text,
+    fraction=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 EarthSciencePopulationInitializer_strategy = st.builds(
     EarthSciencePopulationInitializer,
 )
-standard::YetiPopulationInitializer_strategy = st.builds(
-    standard::YetiPopulationInitializer,
+standard_YetiPopulationInitializer_strategy = st.builds(
+    standard_YetiPopulationInitializer,
 )
 PopulationInitializer_strategy = st.builds(
     PopulationInitializer,
 )
-standard::EarthSciencePopulationInitializer_strategy = st.builds(
-    standard::EarthSciencePopulationInitializer,
+standard_EarthSciencePopulationInitializer_strategy = st.builds(
+    standard_EarthSciencePopulationInitializer,
 )
-standard::StandardPopulationInitializer_strategy = st.builds(
-    standard::StandardPopulationInitializer,
-    useDensity=
-        st.booleans(),
+standard_StandardPopulationInitializer_strategy = st.builds(
+    standard_StandardPopulationInitializer,
     individuals=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    useDensity=
+        st.booleans()
 )
 NodeDecorator_strategy = st.builds(
     NodeDecorator,
@@ -751,22 +751,22 @@ NodeDecorator_strategy = st.builds(
 StandardPopulationModel_strategy = st.builds(
     StandardPopulationModel,
 )
-standard::SeasonalPopulationModel_strategy = st.builds(
-    standard::SeasonalPopulationModel,
+standard_DemographicPopulationModel_strategy = st.builds(
+    standard_DemographicPopulationModel,
+)
+standard_SeasonalPopulationModel_strategy = st.builds(
+    standard_SeasonalPopulationModel,
     modulationAmplitude=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    period=
+    phase=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     useLatitude=
         st.booleans(),
-    phase=
+    period=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-standard::DemographicPopulationModel_strategy = st.builds(
-    standard::DemographicPopulationModel,
-)
-standard::StochasticStandardPopulationModel_strategy = st.builds(
-    standard::StochasticStandardPopulationModel,
+standard_StochasticStandardPopulationModel_strategy = st.builds(
+    standard_StochasticStandardPopulationModel,
     gain=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -779,29 +779,29 @@ PopulationModelLabelValue_strategy = st.builds(
 LabelValue_strategy = st.builds(
     LabelValue,
 )
-standard::PopulationModelLabelValue_strategy = st.builds(
-    standard::PopulationModelLabelValue,
+standard_PopulationModelLabelValue_strategy = st.builds(
+    standard_PopulationModelLabelValue,
 )
-standard::IntegrationDecorator_strategy = st.builds(
-    standard::IntegrationDecorator,
+standard_IntegrationDecorator_strategy = st.builds(
+    standard_IntegrationDecorator,
 )
-standard::IntegrationLabelValue_strategy = st.builds(
-    standard::IntegrationLabelValue,
+standard_IntegrationLabelValue_strategy = st.builds(
+    standard_IntegrationLabelValue,
 )
-standard::IntegrationLabel_strategy = st.builds(
-    standard::IntegrationLabel,
+standard_IntegrationLabel_strategy = st.builds(
+    standard_IntegrationLabel,
 )
-standard::StandardPopulationModelLabelValue_strategy = st.builds(
-    standard::StandardPopulationModelLabelValue,
+standard_StandardPopulationModelLabelValue_strategy = st.builds(
+    standard_StandardPopulationModelLabelValue,
     deaths=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    births=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     density=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    incidence=
+    births=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     count=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    incidence=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 IntegrationLabel_strategy = st.builds(
@@ -810,17 +810,17 @@ IntegrationLabel_strategy = st.builds(
 PopulationModelLabel_strategy = st.builds(
     PopulationModelLabel,
 )
-standard::StandardPopulationModelLabel_strategy = st.builds(
-    standard::StandardPopulationModelLabel,
+standard_StandardPopulationModelLabel_strategy = st.builds(
+    standard_StandardPopulationModelLabel,
 )
-standard::PopulationLabel_strategy = st.builds(
-    standard::PopulationLabel,
+standard_PopulationLabel_strategy = st.builds(
+    standard_PopulationLabel,
 )
 DynamicNodeLabel_strategy = st.builds(
     DynamicNodeLabel,
 )
-standard::PopulationModelLabel_strategy = st.builds(
-    standard::PopulationModelLabel,
+standard_PopulationModelLabel_strategy = st.builds(
+    standard_PopulationModelLabel,
     populationIdentifier=
         safe_text
 )
@@ -830,108 +830,96 @@ IntegrationDecorator_strategy = st.builds(
 PopulationModel_strategy = st.builds(
     PopulationModel,
 )
-standard::StandardPopulationModel_strategy = st.builds(
-    standard::StandardPopulationModel,
-    deathRate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+standard_StandardPopulationModel_strategy = st.builds(
+    standard_StandardPopulationModel,
+    timePeriod=
+        safe_text,
     birthRate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    timePeriod=
-        safe_text
+    deathRate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Modifiable_strategy = st.builds(
     Modifiable,
 )
-standard::PopulationInitializer_strategy = st.builds(
-    standard::PopulationInitializer,
-    targetISOKey=
-        safe_text,
+standard_PopulationInitializer_strategy = st.builds(
+    standard_PopulationInitializer,
     populationIdentifier=
+        safe_text,
+    targetISOKey=
         safe_text
 )
-standard::PopulationModel_strategy = st.builds(
-    standard::PopulationModel,
-    populationIdentifier=
-        safe_text,
+standard_PopulationModel_strategy = st.builds(
+    standard_PopulationModel,
     targetISOKey=
         safe_text,
     name=
+        safe_text,
+    populationIdentifier=
         safe_text
 )
 
-@given(instance=standard::PopulationGroup_strategy)
+@given(instance=standard_PopulationGroup_strategy)
 @settings(max_examples=50)
-def test_standard::populationgroup_instantiation(instance):
-    assert isinstance(instance, standard::PopulationGroup)
-
-@given(instance=standard::PopulationGroup_strategy)
-def test_standard::populationgroup_fraction_type(instance):
-    assert isinstance(instance.fraction, float)
+def test_standard_populationgroup_instantiation(instance):
+    assert isinstance(instance, standard_PopulationGroup)
 
 
-@given(instance=standard::PopulationGroup_strategy)
-def test_standard::populationgroup_fraction_setter(instance):
-    original = instance.fraction
-    instance.fraction = original
-    assert instance.fraction == original
 
-@given(instance=standard::PopulationGroup_strategy)
-def test_standard::populationgroup_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=standard::PopulationGroup_strategy)
-def test_standard::populationgroup_identifier_setter(instance):
+@given(instance=standard_PopulationGroup_strategy)
+def test_standard_populationgroup_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
+
+
+
+@given(instance=standard_PopulationGroup_strategy)
+def test_standard_populationgroup_fraction_setter(instance):
+    original = instance.fraction
+    instance.fraction = original
+    assert instance.fraction == original
 
 @given(instance=EarthSciencePopulationInitializer_strategy)
 @settings(max_examples=50)
 def test_earthsciencepopulationinitializer_instantiation(instance):
     assert isinstance(instance, EarthSciencePopulationInitializer)
 
-@given(instance=standard::YetiPopulationInitializer_strategy)
+@given(instance=standard_YetiPopulationInitializer_strategy)
 @settings(max_examples=50)
-def test_standard::yetipopulationinitializer_instantiation(instance):
-    assert isinstance(instance, standard::YetiPopulationInitializer)
+def test_standard_yetipopulationinitializer_instantiation(instance):
+    assert isinstance(instance, standard_YetiPopulationInitializer)
 
 @given(instance=PopulationInitializer_strategy)
 @settings(max_examples=50)
 def test_populationinitializer_instantiation(instance):
     assert isinstance(instance, PopulationInitializer)
 
-@given(instance=standard::EarthSciencePopulationInitializer_strategy)
+@given(instance=standard_EarthSciencePopulationInitializer_strategy)
 @settings(max_examples=50)
-def test_standard::earthsciencepopulationinitializer_instantiation(instance):
-    assert isinstance(instance, standard::EarthSciencePopulationInitializer)
+def test_standard_earthsciencepopulationinitializer_instantiation(instance):
+    assert isinstance(instance, standard_EarthSciencePopulationInitializer)
 
-@given(instance=standard::StandardPopulationInitializer_strategy)
+@given(instance=standard_StandardPopulationInitializer_strategy)
 @settings(max_examples=50)
-def test_standard::standardpopulationinitializer_instantiation(instance):
-    assert isinstance(instance, standard::StandardPopulationInitializer)
-
-@given(instance=standard::StandardPopulationInitializer_strategy)
-def test_standard::standardpopulationinitializer_useDensity_type(instance):
-    assert isinstance(instance.useDensity, bool)
+def test_standard_standardpopulationinitializer_instantiation(instance):
+    assert isinstance(instance, standard_StandardPopulationInitializer)
 
 
-@given(instance=standard::StandardPopulationInitializer_strategy)
-def test_standard::standardpopulationinitializer_useDensity_setter(instance):
-    original = instance.useDensity
-    instance.useDensity = original
-    assert instance.useDensity == original
 
-@given(instance=standard::StandardPopulationInitializer_strategy)
-def test_standard::standardpopulationinitializer_individuals_type(instance):
-    assert isinstance(instance.individuals, float)
-
-
-@given(instance=standard::StandardPopulationInitializer_strategy)
-def test_standard::standardpopulationinitializer_individuals_setter(instance):
+@given(instance=standard_StandardPopulationInitializer_strategy)
+def test_standard_standardpopulationinitializer_individuals_setter(instance):
     original = instance.individuals
     instance.individuals = original
     assert instance.individuals == original
+
+
+
+@given(instance=standard_StandardPopulationInitializer_strategy)
+def test_standard_standardpopulationinitializer_useDensity_setter(instance):
+    original = instance.useDensity
+    instance.useDensity = original
+    assert instance.useDensity == original
 
 @given(instance=NodeDecorator_strategy)
 @settings(max_examples=50)
@@ -943,72 +931,57 @@ def test_nodedecorator_instantiation(instance):
 def test_standardpopulationmodel_instantiation(instance):
     assert isinstance(instance, StandardPopulationModel)
 
-@given(instance=standard::SeasonalPopulationModel_strategy)
+@given(instance=standard_DemographicPopulationModel_strategy)
 @settings(max_examples=50)
-def test_standard::seasonalpopulationmodel_instantiation(instance):
-    assert isinstance(instance, standard::SeasonalPopulationModel)
+def test_standard_demographicpopulationmodel_instantiation(instance):
+    assert isinstance(instance, standard_DemographicPopulationModel)
 
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_modulationAmplitude_type(instance):
-    assert isinstance(instance.modulationAmplitude, float)
+@given(instance=standard_SeasonalPopulationModel_strategy)
+@settings(max_examples=50)
+def test_standard_seasonalpopulationmodel_instantiation(instance):
+    assert isinstance(instance, standard_SeasonalPopulationModel)
 
 
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_modulationAmplitude_setter(instance):
+
+@given(instance=standard_SeasonalPopulationModel_strategy)
+def test_standard_seasonalpopulationmodel_modulationAmplitude_setter(instance):
     original = instance.modulationAmplitude
     instance.modulationAmplitude = original
     assert instance.modulationAmplitude == original
 
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_period_type(instance):
-    assert isinstance(instance.period, float)
 
 
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_period_setter(instance):
-    original = instance.period
-    instance.period = original
-    assert instance.period == original
-
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_useLatitude_type(instance):
-    assert isinstance(instance.useLatitude, bool)
-
-
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_useLatitude_setter(instance):
-    original = instance.useLatitude
-    instance.useLatitude = original
-    assert instance.useLatitude == original
-
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_phase_type(instance):
-    assert isinstance(instance.phase, float)
-
-
-@given(instance=standard::SeasonalPopulationModel_strategy)
-def test_standard::seasonalpopulationmodel_phase_setter(instance):
+@given(instance=standard_SeasonalPopulationModel_strategy)
+def test_standard_seasonalpopulationmodel_phase_setter(instance):
     original = instance.phase
     instance.phase = original
     assert instance.phase == original
 
-@given(instance=standard::DemographicPopulationModel_strategy)
+
+
+@given(instance=standard_SeasonalPopulationModel_strategy)
+def test_standard_seasonalpopulationmodel_useLatitude_setter(instance):
+    original = instance.useLatitude
+    instance.useLatitude = original
+    assert instance.useLatitude == original
+
+
+
+@given(instance=standard_SeasonalPopulationModel_strategy)
+def test_standard_seasonalpopulationmodel_period_setter(instance):
+    original = instance.period
+    instance.period = original
+    assert instance.period == original
+
+@given(instance=standard_StochasticStandardPopulationModel_strategy)
 @settings(max_examples=50)
-def test_standard::demographicpopulationmodel_instantiation(instance):
-    assert isinstance(instance, standard::DemographicPopulationModel)
-
-@given(instance=standard::StochasticStandardPopulationModel_strategy)
-@settings(max_examples=50)
-def test_standard::stochasticstandardpopulationmodel_instantiation(instance):
-    assert isinstance(instance, standard::StochasticStandardPopulationModel)
-
-@given(instance=standard::StochasticStandardPopulationModel_strategy)
-def test_standard::stochasticstandardpopulationmodel_gain_type(instance):
-    assert isinstance(instance.gain, float)
+def test_standard_stochasticstandardpopulationmodel_instantiation(instance):
+    assert isinstance(instance, standard_StochasticStandardPopulationModel)
 
 
-@given(instance=standard::StochasticStandardPopulationModel_strategy)
-def test_standard::stochasticstandardpopulationmodel_gain_setter(instance):
+
+@given(instance=standard_StochasticStandardPopulationModel_strategy)
+def test_standard_stochasticstandardpopulationmodel_gain_setter(instance):
     original = instance.gain
     instance.gain = original
     assert instance.gain == original
@@ -1028,85 +1001,70 @@ def test_populationmodellabelvalue_instantiation(instance):
 def test_labelvalue_instantiation(instance):
     assert isinstance(instance, LabelValue)
 
-@given(instance=standard::PopulationModelLabelValue_strategy)
+@given(instance=standard_PopulationModelLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::populationmodellabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::PopulationModelLabelValue)
+def test_standard_populationmodellabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_PopulationModelLabelValue)
 
-@given(instance=standard::IntegrationDecorator_strategy)
+@given(instance=standard_IntegrationDecorator_strategy)
 @settings(max_examples=50)
-def test_standard::integrationdecorator_instantiation(instance):
-    assert isinstance(instance, standard::IntegrationDecorator)
+def test_standard_integrationdecorator_instantiation(instance):
+    assert isinstance(instance, standard_IntegrationDecorator)
 
-@given(instance=standard::IntegrationLabelValue_strategy)
+@given(instance=standard_IntegrationLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::integrationlabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::IntegrationLabelValue)
+def test_standard_integrationlabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_IntegrationLabelValue)
 
-@given(instance=standard::IntegrationLabel_strategy)
+@given(instance=standard_IntegrationLabel_strategy)
 @settings(max_examples=50)
-def test_standard::integrationlabel_instantiation(instance):
-    assert isinstance(instance, standard::IntegrationLabel)
+def test_standard_integrationlabel_instantiation(instance):
+    assert isinstance(instance, standard_IntegrationLabel)
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
 @settings(max_examples=50)
-def test_standard::standardpopulationmodellabelvalue_instantiation(instance):
-    assert isinstance(instance, standard::StandardPopulationModelLabelValue)
-
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_deaths_type(instance):
-    assert isinstance(instance.deaths, float)
+def test_standard_standardpopulationmodellabelvalue_instantiation(instance):
+    assert isinstance(instance, standard_StandardPopulationModelLabelValue)
 
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_deaths_setter(instance):
+
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
+def test_standard_standardpopulationmodellabelvalue_deaths_setter(instance):
     original = instance.deaths
     instance.deaths = original
     assert instance.deaths == original
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_births_type(instance):
-    assert isinstance(instance.births, float)
 
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_births_setter(instance):
-    original = instance.births
-    instance.births = original
-    assert instance.births == original
-
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_density_type(instance):
-    assert isinstance(instance.density, float)
-
-
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_density_setter(instance):
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
+def test_standard_standardpopulationmodellabelvalue_density_setter(instance):
     original = instance.density
     instance.density = original
     assert instance.density == original
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_incidence_type(instance):
-    assert isinstance(instance.incidence, float)
 
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_incidence_setter(instance):
-    original = instance.incidence
-    instance.incidence = original
-    assert instance.incidence == original
-
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_count_type(instance):
-    assert isinstance(instance.count, float)
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
+def test_standard_standardpopulationmodellabelvalue_births_setter(instance):
+    original = instance.births
+    instance.births = original
+    assert instance.births == original
 
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
-def test_standard::standardpopulationmodellabelvalue_count_setter(instance):
+
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
+def test_standard_standardpopulationmodellabelvalue_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
+
+
+
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
+def test_standard_standardpopulationmodellabelvalue_incidence_setter(instance):
+    original = instance.incidence
+    instance.incidence = original
+    assert instance.incidence == original
 
 import warnings
 import copy
@@ -1114,9 +1072,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=standard::StandardPopulationModelLabelValue_strategy)
+@given(instance=standard_StandardPopulationModelLabelValue_strategy)
 @settings(max_examples=30)
-def test_standard::standardpopulationmodellabelvalue_adjustdelta_changes_state(instance):
+def test_standard_standardpopulationmodellabelvalue_adjustdelta_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1130,14 +1088,14 @@ def test_standard::standardpopulationmodellabelvalue_adjustdelta_changes_state(i
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'adjustDelta' in standard::StandardPopulationModelLabelValue is empty"
+        assert has_statements, f"Function 'adjustDelta' in standard_StandardPopulationModelLabelValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'adjustDelta' in standard::StandardPopulationModelLabelValue did not change state; check implementation")
+            warnings.warn(f"Operation 'adjustDelta' in standard_StandardPopulationModelLabelValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'adjustDelta' in standard::StandardPopulationModelLabelValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'adjustDelta' in standard_StandardPopulationModelLabelValue is not implemented or raised an error")
 
 @given(instance=IntegrationLabel_strategy)
 @settings(max_examples=50)
@@ -1149,33 +1107,30 @@ def test_integrationlabel_instantiation(instance):
 def test_populationmodellabel_instantiation(instance):
     assert isinstance(instance, PopulationModelLabel)
 
-@given(instance=standard::StandardPopulationModelLabel_strategy)
+@given(instance=standard_StandardPopulationModelLabel_strategy)
 @settings(max_examples=50)
-def test_standard::standardpopulationmodellabel_instantiation(instance):
-    assert isinstance(instance, standard::StandardPopulationModelLabel)
+def test_standard_standardpopulationmodellabel_instantiation(instance):
+    assert isinstance(instance, standard_StandardPopulationModelLabel)
 
-@given(instance=standard::PopulationLabel_strategy)
+@given(instance=standard_PopulationLabel_strategy)
 @settings(max_examples=50)
-def test_standard::populationlabel_instantiation(instance):
-    assert isinstance(instance, standard::PopulationLabel)
+def test_standard_populationlabel_instantiation(instance):
+    assert isinstance(instance, standard_PopulationLabel)
 
 @given(instance=DynamicNodeLabel_strategy)
 @settings(max_examples=50)
 def test_dynamicnodelabel_instantiation(instance):
     assert isinstance(instance, DynamicNodeLabel)
 
-@given(instance=standard::PopulationModelLabel_strategy)
+@given(instance=standard_PopulationModelLabel_strategy)
 @settings(max_examples=50)
-def test_standard::populationmodellabel_instantiation(instance):
-    assert isinstance(instance, standard::PopulationModelLabel)
-
-@given(instance=standard::PopulationModelLabel_strategy)
-def test_standard::populationmodellabel_populationIdentifier_type(instance):
-    assert isinstance(instance.populationIdentifier, str)
+def test_standard_populationmodellabel_instantiation(instance):
+    assert isinstance(instance, standard_PopulationModelLabel)
 
 
-@given(instance=standard::PopulationModelLabel_strategy)
-def test_standard::populationmodellabel_populationIdentifier_setter(instance):
+
+@given(instance=standard_PopulationModelLabel_strategy)
+def test_standard_populationmodellabel_populationIdentifier_setter(instance):
     original = instance.populationIdentifier
     instance.populationIdentifier = original
     assert instance.populationIdentifier == original
@@ -1190,110 +1145,86 @@ def test_integrationdecorator_instantiation(instance):
 def test_populationmodel_instantiation(instance):
     assert isinstance(instance, PopulationModel)
 
-@given(instance=standard::StandardPopulationModel_strategy)
+@given(instance=standard_StandardPopulationModel_strategy)
 @settings(max_examples=50)
-def test_standard::standardpopulationmodel_instantiation(instance):
-    assert isinstance(instance, standard::StandardPopulationModel)
-
-@given(instance=standard::StandardPopulationModel_strategy)
-def test_standard::standardpopulationmodel_deathRate_type(instance):
-    assert isinstance(instance.deathRate, float)
+def test_standard_standardpopulationmodel_instantiation(instance):
+    assert isinstance(instance, standard_StandardPopulationModel)
 
 
-@given(instance=standard::StandardPopulationModel_strategy)
-def test_standard::standardpopulationmodel_deathRate_setter(instance):
-    original = instance.deathRate
-    instance.deathRate = original
-    assert instance.deathRate == original
 
-@given(instance=standard::StandardPopulationModel_strategy)
-def test_standard::standardpopulationmodel_birthRate_type(instance):
-    assert isinstance(instance.birthRate, float)
+@given(instance=standard_StandardPopulationModel_strategy)
+def test_standard_standardpopulationmodel_timePeriod_setter(instance):
+    original = instance.timePeriod
+    instance.timePeriod = original
+    assert instance.timePeriod == original
 
 
-@given(instance=standard::StandardPopulationModel_strategy)
-def test_standard::standardpopulationmodel_birthRate_setter(instance):
+
+@given(instance=standard_StandardPopulationModel_strategy)
+def test_standard_standardpopulationmodel_birthRate_setter(instance):
     original = instance.birthRate
     instance.birthRate = original
     assert instance.birthRate == original
 
-@given(instance=standard::StandardPopulationModel_strategy)
-def test_standard::standardpopulationmodel_timePeriod_type(instance):
-    assert isinstance(instance.timePeriod, str)
 
 
-@given(instance=standard::StandardPopulationModel_strategy)
-def test_standard::standardpopulationmodel_timePeriod_setter(instance):
-    original = instance.timePeriod
-    instance.timePeriod = original
-    assert instance.timePeriod == original
+@given(instance=standard_StandardPopulationModel_strategy)
+def test_standard_standardpopulationmodel_deathRate_setter(instance):
+    original = instance.deathRate
+    instance.deathRate = original
+    assert instance.deathRate == original
 
 @given(instance=Modifiable_strategy)
 @settings(max_examples=50)
 def test_modifiable_instantiation(instance):
     assert isinstance(instance, Modifiable)
 
-@given(instance=standard::PopulationInitializer_strategy)
+@given(instance=standard_PopulationInitializer_strategy)
 @settings(max_examples=50)
-def test_standard::populationinitializer_instantiation(instance):
-    assert isinstance(instance, standard::PopulationInitializer)
-
-@given(instance=standard::PopulationInitializer_strategy)
-def test_standard::populationinitializer_targetISOKey_type(instance):
-    assert isinstance(instance.targetISOKey, str)
+def test_standard_populationinitializer_instantiation(instance):
+    assert isinstance(instance, standard_PopulationInitializer)
 
 
-@given(instance=standard::PopulationInitializer_strategy)
-def test_standard::populationinitializer_targetISOKey_setter(instance):
-    original = instance.targetISOKey
-    instance.targetISOKey = original
-    assert instance.targetISOKey == original
 
-@given(instance=standard::PopulationInitializer_strategy)
-def test_standard::populationinitializer_populationIdentifier_type(instance):
-    assert isinstance(instance.populationIdentifier, str)
-
-
-@given(instance=standard::PopulationInitializer_strategy)
-def test_standard::populationinitializer_populationIdentifier_setter(instance):
+@given(instance=standard_PopulationInitializer_strategy)
+def test_standard_populationinitializer_populationIdentifier_setter(instance):
     original = instance.populationIdentifier
     instance.populationIdentifier = original
     assert instance.populationIdentifier == original
 
-@given(instance=standard::PopulationModel_strategy)
-@settings(max_examples=50)
-def test_standard::populationmodel_instantiation(instance):
-    assert isinstance(instance, standard::PopulationModel)
-
-@given(instance=standard::PopulationModel_strategy)
-def test_standard::populationmodel_populationIdentifier_type(instance):
-    assert isinstance(instance.populationIdentifier, str)
 
 
-@given(instance=standard::PopulationModel_strategy)
-def test_standard::populationmodel_populationIdentifier_setter(instance):
-    original = instance.populationIdentifier
-    instance.populationIdentifier = original
-    assert instance.populationIdentifier == original
-
-@given(instance=standard::PopulationModel_strategy)
-def test_standard::populationmodel_targetISOKey_type(instance):
-    assert isinstance(instance.targetISOKey, str)
-
-
-@given(instance=standard::PopulationModel_strategy)
-def test_standard::populationmodel_targetISOKey_setter(instance):
+@given(instance=standard_PopulationInitializer_strategy)
+def test_standard_populationinitializer_targetISOKey_setter(instance):
     original = instance.targetISOKey
     instance.targetISOKey = original
     assert instance.targetISOKey == original
 
-@given(instance=standard::PopulationModel_strategy)
-def test_standard::populationmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=standard_PopulationModel_strategy)
+@settings(max_examples=50)
+def test_standard_populationmodel_instantiation(instance):
+    assert isinstance(instance, standard_PopulationModel)
 
 
-@given(instance=standard::PopulationModel_strategy)
-def test_standard::populationmodel_name_setter(instance):
+
+@given(instance=standard_PopulationModel_strategy)
+def test_standard_populationmodel_targetISOKey_setter(instance):
+    original = instance.targetISOKey
+    instance.targetISOKey = original
+    assert instance.targetISOKey == original
+
+
+
+@given(instance=standard_PopulationModel_strategy)
+def test_standard_populationmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=standard_PopulationModel_strategy)
+def test_standard_populationmodel_populationIdentifier_setter(instance):
+    original = instance.populationIdentifier
+    instance.populationIdentifier = original
+    assert instance.populationIdentifier == original

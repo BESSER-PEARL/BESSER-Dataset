@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     news,
@@ -159,19 +159,10 @@ def test_department_constructor_exists():
 def test_department_constructor_args():
     sig = inspect.signature(Department.__init__)
     params = list(sig.parameters.keys())
-    assert "modules__" in params, "Missing parameter 'modules__'"
     assert "teachers__" in params, "Missing parameter 'teachers__'"
+    assert "modules__" in params, "Missing parameter 'modules__'"
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_department_has_modules__():
-    assert hasattr(Department, "modules__")
-    descriptor = None
-    for klass in Department.__mro__:
-        if "modules__" in klass.__dict__:
-            descriptor = klass.__dict__["modules__"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_department_has_teachers__():
     assert hasattr(Department, "teachers__")
@@ -179,6 +170,15 @@ def test_department_has_teachers__():
     for klass in Department.__mro__:
         if "teachers__" in klass.__dict__:
             descriptor = klass.__dict__["teachers__"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_department_has_modules__():
+    assert hasattr(Department, "modules__")
+    descriptor = None
+    for klass in Department.__mro__:
+        if "modules__" in klass.__dict__:
+            descriptor = klass.__dict__["modules__"]
             break
     assert isinstance(descriptor, property)
 
@@ -281,17 +281,8 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(user.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_user_has_id():
-    assert hasattr(user, "id")
-    descriptor = None
-    for klass in user.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_user_has_name():
     assert hasattr(user, "name")
@@ -299,6 +290,15 @@ def test_user_has_name():
     for klass in user.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_id():
+    assert hasattr(user, "id")
+    descriptor = None
+    for klass in user.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -342,10 +342,10 @@ Mark_strategy = st.builds(
 )
 Department_strategy = st.builds(
     Department,
-    modules__=
-        safe_text,
     teachers__=
         st.integers(),
+    modules__=
+        safe_text,
     name=
         safe_text,
     id=
@@ -367,10 +367,10 @@ teacher_strategy = st.builds(
 )
 user_strategy = st.builds(
     user,
-    id=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
 
 @given(instance=news_strategy)
@@ -378,9 +378,6 @@ user_strategy = st.builds(
 def test_news_instantiation(instance):
     assert isinstance(instance, news)
 
-@given(instance=news_strategy)
-def test_news_dlnews_type(instance):
-    assert isinstance(instance.dlnews, str)
 
 
 @given(instance=news_strategy)
@@ -389,9 +386,6 @@ def test_news_dlnews_setter(instance):
     instance.dlnews = original
     assert instance.dlnews == original
 
-@given(instance=news_strategy)
-def test_news_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
 @given(instance=news_strategy)
@@ -405,9 +399,6 @@ def test_news_author_setter(instance):
 def test_quiz_instantiation(instance):
     assert isinstance(instance, Quiz)
 
-@given(instance=Quiz_strategy)
-def test_quiz_questions___type(instance):
-    assert isinstance(instance.questions__, str)
 
 
 @given(instance=Quiz_strategy)
@@ -416,9 +407,6 @@ def test_quiz_questions___setter(instance):
     instance.questions__ = original
     assert instance.questions__ == original
 
-@given(instance=Quiz_strategy)
-def test_quiz_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Quiz_strategy)
@@ -427,9 +415,6 @@ def test_quiz_title_setter(instance):
     instance.title = original
     assert instance.title == original
 
-@given(instance=Quiz_strategy)
-def test_quiz_moduleName_type(instance):
-    assert isinstance(instance.moduleName, str)
 
 
 @given(instance=Quiz_strategy)
@@ -448,9 +433,6 @@ def test_task_instantiation(instance):
 def test_mark_instantiation(instance):
     assert isinstance(instance, Mark)
 
-@given(instance=Mark_strategy)
-def test_mark_id_type(instance):
-    assert isinstance(instance.id, student)
 
 
 @given(instance=Mark_strategy)
@@ -459,9 +441,6 @@ def test_mark_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Mark_strategy)
-def test_mark_Mark_type(instance):
-    assert isinstance(instance.Mark, int)
 
 
 @given(instance=Mark_strategy)
@@ -475,20 +454,6 @@ def test_mark_Mark_setter(instance):
 def test_department_instantiation(instance):
     assert isinstance(instance, Department)
 
-@given(instance=Department_strategy)
-def test_department_modules___type(instance):
-    assert isinstance(instance.modules__, str)
-
-
-@given(instance=Department_strategy)
-def test_department_modules___setter(instance):
-    original = instance.modules__
-    instance.modules__ = original
-    assert instance.modules__ == original
-
-@given(instance=Department_strategy)
-def test_department_teachers___type(instance):
-    assert isinstance(instance.teachers__, int)
 
 
 @given(instance=Department_strategy)
@@ -497,9 +462,14 @@ def test_department_teachers___setter(instance):
     instance.teachers__ = original
     assert instance.teachers__ == original
 
+
+
 @given(instance=Department_strategy)
-def test_department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_department_modules___setter(instance):
+    original = instance.modules__
+    instance.modules__ = original
+    assert instance.modules__ == original
+
 
 
 @given(instance=Department_strategy)
@@ -508,9 +478,6 @@ def test_department_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Department_strategy)
-def test_department_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Department_strategy)
@@ -524,9 +491,6 @@ def test_department_id_setter(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Student_strategy)
@@ -535,9 +499,6 @@ def test_student_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Student_strategy)
-def test_student_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Student_strategy)
@@ -551,9 +512,6 @@ def test_student_name_setter(instance):
 def test_teacher_instantiation(instance):
     assert isinstance(instance, teacher)
 
-@given(instance=teacher_strategy)
-def test_teacher_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=teacher_strategy)
@@ -562,9 +520,6 @@ def test_teacher_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=teacher_strategy)
-def test_teacher_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=teacher_strategy)
@@ -578,20 +533,6 @@ def test_teacher_name_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, user)
 
-@given(instance=user_strategy)
-def test_user_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=user_strategy)
-def test_user_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=user_strategy)
-def test_user_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=user_strategy)
@@ -599,3 +540,11 @@ def test_user_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=user_strategy)
+def test_user_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

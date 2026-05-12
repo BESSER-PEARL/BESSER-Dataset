@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Widget,
-    uispecDsl::CheckBoxWidget,
-    uispecDsl::ComboWidget,
-    uispecDsl::TextFieldWidget,
-    uispecDsl::Attribute,
-    uispecDsl::Widget,
-    uispecDsl::Entity,
-    uispecDsl::EntityReference,
-    uispecDsl::Form,
-    uispecDsl::Field,
+    uispecDsl_CheckBoxWidget,
+    uispecDsl_ComboWidget,
+    uispecDsl_TextFieldWidget,
+    uispecDsl_Attribute,
+    uispecDsl_Widget,
+    uispecDsl_Entity,
+    uispecDsl_EntityReference,
+    uispecDsl_Form,
+    uispecDsl_Field,
 )
 
 # =============================================================================
@@ -38,37 +38,37 @@ def test_widget_constructor_args():
 
 
 
-def test_uispecdsl::checkboxwidget_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::CheckBoxWidget)
+def test_uispecdsl_checkboxwidget_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_CheckBoxWidget)
 
 
-def test_uispecdsl::checkboxwidget_constructor_exists():
-    assert callable(uispecDsl::CheckBoxWidget.__init__)
+def test_uispecdsl_checkboxwidget_constructor_exists():
+    assert callable(uispecDsl_CheckBoxWidget.__init__)
 
 
-def test_uispecdsl::checkboxwidget_constructor_args():
-    sig = inspect.signature(uispecDsl::CheckBoxWidget.__init__)
+def test_uispecdsl_checkboxwidget_constructor_args():
+    sig = inspect.signature(uispecDsl_CheckBoxWidget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uispecdsl::combowidget_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::ComboWidget)
+def test_uispecdsl_combowidget_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_ComboWidget)
 
 
-def test_uispecdsl::combowidget_constructor_exists():
-    assert callable(uispecDsl::ComboWidget.__init__)
+def test_uispecdsl_combowidget_constructor_exists():
+    assert callable(uispecDsl_ComboWidget.__init__)
 
 
-def test_uispecdsl::combowidget_constructor_args():
-    sig = inspect.signature(uispecDsl::ComboWidget.__init__)
+def test_uispecdsl_combowidget_constructor_args():
+    sig = inspect.signature(uispecDsl_ComboWidget.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_uispecdsl::combowidget_has_values():
-    assert hasattr(uispecDsl::ComboWidget, "values")
+def test_uispecdsl_combowidget_has_values():
+    assert hasattr(uispecDsl_ComboWidget, "values")
     descriptor = None
-    for klass in uispecDsl::ComboWidget.__mro__:
+    for klass in uispecDsl_ComboWidget.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -76,23 +76,23 @@ def test_uispecdsl::combowidget_has_values():
 
 
 
-def test_uispecdsl::textfieldwidget_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::TextFieldWidget)
+def test_uispecdsl_textfieldwidget_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_TextFieldWidget)
 
 
-def test_uispecdsl::textfieldwidget_constructor_exists():
-    assert callable(uispecDsl::TextFieldWidget.__init__)
+def test_uispecdsl_textfieldwidget_constructor_exists():
+    assert callable(uispecDsl_TextFieldWidget.__init__)
 
 
-def test_uispecdsl::textfieldwidget_constructor_args():
-    sig = inspect.signature(uispecDsl::TextFieldWidget.__init__)
+def test_uispecdsl_textfieldwidget_constructor_args():
+    sig = inspect.signature(uispecDsl_TextFieldWidget.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_uispecdsl::textfieldwidget_has_length():
-    assert hasattr(uispecDsl::TextFieldWidget, "length")
+def test_uispecdsl_textfieldwidget_has_length():
+    assert hasattr(uispecDsl_TextFieldWidget, "length")
     descriptor = None
-    for klass in uispecDsl::TextFieldWidget.__mro__:
+    for klass in uispecDsl_TextFieldWidget.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -100,79 +100,79 @@ def test_uispecdsl::textfieldwidget_has_length():
 
 
 
-def test_uispecdsl::attribute_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::Attribute)
+def test_uispecdsl_attribute_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_Attribute)
 
 
-def test_uispecdsl::attribute_constructor_exists():
-    assert callable(uispecDsl::Attribute.__init__)
+def test_uispecdsl_attribute_constructor_exists():
+    assert callable(uispecDsl_Attribute.__init__)
 
 
-def test_uispecdsl::attribute_constructor_args():
-    sig = inspect.signature(uispecDsl::Attribute.__init__)
+def test_uispecdsl_attribute_constructor_args():
+    sig = inspect.signature(uispecDsl_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uispecdsl::widget_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::Widget)
+def test_uispecdsl_widget_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_Widget)
 
 
-def test_uispecdsl::widget_constructor_exists():
-    assert callable(uispecDsl::Widget.__init__)
+def test_uispecdsl_widget_constructor_exists():
+    assert callable(uispecDsl_Widget.__init__)
 
 
-def test_uispecdsl::widget_constructor_args():
-    sig = inspect.signature(uispecDsl::Widget.__init__)
+def test_uispecdsl_widget_constructor_args():
+    sig = inspect.signature(uispecDsl_Widget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uispecdsl::entity_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::Entity)
+def test_uispecdsl_entity_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_Entity)
 
 
-def test_uispecdsl::entity_constructor_exists():
-    assert callable(uispecDsl::Entity.__init__)
+def test_uispecdsl_entity_constructor_exists():
+    assert callable(uispecDsl_Entity.__init__)
 
 
-def test_uispecdsl::entity_constructor_args():
-    sig = inspect.signature(uispecDsl::Entity.__init__)
+def test_uispecdsl_entity_constructor_args():
+    sig = inspect.signature(uispecDsl_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uispecdsl::entityreference_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::EntityReference)
+def test_uispecdsl_entityreference_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_EntityReference)
 
 
-def test_uispecdsl::entityreference_constructor_exists():
-    assert callable(uispecDsl::EntityReference.__init__)
+def test_uispecdsl_entityreference_constructor_exists():
+    assert callable(uispecDsl_EntityReference.__init__)
 
 
-def test_uispecdsl::entityreference_constructor_args():
-    sig = inspect.signature(uispecDsl::EntityReference.__init__)
+def test_uispecdsl_entityreference_constructor_args():
+    sig = inspect.signature(uispecDsl_EntityReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uispecdsl::form_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::Form)
+def test_uispecdsl_form_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_Form)
 
 
-def test_uispecdsl::form_constructor_exists():
-    assert callable(uispecDsl::Form.__init__)
+def test_uispecdsl_form_constructor_exists():
+    assert callable(uispecDsl_Form.__init__)
 
 
-def test_uispecdsl::form_constructor_args():
-    sig = inspect.signature(uispecDsl::Form.__init__)
+def test_uispecdsl_form_constructor_args():
+    sig = inspect.signature(uispecDsl_Form.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uispecdsl::form_has_name():
-    assert hasattr(uispecDsl::Form, "name")
+def test_uispecdsl_form_has_name():
+    assert hasattr(uispecDsl_Form, "name")
     descriptor = None
-    for klass in uispecDsl::Form.__mro__:
+    for klass in uispecDsl_Form.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -180,23 +180,23 @@ def test_uispecdsl::form_has_name():
 
 
 
-def test_uispecdsl::field_is_not_abstract():
-    assert not inspect.isabstract(uispecDsl::Field)
+def test_uispecdsl_field_is_not_abstract():
+    assert not inspect.isabstract(uispecDsl_Field)
 
 
-def test_uispecdsl::field_constructor_exists():
-    assert callable(uispecDsl::Field.__init__)
+def test_uispecdsl_field_constructor_exists():
+    assert callable(uispecDsl_Field.__init__)
 
 
-def test_uispecdsl::field_constructor_args():
-    sig = inspect.signature(uispecDsl::Field.__init__)
+def test_uispecdsl_field_constructor_args():
+    sig = inspect.signature(uispecDsl_Field.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_uispecdsl::field_has_label():
-    assert hasattr(uispecDsl::Field, "label")
+def test_uispecdsl_field_has_label():
+    assert hasattr(uispecDsl_Field, "label")
     descriptor = None
-    for klass in uispecDsl::Field.__mro__:
+    for klass in uispecDsl_Field.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -217,38 +217,38 @@ safe_text = st.text(
 Widget_strategy = st.builds(
     Widget,
 )
-uispecDsl::CheckBoxWidget_strategy = st.builds(
-    uispecDsl::CheckBoxWidget,
+uispecDsl_CheckBoxWidget_strategy = st.builds(
+    uispecDsl_CheckBoxWidget,
 )
-uispecDsl::ComboWidget_strategy = st.builds(
-    uispecDsl::ComboWidget,
+uispecDsl_ComboWidget_strategy = st.builds(
+    uispecDsl_ComboWidget,
     values=
         safe_text
 )
-uispecDsl::TextFieldWidget_strategy = st.builds(
-    uispecDsl::TextFieldWidget,
+uispecDsl_TextFieldWidget_strategy = st.builds(
+    uispecDsl_TextFieldWidget,
     length=
         st.integers()
 )
-uispecDsl::Attribute_strategy = st.builds(
-    uispecDsl::Attribute,
+uispecDsl_Attribute_strategy = st.builds(
+    uispecDsl_Attribute,
 )
-uispecDsl::Widget_strategy = st.builds(
-    uispecDsl::Widget,
+uispecDsl_Widget_strategy = st.builds(
+    uispecDsl_Widget,
 )
-uispecDsl::Entity_strategy = st.builds(
-    uispecDsl::Entity,
+uispecDsl_Entity_strategy = st.builds(
+    uispecDsl_Entity,
 )
-uispecDsl::EntityReference_strategy = st.builds(
-    uispecDsl::EntityReference,
+uispecDsl_EntityReference_strategy = st.builds(
+    uispecDsl_EntityReference,
 )
-uispecDsl::Form_strategy = st.builds(
-    uispecDsl::Form,
+uispecDsl_Form_strategy = st.builds(
+    uispecDsl_Form,
     name=
         safe_text
 )
-uispecDsl::Field_strategy = st.builds(
-    uispecDsl::Field,
+uispecDsl_Field_strategy = st.builds(
+    uispecDsl_Field,
     label=
         safe_text
 )
@@ -258,91 +258,79 @@ uispecDsl::Field_strategy = st.builds(
 def test_widget_instantiation(instance):
     assert isinstance(instance, Widget)
 
-@given(instance=uispecDsl::CheckBoxWidget_strategy)
+@given(instance=uispecDsl_CheckBoxWidget_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::checkboxwidget_instantiation(instance):
-    assert isinstance(instance, uispecDsl::CheckBoxWidget)
+def test_uispecdsl_checkboxwidget_instantiation(instance):
+    assert isinstance(instance, uispecDsl_CheckBoxWidget)
 
-@given(instance=uispecDsl::ComboWidget_strategy)
+@given(instance=uispecDsl_ComboWidget_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::combowidget_instantiation(instance):
-    assert isinstance(instance, uispecDsl::ComboWidget)
-
-@given(instance=uispecDsl::ComboWidget_strategy)
-def test_uispecdsl::combowidget_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_uispecdsl_combowidget_instantiation(instance):
+    assert isinstance(instance, uispecDsl_ComboWidget)
 
 
-@given(instance=uispecDsl::ComboWidget_strategy)
-def test_uispecdsl::combowidget_values_setter(instance):
+
+@given(instance=uispecDsl_ComboWidget_strategy)
+def test_uispecdsl_combowidget_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=uispecDsl::TextFieldWidget_strategy)
+@given(instance=uispecDsl_TextFieldWidget_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::textfieldwidget_instantiation(instance):
-    assert isinstance(instance, uispecDsl::TextFieldWidget)
-
-@given(instance=uispecDsl::TextFieldWidget_strategy)
-def test_uispecdsl::textfieldwidget_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_uispecdsl_textfieldwidget_instantiation(instance):
+    assert isinstance(instance, uispecDsl_TextFieldWidget)
 
 
-@given(instance=uispecDsl::TextFieldWidget_strategy)
-def test_uispecdsl::textfieldwidget_length_setter(instance):
+
+@given(instance=uispecDsl_TextFieldWidget_strategy)
+def test_uispecdsl_textfieldwidget_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=uispecDsl::Attribute_strategy)
+@given(instance=uispecDsl_Attribute_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::attribute_instantiation(instance):
-    assert isinstance(instance, uispecDsl::Attribute)
+def test_uispecdsl_attribute_instantiation(instance):
+    assert isinstance(instance, uispecDsl_Attribute)
 
-@given(instance=uispecDsl::Widget_strategy)
+@given(instance=uispecDsl_Widget_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::widget_instantiation(instance):
-    assert isinstance(instance, uispecDsl::Widget)
+def test_uispecdsl_widget_instantiation(instance):
+    assert isinstance(instance, uispecDsl_Widget)
 
-@given(instance=uispecDsl::Entity_strategy)
+@given(instance=uispecDsl_Entity_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::entity_instantiation(instance):
-    assert isinstance(instance, uispecDsl::Entity)
+def test_uispecdsl_entity_instantiation(instance):
+    assert isinstance(instance, uispecDsl_Entity)
 
-@given(instance=uispecDsl::EntityReference_strategy)
+@given(instance=uispecDsl_EntityReference_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::entityreference_instantiation(instance):
-    assert isinstance(instance, uispecDsl::EntityReference)
+def test_uispecdsl_entityreference_instantiation(instance):
+    assert isinstance(instance, uispecDsl_EntityReference)
 
-@given(instance=uispecDsl::Form_strategy)
+@given(instance=uispecDsl_Form_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::form_instantiation(instance):
-    assert isinstance(instance, uispecDsl::Form)
-
-@given(instance=uispecDsl::Form_strategy)
-def test_uispecdsl::form_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uispecdsl_form_instantiation(instance):
+    assert isinstance(instance, uispecDsl_Form)
 
 
-@given(instance=uispecDsl::Form_strategy)
-def test_uispecdsl::form_name_setter(instance):
+
+@given(instance=uispecDsl_Form_strategy)
+def test_uispecdsl_form_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uispecDsl::Field_strategy)
+@given(instance=uispecDsl_Field_strategy)
 @settings(max_examples=50)
-def test_uispecdsl::field_instantiation(instance):
-    assert isinstance(instance, uispecDsl::Field)
-
-@given(instance=uispecDsl::Field_strategy)
-def test_uispecdsl::field_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_uispecdsl_field_instantiation(instance):
+    assert isinstance(instance, uispecDsl_Field)
 
 
-@given(instance=uispecDsl::Field_strategy)
-def test_uispecdsl::field_label_setter(instance):
+
+@given(instance=uispecDsl_Field_strategy)
+def test_uispecdsl_field_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

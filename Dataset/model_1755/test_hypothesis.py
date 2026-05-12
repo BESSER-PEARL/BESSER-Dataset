@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    extralazy::Book,
-    extralazy::Writer,
+from python_code import (
+    extralazy_Book,
+    extralazy_Writer,
 )
 
 # =============================================================================
@@ -16,33 +16,33 @@ from classes import (
 
 
 
-def test_extralazy::book_is_not_abstract():
-    assert not inspect.isabstract(extralazy::Book)
+def test_extralazy_book_is_not_abstract():
+    assert not inspect.isabstract(extralazy_Book)
 
 
-def test_extralazy::book_constructor_exists():
-    assert callable(extralazy::Book.__init__)
+def test_extralazy_book_constructor_exists():
+    assert callable(extralazy_Book.__init__)
 
 
-def test_extralazy::book_constructor_args():
-    sig = inspect.signature(extralazy::Book.__init__)
+def test_extralazy_book_constructor_args():
+    sig = inspect.signature(extralazy_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
     assert "subTitles" in params, "Missing parameter 'subTitles'"
 
-def test_extralazy::book_has_title():
-    assert hasattr(extralazy::Book, "title")
+def test_extralazy_book_has_title():
+    assert hasattr(extralazy_Book, "title")
     descriptor = None
-    for klass in extralazy::Book.__mro__:
+    for klass in extralazy_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_extralazy::book_has_subTitles():
-    assert hasattr(extralazy::Book, "subTitles")
+def test_extralazy_book_has_subTitles():
+    assert hasattr(extralazy_Book, "subTitles")
     descriptor = None
-    for klass in extralazy::Book.__mro__:
+    for klass in extralazy_Book.__mro__:
         if "subTitles" in klass.__dict__:
             descriptor = klass.__dict__["subTitles"]
             break
@@ -50,23 +50,23 @@ def test_extralazy::book_has_subTitles():
 
 
 
-def test_extralazy::writer_is_not_abstract():
-    assert not inspect.isabstract(extralazy::Writer)
+def test_extralazy_writer_is_not_abstract():
+    assert not inspect.isabstract(extralazy_Writer)
 
 
-def test_extralazy::writer_constructor_exists():
-    assert callable(extralazy::Writer.__init__)
+def test_extralazy_writer_constructor_exists():
+    assert callable(extralazy_Writer.__init__)
 
 
-def test_extralazy::writer_constructor_args():
-    sig = inspect.signature(extralazy::Writer.__init__)
+def test_extralazy_writer_constructor_args():
+    sig = inspect.signature(extralazy_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extralazy::writer_has_name():
-    assert hasattr(extralazy::Writer, "name")
+def test_extralazy_writer_has_name():
+    assert hasattr(extralazy_Writer, "name")
     descriptor = None
-    for klass in extralazy::Writer.__mro__:
+    for klass in extralazy_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -84,58 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-extralazy::Book_strategy = st.builds(
-    extralazy::Book,
+extralazy_Book_strategy = st.builds(
+    extralazy_Book,
     title=
         safe_text,
     subTitles=
         safe_text
 )
-extralazy::Writer_strategy = st.builds(
-    extralazy::Writer,
+extralazy_Writer_strategy = st.builds(
+    extralazy_Writer,
     name=
         safe_text
 )
 
-@given(instance=extralazy::Book_strategy)
+@given(instance=extralazy_Book_strategy)
 @settings(max_examples=50)
-def test_extralazy::book_instantiation(instance):
-    assert isinstance(instance, extralazy::Book)
-
-@given(instance=extralazy::Book_strategy)
-def test_extralazy::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_extralazy_book_instantiation(instance):
+    assert isinstance(instance, extralazy_Book)
 
 
-@given(instance=extralazy::Book_strategy)
-def test_extralazy::book_title_setter(instance):
+
+@given(instance=extralazy_Book_strategy)
+def test_extralazy_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=extralazy::Book_strategy)
-def test_extralazy::book_subTitles_type(instance):
-    assert isinstance(instance.subTitles, str)
 
 
-@given(instance=extralazy::Book_strategy)
-def test_extralazy::book_subTitles_setter(instance):
+@given(instance=extralazy_Book_strategy)
+def test_extralazy_book_subTitles_setter(instance):
     original = instance.subTitles
     instance.subTitles = original
     assert instance.subTitles == original
 
-@given(instance=extralazy::Writer_strategy)
+@given(instance=extralazy_Writer_strategy)
 @settings(max_examples=50)
-def test_extralazy::writer_instantiation(instance):
-    assert isinstance(instance, extralazy::Writer)
-
-@given(instance=extralazy::Writer_strategy)
-def test_extralazy::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extralazy_writer_instantiation(instance):
+    assert isinstance(instance, extralazy_Writer)
 
 
-@given(instance=extralazy::Writer_strategy)
-def test_extralazy::writer_name_setter(instance):
+
+@given(instance=extralazy_Writer_strategy)
+def test_extralazy_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

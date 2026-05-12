@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PetriNet::Token,
+from python_code import (
+    PetriNet_Token,
     Arc,
-    PetriNet::TPArc,
-    PetriNet::PTArc,
-    PetriNet::Arc,
+    PetriNet_TPArc,
+    PetriNet_PTArc,
+    PetriNet_Arc,
     Transition,
     Place,
-    PetriNet::Net,
-    PetriNet::Transition,
+    PetriNet_Net,
+    PetriNet_Transition,
     Token,
     TPArc,
     PTArc,
     Net,
-    PetriNet::Place,
+    PetriNet_Place,
 )
 
 # =============================================================================
@@ -28,16 +28,16 @@ from classes import (
 
 
 
-def test_petrinet::token_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Token)
+def test_petrinet_token_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Token)
 
 
-def test_petrinet::token_constructor_exists():
-    assert callable(PetriNet::Token.__init__)
+def test_petrinet_token_constructor_exists():
+    assert callable(PetriNet_Token.__init__)
 
 
-def test_petrinet::token_constructor_args():
-    sig = inspect.signature(PetriNet::Token.__init__)
+def test_petrinet_token_constructor_args():
+    sig = inspect.signature(PetriNet_Token.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -56,51 +56,51 @@ def test_arc_constructor_args():
 
 
 
-def test_petrinet::tparc_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::TPArc)
+def test_petrinet_tparc_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_TPArc)
 
 
-def test_petrinet::tparc_constructor_exists():
-    assert callable(PetriNet::TPArc.__init__)
+def test_petrinet_tparc_constructor_exists():
+    assert callable(PetriNet_TPArc.__init__)
 
 
-def test_petrinet::tparc_constructor_args():
-    sig = inspect.signature(PetriNet::TPArc.__init__)
+def test_petrinet_tparc_constructor_args():
+    sig = inspect.signature(PetriNet_TPArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::ptarc_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::PTArc)
+def test_petrinet_ptarc_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_PTArc)
 
 
-def test_petrinet::ptarc_constructor_exists():
-    assert callable(PetriNet::PTArc.__init__)
+def test_petrinet_ptarc_constructor_exists():
+    assert callable(PetriNet_PTArc.__init__)
 
 
-def test_petrinet::ptarc_constructor_args():
-    sig = inspect.signature(PetriNet::PTArc.__init__)
+def test_petrinet_ptarc_constructor_args():
+    sig = inspect.signature(PetriNet_PTArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::arc_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Arc)
+def test_petrinet_arc_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Arc)
 
 
-def test_petrinet::arc_constructor_exists():
-    assert callable(PetriNet::Arc.__init__)
+def test_petrinet_arc_constructor_exists():
+    assert callable(PetriNet_Arc.__init__)
 
 
-def test_petrinet::arc_constructor_args():
-    sig = inspect.signature(PetriNet::Arc.__init__)
+def test_petrinet_arc_constructor_args():
+    sig = inspect.signature(PetriNet_Arc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_petrinet::arc_has_weight():
-    assert hasattr(PetriNet::Arc, "weight")
+def test_petrinet_arc_has_weight():
+    assert hasattr(PetriNet_Arc, "weight")
     descriptor = None
-    for klass in PetriNet::Arc.__mro__:
+    for klass in PetriNet_Arc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -136,30 +136,30 @@ def test_place_constructor_args():
 
 
 
-def test_petrinet::net_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Net)
+def test_petrinet_net_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Net)
 
 
-def test_petrinet::net_constructor_exists():
-    assert callable(PetriNet::Net.__init__)
+def test_petrinet_net_constructor_exists():
+    assert callable(PetriNet_Net.__init__)
 
 
-def test_petrinet::net_constructor_args():
-    sig = inspect.signature(PetriNet::Net.__init__)
+def test_petrinet_net_constructor_args():
+    sig = inspect.signature(PetriNet_Net.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::transition_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Transition)
+def test_petrinet_transition_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Transition)
 
 
-def test_petrinet::transition_constructor_exists():
-    assert callable(PetriNet::Transition.__init__)
+def test_petrinet_transition_constructor_exists():
+    assert callable(PetriNet_Transition.__init__)
 
 
-def test_petrinet::transition_constructor_args():
-    sig = inspect.signature(PetriNet::Transition.__init__)
+def test_petrinet_transition_constructor_args():
+    sig = inspect.signature(PetriNet_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -220,16 +220,16 @@ def test_net_constructor_args():
 
 
 
-def test_petrinet::place_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Place)
+def test_petrinet_place_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Place)
 
 
-def test_petrinet::place_constructor_exists():
-    assert callable(PetriNet::Place.__init__)
+def test_petrinet_place_constructor_exists():
+    assert callable(PetriNet_Place.__init__)
 
 
-def test_petrinet::place_constructor_args():
-    sig = inspect.signature(PetriNet::Place.__init__)
+def test_petrinet_place_constructor_args():
+    sig = inspect.signature(PetriNet_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,20 +244,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PetriNet::Token_strategy = st.builds(
-    PetriNet::Token,
+PetriNet_Token_strategy = st.builds(
+    PetriNet_Token,
 )
 Arc_strategy = st.builds(
     Arc,
 )
-PetriNet::TPArc_strategy = st.builds(
-    PetriNet::TPArc,
+PetriNet_TPArc_strategy = st.builds(
+    PetriNet_TPArc,
 )
-PetriNet::PTArc_strategy = st.builds(
-    PetriNet::PTArc,
+PetriNet_PTArc_strategy = st.builds(
+    PetriNet_PTArc,
 )
-PetriNet::Arc_strategy = st.builds(
-    PetriNet::Arc,
+PetriNet_Arc_strategy = st.builds(
+    PetriNet_Arc,
     weight=
         safe_text
 )
@@ -267,11 +267,11 @@ Transition_strategy = st.builds(
 Place_strategy = st.builds(
     Place,
 )
-PetriNet::Net_strategy = st.builds(
-    PetriNet::Net,
+PetriNet_Net_strategy = st.builds(
+    PetriNet_Net,
 )
-PetriNet::Transition_strategy = st.builds(
-    PetriNet::Transition,
+PetriNet_Transition_strategy = st.builds(
+    PetriNet_Transition,
 )
 Token_strategy = st.builds(
     Token,
@@ -285,42 +285,39 @@ PTArc_strategy = st.builds(
 Net_strategy = st.builds(
     Net,
 )
-PetriNet::Place_strategy = st.builds(
-    PetriNet::Place,
+PetriNet_Place_strategy = st.builds(
+    PetriNet_Place,
 )
 
-@given(instance=PetriNet::Token_strategy)
+@given(instance=PetriNet_Token_strategy)
 @settings(max_examples=50)
-def test_petrinet::token_instantiation(instance):
-    assert isinstance(instance, PetriNet::Token)
+def test_petrinet_token_instantiation(instance):
+    assert isinstance(instance, PetriNet_Token)
 
 @given(instance=Arc_strategy)
 @settings(max_examples=50)
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=PetriNet::TPArc_strategy)
+@given(instance=PetriNet_TPArc_strategy)
 @settings(max_examples=50)
-def test_petrinet::tparc_instantiation(instance):
-    assert isinstance(instance, PetriNet::TPArc)
+def test_petrinet_tparc_instantiation(instance):
+    assert isinstance(instance, PetriNet_TPArc)
 
-@given(instance=PetriNet::PTArc_strategy)
+@given(instance=PetriNet_PTArc_strategy)
 @settings(max_examples=50)
-def test_petrinet::ptarc_instantiation(instance):
-    assert isinstance(instance, PetriNet::PTArc)
+def test_petrinet_ptarc_instantiation(instance):
+    assert isinstance(instance, PetriNet_PTArc)
 
-@given(instance=PetriNet::Arc_strategy)
+@given(instance=PetriNet_Arc_strategy)
 @settings(max_examples=50)
-def test_petrinet::arc_instantiation(instance):
-    assert isinstance(instance, PetriNet::Arc)
-
-@given(instance=PetriNet::Arc_strategy)
-def test_petrinet::arc_weight_type(instance):
-    assert isinstance(instance.weight, str)
+def test_petrinet_arc_instantiation(instance):
+    assert isinstance(instance, PetriNet_Arc)
 
 
-@given(instance=PetriNet::Arc_strategy)
-def test_petrinet::arc_weight_setter(instance):
+
+@given(instance=PetriNet_Arc_strategy)
+def test_petrinet_arc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
@@ -335,15 +332,15 @@ def test_transition_instantiation(instance):
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=PetriNet::Net_strategy)
+@given(instance=PetriNet_Net_strategy)
 @settings(max_examples=50)
-def test_petrinet::net_instantiation(instance):
-    assert isinstance(instance, PetriNet::Net)
+def test_petrinet_net_instantiation(instance):
+    assert isinstance(instance, PetriNet_Net)
 
-@given(instance=PetriNet::Transition_strategy)
+@given(instance=PetriNet_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinet::transition_instantiation(instance):
-    assert isinstance(instance, PetriNet::Transition)
+def test_petrinet_transition_instantiation(instance):
+    assert isinstance(instance, PetriNet_Transition)
 
 @given(instance=Token_strategy)
 @settings(max_examples=50)
@@ -365,7 +362,7 @@ def test_ptarc_instantiation(instance):
 def test_net_instantiation(instance):
     assert isinstance(instance, Net)
 
-@given(instance=PetriNet::Place_strategy)
+@given(instance=PetriNet_Place_strategy)
 @settings(max_examples=50)
-def test_petrinet::place_instantiation(instance):
-    assert isinstance(instance, PetriNet::Place)
+def test_petrinet_place_instantiation(instance):
+    assert isinstance(instance, PetriNet_Place)

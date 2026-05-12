@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class2,
@@ -141,17 +141,8 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
-    assert "suit" in params, "Missing parameter 'suit'"
     assert "face" in params, "Missing parameter 'face'"
-
-def test_card_has_suit():
-    assert hasattr(Card, "suit")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "suit" in klass.__dict__:
-            descriptor = klass.__dict__["suit"]
-            break
-    assert isinstance(descriptor, property)
+    assert "suit" in params, "Missing parameter 'suit'"
 
 def test_card_has_face():
     assert hasattr(Card, "face")
@@ -159,6 +150,15 @@ def test_card_has_face():
     for klass in Card.__mro__:
         if "face" in klass.__dict__:
             descriptor = klass.__dict__["face"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_suit():
+    assert hasattr(Card, "suit")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "suit" in klass.__dict__:
+            descriptor = klass.__dict__["suit"]
             break
     assert isinstance(descriptor, property)
 
@@ -199,9 +199,9 @@ Hand_strategy = st.builds(
 )
 Card_strategy = st.builds(
     Card,
-    suit=
-        st.integers(),
     face=
+        st.integers(),
+    suit=
         st.integers()
 )
 
@@ -225,9 +225,6 @@ def test_blackjackcard_instantiation(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_deck_type(instance):
-    assert isinstance(instance.deck, str)
 
 
 @given(instance=Deck_strategy)
@@ -256,20 +253,6 @@ def test_hand_instantiation(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, int)
-
-
-@given(instance=Card_strategy)
-def test_card_suit_setter(instance):
-    original = instance.suit
-    instance.suit = original
-    assert instance.suit == original
-
-@given(instance=Card_strategy)
-def test_card_face_type(instance):
-    assert isinstance(instance.face, int)
 
 
 @given(instance=Card_strategy)
@@ -277,3 +260,11 @@ def test_card_face_setter(instance):
     original = instance.face
     instance.face = original
     assert instance.face == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_suit_setter(instance):
+    original = instance.suit
+    instance.suit = original
+    assert instance.suit == original

@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Instruction,
-    minidrone::Turn,
-    minidrone::Jump,
-    minidrone::Go,
-    minidrone::Instruction,
-    minidrone::MiniDroneProgram,
+    minidrone_Turn,
+    minidrone_Jump,
+    minidrone_Go,
+    minidrone_Instruction,
+    minidrone_MiniDroneProgram,
     JumpType,
 )
 
@@ -35,23 +35,23 @@ def test_instruction_constructor_args():
 
 
 
-def test_minidrone::turn_is_not_abstract():
-    assert not inspect.isabstract(minidrone::Turn)
+def test_minidrone_turn_is_not_abstract():
+    assert not inspect.isabstract(minidrone_Turn)
 
 
-def test_minidrone::turn_constructor_exists():
-    assert callable(minidrone::Turn.__init__)
+def test_minidrone_turn_constructor_exists():
+    assert callable(minidrone_Turn.__init__)
 
 
-def test_minidrone::turn_constructor_args():
-    sig = inspect.signature(minidrone::Turn.__init__)
+def test_minidrone_turn_constructor_args():
+    sig = inspect.signature(minidrone_Turn.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_minidrone::turn_has_angle():
-    assert hasattr(minidrone::Turn, "angle")
+def test_minidrone_turn_has_angle():
+    assert hasattr(minidrone_Turn, "angle")
     descriptor = None
-    for klass in minidrone::Turn.__mro__:
+    for klass in minidrone_Turn.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -59,23 +59,23 @@ def test_minidrone::turn_has_angle():
 
 
 
-def test_minidrone::jump_is_not_abstract():
-    assert not inspect.isabstract(minidrone::Jump)
+def test_minidrone_jump_is_not_abstract():
+    assert not inspect.isabstract(minidrone_Jump)
 
 
-def test_minidrone::jump_constructor_exists():
-    assert callable(minidrone::Jump.__init__)
+def test_minidrone_jump_constructor_exists():
+    assert callable(minidrone_Jump.__init__)
 
 
-def test_minidrone::jump_constructor_args():
-    sig = inspect.signature(minidrone::Jump.__init__)
+def test_minidrone_jump_constructor_args():
+    sig = inspect.signature(minidrone_Jump.__init__)
     params = list(sig.parameters.keys())
     assert "jumpType" in params, "Missing parameter 'jumpType'"
 
-def test_minidrone::jump_has_jumpType():
-    assert hasattr(minidrone::Jump, "jumpType")
+def test_minidrone_jump_has_jumpType():
+    assert hasattr(minidrone_Jump, "jumpType")
     descriptor = None
-    for klass in minidrone::Jump.__mro__:
+    for klass in minidrone_Jump.__mro__:
         if "jumpType" in klass.__dict__:
             descriptor = klass.__dict__["jumpType"]
             break
@@ -83,23 +83,23 @@ def test_minidrone::jump_has_jumpType():
 
 
 
-def test_minidrone::go_is_not_abstract():
-    assert not inspect.isabstract(minidrone::Go)
+def test_minidrone_go_is_not_abstract():
+    assert not inspect.isabstract(minidrone_Go)
 
 
-def test_minidrone::go_constructor_exists():
-    assert callable(minidrone::Go.__init__)
+def test_minidrone_go_constructor_exists():
+    assert callable(minidrone_Go.__init__)
 
 
-def test_minidrone::go_constructor_args():
-    sig = inspect.signature(minidrone::Go.__init__)
+def test_minidrone_go_constructor_args():
+    sig = inspect.signature(minidrone_Go.__init__)
     params = list(sig.parameters.keys())
     assert "distance" in params, "Missing parameter 'distance'"
 
-def test_minidrone::go_has_distance():
-    assert hasattr(minidrone::Go, "distance")
+def test_minidrone_go_has_distance():
+    assert hasattr(minidrone_Go, "distance")
     descriptor = None
-    for klass in minidrone::Go.__mro__:
+    for klass in minidrone_Go.__mro__:
         if "distance" in klass.__dict__:
             descriptor = klass.__dict__["distance"]
             break
@@ -107,37 +107,37 @@ def test_minidrone::go_has_distance():
 
 
 
-def test_minidrone::instruction_is_not_abstract():
-    assert not inspect.isabstract(minidrone::Instruction)
+def test_minidrone_instruction_is_not_abstract():
+    assert not inspect.isabstract(minidrone_Instruction)
 
 
-def test_minidrone::instruction_constructor_exists():
-    assert callable(minidrone::Instruction.__init__)
+def test_minidrone_instruction_constructor_exists():
+    assert callable(minidrone_Instruction.__init__)
 
 
-def test_minidrone::instruction_constructor_args():
-    sig = inspect.signature(minidrone::Instruction.__init__)
+def test_minidrone_instruction_constructor_args():
+    sig = inspect.signature(minidrone_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_minidrone::minidroneprogram_is_not_abstract():
-    assert not inspect.isabstract(minidrone::MiniDroneProgram)
+def test_minidrone_minidroneprogram_is_not_abstract():
+    assert not inspect.isabstract(minidrone_MiniDroneProgram)
 
 
-def test_minidrone::minidroneprogram_constructor_exists():
-    assert callable(minidrone::MiniDroneProgram.__init__)
+def test_minidrone_minidroneprogram_constructor_exists():
+    assert callable(minidrone_MiniDroneProgram.__init__)
 
 
-def test_minidrone::minidroneprogram_constructor_args():
-    sig = inspect.signature(minidrone::MiniDroneProgram.__init__)
+def test_minidrone_minidroneprogram_constructor_args():
+    sig = inspect.signature(minidrone_MiniDroneProgram.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_minidrone::minidroneprogram_has_name():
-    assert hasattr(minidrone::MiniDroneProgram, "name")
+def test_minidrone_minidroneprogram_has_name():
+    assert hasattr(minidrone_MiniDroneProgram, "name")
     descriptor = None
-    for klass in minidrone::MiniDroneProgram.__mro__:
+    for klass in minidrone_MiniDroneProgram.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -151,9 +151,9 @@ def test_jumptype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in JumpType]
     expected_literals = [
-        "JUMP_MAX",
         "JUMP_LONG",
         "JUMP_HIGH",
+        "JUMP_MAX",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -174,26 +174,26 @@ safe_text = st.text(
 Instruction_strategy = st.builds(
     Instruction,
 )
-minidrone::Turn_strategy = st.builds(
-    minidrone::Turn,
+minidrone_Turn_strategy = st.builds(
+    minidrone_Turn,
     angle=
         st.integers()
 )
-minidrone::Jump_strategy = st.builds(
-    minidrone::Jump,
+minidrone_Jump_strategy = st.builds(
+    minidrone_Jump,
     jumpType=
         safe_text
 )
-minidrone::Go_strategy = st.builds(
-    minidrone::Go,
+minidrone_Go_strategy = st.builds(
+    minidrone_Go,
     distance=
         st.integers()
 )
-minidrone::Instruction_strategy = st.builds(
-    minidrone::Instruction,
+minidrone_Instruction_strategy = st.builds(
+    minidrone_Instruction,
 )
-minidrone::MiniDroneProgram_strategy = st.builds(
-    minidrone::MiniDroneProgram,
+minidrone_MiniDroneProgram_strategy = st.builds(
+    minidrone_MiniDroneProgram,
     name=
         safe_text
 )
@@ -203,71 +203,59 @@ minidrone::MiniDroneProgram_strategy = st.builds(
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=minidrone::Turn_strategy)
+@given(instance=minidrone_Turn_strategy)
 @settings(max_examples=50)
-def test_minidrone::turn_instantiation(instance):
-    assert isinstance(instance, minidrone::Turn)
-
-@given(instance=minidrone::Turn_strategy)
-def test_minidrone::turn_angle_type(instance):
-    assert isinstance(instance.angle, int)
+def test_minidrone_turn_instantiation(instance):
+    assert isinstance(instance, minidrone_Turn)
 
 
-@given(instance=minidrone::Turn_strategy)
-def test_minidrone::turn_angle_setter(instance):
+
+@given(instance=minidrone_Turn_strategy)
+def test_minidrone_turn_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=minidrone::Jump_strategy)
+@given(instance=minidrone_Jump_strategy)
 @settings(max_examples=50)
-def test_minidrone::jump_instantiation(instance):
-    assert isinstance(instance, minidrone::Jump)
-
-@given(instance=minidrone::Jump_strategy)
-def test_minidrone::jump_jumpType_type(instance):
-    assert isinstance(instance.jumpType, str)
+def test_minidrone_jump_instantiation(instance):
+    assert isinstance(instance, minidrone_Jump)
 
 
-@given(instance=minidrone::Jump_strategy)
-def test_minidrone::jump_jumpType_setter(instance):
+
+@given(instance=minidrone_Jump_strategy)
+def test_minidrone_jump_jumpType_setter(instance):
     original = instance.jumpType
     instance.jumpType = original
     assert instance.jumpType == original
 
-@given(instance=minidrone::Go_strategy)
+@given(instance=minidrone_Go_strategy)
 @settings(max_examples=50)
-def test_minidrone::go_instantiation(instance):
-    assert isinstance(instance, minidrone::Go)
-
-@given(instance=minidrone::Go_strategy)
-def test_minidrone::go_distance_type(instance):
-    assert isinstance(instance.distance, int)
+def test_minidrone_go_instantiation(instance):
+    assert isinstance(instance, minidrone_Go)
 
 
-@given(instance=minidrone::Go_strategy)
-def test_minidrone::go_distance_setter(instance):
+
+@given(instance=minidrone_Go_strategy)
+def test_minidrone_go_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
 
-@given(instance=minidrone::Instruction_strategy)
+@given(instance=minidrone_Instruction_strategy)
 @settings(max_examples=50)
-def test_minidrone::instruction_instantiation(instance):
-    assert isinstance(instance, minidrone::Instruction)
+def test_minidrone_instruction_instantiation(instance):
+    assert isinstance(instance, minidrone_Instruction)
 
-@given(instance=minidrone::MiniDroneProgram_strategy)
+@given(instance=minidrone_MiniDroneProgram_strategy)
 @settings(max_examples=50)
-def test_minidrone::minidroneprogram_instantiation(instance):
-    assert isinstance(instance, minidrone::MiniDroneProgram)
-
-@given(instance=minidrone::MiniDroneProgram_strategy)
-def test_minidrone::minidroneprogram_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_minidrone_minidroneprogram_instantiation(instance):
+    assert isinstance(instance, minidrone_MiniDroneProgram)
 
 
-@given(instance=minidrone::MiniDroneProgram_strategy)
-def test_minidrone::minidroneprogram_name_setter(instance):
+
+@given(instance=minidrone_MiniDroneProgram_strategy)
+def test_minidrone_minidroneprogram_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

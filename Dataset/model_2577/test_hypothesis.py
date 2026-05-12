@@ -3,128 +3,146 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    siddhi::MILLISECONDS,
-    siddhi::SECONDS,
-    siddhi::OUTER,
-    siddhi::INNER,
-    siddhi::JOIN,
-    siddhi::FULL,
-    siddhi::RIGHT,
-    siddhi::LEFT,
-    siddhi::WITHIN,
-    siddhi::YEARS,
-    siddhi::PER,
-    siddhi::SET,
-    siddhi::AGGREGATE,
-    siddhi::AGGREGATION,
-    siddhi::WITH,
-    siddhi::PARTITION,
-    siddhi::END,
-    siddhi::UPDATE,
-    siddhi::FOR,
-    siddhi::DELETE,
-    siddhi::PLAN,
-    siddhi::BEGIN,
-    siddhi::INTO,
-    siddhi::INSERT,
-    siddhi::FIRST,
-    siddhi::SNAPSHOT,
-    siddhi::HAVING,
-    siddhi::BY,
-    siddhi::GROUP,
-    siddhi::SELECT,
-    siddhi::DOUBLE,
-    siddhi::LONG,
-    siddhi::INTS,
-    siddhi::STRINGS,
-    siddhi::OUTPUT,
-    siddhi::WINDOW,
-    siddhi::TABLE,
-    siddhi::FROM,
-    siddhi::RETURN,
-    siddhi::FUNCTION,
-    siddhi::AT,
-    siddhi::TRIGGER,
-    siddhi::NULL,
-    siddhi::IS,
-    siddhi::LAST,
-    siddhi::CURRENT,
-    siddhi::EXPIRED,
-    siddhi::RAW,
-    siddhi::EVENTS,
-    siddhi::ALL,
-    siddhi::OBJECT,
-    siddhi::BOOL,
-    siddhi::FLOAT,
-    EveryAbsentSequenceSourceChain,
-    EverySequenceSourceChain,
-    BasicAbsentPatternSource,
-    siddhi::DEFINE,
-    siddhi::STREAM,
-    AppAnnotation,
-    siddhi::APP,
-    siddhi::IN,
-    RightAbsentPatternSource,
-    LeftAbsentPatternSource,
-    EveryAbsentPatternSource,
-    LogicalAbsentStatefulSource,
+from python_code import (
     Name,
-    siddhi::L,
+    siddhi_L,
     SignedLongValue,
-    siddhi::LONG::LITERAL,
-    siddhi::F,
+    siddhi_LONG_LITERAL,
+    siddhi_F,
     SignedFloatValue,
-    siddhi::FLOAT::LITERAL,
-    siddhi::D,
-    siddhi::E,
+    siddhi_FLOAT_LITERAL,
+    siddhi_D,
+    siddhi_E,
     SignedDoubleValue,
-    siddhi::DOUBLE::LITERAL,
+    siddhi_DOUBLE_LITERAL,
     MILLISECONDS,
-    siddhi::MillisecondValue,
-    siddhi::FunctionId,
-    siddhi::FunctionNamespace,
-    siddhi::SignedLongValue,
+    siddhi_FunctionId,
+    siddhi_FunctionNamespace,
+    siddhi_SignedLongValue,
     FALSE,
     TRUE,
-    siddhi::AttributeList,
-    siddhi::FeaturesOrOutAttr,
-    siddhi::FeaturesOrOutAttrReference,
-    siddhi::SignedFloatValue,
-    siddhi::SignedDoubleValue,
-    siddhi::BoolValue,
-    siddhi::AttributeNameReference,
-    siddhi::Source1OrStandardStatefulSource,
+    siddhi_AttributeList,
+    siddhi_FeaturesOrOutAttr,
+    siddhi_FeaturesOrOutAttrReference,
+    siddhi_SignedFloatValue,
+    siddhi_SignedDoubleValue,
+    siddhi_BoolValue,
+    siddhi_AttributeNameReference,
+    siddhi_Source1OrStandardStatefulSource,
     PatternCollectionStatefulSource,
     SequenceCollectionStatefulSource,
-    siddhi::Literal,
+    siddhi_Literal,
     MathDivmulOperation,
-    siddhi::MathOtherOperations,
+    siddhi_MathOtherOperations,
     MathAddsubOperation,
-    siddhi::MathDivmulOperation,
-    siddhi::SourceOrEventReference,
+    siddhi_MathDivmulOperation,
+    siddhi_SourceOrEventReference,
     SetAssignment,
-    siddhi::ConstantValue,
-    siddhi::StreamReference,
+    siddhi_ConstantValue,
+    siddhi_StreamReference,
     NULL,
     IS,
     MathOtherOperations,
-    siddhi::NullCheck,
-    siddhi::BasicSourceStreamHandlers,
+    siddhi_NullCheck,
+    siddhi_BasicSourceStreamHandlers,
     MathOperation,
-    siddhi::MathAddsubOperation,
+    siddhi_MathAddsubOperation,
     Expression,
-    siddhi::MathOperation,
-    siddhi::StreamFunction,
-    siddhi::Filter,
-    siddhi::BasicSourceStreamHandler,
-    siddhi::UNIDIRECTIONAL,
-    siddhi::JoinSource,
+    siddhi_MathOperation,
+    siddhi_StreamFunction,
+    siddhi_Filter,
+    siddhi_BasicSourceStreamHandler,
+    siddhi_MathGtLtOperation,
+    siddhi_MathInOperation,
+    siddhi_NotOperation,
+    siddhi_MathEqualOperation,
+    siddhi_MINUTES,
+    siddhi_HOURS,
+    siddhi_DAYS,
+    siddhi_WEEKS,
+    siddhi_MONTHS,
+    siddhi_MathLogicalOperation,
+    RightAbsentSequenceSource,
+    siddhi_RightAbsentSequenceSource1,
+    LeftAbsentSequenceSource,
+    siddhi_LeftAbsentSequenceSource1,
+    siddhi_TRUE,
+    siddhi_FALSE,
+    siddhi_MILLISECONDS,
+    siddhi_SECONDS,
+    siddhi_OUTER,
+    siddhi_INNER,
+    siddhi_JOIN,
+    siddhi_FULL,
+    siddhi_RIGHT,
+    siddhi_LEFT,
+    siddhi_WITHIN,
+    siddhi_YEARS,
+    siddhi_PER,
+    siddhi_SET,
+    siddhi_AGGREGATE,
+    siddhi_AGGREGATION,
+    siddhi_WITH,
+    siddhi_PARTITION,
+    siddhi_END,
+    siddhi_UPDATE,
+    siddhi_FOR,
+    siddhi_DELETE,
+    siddhi_PLAN,
+    siddhi_BEGIN,
+    siddhi_INTO,
+    siddhi_INSERT,
+    siddhi_FIRST,
+    siddhi_SNAPSHOT,
+    siddhi_HAVING,
+    siddhi_BY,
+    siddhi_GROUP,
+    siddhi_SELECT,
+    siddhi_DOUBLE,
+    siddhi_LONG,
+    siddhi_INTS,
+    siddhi_STRINGS,
+    siddhi_OUTPUT,
+    siddhi_WINDOW,
+    siddhi_TABLE,
+    siddhi_FROM,
+    siddhi_RETURN,
+    siddhi_FUNCTION,
+    siddhi_AT,
+    siddhi_TRIGGER,
+    siddhi_NULL,
+    siddhi_IS,
+    siddhi_LAST,
+    siddhi_CURRENT,
+    siddhi_EXPIRED,
+    siddhi_RAW,
+    siddhi_EVENTS,
+    siddhi_ALL,
+    siddhi_OBJECT,
+    siddhi_BOOL,
+    siddhi_FLOAT,
+    EveryAbsentSequenceSourceChain,
+    EverySequenceSourceChain,
+    BasicAbsentPatternSource,
+    siddhi_DEFINE,
+    siddhi_STREAM,
+    AppAnnotation,
+    siddhi_APP,
+    siddhi_IN,
+    RightAbsentPatternSource,
+    siddhi_RightAbsentPatternSource1,
+    LeftAbsentPatternSource,
+    siddhi_LeftAbsentPatternSource1,
+    EveryAbsentPatternSource,
+    LogicalAbsentStatefulSource,
+    siddhi_MillisecondValue,
+    siddhi_UNIDIRECTIONAL,
+    siddhi_JoinSource,
     StandardStream,
     JoinSource,
-    siddhi::MainSource,
+    siddhi_MainSource,
     JoinStream,
     INNER,
     FULL,
@@ -134,105 +152,87 @@ from classes import (
     LEFT,
     PER,
     WITHIN,
-    siddhi::joins,
-    siddhi::Per1,
-    siddhi::WithinTimeRange,
+    siddhi_joins,
+    siddhi_Per1,
+    siddhi_WithinTimeRange,
     AbsentPatternSourceChain,
-    siddhi::EveryAbsentPatternSource,
-    siddhi::RightAbsentPatternSource,
-    siddhi::LeftAbsentPatternSource,
-    siddhi::PatternCollectionStatefulSource,
-    siddhi::PatternSource,
-    siddhi::BasicSource,
-    siddhi::NOT,
-    siddhi::Collect,
-    siddhi::AND,
+    siddhi_EveryAbsentPatternSource,
+    siddhi_RightAbsentPatternSource,
+    siddhi_LeftAbsentPatternSource,
+    siddhi_PatternCollectionStatefulSource,
+    siddhi_PatternSource,
+    siddhi_BasicSource,
+    siddhi_NOT,
+    siddhi_Collect,
+    siddhi_AND,
     SequenceSource,
-    siddhi::LogicalAbsentStatefulSource,
-    siddhi::LogicalStatefulSource,
-    siddhi::SequenceCollectionStatefulSource,
+    siddhi_LogicalStatefulSource,
+    siddhi_LogicalAbsentStatefulSource,
+    siddhi_SequenceCollectionStatefulSource,
     SequenceSourceChain,
-    siddhi::PatternSourceChain,
+    siddhi_PatternSourceChain,
     PatternStream,
-    siddhi::AbsentPatternSourceChain,
-    siddhi::EveryPatternSourceChain,
-    siddhi::RightAbsentSequenceSource,
-    siddhi::LeftAbsentSequenceSource,
-    siddhi::BasicAbsentPatternSource,
-    siddhi::EObject,
+    siddhi_AbsentPatternSourceChain,
+    siddhi_EveryPatternSourceChain,
+    siddhi_RightAbsentSequenceSource,
+    siddhi_LeftAbsentSequenceSource,
+    siddhi_BasicAbsentPatternSource,
+    siddhi_EObject,
     HAVING,
     GROUP,
-    siddhi::HavingExpr,
-    siddhi::AbsentSequenceSourceChain,
-    siddhi::SequenceSourceChain,
-    siddhi::WithinTime,
-    siddhi::SequenceSource,
-    siddhi::EveryAbsentSequenceSourceChain,
-    siddhi::EverySequenceSourceChain,
-    siddhi::PatternStream,
-    siddhi::SequenceStream,
-    siddhi::JoinStream,
-    siddhi::Attribute,
-    siddhi::OutputAttribute,
+    siddhi_HavingExpr,
+    siddhi_AbsentSequenceSourceChain,
+    siddhi_SequenceSourceChain,
+    siddhi_WithinTime,
+    siddhi_SequenceSource,
+    siddhi_EveryAbsentSequenceSourceChain,
+    siddhi_EverySequenceSourceChain,
+    siddhi_PatternStream,
+    siddhi_SequenceStream,
+    siddhi_JoinStream,
+    siddhi_Attribute,
+    siddhi_OutputAttribute,
     SELECT,
     FIRST,
     LAST,
-    siddhi::AttributeIndex,
-    siddhi::MathGtLtOperation,
-    siddhi::MathInOperation,
-    siddhi::NotOperation,
-    siddhi::MathEqualOperation,
-    siddhi::MINUTES,
-    siddhi::HOURS,
-    siddhi::DAYS,
-    siddhi::WEEKS,
-    siddhi::MONTHS,
-    siddhi::MathLogicalOperation,
-    siddhi::RightAbsentPatternSource1,
-    siddhi::LeftAbsentPatternSource1,
-    RightAbsentSequenceSource,
-    siddhi::RightAbsentSequenceSource1,
-    LeftAbsentSequenceSource,
-    siddhi::LeftAbsentSequenceSource1,
-    siddhi::TRUE,
-    siddhi::FALSE,
+    siddhi_AttributeIndex,
     SNAPSHOT,
     CURRENT,
     EXPIRED,
     RAW,
     EVENTS,
     ALL,
-    siddhi::OutputRateType,
-    siddhi::SetAssignment,
+    siddhi_OutputRateType,
+    siddhi_SetAssignment,
     SET,
-    siddhi::SetClause,
-    siddhi::OR,
-    siddhi::ConditionRange,
-    siddhi::OF,
+    siddhi_SetClause,
+    siddhi_OR,
+    siddhi_ConditionRange,
+    siddhi_OF,
     PartitionWithStream,
-    siddhi::ConditionRanges,
-    siddhi::ON,
-    siddhi::Target,
+    siddhi_ConditionRanges,
+    siddhi_ON,
+    siddhi_Target,
     UPDATE,
     FOR,
-    siddhi::ForTime,
+    siddhi_ForTime,
     DELETE,
     INTO,
     INSERT,
-    siddhi::QuerySection,
-    siddhi::QueryInput,
-    siddhi::AS,
-    siddhi::Expression,
-    siddhi::PropertyValue,
-    siddhi::PartitionWithStream,
+    siddhi_QuerySection,
+    siddhi_QueryInput,
+    siddhi_AS,
+    siddhi_Expression,
+    siddhi_PropertyValue,
+    siddhi_PartitionWithStream,
     END,
     BEGIN,
     WITH,
     PARTITION,
     Source1OrStandardStatefulSource,
-    siddhi::StreamAlias,
-    siddhi::StandardStatefulSource,
-    siddhi::Source,
+    siddhi_StreamAlias,
+    siddhi_StandardStatefulSource,
+    siddhi_Source,
     OBJECT,
     BOOL,
     DOUBLE,
@@ -241,1613 +241,83 @@ from classes import (
     INTS,
     STRINGS,
     FeaturesOrOutAttr,
-    siddhi::OutAttr,
-    siddhi::PropertySeparator,
-    siddhi::AttributeReference,
-    siddhi::GroupByQuerySelection,
-    siddhi::StandardStream,
+    siddhi_OutAttr,
+    siddhi_PropertySeparator,
+    siddhi_AttributeReference,
+    siddhi_GroupByQuerySelection,
+    siddhi_StandardStream,
     BY,
-    siddhi::GroupBy,
-    siddhi::PropertyName,
-    siddhi::AnnotationElement,
-    siddhi::Name,
+    siddhi_GroupBy,
+    siddhi_PropertyName,
+    siddhi_AnnotationElement,
+    siddhi_Name,
     YEARS,
-    siddhi::YearValue,
+    siddhi_YearValue,
     MONTHS,
-    siddhi::MonthValue,
+    siddhi_MonthValue,
     WEEKS,
-    siddhi::WeekValue,
+    siddhi_WeekValue,
     DAYS,
-    siddhi::DayValue,
+    siddhi_DayValue,
     HOURS,
-    siddhi::HourValue,
+    siddhi_HourValue,
     MINUTES,
-    siddhi::MinuteValue,
+    siddhi_MinuteValue,
     SECONDS,
-    siddhi::SecondValue,
+    siddhi_SecondValue,
     AggregationTime,
-    siddhi::AggregationTimeRange,
-    siddhi::AggregationTimeInterval,
-    siddhi::AggregationTimeDuration,
-    siddhi::AggregationTime,
+    siddhi_AggregationTimeRange,
+    siddhi_AggregationTimeInterval,
+    siddhi_AggregationTimeDuration,
+    siddhi_AggregationTime,
     OUTPUT,
-    siddhi::OutputRate,
+    siddhi_OutputRate,
     WINDOW,
-    siddhi::Win,
-    siddhi::BasicSourceStreamHandlers1,
+    siddhi_Win,
+    siddhi_BasicSourceStreamHandlers1,
     AGGREGATE,
     FROM,
     AGGREGATION,
-    siddhi::FunctionBody,
-    siddhi::AttributeType,
-    siddhi::LanguageName,
-    siddhi::FunctionName,
+    siddhi_FunctionBody,
+    siddhi_AttributeType,
+    siddhi_LanguageName,
+    siddhi_FunctionName,
     RETURN,
-    siddhi::QueryOutput,
-    siddhi::AnonymousStream,
+    siddhi_AnonymousStream,
+    siddhi_QueryOutput,
     FUNCTION,
-    siddhi::StringValue,
-    siddhi::TimeValue,
-    siddhi::EVERY,
-    siddhi::TriggerName,
+    siddhi_StringValue,
+    siddhi_TimeValue,
+    siddhi_EVERY,
+    siddhi_TriggerName,
     AT,
     TRIGGER,
-    siddhi::OutputEventType,
-    siddhi::FunctionOperation,
-    siddhi::AppAnnotation,
-    siddhi::ExecutionPlan,
+    siddhi_OutputEventType,
+    siddhi_FunctionOperation,
+    siddhi_AppAnnotation,
+    siddhi_ExecutionPlan,
     TABLE,
-    siddhi::Features,
-    siddhi::Source1,
-    siddhi::Annotation,
+    siddhi_Features,
+    siddhi_Source1,
+    siddhi_Annotation,
     STREAM,
     DEFINE,
-    siddhi::Keyword,
-    siddhi::DefinitionTable,
-    siddhi::DefinitionStream,
-    siddhi::Query,
-    siddhi::ExecPartition,
-    siddhi::ExecutionElement,
-    siddhi::DefinitionAggregation,
-    siddhi::DefinitionFunction,
-    siddhi::DefinitionTrigger,
-    siddhi::DefinitionWindow,
-    siddhi::SiddhiQL,
+    siddhi_DefinitionStream,
+    siddhi_DefinitionTable,
+    siddhi_Keyword,
+    siddhi_Query,
+    siddhi_ExecPartition,
+    siddhi_ExecutionElement,
+    siddhi_DefinitionAggregation,
+    siddhi_DefinitionFunction,
+    siddhi_DefinitionTrigger,
+    siddhi_DefinitionWindow,
+    siddhi_SiddhiQL,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_siddhi::milliseconds_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MILLISECONDS)
-
-
-def test_siddhi::milliseconds_constructor_exists():
-    assert callable(siddhi::MILLISECONDS.__init__)
-
-
-def test_siddhi::milliseconds_constructor_args():
-    sig = inspect.signature(siddhi::MILLISECONDS.__init__)
-    params = list(sig.parameters.keys())
-    assert "millisec" in params, "Missing parameter 'millisec'"
-    assert "millisecond" in params, "Missing parameter 'millisecond'"
-    assert "milliseconds" in params, "Missing parameter 'milliseconds'"
-
-def test_siddhi::milliseconds_has_millisec():
-    assert hasattr(siddhi::MILLISECONDS, "millisec")
-    descriptor = None
-    for klass in siddhi::MILLISECONDS.__mro__:
-        if "millisec" in klass.__dict__:
-            descriptor = klass.__dict__["millisec"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::milliseconds_has_millisecond():
-    assert hasattr(siddhi::MILLISECONDS, "millisecond")
-    descriptor = None
-    for klass in siddhi::MILLISECONDS.__mro__:
-        if "millisecond" in klass.__dict__:
-            descriptor = klass.__dict__["millisecond"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::milliseconds_has_milliseconds():
-    assert hasattr(siddhi::MILLISECONDS, "milliseconds")
-    descriptor = None
-    for klass in siddhi::MILLISECONDS.__mro__:
-        if "milliseconds" in klass.__dict__:
-            descriptor = klass.__dict__["milliseconds"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::seconds_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SECONDS)
-
-
-def test_siddhi::seconds_constructor_exists():
-    assert callable(siddhi::SECONDS.__init__)
-
-
-def test_siddhi::seconds_constructor_args():
-    sig = inspect.signature(siddhi::SECONDS.__init__)
-    params = list(sig.parameters.keys())
-    assert "sec" in params, "Missing parameter 'sec'"
-    assert "seconds" in params, "Missing parameter 'seconds'"
-    assert "second" in params, "Missing parameter 'second'"
-
-def test_siddhi::seconds_has_sec():
-    assert hasattr(siddhi::SECONDS, "sec")
-    descriptor = None
-    for klass in siddhi::SECONDS.__mro__:
-        if "sec" in klass.__dict__:
-            descriptor = klass.__dict__["sec"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::seconds_has_seconds():
-    assert hasattr(siddhi::SECONDS, "seconds")
-    descriptor = None
-    for klass in siddhi::SECONDS.__mro__:
-        if "seconds" in klass.__dict__:
-            descriptor = klass.__dict__["seconds"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::seconds_has_second():
-    assert hasattr(siddhi::SECONDS, "second")
-    descriptor = None
-    for klass in siddhi::SECONDS.__mro__:
-        if "second" in klass.__dict__:
-            descriptor = klass.__dict__["second"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::outer_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OUTER)
-
-
-def test_siddhi::outer_constructor_exists():
-    assert callable(siddhi::OUTER.__init__)
-
-
-def test_siddhi::outer_constructor_args():
-    sig = inspect.signature(siddhi::OUTER.__init__)
-    params = list(sig.parameters.keys())
-    assert "outer" in params, "Missing parameter 'outer'"
-
-def test_siddhi::outer_has_outer():
-    assert hasattr(siddhi::OUTER, "outer")
-    descriptor = None
-    for klass in siddhi::OUTER.__mro__:
-        if "outer" in klass.__dict__:
-            descriptor = klass.__dict__["outer"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::inner_is_not_abstract():
-    assert not inspect.isabstract(siddhi::INNER)
-
-
-def test_siddhi::inner_constructor_exists():
-    assert callable(siddhi::INNER.__init__)
-
-
-def test_siddhi::inner_constructor_args():
-    sig = inspect.signature(siddhi::INNER.__init__)
-    params = list(sig.parameters.keys())
-    assert "inner" in params, "Missing parameter 'inner'"
-
-def test_siddhi::inner_has_inner():
-    assert hasattr(siddhi::INNER, "inner")
-    descriptor = None
-    for klass in siddhi::INNER.__mro__:
-        if "inner" in klass.__dict__:
-            descriptor = klass.__dict__["inner"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::join_is_not_abstract():
-    assert not inspect.isabstract(siddhi::JOIN)
-
-
-def test_siddhi::join_constructor_exists():
-    assert callable(siddhi::JOIN.__init__)
-
-
-def test_siddhi::join_constructor_args():
-    sig = inspect.signature(siddhi::JOIN.__init__)
-    params = list(sig.parameters.keys())
-    assert "join" in params, "Missing parameter 'join'"
-
-def test_siddhi::join_has_join():
-    assert hasattr(siddhi::JOIN, "join")
-    descriptor = None
-    for klass in siddhi::JOIN.__mro__:
-        if "join" in klass.__dict__:
-            descriptor = klass.__dict__["join"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::full_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FULL)
-
-
-def test_siddhi::full_constructor_exists():
-    assert callable(siddhi::FULL.__init__)
-
-
-def test_siddhi::full_constructor_args():
-    sig = inspect.signature(siddhi::FULL.__init__)
-    params = list(sig.parameters.keys())
-    assert "full" in params, "Missing parameter 'full'"
-
-def test_siddhi::full_has_full():
-    assert hasattr(siddhi::FULL, "full")
-    descriptor = None
-    for klass in siddhi::FULL.__mro__:
-        if "full" in klass.__dict__:
-            descriptor = klass.__dict__["full"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::right_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RIGHT)
-
-
-def test_siddhi::right_constructor_exists():
-    assert callable(siddhi::RIGHT.__init__)
-
-
-def test_siddhi::right_constructor_args():
-    sig = inspect.signature(siddhi::RIGHT.__init__)
-    params = list(sig.parameters.keys())
-    assert "right" in params, "Missing parameter 'right'"
-
-def test_siddhi::right_has_right():
-    assert hasattr(siddhi::RIGHT, "right")
-    descriptor = None
-    for klass in siddhi::RIGHT.__mro__:
-        if "right" in klass.__dict__:
-            descriptor = klass.__dict__["right"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::left_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LEFT)
-
-
-def test_siddhi::left_constructor_exists():
-    assert callable(siddhi::LEFT.__init__)
-
-
-def test_siddhi::left_constructor_args():
-    sig = inspect.signature(siddhi::LEFT.__init__)
-    params = list(sig.parameters.keys())
-    assert "left" in params, "Missing parameter 'left'"
-
-def test_siddhi::left_has_left():
-    assert hasattr(siddhi::LEFT, "left")
-    descriptor = None
-    for klass in siddhi::LEFT.__mro__:
-        if "left" in klass.__dict__:
-            descriptor = klass.__dict__["left"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::within_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WITHIN)
-
-
-def test_siddhi::within_constructor_exists():
-    assert callable(siddhi::WITHIN.__init__)
-
-
-def test_siddhi::within_constructor_args():
-    sig = inspect.signature(siddhi::WITHIN.__init__)
-    params = list(sig.parameters.keys())
-    assert "within" in params, "Missing parameter 'within'"
-
-def test_siddhi::within_has_within():
-    assert hasattr(siddhi::WITHIN, "within")
-    descriptor = None
-    for klass in siddhi::WITHIN.__mro__:
-        if "within" in klass.__dict__:
-            descriptor = klass.__dict__["within"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::years_is_not_abstract():
-    assert not inspect.isabstract(siddhi::YEARS)
-
-
-def test_siddhi::years_constructor_exists():
-    assert callable(siddhi::YEARS.__init__)
-
-
-def test_siddhi::years_constructor_args():
-    sig = inspect.signature(siddhi::YEARS.__init__)
-    params = list(sig.parameters.keys())
-    assert "years" in params, "Missing parameter 'years'"
-    assert "year" in params, "Missing parameter 'year'"
-
-def test_siddhi::years_has_years():
-    assert hasattr(siddhi::YEARS, "years")
-    descriptor = None
-    for klass in siddhi::YEARS.__mro__:
-        if "years" in klass.__dict__:
-            descriptor = klass.__dict__["years"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::years_has_year():
-    assert hasattr(siddhi::YEARS, "year")
-    descriptor = None
-    for klass in siddhi::YEARS.__mro__:
-        if "year" in klass.__dict__:
-            descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::per_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PER)
-
-
-def test_siddhi::per_constructor_exists():
-    assert callable(siddhi::PER.__init__)
-
-
-def test_siddhi::per_constructor_args():
-    sig = inspect.signature(siddhi::PER.__init__)
-    params = list(sig.parameters.keys())
-    assert "per" in params, "Missing parameter 'per'"
-
-def test_siddhi::per_has_per():
-    assert hasattr(siddhi::PER, "per")
-    descriptor = None
-    for klass in siddhi::PER.__mro__:
-        if "per" in klass.__dict__:
-            descriptor = klass.__dict__["per"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::set_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SET)
-
-
-def test_siddhi::set_constructor_exists():
-    assert callable(siddhi::SET.__init__)
-
-
-def test_siddhi::set_constructor_args():
-    sig = inspect.signature(siddhi::SET.__init__)
-    params = list(sig.parameters.keys())
-    assert "set" in params, "Missing parameter 'set'"
-
-def test_siddhi::set_has_set():
-    assert hasattr(siddhi::SET, "set")
-    descriptor = None
-    for klass in siddhi::SET.__mro__:
-        if "set" in klass.__dict__:
-            descriptor = klass.__dict__["set"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::aggregate_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AGGREGATE)
-
-
-def test_siddhi::aggregate_constructor_exists():
-    assert callable(siddhi::AGGREGATE.__init__)
-
-
-def test_siddhi::aggregate_constructor_args():
-    sig = inspect.signature(siddhi::AGGREGATE.__init__)
-    params = list(sig.parameters.keys())
-    assert "agrregate" in params, "Missing parameter 'agrregate'"
-
-def test_siddhi::aggregate_has_agrregate():
-    assert hasattr(siddhi::AGGREGATE, "agrregate")
-    descriptor = None
-    for klass in siddhi::AGGREGATE.__mro__:
-        if "agrregate" in klass.__dict__:
-            descriptor = klass.__dict__["agrregate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::aggregation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AGGREGATION)
-
-
-def test_siddhi::aggregation_constructor_exists():
-    assert callable(siddhi::AGGREGATION.__init__)
-
-
-def test_siddhi::aggregation_constructor_args():
-    sig = inspect.signature(siddhi::AGGREGATION.__init__)
-    params = list(sig.parameters.keys())
-    assert "aggre" in params, "Missing parameter 'aggre'"
-
-def test_siddhi::aggregation_has_aggre():
-    assert hasattr(siddhi::AGGREGATION, "aggre")
-    descriptor = None
-    for klass in siddhi::AGGREGATION.__mro__:
-        if "aggre" in klass.__dict__:
-            descriptor = klass.__dict__["aggre"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::with_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WITH)
-
-
-def test_siddhi::with_constructor_exists():
-    assert callable(siddhi::WITH.__init__)
-
-
-def test_siddhi::with_constructor_args():
-    sig = inspect.signature(siddhi::WITH.__init__)
-    params = list(sig.parameters.keys())
-    assert "wi" in params, "Missing parameter 'wi'"
-
-def test_siddhi::with_has_wi():
-    assert hasattr(siddhi::WITH, "wi")
-    descriptor = None
-    for klass in siddhi::WITH.__mro__:
-        if "wi" in klass.__dict__:
-            descriptor = klass.__dict__["wi"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::partition_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PARTITION)
-
-
-def test_siddhi::partition_constructor_exists():
-    assert callable(siddhi::PARTITION.__init__)
-
-
-def test_siddhi::partition_constructor_args():
-    sig = inspect.signature(siddhi::PARTITION.__init__)
-    params = list(sig.parameters.keys())
-    assert "partition" in params, "Missing parameter 'partition'"
-
-def test_siddhi::partition_has_partition():
-    assert hasattr(siddhi::PARTITION, "partition")
-    descriptor = None
-    for klass in siddhi::PARTITION.__mro__:
-        if "partition" in klass.__dict__:
-            descriptor = klass.__dict__["partition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::end_is_not_abstract():
-    assert not inspect.isabstract(siddhi::END)
-
-
-def test_siddhi::end_constructor_exists():
-    assert callable(siddhi::END.__init__)
-
-
-def test_siddhi::end_constructor_args():
-    sig = inspect.signature(siddhi::END.__init__)
-    params = list(sig.parameters.keys())
-    assert "end" in params, "Missing parameter 'end'"
-
-def test_siddhi::end_has_end():
-    assert hasattr(siddhi::END, "end")
-    descriptor = None
-    for klass in siddhi::END.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::update_is_not_abstract():
-    assert not inspect.isabstract(siddhi::UPDATE)
-
-
-def test_siddhi::update_constructor_exists():
-    assert callable(siddhi::UPDATE.__init__)
-
-
-def test_siddhi::update_constructor_args():
-    sig = inspect.signature(siddhi::UPDATE.__init__)
-    params = list(sig.parameters.keys())
-    assert "update" in params, "Missing parameter 'update'"
-
-def test_siddhi::update_has_update():
-    assert hasattr(siddhi::UPDATE, "update")
-    descriptor = None
-    for klass in siddhi::UPDATE.__mro__:
-        if "update" in klass.__dict__:
-            descriptor = klass.__dict__["update"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::for_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FOR)
-
-
-def test_siddhi::for_constructor_exists():
-    assert callable(siddhi::FOR.__init__)
-
-
-def test_siddhi::for_constructor_args():
-    sig = inspect.signature(siddhi::FOR.__init__)
-    params = list(sig.parameters.keys())
-    assert "for_" in params, "Missing parameter 'for_'"
-
-def test_siddhi::for_has_for_():
-    assert hasattr(siddhi::FOR, "for_")
-    descriptor = None
-    for klass in siddhi::FOR.__mro__:
-        if "for_" in klass.__dict__:
-            descriptor = klass.__dict__["for_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::delete_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DELETE)
-
-
-def test_siddhi::delete_constructor_exists():
-    assert callable(siddhi::DELETE.__init__)
-
-
-def test_siddhi::delete_constructor_args():
-    sig = inspect.signature(siddhi::DELETE.__init__)
-    params = list(sig.parameters.keys())
-    assert "delete" in params, "Missing parameter 'delete'"
-
-def test_siddhi::delete_has_delete():
-    assert hasattr(siddhi::DELETE, "delete")
-    descriptor = None
-    for klass in siddhi::DELETE.__mro__:
-        if "delete" in klass.__dict__:
-            descriptor = klass.__dict__["delete"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::plan_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PLAN)
-
-
-def test_siddhi::plan_constructor_exists():
-    assert callable(siddhi::PLAN.__init__)
-
-
-def test_siddhi::plan_constructor_args():
-    sig = inspect.signature(siddhi::PLAN.__init__)
-    params = list(sig.parameters.keys())
-    assert "plan" in params, "Missing parameter 'plan'"
-
-def test_siddhi::plan_has_plan():
-    assert hasattr(siddhi::PLAN, "plan")
-    descriptor = None
-    for klass in siddhi::PLAN.__mro__:
-        if "plan" in klass.__dict__:
-            descriptor = klass.__dict__["plan"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::begin_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BEGIN)
-
-
-def test_siddhi::begin_constructor_exists():
-    assert callable(siddhi::BEGIN.__init__)
-
-
-def test_siddhi::begin_constructor_args():
-    sig = inspect.signature(siddhi::BEGIN.__init__)
-    params = list(sig.parameters.keys())
-    assert "begin" in params, "Missing parameter 'begin'"
-
-def test_siddhi::begin_has_begin():
-    assert hasattr(siddhi::BEGIN, "begin")
-    descriptor = None
-    for klass in siddhi::BEGIN.__mro__:
-        if "begin" in klass.__dict__:
-            descriptor = klass.__dict__["begin"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::into_is_not_abstract():
-    assert not inspect.isabstract(siddhi::INTO)
-
-
-def test_siddhi::into_constructor_exists():
-    assert callable(siddhi::INTO.__init__)
-
-
-def test_siddhi::into_constructor_args():
-    sig = inspect.signature(siddhi::INTO.__init__)
-    params = list(sig.parameters.keys())
-    assert "into" in params, "Missing parameter 'into'"
-
-def test_siddhi::into_has_into():
-    assert hasattr(siddhi::INTO, "into")
-    descriptor = None
-    for klass in siddhi::INTO.__mro__:
-        if "into" in klass.__dict__:
-            descriptor = klass.__dict__["into"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::insert_is_not_abstract():
-    assert not inspect.isabstract(siddhi::INSERT)
-
-
-def test_siddhi::insert_constructor_exists():
-    assert callable(siddhi::INSERT.__init__)
-
-
-def test_siddhi::insert_constructor_args():
-    sig = inspect.signature(siddhi::INSERT.__init__)
-    params = list(sig.parameters.keys())
-    assert "insert" in params, "Missing parameter 'insert'"
-
-def test_siddhi::insert_has_insert():
-    assert hasattr(siddhi::INSERT, "insert")
-    descriptor = None
-    for klass in siddhi::INSERT.__mro__:
-        if "insert" in klass.__dict__:
-            descriptor = klass.__dict__["insert"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::first_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FIRST)
-
-
-def test_siddhi::first_constructor_exists():
-    assert callable(siddhi::FIRST.__init__)
-
-
-def test_siddhi::first_constructor_args():
-    sig = inspect.signature(siddhi::FIRST.__init__)
-    params = list(sig.parameters.keys())
-    assert "first" in params, "Missing parameter 'first'"
-
-def test_siddhi::first_has_first():
-    assert hasattr(siddhi::FIRST, "first")
-    descriptor = None
-    for klass in siddhi::FIRST.__mro__:
-        if "first" in klass.__dict__:
-            descriptor = klass.__dict__["first"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::snapshot_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SNAPSHOT)
-
-
-def test_siddhi::snapshot_constructor_exists():
-    assert callable(siddhi::SNAPSHOT.__init__)
-
-
-def test_siddhi::snapshot_constructor_args():
-    sig = inspect.signature(siddhi::SNAPSHOT.__init__)
-    params = list(sig.parameters.keys())
-    assert "snapshot" in params, "Missing parameter 'snapshot'"
-
-def test_siddhi::snapshot_has_snapshot():
-    assert hasattr(siddhi::SNAPSHOT, "snapshot")
-    descriptor = None
-    for klass in siddhi::SNAPSHOT.__mro__:
-        if "snapshot" in klass.__dict__:
-            descriptor = klass.__dict__["snapshot"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::having_is_not_abstract():
-    assert not inspect.isabstract(siddhi::HAVING)
-
-
-def test_siddhi::having_constructor_exists():
-    assert callable(siddhi::HAVING.__init__)
-
-
-def test_siddhi::having_constructor_args():
-    sig = inspect.signature(siddhi::HAVING.__init__)
-    params = list(sig.parameters.keys())
-    assert "having" in params, "Missing parameter 'having'"
-
-def test_siddhi::having_has_having():
-    assert hasattr(siddhi::HAVING, "having")
-    descriptor = None
-    for klass in siddhi::HAVING.__mro__:
-        if "having" in klass.__dict__:
-            descriptor = klass.__dict__["having"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::by_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BY)
-
-
-def test_siddhi::by_constructor_exists():
-    assert callable(siddhi::BY.__init__)
-
-
-def test_siddhi::by_constructor_args():
-    sig = inspect.signature(siddhi::BY.__init__)
-    params = list(sig.parameters.keys())
-    assert "by" in params, "Missing parameter 'by'"
-
-def test_siddhi::by_has_by():
-    assert hasattr(siddhi::BY, "by")
-    descriptor = None
-    for klass in siddhi::BY.__mro__:
-        if "by" in klass.__dict__:
-            descriptor = klass.__dict__["by"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::group_is_not_abstract():
-    assert not inspect.isabstract(siddhi::GROUP)
-
-
-def test_siddhi::group_constructor_exists():
-    assert callable(siddhi::GROUP.__init__)
-
-
-def test_siddhi::group_constructor_args():
-    sig = inspect.signature(siddhi::GROUP.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_siddhi::group_has_group():
-    assert hasattr(siddhi::GROUP, "group")
-    descriptor = None
-    for klass in siddhi::GROUP.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::select_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SELECT)
-
-
-def test_siddhi::select_constructor_exists():
-    assert callable(siddhi::SELECT.__init__)
-
-
-def test_siddhi::select_constructor_args():
-    sig = inspect.signature(siddhi::SELECT.__init__)
-    params = list(sig.parameters.keys())
-    assert "select" in params, "Missing parameter 'select'"
-
-def test_siddhi::select_has_select():
-    assert hasattr(siddhi::SELECT, "select")
-    descriptor = None
-    for klass in siddhi::SELECT.__mro__:
-        if "select" in klass.__dict__:
-            descriptor = klass.__dict__["select"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::double_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DOUBLE)
-
-
-def test_siddhi::double_constructor_exists():
-    assert callable(siddhi::DOUBLE.__init__)
-
-
-def test_siddhi::double_constructor_args():
-    sig = inspect.signature(siddhi::DOUBLE.__init__)
-    params = list(sig.parameters.keys())
-    assert "double" in params, "Missing parameter 'double'"
-
-def test_siddhi::double_has_double():
-    assert hasattr(siddhi::DOUBLE, "double")
-    descriptor = None
-    for klass in siddhi::DOUBLE.__mro__:
-        if "double" in klass.__dict__:
-            descriptor = klass.__dict__["double"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::long_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LONG)
-
-
-def test_siddhi::long_constructor_exists():
-    assert callable(siddhi::LONG.__init__)
-
-
-def test_siddhi::long_constructor_args():
-    sig = inspect.signature(siddhi::LONG.__init__)
-    params = list(sig.parameters.keys())
-    assert "long" in params, "Missing parameter 'long'"
-
-def test_siddhi::long_has_long():
-    assert hasattr(siddhi::LONG, "long")
-    descriptor = None
-    for klass in siddhi::LONG.__mro__:
-        if "long" in klass.__dict__:
-            descriptor = klass.__dict__["long"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::ints_is_not_abstract():
-    assert not inspect.isabstract(siddhi::INTS)
-
-
-def test_siddhi::ints_constructor_exists():
-    assert callable(siddhi::INTS.__init__)
-
-
-def test_siddhi::ints_constructor_args():
-    sig = inspect.signature(siddhi::INTS.__init__)
-    params = list(sig.parameters.keys())
-    assert "int" in params, "Missing parameter 'int'"
-
-def test_siddhi::ints_has_int():
-    assert hasattr(siddhi::INTS, "int")
-    descriptor = None
-    for klass in siddhi::INTS.__mro__:
-        if "int" in klass.__dict__:
-            descriptor = klass.__dict__["int"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::strings_is_not_abstract():
-    assert not inspect.isabstract(siddhi::STRINGS)
-
-
-def test_siddhi::strings_constructor_exists():
-    assert callable(siddhi::STRINGS.__init__)
-
-
-def test_siddhi::strings_constructor_args():
-    sig = inspect.signature(siddhi::STRINGS.__init__)
-    params = list(sig.parameters.keys())
-    assert "string" in params, "Missing parameter 'string'"
-
-def test_siddhi::strings_has_string():
-    assert hasattr(siddhi::STRINGS, "string")
-    descriptor = None
-    for klass in siddhi::STRINGS.__mro__:
-        if "string" in klass.__dict__:
-            descriptor = klass.__dict__["string"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::output_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OUTPUT)
-
-
-def test_siddhi::output_constructor_exists():
-    assert callable(siddhi::OUTPUT.__init__)
-
-
-def test_siddhi::output_constructor_args():
-    sig = inspect.signature(siddhi::OUTPUT.__init__)
-    params = list(sig.parameters.keys())
-    assert "output" in params, "Missing parameter 'output'"
-
-def test_siddhi::output_has_output():
-    assert hasattr(siddhi::OUTPUT, "output")
-    descriptor = None
-    for klass in siddhi::OUTPUT.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::window_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WINDOW)
-
-
-def test_siddhi::window_constructor_exists():
-    assert callable(siddhi::WINDOW.__init__)
-
-
-def test_siddhi::window_constructor_args():
-    sig = inspect.signature(siddhi::WINDOW.__init__)
-    params = list(sig.parameters.keys())
-    assert "window" in params, "Missing parameter 'window'"
-
-def test_siddhi::window_has_window():
-    assert hasattr(siddhi::WINDOW, "window")
-    descriptor = None
-    for klass in siddhi::WINDOW.__mro__:
-        if "window" in klass.__dict__:
-            descriptor = klass.__dict__["window"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::table_is_not_abstract():
-    assert not inspect.isabstract(siddhi::TABLE)
-
-
-def test_siddhi::table_constructor_exists():
-    assert callable(siddhi::TABLE.__init__)
-
-
-def test_siddhi::table_constructor_args():
-    sig = inspect.signature(siddhi::TABLE.__init__)
-    params = list(sig.parameters.keys())
-    assert "table" in params, "Missing parameter 'table'"
-
-def test_siddhi::table_has_table():
-    assert hasattr(siddhi::TABLE, "table")
-    descriptor = None
-    for klass in siddhi::TABLE.__mro__:
-        if "table" in klass.__dict__:
-            descriptor = klass.__dict__["table"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::from_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FROM)
-
-
-def test_siddhi::from_constructor_exists():
-    assert callable(siddhi::FROM.__init__)
-
-
-def test_siddhi::from_constructor_args():
-    sig = inspect.signature(siddhi::FROM.__init__)
-    params = list(sig.parameters.keys())
-    assert "from_" in params, "Missing parameter 'from_'"
-
-def test_siddhi::from_has_from_():
-    assert hasattr(siddhi::FROM, "from_")
-    descriptor = None
-    for klass in siddhi::FROM.__mro__:
-        if "from_" in klass.__dict__:
-            descriptor = klass.__dict__["from_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::return_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RETURN)
-
-
-def test_siddhi::return_constructor_exists():
-    assert callable(siddhi::RETURN.__init__)
-
-
-def test_siddhi::return_constructor_args():
-    sig = inspect.signature(siddhi::RETURN.__init__)
-    params = list(sig.parameters.keys())
-    assert "return_" in params, "Missing parameter 'return_'"
-
-def test_siddhi::return_has_return_():
-    assert hasattr(siddhi::RETURN, "return_")
-    descriptor = None
-    for klass in siddhi::RETURN.__mro__:
-        if "return_" in klass.__dict__:
-            descriptor = klass.__dict__["return_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::function_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FUNCTION)
-
-
-def test_siddhi::function_constructor_exists():
-    assert callable(siddhi::FUNCTION.__init__)
-
-
-def test_siddhi::function_constructor_args():
-    sig = inspect.signature(siddhi::FUNCTION.__init__)
-    params = list(sig.parameters.keys())
-    assert "function" in params, "Missing parameter 'function'"
-
-def test_siddhi::function_has_function():
-    assert hasattr(siddhi::FUNCTION, "function")
-    descriptor = None
-    for klass in siddhi::FUNCTION.__mro__:
-        if "function" in klass.__dict__:
-            descriptor = klass.__dict__["function"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::at_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AT)
-
-
-def test_siddhi::at_constructor_exists():
-    assert callable(siddhi::AT.__init__)
-
-
-def test_siddhi::at_constructor_args():
-    sig = inspect.signature(siddhi::AT.__init__)
-    params = list(sig.parameters.keys())
-    assert "at" in params, "Missing parameter 'at'"
-
-def test_siddhi::at_has_at():
-    assert hasattr(siddhi::AT, "at")
-    descriptor = None
-    for klass in siddhi::AT.__mro__:
-        if "at" in klass.__dict__:
-            descriptor = klass.__dict__["at"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::trigger_is_not_abstract():
-    assert not inspect.isabstract(siddhi::TRIGGER)
-
-
-def test_siddhi::trigger_constructor_exists():
-    assert callable(siddhi::TRIGGER.__init__)
-
-
-def test_siddhi::trigger_constructor_args():
-    sig = inspect.signature(siddhi::TRIGGER.__init__)
-    params = list(sig.parameters.keys())
-    assert "trigger" in params, "Missing parameter 'trigger'"
-
-def test_siddhi::trigger_has_trigger():
-    assert hasattr(siddhi::TRIGGER, "trigger")
-    descriptor = None
-    for klass in siddhi::TRIGGER.__mro__:
-        if "trigger" in klass.__dict__:
-            descriptor = klass.__dict__["trigger"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::null_is_not_abstract():
-    assert not inspect.isabstract(siddhi::NULL)
-
-
-def test_siddhi::null_constructor_exists():
-    assert callable(siddhi::NULL.__init__)
-
-
-def test_siddhi::null_constructor_args():
-    sig = inspect.signature(siddhi::NULL.__init__)
-    params = list(sig.parameters.keys())
-    assert "null" in params, "Missing parameter 'null'"
-
-def test_siddhi::null_has_null():
-    assert hasattr(siddhi::NULL, "null")
-    descriptor = None
-    for klass in siddhi::NULL.__mro__:
-        if "null" in klass.__dict__:
-            descriptor = klass.__dict__["null"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::is_is_not_abstract():
-    assert not inspect.isabstract(siddhi::IS)
-
-
-def test_siddhi::is_constructor_exists():
-    assert callable(siddhi::IS.__init__)
-
-
-def test_siddhi::is_constructor_args():
-    sig = inspect.signature(siddhi::IS.__init__)
-    params = list(sig.parameters.keys())
-    assert "is_" in params, "Missing parameter 'is_'"
-
-def test_siddhi::is_has_is_():
-    assert hasattr(siddhi::IS, "is_")
-    descriptor = None
-    for klass in siddhi::IS.__mro__:
-        if "is_" in klass.__dict__:
-            descriptor = klass.__dict__["is_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::last_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LAST)
-
-
-def test_siddhi::last_constructor_exists():
-    assert callable(siddhi::LAST.__init__)
-
-
-def test_siddhi::last_constructor_args():
-    sig = inspect.signature(siddhi::LAST.__init__)
-    params = list(sig.parameters.keys())
-    assert "last" in params, "Missing parameter 'last'"
-
-def test_siddhi::last_has_last():
-    assert hasattr(siddhi::LAST, "last")
-    descriptor = None
-    for klass in siddhi::LAST.__mro__:
-        if "last" in klass.__dict__:
-            descriptor = klass.__dict__["last"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::current_is_not_abstract():
-    assert not inspect.isabstract(siddhi::CURRENT)
-
-
-def test_siddhi::current_constructor_exists():
-    assert callable(siddhi::CURRENT.__init__)
-
-
-def test_siddhi::current_constructor_args():
-    sig = inspect.signature(siddhi::CURRENT.__init__)
-    params = list(sig.parameters.keys())
-    assert "currt" in params, "Missing parameter 'currt'"
-
-def test_siddhi::current_has_currt():
-    assert hasattr(siddhi::CURRENT, "currt")
-    descriptor = None
-    for klass in siddhi::CURRENT.__mro__:
-        if "currt" in klass.__dict__:
-            descriptor = klass.__dict__["currt"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::expired_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EXPIRED)
-
-
-def test_siddhi::expired_constructor_exists():
-    assert callable(siddhi::EXPIRED.__init__)
-
-
-def test_siddhi::expired_constructor_args():
-    sig = inspect.signature(siddhi::EXPIRED.__init__)
-    params = list(sig.parameters.keys())
-    assert "expired" in params, "Missing parameter 'expired'"
-
-def test_siddhi::expired_has_expired():
-    assert hasattr(siddhi::EXPIRED, "expired")
-    descriptor = None
-    for klass in siddhi::EXPIRED.__mro__:
-        if "expired" in klass.__dict__:
-            descriptor = klass.__dict__["expired"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::raw_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RAW)
-
-
-def test_siddhi::raw_constructor_exists():
-    assert callable(siddhi::RAW.__init__)
-
-
-def test_siddhi::raw_constructor_args():
-    sig = inspect.signature(siddhi::RAW.__init__)
-    params = list(sig.parameters.keys())
-    assert "raw" in params, "Missing parameter 'raw'"
-
-def test_siddhi::raw_has_raw():
-    assert hasattr(siddhi::RAW, "raw")
-    descriptor = None
-    for klass in siddhi::RAW.__mro__:
-        if "raw" in klass.__dict__:
-            descriptor = klass.__dict__["raw"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::events_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EVENTS)
-
-
-def test_siddhi::events_constructor_exists():
-    assert callable(siddhi::EVENTS.__init__)
-
-
-def test_siddhi::events_constructor_args():
-    sig = inspect.signature(siddhi::EVENTS.__init__)
-    params = list(sig.parameters.keys())
-    assert "events" in params, "Missing parameter 'events'"
-
-def test_siddhi::events_has_events():
-    assert hasattr(siddhi::EVENTS, "events")
-    descriptor = None
-    for klass in siddhi::EVENTS.__mro__:
-        if "events" in klass.__dict__:
-            descriptor = klass.__dict__["events"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::all_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ALL)
-
-
-def test_siddhi::all_constructor_exists():
-    assert callable(siddhi::ALL.__init__)
-
-
-def test_siddhi::all_constructor_args():
-    sig = inspect.signature(siddhi::ALL.__init__)
-    params = list(sig.parameters.keys())
-    assert "all" in params, "Missing parameter 'all'"
-
-def test_siddhi::all_has_all():
-    assert hasattr(siddhi::ALL, "all")
-    descriptor = None
-    for klass in siddhi::ALL.__mro__:
-        if "all" in klass.__dict__:
-            descriptor = klass.__dict__["all"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::object_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OBJECT)
-
-
-def test_siddhi::object_constructor_exists():
-    assert callable(siddhi::OBJECT.__init__)
-
-
-def test_siddhi::object_constructor_args():
-    sig = inspect.signature(siddhi::OBJECT.__init__)
-    params = list(sig.parameters.keys())
-    assert "object" in params, "Missing parameter 'object'"
-
-def test_siddhi::object_has_object():
-    assert hasattr(siddhi::OBJECT, "object")
-    descriptor = None
-    for klass in siddhi::OBJECT.__mro__:
-        if "object" in klass.__dict__:
-            descriptor = klass.__dict__["object"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::bool_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BOOL)
-
-
-def test_siddhi::bool_constructor_exists():
-    assert callable(siddhi::BOOL.__init__)
-
-
-def test_siddhi::bool_constructor_args():
-    sig = inspect.signature(siddhi::BOOL.__init__)
-    params = list(sig.parameters.keys())
-    assert "bool" in params, "Missing parameter 'bool'"
-
-def test_siddhi::bool_has_bool():
-    assert hasattr(siddhi::BOOL, "bool")
-    descriptor = None
-    for klass in siddhi::BOOL.__mro__:
-        if "bool" in klass.__dict__:
-            descriptor = klass.__dict__["bool"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::float_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FLOAT)
-
-
-def test_siddhi::float_constructor_exists():
-    assert callable(siddhi::FLOAT.__init__)
-
-
-def test_siddhi::float_constructor_args():
-    sig = inspect.signature(siddhi::FLOAT.__init__)
-    params = list(sig.parameters.keys())
-    assert "float" in params, "Missing parameter 'float'"
-
-def test_siddhi::float_has_float():
-    assert hasattr(siddhi::FLOAT, "float")
-    descriptor = None
-    for klass in siddhi::FLOAT.__mro__:
-        if "float" in klass.__dict__:
-            descriptor = klass.__dict__["float"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_everyabsentsequencesourcechain_is_not_abstract():
-    assert not inspect.isabstract(EveryAbsentSequenceSourceChain)
-
-
-def test_everyabsentsequencesourcechain_constructor_exists():
-    assert callable(EveryAbsentSequenceSourceChain.__init__)
-
-
-def test_everyabsentsequencesourcechain_constructor_args():
-    sig = inspect.signature(EveryAbsentSequenceSourceChain.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_everysequencesourcechain_is_not_abstract():
-    assert not inspect.isabstract(EverySequenceSourceChain)
-
-
-def test_everysequencesourcechain_constructor_exists():
-    assert callable(EverySequenceSourceChain.__init__)
-
-
-def test_everysequencesourcechain_constructor_args():
-    sig = inspect.signature(EverySequenceSourceChain.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(BasicAbsentPatternSource)
-
-
-def test_basicabsentpatternsource_constructor_exists():
-    assert callable(BasicAbsentPatternSource.__init__)
-
-
-def test_basicabsentpatternsource_constructor_args():
-    sig = inspect.signature(BasicAbsentPatternSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::define_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DEFINE)
-
-
-def test_siddhi::define_constructor_exists():
-    assert callable(siddhi::DEFINE.__init__)
-
-
-def test_siddhi::define_constructor_args():
-    sig = inspect.signature(siddhi::DEFINE.__init__)
-    params = list(sig.parameters.keys())
-    assert "define" in params, "Missing parameter 'define'"
-
-def test_siddhi::define_has_define():
-    assert hasattr(siddhi::DEFINE, "define")
-    descriptor = None
-    for klass in siddhi::DEFINE.__mro__:
-        if "define" in klass.__dict__:
-            descriptor = klass.__dict__["define"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::stream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::STREAM)
-
-
-def test_siddhi::stream_constructor_exists():
-    assert callable(siddhi::STREAM.__init__)
-
-
-def test_siddhi::stream_constructor_args():
-    sig = inspect.signature(siddhi::STREAM.__init__)
-    params = list(sig.parameters.keys())
-    assert "str" in params, "Missing parameter 'str'"
-
-def test_siddhi::stream_has_str():
-    assert hasattr(siddhi::STREAM, "str")
-    descriptor = None
-    for klass in siddhi::STREAM.__mro__:
-        if "str" in klass.__dict__:
-            descriptor = klass.__dict__["str"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_appannotation_is_not_abstract():
-    assert not inspect.isabstract(AppAnnotation)
-
-
-def test_appannotation_constructor_exists():
-    assert callable(AppAnnotation.__init__)
-
-
-def test_appannotation_constructor_args():
-    sig = inspect.signature(AppAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::app_is_not_abstract():
-    assert not inspect.isabstract(siddhi::APP)
-
-
-def test_siddhi::app_constructor_exists():
-    assert callable(siddhi::APP.__init__)
-
-
-def test_siddhi::app_constructor_args():
-    sig = inspect.signature(siddhi::APP.__init__)
-    params = list(sig.parameters.keys())
-    assert "ap" in params, "Missing parameter 'ap'"
-
-def test_siddhi::app_has_ap():
-    assert hasattr(siddhi::APP, "ap")
-    descriptor = None
-    for klass in siddhi::APP.__mro__:
-        if "ap" in klass.__dict__:
-            descriptor = klass.__dict__["ap"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::in_is_not_abstract():
-    assert not inspect.isabstract(siddhi::IN)
-
-
-def test_siddhi::in_constructor_exists():
-    assert callable(siddhi::IN.__init__)
-
-
-def test_siddhi::in_constructor_args():
-    sig = inspect.signature(siddhi::IN.__init__)
-    params = list(sig.parameters.keys())
-    assert "in_" in params, "Missing parameter 'in_'"
-
-def test_siddhi::in_has_in_():
-    assert hasattr(siddhi::IN, "in_")
-    descriptor = None
-    for klass in siddhi::IN.__mro__:
-        if "in_" in klass.__dict__:
-            descriptor = klass.__dict__["in_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rightabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(RightAbsentPatternSource)
-
-
-def test_rightabsentpatternsource_constructor_exists():
-    assert callable(RightAbsentPatternSource.__init__)
-
-
-def test_rightabsentpatternsource_constructor_args():
-    sig = inspect.signature(RightAbsentPatternSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_leftabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(LeftAbsentPatternSource)
-
-
-def test_leftabsentpatternsource_constructor_exists():
-    assert callable(LeftAbsentPatternSource.__init__)
-
-
-def test_leftabsentpatternsource_constructor_args():
-    sig = inspect.signature(LeftAbsentPatternSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_everyabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(EveryAbsentPatternSource)
-
-
-def test_everyabsentpatternsource_constructor_exists():
-    assert callable(EveryAbsentPatternSource.__init__)
-
-
-def test_everyabsentpatternsource_constructor_args():
-    sig = inspect.signature(EveryAbsentPatternSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logicalabsentstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(LogicalAbsentStatefulSource)
-
-
-def test_logicalabsentstatefulsource_constructor_exists():
-    assert callable(LogicalAbsentStatefulSource.__init__)
-
-
-def test_logicalabsentstatefulsource_constructor_args():
-    sig = inspect.signature(LogicalAbsentStatefulSource.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -1865,23 +335,23 @@ def test_name_constructor_args():
 
 
 
-def test_siddhi::l_is_not_abstract():
-    assert not inspect.isabstract(siddhi::L)
+def test_siddhi_l_is_not_abstract():
+    assert not inspect.isabstract(siddhi_L)
 
 
-def test_siddhi::l_constructor_exists():
-    assert callable(siddhi::L.__init__)
+def test_siddhi_l_constructor_exists():
+    assert callable(siddhi_L.__init__)
 
 
-def test_siddhi::l_constructor_args():
-    sig = inspect.signature(siddhi::L.__init__)
+def test_siddhi_l_constructor_args():
+    sig = inspect.signature(siddhi_L.__init__)
     params = list(sig.parameters.keys())
     assert "l" in params, "Missing parameter 'l'"
 
-def test_siddhi::l_has_l():
-    assert hasattr(siddhi::L, "l")
+def test_siddhi_l_has_l():
+    assert hasattr(siddhi_L, "l")
     descriptor = None
-    for klass in siddhi::L.__mro__:
+    for klass in siddhi_L.__mro__:
         if "l" in klass.__dict__:
             descriptor = klass.__dict__["l"]
             break
@@ -1903,37 +373,37 @@ def test_signedlongvalue_constructor_args():
 
 
 
-def test_siddhi::long::literal_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LONG::LITERAL)
+def test_siddhi_long_literal_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LONG_LITERAL)
 
 
-def test_siddhi::long::literal_constructor_exists():
-    assert callable(siddhi::LONG::LITERAL.__init__)
+def test_siddhi_long_literal_constructor_exists():
+    assert callable(siddhi_LONG_LITERAL.__init__)
 
 
-def test_siddhi::long::literal_constructor_args():
-    sig = inspect.signature(siddhi::LONG::LITERAL.__init__)
+def test_siddhi_long_literal_constructor_args():
+    sig = inspect.signature(siddhi_LONG_LITERAL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::f_is_not_abstract():
-    assert not inspect.isabstract(siddhi::F)
+def test_siddhi_f_is_not_abstract():
+    assert not inspect.isabstract(siddhi_F)
 
 
-def test_siddhi::f_constructor_exists():
-    assert callable(siddhi::F.__init__)
+def test_siddhi_f_constructor_exists():
+    assert callable(siddhi_F.__init__)
 
 
-def test_siddhi::f_constructor_args():
-    sig = inspect.signature(siddhi::F.__init__)
+def test_siddhi_f_constructor_args():
+    sig = inspect.signature(siddhi_F.__init__)
     params = list(sig.parameters.keys())
     assert "f" in params, "Missing parameter 'f'"
 
-def test_siddhi::f_has_f():
-    assert hasattr(siddhi::F, "f")
+def test_siddhi_f_has_f():
+    assert hasattr(siddhi_F, "f")
     descriptor = None
-    for klass in siddhi::F.__mro__:
+    for klass in siddhi_F.__mro__:
         if "f" in klass.__dict__:
             descriptor = klass.__dict__["f"]
             break
@@ -1955,37 +425,37 @@ def test_signedfloatvalue_constructor_args():
 
 
 
-def test_siddhi::float::literal_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FLOAT::LITERAL)
+def test_siddhi_float_literal_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FLOAT_LITERAL)
 
 
-def test_siddhi::float::literal_constructor_exists():
-    assert callable(siddhi::FLOAT::LITERAL.__init__)
+def test_siddhi_float_literal_constructor_exists():
+    assert callable(siddhi_FLOAT_LITERAL.__init__)
 
 
-def test_siddhi::float::literal_constructor_args():
-    sig = inspect.signature(siddhi::FLOAT::LITERAL.__init__)
+def test_siddhi_float_literal_constructor_args():
+    sig = inspect.signature(siddhi_FLOAT_LITERAL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::d_is_not_abstract():
-    assert not inspect.isabstract(siddhi::D)
+def test_siddhi_d_is_not_abstract():
+    assert not inspect.isabstract(siddhi_D)
 
 
-def test_siddhi::d_constructor_exists():
-    assert callable(siddhi::D.__init__)
+def test_siddhi_d_constructor_exists():
+    assert callable(siddhi_D.__init__)
 
 
-def test_siddhi::d_constructor_args():
-    sig = inspect.signature(siddhi::D.__init__)
+def test_siddhi_d_constructor_args():
+    sig = inspect.signature(siddhi_D.__init__)
     params = list(sig.parameters.keys())
     assert "d" in params, "Missing parameter 'd'"
 
-def test_siddhi::d_has_d():
-    assert hasattr(siddhi::D, "d")
+def test_siddhi_d_has_d():
+    assert hasattr(siddhi_D, "d")
     descriptor = None
-    for klass in siddhi::D.__mro__:
+    for klass in siddhi_D.__mro__:
         if "d" in klass.__dict__:
             descriptor = klass.__dict__["d"]
             break
@@ -1993,23 +463,23 @@ def test_siddhi::d_has_d():
 
 
 
-def test_siddhi::e_is_not_abstract():
-    assert not inspect.isabstract(siddhi::E)
+def test_siddhi_e_is_not_abstract():
+    assert not inspect.isabstract(siddhi_E)
 
 
-def test_siddhi::e_constructor_exists():
-    assert callable(siddhi::E.__init__)
+def test_siddhi_e_constructor_exists():
+    assert callable(siddhi_E.__init__)
 
 
-def test_siddhi::e_constructor_args():
-    sig = inspect.signature(siddhi::E.__init__)
+def test_siddhi_e_constructor_args():
+    sig = inspect.signature(siddhi_E.__init__)
     params = list(sig.parameters.keys())
     assert "e" in params, "Missing parameter 'e'"
 
-def test_siddhi::e_has_e():
-    assert hasattr(siddhi::E, "e")
+def test_siddhi_e_has_e():
+    assert hasattr(siddhi_E, "e")
     descriptor = None
-    for klass in siddhi::E.__mro__:
+    for klass in siddhi_E.__mro__:
         if "e" in klass.__dict__:
             descriptor = klass.__dict__["e"]
             break
@@ -2031,16 +501,16 @@ def test_signeddoublevalue_constructor_args():
 
 
 
-def test_siddhi::double::literal_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DOUBLE::LITERAL)
+def test_siddhi_double_literal_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DOUBLE_LITERAL)
 
 
-def test_siddhi::double::literal_constructor_exists():
-    assert callable(siddhi::DOUBLE::LITERAL.__init__)
+def test_siddhi_double_literal_constructor_exists():
+    assert callable(siddhi_DOUBLE_LITERAL.__init__)
 
 
-def test_siddhi::double::literal_constructor_args():
-    sig = inspect.signature(siddhi::DOUBLE::LITERAL.__init__)
+def test_siddhi_double_literal_constructor_args():
+    sig = inspect.signature(siddhi_DOUBLE_LITERAL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2059,58 +529,44 @@ def test_milliseconds_constructor_args():
 
 
 
-def test_siddhi::millisecondvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MillisecondValue)
+def test_siddhi_functionid_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FunctionId)
 
 
-def test_siddhi::millisecondvalue_constructor_exists():
-    assert callable(siddhi::MillisecondValue.__init__)
+def test_siddhi_functionid_constructor_exists():
+    assert callable(siddhi_FunctionId.__init__)
 
 
-def test_siddhi::millisecondvalue_constructor_args():
-    sig = inspect.signature(siddhi::MillisecondValue.__init__)
+def test_siddhi_functionid_constructor_args():
+    sig = inspect.signature(siddhi_FunctionId.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::functionid_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FunctionId)
+def test_siddhi_functionnamespace_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FunctionNamespace)
 
 
-def test_siddhi::functionid_constructor_exists():
-    assert callable(siddhi::FunctionId.__init__)
+def test_siddhi_functionnamespace_constructor_exists():
+    assert callable(siddhi_FunctionNamespace.__init__)
 
 
-def test_siddhi::functionid_constructor_args():
-    sig = inspect.signature(siddhi::FunctionId.__init__)
+def test_siddhi_functionnamespace_constructor_args():
+    sig = inspect.signature(siddhi_FunctionNamespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::functionnamespace_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FunctionNamespace)
+def test_siddhi_signedlongvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SignedLongValue)
 
 
-def test_siddhi::functionnamespace_constructor_exists():
-    assert callable(siddhi::FunctionNamespace.__init__)
+def test_siddhi_signedlongvalue_constructor_exists():
+    assert callable(siddhi_SignedLongValue.__init__)
 
 
-def test_siddhi::functionnamespace_constructor_args():
-    sig = inspect.signature(siddhi::FunctionNamespace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::signedlongvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SignedLongValue)
-
-
-def test_siddhi::signedlongvalue_constructor_exists():
-    assert callable(siddhi::SignedLongValue.__init__)
-
-
-def test_siddhi::signedlongvalue_constructor_args():
-    sig = inspect.signature(siddhi::SignedLongValue.__init__)
+def test_siddhi_signedlongvalue_constructor_args():
+    sig = inspect.signature(siddhi_SignedLongValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2143,37 +599,37 @@ def test_true_constructor_args():
 
 
 
-def test_siddhi::attributelist_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AttributeList)
+def test_siddhi_attributelist_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AttributeList)
 
 
-def test_siddhi::attributelist_constructor_exists():
-    assert callable(siddhi::AttributeList.__init__)
+def test_siddhi_attributelist_constructor_exists():
+    assert callable(siddhi_AttributeList.__init__)
 
 
-def test_siddhi::attributelist_constructor_args():
-    sig = inspect.signature(siddhi::AttributeList.__init__)
+def test_siddhi_attributelist_constructor_args():
+    sig = inspect.signature(siddhi_AttributeList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::featuresoroutattr_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FeaturesOrOutAttr)
+def test_siddhi_featuresoroutattr_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FeaturesOrOutAttr)
 
 
-def test_siddhi::featuresoroutattr_constructor_exists():
-    assert callable(siddhi::FeaturesOrOutAttr.__init__)
+def test_siddhi_featuresoroutattr_constructor_exists():
+    assert callable(siddhi_FeaturesOrOutAttr.__init__)
 
 
-def test_siddhi::featuresoroutattr_constructor_args():
-    sig = inspect.signature(siddhi::FeaturesOrOutAttr.__init__)
+def test_siddhi_featuresoroutattr_constructor_args():
+    sig = inspect.signature(siddhi_FeaturesOrOutAttr.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_siddhi::featuresoroutattr_has_name():
-    assert hasattr(siddhi::FeaturesOrOutAttr, "name")
+def test_siddhi_featuresoroutattr_has_name():
+    assert hasattr(siddhi_FeaturesOrOutAttr, "name")
     descriptor = None
-    for klass in siddhi::FeaturesOrOutAttr.__mro__:
+    for klass in siddhi_FeaturesOrOutAttr.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2181,93 +637,93 @@ def test_siddhi::featuresoroutattr_has_name():
 
 
 
-def test_siddhi::featuresoroutattrreference_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FeaturesOrOutAttrReference)
+def test_siddhi_featuresoroutattrreference_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FeaturesOrOutAttrReference)
 
 
-def test_siddhi::featuresoroutattrreference_constructor_exists():
-    assert callable(siddhi::FeaturesOrOutAttrReference.__init__)
+def test_siddhi_featuresoroutattrreference_constructor_exists():
+    assert callable(siddhi_FeaturesOrOutAttrReference.__init__)
 
 
-def test_siddhi::featuresoroutattrreference_constructor_args():
-    sig = inspect.signature(siddhi::FeaturesOrOutAttrReference.__init__)
+def test_siddhi_featuresoroutattrreference_constructor_args():
+    sig = inspect.signature(siddhi_FeaturesOrOutAttrReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::signedfloatvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SignedFloatValue)
+def test_siddhi_signedfloatvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SignedFloatValue)
 
 
-def test_siddhi::signedfloatvalue_constructor_exists():
-    assert callable(siddhi::SignedFloatValue.__init__)
+def test_siddhi_signedfloatvalue_constructor_exists():
+    assert callable(siddhi_SignedFloatValue.__init__)
 
 
-def test_siddhi::signedfloatvalue_constructor_args():
-    sig = inspect.signature(siddhi::SignedFloatValue.__init__)
+def test_siddhi_signedfloatvalue_constructor_args():
+    sig = inspect.signature(siddhi_SignedFloatValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::signeddoublevalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SignedDoubleValue)
+def test_siddhi_signeddoublevalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SignedDoubleValue)
 
 
-def test_siddhi::signeddoublevalue_constructor_exists():
-    assert callable(siddhi::SignedDoubleValue.__init__)
+def test_siddhi_signeddoublevalue_constructor_exists():
+    assert callable(siddhi_SignedDoubleValue.__init__)
 
 
-def test_siddhi::signeddoublevalue_constructor_args():
-    sig = inspect.signature(siddhi::SignedDoubleValue.__init__)
+def test_siddhi_signeddoublevalue_constructor_args():
+    sig = inspect.signature(siddhi_SignedDoubleValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::boolvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BoolValue)
+def test_siddhi_boolvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BoolValue)
 
 
-def test_siddhi::boolvalue_constructor_exists():
-    assert callable(siddhi::BoolValue.__init__)
+def test_siddhi_boolvalue_constructor_exists():
+    assert callable(siddhi_BoolValue.__init__)
 
 
-def test_siddhi::boolvalue_constructor_args():
-    sig = inspect.signature(siddhi::BoolValue.__init__)
+def test_siddhi_boolvalue_constructor_args():
+    sig = inspect.signature(siddhi_BoolValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::attributenamereference_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AttributeNameReference)
+def test_siddhi_attributenamereference_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AttributeNameReference)
 
 
-def test_siddhi::attributenamereference_constructor_exists():
-    assert callable(siddhi::AttributeNameReference.__init__)
+def test_siddhi_attributenamereference_constructor_exists():
+    assert callable(siddhi_AttributeNameReference.__init__)
 
 
-def test_siddhi::attributenamereference_constructor_args():
-    sig = inspect.signature(siddhi::AttributeNameReference.__init__)
+def test_siddhi_attributenamereference_constructor_args():
+    sig = inspect.signature(siddhi_AttributeNameReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::source1orstandardstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Source1OrStandardStatefulSource)
+def test_siddhi_source1orstandardstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Source1OrStandardStatefulSource)
 
 
-def test_siddhi::source1orstandardstatefulsource_constructor_exists():
-    assert callable(siddhi::Source1OrStandardStatefulSource.__init__)
+def test_siddhi_source1orstandardstatefulsource_constructor_exists():
+    assert callable(siddhi_Source1OrStandardStatefulSource.__init__)
 
 
-def test_siddhi::source1orstandardstatefulsource_constructor_args():
-    sig = inspect.signature(siddhi::Source1OrStandardStatefulSource.__init__)
+def test_siddhi_source1orstandardstatefulsource_constructor_args():
+    sig = inspect.signature(siddhi_Source1OrStandardStatefulSource.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_siddhi::source1orstandardstatefulsource_has_name():
-    assert hasattr(siddhi::Source1OrStandardStatefulSource, "name")
+def test_siddhi_source1orstandardstatefulsource_has_name():
+    assert hasattr(siddhi_Source1OrStandardStatefulSource, "name")
     descriptor = None
-    for klass in siddhi::Source1OrStandardStatefulSource.__mro__:
+    for klass in siddhi_Source1OrStandardStatefulSource.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2303,16 +759,16 @@ def test_sequencecollectionstatefulsource_constructor_args():
 
 
 
-def test_siddhi::literal_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Literal)
+def test_siddhi_literal_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Literal)
 
 
-def test_siddhi::literal_constructor_exists():
-    assert callable(siddhi::Literal.__init__)
+def test_siddhi_literal_constructor_exists():
+    assert callable(siddhi_Literal.__init__)
 
 
-def test_siddhi::literal_constructor_args():
-    sig = inspect.signature(siddhi::Literal.__init__)
+def test_siddhi_literal_constructor_args():
+    sig = inspect.signature(siddhi_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2331,16 +787,16 @@ def test_mathdivmuloperation_constructor_args():
 
 
 
-def test_siddhi::mathotheroperations_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathOtherOperations)
+def test_siddhi_mathotheroperations_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathOtherOperations)
 
 
-def test_siddhi::mathotheroperations_constructor_exists():
-    assert callable(siddhi::MathOtherOperations.__init__)
+def test_siddhi_mathotheroperations_constructor_exists():
+    assert callable(siddhi_MathOtherOperations.__init__)
 
 
-def test_siddhi::mathotheroperations_constructor_args():
-    sig = inspect.signature(siddhi::MathOtherOperations.__init__)
+def test_siddhi_mathotheroperations_constructor_args():
+    sig = inspect.signature(siddhi_MathOtherOperations.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2359,43 +815,43 @@ def test_mathaddsuboperation_constructor_args():
 
 
 
-def test_siddhi::mathdivmuloperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathDivmulOperation)
+def test_siddhi_mathdivmuloperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathDivmulOperation)
 
 
-def test_siddhi::mathdivmuloperation_constructor_exists():
-    assert callable(siddhi::MathDivmulOperation.__init__)
+def test_siddhi_mathdivmuloperation_constructor_exists():
+    assert callable(siddhi_MathDivmulOperation.__init__)
 
 
-def test_siddhi::mathdivmuloperation_constructor_args():
-    sig = inspect.signature(siddhi::MathDivmulOperation.__init__)
+def test_siddhi_mathdivmuloperation_constructor_args():
+    sig = inspect.signature(siddhi_MathDivmulOperation.__init__)
     params = list(sig.parameters.keys())
-    assert "multiply" in params, "Missing parameter 'multiply'"
     assert "devide" in params, "Missing parameter 'devide'"
+    assert "multiply" in params, "Missing parameter 'multiply'"
     assert "mod" in params, "Missing parameter 'mod'"
 
-def test_siddhi::mathdivmuloperation_has_multiply():
-    assert hasattr(siddhi::MathDivmulOperation, "multiply")
+def test_siddhi_mathdivmuloperation_has_devide():
+    assert hasattr(siddhi_MathDivmulOperation, "devide")
     descriptor = None
-    for klass in siddhi::MathDivmulOperation.__mro__:
-        if "multiply" in klass.__dict__:
-            descriptor = klass.__dict__["multiply"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::mathdivmuloperation_has_devide():
-    assert hasattr(siddhi::MathDivmulOperation, "devide")
-    descriptor = None
-    for klass in siddhi::MathDivmulOperation.__mro__:
+    for klass in siddhi_MathDivmulOperation.__mro__:
         if "devide" in klass.__dict__:
             descriptor = klass.__dict__["devide"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::mathdivmuloperation_has_mod():
-    assert hasattr(siddhi::MathDivmulOperation, "mod")
+def test_siddhi_mathdivmuloperation_has_multiply():
+    assert hasattr(siddhi_MathDivmulOperation, "multiply")
     descriptor = None
-    for klass in siddhi::MathDivmulOperation.__mro__:
+    for klass in siddhi_MathDivmulOperation.__mro__:
+        if "multiply" in klass.__dict__:
+            descriptor = klass.__dict__["multiply"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_mathdivmuloperation_has_mod():
+    assert hasattr(siddhi_MathDivmulOperation, "mod")
+    descriptor = None
+    for klass in siddhi_MathDivmulOperation.__mro__:
         if "mod" in klass.__dict__:
             descriptor = klass.__dict__["mod"]
             break
@@ -2403,16 +859,16 @@ def test_siddhi::mathdivmuloperation_has_mod():
 
 
 
-def test_siddhi::sourceoreventreference_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SourceOrEventReference)
+def test_siddhi_sourceoreventreference_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SourceOrEventReference)
 
 
-def test_siddhi::sourceoreventreference_constructor_exists():
-    assert callable(siddhi::SourceOrEventReference.__init__)
+def test_siddhi_sourceoreventreference_constructor_exists():
+    assert callable(siddhi_SourceOrEventReference.__init__)
 
 
-def test_siddhi::sourceoreventreference_constructor_args():
-    sig = inspect.signature(siddhi::SourceOrEventReference.__init__)
+def test_siddhi_sourceoreventreference_constructor_args():
+    sig = inspect.signature(siddhi_SourceOrEventReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2431,23 +887,23 @@ def test_setassignment_constructor_args():
 
 
 
-def test_siddhi::constantvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ConstantValue)
+def test_siddhi_constantvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ConstantValue)
 
 
-def test_siddhi::constantvalue_constructor_exists():
-    assert callable(siddhi::ConstantValue.__init__)
+def test_siddhi_constantvalue_constructor_exists():
+    assert callable(siddhi_ConstantValue.__init__)
 
 
-def test_siddhi::constantvalue_constructor_args():
-    sig = inspect.signature(siddhi::ConstantValue.__init__)
+def test_siddhi_constantvalue_constructor_args():
+    sig = inspect.signature(siddhi_ConstantValue.__init__)
     params = list(sig.parameters.keys())
     assert "siv" in params, "Missing parameter 'siv'"
 
-def test_siddhi::constantvalue_has_siv():
-    assert hasattr(siddhi::ConstantValue, "siv")
+def test_siddhi_constantvalue_has_siv():
+    assert hasattr(siddhi_ConstantValue, "siv")
     descriptor = None
-    for klass in siddhi::ConstantValue.__mro__:
+    for klass in siddhi_ConstantValue.__mro__:
         if "siv" in klass.__dict__:
             descriptor = klass.__dict__["siv"]
             break
@@ -2455,23 +911,23 @@ def test_siddhi::constantvalue_has_siv():
 
 
 
-def test_siddhi::streamreference_is_not_abstract():
-    assert not inspect.isabstract(siddhi::StreamReference)
+def test_siddhi_streamreference_is_not_abstract():
+    assert not inspect.isabstract(siddhi_StreamReference)
 
 
-def test_siddhi::streamreference_constructor_exists():
-    assert callable(siddhi::StreamReference.__init__)
+def test_siddhi_streamreference_constructor_exists():
+    assert callable(siddhi_StreamReference.__init__)
 
 
-def test_siddhi::streamreference_constructor_args():
-    sig = inspect.signature(siddhi::StreamReference.__init__)
+def test_siddhi_streamreference_constructor_args():
+    sig = inspect.signature(siddhi_StreamReference.__init__)
     params = list(sig.parameters.keys())
     assert "hash" in params, "Missing parameter 'hash'"
 
-def test_siddhi::streamreference_has_hash():
-    assert hasattr(siddhi::StreamReference, "hash")
+def test_siddhi_streamreference_has_hash():
+    assert hasattr(siddhi_StreamReference, "hash")
     descriptor = None
-    for klass in siddhi::StreamReference.__mro__:
+    for klass in siddhi_StreamReference.__mro__:
         if "hash" in klass.__dict__:
             descriptor = klass.__dict__["hash"]
             break
@@ -2521,30 +977,30 @@ def test_mathotheroperations_constructor_args():
 
 
 
-def test_siddhi::nullcheck_is_not_abstract():
-    assert not inspect.isabstract(siddhi::NullCheck)
+def test_siddhi_nullcheck_is_not_abstract():
+    assert not inspect.isabstract(siddhi_NullCheck)
 
 
-def test_siddhi::nullcheck_constructor_exists():
-    assert callable(siddhi::NullCheck.__init__)
+def test_siddhi_nullcheck_constructor_exists():
+    assert callable(siddhi_NullCheck.__init__)
 
 
-def test_siddhi::nullcheck_constructor_args():
-    sig = inspect.signature(siddhi::NullCheck.__init__)
+def test_siddhi_nullcheck_constructor_args():
+    sig = inspect.signature(siddhi_NullCheck.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::basicsourcestreamhandlers_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BasicSourceStreamHandlers)
+def test_siddhi_basicsourcestreamhandlers_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BasicSourceStreamHandlers)
 
 
-def test_siddhi::basicsourcestreamhandlers_constructor_exists():
-    assert callable(siddhi::BasicSourceStreamHandlers.__init__)
+def test_siddhi_basicsourcestreamhandlers_constructor_exists():
+    assert callable(siddhi_BasicSourceStreamHandlers.__init__)
 
 
-def test_siddhi::basicsourcestreamhandlers_constructor_args():
-    sig = inspect.signature(siddhi::BasicSourceStreamHandlers.__init__)
+def test_siddhi_basicsourcestreamhandlers_constructor_args():
+    sig = inspect.signature(siddhi_BasicSourceStreamHandlers.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2563,35 +1019,35 @@ def test_mathoperation_constructor_args():
 
 
 
-def test_siddhi::mathaddsuboperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathAddsubOperation)
+def test_siddhi_mathaddsuboperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathAddsubOperation)
 
 
-def test_siddhi::mathaddsuboperation_constructor_exists():
-    assert callable(siddhi::MathAddsubOperation.__init__)
+def test_siddhi_mathaddsuboperation_constructor_exists():
+    assert callable(siddhi_MathAddsubOperation.__init__)
 
 
-def test_siddhi::mathaddsuboperation_constructor_args():
-    sig = inspect.signature(siddhi::MathAddsubOperation.__init__)
+def test_siddhi_mathaddsuboperation_constructor_args():
+    sig = inspect.signature(siddhi_MathAddsubOperation.__init__)
     params = list(sig.parameters.keys())
-    assert "substract" in params, "Missing parameter 'substract'"
     assert "add" in params, "Missing parameter 'add'"
+    assert "substract" in params, "Missing parameter 'substract'"
 
-def test_siddhi::mathaddsuboperation_has_substract():
-    assert hasattr(siddhi::MathAddsubOperation, "substract")
+def test_siddhi_mathaddsuboperation_has_add():
+    assert hasattr(siddhi_MathAddsubOperation, "add")
     descriptor = None
-    for klass in siddhi::MathAddsubOperation.__mro__:
-        if "substract" in klass.__dict__:
-            descriptor = klass.__dict__["substract"]
+    for klass in siddhi_MathAddsubOperation.__mro__:
+        if "add" in klass.__dict__:
+            descriptor = klass.__dict__["add"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::mathaddsuboperation_has_add():
-    assert hasattr(siddhi::MathAddsubOperation, "add")
+def test_siddhi_mathaddsuboperation_has_substract():
+    assert hasattr(siddhi_MathAddsubOperation, "substract")
     descriptor = None
-    for klass in siddhi::MathAddsubOperation.__mro__:
-        if "add" in klass.__dict__:
-            descriptor = klass.__dict__["add"]
+    for klass in siddhi_MathAddsubOperation.__mro__:
+        if "substract" in klass.__dict__:
+            descriptor = klass.__dict__["substract"]
             break
     assert isinstance(descriptor, property)
 
@@ -2611,79 +1067,2085 @@ def test_expression_constructor_args():
 
 
 
-def test_siddhi::mathoperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathOperation)
+def test_siddhi_mathoperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathOperation)
 
 
-def test_siddhi::mathoperation_constructor_exists():
-    assert callable(siddhi::MathOperation.__init__)
+def test_siddhi_mathoperation_constructor_exists():
+    assert callable(siddhi_MathOperation.__init__)
 
 
-def test_siddhi::mathoperation_constructor_args():
-    sig = inspect.signature(siddhi::MathOperation.__init__)
+def test_siddhi_mathoperation_constructor_args():
+    sig = inspect.signature(siddhi_MathOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::streamfunction_is_not_abstract():
-    assert not inspect.isabstract(siddhi::StreamFunction)
+def test_siddhi_streamfunction_is_not_abstract():
+    assert not inspect.isabstract(siddhi_StreamFunction)
 
 
-def test_siddhi::streamfunction_constructor_exists():
-    assert callable(siddhi::StreamFunction.__init__)
+def test_siddhi_streamfunction_constructor_exists():
+    assert callable(siddhi_StreamFunction.__init__)
 
 
-def test_siddhi::streamfunction_constructor_args():
-    sig = inspect.signature(siddhi::StreamFunction.__init__)
+def test_siddhi_streamfunction_constructor_args():
+    sig = inspect.signature(siddhi_StreamFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::filter_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Filter)
+def test_siddhi_filter_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Filter)
 
 
-def test_siddhi::filter_constructor_exists():
-    assert callable(siddhi::Filter.__init__)
+def test_siddhi_filter_constructor_exists():
+    assert callable(siddhi_Filter.__init__)
 
 
-def test_siddhi::filter_constructor_args():
-    sig = inspect.signature(siddhi::Filter.__init__)
+def test_siddhi_filter_constructor_args():
+    sig = inspect.signature(siddhi_Filter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::basicsourcestreamhandler_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BasicSourceStreamHandler)
+def test_siddhi_basicsourcestreamhandler_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BasicSourceStreamHandler)
 
 
-def test_siddhi::basicsourcestreamhandler_constructor_exists():
-    assert callable(siddhi::BasicSourceStreamHandler.__init__)
+def test_siddhi_basicsourcestreamhandler_constructor_exists():
+    assert callable(siddhi_BasicSourceStreamHandler.__init__)
 
 
-def test_siddhi::basicsourcestreamhandler_constructor_args():
-    sig = inspect.signature(siddhi::BasicSourceStreamHandler.__init__)
+def test_siddhi_basicsourcestreamhandler_constructor_args():
+    sig = inspect.signature(siddhi_BasicSourceStreamHandler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::unidirectional_is_not_abstract():
-    assert not inspect.isabstract(siddhi::UNIDIRECTIONAL)
+def test_siddhi_mathgtltoperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathGtLtOperation)
 
 
-def test_siddhi::unidirectional_constructor_exists():
-    assert callable(siddhi::UNIDIRECTIONAL.__init__)
+def test_siddhi_mathgtltoperation_constructor_exists():
+    assert callable(siddhi_MathGtLtOperation.__init__)
 
 
-def test_siddhi::unidirectional_constructor_args():
-    sig = inspect.signature(siddhi::UNIDIRECTIONAL.__init__)
+def test_siddhi_mathgtltoperation_constructor_args():
+    sig = inspect.signature(siddhi_MathGtLtOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "lt_eq" in params, "Missing parameter 'lt_eq'"
+    assert "gt" in params, "Missing parameter 'gt'"
+    assert "gt_eq" in params, "Missing parameter 'gt_eq'"
+    assert "lt" in params, "Missing parameter 'lt'"
+
+def test_siddhi_mathgtltoperation_has_lt_eq():
+    assert hasattr(siddhi_MathGtLtOperation, "lt_eq")
+    descriptor = None
+    for klass in siddhi_MathGtLtOperation.__mro__:
+        if "lt_eq" in klass.__dict__:
+            descriptor = klass.__dict__["lt_eq"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_mathgtltoperation_has_gt():
+    assert hasattr(siddhi_MathGtLtOperation, "gt")
+    descriptor = None
+    for klass in siddhi_MathGtLtOperation.__mro__:
+        if "gt" in klass.__dict__:
+            descriptor = klass.__dict__["gt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_mathgtltoperation_has_gt_eq():
+    assert hasattr(siddhi_MathGtLtOperation, "gt_eq")
+    descriptor = None
+    for klass in siddhi_MathGtLtOperation.__mro__:
+        if "gt_eq" in klass.__dict__:
+            descriptor = klass.__dict__["gt_eq"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_mathgtltoperation_has_lt():
+    assert hasattr(siddhi_MathGtLtOperation, "lt")
+    descriptor = None
+    for klass in siddhi_MathGtLtOperation.__mro__:
+        if "lt" in klass.__dict__:
+            descriptor = klass.__dict__["lt"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_mathinoperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathInOperation)
+
+
+def test_siddhi_mathinoperation_constructor_exists():
+    assert callable(siddhi_MathInOperation.__init__)
+
+
+def test_siddhi_mathinoperation_constructor_args():
+    sig = inspect.signature(siddhi_MathInOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_notoperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_NotOperation)
+
+
+def test_siddhi_notoperation_constructor_exists():
+    assert callable(siddhi_NotOperation.__init__)
+
+
+def test_siddhi_notoperation_constructor_args():
+    sig = inspect.signature(siddhi_NotOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_mathequaloperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathEqualOperation)
+
+
+def test_siddhi_mathequaloperation_constructor_exists():
+    assert callable(siddhi_MathEqualOperation.__init__)
+
+
+def test_siddhi_mathequaloperation_constructor_args():
+    sig = inspect.signature(siddhi_MathEqualOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "not_eq" in params, "Missing parameter 'not_eq'"
+    assert "eq" in params, "Missing parameter 'eq'"
+
+def test_siddhi_mathequaloperation_has_not_eq():
+    assert hasattr(siddhi_MathEqualOperation, "not_eq")
+    descriptor = None
+    for klass in siddhi_MathEqualOperation.__mro__:
+        if "not_eq" in klass.__dict__:
+            descriptor = klass.__dict__["not_eq"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_mathequaloperation_has_eq():
+    assert hasattr(siddhi_MathEqualOperation, "eq")
+    descriptor = None
+    for klass in siddhi_MathEqualOperation.__mro__:
+        if "eq" in klass.__dict__:
+            descriptor = klass.__dict__["eq"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_minutes_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MINUTES)
+
+
+def test_siddhi_minutes_constructor_exists():
+    assert callable(siddhi_MINUTES.__init__)
+
+
+def test_siddhi_minutes_constructor_args():
+    sig = inspect.signature(siddhi_MINUTES.__init__)
+    params = list(sig.parameters.keys())
+    assert "minutes" in params, "Missing parameter 'minutes'"
+    assert "minute" in params, "Missing parameter 'minute'"
+    assert "min" in params, "Missing parameter 'min'"
+
+def test_siddhi_minutes_has_minutes():
+    assert hasattr(siddhi_MINUTES, "minutes")
+    descriptor = None
+    for klass in siddhi_MINUTES.__mro__:
+        if "minutes" in klass.__dict__:
+            descriptor = klass.__dict__["minutes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_minutes_has_minute():
+    assert hasattr(siddhi_MINUTES, "minute")
+    descriptor = None
+    for klass in siddhi_MINUTES.__mro__:
+        if "minute" in klass.__dict__:
+            descriptor = klass.__dict__["minute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_minutes_has_min():
+    assert hasattr(siddhi_MINUTES, "min")
+    descriptor = None
+    for klass in siddhi_MINUTES.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_hours_is_not_abstract():
+    assert not inspect.isabstract(siddhi_HOURS)
+
+
+def test_siddhi_hours_constructor_exists():
+    assert callable(siddhi_HOURS.__init__)
+
+
+def test_siddhi_hours_constructor_args():
+    sig = inspect.signature(siddhi_HOURS.__init__)
+    params = list(sig.parameters.keys())
+    assert "hours" in params, "Missing parameter 'hours'"
+    assert "hour" in params, "Missing parameter 'hour'"
+
+def test_siddhi_hours_has_hours():
+    assert hasattr(siddhi_HOURS, "hours")
+    descriptor = None
+    for klass in siddhi_HOURS.__mro__:
+        if "hours" in klass.__dict__:
+            descriptor = klass.__dict__["hours"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_hours_has_hour():
+    assert hasattr(siddhi_HOURS, "hour")
+    descriptor = None
+    for klass in siddhi_HOURS.__mro__:
+        if "hour" in klass.__dict__:
+            descriptor = klass.__dict__["hour"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_days_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DAYS)
+
+
+def test_siddhi_days_constructor_exists():
+    assert callable(siddhi_DAYS.__init__)
+
+
+def test_siddhi_days_constructor_args():
+    sig = inspect.signature(siddhi_DAYS.__init__)
+    params = list(sig.parameters.keys())
+    assert "days" in params, "Missing parameter 'days'"
+    assert "day" in params, "Missing parameter 'day'"
+
+def test_siddhi_days_has_days():
+    assert hasattr(siddhi_DAYS, "days")
+    descriptor = None
+    for klass in siddhi_DAYS.__mro__:
+        if "days" in klass.__dict__:
+            descriptor = klass.__dict__["days"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_days_has_day():
+    assert hasattr(siddhi_DAYS, "day")
+    descriptor = None
+    for klass in siddhi_DAYS.__mro__:
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_weeks_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WEEKS)
+
+
+def test_siddhi_weeks_constructor_exists():
+    assert callable(siddhi_WEEKS.__init__)
+
+
+def test_siddhi_weeks_constructor_args():
+    sig = inspect.signature(siddhi_WEEKS.__init__)
+    params = list(sig.parameters.keys())
+    assert "weeks" in params, "Missing parameter 'weeks'"
+    assert "week" in params, "Missing parameter 'week'"
+
+def test_siddhi_weeks_has_weeks():
+    assert hasattr(siddhi_WEEKS, "weeks")
+    descriptor = None
+    for klass in siddhi_WEEKS.__mro__:
+        if "weeks" in klass.__dict__:
+            descriptor = klass.__dict__["weeks"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_weeks_has_week():
+    assert hasattr(siddhi_WEEKS, "week")
+    descriptor = None
+    for klass in siddhi_WEEKS.__mro__:
+        if "week" in klass.__dict__:
+            descriptor = klass.__dict__["week"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_months_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MONTHS)
+
+
+def test_siddhi_months_constructor_exists():
+    assert callable(siddhi_MONTHS.__init__)
+
+
+def test_siddhi_months_constructor_args():
+    sig = inspect.signature(siddhi_MONTHS.__init__)
+    params = list(sig.parameters.keys())
+    assert "month" in params, "Missing parameter 'month'"
+    assert "months" in params, "Missing parameter 'months'"
+
+def test_siddhi_months_has_month():
+    assert hasattr(siddhi_MONTHS, "month")
+    descriptor = None
+    for klass in siddhi_MONTHS.__mro__:
+        if "month" in klass.__dict__:
+            descriptor = klass.__dict__["month"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_months_has_months():
+    assert hasattr(siddhi_MONTHS, "months")
+    descriptor = None
+    for klass in siddhi_MONTHS.__mro__:
+        if "months" in klass.__dict__:
+            descriptor = klass.__dict__["months"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_mathlogicaloperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MathLogicalOperation)
+
+
+def test_siddhi_mathlogicaloperation_constructor_exists():
+    assert callable(siddhi_MathLogicalOperation.__init__)
+
+
+def test_siddhi_mathlogicaloperation_constructor_args():
+    sig = inspect.signature(siddhi_MathLogicalOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rightabsentsequencesource_is_not_abstract():
+    assert not inspect.isabstract(RightAbsentSequenceSource)
+
+
+def test_rightabsentsequencesource_constructor_exists():
+    assert callable(RightAbsentSequenceSource.__init__)
+
+
+def test_rightabsentsequencesource_constructor_args():
+    sig = inspect.signature(RightAbsentSequenceSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_rightabsentsequencesource1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RightAbsentSequenceSource1)
+
+
+def test_siddhi_rightabsentsequencesource1_constructor_exists():
+    assert callable(siddhi_RightAbsentSequenceSource1.__init__)
+
+
+def test_siddhi_rightabsentsequencesource1_constructor_args():
+    sig = inspect.signature(siddhi_RightAbsentSequenceSource1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_leftabsentsequencesource_is_not_abstract():
+    assert not inspect.isabstract(LeftAbsentSequenceSource)
+
+
+def test_leftabsentsequencesource_constructor_exists():
+    assert callable(LeftAbsentSequenceSource.__init__)
+
+
+def test_leftabsentsequencesource_constructor_args():
+    sig = inspect.signature(LeftAbsentSequenceSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_leftabsentsequencesource1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LeftAbsentSequenceSource1)
+
+
+def test_siddhi_leftabsentsequencesource1_constructor_exists():
+    assert callable(siddhi_LeftAbsentSequenceSource1.__init__)
+
+
+def test_siddhi_leftabsentsequencesource1_constructor_args():
+    sig = inspect.signature(siddhi_LeftAbsentSequenceSource1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_true_is_not_abstract():
+    assert not inspect.isabstract(siddhi_TRUE)
+
+
+def test_siddhi_true_constructor_exists():
+    assert callable(siddhi_TRUE.__init__)
+
+
+def test_siddhi_true_constructor_args():
+    sig = inspect.signature(siddhi_TRUE.__init__)
+    params = list(sig.parameters.keys())
+    assert "tr" in params, "Missing parameter 'tr'"
+
+def test_siddhi_true_has_tr():
+    assert hasattr(siddhi_TRUE, "tr")
+    descriptor = None
+    for klass in siddhi_TRUE.__mro__:
+        if "tr" in klass.__dict__:
+            descriptor = klass.__dict__["tr"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_false_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FALSE)
+
+
+def test_siddhi_false_constructor_exists():
+    assert callable(siddhi_FALSE.__init__)
+
+
+def test_siddhi_false_constructor_args():
+    sig = inspect.signature(siddhi_FALSE.__init__)
+    params = list(sig.parameters.keys())
+    assert "fals" in params, "Missing parameter 'fals'"
+
+def test_siddhi_false_has_fals():
+    assert hasattr(siddhi_FALSE, "fals")
+    descriptor = None
+    for klass in siddhi_FALSE.__mro__:
+        if "fals" in klass.__dict__:
+            descriptor = klass.__dict__["fals"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_milliseconds_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MILLISECONDS)
+
+
+def test_siddhi_milliseconds_constructor_exists():
+    assert callable(siddhi_MILLISECONDS.__init__)
+
+
+def test_siddhi_milliseconds_constructor_args():
+    sig = inspect.signature(siddhi_MILLISECONDS.__init__)
+    params = list(sig.parameters.keys())
+    assert "millisecond" in params, "Missing parameter 'millisecond'"
+    assert "millisec" in params, "Missing parameter 'millisec'"
+    assert "milliseconds" in params, "Missing parameter 'milliseconds'"
+
+def test_siddhi_milliseconds_has_millisecond():
+    assert hasattr(siddhi_MILLISECONDS, "millisecond")
+    descriptor = None
+    for klass in siddhi_MILLISECONDS.__mro__:
+        if "millisecond" in klass.__dict__:
+            descriptor = klass.__dict__["millisecond"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_milliseconds_has_millisec():
+    assert hasattr(siddhi_MILLISECONDS, "millisec")
+    descriptor = None
+    for klass in siddhi_MILLISECONDS.__mro__:
+        if "millisec" in klass.__dict__:
+            descriptor = klass.__dict__["millisec"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_milliseconds_has_milliseconds():
+    assert hasattr(siddhi_MILLISECONDS, "milliseconds")
+    descriptor = None
+    for klass in siddhi_MILLISECONDS.__mro__:
+        if "milliseconds" in klass.__dict__:
+            descriptor = klass.__dict__["milliseconds"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_seconds_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SECONDS)
+
+
+def test_siddhi_seconds_constructor_exists():
+    assert callable(siddhi_SECONDS.__init__)
+
+
+def test_siddhi_seconds_constructor_args():
+    sig = inspect.signature(siddhi_SECONDS.__init__)
+    params = list(sig.parameters.keys())
+    assert "seconds" in params, "Missing parameter 'seconds'"
+    assert "sec" in params, "Missing parameter 'sec'"
+    assert "second" in params, "Missing parameter 'second'"
+
+def test_siddhi_seconds_has_seconds():
+    assert hasattr(siddhi_SECONDS, "seconds")
+    descriptor = None
+    for klass in siddhi_SECONDS.__mro__:
+        if "seconds" in klass.__dict__:
+            descriptor = klass.__dict__["seconds"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_seconds_has_sec():
+    assert hasattr(siddhi_SECONDS, "sec")
+    descriptor = None
+    for klass in siddhi_SECONDS.__mro__:
+        if "sec" in klass.__dict__:
+            descriptor = klass.__dict__["sec"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_seconds_has_second():
+    assert hasattr(siddhi_SECONDS, "second")
+    descriptor = None
+    for klass in siddhi_SECONDS.__mro__:
+        if "second" in klass.__dict__:
+            descriptor = klass.__dict__["second"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_outer_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OUTER)
+
+
+def test_siddhi_outer_constructor_exists():
+    assert callable(siddhi_OUTER.__init__)
+
+
+def test_siddhi_outer_constructor_args():
+    sig = inspect.signature(siddhi_OUTER.__init__)
+    params = list(sig.parameters.keys())
+    assert "outer" in params, "Missing parameter 'outer'"
+
+def test_siddhi_outer_has_outer():
+    assert hasattr(siddhi_OUTER, "outer")
+    descriptor = None
+    for klass in siddhi_OUTER.__mro__:
+        if "outer" in klass.__dict__:
+            descriptor = klass.__dict__["outer"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_inner_is_not_abstract():
+    assert not inspect.isabstract(siddhi_INNER)
+
+
+def test_siddhi_inner_constructor_exists():
+    assert callable(siddhi_INNER.__init__)
+
+
+def test_siddhi_inner_constructor_args():
+    sig = inspect.signature(siddhi_INNER.__init__)
+    params = list(sig.parameters.keys())
+    assert "inner" in params, "Missing parameter 'inner'"
+
+def test_siddhi_inner_has_inner():
+    assert hasattr(siddhi_INNER, "inner")
+    descriptor = None
+    for klass in siddhi_INNER.__mro__:
+        if "inner" in klass.__dict__:
+            descriptor = klass.__dict__["inner"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_join_is_not_abstract():
+    assert not inspect.isabstract(siddhi_JOIN)
+
+
+def test_siddhi_join_constructor_exists():
+    assert callable(siddhi_JOIN.__init__)
+
+
+def test_siddhi_join_constructor_args():
+    sig = inspect.signature(siddhi_JOIN.__init__)
+    params = list(sig.parameters.keys())
+    assert "join" in params, "Missing parameter 'join'"
+
+def test_siddhi_join_has_join():
+    assert hasattr(siddhi_JOIN, "join")
+    descriptor = None
+    for klass in siddhi_JOIN.__mro__:
+        if "join" in klass.__dict__:
+            descriptor = klass.__dict__["join"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_full_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FULL)
+
+
+def test_siddhi_full_constructor_exists():
+    assert callable(siddhi_FULL.__init__)
+
+
+def test_siddhi_full_constructor_args():
+    sig = inspect.signature(siddhi_FULL.__init__)
+    params = list(sig.parameters.keys())
+    assert "full" in params, "Missing parameter 'full'"
+
+def test_siddhi_full_has_full():
+    assert hasattr(siddhi_FULL, "full")
+    descriptor = None
+    for klass in siddhi_FULL.__mro__:
+        if "full" in klass.__dict__:
+            descriptor = klass.__dict__["full"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_right_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RIGHT)
+
+
+def test_siddhi_right_constructor_exists():
+    assert callable(siddhi_RIGHT.__init__)
+
+
+def test_siddhi_right_constructor_args():
+    sig = inspect.signature(siddhi_RIGHT.__init__)
+    params = list(sig.parameters.keys())
+    assert "right" in params, "Missing parameter 'right'"
+
+def test_siddhi_right_has_right():
+    assert hasattr(siddhi_RIGHT, "right")
+    descriptor = None
+    for klass in siddhi_RIGHT.__mro__:
+        if "right" in klass.__dict__:
+            descriptor = klass.__dict__["right"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_left_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LEFT)
+
+
+def test_siddhi_left_constructor_exists():
+    assert callable(siddhi_LEFT.__init__)
+
+
+def test_siddhi_left_constructor_args():
+    sig = inspect.signature(siddhi_LEFT.__init__)
+    params = list(sig.parameters.keys())
+    assert "left" in params, "Missing parameter 'left'"
+
+def test_siddhi_left_has_left():
+    assert hasattr(siddhi_LEFT, "left")
+    descriptor = None
+    for klass in siddhi_LEFT.__mro__:
+        if "left" in klass.__dict__:
+            descriptor = klass.__dict__["left"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_within_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WITHIN)
+
+
+def test_siddhi_within_constructor_exists():
+    assert callable(siddhi_WITHIN.__init__)
+
+
+def test_siddhi_within_constructor_args():
+    sig = inspect.signature(siddhi_WITHIN.__init__)
+    params = list(sig.parameters.keys())
+    assert "within" in params, "Missing parameter 'within'"
+
+def test_siddhi_within_has_within():
+    assert hasattr(siddhi_WITHIN, "within")
+    descriptor = None
+    for klass in siddhi_WITHIN.__mro__:
+        if "within" in klass.__dict__:
+            descriptor = klass.__dict__["within"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_years_is_not_abstract():
+    assert not inspect.isabstract(siddhi_YEARS)
+
+
+def test_siddhi_years_constructor_exists():
+    assert callable(siddhi_YEARS.__init__)
+
+
+def test_siddhi_years_constructor_args():
+    sig = inspect.signature(siddhi_YEARS.__init__)
+    params = list(sig.parameters.keys())
+    assert "year" in params, "Missing parameter 'year'"
+    assert "years" in params, "Missing parameter 'years'"
+
+def test_siddhi_years_has_year():
+    assert hasattr(siddhi_YEARS, "year")
+    descriptor = None
+    for klass in siddhi_YEARS.__mro__:
+        if "year" in klass.__dict__:
+            descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_years_has_years():
+    assert hasattr(siddhi_YEARS, "years")
+    descriptor = None
+    for klass in siddhi_YEARS.__mro__:
+        if "years" in klass.__dict__:
+            descriptor = klass.__dict__["years"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_per_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PER)
+
+
+def test_siddhi_per_constructor_exists():
+    assert callable(siddhi_PER.__init__)
+
+
+def test_siddhi_per_constructor_args():
+    sig = inspect.signature(siddhi_PER.__init__)
+    params = list(sig.parameters.keys())
+    assert "per" in params, "Missing parameter 'per'"
+
+def test_siddhi_per_has_per():
+    assert hasattr(siddhi_PER, "per")
+    descriptor = None
+    for klass in siddhi_PER.__mro__:
+        if "per" in klass.__dict__:
+            descriptor = klass.__dict__["per"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_set_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SET)
+
+
+def test_siddhi_set_constructor_exists():
+    assert callable(siddhi_SET.__init__)
+
+
+def test_siddhi_set_constructor_args():
+    sig = inspect.signature(siddhi_SET.__init__)
+    params = list(sig.parameters.keys())
+    assert "set" in params, "Missing parameter 'set'"
+
+def test_siddhi_set_has_set():
+    assert hasattr(siddhi_SET, "set")
+    descriptor = None
+    for klass in siddhi_SET.__mro__:
+        if "set" in klass.__dict__:
+            descriptor = klass.__dict__["set"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_aggregate_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AGGREGATE)
+
+
+def test_siddhi_aggregate_constructor_exists():
+    assert callable(siddhi_AGGREGATE.__init__)
+
+
+def test_siddhi_aggregate_constructor_args():
+    sig = inspect.signature(siddhi_AGGREGATE.__init__)
+    params = list(sig.parameters.keys())
+    assert "agrregate" in params, "Missing parameter 'agrregate'"
+
+def test_siddhi_aggregate_has_agrregate():
+    assert hasattr(siddhi_AGGREGATE, "agrregate")
+    descriptor = None
+    for klass in siddhi_AGGREGATE.__mro__:
+        if "agrregate" in klass.__dict__:
+            descriptor = klass.__dict__["agrregate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_aggregation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AGGREGATION)
+
+
+def test_siddhi_aggregation_constructor_exists():
+    assert callable(siddhi_AGGREGATION.__init__)
+
+
+def test_siddhi_aggregation_constructor_args():
+    sig = inspect.signature(siddhi_AGGREGATION.__init__)
+    params = list(sig.parameters.keys())
+    assert "aggre" in params, "Missing parameter 'aggre'"
+
+def test_siddhi_aggregation_has_aggre():
+    assert hasattr(siddhi_AGGREGATION, "aggre")
+    descriptor = None
+    for klass in siddhi_AGGREGATION.__mro__:
+        if "aggre" in klass.__dict__:
+            descriptor = klass.__dict__["aggre"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_with_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WITH)
+
+
+def test_siddhi_with_constructor_exists():
+    assert callable(siddhi_WITH.__init__)
+
+
+def test_siddhi_with_constructor_args():
+    sig = inspect.signature(siddhi_WITH.__init__)
+    params = list(sig.parameters.keys())
+    assert "wi" in params, "Missing parameter 'wi'"
+
+def test_siddhi_with_has_wi():
+    assert hasattr(siddhi_WITH, "wi")
+    descriptor = None
+    for klass in siddhi_WITH.__mro__:
+        if "wi" in klass.__dict__:
+            descriptor = klass.__dict__["wi"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_partition_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PARTITION)
+
+
+def test_siddhi_partition_constructor_exists():
+    assert callable(siddhi_PARTITION.__init__)
+
+
+def test_siddhi_partition_constructor_args():
+    sig = inspect.signature(siddhi_PARTITION.__init__)
+    params = list(sig.parameters.keys())
+    assert "partition" in params, "Missing parameter 'partition'"
+
+def test_siddhi_partition_has_partition():
+    assert hasattr(siddhi_PARTITION, "partition")
+    descriptor = None
+    for klass in siddhi_PARTITION.__mro__:
+        if "partition" in klass.__dict__:
+            descriptor = klass.__dict__["partition"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_end_is_not_abstract():
+    assert not inspect.isabstract(siddhi_END)
+
+
+def test_siddhi_end_constructor_exists():
+    assert callable(siddhi_END.__init__)
+
+
+def test_siddhi_end_constructor_args():
+    sig = inspect.signature(siddhi_END.__init__)
+    params = list(sig.parameters.keys())
+    assert "end" in params, "Missing parameter 'end'"
+
+def test_siddhi_end_has_end():
+    assert hasattr(siddhi_END, "end")
+    descriptor = None
+    for klass in siddhi_END.__mro__:
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_update_is_not_abstract():
+    assert not inspect.isabstract(siddhi_UPDATE)
+
+
+def test_siddhi_update_constructor_exists():
+    assert callable(siddhi_UPDATE.__init__)
+
+
+def test_siddhi_update_constructor_args():
+    sig = inspect.signature(siddhi_UPDATE.__init__)
+    params = list(sig.parameters.keys())
+    assert "update" in params, "Missing parameter 'update'"
+
+def test_siddhi_update_has_update():
+    assert hasattr(siddhi_UPDATE, "update")
+    descriptor = None
+    for klass in siddhi_UPDATE.__mro__:
+        if "update" in klass.__dict__:
+            descriptor = klass.__dict__["update"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_for_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FOR)
+
+
+def test_siddhi_for_constructor_exists():
+    assert callable(siddhi_FOR.__init__)
+
+
+def test_siddhi_for_constructor_args():
+    sig = inspect.signature(siddhi_FOR.__init__)
+    params = list(sig.parameters.keys())
+    assert "for_" in params, "Missing parameter 'for_'"
+
+def test_siddhi_for_has_for_():
+    assert hasattr(siddhi_FOR, "for_")
+    descriptor = None
+    for klass in siddhi_FOR.__mro__:
+        if "for_" in klass.__dict__:
+            descriptor = klass.__dict__["for_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_delete_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DELETE)
+
+
+def test_siddhi_delete_constructor_exists():
+    assert callable(siddhi_DELETE.__init__)
+
+
+def test_siddhi_delete_constructor_args():
+    sig = inspect.signature(siddhi_DELETE.__init__)
+    params = list(sig.parameters.keys())
+    assert "delete" in params, "Missing parameter 'delete'"
+
+def test_siddhi_delete_has_delete():
+    assert hasattr(siddhi_DELETE, "delete")
+    descriptor = None
+    for klass in siddhi_DELETE.__mro__:
+        if "delete" in klass.__dict__:
+            descriptor = klass.__dict__["delete"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_plan_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PLAN)
+
+
+def test_siddhi_plan_constructor_exists():
+    assert callable(siddhi_PLAN.__init__)
+
+
+def test_siddhi_plan_constructor_args():
+    sig = inspect.signature(siddhi_PLAN.__init__)
+    params = list(sig.parameters.keys())
+    assert "plan" in params, "Missing parameter 'plan'"
+
+def test_siddhi_plan_has_plan():
+    assert hasattr(siddhi_PLAN, "plan")
+    descriptor = None
+    for klass in siddhi_PLAN.__mro__:
+        if "plan" in klass.__dict__:
+            descriptor = klass.__dict__["plan"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_begin_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BEGIN)
+
+
+def test_siddhi_begin_constructor_exists():
+    assert callable(siddhi_BEGIN.__init__)
+
+
+def test_siddhi_begin_constructor_args():
+    sig = inspect.signature(siddhi_BEGIN.__init__)
+    params = list(sig.parameters.keys())
+    assert "begin" in params, "Missing parameter 'begin'"
+
+def test_siddhi_begin_has_begin():
+    assert hasattr(siddhi_BEGIN, "begin")
+    descriptor = None
+    for klass in siddhi_BEGIN.__mro__:
+        if "begin" in klass.__dict__:
+            descriptor = klass.__dict__["begin"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_into_is_not_abstract():
+    assert not inspect.isabstract(siddhi_INTO)
+
+
+def test_siddhi_into_constructor_exists():
+    assert callable(siddhi_INTO.__init__)
+
+
+def test_siddhi_into_constructor_args():
+    sig = inspect.signature(siddhi_INTO.__init__)
+    params = list(sig.parameters.keys())
+    assert "into" in params, "Missing parameter 'into'"
+
+def test_siddhi_into_has_into():
+    assert hasattr(siddhi_INTO, "into")
+    descriptor = None
+    for klass in siddhi_INTO.__mro__:
+        if "into" in klass.__dict__:
+            descriptor = klass.__dict__["into"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_insert_is_not_abstract():
+    assert not inspect.isabstract(siddhi_INSERT)
+
+
+def test_siddhi_insert_constructor_exists():
+    assert callable(siddhi_INSERT.__init__)
+
+
+def test_siddhi_insert_constructor_args():
+    sig = inspect.signature(siddhi_INSERT.__init__)
+    params = list(sig.parameters.keys())
+    assert "insert" in params, "Missing parameter 'insert'"
+
+def test_siddhi_insert_has_insert():
+    assert hasattr(siddhi_INSERT, "insert")
+    descriptor = None
+    for klass in siddhi_INSERT.__mro__:
+        if "insert" in klass.__dict__:
+            descriptor = klass.__dict__["insert"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_first_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FIRST)
+
+
+def test_siddhi_first_constructor_exists():
+    assert callable(siddhi_FIRST.__init__)
+
+
+def test_siddhi_first_constructor_args():
+    sig = inspect.signature(siddhi_FIRST.__init__)
+    params = list(sig.parameters.keys())
+    assert "first" in params, "Missing parameter 'first'"
+
+def test_siddhi_first_has_first():
+    assert hasattr(siddhi_FIRST, "first")
+    descriptor = None
+    for klass in siddhi_FIRST.__mro__:
+        if "first" in klass.__dict__:
+            descriptor = klass.__dict__["first"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_snapshot_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SNAPSHOT)
+
+
+def test_siddhi_snapshot_constructor_exists():
+    assert callable(siddhi_SNAPSHOT.__init__)
+
+
+def test_siddhi_snapshot_constructor_args():
+    sig = inspect.signature(siddhi_SNAPSHOT.__init__)
+    params = list(sig.parameters.keys())
+    assert "snapshot" in params, "Missing parameter 'snapshot'"
+
+def test_siddhi_snapshot_has_snapshot():
+    assert hasattr(siddhi_SNAPSHOT, "snapshot")
+    descriptor = None
+    for klass in siddhi_SNAPSHOT.__mro__:
+        if "snapshot" in klass.__dict__:
+            descriptor = klass.__dict__["snapshot"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_having_is_not_abstract():
+    assert not inspect.isabstract(siddhi_HAVING)
+
+
+def test_siddhi_having_constructor_exists():
+    assert callable(siddhi_HAVING.__init__)
+
+
+def test_siddhi_having_constructor_args():
+    sig = inspect.signature(siddhi_HAVING.__init__)
+    params = list(sig.parameters.keys())
+    assert "having" in params, "Missing parameter 'having'"
+
+def test_siddhi_having_has_having():
+    assert hasattr(siddhi_HAVING, "having")
+    descriptor = None
+    for klass in siddhi_HAVING.__mro__:
+        if "having" in klass.__dict__:
+            descriptor = klass.__dict__["having"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_by_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BY)
+
+
+def test_siddhi_by_constructor_exists():
+    assert callable(siddhi_BY.__init__)
+
+
+def test_siddhi_by_constructor_args():
+    sig = inspect.signature(siddhi_BY.__init__)
+    params = list(sig.parameters.keys())
+    assert "by" in params, "Missing parameter 'by'"
+
+def test_siddhi_by_has_by():
+    assert hasattr(siddhi_BY, "by")
+    descriptor = None
+    for klass in siddhi_BY.__mro__:
+        if "by" in klass.__dict__:
+            descriptor = klass.__dict__["by"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_group_is_not_abstract():
+    assert not inspect.isabstract(siddhi_GROUP)
+
+
+def test_siddhi_group_constructor_exists():
+    assert callable(siddhi_GROUP.__init__)
+
+
+def test_siddhi_group_constructor_args():
+    sig = inspect.signature(siddhi_GROUP.__init__)
+    params = list(sig.parameters.keys())
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_siddhi_group_has_group():
+    assert hasattr(siddhi_GROUP, "group")
+    descriptor = None
+    for klass in siddhi_GROUP.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_select_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SELECT)
+
+
+def test_siddhi_select_constructor_exists():
+    assert callable(siddhi_SELECT.__init__)
+
+
+def test_siddhi_select_constructor_args():
+    sig = inspect.signature(siddhi_SELECT.__init__)
+    params = list(sig.parameters.keys())
+    assert "select" in params, "Missing parameter 'select'"
+
+def test_siddhi_select_has_select():
+    assert hasattr(siddhi_SELECT, "select")
+    descriptor = None
+    for klass in siddhi_SELECT.__mro__:
+        if "select" in klass.__dict__:
+            descriptor = klass.__dict__["select"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_double_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DOUBLE)
+
+
+def test_siddhi_double_constructor_exists():
+    assert callable(siddhi_DOUBLE.__init__)
+
+
+def test_siddhi_double_constructor_args():
+    sig = inspect.signature(siddhi_DOUBLE.__init__)
+    params = list(sig.parameters.keys())
+    assert "double" in params, "Missing parameter 'double'"
+
+def test_siddhi_double_has_double():
+    assert hasattr(siddhi_DOUBLE, "double")
+    descriptor = None
+    for klass in siddhi_DOUBLE.__mro__:
+        if "double" in klass.__dict__:
+            descriptor = klass.__dict__["double"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_long_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LONG)
+
+
+def test_siddhi_long_constructor_exists():
+    assert callable(siddhi_LONG.__init__)
+
+
+def test_siddhi_long_constructor_args():
+    sig = inspect.signature(siddhi_LONG.__init__)
+    params = list(sig.parameters.keys())
+    assert "long" in params, "Missing parameter 'long'"
+
+def test_siddhi_long_has_long():
+    assert hasattr(siddhi_LONG, "long")
+    descriptor = None
+    for klass in siddhi_LONG.__mro__:
+        if "long" in klass.__dict__:
+            descriptor = klass.__dict__["long"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_ints_is_not_abstract():
+    assert not inspect.isabstract(siddhi_INTS)
+
+
+def test_siddhi_ints_constructor_exists():
+    assert callable(siddhi_INTS.__init__)
+
+
+def test_siddhi_ints_constructor_args():
+    sig = inspect.signature(siddhi_INTS.__init__)
+    params = list(sig.parameters.keys())
+    assert "int" in params, "Missing parameter 'int'"
+
+def test_siddhi_ints_has_int():
+    assert hasattr(siddhi_INTS, "int")
+    descriptor = None
+    for klass in siddhi_INTS.__mro__:
+        if "int" in klass.__dict__:
+            descriptor = klass.__dict__["int"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_strings_is_not_abstract():
+    assert not inspect.isabstract(siddhi_STRINGS)
+
+
+def test_siddhi_strings_constructor_exists():
+    assert callable(siddhi_STRINGS.__init__)
+
+
+def test_siddhi_strings_constructor_args():
+    sig = inspect.signature(siddhi_STRINGS.__init__)
+    params = list(sig.parameters.keys())
+    assert "string" in params, "Missing parameter 'string'"
+
+def test_siddhi_strings_has_string():
+    assert hasattr(siddhi_STRINGS, "string")
+    descriptor = None
+    for klass in siddhi_STRINGS.__mro__:
+        if "string" in klass.__dict__:
+            descriptor = klass.__dict__["string"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_output_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OUTPUT)
+
+
+def test_siddhi_output_constructor_exists():
+    assert callable(siddhi_OUTPUT.__init__)
+
+
+def test_siddhi_output_constructor_args():
+    sig = inspect.signature(siddhi_OUTPUT.__init__)
+    params = list(sig.parameters.keys())
+    assert "output" in params, "Missing parameter 'output'"
+
+def test_siddhi_output_has_output():
+    assert hasattr(siddhi_OUTPUT, "output")
+    descriptor = None
+    for klass in siddhi_OUTPUT.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_window_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WINDOW)
+
+
+def test_siddhi_window_constructor_exists():
+    assert callable(siddhi_WINDOW.__init__)
+
+
+def test_siddhi_window_constructor_args():
+    sig = inspect.signature(siddhi_WINDOW.__init__)
+    params = list(sig.parameters.keys())
+    assert "window" in params, "Missing parameter 'window'"
+
+def test_siddhi_window_has_window():
+    assert hasattr(siddhi_WINDOW, "window")
+    descriptor = None
+    for klass in siddhi_WINDOW.__mro__:
+        if "window" in klass.__dict__:
+            descriptor = klass.__dict__["window"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_table_is_not_abstract():
+    assert not inspect.isabstract(siddhi_TABLE)
+
+
+def test_siddhi_table_constructor_exists():
+    assert callable(siddhi_TABLE.__init__)
+
+
+def test_siddhi_table_constructor_args():
+    sig = inspect.signature(siddhi_TABLE.__init__)
+    params = list(sig.parameters.keys())
+    assert "table" in params, "Missing parameter 'table'"
+
+def test_siddhi_table_has_table():
+    assert hasattr(siddhi_TABLE, "table")
+    descriptor = None
+    for klass in siddhi_TABLE.__mro__:
+        if "table" in klass.__dict__:
+            descriptor = klass.__dict__["table"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_from_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FROM)
+
+
+def test_siddhi_from_constructor_exists():
+    assert callable(siddhi_FROM.__init__)
+
+
+def test_siddhi_from_constructor_args():
+    sig = inspect.signature(siddhi_FROM.__init__)
+    params = list(sig.parameters.keys())
+    assert "from_" in params, "Missing parameter 'from_'"
+
+def test_siddhi_from_has_from_():
+    assert hasattr(siddhi_FROM, "from_")
+    descriptor = None
+    for klass in siddhi_FROM.__mro__:
+        if "from_" in klass.__dict__:
+            descriptor = klass.__dict__["from_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_return_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RETURN)
+
+
+def test_siddhi_return_constructor_exists():
+    assert callable(siddhi_RETURN.__init__)
+
+
+def test_siddhi_return_constructor_args():
+    sig = inspect.signature(siddhi_RETURN.__init__)
+    params = list(sig.parameters.keys())
+    assert "return_" in params, "Missing parameter 'return_'"
+
+def test_siddhi_return_has_return_():
+    assert hasattr(siddhi_RETURN, "return_")
+    descriptor = None
+    for klass in siddhi_RETURN.__mro__:
+        if "return_" in klass.__dict__:
+            descriptor = klass.__dict__["return_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_function_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FUNCTION)
+
+
+def test_siddhi_function_constructor_exists():
+    assert callable(siddhi_FUNCTION.__init__)
+
+
+def test_siddhi_function_constructor_args():
+    sig = inspect.signature(siddhi_FUNCTION.__init__)
+    params = list(sig.parameters.keys())
+    assert "function" in params, "Missing parameter 'function'"
+
+def test_siddhi_function_has_function():
+    assert hasattr(siddhi_FUNCTION, "function")
+    descriptor = None
+    for klass in siddhi_FUNCTION.__mro__:
+        if "function" in klass.__dict__:
+            descriptor = klass.__dict__["function"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_at_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AT)
+
+
+def test_siddhi_at_constructor_exists():
+    assert callable(siddhi_AT.__init__)
+
+
+def test_siddhi_at_constructor_args():
+    sig = inspect.signature(siddhi_AT.__init__)
+    params = list(sig.parameters.keys())
+    assert "at" in params, "Missing parameter 'at'"
+
+def test_siddhi_at_has_at():
+    assert hasattr(siddhi_AT, "at")
+    descriptor = None
+    for klass in siddhi_AT.__mro__:
+        if "at" in klass.__dict__:
+            descriptor = klass.__dict__["at"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_trigger_is_not_abstract():
+    assert not inspect.isabstract(siddhi_TRIGGER)
+
+
+def test_siddhi_trigger_constructor_exists():
+    assert callable(siddhi_TRIGGER.__init__)
+
+
+def test_siddhi_trigger_constructor_args():
+    sig = inspect.signature(siddhi_TRIGGER.__init__)
+    params = list(sig.parameters.keys())
+    assert "trigger" in params, "Missing parameter 'trigger'"
+
+def test_siddhi_trigger_has_trigger():
+    assert hasattr(siddhi_TRIGGER, "trigger")
+    descriptor = None
+    for klass in siddhi_TRIGGER.__mro__:
+        if "trigger" in klass.__dict__:
+            descriptor = klass.__dict__["trigger"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_null_is_not_abstract():
+    assert not inspect.isabstract(siddhi_NULL)
+
+
+def test_siddhi_null_constructor_exists():
+    assert callable(siddhi_NULL.__init__)
+
+
+def test_siddhi_null_constructor_args():
+    sig = inspect.signature(siddhi_NULL.__init__)
+    params = list(sig.parameters.keys())
+    assert "null" in params, "Missing parameter 'null'"
+
+def test_siddhi_null_has_null():
+    assert hasattr(siddhi_NULL, "null")
+    descriptor = None
+    for klass in siddhi_NULL.__mro__:
+        if "null" in klass.__dict__:
+            descriptor = klass.__dict__["null"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_is_is_not_abstract():
+    assert not inspect.isabstract(siddhi_IS)
+
+
+def test_siddhi_is_constructor_exists():
+    assert callable(siddhi_IS.__init__)
+
+
+def test_siddhi_is_constructor_args():
+    sig = inspect.signature(siddhi_IS.__init__)
+    params = list(sig.parameters.keys())
+    assert "is_" in params, "Missing parameter 'is_'"
+
+def test_siddhi_is_has_is_():
+    assert hasattr(siddhi_IS, "is_")
+    descriptor = None
+    for klass in siddhi_IS.__mro__:
+        if "is_" in klass.__dict__:
+            descriptor = klass.__dict__["is_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_last_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LAST)
+
+
+def test_siddhi_last_constructor_exists():
+    assert callable(siddhi_LAST.__init__)
+
+
+def test_siddhi_last_constructor_args():
+    sig = inspect.signature(siddhi_LAST.__init__)
+    params = list(sig.parameters.keys())
+    assert "last" in params, "Missing parameter 'last'"
+
+def test_siddhi_last_has_last():
+    assert hasattr(siddhi_LAST, "last")
+    descriptor = None
+    for klass in siddhi_LAST.__mro__:
+        if "last" in klass.__dict__:
+            descriptor = klass.__dict__["last"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_current_is_not_abstract():
+    assert not inspect.isabstract(siddhi_CURRENT)
+
+
+def test_siddhi_current_constructor_exists():
+    assert callable(siddhi_CURRENT.__init__)
+
+
+def test_siddhi_current_constructor_args():
+    sig = inspect.signature(siddhi_CURRENT.__init__)
+    params = list(sig.parameters.keys())
+    assert "currt" in params, "Missing parameter 'currt'"
+
+def test_siddhi_current_has_currt():
+    assert hasattr(siddhi_CURRENT, "currt")
+    descriptor = None
+    for klass in siddhi_CURRENT.__mro__:
+        if "currt" in klass.__dict__:
+            descriptor = klass.__dict__["currt"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_expired_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EXPIRED)
+
+
+def test_siddhi_expired_constructor_exists():
+    assert callable(siddhi_EXPIRED.__init__)
+
+
+def test_siddhi_expired_constructor_args():
+    sig = inspect.signature(siddhi_EXPIRED.__init__)
+    params = list(sig.parameters.keys())
+    assert "expired" in params, "Missing parameter 'expired'"
+
+def test_siddhi_expired_has_expired():
+    assert hasattr(siddhi_EXPIRED, "expired")
+    descriptor = None
+    for klass in siddhi_EXPIRED.__mro__:
+        if "expired" in klass.__dict__:
+            descriptor = klass.__dict__["expired"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_raw_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RAW)
+
+
+def test_siddhi_raw_constructor_exists():
+    assert callable(siddhi_RAW.__init__)
+
+
+def test_siddhi_raw_constructor_args():
+    sig = inspect.signature(siddhi_RAW.__init__)
+    params = list(sig.parameters.keys())
+    assert "raw" in params, "Missing parameter 'raw'"
+
+def test_siddhi_raw_has_raw():
+    assert hasattr(siddhi_RAW, "raw")
+    descriptor = None
+    for klass in siddhi_RAW.__mro__:
+        if "raw" in klass.__dict__:
+            descriptor = klass.__dict__["raw"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_events_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EVENTS)
+
+
+def test_siddhi_events_constructor_exists():
+    assert callable(siddhi_EVENTS.__init__)
+
+
+def test_siddhi_events_constructor_args():
+    sig = inspect.signature(siddhi_EVENTS.__init__)
+    params = list(sig.parameters.keys())
+    assert "events" in params, "Missing parameter 'events'"
+
+def test_siddhi_events_has_events():
+    assert hasattr(siddhi_EVENTS, "events")
+    descriptor = None
+    for klass in siddhi_EVENTS.__mro__:
+        if "events" in klass.__dict__:
+            descriptor = klass.__dict__["events"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_all_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ALL)
+
+
+def test_siddhi_all_constructor_exists():
+    assert callable(siddhi_ALL.__init__)
+
+
+def test_siddhi_all_constructor_args():
+    sig = inspect.signature(siddhi_ALL.__init__)
+    params = list(sig.parameters.keys())
+    assert "all" in params, "Missing parameter 'all'"
+
+def test_siddhi_all_has_all():
+    assert hasattr(siddhi_ALL, "all")
+    descriptor = None
+    for klass in siddhi_ALL.__mro__:
+        if "all" in klass.__dict__:
+            descriptor = klass.__dict__["all"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_object_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OBJECT)
+
+
+def test_siddhi_object_constructor_exists():
+    assert callable(siddhi_OBJECT.__init__)
+
+
+def test_siddhi_object_constructor_args():
+    sig = inspect.signature(siddhi_OBJECT.__init__)
+    params = list(sig.parameters.keys())
+    assert "object" in params, "Missing parameter 'object'"
+
+def test_siddhi_object_has_object():
+    assert hasattr(siddhi_OBJECT, "object")
+    descriptor = None
+    for klass in siddhi_OBJECT.__mro__:
+        if "object" in klass.__dict__:
+            descriptor = klass.__dict__["object"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_bool_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BOOL)
+
+
+def test_siddhi_bool_constructor_exists():
+    assert callable(siddhi_BOOL.__init__)
+
+
+def test_siddhi_bool_constructor_args():
+    sig = inspect.signature(siddhi_BOOL.__init__)
+    params = list(sig.parameters.keys())
+    assert "bool" in params, "Missing parameter 'bool'"
+
+def test_siddhi_bool_has_bool():
+    assert hasattr(siddhi_BOOL, "bool")
+    descriptor = None
+    for klass in siddhi_BOOL.__mro__:
+        if "bool" in klass.__dict__:
+            descriptor = klass.__dict__["bool"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_float_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FLOAT)
+
+
+def test_siddhi_float_constructor_exists():
+    assert callable(siddhi_FLOAT.__init__)
+
+
+def test_siddhi_float_constructor_args():
+    sig = inspect.signature(siddhi_FLOAT.__init__)
+    params = list(sig.parameters.keys())
+    assert "float" in params, "Missing parameter 'float'"
+
+def test_siddhi_float_has_float():
+    assert hasattr(siddhi_FLOAT, "float")
+    descriptor = None
+    for klass in siddhi_FLOAT.__mro__:
+        if "float" in klass.__dict__:
+            descriptor = klass.__dict__["float"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_everyabsentsequencesourcechain_is_not_abstract():
+    assert not inspect.isabstract(EveryAbsentSequenceSourceChain)
+
+
+def test_everyabsentsequencesourcechain_constructor_exists():
+    assert callable(EveryAbsentSequenceSourceChain.__init__)
+
+
+def test_everyabsentsequencesourcechain_constructor_args():
+    sig = inspect.signature(EveryAbsentSequenceSourceChain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_everysequencesourcechain_is_not_abstract():
+    assert not inspect.isabstract(EverySequenceSourceChain)
+
+
+def test_everysequencesourcechain_constructor_exists():
+    assert callable(EverySequenceSourceChain.__init__)
+
+
+def test_everysequencesourcechain_constructor_args():
+    sig = inspect.signature(EverySequenceSourceChain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(BasicAbsentPatternSource)
+
+
+def test_basicabsentpatternsource_constructor_exists():
+    assert callable(BasicAbsentPatternSource.__init__)
+
+
+def test_basicabsentpatternsource_constructor_args():
+    sig = inspect.signature(BasicAbsentPatternSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_define_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DEFINE)
+
+
+def test_siddhi_define_constructor_exists():
+    assert callable(siddhi_DEFINE.__init__)
+
+
+def test_siddhi_define_constructor_args():
+    sig = inspect.signature(siddhi_DEFINE.__init__)
+    params = list(sig.parameters.keys())
+    assert "define" in params, "Missing parameter 'define'"
+
+def test_siddhi_define_has_define():
+    assert hasattr(siddhi_DEFINE, "define")
+    descriptor = None
+    for klass in siddhi_DEFINE.__mro__:
+        if "define" in klass.__dict__:
+            descriptor = klass.__dict__["define"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_stream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_STREAM)
+
+
+def test_siddhi_stream_constructor_exists():
+    assert callable(siddhi_STREAM.__init__)
+
+
+def test_siddhi_stream_constructor_args():
+    sig = inspect.signature(siddhi_STREAM.__init__)
+    params = list(sig.parameters.keys())
+    assert "str" in params, "Missing parameter 'str'"
+
+def test_siddhi_stream_has_str():
+    assert hasattr(siddhi_STREAM, "str")
+    descriptor = None
+    for klass in siddhi_STREAM.__mro__:
+        if "str" in klass.__dict__:
+            descriptor = klass.__dict__["str"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_appannotation_is_not_abstract():
+    assert not inspect.isabstract(AppAnnotation)
+
+
+def test_appannotation_constructor_exists():
+    assert callable(AppAnnotation.__init__)
+
+
+def test_appannotation_constructor_args():
+    sig = inspect.signature(AppAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_app_is_not_abstract():
+    assert not inspect.isabstract(siddhi_APP)
+
+
+def test_siddhi_app_constructor_exists():
+    assert callable(siddhi_APP.__init__)
+
+
+def test_siddhi_app_constructor_args():
+    sig = inspect.signature(siddhi_APP.__init__)
+    params = list(sig.parameters.keys())
+    assert "ap" in params, "Missing parameter 'ap'"
+
+def test_siddhi_app_has_ap():
+    assert hasattr(siddhi_APP, "ap")
+    descriptor = None
+    for klass in siddhi_APP.__mro__:
+        if "ap" in klass.__dict__:
+            descriptor = klass.__dict__["ap"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_siddhi_in_is_not_abstract():
+    assert not inspect.isabstract(siddhi_IN)
+
+
+def test_siddhi_in_constructor_exists():
+    assert callable(siddhi_IN.__init__)
+
+
+def test_siddhi_in_constructor_args():
+    sig = inspect.signature(siddhi_IN.__init__)
+    params = list(sig.parameters.keys())
+    assert "in_" in params, "Missing parameter 'in_'"
+
+def test_siddhi_in_has_in_():
+    assert hasattr(siddhi_IN, "in_")
+    descriptor = None
+    for klass in siddhi_IN.__mro__:
+        if "in_" in klass.__dict__:
+            descriptor = klass.__dict__["in_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rightabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(RightAbsentPatternSource)
+
+
+def test_rightabsentpatternsource_constructor_exists():
+    assert callable(RightAbsentPatternSource.__init__)
+
+
+def test_rightabsentpatternsource_constructor_args():
+    sig = inspect.signature(RightAbsentPatternSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_rightabsentpatternsource1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RightAbsentPatternSource1)
+
+
+def test_siddhi_rightabsentpatternsource1_constructor_exists():
+    assert callable(siddhi_RightAbsentPatternSource1.__init__)
+
+
+def test_siddhi_rightabsentpatternsource1_constructor_args():
+    sig = inspect.signature(siddhi_RightAbsentPatternSource1.__init__)
+    params = list(sig.parameters.keys())
+    assert "fb" in params, "Missing parameter 'fb'"
+
+def test_siddhi_rightabsentpatternsource1_has_fb():
+    assert hasattr(siddhi_RightAbsentPatternSource1, "fb")
+    descriptor = None
+    for klass in siddhi_RightAbsentPatternSource1.__mro__:
+        if "fb" in klass.__dict__:
+            descriptor = klass.__dict__["fb"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_leftabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(LeftAbsentPatternSource)
+
+
+def test_leftabsentpatternsource_constructor_exists():
+    assert callable(LeftAbsentPatternSource.__init__)
+
+
+def test_leftabsentpatternsource_constructor_args():
+    sig = inspect.signature(LeftAbsentPatternSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_leftabsentpatternsource1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LeftAbsentPatternSource1)
+
+
+def test_siddhi_leftabsentpatternsource1_constructor_exists():
+    assert callable(siddhi_LeftAbsentPatternSource1.__init__)
+
+
+def test_siddhi_leftabsentpatternsource1_constructor_args():
+    sig = inspect.signature(siddhi_LeftAbsentPatternSource1.__init__)
+    params = list(sig.parameters.keys())
+    assert "fb" in params, "Missing parameter 'fb'"
+
+def test_siddhi_leftabsentpatternsource1_has_fb():
+    assert hasattr(siddhi_LeftAbsentPatternSource1, "fb")
+    descriptor = None
+    for klass in siddhi_LeftAbsentPatternSource1.__mro__:
+        if "fb" in klass.__dict__:
+            descriptor = klass.__dict__["fb"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_everyabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(EveryAbsentPatternSource)
+
+
+def test_everyabsentpatternsource_constructor_exists():
+    assert callable(EveryAbsentPatternSource.__init__)
+
+
+def test_everyabsentpatternsource_constructor_args():
+    sig = inspect.signature(EveryAbsentPatternSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logicalabsentstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(LogicalAbsentStatefulSource)
+
+
+def test_logicalabsentstatefulsource_constructor_exists():
+    assert callable(LogicalAbsentStatefulSource.__init__)
+
+
+def test_logicalabsentstatefulsource_constructor_args():
+    sig = inspect.signature(LogicalAbsentStatefulSource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_millisecondvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MillisecondValue)
+
+
+def test_siddhi_millisecondvalue_constructor_exists():
+    assert callable(siddhi_MillisecondValue.__init__)
+
+
+def test_siddhi_millisecondvalue_constructor_args():
+    sig = inspect.signature(siddhi_MillisecondValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_siddhi_unidirectional_is_not_abstract():
+    assert not inspect.isabstract(siddhi_UNIDIRECTIONAL)
+
+
+def test_siddhi_unidirectional_constructor_exists():
+    assert callable(siddhi_UNIDIRECTIONAL.__init__)
+
+
+def test_siddhi_unidirectional_constructor_args():
+    sig = inspect.signature(siddhi_UNIDIRECTIONAL.__init__)
     params = list(sig.parameters.keys())
     assert "unidirectional" in params, "Missing parameter 'unidirectional'"
 
-def test_siddhi::unidirectional_has_unidirectional():
-    assert hasattr(siddhi::UNIDIRECTIONAL, "unidirectional")
+def test_siddhi_unidirectional_has_unidirectional():
+    assert hasattr(siddhi_UNIDIRECTIONAL, "unidirectional")
     descriptor = None
-    for klass in siddhi::UNIDIRECTIONAL.__mro__:
+    for klass in siddhi_UNIDIRECTIONAL.__mro__:
         if "unidirectional" in klass.__dict__:
             descriptor = klass.__dict__["unidirectional"]
             break
@@ -2691,16 +3153,16 @@ def test_siddhi::unidirectional_has_unidirectional():
 
 
 
-def test_siddhi::joinsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::JoinSource)
+def test_siddhi_joinsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_JoinSource)
 
 
-def test_siddhi::joinsource_constructor_exists():
-    assert callable(siddhi::JoinSource.__init__)
+def test_siddhi_joinsource_constructor_exists():
+    assert callable(siddhi_JoinSource.__init__)
 
 
-def test_siddhi::joinsource_constructor_args():
-    sig = inspect.signature(siddhi::JoinSource.__init__)
+def test_siddhi_joinsource_constructor_args():
+    sig = inspect.signature(siddhi_JoinSource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2733,16 +3195,16 @@ def test_joinsource_constructor_args():
 
 
 
-def test_siddhi::mainsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MainSource)
+def test_siddhi_mainsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MainSource)
 
 
-def test_siddhi::mainsource_constructor_exists():
-    assert callable(siddhi::MainSource.__init__)
+def test_siddhi_mainsource_constructor_exists():
+    assert callable(siddhi_MainSource.__init__)
 
 
-def test_siddhi::mainsource_constructor_args():
-    sig = inspect.signature(siddhi::MainSource.__init__)
+def test_siddhi_mainsource_constructor_args():
+    sig = inspect.signature(siddhi_MainSource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2873,44 +3335,44 @@ def test_within_constructor_args():
 
 
 
-def test_siddhi::joins_is_not_abstract():
-    assert not inspect.isabstract(siddhi::joins)
+def test_siddhi_joins_is_not_abstract():
+    assert not inspect.isabstract(siddhi_joins)
 
 
-def test_siddhi::joins_constructor_exists():
-    assert callable(siddhi::joins.__init__)
+def test_siddhi_joins_constructor_exists():
+    assert callable(siddhi_joins.__init__)
 
 
-def test_siddhi::joins_constructor_args():
-    sig = inspect.signature(siddhi::joins.__init__)
+def test_siddhi_joins_constructor_args():
+    sig = inspect.signature(siddhi_joins.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::per1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Per1)
+def test_siddhi_per1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Per1)
 
 
-def test_siddhi::per1_constructor_exists():
-    assert callable(siddhi::Per1.__init__)
+def test_siddhi_per1_constructor_exists():
+    assert callable(siddhi_Per1.__init__)
 
 
-def test_siddhi::per1_constructor_args():
-    sig = inspect.signature(siddhi::Per1.__init__)
+def test_siddhi_per1_constructor_args():
+    sig = inspect.signature(siddhi_Per1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::withintimerange_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WithinTimeRange)
+def test_siddhi_withintimerange_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WithinTimeRange)
 
 
-def test_siddhi::withintimerange_constructor_exists():
-    assert callable(siddhi::WithinTimeRange.__init__)
+def test_siddhi_withintimerange_constructor_exists():
+    assert callable(siddhi_WithinTimeRange.__init__)
 
 
-def test_siddhi::withintimerange_constructor_args():
-    sig = inspect.signature(siddhi::WithinTimeRange.__init__)
+def test_siddhi_withintimerange_constructor_args():
+    sig = inspect.signature(siddhi_WithinTimeRange.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2929,37 +3391,37 @@ def test_absentpatternsourcechain_constructor_args():
 
 
 
-def test_siddhi::everyabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EveryAbsentPatternSource)
+def test_siddhi_everyabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EveryAbsentPatternSource)
 
 
-def test_siddhi::everyabsentpatternsource_constructor_exists():
-    assert callable(siddhi::EveryAbsentPatternSource.__init__)
+def test_siddhi_everyabsentpatternsource_constructor_exists():
+    assert callable(siddhi_EveryAbsentPatternSource.__init__)
 
 
-def test_siddhi::everyabsentpatternsource_constructor_args():
-    sig = inspect.signature(siddhi::EveryAbsentPatternSource.__init__)
+def test_siddhi_everyabsentpatternsource_constructor_args():
+    sig = inspect.signature(siddhi_EveryAbsentPatternSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::rightabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RightAbsentPatternSource)
+def test_siddhi_rightabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RightAbsentPatternSource)
 
 
-def test_siddhi::rightabsentpatternsource_constructor_exists():
-    assert callable(siddhi::RightAbsentPatternSource.__init__)
+def test_siddhi_rightabsentpatternsource_constructor_exists():
+    assert callable(siddhi_RightAbsentPatternSource.__init__)
 
 
-def test_siddhi::rightabsentpatternsource_constructor_args():
-    sig = inspect.signature(siddhi::RightAbsentPatternSource.__init__)
+def test_siddhi_rightabsentpatternsource_constructor_args():
+    sig = inspect.signature(siddhi_RightAbsentPatternSource.__init__)
     params = list(sig.parameters.keys())
     assert "fb2" in params, "Missing parameter 'fb2'"
 
-def test_siddhi::rightabsentpatternsource_has_fb2():
-    assert hasattr(siddhi::RightAbsentPatternSource, "fb2")
+def test_siddhi_rightabsentpatternsource_has_fb2():
+    assert hasattr(siddhi_RightAbsentPatternSource, "fb2")
     descriptor = None
-    for klass in siddhi::RightAbsentPatternSource.__mro__:
+    for klass in siddhi_RightAbsentPatternSource.__mro__:
         if "fb2" in klass.__dict__:
             descriptor = klass.__dict__["fb2"]
             break
@@ -2967,23 +3429,23 @@ def test_siddhi::rightabsentpatternsource_has_fb2():
 
 
 
-def test_siddhi::leftabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LeftAbsentPatternSource)
+def test_siddhi_leftabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LeftAbsentPatternSource)
 
 
-def test_siddhi::leftabsentpatternsource_constructor_exists():
-    assert callable(siddhi::LeftAbsentPatternSource.__init__)
+def test_siddhi_leftabsentpatternsource_constructor_exists():
+    assert callable(siddhi_LeftAbsentPatternSource.__init__)
 
 
-def test_siddhi::leftabsentpatternsource_constructor_args():
-    sig = inspect.signature(siddhi::LeftAbsentPatternSource.__init__)
+def test_siddhi_leftabsentpatternsource_constructor_args():
+    sig = inspect.signature(siddhi_LeftAbsentPatternSource.__init__)
     params = list(sig.parameters.keys())
     assert "fb1" in params, "Missing parameter 'fb1'"
 
-def test_siddhi::leftabsentpatternsource_has_fb1():
-    assert hasattr(siddhi::LeftAbsentPatternSource, "fb1")
+def test_siddhi_leftabsentpatternsource_has_fb1():
+    assert hasattr(siddhi_LeftAbsentPatternSource, "fb1")
     descriptor = None
-    for klass in siddhi::LeftAbsentPatternSource.__mro__:
+    for klass in siddhi_LeftAbsentPatternSource.__mro__:
         if "fb1" in klass.__dict__:
             descriptor = klass.__dict__["fb1"]
             break
@@ -2991,65 +3453,65 @@ def test_siddhi::leftabsentpatternsource_has_fb1():
 
 
 
-def test_siddhi::patterncollectionstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PatternCollectionStatefulSource)
+def test_siddhi_patterncollectionstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PatternCollectionStatefulSource)
 
 
-def test_siddhi::patterncollectionstatefulsource_constructor_exists():
-    assert callable(siddhi::PatternCollectionStatefulSource.__init__)
+def test_siddhi_patterncollectionstatefulsource_constructor_exists():
+    assert callable(siddhi_PatternCollectionStatefulSource.__init__)
 
 
-def test_siddhi::patterncollectionstatefulsource_constructor_args():
-    sig = inspect.signature(siddhi::PatternCollectionStatefulSource.__init__)
+def test_siddhi_patterncollectionstatefulsource_constructor_args():
+    sig = inspect.signature(siddhi_PatternCollectionStatefulSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::patternsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PatternSource)
+def test_siddhi_patternsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PatternSource)
 
 
-def test_siddhi::patternsource_constructor_exists():
-    assert callable(siddhi::PatternSource.__init__)
+def test_siddhi_patternsource_constructor_exists():
+    assert callable(siddhi_PatternSource.__init__)
 
 
-def test_siddhi::patternsource_constructor_args():
-    sig = inspect.signature(siddhi::PatternSource.__init__)
+def test_siddhi_patternsource_constructor_args():
+    sig = inspect.signature(siddhi_PatternSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::basicsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BasicSource)
+def test_siddhi_basicsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BasicSource)
 
 
-def test_siddhi::basicsource_constructor_exists():
-    assert callable(siddhi::BasicSource.__init__)
+def test_siddhi_basicsource_constructor_exists():
+    assert callable(siddhi_BasicSource.__init__)
 
 
-def test_siddhi::basicsource_constructor_args():
-    sig = inspect.signature(siddhi::BasicSource.__init__)
+def test_siddhi_basicsource_constructor_args():
+    sig = inspect.signature(siddhi_BasicSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::not_is_not_abstract():
-    assert not inspect.isabstract(siddhi::NOT)
+def test_siddhi_not_is_not_abstract():
+    assert not inspect.isabstract(siddhi_NOT)
 
 
-def test_siddhi::not_constructor_exists():
-    assert callable(siddhi::NOT.__init__)
+def test_siddhi_not_constructor_exists():
+    assert callable(siddhi_NOT.__init__)
 
 
-def test_siddhi::not_constructor_args():
-    sig = inspect.signature(siddhi::NOT.__init__)
+def test_siddhi_not_constructor_args():
+    sig = inspect.signature(siddhi_NOT.__init__)
     params = list(sig.parameters.keys())
     assert "not1" in params, "Missing parameter 'not1'"
 
-def test_siddhi::not_has_not1():
-    assert hasattr(siddhi::NOT, "not1")
+def test_siddhi_not_has_not1():
+    assert hasattr(siddhi_NOT, "not1")
     descriptor = None
-    for klass in siddhi::NOT.__mro__:
+    for klass in siddhi_NOT.__mro__:
         if "not1" in klass.__dict__:
             descriptor = klass.__dict__["not1"]
             break
@@ -3057,33 +3519,33 @@ def test_siddhi::not_has_not1():
 
 
 
-def test_siddhi::collect_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Collect)
+def test_siddhi_collect_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Collect)
 
 
-def test_siddhi::collect_constructor_exists():
-    assert callable(siddhi::Collect.__init__)
+def test_siddhi_collect_constructor_exists():
+    assert callable(siddhi_Collect.__init__)
 
 
-def test_siddhi::collect_constructor_args():
-    sig = inspect.signature(siddhi::Collect.__init__)
+def test_siddhi_collect_constructor_args():
+    sig = inspect.signature(siddhi_Collect.__init__)
     params = list(sig.parameters.keys())
     assert "start" in params, "Missing parameter 'start'"
     assert "end" in params, "Missing parameter 'end'"
 
-def test_siddhi::collect_has_start():
-    assert hasattr(siddhi::Collect, "start")
+def test_siddhi_collect_has_start():
+    assert hasattr(siddhi_Collect, "start")
     descriptor = None
-    for klass in siddhi::Collect.__mro__:
+    for klass in siddhi_Collect.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::collect_has_end():
-    assert hasattr(siddhi::Collect, "end")
+def test_siddhi_collect_has_end():
+    assert hasattr(siddhi_Collect, "end")
     descriptor = None
-    for klass in siddhi::Collect.__mro__:
+    for klass in siddhi_Collect.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
@@ -3091,23 +3553,23 @@ def test_siddhi::collect_has_end():
 
 
 
-def test_siddhi::and_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AND)
+def test_siddhi_and_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AND)
 
 
-def test_siddhi::and_constructor_exists():
-    assert callable(siddhi::AND.__init__)
+def test_siddhi_and_constructor_exists():
+    assert callable(siddhi_AND.__init__)
 
 
-def test_siddhi::and_constructor_args():
-    sig = inspect.signature(siddhi::AND.__init__)
+def test_siddhi_and_constructor_args():
+    sig = inspect.signature(siddhi_AND.__init__)
     params = list(sig.parameters.keys())
     assert "and_" in params, "Missing parameter 'and_'"
 
-def test_siddhi::and_has_and_():
-    assert hasattr(siddhi::AND, "and_")
+def test_siddhi_and_has_and_():
+    assert hasattr(siddhi_AND, "and_")
     descriptor = None
-    for klass in siddhi::AND.__mro__:
+    for klass in siddhi_AND.__mro__:
         if "and_" in klass.__dict__:
             descriptor = klass.__dict__["and_"]
             break
@@ -3129,44 +3591,44 @@ def test_sequencesource_constructor_args():
 
 
 
-def test_siddhi::logicalabsentstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LogicalAbsentStatefulSource)
+def test_siddhi_logicalstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LogicalStatefulSource)
 
 
-def test_siddhi::logicalabsentstatefulsource_constructor_exists():
-    assert callable(siddhi::LogicalAbsentStatefulSource.__init__)
+def test_siddhi_logicalstatefulsource_constructor_exists():
+    assert callable(siddhi_LogicalStatefulSource.__init__)
 
 
-def test_siddhi::logicalabsentstatefulsource_constructor_args():
-    sig = inspect.signature(siddhi::LogicalAbsentStatefulSource.__init__)
+def test_siddhi_logicalstatefulsource_constructor_args():
+    sig = inspect.signature(siddhi_LogicalStatefulSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::logicalstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LogicalStatefulSource)
+def test_siddhi_logicalabsentstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LogicalAbsentStatefulSource)
 
 
-def test_siddhi::logicalstatefulsource_constructor_exists():
-    assert callable(siddhi::LogicalStatefulSource.__init__)
+def test_siddhi_logicalabsentstatefulsource_constructor_exists():
+    assert callable(siddhi_LogicalAbsentStatefulSource.__init__)
 
 
-def test_siddhi::logicalstatefulsource_constructor_args():
-    sig = inspect.signature(siddhi::LogicalStatefulSource.__init__)
+def test_siddhi_logicalabsentstatefulsource_constructor_args():
+    sig = inspect.signature(siddhi_LogicalAbsentStatefulSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::sequencecollectionstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SequenceCollectionStatefulSource)
+def test_siddhi_sequencecollectionstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SequenceCollectionStatefulSource)
 
 
-def test_siddhi::sequencecollectionstatefulsource_constructor_exists():
-    assert callable(siddhi::SequenceCollectionStatefulSource.__init__)
+def test_siddhi_sequencecollectionstatefulsource_constructor_exists():
+    assert callable(siddhi_SequenceCollectionStatefulSource.__init__)
 
 
-def test_siddhi::sequencecollectionstatefulsource_constructor_args():
-    sig = inspect.signature(siddhi::SequenceCollectionStatefulSource.__init__)
+def test_siddhi_sequencecollectionstatefulsource_constructor_args():
+    sig = inspect.signature(siddhi_SequenceCollectionStatefulSource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3185,23 +3647,23 @@ def test_sequencesourcechain_constructor_args():
 
 
 
-def test_siddhi::patternsourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PatternSourceChain)
+def test_siddhi_patternsourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PatternSourceChain)
 
 
-def test_siddhi::patternsourcechain_constructor_exists():
-    assert callable(siddhi::PatternSourceChain.__init__)
+def test_siddhi_patternsourcechain_constructor_exists():
+    assert callable(siddhi_PatternSourceChain.__init__)
 
 
-def test_siddhi::patternsourcechain_constructor_args():
-    sig = inspect.signature(siddhi::PatternSourceChain.__init__)
+def test_siddhi_patternsourcechain_constructor_args():
+    sig = inspect.signature(siddhi_PatternSourceChain.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_siddhi::patternsourcechain_has_op():
-    assert hasattr(siddhi::PatternSourceChain, "op")
+def test_siddhi_patternsourcechain_has_op():
+    assert hasattr(siddhi_PatternSourceChain, "op")
     descriptor = None
-    for klass in siddhi::PatternSourceChain.__mro__:
+    for klass in siddhi_PatternSourceChain.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -3223,37 +3685,37 @@ def test_patternstream_constructor_args():
 
 
 
-def test_siddhi::absentpatternsourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AbsentPatternSourceChain)
+def test_siddhi_absentpatternsourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AbsentPatternSourceChain)
 
 
-def test_siddhi::absentpatternsourcechain_constructor_exists():
-    assert callable(siddhi::AbsentPatternSourceChain.__init__)
+def test_siddhi_absentpatternsourcechain_constructor_exists():
+    assert callable(siddhi_AbsentPatternSourceChain.__init__)
 
 
-def test_siddhi::absentpatternsourcechain_constructor_args():
-    sig = inspect.signature(siddhi::AbsentPatternSourceChain.__init__)
+def test_siddhi_absentpatternsourcechain_constructor_args():
+    sig = inspect.signature(siddhi_AbsentPatternSourceChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::everypatternsourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EveryPatternSourceChain)
+def test_siddhi_everypatternsourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EveryPatternSourceChain)
 
 
-def test_siddhi::everypatternsourcechain_constructor_exists():
-    assert callable(siddhi::EveryPatternSourceChain.__init__)
+def test_siddhi_everypatternsourcechain_constructor_exists():
+    assert callable(siddhi_EveryPatternSourceChain.__init__)
 
 
-def test_siddhi::everypatternsourcechain_constructor_args():
-    sig = inspect.signature(siddhi::EveryPatternSourceChain.__init__)
+def test_siddhi_everypatternsourcechain_constructor_args():
+    sig = inspect.signature(siddhi_EveryPatternSourceChain.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_siddhi::everypatternsourcechain_has_op():
-    assert hasattr(siddhi::EveryPatternSourceChain, "op")
+def test_siddhi_everypatternsourcechain_has_op():
+    assert hasattr(siddhi_EveryPatternSourceChain, "op")
     descriptor = None
-    for klass in siddhi::EveryPatternSourceChain.__mro__:
+    for klass in siddhi_EveryPatternSourceChain.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -3261,138 +3723,138 @@ def test_siddhi::everypatternsourcechain_has_op():
 
 
 
-def test_siddhi::rightabsentsequencesource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RightAbsentSequenceSource)
+def test_siddhi_rightabsentsequencesource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_RightAbsentSequenceSource)
 
 
-def test_siddhi::rightabsentsequencesource_constructor_exists():
-    assert callable(siddhi::RightAbsentSequenceSource.__init__)
+def test_siddhi_rightabsentsequencesource_constructor_exists():
+    assert callable(siddhi_RightAbsentSequenceSource.__init__)
 
 
-def test_siddhi::rightabsentsequencesource_constructor_args():
-    sig = inspect.signature(siddhi::RightAbsentSequenceSource.__init__)
+def test_siddhi_rightabsentsequencesource_constructor_args():
+    sig = inspect.signature(siddhi_RightAbsentSequenceSource.__init__)
     params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
     assert "cp" in params, "Missing parameter 'cp'"
     assert "comma" in params, "Missing parameter 'comma'"
     assert "comm" in params, "Missing parameter 'comm'"
+    assert "op" in params, "Missing parameter 'op'"
 
-def test_siddhi::rightabsentsequencesource_has_op():
-    assert hasattr(siddhi::RightAbsentSequenceSource, "op")
+def test_siddhi_rightabsentsequencesource_has_cp():
+    assert hasattr(siddhi_RightAbsentSequenceSource, "cp")
     descriptor = None
-    for klass in siddhi::RightAbsentSequenceSource.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::rightabsentsequencesource_has_cp():
-    assert hasattr(siddhi::RightAbsentSequenceSource, "cp")
-    descriptor = None
-    for klass in siddhi::RightAbsentSequenceSource.__mro__:
+    for klass in siddhi_RightAbsentSequenceSource.__mro__:
         if "cp" in klass.__dict__:
             descriptor = klass.__dict__["cp"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::rightabsentsequencesource_has_comma():
-    assert hasattr(siddhi::RightAbsentSequenceSource, "comma")
+def test_siddhi_rightabsentsequencesource_has_comma():
+    assert hasattr(siddhi_RightAbsentSequenceSource, "comma")
     descriptor = None
-    for klass in siddhi::RightAbsentSequenceSource.__mro__:
+    for klass in siddhi_RightAbsentSequenceSource.__mro__:
         if "comma" in klass.__dict__:
             descriptor = klass.__dict__["comma"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::rightabsentsequencesource_has_comm():
-    assert hasattr(siddhi::RightAbsentSequenceSource, "comm")
+def test_siddhi_rightabsentsequencesource_has_comm():
+    assert hasattr(siddhi_RightAbsentSequenceSource, "comm")
     descriptor = None
-    for klass in siddhi::RightAbsentSequenceSource.__mro__:
+    for klass in siddhi_RightAbsentSequenceSource.__mro__:
         if "comm" in klass.__dict__:
             descriptor = klass.__dict__["comm"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_siddhi::leftabsentsequencesource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LeftAbsentSequenceSource)
-
-
-def test_siddhi::leftabsentsequencesource_constructor_exists():
-    assert callable(siddhi::LeftAbsentSequenceSource.__init__)
-
-
-def test_siddhi::leftabsentsequencesource_constructor_args():
-    sig = inspect.signature(siddhi::LeftAbsentSequenceSource.__init__)
-    params = list(sig.parameters.keys())
-    assert "cp" in params, "Missing parameter 'cp'"
-    assert "comma" in params, "Missing parameter 'comma'"
-    assert "op" in params, "Missing parameter 'op'"
-    assert "comm" in params, "Missing parameter 'comm'"
-
-def test_siddhi::leftabsentsequencesource_has_cp():
-    assert hasattr(siddhi::LeftAbsentSequenceSource, "cp")
+def test_siddhi_rightabsentsequencesource_has_op():
+    assert hasattr(siddhi_RightAbsentSequenceSource, "op")
     descriptor = None
-    for klass in siddhi::LeftAbsentSequenceSource.__mro__:
-        if "cp" in klass.__dict__:
-            descriptor = klass.__dict__["cp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::leftabsentsequencesource_has_comma():
-    assert hasattr(siddhi::LeftAbsentSequenceSource, "comma")
-    descriptor = None
-    for klass in siddhi::LeftAbsentSequenceSource.__mro__:
-        if "comma" in klass.__dict__:
-            descriptor = klass.__dict__["comma"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::leftabsentsequencesource_has_op():
-    assert hasattr(siddhi::LeftAbsentSequenceSource, "op")
-    descriptor = None
-    for klass in siddhi::LeftAbsentSequenceSource.__mro__:
+    for klass in siddhi_RightAbsentSequenceSource.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::leftabsentsequencesource_has_comm():
-    assert hasattr(siddhi::LeftAbsentSequenceSource, "comm")
+
+
+def test_siddhi_leftabsentsequencesource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LeftAbsentSequenceSource)
+
+
+def test_siddhi_leftabsentsequencesource_constructor_exists():
+    assert callable(siddhi_LeftAbsentSequenceSource.__init__)
+
+
+def test_siddhi_leftabsentsequencesource_constructor_args():
+    sig = inspect.signature(siddhi_LeftAbsentSequenceSource.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+    assert "comma" in params, "Missing parameter 'comma'"
+    assert "comm" in params, "Missing parameter 'comm'"
+    assert "cp" in params, "Missing parameter 'cp'"
+
+def test_siddhi_leftabsentsequencesource_has_op():
+    assert hasattr(siddhi_LeftAbsentSequenceSource, "op")
     descriptor = None
-    for klass in siddhi::LeftAbsentSequenceSource.__mro__:
+    for klass in siddhi_LeftAbsentSequenceSource.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_leftabsentsequencesource_has_comma():
+    assert hasattr(siddhi_LeftAbsentSequenceSource, "comma")
+    descriptor = None
+    for klass in siddhi_LeftAbsentSequenceSource.__mro__:
+        if "comma" in klass.__dict__:
+            descriptor = klass.__dict__["comma"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_siddhi_leftabsentsequencesource_has_comm():
+    assert hasattr(siddhi_LeftAbsentSequenceSource, "comm")
+    descriptor = None
+    for klass in siddhi_LeftAbsentSequenceSource.__mro__:
         if "comm" in klass.__dict__:
             descriptor = klass.__dict__["comm"]
             break
     assert isinstance(descriptor, property)
 
+def test_siddhi_leftabsentsequencesource_has_cp():
+    assert hasattr(siddhi_LeftAbsentSequenceSource, "cp")
+    descriptor = None
+    for klass in siddhi_LeftAbsentSequenceSource.__mro__:
+        if "cp" in klass.__dict__:
+            descriptor = klass.__dict__["cp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_siddhi::basicabsentpatternsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BasicAbsentPatternSource)
+
+def test_siddhi_basicabsentpatternsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BasicAbsentPatternSource)
 
 
-def test_siddhi::basicabsentpatternsource_constructor_exists():
-    assert callable(siddhi::BasicAbsentPatternSource.__init__)
+def test_siddhi_basicabsentpatternsource_constructor_exists():
+    assert callable(siddhi_BasicAbsentPatternSource.__init__)
 
 
-def test_siddhi::basicabsentpatternsource_constructor_args():
-    sig = inspect.signature(siddhi::BasicAbsentPatternSource.__init__)
+def test_siddhi_basicabsentpatternsource_constructor_args():
+    sig = inspect.signature(siddhi_BasicAbsentPatternSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::eobject_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EObject)
+def test_siddhi_eobject_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EObject)
 
 
-def test_siddhi::eobject_constructor_exists():
-    assert callable(siddhi::EObject.__init__)
+def test_siddhi_eobject_constructor_exists():
+    assert callable(siddhi_EObject.__init__)
 
 
-def test_siddhi::eobject_constructor_args():
-    sig = inspect.signature(siddhi::EObject.__init__)
+def test_siddhi_eobject_constructor_args():
+    sig = inspect.signature(siddhi_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3425,51 +3887,51 @@ def test_group_constructor_args():
 
 
 
-def test_siddhi::havingexpr_is_not_abstract():
-    assert not inspect.isabstract(siddhi::HavingExpr)
+def test_siddhi_havingexpr_is_not_abstract():
+    assert not inspect.isabstract(siddhi_HavingExpr)
 
 
-def test_siddhi::havingexpr_constructor_exists():
-    assert callable(siddhi::HavingExpr.__init__)
+def test_siddhi_havingexpr_constructor_exists():
+    assert callable(siddhi_HavingExpr.__init__)
 
 
-def test_siddhi::havingexpr_constructor_args():
-    sig = inspect.signature(siddhi::HavingExpr.__init__)
+def test_siddhi_havingexpr_constructor_args():
+    sig = inspect.signature(siddhi_HavingExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::absentsequencesourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AbsentSequenceSourceChain)
+def test_siddhi_absentsequencesourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AbsentSequenceSourceChain)
 
 
-def test_siddhi::absentsequencesourcechain_constructor_exists():
-    assert callable(siddhi::AbsentSequenceSourceChain.__init__)
+def test_siddhi_absentsequencesourcechain_constructor_exists():
+    assert callable(siddhi_AbsentSequenceSourceChain.__init__)
 
 
-def test_siddhi::absentsequencesourcechain_constructor_args():
-    sig = inspect.signature(siddhi::AbsentSequenceSourceChain.__init__)
+def test_siddhi_absentsequencesourcechain_constructor_args():
+    sig = inspect.signature(siddhi_AbsentSequenceSourceChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::sequencesourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SequenceSourceChain)
+def test_siddhi_sequencesourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SequenceSourceChain)
 
 
-def test_siddhi::sequencesourcechain_constructor_exists():
-    assert callable(siddhi::SequenceSourceChain.__init__)
+def test_siddhi_sequencesourcechain_constructor_exists():
+    assert callable(siddhi_SequenceSourceChain.__init__)
 
 
-def test_siddhi::sequencesourcechain_constructor_args():
-    sig = inspect.signature(siddhi::SequenceSourceChain.__init__)
+def test_siddhi_sequencesourcechain_constructor_args():
+    sig = inspect.signature(siddhi_SequenceSourceChain.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_siddhi::sequencesourcechain_has_op():
-    assert hasattr(siddhi::SequenceSourceChain, "op")
+def test_siddhi_sequencesourcechain_has_op():
+    assert hasattr(siddhi_SequenceSourceChain, "op")
     descriptor = None
-    for klass in siddhi::SequenceSourceChain.__mro__:
+    for klass in siddhi_SequenceSourceChain.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -3477,128 +3939,128 @@ def test_siddhi::sequencesourcechain_has_op():
 
 
 
-def test_siddhi::withintime_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WithinTime)
+def test_siddhi_withintime_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WithinTime)
 
 
-def test_siddhi::withintime_constructor_exists():
-    assert callable(siddhi::WithinTime.__init__)
+def test_siddhi_withintime_constructor_exists():
+    assert callable(siddhi_WithinTime.__init__)
 
 
-def test_siddhi::withintime_constructor_args():
-    sig = inspect.signature(siddhi::WithinTime.__init__)
+def test_siddhi_withintime_constructor_args():
+    sig = inspect.signature(siddhi_WithinTime.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::sequencesource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SequenceSource)
+def test_siddhi_sequencesource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SequenceSource)
 
 
-def test_siddhi::sequencesource_constructor_exists():
-    assert callable(siddhi::SequenceSource.__init__)
+def test_siddhi_sequencesource_constructor_exists():
+    assert callable(siddhi_SequenceSource.__init__)
 
 
-def test_siddhi::sequencesource_constructor_args():
-    sig = inspect.signature(siddhi::SequenceSource.__init__)
+def test_siddhi_sequencesource_constructor_args():
+    sig = inspect.signature(siddhi_SequenceSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::everyabsentsequencesourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EveryAbsentSequenceSourceChain)
+def test_siddhi_everyabsentsequencesourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EveryAbsentSequenceSourceChain)
 
 
-def test_siddhi::everyabsentsequencesourcechain_constructor_exists():
-    assert callable(siddhi::EveryAbsentSequenceSourceChain.__init__)
+def test_siddhi_everyabsentsequencesourcechain_constructor_exists():
+    assert callable(siddhi_EveryAbsentSequenceSourceChain.__init__)
 
 
-def test_siddhi::everyabsentsequencesourcechain_constructor_args():
-    sig = inspect.signature(siddhi::EveryAbsentSequenceSourceChain.__init__)
+def test_siddhi_everyabsentsequencesourcechain_constructor_args():
+    sig = inspect.signature(siddhi_EveryAbsentSequenceSourceChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::everysequencesourcechain_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EverySequenceSourceChain)
+def test_siddhi_everysequencesourcechain_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EverySequenceSourceChain)
 
 
-def test_siddhi::everysequencesourcechain_constructor_exists():
-    assert callable(siddhi::EverySequenceSourceChain.__init__)
+def test_siddhi_everysequencesourcechain_constructor_exists():
+    assert callable(siddhi_EverySequenceSourceChain.__init__)
 
 
-def test_siddhi::everysequencesourcechain_constructor_args():
-    sig = inspect.signature(siddhi::EverySequenceSourceChain.__init__)
+def test_siddhi_everysequencesourcechain_constructor_args():
+    sig = inspect.signature(siddhi_EverySequenceSourceChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::patternstream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PatternStream)
+def test_siddhi_patternstream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PatternStream)
 
 
-def test_siddhi::patternstream_constructor_exists():
-    assert callable(siddhi::PatternStream.__init__)
+def test_siddhi_patternstream_constructor_exists():
+    assert callable(siddhi_PatternStream.__init__)
 
 
-def test_siddhi::patternstream_constructor_args():
-    sig = inspect.signature(siddhi::PatternStream.__init__)
+def test_siddhi_patternstream_constructor_args():
+    sig = inspect.signature(siddhi_PatternStream.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::sequencestream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SequenceStream)
+def test_siddhi_sequencestream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SequenceStream)
 
 
-def test_siddhi::sequencestream_constructor_exists():
-    assert callable(siddhi::SequenceStream.__init__)
+def test_siddhi_sequencestream_constructor_exists():
+    assert callable(siddhi_SequenceStream.__init__)
 
 
-def test_siddhi::sequencestream_constructor_args():
-    sig = inspect.signature(siddhi::SequenceStream.__init__)
+def test_siddhi_sequencestream_constructor_args():
+    sig = inspect.signature(siddhi_SequenceStream.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::joinstream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::JoinStream)
+def test_siddhi_joinstream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_JoinStream)
 
 
-def test_siddhi::joinstream_constructor_exists():
-    assert callable(siddhi::JoinStream.__init__)
+def test_siddhi_joinstream_constructor_exists():
+    assert callable(siddhi_JoinStream.__init__)
 
 
-def test_siddhi::joinstream_constructor_args():
-    sig = inspect.signature(siddhi::JoinStream.__init__)
+def test_siddhi_joinstream_constructor_args():
+    sig = inspect.signature(siddhi_JoinStream.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::attribute_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Attribute)
+def test_siddhi_attribute_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Attribute)
 
 
-def test_siddhi::attribute_constructor_exists():
-    assert callable(siddhi::Attribute.__init__)
+def test_siddhi_attribute_constructor_exists():
+    assert callable(siddhi_Attribute.__init__)
 
 
-def test_siddhi::attribute_constructor_args():
-    sig = inspect.signature(siddhi::Attribute.__init__)
+def test_siddhi_attribute_constructor_args():
+    sig = inspect.signature(siddhi_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::outputattribute_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OutputAttribute)
+def test_siddhi_outputattribute_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OutputAttribute)
 
 
-def test_siddhi::outputattribute_constructor_exists():
-    assert callable(siddhi::OutputAttribute.__init__)
+def test_siddhi_outputattribute_constructor_exists():
+    assert callable(siddhi_OutputAttribute.__init__)
 
 
-def test_siddhi::outputattribute_constructor_args():
-    sig = inspect.signature(siddhi::OutputAttribute.__init__)
+def test_siddhi_outputattribute_constructor_args():
+    sig = inspect.signature(siddhi_OutputAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3645,479 +4107,17 @@ def test_last_constructor_args():
 
 
 
-def test_siddhi::attributeindex_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AttributeIndex)
+def test_siddhi_attributeindex_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AttributeIndex)
 
 
-def test_siddhi::attributeindex_constructor_exists():
-    assert callable(siddhi::AttributeIndex.__init__)
+def test_siddhi_attributeindex_constructor_exists():
+    assert callable(siddhi_AttributeIndex.__init__)
 
 
-def test_siddhi::attributeindex_constructor_args():
-    sig = inspect.signature(siddhi::AttributeIndex.__init__)
+def test_siddhi_attributeindex_constructor_args():
+    sig = inspect.signature(siddhi_AttributeIndex.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::mathgtltoperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathGtLtOperation)
-
-
-def test_siddhi::mathgtltoperation_constructor_exists():
-    assert callable(siddhi::MathGtLtOperation.__init__)
-
-
-def test_siddhi::mathgtltoperation_constructor_args():
-    sig = inspect.signature(siddhi::MathGtLtOperation.__init__)
-    params = list(sig.parameters.keys())
-    assert "lt" in params, "Missing parameter 'lt'"
-    assert "gt_eq" in params, "Missing parameter 'gt_eq'"
-    assert "gt" in params, "Missing parameter 'gt'"
-    assert "lt_eq" in params, "Missing parameter 'lt_eq'"
-
-def test_siddhi::mathgtltoperation_has_lt():
-    assert hasattr(siddhi::MathGtLtOperation, "lt")
-    descriptor = None
-    for klass in siddhi::MathGtLtOperation.__mro__:
-        if "lt" in klass.__dict__:
-            descriptor = klass.__dict__["lt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::mathgtltoperation_has_gt_eq():
-    assert hasattr(siddhi::MathGtLtOperation, "gt_eq")
-    descriptor = None
-    for klass in siddhi::MathGtLtOperation.__mro__:
-        if "gt_eq" in klass.__dict__:
-            descriptor = klass.__dict__["gt_eq"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::mathgtltoperation_has_gt():
-    assert hasattr(siddhi::MathGtLtOperation, "gt")
-    descriptor = None
-    for klass in siddhi::MathGtLtOperation.__mro__:
-        if "gt" in klass.__dict__:
-            descriptor = klass.__dict__["gt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::mathgtltoperation_has_lt_eq():
-    assert hasattr(siddhi::MathGtLtOperation, "lt_eq")
-    descriptor = None
-    for klass in siddhi::MathGtLtOperation.__mro__:
-        if "lt_eq" in klass.__dict__:
-            descriptor = klass.__dict__["lt_eq"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::mathinoperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathInOperation)
-
-
-def test_siddhi::mathinoperation_constructor_exists():
-    assert callable(siddhi::MathInOperation.__init__)
-
-
-def test_siddhi::mathinoperation_constructor_args():
-    sig = inspect.signature(siddhi::MathInOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::notoperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::NotOperation)
-
-
-def test_siddhi::notoperation_constructor_exists():
-    assert callable(siddhi::NotOperation.__init__)
-
-
-def test_siddhi::notoperation_constructor_args():
-    sig = inspect.signature(siddhi::NotOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::mathequaloperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathEqualOperation)
-
-
-def test_siddhi::mathequaloperation_constructor_exists():
-    assert callable(siddhi::MathEqualOperation.__init__)
-
-
-def test_siddhi::mathequaloperation_constructor_args():
-    sig = inspect.signature(siddhi::MathEqualOperation.__init__)
-    params = list(sig.parameters.keys())
-    assert "not_eq" in params, "Missing parameter 'not_eq'"
-    assert "eq" in params, "Missing parameter 'eq'"
-
-def test_siddhi::mathequaloperation_has_not_eq():
-    assert hasattr(siddhi::MathEqualOperation, "not_eq")
-    descriptor = None
-    for klass in siddhi::MathEqualOperation.__mro__:
-        if "not_eq" in klass.__dict__:
-            descriptor = klass.__dict__["not_eq"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::mathequaloperation_has_eq():
-    assert hasattr(siddhi::MathEqualOperation, "eq")
-    descriptor = None
-    for klass in siddhi::MathEqualOperation.__mro__:
-        if "eq" in klass.__dict__:
-            descriptor = klass.__dict__["eq"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::minutes_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MINUTES)
-
-
-def test_siddhi::minutes_constructor_exists():
-    assert callable(siddhi::MINUTES.__init__)
-
-
-def test_siddhi::minutes_constructor_args():
-    sig = inspect.signature(siddhi::MINUTES.__init__)
-    params = list(sig.parameters.keys())
-    assert "minutes" in params, "Missing parameter 'minutes'"
-    assert "min" in params, "Missing parameter 'min'"
-    assert "minute" in params, "Missing parameter 'minute'"
-
-def test_siddhi::minutes_has_minutes():
-    assert hasattr(siddhi::MINUTES, "minutes")
-    descriptor = None
-    for klass in siddhi::MINUTES.__mro__:
-        if "minutes" in klass.__dict__:
-            descriptor = klass.__dict__["minutes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::minutes_has_min():
-    assert hasattr(siddhi::MINUTES, "min")
-    descriptor = None
-    for klass in siddhi::MINUTES.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::minutes_has_minute():
-    assert hasattr(siddhi::MINUTES, "minute")
-    descriptor = None
-    for klass in siddhi::MINUTES.__mro__:
-        if "minute" in klass.__dict__:
-            descriptor = klass.__dict__["minute"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::hours_is_not_abstract():
-    assert not inspect.isabstract(siddhi::HOURS)
-
-
-def test_siddhi::hours_constructor_exists():
-    assert callable(siddhi::HOURS.__init__)
-
-
-def test_siddhi::hours_constructor_args():
-    sig = inspect.signature(siddhi::HOURS.__init__)
-    params = list(sig.parameters.keys())
-    assert "hours" in params, "Missing parameter 'hours'"
-    assert "hour" in params, "Missing parameter 'hour'"
-
-def test_siddhi::hours_has_hours():
-    assert hasattr(siddhi::HOURS, "hours")
-    descriptor = None
-    for klass in siddhi::HOURS.__mro__:
-        if "hours" in klass.__dict__:
-            descriptor = klass.__dict__["hours"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::hours_has_hour():
-    assert hasattr(siddhi::HOURS, "hour")
-    descriptor = None
-    for klass in siddhi::HOURS.__mro__:
-        if "hour" in klass.__dict__:
-            descriptor = klass.__dict__["hour"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::days_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DAYS)
-
-
-def test_siddhi::days_constructor_exists():
-    assert callable(siddhi::DAYS.__init__)
-
-
-def test_siddhi::days_constructor_args():
-    sig = inspect.signature(siddhi::DAYS.__init__)
-    params = list(sig.parameters.keys())
-    assert "days" in params, "Missing parameter 'days'"
-    assert "day" in params, "Missing parameter 'day'"
-
-def test_siddhi::days_has_days():
-    assert hasattr(siddhi::DAYS, "days")
-    descriptor = None
-    for klass in siddhi::DAYS.__mro__:
-        if "days" in klass.__dict__:
-            descriptor = klass.__dict__["days"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::days_has_day():
-    assert hasattr(siddhi::DAYS, "day")
-    descriptor = None
-    for klass in siddhi::DAYS.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::weeks_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WEEKS)
-
-
-def test_siddhi::weeks_constructor_exists():
-    assert callable(siddhi::WEEKS.__init__)
-
-
-def test_siddhi::weeks_constructor_args():
-    sig = inspect.signature(siddhi::WEEKS.__init__)
-    params = list(sig.parameters.keys())
-    assert "weeks" in params, "Missing parameter 'weeks'"
-    assert "week" in params, "Missing parameter 'week'"
-
-def test_siddhi::weeks_has_weeks():
-    assert hasattr(siddhi::WEEKS, "weeks")
-    descriptor = None
-    for klass in siddhi::WEEKS.__mro__:
-        if "weeks" in klass.__dict__:
-            descriptor = klass.__dict__["weeks"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::weeks_has_week():
-    assert hasattr(siddhi::WEEKS, "week")
-    descriptor = None
-    for klass in siddhi::WEEKS.__mro__:
-        if "week" in klass.__dict__:
-            descriptor = klass.__dict__["week"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::months_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MONTHS)
-
-
-def test_siddhi::months_constructor_exists():
-    assert callable(siddhi::MONTHS.__init__)
-
-
-def test_siddhi::months_constructor_args():
-    sig = inspect.signature(siddhi::MONTHS.__init__)
-    params = list(sig.parameters.keys())
-    assert "months" in params, "Missing parameter 'months'"
-    assert "month" in params, "Missing parameter 'month'"
-
-def test_siddhi::months_has_months():
-    assert hasattr(siddhi::MONTHS, "months")
-    descriptor = None
-    for klass in siddhi::MONTHS.__mro__:
-        if "months" in klass.__dict__:
-            descriptor = klass.__dict__["months"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::months_has_month():
-    assert hasattr(siddhi::MONTHS, "month")
-    descriptor = None
-    for klass in siddhi::MONTHS.__mro__:
-        if "month" in klass.__dict__:
-            descriptor = klass.__dict__["month"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::mathlogicaloperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MathLogicalOperation)
-
-
-def test_siddhi::mathlogicaloperation_constructor_exists():
-    assert callable(siddhi::MathLogicalOperation.__init__)
-
-
-def test_siddhi::mathlogicaloperation_constructor_args():
-    sig = inspect.signature(siddhi::MathLogicalOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::rightabsentpatternsource1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RightAbsentPatternSource1)
-
-
-def test_siddhi::rightabsentpatternsource1_constructor_exists():
-    assert callable(siddhi::RightAbsentPatternSource1.__init__)
-
-
-def test_siddhi::rightabsentpatternsource1_constructor_args():
-    sig = inspect.signature(siddhi::RightAbsentPatternSource1.__init__)
-    params = list(sig.parameters.keys())
-    assert "fb" in params, "Missing parameter 'fb'"
-
-def test_siddhi::rightabsentpatternsource1_has_fb():
-    assert hasattr(siddhi::RightAbsentPatternSource1, "fb")
-    descriptor = None
-    for klass in siddhi::RightAbsentPatternSource1.__mro__:
-        if "fb" in klass.__dict__:
-            descriptor = klass.__dict__["fb"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::leftabsentpatternsource1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LeftAbsentPatternSource1)
-
-
-def test_siddhi::leftabsentpatternsource1_constructor_exists():
-    assert callable(siddhi::LeftAbsentPatternSource1.__init__)
-
-
-def test_siddhi::leftabsentpatternsource1_constructor_args():
-    sig = inspect.signature(siddhi::LeftAbsentPatternSource1.__init__)
-    params = list(sig.parameters.keys())
-    assert "fb" in params, "Missing parameter 'fb'"
-
-def test_siddhi::leftabsentpatternsource1_has_fb():
-    assert hasattr(siddhi::LeftAbsentPatternSource1, "fb")
-    descriptor = None
-    for klass in siddhi::LeftAbsentPatternSource1.__mro__:
-        if "fb" in klass.__dict__:
-            descriptor = klass.__dict__["fb"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rightabsentsequencesource_is_not_abstract():
-    assert not inspect.isabstract(RightAbsentSequenceSource)
-
-
-def test_rightabsentsequencesource_constructor_exists():
-    assert callable(RightAbsentSequenceSource.__init__)
-
-
-def test_rightabsentsequencesource_constructor_args():
-    sig = inspect.signature(RightAbsentSequenceSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::rightabsentsequencesource1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::RightAbsentSequenceSource1)
-
-
-def test_siddhi::rightabsentsequencesource1_constructor_exists():
-    assert callable(siddhi::RightAbsentSequenceSource1.__init__)
-
-
-def test_siddhi::rightabsentsequencesource1_constructor_args():
-    sig = inspect.signature(siddhi::RightAbsentSequenceSource1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_leftabsentsequencesource_is_not_abstract():
-    assert not inspect.isabstract(LeftAbsentSequenceSource)
-
-
-def test_leftabsentsequencesource_constructor_exists():
-    assert callable(LeftAbsentSequenceSource.__init__)
-
-
-def test_leftabsentsequencesource_constructor_args():
-    sig = inspect.signature(LeftAbsentSequenceSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::leftabsentsequencesource1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LeftAbsentSequenceSource1)
-
-
-def test_siddhi::leftabsentsequencesource1_constructor_exists():
-    assert callable(siddhi::LeftAbsentSequenceSource1.__init__)
-
-
-def test_siddhi::leftabsentsequencesource1_constructor_args():
-    sig = inspect.signature(siddhi::LeftAbsentSequenceSource1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_siddhi::true_is_not_abstract():
-    assert not inspect.isabstract(siddhi::TRUE)
-
-
-def test_siddhi::true_constructor_exists():
-    assert callable(siddhi::TRUE.__init__)
-
-
-def test_siddhi::true_constructor_args():
-    sig = inspect.signature(siddhi::TRUE.__init__)
-    params = list(sig.parameters.keys())
-    assert "tr" in params, "Missing parameter 'tr'"
-
-def test_siddhi::true_has_tr():
-    assert hasattr(siddhi::TRUE, "tr")
-    descriptor = None
-    for klass in siddhi::TRUE.__mro__:
-        if "tr" in klass.__dict__:
-            descriptor = klass.__dict__["tr"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_siddhi::false_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FALSE)
-
-
-def test_siddhi::false_constructor_exists():
-    assert callable(siddhi::FALSE.__init__)
-
-
-def test_siddhi::false_constructor_args():
-    sig = inspect.signature(siddhi::FALSE.__init__)
-    params = list(sig.parameters.keys())
-    assert "fals" in params, "Missing parameter 'fals'"
-
-def test_siddhi::false_has_fals():
-    assert hasattr(siddhi::FALSE, "fals")
-    descriptor = None
-    for klass in siddhi::FALSE.__mro__:
-        if "fals" in klass.__dict__:
-            descriptor = klass.__dict__["fals"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -4205,30 +4205,30 @@ def test_all_constructor_args():
 
 
 
-def test_siddhi::outputratetype_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OutputRateType)
+def test_siddhi_outputratetype_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OutputRateType)
 
 
-def test_siddhi::outputratetype_constructor_exists():
-    assert callable(siddhi::OutputRateType.__init__)
+def test_siddhi_outputratetype_constructor_exists():
+    assert callable(siddhi_OutputRateType.__init__)
 
 
-def test_siddhi::outputratetype_constructor_args():
-    sig = inspect.signature(siddhi::OutputRateType.__init__)
+def test_siddhi_outputratetype_constructor_args():
+    sig = inspect.signature(siddhi_OutputRateType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::setassignment_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SetAssignment)
+def test_siddhi_setassignment_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SetAssignment)
 
 
-def test_siddhi::setassignment_constructor_exists():
-    assert callable(siddhi::SetAssignment.__init__)
+def test_siddhi_setassignment_constructor_exists():
+    assert callable(siddhi_SetAssignment.__init__)
 
 
-def test_siddhi::setassignment_constructor_args():
-    sig = inspect.signature(siddhi::SetAssignment.__init__)
+def test_siddhi_setassignment_constructor_args():
+    sig = inspect.signature(siddhi_SetAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4247,37 +4247,37 @@ def test_set_constructor_args():
 
 
 
-def test_siddhi::setclause_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SetClause)
+def test_siddhi_setclause_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SetClause)
 
 
-def test_siddhi::setclause_constructor_exists():
-    assert callable(siddhi::SetClause.__init__)
+def test_siddhi_setclause_constructor_exists():
+    assert callable(siddhi_SetClause.__init__)
 
 
-def test_siddhi::setclause_constructor_args():
-    sig = inspect.signature(siddhi::SetClause.__init__)
+def test_siddhi_setclause_constructor_args():
+    sig = inspect.signature(siddhi_SetClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::or_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OR)
+def test_siddhi_or_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OR)
 
 
-def test_siddhi::or_constructor_exists():
-    assert callable(siddhi::OR.__init__)
+def test_siddhi_or_constructor_exists():
+    assert callable(siddhi_OR.__init__)
 
 
-def test_siddhi::or_constructor_args():
-    sig = inspect.signature(siddhi::OR.__init__)
+def test_siddhi_or_constructor_args():
+    sig = inspect.signature(siddhi_OR.__init__)
     params = list(sig.parameters.keys())
     assert "or_" in params, "Missing parameter 'or_'"
 
-def test_siddhi::or_has_or_():
-    assert hasattr(siddhi::OR, "or_")
+def test_siddhi_or_has_or_():
+    assert hasattr(siddhi_OR, "or_")
     descriptor = None
-    for klass in siddhi::OR.__mro__:
+    for klass in siddhi_OR.__mro__:
         if "or_" in klass.__dict__:
             descriptor = klass.__dict__["or_"]
             break
@@ -4285,37 +4285,37 @@ def test_siddhi::or_has_or_():
 
 
 
-def test_siddhi::conditionrange_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ConditionRange)
+def test_siddhi_conditionrange_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ConditionRange)
 
 
-def test_siddhi::conditionrange_constructor_exists():
-    assert callable(siddhi::ConditionRange.__init__)
+def test_siddhi_conditionrange_constructor_exists():
+    assert callable(siddhi_ConditionRange.__init__)
 
 
-def test_siddhi::conditionrange_constructor_args():
-    sig = inspect.signature(siddhi::ConditionRange.__init__)
+def test_siddhi_conditionrange_constructor_args():
+    sig = inspect.signature(siddhi_ConditionRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::of_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OF)
+def test_siddhi_of_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OF)
 
 
-def test_siddhi::of_constructor_exists():
-    assert callable(siddhi::OF.__init__)
+def test_siddhi_of_constructor_exists():
+    assert callable(siddhi_OF.__init__)
 
 
-def test_siddhi::of_constructor_args():
-    sig = inspect.signature(siddhi::OF.__init__)
+def test_siddhi_of_constructor_args():
+    sig = inspect.signature(siddhi_OF.__init__)
     params = list(sig.parameters.keys())
     assert "of" in params, "Missing parameter 'of'"
 
-def test_siddhi::of_has_of():
-    assert hasattr(siddhi::OF, "of")
+def test_siddhi_of_has_of():
+    assert hasattr(siddhi_OF, "of")
     descriptor = None
-    for klass in siddhi::OF.__mro__:
+    for klass in siddhi_OF.__mro__:
         if "of" in klass.__dict__:
             descriptor = klass.__dict__["of"]
             break
@@ -4337,37 +4337,37 @@ def test_partitionwithstream_constructor_args():
 
 
 
-def test_siddhi::conditionranges_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ConditionRanges)
+def test_siddhi_conditionranges_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ConditionRanges)
 
 
-def test_siddhi::conditionranges_constructor_exists():
-    assert callable(siddhi::ConditionRanges.__init__)
+def test_siddhi_conditionranges_constructor_exists():
+    assert callable(siddhi_ConditionRanges.__init__)
 
 
-def test_siddhi::conditionranges_constructor_args():
-    sig = inspect.signature(siddhi::ConditionRanges.__init__)
+def test_siddhi_conditionranges_constructor_args():
+    sig = inspect.signature(siddhi_ConditionRanges.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::on_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ON)
+def test_siddhi_on_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ON)
 
 
-def test_siddhi::on_constructor_exists():
-    assert callable(siddhi::ON.__init__)
+def test_siddhi_on_constructor_exists():
+    assert callable(siddhi_ON.__init__)
 
 
-def test_siddhi::on_constructor_args():
-    sig = inspect.signature(siddhi::ON.__init__)
+def test_siddhi_on_constructor_args():
+    sig = inspect.signature(siddhi_ON.__init__)
     params = list(sig.parameters.keys())
     assert "on" in params, "Missing parameter 'on'"
 
-def test_siddhi::on_has_on():
-    assert hasattr(siddhi::ON, "on")
+def test_siddhi_on_has_on():
+    assert hasattr(siddhi_ON, "on")
     descriptor = None
-    for klass in siddhi::ON.__mro__:
+    for klass in siddhi_ON.__mro__:
         if "on" in klass.__dict__:
             descriptor = klass.__dict__["on"]
             break
@@ -4375,16 +4375,16 @@ def test_siddhi::on_has_on():
 
 
 
-def test_siddhi::target_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Target)
+def test_siddhi_target_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Target)
 
 
-def test_siddhi::target_constructor_exists():
-    assert callable(siddhi::Target.__init__)
+def test_siddhi_target_constructor_exists():
+    assert callable(siddhi_Target.__init__)
 
 
-def test_siddhi::target_constructor_args():
-    sig = inspect.signature(siddhi::Target.__init__)
+def test_siddhi_target_constructor_args():
+    sig = inspect.signature(siddhi_Target.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4417,16 +4417,16 @@ def test_for_constructor_args():
 
 
 
-def test_siddhi::fortime_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ForTime)
+def test_siddhi_fortime_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ForTime)
 
 
-def test_siddhi::fortime_constructor_exists():
-    assert callable(siddhi::ForTime.__init__)
+def test_siddhi_fortime_constructor_exists():
+    assert callable(siddhi_ForTime.__init__)
 
 
-def test_siddhi::fortime_constructor_args():
-    sig = inspect.signature(siddhi::ForTime.__init__)
+def test_siddhi_fortime_constructor_args():
+    sig = inspect.signature(siddhi_ForTime.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4473,51 +4473,51 @@ def test_insert_constructor_args():
 
 
 
-def test_siddhi::querysection_is_not_abstract():
-    assert not inspect.isabstract(siddhi::QuerySection)
+def test_siddhi_querysection_is_not_abstract():
+    assert not inspect.isabstract(siddhi_QuerySection)
 
 
-def test_siddhi::querysection_constructor_exists():
-    assert callable(siddhi::QuerySection.__init__)
+def test_siddhi_querysection_constructor_exists():
+    assert callable(siddhi_QuerySection.__init__)
 
 
-def test_siddhi::querysection_constructor_args():
-    sig = inspect.signature(siddhi::QuerySection.__init__)
+def test_siddhi_querysection_constructor_args():
+    sig = inspect.signature(siddhi_QuerySection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::queryinput_is_not_abstract():
-    assert not inspect.isabstract(siddhi::QueryInput)
+def test_siddhi_queryinput_is_not_abstract():
+    assert not inspect.isabstract(siddhi_QueryInput)
 
 
-def test_siddhi::queryinput_constructor_exists():
-    assert callable(siddhi::QueryInput.__init__)
+def test_siddhi_queryinput_constructor_exists():
+    assert callable(siddhi_QueryInput.__init__)
 
 
-def test_siddhi::queryinput_constructor_args():
-    sig = inspect.signature(siddhi::QueryInput.__init__)
+def test_siddhi_queryinput_constructor_args():
+    sig = inspect.signature(siddhi_QueryInput.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::as_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AS)
+def test_siddhi_as_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AS)
 
 
-def test_siddhi::as_constructor_exists():
-    assert callable(siddhi::AS.__init__)
+def test_siddhi_as_constructor_exists():
+    assert callable(siddhi_AS.__init__)
 
 
-def test_siddhi::as_constructor_args():
-    sig = inspect.signature(siddhi::AS.__init__)
+def test_siddhi_as_constructor_args():
+    sig = inspect.signature(siddhi_AS.__init__)
     params = list(sig.parameters.keys())
     assert "a" in params, "Missing parameter 'a'"
 
-def test_siddhi::as_has_a():
-    assert hasattr(siddhi::AS, "a")
+def test_siddhi_as_has_a():
+    assert hasattr(siddhi_AS, "a")
     descriptor = None
-    for klass in siddhi::AS.__mro__:
+    for klass in siddhi_AS.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
@@ -4525,44 +4525,44 @@ def test_siddhi::as_has_a():
 
 
 
-def test_siddhi::expression_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Expression)
+def test_siddhi_expression_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Expression)
 
 
-def test_siddhi::expression_constructor_exists():
-    assert callable(siddhi::Expression.__init__)
+def test_siddhi_expression_constructor_exists():
+    assert callable(siddhi_Expression.__init__)
 
 
-def test_siddhi::expression_constructor_args():
-    sig = inspect.signature(siddhi::Expression.__init__)
+def test_siddhi_expression_constructor_args():
+    sig = inspect.signature(siddhi_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::propertyvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PropertyValue)
+def test_siddhi_propertyvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PropertyValue)
 
 
-def test_siddhi::propertyvalue_constructor_exists():
-    assert callable(siddhi::PropertyValue.__init__)
+def test_siddhi_propertyvalue_constructor_exists():
+    assert callable(siddhi_PropertyValue.__init__)
 
 
-def test_siddhi::propertyvalue_constructor_args():
-    sig = inspect.signature(siddhi::PropertyValue.__init__)
+def test_siddhi_propertyvalue_constructor_args():
+    sig = inspect.signature(siddhi_PropertyValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::partitionwithstream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PartitionWithStream)
+def test_siddhi_partitionwithstream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PartitionWithStream)
 
 
-def test_siddhi::partitionwithstream_constructor_exists():
-    assert callable(siddhi::PartitionWithStream.__init__)
+def test_siddhi_partitionwithstream_constructor_exists():
+    assert callable(siddhi_PartitionWithStream.__init__)
 
 
-def test_siddhi::partitionwithstream_constructor_args():
-    sig = inspect.signature(siddhi::PartitionWithStream.__init__)
+def test_siddhi_partitionwithstream_constructor_args():
+    sig = inspect.signature(siddhi_PartitionWithStream.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4637,74 +4637,74 @@ def test_source1orstandardstatefulsource_constructor_args():
 
 
 
-def test_siddhi::streamalias_is_not_abstract():
-    assert not inspect.isabstract(siddhi::StreamAlias)
+def test_siddhi_streamalias_is_not_abstract():
+    assert not inspect.isabstract(siddhi_StreamAlias)
 
 
-def test_siddhi::streamalias_constructor_exists():
-    assert callable(siddhi::StreamAlias.__init__)
+def test_siddhi_streamalias_constructor_exists():
+    assert callable(siddhi_StreamAlias.__init__)
 
 
-def test_siddhi::streamalias_constructor_args():
-    sig = inspect.signature(siddhi::StreamAlias.__init__)
+def test_siddhi_streamalias_constructor_args():
+    sig = inspect.signature(siddhi_StreamAlias.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::standardstatefulsource_is_not_abstract():
-    assert not inspect.isabstract(siddhi::StandardStatefulSource)
+def test_siddhi_standardstatefulsource_is_not_abstract():
+    assert not inspect.isabstract(siddhi_StandardStatefulSource)
 
 
-def test_siddhi::standardstatefulsource_constructor_exists():
-    assert callable(siddhi::StandardStatefulSource.__init__)
+def test_siddhi_standardstatefulsource_constructor_exists():
+    assert callable(siddhi_StandardStatefulSource.__init__)
 
 
-def test_siddhi::standardstatefulsource_constructor_args():
-    sig = inspect.signature(siddhi::StandardStatefulSource.__init__)
+def test_siddhi_standardstatefulsource_constructor_args():
+    sig = inspect.signature(siddhi_StandardStatefulSource.__init__)
     params = list(sig.parameters.keys())
-    assert "one_or_more" in params, "Missing parameter 'one_or_more'"
     assert "zero_or_more" in params, "Missing parameter 'zero_or_more'"
     assert "zero_or_one" in params, "Missing parameter 'zero_or_one'"
+    assert "one_or_more" in params, "Missing parameter 'one_or_more'"
 
-def test_siddhi::standardstatefulsource_has_one_or_more():
-    assert hasattr(siddhi::StandardStatefulSource, "one_or_more")
+def test_siddhi_standardstatefulsource_has_zero_or_more():
+    assert hasattr(siddhi_StandardStatefulSource, "zero_or_more")
     descriptor = None
-    for klass in siddhi::StandardStatefulSource.__mro__:
-        if "one_or_more" in klass.__dict__:
-            descriptor = klass.__dict__["one_or_more"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_siddhi::standardstatefulsource_has_zero_or_more():
-    assert hasattr(siddhi::StandardStatefulSource, "zero_or_more")
-    descriptor = None
-    for klass in siddhi::StandardStatefulSource.__mro__:
+    for klass in siddhi_StandardStatefulSource.__mro__:
         if "zero_or_more" in klass.__dict__:
             descriptor = klass.__dict__["zero_or_more"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::standardstatefulsource_has_zero_or_one():
-    assert hasattr(siddhi::StandardStatefulSource, "zero_or_one")
+def test_siddhi_standardstatefulsource_has_zero_or_one():
+    assert hasattr(siddhi_StandardStatefulSource, "zero_or_one")
     descriptor = None
-    for klass in siddhi::StandardStatefulSource.__mro__:
+    for klass in siddhi_StandardStatefulSource.__mro__:
         if "zero_or_one" in klass.__dict__:
             descriptor = klass.__dict__["zero_or_one"]
             break
     assert isinstance(descriptor, property)
 
+def test_siddhi_standardstatefulsource_has_one_or_more():
+    assert hasattr(siddhi_StandardStatefulSource, "one_or_more")
+    descriptor = None
+    for klass in siddhi_StandardStatefulSource.__mro__:
+        if "one_or_more" in klass.__dict__:
+            descriptor = klass.__dict__["one_or_more"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_siddhi::source_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Source)
+
+def test_siddhi_source_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Source)
 
 
-def test_siddhi::source_constructor_exists():
-    assert callable(siddhi::Source.__init__)
+def test_siddhi_source_constructor_exists():
+    assert callable(siddhi_Source.__init__)
 
 
-def test_siddhi::source_constructor_args():
-    sig = inspect.signature(siddhi::Source.__init__)
+def test_siddhi_source_constructor_args():
+    sig = inspect.signature(siddhi_Source.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4821,71 +4821,71 @@ def test_featuresoroutattr_constructor_args():
 
 
 
-def test_siddhi::outattr_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OutAttr)
+def test_siddhi_outattr_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OutAttr)
 
 
-def test_siddhi::outattr_constructor_exists():
-    assert callable(siddhi::OutAttr.__init__)
+def test_siddhi_outattr_constructor_exists():
+    assert callable(siddhi_OutAttr.__init__)
 
 
-def test_siddhi::outattr_constructor_args():
-    sig = inspect.signature(siddhi::OutAttr.__init__)
+def test_siddhi_outattr_constructor_args():
+    sig = inspect.signature(siddhi_OutAttr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::propertyseparator_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PropertySeparator)
+def test_siddhi_propertyseparator_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PropertySeparator)
 
 
-def test_siddhi::propertyseparator_constructor_exists():
-    assert callable(siddhi::PropertySeparator.__init__)
+def test_siddhi_propertyseparator_constructor_exists():
+    assert callable(siddhi_PropertySeparator.__init__)
 
 
-def test_siddhi::propertyseparator_constructor_args():
-    sig = inspect.signature(siddhi::PropertySeparator.__init__)
+def test_siddhi_propertyseparator_constructor_args():
+    sig = inspect.signature(siddhi_PropertySeparator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::attributereference_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AttributeReference)
+def test_siddhi_attributereference_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AttributeReference)
 
 
-def test_siddhi::attributereference_constructor_exists():
-    assert callable(siddhi::AttributeReference.__init__)
+def test_siddhi_attributereference_constructor_exists():
+    assert callable(siddhi_AttributeReference.__init__)
 
 
-def test_siddhi::attributereference_constructor_args():
-    sig = inspect.signature(siddhi::AttributeReference.__init__)
+def test_siddhi_attributereference_constructor_args():
+    sig = inspect.signature(siddhi_AttributeReference.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "hash2" in params, "Missing parameter 'hash2'"
     assert "hash1" in params, "Missing parameter 'hash1'"
 
-def test_siddhi::attributereference_has_name():
-    assert hasattr(siddhi::AttributeReference, "name")
+def test_siddhi_attributereference_has_name():
+    assert hasattr(siddhi_AttributeReference, "name")
     descriptor = None
-    for klass in siddhi::AttributeReference.__mro__:
+    for klass in siddhi_AttributeReference.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::attributereference_has_hash2():
-    assert hasattr(siddhi::AttributeReference, "hash2")
+def test_siddhi_attributereference_has_hash2():
+    assert hasattr(siddhi_AttributeReference, "hash2")
     descriptor = None
-    for klass in siddhi::AttributeReference.__mro__:
+    for klass in siddhi_AttributeReference.__mro__:
         if "hash2" in klass.__dict__:
             descriptor = klass.__dict__["hash2"]
             break
     assert isinstance(descriptor, property)
 
-def test_siddhi::attributereference_has_hash1():
-    assert hasattr(siddhi::AttributeReference, "hash1")
+def test_siddhi_attributereference_has_hash1():
+    assert hasattr(siddhi_AttributeReference, "hash1")
     descriptor = None
-    for klass in siddhi::AttributeReference.__mro__:
+    for klass in siddhi_AttributeReference.__mro__:
         if "hash1" in klass.__dict__:
             descriptor = klass.__dict__["hash1"]
             break
@@ -4893,30 +4893,30 @@ def test_siddhi::attributereference_has_hash1():
 
 
 
-def test_siddhi::groupbyqueryselection_is_not_abstract():
-    assert not inspect.isabstract(siddhi::GroupByQuerySelection)
+def test_siddhi_groupbyqueryselection_is_not_abstract():
+    assert not inspect.isabstract(siddhi_GroupByQuerySelection)
 
 
-def test_siddhi::groupbyqueryselection_constructor_exists():
-    assert callable(siddhi::GroupByQuerySelection.__init__)
+def test_siddhi_groupbyqueryselection_constructor_exists():
+    assert callable(siddhi_GroupByQuerySelection.__init__)
 
 
-def test_siddhi::groupbyqueryselection_constructor_args():
-    sig = inspect.signature(siddhi::GroupByQuerySelection.__init__)
+def test_siddhi_groupbyqueryselection_constructor_args():
+    sig = inspect.signature(siddhi_GroupByQuerySelection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::standardstream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::StandardStream)
+def test_siddhi_standardstream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_StandardStream)
 
 
-def test_siddhi::standardstream_constructor_exists():
-    assert callable(siddhi::StandardStream.__init__)
+def test_siddhi_standardstream_constructor_exists():
+    assert callable(siddhi_StandardStream.__init__)
 
 
-def test_siddhi::standardstream_constructor_args():
-    sig = inspect.signature(siddhi::StandardStream.__init__)
+def test_siddhi_standardstream_constructor_args():
+    sig = inspect.signature(siddhi_StandardStream.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4935,65 +4935,65 @@ def test_by_constructor_args():
 
 
 
-def test_siddhi::groupby_is_not_abstract():
-    assert not inspect.isabstract(siddhi::GroupBy)
+def test_siddhi_groupby_is_not_abstract():
+    assert not inspect.isabstract(siddhi_GroupBy)
 
 
-def test_siddhi::groupby_constructor_exists():
-    assert callable(siddhi::GroupBy.__init__)
+def test_siddhi_groupby_constructor_exists():
+    assert callable(siddhi_GroupBy.__init__)
 
 
-def test_siddhi::groupby_constructor_args():
-    sig = inspect.signature(siddhi::GroupBy.__init__)
+def test_siddhi_groupby_constructor_args():
+    sig = inspect.signature(siddhi_GroupBy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::propertyname_is_not_abstract():
-    assert not inspect.isabstract(siddhi::PropertyName)
+def test_siddhi_propertyname_is_not_abstract():
+    assert not inspect.isabstract(siddhi_PropertyName)
 
 
-def test_siddhi::propertyname_constructor_exists():
-    assert callable(siddhi::PropertyName.__init__)
+def test_siddhi_propertyname_constructor_exists():
+    assert callable(siddhi_PropertyName.__init__)
 
 
-def test_siddhi::propertyname_constructor_args():
-    sig = inspect.signature(siddhi::PropertyName.__init__)
+def test_siddhi_propertyname_constructor_args():
+    sig = inspect.signature(siddhi_PropertyName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::annotationelement_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AnnotationElement)
+def test_siddhi_annotationelement_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AnnotationElement)
 
 
-def test_siddhi::annotationelement_constructor_exists():
-    assert callable(siddhi::AnnotationElement.__init__)
+def test_siddhi_annotationelement_constructor_exists():
+    assert callable(siddhi_AnnotationElement.__init__)
 
 
-def test_siddhi::annotationelement_constructor_args():
-    sig = inspect.signature(siddhi::AnnotationElement.__init__)
+def test_siddhi_annotationelement_constructor_args():
+    sig = inspect.signature(siddhi_AnnotationElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::name_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Name)
+def test_siddhi_name_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Name)
 
 
-def test_siddhi::name_constructor_exists():
-    assert callable(siddhi::Name.__init__)
+def test_siddhi_name_constructor_exists():
+    assert callable(siddhi_Name.__init__)
 
 
-def test_siddhi::name_constructor_args():
-    sig = inspect.signature(siddhi::Name.__init__)
+def test_siddhi_name_constructor_args():
+    sig = inspect.signature(siddhi_Name.__init__)
     params = list(sig.parameters.keys())
     assert "na" in params, "Missing parameter 'na'"
 
-def test_siddhi::name_has_na():
-    assert hasattr(siddhi::Name, "na")
+def test_siddhi_name_has_na():
+    assert hasattr(siddhi_Name, "na")
     descriptor = None
-    for klass in siddhi::Name.__mro__:
+    for klass in siddhi_Name.__mro__:
         if "na" in klass.__dict__:
             descriptor = klass.__dict__["na"]
             break
@@ -5015,16 +5015,16 @@ def test_years_constructor_args():
 
 
 
-def test_siddhi::yearvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::YearValue)
+def test_siddhi_yearvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_YearValue)
 
 
-def test_siddhi::yearvalue_constructor_exists():
-    assert callable(siddhi::YearValue.__init__)
+def test_siddhi_yearvalue_constructor_exists():
+    assert callable(siddhi_YearValue.__init__)
 
 
-def test_siddhi::yearvalue_constructor_args():
-    sig = inspect.signature(siddhi::YearValue.__init__)
+def test_siddhi_yearvalue_constructor_args():
+    sig = inspect.signature(siddhi_YearValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5043,16 +5043,16 @@ def test_months_constructor_args():
 
 
 
-def test_siddhi::monthvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MonthValue)
+def test_siddhi_monthvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MonthValue)
 
 
-def test_siddhi::monthvalue_constructor_exists():
-    assert callable(siddhi::MonthValue.__init__)
+def test_siddhi_monthvalue_constructor_exists():
+    assert callable(siddhi_MonthValue.__init__)
 
 
-def test_siddhi::monthvalue_constructor_args():
-    sig = inspect.signature(siddhi::MonthValue.__init__)
+def test_siddhi_monthvalue_constructor_args():
+    sig = inspect.signature(siddhi_MonthValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5071,16 +5071,16 @@ def test_weeks_constructor_args():
 
 
 
-def test_siddhi::weekvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::WeekValue)
+def test_siddhi_weekvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_WeekValue)
 
 
-def test_siddhi::weekvalue_constructor_exists():
-    assert callable(siddhi::WeekValue.__init__)
+def test_siddhi_weekvalue_constructor_exists():
+    assert callable(siddhi_WeekValue.__init__)
 
 
-def test_siddhi::weekvalue_constructor_args():
-    sig = inspect.signature(siddhi::WeekValue.__init__)
+def test_siddhi_weekvalue_constructor_args():
+    sig = inspect.signature(siddhi_WeekValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5099,16 +5099,16 @@ def test_days_constructor_args():
 
 
 
-def test_siddhi::dayvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DayValue)
+def test_siddhi_dayvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DayValue)
 
 
-def test_siddhi::dayvalue_constructor_exists():
-    assert callable(siddhi::DayValue.__init__)
+def test_siddhi_dayvalue_constructor_exists():
+    assert callable(siddhi_DayValue.__init__)
 
 
-def test_siddhi::dayvalue_constructor_args():
-    sig = inspect.signature(siddhi::DayValue.__init__)
+def test_siddhi_dayvalue_constructor_args():
+    sig = inspect.signature(siddhi_DayValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5127,16 +5127,16 @@ def test_hours_constructor_args():
 
 
 
-def test_siddhi::hourvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::HourValue)
+def test_siddhi_hourvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_HourValue)
 
 
-def test_siddhi::hourvalue_constructor_exists():
-    assert callable(siddhi::HourValue.__init__)
+def test_siddhi_hourvalue_constructor_exists():
+    assert callable(siddhi_HourValue.__init__)
 
 
-def test_siddhi::hourvalue_constructor_args():
-    sig = inspect.signature(siddhi::HourValue.__init__)
+def test_siddhi_hourvalue_constructor_args():
+    sig = inspect.signature(siddhi_HourValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5155,16 +5155,16 @@ def test_minutes_constructor_args():
 
 
 
-def test_siddhi::minutevalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::MinuteValue)
+def test_siddhi_minutevalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_MinuteValue)
 
 
-def test_siddhi::minutevalue_constructor_exists():
-    assert callable(siddhi::MinuteValue.__init__)
+def test_siddhi_minutevalue_constructor_exists():
+    assert callable(siddhi_MinuteValue.__init__)
 
 
-def test_siddhi::minutevalue_constructor_args():
-    sig = inspect.signature(siddhi::MinuteValue.__init__)
+def test_siddhi_minutevalue_constructor_args():
+    sig = inspect.signature(siddhi_MinuteValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5183,16 +5183,16 @@ def test_seconds_constructor_args():
 
 
 
-def test_siddhi::secondvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SecondValue)
+def test_siddhi_secondvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SecondValue)
 
 
-def test_siddhi::secondvalue_constructor_exists():
-    assert callable(siddhi::SecondValue.__init__)
+def test_siddhi_secondvalue_constructor_exists():
+    assert callable(siddhi_SecondValue.__init__)
 
 
-def test_siddhi::secondvalue_constructor_args():
-    sig = inspect.signature(siddhi::SecondValue.__init__)
+def test_siddhi_secondvalue_constructor_args():
+    sig = inspect.signature(siddhi_SecondValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5211,58 +5211,58 @@ def test_aggregationtime_constructor_args():
 
 
 
-def test_siddhi::aggregationtimerange_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AggregationTimeRange)
+def test_siddhi_aggregationtimerange_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AggregationTimeRange)
 
 
-def test_siddhi::aggregationtimerange_constructor_exists():
-    assert callable(siddhi::AggregationTimeRange.__init__)
+def test_siddhi_aggregationtimerange_constructor_exists():
+    assert callable(siddhi_AggregationTimeRange.__init__)
 
 
-def test_siddhi::aggregationtimerange_constructor_args():
-    sig = inspect.signature(siddhi::AggregationTimeRange.__init__)
+def test_siddhi_aggregationtimerange_constructor_args():
+    sig = inspect.signature(siddhi_AggregationTimeRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::aggregationtimeinterval_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AggregationTimeInterval)
+def test_siddhi_aggregationtimeinterval_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AggregationTimeInterval)
 
 
-def test_siddhi::aggregationtimeinterval_constructor_exists():
-    assert callable(siddhi::AggregationTimeInterval.__init__)
+def test_siddhi_aggregationtimeinterval_constructor_exists():
+    assert callable(siddhi_AggregationTimeInterval.__init__)
 
 
-def test_siddhi::aggregationtimeinterval_constructor_args():
-    sig = inspect.signature(siddhi::AggregationTimeInterval.__init__)
+def test_siddhi_aggregationtimeinterval_constructor_args():
+    sig = inspect.signature(siddhi_AggregationTimeInterval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::aggregationtimeduration_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AggregationTimeDuration)
+def test_siddhi_aggregationtimeduration_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AggregationTimeDuration)
 
 
-def test_siddhi::aggregationtimeduration_constructor_exists():
-    assert callable(siddhi::AggregationTimeDuration.__init__)
+def test_siddhi_aggregationtimeduration_constructor_exists():
+    assert callable(siddhi_AggregationTimeDuration.__init__)
 
 
-def test_siddhi::aggregationtimeduration_constructor_args():
-    sig = inspect.signature(siddhi::AggregationTimeDuration.__init__)
+def test_siddhi_aggregationtimeduration_constructor_args():
+    sig = inspect.signature(siddhi_AggregationTimeDuration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::aggregationtime_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AggregationTime)
+def test_siddhi_aggregationtime_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AggregationTime)
 
 
-def test_siddhi::aggregationtime_constructor_exists():
-    assert callable(siddhi::AggregationTime.__init__)
+def test_siddhi_aggregationtime_constructor_exists():
+    assert callable(siddhi_AggregationTime.__init__)
 
 
-def test_siddhi::aggregationtime_constructor_args():
-    sig = inspect.signature(siddhi::AggregationTime.__init__)
+def test_siddhi_aggregationtime_constructor_args():
+    sig = inspect.signature(siddhi_AggregationTime.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5281,16 +5281,16 @@ def test_output_constructor_args():
 
 
 
-def test_siddhi::outputrate_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OutputRate)
+def test_siddhi_outputrate_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OutputRate)
 
 
-def test_siddhi::outputrate_constructor_exists():
-    assert callable(siddhi::OutputRate.__init__)
+def test_siddhi_outputrate_constructor_exists():
+    assert callable(siddhi_OutputRate.__init__)
 
 
-def test_siddhi::outputrate_constructor_args():
-    sig = inspect.signature(siddhi::OutputRate.__init__)
+def test_siddhi_outputrate_constructor_args():
+    sig = inspect.signature(siddhi_OutputRate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5309,30 +5309,30 @@ def test_window_constructor_args():
 
 
 
-def test_siddhi::win_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Win)
+def test_siddhi_win_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Win)
 
 
-def test_siddhi::win_constructor_exists():
-    assert callable(siddhi::Win.__init__)
+def test_siddhi_win_constructor_exists():
+    assert callable(siddhi_Win.__init__)
 
 
-def test_siddhi::win_constructor_args():
-    sig = inspect.signature(siddhi::Win.__init__)
+def test_siddhi_win_constructor_args():
+    sig = inspect.signature(siddhi_Win.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::basicsourcestreamhandlers1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::BasicSourceStreamHandlers1)
+def test_siddhi_basicsourcestreamhandlers1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_BasicSourceStreamHandlers1)
 
 
-def test_siddhi::basicsourcestreamhandlers1_constructor_exists():
-    assert callable(siddhi::BasicSourceStreamHandlers1.__init__)
+def test_siddhi_basicsourcestreamhandlers1_constructor_exists():
+    assert callable(siddhi_BasicSourceStreamHandlers1.__init__)
 
 
-def test_siddhi::basicsourcestreamhandlers1_constructor_args():
-    sig = inspect.signature(siddhi::BasicSourceStreamHandlers1.__init__)
+def test_siddhi_basicsourcestreamhandlers1_constructor_args():
+    sig = inspect.signature(siddhi_BasicSourceStreamHandlers1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5379,23 +5379,23 @@ def test_aggregation_constructor_args():
 
 
 
-def test_siddhi::functionbody_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FunctionBody)
+def test_siddhi_functionbody_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FunctionBody)
 
 
-def test_siddhi::functionbody_constructor_exists():
-    assert callable(siddhi::FunctionBody.__init__)
+def test_siddhi_functionbody_constructor_exists():
+    assert callable(siddhi_FunctionBody.__init__)
 
 
-def test_siddhi::functionbody_constructor_args():
-    sig = inspect.signature(siddhi::FunctionBody.__init__)
+def test_siddhi_functionbody_constructor_args():
+    sig = inspect.signature(siddhi_FunctionBody.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_siddhi::functionbody_has_value():
-    assert hasattr(siddhi::FunctionBody, "value")
+def test_siddhi_functionbody_has_value():
+    assert hasattr(siddhi_FunctionBody, "value")
     descriptor = None
-    for klass in siddhi::FunctionBody.__mro__:
+    for klass in siddhi_FunctionBody.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -5403,37 +5403,37 @@ def test_siddhi::functionbody_has_value():
 
 
 
-def test_siddhi::attributetype_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AttributeType)
+def test_siddhi_attributetype_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AttributeType)
 
 
-def test_siddhi::attributetype_constructor_exists():
-    assert callable(siddhi::AttributeType.__init__)
+def test_siddhi_attributetype_constructor_exists():
+    assert callable(siddhi_AttributeType.__init__)
 
 
-def test_siddhi::attributetype_constructor_args():
-    sig = inspect.signature(siddhi::AttributeType.__init__)
+def test_siddhi_attributetype_constructor_args():
+    sig = inspect.signature(siddhi_AttributeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::languagename_is_not_abstract():
-    assert not inspect.isabstract(siddhi::LanguageName)
+def test_siddhi_languagename_is_not_abstract():
+    assert not inspect.isabstract(siddhi_LanguageName)
 
 
-def test_siddhi::languagename_constructor_exists():
-    assert callable(siddhi::LanguageName.__init__)
+def test_siddhi_languagename_constructor_exists():
+    assert callable(siddhi_LanguageName.__init__)
 
 
-def test_siddhi::languagename_constructor_args():
-    sig = inspect.signature(siddhi::LanguageName.__init__)
+def test_siddhi_languagename_constructor_args():
+    sig = inspect.signature(siddhi_LanguageName.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_siddhi::languagename_has_id():
-    assert hasattr(siddhi::LanguageName, "id")
+def test_siddhi_languagename_has_id():
+    assert hasattr(siddhi_LanguageName, "id")
     descriptor = None
-    for klass in siddhi::LanguageName.__mro__:
+    for klass in siddhi_LanguageName.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -5441,23 +5441,23 @@ def test_siddhi::languagename_has_id():
 
 
 
-def test_siddhi::functionname_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FunctionName)
+def test_siddhi_functionname_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FunctionName)
 
 
-def test_siddhi::functionname_constructor_exists():
-    assert callable(siddhi::FunctionName.__init__)
+def test_siddhi_functionname_constructor_exists():
+    assert callable(siddhi_FunctionName.__init__)
 
 
-def test_siddhi::functionname_constructor_args():
-    sig = inspect.signature(siddhi::FunctionName.__init__)
+def test_siddhi_functionname_constructor_args():
+    sig = inspect.signature(siddhi_FunctionName.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_siddhi::functionname_has_id():
-    assert hasattr(siddhi::FunctionName, "id")
+def test_siddhi_functionname_has_id():
+    assert hasattr(siddhi_FunctionName, "id")
     descriptor = None
-    for klass in siddhi::FunctionName.__mro__:
+    for klass in siddhi_FunctionName.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -5479,30 +5479,30 @@ def test_return_constructor_args():
 
 
 
-def test_siddhi::queryoutput_is_not_abstract():
-    assert not inspect.isabstract(siddhi::QueryOutput)
+def test_siddhi_anonymousstream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AnonymousStream)
 
 
-def test_siddhi::queryoutput_constructor_exists():
-    assert callable(siddhi::QueryOutput.__init__)
+def test_siddhi_anonymousstream_constructor_exists():
+    assert callable(siddhi_AnonymousStream.__init__)
 
 
-def test_siddhi::queryoutput_constructor_args():
-    sig = inspect.signature(siddhi::QueryOutput.__init__)
+def test_siddhi_anonymousstream_constructor_args():
+    sig = inspect.signature(siddhi_AnonymousStream.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::anonymousstream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AnonymousStream)
+def test_siddhi_queryoutput_is_not_abstract():
+    assert not inspect.isabstract(siddhi_QueryOutput)
 
 
-def test_siddhi::anonymousstream_constructor_exists():
-    assert callable(siddhi::AnonymousStream.__init__)
+def test_siddhi_queryoutput_constructor_exists():
+    assert callable(siddhi_QueryOutput.__init__)
 
 
-def test_siddhi::anonymousstream_constructor_args():
-    sig = inspect.signature(siddhi::AnonymousStream.__init__)
+def test_siddhi_queryoutput_constructor_args():
+    sig = inspect.signature(siddhi_QueryOutput.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5521,23 +5521,23 @@ def test_function_constructor_args():
 
 
 
-def test_siddhi::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::StringValue)
+def test_siddhi_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_StringValue)
 
 
-def test_siddhi::stringvalue_constructor_exists():
-    assert callable(siddhi::StringValue.__init__)
+def test_siddhi_stringvalue_constructor_exists():
+    assert callable(siddhi_StringValue.__init__)
 
 
-def test_siddhi::stringvalue_constructor_args():
-    sig = inspect.signature(siddhi::StringValue.__init__)
+def test_siddhi_stringvalue_constructor_args():
+    sig = inspect.signature(siddhi_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "sl" in params, "Missing parameter 'sl'"
 
-def test_siddhi::stringvalue_has_sl():
-    assert hasattr(siddhi::StringValue, "sl")
+def test_siddhi_stringvalue_has_sl():
+    assert hasattr(siddhi_StringValue, "sl")
     descriptor = None
-    for klass in siddhi::StringValue.__mro__:
+    for klass in siddhi_StringValue.__mro__:
         if "sl" in klass.__dict__:
             descriptor = klass.__dict__["sl"]
             break
@@ -5545,37 +5545,37 @@ def test_siddhi::stringvalue_has_sl():
 
 
 
-def test_siddhi::timevalue_is_not_abstract():
-    assert not inspect.isabstract(siddhi::TimeValue)
+def test_siddhi_timevalue_is_not_abstract():
+    assert not inspect.isabstract(siddhi_TimeValue)
 
 
-def test_siddhi::timevalue_constructor_exists():
-    assert callable(siddhi::TimeValue.__init__)
+def test_siddhi_timevalue_constructor_exists():
+    assert callable(siddhi_TimeValue.__init__)
 
 
-def test_siddhi::timevalue_constructor_args():
-    sig = inspect.signature(siddhi::TimeValue.__init__)
+def test_siddhi_timevalue_constructor_args():
+    sig = inspect.signature(siddhi_TimeValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::every_is_not_abstract():
-    assert not inspect.isabstract(siddhi::EVERY)
+def test_siddhi_every_is_not_abstract():
+    assert not inspect.isabstract(siddhi_EVERY)
 
 
-def test_siddhi::every_constructor_exists():
-    assert callable(siddhi::EVERY.__init__)
+def test_siddhi_every_constructor_exists():
+    assert callable(siddhi_EVERY.__init__)
 
 
-def test_siddhi::every_constructor_args():
-    sig = inspect.signature(siddhi::EVERY.__init__)
+def test_siddhi_every_constructor_args():
+    sig = inspect.signature(siddhi_EVERY.__init__)
     params = list(sig.parameters.keys())
     assert "every1" in params, "Missing parameter 'every1'"
 
-def test_siddhi::every_has_every1():
-    assert hasattr(siddhi::EVERY, "every1")
+def test_siddhi_every_has_every1():
+    assert hasattr(siddhi_EVERY, "every1")
     descriptor = None
-    for klass in siddhi::EVERY.__mro__:
+    for klass in siddhi_EVERY.__mro__:
         if "every1" in klass.__dict__:
             descriptor = klass.__dict__["every1"]
             break
@@ -5583,23 +5583,23 @@ def test_siddhi::every_has_every1():
 
 
 
-def test_siddhi::triggername_is_not_abstract():
-    assert not inspect.isabstract(siddhi::TriggerName)
+def test_siddhi_triggername_is_not_abstract():
+    assert not inspect.isabstract(siddhi_TriggerName)
 
 
-def test_siddhi::triggername_constructor_exists():
-    assert callable(siddhi::TriggerName.__init__)
+def test_siddhi_triggername_constructor_exists():
+    assert callable(siddhi_TriggerName.__init__)
 
 
-def test_siddhi::triggername_constructor_args():
-    sig = inspect.signature(siddhi::TriggerName.__init__)
+def test_siddhi_triggername_constructor_args():
+    sig = inspect.signature(siddhi_TriggerName.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_siddhi::triggername_has_id():
-    assert hasattr(siddhi::TriggerName, "id")
+def test_siddhi_triggername_has_id():
+    assert hasattr(siddhi_TriggerName, "id")
     descriptor = None
-    for klass in siddhi::TriggerName.__mro__:
+    for klass in siddhi_TriggerName.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -5635,58 +5635,58 @@ def test_trigger_constructor_args():
 
 
 
-def test_siddhi::outputeventtype_is_not_abstract():
-    assert not inspect.isabstract(siddhi::OutputEventType)
+def test_siddhi_outputeventtype_is_not_abstract():
+    assert not inspect.isabstract(siddhi_OutputEventType)
 
 
-def test_siddhi::outputeventtype_constructor_exists():
-    assert callable(siddhi::OutputEventType.__init__)
+def test_siddhi_outputeventtype_constructor_exists():
+    assert callable(siddhi_OutputEventType.__init__)
 
 
-def test_siddhi::outputeventtype_constructor_args():
-    sig = inspect.signature(siddhi::OutputEventType.__init__)
+def test_siddhi_outputeventtype_constructor_args():
+    sig = inspect.signature(siddhi_OutputEventType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::functionoperation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::FunctionOperation)
+def test_siddhi_functionoperation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_FunctionOperation)
 
 
-def test_siddhi::functionoperation_constructor_exists():
-    assert callable(siddhi::FunctionOperation.__init__)
+def test_siddhi_functionoperation_constructor_exists():
+    assert callable(siddhi_FunctionOperation.__init__)
 
 
-def test_siddhi::functionoperation_constructor_args():
-    sig = inspect.signature(siddhi::FunctionOperation.__init__)
+def test_siddhi_functionoperation_constructor_args():
+    sig = inspect.signature(siddhi_FunctionOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::appannotation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::AppAnnotation)
+def test_siddhi_appannotation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_AppAnnotation)
 
 
-def test_siddhi::appannotation_constructor_exists():
-    assert callable(siddhi::AppAnnotation.__init__)
+def test_siddhi_appannotation_constructor_exists():
+    assert callable(siddhi_AppAnnotation.__init__)
 
 
-def test_siddhi::appannotation_constructor_args():
-    sig = inspect.signature(siddhi::AppAnnotation.__init__)
+def test_siddhi_appannotation_constructor_args():
+    sig = inspect.signature(siddhi_AppAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::executionplan_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ExecutionPlan)
+def test_siddhi_executionplan_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ExecutionPlan)
 
 
-def test_siddhi::executionplan_constructor_exists():
-    assert callable(siddhi::ExecutionPlan.__init__)
+def test_siddhi_executionplan_constructor_exists():
+    assert callable(siddhi_ExecutionPlan.__init__)
 
 
-def test_siddhi::executionplan_constructor_args():
-    sig = inspect.signature(siddhi::ExecutionPlan.__init__)
+def test_siddhi_executionplan_constructor_args():
+    sig = inspect.signature(siddhi_ExecutionPlan.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5705,37 +5705,37 @@ def test_table_constructor_args():
 
 
 
-def test_siddhi::features_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Features)
+def test_siddhi_features_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Features)
 
 
-def test_siddhi::features_constructor_exists():
-    assert callable(siddhi::Features.__init__)
+def test_siddhi_features_constructor_exists():
+    assert callable(siddhi_Features.__init__)
 
 
-def test_siddhi::features_constructor_args():
-    sig = inspect.signature(siddhi::Features.__init__)
+def test_siddhi_features_constructor_args():
+    sig = inspect.signature(siddhi_Features.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::source1_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Source1)
+def test_siddhi_source1_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Source1)
 
 
-def test_siddhi::source1_constructor_exists():
-    assert callable(siddhi::Source1.__init__)
+def test_siddhi_source1_constructor_exists():
+    assert callable(siddhi_Source1.__init__)
 
 
-def test_siddhi::source1_constructor_args():
-    sig = inspect.signature(siddhi::Source1.__init__)
+def test_siddhi_source1_constructor_args():
+    sig = inspect.signature(siddhi_Source1.__init__)
     params = list(sig.parameters.keys())
     assert "inner" in params, "Missing parameter 'inner'"
 
-def test_siddhi::source1_has_inner():
-    assert hasattr(siddhi::Source1, "inner")
+def test_siddhi_source1_has_inner():
+    assert hasattr(siddhi_Source1, "inner")
     descriptor = None
-    for klass in siddhi::Source1.__mro__:
+    for klass in siddhi_Source1.__mro__:
         if "inner" in klass.__dict__:
             descriptor = klass.__dict__["inner"]
             break
@@ -5743,16 +5743,16 @@ def test_siddhi::source1_has_inner():
 
 
 
-def test_siddhi::annotation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Annotation)
+def test_siddhi_annotation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Annotation)
 
 
-def test_siddhi::annotation_constructor_exists():
-    assert callable(siddhi::Annotation.__init__)
+def test_siddhi_annotation_constructor_exists():
+    assert callable(siddhi_Annotation.__init__)
 
 
-def test_siddhi::annotation_constructor_args():
-    sig = inspect.signature(siddhi::Annotation.__init__)
+def test_siddhi_annotation_constructor_args():
+    sig = inspect.signature(siddhi_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5785,156 +5785,156 @@ def test_define_constructor_args():
 
 
 
-def test_siddhi::keyword_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Keyword)
+def test_siddhi_definitionstream_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DefinitionStream)
 
 
-def test_siddhi::keyword_constructor_exists():
-    assert callable(siddhi::Keyword.__init__)
+def test_siddhi_definitionstream_constructor_exists():
+    assert callable(siddhi_DefinitionStream.__init__)
 
 
-def test_siddhi::keyword_constructor_args():
-    sig = inspect.signature(siddhi::Keyword.__init__)
+def test_siddhi_definitionstream_constructor_args():
+    sig = inspect.signature(siddhi_DefinitionStream.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::definitiontable_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DefinitionTable)
+def test_siddhi_definitiontable_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DefinitionTable)
 
 
-def test_siddhi::definitiontable_constructor_exists():
-    assert callable(siddhi::DefinitionTable.__init__)
+def test_siddhi_definitiontable_constructor_exists():
+    assert callable(siddhi_DefinitionTable.__init__)
 
 
-def test_siddhi::definitiontable_constructor_args():
-    sig = inspect.signature(siddhi::DefinitionTable.__init__)
+def test_siddhi_definitiontable_constructor_args():
+    sig = inspect.signature(siddhi_DefinitionTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::definitionstream_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DefinitionStream)
+def test_siddhi_keyword_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Keyword)
 
 
-def test_siddhi::definitionstream_constructor_exists():
-    assert callable(siddhi::DefinitionStream.__init__)
+def test_siddhi_keyword_constructor_exists():
+    assert callable(siddhi_Keyword.__init__)
 
 
-def test_siddhi::definitionstream_constructor_args():
-    sig = inspect.signature(siddhi::DefinitionStream.__init__)
+def test_siddhi_keyword_constructor_args():
+    sig = inspect.signature(siddhi_Keyword.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::query_is_not_abstract():
-    assert not inspect.isabstract(siddhi::Query)
+def test_siddhi_query_is_not_abstract():
+    assert not inspect.isabstract(siddhi_Query)
 
 
-def test_siddhi::query_constructor_exists():
-    assert callable(siddhi::Query.__init__)
+def test_siddhi_query_constructor_exists():
+    assert callable(siddhi_Query.__init__)
 
 
-def test_siddhi::query_constructor_args():
-    sig = inspect.signature(siddhi::Query.__init__)
+def test_siddhi_query_constructor_args():
+    sig = inspect.signature(siddhi_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::execpartition_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ExecPartition)
+def test_siddhi_execpartition_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ExecPartition)
 
 
-def test_siddhi::execpartition_constructor_exists():
-    assert callable(siddhi::ExecPartition.__init__)
+def test_siddhi_execpartition_constructor_exists():
+    assert callable(siddhi_ExecPartition.__init__)
 
 
-def test_siddhi::execpartition_constructor_args():
-    sig = inspect.signature(siddhi::ExecPartition.__init__)
+def test_siddhi_execpartition_constructor_args():
+    sig = inspect.signature(siddhi_ExecPartition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::executionelement_is_not_abstract():
-    assert not inspect.isabstract(siddhi::ExecutionElement)
+def test_siddhi_executionelement_is_not_abstract():
+    assert not inspect.isabstract(siddhi_ExecutionElement)
 
 
-def test_siddhi::executionelement_constructor_exists():
-    assert callable(siddhi::ExecutionElement.__init__)
+def test_siddhi_executionelement_constructor_exists():
+    assert callable(siddhi_ExecutionElement.__init__)
 
 
-def test_siddhi::executionelement_constructor_args():
-    sig = inspect.signature(siddhi::ExecutionElement.__init__)
+def test_siddhi_executionelement_constructor_args():
+    sig = inspect.signature(siddhi_ExecutionElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::definitionaggregation_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DefinitionAggregation)
+def test_siddhi_definitionaggregation_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DefinitionAggregation)
 
 
-def test_siddhi::definitionaggregation_constructor_exists():
-    assert callable(siddhi::DefinitionAggregation.__init__)
+def test_siddhi_definitionaggregation_constructor_exists():
+    assert callable(siddhi_DefinitionAggregation.__init__)
 
 
-def test_siddhi::definitionaggregation_constructor_args():
-    sig = inspect.signature(siddhi::DefinitionAggregation.__init__)
+def test_siddhi_definitionaggregation_constructor_args():
+    sig = inspect.signature(siddhi_DefinitionAggregation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::definitionfunction_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DefinitionFunction)
+def test_siddhi_definitionfunction_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DefinitionFunction)
 
 
-def test_siddhi::definitionfunction_constructor_exists():
-    assert callable(siddhi::DefinitionFunction.__init__)
+def test_siddhi_definitionfunction_constructor_exists():
+    assert callable(siddhi_DefinitionFunction.__init__)
 
 
-def test_siddhi::definitionfunction_constructor_args():
-    sig = inspect.signature(siddhi::DefinitionFunction.__init__)
+def test_siddhi_definitionfunction_constructor_args():
+    sig = inspect.signature(siddhi_DefinitionFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::definitiontrigger_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DefinitionTrigger)
+def test_siddhi_definitiontrigger_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DefinitionTrigger)
 
 
-def test_siddhi::definitiontrigger_constructor_exists():
-    assert callable(siddhi::DefinitionTrigger.__init__)
+def test_siddhi_definitiontrigger_constructor_exists():
+    assert callable(siddhi_DefinitionTrigger.__init__)
 
 
-def test_siddhi::definitiontrigger_constructor_args():
-    sig = inspect.signature(siddhi::DefinitionTrigger.__init__)
+def test_siddhi_definitiontrigger_constructor_args():
+    sig = inspect.signature(siddhi_DefinitionTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::definitionwindow_is_not_abstract():
-    assert not inspect.isabstract(siddhi::DefinitionWindow)
+def test_siddhi_definitionwindow_is_not_abstract():
+    assert not inspect.isabstract(siddhi_DefinitionWindow)
 
 
-def test_siddhi::definitionwindow_constructor_exists():
-    assert callable(siddhi::DefinitionWindow.__init__)
+def test_siddhi_definitionwindow_constructor_exists():
+    assert callable(siddhi_DefinitionWindow.__init__)
 
 
-def test_siddhi::definitionwindow_constructor_args():
-    sig = inspect.signature(siddhi::DefinitionWindow.__init__)
+def test_siddhi_definitionwindow_constructor_args():
+    sig = inspect.signature(siddhi_DefinitionWindow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_siddhi::siddhiql_is_not_abstract():
-    assert not inspect.isabstract(siddhi::SiddhiQL)
+def test_siddhi_siddhiql_is_not_abstract():
+    assert not inspect.isabstract(siddhi_SiddhiQL)
 
 
-def test_siddhi::siddhiql_constructor_exists():
-    assert callable(siddhi::SiddhiQL.__init__)
+def test_siddhi_siddhiql_constructor_exists():
+    assert callable(siddhi_SiddhiQL.__init__)
 
 
-def test_siddhi::siddhiql_constructor_args():
-    sig = inspect.signature(siddhi::SiddhiQL.__init__)
+def test_siddhi_siddhiql_constructor_args():
+    sig = inspect.signature(siddhi_SiddhiQL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5949,380 +5949,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-siddhi::MILLISECONDS_strategy = st.builds(
-    siddhi::MILLISECONDS,
-    millisec=
-        safe_text,
-    millisecond=
-        safe_text,
-    milliseconds=
-        safe_text
-)
-siddhi::SECONDS_strategy = st.builds(
-    siddhi::SECONDS,
-    sec=
-        safe_text,
-    seconds=
-        safe_text,
-    second=
-        safe_text
-)
-siddhi::OUTER_strategy = st.builds(
-    siddhi::OUTER,
-    outer=
-        safe_text
-)
-siddhi::INNER_strategy = st.builds(
-    siddhi::INNER,
-    inner=
-        safe_text
-)
-siddhi::JOIN_strategy = st.builds(
-    siddhi::JOIN,
-    join=
-        safe_text
-)
-siddhi::FULL_strategy = st.builds(
-    siddhi::FULL,
-    full=
-        safe_text
-)
-siddhi::RIGHT_strategy = st.builds(
-    siddhi::RIGHT,
-    right=
-        safe_text
-)
-siddhi::LEFT_strategy = st.builds(
-    siddhi::LEFT,
-    left=
-        safe_text
-)
-siddhi::WITHIN_strategy = st.builds(
-    siddhi::WITHIN,
-    within=
-        safe_text
-)
-siddhi::YEARS_strategy = st.builds(
-    siddhi::YEARS,
-    years=
-        safe_text,
-    year=
-        safe_text
-)
-siddhi::PER_strategy = st.builds(
-    siddhi::PER,
-    per=
-        safe_text
-)
-siddhi::SET_strategy = st.builds(
-    siddhi::SET,
-    set=
-        safe_text
-)
-siddhi::AGGREGATE_strategy = st.builds(
-    siddhi::AGGREGATE,
-    agrregate=
-        safe_text
-)
-siddhi::AGGREGATION_strategy = st.builds(
-    siddhi::AGGREGATION,
-    aggre=
-        safe_text
-)
-siddhi::WITH_strategy = st.builds(
-    siddhi::WITH,
-    wi=
-        safe_text
-)
-siddhi::PARTITION_strategy = st.builds(
-    siddhi::PARTITION,
-    partition=
-        safe_text
-)
-siddhi::END_strategy = st.builds(
-    siddhi::END,
-    end=
-        safe_text
-)
-siddhi::UPDATE_strategy = st.builds(
-    siddhi::UPDATE,
-    update=
-        safe_text
-)
-siddhi::FOR_strategy = st.builds(
-    siddhi::FOR,
-    for_=
-        safe_text
-)
-siddhi::DELETE_strategy = st.builds(
-    siddhi::DELETE,
-    delete=
-        safe_text
-)
-siddhi::PLAN_strategy = st.builds(
-    siddhi::PLAN,
-    plan=
-        safe_text
-)
-siddhi::BEGIN_strategy = st.builds(
-    siddhi::BEGIN,
-    begin=
-        safe_text
-)
-siddhi::INTO_strategy = st.builds(
-    siddhi::INTO,
-    into=
-        safe_text
-)
-siddhi::INSERT_strategy = st.builds(
-    siddhi::INSERT,
-    insert=
-        safe_text
-)
-siddhi::FIRST_strategy = st.builds(
-    siddhi::FIRST,
-    first=
-        safe_text
-)
-siddhi::SNAPSHOT_strategy = st.builds(
-    siddhi::SNAPSHOT,
-    snapshot=
-        safe_text
-)
-siddhi::HAVING_strategy = st.builds(
-    siddhi::HAVING,
-    having=
-        safe_text
-)
-siddhi::BY_strategy = st.builds(
-    siddhi::BY,
-    by=
-        safe_text
-)
-siddhi::GROUP_strategy = st.builds(
-    siddhi::GROUP,
-    group=
-        safe_text
-)
-siddhi::SELECT_strategy = st.builds(
-    siddhi::SELECT,
-    select=
-        safe_text
-)
-siddhi::DOUBLE_strategy = st.builds(
-    siddhi::DOUBLE,
-    double=
-        safe_text
-)
-siddhi::LONG_strategy = st.builds(
-    siddhi::LONG,
-    long=
-        safe_text
-)
-siddhi::INTS_strategy = st.builds(
-    siddhi::INTS,
-    int=
-        safe_text
-)
-siddhi::STRINGS_strategy = st.builds(
-    siddhi::STRINGS,
-    string=
-        safe_text
-)
-siddhi::OUTPUT_strategy = st.builds(
-    siddhi::OUTPUT,
-    output=
-        safe_text
-)
-siddhi::WINDOW_strategy = st.builds(
-    siddhi::WINDOW,
-    window=
-        safe_text
-)
-siddhi::TABLE_strategy = st.builds(
-    siddhi::TABLE,
-    table=
-        safe_text
-)
-siddhi::FROM_strategy = st.builds(
-    siddhi::FROM,
-    from_=
-        safe_text
-)
-siddhi::RETURN_strategy = st.builds(
-    siddhi::RETURN,
-    return_=
-        safe_text
-)
-siddhi::FUNCTION_strategy = st.builds(
-    siddhi::FUNCTION,
-    function=
-        safe_text
-)
-siddhi::AT_strategy = st.builds(
-    siddhi::AT,
-    at=
-        safe_text
-)
-siddhi::TRIGGER_strategy = st.builds(
-    siddhi::TRIGGER,
-    trigger=
-        safe_text
-)
-siddhi::NULL_strategy = st.builds(
-    siddhi::NULL,
-    null=
-        safe_text
-)
-siddhi::IS_strategy = st.builds(
-    siddhi::IS,
-    is_=
-        safe_text
-)
-siddhi::LAST_strategy = st.builds(
-    siddhi::LAST,
-    last=
-        safe_text
-)
-siddhi::CURRENT_strategy = st.builds(
-    siddhi::CURRENT,
-    currt=
-        safe_text
-)
-siddhi::EXPIRED_strategy = st.builds(
-    siddhi::EXPIRED,
-    expired=
-        safe_text
-)
-siddhi::RAW_strategy = st.builds(
-    siddhi::RAW,
-    raw=
-        safe_text
-)
-siddhi::EVENTS_strategy = st.builds(
-    siddhi::EVENTS,
-    events=
-        safe_text
-)
-siddhi::ALL_strategy = st.builds(
-    siddhi::ALL,
-    all=
-        safe_text
-)
-siddhi::OBJECT_strategy = st.builds(
-    siddhi::OBJECT,
-    object=
-        safe_text
-)
-siddhi::BOOL_strategy = st.builds(
-    siddhi::BOOL,
-    bool=
-        safe_text
-)
-siddhi::FLOAT_strategy = st.builds(
-    siddhi::FLOAT,
-    float=
-        safe_text
-)
-EveryAbsentSequenceSourceChain_strategy = st.builds(
-    EveryAbsentSequenceSourceChain,
-)
-EverySequenceSourceChain_strategy = st.builds(
-    EverySequenceSourceChain,
-)
-BasicAbsentPatternSource_strategy = st.builds(
-    BasicAbsentPatternSource,
-)
-siddhi::DEFINE_strategy = st.builds(
-    siddhi::DEFINE,
-    define=
-        safe_text
-)
-siddhi::STREAM_strategy = st.builds(
-    siddhi::STREAM,
-    str=
-        safe_text
-)
-AppAnnotation_strategy = st.builds(
-    AppAnnotation,
-)
-siddhi::APP_strategy = st.builds(
-    siddhi::APP,
-    ap=
-        safe_text
-)
-siddhi::IN_strategy = st.builds(
-    siddhi::IN,
-    in_=
-        safe_text
-)
-RightAbsentPatternSource_strategy = st.builds(
-    RightAbsentPatternSource,
-)
-LeftAbsentPatternSource_strategy = st.builds(
-    LeftAbsentPatternSource,
-)
-EveryAbsentPatternSource_strategy = st.builds(
-    EveryAbsentPatternSource,
-)
-LogicalAbsentStatefulSource_strategy = st.builds(
-    LogicalAbsentStatefulSource,
-)
 Name_strategy = st.builds(
     Name,
 )
-siddhi::L_strategy = st.builds(
-    siddhi::L,
+siddhi_L_strategy = st.builds(
+    siddhi_L,
     l=
         safe_text
 )
 SignedLongValue_strategy = st.builds(
     SignedLongValue,
 )
-siddhi::LONG::LITERAL_strategy = st.builds(
-    siddhi::LONG::LITERAL,
+siddhi_LONG_LITERAL_strategy = st.builds(
+    siddhi_LONG_LITERAL,
 )
-siddhi::F_strategy = st.builds(
-    siddhi::F,
+siddhi_F_strategy = st.builds(
+    siddhi_F,
     f=
         safe_text
 )
 SignedFloatValue_strategy = st.builds(
     SignedFloatValue,
 )
-siddhi::FLOAT::LITERAL_strategy = st.builds(
-    siddhi::FLOAT::LITERAL,
+siddhi_FLOAT_LITERAL_strategy = st.builds(
+    siddhi_FLOAT_LITERAL,
 )
-siddhi::D_strategy = st.builds(
-    siddhi::D,
+siddhi_D_strategy = st.builds(
+    siddhi_D,
     d=
         safe_text
 )
-siddhi::E_strategy = st.builds(
-    siddhi::E,
+siddhi_E_strategy = st.builds(
+    siddhi_E,
     e=
         safe_text
 )
 SignedDoubleValue_strategy = st.builds(
     SignedDoubleValue,
 )
-siddhi::DOUBLE::LITERAL_strategy = st.builds(
-    siddhi::DOUBLE::LITERAL,
+siddhi_DOUBLE_LITERAL_strategy = st.builds(
+    siddhi_DOUBLE_LITERAL,
 )
 MILLISECONDS_strategy = st.builds(
     MILLISECONDS,
 )
-siddhi::MillisecondValue_strategy = st.builds(
-    siddhi::MillisecondValue,
+siddhi_FunctionId_strategy = st.builds(
+    siddhi_FunctionId,
 )
-siddhi::FunctionId_strategy = st.builds(
-    siddhi::FunctionId,
+siddhi_FunctionNamespace_strategy = st.builds(
+    siddhi_FunctionNamespace,
 )
-siddhi::FunctionNamespace_strategy = st.builds(
-    siddhi::FunctionNamespace,
-)
-siddhi::SignedLongValue_strategy = st.builds(
-    siddhi::SignedLongValue,
+siddhi_SignedLongValue_strategy = st.builds(
+    siddhi_SignedLongValue,
 )
 FALSE_strategy = st.builds(
     FALSE,
@@ -6330,31 +6008,31 @@ FALSE_strategy = st.builds(
 TRUE_strategy = st.builds(
     TRUE,
 )
-siddhi::AttributeList_strategy = st.builds(
-    siddhi::AttributeList,
+siddhi_AttributeList_strategy = st.builds(
+    siddhi_AttributeList,
 )
-siddhi::FeaturesOrOutAttr_strategy = st.builds(
-    siddhi::FeaturesOrOutAttr,
+siddhi_FeaturesOrOutAttr_strategy = st.builds(
+    siddhi_FeaturesOrOutAttr,
     name=
         safe_text
 )
-siddhi::FeaturesOrOutAttrReference_strategy = st.builds(
-    siddhi::FeaturesOrOutAttrReference,
+siddhi_FeaturesOrOutAttrReference_strategy = st.builds(
+    siddhi_FeaturesOrOutAttrReference,
 )
-siddhi::SignedFloatValue_strategy = st.builds(
-    siddhi::SignedFloatValue,
+siddhi_SignedFloatValue_strategy = st.builds(
+    siddhi_SignedFloatValue,
 )
-siddhi::SignedDoubleValue_strategy = st.builds(
-    siddhi::SignedDoubleValue,
+siddhi_SignedDoubleValue_strategy = st.builds(
+    siddhi_SignedDoubleValue,
 )
-siddhi::BoolValue_strategy = st.builds(
-    siddhi::BoolValue,
+siddhi_BoolValue_strategy = st.builds(
+    siddhi_BoolValue,
 )
-siddhi::AttributeNameReference_strategy = st.builds(
-    siddhi::AttributeNameReference,
+siddhi_AttributeNameReference_strategy = st.builds(
+    siddhi_AttributeNameReference,
 )
-siddhi::Source1OrStandardStatefulSource_strategy = st.builds(
-    siddhi::Source1OrStandardStatefulSource,
+siddhi_Source1OrStandardStatefulSource_strategy = st.builds(
+    siddhi_Source1OrStandardStatefulSource,
     name=
         safe_text
 )
@@ -6364,40 +6042,40 @@ PatternCollectionStatefulSource_strategy = st.builds(
 SequenceCollectionStatefulSource_strategy = st.builds(
     SequenceCollectionStatefulSource,
 )
-siddhi::Literal_strategy = st.builds(
-    siddhi::Literal,
+siddhi_Literal_strategy = st.builds(
+    siddhi_Literal,
 )
 MathDivmulOperation_strategy = st.builds(
     MathDivmulOperation,
 )
-siddhi::MathOtherOperations_strategy = st.builds(
-    siddhi::MathOtherOperations,
+siddhi_MathOtherOperations_strategy = st.builds(
+    siddhi_MathOtherOperations,
 )
 MathAddsubOperation_strategy = st.builds(
     MathAddsubOperation,
 )
-siddhi::MathDivmulOperation_strategy = st.builds(
-    siddhi::MathDivmulOperation,
-    multiply=
-        safe_text,
+siddhi_MathDivmulOperation_strategy = st.builds(
+    siddhi_MathDivmulOperation,
     devide=
+        safe_text,
+    multiply=
         safe_text,
     mod=
         safe_text
 )
-siddhi::SourceOrEventReference_strategy = st.builds(
-    siddhi::SourceOrEventReference,
+siddhi_SourceOrEventReference_strategy = st.builds(
+    siddhi_SourceOrEventReference,
 )
 SetAssignment_strategy = st.builds(
     SetAssignment,
 )
-siddhi::ConstantValue_strategy = st.builds(
-    siddhi::ConstantValue,
+siddhi_ConstantValue_strategy = st.builds(
+    siddhi_ConstantValue,
     siv=
         safe_text
 )
-siddhi::StreamReference_strategy = st.builds(
-    siddhi::StreamReference,
+siddhi_StreamReference_strategy = st.builds(
+    siddhi_StreamReference,
     hash=
         safe_text
 )
@@ -6410,44 +6088,462 @@ IS_strategy = st.builds(
 MathOtherOperations_strategy = st.builds(
     MathOtherOperations,
 )
-siddhi::NullCheck_strategy = st.builds(
-    siddhi::NullCheck,
+siddhi_NullCheck_strategy = st.builds(
+    siddhi_NullCheck,
 )
-siddhi::BasicSourceStreamHandlers_strategy = st.builds(
-    siddhi::BasicSourceStreamHandlers,
+siddhi_BasicSourceStreamHandlers_strategy = st.builds(
+    siddhi_BasicSourceStreamHandlers,
 )
 MathOperation_strategy = st.builds(
     MathOperation,
 )
-siddhi::MathAddsubOperation_strategy = st.builds(
-    siddhi::MathAddsubOperation,
-    substract=
-        safe_text,
+siddhi_MathAddsubOperation_strategy = st.builds(
+    siddhi_MathAddsubOperation,
     add=
+        safe_text,
+    substract=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-siddhi::MathOperation_strategy = st.builds(
-    siddhi::MathOperation,
+siddhi_MathOperation_strategy = st.builds(
+    siddhi_MathOperation,
 )
-siddhi::StreamFunction_strategy = st.builds(
-    siddhi::StreamFunction,
+siddhi_StreamFunction_strategy = st.builds(
+    siddhi_StreamFunction,
 )
-siddhi::Filter_strategy = st.builds(
-    siddhi::Filter,
+siddhi_Filter_strategy = st.builds(
+    siddhi_Filter,
 )
-siddhi::BasicSourceStreamHandler_strategy = st.builds(
-    siddhi::BasicSourceStreamHandler,
+siddhi_BasicSourceStreamHandler_strategy = st.builds(
+    siddhi_BasicSourceStreamHandler,
 )
-siddhi::UNIDIRECTIONAL_strategy = st.builds(
-    siddhi::UNIDIRECTIONAL,
+siddhi_MathGtLtOperation_strategy = st.builds(
+    siddhi_MathGtLtOperation,
+    lt_eq=
+        safe_text,
+    gt=
+        safe_text,
+    gt_eq=
+        safe_text,
+    lt=
+        safe_text
+)
+siddhi_MathInOperation_strategy = st.builds(
+    siddhi_MathInOperation,
+)
+siddhi_NotOperation_strategy = st.builds(
+    siddhi_NotOperation,
+)
+siddhi_MathEqualOperation_strategy = st.builds(
+    siddhi_MathEqualOperation,
+    not_eq=
+        safe_text,
+    eq=
+        safe_text
+)
+siddhi_MINUTES_strategy = st.builds(
+    siddhi_MINUTES,
+    minutes=
+        safe_text,
+    minute=
+        safe_text,
+    min=
+        safe_text
+)
+siddhi_HOURS_strategy = st.builds(
+    siddhi_HOURS,
+    hours=
+        safe_text,
+    hour=
+        safe_text
+)
+siddhi_DAYS_strategy = st.builds(
+    siddhi_DAYS,
+    days=
+        safe_text,
+    day=
+        safe_text
+)
+siddhi_WEEKS_strategy = st.builds(
+    siddhi_WEEKS,
+    weeks=
+        safe_text,
+    week=
+        safe_text
+)
+siddhi_MONTHS_strategy = st.builds(
+    siddhi_MONTHS,
+    month=
+        safe_text,
+    months=
+        safe_text
+)
+siddhi_MathLogicalOperation_strategy = st.builds(
+    siddhi_MathLogicalOperation,
+)
+RightAbsentSequenceSource_strategy = st.builds(
+    RightAbsentSequenceSource,
+)
+siddhi_RightAbsentSequenceSource1_strategy = st.builds(
+    siddhi_RightAbsentSequenceSource1,
+)
+LeftAbsentSequenceSource_strategy = st.builds(
+    LeftAbsentSequenceSource,
+)
+siddhi_LeftAbsentSequenceSource1_strategy = st.builds(
+    siddhi_LeftAbsentSequenceSource1,
+)
+siddhi_TRUE_strategy = st.builds(
+    siddhi_TRUE,
+    tr=
+        safe_text
+)
+siddhi_FALSE_strategy = st.builds(
+    siddhi_FALSE,
+    fals=
+        safe_text
+)
+siddhi_MILLISECONDS_strategy = st.builds(
+    siddhi_MILLISECONDS,
+    millisecond=
+        safe_text,
+    millisec=
+        safe_text,
+    milliseconds=
+        safe_text
+)
+siddhi_SECONDS_strategy = st.builds(
+    siddhi_SECONDS,
+    seconds=
+        safe_text,
+    sec=
+        safe_text,
+    second=
+        safe_text
+)
+siddhi_OUTER_strategy = st.builds(
+    siddhi_OUTER,
+    outer=
+        safe_text
+)
+siddhi_INNER_strategy = st.builds(
+    siddhi_INNER,
+    inner=
+        safe_text
+)
+siddhi_JOIN_strategy = st.builds(
+    siddhi_JOIN,
+    join=
+        safe_text
+)
+siddhi_FULL_strategy = st.builds(
+    siddhi_FULL,
+    full=
+        safe_text
+)
+siddhi_RIGHT_strategy = st.builds(
+    siddhi_RIGHT,
+    right=
+        safe_text
+)
+siddhi_LEFT_strategy = st.builds(
+    siddhi_LEFT,
+    left=
+        safe_text
+)
+siddhi_WITHIN_strategy = st.builds(
+    siddhi_WITHIN,
+    within=
+        safe_text
+)
+siddhi_YEARS_strategy = st.builds(
+    siddhi_YEARS,
+    year=
+        safe_text,
+    years=
+        safe_text
+)
+siddhi_PER_strategy = st.builds(
+    siddhi_PER,
+    per=
+        safe_text
+)
+siddhi_SET_strategy = st.builds(
+    siddhi_SET,
+    set=
+        safe_text
+)
+siddhi_AGGREGATE_strategy = st.builds(
+    siddhi_AGGREGATE,
+    agrregate=
+        safe_text
+)
+siddhi_AGGREGATION_strategy = st.builds(
+    siddhi_AGGREGATION,
+    aggre=
+        safe_text
+)
+siddhi_WITH_strategy = st.builds(
+    siddhi_WITH,
+    wi=
+        safe_text
+)
+siddhi_PARTITION_strategy = st.builds(
+    siddhi_PARTITION,
+    partition=
+        safe_text
+)
+siddhi_END_strategy = st.builds(
+    siddhi_END,
+    end=
+        safe_text
+)
+siddhi_UPDATE_strategy = st.builds(
+    siddhi_UPDATE,
+    update=
+        safe_text
+)
+siddhi_FOR_strategy = st.builds(
+    siddhi_FOR,
+    for_=
+        safe_text
+)
+siddhi_DELETE_strategy = st.builds(
+    siddhi_DELETE,
+    delete=
+        safe_text
+)
+siddhi_PLAN_strategy = st.builds(
+    siddhi_PLAN,
+    plan=
+        safe_text
+)
+siddhi_BEGIN_strategy = st.builds(
+    siddhi_BEGIN,
+    begin=
+        safe_text
+)
+siddhi_INTO_strategy = st.builds(
+    siddhi_INTO,
+    into=
+        safe_text
+)
+siddhi_INSERT_strategy = st.builds(
+    siddhi_INSERT,
+    insert=
+        safe_text
+)
+siddhi_FIRST_strategy = st.builds(
+    siddhi_FIRST,
+    first=
+        safe_text
+)
+siddhi_SNAPSHOT_strategy = st.builds(
+    siddhi_SNAPSHOT,
+    snapshot=
+        safe_text
+)
+siddhi_HAVING_strategy = st.builds(
+    siddhi_HAVING,
+    having=
+        safe_text
+)
+siddhi_BY_strategy = st.builds(
+    siddhi_BY,
+    by=
+        safe_text
+)
+siddhi_GROUP_strategy = st.builds(
+    siddhi_GROUP,
+    group=
+        safe_text
+)
+siddhi_SELECT_strategy = st.builds(
+    siddhi_SELECT,
+    select=
+        safe_text
+)
+siddhi_DOUBLE_strategy = st.builds(
+    siddhi_DOUBLE,
+    double=
+        safe_text
+)
+siddhi_LONG_strategy = st.builds(
+    siddhi_LONG,
+    long=
+        safe_text
+)
+siddhi_INTS_strategy = st.builds(
+    siddhi_INTS,
+    int=
+        safe_text
+)
+siddhi_STRINGS_strategy = st.builds(
+    siddhi_STRINGS,
+    string=
+        safe_text
+)
+siddhi_OUTPUT_strategy = st.builds(
+    siddhi_OUTPUT,
+    output=
+        safe_text
+)
+siddhi_WINDOW_strategy = st.builds(
+    siddhi_WINDOW,
+    window=
+        safe_text
+)
+siddhi_TABLE_strategy = st.builds(
+    siddhi_TABLE,
+    table=
+        safe_text
+)
+siddhi_FROM_strategy = st.builds(
+    siddhi_FROM,
+    from_=
+        safe_text
+)
+siddhi_RETURN_strategy = st.builds(
+    siddhi_RETURN,
+    return_=
+        safe_text
+)
+siddhi_FUNCTION_strategy = st.builds(
+    siddhi_FUNCTION,
+    function=
+        safe_text
+)
+siddhi_AT_strategy = st.builds(
+    siddhi_AT,
+    at=
+        safe_text
+)
+siddhi_TRIGGER_strategy = st.builds(
+    siddhi_TRIGGER,
+    trigger=
+        safe_text
+)
+siddhi_NULL_strategy = st.builds(
+    siddhi_NULL,
+    null=
+        safe_text
+)
+siddhi_IS_strategy = st.builds(
+    siddhi_IS,
+    is_=
+        safe_text
+)
+siddhi_LAST_strategy = st.builds(
+    siddhi_LAST,
+    last=
+        safe_text
+)
+siddhi_CURRENT_strategy = st.builds(
+    siddhi_CURRENT,
+    currt=
+        safe_text
+)
+siddhi_EXPIRED_strategy = st.builds(
+    siddhi_EXPIRED,
+    expired=
+        safe_text
+)
+siddhi_RAW_strategy = st.builds(
+    siddhi_RAW,
+    raw=
+        safe_text
+)
+siddhi_EVENTS_strategy = st.builds(
+    siddhi_EVENTS,
+    events=
+        safe_text
+)
+siddhi_ALL_strategy = st.builds(
+    siddhi_ALL,
+    all=
+        safe_text
+)
+siddhi_OBJECT_strategy = st.builds(
+    siddhi_OBJECT,
+    object=
+        safe_text
+)
+siddhi_BOOL_strategy = st.builds(
+    siddhi_BOOL,
+    bool=
+        safe_text
+)
+siddhi_FLOAT_strategy = st.builds(
+    siddhi_FLOAT,
+    float=
+        safe_text
+)
+EveryAbsentSequenceSourceChain_strategy = st.builds(
+    EveryAbsentSequenceSourceChain,
+)
+EverySequenceSourceChain_strategy = st.builds(
+    EverySequenceSourceChain,
+)
+BasicAbsentPatternSource_strategy = st.builds(
+    BasicAbsentPatternSource,
+)
+siddhi_DEFINE_strategy = st.builds(
+    siddhi_DEFINE,
+    define=
+        safe_text
+)
+siddhi_STREAM_strategy = st.builds(
+    siddhi_STREAM,
+    str=
+        safe_text
+)
+AppAnnotation_strategy = st.builds(
+    AppAnnotation,
+)
+siddhi_APP_strategy = st.builds(
+    siddhi_APP,
+    ap=
+        safe_text
+)
+siddhi_IN_strategy = st.builds(
+    siddhi_IN,
+    in_=
+        safe_text
+)
+RightAbsentPatternSource_strategy = st.builds(
+    RightAbsentPatternSource,
+)
+siddhi_RightAbsentPatternSource1_strategy = st.builds(
+    siddhi_RightAbsentPatternSource1,
+    fb=
+        safe_text
+)
+LeftAbsentPatternSource_strategy = st.builds(
+    LeftAbsentPatternSource,
+)
+siddhi_LeftAbsentPatternSource1_strategy = st.builds(
+    siddhi_LeftAbsentPatternSource1,
+    fb=
+        safe_text
+)
+EveryAbsentPatternSource_strategy = st.builds(
+    EveryAbsentPatternSource,
+)
+LogicalAbsentStatefulSource_strategy = st.builds(
+    LogicalAbsentStatefulSource,
+)
+siddhi_MillisecondValue_strategy = st.builds(
+    siddhi_MillisecondValue,
+)
+siddhi_UNIDIRECTIONAL_strategy = st.builds(
+    siddhi_UNIDIRECTIONAL,
     unidirectional=
         safe_text
 )
-siddhi::JoinSource_strategy = st.builds(
-    siddhi::JoinSource,
+siddhi_JoinSource_strategy = st.builds(
+    siddhi_JoinSource,
 )
 StandardStream_strategy = st.builds(
     StandardStream,
@@ -6455,8 +6551,8 @@ StandardStream_strategy = st.builds(
 JoinSource_strategy = st.builds(
     JoinSource,
 )
-siddhi::MainSource_strategy = st.builds(
-    siddhi::MainSource,
+siddhi_MainSource_strategy = st.builds(
+    siddhi_MainSource,
 )
 JoinStream_strategy = st.builds(
     JoinStream,
@@ -6485,115 +6581,115 @@ PER_strategy = st.builds(
 WITHIN_strategy = st.builds(
     WITHIN,
 )
-siddhi::joins_strategy = st.builds(
-    siddhi::joins,
+siddhi_joins_strategy = st.builds(
+    siddhi_joins,
 )
-siddhi::Per1_strategy = st.builds(
-    siddhi::Per1,
+siddhi_Per1_strategy = st.builds(
+    siddhi_Per1,
 )
-siddhi::WithinTimeRange_strategy = st.builds(
-    siddhi::WithinTimeRange,
+siddhi_WithinTimeRange_strategy = st.builds(
+    siddhi_WithinTimeRange,
 )
 AbsentPatternSourceChain_strategy = st.builds(
     AbsentPatternSourceChain,
 )
-siddhi::EveryAbsentPatternSource_strategy = st.builds(
-    siddhi::EveryAbsentPatternSource,
+siddhi_EveryAbsentPatternSource_strategy = st.builds(
+    siddhi_EveryAbsentPatternSource,
 )
-siddhi::RightAbsentPatternSource_strategy = st.builds(
-    siddhi::RightAbsentPatternSource,
+siddhi_RightAbsentPatternSource_strategy = st.builds(
+    siddhi_RightAbsentPatternSource,
     fb2=
         safe_text
 )
-siddhi::LeftAbsentPatternSource_strategy = st.builds(
-    siddhi::LeftAbsentPatternSource,
+siddhi_LeftAbsentPatternSource_strategy = st.builds(
+    siddhi_LeftAbsentPatternSource,
     fb1=
         safe_text
 )
-siddhi::PatternCollectionStatefulSource_strategy = st.builds(
-    siddhi::PatternCollectionStatefulSource,
+siddhi_PatternCollectionStatefulSource_strategy = st.builds(
+    siddhi_PatternCollectionStatefulSource,
 )
-siddhi::PatternSource_strategy = st.builds(
-    siddhi::PatternSource,
+siddhi_PatternSource_strategy = st.builds(
+    siddhi_PatternSource,
 )
-siddhi::BasicSource_strategy = st.builds(
-    siddhi::BasicSource,
+siddhi_BasicSource_strategy = st.builds(
+    siddhi_BasicSource,
 )
-siddhi::NOT_strategy = st.builds(
-    siddhi::NOT,
+siddhi_NOT_strategy = st.builds(
+    siddhi_NOT,
     not1=
         safe_text
 )
-siddhi::Collect_strategy = st.builds(
-    siddhi::Collect,
+siddhi_Collect_strategy = st.builds(
+    siddhi_Collect,
     start=
         safe_text,
     end=
         safe_text
 )
-siddhi::AND_strategy = st.builds(
-    siddhi::AND,
+siddhi_AND_strategy = st.builds(
+    siddhi_AND,
     and_=
         safe_text
 )
 SequenceSource_strategy = st.builds(
     SequenceSource,
 )
-siddhi::LogicalAbsentStatefulSource_strategy = st.builds(
-    siddhi::LogicalAbsentStatefulSource,
+siddhi_LogicalStatefulSource_strategy = st.builds(
+    siddhi_LogicalStatefulSource,
 )
-siddhi::LogicalStatefulSource_strategy = st.builds(
-    siddhi::LogicalStatefulSource,
+siddhi_LogicalAbsentStatefulSource_strategy = st.builds(
+    siddhi_LogicalAbsentStatefulSource,
 )
-siddhi::SequenceCollectionStatefulSource_strategy = st.builds(
-    siddhi::SequenceCollectionStatefulSource,
+siddhi_SequenceCollectionStatefulSource_strategy = st.builds(
+    siddhi_SequenceCollectionStatefulSource,
 )
 SequenceSourceChain_strategy = st.builds(
     SequenceSourceChain,
 )
-siddhi::PatternSourceChain_strategy = st.builds(
-    siddhi::PatternSourceChain,
+siddhi_PatternSourceChain_strategy = st.builds(
+    siddhi_PatternSourceChain,
     op=
         safe_text
 )
 PatternStream_strategy = st.builds(
     PatternStream,
 )
-siddhi::AbsentPatternSourceChain_strategy = st.builds(
-    siddhi::AbsentPatternSourceChain,
+siddhi_AbsentPatternSourceChain_strategy = st.builds(
+    siddhi_AbsentPatternSourceChain,
 )
-siddhi::EveryPatternSourceChain_strategy = st.builds(
-    siddhi::EveryPatternSourceChain,
+siddhi_EveryPatternSourceChain_strategy = st.builds(
+    siddhi_EveryPatternSourceChain,
     op=
         safe_text
 )
-siddhi::RightAbsentSequenceSource_strategy = st.builds(
-    siddhi::RightAbsentSequenceSource,
-    op=
-        safe_text,
+siddhi_RightAbsentSequenceSource_strategy = st.builds(
+    siddhi_RightAbsentSequenceSource,
     cp=
         safe_text,
     comma=
         safe_text,
     comm=
+        safe_text,
+    op=
         safe_text
 )
-siddhi::LeftAbsentSequenceSource_strategy = st.builds(
-    siddhi::LeftAbsentSequenceSource,
-    cp=
+siddhi_LeftAbsentSequenceSource_strategy = st.builds(
+    siddhi_LeftAbsentSequenceSource,
+    op=
         safe_text,
     comma=
         safe_text,
-    op=
-        safe_text,
     comm=
+        safe_text,
+    cp=
         safe_text
 )
-siddhi::BasicAbsentPatternSource_strategy = st.builds(
-    siddhi::BasicAbsentPatternSource,
+siddhi_BasicAbsentPatternSource_strategy = st.builds(
+    siddhi_BasicAbsentPatternSource,
 )
-siddhi::EObject_strategy = st.builds(
-    siddhi::EObject,
+siddhi_EObject_strategy = st.builds(
+    siddhi_EObject,
 )
 HAVING_strategy = st.builds(
     HAVING,
@@ -6601,43 +6697,43 @@ HAVING_strategy = st.builds(
 GROUP_strategy = st.builds(
     GROUP,
 )
-siddhi::HavingExpr_strategy = st.builds(
-    siddhi::HavingExpr,
+siddhi_HavingExpr_strategy = st.builds(
+    siddhi_HavingExpr,
 )
-siddhi::AbsentSequenceSourceChain_strategy = st.builds(
-    siddhi::AbsentSequenceSourceChain,
+siddhi_AbsentSequenceSourceChain_strategy = st.builds(
+    siddhi_AbsentSequenceSourceChain,
 )
-siddhi::SequenceSourceChain_strategy = st.builds(
-    siddhi::SequenceSourceChain,
+siddhi_SequenceSourceChain_strategy = st.builds(
+    siddhi_SequenceSourceChain,
     op=
         safe_text
 )
-siddhi::WithinTime_strategy = st.builds(
-    siddhi::WithinTime,
+siddhi_WithinTime_strategy = st.builds(
+    siddhi_WithinTime,
 )
-siddhi::SequenceSource_strategy = st.builds(
-    siddhi::SequenceSource,
+siddhi_SequenceSource_strategy = st.builds(
+    siddhi_SequenceSource,
 )
-siddhi::EveryAbsentSequenceSourceChain_strategy = st.builds(
-    siddhi::EveryAbsentSequenceSourceChain,
+siddhi_EveryAbsentSequenceSourceChain_strategy = st.builds(
+    siddhi_EveryAbsentSequenceSourceChain,
 )
-siddhi::EverySequenceSourceChain_strategy = st.builds(
-    siddhi::EverySequenceSourceChain,
+siddhi_EverySequenceSourceChain_strategy = st.builds(
+    siddhi_EverySequenceSourceChain,
 )
-siddhi::PatternStream_strategy = st.builds(
-    siddhi::PatternStream,
+siddhi_PatternStream_strategy = st.builds(
+    siddhi_PatternStream,
 )
-siddhi::SequenceStream_strategy = st.builds(
-    siddhi::SequenceStream,
+siddhi_SequenceStream_strategy = st.builds(
+    siddhi_SequenceStream,
 )
-siddhi::JoinStream_strategy = st.builds(
-    siddhi::JoinStream,
+siddhi_JoinStream_strategy = st.builds(
+    siddhi_JoinStream,
 )
-siddhi::Attribute_strategy = st.builds(
-    siddhi::Attribute,
+siddhi_Attribute_strategy = st.builds(
+    siddhi_Attribute,
 )
-siddhi::OutputAttribute_strategy = st.builds(
-    siddhi::OutputAttribute,
+siddhi_OutputAttribute_strategy = st.builds(
+    siddhi_OutputAttribute,
 )
 SELECT_strategy = st.builds(
     SELECT,
@@ -6648,104 +6744,8 @@ FIRST_strategy = st.builds(
 LAST_strategy = st.builds(
     LAST,
 )
-siddhi::AttributeIndex_strategy = st.builds(
-    siddhi::AttributeIndex,
-)
-siddhi::MathGtLtOperation_strategy = st.builds(
-    siddhi::MathGtLtOperation,
-    lt=
-        safe_text,
-    gt_eq=
-        safe_text,
-    gt=
-        safe_text,
-    lt_eq=
-        safe_text
-)
-siddhi::MathInOperation_strategy = st.builds(
-    siddhi::MathInOperation,
-)
-siddhi::NotOperation_strategy = st.builds(
-    siddhi::NotOperation,
-)
-siddhi::MathEqualOperation_strategy = st.builds(
-    siddhi::MathEqualOperation,
-    not_eq=
-        safe_text,
-    eq=
-        safe_text
-)
-siddhi::MINUTES_strategy = st.builds(
-    siddhi::MINUTES,
-    minutes=
-        safe_text,
-    min=
-        safe_text,
-    minute=
-        safe_text
-)
-siddhi::HOURS_strategy = st.builds(
-    siddhi::HOURS,
-    hours=
-        safe_text,
-    hour=
-        safe_text
-)
-siddhi::DAYS_strategy = st.builds(
-    siddhi::DAYS,
-    days=
-        safe_text,
-    day=
-        safe_text
-)
-siddhi::WEEKS_strategy = st.builds(
-    siddhi::WEEKS,
-    weeks=
-        safe_text,
-    week=
-        safe_text
-)
-siddhi::MONTHS_strategy = st.builds(
-    siddhi::MONTHS,
-    months=
-        safe_text,
-    month=
-        safe_text
-)
-siddhi::MathLogicalOperation_strategy = st.builds(
-    siddhi::MathLogicalOperation,
-)
-siddhi::RightAbsentPatternSource1_strategy = st.builds(
-    siddhi::RightAbsentPatternSource1,
-    fb=
-        safe_text
-)
-siddhi::LeftAbsentPatternSource1_strategy = st.builds(
-    siddhi::LeftAbsentPatternSource1,
-    fb=
-        safe_text
-)
-RightAbsentSequenceSource_strategy = st.builds(
-    RightAbsentSequenceSource,
-)
-siddhi::RightAbsentSequenceSource1_strategy = st.builds(
-    siddhi::RightAbsentSequenceSource1,
-)
-LeftAbsentSequenceSource_strategy = st.builds(
-    LeftAbsentSequenceSource,
-)
-siddhi::LeftAbsentSequenceSource1_strategy = st.builds(
-    siddhi::LeftAbsentSequenceSource1,
-)
-siddhi::TRUE_strategy = st.builds(
-    siddhi::TRUE,
-    tr=
-        safe_text
-)
-siddhi::FALSE_strategy = st.builds(
-    siddhi::FALSE,
-    fals=
-        safe_text
+siddhi_AttributeIndex_strategy = st.builds(
+    siddhi_AttributeIndex,
 )
 SNAPSHOT_strategy = st.builds(
     SNAPSHOT,
@@ -6765,44 +6765,44 @@ EVENTS_strategy = st.builds(
 ALL_strategy = st.builds(
     ALL,
 )
-siddhi::OutputRateType_strategy = st.builds(
-    siddhi::OutputRateType,
+siddhi_OutputRateType_strategy = st.builds(
+    siddhi_OutputRateType,
 )
-siddhi::SetAssignment_strategy = st.builds(
-    siddhi::SetAssignment,
+siddhi_SetAssignment_strategy = st.builds(
+    siddhi_SetAssignment,
 )
 SET_strategy = st.builds(
     SET,
 )
-siddhi::SetClause_strategy = st.builds(
-    siddhi::SetClause,
+siddhi_SetClause_strategy = st.builds(
+    siddhi_SetClause,
 )
-siddhi::OR_strategy = st.builds(
-    siddhi::OR,
+siddhi_OR_strategy = st.builds(
+    siddhi_OR,
     or_=
         safe_text
 )
-siddhi::ConditionRange_strategy = st.builds(
-    siddhi::ConditionRange,
+siddhi_ConditionRange_strategy = st.builds(
+    siddhi_ConditionRange,
 )
-siddhi::OF_strategy = st.builds(
-    siddhi::OF,
+siddhi_OF_strategy = st.builds(
+    siddhi_OF,
     of=
         safe_text
 )
 PartitionWithStream_strategy = st.builds(
     PartitionWithStream,
 )
-siddhi::ConditionRanges_strategy = st.builds(
-    siddhi::ConditionRanges,
+siddhi_ConditionRanges_strategy = st.builds(
+    siddhi_ConditionRanges,
 )
-siddhi::ON_strategy = st.builds(
-    siddhi::ON,
+siddhi_ON_strategy = st.builds(
+    siddhi_ON,
     on=
         safe_text
 )
-siddhi::Target_strategy = st.builds(
-    siddhi::Target,
+siddhi_Target_strategy = st.builds(
+    siddhi_Target,
 )
 UPDATE_strategy = st.builds(
     UPDATE,
@@ -6810,8 +6810,8 @@ UPDATE_strategy = st.builds(
 FOR_strategy = st.builds(
     FOR,
 )
-siddhi::ForTime_strategy = st.builds(
-    siddhi::ForTime,
+siddhi_ForTime_strategy = st.builds(
+    siddhi_ForTime,
 )
 DELETE_strategy = st.builds(
     DELETE,
@@ -6822,25 +6822,25 @@ INTO_strategy = st.builds(
 INSERT_strategy = st.builds(
     INSERT,
 )
-siddhi::QuerySection_strategy = st.builds(
-    siddhi::QuerySection,
+siddhi_QuerySection_strategy = st.builds(
+    siddhi_QuerySection,
 )
-siddhi::QueryInput_strategy = st.builds(
-    siddhi::QueryInput,
+siddhi_QueryInput_strategy = st.builds(
+    siddhi_QueryInput,
 )
-siddhi::AS_strategy = st.builds(
-    siddhi::AS,
+siddhi_AS_strategy = st.builds(
+    siddhi_AS,
     a=
         safe_text
 )
-siddhi::Expression_strategy = st.builds(
-    siddhi::Expression,
+siddhi_Expression_strategy = st.builds(
+    siddhi_Expression,
 )
-siddhi::PropertyValue_strategy = st.builds(
-    siddhi::PropertyValue,
+siddhi_PropertyValue_strategy = st.builds(
+    siddhi_PropertyValue,
 )
-siddhi::PartitionWithStream_strategy = st.builds(
-    siddhi::PartitionWithStream,
+siddhi_PartitionWithStream_strategy = st.builds(
+    siddhi_PartitionWithStream,
 )
 END_strategy = st.builds(
     END,
@@ -6857,20 +6857,20 @@ PARTITION_strategy = st.builds(
 Source1OrStandardStatefulSource_strategy = st.builds(
     Source1OrStandardStatefulSource,
 )
-siddhi::StreamAlias_strategy = st.builds(
-    siddhi::StreamAlias,
+siddhi_StreamAlias_strategy = st.builds(
+    siddhi_StreamAlias,
 )
-siddhi::StandardStatefulSource_strategy = st.builds(
-    siddhi::StandardStatefulSource,
-    one_or_more=
-        safe_text,
+siddhi_StandardStatefulSource_strategy = st.builds(
+    siddhi_StandardStatefulSource,
     zero_or_more=
         safe_text,
     zero_or_one=
+        safe_text,
+    one_or_more=
         safe_text
 )
-siddhi::Source_strategy = st.builds(
-    siddhi::Source,
+siddhi_Source_strategy = st.builds(
+    siddhi_Source,
 )
 OBJECT_strategy = st.builds(
     OBJECT,
@@ -6896,14 +6896,14 @@ STRINGS_strategy = st.builds(
 FeaturesOrOutAttr_strategy = st.builds(
     FeaturesOrOutAttr,
 )
-siddhi::OutAttr_strategy = st.builds(
-    siddhi::OutAttr,
+siddhi_OutAttr_strategy = st.builds(
+    siddhi_OutAttr,
 )
-siddhi::PropertySeparator_strategy = st.builds(
-    siddhi::PropertySeparator,
+siddhi_PropertySeparator_strategy = st.builds(
+    siddhi_PropertySeparator,
 )
-siddhi::AttributeReference_strategy = st.builds(
-    siddhi::AttributeReference,
+siddhi_AttributeReference_strategy = st.builds(
+    siddhi_AttributeReference,
     name=
         safe_text,
     hash2=
@@ -6911,100 +6911,100 @@ siddhi::AttributeReference_strategy = st.builds(
     hash1=
         safe_text
 )
-siddhi::GroupByQuerySelection_strategy = st.builds(
-    siddhi::GroupByQuerySelection,
+siddhi_GroupByQuerySelection_strategy = st.builds(
+    siddhi_GroupByQuerySelection,
 )
-siddhi::StandardStream_strategy = st.builds(
-    siddhi::StandardStream,
+siddhi_StandardStream_strategy = st.builds(
+    siddhi_StandardStream,
 )
 BY_strategy = st.builds(
     BY,
 )
-siddhi::GroupBy_strategy = st.builds(
-    siddhi::GroupBy,
+siddhi_GroupBy_strategy = st.builds(
+    siddhi_GroupBy,
 )
-siddhi::PropertyName_strategy = st.builds(
-    siddhi::PropertyName,
+siddhi_PropertyName_strategy = st.builds(
+    siddhi_PropertyName,
 )
-siddhi::AnnotationElement_strategy = st.builds(
-    siddhi::AnnotationElement,
+siddhi_AnnotationElement_strategy = st.builds(
+    siddhi_AnnotationElement,
 )
-siddhi::Name_strategy = st.builds(
-    siddhi::Name,
+siddhi_Name_strategy = st.builds(
+    siddhi_Name,
     na=
         safe_text
 )
 YEARS_strategy = st.builds(
     YEARS,
 )
-siddhi::YearValue_strategy = st.builds(
-    siddhi::YearValue,
+siddhi_YearValue_strategy = st.builds(
+    siddhi_YearValue,
 )
 MONTHS_strategy = st.builds(
     MONTHS,
 )
-siddhi::MonthValue_strategy = st.builds(
-    siddhi::MonthValue,
+siddhi_MonthValue_strategy = st.builds(
+    siddhi_MonthValue,
 )
 WEEKS_strategy = st.builds(
     WEEKS,
 )
-siddhi::WeekValue_strategy = st.builds(
-    siddhi::WeekValue,
+siddhi_WeekValue_strategy = st.builds(
+    siddhi_WeekValue,
 )
 DAYS_strategy = st.builds(
     DAYS,
 )
-siddhi::DayValue_strategy = st.builds(
-    siddhi::DayValue,
+siddhi_DayValue_strategy = st.builds(
+    siddhi_DayValue,
 )
 HOURS_strategy = st.builds(
     HOURS,
 )
-siddhi::HourValue_strategy = st.builds(
-    siddhi::HourValue,
+siddhi_HourValue_strategy = st.builds(
+    siddhi_HourValue,
 )
 MINUTES_strategy = st.builds(
     MINUTES,
 )
-siddhi::MinuteValue_strategy = st.builds(
-    siddhi::MinuteValue,
+siddhi_MinuteValue_strategy = st.builds(
+    siddhi_MinuteValue,
 )
 SECONDS_strategy = st.builds(
     SECONDS,
 )
-siddhi::SecondValue_strategy = st.builds(
-    siddhi::SecondValue,
+siddhi_SecondValue_strategy = st.builds(
+    siddhi_SecondValue,
 )
 AggregationTime_strategy = st.builds(
     AggregationTime,
 )
-siddhi::AggregationTimeRange_strategy = st.builds(
-    siddhi::AggregationTimeRange,
+siddhi_AggregationTimeRange_strategy = st.builds(
+    siddhi_AggregationTimeRange,
 )
-siddhi::AggregationTimeInterval_strategy = st.builds(
-    siddhi::AggregationTimeInterval,
+siddhi_AggregationTimeInterval_strategy = st.builds(
+    siddhi_AggregationTimeInterval,
 )
-siddhi::AggregationTimeDuration_strategy = st.builds(
-    siddhi::AggregationTimeDuration,
+siddhi_AggregationTimeDuration_strategy = st.builds(
+    siddhi_AggregationTimeDuration,
 )
-siddhi::AggregationTime_strategy = st.builds(
-    siddhi::AggregationTime,
+siddhi_AggregationTime_strategy = st.builds(
+    siddhi_AggregationTime,
 )
 OUTPUT_strategy = st.builds(
     OUTPUT,
 )
-siddhi::OutputRate_strategy = st.builds(
-    siddhi::OutputRate,
+siddhi_OutputRate_strategy = st.builds(
+    siddhi_OutputRate,
 )
 WINDOW_strategy = st.builds(
     WINDOW,
 )
-siddhi::Win_strategy = st.builds(
-    siddhi::Win,
+siddhi_Win_strategy = st.builds(
+    siddhi_Win,
 )
-siddhi::BasicSourceStreamHandlers1_strategy = st.builds(
-    siddhi::BasicSourceStreamHandlers1,
+siddhi_BasicSourceStreamHandlers1_strategy = st.builds(
+    siddhi_BasicSourceStreamHandlers1,
 )
 AGGREGATE_strategy = st.builds(
     AGGREGATE,
@@ -7015,51 +7015,51 @@ FROM_strategy = st.builds(
 AGGREGATION_strategy = st.builds(
     AGGREGATION,
 )
-siddhi::FunctionBody_strategy = st.builds(
-    siddhi::FunctionBody,
+siddhi_FunctionBody_strategy = st.builds(
+    siddhi_FunctionBody,
     value=
         safe_text
 )
-siddhi::AttributeType_strategy = st.builds(
-    siddhi::AttributeType,
+siddhi_AttributeType_strategy = st.builds(
+    siddhi_AttributeType,
 )
-siddhi::LanguageName_strategy = st.builds(
-    siddhi::LanguageName,
+siddhi_LanguageName_strategy = st.builds(
+    siddhi_LanguageName,
     id=
         safe_text
 )
-siddhi::FunctionName_strategy = st.builds(
-    siddhi::FunctionName,
+siddhi_FunctionName_strategy = st.builds(
+    siddhi_FunctionName,
     id=
         safe_text
 )
 RETURN_strategy = st.builds(
     RETURN,
 )
-siddhi::QueryOutput_strategy = st.builds(
-    siddhi::QueryOutput,
+siddhi_AnonymousStream_strategy = st.builds(
+    siddhi_AnonymousStream,
 )
-siddhi::AnonymousStream_strategy = st.builds(
-    siddhi::AnonymousStream,
+siddhi_QueryOutput_strategy = st.builds(
+    siddhi_QueryOutput,
 )
 FUNCTION_strategy = st.builds(
     FUNCTION,
 )
-siddhi::StringValue_strategy = st.builds(
-    siddhi::StringValue,
+siddhi_StringValue_strategy = st.builds(
+    siddhi_StringValue,
     sl=
         safe_text
 )
-siddhi::TimeValue_strategy = st.builds(
-    siddhi::TimeValue,
+siddhi_TimeValue_strategy = st.builds(
+    siddhi_TimeValue,
 )
-siddhi::EVERY_strategy = st.builds(
-    siddhi::EVERY,
+siddhi_EVERY_strategy = st.builds(
+    siddhi_EVERY,
     every1=
         safe_text
 )
-siddhi::TriggerName_strategy = st.builds(
-    siddhi::TriggerName,
+siddhi_TriggerName_strategy = st.builds(
+    siddhi_TriggerName,
     id=
         safe_text
 )
@@ -7069,31 +7069,31 @@ AT_strategy = st.builds(
 TRIGGER_strategy = st.builds(
     TRIGGER,
 )
-siddhi::OutputEventType_strategy = st.builds(
-    siddhi::OutputEventType,
+siddhi_OutputEventType_strategy = st.builds(
+    siddhi_OutputEventType,
 )
-siddhi::FunctionOperation_strategy = st.builds(
-    siddhi::FunctionOperation,
+siddhi_FunctionOperation_strategy = st.builds(
+    siddhi_FunctionOperation,
 )
-siddhi::AppAnnotation_strategy = st.builds(
-    siddhi::AppAnnotation,
+siddhi_AppAnnotation_strategy = st.builds(
+    siddhi_AppAnnotation,
 )
-siddhi::ExecutionPlan_strategy = st.builds(
-    siddhi::ExecutionPlan,
+siddhi_ExecutionPlan_strategy = st.builds(
+    siddhi_ExecutionPlan,
 )
 TABLE_strategy = st.builds(
     TABLE,
 )
-siddhi::Features_strategy = st.builds(
-    siddhi::Features,
+siddhi_Features_strategy = st.builds(
+    siddhi_Features,
 )
-siddhi::Source1_strategy = st.builds(
-    siddhi::Source1,
+siddhi_Source1_strategy = st.builds(
+    siddhi_Source1,
     inner=
         safe_text
 )
-siddhi::Annotation_strategy = st.builds(
-    siddhi::Annotation,
+siddhi_Annotation_strategy = st.builds(
+    siddhi_Annotation,
 )
 STREAM_strategy = st.builds(
     STREAM,
@@ -7101,1064 +7101,54 @@ STREAM_strategy = st.builds(
 DEFINE_strategy = st.builds(
     DEFINE,
 )
-siddhi::Keyword_strategy = st.builds(
-    siddhi::Keyword,
+siddhi_DefinitionStream_strategy = st.builds(
+    siddhi_DefinitionStream,
 )
-siddhi::DefinitionTable_strategy = st.builds(
-    siddhi::DefinitionTable,
+siddhi_DefinitionTable_strategy = st.builds(
+    siddhi_DefinitionTable,
 )
-siddhi::DefinitionStream_strategy = st.builds(
-    siddhi::DefinitionStream,
+siddhi_Keyword_strategy = st.builds(
+    siddhi_Keyword,
 )
-siddhi::Query_strategy = st.builds(
-    siddhi::Query,
+siddhi_Query_strategy = st.builds(
+    siddhi_Query,
 )
-siddhi::ExecPartition_strategy = st.builds(
-    siddhi::ExecPartition,
+siddhi_ExecPartition_strategy = st.builds(
+    siddhi_ExecPartition,
 )
-siddhi::ExecutionElement_strategy = st.builds(
-    siddhi::ExecutionElement,
+siddhi_ExecutionElement_strategy = st.builds(
+    siddhi_ExecutionElement,
 )
-siddhi::DefinitionAggregation_strategy = st.builds(
-    siddhi::DefinitionAggregation,
+siddhi_DefinitionAggregation_strategy = st.builds(
+    siddhi_DefinitionAggregation,
 )
-siddhi::DefinitionFunction_strategy = st.builds(
-    siddhi::DefinitionFunction,
+siddhi_DefinitionFunction_strategy = st.builds(
+    siddhi_DefinitionFunction,
 )
-siddhi::DefinitionTrigger_strategy = st.builds(
-    siddhi::DefinitionTrigger,
+siddhi_DefinitionTrigger_strategy = st.builds(
+    siddhi_DefinitionTrigger,
 )
-siddhi::DefinitionWindow_strategy = st.builds(
-    siddhi::DefinitionWindow,
+siddhi_DefinitionWindow_strategy = st.builds(
+    siddhi_DefinitionWindow,
 )
-siddhi::SiddhiQL_strategy = st.builds(
-    siddhi::SiddhiQL,
+siddhi_SiddhiQL_strategy = st.builds(
+    siddhi_SiddhiQL,
 )
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-@settings(max_examples=50)
-def test_siddhi::milliseconds_instantiation(instance):
-    assert isinstance(instance, siddhi::MILLISECONDS)
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-def test_siddhi::milliseconds_millisec_type(instance):
-    assert isinstance(instance.millisec, str)
-
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-def test_siddhi::milliseconds_millisec_setter(instance):
-    original = instance.millisec
-    instance.millisec = original
-    assert instance.millisec == original
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-def test_siddhi::milliseconds_millisecond_type(instance):
-    assert isinstance(instance.millisecond, str)
-
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-def test_siddhi::milliseconds_millisecond_setter(instance):
-    original = instance.millisecond
-    instance.millisecond = original
-    assert instance.millisecond == original
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-def test_siddhi::milliseconds_milliseconds_type(instance):
-    assert isinstance(instance.milliseconds, str)
-
-
-@given(instance=siddhi::MILLISECONDS_strategy)
-def test_siddhi::milliseconds_milliseconds_setter(instance):
-    original = instance.milliseconds
-    instance.milliseconds = original
-    assert instance.milliseconds == original
-
-@given(instance=siddhi::SECONDS_strategy)
-@settings(max_examples=50)
-def test_siddhi::seconds_instantiation(instance):
-    assert isinstance(instance, siddhi::SECONDS)
-
-@given(instance=siddhi::SECONDS_strategy)
-def test_siddhi::seconds_sec_type(instance):
-    assert isinstance(instance.sec, str)
-
-
-@given(instance=siddhi::SECONDS_strategy)
-def test_siddhi::seconds_sec_setter(instance):
-    original = instance.sec
-    instance.sec = original
-    assert instance.sec == original
-
-@given(instance=siddhi::SECONDS_strategy)
-def test_siddhi::seconds_seconds_type(instance):
-    assert isinstance(instance.seconds, str)
-
-
-@given(instance=siddhi::SECONDS_strategy)
-def test_siddhi::seconds_seconds_setter(instance):
-    original = instance.seconds
-    instance.seconds = original
-    assert instance.seconds == original
-
-@given(instance=siddhi::SECONDS_strategy)
-def test_siddhi::seconds_second_type(instance):
-    assert isinstance(instance.second, str)
-
-
-@given(instance=siddhi::SECONDS_strategy)
-def test_siddhi::seconds_second_setter(instance):
-    original = instance.second
-    instance.second = original
-    assert instance.second == original
-
-@given(instance=siddhi::OUTER_strategy)
-@settings(max_examples=50)
-def test_siddhi::outer_instantiation(instance):
-    assert isinstance(instance, siddhi::OUTER)
-
-@given(instance=siddhi::OUTER_strategy)
-def test_siddhi::outer_outer_type(instance):
-    assert isinstance(instance.outer, str)
-
-
-@given(instance=siddhi::OUTER_strategy)
-def test_siddhi::outer_outer_setter(instance):
-    original = instance.outer
-    instance.outer = original
-    assert instance.outer == original
-
-@given(instance=siddhi::INNER_strategy)
-@settings(max_examples=50)
-def test_siddhi::inner_instantiation(instance):
-    assert isinstance(instance, siddhi::INNER)
-
-@given(instance=siddhi::INNER_strategy)
-def test_siddhi::inner_inner_type(instance):
-    assert isinstance(instance.inner, str)
-
-
-@given(instance=siddhi::INNER_strategy)
-def test_siddhi::inner_inner_setter(instance):
-    original = instance.inner
-    instance.inner = original
-    assert instance.inner == original
-
-@given(instance=siddhi::JOIN_strategy)
-@settings(max_examples=50)
-def test_siddhi::join_instantiation(instance):
-    assert isinstance(instance, siddhi::JOIN)
-
-@given(instance=siddhi::JOIN_strategy)
-def test_siddhi::join_join_type(instance):
-    assert isinstance(instance.join, str)
-
-
-@given(instance=siddhi::JOIN_strategy)
-def test_siddhi::join_join_setter(instance):
-    original = instance.join
-    instance.join = original
-    assert instance.join == original
-
-@given(instance=siddhi::FULL_strategy)
-@settings(max_examples=50)
-def test_siddhi::full_instantiation(instance):
-    assert isinstance(instance, siddhi::FULL)
-
-@given(instance=siddhi::FULL_strategy)
-def test_siddhi::full_full_type(instance):
-    assert isinstance(instance.full, str)
-
-
-@given(instance=siddhi::FULL_strategy)
-def test_siddhi::full_full_setter(instance):
-    original = instance.full
-    instance.full = original
-    assert instance.full == original
-
-@given(instance=siddhi::RIGHT_strategy)
-@settings(max_examples=50)
-def test_siddhi::right_instantiation(instance):
-    assert isinstance(instance, siddhi::RIGHT)
-
-@given(instance=siddhi::RIGHT_strategy)
-def test_siddhi::right_right_type(instance):
-    assert isinstance(instance.right, str)
-
-
-@given(instance=siddhi::RIGHT_strategy)
-def test_siddhi::right_right_setter(instance):
-    original = instance.right
-    instance.right = original
-    assert instance.right == original
-
-@given(instance=siddhi::LEFT_strategy)
-@settings(max_examples=50)
-def test_siddhi::left_instantiation(instance):
-    assert isinstance(instance, siddhi::LEFT)
-
-@given(instance=siddhi::LEFT_strategy)
-def test_siddhi::left_left_type(instance):
-    assert isinstance(instance.left, str)
-
-
-@given(instance=siddhi::LEFT_strategy)
-def test_siddhi::left_left_setter(instance):
-    original = instance.left
-    instance.left = original
-    assert instance.left == original
-
-@given(instance=siddhi::WITHIN_strategy)
-@settings(max_examples=50)
-def test_siddhi::within_instantiation(instance):
-    assert isinstance(instance, siddhi::WITHIN)
-
-@given(instance=siddhi::WITHIN_strategy)
-def test_siddhi::within_within_type(instance):
-    assert isinstance(instance.within, str)
-
-
-@given(instance=siddhi::WITHIN_strategy)
-def test_siddhi::within_within_setter(instance):
-    original = instance.within
-    instance.within = original
-    assert instance.within == original
-
-@given(instance=siddhi::YEARS_strategy)
-@settings(max_examples=50)
-def test_siddhi::years_instantiation(instance):
-    assert isinstance(instance, siddhi::YEARS)
-
-@given(instance=siddhi::YEARS_strategy)
-def test_siddhi::years_years_type(instance):
-    assert isinstance(instance.years, str)
-
-
-@given(instance=siddhi::YEARS_strategy)
-def test_siddhi::years_years_setter(instance):
-    original = instance.years
-    instance.years = original
-    assert instance.years == original
-
-@given(instance=siddhi::YEARS_strategy)
-def test_siddhi::years_year_type(instance):
-    assert isinstance(instance.year, str)
-
-
-@given(instance=siddhi::YEARS_strategy)
-def test_siddhi::years_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
-
-@given(instance=siddhi::PER_strategy)
-@settings(max_examples=50)
-def test_siddhi::per_instantiation(instance):
-    assert isinstance(instance, siddhi::PER)
-
-@given(instance=siddhi::PER_strategy)
-def test_siddhi::per_per_type(instance):
-    assert isinstance(instance.per, str)
-
-
-@given(instance=siddhi::PER_strategy)
-def test_siddhi::per_per_setter(instance):
-    original = instance.per
-    instance.per = original
-    assert instance.per == original
-
-@given(instance=siddhi::SET_strategy)
-@settings(max_examples=50)
-def test_siddhi::set_instantiation(instance):
-    assert isinstance(instance, siddhi::SET)
-
-@given(instance=siddhi::SET_strategy)
-def test_siddhi::set_set_type(instance):
-    assert isinstance(instance.set, str)
-
-
-@given(instance=siddhi::SET_strategy)
-def test_siddhi::set_set_setter(instance):
-    original = instance.set
-    instance.set = original
-    assert instance.set == original
-
-@given(instance=siddhi::AGGREGATE_strategy)
-@settings(max_examples=50)
-def test_siddhi::aggregate_instantiation(instance):
-    assert isinstance(instance, siddhi::AGGREGATE)
-
-@given(instance=siddhi::AGGREGATE_strategy)
-def test_siddhi::aggregate_agrregate_type(instance):
-    assert isinstance(instance.agrregate, str)
-
-
-@given(instance=siddhi::AGGREGATE_strategy)
-def test_siddhi::aggregate_agrregate_setter(instance):
-    original = instance.agrregate
-    instance.agrregate = original
-    assert instance.agrregate == original
-
-@given(instance=siddhi::AGGREGATION_strategy)
-@settings(max_examples=50)
-def test_siddhi::aggregation_instantiation(instance):
-    assert isinstance(instance, siddhi::AGGREGATION)
-
-@given(instance=siddhi::AGGREGATION_strategy)
-def test_siddhi::aggregation_aggre_type(instance):
-    assert isinstance(instance.aggre, str)
-
-
-@given(instance=siddhi::AGGREGATION_strategy)
-def test_siddhi::aggregation_aggre_setter(instance):
-    original = instance.aggre
-    instance.aggre = original
-    assert instance.aggre == original
-
-@given(instance=siddhi::WITH_strategy)
-@settings(max_examples=50)
-def test_siddhi::with_instantiation(instance):
-    assert isinstance(instance, siddhi::WITH)
-
-@given(instance=siddhi::WITH_strategy)
-def test_siddhi::with_wi_type(instance):
-    assert isinstance(instance.wi, str)
-
-
-@given(instance=siddhi::WITH_strategy)
-def test_siddhi::with_wi_setter(instance):
-    original = instance.wi
-    instance.wi = original
-    assert instance.wi == original
-
-@given(instance=siddhi::PARTITION_strategy)
-@settings(max_examples=50)
-def test_siddhi::partition_instantiation(instance):
-    assert isinstance(instance, siddhi::PARTITION)
-
-@given(instance=siddhi::PARTITION_strategy)
-def test_siddhi::partition_partition_type(instance):
-    assert isinstance(instance.partition, str)
-
-
-@given(instance=siddhi::PARTITION_strategy)
-def test_siddhi::partition_partition_setter(instance):
-    original = instance.partition
-    instance.partition = original
-    assert instance.partition == original
-
-@given(instance=siddhi::END_strategy)
-@settings(max_examples=50)
-def test_siddhi::end_instantiation(instance):
-    assert isinstance(instance, siddhi::END)
-
-@given(instance=siddhi::END_strategy)
-def test_siddhi::end_end_type(instance):
-    assert isinstance(instance.end, str)
-
-
-@given(instance=siddhi::END_strategy)
-def test_siddhi::end_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
-
-@given(instance=siddhi::UPDATE_strategy)
-@settings(max_examples=50)
-def test_siddhi::update_instantiation(instance):
-    assert isinstance(instance, siddhi::UPDATE)
-
-@given(instance=siddhi::UPDATE_strategy)
-def test_siddhi::update_update_type(instance):
-    assert isinstance(instance.update, str)
-
-
-@given(instance=siddhi::UPDATE_strategy)
-def test_siddhi::update_update_setter(instance):
-    original = instance.update
-    instance.update = original
-    assert instance.update == original
-
-@given(instance=siddhi::FOR_strategy)
-@settings(max_examples=50)
-def test_siddhi::for_instantiation(instance):
-    assert isinstance(instance, siddhi::FOR)
-
-@given(instance=siddhi::FOR_strategy)
-def test_siddhi::for_for__type(instance):
-    assert isinstance(instance.for_, str)
-
-
-@given(instance=siddhi::FOR_strategy)
-def test_siddhi::for_for__setter(instance):
-    original = instance.for_
-    instance.for_ = original
-    assert instance.for_ == original
-
-@given(instance=siddhi::DELETE_strategy)
-@settings(max_examples=50)
-def test_siddhi::delete_instantiation(instance):
-    assert isinstance(instance, siddhi::DELETE)
-
-@given(instance=siddhi::DELETE_strategy)
-def test_siddhi::delete_delete_type(instance):
-    assert isinstance(instance.delete, str)
-
-
-@given(instance=siddhi::DELETE_strategy)
-def test_siddhi::delete_delete_setter(instance):
-    original = instance.delete
-    instance.delete = original
-    assert instance.delete == original
-
-@given(instance=siddhi::PLAN_strategy)
-@settings(max_examples=50)
-def test_siddhi::plan_instantiation(instance):
-    assert isinstance(instance, siddhi::PLAN)
-
-@given(instance=siddhi::PLAN_strategy)
-def test_siddhi::plan_plan_type(instance):
-    assert isinstance(instance.plan, str)
-
-
-@given(instance=siddhi::PLAN_strategy)
-def test_siddhi::plan_plan_setter(instance):
-    original = instance.plan
-    instance.plan = original
-    assert instance.plan == original
-
-@given(instance=siddhi::BEGIN_strategy)
-@settings(max_examples=50)
-def test_siddhi::begin_instantiation(instance):
-    assert isinstance(instance, siddhi::BEGIN)
-
-@given(instance=siddhi::BEGIN_strategy)
-def test_siddhi::begin_begin_type(instance):
-    assert isinstance(instance.begin, str)
-
-
-@given(instance=siddhi::BEGIN_strategy)
-def test_siddhi::begin_begin_setter(instance):
-    original = instance.begin
-    instance.begin = original
-    assert instance.begin == original
-
-@given(instance=siddhi::INTO_strategy)
-@settings(max_examples=50)
-def test_siddhi::into_instantiation(instance):
-    assert isinstance(instance, siddhi::INTO)
-
-@given(instance=siddhi::INTO_strategy)
-def test_siddhi::into_into_type(instance):
-    assert isinstance(instance.into, str)
-
-
-@given(instance=siddhi::INTO_strategy)
-def test_siddhi::into_into_setter(instance):
-    original = instance.into
-    instance.into = original
-    assert instance.into == original
-
-@given(instance=siddhi::INSERT_strategy)
-@settings(max_examples=50)
-def test_siddhi::insert_instantiation(instance):
-    assert isinstance(instance, siddhi::INSERT)
-
-@given(instance=siddhi::INSERT_strategy)
-def test_siddhi::insert_insert_type(instance):
-    assert isinstance(instance.insert, str)
-
-
-@given(instance=siddhi::INSERT_strategy)
-def test_siddhi::insert_insert_setter(instance):
-    original = instance.insert
-    instance.insert = original
-    assert instance.insert == original
-
-@given(instance=siddhi::FIRST_strategy)
-@settings(max_examples=50)
-def test_siddhi::first_instantiation(instance):
-    assert isinstance(instance, siddhi::FIRST)
-
-@given(instance=siddhi::FIRST_strategy)
-def test_siddhi::first_first_type(instance):
-    assert isinstance(instance.first, str)
-
-
-@given(instance=siddhi::FIRST_strategy)
-def test_siddhi::first_first_setter(instance):
-    original = instance.first
-    instance.first = original
-    assert instance.first == original
-
-@given(instance=siddhi::SNAPSHOT_strategy)
-@settings(max_examples=50)
-def test_siddhi::snapshot_instantiation(instance):
-    assert isinstance(instance, siddhi::SNAPSHOT)
-
-@given(instance=siddhi::SNAPSHOT_strategy)
-def test_siddhi::snapshot_snapshot_type(instance):
-    assert isinstance(instance.snapshot, str)
-
-
-@given(instance=siddhi::SNAPSHOT_strategy)
-def test_siddhi::snapshot_snapshot_setter(instance):
-    original = instance.snapshot
-    instance.snapshot = original
-    assert instance.snapshot == original
-
-@given(instance=siddhi::HAVING_strategy)
-@settings(max_examples=50)
-def test_siddhi::having_instantiation(instance):
-    assert isinstance(instance, siddhi::HAVING)
-
-@given(instance=siddhi::HAVING_strategy)
-def test_siddhi::having_having_type(instance):
-    assert isinstance(instance.having, str)
-
-
-@given(instance=siddhi::HAVING_strategy)
-def test_siddhi::having_having_setter(instance):
-    original = instance.having
-    instance.having = original
-    assert instance.having == original
-
-@given(instance=siddhi::BY_strategy)
-@settings(max_examples=50)
-def test_siddhi::by_instantiation(instance):
-    assert isinstance(instance, siddhi::BY)
-
-@given(instance=siddhi::BY_strategy)
-def test_siddhi::by_by_type(instance):
-    assert isinstance(instance.by, str)
-
-
-@given(instance=siddhi::BY_strategy)
-def test_siddhi::by_by_setter(instance):
-    original = instance.by
-    instance.by = original
-    assert instance.by == original
-
-@given(instance=siddhi::GROUP_strategy)
-@settings(max_examples=50)
-def test_siddhi::group_instantiation(instance):
-    assert isinstance(instance, siddhi::GROUP)
-
-@given(instance=siddhi::GROUP_strategy)
-def test_siddhi::group_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=siddhi::GROUP_strategy)
-def test_siddhi::group_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=siddhi::SELECT_strategy)
-@settings(max_examples=50)
-def test_siddhi::select_instantiation(instance):
-    assert isinstance(instance, siddhi::SELECT)
-
-@given(instance=siddhi::SELECT_strategy)
-def test_siddhi::select_select_type(instance):
-    assert isinstance(instance.select, str)
-
-
-@given(instance=siddhi::SELECT_strategy)
-def test_siddhi::select_select_setter(instance):
-    original = instance.select
-    instance.select = original
-    assert instance.select == original
-
-@given(instance=siddhi::DOUBLE_strategy)
-@settings(max_examples=50)
-def test_siddhi::double_instantiation(instance):
-    assert isinstance(instance, siddhi::DOUBLE)
-
-@given(instance=siddhi::DOUBLE_strategy)
-def test_siddhi::double_double_type(instance):
-    assert isinstance(instance.double, str)
-
-
-@given(instance=siddhi::DOUBLE_strategy)
-def test_siddhi::double_double_setter(instance):
-    original = instance.double
-    instance.double = original
-    assert instance.double == original
-
-@given(instance=siddhi::LONG_strategy)
-@settings(max_examples=50)
-def test_siddhi::long_instantiation(instance):
-    assert isinstance(instance, siddhi::LONG)
-
-@given(instance=siddhi::LONG_strategy)
-def test_siddhi::long_long_type(instance):
-    assert isinstance(instance.long, str)
-
-
-@given(instance=siddhi::LONG_strategy)
-def test_siddhi::long_long_setter(instance):
-    original = instance.long
-    instance.long = original
-    assert instance.long == original
-
-@given(instance=siddhi::INTS_strategy)
-@settings(max_examples=50)
-def test_siddhi::ints_instantiation(instance):
-    assert isinstance(instance, siddhi::INTS)
-
-@given(instance=siddhi::INTS_strategy)
-def test_siddhi::ints_int_type(instance):
-    assert isinstance(instance.int, str)
-
-
-@given(instance=siddhi::INTS_strategy)
-def test_siddhi::ints_int_setter(instance):
-    original = instance.int
-    instance.int = original
-    assert instance.int == original
-
-@given(instance=siddhi::STRINGS_strategy)
-@settings(max_examples=50)
-def test_siddhi::strings_instantiation(instance):
-    assert isinstance(instance, siddhi::STRINGS)
-
-@given(instance=siddhi::STRINGS_strategy)
-def test_siddhi::strings_string_type(instance):
-    assert isinstance(instance.string, str)
-
-
-@given(instance=siddhi::STRINGS_strategy)
-def test_siddhi::strings_string_setter(instance):
-    original = instance.string
-    instance.string = original
-    assert instance.string == original
-
-@given(instance=siddhi::OUTPUT_strategy)
-@settings(max_examples=50)
-def test_siddhi::output_instantiation(instance):
-    assert isinstance(instance, siddhi::OUTPUT)
-
-@given(instance=siddhi::OUTPUT_strategy)
-def test_siddhi::output_output_type(instance):
-    assert isinstance(instance.output, str)
-
-
-@given(instance=siddhi::OUTPUT_strategy)
-def test_siddhi::output_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
-
-@given(instance=siddhi::WINDOW_strategy)
-@settings(max_examples=50)
-def test_siddhi::window_instantiation(instance):
-    assert isinstance(instance, siddhi::WINDOW)
-
-@given(instance=siddhi::WINDOW_strategy)
-def test_siddhi::window_window_type(instance):
-    assert isinstance(instance.window, str)
-
-
-@given(instance=siddhi::WINDOW_strategy)
-def test_siddhi::window_window_setter(instance):
-    original = instance.window
-    instance.window = original
-    assert instance.window == original
-
-@given(instance=siddhi::TABLE_strategy)
-@settings(max_examples=50)
-def test_siddhi::table_instantiation(instance):
-    assert isinstance(instance, siddhi::TABLE)
-
-@given(instance=siddhi::TABLE_strategy)
-def test_siddhi::table_table_type(instance):
-    assert isinstance(instance.table, str)
-
-
-@given(instance=siddhi::TABLE_strategy)
-def test_siddhi::table_table_setter(instance):
-    original = instance.table
-    instance.table = original
-    assert instance.table == original
-
-@given(instance=siddhi::FROM_strategy)
-@settings(max_examples=50)
-def test_siddhi::from_instantiation(instance):
-    assert isinstance(instance, siddhi::FROM)
-
-@given(instance=siddhi::FROM_strategy)
-def test_siddhi::from_from__type(instance):
-    assert isinstance(instance.from_, str)
-
-
-@given(instance=siddhi::FROM_strategy)
-def test_siddhi::from_from__setter(instance):
-    original = instance.from_
-    instance.from_ = original
-    assert instance.from_ == original
-
-@given(instance=siddhi::RETURN_strategy)
-@settings(max_examples=50)
-def test_siddhi::return_instantiation(instance):
-    assert isinstance(instance, siddhi::RETURN)
-
-@given(instance=siddhi::RETURN_strategy)
-def test_siddhi::return_return__type(instance):
-    assert isinstance(instance.return_, str)
-
-
-@given(instance=siddhi::RETURN_strategy)
-def test_siddhi::return_return__setter(instance):
-    original = instance.return_
-    instance.return_ = original
-    assert instance.return_ == original
-
-@given(instance=siddhi::FUNCTION_strategy)
-@settings(max_examples=50)
-def test_siddhi::function_instantiation(instance):
-    assert isinstance(instance, siddhi::FUNCTION)
-
-@given(instance=siddhi::FUNCTION_strategy)
-def test_siddhi::function_function_type(instance):
-    assert isinstance(instance.function, str)
-
-
-@given(instance=siddhi::FUNCTION_strategy)
-def test_siddhi::function_function_setter(instance):
-    original = instance.function
-    instance.function = original
-    assert instance.function == original
-
-@given(instance=siddhi::AT_strategy)
-@settings(max_examples=50)
-def test_siddhi::at_instantiation(instance):
-    assert isinstance(instance, siddhi::AT)
-
-@given(instance=siddhi::AT_strategy)
-def test_siddhi::at_at_type(instance):
-    assert isinstance(instance.at, str)
-
-
-@given(instance=siddhi::AT_strategy)
-def test_siddhi::at_at_setter(instance):
-    original = instance.at
-    instance.at = original
-    assert instance.at == original
-
-@given(instance=siddhi::TRIGGER_strategy)
-@settings(max_examples=50)
-def test_siddhi::trigger_instantiation(instance):
-    assert isinstance(instance, siddhi::TRIGGER)
-
-@given(instance=siddhi::TRIGGER_strategy)
-def test_siddhi::trigger_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
-
-
-@given(instance=siddhi::TRIGGER_strategy)
-def test_siddhi::trigger_trigger_setter(instance):
-    original = instance.trigger
-    instance.trigger = original
-    assert instance.trigger == original
-
-@given(instance=siddhi::NULL_strategy)
-@settings(max_examples=50)
-def test_siddhi::null_instantiation(instance):
-    assert isinstance(instance, siddhi::NULL)
-
-@given(instance=siddhi::NULL_strategy)
-def test_siddhi::null_null_type(instance):
-    assert isinstance(instance.null, str)
-
-
-@given(instance=siddhi::NULL_strategy)
-def test_siddhi::null_null_setter(instance):
-    original = instance.null
-    instance.null = original
-    assert instance.null == original
-
-@given(instance=siddhi::IS_strategy)
-@settings(max_examples=50)
-def test_siddhi::is_instantiation(instance):
-    assert isinstance(instance, siddhi::IS)
-
-@given(instance=siddhi::IS_strategy)
-def test_siddhi::is_is__type(instance):
-    assert isinstance(instance.is_, str)
-
-
-@given(instance=siddhi::IS_strategy)
-def test_siddhi::is_is__setter(instance):
-    original = instance.is_
-    instance.is_ = original
-    assert instance.is_ == original
-
-@given(instance=siddhi::LAST_strategy)
-@settings(max_examples=50)
-def test_siddhi::last_instantiation(instance):
-    assert isinstance(instance, siddhi::LAST)
-
-@given(instance=siddhi::LAST_strategy)
-def test_siddhi::last_last_type(instance):
-    assert isinstance(instance.last, str)
-
-
-@given(instance=siddhi::LAST_strategy)
-def test_siddhi::last_last_setter(instance):
-    original = instance.last
-    instance.last = original
-    assert instance.last == original
-
-@given(instance=siddhi::CURRENT_strategy)
-@settings(max_examples=50)
-def test_siddhi::current_instantiation(instance):
-    assert isinstance(instance, siddhi::CURRENT)
-
-@given(instance=siddhi::CURRENT_strategy)
-def test_siddhi::current_currt_type(instance):
-    assert isinstance(instance.currt, str)
-
-
-@given(instance=siddhi::CURRENT_strategy)
-def test_siddhi::current_currt_setter(instance):
-    original = instance.currt
-    instance.currt = original
-    assert instance.currt == original
-
-@given(instance=siddhi::EXPIRED_strategy)
-@settings(max_examples=50)
-def test_siddhi::expired_instantiation(instance):
-    assert isinstance(instance, siddhi::EXPIRED)
-
-@given(instance=siddhi::EXPIRED_strategy)
-def test_siddhi::expired_expired_type(instance):
-    assert isinstance(instance.expired, str)
-
-
-@given(instance=siddhi::EXPIRED_strategy)
-def test_siddhi::expired_expired_setter(instance):
-    original = instance.expired
-    instance.expired = original
-    assert instance.expired == original
-
-@given(instance=siddhi::RAW_strategy)
-@settings(max_examples=50)
-def test_siddhi::raw_instantiation(instance):
-    assert isinstance(instance, siddhi::RAW)
-
-@given(instance=siddhi::RAW_strategy)
-def test_siddhi::raw_raw_type(instance):
-    assert isinstance(instance.raw, str)
-
-
-@given(instance=siddhi::RAW_strategy)
-def test_siddhi::raw_raw_setter(instance):
-    original = instance.raw
-    instance.raw = original
-    assert instance.raw == original
-
-@given(instance=siddhi::EVENTS_strategy)
-@settings(max_examples=50)
-def test_siddhi::events_instantiation(instance):
-    assert isinstance(instance, siddhi::EVENTS)
-
-@given(instance=siddhi::EVENTS_strategy)
-def test_siddhi::events_events_type(instance):
-    assert isinstance(instance.events, str)
-
-
-@given(instance=siddhi::EVENTS_strategy)
-def test_siddhi::events_events_setter(instance):
-    original = instance.events
-    instance.events = original
-    assert instance.events == original
-
-@given(instance=siddhi::ALL_strategy)
-@settings(max_examples=50)
-def test_siddhi::all_instantiation(instance):
-    assert isinstance(instance, siddhi::ALL)
-
-@given(instance=siddhi::ALL_strategy)
-def test_siddhi::all_all_type(instance):
-    assert isinstance(instance.all, str)
-
-
-@given(instance=siddhi::ALL_strategy)
-def test_siddhi::all_all_setter(instance):
-    original = instance.all
-    instance.all = original
-    assert instance.all == original
-
-@given(instance=siddhi::OBJECT_strategy)
-@settings(max_examples=50)
-def test_siddhi::object_instantiation(instance):
-    assert isinstance(instance, siddhi::OBJECT)
-
-@given(instance=siddhi::OBJECT_strategy)
-def test_siddhi::object_object_type(instance):
-    assert isinstance(instance.object, str)
-
-
-@given(instance=siddhi::OBJECT_strategy)
-def test_siddhi::object_object_setter(instance):
-    original = instance.object
-    instance.object = original
-    assert instance.object == original
-
-@given(instance=siddhi::BOOL_strategy)
-@settings(max_examples=50)
-def test_siddhi::bool_instantiation(instance):
-    assert isinstance(instance, siddhi::BOOL)
-
-@given(instance=siddhi::BOOL_strategy)
-def test_siddhi::bool_bool_type(instance):
-    assert isinstance(instance.bool, str)
-
-
-@given(instance=siddhi::BOOL_strategy)
-def test_siddhi::bool_bool_setter(instance):
-    original = instance.bool
-    instance.bool = original
-    assert instance.bool == original
-
-@given(instance=siddhi::FLOAT_strategy)
-@settings(max_examples=50)
-def test_siddhi::float_instantiation(instance):
-    assert isinstance(instance, siddhi::FLOAT)
-
-@given(instance=siddhi::FLOAT_strategy)
-def test_siddhi::float_float_type(instance):
-    assert isinstance(instance.float, str)
-
-
-@given(instance=siddhi::FLOAT_strategy)
-def test_siddhi::float_float_setter(instance):
-    original = instance.float
-    instance.float = original
-    assert instance.float == original
-
-@given(instance=EveryAbsentSequenceSourceChain_strategy)
-@settings(max_examples=50)
-def test_everyabsentsequencesourcechain_instantiation(instance):
-    assert isinstance(instance, EveryAbsentSequenceSourceChain)
-
-@given(instance=EverySequenceSourceChain_strategy)
-@settings(max_examples=50)
-def test_everysequencesourcechain_instantiation(instance):
-    assert isinstance(instance, EverySequenceSourceChain)
-
-@given(instance=BasicAbsentPatternSource_strategy)
-@settings(max_examples=50)
-def test_basicabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, BasicAbsentPatternSource)
-
-@given(instance=siddhi::DEFINE_strategy)
-@settings(max_examples=50)
-def test_siddhi::define_instantiation(instance):
-    assert isinstance(instance, siddhi::DEFINE)
-
-@given(instance=siddhi::DEFINE_strategy)
-def test_siddhi::define_define_type(instance):
-    assert isinstance(instance.define, str)
-
-
-@given(instance=siddhi::DEFINE_strategy)
-def test_siddhi::define_define_setter(instance):
-    original = instance.define
-    instance.define = original
-    assert instance.define == original
-
-@given(instance=siddhi::STREAM_strategy)
-@settings(max_examples=50)
-def test_siddhi::stream_instantiation(instance):
-    assert isinstance(instance, siddhi::STREAM)
-
-@given(instance=siddhi::STREAM_strategy)
-def test_siddhi::stream_str_type(instance):
-    assert isinstance(instance.str, str)
-
-
-@given(instance=siddhi::STREAM_strategy)
-def test_siddhi::stream_str_setter(instance):
-    original = instance.str
-    instance.str = original
-    assert instance.str == original
-
-@given(instance=AppAnnotation_strategy)
-@settings(max_examples=50)
-def test_appannotation_instantiation(instance):
-    assert isinstance(instance, AppAnnotation)
-
-@given(instance=siddhi::APP_strategy)
-@settings(max_examples=50)
-def test_siddhi::app_instantiation(instance):
-    assert isinstance(instance, siddhi::APP)
-
-@given(instance=siddhi::APP_strategy)
-def test_siddhi::app_ap_type(instance):
-    assert isinstance(instance.ap, str)
-
-
-@given(instance=siddhi::APP_strategy)
-def test_siddhi::app_ap_setter(instance):
-    original = instance.ap
-    instance.ap = original
-    assert instance.ap == original
-
-@given(instance=siddhi::IN_strategy)
-@settings(max_examples=50)
-def test_siddhi::in_instantiation(instance):
-    assert isinstance(instance, siddhi::IN)
-
-@given(instance=siddhi::IN_strategy)
-def test_siddhi::in_in__type(instance):
-    assert isinstance(instance.in_, str)
-
-
-@given(instance=siddhi::IN_strategy)
-def test_siddhi::in_in__setter(instance):
-    original = instance.in_
-    instance.in_ = original
-    assert instance.in_ == original
-
-@given(instance=RightAbsentPatternSource_strategy)
-@settings(max_examples=50)
-def test_rightabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, RightAbsentPatternSource)
-
-@given(instance=LeftAbsentPatternSource_strategy)
-@settings(max_examples=50)
-def test_leftabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, LeftAbsentPatternSource)
-
-@given(instance=EveryAbsentPatternSource_strategy)
-@settings(max_examples=50)
-def test_everyabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, EveryAbsentPatternSource)
-
-@given(instance=LogicalAbsentStatefulSource_strategy)
-@settings(max_examples=50)
-def test_logicalabsentstatefulsource_instantiation(instance):
-    assert isinstance(instance, LogicalAbsentStatefulSource)
 
 @given(instance=Name_strategy)
 @settings(max_examples=50)
 def test_name_instantiation(instance):
     assert isinstance(instance, Name)
 
-@given(instance=siddhi::L_strategy)
+@given(instance=siddhi_L_strategy)
 @settings(max_examples=50)
-def test_siddhi::l_instantiation(instance):
-    assert isinstance(instance, siddhi::L)
-
-@given(instance=siddhi::L_strategy)
-def test_siddhi::l_l_type(instance):
-    assert isinstance(instance.l, str)
+def test_siddhi_l_instantiation(instance):
+    assert isinstance(instance, siddhi_L)
 
 
-@given(instance=siddhi::L_strategy)
-def test_siddhi::l_l_setter(instance):
+
+@given(instance=siddhi_L_strategy)
+def test_siddhi_l_l_setter(instance):
     original = instance.l
     instance.l = original
     assert instance.l == original
@@ -8168,23 +7158,20 @@ def test_siddhi::l_l_setter(instance):
 def test_signedlongvalue_instantiation(instance):
     assert isinstance(instance, SignedLongValue)
 
-@given(instance=siddhi::LONG::LITERAL_strategy)
+@given(instance=siddhi_LONG_LITERAL_strategy)
 @settings(max_examples=50)
-def test_siddhi::long::literal_instantiation(instance):
-    assert isinstance(instance, siddhi::LONG::LITERAL)
+def test_siddhi_long_literal_instantiation(instance):
+    assert isinstance(instance, siddhi_LONG_LITERAL)
 
-@given(instance=siddhi::F_strategy)
+@given(instance=siddhi_F_strategy)
 @settings(max_examples=50)
-def test_siddhi::f_instantiation(instance):
-    assert isinstance(instance, siddhi::F)
-
-@given(instance=siddhi::F_strategy)
-def test_siddhi::f_f_type(instance):
-    assert isinstance(instance.f, str)
+def test_siddhi_f_instantiation(instance):
+    assert isinstance(instance, siddhi_F)
 
 
-@given(instance=siddhi::F_strategy)
-def test_siddhi::f_f_setter(instance):
+
+@given(instance=siddhi_F_strategy)
+def test_siddhi_f_f_setter(instance):
     original = instance.f
     instance.f = original
     assert instance.f == original
@@ -8194,39 +7181,33 @@ def test_siddhi::f_f_setter(instance):
 def test_signedfloatvalue_instantiation(instance):
     assert isinstance(instance, SignedFloatValue)
 
-@given(instance=siddhi::FLOAT::LITERAL_strategy)
+@given(instance=siddhi_FLOAT_LITERAL_strategy)
 @settings(max_examples=50)
-def test_siddhi::float::literal_instantiation(instance):
-    assert isinstance(instance, siddhi::FLOAT::LITERAL)
+def test_siddhi_float_literal_instantiation(instance):
+    assert isinstance(instance, siddhi_FLOAT_LITERAL)
 
-@given(instance=siddhi::D_strategy)
+@given(instance=siddhi_D_strategy)
 @settings(max_examples=50)
-def test_siddhi::d_instantiation(instance):
-    assert isinstance(instance, siddhi::D)
-
-@given(instance=siddhi::D_strategy)
-def test_siddhi::d_d_type(instance):
-    assert isinstance(instance.d, str)
+def test_siddhi_d_instantiation(instance):
+    assert isinstance(instance, siddhi_D)
 
 
-@given(instance=siddhi::D_strategy)
-def test_siddhi::d_d_setter(instance):
+
+@given(instance=siddhi_D_strategy)
+def test_siddhi_d_d_setter(instance):
     original = instance.d
     instance.d = original
     assert instance.d == original
 
-@given(instance=siddhi::E_strategy)
+@given(instance=siddhi_E_strategy)
 @settings(max_examples=50)
-def test_siddhi::e_instantiation(instance):
-    assert isinstance(instance, siddhi::E)
-
-@given(instance=siddhi::E_strategy)
-def test_siddhi::e_e_type(instance):
-    assert isinstance(instance.e, str)
+def test_siddhi_e_instantiation(instance):
+    assert isinstance(instance, siddhi_E)
 
 
-@given(instance=siddhi::E_strategy)
-def test_siddhi::e_e_setter(instance):
+
+@given(instance=siddhi_E_strategy)
+def test_siddhi_e_e_setter(instance):
     original = instance.e
     instance.e = original
     assert instance.e == original
@@ -8236,35 +7217,30 @@ def test_siddhi::e_e_setter(instance):
 def test_signeddoublevalue_instantiation(instance):
     assert isinstance(instance, SignedDoubleValue)
 
-@given(instance=siddhi::DOUBLE::LITERAL_strategy)
+@given(instance=siddhi_DOUBLE_LITERAL_strategy)
 @settings(max_examples=50)
-def test_siddhi::double::literal_instantiation(instance):
-    assert isinstance(instance, siddhi::DOUBLE::LITERAL)
+def test_siddhi_double_literal_instantiation(instance):
+    assert isinstance(instance, siddhi_DOUBLE_LITERAL)
 
 @given(instance=MILLISECONDS_strategy)
 @settings(max_examples=50)
 def test_milliseconds_instantiation(instance):
     assert isinstance(instance, MILLISECONDS)
 
-@given(instance=siddhi::MillisecondValue_strategy)
+@given(instance=siddhi_FunctionId_strategy)
 @settings(max_examples=50)
-def test_siddhi::millisecondvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::MillisecondValue)
+def test_siddhi_functionid_instantiation(instance):
+    assert isinstance(instance, siddhi_FunctionId)
 
-@given(instance=siddhi::FunctionId_strategy)
+@given(instance=siddhi_FunctionNamespace_strategy)
 @settings(max_examples=50)
-def test_siddhi::functionid_instantiation(instance):
-    assert isinstance(instance, siddhi::FunctionId)
+def test_siddhi_functionnamespace_instantiation(instance):
+    assert isinstance(instance, siddhi_FunctionNamespace)
 
-@given(instance=siddhi::FunctionNamespace_strategy)
+@given(instance=siddhi_SignedLongValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::functionnamespace_instantiation(instance):
-    assert isinstance(instance, siddhi::FunctionNamespace)
-
-@given(instance=siddhi::SignedLongValue_strategy)
-@settings(max_examples=50)
-def test_siddhi::signedlongvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::SignedLongValue)
+def test_siddhi_signedlongvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_SignedLongValue)
 
 @given(instance=FALSE_strategy)
 @settings(max_examples=50)
@@ -8276,64 +7252,58 @@ def test_false_instantiation(instance):
 def test_true_instantiation(instance):
     assert isinstance(instance, TRUE)
 
-@given(instance=siddhi::AttributeList_strategy)
+@given(instance=siddhi_AttributeList_strategy)
 @settings(max_examples=50)
-def test_siddhi::attributelist_instantiation(instance):
-    assert isinstance(instance, siddhi::AttributeList)
+def test_siddhi_attributelist_instantiation(instance):
+    assert isinstance(instance, siddhi_AttributeList)
 
-@given(instance=siddhi::FeaturesOrOutAttr_strategy)
+@given(instance=siddhi_FeaturesOrOutAttr_strategy)
 @settings(max_examples=50)
-def test_siddhi::featuresoroutattr_instantiation(instance):
-    assert isinstance(instance, siddhi::FeaturesOrOutAttr)
-
-@given(instance=siddhi::FeaturesOrOutAttr_strategy)
-def test_siddhi::featuresoroutattr_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_siddhi_featuresoroutattr_instantiation(instance):
+    assert isinstance(instance, siddhi_FeaturesOrOutAttr)
 
 
-@given(instance=siddhi::FeaturesOrOutAttr_strategy)
-def test_siddhi::featuresoroutattr_name_setter(instance):
+
+@given(instance=siddhi_FeaturesOrOutAttr_strategy)
+def test_siddhi_featuresoroutattr_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=siddhi::FeaturesOrOutAttrReference_strategy)
+@given(instance=siddhi_FeaturesOrOutAttrReference_strategy)
 @settings(max_examples=50)
-def test_siddhi::featuresoroutattrreference_instantiation(instance):
-    assert isinstance(instance, siddhi::FeaturesOrOutAttrReference)
+def test_siddhi_featuresoroutattrreference_instantiation(instance):
+    assert isinstance(instance, siddhi_FeaturesOrOutAttrReference)
 
-@given(instance=siddhi::SignedFloatValue_strategy)
+@given(instance=siddhi_SignedFloatValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::signedfloatvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::SignedFloatValue)
+def test_siddhi_signedfloatvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_SignedFloatValue)
 
-@given(instance=siddhi::SignedDoubleValue_strategy)
+@given(instance=siddhi_SignedDoubleValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::signeddoublevalue_instantiation(instance):
-    assert isinstance(instance, siddhi::SignedDoubleValue)
+def test_siddhi_signeddoublevalue_instantiation(instance):
+    assert isinstance(instance, siddhi_SignedDoubleValue)
 
-@given(instance=siddhi::BoolValue_strategy)
+@given(instance=siddhi_BoolValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::boolvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::BoolValue)
+def test_siddhi_boolvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_BoolValue)
 
-@given(instance=siddhi::AttributeNameReference_strategy)
+@given(instance=siddhi_AttributeNameReference_strategy)
 @settings(max_examples=50)
-def test_siddhi::attributenamereference_instantiation(instance):
-    assert isinstance(instance, siddhi::AttributeNameReference)
+def test_siddhi_attributenamereference_instantiation(instance):
+    assert isinstance(instance, siddhi_AttributeNameReference)
 
-@given(instance=siddhi::Source1OrStandardStatefulSource_strategy)
+@given(instance=siddhi_Source1OrStandardStatefulSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::source1orstandardstatefulsource_instantiation(instance):
-    assert isinstance(instance, siddhi::Source1OrStandardStatefulSource)
-
-@given(instance=siddhi::Source1OrStandardStatefulSource_strategy)
-def test_siddhi::source1orstandardstatefulsource_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_siddhi_source1orstandardstatefulsource_instantiation(instance):
+    assert isinstance(instance, siddhi_Source1OrStandardStatefulSource)
 
 
-@given(instance=siddhi::Source1OrStandardStatefulSource_strategy)
-def test_siddhi::source1orstandardstatefulsource_name_setter(instance):
+
+@given(instance=siddhi_Source1OrStandardStatefulSource_strategy)
+def test_siddhi_source1orstandardstatefulsource_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -8348,102 +7318,87 @@ def test_patterncollectionstatefulsource_instantiation(instance):
 def test_sequencecollectionstatefulsource_instantiation(instance):
     assert isinstance(instance, SequenceCollectionStatefulSource)
 
-@given(instance=siddhi::Literal_strategy)
+@given(instance=siddhi_Literal_strategy)
 @settings(max_examples=50)
-def test_siddhi::literal_instantiation(instance):
-    assert isinstance(instance, siddhi::Literal)
+def test_siddhi_literal_instantiation(instance):
+    assert isinstance(instance, siddhi_Literal)
 
 @given(instance=MathDivmulOperation_strategy)
 @settings(max_examples=50)
 def test_mathdivmuloperation_instantiation(instance):
     assert isinstance(instance, MathDivmulOperation)
 
-@given(instance=siddhi::MathOtherOperations_strategy)
+@given(instance=siddhi_MathOtherOperations_strategy)
 @settings(max_examples=50)
-def test_siddhi::mathotheroperations_instantiation(instance):
-    assert isinstance(instance, siddhi::MathOtherOperations)
+def test_siddhi_mathotheroperations_instantiation(instance):
+    assert isinstance(instance, siddhi_MathOtherOperations)
 
 @given(instance=MathAddsubOperation_strategy)
 @settings(max_examples=50)
 def test_mathaddsuboperation_instantiation(instance):
     assert isinstance(instance, MathAddsubOperation)
 
-@given(instance=siddhi::MathDivmulOperation_strategy)
+@given(instance=siddhi_MathDivmulOperation_strategy)
 @settings(max_examples=50)
-def test_siddhi::mathdivmuloperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathDivmulOperation)
-
-@given(instance=siddhi::MathDivmulOperation_strategy)
-def test_siddhi::mathdivmuloperation_multiply_type(instance):
-    assert isinstance(instance.multiply, str)
+def test_siddhi_mathdivmuloperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathDivmulOperation)
 
 
-@given(instance=siddhi::MathDivmulOperation_strategy)
-def test_siddhi::mathdivmuloperation_multiply_setter(instance):
-    original = instance.multiply
-    instance.multiply = original
-    assert instance.multiply == original
 
-@given(instance=siddhi::MathDivmulOperation_strategy)
-def test_siddhi::mathdivmuloperation_devide_type(instance):
-    assert isinstance(instance.devide, str)
-
-
-@given(instance=siddhi::MathDivmulOperation_strategy)
-def test_siddhi::mathdivmuloperation_devide_setter(instance):
+@given(instance=siddhi_MathDivmulOperation_strategy)
+def test_siddhi_mathdivmuloperation_devide_setter(instance):
     original = instance.devide
     instance.devide = original
     assert instance.devide == original
 
-@given(instance=siddhi::MathDivmulOperation_strategy)
-def test_siddhi::mathdivmuloperation_mod_type(instance):
-    assert isinstance(instance.mod, str)
 
 
-@given(instance=siddhi::MathDivmulOperation_strategy)
-def test_siddhi::mathdivmuloperation_mod_setter(instance):
+@given(instance=siddhi_MathDivmulOperation_strategy)
+def test_siddhi_mathdivmuloperation_multiply_setter(instance):
+    original = instance.multiply
+    instance.multiply = original
+    assert instance.multiply == original
+
+
+
+@given(instance=siddhi_MathDivmulOperation_strategy)
+def test_siddhi_mathdivmuloperation_mod_setter(instance):
     original = instance.mod
     instance.mod = original
     assert instance.mod == original
 
-@given(instance=siddhi::SourceOrEventReference_strategy)
+@given(instance=siddhi_SourceOrEventReference_strategy)
 @settings(max_examples=50)
-def test_siddhi::sourceoreventreference_instantiation(instance):
-    assert isinstance(instance, siddhi::SourceOrEventReference)
+def test_siddhi_sourceoreventreference_instantiation(instance):
+    assert isinstance(instance, siddhi_SourceOrEventReference)
 
 @given(instance=SetAssignment_strategy)
 @settings(max_examples=50)
 def test_setassignment_instantiation(instance):
     assert isinstance(instance, SetAssignment)
 
-@given(instance=siddhi::ConstantValue_strategy)
+@given(instance=siddhi_ConstantValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::constantvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::ConstantValue)
-
-@given(instance=siddhi::ConstantValue_strategy)
-def test_siddhi::constantvalue_siv_type(instance):
-    assert isinstance(instance.siv, str)
+def test_siddhi_constantvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_ConstantValue)
 
 
-@given(instance=siddhi::ConstantValue_strategy)
-def test_siddhi::constantvalue_siv_setter(instance):
+
+@given(instance=siddhi_ConstantValue_strategy)
+def test_siddhi_constantvalue_siv_setter(instance):
     original = instance.siv
     instance.siv = original
     assert instance.siv == original
 
-@given(instance=siddhi::StreamReference_strategy)
+@given(instance=siddhi_StreamReference_strategy)
 @settings(max_examples=50)
-def test_siddhi::streamreference_instantiation(instance):
-    assert isinstance(instance, siddhi::StreamReference)
-
-@given(instance=siddhi::StreamReference_strategy)
-def test_siddhi::streamreference_hash_type(instance):
-    assert isinstance(instance.hash, str)
+def test_siddhi_streamreference_instantiation(instance):
+    assert isinstance(instance, siddhi_StreamReference)
 
 
-@given(instance=siddhi::StreamReference_strategy)
-def test_siddhi::streamreference_hash_setter(instance):
+
+@given(instance=siddhi_StreamReference_strategy)
+def test_siddhi_streamreference_hash_setter(instance):
     original = instance.hash
     instance.hash = original
     assert instance.hash == original
@@ -8463,93 +7418,1168 @@ def test_is_instantiation(instance):
 def test_mathotheroperations_instantiation(instance):
     assert isinstance(instance, MathOtherOperations)
 
-@given(instance=siddhi::NullCheck_strategy)
+@given(instance=siddhi_NullCheck_strategy)
 @settings(max_examples=50)
-def test_siddhi::nullcheck_instantiation(instance):
-    assert isinstance(instance, siddhi::NullCheck)
+def test_siddhi_nullcheck_instantiation(instance):
+    assert isinstance(instance, siddhi_NullCheck)
 
-@given(instance=siddhi::BasicSourceStreamHandlers_strategy)
+@given(instance=siddhi_BasicSourceStreamHandlers_strategy)
 @settings(max_examples=50)
-def test_siddhi::basicsourcestreamhandlers_instantiation(instance):
-    assert isinstance(instance, siddhi::BasicSourceStreamHandlers)
+def test_siddhi_basicsourcestreamhandlers_instantiation(instance):
+    assert isinstance(instance, siddhi_BasicSourceStreamHandlers)
 
 @given(instance=MathOperation_strategy)
 @settings(max_examples=50)
 def test_mathoperation_instantiation(instance):
     assert isinstance(instance, MathOperation)
 
-@given(instance=siddhi::MathAddsubOperation_strategy)
+@given(instance=siddhi_MathAddsubOperation_strategy)
 @settings(max_examples=50)
-def test_siddhi::mathaddsuboperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathAddsubOperation)
-
-@given(instance=siddhi::MathAddsubOperation_strategy)
-def test_siddhi::mathaddsuboperation_substract_type(instance):
-    assert isinstance(instance.substract, str)
+def test_siddhi_mathaddsuboperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathAddsubOperation)
 
 
-@given(instance=siddhi::MathAddsubOperation_strategy)
-def test_siddhi::mathaddsuboperation_substract_setter(instance):
-    original = instance.substract
-    instance.substract = original
-    assert instance.substract == original
 
-@given(instance=siddhi::MathAddsubOperation_strategy)
-def test_siddhi::mathaddsuboperation_add_type(instance):
-    assert isinstance(instance.add, str)
-
-
-@given(instance=siddhi::MathAddsubOperation_strategy)
-def test_siddhi::mathaddsuboperation_add_setter(instance):
+@given(instance=siddhi_MathAddsubOperation_strategy)
+def test_siddhi_mathaddsuboperation_add_setter(instance):
     original = instance.add
     instance.add = original
     assert instance.add == original
+
+
+
+@given(instance=siddhi_MathAddsubOperation_strategy)
+def test_siddhi_mathaddsuboperation_substract_setter(instance):
+    original = instance.substract
+    instance.substract = original
+    assert instance.substract == original
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=siddhi::MathOperation_strategy)
+@given(instance=siddhi_MathOperation_strategy)
 @settings(max_examples=50)
-def test_siddhi::mathoperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathOperation)
+def test_siddhi_mathoperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathOperation)
 
-@given(instance=siddhi::StreamFunction_strategy)
+@given(instance=siddhi_StreamFunction_strategy)
 @settings(max_examples=50)
-def test_siddhi::streamfunction_instantiation(instance):
-    assert isinstance(instance, siddhi::StreamFunction)
+def test_siddhi_streamfunction_instantiation(instance):
+    assert isinstance(instance, siddhi_StreamFunction)
 
-@given(instance=siddhi::Filter_strategy)
+@given(instance=siddhi_Filter_strategy)
 @settings(max_examples=50)
-def test_siddhi::filter_instantiation(instance):
-    assert isinstance(instance, siddhi::Filter)
+def test_siddhi_filter_instantiation(instance):
+    assert isinstance(instance, siddhi_Filter)
 
-@given(instance=siddhi::BasicSourceStreamHandler_strategy)
+@given(instance=siddhi_BasicSourceStreamHandler_strategy)
 @settings(max_examples=50)
-def test_siddhi::basicsourcestreamhandler_instantiation(instance):
-    assert isinstance(instance, siddhi::BasicSourceStreamHandler)
+def test_siddhi_basicsourcestreamhandler_instantiation(instance):
+    assert isinstance(instance, siddhi_BasicSourceStreamHandler)
 
-@given(instance=siddhi::UNIDIRECTIONAL_strategy)
+@given(instance=siddhi_MathGtLtOperation_strategy)
 @settings(max_examples=50)
-def test_siddhi::unidirectional_instantiation(instance):
-    assert isinstance(instance, siddhi::UNIDIRECTIONAL)
-
-@given(instance=siddhi::UNIDIRECTIONAL_strategy)
-def test_siddhi::unidirectional_unidirectional_type(instance):
-    assert isinstance(instance.unidirectional, str)
+def test_siddhi_mathgtltoperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathGtLtOperation)
 
 
-@given(instance=siddhi::UNIDIRECTIONAL_strategy)
-def test_siddhi::unidirectional_unidirectional_setter(instance):
+
+@given(instance=siddhi_MathGtLtOperation_strategy)
+def test_siddhi_mathgtltoperation_lt_eq_setter(instance):
+    original = instance.lt_eq
+    instance.lt_eq = original
+    assert instance.lt_eq == original
+
+
+
+@given(instance=siddhi_MathGtLtOperation_strategy)
+def test_siddhi_mathgtltoperation_gt_setter(instance):
+    original = instance.gt
+    instance.gt = original
+    assert instance.gt == original
+
+
+
+@given(instance=siddhi_MathGtLtOperation_strategy)
+def test_siddhi_mathgtltoperation_gt_eq_setter(instance):
+    original = instance.gt_eq
+    instance.gt_eq = original
+    assert instance.gt_eq == original
+
+
+
+@given(instance=siddhi_MathGtLtOperation_strategy)
+def test_siddhi_mathgtltoperation_lt_setter(instance):
+    original = instance.lt
+    instance.lt = original
+    assert instance.lt == original
+
+@given(instance=siddhi_MathInOperation_strategy)
+@settings(max_examples=50)
+def test_siddhi_mathinoperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathInOperation)
+
+@given(instance=siddhi_NotOperation_strategy)
+@settings(max_examples=50)
+def test_siddhi_notoperation_instantiation(instance):
+    assert isinstance(instance, siddhi_NotOperation)
+
+@given(instance=siddhi_MathEqualOperation_strategy)
+@settings(max_examples=50)
+def test_siddhi_mathequaloperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathEqualOperation)
+
+
+
+@given(instance=siddhi_MathEqualOperation_strategy)
+def test_siddhi_mathequaloperation_not_eq_setter(instance):
+    original = instance.not_eq
+    instance.not_eq = original
+    assert instance.not_eq == original
+
+
+
+@given(instance=siddhi_MathEqualOperation_strategy)
+def test_siddhi_mathequaloperation_eq_setter(instance):
+    original = instance.eq
+    instance.eq = original
+    assert instance.eq == original
+
+@given(instance=siddhi_MINUTES_strategy)
+@settings(max_examples=50)
+def test_siddhi_minutes_instantiation(instance):
+    assert isinstance(instance, siddhi_MINUTES)
+
+
+
+@given(instance=siddhi_MINUTES_strategy)
+def test_siddhi_minutes_minutes_setter(instance):
+    original = instance.minutes
+    instance.minutes = original
+    assert instance.minutes == original
+
+
+
+@given(instance=siddhi_MINUTES_strategy)
+def test_siddhi_minutes_minute_setter(instance):
+    original = instance.minute
+    instance.minute = original
+    assert instance.minute == original
+
+
+
+@given(instance=siddhi_MINUTES_strategy)
+def test_siddhi_minutes_min_setter(instance):
+    original = instance.min
+    instance.min = original
+    assert instance.min == original
+
+@given(instance=siddhi_HOURS_strategy)
+@settings(max_examples=50)
+def test_siddhi_hours_instantiation(instance):
+    assert isinstance(instance, siddhi_HOURS)
+
+
+
+@given(instance=siddhi_HOURS_strategy)
+def test_siddhi_hours_hours_setter(instance):
+    original = instance.hours
+    instance.hours = original
+    assert instance.hours == original
+
+
+
+@given(instance=siddhi_HOURS_strategy)
+def test_siddhi_hours_hour_setter(instance):
+    original = instance.hour
+    instance.hour = original
+    assert instance.hour == original
+
+@given(instance=siddhi_DAYS_strategy)
+@settings(max_examples=50)
+def test_siddhi_days_instantiation(instance):
+    assert isinstance(instance, siddhi_DAYS)
+
+
+
+@given(instance=siddhi_DAYS_strategy)
+def test_siddhi_days_days_setter(instance):
+    original = instance.days
+    instance.days = original
+    assert instance.days == original
+
+
+
+@given(instance=siddhi_DAYS_strategy)
+def test_siddhi_days_day_setter(instance):
+    original = instance.day
+    instance.day = original
+    assert instance.day == original
+
+@given(instance=siddhi_WEEKS_strategy)
+@settings(max_examples=50)
+def test_siddhi_weeks_instantiation(instance):
+    assert isinstance(instance, siddhi_WEEKS)
+
+
+
+@given(instance=siddhi_WEEKS_strategy)
+def test_siddhi_weeks_weeks_setter(instance):
+    original = instance.weeks
+    instance.weeks = original
+    assert instance.weeks == original
+
+
+
+@given(instance=siddhi_WEEKS_strategy)
+def test_siddhi_weeks_week_setter(instance):
+    original = instance.week
+    instance.week = original
+    assert instance.week == original
+
+@given(instance=siddhi_MONTHS_strategy)
+@settings(max_examples=50)
+def test_siddhi_months_instantiation(instance):
+    assert isinstance(instance, siddhi_MONTHS)
+
+
+
+@given(instance=siddhi_MONTHS_strategy)
+def test_siddhi_months_month_setter(instance):
+    original = instance.month
+    instance.month = original
+    assert instance.month == original
+
+
+
+@given(instance=siddhi_MONTHS_strategy)
+def test_siddhi_months_months_setter(instance):
+    original = instance.months
+    instance.months = original
+    assert instance.months == original
+
+@given(instance=siddhi_MathLogicalOperation_strategy)
+@settings(max_examples=50)
+def test_siddhi_mathlogicaloperation_instantiation(instance):
+    assert isinstance(instance, siddhi_MathLogicalOperation)
+
+@given(instance=RightAbsentSequenceSource_strategy)
+@settings(max_examples=50)
+def test_rightabsentsequencesource_instantiation(instance):
+    assert isinstance(instance, RightAbsentSequenceSource)
+
+@given(instance=siddhi_RightAbsentSequenceSource1_strategy)
+@settings(max_examples=50)
+def test_siddhi_rightabsentsequencesource1_instantiation(instance):
+    assert isinstance(instance, siddhi_RightAbsentSequenceSource1)
+
+@given(instance=LeftAbsentSequenceSource_strategy)
+@settings(max_examples=50)
+def test_leftabsentsequencesource_instantiation(instance):
+    assert isinstance(instance, LeftAbsentSequenceSource)
+
+@given(instance=siddhi_LeftAbsentSequenceSource1_strategy)
+@settings(max_examples=50)
+def test_siddhi_leftabsentsequencesource1_instantiation(instance):
+    assert isinstance(instance, siddhi_LeftAbsentSequenceSource1)
+
+@given(instance=siddhi_TRUE_strategy)
+@settings(max_examples=50)
+def test_siddhi_true_instantiation(instance):
+    assert isinstance(instance, siddhi_TRUE)
+
+
+
+@given(instance=siddhi_TRUE_strategy)
+def test_siddhi_true_tr_setter(instance):
+    original = instance.tr
+    instance.tr = original
+    assert instance.tr == original
+
+@given(instance=siddhi_FALSE_strategy)
+@settings(max_examples=50)
+def test_siddhi_false_instantiation(instance):
+    assert isinstance(instance, siddhi_FALSE)
+
+
+
+@given(instance=siddhi_FALSE_strategy)
+def test_siddhi_false_fals_setter(instance):
+    original = instance.fals
+    instance.fals = original
+    assert instance.fals == original
+
+@given(instance=siddhi_MILLISECONDS_strategy)
+@settings(max_examples=50)
+def test_siddhi_milliseconds_instantiation(instance):
+    assert isinstance(instance, siddhi_MILLISECONDS)
+
+
+
+@given(instance=siddhi_MILLISECONDS_strategy)
+def test_siddhi_milliseconds_millisecond_setter(instance):
+    original = instance.millisecond
+    instance.millisecond = original
+    assert instance.millisecond == original
+
+
+
+@given(instance=siddhi_MILLISECONDS_strategy)
+def test_siddhi_milliseconds_millisec_setter(instance):
+    original = instance.millisec
+    instance.millisec = original
+    assert instance.millisec == original
+
+
+
+@given(instance=siddhi_MILLISECONDS_strategy)
+def test_siddhi_milliseconds_milliseconds_setter(instance):
+    original = instance.milliseconds
+    instance.milliseconds = original
+    assert instance.milliseconds == original
+
+@given(instance=siddhi_SECONDS_strategy)
+@settings(max_examples=50)
+def test_siddhi_seconds_instantiation(instance):
+    assert isinstance(instance, siddhi_SECONDS)
+
+
+
+@given(instance=siddhi_SECONDS_strategy)
+def test_siddhi_seconds_seconds_setter(instance):
+    original = instance.seconds
+    instance.seconds = original
+    assert instance.seconds == original
+
+
+
+@given(instance=siddhi_SECONDS_strategy)
+def test_siddhi_seconds_sec_setter(instance):
+    original = instance.sec
+    instance.sec = original
+    assert instance.sec == original
+
+
+
+@given(instance=siddhi_SECONDS_strategy)
+def test_siddhi_seconds_second_setter(instance):
+    original = instance.second
+    instance.second = original
+    assert instance.second == original
+
+@given(instance=siddhi_OUTER_strategy)
+@settings(max_examples=50)
+def test_siddhi_outer_instantiation(instance):
+    assert isinstance(instance, siddhi_OUTER)
+
+
+
+@given(instance=siddhi_OUTER_strategy)
+def test_siddhi_outer_outer_setter(instance):
+    original = instance.outer
+    instance.outer = original
+    assert instance.outer == original
+
+@given(instance=siddhi_INNER_strategy)
+@settings(max_examples=50)
+def test_siddhi_inner_instantiation(instance):
+    assert isinstance(instance, siddhi_INNER)
+
+
+
+@given(instance=siddhi_INNER_strategy)
+def test_siddhi_inner_inner_setter(instance):
+    original = instance.inner
+    instance.inner = original
+    assert instance.inner == original
+
+@given(instance=siddhi_JOIN_strategy)
+@settings(max_examples=50)
+def test_siddhi_join_instantiation(instance):
+    assert isinstance(instance, siddhi_JOIN)
+
+
+
+@given(instance=siddhi_JOIN_strategy)
+def test_siddhi_join_join_setter(instance):
+    original = instance.join
+    instance.join = original
+    assert instance.join == original
+
+@given(instance=siddhi_FULL_strategy)
+@settings(max_examples=50)
+def test_siddhi_full_instantiation(instance):
+    assert isinstance(instance, siddhi_FULL)
+
+
+
+@given(instance=siddhi_FULL_strategy)
+def test_siddhi_full_full_setter(instance):
+    original = instance.full
+    instance.full = original
+    assert instance.full == original
+
+@given(instance=siddhi_RIGHT_strategy)
+@settings(max_examples=50)
+def test_siddhi_right_instantiation(instance):
+    assert isinstance(instance, siddhi_RIGHT)
+
+
+
+@given(instance=siddhi_RIGHT_strategy)
+def test_siddhi_right_right_setter(instance):
+    original = instance.right
+    instance.right = original
+    assert instance.right == original
+
+@given(instance=siddhi_LEFT_strategy)
+@settings(max_examples=50)
+def test_siddhi_left_instantiation(instance):
+    assert isinstance(instance, siddhi_LEFT)
+
+
+
+@given(instance=siddhi_LEFT_strategy)
+def test_siddhi_left_left_setter(instance):
+    original = instance.left
+    instance.left = original
+    assert instance.left == original
+
+@given(instance=siddhi_WITHIN_strategy)
+@settings(max_examples=50)
+def test_siddhi_within_instantiation(instance):
+    assert isinstance(instance, siddhi_WITHIN)
+
+
+
+@given(instance=siddhi_WITHIN_strategy)
+def test_siddhi_within_within_setter(instance):
+    original = instance.within
+    instance.within = original
+    assert instance.within == original
+
+@given(instance=siddhi_YEARS_strategy)
+@settings(max_examples=50)
+def test_siddhi_years_instantiation(instance):
+    assert isinstance(instance, siddhi_YEARS)
+
+
+
+@given(instance=siddhi_YEARS_strategy)
+def test_siddhi_years_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original
+
+
+
+@given(instance=siddhi_YEARS_strategy)
+def test_siddhi_years_years_setter(instance):
+    original = instance.years
+    instance.years = original
+    assert instance.years == original
+
+@given(instance=siddhi_PER_strategy)
+@settings(max_examples=50)
+def test_siddhi_per_instantiation(instance):
+    assert isinstance(instance, siddhi_PER)
+
+
+
+@given(instance=siddhi_PER_strategy)
+def test_siddhi_per_per_setter(instance):
+    original = instance.per
+    instance.per = original
+    assert instance.per == original
+
+@given(instance=siddhi_SET_strategy)
+@settings(max_examples=50)
+def test_siddhi_set_instantiation(instance):
+    assert isinstance(instance, siddhi_SET)
+
+
+
+@given(instance=siddhi_SET_strategy)
+def test_siddhi_set_set_setter(instance):
+    original = instance.set
+    instance.set = original
+    assert instance.set == original
+
+@given(instance=siddhi_AGGREGATE_strategy)
+@settings(max_examples=50)
+def test_siddhi_aggregate_instantiation(instance):
+    assert isinstance(instance, siddhi_AGGREGATE)
+
+
+
+@given(instance=siddhi_AGGREGATE_strategy)
+def test_siddhi_aggregate_agrregate_setter(instance):
+    original = instance.agrregate
+    instance.agrregate = original
+    assert instance.agrregate == original
+
+@given(instance=siddhi_AGGREGATION_strategy)
+@settings(max_examples=50)
+def test_siddhi_aggregation_instantiation(instance):
+    assert isinstance(instance, siddhi_AGGREGATION)
+
+
+
+@given(instance=siddhi_AGGREGATION_strategy)
+def test_siddhi_aggregation_aggre_setter(instance):
+    original = instance.aggre
+    instance.aggre = original
+    assert instance.aggre == original
+
+@given(instance=siddhi_WITH_strategy)
+@settings(max_examples=50)
+def test_siddhi_with_instantiation(instance):
+    assert isinstance(instance, siddhi_WITH)
+
+
+
+@given(instance=siddhi_WITH_strategy)
+def test_siddhi_with_wi_setter(instance):
+    original = instance.wi
+    instance.wi = original
+    assert instance.wi == original
+
+@given(instance=siddhi_PARTITION_strategy)
+@settings(max_examples=50)
+def test_siddhi_partition_instantiation(instance):
+    assert isinstance(instance, siddhi_PARTITION)
+
+
+
+@given(instance=siddhi_PARTITION_strategy)
+def test_siddhi_partition_partition_setter(instance):
+    original = instance.partition
+    instance.partition = original
+    assert instance.partition == original
+
+@given(instance=siddhi_END_strategy)
+@settings(max_examples=50)
+def test_siddhi_end_instantiation(instance):
+    assert isinstance(instance, siddhi_END)
+
+
+
+@given(instance=siddhi_END_strategy)
+def test_siddhi_end_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
+@given(instance=siddhi_UPDATE_strategy)
+@settings(max_examples=50)
+def test_siddhi_update_instantiation(instance):
+    assert isinstance(instance, siddhi_UPDATE)
+
+
+
+@given(instance=siddhi_UPDATE_strategy)
+def test_siddhi_update_update_setter(instance):
+    original = instance.update
+    instance.update = original
+    assert instance.update == original
+
+@given(instance=siddhi_FOR_strategy)
+@settings(max_examples=50)
+def test_siddhi_for_instantiation(instance):
+    assert isinstance(instance, siddhi_FOR)
+
+
+
+@given(instance=siddhi_FOR_strategy)
+def test_siddhi_for_for__setter(instance):
+    original = instance.for_
+    instance.for_ = original
+    assert instance.for_ == original
+
+@given(instance=siddhi_DELETE_strategy)
+@settings(max_examples=50)
+def test_siddhi_delete_instantiation(instance):
+    assert isinstance(instance, siddhi_DELETE)
+
+
+
+@given(instance=siddhi_DELETE_strategy)
+def test_siddhi_delete_delete_setter(instance):
+    original = instance.delete
+    instance.delete = original
+    assert instance.delete == original
+
+@given(instance=siddhi_PLAN_strategy)
+@settings(max_examples=50)
+def test_siddhi_plan_instantiation(instance):
+    assert isinstance(instance, siddhi_PLAN)
+
+
+
+@given(instance=siddhi_PLAN_strategy)
+def test_siddhi_plan_plan_setter(instance):
+    original = instance.plan
+    instance.plan = original
+    assert instance.plan == original
+
+@given(instance=siddhi_BEGIN_strategy)
+@settings(max_examples=50)
+def test_siddhi_begin_instantiation(instance):
+    assert isinstance(instance, siddhi_BEGIN)
+
+
+
+@given(instance=siddhi_BEGIN_strategy)
+def test_siddhi_begin_begin_setter(instance):
+    original = instance.begin
+    instance.begin = original
+    assert instance.begin == original
+
+@given(instance=siddhi_INTO_strategy)
+@settings(max_examples=50)
+def test_siddhi_into_instantiation(instance):
+    assert isinstance(instance, siddhi_INTO)
+
+
+
+@given(instance=siddhi_INTO_strategy)
+def test_siddhi_into_into_setter(instance):
+    original = instance.into
+    instance.into = original
+    assert instance.into == original
+
+@given(instance=siddhi_INSERT_strategy)
+@settings(max_examples=50)
+def test_siddhi_insert_instantiation(instance):
+    assert isinstance(instance, siddhi_INSERT)
+
+
+
+@given(instance=siddhi_INSERT_strategy)
+def test_siddhi_insert_insert_setter(instance):
+    original = instance.insert
+    instance.insert = original
+    assert instance.insert == original
+
+@given(instance=siddhi_FIRST_strategy)
+@settings(max_examples=50)
+def test_siddhi_first_instantiation(instance):
+    assert isinstance(instance, siddhi_FIRST)
+
+
+
+@given(instance=siddhi_FIRST_strategy)
+def test_siddhi_first_first_setter(instance):
+    original = instance.first
+    instance.first = original
+    assert instance.first == original
+
+@given(instance=siddhi_SNAPSHOT_strategy)
+@settings(max_examples=50)
+def test_siddhi_snapshot_instantiation(instance):
+    assert isinstance(instance, siddhi_SNAPSHOT)
+
+
+
+@given(instance=siddhi_SNAPSHOT_strategy)
+def test_siddhi_snapshot_snapshot_setter(instance):
+    original = instance.snapshot
+    instance.snapshot = original
+    assert instance.snapshot == original
+
+@given(instance=siddhi_HAVING_strategy)
+@settings(max_examples=50)
+def test_siddhi_having_instantiation(instance):
+    assert isinstance(instance, siddhi_HAVING)
+
+
+
+@given(instance=siddhi_HAVING_strategy)
+def test_siddhi_having_having_setter(instance):
+    original = instance.having
+    instance.having = original
+    assert instance.having == original
+
+@given(instance=siddhi_BY_strategy)
+@settings(max_examples=50)
+def test_siddhi_by_instantiation(instance):
+    assert isinstance(instance, siddhi_BY)
+
+
+
+@given(instance=siddhi_BY_strategy)
+def test_siddhi_by_by_setter(instance):
+    original = instance.by
+    instance.by = original
+    assert instance.by == original
+
+@given(instance=siddhi_GROUP_strategy)
+@settings(max_examples=50)
+def test_siddhi_group_instantiation(instance):
+    assert isinstance(instance, siddhi_GROUP)
+
+
+
+@given(instance=siddhi_GROUP_strategy)
+def test_siddhi_group_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=siddhi_SELECT_strategy)
+@settings(max_examples=50)
+def test_siddhi_select_instantiation(instance):
+    assert isinstance(instance, siddhi_SELECT)
+
+
+
+@given(instance=siddhi_SELECT_strategy)
+def test_siddhi_select_select_setter(instance):
+    original = instance.select
+    instance.select = original
+    assert instance.select == original
+
+@given(instance=siddhi_DOUBLE_strategy)
+@settings(max_examples=50)
+def test_siddhi_double_instantiation(instance):
+    assert isinstance(instance, siddhi_DOUBLE)
+
+
+
+@given(instance=siddhi_DOUBLE_strategy)
+def test_siddhi_double_double_setter(instance):
+    original = instance.double
+    instance.double = original
+    assert instance.double == original
+
+@given(instance=siddhi_LONG_strategy)
+@settings(max_examples=50)
+def test_siddhi_long_instantiation(instance):
+    assert isinstance(instance, siddhi_LONG)
+
+
+
+@given(instance=siddhi_LONG_strategy)
+def test_siddhi_long_long_setter(instance):
+    original = instance.long
+    instance.long = original
+    assert instance.long == original
+
+@given(instance=siddhi_INTS_strategy)
+@settings(max_examples=50)
+def test_siddhi_ints_instantiation(instance):
+    assert isinstance(instance, siddhi_INTS)
+
+
+
+@given(instance=siddhi_INTS_strategy)
+def test_siddhi_ints_int_setter(instance):
+    original = instance.int
+    instance.int = original
+    assert instance.int == original
+
+@given(instance=siddhi_STRINGS_strategy)
+@settings(max_examples=50)
+def test_siddhi_strings_instantiation(instance):
+    assert isinstance(instance, siddhi_STRINGS)
+
+
+
+@given(instance=siddhi_STRINGS_strategy)
+def test_siddhi_strings_string_setter(instance):
+    original = instance.string
+    instance.string = original
+    assert instance.string == original
+
+@given(instance=siddhi_OUTPUT_strategy)
+@settings(max_examples=50)
+def test_siddhi_output_instantiation(instance):
+    assert isinstance(instance, siddhi_OUTPUT)
+
+
+
+@given(instance=siddhi_OUTPUT_strategy)
+def test_siddhi_output_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
+
+@given(instance=siddhi_WINDOW_strategy)
+@settings(max_examples=50)
+def test_siddhi_window_instantiation(instance):
+    assert isinstance(instance, siddhi_WINDOW)
+
+
+
+@given(instance=siddhi_WINDOW_strategy)
+def test_siddhi_window_window_setter(instance):
+    original = instance.window
+    instance.window = original
+    assert instance.window == original
+
+@given(instance=siddhi_TABLE_strategy)
+@settings(max_examples=50)
+def test_siddhi_table_instantiation(instance):
+    assert isinstance(instance, siddhi_TABLE)
+
+
+
+@given(instance=siddhi_TABLE_strategy)
+def test_siddhi_table_table_setter(instance):
+    original = instance.table
+    instance.table = original
+    assert instance.table == original
+
+@given(instance=siddhi_FROM_strategy)
+@settings(max_examples=50)
+def test_siddhi_from_instantiation(instance):
+    assert isinstance(instance, siddhi_FROM)
+
+
+
+@given(instance=siddhi_FROM_strategy)
+def test_siddhi_from_from__setter(instance):
+    original = instance.from_
+    instance.from_ = original
+    assert instance.from_ == original
+
+@given(instance=siddhi_RETURN_strategy)
+@settings(max_examples=50)
+def test_siddhi_return_instantiation(instance):
+    assert isinstance(instance, siddhi_RETURN)
+
+
+
+@given(instance=siddhi_RETURN_strategy)
+def test_siddhi_return_return__setter(instance):
+    original = instance.return_
+    instance.return_ = original
+    assert instance.return_ == original
+
+@given(instance=siddhi_FUNCTION_strategy)
+@settings(max_examples=50)
+def test_siddhi_function_instantiation(instance):
+    assert isinstance(instance, siddhi_FUNCTION)
+
+
+
+@given(instance=siddhi_FUNCTION_strategy)
+def test_siddhi_function_function_setter(instance):
+    original = instance.function
+    instance.function = original
+    assert instance.function == original
+
+@given(instance=siddhi_AT_strategy)
+@settings(max_examples=50)
+def test_siddhi_at_instantiation(instance):
+    assert isinstance(instance, siddhi_AT)
+
+
+
+@given(instance=siddhi_AT_strategy)
+def test_siddhi_at_at_setter(instance):
+    original = instance.at
+    instance.at = original
+    assert instance.at == original
+
+@given(instance=siddhi_TRIGGER_strategy)
+@settings(max_examples=50)
+def test_siddhi_trigger_instantiation(instance):
+    assert isinstance(instance, siddhi_TRIGGER)
+
+
+
+@given(instance=siddhi_TRIGGER_strategy)
+def test_siddhi_trigger_trigger_setter(instance):
+    original = instance.trigger
+    instance.trigger = original
+    assert instance.trigger == original
+
+@given(instance=siddhi_NULL_strategy)
+@settings(max_examples=50)
+def test_siddhi_null_instantiation(instance):
+    assert isinstance(instance, siddhi_NULL)
+
+
+
+@given(instance=siddhi_NULL_strategy)
+def test_siddhi_null_null_setter(instance):
+    original = instance.null
+    instance.null = original
+    assert instance.null == original
+
+@given(instance=siddhi_IS_strategy)
+@settings(max_examples=50)
+def test_siddhi_is_instantiation(instance):
+    assert isinstance(instance, siddhi_IS)
+
+
+
+@given(instance=siddhi_IS_strategy)
+def test_siddhi_is_is__setter(instance):
+    original = instance.is_
+    instance.is_ = original
+    assert instance.is_ == original
+
+@given(instance=siddhi_LAST_strategy)
+@settings(max_examples=50)
+def test_siddhi_last_instantiation(instance):
+    assert isinstance(instance, siddhi_LAST)
+
+
+
+@given(instance=siddhi_LAST_strategy)
+def test_siddhi_last_last_setter(instance):
+    original = instance.last
+    instance.last = original
+    assert instance.last == original
+
+@given(instance=siddhi_CURRENT_strategy)
+@settings(max_examples=50)
+def test_siddhi_current_instantiation(instance):
+    assert isinstance(instance, siddhi_CURRENT)
+
+
+
+@given(instance=siddhi_CURRENT_strategy)
+def test_siddhi_current_currt_setter(instance):
+    original = instance.currt
+    instance.currt = original
+    assert instance.currt == original
+
+@given(instance=siddhi_EXPIRED_strategy)
+@settings(max_examples=50)
+def test_siddhi_expired_instantiation(instance):
+    assert isinstance(instance, siddhi_EXPIRED)
+
+
+
+@given(instance=siddhi_EXPIRED_strategy)
+def test_siddhi_expired_expired_setter(instance):
+    original = instance.expired
+    instance.expired = original
+    assert instance.expired == original
+
+@given(instance=siddhi_RAW_strategy)
+@settings(max_examples=50)
+def test_siddhi_raw_instantiation(instance):
+    assert isinstance(instance, siddhi_RAW)
+
+
+
+@given(instance=siddhi_RAW_strategy)
+def test_siddhi_raw_raw_setter(instance):
+    original = instance.raw
+    instance.raw = original
+    assert instance.raw == original
+
+@given(instance=siddhi_EVENTS_strategy)
+@settings(max_examples=50)
+def test_siddhi_events_instantiation(instance):
+    assert isinstance(instance, siddhi_EVENTS)
+
+
+
+@given(instance=siddhi_EVENTS_strategy)
+def test_siddhi_events_events_setter(instance):
+    original = instance.events
+    instance.events = original
+    assert instance.events == original
+
+@given(instance=siddhi_ALL_strategy)
+@settings(max_examples=50)
+def test_siddhi_all_instantiation(instance):
+    assert isinstance(instance, siddhi_ALL)
+
+
+
+@given(instance=siddhi_ALL_strategy)
+def test_siddhi_all_all_setter(instance):
+    original = instance.all
+    instance.all = original
+    assert instance.all == original
+
+@given(instance=siddhi_OBJECT_strategy)
+@settings(max_examples=50)
+def test_siddhi_object_instantiation(instance):
+    assert isinstance(instance, siddhi_OBJECT)
+
+
+
+@given(instance=siddhi_OBJECT_strategy)
+def test_siddhi_object_object_setter(instance):
+    original = instance.object
+    instance.object = original
+    assert instance.object == original
+
+@given(instance=siddhi_BOOL_strategy)
+@settings(max_examples=50)
+def test_siddhi_bool_instantiation(instance):
+    assert isinstance(instance, siddhi_BOOL)
+
+
+
+@given(instance=siddhi_BOOL_strategy)
+def test_siddhi_bool_bool_setter(instance):
+    original = instance.bool
+    instance.bool = original
+    assert instance.bool == original
+
+@given(instance=siddhi_FLOAT_strategy)
+@settings(max_examples=50)
+def test_siddhi_float_instantiation(instance):
+    assert isinstance(instance, siddhi_FLOAT)
+
+
+
+@given(instance=siddhi_FLOAT_strategy)
+def test_siddhi_float_float_setter(instance):
+    original = instance.float
+    instance.float = original
+    assert instance.float == original
+
+@given(instance=EveryAbsentSequenceSourceChain_strategy)
+@settings(max_examples=50)
+def test_everyabsentsequencesourcechain_instantiation(instance):
+    assert isinstance(instance, EveryAbsentSequenceSourceChain)
+
+@given(instance=EverySequenceSourceChain_strategy)
+@settings(max_examples=50)
+def test_everysequencesourcechain_instantiation(instance):
+    assert isinstance(instance, EverySequenceSourceChain)
+
+@given(instance=BasicAbsentPatternSource_strategy)
+@settings(max_examples=50)
+def test_basicabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, BasicAbsentPatternSource)
+
+@given(instance=siddhi_DEFINE_strategy)
+@settings(max_examples=50)
+def test_siddhi_define_instantiation(instance):
+    assert isinstance(instance, siddhi_DEFINE)
+
+
+
+@given(instance=siddhi_DEFINE_strategy)
+def test_siddhi_define_define_setter(instance):
+    original = instance.define
+    instance.define = original
+    assert instance.define == original
+
+@given(instance=siddhi_STREAM_strategy)
+@settings(max_examples=50)
+def test_siddhi_stream_instantiation(instance):
+    assert isinstance(instance, siddhi_STREAM)
+
+
+
+@given(instance=siddhi_STREAM_strategy)
+def test_siddhi_stream_str_setter(instance):
+    original = instance.str
+    instance.str = original
+    assert instance.str == original
+
+@given(instance=AppAnnotation_strategy)
+@settings(max_examples=50)
+def test_appannotation_instantiation(instance):
+    assert isinstance(instance, AppAnnotation)
+
+@given(instance=siddhi_APP_strategy)
+@settings(max_examples=50)
+def test_siddhi_app_instantiation(instance):
+    assert isinstance(instance, siddhi_APP)
+
+
+
+@given(instance=siddhi_APP_strategy)
+def test_siddhi_app_ap_setter(instance):
+    original = instance.ap
+    instance.ap = original
+    assert instance.ap == original
+
+@given(instance=siddhi_IN_strategy)
+@settings(max_examples=50)
+def test_siddhi_in_instantiation(instance):
+    assert isinstance(instance, siddhi_IN)
+
+
+
+@given(instance=siddhi_IN_strategy)
+def test_siddhi_in_in__setter(instance):
+    original = instance.in_
+    instance.in_ = original
+    assert instance.in_ == original
+
+@given(instance=RightAbsentPatternSource_strategy)
+@settings(max_examples=50)
+def test_rightabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, RightAbsentPatternSource)
+
+@given(instance=siddhi_RightAbsentPatternSource1_strategy)
+@settings(max_examples=50)
+def test_siddhi_rightabsentpatternsource1_instantiation(instance):
+    assert isinstance(instance, siddhi_RightAbsentPatternSource1)
+
+
+
+@given(instance=siddhi_RightAbsentPatternSource1_strategy)
+def test_siddhi_rightabsentpatternsource1_fb_setter(instance):
+    original = instance.fb
+    instance.fb = original
+    assert instance.fb == original
+
+@given(instance=LeftAbsentPatternSource_strategy)
+@settings(max_examples=50)
+def test_leftabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, LeftAbsentPatternSource)
+
+@given(instance=siddhi_LeftAbsentPatternSource1_strategy)
+@settings(max_examples=50)
+def test_siddhi_leftabsentpatternsource1_instantiation(instance):
+    assert isinstance(instance, siddhi_LeftAbsentPatternSource1)
+
+
+
+@given(instance=siddhi_LeftAbsentPatternSource1_strategy)
+def test_siddhi_leftabsentpatternsource1_fb_setter(instance):
+    original = instance.fb
+    instance.fb = original
+    assert instance.fb == original
+
+@given(instance=EveryAbsentPatternSource_strategy)
+@settings(max_examples=50)
+def test_everyabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, EveryAbsentPatternSource)
+
+@given(instance=LogicalAbsentStatefulSource_strategy)
+@settings(max_examples=50)
+def test_logicalabsentstatefulsource_instantiation(instance):
+    assert isinstance(instance, LogicalAbsentStatefulSource)
+
+@given(instance=siddhi_MillisecondValue_strategy)
+@settings(max_examples=50)
+def test_siddhi_millisecondvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_MillisecondValue)
+
+@given(instance=siddhi_UNIDIRECTIONAL_strategy)
+@settings(max_examples=50)
+def test_siddhi_unidirectional_instantiation(instance):
+    assert isinstance(instance, siddhi_UNIDIRECTIONAL)
+
+
+
+@given(instance=siddhi_UNIDIRECTIONAL_strategy)
+def test_siddhi_unidirectional_unidirectional_setter(instance):
     original = instance.unidirectional
     instance.unidirectional = original
     assert instance.unidirectional == original
 
-@given(instance=siddhi::JoinSource_strategy)
+@given(instance=siddhi_JoinSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::joinsource_instantiation(instance):
-    assert isinstance(instance, siddhi::JoinSource)
+def test_siddhi_joinsource_instantiation(instance):
+    assert isinstance(instance, siddhi_JoinSource)
 
 @given(instance=StandardStream_strategy)
 @settings(max_examples=50)
@@ -8561,10 +8591,10 @@ def test_standardstream_instantiation(instance):
 def test_joinsource_instantiation(instance):
     assert isinstance(instance, JoinSource)
 
-@given(instance=siddhi::MainSource_strategy)
+@given(instance=siddhi_MainSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::mainsource_instantiation(instance):
-    assert isinstance(instance, siddhi::MainSource)
+def test_siddhi_mainsource_instantiation(instance):
+    assert isinstance(instance, siddhi_MainSource)
 
 @given(instance=JoinStream_strategy)
 @settings(max_examples=50)
@@ -8611,133 +8641,115 @@ def test_per_instantiation(instance):
 def test_within_instantiation(instance):
     assert isinstance(instance, WITHIN)
 
-@given(instance=siddhi::joins_strategy)
+@given(instance=siddhi_joins_strategy)
 @settings(max_examples=50)
-def test_siddhi::joins_instantiation(instance):
-    assert isinstance(instance, siddhi::joins)
+def test_siddhi_joins_instantiation(instance):
+    assert isinstance(instance, siddhi_joins)
 
-@given(instance=siddhi::Per1_strategy)
+@given(instance=siddhi_Per1_strategy)
 @settings(max_examples=50)
-def test_siddhi::per1_instantiation(instance):
-    assert isinstance(instance, siddhi::Per1)
+def test_siddhi_per1_instantiation(instance):
+    assert isinstance(instance, siddhi_Per1)
 
-@given(instance=siddhi::WithinTimeRange_strategy)
+@given(instance=siddhi_WithinTimeRange_strategy)
 @settings(max_examples=50)
-def test_siddhi::withintimerange_instantiation(instance):
-    assert isinstance(instance, siddhi::WithinTimeRange)
+def test_siddhi_withintimerange_instantiation(instance):
+    assert isinstance(instance, siddhi_WithinTimeRange)
 
 @given(instance=AbsentPatternSourceChain_strategy)
 @settings(max_examples=50)
 def test_absentpatternsourcechain_instantiation(instance):
     assert isinstance(instance, AbsentPatternSourceChain)
 
-@given(instance=siddhi::EveryAbsentPatternSource_strategy)
+@given(instance=siddhi_EveryAbsentPatternSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::everyabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, siddhi::EveryAbsentPatternSource)
+def test_siddhi_everyabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, siddhi_EveryAbsentPatternSource)
 
-@given(instance=siddhi::RightAbsentPatternSource_strategy)
+@given(instance=siddhi_RightAbsentPatternSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::rightabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, siddhi::RightAbsentPatternSource)
-
-@given(instance=siddhi::RightAbsentPatternSource_strategy)
-def test_siddhi::rightabsentpatternsource_fb2_type(instance):
-    assert isinstance(instance.fb2, str)
+def test_siddhi_rightabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, siddhi_RightAbsentPatternSource)
 
 
-@given(instance=siddhi::RightAbsentPatternSource_strategy)
-def test_siddhi::rightabsentpatternsource_fb2_setter(instance):
+
+@given(instance=siddhi_RightAbsentPatternSource_strategy)
+def test_siddhi_rightabsentpatternsource_fb2_setter(instance):
     original = instance.fb2
     instance.fb2 = original
     assert instance.fb2 == original
 
-@given(instance=siddhi::LeftAbsentPatternSource_strategy)
+@given(instance=siddhi_LeftAbsentPatternSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::leftabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, siddhi::LeftAbsentPatternSource)
-
-@given(instance=siddhi::LeftAbsentPatternSource_strategy)
-def test_siddhi::leftabsentpatternsource_fb1_type(instance):
-    assert isinstance(instance.fb1, str)
+def test_siddhi_leftabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, siddhi_LeftAbsentPatternSource)
 
 
-@given(instance=siddhi::LeftAbsentPatternSource_strategy)
-def test_siddhi::leftabsentpatternsource_fb1_setter(instance):
+
+@given(instance=siddhi_LeftAbsentPatternSource_strategy)
+def test_siddhi_leftabsentpatternsource_fb1_setter(instance):
     original = instance.fb1
     instance.fb1 = original
     assert instance.fb1 == original
 
-@given(instance=siddhi::PatternCollectionStatefulSource_strategy)
+@given(instance=siddhi_PatternCollectionStatefulSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::patterncollectionstatefulsource_instantiation(instance):
-    assert isinstance(instance, siddhi::PatternCollectionStatefulSource)
+def test_siddhi_patterncollectionstatefulsource_instantiation(instance):
+    assert isinstance(instance, siddhi_PatternCollectionStatefulSource)
 
-@given(instance=siddhi::PatternSource_strategy)
+@given(instance=siddhi_PatternSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::patternsource_instantiation(instance):
-    assert isinstance(instance, siddhi::PatternSource)
+def test_siddhi_patternsource_instantiation(instance):
+    assert isinstance(instance, siddhi_PatternSource)
 
-@given(instance=siddhi::BasicSource_strategy)
+@given(instance=siddhi_BasicSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::basicsource_instantiation(instance):
-    assert isinstance(instance, siddhi::BasicSource)
+def test_siddhi_basicsource_instantiation(instance):
+    assert isinstance(instance, siddhi_BasicSource)
 
-@given(instance=siddhi::NOT_strategy)
+@given(instance=siddhi_NOT_strategy)
 @settings(max_examples=50)
-def test_siddhi::not_instantiation(instance):
-    assert isinstance(instance, siddhi::NOT)
-
-@given(instance=siddhi::NOT_strategy)
-def test_siddhi::not_not1_type(instance):
-    assert isinstance(instance.not1, str)
+def test_siddhi_not_instantiation(instance):
+    assert isinstance(instance, siddhi_NOT)
 
 
-@given(instance=siddhi::NOT_strategy)
-def test_siddhi::not_not1_setter(instance):
+
+@given(instance=siddhi_NOT_strategy)
+def test_siddhi_not_not1_setter(instance):
     original = instance.not1
     instance.not1 = original
     assert instance.not1 == original
 
-@given(instance=siddhi::Collect_strategy)
+@given(instance=siddhi_Collect_strategy)
 @settings(max_examples=50)
-def test_siddhi::collect_instantiation(instance):
-    assert isinstance(instance, siddhi::Collect)
-
-@given(instance=siddhi::Collect_strategy)
-def test_siddhi::collect_start_type(instance):
-    assert isinstance(instance.start, str)
+def test_siddhi_collect_instantiation(instance):
+    assert isinstance(instance, siddhi_Collect)
 
 
-@given(instance=siddhi::Collect_strategy)
-def test_siddhi::collect_start_setter(instance):
+
+@given(instance=siddhi_Collect_strategy)
+def test_siddhi_collect_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=siddhi::Collect_strategy)
-def test_siddhi::collect_end_type(instance):
-    assert isinstance(instance.end, str)
 
 
-@given(instance=siddhi::Collect_strategy)
-def test_siddhi::collect_end_setter(instance):
+@given(instance=siddhi_Collect_strategy)
+def test_siddhi_collect_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=siddhi::AND_strategy)
+@given(instance=siddhi_AND_strategy)
 @settings(max_examples=50)
-def test_siddhi::and_instantiation(instance):
-    assert isinstance(instance, siddhi::AND)
-
-@given(instance=siddhi::AND_strategy)
-def test_siddhi::and_and__type(instance):
-    assert isinstance(instance.and_, str)
+def test_siddhi_and_instantiation(instance):
+    assert isinstance(instance, siddhi_AND)
 
 
-@given(instance=siddhi::AND_strategy)
-def test_siddhi::and_and__setter(instance):
+
+@given(instance=siddhi_AND_strategy)
+def test_siddhi_and_and__setter(instance):
     original = instance.and_
     instance.and_ = original
     assert instance.and_ == original
@@ -8747,38 +8759,35 @@ def test_siddhi::and_and__setter(instance):
 def test_sequencesource_instantiation(instance):
     assert isinstance(instance, SequenceSource)
 
-@given(instance=siddhi::LogicalAbsentStatefulSource_strategy)
+@given(instance=siddhi_LogicalStatefulSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::logicalabsentstatefulsource_instantiation(instance):
-    assert isinstance(instance, siddhi::LogicalAbsentStatefulSource)
+def test_siddhi_logicalstatefulsource_instantiation(instance):
+    assert isinstance(instance, siddhi_LogicalStatefulSource)
 
-@given(instance=siddhi::LogicalStatefulSource_strategy)
+@given(instance=siddhi_LogicalAbsentStatefulSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::logicalstatefulsource_instantiation(instance):
-    assert isinstance(instance, siddhi::LogicalStatefulSource)
+def test_siddhi_logicalabsentstatefulsource_instantiation(instance):
+    assert isinstance(instance, siddhi_LogicalAbsentStatefulSource)
 
-@given(instance=siddhi::SequenceCollectionStatefulSource_strategy)
+@given(instance=siddhi_SequenceCollectionStatefulSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::sequencecollectionstatefulsource_instantiation(instance):
-    assert isinstance(instance, siddhi::SequenceCollectionStatefulSource)
+def test_siddhi_sequencecollectionstatefulsource_instantiation(instance):
+    assert isinstance(instance, siddhi_SequenceCollectionStatefulSource)
 
 @given(instance=SequenceSourceChain_strategy)
 @settings(max_examples=50)
 def test_sequencesourcechain_instantiation(instance):
     assert isinstance(instance, SequenceSourceChain)
 
-@given(instance=siddhi::PatternSourceChain_strategy)
+@given(instance=siddhi_PatternSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::patternsourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::PatternSourceChain)
-
-@given(instance=siddhi::PatternSourceChain_strategy)
-def test_siddhi::patternsourcechain_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_siddhi_patternsourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_PatternSourceChain)
 
 
-@given(instance=siddhi::PatternSourceChain_strategy)
-def test_siddhi::patternsourcechain_op_setter(instance):
+
+@given(instance=siddhi_PatternSourceChain_strategy)
+def test_siddhi_patternsourcechain_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -8788,134 +8797,107 @@ def test_siddhi::patternsourcechain_op_setter(instance):
 def test_patternstream_instantiation(instance):
     assert isinstance(instance, PatternStream)
 
-@given(instance=siddhi::AbsentPatternSourceChain_strategy)
+@given(instance=siddhi_AbsentPatternSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::absentpatternsourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::AbsentPatternSourceChain)
+def test_siddhi_absentpatternsourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_AbsentPatternSourceChain)
 
-@given(instance=siddhi::EveryPatternSourceChain_strategy)
+@given(instance=siddhi_EveryPatternSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::everypatternsourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::EveryPatternSourceChain)
-
-@given(instance=siddhi::EveryPatternSourceChain_strategy)
-def test_siddhi::everypatternsourcechain_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_siddhi_everypatternsourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_EveryPatternSourceChain)
 
 
-@given(instance=siddhi::EveryPatternSourceChain_strategy)
-def test_siddhi::everypatternsourcechain_op_setter(instance):
+
+@given(instance=siddhi_EveryPatternSourceChain_strategy)
+def test_siddhi_everypatternsourcechain_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
+@given(instance=siddhi_RightAbsentSequenceSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::rightabsentsequencesource_instantiation(instance):
-    assert isinstance(instance, siddhi::RightAbsentSequenceSource)
-
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_siddhi_rightabsentsequencesource_instantiation(instance):
+    assert isinstance(instance, siddhi_RightAbsentSequenceSource)
 
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_cp_type(instance):
-    assert isinstance(instance.cp, str)
-
-
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_cp_setter(instance):
+@given(instance=siddhi_RightAbsentSequenceSource_strategy)
+def test_siddhi_rightabsentsequencesource_cp_setter(instance):
     original = instance.cp
     instance.cp = original
     assert instance.cp == original
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_comma_type(instance):
-    assert isinstance(instance.comma, str)
 
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_comma_setter(instance):
+@given(instance=siddhi_RightAbsentSequenceSource_strategy)
+def test_siddhi_rightabsentsequencesource_comma_setter(instance):
     original = instance.comma
     instance.comma = original
     assert instance.comma == original
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_comm_type(instance):
-    assert isinstance(instance.comm, str)
 
 
-@given(instance=siddhi::RightAbsentSequenceSource_strategy)
-def test_siddhi::rightabsentsequencesource_comm_setter(instance):
+@given(instance=siddhi_RightAbsentSequenceSource_strategy)
+def test_siddhi_rightabsentsequencesource_comm_setter(instance):
     original = instance.comm
     instance.comm = original
     assert instance.comm == original
 
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-@settings(max_examples=50)
-def test_siddhi::leftabsentsequencesource_instantiation(instance):
-    assert isinstance(instance, siddhi::LeftAbsentSequenceSource)
-
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_cp_type(instance):
-    assert isinstance(instance.cp, str)
 
 
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_cp_setter(instance):
-    original = instance.cp
-    instance.cp = original
-    assert instance.cp == original
-
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_comma_type(instance):
-    assert isinstance(instance.comma, str)
-
-
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_comma_setter(instance):
-    original = instance.comma
-    instance.comma = original
-    assert instance.comma == original
-
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_op_setter(instance):
+@given(instance=siddhi_RightAbsentSequenceSource_strategy)
+def test_siddhi_rightabsentsequencesource_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_comm_type(instance):
-    assert isinstance(instance.comm, str)
+@given(instance=siddhi_LeftAbsentSequenceSource_strategy)
+@settings(max_examples=50)
+def test_siddhi_leftabsentsequencesource_instantiation(instance):
+    assert isinstance(instance, siddhi_LeftAbsentSequenceSource)
 
 
-@given(instance=siddhi::LeftAbsentSequenceSource_strategy)
-def test_siddhi::leftabsentsequencesource_comm_setter(instance):
+
+@given(instance=siddhi_LeftAbsentSequenceSource_strategy)
+def test_siddhi_leftabsentsequencesource_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+
+
+@given(instance=siddhi_LeftAbsentSequenceSource_strategy)
+def test_siddhi_leftabsentsequencesource_comma_setter(instance):
+    original = instance.comma
+    instance.comma = original
+    assert instance.comma == original
+
+
+
+@given(instance=siddhi_LeftAbsentSequenceSource_strategy)
+def test_siddhi_leftabsentsequencesource_comm_setter(instance):
     original = instance.comm
     instance.comm = original
     assert instance.comm == original
 
-@given(instance=siddhi::BasicAbsentPatternSource_strategy)
-@settings(max_examples=50)
-def test_siddhi::basicabsentpatternsource_instantiation(instance):
-    assert isinstance(instance, siddhi::BasicAbsentPatternSource)
 
-@given(instance=siddhi::EObject_strategy)
+
+@given(instance=siddhi_LeftAbsentSequenceSource_strategy)
+def test_siddhi_leftabsentsequencesource_cp_setter(instance):
+    original = instance.cp
+    instance.cp = original
+    assert instance.cp == original
+
+@given(instance=siddhi_BasicAbsentPatternSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::eobject_instantiation(instance):
-    assert isinstance(instance, siddhi::EObject)
+def test_siddhi_basicabsentpatternsource_instantiation(instance):
+    assert isinstance(instance, siddhi_BasicAbsentPatternSource)
+
+@given(instance=siddhi_EObject_strategy)
+@settings(max_examples=50)
+def test_siddhi_eobject_instantiation(instance):
+    assert isinstance(instance, siddhi_EObject)
 
 @given(instance=HAVING_strategy)
 @settings(max_examples=50)
@@ -8927,76 +8909,73 @@ def test_having_instantiation(instance):
 def test_group_instantiation(instance):
     assert isinstance(instance, GROUP)
 
-@given(instance=siddhi::HavingExpr_strategy)
+@given(instance=siddhi_HavingExpr_strategy)
 @settings(max_examples=50)
-def test_siddhi::havingexpr_instantiation(instance):
-    assert isinstance(instance, siddhi::HavingExpr)
+def test_siddhi_havingexpr_instantiation(instance):
+    assert isinstance(instance, siddhi_HavingExpr)
 
-@given(instance=siddhi::AbsentSequenceSourceChain_strategy)
+@given(instance=siddhi_AbsentSequenceSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::absentsequencesourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::AbsentSequenceSourceChain)
+def test_siddhi_absentsequencesourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_AbsentSequenceSourceChain)
 
-@given(instance=siddhi::SequenceSourceChain_strategy)
+@given(instance=siddhi_SequenceSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::sequencesourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::SequenceSourceChain)
-
-@given(instance=siddhi::SequenceSourceChain_strategy)
-def test_siddhi::sequencesourcechain_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_siddhi_sequencesourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_SequenceSourceChain)
 
 
-@given(instance=siddhi::SequenceSourceChain_strategy)
-def test_siddhi::sequencesourcechain_op_setter(instance):
+
+@given(instance=siddhi_SequenceSourceChain_strategy)
+def test_siddhi_sequencesourcechain_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=siddhi::WithinTime_strategy)
+@given(instance=siddhi_WithinTime_strategy)
 @settings(max_examples=50)
-def test_siddhi::withintime_instantiation(instance):
-    assert isinstance(instance, siddhi::WithinTime)
+def test_siddhi_withintime_instantiation(instance):
+    assert isinstance(instance, siddhi_WithinTime)
 
-@given(instance=siddhi::SequenceSource_strategy)
+@given(instance=siddhi_SequenceSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::sequencesource_instantiation(instance):
-    assert isinstance(instance, siddhi::SequenceSource)
+def test_siddhi_sequencesource_instantiation(instance):
+    assert isinstance(instance, siddhi_SequenceSource)
 
-@given(instance=siddhi::EveryAbsentSequenceSourceChain_strategy)
+@given(instance=siddhi_EveryAbsentSequenceSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::everyabsentsequencesourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::EveryAbsentSequenceSourceChain)
+def test_siddhi_everyabsentsequencesourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_EveryAbsentSequenceSourceChain)
 
-@given(instance=siddhi::EverySequenceSourceChain_strategy)
+@given(instance=siddhi_EverySequenceSourceChain_strategy)
 @settings(max_examples=50)
-def test_siddhi::everysequencesourcechain_instantiation(instance):
-    assert isinstance(instance, siddhi::EverySequenceSourceChain)
+def test_siddhi_everysequencesourcechain_instantiation(instance):
+    assert isinstance(instance, siddhi_EverySequenceSourceChain)
 
-@given(instance=siddhi::PatternStream_strategy)
+@given(instance=siddhi_PatternStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::patternstream_instantiation(instance):
-    assert isinstance(instance, siddhi::PatternStream)
+def test_siddhi_patternstream_instantiation(instance):
+    assert isinstance(instance, siddhi_PatternStream)
 
-@given(instance=siddhi::SequenceStream_strategy)
+@given(instance=siddhi_SequenceStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::sequencestream_instantiation(instance):
-    assert isinstance(instance, siddhi::SequenceStream)
+def test_siddhi_sequencestream_instantiation(instance):
+    assert isinstance(instance, siddhi_SequenceStream)
 
-@given(instance=siddhi::JoinStream_strategy)
+@given(instance=siddhi_JoinStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::joinstream_instantiation(instance):
-    assert isinstance(instance, siddhi::JoinStream)
+def test_siddhi_joinstream_instantiation(instance):
+    assert isinstance(instance, siddhi_JoinStream)
 
-@given(instance=siddhi::Attribute_strategy)
+@given(instance=siddhi_Attribute_strategy)
 @settings(max_examples=50)
-def test_siddhi::attribute_instantiation(instance):
-    assert isinstance(instance, siddhi::Attribute)
+def test_siddhi_attribute_instantiation(instance):
+    assert isinstance(instance, siddhi_Attribute)
 
-@given(instance=siddhi::OutputAttribute_strategy)
+@given(instance=siddhi_OutputAttribute_strategy)
 @settings(max_examples=50)
-def test_siddhi::outputattribute_instantiation(instance):
-    assert isinstance(instance, siddhi::OutputAttribute)
+def test_siddhi_outputattribute_instantiation(instance):
+    assert isinstance(instance, siddhi_OutputAttribute)
 
 @given(instance=SELECT_strategy)
 @settings(max_examples=50)
@@ -9013,331 +8992,10 @@ def test_first_instantiation(instance):
 def test_last_instantiation(instance):
     assert isinstance(instance, LAST)
 
-@given(instance=siddhi::AttributeIndex_strategy)
+@given(instance=siddhi_AttributeIndex_strategy)
 @settings(max_examples=50)
-def test_siddhi::attributeindex_instantiation(instance):
-    assert isinstance(instance, siddhi::AttributeIndex)
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-@settings(max_examples=50)
-def test_siddhi::mathgtltoperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathGtLtOperation)
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_lt_type(instance):
-    assert isinstance(instance.lt, str)
-
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_lt_setter(instance):
-    original = instance.lt
-    instance.lt = original
-    assert instance.lt == original
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_gt_eq_type(instance):
-    assert isinstance(instance.gt_eq, str)
-
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_gt_eq_setter(instance):
-    original = instance.gt_eq
-    instance.gt_eq = original
-    assert instance.gt_eq == original
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_gt_type(instance):
-    assert isinstance(instance.gt, str)
-
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_gt_setter(instance):
-    original = instance.gt
-    instance.gt = original
-    assert instance.gt == original
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_lt_eq_type(instance):
-    assert isinstance(instance.lt_eq, str)
-
-
-@given(instance=siddhi::MathGtLtOperation_strategy)
-def test_siddhi::mathgtltoperation_lt_eq_setter(instance):
-    original = instance.lt_eq
-    instance.lt_eq = original
-    assert instance.lt_eq == original
-
-@given(instance=siddhi::MathInOperation_strategy)
-@settings(max_examples=50)
-def test_siddhi::mathinoperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathInOperation)
-
-@given(instance=siddhi::NotOperation_strategy)
-@settings(max_examples=50)
-def test_siddhi::notoperation_instantiation(instance):
-    assert isinstance(instance, siddhi::NotOperation)
-
-@given(instance=siddhi::MathEqualOperation_strategy)
-@settings(max_examples=50)
-def test_siddhi::mathequaloperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathEqualOperation)
-
-@given(instance=siddhi::MathEqualOperation_strategy)
-def test_siddhi::mathequaloperation_not_eq_type(instance):
-    assert isinstance(instance.not_eq, str)
-
-
-@given(instance=siddhi::MathEqualOperation_strategy)
-def test_siddhi::mathequaloperation_not_eq_setter(instance):
-    original = instance.not_eq
-    instance.not_eq = original
-    assert instance.not_eq == original
-
-@given(instance=siddhi::MathEqualOperation_strategy)
-def test_siddhi::mathequaloperation_eq_type(instance):
-    assert isinstance(instance.eq, str)
-
-
-@given(instance=siddhi::MathEqualOperation_strategy)
-def test_siddhi::mathequaloperation_eq_setter(instance):
-    original = instance.eq
-    instance.eq = original
-    assert instance.eq == original
-
-@given(instance=siddhi::MINUTES_strategy)
-@settings(max_examples=50)
-def test_siddhi::minutes_instantiation(instance):
-    assert isinstance(instance, siddhi::MINUTES)
-
-@given(instance=siddhi::MINUTES_strategy)
-def test_siddhi::minutes_minutes_type(instance):
-    assert isinstance(instance.minutes, str)
-
-
-@given(instance=siddhi::MINUTES_strategy)
-def test_siddhi::minutes_minutes_setter(instance):
-    original = instance.minutes
-    instance.minutes = original
-    assert instance.minutes == original
-
-@given(instance=siddhi::MINUTES_strategy)
-def test_siddhi::minutes_min_type(instance):
-    assert isinstance(instance.min, str)
-
-
-@given(instance=siddhi::MINUTES_strategy)
-def test_siddhi::minutes_min_setter(instance):
-    original = instance.min
-    instance.min = original
-    assert instance.min == original
-
-@given(instance=siddhi::MINUTES_strategy)
-def test_siddhi::minutes_minute_type(instance):
-    assert isinstance(instance.minute, str)
-
-
-@given(instance=siddhi::MINUTES_strategy)
-def test_siddhi::minutes_minute_setter(instance):
-    original = instance.minute
-    instance.minute = original
-    assert instance.minute == original
-
-@given(instance=siddhi::HOURS_strategy)
-@settings(max_examples=50)
-def test_siddhi::hours_instantiation(instance):
-    assert isinstance(instance, siddhi::HOURS)
-
-@given(instance=siddhi::HOURS_strategy)
-def test_siddhi::hours_hours_type(instance):
-    assert isinstance(instance.hours, str)
-
-
-@given(instance=siddhi::HOURS_strategy)
-def test_siddhi::hours_hours_setter(instance):
-    original = instance.hours
-    instance.hours = original
-    assert instance.hours == original
-
-@given(instance=siddhi::HOURS_strategy)
-def test_siddhi::hours_hour_type(instance):
-    assert isinstance(instance.hour, str)
-
-
-@given(instance=siddhi::HOURS_strategy)
-def test_siddhi::hours_hour_setter(instance):
-    original = instance.hour
-    instance.hour = original
-    assert instance.hour == original
-
-@given(instance=siddhi::DAYS_strategy)
-@settings(max_examples=50)
-def test_siddhi::days_instantiation(instance):
-    assert isinstance(instance, siddhi::DAYS)
-
-@given(instance=siddhi::DAYS_strategy)
-def test_siddhi::days_days_type(instance):
-    assert isinstance(instance.days, str)
-
-
-@given(instance=siddhi::DAYS_strategy)
-def test_siddhi::days_days_setter(instance):
-    original = instance.days
-    instance.days = original
-    assert instance.days == original
-
-@given(instance=siddhi::DAYS_strategy)
-def test_siddhi::days_day_type(instance):
-    assert isinstance(instance.day, str)
-
-
-@given(instance=siddhi::DAYS_strategy)
-def test_siddhi::days_day_setter(instance):
-    original = instance.day
-    instance.day = original
-    assert instance.day == original
-
-@given(instance=siddhi::WEEKS_strategy)
-@settings(max_examples=50)
-def test_siddhi::weeks_instantiation(instance):
-    assert isinstance(instance, siddhi::WEEKS)
-
-@given(instance=siddhi::WEEKS_strategy)
-def test_siddhi::weeks_weeks_type(instance):
-    assert isinstance(instance.weeks, str)
-
-
-@given(instance=siddhi::WEEKS_strategy)
-def test_siddhi::weeks_weeks_setter(instance):
-    original = instance.weeks
-    instance.weeks = original
-    assert instance.weeks == original
-
-@given(instance=siddhi::WEEKS_strategy)
-def test_siddhi::weeks_week_type(instance):
-    assert isinstance(instance.week, str)
-
-
-@given(instance=siddhi::WEEKS_strategy)
-def test_siddhi::weeks_week_setter(instance):
-    original = instance.week
-    instance.week = original
-    assert instance.week == original
-
-@given(instance=siddhi::MONTHS_strategy)
-@settings(max_examples=50)
-def test_siddhi::months_instantiation(instance):
-    assert isinstance(instance, siddhi::MONTHS)
-
-@given(instance=siddhi::MONTHS_strategy)
-def test_siddhi::months_months_type(instance):
-    assert isinstance(instance.months, str)
-
-
-@given(instance=siddhi::MONTHS_strategy)
-def test_siddhi::months_months_setter(instance):
-    original = instance.months
-    instance.months = original
-    assert instance.months == original
-
-@given(instance=siddhi::MONTHS_strategy)
-def test_siddhi::months_month_type(instance):
-    assert isinstance(instance.month, str)
-
-
-@given(instance=siddhi::MONTHS_strategy)
-def test_siddhi::months_month_setter(instance):
-    original = instance.month
-    instance.month = original
-    assert instance.month == original
-
-@given(instance=siddhi::MathLogicalOperation_strategy)
-@settings(max_examples=50)
-def test_siddhi::mathlogicaloperation_instantiation(instance):
-    assert isinstance(instance, siddhi::MathLogicalOperation)
-
-@given(instance=siddhi::RightAbsentPatternSource1_strategy)
-@settings(max_examples=50)
-def test_siddhi::rightabsentpatternsource1_instantiation(instance):
-    assert isinstance(instance, siddhi::RightAbsentPatternSource1)
-
-@given(instance=siddhi::RightAbsentPatternSource1_strategy)
-def test_siddhi::rightabsentpatternsource1_fb_type(instance):
-    assert isinstance(instance.fb, str)
-
-
-@given(instance=siddhi::RightAbsentPatternSource1_strategy)
-def test_siddhi::rightabsentpatternsource1_fb_setter(instance):
-    original = instance.fb
-    instance.fb = original
-    assert instance.fb == original
-
-@given(instance=siddhi::LeftAbsentPatternSource1_strategy)
-@settings(max_examples=50)
-def test_siddhi::leftabsentpatternsource1_instantiation(instance):
-    assert isinstance(instance, siddhi::LeftAbsentPatternSource1)
-
-@given(instance=siddhi::LeftAbsentPatternSource1_strategy)
-def test_siddhi::leftabsentpatternsource1_fb_type(instance):
-    assert isinstance(instance.fb, str)
-
-
-@given(instance=siddhi::LeftAbsentPatternSource1_strategy)
-def test_siddhi::leftabsentpatternsource1_fb_setter(instance):
-    original = instance.fb
-    instance.fb = original
-    assert instance.fb == original
-
-@given(instance=RightAbsentSequenceSource_strategy)
-@settings(max_examples=50)
-def test_rightabsentsequencesource_instantiation(instance):
-    assert isinstance(instance, RightAbsentSequenceSource)
-
-@given(instance=siddhi::RightAbsentSequenceSource1_strategy)
-@settings(max_examples=50)
-def test_siddhi::rightabsentsequencesource1_instantiation(instance):
-    assert isinstance(instance, siddhi::RightAbsentSequenceSource1)
-
-@given(instance=LeftAbsentSequenceSource_strategy)
-@settings(max_examples=50)
-def test_leftabsentsequencesource_instantiation(instance):
-    assert isinstance(instance, LeftAbsentSequenceSource)
-
-@given(instance=siddhi::LeftAbsentSequenceSource1_strategy)
-@settings(max_examples=50)
-def test_siddhi::leftabsentsequencesource1_instantiation(instance):
-    assert isinstance(instance, siddhi::LeftAbsentSequenceSource1)
-
-@given(instance=siddhi::TRUE_strategy)
-@settings(max_examples=50)
-def test_siddhi::true_instantiation(instance):
-    assert isinstance(instance, siddhi::TRUE)
-
-@given(instance=siddhi::TRUE_strategy)
-def test_siddhi::true_tr_type(instance):
-    assert isinstance(instance.tr, str)
-
-
-@given(instance=siddhi::TRUE_strategy)
-def test_siddhi::true_tr_setter(instance):
-    original = instance.tr
-    instance.tr = original
-    assert instance.tr == original
-
-@given(instance=siddhi::FALSE_strategy)
-@settings(max_examples=50)
-def test_siddhi::false_instantiation(instance):
-    assert isinstance(instance, siddhi::FALSE)
-
-@given(instance=siddhi::FALSE_strategy)
-def test_siddhi::false_fals_type(instance):
-    assert isinstance(instance.fals, str)
-
-
-@given(instance=siddhi::FALSE_strategy)
-def test_siddhi::false_fals_setter(instance):
-    original = instance.fals
-    instance.fals = original
-    assert instance.fals == original
+def test_siddhi_attributeindex_instantiation(instance):
+    assert isinstance(instance, siddhi_AttributeIndex)
 
 @given(instance=SNAPSHOT_strategy)
 @settings(max_examples=50)
@@ -9369,59 +9027,53 @@ def test_events_instantiation(instance):
 def test_all_instantiation(instance):
     assert isinstance(instance, ALL)
 
-@given(instance=siddhi::OutputRateType_strategy)
+@given(instance=siddhi_OutputRateType_strategy)
 @settings(max_examples=50)
-def test_siddhi::outputratetype_instantiation(instance):
-    assert isinstance(instance, siddhi::OutputRateType)
+def test_siddhi_outputratetype_instantiation(instance):
+    assert isinstance(instance, siddhi_OutputRateType)
 
-@given(instance=siddhi::SetAssignment_strategy)
+@given(instance=siddhi_SetAssignment_strategy)
 @settings(max_examples=50)
-def test_siddhi::setassignment_instantiation(instance):
-    assert isinstance(instance, siddhi::SetAssignment)
+def test_siddhi_setassignment_instantiation(instance):
+    assert isinstance(instance, siddhi_SetAssignment)
 
 @given(instance=SET_strategy)
 @settings(max_examples=50)
 def test_set_instantiation(instance):
     assert isinstance(instance, SET)
 
-@given(instance=siddhi::SetClause_strategy)
+@given(instance=siddhi_SetClause_strategy)
 @settings(max_examples=50)
-def test_siddhi::setclause_instantiation(instance):
-    assert isinstance(instance, siddhi::SetClause)
+def test_siddhi_setclause_instantiation(instance):
+    assert isinstance(instance, siddhi_SetClause)
 
-@given(instance=siddhi::OR_strategy)
+@given(instance=siddhi_OR_strategy)
 @settings(max_examples=50)
-def test_siddhi::or_instantiation(instance):
-    assert isinstance(instance, siddhi::OR)
-
-@given(instance=siddhi::OR_strategy)
-def test_siddhi::or_or__type(instance):
-    assert isinstance(instance.or_, str)
+def test_siddhi_or_instantiation(instance):
+    assert isinstance(instance, siddhi_OR)
 
 
-@given(instance=siddhi::OR_strategy)
-def test_siddhi::or_or__setter(instance):
+
+@given(instance=siddhi_OR_strategy)
+def test_siddhi_or_or__setter(instance):
     original = instance.or_
     instance.or_ = original
     assert instance.or_ == original
 
-@given(instance=siddhi::ConditionRange_strategy)
+@given(instance=siddhi_ConditionRange_strategy)
 @settings(max_examples=50)
-def test_siddhi::conditionrange_instantiation(instance):
-    assert isinstance(instance, siddhi::ConditionRange)
+def test_siddhi_conditionrange_instantiation(instance):
+    assert isinstance(instance, siddhi_ConditionRange)
 
-@given(instance=siddhi::OF_strategy)
+@given(instance=siddhi_OF_strategy)
 @settings(max_examples=50)
-def test_siddhi::of_instantiation(instance):
-    assert isinstance(instance, siddhi::OF)
-
-@given(instance=siddhi::OF_strategy)
-def test_siddhi::of_of_type(instance):
-    assert isinstance(instance.of, str)
+def test_siddhi_of_instantiation(instance):
+    assert isinstance(instance, siddhi_OF)
 
 
-@given(instance=siddhi::OF_strategy)
-def test_siddhi::of_of_setter(instance):
+
+@given(instance=siddhi_OF_strategy)
+def test_siddhi_of_of_setter(instance):
     original = instance.of
     instance.of = original
     assert instance.of == original
@@ -9431,31 +9083,28 @@ def test_siddhi::of_of_setter(instance):
 def test_partitionwithstream_instantiation(instance):
     assert isinstance(instance, PartitionWithStream)
 
-@given(instance=siddhi::ConditionRanges_strategy)
+@given(instance=siddhi_ConditionRanges_strategy)
 @settings(max_examples=50)
-def test_siddhi::conditionranges_instantiation(instance):
-    assert isinstance(instance, siddhi::ConditionRanges)
+def test_siddhi_conditionranges_instantiation(instance):
+    assert isinstance(instance, siddhi_ConditionRanges)
 
-@given(instance=siddhi::ON_strategy)
+@given(instance=siddhi_ON_strategy)
 @settings(max_examples=50)
-def test_siddhi::on_instantiation(instance):
-    assert isinstance(instance, siddhi::ON)
-
-@given(instance=siddhi::ON_strategy)
-def test_siddhi::on_on_type(instance):
-    assert isinstance(instance.on, str)
+def test_siddhi_on_instantiation(instance):
+    assert isinstance(instance, siddhi_ON)
 
 
-@given(instance=siddhi::ON_strategy)
-def test_siddhi::on_on_setter(instance):
+
+@given(instance=siddhi_ON_strategy)
+def test_siddhi_on_on_setter(instance):
     original = instance.on
     instance.on = original
     assert instance.on == original
 
-@given(instance=siddhi::Target_strategy)
+@given(instance=siddhi_Target_strategy)
 @settings(max_examples=50)
-def test_siddhi::target_instantiation(instance):
-    assert isinstance(instance, siddhi::Target)
+def test_siddhi_target_instantiation(instance):
+    assert isinstance(instance, siddhi_Target)
 
 @given(instance=UPDATE_strategy)
 @settings(max_examples=50)
@@ -9467,10 +9116,10 @@ def test_update_instantiation(instance):
 def test_for_instantiation(instance):
     assert isinstance(instance, FOR)
 
-@given(instance=siddhi::ForTime_strategy)
+@given(instance=siddhi_ForTime_strategy)
 @settings(max_examples=50)
-def test_siddhi::fortime_instantiation(instance):
-    assert isinstance(instance, siddhi::ForTime)
+def test_siddhi_fortime_instantiation(instance):
+    assert isinstance(instance, siddhi_ForTime)
 
 @given(instance=DELETE_strategy)
 @settings(max_examples=50)
@@ -9487,46 +9136,43 @@ def test_into_instantiation(instance):
 def test_insert_instantiation(instance):
     assert isinstance(instance, INSERT)
 
-@given(instance=siddhi::QuerySection_strategy)
+@given(instance=siddhi_QuerySection_strategy)
 @settings(max_examples=50)
-def test_siddhi::querysection_instantiation(instance):
-    assert isinstance(instance, siddhi::QuerySection)
+def test_siddhi_querysection_instantiation(instance):
+    assert isinstance(instance, siddhi_QuerySection)
 
-@given(instance=siddhi::QueryInput_strategy)
+@given(instance=siddhi_QueryInput_strategy)
 @settings(max_examples=50)
-def test_siddhi::queryinput_instantiation(instance):
-    assert isinstance(instance, siddhi::QueryInput)
+def test_siddhi_queryinput_instantiation(instance):
+    assert isinstance(instance, siddhi_QueryInput)
 
-@given(instance=siddhi::AS_strategy)
+@given(instance=siddhi_AS_strategy)
 @settings(max_examples=50)
-def test_siddhi::as_instantiation(instance):
-    assert isinstance(instance, siddhi::AS)
-
-@given(instance=siddhi::AS_strategy)
-def test_siddhi::as_a_type(instance):
-    assert isinstance(instance.a, str)
+def test_siddhi_as_instantiation(instance):
+    assert isinstance(instance, siddhi_AS)
 
 
-@given(instance=siddhi::AS_strategy)
-def test_siddhi::as_a_setter(instance):
+
+@given(instance=siddhi_AS_strategy)
+def test_siddhi_as_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original
 
-@given(instance=siddhi::Expression_strategy)
+@given(instance=siddhi_Expression_strategy)
 @settings(max_examples=50)
-def test_siddhi::expression_instantiation(instance):
-    assert isinstance(instance, siddhi::Expression)
+def test_siddhi_expression_instantiation(instance):
+    assert isinstance(instance, siddhi_Expression)
 
-@given(instance=siddhi::PropertyValue_strategy)
+@given(instance=siddhi_PropertyValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::propertyvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::PropertyValue)
+def test_siddhi_propertyvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_PropertyValue)
 
-@given(instance=siddhi::PartitionWithStream_strategy)
+@given(instance=siddhi_PartitionWithStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::partitionwithstream_instantiation(instance):
-    assert isinstance(instance, siddhi::PartitionWithStream)
+def test_siddhi_partitionwithstream_instantiation(instance):
+    assert isinstance(instance, siddhi_PartitionWithStream)
 
 @given(instance=END_strategy)
 @settings(max_examples=50)
@@ -9553,53 +9199,44 @@ def test_partition_instantiation(instance):
 def test_source1orstandardstatefulsource_instantiation(instance):
     assert isinstance(instance, Source1OrStandardStatefulSource)
 
-@given(instance=siddhi::StreamAlias_strategy)
+@given(instance=siddhi_StreamAlias_strategy)
 @settings(max_examples=50)
-def test_siddhi::streamalias_instantiation(instance):
-    assert isinstance(instance, siddhi::StreamAlias)
+def test_siddhi_streamalias_instantiation(instance):
+    assert isinstance(instance, siddhi_StreamAlias)
 
-@given(instance=siddhi::StandardStatefulSource_strategy)
+@given(instance=siddhi_StandardStatefulSource_strategy)
 @settings(max_examples=50)
-def test_siddhi::standardstatefulsource_instantiation(instance):
-    assert isinstance(instance, siddhi::StandardStatefulSource)
-
-@given(instance=siddhi::StandardStatefulSource_strategy)
-def test_siddhi::standardstatefulsource_one_or_more_type(instance):
-    assert isinstance(instance.one_or_more, str)
+def test_siddhi_standardstatefulsource_instantiation(instance):
+    assert isinstance(instance, siddhi_StandardStatefulSource)
 
 
-@given(instance=siddhi::StandardStatefulSource_strategy)
-def test_siddhi::standardstatefulsource_one_or_more_setter(instance):
-    original = instance.one_or_more
-    instance.one_or_more = original
-    assert instance.one_or_more == original
 
-@given(instance=siddhi::StandardStatefulSource_strategy)
-def test_siddhi::standardstatefulsource_zero_or_more_type(instance):
-    assert isinstance(instance.zero_or_more, str)
-
-
-@given(instance=siddhi::StandardStatefulSource_strategy)
-def test_siddhi::standardstatefulsource_zero_or_more_setter(instance):
+@given(instance=siddhi_StandardStatefulSource_strategy)
+def test_siddhi_standardstatefulsource_zero_or_more_setter(instance):
     original = instance.zero_or_more
     instance.zero_or_more = original
     assert instance.zero_or_more == original
 
-@given(instance=siddhi::StandardStatefulSource_strategy)
-def test_siddhi::standardstatefulsource_zero_or_one_type(instance):
-    assert isinstance(instance.zero_or_one, str)
 
 
-@given(instance=siddhi::StandardStatefulSource_strategy)
-def test_siddhi::standardstatefulsource_zero_or_one_setter(instance):
+@given(instance=siddhi_StandardStatefulSource_strategy)
+def test_siddhi_standardstatefulsource_zero_or_one_setter(instance):
     original = instance.zero_or_one
     instance.zero_or_one = original
     assert instance.zero_or_one == original
 
-@given(instance=siddhi::Source_strategy)
+
+
+@given(instance=siddhi_StandardStatefulSource_strategy)
+def test_siddhi_standardstatefulsource_one_or_more_setter(instance):
+    original = instance.one_or_more
+    instance.one_or_more = original
+    assert instance.one_or_more == original
+
+@given(instance=siddhi_Source_strategy)
 @settings(max_examples=50)
-def test_siddhi::source_instantiation(instance):
-    assert isinstance(instance, siddhi::Source)
+def test_siddhi_source_instantiation(instance):
+    assert isinstance(instance, siddhi_Source)
 
 @given(instance=OBJECT_strategy)
 @settings(max_examples=50)
@@ -9641,96 +9278,84 @@ def test_strings_instantiation(instance):
 def test_featuresoroutattr_instantiation(instance):
     assert isinstance(instance, FeaturesOrOutAttr)
 
-@given(instance=siddhi::OutAttr_strategy)
+@given(instance=siddhi_OutAttr_strategy)
 @settings(max_examples=50)
-def test_siddhi::outattr_instantiation(instance):
-    assert isinstance(instance, siddhi::OutAttr)
+def test_siddhi_outattr_instantiation(instance):
+    assert isinstance(instance, siddhi_OutAttr)
 
-@given(instance=siddhi::PropertySeparator_strategy)
+@given(instance=siddhi_PropertySeparator_strategy)
 @settings(max_examples=50)
-def test_siddhi::propertyseparator_instantiation(instance):
-    assert isinstance(instance, siddhi::PropertySeparator)
+def test_siddhi_propertyseparator_instantiation(instance):
+    assert isinstance(instance, siddhi_PropertySeparator)
 
-@given(instance=siddhi::AttributeReference_strategy)
+@given(instance=siddhi_AttributeReference_strategy)
 @settings(max_examples=50)
-def test_siddhi::attributereference_instantiation(instance):
-    assert isinstance(instance, siddhi::AttributeReference)
-
-@given(instance=siddhi::AttributeReference_strategy)
-def test_siddhi::attributereference_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_siddhi_attributereference_instantiation(instance):
+    assert isinstance(instance, siddhi_AttributeReference)
 
 
-@given(instance=siddhi::AttributeReference_strategy)
-def test_siddhi::attributereference_name_setter(instance):
+
+@given(instance=siddhi_AttributeReference_strategy)
+def test_siddhi_attributereference_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=siddhi::AttributeReference_strategy)
-def test_siddhi::attributereference_hash2_type(instance):
-    assert isinstance(instance.hash2, str)
 
 
-@given(instance=siddhi::AttributeReference_strategy)
-def test_siddhi::attributereference_hash2_setter(instance):
+@given(instance=siddhi_AttributeReference_strategy)
+def test_siddhi_attributereference_hash2_setter(instance):
     original = instance.hash2
     instance.hash2 = original
     assert instance.hash2 == original
 
-@given(instance=siddhi::AttributeReference_strategy)
-def test_siddhi::attributereference_hash1_type(instance):
-    assert isinstance(instance.hash1, str)
 
 
-@given(instance=siddhi::AttributeReference_strategy)
-def test_siddhi::attributereference_hash1_setter(instance):
+@given(instance=siddhi_AttributeReference_strategy)
+def test_siddhi_attributereference_hash1_setter(instance):
     original = instance.hash1
     instance.hash1 = original
     assert instance.hash1 == original
 
-@given(instance=siddhi::GroupByQuerySelection_strategy)
+@given(instance=siddhi_GroupByQuerySelection_strategy)
 @settings(max_examples=50)
-def test_siddhi::groupbyqueryselection_instantiation(instance):
-    assert isinstance(instance, siddhi::GroupByQuerySelection)
+def test_siddhi_groupbyqueryselection_instantiation(instance):
+    assert isinstance(instance, siddhi_GroupByQuerySelection)
 
-@given(instance=siddhi::StandardStream_strategy)
+@given(instance=siddhi_StandardStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::standardstream_instantiation(instance):
-    assert isinstance(instance, siddhi::StandardStream)
+def test_siddhi_standardstream_instantiation(instance):
+    assert isinstance(instance, siddhi_StandardStream)
 
 @given(instance=BY_strategy)
 @settings(max_examples=50)
 def test_by_instantiation(instance):
     assert isinstance(instance, BY)
 
-@given(instance=siddhi::GroupBy_strategy)
+@given(instance=siddhi_GroupBy_strategy)
 @settings(max_examples=50)
-def test_siddhi::groupby_instantiation(instance):
-    assert isinstance(instance, siddhi::GroupBy)
+def test_siddhi_groupby_instantiation(instance):
+    assert isinstance(instance, siddhi_GroupBy)
 
-@given(instance=siddhi::PropertyName_strategy)
+@given(instance=siddhi_PropertyName_strategy)
 @settings(max_examples=50)
-def test_siddhi::propertyname_instantiation(instance):
-    assert isinstance(instance, siddhi::PropertyName)
+def test_siddhi_propertyname_instantiation(instance):
+    assert isinstance(instance, siddhi_PropertyName)
 
-@given(instance=siddhi::AnnotationElement_strategy)
+@given(instance=siddhi_AnnotationElement_strategy)
 @settings(max_examples=50)
-def test_siddhi::annotationelement_instantiation(instance):
-    assert isinstance(instance, siddhi::AnnotationElement)
+def test_siddhi_annotationelement_instantiation(instance):
+    assert isinstance(instance, siddhi_AnnotationElement)
 
-@given(instance=siddhi::Name_strategy)
+@given(instance=siddhi_Name_strategy)
 @settings(max_examples=50)
-def test_siddhi::name_instantiation(instance):
-    assert isinstance(instance, siddhi::Name)
-
-@given(instance=siddhi::Name_strategy)
-def test_siddhi::name_na_type(instance):
-    assert isinstance(instance.na, str)
+def test_siddhi_name_instantiation(instance):
+    assert isinstance(instance, siddhi_Name)
 
 
-@given(instance=siddhi::Name_strategy)
-def test_siddhi::name_na_setter(instance):
+
+@given(instance=siddhi_Name_strategy)
+def test_siddhi_name_na_setter(instance):
     original = instance.na
     instance.na = original
     assert instance.na == original
@@ -9740,120 +9365,120 @@ def test_siddhi::name_na_setter(instance):
 def test_years_instantiation(instance):
     assert isinstance(instance, YEARS)
 
-@given(instance=siddhi::YearValue_strategy)
+@given(instance=siddhi_YearValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::yearvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::YearValue)
+def test_siddhi_yearvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_YearValue)
 
 @given(instance=MONTHS_strategy)
 @settings(max_examples=50)
 def test_months_instantiation(instance):
     assert isinstance(instance, MONTHS)
 
-@given(instance=siddhi::MonthValue_strategy)
+@given(instance=siddhi_MonthValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::monthvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::MonthValue)
+def test_siddhi_monthvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_MonthValue)
 
 @given(instance=WEEKS_strategy)
 @settings(max_examples=50)
 def test_weeks_instantiation(instance):
     assert isinstance(instance, WEEKS)
 
-@given(instance=siddhi::WeekValue_strategy)
+@given(instance=siddhi_WeekValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::weekvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::WeekValue)
+def test_siddhi_weekvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_WeekValue)
 
 @given(instance=DAYS_strategy)
 @settings(max_examples=50)
 def test_days_instantiation(instance):
     assert isinstance(instance, DAYS)
 
-@given(instance=siddhi::DayValue_strategy)
+@given(instance=siddhi_DayValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::dayvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::DayValue)
+def test_siddhi_dayvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_DayValue)
 
 @given(instance=HOURS_strategy)
 @settings(max_examples=50)
 def test_hours_instantiation(instance):
     assert isinstance(instance, HOURS)
 
-@given(instance=siddhi::HourValue_strategy)
+@given(instance=siddhi_HourValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::hourvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::HourValue)
+def test_siddhi_hourvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_HourValue)
 
 @given(instance=MINUTES_strategy)
 @settings(max_examples=50)
 def test_minutes_instantiation(instance):
     assert isinstance(instance, MINUTES)
 
-@given(instance=siddhi::MinuteValue_strategy)
+@given(instance=siddhi_MinuteValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::minutevalue_instantiation(instance):
-    assert isinstance(instance, siddhi::MinuteValue)
+def test_siddhi_minutevalue_instantiation(instance):
+    assert isinstance(instance, siddhi_MinuteValue)
 
 @given(instance=SECONDS_strategy)
 @settings(max_examples=50)
 def test_seconds_instantiation(instance):
     assert isinstance(instance, SECONDS)
 
-@given(instance=siddhi::SecondValue_strategy)
+@given(instance=siddhi_SecondValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::secondvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::SecondValue)
+def test_siddhi_secondvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_SecondValue)
 
 @given(instance=AggregationTime_strategy)
 @settings(max_examples=50)
 def test_aggregationtime_instantiation(instance):
     assert isinstance(instance, AggregationTime)
 
-@given(instance=siddhi::AggregationTimeRange_strategy)
+@given(instance=siddhi_AggregationTimeRange_strategy)
 @settings(max_examples=50)
-def test_siddhi::aggregationtimerange_instantiation(instance):
-    assert isinstance(instance, siddhi::AggregationTimeRange)
+def test_siddhi_aggregationtimerange_instantiation(instance):
+    assert isinstance(instance, siddhi_AggregationTimeRange)
 
-@given(instance=siddhi::AggregationTimeInterval_strategy)
+@given(instance=siddhi_AggregationTimeInterval_strategy)
 @settings(max_examples=50)
-def test_siddhi::aggregationtimeinterval_instantiation(instance):
-    assert isinstance(instance, siddhi::AggregationTimeInterval)
+def test_siddhi_aggregationtimeinterval_instantiation(instance):
+    assert isinstance(instance, siddhi_AggregationTimeInterval)
 
-@given(instance=siddhi::AggregationTimeDuration_strategy)
+@given(instance=siddhi_AggregationTimeDuration_strategy)
 @settings(max_examples=50)
-def test_siddhi::aggregationtimeduration_instantiation(instance):
-    assert isinstance(instance, siddhi::AggregationTimeDuration)
+def test_siddhi_aggregationtimeduration_instantiation(instance):
+    assert isinstance(instance, siddhi_AggregationTimeDuration)
 
-@given(instance=siddhi::AggregationTime_strategy)
+@given(instance=siddhi_AggregationTime_strategy)
 @settings(max_examples=50)
-def test_siddhi::aggregationtime_instantiation(instance):
-    assert isinstance(instance, siddhi::AggregationTime)
+def test_siddhi_aggregationtime_instantiation(instance):
+    assert isinstance(instance, siddhi_AggregationTime)
 
 @given(instance=OUTPUT_strategy)
 @settings(max_examples=50)
 def test_output_instantiation(instance):
     assert isinstance(instance, OUTPUT)
 
-@given(instance=siddhi::OutputRate_strategy)
+@given(instance=siddhi_OutputRate_strategy)
 @settings(max_examples=50)
-def test_siddhi::outputrate_instantiation(instance):
-    assert isinstance(instance, siddhi::OutputRate)
+def test_siddhi_outputrate_instantiation(instance):
+    assert isinstance(instance, siddhi_OutputRate)
 
 @given(instance=WINDOW_strategy)
 @settings(max_examples=50)
 def test_window_instantiation(instance):
     assert isinstance(instance, WINDOW)
 
-@given(instance=siddhi::Win_strategy)
+@given(instance=siddhi_Win_strategy)
 @settings(max_examples=50)
-def test_siddhi::win_instantiation(instance):
-    assert isinstance(instance, siddhi::Win)
+def test_siddhi_win_instantiation(instance):
+    assert isinstance(instance, siddhi_Win)
 
-@given(instance=siddhi::BasicSourceStreamHandlers1_strategy)
+@given(instance=siddhi_BasicSourceStreamHandlers1_strategy)
 @settings(max_examples=50)
-def test_siddhi::basicsourcestreamhandlers1_instantiation(instance):
-    assert isinstance(instance, siddhi::BasicSourceStreamHandlers1)
+def test_siddhi_basicsourcestreamhandlers1_instantiation(instance):
+    assert isinstance(instance, siddhi_BasicSourceStreamHandlers1)
 
 @given(instance=AGGREGATE_strategy)
 @settings(max_examples=50)
@@ -9870,55 +9495,46 @@ def test_from_instantiation(instance):
 def test_aggregation_instantiation(instance):
     assert isinstance(instance, AGGREGATION)
 
-@given(instance=siddhi::FunctionBody_strategy)
+@given(instance=siddhi_FunctionBody_strategy)
 @settings(max_examples=50)
-def test_siddhi::functionbody_instantiation(instance):
-    assert isinstance(instance, siddhi::FunctionBody)
-
-@given(instance=siddhi::FunctionBody_strategy)
-def test_siddhi::functionbody_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_siddhi_functionbody_instantiation(instance):
+    assert isinstance(instance, siddhi_FunctionBody)
 
 
-@given(instance=siddhi::FunctionBody_strategy)
-def test_siddhi::functionbody_value_setter(instance):
+
+@given(instance=siddhi_FunctionBody_strategy)
+def test_siddhi_functionbody_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=siddhi::AttributeType_strategy)
+@given(instance=siddhi_AttributeType_strategy)
 @settings(max_examples=50)
-def test_siddhi::attributetype_instantiation(instance):
-    assert isinstance(instance, siddhi::AttributeType)
+def test_siddhi_attributetype_instantiation(instance):
+    assert isinstance(instance, siddhi_AttributeType)
 
-@given(instance=siddhi::LanguageName_strategy)
+@given(instance=siddhi_LanguageName_strategy)
 @settings(max_examples=50)
-def test_siddhi::languagename_instantiation(instance):
-    assert isinstance(instance, siddhi::LanguageName)
-
-@given(instance=siddhi::LanguageName_strategy)
-def test_siddhi::languagename_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_siddhi_languagename_instantiation(instance):
+    assert isinstance(instance, siddhi_LanguageName)
 
 
-@given(instance=siddhi::LanguageName_strategy)
-def test_siddhi::languagename_id_setter(instance):
+
+@given(instance=siddhi_LanguageName_strategy)
+def test_siddhi_languagename_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=siddhi::FunctionName_strategy)
+@given(instance=siddhi_FunctionName_strategy)
 @settings(max_examples=50)
-def test_siddhi::functionname_instantiation(instance):
-    assert isinstance(instance, siddhi::FunctionName)
-
-@given(instance=siddhi::FunctionName_strategy)
-def test_siddhi::functionname_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_siddhi_functionname_instantiation(instance):
+    assert isinstance(instance, siddhi_FunctionName)
 
 
-@given(instance=siddhi::FunctionName_strategy)
-def test_siddhi::functionname_id_setter(instance):
+
+@given(instance=siddhi_FunctionName_strategy)
+def test_siddhi_functionname_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -9928,70 +9544,61 @@ def test_siddhi::functionname_id_setter(instance):
 def test_return_instantiation(instance):
     assert isinstance(instance, RETURN)
 
-@given(instance=siddhi::QueryOutput_strategy)
+@given(instance=siddhi_AnonymousStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::queryoutput_instantiation(instance):
-    assert isinstance(instance, siddhi::QueryOutput)
+def test_siddhi_anonymousstream_instantiation(instance):
+    assert isinstance(instance, siddhi_AnonymousStream)
 
-@given(instance=siddhi::AnonymousStream_strategy)
+@given(instance=siddhi_QueryOutput_strategy)
 @settings(max_examples=50)
-def test_siddhi::anonymousstream_instantiation(instance):
-    assert isinstance(instance, siddhi::AnonymousStream)
+def test_siddhi_queryoutput_instantiation(instance):
+    assert isinstance(instance, siddhi_QueryOutput)
 
 @given(instance=FUNCTION_strategy)
 @settings(max_examples=50)
 def test_function_instantiation(instance):
     assert isinstance(instance, FUNCTION)
 
-@given(instance=siddhi::StringValue_strategy)
+@given(instance=siddhi_StringValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::stringvalue_instantiation(instance):
-    assert isinstance(instance, siddhi::StringValue)
-
-@given(instance=siddhi::StringValue_strategy)
-def test_siddhi::stringvalue_sl_type(instance):
-    assert isinstance(instance.sl, str)
+def test_siddhi_stringvalue_instantiation(instance):
+    assert isinstance(instance, siddhi_StringValue)
 
 
-@given(instance=siddhi::StringValue_strategy)
-def test_siddhi::stringvalue_sl_setter(instance):
+
+@given(instance=siddhi_StringValue_strategy)
+def test_siddhi_stringvalue_sl_setter(instance):
     original = instance.sl
     instance.sl = original
     assert instance.sl == original
 
-@given(instance=siddhi::TimeValue_strategy)
+@given(instance=siddhi_TimeValue_strategy)
 @settings(max_examples=50)
-def test_siddhi::timevalue_instantiation(instance):
-    assert isinstance(instance, siddhi::TimeValue)
+def test_siddhi_timevalue_instantiation(instance):
+    assert isinstance(instance, siddhi_TimeValue)
 
-@given(instance=siddhi::EVERY_strategy)
+@given(instance=siddhi_EVERY_strategy)
 @settings(max_examples=50)
-def test_siddhi::every_instantiation(instance):
-    assert isinstance(instance, siddhi::EVERY)
-
-@given(instance=siddhi::EVERY_strategy)
-def test_siddhi::every_every1_type(instance):
-    assert isinstance(instance.every1, str)
+def test_siddhi_every_instantiation(instance):
+    assert isinstance(instance, siddhi_EVERY)
 
 
-@given(instance=siddhi::EVERY_strategy)
-def test_siddhi::every_every1_setter(instance):
+
+@given(instance=siddhi_EVERY_strategy)
+def test_siddhi_every_every1_setter(instance):
     original = instance.every1
     instance.every1 = original
     assert instance.every1 == original
 
-@given(instance=siddhi::TriggerName_strategy)
+@given(instance=siddhi_TriggerName_strategy)
 @settings(max_examples=50)
-def test_siddhi::triggername_instantiation(instance):
-    assert isinstance(instance, siddhi::TriggerName)
-
-@given(instance=siddhi::TriggerName_strategy)
-def test_siddhi::triggername_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_siddhi_triggername_instantiation(instance):
+    assert isinstance(instance, siddhi_TriggerName)
 
 
-@given(instance=siddhi::TriggerName_strategy)
-def test_siddhi::triggername_id_setter(instance):
+
+@given(instance=siddhi_TriggerName_strategy)
+def test_siddhi_triggername_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -10006,56 +9613,53 @@ def test_at_instantiation(instance):
 def test_trigger_instantiation(instance):
     assert isinstance(instance, TRIGGER)
 
-@given(instance=siddhi::OutputEventType_strategy)
+@given(instance=siddhi_OutputEventType_strategy)
 @settings(max_examples=50)
-def test_siddhi::outputeventtype_instantiation(instance):
-    assert isinstance(instance, siddhi::OutputEventType)
+def test_siddhi_outputeventtype_instantiation(instance):
+    assert isinstance(instance, siddhi_OutputEventType)
 
-@given(instance=siddhi::FunctionOperation_strategy)
+@given(instance=siddhi_FunctionOperation_strategy)
 @settings(max_examples=50)
-def test_siddhi::functionoperation_instantiation(instance):
-    assert isinstance(instance, siddhi::FunctionOperation)
+def test_siddhi_functionoperation_instantiation(instance):
+    assert isinstance(instance, siddhi_FunctionOperation)
 
-@given(instance=siddhi::AppAnnotation_strategy)
+@given(instance=siddhi_AppAnnotation_strategy)
 @settings(max_examples=50)
-def test_siddhi::appannotation_instantiation(instance):
-    assert isinstance(instance, siddhi::AppAnnotation)
+def test_siddhi_appannotation_instantiation(instance):
+    assert isinstance(instance, siddhi_AppAnnotation)
 
-@given(instance=siddhi::ExecutionPlan_strategy)
+@given(instance=siddhi_ExecutionPlan_strategy)
 @settings(max_examples=50)
-def test_siddhi::executionplan_instantiation(instance):
-    assert isinstance(instance, siddhi::ExecutionPlan)
+def test_siddhi_executionplan_instantiation(instance):
+    assert isinstance(instance, siddhi_ExecutionPlan)
 
 @given(instance=TABLE_strategy)
 @settings(max_examples=50)
 def test_table_instantiation(instance):
     assert isinstance(instance, TABLE)
 
-@given(instance=siddhi::Features_strategy)
+@given(instance=siddhi_Features_strategy)
 @settings(max_examples=50)
-def test_siddhi::features_instantiation(instance):
-    assert isinstance(instance, siddhi::Features)
+def test_siddhi_features_instantiation(instance):
+    assert isinstance(instance, siddhi_Features)
 
-@given(instance=siddhi::Source1_strategy)
+@given(instance=siddhi_Source1_strategy)
 @settings(max_examples=50)
-def test_siddhi::source1_instantiation(instance):
-    assert isinstance(instance, siddhi::Source1)
-
-@given(instance=siddhi::Source1_strategy)
-def test_siddhi::source1_inner_type(instance):
-    assert isinstance(instance.inner, str)
+def test_siddhi_source1_instantiation(instance):
+    assert isinstance(instance, siddhi_Source1)
 
 
-@given(instance=siddhi::Source1_strategy)
-def test_siddhi::source1_inner_setter(instance):
+
+@given(instance=siddhi_Source1_strategy)
+def test_siddhi_source1_inner_setter(instance):
     original = instance.inner
     instance.inner = original
     assert instance.inner == original
 
-@given(instance=siddhi::Annotation_strategy)
+@given(instance=siddhi_Annotation_strategy)
 @settings(max_examples=50)
-def test_siddhi::annotation_instantiation(instance):
-    assert isinstance(instance, siddhi::Annotation)
+def test_siddhi_annotation_instantiation(instance):
+    assert isinstance(instance, siddhi_Annotation)
 
 @given(instance=STREAM_strategy)
 @settings(max_examples=50)
@@ -10067,57 +9671,57 @@ def test_stream_instantiation(instance):
 def test_define_instantiation(instance):
     assert isinstance(instance, DEFINE)
 
-@given(instance=siddhi::Keyword_strategy)
+@given(instance=siddhi_DefinitionStream_strategy)
 @settings(max_examples=50)
-def test_siddhi::keyword_instantiation(instance):
-    assert isinstance(instance, siddhi::Keyword)
+def test_siddhi_definitionstream_instantiation(instance):
+    assert isinstance(instance, siddhi_DefinitionStream)
 
-@given(instance=siddhi::DefinitionTable_strategy)
+@given(instance=siddhi_DefinitionTable_strategy)
 @settings(max_examples=50)
-def test_siddhi::definitiontable_instantiation(instance):
-    assert isinstance(instance, siddhi::DefinitionTable)
+def test_siddhi_definitiontable_instantiation(instance):
+    assert isinstance(instance, siddhi_DefinitionTable)
 
-@given(instance=siddhi::DefinitionStream_strategy)
+@given(instance=siddhi_Keyword_strategy)
 @settings(max_examples=50)
-def test_siddhi::definitionstream_instantiation(instance):
-    assert isinstance(instance, siddhi::DefinitionStream)
+def test_siddhi_keyword_instantiation(instance):
+    assert isinstance(instance, siddhi_Keyword)
 
-@given(instance=siddhi::Query_strategy)
+@given(instance=siddhi_Query_strategy)
 @settings(max_examples=50)
-def test_siddhi::query_instantiation(instance):
-    assert isinstance(instance, siddhi::Query)
+def test_siddhi_query_instantiation(instance):
+    assert isinstance(instance, siddhi_Query)
 
-@given(instance=siddhi::ExecPartition_strategy)
+@given(instance=siddhi_ExecPartition_strategy)
 @settings(max_examples=50)
-def test_siddhi::execpartition_instantiation(instance):
-    assert isinstance(instance, siddhi::ExecPartition)
+def test_siddhi_execpartition_instantiation(instance):
+    assert isinstance(instance, siddhi_ExecPartition)
 
-@given(instance=siddhi::ExecutionElement_strategy)
+@given(instance=siddhi_ExecutionElement_strategy)
 @settings(max_examples=50)
-def test_siddhi::executionelement_instantiation(instance):
-    assert isinstance(instance, siddhi::ExecutionElement)
+def test_siddhi_executionelement_instantiation(instance):
+    assert isinstance(instance, siddhi_ExecutionElement)
 
-@given(instance=siddhi::DefinitionAggregation_strategy)
+@given(instance=siddhi_DefinitionAggregation_strategy)
 @settings(max_examples=50)
-def test_siddhi::definitionaggregation_instantiation(instance):
-    assert isinstance(instance, siddhi::DefinitionAggregation)
+def test_siddhi_definitionaggregation_instantiation(instance):
+    assert isinstance(instance, siddhi_DefinitionAggregation)
 
-@given(instance=siddhi::DefinitionFunction_strategy)
+@given(instance=siddhi_DefinitionFunction_strategy)
 @settings(max_examples=50)
-def test_siddhi::definitionfunction_instantiation(instance):
-    assert isinstance(instance, siddhi::DefinitionFunction)
+def test_siddhi_definitionfunction_instantiation(instance):
+    assert isinstance(instance, siddhi_DefinitionFunction)
 
-@given(instance=siddhi::DefinitionTrigger_strategy)
+@given(instance=siddhi_DefinitionTrigger_strategy)
 @settings(max_examples=50)
-def test_siddhi::definitiontrigger_instantiation(instance):
-    assert isinstance(instance, siddhi::DefinitionTrigger)
+def test_siddhi_definitiontrigger_instantiation(instance):
+    assert isinstance(instance, siddhi_DefinitionTrigger)
 
-@given(instance=siddhi::DefinitionWindow_strategy)
+@given(instance=siddhi_DefinitionWindow_strategy)
 @settings(max_examples=50)
-def test_siddhi::definitionwindow_instantiation(instance):
-    assert isinstance(instance, siddhi::DefinitionWindow)
+def test_siddhi_definitionwindow_instantiation(instance):
+    assert isinstance(instance, siddhi_DefinitionWindow)
 
-@given(instance=siddhi::SiddhiQL_strategy)
+@given(instance=siddhi_SiddhiQL_strategy)
 @settings(max_examples=50)
-def test_siddhi::siddhiql_instantiation(instance):
-    assert isinstance(instance, siddhi::SiddhiQL)
+def test_siddhi_siddhiql_instantiation(instance):
+    assert isinstance(instance, siddhi_SiddhiQL)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    errormanypov::Named,
+from python_code import (
+    errormanypov_Named,
     Named,
-    errormanypov::E,
-    errormanypov::C,
-    errormanypov::K,
-    errormanypov::JK,
-    errormanypov::B,
-    errormanypov::F,
-    errormanypov::J,
-    errormanypov::M,
-    errormanypov::A,
+    errormanypov_C,
+    errormanypov_M,
+    errormanypov_F,
+    errormanypov_K,
+    errormanypov_J,
+    errormanypov_B,
+    errormanypov_JK,
+    errormanypov_A,
+    errormanypov_E,
 )
 
 # =============================================================================
@@ -25,23 +25,23 @@ from classes import (
 
 
 
-def test_errormanypov::named_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::Named)
+def test_errormanypov_named_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_Named)
 
 
-def test_errormanypov::named_constructor_exists():
-    assert callable(errormanypov::Named.__init__)
+def test_errormanypov_named_constructor_exists():
+    assert callable(errormanypov_Named.__init__)
 
 
-def test_errormanypov::named_constructor_args():
-    sig = inspect.signature(errormanypov::Named.__init__)
+def test_errormanypov_named_constructor_args():
+    sig = inspect.signature(errormanypov_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_errormanypov::named_has_name():
-    assert hasattr(errormanypov::Named, "name")
+def test_errormanypov_named_has_name():
+    assert hasattr(errormanypov_Named, "name")
     descriptor = None
-    for klass in errormanypov::Named.__mro__:
+    for klass in errormanypov_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -63,128 +63,128 @@ def test_named_constructor_args():
 
 
 
-def test_errormanypov::e_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::E)
+def test_errormanypov_c_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_C)
 
 
-def test_errormanypov::e_constructor_exists():
-    assert callable(errormanypov::E.__init__)
+def test_errormanypov_c_constructor_exists():
+    assert callable(errormanypov_C.__init__)
 
 
-def test_errormanypov::e_constructor_args():
-    sig = inspect.signature(errormanypov::E.__init__)
+def test_errormanypov_c_constructor_args():
+    sig = inspect.signature(errormanypov_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::c_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::C)
+def test_errormanypov_m_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_M)
 
 
-def test_errormanypov::c_constructor_exists():
-    assert callable(errormanypov::C.__init__)
+def test_errormanypov_m_constructor_exists():
+    assert callable(errormanypov_M.__init__)
 
 
-def test_errormanypov::c_constructor_args():
-    sig = inspect.signature(errormanypov::C.__init__)
+def test_errormanypov_m_constructor_args():
+    sig = inspect.signature(errormanypov_M.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::k_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::K)
+def test_errormanypov_f_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_F)
 
 
-def test_errormanypov::k_constructor_exists():
-    assert callable(errormanypov::K.__init__)
+def test_errormanypov_f_constructor_exists():
+    assert callable(errormanypov_F.__init__)
 
 
-def test_errormanypov::k_constructor_args():
-    sig = inspect.signature(errormanypov::K.__init__)
+def test_errormanypov_f_constructor_args():
+    sig = inspect.signature(errormanypov_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::jk_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::JK)
+def test_errormanypov_k_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_K)
 
 
-def test_errormanypov::jk_constructor_exists():
-    assert callable(errormanypov::JK.__init__)
+def test_errormanypov_k_constructor_exists():
+    assert callable(errormanypov_K.__init__)
 
 
-def test_errormanypov::jk_constructor_args():
-    sig = inspect.signature(errormanypov::JK.__init__)
+def test_errormanypov_k_constructor_args():
+    sig = inspect.signature(errormanypov_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::b_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::B)
+def test_errormanypov_j_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_J)
 
 
-def test_errormanypov::b_constructor_exists():
-    assert callable(errormanypov::B.__init__)
+def test_errormanypov_j_constructor_exists():
+    assert callable(errormanypov_J.__init__)
 
 
-def test_errormanypov::b_constructor_args():
-    sig = inspect.signature(errormanypov::B.__init__)
+def test_errormanypov_j_constructor_args():
+    sig = inspect.signature(errormanypov_J.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::f_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::F)
+def test_errormanypov_b_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_B)
 
 
-def test_errormanypov::f_constructor_exists():
-    assert callable(errormanypov::F.__init__)
+def test_errormanypov_b_constructor_exists():
+    assert callable(errormanypov_B.__init__)
 
 
-def test_errormanypov::f_constructor_args():
-    sig = inspect.signature(errormanypov::F.__init__)
+def test_errormanypov_b_constructor_args():
+    sig = inspect.signature(errormanypov_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::j_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::J)
+def test_errormanypov_jk_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_JK)
 
 
-def test_errormanypov::j_constructor_exists():
-    assert callable(errormanypov::J.__init__)
+def test_errormanypov_jk_constructor_exists():
+    assert callable(errormanypov_JK.__init__)
 
 
-def test_errormanypov::j_constructor_args():
-    sig = inspect.signature(errormanypov::J.__init__)
+def test_errormanypov_jk_constructor_args():
+    sig = inspect.signature(errormanypov_JK.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::m_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::M)
+def test_errormanypov_a_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_A)
 
 
-def test_errormanypov::m_constructor_exists():
-    assert callable(errormanypov::M.__init__)
+def test_errormanypov_a_constructor_exists():
+    assert callable(errormanypov_A.__init__)
 
 
-def test_errormanypov::m_constructor_args():
-    sig = inspect.signature(errormanypov::M.__init__)
+def test_errormanypov_a_constructor_args():
+    sig = inspect.signature(errormanypov_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errormanypov::a_is_not_abstract():
-    assert not inspect.isabstract(errormanypov::A)
+def test_errormanypov_e_is_not_abstract():
+    assert not inspect.isabstract(errormanypov_E)
 
 
-def test_errormanypov::a_constructor_exists():
-    assert callable(errormanypov::A.__init__)
+def test_errormanypov_e_constructor_exists():
+    assert callable(errormanypov_E.__init__)
 
 
-def test_errormanypov::a_constructor_args():
-    sig = inspect.signature(errormanypov::A.__init__)
+def test_errormanypov_e_constructor_args():
+    sig = inspect.signature(errormanypov_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -199,54 +199,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-errormanypov::Named_strategy = st.builds(
-    errormanypov::Named,
+errormanypov_Named_strategy = st.builds(
+    errormanypov_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-errormanypov::E_strategy = st.builds(
-    errormanypov::E,
+errormanypov_C_strategy = st.builds(
+    errormanypov_C,
 )
-errormanypov::C_strategy = st.builds(
-    errormanypov::C,
+errormanypov_M_strategy = st.builds(
+    errormanypov_M,
 )
-errormanypov::K_strategy = st.builds(
-    errormanypov::K,
+errormanypov_F_strategy = st.builds(
+    errormanypov_F,
 )
-errormanypov::JK_strategy = st.builds(
-    errormanypov::JK,
+errormanypov_K_strategy = st.builds(
+    errormanypov_K,
 )
-errormanypov::B_strategy = st.builds(
-    errormanypov::B,
+errormanypov_J_strategy = st.builds(
+    errormanypov_J,
 )
-errormanypov::F_strategy = st.builds(
-    errormanypov::F,
+errormanypov_B_strategy = st.builds(
+    errormanypov_B,
 )
-errormanypov::J_strategy = st.builds(
-    errormanypov::J,
+errormanypov_JK_strategy = st.builds(
+    errormanypov_JK,
 )
-errormanypov::M_strategy = st.builds(
-    errormanypov::M,
+errormanypov_A_strategy = st.builds(
+    errormanypov_A,
 )
-errormanypov::A_strategy = st.builds(
-    errormanypov::A,
+errormanypov_E_strategy = st.builds(
+    errormanypov_E,
 )
 
-@given(instance=errormanypov::Named_strategy)
+@given(instance=errormanypov_Named_strategy)
 @settings(max_examples=50)
-def test_errormanypov::named_instantiation(instance):
-    assert isinstance(instance, errormanypov::Named)
-
-@given(instance=errormanypov::Named_strategy)
-def test_errormanypov::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_errormanypov_named_instantiation(instance):
+    assert isinstance(instance, errormanypov_Named)
 
 
-@given(instance=errormanypov::Named_strategy)
-def test_errormanypov::named_name_setter(instance):
+
+@given(instance=errormanypov_Named_strategy)
+def test_errormanypov_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -256,47 +253,47 @@ def test_errormanypov::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=errormanypov::E_strategy)
+@given(instance=errormanypov_C_strategy)
 @settings(max_examples=50)
-def test_errormanypov::e_instantiation(instance):
-    assert isinstance(instance, errormanypov::E)
+def test_errormanypov_c_instantiation(instance):
+    assert isinstance(instance, errormanypov_C)
 
-@given(instance=errormanypov::C_strategy)
+@given(instance=errormanypov_M_strategy)
 @settings(max_examples=50)
-def test_errormanypov::c_instantiation(instance):
-    assert isinstance(instance, errormanypov::C)
+def test_errormanypov_m_instantiation(instance):
+    assert isinstance(instance, errormanypov_M)
 
-@given(instance=errormanypov::K_strategy)
+@given(instance=errormanypov_F_strategy)
 @settings(max_examples=50)
-def test_errormanypov::k_instantiation(instance):
-    assert isinstance(instance, errormanypov::K)
+def test_errormanypov_f_instantiation(instance):
+    assert isinstance(instance, errormanypov_F)
 
-@given(instance=errormanypov::JK_strategy)
+@given(instance=errormanypov_K_strategy)
 @settings(max_examples=50)
-def test_errormanypov::jk_instantiation(instance):
-    assert isinstance(instance, errormanypov::JK)
+def test_errormanypov_k_instantiation(instance):
+    assert isinstance(instance, errormanypov_K)
 
-@given(instance=errormanypov::B_strategy)
+@given(instance=errormanypov_J_strategy)
 @settings(max_examples=50)
-def test_errormanypov::b_instantiation(instance):
-    assert isinstance(instance, errormanypov::B)
+def test_errormanypov_j_instantiation(instance):
+    assert isinstance(instance, errormanypov_J)
 
-@given(instance=errormanypov::F_strategy)
+@given(instance=errormanypov_B_strategy)
 @settings(max_examples=50)
-def test_errormanypov::f_instantiation(instance):
-    assert isinstance(instance, errormanypov::F)
+def test_errormanypov_b_instantiation(instance):
+    assert isinstance(instance, errormanypov_B)
 
-@given(instance=errormanypov::J_strategy)
+@given(instance=errormanypov_JK_strategy)
 @settings(max_examples=50)
-def test_errormanypov::j_instantiation(instance):
-    assert isinstance(instance, errormanypov::J)
+def test_errormanypov_jk_instantiation(instance):
+    assert isinstance(instance, errormanypov_JK)
 
-@given(instance=errormanypov::M_strategy)
+@given(instance=errormanypov_A_strategy)
 @settings(max_examples=50)
-def test_errormanypov::m_instantiation(instance):
-    assert isinstance(instance, errormanypov::M)
+def test_errormanypov_a_instantiation(instance):
+    assert isinstance(instance, errormanypov_A)
 
-@given(instance=errormanypov::A_strategy)
+@given(instance=errormanypov_E_strategy)
 @settings(max_examples=50)
-def test_errormanypov::a_instantiation(instance):
-    assert isinstance(instance, errormanypov::A)
+def test_errormanypov_e_instantiation(instance):
+    assert isinstance(instance, errormanypov_E)

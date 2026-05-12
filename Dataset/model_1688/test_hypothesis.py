@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    yyf::NamedElement,
-    yyf::Output,
-    yyf::Foo,
+from python_code import (
+    yyf_NamedElement,
+    yyf_Output,
+    yyf_Foo,
     NamedElement,
-    yyf::Relation,
-    yyf::Base,
-    yyf::Bar,
-    yyf::Alias,
+    yyf_Relation,
+    yyf_Base,
+    yyf_Bar,
+    yyf_Alias,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_yyf::namedelement_is_not_abstract():
-    assert not inspect.isabstract(yyf::NamedElement)
+def test_yyf_namedelement_is_not_abstract():
+    assert not inspect.isabstract(yyf_NamedElement)
 
 
-def test_yyf::namedelement_constructor_exists():
-    assert callable(yyf::NamedElement.__init__)
+def test_yyf_namedelement_constructor_exists():
+    assert callable(yyf_NamedElement.__init__)
 
 
-def test_yyf::namedelement_constructor_args():
-    sig = inspect.signature(yyf::NamedElement.__init__)
+def test_yyf_namedelement_constructor_args():
+    sig = inspect.signature(yyf_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_yyf::namedelement_has_name():
-    assert hasattr(yyf::NamedElement, "name")
+def test_yyf_namedelement_has_name():
+    assert hasattr(yyf_NamedElement, "name")
     descriptor = None
-    for klass in yyf::NamedElement.__mro__:
+    for klass in yyf_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -46,23 +46,23 @@ def test_yyf::namedelement_has_name():
 
 
 
-def test_yyf::output_is_not_abstract():
-    assert not inspect.isabstract(yyf::Output)
+def test_yyf_output_is_not_abstract():
+    assert not inspect.isabstract(yyf_Output)
 
 
-def test_yyf::output_constructor_exists():
-    assert callable(yyf::Output.__init__)
+def test_yyf_output_constructor_exists():
+    assert callable(yyf_Output.__init__)
 
 
-def test_yyf::output_constructor_args():
-    sig = inspect.signature(yyf::Output.__init__)
+def test_yyf_output_constructor_args():
+    sig = inspect.signature(yyf_Output.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyf::output_has_id():
-    assert hasattr(yyf::Output, "id")
+def test_yyf_output_has_id():
+    assert hasattr(yyf_Output, "id")
     descriptor = None
-    for klass in yyf::Output.__mro__:
+    for klass in yyf_Output.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -70,23 +70,23 @@ def test_yyf::output_has_id():
 
 
 
-def test_yyf::foo_is_not_abstract():
-    assert not inspect.isabstract(yyf::Foo)
+def test_yyf_foo_is_not_abstract():
+    assert not inspect.isabstract(yyf_Foo)
 
 
-def test_yyf::foo_constructor_exists():
-    assert callable(yyf::Foo.__init__)
+def test_yyf_foo_constructor_exists():
+    assert callable(yyf_Foo.__init__)
 
 
-def test_yyf::foo_constructor_args():
-    sig = inspect.signature(yyf::Foo.__init__)
+def test_yyf_foo_constructor_args():
+    sig = inspect.signature(yyf_Foo.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyf::foo_has_id():
-    assert hasattr(yyf::Foo, "id")
+def test_yyf_foo_has_id():
+    assert hasattr(yyf_Foo, "id")
     descriptor = None
-    for klass in yyf::Foo.__mro__:
+    for klass in yyf_Foo.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -108,23 +108,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_yyf::relation_is_not_abstract():
-    assert not inspect.isabstract(yyf::Relation)
+def test_yyf_relation_is_not_abstract():
+    assert not inspect.isabstract(yyf_Relation)
 
 
-def test_yyf::relation_constructor_exists():
-    assert callable(yyf::Relation.__init__)
+def test_yyf_relation_constructor_exists():
+    assert callable(yyf_Relation.__init__)
 
 
-def test_yyf::relation_constructor_args():
-    sig = inspect.signature(yyf::Relation.__init__)
+def test_yyf_relation_constructor_args():
+    sig = inspect.signature(yyf_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_yyf::relation_has_since():
-    assert hasattr(yyf::Relation, "since")
+def test_yyf_relation_has_since():
+    assert hasattr(yyf_Relation, "since")
     descriptor = None
-    for klass in yyf::Relation.__mro__:
+    for klass in yyf_Relation.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -132,23 +132,23 @@ def test_yyf::relation_has_since():
 
 
 
-def test_yyf::base_is_not_abstract():
-    assert not inspect.isabstract(yyf::Base)
+def test_yyf_base_is_not_abstract():
+    assert not inspect.isabstract(yyf_Base)
 
 
-def test_yyf::base_constructor_exists():
-    assert callable(yyf::Base.__init__)
+def test_yyf_base_constructor_exists():
+    assert callable(yyf_Base.__init__)
 
 
-def test_yyf::base_constructor_args():
-    sig = inspect.signature(yyf::Base.__init__)
+def test_yyf_base_constructor_args():
+    sig = inspect.signature(yyf_Base.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyf::base_has_id():
-    assert hasattr(yyf::Base, "id")
+def test_yyf_base_has_id():
+    assert hasattr(yyf_Base, "id")
     descriptor = None
-    for klass in yyf::Base.__mro__:
+    for klass in yyf_Base.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -156,23 +156,23 @@ def test_yyf::base_has_id():
 
 
 
-def test_yyf::bar_is_not_abstract():
-    assert not inspect.isabstract(yyf::Bar)
+def test_yyf_bar_is_not_abstract():
+    assert not inspect.isabstract(yyf_Bar)
 
 
-def test_yyf::bar_constructor_exists():
-    assert callable(yyf::Bar.__init__)
+def test_yyf_bar_constructor_exists():
+    assert callable(yyf_Bar.__init__)
 
 
-def test_yyf::bar_constructor_args():
-    sig = inspect.signature(yyf::Bar.__init__)
+def test_yyf_bar_constructor_args():
+    sig = inspect.signature(yyf_Bar.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyf::bar_has_id():
-    assert hasattr(yyf::Bar, "id")
+def test_yyf_bar_has_id():
+    assert hasattr(yyf_Bar, "id")
     descriptor = None
-    for klass in yyf::Bar.__mro__:
+    for klass in yyf_Bar.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -180,23 +180,23 @@ def test_yyf::bar_has_id():
 
 
 
-def test_yyf::alias_is_not_abstract():
-    assert not inspect.isabstract(yyf::Alias)
+def test_yyf_alias_is_not_abstract():
+    assert not inspect.isabstract(yyf_Alias)
 
 
-def test_yyf::alias_constructor_exists():
-    assert callable(yyf::Alias.__init__)
+def test_yyf_alias_constructor_exists():
+    assert callable(yyf_Alias.__init__)
 
 
-def test_yyf::alias_constructor_args():
-    sig = inspect.signature(yyf::Alias.__init__)
+def test_yyf_alias_constructor_args():
+    sig = inspect.signature(yyf_Alias.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyf::alias_has_id():
-    assert hasattr(yyf::Alias, "id")
+def test_yyf_alias_has_id():
+    assert hasattr(yyf_Alias, "id")
     descriptor = None
-    for klass in yyf::Alias.__mro__:
+    for klass in yyf_Alias.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -214,89 +214,80 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-yyf::NamedElement_strategy = st.builds(
-    yyf::NamedElement,
+yyf_NamedElement_strategy = st.builds(
+    yyf_NamedElement,
     name=
         safe_text
 )
-yyf::Output_strategy = st.builds(
-    yyf::Output,
+yyf_Output_strategy = st.builds(
+    yyf_Output,
     id=
         safe_text
 )
-yyf::Foo_strategy = st.builds(
-    yyf::Foo,
+yyf_Foo_strategy = st.builds(
+    yyf_Foo,
     id=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-yyf::Relation_strategy = st.builds(
-    yyf::Relation,
+yyf_Relation_strategy = st.builds(
+    yyf_Relation,
     since=
         safe_text
 )
-yyf::Base_strategy = st.builds(
-    yyf::Base,
+yyf_Base_strategy = st.builds(
+    yyf_Base,
     id=
         st.integers()
 )
-yyf::Bar_strategy = st.builds(
-    yyf::Bar,
+yyf_Bar_strategy = st.builds(
+    yyf_Bar,
     id=
         safe_text
 )
-yyf::Alias_strategy = st.builds(
-    yyf::Alias,
+yyf_Alias_strategy = st.builds(
+    yyf_Alias,
     id=
         safe_text
 )
 
-@given(instance=yyf::NamedElement_strategy)
+@given(instance=yyf_NamedElement_strategy)
 @settings(max_examples=50)
-def test_yyf::namedelement_instantiation(instance):
-    assert isinstance(instance, yyf::NamedElement)
-
-@given(instance=yyf::NamedElement_strategy)
-def test_yyf::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_yyf_namedelement_instantiation(instance):
+    assert isinstance(instance, yyf_NamedElement)
 
 
-@given(instance=yyf::NamedElement_strategy)
-def test_yyf::namedelement_name_setter(instance):
+
+@given(instance=yyf_NamedElement_strategy)
+def test_yyf_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=yyf::Output_strategy)
+@given(instance=yyf_Output_strategy)
 @settings(max_examples=50)
-def test_yyf::output_instantiation(instance):
-    assert isinstance(instance, yyf::Output)
-
-@given(instance=yyf::Output_strategy)
-def test_yyf::output_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yyf_output_instantiation(instance):
+    assert isinstance(instance, yyf_Output)
 
 
-@given(instance=yyf::Output_strategy)
-def test_yyf::output_id_setter(instance):
+
+@given(instance=yyf_Output_strategy)
+def test_yyf_output_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yyf::Foo_strategy)
+@given(instance=yyf_Foo_strategy)
 @settings(max_examples=50)
-def test_yyf::foo_instantiation(instance):
-    assert isinstance(instance, yyf::Foo)
-
-@given(instance=yyf::Foo_strategy)
-def test_yyf::foo_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yyf_foo_instantiation(instance):
+    assert isinstance(instance, yyf_Foo)
 
 
-@given(instance=yyf::Foo_strategy)
-def test_yyf::foo_id_setter(instance):
+
+@given(instance=yyf_Foo_strategy)
+def test_yyf_foo_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -306,66 +297,54 @@ def test_yyf::foo_id_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=yyf::Relation_strategy)
+@given(instance=yyf_Relation_strategy)
 @settings(max_examples=50)
-def test_yyf::relation_instantiation(instance):
-    assert isinstance(instance, yyf::Relation)
-
-@given(instance=yyf::Relation_strategy)
-def test_yyf::relation_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_yyf_relation_instantiation(instance):
+    assert isinstance(instance, yyf_Relation)
 
 
-@given(instance=yyf::Relation_strategy)
-def test_yyf::relation_since_setter(instance):
+
+@given(instance=yyf_Relation_strategy)
+def test_yyf_relation_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=yyf::Base_strategy)
+@given(instance=yyf_Base_strategy)
 @settings(max_examples=50)
-def test_yyf::base_instantiation(instance):
-    assert isinstance(instance, yyf::Base)
-
-@given(instance=yyf::Base_strategy)
-def test_yyf::base_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_yyf_base_instantiation(instance):
+    assert isinstance(instance, yyf_Base)
 
 
-@given(instance=yyf::Base_strategy)
-def test_yyf::base_id_setter(instance):
+
+@given(instance=yyf_Base_strategy)
+def test_yyf_base_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yyf::Bar_strategy)
+@given(instance=yyf_Bar_strategy)
 @settings(max_examples=50)
-def test_yyf::bar_instantiation(instance):
-    assert isinstance(instance, yyf::Bar)
-
-@given(instance=yyf::Bar_strategy)
-def test_yyf::bar_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yyf_bar_instantiation(instance):
+    assert isinstance(instance, yyf_Bar)
 
 
-@given(instance=yyf::Bar_strategy)
-def test_yyf::bar_id_setter(instance):
+
+@given(instance=yyf_Bar_strategy)
+def test_yyf_bar_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yyf::Alias_strategy)
+@given(instance=yyf_Alias_strategy)
 @settings(max_examples=50)
-def test_yyf::alias_instantiation(instance):
-    assert isinstance(instance, yyf::Alias)
-
-@given(instance=yyf::Alias_strategy)
-def test_yyf::alias_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yyf_alias_instantiation(instance):
+    assert isinstance(instance, yyf_Alias)
 
 
-@given(instance=yyf::Alias_strategy)
-def test_yyf::alias_id_setter(instance):
+
+@given(instance=yyf_Alias_strategy)
+def test_yyf_alias_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

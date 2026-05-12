@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     AbstractBehavior,
@@ -64,17 +64,8 @@ def test_entity_constructor_exists():
 def test_entity_constructor_args():
     sig = inspect.signature(Entity.__init__)
     params = list(sig.parameters.keys())
-    assert "properties" in params, "Missing parameter 'properties'"
     assert "behaviors" in params, "Missing parameter 'behaviors'"
-
-def test_entity_has_properties():
-    assert hasattr(Entity, "properties")
-    descriptor = None
-    for klass in Entity.__mro__:
-        if "properties" in klass.__dict__:
-            descriptor = klass.__dict__["properties"]
-            break
-    assert isinstance(descriptor, property)
+    assert "properties" in params, "Missing parameter 'properties'"
 
 def test_entity_has_behaviors():
     assert hasattr(Entity, "behaviors")
@@ -82,6 +73,15 @@ def test_entity_has_behaviors():
     for klass in Entity.__mro__:
         if "behaviors" in klass.__dict__:
             descriptor = klass.__dict__["behaviors"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_entity_has_properties():
+    assert hasattr(Entity, "properties")
+    descriptor = None
+    for klass in Entity.__mro__:
+        if "properties" in klass.__dict__:
+            descriptor = klass.__dict__["properties"]
             break
     assert isinstance(descriptor, property)
 
@@ -238,17 +238,8 @@ def test_controller_eventmanager_constructor_exists():
 def test_controller_eventmanager_constructor_args():
     sig = inspect.signature(Controller_EventManager.__init__)
     params = list(sig.parameters.keys())
-    assert "queueLock" in params, "Missing parameter 'queueLock'"
     assert "eventQueue" in params, "Missing parameter 'eventQueue'"
-
-def test_controller_eventmanager_has_queueLock():
-    assert hasattr(Controller_EventManager, "queueLock")
-    descriptor = None
-    for klass in Controller_EventManager.__mro__:
-        if "queueLock" in klass.__dict__:
-            descriptor = klass.__dict__["queueLock"]
-            break
-    assert isinstance(descriptor, property)
+    assert "queueLock" in params, "Missing parameter 'queueLock'"
 
 def test_controller_eventmanager_has_eventQueue():
     assert hasattr(Controller_EventManager, "eventQueue")
@@ -256,6 +247,15 @@ def test_controller_eventmanager_has_eventQueue():
     for klass in Controller_EventManager.__mro__:
         if "eventQueue" in klass.__dict__:
             descriptor = klass.__dict__["eventQueue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_eventmanager_has_queueLock():
+    assert hasattr(Controller_EventManager, "queueLock")
+    descriptor = None
+    for klass in Controller_EventManager.__mro__:
+        if "queueLock" in klass.__dict__:
+            descriptor = klass.__dict__["queueLock"]
             break
     assert isinstance(descriptor, property)
 
@@ -272,13 +272,22 @@ def test_controller_event_union__constructor_exists():
 def test_controller_event_union__constructor_args():
     sig = inspect.signature(Controller_Event_union_.__init__)
     params = list(sig.parameters.keys())
+    assert "eventType" in params, "Missing parameter 'eventType'"
     assert "EventMouseButton" in params, "Missing parameter 'EventMouseButton'"
+    assert "EventMouseMotion" in params, "Missing parameter 'EventMouseMotion'"
+    assert "EventEmpty" in params, "Missing parameter 'EventEmpty'"
+    assert "EvenkKeyboard" in params, "Missing parameter 'EvenkKeyboard'"
     assert "EventMouseWheel" in params, "Missing parameter 'EventMouseWheel'"
     assert "EventQuit" in params, "Missing parameter 'EventQuit'"
-    assert "EventMouseMotion" in params, "Missing parameter 'EventMouseMotion'"
-    assert "eventType" in params, "Missing parameter 'eventType'"
-    assert "EvenkKeyboard" in params, "Missing parameter 'EvenkKeyboard'"
-    assert "EventEmpty" in params, "Missing parameter 'EventEmpty'"
+
+def test_controller_event_union__has_eventType():
+    assert hasattr(Controller_Event_union_, "eventType")
+    descriptor = None
+    for klass in Controller_Event_union_.__mro__:
+        if "eventType" in klass.__dict__:
+            descriptor = klass.__dict__["eventType"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_controller_event_union__has_EventMouseButton():
     assert hasattr(Controller_Event_union_, "EventMouseButton")
@@ -286,6 +295,33 @@ def test_controller_event_union__has_EventMouseButton():
     for klass in Controller_Event_union_.__mro__:
         if "EventMouseButton" in klass.__dict__:
             descriptor = klass.__dict__["EventMouseButton"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_event_union__has_EventMouseMotion():
+    assert hasattr(Controller_Event_union_, "EventMouseMotion")
+    descriptor = None
+    for klass in Controller_Event_union_.__mro__:
+        if "EventMouseMotion" in klass.__dict__:
+            descriptor = klass.__dict__["EventMouseMotion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_event_union__has_EventEmpty():
+    assert hasattr(Controller_Event_union_, "EventEmpty")
+    descriptor = None
+    for klass in Controller_Event_union_.__mro__:
+        if "EventEmpty" in klass.__dict__:
+            descriptor = klass.__dict__["EventEmpty"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_event_union__has_EvenkKeyboard():
+    assert hasattr(Controller_Event_union_, "EvenkKeyboard")
+    descriptor = None
+    for klass in Controller_Event_union_.__mro__:
+        if "EvenkKeyboard" in klass.__dict__:
+            descriptor = klass.__dict__["EvenkKeyboard"]
             break
     assert isinstance(descriptor, property)
 
@@ -307,42 +343,6 @@ def test_controller_event_union__has_EventQuit():
             break
     assert isinstance(descriptor, property)
 
-def test_controller_event_union__has_EventMouseMotion():
-    assert hasattr(Controller_Event_union_, "EventMouseMotion")
-    descriptor = None
-    for klass in Controller_Event_union_.__mro__:
-        if "EventMouseMotion" in klass.__dict__:
-            descriptor = klass.__dict__["EventMouseMotion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_event_union__has_eventType():
-    assert hasattr(Controller_Event_union_, "eventType")
-    descriptor = None
-    for klass in Controller_Event_union_.__mro__:
-        if "eventType" in klass.__dict__:
-            descriptor = klass.__dict__["eventType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_event_union__has_EvenkKeyboard():
-    assert hasattr(Controller_Event_union_, "EvenkKeyboard")
-    descriptor = None
-    for klass in Controller_Event_union_.__mro__:
-        if "EvenkKeyboard" in klass.__dict__:
-            descriptor = klass.__dict__["EvenkKeyboard"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_event_union__has_EventEmpty():
-    assert hasattr(Controller_Event_union_, "EventEmpty")
-    descriptor = None
-    for klass in Controller_Event_union_.__mro__:
-        if "EventEmpty" in klass.__dict__:
-            descriptor = klass.__dict__["EventEmpty"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_controller_controller_is_not_abstract():
@@ -356,18 +356,18 @@ def test_controller_controller_constructor_exists():
 def test_controller_controller_constructor_args():
     sig = inspect.signature(Controller_Controller.__init__)
     params = list(sig.parameters.keys())
-    assert "inputController" in params, "Missing parameter 'inputController'"
+    assert "eventManager" in params, "Missing parameter 'eventManager'"
     assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "inputController" in params, "Missing parameter 'inputController'"
     assert "worldAccess" in params, "Missing parameter 'worldAccess'"
     assert "viewAccess" in params, "Missing parameter 'viewAccess'"
-    assert "eventManager" in params, "Missing parameter 'eventManager'"
 
-def test_controller_controller_has_inputController():
-    assert hasattr(Controller_Controller, "inputController")
+def test_controller_controller_has_eventManager():
+    assert hasattr(Controller_Controller, "eventManager")
     descriptor = None
     for klass in Controller_Controller.__mro__:
-        if "inputController" in klass.__dict__:
-            descriptor = klass.__dict__["inputController"]
+        if "eventManager" in klass.__dict__:
+            descriptor = klass.__dict__["eventManager"]
             break
     assert isinstance(descriptor, property)
 
@@ -377,6 +377,15 @@ def test_controller_controller_has_attribute():
     for klass in Controller_Controller.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_controller_has_inputController():
+    assert hasattr(Controller_Controller, "inputController")
+    descriptor = None
+    for klass in Controller_Controller.__mro__:
+        if "inputController" in klass.__dict__:
+            descriptor = klass.__dict__["inputController"]
             break
     assert isinstance(descriptor, property)
 
@@ -395,15 +404,6 @@ def test_controller_controller_has_viewAccess():
     for klass in Controller_Controller.__mro__:
         if "viewAccess" in klass.__dict__:
             descriptor = klass.__dict__["viewAccess"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_controller_has_eventManager():
-    assert hasattr(Controller_Controller, "eventManager")
-    descriptor = None
-    for klass in Controller_Controller.__mro__:
-        if "eventManager" in klass.__dict__:
-            descriptor = klass.__dict__["eventManager"]
             break
     assert isinstance(descriptor, property)
 
@@ -552,18 +552,18 @@ def test_view_sdlrenderer_constructor_exists():
 def test_view_sdlrenderer_constructor_args():
     sig = inspect.signature(View_SDLRenderer.__init__)
     params = list(sig.parameters.keys())
-    assert "renderer" in params, "Missing parameter 'renderer'"
+    assert "tileset" in params, "Missing parameter 'tileset'"
     assert "viewPointer" in params, "Missing parameter 'viewPointer'"
     assert "camera" in params, "Missing parameter 'camera'"
-    assert "tileset" in params, "Missing parameter 'tileset'"
     assert "window" in params, "Missing parameter 'window'"
+    assert "renderer" in params, "Missing parameter 'renderer'"
 
-def test_view_sdlrenderer_has_renderer():
-    assert hasattr(View_SDLRenderer, "renderer")
+def test_view_sdlrenderer_has_tileset():
+    assert hasattr(View_SDLRenderer, "tileset")
     descriptor = None
     for klass in View_SDLRenderer.__mro__:
-        if "renderer" in klass.__dict__:
-            descriptor = klass.__dict__["renderer"]
+        if "tileset" in klass.__dict__:
+            descriptor = klass.__dict__["tileset"]
             break
     assert isinstance(descriptor, property)
 
@@ -585,21 +585,21 @@ def test_view_sdlrenderer_has_camera():
             break
     assert isinstance(descriptor, property)
 
-def test_view_sdlrenderer_has_tileset():
-    assert hasattr(View_SDLRenderer, "tileset")
-    descriptor = None
-    for klass in View_SDLRenderer.__mro__:
-        if "tileset" in klass.__dict__:
-            descriptor = klass.__dict__["tileset"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_view_sdlrenderer_has_window():
     assert hasattr(View_SDLRenderer, "window")
     descriptor = None
     for klass in View_SDLRenderer.__mro__:
         if "window" in klass.__dict__:
             descriptor = klass.__dict__["window"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_view_sdlrenderer_has_renderer():
+    assert hasattr(View_SDLRenderer, "renderer")
+    descriptor = None
+    for klass in View_SDLRenderer.__mro__:
+        if "renderer" in klass.__dict__:
+            descriptor = klass.__dict__["renderer"]
             break
     assert isinstance(descriptor, property)
 
@@ -706,19 +706,10 @@ def test_model_tile_constructor_exists():
 def test_model_tile_constructor_args():
     sig = inspect.signature(Model_Tile.__init__)
     params = list(sig.parameters.keys())
-    assert "position" in params, "Missing parameter 'position'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "mod" in params, "Missing parameter 'mod'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_model_tile_has_position():
-    assert hasattr(Model_Tile, "position")
-    descriptor = None
-    for klass in Model_Tile.__mro__:
-        if "position" in klass.__dict__:
-            descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
+    assert "mod" in params, "Missing parameter 'mod'"
+    assert "position" in params, "Missing parameter 'position'"
 
 def test_model_tile_has_type():
     assert hasattr(Model_Tile, "type")
@@ -726,6 +717,15 @@ def test_model_tile_has_type():
     for klass in Model_Tile.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_tile_has_id():
+    assert hasattr(Model_Tile, "id")
+    descriptor = None
+    for klass in Model_Tile.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -738,12 +738,12 @@ def test_model_tile_has_mod():
             break
     assert isinstance(descriptor, property)
 
-def test_model_tile_has_id():
-    assert hasattr(Model_Tile, "id")
+def test_model_tile_has_position():
+    assert hasattr(Model_Tile, "position")
     descriptor = None
     for klass in Model_Tile.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "position" in klass.__dict__:
+            descriptor = klass.__dict__["position"]
             break
     assert isinstance(descriptor, property)
 
@@ -764,9 +764,9 @@ AbstractBehavior_strategy = st.builds(
 )
 Entity_strategy = st.builds(
     Entity,
-    properties=
-        st.none(),
     behaviors=
+        st.none(),
+    properties=
         st.none()
 )
 AbstractProperty_strategy = st.builds(
@@ -800,39 +800,39 @@ Table1_strategy = st.builds(
 )
 Controller_EventManager_strategy = st.builds(
     Controller_EventManager,
-    queueLock=
-        st.booleans(),
     eventQueue=
-        safe_text
+        safe_text,
+    queueLock=
+        st.booleans()
 )
 Controller_Event_union__strategy = st.builds(
     Controller_Event_union_,
+    eventType=
+        safe_text,
     EventMouseButton=
+        safe_text,
+    EventMouseMotion=
+        safe_text,
+    EventEmpty=
+        safe_text,
+    EvenkKeyboard=
         safe_text,
     EventMouseWheel=
         safe_text,
     EventQuit=
-        safe_text,
-    EventMouseMotion=
-        safe_text,
-    eventType=
-        safe_text,
-    EvenkKeyboard=
-        safe_text,
-    EventEmpty=
         safe_text
 )
 Controller_Controller_strategy = st.builds(
     Controller_Controller,
-    inputController=
+    eventManager=
         st.none(),
     attribute=
         safe_text,
+    inputController=
+        st.none(),
     worldAccess=
         st.none(),
     viewAccess=
-        st.none(),
-    eventManager=
         st.none()
 )
 Controller_InputController_Interface_strategy = st.builds(
@@ -865,15 +865,15 @@ View_Interface_Interface_strategy = st.builds(
 )
 View_SDLRenderer_strategy = st.builds(
     View_SDLRenderer,
-    renderer=
-        safe_text,
+    tileset=
+        st.none(),
     viewPointer=
         st.none(),
     camera=
         st.none(),
-    tileset=
-        st.none(),
     window=
+        safe_text,
+    renderer=
         safe_text
 )
 View_Renderer_Interface_strategy = st.builds(
@@ -897,14 +897,14 @@ Model_Chunk_strategy = st.builds(
 )
 Model_Tile_strategy = st.builds(
     Model_Tile,
-    position=
-        safe_text,
     type=
+        st.integers(),
+    id=
         st.integers(),
     mod=
         st.integers(),
-    id=
-        st.integers()
+    position=
+        safe_text
 )
 
 @given(instance=AbstractBehavior_strategy)
@@ -917,20 +917,6 @@ def test_abstractbehavior_instantiation(instance):
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=Entity_strategy)
-def test_entity_properties_type(instance):
-    assert isinstance(instance.properties, abstractproperty)
-
-
-@given(instance=Entity_strategy)
-def test_entity_properties_setter(instance):
-    original = instance.properties
-    instance.properties = original
-    assert instance.properties == original
-
-@given(instance=Entity_strategy)
-def test_entity_behaviors_type(instance):
-    assert isinstance(instance.behaviors, abstractbehavior)
 
 
 @given(instance=Entity_strategy)
@@ -938,6 +924,14 @@ def test_entity_behaviors_setter(instance):
     original = instance.behaviors
     instance.behaviors = original
     assert instance.behaviors == original
+
+
+
+@given(instance=Entity_strategy)
+def test_entity_properties_setter(instance):
+    original = instance.properties
+    instance.properties = original
+    assert instance.properties == original
 
 @given(instance=AbstractProperty_strategy)
 @settings(max_examples=50)
@@ -949,9 +943,6 @@ def test_abstractproperty_instantiation(instance):
 def test_table3_instantiation(instance):
     assert isinstance(instance, Table3)
 
-@given(instance=Table3_strategy)
-def test_table3_ID_type(instance):
-    assert isinstance(instance.ID, str)
 
 
 @given(instance=Table3_strategy)
@@ -965,9 +956,6 @@ def test_table3_ID_setter(instance):
 def test_trans_table_instantiation(instance):
     assert isinstance(instance, trans_Table)
 
-@given(instance=trans_Table_strategy)
-def test_trans_table_table2ID_type(instance):
-    assert isinstance(instance.table2ID, str)
 
 
 @given(instance=trans_Table_strategy)
@@ -976,9 +964,6 @@ def test_trans_table_table2ID_setter(instance):
     instance.table2ID = original
     assert instance.table2ID == original
 
-@given(instance=trans_Table_strategy)
-def test_trans_table_table1ID_type(instance):
-    assert isinstance(instance.table1ID, str)
 
 
 @given(instance=trans_Table_strategy)
@@ -992,9 +977,6 @@ def test_trans_table_table1ID_setter(instance):
 def test_table2_instantiation(instance):
     assert isinstance(instance, Table2)
 
-@given(instance=Table2_strategy)
-def test_table2_ID_type(instance):
-    assert isinstance(instance.ID, str)
 
 
 @given(instance=Table2_strategy)
@@ -1008,9 +990,6 @@ def test_table2_ID_setter(instance):
 def test_table1_instantiation(instance):
     assert isinstance(instance, Table1)
 
-@given(instance=Table1_strategy)
-def test_table1_table1ID_type(instance):
-    assert isinstance(instance.table1ID, str)
 
 
 @given(instance=Table1_strategy)
@@ -1019,9 +998,6 @@ def test_table1_table1ID_setter(instance):
     instance.table1ID = original
     assert instance.table1ID == original
 
-@given(instance=Table1_strategy)
-def test_table1_ID_type(instance):
-    assert isinstance(instance.ID, str)
 
 
 @given(instance=Table1_strategy)
@@ -1030,9 +1006,6 @@ def test_table1_ID_setter(instance):
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=Table1_strategy)
-def test_table1_table3ID_type(instance):
-    assert isinstance(instance.table3ID, str)
 
 
 @given(instance=Table1_strategy)
@@ -1046,20 +1019,6 @@ def test_table1_table3ID_setter(instance):
 def test_controller_eventmanager_instantiation(instance):
     assert isinstance(instance, Controller_EventManager)
 
-@given(instance=Controller_EventManager_strategy)
-def test_controller_eventmanager_queueLock_type(instance):
-    assert isinstance(instance.queueLock, bool)
-
-
-@given(instance=Controller_EventManager_strategy)
-def test_controller_eventmanager_queueLock_setter(instance):
-    original = instance.queueLock
-    instance.queueLock = original
-    assert instance.queueLock == original
-
-@given(instance=Controller_EventManager_strategy)
-def test_controller_eventmanager_eventQueue_type(instance):
-    assert isinstance(instance.eventQueue, str)
 
 
 @given(instance=Controller_EventManager_strategy)
@@ -1068,58 +1027,19 @@ def test_controller_eventmanager_eventQueue_setter(instance):
     instance.eventQueue = original
     assert instance.eventQueue == original
 
+
+
+@given(instance=Controller_EventManager_strategy)
+def test_controller_eventmanager_queueLock_setter(instance):
+    original = instance.queueLock
+    instance.queueLock = original
+    assert instance.queueLock == original
+
 @given(instance=Controller_Event_union__strategy)
 @settings(max_examples=50)
 def test_controller_event_union__instantiation(instance):
     assert isinstance(instance, Controller_Event_union_)
 
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventMouseButton_type(instance):
-    assert isinstance(instance.EventMouseButton, str)
-
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventMouseButton_setter(instance):
-    original = instance.EventMouseButton
-    instance.EventMouseButton = original
-    assert instance.EventMouseButton == original
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventMouseWheel_type(instance):
-    assert isinstance(instance.EventMouseWheel, str)
-
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventMouseWheel_setter(instance):
-    original = instance.EventMouseWheel
-    instance.EventMouseWheel = original
-    assert instance.EventMouseWheel == original
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventQuit_type(instance):
-    assert isinstance(instance.EventQuit, str)
-
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventQuit_setter(instance):
-    original = instance.EventQuit
-    instance.EventQuit = original
-    assert instance.EventQuit == original
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventMouseMotion_type(instance):
-    assert isinstance(instance.EventMouseMotion, str)
-
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventMouseMotion_setter(instance):
-    original = instance.EventMouseMotion
-    instance.EventMouseMotion = original
-    assert instance.EventMouseMotion == original
-
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__eventType_type(instance):
-    assert isinstance(instance.eventType, str)
 
 
 @given(instance=Controller_Event_union__strategy)
@@ -1128,20 +1048,22 @@ def test_controller_event_union__eventType_setter(instance):
     instance.eventType = original
     assert instance.eventType == original
 
-@given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EvenkKeyboard_type(instance):
-    assert isinstance(instance.EvenkKeyboard, str)
 
 
 @given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EvenkKeyboard_setter(instance):
-    original = instance.EvenkKeyboard
-    instance.EvenkKeyboard = original
-    assert instance.EvenkKeyboard == original
+def test_controller_event_union__EventMouseButton_setter(instance):
+    original = instance.EventMouseButton
+    instance.EventMouseButton = original
+    assert instance.EventMouseButton == original
+
+
 
 @given(instance=Controller_Event_union__strategy)
-def test_controller_event_union__EventEmpty_type(instance):
-    assert isinstance(instance.EventEmpty, str)
+def test_controller_event_union__EventMouseMotion_setter(instance):
+    original = instance.EventMouseMotion
+    instance.EventMouseMotion = original
+    assert instance.EventMouseMotion == original
+
 
 
 @given(instance=Controller_Event_union__strategy)
@@ -1150,25 +1072,43 @@ def test_controller_event_union__EventEmpty_setter(instance):
     instance.EventEmpty = original
     assert instance.EventEmpty == original
 
+
+
+@given(instance=Controller_Event_union__strategy)
+def test_controller_event_union__EvenkKeyboard_setter(instance):
+    original = instance.EvenkKeyboard
+    instance.EvenkKeyboard = original
+    assert instance.EvenkKeyboard == original
+
+
+
+@given(instance=Controller_Event_union__strategy)
+def test_controller_event_union__EventMouseWheel_setter(instance):
+    original = instance.EventMouseWheel
+    instance.EventMouseWheel = original
+    assert instance.EventMouseWheel == original
+
+
+
+@given(instance=Controller_Event_union__strategy)
+def test_controller_event_union__EventQuit_setter(instance):
+    original = instance.EventQuit
+    instance.EventQuit = original
+    assert instance.EventQuit == original
+
 @given(instance=Controller_Controller_strategy)
 @settings(max_examples=50)
 def test_controller_controller_instantiation(instance):
     assert isinstance(instance, Controller_Controller)
 
-@given(instance=Controller_Controller_strategy)
-def test_controller_controller_inputController_type(instance):
-    assert isinstance(instance.inputController, controller_inputcontroller_interface)
 
 
 @given(instance=Controller_Controller_strategy)
-def test_controller_controller_inputController_setter(instance):
-    original = instance.inputController
-    instance.inputController = original
-    assert instance.inputController == original
+def test_controller_controller_eventManager_setter(instance):
+    original = instance.eventManager
+    instance.eventManager = original
+    assert instance.eventManager == original
 
-@given(instance=Controller_Controller_strategy)
-def test_controller_controller_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Controller_Controller_strategy)
@@ -1177,9 +1117,14 @@ def test_controller_controller_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
 @given(instance=Controller_Controller_strategy)
-def test_controller_controller_worldAccess_type(instance):
-    assert isinstance(instance.worldAccess, model_world)
+def test_controller_controller_inputController_setter(instance):
+    original = instance.inputController
+    instance.inputController = original
+    assert instance.inputController == original
+
 
 
 @given(instance=Controller_Controller_strategy)
@@ -1188,9 +1133,6 @@ def test_controller_controller_worldAccess_setter(instance):
     instance.worldAccess = original
     assert instance.worldAccess == original
 
-@given(instance=Controller_Controller_strategy)
-def test_controller_controller_viewAccess_type(instance):
-    assert isinstance(instance.viewAccess, view_view)
 
 
 @given(instance=Controller_Controller_strategy)
@@ -1198,17 +1140,6 @@ def test_controller_controller_viewAccess_setter(instance):
     original = instance.viewAccess
     instance.viewAccess = original
     assert instance.viewAccess == original
-
-@given(instance=Controller_Controller_strategy)
-def test_controller_controller_eventManager_type(instance):
-    assert isinstance(instance.eventManager, controller_eventmanager)
-
-
-@given(instance=Controller_Controller_strategy)
-def test_controller_controller_eventManager_setter(instance):
-    original = instance.eventManager
-    instance.eventManager = original
-    assert instance.eventManager == original
 
 @given(instance=Controller_InputController_Interface_strategy)
 @settings(max_examples=50)
@@ -1220,9 +1151,6 @@ def test_controller_inputcontroller_interface_instantiation(instance):
 def test_controller_sdlinputcontroller_instantiation(instance):
     assert isinstance(instance, Controller_SDLInputController)
 
-@given(instance=Controller_SDLInputController_strategy)
-def test_controller_sdlinputcontroller_controllerPointer_type(instance):
-    assert isinstance(instance.controllerPointer, controller_controller)
 
 
 @given(instance=Controller_SDLInputController_strategy)
@@ -1231,9 +1159,6 @@ def test_controller_sdlinputcontroller_controllerPointer_setter(instance):
     instance.controllerPointer = original
     assert instance.controllerPointer == original
 
-@given(instance=Controller_SDLInputController_strategy)
-def test_controller_sdlinputcontroller_eventList_type(instance):
-    assert isinstance(instance.eventList, str)
 
 
 @given(instance=Controller_SDLInputController_strategy)
@@ -1277,42 +1202,6 @@ def test_view_interface_interface_instantiation(instance):
 def test_view_sdlrenderer_instantiation(instance):
     assert isinstance(instance, View_SDLRenderer)
 
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_renderer_type(instance):
-    assert isinstance(instance.renderer, str)
-
-
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_renderer_setter(instance):
-    original = instance.renderer
-    instance.renderer = original
-    assert instance.renderer == original
-
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_viewPointer_type(instance):
-    assert isinstance(instance.viewPointer, view_view)
-
-
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_viewPointer_setter(instance):
-    original = instance.viewPointer
-    instance.viewPointer = original
-    assert instance.viewPointer == original
-
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_camera_type(instance):
-    assert isinstance(instance.camera, view_sdlcamera)
-
-
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_camera_setter(instance):
-    original = instance.camera
-    instance.camera = original
-    assert instance.camera == original
-
-@given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_tileset_type(instance):
-    assert isinstance(instance.tileset, view_sdltexture)
 
 
 @given(instance=View_SDLRenderer_strategy)
@@ -1321,9 +1210,22 @@ def test_view_sdlrenderer_tileset_setter(instance):
     instance.tileset = original
     assert instance.tileset == original
 
+
+
 @given(instance=View_SDLRenderer_strategy)
-def test_view_sdlrenderer_window_type(instance):
-    assert isinstance(instance.window, str)
+def test_view_sdlrenderer_viewPointer_setter(instance):
+    original = instance.viewPointer
+    instance.viewPointer = original
+    assert instance.viewPointer == original
+
+
+
+@given(instance=View_SDLRenderer_strategy)
+def test_view_sdlrenderer_camera_setter(instance):
+    original = instance.camera
+    instance.camera = original
+    assert instance.camera == original
+
 
 
 @given(instance=View_SDLRenderer_strategy)
@@ -1331,6 +1233,14 @@ def test_view_sdlrenderer_window_setter(instance):
     original = instance.window
     instance.window = original
     assert instance.window == original
+
+
+
+@given(instance=View_SDLRenderer_strategy)
+def test_view_sdlrenderer_renderer_setter(instance):
+    original = instance.renderer
+    instance.renderer = original
+    assert instance.renderer == original
 
 @given(instance=View_Renderer_Interface_strategy)
 @settings(max_examples=50)
@@ -1342,9 +1252,6 @@ def test_view_renderer_interface_instantiation(instance):
 def test_view_view_instantiation(instance):
     assert isinstance(instance, View_View)
 
-@given(instance=View_View_strategy)
-def test_view_view_worldAccess_type(instance):
-    assert isinstance(instance.worldAccess, model_world)
 
 
 @given(instance=View_View_strategy)
@@ -1353,9 +1260,6 @@ def test_view_view_worldAccess_setter(instance):
     instance.worldAccess = original
     assert instance.worldAccess == original
 
-@given(instance=View_View_strategy)
-def test_view_view_renderer_type(instance):
-    assert isinstance(instance.renderer, view_renderer_interface)
 
 
 @given(instance=View_View_strategy)
@@ -1384,20 +1288,6 @@ def test_model_chunk_instantiation(instance):
 def test_model_tile_instantiation(instance):
     assert isinstance(instance, Model_Tile)
 
-@given(instance=Model_Tile_strategy)
-def test_model_tile_position_type(instance):
-    assert isinstance(instance.position, str)
-
-
-@given(instance=Model_Tile_strategy)
-def test_model_tile_position_setter(instance):
-    original = instance.position
-    instance.position = original
-    assert instance.position == original
-
-@given(instance=Model_Tile_strategy)
-def test_model_tile_type_type(instance):
-    assert isinstance(instance.type, int)
 
 
 @given(instance=Model_Tile_strategy)
@@ -1406,9 +1296,14 @@ def test_model_tile_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
+
+
 @given(instance=Model_Tile_strategy)
-def test_model_tile_mod_type(instance):
-    assert isinstance(instance.mod, int)
+def test_model_tile_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 
 
 @given(instance=Model_Tile_strategy)
@@ -1417,13 +1312,10 @@ def test_model_tile_mod_setter(instance):
     instance.mod = original
     assert instance.mod == original
 
-@given(instance=Model_Tile_strategy)
-def test_model_tile_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Model_Tile_strategy)
-def test_model_tile_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+def test_model_tile_position_setter(instance):
+    original = instance.position
+    instance.position = original
+    assert instance.position == original

@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    model::state::StateAutomaton,
+    model_state_StateAutomaton,
     StateAutomaton,
     Var,
-    model::state::Action,
+    model_state_Action,
     Action,
-    model::state::TransitionSegmentSpecification,
+    model_state_TransitionSegmentSpecification,
     TransitionSegmentSpecification,
     TransitionSegment,
     IExpressionTerm,
-    model::expression::BoolConst,
-    model::expression::Var,
-    model::expression::IExpressionTerm,
-    model::INamedElement,
+    model_expression_BoolConst,
+    model_expression_Var,
+    model_expression_IExpressionTerm,
+    model_INamedElement,
     Port,
-    model::component::OutputPort,
-    model::component::InputPort,
+    model_component_InputPort,
+    model_component_OutputPort,
     INamedElement,
-    model::state::State,
-    model::state::TransitionSegment,
-    model::state::DataStateVariable,
-    model::component::Port,
-    model::component::Component,
-    model::expression::Operation,
-    model::expression::IntConst,
-    EType,
+    model_state_DataStateVariable,
+    model_component_Port,
+    model_state_TransitionSegment,
+    model_state_State,
+    model_component_Component,
+    model_expression_Operation,
+    model_expression_IntConst,
     EOperator,
+    EType,
 )
 
 # =============================================================================
@@ -55,16 +55,16 @@ def test_state_constructor_args():
 
 
 
-def test_model::state::stateautomaton_is_not_abstract():
-    assert not inspect.isabstract(model::state::StateAutomaton)
+def test_model_state_stateautomaton_is_not_abstract():
+    assert not inspect.isabstract(model_state_StateAutomaton)
 
 
-def test_model::state::stateautomaton_constructor_exists():
-    assert callable(model::state::StateAutomaton.__init__)
+def test_model_state_stateautomaton_constructor_exists():
+    assert callable(model_state_StateAutomaton.__init__)
 
 
-def test_model::state::stateautomaton_constructor_args():
-    sig = inspect.signature(model::state::StateAutomaton.__init__)
+def test_model_state_stateautomaton_constructor_args():
+    sig = inspect.signature(model_state_StateAutomaton.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -97,16 +97,16 @@ def test_var_constructor_args():
 
 
 
-def test_model::state::action_is_not_abstract():
-    assert not inspect.isabstract(model::state::Action)
+def test_model_state_action_is_not_abstract():
+    assert not inspect.isabstract(model_state_Action)
 
 
-def test_model::state::action_constructor_exists():
-    assert callable(model::state::Action.__init__)
+def test_model_state_action_constructor_exists():
+    assert callable(model_state_Action.__init__)
 
 
-def test_model::state::action_constructor_args():
-    sig = inspect.signature(model::state::Action.__init__)
+def test_model_state_action_constructor_args():
+    sig = inspect.signature(model_state_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -125,16 +125,16 @@ def test_action_constructor_args():
 
 
 
-def test_model::state::transitionsegmentspecification_is_not_abstract():
-    assert not inspect.isabstract(model::state::TransitionSegmentSpecification)
+def test_model_state_transitionsegmentspecification_is_not_abstract():
+    assert not inspect.isabstract(model_state_TransitionSegmentSpecification)
 
 
-def test_model::state::transitionsegmentspecification_constructor_exists():
-    assert callable(model::state::TransitionSegmentSpecification.__init__)
+def test_model_state_transitionsegmentspecification_constructor_exists():
+    assert callable(model_state_TransitionSegmentSpecification.__init__)
 
 
-def test_model::state::transitionsegmentspecification_constructor_args():
-    sig = inspect.signature(model::state::TransitionSegmentSpecification.__init__)
+def test_model_state_transitionsegmentspecification_constructor_args():
+    sig = inspect.signature(model_state_TransitionSegmentSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -181,23 +181,23 @@ def test_iexpressionterm_constructor_args():
 
 
 
-def test_model::expression::boolconst_is_not_abstract():
-    assert not inspect.isabstract(model::expression::BoolConst)
+def test_model_expression_boolconst_is_not_abstract():
+    assert not inspect.isabstract(model_expression_BoolConst)
 
 
-def test_model::expression::boolconst_constructor_exists():
-    assert callable(model::expression::BoolConst.__init__)
+def test_model_expression_boolconst_constructor_exists():
+    assert callable(model_expression_BoolConst.__init__)
 
 
-def test_model::expression::boolconst_constructor_args():
-    sig = inspect.signature(model::expression::BoolConst.__init__)
+def test_model_expression_boolconst_constructor_args():
+    sig = inspect.signature(model_expression_BoolConst.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::expression::boolconst_has_value():
-    assert hasattr(model::expression::BoolConst, "value")
+def test_model_expression_boolconst_has_value():
+    assert hasattr(model_expression_BoolConst, "value")
     descriptor = None
-    for klass in model::expression::BoolConst.__mro__:
+    for klass in model_expression_BoolConst.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -205,23 +205,23 @@ def test_model::expression::boolconst_has_value():
 
 
 
-def test_model::expression::var_is_not_abstract():
-    assert not inspect.isabstract(model::expression::Var)
+def test_model_expression_var_is_not_abstract():
+    assert not inspect.isabstract(model_expression_Var)
 
 
-def test_model::expression::var_constructor_exists():
-    assert callable(model::expression::Var.__init__)
+def test_model_expression_var_constructor_exists():
+    assert callable(model_expression_Var.__init__)
 
 
-def test_model::expression::var_constructor_args():
-    sig = inspect.signature(model::expression::Var.__init__)
+def test_model_expression_var_constructor_args():
+    sig = inspect.signature(model_expression_Var.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_model::expression::var_has_identifier():
-    assert hasattr(model::expression::Var, "identifier")
+def test_model_expression_var_has_identifier():
+    assert hasattr(model_expression_Var, "identifier")
     descriptor = None
-    for klass in model::expression::Var.__mro__:
+    for klass in model_expression_Var.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -229,37 +229,37 @@ def test_model::expression::var_has_identifier():
 
 
 
-def test_model::expression::iexpressionterm_is_not_abstract():
-    assert not inspect.isabstract(model::expression::IExpressionTerm)
+def test_model_expression_iexpressionterm_is_not_abstract():
+    assert not inspect.isabstract(model_expression_IExpressionTerm)
 
 
-def test_model::expression::iexpressionterm_constructor_exists():
-    assert callable(model::expression::IExpressionTerm.__init__)
+def test_model_expression_iexpressionterm_constructor_exists():
+    assert callable(model_expression_IExpressionTerm.__init__)
 
 
-def test_model::expression::iexpressionterm_constructor_args():
-    sig = inspect.signature(model::expression::IExpressionTerm.__init__)
+def test_model_expression_iexpressionterm_constructor_args():
+    sig = inspect.signature(model_expression_IExpressionTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::inamedelement_is_not_abstract():
-    assert not inspect.isabstract(model::INamedElement)
+def test_model_inamedelement_is_not_abstract():
+    assert not inspect.isabstract(model_INamedElement)
 
 
-def test_model::inamedelement_constructor_exists():
-    assert callable(model::INamedElement.__init__)
+def test_model_inamedelement_constructor_exists():
+    assert callable(model_INamedElement.__init__)
 
 
-def test_model::inamedelement_constructor_args():
-    sig = inspect.signature(model::INamedElement.__init__)
+def test_model_inamedelement_constructor_args():
+    sig = inspect.signature(model_INamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::inamedelement_has_name():
-    assert hasattr(model::INamedElement, "name")
+def test_model_inamedelement_has_name():
+    assert hasattr(model_INamedElement, "name")
     descriptor = None
-    for klass in model::INamedElement.__mro__:
+    for klass in model_INamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -281,30 +281,30 @@ def test_port_constructor_args():
 
 
 
-def test_model::component::outputport_is_not_abstract():
-    assert not inspect.isabstract(model::component::OutputPort)
+def test_model_component_inputport_is_not_abstract():
+    assert not inspect.isabstract(model_component_InputPort)
 
 
-def test_model::component::outputport_constructor_exists():
-    assert callable(model::component::OutputPort.__init__)
+def test_model_component_inputport_constructor_exists():
+    assert callable(model_component_InputPort.__init__)
 
 
-def test_model::component::outputport_constructor_args():
-    sig = inspect.signature(model::component::OutputPort.__init__)
+def test_model_component_inputport_constructor_args():
+    sig = inspect.signature(model_component_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::component::inputport_is_not_abstract():
-    assert not inspect.isabstract(model::component::InputPort)
+def test_model_component_outputport_is_not_abstract():
+    assert not inspect.isabstract(model_component_OutputPort)
 
 
-def test_model::component::inputport_constructor_exists():
-    assert callable(model::component::InputPort.__init__)
+def test_model_component_outputport_constructor_exists():
+    assert callable(model_component_OutputPort.__init__)
 
 
-def test_model::component::inputport_constructor_args():
-    sig = inspect.signature(model::component::InputPort.__init__)
+def test_model_component_outputport_constructor_args():
+    sig = inspect.signature(model_component_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -323,23 +323,85 @@ def test_inamedelement_constructor_args():
 
 
 
-def test_model::state::state_is_not_abstract():
-    assert not inspect.isabstract(model::state::State)
+def test_model_state_datastatevariable_is_not_abstract():
+    assert not inspect.isabstract(model_state_DataStateVariable)
 
 
-def test_model::state::state_constructor_exists():
-    assert callable(model::state::State.__init__)
+def test_model_state_datastatevariable_constructor_exists():
+    assert callable(model_state_DataStateVariable.__init__)
 
 
-def test_model::state::state_constructor_args():
-    sig = inspect.signature(model::state::State.__init__)
+def test_model_state_datastatevariable_constructor_args():
+    sig = inspect.signature(model_state_DataStateVariable.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_model_state_datastatevariable_has_type():
+    assert hasattr(model_state_DataStateVariable, "type")
+    descriptor = None
+    for klass in model_state_DataStateVariable.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_component_port_is_not_abstract():
+    assert not inspect.isabstract(model_component_Port)
+
+
+def test_model_component_port_constructor_exists():
+    assert callable(model_component_Port.__init__)
+
+
+def test_model_component_port_constructor_args():
+    sig = inspect.signature(model_component_Port.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_model_component_port_has_type():
+    assert hasattr(model_component_Port, "type")
+    descriptor = None
+    for klass in model_component_Port.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_state_transitionsegment_is_not_abstract():
+    assert not inspect.isabstract(model_state_TransitionSegment)
+
+
+def test_model_state_transitionsegment_constructor_exists():
+    assert callable(model_state_TransitionSegment.__init__)
+
+
+def test_model_state_transitionsegment_constructor_args():
+    sig = inspect.signature(model_state_TransitionSegment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_state_state_is_not_abstract():
+    assert not inspect.isabstract(model_state_State)
+
+
+def test_model_state_state_constructor_exists():
+    assert callable(model_state_State.__init__)
+
+
+def test_model_state_state_constructor_args():
+    sig = inspect.signature(model_state_State.__init__)
     params = list(sig.parameters.keys())
     assert "isInitial" in params, "Missing parameter 'isInitial'"
 
-def test_model::state::state_has_isInitial():
-    assert hasattr(model::state::State, "isInitial")
+def test_model_state_state_has_isInitial():
+    assert hasattr(model_state_State, "isInitial")
     descriptor = None
-    for klass in model::state::State.__mro__:
+    for klass in model_state_State.__mro__:
         if "isInitial" in klass.__dict__:
             descriptor = klass.__dict__["isInitial"]
             break
@@ -347,99 +409,37 @@ def test_model::state::state_has_isInitial():
 
 
 
-def test_model::state::transitionsegment_is_not_abstract():
-    assert not inspect.isabstract(model::state::TransitionSegment)
+def test_model_component_component_is_not_abstract():
+    assert not inspect.isabstract(model_component_Component)
 
 
-def test_model::state::transitionsegment_constructor_exists():
-    assert callable(model::state::TransitionSegment.__init__)
+def test_model_component_component_constructor_exists():
+    assert callable(model_component_Component.__init__)
 
 
-def test_model::state::transitionsegment_constructor_args():
-    sig = inspect.signature(model::state::TransitionSegment.__init__)
+def test_model_component_component_constructor_args():
+    sig = inspect.signature(model_component_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::state::datastatevariable_is_not_abstract():
-    assert not inspect.isabstract(model::state::DataStateVariable)
+def test_model_expression_operation_is_not_abstract():
+    assert not inspect.isabstract(model_expression_Operation)
 
 
-def test_model::state::datastatevariable_constructor_exists():
-    assert callable(model::state::DataStateVariable.__init__)
+def test_model_expression_operation_constructor_exists():
+    assert callable(model_expression_Operation.__init__)
 
 
-def test_model::state::datastatevariable_constructor_args():
-    sig = inspect.signature(model::state::DataStateVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_model::state::datastatevariable_has_type():
-    assert hasattr(model::state::DataStateVariable, "type")
-    descriptor = None
-    for klass in model::state::DataStateVariable.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::component::port_is_not_abstract():
-    assert not inspect.isabstract(model::component::Port)
-
-
-def test_model::component::port_constructor_exists():
-    assert callable(model::component::Port.__init__)
-
-
-def test_model::component::port_constructor_args():
-    sig = inspect.signature(model::component::Port.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_model::component::port_has_type():
-    assert hasattr(model::component::Port, "type")
-    descriptor = None
-    for klass in model::component::Port.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::component::component_is_not_abstract():
-    assert not inspect.isabstract(model::component::Component)
-
-
-def test_model::component::component_constructor_exists():
-    assert callable(model::component::Component.__init__)
-
-
-def test_model::component::component_constructor_args():
-    sig = inspect.signature(model::component::Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::expression::operation_is_not_abstract():
-    assert not inspect.isabstract(model::expression::Operation)
-
-
-def test_model::expression::operation_constructor_exists():
-    assert callable(model::expression::Operation.__init__)
-
-
-def test_model::expression::operation_constructor_args():
-    sig = inspect.signature(model::expression::Operation.__init__)
+def test_model_expression_operation_constructor_args():
+    sig = inspect.signature(model_expression_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_model::expression::operation_has_operator():
-    assert hasattr(model::expression::Operation, "operator")
+def test_model_expression_operation_has_operator():
+    assert hasattr(model_expression_Operation, "operator")
     descriptor = None
-    for klass in model::expression::Operation.__mro__:
+    for klass in model_expression_Operation.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -447,42 +447,27 @@ def test_model::expression::operation_has_operator():
 
 
 
-def test_model::expression::intconst_is_not_abstract():
-    assert not inspect.isabstract(model::expression::IntConst)
+def test_model_expression_intconst_is_not_abstract():
+    assert not inspect.isabstract(model_expression_IntConst)
 
 
-def test_model::expression::intconst_constructor_exists():
-    assert callable(model::expression::IntConst.__init__)
+def test_model_expression_intconst_constructor_exists():
+    assert callable(model_expression_IntConst.__init__)
 
 
-def test_model::expression::intconst_constructor_args():
-    sig = inspect.signature(model::expression::IntConst.__init__)
+def test_model_expression_intconst_constructor_args():
+    sig = inspect.signature(model_expression_IntConst.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::expression::intconst_has_value():
-    assert hasattr(model::expression::IntConst, "value")
+def test_model_expression_intconst_has_value():
+    assert hasattr(model_expression_IntConst, "value")
     descriptor = None
-    for klass in model::expression::IntConst.__mro__:
+    for klass in model_expression_IntConst.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
-
-def test_etype_exists():
-    # Check that the Enumeration exists
-    assert EType is not None
-
-def test_etype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EType]
-    expected_literals = [
-        "TBool",
-        "TInt",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EType"
 
 def test_eoperator_exists():
     # Check that the Enumeration exists
@@ -492,24 +477,39 @@ def test_eoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EOperator]
     expected_literals = [
-        "And",
-        "Divide",
-        "Negate",
-        "Or",
         "LowerThan",
-        "LowerEqual",
-        "GreaterThan",
         "GreaterEqual",
+        "GreaterThan",
+        "LowerEqual",
+        "Multiply",
+        "Subtract",
         "Add",
         "Equal",
+        "Or",
         "NotEqual",
-        "Multiply",
+        "Divide",
+        "Negate",
         "Not",
-        "Subtract",
+        "And",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EOperator"
+
+def test_etype_exists():
+    # Check that the Enumeration exists
+    assert EType is not None
+
+def test_etype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EType]
+    expected_literals = [
+        "TInt",
+        "TBool",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EType"
 
 
 # =============================================================================
@@ -526,8 +526,8 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-model::state::StateAutomaton_strategy = st.builds(
-    model::state::StateAutomaton,
+model_state_StateAutomaton_strategy = st.builds(
+    model_state_StateAutomaton,
 )
 StateAutomaton_strategy = st.builds(
     StateAutomaton,
@@ -535,14 +535,14 @@ StateAutomaton_strategy = st.builds(
 Var_strategy = st.builds(
     Var,
 )
-model::state::Action_strategy = st.builds(
-    model::state::Action,
+model_state_Action_strategy = st.builds(
+    model_state_Action,
 )
 Action_strategy = st.builds(
     Action,
 )
-model::state::TransitionSegmentSpecification_strategy = st.builds(
-    model::state::TransitionSegmentSpecification,
+model_state_TransitionSegmentSpecification_strategy = st.builds(
+    model_state_TransitionSegmentSpecification,
 )
 TransitionSegmentSpecification_strategy = st.builds(
     TransitionSegmentSpecification,
@@ -553,64 +553,64 @@ TransitionSegment_strategy = st.builds(
 IExpressionTerm_strategy = st.builds(
     IExpressionTerm,
 )
-model::expression::BoolConst_strategy = st.builds(
-    model::expression::BoolConst,
+model_expression_BoolConst_strategy = st.builds(
+    model_expression_BoolConst,
     value=
         st.booleans()
 )
-model::expression::Var_strategy = st.builds(
-    model::expression::Var,
+model_expression_Var_strategy = st.builds(
+    model_expression_Var,
     identifier=
         safe_text
 )
-model::expression::IExpressionTerm_strategy = st.builds(
-    model::expression::IExpressionTerm,
+model_expression_IExpressionTerm_strategy = st.builds(
+    model_expression_IExpressionTerm,
 )
-model::INamedElement_strategy = st.builds(
-    model::INamedElement,
+model_INamedElement_strategy = st.builds(
+    model_INamedElement,
     name=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-model::component::OutputPort_strategy = st.builds(
-    model::component::OutputPort,
+model_component_InputPort_strategy = st.builds(
+    model_component_InputPort,
 )
-model::component::InputPort_strategy = st.builds(
-    model::component::InputPort,
+model_component_OutputPort_strategy = st.builds(
+    model_component_OutputPort,
 )
 INamedElement_strategy = st.builds(
     INamedElement,
 )
-model::state::State_strategy = st.builds(
-    model::state::State,
+model_state_DataStateVariable_strategy = st.builds(
+    model_state_DataStateVariable,
+    type=
+        safe_text
+)
+model_component_Port_strategy = st.builds(
+    model_component_Port,
+    type=
+        safe_text
+)
+model_state_TransitionSegment_strategy = st.builds(
+    model_state_TransitionSegment,
+)
+model_state_State_strategy = st.builds(
+    model_state_State,
     isInitial=
         st.booleans()
 )
-model::state::TransitionSegment_strategy = st.builds(
-    model::state::TransitionSegment,
+model_component_Component_strategy = st.builds(
+    model_component_Component,
 )
-model::state::DataStateVariable_strategy = st.builds(
-    model::state::DataStateVariable,
-    type=
-        safe_text
-)
-model::component::Port_strategy = st.builds(
-    model::component::Port,
-    type=
-        safe_text
-)
-model::component::Component_strategy = st.builds(
-    model::component::Component,
-)
-model::expression::Operation_strategy = st.builds(
-    model::expression::Operation,
+model_expression_Operation_strategy = st.builds(
+    model_expression_Operation,
     operator=
         safe_text
 )
-model::expression::IntConst_strategy = st.builds(
-    model::expression::IntConst,
+model_expression_IntConst_strategy = st.builds(
+    model_expression_IntConst,
     value=
         st.integers()
 )
@@ -620,10 +620,10 @@ model::expression::IntConst_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=model::state::StateAutomaton_strategy)
+@given(instance=model_state_StateAutomaton_strategy)
 @settings(max_examples=50)
-def test_model::state::stateautomaton_instantiation(instance):
-    assert isinstance(instance, model::state::StateAutomaton)
+def test_model_state_stateautomaton_instantiation(instance):
+    assert isinstance(instance, model_state_StateAutomaton)
 
 @given(instance=StateAutomaton_strategy)
 @settings(max_examples=50)
@@ -635,20 +635,20 @@ def test_stateautomaton_instantiation(instance):
 def test_var_instantiation(instance):
     assert isinstance(instance, Var)
 
-@given(instance=model::state::Action_strategy)
+@given(instance=model_state_Action_strategy)
 @settings(max_examples=50)
-def test_model::state::action_instantiation(instance):
-    assert isinstance(instance, model::state::Action)
+def test_model_state_action_instantiation(instance):
+    assert isinstance(instance, model_state_Action)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=model::state::TransitionSegmentSpecification_strategy)
+@given(instance=model_state_TransitionSegmentSpecification_strategy)
 @settings(max_examples=50)
-def test_model::state::transitionsegmentspecification_instantiation(instance):
-    assert isinstance(instance, model::state::TransitionSegmentSpecification)
+def test_model_state_transitionsegmentspecification_instantiation(instance):
+    assert isinstance(instance, model_state_TransitionSegmentSpecification)
 
 @given(instance=TransitionSegmentSpecification_strategy)
 @settings(max_examples=50)
@@ -665,55 +665,46 @@ def test_transitionsegment_instantiation(instance):
 def test_iexpressionterm_instantiation(instance):
     assert isinstance(instance, IExpressionTerm)
 
-@given(instance=model::expression::BoolConst_strategy)
+@given(instance=model_expression_BoolConst_strategy)
 @settings(max_examples=50)
-def test_model::expression::boolconst_instantiation(instance):
-    assert isinstance(instance, model::expression::BoolConst)
-
-@given(instance=model::expression::BoolConst_strategy)
-def test_model::expression::boolconst_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_model_expression_boolconst_instantiation(instance):
+    assert isinstance(instance, model_expression_BoolConst)
 
 
-@given(instance=model::expression::BoolConst_strategy)
-def test_model::expression::boolconst_value_setter(instance):
+
+@given(instance=model_expression_BoolConst_strategy)
+def test_model_expression_boolconst_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=model::expression::Var_strategy)
+@given(instance=model_expression_Var_strategy)
 @settings(max_examples=50)
-def test_model::expression::var_instantiation(instance):
-    assert isinstance(instance, model::expression::Var)
-
-@given(instance=model::expression::Var_strategy)
-def test_model::expression::var_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_model_expression_var_instantiation(instance):
+    assert isinstance(instance, model_expression_Var)
 
 
-@given(instance=model::expression::Var_strategy)
-def test_model::expression::var_identifier_setter(instance):
+
+@given(instance=model_expression_Var_strategy)
+def test_model_expression_var_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=model::expression::IExpressionTerm_strategy)
+@given(instance=model_expression_IExpressionTerm_strategy)
 @settings(max_examples=50)
-def test_model::expression::iexpressionterm_instantiation(instance):
-    assert isinstance(instance, model::expression::IExpressionTerm)
+def test_model_expression_iexpressionterm_instantiation(instance):
+    assert isinstance(instance, model_expression_IExpressionTerm)
 
-@given(instance=model::INamedElement_strategy)
+@given(instance=model_INamedElement_strategy)
 @settings(max_examples=50)
-def test_model::inamedelement_instantiation(instance):
-    assert isinstance(instance, model::INamedElement)
-
-@given(instance=model::INamedElement_strategy)
-def test_model::inamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_inamedelement_instantiation(instance):
+    assert isinstance(instance, model_INamedElement)
 
 
-@given(instance=model::INamedElement_strategy)
-def test_model::inamedelement_name_setter(instance):
+
+@given(instance=model_INamedElement_strategy)
+def test_model_inamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -723,107 +714,92 @@ def test_model::inamedelement_name_setter(instance):
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=model::component::OutputPort_strategy)
+@given(instance=model_component_InputPort_strategy)
 @settings(max_examples=50)
-def test_model::component::outputport_instantiation(instance):
-    assert isinstance(instance, model::component::OutputPort)
+def test_model_component_inputport_instantiation(instance):
+    assert isinstance(instance, model_component_InputPort)
 
-@given(instance=model::component::InputPort_strategy)
+@given(instance=model_component_OutputPort_strategy)
 @settings(max_examples=50)
-def test_model::component::inputport_instantiation(instance):
-    assert isinstance(instance, model::component::InputPort)
+def test_model_component_outputport_instantiation(instance):
+    assert isinstance(instance, model_component_OutputPort)
 
 @given(instance=INamedElement_strategy)
 @settings(max_examples=50)
 def test_inamedelement_instantiation(instance):
     assert isinstance(instance, INamedElement)
 
-@given(instance=model::state::State_strategy)
+@given(instance=model_state_DataStateVariable_strategy)
 @settings(max_examples=50)
-def test_model::state::state_instantiation(instance):
-    assert isinstance(instance, model::state::State)
-
-@given(instance=model::state::State_strategy)
-def test_model::state::state_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
+def test_model_state_datastatevariable_instantiation(instance):
+    assert isinstance(instance, model_state_DataStateVariable)
 
 
-@given(instance=model::state::State_strategy)
-def test_model::state::state_isInitial_setter(instance):
+
+@given(instance=model_state_DataStateVariable_strategy)
+def test_model_state_datastatevariable_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=model_component_Port_strategy)
+@settings(max_examples=50)
+def test_model_component_port_instantiation(instance):
+    assert isinstance(instance, model_component_Port)
+
+
+
+@given(instance=model_component_Port_strategy)
+def test_model_component_port_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=model_state_TransitionSegment_strategy)
+@settings(max_examples=50)
+def test_model_state_transitionsegment_instantiation(instance):
+    assert isinstance(instance, model_state_TransitionSegment)
+
+@given(instance=model_state_State_strategy)
+@settings(max_examples=50)
+def test_model_state_state_instantiation(instance):
+    assert isinstance(instance, model_state_State)
+
+
+
+@given(instance=model_state_State_strategy)
+def test_model_state_state_isInitial_setter(instance):
     original = instance.isInitial
     instance.isInitial = original
     assert instance.isInitial == original
 
-@given(instance=model::state::TransitionSegment_strategy)
+@given(instance=model_component_Component_strategy)
 @settings(max_examples=50)
-def test_model::state::transitionsegment_instantiation(instance):
-    assert isinstance(instance, model::state::TransitionSegment)
+def test_model_component_component_instantiation(instance):
+    assert isinstance(instance, model_component_Component)
 
-@given(instance=model::state::DataStateVariable_strategy)
+@given(instance=model_expression_Operation_strategy)
 @settings(max_examples=50)
-def test_model::state::datastatevariable_instantiation(instance):
-    assert isinstance(instance, model::state::DataStateVariable)
-
-@given(instance=model::state::DataStateVariable_strategy)
-def test_model::state::datastatevariable_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_model_expression_operation_instantiation(instance):
+    assert isinstance(instance, model_expression_Operation)
 
 
-@given(instance=model::state::DataStateVariable_strategy)
-def test_model::state::datastatevariable_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=model::component::Port_strategy)
-@settings(max_examples=50)
-def test_model::component::port_instantiation(instance):
-    assert isinstance(instance, model::component::Port)
-
-@given(instance=model::component::Port_strategy)
-def test_model::component::port_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=model::component::Port_strategy)
-def test_model::component::port_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=model::component::Component_strategy)
-@settings(max_examples=50)
-def test_model::component::component_instantiation(instance):
-    assert isinstance(instance, model::component::Component)
-
-@given(instance=model::expression::Operation_strategy)
-@settings(max_examples=50)
-def test_model::expression::operation_instantiation(instance):
-    assert isinstance(instance, model::expression::Operation)
-
-@given(instance=model::expression::Operation_strategy)
-def test_model::expression::operation_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=model::expression::Operation_strategy)
-def test_model::expression::operation_operator_setter(instance):
+@given(instance=model_expression_Operation_strategy)
+def test_model_expression_operation_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=model::expression::IntConst_strategy)
+@given(instance=model_expression_IntConst_strategy)
 @settings(max_examples=50)
-def test_model::expression::intconst_instantiation(instance):
-    assert isinstance(instance, model::expression::IntConst)
-
-@given(instance=model::expression::IntConst_strategy)
-def test_model::expression::intconst_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_model_expression_intconst_instantiation(instance):
+    assert isinstance(instance, model_expression_IntConst)
 
 
-@given(instance=model::expression::IntConst_strategy)
-def test_model::expression::intconst_value_setter(instance):
+
+@given(instance=model_expression_IntConst_strategy)
+def test_model_expression_intconst_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original

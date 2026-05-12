@@ -3,50 +3,50 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ValueExpression,
-    roverDSL::BVBracket,
-    roverDSL::BVLiteral,
-    roverDSL::ExpressionBinComp,
-    roverDSL::ExpressionBinOp,
-    roverDSL::BVarLiteral,
-    roverDSL::BBLiteral,
-    roverDSL::ColorLiteral,
-    roverDSL::BSensorLiteral,
-    roverDSL::BNotExpr,
+    roverDSL_BVarLiteral,
+    roverDSL_ExpressionBinOp,
+    roverDSL_BVLiteral,
+    roverDSL_BBLiteral,
+    roverDSL_ColorLiteral,
+    roverDSL_ExpressionBinComp,
+    roverDSL_BVBracket,
+    roverDSL_BSensorLiteral,
+    roverDSL_BNotExpr,
     Action,
-    roverDSL::MeasureAction,
-    roverDSL::RotateAction,
-    roverDSL::SSpeedAction,
-    roverDSL::SubRoutineAction,
-    roverDSL::StopAction,
-    roverDSL::ShowAction,
-    roverDSL::FreeAction,
-    roverDSL::SoundAction,
-    roverDSL::SAccelerationAction,
-    roverDSL::ForwardAction,
-    roverDSL::Motor,
+    roverDSL_SoundAction,
+    roverDSL_ShowAction,
+    roverDSL_SAccelerationAction,
+    roverDSL_StopAction,
+    roverDSL_SSpeedAction,
+    roverDSL_MeasureAction,
+    roverDSL_FreeAction,
+    roverDSL_SubRoutineAction,
+    roverDSL_RotateAction,
+    roverDSL_ForwardAction,
+    roverDSL_Motor,
     Expression,
-    roverDSL::AssignExpression,
-    roverDSL::WHILEExpression,
-    roverDSL::IFExpression,
-    roverDSL::Action,
-    roverDSL::ValExpr,
-    roverDSL::Expression,
-    roverDSL::SubRoutine,
-    roverDSL::Implementation,
-    roverDSL::ValueExpression,
-    roverDSL::Static,
-    roverDSL::Global,
-    roverDSL::BehaviorName,
-    roverDSL::Robot,
-    BBinaryOp,
-    Sensor,
+    roverDSL_Action,
+    roverDSL_IFExpression,
+    roverDSL_WHILEExpression,
+    roverDSL_AssignExpression,
+    roverDSL_ValExpr,
+    roverDSL_Expression,
+    roverDSL_SubRoutine,
+    roverDSL_Implementation,
+    roverDSL_ValueExpression,
+    roverDSL_Static,
+    roverDSL_Global,
+    roverDSL_BehaviorName,
+    roverDSL_Robot,
     Sound,
-    EMotor,
+    Sensor,
     Color,
+    EMotor,
+    BBinaryOp,
     CompareOp,
 )
 
@@ -70,119 +70,23 @@ def test_valueexpression_constructor_args():
 
 
 
-def test_roverdsl::bvbracket_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BVBracket)
+def test_roverdsl_bvarliteral_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BVarLiteral)
 
 
-def test_roverdsl::bvbracket_constructor_exists():
-    assert callable(roverDSL::BVBracket.__init__)
+def test_roverdsl_bvarliteral_constructor_exists():
+    assert callable(roverDSL_BVarLiteral.__init__)
 
 
-def test_roverdsl::bvbracket_constructor_args():
-    sig = inspect.signature(roverDSL::BVBracket.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roverdsl::bvliteral_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BVLiteral)
-
-
-def test_roverdsl::bvliteral_constructor_exists():
-    assert callable(roverDSL::BVLiteral.__init__)
-
-
-def test_roverdsl::bvliteral_constructor_args():
-    sig = inspect.signature(roverDSL::BVLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "aValue" in params, "Missing parameter 'aValue'"
-    assert "neg" in params, "Missing parameter 'neg'"
-
-def test_roverdsl::bvliteral_has_aValue():
-    assert hasattr(roverDSL::BVLiteral, "aValue")
-    descriptor = None
-    for klass in roverDSL::BVLiteral.__mro__:
-        if "aValue" in klass.__dict__:
-            descriptor = klass.__dict__["aValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_roverdsl::bvliteral_has_neg():
-    assert hasattr(roverDSL::BVLiteral, "neg")
-    descriptor = None
-    for klass in roverDSL::BVLiteral.__mro__:
-        if "neg" in klass.__dict__:
-            descriptor = klass.__dict__["neg"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_roverdsl::expressionbincomp_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ExpressionBinComp)
-
-
-def test_roverdsl::expressionbincomp_constructor_exists():
-    assert callable(roverDSL::ExpressionBinComp.__init__)
-
-
-def test_roverdsl::expressionbincomp_constructor_args():
-    sig = inspect.signature(roverDSL::ExpressionBinComp.__init__)
-    params = list(sig.parameters.keys())
-    assert "bcomp" in params, "Missing parameter 'bcomp'"
-
-def test_roverdsl::expressionbincomp_has_bcomp():
-    assert hasattr(roverDSL::ExpressionBinComp, "bcomp")
-    descriptor = None
-    for klass in roverDSL::ExpressionBinComp.__mro__:
-        if "bcomp" in klass.__dict__:
-            descriptor = klass.__dict__["bcomp"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_roverdsl::expressionbinop_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ExpressionBinOp)
-
-
-def test_roverdsl::expressionbinop_constructor_exists():
-    assert callable(roverDSL::ExpressionBinOp.__init__)
-
-
-def test_roverdsl::expressionbinop_constructor_args():
-    sig = inspect.signature(roverDSL::ExpressionBinOp.__init__)
-    params = list(sig.parameters.keys())
-    assert "bop" in params, "Missing parameter 'bop'"
-
-def test_roverdsl::expressionbinop_has_bop():
-    assert hasattr(roverDSL::ExpressionBinOp, "bop")
-    descriptor = None
-    for klass in roverDSL::ExpressionBinOp.__mro__:
-        if "bop" in klass.__dict__:
-            descriptor = klass.__dict__["bop"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_roverdsl::bvarliteral_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BVarLiteral)
-
-
-def test_roverdsl::bvarliteral_constructor_exists():
-    assert callable(roverDSL::BVarLiteral.__init__)
-
-
-def test_roverdsl::bvarliteral_constructor_args():
-    sig = inspect.signature(roverDSL::BVarLiteral.__init__)
+def test_roverdsl_bvarliteral_constructor_args():
+    sig = inspect.signature(roverDSL_BVarLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "var" in params, "Missing parameter 'var'"
 
-def test_roverdsl::bvarliteral_has_var():
-    assert hasattr(roverDSL::BVarLiteral, "var")
+def test_roverdsl_bvarliteral_has_var():
+    assert hasattr(roverDSL_BVarLiteral, "var")
     descriptor = None
-    for klass in roverDSL::BVarLiteral.__mro__:
+    for klass in roverDSL_BVarLiteral.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
             break
@@ -190,23 +94,81 @@ def test_roverdsl::bvarliteral_has_var():
 
 
 
-def test_roverdsl::bbliteral_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BBLiteral)
+def test_roverdsl_expressionbinop_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ExpressionBinOp)
 
 
-def test_roverdsl::bbliteral_constructor_exists():
-    assert callable(roverDSL::BBLiteral.__init__)
+def test_roverdsl_expressionbinop_constructor_exists():
+    assert callable(roverDSL_ExpressionBinOp.__init__)
 
 
-def test_roverdsl::bbliteral_constructor_args():
-    sig = inspect.signature(roverDSL::BBLiteral.__init__)
+def test_roverdsl_expressionbinop_constructor_args():
+    sig = inspect.signature(roverDSL_ExpressionBinOp.__init__)
+    params = list(sig.parameters.keys())
+    assert "bop" in params, "Missing parameter 'bop'"
+
+def test_roverdsl_expressionbinop_has_bop():
+    assert hasattr(roverDSL_ExpressionBinOp, "bop")
+    descriptor = None
+    for klass in roverDSL_ExpressionBinOp.__mro__:
+        if "bop" in klass.__dict__:
+            descriptor = klass.__dict__["bop"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_roverdsl_bvliteral_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BVLiteral)
+
+
+def test_roverdsl_bvliteral_constructor_exists():
+    assert callable(roverDSL_BVLiteral.__init__)
+
+
+def test_roverdsl_bvliteral_constructor_args():
+    sig = inspect.signature(roverDSL_BVLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "neg" in params, "Missing parameter 'neg'"
+    assert "aValue" in params, "Missing parameter 'aValue'"
+
+def test_roverdsl_bvliteral_has_neg():
+    assert hasattr(roverDSL_BVLiteral, "neg")
+    descriptor = None
+    for klass in roverDSL_BVLiteral.__mro__:
+        if "neg" in klass.__dict__:
+            descriptor = klass.__dict__["neg"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_roverdsl_bvliteral_has_aValue():
+    assert hasattr(roverDSL_BVLiteral, "aValue")
+    descriptor = None
+    for klass in roverDSL_BVLiteral.__mro__:
+        if "aValue" in klass.__dict__:
+            descriptor = klass.__dict__["aValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_roverdsl_bbliteral_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BBLiteral)
+
+
+def test_roverdsl_bbliteral_constructor_exists():
+    assert callable(roverDSL_BBLiteral.__init__)
+
+
+def test_roverdsl_bbliteral_constructor_args():
+    sig = inspect.signature(roverDSL_BBLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "bValue" in params, "Missing parameter 'bValue'"
 
-def test_roverdsl::bbliteral_has_bValue():
-    assert hasattr(roverDSL::BBLiteral, "bValue")
+def test_roverdsl_bbliteral_has_bValue():
+    assert hasattr(roverDSL_BBLiteral, "bValue")
     descriptor = None
-    for klass in roverDSL::BBLiteral.__mro__:
+    for klass in roverDSL_BBLiteral.__mro__:
         if "bValue" in klass.__dict__:
             descriptor = klass.__dict__["bValue"]
             break
@@ -214,23 +176,23 @@ def test_roverdsl::bbliteral_has_bValue():
 
 
 
-def test_roverdsl::colorliteral_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ColorLiteral)
+def test_roverdsl_colorliteral_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ColorLiteral)
 
 
-def test_roverdsl::colorliteral_constructor_exists():
-    assert callable(roverDSL::ColorLiteral.__init__)
+def test_roverdsl_colorliteral_constructor_exists():
+    assert callable(roverDSL_ColorLiteral.__init__)
 
 
-def test_roverdsl::colorliteral_constructor_args():
-    sig = inspect.signature(roverDSL::ColorLiteral.__init__)
+def test_roverdsl_colorliteral_constructor_args():
+    sig = inspect.signature(roverDSL_ColorLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_roverdsl::colorliteral_has_color():
-    assert hasattr(roverDSL::ColorLiteral, "color")
+def test_roverdsl_colorliteral_has_color():
+    assert hasattr(roverDSL_ColorLiteral, "color")
     descriptor = None
-    for klass in roverDSL::ColorLiteral.__mro__:
+    for klass in roverDSL_ColorLiteral.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -238,23 +200,61 @@ def test_roverdsl::colorliteral_has_color():
 
 
 
-def test_roverdsl::bsensorliteral_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BSensorLiteral)
+def test_roverdsl_expressionbincomp_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ExpressionBinComp)
 
 
-def test_roverdsl::bsensorliteral_constructor_exists():
-    assert callable(roverDSL::BSensorLiteral.__init__)
+def test_roverdsl_expressionbincomp_constructor_exists():
+    assert callable(roverDSL_ExpressionBinComp.__init__)
 
 
-def test_roverdsl::bsensorliteral_constructor_args():
-    sig = inspect.signature(roverDSL::BSensorLiteral.__init__)
+def test_roverdsl_expressionbincomp_constructor_args():
+    sig = inspect.signature(roverDSL_ExpressionBinComp.__init__)
+    params = list(sig.parameters.keys())
+    assert "bcomp" in params, "Missing parameter 'bcomp'"
+
+def test_roverdsl_expressionbincomp_has_bcomp():
+    assert hasattr(roverDSL_ExpressionBinComp, "bcomp")
+    descriptor = None
+    for klass in roverDSL_ExpressionBinComp.__mro__:
+        if "bcomp" in klass.__dict__:
+            descriptor = klass.__dict__["bcomp"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_roverdsl_bvbracket_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BVBracket)
+
+
+def test_roverdsl_bvbracket_constructor_exists():
+    assert callable(roverDSL_BVBracket.__init__)
+
+
+def test_roverdsl_bvbracket_constructor_args():
+    sig = inspect.signature(roverDSL_BVBracket.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roverdsl_bsensorliteral_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BSensorLiteral)
+
+
+def test_roverdsl_bsensorliteral_constructor_exists():
+    assert callable(roverDSL_BSensorLiteral.__init__)
+
+
+def test_roverdsl_bsensorliteral_constructor_args():
+    sig = inspect.signature(roverDSL_BSensorLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "sensor" in params, "Missing parameter 'sensor'"
 
-def test_roverdsl::bsensorliteral_has_sensor():
-    assert hasattr(roverDSL::BSensorLiteral, "sensor")
+def test_roverdsl_bsensorliteral_has_sensor():
+    assert hasattr(roverDSL_BSensorLiteral, "sensor")
     descriptor = None
-    for klass in roverDSL::BSensorLiteral.__mro__:
+    for klass in roverDSL_BSensorLiteral.__mro__:
         if "sensor" in klass.__dict__:
             descriptor = klass.__dict__["sensor"]
             break
@@ -262,16 +262,16 @@ def test_roverdsl::bsensorliteral_has_sensor():
 
 
 
-def test_roverdsl::bnotexpr_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BNotExpr)
+def test_roverdsl_bnotexpr_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BNotExpr)
 
 
-def test_roverdsl::bnotexpr_constructor_exists():
-    assert callable(roverDSL::BNotExpr.__init__)
+def test_roverdsl_bnotexpr_constructor_exists():
+    assert callable(roverDSL_BNotExpr.__init__)
 
 
-def test_roverdsl::bnotexpr_constructor_args():
-    sig = inspect.signature(roverDSL::BNotExpr.__init__)
+def test_roverdsl_bnotexpr_constructor_args():
+    sig = inspect.signature(roverDSL_BNotExpr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -290,151 +290,23 @@ def test_action_constructor_args():
 
 
 
-def test_roverdsl::measureaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::MeasureAction)
+def test_roverdsl_soundaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_SoundAction)
 
 
-def test_roverdsl::measureaction_constructor_exists():
-    assert callable(roverDSL::MeasureAction.__init__)
+def test_roverdsl_soundaction_constructor_exists():
+    assert callable(roverDSL_SoundAction.__init__)
 
 
-def test_roverdsl::measureaction_constructor_args():
-    sig = inspect.signature(roverDSL::MeasureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roverdsl::rotateaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::RotateAction)
-
-
-def test_roverdsl::rotateaction_constructor_exists():
-    assert callable(roverDSL::RotateAction.__init__)
-
-
-def test_roverdsl::rotateaction_constructor_args():
-    sig = inspect.signature(roverDSL::RotateAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "blocking" in params, "Missing parameter 'blocking'"
-
-def test_roverdsl::rotateaction_has_blocking():
-    assert hasattr(roverDSL::RotateAction, "blocking")
-    descriptor = None
-    for klass in roverDSL::RotateAction.__mro__:
-        if "blocking" in klass.__dict__:
-            descriptor = klass.__dict__["blocking"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_roverdsl::sspeedaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::SSpeedAction)
-
-
-def test_roverdsl::sspeedaction_constructor_exists():
-    assert callable(roverDSL::SSpeedAction.__init__)
-
-
-def test_roverdsl::sspeedaction_constructor_args():
-    sig = inspect.signature(roverDSL::SSpeedAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roverdsl::subroutineaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::SubRoutineAction)
-
-
-def test_roverdsl::subroutineaction_constructor_exists():
-    assert callable(roverDSL::SubRoutineAction.__init__)
-
-
-def test_roverdsl::subroutineaction_constructor_args():
-    sig = inspect.signature(roverDSL::SubRoutineAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roverdsl::stopaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::StopAction)
-
-
-def test_roverdsl::stopaction_constructor_exists():
-    assert callable(roverDSL::StopAction.__init__)
-
-
-def test_roverdsl::stopaction_constructor_args():
-    sig = inspect.signature(roverDSL::StopAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roverdsl::showaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ShowAction)
-
-
-def test_roverdsl::showaction_constructor_exists():
-    assert callable(roverDSL::ShowAction.__init__)
-
-
-def test_roverdsl::showaction_constructor_args():
-    sig = inspect.signature(roverDSL::ShowAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "string" in params, "Missing parameter 'string'"
-    assert "sensor" in params, "Missing parameter 'sensor'"
-
-def test_roverdsl::showaction_has_string():
-    assert hasattr(roverDSL::ShowAction, "string")
-    descriptor = None
-    for klass in roverDSL::ShowAction.__mro__:
-        if "string" in klass.__dict__:
-            descriptor = klass.__dict__["string"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_roverdsl::showaction_has_sensor():
-    assert hasattr(roverDSL::ShowAction, "sensor")
-    descriptor = None
-    for klass in roverDSL::ShowAction.__mro__:
-        if "sensor" in klass.__dict__:
-            descriptor = klass.__dict__["sensor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_roverdsl::freeaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::FreeAction)
-
-
-def test_roverdsl::freeaction_constructor_exists():
-    assert callable(roverDSL::FreeAction.__init__)
-
-
-def test_roverdsl::freeaction_constructor_args():
-    sig = inspect.signature(roverDSL::FreeAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roverdsl::soundaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::SoundAction)
-
-
-def test_roverdsl::soundaction_constructor_exists():
-    assert callable(roverDSL::SoundAction.__init__)
-
-
-def test_roverdsl::soundaction_constructor_args():
-    sig = inspect.signature(roverDSL::SoundAction.__init__)
+def test_roverdsl_soundaction_constructor_args():
+    sig = inspect.signature(roverDSL_SoundAction.__init__)
     params = list(sig.parameters.keys())
     assert "sound" in params, "Missing parameter 'sound'"
 
-def test_roverdsl::soundaction_has_sound():
-    assert hasattr(roverDSL::SoundAction, "sound")
+def test_roverdsl_soundaction_has_sound():
+    assert hasattr(roverDSL_SoundAction, "sound")
     descriptor = None
-    for klass in roverDSL::SoundAction.__mro__:
+    for klass in roverDSL_SoundAction.__mro__:
         if "sound" in klass.__dict__:
             descriptor = klass.__dict__["sound"]
             break
@@ -442,51 +314,179 @@ def test_roverdsl::soundaction_has_sound():
 
 
 
-def test_roverdsl::saccelerationaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::SAccelerationAction)
+def test_roverdsl_showaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ShowAction)
 
 
-def test_roverdsl::saccelerationaction_constructor_exists():
-    assert callable(roverDSL::SAccelerationAction.__init__)
+def test_roverdsl_showaction_constructor_exists():
+    assert callable(roverDSL_ShowAction.__init__)
 
 
-def test_roverdsl::saccelerationaction_constructor_args():
-    sig = inspect.signature(roverDSL::SAccelerationAction.__init__)
+def test_roverdsl_showaction_constructor_args():
+    sig = inspect.signature(roverDSL_ShowAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "string" in params, "Missing parameter 'string'"
+    assert "sensor" in params, "Missing parameter 'sensor'"
+
+def test_roverdsl_showaction_has_string():
+    assert hasattr(roverDSL_ShowAction, "string")
+    descriptor = None
+    for klass in roverDSL_ShowAction.__mro__:
+        if "string" in klass.__dict__:
+            descriptor = klass.__dict__["string"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_roverdsl_showaction_has_sensor():
+    assert hasattr(roverDSL_ShowAction, "sensor")
+    descriptor = None
+    for klass in roverDSL_ShowAction.__mro__:
+        if "sensor" in klass.__dict__:
+            descriptor = klass.__dict__["sensor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_roverdsl_saccelerationaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_SAccelerationAction)
+
+
+def test_roverdsl_saccelerationaction_constructor_exists():
+    assert callable(roverDSL_SAccelerationAction.__init__)
+
+
+def test_roverdsl_saccelerationaction_constructor_args():
+    sig = inspect.signature(roverDSL_SAccelerationAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::forwardaction_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ForwardAction)
+def test_roverdsl_stopaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_StopAction)
 
 
-def test_roverdsl::forwardaction_constructor_exists():
-    assert callable(roverDSL::ForwardAction.__init__)
+def test_roverdsl_stopaction_constructor_exists():
+    assert callable(roverDSL_StopAction.__init__)
 
 
-def test_roverdsl::forwardaction_constructor_args():
-    sig = inspect.signature(roverDSL::ForwardAction.__init__)
+def test_roverdsl_stopaction_constructor_args():
+    sig = inspect.signature(roverDSL_StopAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::motor_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Motor)
+def test_roverdsl_sspeedaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_SSpeedAction)
 
 
-def test_roverdsl::motor_constructor_exists():
-    assert callable(roverDSL::Motor.__init__)
+def test_roverdsl_sspeedaction_constructor_exists():
+    assert callable(roverDSL_SSpeedAction.__init__)
 
 
-def test_roverdsl::motor_constructor_args():
-    sig = inspect.signature(roverDSL::Motor.__init__)
+def test_roverdsl_sspeedaction_constructor_args():
+    sig = inspect.signature(roverDSL_SSpeedAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roverdsl_measureaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_MeasureAction)
+
+
+def test_roverdsl_measureaction_constructor_exists():
+    assert callable(roverDSL_MeasureAction.__init__)
+
+
+def test_roverdsl_measureaction_constructor_args():
+    sig = inspect.signature(roverDSL_MeasureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roverdsl_freeaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_FreeAction)
+
+
+def test_roverdsl_freeaction_constructor_exists():
+    assert callable(roverDSL_FreeAction.__init__)
+
+
+def test_roverdsl_freeaction_constructor_args():
+    sig = inspect.signature(roverDSL_FreeAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roverdsl_subroutineaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_SubRoutineAction)
+
+
+def test_roverdsl_subroutineaction_constructor_exists():
+    assert callable(roverDSL_SubRoutineAction.__init__)
+
+
+def test_roverdsl_subroutineaction_constructor_args():
+    sig = inspect.signature(roverDSL_SubRoutineAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roverdsl_rotateaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_RotateAction)
+
+
+def test_roverdsl_rotateaction_constructor_exists():
+    assert callable(roverDSL_RotateAction.__init__)
+
+
+def test_roverdsl_rotateaction_constructor_args():
+    sig = inspect.signature(roverDSL_RotateAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "blocking" in params, "Missing parameter 'blocking'"
+
+def test_roverdsl_rotateaction_has_blocking():
+    assert hasattr(roverDSL_RotateAction, "blocking")
+    descriptor = None
+    for klass in roverDSL_RotateAction.__mro__:
+        if "blocking" in klass.__dict__:
+            descriptor = klass.__dict__["blocking"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_roverdsl_forwardaction_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ForwardAction)
+
+
+def test_roverdsl_forwardaction_constructor_exists():
+    assert callable(roverDSL_ForwardAction.__init__)
+
+
+def test_roverdsl_forwardaction_constructor_args():
+    sig = inspect.signature(roverDSL_ForwardAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roverdsl_motor_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Motor)
+
+
+def test_roverdsl_motor_constructor_exists():
+    assert callable(roverDSL_Motor.__init__)
+
+
+def test_roverdsl_motor_constructor_args():
+    sig = inspect.signature(roverDSL_Motor.__init__)
     params = list(sig.parameters.keys())
     assert "m" in params, "Missing parameter 'm'"
 
-def test_roverdsl::motor_has_m():
-    assert hasattr(roverDSL::Motor, "m")
+def test_roverdsl_motor_has_m():
+    assert hasattr(roverDSL_Motor, "m")
     descriptor = None
-    for klass in roverDSL::Motor.__mro__:
+    for klass in roverDSL_Motor.__mro__:
         if "m" in klass.__dict__:
             descriptor = klass.__dict__["m"]
             break
@@ -508,107 +508,107 @@ def test_expression_constructor_args():
 
 
 
-def test_roverdsl::assignexpression_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::AssignExpression)
+def test_roverdsl_action_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Action)
 
 
-def test_roverdsl::assignexpression_constructor_exists():
-    assert callable(roverDSL::AssignExpression.__init__)
+def test_roverdsl_action_constructor_exists():
+    assert callable(roverDSL_Action.__init__)
 
 
-def test_roverdsl::assignexpression_constructor_args():
-    sig = inspect.signature(roverDSL::AssignExpression.__init__)
+def test_roverdsl_action_constructor_args():
+    sig = inspect.signature(roverDSL_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::whileexpression_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::WHILEExpression)
+def test_roverdsl_ifexpression_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_IFExpression)
 
 
-def test_roverdsl::whileexpression_constructor_exists():
-    assert callable(roverDSL::WHILEExpression.__init__)
+def test_roverdsl_ifexpression_constructor_exists():
+    assert callable(roverDSL_IFExpression.__init__)
 
 
-def test_roverdsl::whileexpression_constructor_args():
-    sig = inspect.signature(roverDSL::WHILEExpression.__init__)
+def test_roverdsl_ifexpression_constructor_args():
+    sig = inspect.signature(roverDSL_IFExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::ifexpression_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::IFExpression)
+def test_roverdsl_whileexpression_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_WHILEExpression)
 
 
-def test_roverdsl::ifexpression_constructor_exists():
-    assert callable(roverDSL::IFExpression.__init__)
+def test_roverdsl_whileexpression_constructor_exists():
+    assert callable(roverDSL_WHILEExpression.__init__)
 
 
-def test_roverdsl::ifexpression_constructor_args():
-    sig = inspect.signature(roverDSL::IFExpression.__init__)
+def test_roverdsl_whileexpression_constructor_args():
+    sig = inspect.signature(roverDSL_WHILEExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::action_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Action)
+def test_roverdsl_assignexpression_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_AssignExpression)
 
 
-def test_roverdsl::action_constructor_exists():
-    assert callable(roverDSL::Action.__init__)
+def test_roverdsl_assignexpression_constructor_exists():
+    assert callable(roverDSL_AssignExpression.__init__)
 
 
-def test_roverdsl::action_constructor_args():
-    sig = inspect.signature(roverDSL::Action.__init__)
+def test_roverdsl_assignexpression_constructor_args():
+    sig = inspect.signature(roverDSL_AssignExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::valexpr_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ValExpr)
+def test_roverdsl_valexpr_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ValExpr)
 
 
-def test_roverdsl::valexpr_constructor_exists():
-    assert callable(roverDSL::ValExpr.__init__)
+def test_roverdsl_valexpr_constructor_exists():
+    assert callable(roverDSL_ValExpr.__init__)
 
 
-def test_roverdsl::valexpr_constructor_args():
-    sig = inspect.signature(roverDSL::ValExpr.__init__)
+def test_roverdsl_valexpr_constructor_args():
+    sig = inspect.signature(roverDSL_ValExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::expression_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Expression)
+def test_roverdsl_expression_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Expression)
 
 
-def test_roverdsl::expression_constructor_exists():
-    assert callable(roverDSL::Expression.__init__)
+def test_roverdsl_expression_constructor_exists():
+    assert callable(roverDSL_Expression.__init__)
 
 
-def test_roverdsl::expression_constructor_args():
-    sig = inspect.signature(roverDSL::Expression.__init__)
+def test_roverdsl_expression_constructor_args():
+    sig = inspect.signature(roverDSL_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::subroutine_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::SubRoutine)
+def test_roverdsl_subroutine_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_SubRoutine)
 
 
-def test_roverdsl::subroutine_constructor_exists():
-    assert callable(roverDSL::SubRoutine.__init__)
+def test_roverdsl_subroutine_constructor_exists():
+    assert callable(roverDSL_SubRoutine.__init__)
 
 
-def test_roverdsl::subroutine_constructor_args():
-    sig = inspect.signature(roverDSL::SubRoutine.__init__)
+def test_roverdsl_subroutine_constructor_args():
+    sig = inspect.signature(roverDSL_SubRoutine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_roverdsl::subroutine_has_name():
-    assert hasattr(roverDSL::SubRoutine, "name")
+def test_roverdsl_subroutine_has_name():
+    assert hasattr(roverDSL_SubRoutine, "name")
     descriptor = None
-    for klass in roverDSL::SubRoutine.__mro__:
+    for klass in roverDSL_SubRoutine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -616,51 +616,51 @@ def test_roverdsl::subroutine_has_name():
 
 
 
-def test_roverdsl::implementation_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Implementation)
+def test_roverdsl_implementation_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Implementation)
 
 
-def test_roverdsl::implementation_constructor_exists():
-    assert callable(roverDSL::Implementation.__init__)
+def test_roverdsl_implementation_constructor_exists():
+    assert callable(roverDSL_Implementation.__init__)
 
 
-def test_roverdsl::implementation_constructor_args():
-    sig = inspect.signature(roverDSL::Implementation.__init__)
+def test_roverdsl_implementation_constructor_args():
+    sig = inspect.signature(roverDSL_Implementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::valueexpression_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::ValueExpression)
+def test_roverdsl_valueexpression_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_ValueExpression)
 
 
-def test_roverdsl::valueexpression_constructor_exists():
-    assert callable(roverDSL::ValueExpression.__init__)
+def test_roverdsl_valueexpression_constructor_exists():
+    assert callable(roverDSL_ValueExpression.__init__)
 
 
-def test_roverdsl::valueexpression_constructor_args():
-    sig = inspect.signature(roverDSL::ValueExpression.__init__)
+def test_roverdsl_valueexpression_constructor_args():
+    sig = inspect.signature(roverDSL_ValueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roverdsl::static_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Static)
+def test_roverdsl_static_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Static)
 
 
-def test_roverdsl::static_constructor_exists():
-    assert callable(roverDSL::Static.__init__)
+def test_roverdsl_static_constructor_exists():
+    assert callable(roverDSL_Static.__init__)
 
 
-def test_roverdsl::static_constructor_args():
-    sig = inspect.signature(roverDSL::Static.__init__)
+def test_roverdsl_static_constructor_args():
+    sig = inspect.signature(roverDSL_Static.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_roverdsl::static_has_name():
-    assert hasattr(roverDSL::Static, "name")
+def test_roverdsl_static_has_name():
+    assert hasattr(roverDSL_Static, "name")
     descriptor = None
-    for klass in roverDSL::Static.__mro__:
+    for klass in roverDSL_Static.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -668,23 +668,23 @@ def test_roverdsl::static_has_name():
 
 
 
-def test_roverdsl::global_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Global)
+def test_roverdsl_global_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Global)
 
 
-def test_roverdsl::global_constructor_exists():
-    assert callable(roverDSL::Global.__init__)
+def test_roverdsl_global_constructor_exists():
+    assert callable(roverDSL_Global.__init__)
 
 
-def test_roverdsl::global_constructor_args():
-    sig = inspect.signature(roverDSL::Global.__init__)
+def test_roverdsl_global_constructor_args():
+    sig = inspect.signature(roverDSL_Global.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_roverdsl::global_has_name():
-    assert hasattr(roverDSL::Global, "name")
+def test_roverdsl_global_has_name():
+    assert hasattr(roverDSL_Global, "name")
     descriptor = None
-    for klass in roverDSL::Global.__mro__:
+    for klass in roverDSL_Global.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -692,23 +692,23 @@ def test_roverdsl::global_has_name():
 
 
 
-def test_roverdsl::behaviorname_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::BehaviorName)
+def test_roverdsl_behaviorname_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_BehaviorName)
 
 
-def test_roverdsl::behaviorname_constructor_exists():
-    assert callable(roverDSL::BehaviorName.__init__)
+def test_roverdsl_behaviorname_constructor_exists():
+    assert callable(roverDSL_BehaviorName.__init__)
 
 
-def test_roverdsl::behaviorname_constructor_args():
-    sig = inspect.signature(roverDSL::BehaviorName.__init__)
+def test_roverdsl_behaviorname_constructor_args():
+    sig = inspect.signature(roverDSL_BehaviorName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_roverdsl::behaviorname_has_name():
-    assert hasattr(roverDSL::BehaviorName, "name")
+def test_roverdsl_behaviorname_has_name():
+    assert hasattr(roverDSL_BehaviorName, "name")
     descriptor = None
-    for klass in roverDSL::BehaviorName.__mro__:
+    for klass in roverDSL_BehaviorName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -716,53 +716,17 @@ def test_roverdsl::behaviorname_has_name():
 
 
 
-def test_roverdsl::robot_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Robot)
+def test_roverdsl_robot_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Robot)
 
 
-def test_roverdsl::robot_constructor_exists():
-    assert callable(roverDSL::Robot.__init__)
+def test_roverdsl_robot_constructor_exists():
+    assert callable(roverDSL_Robot.__init__)
 
 
-def test_roverdsl::robot_constructor_args():
-    sig = inspect.signature(roverDSL::Robot.__init__)
+def test_roverdsl_robot_constructor_args():
+    sig = inspect.signature(roverDSL_Robot.__init__)
     params = list(sig.parameters.keys())
-
-def test_bbinaryop_exists():
-    # Check that the Enumeration exists
-    assert BBinaryOp is not None
-
-def test_bbinaryop_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BBinaryOp]
-    expected_literals = [
-        "OR",
-        "AND",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BBinaryOp"
-
-def test_sensor_exists():
-    # Check that the Enumeration exists
-    assert Sensor is not None
-
-def test_sensor_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Sensor]
-    expected_literals = [
-        "RIGHTLIGHTSENSOR",
-        "LEFTLIGHTSENSOR",
-        "FRONTULTRASONICSENSOR",
-        "TOUCHSENSORR",
-        "ANGLESENSOR",
-        "COLORIDSENSOR",
-        "TOUCHSENSORL",
-        "REARULTRASONICSENSOR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Sensor"
 
 def test_sound_exists():
     # Check that the Enumeration exists
@@ -772,27 +736,33 @@ def test_sound_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Sound]
     expected_literals = [
-        "BEEP",
         "BUZZ",
+        "BEEP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Sound"
 
-def test_emotor_exists():
+def test_sensor_exists():
     # Check that the Enumeration exists
-    assert EMotor is not None
+    assert Sensor is not None
 
-def test_emotor_has_all_literals():
+def test_sensor_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EMotor]
+    enum_literals = [lit.name for lit in Sensor]
     expected_literals = [
-        "RIGHTMOTOR",
-        "LEFTMOTOR",
+        "TOUCHSENSORR",
+        "FRONTULTRASONICSENSOR",
+        "REARULTRASONICSENSOR",
+        "ANGLESENSOR",
+        "COLORIDSENSOR",
+        "RIGHTLIGHTSENSOR",
+        "TOUCHSENSORL",
+        "LEFTLIGHTSENSOR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EMotor"
+        assert lit_name in enum_literals, f"Literal '' missing in Sensor"
 
 def test_color_exists():
     # Check that the Enumeration exists
@@ -802,24 +772,54 @@ def test_color_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Color]
     expected_literals = [
-        "GRAY",
-        "MAGENTA",
-        "GREEN",
-        "ORANGE",
-        "BROWN",
-        "YELLOW",
-        "BLUE",
-        "BLACK",
-        "DARK_GRAY",
-        "PINK",
-        "RED",
-        "CYAN",
-        "WHITE",
         "LIGHT_GRAY",
+        "WHITE",
+        "GREEN",
+        "RED",
+        "PINK",
+        "CYAN",
+        "GRAY",
+        "ORANGE",
+        "YELLOW",
+        "DARK_GRAY",
+        "MAGENTA",
+        "BLUE",
+        "BROWN",
+        "BLACK",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Color"
+
+def test_emotor_exists():
+    # Check that the Enumeration exists
+    assert EMotor is not None
+
+def test_emotor_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EMotor]
+    expected_literals = [
+        "LEFTMOTOR",
+        "RIGHTMOTOR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EMotor"
+
+def test_bbinaryop_exists():
+    # Check that the Enumeration exists
+    assert BBinaryOp is not None
+
+def test_bbinaryop_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BBinaryOp]
+    expected_literals = [
+        "AND",
+        "OR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BBinaryOp"
 
 def test_compareop_exists():
     # Check that the Enumeration exists
@@ -829,12 +829,12 @@ def test_compareop_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CompareOp]
     expected_literals = [
-        "LT",
-        "LEQ",
-        "NEQ",
         "EQ",
-        "GEQ",
+        "LT",
+        "NEQ",
         "GT",
+        "GEQ",
+        "LEQ",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -855,144 +855,144 @@ safe_text = st.text(
 ValueExpression_strategy = st.builds(
     ValueExpression,
 )
-roverDSL::BVBracket_strategy = st.builds(
-    roverDSL::BVBracket,
-)
-roverDSL::BVLiteral_strategy = st.builds(
-    roverDSL::BVLiteral,
-    aValue=
-        st.integers(),
-    neg=
-        st.booleans()
-)
-roverDSL::ExpressionBinComp_strategy = st.builds(
-    roverDSL::ExpressionBinComp,
-    bcomp=
-        safe_text
-)
-roverDSL::ExpressionBinOp_strategy = st.builds(
-    roverDSL::ExpressionBinOp,
-    bop=
-        safe_text
-)
-roverDSL::BVarLiteral_strategy = st.builds(
-    roverDSL::BVarLiteral,
+roverDSL_BVarLiteral_strategy = st.builds(
+    roverDSL_BVarLiteral,
     var=
         safe_text
 )
-roverDSL::BBLiteral_strategy = st.builds(
-    roverDSL::BBLiteral,
+roverDSL_ExpressionBinOp_strategy = st.builds(
+    roverDSL_ExpressionBinOp,
+    bop=
+        safe_text
+)
+roverDSL_BVLiteral_strategy = st.builds(
+    roverDSL_BVLiteral,
+    neg=
+        st.booleans(),
+    aValue=
+        st.integers()
+)
+roverDSL_BBLiteral_strategy = st.builds(
+    roverDSL_BBLiteral,
     bValue=
         st.booleans()
 )
-roverDSL::ColorLiteral_strategy = st.builds(
-    roverDSL::ColorLiteral,
+roverDSL_ColorLiteral_strategy = st.builds(
+    roverDSL_ColorLiteral,
     color=
         safe_text
 )
-roverDSL::BSensorLiteral_strategy = st.builds(
-    roverDSL::BSensorLiteral,
+roverDSL_ExpressionBinComp_strategy = st.builds(
+    roverDSL_ExpressionBinComp,
+    bcomp=
+        safe_text
+)
+roverDSL_BVBracket_strategy = st.builds(
+    roverDSL_BVBracket,
+)
+roverDSL_BSensorLiteral_strategy = st.builds(
+    roverDSL_BSensorLiteral,
     sensor=
         safe_text
 )
-roverDSL::BNotExpr_strategy = st.builds(
-    roverDSL::BNotExpr,
+roverDSL_BNotExpr_strategy = st.builds(
+    roverDSL_BNotExpr,
 )
 Action_strategy = st.builds(
     Action,
 )
-roverDSL::MeasureAction_strategy = st.builds(
-    roverDSL::MeasureAction,
+roverDSL_SoundAction_strategy = st.builds(
+    roverDSL_SoundAction,
+    sound=
+        safe_text
 )
-roverDSL::RotateAction_strategy = st.builds(
-    roverDSL::RotateAction,
-    blocking=
-        st.booleans()
-)
-roverDSL::SSpeedAction_strategy = st.builds(
-    roverDSL::SSpeedAction,
-)
-roverDSL::SubRoutineAction_strategy = st.builds(
-    roverDSL::SubRoutineAction,
-)
-roverDSL::StopAction_strategy = st.builds(
-    roverDSL::StopAction,
-)
-roverDSL::ShowAction_strategy = st.builds(
-    roverDSL::ShowAction,
+roverDSL_ShowAction_strategy = st.builds(
+    roverDSL_ShowAction,
     string=
         safe_text,
     sensor=
         safe_text
 )
-roverDSL::FreeAction_strategy = st.builds(
-    roverDSL::FreeAction,
+roverDSL_SAccelerationAction_strategy = st.builds(
+    roverDSL_SAccelerationAction,
 )
-roverDSL::SoundAction_strategy = st.builds(
-    roverDSL::SoundAction,
-    sound=
-        safe_text
+roverDSL_StopAction_strategy = st.builds(
+    roverDSL_StopAction,
 )
-roverDSL::SAccelerationAction_strategy = st.builds(
-    roverDSL::SAccelerationAction,
+roverDSL_SSpeedAction_strategy = st.builds(
+    roverDSL_SSpeedAction,
 )
-roverDSL::ForwardAction_strategy = st.builds(
-    roverDSL::ForwardAction,
+roverDSL_MeasureAction_strategy = st.builds(
+    roverDSL_MeasureAction,
 )
-roverDSL::Motor_strategy = st.builds(
-    roverDSL::Motor,
+roverDSL_FreeAction_strategy = st.builds(
+    roverDSL_FreeAction,
+)
+roverDSL_SubRoutineAction_strategy = st.builds(
+    roverDSL_SubRoutineAction,
+)
+roverDSL_RotateAction_strategy = st.builds(
+    roverDSL_RotateAction,
+    blocking=
+        st.booleans()
+)
+roverDSL_ForwardAction_strategy = st.builds(
+    roverDSL_ForwardAction,
+)
+roverDSL_Motor_strategy = st.builds(
+    roverDSL_Motor,
     m=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-roverDSL::AssignExpression_strategy = st.builds(
-    roverDSL::AssignExpression,
+roverDSL_Action_strategy = st.builds(
+    roverDSL_Action,
 )
-roverDSL::WHILEExpression_strategy = st.builds(
-    roverDSL::WHILEExpression,
+roverDSL_IFExpression_strategy = st.builds(
+    roverDSL_IFExpression,
 )
-roverDSL::IFExpression_strategy = st.builds(
-    roverDSL::IFExpression,
+roverDSL_WHILEExpression_strategy = st.builds(
+    roverDSL_WHILEExpression,
 )
-roverDSL::Action_strategy = st.builds(
-    roverDSL::Action,
+roverDSL_AssignExpression_strategy = st.builds(
+    roverDSL_AssignExpression,
 )
-roverDSL::ValExpr_strategy = st.builds(
-    roverDSL::ValExpr,
+roverDSL_ValExpr_strategy = st.builds(
+    roverDSL_ValExpr,
 )
-roverDSL::Expression_strategy = st.builds(
-    roverDSL::Expression,
+roverDSL_Expression_strategy = st.builds(
+    roverDSL_Expression,
 )
-roverDSL::SubRoutine_strategy = st.builds(
-    roverDSL::SubRoutine,
+roverDSL_SubRoutine_strategy = st.builds(
+    roverDSL_SubRoutine,
     name=
         safe_text
 )
-roverDSL::Implementation_strategy = st.builds(
-    roverDSL::Implementation,
+roverDSL_Implementation_strategy = st.builds(
+    roverDSL_Implementation,
 )
-roverDSL::ValueExpression_strategy = st.builds(
-    roverDSL::ValueExpression,
+roverDSL_ValueExpression_strategy = st.builds(
+    roverDSL_ValueExpression,
 )
-roverDSL::Static_strategy = st.builds(
-    roverDSL::Static,
+roverDSL_Static_strategy = st.builds(
+    roverDSL_Static,
     name=
         safe_text
 )
-roverDSL::Global_strategy = st.builds(
-    roverDSL::Global,
+roverDSL_Global_strategy = st.builds(
+    roverDSL_Global,
     name=
         safe_text
 )
-roverDSL::BehaviorName_strategy = st.builds(
-    roverDSL::BehaviorName,
+roverDSL_BehaviorName_strategy = st.builds(
+    roverDSL_BehaviorName,
     name=
         safe_text
 )
-roverDSL::Robot_strategy = st.builds(
-    roverDSL::Robot,
+roverDSL_Robot_strategy = st.builds(
+    roverDSL_Robot,
 )
 
 @given(instance=ValueExpression_strategy)
@@ -1000,250 +1000,211 @@ roverDSL::Robot_strategy = st.builds(
 def test_valueexpression_instantiation(instance):
     assert isinstance(instance, ValueExpression)
 
-@given(instance=roverDSL::BVBracket_strategy)
+@given(instance=roverDSL_BVarLiteral_strategy)
 @settings(max_examples=50)
-def test_roverdsl::bvbracket_instantiation(instance):
-    assert isinstance(instance, roverDSL::BVBracket)
-
-@given(instance=roverDSL::BVLiteral_strategy)
-@settings(max_examples=50)
-def test_roverdsl::bvliteral_instantiation(instance):
-    assert isinstance(instance, roverDSL::BVLiteral)
-
-@given(instance=roverDSL::BVLiteral_strategy)
-def test_roverdsl::bvliteral_aValue_type(instance):
-    assert isinstance(instance.aValue, int)
+def test_roverdsl_bvarliteral_instantiation(instance):
+    assert isinstance(instance, roverDSL_BVarLiteral)
 
 
-@given(instance=roverDSL::BVLiteral_strategy)
-def test_roverdsl::bvliteral_aValue_setter(instance):
-    original = instance.aValue
-    instance.aValue = original
-    assert instance.aValue == original
 
-@given(instance=roverDSL::BVLiteral_strategy)
-def test_roverdsl::bvliteral_neg_type(instance):
-    assert isinstance(instance.neg, bool)
-
-
-@given(instance=roverDSL::BVLiteral_strategy)
-def test_roverdsl::bvliteral_neg_setter(instance):
-    original = instance.neg
-    instance.neg = original
-    assert instance.neg == original
-
-@given(instance=roverDSL::ExpressionBinComp_strategy)
-@settings(max_examples=50)
-def test_roverdsl::expressionbincomp_instantiation(instance):
-    assert isinstance(instance, roverDSL::ExpressionBinComp)
-
-@given(instance=roverDSL::ExpressionBinComp_strategy)
-def test_roverdsl::expressionbincomp_bcomp_type(instance):
-    assert isinstance(instance.bcomp, str)
-
-
-@given(instance=roverDSL::ExpressionBinComp_strategy)
-def test_roverdsl::expressionbincomp_bcomp_setter(instance):
-    original = instance.bcomp
-    instance.bcomp = original
-    assert instance.bcomp == original
-
-@given(instance=roverDSL::ExpressionBinOp_strategy)
-@settings(max_examples=50)
-def test_roverdsl::expressionbinop_instantiation(instance):
-    assert isinstance(instance, roverDSL::ExpressionBinOp)
-
-@given(instance=roverDSL::ExpressionBinOp_strategy)
-def test_roverdsl::expressionbinop_bop_type(instance):
-    assert isinstance(instance.bop, str)
-
-
-@given(instance=roverDSL::ExpressionBinOp_strategy)
-def test_roverdsl::expressionbinop_bop_setter(instance):
-    original = instance.bop
-    instance.bop = original
-    assert instance.bop == original
-
-@given(instance=roverDSL::BVarLiteral_strategy)
-@settings(max_examples=50)
-def test_roverdsl::bvarliteral_instantiation(instance):
-    assert isinstance(instance, roverDSL::BVarLiteral)
-
-@given(instance=roverDSL::BVarLiteral_strategy)
-def test_roverdsl::bvarliteral_var_type(instance):
-    assert isinstance(instance.var, str)
-
-
-@given(instance=roverDSL::BVarLiteral_strategy)
-def test_roverdsl::bvarliteral_var_setter(instance):
+@given(instance=roverDSL_BVarLiteral_strategy)
+def test_roverdsl_bvarliteral_var_setter(instance):
     original = instance.var
     instance.var = original
     assert instance.var == original
 
-@given(instance=roverDSL::BBLiteral_strategy)
+@given(instance=roverDSL_ExpressionBinOp_strategy)
 @settings(max_examples=50)
-def test_roverdsl::bbliteral_instantiation(instance):
-    assert isinstance(instance, roverDSL::BBLiteral)
-
-@given(instance=roverDSL::BBLiteral_strategy)
-def test_roverdsl::bbliteral_bValue_type(instance):
-    assert isinstance(instance.bValue, bool)
+def test_roverdsl_expressionbinop_instantiation(instance):
+    assert isinstance(instance, roverDSL_ExpressionBinOp)
 
 
-@given(instance=roverDSL::BBLiteral_strategy)
-def test_roverdsl::bbliteral_bValue_setter(instance):
+
+@given(instance=roverDSL_ExpressionBinOp_strategy)
+def test_roverdsl_expressionbinop_bop_setter(instance):
+    original = instance.bop
+    instance.bop = original
+    assert instance.bop == original
+
+@given(instance=roverDSL_BVLiteral_strategy)
+@settings(max_examples=50)
+def test_roverdsl_bvliteral_instantiation(instance):
+    assert isinstance(instance, roverDSL_BVLiteral)
+
+
+
+@given(instance=roverDSL_BVLiteral_strategy)
+def test_roverdsl_bvliteral_neg_setter(instance):
+    original = instance.neg
+    instance.neg = original
+    assert instance.neg == original
+
+
+
+@given(instance=roverDSL_BVLiteral_strategy)
+def test_roverdsl_bvliteral_aValue_setter(instance):
+    original = instance.aValue
+    instance.aValue = original
+    assert instance.aValue == original
+
+@given(instance=roverDSL_BBLiteral_strategy)
+@settings(max_examples=50)
+def test_roverdsl_bbliteral_instantiation(instance):
+    assert isinstance(instance, roverDSL_BBLiteral)
+
+
+
+@given(instance=roverDSL_BBLiteral_strategy)
+def test_roverdsl_bbliteral_bValue_setter(instance):
     original = instance.bValue
     instance.bValue = original
     assert instance.bValue == original
 
-@given(instance=roverDSL::ColorLiteral_strategy)
+@given(instance=roverDSL_ColorLiteral_strategy)
 @settings(max_examples=50)
-def test_roverdsl::colorliteral_instantiation(instance):
-    assert isinstance(instance, roverDSL::ColorLiteral)
-
-@given(instance=roverDSL::ColorLiteral_strategy)
-def test_roverdsl::colorliteral_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_roverdsl_colorliteral_instantiation(instance):
+    assert isinstance(instance, roverDSL_ColorLiteral)
 
 
-@given(instance=roverDSL::ColorLiteral_strategy)
-def test_roverdsl::colorliteral_color_setter(instance):
+
+@given(instance=roverDSL_ColorLiteral_strategy)
+def test_roverdsl_colorliteral_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=roverDSL::BSensorLiteral_strategy)
+@given(instance=roverDSL_ExpressionBinComp_strategy)
 @settings(max_examples=50)
-def test_roverdsl::bsensorliteral_instantiation(instance):
-    assert isinstance(instance, roverDSL::BSensorLiteral)
-
-@given(instance=roverDSL::BSensorLiteral_strategy)
-def test_roverdsl::bsensorliteral_sensor_type(instance):
-    assert isinstance(instance.sensor, str)
+def test_roverdsl_expressionbincomp_instantiation(instance):
+    assert isinstance(instance, roverDSL_ExpressionBinComp)
 
 
-@given(instance=roverDSL::BSensorLiteral_strategy)
-def test_roverdsl::bsensorliteral_sensor_setter(instance):
+
+@given(instance=roverDSL_ExpressionBinComp_strategy)
+def test_roverdsl_expressionbincomp_bcomp_setter(instance):
+    original = instance.bcomp
+    instance.bcomp = original
+    assert instance.bcomp == original
+
+@given(instance=roverDSL_BVBracket_strategy)
+@settings(max_examples=50)
+def test_roverdsl_bvbracket_instantiation(instance):
+    assert isinstance(instance, roverDSL_BVBracket)
+
+@given(instance=roverDSL_BSensorLiteral_strategy)
+@settings(max_examples=50)
+def test_roverdsl_bsensorliteral_instantiation(instance):
+    assert isinstance(instance, roverDSL_BSensorLiteral)
+
+
+
+@given(instance=roverDSL_BSensorLiteral_strategy)
+def test_roverdsl_bsensorliteral_sensor_setter(instance):
     original = instance.sensor
     instance.sensor = original
     assert instance.sensor == original
 
-@given(instance=roverDSL::BNotExpr_strategy)
+@given(instance=roverDSL_BNotExpr_strategy)
 @settings(max_examples=50)
-def test_roverdsl::bnotexpr_instantiation(instance):
-    assert isinstance(instance, roverDSL::BNotExpr)
+def test_roverdsl_bnotexpr_instantiation(instance):
+    assert isinstance(instance, roverDSL_BNotExpr)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=roverDSL::MeasureAction_strategy)
+@given(instance=roverDSL_SoundAction_strategy)
 @settings(max_examples=50)
-def test_roverdsl::measureaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::MeasureAction)
-
-@given(instance=roverDSL::RotateAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::rotateaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::RotateAction)
-
-@given(instance=roverDSL::RotateAction_strategy)
-def test_roverdsl::rotateaction_blocking_type(instance):
-    assert isinstance(instance.blocking, bool)
+def test_roverdsl_soundaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_SoundAction)
 
 
-@given(instance=roverDSL::RotateAction_strategy)
-def test_roverdsl::rotateaction_blocking_setter(instance):
-    original = instance.blocking
-    instance.blocking = original
-    assert instance.blocking == original
 
-@given(instance=roverDSL::SSpeedAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::sspeedaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::SSpeedAction)
-
-@given(instance=roverDSL::SubRoutineAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::subroutineaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::SubRoutineAction)
-
-@given(instance=roverDSL::StopAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::stopaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::StopAction)
-
-@given(instance=roverDSL::ShowAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::showaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::ShowAction)
-
-@given(instance=roverDSL::ShowAction_strategy)
-def test_roverdsl::showaction_string_type(instance):
-    assert isinstance(instance.string, str)
-
-
-@given(instance=roverDSL::ShowAction_strategy)
-def test_roverdsl::showaction_string_setter(instance):
-    original = instance.string
-    instance.string = original
-    assert instance.string == original
-
-@given(instance=roverDSL::ShowAction_strategy)
-def test_roverdsl::showaction_sensor_type(instance):
-    assert isinstance(instance.sensor, str)
-
-
-@given(instance=roverDSL::ShowAction_strategy)
-def test_roverdsl::showaction_sensor_setter(instance):
-    original = instance.sensor
-    instance.sensor = original
-    assert instance.sensor == original
-
-@given(instance=roverDSL::FreeAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::freeaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::FreeAction)
-
-@given(instance=roverDSL::SoundAction_strategy)
-@settings(max_examples=50)
-def test_roverdsl::soundaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::SoundAction)
-
-@given(instance=roverDSL::SoundAction_strategy)
-def test_roverdsl::soundaction_sound_type(instance):
-    assert isinstance(instance.sound, str)
-
-
-@given(instance=roverDSL::SoundAction_strategy)
-def test_roverdsl::soundaction_sound_setter(instance):
+@given(instance=roverDSL_SoundAction_strategy)
+def test_roverdsl_soundaction_sound_setter(instance):
     original = instance.sound
     instance.sound = original
     assert instance.sound == original
 
-@given(instance=roverDSL::SAccelerationAction_strategy)
+@given(instance=roverDSL_ShowAction_strategy)
 @settings(max_examples=50)
-def test_roverdsl::saccelerationaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::SAccelerationAction)
+def test_roverdsl_showaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_ShowAction)
 
-@given(instance=roverDSL::ForwardAction_strategy)
+
+
+@given(instance=roverDSL_ShowAction_strategy)
+def test_roverdsl_showaction_string_setter(instance):
+    original = instance.string
+    instance.string = original
+    assert instance.string == original
+
+
+
+@given(instance=roverDSL_ShowAction_strategy)
+def test_roverdsl_showaction_sensor_setter(instance):
+    original = instance.sensor
+    instance.sensor = original
+    assert instance.sensor == original
+
+@given(instance=roverDSL_SAccelerationAction_strategy)
 @settings(max_examples=50)
-def test_roverdsl::forwardaction_instantiation(instance):
-    assert isinstance(instance, roverDSL::ForwardAction)
+def test_roverdsl_saccelerationaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_SAccelerationAction)
 
-@given(instance=roverDSL::Motor_strategy)
+@given(instance=roverDSL_StopAction_strategy)
 @settings(max_examples=50)
-def test_roverdsl::motor_instantiation(instance):
-    assert isinstance(instance, roverDSL::Motor)
+def test_roverdsl_stopaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_StopAction)
 
-@given(instance=roverDSL::Motor_strategy)
-def test_roverdsl::motor_m_type(instance):
-    assert isinstance(instance.m, str)
+@given(instance=roverDSL_SSpeedAction_strategy)
+@settings(max_examples=50)
+def test_roverdsl_sspeedaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_SSpeedAction)
+
+@given(instance=roverDSL_MeasureAction_strategy)
+@settings(max_examples=50)
+def test_roverdsl_measureaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_MeasureAction)
+
+@given(instance=roverDSL_FreeAction_strategy)
+@settings(max_examples=50)
+def test_roverdsl_freeaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_FreeAction)
+
+@given(instance=roverDSL_SubRoutineAction_strategy)
+@settings(max_examples=50)
+def test_roverdsl_subroutineaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_SubRoutineAction)
+
+@given(instance=roverDSL_RotateAction_strategy)
+@settings(max_examples=50)
+def test_roverdsl_rotateaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_RotateAction)
 
 
-@given(instance=roverDSL::Motor_strategy)
-def test_roverdsl::motor_m_setter(instance):
+
+@given(instance=roverDSL_RotateAction_strategy)
+def test_roverdsl_rotateaction_blocking_setter(instance):
+    original = instance.blocking
+    instance.blocking = original
+    assert instance.blocking == original
+
+@given(instance=roverDSL_ForwardAction_strategy)
+@settings(max_examples=50)
+def test_roverdsl_forwardaction_instantiation(instance):
+    assert isinstance(instance, roverDSL_ForwardAction)
+
+@given(instance=roverDSL_Motor_strategy)
+@settings(max_examples=50)
+def test_roverdsl_motor_instantiation(instance):
+    assert isinstance(instance, roverDSL_Motor)
+
+
+
+@given(instance=roverDSL_Motor_strategy)
+def test_roverdsl_motor_m_setter(instance):
     original = instance.m
     instance.m = original
     assert instance.m == original
@@ -1253,111 +1214,99 @@ def test_roverdsl::motor_m_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=roverDSL::AssignExpression_strategy)
+@given(instance=roverDSL_Action_strategy)
 @settings(max_examples=50)
-def test_roverdsl::assignexpression_instantiation(instance):
-    assert isinstance(instance, roverDSL::AssignExpression)
+def test_roverdsl_action_instantiation(instance):
+    assert isinstance(instance, roverDSL_Action)
 
-@given(instance=roverDSL::WHILEExpression_strategy)
+@given(instance=roverDSL_IFExpression_strategy)
 @settings(max_examples=50)
-def test_roverdsl::whileexpression_instantiation(instance):
-    assert isinstance(instance, roverDSL::WHILEExpression)
+def test_roverdsl_ifexpression_instantiation(instance):
+    assert isinstance(instance, roverDSL_IFExpression)
 
-@given(instance=roverDSL::IFExpression_strategy)
+@given(instance=roverDSL_WHILEExpression_strategy)
 @settings(max_examples=50)
-def test_roverdsl::ifexpression_instantiation(instance):
-    assert isinstance(instance, roverDSL::IFExpression)
+def test_roverdsl_whileexpression_instantiation(instance):
+    assert isinstance(instance, roverDSL_WHILEExpression)
 
-@given(instance=roverDSL::Action_strategy)
+@given(instance=roverDSL_AssignExpression_strategy)
 @settings(max_examples=50)
-def test_roverdsl::action_instantiation(instance):
-    assert isinstance(instance, roverDSL::Action)
+def test_roverdsl_assignexpression_instantiation(instance):
+    assert isinstance(instance, roverDSL_AssignExpression)
 
-@given(instance=roverDSL::ValExpr_strategy)
+@given(instance=roverDSL_ValExpr_strategy)
 @settings(max_examples=50)
-def test_roverdsl::valexpr_instantiation(instance):
-    assert isinstance(instance, roverDSL::ValExpr)
+def test_roverdsl_valexpr_instantiation(instance):
+    assert isinstance(instance, roverDSL_ValExpr)
 
-@given(instance=roverDSL::Expression_strategy)
+@given(instance=roverDSL_Expression_strategy)
 @settings(max_examples=50)
-def test_roverdsl::expression_instantiation(instance):
-    assert isinstance(instance, roverDSL::Expression)
+def test_roverdsl_expression_instantiation(instance):
+    assert isinstance(instance, roverDSL_Expression)
 
-@given(instance=roverDSL::SubRoutine_strategy)
+@given(instance=roverDSL_SubRoutine_strategy)
 @settings(max_examples=50)
-def test_roverdsl::subroutine_instantiation(instance):
-    assert isinstance(instance, roverDSL::SubRoutine)
-
-@given(instance=roverDSL::SubRoutine_strategy)
-def test_roverdsl::subroutine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_roverdsl_subroutine_instantiation(instance):
+    assert isinstance(instance, roverDSL_SubRoutine)
 
 
-@given(instance=roverDSL::SubRoutine_strategy)
-def test_roverdsl::subroutine_name_setter(instance):
+
+@given(instance=roverDSL_SubRoutine_strategy)
+def test_roverdsl_subroutine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=roverDSL::Implementation_strategy)
+@given(instance=roverDSL_Implementation_strategy)
 @settings(max_examples=50)
-def test_roverdsl::implementation_instantiation(instance):
-    assert isinstance(instance, roverDSL::Implementation)
+def test_roverdsl_implementation_instantiation(instance):
+    assert isinstance(instance, roverDSL_Implementation)
 
-@given(instance=roverDSL::ValueExpression_strategy)
+@given(instance=roverDSL_ValueExpression_strategy)
 @settings(max_examples=50)
-def test_roverdsl::valueexpression_instantiation(instance):
-    assert isinstance(instance, roverDSL::ValueExpression)
+def test_roverdsl_valueexpression_instantiation(instance):
+    assert isinstance(instance, roverDSL_ValueExpression)
 
-@given(instance=roverDSL::Static_strategy)
+@given(instance=roverDSL_Static_strategy)
 @settings(max_examples=50)
-def test_roverdsl::static_instantiation(instance):
-    assert isinstance(instance, roverDSL::Static)
-
-@given(instance=roverDSL::Static_strategy)
-def test_roverdsl::static_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_roverdsl_static_instantiation(instance):
+    assert isinstance(instance, roverDSL_Static)
 
 
-@given(instance=roverDSL::Static_strategy)
-def test_roverdsl::static_name_setter(instance):
+
+@given(instance=roverDSL_Static_strategy)
+def test_roverdsl_static_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=roverDSL::Global_strategy)
+@given(instance=roverDSL_Global_strategy)
 @settings(max_examples=50)
-def test_roverdsl::global_instantiation(instance):
-    assert isinstance(instance, roverDSL::Global)
-
-@given(instance=roverDSL::Global_strategy)
-def test_roverdsl::global_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_roverdsl_global_instantiation(instance):
+    assert isinstance(instance, roverDSL_Global)
 
 
-@given(instance=roverDSL::Global_strategy)
-def test_roverdsl::global_name_setter(instance):
+
+@given(instance=roverDSL_Global_strategy)
+def test_roverdsl_global_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=roverDSL::BehaviorName_strategy)
+@given(instance=roverDSL_BehaviorName_strategy)
 @settings(max_examples=50)
-def test_roverdsl::behaviorname_instantiation(instance):
-    assert isinstance(instance, roverDSL::BehaviorName)
-
-@given(instance=roverDSL::BehaviorName_strategy)
-def test_roverdsl::behaviorname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_roverdsl_behaviorname_instantiation(instance):
+    assert isinstance(instance, roverDSL_BehaviorName)
 
 
-@given(instance=roverDSL::BehaviorName_strategy)
-def test_roverdsl::behaviorname_name_setter(instance):
+
+@given(instance=roverDSL_BehaviorName_strategy)
+def test_roverdsl_behaviorname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=roverDSL::Robot_strategy)
+@given(instance=roverDSL_Robot_strategy)
 @settings(max_examples=50)
-def test_roverdsl::robot_instantiation(instance):
-    assert isinstance(instance, roverDSL::Robot)
+def test_roverdsl_robot_instantiation(instance):
+    assert isinstance(instance, roverDSL_Robot)

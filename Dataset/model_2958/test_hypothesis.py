@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    entities::ElementType,
+from python_code import (
+    entities_ElementType,
     ElementType,
-    entities::BasicType,
-    entities::EntityType,
-    entities::AttributeType,
-    entities::Attribute,
-    entities::Entity,
-    entities::Model,
+    entities_BasicType,
+    entities_EntityType,
+    entities_AttributeType,
+    entities_Attribute,
+    entities_Entity,
+    entities_Model,
 )
 
 # =============================================================================
@@ -22,16 +22,16 @@ from classes import (
 
 
 
-def test_entities::elementtype_is_not_abstract():
-    assert not inspect.isabstract(entities::ElementType)
+def test_entities_elementtype_is_not_abstract():
+    assert not inspect.isabstract(entities_ElementType)
 
 
-def test_entities::elementtype_constructor_exists():
-    assert callable(entities::ElementType.__init__)
+def test_entities_elementtype_constructor_exists():
+    assert callable(entities_ElementType.__init__)
 
 
-def test_entities::elementtype_constructor_args():
-    sig = inspect.signature(entities::ElementType.__init__)
+def test_entities_elementtype_constructor_args():
+    sig = inspect.signature(entities_ElementType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -50,23 +50,23 @@ def test_elementtype_constructor_args():
 
 
 
-def test_entities::basictype_is_not_abstract():
-    assert not inspect.isabstract(entities::BasicType)
+def test_entities_basictype_is_not_abstract():
+    assert not inspect.isabstract(entities_BasicType)
 
 
-def test_entities::basictype_constructor_exists():
-    assert callable(entities::BasicType.__init__)
+def test_entities_basictype_constructor_exists():
+    assert callable(entities_BasicType.__init__)
 
 
-def test_entities::basictype_constructor_args():
-    sig = inspect.signature(entities::BasicType.__init__)
+def test_entities_basictype_constructor_args():
+    sig = inspect.signature(entities_BasicType.__init__)
     params = list(sig.parameters.keys())
     assert "typeName" in params, "Missing parameter 'typeName'"
 
-def test_entities::basictype_has_typeName():
-    assert hasattr(entities::BasicType, "typeName")
+def test_entities_basictype_has_typeName():
+    assert hasattr(entities_BasicType, "typeName")
     descriptor = None
-    for klass in entities::BasicType.__mro__:
+    for klass in entities_BasicType.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
@@ -74,71 +74,71 @@ def test_entities::basictype_has_typeName():
 
 
 
-def test_entities::entitytype_is_not_abstract():
-    assert not inspect.isabstract(entities::EntityType)
+def test_entities_entitytype_is_not_abstract():
+    assert not inspect.isabstract(entities_EntityType)
 
 
-def test_entities::entitytype_constructor_exists():
-    assert callable(entities::EntityType.__init__)
+def test_entities_entitytype_constructor_exists():
+    assert callable(entities_EntityType.__init__)
 
 
-def test_entities::entitytype_constructor_args():
-    sig = inspect.signature(entities::EntityType.__init__)
+def test_entities_entitytype_constructor_args():
+    sig = inspect.signature(entities_EntityType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entities::attributetype_is_not_abstract():
-    assert not inspect.isabstract(entities::AttributeType)
+def test_entities_attributetype_is_not_abstract():
+    assert not inspect.isabstract(entities_AttributeType)
 
 
-def test_entities::attributetype_constructor_exists():
-    assert callable(entities::AttributeType.__init__)
+def test_entities_attributetype_constructor_exists():
+    assert callable(entities_AttributeType.__init__)
 
 
-def test_entities::attributetype_constructor_args():
-    sig = inspect.signature(entities::AttributeType.__init__)
+def test_entities_attributetype_constructor_args():
+    sig = inspect.signature(entities_AttributeType.__init__)
     params = list(sig.parameters.keys())
-    assert "length" in params, "Missing parameter 'length'"
     assert "array" in params, "Missing parameter 'array'"
+    assert "length" in params, "Missing parameter 'length'"
 
-def test_entities::attributetype_has_length():
-    assert hasattr(entities::AttributeType, "length")
+def test_entities_attributetype_has_array():
+    assert hasattr(entities_AttributeType, "array")
     descriptor = None
-    for klass in entities::AttributeType.__mro__:
-        if "length" in klass.__dict__:
-            descriptor = klass.__dict__["length"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_entities::attributetype_has_array():
-    assert hasattr(entities::AttributeType, "array")
-    descriptor = None
-    for klass in entities::AttributeType.__mro__:
+    for klass in entities_AttributeType.__mro__:
         if "array" in klass.__dict__:
             descriptor = klass.__dict__["array"]
             break
     assert isinstance(descriptor, property)
 
+def test_entities_attributetype_has_length():
+    assert hasattr(entities_AttributeType, "length")
+    descriptor = None
+    for klass in entities_AttributeType.__mro__:
+        if "length" in klass.__dict__:
+            descriptor = klass.__dict__["length"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_entities::attribute_is_not_abstract():
-    assert not inspect.isabstract(entities::Attribute)
+
+def test_entities_attribute_is_not_abstract():
+    assert not inspect.isabstract(entities_Attribute)
 
 
-def test_entities::attribute_constructor_exists():
-    assert callable(entities::Attribute.__init__)
+def test_entities_attribute_constructor_exists():
+    assert callable(entities_Attribute.__init__)
 
 
-def test_entities::attribute_constructor_args():
-    sig = inspect.signature(entities::Attribute.__init__)
+def test_entities_attribute_constructor_args():
+    sig = inspect.signature(entities_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entities::attribute_has_name():
-    assert hasattr(entities::Attribute, "name")
+def test_entities_attribute_has_name():
+    assert hasattr(entities_Attribute, "name")
     descriptor = None
-    for klass in entities::Attribute.__mro__:
+    for klass in entities_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -146,23 +146,23 @@ def test_entities::attribute_has_name():
 
 
 
-def test_entities::entity_is_not_abstract():
-    assert not inspect.isabstract(entities::Entity)
+def test_entities_entity_is_not_abstract():
+    assert not inspect.isabstract(entities_Entity)
 
 
-def test_entities::entity_constructor_exists():
-    assert callable(entities::Entity.__init__)
+def test_entities_entity_constructor_exists():
+    assert callable(entities_Entity.__init__)
 
 
-def test_entities::entity_constructor_args():
-    sig = inspect.signature(entities::Entity.__init__)
+def test_entities_entity_constructor_args():
+    sig = inspect.signature(entities_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entities::entity_has_name():
-    assert hasattr(entities::Entity, "name")
+def test_entities_entity_has_name():
+    assert hasattr(entities_Entity, "name")
     descriptor = None
-    for klass in entities::Entity.__mro__:
+    for klass in entities_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -170,16 +170,16 @@ def test_entities::entity_has_name():
 
 
 
-def test_entities::model_is_not_abstract():
-    assert not inspect.isabstract(entities::Model)
+def test_entities_model_is_not_abstract():
+    assert not inspect.isabstract(entities_Model)
 
 
-def test_entities::model_constructor_exists():
-    assert callable(entities::Model.__init__)
+def test_entities_model_constructor_exists():
+    assert callable(entities_Model.__init__)
 
 
-def test_entities::model_constructor_args():
-    sig = inspect.signature(entities::Model.__init__)
+def test_entities_model_constructor_args():
+    sig = inspect.signature(entities_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,132 +194,117 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-entities::ElementType_strategy = st.builds(
-    entities::ElementType,
+entities_ElementType_strategy = st.builds(
+    entities_ElementType,
 )
 ElementType_strategy = st.builds(
     ElementType,
 )
-entities::BasicType_strategy = st.builds(
-    entities::BasicType,
+entities_BasicType_strategy = st.builds(
+    entities_BasicType,
     typeName=
         safe_text
 )
-entities::EntityType_strategy = st.builds(
-    entities::EntityType,
+entities_EntityType_strategy = st.builds(
+    entities_EntityType,
 )
-entities::AttributeType_strategy = st.builds(
-    entities::AttributeType,
-    length=
-        st.integers(),
+entities_AttributeType_strategy = st.builds(
+    entities_AttributeType,
     array=
-        st.booleans()
+        st.booleans(),
+    length=
+        st.integers()
 )
-entities::Attribute_strategy = st.builds(
-    entities::Attribute,
+entities_Attribute_strategy = st.builds(
+    entities_Attribute,
     name=
         safe_text
 )
-entities::Entity_strategy = st.builds(
-    entities::Entity,
+entities_Entity_strategy = st.builds(
+    entities_Entity,
     name=
         safe_text
 )
-entities::Model_strategy = st.builds(
-    entities::Model,
+entities_Model_strategy = st.builds(
+    entities_Model,
 )
 
-@given(instance=entities::ElementType_strategy)
+@given(instance=entities_ElementType_strategy)
 @settings(max_examples=50)
-def test_entities::elementtype_instantiation(instance):
-    assert isinstance(instance, entities::ElementType)
+def test_entities_elementtype_instantiation(instance):
+    assert isinstance(instance, entities_ElementType)
 
 @given(instance=ElementType_strategy)
 @settings(max_examples=50)
 def test_elementtype_instantiation(instance):
     assert isinstance(instance, ElementType)
 
-@given(instance=entities::BasicType_strategy)
+@given(instance=entities_BasicType_strategy)
 @settings(max_examples=50)
-def test_entities::basictype_instantiation(instance):
-    assert isinstance(instance, entities::BasicType)
-
-@given(instance=entities::BasicType_strategy)
-def test_entities::basictype_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
+def test_entities_basictype_instantiation(instance):
+    assert isinstance(instance, entities_BasicType)
 
 
-@given(instance=entities::BasicType_strategy)
-def test_entities::basictype_typeName_setter(instance):
+
+@given(instance=entities_BasicType_strategy)
+def test_entities_basictype_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=entities::EntityType_strategy)
+@given(instance=entities_EntityType_strategy)
 @settings(max_examples=50)
-def test_entities::entitytype_instantiation(instance):
-    assert isinstance(instance, entities::EntityType)
+def test_entities_entitytype_instantiation(instance):
+    assert isinstance(instance, entities_EntityType)
 
-@given(instance=entities::AttributeType_strategy)
+@given(instance=entities_AttributeType_strategy)
 @settings(max_examples=50)
-def test_entities::attributetype_instantiation(instance):
-    assert isinstance(instance, entities::AttributeType)
-
-@given(instance=entities::AttributeType_strategy)
-def test_entities::attributetype_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_entities_attributetype_instantiation(instance):
+    assert isinstance(instance, entities_AttributeType)
 
 
-@given(instance=entities::AttributeType_strategy)
-def test_entities::attributetype_length_setter(instance):
-    original = instance.length
-    instance.length = original
-    assert instance.length == original
 
-@given(instance=entities::AttributeType_strategy)
-def test_entities::attributetype_array_type(instance):
-    assert isinstance(instance.array, bool)
-
-
-@given(instance=entities::AttributeType_strategy)
-def test_entities::attributetype_array_setter(instance):
+@given(instance=entities_AttributeType_strategy)
+def test_entities_attributetype_array_setter(instance):
     original = instance.array
     instance.array = original
     assert instance.array == original
 
-@given(instance=entities::Attribute_strategy)
+
+
+@given(instance=entities_AttributeType_strategy)
+def test_entities_attributetype_length_setter(instance):
+    original = instance.length
+    instance.length = original
+    assert instance.length == original
+
+@given(instance=entities_Attribute_strategy)
 @settings(max_examples=50)
-def test_entities::attribute_instantiation(instance):
-    assert isinstance(instance, entities::Attribute)
-
-@given(instance=entities::Attribute_strategy)
-def test_entities::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_attribute_instantiation(instance):
+    assert isinstance(instance, entities_Attribute)
 
 
-@given(instance=entities::Attribute_strategy)
-def test_entities::attribute_name_setter(instance):
+
+@given(instance=entities_Attribute_strategy)
+def test_entities_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entities::Entity_strategy)
+@given(instance=entities_Entity_strategy)
 @settings(max_examples=50)
-def test_entities::entity_instantiation(instance):
-    assert isinstance(instance, entities::Entity)
-
-@given(instance=entities::Entity_strategy)
-def test_entities::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_entity_instantiation(instance):
+    assert isinstance(instance, entities_Entity)
 
 
-@given(instance=entities::Entity_strategy)
-def test_entities::entity_name_setter(instance):
+
+@given(instance=entities_Entity_strategy)
+def test_entities_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entities::Model_strategy)
+@given(instance=entities_Model_strategy)
 @settings(max_examples=50)
-def test_entities::model_instantiation(instance):
-    assert isinstance(instance, entities::Model)
+def test_entities_model_instantiation(instance):
+    assert isinstance(instance, entities_Model)

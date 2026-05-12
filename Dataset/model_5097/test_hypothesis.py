@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Interface,
-    adl::Type,
-    adl::NamedElement,
+    adl_Type,
+    adl_NamedElement,
     NamedElement,
-    adl::Interface,
+    adl_Interface,
     AbstractComponent,
-    adl::Component,
-    adl::AbstractComponent,
+    adl_Component,
+    adl_AbstractComponent,
     Type,
-    adl::Provided,
-    adl::Required,
-    adl::Binding,
+    adl_Required,
+    adl_Provided,
+    adl_Binding,
 )
 
 # =============================================================================
@@ -40,23 +40,23 @@ def test_interface_constructor_args():
 
 
 
-def test_adl::type_is_not_abstract():
-    assert not inspect.isabstract(adl::Type)
+def test_adl_type_is_not_abstract():
+    assert not inspect.isabstract(adl_Type)
 
 
-def test_adl::type_constructor_exists():
-    assert callable(adl::Type.__init__)
+def test_adl_type_constructor_exists():
+    assert callable(adl_Type.__init__)
 
 
-def test_adl::type_constructor_args():
-    sig = inspect.signature(adl::Type.__init__)
+def test_adl_type_constructor_args():
+    sig = inspect.signature(adl_Type.__init__)
     params = list(sig.parameters.keys())
     assert "signature" in params, "Missing parameter 'signature'"
 
-def test_adl::type_has_signature():
-    assert hasattr(adl::Type, "signature")
+def test_adl_type_has_signature():
+    assert hasattr(adl_Type, "signature")
     descriptor = None
-    for klass in adl::Type.__mro__:
+    for klass in adl_Type.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
@@ -64,23 +64,23 @@ def test_adl::type_has_signature():
 
 
 
-def test_adl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(adl::NamedElement)
+def test_adl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(adl_NamedElement)
 
 
-def test_adl::namedelement_constructor_exists():
-    assert callable(adl::NamedElement.__init__)
+def test_adl_namedelement_constructor_exists():
+    assert callable(adl_NamedElement.__init__)
 
 
-def test_adl::namedelement_constructor_args():
-    sig = inspect.signature(adl::NamedElement.__init__)
+def test_adl_namedelement_constructor_args():
+    sig = inspect.signature(adl_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adl::namedelement_has_name():
-    assert hasattr(adl::NamedElement, "name")
+def test_adl_namedelement_has_name():
+    assert hasattr(adl_NamedElement, "name")
     descriptor = None
-    for klass in adl::NamedElement.__mro__:
+    for klass in adl_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -102,16 +102,16 @@ def test_namedelement_constructor_args():
 
 
 
-def test_adl::interface_is_not_abstract():
-    assert not inspect.isabstract(adl::Interface)
+def test_adl_interface_is_not_abstract():
+    assert not inspect.isabstract(adl_Interface)
 
 
-def test_adl::interface_constructor_exists():
-    assert callable(adl::Interface.__init__)
+def test_adl_interface_constructor_exists():
+    assert callable(adl_Interface.__init__)
 
 
-def test_adl::interface_constructor_args():
-    sig = inspect.signature(adl::Interface.__init__)
+def test_adl_interface_constructor_args():
+    sig = inspect.signature(adl_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -130,30 +130,30 @@ def test_abstractcomponent_constructor_args():
 
 
 
-def test_adl::component_is_not_abstract():
-    assert not inspect.isabstract(adl::Component)
+def test_adl_component_is_not_abstract():
+    assert not inspect.isabstract(adl_Component)
 
 
-def test_adl::component_constructor_exists():
-    assert callable(adl::Component.__init__)
+def test_adl_component_constructor_exists():
+    assert callable(adl_Component.__init__)
 
 
-def test_adl::component_constructor_args():
-    sig = inspect.signature(adl::Component.__init__)
+def test_adl_component_constructor_args():
+    sig = inspect.signature(adl_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl::abstractcomponent_is_not_abstract():
-    assert not inspect.isabstract(adl::AbstractComponent)
+def test_adl_abstractcomponent_is_not_abstract():
+    assert not inspect.isabstract(adl_AbstractComponent)
 
 
-def test_adl::abstractcomponent_constructor_exists():
-    assert callable(adl::AbstractComponent.__init__)
+def test_adl_abstractcomponent_constructor_exists():
+    assert callable(adl_AbstractComponent.__init__)
 
 
-def test_adl::abstractcomponent_constructor_args():
-    sig = inspect.signature(adl::AbstractComponent.__init__)
+def test_adl_abstractcomponent_constructor_args():
+    sig = inspect.signature(adl_AbstractComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -172,44 +172,44 @@ def test_type_constructor_args():
 
 
 
-def test_adl::provided_is_not_abstract():
-    assert not inspect.isabstract(adl::Provided)
+def test_adl_required_is_not_abstract():
+    assert not inspect.isabstract(adl_Required)
 
 
-def test_adl::provided_constructor_exists():
-    assert callable(adl::Provided.__init__)
+def test_adl_required_constructor_exists():
+    assert callable(adl_Required.__init__)
 
 
-def test_adl::provided_constructor_args():
-    sig = inspect.signature(adl::Provided.__init__)
+def test_adl_required_constructor_args():
+    sig = inspect.signature(adl_Required.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl::required_is_not_abstract():
-    assert not inspect.isabstract(adl::Required)
+def test_adl_provided_is_not_abstract():
+    assert not inspect.isabstract(adl_Provided)
 
 
-def test_adl::required_constructor_exists():
-    assert callable(adl::Required.__init__)
+def test_adl_provided_constructor_exists():
+    assert callable(adl_Provided.__init__)
 
 
-def test_adl::required_constructor_args():
-    sig = inspect.signature(adl::Required.__init__)
+def test_adl_provided_constructor_args():
+    sig = inspect.signature(adl_Provided.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl::binding_is_not_abstract():
-    assert not inspect.isabstract(adl::Binding)
+def test_adl_binding_is_not_abstract():
+    assert not inspect.isabstract(adl_Binding)
 
 
-def test_adl::binding_constructor_exists():
-    assert callable(adl::Binding.__init__)
+def test_adl_binding_constructor_exists():
+    assert callable(adl_Binding.__init__)
 
 
-def test_adl::binding_constructor_args():
-    sig = inspect.signature(adl::Binding.__init__)
+def test_adl_binding_constructor_args():
+    sig = inspect.signature(adl_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,42 +227,42 @@ safe_text = st.text(
 Interface_strategy = st.builds(
     Interface,
 )
-adl::Type_strategy = st.builds(
-    adl::Type,
+adl_Type_strategy = st.builds(
+    adl_Type,
     signature=
         safe_text
 )
-adl::NamedElement_strategy = st.builds(
-    adl::NamedElement,
+adl_NamedElement_strategy = st.builds(
+    adl_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-adl::Interface_strategy = st.builds(
-    adl::Interface,
+adl_Interface_strategy = st.builds(
+    adl_Interface,
 )
 AbstractComponent_strategy = st.builds(
     AbstractComponent,
 )
-adl::Component_strategy = st.builds(
-    adl::Component,
+adl_Component_strategy = st.builds(
+    adl_Component,
 )
-adl::AbstractComponent_strategy = st.builds(
-    adl::AbstractComponent,
+adl_AbstractComponent_strategy = st.builds(
+    adl_AbstractComponent,
 )
 Type_strategy = st.builds(
     Type,
 )
-adl::Provided_strategy = st.builds(
-    adl::Provided,
+adl_Required_strategy = st.builds(
+    adl_Required,
 )
-adl::Required_strategy = st.builds(
-    adl::Required,
+adl_Provided_strategy = st.builds(
+    adl_Provided,
 )
-adl::Binding_strategy = st.builds(
-    adl::Binding,
+adl_Binding_strategy = st.builds(
+    adl_Binding,
 )
 
 @given(instance=Interface_strategy)
@@ -270,34 +270,28 @@ adl::Binding_strategy = st.builds(
 def test_interface_instantiation(instance):
     assert isinstance(instance, Interface)
 
-@given(instance=adl::Type_strategy)
+@given(instance=adl_Type_strategy)
 @settings(max_examples=50)
-def test_adl::type_instantiation(instance):
-    assert isinstance(instance, adl::Type)
-
-@given(instance=adl::Type_strategy)
-def test_adl::type_signature_type(instance):
-    assert isinstance(instance.signature, str)
+def test_adl_type_instantiation(instance):
+    assert isinstance(instance, adl_Type)
 
 
-@given(instance=adl::Type_strategy)
-def test_adl::type_signature_setter(instance):
+
+@given(instance=adl_Type_strategy)
+def test_adl_type_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=adl::NamedElement_strategy)
+@given(instance=adl_NamedElement_strategy)
 @settings(max_examples=50)
-def test_adl::namedelement_instantiation(instance):
-    assert isinstance(instance, adl::NamedElement)
-
-@given(instance=adl::NamedElement_strategy)
-def test_adl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adl_namedelement_instantiation(instance):
+    assert isinstance(instance, adl_NamedElement)
 
 
-@given(instance=adl::NamedElement_strategy)
-def test_adl::namedelement_name_setter(instance):
+
+@given(instance=adl_NamedElement_strategy)
+def test_adl_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -307,42 +301,42 @@ def test_adl::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=adl::Interface_strategy)
+@given(instance=adl_Interface_strategy)
 @settings(max_examples=50)
-def test_adl::interface_instantiation(instance):
-    assert isinstance(instance, adl::Interface)
+def test_adl_interface_instantiation(instance):
+    assert isinstance(instance, adl_Interface)
 
 @given(instance=AbstractComponent_strategy)
 @settings(max_examples=50)
 def test_abstractcomponent_instantiation(instance):
     assert isinstance(instance, AbstractComponent)
 
-@given(instance=adl::Component_strategy)
+@given(instance=adl_Component_strategy)
 @settings(max_examples=50)
-def test_adl::component_instantiation(instance):
-    assert isinstance(instance, adl::Component)
+def test_adl_component_instantiation(instance):
+    assert isinstance(instance, adl_Component)
 
-@given(instance=adl::AbstractComponent_strategy)
+@given(instance=adl_AbstractComponent_strategy)
 @settings(max_examples=50)
-def test_adl::abstractcomponent_instantiation(instance):
-    assert isinstance(instance, adl::AbstractComponent)
+def test_adl_abstractcomponent_instantiation(instance):
+    assert isinstance(instance, adl_AbstractComponent)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=adl::Provided_strategy)
+@given(instance=adl_Required_strategy)
 @settings(max_examples=50)
-def test_adl::provided_instantiation(instance):
-    assert isinstance(instance, adl::Provided)
+def test_adl_required_instantiation(instance):
+    assert isinstance(instance, adl_Required)
 
-@given(instance=adl::Required_strategy)
+@given(instance=adl_Provided_strategy)
 @settings(max_examples=50)
-def test_adl::required_instantiation(instance):
-    assert isinstance(instance, adl::Required)
+def test_adl_provided_instantiation(instance):
+    assert isinstance(instance, adl_Provided)
 
-@given(instance=adl::Binding_strategy)
+@given(instance=adl_Binding_strategy)
 @settings(max_examples=50)
-def test_adl::binding_instantiation(instance):
-    assert isinstance(instance, adl::Binding)
+def test_adl_binding_instantiation(instance):
+    assert isinstance(instance, adl_Binding)

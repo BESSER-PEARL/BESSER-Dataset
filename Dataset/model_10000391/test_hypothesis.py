@@ -3,20 +3,58 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    People,
+    Worker,
     Cashier,
     Waiter,
     Cook,
     Customer,
-    People,
-    Worker,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_people_is_not_abstract():
+    assert not inspect.isabstract(People)
+
+
+def test_people_constructor_exists():
+    assert callable(People.__init__)
+
+
+def test_people_constructor_args():
+    sig = inspect.signature(People.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_people_has_name():
+    assert hasattr(People, "name")
+    descriptor = None
+    for klass in People.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_worker_is_not_abstract():
+    assert not inspect.isabstract(Worker)
+
+
+def test_worker_constructor_exists():
+    assert callable(Worker.__init__)
+
+
+def test_worker_constructor_args():
+    sig = inspect.signature(Worker.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -75,44 +113,6 @@ def test_customer_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_people_is_not_abstract():
-    assert not inspect.isabstract(People)
-
-
-def test_people_constructor_exists():
-    assert callable(People.__init__)
-
-
-def test_people_constructor_args():
-    sig = inspect.signature(People.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_people_has_name():
-    assert hasattr(People, "name")
-    descriptor = None
-    for klass in People.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_worker_is_not_abstract():
-    assert not inspect.isabstract(Worker)
-
-
-def test_worker_constructor_exists():
-    assert callable(Worker.__init__)
-
-
-def test_worker_constructor_args():
-    sig = inspect.signature(Worker.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -124,6 +124,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+People_strategy = st.builds(
+    People,
+    name=
+        safe_text
+)
+Worker_strategy = st.builds(
+    Worker,
+)
 Cashier_strategy = st.builds(
     Cashier,
 )
@@ -136,14 +144,24 @@ Cook_strategy = st.builds(
 Customer_strategy = st.builds(
     Customer,
 )
-People_strategy = st.builds(
-    People,
-    name=
-        safe_text
-)
-Worker_strategy = st.builds(
-    Worker,
-)
+
+@given(instance=People_strategy)
+@settings(max_examples=50)
+def test_people_instantiation(instance):
+    assert isinstance(instance, People)
+
+
+
+@given(instance=People_strategy)
+def test_people_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Worker_strategy)
+@settings(max_examples=50)
+def test_worker_instantiation(instance):
+    assert isinstance(instance, Worker)
 
 @given(instance=Cashier_strategy)
 @settings(max_examples=50)
@@ -164,24 +182,3 @@ def test_cook_instantiation(instance):
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
-
-@given(instance=People_strategy)
-@settings(max_examples=50)
-def test_people_instantiation(instance):
-    assert isinstance(instance, People)
-
-@given(instance=People_strategy)
-def test_people_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=People_strategy)
-def test_people_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Worker_strategy)
-@settings(max_examples=50)
-def test_worker_instantiation(instance):
-    assert isinstance(instance, Worker)

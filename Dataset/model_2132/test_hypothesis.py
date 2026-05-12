@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TextualCode,
-    synccharts::TextualCode,
-    synccharts::EObject,
+    synccharts_TextualCode,
+    synccharts_EObject,
     Action,
-    synccharts::Transition,
-    synccharts::Substitution,
+    synccharts_Transition,
+    synccharts_Substitution,
     Scope,
-    synccharts::State,
-    synccharts::Region,
-    synccharts::Signal,
-    synccharts::Variable,
+    synccharts_State,
+    synccharts_Region,
+    synccharts_Signal,
+    synccharts_Variable,
     Effect,
-    synccharts::TextEffect,
-    synccharts::Emission,
-    synccharts::Assignment,
-    synccharts::Expression,
-    synccharts::Effect,
+    synccharts_Emission,
+    synccharts_TextEffect,
+    synccharts_Assignment,
+    synccharts_Expression,
+    synccharts_Effect,
     Annotatable,
-    synccharts::Scope,
-    synccharts::Action,
-    TransitionType,
+    synccharts_Scope,
+    synccharts_Action,
     StateType,
+    TransitionType,
 )
 
 # =============================================================================
@@ -50,30 +50,30 @@ def test_textualcode_constructor_args():
 
 
 
-def test_synccharts::textualcode_is_not_abstract():
-    assert not inspect.isabstract(synccharts::TextualCode)
+def test_synccharts_textualcode_is_not_abstract():
+    assert not inspect.isabstract(synccharts_TextualCode)
 
 
-def test_synccharts::textualcode_constructor_exists():
-    assert callable(synccharts::TextualCode.__init__)
+def test_synccharts_textualcode_constructor_exists():
+    assert callable(synccharts_TextualCode.__init__)
 
 
-def test_synccharts::textualcode_constructor_args():
-    sig = inspect.signature(synccharts::TextualCode.__init__)
+def test_synccharts_textualcode_constructor_args():
+    sig = inspect.signature(synccharts_TextualCode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::eobject_is_not_abstract():
-    assert not inspect.isabstract(synccharts::EObject)
+def test_synccharts_eobject_is_not_abstract():
+    assert not inspect.isabstract(synccharts_EObject)
 
 
-def test_synccharts::eobject_constructor_exists():
-    assert callable(synccharts::EObject.__init__)
+def test_synccharts_eobject_constructor_exists():
+    assert callable(synccharts_EObject.__init__)
 
 
-def test_synccharts::eobject_constructor_args():
-    sig = inspect.signature(synccharts::EObject.__init__)
+def test_synccharts_eobject_constructor_args():
+    sig = inspect.signature(synccharts_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -92,79 +92,79 @@ def test_action_constructor_args():
 
 
 
-def test_synccharts::transition_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Transition)
+def test_synccharts_transition_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Transition)
 
 
-def test_synccharts::transition_constructor_exists():
-    assert callable(synccharts::Transition.__init__)
+def test_synccharts_transition_constructor_exists():
+    assert callable(synccharts_Transition.__init__)
 
 
-def test_synccharts::transition_constructor_args():
-    sig = inspect.signature(synccharts::Transition.__init__)
+def test_synccharts_transition_constructor_args():
+    sig = inspect.signature(synccharts_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "isHistory" in params, "Missing parameter 'isHistory'"
-    assert "priority" in params, "Missing parameter 'priority'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "priority" in params, "Missing parameter 'priority'"
 
-def test_synccharts::transition_has_isHistory():
-    assert hasattr(synccharts::Transition, "isHistory")
+def test_synccharts_transition_has_isHistory():
+    assert hasattr(synccharts_Transition, "isHistory")
     descriptor = None
-    for klass in synccharts::Transition.__mro__:
+    for klass in synccharts_Transition.__mro__:
         if "isHistory" in klass.__dict__:
             descriptor = klass.__dict__["isHistory"]
             break
     assert isinstance(descriptor, property)
 
-def test_synccharts::transition_has_priority():
-    assert hasattr(synccharts::Transition, "priority")
+def test_synccharts_transition_has_type():
+    assert hasattr(synccharts_Transition, "type")
     descriptor = None
-    for klass in synccharts::Transition.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_synccharts::transition_has_type():
-    assert hasattr(synccharts::Transition, "type")
-    descriptor = None
-    for klass in synccharts::Transition.__mro__:
+    for klass in synccharts_Transition.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_synccharts::substitution_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Substitution)
-
-
-def test_synccharts::substitution_constructor_exists():
-    assert callable(synccharts::Substitution.__init__)
-
-
-def test_synccharts::substitution_constructor_args():
-    sig = inspect.signature(synccharts::Substitution.__init__)
-    params = list(sig.parameters.keys())
-    assert "actual" in params, "Missing parameter 'actual'"
-    assert "formal" in params, "Missing parameter 'formal'"
-
-def test_synccharts::substitution_has_actual():
-    assert hasattr(synccharts::Substitution, "actual")
+def test_synccharts_transition_has_priority():
+    assert hasattr(synccharts_Transition, "priority")
     descriptor = None
-    for klass in synccharts::Substitution.__mro__:
-        if "actual" in klass.__dict__:
-            descriptor = klass.__dict__["actual"]
+    for klass in synccharts_Transition.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_synccharts::substitution_has_formal():
-    assert hasattr(synccharts::Substitution, "formal")
+
+
+def test_synccharts_substitution_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Substitution)
+
+
+def test_synccharts_substitution_constructor_exists():
+    assert callable(synccharts_Substitution.__init__)
+
+
+def test_synccharts_substitution_constructor_args():
+    sig = inspect.signature(synccharts_Substitution.__init__)
+    params = list(sig.parameters.keys())
+    assert "formal" in params, "Missing parameter 'formal'"
+    assert "actual" in params, "Missing parameter 'actual'"
+
+def test_synccharts_substitution_has_formal():
+    assert hasattr(synccharts_Substitution, "formal")
     descriptor = None
-    for klass in synccharts::Substitution.__mro__:
+    for klass in synccharts_Substitution.__mro__:
         if "formal" in klass.__dict__:
             descriptor = klass.__dict__["formal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_synccharts_substitution_has_actual():
+    assert hasattr(synccharts_Substitution, "actual")
+    descriptor = None
+    for klass in synccharts_Substitution.__mro__:
+        if "actual" in klass.__dict__:
+            descriptor = klass.__dict__["actual"]
             break
     assert isinstance(descriptor, property)
 
@@ -184,88 +184,88 @@ def test_scope_constructor_args():
 
 
 
-def test_synccharts::state_is_not_abstract():
-    assert not inspect.isabstract(synccharts::State)
+def test_synccharts_state_is_not_abstract():
+    assert not inspect.isabstract(synccharts_State)
 
 
-def test_synccharts::state_constructor_exists():
-    assert callable(synccharts::State.__init__)
+def test_synccharts_state_constructor_exists():
+    assert callable(synccharts_State.__init__)
 
 
-def test_synccharts::state_constructor_args():
-    sig = inspect.signature(synccharts::State.__init__)
+def test_synccharts_state_constructor_args():
+    sig = inspect.signature(synccharts_State.__init__)
     params = list(sig.parameters.keys())
-    assert "isInitial" in params, "Missing parameter 'isInitial'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "isFinal" in params, "Missing parameter 'isFinal'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "isInitial" in params, "Missing parameter 'isInitial'"
 
-def test_synccharts::state_has_isInitial():
-    assert hasattr(synccharts::State, "isInitial")
+def test_synccharts_state_has_isFinal():
+    assert hasattr(synccharts_State, "isFinal")
     descriptor = None
-    for klass in synccharts::State.__mro__:
-        if "isInitial" in klass.__dict__:
-            descriptor = klass.__dict__["isInitial"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_synccharts::state_has_type():
-    assert hasattr(synccharts::State, "type")
-    descriptor = None
-    for klass in synccharts::State.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_synccharts::state_has_isFinal():
-    assert hasattr(synccharts::State, "isFinal")
-    descriptor = None
-    for klass in synccharts::State.__mro__:
+    for klass in synccharts_State.__mro__:
         if "isFinal" in klass.__dict__:
             descriptor = klass.__dict__["isFinal"]
             break
     assert isinstance(descriptor, property)
 
+def test_synccharts_state_has_type():
+    assert hasattr(synccharts_State, "type")
+    descriptor = None
+    for klass in synccharts_State.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_synccharts_state_has_isInitial():
+    assert hasattr(synccharts_State, "isInitial")
+    descriptor = None
+    for klass in synccharts_State.__mro__:
+        if "isInitial" in klass.__dict__:
+            descriptor = klass.__dict__["isInitial"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_synccharts::region_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Region)
+
+def test_synccharts_region_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Region)
 
 
-def test_synccharts::region_constructor_exists():
-    assert callable(synccharts::Region.__init__)
+def test_synccharts_region_constructor_exists():
+    assert callable(synccharts_Region.__init__)
 
 
-def test_synccharts::region_constructor_args():
-    sig = inspect.signature(synccharts::Region.__init__)
+def test_synccharts_region_constructor_args():
+    sig = inspect.signature(synccharts_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::signal_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Signal)
+def test_synccharts_signal_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Signal)
 
 
-def test_synccharts::signal_constructor_exists():
-    assert callable(synccharts::Signal.__init__)
+def test_synccharts_signal_constructor_exists():
+    assert callable(synccharts_Signal.__init__)
 
 
-def test_synccharts::signal_constructor_args():
-    sig = inspect.signature(synccharts::Signal.__init__)
+def test_synccharts_signal_constructor_args():
+    sig = inspect.signature(synccharts_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::variable_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Variable)
+def test_synccharts_variable_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Variable)
 
 
-def test_synccharts::variable_constructor_exists():
-    assert callable(synccharts::Variable.__init__)
+def test_synccharts_variable_constructor_exists():
+    assert callable(synccharts_Variable.__init__)
 
 
-def test_synccharts::variable_constructor_args():
-    sig = inspect.signature(synccharts::Variable.__init__)
+def test_synccharts_variable_constructor_args():
+    sig = inspect.signature(synccharts_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -284,72 +284,72 @@ def test_effect_constructor_args():
 
 
 
-def test_synccharts::texteffect_is_not_abstract():
-    assert not inspect.isabstract(synccharts::TextEffect)
+def test_synccharts_emission_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Emission)
 
 
-def test_synccharts::texteffect_constructor_exists():
-    assert callable(synccharts::TextEffect.__init__)
+def test_synccharts_emission_constructor_exists():
+    assert callable(synccharts_Emission.__init__)
 
 
-def test_synccharts::texteffect_constructor_args():
-    sig = inspect.signature(synccharts::TextEffect.__init__)
+def test_synccharts_emission_constructor_args():
+    sig = inspect.signature(synccharts_Emission.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::emission_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Emission)
+def test_synccharts_texteffect_is_not_abstract():
+    assert not inspect.isabstract(synccharts_TextEffect)
 
 
-def test_synccharts::emission_constructor_exists():
-    assert callable(synccharts::Emission.__init__)
+def test_synccharts_texteffect_constructor_exists():
+    assert callable(synccharts_TextEffect.__init__)
 
 
-def test_synccharts::emission_constructor_args():
-    sig = inspect.signature(synccharts::Emission.__init__)
+def test_synccharts_texteffect_constructor_args():
+    sig = inspect.signature(synccharts_TextEffect.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::assignment_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Assignment)
+def test_synccharts_assignment_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Assignment)
 
 
-def test_synccharts::assignment_constructor_exists():
-    assert callable(synccharts::Assignment.__init__)
+def test_synccharts_assignment_constructor_exists():
+    assert callable(synccharts_Assignment.__init__)
 
 
-def test_synccharts::assignment_constructor_args():
-    sig = inspect.signature(synccharts::Assignment.__init__)
+def test_synccharts_assignment_constructor_args():
+    sig = inspect.signature(synccharts_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::expression_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Expression)
+def test_synccharts_expression_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Expression)
 
 
-def test_synccharts::expression_constructor_exists():
-    assert callable(synccharts::Expression.__init__)
+def test_synccharts_expression_constructor_exists():
+    assert callable(synccharts_Expression.__init__)
 
 
-def test_synccharts::expression_constructor_args():
-    sig = inspect.signature(synccharts::Expression.__init__)
+def test_synccharts_expression_constructor_args():
+    sig = inspect.signature(synccharts_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_synccharts::effect_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Effect)
+def test_synccharts_effect_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Effect)
 
 
-def test_synccharts::effect_constructor_exists():
-    assert callable(synccharts::Effect.__init__)
+def test_synccharts_effect_constructor_exists():
+    assert callable(synccharts_Effect.__init__)
 
 
-def test_synccharts::effect_constructor_args():
-    sig = inspect.signature(synccharts::Effect.__init__)
+def test_synccharts_effect_constructor_args():
+    sig = inspect.signature(synccharts_Effect.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -368,43 +368,43 @@ def test_annotatable_constructor_args():
 
 
 
-def test_synccharts::scope_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Scope)
+def test_synccharts_scope_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Scope)
 
 
-def test_synccharts::scope_constructor_exists():
-    assert callable(synccharts::Scope.__init__)
+def test_synccharts_scope_constructor_exists():
+    assert callable(synccharts_Scope.__init__)
 
 
-def test_synccharts::scope_constructor_args():
-    sig = inspect.signature(synccharts::Scope.__init__)
+def test_synccharts_scope_constructor_args():
+    sig = inspect.signature(synccharts_Scope.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "label" in params, "Missing parameter 'label'"
     assert "interfaceDeclaration" in params, "Missing parameter 'interfaceDeclaration'"
 
-def test_synccharts::scope_has_id():
-    assert hasattr(synccharts::Scope, "id")
+def test_synccharts_scope_has_id():
+    assert hasattr(synccharts_Scope, "id")
     descriptor = None
-    for klass in synccharts::Scope.__mro__:
+    for klass in synccharts_Scope.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_synccharts::scope_has_label():
-    assert hasattr(synccharts::Scope, "label")
+def test_synccharts_scope_has_label():
+    assert hasattr(synccharts_Scope, "label")
     descriptor = None
-    for klass in synccharts::Scope.__mro__:
+    for klass in synccharts_Scope.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_synccharts::scope_has_interfaceDeclaration():
-    assert hasattr(synccharts::Scope, "interfaceDeclaration")
+def test_synccharts_scope_has_interfaceDeclaration():
+    assert hasattr(synccharts_Scope, "interfaceDeclaration")
     descriptor = None
-    for klass in synccharts::Scope.__mro__:
+    for klass in synccharts_Scope.__mro__:
         if "interfaceDeclaration" in klass.__dict__:
             descriptor = klass.__dict__["interfaceDeclaration"]
             break
@@ -412,63 +412,47 @@ def test_synccharts::scope_has_interfaceDeclaration():
 
 
 
-def test_synccharts::action_is_not_abstract():
-    assert not inspect.isabstract(synccharts::Action)
+def test_synccharts_action_is_not_abstract():
+    assert not inspect.isabstract(synccharts_Action)
 
 
-def test_synccharts::action_constructor_exists():
-    assert callable(synccharts::Action.__init__)
+def test_synccharts_action_constructor_exists():
+    assert callable(synccharts_Action.__init__)
 
 
-def test_synccharts::action_constructor_args():
-    sig = inspect.signature(synccharts::Action.__init__)
+def test_synccharts_action_constructor_args():
+    sig = inspect.signature(synccharts_Action.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "delay" in params, "Missing parameter 'delay'"
+    assert "label" in params, "Missing parameter 'label'"
     assert "isImmediate" in params, "Missing parameter 'isImmediate'"
 
-def test_synccharts::action_has_label():
-    assert hasattr(synccharts::Action, "label")
+def test_synccharts_action_has_delay():
+    assert hasattr(synccharts_Action, "delay")
     descriptor = None
-    for klass in synccharts::Action.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_synccharts::action_has_delay():
-    assert hasattr(synccharts::Action, "delay")
-    descriptor = None
-    for klass in synccharts::Action.__mro__:
+    for klass in synccharts_Action.__mro__:
         if "delay" in klass.__dict__:
             descriptor = klass.__dict__["delay"]
             break
     assert isinstance(descriptor, property)
 
-def test_synccharts::action_has_isImmediate():
-    assert hasattr(synccharts::Action, "isImmediate")
+def test_synccharts_action_has_label():
+    assert hasattr(synccharts_Action, "label")
     descriptor = None
-    for klass in synccharts::Action.__mro__:
+    for klass in synccharts_Action.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_synccharts_action_has_isImmediate():
+    assert hasattr(synccharts_Action, "isImmediate")
+    descriptor = None
+    for klass in synccharts_Action.__mro__:
         if "isImmediate" in klass.__dict__:
             descriptor = klass.__dict__["isImmediate"]
             break
     assert isinstance(descriptor, property)
-
-def test_transitiontype_exists():
-    # Check that the Enumeration exists
-    assert TransitionType is not None
-
-def test_transitiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TransitionType]
-    expected_literals = [
-        "NORMALTERMINATION",
-        "STRONGABORT",
-        "WEAKABORT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TransitionType"
 
 def test_statetype_exists():
     # Check that the Enumeration exists
@@ -478,14 +462,30 @@ def test_statetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StateType]
     expected_literals = [
-        "TEXTUAL",
-        "REFERENCE",
         "CONDITIONAL",
+        "REFERENCE",
         "NORMAL",
+        "TEXTUAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in StateType"
+
+def test_transitiontype_exists():
+    # Check that the Enumeration exists
+    assert TransitionType is not None
+
+def test_transitiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TransitionType]
+    expected_literals = [
+        "WEAKABORT",
+        "NORMALTERMINATION",
+        "STRONGABORT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TransitionType"
 
 
 # =============================================================================
@@ -502,75 +502,75 @@ safe_text = st.text(
 TextualCode_strategy = st.builds(
     TextualCode,
 )
-synccharts::TextualCode_strategy = st.builds(
-    synccharts::TextualCode,
+synccharts_TextualCode_strategy = st.builds(
+    synccharts_TextualCode,
 )
-synccharts::EObject_strategy = st.builds(
-    synccharts::EObject,
+synccharts_EObject_strategy = st.builds(
+    synccharts_EObject,
 )
 Action_strategy = st.builds(
     Action,
 )
-synccharts::Transition_strategy = st.builds(
-    synccharts::Transition,
+synccharts_Transition_strategy = st.builds(
+    synccharts_Transition,
     isHistory=
         st.booleans(),
-    priority=
-        st.integers(),
     type=
-        safe_text
-)
-synccharts::Substitution_strategy = st.builds(
-    synccharts::Substitution,
-    actual=
         safe_text,
+    priority=
+        st.integers()
+)
+synccharts_Substitution_strategy = st.builds(
+    synccharts_Substitution,
     formal=
+        safe_text,
+    actual=
         safe_text
 )
 Scope_strategy = st.builds(
     Scope,
 )
-synccharts::State_strategy = st.builds(
-    synccharts::State,
-    isInitial=
+synccharts_State_strategy = st.builds(
+    synccharts_State,
+    isFinal=
         st.booleans(),
     type=
         safe_text,
-    isFinal=
+    isInitial=
         st.booleans()
 )
-synccharts::Region_strategy = st.builds(
-    synccharts::Region,
+synccharts_Region_strategy = st.builds(
+    synccharts_Region,
 )
-synccharts::Signal_strategy = st.builds(
-    synccharts::Signal,
+synccharts_Signal_strategy = st.builds(
+    synccharts_Signal,
 )
-synccharts::Variable_strategy = st.builds(
-    synccharts::Variable,
+synccharts_Variable_strategy = st.builds(
+    synccharts_Variable,
 )
 Effect_strategy = st.builds(
     Effect,
 )
-synccharts::TextEffect_strategy = st.builds(
-    synccharts::TextEffect,
+synccharts_Emission_strategy = st.builds(
+    synccharts_Emission,
 )
-synccharts::Emission_strategy = st.builds(
-    synccharts::Emission,
+synccharts_TextEffect_strategy = st.builds(
+    synccharts_TextEffect,
 )
-synccharts::Assignment_strategy = st.builds(
-    synccharts::Assignment,
+synccharts_Assignment_strategy = st.builds(
+    synccharts_Assignment,
 )
-synccharts::Expression_strategy = st.builds(
-    synccharts::Expression,
+synccharts_Expression_strategy = st.builds(
+    synccharts_Expression,
 )
-synccharts::Effect_strategy = st.builds(
-    synccharts::Effect,
+synccharts_Effect_strategy = st.builds(
+    synccharts_Effect,
 )
 Annotatable_strategy = st.builds(
     Annotatable,
 )
-synccharts::Scope_strategy = st.builds(
-    synccharts::Scope,
+synccharts_Scope_strategy = st.builds(
+    synccharts_Scope,
     id=
         safe_text,
     label=
@@ -578,12 +578,12 @@ synccharts::Scope_strategy = st.builds(
     interfaceDeclaration=
         safe_text
 )
-synccharts::Action_strategy = st.builds(
-    synccharts::Action,
-    label=
-        safe_text,
+synccharts_Action_strategy = st.builds(
+    synccharts_Action,
     delay=
         st.integers(),
+    label=
+        safe_text,
     isImmediate=
         st.booleans()
 )
@@ -593,251 +593,209 @@ synccharts::Action_strategy = st.builds(
 def test_textualcode_instantiation(instance):
     assert isinstance(instance, TextualCode)
 
-@given(instance=synccharts::TextualCode_strategy)
+@given(instance=synccharts_TextualCode_strategy)
 @settings(max_examples=50)
-def test_synccharts::textualcode_instantiation(instance):
-    assert isinstance(instance, synccharts::TextualCode)
+def test_synccharts_textualcode_instantiation(instance):
+    assert isinstance(instance, synccharts_TextualCode)
 
-@given(instance=synccharts::EObject_strategy)
+@given(instance=synccharts_EObject_strategy)
 @settings(max_examples=50)
-def test_synccharts::eobject_instantiation(instance):
-    assert isinstance(instance, synccharts::EObject)
+def test_synccharts_eobject_instantiation(instance):
+    assert isinstance(instance, synccharts_EObject)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=synccharts::Transition_strategy)
+@given(instance=synccharts_Transition_strategy)
 @settings(max_examples=50)
-def test_synccharts::transition_instantiation(instance):
-    assert isinstance(instance, synccharts::Transition)
-
-@given(instance=synccharts::Transition_strategy)
-def test_synccharts::transition_isHistory_type(instance):
-    assert isinstance(instance.isHistory, bool)
+def test_synccharts_transition_instantiation(instance):
+    assert isinstance(instance, synccharts_Transition)
 
 
-@given(instance=synccharts::Transition_strategy)
-def test_synccharts::transition_isHistory_setter(instance):
+
+@given(instance=synccharts_Transition_strategy)
+def test_synccharts_transition_isHistory_setter(instance):
     original = instance.isHistory
     instance.isHistory = original
     assert instance.isHistory == original
 
-@given(instance=synccharts::Transition_strategy)
-def test_synccharts::transition_priority_type(instance):
-    assert isinstance(instance.priority, int)
 
 
-@given(instance=synccharts::Transition_strategy)
-def test_synccharts::transition_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=synccharts::Transition_strategy)
-def test_synccharts::transition_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=synccharts::Transition_strategy)
-def test_synccharts::transition_type_setter(instance):
+@given(instance=synccharts_Transition_strategy)
+def test_synccharts_transition_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=synccharts::Substitution_strategy)
+
+
+@given(instance=synccharts_Transition_strategy)
+def test_synccharts_transition_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+@given(instance=synccharts_Substitution_strategy)
 @settings(max_examples=50)
-def test_synccharts::substitution_instantiation(instance):
-    assert isinstance(instance, synccharts::Substitution)
-
-@given(instance=synccharts::Substitution_strategy)
-def test_synccharts::substitution_actual_type(instance):
-    assert isinstance(instance.actual, str)
+def test_synccharts_substitution_instantiation(instance):
+    assert isinstance(instance, synccharts_Substitution)
 
 
-@given(instance=synccharts::Substitution_strategy)
-def test_synccharts::substitution_actual_setter(instance):
-    original = instance.actual
-    instance.actual = original
-    assert instance.actual == original
 
-@given(instance=synccharts::Substitution_strategy)
-def test_synccharts::substitution_formal_type(instance):
-    assert isinstance(instance.formal, str)
-
-
-@given(instance=synccharts::Substitution_strategy)
-def test_synccharts::substitution_formal_setter(instance):
+@given(instance=synccharts_Substitution_strategy)
+def test_synccharts_substitution_formal_setter(instance):
     original = instance.formal
     instance.formal = original
     assert instance.formal == original
+
+
+
+@given(instance=synccharts_Substitution_strategy)
+def test_synccharts_substitution_actual_setter(instance):
+    original = instance.actual
+    instance.actual = original
+    assert instance.actual == original
 
 @given(instance=Scope_strategy)
 @settings(max_examples=50)
 def test_scope_instantiation(instance):
     assert isinstance(instance, Scope)
 
-@given(instance=synccharts::State_strategy)
+@given(instance=synccharts_State_strategy)
 @settings(max_examples=50)
-def test_synccharts::state_instantiation(instance):
-    assert isinstance(instance, synccharts::State)
-
-@given(instance=synccharts::State_strategy)
-def test_synccharts::state_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
+def test_synccharts_state_instantiation(instance):
+    assert isinstance(instance, synccharts_State)
 
 
-@given(instance=synccharts::State_strategy)
-def test_synccharts::state_isInitial_setter(instance):
-    original = instance.isInitial
-    instance.isInitial = original
-    assert instance.isInitial == original
 
-@given(instance=synccharts::State_strategy)
-def test_synccharts::state_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=synccharts::State_strategy)
-def test_synccharts::state_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=synccharts::State_strategy)
-def test_synccharts::state_isFinal_type(instance):
-    assert isinstance(instance.isFinal, bool)
-
-
-@given(instance=synccharts::State_strategy)
-def test_synccharts::state_isFinal_setter(instance):
+@given(instance=synccharts_State_strategy)
+def test_synccharts_state_isFinal_setter(instance):
     original = instance.isFinal
     instance.isFinal = original
     assert instance.isFinal == original
 
-@given(instance=synccharts::Region_strategy)
-@settings(max_examples=50)
-def test_synccharts::region_instantiation(instance):
-    assert isinstance(instance, synccharts::Region)
 
-@given(instance=synccharts::Signal_strategy)
-@settings(max_examples=50)
-def test_synccharts::signal_instantiation(instance):
-    assert isinstance(instance, synccharts::Signal)
 
-@given(instance=synccharts::Variable_strategy)
+@given(instance=synccharts_State_strategy)
+def test_synccharts_state_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=synccharts_State_strategy)
+def test_synccharts_state_isInitial_setter(instance):
+    original = instance.isInitial
+    instance.isInitial = original
+    assert instance.isInitial == original
+
+@given(instance=synccharts_Region_strategy)
 @settings(max_examples=50)
-def test_synccharts::variable_instantiation(instance):
-    assert isinstance(instance, synccharts::Variable)
+def test_synccharts_region_instantiation(instance):
+    assert isinstance(instance, synccharts_Region)
+
+@given(instance=synccharts_Signal_strategy)
+@settings(max_examples=50)
+def test_synccharts_signal_instantiation(instance):
+    assert isinstance(instance, synccharts_Signal)
+
+@given(instance=synccharts_Variable_strategy)
+@settings(max_examples=50)
+def test_synccharts_variable_instantiation(instance):
+    assert isinstance(instance, synccharts_Variable)
 
 @given(instance=Effect_strategy)
 @settings(max_examples=50)
 def test_effect_instantiation(instance):
     assert isinstance(instance, Effect)
 
-@given(instance=synccharts::TextEffect_strategy)
+@given(instance=synccharts_Emission_strategy)
 @settings(max_examples=50)
-def test_synccharts::texteffect_instantiation(instance):
-    assert isinstance(instance, synccharts::TextEffect)
+def test_synccharts_emission_instantiation(instance):
+    assert isinstance(instance, synccharts_Emission)
 
-@given(instance=synccharts::Emission_strategy)
+@given(instance=synccharts_TextEffect_strategy)
 @settings(max_examples=50)
-def test_synccharts::emission_instantiation(instance):
-    assert isinstance(instance, synccharts::Emission)
+def test_synccharts_texteffect_instantiation(instance):
+    assert isinstance(instance, synccharts_TextEffect)
 
-@given(instance=synccharts::Assignment_strategy)
+@given(instance=synccharts_Assignment_strategy)
 @settings(max_examples=50)
-def test_synccharts::assignment_instantiation(instance):
-    assert isinstance(instance, synccharts::Assignment)
+def test_synccharts_assignment_instantiation(instance):
+    assert isinstance(instance, synccharts_Assignment)
 
-@given(instance=synccharts::Expression_strategy)
+@given(instance=synccharts_Expression_strategy)
 @settings(max_examples=50)
-def test_synccharts::expression_instantiation(instance):
-    assert isinstance(instance, synccharts::Expression)
+def test_synccharts_expression_instantiation(instance):
+    assert isinstance(instance, synccharts_Expression)
 
-@given(instance=synccharts::Effect_strategy)
+@given(instance=synccharts_Effect_strategy)
 @settings(max_examples=50)
-def test_synccharts::effect_instantiation(instance):
-    assert isinstance(instance, synccharts::Effect)
+def test_synccharts_effect_instantiation(instance):
+    assert isinstance(instance, synccharts_Effect)
 
 @given(instance=Annotatable_strategy)
 @settings(max_examples=50)
 def test_annotatable_instantiation(instance):
     assert isinstance(instance, Annotatable)
 
-@given(instance=synccharts::Scope_strategy)
+@given(instance=synccharts_Scope_strategy)
 @settings(max_examples=50)
-def test_synccharts::scope_instantiation(instance):
-    assert isinstance(instance, synccharts::Scope)
-
-@given(instance=synccharts::Scope_strategy)
-def test_synccharts::scope_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_synccharts_scope_instantiation(instance):
+    assert isinstance(instance, synccharts_Scope)
 
 
-@given(instance=synccharts::Scope_strategy)
-def test_synccharts::scope_id_setter(instance):
+
+@given(instance=synccharts_Scope_strategy)
+def test_synccharts_scope_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=synccharts::Scope_strategy)
-def test_synccharts::scope_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
-@given(instance=synccharts::Scope_strategy)
-def test_synccharts::scope_label_setter(instance):
+@given(instance=synccharts_Scope_strategy)
+def test_synccharts_scope_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=synccharts::Scope_strategy)
-def test_synccharts::scope_interfaceDeclaration_type(instance):
-    assert isinstance(instance.interfaceDeclaration, str)
 
 
-@given(instance=synccharts::Scope_strategy)
-def test_synccharts::scope_interfaceDeclaration_setter(instance):
+@given(instance=synccharts_Scope_strategy)
+def test_synccharts_scope_interfaceDeclaration_setter(instance):
     original = instance.interfaceDeclaration
     instance.interfaceDeclaration = original
     assert instance.interfaceDeclaration == original
 
-@given(instance=synccharts::Action_strategy)
+@given(instance=synccharts_Action_strategy)
 @settings(max_examples=50)
-def test_synccharts::action_instantiation(instance):
-    assert isinstance(instance, synccharts::Action)
-
-@given(instance=synccharts::Action_strategy)
-def test_synccharts::action_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_synccharts_action_instantiation(instance):
+    assert isinstance(instance, synccharts_Action)
 
 
-@given(instance=synccharts::Action_strategy)
-def test_synccharts::action_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=synccharts::Action_strategy)
-def test_synccharts::action_delay_type(instance):
-    assert isinstance(instance.delay, int)
-
-
-@given(instance=synccharts::Action_strategy)
-def test_synccharts::action_delay_setter(instance):
+@given(instance=synccharts_Action_strategy)
+def test_synccharts_action_delay_setter(instance):
     original = instance.delay
     instance.delay = original
     assert instance.delay == original
 
-@given(instance=synccharts::Action_strategy)
-def test_synccharts::action_isImmediate_type(instance):
-    assert isinstance(instance.isImmediate, bool)
 
 
-@given(instance=synccharts::Action_strategy)
-def test_synccharts::action_isImmediate_setter(instance):
+@given(instance=synccharts_Action_strategy)
+def test_synccharts_action_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=synccharts_Action_strategy)
+def test_synccharts_action_isImmediate_setter(instance):
     original = instance.isImmediate
     instance.isImmediate = original
     assert instance.isImmediate == original

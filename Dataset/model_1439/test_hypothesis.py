@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mention::graph::Edge,
-    mention::graph::Node,
-    mention::graph::MentionGraph,
+from python_code import (
+    mention_graph_Edge,
+    mention_graph_Node,
+    mention_graph_MentionGraph,
     Node,
-    mention::graph::HashTag,
-    mention::graph::User,
+    mention_graph_HashTag,
+    mention_graph_User,
 )
 
 # =============================================================================
@@ -20,37 +20,37 @@ from classes import (
 
 
 
-def test_mention::graph::edge_is_not_abstract():
-    assert not inspect.isabstract(mention::graph::Edge)
+def test_mention_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(mention_graph_Edge)
 
 
-def test_mention::graph::edge_constructor_exists():
-    assert callable(mention::graph::Edge.__init__)
+def test_mention_graph_edge_constructor_exists():
+    assert callable(mention_graph_Edge.__init__)
 
 
-def test_mention::graph::edge_constructor_args():
-    sig = inspect.signature(mention::graph::Edge.__init__)
+def test_mention_graph_edge_constructor_args():
+    sig = inspect.signature(mention_graph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mention::graph::node_is_not_abstract():
-    assert not inspect.isabstract(mention::graph::Node)
+def test_mention_graph_node_is_not_abstract():
+    assert not inspect.isabstract(mention_graph_Node)
 
 
-def test_mention::graph::node_constructor_exists():
-    assert callable(mention::graph::Node.__init__)
+def test_mention_graph_node_constructor_exists():
+    assert callable(mention_graph_Node.__init__)
 
 
-def test_mention::graph::node_constructor_args():
-    sig = inspect.signature(mention::graph::Node.__init__)
+def test_mention_graph_node_constructor_args():
+    sig = inspect.signature(mention_graph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mention::graph::node_has_value():
-    assert hasattr(mention::graph::Node, "value")
+def test_mention_graph_node_has_value():
+    assert hasattr(mention_graph_Node, "value")
     descriptor = None
-    for klass in mention::graph::Node.__mro__:
+    for klass in mention_graph_Node.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -58,16 +58,16 @@ def test_mention::graph::node_has_value():
 
 
 
-def test_mention::graph::mentiongraph_is_not_abstract():
-    assert not inspect.isabstract(mention::graph::MentionGraph)
+def test_mention_graph_mentiongraph_is_not_abstract():
+    assert not inspect.isabstract(mention_graph_MentionGraph)
 
 
-def test_mention::graph::mentiongraph_constructor_exists():
-    assert callable(mention::graph::MentionGraph.__init__)
+def test_mention_graph_mentiongraph_constructor_exists():
+    assert callable(mention_graph_MentionGraph.__init__)
 
 
-def test_mention::graph::mentiongraph_constructor_args():
-    sig = inspect.signature(mention::graph::MentionGraph.__init__)
+def test_mention_graph_mentiongraph_constructor_args():
+    sig = inspect.signature(mention_graph_MentionGraph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,23 +86,23 @@ def test_node_constructor_args():
 
 
 
-def test_mention::graph::hashtag_is_not_abstract():
-    assert not inspect.isabstract(mention::graph::HashTag)
+def test_mention_graph_hashtag_is_not_abstract():
+    assert not inspect.isabstract(mention_graph_HashTag)
 
 
-def test_mention::graph::hashtag_constructor_exists():
-    assert callable(mention::graph::HashTag.__init__)
+def test_mention_graph_hashtag_constructor_exists():
+    assert callable(mention_graph_HashTag.__init__)
 
 
-def test_mention::graph::hashtag_constructor_args():
-    sig = inspect.signature(mention::graph::HashTag.__init__)
+def test_mention_graph_hashtag_constructor_args():
+    sig = inspect.signature(mention_graph_HashTag.__init__)
     params = list(sig.parameters.keys())
     assert "count" in params, "Missing parameter 'count'"
 
-def test_mention::graph::hashtag_has_count():
-    assert hasattr(mention::graph::HashTag, "count")
+def test_mention_graph_hashtag_has_count():
+    assert hasattr(mention_graph_HashTag, "count")
     descriptor = None
-    for klass in mention::graph::HashTag.__mro__:
+    for klass in mention_graph_HashTag.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
@@ -110,16 +110,16 @@ def test_mention::graph::hashtag_has_count():
 
 
 
-def test_mention::graph::user_is_not_abstract():
-    assert not inspect.isabstract(mention::graph::User)
+def test_mention_graph_user_is_not_abstract():
+    assert not inspect.isabstract(mention_graph_User)
 
 
-def test_mention::graph::user_constructor_exists():
-    assert callable(mention::graph::User.__init__)
+def test_mention_graph_user_constructor_exists():
+    assert callable(mention_graph_User.__init__)
 
 
-def test_mention::graph::user_constructor_args():
-    sig = inspect.signature(mention::graph::User.__init__)
+def test_mention_graph_user_constructor_args():
+    sig = inspect.signature(mention_graph_User.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,77 +134,71 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mention::graph::Edge_strategy = st.builds(
-    mention::graph::Edge,
+mention_graph_Edge_strategy = st.builds(
+    mention_graph_Edge,
 )
-mention::graph::Node_strategy = st.builds(
-    mention::graph::Node,
+mention_graph_Node_strategy = st.builds(
+    mention_graph_Node,
     value=
         safe_text
 )
-mention::graph::MentionGraph_strategy = st.builds(
-    mention::graph::MentionGraph,
+mention_graph_MentionGraph_strategy = st.builds(
+    mention_graph_MentionGraph,
 )
 Node_strategy = st.builds(
     Node,
 )
-mention::graph::HashTag_strategy = st.builds(
-    mention::graph::HashTag,
+mention_graph_HashTag_strategy = st.builds(
+    mention_graph_HashTag,
     count=
         st.integers()
 )
-mention::graph::User_strategy = st.builds(
-    mention::graph::User,
+mention_graph_User_strategy = st.builds(
+    mention_graph_User,
 )
 
-@given(instance=mention::graph::Edge_strategy)
+@given(instance=mention_graph_Edge_strategy)
 @settings(max_examples=50)
-def test_mention::graph::edge_instantiation(instance):
-    assert isinstance(instance, mention::graph::Edge)
+def test_mention_graph_edge_instantiation(instance):
+    assert isinstance(instance, mention_graph_Edge)
 
-@given(instance=mention::graph::Node_strategy)
+@given(instance=mention_graph_Node_strategy)
 @settings(max_examples=50)
-def test_mention::graph::node_instantiation(instance):
-    assert isinstance(instance, mention::graph::Node)
-
-@given(instance=mention::graph::Node_strategy)
-def test_mention::graph::node_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mention_graph_node_instantiation(instance):
+    assert isinstance(instance, mention_graph_Node)
 
 
-@given(instance=mention::graph::Node_strategy)
-def test_mention::graph::node_value_setter(instance):
+
+@given(instance=mention_graph_Node_strategy)
+def test_mention_graph_node_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mention::graph::MentionGraph_strategy)
+@given(instance=mention_graph_MentionGraph_strategy)
 @settings(max_examples=50)
-def test_mention::graph::mentiongraph_instantiation(instance):
-    assert isinstance(instance, mention::graph::MentionGraph)
+def test_mention_graph_mentiongraph_instantiation(instance):
+    assert isinstance(instance, mention_graph_MentionGraph)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=mention::graph::HashTag_strategy)
+@given(instance=mention_graph_HashTag_strategy)
 @settings(max_examples=50)
-def test_mention::graph::hashtag_instantiation(instance):
-    assert isinstance(instance, mention::graph::HashTag)
-
-@given(instance=mention::graph::HashTag_strategy)
-def test_mention::graph::hashtag_count_type(instance):
-    assert isinstance(instance.count, int)
+def test_mention_graph_hashtag_instantiation(instance):
+    assert isinstance(instance, mention_graph_HashTag)
 
 
-@given(instance=mention::graph::HashTag_strategy)
-def test_mention::graph::hashtag_count_setter(instance):
+
+@given(instance=mention_graph_HashTag_strategy)
+def test_mention_graph_hashtag_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
 
-@given(instance=mention::graph::User_strategy)
+@given(instance=mention_graph_User_strategy)
 @settings(max_examples=50)
-def test_mention::graph::user_instantiation(instance):
-    assert isinstance(instance, mention::graph::User)
+def test_mention_graph_user_instantiation(instance):
+    assert isinstance(instance, mention_graph_User)

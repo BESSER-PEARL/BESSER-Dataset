@@ -3,115 +3,115 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tda593::booking::LegalEntity,
-    booking::LegalEntityDataService,
+from python_code import (
+    tda593_booking_LegalEntity,
+    booking_LegalEntityDataService,
     LegalEntityManager,
-    tda593::booking::LegalEntityManagerImpl,
-    tda593::booking::LegalEntityDataService,
-    tda593::booking::LegalEntityManager,
-    tda593::booking::BookingDataService,
-    facilities::RoomManager,
-    booking::BookingDataService,
+    tda593_booking_LegalEntityManagerImpl,
+    tda593_booking_LegalEntityDataService,
+    tda593_booking_LegalEntityManager,
+    tda593_booking_BookingDataService,
+    facilities_RoomManager,
+    booking_BookingDataService,
     BookingManager,
-    tda593::booking::BookingManagerImpl,
-    tda593::booking::BookingManager,
-    tda593::booking::StayRequest,
-    facilities::Room,
-    booking::Person,
-    booking::StayRequest,
-    tda593::booking::RoomStay,
-    booking::TravelInformation,
-    tda593::booking::Booking,
+    tda593_booking_BookingManagerImpl,
+    tda593_booking_BookingManager,
+    tda593_booking_StayRequest,
+    facilities_Room,
+    booking_Person,
+    booking_StayRequest,
+    tda593_booking_RoomStay,
+    booking_TravelInformation,
+    tda593_booking_Booking,
     LegalEntity,
-    tda593::booking::Person,
-    tda593::booking::Organization,
-    billing::AdminDiscountManager,
-    billing::DiscountManagerImpl,
-    tda593::billing::AdminDiscountManagerImpl,
-    tda593::booking::TravelInformation,
-    booking::RoomStay,
-    billing::AdminServiceManager,
-    billing::ServiceManagerImpl,
-    tda593::billing::AdminServiceManagerImpl,
-    tda593::billing::ServiceDataService,
-    tda593::billing::ServiceManager,
-    billing::ServiceDataService,
+    tda593_booking_Person,
+    tda593_booking_Organization,
+    billing_AdminDiscountManager,
+    billing_DiscountManagerImpl,
+    tda593_billing_AdminDiscountManagerImpl,
+    tda593_booking_TravelInformation,
+    booking_RoomStay,
+    billing_AdminServiceManager,
+    billing_ServiceManagerImpl,
+    tda593_billing_AdminServiceManagerImpl,
+    tda593_billing_ServiceDataService,
+    tda593_billing_ServiceManager,
+    billing_ServiceDataService,
     ServiceManager,
-    tda593::billing::AdminServiceManager,
-    tda593::billing::ServiceManagerImpl,
-    billing::CreditCardInformationDataService,
+    tda593_billing_AdminServiceManager,
+    tda593_billing_ServiceManagerImpl,
+    billing_CreditCardInformationDataService,
     CreditCardManager,
-    tda593::billing::CreditCardManagerImpl,
-    tda593::billing::CreditCardInformationDataService,
+    tda593_billing_CreditCardManagerImpl,
+    tda593_billing_CreditCardInformationDataService,
     BankingManager,
-    tda593::billing::BankingManagerImpl,
-    tda593::billing::BillDataService,
-    booking::BookingManager,
-    billing::BillDataService,
+    tda593_billing_BankingManagerImpl,
+    tda593_billing_BillDataService,
+    booking_BookingManager,
+    billing_BillDataService,
     BillManager,
-    tda593::billing::BillManagerImpl,
-    tda593::billing::CreditCardInformation,
-    tda593::billing::CreditCardManager,
-    tda593::billing::BankingManager,
-    billing::DiscountDataService,
+    tda593_billing_BillManagerImpl,
+    tda593_billing_CreditCardInformation,
+    tda593_billing_CreditCardManager,
+    tda593_billing_BankingManager,
+    billing_DiscountDataService,
     DiscountManager,
-    tda593::billing::AdminDiscountManager,
-    tda593::billing::DiscountManagerImpl,
-    tda593::billing::DiscountDataService,
-    tda593::billing::BillManager,
-    booking::Booking,
+    tda593_billing_AdminDiscountManager,
+    tda593_billing_DiscountManagerImpl,
+    tda593_billing_DiscountDataService,
+    tda593_billing_BillManager,
+    booking_Booking,
     Bill,
-    tda593::billing::BookingBill,
-    tda593::billing::Service,
-    billing::Service,
-    tda593::billing::Purchase,
-    billing::Bill,
-    billing::Discount,
-    billing::Purchase,
-    tda593::billing::Bill,
-    tda593::facilities::RoomDataService,
-    facilities::KeyCardManager,
+    tda593_billing_BookingBill,
+    tda593_billing_Service,
+    billing_Service,
+    tda593_billing_Purchase,
+    billing_Bill,
+    billing_Discount,
+    billing_Purchase,
+    tda593_billing_Bill,
+    tda593_facilities_RoomDataService,
+    facilities_KeyCardManager,
     Discount,
-    tda593::billing::PercentageDiscount,
-    tda593::billing::SumDiscount,
-    booking::LegalEntity,
-    tda593::billing::DiscountLimit,
-    billing::DiscountLimit,
-    tda593::billing::Discount,
-    tda593::billing::DiscountManager,
-    facilities::AdminKeyCardManager,
-    facilities::KeyCardManagerImpl,
-    tda593::facilities::AdminKeyCardManagerImpl,
-    facilities::AdminRoomManager,
-    facilities::RoomManagerImpl,
-    tda593::facilities::AdminRoomManagerImpl,
-    tda593::facilities::KeyCardDataService,
-    facilities::KeyCardDataService,
-    tda593::facilities::RoomTypeDataService,
-    RoomManager,
-    tda593::facilities::AdminRoomManager,
-    tda593::facilities::KeyCard,
-    tda593::facilities::KeyCardManager,
-    KeyCardManager,
-    tda593::facilities::KeyCardManagerImpl,
-    tda593::facilities::AdminKeyCardManager,
-    facilities::RoomTypeDataService,
-    facilities::RoomDataService,
-    tda593::facilities::RoomManagerImpl,
+    tda593_billing_PercentageDiscount,
+    tda593_billing_SumDiscount,
+    booking_LegalEntity,
+    tda593_billing_DiscountLimit,
+    billing_DiscountLimit,
+    tda593_billing_Discount,
+    tda593_billing_DiscountManager,
+    facilities_AdminKeyCardManager,
+    facilities_KeyCardManagerImpl,
+    tda593_facilities_AdminKeyCardManagerImpl,
+    facilities_AdminRoomManager,
+    facilities_RoomManagerImpl,
+    tda593_facilities_AdminRoomManagerImpl,
+    tda593_facilities_KeyCardDataService,
+    facilities_KeyCardDataService,
+    tda593_facilities_RoomTypeDataService,
+    facilities_RoomTypeDataService,
+    facilities_RoomDataService,
     Room,
-    tda593::facilities::ConferenceRoom,
-    tda593::facilities::GuestRoom,
-    facilities::RoomType,
-    facilities::KeyCard,
-    tda593::facilities::Room,
-    tda593::facilities::RoomType,
-    tda593::facilities::RoomManager,
-    tda593::california::DataService,
-    DisabilityApproval,
+    tda593_facilities_ConferenceRoom,
+    tda593_facilities_GuestRoom,
+    facilities_RoomType,
+    facilities_KeyCard,
+    tda593_facilities_Room,
+    tda593_facilities_RoomType,
+    tda593_facilities_RoomManager,
+    tda593_california_DataService,
+    RoomManager,
+    tda593_facilities_RoomManagerImpl,
+    tda593_facilities_AdminRoomManager,
+    tda593_facilities_KeyCard,
+    tda593_facilities_KeyCardManager,
+    KeyCardManager,
+    tda593_facilities_KeyCardManagerImpl,
+    tda593_facilities_AdminKeyCardManager,
     RoomApproval,
+    DisabilityApproval,
 )
 
 # =============================================================================
@@ -120,60 +120,60 @@ from classes import (
 
 
 
-def test_tda593::booking::legalentity_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::LegalEntity)
+def test_tda593_booking_legalentity_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_LegalEntity)
 
 
-def test_tda593::booking::legalentity_constructor_exists():
-    assert callable(tda593::booking::LegalEntity.__init__)
+def test_tda593_booking_legalentity_constructor_exists():
+    assert callable(tda593_booking_LegalEntity.__init__)
 
 
-def test_tda593::booking::legalentity_constructor_args():
-    sig = inspect.signature(tda593::booking::LegalEntity.__init__)
+def test_tda593_booking_legalentity_constructor_args():
+    sig = inspect.signature(tda593_booking_LegalEntity.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "phone" in params, "Missing parameter 'phone'"
+    assert "email" in params, "Missing parameter 'email'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_tda593::booking::legalentity_has_id():
-    assert hasattr(tda593::booking::LegalEntity, "id")
+def test_tda593_booking_legalentity_has_phone():
+    assert hasattr(tda593_booking_LegalEntity, "phone")
     descriptor = None
-    for klass in tda593::booking::LegalEntity.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::legalentity_has_email():
-    assert hasattr(tda593::booking::LegalEntity, "email")
-    descriptor = None
-    for klass in tda593::booking::LegalEntity.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::legalentity_has_phone():
-    assert hasattr(tda593::booking::LegalEntity, "phone")
-    descriptor = None
-    for klass in tda593::booking::LegalEntity.__mro__:
+    for klass in tda593_booking_LegalEntity.__mro__:
         if "phone" in klass.__dict__:
             descriptor = klass.__dict__["phone"]
             break
     assert isinstance(descriptor, property)
 
+def test_tda593_booking_legalentity_has_email():
+    assert hasattr(tda593_booking_LegalEntity, "email")
+    descriptor = None
+    for klass in tda593_booking_LegalEntity.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_legalentity_has_id():
+    assert hasattr(tda593_booking_LegalEntity, "id")
+    descriptor = None
+    for klass in tda593_booking_LegalEntity.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_booking::legalentitydataservice_is_not_abstract():
-    assert not inspect.isabstract(booking::LegalEntityDataService)
+
+def test_booking_legalentitydataservice_is_not_abstract():
+    assert not inspect.isabstract(booking_LegalEntityDataService)
 
 
-def test_booking::legalentitydataservice_constructor_exists():
-    assert callable(booking::LegalEntityDataService.__init__)
+def test_booking_legalentitydataservice_constructor_exists():
+    assert callable(booking_LegalEntityDataService.__init__)
 
 
-def test_booking::legalentitydataservice_constructor_args():
-    sig = inspect.signature(booking::LegalEntityDataService.__init__)
+def test_booking_legalentitydataservice_constructor_args():
+    sig = inspect.signature(booking_LegalEntityDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,86 +192,86 @@ def test_legalentitymanager_constructor_args():
 
 
 
-def test_tda593::booking::legalentitymanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::LegalEntityManagerImpl)
+def test_tda593_booking_legalentitymanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_LegalEntityManagerImpl)
 
 
-def test_tda593::booking::legalentitymanagerimpl_constructor_exists():
-    assert callable(tda593::booking::LegalEntityManagerImpl.__init__)
+def test_tda593_booking_legalentitymanagerimpl_constructor_exists():
+    assert callable(tda593_booking_LegalEntityManagerImpl.__init__)
 
 
-def test_tda593::booking::legalentitymanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::booking::LegalEntityManagerImpl.__init__)
+def test_tda593_booking_legalentitymanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_booking_LegalEntityManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::legalentitydataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::LegalEntityDataService)
+def test_tda593_booking_legalentitydataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_LegalEntityDataService)
 
 
-def test_tda593::booking::legalentitydataservice_constructor_exists():
-    assert callable(tda593::booking::LegalEntityDataService.__init__)
+def test_tda593_booking_legalentitydataservice_constructor_exists():
+    assert callable(tda593_booking_LegalEntityDataService.__init__)
 
 
-def test_tda593::booking::legalentitydataservice_constructor_args():
-    sig = inspect.signature(tda593::booking::LegalEntityDataService.__init__)
+def test_tda593_booking_legalentitydataservice_constructor_args():
+    sig = inspect.signature(tda593_booking_LegalEntityDataService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::legalentitymanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::LegalEntityManager)
+def test_tda593_booking_legalentitymanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_LegalEntityManager)
 
 
-def test_tda593::booking::legalentitymanager_constructor_exists():
-    assert callable(tda593::booking::LegalEntityManager.__init__)
+def test_tda593_booking_legalentitymanager_constructor_exists():
+    assert callable(tda593_booking_LegalEntityManager.__init__)
 
 
-def test_tda593::booking::legalentitymanager_constructor_args():
-    sig = inspect.signature(tda593::booking::LegalEntityManager.__init__)
+def test_tda593_booking_legalentitymanager_constructor_args():
+    sig = inspect.signature(tda593_booking_LegalEntityManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::bookingdataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::BookingDataService)
+def test_tda593_booking_bookingdataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_BookingDataService)
 
 
-def test_tda593::booking::bookingdataservice_constructor_exists():
-    assert callable(tda593::booking::BookingDataService.__init__)
+def test_tda593_booking_bookingdataservice_constructor_exists():
+    assert callable(tda593_booking_BookingDataService.__init__)
 
 
-def test_tda593::booking::bookingdataservice_constructor_args():
-    sig = inspect.signature(tda593::booking::BookingDataService.__init__)
+def test_tda593_booking_bookingdataservice_constructor_args():
+    sig = inspect.signature(tda593_booking_BookingDataService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_facilities::roommanager_is_not_abstract():
-    assert not inspect.isabstract(facilities::RoomManager)
+def test_facilities_roommanager_is_not_abstract():
+    assert not inspect.isabstract(facilities_RoomManager)
 
 
-def test_facilities::roommanager_constructor_exists():
-    assert callable(facilities::RoomManager.__init__)
+def test_facilities_roommanager_constructor_exists():
+    assert callable(facilities_RoomManager.__init__)
 
 
-def test_facilities::roommanager_constructor_args():
-    sig = inspect.signature(facilities::RoomManager.__init__)
+def test_facilities_roommanager_constructor_args():
+    sig = inspect.signature(facilities_RoomManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booking::bookingdataservice_is_not_abstract():
-    assert not inspect.isabstract(booking::BookingDataService)
+def test_booking_bookingdataservice_is_not_abstract():
+    assert not inspect.isabstract(booking_BookingDataService)
 
 
-def test_booking::bookingdataservice_constructor_exists():
-    assert callable(booking::BookingDataService.__init__)
+def test_booking_bookingdataservice_constructor_exists():
+    assert callable(booking_BookingDataService.__init__)
 
 
-def test_booking::bookingdataservice_constructor_args():
-    sig = inspect.signature(booking::BookingDataService.__init__)
+def test_booking_bookingdataservice_constructor_args():
+    sig = inspect.signature(booking_BookingDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -290,71 +290,71 @@ def test_bookingmanager_constructor_args():
 
 
 
-def test_tda593::booking::bookingmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::BookingManagerImpl)
+def test_tda593_booking_bookingmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_BookingManagerImpl)
 
 
-def test_tda593::booking::bookingmanagerimpl_constructor_exists():
-    assert callable(tda593::booking::BookingManagerImpl.__init__)
+def test_tda593_booking_bookingmanagerimpl_constructor_exists():
+    assert callable(tda593_booking_BookingManagerImpl.__init__)
 
 
-def test_tda593::booking::bookingmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::booking::BookingManagerImpl.__init__)
+def test_tda593_booking_bookingmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_booking_BookingManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::bookingmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::BookingManager)
+def test_tda593_booking_bookingmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_BookingManager)
 
 
-def test_tda593::booking::bookingmanager_constructor_exists():
-    assert callable(tda593::booking::BookingManager.__init__)
+def test_tda593_booking_bookingmanager_constructor_exists():
+    assert callable(tda593_booking_BookingManager.__init__)
 
 
-def test_tda593::booking::bookingmanager_constructor_args():
-    sig = inspect.signature(tda593::booking::BookingManager.__init__)
+def test_tda593_booking_bookingmanager_constructor_args():
+    sig = inspect.signature(tda593_booking_BookingManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::stayrequest_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::StayRequest)
+def test_tda593_booking_stayrequest_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_StayRequest)
 
 
-def test_tda593::booking::stayrequest_constructor_exists():
-    assert callable(tda593::booking::StayRequest.__init__)
+def test_tda593_booking_stayrequest_constructor_exists():
+    assert callable(tda593_booking_StayRequest.__init__)
 
 
-def test_tda593::booking::stayrequest_constructor_args():
-    sig = inspect.signature(tda593::booking::StayRequest.__init__)
+def test_tda593_booking_stayrequest_constructor_args():
+    sig = inspect.signature(tda593_booking_StayRequest.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "timeStamp" in params, "Missing parameter 'timeStamp'"
 
-def test_tda593::booking::stayrequest_has_id():
-    assert hasattr(tda593::booking::StayRequest, "id")
+def test_tda593_booking_stayrequest_has_text():
+    assert hasattr(tda593_booking_StayRequest, "text")
     descriptor = None
-    for klass in tda593::booking::StayRequest.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::stayrequest_has_text():
-    assert hasattr(tda593::booking::StayRequest, "text")
-    descriptor = None
-    for klass in tda593::booking::StayRequest.__mro__:
+    for klass in tda593_booking_StayRequest.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::stayrequest_has_timeStamp():
-    assert hasattr(tda593::booking::StayRequest, "timeStamp")
+def test_tda593_booking_stayrequest_has_id():
+    assert hasattr(tda593_booking_StayRequest, "id")
     descriptor = None
-    for klass in tda593::booking::StayRequest.__mro__:
+    for klass in tda593_booking_StayRequest.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_stayrequest_has_timeStamp():
+    assert hasattr(tda593_booking_StayRequest, "timeStamp")
+    descriptor = None
+    for klass in tda593_booking_StayRequest.__mro__:
         if "timeStamp" in klass.__dict__:
             descriptor = klass.__dict__["timeStamp"]
             break
@@ -362,165 +362,165 @@ def test_tda593::booking::stayrequest_has_timeStamp():
 
 
 
-def test_facilities::room_is_not_abstract():
-    assert not inspect.isabstract(facilities::Room)
+def test_facilities_room_is_not_abstract():
+    assert not inspect.isabstract(facilities_Room)
 
 
-def test_facilities::room_constructor_exists():
-    assert callable(facilities::Room.__init__)
+def test_facilities_room_constructor_exists():
+    assert callable(facilities_Room.__init__)
 
 
-def test_facilities::room_constructor_args():
-    sig = inspect.signature(facilities::Room.__init__)
+def test_facilities_room_constructor_args():
+    sig = inspect.signature(facilities_Room.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booking::person_is_not_abstract():
-    assert not inspect.isabstract(booking::Person)
+def test_booking_person_is_not_abstract():
+    assert not inspect.isabstract(booking_Person)
 
 
-def test_booking::person_constructor_exists():
-    assert callable(booking::Person.__init__)
+def test_booking_person_constructor_exists():
+    assert callable(booking_Person.__init__)
 
 
-def test_booking::person_constructor_args():
-    sig = inspect.signature(booking::Person.__init__)
+def test_booking_person_constructor_args():
+    sig = inspect.signature(booking_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booking::stayrequest_is_not_abstract():
-    assert not inspect.isabstract(booking::StayRequest)
+def test_booking_stayrequest_is_not_abstract():
+    assert not inspect.isabstract(booking_StayRequest)
 
 
-def test_booking::stayrequest_constructor_exists():
-    assert callable(booking::StayRequest.__init__)
+def test_booking_stayrequest_constructor_exists():
+    assert callable(booking_StayRequest.__init__)
 
 
-def test_booking::stayrequest_constructor_args():
-    sig = inspect.signature(booking::StayRequest.__init__)
+def test_booking_stayrequest_constructor_args():
+    sig = inspect.signature(booking_StayRequest.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::roomstay_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::RoomStay)
+def test_tda593_booking_roomstay_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_RoomStay)
 
 
-def test_tda593::booking::roomstay_constructor_exists():
-    assert callable(tda593::booking::RoomStay.__init__)
+def test_tda593_booking_roomstay_constructor_exists():
+    assert callable(tda593_booking_RoomStay.__init__)
 
 
-def test_tda593::booking::roomstay_constructor_args():
-    sig = inspect.signature(tda593::booking::RoomStay.__init__)
+def test_tda593_booking_roomstay_constructor_args():
+    sig = inspect.signature(tda593_booking_RoomStay.__init__)
     params = list(sig.parameters.keys())
-    assert "active" in params, "Missing parameter 'active'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "active" in params, "Missing parameter 'active'"
 
-def test_tda593::booking::roomstay_has_active():
-    assert hasattr(tda593::booking::RoomStay, "active")
+def test_tda593_booking_roomstay_has_id():
+    assert hasattr(tda593_booking_RoomStay, "id")
     descriptor = None
-    for klass in tda593::booking::RoomStay.__mro__:
+    for klass in tda593_booking_RoomStay.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_roomstay_has_active():
+    assert hasattr(tda593_booking_RoomStay, "active")
+    descriptor = None
+    for klass in tda593_booking_RoomStay.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::roomstay_has_id():
-    assert hasattr(tda593::booking::RoomStay, "id")
-    descriptor = None
-    for klass in tda593::booking::RoomStay.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_booking::travelinformation_is_not_abstract():
-    assert not inspect.isabstract(booking::TravelInformation)
-
-
-def test_booking::travelinformation_constructor_exists():
-    assert callable(booking::TravelInformation.__init__)
+def test_booking_travelinformation_is_not_abstract():
+    assert not inspect.isabstract(booking_TravelInformation)
 
 
-def test_booking::travelinformation_constructor_args():
-    sig = inspect.signature(booking::TravelInformation.__init__)
+def test_booking_travelinformation_constructor_exists():
+    assert callable(booking_TravelInformation.__init__)
+
+
+def test_booking_travelinformation_constructor_args():
+    sig = inspect.signature(booking_TravelInformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::booking_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::Booking)
+def test_tda593_booking_booking_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_Booking)
 
 
-def test_tda593::booking::booking_constructor_exists():
-    assert callable(tda593::booking::Booking.__init__)
+def test_tda593_booking_booking_constructor_exists():
+    assert callable(tda593_booking_Booking.__init__)
 
 
-def test_tda593::booking::booking_constructor_args():
-    sig = inspect.signature(tda593::booking::Booking.__init__)
+def test_tda593_booking_booking_constructor_args():
+    sig = inspect.signature(tda593_booking_Booking.__init__)
     params = list(sig.parameters.keys())
-    assert "specialRequest" in params, "Missing parameter 'specialRequest'"
-    assert "startDate" in params, "Missing parameter 'startDate'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "price" in params, "Missing parameter 'price'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "endDate" in params, "Missing parameter 'endDate'"
     assert "isCanceled" in params, "Missing parameter 'isCanceled'"
+    assert "specialRequest" in params, "Missing parameter 'specialRequest'"
+    assert "startDate" in params, "Missing parameter 'startDate'"
 
-def test_tda593::booking::booking_has_specialRequest():
-    assert hasattr(tda593::booking::Booking, "specialRequest")
+def test_tda593_booking_booking_has_price():
+    assert hasattr(tda593_booking_Booking, "price")
     descriptor = None
-    for klass in tda593::booking::Booking.__mro__:
-        if "specialRequest" in klass.__dict__:
-            descriptor = klass.__dict__["specialRequest"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::booking_has_startDate():
-    assert hasattr(tda593::booking::Booking, "startDate")
-    descriptor = None
-    for klass in tda593::booking::Booking.__mro__:
-        if "startDate" in klass.__dict__:
-            descriptor = klass.__dict__["startDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::booking_has_id():
-    assert hasattr(tda593::booking::Booking, "id")
-    descriptor = None
-    for klass in tda593::booking::Booking.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::booking_has_price():
-    assert hasattr(tda593::booking::Booking, "price")
-    descriptor = None
-    for klass in tda593::booking::Booking.__mro__:
+    for klass in tda593_booking_Booking.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::booking_has_endDate():
-    assert hasattr(tda593::booking::Booking, "endDate")
+def test_tda593_booking_booking_has_id():
+    assert hasattr(tda593_booking_Booking, "id")
     descriptor = None
-    for klass in tda593::booking::Booking.__mro__:
+    for klass in tda593_booking_Booking.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_booking_has_endDate():
+    assert hasattr(tda593_booking_Booking, "endDate")
+    descriptor = None
+    for klass in tda593_booking_Booking.__mro__:
         if "endDate" in klass.__dict__:
             descriptor = klass.__dict__["endDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::booking_has_isCanceled():
-    assert hasattr(tda593::booking::Booking, "isCanceled")
+def test_tda593_booking_booking_has_isCanceled():
+    assert hasattr(tda593_booking_Booking, "isCanceled")
     descriptor = None
-    for klass in tda593::booking::Booking.__mro__:
+    for klass in tda593_booking_Booking.__mro__:
         if "isCanceled" in klass.__dict__:
             descriptor = klass.__dict__["isCanceled"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_booking_has_specialRequest():
+    assert hasattr(tda593_booking_Booking, "specialRequest")
+    descriptor = None
+    for klass in tda593_booking_Booking.__mro__:
+        if "specialRequest" in klass.__dict__:
+            descriptor = klass.__dict__["specialRequest"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_booking_has_startDate():
+    assert hasattr(tda593_booking_Booking, "startDate")
+    descriptor = None
+    for klass in tda593_booking_Booking.__mro__:
+        if "startDate" in klass.__dict__:
+            descriptor = klass.__dict__["startDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -540,77 +540,77 @@ def test_legalentity_constructor_args():
 
 
 
-def test_tda593::booking::person_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::Person)
+def test_tda593_booking_person_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_Person)
 
 
-def test_tda593::booking::person_constructor_exists():
-    assert callable(tda593::booking::Person.__init__)
+def test_tda593_booking_person_constructor_exists():
+    assert callable(tda593_booking_Person.__init__)
 
 
-def test_tda593::booking::person_constructor_args():
-    sig = inspect.signature(tda593::booking::Person.__init__)
+def test_tda593_booking_person_constructor_args():
+    sig = inspect.signature(tda593_booking_Person.__init__)
     params = list(sig.parameters.keys())
     assert "lastname" in params, "Missing parameter 'lastname'"
-    assert "firstname" in params, "Missing parameter 'firstname'"
     assert "socialSecurityNumber" in params, "Missing parameter 'socialSecurityNumber'"
+    assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_tda593::booking::person_has_lastname():
-    assert hasattr(tda593::booking::Person, "lastname")
+def test_tda593_booking_person_has_lastname():
+    assert hasattr(tda593_booking_Person, "lastname")
     descriptor = None
-    for klass in tda593::booking::Person.__mro__:
+    for klass in tda593_booking_Person.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::person_has_firstname():
-    assert hasattr(tda593::booking::Person, "firstname")
+def test_tda593_booking_person_has_socialSecurityNumber():
+    assert hasattr(tda593_booking_Person, "socialSecurityNumber")
     descriptor = None
-    for klass in tda593::booking::Person.__mro__:
-        if "firstname" in klass.__dict__:
-            descriptor = klass.__dict__["firstname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::person_has_socialSecurityNumber():
-    assert hasattr(tda593::booking::Person, "socialSecurityNumber")
-    descriptor = None
-    for klass in tda593::booking::Person.__mro__:
+    for klass in tda593_booking_Person.__mro__:
         if "socialSecurityNumber" in klass.__dict__:
             descriptor = klass.__dict__["socialSecurityNumber"]
             break
     assert isinstance(descriptor, property)
 
+def test_tda593_booking_person_has_firstname():
+    assert hasattr(tda593_booking_Person, "firstname")
+    descriptor = None
+    for klass in tda593_booking_Person.__mro__:
+        if "firstname" in klass.__dict__:
+            descriptor = klass.__dict__["firstname"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tda593::booking::organization_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::Organization)
+
+def test_tda593_booking_organization_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_Organization)
 
 
-def test_tda593::booking::organization_constructor_exists():
-    assert callable(tda593::booking::Organization.__init__)
+def test_tda593_booking_organization_constructor_exists():
+    assert callable(tda593_booking_Organization.__init__)
 
 
-def test_tda593::booking::organization_constructor_args():
-    sig = inspect.signature(tda593::booking::Organization.__init__)
+def test_tda593_booking_organization_constructor_args():
+    sig = inspect.signature(tda593_booking_Organization.__init__)
     params = list(sig.parameters.keys())
     assert "organizationNumber" in params, "Missing parameter 'organizationNumber'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tda593::booking::organization_has_organizationNumber():
-    assert hasattr(tda593::booking::Organization, "organizationNumber")
+def test_tda593_booking_organization_has_organizationNumber():
+    assert hasattr(tda593_booking_Organization, "organizationNumber")
     descriptor = None
-    for klass in tda593::booking::Organization.__mro__:
+    for klass in tda593_booking_Organization.__mro__:
         if "organizationNumber" in klass.__dict__:
             descriptor = klass.__dict__["organizationNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::organization_has_name():
-    assert hasattr(tda593::booking::Organization, "name")
+def test_tda593_booking_organization_has_name():
+    assert hasattr(tda593_booking_Organization, "name")
     descriptor = None
-    for klass in tda593::booking::Organization.__mro__:
+    for klass in tda593_booking_Organization.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -618,85 +618,85 @@ def test_tda593::booking::organization_has_name():
 
 
 
-def test_billing::admindiscountmanager_is_not_abstract():
-    assert not inspect.isabstract(billing::AdminDiscountManager)
+def test_billing_admindiscountmanager_is_not_abstract():
+    assert not inspect.isabstract(billing_AdminDiscountManager)
 
 
-def test_billing::admindiscountmanager_constructor_exists():
-    assert callable(billing::AdminDiscountManager.__init__)
+def test_billing_admindiscountmanager_constructor_exists():
+    assert callable(billing_AdminDiscountManager.__init__)
 
 
-def test_billing::admindiscountmanager_constructor_args():
-    sig = inspect.signature(billing::AdminDiscountManager.__init__)
+def test_billing_admindiscountmanager_constructor_args():
+    sig = inspect.signature(billing_AdminDiscountManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::discountmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(billing::DiscountManagerImpl)
+def test_billing_discountmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(billing_DiscountManagerImpl)
 
 
-def test_billing::discountmanagerimpl_constructor_exists():
-    assert callable(billing::DiscountManagerImpl.__init__)
+def test_billing_discountmanagerimpl_constructor_exists():
+    assert callable(billing_DiscountManagerImpl.__init__)
 
 
-def test_billing::discountmanagerimpl_constructor_args():
-    sig = inspect.signature(billing::DiscountManagerImpl.__init__)
+def test_billing_discountmanagerimpl_constructor_args():
+    sig = inspect.signature(billing_DiscountManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::admindiscountmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::AdminDiscountManagerImpl)
+def test_tda593_billing_admindiscountmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_AdminDiscountManagerImpl)
 
 
-def test_tda593::billing::admindiscountmanagerimpl_constructor_exists():
-    assert callable(tda593::billing::AdminDiscountManagerImpl.__init__)
+def test_tda593_billing_admindiscountmanagerimpl_constructor_exists():
+    assert callable(tda593_billing_AdminDiscountManagerImpl.__init__)
 
 
-def test_tda593::billing::admindiscountmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::AdminDiscountManagerImpl.__init__)
+def test_tda593_billing_admindiscountmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_AdminDiscountManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::booking::travelinformation_is_not_abstract():
-    assert not inspect.isabstract(tda593::booking::TravelInformation)
+def test_tda593_booking_travelinformation_is_not_abstract():
+    assert not inspect.isabstract(tda593_booking_TravelInformation)
 
 
-def test_tda593::booking::travelinformation_constructor_exists():
-    assert callable(tda593::booking::TravelInformation.__init__)
+def test_tda593_booking_travelinformation_constructor_exists():
+    assert callable(tda593_booking_TravelInformation.__init__)
 
 
-def test_tda593::booking::travelinformation_constructor_args():
-    sig = inspect.signature(tda593::booking::TravelInformation.__init__)
+def test_tda593_booking_travelinformation_constructor_args():
+    sig = inspect.signature(tda593_booking_TravelInformation.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "trackingId" in params, "Missing parameter 'trackingId'"
 
-def test_tda593::booking::travelinformation_has_comment():
-    assert hasattr(tda593::booking::TravelInformation, "comment")
+def test_tda593_booking_travelinformation_has_id():
+    assert hasattr(tda593_booking_TravelInformation, "id")
     descriptor = None
-    for klass in tda593::booking::TravelInformation.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::booking::travelinformation_has_id():
-    assert hasattr(tda593::booking::TravelInformation, "id")
-    descriptor = None
-    for klass in tda593::booking::TravelInformation.__mro__:
+    for klass in tda593_booking_TravelInformation.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::booking::travelinformation_has_trackingId():
-    assert hasattr(tda593::booking::TravelInformation, "trackingId")
+def test_tda593_booking_travelinformation_has_comment():
+    assert hasattr(tda593_booking_TravelInformation, "comment")
     descriptor = None
-    for klass in tda593::booking::TravelInformation.__mro__:
+    for klass in tda593_booking_TravelInformation.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_booking_travelinformation_has_trackingId():
+    assert hasattr(tda593_booking_TravelInformation, "trackingId")
+    descriptor = None
+    for klass in tda593_booking_TravelInformation.__mro__:
         if "trackingId" in klass.__dict__:
             descriptor = klass.__dict__["trackingId"]
             break
@@ -704,100 +704,100 @@ def test_tda593::booking::travelinformation_has_trackingId():
 
 
 
-def test_booking::roomstay_is_not_abstract():
-    assert not inspect.isabstract(booking::RoomStay)
+def test_booking_roomstay_is_not_abstract():
+    assert not inspect.isabstract(booking_RoomStay)
 
 
-def test_booking::roomstay_constructor_exists():
-    assert callable(booking::RoomStay.__init__)
+def test_booking_roomstay_constructor_exists():
+    assert callable(booking_RoomStay.__init__)
 
 
-def test_booking::roomstay_constructor_args():
-    sig = inspect.signature(booking::RoomStay.__init__)
+def test_booking_roomstay_constructor_args():
+    sig = inspect.signature(booking_RoomStay.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::adminservicemanager_is_not_abstract():
-    assert not inspect.isabstract(billing::AdminServiceManager)
+def test_billing_adminservicemanager_is_not_abstract():
+    assert not inspect.isabstract(billing_AdminServiceManager)
 
 
-def test_billing::adminservicemanager_constructor_exists():
-    assert callable(billing::AdminServiceManager.__init__)
+def test_billing_adminservicemanager_constructor_exists():
+    assert callable(billing_AdminServiceManager.__init__)
 
 
-def test_billing::adminservicemanager_constructor_args():
-    sig = inspect.signature(billing::AdminServiceManager.__init__)
+def test_billing_adminservicemanager_constructor_args():
+    sig = inspect.signature(billing_AdminServiceManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::servicemanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(billing::ServiceManagerImpl)
+def test_billing_servicemanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(billing_ServiceManagerImpl)
 
 
-def test_billing::servicemanagerimpl_constructor_exists():
-    assert callable(billing::ServiceManagerImpl.__init__)
+def test_billing_servicemanagerimpl_constructor_exists():
+    assert callable(billing_ServiceManagerImpl.__init__)
 
 
-def test_billing::servicemanagerimpl_constructor_args():
-    sig = inspect.signature(billing::ServiceManagerImpl.__init__)
+def test_billing_servicemanagerimpl_constructor_args():
+    sig = inspect.signature(billing_ServiceManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::adminservicemanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::AdminServiceManagerImpl)
+def test_tda593_billing_adminservicemanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_AdminServiceManagerImpl)
 
 
-def test_tda593::billing::adminservicemanagerimpl_constructor_exists():
-    assert callable(tda593::billing::AdminServiceManagerImpl.__init__)
+def test_tda593_billing_adminservicemanagerimpl_constructor_exists():
+    assert callable(tda593_billing_AdminServiceManagerImpl.__init__)
 
 
-def test_tda593::billing::adminservicemanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::AdminServiceManagerImpl.__init__)
+def test_tda593_billing_adminservicemanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_AdminServiceManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::servicedataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::ServiceDataService)
+def test_tda593_billing_servicedataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_ServiceDataService)
 
 
-def test_tda593::billing::servicedataservice_constructor_exists():
-    assert callable(tda593::billing::ServiceDataService.__init__)
+def test_tda593_billing_servicedataservice_constructor_exists():
+    assert callable(tda593_billing_ServiceDataService.__init__)
 
 
-def test_tda593::billing::servicedataservice_constructor_args():
-    sig = inspect.signature(tda593::billing::ServiceDataService.__init__)
+def test_tda593_billing_servicedataservice_constructor_args():
+    sig = inspect.signature(tda593_billing_ServiceDataService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::servicemanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::ServiceManager)
+def test_tda593_billing_servicemanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_ServiceManager)
 
 
-def test_tda593::billing::servicemanager_constructor_exists():
-    assert callable(tda593::billing::ServiceManager.__init__)
+def test_tda593_billing_servicemanager_constructor_exists():
+    assert callable(tda593_billing_ServiceManager.__init__)
 
 
-def test_tda593::billing::servicemanager_constructor_args():
-    sig = inspect.signature(tda593::billing::ServiceManager.__init__)
+def test_tda593_billing_servicemanager_constructor_args():
+    sig = inspect.signature(tda593_billing_ServiceManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::servicedataservice_is_not_abstract():
-    assert not inspect.isabstract(billing::ServiceDataService)
+def test_billing_servicedataservice_is_not_abstract():
+    assert not inspect.isabstract(billing_ServiceDataService)
 
 
-def test_billing::servicedataservice_constructor_exists():
-    assert callable(billing::ServiceDataService.__init__)
+def test_billing_servicedataservice_constructor_exists():
+    assert callable(billing_ServiceDataService.__init__)
 
 
-def test_billing::servicedataservice_constructor_args():
-    sig = inspect.signature(billing::ServiceDataService.__init__)
+def test_billing_servicedataservice_constructor_args():
+    sig = inspect.signature(billing_ServiceDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -816,44 +816,44 @@ def test_servicemanager_constructor_args():
 
 
 
-def test_tda593::billing::adminservicemanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::AdminServiceManager)
+def test_tda593_billing_adminservicemanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_AdminServiceManager)
 
 
-def test_tda593::billing::adminservicemanager_constructor_exists():
-    assert callable(tda593::billing::AdminServiceManager.__init__)
+def test_tda593_billing_adminservicemanager_constructor_exists():
+    assert callable(tda593_billing_AdminServiceManager.__init__)
 
 
-def test_tda593::billing::adminservicemanager_constructor_args():
-    sig = inspect.signature(tda593::billing::AdminServiceManager.__init__)
+def test_tda593_billing_adminservicemanager_constructor_args():
+    sig = inspect.signature(tda593_billing_AdminServiceManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::servicemanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::ServiceManagerImpl)
+def test_tda593_billing_servicemanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_ServiceManagerImpl)
 
 
-def test_tda593::billing::servicemanagerimpl_constructor_exists():
-    assert callable(tda593::billing::ServiceManagerImpl.__init__)
+def test_tda593_billing_servicemanagerimpl_constructor_exists():
+    assert callable(tda593_billing_ServiceManagerImpl.__init__)
 
 
-def test_tda593::billing::servicemanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::ServiceManagerImpl.__init__)
+def test_tda593_billing_servicemanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_ServiceManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::creditcardinformationdataservice_is_not_abstract():
-    assert not inspect.isabstract(billing::CreditCardInformationDataService)
+def test_billing_creditcardinformationdataservice_is_not_abstract():
+    assert not inspect.isabstract(billing_CreditCardInformationDataService)
 
 
-def test_billing::creditcardinformationdataservice_constructor_exists():
-    assert callable(billing::CreditCardInformationDataService.__init__)
+def test_billing_creditcardinformationdataservice_constructor_exists():
+    assert callable(billing_CreditCardInformationDataService.__init__)
 
 
-def test_billing::creditcardinformationdataservice_constructor_args():
-    sig = inspect.signature(billing::CreditCardInformationDataService.__init__)
+def test_billing_creditcardinformationdataservice_constructor_args():
+    sig = inspect.signature(billing_CreditCardInformationDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -872,30 +872,30 @@ def test_creditcardmanager_constructor_args():
 
 
 
-def test_tda593::billing::creditcardmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::CreditCardManagerImpl)
+def test_tda593_billing_creditcardmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_CreditCardManagerImpl)
 
 
-def test_tda593::billing::creditcardmanagerimpl_constructor_exists():
-    assert callable(tda593::billing::CreditCardManagerImpl.__init__)
+def test_tda593_billing_creditcardmanagerimpl_constructor_exists():
+    assert callable(tda593_billing_CreditCardManagerImpl.__init__)
 
 
-def test_tda593::billing::creditcardmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::CreditCardManagerImpl.__init__)
+def test_tda593_billing_creditcardmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_CreditCardManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::creditcardinformationdataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::CreditCardInformationDataService)
+def test_tda593_billing_creditcardinformationdataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_CreditCardInformationDataService)
 
 
-def test_tda593::billing::creditcardinformationdataservice_constructor_exists():
-    assert callable(tda593::billing::CreditCardInformationDataService.__init__)
+def test_tda593_billing_creditcardinformationdataservice_constructor_exists():
+    assert callable(tda593_billing_CreditCardInformationDataService.__init__)
 
 
-def test_tda593::billing::creditcardinformationdataservice_constructor_args():
-    sig = inspect.signature(tda593::billing::CreditCardInformationDataService.__init__)
+def test_tda593_billing_creditcardinformationdataservice_constructor_args():
+    sig = inspect.signature(tda593_billing_CreditCardInformationDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -914,58 +914,58 @@ def test_bankingmanager_constructor_args():
 
 
 
-def test_tda593::billing::bankingmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::BankingManagerImpl)
+def test_tda593_billing_bankingmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_BankingManagerImpl)
 
 
-def test_tda593::billing::bankingmanagerimpl_constructor_exists():
-    assert callable(tda593::billing::BankingManagerImpl.__init__)
+def test_tda593_billing_bankingmanagerimpl_constructor_exists():
+    assert callable(tda593_billing_BankingManagerImpl.__init__)
 
 
-def test_tda593::billing::bankingmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::BankingManagerImpl.__init__)
+def test_tda593_billing_bankingmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_BankingManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::billdataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::BillDataService)
+def test_tda593_billing_billdataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_BillDataService)
 
 
-def test_tda593::billing::billdataservice_constructor_exists():
-    assert callable(tda593::billing::BillDataService.__init__)
+def test_tda593_billing_billdataservice_constructor_exists():
+    assert callable(tda593_billing_BillDataService.__init__)
 
 
-def test_tda593::billing::billdataservice_constructor_args():
-    sig = inspect.signature(tda593::billing::BillDataService.__init__)
+def test_tda593_billing_billdataservice_constructor_args():
+    sig = inspect.signature(tda593_billing_BillDataService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booking::bookingmanager_is_not_abstract():
-    assert not inspect.isabstract(booking::BookingManager)
+def test_booking_bookingmanager_is_not_abstract():
+    assert not inspect.isabstract(booking_BookingManager)
 
 
-def test_booking::bookingmanager_constructor_exists():
-    assert callable(booking::BookingManager.__init__)
+def test_booking_bookingmanager_constructor_exists():
+    assert callable(booking_BookingManager.__init__)
 
 
-def test_booking::bookingmanager_constructor_args():
-    sig = inspect.signature(booking::BookingManager.__init__)
+def test_booking_bookingmanager_constructor_args():
+    sig = inspect.signature(booking_BookingManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::billdataservice_is_not_abstract():
-    assert not inspect.isabstract(billing::BillDataService)
+def test_billing_billdataservice_is_not_abstract():
+    assert not inspect.isabstract(billing_BillDataService)
 
 
-def test_billing::billdataservice_constructor_exists():
-    assert callable(billing::BillDataService.__init__)
+def test_billing_billdataservice_constructor_exists():
+    assert callable(billing_BillDataService.__init__)
 
 
-def test_billing::billdataservice_constructor_args():
-    sig = inspect.signature(billing::BillDataService.__init__)
+def test_billing_billdataservice_constructor_args():
+    sig = inspect.signature(billing_BillDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -984,122 +984,122 @@ def test_billmanager_constructor_args():
 
 
 
-def test_tda593::billing::billmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::BillManagerImpl)
+def test_tda593_billing_billmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_BillManagerImpl)
 
 
-def test_tda593::billing::billmanagerimpl_constructor_exists():
-    assert callable(tda593::billing::BillManagerImpl.__init__)
+def test_tda593_billing_billmanagerimpl_constructor_exists():
+    assert callable(tda593_billing_BillManagerImpl.__init__)
 
 
-def test_tda593::billing::billmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::BillManagerImpl.__init__)
+def test_tda593_billing_billmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_BillManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::creditcardinformation_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::CreditCardInformation)
+def test_tda593_billing_creditcardinformation_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_CreditCardInformation)
 
 
-def test_tda593::billing::creditcardinformation_constructor_exists():
-    assert callable(tda593::billing::CreditCardInformation.__init__)
+def test_tda593_billing_creditcardinformation_constructor_exists():
+    assert callable(tda593_billing_CreditCardInformation.__init__)
 
 
-def test_tda593::billing::creditcardinformation_constructor_args():
-    sig = inspect.signature(tda593::billing::CreditCardInformation.__init__)
+def test_tda593_billing_creditcardinformation_constructor_args():
+    sig = inspect.signature(tda593_billing_CreditCardInformation.__init__)
     params = list(sig.parameters.keys())
-    assert "expirationDate" in params, "Missing parameter 'expirationDate'"
     assert "cardNumber" in params, "Missing parameter 'cardNumber'"
-    assert "lastName" in params, "Missing parameter 'lastName'"
     assert "ccv" in params, "Missing parameter 'ccv'"
+    assert "expirationDate" in params, "Missing parameter 'expirationDate'"
     assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
 
-def test_tda593::billing::creditcardinformation_has_expirationDate():
-    assert hasattr(tda593::billing::CreditCardInformation, "expirationDate")
+def test_tda593_billing_creditcardinformation_has_cardNumber():
+    assert hasattr(tda593_billing_CreditCardInformation, "cardNumber")
     descriptor = None
-    for klass in tda593::billing::CreditCardInformation.__mro__:
-        if "expirationDate" in klass.__dict__:
-            descriptor = klass.__dict__["expirationDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::billing::creditcardinformation_has_cardNumber():
-    assert hasattr(tda593::billing::CreditCardInformation, "cardNumber")
-    descriptor = None
-    for klass in tda593::billing::CreditCardInformation.__mro__:
+    for klass in tda593_billing_CreditCardInformation.__mro__:
         if "cardNumber" in klass.__dict__:
             descriptor = klass.__dict__["cardNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::creditcardinformation_has_lastName():
-    assert hasattr(tda593::billing::CreditCardInformation, "lastName")
+def test_tda593_billing_creditcardinformation_has_ccv():
+    assert hasattr(tda593_billing_CreditCardInformation, "ccv")
     descriptor = None
-    for klass in tda593::billing::CreditCardInformation.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::billing::creditcardinformation_has_ccv():
-    assert hasattr(tda593::billing::CreditCardInformation, "ccv")
-    descriptor = None
-    for klass in tda593::billing::CreditCardInformation.__mro__:
+    for klass in tda593_billing_CreditCardInformation.__mro__:
         if "ccv" in klass.__dict__:
             descriptor = klass.__dict__["ccv"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::creditcardinformation_has_firstName():
-    assert hasattr(tda593::billing::CreditCardInformation, "firstName")
+def test_tda593_billing_creditcardinformation_has_expirationDate():
+    assert hasattr(tda593_billing_CreditCardInformation, "expirationDate")
     descriptor = None
-    for klass in tda593::billing::CreditCardInformation.__mro__:
+    for klass in tda593_billing_CreditCardInformation.__mro__:
+        if "expirationDate" in klass.__dict__:
+            descriptor = klass.__dict__["expirationDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_billing_creditcardinformation_has_firstName():
+    assert hasattr(tda593_billing_CreditCardInformation, "firstName")
+    descriptor = None
+    for klass in tda593_billing_CreditCardInformation.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
+def test_tda593_billing_creditcardinformation_has_lastName():
+    assert hasattr(tda593_billing_CreditCardInformation, "lastName")
+    descriptor = None
+    for klass in tda593_billing_CreditCardInformation.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tda593::billing::creditcardmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::CreditCardManager)
+
+def test_tda593_billing_creditcardmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_CreditCardManager)
 
 
-def test_tda593::billing::creditcardmanager_constructor_exists():
-    assert callable(tda593::billing::CreditCardManager.__init__)
+def test_tda593_billing_creditcardmanager_constructor_exists():
+    assert callable(tda593_billing_CreditCardManager.__init__)
 
 
-def test_tda593::billing::creditcardmanager_constructor_args():
-    sig = inspect.signature(tda593::billing::CreditCardManager.__init__)
+def test_tda593_billing_creditcardmanager_constructor_args():
+    sig = inspect.signature(tda593_billing_CreditCardManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::bankingmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::BankingManager)
+def test_tda593_billing_bankingmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_BankingManager)
 
 
-def test_tda593::billing::bankingmanager_constructor_exists():
-    assert callable(tda593::billing::BankingManager.__init__)
+def test_tda593_billing_bankingmanager_constructor_exists():
+    assert callable(tda593_billing_BankingManager.__init__)
 
 
-def test_tda593::billing::bankingmanager_constructor_args():
-    sig = inspect.signature(tda593::billing::BankingManager.__init__)
+def test_tda593_billing_bankingmanager_constructor_args():
+    sig = inspect.signature(tda593_billing_BankingManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::discountdataservice_is_not_abstract():
-    assert not inspect.isabstract(billing::DiscountDataService)
+def test_billing_discountdataservice_is_not_abstract():
+    assert not inspect.isabstract(billing_DiscountDataService)
 
 
-def test_billing::discountdataservice_constructor_exists():
-    assert callable(billing::DiscountDataService.__init__)
+def test_billing_discountdataservice_constructor_exists():
+    assert callable(billing_DiscountDataService.__init__)
 
 
-def test_billing::discountdataservice_constructor_args():
-    sig = inspect.signature(billing::DiscountDataService.__init__)
+def test_billing_discountdataservice_constructor_args():
+    sig = inspect.signature(billing_DiscountDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1118,72 +1118,72 @@ def test_discountmanager_constructor_args():
 
 
 
-def test_tda593::billing::admindiscountmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::AdminDiscountManager)
+def test_tda593_billing_admindiscountmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_AdminDiscountManager)
 
 
-def test_tda593::billing::admindiscountmanager_constructor_exists():
-    assert callable(tda593::billing::AdminDiscountManager.__init__)
+def test_tda593_billing_admindiscountmanager_constructor_exists():
+    assert callable(tda593_billing_AdminDiscountManager.__init__)
 
 
-def test_tda593::billing::admindiscountmanager_constructor_args():
-    sig = inspect.signature(tda593::billing::AdminDiscountManager.__init__)
+def test_tda593_billing_admindiscountmanager_constructor_args():
+    sig = inspect.signature(tda593_billing_AdminDiscountManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::discountmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::DiscountManagerImpl)
+def test_tda593_billing_discountmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_DiscountManagerImpl)
 
 
-def test_tda593::billing::discountmanagerimpl_constructor_exists():
-    assert callable(tda593::billing::DiscountManagerImpl.__init__)
+def test_tda593_billing_discountmanagerimpl_constructor_exists():
+    assert callable(tda593_billing_DiscountManagerImpl.__init__)
 
 
-def test_tda593::billing::discountmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::billing::DiscountManagerImpl.__init__)
+def test_tda593_billing_discountmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_billing_DiscountManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::discountdataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::DiscountDataService)
+def test_tda593_billing_discountdataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_DiscountDataService)
 
 
-def test_tda593::billing::discountdataservice_constructor_exists():
-    assert callable(tda593::billing::DiscountDataService.__init__)
+def test_tda593_billing_discountdataservice_constructor_exists():
+    assert callable(tda593_billing_DiscountDataService.__init__)
 
 
-def test_tda593::billing::discountdataservice_constructor_args():
-    sig = inspect.signature(tda593::billing::DiscountDataService.__init__)
+def test_tda593_billing_discountdataservice_constructor_args():
+    sig = inspect.signature(tda593_billing_DiscountDataService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::billmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::BillManager)
+def test_tda593_billing_billmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_BillManager)
 
 
-def test_tda593::billing::billmanager_constructor_exists():
-    assert callable(tda593::billing::BillManager.__init__)
+def test_tda593_billing_billmanager_constructor_exists():
+    assert callable(tda593_billing_BillManager.__init__)
 
 
-def test_tda593::billing::billmanager_constructor_args():
-    sig = inspect.signature(tda593::billing::BillManager.__init__)
+def test_tda593_billing_billmanager_constructor_args():
+    sig = inspect.signature(tda593_billing_BillManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booking::booking_is_not_abstract():
-    assert not inspect.isabstract(booking::Booking)
+def test_booking_booking_is_not_abstract():
+    assert not inspect.isabstract(booking_Booking)
 
 
-def test_booking::booking_constructor_exists():
-    assert callable(booking::Booking.__init__)
+def test_booking_booking_constructor_exists():
+    assert callable(booking_Booking.__init__)
 
 
-def test_booking::booking_constructor_args():
-    sig = inspect.signature(booking::Booking.__init__)
+def test_booking_booking_constructor_args():
+    sig = inspect.signature(booking_Booking.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1202,57 +1202,57 @@ def test_bill_constructor_args():
 
 
 
-def test_tda593::billing::bookingbill_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::BookingBill)
+def test_tda593_billing_bookingbill_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_BookingBill)
 
 
-def test_tda593::billing::bookingbill_constructor_exists():
-    assert callable(tda593::billing::BookingBill.__init__)
+def test_tda593_billing_bookingbill_constructor_exists():
+    assert callable(tda593_billing_BookingBill.__init__)
 
 
-def test_tda593::billing::bookingbill_constructor_args():
-    sig = inspect.signature(tda593::billing::BookingBill.__init__)
+def test_tda593_billing_bookingbill_constructor_args():
+    sig = inspect.signature(tda593_billing_BookingBill.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::service_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::Service)
+def test_tda593_billing_service_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_Service)
 
 
-def test_tda593::billing::service_constructor_exists():
-    assert callable(tda593::billing::Service.__init__)
+def test_tda593_billing_service_constructor_exists():
+    assert callable(tda593_billing_Service.__init__)
 
 
-def test_tda593::billing::service_constructor_args():
-    sig = inspect.signature(tda593::billing::Service.__init__)
+def test_tda593_billing_service_constructor_args():
+    sig = inspect.signature(tda593_billing_Service.__init__)
     params = list(sig.parameters.keys())
     assert "price" in params, "Missing parameter 'price'"
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tda593::billing::service_has_price():
-    assert hasattr(tda593::billing::Service, "price")
+def test_tda593_billing_service_has_price():
+    assert hasattr(tda593_billing_Service, "price")
     descriptor = None
-    for klass in tda593::billing::Service.__mro__:
+    for klass in tda593_billing_Service.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::service_has_id():
-    assert hasattr(tda593::billing::Service, "id")
+def test_tda593_billing_service_has_id():
+    assert hasattr(tda593_billing_Service, "id")
     descriptor = None
-    for klass in tda593::billing::Service.__mro__:
+    for klass in tda593_billing_Service.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::service_has_name():
-    assert hasattr(tda593::billing::Service, "name")
+def test_tda593_billing_service_has_name():
+    assert hasattr(tda593_billing_Service, "name")
     descriptor = None
-    for klass in tda593::billing::Service.__mro__:
+    for klass in tda593_billing_Service.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1260,57 +1260,57 @@ def test_tda593::billing::service_has_name():
 
 
 
-def test_billing::service_is_not_abstract():
-    assert not inspect.isabstract(billing::Service)
+def test_billing_service_is_not_abstract():
+    assert not inspect.isabstract(billing_Service)
 
 
-def test_billing::service_constructor_exists():
-    assert callable(billing::Service.__init__)
+def test_billing_service_constructor_exists():
+    assert callable(billing_Service.__init__)
 
 
-def test_billing::service_constructor_args():
-    sig = inspect.signature(billing::Service.__init__)
+def test_billing_service_constructor_args():
+    sig = inspect.signature(billing_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::purchase_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::Purchase)
+def test_tda593_billing_purchase_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_Purchase)
 
 
-def test_tda593::billing::purchase_constructor_exists():
-    assert callable(tda593::billing::Purchase.__init__)
+def test_tda593_billing_purchase_constructor_exists():
+    assert callable(tda593_billing_Purchase.__init__)
 
 
-def test_tda593::billing::purchase_constructor_args():
-    sig = inspect.signature(tda593::billing::Purchase.__init__)
+def test_tda593_billing_purchase_constructor_args():
+    sig = inspect.signature(tda593_billing_Purchase.__init__)
     params = list(sig.parameters.keys())
     assert "price" in params, "Missing parameter 'price'"
     assert "id" in params, "Missing parameter 'id'"
     assert "quantity" in params, "Missing parameter 'quantity'"
 
-def test_tda593::billing::purchase_has_price():
-    assert hasattr(tda593::billing::Purchase, "price")
+def test_tda593_billing_purchase_has_price():
+    assert hasattr(tda593_billing_Purchase, "price")
     descriptor = None
-    for klass in tda593::billing::Purchase.__mro__:
+    for klass in tda593_billing_Purchase.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::purchase_has_id():
-    assert hasattr(tda593::billing::Purchase, "id")
+def test_tda593_billing_purchase_has_id():
+    assert hasattr(tda593_billing_Purchase, "id")
     descriptor = None
-    for klass in tda593::billing::Purchase.__mro__:
+    for klass in tda593_billing_Purchase.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::purchase_has_quantity():
-    assert hasattr(tda593::billing::Purchase, "quantity")
+def test_tda593_billing_purchase_has_quantity():
+    assert hasattr(tda593_billing_Purchase, "quantity")
     descriptor = None
-    for klass in tda593::billing::Purchase.__mro__:
+    for klass in tda593_billing_Purchase.__mro__:
         if "quantity" in klass.__dict__:
             descriptor = klass.__dict__["quantity"]
             break
@@ -1318,126 +1318,126 @@ def test_tda593::billing::purchase_has_quantity():
 
 
 
-def test_billing::bill_is_not_abstract():
-    assert not inspect.isabstract(billing::Bill)
+def test_billing_bill_is_not_abstract():
+    assert not inspect.isabstract(billing_Bill)
 
 
-def test_billing::bill_constructor_exists():
-    assert callable(billing::Bill.__init__)
+def test_billing_bill_constructor_exists():
+    assert callable(billing_Bill.__init__)
 
 
-def test_billing::bill_constructor_args():
-    sig = inspect.signature(billing::Bill.__init__)
+def test_billing_bill_constructor_args():
+    sig = inspect.signature(billing_Bill.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::discount_is_not_abstract():
-    assert not inspect.isabstract(billing::Discount)
+def test_billing_discount_is_not_abstract():
+    assert not inspect.isabstract(billing_Discount)
 
 
-def test_billing::discount_constructor_exists():
-    assert callable(billing::Discount.__init__)
+def test_billing_discount_constructor_exists():
+    assert callable(billing_Discount.__init__)
 
 
-def test_billing::discount_constructor_args():
-    sig = inspect.signature(billing::Discount.__init__)
+def test_billing_discount_constructor_args():
+    sig = inspect.signature(billing_Discount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_billing::purchase_is_not_abstract():
-    assert not inspect.isabstract(billing::Purchase)
+def test_billing_purchase_is_not_abstract():
+    assert not inspect.isabstract(billing_Purchase)
 
 
-def test_billing::purchase_constructor_exists():
-    assert callable(billing::Purchase.__init__)
+def test_billing_purchase_constructor_exists():
+    assert callable(billing_Purchase.__init__)
 
 
-def test_billing::purchase_constructor_args():
-    sig = inspect.signature(billing::Purchase.__init__)
+def test_billing_purchase_constructor_args():
+    sig = inspect.signature(billing_Purchase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::bill_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::Bill)
+def test_tda593_billing_bill_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_Bill)
 
 
-def test_tda593::billing::bill_constructor_exists():
-    assert callable(tda593::billing::Bill.__init__)
+def test_tda593_billing_bill_constructor_exists():
+    assert callable(tda593_billing_Bill.__init__)
 
 
-def test_tda593::billing::bill_constructor_args():
-    sig = inspect.signature(tda593::billing::Bill.__init__)
+def test_tda593_billing_bill_constructor_args():
+    sig = inspect.signature(tda593_billing_Bill.__init__)
     params = list(sig.parameters.keys())
-    assert "isPaid" in params, "Missing parameter 'isPaid'"
     assert "id" in params, "Missing parameter 'id'"
     assert "isPublished" in params, "Missing parameter 'isPublished'"
     assert "date" in params, "Missing parameter 'date'"
+    assert "isPaid" in params, "Missing parameter 'isPaid'"
 
-def test_tda593::billing::bill_has_isPaid():
-    assert hasattr(tda593::billing::Bill, "isPaid")
+def test_tda593_billing_bill_has_id():
+    assert hasattr(tda593_billing_Bill, "id")
     descriptor = None
-    for klass in tda593::billing::Bill.__mro__:
-        if "isPaid" in klass.__dict__:
-            descriptor = klass.__dict__["isPaid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::billing::bill_has_id():
-    assert hasattr(tda593::billing::Bill, "id")
-    descriptor = None
-    for klass in tda593::billing::Bill.__mro__:
+    for klass in tda593_billing_Bill.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::bill_has_isPublished():
-    assert hasattr(tda593::billing::Bill, "isPublished")
+def test_tda593_billing_bill_has_isPublished():
+    assert hasattr(tda593_billing_Bill, "isPublished")
     descriptor = None
-    for klass in tda593::billing::Bill.__mro__:
+    for klass in tda593_billing_Bill.__mro__:
         if "isPublished" in klass.__dict__:
             descriptor = klass.__dict__["isPublished"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::bill_has_date():
-    assert hasattr(tda593::billing::Bill, "date")
+def test_tda593_billing_bill_has_date():
+    assert hasattr(tda593_billing_Bill, "date")
     descriptor = None
-    for klass in tda593::billing::Bill.__mro__:
+    for klass in tda593_billing_Bill.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
+def test_tda593_billing_bill_has_isPaid():
+    assert hasattr(tda593_billing_Bill, "isPaid")
+    descriptor = None
+    for klass in tda593_billing_Bill.__mro__:
+        if "isPaid" in klass.__dict__:
+            descriptor = klass.__dict__["isPaid"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tda593::facilities::roomdataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::RoomDataService)
+
+def test_tda593_facilities_roomdataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_RoomDataService)
 
 
-def test_tda593::facilities::roomdataservice_constructor_exists():
-    assert callable(tda593::facilities::RoomDataService.__init__)
+def test_tda593_facilities_roomdataservice_constructor_exists():
+    assert callable(tda593_facilities_RoomDataService.__init__)
 
 
-def test_tda593::facilities::roomdataservice_constructor_args():
-    sig = inspect.signature(tda593::facilities::RoomDataService.__init__)
+def test_tda593_facilities_roomdataservice_constructor_args():
+    sig = inspect.signature(tda593_facilities_RoomDataService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_facilities::keycardmanager_is_not_abstract():
-    assert not inspect.isabstract(facilities::KeyCardManager)
+def test_facilities_keycardmanager_is_not_abstract():
+    assert not inspect.isabstract(facilities_KeyCardManager)
 
 
-def test_facilities::keycardmanager_constructor_exists():
-    assert callable(facilities::KeyCardManager.__init__)
+def test_facilities_keycardmanager_constructor_exists():
+    assert callable(facilities_KeyCardManager.__init__)
 
 
-def test_facilities::keycardmanager_constructor_args():
-    sig = inspect.signature(facilities::KeyCardManager.__init__)
+def test_facilities_keycardmanager_constructor_args():
+    sig = inspect.signature(facilities_KeyCardManager.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1456,23 +1456,23 @@ def test_discount_constructor_args():
 
 
 
-def test_tda593::billing::percentagediscount_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::PercentageDiscount)
+def test_tda593_billing_percentagediscount_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_PercentageDiscount)
 
 
-def test_tda593::billing::percentagediscount_constructor_exists():
-    assert callable(tda593::billing::PercentageDiscount.__init__)
+def test_tda593_billing_percentagediscount_constructor_exists():
+    assert callable(tda593_billing_PercentageDiscount.__init__)
 
 
-def test_tda593::billing::percentagediscount_constructor_args():
-    sig = inspect.signature(tda593::billing::PercentageDiscount.__init__)
+def test_tda593_billing_percentagediscount_constructor_args():
+    sig = inspect.signature(tda593_billing_PercentageDiscount.__init__)
     params = list(sig.parameters.keys())
     assert "percentage" in params, "Missing parameter 'percentage'"
 
-def test_tda593::billing::percentagediscount_has_percentage():
-    assert hasattr(tda593::billing::PercentageDiscount, "percentage")
+def test_tda593_billing_percentagediscount_has_percentage():
+    assert hasattr(tda593_billing_PercentageDiscount, "percentage")
     descriptor = None
-    for klass in tda593::billing::PercentageDiscount.__mro__:
+    for klass in tda593_billing_PercentageDiscount.__mro__:
         if "percentage" in klass.__dict__:
             descriptor = klass.__dict__["percentage"]
             break
@@ -1480,23 +1480,23 @@ def test_tda593::billing::percentagediscount_has_percentage():
 
 
 
-def test_tda593::billing::sumdiscount_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::SumDiscount)
+def test_tda593_billing_sumdiscount_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_SumDiscount)
 
 
-def test_tda593::billing::sumdiscount_constructor_exists():
-    assert callable(tda593::billing::SumDiscount.__init__)
+def test_tda593_billing_sumdiscount_constructor_exists():
+    assert callable(tda593_billing_SumDiscount.__init__)
 
 
-def test_tda593::billing::sumdiscount_constructor_args():
-    sig = inspect.signature(tda593::billing::SumDiscount.__init__)
+def test_tda593_billing_sumdiscount_constructor_args():
+    sig = inspect.signature(tda593_billing_SumDiscount.__init__)
     params = list(sig.parameters.keys())
     assert "discountSum" in params, "Missing parameter 'discountSum'"
 
-def test_tda593::billing::sumdiscount_has_discountSum():
-    assert hasattr(tda593::billing::SumDiscount, "discountSum")
+def test_tda593_billing_sumdiscount_has_discountSum():
+    assert hasattr(tda593_billing_SumDiscount, "discountSum")
     descriptor = None
-    for klass in tda593::billing::SumDiscount.__mro__:
+    for klass in tda593_billing_SumDiscount.__mro__:
         if "discountSum" in klass.__dict__:
             descriptor = klass.__dict__["discountSum"]
             break
@@ -1504,307 +1504,67 @@ def test_tda593::billing::sumdiscount_has_discountSum():
 
 
 
-def test_booking::legalentity_is_not_abstract():
-    assert not inspect.isabstract(booking::LegalEntity)
+def test_booking_legalentity_is_not_abstract():
+    assert not inspect.isabstract(booking_LegalEntity)
 
 
-def test_booking::legalentity_constructor_exists():
-    assert callable(booking::LegalEntity.__init__)
+def test_booking_legalentity_constructor_exists():
+    assert callable(booking_LegalEntity.__init__)
 
 
-def test_booking::legalentity_constructor_args():
-    sig = inspect.signature(booking::LegalEntity.__init__)
+def test_booking_legalentity_constructor_args():
+    sig = inspect.signature(booking_LegalEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::billing::discountlimit_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::DiscountLimit)
+def test_tda593_billing_discountlimit_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_DiscountLimit)
 
 
-def test_tda593::billing::discountlimit_constructor_exists():
-    assert callable(tda593::billing::DiscountLimit.__init__)
+def test_tda593_billing_discountlimit_constructor_exists():
+    assert callable(tda593_billing_DiscountLimit.__init__)
 
 
-def test_tda593::billing::discountlimit_constructor_args():
-    sig = inspect.signature(tda593::billing::DiscountLimit.__init__)
+def test_tda593_billing_discountlimit_constructor_args():
+    sig = inspect.signature(tda593_billing_DiscountLimit.__init__)
     params = list(sig.parameters.keys())
     assert "endDate" in params, "Missing parameter 'endDate'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "startDate" in params, "Missing parameter 'startDate'"
     assert "timesLeftToUse" in params, "Missing parameter 'timesLeftToUse'"
+    assert "startDate" in params, "Missing parameter 'startDate'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_tda593::billing::discountlimit_has_endDate():
-    assert hasattr(tda593::billing::DiscountLimit, "endDate")
+def test_tda593_billing_discountlimit_has_endDate():
+    assert hasattr(tda593_billing_DiscountLimit, "endDate")
     descriptor = None
-    for klass in tda593::billing::DiscountLimit.__mro__:
+    for klass in tda593_billing_DiscountLimit.__mro__:
         if "endDate" in klass.__dict__:
             descriptor = klass.__dict__["endDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::discountlimit_has_id():
-    assert hasattr(tda593::billing::DiscountLimit, "id")
+def test_tda593_billing_discountlimit_has_timesLeftToUse():
+    assert hasattr(tda593_billing_DiscountLimit, "timesLeftToUse")
     descriptor = None
-    for klass in tda593::billing::DiscountLimit.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::billing::discountlimit_has_startDate():
-    assert hasattr(tda593::billing::DiscountLimit, "startDate")
-    descriptor = None
-    for klass in tda593::billing::DiscountLimit.__mro__:
-        if "startDate" in klass.__dict__:
-            descriptor = klass.__dict__["startDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::billing::discountlimit_has_timesLeftToUse():
-    assert hasattr(tda593::billing::DiscountLimit, "timesLeftToUse")
-    descriptor = None
-    for klass in tda593::billing::DiscountLimit.__mro__:
+    for klass in tda593_billing_DiscountLimit.__mro__:
         if "timesLeftToUse" in klass.__dict__:
             descriptor = klass.__dict__["timesLeftToUse"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_billing::discountlimit_is_not_abstract():
-    assert not inspect.isabstract(billing::DiscountLimit)
-
-
-def test_billing::discountlimit_constructor_exists():
-    assert callable(billing::DiscountLimit.__init__)
-
-
-def test_billing::discountlimit_constructor_args():
-    sig = inspect.signature(billing::DiscountLimit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::billing::discount_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::Discount)
-
-
-def test_tda593::billing::discount_constructor_exists():
-    assert callable(tda593::billing::Discount.__init__)
-
-
-def test_tda593::billing::discount_constructor_args():
-    sig = inspect.signature(tda593::billing::Discount.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "code" in params, "Missing parameter 'code'"
-
-def test_tda593::billing::discount_has_name():
-    assert hasattr(tda593::billing::Discount, "name")
+def test_tda593_billing_discountlimit_has_startDate():
+    assert hasattr(tda593_billing_DiscountLimit, "startDate")
     descriptor = None
-    for klass in tda593::billing::Discount.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in tda593_billing_DiscountLimit.__mro__:
+        if "startDate" in klass.__dict__:
+            descriptor = klass.__dict__["startDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::billing::discount_has_code():
-    assert hasattr(tda593::billing::Discount, "code")
+def test_tda593_billing_discountlimit_has_id():
+    assert hasattr(tda593_billing_DiscountLimit, "id")
     descriptor = None
-    for klass in tda593::billing::Discount.__mro__:
-        if "code" in klass.__dict__:
-            descriptor = klass.__dict__["code"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tda593::billing::discountmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::billing::DiscountManager)
-
-
-def test_tda593::billing::discountmanager_constructor_exists():
-    assert callable(tda593::billing::DiscountManager.__init__)
-
-
-def test_tda593::billing::discountmanager_constructor_args():
-    sig = inspect.signature(tda593::billing::DiscountManager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_facilities::adminkeycardmanager_is_not_abstract():
-    assert not inspect.isabstract(facilities::AdminKeyCardManager)
-
-
-def test_facilities::adminkeycardmanager_constructor_exists():
-    assert callable(facilities::AdminKeyCardManager.__init__)
-
-
-def test_facilities::adminkeycardmanager_constructor_args():
-    sig = inspect.signature(facilities::AdminKeyCardManager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_facilities::keycardmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(facilities::KeyCardManagerImpl)
-
-
-def test_facilities::keycardmanagerimpl_constructor_exists():
-    assert callable(facilities::KeyCardManagerImpl.__init__)
-
-
-def test_facilities::keycardmanagerimpl_constructor_args():
-    sig = inspect.signature(facilities::KeyCardManagerImpl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::facilities::adminkeycardmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::AdminKeyCardManagerImpl)
-
-
-def test_tda593::facilities::adminkeycardmanagerimpl_constructor_exists():
-    assert callable(tda593::facilities::AdminKeyCardManagerImpl.__init__)
-
-
-def test_tda593::facilities::adminkeycardmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::facilities::AdminKeyCardManagerImpl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_facilities::adminroommanager_is_not_abstract():
-    assert not inspect.isabstract(facilities::AdminRoomManager)
-
-
-def test_facilities::adminroommanager_constructor_exists():
-    assert callable(facilities::AdminRoomManager.__init__)
-
-
-def test_facilities::adminroommanager_constructor_args():
-    sig = inspect.signature(facilities::AdminRoomManager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_facilities::roommanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(facilities::RoomManagerImpl)
-
-
-def test_facilities::roommanagerimpl_constructor_exists():
-    assert callable(facilities::RoomManagerImpl.__init__)
-
-
-def test_facilities::roommanagerimpl_constructor_args():
-    sig = inspect.signature(facilities::RoomManagerImpl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::facilities::adminroommanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::AdminRoomManagerImpl)
-
-
-def test_tda593::facilities::adminroommanagerimpl_constructor_exists():
-    assert callable(tda593::facilities::AdminRoomManagerImpl.__init__)
-
-
-def test_tda593::facilities::adminroommanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::facilities::AdminRoomManagerImpl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::facilities::keycarddataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::KeyCardDataService)
-
-
-def test_tda593::facilities::keycarddataservice_constructor_exists():
-    assert callable(tda593::facilities::KeyCardDataService.__init__)
-
-
-def test_tda593::facilities::keycarddataservice_constructor_args():
-    sig = inspect.signature(tda593::facilities::KeyCardDataService.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_facilities::keycarddataservice_is_not_abstract():
-    assert not inspect.isabstract(facilities::KeyCardDataService)
-
-
-def test_facilities::keycarddataservice_constructor_exists():
-    assert callable(facilities::KeyCardDataService.__init__)
-
-
-def test_facilities::keycarddataservice_constructor_args():
-    sig = inspect.signature(facilities::KeyCardDataService.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::facilities::roomtypedataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::RoomTypeDataService)
-
-
-def test_tda593::facilities::roomtypedataservice_constructor_exists():
-    assert callable(tda593::facilities::RoomTypeDataService.__init__)
-
-
-def test_tda593::facilities::roomtypedataservice_constructor_args():
-    sig = inspect.signature(tda593::facilities::RoomTypeDataService.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roommanager_is_not_abstract():
-    assert not inspect.isabstract(RoomManager)
-
-
-def test_roommanager_constructor_exists():
-    assert callable(RoomManager.__init__)
-
-
-def test_roommanager_constructor_args():
-    sig = inspect.signature(RoomManager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::facilities::adminroommanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::AdminRoomManager)
-
-
-def test_tda593::facilities::adminroommanager_constructor_exists():
-    assert callable(tda593::facilities::AdminRoomManager.__init__)
-
-
-def test_tda593::facilities::adminroommanager_constructor_args():
-    sig = inspect.signature(tda593::facilities::AdminRoomManager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tda593::facilities::keycard_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::KeyCard)
-
-
-def test_tda593::facilities::keycard_constructor_exists():
-    assert callable(tda593::facilities::KeyCard.__init__)
-
-
-def test_tda593::facilities::keycard_constructor_args():
-    sig = inspect.signature(tda593::facilities::KeyCard.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_tda593::facilities::keycard_has_id():
-    assert hasattr(tda593::facilities::KeyCard, "id")
-    descriptor = None
-    for klass in tda593::facilities::KeyCard.__mro__:
+    for klass in tda593_billing_DiscountLimit.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1812,100 +1572,218 @@ def test_tda593::facilities::keycard_has_id():
 
 
 
-def test_tda593::facilities::keycardmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::KeyCardManager)
+def test_billing_discountlimit_is_not_abstract():
+    assert not inspect.isabstract(billing_DiscountLimit)
 
 
-def test_tda593::facilities::keycardmanager_constructor_exists():
-    assert callable(tda593::facilities::KeyCardManager.__init__)
+def test_billing_discountlimit_constructor_exists():
+    assert callable(billing_DiscountLimit.__init__)
 
 
-def test_tda593::facilities::keycardmanager_constructor_args():
-    sig = inspect.signature(tda593::facilities::KeyCardManager.__init__)
+def test_billing_discountlimit_constructor_args():
+    sig = inspect.signature(billing_DiscountLimit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_keycardmanager_is_not_abstract():
-    assert not inspect.isabstract(KeyCardManager)
+def test_tda593_billing_discount_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_Discount)
 
 
-def test_keycardmanager_constructor_exists():
-    assert callable(KeyCardManager.__init__)
+def test_tda593_billing_discount_constructor_exists():
+    assert callable(tda593_billing_Discount.__init__)
 
 
-def test_keycardmanager_constructor_args():
-    sig = inspect.signature(KeyCardManager.__init__)
+def test_tda593_billing_discount_constructor_args():
+    sig = inspect.signature(tda593_billing_Discount.__init__)
+    params = list(sig.parameters.keys())
+    assert "code" in params, "Missing parameter 'code'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_tda593_billing_discount_has_code():
+    assert hasattr(tda593_billing_Discount, "code")
+    descriptor = None
+    for klass in tda593_billing_Discount.__mro__:
+        if "code" in klass.__dict__:
+            descriptor = klass.__dict__["code"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_billing_discount_has_name():
+    assert hasattr(tda593_billing_Discount, "name")
+    descriptor = None
+    for klass in tda593_billing_Discount.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tda593_billing_discountmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_billing_DiscountManager)
+
+
+def test_tda593_billing_discountmanager_constructor_exists():
+    assert callable(tda593_billing_DiscountManager.__init__)
+
+
+def test_tda593_billing_discountmanager_constructor_args():
+    sig = inspect.signature(tda593_billing_DiscountManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::facilities::keycardmanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::KeyCardManagerImpl)
+def test_facilities_adminkeycardmanager_is_not_abstract():
+    assert not inspect.isabstract(facilities_AdminKeyCardManager)
 
 
-def test_tda593::facilities::keycardmanagerimpl_constructor_exists():
-    assert callable(tda593::facilities::KeyCardManagerImpl.__init__)
+def test_facilities_adminkeycardmanager_constructor_exists():
+    assert callable(facilities_AdminKeyCardManager.__init__)
 
 
-def test_tda593::facilities::keycardmanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::facilities::KeyCardManagerImpl.__init__)
+def test_facilities_adminkeycardmanager_constructor_args():
+    sig = inspect.signature(facilities_AdminKeyCardManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::facilities::adminkeycardmanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::AdminKeyCardManager)
+def test_facilities_keycardmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(facilities_KeyCardManagerImpl)
 
 
-def test_tda593::facilities::adminkeycardmanager_constructor_exists():
-    assert callable(tda593::facilities::AdminKeyCardManager.__init__)
+def test_facilities_keycardmanagerimpl_constructor_exists():
+    assert callable(facilities_KeyCardManagerImpl.__init__)
 
 
-def test_tda593::facilities::adminkeycardmanager_constructor_args():
-    sig = inspect.signature(tda593::facilities::AdminKeyCardManager.__init__)
+def test_facilities_keycardmanagerimpl_constructor_args():
+    sig = inspect.signature(facilities_KeyCardManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_facilities::roomtypedataservice_is_not_abstract():
-    assert not inspect.isabstract(facilities::RoomTypeDataService)
+def test_tda593_facilities_adminkeycardmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_AdminKeyCardManagerImpl)
 
 
-def test_facilities::roomtypedataservice_constructor_exists():
-    assert callable(facilities::RoomTypeDataService.__init__)
+def test_tda593_facilities_adminkeycardmanagerimpl_constructor_exists():
+    assert callable(tda593_facilities_AdminKeyCardManagerImpl.__init__)
 
 
-def test_facilities::roomtypedataservice_constructor_args():
-    sig = inspect.signature(facilities::RoomTypeDataService.__init__)
+def test_tda593_facilities_adminkeycardmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_facilities_AdminKeyCardManagerImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_facilities::roomdataservice_is_not_abstract():
-    assert not inspect.isabstract(facilities::RoomDataService)
+def test_facilities_adminroommanager_is_not_abstract():
+    assert not inspect.isabstract(facilities_AdminRoomManager)
 
 
-def test_facilities::roomdataservice_constructor_exists():
-    assert callable(facilities::RoomDataService.__init__)
+def test_facilities_adminroommanager_constructor_exists():
+    assert callable(facilities_AdminRoomManager.__init__)
 
 
-def test_facilities::roomdataservice_constructor_args():
-    sig = inspect.signature(facilities::RoomDataService.__init__)
+def test_facilities_adminroommanager_constructor_args():
+    sig = inspect.signature(facilities_AdminRoomManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::facilities::roommanagerimpl_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::RoomManagerImpl)
+def test_facilities_roommanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(facilities_RoomManagerImpl)
 
 
-def test_tda593::facilities::roommanagerimpl_constructor_exists():
-    assert callable(tda593::facilities::RoomManagerImpl.__init__)
+def test_facilities_roommanagerimpl_constructor_exists():
+    assert callable(facilities_RoomManagerImpl.__init__)
 
 
-def test_tda593::facilities::roommanagerimpl_constructor_args():
-    sig = inspect.signature(tda593::facilities::RoomManagerImpl.__init__)
+def test_facilities_roommanagerimpl_constructor_args():
+    sig = inspect.signature(facilities_RoomManagerImpl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_adminroommanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_AdminRoomManagerImpl)
+
+
+def test_tda593_facilities_adminroommanagerimpl_constructor_exists():
+    assert callable(tda593_facilities_AdminRoomManagerImpl.__init__)
+
+
+def test_tda593_facilities_adminroommanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_facilities_AdminRoomManagerImpl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_keycarddataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_KeyCardDataService)
+
+
+def test_tda593_facilities_keycarddataservice_constructor_exists():
+    assert callable(tda593_facilities_KeyCardDataService.__init__)
+
+
+def test_tda593_facilities_keycarddataservice_constructor_args():
+    sig = inspect.signature(tda593_facilities_KeyCardDataService.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_facilities_keycarddataservice_is_not_abstract():
+    assert not inspect.isabstract(facilities_KeyCardDataService)
+
+
+def test_facilities_keycarddataservice_constructor_exists():
+    assert callable(facilities_KeyCardDataService.__init__)
+
+
+def test_facilities_keycarddataservice_constructor_args():
+    sig = inspect.signature(facilities_KeyCardDataService.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_roomtypedataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_RoomTypeDataService)
+
+
+def test_tda593_facilities_roomtypedataservice_constructor_exists():
+    assert callable(tda593_facilities_RoomTypeDataService.__init__)
+
+
+def test_tda593_facilities_roomtypedataservice_constructor_args():
+    sig = inspect.signature(tda593_facilities_RoomTypeDataService.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_facilities_roomtypedataservice_is_not_abstract():
+    assert not inspect.isabstract(facilities_RoomTypeDataService)
+
+
+def test_facilities_roomtypedataservice_constructor_exists():
+    assert callable(facilities_RoomTypeDataService.__init__)
+
+
+def test_facilities_roomtypedataservice_constructor_args():
+    sig = inspect.signature(facilities_RoomTypeDataService.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_facilities_roomdataservice_is_not_abstract():
+    assert not inspect.isabstract(facilities_RoomDataService)
+
+
+def test_facilities_roomdataservice_constructor_exists():
+    assert callable(facilities_RoomDataService.__init__)
+
+
+def test_facilities_roomdataservice_constructor_args():
+    sig = inspect.signature(facilities_RoomDataService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1924,67 +1802,67 @@ def test_room_constructor_args():
 
 
 
-def test_tda593::facilities::conferenceroom_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::ConferenceRoom)
+def test_tda593_facilities_conferenceroom_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_ConferenceRoom)
 
 
-def test_tda593::facilities::conferenceroom_constructor_exists():
-    assert callable(tda593::facilities::ConferenceRoom.__init__)
+def test_tda593_facilities_conferenceroom_constructor_exists():
+    assert callable(tda593_facilities_ConferenceRoom.__init__)
 
 
-def test_tda593::facilities::conferenceroom_constructor_args():
-    sig = inspect.signature(tda593::facilities::ConferenceRoom.__init__)
+def test_tda593_facilities_conferenceroom_constructor_args():
+    sig = inspect.signature(tda593_facilities_ConferenceRoom.__init__)
     params = list(sig.parameters.keys())
-    assert "numberOfSeats" in params, "Missing parameter 'numberOfSeats'"
     assert "equipment" in params, "Missing parameter 'equipment'"
+    assert "numberOfSeats" in params, "Missing parameter 'numberOfSeats'"
 
-def test_tda593::facilities::conferenceroom_has_numberOfSeats():
-    assert hasattr(tda593::facilities::ConferenceRoom, "numberOfSeats")
+def test_tda593_facilities_conferenceroom_has_equipment():
+    assert hasattr(tda593_facilities_ConferenceRoom, "equipment")
     descriptor = None
-    for klass in tda593::facilities::ConferenceRoom.__mro__:
-        if "numberOfSeats" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfSeats"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::facilities::conferenceroom_has_equipment():
-    assert hasattr(tda593::facilities::ConferenceRoom, "equipment")
-    descriptor = None
-    for klass in tda593::facilities::ConferenceRoom.__mro__:
+    for klass in tda593_facilities_ConferenceRoom.__mro__:
         if "equipment" in klass.__dict__:
             descriptor = klass.__dict__["equipment"]
             break
     assert isinstance(descriptor, property)
 
+def test_tda593_facilities_conferenceroom_has_numberOfSeats():
+    assert hasattr(tda593_facilities_ConferenceRoom, "numberOfSeats")
+    descriptor = None
+    for klass in tda593_facilities_ConferenceRoom.__mro__:
+        if "numberOfSeats" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfSeats"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tda593::facilities::guestroom_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::GuestRoom)
+
+def test_tda593_facilities_guestroom_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_GuestRoom)
 
 
-def test_tda593::facilities::guestroom_constructor_exists():
-    assert callable(tda593::facilities::GuestRoom.__init__)
+def test_tda593_facilities_guestroom_constructor_exists():
+    assert callable(tda593_facilities_GuestRoom.__init__)
 
 
-def test_tda593::facilities::guestroom_constructor_args():
-    sig = inspect.signature(tda593::facilities::GuestRoom.__init__)
+def test_tda593_facilities_guestroom_constructor_args():
+    sig = inspect.signature(tda593_facilities_GuestRoom.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfExtrabeds" in params, "Missing parameter 'numberOfExtrabeds'"
     assert "numberOfBeds" in params, "Missing parameter 'numberOfBeds'"
 
-def test_tda593::facilities::guestroom_has_numberOfExtrabeds():
-    assert hasattr(tda593::facilities::GuestRoom, "numberOfExtrabeds")
+def test_tda593_facilities_guestroom_has_numberOfExtrabeds():
+    assert hasattr(tda593_facilities_GuestRoom, "numberOfExtrabeds")
     descriptor = None
-    for klass in tda593::facilities::GuestRoom.__mro__:
+    for klass in tda593_facilities_GuestRoom.__mro__:
         if "numberOfExtrabeds" in klass.__dict__:
             descriptor = klass.__dict__["numberOfExtrabeds"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::facilities::guestroom_has_numberOfBeds():
-    assert hasattr(tda593::facilities::GuestRoom, "numberOfBeds")
+def test_tda593_facilities_guestroom_has_numberOfBeds():
+    assert hasattr(tda593_facilities_GuestRoom, "numberOfBeds")
     descriptor = None
-    for klass in tda593::facilities::GuestRoom.__mro__:
+    for klass in tda593_facilities_GuestRoom.__mro__:
         if "numberOfBeds" in klass.__dict__:
             descriptor = klass.__dict__["numberOfBeds"]
             break
@@ -1992,210 +1870,319 @@ def test_tda593::facilities::guestroom_has_numberOfBeds():
 
 
 
-def test_facilities::roomtype_is_not_abstract():
-    assert not inspect.isabstract(facilities::RoomType)
+def test_facilities_roomtype_is_not_abstract():
+    assert not inspect.isabstract(facilities_RoomType)
 
 
-def test_facilities::roomtype_constructor_exists():
-    assert callable(facilities::RoomType.__init__)
+def test_facilities_roomtype_constructor_exists():
+    assert callable(facilities_RoomType.__init__)
 
 
-def test_facilities::roomtype_constructor_args():
-    sig = inspect.signature(facilities::RoomType.__init__)
+def test_facilities_roomtype_constructor_args():
+    sig = inspect.signature(facilities_RoomType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_facilities::keycard_is_not_abstract():
-    assert not inspect.isabstract(facilities::KeyCard)
+def test_facilities_keycard_is_not_abstract():
+    assert not inspect.isabstract(facilities_KeyCard)
 
 
-def test_facilities::keycard_constructor_exists():
-    assert callable(facilities::KeyCard.__init__)
+def test_facilities_keycard_constructor_exists():
+    assert callable(facilities_KeyCard.__init__)
 
 
-def test_facilities::keycard_constructor_args():
-    sig = inspect.signature(facilities::KeyCard.__init__)
+def test_facilities_keycard_constructor_args():
+    sig = inspect.signature(facilities_KeyCard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::facilities::room_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::Room)
+def test_tda593_facilities_room_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_Room)
 
 
-def test_tda593::facilities::room_constructor_exists():
-    assert callable(tda593::facilities::Room.__init__)
+def test_tda593_facilities_room_constructor_exists():
+    assert callable(tda593_facilities_Room.__init__)
 
 
-def test_tda593::facilities::room_constructor_args():
-    sig = inspect.signature(tda593::facilities::Room.__init__)
+def test_tda593_facilities_room_constructor_args():
+    sig = inspect.signature(tda593_facilities_Room.__init__)
     params = list(sig.parameters.keys())
+    assert "photos" in params, "Missing parameter 'photos'"
+    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
+    assert "isOperational" in params, "Missing parameter 'isOperational'"
     assert "isBeingCleaned" in params, "Missing parameter 'isBeingCleaned'"
     assert "description" in params, "Missing parameter 'description'"
     assert "floor" in params, "Missing parameter 'floor'"
-    assert "photos" in params, "Missing parameter 'photos'"
     assert "disabilityApprovals" in params, "Missing parameter 'disabilityApprovals'"
-    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
-    assert "isOperational" in params, "Missing parameter 'isOperational'"
 
-def test_tda593::facilities::room_has_isBeingCleaned():
-    assert hasattr(tda593::facilities::Room, "isBeingCleaned")
+def test_tda593_facilities_room_has_photos():
+    assert hasattr(tda593_facilities_Room, "photos")
     descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
-        if "isBeingCleaned" in klass.__dict__:
-            descriptor = klass.__dict__["isBeingCleaned"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::facilities::room_has_description():
-    assert hasattr(tda593::facilities::Room, "description")
-    descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::facilities::room_has_floor():
-    assert hasattr(tda593::facilities::Room, "floor")
-    descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
-        if "floor" in klass.__dict__:
-            descriptor = klass.__dict__["floor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::facilities::room_has_photos():
-    assert hasattr(tda593::facilities::Room, "photos")
-    descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
+    for klass in tda593_facilities_Room.__mro__:
         if "photos" in klass.__dict__:
             descriptor = klass.__dict__["photos"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::facilities::room_has_disabilityApprovals():
-    assert hasattr(tda593::facilities::Room, "disabilityApprovals")
+def test_tda593_facilities_room_has_roomNumber():
+    assert hasattr(tda593_facilities_Room, "roomNumber")
     descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
-        if "disabilityApprovals" in klass.__dict__:
-            descriptor = klass.__dict__["disabilityApprovals"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tda593::facilities::room_has_roomNumber():
-    assert hasattr(tda593::facilities::Room, "roomNumber")
-    descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
+    for klass in tda593_facilities_Room.__mro__:
         if "roomNumber" in klass.__dict__:
             descriptor = klass.__dict__["roomNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::facilities::room_has_isOperational():
-    assert hasattr(tda593::facilities::Room, "isOperational")
+def test_tda593_facilities_room_has_isOperational():
+    assert hasattr(tda593_facilities_Room, "isOperational")
     descriptor = None
-    for klass in tda593::facilities::Room.__mro__:
+    for klass in tda593_facilities_Room.__mro__:
         if "isOperational" in klass.__dict__:
             descriptor = klass.__dict__["isOperational"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_tda593::facilities::roomtype_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::RoomType)
-
-
-def test_tda593::facilities::roomtype_constructor_exists():
-    assert callable(tda593::facilities::RoomType.__init__)
-
-
-def test_tda593::facilities::roomtype_constructor_args():
-    sig = inspect.signature(tda593::facilities::RoomType.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "roomApprovals" in params, "Missing parameter 'roomApprovals'"
-    assert "price" in params, "Missing parameter 'price'"
-
-def test_tda593::facilities::roomtype_has_description():
-    assert hasattr(tda593::facilities::RoomType, "description")
+def test_tda593_facilities_room_has_isBeingCleaned():
+    assert hasattr(tda593_facilities_Room, "isBeingCleaned")
     descriptor = None
-    for klass in tda593::facilities::RoomType.__mro__:
+    for klass in tda593_facilities_Room.__mro__:
+        if "isBeingCleaned" in klass.__dict__:
+            descriptor = klass.__dict__["isBeingCleaned"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_facilities_room_has_description():
+    assert hasattr(tda593_facilities_Room, "description")
+    descriptor = None
+    for klass in tda593_facilities_Room.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::facilities::roomtype_has_name():
-    assert hasattr(tda593::facilities::RoomType, "name")
+def test_tda593_facilities_room_has_floor():
+    assert hasattr(tda593_facilities_Room, "floor")
     descriptor = None
-    for klass in tda593::facilities::RoomType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in tda593_facilities_Room.__mro__:
+        if "floor" in klass.__dict__:
+            descriptor = klass.__dict__["floor"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::facilities::roomtype_has_roomApprovals():
-    assert hasattr(tda593::facilities::RoomType, "roomApprovals")
+def test_tda593_facilities_room_has_disabilityApprovals():
+    assert hasattr(tda593_facilities_Room, "disabilityApprovals")
     descriptor = None
-    for klass in tda593::facilities::RoomType.__mro__:
-        if "roomApprovals" in klass.__dict__:
-            descriptor = klass.__dict__["roomApprovals"]
+    for klass in tda593_facilities_Room.__mro__:
+        if "disabilityApprovals" in klass.__dict__:
+            descriptor = klass.__dict__["disabilityApprovals"]
             break
     assert isinstance(descriptor, property)
 
-def test_tda593::facilities::roomtype_has_price():
-    assert hasattr(tda593::facilities::RoomType, "price")
+
+
+def test_tda593_facilities_roomtype_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_RoomType)
+
+
+def test_tda593_facilities_roomtype_constructor_exists():
+    assert callable(tda593_facilities_RoomType.__init__)
+
+
+def test_tda593_facilities_roomtype_constructor_args():
+    sig = inspect.signature(tda593_facilities_RoomType.__init__)
+    params = list(sig.parameters.keys())
+    assert "price" in params, "Missing parameter 'price'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "roomApprovals" in params, "Missing parameter 'roomApprovals'"
+
+def test_tda593_facilities_roomtype_has_price():
+    assert hasattr(tda593_facilities_RoomType, "price")
     descriptor = None
-    for klass in tda593::facilities::RoomType.__mro__:
+    for klass in tda593_facilities_RoomType.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
+def test_tda593_facilities_roomtype_has_description():
+    assert hasattr(tda593_facilities_RoomType, "description")
+    descriptor = None
+    for klass in tda593_facilities_RoomType.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_facilities_roomtype_has_name():
+    assert hasattr(tda593_facilities_RoomType, "name")
+    descriptor = None
+    for klass in tda593_facilities_RoomType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tda593_facilities_roomtype_has_roomApprovals():
+    assert hasattr(tda593_facilities_RoomType, "roomApprovals")
+    descriptor = None
+    for klass in tda593_facilities_RoomType.__mro__:
+        if "roomApprovals" in klass.__dict__:
+            descriptor = klass.__dict__["roomApprovals"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tda593::facilities::roommanager_is_not_abstract():
-    assert not inspect.isabstract(tda593::facilities::RoomManager)
+
+def test_tda593_facilities_roommanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_RoomManager)
 
 
-def test_tda593::facilities::roommanager_constructor_exists():
-    assert callable(tda593::facilities::RoomManager.__init__)
+def test_tda593_facilities_roommanager_constructor_exists():
+    assert callable(tda593_facilities_RoomManager.__init__)
 
 
-def test_tda593::facilities::roommanager_constructor_args():
-    sig = inspect.signature(tda593::facilities::RoomManager.__init__)
+def test_tda593_facilities_roommanager_constructor_args():
+    sig = inspect.signature(tda593_facilities_RoomManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tda593::california::dataservice_is_not_abstract():
-    assert not inspect.isabstract(tda593::california::DataService)
+def test_tda593_california_dataservice_is_not_abstract():
+    assert not inspect.isabstract(tda593_california_DataService)
 
 
-def test_tda593::california::dataservice_constructor_exists():
-    assert callable(tda593::california::DataService.__init__)
+def test_tda593_california_dataservice_constructor_exists():
+    assert callable(tda593_california_DataService.__init__)
 
 
-def test_tda593::california::dataservice_constructor_args():
-    sig = inspect.signature(tda593::california::DataService.__init__)
+def test_tda593_california_dataservice_constructor_args():
+    sig = inspect.signature(tda593_california_DataService.__init__)
     params = list(sig.parameters.keys())
 
-def test_disabilityapproval_exists():
-    # Check that the Enumeration exists
-    assert DisabilityApproval is not None
 
-def test_disabilityapproval_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DisabilityApproval]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DisabilityApproval"
+
+def test_roommanager_is_not_abstract():
+    assert not inspect.isabstract(RoomManager)
+
+
+def test_roommanager_constructor_exists():
+    assert callable(RoomManager.__init__)
+
+
+def test_roommanager_constructor_args():
+    sig = inspect.signature(RoomManager.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_roommanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_RoomManagerImpl)
+
+
+def test_tda593_facilities_roommanagerimpl_constructor_exists():
+    assert callable(tda593_facilities_RoomManagerImpl.__init__)
+
+
+def test_tda593_facilities_roommanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_facilities_RoomManagerImpl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_adminroommanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_AdminRoomManager)
+
+
+def test_tda593_facilities_adminroommanager_constructor_exists():
+    assert callable(tda593_facilities_AdminRoomManager.__init__)
+
+
+def test_tda593_facilities_adminroommanager_constructor_args():
+    sig = inspect.signature(tda593_facilities_AdminRoomManager.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_keycard_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_KeyCard)
+
+
+def test_tda593_facilities_keycard_constructor_exists():
+    assert callable(tda593_facilities_KeyCard.__init__)
+
+
+def test_tda593_facilities_keycard_constructor_args():
+    sig = inspect.signature(tda593_facilities_KeyCard.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_tda593_facilities_keycard_has_id():
+    assert hasattr(tda593_facilities_KeyCard, "id")
+    descriptor = None
+    for klass in tda593_facilities_KeyCard.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tda593_facilities_keycardmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_KeyCardManager)
+
+
+def test_tda593_facilities_keycardmanager_constructor_exists():
+    assert callable(tda593_facilities_KeyCardManager.__init__)
+
+
+def test_tda593_facilities_keycardmanager_constructor_args():
+    sig = inspect.signature(tda593_facilities_KeyCardManager.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_keycardmanager_is_not_abstract():
+    assert not inspect.isabstract(KeyCardManager)
+
+
+def test_keycardmanager_constructor_exists():
+    assert callable(KeyCardManager.__init__)
+
+
+def test_keycardmanager_constructor_args():
+    sig = inspect.signature(KeyCardManager.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_keycardmanagerimpl_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_KeyCardManagerImpl)
+
+
+def test_tda593_facilities_keycardmanagerimpl_constructor_exists():
+    assert callable(tda593_facilities_KeyCardManagerImpl.__init__)
+
+
+def test_tda593_facilities_keycardmanagerimpl_constructor_args():
+    sig = inspect.signature(tda593_facilities_KeyCardManagerImpl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tda593_facilities_adminkeycardmanager_is_not_abstract():
+    assert not inspect.isabstract(tda593_facilities_AdminKeyCardManager)
+
+
+def test_tda593_facilities_adminkeycardmanager_constructor_exists():
+    assert callable(tda593_facilities_AdminKeyCardManager.__init__)
+
+
+def test_tda593_facilities_adminkeycardmanager_constructor_args():
+    sig = inspect.signature(tda593_facilities_AdminKeyCardManager.__init__)
+    params = list(sig.parameters.keys())
 
 def test_roomapproval_exists():
     # Check that the Enumeration exists
@@ -2210,6 +2197,19 @@ def test_roomapproval_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in RoomApproval"
 
+def test_disabilityapproval_exists():
+    # Check that the Enumeration exists
+    assert DisabilityApproval is not None
+
+def test_disabilityapproval_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DisabilityApproval]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DisabilityApproval"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -2222,239 +2222,239 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tda593::booking::LegalEntity_strategy = st.builds(
-    tda593::booking::LegalEntity,
-    id=
-        st.integers(),
+tda593_booking_LegalEntity_strategy = st.builds(
+    tda593_booking_LegalEntity,
+    phone=
+        safe_text,
     email=
         safe_text,
-    phone=
-        safe_text
+    id=
+        st.integers()
 )
-booking::LegalEntityDataService_strategy = st.builds(
-    booking::LegalEntityDataService,
+booking_LegalEntityDataService_strategy = st.builds(
+    booking_LegalEntityDataService,
 )
 LegalEntityManager_strategy = st.builds(
     LegalEntityManager,
 )
-tda593::booking::LegalEntityManagerImpl_strategy = st.builds(
-    tda593::booking::LegalEntityManagerImpl,
+tda593_booking_LegalEntityManagerImpl_strategy = st.builds(
+    tda593_booking_LegalEntityManagerImpl,
 )
-tda593::booking::LegalEntityDataService_strategy = st.builds(
-    tda593::booking::LegalEntityDataService,
+tda593_booking_LegalEntityDataService_strategy = st.builds(
+    tda593_booking_LegalEntityDataService,
 )
-tda593::booking::LegalEntityManager_strategy = st.builds(
-    tda593::booking::LegalEntityManager,
+tda593_booking_LegalEntityManager_strategy = st.builds(
+    tda593_booking_LegalEntityManager,
 )
-tda593::booking::BookingDataService_strategy = st.builds(
-    tda593::booking::BookingDataService,
+tda593_booking_BookingDataService_strategy = st.builds(
+    tda593_booking_BookingDataService,
 )
-facilities::RoomManager_strategy = st.builds(
-    facilities::RoomManager,
+facilities_RoomManager_strategy = st.builds(
+    facilities_RoomManager,
 )
-booking::BookingDataService_strategy = st.builds(
-    booking::BookingDataService,
+booking_BookingDataService_strategy = st.builds(
+    booking_BookingDataService,
 )
 BookingManager_strategy = st.builds(
     BookingManager,
 )
-tda593::booking::BookingManagerImpl_strategy = st.builds(
-    tda593::booking::BookingManagerImpl,
+tda593_booking_BookingManagerImpl_strategy = st.builds(
+    tda593_booking_BookingManagerImpl,
 )
-tda593::booking::BookingManager_strategy = st.builds(
-    tda593::booking::BookingManager,
+tda593_booking_BookingManager_strategy = st.builds(
+    tda593_booking_BookingManager,
 )
-tda593::booking::StayRequest_strategy = st.builds(
-    tda593::booking::StayRequest,
-    id=
-        st.integers(),
+tda593_booking_StayRequest_strategy = st.builds(
+    tda593_booking_StayRequest,
     text=
         safe_text,
+    id=
+        st.integers(),
     timeStamp=
         st.dates()
 )
-facilities::Room_strategy = st.builds(
-    facilities::Room,
+facilities_Room_strategy = st.builds(
+    facilities_Room,
 )
-booking::Person_strategy = st.builds(
-    booking::Person,
+booking_Person_strategy = st.builds(
+    booking_Person,
 )
-booking::StayRequest_strategy = st.builds(
-    booking::StayRequest,
+booking_StayRequest_strategy = st.builds(
+    booking_StayRequest,
 )
-tda593::booking::RoomStay_strategy = st.builds(
-    tda593::booking::RoomStay,
-    active=
-        st.booleans(),
-    id=
-        st.integers()
-)
-booking::TravelInformation_strategy = st.builds(
-    booking::TravelInformation,
-)
-tda593::booking::Booking_strategy = st.builds(
-    tda593::booking::Booking,
-    specialRequest=
-        safe_text,
-    startDate=
-        st.dates(),
+tda593_booking_RoomStay_strategy = st.builds(
+    tda593_booking_RoomStay,
     id=
         st.integers(),
+    active=
+        st.booleans()
+)
+booking_TravelInformation_strategy = st.builds(
+    booking_TravelInformation,
+)
+tda593_booking_Booking_strategy = st.builds(
+    tda593_booking_Booking,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    id=
+        st.integers(),
     endDate=
         st.dates(),
     isCanceled=
-        st.booleans()
+        st.booleans(),
+    specialRequest=
+        safe_text,
+    startDate=
+        st.dates()
 )
 LegalEntity_strategy = st.builds(
     LegalEntity,
 )
-tda593::booking::Person_strategy = st.builds(
-    tda593::booking::Person,
+tda593_booking_Person_strategy = st.builds(
+    tda593_booking_Person,
     lastname=
         safe_text,
-    firstname=
-        safe_text,
     socialSecurityNumber=
+        safe_text,
+    firstname=
         safe_text
 )
-tda593::booking::Organization_strategy = st.builds(
-    tda593::booking::Organization,
+tda593_booking_Organization_strategy = st.builds(
+    tda593_booking_Organization,
     organizationNumber=
         safe_text,
     name=
         safe_text
 )
-billing::AdminDiscountManager_strategy = st.builds(
-    billing::AdminDiscountManager,
+billing_AdminDiscountManager_strategy = st.builds(
+    billing_AdminDiscountManager,
 )
-billing::DiscountManagerImpl_strategy = st.builds(
-    billing::DiscountManagerImpl,
+billing_DiscountManagerImpl_strategy = st.builds(
+    billing_DiscountManagerImpl,
 )
-tda593::billing::AdminDiscountManagerImpl_strategy = st.builds(
-    tda593::billing::AdminDiscountManagerImpl,
+tda593_billing_AdminDiscountManagerImpl_strategy = st.builds(
+    tda593_billing_AdminDiscountManagerImpl,
 )
-tda593::booking::TravelInformation_strategy = st.builds(
-    tda593::booking::TravelInformation,
-    comment=
-        safe_text,
+tda593_booking_TravelInformation_strategy = st.builds(
+    tda593_booking_TravelInformation,
     id=
         st.integers(),
+    comment=
+        safe_text,
     trackingId=
         safe_text
 )
-booking::RoomStay_strategy = st.builds(
-    booking::RoomStay,
+booking_RoomStay_strategy = st.builds(
+    booking_RoomStay,
 )
-billing::AdminServiceManager_strategy = st.builds(
-    billing::AdminServiceManager,
+billing_AdminServiceManager_strategy = st.builds(
+    billing_AdminServiceManager,
 )
-billing::ServiceManagerImpl_strategy = st.builds(
-    billing::ServiceManagerImpl,
+billing_ServiceManagerImpl_strategy = st.builds(
+    billing_ServiceManagerImpl,
 )
-tda593::billing::AdminServiceManagerImpl_strategy = st.builds(
-    tda593::billing::AdminServiceManagerImpl,
+tda593_billing_AdminServiceManagerImpl_strategy = st.builds(
+    tda593_billing_AdminServiceManagerImpl,
 )
-tda593::billing::ServiceDataService_strategy = st.builds(
-    tda593::billing::ServiceDataService,
+tda593_billing_ServiceDataService_strategy = st.builds(
+    tda593_billing_ServiceDataService,
 )
-tda593::billing::ServiceManager_strategy = st.builds(
-    tda593::billing::ServiceManager,
+tda593_billing_ServiceManager_strategy = st.builds(
+    tda593_billing_ServiceManager,
 )
-billing::ServiceDataService_strategy = st.builds(
-    billing::ServiceDataService,
+billing_ServiceDataService_strategy = st.builds(
+    billing_ServiceDataService,
 )
 ServiceManager_strategy = st.builds(
     ServiceManager,
 )
-tda593::billing::AdminServiceManager_strategy = st.builds(
-    tda593::billing::AdminServiceManager,
+tda593_billing_AdminServiceManager_strategy = st.builds(
+    tda593_billing_AdminServiceManager,
 )
-tda593::billing::ServiceManagerImpl_strategy = st.builds(
-    tda593::billing::ServiceManagerImpl,
+tda593_billing_ServiceManagerImpl_strategy = st.builds(
+    tda593_billing_ServiceManagerImpl,
 )
-billing::CreditCardInformationDataService_strategy = st.builds(
-    billing::CreditCardInformationDataService,
+billing_CreditCardInformationDataService_strategy = st.builds(
+    billing_CreditCardInformationDataService,
 )
 CreditCardManager_strategy = st.builds(
     CreditCardManager,
 )
-tda593::billing::CreditCardManagerImpl_strategy = st.builds(
-    tda593::billing::CreditCardManagerImpl,
+tda593_billing_CreditCardManagerImpl_strategy = st.builds(
+    tda593_billing_CreditCardManagerImpl,
 )
-tda593::billing::CreditCardInformationDataService_strategy = st.builds(
-    tda593::billing::CreditCardInformationDataService,
+tda593_billing_CreditCardInformationDataService_strategy = st.builds(
+    tda593_billing_CreditCardInformationDataService,
 )
 BankingManager_strategy = st.builds(
     BankingManager,
 )
-tda593::billing::BankingManagerImpl_strategy = st.builds(
-    tda593::billing::BankingManagerImpl,
+tda593_billing_BankingManagerImpl_strategy = st.builds(
+    tda593_billing_BankingManagerImpl,
 )
-tda593::billing::BillDataService_strategy = st.builds(
-    tda593::billing::BillDataService,
+tda593_billing_BillDataService_strategy = st.builds(
+    tda593_billing_BillDataService,
 )
-booking::BookingManager_strategy = st.builds(
-    booking::BookingManager,
+booking_BookingManager_strategy = st.builds(
+    booking_BookingManager,
 )
-billing::BillDataService_strategy = st.builds(
-    billing::BillDataService,
+billing_BillDataService_strategy = st.builds(
+    billing_BillDataService,
 )
 BillManager_strategy = st.builds(
     BillManager,
 )
-tda593::billing::BillManagerImpl_strategy = st.builds(
-    tda593::billing::BillManagerImpl,
+tda593_billing_BillManagerImpl_strategy = st.builds(
+    tda593_billing_BillManagerImpl,
 )
-tda593::billing::CreditCardInformation_strategy = st.builds(
-    tda593::billing::CreditCardInformation,
-    expirationDate=
-        st.dates(),
+tda593_billing_CreditCardInformation_strategy = st.builds(
+    tda593_billing_CreditCardInformation,
     cardNumber=
-        safe_text,
-    lastName=
         safe_text,
     ccv=
         safe_text,
+    expirationDate=
+        st.dates(),
     firstName=
+        safe_text,
+    lastName=
         safe_text
 )
-tda593::billing::CreditCardManager_strategy = st.builds(
-    tda593::billing::CreditCardManager,
+tda593_billing_CreditCardManager_strategy = st.builds(
+    tda593_billing_CreditCardManager,
 )
-tda593::billing::BankingManager_strategy = st.builds(
-    tda593::billing::BankingManager,
+tda593_billing_BankingManager_strategy = st.builds(
+    tda593_billing_BankingManager,
 )
-billing::DiscountDataService_strategy = st.builds(
-    billing::DiscountDataService,
+billing_DiscountDataService_strategy = st.builds(
+    billing_DiscountDataService,
 )
 DiscountManager_strategy = st.builds(
     DiscountManager,
 )
-tda593::billing::AdminDiscountManager_strategy = st.builds(
-    tda593::billing::AdminDiscountManager,
+tda593_billing_AdminDiscountManager_strategy = st.builds(
+    tda593_billing_AdminDiscountManager,
 )
-tda593::billing::DiscountManagerImpl_strategy = st.builds(
-    tda593::billing::DiscountManagerImpl,
+tda593_billing_DiscountManagerImpl_strategy = st.builds(
+    tda593_billing_DiscountManagerImpl,
 )
-tda593::billing::DiscountDataService_strategy = st.builds(
-    tda593::billing::DiscountDataService,
+tda593_billing_DiscountDataService_strategy = st.builds(
+    tda593_billing_DiscountDataService,
 )
-tda593::billing::BillManager_strategy = st.builds(
-    tda593::billing::BillManager,
+tda593_billing_BillManager_strategy = st.builds(
+    tda593_billing_BillManager,
 )
-booking::Booking_strategy = st.builds(
-    booking::Booking,
+booking_Booking_strategy = st.builds(
+    booking_Booking,
 )
 Bill_strategy = st.builds(
     Bill,
 )
-tda593::billing::BookingBill_strategy = st.builds(
-    tda593::billing::BookingBill,
+tda593_billing_BookingBill_strategy = st.builds(
+    tda593_billing_BookingBill,
 )
-tda593::billing::Service_strategy = st.builds(
-    tda593::billing::Service,
+tda593_billing_Service_strategy = st.builds(
+    tda593_billing_Service,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     id=
@@ -2462,11 +2462,11 @@ tda593::billing::Service_strategy = st.builds(
     name=
         safe_text
 )
-billing::Service_strategy = st.builds(
-    billing::Service,
+billing_Service_strategy = st.builds(
+    billing_Service,
 )
-tda593::billing::Purchase_strategy = st.builds(
-    tda593::billing::Purchase,
+tda593_billing_Purchase_strategy = st.builds(
+    tda593_billing_Purchase,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     id=
@@ -2474,246 +2474,237 @@ tda593::billing::Purchase_strategy = st.builds(
     quantity=
         st.integers()
 )
-billing::Bill_strategy = st.builds(
-    billing::Bill,
+billing_Bill_strategy = st.builds(
+    billing_Bill,
 )
-billing::Discount_strategy = st.builds(
-    billing::Discount,
+billing_Discount_strategy = st.builds(
+    billing_Discount,
 )
-billing::Purchase_strategy = st.builds(
-    billing::Purchase,
+billing_Purchase_strategy = st.builds(
+    billing_Purchase,
 )
-tda593::billing::Bill_strategy = st.builds(
-    tda593::billing::Bill,
-    isPaid=
-        st.booleans(),
+tda593_billing_Bill_strategy = st.builds(
+    tda593_billing_Bill,
     id=
         st.integers(),
     isPublished=
         st.booleans(),
     date=
-        st.dates()
+        st.dates(),
+    isPaid=
+        st.booleans()
 )
-tda593::facilities::RoomDataService_strategy = st.builds(
-    tda593::facilities::RoomDataService,
+tda593_facilities_RoomDataService_strategy = st.builds(
+    tda593_facilities_RoomDataService,
 )
-facilities::KeyCardManager_strategy = st.builds(
-    facilities::KeyCardManager,
+facilities_KeyCardManager_strategy = st.builds(
+    facilities_KeyCardManager,
 )
 Discount_strategy = st.builds(
     Discount,
 )
-tda593::billing::PercentageDiscount_strategy = st.builds(
-    tda593::billing::PercentageDiscount,
+tda593_billing_PercentageDiscount_strategy = st.builds(
+    tda593_billing_PercentageDiscount,
     percentage=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-tda593::billing::SumDiscount_strategy = st.builds(
-    tda593::billing::SumDiscount,
+tda593_billing_SumDiscount_strategy = st.builds(
+    tda593_billing_SumDiscount,
     discountSum=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-booking::LegalEntity_strategy = st.builds(
-    booking::LegalEntity,
+booking_LegalEntity_strategy = st.builds(
+    booking_LegalEntity,
 )
-tda593::billing::DiscountLimit_strategy = st.builds(
-    tda593::billing::DiscountLimit,
+tda593_billing_DiscountLimit_strategy = st.builds(
+    tda593_billing_DiscountLimit,
     endDate=
         st.dates(),
-    id=
+    timesLeftToUse=
         st.integers(),
     startDate=
         st.dates(),
-    timesLeftToUse=
+    id=
         st.integers()
 )
-billing::DiscountLimit_strategy = st.builds(
-    billing::DiscountLimit,
+billing_DiscountLimit_strategy = st.builds(
+    billing_DiscountLimit,
 )
-tda593::billing::Discount_strategy = st.builds(
-    tda593::billing::Discount,
-    name=
-        safe_text,
+tda593_billing_Discount_strategy = st.builds(
+    tda593_billing_Discount,
     code=
+        safe_text,
+    name=
         safe_text
 )
-tda593::billing::DiscountManager_strategy = st.builds(
-    tda593::billing::DiscountManager,
+tda593_billing_DiscountManager_strategy = st.builds(
+    tda593_billing_DiscountManager,
 )
-facilities::AdminKeyCardManager_strategy = st.builds(
-    facilities::AdminKeyCardManager,
+facilities_AdminKeyCardManager_strategy = st.builds(
+    facilities_AdminKeyCardManager,
 )
-facilities::KeyCardManagerImpl_strategy = st.builds(
-    facilities::KeyCardManagerImpl,
+facilities_KeyCardManagerImpl_strategy = st.builds(
+    facilities_KeyCardManagerImpl,
 )
-tda593::facilities::AdminKeyCardManagerImpl_strategy = st.builds(
-    tda593::facilities::AdminKeyCardManagerImpl,
+tda593_facilities_AdminKeyCardManagerImpl_strategy = st.builds(
+    tda593_facilities_AdminKeyCardManagerImpl,
 )
-facilities::AdminRoomManager_strategy = st.builds(
-    facilities::AdminRoomManager,
+facilities_AdminRoomManager_strategy = st.builds(
+    facilities_AdminRoomManager,
 )
-facilities::RoomManagerImpl_strategy = st.builds(
-    facilities::RoomManagerImpl,
+facilities_RoomManagerImpl_strategy = st.builds(
+    facilities_RoomManagerImpl,
 )
-tda593::facilities::AdminRoomManagerImpl_strategy = st.builds(
-    tda593::facilities::AdminRoomManagerImpl,
+tda593_facilities_AdminRoomManagerImpl_strategy = st.builds(
+    tda593_facilities_AdminRoomManagerImpl,
 )
-tda593::facilities::KeyCardDataService_strategy = st.builds(
-    tda593::facilities::KeyCardDataService,
+tda593_facilities_KeyCardDataService_strategy = st.builds(
+    tda593_facilities_KeyCardDataService,
 )
-facilities::KeyCardDataService_strategy = st.builds(
-    facilities::KeyCardDataService,
+facilities_KeyCardDataService_strategy = st.builds(
+    facilities_KeyCardDataService,
 )
-tda593::facilities::RoomTypeDataService_strategy = st.builds(
-    tda593::facilities::RoomTypeDataService,
+tda593_facilities_RoomTypeDataService_strategy = st.builds(
+    tda593_facilities_RoomTypeDataService,
 )
-RoomManager_strategy = st.builds(
-    RoomManager,
+facilities_RoomTypeDataService_strategy = st.builds(
+    facilities_RoomTypeDataService,
 )
-tda593::facilities::AdminRoomManager_strategy = st.builds(
-    tda593::facilities::AdminRoomManager,
-)
-tda593::facilities::KeyCard_strategy = st.builds(
-    tda593::facilities::KeyCard,
-    id=
-        safe_text
-)
-tda593::facilities::KeyCardManager_strategy = st.builds(
-    tda593::facilities::KeyCardManager,
-)
-KeyCardManager_strategy = st.builds(
-    KeyCardManager,
-)
-tda593::facilities::KeyCardManagerImpl_strategy = st.builds(
-    tda593::facilities::KeyCardManagerImpl,
-)
-tda593::facilities::AdminKeyCardManager_strategy = st.builds(
-    tda593::facilities::AdminKeyCardManager,
-)
-facilities::RoomTypeDataService_strategy = st.builds(
-    facilities::RoomTypeDataService,
-)
-facilities::RoomDataService_strategy = st.builds(
-    facilities::RoomDataService,
-)
-tda593::facilities::RoomManagerImpl_strategy = st.builds(
-    tda593::facilities::RoomManagerImpl,
+facilities_RoomDataService_strategy = st.builds(
+    facilities_RoomDataService,
 )
 Room_strategy = st.builds(
     Room,
 )
-tda593::facilities::ConferenceRoom_strategy = st.builds(
-    tda593::facilities::ConferenceRoom,
-    numberOfSeats=
-        st.integers(),
+tda593_facilities_ConferenceRoom_strategy = st.builds(
+    tda593_facilities_ConferenceRoom,
     equipment=
-        safe_text
+        safe_text,
+    numberOfSeats=
+        st.integers()
 )
-tda593::facilities::GuestRoom_strategy = st.builds(
-    tda593::facilities::GuestRoom,
+tda593_facilities_GuestRoom_strategy = st.builds(
+    tda593_facilities_GuestRoom,
     numberOfExtrabeds=
         st.integers(),
     numberOfBeds=
         st.integers()
 )
-facilities::RoomType_strategy = st.builds(
-    facilities::RoomType,
+facilities_RoomType_strategy = st.builds(
+    facilities_RoomType,
 )
-facilities::KeyCard_strategy = st.builds(
-    facilities::KeyCard,
+facilities_KeyCard_strategy = st.builds(
+    facilities_KeyCard,
 )
-tda593::facilities::Room_strategy = st.builds(
-    tda593::facilities::Room,
+tda593_facilities_Room_strategy = st.builds(
+    tda593_facilities_Room,
+    photos=
+        safe_text,
+    roomNumber=
+        safe_text,
+    isOperational=
+        st.booleans(),
     isBeingCleaned=
         st.booleans(),
     description=
         safe_text,
     floor=
         st.integers(),
-    photos=
-        safe_text,
     disabilityApprovals=
-        safe_text,
-    roomNumber=
-        safe_text,
-    isOperational=
-        st.booleans()
+        safe_text
 )
-tda593::facilities::RoomType_strategy = st.builds(
-    tda593::facilities::RoomType,
+tda593_facilities_RoomType_strategy = st.builds(
+    tda593_facilities_RoomType,
+    price=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     description=
         safe_text,
     name=
         safe_text,
     roomApprovals=
-        safe_text,
-    price=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        safe_text
 )
-tda593::facilities::RoomManager_strategy = st.builds(
-    tda593::facilities::RoomManager,
+tda593_facilities_RoomManager_strategy = st.builds(
+    tda593_facilities_RoomManager,
 )
-tda593::california::DataService_strategy = st.builds(
-    tda593::california::DataService,
+tda593_california_DataService_strategy = st.builds(
+    tda593_california_DataService,
+)
+RoomManager_strategy = st.builds(
+    RoomManager,
+)
+tda593_facilities_RoomManagerImpl_strategy = st.builds(
+    tda593_facilities_RoomManagerImpl,
+)
+tda593_facilities_AdminRoomManager_strategy = st.builds(
+    tda593_facilities_AdminRoomManager,
+)
+tda593_facilities_KeyCard_strategy = st.builds(
+    tda593_facilities_KeyCard,
+    id=
+        safe_text
+)
+tda593_facilities_KeyCardManager_strategy = st.builds(
+    tda593_facilities_KeyCardManager,
+)
+KeyCardManager_strategy = st.builds(
+    KeyCardManager,
+)
+tda593_facilities_KeyCardManagerImpl_strategy = st.builds(
+    tda593_facilities_KeyCardManagerImpl,
+)
+tda593_facilities_AdminKeyCardManager_strategy = st.builds(
+    tda593_facilities_AdminKeyCardManager,
 )
 
-@given(instance=tda593::booking::LegalEntity_strategy)
+@given(instance=tda593_booking_LegalEntity_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::legalentity_instantiation(instance):
-    assert isinstance(instance, tda593::booking::LegalEntity)
-
-@given(instance=tda593::booking::LegalEntity_strategy)
-def test_tda593::booking::legalentity_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_tda593_booking_legalentity_instantiation(instance):
+    assert isinstance(instance, tda593_booking_LegalEntity)
 
 
-@given(instance=tda593::booking::LegalEntity_strategy)
-def test_tda593::booking::legalentity_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=tda593::booking::LegalEntity_strategy)
-def test_tda593::booking::legalentity_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=tda593::booking::LegalEntity_strategy)
-def test_tda593::booking::legalentity_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=tda593::booking::LegalEntity_strategy)
-def test_tda593::booking::legalentity_phone_type(instance):
-    assert isinstance(instance.phone, str)
-
-
-@given(instance=tda593::booking::LegalEntity_strategy)
-def test_tda593::booking::legalentity_phone_setter(instance):
+@given(instance=tda593_booking_LegalEntity_strategy)
+def test_tda593_booking_legalentity_phone_setter(instance):
     original = instance.phone
     instance.phone = original
     assert instance.phone == original
 
-@given(instance=booking::LegalEntityDataService_strategy)
+
+
+@given(instance=tda593_booking_LegalEntity_strategy)
+def test_tda593_booking_legalentity_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=tda593_booking_LegalEntity_strategy)
+def test_tda593_booking_legalentity_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=booking_LegalEntityDataService_strategy)
 @settings(max_examples=50)
-def test_booking::legalentitydataservice_instantiation(instance):
-    assert isinstance(instance, booking::LegalEntityDataService)
+def test_booking_legalentitydataservice_instantiation(instance):
+    assert isinstance(instance, booking_LegalEntityDataService)
 
 @given(instance=LegalEntityManager_strategy)
 @settings(max_examples=50)
 def test_legalentitymanager_instantiation(instance):
     assert isinstance(instance, LegalEntityManager)
 
-@given(instance=tda593::booking::LegalEntityManagerImpl_strategy)
+@given(instance=tda593_booking_LegalEntityManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::legalentitymanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::booking::LegalEntityManagerImpl)
+def test_tda593_booking_legalentitymanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_booking_LegalEntityManagerImpl)
 
-@given(instance=tda593::booking::LegalEntityDataService_strategy)
+@given(instance=tda593_booking_LegalEntityDataService_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::legalentitydataservice_instantiation(instance):
-    assert isinstance(instance, tda593::booking::LegalEntityDataService)
+def test_tda593_booking_legalentitydataservice_instantiation(instance):
+    assert isinstance(instance, tda593_booking_LegalEntityDataService)
 
 import warnings
 import copy
@@ -2721,9 +2712,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::LegalEntityDataService_strategy)
+@given(instance=tda593_booking_LegalEntityDataService_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::legalentitydataservice_findperson_changes_state(instance):
+def test_tda593_booking_legalentitydataservice_findperson_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2738,14 +2729,14 @@ def test_tda593::booking::legalentitydataservice_findperson_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findPerson' in tda593::booking::LegalEntityDataService is empty"
+        assert has_statements, f"Function 'findPerson' in tda593_booking_LegalEntityDataService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findPerson' in tda593::booking::LegalEntityDataService did not change state; check implementation")
+            warnings.warn(f"Operation 'findPerson' in tda593_booking_LegalEntityDataService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findPerson' in tda593::booking::LegalEntityDataService is not implemented or raised an error")
+        warnings.warn(f"Operation 'findPerson' in tda593_booking_LegalEntityDataService is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2753,9 +2744,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::LegalEntityDataService_strategy)
+@given(instance=tda593_booking_LegalEntityDataService_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::legalentitydataservice_findorganization_changes_state(instance):
+def test_tda593_booking_legalentitydataservice_findorganization_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2769,19 +2760,19 @@ def test_tda593::booking::legalentitydataservice_findorganization_changes_state(
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findOrganization' in tda593::booking::LegalEntityDataService is empty"
+        assert has_statements, f"Function 'findOrganization' in tda593_booking_LegalEntityDataService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findOrganization' in tda593::booking::LegalEntityDataService did not change state; check implementation")
+            warnings.warn(f"Operation 'findOrganization' in tda593_booking_LegalEntityDataService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findOrganization' in tda593::booking::LegalEntityDataService is not implemented or raised an error")
+        warnings.warn(f"Operation 'findOrganization' in tda593_booking_LegalEntityDataService is not implemented or raised an error")
 
-@given(instance=tda593::booking::LegalEntityManager_strategy)
+@given(instance=tda593_booking_LegalEntityManager_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::legalentitymanager_instantiation(instance):
-    assert isinstance(instance, tda593::booking::LegalEntityManager)
+def test_tda593_booking_legalentitymanager_instantiation(instance):
+    assert isinstance(instance, tda593_booking_LegalEntityManager)
 
 import warnings
 import copy
@@ -2789,9 +2780,106 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::LegalEntityManager_strategy)
+@given(instance=tda593_booking_LegalEntityManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::legalentitymanager_createperson_changes_state(instance):
+def test_tda593_booking_legalentitymanager_createorganization_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createOrganization(
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createOrganization).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createOrganization' in tda593_booking_LegalEntityManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createOrganization' in tda593_booking_LegalEntityManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createOrganization' in tda593_booking_LegalEntityManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_LegalEntityManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_legalentitymanager_findorganization_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findOrganization(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findOrganization).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findOrganization' in tda593_booking_LegalEntityManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findOrganization' in tda593_booking_LegalEntityManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findOrganization' in tda593_booking_LegalEntityManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_LegalEntityManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_legalentitymanager_findperson_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findPerson(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findPerson).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findPerson' in tda593_booking_LegalEntityManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findPerson' in tda593_booking_LegalEntityManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findPerson' in tda593_booking_LegalEntityManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_LegalEntityManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_legalentitymanager_createperson_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2809,116 +2897,19 @@ def test_tda593::booking::legalentitymanager_createperson_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createPerson' in tda593::booking::LegalEntityManager is empty"
+        assert has_statements, f"Function 'createPerson' in tda593_booking_LegalEntityManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createPerson' in tda593::booking::LegalEntityManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createPerson' in tda593_booking_LegalEntityManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createPerson' in tda593::booking::LegalEntityManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'createPerson' in tda593_booking_LegalEntityManager is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::LegalEntityManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::legalentitymanager_createorganization_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createOrganization(
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createOrganization).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createOrganization' in tda593::booking::LegalEntityManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createOrganization' in tda593::booking::LegalEntityManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createOrganization' in tda593::booking::LegalEntityManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::LegalEntityManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::legalentitymanager_findperson_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findPerson(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findPerson).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findPerson' in tda593::booking::LegalEntityManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findPerson' in tda593::booking::LegalEntityManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findPerson' in tda593::booking::LegalEntityManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::LegalEntityManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::legalentitymanager_findorganization_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findOrganization(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findOrganization).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findOrganization' in tda593::booking::LegalEntityManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findOrganization' in tda593::booking::LegalEntityManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findOrganization' in tda593::booking::LegalEntityManager is not implemented or raised an error")
-
-@given(instance=tda593::booking::BookingDataService_strategy)
+@given(instance=tda593_booking_BookingDataService_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::bookingdataservice_instantiation(instance):
-    assert isinstance(instance, tda593::booking::BookingDataService)
+def test_tda593_booking_bookingdataservice_instantiation(instance):
+    assert isinstance(instance, tda593_booking_BookingDataService)
 
 import warnings
 import copy
@@ -2926,9 +2917,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingDataService_strategy)
+@given(instance=tda593_booking_BookingDataService_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingdataservice_rollbacktransaction_changes_state(instance):
+def test_tda593_booking_bookingdataservice_rollbacktransaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2940,14 +2931,14 @@ def test_tda593::booking::bookingdataservice_rollbacktransaction_changes_state(i
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'rollbackTransaction' in tda593::booking::BookingDataService is empty"
+        assert has_statements, f"Function 'rollbackTransaction' in tda593_booking_BookingDataService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'rollbackTransaction' in tda593::booking::BookingDataService did not change state; check implementation")
+            warnings.warn(f"Operation 'rollbackTransaction' in tda593_booking_BookingDataService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'rollbackTransaction' in tda593::booking::BookingDataService is not implemented or raised an error")
+        warnings.warn(f"Operation 'rollbackTransaction' in tda593_booking_BookingDataService is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2955,38 +2946,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingDataService_strategy)
+@given(instance=tda593_booking_BookingDataService_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingdataservice_committransaction_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.commitTransaction()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.commitTransaction).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'commitTransaction' in tda593::booking::BookingDataService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'commitTransaction' in tda593::booking::BookingDataService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'commitTransaction' in tda593::booking::BookingDataService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::BookingDataService_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::bookingdataservice_begintransaction_changes_state(instance):
+def test_tda593_booking_bookingdataservice_begintransaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2998,39 +2960,68 @@ def test_tda593::booking::bookingdataservice_begintransaction_changes_state(inst
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'beginTransaction' in tda593::booking::BookingDataService is empty"
+        assert has_statements, f"Function 'beginTransaction' in tda593_booking_BookingDataService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'beginTransaction' in tda593::booking::BookingDataService did not change state; check implementation")
+            warnings.warn(f"Operation 'beginTransaction' in tda593_booking_BookingDataService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'beginTransaction' in tda593::booking::BookingDataService is not implemented or raised an error")
+        warnings.warn(f"Operation 'beginTransaction' in tda593_booking_BookingDataService is not implemented or raised an error")
 
-@given(instance=facilities::RoomManager_strategy)
-@settings(max_examples=50)
-def test_facilities::roommanager_instantiation(instance):
-    assert isinstance(instance, facilities::RoomManager)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=booking::BookingDataService_strategy)
+@given(instance=tda593_booking_BookingDataService_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_bookingdataservice_committransaction_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.commitTransaction()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.commitTransaction).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'commitTransaction' in tda593_booking_BookingDataService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'commitTransaction' in tda593_booking_BookingDataService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'commitTransaction' in tda593_booking_BookingDataService is not implemented or raised an error")
+
+@given(instance=facilities_RoomManager_strategy)
 @settings(max_examples=50)
-def test_booking::bookingdataservice_instantiation(instance):
-    assert isinstance(instance, booking::BookingDataService)
+def test_facilities_roommanager_instantiation(instance):
+    assert isinstance(instance, facilities_RoomManager)
+
+@given(instance=booking_BookingDataService_strategy)
+@settings(max_examples=50)
+def test_booking_bookingdataservice_instantiation(instance):
+    assert isinstance(instance, booking_BookingDataService)
 
 @given(instance=BookingManager_strategy)
 @settings(max_examples=50)
 def test_bookingmanager_instantiation(instance):
     assert isinstance(instance, BookingManager)
 
-@given(instance=tda593::booking::BookingManagerImpl_strategy)
+@given(instance=tda593_booking_BookingManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::bookingmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::booking::BookingManagerImpl)
+def test_tda593_booking_bookingmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_booking_BookingManagerImpl)
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::bookingmanager_instantiation(instance):
-    assert isinstance(instance, tda593::booking::BookingManager)
+def test_tda593_booking_bookingmanager_instantiation(instance):
+    assert isinstance(instance, tda593_booking_BookingManager)
 
 import warnings
 import copy
@@ -3038,31 +3029,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_addstayrequest_changes_state(instance):
+def test_tda593_booking_bookingmanager_checkout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.addStayRequest(
-            "test", 
+        instance.checkOut(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addStayRequest).strip()
+        source = inspect.getsource(instance.checkOut).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addStayRequest' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'checkOut' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addStayRequest' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'checkOut' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addStayRequest' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkOut' in tda593_booking_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3070,9 +3060,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_checkin_changes_state(instance):
+def test_tda593_booking_bookingmanager_cancelbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.cancelBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.cancelBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'cancelBooking' in tda593_booking_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'cancelBooking' in tda593_booking_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'cancelBooking' in tda593_booking_BookingManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_BookingManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_bookingmanager_checkin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3087,14 +3108,14 @@ def test_tda593::booking::bookingmanager_checkin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkIn' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'checkIn' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkIn' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'checkIn' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkIn' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkIn' in tda593_booking_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3102,9 +3123,73 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_createbooking_changes_state(instance):
+def test_tda593_booking_bookingmanager_registerroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.registerRoom(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.registerRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'registerRoom' in tda593_booking_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'registerRoom' in tda593_booking_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'registerRoom' in tda593_booking_BookingManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_BookingManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_bookingmanager_removestayrequest_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeStayRequest(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeStayRequest).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeStayRequest' in tda593_booking_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeStayRequest' in tda593_booking_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeStayRequest' in tda593_booking_BookingManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_BookingManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_bookingmanager_createbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3121,14 +3206,14 @@ def test_tda593::booking::bookingmanager_createbooking_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createBooking' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'createBooking' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createBooking' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createBooking' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createBooking' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'createBooking' in tda593_booking_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3136,138 +3221,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_removestayrequest_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeStayRequest(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeStayRequest).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeStayRequest' in tda593::booking::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeStayRequest' in tda593::booking::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeStayRequest' in tda593::booking::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::BookingManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::bookingmanager_registerroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.registerRoom(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.registerRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerRoom' in tda593::booking::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerRoom' in tda593::booking::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerRoom' in tda593::booking::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::BookingManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::bookingmanager_changebookingdates_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.changeBookingDates(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.changeBookingDates).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'changeBookingDates' in tda593::booking::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'changeBookingDates' in tda593::booking::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'changeBookingDates' in tda593::booking::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::BookingManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::bookingmanager_setspecialrequest_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setSpecialRequest(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setSpecialRequest).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setSpecialRequest' in tda593::booking::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setSpecialRequest' in tda593::booking::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setSpecialRequest' in tda593::booking::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::booking::BookingManager_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::bookingmanager_isroomtypeavailable_changes_state(instance):
+def test_tda593_booking_bookingmanager_isroomtypeavailable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3283,14 +3239,14 @@ def test_tda593::booking::bookingmanager_isroomtypeavailable_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isRoomTypeAvailable' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'isRoomTypeAvailable' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isRoomTypeAvailable' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'isRoomTypeAvailable' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isRoomTypeAvailable' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'isRoomTypeAvailable' in tda593_booking_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3298,30 +3254,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_cancelbooking_changes_state(instance):
+def test_tda593_booking_bookingmanager_setspecialrequest_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.cancelBooking(
+        instance.setSpecialRequest(
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.cancelBooking).strip()
+        source = inspect.getsource(instance.setSpecialRequest).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cancelBooking' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'setSpecialRequest' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cancelBooking' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'setSpecialRequest' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cancelBooking' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'setSpecialRequest' in tda593_booking_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3329,9 +3286,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_isroomavailable_changes_state(instance):
+def test_tda593_booking_bookingmanager_isroomavailable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3347,14 +3304,14 @@ def test_tda593::booking::bookingmanager_isroomavailable_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isRoomAvailable' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'isRoomAvailable' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isRoomAvailable' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'isRoomAvailable' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isRoomAvailable' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'isRoomAvailable' in tda593_booking_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3362,217 +3319,187 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::BookingManager_strategy)
+@given(instance=tda593_booking_BookingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::bookingmanager_checkout_changes_state(instance):
+def test_tda593_booking_bookingmanager_addstayrequest_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.checkOut(
+        instance.addStayRequest(
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkOut).strip()
+        source = inspect.getsource(instance.addStayRequest).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkOut' in tda593::booking::BookingManager is empty"
+        assert has_statements, f"Function 'addStayRequest' in tda593_booking_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkOut' in tda593::booking::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addStayRequest' in tda593_booking_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkOut' in tda593::booking::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addStayRequest' in tda593_booking_BookingManager is not implemented or raised an error")
 
-@given(instance=tda593::booking::StayRequest_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_booking_BookingManager_strategy)
+@settings(max_examples=30)
+def test_tda593_booking_bookingmanager_changebookingdates_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.changeBookingDates(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.changeBookingDates).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'changeBookingDates' in tda593_booking_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'changeBookingDates' in tda593_booking_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'changeBookingDates' in tda593_booking_BookingManager is not implemented or raised an error")
+
+@given(instance=tda593_booking_StayRequest_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::stayrequest_instantiation(instance):
-    assert isinstance(instance, tda593::booking::StayRequest)
-
-@given(instance=tda593::booking::StayRequest_strategy)
-def test_tda593::booking::stayrequest_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_tda593_booking_stayrequest_instantiation(instance):
+    assert isinstance(instance, tda593_booking_StayRequest)
 
 
-@given(instance=tda593::booking::StayRequest_strategy)
-def test_tda593::booking::stayrequest_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=tda593::booking::StayRequest_strategy)
-def test_tda593::booking::stayrequest_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=tda593::booking::StayRequest_strategy)
-def test_tda593::booking::stayrequest_text_setter(instance):
+@given(instance=tda593_booking_StayRequest_strategy)
+def test_tda593_booking_stayrequest_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=tda593::booking::StayRequest_strategy)
-def test_tda593::booking::stayrequest_timeStamp_type(instance):
-    assert isinstance(instance.timeStamp, date)
 
 
-@given(instance=tda593::booking::StayRequest_strategy)
-def test_tda593::booking::stayrequest_timeStamp_setter(instance):
+@given(instance=tda593_booking_StayRequest_strategy)
+def test_tda593_booking_stayrequest_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_booking_StayRequest_strategy)
+def test_tda593_booking_stayrequest_timeStamp_setter(instance):
     original = instance.timeStamp
     instance.timeStamp = original
     assert instance.timeStamp == original
 
-@given(instance=facilities::Room_strategy)
+@given(instance=facilities_Room_strategy)
 @settings(max_examples=50)
-def test_facilities::room_instantiation(instance):
-    assert isinstance(instance, facilities::Room)
+def test_facilities_room_instantiation(instance):
+    assert isinstance(instance, facilities_Room)
 
-@given(instance=booking::Person_strategy)
+@given(instance=booking_Person_strategy)
 @settings(max_examples=50)
-def test_booking::person_instantiation(instance):
-    assert isinstance(instance, booking::Person)
+def test_booking_person_instantiation(instance):
+    assert isinstance(instance, booking_Person)
 
-@given(instance=booking::StayRequest_strategy)
+@given(instance=booking_StayRequest_strategy)
 @settings(max_examples=50)
-def test_booking::stayrequest_instantiation(instance):
-    assert isinstance(instance, booking::StayRequest)
+def test_booking_stayrequest_instantiation(instance):
+    assert isinstance(instance, booking_StayRequest)
 
-@given(instance=tda593::booking::RoomStay_strategy)
+@given(instance=tda593_booking_RoomStay_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::roomstay_instantiation(instance):
-    assert isinstance(instance, tda593::booking::RoomStay)
-
-@given(instance=tda593::booking::RoomStay_strategy)
-def test_tda593::booking::roomstay_active_type(instance):
-    assert isinstance(instance.active, bool)
+def test_tda593_booking_roomstay_instantiation(instance):
+    assert isinstance(instance, tda593_booking_RoomStay)
 
 
-@given(instance=tda593::booking::RoomStay_strategy)
-def test_tda593::booking::roomstay_active_setter(instance):
+
+@given(instance=tda593_booking_RoomStay_strategy)
+def test_tda593_booking_roomstay_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_booking_RoomStay_strategy)
+def test_tda593_booking_roomstay_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
 
-@given(instance=tda593::booking::RoomStay_strategy)
-def test_tda593::booking::roomstay_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::booking::RoomStay_strategy)
-def test_tda593::booking::roomstay_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=booking::TravelInformation_strategy)
+@given(instance=booking_TravelInformation_strategy)
 @settings(max_examples=50)
-def test_booking::travelinformation_instantiation(instance):
-    assert isinstance(instance, booking::TravelInformation)
+def test_booking_travelinformation_instantiation(instance):
+    assert isinstance(instance, booking_TravelInformation)
 
-@given(instance=tda593::booking::Booking_strategy)
+@given(instance=tda593_booking_Booking_strategy)
 @settings(max_examples=50)
-def test_tda593::booking::booking_instantiation(instance):
-    assert isinstance(instance, tda593::booking::Booking)
-
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_specialRequest_type(instance):
-    assert isinstance(instance.specialRequest, str)
+def test_tda593_booking_booking_instantiation(instance):
+    assert isinstance(instance, tda593_booking_Booking)
 
 
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_specialRequest_setter(instance):
-    original = instance.specialRequest
-    instance.specialRequest = original
-    assert instance.specialRequest == original
 
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_startDate_type(instance):
-    assert isinstance(instance.startDate, date)
-
-
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_startDate_setter(instance):
-    original = instance.startDate
-    instance.startDate = original
-    assert instance.startDate == original
-
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_price_setter(instance):
+@given(instance=tda593_booking_Booking_strategy)
+def test_tda593_booking_booking_price_setter(instance):
     original = instance.price
     instance.price = original
     assert instance.price == original
 
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_endDate_type(instance):
-    assert isinstance(instance.endDate, date)
 
 
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_endDate_setter(instance):
+@given(instance=tda593_booking_Booking_strategy)
+def test_tda593_booking_booking_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_booking_Booking_strategy)
+def test_tda593_booking_booking_endDate_setter(instance):
     original = instance.endDate
     instance.endDate = original
     assert instance.endDate == original
 
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_isCanceled_type(instance):
-    assert isinstance(instance.isCanceled, bool)
 
 
-@given(instance=tda593::booking::Booking_strategy)
-def test_tda593::booking::booking_isCanceled_setter(instance):
+@given(instance=tda593_booking_Booking_strategy)
+def test_tda593_booking_booking_isCanceled_setter(instance):
     original = instance.isCanceled
     instance.isCanceled = original
     assert instance.isCanceled == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=tda593::booking::Booking_strategy)
-@settings(max_examples=30)
-def test_tda593::booking::booking_unregistertravelinformation_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unregisterTravelInformation(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unregisterTravelInformation).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unregisterTravelInformation' in tda593::booking::Booking is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unregisterTravelInformation' in tda593::booking::Booking did not change state; check implementation")
+@given(instance=tda593_booking_Booking_strategy)
+def test_tda593_booking_booking_specialRequest_setter(instance):
+    original = instance.specialRequest
+    instance.specialRequest = original
+    assert instance.specialRequest == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unregisterTravelInformation' in tda593::booking::Booking is not implemented or raised an error")
+
+
+@given(instance=tda593_booking_Booking_strategy)
+def test_tda593_booking_booking_startDate_setter(instance):
+    original = instance.startDate
+    instance.startDate = original
+    assert instance.startDate == original
 
 import warnings
 import copy
@@ -3580,9 +3507,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::booking::Booking_strategy)
+@given(instance=tda593_booking_Booking_strategy)
 @settings(max_examples=30)
-def test_tda593::booking::booking_registertravelinformation_changes_state(instance):
+def test_tda593_booking_booking_registertravelinformation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3596,182 +3523,14 @@ def test_tda593::booking::booking_registertravelinformation_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerTravelInformation' in tda593::booking::Booking is empty"
+        assert has_statements, f"Function 'registerTravelInformation' in tda593_booking_Booking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerTravelInformation' in tda593::booking::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'registerTravelInformation' in tda593_booking_Booking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerTravelInformation' in tda593::booking::Booking is not implemented or raised an error")
-
-@given(instance=LegalEntity_strategy)
-@settings(max_examples=50)
-def test_legalentity_instantiation(instance):
-    assert isinstance(instance, LegalEntity)
-
-@given(instance=tda593::booking::Person_strategy)
-@settings(max_examples=50)
-def test_tda593::booking::person_instantiation(instance):
-    assert isinstance(instance, tda593::booking::Person)
-
-@given(instance=tda593::booking::Person_strategy)
-def test_tda593::booking::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=tda593::booking::Person_strategy)
-def test_tda593::booking::person_lastname_setter(instance):
-    original = instance.lastname
-    instance.lastname = original
-    assert instance.lastname == original
-
-@given(instance=tda593::booking::Person_strategy)
-def test_tda593::booking::person_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
-
-
-@given(instance=tda593::booking::Person_strategy)
-def test_tda593::booking::person_firstname_setter(instance):
-    original = instance.firstname
-    instance.firstname = original
-    assert instance.firstname == original
-
-@given(instance=tda593::booking::Person_strategy)
-def test_tda593::booking::person_socialSecurityNumber_type(instance):
-    assert isinstance(instance.socialSecurityNumber, str)
-
-
-@given(instance=tda593::booking::Person_strategy)
-def test_tda593::booking::person_socialSecurityNumber_setter(instance):
-    original = instance.socialSecurityNumber
-    instance.socialSecurityNumber = original
-    assert instance.socialSecurityNumber == original
-
-@given(instance=tda593::booking::Organization_strategy)
-@settings(max_examples=50)
-def test_tda593::booking::organization_instantiation(instance):
-    assert isinstance(instance, tda593::booking::Organization)
-
-@given(instance=tda593::booking::Organization_strategy)
-def test_tda593::booking::organization_organizationNumber_type(instance):
-    assert isinstance(instance.organizationNumber, str)
-
-
-@given(instance=tda593::booking::Organization_strategy)
-def test_tda593::booking::organization_organizationNumber_setter(instance):
-    original = instance.organizationNumber
-    instance.organizationNumber = original
-    assert instance.organizationNumber == original
-
-@given(instance=tda593::booking::Organization_strategy)
-def test_tda593::booking::organization_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tda593::booking::Organization_strategy)
-def test_tda593::booking::organization_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=billing::AdminDiscountManager_strategy)
-@settings(max_examples=50)
-def test_billing::admindiscountmanager_instantiation(instance):
-    assert isinstance(instance, billing::AdminDiscountManager)
-
-@given(instance=billing::DiscountManagerImpl_strategy)
-@settings(max_examples=50)
-def test_billing::discountmanagerimpl_instantiation(instance):
-    assert isinstance(instance, billing::DiscountManagerImpl)
-
-@given(instance=tda593::billing::AdminDiscountManagerImpl_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::admindiscountmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::AdminDiscountManagerImpl)
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-@settings(max_examples=50)
-def test_tda593::booking::travelinformation_instantiation(instance):
-    assert isinstance(instance, tda593::booking::TravelInformation)
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-def test_tda593::booking::travelinformation_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-def test_tda593::booking::travelinformation_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-def test_tda593::booking::travelinformation_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-def test_tda593::booking::travelinformation_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-def test_tda593::booking::travelinformation_trackingId_type(instance):
-    assert isinstance(instance.trackingId, str)
-
-
-@given(instance=tda593::booking::TravelInformation_strategy)
-def test_tda593::booking::travelinformation_trackingId_setter(instance):
-    original = instance.trackingId
-    instance.trackingId = original
-    assert instance.trackingId == original
-
-@given(instance=booking::RoomStay_strategy)
-@settings(max_examples=50)
-def test_booking::roomstay_instantiation(instance):
-    assert isinstance(instance, booking::RoomStay)
-
-@given(instance=billing::AdminServiceManager_strategy)
-@settings(max_examples=50)
-def test_billing::adminservicemanager_instantiation(instance):
-    assert isinstance(instance, billing::AdminServiceManager)
-
-@given(instance=billing::ServiceManagerImpl_strategy)
-@settings(max_examples=50)
-def test_billing::servicemanagerimpl_instantiation(instance):
-    assert isinstance(instance, billing::ServiceManagerImpl)
-
-@given(instance=tda593::billing::AdminServiceManagerImpl_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::adminservicemanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::AdminServiceManagerImpl)
-
-@given(instance=tda593::billing::ServiceDataService_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::servicedataservice_instantiation(instance):
-    assert isinstance(instance, tda593::billing::ServiceDataService)
-
-@given(instance=tda593::billing::ServiceManager_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::servicemanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::ServiceManager)
-
-@given(instance=billing::ServiceDataService_strategy)
-@settings(max_examples=50)
-def test_billing::servicedataservice_instantiation(instance):
-    assert isinstance(instance, billing::ServiceDataService)
-
-@given(instance=ServiceManager_strategy)
-@settings(max_examples=50)
-def test_servicemanager_instantiation(instance):
-    assert isinstance(instance, ServiceManager)
-
-@given(instance=tda593::billing::AdminServiceManager_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::adminservicemanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::AdminServiceManager)
+        warnings.warn(f"Operation 'registerTravelInformation' in tda593_booking_Booking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3779,9 +3538,215 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::AdminServiceManager_strategy)
+@given(instance=tda593_booking_Booking_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::adminservicemanager_createservice_changes_state(instance):
+def test_tda593_booking_booking_unregistertravelinformation_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unregisterTravelInformation(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unregisterTravelInformation).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unregisterTravelInformation' in tda593_booking_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unregisterTravelInformation' in tda593_booking_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unregisterTravelInformation' in tda593_booking_Booking is not implemented or raised an error")
+
+@given(instance=LegalEntity_strategy)
+@settings(max_examples=50)
+def test_legalentity_instantiation(instance):
+    assert isinstance(instance, LegalEntity)
+
+@given(instance=tda593_booking_Person_strategy)
+@settings(max_examples=50)
+def test_tda593_booking_person_instantiation(instance):
+    assert isinstance(instance, tda593_booking_Person)
+
+
+
+@given(instance=tda593_booking_Person_strategy)
+def test_tda593_booking_person_lastname_setter(instance):
+    original = instance.lastname
+    instance.lastname = original
+    assert instance.lastname == original
+
+
+
+@given(instance=tda593_booking_Person_strategy)
+def test_tda593_booking_person_socialSecurityNumber_setter(instance):
+    original = instance.socialSecurityNumber
+    instance.socialSecurityNumber = original
+    assert instance.socialSecurityNumber == original
+
+
+
+@given(instance=tda593_booking_Person_strategy)
+def test_tda593_booking_person_firstname_setter(instance):
+    original = instance.firstname
+    instance.firstname = original
+    assert instance.firstname == original
+
+@given(instance=tda593_booking_Organization_strategy)
+@settings(max_examples=50)
+def test_tda593_booking_organization_instantiation(instance):
+    assert isinstance(instance, tda593_booking_Organization)
+
+
+
+@given(instance=tda593_booking_Organization_strategy)
+def test_tda593_booking_organization_organizationNumber_setter(instance):
+    original = instance.organizationNumber
+    instance.organizationNumber = original
+    assert instance.organizationNumber == original
+
+
+
+@given(instance=tda593_booking_Organization_strategy)
+def test_tda593_booking_organization_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=billing_AdminDiscountManager_strategy)
+@settings(max_examples=50)
+def test_billing_admindiscountmanager_instantiation(instance):
+    assert isinstance(instance, billing_AdminDiscountManager)
+
+@given(instance=billing_DiscountManagerImpl_strategy)
+@settings(max_examples=50)
+def test_billing_discountmanagerimpl_instantiation(instance):
+    assert isinstance(instance, billing_DiscountManagerImpl)
+
+@given(instance=tda593_billing_AdminDiscountManagerImpl_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_admindiscountmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_AdminDiscountManagerImpl)
+
+@given(instance=tda593_booking_TravelInformation_strategy)
+@settings(max_examples=50)
+def test_tda593_booking_travelinformation_instantiation(instance):
+    assert isinstance(instance, tda593_booking_TravelInformation)
+
+
+
+@given(instance=tda593_booking_TravelInformation_strategy)
+def test_tda593_booking_travelinformation_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_booking_TravelInformation_strategy)
+def test_tda593_booking_travelinformation_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=tda593_booking_TravelInformation_strategy)
+def test_tda593_booking_travelinformation_trackingId_setter(instance):
+    original = instance.trackingId
+    instance.trackingId = original
+    assert instance.trackingId == original
+
+@given(instance=booking_RoomStay_strategy)
+@settings(max_examples=50)
+def test_booking_roomstay_instantiation(instance):
+    assert isinstance(instance, booking_RoomStay)
+
+@given(instance=billing_AdminServiceManager_strategy)
+@settings(max_examples=50)
+def test_billing_adminservicemanager_instantiation(instance):
+    assert isinstance(instance, billing_AdminServiceManager)
+
+@given(instance=billing_ServiceManagerImpl_strategy)
+@settings(max_examples=50)
+def test_billing_servicemanagerimpl_instantiation(instance):
+    assert isinstance(instance, billing_ServiceManagerImpl)
+
+@given(instance=tda593_billing_AdminServiceManagerImpl_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_adminservicemanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_AdminServiceManagerImpl)
+
+@given(instance=tda593_billing_ServiceDataService_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_servicedataservice_instantiation(instance):
+    assert isinstance(instance, tda593_billing_ServiceDataService)
+
+@given(instance=tda593_billing_ServiceManager_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_servicemanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_ServiceManager)
+
+@given(instance=billing_ServiceDataService_strategy)
+@settings(max_examples=50)
+def test_billing_servicedataservice_instantiation(instance):
+    assert isinstance(instance, billing_ServiceDataService)
+
+@given(instance=ServiceManager_strategy)
+@settings(max_examples=50)
+def test_servicemanager_instantiation(instance):
+    assert isinstance(instance, ServiceManager)
+
+@given(instance=tda593_billing_AdminServiceManager_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_adminservicemanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_AdminServiceManager)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_AdminServiceManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_adminservicemanager_removeservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeService(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeService' in tda593_billing_AdminServiceManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeService' in tda593_billing_AdminServiceManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeService' in tda593_billing_AdminServiceManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_AdminServiceManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_adminservicemanager_createservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3796,170 +3761,124 @@ def test_tda593::billing::adminservicemanager_createservice_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createService' in tda593::billing::AdminServiceManager is empty"
+        assert has_statements, f"Function 'createService' in tda593_billing_AdminServiceManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createService' in tda593::billing::AdminServiceManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createService' in tda593_billing_AdminServiceManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createService' in tda593::billing::AdminServiceManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'createService' in tda593_billing_AdminServiceManager is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::AdminServiceManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::adminservicemanager_removeservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeService' in tda593::billing::AdminServiceManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeService' in tda593::billing::AdminServiceManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeService' in tda593::billing::AdminServiceManager is not implemented or raised an error")
-
-@given(instance=tda593::billing::ServiceManagerImpl_strategy)
+@given(instance=tda593_billing_ServiceManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::servicemanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::ServiceManagerImpl)
+def test_tda593_billing_servicemanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_ServiceManagerImpl)
 
-@given(instance=billing::CreditCardInformationDataService_strategy)
+@given(instance=billing_CreditCardInformationDataService_strategy)
 @settings(max_examples=50)
-def test_billing::creditcardinformationdataservice_instantiation(instance):
-    assert isinstance(instance, billing::CreditCardInformationDataService)
+def test_billing_creditcardinformationdataservice_instantiation(instance):
+    assert isinstance(instance, billing_CreditCardInformationDataService)
 
 @given(instance=CreditCardManager_strategy)
 @settings(max_examples=50)
 def test_creditcardmanager_instantiation(instance):
     assert isinstance(instance, CreditCardManager)
 
-@given(instance=tda593::billing::CreditCardManagerImpl_strategy)
+@given(instance=tda593_billing_CreditCardManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::creditcardmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::CreditCardManagerImpl)
+def test_tda593_billing_creditcardmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_CreditCardManagerImpl)
 
-@given(instance=tda593::billing::CreditCardInformationDataService_strategy)
+@given(instance=tda593_billing_CreditCardInformationDataService_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::creditcardinformationdataservice_instantiation(instance):
-    assert isinstance(instance, tda593::billing::CreditCardInformationDataService)
+def test_tda593_billing_creditcardinformationdataservice_instantiation(instance):
+    assert isinstance(instance, tda593_billing_CreditCardInformationDataService)
 
 @given(instance=BankingManager_strategy)
 @settings(max_examples=50)
 def test_bankingmanager_instantiation(instance):
     assert isinstance(instance, BankingManager)
 
-@given(instance=tda593::billing::BankingManagerImpl_strategy)
+@given(instance=tda593_billing_BankingManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::bankingmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::BankingManagerImpl)
+def test_tda593_billing_bankingmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_BankingManagerImpl)
 
-@given(instance=tda593::billing::BillDataService_strategy)
+@given(instance=tda593_billing_BillDataService_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::billdataservice_instantiation(instance):
-    assert isinstance(instance, tda593::billing::BillDataService)
+def test_tda593_billing_billdataservice_instantiation(instance):
+    assert isinstance(instance, tda593_billing_BillDataService)
 
-@given(instance=booking::BookingManager_strategy)
+@given(instance=booking_BookingManager_strategy)
 @settings(max_examples=50)
-def test_booking::bookingmanager_instantiation(instance):
-    assert isinstance(instance, booking::BookingManager)
+def test_booking_bookingmanager_instantiation(instance):
+    assert isinstance(instance, booking_BookingManager)
 
-@given(instance=billing::BillDataService_strategy)
+@given(instance=billing_BillDataService_strategy)
 @settings(max_examples=50)
-def test_billing::billdataservice_instantiation(instance):
-    assert isinstance(instance, billing::BillDataService)
+def test_billing_billdataservice_instantiation(instance):
+    assert isinstance(instance, billing_BillDataService)
 
 @given(instance=BillManager_strategy)
 @settings(max_examples=50)
 def test_billmanager_instantiation(instance):
     assert isinstance(instance, BillManager)
 
-@given(instance=tda593::billing::BillManagerImpl_strategy)
+@given(instance=tda593_billing_BillManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::billmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::BillManagerImpl)
+def test_tda593_billing_billmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_BillManagerImpl)
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
+@given(instance=tda593_billing_CreditCardInformation_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::creditcardinformation_instantiation(instance):
-    assert isinstance(instance, tda593::billing::CreditCardInformation)
-
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_expirationDate_type(instance):
-    assert isinstance(instance.expirationDate, date)
+def test_tda593_billing_creditcardinformation_instantiation(instance):
+    assert isinstance(instance, tda593_billing_CreditCardInformation)
 
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_expirationDate_setter(instance):
-    original = instance.expirationDate
-    instance.expirationDate = original
-    assert instance.expirationDate == original
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_cardNumber_type(instance):
-    assert isinstance(instance.cardNumber, str)
-
-
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_cardNumber_setter(instance):
+@given(instance=tda593_billing_CreditCardInformation_strategy)
+def test_tda593_billing_creditcardinformation_cardNumber_setter(instance):
     original = instance.cardNumber
     instance.cardNumber = original
     assert instance.cardNumber == original
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
 
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_ccv_type(instance):
-    assert isinstance(instance.ccv, str)
-
-
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_ccv_setter(instance):
+@given(instance=tda593_billing_CreditCardInformation_strategy)
+def test_tda593_billing_creditcardinformation_ccv_setter(instance):
     original = instance.ccv
     instance.ccv = original
     assert instance.ccv == original
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
 
 
-@given(instance=tda593::billing::CreditCardInformation_strategy)
-def test_tda593::billing::creditcardinformation_firstName_setter(instance):
+@given(instance=tda593_billing_CreditCardInformation_strategy)
+def test_tda593_billing_creditcardinformation_expirationDate_setter(instance):
+    original = instance.expirationDate
+    instance.expirationDate = original
+    assert instance.expirationDate == original
+
+
+
+@given(instance=tda593_billing_CreditCardInformation_strategy)
+def test_tda593_billing_creditcardinformation_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=tda593::billing::CreditCardManager_strategy)
+
+
+@given(instance=tda593_billing_CreditCardInformation_strategy)
+def test_tda593_billing_creditcardinformation_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+@given(instance=tda593_billing_CreditCardManager_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::creditcardmanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::CreditCardManager)
+def test_tda593_billing_creditcardmanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_CreditCardManager)
 
 import warnings
 import copy
@@ -3967,9 +3886,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::CreditCardManager_strategy)
+@given(instance=tda593_billing_CreditCardManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::creditcardmanager_setcreditcardinformation_changes_state(instance):
+def test_tda593_billing_creditcardmanager_revalidatecreditcardinformation_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.revalidateCreditCardInformation(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.revalidateCreditCardInformation).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'revalidateCreditCardInformation' in tda593_billing_CreditCardManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'revalidateCreditCardInformation' in tda593_billing_CreditCardManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'revalidateCreditCardInformation' in tda593_billing_CreditCardManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_CreditCardManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_creditcardmanager_setcreditcardinformation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3989,14 +3940,19 @@ def test_tda593::billing::creditcardmanager_setcreditcardinformation_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setCreditCardInformation' in tda593::billing::CreditCardManager is empty"
+        assert has_statements, f"Function 'setCreditCardInformation' in tda593_billing_CreditCardManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setCreditCardInformation' in tda593::billing::CreditCardManager did not change state; check implementation")
+            warnings.warn(f"Operation 'setCreditCardInformation' in tda593_billing_CreditCardManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setCreditCardInformation' in tda593::billing::CreditCardManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'setCreditCardInformation' in tda593_billing_CreditCardManager is not implemented or raised an error")
+
+@given(instance=tda593_billing_BankingManager_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_bankingmanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_BankingManager)
 
 import warnings
 import copy
@@ -4004,36 +3960,35 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::CreditCardManager_strategy)
+@given(instance=tda593_billing_BankingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::creditcardmanager_revalidatecreditcardinformation_changes_state(instance):
+def test_tda593_billing_bankingmanager_iscreditcardvalid_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.revalidateCreditCardInformation(
+        instance.isCreditCardValid(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.revalidateCreditCardInformation).strip()
+        source = inspect.getsource(instance.isCreditCardValid).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'revalidateCreditCardInformation' in tda593::billing::CreditCardManager is empty"
+        assert has_statements, f"Function 'isCreditCardValid' in tda593_billing_BankingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'revalidateCreditCardInformation' in tda593::billing::CreditCardManager did not change state; check implementation")
+            warnings.warn(f"Operation 'isCreditCardValid' in tda593_billing_BankingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'revalidateCreditCardInformation' in tda593::billing::CreditCardManager is not implemented or raised an error")
-
-@given(instance=tda593::billing::BankingManager_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::bankingmanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::BankingManager)
+        warnings.warn(f"Operation 'isCreditCardValid' in tda593_billing_BankingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4041,9 +3996,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::BankingManager_strategy)
+@given(instance=tda593_billing_BankingManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::bankingmanager_makepayment_changes_state(instance):
+def test_tda593_billing_bankingmanager_makepayment_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4063,65 +4018,29 @@ def test_tda593::billing::bankingmanager_makepayment_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makePayment' in tda593::billing::BankingManager is empty"
+        assert has_statements, f"Function 'makePayment' in tda593_billing_BankingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makePayment' in tda593::billing::BankingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'makePayment' in tda593_billing_BankingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makePayment' in tda593::billing::BankingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'makePayment' in tda593_billing_BankingManager is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::BankingManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bankingmanager_iscreditcardvalid_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isCreditCardValid(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isCreditCardValid).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isCreditCardValid' in tda593::billing::BankingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isCreditCardValid' in tda593::billing::BankingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isCreditCardValid' in tda593::billing::BankingManager is not implemented or raised an error")
-
-@given(instance=billing::DiscountDataService_strategy)
+@given(instance=billing_DiscountDataService_strategy)
 @settings(max_examples=50)
-def test_billing::discountdataservice_instantiation(instance):
-    assert isinstance(instance, billing::DiscountDataService)
+def test_billing_discountdataservice_instantiation(instance):
+    assert isinstance(instance, billing_DiscountDataService)
 
 @given(instance=DiscountManager_strategy)
 @settings(max_examples=50)
 def test_discountmanager_instantiation(instance):
     assert isinstance(instance, DiscountManager)
 
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
 @settings(max_examples=50)
-def test_tda593::billing::admindiscountmanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::AdminDiscountManager)
+def test_tda593_billing_admindiscountmanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_AdminDiscountManager)
 
 import warnings
 import copy
@@ -4129,9 +4048,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::admindiscountmanager_setamountlimit_changes_state(instance):
+def test_tda593_billing_admindiscountmanager_setamountlimit_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4146,14 +4065,14 @@ def test_tda593::billing::admindiscountmanager_setamountlimit_changes_state(inst
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setAmountLimit' in tda593::billing::AdminDiscountManager is empty"
+        assert has_statements, f"Function 'setAmountLimit' in tda593_billing_AdminDiscountManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setAmountLimit' in tda593::billing::AdminDiscountManager did not change state; check implementation")
+            warnings.warn(f"Operation 'setAmountLimit' in tda593_billing_AdminDiscountManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setAmountLimit' in tda593::billing::AdminDiscountManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'setAmountLimit' in tda593_billing_AdminDiscountManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4161,9 +4080,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::admindiscountmanager_creatediscountlimitfordiscount_changes_state(instance):
+def test_tda593_billing_admindiscountmanager_addallowedusers_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addAllowedUsers(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addAllowedUsers).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addAllowedUsers' in tda593_billing_AdminDiscountManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addAllowedUsers' in tda593_billing_AdminDiscountManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addAllowedUsers' in tda593_billing_AdminDiscountManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_admindiscountmanager_creatediscountlimitfordiscount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4181,14 +4132,14 @@ def test_tda593::billing::admindiscountmanager_creatediscountlimitfordiscount_ch
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createDiscountLimitForDiscount' in tda593::billing::AdminDiscountManager is empty"
+        assert has_statements, f"Function 'createDiscountLimitForDiscount' in tda593_billing_AdminDiscountManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createDiscountLimitForDiscount' in tda593::billing::AdminDiscountManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createDiscountLimitForDiscount' in tda593_billing_AdminDiscountManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createDiscountLimitForDiscount' in tda593::billing::AdminDiscountManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'createDiscountLimitForDiscount' in tda593_billing_AdminDiscountManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4196,74 +4147,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::admindiscountmanager_addpercentagediscount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addPercentageDiscount(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addPercentageDiscount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addPercentageDiscount' in tda593::billing::AdminDiscountManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addPercentageDiscount' in tda593::billing::AdminDiscountManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addPercentageDiscount' in tda593::billing::AdminDiscountManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::admindiscountmanager_addallowedusers_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAllowedUsers(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAllowedUsers).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAllowedUsers' in tda593::billing::AdminDiscountManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAllowedUsers' in tda593::billing::AdminDiscountManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAllowedUsers' in tda593::billing::AdminDiscountManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::admindiscountmanager_addsumdiscount_changes_state(instance):
+def test_tda593_billing_admindiscountmanager_addsumdiscount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4279,14 +4165,14 @@ def test_tda593::billing::admindiscountmanager_addsumdiscount_changes_state(inst
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addSumDiscount' in tda593::billing::AdminDiscountManager is empty"
+        assert has_statements, f"Function 'addSumDiscount' in tda593_billing_AdminDiscountManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addSumDiscount' in tda593::billing::AdminDiscountManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addSumDiscount' in tda593_billing_AdminDiscountManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addSumDiscount' in tda593::billing::AdminDiscountManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addSumDiscount' in tda593_billing_AdminDiscountManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4294,9 +4180,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::AdminDiscountManager_strategy)
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::admindiscountmanager_setdaterangelimit_changes_state(instance):
+def test_tda593_billing_admindiscountmanager_setdaterangelimit_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4312,29 +4198,14 @@ def test_tda593::billing::admindiscountmanager_setdaterangelimit_changes_state(i
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDateRangeLimit' in tda593::billing::AdminDiscountManager is empty"
+        assert has_statements, f"Function 'setDateRangeLimit' in tda593_billing_AdminDiscountManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDateRangeLimit' in tda593::billing::AdminDiscountManager did not change state; check implementation")
+            warnings.warn(f"Operation 'setDateRangeLimit' in tda593_billing_AdminDiscountManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDateRangeLimit' in tda593::billing::AdminDiscountManager is not implemented or raised an error")
-
-@given(instance=tda593::billing::DiscountManagerImpl_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::discountmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::billing::DiscountManagerImpl)
-
-@given(instance=tda593::billing::DiscountDataService_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::discountdataservice_instantiation(instance):
-    assert isinstance(instance, tda593::billing::DiscountDataService)
-
-@given(instance=tda593::billing::BillManager_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::billmanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::BillManager)
+        warnings.warn(f"Operation 'setDateRangeLimit' in tda593_billing_AdminDiscountManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4342,9 +4213,151 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::BillManager_strategy)
+@given(instance=tda593_billing_AdminDiscountManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::billmanager_addsubbill_changes_state(instance):
+def test_tda593_billing_admindiscountmanager_addpercentagediscount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addPercentageDiscount(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addPercentageDiscount).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addPercentageDiscount' in tda593_billing_AdminDiscountManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addPercentageDiscount' in tda593_billing_AdminDiscountManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addPercentageDiscount' in tda593_billing_AdminDiscountManager is not implemented or raised an error")
+
+@given(instance=tda593_billing_DiscountManagerImpl_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_discountmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_billing_DiscountManagerImpl)
+
+@given(instance=tda593_billing_DiscountDataService_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_discountdataservice_instantiation(instance):
+    assert isinstance(instance, tda593_billing_DiscountDataService)
+
+@given(instance=tda593_billing_BillManager_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_billmanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_BillManager)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_BillManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_billmanager_createbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createBill(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createBill' in tda593_billing_BillManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createBill' in tda593_billing_BillManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createBill' in tda593_billing_BillManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_BillManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_billmanager_createbookingbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createBookingBill(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createBookingBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createBookingBill' in tda593_billing_BillManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createBookingBill' in tda593_billing_BillManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createBookingBill' in tda593_billing_BillManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_BillManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_billmanager_publishbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.publishBill(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.publishBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'publishBill' in tda593_billing_BillManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'publishBill' in tda593_billing_BillManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'publishBill' in tda593_billing_BillManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_BillManager_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_billmanager_addsubbill_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4359,14 +4372,14 @@ def test_tda593::billing::billmanager_addsubbill_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addSubBill' in tda593::billing::BillManager is empty"
+        assert has_statements, f"Function 'addSubBill' in tda593_billing_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addSubBill' in tda593::billing::BillManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addSubBill' in tda593_billing_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addSubBill' in tda593::billing::BillManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addSubBill' in tda593_billing_BillManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4374,9 +4387,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::BillManager_strategy)
+@given(instance=tda593_billing_BillManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::billmanager_markbillaspaid_changes_state(instance):
+def test_tda593_billing_billmanager_markbillaspaid_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4393,14 +4406,14 @@ def test_tda593::billing::billmanager_markbillaspaid_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'markBillAsPaid' in tda593::billing::BillManager is empty"
+        assert has_statements, f"Function 'markBillAsPaid' in tda593_billing_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'markBillAsPaid' in tda593::billing::BillManager did not change state; check implementation")
+            warnings.warn(f"Operation 'markBillAsPaid' in tda593_billing_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'markBillAsPaid' in tda593::billing::BillManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'markBillAsPaid' in tda593_billing_BillManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4408,135 +4421,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::BillManager_strategy)
+@given(instance=tda593_billing_BillManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::billmanager_publishbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.publishBill(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.publishBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'publishBill' in tda593::billing::BillManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'publishBill' in tda593::billing::BillManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'publishBill' in tda593::billing::BillManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::BillManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::billmanager_createbookingbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createBookingBill(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createBookingBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createBookingBill' in tda593::billing::BillManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createBookingBill' in tda593::billing::BillManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createBookingBill' in tda593::billing::BillManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::BillManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::billmanager_applydiscount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.applyDiscount(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.applyDiscount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'applyDiscount' in tda593::billing::BillManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'applyDiscount' in tda593::billing::BillManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'applyDiscount' in tda593::billing::BillManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::BillManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::billmanager_createbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createBill(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createBill' in tda593::billing::BillManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createBill' in tda593::billing::BillManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createBill' in tda593::billing::BillManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::BillManager_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::billmanager_billitem_changes_state(instance):
+def test_tda593_billing_billmanager_billitem_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4552,174 +4439,14 @@ def test_tda593::billing::billmanager_billitem_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'billItem' in tda593::billing::BillManager is empty"
+        assert has_statements, f"Function 'billItem' in tda593_billing_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'billItem' in tda593::billing::BillManager did not change state; check implementation")
+            warnings.warn(f"Operation 'billItem' in tda593_billing_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'billItem' in tda593::billing::BillManager is not implemented or raised an error")
-
-@given(instance=booking::Booking_strategy)
-@settings(max_examples=50)
-def test_booking::booking_instantiation(instance):
-    assert isinstance(instance, booking::Booking)
-
-@given(instance=Bill_strategy)
-@settings(max_examples=50)
-def test_bill_instantiation(instance):
-    assert isinstance(instance, Bill)
-
-@given(instance=tda593::billing::BookingBill_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::bookingbill_instantiation(instance):
-    assert isinstance(instance, tda593::billing::BookingBill)
-
-@given(instance=tda593::billing::Service_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::service_instantiation(instance):
-    assert isinstance(instance, tda593::billing::Service)
-
-@given(instance=tda593::billing::Service_strategy)
-def test_tda593::billing::service_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=tda593::billing::Service_strategy)
-def test_tda593::billing::service_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=tda593::billing::Service_strategy)
-def test_tda593::billing::service_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::billing::Service_strategy)
-def test_tda593::billing::service_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=tda593::billing::Service_strategy)
-def test_tda593::billing::service_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tda593::billing::Service_strategy)
-def test_tda593::billing::service_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=billing::Service_strategy)
-@settings(max_examples=50)
-def test_billing::service_instantiation(instance):
-    assert isinstance(instance, billing::Service)
-
-@given(instance=tda593::billing::Purchase_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::purchase_instantiation(instance):
-    assert isinstance(instance, tda593::billing::Purchase)
-
-@given(instance=tda593::billing::Purchase_strategy)
-def test_tda593::billing::purchase_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=tda593::billing::Purchase_strategy)
-def test_tda593::billing::purchase_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=tda593::billing::Purchase_strategy)
-def test_tda593::billing::purchase_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::billing::Purchase_strategy)
-def test_tda593::billing::purchase_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=tda593::billing::Purchase_strategy)
-def test_tda593::billing::purchase_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
-
-
-@given(instance=tda593::billing::Purchase_strategy)
-def test_tda593::billing::purchase_quantity_setter(instance):
-    original = instance.quantity
-    instance.quantity = original
-    assert instance.quantity == original
-
-@given(instance=billing::Bill_strategy)
-@settings(max_examples=50)
-def test_billing::bill_instantiation(instance):
-    assert isinstance(instance, billing::Bill)
-
-@given(instance=billing::Discount_strategy)
-@settings(max_examples=50)
-def test_billing::discount_instantiation(instance):
-    assert isinstance(instance, billing::Discount)
-
-@given(instance=billing::Purchase_strategy)
-@settings(max_examples=50)
-def test_billing::purchase_instantiation(instance):
-    assert isinstance(instance, billing::Purchase)
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::bill_instantiation(instance):
-    assert isinstance(instance, tda593::billing::Bill)
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_isPaid_type(instance):
-    assert isinstance(instance.isPaid, bool)
-
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_isPaid_setter(instance):
-    original = instance.isPaid
-    instance.isPaid = original
-    assert instance.isPaid == original
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_isPublished_type(instance):
-    assert isinstance(instance.isPublished, bool)
-
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_isPublished_setter(instance):
-    original = instance.isPublished
-    instance.isPublished = original
-    assert instance.isPublished == original
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=tda593::billing::Bill_strategy)
-def test_tda593::billing::bill_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
+        warnings.warn(f"Operation 'billItem' in tda593_billing_BillManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4727,104 +4454,14 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::Bill_strategy)
+@given(instance=tda593_billing_BillManager_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::bill_addsubbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addSubBill(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addSubBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addSubBill' in tda593::billing::Bill is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addSubBill' in tda593::billing::Bill did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addSubBill' in tda593::billing::Bill is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bill_removesubbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeSubBill(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeSubBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeSubBill' in tda593::billing::Bill is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeSubBill' in tda593::billing::Bill did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeSubBill' in tda593::billing::Bill is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bill_unpublishbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unPublishBill()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unPublishBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unPublishBill' in tda593::billing::Bill is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unPublishBill' in tda593::billing::Bill did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unPublishBill' in tda593::billing::Bill is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bill_applydiscount_changes_state(instance):
+def test_tda593_billing_billmanager_applydiscount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
         instance.applyDiscount(
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
@@ -4834,14 +4471,144 @@ def test_tda593::billing::bill_applydiscount_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'applyDiscount' in tda593::billing::Bill is empty"
+        assert has_statements, f"Function 'applyDiscount' in tda593_billing_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'applyDiscount' in tda593::billing::Bill did not change state; check implementation")
+            warnings.warn(f"Operation 'applyDiscount' in tda593_billing_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'applyDiscount' in tda593::billing::Bill is not implemented or raised an error")
+        warnings.warn(f"Operation 'applyDiscount' in tda593_billing_BillManager is not implemented or raised an error")
+
+@given(instance=booking_Booking_strategy)
+@settings(max_examples=50)
+def test_booking_booking_instantiation(instance):
+    assert isinstance(instance, booking_Booking)
+
+@given(instance=Bill_strategy)
+@settings(max_examples=50)
+def test_bill_instantiation(instance):
+    assert isinstance(instance, Bill)
+
+@given(instance=tda593_billing_BookingBill_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_bookingbill_instantiation(instance):
+    assert isinstance(instance, tda593_billing_BookingBill)
+
+@given(instance=tda593_billing_Service_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_service_instantiation(instance):
+    assert isinstance(instance, tda593_billing_Service)
+
+
+
+@given(instance=tda593_billing_Service_strategy)
+def test_tda593_billing_service_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=tda593_billing_Service_strategy)
+def test_tda593_billing_service_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_billing_Service_strategy)
+def test_tda593_billing_service_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=billing_Service_strategy)
+@settings(max_examples=50)
+def test_billing_service_instantiation(instance):
+    assert isinstance(instance, billing_Service)
+
+@given(instance=tda593_billing_Purchase_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_purchase_instantiation(instance):
+    assert isinstance(instance, tda593_billing_Purchase)
+
+
+
+@given(instance=tda593_billing_Purchase_strategy)
+def test_tda593_billing_purchase_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=tda593_billing_Purchase_strategy)
+def test_tda593_billing_purchase_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_billing_Purchase_strategy)
+def test_tda593_billing_purchase_quantity_setter(instance):
+    original = instance.quantity
+    instance.quantity = original
+    assert instance.quantity == original
+
+@given(instance=billing_Bill_strategy)
+@settings(max_examples=50)
+def test_billing_bill_instantiation(instance):
+    assert isinstance(instance, billing_Bill)
+
+@given(instance=billing_Discount_strategy)
+@settings(max_examples=50)
+def test_billing_discount_instantiation(instance):
+    assert isinstance(instance, billing_Discount)
+
+@given(instance=billing_Purchase_strategy)
+@settings(max_examples=50)
+def test_billing_purchase_instantiation(instance):
+    assert isinstance(instance, billing_Purchase)
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_bill_instantiation(instance):
+    assert isinstance(instance, tda593_billing_Bill)
+
+
+
+@given(instance=tda593_billing_Bill_strategy)
+def test_tda593_billing_bill_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tda593_billing_Bill_strategy)
+def test_tda593_billing_bill_isPublished_setter(instance):
+    original = instance.isPublished
+    instance.isPublished = original
+    assert instance.isPublished == original
+
+
+
+@given(instance=tda593_billing_Bill_strategy)
+def test_tda593_billing_bill_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=tda593_billing_Bill_strategy)
+def test_tda593_billing_bill_isPaid_setter(instance):
+    original = instance.isPaid
+    instance.isPaid = original
+    assert instance.isPaid == original
 
 import warnings
 import copy
@@ -4849,100 +4616,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::billing::Bill_strategy)
+@given(instance=tda593_billing_Bill_strategy)
 @settings(max_examples=30)
-def test_tda593::billing::bill_unregisterpurchase_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unregisterPurchase(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unregisterPurchase).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unregisterPurchase' in tda593::billing::Bill is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unregisterPurchase' in tda593::billing::Bill did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unregisterPurchase' in tda593::billing::Bill is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bill_publishbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.publishBill()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.publishBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'publishBill' in tda593::billing::Bill is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'publishBill' in tda593::billing::Bill did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'publishBill' in tda593::billing::Bill is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bill_registerpurchase_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.registerPurchase(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.registerPurchase).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerPurchase' in tda593::billing::Bill is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerPurchase' in tda593::billing::Bill did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerPurchase' in tda593::billing::Bill is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::billing::Bill_strategy)
-@settings(max_examples=30)
-def test_tda593::billing::bill_removediscount_changes_state(instance):
+def test_tda593_billing_bill_removediscount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4956,207 +4632,14 @@ def test_tda593::billing::bill_removediscount_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeDiscount' in tda593::billing::Bill is empty"
+        assert has_statements, f"Function 'removeDiscount' in tda593_billing_Bill is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeDiscount' in tda593::billing::Bill did not change state; check implementation")
+            warnings.warn(f"Operation 'removeDiscount' in tda593_billing_Bill did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeDiscount' in tda593::billing::Bill is not implemented or raised an error")
-
-@given(instance=tda593::facilities::RoomDataService_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::roomdataservice_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::RoomDataService)
-
-@given(instance=facilities::KeyCardManager_strategy)
-@settings(max_examples=50)
-def test_facilities::keycardmanager_instantiation(instance):
-    assert isinstance(instance, facilities::KeyCardManager)
-
-@given(instance=Discount_strategy)
-@settings(max_examples=50)
-def test_discount_instantiation(instance):
-    assert isinstance(instance, Discount)
-
-@given(instance=tda593::billing::PercentageDiscount_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::percentagediscount_instantiation(instance):
-    assert isinstance(instance, tda593::billing::PercentageDiscount)
-
-@given(instance=tda593::billing::PercentageDiscount_strategy)
-def test_tda593::billing::percentagediscount_percentage_type(instance):
-    assert isinstance(instance.percentage, float)
-
-
-@given(instance=tda593::billing::PercentageDiscount_strategy)
-def test_tda593::billing::percentagediscount_percentage_setter(instance):
-    original = instance.percentage
-    instance.percentage = original
-    assert instance.percentage == original
-
-@given(instance=tda593::billing::SumDiscount_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::sumdiscount_instantiation(instance):
-    assert isinstance(instance, tda593::billing::SumDiscount)
-
-@given(instance=tda593::billing::SumDiscount_strategy)
-def test_tda593::billing::sumdiscount_discountSum_type(instance):
-    assert isinstance(instance.discountSum, float)
-
-
-@given(instance=tda593::billing::SumDiscount_strategy)
-def test_tda593::billing::sumdiscount_discountSum_setter(instance):
-    original = instance.discountSum
-    instance.discountSum = original
-    assert instance.discountSum == original
-
-@given(instance=booking::LegalEntity_strategy)
-@settings(max_examples=50)
-def test_booking::legalentity_instantiation(instance):
-    assert isinstance(instance, booking::LegalEntity)
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::discountlimit_instantiation(instance):
-    assert isinstance(instance, tda593::billing::DiscountLimit)
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_endDate_type(instance):
-    assert isinstance(instance.endDate, date)
-
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_endDate_setter(instance):
-    original = instance.endDate
-    instance.endDate = original
-    assert instance.endDate == original
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_startDate_type(instance):
-    assert isinstance(instance.startDate, date)
-
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_startDate_setter(instance):
-    original = instance.startDate
-    instance.startDate = original
-    assert instance.startDate == original
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_timesLeftToUse_type(instance):
-    assert isinstance(instance.timesLeftToUse, int)
-
-
-@given(instance=tda593::billing::DiscountLimit_strategy)
-def test_tda593::billing::discountlimit_timesLeftToUse_setter(instance):
-    original = instance.timesLeftToUse
-    instance.timesLeftToUse = original
-    assert instance.timesLeftToUse == original
-
-@given(instance=billing::DiscountLimit_strategy)
-@settings(max_examples=50)
-def test_billing::discountlimit_instantiation(instance):
-    assert isinstance(instance, billing::DiscountLimit)
-
-@given(instance=tda593::billing::Discount_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::discount_instantiation(instance):
-    assert isinstance(instance, tda593::billing::Discount)
-
-@given(instance=tda593::billing::Discount_strategy)
-def test_tda593::billing::discount_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tda593::billing::Discount_strategy)
-def test_tda593::billing::discount_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=tda593::billing::Discount_strategy)
-def test_tda593::billing::discount_code_type(instance):
-    assert isinstance(instance.code, str)
-
-
-@given(instance=tda593::billing::Discount_strategy)
-def test_tda593::billing::discount_code_setter(instance):
-    original = instance.code
-    instance.code = original
-    assert instance.code == original
-
-@given(instance=tda593::billing::DiscountManager_strategy)
-@settings(max_examples=50)
-def test_tda593::billing::discountmanager_instantiation(instance):
-    assert isinstance(instance, tda593::billing::DiscountManager)
-
-@given(instance=facilities::AdminKeyCardManager_strategy)
-@settings(max_examples=50)
-def test_facilities::adminkeycardmanager_instantiation(instance):
-    assert isinstance(instance, facilities::AdminKeyCardManager)
-
-@given(instance=facilities::KeyCardManagerImpl_strategy)
-@settings(max_examples=50)
-def test_facilities::keycardmanagerimpl_instantiation(instance):
-    assert isinstance(instance, facilities::KeyCardManagerImpl)
-
-@given(instance=tda593::facilities::AdminKeyCardManagerImpl_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::adminkeycardmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::AdminKeyCardManagerImpl)
-
-@given(instance=facilities::AdminRoomManager_strategy)
-@settings(max_examples=50)
-def test_facilities::adminroommanager_instantiation(instance):
-    assert isinstance(instance, facilities::AdminRoomManager)
-
-@given(instance=facilities::RoomManagerImpl_strategy)
-@settings(max_examples=50)
-def test_facilities::roommanagerimpl_instantiation(instance):
-    assert isinstance(instance, facilities::RoomManagerImpl)
-
-@given(instance=tda593::facilities::AdminRoomManagerImpl_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::adminroommanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::AdminRoomManagerImpl)
-
-@given(instance=tda593::facilities::KeyCardDataService_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::keycarddataservice_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::KeyCardDataService)
-
-@given(instance=facilities::KeyCardDataService_strategy)
-@settings(max_examples=50)
-def test_facilities::keycarddataservice_instantiation(instance):
-    assert isinstance(instance, facilities::KeyCardDataService)
-
-@given(instance=tda593::facilities::RoomTypeDataService_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::roomtypedataservice_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::RoomTypeDataService)
-
-@given(instance=RoomManager_strategy)
-@settings(max_examples=50)
-def test_roommanager_instantiation(instance):
-    assert isinstance(instance, RoomManager)
-
-@given(instance=tda593::facilities::AdminRoomManager_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::adminroommanager_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::AdminRoomManager)
+        warnings.warn(f"Operation 'removeDiscount' in tda593_billing_Bill is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5164,9 +4647,973 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::facilities::AdminRoomManager_strategy)
+@given(instance=tda593_billing_Bill_strategy)
 @settings(max_examples=30)
-def test_tda593::facilities::adminroommanager_addguestroom_changes_state(instance):
+def test_tda593_billing_bill_removesubbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeSubBill(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeSubBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeSubBill' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeSubBill' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeSubBill' in tda593_billing_Bill is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_bill_registerpurchase_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.registerPurchase(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.registerPurchase).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'registerPurchase' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'registerPurchase' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'registerPurchase' in tda593_billing_Bill is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_bill_publishbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.publishBill()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.publishBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'publishBill' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'publishBill' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'publishBill' in tda593_billing_Bill is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_bill_applydiscount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.applyDiscount(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.applyDiscount).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'applyDiscount' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'applyDiscount' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'applyDiscount' in tda593_billing_Bill is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_bill_addsubbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addSubBill(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addSubBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addSubBill' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addSubBill' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addSubBill' in tda593_billing_Bill is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_bill_unregisterpurchase_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unregisterPurchase(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unregisterPurchase).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unregisterPurchase' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unregisterPurchase' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unregisterPurchase' in tda593_billing_Bill is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_billing_Bill_strategy)
+@settings(max_examples=30)
+def test_tda593_billing_bill_unpublishbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unPublishBill()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unPublishBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unPublishBill' in tda593_billing_Bill is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unPublishBill' in tda593_billing_Bill did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unPublishBill' in tda593_billing_Bill is not implemented or raised an error")
+
+@given(instance=tda593_facilities_RoomDataService_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_roomdataservice_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_RoomDataService)
+
+@given(instance=facilities_KeyCardManager_strategy)
+@settings(max_examples=50)
+def test_facilities_keycardmanager_instantiation(instance):
+    assert isinstance(instance, facilities_KeyCardManager)
+
+@given(instance=Discount_strategy)
+@settings(max_examples=50)
+def test_discount_instantiation(instance):
+    assert isinstance(instance, Discount)
+
+@given(instance=tda593_billing_PercentageDiscount_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_percentagediscount_instantiation(instance):
+    assert isinstance(instance, tda593_billing_PercentageDiscount)
+
+
+
+@given(instance=tda593_billing_PercentageDiscount_strategy)
+def test_tda593_billing_percentagediscount_percentage_setter(instance):
+    original = instance.percentage
+    instance.percentage = original
+    assert instance.percentage == original
+
+@given(instance=tda593_billing_SumDiscount_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_sumdiscount_instantiation(instance):
+    assert isinstance(instance, tda593_billing_SumDiscount)
+
+
+
+@given(instance=tda593_billing_SumDiscount_strategy)
+def test_tda593_billing_sumdiscount_discountSum_setter(instance):
+    original = instance.discountSum
+    instance.discountSum = original
+    assert instance.discountSum == original
+
+@given(instance=booking_LegalEntity_strategy)
+@settings(max_examples=50)
+def test_booking_legalentity_instantiation(instance):
+    assert isinstance(instance, booking_LegalEntity)
+
+@given(instance=tda593_billing_DiscountLimit_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_discountlimit_instantiation(instance):
+    assert isinstance(instance, tda593_billing_DiscountLimit)
+
+
+
+@given(instance=tda593_billing_DiscountLimit_strategy)
+def test_tda593_billing_discountlimit_endDate_setter(instance):
+    original = instance.endDate
+    instance.endDate = original
+    assert instance.endDate == original
+
+
+
+@given(instance=tda593_billing_DiscountLimit_strategy)
+def test_tda593_billing_discountlimit_timesLeftToUse_setter(instance):
+    original = instance.timesLeftToUse
+    instance.timesLeftToUse = original
+    assert instance.timesLeftToUse == original
+
+
+
+@given(instance=tda593_billing_DiscountLimit_strategy)
+def test_tda593_billing_discountlimit_startDate_setter(instance):
+    original = instance.startDate
+    instance.startDate = original
+    assert instance.startDate == original
+
+
+
+@given(instance=tda593_billing_DiscountLimit_strategy)
+def test_tda593_billing_discountlimit_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=billing_DiscountLimit_strategy)
+@settings(max_examples=50)
+def test_billing_discountlimit_instantiation(instance):
+    assert isinstance(instance, billing_DiscountLimit)
+
+@given(instance=tda593_billing_Discount_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_discount_instantiation(instance):
+    assert isinstance(instance, tda593_billing_Discount)
+
+
+
+@given(instance=tda593_billing_Discount_strategy)
+def test_tda593_billing_discount_code_setter(instance):
+    original = instance.code
+    instance.code = original
+    assert instance.code == original
+
+
+
+@given(instance=tda593_billing_Discount_strategy)
+def test_tda593_billing_discount_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=tda593_billing_DiscountManager_strategy)
+@settings(max_examples=50)
+def test_tda593_billing_discountmanager_instantiation(instance):
+    assert isinstance(instance, tda593_billing_DiscountManager)
+
+@given(instance=facilities_AdminKeyCardManager_strategy)
+@settings(max_examples=50)
+def test_facilities_adminkeycardmanager_instantiation(instance):
+    assert isinstance(instance, facilities_AdminKeyCardManager)
+
+@given(instance=facilities_KeyCardManagerImpl_strategy)
+@settings(max_examples=50)
+def test_facilities_keycardmanagerimpl_instantiation(instance):
+    assert isinstance(instance, facilities_KeyCardManagerImpl)
+
+@given(instance=tda593_facilities_AdminKeyCardManagerImpl_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_adminkeycardmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_AdminKeyCardManagerImpl)
+
+@given(instance=facilities_AdminRoomManager_strategy)
+@settings(max_examples=50)
+def test_facilities_adminroommanager_instantiation(instance):
+    assert isinstance(instance, facilities_AdminRoomManager)
+
+@given(instance=facilities_RoomManagerImpl_strategy)
+@settings(max_examples=50)
+def test_facilities_roommanagerimpl_instantiation(instance):
+    assert isinstance(instance, facilities_RoomManagerImpl)
+
+@given(instance=tda593_facilities_AdminRoomManagerImpl_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_adminroommanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_AdminRoomManagerImpl)
+
+@given(instance=tda593_facilities_KeyCardDataService_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_keycarddataservice_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_KeyCardDataService)
+
+@given(instance=facilities_KeyCardDataService_strategy)
+@settings(max_examples=50)
+def test_facilities_keycarddataservice_instantiation(instance):
+    assert isinstance(instance, facilities_KeyCardDataService)
+
+@given(instance=tda593_facilities_RoomTypeDataService_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_roomtypedataservice_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_RoomTypeDataService)
+
+@given(instance=facilities_RoomTypeDataService_strategy)
+@settings(max_examples=50)
+def test_facilities_roomtypedataservice_instantiation(instance):
+    assert isinstance(instance, facilities_RoomTypeDataService)
+
+@given(instance=facilities_RoomDataService_strategy)
+@settings(max_examples=50)
+def test_facilities_roomdataservice_instantiation(instance):
+    assert isinstance(instance, facilities_RoomDataService)
+
+@given(instance=Room_strategy)
+@settings(max_examples=50)
+def test_room_instantiation(instance):
+    assert isinstance(instance, Room)
+
+@given(instance=tda593_facilities_ConferenceRoom_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_conferenceroom_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_ConferenceRoom)
+
+
+
+@given(instance=tda593_facilities_ConferenceRoom_strategy)
+def test_tda593_facilities_conferenceroom_equipment_setter(instance):
+    original = instance.equipment
+    instance.equipment = original
+    assert instance.equipment == original
+
+
+
+@given(instance=tda593_facilities_ConferenceRoom_strategy)
+def test_tda593_facilities_conferenceroom_numberOfSeats_setter(instance):
+    original = instance.numberOfSeats
+    instance.numberOfSeats = original
+    assert instance.numberOfSeats == original
+
+@given(instance=tda593_facilities_GuestRoom_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_guestroom_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_GuestRoom)
+
+
+
+@given(instance=tda593_facilities_GuestRoom_strategy)
+def test_tda593_facilities_guestroom_numberOfExtrabeds_setter(instance):
+    original = instance.numberOfExtrabeds
+    instance.numberOfExtrabeds = original
+    assert instance.numberOfExtrabeds == original
+
+
+
+@given(instance=tda593_facilities_GuestRoom_strategy)
+def test_tda593_facilities_guestroom_numberOfBeds_setter(instance):
+    original = instance.numberOfBeds
+    instance.numberOfBeds = original
+    assert instance.numberOfBeds == original
+
+@given(instance=facilities_RoomType_strategy)
+@settings(max_examples=50)
+def test_facilities_roomtype_instantiation(instance):
+    assert isinstance(instance, facilities_RoomType)
+
+@given(instance=facilities_KeyCard_strategy)
+@settings(max_examples=50)
+def test_facilities_keycard_instantiation(instance):
+    assert isinstance(instance, facilities_KeyCard)
+
+@given(instance=tda593_facilities_Room_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_room_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_Room)
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_photos_setter(instance):
+    original = instance.photos
+    instance.photos = original
+    assert instance.photos == original
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_roomNumber_setter(instance):
+    original = instance.roomNumber
+    instance.roomNumber = original
+    assert instance.roomNumber == original
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_isOperational_setter(instance):
+    original = instance.isOperational
+    instance.isOperational = original
+    assert instance.isOperational == original
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_isBeingCleaned_setter(instance):
+    original = instance.isBeingCleaned
+    instance.isBeingCleaned = original
+    assert instance.isBeingCleaned == original
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_floor_setter(instance):
+    original = instance.floor
+    instance.floor = original
+    assert instance.floor == original
+
+
+
+@given(instance=tda593_facilities_Room_strategy)
+def test_tda593_facilities_room_disabilityApprovals_setter(instance):
+    original = instance.disabilityApprovals
+    instance.disabilityApprovals = original
+    assert instance.disabilityApprovals == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_Room_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_room_registerkeycard_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.registerKeyCard(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.registerKeyCard).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'registerKeyCard' in tda593_facilities_Room is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'registerKeyCard' in tda593_facilities_Room did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'registerKeyCard' in tda593_facilities_Room is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_Room_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_room_unregisterkeycards_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unregisterKeyCards()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unregisterKeyCards).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unregisterKeyCards' in tda593_facilities_Room is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unregisterKeyCards' in tda593_facilities_Room did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unregisterKeyCards' in tda593_facilities_Room is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_Room_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_room_unregisterkeycard_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unregisterKeyCard(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unregisterKeyCard).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unregisterKeyCard' in tda593_facilities_Room is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unregisterKeyCard' in tda593_facilities_Room did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unregisterKeyCard' in tda593_facilities_Room is not implemented or raised an error")
+
+@given(instance=tda593_facilities_RoomType_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_roomtype_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_RoomType)
+
+
+
+@given(instance=tda593_facilities_RoomType_strategy)
+def test_tda593_facilities_roomtype_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=tda593_facilities_RoomType_strategy)
+def test_tda593_facilities_roomtype_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=tda593_facilities_RoomType_strategy)
+def test_tda593_facilities_roomtype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=tda593_facilities_RoomType_strategy)
+def test_tda593_facilities_roomtype_roomApprovals_setter(instance):
+    original = instance.roomApprovals
+    instance.roomApprovals = original
+    assert instance.roomApprovals == original
+
+@given(instance=tda593_facilities_RoomManager_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_roommanager_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_RoomManager)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_RoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_roommanager_registerkeycard_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.registerKeyCard(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.registerKeyCard).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'registerKeyCard' in tda593_facilities_RoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'registerKeyCard' in tda593_facilities_RoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'registerKeyCard' in tda593_facilities_RoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_RoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_roommanager_unregisterkeycard_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unregisterKeyCard(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unregisterKeyCard).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unregisterKeyCard' in tda593_facilities_RoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unregisterKeyCard' in tda593_facilities_RoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unregisterKeyCard' in tda593_facilities_RoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_RoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_roommanager_setisbeingcleaned_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setIsBeingCleaned(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setIsBeingCleaned).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setIsBeingCleaned' in tda593_facilities_RoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setIsBeingCleaned' in tda593_facilities_RoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setIsBeingCleaned' in tda593_facilities_RoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_RoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_roommanager_unregisterallkeycards_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unregisterAllKeyCards(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unregisterAllKeyCards).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unregisterAllKeyCards' in tda593_facilities_RoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unregisterAllKeyCards' in tda593_facilities_RoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unregisterAllKeyCards' in tda593_facilities_RoomManager is not implemented or raised an error")
+
+@given(instance=tda593_california_DataService_strategy)
+@settings(max_examples=50)
+def test_tda593_california_dataservice_instantiation(instance):
+    assert isinstance(instance, tda593_california_DataService)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_california_DataService_strategy)
+@settings(max_examples=30)
+def test_tda593_california_dataservice_count_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.count()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.count).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'count' in tda593_california_DataService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'count' in tda593_california_DataService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'count' in tda593_california_DataService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_california_DataService_strategy)
+@settings(max_examples=30)
+def test_tda593_california_dataservice_set_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.set(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.set).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'set' in tda593_california_DataService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'set' in tda593_california_DataService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'set' in tda593_california_DataService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_california_DataService_strategy)
+@settings(max_examples=30)
+def test_tda593_california_dataservice_delete_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.delete(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.delete).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'delete' in tda593_california_DataService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'delete' in tda593_california_DataService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'delete' in tda593_california_DataService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_california_DataService_strategy)
+@settings(max_examples=30)
+def test_tda593_california_dataservice_setall_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setAll(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setAll).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setAll' in tda593_california_DataService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setAll' in tda593_california_DataService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setAll' in tda593_california_DataService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_california_DataService_strategy)
+@settings(max_examples=30)
+def test_tda593_california_dataservice_exist_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.exist(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.exist).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'exist' in tda593_california_DataService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'exist' in tda593_california_DataService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'exist' in tda593_california_DataService is not implemented or raised an error")
+
+@given(instance=RoomManager_strategy)
+@settings(max_examples=50)
+def test_roommanager_instantiation(instance):
+    assert isinstance(instance, RoomManager)
+
+@given(instance=tda593_facilities_RoomManagerImpl_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_roommanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_RoomManagerImpl)
+
+@given(instance=tda593_facilities_AdminRoomManager_strategy)
+@settings(max_examples=50)
+def test_tda593_facilities_adminroommanager_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_AdminRoomManager)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_AdminRoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_adminroommanager_removeroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRoom(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRoom' in tda593_facilities_AdminRoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRoom' in tda593_facilities_AdminRoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRoom' in tda593_facilities_AdminRoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_AdminRoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_adminroommanager_addguestroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5187,14 +5634,14 @@ def test_tda593::facilities::adminroommanager_addguestroom_changes_state(instanc
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addGuestRoom' in tda593::facilities::AdminRoomManager is empty"
+        assert has_statements, f"Function 'addGuestRoom' in tda593_facilities_AdminRoomManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addGuestRoom' in tda593::facilities::AdminRoomManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addGuestRoom' in tda593_facilities_AdminRoomManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addGuestRoom' in tda593::facilities::AdminRoomManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addGuestRoom' in tda593_facilities_AdminRoomManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5202,9 +5649,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::facilities::AdminRoomManager_strategy)
+@given(instance=tda593_facilities_AdminRoomManager_strategy)
 @settings(max_examples=30)
-def test_tda593::facilities::adminroommanager_addroomtype_changes_state(instance):
+def test_tda593_facilities_adminroommanager_removeroomtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRoomType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRoomType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRoomType' in tda593_facilities_AdminRoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRoomType' in tda593_facilities_AdminRoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRoomType' in tda593_facilities_AdminRoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tda593_facilities_AdminRoomManager_strategy)
+@settings(max_examples=30)
+def test_tda593_facilities_adminroommanager_addroomtype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5221,14 +5699,14 @@ def test_tda593::facilities::adminroommanager_addroomtype_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRoomType' in tda593::facilities::AdminRoomManager is empty"
+        assert has_statements, f"Function 'addRoomType' in tda593_facilities_AdminRoomManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRoomType' in tda593::facilities::AdminRoomManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addRoomType' in tda593_facilities_AdminRoomManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRoomType' in tda593::facilities::AdminRoomManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addRoomType' in tda593_facilities_AdminRoomManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5236,9 +5714,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::facilities::AdminRoomManager_strategy)
+@given(instance=tda593_facilities_AdminRoomManager_strategy)
 @settings(max_examples=30)
-def test_tda593::facilities::adminroommanager_addconferenceroom_changes_state(instance):
+def test_tda593_facilities_adminroommanager_addconferenceroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5259,112 +5737,47 @@ def test_tda593::facilities::adminroommanager_addconferenceroom_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addConferenceRoom' in tda593::facilities::AdminRoomManager is empty"
+        assert has_statements, f"Function 'addConferenceRoom' in tda593_facilities_AdminRoomManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addConferenceRoom' in tda593::facilities::AdminRoomManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addConferenceRoom' in tda593_facilities_AdminRoomManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addConferenceRoom' in tda593::facilities::AdminRoomManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addConferenceRoom' in tda593_facilities_AdminRoomManager is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::AdminRoomManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::adminroommanager_removeroomtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeRoomType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRoomType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoomType' in tda593::facilities::AdminRoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoomType' in tda593::facilities::AdminRoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoomType' in tda593::facilities::AdminRoomManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::AdminRoomManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::adminroommanager_removeroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeRoom(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoom' in tda593::facilities::AdminRoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoom' in tda593::facilities::AdminRoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoom' in tda593::facilities::AdminRoomManager is not implemented or raised an error")
-
-@given(instance=tda593::facilities::KeyCard_strategy)
+@given(instance=tda593_facilities_KeyCard_strategy)
 @settings(max_examples=50)
-def test_tda593::facilities::keycard_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::KeyCard)
-
-@given(instance=tda593::facilities::KeyCard_strategy)
-def test_tda593::facilities::keycard_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_tda593_facilities_keycard_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_KeyCard)
 
 
-@given(instance=tda593::facilities::KeyCard_strategy)
-def test_tda593::facilities::keycard_id_setter(instance):
+
+@given(instance=tda593_facilities_KeyCard_strategy)
+def test_tda593_facilities_keycard_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=tda593::facilities::KeyCardManager_strategy)
+@given(instance=tda593_facilities_KeyCardManager_strategy)
 @settings(max_examples=50)
-def test_tda593::facilities::keycardmanager_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::KeyCardManager)
+def test_tda593_facilities_keycardmanager_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_KeyCardManager)
 
 @given(instance=KeyCardManager_strategy)
 @settings(max_examples=50)
 def test_keycardmanager_instantiation(instance):
     assert isinstance(instance, KeyCardManager)
 
-@given(instance=tda593::facilities::KeyCardManagerImpl_strategy)
+@given(instance=tda593_facilities_KeyCardManagerImpl_strategy)
 @settings(max_examples=50)
-def test_tda593::facilities::keycardmanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::KeyCardManagerImpl)
+def test_tda593_facilities_keycardmanagerimpl_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_KeyCardManagerImpl)
 
-@given(instance=tda593::facilities::AdminKeyCardManager_strategy)
+@given(instance=tda593_facilities_AdminKeyCardManager_strategy)
 @settings(max_examples=50)
-def test_tda593::facilities::adminkeycardmanager_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::AdminKeyCardManager)
+def test_tda593_facilities_adminkeycardmanager_instantiation(instance):
+    assert isinstance(instance, tda593_facilities_AdminKeyCardManager)
 
 import warnings
 import copy
@@ -5372,40 +5785,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::facilities::AdminKeyCardManager_strategy)
+@given(instance=tda593_facilities_AdminKeyCardManager_strategy)
 @settings(max_examples=30)
-def test_tda593::facilities::adminkeycardmanager_removekeycard_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeKeyCard(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeKeyCard).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeKeyCard' in tda593::facilities::AdminKeyCardManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeKeyCard' in tda593::facilities::AdminKeyCardManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeKeyCard' in tda593::facilities::AdminKeyCardManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::AdminKeyCardManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::adminkeycardmanager_addkeycard_changes_state(instance):
+def test_tda593_facilities_adminkeycardmanager_addkeycard_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5419,180 +5801,14 @@ def test_tda593::facilities::adminkeycardmanager_addkeycard_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addKeyCard' in tda593::facilities::AdminKeyCardManager is empty"
+        assert has_statements, f"Function 'addKeyCard' in tda593_facilities_AdminKeyCardManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addKeyCard' in tda593::facilities::AdminKeyCardManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addKeyCard' in tda593_facilities_AdminKeyCardManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addKeyCard' in tda593::facilities::AdminKeyCardManager is not implemented or raised an error")
-
-@given(instance=facilities::RoomTypeDataService_strategy)
-@settings(max_examples=50)
-def test_facilities::roomtypedataservice_instantiation(instance):
-    assert isinstance(instance, facilities::RoomTypeDataService)
-
-@given(instance=facilities::RoomDataService_strategy)
-@settings(max_examples=50)
-def test_facilities::roomdataservice_instantiation(instance):
-    assert isinstance(instance, facilities::RoomDataService)
-
-@given(instance=tda593::facilities::RoomManagerImpl_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::roommanagerimpl_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::RoomManagerImpl)
-
-@given(instance=Room_strategy)
-@settings(max_examples=50)
-def test_room_instantiation(instance):
-    assert isinstance(instance, Room)
-
-@given(instance=tda593::facilities::ConferenceRoom_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::conferenceroom_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::ConferenceRoom)
-
-@given(instance=tda593::facilities::ConferenceRoom_strategy)
-def test_tda593::facilities::conferenceroom_numberOfSeats_type(instance):
-    assert isinstance(instance.numberOfSeats, int)
-
-
-@given(instance=tda593::facilities::ConferenceRoom_strategy)
-def test_tda593::facilities::conferenceroom_numberOfSeats_setter(instance):
-    original = instance.numberOfSeats
-    instance.numberOfSeats = original
-    assert instance.numberOfSeats == original
-
-@given(instance=tda593::facilities::ConferenceRoom_strategy)
-def test_tda593::facilities::conferenceroom_equipment_type(instance):
-    assert isinstance(instance.equipment, str)
-
-
-@given(instance=tda593::facilities::ConferenceRoom_strategy)
-def test_tda593::facilities::conferenceroom_equipment_setter(instance):
-    original = instance.equipment
-    instance.equipment = original
-    assert instance.equipment == original
-
-@given(instance=tda593::facilities::GuestRoom_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::guestroom_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::GuestRoom)
-
-@given(instance=tda593::facilities::GuestRoom_strategy)
-def test_tda593::facilities::guestroom_numberOfExtrabeds_type(instance):
-    assert isinstance(instance.numberOfExtrabeds, int)
-
-
-@given(instance=tda593::facilities::GuestRoom_strategy)
-def test_tda593::facilities::guestroom_numberOfExtrabeds_setter(instance):
-    original = instance.numberOfExtrabeds
-    instance.numberOfExtrabeds = original
-    assert instance.numberOfExtrabeds == original
-
-@given(instance=tda593::facilities::GuestRoom_strategy)
-def test_tda593::facilities::guestroom_numberOfBeds_type(instance):
-    assert isinstance(instance.numberOfBeds, int)
-
-
-@given(instance=tda593::facilities::GuestRoom_strategy)
-def test_tda593::facilities::guestroom_numberOfBeds_setter(instance):
-    original = instance.numberOfBeds
-    instance.numberOfBeds = original
-    assert instance.numberOfBeds == original
-
-@given(instance=facilities::RoomType_strategy)
-@settings(max_examples=50)
-def test_facilities::roomtype_instantiation(instance):
-    assert isinstance(instance, facilities::RoomType)
-
-@given(instance=facilities::KeyCard_strategy)
-@settings(max_examples=50)
-def test_facilities::keycard_instantiation(instance):
-    assert isinstance(instance, facilities::KeyCard)
-
-@given(instance=tda593::facilities::Room_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::room_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::Room)
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_isBeingCleaned_type(instance):
-    assert isinstance(instance.isBeingCleaned, bool)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_isBeingCleaned_setter(instance):
-    original = instance.isBeingCleaned
-    instance.isBeingCleaned = original
-    assert instance.isBeingCleaned == original
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_floor_type(instance):
-    assert isinstance(instance.floor, int)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_floor_setter(instance):
-    original = instance.floor
-    instance.floor = original
-    assert instance.floor == original
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_photos_type(instance):
-    assert isinstance(instance.photos, str)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_photos_setter(instance):
-    original = instance.photos
-    instance.photos = original
-    assert instance.photos == original
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_disabilityApprovals_type(instance):
-    assert isinstance(instance.disabilityApprovals, str)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_disabilityApprovals_setter(instance):
-    original = instance.disabilityApprovals
-    instance.disabilityApprovals = original
-    assert instance.disabilityApprovals == original
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_roomNumber_type(instance):
-    assert isinstance(instance.roomNumber, str)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_roomNumber_setter(instance):
-    original = instance.roomNumber
-    instance.roomNumber = original
-    assert instance.roomNumber == original
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_isOperational_type(instance):
-    assert isinstance(instance.isOperational, bool)
-
-
-@given(instance=tda593::facilities::Room_strategy)
-def test_tda593::facilities::room_isOperational_setter(instance):
-    original = instance.isOperational
-    instance.isOperational = original
-    assert instance.isOperational == original
+        warnings.warn(f"Operation 'addKeyCard' in tda593_facilities_AdminKeyCardManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5600,426 +5816,27 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tda593::facilities::Room_strategy)
+@given(instance=tda593_facilities_AdminKeyCardManager_strategy)
 @settings(max_examples=30)
-def test_tda593::facilities::room_unregisterkeycards_changes_state(instance):
+def test_tda593_facilities_adminkeycardmanager_removekeycard_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.unregisterKeyCards()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unregisterKeyCards).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unregisterKeyCards' in tda593::facilities::Room is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unregisterKeyCards' in tda593::facilities::Room did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unregisterKeyCards' in tda593::facilities::Room is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::Room_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::room_unregisterkeycard_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unregisterKeyCard(
+        instance.removeKeyCard(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unregisterKeyCard).strip()
+        source = inspect.getsource(instance.removeKeyCard).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unregisterKeyCard' in tda593::facilities::Room is empty"
+        assert has_statements, f"Function 'removeKeyCard' in tda593_facilities_AdminKeyCardManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unregisterKeyCard' in tda593::facilities::Room did not change state; check implementation")
+            warnings.warn(f"Operation 'removeKeyCard' in tda593_facilities_AdminKeyCardManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unregisterKeyCard' in tda593::facilities::Room is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::Room_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::room_registerkeycard_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.registerKeyCard(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.registerKeyCard).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerKeyCard' in tda593::facilities::Room is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerKeyCard' in tda593::facilities::Room did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerKeyCard' in tda593::facilities::Room is not implemented or raised an error")
-
-@given(instance=tda593::facilities::RoomType_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::roomtype_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::RoomType)
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_roomApprovals_type(instance):
-    assert isinstance(instance.roomApprovals, str)
-
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_roomApprovals_setter(instance):
-    original = instance.roomApprovals
-    instance.roomApprovals = original
-    assert instance.roomApprovals == original
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=tda593::facilities::RoomType_strategy)
-def test_tda593::facilities::roomtype_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=tda593::facilities::RoomManager_strategy)
-@settings(max_examples=50)
-def test_tda593::facilities::roommanager_instantiation(instance):
-    assert isinstance(instance, tda593::facilities::RoomManager)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::RoomManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::roommanager_unregisterkeycard_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unregisterKeyCard(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unregisterKeyCard).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unregisterKeyCard' in tda593::facilities::RoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unregisterKeyCard' in tda593::facilities::RoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unregisterKeyCard' in tda593::facilities::RoomManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::RoomManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::roommanager_registerkeycard_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.registerKeyCard(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.registerKeyCard).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerKeyCard' in tda593::facilities::RoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerKeyCard' in tda593::facilities::RoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerKeyCard' in tda593::facilities::RoomManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::RoomManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::roommanager_setisbeingcleaned_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setIsBeingCleaned(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setIsBeingCleaned).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setIsBeingCleaned' in tda593::facilities::RoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setIsBeingCleaned' in tda593::facilities::RoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setIsBeingCleaned' in tda593::facilities::RoomManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::facilities::RoomManager_strategy)
-@settings(max_examples=30)
-def test_tda593::facilities::roommanager_unregisterallkeycards_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unregisterAllKeyCards(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unregisterAllKeyCards).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unregisterAllKeyCards' in tda593::facilities::RoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unregisterAllKeyCards' in tda593::facilities::RoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unregisterAllKeyCards' in tda593::facilities::RoomManager is not implemented or raised an error")
-
-@given(instance=tda593::california::DataService_strategy)
-@settings(max_examples=50)
-def test_tda593::california::dataservice_instantiation(instance):
-    assert isinstance(instance, tda593::california::DataService)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::california::DataService_strategy)
-@settings(max_examples=30)
-def test_tda593::california::dataservice_exist_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.exist(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.exist).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'exist' in tda593::california::DataService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'exist' in tda593::california::DataService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'exist' in tda593::california::DataService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::california::DataService_strategy)
-@settings(max_examples=30)
-def test_tda593::california::dataservice_set_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.set(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.set).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in tda593::california::DataService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in tda593::california::DataService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in tda593::california::DataService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::california::DataService_strategy)
-@settings(max_examples=30)
-def test_tda593::california::dataservice_setall_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setAll(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setAll).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setAll' in tda593::california::DataService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setAll' in tda593::california::DataService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setAll' in tda593::california::DataService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::california::DataService_strategy)
-@settings(max_examples=30)
-def test_tda593::california::dataservice_count_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.count()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.count).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'count' in tda593::california::DataService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'count' in tda593::california::DataService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'count' in tda593::california::DataService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tda593::california::DataService_strategy)
-@settings(max_examples=30)
-def test_tda593::california::dataservice_delete_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.delete(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.delete).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'delete' in tda593::california::DataService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'delete' in tda593::california::DataService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'delete' in tda593::california::DataService is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeKeyCard' in tda593_facilities_AdminKeyCardManager is not implemented or raised an error")

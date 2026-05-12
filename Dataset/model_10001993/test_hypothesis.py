@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Package2_verifikasi_donasi_UseCase,
@@ -1003,8 +1003,8 @@ def test_user_constructor_args():
     sig = inspect.signature(user.__init__)
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
-    assert "password" in params, "Missing parameter 'password'"
     assert "id_user" in params, "Missing parameter 'id_user'"
+    assert "password" in params, "Missing parameter 'password'"
     assert "nama_user" in params, "Missing parameter 'nama_user'"
 
 def test_user_has_email():
@@ -1016,21 +1016,21 @@ def test_user_has_email():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_password():
-    assert hasattr(user, "password")
-    descriptor = None
-    for klass in user.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_user_has_id_user():
     assert hasattr(user, "id_user")
     descriptor = None
     for klass in user.__mro__:
         if "id_user" in klass.__dict__:
             descriptor = klass.__dict__["id_user"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_password():
+    assert hasattr(user, "password")
+    descriptor = None
+    for klass in user.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -1682,9 +1682,9 @@ user_strategy = st.builds(
     user,
     email=
         safe_text,
-    password=
-        safe_text,
     id_user=
+        safe_text,
+    password=
         safe_text,
     nama_user=
         safe_text
@@ -2103,9 +2103,6 @@ def test_mengelola_program_donasi_usecase5_instantiation(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, user)
 
-@given(instance=user_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=user_strategy)
@@ -2114,20 +2111,6 @@ def test_user_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=user_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=user_strategy)
-def test_user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=user_strategy)
-def test_user_id_user_type(instance):
-    assert isinstance(instance.id_user, str)
 
 
 @given(instance=user_strategy)
@@ -2136,9 +2119,14 @@ def test_user_id_user_setter(instance):
     instance.id_user = original
     assert instance.id_user == original
 
+
+
 @given(instance=user_strategy)
-def test_user_nama_user_type(instance):
-    assert isinstance(instance.nama_user, str)
+def test_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 
 
 @given(instance=user_strategy)

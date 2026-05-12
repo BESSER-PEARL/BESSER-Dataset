@@ -1,0 +1,43 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Clock  {
+
+    private int clockCycle;
+
+
+
+
+
+    private Operating_System operating_system;
+
+
+    public Clock(
+        int clockCycle    ) {
+        this.clockCycle = clockCycle;
+    }
+
+
+    public int getClockcycle() {
+        return clockCycle;
+    }
+
+    public void setClockcycle(int clockCycle) {
+        this.clockCycle = clockCycle;
+    }
+
+    public Operating_System getOperating_system() {
+        return operating_system;
+    }
+
+    public void setOperating_system(Operating_System operating_system) {
+        this.operating_system = operating_system;
+    }
+
+}

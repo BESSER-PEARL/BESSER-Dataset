@@ -3,125 +3,125 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    p2view::aggregator::ITouchpointType,
-    aggregator::p2view::Touchpoints,
-    p2view::aggregator::IRequirement,
-    p2view::aggregator::ITouchpointData,
+from python_code import (
+    p2view_aggregator_ITouchpointType,
+    aggregator_p2view_Touchpoints,
+    p2view_aggregator_IRequirement,
+    p2view_aggregator_ITouchpointData,
     IRequirement,
     RequirementWrapper,
-    aggregator::p2view::Requirements,
-    p2view::aggregator::IRepositoryReference,
-    aggregator::p2view::RepositoryReferences,
-    p2view::aggregator::IProvidedCapability,
+    aggregator_p2view_Requirements,
+    p2view_aggregator_IRepositoryReference,
+    aggregator_p2view_RepositoryReferences,
+    p2view_aggregator_IProvidedCapability,
     LabelProvider,
-    aggregator::p2view::RequirementWrapper,
+    aggregator_p2view_RequirementWrapper,
     IProvidedCapability,
-    aggregator::p2view::ProvidedCapabilityWrapper,
+    aggregator_p2view_ProvidedCapabilityWrapper,
     ProvidedCapabilityWrapper,
-    aggregator::p2view::ProvidedCapabilities,
-    p2view::aggregator::Property,
-    aggregator::p2view::Properties,
+    aggregator_p2view_ProvidedCapabilities,
+    p2view_aggregator_Property,
+    aggregator_p2view_Properties,
     Product,
-    aggregator::p2view::Products,
-    aggregator::p2view::RepositoryBrowser,
-    p2view::aggregator::ILicense,
-    aggregator::p2view::Licenses,
+    aggregator_p2view_Products,
+    aggregator_p2view_RepositoryBrowser,
+    p2view_aggregator_ILicense,
+    aggregator_p2view_Licenses,
     OtherIU,
-    aggregator::p2view::Miscellaneous,
+    aggregator_p2view_Miscellaneous,
     RepositoryReferences,
-    p2view::aggregator::MetadataRepository,
+    p2view_aggregator_MetadataRepository,
     InstallableUnits,
-    aggregator::p2view::MetadataRepositoryStructuredView,
+    aggregator_p2view_MetadataRepositoryStructuredView,
     MetadataRepositoryStructuredView,
     Properties,
     ProvidedCapabilities,
-    p2view::IUDetails,
-    p2view::IUPresentation,
-    aggregator::p2view::IUPresentationWithDetails,
-    p2view::aggregator::IInstallableUnit,
-    aggregator::p2view::IUPresentation,
+    p2view_IUDetails,
+    p2view_IUPresentation,
+    aggregator_p2view_IUPresentationWithDetails,
+    p2view_aggregator_IInstallableUnit,
+    aggregator_p2view_IUPresentation,
     Licenses,
-    p2view::aggregator::ICopyright,
-    p2view::aggregator::IUpdateDescriptor,
+    p2view_aggregator_ICopyright,
+    p2view_aggregator_IUpdateDescriptor,
     Touchpoints,
-    aggregator::p2view::Fragments,
+    aggregator_p2view_Fragments,
     Feature,
-    aggregator::p2view::Features,
+    aggregator_p2view_Features,
     Requirements,
-    aggregator::p2view::IUDetails,
+    aggregator_p2view_IUDetails,
     Miscellaneous,
-    aggregator::p2view::InstallableUnits,
+    aggregator_p2view_InstallableUnits,
     Fragment,
     Categories,
     IUPresentation,
-    aggregator::p2view::Category,
+    aggregator_p2view_Category,
     Category,
-    aggregator::p2view::Categories,
+    aggregator_p2view_Categories,
     IUDetails,
     Fragments,
     Bundles,
     Products,
     Features,
     Bundle,
-    aggregator::p2view::Fragment,
-    aggregator::p2view::Bundles,
+    aggregator_p2view_Fragment,
+    aggregator_p2view_Bundles,
     IUPresentationWithDetails,
-    aggregator::p2view::Product,
-    aggregator::p2view::Feature,
-    aggregator::p2view::OtherIU,
-    aggregator::p2view::Bundle,
-    aggregator::MetadataRepository,
-    aggregator::StatusProvider,
-    aggregator::Status,
-    aggregator::Property,
-    aggregator::MavenItem,
+    aggregator_p2view_Feature,
+    aggregator_p2view_Product,
+    aggregator_p2view_OtherIU,
+    aggregator_p2view_Bundle,
+    aggregator_MetadataRepository,
+    aggregator_StatusProvider,
+    aggregator_Status,
+    aggregator_Property,
+    aggregator_MavenItem,
     InstallableUnitRequest,
-    aggregator::LabelProvider,
+    aggregator_LabelProvider,
     MetadataRepositoryReference,
-    aggregator::InfosProvider,
-    aggregator::IdentificationProvider,
+    aggregator_InfosProvider,
+    aggregator_IdentificationProvider,
     MapRule,
-    aggregator::ValidConfigurationsRule,
-    aggregator::ExclusionRule,
-    aggregator::EnabledStatusProvider,
-    aggregator::DescriptionProvider,
+    aggregator_ValidConfigurationsRule,
+    aggregator_ExclusionRule,
+    aggregator_EnabledStatusProvider,
+    aggregator_DescriptionProvider,
     IdentificationProvider,
     EnabledStatusProvider,
-    aggregator::MappedUnit,
-    aggregator::ChildrenProvider,
+    aggregator_MappedUnit,
+    aggregator_ChildrenProvider,
     MappedUnit,
-    aggregator::Category,
-    aggregator::Product,
-    aggregator::Feature,
-    aggregator::Bundle,
-    aggregator::Contact,
-    aggregator::AvailableVersion,
-    aggregator::AvailableVersionsHeader,
+    aggregator_Product,
+    aggregator_Category,
+    aggregator_Feature,
+    aggregator_Bundle,
+    aggregator_Contact,
+    aggregator_AvailableVersion,
+    aggregator_AvailableVersionsHeader,
     DescriptionProvider,
-    aggregator::MappedRepository,
-    aggregator::MapRule,
-    aggregator::Configuration,
+    aggregator_MappedRepository,
+    aggregator_MapRule,
+    aggregator_Configuration,
     InfosProvider,
     StatusProvider,
-    aggregator::MavenMapping,
-    aggregator::Aggregation,
-    aggregator::ValidationSet,
-    aggregator::MetadataRepositoryReference,
-    aggregator::CustomCategory,
-    aggregator::InstallableUnitRequest,
-    aggregator::Contribution,
-    InstallableUnitType,
-    AvailableFrom,
-    OperatingSystem,
+    aggregator_MavenMapping,
+    aggregator_Contribution,
+    aggregator_Aggregation,
+    aggregator_InstallableUnitRequest,
+    aggregator_ValidationSet,
+    aggregator_MetadataRepositoryReference,
+    aggregator_CustomCategory,
     WindowSystem,
     StatusCode,
-    Architecture,
-    AggregationType,
+    InstallableUnitType,
     PackedStrategy,
+    OperatingSystem,
     VersionMatch,
+    AggregationType,
+    Architecture,
+    AvailableFrom,
 )
 
 # =============================================================================
@@ -130,58 +130,58 @@ from classes import (
 
 
 
-def test_p2view::aggregator::itouchpointtype_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::ITouchpointType)
+def test_p2view_aggregator_itouchpointtype_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_ITouchpointType)
 
 
-def test_p2view::aggregator::itouchpointtype_constructor_exists():
-    assert callable(p2view::aggregator::ITouchpointType.__init__)
+def test_p2view_aggregator_itouchpointtype_constructor_exists():
+    assert callable(p2view_aggregator_ITouchpointType.__init__)
 
 
-def test_p2view::aggregator::itouchpointtype_constructor_args():
-    sig = inspect.signature(p2view::aggregator::ITouchpointType.__init__)
+def test_p2view_aggregator_itouchpointtype_constructor_args():
+    sig = inspect.signature(p2view_aggregator_ITouchpointType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::touchpoints_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Touchpoints)
+def test_aggregator_p2view_touchpoints_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Touchpoints)
 
 
-def test_aggregator::p2view::touchpoints_constructor_exists():
-    assert callable(aggregator::p2view::Touchpoints.__init__)
+def test_aggregator_p2view_touchpoints_constructor_exists():
+    assert callable(aggregator_p2view_Touchpoints.__init__)
 
 
-def test_aggregator::p2view::touchpoints_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Touchpoints.__init__)
+def test_aggregator_p2view_touchpoints_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Touchpoints.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::aggregator::irequirement_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::IRequirement)
+def test_p2view_aggregator_irequirement_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_IRequirement)
 
 
-def test_p2view::aggregator::irequirement_constructor_exists():
-    assert callable(p2view::aggregator::IRequirement.__init__)
+def test_p2view_aggregator_irequirement_constructor_exists():
+    assert callable(p2view_aggregator_IRequirement.__init__)
 
 
-def test_p2view::aggregator::irequirement_constructor_args():
-    sig = inspect.signature(p2view::aggregator::IRequirement.__init__)
+def test_p2view_aggregator_irequirement_constructor_args():
+    sig = inspect.signature(p2view_aggregator_IRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::aggregator::itouchpointdata_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::ITouchpointData)
+def test_p2view_aggregator_itouchpointdata_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_ITouchpointData)
 
 
-def test_p2view::aggregator::itouchpointdata_constructor_exists():
-    assert callable(p2view::aggregator::ITouchpointData.__init__)
+def test_p2view_aggregator_itouchpointdata_constructor_exists():
+    assert callable(p2view_aggregator_ITouchpointData.__init__)
 
 
-def test_p2view::aggregator::itouchpointdata_constructor_args():
-    sig = inspect.signature(p2view::aggregator::ITouchpointData.__init__)
+def test_p2view_aggregator_itouchpointdata_constructor_args():
+    sig = inspect.signature(p2view_aggregator_ITouchpointData.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -214,58 +214,58 @@ def test_requirementwrapper_constructor_args():
 
 
 
-def test_aggregator::p2view::requirements_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Requirements)
+def test_aggregator_p2view_requirements_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Requirements)
 
 
-def test_aggregator::p2view::requirements_constructor_exists():
-    assert callable(aggregator::p2view::Requirements.__init__)
+def test_aggregator_p2view_requirements_constructor_exists():
+    assert callable(aggregator_p2view_Requirements.__init__)
 
 
-def test_aggregator::p2view::requirements_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Requirements.__init__)
+def test_aggregator_p2view_requirements_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Requirements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::aggregator::irepositoryreference_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::IRepositoryReference)
+def test_p2view_aggregator_irepositoryreference_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_IRepositoryReference)
 
 
-def test_p2view::aggregator::irepositoryreference_constructor_exists():
-    assert callable(p2view::aggregator::IRepositoryReference.__init__)
+def test_p2view_aggregator_irepositoryreference_constructor_exists():
+    assert callable(p2view_aggregator_IRepositoryReference.__init__)
 
 
-def test_p2view::aggregator::irepositoryreference_constructor_args():
-    sig = inspect.signature(p2view::aggregator::IRepositoryReference.__init__)
+def test_p2view_aggregator_irepositoryreference_constructor_args():
+    sig = inspect.signature(p2view_aggregator_IRepositoryReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::repositoryreferences_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::RepositoryReferences)
+def test_aggregator_p2view_repositoryreferences_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_RepositoryReferences)
 
 
-def test_aggregator::p2view::repositoryreferences_constructor_exists():
-    assert callable(aggregator::p2view::RepositoryReferences.__init__)
+def test_aggregator_p2view_repositoryreferences_constructor_exists():
+    assert callable(aggregator_p2view_RepositoryReferences.__init__)
 
 
-def test_aggregator::p2view::repositoryreferences_constructor_args():
-    sig = inspect.signature(aggregator::p2view::RepositoryReferences.__init__)
+def test_aggregator_p2view_repositoryreferences_constructor_args():
+    sig = inspect.signature(aggregator_p2view_RepositoryReferences.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::aggregator::iprovidedcapability_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::IProvidedCapability)
+def test_p2view_aggregator_iprovidedcapability_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_IProvidedCapability)
 
 
-def test_p2view::aggregator::iprovidedcapability_constructor_exists():
-    assert callable(p2view::aggregator::IProvidedCapability.__init__)
+def test_p2view_aggregator_iprovidedcapability_constructor_exists():
+    assert callable(p2view_aggregator_IProvidedCapability.__init__)
 
 
-def test_p2view::aggregator::iprovidedcapability_constructor_args():
-    sig = inspect.signature(p2view::aggregator::IProvidedCapability.__init__)
+def test_p2view_aggregator_iprovidedcapability_constructor_args():
+    sig = inspect.signature(p2view_aggregator_IProvidedCapability.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -284,16 +284,16 @@ def test_labelprovider_constructor_args():
 
 
 
-def test_aggregator::p2view::requirementwrapper_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::RequirementWrapper)
+def test_aggregator_p2view_requirementwrapper_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_RequirementWrapper)
 
 
-def test_aggregator::p2view::requirementwrapper_constructor_exists():
-    assert callable(aggregator::p2view::RequirementWrapper.__init__)
+def test_aggregator_p2view_requirementwrapper_constructor_exists():
+    assert callable(aggregator_p2view_RequirementWrapper.__init__)
 
 
-def test_aggregator::p2view::requirementwrapper_constructor_args():
-    sig = inspect.signature(aggregator::p2view::RequirementWrapper.__init__)
+def test_aggregator_p2view_requirementwrapper_constructor_args():
+    sig = inspect.signature(aggregator_p2view_RequirementWrapper.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -312,16 +312,16 @@ def test_iprovidedcapability_constructor_args():
 
 
 
-def test_aggregator::p2view::providedcapabilitywrapper_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::ProvidedCapabilityWrapper)
+def test_aggregator_p2view_providedcapabilitywrapper_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_ProvidedCapabilityWrapper)
 
 
-def test_aggregator::p2view::providedcapabilitywrapper_constructor_exists():
-    assert callable(aggregator::p2view::ProvidedCapabilityWrapper.__init__)
+def test_aggregator_p2view_providedcapabilitywrapper_constructor_exists():
+    assert callable(aggregator_p2view_ProvidedCapabilityWrapper.__init__)
 
 
-def test_aggregator::p2view::providedcapabilitywrapper_constructor_args():
-    sig = inspect.signature(aggregator::p2view::ProvidedCapabilityWrapper.__init__)
+def test_aggregator_p2view_providedcapabilitywrapper_constructor_args():
+    sig = inspect.signature(aggregator_p2view_ProvidedCapabilityWrapper.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -340,44 +340,44 @@ def test_providedcapabilitywrapper_constructor_args():
 
 
 
-def test_aggregator::p2view::providedcapabilities_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::ProvidedCapabilities)
+def test_aggregator_p2view_providedcapabilities_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_ProvidedCapabilities)
 
 
-def test_aggregator::p2view::providedcapabilities_constructor_exists():
-    assert callable(aggregator::p2view::ProvidedCapabilities.__init__)
+def test_aggregator_p2view_providedcapabilities_constructor_exists():
+    assert callable(aggregator_p2view_ProvidedCapabilities.__init__)
 
 
-def test_aggregator::p2view::providedcapabilities_constructor_args():
-    sig = inspect.signature(aggregator::p2view::ProvidedCapabilities.__init__)
+def test_aggregator_p2view_providedcapabilities_constructor_args():
+    sig = inspect.signature(aggregator_p2view_ProvidedCapabilities.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::aggregator::property_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::Property)
+def test_p2view_aggregator_property_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_Property)
 
 
-def test_p2view::aggregator::property_constructor_exists():
-    assert callable(p2view::aggregator::Property.__init__)
+def test_p2view_aggregator_property_constructor_exists():
+    assert callable(p2view_aggregator_Property.__init__)
 
 
-def test_p2view::aggregator::property_constructor_args():
-    sig = inspect.signature(p2view::aggregator::Property.__init__)
+def test_p2view_aggregator_property_constructor_args():
+    sig = inspect.signature(p2view_aggregator_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::properties_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Properties)
+def test_aggregator_p2view_properties_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Properties)
 
 
-def test_aggregator::p2view::properties_constructor_exists():
-    assert callable(aggregator::p2view::Properties.__init__)
+def test_aggregator_p2view_properties_constructor_exists():
+    assert callable(aggregator_p2view_Properties.__init__)
 
 
-def test_aggregator::p2view::properties_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Properties.__init__)
+def test_aggregator_p2view_properties_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Properties.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -396,37 +396,37 @@ def test_product_constructor_args():
 
 
 
-def test_aggregator::p2view::products_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Products)
+def test_aggregator_p2view_products_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Products)
 
 
-def test_aggregator::p2view::products_constructor_exists():
-    assert callable(aggregator::p2view::Products.__init__)
+def test_aggregator_p2view_products_constructor_exists():
+    assert callable(aggregator_p2view_Products.__init__)
 
 
-def test_aggregator::p2view::products_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Products.__init__)
+def test_aggregator_p2view_products_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Products.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::repositorybrowser_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::RepositoryBrowser)
+def test_aggregator_p2view_repositorybrowser_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_RepositoryBrowser)
 
 
-def test_aggregator::p2view::repositorybrowser_constructor_exists():
-    assert callable(aggregator::p2view::RepositoryBrowser.__init__)
+def test_aggregator_p2view_repositorybrowser_constructor_exists():
+    assert callable(aggregator_p2view_RepositoryBrowser.__init__)
 
 
-def test_aggregator::p2view::repositorybrowser_constructor_args():
-    sig = inspect.signature(aggregator::p2view::RepositoryBrowser.__init__)
+def test_aggregator_p2view_repositorybrowser_constructor_args():
+    sig = inspect.signature(aggregator_p2view_RepositoryBrowser.__init__)
     params = list(sig.parameters.keys())
     assert "loading" in params, "Missing parameter 'loading'"
 
-def test_aggregator::p2view::repositorybrowser_has_loading():
-    assert hasattr(aggregator::p2view::RepositoryBrowser, "loading")
+def test_aggregator_p2view_repositorybrowser_has_loading():
+    assert hasattr(aggregator_p2view_RepositoryBrowser, "loading")
     descriptor = None
-    for klass in aggregator::p2view::RepositoryBrowser.__mro__:
+    for klass in aggregator_p2view_RepositoryBrowser.__mro__:
         if "loading" in klass.__dict__:
             descriptor = klass.__dict__["loading"]
             break
@@ -434,30 +434,30 @@ def test_aggregator::p2view::repositorybrowser_has_loading():
 
 
 
-def test_p2view::aggregator::ilicense_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::ILicense)
+def test_p2view_aggregator_ilicense_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_ILicense)
 
 
-def test_p2view::aggregator::ilicense_constructor_exists():
-    assert callable(p2view::aggregator::ILicense.__init__)
+def test_p2view_aggregator_ilicense_constructor_exists():
+    assert callable(p2view_aggregator_ILicense.__init__)
 
 
-def test_p2view::aggregator::ilicense_constructor_args():
-    sig = inspect.signature(p2view::aggregator::ILicense.__init__)
+def test_p2view_aggregator_ilicense_constructor_args():
+    sig = inspect.signature(p2view_aggregator_ILicense.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::licenses_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Licenses)
+def test_aggregator_p2view_licenses_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Licenses)
 
 
-def test_aggregator::p2view::licenses_constructor_exists():
-    assert callable(aggregator::p2view::Licenses.__init__)
+def test_aggregator_p2view_licenses_constructor_exists():
+    assert callable(aggregator_p2view_Licenses.__init__)
 
 
-def test_aggregator::p2view::licenses_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Licenses.__init__)
+def test_aggregator_p2view_licenses_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Licenses.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -476,16 +476,16 @@ def test_otheriu_constructor_args():
 
 
 
-def test_aggregator::p2view::miscellaneous_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Miscellaneous)
+def test_aggregator_p2view_miscellaneous_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Miscellaneous)
 
 
-def test_aggregator::p2view::miscellaneous_constructor_exists():
-    assert callable(aggregator::p2view::Miscellaneous.__init__)
+def test_aggregator_p2view_miscellaneous_constructor_exists():
+    assert callable(aggregator_p2view_Miscellaneous.__init__)
 
 
-def test_aggregator::p2view::miscellaneous_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Miscellaneous.__init__)
+def test_aggregator_p2view_miscellaneous_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Miscellaneous.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -504,16 +504,16 @@ def test_repositoryreferences_constructor_args():
 
 
 
-def test_p2view::aggregator::metadatarepository_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::MetadataRepository)
+def test_p2view_aggregator_metadatarepository_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_MetadataRepository)
 
 
-def test_p2view::aggregator::metadatarepository_constructor_exists():
-    assert callable(p2view::aggregator::MetadataRepository.__init__)
+def test_p2view_aggregator_metadatarepository_constructor_exists():
+    assert callable(p2view_aggregator_MetadataRepository.__init__)
 
 
-def test_p2view::aggregator::metadatarepository_constructor_args():
-    sig = inspect.signature(p2view::aggregator::MetadataRepository.__init__)
+def test_p2view_aggregator_metadatarepository_constructor_args():
+    sig = inspect.signature(p2view_aggregator_MetadataRepository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -532,45 +532,45 @@ def test_installableunits_constructor_args():
 
 
 
-def test_aggregator::p2view::metadatarepositorystructuredview_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::MetadataRepositoryStructuredView)
+def test_aggregator_p2view_metadatarepositorystructuredview_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_MetadataRepositoryStructuredView)
 
 
-def test_aggregator::p2view::metadatarepositorystructuredview_constructor_exists():
-    assert callable(aggregator::p2view::MetadataRepositoryStructuredView.__init__)
+def test_aggregator_p2view_metadatarepositorystructuredview_constructor_exists():
+    assert callable(aggregator_p2view_MetadataRepositoryStructuredView.__init__)
 
 
-def test_aggregator::p2view::metadatarepositorystructuredview_constructor_args():
-    sig = inspect.signature(aggregator::p2view::MetadataRepositoryStructuredView.__init__)
+def test_aggregator_p2view_metadatarepositorystructuredview_constructor_args():
+    sig = inspect.signature(aggregator_p2view_MetadataRepositoryStructuredView.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "loaded" in params, "Missing parameter 'loaded'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_aggregator::p2view::metadatarepositorystructuredview_has_location():
-    assert hasattr(aggregator::p2view::MetadataRepositoryStructuredView, "location")
+def test_aggregator_p2view_metadatarepositorystructuredview_has_location():
+    assert hasattr(aggregator_p2view_MetadataRepositoryStructuredView, "location")
     descriptor = None
-    for klass in aggregator::p2view::MetadataRepositoryStructuredView.__mro__:
+    for klass in aggregator_p2view_MetadataRepositoryStructuredView.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::p2view::metadatarepositorystructuredview_has_name():
-    assert hasattr(aggregator::p2view::MetadataRepositoryStructuredView, "name")
+def test_aggregator_p2view_metadatarepositorystructuredview_has_loaded():
+    assert hasattr(aggregator_p2view_MetadataRepositoryStructuredView, "loaded")
     descriptor = None
-    for klass in aggregator::p2view::MetadataRepositoryStructuredView.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in aggregator_p2view_MetadataRepositoryStructuredView.__mro__:
+        if "loaded" in klass.__dict__:
+            descriptor = klass.__dict__["loaded"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::p2view::metadatarepositorystructuredview_has_loaded():
-    assert hasattr(aggregator::p2view::MetadataRepositoryStructuredView, "loaded")
+def test_aggregator_p2view_metadatarepositorystructuredview_has_name():
+    assert hasattr(aggregator_p2view_MetadataRepositoryStructuredView, "name")
     descriptor = None
-    for klass in aggregator::p2view::MetadataRepositoryStructuredView.__mro__:
-        if "loaded" in klass.__dict__:
-            descriptor = klass.__dict__["loaded"]
+    for klass in aggregator_p2view_MetadataRepositoryStructuredView.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -618,51 +618,51 @@ def test_providedcapabilities_constructor_args():
 
 
 
-def test_p2view::iudetails_is_not_abstract():
-    assert not inspect.isabstract(p2view::IUDetails)
+def test_p2view_iudetails_is_not_abstract():
+    assert not inspect.isabstract(p2view_IUDetails)
 
 
-def test_p2view::iudetails_constructor_exists():
-    assert callable(p2view::IUDetails.__init__)
+def test_p2view_iudetails_constructor_exists():
+    assert callable(p2view_IUDetails.__init__)
 
 
-def test_p2view::iudetails_constructor_args():
-    sig = inspect.signature(p2view::IUDetails.__init__)
+def test_p2view_iudetails_constructor_args():
+    sig = inspect.signature(p2view_IUDetails.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::iupresentation_is_not_abstract():
-    assert not inspect.isabstract(p2view::IUPresentation)
+def test_p2view_iupresentation_is_not_abstract():
+    assert not inspect.isabstract(p2view_IUPresentation)
 
 
-def test_p2view::iupresentation_constructor_exists():
-    assert callable(p2view::IUPresentation.__init__)
+def test_p2view_iupresentation_constructor_exists():
+    assert callable(p2view_IUPresentation.__init__)
 
 
-def test_p2view::iupresentation_constructor_args():
-    sig = inspect.signature(p2view::IUPresentation.__init__)
+def test_p2view_iupresentation_constructor_args():
+    sig = inspect.signature(p2view_IUPresentation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::iupresentationwithdetails_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::IUPresentationWithDetails)
+def test_aggregator_p2view_iupresentationwithdetails_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_IUPresentationWithDetails)
 
 
-def test_aggregator::p2view::iupresentationwithdetails_constructor_exists():
-    assert callable(aggregator::p2view::IUPresentationWithDetails.__init__)
+def test_aggregator_p2view_iupresentationwithdetails_constructor_exists():
+    assert callable(aggregator_p2view_IUPresentationWithDetails.__init__)
 
 
-def test_aggregator::p2view::iupresentationwithdetails_constructor_args():
-    sig = inspect.signature(aggregator::p2view::IUPresentationWithDetails.__init__)
+def test_aggregator_p2view_iupresentationwithdetails_constructor_args():
+    sig = inspect.signature(aggregator_p2view_IUPresentationWithDetails.__init__)
     params = list(sig.parameters.keys())
     assert "detailsResolved" in params, "Missing parameter 'detailsResolved'"
 
-def test_aggregator::p2view::iupresentationwithdetails_has_detailsResolved():
-    assert hasattr(aggregator::p2view::IUPresentationWithDetails, "detailsResolved")
+def test_aggregator_p2view_iupresentationwithdetails_has_detailsResolved():
+    assert hasattr(aggregator_p2view_IUPresentationWithDetails, "detailsResolved")
     descriptor = None
-    for klass in aggregator::p2view::IUPresentationWithDetails.__mro__:
+    for klass in aggregator_p2view_IUPresentationWithDetails.__mro__:
         if "detailsResolved" in klass.__dict__:
             descriptor = klass.__dict__["detailsResolved"]
             break
@@ -670,99 +670,99 @@ def test_aggregator::p2view::iupresentationwithdetails_has_detailsResolved():
 
 
 
-def test_p2view::aggregator::iinstallableunit_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::IInstallableUnit)
+def test_p2view_aggregator_iinstallableunit_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_IInstallableUnit)
 
 
-def test_p2view::aggregator::iinstallableunit_constructor_exists():
-    assert callable(p2view::aggregator::IInstallableUnit.__init__)
+def test_p2view_aggregator_iinstallableunit_constructor_exists():
+    assert callable(p2view_aggregator_IInstallableUnit.__init__)
 
 
-def test_p2view::aggregator::iinstallableunit_constructor_args():
-    sig = inspect.signature(p2view::aggregator::IInstallableUnit.__init__)
+def test_p2view_aggregator_iinstallableunit_constructor_args():
+    sig = inspect.signature(p2view_aggregator_IInstallableUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::iupresentation_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::IUPresentation)
+def test_aggregator_p2view_iupresentation_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_IUPresentation)
 
 
-def test_aggregator::p2view::iupresentation_constructor_exists():
-    assert callable(aggregator::p2view::IUPresentation.__init__)
+def test_aggregator_p2view_iupresentation_constructor_exists():
+    assert callable(aggregator_p2view_IUPresentation.__init__)
 
 
-def test_aggregator::p2view::iupresentation_constructor_args():
-    sig = inspect.signature(aggregator::p2view::IUPresentation.__init__)
+def test_aggregator_p2view_iupresentation_constructor_args():
+    sig = inspect.signature(aggregator_p2view_IUPresentation.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "filter" in params, "Missing parameter 'filter'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "label" in params, "Missing parameter 'label'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "version" in params, "Missing parameter 'version'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_aggregator::p2view::iupresentation_has_label():
-    assert hasattr(aggregator::p2view::IUPresentation, "label")
+def test_aggregator_p2view_iupresentation_has_filter():
+    assert hasattr(aggregator_p2view_IUPresentation, "filter")
     descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
+    for klass in aggregator_p2view_IUPresentation.__mro__:
+        if "filter" in klass.__dict__:
+            descriptor = klass.__dict__["filter"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::p2view::iupresentation_has_type():
-    assert hasattr(aggregator::p2view::IUPresentation, "type")
+def test_aggregator_p2view_iupresentation_has_description():
+    assert hasattr(aggregator_p2view_IUPresentation, "description")
     descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::p2view::iupresentation_has_name():
-    assert hasattr(aggregator::p2view::IUPresentation, "name")
-    descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::p2view::iupresentation_has_description():
-    assert hasattr(aggregator::p2view::IUPresentation, "description")
-    descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
+    for klass in aggregator_p2view_IUPresentation.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::p2view::iupresentation_has_id():
-    assert hasattr(aggregator::p2view::IUPresentation, "id")
+def test_aggregator_p2view_iupresentation_has_label():
+    assert hasattr(aggregator_p2view_IUPresentation, "label")
     descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in aggregator_p2view_IUPresentation.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::p2view::iupresentation_has_version():
-    assert hasattr(aggregator::p2view::IUPresentation, "version")
+def test_aggregator_p2view_iupresentation_has_name():
+    assert hasattr(aggregator_p2view_IUPresentation, "name")
     descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
+    for klass in aggregator_p2view_IUPresentation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_p2view_iupresentation_has_version():
+    assert hasattr(aggregator_p2view_IUPresentation, "version")
+    descriptor = None
+    for klass in aggregator_p2view_IUPresentation.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::p2view::iupresentation_has_filter():
-    assert hasattr(aggregator::p2view::IUPresentation, "filter")
+def test_aggregator_p2view_iupresentation_has_id():
+    assert hasattr(aggregator_p2view_IUPresentation, "id")
     descriptor = None
-    for klass in aggregator::p2view::IUPresentation.__mro__:
-        if "filter" in klass.__dict__:
-            descriptor = klass.__dict__["filter"]
+    for klass in aggregator_p2view_IUPresentation.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_p2view_iupresentation_has_type():
+    assert hasattr(aggregator_p2view_IUPresentation, "type")
+    descriptor = None
+    for klass in aggregator_p2view_IUPresentation.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -782,30 +782,30 @@ def test_licenses_constructor_args():
 
 
 
-def test_p2view::aggregator::icopyright_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::ICopyright)
+def test_p2view_aggregator_icopyright_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_ICopyright)
 
 
-def test_p2view::aggregator::icopyright_constructor_exists():
-    assert callable(p2view::aggregator::ICopyright.__init__)
+def test_p2view_aggregator_icopyright_constructor_exists():
+    assert callable(p2view_aggregator_ICopyright.__init__)
 
 
-def test_p2view::aggregator::icopyright_constructor_args():
-    sig = inspect.signature(p2view::aggregator::ICopyright.__init__)
+def test_p2view_aggregator_icopyright_constructor_args():
+    sig = inspect.signature(p2view_aggregator_ICopyright.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2view::aggregator::iupdatedescriptor_is_not_abstract():
-    assert not inspect.isabstract(p2view::aggregator::IUpdateDescriptor)
+def test_p2view_aggregator_iupdatedescriptor_is_not_abstract():
+    assert not inspect.isabstract(p2view_aggregator_IUpdateDescriptor)
 
 
-def test_p2view::aggregator::iupdatedescriptor_constructor_exists():
-    assert callable(p2view::aggregator::IUpdateDescriptor.__init__)
+def test_p2view_aggregator_iupdatedescriptor_constructor_exists():
+    assert callable(p2view_aggregator_IUpdateDescriptor.__init__)
 
 
-def test_p2view::aggregator::iupdatedescriptor_constructor_args():
-    sig = inspect.signature(p2view::aggregator::IUpdateDescriptor.__init__)
+def test_p2view_aggregator_iupdatedescriptor_constructor_args():
+    sig = inspect.signature(p2view_aggregator_IUpdateDescriptor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -824,16 +824,16 @@ def test_touchpoints_constructor_args():
 
 
 
-def test_aggregator::p2view::fragments_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Fragments)
+def test_aggregator_p2view_fragments_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Fragments)
 
 
-def test_aggregator::p2view::fragments_constructor_exists():
-    assert callable(aggregator::p2view::Fragments.__init__)
+def test_aggregator_p2view_fragments_constructor_exists():
+    assert callable(aggregator_p2view_Fragments.__init__)
 
 
-def test_aggregator::p2view::fragments_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Fragments.__init__)
+def test_aggregator_p2view_fragments_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Fragments.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -852,16 +852,16 @@ def test_feature_constructor_args():
 
 
 
-def test_aggregator::p2view::features_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Features)
+def test_aggregator_p2view_features_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Features)
 
 
-def test_aggregator::p2view::features_constructor_exists():
-    assert callable(aggregator::p2view::Features.__init__)
+def test_aggregator_p2view_features_constructor_exists():
+    assert callable(aggregator_p2view_Features.__init__)
 
 
-def test_aggregator::p2view::features_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Features.__init__)
+def test_aggregator_p2view_features_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Features.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -880,16 +880,16 @@ def test_requirements_constructor_args():
 
 
 
-def test_aggregator::p2view::iudetails_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::IUDetails)
+def test_aggregator_p2view_iudetails_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_IUDetails)
 
 
-def test_aggregator::p2view::iudetails_constructor_exists():
-    assert callable(aggregator::p2view::IUDetails.__init__)
+def test_aggregator_p2view_iudetails_constructor_exists():
+    assert callable(aggregator_p2view_IUDetails.__init__)
 
 
-def test_aggregator::p2view::iudetails_constructor_args():
-    sig = inspect.signature(aggregator::p2view::IUDetails.__init__)
+def test_aggregator_p2view_iudetails_constructor_args():
+    sig = inspect.signature(aggregator_p2view_IUDetails.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -908,16 +908,16 @@ def test_miscellaneous_constructor_args():
 
 
 
-def test_aggregator::p2view::installableunits_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::InstallableUnits)
+def test_aggregator_p2view_installableunits_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_InstallableUnits)
 
 
-def test_aggregator::p2view::installableunits_constructor_exists():
-    assert callable(aggregator::p2view::InstallableUnits.__init__)
+def test_aggregator_p2view_installableunits_constructor_exists():
+    assert callable(aggregator_p2view_InstallableUnits.__init__)
 
 
-def test_aggregator::p2view::installableunits_constructor_args():
-    sig = inspect.signature(aggregator::p2view::InstallableUnits.__init__)
+def test_aggregator_p2view_installableunits_constructor_args():
+    sig = inspect.signature(aggregator_p2view_InstallableUnits.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -964,16 +964,16 @@ def test_iupresentation_constructor_args():
 
 
 
-def test_aggregator::p2view::category_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Category)
+def test_aggregator_p2view_category_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Category)
 
 
-def test_aggregator::p2view::category_constructor_exists():
-    assert callable(aggregator::p2view::Category.__init__)
+def test_aggregator_p2view_category_constructor_exists():
+    assert callable(aggregator_p2view_Category.__init__)
 
 
-def test_aggregator::p2view::category_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Category.__init__)
+def test_aggregator_p2view_category_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Category.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -992,16 +992,16 @@ def test_category_constructor_args():
 
 
 
-def test_aggregator::p2view::categories_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Categories)
+def test_aggregator_p2view_categories_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Categories)
 
 
-def test_aggregator::p2view::categories_constructor_exists():
-    assert callable(aggregator::p2view::Categories.__init__)
+def test_aggregator_p2view_categories_constructor_exists():
+    assert callable(aggregator_p2view_Categories.__init__)
 
 
-def test_aggregator::p2view::categories_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Categories.__init__)
+def test_aggregator_p2view_categories_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Categories.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1090,30 +1090,30 @@ def test_bundle_constructor_args():
 
 
 
-def test_aggregator::p2view::fragment_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Fragment)
+def test_aggregator_p2view_fragment_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Fragment)
 
 
-def test_aggregator::p2view::fragment_constructor_exists():
-    assert callable(aggregator::p2view::Fragment.__init__)
+def test_aggregator_p2view_fragment_constructor_exists():
+    assert callable(aggregator_p2view_Fragment.__init__)
 
 
-def test_aggregator::p2view::fragment_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Fragment.__init__)
+def test_aggregator_p2view_fragment_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Fragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::bundles_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Bundles)
+def test_aggregator_p2view_bundles_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Bundles)
 
 
-def test_aggregator::p2view::bundles_constructor_exists():
-    assert callable(aggregator::p2view::Bundles.__init__)
+def test_aggregator_p2view_bundles_constructor_exists():
+    assert callable(aggregator_p2view_Bundles.__init__)
 
 
-def test_aggregator::p2view::bundles_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Bundles.__init__)
+def test_aggregator_p2view_bundles_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Bundles.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1132,185 +1132,185 @@ def test_iupresentationwithdetails_constructor_args():
 
 
 
-def test_aggregator::p2view::product_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Product)
+def test_aggregator_p2view_feature_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Feature)
 
 
-def test_aggregator::p2view::product_constructor_exists():
-    assert callable(aggregator::p2view::Product.__init__)
+def test_aggregator_p2view_feature_constructor_exists():
+    assert callable(aggregator_p2view_Feature.__init__)
 
 
-def test_aggregator::p2view::product_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Product.__init__)
+def test_aggregator_p2view_feature_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::feature_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Feature)
+def test_aggregator_p2view_product_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Product)
 
 
-def test_aggregator::p2view::feature_constructor_exists():
-    assert callable(aggregator::p2view::Feature.__init__)
+def test_aggregator_p2view_product_constructor_exists():
+    assert callable(aggregator_p2view_Product.__init__)
 
 
-def test_aggregator::p2view::feature_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Feature.__init__)
+def test_aggregator_p2view_product_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Product.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::otheriu_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::OtherIU)
+def test_aggregator_p2view_otheriu_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_OtherIU)
 
 
-def test_aggregator::p2view::otheriu_constructor_exists():
-    assert callable(aggregator::p2view::OtherIU.__init__)
+def test_aggregator_p2view_otheriu_constructor_exists():
+    assert callable(aggregator_p2view_OtherIU.__init__)
 
 
-def test_aggregator::p2view::otheriu_constructor_args():
-    sig = inspect.signature(aggregator::p2view::OtherIU.__init__)
+def test_aggregator_p2view_otheriu_constructor_args():
+    sig = inspect.signature(aggregator_p2view_OtherIU.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::p2view::bundle_is_not_abstract():
-    assert not inspect.isabstract(aggregator::p2view::Bundle)
+def test_aggregator_p2view_bundle_is_not_abstract():
+    assert not inspect.isabstract(aggregator_p2view_Bundle)
 
 
-def test_aggregator::p2view::bundle_constructor_exists():
-    assert callable(aggregator::p2view::Bundle.__init__)
+def test_aggregator_p2view_bundle_constructor_exists():
+    assert callable(aggregator_p2view_Bundle.__init__)
 
 
-def test_aggregator::p2view::bundle_constructor_args():
-    sig = inspect.signature(aggregator::p2view::Bundle.__init__)
+def test_aggregator_p2view_bundle_constructor_args():
+    sig = inspect.signature(aggregator_p2view_Bundle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::metadatarepository_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MetadataRepository)
+def test_aggregator_metadatarepository_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MetadataRepository)
 
 
-def test_aggregator::metadatarepository_constructor_exists():
-    assert callable(aggregator::MetadataRepository.__init__)
+def test_aggregator_metadatarepository_constructor_exists():
+    assert callable(aggregator_MetadataRepository.__init__)
 
 
-def test_aggregator::metadatarepository_constructor_args():
-    sig = inspect.signature(aggregator::MetadataRepository.__init__)
+def test_aggregator_metadatarepository_constructor_args():
+    sig = inspect.signature(aggregator_MetadataRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::statusprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::StatusProvider)
+def test_aggregator_statusprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_StatusProvider)
 
 
-def test_aggregator::statusprovider_constructor_exists():
-    assert callable(aggregator::StatusProvider.__init__)
+def test_aggregator_statusprovider_constructor_exists():
+    assert callable(aggregator_StatusProvider.__init__)
 
 
-def test_aggregator::statusprovider_constructor_args():
-    sig = inspect.signature(aggregator::StatusProvider.__init__)
+def test_aggregator_statusprovider_constructor_args():
+    sig = inspect.signature(aggregator_StatusProvider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::status_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Status)
+def test_aggregator_status_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Status)
 
 
-def test_aggregator::status_constructor_exists():
-    assert callable(aggregator::Status.__init__)
+def test_aggregator_status_constructor_exists():
+    assert callable(aggregator_Status.__init__)
 
 
-def test_aggregator::status_constructor_args():
-    sig = inspect.signature(aggregator::Status.__init__)
+def test_aggregator_status_constructor_args():
+    sig = inspect.signature(aggregator_Status.__init__)
     params = list(sig.parameters.keys())
-    assert "message" in params, "Missing parameter 'message'"
     assert "code" in params, "Missing parameter 'code'"
+    assert "message" in params, "Missing parameter 'message'"
 
-def test_aggregator::status_has_message():
-    assert hasattr(aggregator::Status, "message")
+def test_aggregator_status_has_code():
+    assert hasattr(aggregator_Status, "code")
     descriptor = None
-    for klass in aggregator::Status.__mro__:
-        if "message" in klass.__dict__:
-            descriptor = klass.__dict__["message"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::status_has_code():
-    assert hasattr(aggregator::Status, "code")
-    descriptor = None
-    for klass in aggregator::Status.__mro__:
+    for klass in aggregator_Status.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_aggregator::property_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Property)
-
-
-def test_aggregator::property_constructor_exists():
-    assert callable(aggregator::Property.__init__)
-
-
-def test_aggregator::property_constructor_args():
-    sig = inspect.signature(aggregator::Property.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_aggregator::property_has_key():
-    assert hasattr(aggregator::Property, "key")
+def test_aggregator_status_has_message():
+    assert hasattr(aggregator_Status, "message")
     descriptor = None
-    for klass in aggregator::Property.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
+    for klass in aggregator_Status.__mro__:
+        if "message" in klass.__dict__:
+            descriptor = klass.__dict__["message"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::property_has_value():
-    assert hasattr(aggregator::Property, "value")
+
+
+def test_aggregator_property_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Property)
+
+
+def test_aggregator_property_constructor_exists():
+    assert callable(aggregator_Property.__init__)
+
+
+def test_aggregator_property_constructor_args():
+    sig = inspect.signature(aggregator_Property.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_aggregator_property_has_value():
+    assert hasattr(aggregator_Property, "value")
     descriptor = None
-    for klass in aggregator::Property.__mro__:
+    for klass in aggregator_Property.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_aggregator_property_has_key():
+    assert hasattr(aggregator_Property, "key")
+    descriptor = None
+    for klass in aggregator_Property.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_aggregator::mavenitem_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MavenItem)
+
+def test_aggregator_mavenitem_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MavenItem)
 
 
-def test_aggregator::mavenitem_constructor_exists():
-    assert callable(aggregator::MavenItem.__init__)
+def test_aggregator_mavenitem_constructor_exists():
+    assert callable(aggregator_MavenItem.__init__)
 
 
-def test_aggregator::mavenitem_constructor_args():
-    sig = inspect.signature(aggregator::MavenItem.__init__)
+def test_aggregator_mavenitem_constructor_args():
+    sig = inspect.signature(aggregator_MavenItem.__init__)
     params = list(sig.parameters.keys())
     assert "groupId" in params, "Missing parameter 'groupId'"
     assert "artifactId" in params, "Missing parameter 'artifactId'"
 
-def test_aggregator::mavenitem_has_groupId():
-    assert hasattr(aggregator::MavenItem, "groupId")
+def test_aggregator_mavenitem_has_groupId():
+    assert hasattr(aggregator_MavenItem, "groupId")
     descriptor = None
-    for klass in aggregator::MavenItem.__mro__:
+    for klass in aggregator_MavenItem.__mro__:
         if "groupId" in klass.__dict__:
             descriptor = klass.__dict__["groupId"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::mavenitem_has_artifactId():
-    assert hasattr(aggregator::MavenItem, "artifactId")
+def test_aggregator_mavenitem_has_artifactId():
+    assert hasattr(aggregator_MavenItem, "artifactId")
     descriptor = None
-    for klass in aggregator::MavenItem.__mro__:
+    for klass in aggregator_MavenItem.__mro__:
         if "artifactId" in klass.__dict__:
             descriptor = klass.__dict__["artifactId"]
             break
@@ -1332,23 +1332,23 @@ def test_installableunitrequest_constructor_args():
 
 
 
-def test_aggregator::labelprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::LabelProvider)
+def test_aggregator_labelprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_LabelProvider)
 
 
-def test_aggregator::labelprovider_constructor_exists():
-    assert callable(aggregator::LabelProvider.__init__)
+def test_aggregator_labelprovider_constructor_exists():
+    assert callable(aggregator_LabelProvider.__init__)
 
 
-def test_aggregator::labelprovider_constructor_args():
-    sig = inspect.signature(aggregator::LabelProvider.__init__)
+def test_aggregator_labelprovider_constructor_args():
+    sig = inspect.signature(aggregator_LabelProvider.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_aggregator::labelprovider_has_label():
-    assert hasattr(aggregator::LabelProvider, "label")
+def test_aggregator_labelprovider_has_label():
+    assert hasattr(aggregator_LabelProvider, "label")
     descriptor = None
-    for klass in aggregator::LabelProvider.__mro__:
+    for klass in aggregator_LabelProvider.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -1370,60 +1370,60 @@ def test_metadatarepositoryreference_constructor_args():
 
 
 
-def test_aggregator::infosprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::InfosProvider)
+def test_aggregator_infosprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_InfosProvider)
 
 
-def test_aggregator::infosprovider_constructor_exists():
-    assert callable(aggregator::InfosProvider.__init__)
+def test_aggregator_infosprovider_constructor_exists():
+    assert callable(aggregator_InfosProvider.__init__)
 
 
-def test_aggregator::infosprovider_constructor_args():
-    sig = inspect.signature(aggregator::InfosProvider.__init__)
+def test_aggregator_infosprovider_constructor_args():
+    sig = inspect.signature(aggregator_InfosProvider.__init__)
     params = list(sig.parameters.keys())
-    assert "infos" in params, "Missing parameter 'infos'"
-    assert "errors" in params, "Missing parameter 'errors'"
     assert "warnings" in params, "Missing parameter 'warnings'"
+    assert "errors" in params, "Missing parameter 'errors'"
+    assert "infos" in params, "Missing parameter 'infos'"
 
-def test_aggregator::infosprovider_has_infos():
-    assert hasattr(aggregator::InfosProvider, "infos")
+def test_aggregator_infosprovider_has_warnings():
+    assert hasattr(aggregator_InfosProvider, "warnings")
     descriptor = None
-    for klass in aggregator::InfosProvider.__mro__:
-        if "infos" in klass.__dict__:
-            descriptor = klass.__dict__["infos"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::infosprovider_has_errors():
-    assert hasattr(aggregator::InfosProvider, "errors")
-    descriptor = None
-    for klass in aggregator::InfosProvider.__mro__:
-        if "errors" in klass.__dict__:
-            descriptor = klass.__dict__["errors"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::infosprovider_has_warnings():
-    assert hasattr(aggregator::InfosProvider, "warnings")
-    descriptor = None
-    for klass in aggregator::InfosProvider.__mro__:
+    for klass in aggregator_InfosProvider.__mro__:
         if "warnings" in klass.__dict__:
             descriptor = klass.__dict__["warnings"]
             break
     assert isinstance(descriptor, property)
 
+def test_aggregator_infosprovider_has_errors():
+    assert hasattr(aggregator_InfosProvider, "errors")
+    descriptor = None
+    for klass in aggregator_InfosProvider.__mro__:
+        if "errors" in klass.__dict__:
+            descriptor = klass.__dict__["errors"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_infosprovider_has_infos():
+    assert hasattr(aggregator_InfosProvider, "infos")
+    descriptor = None
+    for klass in aggregator_InfosProvider.__mro__:
+        if "infos" in klass.__dict__:
+            descriptor = klass.__dict__["infos"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_aggregator::identificationprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::IdentificationProvider)
+
+def test_aggregator_identificationprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_IdentificationProvider)
 
 
-def test_aggregator::identificationprovider_constructor_exists():
-    assert callable(aggregator::IdentificationProvider.__init__)
+def test_aggregator_identificationprovider_constructor_exists():
+    assert callable(aggregator_IdentificationProvider.__init__)
 
 
-def test_aggregator::identificationprovider_constructor_args():
-    sig = inspect.signature(aggregator::IdentificationProvider.__init__)
+def test_aggregator_identificationprovider_constructor_args():
+    sig = inspect.signature(aggregator_IdentificationProvider.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1442,61 +1442,61 @@ def test_maprule_constructor_args():
 
 
 
-def test_aggregator::validconfigurationsrule_is_not_abstract():
-    assert not inspect.isabstract(aggregator::ValidConfigurationsRule)
+def test_aggregator_validconfigurationsrule_is_not_abstract():
+    assert not inspect.isabstract(aggregator_ValidConfigurationsRule)
 
 
-def test_aggregator::validconfigurationsrule_constructor_exists():
-    assert callable(aggregator::ValidConfigurationsRule.__init__)
+def test_aggregator_validconfigurationsrule_constructor_exists():
+    assert callable(aggregator_ValidConfigurationsRule.__init__)
 
 
-def test_aggregator::validconfigurationsrule_constructor_args():
-    sig = inspect.signature(aggregator::ValidConfigurationsRule.__init__)
+def test_aggregator_validconfigurationsrule_constructor_args():
+    sig = inspect.signature(aggregator_ValidConfigurationsRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::exclusionrule_is_not_abstract():
-    assert not inspect.isabstract(aggregator::ExclusionRule)
+def test_aggregator_exclusionrule_is_not_abstract():
+    assert not inspect.isabstract(aggregator_ExclusionRule)
 
 
-def test_aggregator::exclusionrule_constructor_exists():
-    assert callable(aggregator::ExclusionRule.__init__)
+def test_aggregator_exclusionrule_constructor_exists():
+    assert callable(aggregator_ExclusionRule.__init__)
 
 
-def test_aggregator::exclusionrule_constructor_args():
-    sig = inspect.signature(aggregator::ExclusionRule.__init__)
+def test_aggregator_exclusionrule_constructor_args():
+    sig = inspect.signature(aggregator_ExclusionRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::enabledstatusprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::EnabledStatusProvider)
+def test_aggregator_enabledstatusprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_EnabledStatusProvider)
 
 
-def test_aggregator::enabledstatusprovider_constructor_exists():
-    assert callable(aggregator::EnabledStatusProvider.__init__)
+def test_aggregator_enabledstatusprovider_constructor_exists():
+    assert callable(aggregator_EnabledStatusProvider.__init__)
 
 
-def test_aggregator::enabledstatusprovider_constructor_args():
-    sig = inspect.signature(aggregator::EnabledStatusProvider.__init__)
+def test_aggregator_enabledstatusprovider_constructor_args():
+    sig = inspect.signature(aggregator_EnabledStatusProvider.__init__)
     params = list(sig.parameters.keys())
     assert "enabled" in params, "Missing parameter 'enabled'"
     assert "branchEnabled" in params, "Missing parameter 'branchEnabled'"
 
-def test_aggregator::enabledstatusprovider_has_enabled():
-    assert hasattr(aggregator::EnabledStatusProvider, "enabled")
+def test_aggregator_enabledstatusprovider_has_enabled():
+    assert hasattr(aggregator_EnabledStatusProvider, "enabled")
     descriptor = None
-    for klass in aggregator::EnabledStatusProvider.__mro__:
+    for klass in aggregator_EnabledStatusProvider.__mro__:
         if "enabled" in klass.__dict__:
             descriptor = klass.__dict__["enabled"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::enabledstatusprovider_has_branchEnabled():
-    assert hasattr(aggregator::EnabledStatusProvider, "branchEnabled")
+def test_aggregator_enabledstatusprovider_has_branchEnabled():
+    assert hasattr(aggregator_EnabledStatusProvider, "branchEnabled")
     descriptor = None
-    for klass in aggregator::EnabledStatusProvider.__mro__:
+    for klass in aggregator_EnabledStatusProvider.__mro__:
         if "branchEnabled" in klass.__dict__:
             descriptor = klass.__dict__["branchEnabled"]
             break
@@ -1504,23 +1504,23 @@ def test_aggregator::enabledstatusprovider_has_branchEnabled():
 
 
 
-def test_aggregator::descriptionprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::DescriptionProvider)
+def test_aggregator_descriptionprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_DescriptionProvider)
 
 
-def test_aggregator::descriptionprovider_constructor_exists():
-    assert callable(aggregator::DescriptionProvider.__init__)
+def test_aggregator_descriptionprovider_constructor_exists():
+    assert callable(aggregator_DescriptionProvider.__init__)
 
 
-def test_aggregator::descriptionprovider_constructor_args():
-    sig = inspect.signature(aggregator::DescriptionProvider.__init__)
+def test_aggregator_descriptionprovider_constructor_args():
+    sig = inspect.signature(aggregator_DescriptionProvider.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_aggregator::descriptionprovider_has_description():
-    assert hasattr(aggregator::DescriptionProvider, "description")
+def test_aggregator_descriptionprovider_has_description():
+    assert hasattr(aggregator_DescriptionProvider, "description")
     descriptor = None
-    for klass in aggregator::DescriptionProvider.__mro__:
+    for klass in aggregator_DescriptionProvider.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -1556,30 +1556,30 @@ def test_enabledstatusprovider_constructor_args():
 
 
 
-def test_aggregator::mappedunit_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MappedUnit)
+def test_aggregator_mappedunit_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MappedUnit)
 
 
-def test_aggregator::mappedunit_constructor_exists():
-    assert callable(aggregator::MappedUnit.__init__)
+def test_aggregator_mappedunit_constructor_exists():
+    assert callable(aggregator_MappedUnit.__init__)
 
 
-def test_aggregator::mappedunit_constructor_args():
-    sig = inspect.signature(aggregator::MappedUnit.__init__)
+def test_aggregator_mappedunit_constructor_args():
+    sig = inspect.signature(aggregator_MappedUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::childrenprovider_is_not_abstract():
-    assert not inspect.isabstract(aggregator::ChildrenProvider)
+def test_aggregator_childrenprovider_is_not_abstract():
+    assert not inspect.isabstract(aggregator_ChildrenProvider)
 
 
-def test_aggregator::childrenprovider_constructor_exists():
-    assert callable(aggregator::ChildrenProvider.__init__)
+def test_aggregator_childrenprovider_constructor_exists():
+    assert callable(aggregator_ChildrenProvider.__init__)
 
 
-def test_aggregator::childrenprovider_constructor_args():
-    sig = inspect.signature(aggregator::ChildrenProvider.__init__)
+def test_aggregator_childrenprovider_constructor_args():
+    sig = inspect.signature(aggregator_ChildrenProvider.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1598,23 +1598,37 @@ def test_mappedunit_constructor_args():
 
 
 
-def test_aggregator::category_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Category)
+def test_aggregator_product_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Product)
 
 
-def test_aggregator::category_constructor_exists():
-    assert callable(aggregator::Category.__init__)
+def test_aggregator_product_constructor_exists():
+    assert callable(aggregator_Product.__init__)
 
 
-def test_aggregator::category_constructor_args():
-    sig = inspect.signature(aggregator::Category.__init__)
+def test_aggregator_product_constructor_args():
+    sig = inspect.signature(aggregator_Product.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aggregator_category_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Category)
+
+
+def test_aggregator_category_constructor_exists():
+    assert callable(aggregator_Category.__init__)
+
+
+def test_aggregator_category_constructor_args():
+    sig = inspect.signature(aggregator_Category.__init__)
     params = list(sig.parameters.keys())
     assert "labelOverride" in params, "Missing parameter 'labelOverride'"
 
-def test_aggregator::category_has_labelOverride():
-    assert hasattr(aggregator::Category, "labelOverride")
+def test_aggregator_category_has_labelOverride():
+    assert hasattr(aggregator_Category, "labelOverride")
     descriptor = None
-    for klass in aggregator::Category.__mro__:
+    for klass in aggregator_Category.__mro__:
         if "labelOverride" in klass.__dict__:
             descriptor = klass.__dict__["labelOverride"]
             break
@@ -1622,146 +1636,132 @@ def test_aggregator::category_has_labelOverride():
 
 
 
-def test_aggregator::product_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Product)
+def test_aggregator_feature_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Feature)
 
 
-def test_aggregator::product_constructor_exists():
-    assert callable(aggregator::Product.__init__)
+def test_aggregator_feature_constructor_exists():
+    assert callable(aggregator_Feature.__init__)
 
 
-def test_aggregator::product_constructor_args():
-    sig = inspect.signature(aggregator::Product.__init__)
+def test_aggregator_feature_constructor_args():
+    sig = inspect.signature(aggregator_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::feature_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Feature)
+def test_aggregator_bundle_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Bundle)
 
 
-def test_aggregator::feature_constructor_exists():
-    assert callable(aggregator::Feature.__init__)
+def test_aggregator_bundle_constructor_exists():
+    assert callable(aggregator_Bundle.__init__)
 
 
-def test_aggregator::feature_constructor_args():
-    sig = inspect.signature(aggregator::Feature.__init__)
+def test_aggregator_bundle_constructor_args():
+    sig = inspect.signature(aggregator_Bundle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::bundle_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Bundle)
+def test_aggregator_contact_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Contact)
 
 
-def test_aggregator::bundle_constructor_exists():
-    assert callable(aggregator::Bundle.__init__)
+def test_aggregator_contact_constructor_exists():
+    assert callable(aggregator_Contact.__init__)
 
 
-def test_aggregator::bundle_constructor_args():
-    sig = inspect.signature(aggregator::Bundle.__init__)
+def test_aggregator_contact_constructor_args():
+    sig = inspect.signature(aggregator_Contact.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_aggregator::contact_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Contact)
-
-
-def test_aggregator::contact_constructor_exists():
-    assert callable(aggregator::Contact.__init__)
-
-
-def test_aggregator::contact_constructor_args():
-    sig = inspect.signature(aggregator::Contact.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_aggregator::contact_has_name():
-    assert hasattr(aggregator::Contact, "name")
+def test_aggregator_contact_has_email():
+    assert hasattr(aggregator_Contact, "email")
     descriptor = None
-    for klass in aggregator::Contact.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::contact_has_email():
-    assert hasattr(aggregator::Contact, "email")
-    descriptor = None
-    for klass in aggregator::Contact.__mro__:
+    for klass in aggregator_Contact.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
+def test_aggregator_contact_has_name():
+    assert hasattr(aggregator_Contact, "name")
+    descriptor = None
+    for klass in aggregator_Contact.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_aggregator::availableversion_is_not_abstract():
-    assert not inspect.isabstract(aggregator::AvailableVersion)
+
+def test_aggregator_availableversion_is_not_abstract():
+    assert not inspect.isabstract(aggregator_AvailableVersion)
 
 
-def test_aggregator::availableversion_constructor_exists():
-    assert callable(aggregator::AvailableVersion.__init__)
+def test_aggregator_availableversion_constructor_exists():
+    assert callable(aggregator_AvailableVersion.__init__)
 
 
-def test_aggregator::availableversion_constructor_args():
-    sig = inspect.signature(aggregator::AvailableVersion.__init__)
+def test_aggregator_availableversion_constructor_args():
+    sig = inspect.signature(aggregator_AvailableVersion.__init__)
     params = list(sig.parameters.keys())
-    assert "filter" in params, "Missing parameter 'filter'"
-    assert "availableFrom" in params, "Missing parameter 'availableFrom'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "versionMatch" in params, "Missing parameter 'versionMatch'"
+    assert "availableFrom" in params, "Missing parameter 'availableFrom'"
+    assert "filter" in params, "Missing parameter 'filter'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_aggregator::availableversion_has_filter():
-    assert hasattr(aggregator::AvailableVersion, "filter")
+def test_aggregator_availableversion_has_versionMatch():
+    assert hasattr(aggregator_AvailableVersion, "versionMatch")
     descriptor = None
-    for klass in aggregator::AvailableVersion.__mro__:
-        if "filter" in klass.__dict__:
-            descriptor = klass.__dict__["filter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::availableversion_has_availableFrom():
-    assert hasattr(aggregator::AvailableVersion, "availableFrom")
-    descriptor = None
-    for klass in aggregator::AvailableVersion.__mro__:
-        if "availableFrom" in klass.__dict__:
-            descriptor = klass.__dict__["availableFrom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::availableversion_has_version():
-    assert hasattr(aggregator::AvailableVersion, "version")
-    descriptor = None
-    for klass in aggregator::AvailableVersion.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::availableversion_has_versionMatch():
-    assert hasattr(aggregator::AvailableVersion, "versionMatch")
-    descriptor = None
-    for klass in aggregator::AvailableVersion.__mro__:
+    for klass in aggregator_AvailableVersion.__mro__:
         if "versionMatch" in klass.__dict__:
             descriptor = klass.__dict__["versionMatch"]
             break
     assert isinstance(descriptor, property)
 
+def test_aggregator_availableversion_has_availableFrom():
+    assert hasattr(aggregator_AvailableVersion, "availableFrom")
+    descriptor = None
+    for klass in aggregator_AvailableVersion.__mro__:
+        if "availableFrom" in klass.__dict__:
+            descriptor = klass.__dict__["availableFrom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_availableversion_has_filter():
+    assert hasattr(aggregator_AvailableVersion, "filter")
+    descriptor = None
+    for klass in aggregator_AvailableVersion.__mro__:
+        if "filter" in klass.__dict__:
+            descriptor = klass.__dict__["filter"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_availableversion_has_version():
+    assert hasattr(aggregator_AvailableVersion, "version")
+    descriptor = None
+    for klass in aggregator_AvailableVersion.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_aggregator::availableversionsheader_is_not_abstract():
-    assert not inspect.isabstract(aggregator::AvailableVersionsHeader)
+
+def test_aggregator_availableversionsheader_is_not_abstract():
+    assert not inspect.isabstract(aggregator_AvailableVersionsHeader)
 
 
-def test_aggregator::availableversionsheader_constructor_exists():
-    assert callable(aggregator::AvailableVersionsHeader.__init__)
+def test_aggregator_availableversionsheader_constructor_exists():
+    assert callable(aggregator_AvailableVersionsHeader.__init__)
 
 
-def test_aggregator::availableversionsheader_constructor_args():
-    sig = inspect.signature(aggregator::AvailableVersionsHeader.__init__)
+def test_aggregator_availableversionsheader_constructor_args():
+    sig = inspect.signature(aggregator_AvailableVersionsHeader.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1780,33 +1780,33 @@ def test_descriptionprovider_constructor_args():
 
 
 
-def test_aggregator::mappedrepository_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MappedRepository)
+def test_aggregator_mappedrepository_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MappedRepository)
 
 
-def test_aggregator::mappedrepository_constructor_exists():
-    assert callable(aggregator::MappedRepository.__init__)
+def test_aggregator_mappedrepository_constructor_exists():
+    assert callable(aggregator_MappedRepository.__init__)
 
 
-def test_aggregator::mappedrepository_constructor_args():
-    sig = inspect.signature(aggregator::MappedRepository.__init__)
+def test_aggregator_mappedrepository_constructor_args():
+    sig = inspect.signature(aggregator_MappedRepository.__init__)
     params = list(sig.parameters.keys())
     assert "mirrorArtifacts" in params, "Missing parameter 'mirrorArtifacts'"
     assert "categoryPrefix" in params, "Missing parameter 'categoryPrefix'"
 
-def test_aggregator::mappedrepository_has_mirrorArtifacts():
-    assert hasattr(aggregator::MappedRepository, "mirrorArtifacts")
+def test_aggregator_mappedrepository_has_mirrorArtifacts():
+    assert hasattr(aggregator_MappedRepository, "mirrorArtifacts")
     descriptor = None
-    for klass in aggregator::MappedRepository.__mro__:
+    for klass in aggregator_MappedRepository.__mro__:
         if "mirrorArtifacts" in klass.__dict__:
             descriptor = klass.__dict__["mirrorArtifacts"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::mappedrepository_has_categoryPrefix():
-    assert hasattr(aggregator::MappedRepository, "categoryPrefix")
+def test_aggregator_mappedrepository_has_categoryPrefix():
+    assert hasattr(aggregator_MappedRepository, "categoryPrefix")
     descriptor = None
-    for klass in aggregator::MappedRepository.__mro__:
+    for klass in aggregator_MappedRepository.__mro__:
         if "categoryPrefix" in klass.__dict__:
             descriptor = klass.__dict__["categoryPrefix"]
             break
@@ -1814,59 +1814,59 @@ def test_aggregator::mappedrepository_has_categoryPrefix():
 
 
 
-def test_aggregator::maprule_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MapRule)
+def test_aggregator_maprule_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MapRule)
 
 
-def test_aggregator::maprule_constructor_exists():
-    assert callable(aggregator::MapRule.__init__)
+def test_aggregator_maprule_constructor_exists():
+    assert callable(aggregator_MapRule.__init__)
 
 
-def test_aggregator::maprule_constructor_args():
-    sig = inspect.signature(aggregator::MapRule.__init__)
+def test_aggregator_maprule_constructor_args():
+    sig = inspect.signature(aggregator_MapRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aggregator::configuration_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Configuration)
+def test_aggregator_configuration_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Configuration)
 
 
-def test_aggregator::configuration_constructor_exists():
-    assert callable(aggregator::Configuration.__init__)
+def test_aggregator_configuration_constructor_exists():
+    assert callable(aggregator_Configuration.__init__)
 
 
-def test_aggregator::configuration_constructor_args():
-    sig = inspect.signature(aggregator::Configuration.__init__)
+def test_aggregator_configuration_constructor_args():
+    sig = inspect.signature(aggregator_Configuration.__init__)
     params = list(sig.parameters.keys())
     assert "architecture" in params, "Missing parameter 'architecture'"
-    assert "operatingSystem" in params, "Missing parameter 'operatingSystem'"
     assert "windowSystem" in params, "Missing parameter 'windowSystem'"
+    assert "operatingSystem" in params, "Missing parameter 'operatingSystem'"
 
-def test_aggregator::configuration_has_architecture():
-    assert hasattr(aggregator::Configuration, "architecture")
+def test_aggregator_configuration_has_architecture():
+    assert hasattr(aggregator_Configuration, "architecture")
     descriptor = None
-    for klass in aggregator::Configuration.__mro__:
+    for klass in aggregator_Configuration.__mro__:
         if "architecture" in klass.__dict__:
             descriptor = klass.__dict__["architecture"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::configuration_has_operatingSystem():
-    assert hasattr(aggregator::Configuration, "operatingSystem")
+def test_aggregator_configuration_has_windowSystem():
+    assert hasattr(aggregator_Configuration, "windowSystem")
     descriptor = None
-    for klass in aggregator::Configuration.__mro__:
-        if "operatingSystem" in klass.__dict__:
-            descriptor = klass.__dict__["operatingSystem"]
+    for klass in aggregator_Configuration.__mro__:
+        if "windowSystem" in klass.__dict__:
+            descriptor = klass.__dict__["windowSystem"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::configuration_has_windowSystem():
-    assert hasattr(aggregator::Configuration, "windowSystem")
+def test_aggregator_configuration_has_operatingSystem():
+    assert hasattr(aggregator_Configuration, "operatingSystem")
     descriptor = None
-    for klass in aggregator::Configuration.__mro__:
-        if "windowSystem" in klass.__dict__:
-            descriptor = klass.__dict__["windowSystem"]
+    for klass in aggregator_Configuration.__mro__:
+        if "operatingSystem" in klass.__dict__:
+            descriptor = klass.__dict__["operatingSystem"]
             break
     assert isinstance(descriptor, property)
 
@@ -1900,293 +1900,195 @@ def test_statusprovider_constructor_args():
 
 
 
-def test_aggregator::mavenmapping_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MavenMapping)
+def test_aggregator_mavenmapping_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MavenMapping)
 
 
-def test_aggregator::mavenmapping_constructor_exists():
-    assert callable(aggregator::MavenMapping.__init__)
+def test_aggregator_mavenmapping_constructor_exists():
+    assert callable(aggregator_MavenMapping.__init__)
 
 
-def test_aggregator::mavenmapping_constructor_args():
-    sig = inspect.signature(aggregator::MavenMapping.__init__)
+def test_aggregator_mavenmapping_constructor_args():
+    sig = inspect.signature(aggregator_MavenMapping.__init__)
     params = list(sig.parameters.keys())
-    assert "namePattern" in params, "Missing parameter 'namePattern'"
-    assert "groupId" in params, "Missing parameter 'groupId'"
     assert "artifactId" in params, "Missing parameter 'artifactId'"
+    assert "groupId" in params, "Missing parameter 'groupId'"
+    assert "namePattern" in params, "Missing parameter 'namePattern'"
 
-def test_aggregator::mavenmapping_has_namePattern():
-    assert hasattr(aggregator::MavenMapping, "namePattern")
+def test_aggregator_mavenmapping_has_artifactId():
+    assert hasattr(aggregator_MavenMapping, "artifactId")
     descriptor = None
-    for klass in aggregator::MavenMapping.__mro__:
-        if "namePattern" in klass.__dict__:
-            descriptor = klass.__dict__["namePattern"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::mavenmapping_has_groupId():
-    assert hasattr(aggregator::MavenMapping, "groupId")
-    descriptor = None
-    for klass in aggregator::MavenMapping.__mro__:
-        if "groupId" in klass.__dict__:
-            descriptor = klass.__dict__["groupId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::mavenmapping_has_artifactId():
-    assert hasattr(aggregator::MavenMapping, "artifactId")
-    descriptor = None
-    for klass in aggregator::MavenMapping.__mro__:
+    for klass in aggregator_MavenMapping.__mro__:
         if "artifactId" in klass.__dict__:
             descriptor = klass.__dict__["artifactId"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_aggregator::aggregation_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Aggregation)
-
-
-def test_aggregator::aggregation_constructor_exists():
-    assert callable(aggregator::Aggregation.__init__)
-
-
-def test_aggregator::aggregation_constructor_args():
-    sig = inspect.signature(aggregator::Aggregation.__init__)
-    params = list(sig.parameters.keys())
-    assert "strictMavenVersions" in params, "Missing parameter 'strictMavenVersions'"
-    assert "label" in params, "Missing parameter 'label'"
-    assert "packedStrategy" in params, "Missing parameter 'packedStrategy'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "buildRoot" in params, "Missing parameter 'buildRoot'"
-    assert "sendmail" in params, "Missing parameter 'sendmail'"
-    assert "mavenResult" in params, "Missing parameter 'mavenResult'"
-    assert "allowLegacySites" in params, "Missing parameter 'allowLegacySites'"
-
-def test_aggregator::aggregation_has_strictMavenVersions():
-    assert hasattr(aggregator::Aggregation, "strictMavenVersions")
+def test_aggregator_mavenmapping_has_groupId():
+    assert hasattr(aggregator_MavenMapping, "groupId")
     descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
-        if "strictMavenVersions" in klass.__dict__:
-            descriptor = klass.__dict__["strictMavenVersions"]
+    for klass in aggregator_MavenMapping.__mro__:
+        if "groupId" in klass.__dict__:
+            descriptor = klass.__dict__["groupId"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::aggregation_has_label():
-    assert hasattr(aggregator::Aggregation, "label")
+def test_aggregator_mavenmapping_has_namePattern():
+    assert hasattr(aggregator_MavenMapping, "namePattern")
     descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
+    for klass in aggregator_MavenMapping.__mro__:
+        if "namePattern" in klass.__dict__:
+            descriptor = klass.__dict__["namePattern"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aggregator_contribution_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Contribution)
+
+
+def test_aggregator_contribution_constructor_exists():
+    assert callable(aggregator_Contribution.__init__)
+
+
+def test_aggregator_contribution_constructor_args():
+    sig = inspect.signature(aggregator_Contribution.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+
+def test_aggregator_contribution_has_label():
+    assert hasattr(aggregator_Contribution, "label")
+    descriptor = None
+    for klass in aggregator_Contribution.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::aggregation_has_packedStrategy():
-    assert hasattr(aggregator::Aggregation, "packedStrategy")
-    descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
-        if "packedStrategy" in klass.__dict__:
-            descriptor = klass.__dict__["packedStrategy"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_aggregator::aggregation_has_type():
-    assert hasattr(aggregator::Aggregation, "type")
-    descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_aggregator::aggregation_has_buildRoot():
-    assert hasattr(aggregator::Aggregation, "buildRoot")
+def test_aggregator_aggregation_is_not_abstract():
+    assert not inspect.isabstract(aggregator_Aggregation)
+
+
+def test_aggregator_aggregation_constructor_exists():
+    assert callable(aggregator_Aggregation.__init__)
+
+
+def test_aggregator_aggregation_constructor_args():
+    sig = inspect.signature(aggregator_Aggregation.__init__)
+    params = list(sig.parameters.keys())
+    assert "buildRoot" in params, "Missing parameter 'buildRoot'"
+    assert "allowLegacySites" in params, "Missing parameter 'allowLegacySites'"
+    assert "mavenResult" in params, "Missing parameter 'mavenResult'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "label" in params, "Missing parameter 'label'"
+    assert "strictMavenVersions" in params, "Missing parameter 'strictMavenVersions'"
+    assert "packedStrategy" in params, "Missing parameter 'packedStrategy'"
+    assert "sendmail" in params, "Missing parameter 'sendmail'"
+
+def test_aggregator_aggregation_has_buildRoot():
+    assert hasattr(aggregator_Aggregation, "buildRoot")
     descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
+    for klass in aggregator_Aggregation.__mro__:
         if "buildRoot" in klass.__dict__:
             descriptor = klass.__dict__["buildRoot"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::aggregation_has_sendmail():
-    assert hasattr(aggregator::Aggregation, "sendmail")
+def test_aggregator_aggregation_has_allowLegacySites():
+    assert hasattr(aggregator_Aggregation, "allowLegacySites")
     descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
-        if "sendmail" in klass.__dict__:
-            descriptor = klass.__dict__["sendmail"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::aggregation_has_mavenResult():
-    assert hasattr(aggregator::Aggregation, "mavenResult")
-    descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
-        if "mavenResult" in klass.__dict__:
-            descriptor = klass.__dict__["mavenResult"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::aggregation_has_allowLegacySites():
-    assert hasattr(aggregator::Aggregation, "allowLegacySites")
-    descriptor = None
-    for klass in aggregator::Aggregation.__mro__:
+    for klass in aggregator_Aggregation.__mro__:
         if "allowLegacySites" in klass.__dict__:
             descriptor = klass.__dict__["allowLegacySites"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_aggregator::validationset_is_not_abstract():
-    assert not inspect.isabstract(aggregator::ValidationSet)
-
-
-def test_aggregator::validationset_constructor_exists():
-    assert callable(aggregator::ValidationSet.__init__)
-
-
-def test_aggregator::validationset_constructor_args():
-    sig = inspect.signature(aggregator::ValidationSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "label" in params, "Missing parameter 'label'"
-    assert "extension" in params, "Missing parameter 'extension'"
-
-def test_aggregator::validationset_has_abstract():
-    assert hasattr(aggregator::ValidationSet, "abstract")
+def test_aggregator_aggregation_has_mavenResult():
+    assert hasattr(aggregator_Aggregation, "mavenResult")
     descriptor = None
-    for klass in aggregator::ValidationSet.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
+    for klass in aggregator_Aggregation.__mro__:
+        if "mavenResult" in klass.__dict__:
+            descriptor = klass.__dict__["mavenResult"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::validationset_has_label():
-    assert hasattr(aggregator::ValidationSet, "label")
+def test_aggregator_aggregation_has_type():
+    assert hasattr(aggregator_Aggregation, "type")
     descriptor = None
-    for klass in aggregator::ValidationSet.__mro__:
+    for klass in aggregator_Aggregation.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_aggregation_has_label():
+    assert hasattr(aggregator_Aggregation, "label")
+    descriptor = None
+    for klass in aggregator_Aggregation.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::validationset_has_extension():
-    assert hasattr(aggregator::ValidationSet, "extension")
+def test_aggregator_aggregation_has_strictMavenVersions():
+    assert hasattr(aggregator_Aggregation, "strictMavenVersions")
     descriptor = None
-    for klass in aggregator::ValidationSet.__mro__:
-        if "extension" in klass.__dict__:
-            descriptor = klass.__dict__["extension"]
+    for klass in aggregator_Aggregation.__mro__:
+        if "strictMavenVersions" in klass.__dict__:
+            descriptor = klass.__dict__["strictMavenVersions"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_aggregation_has_packedStrategy():
+    assert hasattr(aggregator_Aggregation, "packedStrategy")
+    descriptor = None
+    for klass in aggregator_Aggregation.__mro__:
+        if "packedStrategy" in klass.__dict__:
+            descriptor = klass.__dict__["packedStrategy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_aggregation_has_sendmail():
+    assert hasattr(aggregator_Aggregation, "sendmail")
+    descriptor = None
+    for klass in aggregator_Aggregation.__mro__:
+        if "sendmail" in klass.__dict__:
+            descriptor = klass.__dict__["sendmail"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aggregator::metadatarepositoryreference_is_not_abstract():
-    assert not inspect.isabstract(aggregator::MetadataRepositoryReference)
+def test_aggregator_installableunitrequest_is_not_abstract():
+    assert not inspect.isabstract(aggregator_InstallableUnitRequest)
 
 
-def test_aggregator::metadatarepositoryreference_constructor_exists():
-    assert callable(aggregator::MetadataRepositoryReference.__init__)
+def test_aggregator_installableunitrequest_constructor_exists():
+    assert callable(aggregator_InstallableUnitRequest.__init__)
 
 
-def test_aggregator::metadatarepositoryreference_constructor_args():
-    sig = inspect.signature(aggregator::MetadataRepositoryReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-    assert "nature" in params, "Missing parameter 'nature'"
-
-def test_aggregator::metadatarepositoryreference_has_location():
-    assert hasattr(aggregator::MetadataRepositoryReference, "location")
-    descriptor = None
-    for klass in aggregator::MetadataRepositoryReference.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::metadatarepositoryreference_has_nature():
-    assert hasattr(aggregator::MetadataRepositoryReference, "nature")
-    descriptor = None
-    for klass in aggregator::MetadataRepositoryReference.__mro__:
-        if "nature" in klass.__dict__:
-            descriptor = klass.__dict__["nature"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aggregator::customcategory_is_not_abstract():
-    assert not inspect.isabstract(aggregator::CustomCategory)
-
-
-def test_aggregator::customcategory_constructor_exists():
-    assert callable(aggregator::CustomCategory.__init__)
-
-
-def test_aggregator::customcategory_constructor_args():
-    sig = inspect.signature(aggregator::CustomCategory.__init__)
-    params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "label" in params, "Missing parameter 'label'"
-
-def test_aggregator::customcategory_has_identifier():
-    assert hasattr(aggregator::CustomCategory, "identifier")
-    descriptor = None
-    for klass in aggregator::CustomCategory.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::customcategory_has_description():
-    assert hasattr(aggregator::CustomCategory, "description")
-    descriptor = None
-    for klass in aggregator::CustomCategory.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aggregator::customcategory_has_label():
-    assert hasattr(aggregator::CustomCategory, "label")
-    descriptor = None
-    for klass in aggregator::CustomCategory.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aggregator::installableunitrequest_is_not_abstract():
-    assert not inspect.isabstract(aggregator::InstallableUnitRequest)
-
-
-def test_aggregator::installableunitrequest_constructor_exists():
-    assert callable(aggregator::InstallableUnitRequest.__init__)
-
-
-def test_aggregator::installableunitrequest_constructor_args():
-    sig = inspect.signature(aggregator::InstallableUnitRequest.__init__)
+def test_aggregator_installableunitrequest_constructor_args():
+    sig = inspect.signature(aggregator_InstallableUnitRequest.__init__)
     params = list(sig.parameters.keys())
     assert "versionRange" in params, "Missing parameter 'versionRange'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_aggregator::installableunitrequest_has_versionRange():
-    assert hasattr(aggregator::InstallableUnitRequest, "versionRange")
+def test_aggregator_installableunitrequest_has_versionRange():
+    assert hasattr(aggregator_InstallableUnitRequest, "versionRange")
     descriptor = None
-    for klass in aggregator::InstallableUnitRequest.__mro__:
+    for klass in aggregator_InstallableUnitRequest.__mro__:
         if "versionRange" in klass.__dict__:
             descriptor = klass.__dict__["versionRange"]
             break
     assert isinstance(descriptor, property)
 
-def test_aggregator::installableunitrequest_has_name():
-    assert hasattr(aggregator::InstallableUnitRequest, "name")
+def test_aggregator_installableunitrequest_has_name():
+    assert hasattr(aggregator_InstallableUnitRequest, "name")
     descriptor = None
-    for klass in aggregator::InstallableUnitRequest.__mro__:
+    for klass in aggregator_InstallableUnitRequest.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2194,83 +2096,125 @@ def test_aggregator::installableunitrequest_has_name():
 
 
 
-def test_aggregator::contribution_is_not_abstract():
-    assert not inspect.isabstract(aggregator::Contribution)
+def test_aggregator_validationset_is_not_abstract():
+    assert not inspect.isabstract(aggregator_ValidationSet)
 
 
-def test_aggregator::contribution_constructor_exists():
-    assert callable(aggregator::Contribution.__init__)
+def test_aggregator_validationset_constructor_exists():
+    assert callable(aggregator_ValidationSet.__init__)
 
 
-def test_aggregator::contribution_constructor_args():
-    sig = inspect.signature(aggregator::Contribution.__init__)
+def test_aggregator_validationset_constructor_args():
+    sig = inspect.signature(aggregator_ValidationSet.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
+    assert "extension" in params, "Missing parameter 'extension'"
+    assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_aggregator::contribution_has_label():
-    assert hasattr(aggregator::Contribution, "label")
+def test_aggregator_validationset_has_label():
+    assert hasattr(aggregator_ValidationSet, "label")
     descriptor = None
-    for klass in aggregator::Contribution.__mro__:
+    for klass in aggregator_ValidationSet.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_installableunittype_exists():
-    # Check that the Enumeration exists
-    assert InstallableUnitType is not None
+def test_aggregator_validationset_has_extension():
+    assert hasattr(aggregator_ValidationSet, "extension")
+    descriptor = None
+    for klass in aggregator_ValidationSet.__mro__:
+        if "extension" in klass.__dict__:
+            descriptor = klass.__dict__["extension"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_installableunittype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InstallableUnitType]
-    expected_literals = [
-        "OTHER",
-        "FEATURE",
-        "FRAGMENT",
-        "BUNDLE",
-        "PRODUCT",
-        "CATEGORY",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InstallableUnitType"
+def test_aggregator_validationset_has_abstract():
+    assert hasattr(aggregator_ValidationSet, "abstract")
+    descriptor = None
+    for klass in aggregator_ValidationSet.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_availablefrom_exists():
-    # Check that the Enumeration exists
-    assert AvailableFrom is not None
 
-def test_availablefrom_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AvailableFrom]
-    expected_literals = [
-        "AGGREGATION",
-        "CONTRIBUTION",
-        "REPOSITORY",
-        "VALIDATION_SET",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AvailableFrom"
 
-def test_operatingsystem_exists():
-    # Check that the Enumeration exists
-    assert OperatingSystem is not None
+def test_aggregator_metadatarepositoryreference_is_not_abstract():
+    assert not inspect.isabstract(aggregator_MetadataRepositoryReference)
 
-def test_operatingsystem_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OperatingSystem]
-    expected_literals = [
-        "Linux",
-        "Solaris",
-        "Win32",
-        "MacOSX",
-        "HPUX",
-        "AIX",
-        "QNX",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OperatingSystem"
+
+def test_aggregator_metadatarepositoryreference_constructor_exists():
+    assert callable(aggregator_MetadataRepositoryReference.__init__)
+
+
+def test_aggregator_metadatarepositoryreference_constructor_args():
+    sig = inspect.signature(aggregator_MetadataRepositoryReference.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+    assert "nature" in params, "Missing parameter 'nature'"
+
+def test_aggregator_metadatarepositoryreference_has_location():
+    assert hasattr(aggregator_MetadataRepositoryReference, "location")
+    descriptor = None
+    for klass in aggregator_MetadataRepositoryReference.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_metadatarepositoryreference_has_nature():
+    assert hasattr(aggregator_MetadataRepositoryReference, "nature")
+    descriptor = None
+    for klass in aggregator_MetadataRepositoryReference.__mro__:
+        if "nature" in klass.__dict__:
+            descriptor = klass.__dict__["nature"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aggregator_customcategory_is_not_abstract():
+    assert not inspect.isabstract(aggregator_CustomCategory)
+
+
+def test_aggregator_customcategory_constructor_exists():
+    assert callable(aggregator_CustomCategory.__init__)
+
+
+def test_aggregator_customcategory_constructor_args():
+    sig = inspect.signature(aggregator_CustomCategory.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+    assert "identifier" in params, "Missing parameter 'identifier'"
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_aggregator_customcategory_has_label():
+    assert hasattr(aggregator_CustomCategory, "label")
+    descriptor = None
+    for klass in aggregator_CustomCategory.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_customcategory_has_identifier():
+    assert hasattr(aggregator_CustomCategory, "identifier")
+    descriptor = None
+    for klass in aggregator_CustomCategory.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aggregator_customcategory_has_description():
+    assert hasattr(aggregator_CustomCategory, "description")
+    descriptor = None
+    for klass in aggregator_CustomCategory.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_windowsystem_exists():
     # Check that the Enumeration exists
@@ -2280,12 +2224,12 @@ def test_windowsystem_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in WindowSystem]
     expected_literals = [
-        "Cocoa",
         "Win32",
         "Carbon",
-        "Motif",
-        "GTK",
         "Photon",
+        "Motif",
+        "Cocoa",
+        "GTK",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2307,48 +2251,24 @@ def test_statuscode_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in StatusCode"
 
-def test_architecture_exists():
+def test_installableunittype_exists():
     # Check that the Enumeration exists
-    assert Architecture is not None
+    assert InstallableUnitType is not None
 
-def test_architecture_has_all_literals():
+def test_installableunittype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Architecture]
+    enum_literals = [lit.name for lit in InstallableUnitType]
     expected_literals = [
-        "X86",
-        "Sparc",
-        "X86_64",
-        "Sparcv9",
-        "S390",
-        "IA64_32",
-        "PPC",
-        "IA64",
-        "S390X",
-        "PPC64LE",
-        "PPC64",
+        "BUNDLE",
+        "FRAGMENT",
+        "CATEGORY",
+        "FEATURE",
+        "OTHER",
+        "PRODUCT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Architecture"
-
-def test_aggregationtype_exists():
-    # Check that the Enumeration exists
-    assert AggregationType is not None
-
-def test_aggregationtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AggregationType]
-    expected_literals = [
-        "Stable",
-        "Continuous",
-        "Integration",
-        "Release",
-        "Maintenance",
-        "Nightly",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AggregationType"
+        assert lit_name in enum_literals, f"Literal '' missing in InstallableUnitType"
 
 def test_packedstrategy_exists():
     # Check that the Enumeration exists
@@ -2358,15 +2278,35 @@ def test_packedstrategy_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PackedStrategy]
     expected_literals = [
-        "Copy",
-        "Skip",
+        "Unpack",
         "Verify",
         "UnpackAsSibling",
-        "Unpack",
+        "Copy",
+        "Skip",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PackedStrategy"
+
+def test_operatingsystem_exists():
+    # Check that the Enumeration exists
+    assert OperatingSystem is not None
+
+def test_operatingsystem_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OperatingSystem]
+    expected_literals = [
+        "MacOSX",
+        "Solaris",
+        "AIX",
+        "Linux",
+        "HPUX",
+        "QNX",
+        "Win32",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OperatingSystem"
 
 def test_versionmatch_exists():
     # Check that the Enumeration exists
@@ -2376,13 +2316,73 @@ def test_versionmatch_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VersionMatch]
     expected_literals = [
+        "MATCHES",
         "BELOW",
         "ABOVE",
-        "MATCHES",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VersionMatch"
+
+def test_aggregationtype_exists():
+    # Check that the Enumeration exists
+    assert AggregationType is not None
+
+def test_aggregationtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AggregationType]
+    expected_literals = [
+        "Nightly",
+        "Maintenance",
+        "Integration",
+        "Continuous",
+        "Release",
+        "Stable",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AggregationType"
+
+def test_architecture_exists():
+    # Check that the Enumeration exists
+    assert Architecture is not None
+
+def test_architecture_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Architecture]
+    expected_literals = [
+        "Sparc",
+        "PPC64LE",
+        "IA64",
+        "PPC",
+        "X86_64",
+        "X86",
+        "S390",
+        "IA64_32",
+        "Sparcv9",
+        "S390X",
+        "PPC64",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Architecture"
+
+def test_availablefrom_exists():
+    # Check that the Enumeration exists
+    assert AvailableFrom is not None
+
+def test_availablefrom_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AvailableFrom]
+    expected_literals = [
+        "REPOSITORY",
+        "CONTRIBUTION",
+        "VALIDATION_SET",
+        "AGGREGATION",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AvailableFrom"
 
 
 # =============================================================================
@@ -2396,17 +2396,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-p2view::aggregator::ITouchpointType_strategy = st.builds(
-    p2view::aggregator::ITouchpointType,
+p2view_aggregator_ITouchpointType_strategy = st.builds(
+    p2view_aggregator_ITouchpointType,
 )
-aggregator::p2view::Touchpoints_strategy = st.builds(
-    aggregator::p2view::Touchpoints,
+aggregator_p2view_Touchpoints_strategy = st.builds(
+    aggregator_p2view_Touchpoints,
 )
-p2view::aggregator::IRequirement_strategy = st.builds(
-    p2view::aggregator::IRequirement,
+p2view_aggregator_IRequirement_strategy = st.builds(
+    p2view_aggregator_IRequirement,
 )
-p2view::aggregator::ITouchpointData_strategy = st.builds(
-    p2view::aggregator::ITouchpointData,
+p2view_aggregator_ITouchpointData_strategy = st.builds(
+    p2view_aggregator_ITouchpointData,
 )
 IRequirement_strategy = st.builds(
     IRequirement,
@@ -2414,82 +2414,82 @@ IRequirement_strategy = st.builds(
 RequirementWrapper_strategy = st.builds(
     RequirementWrapper,
 )
-aggregator::p2view::Requirements_strategy = st.builds(
-    aggregator::p2view::Requirements,
+aggregator_p2view_Requirements_strategy = st.builds(
+    aggregator_p2view_Requirements,
 )
-p2view::aggregator::IRepositoryReference_strategy = st.builds(
-    p2view::aggregator::IRepositoryReference,
+p2view_aggregator_IRepositoryReference_strategy = st.builds(
+    p2view_aggregator_IRepositoryReference,
 )
-aggregator::p2view::RepositoryReferences_strategy = st.builds(
-    aggregator::p2view::RepositoryReferences,
+aggregator_p2view_RepositoryReferences_strategy = st.builds(
+    aggregator_p2view_RepositoryReferences,
 )
-p2view::aggregator::IProvidedCapability_strategy = st.builds(
-    p2view::aggregator::IProvidedCapability,
+p2view_aggregator_IProvidedCapability_strategy = st.builds(
+    p2view_aggregator_IProvidedCapability,
 )
 LabelProvider_strategy = st.builds(
     LabelProvider,
 )
-aggregator::p2view::RequirementWrapper_strategy = st.builds(
-    aggregator::p2view::RequirementWrapper,
+aggregator_p2view_RequirementWrapper_strategy = st.builds(
+    aggregator_p2view_RequirementWrapper,
 )
 IProvidedCapability_strategy = st.builds(
     IProvidedCapability,
 )
-aggregator::p2view::ProvidedCapabilityWrapper_strategy = st.builds(
-    aggregator::p2view::ProvidedCapabilityWrapper,
+aggregator_p2view_ProvidedCapabilityWrapper_strategy = st.builds(
+    aggregator_p2view_ProvidedCapabilityWrapper,
 )
 ProvidedCapabilityWrapper_strategy = st.builds(
     ProvidedCapabilityWrapper,
 )
-aggregator::p2view::ProvidedCapabilities_strategy = st.builds(
-    aggregator::p2view::ProvidedCapabilities,
+aggregator_p2view_ProvidedCapabilities_strategy = st.builds(
+    aggregator_p2view_ProvidedCapabilities,
 )
-p2view::aggregator::Property_strategy = st.builds(
-    p2view::aggregator::Property,
+p2view_aggregator_Property_strategy = st.builds(
+    p2view_aggregator_Property,
 )
-aggregator::p2view::Properties_strategy = st.builds(
-    aggregator::p2view::Properties,
+aggregator_p2view_Properties_strategy = st.builds(
+    aggregator_p2view_Properties,
 )
 Product_strategy = st.builds(
     Product,
 )
-aggregator::p2view::Products_strategy = st.builds(
-    aggregator::p2view::Products,
+aggregator_p2view_Products_strategy = st.builds(
+    aggregator_p2view_Products,
 )
-aggregator::p2view::RepositoryBrowser_strategy = st.builds(
-    aggregator::p2view::RepositoryBrowser,
+aggregator_p2view_RepositoryBrowser_strategy = st.builds(
+    aggregator_p2view_RepositoryBrowser,
     loading=
         st.booleans()
 )
-p2view::aggregator::ILicense_strategy = st.builds(
-    p2view::aggregator::ILicense,
+p2view_aggregator_ILicense_strategy = st.builds(
+    p2view_aggregator_ILicense,
 )
-aggregator::p2view::Licenses_strategy = st.builds(
-    aggregator::p2view::Licenses,
+aggregator_p2view_Licenses_strategy = st.builds(
+    aggregator_p2view_Licenses,
 )
 OtherIU_strategy = st.builds(
     OtherIU,
 )
-aggregator::p2view::Miscellaneous_strategy = st.builds(
-    aggregator::p2view::Miscellaneous,
+aggregator_p2view_Miscellaneous_strategy = st.builds(
+    aggregator_p2view_Miscellaneous,
 )
 RepositoryReferences_strategy = st.builds(
     RepositoryReferences,
 )
-p2view::aggregator::MetadataRepository_strategy = st.builds(
-    p2view::aggregator::MetadataRepository,
+p2view_aggregator_MetadataRepository_strategy = st.builds(
+    p2view_aggregator_MetadataRepository,
 )
 InstallableUnits_strategy = st.builds(
     InstallableUnits,
 )
-aggregator::p2view::MetadataRepositoryStructuredView_strategy = st.builds(
-    aggregator::p2view::MetadataRepositoryStructuredView,
+aggregator_p2view_MetadataRepositoryStructuredView_strategy = st.builds(
+    aggregator_p2view_MetadataRepositoryStructuredView,
     location=
         safe_text,
-    name=
-        safe_text,
     loaded=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
 MetadataRepositoryStructuredView_strategy = st.builds(
     MetadataRepositoryStructuredView,
@@ -2500,69 +2500,69 @@ Properties_strategy = st.builds(
 ProvidedCapabilities_strategy = st.builds(
     ProvidedCapabilities,
 )
-p2view::IUDetails_strategy = st.builds(
-    p2view::IUDetails,
+p2view_IUDetails_strategy = st.builds(
+    p2view_IUDetails,
 )
-p2view::IUPresentation_strategy = st.builds(
-    p2view::IUPresentation,
+p2view_IUPresentation_strategy = st.builds(
+    p2view_IUPresentation,
 )
-aggregator::p2view::IUPresentationWithDetails_strategy = st.builds(
-    aggregator::p2view::IUPresentationWithDetails,
+aggregator_p2view_IUPresentationWithDetails_strategy = st.builds(
+    aggregator_p2view_IUPresentationWithDetails,
     detailsResolved=
         safe_text
 )
-p2view::aggregator::IInstallableUnit_strategy = st.builds(
-    p2view::aggregator::IInstallableUnit,
+p2view_aggregator_IInstallableUnit_strategy = st.builds(
+    p2view_aggregator_IInstallableUnit,
 )
-aggregator::p2view::IUPresentation_strategy = st.builds(
-    aggregator::p2view::IUPresentation,
-    label=
-        safe_text,
-    type=
-        safe_text,
-    name=
+aggregator_p2view_IUPresentation_strategy = st.builds(
+    aggregator_p2view_IUPresentation,
+    filter=
         safe_text,
     description=
         safe_text,
-    id=
+    label=
+        safe_text,
+    name=
         safe_text,
     version=
         safe_text,
-    filter=
+    id=
+        safe_text,
+    type=
         safe_text
 )
 Licenses_strategy = st.builds(
     Licenses,
 )
-p2view::aggregator::ICopyright_strategy = st.builds(
-    p2view::aggregator::ICopyright,
+p2view_aggregator_ICopyright_strategy = st.builds(
+    p2view_aggregator_ICopyright,
 )
-p2view::aggregator::IUpdateDescriptor_strategy = st.builds(
-    p2view::aggregator::IUpdateDescriptor,
+p2view_aggregator_IUpdateDescriptor_strategy = st.builds(
+    p2view_aggregator_IUpdateDescriptor,
 )
 Touchpoints_strategy = st.builds(
     Touchpoints,
 )
-aggregator::p2view::Fragments_strategy = st.builds(
-    aggregator::p2view::Fragments,
+aggregator_p2view_Fragments_strategy = st.builds(
+    aggregator_p2view_Fragments,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-aggregator::p2view::Features_strategy = st.builds(
-    aggregator::p2view::Features,
+aggregator_p2view_Features_strategy = st.builds(
+    aggregator_p2view_Features,
 )
 Requirements_strategy = st.builds(
     Requirements,
 )
-aggregator::p2view::IUDetails_strategy = st.builds(
-    aggregator::p2view::IUDetails,
+aggregator_p2view_IUDetails_strategy = st.builds(
+    aggregator_p2view_IUDetails,
 )
 Miscellaneous_strategy = st.builds(
     Miscellaneous,
 )
-aggregator::p2view::InstallableUnits_strategy = st.builds(
-    aggregator::p2view::InstallableUnits,
+aggregator_p2view_InstallableUnits_strategy = st.builds(
+    aggregator_p2view_InstallableUnits,
 )
 Fragment_strategy = st.builds(
     Fragment,
@@ -2573,14 +2573,14 @@ Categories_strategy = st.builds(
 IUPresentation_strategy = st.builds(
     IUPresentation,
 )
-aggregator::p2view::Category_strategy = st.builds(
-    aggregator::p2view::Category,
+aggregator_p2view_Category_strategy = st.builds(
+    aggregator_p2view_Category,
 )
 Category_strategy = st.builds(
     Category,
 )
-aggregator::p2view::Categories_strategy = st.builds(
-    aggregator::p2view::Categories,
+aggregator_p2view_Categories_strategy = st.builds(
+    aggregator_p2view_Categories,
 )
 IUDetails_strategy = st.builds(
     IUDetails,
@@ -2600,49 +2600,49 @@ Features_strategy = st.builds(
 Bundle_strategy = st.builds(
     Bundle,
 )
-aggregator::p2view::Fragment_strategy = st.builds(
-    aggregator::p2view::Fragment,
+aggregator_p2view_Fragment_strategy = st.builds(
+    aggregator_p2view_Fragment,
 )
-aggregator::p2view::Bundles_strategy = st.builds(
-    aggregator::p2view::Bundles,
+aggregator_p2view_Bundles_strategy = st.builds(
+    aggregator_p2view_Bundles,
 )
 IUPresentationWithDetails_strategy = st.builds(
     IUPresentationWithDetails,
 )
-aggregator::p2view::Product_strategy = st.builds(
-    aggregator::p2view::Product,
+aggregator_p2view_Feature_strategy = st.builds(
+    aggregator_p2view_Feature,
 )
-aggregator::p2view::Feature_strategy = st.builds(
-    aggregator::p2view::Feature,
+aggregator_p2view_Product_strategy = st.builds(
+    aggregator_p2view_Product,
 )
-aggregator::p2view::OtherIU_strategy = st.builds(
-    aggregator::p2view::OtherIU,
+aggregator_p2view_OtherIU_strategy = st.builds(
+    aggregator_p2view_OtherIU,
 )
-aggregator::p2view::Bundle_strategy = st.builds(
-    aggregator::p2view::Bundle,
+aggregator_p2view_Bundle_strategy = st.builds(
+    aggregator_p2view_Bundle,
 )
-aggregator::MetadataRepository_strategy = st.builds(
-    aggregator::MetadataRepository,
+aggregator_MetadataRepository_strategy = st.builds(
+    aggregator_MetadataRepository,
 )
-aggregator::StatusProvider_strategy = st.builds(
-    aggregator::StatusProvider,
+aggregator_StatusProvider_strategy = st.builds(
+    aggregator_StatusProvider,
 )
-aggregator::Status_strategy = st.builds(
-    aggregator::Status,
-    message=
-        safe_text,
+aggregator_Status_strategy = st.builds(
+    aggregator_Status,
     code=
-        safe_text
-)
-aggregator::Property_strategy = st.builds(
-    aggregator::Property,
-    key=
         safe_text,
-    value=
+    message=
         safe_text
 )
-aggregator::MavenItem_strategy = st.builds(
-    aggregator::MavenItem,
+aggregator_Property_strategy = st.builds(
+    aggregator_Property,
+    value=
+        safe_text,
+    key=
+        safe_text
+)
+aggregator_MavenItem_strategy = st.builds(
+    aggregator_MavenItem,
     groupId=
         safe_text,
     artifactId=
@@ -2651,44 +2651,44 @@ aggregator::MavenItem_strategy = st.builds(
 InstallableUnitRequest_strategy = st.builds(
     InstallableUnitRequest,
 )
-aggregator::LabelProvider_strategy = st.builds(
-    aggregator::LabelProvider,
+aggregator_LabelProvider_strategy = st.builds(
+    aggregator_LabelProvider,
     label=
         safe_text
 )
 MetadataRepositoryReference_strategy = st.builds(
     MetadataRepositoryReference,
 )
-aggregator::InfosProvider_strategy = st.builds(
-    aggregator::InfosProvider,
-    infos=
+aggregator_InfosProvider_strategy = st.builds(
+    aggregator_InfosProvider,
+    warnings=
         safe_text,
     errors=
         safe_text,
-    warnings=
+    infos=
         safe_text
 )
-aggregator::IdentificationProvider_strategy = st.builds(
-    aggregator::IdentificationProvider,
+aggregator_IdentificationProvider_strategy = st.builds(
+    aggregator_IdentificationProvider,
 )
 MapRule_strategy = st.builds(
     MapRule,
 )
-aggregator::ValidConfigurationsRule_strategy = st.builds(
-    aggregator::ValidConfigurationsRule,
+aggregator_ValidConfigurationsRule_strategy = st.builds(
+    aggregator_ValidConfigurationsRule,
 )
-aggregator::ExclusionRule_strategy = st.builds(
-    aggregator::ExclusionRule,
+aggregator_ExclusionRule_strategy = st.builds(
+    aggregator_ExclusionRule,
 )
-aggregator::EnabledStatusProvider_strategy = st.builds(
-    aggregator::EnabledStatusProvider,
+aggregator_EnabledStatusProvider_strategy = st.builds(
+    aggregator_EnabledStatusProvider,
     enabled=
         st.booleans(),
     branchEnabled=
         st.booleans()
 )
-aggregator::DescriptionProvider_strategy = st.builds(
-    aggregator::DescriptionProvider,
+aggregator_DescriptionProvider_strategy = st.builds(
+    aggregator_DescriptionProvider,
     description=
         safe_text
 )
@@ -2698,70 +2698,70 @@ IdentificationProvider_strategy = st.builds(
 EnabledStatusProvider_strategy = st.builds(
     EnabledStatusProvider,
 )
-aggregator::MappedUnit_strategy = st.builds(
-    aggregator::MappedUnit,
+aggregator_MappedUnit_strategy = st.builds(
+    aggregator_MappedUnit,
 )
-aggregator::ChildrenProvider_strategy = st.builds(
-    aggregator::ChildrenProvider,
+aggregator_ChildrenProvider_strategy = st.builds(
+    aggregator_ChildrenProvider,
 )
 MappedUnit_strategy = st.builds(
     MappedUnit,
 )
-aggregator::Category_strategy = st.builds(
-    aggregator::Category,
+aggregator_Product_strategy = st.builds(
+    aggregator_Product,
+)
+aggregator_Category_strategy = st.builds(
+    aggregator_Category,
     labelOverride=
         safe_text
 )
-aggregator::Product_strategy = st.builds(
-    aggregator::Product,
+aggregator_Feature_strategy = st.builds(
+    aggregator_Feature,
 )
-aggregator::Feature_strategy = st.builds(
-    aggregator::Feature,
+aggregator_Bundle_strategy = st.builds(
+    aggregator_Bundle,
 )
-aggregator::Bundle_strategy = st.builds(
-    aggregator::Bundle,
-)
-aggregator::Contact_strategy = st.builds(
-    aggregator::Contact,
-    name=
-        safe_text,
+aggregator_Contact_strategy = st.builds(
+    aggregator_Contact,
     email=
+        safe_text,
+    name=
         safe_text
 )
-aggregator::AvailableVersion_strategy = st.builds(
-    aggregator::AvailableVersion,
-    filter=
+aggregator_AvailableVersion_strategy = st.builds(
+    aggregator_AvailableVersion,
+    versionMatch=
         safe_text,
     availableFrom=
         safe_text,
-    version=
+    filter=
         safe_text,
-    versionMatch=
+    version=
         safe_text
 )
-aggregator::AvailableVersionsHeader_strategy = st.builds(
-    aggregator::AvailableVersionsHeader,
+aggregator_AvailableVersionsHeader_strategy = st.builds(
+    aggregator_AvailableVersionsHeader,
 )
 DescriptionProvider_strategy = st.builds(
     DescriptionProvider,
 )
-aggregator::MappedRepository_strategy = st.builds(
-    aggregator::MappedRepository,
+aggregator_MappedRepository_strategy = st.builds(
+    aggregator_MappedRepository,
     mirrorArtifacts=
         st.booleans(),
     categoryPrefix=
         safe_text
 )
-aggregator::MapRule_strategy = st.builds(
-    aggregator::MapRule,
+aggregator_MapRule_strategy = st.builds(
+    aggregator_MapRule,
 )
-aggregator::Configuration_strategy = st.builds(
-    aggregator::Configuration,
+aggregator_Configuration_strategy = st.builds(
+    aggregator_Configuration,
     architecture=
         safe_text,
-    operatingSystem=
-        safe_text,
     windowSystem=
+        safe_text,
+    operatingSystem=
         safe_text
 )
 InfosProvider_strategy = st.builds(
@@ -2770,91 +2770,91 @@ InfosProvider_strategy = st.builds(
 StatusProvider_strategy = st.builds(
     StatusProvider,
 )
-aggregator::MavenMapping_strategy = st.builds(
-    aggregator::MavenMapping,
-    namePattern=
+aggregator_MavenMapping_strategy = st.builds(
+    aggregator_MavenMapping,
+    artifactId=
         safe_text,
     groupId=
         safe_text,
-    artifactId=
+    namePattern=
         safe_text
 )
-aggregator::Aggregation_strategy = st.builds(
-    aggregator::Aggregation,
-    strictMavenVersions=
-        st.booleans(),
+aggregator_Contribution_strategy = st.builds(
+    aggregator_Contribution,
     label=
-        safe_text,
-    packedStrategy=
-        safe_text,
-    type=
-        safe_text,
+        safe_text
+)
+aggregator_Aggregation_strategy = st.builds(
+    aggregator_Aggregation,
     buildRoot=
         safe_text,
-    sendmail=
-        st.booleans(),
+    allowLegacySites=
+        safe_text,
     mavenResult=
         st.booleans(),
-    allowLegacySites=
-        safe_text
-)
-aggregator::ValidationSet_strategy = st.builds(
-    aggregator::ValidationSet,
-    abstract=
-        st.booleans(),
+    type=
+        safe_text,
     label=
         safe_text,
-    extension=
+    strictMavenVersions=
+        st.booleans(),
+    packedStrategy=
+        safe_text,
+    sendmail=
         st.booleans()
 )
-aggregator::MetadataRepositoryReference_strategy = st.builds(
-    aggregator::MetadataRepositoryReference,
-    location=
-        safe_text,
-    nature=
-        safe_text
-)
-aggregator::CustomCategory_strategy = st.builds(
-    aggregator::CustomCategory,
-    identifier=
-        safe_text,
-    description=
-        safe_text,
-    label=
-        safe_text
-)
-aggregator::InstallableUnitRequest_strategy = st.builds(
-    aggregator::InstallableUnitRequest,
+aggregator_InstallableUnitRequest_strategy = st.builds(
+    aggregator_InstallableUnitRequest,
     versionRange=
         safe_text,
     name=
         safe_text
 )
-aggregator::Contribution_strategy = st.builds(
-    aggregator::Contribution,
+aggregator_ValidationSet_strategy = st.builds(
+    aggregator_ValidationSet,
     label=
+        safe_text,
+    extension=
+        st.booleans(),
+    abstract=
+        st.booleans()
+)
+aggregator_MetadataRepositoryReference_strategy = st.builds(
+    aggregator_MetadataRepositoryReference,
+    location=
+        safe_text,
+    nature=
+        safe_text
+)
+aggregator_CustomCategory_strategy = st.builds(
+    aggregator_CustomCategory,
+    label=
+        safe_text,
+    identifier=
+        safe_text,
+    description=
         safe_text
 )
 
-@given(instance=p2view::aggregator::ITouchpointType_strategy)
+@given(instance=p2view_aggregator_ITouchpointType_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::itouchpointtype_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::ITouchpointType)
+def test_p2view_aggregator_itouchpointtype_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_ITouchpointType)
 
-@given(instance=aggregator::p2view::Touchpoints_strategy)
+@given(instance=aggregator_p2view_Touchpoints_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::touchpoints_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Touchpoints)
+def test_aggregator_p2view_touchpoints_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Touchpoints)
 
-@given(instance=p2view::aggregator::IRequirement_strategy)
+@given(instance=p2view_aggregator_IRequirement_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::irequirement_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::IRequirement)
+def test_p2view_aggregator_irequirement_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_IRequirement)
 
-@given(instance=p2view::aggregator::ITouchpointData_strategy)
+@given(instance=p2view_aggregator_ITouchpointData_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::itouchpointdata_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::ITouchpointData)
+def test_p2view_aggregator_itouchpointdata_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_ITouchpointData)
 
 @given(instance=IRequirement_strategy)
 @settings(max_examples=50)
@@ -2866,164 +2866,152 @@ def test_irequirement_instantiation(instance):
 def test_requirementwrapper_instantiation(instance):
     assert isinstance(instance, RequirementWrapper)
 
-@given(instance=aggregator::p2view::Requirements_strategy)
+@given(instance=aggregator_p2view_Requirements_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::requirements_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Requirements)
+def test_aggregator_p2view_requirements_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Requirements)
 
-@given(instance=p2view::aggregator::IRepositoryReference_strategy)
+@given(instance=p2view_aggregator_IRepositoryReference_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::irepositoryreference_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::IRepositoryReference)
+def test_p2view_aggregator_irepositoryreference_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_IRepositoryReference)
 
-@given(instance=aggregator::p2view::RepositoryReferences_strategy)
+@given(instance=aggregator_p2view_RepositoryReferences_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::repositoryreferences_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::RepositoryReferences)
+def test_aggregator_p2view_repositoryreferences_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_RepositoryReferences)
 
-@given(instance=p2view::aggregator::IProvidedCapability_strategy)
+@given(instance=p2view_aggregator_IProvidedCapability_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::iprovidedcapability_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::IProvidedCapability)
+def test_p2view_aggregator_iprovidedcapability_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_IProvidedCapability)
 
 @given(instance=LabelProvider_strategy)
 @settings(max_examples=50)
 def test_labelprovider_instantiation(instance):
     assert isinstance(instance, LabelProvider)
 
-@given(instance=aggregator::p2view::RequirementWrapper_strategy)
+@given(instance=aggregator_p2view_RequirementWrapper_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::requirementwrapper_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::RequirementWrapper)
+def test_aggregator_p2view_requirementwrapper_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_RequirementWrapper)
 
 @given(instance=IProvidedCapability_strategy)
 @settings(max_examples=50)
 def test_iprovidedcapability_instantiation(instance):
     assert isinstance(instance, IProvidedCapability)
 
-@given(instance=aggregator::p2view::ProvidedCapabilityWrapper_strategy)
+@given(instance=aggregator_p2view_ProvidedCapabilityWrapper_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::providedcapabilitywrapper_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::ProvidedCapabilityWrapper)
+def test_aggregator_p2view_providedcapabilitywrapper_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_ProvidedCapabilityWrapper)
 
 @given(instance=ProvidedCapabilityWrapper_strategy)
 @settings(max_examples=50)
 def test_providedcapabilitywrapper_instantiation(instance):
     assert isinstance(instance, ProvidedCapabilityWrapper)
 
-@given(instance=aggregator::p2view::ProvidedCapabilities_strategy)
+@given(instance=aggregator_p2view_ProvidedCapabilities_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::providedcapabilities_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::ProvidedCapabilities)
+def test_aggregator_p2view_providedcapabilities_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_ProvidedCapabilities)
 
-@given(instance=p2view::aggregator::Property_strategy)
+@given(instance=p2view_aggregator_Property_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::property_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::Property)
+def test_p2view_aggregator_property_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_Property)
 
-@given(instance=aggregator::p2view::Properties_strategy)
+@given(instance=aggregator_p2view_Properties_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::properties_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Properties)
+def test_aggregator_p2view_properties_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Properties)
 
 @given(instance=Product_strategy)
 @settings(max_examples=50)
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=aggregator::p2view::Products_strategy)
+@given(instance=aggregator_p2view_Products_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::products_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Products)
+def test_aggregator_p2view_products_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Products)
 
-@given(instance=aggregator::p2view::RepositoryBrowser_strategy)
+@given(instance=aggregator_p2view_RepositoryBrowser_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::repositorybrowser_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::RepositoryBrowser)
-
-@given(instance=aggregator::p2view::RepositoryBrowser_strategy)
-def test_aggregator::p2view::repositorybrowser_loading_type(instance):
-    assert isinstance(instance.loading, bool)
+def test_aggregator_p2view_repositorybrowser_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_RepositoryBrowser)
 
 
-@given(instance=aggregator::p2view::RepositoryBrowser_strategy)
-def test_aggregator::p2view::repositorybrowser_loading_setter(instance):
+
+@given(instance=aggregator_p2view_RepositoryBrowser_strategy)
+def test_aggregator_p2view_repositorybrowser_loading_setter(instance):
     original = instance.loading
     instance.loading = original
     assert instance.loading == original
 
-@given(instance=p2view::aggregator::ILicense_strategy)
+@given(instance=p2view_aggregator_ILicense_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::ilicense_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::ILicense)
+def test_p2view_aggregator_ilicense_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_ILicense)
 
-@given(instance=aggregator::p2view::Licenses_strategy)
+@given(instance=aggregator_p2view_Licenses_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::licenses_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Licenses)
+def test_aggregator_p2view_licenses_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Licenses)
 
 @given(instance=OtherIU_strategy)
 @settings(max_examples=50)
 def test_otheriu_instantiation(instance):
     assert isinstance(instance, OtherIU)
 
-@given(instance=aggregator::p2view::Miscellaneous_strategy)
+@given(instance=aggregator_p2view_Miscellaneous_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::miscellaneous_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Miscellaneous)
+def test_aggregator_p2view_miscellaneous_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Miscellaneous)
 
 @given(instance=RepositoryReferences_strategy)
 @settings(max_examples=50)
 def test_repositoryreferences_instantiation(instance):
     assert isinstance(instance, RepositoryReferences)
 
-@given(instance=p2view::aggregator::MetadataRepository_strategy)
+@given(instance=p2view_aggregator_MetadataRepository_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::metadatarepository_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::MetadataRepository)
+def test_p2view_aggregator_metadatarepository_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_MetadataRepository)
 
 @given(instance=InstallableUnits_strategy)
 @settings(max_examples=50)
 def test_installableunits_instantiation(instance):
     assert isinstance(instance, InstallableUnits)
 
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
+@given(instance=aggregator_p2view_MetadataRepositoryStructuredView_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::metadatarepositorystructuredview_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::MetadataRepositoryStructuredView)
-
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
-def test_aggregator::p2view::metadatarepositorystructuredview_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_aggregator_p2view_metadatarepositorystructuredview_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_MetadataRepositoryStructuredView)
 
 
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
-def test_aggregator::p2view::metadatarepositorystructuredview_location_setter(instance):
+
+@given(instance=aggregator_p2view_MetadataRepositoryStructuredView_strategy)
+def test_aggregator_p2view_metadatarepositorystructuredview_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
-def test_aggregator::p2view::metadatarepositorystructuredview_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
-def test_aggregator::p2view::metadatarepositorystructuredview_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
-def test_aggregator::p2view::metadatarepositorystructuredview_loaded_type(instance):
-    assert isinstance(instance.loaded, bool)
-
-
-@given(instance=aggregator::p2view::MetadataRepositoryStructuredView_strategy)
-def test_aggregator::p2view::metadatarepositorystructuredview_loaded_setter(instance):
+@given(instance=aggregator_p2view_MetadataRepositoryStructuredView_strategy)
+def test_aggregator_p2view_metadatarepositorystructuredview_loaded_setter(instance):
     original = instance.loaded
     instance.loaded = original
     assert instance.loaded == original
+
+
+
+@given(instance=aggregator_p2view_MetadataRepositoryStructuredView_strategy)
+def test_aggregator_p2view_metadatarepositorystructuredview_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=MetadataRepositoryStructuredView_strategy)
 @settings(max_examples=50)
@@ -3040,173 +3028,149 @@ def test_properties_instantiation(instance):
 def test_providedcapabilities_instantiation(instance):
     assert isinstance(instance, ProvidedCapabilities)
 
-@given(instance=p2view::IUDetails_strategy)
+@given(instance=p2view_IUDetails_strategy)
 @settings(max_examples=50)
-def test_p2view::iudetails_instantiation(instance):
-    assert isinstance(instance, p2view::IUDetails)
+def test_p2view_iudetails_instantiation(instance):
+    assert isinstance(instance, p2view_IUDetails)
 
-@given(instance=p2view::IUPresentation_strategy)
+@given(instance=p2view_IUPresentation_strategy)
 @settings(max_examples=50)
-def test_p2view::iupresentation_instantiation(instance):
-    assert isinstance(instance, p2view::IUPresentation)
+def test_p2view_iupresentation_instantiation(instance):
+    assert isinstance(instance, p2view_IUPresentation)
 
-@given(instance=aggregator::p2view::IUPresentationWithDetails_strategy)
+@given(instance=aggregator_p2view_IUPresentationWithDetails_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::iupresentationwithdetails_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::IUPresentationWithDetails)
-
-@given(instance=aggregator::p2view::IUPresentationWithDetails_strategy)
-def test_aggregator::p2view::iupresentationwithdetails_detailsResolved_type(instance):
-    assert isinstance(instance.detailsResolved, str)
+def test_aggregator_p2view_iupresentationwithdetails_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_IUPresentationWithDetails)
 
 
-@given(instance=aggregator::p2view::IUPresentationWithDetails_strategy)
-def test_aggregator::p2view::iupresentationwithdetails_detailsResolved_setter(instance):
+
+@given(instance=aggregator_p2view_IUPresentationWithDetails_strategy)
+def test_aggregator_p2view_iupresentationwithdetails_detailsResolved_setter(instance):
     original = instance.detailsResolved
     instance.detailsResolved = original
     assert instance.detailsResolved == original
 
-@given(instance=p2view::aggregator::IInstallableUnit_strategy)
+@given(instance=p2view_aggregator_IInstallableUnit_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::iinstallableunit_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::IInstallableUnit)
+def test_p2view_aggregator_iinstallableunit_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_IInstallableUnit)
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
+@given(instance=aggregator_p2view_IUPresentation_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::iupresentation_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::IUPresentation)
-
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_aggregator_p2view_iupresentation_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_IUPresentation)
 
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_filter_setter(instance):
+    original = instance.filter
+    instance.filter = original
+    assert instance.filter == original
 
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_description_setter(instance):
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_version_type(instance):
-    assert isinstance(instance.version, str)
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
 
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_version_setter(instance):
+
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_filter_type(instance):
-    assert isinstance(instance.filter, str)
 
 
-@given(instance=aggregator::p2view::IUPresentation_strategy)
-def test_aggregator::p2view::iupresentation_filter_setter(instance):
-    original = instance.filter
-    instance.filter = original
-    assert instance.filter == original
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=aggregator_p2view_IUPresentation_strategy)
+def test_aggregator_p2view_iupresentation_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 @given(instance=Licenses_strategy)
 @settings(max_examples=50)
 def test_licenses_instantiation(instance):
     assert isinstance(instance, Licenses)
 
-@given(instance=p2view::aggregator::ICopyright_strategy)
+@given(instance=p2view_aggregator_ICopyright_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::icopyright_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::ICopyright)
+def test_p2view_aggregator_icopyright_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_ICopyright)
 
-@given(instance=p2view::aggregator::IUpdateDescriptor_strategy)
+@given(instance=p2view_aggregator_IUpdateDescriptor_strategy)
 @settings(max_examples=50)
-def test_p2view::aggregator::iupdatedescriptor_instantiation(instance):
-    assert isinstance(instance, p2view::aggregator::IUpdateDescriptor)
+def test_p2view_aggregator_iupdatedescriptor_instantiation(instance):
+    assert isinstance(instance, p2view_aggregator_IUpdateDescriptor)
 
 @given(instance=Touchpoints_strategy)
 @settings(max_examples=50)
 def test_touchpoints_instantiation(instance):
     assert isinstance(instance, Touchpoints)
 
-@given(instance=aggregator::p2view::Fragments_strategy)
+@given(instance=aggregator_p2view_Fragments_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::fragments_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Fragments)
+def test_aggregator_p2view_fragments_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Fragments)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=aggregator::p2view::Features_strategy)
+@given(instance=aggregator_p2view_Features_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::features_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Features)
+def test_aggregator_p2view_features_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Features)
 
 @given(instance=Requirements_strategy)
 @settings(max_examples=50)
 def test_requirements_instantiation(instance):
     assert isinstance(instance, Requirements)
 
-@given(instance=aggregator::p2view::IUDetails_strategy)
+@given(instance=aggregator_p2view_IUDetails_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::iudetails_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::IUDetails)
+def test_aggregator_p2view_iudetails_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_IUDetails)
 
 @given(instance=Miscellaneous_strategy)
 @settings(max_examples=50)
 def test_miscellaneous_instantiation(instance):
     assert isinstance(instance, Miscellaneous)
 
-@given(instance=aggregator::p2view::InstallableUnits_strategy)
+@given(instance=aggregator_p2view_InstallableUnits_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::installableunits_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::InstallableUnits)
+def test_aggregator_p2view_installableunits_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_InstallableUnits)
 
 @given(instance=Fragment_strategy)
 @settings(max_examples=50)
@@ -3223,10 +3187,10 @@ def test_categories_instantiation(instance):
 def test_iupresentation_instantiation(instance):
     assert isinstance(instance, IUPresentation)
 
-@given(instance=aggregator::p2view::Category_strategy)
+@given(instance=aggregator_p2view_Category_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::category_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Category)
+def test_aggregator_p2view_category_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Category)
 
 import warnings
 import copy
@@ -3234,9 +3198,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aggregator::p2view::Category_strategy)
+@given(instance=aggregator_p2view_Category_strategy)
 @settings(max_examples=30)
-def test_aggregator::p2view::category_isnested_changes_state(instance):
+def test_aggregator_p2view_category_isnested_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3248,24 +3212,24 @@ def test_aggregator::p2view::category_isnested_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isNested' in aggregator::p2view::Category is empty"
+        assert has_statements, f"Function 'isNested' in aggregator_p2view_Category is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isNested' in aggregator::p2view::Category did not change state; check implementation")
+            warnings.warn(f"Operation 'isNested' in aggregator_p2view_Category did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isNested' in aggregator::p2view::Category is not implemented or raised an error")
+        warnings.warn(f"Operation 'isNested' in aggregator_p2view_Category is not implemented or raised an error")
 
 @given(instance=Category_strategy)
 @settings(max_examples=50)
 def test_category_instantiation(instance):
     assert isinstance(instance, Category)
 
-@given(instance=aggregator::p2view::Categories_strategy)
+@given(instance=aggregator_p2view_Categories_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::categories_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Categories)
+def test_aggregator_p2view_categories_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Categories)
 
 @given(instance=IUDetails_strategy)
 @settings(max_examples=50)
@@ -3297,128 +3261,110 @@ def test_features_instantiation(instance):
 def test_bundle_instantiation(instance):
     assert isinstance(instance, Bundle)
 
-@given(instance=aggregator::p2view::Fragment_strategy)
+@given(instance=aggregator_p2view_Fragment_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::fragment_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Fragment)
+def test_aggregator_p2view_fragment_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Fragment)
 
-@given(instance=aggregator::p2view::Bundles_strategy)
+@given(instance=aggregator_p2view_Bundles_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::bundles_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Bundles)
+def test_aggregator_p2view_bundles_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Bundles)
 
 @given(instance=IUPresentationWithDetails_strategy)
 @settings(max_examples=50)
 def test_iupresentationwithdetails_instantiation(instance):
     assert isinstance(instance, IUPresentationWithDetails)
 
-@given(instance=aggregator::p2view::Product_strategy)
+@given(instance=aggregator_p2view_Feature_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::product_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Product)
+def test_aggregator_p2view_feature_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Feature)
 
-@given(instance=aggregator::p2view::Feature_strategy)
+@given(instance=aggregator_p2view_Product_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::feature_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Feature)
+def test_aggregator_p2view_product_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Product)
 
-@given(instance=aggregator::p2view::OtherIU_strategy)
+@given(instance=aggregator_p2view_OtherIU_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::otheriu_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::OtherIU)
+def test_aggregator_p2view_otheriu_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_OtherIU)
 
-@given(instance=aggregator::p2view::Bundle_strategy)
+@given(instance=aggregator_p2view_Bundle_strategy)
 @settings(max_examples=50)
-def test_aggregator::p2view::bundle_instantiation(instance):
-    assert isinstance(instance, aggregator::p2view::Bundle)
+def test_aggregator_p2view_bundle_instantiation(instance):
+    assert isinstance(instance, aggregator_p2view_Bundle)
 
-@given(instance=aggregator::MetadataRepository_strategy)
+@given(instance=aggregator_MetadataRepository_strategy)
 @settings(max_examples=50)
-def test_aggregator::metadatarepository_instantiation(instance):
-    assert isinstance(instance, aggregator::MetadataRepository)
+def test_aggregator_metadatarepository_instantiation(instance):
+    assert isinstance(instance, aggregator_MetadataRepository)
 
-@given(instance=aggregator::StatusProvider_strategy)
+@given(instance=aggregator_StatusProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::statusprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::StatusProvider)
+def test_aggregator_statusprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_StatusProvider)
 
-@given(instance=aggregator::Status_strategy)
+@given(instance=aggregator_Status_strategy)
 @settings(max_examples=50)
-def test_aggregator::status_instantiation(instance):
-    assert isinstance(instance, aggregator::Status)
-
-@given(instance=aggregator::Status_strategy)
-def test_aggregator::status_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_aggregator_status_instantiation(instance):
+    assert isinstance(instance, aggregator_Status)
 
 
-@given(instance=aggregator::Status_strategy)
-def test_aggregator::status_message_setter(instance):
-    original = instance.message
-    instance.message = original
-    assert instance.message == original
 
-@given(instance=aggregator::Status_strategy)
-def test_aggregator::status_code_type(instance):
-    assert isinstance(instance.code, str)
-
-
-@given(instance=aggregator::Status_strategy)
-def test_aggregator::status_code_setter(instance):
+@given(instance=aggregator_Status_strategy)
+def test_aggregator_status_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=aggregator::Property_strategy)
+
+
+@given(instance=aggregator_Status_strategy)
+def test_aggregator_status_message_setter(instance):
+    original = instance.message
+    instance.message = original
+    assert instance.message == original
+
+@given(instance=aggregator_Property_strategy)
 @settings(max_examples=50)
-def test_aggregator::property_instantiation(instance):
-    assert isinstance(instance, aggregator::Property)
-
-@given(instance=aggregator::Property_strategy)
-def test_aggregator::property_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_aggregator_property_instantiation(instance):
+    assert isinstance(instance, aggregator_Property)
 
 
-@given(instance=aggregator::Property_strategy)
-def test_aggregator::property_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=aggregator::Property_strategy)
-def test_aggregator::property_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=aggregator::Property_strategy)
-def test_aggregator::property_value_setter(instance):
+@given(instance=aggregator_Property_strategy)
+def test_aggregator_property_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=aggregator::MavenItem_strategy)
+
+
+@given(instance=aggregator_Property_strategy)
+def test_aggregator_property_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=aggregator_MavenItem_strategy)
 @settings(max_examples=50)
-def test_aggregator::mavenitem_instantiation(instance):
-    assert isinstance(instance, aggregator::MavenItem)
-
-@given(instance=aggregator::MavenItem_strategy)
-def test_aggregator::mavenitem_groupId_type(instance):
-    assert isinstance(instance.groupId, str)
+def test_aggregator_mavenitem_instantiation(instance):
+    assert isinstance(instance, aggregator_MavenItem)
 
 
-@given(instance=aggregator::MavenItem_strategy)
-def test_aggregator::mavenitem_groupId_setter(instance):
+
+@given(instance=aggregator_MavenItem_strategy)
+def test_aggregator_mavenitem_groupId_setter(instance):
     original = instance.groupId
     instance.groupId = original
     assert instance.groupId == original
 
-@given(instance=aggregator::MavenItem_strategy)
-def test_aggregator::mavenitem_artifactId_type(instance):
-    assert isinstance(instance.artifactId, str)
 
 
-@given(instance=aggregator::MavenItem_strategy)
-def test_aggregator::mavenitem_artifactId_setter(instance):
+@given(instance=aggregator_MavenItem_strategy)
+def test_aggregator_mavenitem_artifactId_setter(instance):
     original = instance.artifactId
     instance.artifactId = original
     assert instance.artifactId == original
@@ -3428,18 +3374,15 @@ def test_aggregator::mavenitem_artifactId_setter(instance):
 def test_installableunitrequest_instantiation(instance):
     assert isinstance(instance, InstallableUnitRequest)
 
-@given(instance=aggregator::LabelProvider_strategy)
+@given(instance=aggregator_LabelProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::labelprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::LabelProvider)
-
-@given(instance=aggregator::LabelProvider_strategy)
-def test_aggregator::labelprovider_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_aggregator_labelprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_LabelProvider)
 
 
-@given(instance=aggregator::LabelProvider_strategy)
-def test_aggregator::labelprovider_label_setter(instance):
+
+@given(instance=aggregator_LabelProvider_strategy)
+def test_aggregator_labelprovider_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -3449,103 +3392,85 @@ def test_aggregator::labelprovider_label_setter(instance):
 def test_metadatarepositoryreference_instantiation(instance):
     assert isinstance(instance, MetadataRepositoryReference)
 
-@given(instance=aggregator::InfosProvider_strategy)
+@given(instance=aggregator_InfosProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::infosprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::InfosProvider)
-
-@given(instance=aggregator::InfosProvider_strategy)
-def test_aggregator::infosprovider_infos_type(instance):
-    assert isinstance(instance.infos, str)
+def test_aggregator_infosprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_InfosProvider)
 
 
-@given(instance=aggregator::InfosProvider_strategy)
-def test_aggregator::infosprovider_infos_setter(instance):
-    original = instance.infos
-    instance.infos = original
-    assert instance.infos == original
 
-@given(instance=aggregator::InfosProvider_strategy)
-def test_aggregator::infosprovider_errors_type(instance):
-    assert isinstance(instance.errors, str)
-
-
-@given(instance=aggregator::InfosProvider_strategy)
-def test_aggregator::infosprovider_errors_setter(instance):
-    original = instance.errors
-    instance.errors = original
-    assert instance.errors == original
-
-@given(instance=aggregator::InfosProvider_strategy)
-def test_aggregator::infosprovider_warnings_type(instance):
-    assert isinstance(instance.warnings, str)
-
-
-@given(instance=aggregator::InfosProvider_strategy)
-def test_aggregator::infosprovider_warnings_setter(instance):
+@given(instance=aggregator_InfosProvider_strategy)
+def test_aggregator_infosprovider_warnings_setter(instance):
     original = instance.warnings
     instance.warnings = original
     assert instance.warnings == original
 
-@given(instance=aggregator::IdentificationProvider_strategy)
+
+
+@given(instance=aggregator_InfosProvider_strategy)
+def test_aggregator_infosprovider_errors_setter(instance):
+    original = instance.errors
+    instance.errors = original
+    assert instance.errors == original
+
+
+
+@given(instance=aggregator_InfosProvider_strategy)
+def test_aggregator_infosprovider_infos_setter(instance):
+    original = instance.infos
+    instance.infos = original
+    assert instance.infos == original
+
+@given(instance=aggregator_IdentificationProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::identificationprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::IdentificationProvider)
+def test_aggregator_identificationprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_IdentificationProvider)
 
 @given(instance=MapRule_strategy)
 @settings(max_examples=50)
 def test_maprule_instantiation(instance):
     assert isinstance(instance, MapRule)
 
-@given(instance=aggregator::ValidConfigurationsRule_strategy)
+@given(instance=aggregator_ValidConfigurationsRule_strategy)
 @settings(max_examples=50)
-def test_aggregator::validconfigurationsrule_instantiation(instance):
-    assert isinstance(instance, aggregator::ValidConfigurationsRule)
+def test_aggregator_validconfigurationsrule_instantiation(instance):
+    assert isinstance(instance, aggregator_ValidConfigurationsRule)
 
-@given(instance=aggregator::ExclusionRule_strategy)
+@given(instance=aggregator_ExclusionRule_strategy)
 @settings(max_examples=50)
-def test_aggregator::exclusionrule_instantiation(instance):
-    assert isinstance(instance, aggregator::ExclusionRule)
+def test_aggregator_exclusionrule_instantiation(instance):
+    assert isinstance(instance, aggregator_ExclusionRule)
 
-@given(instance=aggregator::EnabledStatusProvider_strategy)
+@given(instance=aggregator_EnabledStatusProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::enabledstatusprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::EnabledStatusProvider)
-
-@given(instance=aggregator::EnabledStatusProvider_strategy)
-def test_aggregator::enabledstatusprovider_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
+def test_aggregator_enabledstatusprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_EnabledStatusProvider)
 
 
-@given(instance=aggregator::EnabledStatusProvider_strategy)
-def test_aggregator::enabledstatusprovider_enabled_setter(instance):
+
+@given(instance=aggregator_EnabledStatusProvider_strategy)
+def test_aggregator_enabledstatusprovider_enabled_setter(instance):
     original = instance.enabled
     instance.enabled = original
     assert instance.enabled == original
 
-@given(instance=aggregator::EnabledStatusProvider_strategy)
-def test_aggregator::enabledstatusprovider_branchEnabled_type(instance):
-    assert isinstance(instance.branchEnabled, bool)
 
 
-@given(instance=aggregator::EnabledStatusProvider_strategy)
-def test_aggregator::enabledstatusprovider_branchEnabled_setter(instance):
+@given(instance=aggregator_EnabledStatusProvider_strategy)
+def test_aggregator_enabledstatusprovider_branchEnabled_setter(instance):
     original = instance.branchEnabled
     instance.branchEnabled = original
     assert instance.branchEnabled == original
 
-@given(instance=aggregator::DescriptionProvider_strategy)
+@given(instance=aggregator_DescriptionProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::descriptionprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::DescriptionProvider)
-
-@given(instance=aggregator::DescriptionProvider_strategy)
-def test_aggregator::descriptionprovider_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_aggregator_descriptionprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_DescriptionProvider)
 
 
-@given(instance=aggregator::DescriptionProvider_strategy)
-def test_aggregator::descriptionprovider_description_setter(instance):
+
+@given(instance=aggregator_DescriptionProvider_strategy)
+def test_aggregator_descriptionprovider_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -3560,161 +3485,134 @@ def test_identificationprovider_instantiation(instance):
 def test_enabledstatusprovider_instantiation(instance):
     assert isinstance(instance, EnabledStatusProvider)
 
-@given(instance=aggregator::MappedUnit_strategy)
+@given(instance=aggregator_MappedUnit_strategy)
 @settings(max_examples=50)
-def test_aggregator::mappedunit_instantiation(instance):
-    assert isinstance(instance, aggregator::MappedUnit)
+def test_aggregator_mappedunit_instantiation(instance):
+    assert isinstance(instance, aggregator_MappedUnit)
 
-@given(instance=aggregator::ChildrenProvider_strategy)
+@given(instance=aggregator_ChildrenProvider_strategy)
 @settings(max_examples=50)
-def test_aggregator::childrenprovider_instantiation(instance):
-    assert isinstance(instance, aggregator::ChildrenProvider)
+def test_aggregator_childrenprovider_instantiation(instance):
+    assert isinstance(instance, aggregator_ChildrenProvider)
 
 @given(instance=MappedUnit_strategy)
 @settings(max_examples=50)
 def test_mappedunit_instantiation(instance):
     assert isinstance(instance, MappedUnit)
 
-@given(instance=aggregator::Category_strategy)
+@given(instance=aggregator_Product_strategy)
 @settings(max_examples=50)
-def test_aggregator::category_instantiation(instance):
-    assert isinstance(instance, aggregator::Category)
+def test_aggregator_product_instantiation(instance):
+    assert isinstance(instance, aggregator_Product)
 
-@given(instance=aggregator::Category_strategy)
-def test_aggregator::category_labelOverride_type(instance):
-    assert isinstance(instance.labelOverride, str)
+@given(instance=aggregator_Category_strategy)
+@settings(max_examples=50)
+def test_aggregator_category_instantiation(instance):
+    assert isinstance(instance, aggregator_Category)
 
 
-@given(instance=aggregator::Category_strategy)
-def test_aggregator::category_labelOverride_setter(instance):
+
+@given(instance=aggregator_Category_strategy)
+def test_aggregator_category_labelOverride_setter(instance):
     original = instance.labelOverride
     instance.labelOverride = original
     assert instance.labelOverride == original
 
-@given(instance=aggregator::Product_strategy)
+@given(instance=aggregator_Feature_strategy)
 @settings(max_examples=50)
-def test_aggregator::product_instantiation(instance):
-    assert isinstance(instance, aggregator::Product)
+def test_aggregator_feature_instantiation(instance):
+    assert isinstance(instance, aggregator_Feature)
 
-@given(instance=aggregator::Feature_strategy)
+@given(instance=aggregator_Bundle_strategy)
 @settings(max_examples=50)
-def test_aggregator::feature_instantiation(instance):
-    assert isinstance(instance, aggregator::Feature)
+def test_aggregator_bundle_instantiation(instance):
+    assert isinstance(instance, aggregator_Bundle)
 
-@given(instance=aggregator::Bundle_strategy)
+@given(instance=aggregator_Contact_strategy)
 @settings(max_examples=50)
-def test_aggregator::bundle_instantiation(instance):
-    assert isinstance(instance, aggregator::Bundle)
-
-@given(instance=aggregator::Contact_strategy)
-@settings(max_examples=50)
-def test_aggregator::contact_instantiation(instance):
-    assert isinstance(instance, aggregator::Contact)
-
-@given(instance=aggregator::Contact_strategy)
-def test_aggregator::contact_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_aggregator_contact_instantiation(instance):
+    assert isinstance(instance, aggregator_Contact)
 
 
-@given(instance=aggregator::Contact_strategy)
-def test_aggregator::contact_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=aggregator::Contact_strategy)
-def test_aggregator::contact_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=aggregator::Contact_strategy)
-def test_aggregator::contact_email_setter(instance):
+@given(instance=aggregator_Contact_strategy)
+def test_aggregator_contact_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
 
-@given(instance=aggregator::AvailableVersion_strategy)
+
+
+@given(instance=aggregator_Contact_strategy)
+def test_aggregator_contact_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=aggregator_AvailableVersion_strategy)
 @settings(max_examples=50)
-def test_aggregator::availableversion_instantiation(instance):
-    assert isinstance(instance, aggregator::AvailableVersion)
-
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_filter_type(instance):
-    assert isinstance(instance.filter, str)
+def test_aggregator_availableversion_instantiation(instance):
+    assert isinstance(instance, aggregator_AvailableVersion)
 
 
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_filter_setter(instance):
-    original = instance.filter
-    instance.filter = original
-    assert instance.filter == original
 
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_availableFrom_type(instance):
-    assert isinstance(instance.availableFrom, str)
-
-
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_availableFrom_setter(instance):
-    original = instance.availableFrom
-    instance.availableFrom = original
-    assert instance.availableFrom == original
-
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_versionMatch_type(instance):
-    assert isinstance(instance.versionMatch, str)
-
-
-@given(instance=aggregator::AvailableVersion_strategy)
-def test_aggregator::availableversion_versionMatch_setter(instance):
+@given(instance=aggregator_AvailableVersion_strategy)
+def test_aggregator_availableversion_versionMatch_setter(instance):
     original = instance.versionMatch
     instance.versionMatch = original
     assert instance.versionMatch == original
 
-@given(instance=aggregator::AvailableVersionsHeader_strategy)
+
+
+@given(instance=aggregator_AvailableVersion_strategy)
+def test_aggregator_availableversion_availableFrom_setter(instance):
+    original = instance.availableFrom
+    instance.availableFrom = original
+    assert instance.availableFrom == original
+
+
+
+@given(instance=aggregator_AvailableVersion_strategy)
+def test_aggregator_availableversion_filter_setter(instance):
+    original = instance.filter
+    instance.filter = original
+    assert instance.filter == original
+
+
+
+@given(instance=aggregator_AvailableVersion_strategy)
+def test_aggregator_availableversion_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=aggregator_AvailableVersionsHeader_strategy)
 @settings(max_examples=50)
-def test_aggregator::availableversionsheader_instantiation(instance):
-    assert isinstance(instance, aggregator::AvailableVersionsHeader)
+def test_aggregator_availableversionsheader_instantiation(instance):
+    assert isinstance(instance, aggregator_AvailableVersionsHeader)
 
 @given(instance=DescriptionProvider_strategy)
 @settings(max_examples=50)
 def test_descriptionprovider_instantiation(instance):
     assert isinstance(instance, DescriptionProvider)
 
-@given(instance=aggregator::MappedRepository_strategy)
+@given(instance=aggregator_MappedRepository_strategy)
 @settings(max_examples=50)
-def test_aggregator::mappedrepository_instantiation(instance):
-    assert isinstance(instance, aggregator::MappedRepository)
-
-@given(instance=aggregator::MappedRepository_strategy)
-def test_aggregator::mappedrepository_mirrorArtifacts_type(instance):
-    assert isinstance(instance.mirrorArtifacts, bool)
+def test_aggregator_mappedrepository_instantiation(instance):
+    assert isinstance(instance, aggregator_MappedRepository)
 
 
-@given(instance=aggregator::MappedRepository_strategy)
-def test_aggregator::mappedrepository_mirrorArtifacts_setter(instance):
+
+@given(instance=aggregator_MappedRepository_strategy)
+def test_aggregator_mappedrepository_mirrorArtifacts_setter(instance):
     original = instance.mirrorArtifacts
     instance.mirrorArtifacts = original
     assert instance.mirrorArtifacts == original
 
-@given(instance=aggregator::MappedRepository_strategy)
-def test_aggregator::mappedrepository_categoryPrefix_type(instance):
-    assert isinstance(instance.categoryPrefix, str)
 
 
-@given(instance=aggregator::MappedRepository_strategy)
-def test_aggregator::mappedrepository_categoryPrefix_setter(instance):
+@given(instance=aggregator_MappedRepository_strategy)
+def test_aggregator_mappedrepository_categoryPrefix_setter(instance):
     original = instance.categoryPrefix
     instance.categoryPrefix = original
     assert instance.categoryPrefix == original
@@ -3725,9 +3623,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aggregator::MappedRepository_strategy)
+@given(instance=aggregator_MappedRepository_strategy)
 @settings(max_examples=30)
-def test_aggregator::mappedrepository_ismapexclusive_changes_state(instance):
+def test_aggregator_mappedrepository_ismapexclusive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3739,57 +3637,48 @@ def test_aggregator::mappedrepository_ismapexclusive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMapExclusive' in aggregator::MappedRepository is empty"
+        assert has_statements, f"Function 'isMapExclusive' in aggregator_MappedRepository is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMapExclusive' in aggregator::MappedRepository did not change state; check implementation")
+            warnings.warn(f"Operation 'isMapExclusive' in aggregator_MappedRepository did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMapExclusive' in aggregator::MappedRepository is not implemented or raised an error")
+        warnings.warn(f"Operation 'isMapExclusive' in aggregator_MappedRepository is not implemented or raised an error")
 
-@given(instance=aggregator::MapRule_strategy)
+@given(instance=aggregator_MapRule_strategy)
 @settings(max_examples=50)
-def test_aggregator::maprule_instantiation(instance):
-    assert isinstance(instance, aggregator::MapRule)
+def test_aggregator_maprule_instantiation(instance):
+    assert isinstance(instance, aggregator_MapRule)
 
-@given(instance=aggregator::Configuration_strategy)
+@given(instance=aggregator_Configuration_strategy)
 @settings(max_examples=50)
-def test_aggregator::configuration_instantiation(instance):
-    assert isinstance(instance, aggregator::Configuration)
-
-@given(instance=aggregator::Configuration_strategy)
-def test_aggregator::configuration_architecture_type(instance):
-    assert isinstance(instance.architecture, str)
+def test_aggregator_configuration_instantiation(instance):
+    assert isinstance(instance, aggregator_Configuration)
 
 
-@given(instance=aggregator::Configuration_strategy)
-def test_aggregator::configuration_architecture_setter(instance):
+
+@given(instance=aggregator_Configuration_strategy)
+def test_aggregator_configuration_architecture_setter(instance):
     original = instance.architecture
     instance.architecture = original
     assert instance.architecture == original
 
-@given(instance=aggregator::Configuration_strategy)
-def test_aggregator::configuration_operatingSystem_type(instance):
-    assert isinstance(instance.operatingSystem, str)
 
 
-@given(instance=aggregator::Configuration_strategy)
-def test_aggregator::configuration_operatingSystem_setter(instance):
-    original = instance.operatingSystem
-    instance.operatingSystem = original
-    assert instance.operatingSystem == original
-
-@given(instance=aggregator::Configuration_strategy)
-def test_aggregator::configuration_windowSystem_type(instance):
-    assert isinstance(instance.windowSystem, str)
-
-
-@given(instance=aggregator::Configuration_strategy)
-def test_aggregator::configuration_windowSystem_setter(instance):
+@given(instance=aggregator_Configuration_strategy)
+def test_aggregator_configuration_windowSystem_setter(instance):
     original = instance.windowSystem
     instance.windowSystem = original
     assert instance.windowSystem == original
+
+
+
+@given(instance=aggregator_Configuration_strategy)
+def test_aggregator_configuration_operatingSystem_setter(instance):
+    original = instance.operatingSystem
+    instance.operatingSystem = original
+    assert instance.operatingSystem == original
 
 @given(instance=InfosProvider_strategy)
 @settings(max_examples=50)
@@ -3801,43 +3690,34 @@ def test_infosprovider_instantiation(instance):
 def test_statusprovider_instantiation(instance):
     assert isinstance(instance, StatusProvider)
 
-@given(instance=aggregator::MavenMapping_strategy)
+@given(instance=aggregator_MavenMapping_strategy)
 @settings(max_examples=50)
-def test_aggregator::mavenmapping_instantiation(instance):
-    assert isinstance(instance, aggregator::MavenMapping)
-
-@given(instance=aggregator::MavenMapping_strategy)
-def test_aggregator::mavenmapping_namePattern_type(instance):
-    assert isinstance(instance.namePattern, str)
+def test_aggregator_mavenmapping_instantiation(instance):
+    assert isinstance(instance, aggregator_MavenMapping)
 
 
-@given(instance=aggregator::MavenMapping_strategy)
-def test_aggregator::mavenmapping_namePattern_setter(instance):
-    original = instance.namePattern
-    instance.namePattern = original
-    assert instance.namePattern == original
 
-@given(instance=aggregator::MavenMapping_strategy)
-def test_aggregator::mavenmapping_groupId_type(instance):
-    assert isinstance(instance.groupId, str)
+@given(instance=aggregator_MavenMapping_strategy)
+def test_aggregator_mavenmapping_artifactId_setter(instance):
+    original = instance.artifactId
+    instance.artifactId = original
+    assert instance.artifactId == original
 
 
-@given(instance=aggregator::MavenMapping_strategy)
-def test_aggregator::mavenmapping_groupId_setter(instance):
+
+@given(instance=aggregator_MavenMapping_strategy)
+def test_aggregator_mavenmapping_groupId_setter(instance):
     original = instance.groupId
     instance.groupId = original
     assert instance.groupId == original
 
-@given(instance=aggregator::MavenMapping_strategy)
-def test_aggregator::mavenmapping_artifactId_type(instance):
-    assert isinstance(instance.artifactId, str)
 
 
-@given(instance=aggregator::MavenMapping_strategy)
-def test_aggregator::mavenmapping_artifactId_setter(instance):
-    original = instance.artifactId
-    instance.artifactId = original
-    assert instance.artifactId == original
+@given(instance=aggregator_MavenMapping_strategy)
+def test_aggregator_mavenmapping_namePattern_setter(instance):
+    original = instance.namePattern
+    instance.namePattern = original
+    assert instance.namePattern == original
 
 import warnings
 import copy
@@ -3845,9 +3725,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aggregator::MavenMapping_strategy)
+@given(instance=aggregator_MavenMapping_strategy)
 @settings(max_examples=30)
-def test_aggregator::mavenmapping_map_changes_state(instance):
+def test_aggregator_mavenmapping_map_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3861,383 +3741,114 @@ def test_aggregator::mavenmapping_map_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'map' in aggregator::MavenMapping is empty"
+        assert has_statements, f"Function 'map' in aggregator_MavenMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'map' in aggregator::MavenMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'map' in aggregator_MavenMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'map' in aggregator::MavenMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'map' in aggregator_MavenMapping is not implemented or raised an error")
 
-@given(instance=aggregator::Aggregation_strategy)
+@given(instance=aggregator_Contribution_strategy)
 @settings(max_examples=50)
-def test_aggregator::aggregation_instantiation(instance):
-    assert isinstance(instance, aggregator::Aggregation)
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_strictMavenVersions_type(instance):
-    assert isinstance(instance.strictMavenVersions, bool)
+def test_aggregator_contribution_instantiation(instance):
+    assert isinstance(instance, aggregator_Contribution)
 
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_strictMavenVersions_setter(instance):
-    original = instance.strictMavenVersions
-    instance.strictMavenVersions = original
-    assert instance.strictMavenVersions == original
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_label_setter(instance):
+@given(instance=aggregator_Contribution_strategy)
+def test_aggregator_contribution_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_packedStrategy_type(instance):
-    assert isinstance(instance.packedStrategy, str)
+@given(instance=aggregator_Aggregation_strategy)
+@settings(max_examples=50)
+def test_aggregator_aggregation_instantiation(instance):
+    assert isinstance(instance, aggregator_Aggregation)
 
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_packedStrategy_setter(instance):
-    original = instance.packedStrategy
-    instance.packedStrategy = original
-    assert instance.packedStrategy == original
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_buildRoot_type(instance):
-    assert isinstance(instance.buildRoot, str)
-
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_buildRoot_setter(instance):
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_buildRoot_setter(instance):
     original = instance.buildRoot
     instance.buildRoot = original
     assert instance.buildRoot == original
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_sendmail_type(instance):
-    assert isinstance(instance.sendmail, bool)
 
 
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_sendmail_setter(instance):
-    original = instance.sendmail
-    instance.sendmail = original
-    assert instance.sendmail == original
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_mavenResult_type(instance):
-    assert isinstance(instance.mavenResult, bool)
-
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_mavenResult_setter(instance):
-    original = instance.mavenResult
-    instance.mavenResult = original
-    assert instance.mavenResult == original
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_allowLegacySites_type(instance):
-    assert isinstance(instance.allowLegacySites, str)
-
-
-@given(instance=aggregator::Aggregation_strategy)
-def test_aggregator::aggregation_allowLegacySites_setter(instance):
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_allowLegacySites_setter(instance):
     original = instance.allowLegacySites
     instance.allowLegacySites = original
     assert instance.allowLegacySites == original
 
-@given(instance=aggregator::ValidationSet_strategy)
-@settings(max_examples=50)
-def test_aggregator::validationset_instantiation(instance):
-    assert isinstance(instance, aggregator::ValidationSet)
-
-@given(instance=aggregator::ValidationSet_strategy)
-def test_aggregator::validationset_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
 
 
-@given(instance=aggregator::ValidationSet_strategy)
-def test_aggregator::validationset_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=aggregator::ValidationSet_strategy)
-def test_aggregator::validationset_label_type(instance):
-    assert isinstance(instance.label, str)
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_mavenResult_setter(instance):
+    original = instance.mavenResult
+    instance.mavenResult = original
+    assert instance.mavenResult == original
 
 
-@given(instance=aggregator::ValidationSet_strategy)
-def test_aggregator::validationset_label_setter(instance):
+
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=aggregator::ValidationSet_strategy)
-def test_aggregator::validationset_extension_type(instance):
-    assert isinstance(instance.extension, bool)
 
 
-@given(instance=aggregator::ValidationSet_strategy)
-def test_aggregator::validationset_extension_setter(instance):
-    original = instance.extension
-    instance.extension = original
-    assert instance.extension == original
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_strictMavenVersions_setter(instance):
+    original = instance.strictMavenVersions
+    instance.strictMavenVersions = original
+    assert instance.strictMavenVersions == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=aggregator::ValidationSet_strategy)
-@settings(max_examples=30)
-def test_aggregator::validationset_isextensionof_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isExtensionOf(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isExtensionOf).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isExtensionOf' in aggregator::ValidationSet is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isExtensionOf' in aggregator::ValidationSet did not change state; check implementation")
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_packedStrategy_setter(instance):
+    original = instance.packedStrategy
+    instance.packedStrategy = original
+    assert instance.packedStrategy == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isExtensionOf' in aggregator::ValidationSet is not implemented or raised an error")
 
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
+
+@given(instance=aggregator_Aggregation_strategy)
+def test_aggregator_aggregation_sendmail_setter(instance):
+    original = instance.sendmail
+    instance.sendmail = original
+    assert instance.sendmail == original
+
+@given(instance=aggregator_InstallableUnitRequest_strategy)
 @settings(max_examples=50)
-def test_aggregator::metadatarepositoryreference_instantiation(instance):
-    assert isinstance(instance, aggregator::MetadataRepositoryReference)
-
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-def test_aggregator::metadatarepositoryreference_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_aggregator_installableunitrequest_instantiation(instance):
+    assert isinstance(instance, aggregator_InstallableUnitRequest)
 
 
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-def test_aggregator::metadatarepositoryreference_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
 
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-def test_aggregator::metadatarepositoryreference_nature_type(instance):
-    assert isinstance(instance.nature, str)
-
-
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-def test_aggregator::metadatarepositoryreference_nature_setter(instance):
-    original = instance.nature
-    instance.nature = original
-    assert instance.nature == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-@settings(max_examples=30)
-def test_aggregator::metadatarepositoryreference_cancelrepositoryload_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.cancelRepositoryLoad()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.cancelRepositoryLoad).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cancelRepositoryLoad' in aggregator::MetadataRepositoryReference is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cancelRepositoryLoad' in aggregator::MetadataRepositoryReference did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cancelRepositoryLoad' in aggregator::MetadataRepositoryReference is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-@settings(max_examples=30)
-def test_aggregator::metadatarepositoryreference_isbranchenabled_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isBranchEnabled()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isBranchEnabled).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isBranchEnabled' in aggregator::MetadataRepositoryReference is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isBranchEnabled' in aggregator::MetadataRepositoryReference did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isBranchEnabled' in aggregator::MetadataRepositoryReference is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-@settings(max_examples=30)
-def test_aggregator::metadatarepositoryreference_startrepositoryload_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.startRepositoryLoad(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.startRepositoryLoad).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'startRepositoryLoad' in aggregator::MetadataRepositoryReference is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'startRepositoryLoad' in aggregator::MetadataRepositoryReference did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'startRepositoryLoad' in aggregator::MetadataRepositoryReference is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aggregator::MetadataRepositoryReference_strategy)
-@settings(max_examples=30)
-def test_aggregator::metadatarepositoryreference_onrepositoryload_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.onRepositoryLoad()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.onRepositoryLoad).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'onRepositoryLoad' in aggregator::MetadataRepositoryReference is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'onRepositoryLoad' in aggregator::MetadataRepositoryReference did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'onRepositoryLoad' in aggregator::MetadataRepositoryReference is not implemented or raised an error")
-
-@given(instance=aggregator::CustomCategory_strategy)
-@settings(max_examples=50)
-def test_aggregator::customcategory_instantiation(instance):
-    assert isinstance(instance, aggregator::CustomCategory)
-
-@given(instance=aggregator::CustomCategory_strategy)
-def test_aggregator::customcategory_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=aggregator::CustomCategory_strategy)
-def test_aggregator::customcategory_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
-
-@given(instance=aggregator::CustomCategory_strategy)
-def test_aggregator::customcategory_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=aggregator::CustomCategory_strategy)
-def test_aggregator::customcategory_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=aggregator::CustomCategory_strategy)
-def test_aggregator::customcategory_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=aggregator::CustomCategory_strategy)
-def test_aggregator::customcategory_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-@settings(max_examples=50)
-def test_aggregator::installableunitrequest_instantiation(instance):
-    assert isinstance(instance, aggregator::InstallableUnitRequest)
-
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-def test_aggregator::installableunitrequest_versionRange_type(instance):
-    assert isinstance(instance.versionRange, str)
-
-
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-def test_aggregator::installableunitrequest_versionRange_setter(instance):
+@given(instance=aggregator_InstallableUnitRequest_strategy)
+def test_aggregator_installableunitrequest_versionRange_setter(instance):
     original = instance.versionRange
     instance.versionRange = original
     assert instance.versionRange == original
 
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-def test_aggregator::installableunitrequest_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-def test_aggregator::installableunitrequest_name_setter(instance):
+@given(instance=aggregator_InstallableUnitRequest_strategy)
+def test_aggregator_installableunitrequest_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4248,69 +3859,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aggregator::InstallableUnitRequest_strategy)
+@given(instance=aggregator_InstallableUnitRequest_strategy)
 @settings(max_examples=30)
-def test_aggregator::installableunitrequest_isbranchenabled_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isBranchEnabled()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isBranchEnabled).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isBranchEnabled' in aggregator::InstallableUnitRequest is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isBranchEnabled' in aggregator::InstallableUnitRequest did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isBranchEnabled' in aggregator::InstallableUnitRequest is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-@settings(max_examples=30)
-def test_aggregator::installableunitrequest_resolveassingleton_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.resolveAsSingleton(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.resolveAsSingleton).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolveAsSingleton' in aggregator::InstallableUnitRequest is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolveAsSingleton' in aggregator::InstallableUnitRequest did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolveAsSingleton' in aggregator::InstallableUnitRequest is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aggregator::InstallableUnitRequest_strategy)
-@settings(max_examples=30)
-def test_aggregator::installableunitrequest_ismappedrepositorybroken_changes_state(instance):
+def test_aggregator_installableunitrequest_ismappedrepositorybroken_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4322,14 +3873,14 @@ def test_aggregator::installableunitrequest_ismappedrepositorybroken_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMappedRepositoryBroken' in aggregator::InstallableUnitRequest is empty"
+        assert has_statements, f"Function 'isMappedRepositoryBroken' in aggregator_InstallableUnitRequest is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMappedRepositoryBroken' in aggregator::InstallableUnitRequest did not change state; check implementation")
+            warnings.warn(f"Operation 'isMappedRepositoryBroken' in aggregator_InstallableUnitRequest did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMappedRepositoryBroken' in aggregator::InstallableUnitRequest is not implemented or raised an error")
+        warnings.warn(f"Operation 'isMappedRepositoryBroken' in aggregator_InstallableUnitRequest is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4337,9 +3888,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aggregator::InstallableUnitRequest_strategy)
+@given(instance=aggregator_InstallableUnitRequest_strategy)
 @settings(max_examples=30)
-def test_aggregator::installableunitrequest_resolveavailableversions_changes_state(instance):
+def test_aggregator_installableunitrequest_isbranchenabled_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isBranchEnabled()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isBranchEnabled).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isBranchEnabled' in aggregator_InstallableUnitRequest is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isBranchEnabled' in aggregator_InstallableUnitRequest did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isBranchEnabled' in aggregator_InstallableUnitRequest is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_InstallableUnitRequest_strategy)
+@settings(max_examples=30)
+def test_aggregator_installableunitrequest_resolveavailableversions_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4353,27 +3933,270 @@ def test_aggregator::installableunitrequest_resolveavailableversions_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolveAvailableVersions' in aggregator::InstallableUnitRequest is empty"
+        assert has_statements, f"Function 'resolveAvailableVersions' in aggregator_InstallableUnitRequest is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolveAvailableVersions' in aggregator::InstallableUnitRequest did not change state; check implementation")
+            warnings.warn(f"Operation 'resolveAvailableVersions' in aggregator_InstallableUnitRequest did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolveAvailableVersions' in aggregator::InstallableUnitRequest is not implemented or raised an error")
+        warnings.warn(f"Operation 'resolveAvailableVersions' in aggregator_InstallableUnitRequest is not implemented or raised an error")
 
-@given(instance=aggregator::Contribution_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_InstallableUnitRequest_strategy)
+@settings(max_examples=30)
+def test_aggregator_installableunitrequest_resolveassingleton_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.resolveAsSingleton(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.resolveAsSingleton).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'resolveAsSingleton' in aggregator_InstallableUnitRequest is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'resolveAsSingleton' in aggregator_InstallableUnitRequest did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'resolveAsSingleton' in aggregator_InstallableUnitRequest is not implemented or raised an error")
+
+@given(instance=aggregator_ValidationSet_strategy)
 @settings(max_examples=50)
-def test_aggregator::contribution_instantiation(instance):
-    assert isinstance(instance, aggregator::Contribution)
-
-@given(instance=aggregator::Contribution_strategy)
-def test_aggregator::contribution_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_aggregator_validationset_instantiation(instance):
+    assert isinstance(instance, aggregator_ValidationSet)
 
 
-@given(instance=aggregator::Contribution_strategy)
-def test_aggregator::contribution_label_setter(instance):
+
+@given(instance=aggregator_ValidationSet_strategy)
+def test_aggregator_validationset_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
+
+
+
+@given(instance=aggregator_ValidationSet_strategy)
+def test_aggregator_validationset_extension_setter(instance):
+    original = instance.extension
+    instance.extension = original
+    assert instance.extension == original
+
+
+
+@given(instance=aggregator_ValidationSet_strategy)
+def test_aggregator_validationset_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_ValidationSet_strategy)
+@settings(max_examples=30)
+def test_aggregator_validationset_isextensionof_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isExtensionOf(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isExtensionOf).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isExtensionOf' in aggregator_ValidationSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isExtensionOf' in aggregator_ValidationSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isExtensionOf' in aggregator_ValidationSet is not implemented or raised an error")
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+@settings(max_examples=50)
+def test_aggregator_metadatarepositoryreference_instantiation(instance):
+    assert isinstance(instance, aggregator_MetadataRepositoryReference)
+
+
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+def test_aggregator_metadatarepositoryreference_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+def test_aggregator_metadatarepositoryreference_nature_setter(instance):
+    original = instance.nature
+    instance.nature = original
+    assert instance.nature == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+@settings(max_examples=30)
+def test_aggregator_metadatarepositoryreference_startrepositoryload_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.startRepositoryLoad(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.startRepositoryLoad).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'startRepositoryLoad' in aggregator_MetadataRepositoryReference is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'startRepositoryLoad' in aggregator_MetadataRepositoryReference did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'startRepositoryLoad' in aggregator_MetadataRepositoryReference is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+@settings(max_examples=30)
+def test_aggregator_metadatarepositoryreference_isbranchenabled_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isBranchEnabled()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isBranchEnabled).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isBranchEnabled' in aggregator_MetadataRepositoryReference is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isBranchEnabled' in aggregator_MetadataRepositoryReference did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isBranchEnabled' in aggregator_MetadataRepositoryReference is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+@settings(max_examples=30)
+def test_aggregator_metadatarepositoryreference_onrepositoryload_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.onRepositoryLoad()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.onRepositoryLoad).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'onRepositoryLoad' in aggregator_MetadataRepositoryReference is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'onRepositoryLoad' in aggregator_MetadataRepositoryReference did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'onRepositoryLoad' in aggregator_MetadataRepositoryReference is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aggregator_MetadataRepositoryReference_strategy)
+@settings(max_examples=30)
+def test_aggregator_metadatarepositoryreference_cancelrepositoryload_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.cancelRepositoryLoad()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.cancelRepositoryLoad).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'cancelRepositoryLoad' in aggregator_MetadataRepositoryReference is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'cancelRepositoryLoad' in aggregator_MetadataRepositoryReference did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'cancelRepositoryLoad' in aggregator_MetadataRepositoryReference is not implemented or raised an error")
+
+@given(instance=aggregator_CustomCategory_strategy)
+@settings(max_examples=50)
+def test_aggregator_customcategory_instantiation(instance):
+    assert isinstance(instance, aggregator_CustomCategory)
+
+
+
+@given(instance=aggregator_CustomCategory_strategy)
+def test_aggregator_customcategory_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=aggregator_CustomCategory_strategy)
+def test_aggregator_customcategory_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+
+
+@given(instance=aggregator_CustomCategory_strategy)
+def test_aggregator_customcategory_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original

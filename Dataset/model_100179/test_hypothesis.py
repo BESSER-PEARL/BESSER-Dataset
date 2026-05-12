@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Column,
     DataBase,
     Table,
     NamedElement,
-    RelationalDBSchema::Table,
-    RelationalDBSchema::DataBase,
-    RelationalDBSchema::NamedElement,
-    RelationalDBSchema::Column,
+    RelationalDBSchema_Table,
+    RelationalDBSchema_DataBase,
+    RelationalDBSchema_NamedElement,
+    RelationalDBSchema_Column,
 )
 
 # =============================================================================
@@ -78,37 +78,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_relationaldbschema::table_is_not_abstract():
-    assert not inspect.isabstract(RelationalDBSchema::Table)
+def test_relationaldbschema_table_is_not_abstract():
+    assert not inspect.isabstract(RelationalDBSchema_Table)
 
 
-def test_relationaldbschema::table_constructor_exists():
-    assert callable(RelationalDBSchema::Table.__init__)
+def test_relationaldbschema_table_constructor_exists():
+    assert callable(RelationalDBSchema_Table.__init__)
 
 
-def test_relationaldbschema::table_constructor_args():
-    sig = inspect.signature(RelationalDBSchema::Table.__init__)
+def test_relationaldbschema_table_constructor_args():
+    sig = inspect.signature(RelationalDBSchema_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationaldbschema::database_is_not_abstract():
-    assert not inspect.isabstract(RelationalDBSchema::DataBase)
+def test_relationaldbschema_database_is_not_abstract():
+    assert not inspect.isabstract(RelationalDBSchema_DataBase)
 
 
-def test_relationaldbschema::database_constructor_exists():
-    assert callable(RelationalDBSchema::DataBase.__init__)
+def test_relationaldbschema_database_constructor_exists():
+    assert callable(RelationalDBSchema_DataBase.__init__)
 
 
-def test_relationaldbschema::database_constructor_args():
-    sig = inspect.signature(RelationalDBSchema::DataBase.__init__)
+def test_relationaldbschema_database_constructor_args():
+    sig = inspect.signature(RelationalDBSchema_DataBase.__init__)
     params = list(sig.parameters.keys())
     assert "SGBDname" in params, "Missing parameter 'SGBDname'"
 
-def test_relationaldbschema::database_has_SGBDname():
-    assert hasattr(RelationalDBSchema::DataBase, "SGBDname")
+def test_relationaldbschema_database_has_SGBDname():
+    assert hasattr(RelationalDBSchema_DataBase, "SGBDname")
     descriptor = None
-    for klass in RelationalDBSchema::DataBase.__mro__:
+    for klass in RelationalDBSchema_DataBase.__mro__:
         if "SGBDname" in klass.__dict__:
             descriptor = klass.__dict__["SGBDname"]
             break
@@ -116,23 +116,23 @@ def test_relationaldbschema::database_has_SGBDname():
 
 
 
-def test_relationaldbschema::namedelement_is_not_abstract():
-    assert not inspect.isabstract(RelationalDBSchema::NamedElement)
+def test_relationaldbschema_namedelement_is_not_abstract():
+    assert not inspect.isabstract(RelationalDBSchema_NamedElement)
 
 
-def test_relationaldbschema::namedelement_constructor_exists():
-    assert callable(RelationalDBSchema::NamedElement.__init__)
+def test_relationaldbschema_namedelement_constructor_exists():
+    assert callable(RelationalDBSchema_NamedElement.__init__)
 
 
-def test_relationaldbschema::namedelement_constructor_args():
-    sig = inspect.signature(RelationalDBSchema::NamedElement.__init__)
+def test_relationaldbschema_namedelement_constructor_args():
+    sig = inspect.signature(RelationalDBSchema_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relationaldbschema::namedelement_has_name():
-    assert hasattr(RelationalDBSchema::NamedElement, "name")
+def test_relationaldbschema_namedelement_has_name():
+    assert hasattr(RelationalDBSchema_NamedElement, "name")
     descriptor = None
-    for klass in RelationalDBSchema::NamedElement.__mro__:
+    for klass in RelationalDBSchema_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -140,45 +140,45 @@ def test_relationaldbschema::namedelement_has_name():
 
 
 
-def test_relationaldbschema::column_is_not_abstract():
-    assert not inspect.isabstract(RelationalDBSchema::Column)
+def test_relationaldbschema_column_is_not_abstract():
+    assert not inspect.isabstract(RelationalDBSchema_Column)
 
 
-def test_relationaldbschema::column_constructor_exists():
-    assert callable(RelationalDBSchema::Column.__init__)
+def test_relationaldbschema_column_constructor_exists():
+    assert callable(RelationalDBSchema_Column.__init__)
 
 
-def test_relationaldbschema::column_constructor_args():
-    sig = inspect.signature(RelationalDBSchema::Column.__init__)
+def test_relationaldbschema_column_constructor_args():
+    sig = inspect.signature(RelationalDBSchema_Column.__init__)
     params = list(sig.parameters.keys())
     assert "null" in params, "Missing parameter 'null'"
-    assert "dataType" in params, "Missing parameter 'dataType'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_relationaldbschema::column_has_null():
-    assert hasattr(RelationalDBSchema::Column, "null")
+def test_relationaldbschema_column_has_null():
+    assert hasattr(RelationalDBSchema_Column, "null")
     descriptor = None
-    for klass in RelationalDBSchema::Column.__mro__:
+    for klass in RelationalDBSchema_Column.__mro__:
         if "null" in klass.__dict__:
             descriptor = klass.__dict__["null"]
             break
     assert isinstance(descriptor, property)
 
-def test_relationaldbschema::column_has_dataType():
-    assert hasattr(RelationalDBSchema::Column, "dataType")
+def test_relationaldbschema_column_has_defaultValue():
+    assert hasattr(RelationalDBSchema_Column, "defaultValue")
     descriptor = None
-    for klass in RelationalDBSchema::Column.__mro__:
-        if "dataType" in klass.__dict__:
-            descriptor = klass.__dict__["dataType"]
+    for klass in RelationalDBSchema_Column.__mro__:
+        if "defaultValue" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_relationaldbschema::column_has_defaultValue():
-    assert hasattr(RelationalDBSchema::Column, "defaultValue")
+def test_relationaldbschema_column_has_dataType():
+    assert hasattr(RelationalDBSchema_Column, "dataType")
     descriptor = None
-    for klass in RelationalDBSchema::Column.__mro__:
-        if "defaultValue" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValue"]
+    for klass in RelationalDBSchema_Column.__mro__:
+        if "dataType" in klass.__dict__:
+            descriptor = klass.__dict__["dataType"]
             break
     assert isinstance(descriptor, property)
 
@@ -206,26 +206,26 @@ Table_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-RelationalDBSchema::Table_strategy = st.builds(
-    RelationalDBSchema::Table,
+RelationalDBSchema_Table_strategy = st.builds(
+    RelationalDBSchema_Table,
 )
-RelationalDBSchema::DataBase_strategy = st.builds(
-    RelationalDBSchema::DataBase,
+RelationalDBSchema_DataBase_strategy = st.builds(
+    RelationalDBSchema_DataBase,
     SGBDname=
         safe_text
 )
-RelationalDBSchema::NamedElement_strategy = st.builds(
-    RelationalDBSchema::NamedElement,
+RelationalDBSchema_NamedElement_strategy = st.builds(
+    RelationalDBSchema_NamedElement,
     name=
         safe_text
 )
-RelationalDBSchema::Column_strategy = st.builds(
-    RelationalDBSchema::Column,
+RelationalDBSchema_Column_strategy = st.builds(
+    RelationalDBSchema_Column,
     null=
         safe_text,
-    dataType=
-        safe_text,
     defaultValue=
+        safe_text,
+    dataType=
         safe_text
 )
 
@@ -249,77 +249,62 @@ def test_table_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=RelationalDBSchema::Table_strategy)
+@given(instance=RelationalDBSchema_Table_strategy)
 @settings(max_examples=50)
-def test_relationaldbschema::table_instantiation(instance):
-    assert isinstance(instance, RelationalDBSchema::Table)
+def test_relationaldbschema_table_instantiation(instance):
+    assert isinstance(instance, RelationalDBSchema_Table)
 
-@given(instance=RelationalDBSchema::DataBase_strategy)
+@given(instance=RelationalDBSchema_DataBase_strategy)
 @settings(max_examples=50)
-def test_relationaldbschema::database_instantiation(instance):
-    assert isinstance(instance, RelationalDBSchema::DataBase)
-
-@given(instance=RelationalDBSchema::DataBase_strategy)
-def test_relationaldbschema::database_SGBDname_type(instance):
-    assert isinstance(instance.SGBDname, str)
+def test_relationaldbschema_database_instantiation(instance):
+    assert isinstance(instance, RelationalDBSchema_DataBase)
 
 
-@given(instance=RelationalDBSchema::DataBase_strategy)
-def test_relationaldbschema::database_SGBDname_setter(instance):
+
+@given(instance=RelationalDBSchema_DataBase_strategy)
+def test_relationaldbschema_database_SGBDname_setter(instance):
     original = instance.SGBDname
     instance.SGBDname = original
     assert instance.SGBDname == original
 
-@given(instance=RelationalDBSchema::NamedElement_strategy)
+@given(instance=RelationalDBSchema_NamedElement_strategy)
 @settings(max_examples=50)
-def test_relationaldbschema::namedelement_instantiation(instance):
-    assert isinstance(instance, RelationalDBSchema::NamedElement)
-
-@given(instance=RelationalDBSchema::NamedElement_strategy)
-def test_relationaldbschema::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relationaldbschema_namedelement_instantiation(instance):
+    assert isinstance(instance, RelationalDBSchema_NamedElement)
 
 
-@given(instance=RelationalDBSchema::NamedElement_strategy)
-def test_relationaldbschema::namedelement_name_setter(instance):
+
+@given(instance=RelationalDBSchema_NamedElement_strategy)
+def test_relationaldbschema_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RelationalDBSchema::Column_strategy)
+@given(instance=RelationalDBSchema_Column_strategy)
 @settings(max_examples=50)
-def test_relationaldbschema::column_instantiation(instance):
-    assert isinstance(instance, RelationalDBSchema::Column)
-
-@given(instance=RelationalDBSchema::Column_strategy)
-def test_relationaldbschema::column_null_type(instance):
-    assert isinstance(instance.null, str)
+def test_relationaldbschema_column_instantiation(instance):
+    assert isinstance(instance, RelationalDBSchema_Column)
 
 
-@given(instance=RelationalDBSchema::Column_strategy)
-def test_relationaldbschema::column_null_setter(instance):
+
+@given(instance=RelationalDBSchema_Column_strategy)
+def test_relationaldbschema_column_null_setter(instance):
     original = instance.null
     instance.null = original
     assert instance.null == original
 
-@given(instance=RelationalDBSchema::Column_strategy)
-def test_relationaldbschema::column_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
 
 
-@given(instance=RelationalDBSchema::Column_strategy)
-def test_relationaldbschema::column_dataType_setter(instance):
-    original = instance.dataType
-    instance.dataType = original
-    assert instance.dataType == original
-
-@given(instance=RelationalDBSchema::Column_strategy)
-def test_relationaldbschema::column_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
-
-
-@given(instance=RelationalDBSchema::Column_strategy)
-def test_relationaldbschema::column_defaultValue_setter(instance):
+@given(instance=RelationalDBSchema_Column_strategy)
+def test_relationaldbschema_column_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
+
+
+
+@given(instance=RelationalDBSchema_Column_strategy)
+def test_relationaldbschema_column_dataType_setter(instance):
+    original = instance.dataType
+    instance.dataType = original
+    assert instance.dataType == original

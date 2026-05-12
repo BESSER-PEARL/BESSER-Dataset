@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test100::DsmlRelation,
-    test100::B,
+from python_code import (
+    test100_DsmlRelation,
+    test100_B,
     B,
-    test100::A,
-    test100::C,
+    test100_A,
+    test100_C,
 )
 
 # =============================================================================
@@ -19,67 +19,67 @@ from classes import (
 
 
 
-def test_test100::dsmlrelation_is_not_abstract():
-    assert not inspect.isabstract(test100::DsmlRelation)
+def test_test100_dsmlrelation_is_not_abstract():
+    assert not inspect.isabstract(test100_DsmlRelation)
 
 
-def test_test100::dsmlrelation_constructor_exists():
-    assert callable(test100::DsmlRelation.__init__)
+def test_test100_dsmlrelation_constructor_exists():
+    assert callable(test100_DsmlRelation.__init__)
 
 
-def test_test100::dsmlrelation_constructor_args():
-    sig = inspect.signature(test100::DsmlRelation.__init__)
+def test_test100_dsmlrelation_constructor_args():
+    sig = inspect.signature(test100_DsmlRelation.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "mandatory" in params, "Missing parameter 'mandatory'"
     assert "details" in params, "Missing parameter 'details'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_test100::dsmlrelation_has_name():
-    assert hasattr(test100::DsmlRelation, "name")
+def test_test100_dsmlrelation_has_mandatory():
+    assert hasattr(test100_DsmlRelation, "mandatory")
     descriptor = None
-    for klass in test100::DsmlRelation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_test100::dsmlrelation_has_mandatory():
-    assert hasattr(test100::DsmlRelation, "mandatory")
-    descriptor = None
-    for klass in test100::DsmlRelation.__mro__:
+    for klass in test100_DsmlRelation.__mro__:
         if "mandatory" in klass.__dict__:
             descriptor = klass.__dict__["mandatory"]
             break
     assert isinstance(descriptor, property)
 
-def test_test100::dsmlrelation_has_details():
-    assert hasattr(test100::DsmlRelation, "details")
+def test_test100_dsmlrelation_has_details():
+    assert hasattr(test100_DsmlRelation, "details")
     descriptor = None
-    for klass in test100::DsmlRelation.__mro__:
+    for klass in test100_DsmlRelation.__mro__:
         if "details" in klass.__dict__:
             descriptor = klass.__dict__["details"]
             break
     assert isinstance(descriptor, property)
 
+def test_test100_dsmlrelation_has_name():
+    assert hasattr(test100_DsmlRelation, "name")
+    descriptor = None
+    for klass in test100_DsmlRelation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_test100::b_is_not_abstract():
-    assert not inspect.isabstract(test100::B)
+
+def test_test100_b_is_not_abstract():
+    assert not inspect.isabstract(test100_B)
 
 
-def test_test100::b_constructor_exists():
-    assert callable(test100::B.__init__)
+def test_test100_b_constructor_exists():
+    assert callable(test100_B.__init__)
 
 
-def test_test100::b_constructor_args():
-    sig = inspect.signature(test100::B.__init__)
+def test_test100_b_constructor_args():
+    sig = inspect.signature(test100_B.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_test100::b_has_id():
-    assert hasattr(test100::B, "id")
+def test_test100_b_has_id():
+    assert hasattr(test100_B, "id")
     descriptor = None
-    for klass in test100::B.__mro__:
+    for klass in test100_B.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -101,23 +101,23 @@ def test_b_constructor_args():
 
 
 
-def test_test100::a_is_not_abstract():
-    assert not inspect.isabstract(test100::A)
+def test_test100_a_is_not_abstract():
+    assert not inspect.isabstract(test100_A)
 
 
-def test_test100::a_constructor_exists():
-    assert callable(test100::A.__init__)
+def test_test100_a_constructor_exists():
+    assert callable(test100_A.__init__)
 
 
-def test_test100::a_constructor_args():
-    sig = inspect.signature(test100::A.__init__)
+def test_test100_a_constructor_args():
+    sig = inspect.signature(test100_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_test100::a_has_name():
-    assert hasattr(test100::A, "name")
+def test_test100_a_has_name():
+    assert hasattr(test100_A, "name")
     descriptor = None
-    for klass in test100::A.__mro__:
+    for klass in test100_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,16 +125,16 @@ def test_test100::a_has_name():
 
 
 
-def test_test100::c_is_not_abstract():
-    assert not inspect.isabstract(test100::C)
+def test_test100_c_is_not_abstract():
+    assert not inspect.isabstract(test100_C)
 
 
-def test_test100::c_constructor_exists():
-    assert callable(test100::C.__init__)
+def test_test100_c_constructor_exists():
+    assert callable(test100_C.__init__)
 
 
-def test_test100::c_constructor_args():
-    sig = inspect.signature(test100::C.__init__)
+def test_test100_c_constructor_args():
+    sig = inspect.signature(test100_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,82 +149,70 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test100::DsmlRelation_strategy = st.builds(
-    test100::DsmlRelation,
-    name=
-        safe_text,
+test100_DsmlRelation_strategy = st.builds(
+    test100_DsmlRelation,
     mandatory=
         st.booleans(),
     details=
+        safe_text,
+    name=
         safe_text
 )
-test100::B_strategy = st.builds(
-    test100::B,
+test100_B_strategy = st.builds(
+    test100_B,
     id=
         safe_text
 )
 B_strategy = st.builds(
     B,
 )
-test100::A_strategy = st.builds(
-    test100::A,
+test100_A_strategy = st.builds(
+    test100_A,
     name=
         safe_text
 )
-test100::C_strategy = st.builds(
-    test100::C,
+test100_C_strategy = st.builds(
+    test100_C,
 )
 
-@given(instance=test100::DsmlRelation_strategy)
+@given(instance=test100_DsmlRelation_strategy)
 @settings(max_examples=50)
-def test_test100::dsmlrelation_instantiation(instance):
-    assert isinstance(instance, test100::DsmlRelation)
-
-@given(instance=test100::DsmlRelation_strategy)
-def test_test100::dsmlrelation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_test100_dsmlrelation_instantiation(instance):
+    assert isinstance(instance, test100_DsmlRelation)
 
 
-@given(instance=test100::DsmlRelation_strategy)
-def test_test100::dsmlrelation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=test100::DsmlRelation_strategy)
-def test_test100::dsmlrelation_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
-
-
-@given(instance=test100::DsmlRelation_strategy)
-def test_test100::dsmlrelation_mandatory_setter(instance):
+@given(instance=test100_DsmlRelation_strategy)
+def test_test100_dsmlrelation_mandatory_setter(instance):
     original = instance.mandatory
     instance.mandatory = original
     assert instance.mandatory == original
 
-@given(instance=test100::DsmlRelation_strategy)
-def test_test100::dsmlrelation_details_type(instance):
-    assert isinstance(instance.details, str)
 
 
-@given(instance=test100::DsmlRelation_strategy)
-def test_test100::dsmlrelation_details_setter(instance):
+@given(instance=test100_DsmlRelation_strategy)
+def test_test100_dsmlrelation_details_setter(instance):
     original = instance.details
     instance.details = original
     assert instance.details == original
 
-@given(instance=test100::B_strategy)
+
+
+@given(instance=test100_DsmlRelation_strategy)
+def test_test100_dsmlrelation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=test100_B_strategy)
 @settings(max_examples=50)
-def test_test100::b_instantiation(instance):
-    assert isinstance(instance, test100::B)
-
-@given(instance=test100::B_strategy)
-def test_test100::b_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_test100_b_instantiation(instance):
+    assert isinstance(instance, test100_B)
 
 
-@given(instance=test100::B_strategy)
-def test_test100::b_id_setter(instance):
+
+@given(instance=test100_B_strategy)
+def test_test100_b_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -234,23 +222,20 @@ def test_test100::b_id_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=test100::A_strategy)
+@given(instance=test100_A_strategy)
 @settings(max_examples=50)
-def test_test100::a_instantiation(instance):
-    assert isinstance(instance, test100::A)
-
-@given(instance=test100::A_strategy)
-def test_test100::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_test100_a_instantiation(instance):
+    assert isinstance(instance, test100_A)
 
 
-@given(instance=test100::A_strategy)
-def test_test100::a_name_setter(instance):
+
+@given(instance=test100_A_strategy)
+def test_test100_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=test100::C_strategy)
+@given(instance=test100_C_strategy)
 @settings(max_examples=50)
-def test_test100::c_instantiation(instance):
-    assert isinstance(instance, test100::C)
+def test_test100_c_instantiation(instance):
+    assert isinstance(instance, test100_C)

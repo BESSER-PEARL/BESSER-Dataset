@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    d::D,
-    d::B,
+from python_code import (
+    d_B,
+    d_D,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_d::d_is_not_abstract():
-    assert not inspect.isabstract(d::D)
+def test_d_b_is_not_abstract():
+    assert not inspect.isabstract(d_B)
 
 
-def test_d::d_constructor_exists():
-    assert callable(d::D.__init__)
+def test_d_b_constructor_exists():
+    assert callable(d_B.__init__)
 
 
-def test_d::d_constructor_args():
-    sig = inspect.signature(d::D.__init__)
+def test_d_b_constructor_args():
+    sig = inspect.signature(d_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d::b_is_not_abstract():
-    assert not inspect.isabstract(d::B)
+def test_d_d_is_not_abstract():
+    assert not inspect.isabstract(d_D)
 
 
-def test_d::b_constructor_exists():
-    assert callable(d::B.__init__)
+def test_d_d_constructor_exists():
+    assert callable(d_D.__init__)
 
 
-def test_d::b_constructor_args():
-    sig = inspect.signature(d::B.__init__)
+def test_d_d_constructor_args():
+    sig = inspect.signature(d_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-d::D_strategy = st.builds(
-    d::D,
+d_B_strategy = st.builds(
+    d_B,
 )
-d::B_strategy = st.builds(
-    d::B,
+d_D_strategy = st.builds(
+    d_D,
 )
 
-@given(instance=d::D_strategy)
+@given(instance=d_B_strategy)
 @settings(max_examples=50)
-def test_d::d_instantiation(instance):
-    assert isinstance(instance, d::D)
+def test_d_b_instantiation(instance):
+    assert isinstance(instance, d_B)
 
-@given(instance=d::B_strategy)
+@given(instance=d_D_strategy)
 @settings(max_examples=50)
-def test_d::b_instantiation(instance):
-    assert isinstance(instance, d::B)
+def test_d_d_instantiation(instance):
+    assert isinstance(instance, d_D)

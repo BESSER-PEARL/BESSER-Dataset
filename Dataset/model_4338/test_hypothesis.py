@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    ast::Operand,
-    ast::Operator,
-    ast::Expression,
+    ast_Operand,
+    ast_Operator,
+    ast_Expression,
     Operand,
-    ast::Number,
-    ast::Variable,
-    ast::Model,
+    ast_Number,
+    ast_Variable,
+    ast_Model,
     ArithmeticOperator,
 )
 
@@ -37,37 +37,37 @@ def test_expression_constructor_args():
 
 
 
-def test_ast::operand_is_not_abstract():
-    assert not inspect.isabstract(ast::Operand)
+def test_ast_operand_is_not_abstract():
+    assert not inspect.isabstract(ast_Operand)
 
 
-def test_ast::operand_constructor_exists():
-    assert callable(ast::Operand.__init__)
+def test_ast_operand_constructor_exists():
+    assert callable(ast_Operand.__init__)
 
 
-def test_ast::operand_constructor_args():
-    sig = inspect.signature(ast::Operand.__init__)
+def test_ast_operand_constructor_args():
+    sig = inspect.signature(ast_Operand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::operator_is_not_abstract():
-    assert not inspect.isabstract(ast::Operator)
+def test_ast_operator_is_not_abstract():
+    assert not inspect.isabstract(ast_Operator)
 
 
-def test_ast::operator_constructor_exists():
-    assert callable(ast::Operator.__init__)
+def test_ast_operator_constructor_exists():
+    assert callable(ast_Operator.__init__)
 
 
-def test_ast::operator_constructor_args():
-    sig = inspect.signature(ast::Operator.__init__)
+def test_ast_operator_constructor_args():
+    sig = inspect.signature(ast_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_ast::operator_has_op():
-    assert hasattr(ast::Operator, "op")
+def test_ast_operator_has_op():
+    assert hasattr(ast_Operator, "op")
     descriptor = None
-    for klass in ast::Operator.__mro__:
+    for klass in ast_Operator.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -75,23 +75,23 @@ def test_ast::operator_has_op():
 
 
 
-def test_ast::expression_is_not_abstract():
-    assert not inspect.isabstract(ast::Expression)
+def test_ast_expression_is_not_abstract():
+    assert not inspect.isabstract(ast_Expression)
 
 
-def test_ast::expression_constructor_exists():
-    assert callable(ast::Expression.__init__)
+def test_ast_expression_constructor_exists():
+    assert callable(ast_Expression.__init__)
 
 
-def test_ast::expression_constructor_args():
-    sig = inspect.signature(ast::Expression.__init__)
+def test_ast_expression_constructor_args():
+    sig = inspect.signature(ast_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "incrementalID" in params, "Missing parameter 'incrementalID'"
 
-def test_ast::expression_has_incrementalID():
-    assert hasattr(ast::Expression, "incrementalID")
+def test_ast_expression_has_incrementalID():
+    assert hasattr(ast_Expression, "incrementalID")
     descriptor = None
-    for klass in ast::Expression.__mro__:
+    for klass in ast_Expression.__mro__:
         if "incrementalID" in klass.__dict__:
             descriptor = klass.__dict__["incrementalID"]
             break
@@ -113,23 +113,23 @@ def test_operand_constructor_args():
 
 
 
-def test_ast::number_is_not_abstract():
-    assert not inspect.isabstract(ast::Number)
+def test_ast_number_is_not_abstract():
+    assert not inspect.isabstract(ast_Number)
 
 
-def test_ast::number_constructor_exists():
-    assert callable(ast::Number.__init__)
+def test_ast_number_constructor_exists():
+    assert callable(ast_Number.__init__)
 
 
-def test_ast::number_constructor_args():
-    sig = inspect.signature(ast::Number.__init__)
+def test_ast_number_constructor_args():
+    sig = inspect.signature(ast_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ast::number_has_value():
-    assert hasattr(ast::Number, "value")
+def test_ast_number_has_value():
+    assert hasattr(ast_Number, "value")
     descriptor = None
-    for klass in ast::Number.__mro__:
+    for klass in ast_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -137,23 +137,23 @@ def test_ast::number_has_value():
 
 
 
-def test_ast::variable_is_not_abstract():
-    assert not inspect.isabstract(ast::Variable)
+def test_ast_variable_is_not_abstract():
+    assert not inspect.isabstract(ast_Variable)
 
 
-def test_ast::variable_constructor_exists():
-    assert callable(ast::Variable.__init__)
+def test_ast_variable_constructor_exists():
+    assert callable(ast_Variable.__init__)
 
 
-def test_ast::variable_constructor_args():
-    sig = inspect.signature(ast::Variable.__init__)
+def test_ast_variable_constructor_args():
+    sig = inspect.signature(ast_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::variable_has_name():
-    assert hasattr(ast::Variable, "name")
+def test_ast_variable_has_name():
+    assert hasattr(ast_Variable, "name")
     descriptor = None
-    for klass in ast::Variable.__mro__:
+    for klass in ast_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -161,16 +161,16 @@ def test_ast::variable_has_name():
 
 
 
-def test_ast::model_is_not_abstract():
-    assert not inspect.isabstract(ast::Model)
+def test_ast_model_is_not_abstract():
+    assert not inspect.isabstract(ast_Model)
 
 
-def test_ast::model_constructor_exists():
-    assert callable(ast::Model.__init__)
+def test_ast_model_constructor_exists():
+    assert callable(ast_Model.__init__)
 
 
-def test_ast::model_constructor_args():
-    sig = inspect.signature(ast::Model.__init__)
+def test_ast_model_constructor_args():
+    sig = inspect.signature(ast_Model.__init__)
     params = list(sig.parameters.keys())
 
 def test_arithmeticoperator_exists():
@@ -182,9 +182,9 @@ def test_arithmeticoperator_has_all_literals():
     enum_literals = [lit.name for lit in ArithmeticOperator]
     expected_literals = [
         "Multiply",
+        "Divide",
         "Subtract",
         "Add",
-        "Divide",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -205,34 +205,34 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-ast::Operand_strategy = st.builds(
-    ast::Operand,
+ast_Operand_strategy = st.builds(
+    ast_Operand,
 )
-ast::Operator_strategy = st.builds(
-    ast::Operator,
+ast_Operator_strategy = st.builds(
+    ast_Operator,
     op=
         safe_text
 )
-ast::Expression_strategy = st.builds(
-    ast::Expression,
+ast_Expression_strategy = st.builds(
+    ast_Expression,
     incrementalID=
         safe_text
 )
 Operand_strategy = st.builds(
     Operand,
 )
-ast::Number_strategy = st.builds(
-    ast::Number,
+ast_Number_strategy = st.builds(
+    ast_Number,
     value=
         st.integers()
 )
-ast::Variable_strategy = st.builds(
-    ast::Variable,
+ast_Variable_strategy = st.builds(
+    ast_Variable,
     name=
         safe_text
 )
-ast::Model_strategy = st.builds(
-    ast::Model,
+ast_Model_strategy = st.builds(
+    ast_Model,
 )
 
 @given(instance=Expression_strategy)
@@ -240,39 +240,33 @@ ast::Model_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=ast::Operand_strategy)
+@given(instance=ast_Operand_strategy)
 @settings(max_examples=50)
-def test_ast::operand_instantiation(instance):
-    assert isinstance(instance, ast::Operand)
+def test_ast_operand_instantiation(instance):
+    assert isinstance(instance, ast_Operand)
 
-@given(instance=ast::Operator_strategy)
+@given(instance=ast_Operator_strategy)
 @settings(max_examples=50)
-def test_ast::operator_instantiation(instance):
-    assert isinstance(instance, ast::Operator)
-
-@given(instance=ast::Operator_strategy)
-def test_ast::operator_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_ast_operator_instantiation(instance):
+    assert isinstance(instance, ast_Operator)
 
 
-@given(instance=ast::Operator_strategy)
-def test_ast::operator_op_setter(instance):
+
+@given(instance=ast_Operator_strategy)
+def test_ast_operator_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=ast::Expression_strategy)
+@given(instance=ast_Expression_strategy)
 @settings(max_examples=50)
-def test_ast::expression_instantiation(instance):
-    assert isinstance(instance, ast::Expression)
-
-@given(instance=ast::Expression_strategy)
-def test_ast::expression_incrementalID_type(instance):
-    assert isinstance(instance.incrementalID, str)
+def test_ast_expression_instantiation(instance):
+    assert isinstance(instance, ast_Expression)
 
 
-@given(instance=ast::Expression_strategy)
-def test_ast::expression_incrementalID_setter(instance):
+
+@given(instance=ast_Expression_strategy)
+def test_ast_expression_incrementalID_setter(instance):
     original = instance.incrementalID
     instance.incrementalID = original
     assert instance.incrementalID == original
@@ -282,39 +276,33 @@ def test_ast::expression_incrementalID_setter(instance):
 def test_operand_instantiation(instance):
     assert isinstance(instance, Operand)
 
-@given(instance=ast::Number_strategy)
+@given(instance=ast_Number_strategy)
 @settings(max_examples=50)
-def test_ast::number_instantiation(instance):
-    assert isinstance(instance, ast::Number)
-
-@given(instance=ast::Number_strategy)
-def test_ast::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_ast_number_instantiation(instance):
+    assert isinstance(instance, ast_Number)
 
 
-@given(instance=ast::Number_strategy)
-def test_ast::number_value_setter(instance):
+
+@given(instance=ast_Number_strategy)
+def test_ast_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ast::Variable_strategy)
+@given(instance=ast_Variable_strategy)
 @settings(max_examples=50)
-def test_ast::variable_instantiation(instance):
-    assert isinstance(instance, ast::Variable)
-
-@given(instance=ast::Variable_strategy)
-def test_ast::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_variable_instantiation(instance):
+    assert isinstance(instance, ast_Variable)
 
 
-@given(instance=ast::Variable_strategy)
-def test_ast::variable_name_setter(instance):
+
+@given(instance=ast_Variable_strategy)
+def test_ast_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::Model_strategy)
+@given(instance=ast_Model_strategy)
 @settings(max_examples=50)
-def test_ast::model_instantiation(instance):
-    assert isinstance(instance, ast::Model)
+def test_ast_model_instantiation(instance):
+    assert isinstance(instance, ast_Model)

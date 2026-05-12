@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DurationArtifact,
-    MediaLibrary::MusicTrack,
-    MediaLibrary::Video,
-    MediaLibrary::AudioBook,
+    MediaLibrary_Video,
+    MediaLibrary_MusicTrack,
+    MediaLibrary_AudioBook,
     Artifact,
-    MediaLibrary::Ebook,
-    MediaLibrary::Image,
-    MediaLibrary::DurationArtifact,
+    MediaLibrary_Image,
+    MediaLibrary_Ebook,
+    MediaLibrary_DurationArtifact,
     MediaSource,
-    MediaLibrary::Store,
-    MediaLibrary::ExternalSource,
+    MediaLibrary_Store,
+    MediaLibrary_ExternalSource,
     NamedElement,
-    MediaLibrary::MediaCollection,
-    MediaLibrary::Artifact,
-    MediaLibrary::MediaSource,
-    MediaLibrary::Device,
-    MediaLibrary::Library,
-    MediaLibrary::Ecosystem,
+    MediaLibrary_Artifact,
+    MediaLibrary_MediaCollection,
+    MediaLibrary_MediaSource,
+    MediaLibrary_Device,
+    MediaLibrary_Library,
+    MediaLibrary_Ecosystem,
     Device,
-    MediaLibrary::EReader,
-    MediaLibrary::Smartphone,
-    MediaLibrary::Computer,
-    MediaLibrary::Tablet,
-    MediaLibrary::NamedElement,
+    MediaLibrary_EReader,
+    MediaLibrary_Computer,
+    MediaLibrary_Smartphone,
+    MediaLibrary_Tablet,
+    MediaLibrary_NamedElement,
     SourceType,
 )
 
@@ -53,44 +53,44 @@ def test_durationartifact_constructor_args():
 
 
 
-def test_medialibrary::musictrack_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::MusicTrack)
+def test_medialibrary_video_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Video)
 
 
-def test_medialibrary::musictrack_constructor_exists():
-    assert callable(MediaLibrary::MusicTrack.__init__)
+def test_medialibrary_video_constructor_exists():
+    assert callable(MediaLibrary_Video.__init__)
 
 
-def test_medialibrary::musictrack_constructor_args():
-    sig = inspect.signature(MediaLibrary::MusicTrack.__init__)
+def test_medialibrary_video_constructor_args():
+    sig = inspect.signature(MediaLibrary_Video.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::video_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Video)
+def test_medialibrary_musictrack_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_MusicTrack)
 
 
-def test_medialibrary::video_constructor_exists():
-    assert callable(MediaLibrary::Video.__init__)
+def test_medialibrary_musictrack_constructor_exists():
+    assert callable(MediaLibrary_MusicTrack.__init__)
 
 
-def test_medialibrary::video_constructor_args():
-    sig = inspect.signature(MediaLibrary::Video.__init__)
+def test_medialibrary_musictrack_constructor_args():
+    sig = inspect.signature(MediaLibrary_MusicTrack.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::audiobook_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::AudioBook)
+def test_medialibrary_audiobook_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_AudioBook)
 
 
-def test_medialibrary::audiobook_constructor_exists():
-    assert callable(MediaLibrary::AudioBook.__init__)
+def test_medialibrary_audiobook_constructor_exists():
+    assert callable(MediaLibrary_AudioBook.__init__)
 
 
-def test_medialibrary::audiobook_constructor_args():
-    sig = inspect.signature(MediaLibrary::AudioBook.__init__)
+def test_medialibrary_audiobook_constructor_args():
+    sig = inspect.signature(MediaLibrary_AudioBook.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,51 +109,51 @@ def test_artifact_constructor_args():
 
 
 
-def test_medialibrary::ebook_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Ebook)
+def test_medialibrary_image_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Image)
 
 
-def test_medialibrary::ebook_constructor_exists():
-    assert callable(MediaLibrary::Ebook.__init__)
+def test_medialibrary_image_constructor_exists():
+    assert callable(MediaLibrary_Image.__init__)
 
 
-def test_medialibrary::ebook_constructor_args():
-    sig = inspect.signature(MediaLibrary::Ebook.__init__)
+def test_medialibrary_image_constructor_args():
+    sig = inspect.signature(MediaLibrary_Image.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::image_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Image)
+def test_medialibrary_ebook_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Ebook)
 
 
-def test_medialibrary::image_constructor_exists():
-    assert callable(MediaLibrary::Image.__init__)
+def test_medialibrary_ebook_constructor_exists():
+    assert callable(MediaLibrary_Ebook.__init__)
 
 
-def test_medialibrary::image_constructor_args():
-    sig = inspect.signature(MediaLibrary::Image.__init__)
+def test_medialibrary_ebook_constructor_args():
+    sig = inspect.signature(MediaLibrary_Ebook.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::durationartifact_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::DurationArtifact)
+def test_medialibrary_durationartifact_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_DurationArtifact)
 
 
-def test_medialibrary::durationartifact_constructor_exists():
-    assert callable(MediaLibrary::DurationArtifact.__init__)
+def test_medialibrary_durationartifact_constructor_exists():
+    assert callable(MediaLibrary_DurationArtifact.__init__)
 
 
-def test_medialibrary::durationartifact_constructor_args():
-    sig = inspect.signature(MediaLibrary::DurationArtifact.__init__)
+def test_medialibrary_durationartifact_constructor_args():
+    sig = inspect.signature(MediaLibrary_DurationArtifact.__init__)
     params = list(sig.parameters.keys())
     assert "duration" in params, "Missing parameter 'duration'"
 
-def test_medialibrary::durationartifact_has_duration():
-    assert hasattr(MediaLibrary::DurationArtifact, "duration")
+def test_medialibrary_durationartifact_has_duration():
+    assert hasattr(MediaLibrary_DurationArtifact, "duration")
     descriptor = None
-    for klass in MediaLibrary::DurationArtifact.__mro__:
+    for klass in MediaLibrary_DurationArtifact.__mro__:
         if "duration" in klass.__dict__:
             descriptor = klass.__dict__["duration"]
             break
@@ -175,37 +175,37 @@ def test_mediasource_constructor_args():
 
 
 
-def test_medialibrary::store_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Store)
+def test_medialibrary_store_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Store)
 
 
-def test_medialibrary::store_constructor_exists():
-    assert callable(MediaLibrary::Store.__init__)
+def test_medialibrary_store_constructor_exists():
+    assert callable(MediaLibrary_Store.__init__)
 
 
-def test_medialibrary::store_constructor_args():
-    sig = inspect.signature(MediaLibrary::Store.__init__)
+def test_medialibrary_store_constructor_args():
+    sig = inspect.signature(MediaLibrary_Store.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::externalsource_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::ExternalSource)
+def test_medialibrary_externalsource_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_ExternalSource)
 
 
-def test_medialibrary::externalsource_constructor_exists():
-    assert callable(MediaLibrary::ExternalSource.__init__)
+def test_medialibrary_externalsource_constructor_exists():
+    assert callable(MediaLibrary_ExternalSource.__init__)
 
 
-def test_medialibrary::externalsource_constructor_args():
-    sig = inspect.signature(MediaLibrary::ExternalSource.__init__)
+def test_medialibrary_externalsource_constructor_args():
+    sig = inspect.signature(MediaLibrary_ExternalSource.__init__)
     params = list(sig.parameters.keys())
     assert "sourceType" in params, "Missing parameter 'sourceType'"
 
-def test_medialibrary::externalsource_has_sourceType():
-    assert hasattr(MediaLibrary::ExternalSource, "sourceType")
+def test_medialibrary_externalsource_has_sourceType():
+    assert hasattr(MediaLibrary_ExternalSource, "sourceType")
     descriptor = None
-    for klass in MediaLibrary::ExternalSource.__mro__:
+    for klass in MediaLibrary_ExternalSource.__mro__:
         if "sourceType" in klass.__dict__:
             descriptor = klass.__dict__["sourceType"]
             break
@@ -227,86 +227,86 @@ def test_namedelement_constructor_args():
 
 
 
-def test_medialibrary::mediacollection_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::MediaCollection)
+def test_medialibrary_artifact_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Artifact)
 
 
-def test_medialibrary::mediacollection_constructor_exists():
-    assert callable(MediaLibrary::MediaCollection.__init__)
+def test_medialibrary_artifact_constructor_exists():
+    assert callable(MediaLibrary_Artifact.__init__)
 
 
-def test_medialibrary::mediacollection_constructor_args():
-    sig = inspect.signature(MediaLibrary::MediaCollection.__init__)
+def test_medialibrary_artifact_constructor_args():
+    sig = inspect.signature(MediaLibrary_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::artifact_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Artifact)
+def test_medialibrary_mediacollection_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_MediaCollection)
 
 
-def test_medialibrary::artifact_constructor_exists():
-    assert callable(MediaLibrary::Artifact.__init__)
+def test_medialibrary_mediacollection_constructor_exists():
+    assert callable(MediaLibrary_MediaCollection.__init__)
 
 
-def test_medialibrary::artifact_constructor_args():
-    sig = inspect.signature(MediaLibrary::Artifact.__init__)
+def test_medialibrary_mediacollection_constructor_args():
+    sig = inspect.signature(MediaLibrary_MediaCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::mediasource_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::MediaSource)
+def test_medialibrary_mediasource_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_MediaSource)
 
 
-def test_medialibrary::mediasource_constructor_exists():
-    assert callable(MediaLibrary::MediaSource.__init__)
+def test_medialibrary_mediasource_constructor_exists():
+    assert callable(MediaLibrary_MediaSource.__init__)
 
 
-def test_medialibrary::mediasource_constructor_args():
-    sig = inspect.signature(MediaLibrary::MediaSource.__init__)
+def test_medialibrary_mediasource_constructor_args():
+    sig = inspect.signature(MediaLibrary_MediaSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::device_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Device)
+def test_medialibrary_device_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Device)
 
 
-def test_medialibrary::device_constructor_exists():
-    assert callable(MediaLibrary::Device.__init__)
+def test_medialibrary_device_constructor_exists():
+    assert callable(MediaLibrary_Device.__init__)
 
 
-def test_medialibrary::device_constructor_args():
-    sig = inspect.signature(MediaLibrary::Device.__init__)
+def test_medialibrary_device_constructor_args():
+    sig = inspect.signature(MediaLibrary_Device.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::library_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Library)
+def test_medialibrary_library_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Library)
 
 
-def test_medialibrary::library_constructor_exists():
-    assert callable(MediaLibrary::Library.__init__)
+def test_medialibrary_library_constructor_exists():
+    assert callable(MediaLibrary_Library.__init__)
 
 
-def test_medialibrary::library_constructor_args():
-    sig = inspect.signature(MediaLibrary::Library.__init__)
+def test_medialibrary_library_constructor_args():
+    sig = inspect.signature(MediaLibrary_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::ecosystem_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Ecosystem)
+def test_medialibrary_ecosystem_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Ecosystem)
 
 
-def test_medialibrary::ecosystem_constructor_exists():
-    assert callable(MediaLibrary::Ecosystem.__init__)
+def test_medialibrary_ecosystem_constructor_exists():
+    assert callable(MediaLibrary_Ecosystem.__init__)
 
 
-def test_medialibrary::ecosystem_constructor_args():
-    sig = inspect.signature(MediaLibrary::Ecosystem.__init__)
+def test_medialibrary_ecosystem_constructor_args():
+    sig = inspect.signature(MediaLibrary_Ecosystem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -325,99 +325,99 @@ def test_device_constructor_args():
 
 
 
-def test_medialibrary::ereader_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::EReader)
+def test_medialibrary_ereader_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_EReader)
 
 
-def test_medialibrary::ereader_constructor_exists():
-    assert callable(MediaLibrary::EReader.__init__)
+def test_medialibrary_ereader_constructor_exists():
+    assert callable(MediaLibrary_EReader.__init__)
 
 
-def test_medialibrary::ereader_constructor_args():
-    sig = inspect.signature(MediaLibrary::EReader.__init__)
+def test_medialibrary_ereader_constructor_args():
+    sig = inspect.signature(MediaLibrary_EReader.__init__)
     params = list(sig.parameters.keys())
-    assert "videoEnabled" in params, "Missing parameter 'videoEnabled'"
     assert "audioEnabled" in params, "Missing parameter 'audioEnabled'"
+    assert "videoEnabled" in params, "Missing parameter 'videoEnabled'"
 
-def test_medialibrary::ereader_has_videoEnabled():
-    assert hasattr(MediaLibrary::EReader, "videoEnabled")
+def test_medialibrary_ereader_has_audioEnabled():
+    assert hasattr(MediaLibrary_EReader, "audioEnabled")
     descriptor = None
-    for klass in MediaLibrary::EReader.__mro__:
-        if "videoEnabled" in klass.__dict__:
-            descriptor = klass.__dict__["videoEnabled"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_medialibrary::ereader_has_audioEnabled():
-    assert hasattr(MediaLibrary::EReader, "audioEnabled")
-    descriptor = None
-    for klass in MediaLibrary::EReader.__mro__:
+    for klass in MediaLibrary_EReader.__mro__:
         if "audioEnabled" in klass.__dict__:
             descriptor = klass.__dict__["audioEnabled"]
             break
     assert isinstance(descriptor, property)
 
+def test_medialibrary_ereader_has_videoEnabled():
+    assert hasattr(MediaLibrary_EReader, "videoEnabled")
+    descriptor = None
+    for klass in MediaLibrary_EReader.__mro__:
+        if "videoEnabled" in klass.__dict__:
+            descriptor = klass.__dict__["videoEnabled"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_medialibrary::smartphone_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Smartphone)
+
+def test_medialibrary_computer_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Computer)
 
 
-def test_medialibrary::smartphone_constructor_exists():
-    assert callable(MediaLibrary::Smartphone.__init__)
+def test_medialibrary_computer_constructor_exists():
+    assert callable(MediaLibrary_Computer.__init__)
 
 
-def test_medialibrary::smartphone_constructor_args():
-    sig = inspect.signature(MediaLibrary::Smartphone.__init__)
+def test_medialibrary_computer_constructor_args():
+    sig = inspect.signature(MediaLibrary_Computer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::computer_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Computer)
+def test_medialibrary_smartphone_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Smartphone)
 
 
-def test_medialibrary::computer_constructor_exists():
-    assert callable(MediaLibrary::Computer.__init__)
+def test_medialibrary_smartphone_constructor_exists():
+    assert callable(MediaLibrary_Smartphone.__init__)
 
 
-def test_medialibrary::computer_constructor_args():
-    sig = inspect.signature(MediaLibrary::Computer.__init__)
+def test_medialibrary_smartphone_constructor_args():
+    sig = inspect.signature(MediaLibrary_Smartphone.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::tablet_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::Tablet)
+def test_medialibrary_tablet_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_Tablet)
 
 
-def test_medialibrary::tablet_constructor_exists():
-    assert callable(MediaLibrary::Tablet.__init__)
+def test_medialibrary_tablet_constructor_exists():
+    assert callable(MediaLibrary_Tablet.__init__)
 
 
-def test_medialibrary::tablet_constructor_args():
-    sig = inspect.signature(MediaLibrary::Tablet.__init__)
+def test_medialibrary_tablet_constructor_args():
+    sig = inspect.signature(MediaLibrary_Tablet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_medialibrary::namedelement_is_not_abstract():
-    assert not inspect.isabstract(MediaLibrary::NamedElement)
+def test_medialibrary_namedelement_is_not_abstract():
+    assert not inspect.isabstract(MediaLibrary_NamedElement)
 
 
-def test_medialibrary::namedelement_constructor_exists():
-    assert callable(MediaLibrary::NamedElement.__init__)
+def test_medialibrary_namedelement_constructor_exists():
+    assert callable(MediaLibrary_NamedElement.__init__)
 
 
-def test_medialibrary::namedelement_constructor_args():
-    sig = inspect.signature(MediaLibrary::NamedElement.__init__)
+def test_medialibrary_namedelement_constructor_args():
+    sig = inspect.signature(MediaLibrary_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_medialibrary::namedelement_has_name():
-    assert hasattr(MediaLibrary::NamedElement, "name")
+def test_medialibrary_namedelement_has_name():
+    assert hasattr(MediaLibrary_NamedElement, "name")
     descriptor = None
-    for klass in MediaLibrary::NamedElement.__mro__:
+    for klass in MediaLibrary_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -432,11 +432,11 @@ def test_sourcetype_has_all_literals():
     enum_literals = [lit.name for lit in SourceType]
     expected_literals = [
         "VHS",
+        "HDD",
+        "CASSETTE",
         "OTHER",
         "CD",
-        "CASSETTE",
         "DVD",
-        "HDD",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -457,82 +457,82 @@ safe_text = st.text(
 DurationArtifact_strategy = st.builds(
     DurationArtifact,
 )
-MediaLibrary::MusicTrack_strategy = st.builds(
-    MediaLibrary::MusicTrack,
+MediaLibrary_Video_strategy = st.builds(
+    MediaLibrary_Video,
 )
-MediaLibrary::Video_strategy = st.builds(
-    MediaLibrary::Video,
+MediaLibrary_MusicTrack_strategy = st.builds(
+    MediaLibrary_MusicTrack,
 )
-MediaLibrary::AudioBook_strategy = st.builds(
-    MediaLibrary::AudioBook,
+MediaLibrary_AudioBook_strategy = st.builds(
+    MediaLibrary_AudioBook,
 )
 Artifact_strategy = st.builds(
     Artifact,
 )
-MediaLibrary::Ebook_strategy = st.builds(
-    MediaLibrary::Ebook,
+MediaLibrary_Image_strategy = st.builds(
+    MediaLibrary_Image,
 )
-MediaLibrary::Image_strategy = st.builds(
-    MediaLibrary::Image,
+MediaLibrary_Ebook_strategy = st.builds(
+    MediaLibrary_Ebook,
 )
-MediaLibrary::DurationArtifact_strategy = st.builds(
-    MediaLibrary::DurationArtifact,
+MediaLibrary_DurationArtifact_strategy = st.builds(
+    MediaLibrary_DurationArtifact,
     duration=
         st.integers()
 )
 MediaSource_strategy = st.builds(
     MediaSource,
 )
-MediaLibrary::Store_strategy = st.builds(
-    MediaLibrary::Store,
+MediaLibrary_Store_strategy = st.builds(
+    MediaLibrary_Store,
 )
-MediaLibrary::ExternalSource_strategy = st.builds(
-    MediaLibrary::ExternalSource,
+MediaLibrary_ExternalSource_strategy = st.builds(
+    MediaLibrary_ExternalSource,
     sourceType=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-MediaLibrary::MediaCollection_strategy = st.builds(
-    MediaLibrary::MediaCollection,
+MediaLibrary_Artifact_strategy = st.builds(
+    MediaLibrary_Artifact,
 )
-MediaLibrary::Artifact_strategy = st.builds(
-    MediaLibrary::Artifact,
+MediaLibrary_MediaCollection_strategy = st.builds(
+    MediaLibrary_MediaCollection,
 )
-MediaLibrary::MediaSource_strategy = st.builds(
-    MediaLibrary::MediaSource,
+MediaLibrary_MediaSource_strategy = st.builds(
+    MediaLibrary_MediaSource,
 )
-MediaLibrary::Device_strategy = st.builds(
-    MediaLibrary::Device,
+MediaLibrary_Device_strategy = st.builds(
+    MediaLibrary_Device,
 )
-MediaLibrary::Library_strategy = st.builds(
-    MediaLibrary::Library,
+MediaLibrary_Library_strategy = st.builds(
+    MediaLibrary_Library,
 )
-MediaLibrary::Ecosystem_strategy = st.builds(
-    MediaLibrary::Ecosystem,
+MediaLibrary_Ecosystem_strategy = st.builds(
+    MediaLibrary_Ecosystem,
 )
 Device_strategy = st.builds(
     Device,
 )
-MediaLibrary::EReader_strategy = st.builds(
-    MediaLibrary::EReader,
-    videoEnabled=
-        safe_text,
+MediaLibrary_EReader_strategy = st.builds(
+    MediaLibrary_EReader,
     audioEnabled=
+        safe_text,
+    videoEnabled=
         safe_text
 )
-MediaLibrary::Smartphone_strategy = st.builds(
-    MediaLibrary::Smartphone,
+MediaLibrary_Computer_strategy = st.builds(
+    MediaLibrary_Computer,
 )
-MediaLibrary::Computer_strategy = st.builds(
-    MediaLibrary::Computer,
+MediaLibrary_Smartphone_strategy = st.builds(
+    MediaLibrary_Smartphone,
 )
-MediaLibrary::Tablet_strategy = st.builds(
-    MediaLibrary::Tablet,
+MediaLibrary_Tablet_strategy = st.builds(
+    MediaLibrary_Tablet,
 )
-MediaLibrary::NamedElement_strategy = st.builds(
-    MediaLibrary::NamedElement,
+MediaLibrary_NamedElement_strategy = st.builds(
+    MediaLibrary_NamedElement,
     name=
         safe_text
 )
@@ -542,48 +542,45 @@ MediaLibrary::NamedElement_strategy = st.builds(
 def test_durationartifact_instantiation(instance):
     assert isinstance(instance, DurationArtifact)
 
-@given(instance=MediaLibrary::MusicTrack_strategy)
+@given(instance=MediaLibrary_Video_strategy)
 @settings(max_examples=50)
-def test_medialibrary::musictrack_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::MusicTrack)
+def test_medialibrary_video_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Video)
 
-@given(instance=MediaLibrary::Video_strategy)
+@given(instance=MediaLibrary_MusicTrack_strategy)
 @settings(max_examples=50)
-def test_medialibrary::video_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Video)
+def test_medialibrary_musictrack_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_MusicTrack)
 
-@given(instance=MediaLibrary::AudioBook_strategy)
+@given(instance=MediaLibrary_AudioBook_strategy)
 @settings(max_examples=50)
-def test_medialibrary::audiobook_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::AudioBook)
+def test_medialibrary_audiobook_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_AudioBook)
 
 @given(instance=Artifact_strategy)
 @settings(max_examples=50)
 def test_artifact_instantiation(instance):
     assert isinstance(instance, Artifact)
 
-@given(instance=MediaLibrary::Ebook_strategy)
+@given(instance=MediaLibrary_Image_strategy)
 @settings(max_examples=50)
-def test_medialibrary::ebook_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Ebook)
+def test_medialibrary_image_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Image)
 
-@given(instance=MediaLibrary::Image_strategy)
+@given(instance=MediaLibrary_Ebook_strategy)
 @settings(max_examples=50)
-def test_medialibrary::image_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Image)
+def test_medialibrary_ebook_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Ebook)
 
-@given(instance=MediaLibrary::DurationArtifact_strategy)
+@given(instance=MediaLibrary_DurationArtifact_strategy)
 @settings(max_examples=50)
-def test_medialibrary::durationartifact_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::DurationArtifact)
-
-@given(instance=MediaLibrary::DurationArtifact_strategy)
-def test_medialibrary::durationartifact_duration_type(instance):
-    assert isinstance(instance.duration, int)
+def test_medialibrary_durationartifact_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_DurationArtifact)
 
 
-@given(instance=MediaLibrary::DurationArtifact_strategy)
-def test_medialibrary::durationartifact_duration_setter(instance):
+
+@given(instance=MediaLibrary_DurationArtifact_strategy)
+def test_medialibrary_durationartifact_duration_setter(instance):
     original = instance.duration
     instance.duration = original
     assert instance.duration == original
@@ -593,23 +590,20 @@ def test_medialibrary::durationartifact_duration_setter(instance):
 def test_mediasource_instantiation(instance):
     assert isinstance(instance, MediaSource)
 
-@given(instance=MediaLibrary::Store_strategy)
+@given(instance=MediaLibrary_Store_strategy)
 @settings(max_examples=50)
-def test_medialibrary::store_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Store)
+def test_medialibrary_store_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Store)
 
-@given(instance=MediaLibrary::ExternalSource_strategy)
+@given(instance=MediaLibrary_ExternalSource_strategy)
 @settings(max_examples=50)
-def test_medialibrary::externalsource_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::ExternalSource)
-
-@given(instance=MediaLibrary::ExternalSource_strategy)
-def test_medialibrary::externalsource_sourceType_type(instance):
-    assert isinstance(instance.sourceType, str)
+def test_medialibrary_externalsource_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_ExternalSource)
 
 
-@given(instance=MediaLibrary::ExternalSource_strategy)
-def test_medialibrary::externalsource_sourceType_setter(instance):
+
+@given(instance=MediaLibrary_ExternalSource_strategy)
+def test_medialibrary_externalsource_sourceType_setter(instance):
     original = instance.sourceType
     instance.sourceType = original
     assert instance.sourceType == original
@@ -619,95 +613,86 @@ def test_medialibrary::externalsource_sourceType_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=MediaLibrary::MediaCollection_strategy)
+@given(instance=MediaLibrary_Artifact_strategy)
 @settings(max_examples=50)
-def test_medialibrary::mediacollection_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::MediaCollection)
+def test_medialibrary_artifact_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Artifact)
 
-@given(instance=MediaLibrary::Artifact_strategy)
+@given(instance=MediaLibrary_MediaCollection_strategy)
 @settings(max_examples=50)
-def test_medialibrary::artifact_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Artifact)
+def test_medialibrary_mediacollection_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_MediaCollection)
 
-@given(instance=MediaLibrary::MediaSource_strategy)
+@given(instance=MediaLibrary_MediaSource_strategy)
 @settings(max_examples=50)
-def test_medialibrary::mediasource_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::MediaSource)
+def test_medialibrary_mediasource_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_MediaSource)
 
-@given(instance=MediaLibrary::Device_strategy)
+@given(instance=MediaLibrary_Device_strategy)
 @settings(max_examples=50)
-def test_medialibrary::device_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Device)
+def test_medialibrary_device_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Device)
 
-@given(instance=MediaLibrary::Library_strategy)
+@given(instance=MediaLibrary_Library_strategy)
 @settings(max_examples=50)
-def test_medialibrary::library_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Library)
+def test_medialibrary_library_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Library)
 
-@given(instance=MediaLibrary::Ecosystem_strategy)
+@given(instance=MediaLibrary_Ecosystem_strategy)
 @settings(max_examples=50)
-def test_medialibrary::ecosystem_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Ecosystem)
+def test_medialibrary_ecosystem_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Ecosystem)
 
 @given(instance=Device_strategy)
 @settings(max_examples=50)
 def test_device_instantiation(instance):
     assert isinstance(instance, Device)
 
-@given(instance=MediaLibrary::EReader_strategy)
+@given(instance=MediaLibrary_EReader_strategy)
 @settings(max_examples=50)
-def test_medialibrary::ereader_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::EReader)
-
-@given(instance=MediaLibrary::EReader_strategy)
-def test_medialibrary::ereader_videoEnabled_type(instance):
-    assert isinstance(instance.videoEnabled, str)
+def test_medialibrary_ereader_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_EReader)
 
 
-@given(instance=MediaLibrary::EReader_strategy)
-def test_medialibrary::ereader_videoEnabled_setter(instance):
-    original = instance.videoEnabled
-    instance.videoEnabled = original
-    assert instance.videoEnabled == original
 
-@given(instance=MediaLibrary::EReader_strategy)
-def test_medialibrary::ereader_audioEnabled_type(instance):
-    assert isinstance(instance.audioEnabled, str)
-
-
-@given(instance=MediaLibrary::EReader_strategy)
-def test_medialibrary::ereader_audioEnabled_setter(instance):
+@given(instance=MediaLibrary_EReader_strategy)
+def test_medialibrary_ereader_audioEnabled_setter(instance):
     original = instance.audioEnabled
     instance.audioEnabled = original
     assert instance.audioEnabled == original
 
-@given(instance=MediaLibrary::Smartphone_strategy)
+
+
+@given(instance=MediaLibrary_EReader_strategy)
+def test_medialibrary_ereader_videoEnabled_setter(instance):
+    original = instance.videoEnabled
+    instance.videoEnabled = original
+    assert instance.videoEnabled == original
+
+@given(instance=MediaLibrary_Computer_strategy)
 @settings(max_examples=50)
-def test_medialibrary::smartphone_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Smartphone)
+def test_medialibrary_computer_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Computer)
 
-@given(instance=MediaLibrary::Computer_strategy)
+@given(instance=MediaLibrary_Smartphone_strategy)
 @settings(max_examples=50)
-def test_medialibrary::computer_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Computer)
+def test_medialibrary_smartphone_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Smartphone)
 
-@given(instance=MediaLibrary::Tablet_strategy)
+@given(instance=MediaLibrary_Tablet_strategy)
 @settings(max_examples=50)
-def test_medialibrary::tablet_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::Tablet)
+def test_medialibrary_tablet_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_Tablet)
 
-@given(instance=MediaLibrary::NamedElement_strategy)
+@given(instance=MediaLibrary_NamedElement_strategy)
 @settings(max_examples=50)
-def test_medialibrary::namedelement_instantiation(instance):
-    assert isinstance(instance, MediaLibrary::NamedElement)
-
-@given(instance=MediaLibrary::NamedElement_strategy)
-def test_medialibrary::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_medialibrary_namedelement_instantiation(instance):
+    assert isinstance(instance, MediaLibrary_NamedElement)
 
 
-@given(instance=MediaLibrary::NamedElement_strategy)
-def test_medialibrary::namedelement_name_setter(instance):
+
+@given(instance=MediaLibrary_NamedElement_strategy)
+def test_medialibrary_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

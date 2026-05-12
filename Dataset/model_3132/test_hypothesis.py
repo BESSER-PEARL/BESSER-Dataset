@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ClassM::Model,
+from python_code import (
+    ClassM_Model,
     StructuralFeature,
-    ClassM::Attribute,
-    ClassM::Operation,
+    ClassM_Attribute,
+    ClassM_Operation,
     TypedElement,
-    ClassM::Parameter,
-    ClassM::TypedElement,
-    ClassM::Classifier,
-    ClassM::StructuralFeature,
+    ClassM_Parameter,
+    ClassM_TypedElement,
+    ClassM_Classifier,
+    ClassM_StructuralFeature,
     Classifier,
-    ClassM::PrimitiveType,
-    ClassM::Class,
+    ClassM_PrimitiveType,
+    ClassM_Class,
 )
 
 # =============================================================================
@@ -26,16 +26,16 @@ from classes import (
 
 
 
-def test_classm::model_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Model)
+def test_classm_model_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Model)
 
 
-def test_classm::model_constructor_exists():
-    assert callable(ClassM::Model.__init__)
+def test_classm_model_constructor_exists():
+    assert callable(ClassM_Model.__init__)
 
 
-def test_classm::model_constructor_args():
-    sig = inspect.signature(ClassM::Model.__init__)
+def test_classm_model_constructor_args():
+    sig = inspect.signature(ClassM_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,23 +54,23 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_classm::attribute_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Attribute)
+def test_classm_attribute_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Attribute)
 
 
-def test_classm::attribute_constructor_exists():
-    assert callable(ClassM::Attribute.__init__)
+def test_classm_attribute_constructor_exists():
+    assert callable(ClassM_Attribute.__init__)
 
 
-def test_classm::attribute_constructor_args():
-    sig = inspect.signature(ClassM::Attribute.__init__)
+def test_classm_attribute_constructor_args():
+    sig = inspect.signature(ClassM_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "multivalued" in params, "Missing parameter 'multivalued'"
 
-def test_classm::attribute_has_multivalued():
-    assert hasattr(ClassM::Attribute, "multivalued")
+def test_classm_attribute_has_multivalued():
+    assert hasattr(ClassM_Attribute, "multivalued")
     descriptor = None
-    for klass in ClassM::Attribute.__mro__:
+    for klass in ClassM_Attribute.__mro__:
         if "multivalued" in klass.__dict__:
             descriptor = klass.__dict__["multivalued"]
             break
@@ -78,16 +78,16 @@ def test_classm::attribute_has_multivalued():
 
 
 
-def test_classm::operation_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Operation)
+def test_classm_operation_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Operation)
 
 
-def test_classm::operation_constructor_exists():
-    assert callable(ClassM::Operation.__init__)
+def test_classm_operation_constructor_exists():
+    assert callable(ClassM_Operation.__init__)
 
 
-def test_classm::operation_constructor_args():
-    sig = inspect.signature(ClassM::Operation.__init__)
+def test_classm_operation_constructor_args():
+    sig = inspect.signature(ClassM_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -106,23 +106,23 @@ def test_typedelement_constructor_args():
 
 
 
-def test_classm::parameter_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Parameter)
+def test_classm_parameter_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Parameter)
 
 
-def test_classm::parameter_constructor_exists():
-    assert callable(ClassM::Parameter.__init__)
+def test_classm_parameter_constructor_exists():
+    assert callable(ClassM_Parameter.__init__)
 
 
-def test_classm::parameter_constructor_args():
-    sig = inspect.signature(ClassM::Parameter.__init__)
+def test_classm_parameter_constructor_args():
+    sig = inspect.signature(ClassM_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classm::parameter_has_name():
-    assert hasattr(ClassM::Parameter, "name")
+def test_classm_parameter_has_name():
+    assert hasattr(ClassM_Parameter, "name")
     descriptor = None
-    for klass in ClassM::Parameter.__mro__:
+    for klass in ClassM_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -130,37 +130,37 @@ def test_classm::parameter_has_name():
 
 
 
-def test_classm::typedelement_is_not_abstract():
-    assert not inspect.isabstract(ClassM::TypedElement)
+def test_classm_typedelement_is_not_abstract():
+    assert not inspect.isabstract(ClassM_TypedElement)
 
 
-def test_classm::typedelement_constructor_exists():
-    assert callable(ClassM::TypedElement.__init__)
+def test_classm_typedelement_constructor_exists():
+    assert callable(ClassM_TypedElement.__init__)
 
 
-def test_classm::typedelement_constructor_args():
-    sig = inspect.signature(ClassM::TypedElement.__init__)
+def test_classm_typedelement_constructor_args():
+    sig = inspect.signature(ClassM_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classm::classifier_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Classifier)
+def test_classm_classifier_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Classifier)
 
 
-def test_classm::classifier_constructor_exists():
-    assert callable(ClassM::Classifier.__init__)
+def test_classm_classifier_constructor_exists():
+    assert callable(ClassM_Classifier.__init__)
 
 
-def test_classm::classifier_constructor_args():
-    sig = inspect.signature(ClassM::Classifier.__init__)
+def test_classm_classifier_constructor_args():
+    sig = inspect.signature(ClassM_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classm::classifier_has_name():
-    assert hasattr(ClassM::Classifier, "name")
+def test_classm_classifier_has_name():
+    assert hasattr(ClassM_Classifier, "name")
     descriptor = None
-    for klass in ClassM::Classifier.__mro__:
+    for klass in ClassM_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -168,33 +168,33 @@ def test_classm::classifier_has_name():
 
 
 
-def test_classm::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(ClassM::StructuralFeature)
+def test_classm_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(ClassM_StructuralFeature)
 
 
-def test_classm::structuralfeature_constructor_exists():
-    assert callable(ClassM::StructuralFeature.__init__)
+def test_classm_structuralfeature_constructor_exists():
+    assert callable(ClassM_StructuralFeature.__init__)
 
 
-def test_classm::structuralfeature_constructor_args():
-    sig = inspect.signature(ClassM::StructuralFeature.__init__)
+def test_classm_structuralfeature_constructor_args():
+    sig = inspect.signature(ClassM_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classm::structuralfeature_has_visibility():
-    assert hasattr(ClassM::StructuralFeature, "visibility")
+def test_classm_structuralfeature_has_visibility():
+    assert hasattr(ClassM_StructuralFeature, "visibility")
     descriptor = None
-    for klass in ClassM::StructuralFeature.__mro__:
+    for klass in ClassM_StructuralFeature.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_classm::structuralfeature_has_name():
-    assert hasattr(ClassM::StructuralFeature, "name")
+def test_classm_structuralfeature_has_name():
+    assert hasattr(ClassM_StructuralFeature, "name")
     descriptor = None
-    for klass in ClassM::StructuralFeature.__mro__:
+    for klass in ClassM_StructuralFeature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -216,30 +216,30 @@ def test_classifier_constructor_args():
 
 
 
-def test_classm::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ClassM::PrimitiveType)
+def test_classm_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ClassM_PrimitiveType)
 
 
-def test_classm::primitivetype_constructor_exists():
-    assert callable(ClassM::PrimitiveType.__init__)
+def test_classm_primitivetype_constructor_exists():
+    assert callable(ClassM_PrimitiveType.__init__)
 
 
-def test_classm::primitivetype_constructor_args():
-    sig = inspect.signature(ClassM::PrimitiveType.__init__)
+def test_classm_primitivetype_constructor_args():
+    sig = inspect.signature(ClassM_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classm::class_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Class)
+def test_classm_class_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Class)
 
 
-def test_classm::class_constructor_exists():
-    assert callable(ClassM::Class.__init__)
+def test_classm_class_constructor_exists():
+    assert callable(ClassM_Class.__init__)
 
 
-def test_classm::class_constructor_args():
-    sig = inspect.signature(ClassM::Class.__init__)
+def test_classm_class_constructor_args():
+    sig = inspect.signature(ClassM_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -254,38 +254,38 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ClassM::Model_strategy = st.builds(
-    ClassM::Model,
+ClassM_Model_strategy = st.builds(
+    ClassM_Model,
 )
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-ClassM::Attribute_strategy = st.builds(
-    ClassM::Attribute,
+ClassM_Attribute_strategy = st.builds(
+    ClassM_Attribute,
     multivalued=
         st.booleans()
 )
-ClassM::Operation_strategy = st.builds(
-    ClassM::Operation,
+ClassM_Operation_strategy = st.builds(
+    ClassM_Operation,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-ClassM::Parameter_strategy = st.builds(
-    ClassM::Parameter,
+ClassM_Parameter_strategy = st.builds(
+    ClassM_Parameter,
     name=
         safe_text
 )
-ClassM::TypedElement_strategy = st.builds(
-    ClassM::TypedElement,
+ClassM_TypedElement_strategy = st.builds(
+    ClassM_TypedElement,
 )
-ClassM::Classifier_strategy = st.builds(
-    ClassM::Classifier,
+ClassM_Classifier_strategy = st.builds(
+    ClassM_Classifier,
     name=
         safe_text
 )
-ClassM::StructuralFeature_strategy = st.builds(
-    ClassM::StructuralFeature,
+ClassM_StructuralFeature_strategy = st.builds(
+    ClassM_StructuralFeature,
     visibility=
         safe_text,
     name=
@@ -294,109 +294,94 @@ ClassM::StructuralFeature_strategy = st.builds(
 Classifier_strategy = st.builds(
     Classifier,
 )
-ClassM::PrimitiveType_strategy = st.builds(
-    ClassM::PrimitiveType,
+ClassM_PrimitiveType_strategy = st.builds(
+    ClassM_PrimitiveType,
 )
-ClassM::Class_strategy = st.builds(
-    ClassM::Class,
+ClassM_Class_strategy = st.builds(
+    ClassM_Class,
 )
 
-@given(instance=ClassM::Model_strategy)
+@given(instance=ClassM_Model_strategy)
 @settings(max_examples=50)
-def test_classm::model_instantiation(instance):
-    assert isinstance(instance, ClassM::Model)
+def test_classm_model_instantiation(instance):
+    assert isinstance(instance, ClassM_Model)
 
 @given(instance=StructuralFeature_strategy)
 @settings(max_examples=50)
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=ClassM::Attribute_strategy)
+@given(instance=ClassM_Attribute_strategy)
 @settings(max_examples=50)
-def test_classm::attribute_instantiation(instance):
-    assert isinstance(instance, ClassM::Attribute)
-
-@given(instance=ClassM::Attribute_strategy)
-def test_classm::attribute_multivalued_type(instance):
-    assert isinstance(instance.multivalued, bool)
+def test_classm_attribute_instantiation(instance):
+    assert isinstance(instance, ClassM_Attribute)
 
 
-@given(instance=ClassM::Attribute_strategy)
-def test_classm::attribute_multivalued_setter(instance):
+
+@given(instance=ClassM_Attribute_strategy)
+def test_classm_attribute_multivalued_setter(instance):
     original = instance.multivalued
     instance.multivalued = original
     assert instance.multivalued == original
 
-@given(instance=ClassM::Operation_strategy)
+@given(instance=ClassM_Operation_strategy)
 @settings(max_examples=50)
-def test_classm::operation_instantiation(instance):
-    assert isinstance(instance, ClassM::Operation)
+def test_classm_operation_instantiation(instance):
+    assert isinstance(instance, ClassM_Operation)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=ClassM::Parameter_strategy)
+@given(instance=ClassM_Parameter_strategy)
 @settings(max_examples=50)
-def test_classm::parameter_instantiation(instance):
-    assert isinstance(instance, ClassM::Parameter)
-
-@given(instance=ClassM::Parameter_strategy)
-def test_classm::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classm_parameter_instantiation(instance):
+    assert isinstance(instance, ClassM_Parameter)
 
 
-@given(instance=ClassM::Parameter_strategy)
-def test_classm::parameter_name_setter(instance):
+
+@given(instance=ClassM_Parameter_strategy)
+def test_classm_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassM::TypedElement_strategy)
+@given(instance=ClassM_TypedElement_strategy)
 @settings(max_examples=50)
-def test_classm::typedelement_instantiation(instance):
-    assert isinstance(instance, ClassM::TypedElement)
+def test_classm_typedelement_instantiation(instance):
+    assert isinstance(instance, ClassM_TypedElement)
 
-@given(instance=ClassM::Classifier_strategy)
+@given(instance=ClassM_Classifier_strategy)
 @settings(max_examples=50)
-def test_classm::classifier_instantiation(instance):
-    assert isinstance(instance, ClassM::Classifier)
-
-@given(instance=ClassM::Classifier_strategy)
-def test_classm::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classm_classifier_instantiation(instance):
+    assert isinstance(instance, ClassM_Classifier)
 
 
-@given(instance=ClassM::Classifier_strategy)
-def test_classm::classifier_name_setter(instance):
+
+@given(instance=ClassM_Classifier_strategy)
+def test_classm_classifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassM::StructuralFeature_strategy)
+@given(instance=ClassM_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_classm::structuralfeature_instantiation(instance):
-    assert isinstance(instance, ClassM::StructuralFeature)
-
-@given(instance=ClassM::StructuralFeature_strategy)
-def test_classm::structuralfeature_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_classm_structuralfeature_instantiation(instance):
+    assert isinstance(instance, ClassM_StructuralFeature)
 
 
-@given(instance=ClassM::StructuralFeature_strategy)
-def test_classm::structuralfeature_visibility_setter(instance):
+
+@given(instance=ClassM_StructuralFeature_strategy)
+def test_classm_structuralfeature_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=ClassM::StructuralFeature_strategy)
-def test_classm::structuralfeature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ClassM::StructuralFeature_strategy)
-def test_classm::structuralfeature_name_setter(instance):
+@given(instance=ClassM_StructuralFeature_strategy)
+def test_classm_structuralfeature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -406,12 +391,12 @@ def test_classm::structuralfeature_name_setter(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=ClassM::PrimitiveType_strategy)
+@given(instance=ClassM_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_classm::primitivetype_instantiation(instance):
-    assert isinstance(instance, ClassM::PrimitiveType)
+def test_classm_primitivetype_instantiation(instance):
+    assert isinstance(instance, ClassM_PrimitiveType)
 
-@given(instance=ClassM::Class_strategy)
+@given(instance=ClassM_Class_strategy)
 @settings(max_examples=50)
-def test_classm::class_instantiation(instance):
-    assert isinstance(instance, ClassM::Class)
+def test_classm_class_instantiation(instance):
+    assert isinstance(instance, ClassM_Class)

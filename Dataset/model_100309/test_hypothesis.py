@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petrinetv3Trace::petrinetv3::TracedTransition,
-    petrinetv3Trace::petrinetv3::TracedToken,
-    petrinetv3::petrinetv3Trace::Token,
-    petrinetv3::petrinetv3Trace::Place,
-    petrinetv3Trace::petrinetv3::TracedPlace,
-    petrinetv3Trace::States::Transition::clock::Value,
-    petrinetv3::petrinetv3Trace::Net,
-    petrinetv3::petrinetv3Trace::Transition,
-    petrinetv3Trace::States::Place::tokens::Value,
+from python_code import (
+    petrinetv3Trace_petrinetv3_TracedTransition,
+    petrinetv3Trace_petrinetv3_TracedToken,
+    petrinetv3_petrinetv3Trace_Token,
+    petrinetv3_petrinetv3Trace_Place,
+    petrinetv3Trace_petrinetv3_TracedPlace,
+    petrinetv3Trace_States_Transition_clock_Value,
+    petrinetv3_petrinetv3Trace_Net,
+    petrinetv3_petrinetv3Trace_Transition,
+    petrinetv3Trace_States_Place_tokens_Value,
     MSEOccurrence,
-    petrinetv3Trace::Steps::Step,
+    petrinetv3Trace_Steps_Step,
     SmallStep,
-    petrinetv3Trace::Steps::RootImplicitStep,
-    Transition::clock::Value,
-    Place::tokens::Value,
-    petrinetv3Trace::States::State,
+    petrinetv3Trace_Steps_RootImplicitStep,
+    Transition_clock_Value,
+    Place_tokens_Value,
+    petrinetv3Trace_States_State,
     BigStep,
-    petrinetv3Trace::Steps::Petrinetv3::Net::Run,
-    Steps::SmallStep,
-    Steps::Petrinetv3::Net::Run::AbstractSubStep,
-    petrinetv3Trace::Steps::Petrinetv3::Net::Initialize,
+    petrinetv3Trace_Steps_Petrinetv3_Net_Run,
+    Steps_SmallStep,
+    Steps_Petrinetv3_Net_Run_AbstractSubStep,
+    petrinetv3Trace_Steps_Petrinetv3_Net_Initialize,
     State,
     Step,
-    petrinetv3Trace::Steps::SmallStep,
-    petrinetv3Trace::Steps::BigStep,
-    petrinetv3::TracedTransition,
-    petrinetv3::TracedToken,
-    petrinetv3Trace::Steps::Petrinetv3::Transition::Fire,
-    petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions,
-    petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep,
-    petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep,
-    Petrinetv3::Net::Run::AbstractSubStep,
-    Petrinetv3::Transition::Fire,
-    Petrinetv3::Net::TickEnabledTransitions,
-    Petrinetv3::Net::Run,
-    Petrinetv3::Net::Initialize,
-    petrinetv3Trace::Trace,
-    petrinetv3::TracedPlace,
+    petrinetv3Trace_Steps_BigStep,
+    petrinetv3Trace_Steps_SmallStep,
+    petrinetv3_TracedTransition,
+    petrinetv3_TracedToken,
+    petrinetv3Trace_Steps_Petrinetv3_Transition_Fire,
+    petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions,
+    petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep,
+    petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep,
+    Petrinetv3_Net_Run_AbstractSubStep,
+    Petrinetv3_Transition_Fire,
+    Petrinetv3_Net_TickEnabledTransitions,
+    Petrinetv3_Net_Run,
+    Petrinetv3_Net_Initialize,
+    petrinetv3Trace_Trace,
+    petrinetv3_TracedPlace,
 )
 
 # =============================================================================
@@ -52,93 +52,93 @@ from classes import (
 
 
 
-def test_petrinetv3trace::petrinetv3::tracedtransition_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::petrinetv3::TracedTransition)
+def test_petrinetv3trace_petrinetv3_tracedtransition_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_petrinetv3_TracedTransition)
 
 
-def test_petrinetv3trace::petrinetv3::tracedtransition_constructor_exists():
-    assert callable(petrinetv3Trace::petrinetv3::TracedTransition.__init__)
+def test_petrinetv3trace_petrinetv3_tracedtransition_constructor_exists():
+    assert callable(petrinetv3Trace_petrinetv3_TracedTransition.__init__)
 
 
-def test_petrinetv3trace::petrinetv3::tracedtransition_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::petrinetv3::TracedTransition.__init__)
+def test_petrinetv3trace_petrinetv3_tracedtransition_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_petrinetv3_TracedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::petrinetv3::tracedtoken_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::petrinetv3::TracedToken)
+def test_petrinetv3trace_petrinetv3_tracedtoken_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_petrinetv3_TracedToken)
 
 
-def test_petrinetv3trace::petrinetv3::tracedtoken_constructor_exists():
-    assert callable(petrinetv3Trace::petrinetv3::TracedToken.__init__)
+def test_petrinetv3trace_petrinetv3_tracedtoken_constructor_exists():
+    assert callable(petrinetv3Trace_petrinetv3_TracedToken.__init__)
 
 
-def test_petrinetv3trace::petrinetv3::tracedtoken_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::petrinetv3::TracedToken.__init__)
+def test_petrinetv3trace_petrinetv3_tracedtoken_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_petrinetv3_TracedToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::petrinetv3trace::token_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::petrinetv3Trace::Token)
+def test_petrinetv3_petrinetv3trace_token_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_petrinetv3Trace_Token)
 
 
-def test_petrinetv3::petrinetv3trace::token_constructor_exists():
-    assert callable(petrinetv3::petrinetv3Trace::Token.__init__)
+def test_petrinetv3_petrinetv3trace_token_constructor_exists():
+    assert callable(petrinetv3_petrinetv3Trace_Token.__init__)
 
 
-def test_petrinetv3::petrinetv3trace::token_constructor_args():
-    sig = inspect.signature(petrinetv3::petrinetv3Trace::Token.__init__)
+def test_petrinetv3_petrinetv3trace_token_constructor_args():
+    sig = inspect.signature(petrinetv3_petrinetv3Trace_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::petrinetv3trace::place_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::petrinetv3Trace::Place)
+def test_petrinetv3_petrinetv3trace_place_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_petrinetv3Trace_Place)
 
 
-def test_petrinetv3::petrinetv3trace::place_constructor_exists():
-    assert callable(petrinetv3::petrinetv3Trace::Place.__init__)
+def test_petrinetv3_petrinetv3trace_place_constructor_exists():
+    assert callable(petrinetv3_petrinetv3Trace_Place.__init__)
 
 
-def test_petrinetv3::petrinetv3trace::place_constructor_args():
-    sig = inspect.signature(petrinetv3::petrinetv3Trace::Place.__init__)
+def test_petrinetv3_petrinetv3trace_place_constructor_args():
+    sig = inspect.signature(petrinetv3_petrinetv3Trace_Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::petrinetv3::tracedplace_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::petrinetv3::TracedPlace)
+def test_petrinetv3trace_petrinetv3_tracedplace_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_petrinetv3_TracedPlace)
 
 
-def test_petrinetv3trace::petrinetv3::tracedplace_constructor_exists():
-    assert callable(petrinetv3Trace::petrinetv3::TracedPlace.__init__)
+def test_petrinetv3trace_petrinetv3_tracedplace_constructor_exists():
+    assert callable(petrinetv3Trace_petrinetv3_TracedPlace.__init__)
 
 
-def test_petrinetv3trace::petrinetv3::tracedplace_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::petrinetv3::TracedPlace.__init__)
+def test_petrinetv3trace_petrinetv3_tracedplace_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_petrinetv3_TracedPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::states::transition::clock::value_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::States::Transition::clock::Value)
+def test_petrinetv3trace_states_transition_clock_value_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_States_Transition_clock_Value)
 
 
-def test_petrinetv3trace::states::transition::clock::value_constructor_exists():
-    assert callable(petrinetv3Trace::States::Transition::clock::Value.__init__)
+def test_petrinetv3trace_states_transition_clock_value_constructor_exists():
+    assert callable(petrinetv3Trace_States_Transition_clock_Value.__init__)
 
 
-def test_petrinetv3trace::states::transition::clock::value_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::States::Transition::clock::Value.__init__)
+def test_petrinetv3trace_states_transition_clock_value_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_States_Transition_clock_Value.__init__)
     params = list(sig.parameters.keys())
     assert "clock" in params, "Missing parameter 'clock'"
 
-def test_petrinetv3trace::states::transition::clock::value_has_clock():
-    assert hasattr(petrinetv3Trace::States::Transition::clock::Value, "clock")
+def test_petrinetv3trace_states_transition_clock_value_has_clock():
+    assert hasattr(petrinetv3Trace_States_Transition_clock_Value, "clock")
     descriptor = None
-    for klass in petrinetv3Trace::States::Transition::clock::Value.__mro__:
+    for klass in petrinetv3Trace_States_Transition_clock_Value.__mro__:
         if "clock" in klass.__dict__:
             descriptor = klass.__dict__["clock"]
             break
@@ -146,44 +146,44 @@ def test_petrinetv3trace::states::transition::clock::value_has_clock():
 
 
 
-def test_petrinetv3::petrinetv3trace::net_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::petrinetv3Trace::Net)
+def test_petrinetv3_petrinetv3trace_net_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_petrinetv3Trace_Net)
 
 
-def test_petrinetv3::petrinetv3trace::net_constructor_exists():
-    assert callable(petrinetv3::petrinetv3Trace::Net.__init__)
+def test_petrinetv3_petrinetv3trace_net_constructor_exists():
+    assert callable(petrinetv3_petrinetv3Trace_Net.__init__)
 
 
-def test_petrinetv3::petrinetv3trace::net_constructor_args():
-    sig = inspect.signature(petrinetv3::petrinetv3Trace::Net.__init__)
+def test_petrinetv3_petrinetv3trace_net_constructor_args():
+    sig = inspect.signature(petrinetv3_petrinetv3Trace_Net.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::petrinetv3trace::transition_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::petrinetv3Trace::Transition)
+def test_petrinetv3_petrinetv3trace_transition_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_petrinetv3Trace_Transition)
 
 
-def test_petrinetv3::petrinetv3trace::transition_constructor_exists():
-    assert callable(petrinetv3::petrinetv3Trace::Transition.__init__)
+def test_petrinetv3_petrinetv3trace_transition_constructor_exists():
+    assert callable(petrinetv3_petrinetv3Trace_Transition.__init__)
 
 
-def test_petrinetv3::petrinetv3trace::transition_constructor_args():
-    sig = inspect.signature(petrinetv3::petrinetv3Trace::Transition.__init__)
+def test_petrinetv3_petrinetv3trace_transition_constructor_args():
+    sig = inspect.signature(petrinetv3_petrinetv3Trace_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::states::place::tokens::value_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::States::Place::tokens::Value)
+def test_petrinetv3trace_states_place_tokens_value_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_States_Place_tokens_Value)
 
 
-def test_petrinetv3trace::states::place::tokens::value_constructor_exists():
-    assert callable(petrinetv3Trace::States::Place::tokens::Value.__init__)
+def test_petrinetv3trace_states_place_tokens_value_constructor_exists():
+    assert callable(petrinetv3Trace_States_Place_tokens_Value.__init__)
 
 
-def test_petrinetv3trace::states::place::tokens::value_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::States::Place::tokens::Value.__init__)
+def test_petrinetv3trace_states_place_tokens_value_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_States_Place_tokens_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -202,16 +202,16 @@ def test_mseoccurrence_constructor_args():
 
 
 
-def test_petrinetv3trace::steps::step_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Step)
+def test_petrinetv3trace_steps_step_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Step)
 
 
-def test_petrinetv3trace::steps::step_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Step.__init__)
+def test_petrinetv3trace_steps_step_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Step.__init__)
 
 
-def test_petrinetv3trace::steps::step_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Step.__init__)
+def test_petrinetv3trace_steps_step_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Step.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -230,58 +230,58 @@ def test_smallstep_constructor_args():
 
 
 
-def test_petrinetv3trace::steps::rootimplicitstep_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::RootImplicitStep)
+def test_petrinetv3trace_steps_rootimplicitstep_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_RootImplicitStep)
 
 
-def test_petrinetv3trace::steps::rootimplicitstep_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::RootImplicitStep.__init__)
+def test_petrinetv3trace_steps_rootimplicitstep_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_RootImplicitStep.__init__)
 
 
-def test_petrinetv3trace::steps::rootimplicitstep_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::RootImplicitStep.__init__)
+def test_petrinetv3trace_steps_rootimplicitstep_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_RootImplicitStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transition::clock::value_is_not_abstract():
-    assert not inspect.isabstract(Transition::clock::Value)
+def test_transition_clock_value_is_not_abstract():
+    assert not inspect.isabstract(Transition_clock_Value)
 
 
-def test_transition::clock::value_constructor_exists():
-    assert callable(Transition::clock::Value.__init__)
+def test_transition_clock_value_constructor_exists():
+    assert callable(Transition_clock_Value.__init__)
 
 
-def test_transition::clock::value_constructor_args():
-    sig = inspect.signature(Transition::clock::Value.__init__)
+def test_transition_clock_value_constructor_args():
+    sig = inspect.signature(Transition_clock_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_place::tokens::value_is_not_abstract():
-    assert not inspect.isabstract(Place::tokens::Value)
+def test_place_tokens_value_is_not_abstract():
+    assert not inspect.isabstract(Place_tokens_Value)
 
 
-def test_place::tokens::value_constructor_exists():
-    assert callable(Place::tokens::Value.__init__)
+def test_place_tokens_value_constructor_exists():
+    assert callable(Place_tokens_Value.__init__)
 
 
-def test_place::tokens::value_constructor_args():
-    sig = inspect.signature(Place::tokens::Value.__init__)
+def test_place_tokens_value_constructor_args():
+    sig = inspect.signature(Place_tokens_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::states::state_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::States::State)
+def test_petrinetv3trace_states_state_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_States_State)
 
 
-def test_petrinetv3trace::states::state_constructor_exists():
-    assert callable(petrinetv3Trace::States::State.__init__)
+def test_petrinetv3trace_states_state_constructor_exists():
+    assert callable(petrinetv3Trace_States_State.__init__)
 
 
-def test_petrinetv3trace::states::state_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::States::State.__init__)
+def test_petrinetv3trace_states_state_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_States_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -300,58 +300,58 @@ def test_bigstep_constructor_args():
 
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Petrinetv3::Net::Run)
+def test_petrinetv3trace_steps_petrinetv3_net_run_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Petrinetv3_Net_Run)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Petrinetv3::Net::Run.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_run_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Petrinetv3_Net_Run.__init__)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Petrinetv3::Net::Run.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_run_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Petrinetv3_Net_Run.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_steps::smallstep_is_not_abstract():
-    assert not inspect.isabstract(Steps::SmallStep)
+def test_steps_smallstep_is_not_abstract():
+    assert not inspect.isabstract(Steps_SmallStep)
 
 
-def test_steps::smallstep_constructor_exists():
-    assert callable(Steps::SmallStep.__init__)
+def test_steps_smallstep_constructor_exists():
+    assert callable(Steps_SmallStep.__init__)
 
 
-def test_steps::smallstep_constructor_args():
-    sig = inspect.signature(Steps::SmallStep.__init__)
+def test_steps_smallstep_constructor_args():
+    sig = inspect.signature(Steps_SmallStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_steps::petrinetv3::net::run::abstractsubstep_is_not_abstract():
-    assert not inspect.isabstract(Steps::Petrinetv3::Net::Run::AbstractSubStep)
+def test_steps_petrinetv3_net_run_abstractsubstep_is_not_abstract():
+    assert not inspect.isabstract(Steps_Petrinetv3_Net_Run_AbstractSubStep)
 
 
-def test_steps::petrinetv3::net::run::abstractsubstep_constructor_exists():
-    assert callable(Steps::Petrinetv3::Net::Run::AbstractSubStep.__init__)
+def test_steps_petrinetv3_net_run_abstractsubstep_constructor_exists():
+    assert callable(Steps_Petrinetv3_Net_Run_AbstractSubStep.__init__)
 
 
-def test_steps::petrinetv3::net::run::abstractsubstep_constructor_args():
-    sig = inspect.signature(Steps::Petrinetv3::Net::Run::AbstractSubStep.__init__)
+def test_steps_petrinetv3_net_run_abstractsubstep_constructor_args():
+    sig = inspect.signature(Steps_Petrinetv3_Net_Run_AbstractSubStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::initialize_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Petrinetv3::Net::Initialize)
+def test_petrinetv3trace_steps_petrinetv3_net_initialize_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Petrinetv3_Net_Initialize)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::initialize_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Petrinetv3::Net::Initialize.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_initialize_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Petrinetv3_Net_Initialize.__init__)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::initialize_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Petrinetv3::Net::Initialize.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_initialize_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Petrinetv3_Net_Initialize.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -384,212 +384,212 @@ def test_step_constructor_args():
 
 
 
-def test_petrinetv3trace::steps::smallstep_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::SmallStep)
+def test_petrinetv3trace_steps_bigstep_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_BigStep)
 
 
-def test_petrinetv3trace::steps::smallstep_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::SmallStep.__init__)
+def test_petrinetv3trace_steps_bigstep_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_BigStep.__init__)
 
 
-def test_petrinetv3trace::steps::smallstep_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::SmallStep.__init__)
+def test_petrinetv3trace_steps_bigstep_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_BigStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::steps::bigstep_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::BigStep)
+def test_petrinetv3trace_steps_smallstep_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_SmallStep)
 
 
-def test_petrinetv3trace::steps::bigstep_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::BigStep.__init__)
+def test_petrinetv3trace_steps_smallstep_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_SmallStep.__init__)
 
 
-def test_petrinetv3trace::steps::bigstep_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::BigStep.__init__)
+def test_petrinetv3trace_steps_smallstep_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_SmallStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::tracedtransition_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::TracedTransition)
+def test_petrinetv3_tracedtransition_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_TracedTransition)
 
 
-def test_petrinetv3::tracedtransition_constructor_exists():
-    assert callable(petrinetv3::TracedTransition.__init__)
+def test_petrinetv3_tracedtransition_constructor_exists():
+    assert callable(petrinetv3_TracedTransition.__init__)
 
 
-def test_petrinetv3::tracedtransition_constructor_args():
-    sig = inspect.signature(petrinetv3::TracedTransition.__init__)
+def test_petrinetv3_tracedtransition_constructor_args():
+    sig = inspect.signature(petrinetv3_TracedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::tracedtoken_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::TracedToken)
+def test_petrinetv3_tracedtoken_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_TracedToken)
 
 
-def test_petrinetv3::tracedtoken_constructor_exists():
-    assert callable(petrinetv3::TracedToken.__init__)
+def test_petrinetv3_tracedtoken_constructor_exists():
+    assert callable(petrinetv3_TracedToken.__init__)
 
 
-def test_petrinetv3::tracedtoken_constructor_args():
-    sig = inspect.signature(petrinetv3::TracedToken.__init__)
+def test_petrinetv3_tracedtoken_constructor_args():
+    sig = inspect.signature(petrinetv3_TracedToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::steps::petrinetv3::transition::fire_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Petrinetv3::Transition::Fire)
+def test_petrinetv3trace_steps_petrinetv3_transition_fire_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Petrinetv3_Transition_Fire)
 
 
-def test_petrinetv3trace::steps::petrinetv3::transition::fire_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Petrinetv3::Transition::Fire.__init__)
+def test_petrinetv3trace_steps_petrinetv3_transition_fire_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Petrinetv3_Transition_Fire.__init__)
 
 
-def test_petrinetv3trace::steps::petrinetv3::transition::fire_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Petrinetv3::Transition::Fire.__init__)
+def test_petrinetv3trace_steps_petrinetv3_transition_fire_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Petrinetv3_Transition_Fire.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::tickenabledtransitions_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions)
+def test_petrinetv3trace_steps_petrinetv3_net_tickenabledtransitions_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::tickenabledtransitions_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_tickenabledtransitions_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions.__init__)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::tickenabledtransitions_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_tickenabledtransitions_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run::implicitstep_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep)
+def test_petrinetv3trace_steps_petrinetv3_net_run_implicitstep_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run::implicitstep_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_run_implicitstep_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep.__init__)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run::implicitstep_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_run_implicitstep_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run::abstractsubstep_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep)
+def test_petrinetv3trace_steps_petrinetv3_net_run_abstractsubstep_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run::abstractsubstep_constructor_exists():
-    assert callable(petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_run_abstractsubstep_constructor_exists():
+    assert callable(petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep.__init__)
 
 
-def test_petrinetv3trace::steps::petrinetv3::net::run::abstractsubstep_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep.__init__)
+def test_petrinetv3trace_steps_petrinetv3_net_run_abstractsubstep_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::net::run::abstractsubstep_is_not_abstract():
-    assert not inspect.isabstract(Petrinetv3::Net::Run::AbstractSubStep)
+def test_petrinetv3_net_run_abstractsubstep_is_not_abstract():
+    assert not inspect.isabstract(Petrinetv3_Net_Run_AbstractSubStep)
 
 
-def test_petrinetv3::net::run::abstractsubstep_constructor_exists():
-    assert callable(Petrinetv3::Net::Run::AbstractSubStep.__init__)
+def test_petrinetv3_net_run_abstractsubstep_constructor_exists():
+    assert callable(Petrinetv3_Net_Run_AbstractSubStep.__init__)
 
 
-def test_petrinetv3::net::run::abstractsubstep_constructor_args():
-    sig = inspect.signature(Petrinetv3::Net::Run::AbstractSubStep.__init__)
+def test_petrinetv3_net_run_abstractsubstep_constructor_args():
+    sig = inspect.signature(Petrinetv3_Net_Run_AbstractSubStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::transition::fire_is_not_abstract():
-    assert not inspect.isabstract(Petrinetv3::Transition::Fire)
+def test_petrinetv3_transition_fire_is_not_abstract():
+    assert not inspect.isabstract(Petrinetv3_Transition_Fire)
 
 
-def test_petrinetv3::transition::fire_constructor_exists():
-    assert callable(Petrinetv3::Transition::Fire.__init__)
+def test_petrinetv3_transition_fire_constructor_exists():
+    assert callable(Petrinetv3_Transition_Fire.__init__)
 
 
-def test_petrinetv3::transition::fire_constructor_args():
-    sig = inspect.signature(Petrinetv3::Transition::Fire.__init__)
+def test_petrinetv3_transition_fire_constructor_args():
+    sig = inspect.signature(Petrinetv3_Transition_Fire.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::net::tickenabledtransitions_is_not_abstract():
-    assert not inspect.isabstract(Petrinetv3::Net::TickEnabledTransitions)
+def test_petrinetv3_net_tickenabledtransitions_is_not_abstract():
+    assert not inspect.isabstract(Petrinetv3_Net_TickEnabledTransitions)
 
 
-def test_petrinetv3::net::tickenabledtransitions_constructor_exists():
-    assert callable(Petrinetv3::Net::TickEnabledTransitions.__init__)
+def test_petrinetv3_net_tickenabledtransitions_constructor_exists():
+    assert callable(Petrinetv3_Net_TickEnabledTransitions.__init__)
 
 
-def test_petrinetv3::net::tickenabledtransitions_constructor_args():
-    sig = inspect.signature(Petrinetv3::Net::TickEnabledTransitions.__init__)
+def test_petrinetv3_net_tickenabledtransitions_constructor_args():
+    sig = inspect.signature(Petrinetv3_Net_TickEnabledTransitions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::net::run_is_not_abstract():
-    assert not inspect.isabstract(Petrinetv3::Net::Run)
+def test_petrinetv3_net_run_is_not_abstract():
+    assert not inspect.isabstract(Petrinetv3_Net_Run)
 
 
-def test_petrinetv3::net::run_constructor_exists():
-    assert callable(Petrinetv3::Net::Run.__init__)
+def test_petrinetv3_net_run_constructor_exists():
+    assert callable(Petrinetv3_Net_Run.__init__)
 
 
-def test_petrinetv3::net::run_constructor_args():
-    sig = inspect.signature(Petrinetv3::Net::Run.__init__)
+def test_petrinetv3_net_run_constructor_args():
+    sig = inspect.signature(Petrinetv3_Net_Run.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::net::initialize_is_not_abstract():
-    assert not inspect.isabstract(Petrinetv3::Net::Initialize)
+def test_petrinetv3_net_initialize_is_not_abstract():
+    assert not inspect.isabstract(Petrinetv3_Net_Initialize)
 
 
-def test_petrinetv3::net::initialize_constructor_exists():
-    assert callable(Petrinetv3::Net::Initialize.__init__)
+def test_petrinetv3_net_initialize_constructor_exists():
+    assert callable(Petrinetv3_Net_Initialize.__init__)
 
 
-def test_petrinetv3::net::initialize_constructor_args():
-    sig = inspect.signature(Petrinetv3::Net::Initialize.__init__)
+def test_petrinetv3_net_initialize_constructor_args():
+    sig = inspect.signature(Petrinetv3_Net_Initialize.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3trace::trace_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3Trace::Trace)
+def test_petrinetv3trace_trace_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3Trace_Trace)
 
 
-def test_petrinetv3trace::trace_constructor_exists():
-    assert callable(petrinetv3Trace::Trace.__init__)
+def test_petrinetv3trace_trace_constructor_exists():
+    assert callable(petrinetv3Trace_Trace.__init__)
 
 
-def test_petrinetv3trace::trace_constructor_args():
-    sig = inspect.signature(petrinetv3Trace::Trace.__init__)
+def test_petrinetv3trace_trace_constructor_args():
+    sig = inspect.signature(petrinetv3Trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::tracedplace_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::TracedPlace)
+def test_petrinetv3_tracedplace_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_TracedPlace)
 
 
-def test_petrinetv3::tracedplace_constructor_exists():
-    assert callable(petrinetv3::TracedPlace.__init__)
+def test_petrinetv3_tracedplace_constructor_exists():
+    assert callable(petrinetv3_TracedPlace.__init__)
 
 
-def test_petrinetv3::tracedplace_constructor_args():
-    sig = inspect.signature(petrinetv3::TracedPlace.__init__)
+def test_petrinetv3_tracedplace_constructor_args():
+    sig = inspect.signature(petrinetv3_TracedPlace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -604,70 +604,70 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petrinetv3Trace::petrinetv3::TracedTransition_strategy = st.builds(
-    petrinetv3Trace::petrinetv3::TracedTransition,
+petrinetv3Trace_petrinetv3_TracedTransition_strategy = st.builds(
+    petrinetv3Trace_petrinetv3_TracedTransition,
 )
-petrinetv3Trace::petrinetv3::TracedToken_strategy = st.builds(
-    petrinetv3Trace::petrinetv3::TracedToken,
+petrinetv3Trace_petrinetv3_TracedToken_strategy = st.builds(
+    petrinetv3Trace_petrinetv3_TracedToken,
 )
-petrinetv3::petrinetv3Trace::Token_strategy = st.builds(
-    petrinetv3::petrinetv3Trace::Token,
+petrinetv3_petrinetv3Trace_Token_strategy = st.builds(
+    petrinetv3_petrinetv3Trace_Token,
 )
-petrinetv3::petrinetv3Trace::Place_strategy = st.builds(
-    petrinetv3::petrinetv3Trace::Place,
+petrinetv3_petrinetv3Trace_Place_strategy = st.builds(
+    petrinetv3_petrinetv3Trace_Place,
 )
-petrinetv3Trace::petrinetv3::TracedPlace_strategy = st.builds(
-    petrinetv3Trace::petrinetv3::TracedPlace,
+petrinetv3Trace_petrinetv3_TracedPlace_strategy = st.builds(
+    petrinetv3Trace_petrinetv3_TracedPlace,
 )
-petrinetv3Trace::States::Transition::clock::Value_strategy = st.builds(
-    petrinetv3Trace::States::Transition::clock::Value,
+petrinetv3Trace_States_Transition_clock_Value_strategy = st.builds(
+    petrinetv3Trace_States_Transition_clock_Value,
     clock=
         st.integers()
 )
-petrinetv3::petrinetv3Trace::Net_strategy = st.builds(
-    petrinetv3::petrinetv3Trace::Net,
+petrinetv3_petrinetv3Trace_Net_strategy = st.builds(
+    petrinetv3_petrinetv3Trace_Net,
 )
-petrinetv3::petrinetv3Trace::Transition_strategy = st.builds(
-    petrinetv3::petrinetv3Trace::Transition,
+petrinetv3_petrinetv3Trace_Transition_strategy = st.builds(
+    petrinetv3_petrinetv3Trace_Transition,
 )
-petrinetv3Trace::States::Place::tokens::Value_strategy = st.builds(
-    petrinetv3Trace::States::Place::tokens::Value,
+petrinetv3Trace_States_Place_tokens_Value_strategy = st.builds(
+    petrinetv3Trace_States_Place_tokens_Value,
 )
 MSEOccurrence_strategy = st.builds(
     MSEOccurrence,
 )
-petrinetv3Trace::Steps::Step_strategy = st.builds(
-    petrinetv3Trace::Steps::Step,
+petrinetv3Trace_Steps_Step_strategy = st.builds(
+    petrinetv3Trace_Steps_Step,
 )
 SmallStep_strategy = st.builds(
     SmallStep,
 )
-petrinetv3Trace::Steps::RootImplicitStep_strategy = st.builds(
-    petrinetv3Trace::Steps::RootImplicitStep,
+petrinetv3Trace_Steps_RootImplicitStep_strategy = st.builds(
+    petrinetv3Trace_Steps_RootImplicitStep,
 )
-Transition::clock::Value_strategy = st.builds(
-    Transition::clock::Value,
+Transition_clock_Value_strategy = st.builds(
+    Transition_clock_Value,
 )
-Place::tokens::Value_strategy = st.builds(
-    Place::tokens::Value,
+Place_tokens_Value_strategy = st.builds(
+    Place_tokens_Value,
 )
-petrinetv3Trace::States::State_strategy = st.builds(
-    petrinetv3Trace::States::State,
+petrinetv3Trace_States_State_strategy = st.builds(
+    petrinetv3Trace_States_State,
 )
 BigStep_strategy = st.builds(
     BigStep,
 )
-petrinetv3Trace::Steps::Petrinetv3::Net::Run_strategy = st.builds(
-    petrinetv3Trace::Steps::Petrinetv3::Net::Run,
+petrinetv3Trace_Steps_Petrinetv3_Net_Run_strategy = st.builds(
+    petrinetv3Trace_Steps_Petrinetv3_Net_Run,
 )
-Steps::SmallStep_strategy = st.builds(
-    Steps::SmallStep,
+Steps_SmallStep_strategy = st.builds(
+    Steps_SmallStep,
 )
-Steps::Petrinetv3::Net::Run::AbstractSubStep_strategy = st.builds(
-    Steps::Petrinetv3::Net::Run::AbstractSubStep,
+Steps_Petrinetv3_Net_Run_AbstractSubStep_strategy = st.builds(
+    Steps_Petrinetv3_Net_Run_AbstractSubStep,
 )
-petrinetv3Trace::Steps::Petrinetv3::Net::Initialize_strategy = st.builds(
-    petrinetv3Trace::Steps::Petrinetv3::Net::Initialize,
+petrinetv3Trace_Steps_Petrinetv3_Net_Initialize_strategy = st.builds(
+    petrinetv3Trace_Steps_Petrinetv3_Net_Initialize,
 )
 State_strategy = st.builds(
     State,
@@ -675,167 +675,164 @@ State_strategy = st.builds(
 Step_strategy = st.builds(
     Step,
 )
-petrinetv3Trace::Steps::SmallStep_strategy = st.builds(
-    petrinetv3Trace::Steps::SmallStep,
+petrinetv3Trace_Steps_BigStep_strategy = st.builds(
+    petrinetv3Trace_Steps_BigStep,
 )
-petrinetv3Trace::Steps::BigStep_strategy = st.builds(
-    petrinetv3Trace::Steps::BigStep,
+petrinetv3Trace_Steps_SmallStep_strategy = st.builds(
+    petrinetv3Trace_Steps_SmallStep,
 )
-petrinetv3::TracedTransition_strategy = st.builds(
-    petrinetv3::TracedTransition,
+petrinetv3_TracedTransition_strategy = st.builds(
+    petrinetv3_TracedTransition,
 )
-petrinetv3::TracedToken_strategy = st.builds(
-    petrinetv3::TracedToken,
+petrinetv3_TracedToken_strategy = st.builds(
+    petrinetv3_TracedToken,
 )
-petrinetv3Trace::Steps::Petrinetv3::Transition::Fire_strategy = st.builds(
-    petrinetv3Trace::Steps::Petrinetv3::Transition::Fire,
+petrinetv3Trace_Steps_Petrinetv3_Transition_Fire_strategy = st.builds(
+    petrinetv3Trace_Steps_Petrinetv3_Transition_Fire,
 )
-petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions_strategy = st.builds(
-    petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions,
+petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions_strategy = st.builds(
+    petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions,
 )
-petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep_strategy = st.builds(
-    petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep,
+petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep_strategy = st.builds(
+    petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep,
 )
-petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep_strategy = st.builds(
-    petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep,
+petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep_strategy = st.builds(
+    petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep,
 )
-Petrinetv3::Net::Run::AbstractSubStep_strategy = st.builds(
-    Petrinetv3::Net::Run::AbstractSubStep,
+Petrinetv3_Net_Run_AbstractSubStep_strategy = st.builds(
+    Petrinetv3_Net_Run_AbstractSubStep,
 )
-Petrinetv3::Transition::Fire_strategy = st.builds(
-    Petrinetv3::Transition::Fire,
+Petrinetv3_Transition_Fire_strategy = st.builds(
+    Petrinetv3_Transition_Fire,
 )
-Petrinetv3::Net::TickEnabledTransitions_strategy = st.builds(
-    Petrinetv3::Net::TickEnabledTransitions,
+Petrinetv3_Net_TickEnabledTransitions_strategy = st.builds(
+    Petrinetv3_Net_TickEnabledTransitions,
 )
-Petrinetv3::Net::Run_strategy = st.builds(
-    Petrinetv3::Net::Run,
+Petrinetv3_Net_Run_strategy = st.builds(
+    Petrinetv3_Net_Run,
 )
-Petrinetv3::Net::Initialize_strategy = st.builds(
-    Petrinetv3::Net::Initialize,
+Petrinetv3_Net_Initialize_strategy = st.builds(
+    Petrinetv3_Net_Initialize,
 )
-petrinetv3Trace::Trace_strategy = st.builds(
-    petrinetv3Trace::Trace,
+petrinetv3Trace_Trace_strategy = st.builds(
+    petrinetv3Trace_Trace,
 )
-petrinetv3::TracedPlace_strategy = st.builds(
-    petrinetv3::TracedPlace,
+petrinetv3_TracedPlace_strategy = st.builds(
+    petrinetv3_TracedPlace,
 )
 
-@given(instance=petrinetv3Trace::petrinetv3::TracedTransition_strategy)
+@given(instance=petrinetv3Trace_petrinetv3_TracedTransition_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::petrinetv3::tracedtransition_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::petrinetv3::TracedTransition)
+def test_petrinetv3trace_petrinetv3_tracedtransition_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_petrinetv3_TracedTransition)
 
-@given(instance=petrinetv3Trace::petrinetv3::TracedToken_strategy)
+@given(instance=petrinetv3Trace_petrinetv3_TracedToken_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::petrinetv3::tracedtoken_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::petrinetv3::TracedToken)
+def test_petrinetv3trace_petrinetv3_tracedtoken_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_petrinetv3_TracedToken)
 
-@given(instance=petrinetv3::petrinetv3Trace::Token_strategy)
+@given(instance=petrinetv3_petrinetv3Trace_Token_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::petrinetv3trace::token_instantiation(instance):
-    assert isinstance(instance, petrinetv3::petrinetv3Trace::Token)
+def test_petrinetv3_petrinetv3trace_token_instantiation(instance):
+    assert isinstance(instance, petrinetv3_petrinetv3Trace_Token)
 
-@given(instance=petrinetv3::petrinetv3Trace::Place_strategy)
+@given(instance=petrinetv3_petrinetv3Trace_Place_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::petrinetv3trace::place_instantiation(instance):
-    assert isinstance(instance, petrinetv3::petrinetv3Trace::Place)
+def test_petrinetv3_petrinetv3trace_place_instantiation(instance):
+    assert isinstance(instance, petrinetv3_petrinetv3Trace_Place)
 
-@given(instance=petrinetv3Trace::petrinetv3::TracedPlace_strategy)
+@given(instance=petrinetv3Trace_petrinetv3_TracedPlace_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::petrinetv3::tracedplace_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::petrinetv3::TracedPlace)
+def test_petrinetv3trace_petrinetv3_tracedplace_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_petrinetv3_TracedPlace)
 
-@given(instance=petrinetv3Trace::States::Transition::clock::Value_strategy)
+@given(instance=petrinetv3Trace_States_Transition_clock_Value_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::states::transition::clock::value_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::States::Transition::clock::Value)
-
-@given(instance=petrinetv3Trace::States::Transition::clock::Value_strategy)
-def test_petrinetv3trace::states::transition::clock::value_clock_type(instance):
-    assert isinstance(instance.clock, int)
+def test_petrinetv3trace_states_transition_clock_value_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_States_Transition_clock_Value)
 
 
-@given(instance=petrinetv3Trace::States::Transition::clock::Value_strategy)
-def test_petrinetv3trace::states::transition::clock::value_clock_setter(instance):
+
+@given(instance=petrinetv3Trace_States_Transition_clock_Value_strategy)
+def test_petrinetv3trace_states_transition_clock_value_clock_setter(instance):
     original = instance.clock
     instance.clock = original
     assert instance.clock == original
 
-@given(instance=petrinetv3::petrinetv3Trace::Net_strategy)
+@given(instance=petrinetv3_petrinetv3Trace_Net_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::petrinetv3trace::net_instantiation(instance):
-    assert isinstance(instance, petrinetv3::petrinetv3Trace::Net)
+def test_petrinetv3_petrinetv3trace_net_instantiation(instance):
+    assert isinstance(instance, petrinetv3_petrinetv3Trace_Net)
 
-@given(instance=petrinetv3::petrinetv3Trace::Transition_strategy)
+@given(instance=petrinetv3_petrinetv3Trace_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::petrinetv3trace::transition_instantiation(instance):
-    assert isinstance(instance, petrinetv3::petrinetv3Trace::Transition)
+def test_petrinetv3_petrinetv3trace_transition_instantiation(instance):
+    assert isinstance(instance, petrinetv3_petrinetv3Trace_Transition)
 
-@given(instance=petrinetv3Trace::States::Place::tokens::Value_strategy)
+@given(instance=petrinetv3Trace_States_Place_tokens_Value_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::states::place::tokens::value_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::States::Place::tokens::Value)
+def test_petrinetv3trace_states_place_tokens_value_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_States_Place_tokens_Value)
 
 @given(instance=MSEOccurrence_strategy)
 @settings(max_examples=50)
 def test_mseoccurrence_instantiation(instance):
     assert isinstance(instance, MSEOccurrence)
 
-@given(instance=petrinetv3Trace::Steps::Step_strategy)
+@given(instance=petrinetv3Trace_Steps_Step_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::step_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Step)
+def test_petrinetv3trace_steps_step_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Step)
 
 @given(instance=SmallStep_strategy)
 @settings(max_examples=50)
 def test_smallstep_instantiation(instance):
     assert isinstance(instance, SmallStep)
 
-@given(instance=petrinetv3Trace::Steps::RootImplicitStep_strategy)
+@given(instance=petrinetv3Trace_Steps_RootImplicitStep_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::rootimplicitstep_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::RootImplicitStep)
+def test_petrinetv3trace_steps_rootimplicitstep_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_RootImplicitStep)
 
-@given(instance=Transition::clock::Value_strategy)
+@given(instance=Transition_clock_Value_strategy)
 @settings(max_examples=50)
-def test_transition::clock::value_instantiation(instance):
-    assert isinstance(instance, Transition::clock::Value)
+def test_transition_clock_value_instantiation(instance):
+    assert isinstance(instance, Transition_clock_Value)
 
-@given(instance=Place::tokens::Value_strategy)
+@given(instance=Place_tokens_Value_strategy)
 @settings(max_examples=50)
-def test_place::tokens::value_instantiation(instance):
-    assert isinstance(instance, Place::tokens::Value)
+def test_place_tokens_value_instantiation(instance):
+    assert isinstance(instance, Place_tokens_Value)
 
-@given(instance=petrinetv3Trace::States::State_strategy)
+@given(instance=petrinetv3Trace_States_State_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::states::state_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::States::State)
+def test_petrinetv3trace_states_state_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_States_State)
 
 @given(instance=BigStep_strategy)
 @settings(max_examples=50)
 def test_bigstep_instantiation(instance):
     assert isinstance(instance, BigStep)
 
-@given(instance=petrinetv3Trace::Steps::Petrinetv3::Net::Run_strategy)
+@given(instance=petrinetv3Trace_Steps_Petrinetv3_Net_Run_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::petrinetv3::net::run_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Petrinetv3::Net::Run)
+def test_petrinetv3trace_steps_petrinetv3_net_run_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Petrinetv3_Net_Run)
 
-@given(instance=Steps::SmallStep_strategy)
+@given(instance=Steps_SmallStep_strategy)
 @settings(max_examples=50)
-def test_steps::smallstep_instantiation(instance):
-    assert isinstance(instance, Steps::SmallStep)
+def test_steps_smallstep_instantiation(instance):
+    assert isinstance(instance, Steps_SmallStep)
 
-@given(instance=Steps::Petrinetv3::Net::Run::AbstractSubStep_strategy)
+@given(instance=Steps_Petrinetv3_Net_Run_AbstractSubStep_strategy)
 @settings(max_examples=50)
-def test_steps::petrinetv3::net::run::abstractsubstep_instantiation(instance):
-    assert isinstance(instance, Steps::Petrinetv3::Net::Run::AbstractSubStep)
+def test_steps_petrinetv3_net_run_abstractsubstep_instantiation(instance):
+    assert isinstance(instance, Steps_Petrinetv3_Net_Run_AbstractSubStep)
 
-@given(instance=petrinetv3Trace::Steps::Petrinetv3::Net::Initialize_strategy)
+@given(instance=petrinetv3Trace_Steps_Petrinetv3_Net_Initialize_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::petrinetv3::net::initialize_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Petrinetv3::Net::Initialize)
+def test_petrinetv3trace_steps_petrinetv3_net_initialize_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Petrinetv3_Net_Initialize)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
@@ -847,77 +844,77 @@ def test_state_instantiation(instance):
 def test_step_instantiation(instance):
     assert isinstance(instance, Step)
 
-@given(instance=petrinetv3Trace::Steps::SmallStep_strategy)
+@given(instance=petrinetv3Trace_Steps_BigStep_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::smallstep_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::SmallStep)
+def test_petrinetv3trace_steps_bigstep_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_BigStep)
 
-@given(instance=petrinetv3Trace::Steps::BigStep_strategy)
+@given(instance=petrinetv3Trace_Steps_SmallStep_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::bigstep_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::BigStep)
+def test_petrinetv3trace_steps_smallstep_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_SmallStep)
 
-@given(instance=petrinetv3::TracedTransition_strategy)
+@given(instance=petrinetv3_TracedTransition_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::tracedtransition_instantiation(instance):
-    assert isinstance(instance, petrinetv3::TracedTransition)
+def test_petrinetv3_tracedtransition_instantiation(instance):
+    assert isinstance(instance, petrinetv3_TracedTransition)
 
-@given(instance=petrinetv3::TracedToken_strategy)
+@given(instance=petrinetv3_TracedToken_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::tracedtoken_instantiation(instance):
-    assert isinstance(instance, petrinetv3::TracedToken)
+def test_petrinetv3_tracedtoken_instantiation(instance):
+    assert isinstance(instance, petrinetv3_TracedToken)
 
-@given(instance=petrinetv3Trace::Steps::Petrinetv3::Transition::Fire_strategy)
+@given(instance=petrinetv3Trace_Steps_Petrinetv3_Transition_Fire_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::petrinetv3::transition::fire_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Petrinetv3::Transition::Fire)
+def test_petrinetv3trace_steps_petrinetv3_transition_fire_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Petrinetv3_Transition_Fire)
 
-@given(instance=petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions_strategy)
+@given(instance=petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::petrinetv3::net::tickenabledtransitions_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Petrinetv3::Net::TickEnabledTransitions)
+def test_petrinetv3trace_steps_petrinetv3_net_tickenabledtransitions_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Petrinetv3_Net_TickEnabledTransitions)
 
-@given(instance=petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep_strategy)
+@given(instance=petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::petrinetv3::net::run::implicitstep_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Petrinetv3::Net::Run::ImplicitStep)
+def test_petrinetv3trace_steps_petrinetv3_net_run_implicitstep_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Petrinetv3_Net_Run_ImplicitStep)
 
-@given(instance=petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep_strategy)
+@given(instance=petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::steps::petrinetv3::net::run::abstractsubstep_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Steps::Petrinetv3::Net::Run::AbstractSubStep)
+def test_petrinetv3trace_steps_petrinetv3_net_run_abstractsubstep_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Steps_Petrinetv3_Net_Run_AbstractSubStep)
 
-@given(instance=Petrinetv3::Net::Run::AbstractSubStep_strategy)
+@given(instance=Petrinetv3_Net_Run_AbstractSubStep_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::net::run::abstractsubstep_instantiation(instance):
-    assert isinstance(instance, Petrinetv3::Net::Run::AbstractSubStep)
+def test_petrinetv3_net_run_abstractsubstep_instantiation(instance):
+    assert isinstance(instance, Petrinetv3_Net_Run_AbstractSubStep)
 
-@given(instance=Petrinetv3::Transition::Fire_strategy)
+@given(instance=Petrinetv3_Transition_Fire_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::transition::fire_instantiation(instance):
-    assert isinstance(instance, Petrinetv3::Transition::Fire)
+def test_petrinetv3_transition_fire_instantiation(instance):
+    assert isinstance(instance, Petrinetv3_Transition_Fire)
 
-@given(instance=Petrinetv3::Net::TickEnabledTransitions_strategy)
+@given(instance=Petrinetv3_Net_TickEnabledTransitions_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::net::tickenabledtransitions_instantiation(instance):
-    assert isinstance(instance, Petrinetv3::Net::TickEnabledTransitions)
+def test_petrinetv3_net_tickenabledtransitions_instantiation(instance):
+    assert isinstance(instance, Petrinetv3_Net_TickEnabledTransitions)
 
-@given(instance=Petrinetv3::Net::Run_strategy)
+@given(instance=Petrinetv3_Net_Run_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::net::run_instantiation(instance):
-    assert isinstance(instance, Petrinetv3::Net::Run)
+def test_petrinetv3_net_run_instantiation(instance):
+    assert isinstance(instance, Petrinetv3_Net_Run)
 
-@given(instance=Petrinetv3::Net::Initialize_strategy)
+@given(instance=Petrinetv3_Net_Initialize_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::net::initialize_instantiation(instance):
-    assert isinstance(instance, Petrinetv3::Net::Initialize)
+def test_petrinetv3_net_initialize_instantiation(instance):
+    assert isinstance(instance, Petrinetv3_Net_Initialize)
 
-@given(instance=petrinetv3Trace::Trace_strategy)
+@given(instance=petrinetv3Trace_Trace_strategy)
 @settings(max_examples=50)
-def test_petrinetv3trace::trace_instantiation(instance):
-    assert isinstance(instance, petrinetv3Trace::Trace)
+def test_petrinetv3trace_trace_instantiation(instance):
+    assert isinstance(instance, petrinetv3Trace_Trace)
 
-@given(instance=petrinetv3::TracedPlace_strategy)
+@given(instance=petrinetv3_TracedPlace_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::tracedplace_instantiation(instance):
-    assert isinstance(instance, petrinetv3::TracedPlace)
+def test_petrinetv3_tracedplace_instantiation(instance):
+    assert isinstance(instance, petrinetv3_TracedPlace)

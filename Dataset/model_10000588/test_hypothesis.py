@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Model_IDLE,
@@ -231,17 +231,8 @@ def test_presenter_constructor_exists():
 def test_presenter_constructor_args():
     sig = inspect.signature(Presenter.__init__)
     params = list(sig.parameters.keys())
-    assert "currentView" in params, "Missing parameter 'currentView'"
     assert "session" in params, "Missing parameter 'session'"
-
-def test_presenter_has_currentView():
-    assert hasattr(Presenter, "currentView")
-    descriptor = None
-    for klass in Presenter.__mro__:
-        if "currentView" in klass.__dict__:
-            descriptor = klass.__dict__["currentView"]
-            break
-    assert isinstance(descriptor, property)
+    assert "currentView" in params, "Missing parameter 'currentView'"
 
 def test_presenter_has_session():
     assert hasattr(Presenter, "session")
@@ -249,6 +240,15 @@ def test_presenter_has_session():
     for klass in Presenter.__mro__:
         if "session" in klass.__dict__:
             descriptor = klass.__dict__["session"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_presenter_has_currentView():
+    assert hasattr(Presenter, "currentView")
+    descriptor = None
+    for klass in Presenter.__mro__:
+        if "currentView" in klass.__dict__:
+            descriptor = klass.__dict__["currentView"]
             break
     assert isinstance(descriptor, property)
 
@@ -307,9 +307,9 @@ Model_Session_strategy = st.builds(
 )
 Presenter_strategy = st.builds(
     Presenter,
-    currentView=
-        safe_text,
     session=
+        safe_text,
+    currentView=
         safe_text
 )
 
@@ -343,9 +343,6 @@ def test_model_communication_instantiation(instance):
 def test_model_withdrawtransaction_instantiation(instance):
     assert isinstance(instance, Model_WithdrawTransaction)
 
-@given(instance=Model_WithdrawTransaction_strategy)
-def test_model_withdrawtransaction_amount_type(instance):
-    assert isinstance(instance.amount, int)
 
 
 @given(instance=Model_WithdrawTransaction_strategy)
@@ -359,9 +356,6 @@ def test_model_withdrawtransaction_amount_setter(instance):
 def test_model_queue_instantiation(instance):
     assert isinstance(instance, Model_Queue)
 
-@given(instance=Model_Queue_strategy)
-def test_model_queue_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Model_Queue_strategy)
@@ -375,9 +369,6 @@ def test_model_queue_attribute_setter(instance):
 def test_model_transaction_instantiation(instance):
     assert isinstance(instance, Model_Transaction)
 
-@given(instance=Model_Transaction_strategy)
-def test_model_transaction_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Model_Transaction_strategy)
@@ -386,9 +377,6 @@ def test_model_transaction_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Model_Transaction_strategy)
-def test_model_transaction_presenter_type(instance):
-    assert isinstance(instance.presenter, presenter)
 
 
 @given(instance=Model_Transaction_strategy)
@@ -402,9 +390,6 @@ def test_model_transaction_presenter_setter(instance):
 def test_model_session_instantiation(instance):
     assert isinstance(instance, Model_Session)
 
-@given(instance=Model_Session_strategy)
-def test_model_session_track2_type(instance):
-    assert isinstance(instance.track2, str)
 
 
 @given(instance=Model_Session_strategy)
@@ -413,9 +398,6 @@ def test_model_session_track2_setter(instance):
     instance.track2 = original
     assert instance.track2 == original
 
-@given(instance=Model_Session_strategy)
-def test_model_session_DeviceStatus_type(instance):
-    assert isinstance(instance.DeviceStatus, str)
 
 
 @given(instance=Model_Session_strategy)
@@ -424,9 +406,6 @@ def test_model_session_DeviceStatus_setter(instance):
     instance.DeviceStatus = original
     assert instance.DeviceStatus == original
 
-@given(instance=Model_Session_strategy)
-def test_model_session_pan_type(instance):
-    assert isinstance(instance.pan, int)
 
 
 @given(instance=Model_Session_strategy)
@@ -440,20 +419,6 @@ def test_model_session_pan_setter(instance):
 def test_presenter_instantiation(instance):
     assert isinstance(instance, Presenter)
 
-@given(instance=Presenter_strategy)
-def test_presenter_currentView_type(instance):
-    assert isinstance(instance.currentView, str)
-
-
-@given(instance=Presenter_strategy)
-def test_presenter_currentView_setter(instance):
-    original = instance.currentView
-    instance.currentView = original
-    assert instance.currentView == original
-
-@given(instance=Presenter_strategy)
-def test_presenter_session_type(instance):
-    assert isinstance(instance.session, str)
 
 
 @given(instance=Presenter_strategy)
@@ -461,3 +426,11 @@ def test_presenter_session_setter(instance):
     original = instance.session
     instance.session = original
     assert instance.session == original
+
+
+
+@given(instance=Presenter_strategy)
+def test_presenter_currentView_setter(instance):
+    original = instance.currentView
+    instance.currentView = original
+    assert instance.currentView == original

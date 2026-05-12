@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloWorld::KeywordsExample,
-    helloWorld::Greeting,
-    helloWorld::Model,
+from python_code import (
+    helloWorld_KeywordsExample,
+    helloWorld_Greeting,
+    helloWorld_Model,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_helloworld::keywordsexample_is_not_abstract():
-    assert not inspect.isabstract(helloWorld::KeywordsExample)
+def test_helloworld_keywordsexample_is_not_abstract():
+    assert not inspect.isabstract(helloWorld_KeywordsExample)
 
 
-def test_helloworld::keywordsexample_constructor_exists():
-    assert callable(helloWorld::KeywordsExample.__init__)
+def test_helloworld_keywordsexample_constructor_exists():
+    assert callable(helloWorld_KeywordsExample.__init__)
 
 
-def test_helloworld::keywordsexample_constructor_args():
-    sig = inspect.signature(helloWorld::KeywordsExample.__init__)
+def test_helloworld_keywordsexample_constructor_args():
+    sig = inspect.signature(helloWorld_KeywordsExample.__init__)
     params = list(sig.parameters.keys())
     assert "option" in params, "Missing parameter 'option'"
 
-def test_helloworld::keywordsexample_has_option():
-    assert hasattr(helloWorld::KeywordsExample, "option")
+def test_helloworld_keywordsexample_has_option():
+    assert hasattr(helloWorld_KeywordsExample, "option")
     descriptor = None
-    for klass in helloWorld::KeywordsExample.__mro__:
+    for klass in helloWorld_KeywordsExample.__mro__:
         if "option" in klass.__dict__:
             descriptor = klass.__dict__["option"]
             break
@@ -41,23 +41,23 @@ def test_helloworld::keywordsexample_has_option():
 
 
 
-def test_helloworld::greeting_is_not_abstract():
-    assert not inspect.isabstract(helloWorld::Greeting)
+def test_helloworld_greeting_is_not_abstract():
+    assert not inspect.isabstract(helloWorld_Greeting)
 
 
-def test_helloworld::greeting_constructor_exists():
-    assert callable(helloWorld::Greeting.__init__)
+def test_helloworld_greeting_constructor_exists():
+    assert callable(helloWorld_Greeting.__init__)
 
 
-def test_helloworld::greeting_constructor_args():
-    sig = inspect.signature(helloWorld::Greeting.__init__)
+def test_helloworld_greeting_constructor_args():
+    sig = inspect.signature(helloWorld_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloworld::greeting_has_name():
-    assert hasattr(helloWorld::Greeting, "name")
+def test_helloworld_greeting_has_name():
+    assert hasattr(helloWorld_Greeting, "name")
     descriptor = None
-    for klass in helloWorld::Greeting.__mro__:
+    for klass in helloWorld_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,16 +65,16 @@ def test_helloworld::greeting_has_name():
 
 
 
-def test_helloworld::model_is_not_abstract():
-    assert not inspect.isabstract(helloWorld::Model)
+def test_helloworld_model_is_not_abstract():
+    assert not inspect.isabstract(helloWorld_Model)
 
 
-def test_helloworld::model_constructor_exists():
-    assert callable(helloWorld::Model.__init__)
+def test_helloworld_model_constructor_exists():
+    assert callable(helloWorld_Model.__init__)
 
 
-def test_helloworld::model_constructor_args():
-    sig = inspect.signature(helloWorld::Model.__init__)
+def test_helloworld_model_constructor_args():
+    sig = inspect.signature(helloWorld_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloWorld::KeywordsExample_strategy = st.builds(
-    helloWorld::KeywordsExample,
+helloWorld_KeywordsExample_strategy = st.builds(
+    helloWorld_KeywordsExample,
     option=
         safe_text
 )
-helloWorld::Greeting_strategy = st.builds(
-    helloWorld::Greeting,
+helloWorld_Greeting_strategy = st.builds(
+    helloWorld_Greeting,
     name=
         safe_text
 )
-helloWorld::Model_strategy = st.builds(
-    helloWorld::Model,
+helloWorld_Model_strategy = st.builds(
+    helloWorld_Model,
 )
 
-@given(instance=helloWorld::KeywordsExample_strategy)
+@given(instance=helloWorld_KeywordsExample_strategy)
 @settings(max_examples=50)
-def test_helloworld::keywordsexample_instantiation(instance):
-    assert isinstance(instance, helloWorld::KeywordsExample)
-
-@given(instance=helloWorld::KeywordsExample_strategy)
-def test_helloworld::keywordsexample_option_type(instance):
-    assert isinstance(instance.option, str)
+def test_helloworld_keywordsexample_instantiation(instance):
+    assert isinstance(instance, helloWorld_KeywordsExample)
 
 
-@given(instance=helloWorld::KeywordsExample_strategy)
-def test_helloworld::keywordsexample_option_setter(instance):
+
+@given(instance=helloWorld_KeywordsExample_strategy)
+def test_helloworld_keywordsexample_option_setter(instance):
     original = instance.option
     instance.option = original
     assert instance.option == original
 
-@given(instance=helloWorld::Greeting_strategy)
+@given(instance=helloWorld_Greeting_strategy)
 @settings(max_examples=50)
-def test_helloworld::greeting_instantiation(instance):
-    assert isinstance(instance, helloWorld::Greeting)
-
-@given(instance=helloWorld::Greeting_strategy)
-def test_helloworld::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloworld_greeting_instantiation(instance):
+    assert isinstance(instance, helloWorld_Greeting)
 
 
-@given(instance=helloWorld::Greeting_strategy)
-def test_helloworld::greeting_name_setter(instance):
+
+@given(instance=helloWorld_Greeting_strategy)
+def test_helloworld_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloWorld::Model_strategy)
+@given(instance=helloWorld_Model_strategy)
 @settings(max_examples=50)
-def test_helloworld::model_instantiation(instance):
-    assert isinstance(instance, helloWorld::Model)
+def test_helloworld_model_instantiation(instance):
+    assert isinstance(instance, helloWorld_Model)

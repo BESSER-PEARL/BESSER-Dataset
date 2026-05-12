@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sample::SampleClassInterface,
+from python_code import (
+    sample_SampleClassInterface,
     SampleClassInterface,
-    sample::SampleClassA,
-    sample::SampleClassB,
-    sample::SampleClassC,
+    sample_SampleClassA,
+    sample_SampleClassB,
+    sample_SampleClassC,
     Tristate,
 )
 
@@ -20,16 +20,16 @@ from classes import (
 
 
 
-def test_sample::sampleclassinterface_is_not_abstract():
-    assert not inspect.isabstract(sample::SampleClassInterface)
+def test_sample_sampleclassinterface_is_not_abstract():
+    assert not inspect.isabstract(sample_SampleClassInterface)
 
 
-def test_sample::sampleclassinterface_constructor_exists():
-    assert callable(sample::SampleClassInterface.__init__)
+def test_sample_sampleclassinterface_constructor_exists():
+    assert callable(sample_SampleClassInterface.__init__)
 
 
-def test_sample::sampleclassinterface_constructor_args():
-    sig = inspect.signature(sample::SampleClassInterface.__init__)
+def test_sample_sampleclassinterface_constructor_args():
+    sig = inspect.signature(sample_SampleClassInterface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -48,23 +48,23 @@ def test_sampleclassinterface_constructor_args():
 
 
 
-def test_sample::sampleclassa_is_not_abstract():
-    assert not inspect.isabstract(sample::SampleClassA)
+def test_sample_sampleclassa_is_not_abstract():
+    assert not inspect.isabstract(sample_SampleClassA)
 
 
-def test_sample::sampleclassa_constructor_exists():
-    assert callable(sample::SampleClassA.__init__)
+def test_sample_sampleclassa_constructor_exists():
+    assert callable(sample_SampleClassA.__init__)
 
 
-def test_sample::sampleclassa_constructor_args():
-    sig = inspect.signature(sample::SampleClassA.__init__)
+def test_sample_sampleclassa_constructor_args():
+    sig = inspect.signature(sample_SampleClassA.__init__)
     params = list(sig.parameters.keys())
     assert "sampleAttribute" in params, "Missing parameter 'sampleAttribute'"
 
-def test_sample::sampleclassa_has_sampleAttribute():
-    assert hasattr(sample::SampleClassA, "sampleAttribute")
+def test_sample_sampleclassa_has_sampleAttribute():
+    assert hasattr(sample_SampleClassA, "sampleAttribute")
     descriptor = None
-    for klass in sample::SampleClassA.__mro__:
+    for klass in sample_SampleClassA.__mro__:
         if "sampleAttribute" in klass.__dict__:
             descriptor = klass.__dict__["sampleAttribute"]
             break
@@ -72,30 +72,30 @@ def test_sample::sampleclassa_has_sampleAttribute():
 
 
 
-def test_sample::sampleclassb_is_not_abstract():
-    assert not inspect.isabstract(sample::SampleClassB)
+def test_sample_sampleclassb_is_not_abstract():
+    assert not inspect.isabstract(sample_SampleClassB)
 
 
-def test_sample::sampleclassb_constructor_exists():
-    assert callable(sample::SampleClassB.__init__)
+def test_sample_sampleclassb_constructor_exists():
+    assert callable(sample_SampleClassB.__init__)
 
 
-def test_sample::sampleclassb_constructor_args():
-    sig = inspect.signature(sample::SampleClassB.__init__)
+def test_sample_sampleclassb_constructor_args():
+    sig = inspect.signature(sample_SampleClassB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sample::sampleclassc_is_not_abstract():
-    assert not inspect.isabstract(sample::SampleClassC)
+def test_sample_sampleclassc_is_not_abstract():
+    assert not inspect.isabstract(sample_SampleClassC)
 
 
-def test_sample::sampleclassc_constructor_exists():
-    assert callable(sample::SampleClassC.__init__)
+def test_sample_sampleclassc_constructor_exists():
+    assert callable(sample_SampleClassC.__init__)
 
 
-def test_sample::sampleclassc_constructor_args():
-    sig = inspect.signature(sample::SampleClassC.__init__)
+def test_sample_sampleclassc_constructor_args():
+    sig = inspect.signature(sample_SampleClassC.__init__)
     params = list(sig.parameters.keys())
 
 def test_tristate_exists():
@@ -106,8 +106,8 @@ def test_tristate_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Tristate]
     expected_literals = [
-        "UNDEFINED",
         "TRUE",
+        "UNDEFINED",
         "FALSE",
     ]
     # Check that all expected literals exist
@@ -126,28 +126,28 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sample::SampleClassInterface_strategy = st.builds(
-    sample::SampleClassInterface,
+sample_SampleClassInterface_strategy = st.builds(
+    sample_SampleClassInterface,
 )
 SampleClassInterface_strategy = st.builds(
     SampleClassInterface,
 )
-sample::SampleClassA_strategy = st.builds(
-    sample::SampleClassA,
+sample_SampleClassA_strategy = st.builds(
+    sample_SampleClassA,
     sampleAttribute=
         safe_text
 )
-sample::SampleClassB_strategy = st.builds(
-    sample::SampleClassB,
+sample_SampleClassB_strategy = st.builds(
+    sample_SampleClassB,
 )
-sample::SampleClassC_strategy = st.builds(
-    sample::SampleClassC,
+sample_SampleClassC_strategy = st.builds(
+    sample_SampleClassC,
 )
 
-@given(instance=sample::SampleClassInterface_strategy)
+@given(instance=sample_SampleClassInterface_strategy)
 @settings(max_examples=50)
-def test_sample::sampleclassinterface_instantiation(instance):
-    assert isinstance(instance, sample::SampleClassInterface)
+def test_sample_sampleclassinterface_instantiation(instance):
+    assert isinstance(instance, sample_SampleClassInterface)
 
 import warnings
 import copy
@@ -155,9 +155,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=sample::SampleClassInterface_strategy)
+@given(instance=sample_SampleClassInterface_strategy)
 @settings(max_examples=30)
-def test_sample::sampleclassinterface_dosomething_changes_state(instance):
+def test_sample_sampleclassinterface_dosomething_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -171,42 +171,39 @@ def test_sample::sampleclassinterface_dosomething_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'doSomething' in sample::SampleClassInterface is empty"
+        assert has_statements, f"Function 'doSomething' in sample_SampleClassInterface is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'doSomething' in sample::SampleClassInterface did not change state; check implementation")
+            warnings.warn(f"Operation 'doSomething' in sample_SampleClassInterface did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'doSomething' in sample::SampleClassInterface is not implemented or raised an error")
+        warnings.warn(f"Operation 'doSomething' in sample_SampleClassInterface is not implemented or raised an error")
 
 @given(instance=SampleClassInterface_strategy)
 @settings(max_examples=50)
 def test_sampleclassinterface_instantiation(instance):
     assert isinstance(instance, SampleClassInterface)
 
-@given(instance=sample::SampleClassA_strategy)
+@given(instance=sample_SampleClassA_strategy)
 @settings(max_examples=50)
-def test_sample::sampleclassa_instantiation(instance):
-    assert isinstance(instance, sample::SampleClassA)
-
-@given(instance=sample::SampleClassA_strategy)
-def test_sample::sampleclassa_sampleAttribute_type(instance):
-    assert isinstance(instance.sampleAttribute, str)
+def test_sample_sampleclassa_instantiation(instance):
+    assert isinstance(instance, sample_SampleClassA)
 
 
-@given(instance=sample::SampleClassA_strategy)
-def test_sample::sampleclassa_sampleAttribute_setter(instance):
+
+@given(instance=sample_SampleClassA_strategy)
+def test_sample_sampleclassa_sampleAttribute_setter(instance):
     original = instance.sampleAttribute
     instance.sampleAttribute = original
     assert instance.sampleAttribute == original
 
-@given(instance=sample::SampleClassB_strategy)
+@given(instance=sample_SampleClassB_strategy)
 @settings(max_examples=50)
-def test_sample::sampleclassb_instantiation(instance):
-    assert isinstance(instance, sample::SampleClassB)
+def test_sample_sampleclassb_instantiation(instance):
+    assert isinstance(instance, sample_SampleClassB)
 
-@given(instance=sample::SampleClassC_strategy)
+@given(instance=sample_SampleClassC_strategy)
 @settings(max_examples=50)
-def test_sample::sampleclassc_instantiation(instance):
-    assert isinstance(instance, sample::SampleClassC)
+def test_sample_sampleclassc_instantiation(instance):
+    assert isinstance(instance, sample_SampleClassC)

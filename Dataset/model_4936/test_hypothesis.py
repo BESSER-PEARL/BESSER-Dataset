@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     UIElement,
-    webapp::TextArea,
-    webapp::ImageViewer,
-    webapp::Table,
-    webapp::Form,
+    webapp_Table,
+    webapp_TextArea,
+    webapp_ImageViewer,
+    webapp_Form,
     Named,
-    webapp::Attribute,
-    webapp::ClientPage,
-    webapp::UIElement,
-    webapp::WebApp,
-    webapp::Named,
-    webapp::DataSourceManager,
-    webapp::DataStructure,
-    webapp::ServerPage,
+    webapp_Attribute,
+    webapp_ClientPage,
+    webapp_UIElement,
+    webapp_WebApp,
+    webapp_Named,
+    webapp_DataSourceManager,
+    webapp_DataStructure,
+    webapp_ServerPage,
     UIElementType,
 )
 
@@ -43,58 +43,58 @@ def test_uielement_constructor_args():
 
 
 
-def test_webapp::textarea_is_not_abstract():
-    assert not inspect.isabstract(webapp::TextArea)
+def test_webapp_table_is_not_abstract():
+    assert not inspect.isabstract(webapp_Table)
 
 
-def test_webapp::textarea_constructor_exists():
-    assert callable(webapp::TextArea.__init__)
+def test_webapp_table_constructor_exists():
+    assert callable(webapp_Table.__init__)
 
 
-def test_webapp::textarea_constructor_args():
-    sig = inspect.signature(webapp::TextArea.__init__)
+def test_webapp_table_constructor_args():
+    sig = inspect.signature(webapp_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::imageviewer_is_not_abstract():
-    assert not inspect.isabstract(webapp::ImageViewer)
+def test_webapp_textarea_is_not_abstract():
+    assert not inspect.isabstract(webapp_TextArea)
 
 
-def test_webapp::imageviewer_constructor_exists():
-    assert callable(webapp::ImageViewer.__init__)
+def test_webapp_textarea_constructor_exists():
+    assert callable(webapp_TextArea.__init__)
 
 
-def test_webapp::imageviewer_constructor_args():
-    sig = inspect.signature(webapp::ImageViewer.__init__)
+def test_webapp_textarea_constructor_args():
+    sig = inspect.signature(webapp_TextArea.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::table_is_not_abstract():
-    assert not inspect.isabstract(webapp::Table)
+def test_webapp_imageviewer_is_not_abstract():
+    assert not inspect.isabstract(webapp_ImageViewer)
 
 
-def test_webapp::table_constructor_exists():
-    assert callable(webapp::Table.__init__)
+def test_webapp_imageviewer_constructor_exists():
+    assert callable(webapp_ImageViewer.__init__)
 
 
-def test_webapp::table_constructor_args():
-    sig = inspect.signature(webapp::Table.__init__)
+def test_webapp_imageviewer_constructor_args():
+    sig = inspect.signature(webapp_ImageViewer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::form_is_not_abstract():
-    assert not inspect.isabstract(webapp::Form)
+def test_webapp_form_is_not_abstract():
+    assert not inspect.isabstract(webapp_Form)
 
 
-def test_webapp::form_constructor_exists():
-    assert callable(webapp::Form.__init__)
+def test_webapp_form_constructor_exists():
+    assert callable(webapp_Form.__init__)
 
 
-def test_webapp::form_constructor_args():
-    sig = inspect.signature(webapp::Form.__init__)
+def test_webapp_form_constructor_args():
+    sig = inspect.signature(webapp_Form.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -113,23 +113,23 @@ def test_named_constructor_args():
 
 
 
-def test_webapp::attribute_is_not_abstract():
-    assert not inspect.isabstract(webapp::Attribute)
+def test_webapp_attribute_is_not_abstract():
+    assert not inspect.isabstract(webapp_Attribute)
 
 
-def test_webapp::attribute_constructor_exists():
-    assert callable(webapp::Attribute.__init__)
+def test_webapp_attribute_constructor_exists():
+    assert callable(webapp_Attribute.__init__)
 
 
-def test_webapp::attribute_constructor_args():
-    sig = inspect.signature(webapp::Attribute.__init__)
+def test_webapp_attribute_constructor_args():
+    sig = inspect.signature(webapp_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_webapp::attribute_has_type():
-    assert hasattr(webapp::Attribute, "type")
+def test_webapp_attribute_has_type():
+    assert hasattr(webapp_Attribute, "type")
     descriptor = None
-    for klass in webapp::Attribute.__mro__:
+    for klass in webapp_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -137,37 +137,37 @@ def test_webapp::attribute_has_type():
 
 
 
-def test_webapp::clientpage_is_not_abstract():
-    assert not inspect.isabstract(webapp::ClientPage)
+def test_webapp_clientpage_is_not_abstract():
+    assert not inspect.isabstract(webapp_ClientPage)
 
 
-def test_webapp::clientpage_constructor_exists():
-    assert callable(webapp::ClientPage.__init__)
+def test_webapp_clientpage_constructor_exists():
+    assert callable(webapp_ClientPage.__init__)
 
 
-def test_webapp::clientpage_constructor_args():
-    sig = inspect.signature(webapp::ClientPage.__init__)
+def test_webapp_clientpage_constructor_args():
+    sig = inspect.signature(webapp_ClientPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::uielement_is_not_abstract():
-    assert not inspect.isabstract(webapp::UIElement)
+def test_webapp_uielement_is_not_abstract():
+    assert not inspect.isabstract(webapp_UIElement)
 
 
-def test_webapp::uielement_constructor_exists():
-    assert callable(webapp::UIElement.__init__)
+def test_webapp_uielement_constructor_exists():
+    assert callable(webapp_UIElement.__init__)
 
 
-def test_webapp::uielement_constructor_args():
-    sig = inspect.signature(webapp::UIElement.__init__)
+def test_webapp_uielement_constructor_args():
+    sig = inspect.signature(webapp_UIElement.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_webapp::uielement_has_type():
-    assert hasattr(webapp::UIElement, "type")
+def test_webapp_uielement_has_type():
+    assert hasattr(webapp_UIElement, "type")
     descriptor = None
-    for klass in webapp::UIElement.__mro__:
+    for klass in webapp_UIElement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -175,37 +175,37 @@ def test_webapp::uielement_has_type():
 
 
 
-def test_webapp::webapp_is_not_abstract():
-    assert not inspect.isabstract(webapp::WebApp)
+def test_webapp_webapp_is_not_abstract():
+    assert not inspect.isabstract(webapp_WebApp)
 
 
-def test_webapp::webapp_constructor_exists():
-    assert callable(webapp::WebApp.__init__)
+def test_webapp_webapp_constructor_exists():
+    assert callable(webapp_WebApp.__init__)
 
 
-def test_webapp::webapp_constructor_args():
-    sig = inspect.signature(webapp::WebApp.__init__)
+def test_webapp_webapp_constructor_args():
+    sig = inspect.signature(webapp_WebApp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::named_is_not_abstract():
-    assert not inspect.isabstract(webapp::Named)
+def test_webapp_named_is_not_abstract():
+    assert not inspect.isabstract(webapp_Named)
 
 
-def test_webapp::named_constructor_exists():
-    assert callable(webapp::Named.__init__)
+def test_webapp_named_constructor_exists():
+    assert callable(webapp_Named.__init__)
 
 
-def test_webapp::named_constructor_args():
-    sig = inspect.signature(webapp::Named.__init__)
+def test_webapp_named_constructor_args():
+    sig = inspect.signature(webapp_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::named_has_name():
-    assert hasattr(webapp::Named, "name")
+def test_webapp_named_has_name():
+    assert hasattr(webapp_Named, "name")
     descriptor = None
-    for klass in webapp::Named.__mro__:
+    for klass in webapp_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -213,44 +213,44 @@ def test_webapp::named_has_name():
 
 
 
-def test_webapp::datasourcemanager_is_not_abstract():
-    assert not inspect.isabstract(webapp::DataSourceManager)
+def test_webapp_datasourcemanager_is_not_abstract():
+    assert not inspect.isabstract(webapp_DataSourceManager)
 
 
-def test_webapp::datasourcemanager_constructor_exists():
-    assert callable(webapp::DataSourceManager.__init__)
+def test_webapp_datasourcemanager_constructor_exists():
+    assert callable(webapp_DataSourceManager.__init__)
 
 
-def test_webapp::datasourcemanager_constructor_args():
-    sig = inspect.signature(webapp::DataSourceManager.__init__)
+def test_webapp_datasourcemanager_constructor_args():
+    sig = inspect.signature(webapp_DataSourceManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::datastructure_is_not_abstract():
-    assert not inspect.isabstract(webapp::DataStructure)
+def test_webapp_datastructure_is_not_abstract():
+    assert not inspect.isabstract(webapp_DataStructure)
 
 
-def test_webapp::datastructure_constructor_exists():
-    assert callable(webapp::DataStructure.__init__)
+def test_webapp_datastructure_constructor_exists():
+    assert callable(webapp_DataStructure.__init__)
 
 
-def test_webapp::datastructure_constructor_args():
-    sig = inspect.signature(webapp::DataStructure.__init__)
+def test_webapp_datastructure_constructor_args():
+    sig = inspect.signature(webapp_DataStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::serverpage_is_not_abstract():
-    assert not inspect.isabstract(webapp::ServerPage)
+def test_webapp_serverpage_is_not_abstract():
+    assert not inspect.isabstract(webapp_ServerPage)
 
 
-def test_webapp::serverpage_constructor_exists():
-    assert callable(webapp::ServerPage.__init__)
+def test_webapp_serverpage_constructor_exists():
+    assert callable(webapp_ServerPage.__init__)
 
 
-def test_webapp::serverpage_constructor_args():
-    sig = inspect.signature(webapp::ServerPage.__init__)
+def test_webapp_serverpage_constructor_args():
+    sig = inspect.signature(webapp_ServerPage.__init__)
     params = list(sig.parameters.keys())
 
 def test_uielementtype_exists():
@@ -261,8 +261,8 @@ def test_uielementtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in UIElementType]
     expected_literals = [
-        "output",
         "input",
+        "output",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -283,50 +283,50 @@ safe_text = st.text(
 UIElement_strategy = st.builds(
     UIElement,
 )
-webapp::TextArea_strategy = st.builds(
-    webapp::TextArea,
+webapp_Table_strategy = st.builds(
+    webapp_Table,
 )
-webapp::ImageViewer_strategy = st.builds(
-    webapp::ImageViewer,
+webapp_TextArea_strategy = st.builds(
+    webapp_TextArea,
 )
-webapp::Table_strategy = st.builds(
-    webapp::Table,
+webapp_ImageViewer_strategy = st.builds(
+    webapp_ImageViewer,
 )
-webapp::Form_strategy = st.builds(
-    webapp::Form,
+webapp_Form_strategy = st.builds(
+    webapp_Form,
 )
 Named_strategy = st.builds(
     Named,
 )
-webapp::Attribute_strategy = st.builds(
-    webapp::Attribute,
+webapp_Attribute_strategy = st.builds(
+    webapp_Attribute,
     type=
         safe_text
 )
-webapp::ClientPage_strategy = st.builds(
-    webapp::ClientPage,
+webapp_ClientPage_strategy = st.builds(
+    webapp_ClientPage,
 )
-webapp::UIElement_strategy = st.builds(
-    webapp::UIElement,
+webapp_UIElement_strategy = st.builds(
+    webapp_UIElement,
     type=
         safe_text
 )
-webapp::WebApp_strategy = st.builds(
-    webapp::WebApp,
+webapp_WebApp_strategy = st.builds(
+    webapp_WebApp,
 )
-webapp::Named_strategy = st.builds(
-    webapp::Named,
+webapp_Named_strategy = st.builds(
+    webapp_Named,
     name=
         safe_text
 )
-webapp::DataSourceManager_strategy = st.builds(
-    webapp::DataSourceManager,
+webapp_DataSourceManager_strategy = st.builds(
+    webapp_DataSourceManager,
 )
-webapp::DataStructure_strategy = st.builds(
-    webapp::DataStructure,
+webapp_DataStructure_strategy = st.builds(
+    webapp_DataStructure,
 )
-webapp::ServerPage_strategy = st.builds(
-    webapp::ServerPage,
+webapp_ServerPage_strategy = st.builds(
+    webapp_ServerPage,
 )
 
 @given(instance=UIElement_strategy)
@@ -334,103 +334,94 @@ webapp::ServerPage_strategy = st.builds(
 def test_uielement_instantiation(instance):
     assert isinstance(instance, UIElement)
 
-@given(instance=webapp::TextArea_strategy)
+@given(instance=webapp_Table_strategy)
 @settings(max_examples=50)
-def test_webapp::textarea_instantiation(instance):
-    assert isinstance(instance, webapp::TextArea)
+def test_webapp_table_instantiation(instance):
+    assert isinstance(instance, webapp_Table)
 
-@given(instance=webapp::ImageViewer_strategy)
+@given(instance=webapp_TextArea_strategy)
 @settings(max_examples=50)
-def test_webapp::imageviewer_instantiation(instance):
-    assert isinstance(instance, webapp::ImageViewer)
+def test_webapp_textarea_instantiation(instance):
+    assert isinstance(instance, webapp_TextArea)
 
-@given(instance=webapp::Table_strategy)
+@given(instance=webapp_ImageViewer_strategy)
 @settings(max_examples=50)
-def test_webapp::table_instantiation(instance):
-    assert isinstance(instance, webapp::Table)
+def test_webapp_imageviewer_instantiation(instance):
+    assert isinstance(instance, webapp_ImageViewer)
 
-@given(instance=webapp::Form_strategy)
+@given(instance=webapp_Form_strategy)
 @settings(max_examples=50)
-def test_webapp::form_instantiation(instance):
-    assert isinstance(instance, webapp::Form)
+def test_webapp_form_instantiation(instance):
+    assert isinstance(instance, webapp_Form)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=webapp::Attribute_strategy)
+@given(instance=webapp_Attribute_strategy)
 @settings(max_examples=50)
-def test_webapp::attribute_instantiation(instance):
-    assert isinstance(instance, webapp::Attribute)
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_webapp_attribute_instantiation(instance):
+    assert isinstance(instance, webapp_Attribute)
 
 
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_type_setter(instance):
+
+@given(instance=webapp_Attribute_strategy)
+def test_webapp_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=webapp::ClientPage_strategy)
+@given(instance=webapp_ClientPage_strategy)
 @settings(max_examples=50)
-def test_webapp::clientpage_instantiation(instance):
-    assert isinstance(instance, webapp::ClientPage)
+def test_webapp_clientpage_instantiation(instance):
+    assert isinstance(instance, webapp_ClientPage)
 
-@given(instance=webapp::UIElement_strategy)
+@given(instance=webapp_UIElement_strategy)
 @settings(max_examples=50)
-def test_webapp::uielement_instantiation(instance):
-    assert isinstance(instance, webapp::UIElement)
-
-@given(instance=webapp::UIElement_strategy)
-def test_webapp::uielement_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_webapp_uielement_instantiation(instance):
+    assert isinstance(instance, webapp_UIElement)
 
 
-@given(instance=webapp::UIElement_strategy)
-def test_webapp::uielement_type_setter(instance):
+
+@given(instance=webapp_UIElement_strategy)
+def test_webapp_uielement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=webapp::WebApp_strategy)
+@given(instance=webapp_WebApp_strategy)
 @settings(max_examples=50)
-def test_webapp::webapp_instantiation(instance):
-    assert isinstance(instance, webapp::WebApp)
+def test_webapp_webapp_instantiation(instance):
+    assert isinstance(instance, webapp_WebApp)
 
-@given(instance=webapp::Named_strategy)
+@given(instance=webapp_Named_strategy)
 @settings(max_examples=50)
-def test_webapp::named_instantiation(instance):
-    assert isinstance(instance, webapp::Named)
-
-@given(instance=webapp::Named_strategy)
-def test_webapp::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_named_instantiation(instance):
+    assert isinstance(instance, webapp_Named)
 
 
-@given(instance=webapp::Named_strategy)
-def test_webapp::named_name_setter(instance):
+
+@given(instance=webapp_Named_strategy)
+def test_webapp_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::DataSourceManager_strategy)
+@given(instance=webapp_DataSourceManager_strategy)
 @settings(max_examples=50)
-def test_webapp::datasourcemanager_instantiation(instance):
-    assert isinstance(instance, webapp::DataSourceManager)
+def test_webapp_datasourcemanager_instantiation(instance):
+    assert isinstance(instance, webapp_DataSourceManager)
 
-@given(instance=webapp::DataStructure_strategy)
+@given(instance=webapp_DataStructure_strategy)
 @settings(max_examples=50)
-def test_webapp::datastructure_instantiation(instance):
-    assert isinstance(instance, webapp::DataStructure)
+def test_webapp_datastructure_instantiation(instance):
+    assert isinstance(instance, webapp_DataStructure)
 
-@given(instance=webapp::ServerPage_strategy)
+@given(instance=webapp_ServerPage_strategy)
 @settings(max_examples=50)
-def test_webapp::serverpage_instantiation(instance):
-    assert isinstance(instance, webapp::ServerPage)
+def test_webapp_serverpage_instantiation(instance):
+    assert isinstance(instance, webapp_ServerPage)
 
 import warnings
 import copy
@@ -438,38 +429,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=webapp::ServerPage_strategy)
+@given(instance=webapp_ServerPage_strategy)
 @settings(max_examples=30)
-def test_webapp::serverpage_response_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.response()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.response).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'response' in webapp::ServerPage is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'response' in webapp::ServerPage did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'response' in webapp::ServerPage is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=webapp::ServerPage_strategy)
-@settings(max_examples=30)
-def test_webapp::serverpage_request_changes_state(instance):
+def test_webapp_serverpage_request_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -481,11 +443,40 @@ def test_webapp::serverpage_request_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'request' in webapp::ServerPage is empty"
+        assert has_statements, f"Function 'request' in webapp_ServerPage is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'request' in webapp::ServerPage did not change state; check implementation")
+            warnings.warn(f"Operation 'request' in webapp_ServerPage did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'request' in webapp::ServerPage is not implemented or raised an error")
+        warnings.warn(f"Operation 'request' in webapp_ServerPage is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=webapp_ServerPage_strategy)
+@settings(max_examples=30)
+def test_webapp_serverpage_response_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.response()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.response).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'response' in webapp_ServerPage is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'response' in webapp_ServerPage did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'response' in webapp_ServerPage is not implemented or raised an error")

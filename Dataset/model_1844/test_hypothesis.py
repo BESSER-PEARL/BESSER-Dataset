@@ -3,125 +3,125 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rapidml::Element,
+from python_code import (
+    rapidml_Element,
     Constraint,
-    rapidml::RegExConstraint,
-    rapidml::ValueRangeConstraint,
-    rapidml::LengthConstraint,
+    rapidml_RegExConstraint,
+    rapidml_ValueRangeConstraint,
+    rapidml_LengthConstraint,
     SingleValueType,
-    rapidml::SimpleType,
-    rapidml::Enumeration,
+    rapidml_SimpleType,
+    rapidml_Enumeration,
     SimpleType,
     Inheritable,
     DataExample,
-    rapidml::InlineDataExample,
-    rapidml::DataExample,
-    rapidml::WithDataExamples,
-    rapidml::Inheritable,
+    rapidml_InlineDataExample,
+    rapidml_DataExample,
+    rapidml_WithDataExamples,
+    rapidml_Inheritable,
     Element,
     WithDataExamples,
     DataType,
-    rapidml::SingleValueType,
+    rapidml_SingleValueType,
     Feature,
-    rapidml::Extensible,
-    rapidml::Structure,
-    rapidml::HasTitle,
-    rapidml::Extension,
-    rapidml::AuthenticationMethod,
-    rapidml::HasSecurityValue,
+    rapidml_Extensible,
+    rapidml_Structure,
+    rapidml_HasTitle,
+    rapidml_Extension,
+    rapidml_AuthenticationMethod,
+    rapidml_HasSecurityValue,
     ReferenceElement,
-    rapidml::ReferenceProperty,
+    rapidml_ReferenceProperty,
     ConstrainableType,
-    rapidml::UserDefinedType,
-    rapidml::PropertyRealization,
-    rapidml::HasStringValue,
+    rapidml_UserDefinedType,
+    rapidml_PropertyRealization,
+    rapidml_HasStringValue,
     Example,
-    rapidml::ExternalExample,
-    rapidml::InlineExample,
-    rapidml::Example,
-    rapidml::WithExamples,
+    rapidml_ExternalExample,
+    rapidml_InlineExample,
+    rapidml_Example,
+    rapidml_WithExamples,
     URISegment,
     HasStringValue,
-    rapidml::URISegment,
-    rapidml::PrimitiveType,
-    rapidml::PathSegment,
+    rapidml_URISegment,
+    rapidml_PrimitiveType,
+    rapidml_PathSegment,
     ObjectRealization,
     ResourceDefinition,
     ReferenceTreatment,
-    rapidml::ReferenceEmbed,
-    rapidml::ReferenceLink,
-    rapidml::ReferenceElement,
-    rapidml::NamedLinkDescriptor,
-    rapidml::ImportDeclaration,
-    rapidml::PrimitiveTypesLibrary,
-    rapidml::LinkRelationsLibrary,
-    rapidml::MediaTypesLibrary,
-    rapidml::RealizationModelLocation,
+    rapidml_ReferenceEmbed,
+    rapidml_ReferenceLink,
+    rapidml_ReferenceElement,
+    rapidml_NamedLinkDescriptor,
+    rapidml_ImportDeclaration,
+    rapidml_PrimitiveTypesLibrary,
+    rapidml_LinkRelationsLibrary,
+    rapidml_MediaTypesLibrary,
+    rapidml_RealizationModelLocation,
     HasTitle,
-    rapidml::PrimitiveProperty,
+    rapidml_PrimitiveProperty,
     SourceReference,
-    rapidml::PrimitiveTypeSourceReference,
-    rapidml::PropertyReference,
+    rapidml_PrimitiveTypeSourceReference,
+    rapidml_PropertyReference,
     Parameter,
-    rapidml::URIParameter,
-    rapidml::CollectionReferenceElement,
-    rapidml::CollectionParameter,
+    rapidml_URIParameter,
+    rapidml_CollectionReferenceElement,
+    rapidml_CollectionParameter,
     ServiceDataResource,
-    rapidml::ObjectResource,
-    rapidml::CollectionResource,
+    rapidml_ObjectResource,
+    rapidml_CollectionResource,
     URIParameter,
-    rapidml::TemplateParameter,
-    rapidml::MatrixParameter,
-    rapidml::URISegmentWithParameter,
-    rapidml::Documentable,
-    rapidml::Documentation,
+    rapidml_TemplateParameter,
+    rapidml_MatrixParameter,
+    rapidml_URISegmentWithParameter,
+    rapidml_Documentable,
+    rapidml_Documentation,
     TypedMessage,
     Documentable,
-    rapidml::LinkRelation,
-    rapidml::SecuritySchemeLibrary,
-    rapidml::Operation,
-    rapidml::SecuritySchemeParameter,
-    rapidml::SecurityScope,
-    rapidml::DataModel,
-    rapidml::EnumConstant,
-    rapidml::SourceReference,
+    rapidml_SecuritySchemeLibrary,
+    rapidml_SecurityScope,
+    rapidml_SecuritySchemeParameter,
+    rapidml_LinkRelation,
+    rapidml_Operation,
+    rapidml_EnumConstant,
+    rapidml_DataModel,
+    rapidml_SourceReference,
     RealizationContainer,
-    rapidml::ReferenceRealization,
-    rapidml::ServiceDataResource,
-    rapidml::URI,
-    rapidml::TypedResponse,
-    rapidml::TypedRequest,
+    rapidml_ReferenceRealization,
+    rapidml_ServiceDataResource,
+    rapidml_URI,
+    rapidml_TypedResponse,
+    rapidml_TypedRequest,
     Extensible,
-    rapidml::DataType,
-    rapidml::RealizationContainer,
-    rapidml::ConstrainableType,
-    rapidml::ZenModel,
-    rapidml::Feature,
-    rapidml::RESTElement,
-    rapidml::Constraint,
-    rapidml::ReferenceTreatment,
-    rapidml::ObjectRealization,
-    rapidml::MessageParameter,
+    rapidml_DataType,
+    rapidml_RealizationContainer,
+    rapidml_Feature,
+    rapidml_ObjectRealization,
+    rapidml_ZenModel,
+    rapidml_RESTElement,
+    rapidml_Constraint,
+    rapidml_ReferenceTreatment,
+    rapidml_ConstrainableType,
+    rapidml_MessageParameter,
     HasSecurityValue,
     WithExamples,
     RESTElement,
-    rapidml::TypedMessage,
-    rapidml::MediaType,
-    rapidml::Method,
-    rapidml::Parameter,
-    rapidml::SecurityScheme,
-    rapidml::ResourceAPI,
-    rapidml::ResourceDefinition,
-    CollectionRealizationEnum,
-    CollectionRealizationLevelEnum,
-    ReferenceRealizationEnum,
+    rapidml_MediaType,
+    rapidml_Parameter,
+    rapidml_Method,
+    rapidml_ResourceAPI,
+    rapidml_SecurityScheme,
+    rapidml_TypedMessage,
+    rapidml_ResourceDefinition,
     AuthenticationFlows,
     HttpMessageParameterLocation,
     HTTPMethods,
+    CollectionRealizationLevelEnum,
     AuthenticationTypes,
+    ReferenceRealizationEnum,
+    CollectionRealizationEnum,
 )
 
 # =============================================================================
@@ -130,23 +130,23 @@ from classes import (
 
 
 
-def test_rapidml::element_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Element)
+def test_rapidml_element_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Element)
 
 
-def test_rapidml::element_constructor_exists():
-    assert callable(rapidml::Element.__init__)
+def test_rapidml_element_constructor_exists():
+    assert callable(rapidml_Element.__init__)
 
 
-def test_rapidml::element_constructor_args():
-    sig = inspect.signature(rapidml::Element.__init__)
+def test_rapidml_element_constructor_args():
+    sig = inspect.signature(rapidml_Element.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_rapidml::element_has_cardinality():
-    assert hasattr(rapidml::Element, "cardinality")
+def test_rapidml_element_has_cardinality():
+    assert hasattr(rapidml_Element, "cardinality")
     descriptor = None
-    for klass in rapidml::Element.__mro__:
+    for klass in rapidml_Element.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -168,23 +168,23 @@ def test_constraint_constructor_args():
 
 
 
-def test_rapidml::regexconstraint_is_not_abstract():
-    assert not inspect.isabstract(rapidml::RegExConstraint)
+def test_rapidml_regexconstraint_is_not_abstract():
+    assert not inspect.isabstract(rapidml_RegExConstraint)
 
 
-def test_rapidml::regexconstraint_constructor_exists():
-    assert callable(rapidml::RegExConstraint.__init__)
+def test_rapidml_regexconstraint_constructor_exists():
+    assert callable(rapidml_RegExConstraint.__init__)
 
 
-def test_rapidml::regexconstraint_constructor_args():
-    sig = inspect.signature(rapidml::RegExConstraint.__init__)
+def test_rapidml_regexconstraint_constructor_args():
+    sig = inspect.signature(rapidml_RegExConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "pattern" in params, "Missing parameter 'pattern'"
 
-def test_rapidml::regexconstraint_has_pattern():
-    assert hasattr(rapidml::RegExConstraint, "pattern")
+def test_rapidml_regexconstraint_has_pattern():
+    assert hasattr(rapidml_RegExConstraint, "pattern")
     descriptor = None
-    for klass in rapidml::RegExConstraint.__mro__:
+    for klass in rapidml_RegExConstraint.__mro__:
         if "pattern" in klass.__dict__:
             descriptor = klass.__dict__["pattern"]
             break
@@ -192,97 +192,97 @@ def test_rapidml::regexconstraint_has_pattern():
 
 
 
-def test_rapidml::valuerangeconstraint_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ValueRangeConstraint)
+def test_rapidml_valuerangeconstraint_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ValueRangeConstraint)
 
 
-def test_rapidml::valuerangeconstraint_constructor_exists():
-    assert callable(rapidml::ValueRangeConstraint.__init__)
+def test_rapidml_valuerangeconstraint_constructor_exists():
+    assert callable(rapidml_ValueRangeConstraint.__init__)
 
 
-def test_rapidml::valuerangeconstraint_constructor_args():
-    sig = inspect.signature(rapidml::ValueRangeConstraint.__init__)
+def test_rapidml_valuerangeconstraint_constructor_args():
+    sig = inspect.signature(rapidml_ValueRangeConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "minValueExclusive" in params, "Missing parameter 'minValueExclusive'"
+    assert "maxValue" in params, "Missing parameter 'maxValue'"
     assert "maxValueExclusive" in params, "Missing parameter 'maxValueExclusive'"
     assert "minValue" in params, "Missing parameter 'minValue'"
-    assert "maxValue" in params, "Missing parameter 'maxValue'"
 
-def test_rapidml::valuerangeconstraint_has_minValueExclusive():
-    assert hasattr(rapidml::ValueRangeConstraint, "minValueExclusive")
+def test_rapidml_valuerangeconstraint_has_minValueExclusive():
+    assert hasattr(rapidml_ValueRangeConstraint, "minValueExclusive")
     descriptor = None
-    for klass in rapidml::ValueRangeConstraint.__mro__:
+    for klass in rapidml_ValueRangeConstraint.__mro__:
         if "minValueExclusive" in klass.__dict__:
             descriptor = klass.__dict__["minValueExclusive"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::valuerangeconstraint_has_maxValueExclusive():
-    assert hasattr(rapidml::ValueRangeConstraint, "maxValueExclusive")
+def test_rapidml_valuerangeconstraint_has_maxValue():
+    assert hasattr(rapidml_ValueRangeConstraint, "maxValue")
     descriptor = None
-    for klass in rapidml::ValueRangeConstraint.__mro__:
-        if "maxValueExclusive" in klass.__dict__:
-            descriptor = klass.__dict__["maxValueExclusive"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::valuerangeconstraint_has_minValue():
-    assert hasattr(rapidml::ValueRangeConstraint, "minValue")
-    descriptor = None
-    for klass in rapidml::ValueRangeConstraint.__mro__:
-        if "minValue" in klass.__dict__:
-            descriptor = klass.__dict__["minValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::valuerangeconstraint_has_maxValue():
-    assert hasattr(rapidml::ValueRangeConstraint, "maxValue")
-    descriptor = None
-    for klass in rapidml::ValueRangeConstraint.__mro__:
+    for klass in rapidml_ValueRangeConstraint.__mro__:
         if "maxValue" in klass.__dict__:
             descriptor = klass.__dict__["maxValue"]
             break
     assert isinstance(descriptor, property)
 
+def test_rapidml_valuerangeconstraint_has_maxValueExclusive():
+    assert hasattr(rapidml_ValueRangeConstraint, "maxValueExclusive")
+    descriptor = None
+    for klass in rapidml_ValueRangeConstraint.__mro__:
+        if "maxValueExclusive" in klass.__dict__:
+            descriptor = klass.__dict__["maxValueExclusive"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_valuerangeconstraint_has_minValue():
+    assert hasattr(rapidml_ValueRangeConstraint, "minValue")
+    descriptor = None
+    for klass in rapidml_ValueRangeConstraint.__mro__:
+        if "minValue" in klass.__dict__:
+            descriptor = klass.__dict__["minValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rapidml::lengthconstraint_is_not_abstract():
-    assert not inspect.isabstract(rapidml::LengthConstraint)
+
+def test_rapidml_lengthconstraint_is_not_abstract():
+    assert not inspect.isabstract(rapidml_LengthConstraint)
 
 
-def test_rapidml::lengthconstraint_constructor_exists():
-    assert callable(rapidml::LengthConstraint.__init__)
+def test_rapidml_lengthconstraint_constructor_exists():
+    assert callable(rapidml_LengthConstraint.__init__)
 
 
-def test_rapidml::lengthconstraint_constructor_args():
-    sig = inspect.signature(rapidml::LengthConstraint.__init__)
+def test_rapidml_lengthconstraint_constructor_args():
+    sig = inspect.signature(rapidml_LengthConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "maxLength" in params, "Missing parameter 'maxLength'"
     assert "length" in params, "Missing parameter 'length'"
     assert "minLength" in params, "Missing parameter 'minLength'"
 
-def test_rapidml::lengthconstraint_has_maxLength():
-    assert hasattr(rapidml::LengthConstraint, "maxLength")
+def test_rapidml_lengthconstraint_has_maxLength():
+    assert hasattr(rapidml_LengthConstraint, "maxLength")
     descriptor = None
-    for klass in rapidml::LengthConstraint.__mro__:
+    for klass in rapidml_LengthConstraint.__mro__:
         if "maxLength" in klass.__dict__:
             descriptor = klass.__dict__["maxLength"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::lengthconstraint_has_length():
-    assert hasattr(rapidml::LengthConstraint, "length")
+def test_rapidml_lengthconstraint_has_length():
+    assert hasattr(rapidml_LengthConstraint, "length")
     descriptor = None
-    for klass in rapidml::LengthConstraint.__mro__:
+    for klass in rapidml_LengthConstraint.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::lengthconstraint_has_minLength():
-    assert hasattr(rapidml::LengthConstraint, "minLength")
+def test_rapidml_lengthconstraint_has_minLength():
+    assert hasattr(rapidml_LengthConstraint, "minLength")
     descriptor = None
-    for klass in rapidml::LengthConstraint.__mro__:
+    for klass in rapidml_LengthConstraint.__mro__:
         if "minLength" in klass.__dict__:
             descriptor = klass.__dict__["minLength"]
             break
@@ -304,30 +304,30 @@ def test_singlevaluetype_constructor_args():
 
 
 
-def test_rapidml::simpletype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SimpleType)
+def test_rapidml_simpletype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SimpleType)
 
 
-def test_rapidml::simpletype_constructor_exists():
-    assert callable(rapidml::SimpleType.__init__)
+def test_rapidml_simpletype_constructor_exists():
+    assert callable(rapidml_SimpleType.__init__)
 
 
-def test_rapidml::simpletype_constructor_args():
-    sig = inspect.signature(rapidml::SimpleType.__init__)
+def test_rapidml_simpletype_constructor_args():
+    sig = inspect.signature(rapidml_SimpleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::enumeration_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Enumeration)
+def test_rapidml_enumeration_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Enumeration)
 
 
-def test_rapidml::enumeration_constructor_exists():
-    assert callable(rapidml::Enumeration.__init__)
+def test_rapidml_enumeration_constructor_exists():
+    assert callable(rapidml_Enumeration.__init__)
 
 
-def test_rapidml::enumeration_constructor_args():
-    sig = inspect.signature(rapidml::Enumeration.__init__)
+def test_rapidml_enumeration_constructor_args():
+    sig = inspect.signature(rapidml_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -374,23 +374,23 @@ def test_dataexample_constructor_args():
 
 
 
-def test_rapidml::inlinedataexample_is_not_abstract():
-    assert not inspect.isabstract(rapidml::InlineDataExample)
+def test_rapidml_inlinedataexample_is_not_abstract():
+    assert not inspect.isabstract(rapidml_InlineDataExample)
 
 
-def test_rapidml::inlinedataexample_constructor_exists():
-    assert callable(rapidml::InlineDataExample.__init__)
+def test_rapidml_inlinedataexample_constructor_exists():
+    assert callable(rapidml_InlineDataExample.__init__)
 
 
-def test_rapidml::inlinedataexample_constructor_args():
-    sig = inspect.signature(rapidml::InlineDataExample.__init__)
+def test_rapidml_inlinedataexample_constructor_args():
+    sig = inspect.signature(rapidml_InlineDataExample.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_rapidml::inlinedataexample_has_body():
-    assert hasattr(rapidml::InlineDataExample, "body")
+def test_rapidml_inlinedataexample_has_body():
+    assert hasattr(rapidml_InlineDataExample, "body")
     descriptor = None
-    for klass in rapidml::InlineDataExample.__mro__:
+    for klass in rapidml_InlineDataExample.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -398,44 +398,44 @@ def test_rapidml::inlinedataexample_has_body():
 
 
 
-def test_rapidml::dataexample_is_not_abstract():
-    assert not inspect.isabstract(rapidml::DataExample)
+def test_rapidml_dataexample_is_not_abstract():
+    assert not inspect.isabstract(rapidml_DataExample)
 
 
-def test_rapidml::dataexample_constructor_exists():
-    assert callable(rapidml::DataExample.__init__)
+def test_rapidml_dataexample_constructor_exists():
+    assert callable(rapidml_DataExample.__init__)
 
 
-def test_rapidml::dataexample_constructor_args():
-    sig = inspect.signature(rapidml::DataExample.__init__)
+def test_rapidml_dataexample_constructor_args():
+    sig = inspect.signature(rapidml_DataExample.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::withdataexamples_is_not_abstract():
-    assert not inspect.isabstract(rapidml::WithDataExamples)
+def test_rapidml_withdataexamples_is_not_abstract():
+    assert not inspect.isabstract(rapidml_WithDataExamples)
 
 
-def test_rapidml::withdataexamples_constructor_exists():
-    assert callable(rapidml::WithDataExamples.__init__)
+def test_rapidml_withdataexamples_constructor_exists():
+    assert callable(rapidml_WithDataExamples.__init__)
 
 
-def test_rapidml::withdataexamples_constructor_args():
-    sig = inspect.signature(rapidml::WithDataExamples.__init__)
+def test_rapidml_withdataexamples_constructor_args():
+    sig = inspect.signature(rapidml_WithDataExamples.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::inheritable_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Inheritable)
+def test_rapidml_inheritable_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Inheritable)
 
 
-def test_rapidml::inheritable_constructor_exists():
-    assert callable(rapidml::Inheritable.__init__)
+def test_rapidml_inheritable_constructor_exists():
+    assert callable(rapidml_Inheritable.__init__)
 
 
-def test_rapidml::inheritable_constructor_args():
-    sig = inspect.signature(rapidml::Inheritable.__init__)
+def test_rapidml_inheritable_constructor_args():
+    sig = inspect.signature(rapidml_Inheritable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -482,16 +482,16 @@ def test_datatype_constructor_args():
 
 
 
-def test_rapidml::singlevaluetype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SingleValueType)
+def test_rapidml_singlevaluetype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SingleValueType)
 
 
-def test_rapidml::singlevaluetype_constructor_exists():
-    assert callable(rapidml::SingleValueType.__init__)
+def test_rapidml_singlevaluetype_constructor_exists():
+    assert callable(rapidml_SingleValueType.__init__)
 
 
-def test_rapidml::singlevaluetype_constructor_args():
-    sig = inspect.signature(rapidml::SingleValueType.__init__)
+def test_rapidml_singlevaluetype_constructor_args():
+    sig = inspect.signature(rapidml_SingleValueType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -510,51 +510,51 @@ def test_feature_constructor_args():
 
 
 
-def test_rapidml::extensible_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Extensible)
+def test_rapidml_extensible_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Extensible)
 
 
-def test_rapidml::extensible_constructor_exists():
-    assert callable(rapidml::Extensible.__init__)
+def test_rapidml_extensible_constructor_exists():
+    assert callable(rapidml_Extensible.__init__)
 
 
-def test_rapidml::extensible_constructor_args():
-    sig = inspect.signature(rapidml::Extensible.__init__)
+def test_rapidml_extensible_constructor_args():
+    sig = inspect.signature(rapidml_Extensible.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::structure_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Structure)
+def test_rapidml_structure_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Structure)
 
 
-def test_rapidml::structure_constructor_exists():
-    assert callable(rapidml::Structure.__init__)
+def test_rapidml_structure_constructor_exists():
+    assert callable(rapidml_Structure.__init__)
 
 
-def test_rapidml::structure_constructor_args():
-    sig = inspect.signature(rapidml::Structure.__init__)
+def test_rapidml_structure_constructor_args():
+    sig = inspect.signature(rapidml_Structure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::hastitle_is_not_abstract():
-    assert not inspect.isabstract(rapidml::HasTitle)
+def test_rapidml_hastitle_is_not_abstract():
+    assert not inspect.isabstract(rapidml_HasTitle)
 
 
-def test_rapidml::hastitle_constructor_exists():
-    assert callable(rapidml::HasTitle.__init__)
+def test_rapidml_hastitle_constructor_exists():
+    assert callable(rapidml_HasTitle.__init__)
 
 
-def test_rapidml::hastitle_constructor_args():
-    sig = inspect.signature(rapidml::HasTitle.__init__)
+def test_rapidml_hastitle_constructor_args():
+    sig = inspect.signature(rapidml_HasTitle.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_rapidml::hastitle_has_title():
-    assert hasattr(rapidml::HasTitle, "title")
+def test_rapidml_hastitle_has_title():
+    assert hasattr(rapidml_HasTitle, "title")
     descriptor = None
-    for klass in rapidml::HasTitle.__mro__:
+    for klass in rapidml_HasTitle.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -562,64 +562,64 @@ def test_rapidml::hastitle_has_title():
 
 
 
-def test_rapidml::extension_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Extension)
+def test_rapidml_extension_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Extension)
 
 
-def test_rapidml::extension_constructor_exists():
-    assert callable(rapidml::Extension.__init__)
+def test_rapidml_extension_constructor_exists():
+    assert callable(rapidml_Extension.__init__)
 
 
-def test_rapidml::extension_constructor_args():
-    sig = inspect.signature(rapidml::Extension.__init__)
+def test_rapidml_extension_constructor_args():
+    sig = inspect.signature(rapidml_Extension.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_rapidml::extension_has_value():
-    assert hasattr(rapidml::Extension, "value")
+def test_rapidml_extension_has_name():
+    assert hasattr(rapidml_Extension, "name")
     descriptor = None
-    for klass in rapidml::Extension.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::extension_has_name():
-    assert hasattr(rapidml::Extension, "name")
-    descriptor = None
-    for klass in rapidml::Extension.__mro__:
+    for klass in rapidml_Extension.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_rapidml_extension_has_value():
+    assert hasattr(rapidml_Extension, "value")
+    descriptor = None
+    for klass in rapidml_Extension.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rapidml::authenticationmethod_is_not_abstract():
-    assert not inspect.isabstract(rapidml::AuthenticationMethod)
+
+def test_rapidml_authenticationmethod_is_not_abstract():
+    assert not inspect.isabstract(rapidml_AuthenticationMethod)
 
 
-def test_rapidml::authenticationmethod_constructor_exists():
-    assert callable(rapidml::AuthenticationMethod.__init__)
+def test_rapidml_authenticationmethod_constructor_exists():
+    assert callable(rapidml_AuthenticationMethod.__init__)
 
 
-def test_rapidml::authenticationmethod_constructor_args():
-    sig = inspect.signature(rapidml::AuthenticationMethod.__init__)
+def test_rapidml_authenticationmethod_constructor_args():
+    sig = inspect.signature(rapidml_AuthenticationMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::hassecurityvalue_is_not_abstract():
-    assert not inspect.isabstract(rapidml::HasSecurityValue)
+def test_rapidml_hassecurityvalue_is_not_abstract():
+    assert not inspect.isabstract(rapidml_HasSecurityValue)
 
 
-def test_rapidml::hassecurityvalue_constructor_exists():
-    assert callable(rapidml::HasSecurityValue.__init__)
+def test_rapidml_hassecurityvalue_constructor_exists():
+    assert callable(rapidml_HasSecurityValue.__init__)
 
 
-def test_rapidml::hassecurityvalue_constructor_args():
-    sig = inspect.signature(rapidml::HasSecurityValue.__init__)
+def test_rapidml_hassecurityvalue_constructor_args():
+    sig = inspect.signature(rapidml_HasSecurityValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -638,33 +638,33 @@ def test_referenceelement_constructor_args():
 
 
 
-def test_rapidml::referenceproperty_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ReferenceProperty)
+def test_rapidml_referenceproperty_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ReferenceProperty)
 
 
-def test_rapidml::referenceproperty_constructor_exists():
-    assert callable(rapidml::ReferenceProperty.__init__)
+def test_rapidml_referenceproperty_constructor_exists():
+    assert callable(rapidml_ReferenceProperty.__init__)
 
 
-def test_rapidml::referenceproperty_constructor_args():
-    sig = inspect.signature(rapidml::ReferenceProperty.__init__)
+def test_rapidml_referenceproperty_constructor_args():
+    sig = inspect.signature(rapidml_ReferenceProperty.__init__)
     params = list(sig.parameters.keys())
     assert "container" in params, "Missing parameter 'container'"
     assert "containment" in params, "Missing parameter 'containment'"
 
-def test_rapidml::referenceproperty_has_container():
-    assert hasattr(rapidml::ReferenceProperty, "container")
+def test_rapidml_referenceproperty_has_container():
+    assert hasattr(rapidml_ReferenceProperty, "container")
     descriptor = None
-    for klass in rapidml::ReferenceProperty.__mro__:
+    for klass in rapidml_ReferenceProperty.__mro__:
         if "container" in klass.__dict__:
             descriptor = klass.__dict__["container"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::referenceproperty_has_containment():
-    assert hasattr(rapidml::ReferenceProperty, "containment")
+def test_rapidml_referenceproperty_has_containment():
+    assert hasattr(rapidml_ReferenceProperty, "containment")
     descriptor = None
-    for klass in rapidml::ReferenceProperty.__mro__:
+    for klass in rapidml_ReferenceProperty.__mro__:
         if "containment" in klass.__dict__:
             descriptor = klass.__dict__["containment"]
             break
@@ -686,37 +686,37 @@ def test_constrainabletype_constructor_args():
 
 
 
-def test_rapidml::userdefinedtype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::UserDefinedType)
+def test_rapidml_userdefinedtype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_UserDefinedType)
 
 
-def test_rapidml::userdefinedtype_constructor_exists():
-    assert callable(rapidml::UserDefinedType.__init__)
+def test_rapidml_userdefinedtype_constructor_exists():
+    assert callable(rapidml_UserDefinedType.__init__)
 
 
-def test_rapidml::userdefinedtype_constructor_args():
-    sig = inspect.signature(rapidml::UserDefinedType.__init__)
+def test_rapidml_userdefinedtype_constructor_args():
+    sig = inspect.signature(rapidml_UserDefinedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::propertyrealization_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PropertyRealization)
+def test_rapidml_propertyrealization_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PropertyRealization)
 
 
-def test_rapidml::propertyrealization_constructor_exists():
-    assert callable(rapidml::PropertyRealization.__init__)
+def test_rapidml_propertyrealization_constructor_exists():
+    assert callable(rapidml_PropertyRealization.__init__)
 
 
-def test_rapidml::propertyrealization_constructor_args():
-    sig = inspect.signature(rapidml::PropertyRealization.__init__)
+def test_rapidml_propertyrealization_constructor_args():
+    sig = inspect.signature(rapidml_PropertyRealization.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_rapidml::propertyrealization_has_cardinality():
-    assert hasattr(rapidml::PropertyRealization, "cardinality")
+def test_rapidml_propertyrealization_has_cardinality():
+    assert hasattr(rapidml_PropertyRealization, "cardinality")
     descriptor = None
-    for klass in rapidml::PropertyRealization.__mro__:
+    for klass in rapidml_PropertyRealization.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -724,16 +724,16 @@ def test_rapidml::propertyrealization_has_cardinality():
 
 
 
-def test_rapidml::hasstringvalue_is_not_abstract():
-    assert not inspect.isabstract(rapidml::HasStringValue)
+def test_rapidml_hasstringvalue_is_not_abstract():
+    assert not inspect.isabstract(rapidml_HasStringValue)
 
 
-def test_rapidml::hasstringvalue_constructor_exists():
-    assert callable(rapidml::HasStringValue.__init__)
+def test_rapidml_hasstringvalue_constructor_exists():
+    assert callable(rapidml_HasStringValue.__init__)
 
 
-def test_rapidml::hasstringvalue_constructor_args():
-    sig = inspect.signature(rapidml::HasStringValue.__init__)
+def test_rapidml_hasstringvalue_constructor_args():
+    sig = inspect.signature(rapidml_HasStringValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -752,23 +752,23 @@ def test_example_constructor_args():
 
 
 
-def test_rapidml::externalexample_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ExternalExample)
+def test_rapidml_externalexample_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ExternalExample)
 
 
-def test_rapidml::externalexample_constructor_exists():
-    assert callable(rapidml::ExternalExample.__init__)
+def test_rapidml_externalexample_constructor_exists():
+    assert callable(rapidml_ExternalExample.__init__)
 
 
-def test_rapidml::externalexample_constructor_args():
-    sig = inspect.signature(rapidml::ExternalExample.__init__)
+def test_rapidml_externalexample_constructor_args():
+    sig = inspect.signature(rapidml_ExternalExample.__init__)
     params = list(sig.parameters.keys())
     assert "path" in params, "Missing parameter 'path'"
 
-def test_rapidml::externalexample_has_path():
-    assert hasattr(rapidml::ExternalExample, "path")
+def test_rapidml_externalexample_has_path():
+    assert hasattr(rapidml_ExternalExample, "path")
     descriptor = None
-    for klass in rapidml::ExternalExample.__mro__:
+    for klass in rapidml_ExternalExample.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
@@ -776,23 +776,23 @@ def test_rapidml::externalexample_has_path():
 
 
 
-def test_rapidml::inlineexample_is_not_abstract():
-    assert not inspect.isabstract(rapidml::InlineExample)
+def test_rapidml_inlineexample_is_not_abstract():
+    assert not inspect.isabstract(rapidml_InlineExample)
 
 
-def test_rapidml::inlineexample_constructor_exists():
-    assert callable(rapidml::InlineExample.__init__)
+def test_rapidml_inlineexample_constructor_exists():
+    assert callable(rapidml_InlineExample.__init__)
 
 
-def test_rapidml::inlineexample_constructor_args():
-    sig = inspect.signature(rapidml::InlineExample.__init__)
+def test_rapidml_inlineexample_constructor_args():
+    sig = inspect.signature(rapidml_InlineExample.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_rapidml::inlineexample_has_body():
-    assert hasattr(rapidml::InlineExample, "body")
+def test_rapidml_inlineexample_has_body():
+    assert hasattr(rapidml_InlineExample, "body")
     descriptor = None
-    for klass in rapidml::InlineExample.__mro__:
+    for klass in rapidml_InlineExample.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -800,30 +800,30 @@ def test_rapidml::inlineexample_has_body():
 
 
 
-def test_rapidml::example_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Example)
+def test_rapidml_example_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Example)
 
 
-def test_rapidml::example_constructor_exists():
-    assert callable(rapidml::Example.__init__)
+def test_rapidml_example_constructor_exists():
+    assert callable(rapidml_Example.__init__)
 
 
-def test_rapidml::example_constructor_args():
-    sig = inspect.signature(rapidml::Example.__init__)
+def test_rapidml_example_constructor_args():
+    sig = inspect.signature(rapidml_Example.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::withexamples_is_not_abstract():
-    assert not inspect.isabstract(rapidml::WithExamples)
+def test_rapidml_withexamples_is_not_abstract():
+    assert not inspect.isabstract(rapidml_WithExamples)
 
 
-def test_rapidml::withexamples_constructor_exists():
-    assert callable(rapidml::WithExamples.__init__)
+def test_rapidml_withexamples_constructor_exists():
+    assert callable(rapidml_WithExamples.__init__)
 
 
-def test_rapidml::withexamples_constructor_args():
-    sig = inspect.signature(rapidml::WithExamples.__init__)
+def test_rapidml_withexamples_constructor_args():
+    sig = inspect.signature(rapidml_WithExamples.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -856,23 +856,23 @@ def test_hasstringvalue_constructor_args():
 
 
 
-def test_rapidml::urisegment_is_not_abstract():
-    assert not inspect.isabstract(rapidml::URISegment)
+def test_rapidml_urisegment_is_not_abstract():
+    assert not inspect.isabstract(rapidml_URISegment)
 
 
-def test_rapidml::urisegment_constructor_exists():
-    assert callable(rapidml::URISegment.__init__)
+def test_rapidml_urisegment_constructor_exists():
+    assert callable(rapidml_URISegment.__init__)
 
 
-def test_rapidml::urisegment_constructor_args():
-    sig = inspect.signature(rapidml::URISegment.__init__)
+def test_rapidml_urisegment_constructor_args():
+    sig = inspect.signature(rapidml_URISegment.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::urisegment_has_name():
-    assert hasattr(rapidml::URISegment, "name")
+def test_rapidml_urisegment_has_name():
+    assert hasattr(rapidml_URISegment, "name")
     descriptor = None
-    for klass in rapidml::URISegment.__mro__:
+    for klass in rapidml_URISegment.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -880,30 +880,30 @@ def test_rapidml::urisegment_has_name():
 
 
 
-def test_rapidml::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PrimitiveType)
+def test_rapidml_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PrimitiveType)
 
 
-def test_rapidml::primitivetype_constructor_exists():
-    assert callable(rapidml::PrimitiveType.__init__)
+def test_rapidml_primitivetype_constructor_exists():
+    assert callable(rapidml_PrimitiveType.__init__)
 
 
-def test_rapidml::primitivetype_constructor_args():
-    sig = inspect.signature(rapidml::PrimitiveType.__init__)
+def test_rapidml_primitivetype_constructor_args():
+    sig = inspect.signature(rapidml_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::pathsegment_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PathSegment)
+def test_rapidml_pathsegment_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PathSegment)
 
 
-def test_rapidml::pathsegment_constructor_exists():
-    assert callable(rapidml::PathSegment.__init__)
+def test_rapidml_pathsegment_constructor_exists():
+    assert callable(rapidml_PathSegment.__init__)
 
 
-def test_rapidml::pathsegment_constructor_args():
-    sig = inspect.signature(rapidml::PathSegment.__init__)
+def test_rapidml_pathsegment_constructor_args():
+    sig = inspect.signature(rapidml_PathSegment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -950,47 +950,47 @@ def test_referencetreatment_constructor_args():
 
 
 
-def test_rapidml::referenceembed_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ReferenceEmbed)
+def test_rapidml_referenceembed_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ReferenceEmbed)
 
 
-def test_rapidml::referenceembed_constructor_exists():
-    assert callable(rapidml::ReferenceEmbed.__init__)
+def test_rapidml_referenceembed_constructor_exists():
+    assert callable(rapidml_ReferenceEmbed.__init__)
 
 
-def test_rapidml::referenceembed_constructor_args():
-    sig = inspect.signature(rapidml::ReferenceEmbed.__init__)
+def test_rapidml_referenceembed_constructor_args():
+    sig = inspect.signature(rapidml_ReferenceEmbed.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::referencelink_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ReferenceLink)
+def test_rapidml_referencelink_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ReferenceLink)
 
 
-def test_rapidml::referencelink_constructor_exists():
-    assert callable(rapidml::ReferenceLink.__init__)
+def test_rapidml_referencelink_constructor_exists():
+    assert callable(rapidml_ReferenceLink.__init__)
 
 
-def test_rapidml::referencelink_constructor_args():
-    sig = inspect.signature(rapidml::ReferenceLink.__init__)
+def test_rapidml_referencelink_constructor_args():
+    sig = inspect.signature(rapidml_ReferenceLink.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "collectionRealizationLevel" in params, "Missing parameter 'collectionRealizationLevel'"
 
-def test_rapidml::referencelink_has_name():
-    assert hasattr(rapidml::ReferenceLink, "name")
+def test_rapidml_referencelink_has_name():
+    assert hasattr(rapidml_ReferenceLink, "name")
     descriptor = None
-    for klass in rapidml::ReferenceLink.__mro__:
+    for klass in rapidml_ReferenceLink.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::referencelink_has_collectionRealizationLevel():
-    assert hasattr(rapidml::ReferenceLink, "collectionRealizationLevel")
+def test_rapidml_referencelink_has_collectionRealizationLevel():
+    assert hasattr(rapidml_ReferenceLink, "collectionRealizationLevel")
     descriptor = None
-    for klass in rapidml::ReferenceLink.__mro__:
+    for klass in rapidml_ReferenceLink.__mro__:
         if "collectionRealizationLevel" in klass.__dict__:
             descriptor = klass.__dict__["collectionRealizationLevel"]
             break
@@ -998,47 +998,47 @@ def test_rapidml::referencelink_has_collectionRealizationLevel():
 
 
 
-def test_rapidml::referenceelement_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ReferenceElement)
+def test_rapidml_referenceelement_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ReferenceElement)
 
 
-def test_rapidml::referenceelement_constructor_exists():
-    assert callable(rapidml::ReferenceElement.__init__)
+def test_rapidml_referenceelement_constructor_exists():
+    assert callable(rapidml_ReferenceElement.__init__)
 
 
-def test_rapidml::referenceelement_constructor_args():
-    sig = inspect.signature(rapidml::ReferenceElement.__init__)
+def test_rapidml_referenceelement_constructor_args():
+    sig = inspect.signature(rapidml_ReferenceElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::namedlinkdescriptor_is_not_abstract():
-    assert not inspect.isabstract(rapidml::NamedLinkDescriptor)
+def test_rapidml_namedlinkdescriptor_is_not_abstract():
+    assert not inspect.isabstract(rapidml_NamedLinkDescriptor)
 
 
-def test_rapidml::namedlinkdescriptor_constructor_exists():
-    assert callable(rapidml::NamedLinkDescriptor.__init__)
+def test_rapidml_namedlinkdescriptor_constructor_exists():
+    assert callable(rapidml_NamedLinkDescriptor.__init__)
 
 
-def test_rapidml::namedlinkdescriptor_constructor_args():
-    sig = inspect.signature(rapidml::NamedLinkDescriptor.__init__)
+def test_rapidml_namedlinkdescriptor_constructor_args():
+    sig = inspect.signature(rapidml_NamedLinkDescriptor.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::namedlinkdescriptor_has_default():
-    assert hasattr(rapidml::NamedLinkDescriptor, "default")
+def test_rapidml_namedlinkdescriptor_has_default():
+    assert hasattr(rapidml_NamedLinkDescriptor, "default")
     descriptor = None
-    for klass in rapidml::NamedLinkDescriptor.__mro__:
+    for klass in rapidml_NamedLinkDescriptor.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::namedlinkdescriptor_has_name():
-    assert hasattr(rapidml::NamedLinkDescriptor, "name")
+def test_rapidml_namedlinkdescriptor_has_name():
+    assert hasattr(rapidml_NamedLinkDescriptor, "name")
     descriptor = None
-    for klass in rapidml::NamedLinkDescriptor.__mro__:
+    for klass in rapidml_NamedLinkDescriptor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1046,67 +1046,67 @@ def test_rapidml::namedlinkdescriptor_has_name():
 
 
 
-def test_rapidml::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ImportDeclaration)
+def test_rapidml_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ImportDeclaration)
 
 
-def test_rapidml::importdeclaration_constructor_exists():
-    assert callable(rapidml::ImportDeclaration.__init__)
+def test_rapidml_importdeclaration_constructor_exists():
+    assert callable(rapidml_ImportDeclaration.__init__)
 
 
-def test_rapidml::importdeclaration_constructor_args():
-    sig = inspect.signature(rapidml::ImportDeclaration.__init__)
+def test_rapidml_importdeclaration_constructor_args():
+    sig = inspect.signature(rapidml_ImportDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
-    assert "alias" in params, "Missing parameter 'alias'"
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
+    assert "alias" in params, "Missing parameter 'alias'"
 
-def test_rapidml::importdeclaration_has_importURI():
-    assert hasattr(rapidml::ImportDeclaration, "importURI")
+def test_rapidml_importdeclaration_has_importURI():
+    assert hasattr(rapidml_ImportDeclaration, "importURI")
     descriptor = None
-    for klass in rapidml::ImportDeclaration.__mro__:
+    for klass in rapidml_ImportDeclaration.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::importdeclaration_has_alias():
-    assert hasattr(rapidml::ImportDeclaration, "alias")
+def test_rapidml_importdeclaration_has_importedNamespace():
+    assert hasattr(rapidml_ImportDeclaration, "importedNamespace")
     descriptor = None
-    for klass in rapidml::ImportDeclaration.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::importdeclaration_has_importedNamespace():
-    assert hasattr(rapidml::ImportDeclaration, "importedNamespace")
-    descriptor = None
-    for klass in rapidml::ImportDeclaration.__mro__:
+    for klass in rapidml_ImportDeclaration.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
     assert isinstance(descriptor, property)
 
+def test_rapidml_importdeclaration_has_alias():
+    assert hasattr(rapidml_ImportDeclaration, "alias")
+    descriptor = None
+    for klass in rapidml_ImportDeclaration.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rapidml::primitivetypeslibrary_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PrimitiveTypesLibrary)
+
+def test_rapidml_primitivetypeslibrary_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PrimitiveTypesLibrary)
 
 
-def test_rapidml::primitivetypeslibrary_constructor_exists():
-    assert callable(rapidml::PrimitiveTypesLibrary.__init__)
+def test_rapidml_primitivetypeslibrary_constructor_exists():
+    assert callable(rapidml_PrimitiveTypesLibrary.__init__)
 
 
-def test_rapidml::primitivetypeslibrary_constructor_args():
-    sig = inspect.signature(rapidml::PrimitiveTypesLibrary.__init__)
+def test_rapidml_primitivetypeslibrary_constructor_args():
+    sig = inspect.signature(rapidml_PrimitiveTypesLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::primitivetypeslibrary_has_name():
-    assert hasattr(rapidml::PrimitiveTypesLibrary, "name")
+def test_rapidml_primitivetypeslibrary_has_name():
+    assert hasattr(rapidml_PrimitiveTypesLibrary, "name")
     descriptor = None
-    for klass in rapidml::PrimitiveTypesLibrary.__mro__:
+    for klass in rapidml_PrimitiveTypesLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1114,23 +1114,23 @@ def test_rapidml::primitivetypeslibrary_has_name():
 
 
 
-def test_rapidml::linkrelationslibrary_is_not_abstract():
-    assert not inspect.isabstract(rapidml::LinkRelationsLibrary)
+def test_rapidml_linkrelationslibrary_is_not_abstract():
+    assert not inspect.isabstract(rapidml_LinkRelationsLibrary)
 
 
-def test_rapidml::linkrelationslibrary_constructor_exists():
-    assert callable(rapidml::LinkRelationsLibrary.__init__)
+def test_rapidml_linkrelationslibrary_constructor_exists():
+    assert callable(rapidml_LinkRelationsLibrary.__init__)
 
 
-def test_rapidml::linkrelationslibrary_constructor_args():
-    sig = inspect.signature(rapidml::LinkRelationsLibrary.__init__)
+def test_rapidml_linkrelationslibrary_constructor_args():
+    sig = inspect.signature(rapidml_LinkRelationsLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::linkrelationslibrary_has_name():
-    assert hasattr(rapidml::LinkRelationsLibrary, "name")
+def test_rapidml_linkrelationslibrary_has_name():
+    assert hasattr(rapidml_LinkRelationsLibrary, "name")
     descriptor = None
-    for klass in rapidml::LinkRelationsLibrary.__mro__:
+    for klass in rapidml_LinkRelationsLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1138,37 +1138,37 @@ def test_rapidml::linkrelationslibrary_has_name():
 
 
 
-def test_rapidml::mediatypeslibrary_is_not_abstract():
-    assert not inspect.isabstract(rapidml::MediaTypesLibrary)
+def test_rapidml_mediatypeslibrary_is_not_abstract():
+    assert not inspect.isabstract(rapidml_MediaTypesLibrary)
 
 
-def test_rapidml::mediatypeslibrary_constructor_exists():
-    assert callable(rapidml::MediaTypesLibrary.__init__)
+def test_rapidml_mediatypeslibrary_constructor_exists():
+    assert callable(rapidml_MediaTypesLibrary.__init__)
 
 
-def test_rapidml::mediatypeslibrary_constructor_args():
-    sig = inspect.signature(rapidml::MediaTypesLibrary.__init__)
+def test_rapidml_mediatypeslibrary_constructor_args():
+    sig = inspect.signature(rapidml_MediaTypesLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::realizationmodellocation_is_not_abstract():
-    assert not inspect.isabstract(rapidml::RealizationModelLocation)
+def test_rapidml_realizationmodellocation_is_not_abstract():
+    assert not inspect.isabstract(rapidml_RealizationModelLocation)
 
 
-def test_rapidml::realizationmodellocation_constructor_exists():
-    assert callable(rapidml::RealizationModelLocation.__init__)
+def test_rapidml_realizationmodellocation_constructor_exists():
+    assert callable(rapidml_RealizationModelLocation.__init__)
 
 
-def test_rapidml::realizationmodellocation_constructor_args():
-    sig = inspect.signature(rapidml::RealizationModelLocation.__init__)
+def test_rapidml_realizationmodellocation_constructor_args():
+    sig = inspect.signature(rapidml_RealizationModelLocation.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_rapidml::realizationmodellocation_has_uri():
-    assert hasattr(rapidml::RealizationModelLocation, "uri")
+def test_rapidml_realizationmodellocation_has_uri():
+    assert hasattr(rapidml_RealizationModelLocation, "uri")
     descriptor = None
-    for klass in rapidml::RealizationModelLocation.__mro__:
+    for klass in rapidml_RealizationModelLocation.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -1190,16 +1190,16 @@ def test_hastitle_constructor_args():
 
 
 
-def test_rapidml::primitiveproperty_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PrimitiveProperty)
+def test_rapidml_primitiveproperty_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PrimitiveProperty)
 
 
-def test_rapidml::primitiveproperty_constructor_exists():
-    assert callable(rapidml::PrimitiveProperty.__init__)
+def test_rapidml_primitiveproperty_constructor_exists():
+    assert callable(rapidml_PrimitiveProperty.__init__)
 
 
-def test_rapidml::primitiveproperty_constructor_args():
-    sig = inspect.signature(rapidml::PrimitiveProperty.__init__)
+def test_rapidml_primitiveproperty_constructor_args():
+    sig = inspect.signature(rapidml_PrimitiveProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1218,30 +1218,30 @@ def test_sourcereference_constructor_args():
 
 
 
-def test_rapidml::primitivetypesourcereference_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PrimitiveTypeSourceReference)
+def test_rapidml_primitivetypesourcereference_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PrimitiveTypeSourceReference)
 
 
-def test_rapidml::primitivetypesourcereference_constructor_exists():
-    assert callable(rapidml::PrimitiveTypeSourceReference.__init__)
+def test_rapidml_primitivetypesourcereference_constructor_exists():
+    assert callable(rapidml_PrimitiveTypeSourceReference.__init__)
 
 
-def test_rapidml::primitivetypesourcereference_constructor_args():
-    sig = inspect.signature(rapidml::PrimitiveTypeSourceReference.__init__)
+def test_rapidml_primitivetypesourcereference_constructor_args():
+    sig = inspect.signature(rapidml_PrimitiveTypeSourceReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::propertyreference_is_not_abstract():
-    assert not inspect.isabstract(rapidml::PropertyReference)
+def test_rapidml_propertyreference_is_not_abstract():
+    assert not inspect.isabstract(rapidml_PropertyReference)
 
 
-def test_rapidml::propertyreference_constructor_exists():
-    assert callable(rapidml::PropertyReference.__init__)
+def test_rapidml_propertyreference_constructor_exists():
+    assert callable(rapidml_PropertyReference.__init__)
 
 
-def test_rapidml::propertyreference_constructor_args():
-    sig = inspect.signature(rapidml::PropertyReference.__init__)
+def test_rapidml_propertyreference_constructor_args():
+    sig = inspect.signature(rapidml_PropertyReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1260,44 +1260,44 @@ def test_parameter_constructor_args():
 
 
 
-def test_rapidml::uriparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::URIParameter)
+def test_rapidml_uriparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_URIParameter)
 
 
-def test_rapidml::uriparameter_constructor_exists():
-    assert callable(rapidml::URIParameter.__init__)
+def test_rapidml_uriparameter_constructor_exists():
+    assert callable(rapidml_URIParameter.__init__)
 
 
-def test_rapidml::uriparameter_constructor_args():
-    sig = inspect.signature(rapidml::URIParameter.__init__)
+def test_rapidml_uriparameter_constructor_args():
+    sig = inspect.signature(rapidml_URIParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::collectionreferenceelement_is_not_abstract():
-    assert not inspect.isabstract(rapidml::CollectionReferenceElement)
+def test_rapidml_collectionreferenceelement_is_not_abstract():
+    assert not inspect.isabstract(rapidml_CollectionReferenceElement)
 
 
-def test_rapidml::collectionreferenceelement_constructor_exists():
-    assert callable(rapidml::CollectionReferenceElement.__init__)
+def test_rapidml_collectionreferenceelement_constructor_exists():
+    assert callable(rapidml_CollectionReferenceElement.__init__)
 
 
-def test_rapidml::collectionreferenceelement_constructor_args():
-    sig = inspect.signature(rapidml::CollectionReferenceElement.__init__)
+def test_rapidml_collectionreferenceelement_constructor_args():
+    sig = inspect.signature(rapidml_CollectionReferenceElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::collectionparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::CollectionParameter)
+def test_rapidml_collectionparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_CollectionParameter)
 
 
-def test_rapidml::collectionparameter_constructor_exists():
-    assert callable(rapidml::CollectionParameter.__init__)
+def test_rapidml_collectionparameter_constructor_exists():
+    assert callable(rapidml_CollectionParameter.__init__)
 
 
-def test_rapidml::collectionparameter_constructor_args():
-    sig = inspect.signature(rapidml::CollectionParameter.__init__)
+def test_rapidml_collectionparameter_constructor_args():
+    sig = inspect.signature(rapidml_CollectionParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1316,37 +1316,37 @@ def test_servicedataresource_constructor_args():
 
 
 
-def test_rapidml::objectresource_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ObjectResource)
+def test_rapidml_objectresource_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ObjectResource)
 
 
-def test_rapidml::objectresource_constructor_exists():
-    assert callable(rapidml::ObjectResource.__init__)
+def test_rapidml_objectresource_constructor_exists():
+    assert callable(rapidml_ObjectResource.__init__)
 
 
-def test_rapidml::objectresource_constructor_args():
-    sig = inspect.signature(rapidml::ObjectResource.__init__)
+def test_rapidml_objectresource_constructor_args():
+    sig = inspect.signature(rapidml_ObjectResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::collectionresource_is_not_abstract():
-    assert not inspect.isabstract(rapidml::CollectionResource)
+def test_rapidml_collectionresource_is_not_abstract():
+    assert not inspect.isabstract(rapidml_CollectionResource)
 
 
-def test_rapidml::collectionresource_constructor_exists():
-    assert callable(rapidml::CollectionResource.__init__)
+def test_rapidml_collectionresource_constructor_exists():
+    assert callable(rapidml_CollectionResource.__init__)
 
 
-def test_rapidml::collectionresource_constructor_args():
-    sig = inspect.signature(rapidml::CollectionResource.__init__)
+def test_rapidml_collectionresource_constructor_args():
+    sig = inspect.signature(rapidml_CollectionResource.__init__)
     params = list(sig.parameters.keys())
     assert "resourceRealizationKind" in params, "Missing parameter 'resourceRealizationKind'"
 
-def test_rapidml::collectionresource_has_resourceRealizationKind():
-    assert hasattr(rapidml::CollectionResource, "resourceRealizationKind")
+def test_rapidml_collectionresource_has_resourceRealizationKind():
+    assert hasattr(rapidml_CollectionResource, "resourceRealizationKind")
     descriptor = None
-    for klass in rapidml::CollectionResource.__mro__:
+    for klass in rapidml_CollectionResource.__mro__:
         if "resourceRealizationKind" in klass.__dict__:
             descriptor = klass.__dict__["resourceRealizationKind"]
             break
@@ -1368,79 +1368,79 @@ def test_uriparameter_constructor_args():
 
 
 
-def test_rapidml::templateparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::TemplateParameter)
+def test_rapidml_templateparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_TemplateParameter)
 
 
-def test_rapidml::templateparameter_constructor_exists():
-    assert callable(rapidml::TemplateParameter.__init__)
+def test_rapidml_templateparameter_constructor_exists():
+    assert callable(rapidml_TemplateParameter.__init__)
 
 
-def test_rapidml::templateparameter_constructor_args():
-    sig = inspect.signature(rapidml::TemplateParameter.__init__)
+def test_rapidml_templateparameter_constructor_args():
+    sig = inspect.signature(rapidml_TemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::matrixparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::MatrixParameter)
+def test_rapidml_matrixparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_MatrixParameter)
 
 
-def test_rapidml::matrixparameter_constructor_exists():
-    assert callable(rapidml::MatrixParameter.__init__)
+def test_rapidml_matrixparameter_constructor_exists():
+    assert callable(rapidml_MatrixParameter.__init__)
 
 
-def test_rapidml::matrixparameter_constructor_args():
-    sig = inspect.signature(rapidml::MatrixParameter.__init__)
+def test_rapidml_matrixparameter_constructor_args():
+    sig = inspect.signature(rapidml_MatrixParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::urisegmentwithparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::URISegmentWithParameter)
+def test_rapidml_urisegmentwithparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_URISegmentWithParameter)
 
 
-def test_rapidml::urisegmentwithparameter_constructor_exists():
-    assert callable(rapidml::URISegmentWithParameter.__init__)
+def test_rapidml_urisegmentwithparameter_constructor_exists():
+    assert callable(rapidml_URISegmentWithParameter.__init__)
 
 
-def test_rapidml::urisegmentwithparameter_constructor_args():
-    sig = inspect.signature(rapidml::URISegmentWithParameter.__init__)
+def test_rapidml_urisegmentwithparameter_constructor_args():
+    sig = inspect.signature(rapidml_URISegmentWithParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::documentable_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Documentable)
+def test_rapidml_documentable_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Documentable)
 
 
-def test_rapidml::documentable_constructor_exists():
-    assert callable(rapidml::Documentable.__init__)
+def test_rapidml_documentable_constructor_exists():
+    assert callable(rapidml_Documentable.__init__)
 
 
-def test_rapidml::documentable_constructor_args():
-    sig = inspect.signature(rapidml::Documentable.__init__)
+def test_rapidml_documentable_constructor_args():
+    sig = inspect.signature(rapidml_Documentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::documentation_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Documentation)
+def test_rapidml_documentation_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Documentation)
 
 
-def test_rapidml::documentation_constructor_exists():
-    assert callable(rapidml::Documentation.__init__)
+def test_rapidml_documentation_constructor_exists():
+    assert callable(rapidml_Documentation.__init__)
 
 
-def test_rapidml::documentation_constructor_args():
-    sig = inspect.signature(rapidml::Documentation.__init__)
+def test_rapidml_documentation_constructor_args():
+    sig = inspect.signature(rapidml_Documentation.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_rapidml::documentation_has_text():
-    assert hasattr(rapidml::Documentation, "text")
+def test_rapidml_documentation_has_text():
+    assert hasattr(rapidml_Documentation, "text")
     descriptor = None
-    for klass in rapidml::Documentation.__mro__:
+    for klass in rapidml_Documentation.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1476,57 +1476,23 @@ def test_documentable_constructor_args():
 
 
 
-def test_rapidml::linkrelation_is_not_abstract():
-    assert not inspect.isabstract(rapidml::LinkRelation)
+def test_rapidml_securityschemelibrary_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SecuritySchemeLibrary)
 
 
-def test_rapidml::linkrelation_constructor_exists():
-    assert callable(rapidml::LinkRelation.__init__)
+def test_rapidml_securityschemelibrary_constructor_exists():
+    assert callable(rapidml_SecuritySchemeLibrary.__init__)
 
 
-def test_rapidml::linkrelation_constructor_args():
-    sig = inspect.signature(rapidml::LinkRelation.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "specURL" in params, "Missing parameter 'specURL'"
-
-def test_rapidml::linkrelation_has_name():
-    assert hasattr(rapidml::LinkRelation, "name")
-    descriptor = None
-    for klass in rapidml::LinkRelation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::linkrelation_has_specURL():
-    assert hasattr(rapidml::LinkRelation, "specURL")
-    descriptor = None
-    for klass in rapidml::LinkRelation.__mro__:
-        if "specURL" in klass.__dict__:
-            descriptor = klass.__dict__["specURL"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rapidml::securityschemelibrary_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SecuritySchemeLibrary)
-
-
-def test_rapidml::securityschemelibrary_constructor_exists():
-    assert callable(rapidml::SecuritySchemeLibrary.__init__)
-
-
-def test_rapidml::securityschemelibrary_constructor_args():
-    sig = inspect.signature(rapidml::SecuritySchemeLibrary.__init__)
+def test_rapidml_securityschemelibrary_constructor_args():
+    sig = inspect.signature(rapidml_SecuritySchemeLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::securityschemelibrary_has_name():
-    assert hasattr(rapidml::SecuritySchemeLibrary, "name")
+def test_rapidml_securityschemelibrary_has_name():
+    assert hasattr(rapidml_SecuritySchemeLibrary, "name")
     descriptor = None
-    for klass in rapidml::SecuritySchemeLibrary.__mro__:
+    for klass in rapidml_SecuritySchemeLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1534,23 +1500,23 @@ def test_rapidml::securityschemelibrary_has_name():
 
 
 
-def test_rapidml::operation_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Operation)
+def test_rapidml_securityscope_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SecurityScope)
 
 
-def test_rapidml::operation_constructor_exists():
-    assert callable(rapidml::Operation.__init__)
+def test_rapidml_securityscope_constructor_exists():
+    assert callable(rapidml_SecurityScope.__init__)
 
 
-def test_rapidml::operation_constructor_args():
-    sig = inspect.signature(rapidml::Operation.__init__)
+def test_rapidml_securityscope_constructor_args():
+    sig = inspect.signature(rapidml_SecurityScope.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::operation_has_name():
-    assert hasattr(rapidml::Operation, "name")
+def test_rapidml_securityscope_has_name():
+    assert hasattr(rapidml_SecurityScope, "name")
     descriptor = None
-    for klass in rapidml::Operation.__mro__:
+    for klass in rapidml_SecurityScope.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1558,33 +1524,33 @@ def test_rapidml::operation_has_name():
 
 
 
-def test_rapidml::securityschemeparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SecuritySchemeParameter)
+def test_rapidml_securityschemeparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SecuritySchemeParameter)
 
 
-def test_rapidml::securityschemeparameter_constructor_exists():
-    assert callable(rapidml::SecuritySchemeParameter.__init__)
+def test_rapidml_securityschemeparameter_constructor_exists():
+    assert callable(rapidml_SecuritySchemeParameter.__init__)
 
 
-def test_rapidml::securityschemeparameter_constructor_args():
-    sig = inspect.signature(rapidml::SecuritySchemeParameter.__init__)
+def test_rapidml_securityschemeparameter_constructor_args():
+    sig = inspect.signature(rapidml_SecuritySchemeParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_rapidml::securityschemeparameter_has_name():
-    assert hasattr(rapidml::SecuritySchemeParameter, "name")
+def test_rapidml_securityschemeparameter_has_name():
+    assert hasattr(rapidml_SecuritySchemeParameter, "name")
     descriptor = None
-    for klass in rapidml::SecuritySchemeParameter.__mro__:
+    for klass in rapidml_SecuritySchemeParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::securityschemeparameter_has_value():
-    assert hasattr(rapidml::SecuritySchemeParameter, "value")
+def test_rapidml_securityschemeparameter_has_value():
+    assert hasattr(rapidml_SecuritySchemeParameter, "value")
     descriptor = None
-    for klass in rapidml::SecuritySchemeParameter.__mro__:
+    for klass in rapidml_SecuritySchemeParameter.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1592,23 +1558,33 @@ def test_rapidml::securityschemeparameter_has_value():
 
 
 
-def test_rapidml::securityscope_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SecurityScope)
+def test_rapidml_linkrelation_is_not_abstract():
+    assert not inspect.isabstract(rapidml_LinkRelation)
 
 
-def test_rapidml::securityscope_constructor_exists():
-    assert callable(rapidml::SecurityScope.__init__)
+def test_rapidml_linkrelation_constructor_exists():
+    assert callable(rapidml_LinkRelation.__init__)
 
 
-def test_rapidml::securityscope_constructor_args():
-    sig = inspect.signature(rapidml::SecurityScope.__init__)
+def test_rapidml_linkrelation_constructor_args():
+    sig = inspect.signature(rapidml_LinkRelation.__init__)
     params = list(sig.parameters.keys())
+    assert "specURL" in params, "Missing parameter 'specURL'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::securityscope_has_name():
-    assert hasattr(rapidml::SecurityScope, "name")
+def test_rapidml_linkrelation_has_specURL():
+    assert hasattr(rapidml_LinkRelation, "specURL")
     descriptor = None
-    for klass in rapidml::SecurityScope.__mro__:
+    for klass in rapidml_LinkRelation.__mro__:
+        if "specURL" in klass.__dict__:
+            descriptor = klass.__dict__["specURL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_linkrelation_has_name():
+    assert hasattr(rapidml_LinkRelation, "name")
+    descriptor = None
+    for klass in rapidml_LinkRelation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1616,23 +1592,23 @@ def test_rapidml::securityscope_has_name():
 
 
 
-def test_rapidml::datamodel_is_not_abstract():
-    assert not inspect.isabstract(rapidml::DataModel)
+def test_rapidml_operation_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Operation)
 
 
-def test_rapidml::datamodel_constructor_exists():
-    assert callable(rapidml::DataModel.__init__)
+def test_rapidml_operation_constructor_exists():
+    assert callable(rapidml_Operation.__init__)
 
 
-def test_rapidml::datamodel_constructor_args():
-    sig = inspect.signature(rapidml::DataModel.__init__)
+def test_rapidml_operation_constructor_args():
+    sig = inspect.signature(rapidml_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::datamodel_has_name():
-    assert hasattr(rapidml::DataModel, "name")
+def test_rapidml_operation_has_name():
+    assert hasattr(rapidml_Operation, "name")
     descriptor = None
-    for klass in rapidml::DataModel.__mro__:
+    for klass in rapidml_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1640,43 +1616,67 @@ def test_rapidml::datamodel_has_name():
 
 
 
-def test_rapidml::enumconstant_is_not_abstract():
-    assert not inspect.isabstract(rapidml::EnumConstant)
+def test_rapidml_enumconstant_is_not_abstract():
+    assert not inspect.isabstract(rapidml_EnumConstant)
 
 
-def test_rapidml::enumconstant_constructor_exists():
-    assert callable(rapidml::EnumConstant.__init__)
+def test_rapidml_enumconstant_constructor_exists():
+    assert callable(rapidml_EnumConstant.__init__)
 
 
-def test_rapidml::enumconstant_constructor_args():
-    sig = inspect.signature(rapidml::EnumConstant.__init__)
+def test_rapidml_enumconstant_constructor_args():
+    sig = inspect.signature(rapidml_EnumConstant.__init__)
     params = list(sig.parameters.keys())
-    assert "integerValue" in params, "Missing parameter 'integerValue'"
     assert "literalValue" in params, "Missing parameter 'literalValue'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "integerValue" in params, "Missing parameter 'integerValue'"
 
-def test_rapidml::enumconstant_has_integerValue():
-    assert hasattr(rapidml::EnumConstant, "integerValue")
+def test_rapidml_enumconstant_has_literalValue():
+    assert hasattr(rapidml_EnumConstant, "literalValue")
     descriptor = None
-    for klass in rapidml::EnumConstant.__mro__:
-        if "integerValue" in klass.__dict__:
-            descriptor = klass.__dict__["integerValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::enumconstant_has_literalValue():
-    assert hasattr(rapidml::EnumConstant, "literalValue")
-    descriptor = None
-    for klass in rapidml::EnumConstant.__mro__:
+    for klass in rapidml_EnumConstant.__mro__:
         if "literalValue" in klass.__dict__:
             descriptor = klass.__dict__["literalValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::enumconstant_has_name():
-    assert hasattr(rapidml::EnumConstant, "name")
+def test_rapidml_enumconstant_has_name():
+    assert hasattr(rapidml_EnumConstant, "name")
     descriptor = None
-    for klass in rapidml::EnumConstant.__mro__:
+    for klass in rapidml_EnumConstant.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_enumconstant_has_integerValue():
+    assert hasattr(rapidml_EnumConstant, "integerValue")
+    descriptor = None
+    for klass in rapidml_EnumConstant.__mro__:
+        if "integerValue" in klass.__dict__:
+            descriptor = klass.__dict__["integerValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rapidml_datamodel_is_not_abstract():
+    assert not inspect.isabstract(rapidml_DataModel)
+
+
+def test_rapidml_datamodel_constructor_exists():
+    assert callable(rapidml_DataModel.__init__)
+
+
+def test_rapidml_datamodel_constructor_args():
+    sig = inspect.signature(rapidml_DataModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_rapidml_datamodel_has_name():
+    assert hasattr(rapidml_DataModel, "name")
+    descriptor = None
+    for klass in rapidml_DataModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1684,16 +1684,16 @@ def test_rapidml::enumconstant_has_name():
 
 
 
-def test_rapidml::sourcereference_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SourceReference)
+def test_rapidml_sourcereference_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SourceReference)
 
 
-def test_rapidml::sourcereference_constructor_exists():
-    assert callable(rapidml::SourceReference.__init__)
+def test_rapidml_sourcereference_constructor_exists():
+    assert callable(rapidml_SourceReference.__init__)
 
 
-def test_rapidml::sourcereference_constructor_args():
-    sig = inspect.signature(rapidml::SourceReference.__init__)
+def test_rapidml_sourcereference_constructor_args():
+    sig = inspect.signature(rapidml_SourceReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1712,33 +1712,33 @@ def test_realizationcontainer_constructor_args():
 
 
 
-def test_rapidml::referencerealization_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ReferenceRealization)
+def test_rapidml_referencerealization_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ReferenceRealization)
 
 
-def test_rapidml::referencerealization_constructor_exists():
-    assert callable(rapidml::ReferenceRealization.__init__)
+def test_rapidml_referencerealization_constructor_exists():
+    assert callable(rapidml_ReferenceRealization.__init__)
 
 
-def test_rapidml::referencerealization_constructor_args():
-    sig = inspect.signature(rapidml::ReferenceRealization.__init__)
+def test_rapidml_referencerealization_constructor_args():
+    sig = inspect.signature(rapidml_ReferenceRealization.__init__)
     params = list(sig.parameters.keys())
     assert "realizationType" in params, "Missing parameter 'realizationType'"
     assert "multiValued" in params, "Missing parameter 'multiValued'"
 
-def test_rapidml::referencerealization_has_realizationType():
-    assert hasattr(rapidml::ReferenceRealization, "realizationType")
+def test_rapidml_referencerealization_has_realizationType():
+    assert hasattr(rapidml_ReferenceRealization, "realizationType")
     descriptor = None
-    for klass in rapidml::ReferenceRealization.__mro__:
+    for klass in rapidml_ReferenceRealization.__mro__:
         if "realizationType" in klass.__dict__:
             descriptor = klass.__dict__["realizationType"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::referencerealization_has_multiValued():
-    assert hasattr(rapidml::ReferenceRealization, "multiValued")
+def test_rapidml_referencerealization_has_multiValued():
+    assert hasattr(rapidml_ReferenceRealization, "multiValued")
     descriptor = None
-    for klass in rapidml::ReferenceRealization.__mro__:
+    for klass in rapidml_ReferenceRealization.__mro__:
         if "multiValued" in klass.__dict__:
             descriptor = klass.__dict__["multiValued"]
             break
@@ -1746,23 +1746,23 @@ def test_rapidml::referencerealization_has_multiValued():
 
 
 
-def test_rapidml::servicedataresource_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ServiceDataResource)
+def test_rapidml_servicedataresource_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ServiceDataResource)
 
 
-def test_rapidml::servicedataresource_constructor_exists():
-    assert callable(rapidml::ServiceDataResource.__init__)
+def test_rapidml_servicedataresource_constructor_exists():
+    assert callable(rapidml_ServiceDataResource.__init__)
 
 
-def test_rapidml::servicedataresource_constructor_args():
-    sig = inspect.signature(rapidml::ServiceDataResource.__init__)
+def test_rapidml_servicedataresource_constructor_args():
+    sig = inspect.signature(rapidml_ServiceDataResource.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_rapidml::servicedataresource_has_default():
-    assert hasattr(rapidml::ServiceDataResource, "default")
+def test_rapidml_servicedataresource_has_default():
+    assert hasattr(rapidml_ServiceDataResource, "default")
     descriptor = None
-    for klass in rapidml::ServiceDataResource.__mro__:
+    for klass in rapidml_ServiceDataResource.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -1770,37 +1770,37 @@ def test_rapidml::servicedataresource_has_default():
 
 
 
-def test_rapidml::uri_is_not_abstract():
-    assert not inspect.isabstract(rapidml::URI)
+def test_rapidml_uri_is_not_abstract():
+    assert not inspect.isabstract(rapidml_URI)
 
 
-def test_rapidml::uri_constructor_exists():
-    assert callable(rapidml::URI.__init__)
+def test_rapidml_uri_constructor_exists():
+    assert callable(rapidml_URI.__init__)
 
 
-def test_rapidml::uri_constructor_args():
-    sig = inspect.signature(rapidml::URI.__init__)
+def test_rapidml_uri_constructor_args():
+    sig = inspect.signature(rapidml_URI.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::typedresponse_is_not_abstract():
-    assert not inspect.isabstract(rapidml::TypedResponse)
+def test_rapidml_typedresponse_is_not_abstract():
+    assert not inspect.isabstract(rapidml_TypedResponse)
 
 
-def test_rapidml::typedresponse_constructor_exists():
-    assert callable(rapidml::TypedResponse.__init__)
+def test_rapidml_typedresponse_constructor_exists():
+    assert callable(rapidml_TypedResponse.__init__)
 
 
-def test_rapidml::typedresponse_constructor_args():
-    sig = inspect.signature(rapidml::TypedResponse.__init__)
+def test_rapidml_typedresponse_constructor_args():
+    sig = inspect.signature(rapidml_TypedResponse.__init__)
     params = list(sig.parameters.keys())
     assert "statusCode" in params, "Missing parameter 'statusCode'"
 
-def test_rapidml::typedresponse_has_statusCode():
-    assert hasattr(rapidml::TypedResponse, "statusCode")
+def test_rapidml_typedresponse_has_statusCode():
+    assert hasattr(rapidml_TypedResponse, "statusCode")
     descriptor = None
-    for klass in rapidml::TypedResponse.__mro__:
+    for klass in rapidml_TypedResponse.__mro__:
         if "statusCode" in klass.__dict__:
             descriptor = klass.__dict__["statusCode"]
             break
@@ -1808,16 +1808,16 @@ def test_rapidml::typedresponse_has_statusCode():
 
 
 
-def test_rapidml::typedrequest_is_not_abstract():
-    assert not inspect.isabstract(rapidml::TypedRequest)
+def test_rapidml_typedrequest_is_not_abstract():
+    assert not inspect.isabstract(rapidml_TypedRequest)
 
 
-def test_rapidml::typedrequest_constructor_exists():
-    assert callable(rapidml::TypedRequest.__init__)
+def test_rapidml_typedrequest_constructor_exists():
+    assert callable(rapidml_TypedRequest.__init__)
 
 
-def test_rapidml::typedrequest_constructor_args():
-    sig = inspect.signature(rapidml::TypedRequest.__init__)
+def test_rapidml_typedrequest_constructor_args():
+    sig = inspect.signature(rapidml_TypedRequest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1836,23 +1836,23 @@ def test_extensible_constructor_args():
 
 
 
-def test_rapidml::datatype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::DataType)
+def test_rapidml_datatype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_DataType)
 
 
-def test_rapidml::datatype_constructor_exists():
-    assert callable(rapidml::DataType.__init__)
+def test_rapidml_datatype_constructor_exists():
+    assert callable(rapidml_DataType.__init__)
 
 
-def test_rapidml::datatype_constructor_args():
-    sig = inspect.signature(rapidml::DataType.__init__)
+def test_rapidml_datatype_constructor_args():
+    sig = inspect.signature(rapidml_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rapidml::datatype_has_name():
-    assert hasattr(rapidml::DataType, "name")
+def test_rapidml_datatype_has_name():
+    assert hasattr(rapidml_DataType, "name")
     descriptor = None
-    for klass in rapidml::DataType.__mro__:
+    for klass in rapidml_DataType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1860,225 +1860,225 @@ def test_rapidml::datatype_has_name():
 
 
 
-def test_rapidml::realizationcontainer_is_not_abstract():
-    assert not inspect.isabstract(rapidml::RealizationContainer)
+def test_rapidml_realizationcontainer_is_not_abstract():
+    assert not inspect.isabstract(rapidml_RealizationContainer)
 
 
-def test_rapidml::realizationcontainer_constructor_exists():
-    assert callable(rapidml::RealizationContainer.__init__)
+def test_rapidml_realizationcontainer_constructor_exists():
+    assert callable(rapidml_RealizationContainer.__init__)
 
 
-def test_rapidml::realizationcontainer_constructor_args():
-    sig = inspect.signature(rapidml::RealizationContainer.__init__)
+def test_rapidml_realizationcontainer_constructor_args():
+    sig = inspect.signature(rapidml_RealizationContainer.__init__)
     params = list(sig.parameters.keys())
+    assert "effectiveRealization" in params, "Missing parameter 'effectiveRealization'"
     assert "realizationName" in params, "Missing parameter 'realizationName'"
     assert "withDefaultRealization" in params, "Missing parameter 'withDefaultRealization'"
-    assert "effectiveRealization" in params, "Missing parameter 'effectiveRealization'"
 
-def test_rapidml::realizationcontainer_has_realizationName():
-    assert hasattr(rapidml::RealizationContainer, "realizationName")
+def test_rapidml_realizationcontainer_has_effectiveRealization():
+    assert hasattr(rapidml_RealizationContainer, "effectiveRealization")
     descriptor = None
-    for klass in rapidml::RealizationContainer.__mro__:
-        if "realizationName" in klass.__dict__:
-            descriptor = klass.__dict__["realizationName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::realizationcontainer_has_withDefaultRealization():
-    assert hasattr(rapidml::RealizationContainer, "withDefaultRealization")
-    descriptor = None
-    for klass in rapidml::RealizationContainer.__mro__:
-        if "withDefaultRealization" in klass.__dict__:
-            descriptor = klass.__dict__["withDefaultRealization"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::realizationcontainer_has_effectiveRealization():
-    assert hasattr(rapidml::RealizationContainer, "effectiveRealization")
-    descriptor = None
-    for klass in rapidml::RealizationContainer.__mro__:
+    for klass in rapidml_RealizationContainer.__mro__:
         if "effectiveRealization" in klass.__dict__:
             descriptor = klass.__dict__["effectiveRealization"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_rapidml::constrainabletype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ConstrainableType)
-
-
-def test_rapidml::constrainabletype_constructor_exists():
-    assert callable(rapidml::ConstrainableType.__init__)
-
-
-def test_rapidml::constrainabletype_constructor_args():
-    sig = inspect.signature(rapidml::ConstrainableType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rapidml::zenmodel_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ZenModel)
-
-
-def test_rapidml::zenmodel_constructor_exists():
-    assert callable(rapidml::ZenModel.__init__)
-
-
-def test_rapidml::zenmodel_constructor_args():
-    sig = inspect.signature(rapidml::ZenModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "namespace" in params, "Missing parameter 'namespace'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_rapidml::zenmodel_has_namespace():
-    assert hasattr(rapidml::ZenModel, "namespace")
+def test_rapidml_realizationcontainer_has_realizationName():
+    assert hasattr(rapidml_RealizationContainer, "realizationName")
     descriptor = None
-    for klass in rapidml::ZenModel.__mro__:
-        if "namespace" in klass.__dict__:
-            descriptor = klass.__dict__["namespace"]
+    for klass in rapidml_RealizationContainer.__mro__:
+        if "realizationName" in klass.__dict__:
+            descriptor = klass.__dict__["realizationName"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::zenmodel_has_name():
-    assert hasattr(rapidml::ZenModel, "name")
+def test_rapidml_realizationcontainer_has_withDefaultRealization():
+    assert hasattr(rapidml_RealizationContainer, "withDefaultRealization")
     descriptor = None
-    for klass in rapidml::ZenModel.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in rapidml_RealizationContainer.__mro__:
+        if "withDefaultRealization" in klass.__dict__:
+            descriptor = klass.__dict__["withDefaultRealization"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_rapidml::feature_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Feature)
+def test_rapidml_feature_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Feature)
 
 
-def test_rapidml::feature_constructor_exists():
-    assert callable(rapidml::Feature.__init__)
+def test_rapidml_feature_constructor_exists():
+    assert callable(rapidml_Feature.__init__)
 
 
-def test_rapidml::feature_constructor_args():
-    sig = inspect.signature(rapidml::Feature.__init__)
+def test_rapidml_feature_constructor_args():
+    sig = inspect.signature(rapidml_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "restriction" in params, "Missing parameter 'restriction'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "readOnly" in params, "Missing parameter 'readOnly'"
+    assert "restriction" in params, "Missing parameter 'restriction'"
 
-def test_rapidml::feature_has_name():
-    assert hasattr(rapidml::Feature, "name")
+def test_rapidml_feature_has_key():
+    assert hasattr(rapidml_Feature, "key")
     descriptor = None
-    for klass in rapidml::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::feature_has_restriction():
-    assert hasattr(rapidml::Feature, "restriction")
-    descriptor = None
-    for klass in rapidml::Feature.__mro__:
-        if "restriction" in klass.__dict__:
-            descriptor = klass.__dict__["restriction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::feature_has_key():
-    assert hasattr(rapidml::Feature, "key")
-    descriptor = None
-    for klass in rapidml::Feature.__mro__:
+    for klass in rapidml_Feature.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::feature_has_readOnly():
-    assert hasattr(rapidml::Feature, "readOnly")
+def test_rapidml_feature_has_name():
+    assert hasattr(rapidml_Feature, "name")
     descriptor = None
-    for klass in rapidml::Feature.__mro__:
+    for klass in rapidml_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_feature_has_readOnly():
+    assert hasattr(rapidml_Feature, "readOnly")
+    descriptor = None
+    for klass in rapidml_Feature.__mro__:
         if "readOnly" in klass.__dict__:
             descriptor = klass.__dict__["readOnly"]
             break
     assert isinstance(descriptor, property)
 
+def test_rapidml_feature_has_restriction():
+    assert hasattr(rapidml_Feature, "restriction")
+    descriptor = None
+    for klass in rapidml_Feature.__mro__:
+        if "restriction" in klass.__dict__:
+            descriptor = klass.__dict__["restriction"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rapidml::restelement_is_not_abstract():
-    assert not inspect.isabstract(rapidml::RESTElement)
+
+def test_rapidml_objectrealization_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ObjectRealization)
 
 
-def test_rapidml::restelement_constructor_exists():
-    assert callable(rapidml::RESTElement.__init__)
+def test_rapidml_objectrealization_constructor_exists():
+    assert callable(rapidml_ObjectRealization.__init__)
 
 
-def test_rapidml::restelement_constructor_args():
-    sig = inspect.signature(rapidml::RESTElement.__init__)
+def test_rapidml_objectrealization_constructor_args():
+    sig = inspect.signature(rapidml_ObjectRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::constraint_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Constraint)
+def test_rapidml_zenmodel_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ZenModel)
 
 
-def test_rapidml::constraint_constructor_exists():
-    assert callable(rapidml::Constraint.__init__)
+def test_rapidml_zenmodel_constructor_exists():
+    assert callable(rapidml_ZenModel.__init__)
 
 
-def test_rapidml::constraint_constructor_args():
-    sig = inspect.signature(rapidml::Constraint.__init__)
+def test_rapidml_zenmodel_constructor_args():
+    sig = inspect.signature(rapidml_ZenModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "namespace" in params, "Missing parameter 'namespace'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_rapidml_zenmodel_has_namespace():
+    assert hasattr(rapidml_ZenModel, "namespace")
+    descriptor = None
+    for klass in rapidml_ZenModel.__mro__:
+        if "namespace" in klass.__dict__:
+            descriptor = klass.__dict__["namespace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_zenmodel_has_name():
+    assert hasattr(rapidml_ZenModel, "name")
+    descriptor = None
+    for klass in rapidml_ZenModel.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rapidml_restelement_is_not_abstract():
+    assert not inspect.isabstract(rapidml_RESTElement)
+
+
+def test_rapidml_restelement_constructor_exists():
+    assert callable(rapidml_RESTElement.__init__)
+
+
+def test_rapidml_restelement_constructor_args():
+    sig = inspect.signature(rapidml_RESTElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::referencetreatment_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ReferenceTreatment)
+def test_rapidml_constraint_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Constraint)
 
 
-def test_rapidml::referencetreatment_constructor_exists():
-    assert callable(rapidml::ReferenceTreatment.__init__)
+def test_rapidml_constraint_constructor_exists():
+    assert callable(rapidml_Constraint.__init__)
 
 
-def test_rapidml::referencetreatment_constructor_args():
-    sig = inspect.signature(rapidml::ReferenceTreatment.__init__)
+def test_rapidml_constraint_constructor_args():
+    sig = inspect.signature(rapidml_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::objectrealization_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ObjectRealization)
+def test_rapidml_referencetreatment_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ReferenceTreatment)
 
 
-def test_rapidml::objectrealization_constructor_exists():
-    assert callable(rapidml::ObjectRealization.__init__)
+def test_rapidml_referencetreatment_constructor_exists():
+    assert callable(rapidml_ReferenceTreatment.__init__)
 
 
-def test_rapidml::objectrealization_constructor_args():
-    sig = inspect.signature(rapidml::ObjectRealization.__init__)
+def test_rapidml_referencetreatment_constructor_args():
+    sig = inspect.signature(rapidml_ReferenceTreatment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rapidml::messageparameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::MessageParameter)
+def test_rapidml_constrainabletype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ConstrainableType)
 
 
-def test_rapidml::messageparameter_constructor_exists():
-    assert callable(rapidml::MessageParameter.__init__)
+def test_rapidml_constrainabletype_constructor_exists():
+    assert callable(rapidml_ConstrainableType.__init__)
 
 
-def test_rapidml::messageparameter_constructor_args():
-    sig = inspect.signature(rapidml::MessageParameter.__init__)
+def test_rapidml_constrainabletype_constructor_args():
+    sig = inspect.signature(rapidml_ConstrainableType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rapidml_messageparameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_MessageParameter)
+
+
+def test_rapidml_messageparameter_constructor_exists():
+    assert callable(rapidml_MessageParameter.__init__)
+
+
+def test_rapidml_messageparameter_constructor_args():
+    sig = inspect.signature(rapidml_MessageParameter.__init__)
     params = list(sig.parameters.keys())
     assert "httpLocation" in params, "Missing parameter 'httpLocation'"
 
-def test_rapidml::messageparameter_has_httpLocation():
-    assert hasattr(rapidml::MessageParameter, "httpLocation")
+def test_rapidml_messageparameter_has_httpLocation():
+    assert hasattr(rapidml_MessageParameter, "httpLocation")
     descriptor = None
-    for klass in rapidml::MessageParameter.__mro__:
+    for klass in rapidml_MessageParameter.__mro__:
         if "httpLocation" in klass.__dict__:
             descriptor = klass.__dict__["httpLocation"]
             break
@@ -2128,145 +2128,87 @@ def test_restelement_constructor_args():
 
 
 
-def test_rapidml::typedmessage_is_not_abstract():
-    assert not inspect.isabstract(rapidml::TypedMessage)
+def test_rapidml_mediatype_is_not_abstract():
+    assert not inspect.isabstract(rapidml_MediaType)
 
 
-def test_rapidml::typedmessage_constructor_exists():
-    assert callable(rapidml::TypedMessage.__init__)
+def test_rapidml_mediatype_constructor_exists():
+    assert callable(rapidml_MediaType.__init__)
 
 
-def test_rapidml::typedmessage_constructor_args():
-    sig = inspect.signature(rapidml::TypedMessage.__init__)
+def test_rapidml_mediatype_constructor_args():
+    sig = inspect.signature(rapidml_MediaType.__init__)
     params = list(sig.parameters.keys())
-    assert "useParentTypeReference" in params, "Missing parameter 'useParentTypeReference'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "specURL" in params, "Missing parameter 'specURL'"
 
-def test_rapidml::typedmessage_has_useParentTypeReference():
-    assert hasattr(rapidml::TypedMessage, "useParentTypeReference")
+def test_rapidml_mediatype_has_name():
+    assert hasattr(rapidml_MediaType, "name")
     descriptor = None
-    for klass in rapidml::TypedMessage.__mro__:
-        if "useParentTypeReference" in klass.__dict__:
-            descriptor = klass.__dict__["useParentTypeReference"]
+    for klass in rapidml_MediaType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_rapidml::mediatype_is_not_abstract():
-    assert not inspect.isabstract(rapidml::MediaType)
-
-
-def test_rapidml::mediatype_constructor_exists():
-    assert callable(rapidml::MediaType.__init__)
-
-
-def test_rapidml::mediatype_constructor_args():
-    sig = inspect.signature(rapidml::MediaType.__init__)
-    params = list(sig.parameters.keys())
-    assert "specURL" in params, "Missing parameter 'specURL'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_rapidml::mediatype_has_specURL():
-    assert hasattr(rapidml::MediaType, "specURL")
+def test_rapidml_mediatype_has_specURL():
+    assert hasattr(rapidml_MediaType, "specURL")
     descriptor = None
-    for klass in rapidml::MediaType.__mro__:
+    for klass in rapidml_MediaType.__mro__:
         if "specURL" in klass.__dict__:
             descriptor = klass.__dict__["specURL"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::mediatype_has_name():
-    assert hasattr(rapidml::MediaType, "name")
-    descriptor = None
-    for klass in rapidml::MediaType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_rapidml::method_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Method)
-
-
-def test_rapidml::method_constructor_exists():
-    assert callable(rapidml::Method.__init__)
+def test_rapidml_parameter_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Parameter)
 
 
-def test_rapidml::method_constructor_args():
-    sig = inspect.signature(rapidml::Method.__init__)
+def test_rapidml_parameter_constructor_exists():
+    assert callable(rapidml_Parameter.__init__)
+
+
+def test_rapidml_parameter_constructor_args():
+    sig = inspect.signature(rapidml_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "httpMethod" in params, "Missing parameter 'httpMethod'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_rapidml::method_has_httpMethod():
-    assert hasattr(rapidml::Method, "httpMethod")
-    descriptor = None
-    for klass in rapidml::Method.__mro__:
-        if "httpMethod" in klass.__dict__:
-            descriptor = klass.__dict__["httpMethod"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::method_has_id():
-    assert hasattr(rapidml::Method, "id")
-    descriptor = None
-    for klass in rapidml::Method.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rapidml::parameter_is_not_abstract():
-    assert not inspect.isabstract(rapidml::Parameter)
-
-
-def test_rapidml::parameter_constructor_exists():
-    assert callable(rapidml::Parameter.__init__)
-
-
-def test_rapidml::parameter_constructor_args():
-    sig = inspect.signature(rapidml::Parameter.__init__)
-    params = list(sig.parameters.keys())
+    assert "required" in params, "Missing parameter 'required'"
     assert "fixed" in params, "Missing parameter 'fixed'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "required" in params, "Missing parameter 'required'"
     assert "default" in params, "Missing parameter 'default'"
 
-def test_rapidml::parameter_has_fixed():
-    assert hasattr(rapidml::Parameter, "fixed")
+def test_rapidml_parameter_has_required():
+    assert hasattr(rapidml_Parameter, "required")
     descriptor = None
-    for klass in rapidml::Parameter.__mro__:
-        if "fixed" in klass.__dict__:
-            descriptor = klass.__dict__["fixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::parameter_has_name():
-    assert hasattr(rapidml::Parameter, "name")
-    descriptor = None
-    for klass in rapidml::Parameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::parameter_has_required():
-    assert hasattr(rapidml::Parameter, "required")
-    descriptor = None
-    for klass in rapidml::Parameter.__mro__:
+    for klass in rapidml_Parameter.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::parameter_has_default():
-    assert hasattr(rapidml::Parameter, "default")
+def test_rapidml_parameter_has_fixed():
+    assert hasattr(rapidml_Parameter, "fixed")
     descriptor = None
-    for klass in rapidml::Parameter.__mro__:
+    for klass in rapidml_Parameter.__mro__:
+        if "fixed" in klass.__dict__:
+            descriptor = klass.__dict__["fixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_parameter_has_name():
+    assert hasattr(rapidml_Parameter, "name")
+    descriptor = None
+    for klass in rapidml_Parameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_parameter_has_default():
+    assert hasattr(rapidml_Parameter, "default")
+    descriptor = None
+    for klass in rapidml_Parameter.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -2274,130 +2216,228 @@ def test_rapidml::parameter_has_default():
 
 
 
-def test_rapidml::securityscheme_is_not_abstract():
-    assert not inspect.isabstract(rapidml::SecurityScheme)
+def test_rapidml_method_is_not_abstract():
+    assert not inspect.isabstract(rapidml_Method)
 
 
-def test_rapidml::securityscheme_constructor_exists():
-    assert callable(rapidml::SecurityScheme.__init__)
+def test_rapidml_method_constructor_exists():
+    assert callable(rapidml_Method.__init__)
 
 
-def test_rapidml::securityscheme_constructor_args():
-    sig = inspect.signature(rapidml::SecurityScheme.__init__)
+def test_rapidml_method_constructor_args():
+    sig = inspect.signature(rapidml_Method.__init__)
+    params = list(sig.parameters.keys())
+    assert "httpMethod" in params, "Missing parameter 'httpMethod'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_rapidml_method_has_httpMethod():
+    assert hasattr(rapidml_Method, "httpMethod")
+    descriptor = None
+    for klass in rapidml_Method.__mro__:
+        if "httpMethod" in klass.__dict__:
+            descriptor = klass.__dict__["httpMethod"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_method_has_id():
+    assert hasattr(rapidml_Method, "id")
+    descriptor = None
+    for klass in rapidml_Method.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rapidml_resourceapi_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ResourceAPI)
+
+
+def test_rapidml_resourceapi_constructor_exists():
+    assert callable(rapidml_ResourceAPI.__init__)
+
+
+def test_rapidml_resourceapi_constructor_args():
+    sig = inspect.signature(rapidml_ResourceAPI.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "flow" in params, "Missing parameter 'flow'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_rapidml::securityscheme_has_name():
-    assert hasattr(rapidml::SecurityScheme, "name")
-    descriptor = None
-    for klass in rapidml::SecurityScheme.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::securityscheme_has_flow():
-    assert hasattr(rapidml::SecurityScheme, "flow")
-    descriptor = None
-    for klass in rapidml::SecurityScheme.__mro__:
-        if "flow" in klass.__dict__:
-            descriptor = klass.__dict__["flow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::securityscheme_has_type():
-    assert hasattr(rapidml::SecurityScheme, "type")
-    descriptor = None
-    for klass in rapidml::SecurityScheme.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rapidml::resourceapi_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ResourceAPI)
-
-
-def test_rapidml::resourceapi_constructor_exists():
-    assert callable(rapidml::ResourceAPI.__init__)
-
-
-def test_rapidml::resourceapi_constructor_args():
-    sig = inspect.signature(rapidml::ResourceAPI.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "baseURI" in params, "Missing parameter 'baseURI'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_rapidml::resourceapi_has_name():
-    assert hasattr(rapidml::ResourceAPI, "name")
+def test_rapidml_resourceapi_has_name():
+    assert hasattr(rapidml_ResourceAPI, "name")
     descriptor = None
-    for klass in rapidml::ResourceAPI.__mro__:
+    for klass in rapidml_ResourceAPI.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_rapidml::resourceapi_has_version():
-    assert hasattr(rapidml::ResourceAPI, "version")
+def test_rapidml_resourceapi_has_baseURI():
+    assert hasattr(rapidml_ResourceAPI, "baseURI")
     descriptor = None
-    for klass in rapidml::ResourceAPI.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rapidml::resourceapi_has_baseURI():
-    assert hasattr(rapidml::ResourceAPI, "baseURI")
-    descriptor = None
-    for klass in rapidml::ResourceAPI.__mro__:
+    for klass in rapidml_ResourceAPI.__mro__:
         if "baseURI" in klass.__dict__:
             descriptor = klass.__dict__["baseURI"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_rapidml::resourcedefinition_is_not_abstract():
-    assert not inspect.isabstract(rapidml::ResourceDefinition)
-
-
-def test_rapidml::resourcedefinition_constructor_exists():
-    assert callable(rapidml::ResourceDefinition.__init__)
-
-
-def test_rapidml::resourcedefinition_constructor_args():
-    sig = inspect.signature(rapidml::ResourceDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_rapidml::resourcedefinition_has_name():
-    assert hasattr(rapidml::ResourceDefinition, "name")
+def test_rapidml_resourceapi_has_version():
+    assert hasattr(rapidml_ResourceAPI, "version")
     descriptor = None
-    for klass in rapidml::ResourceDefinition.__mro__:
+    for klass in rapidml_ResourceAPI.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rapidml_securityscheme_is_not_abstract():
+    assert not inspect.isabstract(rapidml_SecurityScheme)
+
+
+def test_rapidml_securityscheme_constructor_exists():
+    assert callable(rapidml_SecurityScheme.__init__)
+
+
+def test_rapidml_securityscheme_constructor_args():
+    sig = inspect.signature(rapidml_SecurityScheme.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "flow" in params, "Missing parameter 'flow'"
+
+def test_rapidml_securityscheme_has_type():
+    assert hasattr(rapidml_SecurityScheme, "type")
+    descriptor = None
+    for klass in rapidml_SecurityScheme.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rapidml_securityscheme_has_name():
+    assert hasattr(rapidml_SecurityScheme, "name")
+    descriptor = None
+    for klass in rapidml_SecurityScheme.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_collectionrealizationenum_exists():
-    # Check that the Enumeration exists
-    assert CollectionRealizationEnum is not None
+def test_rapidml_securityscheme_has_flow():
+    assert hasattr(rapidml_SecurityScheme, "flow")
+    descriptor = None
+    for klass in rapidml_SecurityScheme.__mro__:
+        if "flow" in klass.__dict__:
+            descriptor = klass.__dict__["flow"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_collectionrealizationenum_has_all_literals():
+
+
+def test_rapidml_typedmessage_is_not_abstract():
+    assert not inspect.isabstract(rapidml_TypedMessage)
+
+
+def test_rapidml_typedmessage_constructor_exists():
+    assert callable(rapidml_TypedMessage.__init__)
+
+
+def test_rapidml_typedmessage_constructor_args():
+    sig = inspect.signature(rapidml_TypedMessage.__init__)
+    params = list(sig.parameters.keys())
+    assert "useParentTypeReference" in params, "Missing parameter 'useParentTypeReference'"
+
+def test_rapidml_typedmessage_has_useParentTypeReference():
+    assert hasattr(rapidml_TypedMessage, "useParentTypeReference")
+    descriptor = None
+    for klass in rapidml_TypedMessage.__mro__:
+        if "useParentTypeReference" in klass.__dict__:
+            descriptor = klass.__dict__["useParentTypeReference"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rapidml_resourcedefinition_is_not_abstract():
+    assert not inspect.isabstract(rapidml_ResourceDefinition)
+
+
+def test_rapidml_resourcedefinition_constructor_exists():
+    assert callable(rapidml_ResourceDefinition.__init__)
+
+
+def test_rapidml_resourcedefinition_constructor_args():
+    sig = inspect.signature(rapidml_ResourceDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_rapidml_resourcedefinition_has_name():
+    assert hasattr(rapidml_ResourceDefinition, "name")
+    descriptor = None
+    for klass in rapidml_ResourceDefinition.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_authenticationflows_exists():
+    # Check that the Enumeration exists
+    assert AuthenticationFlows is not None
+
+def test_authenticationflows_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CollectionRealizationEnum]
+    enum_literals = [lit.name for lit in AuthenticationFlows]
     expected_literals = [
-        "REFERENCE_LINK_LIST",
-        "EMBEDDED_OBJECT_LIST",
+        "IMPLICIT",
+        "APPLICATION",
+        "PASSWORD",
+        "ACCESS_CODE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CollectionRealizationEnum"
+        assert lit_name in enum_literals, f"Literal '' missing in AuthenticationFlows"
+
+def test_httpmessageparameterlocation_exists():
+    # Check that the Enumeration exists
+    assert HttpMessageParameterLocation is not None
+
+def test_httpmessageparameterlocation_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in HttpMessageParameterLocation]
+    expected_literals = [
+        "HEADER",
+        "QUERY",
+        "NONE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in HttpMessageParameterLocation"
+
+def test_httpmethods_exists():
+    # Check that the Enumeration exists
+    assert HTTPMethods is not None
+
+def test_httpmethods_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in HTTPMethods]
+    expected_literals = [
+        "GET",
+        "PUT",
+        "PATCH",
+        "TRACE",
+        "OPTIONS",
+        "HEAD",
+        "CONNECT",
+        "POST",
+        "DELETE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in HTTPMethods"
 
 def test_collectionrealizationlevelenum_exists():
     # Check that the Enumeration exists
@@ -2414,6 +2454,22 @@ def test_collectionrealizationlevelenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CollectionRealizationLevelEnum"
 
+def test_authenticationtypes_exists():
+    # Check that the Enumeration exists
+    assert AuthenticationTypes is not None
+
+def test_authenticationtypes_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AuthenticationTypes]
+    expected_literals = [
+        "CUSTOM",
+        "OAUTH2",
+        "BASIC",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AuthenticationTypes"
+
 def test_referencerealizationenum_exists():
     # Check that the Enumeration exists
     assert ReferenceRealizationEnum is not None
@@ -2429,76 +2485,20 @@ def test_referencerealizationenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ReferenceRealizationEnum"
 
-def test_authenticationflows_exists():
+def test_collectionrealizationenum_exists():
     # Check that the Enumeration exists
-    assert AuthenticationFlows is not None
+    assert CollectionRealizationEnum is not None
 
-def test_authenticationflows_has_all_literals():
+def test_collectionrealizationenum_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AuthenticationFlows]
+    enum_literals = [lit.name for lit in CollectionRealizationEnum]
     expected_literals = [
-        "IMPLICIT",
-        "PASSWORD",
-        "APPLICATION",
-        "ACCESS_CODE",
+        "REFERENCE_LINK_LIST",
+        "EMBEDDED_OBJECT_LIST",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AuthenticationFlows"
-
-def test_httpmessageparameterlocation_exists():
-    # Check that the Enumeration exists
-    assert HttpMessageParameterLocation is not None
-
-def test_httpmessageparameterlocation_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in HttpMessageParameterLocation]
-    expected_literals = [
-        "NONE",
-        "QUERY",
-        "HEADER",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in HttpMessageParameterLocation"
-
-def test_httpmethods_exists():
-    # Check that the Enumeration exists
-    assert HTTPMethods is not None
-
-def test_httpmethods_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in HTTPMethods]
-    expected_literals = [
-        "TRACE",
-        "HEAD",
-        "DELETE",
-        "PATCH",
-        "GET",
-        "OPTIONS",
-        "CONNECT",
-        "POST",
-        "PUT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in HTTPMethods"
-
-def test_authenticationtypes_exists():
-    # Check that the Enumeration exists
-    assert AuthenticationTypes is not None
-
-def test_authenticationtypes_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AuthenticationTypes]
-    expected_literals = [
-        "OAUTH2",
-        "CUSTOM",
-        "BASIC",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AuthenticationTypes"
+        assert lit_name in enum_literals, f"Literal '' missing in CollectionRealizationEnum"
 
 
 # =============================================================================
@@ -2512,32 +2512,32 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rapidml::Element_strategy = st.builds(
-    rapidml::Element,
+rapidml_Element_strategy = st.builds(
+    rapidml_Element,
     cardinality=
         safe_text
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-rapidml::RegExConstraint_strategy = st.builds(
-    rapidml::RegExConstraint,
+rapidml_RegExConstraint_strategy = st.builds(
+    rapidml_RegExConstraint,
     pattern=
         safe_text
 )
-rapidml::ValueRangeConstraint_strategy = st.builds(
-    rapidml::ValueRangeConstraint,
+rapidml_ValueRangeConstraint_strategy = st.builds(
+    rapidml_ValueRangeConstraint,
     minValueExclusive=
         st.booleans(),
+    maxValue=
+        safe_text,
     maxValueExclusive=
         st.booleans(),
     minValue=
-        safe_text,
-    maxValue=
         safe_text
 )
-rapidml::LengthConstraint_strategy = st.builds(
-    rapidml::LengthConstraint,
+rapidml_LengthConstraint_strategy = st.builds(
+    rapidml_LengthConstraint,
     maxLength=
         st.integers(),
     length=
@@ -2548,11 +2548,11 @@ rapidml::LengthConstraint_strategy = st.builds(
 SingleValueType_strategy = st.builds(
     SingleValueType,
 )
-rapidml::SimpleType_strategy = st.builds(
-    rapidml::SimpleType,
+rapidml_SimpleType_strategy = st.builds(
+    rapidml_SimpleType,
 )
-rapidml::Enumeration_strategy = st.builds(
-    rapidml::Enumeration,
+rapidml_Enumeration_strategy = st.builds(
+    rapidml_Enumeration,
 )
 SimpleType_strategy = st.builds(
     SimpleType,
@@ -2563,19 +2563,19 @@ Inheritable_strategy = st.builds(
 DataExample_strategy = st.builds(
     DataExample,
 )
-rapidml::InlineDataExample_strategy = st.builds(
-    rapidml::InlineDataExample,
+rapidml_InlineDataExample_strategy = st.builds(
+    rapidml_InlineDataExample,
     body=
         safe_text
 )
-rapidml::DataExample_strategy = st.builds(
-    rapidml::DataExample,
+rapidml_DataExample_strategy = st.builds(
+    rapidml_DataExample,
 )
-rapidml::WithDataExamples_strategy = st.builds(
-    rapidml::WithDataExamples,
+rapidml_WithDataExamples_strategy = st.builds(
+    rapidml_WithDataExamples,
 )
-rapidml::Inheritable_strategy = st.builds(
-    rapidml::Inheritable,
+rapidml_Inheritable_strategy = st.builds(
+    rapidml_Inheritable,
 )
 Element_strategy = st.builds(
     Element,
@@ -2586,41 +2586,41 @@ WithDataExamples_strategy = st.builds(
 DataType_strategy = st.builds(
     DataType,
 )
-rapidml::SingleValueType_strategy = st.builds(
-    rapidml::SingleValueType,
+rapidml_SingleValueType_strategy = st.builds(
+    rapidml_SingleValueType,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-rapidml::Extensible_strategy = st.builds(
-    rapidml::Extensible,
+rapidml_Extensible_strategy = st.builds(
+    rapidml_Extensible,
 )
-rapidml::Structure_strategy = st.builds(
-    rapidml::Structure,
+rapidml_Structure_strategy = st.builds(
+    rapidml_Structure,
 )
-rapidml::HasTitle_strategy = st.builds(
-    rapidml::HasTitle,
+rapidml_HasTitle_strategy = st.builds(
+    rapidml_HasTitle,
     title=
         safe_text
 )
-rapidml::Extension_strategy = st.builds(
-    rapidml::Extension,
-    value=
-        safe_text,
+rapidml_Extension_strategy = st.builds(
+    rapidml_Extension,
     name=
+        safe_text,
+    value=
         safe_text
 )
-rapidml::AuthenticationMethod_strategy = st.builds(
-    rapidml::AuthenticationMethod,
+rapidml_AuthenticationMethod_strategy = st.builds(
+    rapidml_AuthenticationMethod,
 )
-rapidml::HasSecurityValue_strategy = st.builds(
-    rapidml::HasSecurityValue,
+rapidml_HasSecurityValue_strategy = st.builds(
+    rapidml_HasSecurityValue,
 )
 ReferenceElement_strategy = st.builds(
     ReferenceElement,
 )
-rapidml::ReferenceProperty_strategy = st.builds(
-    rapidml::ReferenceProperty,
+rapidml_ReferenceProperty_strategy = st.builds(
+    rapidml_ReferenceProperty,
     container=
         st.booleans(),
     containment=
@@ -2629,35 +2629,35 @@ rapidml::ReferenceProperty_strategy = st.builds(
 ConstrainableType_strategy = st.builds(
     ConstrainableType,
 )
-rapidml::UserDefinedType_strategy = st.builds(
-    rapidml::UserDefinedType,
+rapidml_UserDefinedType_strategy = st.builds(
+    rapidml_UserDefinedType,
 )
-rapidml::PropertyRealization_strategy = st.builds(
-    rapidml::PropertyRealization,
+rapidml_PropertyRealization_strategy = st.builds(
+    rapidml_PropertyRealization,
     cardinality=
         safe_text
 )
-rapidml::HasStringValue_strategy = st.builds(
-    rapidml::HasStringValue,
+rapidml_HasStringValue_strategy = st.builds(
+    rapidml_HasStringValue,
 )
 Example_strategy = st.builds(
     Example,
 )
-rapidml::ExternalExample_strategy = st.builds(
-    rapidml::ExternalExample,
+rapidml_ExternalExample_strategy = st.builds(
+    rapidml_ExternalExample,
     path=
         safe_text
 )
-rapidml::InlineExample_strategy = st.builds(
-    rapidml::InlineExample,
+rapidml_InlineExample_strategy = st.builds(
+    rapidml_InlineExample,
     body=
         safe_text
 )
-rapidml::Example_strategy = st.builds(
-    rapidml::Example,
+rapidml_Example_strategy = st.builds(
+    rapidml_Example,
 )
-rapidml::WithExamples_strategy = st.builds(
-    rapidml::WithExamples,
+rapidml_WithExamples_strategy = st.builds(
+    rapidml_WithExamples,
 )
 URISegment_strategy = st.builds(
     URISegment,
@@ -2665,16 +2665,16 @@ URISegment_strategy = st.builds(
 HasStringValue_strategy = st.builds(
     HasStringValue,
 )
-rapidml::URISegment_strategy = st.builds(
-    rapidml::URISegment,
+rapidml_URISegment_strategy = st.builds(
+    rapidml_URISegment,
     name=
         safe_text
 )
-rapidml::PrimitiveType_strategy = st.builds(
-    rapidml::PrimitiveType,
+rapidml_PrimitiveType_strategy = st.builds(
+    rapidml_PrimitiveType,
 )
-rapidml::PathSegment_strategy = st.builds(
-    rapidml::PathSegment,
+rapidml_PathSegment_strategy = st.builds(
+    rapidml_PathSegment,
 )
 ObjectRealization_strategy = st.builds(
     ObjectRealization,
@@ -2685,108 +2685,108 @@ ResourceDefinition_strategy = st.builds(
 ReferenceTreatment_strategy = st.builds(
     ReferenceTreatment,
 )
-rapidml::ReferenceEmbed_strategy = st.builds(
-    rapidml::ReferenceEmbed,
+rapidml_ReferenceEmbed_strategy = st.builds(
+    rapidml_ReferenceEmbed,
 )
-rapidml::ReferenceLink_strategy = st.builds(
-    rapidml::ReferenceLink,
+rapidml_ReferenceLink_strategy = st.builds(
+    rapidml_ReferenceLink,
     name=
         safe_text,
     collectionRealizationLevel=
         safe_text
 )
-rapidml::ReferenceElement_strategy = st.builds(
-    rapidml::ReferenceElement,
+rapidml_ReferenceElement_strategy = st.builds(
+    rapidml_ReferenceElement,
 )
-rapidml::NamedLinkDescriptor_strategy = st.builds(
-    rapidml::NamedLinkDescriptor,
+rapidml_NamedLinkDescriptor_strategy = st.builds(
+    rapidml_NamedLinkDescriptor,
     default=
         st.booleans(),
     name=
         safe_text
 )
-rapidml::ImportDeclaration_strategy = st.builds(
-    rapidml::ImportDeclaration,
+rapidml_ImportDeclaration_strategy = st.builds(
+    rapidml_ImportDeclaration,
     importURI=
         safe_text,
-    alias=
-        safe_text,
     importedNamespace=
+        safe_text,
+    alias=
         safe_text
 )
-rapidml::PrimitiveTypesLibrary_strategy = st.builds(
-    rapidml::PrimitiveTypesLibrary,
+rapidml_PrimitiveTypesLibrary_strategy = st.builds(
+    rapidml_PrimitiveTypesLibrary,
     name=
         safe_text
 )
-rapidml::LinkRelationsLibrary_strategy = st.builds(
-    rapidml::LinkRelationsLibrary,
+rapidml_LinkRelationsLibrary_strategy = st.builds(
+    rapidml_LinkRelationsLibrary,
     name=
         safe_text
 )
-rapidml::MediaTypesLibrary_strategy = st.builds(
-    rapidml::MediaTypesLibrary,
+rapidml_MediaTypesLibrary_strategy = st.builds(
+    rapidml_MediaTypesLibrary,
 )
-rapidml::RealizationModelLocation_strategy = st.builds(
-    rapidml::RealizationModelLocation,
+rapidml_RealizationModelLocation_strategy = st.builds(
+    rapidml_RealizationModelLocation,
     uri=
         safe_text
 )
 HasTitle_strategy = st.builds(
     HasTitle,
 )
-rapidml::PrimitiveProperty_strategy = st.builds(
-    rapidml::PrimitiveProperty,
+rapidml_PrimitiveProperty_strategy = st.builds(
+    rapidml_PrimitiveProperty,
 )
 SourceReference_strategy = st.builds(
     SourceReference,
 )
-rapidml::PrimitiveTypeSourceReference_strategy = st.builds(
-    rapidml::PrimitiveTypeSourceReference,
+rapidml_PrimitiveTypeSourceReference_strategy = st.builds(
+    rapidml_PrimitiveTypeSourceReference,
 )
-rapidml::PropertyReference_strategy = st.builds(
-    rapidml::PropertyReference,
+rapidml_PropertyReference_strategy = st.builds(
+    rapidml_PropertyReference,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-rapidml::URIParameter_strategy = st.builds(
-    rapidml::URIParameter,
+rapidml_URIParameter_strategy = st.builds(
+    rapidml_URIParameter,
 )
-rapidml::CollectionReferenceElement_strategy = st.builds(
-    rapidml::CollectionReferenceElement,
+rapidml_CollectionReferenceElement_strategy = st.builds(
+    rapidml_CollectionReferenceElement,
 )
-rapidml::CollectionParameter_strategy = st.builds(
-    rapidml::CollectionParameter,
+rapidml_CollectionParameter_strategy = st.builds(
+    rapidml_CollectionParameter,
 )
 ServiceDataResource_strategy = st.builds(
     ServiceDataResource,
 )
-rapidml::ObjectResource_strategy = st.builds(
-    rapidml::ObjectResource,
+rapidml_ObjectResource_strategy = st.builds(
+    rapidml_ObjectResource,
 )
-rapidml::CollectionResource_strategy = st.builds(
-    rapidml::CollectionResource,
+rapidml_CollectionResource_strategy = st.builds(
+    rapidml_CollectionResource,
     resourceRealizationKind=
         safe_text
 )
 URIParameter_strategy = st.builds(
     URIParameter,
 )
-rapidml::TemplateParameter_strategy = st.builds(
-    rapidml::TemplateParameter,
+rapidml_TemplateParameter_strategy = st.builds(
+    rapidml_TemplateParameter,
 )
-rapidml::MatrixParameter_strategy = st.builds(
-    rapidml::MatrixParameter,
+rapidml_MatrixParameter_strategy = st.builds(
+    rapidml_MatrixParameter,
 )
-rapidml::URISegmentWithParameter_strategy = st.builds(
-    rapidml::URISegmentWithParameter,
+rapidml_URISegmentWithParameter_strategy = st.builds(
+    rapidml_URISegmentWithParameter,
 )
-rapidml::Documentable_strategy = st.builds(
-    rapidml::Documentable,
+rapidml_Documentable_strategy = st.builds(
+    rapidml_Documentable,
 )
-rapidml::Documentation_strategy = st.builds(
-    rapidml::Documentation,
+rapidml_Documentation_strategy = st.builds(
+    rapidml_Documentation,
     text=
         safe_text
 )
@@ -2796,130 +2796,130 @@ TypedMessage_strategy = st.builds(
 Documentable_strategy = st.builds(
     Documentable,
 )
-rapidml::LinkRelation_strategy = st.builds(
-    rapidml::LinkRelation,
-    name=
-        safe_text,
-    specURL=
-        safe_text
-)
-rapidml::SecuritySchemeLibrary_strategy = st.builds(
-    rapidml::SecuritySchemeLibrary,
+rapidml_SecuritySchemeLibrary_strategy = st.builds(
+    rapidml_SecuritySchemeLibrary,
     name=
         safe_text
 )
-rapidml::Operation_strategy = st.builds(
-    rapidml::Operation,
+rapidml_SecurityScope_strategy = st.builds(
+    rapidml_SecurityScope,
     name=
         safe_text
 )
-rapidml::SecuritySchemeParameter_strategy = st.builds(
-    rapidml::SecuritySchemeParameter,
+rapidml_SecuritySchemeParameter_strategy = st.builds(
+    rapidml_SecuritySchemeParameter,
     name=
         safe_text,
     value=
         safe_text
 )
-rapidml::SecurityScope_strategy = st.builds(
-    rapidml::SecurityScope,
-    name=
-        safe_text
-)
-rapidml::DataModel_strategy = st.builds(
-    rapidml::DataModel,
-    name=
-        safe_text
-)
-rapidml::EnumConstant_strategy = st.builds(
-    rapidml::EnumConstant,
-    integerValue=
-        st.integers(),
-    literalValue=
+rapidml_LinkRelation_strategy = st.builds(
+    rapidml_LinkRelation,
+    specURL=
         safe_text,
     name=
         safe_text
 )
-rapidml::SourceReference_strategy = st.builds(
-    rapidml::SourceReference,
+rapidml_Operation_strategy = st.builds(
+    rapidml_Operation,
+    name=
+        safe_text
+)
+rapidml_EnumConstant_strategy = st.builds(
+    rapidml_EnumConstant,
+    literalValue=
+        safe_text,
+    name=
+        safe_text,
+    integerValue=
+        st.integers()
+)
+rapidml_DataModel_strategy = st.builds(
+    rapidml_DataModel,
+    name=
+        safe_text
+)
+rapidml_SourceReference_strategy = st.builds(
+    rapidml_SourceReference,
 )
 RealizationContainer_strategy = st.builds(
     RealizationContainer,
 )
-rapidml::ReferenceRealization_strategy = st.builds(
-    rapidml::ReferenceRealization,
+rapidml_ReferenceRealization_strategy = st.builds(
+    rapidml_ReferenceRealization,
     realizationType=
         safe_text,
     multiValued=
         st.booleans()
 )
-rapidml::ServiceDataResource_strategy = st.builds(
-    rapidml::ServiceDataResource,
+rapidml_ServiceDataResource_strategy = st.builds(
+    rapidml_ServiceDataResource,
     default=
         st.booleans()
 )
-rapidml::URI_strategy = st.builds(
-    rapidml::URI,
+rapidml_URI_strategy = st.builds(
+    rapidml_URI,
 )
-rapidml::TypedResponse_strategy = st.builds(
-    rapidml::TypedResponse,
+rapidml_TypedResponse_strategy = st.builds(
+    rapidml_TypedResponse,
     statusCode=
         st.integers()
 )
-rapidml::TypedRequest_strategy = st.builds(
-    rapidml::TypedRequest,
+rapidml_TypedRequest_strategy = st.builds(
+    rapidml_TypedRequest,
 )
 Extensible_strategy = st.builds(
     Extensible,
 )
-rapidml::DataType_strategy = st.builds(
-    rapidml::DataType,
+rapidml_DataType_strategy = st.builds(
+    rapidml_DataType,
     name=
         safe_text
 )
-rapidml::RealizationContainer_strategy = st.builds(
-    rapidml::RealizationContainer,
+rapidml_RealizationContainer_strategy = st.builds(
+    rapidml_RealizationContainer,
+    effectiveRealization=
+        safe_text,
     realizationName=
         safe_text,
     withDefaultRealization=
+        st.booleans()
+)
+rapidml_Feature_strategy = st.builds(
+    rapidml_Feature,
+    key=
         st.booleans(),
-    effectiveRealization=
-        safe_text
+    name=
+        safe_text,
+    readOnly=
+        st.booleans(),
+    restriction=
+        st.booleans()
 )
-rapidml::ConstrainableType_strategy = st.builds(
-    rapidml::ConstrainableType,
+rapidml_ObjectRealization_strategy = st.builds(
+    rapidml_ObjectRealization,
 )
-rapidml::ZenModel_strategy = st.builds(
-    rapidml::ZenModel,
+rapidml_ZenModel_strategy = st.builds(
+    rapidml_ZenModel,
     namespace=
         safe_text,
     name=
         safe_text
 )
-rapidml::Feature_strategy = st.builds(
-    rapidml::Feature,
-    name=
-        safe_text,
-    restriction=
-        st.booleans(),
-    key=
-        st.booleans(),
-    readOnly=
-        st.booleans()
+rapidml_RESTElement_strategy = st.builds(
+    rapidml_RESTElement,
 )
-rapidml::RESTElement_strategy = st.builds(
-    rapidml::RESTElement,
+rapidml_Constraint_strategy = st.builds(
+    rapidml_Constraint,
 )
-rapidml::Constraint_strategy = st.builds(
-    rapidml::Constraint,
+rapidml_ReferenceTreatment_strategy = st.builds(
+    rapidml_ReferenceTreatment,
 )
-rapidml::ReferenceTreatment_strategy = st.builds(
-    rapidml::ReferenceTreatment,
+rapidml_ConstrainableType_strategy = st.builds(
+    rapidml_ConstrainableType,
 )
-rapidml::ObjectRealization_strategy = st.builds(
-    rapidml::ObjectRealization,
-)
-rapidml::MessageParameter_strategy = st.builds(
-    rapidml::MessageParameter,
+rapidml_MessageParameter_strategy = st.builds(
+    rapidml_MessageParameter,
     httpLocation=
         safe_text
 )
@@ -2932,72 +2932,69 @@ WithExamples_strategy = st.builds(
 RESTElement_strategy = st.builds(
     RESTElement,
 )
-rapidml::TypedMessage_strategy = st.builds(
-    rapidml::TypedMessage,
-    useParentTypeReference=
-        st.booleans()
-)
-rapidml::MediaType_strategy = st.builds(
-    rapidml::MediaType,
-    specURL=
-        safe_text,
+rapidml_MediaType_strategy = st.builds(
+    rapidml_MediaType,
     name=
+        safe_text,
+    specURL=
         safe_text
 )
-rapidml::Method_strategy = st.builds(
-    rapidml::Method,
+rapidml_Parameter_strategy = st.builds(
+    rapidml_Parameter,
+    required=
+        st.booleans(),
+    fixed=
+        safe_text,
+    name=
+        safe_text,
+    default=
+        safe_text
+)
+rapidml_Method_strategy = st.builds(
+    rapidml_Method,
     httpMethod=
         safe_text,
     id=
         safe_text
 )
-rapidml::Parameter_strategy = st.builds(
-    rapidml::Parameter,
-    fixed=
-        safe_text,
+rapidml_ResourceAPI_strategy = st.builds(
+    rapidml_ResourceAPI,
     name=
         safe_text,
-    required=
-        st.booleans(),
-    default=
+    baseURI=
+        safe_text,
+    version=
         safe_text
 )
-rapidml::SecurityScheme_strategy = st.builds(
-    rapidml::SecurityScheme,
+rapidml_SecurityScheme_strategy = st.builds(
+    rapidml_SecurityScheme,
+    type=
+        safe_text,
     name=
         safe_text,
     flow=
-        safe_text,
-    type=
         safe_text
 )
-rapidml::ResourceAPI_strategy = st.builds(
-    rapidml::ResourceAPI,
-    name=
-        safe_text,
-    version=
-        safe_text,
-    baseURI=
-        safe_text
+rapidml_TypedMessage_strategy = st.builds(
+    rapidml_TypedMessage,
+    useParentTypeReference=
+        st.booleans()
 )
-rapidml::ResourceDefinition_strategy = st.builds(
-    rapidml::ResourceDefinition,
+rapidml_ResourceDefinition_strategy = st.builds(
+    rapidml_ResourceDefinition,
     name=
         safe_text
 )
 
-@given(instance=rapidml::Element_strategy)
+@given(instance=rapidml_Element_strategy)
 @settings(max_examples=50)
-def test_rapidml::element_instantiation(instance):
-    assert isinstance(instance, rapidml::Element)
-
-@given(instance=rapidml::Element_strategy)
-def test_rapidml::element_cardinality_type(instance):
-    assert isinstance(instance.cardinality, str)
+def test_rapidml_element_instantiation(instance):
+    assert isinstance(instance, rapidml_Element)
 
 
-@given(instance=rapidml::Element_strategy)
-def test_rapidml::element_cardinality_setter(instance):
+
+@given(instance=rapidml_Element_strategy)
+def test_rapidml_element_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
@@ -3008,9 +3005,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rapidml::Element_strategy)
+@given(instance=rapidml_Element_strategy)
 @settings(max_examples=30)
-def test_rapidml::element_ismultivalued_changes_state(instance):
+def test_rapidml_element_ismultivalued_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3022,119 +3019,95 @@ def test_rapidml::element_ismultivalued_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMultiValued' in rapidml::Element is empty"
+        assert has_statements, f"Function 'isMultiValued' in rapidml_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMultiValued' in rapidml::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'isMultiValued' in rapidml_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMultiValued' in rapidml::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'isMultiValued' in rapidml_Element is not implemented or raised an error")
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=rapidml::RegExConstraint_strategy)
+@given(instance=rapidml_RegExConstraint_strategy)
 @settings(max_examples=50)
-def test_rapidml::regexconstraint_instantiation(instance):
-    assert isinstance(instance, rapidml::RegExConstraint)
-
-@given(instance=rapidml::RegExConstraint_strategy)
-def test_rapidml::regexconstraint_pattern_type(instance):
-    assert isinstance(instance.pattern, str)
+def test_rapidml_regexconstraint_instantiation(instance):
+    assert isinstance(instance, rapidml_RegExConstraint)
 
 
-@given(instance=rapidml::RegExConstraint_strategy)
-def test_rapidml::regexconstraint_pattern_setter(instance):
+
+@given(instance=rapidml_RegExConstraint_strategy)
+def test_rapidml_regexconstraint_pattern_setter(instance):
     original = instance.pattern
     instance.pattern = original
     assert instance.pattern == original
 
-@given(instance=rapidml::ValueRangeConstraint_strategy)
+@given(instance=rapidml_ValueRangeConstraint_strategy)
 @settings(max_examples=50)
-def test_rapidml::valuerangeconstraint_instantiation(instance):
-    assert isinstance(instance, rapidml::ValueRangeConstraint)
-
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_minValueExclusive_type(instance):
-    assert isinstance(instance.minValueExclusive, bool)
+def test_rapidml_valuerangeconstraint_instantiation(instance):
+    assert isinstance(instance, rapidml_ValueRangeConstraint)
 
 
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_minValueExclusive_setter(instance):
+
+@given(instance=rapidml_ValueRangeConstraint_strategy)
+def test_rapidml_valuerangeconstraint_minValueExclusive_setter(instance):
     original = instance.minValueExclusive
     instance.minValueExclusive = original
     assert instance.minValueExclusive == original
 
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_maxValueExclusive_type(instance):
-    assert isinstance(instance.maxValueExclusive, bool)
 
 
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_maxValueExclusive_setter(instance):
-    original = instance.maxValueExclusive
-    instance.maxValueExclusive = original
-    assert instance.maxValueExclusive == original
-
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_minValue_type(instance):
-    assert isinstance(instance.minValue, str)
-
-
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_minValue_setter(instance):
-    original = instance.minValue
-    instance.minValue = original
-    assert instance.minValue == original
-
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_maxValue_type(instance):
-    assert isinstance(instance.maxValue, str)
-
-
-@given(instance=rapidml::ValueRangeConstraint_strategy)
-def test_rapidml::valuerangeconstraint_maxValue_setter(instance):
+@given(instance=rapidml_ValueRangeConstraint_strategy)
+def test_rapidml_valuerangeconstraint_maxValue_setter(instance):
     original = instance.maxValue
     instance.maxValue = original
     assert instance.maxValue == original
 
-@given(instance=rapidml::LengthConstraint_strategy)
+
+
+@given(instance=rapidml_ValueRangeConstraint_strategy)
+def test_rapidml_valuerangeconstraint_maxValueExclusive_setter(instance):
+    original = instance.maxValueExclusive
+    instance.maxValueExclusive = original
+    assert instance.maxValueExclusive == original
+
+
+
+@given(instance=rapidml_ValueRangeConstraint_strategy)
+def test_rapidml_valuerangeconstraint_minValue_setter(instance):
+    original = instance.minValue
+    instance.minValue = original
+    assert instance.minValue == original
+
+@given(instance=rapidml_LengthConstraint_strategy)
 @settings(max_examples=50)
-def test_rapidml::lengthconstraint_instantiation(instance):
-    assert isinstance(instance, rapidml::LengthConstraint)
-
-@given(instance=rapidml::LengthConstraint_strategy)
-def test_rapidml::lengthconstraint_maxLength_type(instance):
-    assert isinstance(instance.maxLength, int)
+def test_rapidml_lengthconstraint_instantiation(instance):
+    assert isinstance(instance, rapidml_LengthConstraint)
 
 
-@given(instance=rapidml::LengthConstraint_strategy)
-def test_rapidml::lengthconstraint_maxLength_setter(instance):
+
+@given(instance=rapidml_LengthConstraint_strategy)
+def test_rapidml_lengthconstraint_maxLength_setter(instance):
     original = instance.maxLength
     instance.maxLength = original
     assert instance.maxLength == original
 
-@given(instance=rapidml::LengthConstraint_strategy)
-def test_rapidml::lengthconstraint_length_type(instance):
-    assert isinstance(instance.length, int)
 
 
-@given(instance=rapidml::LengthConstraint_strategy)
-def test_rapidml::lengthconstraint_length_setter(instance):
+@given(instance=rapidml_LengthConstraint_strategy)
+def test_rapidml_lengthconstraint_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=rapidml::LengthConstraint_strategy)
-def test_rapidml::lengthconstraint_minLength_type(instance):
-    assert isinstance(instance.minLength, int)
 
 
-@given(instance=rapidml::LengthConstraint_strategy)
-def test_rapidml::lengthconstraint_minLength_setter(instance):
+@given(instance=rapidml_LengthConstraint_strategy)
+def test_rapidml_lengthconstraint_minLength_setter(instance):
     original = instance.minLength
     instance.minLength = original
     assert instance.minLength == original
@@ -3144,15 +3117,15 @@ def test_rapidml::lengthconstraint_minLength_setter(instance):
 def test_singlevaluetype_instantiation(instance):
     assert isinstance(instance, SingleValueType)
 
-@given(instance=rapidml::SimpleType_strategy)
+@given(instance=rapidml_SimpleType_strategy)
 @settings(max_examples=50)
-def test_rapidml::simpletype_instantiation(instance):
-    assert isinstance(instance, rapidml::SimpleType)
+def test_rapidml_simpletype_instantiation(instance):
+    assert isinstance(instance, rapidml_SimpleType)
 
-@given(instance=rapidml::Enumeration_strategy)
+@given(instance=rapidml_Enumeration_strategy)
 @settings(max_examples=50)
-def test_rapidml::enumeration_instantiation(instance):
-    assert isinstance(instance, rapidml::Enumeration)
+def test_rapidml_enumeration_instantiation(instance):
+    assert isinstance(instance, rapidml_Enumeration)
 
 @given(instance=SimpleType_strategy)
 @settings(max_examples=50)
@@ -3169,36 +3142,33 @@ def test_inheritable_instantiation(instance):
 def test_dataexample_instantiation(instance):
     assert isinstance(instance, DataExample)
 
-@given(instance=rapidml::InlineDataExample_strategy)
+@given(instance=rapidml_InlineDataExample_strategy)
 @settings(max_examples=50)
-def test_rapidml::inlinedataexample_instantiation(instance):
-    assert isinstance(instance, rapidml::InlineDataExample)
-
-@given(instance=rapidml::InlineDataExample_strategy)
-def test_rapidml::inlinedataexample_body_type(instance):
-    assert isinstance(instance.body, str)
+def test_rapidml_inlinedataexample_instantiation(instance):
+    assert isinstance(instance, rapidml_InlineDataExample)
 
 
-@given(instance=rapidml::InlineDataExample_strategy)
-def test_rapidml::inlinedataexample_body_setter(instance):
+
+@given(instance=rapidml_InlineDataExample_strategy)
+def test_rapidml_inlinedataexample_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=rapidml::DataExample_strategy)
+@given(instance=rapidml_DataExample_strategy)
 @settings(max_examples=50)
-def test_rapidml::dataexample_instantiation(instance):
-    assert isinstance(instance, rapidml::DataExample)
+def test_rapidml_dataexample_instantiation(instance):
+    assert isinstance(instance, rapidml_DataExample)
 
-@given(instance=rapidml::WithDataExamples_strategy)
+@given(instance=rapidml_WithDataExamples_strategy)
 @settings(max_examples=50)
-def test_rapidml::withdataexamples_instantiation(instance):
-    assert isinstance(instance, rapidml::WithDataExamples)
+def test_rapidml_withdataexamples_instantiation(instance):
+    assert isinstance(instance, rapidml_WithDataExamples)
 
-@given(instance=rapidml::Inheritable_strategy)
+@given(instance=rapidml_Inheritable_strategy)
 @settings(max_examples=50)
-def test_rapidml::inheritable_instantiation(instance):
-    assert isinstance(instance, rapidml::Inheritable)
+def test_rapidml_inheritable_instantiation(instance):
+    assert isinstance(instance, rapidml_Inheritable)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
@@ -3215,107 +3185,92 @@ def test_withdataexamples_instantiation(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=rapidml::SingleValueType_strategy)
+@given(instance=rapidml_SingleValueType_strategy)
 @settings(max_examples=50)
-def test_rapidml::singlevaluetype_instantiation(instance):
-    assert isinstance(instance, rapidml::SingleValueType)
+def test_rapidml_singlevaluetype_instantiation(instance):
+    assert isinstance(instance, rapidml_SingleValueType)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=rapidml::Extensible_strategy)
+@given(instance=rapidml_Extensible_strategy)
 @settings(max_examples=50)
-def test_rapidml::extensible_instantiation(instance):
-    assert isinstance(instance, rapidml::Extensible)
+def test_rapidml_extensible_instantiation(instance):
+    assert isinstance(instance, rapidml_Extensible)
 
-@given(instance=rapidml::Structure_strategy)
+@given(instance=rapidml_Structure_strategy)
 @settings(max_examples=50)
-def test_rapidml::structure_instantiation(instance):
-    assert isinstance(instance, rapidml::Structure)
+def test_rapidml_structure_instantiation(instance):
+    assert isinstance(instance, rapidml_Structure)
 
-@given(instance=rapidml::HasTitle_strategy)
+@given(instance=rapidml_HasTitle_strategy)
 @settings(max_examples=50)
-def test_rapidml::hastitle_instantiation(instance):
-    assert isinstance(instance, rapidml::HasTitle)
-
-@given(instance=rapidml::HasTitle_strategy)
-def test_rapidml::hastitle_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_rapidml_hastitle_instantiation(instance):
+    assert isinstance(instance, rapidml_HasTitle)
 
 
-@given(instance=rapidml::HasTitle_strategy)
-def test_rapidml::hastitle_title_setter(instance):
+
+@given(instance=rapidml_HasTitle_strategy)
+def test_rapidml_hastitle_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=rapidml::Extension_strategy)
+@given(instance=rapidml_Extension_strategy)
 @settings(max_examples=50)
-def test_rapidml::extension_instantiation(instance):
-    assert isinstance(instance, rapidml::Extension)
-
-@given(instance=rapidml::Extension_strategy)
-def test_rapidml::extension_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_rapidml_extension_instantiation(instance):
+    assert isinstance(instance, rapidml_Extension)
 
 
-@given(instance=rapidml::Extension_strategy)
-def test_rapidml::extension_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=rapidml::Extension_strategy)
-def test_rapidml::extension_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::Extension_strategy)
-def test_rapidml::extension_name_setter(instance):
+@given(instance=rapidml_Extension_strategy)
+def test_rapidml_extension_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::AuthenticationMethod_strategy)
-@settings(max_examples=50)
-def test_rapidml::authenticationmethod_instantiation(instance):
-    assert isinstance(instance, rapidml::AuthenticationMethod)
 
-@given(instance=rapidml::HasSecurityValue_strategy)
+
+@given(instance=rapidml_Extension_strategy)
+def test_rapidml_extension_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=rapidml_AuthenticationMethod_strategy)
 @settings(max_examples=50)
-def test_rapidml::hassecurityvalue_instantiation(instance):
-    assert isinstance(instance, rapidml::HasSecurityValue)
+def test_rapidml_authenticationmethod_instantiation(instance):
+    assert isinstance(instance, rapidml_AuthenticationMethod)
+
+@given(instance=rapidml_HasSecurityValue_strategy)
+@settings(max_examples=50)
+def test_rapidml_hassecurityvalue_instantiation(instance):
+    assert isinstance(instance, rapidml_HasSecurityValue)
 
 @given(instance=ReferenceElement_strategy)
 @settings(max_examples=50)
 def test_referenceelement_instantiation(instance):
     assert isinstance(instance, ReferenceElement)
 
-@given(instance=rapidml::ReferenceProperty_strategy)
+@given(instance=rapidml_ReferenceProperty_strategy)
 @settings(max_examples=50)
-def test_rapidml::referenceproperty_instantiation(instance):
-    assert isinstance(instance, rapidml::ReferenceProperty)
-
-@given(instance=rapidml::ReferenceProperty_strategy)
-def test_rapidml::referenceproperty_container_type(instance):
-    assert isinstance(instance.container, bool)
+def test_rapidml_referenceproperty_instantiation(instance):
+    assert isinstance(instance, rapidml_ReferenceProperty)
 
 
-@given(instance=rapidml::ReferenceProperty_strategy)
-def test_rapidml::referenceproperty_container_setter(instance):
+
+@given(instance=rapidml_ReferenceProperty_strategy)
+def test_rapidml_referenceproperty_container_setter(instance):
     original = instance.container
     instance.container = original
     assert instance.container == original
 
-@given(instance=rapidml::ReferenceProperty_strategy)
-def test_rapidml::referenceproperty_containment_type(instance):
-    assert isinstance(instance.containment, bool)
 
 
-@given(instance=rapidml::ReferenceProperty_strategy)
-def test_rapidml::referenceproperty_containment_setter(instance):
+@given(instance=rapidml_ReferenceProperty_strategy)
+def test_rapidml_referenceproperty_containment_setter(instance):
     original = instance.containment
     instance.containment = original
     assert instance.containment == original
@@ -3325,31 +3280,28 @@ def test_rapidml::referenceproperty_containment_setter(instance):
 def test_constrainabletype_instantiation(instance):
     assert isinstance(instance, ConstrainableType)
 
-@given(instance=rapidml::UserDefinedType_strategy)
+@given(instance=rapidml_UserDefinedType_strategy)
 @settings(max_examples=50)
-def test_rapidml::userdefinedtype_instantiation(instance):
-    assert isinstance(instance, rapidml::UserDefinedType)
+def test_rapidml_userdefinedtype_instantiation(instance):
+    assert isinstance(instance, rapidml_UserDefinedType)
 
-@given(instance=rapidml::PropertyRealization_strategy)
+@given(instance=rapidml_PropertyRealization_strategy)
 @settings(max_examples=50)
-def test_rapidml::propertyrealization_instantiation(instance):
-    assert isinstance(instance, rapidml::PropertyRealization)
-
-@given(instance=rapidml::PropertyRealization_strategy)
-def test_rapidml::propertyrealization_cardinality_type(instance):
-    assert isinstance(instance.cardinality, str)
+def test_rapidml_propertyrealization_instantiation(instance):
+    assert isinstance(instance, rapidml_PropertyRealization)
 
 
-@given(instance=rapidml::PropertyRealization_strategy)
-def test_rapidml::propertyrealization_cardinality_setter(instance):
+
+@given(instance=rapidml_PropertyRealization_strategy)
+def test_rapidml_propertyrealization_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=rapidml::HasStringValue_strategy)
+@given(instance=rapidml_HasStringValue_strategy)
 @settings(max_examples=50)
-def test_rapidml::hasstringvalue_instantiation(instance):
-    assert isinstance(instance, rapidml::HasStringValue)
+def test_rapidml_hasstringvalue_instantiation(instance):
+    assert isinstance(instance, rapidml_HasStringValue)
 
 import warnings
 import copy
@@ -3357,9 +3309,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rapidml::HasStringValue_strategy)
+@given(instance=rapidml_HasStringValue_strategy)
 @settings(max_examples=30)
-def test_rapidml::hasstringvalue_tostring_changes_state(instance):
+def test_rapidml_hasstringvalue_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3371,61 +3323,55 @@ def test_rapidml::hasstringvalue_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in rapidml::HasStringValue is empty"
+        assert has_statements, f"Function 'toString' in rapidml_HasStringValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in rapidml::HasStringValue did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in rapidml_HasStringValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in rapidml::HasStringValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in rapidml_HasStringValue is not implemented or raised an error")
 
 @given(instance=Example_strategy)
 @settings(max_examples=50)
 def test_example_instantiation(instance):
     assert isinstance(instance, Example)
 
-@given(instance=rapidml::ExternalExample_strategy)
+@given(instance=rapidml_ExternalExample_strategy)
 @settings(max_examples=50)
-def test_rapidml::externalexample_instantiation(instance):
-    assert isinstance(instance, rapidml::ExternalExample)
-
-@given(instance=rapidml::ExternalExample_strategy)
-def test_rapidml::externalexample_path_type(instance):
-    assert isinstance(instance.path, str)
+def test_rapidml_externalexample_instantiation(instance):
+    assert isinstance(instance, rapidml_ExternalExample)
 
 
-@given(instance=rapidml::ExternalExample_strategy)
-def test_rapidml::externalexample_path_setter(instance):
+
+@given(instance=rapidml_ExternalExample_strategy)
+def test_rapidml_externalexample_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=rapidml::InlineExample_strategy)
+@given(instance=rapidml_InlineExample_strategy)
 @settings(max_examples=50)
-def test_rapidml::inlineexample_instantiation(instance):
-    assert isinstance(instance, rapidml::InlineExample)
-
-@given(instance=rapidml::InlineExample_strategy)
-def test_rapidml::inlineexample_body_type(instance):
-    assert isinstance(instance.body, str)
+def test_rapidml_inlineexample_instantiation(instance):
+    assert isinstance(instance, rapidml_InlineExample)
 
 
-@given(instance=rapidml::InlineExample_strategy)
-def test_rapidml::inlineexample_body_setter(instance):
+
+@given(instance=rapidml_InlineExample_strategy)
+def test_rapidml_inlineexample_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=rapidml::Example_strategy)
+@given(instance=rapidml_Example_strategy)
 @settings(max_examples=50)
-def test_rapidml::example_instantiation(instance):
-    assert isinstance(instance, rapidml::Example)
+def test_rapidml_example_instantiation(instance):
+    assert isinstance(instance, rapidml_Example)
 
-@given(instance=rapidml::WithExamples_strategy)
+@given(instance=rapidml_WithExamples_strategy)
 @settings(max_examples=50)
-def test_rapidml::withexamples_instantiation(instance):
-    assert isinstance(instance, rapidml::WithExamples)
+def test_rapidml_withexamples_instantiation(instance):
+    assert isinstance(instance, rapidml_WithExamples)
 
 @given(instance=URISegment_strategy)
 @settings(max_examples=50)
@@ -3437,31 +3383,28 @@ def test_urisegment_instantiation(instance):
 def test_hasstringvalue_instantiation(instance):
     assert isinstance(instance, HasStringValue)
 
-@given(instance=rapidml::URISegment_strategy)
+@given(instance=rapidml_URISegment_strategy)
 @settings(max_examples=50)
-def test_rapidml::urisegment_instantiation(instance):
-    assert isinstance(instance, rapidml::URISegment)
-
-@given(instance=rapidml::URISegment_strategy)
-def test_rapidml::urisegment_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_urisegment_instantiation(instance):
+    assert isinstance(instance, rapidml_URISegment)
 
 
-@given(instance=rapidml::URISegment_strategy)
-def test_rapidml::urisegment_name_setter(instance):
+
+@given(instance=rapidml_URISegment_strategy)
+def test_rapidml_urisegment_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::PrimitiveType_strategy)
+@given(instance=rapidml_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_rapidml::primitivetype_instantiation(instance):
-    assert isinstance(instance, rapidml::PrimitiveType)
+def test_rapidml_primitivetype_instantiation(instance):
+    assert isinstance(instance, rapidml_PrimitiveType)
 
-@given(instance=rapidml::PathSegment_strategy)
+@given(instance=rapidml_PathSegment_strategy)
 @settings(max_examples=50)
-def test_rapidml::pathsegment_instantiation(instance):
-    assert isinstance(instance, rapidml::PathSegment)
+def test_rapidml_pathsegment_instantiation(instance):
+    assert isinstance(instance, rapidml_PathSegment)
 
 @given(instance=ObjectRealization_strategy)
 @settings(max_examples=50)
@@ -3478,157 +3421,127 @@ def test_resourcedefinition_instantiation(instance):
 def test_referencetreatment_instantiation(instance):
     assert isinstance(instance, ReferenceTreatment)
 
-@given(instance=rapidml::ReferenceEmbed_strategy)
+@given(instance=rapidml_ReferenceEmbed_strategy)
 @settings(max_examples=50)
-def test_rapidml::referenceembed_instantiation(instance):
-    assert isinstance(instance, rapidml::ReferenceEmbed)
+def test_rapidml_referenceembed_instantiation(instance):
+    assert isinstance(instance, rapidml_ReferenceEmbed)
 
-@given(instance=rapidml::ReferenceLink_strategy)
+@given(instance=rapidml_ReferenceLink_strategy)
 @settings(max_examples=50)
-def test_rapidml::referencelink_instantiation(instance):
-    assert isinstance(instance, rapidml::ReferenceLink)
-
-@given(instance=rapidml::ReferenceLink_strategy)
-def test_rapidml::referencelink_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_referencelink_instantiation(instance):
+    assert isinstance(instance, rapidml_ReferenceLink)
 
 
-@given(instance=rapidml::ReferenceLink_strategy)
-def test_rapidml::referencelink_name_setter(instance):
+
+@given(instance=rapidml_ReferenceLink_strategy)
+def test_rapidml_referencelink_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::ReferenceLink_strategy)
-def test_rapidml::referencelink_collectionRealizationLevel_type(instance):
-    assert isinstance(instance.collectionRealizationLevel, str)
 
 
-@given(instance=rapidml::ReferenceLink_strategy)
-def test_rapidml::referencelink_collectionRealizationLevel_setter(instance):
+@given(instance=rapidml_ReferenceLink_strategy)
+def test_rapidml_referencelink_collectionRealizationLevel_setter(instance):
     original = instance.collectionRealizationLevel
     instance.collectionRealizationLevel = original
     assert instance.collectionRealizationLevel == original
 
-@given(instance=rapidml::ReferenceElement_strategy)
+@given(instance=rapidml_ReferenceElement_strategy)
 @settings(max_examples=50)
-def test_rapidml::referenceelement_instantiation(instance):
-    assert isinstance(instance, rapidml::ReferenceElement)
+def test_rapidml_referenceelement_instantiation(instance):
+    assert isinstance(instance, rapidml_ReferenceElement)
 
-@given(instance=rapidml::NamedLinkDescriptor_strategy)
+@given(instance=rapidml_NamedLinkDescriptor_strategy)
 @settings(max_examples=50)
-def test_rapidml::namedlinkdescriptor_instantiation(instance):
-    assert isinstance(instance, rapidml::NamedLinkDescriptor)
-
-@given(instance=rapidml::NamedLinkDescriptor_strategy)
-def test_rapidml::namedlinkdescriptor_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_rapidml_namedlinkdescriptor_instantiation(instance):
+    assert isinstance(instance, rapidml_NamedLinkDescriptor)
 
 
-@given(instance=rapidml::NamedLinkDescriptor_strategy)
-def test_rapidml::namedlinkdescriptor_default_setter(instance):
+
+@given(instance=rapidml_NamedLinkDescriptor_strategy)
+def test_rapidml_namedlinkdescriptor_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=rapidml::NamedLinkDescriptor_strategy)
-def test_rapidml::namedlinkdescriptor_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=rapidml::NamedLinkDescriptor_strategy)
-def test_rapidml::namedlinkdescriptor_name_setter(instance):
+@given(instance=rapidml_NamedLinkDescriptor_strategy)
+def test_rapidml_namedlinkdescriptor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::ImportDeclaration_strategy)
+@given(instance=rapidml_ImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_rapidml::importdeclaration_instantiation(instance):
-    assert isinstance(instance, rapidml::ImportDeclaration)
-
-@given(instance=rapidml::ImportDeclaration_strategy)
-def test_rapidml::importdeclaration_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_rapidml_importdeclaration_instantiation(instance):
+    assert isinstance(instance, rapidml_ImportDeclaration)
 
 
-@given(instance=rapidml::ImportDeclaration_strategy)
-def test_rapidml::importdeclaration_importURI_setter(instance):
+
+@given(instance=rapidml_ImportDeclaration_strategy)
+def test_rapidml_importdeclaration_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=rapidml::ImportDeclaration_strategy)
-def test_rapidml::importdeclaration_alias_type(instance):
-    assert isinstance(instance.alias, str)
 
 
-@given(instance=rapidml::ImportDeclaration_strategy)
-def test_rapidml::importdeclaration_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
-
-@given(instance=rapidml::ImportDeclaration_strategy)
-def test_rapidml::importdeclaration_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
-
-
-@given(instance=rapidml::ImportDeclaration_strategy)
-def test_rapidml::importdeclaration_importedNamespace_setter(instance):
+@given(instance=rapidml_ImportDeclaration_strategy)
+def test_rapidml_importdeclaration_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=rapidml::PrimitiveTypesLibrary_strategy)
+
+
+@given(instance=rapidml_ImportDeclaration_strategy)
+def test_rapidml_importdeclaration_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
+
+@given(instance=rapidml_PrimitiveTypesLibrary_strategy)
 @settings(max_examples=50)
-def test_rapidml::primitivetypeslibrary_instantiation(instance):
-    assert isinstance(instance, rapidml::PrimitiveTypesLibrary)
-
-@given(instance=rapidml::PrimitiveTypesLibrary_strategy)
-def test_rapidml::primitivetypeslibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_primitivetypeslibrary_instantiation(instance):
+    assert isinstance(instance, rapidml_PrimitiveTypesLibrary)
 
 
-@given(instance=rapidml::PrimitiveTypesLibrary_strategy)
-def test_rapidml::primitivetypeslibrary_name_setter(instance):
+
+@given(instance=rapidml_PrimitiveTypesLibrary_strategy)
+def test_rapidml_primitivetypeslibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::LinkRelationsLibrary_strategy)
+@given(instance=rapidml_LinkRelationsLibrary_strategy)
 @settings(max_examples=50)
-def test_rapidml::linkrelationslibrary_instantiation(instance):
-    assert isinstance(instance, rapidml::LinkRelationsLibrary)
-
-@given(instance=rapidml::LinkRelationsLibrary_strategy)
-def test_rapidml::linkrelationslibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_linkrelationslibrary_instantiation(instance):
+    assert isinstance(instance, rapidml_LinkRelationsLibrary)
 
 
-@given(instance=rapidml::LinkRelationsLibrary_strategy)
-def test_rapidml::linkrelationslibrary_name_setter(instance):
+
+@given(instance=rapidml_LinkRelationsLibrary_strategy)
+def test_rapidml_linkrelationslibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::MediaTypesLibrary_strategy)
+@given(instance=rapidml_MediaTypesLibrary_strategy)
 @settings(max_examples=50)
-def test_rapidml::mediatypeslibrary_instantiation(instance):
-    assert isinstance(instance, rapidml::MediaTypesLibrary)
+def test_rapidml_mediatypeslibrary_instantiation(instance):
+    assert isinstance(instance, rapidml_MediaTypesLibrary)
 
-@given(instance=rapidml::RealizationModelLocation_strategy)
+@given(instance=rapidml_RealizationModelLocation_strategy)
 @settings(max_examples=50)
-def test_rapidml::realizationmodellocation_instantiation(instance):
-    assert isinstance(instance, rapidml::RealizationModelLocation)
-
-@given(instance=rapidml::RealizationModelLocation_strategy)
-def test_rapidml::realizationmodellocation_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_rapidml_realizationmodellocation_instantiation(instance):
+    assert isinstance(instance, rapidml_RealizationModelLocation)
 
 
-@given(instance=rapidml::RealizationModelLocation_strategy)
-def test_rapidml::realizationmodellocation_uri_setter(instance):
+
+@given(instance=rapidml_RealizationModelLocation_strategy)
+def test_rapidml_realizationmodellocation_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
@@ -3638,68 +3551,65 @@ def test_rapidml::realizationmodellocation_uri_setter(instance):
 def test_hastitle_instantiation(instance):
     assert isinstance(instance, HasTitle)
 
-@given(instance=rapidml::PrimitiveProperty_strategy)
+@given(instance=rapidml_PrimitiveProperty_strategy)
 @settings(max_examples=50)
-def test_rapidml::primitiveproperty_instantiation(instance):
-    assert isinstance(instance, rapidml::PrimitiveProperty)
+def test_rapidml_primitiveproperty_instantiation(instance):
+    assert isinstance(instance, rapidml_PrimitiveProperty)
 
 @given(instance=SourceReference_strategy)
 @settings(max_examples=50)
 def test_sourcereference_instantiation(instance):
     assert isinstance(instance, SourceReference)
 
-@given(instance=rapidml::PrimitiveTypeSourceReference_strategy)
+@given(instance=rapidml_PrimitiveTypeSourceReference_strategy)
 @settings(max_examples=50)
-def test_rapidml::primitivetypesourcereference_instantiation(instance):
-    assert isinstance(instance, rapidml::PrimitiveTypeSourceReference)
+def test_rapidml_primitivetypesourcereference_instantiation(instance):
+    assert isinstance(instance, rapidml_PrimitiveTypeSourceReference)
 
-@given(instance=rapidml::PropertyReference_strategy)
+@given(instance=rapidml_PropertyReference_strategy)
 @settings(max_examples=50)
-def test_rapidml::propertyreference_instantiation(instance):
-    assert isinstance(instance, rapidml::PropertyReference)
+def test_rapidml_propertyreference_instantiation(instance):
+    assert isinstance(instance, rapidml_PropertyReference)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=rapidml::URIParameter_strategy)
+@given(instance=rapidml_URIParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::uriparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::URIParameter)
+def test_rapidml_uriparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_URIParameter)
 
-@given(instance=rapidml::CollectionReferenceElement_strategy)
+@given(instance=rapidml_CollectionReferenceElement_strategy)
 @settings(max_examples=50)
-def test_rapidml::collectionreferenceelement_instantiation(instance):
-    assert isinstance(instance, rapidml::CollectionReferenceElement)
+def test_rapidml_collectionreferenceelement_instantiation(instance):
+    assert isinstance(instance, rapidml_CollectionReferenceElement)
 
-@given(instance=rapidml::CollectionParameter_strategy)
+@given(instance=rapidml_CollectionParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::collectionparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::CollectionParameter)
+def test_rapidml_collectionparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_CollectionParameter)
 
 @given(instance=ServiceDataResource_strategy)
 @settings(max_examples=50)
 def test_servicedataresource_instantiation(instance):
     assert isinstance(instance, ServiceDataResource)
 
-@given(instance=rapidml::ObjectResource_strategy)
+@given(instance=rapidml_ObjectResource_strategy)
 @settings(max_examples=50)
-def test_rapidml::objectresource_instantiation(instance):
-    assert isinstance(instance, rapidml::ObjectResource)
+def test_rapidml_objectresource_instantiation(instance):
+    assert isinstance(instance, rapidml_ObjectResource)
 
-@given(instance=rapidml::CollectionResource_strategy)
+@given(instance=rapidml_CollectionResource_strategy)
 @settings(max_examples=50)
-def test_rapidml::collectionresource_instantiation(instance):
-    assert isinstance(instance, rapidml::CollectionResource)
-
-@given(instance=rapidml::CollectionResource_strategy)
-def test_rapidml::collectionresource_resourceRealizationKind_type(instance):
-    assert isinstance(instance.resourceRealizationKind, str)
+def test_rapidml_collectionresource_instantiation(instance):
+    assert isinstance(instance, rapidml_CollectionResource)
 
 
-@given(instance=rapidml::CollectionResource_strategy)
-def test_rapidml::collectionresource_resourceRealizationKind_setter(instance):
+
+@given(instance=rapidml_CollectionResource_strategy)
+def test_rapidml_collectionresource_resourceRealizationKind_setter(instance):
     original = instance.resourceRealizationKind
     instance.resourceRealizationKind = original
     assert instance.resourceRealizationKind == original
@@ -3709,38 +3619,35 @@ def test_rapidml::collectionresource_resourceRealizationKind_setter(instance):
 def test_uriparameter_instantiation(instance):
     assert isinstance(instance, URIParameter)
 
-@given(instance=rapidml::TemplateParameter_strategy)
+@given(instance=rapidml_TemplateParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::templateparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::TemplateParameter)
+def test_rapidml_templateparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_TemplateParameter)
 
-@given(instance=rapidml::MatrixParameter_strategy)
+@given(instance=rapidml_MatrixParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::matrixparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::MatrixParameter)
+def test_rapidml_matrixparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_MatrixParameter)
 
-@given(instance=rapidml::URISegmentWithParameter_strategy)
+@given(instance=rapidml_URISegmentWithParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::urisegmentwithparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::URISegmentWithParameter)
+def test_rapidml_urisegmentwithparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_URISegmentWithParameter)
 
-@given(instance=rapidml::Documentable_strategy)
+@given(instance=rapidml_Documentable_strategy)
 @settings(max_examples=50)
-def test_rapidml::documentable_instantiation(instance):
-    assert isinstance(instance, rapidml::Documentable)
+def test_rapidml_documentable_instantiation(instance):
+    assert isinstance(instance, rapidml_Documentable)
 
-@given(instance=rapidml::Documentation_strategy)
+@given(instance=rapidml_Documentation_strategy)
 @settings(max_examples=50)
-def test_rapidml::documentation_instantiation(instance):
-    assert isinstance(instance, rapidml::Documentation)
-
-@given(instance=rapidml::Documentation_strategy)
-def test_rapidml::documentation_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_rapidml_documentation_instantiation(instance):
+    assert isinstance(instance, rapidml_Documentation)
 
 
-@given(instance=rapidml::Documentation_strategy)
-def test_rapidml::documentation_text_setter(instance):
+
+@given(instance=rapidml_Documentation_strategy)
+def test_rapidml_documentation_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -3755,211 +3662,169 @@ def test_typedmessage_instantiation(instance):
 def test_documentable_instantiation(instance):
     assert isinstance(instance, Documentable)
 
-@given(instance=rapidml::LinkRelation_strategy)
+@given(instance=rapidml_SecuritySchemeLibrary_strategy)
 @settings(max_examples=50)
-def test_rapidml::linkrelation_instantiation(instance):
-    assert isinstance(instance, rapidml::LinkRelation)
-
-@given(instance=rapidml::LinkRelation_strategy)
-def test_rapidml::linkrelation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_securityschemelibrary_instantiation(instance):
+    assert isinstance(instance, rapidml_SecuritySchemeLibrary)
 
 
-@given(instance=rapidml::LinkRelation_strategy)
-def test_rapidml::linkrelation_name_setter(instance):
+
+@given(instance=rapidml_SecuritySchemeLibrary_strategy)
+def test_rapidml_securityschemelibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::LinkRelation_strategy)
-def test_rapidml::linkrelation_specURL_type(instance):
-    assert isinstance(instance.specURL, str)
-
-
-@given(instance=rapidml::LinkRelation_strategy)
-def test_rapidml::linkrelation_specURL_setter(instance):
-    original = instance.specURL
-    instance.specURL = original
-    assert instance.specURL == original
-
-@given(instance=rapidml::SecuritySchemeLibrary_strategy)
+@given(instance=rapidml_SecurityScope_strategy)
 @settings(max_examples=50)
-def test_rapidml::securityschemelibrary_instantiation(instance):
-    assert isinstance(instance, rapidml::SecuritySchemeLibrary)
-
-@given(instance=rapidml::SecuritySchemeLibrary_strategy)
-def test_rapidml::securityschemelibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_securityscope_instantiation(instance):
+    assert isinstance(instance, rapidml_SecurityScope)
 
 
-@given(instance=rapidml::SecuritySchemeLibrary_strategy)
-def test_rapidml::securityschemelibrary_name_setter(instance):
+
+@given(instance=rapidml_SecurityScope_strategy)
+def test_rapidml_securityscope_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::Operation_strategy)
+@given(instance=rapidml_SecuritySchemeParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::operation_instantiation(instance):
-    assert isinstance(instance, rapidml::Operation)
-
-@given(instance=rapidml::Operation_strategy)
-def test_rapidml::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_securityschemeparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_SecuritySchemeParameter)
 
 
-@given(instance=rapidml::Operation_strategy)
-def test_rapidml::operation_name_setter(instance):
+
+@given(instance=rapidml_SecuritySchemeParameter_strategy)
+def test_rapidml_securityschemeparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::SecuritySchemeParameter_strategy)
-@settings(max_examples=50)
-def test_rapidml::securityschemeparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::SecuritySchemeParameter)
-
-@given(instance=rapidml::SecuritySchemeParameter_strategy)
-def test_rapidml::securityschemeparameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=rapidml::SecuritySchemeParameter_strategy)
-def test_rapidml::securityschemeparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rapidml::SecuritySchemeParameter_strategy)
-def test_rapidml::securityschemeparameter_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=rapidml::SecuritySchemeParameter_strategy)
-def test_rapidml::securityschemeparameter_value_setter(instance):
+@given(instance=rapidml_SecuritySchemeParameter_strategy)
+def test_rapidml_securityschemeparameter_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=rapidml::SecurityScope_strategy)
+@given(instance=rapidml_LinkRelation_strategy)
 @settings(max_examples=50)
-def test_rapidml::securityscope_instantiation(instance):
-    assert isinstance(instance, rapidml::SecurityScope)
-
-@given(instance=rapidml::SecurityScope_strategy)
-def test_rapidml::securityscope_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_linkrelation_instantiation(instance):
+    assert isinstance(instance, rapidml_LinkRelation)
 
 
-@given(instance=rapidml::SecurityScope_strategy)
-def test_rapidml::securityscope_name_setter(instance):
+
+@given(instance=rapidml_LinkRelation_strategy)
+def test_rapidml_linkrelation_specURL_setter(instance):
+    original = instance.specURL
+    instance.specURL = original
+    assert instance.specURL == original
+
+
+
+@given(instance=rapidml_LinkRelation_strategy)
+def test_rapidml_linkrelation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::DataModel_strategy)
+@given(instance=rapidml_Operation_strategy)
 @settings(max_examples=50)
-def test_rapidml::datamodel_instantiation(instance):
-    assert isinstance(instance, rapidml::DataModel)
-
-@given(instance=rapidml::DataModel_strategy)
-def test_rapidml::datamodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_operation_instantiation(instance):
+    assert isinstance(instance, rapidml_Operation)
 
 
-@given(instance=rapidml::DataModel_strategy)
-def test_rapidml::datamodel_name_setter(instance):
+
+@given(instance=rapidml_Operation_strategy)
+def test_rapidml_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::EnumConstant_strategy)
+@given(instance=rapidml_EnumConstant_strategy)
 @settings(max_examples=50)
-def test_rapidml::enumconstant_instantiation(instance):
-    assert isinstance(instance, rapidml::EnumConstant)
-
-@given(instance=rapidml::EnumConstant_strategy)
-def test_rapidml::enumconstant_integerValue_type(instance):
-    assert isinstance(instance.integerValue, int)
+def test_rapidml_enumconstant_instantiation(instance):
+    assert isinstance(instance, rapidml_EnumConstant)
 
 
-@given(instance=rapidml::EnumConstant_strategy)
-def test_rapidml::enumconstant_integerValue_setter(instance):
-    original = instance.integerValue
-    instance.integerValue = original
-    assert instance.integerValue == original
 
-@given(instance=rapidml::EnumConstant_strategy)
-def test_rapidml::enumconstant_literalValue_type(instance):
-    assert isinstance(instance.literalValue, str)
-
-
-@given(instance=rapidml::EnumConstant_strategy)
-def test_rapidml::enumconstant_literalValue_setter(instance):
+@given(instance=rapidml_EnumConstant_strategy)
+def test_rapidml_enumconstant_literalValue_setter(instance):
     original = instance.literalValue
     instance.literalValue = original
     assert instance.literalValue == original
 
-@given(instance=rapidml::EnumConstant_strategy)
-def test_rapidml::enumconstant_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=rapidml::EnumConstant_strategy)
-def test_rapidml::enumconstant_name_setter(instance):
+@given(instance=rapidml_EnumConstant_strategy)
+def test_rapidml_enumconstant_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::SourceReference_strategy)
+
+
+@given(instance=rapidml_EnumConstant_strategy)
+def test_rapidml_enumconstant_integerValue_setter(instance):
+    original = instance.integerValue
+    instance.integerValue = original
+    assert instance.integerValue == original
+
+@given(instance=rapidml_DataModel_strategy)
 @settings(max_examples=50)
-def test_rapidml::sourcereference_instantiation(instance):
-    assert isinstance(instance, rapidml::SourceReference)
+def test_rapidml_datamodel_instantiation(instance):
+    assert isinstance(instance, rapidml_DataModel)
+
+
+
+@given(instance=rapidml_DataModel_strategy)
+def test_rapidml_datamodel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=rapidml_SourceReference_strategy)
+@settings(max_examples=50)
+def test_rapidml_sourcereference_instantiation(instance):
+    assert isinstance(instance, rapidml_SourceReference)
 
 @given(instance=RealizationContainer_strategy)
 @settings(max_examples=50)
 def test_realizationcontainer_instantiation(instance):
     assert isinstance(instance, RealizationContainer)
 
-@given(instance=rapidml::ReferenceRealization_strategy)
+@given(instance=rapidml_ReferenceRealization_strategy)
 @settings(max_examples=50)
-def test_rapidml::referencerealization_instantiation(instance):
-    assert isinstance(instance, rapidml::ReferenceRealization)
-
-@given(instance=rapidml::ReferenceRealization_strategy)
-def test_rapidml::referencerealization_realizationType_type(instance):
-    assert isinstance(instance.realizationType, str)
+def test_rapidml_referencerealization_instantiation(instance):
+    assert isinstance(instance, rapidml_ReferenceRealization)
 
 
-@given(instance=rapidml::ReferenceRealization_strategy)
-def test_rapidml::referencerealization_realizationType_setter(instance):
+
+@given(instance=rapidml_ReferenceRealization_strategy)
+def test_rapidml_referencerealization_realizationType_setter(instance):
     original = instance.realizationType
     instance.realizationType = original
     assert instance.realizationType == original
 
-@given(instance=rapidml::ReferenceRealization_strategy)
-def test_rapidml::referencerealization_multiValued_type(instance):
-    assert isinstance(instance.multiValued, bool)
 
 
-@given(instance=rapidml::ReferenceRealization_strategy)
-def test_rapidml::referencerealization_multiValued_setter(instance):
+@given(instance=rapidml_ReferenceRealization_strategy)
+def test_rapidml_referencerealization_multiValued_setter(instance):
     original = instance.multiValued
     instance.multiValued = original
     assert instance.multiValued == original
 
-@given(instance=rapidml::ServiceDataResource_strategy)
+@given(instance=rapidml_ServiceDataResource_strategy)
 @settings(max_examples=50)
-def test_rapidml::servicedataresource_instantiation(instance):
-    assert isinstance(instance, rapidml::ServiceDataResource)
-
-@given(instance=rapidml::ServiceDataResource_strategy)
-def test_rapidml::servicedataresource_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_rapidml_servicedataresource_instantiation(instance):
+    assert isinstance(instance, rapidml_ServiceDataResource)
 
 
-@given(instance=rapidml::ServiceDataResource_strategy)
-def test_rapidml::servicedataresource_default_setter(instance):
+
+@given(instance=rapidml_ServiceDataResource_strategy)
+def test_rapidml_servicedataresource_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
@@ -3970,9 +3835,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rapidml::ServiceDataResource_strategy)
+@given(instance=rapidml_ServiceDataResource_strategy)
 @settings(max_examples=30)
-def test_rapidml::servicedataresource_isincluded_changes_state(instance):
+def test_rapidml_servicedataresource_isincluded_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3986,190 +3851,157 @@ def test_rapidml::servicedataresource_isincluded_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isIncluded' in rapidml::ServiceDataResource is empty"
+        assert has_statements, f"Function 'isIncluded' in rapidml_ServiceDataResource is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isIncluded' in rapidml::ServiceDataResource did not change state; check implementation")
+            warnings.warn(f"Operation 'isIncluded' in rapidml_ServiceDataResource did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isIncluded' in rapidml::ServiceDataResource is not implemented or raised an error")
+        warnings.warn(f"Operation 'isIncluded' in rapidml_ServiceDataResource is not implemented or raised an error")
 
-@given(instance=rapidml::URI_strategy)
+@given(instance=rapidml_URI_strategy)
 @settings(max_examples=50)
-def test_rapidml::uri_instantiation(instance):
-    assert isinstance(instance, rapidml::URI)
+def test_rapidml_uri_instantiation(instance):
+    assert isinstance(instance, rapidml_URI)
 
-@given(instance=rapidml::TypedResponse_strategy)
+@given(instance=rapidml_TypedResponse_strategy)
 @settings(max_examples=50)
-def test_rapidml::typedresponse_instantiation(instance):
-    assert isinstance(instance, rapidml::TypedResponse)
-
-@given(instance=rapidml::TypedResponse_strategy)
-def test_rapidml::typedresponse_statusCode_type(instance):
-    assert isinstance(instance.statusCode, int)
+def test_rapidml_typedresponse_instantiation(instance):
+    assert isinstance(instance, rapidml_TypedResponse)
 
 
-@given(instance=rapidml::TypedResponse_strategy)
-def test_rapidml::typedresponse_statusCode_setter(instance):
+
+@given(instance=rapidml_TypedResponse_strategy)
+def test_rapidml_typedresponse_statusCode_setter(instance):
     original = instance.statusCode
     instance.statusCode = original
     assert instance.statusCode == original
 
-@given(instance=rapidml::TypedRequest_strategy)
+@given(instance=rapidml_TypedRequest_strategy)
 @settings(max_examples=50)
-def test_rapidml::typedrequest_instantiation(instance):
-    assert isinstance(instance, rapidml::TypedRequest)
+def test_rapidml_typedrequest_instantiation(instance):
+    assert isinstance(instance, rapidml_TypedRequest)
 
 @given(instance=Extensible_strategy)
 @settings(max_examples=50)
 def test_extensible_instantiation(instance):
     assert isinstance(instance, Extensible)
 
-@given(instance=rapidml::DataType_strategy)
+@given(instance=rapidml_DataType_strategy)
 @settings(max_examples=50)
-def test_rapidml::datatype_instantiation(instance):
-    assert isinstance(instance, rapidml::DataType)
-
-@given(instance=rapidml::DataType_strategy)
-def test_rapidml::datatype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rapidml_datatype_instantiation(instance):
+    assert isinstance(instance, rapidml_DataType)
 
 
-@given(instance=rapidml::DataType_strategy)
-def test_rapidml::datatype_name_setter(instance):
+
+@given(instance=rapidml_DataType_strategy)
+def test_rapidml_datatype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rapidml::RealizationContainer_strategy)
+@given(instance=rapidml_RealizationContainer_strategy)
 @settings(max_examples=50)
-def test_rapidml::realizationcontainer_instantiation(instance):
-    assert isinstance(instance, rapidml::RealizationContainer)
-
-@given(instance=rapidml::RealizationContainer_strategy)
-def test_rapidml::realizationcontainer_realizationName_type(instance):
-    assert isinstance(instance.realizationName, str)
+def test_rapidml_realizationcontainer_instantiation(instance):
+    assert isinstance(instance, rapidml_RealizationContainer)
 
 
-@given(instance=rapidml::RealizationContainer_strategy)
-def test_rapidml::realizationcontainer_realizationName_setter(instance):
-    original = instance.realizationName
-    instance.realizationName = original
-    assert instance.realizationName == original
 
-@given(instance=rapidml::RealizationContainer_strategy)
-def test_rapidml::realizationcontainer_withDefaultRealization_type(instance):
-    assert isinstance(instance.withDefaultRealization, bool)
-
-
-@given(instance=rapidml::RealizationContainer_strategy)
-def test_rapidml::realizationcontainer_withDefaultRealization_setter(instance):
-    original = instance.withDefaultRealization
-    instance.withDefaultRealization = original
-    assert instance.withDefaultRealization == original
-
-@given(instance=rapidml::RealizationContainer_strategy)
-def test_rapidml::realizationcontainer_effectiveRealization_type(instance):
-    assert isinstance(instance.effectiveRealization, str)
-
-
-@given(instance=rapidml::RealizationContainer_strategy)
-def test_rapidml::realizationcontainer_effectiveRealization_setter(instance):
+@given(instance=rapidml_RealizationContainer_strategy)
+def test_rapidml_realizationcontainer_effectiveRealization_setter(instance):
     original = instance.effectiveRealization
     instance.effectiveRealization = original
     assert instance.effectiveRealization == original
 
-@given(instance=rapidml::ConstrainableType_strategy)
+
+
+@given(instance=rapidml_RealizationContainer_strategy)
+def test_rapidml_realizationcontainer_realizationName_setter(instance):
+    original = instance.realizationName
+    instance.realizationName = original
+    assert instance.realizationName == original
+
+
+
+@given(instance=rapidml_RealizationContainer_strategy)
+def test_rapidml_realizationcontainer_withDefaultRealization_setter(instance):
+    original = instance.withDefaultRealization
+    instance.withDefaultRealization = original
+    assert instance.withDefaultRealization == original
+
+@given(instance=rapidml_Feature_strategy)
 @settings(max_examples=50)
-def test_rapidml::constrainabletype_instantiation(instance):
-    assert isinstance(instance, rapidml::ConstrainableType)
-
-@given(instance=rapidml::ZenModel_strategy)
-@settings(max_examples=50)
-def test_rapidml::zenmodel_instantiation(instance):
-    assert isinstance(instance, rapidml::ZenModel)
-
-@given(instance=rapidml::ZenModel_strategy)
-def test_rapidml::zenmodel_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
+def test_rapidml_feature_instantiation(instance):
+    assert isinstance(instance, rapidml_Feature)
 
 
-@given(instance=rapidml::ZenModel_strategy)
-def test_rapidml::zenmodel_namespace_setter(instance):
-    original = instance.namespace
-    instance.namespace = original
-    assert instance.namespace == original
 
-@given(instance=rapidml::ZenModel_strategy)
-def test_rapidml::zenmodel_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::ZenModel_strategy)
-def test_rapidml::zenmodel_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rapidml::Feature_strategy)
-@settings(max_examples=50)
-def test_rapidml::feature_instantiation(instance):
-    assert isinstance(instance, rapidml::Feature)
-
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_restriction_type(instance):
-    assert isinstance(instance.restriction, bool)
-
-
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_restriction_setter(instance):
-    original = instance.restriction
-    instance.restriction = original
-    assert instance.restriction == original
-
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_key_type(instance):
-    assert isinstance(instance.key, bool)
-
-
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_key_setter(instance):
+@given(instance=rapidml_Feature_strategy)
+def test_rapidml_feature_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_readOnly_type(instance):
-    assert isinstance(instance.readOnly, bool)
 
 
-@given(instance=rapidml::Feature_strategy)
-def test_rapidml::feature_readOnly_setter(instance):
+@given(instance=rapidml_Feature_strategy)
+def test_rapidml_feature_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=rapidml_Feature_strategy)
+def test_rapidml_feature_readOnly_setter(instance):
     original = instance.readOnly
     instance.readOnly = original
     assert instance.readOnly == original
 
-@given(instance=rapidml::RESTElement_strategy)
-@settings(max_examples=50)
-def test_rapidml::restelement_instantiation(instance):
-    assert isinstance(instance, rapidml::RESTElement)
 
-@given(instance=rapidml::Constraint_strategy)
+
+@given(instance=rapidml_Feature_strategy)
+def test_rapidml_feature_restriction_setter(instance):
+    original = instance.restriction
+    instance.restriction = original
+    assert instance.restriction == original
+
+@given(instance=rapidml_ObjectRealization_strategy)
 @settings(max_examples=50)
-def test_rapidml::constraint_instantiation(instance):
-    assert isinstance(instance, rapidml::Constraint)
+def test_rapidml_objectrealization_instantiation(instance):
+    assert isinstance(instance, rapidml_ObjectRealization)
+
+@given(instance=rapidml_ZenModel_strategy)
+@settings(max_examples=50)
+def test_rapidml_zenmodel_instantiation(instance):
+    assert isinstance(instance, rapidml_ZenModel)
+
+
+
+@given(instance=rapidml_ZenModel_strategy)
+def test_rapidml_zenmodel_namespace_setter(instance):
+    original = instance.namespace
+    instance.namespace = original
+    assert instance.namespace == original
+
+
+
+@given(instance=rapidml_ZenModel_strategy)
+def test_rapidml_zenmodel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=rapidml_RESTElement_strategy)
+@settings(max_examples=50)
+def test_rapidml_restelement_instantiation(instance):
+    assert isinstance(instance, rapidml_RESTElement)
+
+@given(instance=rapidml_Constraint_strategy)
+@settings(max_examples=50)
+def test_rapidml_constraint_instantiation(instance):
+    assert isinstance(instance, rapidml_Constraint)
 
 import warnings
 import copy
@@ -4177,9 +4009,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rapidml::Constraint_strategy)
+@given(instance=rapidml_Constraint_strategy)
 @settings(max_examples=30)
-def test_rapidml::constraint_supports_changes_state(instance):
+def test_rapidml_constraint_supports_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4193,37 +4025,34 @@ def test_rapidml::constraint_supports_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'supports' in rapidml::Constraint is empty"
+        assert has_statements, f"Function 'supports' in rapidml_Constraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'supports' in rapidml::Constraint did not change state; check implementation")
+            warnings.warn(f"Operation 'supports' in rapidml_Constraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'supports' in rapidml::Constraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'supports' in rapidml_Constraint is not implemented or raised an error")
 
-@given(instance=rapidml::ReferenceTreatment_strategy)
+@given(instance=rapidml_ReferenceTreatment_strategy)
 @settings(max_examples=50)
-def test_rapidml::referencetreatment_instantiation(instance):
-    assert isinstance(instance, rapidml::ReferenceTreatment)
+def test_rapidml_referencetreatment_instantiation(instance):
+    assert isinstance(instance, rapidml_ReferenceTreatment)
 
-@given(instance=rapidml::ObjectRealization_strategy)
+@given(instance=rapidml_ConstrainableType_strategy)
 @settings(max_examples=50)
-def test_rapidml::objectrealization_instantiation(instance):
-    assert isinstance(instance, rapidml::ObjectRealization)
+def test_rapidml_constrainabletype_instantiation(instance):
+    assert isinstance(instance, rapidml_ConstrainableType)
 
-@given(instance=rapidml::MessageParameter_strategy)
+@given(instance=rapidml_MessageParameter_strategy)
 @settings(max_examples=50)
-def test_rapidml::messageparameter_instantiation(instance):
-    assert isinstance(instance, rapidml::MessageParameter)
-
-@given(instance=rapidml::MessageParameter_strategy)
-def test_rapidml::messageparameter_httpLocation_type(instance):
-    assert isinstance(instance.httpLocation, str)
+def test_rapidml_messageparameter_instantiation(instance):
+    assert isinstance(instance, rapidml_MessageParameter)
 
 
-@given(instance=rapidml::MessageParameter_strategy)
-def test_rapidml::messageparameter_httpLocation_setter(instance):
+
+@given(instance=rapidml_MessageParameter_strategy)
+def test_rapidml_messageparameter_httpLocation_setter(instance):
     original = instance.httpLocation
     instance.httpLocation = original
     assert instance.httpLocation == original
@@ -4243,89 +4072,65 @@ def test_withexamples_instantiation(instance):
 def test_restelement_instantiation(instance):
     assert isinstance(instance, RESTElement)
 
-@given(instance=rapidml::TypedMessage_strategy)
+@given(instance=rapidml_MediaType_strategy)
 @settings(max_examples=50)
-def test_rapidml::typedmessage_instantiation(instance):
-    assert isinstance(instance, rapidml::TypedMessage)
-
-@given(instance=rapidml::TypedMessage_strategy)
-def test_rapidml::typedmessage_useParentTypeReference_type(instance):
-    assert isinstance(instance.useParentTypeReference, bool)
+def test_rapidml_mediatype_instantiation(instance):
+    assert isinstance(instance, rapidml_MediaType)
 
 
-@given(instance=rapidml::TypedMessage_strategy)
-def test_rapidml::typedmessage_useParentTypeReference_setter(instance):
-    original = instance.useParentTypeReference
-    instance.useParentTypeReference = original
-    assert instance.useParentTypeReference == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=rapidml::TypedMessage_strategy)
-@settings(max_examples=30)
-def test_rapidml::typedmessage_isincluded_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isIncluded(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isIncluded).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isIncluded' in rapidml::TypedMessage is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isIncluded' in rapidml::TypedMessage did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isIncluded' in rapidml::TypedMessage is not implemented or raised an error")
-
-@given(instance=rapidml::MediaType_strategy)
-@settings(max_examples=50)
-def test_rapidml::mediatype_instantiation(instance):
-    assert isinstance(instance, rapidml::MediaType)
-
-@given(instance=rapidml::MediaType_strategy)
-def test_rapidml::mediatype_specURL_type(instance):
-    assert isinstance(instance.specURL, str)
-
-
-@given(instance=rapidml::MediaType_strategy)
-def test_rapidml::mediatype_specURL_setter(instance):
-    original = instance.specURL
-    instance.specURL = original
-    assert instance.specURL == original
-
-@given(instance=rapidml::MediaType_strategy)
-def test_rapidml::mediatype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::MediaType_strategy)
-def test_rapidml::mediatype_name_setter(instance):
+@given(instance=rapidml_MediaType_strategy)
+def test_rapidml_mediatype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=rapidml_MediaType_strategy)
+def test_rapidml_mediatype_specURL_setter(instance):
+    original = instance.specURL
+    instance.specURL = original
+    assert instance.specURL == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rapidml::MediaType_strategy)
+@given(instance=rapidml_MediaType_strategy)
 @settings(max_examples=30)
-def test_rapidml::mediatype_equals_changes_state(instance):
+def test_rapidml_mediatype_hashcode_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hashCode()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hashCode).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hashCode' in rapidml_MediaType is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hashCode' in rapidml_MediaType did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hashCode' in rapidml_MediaType is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=rapidml_MediaType_strategy)
+@settings(max_examples=30)
+def test_rapidml_mediatype_equals_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4339,14 +4144,143 @@ def test_rapidml::mediatype_equals_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equals' in rapidml::MediaType is empty"
+        assert has_statements, f"Function 'equals' in rapidml_MediaType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equals' in rapidml::MediaType did not change state; check implementation")
+            warnings.warn(f"Operation 'equals' in rapidml_MediaType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equals' in rapidml::MediaType is not implemented or raised an error")
+        warnings.warn(f"Operation 'equals' in rapidml_MediaType is not implemented or raised an error")
+
+@given(instance=rapidml_Parameter_strategy)
+@settings(max_examples=50)
+def test_rapidml_parameter_instantiation(instance):
+    assert isinstance(instance, rapidml_Parameter)
+
+
+
+@given(instance=rapidml_Parameter_strategy)
+def test_rapidml_parameter_required_setter(instance):
+    original = instance.required
+    instance.required = original
+    assert instance.required == original
+
+
+
+@given(instance=rapidml_Parameter_strategy)
+def test_rapidml_parameter_fixed_setter(instance):
+    original = instance.fixed
+    instance.fixed = original
+    assert instance.fixed == original
+
+
+
+@given(instance=rapidml_Parameter_strategy)
+def test_rapidml_parameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=rapidml_Parameter_strategy)
+def test_rapidml_parameter_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+@given(instance=rapidml_Method_strategy)
+@settings(max_examples=50)
+def test_rapidml_method_instantiation(instance):
+    assert isinstance(instance, rapidml_Method)
+
+
+
+@given(instance=rapidml_Method_strategy)
+def test_rapidml_method_httpMethod_setter(instance):
+    original = instance.httpMethod
+    instance.httpMethod = original
+    assert instance.httpMethod == original
+
+
+
+@given(instance=rapidml_Method_strategy)
+def test_rapidml_method_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=rapidml_ResourceAPI_strategy)
+@settings(max_examples=50)
+def test_rapidml_resourceapi_instantiation(instance):
+    assert isinstance(instance, rapidml_ResourceAPI)
+
+
+
+@given(instance=rapidml_ResourceAPI_strategy)
+def test_rapidml_resourceapi_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=rapidml_ResourceAPI_strategy)
+def test_rapidml_resourceapi_baseURI_setter(instance):
+    original = instance.baseURI
+    instance.baseURI = original
+    assert instance.baseURI == original
+
+
+
+@given(instance=rapidml_ResourceAPI_strategy)
+def test_rapidml_resourceapi_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=rapidml_SecurityScheme_strategy)
+@settings(max_examples=50)
+def test_rapidml_securityscheme_instantiation(instance):
+    assert isinstance(instance, rapidml_SecurityScheme)
+
+
+
+@given(instance=rapidml_SecurityScheme_strategy)
+def test_rapidml_securityscheme_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=rapidml_SecurityScheme_strategy)
+def test_rapidml_securityscheme_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=rapidml_SecurityScheme_strategy)
+def test_rapidml_securityscheme_flow_setter(instance):
+    original = instance.flow
+    instance.flow = original
+    assert instance.flow == original
+
+@given(instance=rapidml_TypedMessage_strategy)
+@settings(max_examples=50)
+def test_rapidml_typedmessage_instantiation(instance):
+    assert isinstance(instance, rapidml_TypedMessage)
+
+
+
+@given(instance=rapidml_TypedMessage_strategy)
+def test_rapidml_typedmessage_useParentTypeReference_setter(instance):
+    original = instance.useParentTypeReference
+    instance.useParentTypeReference = original
+    assert instance.useParentTypeReference == original
 
 import warnings
 import copy
@@ -4354,193 +4288,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=rapidml::MediaType_strategy)
+@given(instance=rapidml_TypedMessage_strategy)
 @settings(max_examples=30)
-def test_rapidml::mediatype_hashcode_changes_state(instance):
+def test_rapidml_typedmessage_isincluded_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.hashCode()
+        instance.isIncluded(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hashCode).strip()
+        source = inspect.getsource(instance.isIncluded).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hashCode' in rapidml::MediaType is empty"
+        assert has_statements, f"Function 'isIncluded' in rapidml_TypedMessage is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hashCode' in rapidml::MediaType did not change state; check implementation")
+            warnings.warn(f"Operation 'isIncluded' in rapidml_TypedMessage did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hashCode' in rapidml::MediaType is not implemented or raised an error")
+        warnings.warn(f"Operation 'isIncluded' in rapidml_TypedMessage is not implemented or raised an error")
 
-@given(instance=rapidml::Method_strategy)
+@given(instance=rapidml_ResourceDefinition_strategy)
 @settings(max_examples=50)
-def test_rapidml::method_instantiation(instance):
-    assert isinstance(instance, rapidml::Method)
-
-@given(instance=rapidml::Method_strategy)
-def test_rapidml::method_httpMethod_type(instance):
-    assert isinstance(instance.httpMethod, str)
+def test_rapidml_resourcedefinition_instantiation(instance):
+    assert isinstance(instance, rapidml_ResourceDefinition)
 
 
-@given(instance=rapidml::Method_strategy)
-def test_rapidml::method_httpMethod_setter(instance):
-    original = instance.httpMethod
-    instance.httpMethod = original
-    assert instance.httpMethod == original
 
-@given(instance=rapidml::Method_strategy)
-def test_rapidml::method_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=rapidml::Method_strategy)
-def test_rapidml::method_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=rapidml::Parameter_strategy)
-@settings(max_examples=50)
-def test_rapidml::parameter_instantiation(instance):
-    assert isinstance(instance, rapidml::Parameter)
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_fixed_type(instance):
-    assert isinstance(instance.fixed, str)
-
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_fixed_setter(instance):
-    original = instance.fixed
-    instance.fixed = original
-    assert instance.fixed == original
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_required_type(instance):
-    assert isinstance(instance.required, bool)
-
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_required_setter(instance):
-    original = instance.required
-    instance.required = original
-    assert instance.required == original
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=rapidml::Parameter_strategy)
-def test_rapidml::parameter_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=rapidml::SecurityScheme_strategy)
-@settings(max_examples=50)
-def test_rapidml::securityscheme_instantiation(instance):
-    assert isinstance(instance, rapidml::SecurityScheme)
-
-@given(instance=rapidml::SecurityScheme_strategy)
-def test_rapidml::securityscheme_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::SecurityScheme_strategy)
-def test_rapidml::securityscheme_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rapidml::SecurityScheme_strategy)
-def test_rapidml::securityscheme_flow_type(instance):
-    assert isinstance(instance.flow, str)
-
-
-@given(instance=rapidml::SecurityScheme_strategy)
-def test_rapidml::securityscheme_flow_setter(instance):
-    original = instance.flow
-    instance.flow = original
-    assert instance.flow == original
-
-@given(instance=rapidml::SecurityScheme_strategy)
-def test_rapidml::securityscheme_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=rapidml::SecurityScheme_strategy)
-def test_rapidml::securityscheme_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=rapidml::ResourceAPI_strategy)
-@settings(max_examples=50)
-def test_rapidml::resourceapi_instantiation(instance):
-    assert isinstance(instance, rapidml::ResourceAPI)
-
-@given(instance=rapidml::ResourceAPI_strategy)
-def test_rapidml::resourceapi_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::ResourceAPI_strategy)
-def test_rapidml::resourceapi_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rapidml::ResourceAPI_strategy)
-def test_rapidml::resourceapi_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=rapidml::ResourceAPI_strategy)
-def test_rapidml::resourceapi_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=rapidml::ResourceAPI_strategy)
-def test_rapidml::resourceapi_baseURI_type(instance):
-    assert isinstance(instance.baseURI, str)
-
-
-@given(instance=rapidml::ResourceAPI_strategy)
-def test_rapidml::resourceapi_baseURI_setter(instance):
-    original = instance.baseURI
-    instance.baseURI = original
-    assert instance.baseURI == original
-
-@given(instance=rapidml::ResourceDefinition_strategy)
-@settings(max_examples=50)
-def test_rapidml::resourcedefinition_instantiation(instance):
-    assert isinstance(instance, rapidml::ResourceDefinition)
-
-@given(instance=rapidml::ResourceDefinition_strategy)
-def test_rapidml::resourcedefinition_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rapidml::ResourceDefinition_strategy)
-def test_rapidml::resourcedefinition_name_setter(instance):
+@given(instance=rapidml_ResourceDefinition_strategy)
+def test_rapidml_resourcedefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

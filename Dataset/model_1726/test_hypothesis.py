@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    emap::Writer,
-    emap::DateToCategoryMapEntry,
-    emap::WriterToStringMapEntry,
-    emap::StringToStringMapEntry,
-    emap::StringToWriterMapEntry,
-    emap::Book,
+from python_code import (
+    emap_Writer,
+    emap_DateToCategoryMapEntry,
+    emap_WriterToStringMapEntry,
+    emap_StringToStringMapEntry,
+    emap_StringToWriterMapEntry,
+    emap_Book,
     Category,
 )
 
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_emap::writer_is_not_abstract():
-    assert not inspect.isabstract(emap::Writer)
+def test_emap_writer_is_not_abstract():
+    assert not inspect.isabstract(emap_Writer)
 
 
-def test_emap::writer_constructor_exists():
-    assert callable(emap::Writer.__init__)
+def test_emap_writer_constructor_exists():
+    assert callable(emap_Writer.__init__)
 
 
-def test_emap::writer_constructor_args():
-    sig = inspect.signature(emap::Writer.__init__)
+def test_emap_writer_constructor_args():
+    sig = inspect.signature(emap_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emap::writer_has_name():
-    assert hasattr(emap::Writer, "name")
+def test_emap_writer_has_name():
+    assert hasattr(emap_Writer, "name")
     descriptor = None
-    for klass in emap::Writer.__mro__:
+    for klass in emap_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -45,33 +45,33 @@ def test_emap::writer_has_name():
 
 
 
-def test_emap::datetocategorymapentry_is_not_abstract():
-    assert not inspect.isabstract(emap::DateToCategoryMapEntry)
+def test_emap_datetocategorymapentry_is_not_abstract():
+    assert not inspect.isabstract(emap_DateToCategoryMapEntry)
 
 
-def test_emap::datetocategorymapentry_constructor_exists():
-    assert callable(emap::DateToCategoryMapEntry.__init__)
+def test_emap_datetocategorymapentry_constructor_exists():
+    assert callable(emap_DateToCategoryMapEntry.__init__)
 
 
-def test_emap::datetocategorymapentry_constructor_args():
-    sig = inspect.signature(emap::DateToCategoryMapEntry.__init__)
+def test_emap_datetocategorymapentry_constructor_args():
+    sig = inspect.signature(emap_DateToCategoryMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
 
-def test_emap::datetocategorymapentry_has_value():
-    assert hasattr(emap::DateToCategoryMapEntry, "value")
+def test_emap_datetocategorymapentry_has_value():
+    assert hasattr(emap_DateToCategoryMapEntry, "value")
     descriptor = None
-    for klass in emap::DateToCategoryMapEntry.__mro__:
+    for klass in emap_DateToCategoryMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_emap::datetocategorymapentry_has_key():
-    assert hasattr(emap::DateToCategoryMapEntry, "key")
+def test_emap_datetocategorymapentry_has_key():
+    assert hasattr(emap_DateToCategoryMapEntry, "key")
     descriptor = None
-    for klass in emap::DateToCategoryMapEntry.__mro__:
+    for klass in emap_DateToCategoryMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -79,23 +79,23 @@ def test_emap::datetocategorymapentry_has_key():
 
 
 
-def test_emap::writertostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(emap::WriterToStringMapEntry)
+def test_emap_writertostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(emap_WriterToStringMapEntry)
 
 
-def test_emap::writertostringmapentry_constructor_exists():
-    assert callable(emap::WriterToStringMapEntry.__init__)
+def test_emap_writertostringmapentry_constructor_exists():
+    assert callable(emap_WriterToStringMapEntry.__init__)
 
 
-def test_emap::writertostringmapentry_constructor_args():
-    sig = inspect.signature(emap::WriterToStringMapEntry.__init__)
+def test_emap_writertostringmapentry_constructor_args():
+    sig = inspect.signature(emap_WriterToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_emap::writertostringmapentry_has_value():
-    assert hasattr(emap::WriterToStringMapEntry, "value")
+def test_emap_writertostringmapentry_has_value():
+    assert hasattr(emap_WriterToStringMapEntry, "value")
     descriptor = None
-    for klass in emap::WriterToStringMapEntry.__mro__:
+    for klass in emap_WriterToStringMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -103,33 +103,33 @@ def test_emap::writertostringmapentry_has_value():
 
 
 
-def test_emap::stringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(emap::StringToStringMapEntry)
+def test_emap_stringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(emap_StringToStringMapEntry)
 
 
-def test_emap::stringtostringmapentry_constructor_exists():
-    assert callable(emap::StringToStringMapEntry.__init__)
+def test_emap_stringtostringmapentry_constructor_exists():
+    assert callable(emap_StringToStringMapEntry.__init__)
 
 
-def test_emap::stringtostringmapentry_constructor_args():
-    sig = inspect.signature(emap::StringToStringMapEntry.__init__)
+def test_emap_stringtostringmapentry_constructor_args():
+    sig = inspect.signature(emap_StringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_emap::stringtostringmapentry_has_key():
-    assert hasattr(emap::StringToStringMapEntry, "key")
+def test_emap_stringtostringmapentry_has_key():
+    assert hasattr(emap_StringToStringMapEntry, "key")
     descriptor = None
-    for klass in emap::StringToStringMapEntry.__mro__:
+    for klass in emap_StringToStringMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_emap::stringtostringmapentry_has_value():
-    assert hasattr(emap::StringToStringMapEntry, "value")
+def test_emap_stringtostringmapentry_has_value():
+    assert hasattr(emap_StringToStringMapEntry, "value")
     descriptor = None
-    for klass in emap::StringToStringMapEntry.__mro__:
+    for klass in emap_StringToStringMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -137,23 +137,23 @@ def test_emap::stringtostringmapentry_has_value():
 
 
 
-def test_emap::stringtowritermapentry_is_not_abstract():
-    assert not inspect.isabstract(emap::StringToWriterMapEntry)
+def test_emap_stringtowritermapentry_is_not_abstract():
+    assert not inspect.isabstract(emap_StringToWriterMapEntry)
 
 
-def test_emap::stringtowritermapentry_constructor_exists():
-    assert callable(emap::StringToWriterMapEntry.__init__)
+def test_emap_stringtowritermapentry_constructor_exists():
+    assert callable(emap_StringToWriterMapEntry.__init__)
 
 
-def test_emap::stringtowritermapentry_constructor_args():
-    sig = inspect.signature(emap::StringToWriterMapEntry.__init__)
+def test_emap_stringtowritermapentry_constructor_args():
+    sig = inspect.signature(emap_StringToWriterMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_emap::stringtowritermapentry_has_key():
-    assert hasattr(emap::StringToWriterMapEntry, "key")
+def test_emap_stringtowritermapentry_has_key():
+    assert hasattr(emap_StringToWriterMapEntry, "key")
     descriptor = None
-    for klass in emap::StringToWriterMapEntry.__mro__:
+    for klass in emap_StringToWriterMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -161,23 +161,23 @@ def test_emap::stringtowritermapentry_has_key():
 
 
 
-def test_emap::book_is_not_abstract():
-    assert not inspect.isabstract(emap::Book)
+def test_emap_book_is_not_abstract():
+    assert not inspect.isabstract(emap_Book)
 
 
-def test_emap::book_constructor_exists():
-    assert callable(emap::Book.__init__)
+def test_emap_book_constructor_exists():
+    assert callable(emap_Book.__init__)
 
 
-def test_emap::book_constructor_args():
-    sig = inspect.signature(emap::Book.__init__)
+def test_emap_book_constructor_args():
+    sig = inspect.signature(emap_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_emap::book_has_title():
-    assert hasattr(emap::Book, "title")
+def test_emap_book_has_title():
+    assert hasattr(emap_Book, "title")
     descriptor = None
-    for klass in emap::Book.__mro__:
+    for klass in emap_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -210,155 +210,131 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-emap::Writer_strategy = st.builds(
-    emap::Writer,
+emap_Writer_strategy = st.builds(
+    emap_Writer,
     name=
         safe_text
 )
-emap::DateToCategoryMapEntry_strategy = st.builds(
-    emap::DateToCategoryMapEntry,
+emap_DateToCategoryMapEntry_strategy = st.builds(
+    emap_DateToCategoryMapEntry,
     value=
         safe_text,
     key=
         safe_text
 )
-emap::WriterToStringMapEntry_strategy = st.builds(
-    emap::WriterToStringMapEntry,
+emap_WriterToStringMapEntry_strategy = st.builds(
+    emap_WriterToStringMapEntry,
     value=
         safe_text
 )
-emap::StringToStringMapEntry_strategy = st.builds(
-    emap::StringToStringMapEntry,
+emap_StringToStringMapEntry_strategy = st.builds(
+    emap_StringToStringMapEntry,
     key=
         safe_text,
     value=
         safe_text
 )
-emap::StringToWriterMapEntry_strategy = st.builds(
-    emap::StringToWriterMapEntry,
+emap_StringToWriterMapEntry_strategy = st.builds(
+    emap_StringToWriterMapEntry,
     key=
         safe_text
 )
-emap::Book_strategy = st.builds(
-    emap::Book,
+emap_Book_strategy = st.builds(
+    emap_Book,
     title=
         safe_text
 )
 
-@given(instance=emap::Writer_strategy)
+@given(instance=emap_Writer_strategy)
 @settings(max_examples=50)
-def test_emap::writer_instantiation(instance):
-    assert isinstance(instance, emap::Writer)
-
-@given(instance=emap::Writer_strategy)
-def test_emap::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emap_writer_instantiation(instance):
+    assert isinstance(instance, emap_Writer)
 
 
-@given(instance=emap::Writer_strategy)
-def test_emap::writer_name_setter(instance):
+
+@given(instance=emap_Writer_strategy)
+def test_emap_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=emap::DateToCategoryMapEntry_strategy)
+@given(instance=emap_DateToCategoryMapEntry_strategy)
 @settings(max_examples=50)
-def test_emap::datetocategorymapentry_instantiation(instance):
-    assert isinstance(instance, emap::DateToCategoryMapEntry)
-
-@given(instance=emap::DateToCategoryMapEntry_strategy)
-def test_emap::datetocategorymapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_emap_datetocategorymapentry_instantiation(instance):
+    assert isinstance(instance, emap_DateToCategoryMapEntry)
 
 
-@given(instance=emap::DateToCategoryMapEntry_strategy)
-def test_emap::datetocategorymapentry_value_setter(instance):
+
+@given(instance=emap_DateToCategoryMapEntry_strategy)
+def test_emap_datetocategorymapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=emap::DateToCategoryMapEntry_strategy)
-def test_emap::datetocategorymapentry_key_type(instance):
-    assert isinstance(instance.key, str)
 
 
-@given(instance=emap::DateToCategoryMapEntry_strategy)
-def test_emap::datetocategorymapentry_key_setter(instance):
+@given(instance=emap_DateToCategoryMapEntry_strategy)
+def test_emap_datetocategorymapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=emap::WriterToStringMapEntry_strategy)
+@given(instance=emap_WriterToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_emap::writertostringmapentry_instantiation(instance):
-    assert isinstance(instance, emap::WriterToStringMapEntry)
-
-@given(instance=emap::WriterToStringMapEntry_strategy)
-def test_emap::writertostringmapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_emap_writertostringmapentry_instantiation(instance):
+    assert isinstance(instance, emap_WriterToStringMapEntry)
 
 
-@given(instance=emap::WriterToStringMapEntry_strategy)
-def test_emap::writertostringmapentry_value_setter(instance):
+
+@given(instance=emap_WriterToStringMapEntry_strategy)
+def test_emap_writertostringmapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=emap::StringToStringMapEntry_strategy)
+@given(instance=emap_StringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_emap::stringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, emap::StringToStringMapEntry)
-
-@given(instance=emap::StringToStringMapEntry_strategy)
-def test_emap::stringtostringmapentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_emap_stringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, emap_StringToStringMapEntry)
 
 
-@given(instance=emap::StringToStringMapEntry_strategy)
-def test_emap::stringtostringmapentry_key_setter(instance):
+
+@given(instance=emap_StringToStringMapEntry_strategy)
+def test_emap_stringtostringmapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=emap::StringToStringMapEntry_strategy)
-def test_emap::stringtostringmapentry_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=emap::StringToStringMapEntry_strategy)
-def test_emap::stringtostringmapentry_value_setter(instance):
+@given(instance=emap_StringToStringMapEntry_strategy)
+def test_emap_stringtostringmapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=emap::StringToWriterMapEntry_strategy)
+@given(instance=emap_StringToWriterMapEntry_strategy)
 @settings(max_examples=50)
-def test_emap::stringtowritermapentry_instantiation(instance):
-    assert isinstance(instance, emap::StringToWriterMapEntry)
-
-@given(instance=emap::StringToWriterMapEntry_strategy)
-def test_emap::stringtowritermapentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_emap_stringtowritermapentry_instantiation(instance):
+    assert isinstance(instance, emap_StringToWriterMapEntry)
 
 
-@given(instance=emap::StringToWriterMapEntry_strategy)
-def test_emap::stringtowritermapentry_key_setter(instance):
+
+@given(instance=emap_StringToWriterMapEntry_strategy)
+def test_emap_stringtowritermapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=emap::Book_strategy)
+@given(instance=emap_Book_strategy)
 @settings(max_examples=50)
-def test_emap::book_instantiation(instance):
-    assert isinstance(instance, emap::Book)
-
-@given(instance=emap::Book_strategy)
-def test_emap::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_emap_book_instantiation(instance):
+    assert isinstance(instance, emap_Book)
 
 
-@given(instance=emap::Book_strategy)
-def test_emap::book_title_setter(instance):
+
+@given(instance=emap_Book_strategy)
+def test_emap_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

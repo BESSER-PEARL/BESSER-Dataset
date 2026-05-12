@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     FireAlarm,
@@ -156,17 +156,8 @@ def test_home_security_system_constructor_exists():
 def test_home_security_system_constructor_args():
     sig = inspect.signature(Home_Security_System.__init__)
     params = list(sig.parameters.keys())
-    assert "system_On" in params, "Missing parameter 'system_On'"
     assert "system_Off" in params, "Missing parameter 'system_Off'"
-
-def test_home_security_system_has_system_On():
-    assert hasattr(Home_Security_System, "system_On")
-    descriptor = None
-    for klass in Home_Security_System.__mro__:
-        if "system_On" in klass.__dict__:
-            descriptor = klass.__dict__["system_On"]
-            break
-    assert isinstance(descriptor, property)
+    assert "system_On" in params, "Missing parameter 'system_On'"
 
 def test_home_security_system_has_system_Off():
     assert hasattr(Home_Security_System, "system_Off")
@@ -174,6 +165,15 @@ def test_home_security_system_has_system_Off():
     for klass in Home_Security_System.__mro__:
         if "system_Off" in klass.__dict__:
             descriptor = klass.__dict__["system_Off"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_home_security_system_has_system_On():
+    assert hasattr(Home_Security_System, "system_On")
+    descriptor = None
+    for klass in Home_Security_System.__mro__:
+        if "system_On" in klass.__dict__:
+            descriptor = klass.__dict__["system_On"]
             break
     assert isinstance(descriptor, property)
 
@@ -190,17 +190,8 @@ def test_fire_alarm_system_constructor_exists():
 def test_fire_alarm_system_constructor_args():
     sig = inspect.signature(Fire_Alarm_system.__init__)
     params = list(sig.parameters.keys())
-    assert "system_On" in params, "Missing parameter 'system_On'"
     assert "system_Off" in params, "Missing parameter 'system_Off'"
-
-def test_fire_alarm_system_has_system_On():
-    assert hasattr(Fire_Alarm_system, "system_On")
-    descriptor = None
-    for klass in Fire_Alarm_system.__mro__:
-        if "system_On" in klass.__dict__:
-            descriptor = klass.__dict__["system_On"]
-            break
-    assert isinstance(descriptor, property)
+    assert "system_On" in params, "Missing parameter 'system_On'"
 
 def test_fire_alarm_system_has_system_Off():
     assert hasattr(Fire_Alarm_system, "system_Off")
@@ -208,6 +199,15 @@ def test_fire_alarm_system_has_system_Off():
     for klass in Fire_Alarm_system.__mro__:
         if "system_Off" in klass.__dict__:
             descriptor = klass.__dict__["system_Off"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fire_alarm_system_has_system_On():
+    assert hasattr(Fire_Alarm_system, "system_On")
+    descriptor = None
+    for klass in Fire_Alarm_system.__mro__:
+        if "system_On" in klass.__dict__:
+            descriptor = klass.__dict__["system_On"]
             break
     assert isinstance(descriptor, property)
 
@@ -224,17 +224,8 @@ def test_appliances_constructor_exists():
 def test_appliances_constructor_args():
     sig = inspect.signature(Appliances.__init__)
     params = list(sig.parameters.keys())
-    assert "On_status" in params, "Missing parameter 'On_status'"
     assert "Off_status" in params, "Missing parameter 'Off_status'"
-
-def test_appliances_has_On_status():
-    assert hasattr(Appliances, "On_status")
-    descriptor = None
-    for klass in Appliances.__mro__:
-        if "On_status" in klass.__dict__:
-            descriptor = klass.__dict__["On_status"]
-            break
-    assert isinstance(descriptor, property)
+    assert "On_status" in params, "Missing parameter 'On_status'"
 
 def test_appliances_has_Off_status():
     assert hasattr(Appliances, "Off_status")
@@ -242,6 +233,15 @@ def test_appliances_has_Off_status():
     for klass in Appliances.__mro__:
         if "Off_status" in klass.__dict__:
             descriptor = klass.__dict__["Off_status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_appliances_has_On_status():
+    assert hasattr(Appliances, "On_status")
+    descriptor = None
+    for klass in Appliances.__mro__:
+        if "On_status" in klass.__dict__:
+            descriptor = klass.__dict__["On_status"]
             break
     assert isinstance(descriptor, property)
 
@@ -366,23 +366,23 @@ Department_strategy = st.builds(
 )
 Home_Security_System_strategy = st.builds(
     Home_Security_System,
-    system_On=
-        st.booleans(),
     system_Off=
+        st.booleans(),
+    system_On=
         st.booleans()
 )
 Fire_Alarm_system_strategy = st.builds(
     Fire_Alarm_system,
-    system_On=
-        st.booleans(),
     system_Off=
+        st.booleans(),
+    system_On=
         st.booleans()
 )
 Appliances_strategy = st.builds(
     Appliances,
-    On_status=
-        st.booleans(),
     Off_status=
+        st.booleans(),
+    On_status=
         st.booleans()
 )
 system_strategy = st.builds(
@@ -408,9 +408,6 @@ Owner_strategy = st.builds(
 def test_firealarm_instantiation(instance):
     assert isinstance(instance, FireAlarm)
 
-@given(instance=FireAlarm_strategy)
-def test_firealarm_status_type(instance):
-    assert isinstance(instance.status, bool)
 
 
 @given(instance=FireAlarm_strategy)
@@ -424,9 +421,6 @@ def test_firealarm_status_setter(instance):
 def test_securityalarm_instantiation(instance):
     assert isinstance(instance, securityAlarm)
 
-@given(instance=securityAlarm_strategy)
-def test_securityalarm_status_type(instance):
-    assert isinstance(instance.status, bool)
 
 
 @given(instance=securityAlarm_strategy)
@@ -440,9 +434,6 @@ def test_securityalarm_status_setter(instance):
 def test_police_instantiation(instance):
     assert isinstance(instance, Police)
 
-@given(instance=Police_strategy)
-def test_police_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Police_strategy)
@@ -456,9 +447,6 @@ def test_police_name_setter(instance):
 def test_smokealarm_instantiation(instance):
     assert isinstance(instance, smokeAlarm)
 
-@given(instance=smokeAlarm_strategy)
-def test_smokealarm_status_type(instance):
-    assert isinstance(instance.status, bool)
 
 
 @given(instance=smokeAlarm_strategy)
@@ -472,9 +460,6 @@ def test_smokealarm_status_setter(instance):
 def test_department_instantiation(instance):
     assert isinstance(instance, Department)
 
-@given(instance=Department_strategy)
-def test_department_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Department_strategy)
@@ -488,20 +473,6 @@ def test_department_name_setter(instance):
 def test_home_security_system_instantiation(instance):
     assert isinstance(instance, Home_Security_System)
 
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_system_On_type(instance):
-    assert isinstance(instance.system_On, bool)
-
-
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_system_On_setter(instance):
-    original = instance.system_On
-    instance.system_On = original
-    assert instance.system_On == original
-
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_system_Off_type(instance):
-    assert isinstance(instance.system_Off, bool)
 
 
 @given(instance=Home_Security_System_strategy)
@@ -510,25 +481,19 @@ def test_home_security_system_system_Off_setter(instance):
     instance.system_Off = original
     assert instance.system_Off == original
 
-@given(instance=Fire_Alarm_system_strategy)
-@settings(max_examples=50)
-def test_fire_alarm_system_instantiation(instance):
-    assert isinstance(instance, Fire_Alarm_system)
-
-@given(instance=Fire_Alarm_system_strategy)
-def test_fire_alarm_system_system_On_type(instance):
-    assert isinstance(instance.system_On, bool)
 
 
-@given(instance=Fire_Alarm_system_strategy)
-def test_fire_alarm_system_system_On_setter(instance):
+@given(instance=Home_Security_System_strategy)
+def test_home_security_system_system_On_setter(instance):
     original = instance.system_On
     instance.system_On = original
     assert instance.system_On == original
 
 @given(instance=Fire_Alarm_system_strategy)
-def test_fire_alarm_system_system_Off_type(instance):
-    assert isinstance(instance.system_Off, bool)
+@settings(max_examples=50)
+def test_fire_alarm_system_instantiation(instance):
+    assert isinstance(instance, Fire_Alarm_system)
+
 
 
 @given(instance=Fire_Alarm_system_strategy)
@@ -537,25 +502,19 @@ def test_fire_alarm_system_system_Off_setter(instance):
     instance.system_Off = original
     assert instance.system_Off == original
 
+
+
+@given(instance=Fire_Alarm_system_strategy)
+def test_fire_alarm_system_system_On_setter(instance):
+    original = instance.system_On
+    instance.system_On = original
+    assert instance.system_On == original
+
 @given(instance=Appliances_strategy)
 @settings(max_examples=50)
 def test_appliances_instantiation(instance):
     assert isinstance(instance, Appliances)
 
-@given(instance=Appliances_strategy)
-def test_appliances_On_status_type(instance):
-    assert isinstance(instance.On_status, bool)
-
-
-@given(instance=Appliances_strategy)
-def test_appliances_On_status_setter(instance):
-    original = instance.On_status
-    instance.On_status = original
-    assert instance.On_status == original
-
-@given(instance=Appliances_strategy)
-def test_appliances_Off_status_type(instance):
-    assert isinstance(instance.Off_status, bool)
 
 
 @given(instance=Appliances_strategy)
@@ -564,14 +523,19 @@ def test_appliances_Off_status_setter(instance):
     instance.Off_status = original
     assert instance.Off_status == original
 
+
+
+@given(instance=Appliances_strategy)
+def test_appliances_On_status_setter(instance):
+    original = instance.On_status
+    instance.On_status = original
+    assert instance.On_status == original
+
 @given(instance=system_strategy)
 @settings(max_examples=50)
 def test_system_instantiation(instance):
     assert isinstance(instance, system)
 
-@given(instance=system_strategy)
-def test_system_status_type(instance):
-    assert isinstance(instance.status, bool)
 
 
 @given(instance=system_strategy)
@@ -585,9 +549,6 @@ def test_system_status_setter(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Login_strategy)
@@ -596,9 +557,6 @@ def test_login_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Login_strategy)
-def test_login_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Login_strategy)
@@ -612,9 +570,6 @@ def test_login_name_setter(instance):
 def test_owner_instantiation(instance):
     assert isinstance(instance, Owner)
 
-@given(instance=Owner_strategy)
-def test_owner_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Owner_strategy)

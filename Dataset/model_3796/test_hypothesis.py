@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pack::Class1,
+from python_code import (
+    pack_Class1,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_pack::class1_is_not_abstract():
-    assert not inspect.isabstract(pack::Class1)
+def test_pack_class1_is_not_abstract():
+    assert not inspect.isabstract(pack_Class1)
 
 
-def test_pack::class1_constructor_exists():
-    assert callable(pack::Class1.__init__)
+def test_pack_class1_constructor_exists():
+    assert callable(pack_Class1.__init__)
 
 
-def test_pack::class1_constructor_args():
-    sig = inspect.signature(pack::Class1.__init__)
+def test_pack_class1_constructor_args():
+    sig = inspect.signature(pack_Class1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pack::Class1_strategy = st.builds(
-    pack::Class1,
+pack_Class1_strategy = st.builds(
+    pack_Class1,
 )
 
-@given(instance=pack::Class1_strategy)
+@given(instance=pack_Class1_strategy)
 @settings(max_examples=50)
-def test_pack::class1_instantiation(instance):
-    assert isinstance(instance, pack::Class1)
+def test_pack_class1_instantiation(instance):
+    assert isinstance(instance, pack_Class1)

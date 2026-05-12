@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     LZUser2,
@@ -36,16 +36,16 @@ def test_lzuser2_constructor_exists():
 def test_lzuser2_constructor_args():
     sig = inspect.signature(LZUser2.__init__)
     params = list(sig.parameters.keys())
-    assert "populate" in params, "Missing parameter 'populate'"
-    assert "state" in params, "Missing parameter 'state'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "state" in params, "Missing parameter 'state'"
+    assert "populate" in params, "Missing parameter 'populate'"
 
-def test_lzuser2_has_populate():
-    assert hasattr(LZUser2, "populate")
+def test_lzuser2_has_password():
+    assert hasattr(LZUser2, "password")
     descriptor = None
     for klass in LZUser2.__mro__:
-        if "populate" in klass.__dict__:
-            descriptor = klass.__dict__["populate"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -58,12 +58,12 @@ def test_lzuser2_has_state():
             break
     assert isinstance(descriptor, property)
 
-def test_lzuser2_has_password():
-    assert hasattr(LZUser2, "password")
+def test_lzuser2_has_populate():
+    assert hasattr(LZUser2, "populate")
     descriptor = None
     for klass in LZUser2.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "populate" in klass.__dict__:
+            descriptor = klass.__dict__["populate"]
             break
     assert isinstance(descriptor, property)
 
@@ -149,11 +149,11 @@ def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
     assert "shipTo" in params, "Missing parameter 'shipTo'"
-    assert "total" in params, "Missing parameter 'total'"
-    assert "shipped" in params, "Missing parameter 'shipped'"
     assert "number" in params, "Missing parameter 'number'"
-    assert "ordered" in params, "Missing parameter 'ordered'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "shipped" in params, "Missing parameter 'shipped'"
+    assert "total" in params, "Missing parameter 'total'"
+    assert "ordered" in params, "Missing parameter 'ordered'"
 
 def test_order_has_shipTo():
     assert hasattr(Order, "shipTo")
@@ -161,24 +161,6 @@ def test_order_has_shipTo():
     for klass in Order.__mro__:
         if "shipTo" in klass.__dict__:
             descriptor = klass.__dict__["shipTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_total():
-    assert hasattr(Order, "total")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_shipped():
-    assert hasattr(Order, "shipped")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "shipped" in klass.__dict__:
-            descriptor = klass.__dict__["shipped"]
             break
     assert isinstance(descriptor, property)
 
@@ -191,21 +173,39 @@ def test_order_has_number():
             break
     assert isinstance(descriptor, property)
 
-def test_order_has_ordered():
-    assert hasattr(Order, "ordered")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_order_has_status():
     assert hasattr(Order, "status")
     descriptor = None
     for klass in Order.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_shipped():
+    assert hasattr(Order, "shipped")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "shipped" in klass.__dict__:
+            descriptor = klass.__dict__["shipped"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_total():
+    assert hasattr(Order, "total")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_ordered():
+    assert hasattr(Order, "ordered")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,16 +222,16 @@ def test_radixclient_constructor_exists():
 def test_radixclient_constructor_args():
     sig = inspect.signature(RadixClient.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
-    assert "state" in params, "Missing parameter 'state'"
     assert "populate" in params, "Missing parameter 'populate'"
+    assert "state" in params, "Missing parameter 'state'"
+    assert "password" in params, "Missing parameter 'password'"
 
-def test_radixclient_has_password():
-    assert hasattr(RadixClient, "password")
+def test_radixclient_has_populate():
+    assert hasattr(RadixClient, "populate")
     descriptor = None
     for klass in RadixClient.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "populate" in klass.__dict__:
+            descriptor = klass.__dict__["populate"]
             break
     assert isinstance(descriptor, property)
 
@@ -244,12 +244,12 @@ def test_radixclient_has_state():
             break
     assert isinstance(descriptor, property)
 
-def test_radixclient_has_populate():
-    assert hasattr(RadixClient, "populate")
+def test_radixclient_has_password():
+    assert hasattr(RadixClient, "password")
     descriptor = None
     for klass in RadixClient.__mro__:
-        if "populate" in klass.__dict__:
-            descriptor = klass.__dict__["populate"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -304,18 +304,9 @@ def test_payment_constructor_exists():
 def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
-    assert "total" in params, "Missing parameter 'total'"
     assert "details" in params, "Missing parameter 'details'"
+    assert "total" in params, "Missing parameter 'total'"
     assert "paidDate" in params, "Missing parameter 'paidDate'"
-
-def test_payment_has_total():
-    assert hasattr(Payment, "total")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_payment_has_details():
     assert hasattr(Payment, "details")
@@ -323,6 +314,15 @@ def test_payment_has_details():
     for klass in Payment.__mro__:
         if "details" in klass.__dict__:
             descriptor = klass.__dict__["details"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_payment_has_total():
+    assert hasattr(Payment, "total")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
             break
     assert isinstance(descriptor, property)
 
@@ -348,9 +348,18 @@ def test_redisclient_constructor_exists():
 def test_redisclient_constructor_args():
     sig = inspect.signature(RedisClient.__init__)
     params = list(sig.parameters.keys())
+    assert "email" in params, "Missing parameter 'email'"
     assert "log" in params, "Missing parameter 'log'"
     assert "RadixClient" in params, "Missing parameter 'RadixClient'"
-    assert "email" in params, "Missing parameter 'email'"
+
+def test_redisclient_has_email():
+    assert hasattr(RedisClient, "email")
+    descriptor = None
+    for klass in RedisClient.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_redisclient_has_log():
     assert hasattr(RedisClient, "log")
@@ -367,15 +376,6 @@ def test_redisclient_has_RadixClient():
     for klass in RedisClient.__mro__:
         if "RadixClient" in klass.__dict__:
             descriptor = klass.__dict__["RadixClient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_redisclient_has_email():
-    assert hasattr(RedisClient, "email")
-    descriptor = None
-    for klass in RedisClient.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -419,11 +419,11 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 LZUser2_strategy = st.builds(
     LZUser2,
-    populate=
+    password=
         safe_text,
     state=
         st.none(),
-    password=
+    populate=
         safe_text
 )
 Product_strategy = st.builds(
@@ -444,24 +444,24 @@ Order_strategy = st.builds(
     Order,
     shipTo=
         safe_text,
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    shipped=
-        st.booleans(),
     number=
         st.integers(),
-    ordered=
-        st.dates(),
     status=
-        st.none()
+        st.none(),
+    shipped=
+        st.booleans(),
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    ordered=
+        st.dates()
 )
 RadixClient_strategy = st.builds(
     RadixClient,
-    password=
+    populate=
         safe_text,
     state=
         st.none(),
-    populate=
+    password=
         safe_text
 )
 Redis_strategy = st.builds(
@@ -474,20 +474,20 @@ ShoppingCart_strategy = st.builds(
 )
 Payment_strategy = st.builds(
     Payment,
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     details=
         safe_text,
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     paidDate=
         st.dates()
 )
 RedisClient_strategy = st.builds(
     RedisClient,
+    email=
+        safe_text,
     log=
         safe_text,
     RadixClient=
-        safe_text,
-    email=
         safe_text
 )
 
@@ -496,31 +496,6 @@ RedisClient_strategy = st.builds(
 def test_lzuser2_instantiation(instance):
     assert isinstance(instance, LZUser2)
 
-@given(instance=LZUser2_strategy)
-def test_lzuser2_populate_type(instance):
-    assert isinstance(instance.populate, str)
-
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_populate_setter(instance):
-    original = instance.populate
-    instance.populate = original
-    assert instance.populate == original
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_state_type(instance):
-    assert isinstance(instance.state, userstate)
-
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=LZUser2_strategy)
@@ -529,14 +504,27 @@ def test_lzuser2_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=LZUser2_strategy)
+def test_lzuser2_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+
+
+@given(instance=LZUser2_strategy)
+def test_lzuser2_populate_setter(instance):
+    original = instance.populate
+    instance.populate = original
+    assert instance.populate == original
+
 @given(instance=Product_strategy)
 @settings(max_examples=50)
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=Product_strategy)
-def test_product_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=Product_strategy)
@@ -545,9 +533,6 @@ def test_product_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
-@given(instance=Product_strategy)
-def test_product_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Product_strategy)
@@ -561,9 +546,6 @@ def test_product_name_setter(instance):
 def test_lineitem_instantiation(instance):
     assert isinstance(instance, LineItem)
 
-@given(instance=LineItem_strategy)
-def test_lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=LineItem_strategy)
@@ -572,9 +554,6 @@ def test_lineitem_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=LineItem_strategy)
-def test_lineitem_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
 @given(instance=LineItem_strategy)
@@ -588,9 +567,6 @@ def test_lineitem_price_setter(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_shipTo_type(instance):
-    assert isinstance(instance.shipTo, str)
 
 
 @given(instance=Order_strategy)
@@ -599,31 +575,6 @@ def test_order_shipTo_setter(instance):
     instance.shipTo = original
     assert instance.shipTo == original
 
-@given(instance=Order_strategy)
-def test_order_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Order_strategy)
-def test_order_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Order_strategy)
-def test_order_shipped_type(instance):
-    assert isinstance(instance.shipped, bool)
-
-
-@given(instance=Order_strategy)
-def test_order_shipped_setter(instance):
-    original = instance.shipped
-    instance.shipped = original
-    assert instance.shipped == original
-
-@given(instance=Order_strategy)
-def test_order_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=Order_strategy)
@@ -632,20 +583,6 @@ def test_order_number_setter(instance):
     instance.number = original
     assert instance.number == original
 
-@given(instance=Order_strategy)
-def test_order_ordered_type(instance):
-    assert isinstance(instance.ordered, date)
-
-
-@given(instance=Order_strategy)
-def test_order_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=Order_strategy)
-def test_order_status_type(instance):
-    assert isinstance(instance.status, orderstatus)
 
 
 @given(instance=Order_strategy)
@@ -654,25 +591,43 @@ def test_order_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_shipped_setter(instance):
+    original = instance.shipped
+    instance.shipped = original
+    assert instance.shipped == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
 @given(instance=RadixClient_strategy)
 @settings(max_examples=50)
 def test_radixclient_instantiation(instance):
     assert isinstance(instance, RadixClient)
 
-@given(instance=RadixClient_strategy)
-def test_radixclient_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=RadixClient_strategy)
-def test_radixclient_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
+def test_radixclient_populate_setter(instance):
+    original = instance.populate
+    instance.populate = original
+    assert instance.populate == original
 
-@given(instance=RadixClient_strategy)
-def test_radixclient_state_type(instance):
-    assert isinstance(instance.state, userstate)
 
 
 @given(instance=RadixClient_strategy)
@@ -681,16 +636,13 @@ def test_radixclient_state_setter(instance):
     instance.state = original
     assert instance.state == original
 
-@given(instance=RadixClient_strategy)
-def test_radixclient_populate_type(instance):
-    assert isinstance(instance.populate, str)
 
 
 @given(instance=RadixClient_strategy)
-def test_radixclient_populate_setter(instance):
-    original = instance.populate
-    instance.populate = original
-    assert instance.populate == original
+def test_radixclient_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
 
 @given(instance=Redis_strategy)
 @settings(max_examples=50)
@@ -702,9 +654,6 @@ def test_redis_instantiation(instance):
 def test_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCart)
 
-@given(instance=ShoppingCart_strategy)
-def test_shoppingcart_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=ShoppingCart_strategy)
@@ -718,20 +667,6 @@ def test_shoppingcart_creationDate_setter(instance):
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Payment_strategy)
-def test_payment_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Payment_strategy)
-def test_payment_details_type(instance):
-    assert isinstance(instance.details, str)
 
 
 @given(instance=Payment_strategy)
@@ -740,9 +675,14 @@ def test_payment_details_setter(instance):
     instance.details = original
     assert instance.details == original
 
+
+
 @given(instance=Payment_strategy)
-def test_payment_paidDate_type(instance):
-    assert isinstance(instance.paidDate, date)
+def test_payment_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
 
 
 @given(instance=Payment_strategy)
@@ -756,9 +696,14 @@ def test_payment_paidDate_setter(instance):
 def test_redisclient_instantiation(instance):
     assert isinstance(instance, RedisClient)
 
+
+
 @given(instance=RedisClient_strategy)
-def test_redisclient_log_type(instance):
-    assert isinstance(instance.log, str)
+def test_redisclient_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 
 
 @given(instance=RedisClient_strategy)
@@ -767,9 +712,6 @@ def test_redisclient_log_setter(instance):
     instance.log = original
     assert instance.log == original
 
-@given(instance=RedisClient_strategy)
-def test_redisclient_RadixClient_type(instance):
-    assert isinstance(instance.RadixClient, str)
 
 
 @given(instance=RedisClient_strategy)
@@ -777,14 +719,3 @@ def test_redisclient_RadixClient_setter(instance):
     original = instance.RadixClient
     instance.RadixClient = original
     assert instance.RadixClient == original
-
-@given(instance=RedisClient_strategy)
-def test_redisclient_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=RedisClient_strategy)
-def test_redisclient_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original

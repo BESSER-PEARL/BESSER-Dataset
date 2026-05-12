@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pmtest::A,
+from python_code import (
+    pmtest_A,
     A,
-    pmtest::C,
-    pmtest::B,
-    pmtest::D,
+    pmtest_C,
+    pmtest_B,
+    pmtest_D,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_pmtest::a_is_not_abstract():
-    assert not inspect.isabstract(pmtest::A)
+def test_pmtest_a_is_not_abstract():
+    assert not inspect.isabstract(pmtest_A)
 
 
-def test_pmtest::a_constructor_exists():
-    assert callable(pmtest::A.__init__)
+def test_pmtest_a_constructor_exists():
+    assert callable(pmtest_A.__init__)
 
 
-def test_pmtest::a_constructor_args():
-    sig = inspect.signature(pmtest::A.__init__)
+def test_pmtest_a_constructor_args():
+    sig = inspect.signature(pmtest_A.__init__)
     params = list(sig.parameters.keys())
     assert "i" in params, "Missing parameter 'i'"
 
-def test_pmtest::a_has_i():
-    assert hasattr(pmtest::A, "i")
+def test_pmtest_a_has_i():
+    assert hasattr(pmtest_A, "i")
     descriptor = None
-    for klass in pmtest::A.__mro__:
+    for klass in pmtest_A.__mro__:
         if "i" in klass.__dict__:
             descriptor = klass.__dict__["i"]
             break
@@ -57,51 +57,51 @@ def test_a_constructor_args():
 
 
 
-def test_pmtest::c_is_not_abstract():
-    assert not inspect.isabstract(pmtest::C)
+def test_pmtest_c_is_not_abstract():
+    assert not inspect.isabstract(pmtest_C)
 
 
-def test_pmtest::c_constructor_exists():
-    assert callable(pmtest::C.__init__)
+def test_pmtest_c_constructor_exists():
+    assert callable(pmtest_C.__init__)
 
 
-def test_pmtest::c_constructor_args():
-    sig = inspect.signature(pmtest::C.__init__)
+def test_pmtest_c_constructor_args():
+    sig = inspect.signature(pmtest_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pmtest::b_is_not_abstract():
-    assert not inspect.isabstract(pmtest::B)
+def test_pmtest_b_is_not_abstract():
+    assert not inspect.isabstract(pmtest_B)
 
 
-def test_pmtest::b_constructor_exists():
-    assert callable(pmtest::B.__init__)
+def test_pmtest_b_constructor_exists():
+    assert callable(pmtest_B.__init__)
 
 
-def test_pmtest::b_constructor_args():
-    sig = inspect.signature(pmtest::B.__init__)
+def test_pmtest_b_constructor_args():
+    sig = inspect.signature(pmtest_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pmtest::d_is_not_abstract():
-    assert not inspect.isabstract(pmtest::D)
+def test_pmtest_d_is_not_abstract():
+    assert not inspect.isabstract(pmtest_D)
 
 
-def test_pmtest::d_constructor_exists():
-    assert callable(pmtest::D.__init__)
+def test_pmtest_d_constructor_exists():
+    assert callable(pmtest_D.__init__)
 
 
-def test_pmtest::d_constructor_args():
-    sig = inspect.signature(pmtest::D.__init__)
+def test_pmtest_d_constructor_args():
+    sig = inspect.signature(pmtest_D.__init__)
     params = list(sig.parameters.keys())
     assert "j" in params, "Missing parameter 'j'"
 
-def test_pmtest::d_has_j():
-    assert hasattr(pmtest::D, "j")
+def test_pmtest_d_has_j():
+    assert hasattr(pmtest_D, "j")
     descriptor = None
-    for klass in pmtest::D.__mro__:
+    for klass in pmtest_D.__mro__:
         if "j" in klass.__dict__:
             descriptor = klass.__dict__["j"]
             break
@@ -119,38 +119,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pmtest::A_strategy = st.builds(
-    pmtest::A,
+pmtest_A_strategy = st.builds(
+    pmtest_A,
     i=
         st.integers()
 )
 A_strategy = st.builds(
     A,
 )
-pmtest::C_strategy = st.builds(
-    pmtest::C,
+pmtest_C_strategy = st.builds(
+    pmtest_C,
 )
-pmtest::B_strategy = st.builds(
-    pmtest::B,
+pmtest_B_strategy = st.builds(
+    pmtest_B,
 )
-pmtest::D_strategy = st.builds(
-    pmtest::D,
+pmtest_D_strategy = st.builds(
+    pmtest_D,
     j=
         st.integers()
 )
 
-@given(instance=pmtest::A_strategy)
+@given(instance=pmtest_A_strategy)
 @settings(max_examples=50)
-def test_pmtest::a_instantiation(instance):
-    assert isinstance(instance, pmtest::A)
-
-@given(instance=pmtest::A_strategy)
-def test_pmtest::a_i_type(instance):
-    assert isinstance(instance.i, int)
+def test_pmtest_a_instantiation(instance):
+    assert isinstance(instance, pmtest_A)
 
 
-@given(instance=pmtest::A_strategy)
-def test_pmtest::a_i_setter(instance):
+
+@given(instance=pmtest_A_strategy)
+def test_pmtest_a_i_setter(instance):
     original = instance.i
     instance.i = original
     assert instance.i == original
@@ -160,28 +157,25 @@ def test_pmtest::a_i_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=pmtest::C_strategy)
+@given(instance=pmtest_C_strategy)
 @settings(max_examples=50)
-def test_pmtest::c_instantiation(instance):
-    assert isinstance(instance, pmtest::C)
+def test_pmtest_c_instantiation(instance):
+    assert isinstance(instance, pmtest_C)
 
-@given(instance=pmtest::B_strategy)
+@given(instance=pmtest_B_strategy)
 @settings(max_examples=50)
-def test_pmtest::b_instantiation(instance):
-    assert isinstance(instance, pmtest::B)
+def test_pmtest_b_instantiation(instance):
+    assert isinstance(instance, pmtest_B)
 
-@given(instance=pmtest::D_strategy)
+@given(instance=pmtest_D_strategy)
 @settings(max_examples=50)
-def test_pmtest::d_instantiation(instance):
-    assert isinstance(instance, pmtest::D)
-
-@given(instance=pmtest::D_strategy)
-def test_pmtest::d_j_type(instance):
-    assert isinstance(instance.j, int)
+def test_pmtest_d_instantiation(instance):
+    assert isinstance(instance, pmtest_D)
 
 
-@given(instance=pmtest::D_strategy)
-def test_pmtest::d_j_setter(instance):
+
+@given(instance=pmtest_D_strategy)
+def test_pmtest_d_j_setter(instance):
     original = instance.j
     instance.j = original
     assert instance.j == original

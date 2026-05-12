@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Person,
-    library::Person,
-    library::Library,
-    library::Writer,
-    library::Book,
+    library_Person,
+    library_Library,
+    library_Writer,
+    library_Book,
     BookCategory,
 )
 
@@ -34,47 +34,47 @@ def test_person_constructor_args():
 
 
 
-def test_library::person_is_not_abstract():
-    assert not inspect.isabstract(library::Person)
+def test_library_person_is_not_abstract():
+    assert not inspect.isabstract(library_Person)
 
 
-def test_library::person_constructor_exists():
-    assert callable(library::Person.__init__)
+def test_library_person_constructor_exists():
+    assert callable(library_Person.__init__)
 
 
-def test_library::person_constructor_args():
-    sig = inspect.signature(library::Person.__init__)
+def test_library_person_constructor_args():
+    sig = inspect.signature(library_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(library_Library.__init__)
     params = list(sig.parameters.keys())
     assert "site" in params, "Missing parameter 'site'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::library_has_site():
-    assert hasattr(library::Library, "site")
+def test_library_library_has_site():
+    assert hasattr(library_Library, "site")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "site" in klass.__dict__:
             descriptor = klass.__dict__["site"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::library_has_name():
-    assert hasattr(library::Library, "name")
+def test_library_library_has_name():
+    assert hasattr(library_Library, "name")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -82,57 +82,57 @@ def test_library::library_has_name():
 
 
 
-def test_library::writer_is_not_abstract():
-    assert not inspect.isabstract(library::Writer)
+def test_library_writer_is_not_abstract():
+    assert not inspect.isabstract(library_Writer)
 
 
-def test_library::writer_constructor_exists():
-    assert callable(library::Writer.__init__)
+def test_library_writer_constructor_exists():
+    assert callable(library_Writer.__init__)
 
 
-def test_library::writer_constructor_args():
-    sig = inspect.signature(library::Writer.__init__)
+def test_library_writer_constructor_args():
+    sig = inspect.signature(library_Writer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "pages" in params, "Missing parameter 'pages'"
     assert "category" in params, "Missing parameter 'category'"
+    assert "pages" in params, "Missing parameter 'pages'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_library::book_has_pages():
-    assert hasattr(library::Book, "pages")
+def test_library_book_has_category():
+    assert hasattr(library_Book, "category")
     descriptor = None
-    for klass in library::Book.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::book_has_category():
-    assert hasattr(library::Book, "category")
-    descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_title():
-    assert hasattr(library::Book, "title")
+def test_library_book_has_pages():
+    assert hasattr(library_Book, "pages")
     descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_book_has_title():
+    assert hasattr(library_Book, "title")
+    descriptor = None
+    for klass in library_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -146,10 +146,10 @@ def test_bookcategory_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BookCategory]
     expected_literals = [
-        "Biography",
-        "Mystery",
-        "ScienceFiction",
         "IT",
+        "Biography",
+        "ScienceFiction",
+        "Mystery",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -170,25 +170,25 @@ safe_text = st.text(
 Person_strategy = st.builds(
     Person,
 )
-library::Person_strategy = st.builds(
-    library::Person,
+library_Person_strategy = st.builds(
+    library_Person,
 )
-library::Library_strategy = st.builds(
-    library::Library,
+library_Library_strategy = st.builds(
+    library_Library,
     site=
         safe_text,
     name=
         safe_text
 )
-library::Writer_strategy = st.builds(
-    library::Writer,
+library_Writer_strategy = st.builds(
+    library_Writer,
 )
-library::Book_strategy = st.builds(
-    library::Book,
-    pages=
-        st.integers(),
+library_Book_strategy = st.builds(
+    library_Book,
     category=
         safe_text,
+    pages=
+        st.integers(),
     title=
         safe_text
 )
@@ -198,77 +198,62 @@ library::Book_strategy = st.builds(
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=library::Person_strategy)
+@given(instance=library_Person_strategy)
 @settings(max_examples=50)
-def test_library::person_instantiation(instance):
-    assert isinstance(instance, library::Person)
+def test_library_person_instantiation(instance):
+    assert isinstance(instance, library_Person)
 
-@given(instance=library::Library_strategy)
+@given(instance=library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, library::Library)
-
-@given(instance=library::Library_strategy)
-def test_library::library_site_type(instance):
-    assert isinstance(instance.site, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, library_Library)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_site_setter(instance):
+
+@given(instance=library_Library_strategy)
+def test_library_library_site_setter(instance):
     original = instance.site
     instance.site = original
     assert instance.site == original
 
-@given(instance=library::Library_strategy)
-def test_library::library_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_name_setter(instance):
+@given(instance=library_Library_strategy)
+def test_library_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Writer_strategy)
+@given(instance=library_Writer_strategy)
 @settings(max_examples=50)
-def test_library::writer_instantiation(instance):
-    assert isinstance(instance, library::Writer)
+def test_library_writer_instantiation(instance):
+    assert isinstance(instance, library_Writer)
 
-@given(instance=library::Book_strategy)
+@given(instance=library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::Book)
-
-@given(instance=library::Book_strategy)
-def test_library::book_pages_type(instance):
-    assert isinstance(instance.pages, int)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_Book)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
 
-@given(instance=library::Book_strategy)
-def test_library::book_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=library::Book_strategy)
-def test_library::book_category_setter(instance):
+@given(instance=library_Book_strategy)
+def test_library_book_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
 
-@given(instance=library::Book_strategy)
-def test_library::book_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_title_setter(instance):
+@given(instance=library_Book_strategy)
+def test_library_book_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+
+
+@given(instance=library_Book_strategy)
+def test_library_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

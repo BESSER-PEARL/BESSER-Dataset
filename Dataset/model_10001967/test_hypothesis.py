@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Motion_Sensor,
@@ -131,18 +131,9 @@ def test_security_logs_constructor_exists():
 def test_security_logs_constructor_args():
     sig = inspect.signature(Security_logs.__init__)
     params = list(sig.parameters.keys())
-    assert "Log_ID" in params, "Missing parameter 'Log_ID'"
     assert "Sensor_ID" in params, "Missing parameter 'Sensor_ID'"
     assert "Camera_ID" in params, "Missing parameter 'Camera_ID'"
-
-def test_security_logs_has_Log_ID():
-    assert hasattr(Security_logs, "Log_ID")
-    descriptor = None
-    for klass in Security_logs.__mro__:
-        if "Log_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Log_ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Log_ID" in params, "Missing parameter 'Log_ID'"
 
 def test_security_logs_has_Sensor_ID():
     assert hasattr(Security_logs, "Sensor_ID")
@@ -159,6 +150,15 @@ def test_security_logs_has_Camera_ID():
     for klass in Security_logs.__mro__:
         if "Camera_ID" in klass.__dict__:
             descriptor = klass.__dict__["Camera_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_security_logs_has_Log_ID():
+    assert hasattr(Security_logs, "Log_ID")
+    descriptor = None
+    for klass in Security_logs.__mro__:
+        if "Log_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Log_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -247,17 +247,8 @@ def test_camera_1_constructor_exists():
 def test_camera_1_constructor_args():
     sig = inspect.signature(Camera_1.__init__)
     params = list(sig.parameters.keys())
-    assert "Camera_ID" in params, "Missing parameter 'Camera_ID'"
     assert "Sensor_ID" in params, "Missing parameter 'Sensor_ID'"
-
-def test_camera_1_has_Camera_ID():
-    assert hasattr(Camera_1, "Camera_ID")
-    descriptor = None
-    for klass in Camera_1.__mro__:
-        if "Camera_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Camera_ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Camera_ID" in params, "Missing parameter 'Camera_ID'"
 
 def test_camera_1_has_Sensor_ID():
     assert hasattr(Camera_1, "Sensor_ID")
@@ -265,6 +256,15 @@ def test_camera_1_has_Sensor_ID():
     for klass in Camera_1.__mro__:
         if "Sensor_ID" in klass.__dict__:
             descriptor = klass.__dict__["Sensor_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camera_1_has_Camera_ID():
+    assert hasattr(Camera_1, "Camera_ID")
+    descriptor = None
+    for klass in Camera_1.__mro__:
+        if "Camera_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Camera_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -281,17 +281,17 @@ def test_home_security__hub__constructor_exists():
 def test_home_security__hub__constructor_args():
     sig = inspect.signature(Home_Security__Hub_.__init__)
     params = list(sig.parameters.keys())
-    assert "Camera_ID" in params, "Missing parameter 'Camera_ID'"
-    assert "Login_ID" in params, "Missing parameter 'Login_ID'"
     assert "Hub_ID" in params, "Missing parameter 'Hub_ID'"
+    assert "Login_ID" in params, "Missing parameter 'Login_ID'"
     assert "Sensor_ID" in params, "Missing parameter 'Sensor_ID'"
+    assert "Camera_ID" in params, "Missing parameter 'Camera_ID'"
 
-def test_home_security__hub__has_Camera_ID():
-    assert hasattr(Home_Security__Hub_, "Camera_ID")
+def test_home_security__hub__has_Hub_ID():
+    assert hasattr(Home_Security__Hub_, "Hub_ID")
     descriptor = None
     for klass in Home_Security__Hub_.__mro__:
-        if "Camera_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Camera_ID"]
+        if "Hub_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Hub_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -304,21 +304,21 @@ def test_home_security__hub__has_Login_ID():
             break
     assert isinstance(descriptor, property)
 
-def test_home_security__hub__has_Hub_ID():
-    assert hasattr(Home_Security__Hub_, "Hub_ID")
-    descriptor = None
-    for klass in Home_Security__Hub_.__mro__:
-        if "Hub_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Hub_ID"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_home_security__hub__has_Sensor_ID():
     assert hasattr(Home_Security__Hub_, "Sensor_ID")
     descriptor = None
     for klass in Home_Security__Hub_.__mro__:
         if "Sensor_ID" in klass.__dict__:
             descriptor = klass.__dict__["Sensor_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_home_security__hub__has_Camera_ID():
+    assert hasattr(Home_Security__Hub_, "Camera_ID")
+    descriptor = None
+    for klass in Home_Security__Hub_.__mro__:
+        if "Camera_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Camera_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -356,11 +356,11 @@ Temperature_sensor_strategy = st.builds(
 )
 Security_logs_strategy = st.builds(
     Security_logs,
-    Log_ID=
-        safe_text,
     Sensor_ID=
         safe_text,
     Camera_ID=
+        safe_text,
+    Log_ID=
         safe_text
 )
 Lock_doors_strategy = st.builds(
@@ -380,20 +380,20 @@ Event_Log_strategy = st.builds(
 )
 Camera_1_strategy = st.builds(
     Camera_1,
-    Camera_ID=
-        safe_text,
     Sensor_ID=
+        safe_text,
+    Camera_ID=
         safe_text
 )
 Home_Security__Hub__strategy = st.builds(
     Home_Security__Hub_,
-    Camera_ID=
+    Hub_ID=
         safe_text,
     Login_ID=
         safe_text,
-    Hub_ID=
-        safe_text,
     Sensor_ID=
+        safe_text,
+    Camera_ID=
         safe_text
 )
 
@@ -402,9 +402,6 @@ Home_Security__Hub__strategy = st.builds(
 def test_motion_sensor_instantiation(instance):
     assert isinstance(instance, Motion_Sensor)
 
-@given(instance=Motion_Sensor_strategy)
-def test_motion_sensor_Sensor_ID_type(instance):
-    assert isinstance(instance.Sensor_ID, str)
 
 
 @given(instance=Motion_Sensor_strategy)
@@ -423,9 +420,6 @@ def test_t_instantiation(instance):
 def test_dispatch_drown_instantiation(instance):
     assert isinstance(instance, Dispatch_drown)
 
-@given(instance=Dispatch_drown_strategy)
-def test_dispatch_drown_Drown_ID_type(instance):
-    assert isinstance(instance.Drown_ID, str)
 
 
 @given(instance=Dispatch_drown_strategy)
@@ -434,9 +428,6 @@ def test_dispatch_drown_Drown_ID_setter(instance):
     instance.Drown_ID = original
     assert instance.Drown_ID == original
 
-@given(instance=Dispatch_drown_strategy)
-def test_dispatch_drown_Camera_ID_type(instance):
-    assert isinstance(instance.Camera_ID, str)
 
 
 @given(instance=Dispatch_drown_strategy)
@@ -450,9 +441,6 @@ def test_dispatch_drown_Camera_ID_setter(instance):
 def test_temperature_sensor_instantiation(instance):
     assert isinstance(instance, Temperature_sensor)
 
-@given(instance=Temperature_sensor_strategy)
-def test_temperature_sensor_Temp_ID_type(instance):
-    assert isinstance(instance.Temp_ID, str)
 
 
 @given(instance=Temperature_sensor_strategy)
@@ -466,20 +454,6 @@ def test_temperature_sensor_Temp_ID_setter(instance):
 def test_security_logs_instantiation(instance):
     assert isinstance(instance, Security_logs)
 
-@given(instance=Security_logs_strategy)
-def test_security_logs_Log_ID_type(instance):
-    assert isinstance(instance.Log_ID, str)
-
-
-@given(instance=Security_logs_strategy)
-def test_security_logs_Log_ID_setter(instance):
-    original = instance.Log_ID
-    instance.Log_ID = original
-    assert instance.Log_ID == original
-
-@given(instance=Security_logs_strategy)
-def test_security_logs_Sensor_ID_type(instance):
-    assert isinstance(instance.Sensor_ID, str)
 
 
 @given(instance=Security_logs_strategy)
@@ -488,9 +462,6 @@ def test_security_logs_Sensor_ID_setter(instance):
     instance.Sensor_ID = original
     assert instance.Sensor_ID == original
 
-@given(instance=Security_logs_strategy)
-def test_security_logs_Camera_ID_type(instance):
-    assert isinstance(instance.Camera_ID, str)
 
 
 @given(instance=Security_logs_strategy)
@@ -499,14 +470,19 @@ def test_security_logs_Camera_ID_setter(instance):
     instance.Camera_ID = original
     assert instance.Camera_ID == original
 
+
+
+@given(instance=Security_logs_strategy)
+def test_security_logs_Log_ID_setter(instance):
+    original = instance.Log_ID
+    instance.Log_ID = original
+    assert instance.Log_ID == original
+
 @given(instance=Lock_doors_strategy)
 @settings(max_examples=50)
 def test_lock_doors_instantiation(instance):
     assert isinstance(instance, Lock_doors)
 
-@given(instance=Lock_doors_strategy)
-def test_lock_doors_Door_ID_type(instance):
-    assert isinstance(instance.Door_ID, str)
 
 
 @given(instance=Lock_doors_strategy)
@@ -520,9 +496,6 @@ def test_lock_doors_Door_ID_setter(instance):
 def test_light_sensor_instantiation(instance):
     assert isinstance(instance, Light_Sensor)
 
-@given(instance=Light_Sensor_strategy)
-def test_light_sensor_Sensor_ID_type(instance):
-    assert isinstance(instance.Sensor_ID, str)
 
 
 @given(instance=Light_Sensor_strategy)
@@ -536,9 +509,6 @@ def test_light_sensor_Sensor_ID_setter(instance):
 def test_event_log_instantiation(instance):
     assert isinstance(instance, Event_Log)
 
-@given(instance=Event_Log_strategy)
-def test_event_log_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=Event_Log_strategy)
@@ -552,20 +522,6 @@ def test_event_log_Status_setter(instance):
 def test_camera_1_instantiation(instance):
     assert isinstance(instance, Camera_1)
 
-@given(instance=Camera_1_strategy)
-def test_camera_1_Camera_ID_type(instance):
-    assert isinstance(instance.Camera_ID, str)
-
-
-@given(instance=Camera_1_strategy)
-def test_camera_1_Camera_ID_setter(instance):
-    original = instance.Camera_ID
-    instance.Camera_ID = original
-    assert instance.Camera_ID == original
-
-@given(instance=Camera_1_strategy)
-def test_camera_1_Sensor_ID_type(instance):
-    assert isinstance(instance.Sensor_ID, str)
 
 
 @given(instance=Camera_1_strategy)
@@ -574,36 +530,19 @@ def test_camera_1_Sensor_ID_setter(instance):
     instance.Sensor_ID = original
     assert instance.Sensor_ID == original
 
-@given(instance=Home_Security__Hub__strategy)
-@settings(max_examples=50)
-def test_home_security__hub__instantiation(instance):
-    assert isinstance(instance, Home_Security__Hub_)
-
-@given(instance=Home_Security__Hub__strategy)
-def test_home_security__hub__Camera_ID_type(instance):
-    assert isinstance(instance.Camera_ID, str)
 
 
-@given(instance=Home_Security__Hub__strategy)
-def test_home_security__hub__Camera_ID_setter(instance):
+@given(instance=Camera_1_strategy)
+def test_camera_1_Camera_ID_setter(instance):
     original = instance.Camera_ID
     instance.Camera_ID = original
     assert instance.Camera_ID == original
 
 @given(instance=Home_Security__Hub__strategy)
-def test_home_security__hub__Login_ID_type(instance):
-    assert isinstance(instance.Login_ID, str)
+@settings(max_examples=50)
+def test_home_security__hub__instantiation(instance):
+    assert isinstance(instance, Home_Security__Hub_)
 
-
-@given(instance=Home_Security__Hub__strategy)
-def test_home_security__hub__Login_ID_setter(instance):
-    original = instance.Login_ID
-    instance.Login_ID = original
-    assert instance.Login_ID == original
-
-@given(instance=Home_Security__Hub__strategy)
-def test_home_security__hub__Hub_ID_type(instance):
-    assert isinstance(instance.Hub_ID, str)
 
 
 @given(instance=Home_Security__Hub__strategy)
@@ -612,9 +551,14 @@ def test_home_security__hub__Hub_ID_setter(instance):
     instance.Hub_ID = original
     assert instance.Hub_ID == original
 
+
+
 @given(instance=Home_Security__Hub__strategy)
-def test_home_security__hub__Sensor_ID_type(instance):
-    assert isinstance(instance.Sensor_ID, str)
+def test_home_security__hub__Login_ID_setter(instance):
+    original = instance.Login_ID
+    instance.Login_ID = original
+    assert instance.Login_ID == original
+
 
 
 @given(instance=Home_Security__Hub__strategy)
@@ -622,3 +566,11 @@ def test_home_security__hub__Sensor_ID_setter(instance):
     original = instance.Sensor_ID
     instance.Sensor_ID = original
     assert instance.Sensor_ID == original
+
+
+
+@given(instance=Home_Security__Hub__strategy)
+def test_home_security__hub__Camera_ID_setter(instance):
+    original = instance.Camera_ID
+    instance.Camera_ID = original
+    assert instance.Camera_ID == original

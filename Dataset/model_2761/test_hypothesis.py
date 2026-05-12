@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     D,
-    case5::E,
-    case5::B,
-    case5::N,
+    case5_E,
+    case5_B,
+    case5_N,
     T,
-    case5::D,
-    case5::A,
-    case5::T,
+    case5_D,
+    case5_A,
+    case5_T,
 )
 
 # =============================================================================
@@ -36,44 +36,44 @@ def test_d_constructor_args():
 
 
 
-def test_case5::e_is_not_abstract():
-    assert not inspect.isabstract(case5::E)
+def test_case5_e_is_not_abstract():
+    assert not inspect.isabstract(case5_E)
 
 
-def test_case5::e_constructor_exists():
-    assert callable(case5::E.__init__)
+def test_case5_e_constructor_exists():
+    assert callable(case5_E.__init__)
 
 
-def test_case5::e_constructor_args():
-    sig = inspect.signature(case5::E.__init__)
+def test_case5_e_constructor_args():
+    sig = inspect.signature(case5_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_case5::b_is_not_abstract():
-    assert not inspect.isabstract(case5::B)
+def test_case5_b_is_not_abstract():
+    assert not inspect.isabstract(case5_B)
 
 
-def test_case5::b_constructor_exists():
-    assert callable(case5::B.__init__)
+def test_case5_b_constructor_exists():
+    assert callable(case5_B.__init__)
 
 
-def test_case5::b_constructor_args():
-    sig = inspect.signature(case5::B.__init__)
+def test_case5_b_constructor_args():
+    sig = inspect.signature(case5_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_case5::n_is_not_abstract():
-    assert not inspect.isabstract(case5::N)
+def test_case5_n_is_not_abstract():
+    assert not inspect.isabstract(case5_N)
 
 
-def test_case5::n_constructor_exists():
-    assert callable(case5::N.__init__)
+def test_case5_n_constructor_exists():
+    assert callable(case5_N.__init__)
 
 
-def test_case5::n_constructor_args():
-    sig = inspect.signature(case5::N.__init__)
+def test_case5_n_constructor_args():
+    sig = inspect.signature(case5_N.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -92,44 +92,44 @@ def test_t_constructor_args():
 
 
 
-def test_case5::d_is_not_abstract():
-    assert not inspect.isabstract(case5::D)
+def test_case5_d_is_not_abstract():
+    assert not inspect.isabstract(case5_D)
 
 
-def test_case5::d_constructor_exists():
-    assert callable(case5::D.__init__)
+def test_case5_d_constructor_exists():
+    assert callable(case5_D.__init__)
 
 
-def test_case5::d_constructor_args():
-    sig = inspect.signature(case5::D.__init__)
+def test_case5_d_constructor_args():
+    sig = inspect.signature(case5_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_case5::a_is_not_abstract():
-    assert not inspect.isabstract(case5::A)
+def test_case5_a_is_not_abstract():
+    assert not inspect.isabstract(case5_A)
 
 
-def test_case5::a_constructor_exists():
-    assert callable(case5::A.__init__)
+def test_case5_a_constructor_exists():
+    assert callable(case5_A.__init__)
 
 
-def test_case5::a_constructor_args():
-    sig = inspect.signature(case5::A.__init__)
+def test_case5_a_constructor_args():
+    sig = inspect.signature(case5_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_case5::t_is_not_abstract():
-    assert not inspect.isabstract(case5::T)
+def test_case5_t_is_not_abstract():
+    assert not inspect.isabstract(case5_T)
 
 
-def test_case5::t_constructor_exists():
-    assert callable(case5::T.__init__)
+def test_case5_t_constructor_exists():
+    assert callable(case5_T.__init__)
 
 
-def test_case5::t_constructor_args():
-    sig = inspect.signature(case5::T.__init__)
+def test_case5_t_constructor_args():
+    sig = inspect.signature(case5_T.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,26 +147,26 @@ safe_text = st.text(
 D_strategy = st.builds(
     D,
 )
-case5::E_strategy = st.builds(
-    case5::E,
+case5_E_strategy = st.builds(
+    case5_E,
 )
-case5::B_strategy = st.builds(
-    case5::B,
+case5_B_strategy = st.builds(
+    case5_B,
 )
-case5::N_strategy = st.builds(
-    case5::N,
+case5_N_strategy = st.builds(
+    case5_N,
 )
 T_strategy = st.builds(
     T,
 )
-case5::D_strategy = st.builds(
-    case5::D,
+case5_D_strategy = st.builds(
+    case5_D,
 )
-case5::A_strategy = st.builds(
-    case5::A,
+case5_A_strategy = st.builds(
+    case5_A,
 )
-case5::T_strategy = st.builds(
-    case5::T,
+case5_T_strategy = st.builds(
+    case5_T,
 )
 
 @given(instance=D_strategy)
@@ -174,37 +174,37 @@ case5::T_strategy = st.builds(
 def test_d_instantiation(instance):
     assert isinstance(instance, D)
 
-@given(instance=case5::E_strategy)
+@given(instance=case5_E_strategy)
 @settings(max_examples=50)
-def test_case5::e_instantiation(instance):
-    assert isinstance(instance, case5::E)
+def test_case5_e_instantiation(instance):
+    assert isinstance(instance, case5_E)
 
-@given(instance=case5::B_strategy)
+@given(instance=case5_B_strategy)
 @settings(max_examples=50)
-def test_case5::b_instantiation(instance):
-    assert isinstance(instance, case5::B)
+def test_case5_b_instantiation(instance):
+    assert isinstance(instance, case5_B)
 
-@given(instance=case5::N_strategy)
+@given(instance=case5_N_strategy)
 @settings(max_examples=50)
-def test_case5::n_instantiation(instance):
-    assert isinstance(instance, case5::N)
+def test_case5_n_instantiation(instance):
+    assert isinstance(instance, case5_N)
 
 @given(instance=T_strategy)
 @settings(max_examples=50)
 def test_t_instantiation(instance):
     assert isinstance(instance, T)
 
-@given(instance=case5::D_strategy)
+@given(instance=case5_D_strategy)
 @settings(max_examples=50)
-def test_case5::d_instantiation(instance):
-    assert isinstance(instance, case5::D)
+def test_case5_d_instantiation(instance):
+    assert isinstance(instance, case5_D)
 
-@given(instance=case5::A_strategy)
+@given(instance=case5_A_strategy)
 @settings(max_examples=50)
-def test_case5::a_instantiation(instance):
-    assert isinstance(instance, case5::A)
+def test_case5_a_instantiation(instance):
+    assert isinstance(instance, case5_A)
 
-@given(instance=case5::T_strategy)
+@given(instance=case5_T_strategy)
 @settings(max_examples=50)
-def test_case5::t_instantiation(instance):
-    assert isinstance(instance, case5::T)
+def test_case5_t_instantiation(instance):
+    assert isinstance(instance, case5_T)

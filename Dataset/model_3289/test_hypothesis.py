@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Literal,
-    base::BooleanLiteral,
-    base::LiteralArray,
-    base::StringLiteral,
+    base_BooleanLiteral,
+    base_LiteralArray,
+    base_StringLiteral,
     NumberLiteral,
-    base::IntLiteral,
-    base::RealLiteral,
-    base::NumberLiteral,
-    base::AnnotationAttribute,
-    base::Documentation,
-    base::Literal,
-    base::Import,
+    base_IntLiteral,
+    base_RealLiteral,
+    base_NumberLiteral,
+    base_AnnotationAttribute,
+    base_Documentation,
+    base_Literal,
+    base_Import,
     AnnotationAttribute,
-    base::EnumAnnotationAttribute,
-    base::SimpleAnnotationAttribute,
-    base::KeyValue,
-    base::AnnotationType,
-    base::Annotation,
+    base_EnumAnnotationAttribute,
+    base_SimpleAnnotationAttribute,
+    base_KeyValue,
+    base_AnnotationType,
+    base_Annotation,
     LiteralType,
 )
 
@@ -47,23 +47,23 @@ def test_literal_constructor_args():
 
 
 
-def test_base::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(base::BooleanLiteral)
+def test_base_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(base_BooleanLiteral)
 
 
-def test_base::booleanliteral_constructor_exists():
-    assert callable(base::BooleanLiteral.__init__)
+def test_base_booleanliteral_constructor_exists():
+    assert callable(base_BooleanLiteral.__init__)
 
 
-def test_base::booleanliteral_constructor_args():
-    sig = inspect.signature(base::BooleanLiteral.__init__)
+def test_base_booleanliteral_constructor_args():
+    sig = inspect.signature(base_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "isTrue" in params, "Missing parameter 'isTrue'"
 
-def test_base::booleanliteral_has_isTrue():
-    assert hasattr(base::BooleanLiteral, "isTrue")
+def test_base_booleanliteral_has_isTrue():
+    assert hasattr(base_BooleanLiteral, "isTrue")
     descriptor = None
-    for klass in base::BooleanLiteral.__mro__:
+    for klass in base_BooleanLiteral.__mro__:
         if "isTrue" in klass.__dict__:
             descriptor = klass.__dict__["isTrue"]
             break
@@ -71,37 +71,37 @@ def test_base::booleanliteral_has_isTrue():
 
 
 
-def test_base::literalarray_is_not_abstract():
-    assert not inspect.isabstract(base::LiteralArray)
+def test_base_literalarray_is_not_abstract():
+    assert not inspect.isabstract(base_LiteralArray)
 
 
-def test_base::literalarray_constructor_exists():
-    assert callable(base::LiteralArray.__init__)
+def test_base_literalarray_constructor_exists():
+    assert callable(base_LiteralArray.__init__)
 
 
-def test_base::literalarray_constructor_args():
-    sig = inspect.signature(base::LiteralArray.__init__)
+def test_base_literalarray_constructor_args():
+    sig = inspect.signature(base_LiteralArray.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_base::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(base::StringLiteral)
+def test_base_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(base_StringLiteral)
 
 
-def test_base::stringliteral_constructor_exists():
-    assert callable(base::StringLiteral.__init__)
+def test_base_stringliteral_constructor_exists():
+    assert callable(base_StringLiteral.__init__)
 
 
-def test_base::stringliteral_constructor_args():
-    sig = inspect.signature(base::StringLiteral.__init__)
+def test_base_stringliteral_constructor_args():
+    sig = inspect.signature(base_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_base::stringliteral_has_value():
-    assert hasattr(base::StringLiteral, "value")
+def test_base_stringliteral_has_value():
+    assert hasattr(base_StringLiteral, "value")
     descriptor = None
-    for klass in base::StringLiteral.__mro__:
+    for klass in base_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -123,23 +123,23 @@ def test_numberliteral_constructor_args():
 
 
 
-def test_base::intliteral_is_not_abstract():
-    assert not inspect.isabstract(base::IntLiteral)
+def test_base_intliteral_is_not_abstract():
+    assert not inspect.isabstract(base_IntLiteral)
 
 
-def test_base::intliteral_constructor_exists():
-    assert callable(base::IntLiteral.__init__)
+def test_base_intliteral_constructor_exists():
+    assert callable(base_IntLiteral.__init__)
 
 
-def test_base::intliteral_constructor_args():
-    sig = inspect.signature(base::IntLiteral.__init__)
+def test_base_intliteral_constructor_args():
+    sig = inspect.signature(base_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_base::intliteral_has_value():
-    assert hasattr(base::IntLiteral, "value")
+def test_base_intliteral_has_value():
+    assert hasattr(base_IntLiteral, "value")
     descriptor = None
-    for klass in base::IntLiteral.__mro__:
+    for klass in base_IntLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -147,23 +147,23 @@ def test_base::intliteral_has_value():
 
 
 
-def test_base::realliteral_is_not_abstract():
-    assert not inspect.isabstract(base::RealLiteral)
+def test_base_realliteral_is_not_abstract():
+    assert not inspect.isabstract(base_RealLiteral)
 
 
-def test_base::realliteral_constructor_exists():
-    assert callable(base::RealLiteral.__init__)
+def test_base_realliteral_constructor_exists():
+    assert callable(base_RealLiteral.__init__)
 
 
-def test_base::realliteral_constructor_args():
-    sig = inspect.signature(base::RealLiteral.__init__)
+def test_base_realliteral_constructor_args():
+    sig = inspect.signature(base_RealLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_base::realliteral_has_value():
-    assert hasattr(base::RealLiteral, "value")
+def test_base_realliteral_has_value():
+    assert hasattr(base_RealLiteral, "value")
     descriptor = None
-    for klass in base::RealLiteral.__mro__:
+    for klass in base_RealLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -171,47 +171,47 @@ def test_base::realliteral_has_value():
 
 
 
-def test_base::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(base::NumberLiteral)
+def test_base_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(base_NumberLiteral)
 
 
-def test_base::numberliteral_constructor_exists():
-    assert callable(base::NumberLiteral.__init__)
+def test_base_numberliteral_constructor_exists():
+    assert callable(base_NumberLiteral.__init__)
 
 
-def test_base::numberliteral_constructor_args():
-    sig = inspect.signature(base::NumberLiteral.__init__)
+def test_base_numberliteral_constructor_args():
+    sig = inspect.signature(base_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_base::annotationattribute_is_not_abstract():
-    assert not inspect.isabstract(base::AnnotationAttribute)
+def test_base_annotationattribute_is_not_abstract():
+    assert not inspect.isabstract(base_AnnotationAttribute)
 
 
-def test_base::annotationattribute_constructor_exists():
-    assert callable(base::AnnotationAttribute.__init__)
+def test_base_annotationattribute_constructor_exists():
+    assert callable(base_AnnotationAttribute.__init__)
 
 
-def test_base::annotationattribute_constructor_args():
-    sig = inspect.signature(base::AnnotationAttribute.__init__)
+def test_base_annotationattribute_constructor_args():
+    sig = inspect.signature(base_AnnotationAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "optional" in params, "Missing parameter 'optional'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_base::annotationattribute_has_optional():
-    assert hasattr(base::AnnotationAttribute, "optional")
+def test_base_annotationattribute_has_optional():
+    assert hasattr(base_AnnotationAttribute, "optional")
     descriptor = None
-    for klass in base::AnnotationAttribute.__mro__:
+    for klass in base_AnnotationAttribute.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_base::annotationattribute_has_name():
-    assert hasattr(base::AnnotationAttribute, "name")
+def test_base_annotationattribute_has_name():
+    assert hasattr(base_AnnotationAttribute, "name")
     descriptor = None
-    for klass in base::AnnotationAttribute.__mro__:
+    for klass in base_AnnotationAttribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -219,23 +219,23 @@ def test_base::annotationattribute_has_name():
 
 
 
-def test_base::documentation_is_not_abstract():
-    assert not inspect.isabstract(base::Documentation)
+def test_base_documentation_is_not_abstract():
+    assert not inspect.isabstract(base_Documentation)
 
 
-def test_base::documentation_constructor_exists():
-    assert callable(base::Documentation.__init__)
+def test_base_documentation_constructor_exists():
+    assert callable(base_Documentation.__init__)
 
 
-def test_base::documentation_constructor_args():
-    sig = inspect.signature(base::Documentation.__init__)
+def test_base_documentation_constructor_args():
+    sig = inspect.signature(base_Documentation.__init__)
     params = list(sig.parameters.keys())
     assert "lines" in params, "Missing parameter 'lines'"
 
-def test_base::documentation_has_lines():
-    assert hasattr(base::Documentation, "lines")
+def test_base_documentation_has_lines():
+    assert hasattr(base_Documentation, "lines")
     descriptor = None
-    for klass in base::Documentation.__mro__:
+    for klass in base_Documentation.__mro__:
         if "lines" in klass.__dict__:
             descriptor = klass.__dict__["lines"]
             break
@@ -243,47 +243,47 @@ def test_base::documentation_has_lines():
 
 
 
-def test_base::literal_is_not_abstract():
-    assert not inspect.isabstract(base::Literal)
+def test_base_literal_is_not_abstract():
+    assert not inspect.isabstract(base_Literal)
 
 
-def test_base::literal_constructor_exists():
-    assert callable(base::Literal.__init__)
+def test_base_literal_constructor_exists():
+    assert callable(base_Literal.__init__)
 
 
-def test_base::literal_constructor_args():
-    sig = inspect.signature(base::Literal.__init__)
+def test_base_literal_constructor_args():
+    sig = inspect.signature(base_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_base::import_is_not_abstract():
-    assert not inspect.isabstract(base::Import)
+def test_base_import_is_not_abstract():
+    assert not inspect.isabstract(base_Import)
 
 
-def test_base::import_constructor_exists():
-    assert callable(base::Import.__init__)
+def test_base_import_constructor_exists():
+    assert callable(base_Import.__init__)
 
 
-def test_base::import_constructor_args():
-    sig = inspect.signature(base::Import.__init__)
+def test_base_import_constructor_args():
+    sig = inspect.signature(base_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_base::import_has_importedNamespace():
-    assert hasattr(base::Import, "importedNamespace")
+def test_base_import_has_importedNamespace():
+    assert hasattr(base_Import, "importedNamespace")
     descriptor = None
-    for klass in base::Import.__mro__:
+    for klass in base_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
     assert isinstance(descriptor, property)
 
-def test_base::import_has_importURI():
-    assert hasattr(base::Import, "importURI")
+def test_base_import_has_importURI():
+    assert hasattr(base_Import, "importURI")
     descriptor = None
-    for klass in base::Import.__mro__:
+    for klass in base_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -305,23 +305,23 @@ def test_annotationattribute_constructor_args():
 
 
 
-def test_base::enumannotationattribute_is_not_abstract():
-    assert not inspect.isabstract(base::EnumAnnotationAttribute)
+def test_base_enumannotationattribute_is_not_abstract():
+    assert not inspect.isabstract(base_EnumAnnotationAttribute)
 
 
-def test_base::enumannotationattribute_constructor_exists():
-    assert callable(base::EnumAnnotationAttribute.__init__)
+def test_base_enumannotationattribute_constructor_exists():
+    assert callable(base_EnumAnnotationAttribute.__init__)
 
 
-def test_base::enumannotationattribute_constructor_args():
-    sig = inspect.signature(base::EnumAnnotationAttribute.__init__)
+def test_base_enumannotationattribute_constructor_args():
+    sig = inspect.signature(base_EnumAnnotationAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_base::enumannotationattribute_has_values():
-    assert hasattr(base::EnumAnnotationAttribute, "values")
+def test_base_enumannotationattribute_has_values():
+    assert hasattr(base_EnumAnnotationAttribute, "values")
     descriptor = None
-    for klass in base::EnumAnnotationAttribute.__mro__:
+    for klass in base_EnumAnnotationAttribute.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -329,23 +329,23 @@ def test_base::enumannotationattribute_has_values():
 
 
 
-def test_base::simpleannotationattribute_is_not_abstract():
-    assert not inspect.isabstract(base::SimpleAnnotationAttribute)
+def test_base_simpleannotationattribute_is_not_abstract():
+    assert not inspect.isabstract(base_SimpleAnnotationAttribute)
 
 
-def test_base::simpleannotationattribute_constructor_exists():
-    assert callable(base::SimpleAnnotationAttribute.__init__)
+def test_base_simpleannotationattribute_constructor_exists():
+    assert callable(base_SimpleAnnotationAttribute.__init__)
 
 
-def test_base::simpleannotationattribute_constructor_args():
-    sig = inspect.signature(base::SimpleAnnotationAttribute.__init__)
+def test_base_simpleannotationattribute_constructor_args():
+    sig = inspect.signature(base_SimpleAnnotationAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_base::simpleannotationattribute_has_type():
-    assert hasattr(base::SimpleAnnotationAttribute, "type")
+def test_base_simpleannotationattribute_has_type():
+    assert hasattr(base_SimpleAnnotationAttribute, "type")
     descriptor = None
-    for klass in base::SimpleAnnotationAttribute.__mro__:
+    for klass in base_SimpleAnnotationAttribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -353,23 +353,23 @@ def test_base::simpleannotationattribute_has_type():
 
 
 
-def test_base::keyvalue_is_not_abstract():
-    assert not inspect.isabstract(base::KeyValue)
+def test_base_keyvalue_is_not_abstract():
+    assert not inspect.isabstract(base_KeyValue)
 
 
-def test_base::keyvalue_constructor_exists():
-    assert callable(base::KeyValue.__init__)
+def test_base_keyvalue_constructor_exists():
+    assert callable(base_KeyValue.__init__)
 
 
-def test_base::keyvalue_constructor_args():
-    sig = inspect.signature(base::KeyValue.__init__)
+def test_base_keyvalue_constructor_args():
+    sig = inspect.signature(base_KeyValue.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_base::keyvalue_has_key():
-    assert hasattr(base::KeyValue, "key")
+def test_base_keyvalue_has_key():
+    assert hasattr(base_KeyValue, "key")
     descriptor = None
-    for klass in base::KeyValue.__mro__:
+    for klass in base_KeyValue.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -377,50 +377,50 @@ def test_base::keyvalue_has_key():
 
 
 
-def test_base::annotationtype_is_not_abstract():
-    assert not inspect.isabstract(base::AnnotationType)
+def test_base_annotationtype_is_not_abstract():
+    assert not inspect.isabstract(base_AnnotationType)
 
 
-def test_base::annotationtype_constructor_exists():
-    assert callable(base::AnnotationType.__init__)
+def test_base_annotationtype_constructor_exists():
+    assert callable(base_AnnotationType.__init__)
 
 
-def test_base::annotationtype_constructor_args():
-    sig = inspect.signature(base::AnnotationType.__init__)
+def test_base_annotationtype_constructor_args():
+    sig = inspect.signature(base_AnnotationType.__init__)
     params = list(sig.parameters.keys())
-    assert "targets" in params, "Missing parameter 'targets'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "targets" in params, "Missing parameter 'targets'"
 
-def test_base::annotationtype_has_targets():
-    assert hasattr(base::AnnotationType, "targets")
+def test_base_annotationtype_has_name():
+    assert hasattr(base_AnnotationType, "name")
     descriptor = None
-    for klass in base::AnnotationType.__mro__:
-        if "targets" in klass.__dict__:
-            descriptor = klass.__dict__["targets"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_base::annotationtype_has_name():
-    assert hasattr(base::AnnotationType, "name")
-    descriptor = None
-    for klass in base::AnnotationType.__mro__:
+    for klass in base_AnnotationType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_base_annotationtype_has_targets():
+    assert hasattr(base_AnnotationType, "targets")
+    descriptor = None
+    for klass in base_AnnotationType.__mro__:
+        if "targets" in klass.__dict__:
+            descriptor = klass.__dict__["targets"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_base::annotation_is_not_abstract():
-    assert not inspect.isabstract(base::Annotation)
+
+def test_base_annotation_is_not_abstract():
+    assert not inspect.isabstract(base_Annotation)
 
 
-def test_base::annotation_constructor_exists():
-    assert callable(base::Annotation.__init__)
+def test_base_annotation_constructor_exists():
+    assert callable(base_Annotation.__init__)
 
 
-def test_base::annotation_constructor_args():
-    sig = inspect.signature(base::Annotation.__init__)
+def test_base_annotation_constructor_args():
+    sig = inspect.signature(base_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 def test_literaltype_exists():
@@ -431,10 +431,10 @@ def test_literaltype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LiteralType]
     expected_literals = [
-        "INT",
-        "REAL",
-        "CHAR",
         "BOOL",
+        "CHAR",
+        "REAL",
+        "INT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -455,52 +455,52 @@ safe_text = st.text(
 Literal_strategy = st.builds(
     Literal,
 )
-base::BooleanLiteral_strategy = st.builds(
-    base::BooleanLiteral,
+base_BooleanLiteral_strategy = st.builds(
+    base_BooleanLiteral,
     isTrue=
         st.booleans()
 )
-base::LiteralArray_strategy = st.builds(
-    base::LiteralArray,
+base_LiteralArray_strategy = st.builds(
+    base_LiteralArray,
 )
-base::StringLiteral_strategy = st.builds(
-    base::StringLiteral,
+base_StringLiteral_strategy = st.builds(
+    base_StringLiteral,
     value=
         safe_text
 )
 NumberLiteral_strategy = st.builds(
     NumberLiteral,
 )
-base::IntLiteral_strategy = st.builds(
-    base::IntLiteral,
+base_IntLiteral_strategy = st.builds(
+    base_IntLiteral,
     value=
         safe_text
 )
-base::RealLiteral_strategy = st.builds(
-    base::RealLiteral,
+base_RealLiteral_strategy = st.builds(
+    base_RealLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-base::NumberLiteral_strategy = st.builds(
-    base::NumberLiteral,
+base_NumberLiteral_strategy = st.builds(
+    base_NumberLiteral,
 )
-base::AnnotationAttribute_strategy = st.builds(
-    base::AnnotationAttribute,
+base_AnnotationAttribute_strategy = st.builds(
+    base_AnnotationAttribute,
     optional=
         st.booleans(),
     name=
         safe_text
 )
-base::Documentation_strategy = st.builds(
-    base::Documentation,
+base_Documentation_strategy = st.builds(
+    base_Documentation,
     lines=
         safe_text
 )
-base::Literal_strategy = st.builds(
-    base::Literal,
+base_Literal_strategy = st.builds(
+    base_Literal,
 )
-base::Import_strategy = st.builds(
-    base::Import,
+base_Import_strategy = st.builds(
+    base_Import,
     importedNamespace=
         safe_text,
     importURI=
@@ -509,30 +509,30 @@ base::Import_strategy = st.builds(
 AnnotationAttribute_strategy = st.builds(
     AnnotationAttribute,
 )
-base::EnumAnnotationAttribute_strategy = st.builds(
-    base::EnumAnnotationAttribute,
+base_EnumAnnotationAttribute_strategy = st.builds(
+    base_EnumAnnotationAttribute,
     values=
         safe_text
 )
-base::SimpleAnnotationAttribute_strategy = st.builds(
-    base::SimpleAnnotationAttribute,
+base_SimpleAnnotationAttribute_strategy = st.builds(
+    base_SimpleAnnotationAttribute,
     type=
         safe_text
 )
-base::KeyValue_strategy = st.builds(
-    base::KeyValue,
+base_KeyValue_strategy = st.builds(
+    base_KeyValue,
     key=
         safe_text
 )
-base::AnnotationType_strategy = st.builds(
-    base::AnnotationType,
-    targets=
-        safe_text,
+base_AnnotationType_strategy = st.builds(
+    base_AnnotationType,
     name=
+        safe_text,
+    targets=
         safe_text
 )
-base::Annotation_strategy = st.builds(
-    base::Annotation,
+base_Annotation_strategy = st.builds(
+    base_Annotation,
 )
 
 @given(instance=Literal_strategy)
@@ -540,39 +540,33 @@ base::Annotation_strategy = st.builds(
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=base::BooleanLiteral_strategy)
+@given(instance=base_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_base::booleanliteral_instantiation(instance):
-    assert isinstance(instance, base::BooleanLiteral)
-
-@given(instance=base::BooleanLiteral_strategy)
-def test_base::booleanliteral_isTrue_type(instance):
-    assert isinstance(instance.isTrue, bool)
+def test_base_booleanliteral_instantiation(instance):
+    assert isinstance(instance, base_BooleanLiteral)
 
 
-@given(instance=base::BooleanLiteral_strategy)
-def test_base::booleanliteral_isTrue_setter(instance):
+
+@given(instance=base_BooleanLiteral_strategy)
+def test_base_booleanliteral_isTrue_setter(instance):
     original = instance.isTrue
     instance.isTrue = original
     assert instance.isTrue == original
 
-@given(instance=base::LiteralArray_strategy)
+@given(instance=base_LiteralArray_strategy)
 @settings(max_examples=50)
-def test_base::literalarray_instantiation(instance):
-    assert isinstance(instance, base::LiteralArray)
+def test_base_literalarray_instantiation(instance):
+    assert isinstance(instance, base_LiteralArray)
 
-@given(instance=base::StringLiteral_strategy)
+@given(instance=base_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_base::stringliteral_instantiation(instance):
-    assert isinstance(instance, base::StringLiteral)
-
-@given(instance=base::StringLiteral_strategy)
-def test_base::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_base_stringliteral_instantiation(instance):
+    assert isinstance(instance, base_StringLiteral)
 
 
-@given(instance=base::StringLiteral_strategy)
-def test_base::stringliteral_value_setter(instance):
+
+@given(instance=base_StringLiteral_strategy)
+def test_base_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -582,114 +576,93 @@ def test_base::stringliteral_value_setter(instance):
 def test_numberliteral_instantiation(instance):
     assert isinstance(instance, NumberLiteral)
 
-@given(instance=base::IntLiteral_strategy)
+@given(instance=base_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_base::intliteral_instantiation(instance):
-    assert isinstance(instance, base::IntLiteral)
-
-@given(instance=base::IntLiteral_strategy)
-def test_base::intliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_base_intliteral_instantiation(instance):
+    assert isinstance(instance, base_IntLiteral)
 
 
-@given(instance=base::IntLiteral_strategy)
-def test_base::intliteral_value_setter(instance):
+
+@given(instance=base_IntLiteral_strategy)
+def test_base_intliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=base::RealLiteral_strategy)
+@given(instance=base_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_base::realliteral_instantiation(instance):
-    assert isinstance(instance, base::RealLiteral)
-
-@given(instance=base::RealLiteral_strategy)
-def test_base::realliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_base_realliteral_instantiation(instance):
+    assert isinstance(instance, base_RealLiteral)
 
 
-@given(instance=base::RealLiteral_strategy)
-def test_base::realliteral_value_setter(instance):
+
+@given(instance=base_RealLiteral_strategy)
+def test_base_realliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=base::NumberLiteral_strategy)
+@given(instance=base_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_base::numberliteral_instantiation(instance):
-    assert isinstance(instance, base::NumberLiteral)
+def test_base_numberliteral_instantiation(instance):
+    assert isinstance(instance, base_NumberLiteral)
 
-@given(instance=base::AnnotationAttribute_strategy)
+@given(instance=base_AnnotationAttribute_strategy)
 @settings(max_examples=50)
-def test_base::annotationattribute_instantiation(instance):
-    assert isinstance(instance, base::AnnotationAttribute)
-
-@given(instance=base::AnnotationAttribute_strategy)
-def test_base::annotationattribute_optional_type(instance):
-    assert isinstance(instance.optional, bool)
+def test_base_annotationattribute_instantiation(instance):
+    assert isinstance(instance, base_AnnotationAttribute)
 
 
-@given(instance=base::AnnotationAttribute_strategy)
-def test_base::annotationattribute_optional_setter(instance):
+
+@given(instance=base_AnnotationAttribute_strategy)
+def test_base_annotationattribute_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=base::AnnotationAttribute_strategy)
-def test_base::annotationattribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=base::AnnotationAttribute_strategy)
-def test_base::annotationattribute_name_setter(instance):
+@given(instance=base_AnnotationAttribute_strategy)
+def test_base_annotationattribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=base::Documentation_strategy)
+@given(instance=base_Documentation_strategy)
 @settings(max_examples=50)
-def test_base::documentation_instantiation(instance):
-    assert isinstance(instance, base::Documentation)
-
-@given(instance=base::Documentation_strategy)
-def test_base::documentation_lines_type(instance):
-    assert isinstance(instance.lines, str)
+def test_base_documentation_instantiation(instance):
+    assert isinstance(instance, base_Documentation)
 
 
-@given(instance=base::Documentation_strategy)
-def test_base::documentation_lines_setter(instance):
+
+@given(instance=base_Documentation_strategy)
+def test_base_documentation_lines_setter(instance):
     original = instance.lines
     instance.lines = original
     assert instance.lines == original
 
-@given(instance=base::Literal_strategy)
+@given(instance=base_Literal_strategy)
 @settings(max_examples=50)
-def test_base::literal_instantiation(instance):
-    assert isinstance(instance, base::Literal)
+def test_base_literal_instantiation(instance):
+    assert isinstance(instance, base_Literal)
 
-@given(instance=base::Import_strategy)
+@given(instance=base_Import_strategy)
 @settings(max_examples=50)
-def test_base::import_instantiation(instance):
-    assert isinstance(instance, base::Import)
-
-@given(instance=base::Import_strategy)
-def test_base::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_base_import_instantiation(instance):
+    assert isinstance(instance, base_Import)
 
 
-@given(instance=base::Import_strategy)
-def test_base::import_importedNamespace_setter(instance):
+
+@given(instance=base_Import_strategy)
+def test_base_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=base::Import_strategy)
-def test_base::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
 
 
-@given(instance=base::Import_strategy)
-def test_base::import_importURI_setter(instance):
+@given(instance=base_Import_strategy)
+def test_base_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
@@ -699,82 +672,67 @@ def test_base::import_importURI_setter(instance):
 def test_annotationattribute_instantiation(instance):
     assert isinstance(instance, AnnotationAttribute)
 
-@given(instance=base::EnumAnnotationAttribute_strategy)
+@given(instance=base_EnumAnnotationAttribute_strategy)
 @settings(max_examples=50)
-def test_base::enumannotationattribute_instantiation(instance):
-    assert isinstance(instance, base::EnumAnnotationAttribute)
-
-@given(instance=base::EnumAnnotationAttribute_strategy)
-def test_base::enumannotationattribute_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_base_enumannotationattribute_instantiation(instance):
+    assert isinstance(instance, base_EnumAnnotationAttribute)
 
 
-@given(instance=base::EnumAnnotationAttribute_strategy)
-def test_base::enumannotationattribute_values_setter(instance):
+
+@given(instance=base_EnumAnnotationAttribute_strategy)
+def test_base_enumannotationattribute_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=base::SimpleAnnotationAttribute_strategy)
+@given(instance=base_SimpleAnnotationAttribute_strategy)
 @settings(max_examples=50)
-def test_base::simpleannotationattribute_instantiation(instance):
-    assert isinstance(instance, base::SimpleAnnotationAttribute)
-
-@given(instance=base::SimpleAnnotationAttribute_strategy)
-def test_base::simpleannotationattribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_base_simpleannotationattribute_instantiation(instance):
+    assert isinstance(instance, base_SimpleAnnotationAttribute)
 
 
-@given(instance=base::SimpleAnnotationAttribute_strategy)
-def test_base::simpleannotationattribute_type_setter(instance):
+
+@given(instance=base_SimpleAnnotationAttribute_strategy)
+def test_base_simpleannotationattribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=base::KeyValue_strategy)
+@given(instance=base_KeyValue_strategy)
 @settings(max_examples=50)
-def test_base::keyvalue_instantiation(instance):
-    assert isinstance(instance, base::KeyValue)
-
-@given(instance=base::KeyValue_strategy)
-def test_base::keyvalue_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_base_keyvalue_instantiation(instance):
+    assert isinstance(instance, base_KeyValue)
 
 
-@given(instance=base::KeyValue_strategy)
-def test_base::keyvalue_key_setter(instance):
+
+@given(instance=base_KeyValue_strategy)
+def test_base_keyvalue_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=base::AnnotationType_strategy)
+@given(instance=base_AnnotationType_strategy)
 @settings(max_examples=50)
-def test_base::annotationtype_instantiation(instance):
-    assert isinstance(instance, base::AnnotationType)
-
-@given(instance=base::AnnotationType_strategy)
-def test_base::annotationtype_targets_type(instance):
-    assert isinstance(instance.targets, str)
+def test_base_annotationtype_instantiation(instance):
+    assert isinstance(instance, base_AnnotationType)
 
 
-@given(instance=base::AnnotationType_strategy)
-def test_base::annotationtype_targets_setter(instance):
-    original = instance.targets
-    instance.targets = original
-    assert instance.targets == original
 
-@given(instance=base::AnnotationType_strategy)
-def test_base::annotationtype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=base::AnnotationType_strategy)
-def test_base::annotationtype_name_setter(instance):
+@given(instance=base_AnnotationType_strategy)
+def test_base_annotationtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=base::Annotation_strategy)
+
+
+@given(instance=base_AnnotationType_strategy)
+def test_base_annotationtype_targets_setter(instance):
+    original = instance.targets
+    instance.targets = original
+    assert instance.targets == original
+
+@given(instance=base_Annotation_strategy)
 @settings(max_examples=50)
-def test_base::annotation_instantiation(instance):
-    assert isinstance(instance, base::Annotation)
+def test_base_annotation_instantiation(instance):
+    assert isinstance(instance, base_Annotation)

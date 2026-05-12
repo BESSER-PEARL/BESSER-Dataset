@@ -3,85 +3,85 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    transformation::EEnumLiteral,
-    transformation::EClassifier,
+from python_code import (
+    transformation_EEnumLiteral,
+    transformation_EClassifier,
     UnaryExpression,
-    transformation::Minus,
-    transformation::Negation,
+    transformation_Minus,
+    transformation_Negation,
     ArithmeticExpression,
-    transformation::Multiplication,
-    transformation::Division,
-    transformation::Subtraction,
-    transformation::Addition,
+    transformation_Subtraction,
+    transformation_Multiplication,
+    transformation_Division,
+    transformation_Addition,
     RelationalExpression,
-    transformation::GreaterOrEqual,
-    transformation::Greater,
-    transformation::LessOrEqual,
-    transformation::Less,
+    transformation_Greater,
+    transformation_GreaterOrEqual,
+    transformation_LessOrEqual,
+    transformation_Less,
     EqualityExpression,
-    transformation::Different,
-    transformation::Equal,
+    transformation_Different,
+    transformation_Equal,
     LogicalExpression,
-    transformation::And,
-    transformation::Or,
-    transformation::ETypedElement,
+    transformation_And,
+    transformation_Or,
+    transformation_ETypedElement,
     Expression,
-    transformation::EnumLiteral,
-    transformation::UnaryExpression,
-    transformation::BooleanLiteral,
-    transformation::Source,
-    transformation::FeatureAccess,
-    transformation::TypeOfExpression,
-    transformation::Let,
-    transformation::VariableUse,
-    transformation::StringLiteral,
-    transformation::IntegerLiteral,
-    transformation::Lambda,
-    transformation::ClassLiteral,
-    transformation::Map,
-    transformation::Invocation,
-    transformation::RealLiteral,
-    transformation::ExtentExpression,
-    transformation::If,
-    transformation::VariableInitialization,
-    transformation::VariableDefinition,
+    transformation_FeatureAccess,
+    transformation_RealLiteral,
+    transformation_StringLiteral,
+    transformation_ExtentExpression,
+    transformation_UnaryExpression,
+    transformation_IntegerLiteral,
+    transformation_Map,
+    transformation_BooleanLiteral,
+    transformation_Invocation,
+    transformation_Source,
+    transformation_Lambda,
+    transformation_Let,
+    transformation_ClassLiteral,
+    transformation_EnumLiteral,
+    transformation_VariableUse,
+    transformation_TypeOfExpression,
+    transformation_If,
+    transformation_VariableInitialization,
+    transformation_VariableDefinition,
     BinaryExpression,
-    transformation::ArithmeticExpression,
-    transformation::EqualityExpression,
-    transformation::LogicalExpression,
-    transformation::RelationalExpression,
-    transformation::CoalescingExpression,
-    transformation::BinaryExpression,
-    transformation::ConditionalExpression,
+    transformation_LogicalExpression,
+    transformation_ArithmeticExpression,
+    transformation_RelationalExpression,
+    transformation_EqualityExpression,
+    transformation_CoalescingExpression,
+    transformation_BinaryExpression,
+    transformation_ConditionalExpression,
     ContentMapping,
-    transformation::ConditionalMapping,
-    transformation::CompositeMapping,
-    transformation::EClass,
-    transformation::ContentMapping,
-    transformation::EStructuralFeature,
-    transformation::FeatureMapping,
-    transformation::ResultMapping,
-    transformation::Expression,
+    transformation_ConditionalMapping,
+    transformation_CompositeMapping,
+    transformation_EClass,
+    transformation_ContentMapping,
+    transformation_EStructuralFeature,
+    transformation_FeatureMapping,
+    transformation_ResultMapping,
+    transformation_Expression,
     CompositeMapping,
-    transformation::WhenClause,
-    transformation::OtherwiseClause,
-    transformation::EPackage,
-    transformation::AbstractMapping,
-    transformation::MetamodelDeclaration,
-    transformation::Transformation,
-    transformation::EDataType,
+    transformation_WhenClause,
+    transformation_OtherwiseClause,
+    transformation_EPackage,
+    transformation_AbstractMapping,
+    transformation_MetamodelDeclaration,
+    transformation_Transformation,
+    transformation_EDataType,
     AbstractMapping,
-    transformation::ClassMapping,
-    transformation::DataTypeMapping,
+    transformation_ClassMapping,
+    transformation_DataTypeMapping,
     ExplicitMetamodel,
-    transformation::TargetMetamodel,
-    transformation::SourceMetamodel,
+    transformation_TargetMetamodel,
+    transformation_SourceMetamodel,
     MetamodelDeclaration,
-    transformation::ExtentMetamodel,
-    transformation::ExplicitMetamodel,
+    transformation_ExtentMetamodel,
+    transformation_ExplicitMetamodel,
 )
 
 # =============================================================================
@@ -90,30 +90,30 @@ from classes import (
 
 
 
-def test_transformation::eenumliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::EEnumLiteral)
+def test_transformation_eenumliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_EEnumLiteral)
 
 
-def test_transformation::eenumliteral_constructor_exists():
-    assert callable(transformation::EEnumLiteral.__init__)
+def test_transformation_eenumliteral_constructor_exists():
+    assert callable(transformation_EEnumLiteral.__init__)
 
 
-def test_transformation::eenumliteral_constructor_args():
-    sig = inspect.signature(transformation::EEnumLiteral.__init__)
+def test_transformation_eenumliteral_constructor_args():
+    sig = inspect.signature(transformation_EEnumLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(transformation::EClassifier)
+def test_transformation_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(transformation_EClassifier)
 
 
-def test_transformation::eclassifier_constructor_exists():
-    assert callable(transformation::EClassifier.__init__)
+def test_transformation_eclassifier_constructor_exists():
+    assert callable(transformation_EClassifier.__init__)
 
 
-def test_transformation::eclassifier_constructor_args():
-    sig = inspect.signature(transformation::EClassifier.__init__)
+def test_transformation_eclassifier_constructor_args():
+    sig = inspect.signature(transformation_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -132,30 +132,30 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_transformation::minus_is_not_abstract():
-    assert not inspect.isabstract(transformation::Minus)
+def test_transformation_minus_is_not_abstract():
+    assert not inspect.isabstract(transformation_Minus)
 
 
-def test_transformation::minus_constructor_exists():
-    assert callable(transformation::Minus.__init__)
+def test_transformation_minus_constructor_exists():
+    assert callable(transformation_Minus.__init__)
 
 
-def test_transformation::minus_constructor_args():
-    sig = inspect.signature(transformation::Minus.__init__)
+def test_transformation_minus_constructor_args():
+    sig = inspect.signature(transformation_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::negation_is_not_abstract():
-    assert not inspect.isabstract(transformation::Negation)
+def test_transformation_negation_is_not_abstract():
+    assert not inspect.isabstract(transformation_Negation)
 
 
-def test_transformation::negation_constructor_exists():
-    assert callable(transformation::Negation.__init__)
+def test_transformation_negation_constructor_exists():
+    assert callable(transformation_Negation.__init__)
 
 
-def test_transformation::negation_constructor_args():
-    sig = inspect.signature(transformation::Negation.__init__)
+def test_transformation_negation_constructor_args():
+    sig = inspect.signature(transformation_Negation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,58 +174,58 @@ def test_arithmeticexpression_constructor_args():
 
 
 
-def test_transformation::multiplication_is_not_abstract():
-    assert not inspect.isabstract(transformation::Multiplication)
+def test_transformation_subtraction_is_not_abstract():
+    assert not inspect.isabstract(transformation_Subtraction)
 
 
-def test_transformation::multiplication_constructor_exists():
-    assert callable(transformation::Multiplication.__init__)
+def test_transformation_subtraction_constructor_exists():
+    assert callable(transformation_Subtraction.__init__)
 
 
-def test_transformation::multiplication_constructor_args():
-    sig = inspect.signature(transformation::Multiplication.__init__)
+def test_transformation_subtraction_constructor_args():
+    sig = inspect.signature(transformation_Subtraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::division_is_not_abstract():
-    assert not inspect.isabstract(transformation::Division)
+def test_transformation_multiplication_is_not_abstract():
+    assert not inspect.isabstract(transformation_Multiplication)
 
 
-def test_transformation::division_constructor_exists():
-    assert callable(transformation::Division.__init__)
+def test_transformation_multiplication_constructor_exists():
+    assert callable(transformation_Multiplication.__init__)
 
 
-def test_transformation::division_constructor_args():
-    sig = inspect.signature(transformation::Division.__init__)
+def test_transformation_multiplication_constructor_args():
+    sig = inspect.signature(transformation_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::subtraction_is_not_abstract():
-    assert not inspect.isabstract(transformation::Subtraction)
+def test_transformation_division_is_not_abstract():
+    assert not inspect.isabstract(transformation_Division)
 
 
-def test_transformation::subtraction_constructor_exists():
-    assert callable(transformation::Subtraction.__init__)
+def test_transformation_division_constructor_exists():
+    assert callable(transformation_Division.__init__)
 
 
-def test_transformation::subtraction_constructor_args():
-    sig = inspect.signature(transformation::Subtraction.__init__)
+def test_transformation_division_constructor_args():
+    sig = inspect.signature(transformation_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::addition_is_not_abstract():
-    assert not inspect.isabstract(transformation::Addition)
+def test_transformation_addition_is_not_abstract():
+    assert not inspect.isabstract(transformation_Addition)
 
 
-def test_transformation::addition_constructor_exists():
-    assert callable(transformation::Addition.__init__)
+def test_transformation_addition_constructor_exists():
+    assert callable(transformation_Addition.__init__)
 
 
-def test_transformation::addition_constructor_args():
-    sig = inspect.signature(transformation::Addition.__init__)
+def test_transformation_addition_constructor_args():
+    sig = inspect.signature(transformation_Addition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,58 +244,58 @@ def test_relationalexpression_constructor_args():
 
 
 
-def test_transformation::greaterorequal_is_not_abstract():
-    assert not inspect.isabstract(transformation::GreaterOrEqual)
+def test_transformation_greater_is_not_abstract():
+    assert not inspect.isabstract(transformation_Greater)
 
 
-def test_transformation::greaterorequal_constructor_exists():
-    assert callable(transformation::GreaterOrEqual.__init__)
+def test_transformation_greater_constructor_exists():
+    assert callable(transformation_Greater.__init__)
 
 
-def test_transformation::greaterorequal_constructor_args():
-    sig = inspect.signature(transformation::GreaterOrEqual.__init__)
+def test_transformation_greater_constructor_args():
+    sig = inspect.signature(transformation_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::greater_is_not_abstract():
-    assert not inspect.isabstract(transformation::Greater)
+def test_transformation_greaterorequal_is_not_abstract():
+    assert not inspect.isabstract(transformation_GreaterOrEqual)
 
 
-def test_transformation::greater_constructor_exists():
-    assert callable(transformation::Greater.__init__)
+def test_transformation_greaterorequal_constructor_exists():
+    assert callable(transformation_GreaterOrEqual.__init__)
 
 
-def test_transformation::greater_constructor_args():
-    sig = inspect.signature(transformation::Greater.__init__)
+def test_transformation_greaterorequal_constructor_args():
+    sig = inspect.signature(transformation_GreaterOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::lessorequal_is_not_abstract():
-    assert not inspect.isabstract(transformation::LessOrEqual)
+def test_transformation_lessorequal_is_not_abstract():
+    assert not inspect.isabstract(transformation_LessOrEqual)
 
 
-def test_transformation::lessorequal_constructor_exists():
-    assert callable(transformation::LessOrEqual.__init__)
+def test_transformation_lessorequal_constructor_exists():
+    assert callable(transformation_LessOrEqual.__init__)
 
 
-def test_transformation::lessorequal_constructor_args():
-    sig = inspect.signature(transformation::LessOrEqual.__init__)
+def test_transformation_lessorequal_constructor_args():
+    sig = inspect.signature(transformation_LessOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::less_is_not_abstract():
-    assert not inspect.isabstract(transformation::Less)
+def test_transformation_less_is_not_abstract():
+    assert not inspect.isabstract(transformation_Less)
 
 
-def test_transformation::less_constructor_exists():
-    assert callable(transformation::Less.__init__)
+def test_transformation_less_constructor_exists():
+    assert callable(transformation_Less.__init__)
 
 
-def test_transformation::less_constructor_args():
-    sig = inspect.signature(transformation::Less.__init__)
+def test_transformation_less_constructor_args():
+    sig = inspect.signature(transformation_Less.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -314,30 +314,30 @@ def test_equalityexpression_constructor_args():
 
 
 
-def test_transformation::different_is_not_abstract():
-    assert not inspect.isabstract(transformation::Different)
+def test_transformation_different_is_not_abstract():
+    assert not inspect.isabstract(transformation_Different)
 
 
-def test_transformation::different_constructor_exists():
-    assert callable(transformation::Different.__init__)
+def test_transformation_different_constructor_exists():
+    assert callable(transformation_Different.__init__)
 
 
-def test_transformation::different_constructor_args():
-    sig = inspect.signature(transformation::Different.__init__)
+def test_transformation_different_constructor_args():
+    sig = inspect.signature(transformation_Different.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::equal_is_not_abstract():
-    assert not inspect.isabstract(transformation::Equal)
+def test_transformation_equal_is_not_abstract():
+    assert not inspect.isabstract(transformation_Equal)
 
 
-def test_transformation::equal_constructor_exists():
-    assert callable(transformation::Equal.__init__)
+def test_transformation_equal_constructor_exists():
+    assert callable(transformation_Equal.__init__)
 
 
-def test_transformation::equal_constructor_args():
-    sig = inspect.signature(transformation::Equal.__init__)
+def test_transformation_equal_constructor_args():
+    sig = inspect.signature(transformation_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -356,44 +356,44 @@ def test_logicalexpression_constructor_args():
 
 
 
-def test_transformation::and_is_not_abstract():
-    assert not inspect.isabstract(transformation::And)
+def test_transformation_and_is_not_abstract():
+    assert not inspect.isabstract(transformation_And)
 
 
-def test_transformation::and_constructor_exists():
-    assert callable(transformation::And.__init__)
+def test_transformation_and_constructor_exists():
+    assert callable(transformation_And.__init__)
 
 
-def test_transformation::and_constructor_args():
-    sig = inspect.signature(transformation::And.__init__)
+def test_transformation_and_constructor_args():
+    sig = inspect.signature(transformation_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::or_is_not_abstract():
-    assert not inspect.isabstract(transformation::Or)
+def test_transformation_or_is_not_abstract():
+    assert not inspect.isabstract(transformation_Or)
 
 
-def test_transformation::or_constructor_exists():
-    assert callable(transformation::Or.__init__)
+def test_transformation_or_constructor_exists():
+    assert callable(transformation_Or.__init__)
 
 
-def test_transformation::or_constructor_args():
-    sig = inspect.signature(transformation::Or.__init__)
+def test_transformation_or_constructor_args():
+    sig = inspect.signature(transformation_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::etypedelement_is_not_abstract():
-    assert not inspect.isabstract(transformation::ETypedElement)
+def test_transformation_etypedelement_is_not_abstract():
+    assert not inspect.isabstract(transformation_ETypedElement)
 
 
-def test_transformation::etypedelement_constructor_exists():
-    assert callable(transformation::ETypedElement.__init__)
+def test_transformation_etypedelement_constructor_exists():
+    assert callable(transformation_ETypedElement.__init__)
 
 
-def test_transformation::etypedelement_constructor_args():
-    sig = inspect.signature(transformation::ETypedElement.__init__)
+def test_transformation_etypedelement_constructor_args():
+    sig = inspect.signature(transformation_ETypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -412,99 +412,33 @@ def test_expression_constructor_args():
 
 
 
-def test_transformation::enumliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::EnumLiteral)
+def test_transformation_featureaccess_is_not_abstract():
+    assert not inspect.isabstract(transformation_FeatureAccess)
 
 
-def test_transformation::enumliteral_constructor_exists():
-    assert callable(transformation::EnumLiteral.__init__)
+def test_transformation_featureaccess_constructor_exists():
+    assert callable(transformation_FeatureAccess.__init__)
 
 
-def test_transformation::enumliteral_constructor_args():
-    sig = inspect.signature(transformation::EnumLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::UnaryExpression)
-
-
-def test_transformation::unaryexpression_constructor_exists():
-    assert callable(transformation::UnaryExpression.__init__)
-
-
-def test_transformation::unaryexpression_constructor_args():
-    sig = inspect.signature(transformation::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::BooleanLiteral)
-
-
-def test_transformation::booleanliteral_constructor_exists():
-    assert callable(transformation::BooleanLiteral.__init__)
-
-
-def test_transformation::booleanliteral_constructor_args():
-    sig = inspect.signature(transformation::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_transformation::booleanliteral_has_value():
-    assert hasattr(transformation::BooleanLiteral, "value")
-    descriptor = None
-    for klass in transformation::BooleanLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_transformation::source_is_not_abstract():
-    assert not inspect.isabstract(transformation::Source)
-
-
-def test_transformation::source_constructor_exists():
-    assert callable(transformation::Source.__init__)
-
-
-def test_transformation::source_constructor_args():
-    sig = inspect.signature(transformation::Source.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::featureaccess_is_not_abstract():
-    assert not inspect.isabstract(transformation::FeatureAccess)
-
-
-def test_transformation::featureaccess_constructor_exists():
-    assert callable(transformation::FeatureAccess.__init__)
-
-
-def test_transformation::featureaccess_constructor_args():
-    sig = inspect.signature(transformation::FeatureAccess.__init__)
+def test_transformation_featureaccess_constructor_args():
+    sig = inspect.signature(transformation_FeatureAccess.__init__)
     params = list(sig.parameters.keys())
     assert "spreading" in params, "Missing parameter 'spreading'"
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_transformation::featureaccess_has_spreading():
-    assert hasattr(transformation::FeatureAccess, "spreading")
+def test_transformation_featureaccess_has_spreading():
+    assert hasattr(transformation_FeatureAccess, "spreading")
     descriptor = None
-    for klass in transformation::FeatureAccess.__mro__:
+    for klass in transformation_FeatureAccess.__mro__:
         if "spreading" in klass.__dict__:
             descriptor = klass.__dict__["spreading"]
             break
     assert isinstance(descriptor, property)
 
-def test_transformation::featureaccess_has_nullable():
-    assert hasattr(transformation::FeatureAccess, "nullable")
+def test_transformation_featureaccess_has_nullable():
+    assert hasattr(transformation_FeatureAccess, "nullable")
     descriptor = None
-    for klass in transformation::FeatureAccess.__mro__:
+    for klass in transformation_FeatureAccess.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -512,65 +446,23 @@ def test_transformation::featureaccess_has_nullable():
 
 
 
-def test_transformation::typeofexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::TypeOfExpression)
+def test_transformation_realliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_RealLiteral)
 
 
-def test_transformation::typeofexpression_constructor_exists():
-    assert callable(transformation::TypeOfExpression.__init__)
+def test_transformation_realliteral_constructor_exists():
+    assert callable(transformation_RealLiteral.__init__)
 
 
-def test_transformation::typeofexpression_constructor_args():
-    sig = inspect.signature(transformation::TypeOfExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::let_is_not_abstract():
-    assert not inspect.isabstract(transformation::Let)
-
-
-def test_transformation::let_constructor_exists():
-    assert callable(transformation::Let.__init__)
-
-
-def test_transformation::let_constructor_args():
-    sig = inspect.signature(transformation::Let.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::variableuse_is_not_abstract():
-    assert not inspect.isabstract(transformation::VariableUse)
-
-
-def test_transformation::variableuse_constructor_exists():
-    assert callable(transformation::VariableUse.__init__)
-
-
-def test_transformation::variableuse_constructor_args():
-    sig = inspect.signature(transformation::VariableUse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::StringLiteral)
-
-
-def test_transformation::stringliteral_constructor_exists():
-    assert callable(transformation::StringLiteral.__init__)
-
-
-def test_transformation::stringliteral_constructor_args():
-    sig = inspect.signature(transformation::StringLiteral.__init__)
+def test_transformation_realliteral_constructor_args():
+    sig = inspect.signature(transformation_RealLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_transformation::stringliteral_has_value():
-    assert hasattr(transformation::StringLiteral, "value")
+def test_transformation_realliteral_has_value():
+    assert hasattr(transformation_RealLiteral, "value")
     descriptor = None
-    for klass in transformation::StringLiteral.__mro__:
+    for klass in transformation_RealLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -578,23 +470,23 @@ def test_transformation::stringliteral_has_value():
 
 
 
-def test_transformation::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::IntegerLiteral)
+def test_transformation_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_StringLiteral)
 
 
-def test_transformation::integerliteral_constructor_exists():
-    assert callable(transformation::IntegerLiteral.__init__)
+def test_transformation_stringliteral_constructor_exists():
+    assert callable(transformation_StringLiteral.__init__)
 
 
-def test_transformation::integerliteral_constructor_args():
-    sig = inspect.signature(transformation::IntegerLiteral.__init__)
+def test_transformation_stringliteral_constructor_args():
+    sig = inspect.signature(transformation_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_transformation::integerliteral_has_value():
-    assert hasattr(transformation::IntegerLiteral, "value")
+def test_transformation_stringliteral_has_value():
+    assert hasattr(transformation_StringLiteral, "value")
     descriptor = None
-    for klass in transformation::IntegerLiteral.__mro__:
+    for klass in transformation_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -602,79 +494,51 @@ def test_transformation::integerliteral_has_value():
 
 
 
-def test_transformation::lambda_is_not_abstract():
-    assert not inspect.isabstract(transformation::Lambda)
+def test_transformation_extentexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_ExtentExpression)
 
 
-def test_transformation::lambda_constructor_exists():
-    assert callable(transformation::Lambda.__init__)
+def test_transformation_extentexpression_constructor_exists():
+    assert callable(transformation_ExtentExpression.__init__)
 
 
-def test_transformation::lambda_constructor_args():
-    sig = inspect.signature(transformation::Lambda.__init__)
+def test_transformation_extentexpression_constructor_args():
+    sig = inspect.signature(transformation_ExtentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::classliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::ClassLiteral)
+def test_transformation_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_UnaryExpression)
 
 
-def test_transformation::classliteral_constructor_exists():
-    assert callable(transformation::ClassLiteral.__init__)
+def test_transformation_unaryexpression_constructor_exists():
+    assert callable(transformation_UnaryExpression.__init__)
 
 
-def test_transformation::classliteral_constructor_args():
-    sig = inspect.signature(transformation::ClassLiteral.__init__)
+def test_transformation_unaryexpression_constructor_args():
+    sig = inspect.signature(transformation_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::map_is_not_abstract():
-    assert not inspect.isabstract(transformation::Map)
+def test_transformation_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_IntegerLiteral)
 
 
-def test_transformation::map_constructor_exists():
-    assert callable(transformation::Map.__init__)
+def test_transformation_integerliteral_constructor_exists():
+    assert callable(transformation_IntegerLiteral.__init__)
 
 
-def test_transformation::map_constructor_args():
-    sig = inspect.signature(transformation::Map.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::invocation_is_not_abstract():
-    assert not inspect.isabstract(transformation::Invocation)
-
-
-def test_transformation::invocation_constructor_exists():
-    assert callable(transformation::Invocation.__init__)
-
-
-def test_transformation::invocation_constructor_args():
-    sig = inspect.signature(transformation::Invocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transformation::realliteral_is_not_abstract():
-    assert not inspect.isabstract(transformation::RealLiteral)
-
-
-def test_transformation::realliteral_constructor_exists():
-    assert callable(transformation::RealLiteral.__init__)
-
-
-def test_transformation::realliteral_constructor_args():
-    sig = inspect.signature(transformation::RealLiteral.__init__)
+def test_transformation_integerliteral_constructor_args():
+    sig = inspect.signature(transformation_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_transformation::realliteral_has_value():
-    assert hasattr(transformation::RealLiteral, "value")
+def test_transformation_integerliteral_has_value():
+    assert hasattr(transformation_IntegerLiteral, "value")
     descriptor = None
-    for klass in transformation::RealLiteral.__mro__:
+    for klass in transformation_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -682,65 +546,201 @@ def test_transformation::realliteral_has_value():
 
 
 
-def test_transformation::extentexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::ExtentExpression)
+def test_transformation_map_is_not_abstract():
+    assert not inspect.isabstract(transformation_Map)
 
 
-def test_transformation::extentexpression_constructor_exists():
-    assert callable(transformation::ExtentExpression.__init__)
+def test_transformation_map_constructor_exists():
+    assert callable(transformation_Map.__init__)
 
 
-def test_transformation::extentexpression_constructor_args():
-    sig = inspect.signature(transformation::ExtentExpression.__init__)
+def test_transformation_map_constructor_args():
+    sig = inspect.signature(transformation_Map.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::if_is_not_abstract():
-    assert not inspect.isabstract(transformation::If)
+def test_transformation_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_BooleanLiteral)
 
 
-def test_transformation::if_constructor_exists():
-    assert callable(transformation::If.__init__)
+def test_transformation_booleanliteral_constructor_exists():
+    assert callable(transformation_BooleanLiteral.__init__)
 
 
-def test_transformation::if_constructor_args():
-    sig = inspect.signature(transformation::If.__init__)
+def test_transformation_booleanliteral_constructor_args():
+    sig = inspect.signature(transformation_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_transformation_booleanliteral_has_value():
+    assert hasattr(transformation_BooleanLiteral, "value")
+    descriptor = None
+    for klass in transformation_BooleanLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_transformation_invocation_is_not_abstract():
+    assert not inspect.isabstract(transformation_Invocation)
+
+
+def test_transformation_invocation_constructor_exists():
+    assert callable(transformation_Invocation.__init__)
+
+
+def test_transformation_invocation_constructor_args():
+    sig = inspect.signature(transformation_Invocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::variableinitialization_is_not_abstract():
-    assert not inspect.isabstract(transformation::VariableInitialization)
+def test_transformation_source_is_not_abstract():
+    assert not inspect.isabstract(transformation_Source)
 
 
-def test_transformation::variableinitialization_constructor_exists():
-    assert callable(transformation::VariableInitialization.__init__)
+def test_transformation_source_constructor_exists():
+    assert callable(transformation_Source.__init__)
 
 
-def test_transformation::variableinitialization_constructor_args():
-    sig = inspect.signature(transformation::VariableInitialization.__init__)
+def test_transformation_source_constructor_args():
+    sig = inspect.signature(transformation_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::variabledefinition_is_not_abstract():
-    assert not inspect.isabstract(transformation::VariableDefinition)
+def test_transformation_lambda_is_not_abstract():
+    assert not inspect.isabstract(transformation_Lambda)
 
 
-def test_transformation::variabledefinition_constructor_exists():
-    assert callable(transformation::VariableDefinition.__init__)
+def test_transformation_lambda_constructor_exists():
+    assert callable(transformation_Lambda.__init__)
 
 
-def test_transformation::variabledefinition_constructor_args():
-    sig = inspect.signature(transformation::VariableDefinition.__init__)
+def test_transformation_lambda_constructor_args():
+    sig = inspect.signature(transformation_Lambda.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_let_is_not_abstract():
+    assert not inspect.isabstract(transformation_Let)
+
+
+def test_transformation_let_constructor_exists():
+    assert callable(transformation_Let.__init__)
+
+
+def test_transformation_let_constructor_args():
+    sig = inspect.signature(transformation_Let.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_classliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_ClassLiteral)
+
+
+def test_transformation_classliteral_constructor_exists():
+    assert callable(transformation_ClassLiteral.__init__)
+
+
+def test_transformation_classliteral_constructor_args():
+    sig = inspect.signature(transformation_ClassLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_enumliteral_is_not_abstract():
+    assert not inspect.isabstract(transformation_EnumLiteral)
+
+
+def test_transformation_enumliteral_constructor_exists():
+    assert callable(transformation_EnumLiteral.__init__)
+
+
+def test_transformation_enumliteral_constructor_args():
+    sig = inspect.signature(transformation_EnumLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_variableuse_is_not_abstract():
+    assert not inspect.isabstract(transformation_VariableUse)
+
+
+def test_transformation_variableuse_constructor_exists():
+    assert callable(transformation_VariableUse.__init__)
+
+
+def test_transformation_variableuse_constructor_args():
+    sig = inspect.signature(transformation_VariableUse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_typeofexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_TypeOfExpression)
+
+
+def test_transformation_typeofexpression_constructor_exists():
+    assert callable(transformation_TypeOfExpression.__init__)
+
+
+def test_transformation_typeofexpression_constructor_args():
+    sig = inspect.signature(transformation_TypeOfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_if_is_not_abstract():
+    assert not inspect.isabstract(transformation_If)
+
+
+def test_transformation_if_constructor_exists():
+    assert callable(transformation_If.__init__)
+
+
+def test_transformation_if_constructor_args():
+    sig = inspect.signature(transformation_If.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_variableinitialization_is_not_abstract():
+    assert not inspect.isabstract(transformation_VariableInitialization)
+
+
+def test_transformation_variableinitialization_constructor_exists():
+    assert callable(transformation_VariableInitialization.__init__)
+
+
+def test_transformation_variableinitialization_constructor_args():
+    sig = inspect.signature(transformation_VariableInitialization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transformation_variabledefinition_is_not_abstract():
+    assert not inspect.isabstract(transformation_VariableDefinition)
+
+
+def test_transformation_variabledefinition_constructor_exists():
+    assert callable(transformation_VariableDefinition.__init__)
+
+
+def test_transformation_variabledefinition_constructor_args():
+    sig = inspect.signature(transformation_VariableDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_transformation::variabledefinition_has_name():
-    assert hasattr(transformation::VariableDefinition, "name")
+def test_transformation_variabledefinition_has_name():
+    assert hasattr(transformation_VariableDefinition, "name")
     descriptor = None
-    for klass in transformation::VariableDefinition.__mro__:
+    for klass in transformation_VariableDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -762,100 +762,100 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_transformation::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::ArithmeticExpression)
+def test_transformation_logicalexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_LogicalExpression)
 
 
-def test_transformation::arithmeticexpression_constructor_exists():
-    assert callable(transformation::ArithmeticExpression.__init__)
+def test_transformation_logicalexpression_constructor_exists():
+    assert callable(transformation_LogicalExpression.__init__)
 
 
-def test_transformation::arithmeticexpression_constructor_args():
-    sig = inspect.signature(transformation::ArithmeticExpression.__init__)
+def test_transformation_logicalexpression_constructor_args():
+    sig = inspect.signature(transformation_LogicalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::EqualityExpression)
+def test_transformation_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_ArithmeticExpression)
 
 
-def test_transformation::equalityexpression_constructor_exists():
-    assert callable(transformation::EqualityExpression.__init__)
+def test_transformation_arithmeticexpression_constructor_exists():
+    assert callable(transformation_ArithmeticExpression.__init__)
 
 
-def test_transformation::equalityexpression_constructor_args():
-    sig = inspect.signature(transformation::EqualityExpression.__init__)
+def test_transformation_arithmeticexpression_constructor_args():
+    sig = inspect.signature(transformation_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::logicalexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::LogicalExpression)
+def test_transformation_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_RelationalExpression)
 
 
-def test_transformation::logicalexpression_constructor_exists():
-    assert callable(transformation::LogicalExpression.__init__)
+def test_transformation_relationalexpression_constructor_exists():
+    assert callable(transformation_RelationalExpression.__init__)
 
 
-def test_transformation::logicalexpression_constructor_args():
-    sig = inspect.signature(transformation::LogicalExpression.__init__)
+def test_transformation_relationalexpression_constructor_args():
+    sig = inspect.signature(transformation_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::RelationalExpression)
+def test_transformation_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_EqualityExpression)
 
 
-def test_transformation::relationalexpression_constructor_exists():
-    assert callable(transformation::RelationalExpression.__init__)
+def test_transformation_equalityexpression_constructor_exists():
+    assert callable(transformation_EqualityExpression.__init__)
 
 
-def test_transformation::relationalexpression_constructor_args():
-    sig = inspect.signature(transformation::RelationalExpression.__init__)
+def test_transformation_equalityexpression_constructor_args():
+    sig = inspect.signature(transformation_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::coalescingexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::CoalescingExpression)
+def test_transformation_coalescingexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_CoalescingExpression)
 
 
-def test_transformation::coalescingexpression_constructor_exists():
-    assert callable(transformation::CoalescingExpression.__init__)
+def test_transformation_coalescingexpression_constructor_exists():
+    assert callable(transformation_CoalescingExpression.__init__)
 
 
-def test_transformation::coalescingexpression_constructor_args():
-    sig = inspect.signature(transformation::CoalescingExpression.__init__)
+def test_transformation_coalescingexpression_constructor_args():
+    sig = inspect.signature(transformation_CoalescingExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::BinaryExpression)
+def test_transformation_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_BinaryExpression)
 
 
-def test_transformation::binaryexpression_constructor_exists():
-    assert callable(transformation::BinaryExpression.__init__)
+def test_transformation_binaryexpression_constructor_exists():
+    assert callable(transformation_BinaryExpression.__init__)
 
 
-def test_transformation::binaryexpression_constructor_args():
-    sig = inspect.signature(transformation::BinaryExpression.__init__)
+def test_transformation_binaryexpression_constructor_args():
+    sig = inspect.signature(transformation_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(transformation::ConditionalExpression)
+def test_transformation_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(transformation_ConditionalExpression)
 
 
-def test_transformation::conditionalexpression_constructor_exists():
-    assert callable(transformation::ConditionalExpression.__init__)
+def test_transformation_conditionalexpression_constructor_exists():
+    assert callable(transformation_ConditionalExpression.__init__)
 
 
-def test_transformation::conditionalexpression_constructor_args():
-    sig = inspect.signature(transformation::ConditionalExpression.__init__)
+def test_transformation_conditionalexpression_constructor_args():
+    sig = inspect.signature(transformation_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -874,114 +874,114 @@ def test_contentmapping_constructor_args():
 
 
 
-def test_transformation::conditionalmapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::ConditionalMapping)
+def test_transformation_conditionalmapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_ConditionalMapping)
 
 
-def test_transformation::conditionalmapping_constructor_exists():
-    assert callable(transformation::ConditionalMapping.__init__)
+def test_transformation_conditionalmapping_constructor_exists():
+    assert callable(transformation_ConditionalMapping.__init__)
 
 
-def test_transformation::conditionalmapping_constructor_args():
-    sig = inspect.signature(transformation::ConditionalMapping.__init__)
+def test_transformation_conditionalmapping_constructor_args():
+    sig = inspect.signature(transformation_ConditionalMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::compositemapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::CompositeMapping)
+def test_transformation_compositemapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_CompositeMapping)
 
 
-def test_transformation::compositemapping_constructor_exists():
-    assert callable(transformation::CompositeMapping.__init__)
+def test_transformation_compositemapping_constructor_exists():
+    assert callable(transformation_CompositeMapping.__init__)
 
 
-def test_transformation::compositemapping_constructor_args():
-    sig = inspect.signature(transformation::CompositeMapping.__init__)
+def test_transformation_compositemapping_constructor_args():
+    sig = inspect.signature(transformation_CompositeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::eclass_is_not_abstract():
-    assert not inspect.isabstract(transformation::EClass)
+def test_transformation_eclass_is_not_abstract():
+    assert not inspect.isabstract(transformation_EClass)
 
 
-def test_transformation::eclass_constructor_exists():
-    assert callable(transformation::EClass.__init__)
+def test_transformation_eclass_constructor_exists():
+    assert callable(transformation_EClass.__init__)
 
 
-def test_transformation::eclass_constructor_args():
-    sig = inspect.signature(transformation::EClass.__init__)
+def test_transformation_eclass_constructor_args():
+    sig = inspect.signature(transformation_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::contentmapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::ContentMapping)
+def test_transformation_contentmapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_ContentMapping)
 
 
-def test_transformation::contentmapping_constructor_exists():
-    assert callable(transformation::ContentMapping.__init__)
+def test_transformation_contentmapping_constructor_exists():
+    assert callable(transformation_ContentMapping.__init__)
 
 
-def test_transformation::contentmapping_constructor_args():
-    sig = inspect.signature(transformation::ContentMapping.__init__)
+def test_transformation_contentmapping_constructor_args():
+    sig = inspect.signature(transformation_ContentMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(transformation::EStructuralFeature)
+def test_transformation_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(transformation_EStructuralFeature)
 
 
-def test_transformation::estructuralfeature_constructor_exists():
-    assert callable(transformation::EStructuralFeature.__init__)
+def test_transformation_estructuralfeature_constructor_exists():
+    assert callable(transformation_EStructuralFeature.__init__)
 
 
-def test_transformation::estructuralfeature_constructor_args():
-    sig = inspect.signature(transformation::EStructuralFeature.__init__)
+def test_transformation_estructuralfeature_constructor_args():
+    sig = inspect.signature(transformation_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::featuremapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::FeatureMapping)
+def test_transformation_featuremapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_FeatureMapping)
 
 
-def test_transformation::featuremapping_constructor_exists():
-    assert callable(transformation::FeatureMapping.__init__)
+def test_transformation_featuremapping_constructor_exists():
+    assert callable(transformation_FeatureMapping.__init__)
 
 
-def test_transformation::featuremapping_constructor_args():
-    sig = inspect.signature(transformation::FeatureMapping.__init__)
+def test_transformation_featuremapping_constructor_args():
+    sig = inspect.signature(transformation_FeatureMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::resultmapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::ResultMapping)
+def test_transformation_resultmapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_ResultMapping)
 
 
-def test_transformation::resultmapping_constructor_exists():
-    assert callable(transformation::ResultMapping.__init__)
+def test_transformation_resultmapping_constructor_exists():
+    assert callable(transformation_ResultMapping.__init__)
 
 
-def test_transformation::resultmapping_constructor_args():
-    sig = inspect.signature(transformation::ResultMapping.__init__)
+def test_transformation_resultmapping_constructor_args():
+    sig = inspect.signature(transformation_ResultMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::expression_is_not_abstract():
-    assert not inspect.isabstract(transformation::Expression)
+def test_transformation_expression_is_not_abstract():
+    assert not inspect.isabstract(transformation_Expression)
 
 
-def test_transformation::expression_constructor_exists():
-    assert callable(transformation::Expression.__init__)
+def test_transformation_expression_constructor_exists():
+    assert callable(transformation_Expression.__init__)
 
 
-def test_transformation::expression_constructor_args():
-    sig = inspect.signature(transformation::Expression.__init__)
+def test_transformation_expression_constructor_args():
+    sig = inspect.signature(transformation_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1000,93 +1000,93 @@ def test_compositemapping_constructor_args():
 
 
 
-def test_transformation::whenclause_is_not_abstract():
-    assert not inspect.isabstract(transformation::WhenClause)
+def test_transformation_whenclause_is_not_abstract():
+    assert not inspect.isabstract(transformation_WhenClause)
 
 
-def test_transformation::whenclause_constructor_exists():
-    assert callable(transformation::WhenClause.__init__)
+def test_transformation_whenclause_constructor_exists():
+    assert callable(transformation_WhenClause.__init__)
 
 
-def test_transformation::whenclause_constructor_args():
-    sig = inspect.signature(transformation::WhenClause.__init__)
+def test_transformation_whenclause_constructor_args():
+    sig = inspect.signature(transformation_WhenClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::otherwiseclause_is_not_abstract():
-    assert not inspect.isabstract(transformation::OtherwiseClause)
+def test_transformation_otherwiseclause_is_not_abstract():
+    assert not inspect.isabstract(transformation_OtherwiseClause)
 
 
-def test_transformation::otherwiseclause_constructor_exists():
-    assert callable(transformation::OtherwiseClause.__init__)
+def test_transformation_otherwiseclause_constructor_exists():
+    assert callable(transformation_OtherwiseClause.__init__)
 
 
-def test_transformation::otherwiseclause_constructor_args():
-    sig = inspect.signature(transformation::OtherwiseClause.__init__)
+def test_transformation_otherwiseclause_constructor_args():
+    sig = inspect.signature(transformation_OtherwiseClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::epackage_is_not_abstract():
-    assert not inspect.isabstract(transformation::EPackage)
+def test_transformation_epackage_is_not_abstract():
+    assert not inspect.isabstract(transformation_EPackage)
 
 
-def test_transformation::epackage_constructor_exists():
-    assert callable(transformation::EPackage.__init__)
+def test_transformation_epackage_constructor_exists():
+    assert callable(transformation_EPackage.__init__)
 
 
-def test_transformation::epackage_constructor_args():
-    sig = inspect.signature(transformation::EPackage.__init__)
+def test_transformation_epackage_constructor_args():
+    sig = inspect.signature(transformation_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::abstractmapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::AbstractMapping)
+def test_transformation_abstractmapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_AbstractMapping)
 
 
-def test_transformation::abstractmapping_constructor_exists():
-    assert callable(transformation::AbstractMapping.__init__)
+def test_transformation_abstractmapping_constructor_exists():
+    assert callable(transformation_AbstractMapping.__init__)
 
 
-def test_transformation::abstractmapping_constructor_args():
-    sig = inspect.signature(transformation::AbstractMapping.__init__)
+def test_transformation_abstractmapping_constructor_args():
+    sig = inspect.signature(transformation_AbstractMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::metamodeldeclaration_is_not_abstract():
-    assert not inspect.isabstract(transformation::MetamodelDeclaration)
+def test_transformation_metamodeldeclaration_is_not_abstract():
+    assert not inspect.isabstract(transformation_MetamodelDeclaration)
 
 
-def test_transformation::metamodeldeclaration_constructor_exists():
-    assert callable(transformation::MetamodelDeclaration.__init__)
+def test_transformation_metamodeldeclaration_constructor_exists():
+    assert callable(transformation_MetamodelDeclaration.__init__)
 
 
-def test_transformation::metamodeldeclaration_constructor_args():
-    sig = inspect.signature(transformation::MetamodelDeclaration.__init__)
+def test_transformation_metamodeldeclaration_constructor_args():
+    sig = inspect.signature(transformation_MetamodelDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::transformation_is_not_abstract():
-    assert not inspect.isabstract(transformation::Transformation)
+def test_transformation_transformation_is_not_abstract():
+    assert not inspect.isabstract(transformation_Transformation)
 
 
-def test_transformation::transformation_constructor_exists():
-    assert callable(transformation::Transformation.__init__)
+def test_transformation_transformation_constructor_exists():
+    assert callable(transformation_Transformation.__init__)
 
 
-def test_transformation::transformation_constructor_args():
-    sig = inspect.signature(transformation::Transformation.__init__)
+def test_transformation_transformation_constructor_args():
+    sig = inspect.signature(transformation_Transformation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_transformation::transformation_has_name():
-    assert hasattr(transformation::Transformation, "name")
+def test_transformation_transformation_has_name():
+    assert hasattr(transformation_Transformation, "name")
     descriptor = None
-    for klass in transformation::Transformation.__mro__:
+    for klass in transformation_Transformation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1094,16 +1094,16 @@ def test_transformation::transformation_has_name():
 
 
 
-def test_transformation::edatatype_is_not_abstract():
-    assert not inspect.isabstract(transformation::EDataType)
+def test_transformation_edatatype_is_not_abstract():
+    assert not inspect.isabstract(transformation_EDataType)
 
 
-def test_transformation::edatatype_constructor_exists():
-    assert callable(transformation::EDataType.__init__)
+def test_transformation_edatatype_constructor_exists():
+    assert callable(transformation_EDataType.__init__)
 
 
-def test_transformation::edatatype_constructor_args():
-    sig = inspect.signature(transformation::EDataType.__init__)
+def test_transformation_edatatype_constructor_args():
+    sig = inspect.signature(transformation_EDataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1122,23 +1122,23 @@ def test_abstractmapping_constructor_args():
 
 
 
-def test_transformation::classmapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::ClassMapping)
+def test_transformation_classmapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_ClassMapping)
 
 
-def test_transformation::classmapping_constructor_exists():
-    assert callable(transformation::ClassMapping.__init__)
+def test_transformation_classmapping_constructor_exists():
+    assert callable(transformation_ClassMapping.__init__)
 
 
-def test_transformation::classmapping_constructor_args():
-    sig = inspect.signature(transformation::ClassMapping.__init__)
+def test_transformation_classmapping_constructor_args():
+    sig = inspect.signature(transformation_ClassMapping.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_transformation::classmapping_has_default():
-    assert hasattr(transformation::ClassMapping, "default")
+def test_transformation_classmapping_has_default():
+    assert hasattr(transformation_ClassMapping, "default")
     descriptor = None
-    for klass in transformation::ClassMapping.__mro__:
+    for klass in transformation_ClassMapping.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -1146,16 +1146,16 @@ def test_transformation::classmapping_has_default():
 
 
 
-def test_transformation::datatypemapping_is_not_abstract():
-    assert not inspect.isabstract(transformation::DataTypeMapping)
+def test_transformation_datatypemapping_is_not_abstract():
+    assert not inspect.isabstract(transformation_DataTypeMapping)
 
 
-def test_transformation::datatypemapping_constructor_exists():
-    assert callable(transformation::DataTypeMapping.__init__)
+def test_transformation_datatypemapping_constructor_exists():
+    assert callable(transformation_DataTypeMapping.__init__)
 
 
-def test_transformation::datatypemapping_constructor_args():
-    sig = inspect.signature(transformation::DataTypeMapping.__init__)
+def test_transformation_datatypemapping_constructor_args():
+    sig = inspect.signature(transformation_DataTypeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1174,30 +1174,30 @@ def test_explicitmetamodel_constructor_args():
 
 
 
-def test_transformation::targetmetamodel_is_not_abstract():
-    assert not inspect.isabstract(transformation::TargetMetamodel)
+def test_transformation_targetmetamodel_is_not_abstract():
+    assert not inspect.isabstract(transformation_TargetMetamodel)
 
 
-def test_transformation::targetmetamodel_constructor_exists():
-    assert callable(transformation::TargetMetamodel.__init__)
+def test_transformation_targetmetamodel_constructor_exists():
+    assert callable(transformation_TargetMetamodel.__init__)
 
 
-def test_transformation::targetmetamodel_constructor_args():
-    sig = inspect.signature(transformation::TargetMetamodel.__init__)
+def test_transformation_targetmetamodel_constructor_args():
+    sig = inspect.signature(transformation_TargetMetamodel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transformation::sourcemetamodel_is_not_abstract():
-    assert not inspect.isabstract(transformation::SourceMetamodel)
+def test_transformation_sourcemetamodel_is_not_abstract():
+    assert not inspect.isabstract(transformation_SourceMetamodel)
 
 
-def test_transformation::sourcemetamodel_constructor_exists():
-    assert callable(transformation::SourceMetamodel.__init__)
+def test_transformation_sourcemetamodel_constructor_exists():
+    assert callable(transformation_SourceMetamodel.__init__)
 
 
-def test_transformation::sourcemetamodel_constructor_args():
-    sig = inspect.signature(transformation::SourceMetamodel.__init__)
+def test_transformation_sourcemetamodel_constructor_args():
+    sig = inspect.signature(transformation_SourceMetamodel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1216,23 +1216,23 @@ def test_metamodeldeclaration_constructor_args():
 
 
 
-def test_transformation::extentmetamodel_is_not_abstract():
-    assert not inspect.isabstract(transformation::ExtentMetamodel)
+def test_transformation_extentmetamodel_is_not_abstract():
+    assert not inspect.isabstract(transformation_ExtentMetamodel)
 
 
-def test_transformation::extentmetamodel_constructor_exists():
-    assert callable(transformation::ExtentMetamodel.__init__)
+def test_transformation_extentmetamodel_constructor_exists():
+    assert callable(transformation_ExtentMetamodel.__init__)
 
 
-def test_transformation::extentmetamodel_constructor_args():
-    sig = inspect.signature(transformation::ExtentMetamodel.__init__)
+def test_transformation_extentmetamodel_constructor_args():
+    sig = inspect.signature(transformation_ExtentMetamodel.__init__)
     params = list(sig.parameters.keys())
     assert "generated" in params, "Missing parameter 'generated'"
 
-def test_transformation::extentmetamodel_has_generated():
-    assert hasattr(transformation::ExtentMetamodel, "generated")
+def test_transformation_extentmetamodel_has_generated():
+    assert hasattr(transformation_ExtentMetamodel, "generated")
     descriptor = None
-    for klass in transformation::ExtentMetamodel.__mro__:
+    for klass in transformation_ExtentMetamodel.__mro__:
         if "generated" in klass.__dict__:
             descriptor = klass.__dict__["generated"]
             break
@@ -1240,23 +1240,23 @@ def test_transformation::extentmetamodel_has_generated():
 
 
 
-def test_transformation::explicitmetamodel_is_not_abstract():
-    assert not inspect.isabstract(transformation::ExplicitMetamodel)
+def test_transformation_explicitmetamodel_is_not_abstract():
+    assert not inspect.isabstract(transformation_ExplicitMetamodel)
 
 
-def test_transformation::explicitmetamodel_constructor_exists():
-    assert callable(transformation::ExplicitMetamodel.__init__)
+def test_transformation_explicitmetamodel_constructor_exists():
+    assert callable(transformation_ExplicitMetamodel.__init__)
 
 
-def test_transformation::explicitmetamodel_constructor_args():
-    sig = inspect.signature(transformation::ExplicitMetamodel.__init__)
+def test_transformation_explicitmetamodel_constructor_args():
+    sig = inspect.signature(transformation_ExplicitMetamodel.__init__)
     params = list(sig.parameters.keys())
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_transformation::explicitmetamodel_has_alias():
-    assert hasattr(transformation::ExplicitMetamodel, "alias")
+def test_transformation_explicitmetamodel_has_alias():
+    assert hasattr(transformation_ExplicitMetamodel, "alias")
     descriptor = None
-    for klass in transformation::ExplicitMetamodel.__mro__:
+    for klass in transformation_ExplicitMetamodel.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -1274,540 +1274,519 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-transformation::EEnumLiteral_strategy = st.builds(
-    transformation::EEnumLiteral,
+transformation_EEnumLiteral_strategy = st.builds(
+    transformation_EEnumLiteral,
 )
-transformation::EClassifier_strategy = st.builds(
-    transformation::EClassifier,
+transformation_EClassifier_strategy = st.builds(
+    transformation_EClassifier,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-transformation::Minus_strategy = st.builds(
-    transformation::Minus,
+transformation_Minus_strategy = st.builds(
+    transformation_Minus,
 )
-transformation::Negation_strategy = st.builds(
-    transformation::Negation,
+transformation_Negation_strategy = st.builds(
+    transformation_Negation,
 )
 ArithmeticExpression_strategy = st.builds(
     ArithmeticExpression,
 )
-transformation::Multiplication_strategy = st.builds(
-    transformation::Multiplication,
+transformation_Subtraction_strategy = st.builds(
+    transformation_Subtraction,
 )
-transformation::Division_strategy = st.builds(
-    transformation::Division,
+transformation_Multiplication_strategy = st.builds(
+    transformation_Multiplication,
 )
-transformation::Subtraction_strategy = st.builds(
-    transformation::Subtraction,
+transformation_Division_strategy = st.builds(
+    transformation_Division,
 )
-transformation::Addition_strategy = st.builds(
-    transformation::Addition,
+transformation_Addition_strategy = st.builds(
+    transformation_Addition,
 )
 RelationalExpression_strategy = st.builds(
     RelationalExpression,
 )
-transformation::GreaterOrEqual_strategy = st.builds(
-    transformation::GreaterOrEqual,
+transformation_Greater_strategy = st.builds(
+    transformation_Greater,
 )
-transformation::Greater_strategy = st.builds(
-    transformation::Greater,
+transformation_GreaterOrEqual_strategy = st.builds(
+    transformation_GreaterOrEqual,
 )
-transformation::LessOrEqual_strategy = st.builds(
-    transformation::LessOrEqual,
+transformation_LessOrEqual_strategy = st.builds(
+    transformation_LessOrEqual,
 )
-transformation::Less_strategy = st.builds(
-    transformation::Less,
+transformation_Less_strategy = st.builds(
+    transformation_Less,
 )
 EqualityExpression_strategy = st.builds(
     EqualityExpression,
 )
-transformation::Different_strategy = st.builds(
-    transformation::Different,
+transformation_Different_strategy = st.builds(
+    transformation_Different,
 )
-transformation::Equal_strategy = st.builds(
-    transformation::Equal,
+transformation_Equal_strategy = st.builds(
+    transformation_Equal,
 )
 LogicalExpression_strategy = st.builds(
     LogicalExpression,
 )
-transformation::And_strategy = st.builds(
-    transformation::And,
+transformation_And_strategy = st.builds(
+    transformation_And,
 )
-transformation::Or_strategy = st.builds(
-    transformation::Or,
+transformation_Or_strategy = st.builds(
+    transformation_Or,
 )
-transformation::ETypedElement_strategy = st.builds(
-    transformation::ETypedElement,
+transformation_ETypedElement_strategy = st.builds(
+    transformation_ETypedElement,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-transformation::EnumLiteral_strategy = st.builds(
-    transformation::EnumLiteral,
-)
-transformation::UnaryExpression_strategy = st.builds(
-    transformation::UnaryExpression,
-)
-transformation::BooleanLiteral_strategy = st.builds(
-    transformation::BooleanLiteral,
-    value=
-        st.booleans()
-)
-transformation::Source_strategy = st.builds(
-    transformation::Source,
-)
-transformation::FeatureAccess_strategy = st.builds(
-    transformation::FeatureAccess,
+transformation_FeatureAccess_strategy = st.builds(
+    transformation_FeatureAccess,
     spreading=
         st.booleans(),
     nullable=
         st.booleans()
 )
-transformation::TypeOfExpression_strategy = st.builds(
-    transformation::TypeOfExpression,
-)
-transformation::Let_strategy = st.builds(
-    transformation::Let,
-)
-transformation::VariableUse_strategy = st.builds(
-    transformation::VariableUse,
-)
-transformation::StringLiteral_strategy = st.builds(
-    transformation::StringLiteral,
-    value=
-        safe_text
-)
-transformation::IntegerLiteral_strategy = st.builds(
-    transformation::IntegerLiteral,
-    value=
-        st.integers()
-)
-transformation::Lambda_strategy = st.builds(
-    transformation::Lambda,
-)
-transformation::ClassLiteral_strategy = st.builds(
-    transformation::ClassLiteral,
-)
-transformation::Map_strategy = st.builds(
-    transformation::Map,
-)
-transformation::Invocation_strategy = st.builds(
-    transformation::Invocation,
-)
-transformation::RealLiteral_strategy = st.builds(
-    transformation::RealLiteral,
+transformation_RealLiteral_strategy = st.builds(
+    transformation_RealLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-transformation::ExtentExpression_strategy = st.builds(
-    transformation::ExtentExpression,
+transformation_StringLiteral_strategy = st.builds(
+    transformation_StringLiteral,
+    value=
+        safe_text
 )
-transformation::If_strategy = st.builds(
-    transformation::If,
+transformation_ExtentExpression_strategy = st.builds(
+    transformation_ExtentExpression,
 )
-transformation::VariableInitialization_strategy = st.builds(
-    transformation::VariableInitialization,
+transformation_UnaryExpression_strategy = st.builds(
+    transformation_UnaryExpression,
 )
-transformation::VariableDefinition_strategy = st.builds(
-    transformation::VariableDefinition,
+transformation_IntegerLiteral_strategy = st.builds(
+    transformation_IntegerLiteral,
+    value=
+        st.integers()
+)
+transformation_Map_strategy = st.builds(
+    transformation_Map,
+)
+transformation_BooleanLiteral_strategy = st.builds(
+    transformation_BooleanLiteral,
+    value=
+        st.booleans()
+)
+transformation_Invocation_strategy = st.builds(
+    transformation_Invocation,
+)
+transformation_Source_strategy = st.builds(
+    transformation_Source,
+)
+transformation_Lambda_strategy = st.builds(
+    transformation_Lambda,
+)
+transformation_Let_strategy = st.builds(
+    transformation_Let,
+)
+transformation_ClassLiteral_strategy = st.builds(
+    transformation_ClassLiteral,
+)
+transformation_EnumLiteral_strategy = st.builds(
+    transformation_EnumLiteral,
+)
+transformation_VariableUse_strategy = st.builds(
+    transformation_VariableUse,
+)
+transformation_TypeOfExpression_strategy = st.builds(
+    transformation_TypeOfExpression,
+)
+transformation_If_strategy = st.builds(
+    transformation_If,
+)
+transformation_VariableInitialization_strategy = st.builds(
+    transformation_VariableInitialization,
+)
+transformation_VariableDefinition_strategy = st.builds(
+    transformation_VariableDefinition,
     name=
         safe_text
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-transformation::ArithmeticExpression_strategy = st.builds(
-    transformation::ArithmeticExpression,
+transformation_LogicalExpression_strategy = st.builds(
+    transformation_LogicalExpression,
 )
-transformation::EqualityExpression_strategy = st.builds(
-    transformation::EqualityExpression,
+transformation_ArithmeticExpression_strategy = st.builds(
+    transformation_ArithmeticExpression,
 )
-transformation::LogicalExpression_strategy = st.builds(
-    transformation::LogicalExpression,
+transformation_RelationalExpression_strategy = st.builds(
+    transformation_RelationalExpression,
 )
-transformation::RelationalExpression_strategy = st.builds(
-    transformation::RelationalExpression,
+transformation_EqualityExpression_strategy = st.builds(
+    transformation_EqualityExpression,
 )
-transformation::CoalescingExpression_strategy = st.builds(
-    transformation::CoalescingExpression,
+transformation_CoalescingExpression_strategy = st.builds(
+    transformation_CoalescingExpression,
 )
-transformation::BinaryExpression_strategy = st.builds(
-    transformation::BinaryExpression,
+transformation_BinaryExpression_strategy = st.builds(
+    transformation_BinaryExpression,
 )
-transformation::ConditionalExpression_strategy = st.builds(
-    transformation::ConditionalExpression,
+transformation_ConditionalExpression_strategy = st.builds(
+    transformation_ConditionalExpression,
 )
 ContentMapping_strategy = st.builds(
     ContentMapping,
 )
-transformation::ConditionalMapping_strategy = st.builds(
-    transformation::ConditionalMapping,
+transformation_ConditionalMapping_strategy = st.builds(
+    transformation_ConditionalMapping,
 )
-transformation::CompositeMapping_strategy = st.builds(
-    transformation::CompositeMapping,
+transformation_CompositeMapping_strategy = st.builds(
+    transformation_CompositeMapping,
 )
-transformation::EClass_strategy = st.builds(
-    transformation::EClass,
+transformation_EClass_strategy = st.builds(
+    transformation_EClass,
 )
-transformation::ContentMapping_strategy = st.builds(
-    transformation::ContentMapping,
+transformation_ContentMapping_strategy = st.builds(
+    transformation_ContentMapping,
 )
-transformation::EStructuralFeature_strategy = st.builds(
-    transformation::EStructuralFeature,
+transformation_EStructuralFeature_strategy = st.builds(
+    transformation_EStructuralFeature,
 )
-transformation::FeatureMapping_strategy = st.builds(
-    transformation::FeatureMapping,
+transformation_FeatureMapping_strategy = st.builds(
+    transformation_FeatureMapping,
 )
-transformation::ResultMapping_strategy = st.builds(
-    transformation::ResultMapping,
+transformation_ResultMapping_strategy = st.builds(
+    transformation_ResultMapping,
 )
-transformation::Expression_strategy = st.builds(
-    transformation::Expression,
+transformation_Expression_strategy = st.builds(
+    transformation_Expression,
 )
 CompositeMapping_strategy = st.builds(
     CompositeMapping,
 )
-transformation::WhenClause_strategy = st.builds(
-    transformation::WhenClause,
+transformation_WhenClause_strategy = st.builds(
+    transformation_WhenClause,
 )
-transformation::OtherwiseClause_strategy = st.builds(
-    transformation::OtherwiseClause,
+transformation_OtherwiseClause_strategy = st.builds(
+    transformation_OtherwiseClause,
 )
-transformation::EPackage_strategy = st.builds(
-    transformation::EPackage,
+transformation_EPackage_strategy = st.builds(
+    transformation_EPackage,
 )
-transformation::AbstractMapping_strategy = st.builds(
-    transformation::AbstractMapping,
+transformation_AbstractMapping_strategy = st.builds(
+    transformation_AbstractMapping,
 )
-transformation::MetamodelDeclaration_strategy = st.builds(
-    transformation::MetamodelDeclaration,
+transformation_MetamodelDeclaration_strategy = st.builds(
+    transformation_MetamodelDeclaration,
 )
-transformation::Transformation_strategy = st.builds(
-    transformation::Transformation,
+transformation_Transformation_strategy = st.builds(
+    transformation_Transformation,
     name=
         safe_text
 )
-transformation::EDataType_strategy = st.builds(
-    transformation::EDataType,
+transformation_EDataType_strategy = st.builds(
+    transformation_EDataType,
 )
 AbstractMapping_strategy = st.builds(
     AbstractMapping,
 )
-transformation::ClassMapping_strategy = st.builds(
-    transformation::ClassMapping,
+transformation_ClassMapping_strategy = st.builds(
+    transformation_ClassMapping,
     default=
         st.booleans()
 )
-transformation::DataTypeMapping_strategy = st.builds(
-    transformation::DataTypeMapping,
+transformation_DataTypeMapping_strategy = st.builds(
+    transformation_DataTypeMapping,
 )
 ExplicitMetamodel_strategy = st.builds(
     ExplicitMetamodel,
 )
-transformation::TargetMetamodel_strategy = st.builds(
-    transformation::TargetMetamodel,
+transformation_TargetMetamodel_strategy = st.builds(
+    transformation_TargetMetamodel,
 )
-transformation::SourceMetamodel_strategy = st.builds(
-    transformation::SourceMetamodel,
+transformation_SourceMetamodel_strategy = st.builds(
+    transformation_SourceMetamodel,
 )
 MetamodelDeclaration_strategy = st.builds(
     MetamodelDeclaration,
 )
-transformation::ExtentMetamodel_strategy = st.builds(
-    transformation::ExtentMetamodel,
+transformation_ExtentMetamodel_strategy = st.builds(
+    transformation_ExtentMetamodel,
     generated=
         st.booleans()
 )
-transformation::ExplicitMetamodel_strategy = st.builds(
-    transformation::ExplicitMetamodel,
+transformation_ExplicitMetamodel_strategy = st.builds(
+    transformation_ExplicitMetamodel,
     alias=
         safe_text
 )
 
-@given(instance=transformation::EEnumLiteral_strategy)
+@given(instance=transformation_EEnumLiteral_strategy)
 @settings(max_examples=50)
-def test_transformation::eenumliteral_instantiation(instance):
-    assert isinstance(instance, transformation::EEnumLiteral)
+def test_transformation_eenumliteral_instantiation(instance):
+    assert isinstance(instance, transformation_EEnumLiteral)
 
-@given(instance=transformation::EClassifier_strategy)
+@given(instance=transformation_EClassifier_strategy)
 @settings(max_examples=50)
-def test_transformation::eclassifier_instantiation(instance):
-    assert isinstance(instance, transformation::EClassifier)
+def test_transformation_eclassifier_instantiation(instance):
+    assert isinstance(instance, transformation_EClassifier)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=transformation::Minus_strategy)
+@given(instance=transformation_Minus_strategy)
 @settings(max_examples=50)
-def test_transformation::minus_instantiation(instance):
-    assert isinstance(instance, transformation::Minus)
+def test_transformation_minus_instantiation(instance):
+    assert isinstance(instance, transformation_Minus)
 
-@given(instance=transformation::Negation_strategy)
+@given(instance=transformation_Negation_strategy)
 @settings(max_examples=50)
-def test_transformation::negation_instantiation(instance):
-    assert isinstance(instance, transformation::Negation)
+def test_transformation_negation_instantiation(instance):
+    assert isinstance(instance, transformation_Negation)
 
 @given(instance=ArithmeticExpression_strategy)
 @settings(max_examples=50)
 def test_arithmeticexpression_instantiation(instance):
     assert isinstance(instance, ArithmeticExpression)
 
-@given(instance=transformation::Multiplication_strategy)
+@given(instance=transformation_Subtraction_strategy)
 @settings(max_examples=50)
-def test_transformation::multiplication_instantiation(instance):
-    assert isinstance(instance, transformation::Multiplication)
+def test_transformation_subtraction_instantiation(instance):
+    assert isinstance(instance, transformation_Subtraction)
 
-@given(instance=transformation::Division_strategy)
+@given(instance=transformation_Multiplication_strategy)
 @settings(max_examples=50)
-def test_transformation::division_instantiation(instance):
-    assert isinstance(instance, transformation::Division)
+def test_transformation_multiplication_instantiation(instance):
+    assert isinstance(instance, transformation_Multiplication)
 
-@given(instance=transformation::Subtraction_strategy)
+@given(instance=transformation_Division_strategy)
 @settings(max_examples=50)
-def test_transformation::subtraction_instantiation(instance):
-    assert isinstance(instance, transformation::Subtraction)
+def test_transformation_division_instantiation(instance):
+    assert isinstance(instance, transformation_Division)
 
-@given(instance=transformation::Addition_strategy)
+@given(instance=transformation_Addition_strategy)
 @settings(max_examples=50)
-def test_transformation::addition_instantiation(instance):
-    assert isinstance(instance, transformation::Addition)
+def test_transformation_addition_instantiation(instance):
+    assert isinstance(instance, transformation_Addition)
 
 @given(instance=RelationalExpression_strategy)
 @settings(max_examples=50)
 def test_relationalexpression_instantiation(instance):
     assert isinstance(instance, RelationalExpression)
 
-@given(instance=transformation::GreaterOrEqual_strategy)
+@given(instance=transformation_Greater_strategy)
 @settings(max_examples=50)
-def test_transformation::greaterorequal_instantiation(instance):
-    assert isinstance(instance, transformation::GreaterOrEqual)
+def test_transformation_greater_instantiation(instance):
+    assert isinstance(instance, transformation_Greater)
 
-@given(instance=transformation::Greater_strategy)
+@given(instance=transformation_GreaterOrEqual_strategy)
 @settings(max_examples=50)
-def test_transformation::greater_instantiation(instance):
-    assert isinstance(instance, transformation::Greater)
+def test_transformation_greaterorequal_instantiation(instance):
+    assert isinstance(instance, transformation_GreaterOrEqual)
 
-@given(instance=transformation::LessOrEqual_strategy)
+@given(instance=transformation_LessOrEqual_strategy)
 @settings(max_examples=50)
-def test_transformation::lessorequal_instantiation(instance):
-    assert isinstance(instance, transformation::LessOrEqual)
+def test_transformation_lessorequal_instantiation(instance):
+    assert isinstance(instance, transformation_LessOrEqual)
 
-@given(instance=transformation::Less_strategy)
+@given(instance=transformation_Less_strategy)
 @settings(max_examples=50)
-def test_transformation::less_instantiation(instance):
-    assert isinstance(instance, transformation::Less)
+def test_transformation_less_instantiation(instance):
+    assert isinstance(instance, transformation_Less)
 
 @given(instance=EqualityExpression_strategy)
 @settings(max_examples=50)
 def test_equalityexpression_instantiation(instance):
     assert isinstance(instance, EqualityExpression)
 
-@given(instance=transformation::Different_strategy)
+@given(instance=transformation_Different_strategy)
 @settings(max_examples=50)
-def test_transformation::different_instantiation(instance):
-    assert isinstance(instance, transformation::Different)
+def test_transformation_different_instantiation(instance):
+    assert isinstance(instance, transformation_Different)
 
-@given(instance=transformation::Equal_strategy)
+@given(instance=transformation_Equal_strategy)
 @settings(max_examples=50)
-def test_transformation::equal_instantiation(instance):
-    assert isinstance(instance, transformation::Equal)
+def test_transformation_equal_instantiation(instance):
+    assert isinstance(instance, transformation_Equal)
 
 @given(instance=LogicalExpression_strategy)
 @settings(max_examples=50)
 def test_logicalexpression_instantiation(instance):
     assert isinstance(instance, LogicalExpression)
 
-@given(instance=transformation::And_strategy)
+@given(instance=transformation_And_strategy)
 @settings(max_examples=50)
-def test_transformation::and_instantiation(instance):
-    assert isinstance(instance, transformation::And)
+def test_transformation_and_instantiation(instance):
+    assert isinstance(instance, transformation_And)
 
-@given(instance=transformation::Or_strategy)
+@given(instance=transformation_Or_strategy)
 @settings(max_examples=50)
-def test_transformation::or_instantiation(instance):
-    assert isinstance(instance, transformation::Or)
+def test_transformation_or_instantiation(instance):
+    assert isinstance(instance, transformation_Or)
 
-@given(instance=transformation::ETypedElement_strategy)
+@given(instance=transformation_ETypedElement_strategy)
 @settings(max_examples=50)
-def test_transformation::etypedelement_instantiation(instance):
-    assert isinstance(instance, transformation::ETypedElement)
+def test_transformation_etypedelement_instantiation(instance):
+    assert isinstance(instance, transformation_ETypedElement)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=transformation::EnumLiteral_strategy)
+@given(instance=transformation_FeatureAccess_strategy)
 @settings(max_examples=50)
-def test_transformation::enumliteral_instantiation(instance):
-    assert isinstance(instance, transformation::EnumLiteral)
-
-@given(instance=transformation::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_transformation::unaryexpression_instantiation(instance):
-    assert isinstance(instance, transformation::UnaryExpression)
-
-@given(instance=transformation::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_transformation::booleanliteral_instantiation(instance):
-    assert isinstance(instance, transformation::BooleanLiteral)
-
-@given(instance=transformation::BooleanLiteral_strategy)
-def test_transformation::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_transformation_featureaccess_instantiation(instance):
+    assert isinstance(instance, transformation_FeatureAccess)
 
 
-@given(instance=transformation::BooleanLiteral_strategy)
-def test_transformation::booleanliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=transformation::Source_strategy)
-@settings(max_examples=50)
-def test_transformation::source_instantiation(instance):
-    assert isinstance(instance, transformation::Source)
-
-@given(instance=transformation::FeatureAccess_strategy)
-@settings(max_examples=50)
-def test_transformation::featureaccess_instantiation(instance):
-    assert isinstance(instance, transformation::FeatureAccess)
-
-@given(instance=transformation::FeatureAccess_strategy)
-def test_transformation::featureaccess_spreading_type(instance):
-    assert isinstance(instance.spreading, bool)
-
-
-@given(instance=transformation::FeatureAccess_strategy)
-def test_transformation::featureaccess_spreading_setter(instance):
+@given(instance=transformation_FeatureAccess_strategy)
+def test_transformation_featureaccess_spreading_setter(instance):
     original = instance.spreading
     instance.spreading = original
     assert instance.spreading == original
 
-@given(instance=transformation::FeatureAccess_strategy)
-def test_transformation::featureaccess_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
 
 
-@given(instance=transformation::FeatureAccess_strategy)
-def test_transformation::featureaccess_nullable_setter(instance):
+@given(instance=transformation_FeatureAccess_strategy)
+def test_transformation_featureaccess_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=transformation::TypeOfExpression_strategy)
+@given(instance=transformation_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_transformation::typeofexpression_instantiation(instance):
-    assert isinstance(instance, transformation::TypeOfExpression)
-
-@given(instance=transformation::Let_strategy)
-@settings(max_examples=50)
-def test_transformation::let_instantiation(instance):
-    assert isinstance(instance, transformation::Let)
-
-@given(instance=transformation::VariableUse_strategy)
-@settings(max_examples=50)
-def test_transformation::variableuse_instantiation(instance):
-    assert isinstance(instance, transformation::VariableUse)
-
-@given(instance=transformation::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_transformation::stringliteral_instantiation(instance):
-    assert isinstance(instance, transformation::StringLiteral)
-
-@given(instance=transformation::StringLiteral_strategy)
-def test_transformation::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_transformation_realliteral_instantiation(instance):
+    assert isinstance(instance, transformation_RealLiteral)
 
 
-@given(instance=transformation::StringLiteral_strategy)
-def test_transformation::stringliteral_value_setter(instance):
+
+@given(instance=transformation_RealLiteral_strategy)
+def test_transformation_realliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=transformation::IntegerLiteral_strategy)
+@given(instance=transformation_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_transformation::integerliteral_instantiation(instance):
-    assert isinstance(instance, transformation::IntegerLiteral)
-
-@given(instance=transformation::IntegerLiteral_strategy)
-def test_transformation::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_transformation_stringliteral_instantiation(instance):
+    assert isinstance(instance, transformation_StringLiteral)
 
 
-@given(instance=transformation::IntegerLiteral_strategy)
-def test_transformation::integerliteral_value_setter(instance):
+
+@given(instance=transformation_StringLiteral_strategy)
+def test_transformation_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=transformation::Lambda_strategy)
+@given(instance=transformation_ExtentExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::lambda_instantiation(instance):
-    assert isinstance(instance, transformation::Lambda)
+def test_transformation_extentexpression_instantiation(instance):
+    assert isinstance(instance, transformation_ExtentExpression)
 
-@given(instance=transformation::ClassLiteral_strategy)
+@given(instance=transformation_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::classliteral_instantiation(instance):
-    assert isinstance(instance, transformation::ClassLiteral)
+def test_transformation_unaryexpression_instantiation(instance):
+    assert isinstance(instance, transformation_UnaryExpression)
 
-@given(instance=transformation::Map_strategy)
+@given(instance=transformation_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_transformation::map_instantiation(instance):
-    assert isinstance(instance, transformation::Map)
-
-@given(instance=transformation::Invocation_strategy)
-@settings(max_examples=50)
-def test_transformation::invocation_instantiation(instance):
-    assert isinstance(instance, transformation::Invocation)
-
-@given(instance=transformation::RealLiteral_strategy)
-@settings(max_examples=50)
-def test_transformation::realliteral_instantiation(instance):
-    assert isinstance(instance, transformation::RealLiteral)
-
-@given(instance=transformation::RealLiteral_strategy)
-def test_transformation::realliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_transformation_integerliteral_instantiation(instance):
+    assert isinstance(instance, transformation_IntegerLiteral)
 
 
-@given(instance=transformation::RealLiteral_strategy)
-def test_transformation::realliteral_value_setter(instance):
+
+@given(instance=transformation_IntegerLiteral_strategy)
+def test_transformation_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=transformation::ExtentExpression_strategy)
+@given(instance=transformation_Map_strategy)
 @settings(max_examples=50)
-def test_transformation::extentexpression_instantiation(instance):
-    assert isinstance(instance, transformation::ExtentExpression)
+def test_transformation_map_instantiation(instance):
+    assert isinstance(instance, transformation_Map)
 
-@given(instance=transformation::If_strategy)
+@given(instance=transformation_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_transformation::if_instantiation(instance):
-    assert isinstance(instance, transformation::If)
+def test_transformation_booleanliteral_instantiation(instance):
+    assert isinstance(instance, transformation_BooleanLiteral)
 
-@given(instance=transformation::VariableInitialization_strategy)
+
+
+@given(instance=transformation_BooleanLiteral_strategy)
+def test_transformation_booleanliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=transformation_Invocation_strategy)
 @settings(max_examples=50)
-def test_transformation::variableinitialization_instantiation(instance):
-    assert isinstance(instance, transformation::VariableInitialization)
+def test_transformation_invocation_instantiation(instance):
+    assert isinstance(instance, transformation_Invocation)
 
-@given(instance=transformation::VariableDefinition_strategy)
+@given(instance=transformation_Source_strategy)
 @settings(max_examples=50)
-def test_transformation::variabledefinition_instantiation(instance):
-    assert isinstance(instance, transformation::VariableDefinition)
+def test_transformation_source_instantiation(instance):
+    assert isinstance(instance, transformation_Source)
 
-@given(instance=transformation::VariableDefinition_strategy)
-def test_transformation::variabledefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=transformation_Lambda_strategy)
+@settings(max_examples=50)
+def test_transformation_lambda_instantiation(instance):
+    assert isinstance(instance, transformation_Lambda)
+
+@given(instance=transformation_Let_strategy)
+@settings(max_examples=50)
+def test_transformation_let_instantiation(instance):
+    assert isinstance(instance, transformation_Let)
+
+@given(instance=transformation_ClassLiteral_strategy)
+@settings(max_examples=50)
+def test_transformation_classliteral_instantiation(instance):
+    assert isinstance(instance, transformation_ClassLiteral)
+
+@given(instance=transformation_EnumLiteral_strategy)
+@settings(max_examples=50)
+def test_transformation_enumliteral_instantiation(instance):
+    assert isinstance(instance, transformation_EnumLiteral)
+
+@given(instance=transformation_VariableUse_strategy)
+@settings(max_examples=50)
+def test_transformation_variableuse_instantiation(instance):
+    assert isinstance(instance, transformation_VariableUse)
+
+@given(instance=transformation_TypeOfExpression_strategy)
+@settings(max_examples=50)
+def test_transformation_typeofexpression_instantiation(instance):
+    assert isinstance(instance, transformation_TypeOfExpression)
+
+@given(instance=transformation_If_strategy)
+@settings(max_examples=50)
+def test_transformation_if_instantiation(instance):
+    assert isinstance(instance, transformation_If)
+
+@given(instance=transformation_VariableInitialization_strategy)
+@settings(max_examples=50)
+def test_transformation_variableinitialization_instantiation(instance):
+    assert isinstance(instance, transformation_VariableInitialization)
+
+@given(instance=transformation_VariableDefinition_strategy)
+@settings(max_examples=50)
+def test_transformation_variabledefinition_instantiation(instance):
+    assert isinstance(instance, transformation_VariableDefinition)
 
 
-@given(instance=transformation::VariableDefinition_strategy)
-def test_transformation::variabledefinition_name_setter(instance):
+
+@given(instance=transformation_VariableDefinition_strategy)
+def test_transformation_variabledefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1817,211 +1796,199 @@ def test_transformation::variabledefinition_name_setter(instance):
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=transformation::ArithmeticExpression_strategy)
+@given(instance=transformation_LogicalExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, transformation::ArithmeticExpression)
+def test_transformation_logicalexpression_instantiation(instance):
+    assert isinstance(instance, transformation_LogicalExpression)
 
-@given(instance=transformation::EqualityExpression_strategy)
+@given(instance=transformation_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::equalityexpression_instantiation(instance):
-    assert isinstance(instance, transformation::EqualityExpression)
+def test_transformation_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, transformation_ArithmeticExpression)
 
-@given(instance=transformation::LogicalExpression_strategy)
+@given(instance=transformation_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::logicalexpression_instantiation(instance):
-    assert isinstance(instance, transformation::LogicalExpression)
+def test_transformation_relationalexpression_instantiation(instance):
+    assert isinstance(instance, transformation_RelationalExpression)
 
-@given(instance=transformation::RelationalExpression_strategy)
+@given(instance=transformation_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::relationalexpression_instantiation(instance):
-    assert isinstance(instance, transformation::RelationalExpression)
+def test_transformation_equalityexpression_instantiation(instance):
+    assert isinstance(instance, transformation_EqualityExpression)
 
-@given(instance=transformation::CoalescingExpression_strategy)
+@given(instance=transformation_CoalescingExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::coalescingexpression_instantiation(instance):
-    assert isinstance(instance, transformation::CoalescingExpression)
+def test_transformation_coalescingexpression_instantiation(instance):
+    assert isinstance(instance, transformation_CoalescingExpression)
 
-@given(instance=transformation::BinaryExpression_strategy)
+@given(instance=transformation_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::binaryexpression_instantiation(instance):
-    assert isinstance(instance, transformation::BinaryExpression)
+def test_transformation_binaryexpression_instantiation(instance):
+    assert isinstance(instance, transformation_BinaryExpression)
 
-@given(instance=transformation::ConditionalExpression_strategy)
+@given(instance=transformation_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_transformation::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, transformation::ConditionalExpression)
+def test_transformation_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, transformation_ConditionalExpression)
 
 @given(instance=ContentMapping_strategy)
 @settings(max_examples=50)
 def test_contentmapping_instantiation(instance):
     assert isinstance(instance, ContentMapping)
 
-@given(instance=transformation::ConditionalMapping_strategy)
+@given(instance=transformation_ConditionalMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::conditionalmapping_instantiation(instance):
-    assert isinstance(instance, transformation::ConditionalMapping)
+def test_transformation_conditionalmapping_instantiation(instance):
+    assert isinstance(instance, transformation_ConditionalMapping)
 
-@given(instance=transformation::CompositeMapping_strategy)
+@given(instance=transformation_CompositeMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::compositemapping_instantiation(instance):
-    assert isinstance(instance, transformation::CompositeMapping)
+def test_transformation_compositemapping_instantiation(instance):
+    assert isinstance(instance, transformation_CompositeMapping)
 
-@given(instance=transformation::EClass_strategy)
+@given(instance=transformation_EClass_strategy)
 @settings(max_examples=50)
-def test_transformation::eclass_instantiation(instance):
-    assert isinstance(instance, transformation::EClass)
+def test_transformation_eclass_instantiation(instance):
+    assert isinstance(instance, transformation_EClass)
 
-@given(instance=transformation::ContentMapping_strategy)
+@given(instance=transformation_ContentMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::contentmapping_instantiation(instance):
-    assert isinstance(instance, transformation::ContentMapping)
+def test_transformation_contentmapping_instantiation(instance):
+    assert isinstance(instance, transformation_ContentMapping)
 
-@given(instance=transformation::EStructuralFeature_strategy)
+@given(instance=transformation_EStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_transformation::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, transformation::EStructuralFeature)
+def test_transformation_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, transformation_EStructuralFeature)
 
-@given(instance=transformation::FeatureMapping_strategy)
+@given(instance=transformation_FeatureMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::featuremapping_instantiation(instance):
-    assert isinstance(instance, transformation::FeatureMapping)
+def test_transformation_featuremapping_instantiation(instance):
+    assert isinstance(instance, transformation_FeatureMapping)
 
-@given(instance=transformation::ResultMapping_strategy)
+@given(instance=transformation_ResultMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::resultmapping_instantiation(instance):
-    assert isinstance(instance, transformation::ResultMapping)
+def test_transformation_resultmapping_instantiation(instance):
+    assert isinstance(instance, transformation_ResultMapping)
 
-@given(instance=transformation::Expression_strategy)
+@given(instance=transformation_Expression_strategy)
 @settings(max_examples=50)
-def test_transformation::expression_instantiation(instance):
-    assert isinstance(instance, transformation::Expression)
+def test_transformation_expression_instantiation(instance):
+    assert isinstance(instance, transformation_Expression)
 
 @given(instance=CompositeMapping_strategy)
 @settings(max_examples=50)
 def test_compositemapping_instantiation(instance):
     assert isinstance(instance, CompositeMapping)
 
-@given(instance=transformation::WhenClause_strategy)
+@given(instance=transformation_WhenClause_strategy)
 @settings(max_examples=50)
-def test_transformation::whenclause_instantiation(instance):
-    assert isinstance(instance, transformation::WhenClause)
+def test_transformation_whenclause_instantiation(instance):
+    assert isinstance(instance, transformation_WhenClause)
 
-@given(instance=transformation::OtherwiseClause_strategy)
+@given(instance=transformation_OtherwiseClause_strategy)
 @settings(max_examples=50)
-def test_transformation::otherwiseclause_instantiation(instance):
-    assert isinstance(instance, transformation::OtherwiseClause)
+def test_transformation_otherwiseclause_instantiation(instance):
+    assert isinstance(instance, transformation_OtherwiseClause)
 
-@given(instance=transformation::EPackage_strategy)
+@given(instance=transformation_EPackage_strategy)
 @settings(max_examples=50)
-def test_transformation::epackage_instantiation(instance):
-    assert isinstance(instance, transformation::EPackage)
+def test_transformation_epackage_instantiation(instance):
+    assert isinstance(instance, transformation_EPackage)
 
-@given(instance=transformation::AbstractMapping_strategy)
+@given(instance=transformation_AbstractMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::abstractmapping_instantiation(instance):
-    assert isinstance(instance, transformation::AbstractMapping)
+def test_transformation_abstractmapping_instantiation(instance):
+    assert isinstance(instance, transformation_AbstractMapping)
 
-@given(instance=transformation::MetamodelDeclaration_strategy)
+@given(instance=transformation_MetamodelDeclaration_strategy)
 @settings(max_examples=50)
-def test_transformation::metamodeldeclaration_instantiation(instance):
-    assert isinstance(instance, transformation::MetamodelDeclaration)
+def test_transformation_metamodeldeclaration_instantiation(instance):
+    assert isinstance(instance, transformation_MetamodelDeclaration)
 
-@given(instance=transformation::Transformation_strategy)
+@given(instance=transformation_Transformation_strategy)
 @settings(max_examples=50)
-def test_transformation::transformation_instantiation(instance):
-    assert isinstance(instance, transformation::Transformation)
-
-@given(instance=transformation::Transformation_strategy)
-def test_transformation::transformation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_transformation_transformation_instantiation(instance):
+    assert isinstance(instance, transformation_Transformation)
 
 
-@given(instance=transformation::Transformation_strategy)
-def test_transformation::transformation_name_setter(instance):
+
+@given(instance=transformation_Transformation_strategy)
+def test_transformation_transformation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=transformation::EDataType_strategy)
+@given(instance=transformation_EDataType_strategy)
 @settings(max_examples=50)
-def test_transformation::edatatype_instantiation(instance):
-    assert isinstance(instance, transformation::EDataType)
+def test_transformation_edatatype_instantiation(instance):
+    assert isinstance(instance, transformation_EDataType)
 
 @given(instance=AbstractMapping_strategy)
 @settings(max_examples=50)
 def test_abstractmapping_instantiation(instance):
     assert isinstance(instance, AbstractMapping)
 
-@given(instance=transformation::ClassMapping_strategy)
+@given(instance=transformation_ClassMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::classmapping_instantiation(instance):
-    assert isinstance(instance, transformation::ClassMapping)
-
-@given(instance=transformation::ClassMapping_strategy)
-def test_transformation::classmapping_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_transformation_classmapping_instantiation(instance):
+    assert isinstance(instance, transformation_ClassMapping)
 
 
-@given(instance=transformation::ClassMapping_strategy)
-def test_transformation::classmapping_default_setter(instance):
+
+@given(instance=transformation_ClassMapping_strategy)
+def test_transformation_classmapping_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=transformation::DataTypeMapping_strategy)
+@given(instance=transformation_DataTypeMapping_strategy)
 @settings(max_examples=50)
-def test_transformation::datatypemapping_instantiation(instance):
-    assert isinstance(instance, transformation::DataTypeMapping)
+def test_transformation_datatypemapping_instantiation(instance):
+    assert isinstance(instance, transformation_DataTypeMapping)
 
 @given(instance=ExplicitMetamodel_strategy)
 @settings(max_examples=50)
 def test_explicitmetamodel_instantiation(instance):
     assert isinstance(instance, ExplicitMetamodel)
 
-@given(instance=transformation::TargetMetamodel_strategy)
+@given(instance=transformation_TargetMetamodel_strategy)
 @settings(max_examples=50)
-def test_transformation::targetmetamodel_instantiation(instance):
-    assert isinstance(instance, transformation::TargetMetamodel)
+def test_transformation_targetmetamodel_instantiation(instance):
+    assert isinstance(instance, transformation_TargetMetamodel)
 
-@given(instance=transformation::SourceMetamodel_strategy)
+@given(instance=transformation_SourceMetamodel_strategy)
 @settings(max_examples=50)
-def test_transformation::sourcemetamodel_instantiation(instance):
-    assert isinstance(instance, transformation::SourceMetamodel)
+def test_transformation_sourcemetamodel_instantiation(instance):
+    assert isinstance(instance, transformation_SourceMetamodel)
 
 @given(instance=MetamodelDeclaration_strategy)
 @settings(max_examples=50)
 def test_metamodeldeclaration_instantiation(instance):
     assert isinstance(instance, MetamodelDeclaration)
 
-@given(instance=transformation::ExtentMetamodel_strategy)
+@given(instance=transformation_ExtentMetamodel_strategy)
 @settings(max_examples=50)
-def test_transformation::extentmetamodel_instantiation(instance):
-    assert isinstance(instance, transformation::ExtentMetamodel)
-
-@given(instance=transformation::ExtentMetamodel_strategy)
-def test_transformation::extentmetamodel_generated_type(instance):
-    assert isinstance(instance.generated, bool)
+def test_transformation_extentmetamodel_instantiation(instance):
+    assert isinstance(instance, transformation_ExtentMetamodel)
 
 
-@given(instance=transformation::ExtentMetamodel_strategy)
-def test_transformation::extentmetamodel_generated_setter(instance):
+
+@given(instance=transformation_ExtentMetamodel_strategy)
+def test_transformation_extentmetamodel_generated_setter(instance):
     original = instance.generated
     instance.generated = original
     assert instance.generated == original
 
-@given(instance=transformation::ExplicitMetamodel_strategy)
+@given(instance=transformation_ExplicitMetamodel_strategy)
 @settings(max_examples=50)
-def test_transformation::explicitmetamodel_instantiation(instance):
-    assert isinstance(instance, transformation::ExplicitMetamodel)
-
-@given(instance=transformation::ExplicitMetamodel_strategy)
-def test_transformation::explicitmetamodel_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_transformation_explicitmetamodel_instantiation(instance):
+    assert isinstance(instance, transformation_ExplicitMetamodel)
 
 
-@given(instance=transformation::ExplicitMetamodel_strategy)
-def test_transformation::explicitmetamodel_alias_setter(instance):
+
+@given(instance=transformation_ExplicitMetamodel_strategy)
+def test_transformation_explicitmetamodel_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original

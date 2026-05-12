@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testSuite::Test,
-    testSuite::Model,
+from python_code import (
+    testSuite_Test,
+    testSuite_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_testsuite::test_is_not_abstract():
-    assert not inspect.isabstract(testSuite::Test)
+def test_testsuite_test_is_not_abstract():
+    assert not inspect.isabstract(testSuite_Test)
 
 
-def test_testsuite::test_constructor_exists():
-    assert callable(testSuite::Test.__init__)
+def test_testsuite_test_constructor_exists():
+    assert callable(testSuite_Test.__init__)
 
 
-def test_testsuite::test_constructor_args():
-    sig = inspect.signature(testSuite::Test.__init__)
+def test_testsuite_test_constructor_args():
+    sig = inspect.signature(testSuite_Test.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testsuite::test_has_name():
-    assert hasattr(testSuite::Test, "name")
+def test_testsuite_test_has_name():
+    assert hasattr(testSuite_Test, "name")
     descriptor = None
-    for klass in testSuite::Test.__mro__:
+    for klass in testSuite_Test.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_testsuite::test_has_name():
 
 
 
-def test_testsuite::model_is_not_abstract():
-    assert not inspect.isabstract(testSuite::Model)
+def test_testsuite_model_is_not_abstract():
+    assert not inspect.isabstract(testSuite_Model)
 
 
-def test_testsuite::model_constructor_exists():
-    assert callable(testSuite::Model.__init__)
+def test_testsuite_model_constructor_exists():
+    assert callable(testSuite_Model.__init__)
 
 
-def test_testsuite::model_constructor_args():
-    sig = inspect.signature(testSuite::Model.__init__)
+def test_testsuite_model_constructor_args():
+    sig = inspect.signature(testSuite_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testSuite::Test_strategy = st.builds(
-    testSuite::Test,
+testSuite_Test_strategy = st.builds(
+    testSuite_Test,
     name=
         safe_text
 )
-testSuite::Model_strategy = st.builds(
-    testSuite::Model,
+testSuite_Model_strategy = st.builds(
+    testSuite_Model,
 )
 
-@given(instance=testSuite::Test_strategy)
+@given(instance=testSuite_Test_strategy)
 @settings(max_examples=50)
-def test_testsuite::test_instantiation(instance):
-    assert isinstance(instance, testSuite::Test)
-
-@given(instance=testSuite::Test_strategy)
-def test_testsuite::test_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_testsuite_test_instantiation(instance):
+    assert isinstance(instance, testSuite_Test)
 
 
-@given(instance=testSuite::Test_strategy)
-def test_testsuite::test_name_setter(instance):
+
+@given(instance=testSuite_Test_strategy)
+def test_testsuite_test_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=testSuite::Model_strategy)
+@given(instance=testSuite_Model_strategy)
 @settings(max_examples=50)
-def test_testsuite::model_instantiation(instance):
-    assert isinstance(instance, testSuite::Model)
+def test_testsuite_model_instantiation(instance):
+    assert isinstance(instance, testSuite_Model)

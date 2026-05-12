@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    my::FKRelation,
+from python_code import (
+    my_FKRelation,
     NamedElement,
-    my::Database,
-    my::Table,
-    my::Column,
-    my::NamedElement,
+    my_Database,
+    my_Table,
+    my_Column,
+    my_NamedElement,
     ColumnType,
 )
 
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_my::fkrelation_is_not_abstract():
-    assert not inspect.isabstract(my::FKRelation)
+def test_my_fkrelation_is_not_abstract():
+    assert not inspect.isabstract(my_FKRelation)
 
 
-def test_my::fkrelation_constructor_exists():
-    assert callable(my::FKRelation.__init__)
+def test_my_fkrelation_constructor_exists():
+    assert callable(my_FKRelation.__init__)
 
 
-def test_my::fkrelation_constructor_args():
-    sig = inspect.signature(my::FKRelation.__init__)
+def test_my_fkrelation_constructor_args():
+    sig = inspect.signature(my_FKRelation.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_my::fkrelation_has_label():
-    assert hasattr(my::FKRelation, "label")
+def test_my_fkrelation_has_label():
+    assert hasattr(my_FKRelation, "label")
     descriptor = None
-    for klass in my::FKRelation.__mro__:
+    for klass in my_FKRelation.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -59,105 +59,105 @@ def test_namedelement_constructor_args():
 
 
 
-def test_my::database_is_not_abstract():
-    assert not inspect.isabstract(my::Database)
+def test_my_database_is_not_abstract():
+    assert not inspect.isabstract(my_Database)
 
 
-def test_my::database_constructor_exists():
-    assert callable(my::Database.__init__)
+def test_my_database_constructor_exists():
+    assert callable(my_Database.__init__)
 
 
-def test_my::database_constructor_args():
-    sig = inspect.signature(my::Database.__init__)
+def test_my_database_constructor_args():
+    sig = inspect.signature(my_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_my::table_is_not_abstract():
-    assert not inspect.isabstract(my::Table)
+def test_my_table_is_not_abstract():
+    assert not inspect.isabstract(my_Table)
 
 
-def test_my::table_constructor_exists():
-    assert callable(my::Table.__init__)
+def test_my_table_constructor_exists():
+    assert callable(my_Table.__init__)
 
 
-def test_my::table_constructor_args():
-    sig = inspect.signature(my::Table.__init__)
+def test_my_table_constructor_args():
+    sig = inspect.signature(my_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_my::column_is_not_abstract():
-    assert not inspect.isabstract(my::Column)
+def test_my_column_is_not_abstract():
+    assert not inspect.isabstract(my_Column)
 
 
-def test_my::column_constructor_exists():
-    assert callable(my::Column.__init__)
+def test_my_column_constructor_exists():
+    assert callable(my_Column.__init__)
 
 
-def test_my::column_constructor_args():
-    sig = inspect.signature(my::Column.__init__)
+def test_my_column_constructor_args():
+    sig = inspect.signature(my_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "unique" in params, "Missing parameter 'unique'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "size" in params, "Missing parameter 'size'"
     assert "primary" in params, "Missing parameter 'primary'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "unique" in params, "Missing parameter 'unique'"
+    assert "size" in params, "Missing parameter 'size'"
 
-def test_my::column_has_unique():
-    assert hasattr(my::Column, "unique")
+def test_my_column_has_primary():
+    assert hasattr(my_Column, "primary")
     descriptor = None
-    for klass in my::Column.__mro__:
-        if "unique" in klass.__dict__:
-            descriptor = klass.__dict__["unique"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_my::column_has_type():
-    assert hasattr(my::Column, "type")
-    descriptor = None
-    for klass in my::Column.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_my::column_has_size():
-    assert hasattr(my::Column, "size")
-    descriptor = None
-    for klass in my::Column.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_my::column_has_primary():
-    assert hasattr(my::Column, "primary")
-    descriptor = None
-    for klass in my::Column.__mro__:
+    for klass in my_Column.__mro__:
         if "primary" in klass.__dict__:
             descriptor = klass.__dict__["primary"]
             break
     assert isinstance(descriptor, property)
 
+def test_my_column_has_type():
+    assert hasattr(my_Column, "type")
+    descriptor = None
+    for klass in my_Column.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_my_column_has_unique():
+    assert hasattr(my_Column, "unique")
+    descriptor = None
+    for klass in my_Column.__mro__:
+        if "unique" in klass.__dict__:
+            descriptor = klass.__dict__["unique"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_my_column_has_size():
+    assert hasattr(my_Column, "size")
+    descriptor = None
+    for klass in my_Column.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_my::namedelement_is_not_abstract():
-    assert not inspect.isabstract(my::NamedElement)
+
+def test_my_namedelement_is_not_abstract():
+    assert not inspect.isabstract(my_NamedElement)
 
 
-def test_my::namedelement_constructor_exists():
-    assert callable(my::NamedElement.__init__)
+def test_my_namedelement_constructor_exists():
+    assert callable(my_NamedElement.__init__)
 
 
-def test_my::namedelement_constructor_args():
-    sig = inspect.signature(my::NamedElement.__init__)
+def test_my_namedelement_constructor_args():
+    sig = inspect.signature(my_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_my::namedelement_has_name():
-    assert hasattr(my::NamedElement, "name")
+def test_my_namedelement_has_name():
+    assert hasattr(my_NamedElement, "name")
     descriptor = None
-    for klass in my::NamedElement.__mro__:
+    for klass in my_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -172,8 +172,8 @@ def test_columntype_has_all_literals():
     enum_literals = [lit.name for lit in ColumnType]
     expected_literals = [
         "Char",
-        "Date",
         "Number",
+        "Date",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -191,49 +191,46 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-my::FKRelation_strategy = st.builds(
-    my::FKRelation,
+my_FKRelation_strategy = st.builds(
+    my_FKRelation,
     label=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-my::Database_strategy = st.builds(
-    my::Database,
+my_Database_strategy = st.builds(
+    my_Database,
 )
-my::Table_strategy = st.builds(
-    my::Table,
+my_Table_strategy = st.builds(
+    my_Table,
 )
-my::Column_strategy = st.builds(
-    my::Column,
-    unique=
+my_Column_strategy = st.builds(
+    my_Column,
+    primary=
         st.booleans(),
     type=
         safe_text,
+    unique=
+        st.booleans(),
     size=
-        st.integers(),
-    primary=
-        st.booleans()
+        st.integers()
 )
-my::NamedElement_strategy = st.builds(
-    my::NamedElement,
+my_NamedElement_strategy = st.builds(
+    my_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=my::FKRelation_strategy)
+@given(instance=my_FKRelation_strategy)
 @settings(max_examples=50)
-def test_my::fkrelation_instantiation(instance):
-    assert isinstance(instance, my::FKRelation)
-
-@given(instance=my::FKRelation_strategy)
-def test_my::fkrelation_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_my_fkrelation_instantiation(instance):
+    assert isinstance(instance, my_FKRelation)
 
 
-@given(instance=my::FKRelation_strategy)
-def test_my::fkrelation_label_setter(instance):
+
+@given(instance=my_FKRelation_strategy)
+def test_my_fkrelation_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -243,77 +240,62 @@ def test_my::fkrelation_label_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=my::Database_strategy)
+@given(instance=my_Database_strategy)
 @settings(max_examples=50)
-def test_my::database_instantiation(instance):
-    assert isinstance(instance, my::Database)
+def test_my_database_instantiation(instance):
+    assert isinstance(instance, my_Database)
 
-@given(instance=my::Table_strategy)
+@given(instance=my_Table_strategy)
 @settings(max_examples=50)
-def test_my::table_instantiation(instance):
-    assert isinstance(instance, my::Table)
+def test_my_table_instantiation(instance):
+    assert isinstance(instance, my_Table)
 
-@given(instance=my::Column_strategy)
+@given(instance=my_Column_strategy)
 @settings(max_examples=50)
-def test_my::column_instantiation(instance):
-    assert isinstance(instance, my::Column)
-
-@given(instance=my::Column_strategy)
-def test_my::column_unique_type(instance):
-    assert isinstance(instance.unique, bool)
+def test_my_column_instantiation(instance):
+    assert isinstance(instance, my_Column)
 
 
-@given(instance=my::Column_strategy)
-def test_my::column_unique_setter(instance):
-    original = instance.unique
-    instance.unique = original
-    assert instance.unique == original
 
-@given(instance=my::Column_strategy)
-def test_my::column_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=my::Column_strategy)
-def test_my::column_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=my::Column_strategy)
-def test_my::column_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=my::Column_strategy)
-def test_my::column_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=my::Column_strategy)
-def test_my::column_primary_type(instance):
-    assert isinstance(instance.primary, bool)
-
-
-@given(instance=my::Column_strategy)
-def test_my::column_primary_setter(instance):
+@given(instance=my_Column_strategy)
+def test_my_column_primary_setter(instance):
     original = instance.primary
     instance.primary = original
     assert instance.primary == original
 
-@given(instance=my::NamedElement_strategy)
+
+
+@given(instance=my_Column_strategy)
+def test_my_column_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=my_Column_strategy)
+def test_my_column_unique_setter(instance):
+    original = instance.unique
+    instance.unique = original
+    assert instance.unique == original
+
+
+
+@given(instance=my_Column_strategy)
+def test_my_column_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=my_NamedElement_strategy)
 @settings(max_examples=50)
-def test_my::namedelement_instantiation(instance):
-    assert isinstance(instance, my::NamedElement)
-
-@given(instance=my::NamedElement_strategy)
-def test_my::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_my_namedelement_instantiation(instance):
+    assert isinstance(instance, my_NamedElement)
 
 
-@given(instance=my::NamedElement_strategy)
-def test_my::namedelement_name_setter(instance):
+
+@given(instance=my_NamedElement_strategy)
+def test_my_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

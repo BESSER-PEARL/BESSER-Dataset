@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    addressbook::BookVersion,
-    addressbook::Repository,
-    addressbook::AddressBook,
-    addressbook::People,
-    addressbook::Contact,
+from python_code import (
+    addressbook_BookVersion,
+    addressbook_Repository,
+    addressbook_AddressBook,
+    addressbook_People,
+    addressbook_Contact,
     Contact,
-    addressbook::Office,
-    addressbook::Electronic,
+    addressbook_Office,
+    addressbook_Electronic,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_addressbook::bookversion_is_not_abstract():
-    assert not inspect.isabstract(addressbook::BookVersion)
+def test_addressbook_bookversion_is_not_abstract():
+    assert not inspect.isabstract(addressbook_BookVersion)
 
 
-def test_addressbook::bookversion_constructor_exists():
-    assert callable(addressbook::BookVersion.__init__)
+def test_addressbook_bookversion_constructor_exists():
+    assert callable(addressbook_BookVersion.__init__)
 
 
-def test_addressbook::bookversion_constructor_args():
-    sig = inspect.signature(addressbook::BookVersion.__init__)
+def test_addressbook_bookversion_constructor_args():
+    sig = inspect.signature(addressbook_BookVersion.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_addressbook::bookversion_has_id():
-    assert hasattr(addressbook::BookVersion, "id")
+def test_addressbook_bookversion_has_id():
+    assert hasattr(addressbook_BookVersion, "id")
     descriptor = None
-    for klass in addressbook::BookVersion.__mro__:
+    for klass in addressbook_BookVersion.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -46,51 +46,51 @@ def test_addressbook::bookversion_has_id():
 
 
 
-def test_addressbook::repository_is_not_abstract():
-    assert not inspect.isabstract(addressbook::Repository)
+def test_addressbook_repository_is_not_abstract():
+    assert not inspect.isabstract(addressbook_Repository)
 
 
-def test_addressbook::repository_constructor_exists():
-    assert callable(addressbook::Repository.__init__)
+def test_addressbook_repository_constructor_exists():
+    assert callable(addressbook_Repository.__init__)
 
 
-def test_addressbook::repository_constructor_args():
-    sig = inspect.signature(addressbook::Repository.__init__)
+def test_addressbook_repository_constructor_args():
+    sig = inspect.signature(addressbook_Repository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_addressbook::addressbook_is_not_abstract():
-    assert not inspect.isabstract(addressbook::AddressBook)
+def test_addressbook_addressbook_is_not_abstract():
+    assert not inspect.isabstract(addressbook_AddressBook)
 
 
-def test_addressbook::addressbook_constructor_exists():
-    assert callable(addressbook::AddressBook.__init__)
+def test_addressbook_addressbook_constructor_exists():
+    assert callable(addressbook_AddressBook.__init__)
 
 
-def test_addressbook::addressbook_constructor_args():
-    sig = inspect.signature(addressbook::AddressBook.__init__)
+def test_addressbook_addressbook_constructor_args():
+    sig = inspect.signature(addressbook_AddressBook.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_addressbook::people_is_not_abstract():
-    assert not inspect.isabstract(addressbook::People)
+def test_addressbook_people_is_not_abstract():
+    assert not inspect.isabstract(addressbook_People)
 
 
-def test_addressbook::people_constructor_exists():
-    assert callable(addressbook::People.__init__)
+def test_addressbook_people_constructor_exists():
+    assert callable(addressbook_People.__init__)
 
 
-def test_addressbook::people_constructor_args():
-    sig = inspect.signature(addressbook::People.__init__)
+def test_addressbook_people_constructor_args():
+    sig = inspect.signature(addressbook_People.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_addressbook::people_has_name():
-    assert hasattr(addressbook::People, "name")
+def test_addressbook_people_has_name():
+    assert hasattr(addressbook_People, "name")
     descriptor = None
-    for klass in addressbook::People.__mro__:
+    for klass in addressbook_People.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -98,16 +98,16 @@ def test_addressbook::people_has_name():
 
 
 
-def test_addressbook::contact_is_not_abstract():
-    assert not inspect.isabstract(addressbook::Contact)
+def test_addressbook_contact_is_not_abstract():
+    assert not inspect.isabstract(addressbook_Contact)
 
 
-def test_addressbook::contact_constructor_exists():
-    assert callable(addressbook::Contact.__init__)
+def test_addressbook_contact_constructor_exists():
+    assert callable(addressbook_Contact.__init__)
 
 
-def test_addressbook::contact_constructor_args():
-    sig = inspect.signature(addressbook::Contact.__init__)
+def test_addressbook_contact_constructor_args():
+    sig = inspect.signature(addressbook_Contact.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -126,23 +126,23 @@ def test_contact_constructor_args():
 
 
 
-def test_addressbook::office_is_not_abstract():
-    assert not inspect.isabstract(addressbook::Office)
+def test_addressbook_office_is_not_abstract():
+    assert not inspect.isabstract(addressbook_Office)
 
 
-def test_addressbook::office_constructor_exists():
-    assert callable(addressbook::Office.__init__)
+def test_addressbook_office_constructor_exists():
+    assert callable(addressbook_Office.__init__)
 
 
-def test_addressbook::office_constructor_args():
-    sig = inspect.signature(addressbook::Office.__init__)
+def test_addressbook_office_constructor_args():
+    sig = inspect.signature(addressbook_Office.__init__)
     params = list(sig.parameters.keys())
     assert "company" in params, "Missing parameter 'company'"
 
-def test_addressbook::office_has_company():
-    assert hasattr(addressbook::Office, "company")
+def test_addressbook_office_has_company():
+    assert hasattr(addressbook_Office, "company")
     descriptor = None
-    for klass in addressbook::Office.__mro__:
+    for klass in addressbook_Office.__mro__:
         if "company" in klass.__dict__:
             descriptor = klass.__dict__["company"]
             break
@@ -150,33 +150,33 @@ def test_addressbook::office_has_company():
 
 
 
-def test_addressbook::electronic_is_not_abstract():
-    assert not inspect.isabstract(addressbook::Electronic)
+def test_addressbook_electronic_is_not_abstract():
+    assert not inspect.isabstract(addressbook_Electronic)
 
 
-def test_addressbook::electronic_constructor_exists():
-    assert callable(addressbook::Electronic.__init__)
+def test_addressbook_electronic_constructor_exists():
+    assert callable(addressbook_Electronic.__init__)
 
 
-def test_addressbook::electronic_constructor_args():
-    sig = inspect.signature(addressbook::Electronic.__init__)
+def test_addressbook_electronic_constructor_args():
+    sig = inspect.signature(addressbook_Electronic.__init__)
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
     assert "website" in params, "Missing parameter 'website'"
 
-def test_addressbook::electronic_has_email():
-    assert hasattr(addressbook::Electronic, "email")
+def test_addressbook_electronic_has_email():
+    assert hasattr(addressbook_Electronic, "email")
     descriptor = None
-    for klass in addressbook::Electronic.__mro__:
+    for klass in addressbook_Electronic.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
-def test_addressbook::electronic_has_website():
-    assert hasattr(addressbook::Electronic, "website")
+def test_addressbook_electronic_has_website():
+    assert hasattr(addressbook_Electronic, "website")
     descriptor = None
-    for klass in addressbook::Electronic.__mro__:
+    for klass in addressbook_Electronic.__mro__:
         if "website" in klass.__dict__:
             descriptor = klass.__dict__["website"]
             break
@@ -194,61 +194,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-addressbook::BookVersion_strategy = st.builds(
-    addressbook::BookVersion,
+addressbook_BookVersion_strategy = st.builds(
+    addressbook_BookVersion,
     id=
         st.integers()
 )
-addressbook::Repository_strategy = st.builds(
-    addressbook::Repository,
+addressbook_Repository_strategy = st.builds(
+    addressbook_Repository,
 )
-addressbook::AddressBook_strategy = st.builds(
-    addressbook::AddressBook,
+addressbook_AddressBook_strategy = st.builds(
+    addressbook_AddressBook,
 )
-addressbook::People_strategy = st.builds(
-    addressbook::People,
+addressbook_People_strategy = st.builds(
+    addressbook_People,
     name=
         safe_text
 )
-addressbook::Contact_strategy = st.builds(
-    addressbook::Contact,
+addressbook_Contact_strategy = st.builds(
+    addressbook_Contact,
 )
 Contact_strategy = st.builds(
     Contact,
 )
-addressbook::Office_strategy = st.builds(
-    addressbook::Office,
+addressbook_Office_strategy = st.builds(
+    addressbook_Office,
     company=
         safe_text
 )
-addressbook::Electronic_strategy = st.builds(
-    addressbook::Electronic,
+addressbook_Electronic_strategy = st.builds(
+    addressbook_Electronic,
     email=
         safe_text,
     website=
         safe_text
 )
 
-@given(instance=addressbook::BookVersion_strategy)
+@given(instance=addressbook_BookVersion_strategy)
 @settings(max_examples=50)
-def test_addressbook::bookversion_instantiation(instance):
-    assert isinstance(instance, addressbook::BookVersion)
-
-@given(instance=addressbook::BookVersion_strategy)
-def test_addressbook::bookversion_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_addressbook_bookversion_instantiation(instance):
+    assert isinstance(instance, addressbook_BookVersion)
 
 
-@given(instance=addressbook::BookVersion_strategy)
-def test_addressbook::bookversion_id_setter(instance):
+
+@given(instance=addressbook_BookVersion_strategy)
+def test_addressbook_bookversion_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=addressbook::Repository_strategy)
+@given(instance=addressbook_Repository_strategy)
 @settings(max_examples=50)
-def test_addressbook::repository_instantiation(instance):
-    assert isinstance(instance, addressbook::Repository)
+def test_addressbook_repository_instantiation(instance):
+    assert isinstance(instance, addressbook_Repository)
 
 import warnings
 import copy
@@ -256,9 +253,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=addressbook::Repository_strategy)
+@given(instance=addressbook_Repository_strategy)
 @settings(max_examples=30)
-def test_addressbook::repository_checkin_changes_state(instance):
+def test_addressbook_repository_checkin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -270,14 +267,14 @@ def test_addressbook::repository_checkin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkin' in addressbook::Repository is empty"
+        assert has_statements, f"Function 'checkin' in addressbook_Repository is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkin' in addressbook::Repository did not change state; check implementation")
+            warnings.warn(f"Operation 'checkin' in addressbook_Repository did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkin' in addressbook::Repository is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkin' in addressbook_Repository is not implemented or raised an error")
 
 import warnings
 import copy
@@ -285,9 +282,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=addressbook::Repository_strategy)
+@given(instance=addressbook_Repository_strategy)
 @settings(max_examples=30)
-def test_addressbook::repository_checkout_changes_state(instance):
+def test_addressbook_repository_checkout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -301,85 +298,73 @@ def test_addressbook::repository_checkout_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkout' in addressbook::Repository is empty"
+        assert has_statements, f"Function 'checkout' in addressbook_Repository is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkout' in addressbook::Repository did not change state; check implementation")
+            warnings.warn(f"Operation 'checkout' in addressbook_Repository did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkout' in addressbook::Repository is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkout' in addressbook_Repository is not implemented or raised an error")
 
-@given(instance=addressbook::AddressBook_strategy)
+@given(instance=addressbook_AddressBook_strategy)
 @settings(max_examples=50)
-def test_addressbook::addressbook_instantiation(instance):
-    assert isinstance(instance, addressbook::AddressBook)
+def test_addressbook_addressbook_instantiation(instance):
+    assert isinstance(instance, addressbook_AddressBook)
 
-@given(instance=addressbook::People_strategy)
+@given(instance=addressbook_People_strategy)
 @settings(max_examples=50)
-def test_addressbook::people_instantiation(instance):
-    assert isinstance(instance, addressbook::People)
-
-@given(instance=addressbook::People_strategy)
-def test_addressbook::people_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_addressbook_people_instantiation(instance):
+    assert isinstance(instance, addressbook_People)
 
 
-@given(instance=addressbook::People_strategy)
-def test_addressbook::people_name_setter(instance):
+
+@given(instance=addressbook_People_strategy)
+def test_addressbook_people_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=addressbook::Contact_strategy)
+@given(instance=addressbook_Contact_strategy)
 @settings(max_examples=50)
-def test_addressbook::contact_instantiation(instance):
-    assert isinstance(instance, addressbook::Contact)
+def test_addressbook_contact_instantiation(instance):
+    assert isinstance(instance, addressbook_Contact)
 
 @given(instance=Contact_strategy)
 @settings(max_examples=50)
 def test_contact_instantiation(instance):
     assert isinstance(instance, Contact)
 
-@given(instance=addressbook::Office_strategy)
+@given(instance=addressbook_Office_strategy)
 @settings(max_examples=50)
-def test_addressbook::office_instantiation(instance):
-    assert isinstance(instance, addressbook::Office)
-
-@given(instance=addressbook::Office_strategy)
-def test_addressbook::office_company_type(instance):
-    assert isinstance(instance.company, str)
+def test_addressbook_office_instantiation(instance):
+    assert isinstance(instance, addressbook_Office)
 
 
-@given(instance=addressbook::Office_strategy)
-def test_addressbook::office_company_setter(instance):
+
+@given(instance=addressbook_Office_strategy)
+def test_addressbook_office_company_setter(instance):
     original = instance.company
     instance.company = original
     assert instance.company == original
 
-@given(instance=addressbook::Electronic_strategy)
+@given(instance=addressbook_Electronic_strategy)
 @settings(max_examples=50)
-def test_addressbook::electronic_instantiation(instance):
-    assert isinstance(instance, addressbook::Electronic)
-
-@given(instance=addressbook::Electronic_strategy)
-def test_addressbook::electronic_email_type(instance):
-    assert isinstance(instance.email, str)
+def test_addressbook_electronic_instantiation(instance):
+    assert isinstance(instance, addressbook_Electronic)
 
 
-@given(instance=addressbook::Electronic_strategy)
-def test_addressbook::electronic_email_setter(instance):
+
+@given(instance=addressbook_Electronic_strategy)
+def test_addressbook_electronic_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
 
-@given(instance=addressbook::Electronic_strategy)
-def test_addressbook::electronic_website_type(instance):
-    assert isinstance(instance.website, str)
 
 
-@given(instance=addressbook::Electronic_strategy)
-def test_addressbook::electronic_website_setter(instance):
+@given(instance=addressbook_Electronic_strategy)
+def test_addressbook_electronic_website_setter(instance):
     original = instance.website
     instance.website = original
     assert instance.website == original

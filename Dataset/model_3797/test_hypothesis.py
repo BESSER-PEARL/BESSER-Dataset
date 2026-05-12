@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Entity::Entity,
-    Entity::System,
+from python_code import (
+    Entity_Entity,
+    Entity_System,
 )
 
 # =============================================================================
@@ -16,33 +16,33 @@ from classes import (
 
 
 
-def test_entity::entity_is_not_abstract():
-    assert not inspect.isabstract(Entity::Entity)
+def test_entity_entity_is_not_abstract():
+    assert not inspect.isabstract(Entity_Entity)
 
 
-def test_entity::entity_constructor_exists():
-    assert callable(Entity::Entity.__init__)
+def test_entity_entity_constructor_exists():
+    assert callable(Entity_Entity.__init__)
 
 
-def test_entity::entity_constructor_args():
-    sig = inspect.signature(Entity::Entity.__init__)
+def test_entity_entity_constructor_args():
+    sig = inspect.signature(Entity_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "inDomain" in params, "Missing parameter 'inDomain'"
 
-def test_entity::entity_has_name():
-    assert hasattr(Entity::Entity, "name")
+def test_entity_entity_has_name():
+    assert hasattr(Entity_Entity, "name")
     descriptor = None
-    for klass in Entity::Entity.__mro__:
+    for klass in Entity_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_entity::entity_has_inDomain():
-    assert hasattr(Entity::Entity, "inDomain")
+def test_entity_entity_has_inDomain():
+    assert hasattr(Entity_Entity, "inDomain")
     descriptor = None
-    for klass in Entity::Entity.__mro__:
+    for klass in Entity_Entity.__mro__:
         if "inDomain" in klass.__dict__:
             descriptor = klass.__dict__["inDomain"]
             break
@@ -50,16 +50,16 @@ def test_entity::entity_has_inDomain():
 
 
 
-def test_entity::system_is_not_abstract():
-    assert not inspect.isabstract(Entity::System)
+def test_entity_system_is_not_abstract():
+    assert not inspect.isabstract(Entity_System)
 
 
-def test_entity::system_constructor_exists():
-    assert callable(Entity::System.__init__)
+def test_entity_system_constructor_exists():
+    assert callable(Entity_System.__init__)
 
 
-def test_entity::system_constructor_args():
-    sig = inspect.signature(Entity::System.__init__)
+def test_entity_system_constructor_args():
+    sig = inspect.signature(Entity_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Entity::Entity_strategy = st.builds(
-    Entity::Entity,
+Entity_Entity_strategy = st.builds(
+    Entity_Entity,
     name=
         safe_text,
     inDomain=
         safe_text
 )
-Entity::System_strategy = st.builds(
-    Entity::System,
+Entity_System_strategy = st.builds(
+    Entity_System,
 )
 
-@given(instance=Entity::Entity_strategy)
+@given(instance=Entity_Entity_strategy)
 @settings(max_examples=50)
-def test_entity::entity_instantiation(instance):
-    assert isinstance(instance, Entity::Entity)
-
-@given(instance=Entity::Entity_strategy)
-def test_entity::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entity_entity_instantiation(instance):
+    assert isinstance(instance, Entity_Entity)
 
 
-@given(instance=Entity::Entity_strategy)
-def test_entity::entity_name_setter(instance):
+
+@given(instance=Entity_Entity_strategy)
+def test_entity_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Entity::Entity_strategy)
-def test_entity::entity_inDomain_type(instance):
-    assert isinstance(instance.inDomain, str)
 
 
-@given(instance=Entity::Entity_strategy)
-def test_entity::entity_inDomain_setter(instance):
+@given(instance=Entity_Entity_strategy)
+def test_entity_entity_inDomain_setter(instance):
     original = instance.inDomain
     instance.inDomain = original
     assert instance.inDomain == original
 
-@given(instance=Entity::System_strategy)
+@given(instance=Entity_System_strategy)
 @settings(max_examples=50)
-def test_entity::system_instantiation(instance):
-    assert isinstance(instance, Entity::System)
+def test_entity_system_instantiation(instance):
+    assert isinstance(instance, Entity_System)

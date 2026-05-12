@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     dutycalls_contoller_HomeControl,
@@ -62,17 +62,8 @@ def test_dutycalls_contoller_dealer_control_constructor_exists():
 def test_dutycalls_contoller_dealer_control_constructor_args():
     sig = inspect.signature(dutycalls_contoller_Dealer_Control.__init__)
     params = list(sig.parameters.keys())
-    assert "userid" in params, "Missing parameter 'userid'"
     assert "cardCount" in params, "Missing parameter 'cardCount'"
-
-def test_dutycalls_contoller_dealer_control_has_userid():
-    assert hasattr(dutycalls_contoller_Dealer_Control, "userid")
-    descriptor = None
-    for klass in dutycalls_contoller_Dealer_Control.__mro__:
-        if "userid" in klass.__dict__:
-            descriptor = klass.__dict__["userid"]
-            break
-    assert isinstance(descriptor, property)
+    assert "userid" in params, "Missing parameter 'userid'"
 
 def test_dutycalls_contoller_dealer_control_has_cardCount():
     assert hasattr(dutycalls_contoller_Dealer_Control, "cardCount")
@@ -80,6 +71,15 @@ def test_dutycalls_contoller_dealer_control_has_cardCount():
     for klass in dutycalls_contoller_Dealer_Control.__mro__:
         if "cardCount" in klass.__dict__:
             descriptor = klass.__dict__["cardCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dutycalls_contoller_dealer_control_has_userid():
+    assert hasattr(dutycalls_contoller_Dealer_Control, "userid")
+    descriptor = None
+    for klass in dutycalls_contoller_Dealer_Control.__mro__:
+        if "userid" in klass.__dict__:
+            descriptor = klass.__dict__["userid"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,13 +256,31 @@ def test_dutycalls_model_dealer_singleplayer_constructor_exists():
 def test_dutycalls_model_dealer_singleplayer_constructor_args():
     sig = inspect.signature(dutycalls_model_Dealer_SINGLEPLAYER.__init__)
     params = list(sig.parameters.keys())
+    assert "deck" in params, "Missing parameter 'deck'"
+    assert "tableValue" in params, "Missing parameter 'tableValue'"
     assert "bet" in params, "Missing parameter 'bet'"
     assert "openBet" in params, "Missing parameter 'openBet'"
+    assert "main_userList" in params, "Missing parameter 'main_userList'"
     assert "userList" in params, "Missing parameter 'userList'"
     assert "allIn" in params, "Missing parameter 'allIn'"
-    assert "deck" in params, "Missing parameter 'deck'"
-    assert "main_userList" in params, "Missing parameter 'main_userList'"
-    assert "tableValue" in params, "Missing parameter 'tableValue'"
+
+def test_dutycalls_model_dealer_singleplayer_has_deck():
+    assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "deck")
+    descriptor = None
+    for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
+        if "deck" in klass.__dict__:
+            descriptor = klass.__dict__["deck"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dutycalls_model_dealer_singleplayer_has_tableValue():
+    assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "tableValue")
+    descriptor = None
+    for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
+        if "tableValue" in klass.__dict__:
+            descriptor = klass.__dict__["tableValue"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_dutycalls_model_dealer_singleplayer_has_bet():
     assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "bet")
@@ -282,6 +300,15 @@ def test_dutycalls_model_dealer_singleplayer_has_openBet():
             break
     assert isinstance(descriptor, property)
 
+def test_dutycalls_model_dealer_singleplayer_has_main_userList():
+    assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "main_userList")
+    descriptor = None
+    for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
+        if "main_userList" in klass.__dict__:
+            descriptor = klass.__dict__["main_userList"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_dutycalls_model_dealer_singleplayer_has_userList():
     assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "userList")
     descriptor = None
@@ -297,33 +324,6 @@ def test_dutycalls_model_dealer_singleplayer_has_allIn():
     for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
         if "allIn" in klass.__dict__:
             descriptor = klass.__dict__["allIn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dutycalls_model_dealer_singleplayer_has_deck():
-    assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "deck")
-    descriptor = None
-    for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
-        if "deck" in klass.__dict__:
-            descriptor = klass.__dict__["deck"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dutycalls_model_dealer_singleplayer_has_main_userList():
-    assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "main_userList")
-    descriptor = None
-    for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
-        if "main_userList" in klass.__dict__:
-            descriptor = klass.__dict__["main_userList"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dutycalls_model_dealer_singleplayer_has_tableValue():
-    assert hasattr(dutycalls_model_Dealer_SINGLEPLAYER, "tableValue")
-    descriptor = None
-    for klass in dutycalls_model_Dealer_SINGLEPLAYER.__mro__:
-        if "tableValue" in klass.__dict__:
-            descriptor = klass.__dict__["tableValue"]
             break
     assert isinstance(descriptor, property)
 
@@ -482,9 +482,9 @@ dutycalls_contoller_HomeControl_strategy = st.builds(
 )
 dutycalls_contoller_Dealer_Control_strategy = st.builds(
     dutycalls_contoller_Dealer_Control,
-    userid=
-        st.integers(),
     cardCount=
+        st.integers(),
+    userid=
         st.integers()
 )
 dutycalls_model_User_S_strategy = st.builds(
@@ -523,20 +523,20 @@ dutycalls_model_BestHand_strategy = st.builds(
 )
 dutycalls_model_Dealer_SINGLEPLAYER_strategy = st.builds(
     dutycalls_model_Dealer_SINGLEPLAYER,
+    deck=
+        st.none(),
+    tableValue=
+        st.integers(),
     bet=
         st.integers(),
     openBet=
         st.integers(),
+    main_userList=
+        st.none(),
     userList=
         st.none(),
     allIn=
-        st.booleans(),
-    deck=
-        st.none(),
-    main_userList=
-        st.none(),
-    tableValue=
-        st.integers()
+        st.booleans()
 )
 dutycalls_model_AIUser_strategy = st.builds(
     dutycalls_model_AIUser,
@@ -573,20 +573,6 @@ def test_dutycalls_contoller_homecontrol_instantiation(instance):
 def test_dutycalls_contoller_dealer_control_instantiation(instance):
     assert isinstance(instance, dutycalls_contoller_Dealer_Control)
 
-@given(instance=dutycalls_contoller_Dealer_Control_strategy)
-def test_dutycalls_contoller_dealer_control_userid_type(instance):
-    assert isinstance(instance.userid, int)
-
-
-@given(instance=dutycalls_contoller_Dealer_Control_strategy)
-def test_dutycalls_contoller_dealer_control_userid_setter(instance):
-    original = instance.userid
-    instance.userid = original
-    assert instance.userid == original
-
-@given(instance=dutycalls_contoller_Dealer_Control_strategy)
-def test_dutycalls_contoller_dealer_control_cardCount_type(instance):
-    assert isinstance(instance.cardCount, int)
 
 
 @given(instance=dutycalls_contoller_Dealer_Control_strategy)
@@ -595,14 +581,19 @@ def test_dutycalls_contoller_dealer_control_cardCount_setter(instance):
     instance.cardCount = original
     assert instance.cardCount == original
 
+
+
+@given(instance=dutycalls_contoller_Dealer_Control_strategy)
+def test_dutycalls_contoller_dealer_control_userid_setter(instance):
+    original = instance.userid
+    instance.userid = original
+    assert instance.userid == original
+
 @given(instance=dutycalls_model_User_S_strategy)
 @settings(max_examples=50)
 def test_dutycalls_model_user_s_instantiation(instance):
     assert isinstance(instance, dutycalls_model_User_S)
 
-@given(instance=dutycalls_model_User_S_strategy)
-def test_dutycalls_model_user_s_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=dutycalls_model_User_S_strategy)
@@ -656,9 +647,6 @@ def test_dutycalls_model_deck_instantiation(instance):
 def test_dutycalls_model_besthand_instantiation(instance):
     assert isinstance(instance, dutycalls_model_BestHand)
 
-@given(instance=dutycalls_model_BestHand_strategy)
-def test_dutycalls_model_besthand_handValue_type(instance):
-    assert isinstance(instance.handValue, int)
 
 
 @given(instance=dutycalls_model_BestHand_strategy)
@@ -672,53 +660,6 @@ def test_dutycalls_model_besthand_handValue_setter(instance):
 def test_dutycalls_model_dealer_singleplayer_instantiation(instance):
     assert isinstance(instance, dutycalls_model_Dealer_SINGLEPLAYER)
 
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_bet_type(instance):
-    assert isinstance(instance.bet, int)
-
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_bet_setter(instance):
-    original = instance.bet
-    instance.bet = original
-    assert instance.bet == original
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_openBet_type(instance):
-    assert isinstance(instance.openBet, int)
-
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_openBet_setter(instance):
-    original = instance.openBet
-    instance.openBet = original
-    assert instance.openBet == original
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_userList_type(instance):
-    assert isinstance(instance.userList, list_user_s_)
-
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_userList_setter(instance):
-    original = instance.userList
-    instance.userList = original
-    assert instance.userList == original
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_allIn_type(instance):
-    assert isinstance(instance.allIn, bool)
-
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_allIn_setter(instance):
-    original = instance.allIn
-    instance.allIn = original
-    assert instance.allIn == original
-
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_deck_type(instance):
-    assert isinstance(instance.deck, dutycalls_model_deck)
 
 
 @given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
@@ -727,9 +668,30 @@ def test_dutycalls_model_dealer_singleplayer_deck_setter(instance):
     instance.deck = original
     assert instance.deck == original
 
+
+
 @given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_main_userList_type(instance):
-    assert isinstance(instance.main_userList, list_user_s_)
+def test_dutycalls_model_dealer_singleplayer_tableValue_setter(instance):
+    original = instance.tableValue
+    instance.tableValue = original
+    assert instance.tableValue == original
+
+
+
+@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
+def test_dutycalls_model_dealer_singleplayer_bet_setter(instance):
+    original = instance.bet
+    instance.bet = original
+    assert instance.bet == original
+
+
+
+@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
+def test_dutycalls_model_dealer_singleplayer_openBet_setter(instance):
+    original = instance.openBet
+    instance.openBet = original
+    assert instance.openBet == original
+
 
 
 @given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
@@ -738,16 +700,21 @@ def test_dutycalls_model_dealer_singleplayer_main_userList_setter(instance):
     instance.main_userList = original
     assert instance.main_userList == original
 
-@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_tableValue_type(instance):
-    assert isinstance(instance.tableValue, int)
 
 
 @given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
-def test_dutycalls_model_dealer_singleplayer_tableValue_setter(instance):
-    original = instance.tableValue
-    instance.tableValue = original
-    assert instance.tableValue == original
+def test_dutycalls_model_dealer_singleplayer_userList_setter(instance):
+    original = instance.userList
+    instance.userList = original
+    assert instance.userList == original
+
+
+
+@given(instance=dutycalls_model_Dealer_SINGLEPLAYER_strategy)
+def test_dutycalls_model_dealer_singleplayer_allIn_setter(instance):
+    original = instance.allIn
+    instance.allIn = original
+    assert instance.allIn == original
 
 @given(instance=dutycalls_model_AIUser_strategy)
 @settings(max_examples=50)

@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Arc,
-    guigraph::InhibitorArc,
-    guigraph::StandardArc,
-    rules::IRealTimeConsumer,
+    guigraph_InhibitorArc,
+    guigraph_StandardArc,
+    rules_IRealTimeConsumer,
     GuiGraphNode,
-    guigraph::Place,
-    guigraph::Transition,
+    guigraph_Place,
+    guigraph_Transition,
     Place,
-    guigraph::NoWidgetNode,
+    guigraph_NoWidgetNode,
     Widget,
-    guigraph::Form,
+    guigraph_Form,
     GuiGraph,
-    guigraph::Page,
+    guigraph_Page,
     ITimeConsumer,
     Predicate,
-    guigraph::PreGenerationSequence,
+    guigraph_PreGenerationSequence,
     Transition,
-    guigraph::TimerTransition,
-    guigraph::PageTransition,
-    guigraph::ConditionActionTransition,
+    guigraph_TimerTransition,
+    guigraph_PageTransition,
+    guigraph_ConditionActionTransition,
     AbstractModelElement,
-    guigraph::GuiGraphNode,
-    guigraph::Widget,
-    guigraph::GuiGraph,
-    guigraph::Arc,
+    guigraph_GuiGraphNode,
+    guigraph_Widget,
+    guigraph_GuiGraph,
+    guigraph_Arc,
     TimingType,
 )
 
@@ -54,37 +54,37 @@ def test_arc_constructor_args():
 
 
 
-def test_guigraph::inhibitorarc_is_not_abstract():
-    assert not inspect.isabstract(guigraph::InhibitorArc)
+def test_guigraph_inhibitorarc_is_not_abstract():
+    assert not inspect.isabstract(guigraph_InhibitorArc)
 
 
-def test_guigraph::inhibitorarc_constructor_exists():
-    assert callable(guigraph::InhibitorArc.__init__)
+def test_guigraph_inhibitorarc_constructor_exists():
+    assert callable(guigraph_InhibitorArc.__init__)
 
 
-def test_guigraph::inhibitorarc_constructor_args():
-    sig = inspect.signature(guigraph::InhibitorArc.__init__)
+def test_guigraph_inhibitorarc_constructor_args():
+    sig = inspect.signature(guigraph_InhibitorArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_guigraph::standardarc_is_not_abstract():
-    assert not inspect.isabstract(guigraph::StandardArc)
+def test_guigraph_standardarc_is_not_abstract():
+    assert not inspect.isabstract(guigraph_StandardArc)
 
 
-def test_guigraph::standardarc_constructor_exists():
-    assert callable(guigraph::StandardArc.__init__)
+def test_guigraph_standardarc_constructor_exists():
+    assert callable(guigraph_StandardArc.__init__)
 
 
-def test_guigraph::standardarc_constructor_args():
-    sig = inspect.signature(guigraph::StandardArc.__init__)
+def test_guigraph_standardarc_constructor_args():
+    sig = inspect.signature(guigraph_StandardArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_guigraph::standardarc_has_weight():
-    assert hasattr(guigraph::StandardArc, "weight")
+def test_guigraph_standardarc_has_weight():
+    assert hasattr(guigraph_StandardArc, "weight")
     descriptor = None
-    for klass in guigraph::StandardArc.__mro__:
+    for klass in guigraph_StandardArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -92,16 +92,16 @@ def test_guigraph::standardarc_has_weight():
 
 
 
-def test_rules::irealtimeconsumer_is_not_abstract():
-    assert not inspect.isabstract(rules::IRealTimeConsumer)
+def test_rules_irealtimeconsumer_is_not_abstract():
+    assert not inspect.isabstract(rules_IRealTimeConsumer)
 
 
-def test_rules::irealtimeconsumer_constructor_exists():
-    assert callable(rules::IRealTimeConsumer.__init__)
+def test_rules_irealtimeconsumer_constructor_exists():
+    assert callable(rules_IRealTimeConsumer.__init__)
 
 
-def test_rules::irealtimeconsumer_constructor_args():
-    sig = inspect.signature(rules::IRealTimeConsumer.__init__)
+def test_rules_irealtimeconsumer_constructor_args():
+    sig = inspect.signature(rules_IRealTimeConsumer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -120,23 +120,23 @@ def test_guigraphnode_constructor_args():
 
 
 
-def test_guigraph::place_is_not_abstract():
-    assert not inspect.isabstract(guigraph::Place)
+def test_guigraph_place_is_not_abstract():
+    assert not inspect.isabstract(guigraph_Place)
 
 
-def test_guigraph::place_constructor_exists():
-    assert callable(guigraph::Place.__init__)
+def test_guigraph_place_constructor_exists():
+    assert callable(guigraph_Place.__init__)
 
 
-def test_guigraph::place_constructor_args():
-    sig = inspect.signature(guigraph::Place.__init__)
+def test_guigraph_place_constructor_args():
+    sig = inspect.signature(guigraph_Place.__init__)
     params = list(sig.parameters.keys())
     assert "initialTokens" in params, "Missing parameter 'initialTokens'"
 
-def test_guigraph::place_has_initialTokens():
-    assert hasattr(guigraph::Place, "initialTokens")
+def test_guigraph_place_has_initialTokens():
+    assert hasattr(guigraph_Place, "initialTokens")
     descriptor = None
-    for klass in guigraph::Place.__mro__:
+    for klass in guigraph_Place.__mro__:
         if "initialTokens" in klass.__dict__:
             descriptor = klass.__dict__["initialTokens"]
             break
@@ -144,85 +144,85 @@ def test_guigraph::place_has_initialTokens():
 
 
 
-def test_guigraph::transition_is_not_abstract():
-    assert not inspect.isabstract(guigraph::Transition)
+def test_guigraph_transition_is_not_abstract():
+    assert not inspect.isabstract(guigraph_Transition)
 
 
-def test_guigraph::transition_constructor_exists():
-    assert callable(guigraph::Transition.__init__)
+def test_guigraph_transition_constructor_exists():
+    assert callable(guigraph_Transition.__init__)
 
 
-def test_guigraph::transition_constructor_args():
-    sig = inspect.signature(guigraph::Transition.__init__)
+def test_guigraph_transition_constructor_args():
+    sig = inspect.signature(guigraph_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "timingType" in params, "Missing parameter 'timingType'"
+    assert "faultProbability" in params, "Missing parameter 'faultProbability'"
+    assert "rate" in params, "Missing parameter 'rate'"
+    assert "timeMin" in params, "Missing parameter 'timeMin'"
     assert "timeMax" in params, "Missing parameter 'timeMax'"
+    assert "timingType" in params, "Missing parameter 'timingType'"
     assert "terminates" in params, "Missing parameter 'terminates'"
     assert "faultImpact" in params, "Missing parameter 'faultImpact'"
-    assert "rate" in params, "Missing parameter 'rate'"
-    assert "faultProbability" in params, "Missing parameter 'faultProbability'"
-    assert "timeMin" in params, "Missing parameter 'timeMin'"
 
-def test_guigraph::transition_has_timingType():
-    assert hasattr(guigraph::Transition, "timingType")
+def test_guigraph_transition_has_faultProbability():
+    assert hasattr(guigraph_Transition, "faultProbability")
     descriptor = None
-    for klass in guigraph::Transition.__mro__:
-        if "timingType" in klass.__dict__:
-            descriptor = klass.__dict__["timingType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guigraph::transition_has_timeMax():
-    assert hasattr(guigraph::Transition, "timeMax")
-    descriptor = None
-    for klass in guigraph::Transition.__mro__:
-        if "timeMax" in klass.__dict__:
-            descriptor = klass.__dict__["timeMax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guigraph::transition_has_terminates():
-    assert hasattr(guigraph::Transition, "terminates")
-    descriptor = None
-    for klass in guigraph::Transition.__mro__:
-        if "terminates" in klass.__dict__:
-            descriptor = klass.__dict__["terminates"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guigraph::transition_has_faultImpact():
-    assert hasattr(guigraph::Transition, "faultImpact")
-    descriptor = None
-    for klass in guigraph::Transition.__mro__:
-        if "faultImpact" in klass.__dict__:
-            descriptor = klass.__dict__["faultImpact"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guigraph::transition_has_rate():
-    assert hasattr(guigraph::Transition, "rate")
-    descriptor = None
-    for klass in guigraph::Transition.__mro__:
-        if "rate" in klass.__dict__:
-            descriptor = klass.__dict__["rate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guigraph::transition_has_faultProbability():
-    assert hasattr(guigraph::Transition, "faultProbability")
-    descriptor = None
-    for klass in guigraph::Transition.__mro__:
+    for klass in guigraph_Transition.__mro__:
         if "faultProbability" in klass.__dict__:
             descriptor = klass.__dict__["faultProbability"]
             break
     assert isinstance(descriptor, property)
 
-def test_guigraph::transition_has_timeMin():
-    assert hasattr(guigraph::Transition, "timeMin")
+def test_guigraph_transition_has_rate():
+    assert hasattr(guigraph_Transition, "rate")
     descriptor = None
-    for klass in guigraph::Transition.__mro__:
+    for klass in guigraph_Transition.__mro__:
+        if "rate" in klass.__dict__:
+            descriptor = klass.__dict__["rate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guigraph_transition_has_timeMin():
+    assert hasattr(guigraph_Transition, "timeMin")
+    descriptor = None
+    for klass in guigraph_Transition.__mro__:
         if "timeMin" in klass.__dict__:
             descriptor = klass.__dict__["timeMin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guigraph_transition_has_timeMax():
+    assert hasattr(guigraph_Transition, "timeMax")
+    descriptor = None
+    for klass in guigraph_Transition.__mro__:
+        if "timeMax" in klass.__dict__:
+            descriptor = klass.__dict__["timeMax"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guigraph_transition_has_timingType():
+    assert hasattr(guigraph_Transition, "timingType")
+    descriptor = None
+    for klass in guigraph_Transition.__mro__:
+        if "timingType" in klass.__dict__:
+            descriptor = klass.__dict__["timingType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guigraph_transition_has_terminates():
+    assert hasattr(guigraph_Transition, "terminates")
+    descriptor = None
+    for klass in guigraph_Transition.__mro__:
+        if "terminates" in klass.__dict__:
+            descriptor = klass.__dict__["terminates"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guigraph_transition_has_faultImpact():
+    assert hasattr(guigraph_Transition, "faultImpact")
+    descriptor = None
+    for klass in guigraph_Transition.__mro__:
+        if "faultImpact" in klass.__dict__:
+            descriptor = klass.__dict__["faultImpact"]
             break
     assert isinstance(descriptor, property)
 
@@ -242,16 +242,16 @@ def test_place_constructor_args():
 
 
 
-def test_guigraph::nowidgetnode_is_not_abstract():
-    assert not inspect.isabstract(guigraph::NoWidgetNode)
+def test_guigraph_nowidgetnode_is_not_abstract():
+    assert not inspect.isabstract(guigraph_NoWidgetNode)
 
 
-def test_guigraph::nowidgetnode_constructor_exists():
-    assert callable(guigraph::NoWidgetNode.__init__)
+def test_guigraph_nowidgetnode_constructor_exists():
+    assert callable(guigraph_NoWidgetNode.__init__)
 
 
-def test_guigraph::nowidgetnode_constructor_args():
-    sig = inspect.signature(guigraph::NoWidgetNode.__init__)
+def test_guigraph_nowidgetnode_constructor_args():
+    sig = inspect.signature(guigraph_NoWidgetNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -270,16 +270,16 @@ def test_widget_constructor_args():
 
 
 
-def test_guigraph::form_is_not_abstract():
-    assert not inspect.isabstract(guigraph::Form)
+def test_guigraph_form_is_not_abstract():
+    assert not inspect.isabstract(guigraph_Form)
 
 
-def test_guigraph::form_constructor_exists():
-    assert callable(guigraph::Form.__init__)
+def test_guigraph_form_constructor_exists():
+    assert callable(guigraph_Form.__init__)
 
 
-def test_guigraph::form_constructor_args():
-    sig = inspect.signature(guigraph::Form.__init__)
+def test_guigraph_form_constructor_args():
+    sig = inspect.signature(guigraph_Form.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -298,16 +298,16 @@ def test_guigraph_constructor_args():
 
 
 
-def test_guigraph::page_is_not_abstract():
-    assert not inspect.isabstract(guigraph::Page)
+def test_guigraph_page_is_not_abstract():
+    assert not inspect.isabstract(guigraph_Page)
 
 
-def test_guigraph::page_constructor_exists():
-    assert callable(guigraph::Page.__init__)
+def test_guigraph_page_constructor_exists():
+    assert callable(guigraph_Page.__init__)
 
 
-def test_guigraph::page_constructor_args():
-    sig = inspect.signature(guigraph::Page.__init__)
+def test_guigraph_page_constructor_args():
+    sig = inspect.signature(guigraph_Page.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -340,16 +340,16 @@ def test_predicate_constructor_args():
 
 
 
-def test_guigraph::pregenerationsequence_is_not_abstract():
-    assert not inspect.isabstract(guigraph::PreGenerationSequence)
+def test_guigraph_pregenerationsequence_is_not_abstract():
+    assert not inspect.isabstract(guigraph_PreGenerationSequence)
 
 
-def test_guigraph::pregenerationsequence_constructor_exists():
-    assert callable(guigraph::PreGenerationSequence.__init__)
+def test_guigraph_pregenerationsequence_constructor_exists():
+    assert callable(guigraph_PreGenerationSequence.__init__)
 
 
-def test_guigraph::pregenerationsequence_constructor_args():
-    sig = inspect.signature(guigraph::PreGenerationSequence.__init__)
+def test_guigraph_pregenerationsequence_constructor_args():
+    sig = inspect.signature(guigraph_PreGenerationSequence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -368,23 +368,23 @@ def test_transition_constructor_args():
 
 
 
-def test_guigraph::timertransition_is_not_abstract():
-    assert not inspect.isabstract(guigraph::TimerTransition)
+def test_guigraph_timertransition_is_not_abstract():
+    assert not inspect.isabstract(guigraph_TimerTransition)
 
 
-def test_guigraph::timertransition_constructor_exists():
-    assert callable(guigraph::TimerTransition.__init__)
+def test_guigraph_timertransition_constructor_exists():
+    assert callable(guigraph_TimerTransition.__init__)
 
 
-def test_guigraph::timertransition_constructor_args():
-    sig = inspect.signature(guigraph::TimerTransition.__init__)
+def test_guigraph_timertransition_constructor_args():
+    sig = inspect.signature(guigraph_TimerTransition.__init__)
     params = list(sig.parameters.keys())
     assert "duration" in params, "Missing parameter 'duration'"
 
-def test_guigraph::timertransition_has_duration():
-    assert hasattr(guigraph::TimerTransition, "duration")
+def test_guigraph_timertransition_has_duration():
+    assert hasattr(guigraph_TimerTransition, "duration")
     descriptor = None
-    for klass in guigraph::TimerTransition.__mro__:
+    for klass in guigraph_TimerTransition.__mro__:
         if "duration" in klass.__dict__:
             descriptor = klass.__dict__["duration"]
             break
@@ -392,49 +392,49 @@ def test_guigraph::timertransition_has_duration():
 
 
 
-def test_guigraph::pagetransition_is_not_abstract():
-    assert not inspect.isabstract(guigraph::PageTransition)
+def test_guigraph_pagetransition_is_not_abstract():
+    assert not inspect.isabstract(guigraph_PageTransition)
 
 
-def test_guigraph::pagetransition_constructor_exists():
-    assert callable(guigraph::PageTransition.__init__)
+def test_guigraph_pagetransition_constructor_exists():
+    assert callable(guigraph_PageTransition.__init__)
 
 
-def test_guigraph::pagetransition_constructor_args():
-    sig = inspect.signature(guigraph::PageTransition.__init__)
+def test_guigraph_pagetransition_constructor_args():
+    sig = inspect.signature(guigraph_PageTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_guigraph::conditionactiontransition_is_not_abstract():
-    assert not inspect.isabstract(guigraph::ConditionActionTransition)
+def test_guigraph_conditionactiontransition_is_not_abstract():
+    assert not inspect.isabstract(guigraph_ConditionActionTransition)
 
 
-def test_guigraph::conditionactiontransition_constructor_exists():
-    assert callable(guigraph::ConditionActionTransition.__init__)
+def test_guigraph_conditionactiontransition_constructor_exists():
+    assert callable(guigraph_ConditionActionTransition.__init__)
 
 
-def test_guigraph::conditionactiontransition_constructor_args():
-    sig = inspect.signature(guigraph::ConditionActionTransition.__init__)
+def test_guigraph_conditionactiontransition_constructor_args():
+    sig = inspect.signature(guigraph_ConditionActionTransition.__init__)
     params = list(sig.parameters.keys())
-    assert "actionsText" in params, "Missing parameter 'actionsText'"
     assert "applicationConditionText" in params, "Missing parameter 'applicationConditionText'"
+    assert "actionsText" in params, "Missing parameter 'actionsText'"
 
-def test_guigraph::conditionactiontransition_has_actionsText():
-    assert hasattr(guigraph::ConditionActionTransition, "actionsText")
+def test_guigraph_conditionactiontransition_has_applicationConditionText():
+    assert hasattr(guigraph_ConditionActionTransition, "applicationConditionText")
     descriptor = None
-    for klass in guigraph::ConditionActionTransition.__mro__:
-        if "actionsText" in klass.__dict__:
-            descriptor = klass.__dict__["actionsText"]
+    for klass in guigraph_ConditionActionTransition.__mro__:
+        if "applicationConditionText" in klass.__dict__:
+            descriptor = klass.__dict__["applicationConditionText"]
             break
     assert isinstance(descriptor, property)
 
-def test_guigraph::conditionactiontransition_has_applicationConditionText():
-    assert hasattr(guigraph::ConditionActionTransition, "applicationConditionText")
+def test_guigraph_conditionactiontransition_has_actionsText():
+    assert hasattr(guigraph_ConditionActionTransition, "actionsText")
     descriptor = None
-    for klass in guigraph::ConditionActionTransition.__mro__:
-        if "applicationConditionText" in klass.__dict__:
-            descriptor = klass.__dict__["applicationConditionText"]
+    for klass in guigraph_ConditionActionTransition.__mro__:
+        if "actionsText" in klass.__dict__:
+            descriptor = klass.__dict__["actionsText"]
             break
     assert isinstance(descriptor, property)
 
@@ -454,37 +454,37 @@ def test_abstractmodelelement_constructor_args():
 
 
 
-def test_guigraph::guigraphnode_is_not_abstract():
-    assert not inspect.isabstract(guigraph::GuiGraphNode)
+def test_guigraph_guigraphnode_is_not_abstract():
+    assert not inspect.isabstract(guigraph_GuiGraphNode)
 
 
-def test_guigraph::guigraphnode_constructor_exists():
-    assert callable(guigraph::GuiGraphNode.__init__)
+def test_guigraph_guigraphnode_constructor_exists():
+    assert callable(guigraph_GuiGraphNode.__init__)
 
 
-def test_guigraph::guigraphnode_constructor_args():
-    sig = inspect.signature(guigraph::GuiGraphNode.__init__)
+def test_guigraph_guigraphnode_constructor_args():
+    sig = inspect.signature(guigraph_GuiGraphNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_guigraph::widget_is_not_abstract():
-    assert not inspect.isabstract(guigraph::Widget)
+def test_guigraph_widget_is_not_abstract():
+    assert not inspect.isabstract(guigraph_Widget)
 
 
-def test_guigraph::widget_constructor_exists():
-    assert callable(guigraph::Widget.__init__)
+def test_guigraph_widget_constructor_exists():
+    assert callable(guigraph_Widget.__init__)
 
 
-def test_guigraph::widget_constructor_args():
-    sig = inspect.signature(guigraph::Widget.__init__)
+def test_guigraph_widget_constructor_args():
+    sig = inspect.signature(guigraph_Widget.__init__)
     params = list(sig.parameters.keys())
     assert "image" in params, "Missing parameter 'image'"
 
-def test_guigraph::widget_has_image():
-    assert hasattr(guigraph::Widget, "image")
+def test_guigraph_widget_has_image():
+    assert hasattr(guigraph_Widget, "image")
     descriptor = None
-    for klass in guigraph::Widget.__mro__:
+    for klass in guigraph_Widget.__mro__:
         if "image" in klass.__dict__:
             descriptor = klass.__dict__["image"]
             break
@@ -492,23 +492,23 @@ def test_guigraph::widget_has_image():
 
 
 
-def test_guigraph::guigraph_is_not_abstract():
-    assert not inspect.isabstract(guigraph::GuiGraph)
+def test_guigraph_guigraph_is_not_abstract():
+    assert not inspect.isabstract(guigraph_GuiGraph)
 
 
-def test_guigraph::guigraph_constructor_exists():
-    assert callable(guigraph::GuiGraph.__init__)
+def test_guigraph_guigraph_constructor_exists():
+    assert callable(guigraph_GuiGraph.__init__)
 
 
-def test_guigraph::guigraph_constructor_args():
-    sig = inspect.signature(guigraph::GuiGraph.__init__)
+def test_guigraph_guigraph_constructor_args():
+    sig = inspect.signature(guigraph_GuiGraph.__init__)
     params = list(sig.parameters.keys())
     assert "invariantText" in params, "Missing parameter 'invariantText'"
 
-def test_guigraph::guigraph_has_invariantText():
-    assert hasattr(guigraph::GuiGraph, "invariantText")
+def test_guigraph_guigraph_has_invariantText():
+    assert hasattr(guigraph_GuiGraph, "invariantText")
     descriptor = None
-    for klass in guigraph::GuiGraph.__mro__:
+    for klass in guigraph_GuiGraph.__mro__:
         if "invariantText" in klass.__dict__:
             descriptor = klass.__dict__["invariantText"]
             break
@@ -516,16 +516,16 @@ def test_guigraph::guigraph_has_invariantText():
 
 
 
-def test_guigraph::arc_is_not_abstract():
-    assert not inspect.isabstract(guigraph::Arc)
+def test_guigraph_arc_is_not_abstract():
+    assert not inspect.isabstract(guigraph_Arc)
 
 
-def test_guigraph::arc_constructor_exists():
-    assert callable(guigraph::Arc.__init__)
+def test_guigraph_arc_constructor_exists():
+    assert callable(guigraph_Arc.__init__)
 
 
-def test_guigraph::arc_constructor_args():
-    sig = inspect.signature(guigraph::Arc.__init__)
+def test_guigraph_arc_constructor_args():
+    sig = inspect.signature(guigraph_Arc.__init__)
     params = list(sig.parameters.keys())
 
 def test_timingtype_exists():
@@ -536,8 +536,8 @@ def test_timingtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TimingType]
     expected_literals = [
-        "DelayUntilStart",
         "Interval",
+        "DelayUntilStart",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -558,59 +558,59 @@ safe_text = st.text(
 Arc_strategy = st.builds(
     Arc,
 )
-guigraph::InhibitorArc_strategy = st.builds(
-    guigraph::InhibitorArc,
+guigraph_InhibitorArc_strategy = st.builds(
+    guigraph_InhibitorArc,
 )
-guigraph::StandardArc_strategy = st.builds(
-    guigraph::StandardArc,
+guigraph_StandardArc_strategy = st.builds(
+    guigraph_StandardArc,
     weight=
         st.integers()
 )
-rules::IRealTimeConsumer_strategy = st.builds(
-    rules::IRealTimeConsumer,
+rules_IRealTimeConsumer_strategy = st.builds(
+    rules_IRealTimeConsumer,
 )
 GuiGraphNode_strategy = st.builds(
     GuiGraphNode,
 )
-guigraph::Place_strategy = st.builds(
-    guigraph::Place,
+guigraph_Place_strategy = st.builds(
+    guigraph_Place,
     initialTokens=
         st.integers()
 )
-guigraph::Transition_strategy = st.builds(
-    guigraph::Transition,
-    timingType=
+guigraph_Transition_strategy = st.builds(
+    guigraph_Transition,
+    faultProbability=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    rate=
+        st.integers(),
+    timeMin=
         safe_text,
     timeMax=
+        safe_text,
+    timingType=
         safe_text,
     terminates=
         st.booleans(),
     faultImpact=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    rate=
-        st.integers(),
-    faultProbability=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    timeMin=
-        safe_text
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Place_strategy = st.builds(
     Place,
 )
-guigraph::NoWidgetNode_strategy = st.builds(
-    guigraph::NoWidgetNode,
+guigraph_NoWidgetNode_strategy = st.builds(
+    guigraph_NoWidgetNode,
 )
 Widget_strategy = st.builds(
     Widget,
 )
-guigraph::Form_strategy = st.builds(
-    guigraph::Form,
+guigraph_Form_strategy = st.builds(
+    guigraph_Form,
 )
 GuiGraph_strategy = st.builds(
     GuiGraph,
 )
-guigraph::Page_strategy = st.builds(
-    guigraph::Page,
+guigraph_Page_strategy = st.builds(
+    guigraph_Page,
 )
 ITimeConsumer_strategy = st.builds(
     ITimeConsumer,
@@ -618,45 +618,45 @@ ITimeConsumer_strategy = st.builds(
 Predicate_strategy = st.builds(
     Predicate,
 )
-guigraph::PreGenerationSequence_strategy = st.builds(
-    guigraph::PreGenerationSequence,
+guigraph_PreGenerationSequence_strategy = st.builds(
+    guigraph_PreGenerationSequence,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-guigraph::TimerTransition_strategy = st.builds(
-    guigraph::TimerTransition,
+guigraph_TimerTransition_strategy = st.builds(
+    guigraph_TimerTransition,
     duration=
         st.integers()
 )
-guigraph::PageTransition_strategy = st.builds(
-    guigraph::PageTransition,
+guigraph_PageTransition_strategy = st.builds(
+    guigraph_PageTransition,
 )
-guigraph::ConditionActionTransition_strategy = st.builds(
-    guigraph::ConditionActionTransition,
-    actionsText=
-        safe_text,
+guigraph_ConditionActionTransition_strategy = st.builds(
+    guigraph_ConditionActionTransition,
     applicationConditionText=
+        safe_text,
+    actionsText=
         safe_text
 )
 AbstractModelElement_strategy = st.builds(
     AbstractModelElement,
 )
-guigraph::GuiGraphNode_strategy = st.builds(
-    guigraph::GuiGraphNode,
+guigraph_GuiGraphNode_strategy = st.builds(
+    guigraph_GuiGraphNode,
 )
-guigraph::Widget_strategy = st.builds(
-    guigraph::Widget,
+guigraph_Widget_strategy = st.builds(
+    guigraph_Widget,
     image=
         safe_text
 )
-guigraph::GuiGraph_strategy = st.builds(
-    guigraph::GuiGraph,
+guigraph_GuiGraph_strategy = st.builds(
+    guigraph_GuiGraph,
     invariantText=
         safe_text
 )
-guigraph::Arc_strategy = st.builds(
-    guigraph::Arc,
+guigraph_Arc_strategy = st.builds(
+    guigraph_Arc,
 )
 
 @given(instance=Arc_strategy)
@@ -664,164 +664,137 @@ guigraph::Arc_strategy = st.builds(
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=guigraph::InhibitorArc_strategy)
+@given(instance=guigraph_InhibitorArc_strategy)
 @settings(max_examples=50)
-def test_guigraph::inhibitorarc_instantiation(instance):
-    assert isinstance(instance, guigraph::InhibitorArc)
+def test_guigraph_inhibitorarc_instantiation(instance):
+    assert isinstance(instance, guigraph_InhibitorArc)
 
-@given(instance=guigraph::StandardArc_strategy)
+@given(instance=guigraph_StandardArc_strategy)
 @settings(max_examples=50)
-def test_guigraph::standardarc_instantiation(instance):
-    assert isinstance(instance, guigraph::StandardArc)
-
-@given(instance=guigraph::StandardArc_strategy)
-def test_guigraph::standardarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_guigraph_standardarc_instantiation(instance):
+    assert isinstance(instance, guigraph_StandardArc)
 
 
-@given(instance=guigraph::StandardArc_strategy)
-def test_guigraph::standardarc_weight_setter(instance):
+
+@given(instance=guigraph_StandardArc_strategy)
+def test_guigraph_standardarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=rules::IRealTimeConsumer_strategy)
+@given(instance=rules_IRealTimeConsumer_strategy)
 @settings(max_examples=50)
-def test_rules::irealtimeconsumer_instantiation(instance):
-    assert isinstance(instance, rules::IRealTimeConsumer)
+def test_rules_irealtimeconsumer_instantiation(instance):
+    assert isinstance(instance, rules_IRealTimeConsumer)
 
 @given(instance=GuiGraphNode_strategy)
 @settings(max_examples=50)
 def test_guigraphnode_instantiation(instance):
     assert isinstance(instance, GuiGraphNode)
 
-@given(instance=guigraph::Place_strategy)
+@given(instance=guigraph_Place_strategy)
 @settings(max_examples=50)
-def test_guigraph::place_instantiation(instance):
-    assert isinstance(instance, guigraph::Place)
-
-@given(instance=guigraph::Place_strategy)
-def test_guigraph::place_initialTokens_type(instance):
-    assert isinstance(instance.initialTokens, int)
+def test_guigraph_place_instantiation(instance):
+    assert isinstance(instance, guigraph_Place)
 
 
-@given(instance=guigraph::Place_strategy)
-def test_guigraph::place_initialTokens_setter(instance):
+
+@given(instance=guigraph_Place_strategy)
+def test_guigraph_place_initialTokens_setter(instance):
     original = instance.initialTokens
     instance.initialTokens = original
     assert instance.initialTokens == original
 
-@given(instance=guigraph::Transition_strategy)
+@given(instance=guigraph_Transition_strategy)
 @settings(max_examples=50)
-def test_guigraph::transition_instantiation(instance):
-    assert isinstance(instance, guigraph::Transition)
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_timingType_type(instance):
-    assert isinstance(instance.timingType, str)
+def test_guigraph_transition_instantiation(instance):
+    assert isinstance(instance, guigraph_Transition)
 
 
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_timingType_setter(instance):
-    original = instance.timingType
-    instance.timingType = original
-    assert instance.timingType == original
 
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_timeMax_type(instance):
-    assert isinstance(instance.timeMax, str)
-
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_timeMax_setter(instance):
-    original = instance.timeMax
-    instance.timeMax = original
-    assert instance.timeMax == original
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_terminates_type(instance):
-    assert isinstance(instance.terminates, bool)
-
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_terminates_setter(instance):
-    original = instance.terminates
-    instance.terminates = original
-    assert instance.terminates == original
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_faultImpact_type(instance):
-    assert isinstance(instance.faultImpact, float)
-
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_faultImpact_setter(instance):
-    original = instance.faultImpact
-    instance.faultImpact = original
-    assert instance.faultImpact == original
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_rate_type(instance):
-    assert isinstance(instance.rate, int)
-
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_rate_setter(instance):
-    original = instance.rate
-    instance.rate = original
-    assert instance.rate == original
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_faultProbability_type(instance):
-    assert isinstance(instance.faultProbability, float)
-
-
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_faultProbability_setter(instance):
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_faultProbability_setter(instance):
     original = instance.faultProbability
     instance.faultProbability = original
     assert instance.faultProbability == original
 
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_timeMin_type(instance):
-    assert isinstance(instance.timeMin, str)
 
 
-@given(instance=guigraph::Transition_strategy)
-def test_guigraph::transition_timeMin_setter(instance):
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_rate_setter(instance):
+    original = instance.rate
+    instance.rate = original
+    assert instance.rate == original
+
+
+
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_timeMin_setter(instance):
     original = instance.timeMin
     instance.timeMin = original
     assert instance.timeMin == original
+
+
+
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_timeMax_setter(instance):
+    original = instance.timeMax
+    instance.timeMax = original
+    assert instance.timeMax == original
+
+
+
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_timingType_setter(instance):
+    original = instance.timingType
+    instance.timingType = original
+    assert instance.timingType == original
+
+
+
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_terminates_setter(instance):
+    original = instance.terminates
+    instance.terminates = original
+    assert instance.terminates == original
+
+
+
+@given(instance=guigraph_Transition_strategy)
+def test_guigraph_transition_faultImpact_setter(instance):
+    original = instance.faultImpact
+    instance.faultImpact = original
+    assert instance.faultImpact == original
 
 @given(instance=Place_strategy)
 @settings(max_examples=50)
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=guigraph::NoWidgetNode_strategy)
+@given(instance=guigraph_NoWidgetNode_strategy)
 @settings(max_examples=50)
-def test_guigraph::nowidgetnode_instantiation(instance):
-    assert isinstance(instance, guigraph::NoWidgetNode)
+def test_guigraph_nowidgetnode_instantiation(instance):
+    assert isinstance(instance, guigraph_NoWidgetNode)
 
 @given(instance=Widget_strategy)
 @settings(max_examples=50)
 def test_widget_instantiation(instance):
     assert isinstance(instance, Widget)
 
-@given(instance=guigraph::Form_strategy)
+@given(instance=guigraph_Form_strategy)
 @settings(max_examples=50)
-def test_guigraph::form_instantiation(instance):
-    assert isinstance(instance, guigraph::Form)
+def test_guigraph_form_instantiation(instance):
+    assert isinstance(instance, guigraph_Form)
 
 @given(instance=GuiGraph_strategy)
 @settings(max_examples=50)
 def test_guigraph_instantiation(instance):
     assert isinstance(instance, GuiGraph)
 
-@given(instance=guigraph::Page_strategy)
+@given(instance=guigraph_Page_strategy)
 @settings(max_examples=50)
-def test_guigraph::page_instantiation(instance):
-    assert isinstance(instance, guigraph::Page)
+def test_guigraph_page_instantiation(instance):
+    assert isinstance(instance, guigraph_Page)
 
 @given(instance=ITimeConsumer_strategy)
 @settings(max_examples=50)
@@ -833,107 +806,92 @@ def test_itimeconsumer_instantiation(instance):
 def test_predicate_instantiation(instance):
     assert isinstance(instance, Predicate)
 
-@given(instance=guigraph::PreGenerationSequence_strategy)
+@given(instance=guigraph_PreGenerationSequence_strategy)
 @settings(max_examples=50)
-def test_guigraph::pregenerationsequence_instantiation(instance):
-    assert isinstance(instance, guigraph::PreGenerationSequence)
+def test_guigraph_pregenerationsequence_instantiation(instance):
+    assert isinstance(instance, guigraph_PreGenerationSequence)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=guigraph::TimerTransition_strategy)
+@given(instance=guigraph_TimerTransition_strategy)
 @settings(max_examples=50)
-def test_guigraph::timertransition_instantiation(instance):
-    assert isinstance(instance, guigraph::TimerTransition)
-
-@given(instance=guigraph::TimerTransition_strategy)
-def test_guigraph::timertransition_duration_type(instance):
-    assert isinstance(instance.duration, int)
+def test_guigraph_timertransition_instantiation(instance):
+    assert isinstance(instance, guigraph_TimerTransition)
 
 
-@given(instance=guigraph::TimerTransition_strategy)
-def test_guigraph::timertransition_duration_setter(instance):
+
+@given(instance=guigraph_TimerTransition_strategy)
+def test_guigraph_timertransition_duration_setter(instance):
     original = instance.duration
     instance.duration = original
     assert instance.duration == original
 
-@given(instance=guigraph::PageTransition_strategy)
+@given(instance=guigraph_PageTransition_strategy)
 @settings(max_examples=50)
-def test_guigraph::pagetransition_instantiation(instance):
-    assert isinstance(instance, guigraph::PageTransition)
+def test_guigraph_pagetransition_instantiation(instance):
+    assert isinstance(instance, guigraph_PageTransition)
 
-@given(instance=guigraph::ConditionActionTransition_strategy)
+@given(instance=guigraph_ConditionActionTransition_strategy)
 @settings(max_examples=50)
-def test_guigraph::conditionactiontransition_instantiation(instance):
-    assert isinstance(instance, guigraph::ConditionActionTransition)
-
-@given(instance=guigraph::ConditionActionTransition_strategy)
-def test_guigraph::conditionactiontransition_actionsText_type(instance):
-    assert isinstance(instance.actionsText, str)
+def test_guigraph_conditionactiontransition_instantiation(instance):
+    assert isinstance(instance, guigraph_ConditionActionTransition)
 
 
-@given(instance=guigraph::ConditionActionTransition_strategy)
-def test_guigraph::conditionactiontransition_actionsText_setter(instance):
-    original = instance.actionsText
-    instance.actionsText = original
-    assert instance.actionsText == original
 
-@given(instance=guigraph::ConditionActionTransition_strategy)
-def test_guigraph::conditionactiontransition_applicationConditionText_type(instance):
-    assert isinstance(instance.applicationConditionText, str)
-
-
-@given(instance=guigraph::ConditionActionTransition_strategy)
-def test_guigraph::conditionactiontransition_applicationConditionText_setter(instance):
+@given(instance=guigraph_ConditionActionTransition_strategy)
+def test_guigraph_conditionactiontransition_applicationConditionText_setter(instance):
     original = instance.applicationConditionText
     instance.applicationConditionText = original
     assert instance.applicationConditionText == original
+
+
+
+@given(instance=guigraph_ConditionActionTransition_strategy)
+def test_guigraph_conditionactiontransition_actionsText_setter(instance):
+    original = instance.actionsText
+    instance.actionsText = original
+    assert instance.actionsText == original
 
 @given(instance=AbstractModelElement_strategy)
 @settings(max_examples=50)
 def test_abstractmodelelement_instantiation(instance):
     assert isinstance(instance, AbstractModelElement)
 
-@given(instance=guigraph::GuiGraphNode_strategy)
+@given(instance=guigraph_GuiGraphNode_strategy)
 @settings(max_examples=50)
-def test_guigraph::guigraphnode_instantiation(instance):
-    assert isinstance(instance, guigraph::GuiGraphNode)
+def test_guigraph_guigraphnode_instantiation(instance):
+    assert isinstance(instance, guigraph_GuiGraphNode)
 
-@given(instance=guigraph::Widget_strategy)
+@given(instance=guigraph_Widget_strategy)
 @settings(max_examples=50)
-def test_guigraph::widget_instantiation(instance):
-    assert isinstance(instance, guigraph::Widget)
-
-@given(instance=guigraph::Widget_strategy)
-def test_guigraph::widget_image_type(instance):
-    assert isinstance(instance.image, str)
+def test_guigraph_widget_instantiation(instance):
+    assert isinstance(instance, guigraph_Widget)
 
 
-@given(instance=guigraph::Widget_strategy)
-def test_guigraph::widget_image_setter(instance):
+
+@given(instance=guigraph_Widget_strategy)
+def test_guigraph_widget_image_setter(instance):
     original = instance.image
     instance.image = original
     assert instance.image == original
 
-@given(instance=guigraph::GuiGraph_strategy)
+@given(instance=guigraph_GuiGraph_strategy)
 @settings(max_examples=50)
-def test_guigraph::guigraph_instantiation(instance):
-    assert isinstance(instance, guigraph::GuiGraph)
-
-@given(instance=guigraph::GuiGraph_strategy)
-def test_guigraph::guigraph_invariantText_type(instance):
-    assert isinstance(instance.invariantText, str)
+def test_guigraph_guigraph_instantiation(instance):
+    assert isinstance(instance, guigraph_GuiGraph)
 
 
-@given(instance=guigraph::GuiGraph_strategy)
-def test_guigraph::guigraph_invariantText_setter(instance):
+
+@given(instance=guigraph_GuiGraph_strategy)
+def test_guigraph_guigraph_invariantText_setter(instance):
     original = instance.invariantText
     instance.invariantText = original
     assert instance.invariantText == original
 
-@given(instance=guigraph::Arc_strategy)
+@given(instance=guigraph_Arc_strategy)
 @settings(max_examples=50)
-def test_guigraph::arc_instantiation(instance):
-    assert isinstance(instance, guigraph::Arc)
+def test_guigraph_arc_instantiation(instance):
+    assert isinstance(instance, guigraph_Arc)

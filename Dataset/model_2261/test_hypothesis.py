@@ -3,23 +3,139 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    school_Teacher,
+    school_School,
+    school_Course,
+    school_Year,
     Course,
-    school::LimitedCapacityCourse,
-    school::SpecialisationCourse,
-    school::Student,
-    school::SchoolClass,
-    school::Teacher,
-    school::School,
-    school::Course,
-    school::Year,
+    school_LimitedCapacityCourse,
+    school_SpecialisationCourse,
+    school_Student,
+    school_SchoolClass,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_school_teacher_is_not_abstract():
+    assert not inspect.isabstract(school_Teacher)
+
+
+def test_school_teacher_constructor_exists():
+    assert callable(school_Teacher.__init__)
+
+
+def test_school_teacher_constructor_args():
+    sig = inspect.signature(school_Teacher.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_school_teacher_has_name():
+    assert hasattr(school_Teacher, "name")
+    descriptor = None
+    for klass in school_Teacher.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_school_school_is_not_abstract():
+    assert not inspect.isabstract(school_School)
+
+
+def test_school_school_constructor_exists():
+    assert callable(school_School.__init__)
+
+
+def test_school_school_constructor_args():
+    sig = inspect.signature(school_School.__init__)
+    params = list(sig.parameters.keys())
+    assert "address" in params, "Missing parameter 'address'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_school_school_has_address():
+    assert hasattr(school_School, "address")
+    descriptor = None
+    for klass in school_School.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_school_school_has_name():
+    assert hasattr(school_School, "name")
+    descriptor = None
+    for klass in school_School.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_school_course_is_not_abstract():
+    assert not inspect.isabstract(school_Course)
+
+
+def test_school_course_constructor_exists():
+    assert callable(school_Course.__init__)
+
+
+def test_school_course_constructor_args():
+    sig = inspect.signature(school_Course.__init__)
+    params = list(sig.parameters.keys())
+    assert "subject" in params, "Missing parameter 'subject'"
+    assert "weight" in params, "Missing parameter 'weight'"
+
+def test_school_course_has_subject():
+    assert hasattr(school_Course, "subject")
+    descriptor = None
+    for klass in school_Course.__mro__:
+        if "subject" in klass.__dict__:
+            descriptor = klass.__dict__["subject"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_school_course_has_weight():
+    assert hasattr(school_Course, "weight")
+    descriptor = None
+    for klass in school_Course.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_school_year_is_not_abstract():
+    assert not inspect.isabstract(school_Year)
+
+
+def test_school_year_constructor_exists():
+    assert callable(school_Year.__init__)
+
+
+def test_school_year_constructor_args():
+    sig = inspect.signature(school_Year.__init__)
+    params = list(sig.parameters.keys())
+    assert "startingDate" in params, "Missing parameter 'startingDate'"
+
+def test_school_year_has_startingDate():
+    assert hasattr(school_Year, "startingDate")
+    descriptor = None
+    for klass in school_Year.__mro__:
+        if "startingDate" in klass.__dict__:
+            descriptor = klass.__dict__["startingDate"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -37,23 +153,23 @@ def test_course_constructor_args():
 
 
 
-def test_school::limitedcapacitycourse_is_not_abstract():
-    assert not inspect.isabstract(school::LimitedCapacityCourse)
+def test_school_limitedcapacitycourse_is_not_abstract():
+    assert not inspect.isabstract(school_LimitedCapacityCourse)
 
 
-def test_school::limitedcapacitycourse_constructor_exists():
-    assert callable(school::LimitedCapacityCourse.__init__)
+def test_school_limitedcapacitycourse_constructor_exists():
+    assert callable(school_LimitedCapacityCourse.__init__)
 
 
-def test_school::limitedcapacitycourse_constructor_args():
-    sig = inspect.signature(school::LimitedCapacityCourse.__init__)
+def test_school_limitedcapacitycourse_constructor_args():
+    sig = inspect.signature(school_LimitedCapacityCourse.__init__)
     params = list(sig.parameters.keys())
     assert "capacity" in params, "Missing parameter 'capacity'"
 
-def test_school::limitedcapacitycourse_has_capacity():
-    assert hasattr(school::LimitedCapacityCourse, "capacity")
+def test_school_limitedcapacitycourse_has_capacity():
+    assert hasattr(school_LimitedCapacityCourse, "capacity")
     descriptor = None
-    for klass in school::LimitedCapacityCourse.__mro__:
+    for klass in school_LimitedCapacityCourse.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
@@ -61,23 +177,23 @@ def test_school::limitedcapacitycourse_has_capacity():
 
 
 
-def test_school::specialisationcourse_is_not_abstract():
-    assert not inspect.isabstract(school::SpecialisationCourse)
+def test_school_specialisationcourse_is_not_abstract():
+    assert not inspect.isabstract(school_SpecialisationCourse)
 
 
-def test_school::specialisationcourse_constructor_exists():
-    assert callable(school::SpecialisationCourse.__init__)
+def test_school_specialisationcourse_constructor_exists():
+    assert callable(school_SpecialisationCourse.__init__)
 
 
-def test_school::specialisationcourse_constructor_args():
-    sig = inspect.signature(school::SpecialisationCourse.__init__)
+def test_school_specialisationcourse_constructor_args():
+    sig = inspect.signature(school_SpecialisationCourse.__init__)
     params = list(sig.parameters.keys())
     assert "specialisation" in params, "Missing parameter 'specialisation'"
 
-def test_school::specialisationcourse_has_specialisation():
-    assert hasattr(school::SpecialisationCourse, "specialisation")
+def test_school_specialisationcourse_has_specialisation():
+    assert hasattr(school_SpecialisationCourse, "specialisation")
     descriptor = None
-    for klass in school::SpecialisationCourse.__mro__:
+    for klass in school_SpecialisationCourse.__mro__:
         if "specialisation" in klass.__dict__:
             descriptor = klass.__dict__["specialisation"]
             break
@@ -85,23 +201,23 @@ def test_school::specialisationcourse_has_specialisation():
 
 
 
-def test_school::student_is_not_abstract():
-    assert not inspect.isabstract(school::Student)
+def test_school_student_is_not_abstract():
+    assert not inspect.isabstract(school_Student)
 
 
-def test_school::student_constructor_exists():
-    assert callable(school::Student.__init__)
+def test_school_student_constructor_exists():
+    assert callable(school_Student.__init__)
 
 
-def test_school::student_constructor_args():
-    sig = inspect.signature(school::Student.__init__)
+def test_school_student_constructor_args():
+    sig = inspect.signature(school_Student.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_school::student_has_name():
-    assert hasattr(school::Student, "name")
+def test_school_student_has_name():
+    assert hasattr(school_Student, "name")
     descriptor = None
-    for klass in school::Student.__mro__:
+    for klass in school_Student.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -109,141 +225,25 @@ def test_school::student_has_name():
 
 
 
-def test_school::schoolclass_is_not_abstract():
-    assert not inspect.isabstract(school::SchoolClass)
+def test_school_schoolclass_is_not_abstract():
+    assert not inspect.isabstract(school_SchoolClass)
 
 
-def test_school::schoolclass_constructor_exists():
-    assert callable(school::SchoolClass.__init__)
+def test_school_schoolclass_constructor_exists():
+    assert callable(school_SchoolClass.__init__)
 
 
-def test_school::schoolclass_constructor_args():
-    sig = inspect.signature(school::SchoolClass.__init__)
+def test_school_schoolclass_constructor_args():
+    sig = inspect.signature(school_SchoolClass.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
 
-def test_school::schoolclass_has_code():
-    assert hasattr(school::SchoolClass, "code")
+def test_school_schoolclass_has_code():
+    assert hasattr(school_SchoolClass, "code")
     descriptor = None
-    for klass in school::SchoolClass.__mro__:
+    for klass in school_SchoolClass.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_school::teacher_is_not_abstract():
-    assert not inspect.isabstract(school::Teacher)
-
-
-def test_school::teacher_constructor_exists():
-    assert callable(school::Teacher.__init__)
-
-
-def test_school::teacher_constructor_args():
-    sig = inspect.signature(school::Teacher.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_school::teacher_has_name():
-    assert hasattr(school::Teacher, "name")
-    descriptor = None
-    for klass in school::Teacher.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_school::school_is_not_abstract():
-    assert not inspect.isabstract(school::School)
-
-
-def test_school::school_constructor_exists():
-    assert callable(school::School.__init__)
-
-
-def test_school::school_constructor_args():
-    sig = inspect.signature(school::School.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "address" in params, "Missing parameter 'address'"
-
-def test_school::school_has_name():
-    assert hasattr(school::School, "name")
-    descriptor = None
-    for klass in school::School.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_school::school_has_address():
-    assert hasattr(school::School, "address")
-    descriptor = None
-    for klass in school::School.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_school::course_is_not_abstract():
-    assert not inspect.isabstract(school::Course)
-
-
-def test_school::course_constructor_exists():
-    assert callable(school::Course.__init__)
-
-
-def test_school::course_constructor_args():
-    sig = inspect.signature(school::Course.__init__)
-    params = list(sig.parameters.keys())
-    assert "weight" in params, "Missing parameter 'weight'"
-    assert "subject" in params, "Missing parameter 'subject'"
-
-def test_school::course_has_weight():
-    assert hasattr(school::Course, "weight")
-    descriptor = None
-    for klass in school::Course.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_school::course_has_subject():
-    assert hasattr(school::Course, "subject")
-    descriptor = None
-    for klass in school::Course.__mro__:
-        if "subject" in klass.__dict__:
-            descriptor = klass.__dict__["subject"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_school::year_is_not_abstract():
-    assert not inspect.isabstract(school::Year)
-
-
-def test_school::year_constructor_exists():
-    assert callable(school::Year.__init__)
-
-
-def test_school::year_constructor_args():
-    sig = inspect.signature(school::Year.__init__)
-    params = list(sig.parameters.keys())
-    assert "startingDate" in params, "Missing parameter 'startingDate'"
-
-def test_school::year_has_startingDate():
-    assert hasattr(school::Year, "startingDate")
-    descriptor = None
-    for klass in school::Year.__mro__:
-        if "startingDate" in klass.__dict__:
-            descriptor = klass.__dict__["startingDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -259,205 +259,175 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Course_strategy = st.builds(
-    Course,
+school_Teacher_strategy = st.builds(
+    school_Teacher,
+    name=
+        safe_text
 )
-school::LimitedCapacityCourse_strategy = st.builds(
-    school::LimitedCapacityCourse,
-    capacity=
+school_School_strategy = st.builds(
+    school_School,
+    address=
+        safe_text,
+    name=
+        safe_text
+)
+school_Course_strategy = st.builds(
+    school_Course,
+    subject=
+        safe_text,
+    weight=
         st.integers()
 )
-school::SpecialisationCourse_strategy = st.builds(
-    school::SpecialisationCourse,
-    specialisation=
-        safe_text
-)
-school::Student_strategy = st.builds(
-    school::Student,
-    name=
-        safe_text
-)
-school::SchoolClass_strategy = st.builds(
-    school::SchoolClass,
-    code=
-        safe_text
-)
-school::Teacher_strategy = st.builds(
-    school::Teacher,
-    name=
-        safe_text
-)
-school::School_strategy = st.builds(
-    school::School,
-    name=
-        safe_text,
-    address=
-        safe_text
-)
-school::Course_strategy = st.builds(
-    school::Course,
-    weight=
-        st.integers(),
-    subject=
-        safe_text
-)
-school::Year_strategy = st.builds(
-    school::Year,
+school_Year_strategy = st.builds(
+    school_Year,
     startingDate=
         st.integers()
 )
+Course_strategy = st.builds(
+    Course,
+)
+school_LimitedCapacityCourse_strategy = st.builds(
+    school_LimitedCapacityCourse,
+    capacity=
+        st.integers()
+)
+school_SpecialisationCourse_strategy = st.builds(
+    school_SpecialisationCourse,
+    specialisation=
+        safe_text
+)
+school_Student_strategy = st.builds(
+    school_Student,
+    name=
+        safe_text
+)
+school_SchoolClass_strategy = st.builds(
+    school_SchoolClass,
+    code=
+        safe_text
+)
+
+@given(instance=school_Teacher_strategy)
+@settings(max_examples=50)
+def test_school_teacher_instantiation(instance):
+    assert isinstance(instance, school_Teacher)
+
+
+
+@given(instance=school_Teacher_strategy)
+def test_school_teacher_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=school_School_strategy)
+@settings(max_examples=50)
+def test_school_school_instantiation(instance):
+    assert isinstance(instance, school_School)
+
+
+
+@given(instance=school_School_strategy)
+def test_school_school_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=school_School_strategy)
+def test_school_school_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=school_Course_strategy)
+@settings(max_examples=50)
+def test_school_course_instantiation(instance):
+    assert isinstance(instance, school_Course)
+
+
+
+@given(instance=school_Course_strategy)
+def test_school_course_subject_setter(instance):
+    original = instance.subject
+    instance.subject = original
+    assert instance.subject == original
+
+
+
+@given(instance=school_Course_strategy)
+def test_school_course_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+@given(instance=school_Year_strategy)
+@settings(max_examples=50)
+def test_school_year_instantiation(instance):
+    assert isinstance(instance, school_Year)
+
+
+
+@given(instance=school_Year_strategy)
+def test_school_year_startingDate_setter(instance):
+    original = instance.startingDate
+    instance.startingDate = original
+    assert instance.startingDate == original
 
 @given(instance=Course_strategy)
 @settings(max_examples=50)
 def test_course_instantiation(instance):
     assert isinstance(instance, Course)
 
-@given(instance=school::LimitedCapacityCourse_strategy)
+@given(instance=school_LimitedCapacityCourse_strategy)
 @settings(max_examples=50)
-def test_school::limitedcapacitycourse_instantiation(instance):
-    assert isinstance(instance, school::LimitedCapacityCourse)
-
-@given(instance=school::LimitedCapacityCourse_strategy)
-def test_school::limitedcapacitycourse_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
+def test_school_limitedcapacitycourse_instantiation(instance):
+    assert isinstance(instance, school_LimitedCapacityCourse)
 
 
-@given(instance=school::LimitedCapacityCourse_strategy)
-def test_school::limitedcapacitycourse_capacity_setter(instance):
+
+@given(instance=school_LimitedCapacityCourse_strategy)
+def test_school_limitedcapacitycourse_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original
 
-@given(instance=school::SpecialisationCourse_strategy)
+@given(instance=school_SpecialisationCourse_strategy)
 @settings(max_examples=50)
-def test_school::specialisationcourse_instantiation(instance):
-    assert isinstance(instance, school::SpecialisationCourse)
-
-@given(instance=school::SpecialisationCourse_strategy)
-def test_school::specialisationcourse_specialisation_type(instance):
-    assert isinstance(instance.specialisation, str)
+def test_school_specialisationcourse_instantiation(instance):
+    assert isinstance(instance, school_SpecialisationCourse)
 
 
-@given(instance=school::SpecialisationCourse_strategy)
-def test_school::specialisationcourse_specialisation_setter(instance):
+
+@given(instance=school_SpecialisationCourse_strategy)
+def test_school_specialisationcourse_specialisation_setter(instance):
     original = instance.specialisation
     instance.specialisation = original
     assert instance.specialisation == original
 
-@given(instance=school::Student_strategy)
+@given(instance=school_Student_strategy)
 @settings(max_examples=50)
-def test_school::student_instantiation(instance):
-    assert isinstance(instance, school::Student)
-
-@given(instance=school::Student_strategy)
-def test_school::student_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_school_student_instantiation(instance):
+    assert isinstance(instance, school_Student)
 
 
-@given(instance=school::Student_strategy)
-def test_school::student_name_setter(instance):
+
+@given(instance=school_Student_strategy)
+def test_school_student_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=school::SchoolClass_strategy)
+@given(instance=school_SchoolClass_strategy)
 @settings(max_examples=50)
-def test_school::schoolclass_instantiation(instance):
-    assert isinstance(instance, school::SchoolClass)
-
-@given(instance=school::SchoolClass_strategy)
-def test_school::schoolclass_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_school_schoolclass_instantiation(instance):
+    assert isinstance(instance, school_SchoolClass)
 
 
-@given(instance=school::SchoolClass_strategy)
-def test_school::schoolclass_code_setter(instance):
+
+@given(instance=school_SchoolClass_strategy)
+def test_school_schoolclass_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
-
-@given(instance=school::Teacher_strategy)
-@settings(max_examples=50)
-def test_school::teacher_instantiation(instance):
-    assert isinstance(instance, school::Teacher)
-
-@given(instance=school::Teacher_strategy)
-def test_school::teacher_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=school::Teacher_strategy)
-def test_school::teacher_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=school::School_strategy)
-@settings(max_examples=50)
-def test_school::school_instantiation(instance):
-    assert isinstance(instance, school::School)
-
-@given(instance=school::School_strategy)
-def test_school::school_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=school::School_strategy)
-def test_school::school_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=school::School_strategy)
-def test_school::school_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=school::School_strategy)
-def test_school::school_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=school::Course_strategy)
-@settings(max_examples=50)
-def test_school::course_instantiation(instance):
-    assert isinstance(instance, school::Course)
-
-@given(instance=school::Course_strategy)
-def test_school::course_weight_type(instance):
-    assert isinstance(instance.weight, int)
-
-
-@given(instance=school::Course_strategy)
-def test_school::course_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
-
-@given(instance=school::Course_strategy)
-def test_school::course_subject_type(instance):
-    assert isinstance(instance.subject, str)
-
-
-@given(instance=school::Course_strategy)
-def test_school::course_subject_setter(instance):
-    original = instance.subject
-    instance.subject = original
-    assert instance.subject == original
-
-@given(instance=school::Year_strategy)
-@settings(max_examples=50)
-def test_school::year_instantiation(instance):
-    assert isinstance(instance, school::Year)
-
-@given(instance=school::Year_strategy)
-def test_school::year_startingDate_type(instance):
-    assert isinstance(instance.startingDate, int)
-
-
-@given(instance=school::Year_strategy)
-def test_school::year_startingDate_setter(instance):
-    original = instance.startingDate
-    instance.startingDate = original
-    assert instance.startingDate == original

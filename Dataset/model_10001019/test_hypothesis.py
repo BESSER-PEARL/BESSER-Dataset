@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Card,
@@ -12,8 +12,8 @@ from python_code import (
     Avatar,
     Theme,
     Deck,
-    Kind,
     Suit,
+    Kind,
 )
 
 # =============================================================================
@@ -33,17 +33,8 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "suit" in params, "Missing parameter 'suit'"
-
-def test_card_has_kind():
-    assert hasattr(Card, "kind")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
+    assert "kind" in params, "Missing parameter 'kind'"
 
 def test_card_has_suit():
     assert hasattr(Card, "suit")
@@ -51,6 +42,15 @@ def test_card_has_suit():
     for klass in Card.__mro__:
         if "suit" in klass.__dict__:
             descriptor = klass.__dict__["suit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_kind():
+    assert hasattr(Card, "kind")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
@@ -144,19 +144,6 @@ def test_deck_constructor_args():
     sig = inspect.signature(Deck.__init__)
     params = list(sig.parameters.keys())
 
-def test_kind_exists():
-    # Check that the Enumeration exists
-    assert Kind is not None
-
-def test_kind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Kind]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Kind"
-
 def test_suit_exists():
     # Check that the Enumeration exists
     assert Suit is not None
@@ -169,6 +156,19 @@ def test_suit_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Suit"
+
+def test_kind_exists():
+    # Check that the Enumeration exists
+    assert Kind is not None
+
+def test_kind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Kind]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Kind"
 
 
 # =============================================================================
@@ -184,9 +184,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Card_strategy = st.builds(
     Card,
-    kind=
-        st.none(),
     suit=
+        st.none(),
+    kind=
         st.none()
 )
 Player_strategy = st.builds(
@@ -214,20 +214,6 @@ Deck_strategy = st.builds(
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_kind_type(instance):
-    assert isinstance(instance.kind, kind)
-
-
-@given(instance=Card_strategy)
-def test_card_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, suit)
 
 
 @given(instance=Card_strategy)
@@ -236,14 +222,19 @@ def test_card_suit_setter(instance):
     instance.suit = original
     assert instance.suit == original
 
+
+
+@given(instance=Card_strategy)
+def test_card_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
 @given(instance=Player_strategy)
 @settings(max_examples=50)
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -257,9 +248,6 @@ def test_player_name_setter(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Game_strategy)

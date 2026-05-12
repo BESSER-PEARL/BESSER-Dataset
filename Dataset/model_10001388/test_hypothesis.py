@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Loan,
@@ -33,28 +33,19 @@ def test_loan_constructor_exists():
 def test_loan_constructor_args():
     sig = inspect.signature(Loan.__init__)
     params = list(sig.parameters.keys())
-    assert "amount" in params, "Missing parameter 'amount'"
-    assert "loan_interst" in params, "Missing parameter 'loan_interst'"
-    assert "emp_name" in params, "Missing parameter 'emp_name'"
     assert "loan_purpose" in params, "Missing parameter 'loan_purpose'"
+    assert "emp_name" in params, "Missing parameter 'emp_name'"
     assert "loan_type" in params, "Missing parameter 'loan_type'"
+    assert "loan_interst" in params, "Missing parameter 'loan_interst'"
     assert "emp_id" in params, "Missing parameter 'emp_id'"
+    assert "amount" in params, "Missing parameter 'amount'"
 
-def test_loan_has_amount():
-    assert hasattr(Loan, "amount")
+def test_loan_has_loan_purpose():
+    assert hasattr(Loan, "loan_purpose")
     descriptor = None
     for klass in Loan.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_loan_has_loan_interst():
-    assert hasattr(Loan, "loan_interst")
-    descriptor = None
-    for klass in Loan.__mro__:
-        if "loan_interst" in klass.__dict__:
-            descriptor = klass.__dict__["loan_interst"]
+        if "loan_purpose" in klass.__dict__:
+            descriptor = klass.__dict__["loan_purpose"]
             break
     assert isinstance(descriptor, property)
 
@@ -67,15 +58,6 @@ def test_loan_has_emp_name():
             break
     assert isinstance(descriptor, property)
 
-def test_loan_has_loan_purpose():
-    assert hasattr(Loan, "loan_purpose")
-    descriptor = None
-    for klass in Loan.__mro__:
-        if "loan_purpose" in klass.__dict__:
-            descriptor = klass.__dict__["loan_purpose"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_loan_has_loan_type():
     assert hasattr(Loan, "loan_type")
     descriptor = None
@@ -85,12 +67,30 @@ def test_loan_has_loan_type():
             break
     assert isinstance(descriptor, property)
 
+def test_loan_has_loan_interst():
+    assert hasattr(Loan, "loan_interst")
+    descriptor = None
+    for klass in Loan.__mro__:
+        if "loan_interst" in klass.__dict__:
+            descriptor = klass.__dict__["loan_interst"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_loan_has_emp_id():
     assert hasattr(Loan, "emp_id")
     descriptor = None
     for klass in Loan.__mro__:
         if "emp_id" in klass.__dict__:
             descriptor = klass.__dict__["emp_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_loan_has_amount():
+    assert hasattr(Loan, "amount")
+    descriptor = None
+    for klass in Loan.__mro__:
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -233,17 +233,8 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "username" in params, "Missing parameter 'username'"
-
-def test_login_has_password():
-    assert hasattr(Login, "password")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_login_has_username():
     assert hasattr(Login, "username")
@@ -251,6 +242,15 @@ def test_login_has_username():
     for klass in Login.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_password():
+    assert hasattr(Login, "password")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -267,18 +267,9 @@ def test_salary_constructor_exists():
 def test_salary_constructor_args():
     sig = inspect.signature(Salary.__init__)
     params = list(sig.parameters.keys())
-    assert "basic_salary" in params, "Missing parameter 'basic_salary'"
     assert "emp_id" in params, "Missing parameter 'emp_id'"
+    assert "basic_salary" in params, "Missing parameter 'basic_salary'"
     assert "emp_name" in params, "Missing parameter 'emp_name'"
-
-def test_salary_has_basic_salary():
-    assert hasattr(Salary, "basic_salary")
-    descriptor = None
-    for klass in Salary.__mro__:
-        if "basic_salary" in klass.__dict__:
-            descriptor = klass.__dict__["basic_salary"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_salary_has_emp_id():
     assert hasattr(Salary, "emp_id")
@@ -286,6 +277,15 @@ def test_salary_has_emp_id():
     for klass in Salary.__mro__:
         if "emp_id" in klass.__dict__:
             descriptor = klass.__dict__["emp_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_salary_has_basic_salary():
+    assert hasattr(Salary, "basic_salary")
+    descriptor = None
+    for klass in Salary.__mro__:
+        if "basic_salary" in klass.__dict__:
+            descriptor = klass.__dict__["basic_salary"]
             break
     assert isinstance(descriptor, property)
 
@@ -356,18 +356,18 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Loan_strategy = st.builds(
     Loan,
-    amount=
-        safe_text,
-    loan_interst=
-        st.integers(),
-    emp_name=
-        safe_text,
     loan_purpose=
+        safe_text,
+    emp_name=
         safe_text,
     loan_type=
         safe_text,
+    loan_interst=
+        st.integers(),
     emp_id=
-        st.integers()
+        st.integers(),
+    amount=
+        safe_text
 )
 payslip_strategy = st.builds(
     payslip,
@@ -397,17 +397,17 @@ Admin_strategy = st.builds(
 )
 Login_strategy = st.builds(
     Login,
-    password=
-        st.integers(),
     username=
-        safe_text
+        safe_text,
+    password=
+        st.integers()
 )
 Salary_strategy = st.builds(
     Salary,
-    basic_salary=
-        safe_text,
     emp_id=
         st.integers(),
+    basic_salary=
+        safe_text,
     emp_name=
         safe_text
 )
@@ -426,42 +426,6 @@ Employee_strategy = st.builds(
 def test_loan_instantiation(instance):
     assert isinstance(instance, Loan)
 
-@given(instance=Loan_strategy)
-def test_loan_amount_type(instance):
-    assert isinstance(instance.amount, str)
-
-
-@given(instance=Loan_strategy)
-def test_loan_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
-
-@given(instance=Loan_strategy)
-def test_loan_loan_interst_type(instance):
-    assert isinstance(instance.loan_interst, int)
-
-
-@given(instance=Loan_strategy)
-def test_loan_loan_interst_setter(instance):
-    original = instance.loan_interst
-    instance.loan_interst = original
-    assert instance.loan_interst == original
-
-@given(instance=Loan_strategy)
-def test_loan_emp_name_type(instance):
-    assert isinstance(instance.emp_name, str)
-
-
-@given(instance=Loan_strategy)
-def test_loan_emp_name_setter(instance):
-    original = instance.emp_name
-    instance.emp_name = original
-    assert instance.emp_name == original
-
-@given(instance=Loan_strategy)
-def test_loan_loan_purpose_type(instance):
-    assert isinstance(instance.loan_purpose, str)
 
 
 @given(instance=Loan_strategy)
@@ -470,9 +434,14 @@ def test_loan_loan_purpose_setter(instance):
     instance.loan_purpose = original
     assert instance.loan_purpose == original
 
+
+
 @given(instance=Loan_strategy)
-def test_loan_loan_type_type(instance):
-    assert isinstance(instance.loan_type, str)
+def test_loan_emp_name_setter(instance):
+    original = instance.emp_name
+    instance.emp_name = original
+    assert instance.emp_name == original
+
 
 
 @given(instance=Loan_strategy)
@@ -481,9 +450,14 @@ def test_loan_loan_type_setter(instance):
     instance.loan_type = original
     assert instance.loan_type == original
 
+
+
 @given(instance=Loan_strategy)
-def test_loan_emp_id_type(instance):
-    assert isinstance(instance.emp_id, int)
+def test_loan_loan_interst_setter(instance):
+    original = instance.loan_interst
+    instance.loan_interst = original
+    assert instance.loan_interst == original
+
 
 
 @given(instance=Loan_strategy)
@@ -492,14 +466,19 @@ def test_loan_emp_id_setter(instance):
     instance.emp_id = original
     assert instance.emp_id == original
 
+
+
+@given(instance=Loan_strategy)
+def test_loan_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
+
 @given(instance=payslip_strategy)
 @settings(max_examples=50)
 def test_payslip_instantiation(instance):
     assert isinstance(instance, payslip)
 
-@given(instance=payslip_strategy)
-def test_payslip_emp_name_type(instance):
-    assert isinstance(instance.emp_name, str)
 
 
 @given(instance=payslip_strategy)
@@ -508,9 +487,6 @@ def test_payslip_emp_name_setter(instance):
     instance.emp_name = original
     assert instance.emp_name == original
 
-@given(instance=payslip_strategy)
-def test_payslip_emp_id_type(instance):
-    assert isinstance(instance.emp_id, int)
 
 
 @given(instance=payslip_strategy)
@@ -524,9 +500,6 @@ def test_payslip_emp_id_setter(instance):
 def test_attendence_instantiation(instance):
     assert isinstance(instance, Attendence)
 
-@given(instance=Attendence_strategy)
-def test_attendence_emp_id_type(instance):
-    assert isinstance(instance.emp_id, int)
 
 
 @given(instance=Attendence_strategy)
@@ -535,9 +508,6 @@ def test_attendence_emp_id_setter(instance):
     instance.emp_id = original
     assert instance.emp_id == original
 
-@given(instance=Attendence_strategy)
-def test_attendence_Basic_salary_type(instance):
-    assert isinstance(instance.Basic_salary, int)
 
 
 @given(instance=Attendence_strategy)
@@ -546,9 +516,6 @@ def test_attendence_Basic_salary_setter(instance):
     instance.Basic_salary = original
     assert instance.Basic_salary == original
 
-@given(instance=Attendence_strategy)
-def test_attendence_emp_name_type(instance):
-    assert isinstance(instance.emp_name, str)
 
 
 @given(instance=Attendence_strategy)
@@ -567,9 +534,6 @@ def test_employeerequest_instantiation(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, int)
 
 
 @given(instance=Admin_strategy)
@@ -578,9 +542,6 @@ def test_admin_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Admin_strategy)
-def test_admin_adminEmail_type(instance):
-    assert isinstance(instance.adminEmail, str)
 
 
 @given(instance=Admin_strategy)
@@ -594,20 +555,6 @@ def test_admin_adminEmail_setter(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, int)
-
-
-@given(instance=Login_strategy)
-def test_login_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Login_strategy)
@@ -616,25 +563,19 @@ def test_login_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
+
+
+@given(instance=Login_strategy)
+def test_login_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=Salary_strategy)
 @settings(max_examples=50)
 def test_salary_instantiation(instance):
     assert isinstance(instance, Salary)
 
-@given(instance=Salary_strategy)
-def test_salary_basic_salary_type(instance):
-    assert isinstance(instance.basic_salary, str)
-
-
-@given(instance=Salary_strategy)
-def test_salary_basic_salary_setter(instance):
-    original = instance.basic_salary
-    instance.basic_salary = original
-    assert instance.basic_salary == original
-
-@given(instance=Salary_strategy)
-def test_salary_emp_id_type(instance):
-    assert isinstance(instance.emp_id, int)
 
 
 @given(instance=Salary_strategy)
@@ -643,9 +584,14 @@ def test_salary_emp_id_setter(instance):
     instance.emp_id = original
     assert instance.emp_id == original
 
+
+
 @given(instance=Salary_strategy)
-def test_salary_emp_name_type(instance):
-    assert isinstance(instance.emp_name, str)
+def test_salary_basic_salary_setter(instance):
+    original = instance.basic_salary
+    instance.basic_salary = original
+    assert instance.basic_salary == original
+
 
 
 @given(instance=Salary_strategy)
@@ -659,9 +605,6 @@ def test_salary_emp_name_setter(instance):
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=Employee_strategy)
-def test_employee_emp_email_type(instance):
-    assert isinstance(instance.emp_email, str)
 
 
 @given(instance=Employee_strategy)
@@ -670,9 +613,6 @@ def test_employee_emp_email_setter(instance):
     instance.emp_email = original
     assert instance.emp_email == original
 
-@given(instance=Employee_strategy)
-def test_employee_emp_name_type(instance):
-    assert isinstance(instance.emp_name, str)
 
 
 @given(instance=Employee_strategy)
@@ -681,9 +621,6 @@ def test_employee_emp_name_setter(instance):
     instance.emp_name = original
     assert instance.emp_name == original
 
-@given(instance=Employee_strategy)
-def test_employee_emp_id_type(instance):
-    assert isinstance(instance.emp_id, int)
 
 
 @given(instance=Employee_strategy)

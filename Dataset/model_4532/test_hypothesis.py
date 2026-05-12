@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    drone::EObject,
-    drone::RobotMissionContainer,
-    drone::MeasureConversion,
-    drone::NamedElement,
+from python_code import (
+    drone_EObject,
+    drone_RobotMissionContainer,
+    drone_MeasureConversion,
+    drone_NamedElement,
     PropertyValue,
-    drone::StringValue,
-    drone::CapabilityProperties,
-    drone::MeasureValue,
-    drone::Battery,
-    drone::PropertyValue,
-    drone::Size,
-    drone::Coordinate,
-    drone::Position,
-    drone::Property,
-    drone::TaskDescriptor,
+    drone_StringValue,
+    drone_CapabilityProperties,
+    drone_MeasureValue,
+    drone_Battery,
+    drone_PropertyValue,
+    drone_Size,
+    drone_Coordinate,
+    drone_Position,
+    drone_Property,
+    drone_TaskDescriptor,
     NamedElement,
-    drone::PropertyKeyContainer,
-    drone::MeasureDimension,
-    drone::Robot,
-    drone::Task,
-    drone::AreaObject,
-    drone::PropertyKey,
-    drone::Equipment,
-    drone::Capability,
-    drone::Mission,
+    drone_PropertyKeyContainer,
+    drone_MeasureDimension,
+    drone_PropertyKey,
+    drone_Robot,
+    drone_Equipment,
+    drone_Task,
+    drone_Capability,
+    drone_AreaObject,
+    drone_Mission,
 )
 
 # =============================================================================
@@ -39,51 +39,51 @@ from classes import (
 
 
 
-def test_drone::eobject_is_not_abstract():
-    assert not inspect.isabstract(drone::EObject)
+def test_drone_eobject_is_not_abstract():
+    assert not inspect.isabstract(drone_EObject)
 
 
-def test_drone::eobject_constructor_exists():
-    assert callable(drone::EObject.__init__)
+def test_drone_eobject_constructor_exists():
+    assert callable(drone_EObject.__init__)
 
 
-def test_drone::eobject_constructor_args():
-    sig = inspect.signature(drone::EObject.__init__)
+def test_drone_eobject_constructor_args():
+    sig = inspect.signature(drone_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::robotmissioncontainer_is_not_abstract():
-    assert not inspect.isabstract(drone::RobotMissionContainer)
+def test_drone_robotmissioncontainer_is_not_abstract():
+    assert not inspect.isabstract(drone_RobotMissionContainer)
 
 
-def test_drone::robotmissioncontainer_constructor_exists():
-    assert callable(drone::RobotMissionContainer.__init__)
+def test_drone_robotmissioncontainer_constructor_exists():
+    assert callable(drone_RobotMissionContainer.__init__)
 
 
-def test_drone::robotmissioncontainer_constructor_args():
-    sig = inspect.signature(drone::RobotMissionContainer.__init__)
+def test_drone_robotmissioncontainer_constructor_args():
+    sig = inspect.signature(drone_RobotMissionContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::measureconversion_is_not_abstract():
-    assert not inspect.isabstract(drone::MeasureConversion)
+def test_drone_measureconversion_is_not_abstract():
+    assert not inspect.isabstract(drone_MeasureConversion)
 
 
-def test_drone::measureconversion_constructor_exists():
-    assert callable(drone::MeasureConversion.__init__)
+def test_drone_measureconversion_constructor_exists():
+    assert callable(drone_MeasureConversion.__init__)
 
 
-def test_drone::measureconversion_constructor_args():
-    sig = inspect.signature(drone::MeasureConversion.__init__)
+def test_drone_measureconversion_constructor_args():
+    sig = inspect.signature(drone_MeasureConversion.__init__)
     params = list(sig.parameters.keys())
     assert "rate" in params, "Missing parameter 'rate'"
 
-def test_drone::measureconversion_has_rate():
-    assert hasattr(drone::MeasureConversion, "rate")
+def test_drone_measureconversion_has_rate():
+    assert hasattr(drone_MeasureConversion, "rate")
     descriptor = None
-    for klass in drone::MeasureConversion.__mro__:
+    for klass in drone_MeasureConversion.__mro__:
         if "rate" in klass.__dict__:
             descriptor = klass.__dict__["rate"]
             break
@@ -91,23 +91,23 @@ def test_drone::measureconversion_has_rate():
 
 
 
-def test_drone::namedelement_is_not_abstract():
-    assert not inspect.isabstract(drone::NamedElement)
+def test_drone_namedelement_is_not_abstract():
+    assert not inspect.isabstract(drone_NamedElement)
 
 
-def test_drone::namedelement_constructor_exists():
-    assert callable(drone::NamedElement.__init__)
+def test_drone_namedelement_constructor_exists():
+    assert callable(drone_NamedElement.__init__)
 
 
-def test_drone::namedelement_constructor_args():
-    sig = inspect.signature(drone::NamedElement.__init__)
+def test_drone_namedelement_constructor_args():
+    sig = inspect.signature(drone_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drone::namedelement_has_name():
-    assert hasattr(drone::NamedElement, "name")
+def test_drone_namedelement_has_name():
+    assert hasattr(drone_NamedElement, "name")
     descriptor = None
-    for klass in drone::NamedElement.__mro__:
+    for klass in drone_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -129,23 +129,23 @@ def test_propertyvalue_constructor_args():
 
 
 
-def test_drone::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(drone::StringValue)
+def test_drone_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(drone_StringValue)
 
 
-def test_drone::stringvalue_constructor_exists():
-    assert callable(drone::StringValue.__init__)
+def test_drone_stringvalue_constructor_exists():
+    assert callable(drone_StringValue.__init__)
 
 
-def test_drone::stringvalue_constructor_args():
-    sig = inspect.signature(drone::StringValue.__init__)
+def test_drone_stringvalue_constructor_args():
+    sig = inspect.signature(drone_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drone::stringvalue_has_value():
-    assert hasattr(drone::StringValue, "value")
+def test_drone_stringvalue_has_value():
+    assert hasattr(drone_StringValue, "value")
     descriptor = None
-    for klass in drone::StringValue.__mro__:
+    for klass in drone_StringValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -153,37 +153,37 @@ def test_drone::stringvalue_has_value():
 
 
 
-def test_drone::capabilityproperties_is_not_abstract():
-    assert not inspect.isabstract(drone::CapabilityProperties)
+def test_drone_capabilityproperties_is_not_abstract():
+    assert not inspect.isabstract(drone_CapabilityProperties)
 
 
-def test_drone::capabilityproperties_constructor_exists():
-    assert callable(drone::CapabilityProperties.__init__)
+def test_drone_capabilityproperties_constructor_exists():
+    assert callable(drone_CapabilityProperties.__init__)
 
 
-def test_drone::capabilityproperties_constructor_args():
-    sig = inspect.signature(drone::CapabilityProperties.__init__)
+def test_drone_capabilityproperties_constructor_args():
+    sig = inspect.signature(drone_CapabilityProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::measurevalue_is_not_abstract():
-    assert not inspect.isabstract(drone::MeasureValue)
+def test_drone_measurevalue_is_not_abstract():
+    assert not inspect.isabstract(drone_MeasureValue)
 
 
-def test_drone::measurevalue_constructor_exists():
-    assert callable(drone::MeasureValue.__init__)
+def test_drone_measurevalue_constructor_exists():
+    assert callable(drone_MeasureValue.__init__)
 
 
-def test_drone::measurevalue_constructor_args():
-    sig = inspect.signature(drone::MeasureValue.__init__)
+def test_drone_measurevalue_constructor_args():
+    sig = inspect.signature(drone_MeasureValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drone::measurevalue_has_value():
-    assert hasattr(drone::MeasureValue, "value")
+def test_drone_measurevalue_has_value():
+    assert hasattr(drone_MeasureValue, "value")
     descriptor = None
-    for klass in drone::MeasureValue.__mro__:
+    for klass in drone_MeasureValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -191,85 +191,85 @@ def test_drone::measurevalue_has_value():
 
 
 
-def test_drone::battery_is_not_abstract():
-    assert not inspect.isabstract(drone::Battery)
+def test_drone_battery_is_not_abstract():
+    assert not inspect.isabstract(drone_Battery)
 
 
-def test_drone::battery_constructor_exists():
-    assert callable(drone::Battery.__init__)
+def test_drone_battery_constructor_exists():
+    assert callable(drone_Battery.__init__)
 
 
-def test_drone::battery_constructor_args():
-    sig = inspect.signature(drone::Battery.__init__)
+def test_drone_battery_constructor_args():
+    sig = inspect.signature(drone_Battery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::propertyvalue_is_not_abstract():
-    assert not inspect.isabstract(drone::PropertyValue)
+def test_drone_propertyvalue_is_not_abstract():
+    assert not inspect.isabstract(drone_PropertyValue)
 
 
-def test_drone::propertyvalue_constructor_exists():
-    assert callable(drone::PropertyValue.__init__)
+def test_drone_propertyvalue_constructor_exists():
+    assert callable(drone_PropertyValue.__init__)
 
 
-def test_drone::propertyvalue_constructor_args():
-    sig = inspect.signature(drone::PropertyValue.__init__)
+def test_drone_propertyvalue_constructor_args():
+    sig = inspect.signature(drone_PropertyValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::size_is_not_abstract():
-    assert not inspect.isabstract(drone::Size)
+def test_drone_size_is_not_abstract():
+    assert not inspect.isabstract(drone_Size)
 
 
-def test_drone::size_constructor_exists():
-    assert callable(drone::Size.__init__)
+def test_drone_size_constructor_exists():
+    assert callable(drone_Size.__init__)
 
 
-def test_drone::size_constructor_args():
-    sig = inspect.signature(drone::Size.__init__)
+def test_drone_size_constructor_args():
+    sig = inspect.signature(drone_Size.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::coordinate_is_not_abstract():
-    assert not inspect.isabstract(drone::Coordinate)
+def test_drone_coordinate_is_not_abstract():
+    assert not inspect.isabstract(drone_Coordinate)
 
 
-def test_drone::coordinate_constructor_exists():
-    assert callable(drone::Coordinate.__init__)
+def test_drone_coordinate_constructor_exists():
+    assert callable(drone_Coordinate.__init__)
 
 
-def test_drone::coordinate_constructor_args():
-    sig = inspect.signature(drone::Coordinate.__init__)
+def test_drone_coordinate_constructor_args():
+    sig = inspect.signature(drone_Coordinate.__init__)
     params = list(sig.parameters.keys())
     assert "altitude" in params, "Missing parameter 'altitude'"
     assert "latitude" in params, "Missing parameter 'latitude'"
     assert "longitude" in params, "Missing parameter 'longitude'"
 
-def test_drone::coordinate_has_altitude():
-    assert hasattr(drone::Coordinate, "altitude")
+def test_drone_coordinate_has_altitude():
+    assert hasattr(drone_Coordinate, "altitude")
     descriptor = None
-    for klass in drone::Coordinate.__mro__:
+    for klass in drone_Coordinate.__mro__:
         if "altitude" in klass.__dict__:
             descriptor = klass.__dict__["altitude"]
             break
     assert isinstance(descriptor, property)
 
-def test_drone::coordinate_has_latitude():
-    assert hasattr(drone::Coordinate, "latitude")
+def test_drone_coordinate_has_latitude():
+    assert hasattr(drone_Coordinate, "latitude")
     descriptor = None
-    for klass in drone::Coordinate.__mro__:
+    for klass in drone_Coordinate.__mro__:
         if "latitude" in klass.__dict__:
             descriptor = klass.__dict__["latitude"]
             break
     assert isinstance(descriptor, property)
 
-def test_drone::coordinate_has_longitude():
-    assert hasattr(drone::Coordinate, "longitude")
+def test_drone_coordinate_has_longitude():
+    assert hasattr(drone_Coordinate, "longitude")
     descriptor = None
-    for klass in drone::Coordinate.__mro__:
+    for klass in drone_Coordinate.__mro__:
         if "longitude" in klass.__dict__:
             descriptor = klass.__dict__["longitude"]
             break
@@ -277,44 +277,44 @@ def test_drone::coordinate_has_longitude():
 
 
 
-def test_drone::position_is_not_abstract():
-    assert not inspect.isabstract(drone::Position)
+def test_drone_position_is_not_abstract():
+    assert not inspect.isabstract(drone_Position)
 
 
-def test_drone::position_constructor_exists():
-    assert callable(drone::Position.__init__)
+def test_drone_position_constructor_exists():
+    assert callable(drone_Position.__init__)
 
 
-def test_drone::position_constructor_args():
-    sig = inspect.signature(drone::Position.__init__)
+def test_drone_position_constructor_args():
+    sig = inspect.signature(drone_Position.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::property_is_not_abstract():
-    assert not inspect.isabstract(drone::Property)
+def test_drone_property_is_not_abstract():
+    assert not inspect.isabstract(drone_Property)
 
 
-def test_drone::property_constructor_exists():
-    assert callable(drone::Property.__init__)
+def test_drone_property_constructor_exists():
+    assert callable(drone_Property.__init__)
 
 
-def test_drone::property_constructor_args():
-    sig = inspect.signature(drone::Property.__init__)
+def test_drone_property_constructor_args():
+    sig = inspect.signature(drone_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::taskdescriptor_is_not_abstract():
-    assert not inspect.isabstract(drone::TaskDescriptor)
+def test_drone_taskdescriptor_is_not_abstract():
+    assert not inspect.isabstract(drone_TaskDescriptor)
 
 
-def test_drone::taskdescriptor_constructor_exists():
-    assert callable(drone::TaskDescriptor.__init__)
+def test_drone_taskdescriptor_constructor_exists():
+    assert callable(drone_TaskDescriptor.__init__)
 
 
-def test_drone::taskdescriptor_constructor_args():
-    sig = inspect.signature(drone::TaskDescriptor.__init__)
+def test_drone_taskdescriptor_constructor_args():
+    sig = inspect.signature(drone_TaskDescriptor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -333,128 +333,128 @@ def test_namedelement_constructor_args():
 
 
 
-def test_drone::propertykeycontainer_is_not_abstract():
-    assert not inspect.isabstract(drone::PropertyKeyContainer)
+def test_drone_propertykeycontainer_is_not_abstract():
+    assert not inspect.isabstract(drone_PropertyKeyContainer)
 
 
-def test_drone::propertykeycontainer_constructor_exists():
-    assert callable(drone::PropertyKeyContainer.__init__)
+def test_drone_propertykeycontainer_constructor_exists():
+    assert callable(drone_PropertyKeyContainer.__init__)
 
 
-def test_drone::propertykeycontainer_constructor_args():
-    sig = inspect.signature(drone::PropertyKeyContainer.__init__)
+def test_drone_propertykeycontainer_constructor_args():
+    sig = inspect.signature(drone_PropertyKeyContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::measuredimension_is_not_abstract():
-    assert not inspect.isabstract(drone::MeasureDimension)
+def test_drone_measuredimension_is_not_abstract():
+    assert not inspect.isabstract(drone_MeasureDimension)
 
 
-def test_drone::measuredimension_constructor_exists():
-    assert callable(drone::MeasureDimension.__init__)
+def test_drone_measuredimension_constructor_exists():
+    assert callable(drone_MeasureDimension.__init__)
 
 
-def test_drone::measuredimension_constructor_args():
-    sig = inspect.signature(drone::MeasureDimension.__init__)
+def test_drone_measuredimension_constructor_args():
+    sig = inspect.signature(drone_MeasureDimension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::robot_is_not_abstract():
-    assert not inspect.isabstract(drone::Robot)
+def test_drone_propertykey_is_not_abstract():
+    assert not inspect.isabstract(drone_PropertyKey)
 
 
-def test_drone::robot_constructor_exists():
-    assert callable(drone::Robot.__init__)
+def test_drone_propertykey_constructor_exists():
+    assert callable(drone_PropertyKey.__init__)
 
 
-def test_drone::robot_constructor_args():
-    sig = inspect.signature(drone::Robot.__init__)
+def test_drone_propertykey_constructor_args():
+    sig = inspect.signature(drone_PropertyKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::task_is_not_abstract():
-    assert not inspect.isabstract(drone::Task)
+def test_drone_robot_is_not_abstract():
+    assert not inspect.isabstract(drone_Robot)
 
 
-def test_drone::task_constructor_exists():
-    assert callable(drone::Task.__init__)
+def test_drone_robot_constructor_exists():
+    assert callable(drone_Robot.__init__)
 
 
-def test_drone::task_constructor_args():
-    sig = inspect.signature(drone::Task.__init__)
+def test_drone_robot_constructor_args():
+    sig = inspect.signature(drone_Robot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::areaobject_is_not_abstract():
-    assert not inspect.isabstract(drone::AreaObject)
+def test_drone_equipment_is_not_abstract():
+    assert not inspect.isabstract(drone_Equipment)
 
 
-def test_drone::areaobject_constructor_exists():
-    assert callable(drone::AreaObject.__init__)
+def test_drone_equipment_constructor_exists():
+    assert callable(drone_Equipment.__init__)
 
 
-def test_drone::areaobject_constructor_args():
-    sig = inspect.signature(drone::AreaObject.__init__)
+def test_drone_equipment_constructor_args():
+    sig = inspect.signature(drone_Equipment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::propertykey_is_not_abstract():
-    assert not inspect.isabstract(drone::PropertyKey)
+def test_drone_task_is_not_abstract():
+    assert not inspect.isabstract(drone_Task)
 
 
-def test_drone::propertykey_constructor_exists():
-    assert callable(drone::PropertyKey.__init__)
+def test_drone_task_constructor_exists():
+    assert callable(drone_Task.__init__)
 
 
-def test_drone::propertykey_constructor_args():
-    sig = inspect.signature(drone::PropertyKey.__init__)
+def test_drone_task_constructor_args():
+    sig = inspect.signature(drone_Task.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::equipment_is_not_abstract():
-    assert not inspect.isabstract(drone::Equipment)
+def test_drone_capability_is_not_abstract():
+    assert not inspect.isabstract(drone_Capability)
 
 
-def test_drone::equipment_constructor_exists():
-    assert callable(drone::Equipment.__init__)
+def test_drone_capability_constructor_exists():
+    assert callable(drone_Capability.__init__)
 
 
-def test_drone::equipment_constructor_args():
-    sig = inspect.signature(drone::Equipment.__init__)
+def test_drone_capability_constructor_args():
+    sig = inspect.signature(drone_Capability.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::capability_is_not_abstract():
-    assert not inspect.isabstract(drone::Capability)
+def test_drone_areaobject_is_not_abstract():
+    assert not inspect.isabstract(drone_AreaObject)
 
 
-def test_drone::capability_constructor_exists():
-    assert callable(drone::Capability.__init__)
+def test_drone_areaobject_constructor_exists():
+    assert callable(drone_AreaObject.__init__)
 
 
-def test_drone::capability_constructor_args():
-    sig = inspect.signature(drone::Capability.__init__)
+def test_drone_areaobject_constructor_args():
+    sig = inspect.signature(drone_AreaObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drone::mission_is_not_abstract():
-    assert not inspect.isabstract(drone::Mission)
+def test_drone_mission_is_not_abstract():
+    assert not inspect.isabstract(drone_Mission)
 
 
-def test_drone::mission_constructor_exists():
-    assert callable(drone::Mission.__init__)
+def test_drone_mission_constructor_exists():
+    assert callable(drone_Mission.__init__)
 
 
-def test_drone::mission_constructor_args():
-    sig = inspect.signature(drone::Mission.__init__)
+def test_drone_mission_constructor_args():
+    sig = inspect.signature(drone_Mission.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -469,49 +469,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-drone::EObject_strategy = st.builds(
-    drone::EObject,
+drone_EObject_strategy = st.builds(
+    drone_EObject,
 )
-drone::RobotMissionContainer_strategy = st.builds(
-    drone::RobotMissionContainer,
+drone_RobotMissionContainer_strategy = st.builds(
+    drone_RobotMissionContainer,
 )
-drone::MeasureConversion_strategy = st.builds(
-    drone::MeasureConversion,
+drone_MeasureConversion_strategy = st.builds(
+    drone_MeasureConversion,
     rate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-drone::NamedElement_strategy = st.builds(
-    drone::NamedElement,
+drone_NamedElement_strategy = st.builds(
+    drone_NamedElement,
     name=
         safe_text
 )
 PropertyValue_strategy = st.builds(
     PropertyValue,
 )
-drone::StringValue_strategy = st.builds(
-    drone::StringValue,
+drone_StringValue_strategy = st.builds(
+    drone_StringValue,
     value=
         safe_text
 )
-drone::CapabilityProperties_strategy = st.builds(
-    drone::CapabilityProperties,
+drone_CapabilityProperties_strategy = st.builds(
+    drone_CapabilityProperties,
 )
-drone::MeasureValue_strategy = st.builds(
-    drone::MeasureValue,
+drone_MeasureValue_strategy = st.builds(
+    drone_MeasureValue,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-drone::Battery_strategy = st.builds(
-    drone::Battery,
+drone_Battery_strategy = st.builds(
+    drone_Battery,
 )
-drone::PropertyValue_strategy = st.builds(
-    drone::PropertyValue,
+drone_PropertyValue_strategy = st.builds(
+    drone_PropertyValue,
 )
-drone::Size_strategy = st.builds(
-    drone::Size,
+drone_Size_strategy = st.builds(
+    drone_Size,
 )
-drone::Coordinate_strategy = st.builds(
-    drone::Coordinate,
+drone_Coordinate_strategy = st.builds(
+    drone_Coordinate,
     altitude=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     latitude=
@@ -519,84 +519,78 @@ drone::Coordinate_strategy = st.builds(
     longitude=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-drone::Position_strategy = st.builds(
-    drone::Position,
+drone_Position_strategy = st.builds(
+    drone_Position,
 )
-drone::Property_strategy = st.builds(
-    drone::Property,
+drone_Property_strategy = st.builds(
+    drone_Property,
 )
-drone::TaskDescriptor_strategy = st.builds(
-    drone::TaskDescriptor,
+drone_TaskDescriptor_strategy = st.builds(
+    drone_TaskDescriptor,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-drone::PropertyKeyContainer_strategy = st.builds(
-    drone::PropertyKeyContainer,
+drone_PropertyKeyContainer_strategy = st.builds(
+    drone_PropertyKeyContainer,
 )
-drone::MeasureDimension_strategy = st.builds(
-    drone::MeasureDimension,
+drone_MeasureDimension_strategy = st.builds(
+    drone_MeasureDimension,
 )
-drone::Robot_strategy = st.builds(
-    drone::Robot,
+drone_PropertyKey_strategy = st.builds(
+    drone_PropertyKey,
 )
-drone::Task_strategy = st.builds(
-    drone::Task,
+drone_Robot_strategy = st.builds(
+    drone_Robot,
 )
-drone::AreaObject_strategy = st.builds(
-    drone::AreaObject,
+drone_Equipment_strategy = st.builds(
+    drone_Equipment,
 )
-drone::PropertyKey_strategy = st.builds(
-    drone::PropertyKey,
+drone_Task_strategy = st.builds(
+    drone_Task,
 )
-drone::Equipment_strategy = st.builds(
-    drone::Equipment,
+drone_Capability_strategy = st.builds(
+    drone_Capability,
 )
-drone::Capability_strategy = st.builds(
-    drone::Capability,
+drone_AreaObject_strategy = st.builds(
+    drone_AreaObject,
 )
-drone::Mission_strategy = st.builds(
-    drone::Mission,
+drone_Mission_strategy = st.builds(
+    drone_Mission,
 )
 
-@given(instance=drone::EObject_strategy)
+@given(instance=drone_EObject_strategy)
 @settings(max_examples=50)
-def test_drone::eobject_instantiation(instance):
-    assert isinstance(instance, drone::EObject)
+def test_drone_eobject_instantiation(instance):
+    assert isinstance(instance, drone_EObject)
 
-@given(instance=drone::RobotMissionContainer_strategy)
+@given(instance=drone_RobotMissionContainer_strategy)
 @settings(max_examples=50)
-def test_drone::robotmissioncontainer_instantiation(instance):
-    assert isinstance(instance, drone::RobotMissionContainer)
+def test_drone_robotmissioncontainer_instantiation(instance):
+    assert isinstance(instance, drone_RobotMissionContainer)
 
-@given(instance=drone::MeasureConversion_strategy)
+@given(instance=drone_MeasureConversion_strategy)
 @settings(max_examples=50)
-def test_drone::measureconversion_instantiation(instance):
-    assert isinstance(instance, drone::MeasureConversion)
-
-@given(instance=drone::MeasureConversion_strategy)
-def test_drone::measureconversion_rate_type(instance):
-    assert isinstance(instance.rate, float)
+def test_drone_measureconversion_instantiation(instance):
+    assert isinstance(instance, drone_MeasureConversion)
 
 
-@given(instance=drone::MeasureConversion_strategy)
-def test_drone::measureconversion_rate_setter(instance):
+
+@given(instance=drone_MeasureConversion_strategy)
+def test_drone_measureconversion_rate_setter(instance):
     original = instance.rate
     instance.rate = original
     assert instance.rate == original
 
-@given(instance=drone::NamedElement_strategy)
+@given(instance=drone_NamedElement_strategy)
 @settings(max_examples=50)
-def test_drone::namedelement_instantiation(instance):
-    assert isinstance(instance, drone::NamedElement)
-
-@given(instance=drone::NamedElement_strategy)
-def test_drone::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drone_namedelement_instantiation(instance):
+    assert isinstance(instance, drone_NamedElement)
 
 
-@given(instance=drone::NamedElement_strategy)
-def test_drone::namedelement_name_setter(instance):
+
+@given(instance=drone_NamedElement_strategy)
+def test_drone_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -606,157 +600,142 @@ def test_drone::namedelement_name_setter(instance):
 def test_propertyvalue_instantiation(instance):
     assert isinstance(instance, PropertyValue)
 
-@given(instance=drone::StringValue_strategy)
+@given(instance=drone_StringValue_strategy)
 @settings(max_examples=50)
-def test_drone::stringvalue_instantiation(instance):
-    assert isinstance(instance, drone::StringValue)
-
-@given(instance=drone::StringValue_strategy)
-def test_drone::stringvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_drone_stringvalue_instantiation(instance):
+    assert isinstance(instance, drone_StringValue)
 
 
-@given(instance=drone::StringValue_strategy)
-def test_drone::stringvalue_value_setter(instance):
+
+@given(instance=drone_StringValue_strategy)
+def test_drone_stringvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=drone::CapabilityProperties_strategy)
+@given(instance=drone_CapabilityProperties_strategy)
 @settings(max_examples=50)
-def test_drone::capabilityproperties_instantiation(instance):
-    assert isinstance(instance, drone::CapabilityProperties)
+def test_drone_capabilityproperties_instantiation(instance):
+    assert isinstance(instance, drone_CapabilityProperties)
 
-@given(instance=drone::MeasureValue_strategy)
+@given(instance=drone_MeasureValue_strategy)
 @settings(max_examples=50)
-def test_drone::measurevalue_instantiation(instance):
-    assert isinstance(instance, drone::MeasureValue)
-
-@given(instance=drone::MeasureValue_strategy)
-def test_drone::measurevalue_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_drone_measurevalue_instantiation(instance):
+    assert isinstance(instance, drone_MeasureValue)
 
 
-@given(instance=drone::MeasureValue_strategy)
-def test_drone::measurevalue_value_setter(instance):
+
+@given(instance=drone_MeasureValue_strategy)
+def test_drone_measurevalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=drone::Battery_strategy)
+@given(instance=drone_Battery_strategy)
 @settings(max_examples=50)
-def test_drone::battery_instantiation(instance):
-    assert isinstance(instance, drone::Battery)
+def test_drone_battery_instantiation(instance):
+    assert isinstance(instance, drone_Battery)
 
-@given(instance=drone::PropertyValue_strategy)
+@given(instance=drone_PropertyValue_strategy)
 @settings(max_examples=50)
-def test_drone::propertyvalue_instantiation(instance):
-    assert isinstance(instance, drone::PropertyValue)
+def test_drone_propertyvalue_instantiation(instance):
+    assert isinstance(instance, drone_PropertyValue)
 
-@given(instance=drone::Size_strategy)
+@given(instance=drone_Size_strategy)
 @settings(max_examples=50)
-def test_drone::size_instantiation(instance):
-    assert isinstance(instance, drone::Size)
+def test_drone_size_instantiation(instance):
+    assert isinstance(instance, drone_Size)
 
-@given(instance=drone::Coordinate_strategy)
+@given(instance=drone_Coordinate_strategy)
 @settings(max_examples=50)
-def test_drone::coordinate_instantiation(instance):
-    assert isinstance(instance, drone::Coordinate)
-
-@given(instance=drone::Coordinate_strategy)
-def test_drone::coordinate_altitude_type(instance):
-    assert isinstance(instance.altitude, float)
+def test_drone_coordinate_instantiation(instance):
+    assert isinstance(instance, drone_Coordinate)
 
 
-@given(instance=drone::Coordinate_strategy)
-def test_drone::coordinate_altitude_setter(instance):
+
+@given(instance=drone_Coordinate_strategy)
+def test_drone_coordinate_altitude_setter(instance):
     original = instance.altitude
     instance.altitude = original
     assert instance.altitude == original
 
-@given(instance=drone::Coordinate_strategy)
-def test_drone::coordinate_latitude_type(instance):
-    assert isinstance(instance.latitude, float)
 
 
-@given(instance=drone::Coordinate_strategy)
-def test_drone::coordinate_latitude_setter(instance):
+@given(instance=drone_Coordinate_strategy)
+def test_drone_coordinate_latitude_setter(instance):
     original = instance.latitude
     instance.latitude = original
     assert instance.latitude == original
 
-@given(instance=drone::Coordinate_strategy)
-def test_drone::coordinate_longitude_type(instance):
-    assert isinstance(instance.longitude, float)
 
 
-@given(instance=drone::Coordinate_strategy)
-def test_drone::coordinate_longitude_setter(instance):
+@given(instance=drone_Coordinate_strategy)
+def test_drone_coordinate_longitude_setter(instance):
     original = instance.longitude
     instance.longitude = original
     assert instance.longitude == original
 
-@given(instance=drone::Position_strategy)
+@given(instance=drone_Position_strategy)
 @settings(max_examples=50)
-def test_drone::position_instantiation(instance):
-    assert isinstance(instance, drone::Position)
+def test_drone_position_instantiation(instance):
+    assert isinstance(instance, drone_Position)
 
-@given(instance=drone::Property_strategy)
+@given(instance=drone_Property_strategy)
 @settings(max_examples=50)
-def test_drone::property_instantiation(instance):
-    assert isinstance(instance, drone::Property)
+def test_drone_property_instantiation(instance):
+    assert isinstance(instance, drone_Property)
 
-@given(instance=drone::TaskDescriptor_strategy)
+@given(instance=drone_TaskDescriptor_strategy)
 @settings(max_examples=50)
-def test_drone::taskdescriptor_instantiation(instance):
-    assert isinstance(instance, drone::TaskDescriptor)
+def test_drone_taskdescriptor_instantiation(instance):
+    assert isinstance(instance, drone_TaskDescriptor)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=drone::PropertyKeyContainer_strategy)
+@given(instance=drone_PropertyKeyContainer_strategy)
 @settings(max_examples=50)
-def test_drone::propertykeycontainer_instantiation(instance):
-    assert isinstance(instance, drone::PropertyKeyContainer)
+def test_drone_propertykeycontainer_instantiation(instance):
+    assert isinstance(instance, drone_PropertyKeyContainer)
 
-@given(instance=drone::MeasureDimension_strategy)
+@given(instance=drone_MeasureDimension_strategy)
 @settings(max_examples=50)
-def test_drone::measuredimension_instantiation(instance):
-    assert isinstance(instance, drone::MeasureDimension)
+def test_drone_measuredimension_instantiation(instance):
+    assert isinstance(instance, drone_MeasureDimension)
 
-@given(instance=drone::Robot_strategy)
+@given(instance=drone_PropertyKey_strategy)
 @settings(max_examples=50)
-def test_drone::robot_instantiation(instance):
-    assert isinstance(instance, drone::Robot)
+def test_drone_propertykey_instantiation(instance):
+    assert isinstance(instance, drone_PropertyKey)
 
-@given(instance=drone::Task_strategy)
+@given(instance=drone_Robot_strategy)
 @settings(max_examples=50)
-def test_drone::task_instantiation(instance):
-    assert isinstance(instance, drone::Task)
+def test_drone_robot_instantiation(instance):
+    assert isinstance(instance, drone_Robot)
 
-@given(instance=drone::AreaObject_strategy)
+@given(instance=drone_Equipment_strategy)
 @settings(max_examples=50)
-def test_drone::areaobject_instantiation(instance):
-    assert isinstance(instance, drone::AreaObject)
+def test_drone_equipment_instantiation(instance):
+    assert isinstance(instance, drone_Equipment)
 
-@given(instance=drone::PropertyKey_strategy)
+@given(instance=drone_Task_strategy)
 @settings(max_examples=50)
-def test_drone::propertykey_instantiation(instance):
-    assert isinstance(instance, drone::PropertyKey)
+def test_drone_task_instantiation(instance):
+    assert isinstance(instance, drone_Task)
 
-@given(instance=drone::Equipment_strategy)
+@given(instance=drone_Capability_strategy)
 @settings(max_examples=50)
-def test_drone::equipment_instantiation(instance):
-    assert isinstance(instance, drone::Equipment)
+def test_drone_capability_instantiation(instance):
+    assert isinstance(instance, drone_Capability)
 
-@given(instance=drone::Capability_strategy)
+@given(instance=drone_AreaObject_strategy)
 @settings(max_examples=50)
-def test_drone::capability_instantiation(instance):
-    assert isinstance(instance, drone::Capability)
+def test_drone_areaobject_instantiation(instance):
+    assert isinstance(instance, drone_AreaObject)
 
-@given(instance=drone::Mission_strategy)
+@given(instance=drone_Mission_strategy)
 @settings(max_examples=50)
-def test_drone::mission_instantiation(instance):
-    assert isinstance(instance, drone::Mission)
+def test_drone_mission_instantiation(instance):
+    assert isinstance(instance, drone_Mission)

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Schema,
     Database,
     Diagram,
-    ui::diagram::DMDiagram,
-    schema::DataModelerNamedElement,
-    schema::FunctionalElement,
-    ui::project::Project,
+    ui_diagram_DMDiagram,
+    schema_DataModelerNamedElement,
+    schema_FunctionalElement,
+    ui_project_Project,
 )
 
 # =============================================================================
@@ -63,77 +63,77 @@ def test_diagram_constructor_args():
 
 
 
-def test_ui::diagram::dmdiagram_is_not_abstract():
-    assert not inspect.isabstract(ui::diagram::DMDiagram)
+def test_ui_diagram_dmdiagram_is_not_abstract():
+    assert not inspect.isabstract(ui_diagram_DMDiagram)
 
 
-def test_ui::diagram::dmdiagram_constructor_exists():
-    assert callable(ui::diagram::DMDiagram.__init__)
+def test_ui_diagram_dmdiagram_constructor_exists():
+    assert callable(ui_diagram_DMDiagram.__init__)
 
 
-def test_ui::diagram::dmdiagram_constructor_args():
-    sig = inspect.signature(ui::diagram::DMDiagram.__init__)
+def test_ui_diagram_dmdiagram_constructor_args():
+    sig = inspect.signature(ui_diagram_DMDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_schema::datamodelernamedelement_is_not_abstract():
-    assert not inspect.isabstract(schema::DataModelerNamedElement)
+def test_schema_datamodelernamedelement_is_not_abstract():
+    assert not inspect.isabstract(schema_DataModelerNamedElement)
 
 
-def test_schema::datamodelernamedelement_constructor_exists():
-    assert callable(schema::DataModelerNamedElement.__init__)
+def test_schema_datamodelernamedelement_constructor_exists():
+    assert callable(schema_DataModelerNamedElement.__init__)
 
 
-def test_schema::datamodelernamedelement_constructor_args():
-    sig = inspect.signature(schema::DataModelerNamedElement.__init__)
+def test_schema_datamodelernamedelement_constructor_args():
+    sig = inspect.signature(schema_DataModelerNamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_schema::functionalelement_is_not_abstract():
-    assert not inspect.isabstract(schema::FunctionalElement)
+def test_schema_functionalelement_is_not_abstract():
+    assert not inspect.isabstract(schema_FunctionalElement)
 
 
-def test_schema::functionalelement_constructor_exists():
-    assert callable(schema::FunctionalElement.__init__)
+def test_schema_functionalelement_constructor_exists():
+    assert callable(schema_FunctionalElement.__init__)
 
 
-def test_schema::functionalelement_constructor_args():
-    sig = inspect.signature(schema::FunctionalElement.__init__)
+def test_schema_functionalelement_constructor_args():
+    sig = inspect.signature(schema_FunctionalElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ui::project::project_is_not_abstract():
-    assert not inspect.isabstract(ui::project::Project)
+def test_ui_project_project_is_not_abstract():
+    assert not inspect.isabstract(ui_project_Project)
 
 
-def test_ui::project::project_constructor_exists():
-    assert callable(ui::project::Project.__init__)
+def test_ui_project_project_constructor_exists():
+    assert callable(ui_project_Project.__init__)
 
 
-def test_ui::project::project_constructor_args():
-    sig = inspect.signature(ui::project::Project.__init__)
+def test_ui_project_project_constructor_args():
+    sig = inspect.signature(ui_project_Project.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
     assert "application" in params, "Missing parameter 'application'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_ui::project::project_has_description():
-    assert hasattr(ui::project::Project, "description")
+def test_ui_project_project_has_application():
+    assert hasattr(ui_project_Project, "application")
     descriptor = None
-    for klass in ui::project::Project.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in ui_project_Project.__mro__:
+        if "application" in klass.__dict__:
+            descriptor = klass.__dict__["application"]
             break
     assert isinstance(descriptor, property)
 
-def test_ui::project::project_has_application():
-    assert hasattr(ui::project::Project, "application")
+def test_ui_project_project_has_description():
+    assert hasattr(ui_project_Project, "description")
     descriptor = None
-    for klass in ui::project::Project.__mro__:
-        if "application" in klass.__dict__:
-            descriptor = klass.__dict__["application"]
+    for klass in ui_project_Project.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -158,20 +158,20 @@ Database_strategy = st.builds(
 Diagram_strategy = st.builds(
     Diagram,
 )
-ui::diagram::DMDiagram_strategy = st.builds(
-    ui::diagram::DMDiagram,
+ui_diagram_DMDiagram_strategy = st.builds(
+    ui_diagram_DMDiagram,
 )
-schema::DataModelerNamedElement_strategy = st.builds(
-    schema::DataModelerNamedElement,
+schema_DataModelerNamedElement_strategy = st.builds(
+    schema_DataModelerNamedElement,
 )
-schema::FunctionalElement_strategy = st.builds(
-    schema::FunctionalElement,
+schema_FunctionalElement_strategy = st.builds(
+    schema_FunctionalElement,
 )
-ui::project::Project_strategy = st.builds(
-    ui::project::Project,
-    description=
-        safe_text,
+ui_project_Project_strategy = st.builds(
+    ui_project_Project,
     application=
+        safe_text,
+    description=
         safe_text
 )
 
@@ -190,47 +190,41 @@ def test_database_instantiation(instance):
 def test_diagram_instantiation(instance):
     assert isinstance(instance, Diagram)
 
-@given(instance=ui::diagram::DMDiagram_strategy)
+@given(instance=ui_diagram_DMDiagram_strategy)
 @settings(max_examples=50)
-def test_ui::diagram::dmdiagram_instantiation(instance):
-    assert isinstance(instance, ui::diagram::DMDiagram)
+def test_ui_diagram_dmdiagram_instantiation(instance):
+    assert isinstance(instance, ui_diagram_DMDiagram)
 
-@given(instance=schema::DataModelerNamedElement_strategy)
+@given(instance=schema_DataModelerNamedElement_strategy)
 @settings(max_examples=50)
-def test_schema::datamodelernamedelement_instantiation(instance):
-    assert isinstance(instance, schema::DataModelerNamedElement)
+def test_schema_datamodelernamedelement_instantiation(instance):
+    assert isinstance(instance, schema_DataModelerNamedElement)
 
-@given(instance=schema::FunctionalElement_strategy)
+@given(instance=schema_FunctionalElement_strategy)
 @settings(max_examples=50)
-def test_schema::functionalelement_instantiation(instance):
-    assert isinstance(instance, schema::FunctionalElement)
+def test_schema_functionalelement_instantiation(instance):
+    assert isinstance(instance, schema_FunctionalElement)
 
-@given(instance=ui::project::Project_strategy)
+@given(instance=ui_project_Project_strategy)
 @settings(max_examples=50)
-def test_ui::project::project_instantiation(instance):
-    assert isinstance(instance, ui::project::Project)
-
-@given(instance=ui::project::Project_strategy)
-def test_ui::project::project_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_ui_project_project_instantiation(instance):
+    assert isinstance(instance, ui_project_Project)
 
 
-@given(instance=ui::project::Project_strategy)
-def test_ui::project::project_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=ui::project::Project_strategy)
-def test_ui::project::project_application_type(instance):
-    assert isinstance(instance.application, str)
-
-
-@given(instance=ui::project::Project_strategy)
-def test_ui::project::project_application_setter(instance):
+@given(instance=ui_project_Project_strategy)
+def test_ui_project_project_application_setter(instance):
     original = instance.application
     instance.application = original
     assert instance.application == original
+
+
+
+@given(instance=ui_project_Project_strategy)
+def test_ui_project_project_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 import warnings
 import copy
@@ -238,9 +232,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ui::project::Project_strategy)
+@given(instance=ui_project_Project_strategy)
 @settings(max_examples=30)
-def test_ui::project::project_isvalid_changes_state(instance):
+def test_ui_project_project_isvalid_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -255,11 +249,11 @@ def test_ui::project::project_isvalid_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isValid' in ui::project::Project is empty"
+        assert has_statements, f"Function 'isValid' in ui_project_Project is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isValid' in ui::project::Project did not change state; check implementation")
+            warnings.warn(f"Operation 'isValid' in ui_project_Project did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isValid' in ui::project::Project is not implemented or raised an error")
+        warnings.warn(f"Operation 'isValid' in ui_project_Project is not implemented or raised an error")

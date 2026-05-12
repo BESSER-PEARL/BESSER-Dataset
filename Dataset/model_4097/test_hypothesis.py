@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Signal,
-    RDM::TurnoutSignal,
+    RDM_TurnoutSignal,
     Section,
     TrackElement,
-    RDM::RDMElement,
-    RDM::RailwayDomainModel,
-    RDM::Station,
+    RDM_RDMElement,
+    RDM_RailwayDomainModel,
+    RDM_Station,
     RDMElement,
-    RDM::Train,
-    RDM::TrackElement,
-    RDM::RouteElement,
-    RDM::Route,
-    RDM::TurnoutDesiredDirection,
-    RDM::Signal,
-    RDM::ConnectionPoint,
-    RDM::Turnout,
-    RDM::Section,
-    ConnectionDirection,
-    TurnoutDirection,
+    RDM_TrackElement,
+    RDM_Train,
+    RDM_RouteElement,
+    RDM_Route,
+    RDM_TurnoutDesiredDirection,
+    RDM_Signal,
+    RDM_ConnectionPoint,
+    RDM_Turnout,
+    RDM_Section,
     Speed,
+    TurnoutDirection,
+    ConnectionDirection,
 )
 
 # =============================================================================
@@ -48,16 +48,16 @@ def test_signal_constructor_args():
 
 
 
-def test_rdm::turnoutsignal_is_not_abstract():
-    assert not inspect.isabstract(RDM::TurnoutSignal)
+def test_rdm_turnoutsignal_is_not_abstract():
+    assert not inspect.isabstract(RDM_TurnoutSignal)
 
 
-def test_rdm::turnoutsignal_constructor_exists():
-    assert callable(RDM::TurnoutSignal.__init__)
+def test_rdm_turnoutsignal_constructor_exists():
+    assert callable(RDM_TurnoutSignal.__init__)
 
 
-def test_rdm::turnoutsignal_constructor_args():
-    sig = inspect.signature(RDM::TurnoutSignal.__init__)
+def test_rdm_turnoutsignal_constructor_args():
+    sig = inspect.signature(RDM_TurnoutSignal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,64 +90,64 @@ def test_trackelement_constructor_args():
 
 
 
-def test_rdm::rdmelement_is_not_abstract():
-    assert not inspect.isabstract(RDM::RDMElement)
+def test_rdm_rdmelement_is_not_abstract():
+    assert not inspect.isabstract(RDM_RDMElement)
 
 
-def test_rdm::rdmelement_constructor_exists():
-    assert callable(RDM::RDMElement.__init__)
+def test_rdm_rdmelement_constructor_exists():
+    assert callable(RDM_RDMElement.__init__)
 
 
-def test_rdm::rdmelement_constructor_args():
-    sig = inspect.signature(RDM::RDMElement.__init__)
+def test_rdm_rdmelement_constructor_args():
+    sig = inspect.signature(RDM_RDMElement.__init__)
     params = list(sig.parameters.keys())
-    assert "length" in params, "Missing parameter 'length'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "length" in params, "Missing parameter 'length'"
 
-def test_rdm::rdmelement_has_length():
-    assert hasattr(RDM::RDMElement, "length")
+def test_rdm_rdmelement_has_name():
+    assert hasattr(RDM_RDMElement, "name")
     descriptor = None
-    for klass in RDM::RDMElement.__mro__:
-        if "length" in klass.__dict__:
-            descriptor = klass.__dict__["length"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdm::rdmelement_has_name():
-    assert hasattr(RDM::RDMElement, "name")
-    descriptor = None
-    for klass in RDM::RDMElement.__mro__:
+    for klass in RDM_RDMElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_rdm_rdmelement_has_length():
+    assert hasattr(RDM_RDMElement, "length")
+    descriptor = None
+    for klass in RDM_RDMElement.__mro__:
+        if "length" in klass.__dict__:
+            descriptor = klass.__dict__["length"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rdm::railwaydomainmodel_is_not_abstract():
-    assert not inspect.isabstract(RDM::RailwayDomainModel)
+
+def test_rdm_railwaydomainmodel_is_not_abstract():
+    assert not inspect.isabstract(RDM_RailwayDomainModel)
 
 
-def test_rdm::railwaydomainmodel_constructor_exists():
-    assert callable(RDM::RailwayDomainModel.__init__)
+def test_rdm_railwaydomainmodel_constructor_exists():
+    assert callable(RDM_RailwayDomainModel.__init__)
 
 
-def test_rdm::railwaydomainmodel_constructor_args():
-    sig = inspect.signature(RDM::RailwayDomainModel.__init__)
+def test_rdm_railwaydomainmodel_constructor_args():
+    sig = inspect.signature(RDM_RailwayDomainModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdm::station_is_not_abstract():
-    assert not inspect.isabstract(RDM::Station)
+def test_rdm_station_is_not_abstract():
+    assert not inspect.isabstract(RDM_Station)
 
 
-def test_rdm::station_constructor_exists():
-    assert callable(RDM::Station.__init__)
+def test_rdm_station_constructor_exists():
+    assert callable(RDM_Station.__init__)
 
 
-def test_rdm::station_constructor_args():
-    sig = inspect.signature(RDM::Station.__init__)
+def test_rdm_station_constructor_args():
+    sig = inspect.signature(RDM_Station.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -166,99 +166,99 @@ def test_rdmelement_constructor_args():
 
 
 
-def test_rdm::train_is_not_abstract():
-    assert not inspect.isabstract(RDM::Train)
+def test_rdm_trackelement_is_not_abstract():
+    assert not inspect.isabstract(RDM_TrackElement)
 
 
-def test_rdm::train_constructor_exists():
-    assert callable(RDM::Train.__init__)
+def test_rdm_trackelement_constructor_exists():
+    assert callable(RDM_TrackElement.__init__)
 
 
-def test_rdm::train_constructor_args():
-    sig = inspect.signature(RDM::Train.__init__)
+def test_rdm_trackelement_constructor_args():
+    sig = inspect.signature(RDM_TrackElement.__init__)
     params = list(sig.parameters.keys())
-    assert "maxSpeed" in params, "Missing parameter 'maxSpeed'"
+
+
+
+def test_rdm_train_is_not_abstract():
+    assert not inspect.isabstract(RDM_Train)
+
+
+def test_rdm_train_constructor_exists():
+    assert callable(RDM_Train.__init__)
+
+
+def test_rdm_train_constructor_args():
+    sig = inspect.signature(RDM_Train.__init__)
+    params = list(sig.parameters.keys())
     assert "headingSpeed" in params, "Missing parameter 'headingSpeed'"
+    assert "maxSpeed" in params, "Missing parameter 'maxSpeed'"
 
-def test_rdm::train_has_maxSpeed():
-    assert hasattr(RDM::Train, "maxSpeed")
+def test_rdm_train_has_headingSpeed():
+    assert hasattr(RDM_Train, "headingSpeed")
     descriptor = None
-    for klass in RDM::Train.__mro__:
-        if "maxSpeed" in klass.__dict__:
-            descriptor = klass.__dict__["maxSpeed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdm::train_has_headingSpeed():
-    assert hasattr(RDM::Train, "headingSpeed")
-    descriptor = None
-    for klass in RDM::Train.__mro__:
+    for klass in RDM_Train.__mro__:
         if "headingSpeed" in klass.__dict__:
             descriptor = klass.__dict__["headingSpeed"]
             break
     assert isinstance(descriptor, property)
 
+def test_rdm_train_has_maxSpeed():
+    assert hasattr(RDM_Train, "maxSpeed")
+    descriptor = None
+    for klass in RDM_Train.__mro__:
+        if "maxSpeed" in klass.__dict__:
+            descriptor = klass.__dict__["maxSpeed"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rdm::trackelement_is_not_abstract():
-    assert not inspect.isabstract(RDM::TrackElement)
+
+def test_rdm_routeelement_is_not_abstract():
+    assert not inspect.isabstract(RDM_RouteElement)
 
 
-def test_rdm::trackelement_constructor_exists():
-    assert callable(RDM::TrackElement.__init__)
+def test_rdm_routeelement_constructor_exists():
+    assert callable(RDM_RouteElement.__init__)
 
 
-def test_rdm::trackelement_constructor_args():
-    sig = inspect.signature(RDM::TrackElement.__init__)
+def test_rdm_routeelement_constructor_args():
+    sig = inspect.signature(RDM_RouteElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdm::routeelement_is_not_abstract():
-    assert not inspect.isabstract(RDM::RouteElement)
+def test_rdm_route_is_not_abstract():
+    assert not inspect.isabstract(RDM_Route)
 
 
-def test_rdm::routeelement_constructor_exists():
-    assert callable(RDM::RouteElement.__init__)
+def test_rdm_route_constructor_exists():
+    assert callable(RDM_Route.__init__)
 
 
-def test_rdm::routeelement_constructor_args():
-    sig = inspect.signature(RDM::RouteElement.__init__)
+def test_rdm_route_constructor_args():
+    sig = inspect.signature(RDM_Route.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdm::route_is_not_abstract():
-    assert not inspect.isabstract(RDM::Route)
+def test_rdm_turnoutdesireddirection_is_not_abstract():
+    assert not inspect.isabstract(RDM_TurnoutDesiredDirection)
 
 
-def test_rdm::route_constructor_exists():
-    assert callable(RDM::Route.__init__)
+def test_rdm_turnoutdesireddirection_constructor_exists():
+    assert callable(RDM_TurnoutDesiredDirection.__init__)
 
 
-def test_rdm::route_constructor_args():
-    sig = inspect.signature(RDM::Route.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rdm::turnoutdesireddirection_is_not_abstract():
-    assert not inspect.isabstract(RDM::TurnoutDesiredDirection)
-
-
-def test_rdm::turnoutdesireddirection_constructor_exists():
-    assert callable(RDM::TurnoutDesiredDirection.__init__)
-
-
-def test_rdm::turnoutdesireddirection_constructor_args():
-    sig = inspect.signature(RDM::TurnoutDesiredDirection.__init__)
+def test_rdm_turnoutdesireddirection_constructor_args():
+    sig = inspect.signature(RDM_TurnoutDesiredDirection.__init__)
     params = list(sig.parameters.keys())
     assert "desiredDirection" in params, "Missing parameter 'desiredDirection'"
 
-def test_rdm::turnoutdesireddirection_has_desiredDirection():
-    assert hasattr(RDM::TurnoutDesiredDirection, "desiredDirection")
+def test_rdm_turnoutdesireddirection_has_desiredDirection():
+    assert hasattr(RDM_TurnoutDesiredDirection, "desiredDirection")
     descriptor = None
-    for klass in RDM::TurnoutDesiredDirection.__mro__:
+    for klass in RDM_TurnoutDesiredDirection.__mro__:
         if "desiredDirection" in klass.__dict__:
             descriptor = klass.__dict__["desiredDirection"]
             break
@@ -266,23 +266,23 @@ def test_rdm::turnoutdesireddirection_has_desiredDirection():
 
 
 
-def test_rdm::signal_is_not_abstract():
-    assert not inspect.isabstract(RDM::Signal)
+def test_rdm_signal_is_not_abstract():
+    assert not inspect.isabstract(RDM_Signal)
 
 
-def test_rdm::signal_constructor_exists():
-    assert callable(RDM::Signal.__init__)
+def test_rdm_signal_constructor_exists():
+    assert callable(RDM_Signal.__init__)
 
 
-def test_rdm::signal_constructor_args():
-    sig = inspect.signature(RDM::Signal.__init__)
+def test_rdm_signal_constructor_args():
+    sig = inspect.signature(RDM_Signal.__init__)
     params = list(sig.parameters.keys())
     assert "allowedSpeed" in params, "Missing parameter 'allowedSpeed'"
 
-def test_rdm::signal_has_allowedSpeed():
-    assert hasattr(RDM::Signal, "allowedSpeed")
+def test_rdm_signal_has_allowedSpeed():
+    assert hasattr(RDM_Signal, "allowedSpeed")
     descriptor = None
-    for klass in RDM::Signal.__mro__:
+    for klass in RDM_Signal.__mro__:
         if "allowedSpeed" in klass.__dict__:
             descriptor = klass.__dict__["allowedSpeed"]
             break
@@ -290,23 +290,23 @@ def test_rdm::signal_has_allowedSpeed():
 
 
 
-def test_rdm::connectionpoint_is_not_abstract():
-    assert not inspect.isabstract(RDM::ConnectionPoint)
+def test_rdm_connectionpoint_is_not_abstract():
+    assert not inspect.isabstract(RDM_ConnectionPoint)
 
 
-def test_rdm::connectionpoint_constructor_exists():
-    assert callable(RDM::ConnectionPoint.__init__)
+def test_rdm_connectionpoint_constructor_exists():
+    assert callable(RDM_ConnectionPoint.__init__)
 
 
-def test_rdm::connectionpoint_constructor_args():
-    sig = inspect.signature(RDM::ConnectionPoint.__init__)
+def test_rdm_connectionpoint_constructor_args():
+    sig = inspect.signature(RDM_ConnectionPoint.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_rdm::connectionpoint_has_direction():
-    assert hasattr(RDM::ConnectionPoint, "direction")
+def test_rdm_connectionpoint_has_direction():
+    assert hasattr(RDM_ConnectionPoint, "direction")
     descriptor = None
-    for klass in RDM::ConnectionPoint.__mro__:
+    for klass in RDM_ConnectionPoint.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -314,33 +314,33 @@ def test_rdm::connectionpoint_has_direction():
 
 
 
-def test_rdm::turnout_is_not_abstract():
-    assert not inspect.isabstract(RDM::Turnout)
+def test_rdm_turnout_is_not_abstract():
+    assert not inspect.isabstract(RDM_Turnout)
 
 
-def test_rdm::turnout_constructor_exists():
-    assert callable(RDM::Turnout.__init__)
+def test_rdm_turnout_constructor_exists():
+    assert callable(RDM_Turnout.__init__)
 
 
-def test_rdm::turnout_constructor_args():
-    sig = inspect.signature(RDM::Turnout.__init__)
+def test_rdm_turnout_constructor_args():
+    sig = inspect.signature(RDM_Turnout.__init__)
     params = list(sig.parameters.keys())
     assert "currentDirection" in params, "Missing parameter 'currentDirection'"
     assert "switchingDirection" in params, "Missing parameter 'switchingDirection'"
 
-def test_rdm::turnout_has_currentDirection():
-    assert hasattr(RDM::Turnout, "currentDirection")
+def test_rdm_turnout_has_currentDirection():
+    assert hasattr(RDM_Turnout, "currentDirection")
     descriptor = None
-    for klass in RDM::Turnout.__mro__:
+    for klass in RDM_Turnout.__mro__:
         if "currentDirection" in klass.__dict__:
             descriptor = klass.__dict__["currentDirection"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdm::turnout_has_switchingDirection():
-    assert hasattr(RDM::Turnout, "switchingDirection")
+def test_rdm_turnout_has_switchingDirection():
+    assert hasattr(RDM_Turnout, "switchingDirection")
     descriptor = None
-    for klass in RDM::Turnout.__mro__:
+    for klass in RDM_Turnout.__mro__:
         if "switchingDirection" in klass.__dict__:
             descriptor = klass.__dict__["switchingDirection"]
             break
@@ -348,50 +348,17 @@ def test_rdm::turnout_has_switchingDirection():
 
 
 
-def test_rdm::section_is_not_abstract():
-    assert not inspect.isabstract(RDM::Section)
+def test_rdm_section_is_not_abstract():
+    assert not inspect.isabstract(RDM_Section)
 
 
-def test_rdm::section_constructor_exists():
-    assert callable(RDM::Section.__init__)
+def test_rdm_section_constructor_exists():
+    assert callable(RDM_Section.__init__)
 
 
-def test_rdm::section_constructor_args():
-    sig = inspect.signature(RDM::Section.__init__)
+def test_rdm_section_constructor_args():
+    sig = inspect.signature(RDM_Section.__init__)
     params = list(sig.parameters.keys())
-
-def test_connectiondirection_exists():
-    # Check that the Enumeration exists
-    assert ConnectionDirection is not None
-
-def test_connectiondirection_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ConnectionDirection]
-    expected_literals = [
-        "TOP",
-        "RIGHT",
-        "STRAIGHT",
-        "LEFT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ConnectionDirection"
-
-def test_turnoutdirection_exists():
-    # Check that the Enumeration exists
-    assert TurnoutDirection is not None
-
-def test_turnoutdirection_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TurnoutDirection]
-    expected_literals = [
-        "STRAIGHT",
-        "LEFT",
-        "RIGHT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TurnoutDirection"
 
 def test_speed_exists():
     # Check that the Enumeration exists
@@ -401,14 +368,47 @@ def test_speed_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Speed]
     expected_literals = [
-        "FOURTY",
-        "TWENTY",
         "ZERO",
+        "TWENTY",
         "SIXTY",
+        "FOURTY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Speed"
+
+def test_turnoutdirection_exists():
+    # Check that the Enumeration exists
+    assert TurnoutDirection is not None
+
+def test_turnoutdirection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TurnoutDirection]
+    expected_literals = [
+        "RIGHT",
+        "STRAIGHT",
+        "LEFT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TurnoutDirection"
+
+def test_connectiondirection_exists():
+    # Check that the Enumeration exists
+    assert ConnectionDirection is not None
+
+def test_connectiondirection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ConnectionDirection]
+    expected_literals = [
+        "RIGHT",
+        "LEFT",
+        "TOP",
+        "STRAIGHT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ConnectionDirection"
 
 
 # =============================================================================
@@ -425,8 +425,8 @@ safe_text = st.text(
 Signal_strategy = st.builds(
     Signal,
 )
-RDM::TurnoutSignal_strategy = st.builds(
-    RDM::TurnoutSignal,
+RDM_TurnoutSignal_strategy = st.builds(
+    RDM_TurnoutSignal,
 )
 Section_strategy = st.builds(
     Section,
@@ -434,62 +434,62 @@ Section_strategy = st.builds(
 TrackElement_strategy = st.builds(
     TrackElement,
 )
-RDM::RDMElement_strategy = st.builds(
-    RDM::RDMElement,
-    length=
-        st.integers(),
+RDM_RDMElement_strategy = st.builds(
+    RDM_RDMElement,
     name=
-        safe_text
+        safe_text,
+    length=
+        st.integers()
 )
-RDM::RailwayDomainModel_strategy = st.builds(
-    RDM::RailwayDomainModel,
+RDM_RailwayDomainModel_strategy = st.builds(
+    RDM_RailwayDomainModel,
 )
-RDM::Station_strategy = st.builds(
-    RDM::Station,
+RDM_Station_strategy = st.builds(
+    RDM_Station,
 )
 RDMElement_strategy = st.builds(
     RDMElement,
 )
-RDM::Train_strategy = st.builds(
-    RDM::Train,
-    maxSpeed=
-        safe_text,
+RDM_TrackElement_strategy = st.builds(
+    RDM_TrackElement,
+)
+RDM_Train_strategy = st.builds(
+    RDM_Train,
     headingSpeed=
+        safe_text,
+    maxSpeed=
         safe_text
 )
-RDM::TrackElement_strategy = st.builds(
-    RDM::TrackElement,
+RDM_RouteElement_strategy = st.builds(
+    RDM_RouteElement,
 )
-RDM::RouteElement_strategy = st.builds(
-    RDM::RouteElement,
+RDM_Route_strategy = st.builds(
+    RDM_Route,
 )
-RDM::Route_strategy = st.builds(
-    RDM::Route,
-)
-RDM::TurnoutDesiredDirection_strategy = st.builds(
-    RDM::TurnoutDesiredDirection,
+RDM_TurnoutDesiredDirection_strategy = st.builds(
+    RDM_TurnoutDesiredDirection,
     desiredDirection=
         safe_text
 )
-RDM::Signal_strategy = st.builds(
-    RDM::Signal,
+RDM_Signal_strategy = st.builds(
+    RDM_Signal,
     allowedSpeed=
         safe_text
 )
-RDM::ConnectionPoint_strategy = st.builds(
-    RDM::ConnectionPoint,
+RDM_ConnectionPoint_strategy = st.builds(
+    RDM_ConnectionPoint,
     direction=
         safe_text
 )
-RDM::Turnout_strategy = st.builds(
-    RDM::Turnout,
+RDM_Turnout_strategy = st.builds(
+    RDM_Turnout,
     currentDirection=
         safe_text,
     switchingDirection=
         safe_text
 )
-RDM::Section_strategy = st.builds(
-    RDM::Section,
+RDM_Section_strategy = st.builds(
+    RDM_Section,
 )
 
 @given(instance=Signal_strategy)
@@ -497,10 +497,10 @@ RDM::Section_strategy = st.builds(
 def test_signal_instantiation(instance):
     assert isinstance(instance, Signal)
 
-@given(instance=RDM::TurnoutSignal_strategy)
+@given(instance=RDM_TurnoutSignal_strategy)
 @settings(max_examples=50)
-def test_rdm::turnoutsignal_instantiation(instance):
-    assert isinstance(instance, RDM::TurnoutSignal)
+def test_rdm_turnoutsignal_instantiation(instance):
+    assert isinstance(instance, RDM_TurnoutSignal)
 
 @given(instance=Section_strategy)
 @settings(max_examples=50)
@@ -512,166 +512,139 @@ def test_section_instantiation(instance):
 def test_trackelement_instantiation(instance):
     assert isinstance(instance, TrackElement)
 
-@given(instance=RDM::RDMElement_strategy)
+@given(instance=RDM_RDMElement_strategy)
 @settings(max_examples=50)
-def test_rdm::rdmelement_instantiation(instance):
-    assert isinstance(instance, RDM::RDMElement)
-
-@given(instance=RDM::RDMElement_strategy)
-def test_rdm::rdmelement_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_rdm_rdmelement_instantiation(instance):
+    assert isinstance(instance, RDM_RDMElement)
 
 
-@given(instance=RDM::RDMElement_strategy)
-def test_rdm::rdmelement_length_setter(instance):
-    original = instance.length
-    instance.length = original
-    assert instance.length == original
 
-@given(instance=RDM::RDMElement_strategy)
-def test_rdm::rdmelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=RDM::RDMElement_strategy)
-def test_rdm::rdmelement_name_setter(instance):
+@given(instance=RDM_RDMElement_strategy)
+def test_rdm_rdmelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RDM::RailwayDomainModel_strategy)
-@settings(max_examples=50)
-def test_rdm::railwaydomainmodel_instantiation(instance):
-    assert isinstance(instance, RDM::RailwayDomainModel)
 
-@given(instance=RDM::Station_strategy)
+
+@given(instance=RDM_RDMElement_strategy)
+def test_rdm_rdmelement_length_setter(instance):
+    original = instance.length
+    instance.length = original
+    assert instance.length == original
+
+@given(instance=RDM_RailwayDomainModel_strategy)
 @settings(max_examples=50)
-def test_rdm::station_instantiation(instance):
-    assert isinstance(instance, RDM::Station)
+def test_rdm_railwaydomainmodel_instantiation(instance):
+    assert isinstance(instance, RDM_RailwayDomainModel)
+
+@given(instance=RDM_Station_strategy)
+@settings(max_examples=50)
+def test_rdm_station_instantiation(instance):
+    assert isinstance(instance, RDM_Station)
 
 @given(instance=RDMElement_strategy)
 @settings(max_examples=50)
 def test_rdmelement_instantiation(instance):
     assert isinstance(instance, RDMElement)
 
-@given(instance=RDM::Train_strategy)
+@given(instance=RDM_TrackElement_strategy)
 @settings(max_examples=50)
-def test_rdm::train_instantiation(instance):
-    assert isinstance(instance, RDM::Train)
+def test_rdm_trackelement_instantiation(instance):
+    assert isinstance(instance, RDM_TrackElement)
 
-@given(instance=RDM::Train_strategy)
-def test_rdm::train_maxSpeed_type(instance):
-    assert isinstance(instance.maxSpeed, str)
-
-
-@given(instance=RDM::Train_strategy)
-def test_rdm::train_maxSpeed_setter(instance):
-    original = instance.maxSpeed
-    instance.maxSpeed = original
-    assert instance.maxSpeed == original
-
-@given(instance=RDM::Train_strategy)
-def test_rdm::train_headingSpeed_type(instance):
-    assert isinstance(instance.headingSpeed, str)
+@given(instance=RDM_Train_strategy)
+@settings(max_examples=50)
+def test_rdm_train_instantiation(instance):
+    assert isinstance(instance, RDM_Train)
 
 
-@given(instance=RDM::Train_strategy)
-def test_rdm::train_headingSpeed_setter(instance):
+
+@given(instance=RDM_Train_strategy)
+def test_rdm_train_headingSpeed_setter(instance):
     original = instance.headingSpeed
     instance.headingSpeed = original
     assert instance.headingSpeed == original
 
-@given(instance=RDM::TrackElement_strategy)
+
+
+@given(instance=RDM_Train_strategy)
+def test_rdm_train_maxSpeed_setter(instance):
+    original = instance.maxSpeed
+    instance.maxSpeed = original
+    assert instance.maxSpeed == original
+
+@given(instance=RDM_RouteElement_strategy)
 @settings(max_examples=50)
-def test_rdm::trackelement_instantiation(instance):
-    assert isinstance(instance, RDM::TrackElement)
+def test_rdm_routeelement_instantiation(instance):
+    assert isinstance(instance, RDM_RouteElement)
 
-@given(instance=RDM::RouteElement_strategy)
+@given(instance=RDM_Route_strategy)
 @settings(max_examples=50)
-def test_rdm::routeelement_instantiation(instance):
-    assert isinstance(instance, RDM::RouteElement)
+def test_rdm_route_instantiation(instance):
+    assert isinstance(instance, RDM_Route)
 
-@given(instance=RDM::Route_strategy)
+@given(instance=RDM_TurnoutDesiredDirection_strategy)
 @settings(max_examples=50)
-def test_rdm::route_instantiation(instance):
-    assert isinstance(instance, RDM::Route)
-
-@given(instance=RDM::TurnoutDesiredDirection_strategy)
-@settings(max_examples=50)
-def test_rdm::turnoutdesireddirection_instantiation(instance):
-    assert isinstance(instance, RDM::TurnoutDesiredDirection)
-
-@given(instance=RDM::TurnoutDesiredDirection_strategy)
-def test_rdm::turnoutdesireddirection_desiredDirection_type(instance):
-    assert isinstance(instance.desiredDirection, str)
+def test_rdm_turnoutdesireddirection_instantiation(instance):
+    assert isinstance(instance, RDM_TurnoutDesiredDirection)
 
 
-@given(instance=RDM::TurnoutDesiredDirection_strategy)
-def test_rdm::turnoutdesireddirection_desiredDirection_setter(instance):
+
+@given(instance=RDM_TurnoutDesiredDirection_strategy)
+def test_rdm_turnoutdesireddirection_desiredDirection_setter(instance):
     original = instance.desiredDirection
     instance.desiredDirection = original
     assert instance.desiredDirection == original
 
-@given(instance=RDM::Signal_strategy)
+@given(instance=RDM_Signal_strategy)
 @settings(max_examples=50)
-def test_rdm::signal_instantiation(instance):
-    assert isinstance(instance, RDM::Signal)
-
-@given(instance=RDM::Signal_strategy)
-def test_rdm::signal_allowedSpeed_type(instance):
-    assert isinstance(instance.allowedSpeed, str)
+def test_rdm_signal_instantiation(instance):
+    assert isinstance(instance, RDM_Signal)
 
 
-@given(instance=RDM::Signal_strategy)
-def test_rdm::signal_allowedSpeed_setter(instance):
+
+@given(instance=RDM_Signal_strategy)
+def test_rdm_signal_allowedSpeed_setter(instance):
     original = instance.allowedSpeed
     instance.allowedSpeed = original
     assert instance.allowedSpeed == original
 
-@given(instance=RDM::ConnectionPoint_strategy)
+@given(instance=RDM_ConnectionPoint_strategy)
 @settings(max_examples=50)
-def test_rdm::connectionpoint_instantiation(instance):
-    assert isinstance(instance, RDM::ConnectionPoint)
-
-@given(instance=RDM::ConnectionPoint_strategy)
-def test_rdm::connectionpoint_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_rdm_connectionpoint_instantiation(instance):
+    assert isinstance(instance, RDM_ConnectionPoint)
 
 
-@given(instance=RDM::ConnectionPoint_strategy)
-def test_rdm::connectionpoint_direction_setter(instance):
+
+@given(instance=RDM_ConnectionPoint_strategy)
+def test_rdm_connectionpoint_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=RDM::Turnout_strategy)
+@given(instance=RDM_Turnout_strategy)
 @settings(max_examples=50)
-def test_rdm::turnout_instantiation(instance):
-    assert isinstance(instance, RDM::Turnout)
-
-@given(instance=RDM::Turnout_strategy)
-def test_rdm::turnout_currentDirection_type(instance):
-    assert isinstance(instance.currentDirection, str)
+def test_rdm_turnout_instantiation(instance):
+    assert isinstance(instance, RDM_Turnout)
 
 
-@given(instance=RDM::Turnout_strategy)
-def test_rdm::turnout_currentDirection_setter(instance):
+
+@given(instance=RDM_Turnout_strategy)
+def test_rdm_turnout_currentDirection_setter(instance):
     original = instance.currentDirection
     instance.currentDirection = original
     assert instance.currentDirection == original
 
-@given(instance=RDM::Turnout_strategy)
-def test_rdm::turnout_switchingDirection_type(instance):
-    assert isinstance(instance.switchingDirection, str)
 
 
-@given(instance=RDM::Turnout_strategy)
-def test_rdm::turnout_switchingDirection_setter(instance):
+@given(instance=RDM_Turnout_strategy)
+def test_rdm_turnout_switchingDirection_setter(instance):
     original = instance.switchingDirection
     instance.switchingDirection = original
     assert instance.switchingDirection == original
 
-@given(instance=RDM::Section_strategy)
+@given(instance=RDM_Section_strategy)
 @settings(max_examples=50)
-def test_rdm::section_instantiation(instance):
-    assert isinstance(instance, RDM::Section)
+def test_rdm_section_instantiation(instance):
+    assert isinstance(instance, RDM_Section)

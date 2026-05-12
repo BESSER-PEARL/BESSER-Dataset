@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Auftrag,
@@ -101,18 +101,9 @@ def test_plaetzchenanzeigeform_constructor_exists():
 def test_plaetzchenanzeigeform_constructor_args():
     sig = inspect.signature(PlaetzchenAnzeigeForm.__init__)
     params = list(sig.parameters.keys())
-    assert "form" in params, "Missing parameter 'form'"
     assert "laenge" in params, "Missing parameter 'laenge'"
+    assert "form" in params, "Missing parameter 'form'"
     assert "breite" in params, "Missing parameter 'breite'"
-
-def test_plaetzchenanzeigeform_has_form():
-    assert hasattr(PlaetzchenAnzeigeForm, "form")
-    descriptor = None
-    for klass in PlaetzchenAnzeigeForm.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_plaetzchenanzeigeform_has_laenge():
     assert hasattr(PlaetzchenAnzeigeForm, "laenge")
@@ -120,6 +111,15 @@ def test_plaetzchenanzeigeform_has_laenge():
     for klass in PlaetzchenAnzeigeForm.__mro__:
         if "laenge" in klass.__dict__:
             descriptor = klass.__dict__["laenge"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchenanzeigeform_has_form():
+    assert hasattr(PlaetzchenAnzeigeForm, "form")
+    descriptor = None
+    for klass in PlaetzchenAnzeigeForm.__mro__:
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
             break
     assert isinstance(descriptor, property)
 
@@ -159,19 +159,28 @@ def test_plaetzchendesignerform_constructor_exists():
 def test_plaetzchendesignerform_constructor_args():
     sig = inspect.signature(PlaetzchenDesignerForm.__init__)
     params = list(sig.parameters.keys())
-    assert "BLECHBREITE" in params, "Missing parameter 'BLECHBREITE'"
-    assert "plaetzchenGeaendert" in params, "Missing parameter 'plaetzchenGeaendert'"
     assert "BLECHLAENGE" in params, "Missing parameter 'BLECHLAENGE'"
-    assert "neuerAuftrag" in params, "Missing parameter 'neuerAuftrag'"
-    assert "neuesPlaetzchen" in params, "Missing parameter 'neuesPlaetzchen'"
     assert "datei" in params, "Missing parameter 'datei'"
+    assert "plaetzchenGeaendert" in params, "Missing parameter 'plaetzchenGeaendert'"
+    assert "neuesPlaetzchen" in params, "Missing parameter 'neuesPlaetzchen'"
+    assert "BLECHBREITE" in params, "Missing parameter 'BLECHBREITE'"
+    assert "neuerAuftrag" in params, "Missing parameter 'neuerAuftrag'"
 
-def test_plaetzchendesignerform_has_BLECHBREITE():
-    assert hasattr(PlaetzchenDesignerForm, "BLECHBREITE")
+def test_plaetzchendesignerform_has_BLECHLAENGE():
+    assert hasattr(PlaetzchenDesignerForm, "BLECHLAENGE")
     descriptor = None
     for klass in PlaetzchenDesignerForm.__mro__:
-        if "BLECHBREITE" in klass.__dict__:
-            descriptor = klass.__dict__["BLECHBREITE"]
+        if "BLECHLAENGE" in klass.__dict__:
+            descriptor = klass.__dict__["BLECHLAENGE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchendesignerform_has_datei():
+    assert hasattr(PlaetzchenDesignerForm, "datei")
+    descriptor = None
+    for klass in PlaetzchenDesignerForm.__mro__:
+        if "datei" in klass.__dict__:
+            descriptor = klass.__dict__["datei"]
             break
     assert isinstance(descriptor, property)
 
@@ -184,24 +193,6 @@ def test_plaetzchendesignerform_has_plaetzchenGeaendert():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchendesignerform_has_BLECHLAENGE():
-    assert hasattr(PlaetzchenDesignerForm, "BLECHLAENGE")
-    descriptor = None
-    for klass in PlaetzchenDesignerForm.__mro__:
-        if "BLECHLAENGE" in klass.__dict__:
-            descriptor = klass.__dict__["BLECHLAENGE"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchendesignerform_has_neuerAuftrag():
-    assert hasattr(PlaetzchenDesignerForm, "neuerAuftrag")
-    descriptor = None
-    for klass in PlaetzchenDesignerForm.__mro__:
-        if "neuerAuftrag" in klass.__dict__:
-            descriptor = klass.__dict__["neuerAuftrag"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_plaetzchendesignerform_has_neuesPlaetzchen():
     assert hasattr(PlaetzchenDesignerForm, "neuesPlaetzchen")
     descriptor = None
@@ -211,12 +202,21 @@ def test_plaetzchendesignerform_has_neuesPlaetzchen():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchendesignerform_has_datei():
-    assert hasattr(PlaetzchenDesignerForm, "datei")
+def test_plaetzchendesignerform_has_BLECHBREITE():
+    assert hasattr(PlaetzchenDesignerForm, "BLECHBREITE")
     descriptor = None
     for klass in PlaetzchenDesignerForm.__mro__:
-        if "datei" in klass.__dict__:
-            descriptor = klass.__dict__["datei"]
+        if "BLECHBREITE" in klass.__dict__:
+            descriptor = klass.__dict__["BLECHBREITE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchendesignerform_has_neuerAuftrag():
+    assert hasattr(PlaetzchenDesignerForm, "neuerAuftrag")
+    descriptor = None
+    for klass in PlaetzchenDesignerForm.__mro__:
+        if "neuerAuftrag" in klass.__dict__:
+            descriptor = klass.__dict__["neuerAuftrag"]
             break
     assert isinstance(descriptor, property)
 
@@ -233,40 +233,13 @@ def test_plaetzchen_constructor_exists():
 def test_plaetzchen_constructor_args():
     sig = inspect.signature(Plaetzchen.__init__)
     params = list(sig.parameters.keys())
-    assert "teig" in params, "Missing parameter 'teig'"
-    assert "belag" in params, "Missing parameter 'belag'"
-    assert "laenge" in params, "Missing parameter 'laenge'"
     assert "breite" in params, "Missing parameter 'breite'"
-    assert "temperatur" in params, "Missing parameter 'temperatur'"
-    assert "backzeit" in params, "Missing parameter 'backzeit'"
     assert "form" in params, "Missing parameter 'form'"
-
-def test_plaetzchen_has_teig():
-    assert hasattr(Plaetzchen, "teig")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "teig" in klass.__dict__:
-            descriptor = klass.__dict__["teig"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchen_has_belag():
-    assert hasattr(Plaetzchen, "belag")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "belag" in klass.__dict__:
-            descriptor = klass.__dict__["belag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchen_has_laenge():
-    assert hasattr(Plaetzchen, "laenge")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "laenge" in klass.__dict__:
-            descriptor = klass.__dict__["laenge"]
-            break
-    assert isinstance(descriptor, property)
+    assert "teig" in params, "Missing parameter 'teig'"
+    assert "backzeit" in params, "Missing parameter 'backzeit'"
+    assert "belag" in params, "Missing parameter 'belag'"
+    assert "temperatur" in params, "Missing parameter 'temperatur'"
+    assert "laenge" in params, "Missing parameter 'laenge'"
 
 def test_plaetzchen_has_breite():
     assert hasattr(Plaetzchen, "breite")
@@ -277,12 +250,21 @@ def test_plaetzchen_has_breite():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchen_has_temperatur():
-    assert hasattr(Plaetzchen, "temperatur")
+def test_plaetzchen_has_form():
+    assert hasattr(Plaetzchen, "form")
     descriptor = None
     for klass in Plaetzchen.__mro__:
-        if "temperatur" in klass.__dict__:
-            descriptor = klass.__dict__["temperatur"]
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_teig():
+    assert hasattr(Plaetzchen, "teig")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "teig" in klass.__dict__:
+            descriptor = klass.__dict__["teig"]
             break
     assert isinstance(descriptor, property)
 
@@ -295,12 +277,30 @@ def test_plaetzchen_has_backzeit():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchen_has_form():
-    assert hasattr(Plaetzchen, "form")
+def test_plaetzchen_has_belag():
+    assert hasattr(Plaetzchen, "belag")
     descriptor = None
     for klass in Plaetzchen.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
+        if "belag" in klass.__dict__:
+            descriptor = klass.__dict__["belag"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_temperatur():
+    assert hasattr(Plaetzchen, "temperatur")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "temperatur" in klass.__dict__:
+            descriptor = klass.__dict__["temperatur"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_laenge():
+    assert hasattr(Plaetzchen, "laenge")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "laenge" in klass.__dict__:
+            descriptor = klass.__dict__["laenge"]
             break
     assert isinstance(descriptor, property)
 
@@ -400,9 +400,9 @@ ZutatenEingabeForm_strategy = st.builds(
 )
 PlaetzchenAnzeigeForm_strategy = st.builds(
     PlaetzchenAnzeigeForm,
-    form=
-        safe_text,
     laenge=
+        safe_text,
+    form=
         safe_text,
     breite=
         safe_text
@@ -412,34 +412,34 @@ DateiEA_strategy = st.builds(
 )
 PlaetzchenDesignerForm_strategy = st.builds(
     PlaetzchenDesignerForm,
-    BLECHBREITE=
+    BLECHLAENGE=
+        safe_text,
+    datei=
         safe_text,
     plaetzchenGeaendert=
         st.booleans(),
-    BLECHLAENGE=
-        safe_text,
-    neuerAuftrag=
-        safe_text,
     neuesPlaetzchen=
         safe_text,
-    datei=
+    BLECHBREITE=
+        safe_text,
+    neuerAuftrag=
         safe_text
 )
 Plaetzchen_strategy = st.builds(
     Plaetzchen,
-    teig=
-        safe_text,
-    belag=
-        safe_text,
-    laenge=
-        safe_text,
     breite=
         safe_text,
-    temperatur=
+    form=
+        safe_text,
+    teig=
         safe_text,
     backzeit=
         safe_text,
-    form=
+    belag=
+        safe_text,
+    temperatur=
+        safe_text,
+    laenge=
         safe_text
 )
 Zutat_strategy = st.builds(
@@ -462,9 +462,6 @@ Zutaten_strategy = st.builds(
 def test_auftrag_instantiation(instance):
     assert isinstance(instance, Auftrag)
 
-@given(instance=Auftrag_strategy)
-def test_auftrag_keks_type(instance):
-    assert isinstance(instance.keks, str)
 
 
 @given(instance=Auftrag_strategy)
@@ -473,9 +470,6 @@ def test_auftrag_keks_setter(instance):
     instance.keks = original
     assert instance.keks == original
 
-@given(instance=Auftrag_strategy)
-def test_auftrag_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Auftrag_strategy)
@@ -484,9 +478,6 @@ def test_auftrag_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Auftrag_strategy)
-def test_auftrag_anzahl_type(instance):
-    assert isinstance(instance.anzahl, str)
 
 
 @given(instance=Auftrag_strategy)
@@ -500,9 +491,6 @@ def test_auftrag_anzahl_setter(instance):
 def test_zutateneingabeform_instantiation(instance):
     assert isinstance(instance, ZutatenEingabeForm)
 
-@given(instance=ZutatenEingabeForm_strategy)
-def test_zutateneingabeform_neueZutat_type(instance):
-    assert isinstance(instance.neueZutat, str)
 
 
 @given(instance=ZutatenEingabeForm_strategy)
@@ -516,20 +504,6 @@ def test_zutateneingabeform_neueZutat_setter(instance):
 def test_plaetzchenanzeigeform_instantiation(instance):
     assert isinstance(instance, PlaetzchenAnzeigeForm)
 
-@given(instance=PlaetzchenAnzeigeForm_strategy)
-def test_plaetzchenanzeigeform_form_type(instance):
-    assert isinstance(instance.form, str)
-
-
-@given(instance=PlaetzchenAnzeigeForm_strategy)
-def test_plaetzchenanzeigeform_form_setter(instance):
-    original = instance.form
-    instance.form = original
-    assert instance.form == original
-
-@given(instance=PlaetzchenAnzeigeForm_strategy)
-def test_plaetzchenanzeigeform_laenge_type(instance):
-    assert isinstance(instance.laenge, str)
 
 
 @given(instance=PlaetzchenAnzeigeForm_strategy)
@@ -538,9 +512,14 @@ def test_plaetzchenanzeigeform_laenge_setter(instance):
     instance.laenge = original
     assert instance.laenge == original
 
+
+
 @given(instance=PlaetzchenAnzeigeForm_strategy)
-def test_plaetzchenanzeigeform_breite_type(instance):
-    assert isinstance(instance.breite, str)
+def test_plaetzchenanzeigeform_form_setter(instance):
+    original = instance.form
+    instance.form = original
+    assert instance.form == original
+
 
 
 @given(instance=PlaetzchenAnzeigeForm_strategy)
@@ -559,31 +538,6 @@ def test_dateiea_instantiation(instance):
 def test_plaetzchendesignerform_instantiation(instance):
     assert isinstance(instance, PlaetzchenDesignerForm)
 
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_BLECHBREITE_type(instance):
-    assert isinstance(instance.BLECHBREITE, str)
-
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_BLECHBREITE_setter(instance):
-    original = instance.BLECHBREITE
-    instance.BLECHBREITE = original
-    assert instance.BLECHBREITE == original
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_plaetzchenGeaendert_type(instance):
-    assert isinstance(instance.plaetzchenGeaendert, bool)
-
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_plaetzchenGeaendert_setter(instance):
-    original = instance.plaetzchenGeaendert
-    instance.plaetzchenGeaendert = original
-    assert instance.plaetzchenGeaendert == original
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_BLECHLAENGE_type(instance):
-    assert isinstance(instance.BLECHLAENGE, str)
 
 
 @given(instance=PlaetzchenDesignerForm_strategy)
@@ -592,31 +546,6 @@ def test_plaetzchendesignerform_BLECHLAENGE_setter(instance):
     instance.BLECHLAENGE = original
     assert instance.BLECHLAENGE == original
 
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_neuerAuftrag_type(instance):
-    assert isinstance(instance.neuerAuftrag, str)
-
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_neuerAuftrag_setter(instance):
-    original = instance.neuerAuftrag
-    instance.neuerAuftrag = original
-    assert instance.neuerAuftrag == original
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_neuesPlaetzchen_type(instance):
-    assert isinstance(instance.neuesPlaetzchen, str)
-
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_neuesPlaetzchen_setter(instance):
-    original = instance.neuesPlaetzchen
-    instance.neuesPlaetzchen = original
-    assert instance.neuesPlaetzchen == original
-
-@given(instance=PlaetzchenDesignerForm_strategy)
-def test_plaetzchendesignerform_datei_type(instance):
-    assert isinstance(instance.datei, str)
 
 
 @given(instance=PlaetzchenDesignerForm_strategy)
@@ -625,47 +554,43 @@ def test_plaetzchendesignerform_datei_setter(instance):
     instance.datei = original
     assert instance.datei == original
 
+
+
+@given(instance=PlaetzchenDesignerForm_strategy)
+def test_plaetzchendesignerform_plaetzchenGeaendert_setter(instance):
+    original = instance.plaetzchenGeaendert
+    instance.plaetzchenGeaendert = original
+    assert instance.plaetzchenGeaendert == original
+
+
+
+@given(instance=PlaetzchenDesignerForm_strategy)
+def test_plaetzchendesignerform_neuesPlaetzchen_setter(instance):
+    original = instance.neuesPlaetzchen
+    instance.neuesPlaetzchen = original
+    assert instance.neuesPlaetzchen == original
+
+
+
+@given(instance=PlaetzchenDesignerForm_strategy)
+def test_plaetzchendesignerform_BLECHBREITE_setter(instance):
+    original = instance.BLECHBREITE
+    instance.BLECHBREITE = original
+    assert instance.BLECHBREITE == original
+
+
+
+@given(instance=PlaetzchenDesignerForm_strategy)
+def test_plaetzchendesignerform_neuerAuftrag_setter(instance):
+    original = instance.neuerAuftrag
+    instance.neuerAuftrag = original
+    assert instance.neuerAuftrag == original
+
 @given(instance=Plaetzchen_strategy)
 @settings(max_examples=50)
 def test_plaetzchen_instantiation(instance):
     assert isinstance(instance, Plaetzchen)
 
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_teig_type(instance):
-    assert isinstance(instance.teig, str)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_teig_setter(instance):
-    original = instance.teig
-    instance.teig = original
-    assert instance.teig == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_belag_type(instance):
-    assert isinstance(instance.belag, str)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_belag_setter(instance):
-    original = instance.belag
-    instance.belag = original
-    assert instance.belag == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_laenge_type(instance):
-    assert isinstance(instance.laenge, str)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_laenge_setter(instance):
-    original = instance.laenge
-    instance.laenge = original
-    assert instance.laenge == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_breite_type(instance):
-    assert isinstance(instance.breite, str)
 
 
 @given(instance=Plaetzchen_strategy)
@@ -674,31 +599,6 @@ def test_plaetzchen_breite_setter(instance):
     instance.breite = original
     assert instance.breite == original
 
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_temperatur_type(instance):
-    assert isinstance(instance.temperatur, str)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_temperatur_setter(instance):
-    original = instance.temperatur
-    instance.temperatur = original
-    assert instance.temperatur == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_backzeit_type(instance):
-    assert isinstance(instance.backzeit, str)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_backzeit_setter(instance):
-    original = instance.backzeit
-    instance.backzeit = original
-    assert instance.backzeit == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_form_type(instance):
-    assert isinstance(instance.form, str)
 
 
 @given(instance=Plaetzchen_strategy)
@@ -707,14 +607,51 @@ def test_plaetzchen_form_setter(instance):
     instance.form = original
     assert instance.form == original
 
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_teig_setter(instance):
+    original = instance.teig
+    instance.teig = original
+    assert instance.teig == original
+
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_backzeit_setter(instance):
+    original = instance.backzeit
+    instance.backzeit = original
+    assert instance.backzeit == original
+
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_belag_setter(instance):
+    original = instance.belag
+    instance.belag = original
+    assert instance.belag == original
+
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_temperatur_setter(instance):
+    original = instance.temperatur
+    instance.temperatur = original
+    assert instance.temperatur == original
+
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_laenge_setter(instance):
+    original = instance.laenge
+    instance.laenge = original
+    assert instance.laenge == original
+
 @given(instance=Zutat_strategy)
 @settings(max_examples=50)
 def test_zutat_instantiation(instance):
     assert isinstance(instance, Zutat)
 
-@given(instance=Zutat_strategy)
-def test_zutat_menge_type(instance):
-    assert isinstance(instance.menge, str)
 
 
 @given(instance=Zutat_strategy)
@@ -723,9 +660,6 @@ def test_zutat_menge_setter(instance):
     instance.menge = original
     assert instance.menge == original
 
-@given(instance=Zutat_strategy)
-def test_zutat_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Zutat_strategy)
@@ -734,9 +668,6 @@ def test_zutat_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Zutat_strategy)
-def test_zutat_einheit_type(instance):
-    assert isinstance(instance.einheit, str)
 
 
 @given(instance=Zutat_strategy)
@@ -750,9 +681,6 @@ def test_zutat_einheit_setter(instance):
 def test_zutaten_instantiation(instance):
     assert isinstance(instance, Zutaten)
 
-@given(instance=Zutaten_strategy)
-def test_zutaten_zutaten_type(instance):
-    assert isinstance(instance.zutaten, str)
 
 
 @given(instance=Zutaten_strategy)

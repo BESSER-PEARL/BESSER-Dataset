@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Receptionist,
@@ -45,9 +45,18 @@ def test_bill_constructor_exists():
 def test_bill_constructor_args():
     sig = inspect.signature(Bill.__init__)
     params = list(sig.parameters.keys())
+    assert "amount" in params, "Missing parameter 'amount'"
     assert "BillNo" in params, "Missing parameter 'BillNo'"
     assert "patientName" in params, "Missing parameter 'patientName'"
-    assert "amount" in params, "Missing parameter 'amount'"
+
+def test_bill_has_amount():
+    assert hasattr(Bill, "amount")
+    descriptor = None
+    for klass in Bill.__mro__:
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_bill_has_BillNo():
     assert hasattr(Bill, "BillNo")
@@ -67,15 +76,6 @@ def test_bill_has_patientName():
             break
     assert isinstance(descriptor, property)
 
-def test_bill_has_amount():
-    assert hasattr(Bill, "amount")
-    descriptor = None
-    for klass in Bill.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_department_is_not_abstract():
@@ -89,16 +89,16 @@ def test_department_constructor_exists():
 def test_department_constructor_args():
     sig = inspect.signature(Department.__init__)
     params = list(sig.parameters.keys())
-    assert "DocID" in params, "Missing parameter 'DocID'"
-    assert "deptID" in params, "Missing parameter 'deptID'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "deptID" in params, "Missing parameter 'deptID'"
+    assert "DocID" in params, "Missing parameter 'DocID'"
 
-def test_department_has_DocID():
-    assert hasattr(Department, "DocID")
+def test_department_has_Name():
+    assert hasattr(Department, "Name")
     descriptor = None
     for klass in Department.__mro__:
-        if "DocID" in klass.__dict__:
-            descriptor = klass.__dict__["DocID"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -111,12 +111,12 @@ def test_department_has_deptID():
             break
     assert isinstance(descriptor, property)
 
-def test_department_has_Name():
-    assert hasattr(Department, "Name")
+def test_department_has_DocID():
+    assert hasattr(Department, "DocID")
     descriptor = None
     for klass in Department.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "DocID" in klass.__dict__:
+            descriptor = klass.__dict__["DocID"]
             break
     assert isinstance(descriptor, property)
 
@@ -133,17 +133,8 @@ def test_ward_constructor_exists():
 def test_ward_constructor_args():
     sig = inspect.signature(Ward.__init__)
     params = list(sig.parameters.keys())
-    assert "Location" in params, "Missing parameter 'Location'"
     assert "wardNo" in params, "Missing parameter 'wardNo'"
-
-def test_ward_has_Location():
-    assert hasattr(Ward, "Location")
-    descriptor = None
-    for klass in Ward.__mro__:
-        if "Location" in klass.__dict__:
-            descriptor = klass.__dict__["Location"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Location" in params, "Missing parameter 'Location'"
 
 def test_ward_has_wardNo():
     assert hasattr(Ward, "wardNo")
@@ -151,6 +142,15 @@ def test_ward_has_wardNo():
     for klass in Ward.__mro__:
         if "wardNo" in klass.__dict__:
             descriptor = klass.__dict__["wardNo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ward_has_Location():
+    assert hasattr(Ward, "Location")
+    descriptor = None
+    for klass in Ward.__mro__:
+        if "Location" in klass.__dict__:
+            descriptor = klass.__dict__["Location"]
             break
     assert isinstance(descriptor, property)
 
@@ -167,12 +167,30 @@ def test_patient_constructor_exists():
 def test_patient_constructor_args():
     sig = inspect.signature(Patient.__init__)
     params = list(sig.parameters.keys())
+    assert "PatientID" in params, "Missing parameter 'PatientID'"
+    assert "Age" in params, "Missing parameter 'Age'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "Address" in params, "Missing parameter 'Address'"
     assert "WardNo" in params, "Missing parameter 'WardNo'"
     assert "Gender" in params, "Missing parameter 'Gender'"
-    assert "Age" in params, "Missing parameter 'Age'"
-    assert "Address" in params, "Missing parameter 'Address'"
-    assert "PatientID" in params, "Missing parameter 'PatientID'"
+
+def test_patient_has_PatientID():
+    assert hasattr(Patient, "PatientID")
+    descriptor = None
+    for klass in Patient.__mro__:
+        if "PatientID" in klass.__dict__:
+            descriptor = klass.__dict__["PatientID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_patient_has_Age():
+    assert hasattr(Patient, "Age")
+    descriptor = None
+    for klass in Patient.__mro__:
+        if "Age" in klass.__dict__:
+            descriptor = klass.__dict__["Age"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_patient_has_Name():
     assert hasattr(Patient, "Name")
@@ -180,6 +198,15 @@ def test_patient_has_Name():
     for klass in Patient.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_patient_has_Address():
+    assert hasattr(Patient, "Address")
+    descriptor = None
+    for klass in Patient.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -201,33 +228,6 @@ def test_patient_has_Gender():
             break
     assert isinstance(descriptor, property)
 
-def test_patient_has_Age():
-    assert hasattr(Patient, "Age")
-    descriptor = None
-    for klass in Patient.__mro__:
-        if "Age" in klass.__dict__:
-            descriptor = klass.__dict__["Age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patient_has_Address():
-    assert hasattr(Patient, "Address")
-    descriptor = None
-    for klass in Patient.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patient_has_PatientID():
-    assert hasattr(Patient, "PatientID")
-    descriptor = None
-    for klass in Patient.__mro__:
-        if "PatientID" in klass.__dict__:
-            descriptor = klass.__dict__["PatientID"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_doctor_is_not_abstract():
@@ -241,30 +241,12 @@ def test_doctor_constructor_exists():
 def test_doctor_constructor_args():
     sig = inspect.signature(Doctor.__init__)
     params = list(sig.parameters.keys())
-    assert "Department" in params, "Missing parameter 'Department'"
-    assert "Address" in params, "Missing parameter 'Address'"
     assert "Specialization" in params, "Missing parameter 'Specialization'"
-    assert "PhoneNumber" in params, "Missing parameter 'PhoneNumber'"
     assert "DocID" in params, "Missing parameter 'DocID'"
+    assert "PhoneNumber" in params, "Missing parameter 'PhoneNumber'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_doctor_has_Department():
-    assert hasattr(Doctor, "Department")
-    descriptor = None
-    for klass in Doctor.__mro__:
-        if "Department" in klass.__dict__:
-            descriptor = klass.__dict__["Department"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doctor_has_Address():
-    assert hasattr(Doctor, "Address")
-    descriptor = None
-    for klass in Doctor.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Address" in params, "Missing parameter 'Address'"
+    assert "Department" in params, "Missing parameter 'Department'"
 
 def test_doctor_has_Specialization():
     assert hasattr(Doctor, "Specialization")
@@ -272,15 +254,6 @@ def test_doctor_has_Specialization():
     for klass in Doctor.__mro__:
         if "Specialization" in klass.__dict__:
             descriptor = klass.__dict__["Specialization"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_doctor_has_PhoneNumber():
-    assert hasattr(Doctor, "PhoneNumber")
-    descriptor = None
-    for klass in Doctor.__mro__:
-        if "PhoneNumber" in klass.__dict__:
-            descriptor = klass.__dict__["PhoneNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -293,12 +266,39 @@ def test_doctor_has_DocID():
             break
     assert isinstance(descriptor, property)
 
+def test_doctor_has_PhoneNumber():
+    assert hasattr(Doctor, "PhoneNumber")
+    descriptor = None
+    for klass in Doctor.__mro__:
+        if "PhoneNumber" in klass.__dict__:
+            descriptor = klass.__dict__["PhoneNumber"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_doctor_has_Name():
     assert hasattr(Doctor, "Name")
     descriptor = None
     for klass in Doctor.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doctor_has_Address():
+    assert hasattr(Doctor, "Address")
+    descriptor = None
+    for klass in Doctor.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doctor_has_Department():
+    assert hasattr(Doctor, "Department")
+    descriptor = None
+    for klass in Doctor.__mro__:
+        if "Department" in klass.__dict__:
+            descriptor = klass.__dict__["Department"]
             break
     assert isinstance(descriptor, property)
 
@@ -319,57 +319,57 @@ Receptionist_strategy = st.builds(
 )
 Bill_strategy = st.builds(
     Bill,
+    amount=
+        st.integers(),
     BillNo=
         st.integers(),
     patientName=
-        safe_text,
-    amount=
-        st.integers()
+        safe_text
 )
 Department_strategy = st.builds(
     Department,
-    DocID=
+    Name=
         safe_text,
     deptID=
         safe_text,
-    Name=
+    DocID=
         safe_text
 )
 Ward_strategy = st.builds(
     Ward,
-    Location=
-        safe_text,
     wardNo=
-        st.integers()
+        st.integers(),
+    Location=
+        safe_text
 )
 Patient_strategy = st.builds(
     Patient,
+    PatientID=
+        st.integers(),
+    Age=
+        safe_text,
     Name=
+        safe_text,
+    Address=
         safe_text,
     WardNo=
         st.integers(),
     Gender=
-        safe_text,
-    Age=
-        safe_text,
-    Address=
-        safe_text,
-    PatientID=
-        st.integers()
+        safe_text
 )
 Doctor_strategy = st.builds(
     Doctor,
-    Department=
-        safe_text,
-    Address=
-        safe_text,
     Specialization=
-        st.integers(),
-    PhoneNumber=
         st.integers(),
     DocID=
         safe_text,
+    PhoneNumber=
+        st.integers(),
     Name=
+        safe_text,
+    Address=
+        safe_text,
+    Department=
         safe_text
 )
 
@@ -383,31 +383,6 @@ def test_receptionist_instantiation(instance):
 def test_bill_instantiation(instance):
     assert isinstance(instance, Bill)
 
-@given(instance=Bill_strategy)
-def test_bill_BillNo_type(instance):
-    assert isinstance(instance.BillNo, int)
-
-
-@given(instance=Bill_strategy)
-def test_bill_BillNo_setter(instance):
-    original = instance.BillNo
-    instance.BillNo = original
-    assert instance.BillNo == original
-
-@given(instance=Bill_strategy)
-def test_bill_patientName_type(instance):
-    assert isinstance(instance.patientName, str)
-
-
-@given(instance=Bill_strategy)
-def test_bill_patientName_setter(instance):
-    original = instance.patientName
-    instance.patientName = original
-    assert instance.patientName == original
-
-@given(instance=Bill_strategy)
-def test_bill_amount_type(instance):
-    assert isinstance(instance.amount, int)
 
 
 @given(instance=Bill_strategy)
@@ -416,36 +391,27 @@ def test_bill_amount_setter(instance):
     instance.amount = original
     assert instance.amount == original
 
+
+
+@given(instance=Bill_strategy)
+def test_bill_BillNo_setter(instance):
+    original = instance.BillNo
+    instance.BillNo = original
+    assert instance.BillNo == original
+
+
+
+@given(instance=Bill_strategy)
+def test_bill_patientName_setter(instance):
+    original = instance.patientName
+    instance.patientName = original
+    assert instance.patientName == original
+
 @given(instance=Department_strategy)
 @settings(max_examples=50)
 def test_department_instantiation(instance):
     assert isinstance(instance, Department)
 
-@given(instance=Department_strategy)
-def test_department_DocID_type(instance):
-    assert isinstance(instance.DocID, str)
-
-
-@given(instance=Department_strategy)
-def test_department_DocID_setter(instance):
-    original = instance.DocID
-    instance.DocID = original
-    assert instance.DocID == original
-
-@given(instance=Department_strategy)
-def test_department_deptID_type(instance):
-    assert isinstance(instance.deptID, str)
-
-
-@given(instance=Department_strategy)
-def test_department_deptID_setter(instance):
-    original = instance.deptID
-    instance.deptID = original
-    assert instance.deptID == original
-
-@given(instance=Department_strategy)
-def test_department_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Department_strategy)
@@ -454,25 +420,27 @@ def test_department_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Department_strategy)
+def test_department_deptID_setter(instance):
+    original = instance.deptID
+    instance.deptID = original
+    assert instance.deptID == original
+
+
+
+@given(instance=Department_strategy)
+def test_department_DocID_setter(instance):
+    original = instance.DocID
+    instance.DocID = original
+    assert instance.DocID == original
+
 @given(instance=Ward_strategy)
 @settings(max_examples=50)
 def test_ward_instantiation(instance):
     assert isinstance(instance, Ward)
 
-@given(instance=Ward_strategy)
-def test_ward_Location_type(instance):
-    assert isinstance(instance.Location, str)
-
-
-@given(instance=Ward_strategy)
-def test_ward_Location_setter(instance):
-    original = instance.Location
-    instance.Location = original
-    assert instance.Location == original
-
-@given(instance=Ward_strategy)
-def test_ward_wardNo_type(instance):
-    assert isinstance(instance.wardNo, int)
 
 
 @given(instance=Ward_strategy)
@@ -481,69 +449,19 @@ def test_ward_wardNo_setter(instance):
     instance.wardNo = original
     assert instance.wardNo == original
 
+
+
+@given(instance=Ward_strategy)
+def test_ward_Location_setter(instance):
+    original = instance.Location
+    instance.Location = original
+    assert instance.Location == original
+
 @given(instance=Patient_strategy)
 @settings(max_examples=50)
 def test_patient_instantiation(instance):
     assert isinstance(instance, Patient)
 
-@given(instance=Patient_strategy)
-def test_patient_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Patient_strategy)
-def test_patient_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Patient_strategy)
-def test_patient_WardNo_type(instance):
-    assert isinstance(instance.WardNo, int)
-
-
-@given(instance=Patient_strategy)
-def test_patient_WardNo_setter(instance):
-    original = instance.WardNo
-    instance.WardNo = original
-    assert instance.WardNo == original
-
-@given(instance=Patient_strategy)
-def test_patient_Gender_type(instance):
-    assert isinstance(instance.Gender, str)
-
-
-@given(instance=Patient_strategy)
-def test_patient_Gender_setter(instance):
-    original = instance.Gender
-    instance.Gender = original
-    assert instance.Gender == original
-
-@given(instance=Patient_strategy)
-def test_patient_Age_type(instance):
-    assert isinstance(instance.Age, str)
-
-
-@given(instance=Patient_strategy)
-def test_patient_Age_setter(instance):
-    original = instance.Age
-    instance.Age = original
-    assert instance.Age == original
-
-@given(instance=Patient_strategy)
-def test_patient_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Patient_strategy)
-def test_patient_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Patient_strategy)
-def test_patient_PatientID_type(instance):
-    assert isinstance(instance.PatientID, int)
 
 
 @given(instance=Patient_strategy)
@@ -552,36 +470,51 @@ def test_patient_PatientID_setter(instance):
     instance.PatientID = original
     assert instance.PatientID == original
 
+
+
+@given(instance=Patient_strategy)
+def test_patient_Age_setter(instance):
+    original = instance.Age
+    instance.Age = original
+    assert instance.Age == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_WardNo_setter(instance):
+    original = instance.WardNo
+    instance.WardNo = original
+    assert instance.WardNo == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_Gender_setter(instance):
+    original = instance.Gender
+    instance.Gender = original
+    assert instance.Gender == original
+
 @given(instance=Doctor_strategy)
 @settings(max_examples=50)
 def test_doctor_instantiation(instance):
     assert isinstance(instance, Doctor)
 
-@given(instance=Doctor_strategy)
-def test_doctor_Department_type(instance):
-    assert isinstance(instance.Department, str)
-
-
-@given(instance=Doctor_strategy)
-def test_doctor_Department_setter(instance):
-    original = instance.Department
-    instance.Department = original
-    assert instance.Department == original
-
-@given(instance=Doctor_strategy)
-def test_doctor_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Doctor_strategy)
-def test_doctor_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Doctor_strategy)
-def test_doctor_Specialization_type(instance):
-    assert isinstance(instance.Specialization, int)
 
 
 @given(instance=Doctor_strategy)
@@ -590,20 +523,6 @@ def test_doctor_Specialization_setter(instance):
     instance.Specialization = original
     assert instance.Specialization == original
 
-@given(instance=Doctor_strategy)
-def test_doctor_PhoneNumber_type(instance):
-    assert isinstance(instance.PhoneNumber, int)
-
-
-@given(instance=Doctor_strategy)
-def test_doctor_PhoneNumber_setter(instance):
-    original = instance.PhoneNumber
-    instance.PhoneNumber = original
-    assert instance.PhoneNumber == original
-
-@given(instance=Doctor_strategy)
-def test_doctor_DocID_type(instance):
-    assert isinstance(instance.DocID, str)
 
 
 @given(instance=Doctor_strategy)
@@ -612,9 +531,14 @@ def test_doctor_DocID_setter(instance):
     instance.DocID = original
     assert instance.DocID == original
 
+
+
 @given(instance=Doctor_strategy)
-def test_doctor_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_doctor_PhoneNumber_setter(instance):
+    original = instance.PhoneNumber
+    instance.PhoneNumber = original
+    assert instance.PhoneNumber == original
+
 
 
 @given(instance=Doctor_strategy)
@@ -622,3 +546,19 @@ def test_doctor_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
+
+
+
+@given(instance=Doctor_strategy)
+def test_doctor_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
+
+
+@given(instance=Doctor_strategy)
+def test_doctor_Department_setter(instance):
+    original = instance.Department
+    instance.Department = original
+    assert instance.Department == original

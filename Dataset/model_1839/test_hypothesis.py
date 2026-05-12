@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    book::EObject,
-    book::Book,
-    book::BookCollection,
+from python_code import (
+    book_EObject,
+    book_Book,
+    book_BookCollection,
 )
 
 # =============================================================================
@@ -17,47 +17,47 @@ from classes import (
 
 
 
-def test_book::eobject_is_not_abstract():
-    assert not inspect.isabstract(book::EObject)
+def test_book_eobject_is_not_abstract():
+    assert not inspect.isabstract(book_EObject)
 
 
-def test_book::eobject_constructor_exists():
-    assert callable(book::EObject.__init__)
+def test_book_eobject_constructor_exists():
+    assert callable(book_EObject.__init__)
 
 
-def test_book::eobject_constructor_args():
-    sig = inspect.signature(book::EObject.__init__)
+def test_book_eobject_constructor_args():
+    sig = inspect.signature(book_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_book::book_is_not_abstract():
-    assert not inspect.isabstract(book::Book)
+def test_book_book_is_not_abstract():
+    assert not inspect.isabstract(book_Book)
 
 
-def test_book::book_constructor_exists():
-    assert callable(book::Book.__init__)
+def test_book_book_constructor_exists():
+    assert callable(book_Book.__init__)
 
 
-def test_book::book_constructor_args():
-    sig = inspect.signature(book::Book.__init__)
+def test_book_book_constructor_args():
+    sig = inspect.signature(book_Book.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_book::book_has_id():
-    assert hasattr(book::Book, "id")
+def test_book_book_has_id():
+    assert hasattr(book_Book, "id")
     descriptor = None
-    for klass in book::Book.__mro__:
+    for klass in book_Book.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_book::book_has_name():
-    assert hasattr(book::Book, "name")
+def test_book_book_has_name():
+    assert hasattr(book_Book, "name")
     descriptor = None
-    for klass in book::Book.__mro__:
+    for klass in book_Book.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,16 +65,16 @@ def test_book::book_has_name():
 
 
 
-def test_book::bookcollection_is_not_abstract():
-    assert not inspect.isabstract(book::BookCollection)
+def test_book_bookcollection_is_not_abstract():
+    assert not inspect.isabstract(book_BookCollection)
 
 
-def test_book::bookcollection_constructor_exists():
-    assert callable(book::BookCollection.__init__)
+def test_book_bookcollection_constructor_exists():
+    assert callable(book_BookCollection.__init__)
 
 
-def test_book::bookcollection_constructor_args():
-    sig = inspect.signature(book::BookCollection.__init__)
+def test_book_bookcollection_constructor_args():
+    sig = inspect.signature(book_BookCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-book::EObject_strategy = st.builds(
-    book::EObject,
+book_EObject_strategy = st.builds(
+    book_EObject,
 )
-book::Book_strategy = st.builds(
-    book::Book,
+book_Book_strategy = st.builds(
+    book_Book,
     id=
         st.integers(),
     name=
         safe_text
 )
-book::BookCollection_strategy = st.builds(
-    book::BookCollection,
+book_BookCollection_strategy = st.builds(
+    book_BookCollection,
 )
 
-@given(instance=book::EObject_strategy)
+@given(instance=book_EObject_strategy)
 @settings(max_examples=50)
-def test_book::eobject_instantiation(instance):
-    assert isinstance(instance, book::EObject)
+def test_book_eobject_instantiation(instance):
+    assert isinstance(instance, book_EObject)
 
-@given(instance=book::Book_strategy)
+@given(instance=book_Book_strategy)
 @settings(max_examples=50)
-def test_book::book_instantiation(instance):
-    assert isinstance(instance, book::Book)
-
-@given(instance=book::Book_strategy)
-def test_book::book_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_book_book_instantiation(instance):
+    assert isinstance(instance, book_Book)
 
 
-@given(instance=book::Book_strategy)
-def test_book::book_id_setter(instance):
+
+@given(instance=book_Book_strategy)
+def test_book_book_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=book::Book_strategy)
-def test_book::book_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=book::Book_strategy)
-def test_book::book_name_setter(instance):
+@given(instance=book_Book_strategy)
+def test_book_book_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=book::BookCollection_strategy)
+@given(instance=book_BookCollection_strategy)
 @settings(max_examples=50)
-def test_book::bookcollection_instantiation(instance):
-    assert isinstance(instance, book::BookCollection)
+def test_book_bookcollection_instantiation(instance):
+    assert isinstance(instance, book_BookCollection)

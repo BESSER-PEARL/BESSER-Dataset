@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petrinet::Arc,
-    petrinet::Node,
-    petrinet::PetriNet,
-    petrinet::Token,
+from python_code import (
+    petrinet_Arc,
+    petrinet_Node,
+    petrinet_PetriNet,
+    petrinet_Token,
     Node,
-    petrinet::Place,
-    petrinet::Transition,
+    petrinet_Place,
+    petrinet_Transition,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_petrinet::arc_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Arc)
+def test_petrinet_arc_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Arc)
 
 
-def test_petrinet::arc_constructor_exists():
-    assert callable(petrinet::Arc.__init__)
+def test_petrinet_arc_constructor_exists():
+    assert callable(petrinet_Arc.__init__)
 
 
-def test_petrinet::arc_constructor_args():
-    sig = inspect.signature(petrinet::Arc.__init__)
+def test_petrinet_arc_constructor_args():
+    sig = inspect.signature(petrinet_Arc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_petrinet::arc_has_weight():
-    assert hasattr(petrinet::Arc, "weight")
+def test_petrinet_arc_has_weight():
+    assert hasattr(petrinet_Arc, "weight")
     descriptor = None
-    for klass in petrinet::Arc.__mro__:
+    for klass in petrinet_Arc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -45,37 +45,37 @@ def test_petrinet::arc_has_weight():
 
 
 
-def test_petrinet::node_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Node)
+def test_petrinet_node_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Node)
 
 
-def test_petrinet::node_constructor_exists():
-    assert callable(petrinet::Node.__init__)
+def test_petrinet_node_constructor_exists():
+    assert callable(petrinet_Node.__init__)
 
 
-def test_petrinet::node_constructor_args():
-    sig = inspect.signature(petrinet::Node.__init__)
+def test_petrinet_node_constructor_args():
+    sig = inspect.signature(petrinet_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::petrinet_is_not_abstract():
-    assert not inspect.isabstract(petrinet::PetriNet)
+def test_petrinet_petrinet_is_not_abstract():
+    assert not inspect.isabstract(petrinet_PetriNet)
 
 
-def test_petrinet::petrinet_constructor_exists():
-    assert callable(petrinet::PetriNet.__init__)
+def test_petrinet_petrinet_constructor_exists():
+    assert callable(petrinet_PetriNet.__init__)
 
 
-def test_petrinet::petrinet_constructor_args():
-    sig = inspect.signature(petrinet::PetriNet.__init__)
+def test_petrinet_petrinet_constructor_args():
+    sig = inspect.signature(petrinet_PetriNet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinet::petrinet_has_name():
-    assert hasattr(petrinet::PetriNet, "name")
+def test_petrinet_petrinet_has_name():
+    assert hasattr(petrinet_PetriNet, "name")
     descriptor = None
-    for klass in petrinet::PetriNet.__mro__:
+    for klass in petrinet_PetriNet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -83,16 +83,16 @@ def test_petrinet::petrinet_has_name():
 
 
 
-def test_petrinet::token_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Token)
+def test_petrinet_token_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Token)
 
 
-def test_petrinet::token_constructor_exists():
-    assert callable(petrinet::Token.__init__)
+def test_petrinet_token_constructor_exists():
+    assert callable(petrinet_Token.__init__)
 
 
-def test_petrinet::token_constructor_args():
-    sig = inspect.signature(petrinet::Token.__init__)
+def test_petrinet_token_constructor_args():
+    sig = inspect.signature(petrinet_Token.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -111,23 +111,23 @@ def test_node_constructor_args():
 
 
 
-def test_petrinet::place_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Place)
+def test_petrinet_place_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Place)
 
 
-def test_petrinet::place_constructor_exists():
-    assert callable(petrinet::Place.__init__)
+def test_petrinet_place_constructor_exists():
+    assert callable(petrinet_Place.__init__)
 
 
-def test_petrinet::place_constructor_args():
-    sig = inspect.signature(petrinet::Place.__init__)
+def test_petrinet_place_constructor_args():
+    sig = inspect.signature(petrinet_Place.__init__)
     params = list(sig.parameters.keys())
     assert "capacity" in params, "Missing parameter 'capacity'"
 
-def test_petrinet::place_has_capacity():
-    assert hasattr(petrinet::Place, "capacity")
+def test_petrinet_place_has_capacity():
+    assert hasattr(petrinet_Place, "capacity")
     descriptor = None
-    for klass in petrinet::Place.__mro__:
+    for klass in petrinet_Place.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
@@ -135,16 +135,16 @@ def test_petrinet::place_has_capacity():
 
 
 
-def test_petrinet::transition_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Transition)
+def test_petrinet_transition_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Transition)
 
 
-def test_petrinet::transition_constructor_exists():
-    assert callable(petrinet::Transition.__init__)
+def test_petrinet_transition_constructor_exists():
+    assert callable(petrinet_Transition.__init__)
 
 
-def test_petrinet::transition_constructor_args():
-    sig = inspect.signature(petrinet::Transition.__init__)
+def test_petrinet_transition_constructor_args():
+    sig = inspect.signature(petrinet_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,46 +159,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petrinet::Arc_strategy = st.builds(
-    petrinet::Arc,
+petrinet_Arc_strategy = st.builds(
+    petrinet_Arc,
     weight=
         st.integers()
 )
-petrinet::Node_strategy = st.builds(
-    petrinet::Node,
+petrinet_Node_strategy = st.builds(
+    petrinet_Node,
 )
-petrinet::PetriNet_strategy = st.builds(
-    petrinet::PetriNet,
+petrinet_PetriNet_strategy = st.builds(
+    petrinet_PetriNet,
     name=
         safe_text
 )
-petrinet::Token_strategy = st.builds(
-    petrinet::Token,
+petrinet_Token_strategy = st.builds(
+    petrinet_Token,
 )
 Node_strategy = st.builds(
     Node,
 )
-petrinet::Place_strategy = st.builds(
-    petrinet::Place,
+petrinet_Place_strategy = st.builds(
+    petrinet_Place,
     capacity=
         st.integers()
 )
-petrinet::Transition_strategy = st.builds(
-    petrinet::Transition,
+petrinet_Transition_strategy = st.builds(
+    petrinet_Transition,
 )
 
-@given(instance=petrinet::Arc_strategy)
+@given(instance=petrinet_Arc_strategy)
 @settings(max_examples=50)
-def test_petrinet::arc_instantiation(instance):
-    assert isinstance(instance, petrinet::Arc)
-
-@given(instance=petrinet::Arc_strategy)
-def test_petrinet::arc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_petrinet_arc_instantiation(instance):
+    assert isinstance(instance, petrinet_Arc)
 
 
-@given(instance=petrinet::Arc_strategy)
-def test_petrinet::arc_weight_setter(instance):
+
+@given(instance=petrinet_Arc_strategy)
+def test_petrinet_arc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
@@ -209,9 +206,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinet::Arc_strategy)
+@given(instance=petrinet_Arc_strategy)
 @settings(max_examples=30)
-def test_petrinet::arc_isenabled_changes_state(instance):
+def test_petrinet_arc_isenabled_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -223,58 +220,52 @@ def test_petrinet::arc_isenabled_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEnabled' in petrinet::Arc is empty"
+        assert has_statements, f"Function 'isEnabled' in petrinet_Arc is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEnabled' in petrinet::Arc did not change state; check implementation")
+            warnings.warn(f"Operation 'isEnabled' in petrinet_Arc did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEnabled' in petrinet::Arc is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEnabled' in petrinet_Arc is not implemented or raised an error")
 
-@given(instance=petrinet::Node_strategy)
+@given(instance=petrinet_Node_strategy)
 @settings(max_examples=50)
-def test_petrinet::node_instantiation(instance):
-    assert isinstance(instance, petrinet::Node)
+def test_petrinet_node_instantiation(instance):
+    assert isinstance(instance, petrinet_Node)
 
-@given(instance=petrinet::PetriNet_strategy)
+@given(instance=petrinet_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinet::petrinet_instantiation(instance):
-    assert isinstance(instance, petrinet::PetriNet)
-
-@given(instance=petrinet::PetriNet_strategy)
-def test_petrinet::petrinet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_petrinet_instantiation(instance):
+    assert isinstance(instance, petrinet_PetriNet)
 
 
-@given(instance=petrinet::PetriNet_strategy)
-def test_petrinet::petrinet_name_setter(instance):
+
+@given(instance=petrinet_PetriNet_strategy)
+def test_petrinet_petrinet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petrinet::Token_strategy)
+@given(instance=petrinet_Token_strategy)
 @settings(max_examples=50)
-def test_petrinet::token_instantiation(instance):
-    assert isinstance(instance, petrinet::Token)
+def test_petrinet_token_instantiation(instance):
+    assert isinstance(instance, petrinet_Token)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=petrinet::Place_strategy)
+@given(instance=petrinet_Place_strategy)
 @settings(max_examples=50)
-def test_petrinet::place_instantiation(instance):
-    assert isinstance(instance, petrinet::Place)
-
-@given(instance=petrinet::Place_strategy)
-def test_petrinet::place_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
+def test_petrinet_place_instantiation(instance):
+    assert isinstance(instance, petrinet_Place)
 
 
-@given(instance=petrinet::Place_strategy)
-def test_petrinet::place_capacity_setter(instance):
+
+@given(instance=petrinet_Place_strategy)
+def test_petrinet_place_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original
@@ -285,9 +276,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinet::Place_strategy)
+@given(instance=petrinet_Place_strategy)
 @settings(max_examples=30)
-def test_petrinet::place_hascapacity_changes_state(instance):
+def test_petrinet_place_hascapacity_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -301,19 +292,19 @@ def test_petrinet::place_hascapacity_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasCapacity' in petrinet::Place is empty"
+        assert has_statements, f"Function 'hasCapacity' in petrinet_Place is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasCapacity' in petrinet::Place did not change state; check implementation")
+            warnings.warn(f"Operation 'hasCapacity' in petrinet_Place did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasCapacity' in petrinet::Place is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasCapacity' in petrinet_Place is not implemented or raised an error")
 
-@given(instance=petrinet::Transition_strategy)
+@given(instance=petrinet_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinet::transition_instantiation(instance):
-    assert isinstance(instance, petrinet::Transition)
+def test_petrinet_transition_instantiation(instance):
+    assert isinstance(instance, petrinet_Transition)
 
 import warnings
 import copy
@@ -321,9 +312,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinet::Transition_strategy)
+@given(instance=petrinet_Transition_strategy)
 @settings(max_examples=30)
-def test_petrinet::transition_fire_changes_state(instance):
+def test_petrinet_transition_fire_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -335,14 +326,14 @@ def test_petrinet::transition_fire_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fire' in petrinet::Transition is empty"
+        assert has_statements, f"Function 'fire' in petrinet_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fire' in petrinet::Transition did not change state; check implementation")
+            warnings.warn(f"Operation 'fire' in petrinet_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fire' in petrinet::Transition is not implemented or raised an error")
+        warnings.warn(f"Operation 'fire' in petrinet_Transition is not implemented or raised an error")
 
 import warnings
 import copy
@@ -350,9 +341,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinet::Transition_strategy)
+@given(instance=petrinet_Transition_strategy)
 @settings(max_examples=30)
-def test_petrinet::transition_isenabled_changes_state(instance):
+def test_petrinet_transition_isenabled_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -364,11 +355,11 @@ def test_petrinet::transition_isenabled_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEnabled' in petrinet::Transition is empty"
+        assert has_statements, f"Function 'isEnabled' in petrinet_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEnabled' in petrinet::Transition did not change state; check implementation")
+            warnings.warn(f"Operation 'isEnabled' in petrinet_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEnabled' in petrinet::Transition is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEnabled' in petrinet_Transition is not implemented or raised an error")

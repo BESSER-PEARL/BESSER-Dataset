@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Gato,
@@ -26,16 +26,16 @@ def test_gato_constructor_exists():
 def test_gato_constructor_args():
     sig = inspect.signature(Gato.__init__)
     params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
-    assert "raza" in params, "Missing parameter 'raza'"
     assert "nombre" in params, "Missing parameter 'nombre'"
+    assert "raza" in params, "Missing parameter 'raza'"
+    assert "color" in params, "Missing parameter 'color'"
 
-def test_gato_has_color():
-    assert hasattr(Gato, "color")
+def test_gato_has_nombre():
+    assert hasattr(Gato, "nombre")
     descriptor = None
     for klass in Gato.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
+        if "nombre" in klass.__dict__:
+            descriptor = klass.__dict__["nombre"]
             break
     assert isinstance(descriptor, property)
 
@@ -48,12 +48,12 @@ def test_gato_has_raza():
             break
     assert isinstance(descriptor, property)
 
-def test_gato_has_nombre():
-    assert hasattr(Gato, "nombre")
+def test_gato_has_color():
+    assert hasattr(Gato, "color")
     descriptor = None
     for klass in Gato.__mro__:
-        if "nombre" in klass.__dict__:
-            descriptor = klass.__dict__["nombre"]
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
@@ -71,11 +71,11 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Gato_strategy = st.builds(
     Gato,
-    color=
+    nombre=
         safe_text,
     raza=
         safe_text,
-    nombre=
+    color=
         safe_text
 )
 
@@ -84,20 +84,14 @@ Gato_strategy = st.builds(
 def test_gato_instantiation(instance):
     assert isinstance(instance, Gato)
 
-@given(instance=Gato_strategy)
-def test_gato_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
 @given(instance=Gato_strategy)
-def test_gato_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
+def test_gato_nombre_setter(instance):
+    original = instance.nombre
+    instance.nombre = original
+    assert instance.nombre == original
 
-@given(instance=Gato_strategy)
-def test_gato_raza_type(instance):
-    assert isinstance(instance.raza, str)
 
 
 @given(instance=Gato_strategy)
@@ -106,13 +100,10 @@ def test_gato_raza_setter(instance):
     instance.raza = original
     assert instance.raza == original
 
-@given(instance=Gato_strategy)
-def test_gato_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
 @given(instance=Gato_strategy)
-def test_gato_nombre_setter(instance):
-    original = instance.nombre
-    instance.nombre = original
-    assert instance.nombre == original
+def test_gato_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original

@@ -3,647 +3,647 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    uml::ActivityContent,
-    BasicActions::TracedActionActivation,
-    umlTrace::Values::ActionActivation::firing::Value,
-    TracedLiteralEvaluation,
-    umlTrace::Kernel::TracedLiteralIntegerEvaluation,
-    umlTrace::Kernel::TracedLiteralBooleanEvaluation,
-    TracedPrimitiveValue,
-    umlTrace::Kernel::TracedBooleanValue,
-    umlTrace::Kernel::TracedIntegerValue,
-    TracedEvaluation,
-    umlTrace::Kernel::TracedLiteralEvaluation,
-    TracedValue,
-    umlTrace::Kernel::TracedPrimitiveValue,
-    umlTrace::Kernel::TracedStructuredValue,
-    TracedStructuredValue,
-    umlTrace::Kernel::TracedReference,
-    umlTrace::Kernel::TracedCompoundValue,
-    TracedCompoundValue,
-    umlTrace::Kernel::TracedExtensionalValue,
-    TracedExtensionalValue,
-    umlTrace::Kernel::TracedObject,
-    TracedObject,
-    umlTrace::BasicBehaviors::TracedExecution,
-    uml::TracedElement,
-    umlTrace::Values::SemanticVisitor::runtimeModelElement::Value,
-    TracedOpaqueBehaviorExecution,
-    umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution,
-    umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution,
-    umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution,
-    TracedCallActionActivation,
-    umlTrace::BasicActions::TracedCallBehaviorActionActivation,
-    TracedPinActivation,
-    umlTrace::BasicActions::TracedOutputPinActivation,
-    umlTrace::BasicActions::TracedInputPinActivation,
-    TracedInvocationActionActivation,
-    umlTrace::BasicActions::TracedCallActionActivation,
-    TracedActionActivation,
-    umlTrace::BasicActions::TracedOpaqueActionActivation,
-    umlTrace::BasicActions::TracedInvocationActionActivation,
-    umlTrace::Loci::TracedSemanticVisitor,
-    TracedObjectNodeActivation,
-    umlTrace::BasicActions::TracedPinActivation,
-    umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation,
-    umlTrace::IntermediateActions::TracedCreateObjectActionActivation,
-    umlTrace::IntermediateActions::TracedValueSpecificationActionActivation,
-    TracedWriteStructuralFeatureActionActivation,
-    umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation,
-    TracedStructuralFeatureActionActivation,
-    umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation,
-    umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation,
-    umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation,
-    umlTrace::ecore::TracedEModelElement,
-    TracedMessageEnd,
-    umlTrace::uml::TracedGate,
+from python_code import (
     TracedExecution,
-    umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution,
-    TracedExecutionSpecification,
-    umlTrace::uml::TracedBehaviorExecutionSpecification,
-    TracedOccurrenceSpecification,
-    umlTrace::uml::TracedExecutionOccurrenceSpecification,
-    TracedOpaqueBehavior,
-    umlTrace::uml::TracedFunctionBehavior,
-    uml::TracedStructuredClassifier,
-    TracedMultiplicityElement,
-    umlTrace::uml::TracedConnectorEnd,
-    umlTrace::uml::TracedActionExecutionSpecification,
-    TracedObjectNode,
-    umlTrace::uml::TracedExpansionNode,
-    umlTrace::uml::TracedActivityParameterNode,
-    umlTrace::uml::TracedCentralBufferNode,
-    TracedCentralBufferNode,
-    umlTrace::uml::TracedDataStoreNode,
-    TracedDataType,
-    umlTrace::uml::TracedEnumeration,
-    umlTrace::uml::TracedPrimitiveType,
-    TracedMessageEvent,
-    umlTrace::uml::TracedCallEvent,
-    umlTrace::uml::TracedAnyReceiveEvent,
-    uml::TracedBehavioralFeature,
-    TracedTemplateParameter,
-    umlTrace::uml::TracedConnectableElementTemplateParameter,
-    umlTrace::uml::TracedClassifierTemplateParameter,
-    TracedPackage,
-    umlTrace::uml::TracedProfile,
-    umlTrace::uml::TracedModel,
-    TracedTransition,
-    umlTrace::uml::TracedProtocolTransition,
-    TracedWriteVariableAction,
-    umlTrace::uml::TracedRemoveVariableValueAction,
-    umlTrace::uml::TracedAddVariableValueAction,
-    TracedInteractionUse,
-    umlTrace::uml::TracedPartDecomposition,
-    TracedObservation,
-    umlTrace::uml::TracedTimeObservation,
-    umlTrace::uml::TracedDurationObservation,
-    umlTrace::uml::TracedOperationTemplateParameter,
-    TracedInterval,
-    umlTrace::uml::TracedDurationInterval,
-    umlTrace::uml::TracedTimeInterval,
-    umlTrace::uml::TracedSignalEvent,
-    TracedBehavioralFeature,
-    umlTrace::uml::TracedReception,
-    TracedDependency,
-    umlTrace::uml::TracedUsage,
-    umlTrace::uml::TracedAbstraction,
-    TracedAbstraction,
-    umlTrace::uml::TracedManifestation,
-    umlTrace::uml::TracedRealization,
-    TracedRealization,
-    umlTrace::uml::TracedComponentRealization,
-    umlTrace::uml::TracedInterfaceRealization,
-    umlTrace::uml::TracedSubstitution,
-    TracedInstanceSpecification,
-    umlTrace::uml::TracedEnumerationLiteral,
-    TracedAcceptEventAction,
-    umlTrace::uml::TracedAcceptCallAction,
-    TracedLinkEndData,
-    umlTrace::uml::TracedLinkEndCreationData,
-    umlTrace::uml::TracedLinkEndDestructionData,
-    TracedClass,
-    umlTrace::uml::TracedComponent,
-    umlTrace::uml::TracedStereotype,
-    umlTrace::uml::TracedBehavior,
-    uml::TracedInteractionFragment,
-    uml::TracedBehavior,
-    umlTrace::uml::TracedInteraction,
-    TracedActivityEdge,
-    umlTrace::uml::TracedControlFlow,
-    umlTrace::uml::TracedObjectFlow,
-    TracedStateMachine,
-    umlTrace::uml::TracedProtocolStateMachine,
-    umlTrace::uml::TracedDeployment,
-    TracedBehavior,
-    umlTrace::uml::TracedOpaqueBehavior,
-    umlTrace::uml::TracedActivity,
-    umlTrace::uml::TracedStateMachine,
-    TracedActivityGroup,
-    umlTrace::uml::TracedInterruptibleActivityRegion,
-    umlTrace::uml::TracedActivityPartition,
-    uml::TracedRelationship,
-    umlTrace::IntermediateActivities::TracedActivityExecution,
+    umlTrace_IntermediateActivities_TracedActivityExecution,
     TracedSemanticVisitor,
-    umlTrace::Kernel::TracedEvaluation,
-    umlTrace::Kernel::TracedValue,
-    umlTrace::IntermediateActivities::TracedActivityNodeActivation,
+    umlTrace_IntermediateActivities_TracedActivityNodeActivation,
     TracedActivityNodeActivation,
-    umlTrace::BasicActions::TracedActionActivation,
-    umlTrace::IntermediateActivities::TracedObjectNodeActivation,
-    umlTrace::IntermediateActivities::TracedControlNodeActivation,
+    umlTrace_IntermediateActivities_TracedObjectNodeActivation,
+    umlTrace_IntermediateActivities_TracedControlNodeActivation,
     TracedControlNodeActivation,
-    umlTrace::IntermediateActivities::TracedInitialNodeActivation,
-    umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation,
-    umlTrace::IntermediateActivities::TracedDecisionNodeActivation,
-    umlTrace::IntermediateActivities::TracedJoinNodeActivation,
-    umlTrace::IntermediateActivities::TracedMergeNodeActivation,
-    umlTrace::IntermediateActivities::TracedForkNodeActivation,
-    uml::TracedVertex,
+    umlTrace_IntermediateActivities_TracedInitialNodeActivation,
+    umlTrace_IntermediateActivities_TracedMergeNodeActivation,
+    umlTrace_IntermediateActivities_TracedForkNodeActivation,
+    uml_TracedVertex,
     TracedState,
-    umlTrace::uml::TracedFinalState,
-    uml::TracedActivityFinalNode,
-    uml::TracedClassifierTemplateParameter,
-    TracedInteractionFragment,
-    umlTrace::uml::TracedStateInvariant,
-    umlTrace::uml::TracedExecutionSpecification,
-    umlTrace::uml::TracedCombinedFragment,
-    uml::TracedGeneralOrdering,
-    uml::TracedElementImport,
-    uml::TracedMergeNode,
-    uml::TracedClearAssociationAction,
-    uml::TracedLinkEndCreationData,
-    uml::TracedPseudostate,
-    uml::TracedComponent,
-    uml::TracedReadIsClassifiedObjectAction,
-    uml::TracedAbstraction,
-    uml::TracedTimeExpression,
-    uml::TracedValueSpecificationAction,
-    uml::TracedFunctionBehavior,
-    IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution,
-    IntermediateActivities::TracedMergeNodeActivation,
-    uml::TracedTemplateParameter,
-    uml::TracedManifestation,
-    uml::TracedActor,
-    uml::TracedRemoveVariableValueAction,
-    uml::TracedProfile,
-    uml::TracedTestIdentityAction,
-    uml::TracedCollaboration,
-    uml::TracedSendSignalAction,
-    uml::TracedInterfaceRealization,
-    uml::TracedUnmarshallAction,
-    uml::TracedExpression,
-    uml::TracedAssociation,
-    uml::TracedClearStructuralFeatureAction,
-    uml::TracedAddVariableValueAction,
-    uml::TracedLiteralReal,
-    IntermediateActions::TracedCreateObjectActionActivation,
-    uml::TracedSlot,
-    uml::TracedLiteralNull,
-    IntermediateActions::TracedValueSpecificationActionActivation,
-    uml::TracedStartObjectBehaviorAction,
-    uml::TracedLiteralBoolean,
-    uml::TracedReadLinkAction,
-    uml::TracedInclude,
-    uml::TracedRegion,
-    uml::TracedState,
-    uml::TracedPrimitiveType,
-    uml::TracedStringExpression,
-    uml::TracedLinkEndDestructionData,
-    uml::TracedReadExtentAction,
-    BasicActions::TracedOutputPinActivation,
-    uml::TracedTemplateSignature,
-    uml::TracedRaiseExceptionAction,
-    uml::TracedCommunicationPath,
-    Kernel::TracedLiteralBooleanEvaluation,
-    uml::TracedEnumeration,
-    uml::TracedReadLinkObjectEndAction,
-    uml::TracedCallBehaviorAction,
-    uml::TracedVariable,
-    uml::TracedConnectorEnd,
-    uml::TracedArtifact,
-    uml::TracedCallOperationAction,
-    uml::TracedLiteralUnlimitedNatural,
-    uml::TracedDurationObservation,
-    uml::TracedBehaviorExecutionSpecification,
-    uml::TracedActivityParameterNode,
-    uml::TracedExpansionNode,
-    uml::TracedProfileApplication,
-    uml::TracedAddStructuralFeatureValueAction,
-    uml::TracedQualifierValue,
-    uml::TracedImage,
-    uml::TracedExtensionEnd,
-    uml::TracedProperty,
-    uml::TracedDevice,
-    uml::TracedOpaqueAction,
-    uml::TracedFinalState,
-    uml::TracedReduceAction,
-    uml::TracedDuration,
-    uml::TracedTemplateParameterSubstitution,
-    uml::TracedOutputPin,
-    uml::TracedActionExecutionSpecification,
-    uml::TracedInformationItem,
-    uml::TracedOperationTemplateParameter,
-    uml::TracedConnectableElementTemplateParameter,
-    uml::TracedLinkEndData,
-    uml::TracedDurationInterval,
-    uml::TracedTransition,
-    uml::TracedTrigger,
-    uml::TracedReplyAction,
-    uml::TracedClause,
-    uml::TracedPackageMerge,
-    uml::TracedDecisionNode,
-    IntermediateActions::TracedReadStructuralFeatureActionActivation,
-    uml::TracedReadSelfAction,
-    uml::TracedOperation,
-    uml::TracedObjectFlow,
-    uml::TracedParameterSet,
-    uml::TracedOccurrenceSpecification,
-    uml::TracedAcceptEventAction,
-    uml::TracedComponentRealization,
-    uml::TracedDataType,
-    uml::TracedComment,
-    uml::TracedLoopNode,
-    uml::TracedCallEvent,
-    uml::TracedPackage,
-    uml::TracedProtocolConformance,
-    uml::TracedOpaqueBehavior,
-    uml::TracedInterface,
-    IntermediateActivities::TracedDecisionNodeActivation,
-    uml::TracedInteractionConstraint,
-    uml::TracedTimeInterval,
-    uml::TracedExecutionOccurrenceSpecification,
-    uml::TracedSignal,
-    uml::TracedExtensionPoint,
-    uml::TracedCreateLinkAction,
-    Kernel::TracedLiteralIntegerEvaluation,
-    uml::TracedCentralBufferNode,
-    uml::TracedModel,
-    uml::TracedRedefinableTemplateSignature,
-    uml::TracedJoinNode,
-    BasicActions::TracedOpaqueActionActivation,
-    uml::TracedReadLinkObjectEndQualifierAction,
-    uml::TracedRealization,
-    uml::TracedConnectionPointReference,
-    uml::TracedConditionalNode,
-    Kernel::TracedBooleanValue,
-    uml::TracedSignalEvent,
-    uml::TracedLiteralInteger,
-    uml::TracedDestroyLinkAction,
-    IntermediateActivities::TracedActivityFinalNodeActivation,
-    uml::TracedReadVariableAction,
-    uml::TracedActionInputPin,
-    uml::TracedUsage,
-    uml::TracedDeploymentSpecification,
-    uml::TracedTemplateBinding,
-    TracedAssociation,
-    umlTrace::uml::TracedCommunicationPath,
-    umlTrace::uml::TracedExtension,
-    TracedStructuralFeatureAction,
-    umlTrace::uml::TracedClearStructuralFeatureAction,
-    umlTrace::uml::TracedReadStructuralFeatureAction,
-    uml::TracedMessageOccurrenceSpecification,
-    umlTrace::uml::TracedWriteStructuralFeatureAction,
-    uml::TracedReception,
-    TracedWriteStructuralFeatureAction,
-    umlTrace::uml::TracedAddStructuralFeatureValueAction,
-    umlTrace::uml::TracedRemoveStructuralFeatureValueAction,
-    TracedBehavioredClassifier,
-    umlTrace::uml::TracedActor,
-    umlTrace::uml::TracedUseCase,
-    uml::TracedDeployedArtifact,
-    uml::TracedClassifier,
-    umlTrace::uml::TracedAssociation,
-    umlTrace::uml::TracedArtifact,
-    TracedArtifact,
-    umlTrace::uml::TracedDeploymentSpecification,
-    uml::TracedActivityNode,
-    uml::TracedObjectNode,
-    TracedPin,
-    umlTrace::uml::TracedOutputPin,
-    umlTrace::uml::TracedInputPin,
-    TracedInputPin,
-    umlTrace::uml::TracedActionInputPin,
-    umlTrace::uml::TracedValuePin,
-    uml::TracedMultiplicityElement,
-    umlTrace::uml::TracedPin,
-    uml::TracedTypedElement,
-    umlTrace::uml::TracedObjectNode,
-    uml::TracedFeature,
-    umlTrace::uml::TracedStructuralFeature,
-    TracedValueSpecification,
-    umlTrace::uml::TracedExpression,
-    umlTrace::uml::TracedDuration,
-    umlTrace::uml::TracedInstanceValue,
-    umlTrace::uml::TracedOpaqueExpression,
-    umlTrace::uml::TracedInterval,
-    umlTrace::uml::TracedTimeExpression,
-    umlTrace::uml::TracedLiteralSpecification,
-    TracedLiteralSpecification,
-    umlTrace::uml::TracedLiteralBoolean,
-    umlTrace::uml::TracedLiteralNull,
-    umlTrace::uml::TracedLiteralReal,
-    umlTrace::uml::TracedLiteralInteger,
-    umlTrace::uml::TracedLiteralUnlimitedNatural,
-    umlTrace::uml::TracedLiteralString,
-    TracedVariableAction,
-    umlTrace::uml::TracedReadVariableAction,
-    umlTrace::uml::TracedWriteVariableAction,
-    umlTrace::uml::TracedClearVariableAction,
-    umlTrace::uml::TracedContinuation,
-    TracedCombinedFragment,
-    umlTrace::uml::TracedConsiderIgnoreFragment,
-    TracedNode,
-    umlTrace::uml::TracedExecutionEnvironment,
-    umlTrace::uml::TracedDevice,
-    uml::TracedType,
-    TracedClassifier,
-    umlTrace::uml::TracedBehavioredClassifier,
-    umlTrace::uml::TracedInformationItem,
-    umlTrace::uml::TracedDataType,
-    umlTrace::uml::TracedInterface,
-    umlTrace::uml::TracedStructuredClassifier,
-    TracedStructuredClassifier,
-    umlTrace::uml::TracedEncapsulatedClassifier,
-    uml::TracedBehavioredClassifier,
-    umlTrace::uml::TracedCollaboration,
-    uml::TracedEncapsulatedClassifier,
-    umlTrace::uml::TracedClass,
-    TracedCallAction,
-    umlTrace::uml::TracedStartObjectBehaviorAction,
-    umlTrace::uml::TracedCallOperationAction,
-    umlTrace::uml::TracedCallBehaviorAction,
-    TracedRelationship,
-    umlTrace::uml::TracedDirectedRelationship,
-    TracedDirectedRelationship,
-    umlTrace::uml::TracedGeneralization,
-    umlTrace::uml::TracedTemplateBinding,
-    umlTrace::uml::TracedProfileApplication,
-    umlTrace::uml::TracedPackageImport,
-    umlTrace::uml::TracedElementImport,
-    umlTrace::uml::TracedPackageMerge,
-    umlTrace::uml::TracedProtocolConformance,
-    TracedInvocationAction,
-    umlTrace::uml::TracedBroadcastSignalAction,
-    umlTrace::uml::TracedSendSignalAction,
-    umlTrace::uml::TracedCallAction,
-    umlTrace::uml::TracedSendObjectAction,
-    TracedRedefinableElement,
-    umlTrace::uml::TracedExtensionPoint,
-    umlTrace::uml::TracedActivityEdge,
-    umlTrace::uml::TracedFeature,
-    TracedFeature,
-    umlTrace::uml::TracedConnector,
-    uml::TracedTemplateableElement,
-    umlTrace::uml::TracedStringExpression,
-    uml::TracedPackageableElement,
-    umlTrace::uml::TracedValueSpecification,
-    uml::TracedDeploymentTarget,
-    umlTrace::uml::TracedInstanceSpecification,
-    uml::TracedConnectableElement,
-    umlTrace::uml::TracedParameter,
-    umlTrace::uml::TracedVariable,
-    uml::TracedStructuralFeature,
-    umlTrace::uml::TracedProperty,
-    TracedProperty,
-    umlTrace::uml::TracedExtensionEnd,
-    umlTrace::uml::TracedPort,
-    uml::TracedDirectedRelationship,
-    umlTrace::uml::TracedInformationFlow,
-    umlTrace::uml::TracedDependency,
-    TracedEvent,
-    umlTrace::uml::TracedTimeEvent,
-    umlTrace::uml::TracedMessageEvent,
-    umlTrace::uml::TracedChangeEvent,
-    umlTrace::uml::TracedSignal,
-    umlTrace::uml::TracedInteractionUse,
-    TracedFinalNode,
-    umlTrace::uml::TracedActivityFinalNode,
-    umlTrace::uml::TracedFlowFinalNode,
-    TracedControlNode,
-    umlTrace::uml::TracedJoinNode,
-    umlTrace::uml::TracedMergeNode,
-    umlTrace::uml::TracedForkNode,
-    umlTrace::uml::TracedFinalNode,
-    umlTrace::uml::TracedDecisionNode,
-    umlTrace::uml::TracedInitialNode,
-    TracedAction,
-    umlTrace::uml::TracedAcceptEventAction,
-    umlTrace::uml::TracedStartClassifierBehaviorAction,
-    umlTrace::uml::TracedStructuralFeatureAction,
-    umlTrace::uml::TracedReduceAction,
-    umlTrace::uml::TracedValueSpecificationAction,
-    umlTrace::uml::TracedOpaqueAction,
-    umlTrace::uml::TracedUnmarshallAction,
-    umlTrace::uml::TracedReadSelfAction,
-    umlTrace::uml::TracedReadIsClassifiedObjectAction,
-    umlTrace::uml::TracedDestroyObjectAction,
-    umlTrace::uml::TracedVariableAction,
-    umlTrace::uml::TracedReadLinkObjectEndQualifierAction,
-    umlTrace::uml::TracedInvocationAction,
-    umlTrace::uml::TracedRaiseExceptionAction,
-    umlTrace::uml::TracedReadLinkObjectEndAction,
-    umlTrace::uml::TracedClearAssociationAction,
-    umlTrace::uml::TracedReadExtentAction,
-    umlTrace::uml::TracedReplyAction,
-    umlTrace::uml::TracedTestIdentityAction,
-    umlTrace::uml::TracedCreateObjectAction,
-    umlTrace::uml::TracedReclassifyObjectAction,
-    umlTrace::uml::TracedLinkAction,
-    TracedLinkAction,
-    umlTrace::uml::TracedReadLinkAction,
-    umlTrace::uml::TracedWriteLinkAction,
-    TracedWriteLinkAction,
-    umlTrace::uml::TracedDestroyLinkAction,
-    umlTrace::uml::TracedCreateLinkAction,
-    TracedCreateLinkAction,
-    umlTrace::uml::TracedCreateLinkObjectAction,
-    uml::TracedNamedElement,
-    umlTrace::uml::TracedInclude,
-    umlTrace::uml::TracedExtend,
-    ActivityContent,
-    umlTrace::uml::TracedActivityGroup,
-    uml::TracedRedefinableElement,
-    umlTrace::uml::TracedRedefinableTemplateSignature,
-    umlTrace::uml::TracedActivityNode,
-    TracedActivityNode,
-    umlTrace::uml::TracedControlNode,
-    umlTrace::uml::TracedExecutableNode,
-    TracedExecutableNode,
-    umlTrace::uml::TracedAction,
-    uml::TracedActivityGroup,
-    uml::TracedNamespace,
-    umlTrace::uml::TracedTransition,
-    umlTrace::uml::TracedInteractionOperand,
-    umlTrace::uml::TracedRegion,
-    umlTrace::uml::TracedPackage,
-    umlTrace::uml::TracedState,
-    umlTrace::uml::TracedBehavioralFeature,
-    umlTrace::uml::TracedClassifier,
-    uml::TracedAction,
-    umlTrace::uml::TracedStructuredActivityNode,
+    umlTrace_uml_TracedFinalState,
+    TracedExecutionSpecification,
+    umlTrace_uml_TracedBehaviorExecutionSpecification,
+    TracedOccurrenceSpecification,
+    umlTrace_uml_TracedExecutionOccurrenceSpecification,
+    TracedOpaqueBehavior,
+    umlTrace_uml_TracedFunctionBehavior,
+    uml_TracedStructuredClassifier,
+    TracedMultiplicityElement,
+    umlTrace_uml_TracedConnectorEnd,
+    umlTrace_uml_TracedActionExecutionSpecification,
+    TracedObjectNode,
+    umlTrace_uml_TracedExpansionNode,
+    umlTrace_uml_TracedActivityParameterNode,
+    umlTrace_uml_TracedCentralBufferNode,
+    TracedCentralBufferNode,
+    umlTrace_uml_TracedDataStoreNode,
+    TracedDataType,
+    umlTrace_uml_TracedEnumeration,
+    umlTrace_uml_TracedPrimitiveType,
+    TracedMessageEvent,
+    umlTrace_uml_TracedCallEvent,
+    uml_ActivityContent,
+    BasicActions_TracedActionActivation,
+    umlTrace_Values_ActionActivation_firing_Value,
+    TracedLiteralEvaluation,
+    umlTrace_Kernel_TracedLiteralIntegerEvaluation,
+    umlTrace_Kernel_TracedLiteralBooleanEvaluation,
+    TracedPrimitiveValue,
+    umlTrace_Kernel_TracedBooleanValue,
+    umlTrace_Kernel_TracedIntegerValue,
+    umlTrace_Kernel_TracedEvaluation,
+    TracedEvaluation,
+    umlTrace_Kernel_TracedLiteralEvaluation,
+    umlTrace_Kernel_TracedValue,
+    TracedValue,
+    umlTrace_Kernel_TracedPrimitiveValue,
+    umlTrace_Kernel_TracedStructuredValue,
+    TracedStructuredValue,
+    umlTrace_Kernel_TracedReference,
+    umlTrace_Kernel_TracedCompoundValue,
+    TracedCompoundValue,
+    umlTrace_Kernel_TracedExtensionalValue,
+    TracedExtensionalValue,
+    umlTrace_Kernel_TracedObject,
+    umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution,
+    TracedObject,
+    umlTrace_BasicBehaviors_TracedExecution,
+    uml_TracedElement,
+    umlTrace_Values_SemanticVisitor_runtimeModelElement_Value,
+    TracedOpaqueBehaviorExecution,
+    umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution,
+    umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution,
+    umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution,
+    TracedCallActionActivation,
+    umlTrace_BasicActions_TracedCallBehaviorActionActivation,
+    TracedPinActivation,
+    umlTrace_BasicActions_TracedOutputPinActivation,
+    umlTrace_BasicActions_TracedInputPinActivation,
+    TracedInvocationActionActivation,
+    umlTrace_BasicActions_TracedCallActionActivation,
+    TracedActionActivation,
+    umlTrace_BasicActions_TracedOpaqueActionActivation,
+    umlTrace_BasicActions_TracedInvocationActionActivation,
+    umlTrace_BasicActions_TracedActionActivation,
+    umlTrace_Loci_TracedSemanticVisitor,
+    umlTrace_IntermediateActivities_TracedDecisionNodeActivation,
+    umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation,
+    umlTrace_IntermediateActivities_TracedJoinNodeActivation,
+    TracedObjectNodeActivation,
+    umlTrace_BasicActions_TracedPinActivation,
+    umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation,
+    umlTrace_IntermediateActions_TracedCreateObjectActionActivation,
+    umlTrace_IntermediateActions_TracedValueSpecificationActionActivation,
+    TracedWriteStructuralFeatureActionActivation,
+    umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation,
+    TracedStructuralFeatureActionActivation,
+    umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation,
+    umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation,
+    umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation,
+    umlTrace_ecore_TracedEModelElement,
+    TracedMessageEnd,
+    umlTrace_uml_TracedGate,
+    uml_TracedAction,
     TracedStructuredActivityNode,
-    umlTrace::uml::TracedExpansionRegion,
-    umlTrace::uml::TracedLoopNode,
-    umlTrace::uml::TracedSequenceNode,
-    umlTrace::uml::TracedConditionalNode,
+    umlTrace_uml_TracedConditionalNode,
     TracedEModelElement,
-    umlTrace::uml::TracedElement,
+    umlTrace_uml_TracedElement,
     TracedElement,
-    umlTrace::uml::TracedTemplateParameter,
-    umlTrace::uml::TracedRelationship,
-    umlTrace::uml::TracedLinkEndData,
-    umlTrace::uml::TracedExceptionHandler,
-    umlTrace::uml::TracedSlot,
-    umlTrace::uml::TracedTemplateParameterSubstitution,
-    umlTrace::uml::TracedTemplateSignature,
-    umlTrace::uml::TracedComment,
-    umlTrace::uml::TracedMultiplicityElement,
-    umlTrace::uml::TracedTemplateableElement,
-    umlTrace::uml::TracedClause,
-    umlTrace::uml::TracedImage,
-    umlTrace::uml::TracedQualifierValue,
-    umlTrace::uml::TracedNamedElement,
+    umlTrace_uml_TracedTemplateParameterSubstitution,
+    umlTrace_uml_TracedQualifierValue,
+    umlTrace_uml_TracedComment,
+    umlTrace_uml_TracedClause,
+    umlTrace_uml_TracedNamedElement,
     TracedNamedElement,
-    umlTrace::uml::TracedTypedElement,
-    umlTrace::uml::TracedNamespace,
-    umlTrace::uml::TracedRedefinableElement,
-    umlTrace::uml::TracedDeploymentTarget,
-    umlTrace::uml::TracedMessage,
-    umlTrace::uml::TracedCollaborationUse,
-    umlTrace::uml::TracedMessageEnd,
-    umlTrace::uml::TracedGeneralOrdering,
-    umlTrace::uml::TracedParameterSet,
-    umlTrace::uml::TracedTrigger,
-    umlTrace::uml::TracedLifeline,
-    umlTrace::uml::TracedDeployedArtifact,
-    umlTrace::uml::TracedInteractionFragment,
-    umlTrace::uml::TracedOccurrenceSpecification,
-    uml::TracedMessageEnd,
-    umlTrace::uml::TracedMessageOccurrenceSpecification,
+    umlTrace_uml_TracedGeneralOrdering,
+    umlTrace_uml_TracedParameterSet,
+    umlTrace_uml_TracedInteractionFragment,
+    uml_TracedMessageEnd,
     TracedMessageOccurrenceSpecification,
-    umlTrace::uml::TracedDestructionOccurrenceSpecification,
-    umlTrace::uml::TracedVertex,
+    umlTrace_uml_TracedDestructionOccurrenceSpecification,
+    umlTrace_uml_TracedVertex,
     TracedVertex,
-    umlTrace::uml::TracedConnectionPointReference,
-    umlTrace::uml::TracedPseudostate,
-    umlTrace::uml::TracedParameterableElement,
-    uml::TracedParameterableElement,
-    umlTrace::uml::TracedConnectableElement,
-    umlTrace::uml::TracedOperation,
-    umlTrace::uml::TracedPackageableElement,
+    umlTrace_uml_TracedConnectionPointReference,
+    umlTrace_uml_TracedPseudostate,
+    umlTrace_uml_TracedParameterableElement,
+    uml_TracedParameterableElement,
     TracedPackageableElement,
-    umlTrace::uml::TracedObservation,
-    umlTrace::uml::TracedEvent,
-    umlTrace::uml::TracedGeneralizationSet,
-    umlTrace::uml::TracedType,
-    umlTrace::uml::TracedConstraint,
+    umlTrace_uml_TracedConstraint,
     TracedConstraint,
-    umlTrace::uml::TracedInteractionConstraint,
-    umlTrace::uml::TracedIntervalConstraint,
+    umlTrace_uml_TracedInteractionConstraint,
+    umlTrace_uml_TracedIntervalConstraint,
     TracedIntervalConstraint,
-    umlTrace::uml::TracedTimeConstraint,
-    umlTrace::uml::TracedDurationConstraint,
-    uml::TracedControlFlow,
-    uml::TracedTimeObservation,
-    uml::TracedGate,
-    uml::TracedProtocolStateMachine,
-    uml::TracedDataStoreNode,
-    uml::TracedReadStructuralFeatureAction,
-    uml::TracedAnyReceiveEvent,
-    Kernel::TracedIntegerValue,
-    uml::TracedInterval,
-    uml::TracedRemoveStructuralFeatureValueAction,
-    uml::TracedGeneralization,
-    uml::TracedInteractionOperand,
-    uml::TracedProtocolTransition,
-    uml::TracedInterruptibleActivityRegion,
-    uml::TracedPartDecomposition,
-    uml::TracedTimeEvent,
-    uml::TracedDeployment,
-    Loci::TracedSemanticVisitor,
-    Kernel::TracedObject,
-    IntermediateActivities::TracedJoinNodeActivation,
-    uml::TracedUseCase,
-    uml::TracedReclassifyObjectAction,
-    uml::TracedInstanceValue,
-    IntermediateActions::TracedAddStructuralFeatureValueActionActivation,
-    Kernel::TracedReference,
-    uml::TracedForkNode,
-    uml::TracedActivity,
-    uml::TracedMessage,
-    uml::TracedStateMachine,
-    uml::TracedActivityPartition,
-    IntermediateActivities::TracedActivityParameterNodeActivation,
-    BasicActions::TracedCallBehaviorActionActivation,
-    uml::TracedDestroyObjectAction,
-    uml::TracedAssociationClass,
-    uml::TracedInformationFlow,
-    uml::TracedSubstitution,
-    uml::TracedEnumerationLiteral,
-    uml::TracedStereotype,
-    uml::TracedAcceptCallAction,
-    uml::TracedInstanceSpecification,
-    IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution,
-    uml::TracedStateInvariant,
-    BasicActions::TracedInputPinActivation,
-    uml::TracedLiteralString,
-    uml::TracedOpaqueExpression,
-    uml::TracedParameter,
-    IntermediateActivities::TracedActivityNodeActivation,
-    uml::TracedInteraction,
-    uml::TracedBroadcastSignalAction,
-    uml::TracedConstraint,
-    uml::TracedClearVariableAction,
-    uml::TracedInputPin,
-    uml::TracedTimeConstraint,
-    uml::TracedContinuation,
-    uml::TracedConsiderIgnoreFragment,
-    uml::TracedIntervalConstraint,
-    uml::TracedExecutionEnvironment,
-    uml::TracedStructuredActivityNode,
-    uml::TracedExtension,
-    IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution,
-    uml::TracedExtend,
-    uml::TracedStartClassifierBehaviorAction,
-    uml::TracedSequenceNode,
-    uml::TracedExceptionHandler,
-    uml::TracedNode,
-    uml::TracedValuePin,
-    IntermediateActivities::TracedActivityExecution,
-    uml::TracedCollaborationUse,
-    IntermediateActivities::TracedInitialNodeActivation,
-    uml::TracedPort,
-    uml::TracedDependency,
-    uml::TracedChangeEvent,
-    uml::TracedGeneralizationSet,
-    uml::TracedInteractionUse,
-    uml::TracedClass,
-    umlTrace::uml::TracedNode,
-    umlTrace::uml::TracedAssociationClass,
-    uml::TracedPackageImport,
-    uml::TracedSendObjectAction,
-    uml::TracedConnector,
-    uml::TracedDestructionOccurrenceSpecification,
-    uml::TracedDurationConstraint,
-    IntermediateActivities::TracedForkNodeActivation,
-    uml::TracedLifeline,
-    uml::TracedCreateObjectAction,
-    uml::TracedExpansionRegion,
-    uml::TracedFlowFinalNode,
-    uml::TracedInitialNode,
-    uml::TracedCreateLinkObjectAction,
-    uml::TracedCombinedFragment,
-    umlTrace::Traced::TracedObjects,
-    Traced::TracedObjects,
+    umlTrace_uml_TracedDurationConstraint,
+    uml_TracedControlFlow,
+    uml_TracedTimeObservation,
+    uml_TracedGate,
+    uml_TracedActivityFinalNode,
+    uml_TracedClassifierTemplateParameter,
+    TracedInteractionFragment,
+    umlTrace_uml_TracedOccurrenceSpecification,
+    umlTrace_uml_TracedCombinedFragment,
+    uml_TracedGeneralOrdering,
+    uml_TracedElementImport,
+    uml_TracedMergeNode,
+    uml_TracedClearAssociationAction,
+    uml_TracedLinkEndCreationData,
+    uml_TracedPseudostate,
+    uml_TracedComponent,
+    uml_TracedReadIsClassifiedObjectAction,
+    uml_TracedAbstraction,
+    uml_TracedTimeExpression,
+    uml_TracedValueSpecificationAction,
+    uml_TracedFunctionBehavior,
+    IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution,
+    IntermediateActivities_TracedMergeNodeActivation,
+    uml_TracedTemplateParameter,
+    uml_TracedManifestation,
+    uml_TracedActor,
+    uml_TracedRemoveVariableValueAction,
+    uml_TracedProfile,
+    uml_TracedTestIdentityAction,
+    uml_TracedCollaboration,
+    uml_TracedSendSignalAction,
+    uml_TracedInterfaceRealization,
+    uml_TracedUnmarshallAction,
+    uml_TracedExpression,
+    uml_TracedAssociation,
+    uml_TracedClearStructuralFeatureAction,
+    uml_TracedAddVariableValueAction,
+    uml_TracedLiteralReal,
+    IntermediateActions_TracedCreateObjectActionActivation,
+    uml_TracedSlot,
+    uml_TracedLiteralNull,
+    IntermediateActions_TracedValueSpecificationActionActivation,
+    uml_TracedStartObjectBehaviorAction,
+    uml_TracedLiteralBoolean,
+    uml_TracedReadLinkAction,
+    uml_TracedInclude,
+    uml_TracedRegion,
+    uml_TracedState,
+    uml_TracedPrimitiveType,
+    uml_TracedStringExpression,
+    uml_TracedLinkEndDestructionData,
+    umlTrace_uml_TracedAnyReceiveEvent,
+    uml_TracedReadExtentAction,
+    BasicActions_TracedOutputPinActivation,
+    uml_TracedBehavioralFeature,
+    uml_TracedTemplateSignature,
+    umlTrace_uml_TracedTemplateParameter,
+    TracedTemplateParameter,
+    umlTrace_uml_TracedConnectableElementTemplateParameter,
+    umlTrace_uml_TracedClassifierTemplateParameter,
+    TracedPackage,
+    umlTrace_uml_TracedProfile,
+    umlTrace_uml_TracedModel,
+    umlTrace_uml_TracedImage,
+    TracedTransition,
+    umlTrace_uml_TracedProtocolTransition,
+    TracedWriteVariableAction,
+    umlTrace_uml_TracedRemoveVariableValueAction,
+    umlTrace_uml_TracedAddVariableValueAction,
+    TracedInteractionUse,
+    umlTrace_uml_TracedPartDecomposition,
+    TracedObservation,
+    umlTrace_uml_TracedTimeObservation,
+    umlTrace_uml_TracedDurationObservation,
+    umlTrace_uml_TracedOperationTemplateParameter,
+    TracedInterval,
+    umlTrace_uml_TracedDurationInterval,
+    umlTrace_uml_TracedTimeInterval,
+    umlTrace_uml_TracedSignalEvent,
+    TracedBehavioralFeature,
+    umlTrace_uml_TracedReception,
+    umlTrace_uml_TracedExecutionSpecification,
+    TracedDependency,
+    umlTrace_uml_TracedUsage,
+    umlTrace_uml_TracedAbstraction,
+    TracedAbstraction,
+    umlTrace_uml_TracedManifestation,
+    umlTrace_uml_TracedRealization,
+    TracedRealization,
+    umlTrace_uml_TracedComponentRealization,
+    umlTrace_uml_TracedInterfaceRealization,
+    umlTrace_uml_TracedSubstitution,
+    TracedInstanceSpecification,
+    umlTrace_uml_TracedEnumerationLiteral,
+    TracedAcceptEventAction,
+    umlTrace_uml_TracedAcceptCallAction,
+    umlTrace_uml_TracedLinkEndData,
+    TracedLinkEndData,
+    umlTrace_uml_TracedLinkEndCreationData,
+    umlTrace_uml_TracedLinkEndDestructionData,
+    umlTrace_uml_TracedTemplateSignature,
+    umlTrace_uml_TracedStateInvariant,
+    umlTrace_uml_TracedTrigger,
+    umlTrace_uml_TracedSlot,
+    TracedClass,
+    umlTrace_uml_TracedStereotype,
+    umlTrace_uml_TracedComponent,
+    umlTrace_uml_TracedBehavior,
+    uml_TracedInteractionFragment,
+    uml_TracedBehavior,
+    umlTrace_uml_TracedInteraction,
+    TracedActivityEdge,
+    umlTrace_uml_TracedControlFlow,
+    umlTrace_uml_TracedObjectFlow,
+    TracedStateMachine,
+    umlTrace_uml_TracedProtocolStateMachine,
+    umlTrace_uml_TracedDeployment,
+    umlTrace_uml_TracedMessage,
+    TracedBehavior,
+    umlTrace_uml_TracedOpaqueBehavior,
+    umlTrace_uml_TracedActivity,
+    umlTrace_uml_TracedStateMachine,
+    TracedActivityGroup,
+    umlTrace_uml_TracedInterruptibleActivityRegion,
+    umlTrace_uml_TracedActivityPartition,
+    uml_TracedRelationship,
+    TracedAssociation,
+    umlTrace_uml_TracedCommunicationPath,
+    umlTrace_uml_TracedExtension,
+    TracedStructuralFeatureAction,
+    umlTrace_uml_TracedReadStructuralFeatureAction,
+    umlTrace_uml_TracedClearStructuralFeatureAction,
+    umlTrace_uml_TracedWriteStructuralFeatureAction,
+    TracedWriteStructuralFeatureAction,
+    umlTrace_uml_TracedAddStructuralFeatureValueAction,
+    umlTrace_uml_TracedRemoveStructuralFeatureValueAction,
+    TracedBehavioredClassifier,
+    umlTrace_uml_TracedActor,
+    umlTrace_uml_TracedUseCase,
+    umlTrace_uml_TracedSequenceNode,
+    umlTrace_uml_TracedExceptionHandler,
+    umlTrace_uml_TracedDeployedArtifact,
+    uml_TracedDeployedArtifact,
+    uml_TracedClassifier,
+    umlTrace_uml_TracedAssociation,
+    umlTrace_uml_TracedArtifact,
+    TracedArtifact,
+    umlTrace_uml_TracedDeploymentSpecification,
+    uml_TracedActivityNode,
+    uml_TracedObjectNode,
+    TracedPin,
+    umlTrace_uml_TracedOutputPin,
+    umlTrace_uml_TracedInputPin,
+    TracedInputPin,
+    umlTrace_uml_TracedActionInputPin,
+    umlTrace_uml_TracedValuePin,
+    umlTrace_uml_TracedCollaborationUse,
+    umlTrace_uml_TracedDeploymentTarget,
+    umlTrace_uml_TracedMultiplicityElement,
+    umlTrace_uml_TracedTypedElement,
+    uml_TracedMultiplicityElement,
+    umlTrace_uml_TracedPin,
+    uml_TracedTypedElement,
+    umlTrace_uml_TracedConnectableElement,
+    umlTrace_uml_TracedObjectNode,
+    uml_TracedFeature,
+    umlTrace_uml_TracedStructuralFeature,
+    TracedValueSpecification,
+    umlTrace_uml_TracedOpaqueExpression,
+    umlTrace_uml_TracedTimeExpression,
+    umlTrace_uml_TracedInterval,
+    umlTrace_uml_TracedExpression,
+    umlTrace_uml_TracedInstanceValue,
+    umlTrace_uml_TracedDuration,
+    umlTrace_uml_TracedLiteralSpecification,
+    TracedLiteralSpecification,
+    umlTrace_uml_TracedLiteralUnlimitedNatural,
+    umlTrace_uml_TracedLiteralNull,
+    umlTrace_uml_TracedLiteralReal,
+    umlTrace_uml_TracedLiteralBoolean,
+    umlTrace_uml_TracedLiteralInteger,
+    umlTrace_uml_TracedLiteralString,
+    TracedVariableAction,
+    umlTrace_uml_TracedReadVariableAction,
+    umlTrace_uml_TracedWriteVariableAction,
+    umlTrace_uml_TracedClearVariableAction,
+    umlTrace_uml_TracedTimeConstraint,
+    umlTrace_uml_TracedContinuation,
+    TracedCombinedFragment,
+    umlTrace_uml_TracedConsiderIgnoreFragment,
+    TracedNode,
+    umlTrace_uml_TracedDevice,
+    umlTrace_uml_TracedExecutionEnvironment,
+    umlTrace_uml_TracedType,
+    uml_TracedType,
+    TracedClassifier,
+    umlTrace_uml_TracedDataType,
+    umlTrace_uml_TracedInformationItem,
+    umlTrace_uml_TracedInterface,
+    umlTrace_uml_TracedBehavioredClassifier,
+    umlTrace_uml_TracedStructuredClassifier,
+    TracedStructuredClassifier,
+    umlTrace_uml_TracedEncapsulatedClassifier,
+    uml_TracedBehavioredClassifier,
+    umlTrace_uml_TracedCollaboration,
+    uml_TracedEncapsulatedClassifier,
+    umlTrace_uml_TracedClass,
+    TracedCallAction,
+    umlTrace_uml_TracedStartObjectBehaviorAction,
+    umlTrace_uml_TracedCallOperationAction,
+    umlTrace_uml_TracedCallBehaviorAction,
+    umlTrace_uml_TracedRelationship,
+    TracedRelationship,
+    umlTrace_uml_TracedDirectedRelationship,
+    TracedDirectedRelationship,
+    umlTrace_uml_TracedGeneralization,
+    umlTrace_uml_TracedElementImport,
+    umlTrace_uml_TracedProfileApplication,
+    umlTrace_uml_TracedPackageMerge,
+    umlTrace_uml_TracedTemplateBinding,
+    umlTrace_uml_TracedPackageImport,
+    umlTrace_uml_TracedProtocolConformance,
+    TracedInvocationAction,
+    umlTrace_uml_TracedCallAction,
+    umlTrace_uml_TracedBroadcastSignalAction,
+    umlTrace_uml_TracedSendSignalAction,
+    umlTrace_uml_TracedSendObjectAction,
+    TracedRedefinableElement,
+    umlTrace_uml_TracedExtensionPoint,
+    umlTrace_uml_TracedActivityEdge,
+    umlTrace_uml_TracedFeature,
+    TracedFeature,
+    umlTrace_uml_TracedConnector,
+    umlTrace_uml_TracedTemplateableElement,
+    uml_TracedTemplateableElement,
+    umlTrace_uml_TracedOperation,
+    umlTrace_uml_TracedStringExpression,
+    uml_TracedPackageableElement,
+    umlTrace_uml_TracedValueSpecification,
+    umlTrace_uml_TracedMessageEnd,
+    uml_TracedDeploymentTarget,
+    umlTrace_uml_TracedInstanceSpecification,
+    uml_TracedConnectableElement,
+    umlTrace_uml_TracedParameter,
+    umlTrace_uml_TracedVariable,
+    uml_TracedStructuralFeature,
+    umlTrace_uml_TracedProperty,
+    TracedProperty,
+    umlTrace_uml_TracedExtensionEnd,
+    umlTrace_uml_TracedPort,
+    uml_TracedDirectedRelationship,
+    umlTrace_uml_TracedInformationFlow,
+    umlTrace_uml_TracedDependency,
+    umlTrace_uml_TracedEvent,
+    TracedEvent,
+    umlTrace_uml_TracedMessageEvent,
+    umlTrace_uml_TracedTimeEvent,
+    umlTrace_uml_TracedChangeEvent,
+    umlTrace_uml_TracedGeneralizationSet,
+    umlTrace_uml_TracedSignal,
+    umlTrace_uml_TracedLoopNode,
+    umlTrace_uml_TracedInteractionUse,
+    umlTrace_uml_TracedObservation,
+    umlTrace_uml_TracedLifeline,
+    umlTrace_uml_TracedExpansionRegion,
+    TracedFinalNode,
+    umlTrace_uml_TracedActivityFinalNode,
+    umlTrace_uml_TracedFlowFinalNode,
+    TracedControlNode,
+    umlTrace_uml_TracedJoinNode,
+    umlTrace_uml_TracedMergeNode,
+    umlTrace_uml_TracedDecisionNode,
+    umlTrace_uml_TracedFinalNode,
+    umlTrace_uml_TracedForkNode,
+    umlTrace_uml_TracedInitialNode,
+    TracedAction,
+    umlTrace_uml_TracedReplyAction,
+    umlTrace_uml_TracedReadExtentAction,
+    umlTrace_uml_TracedAcceptEventAction,
+    umlTrace_uml_TracedInvocationAction,
+    umlTrace_uml_TracedRaiseExceptionAction,
+    umlTrace_uml_TracedValueSpecificationAction,
+    umlTrace_uml_TracedClearAssociationAction,
+    umlTrace_uml_TracedOpaqueAction,
+    umlTrace_uml_TracedCreateObjectAction,
+    umlTrace_uml_TracedReclassifyObjectAction,
+    umlTrace_uml_TracedStartClassifierBehaviorAction,
+    umlTrace_uml_TracedVariableAction,
+    umlTrace_uml_TracedReadIsClassifiedObjectAction,
+    umlTrace_uml_TracedTestIdentityAction,
+    umlTrace_uml_TracedUnmarshallAction,
+    umlTrace_uml_TracedReadSelfAction,
+    umlTrace_uml_TracedReduceAction,
+    umlTrace_uml_TracedStructuralFeatureAction,
+    umlTrace_uml_TracedDestroyObjectAction,
+    umlTrace_uml_TracedReadLinkObjectEndQualifierAction,
+    umlTrace_uml_TracedReadLinkObjectEndAction,
+    umlTrace_uml_TracedLinkAction,
+    TracedLinkAction,
+    umlTrace_uml_TracedReadLinkAction,
+    umlTrace_uml_TracedWriteLinkAction,
+    TracedWriteLinkAction,
+    umlTrace_uml_TracedDestroyLinkAction,
+    umlTrace_uml_TracedCreateLinkAction,
+    TracedCreateLinkAction,
+    umlTrace_uml_TracedCreateLinkObjectAction,
+    uml_TracedNamedElement,
+    umlTrace_uml_TracedExtend,
+    umlTrace_uml_TracedInclude,
+    umlTrace_uml_TracedPackageableElement,
+    umlTrace_uml_TracedNamespace,
+    umlTrace_uml_TracedRedefinableElement,
+    ActivityContent,
+    umlTrace_uml_TracedActivityGroup,
+    uml_TracedRedefinableElement,
+    umlTrace_uml_TracedRedefinableTemplateSignature,
+    umlTrace_uml_TracedActivityNode,
+    TracedActivityNode,
+    umlTrace_uml_TracedControlNode,
+    umlTrace_uml_TracedExecutableNode,
+    TracedExecutableNode,
+    umlTrace_uml_TracedAction,
+    uml_TracedActivityGroup,
+    uml_TracedNamespace,
+    umlTrace_uml_TracedRegion,
+    umlTrace_uml_TracedPackage,
+    umlTrace_uml_TracedState,
+    umlTrace_uml_TracedStructuredActivityNode,
+    umlTrace_uml_TracedClassifier,
+    umlTrace_uml_TracedBehavioralFeature,
+    umlTrace_uml_TracedInteractionOperand,
+    umlTrace_uml_TracedTransition,
+    uml_TracedRaiseExceptionAction,
+    uml_TracedCommunicationPath,
+    Kernel_TracedLiteralBooleanEvaluation,
+    uml_TracedEnumeration,
+    uml_TracedReadLinkObjectEndAction,
+    uml_TracedCallBehaviorAction,
+    uml_TracedVariable,
+    uml_TracedConnectorEnd,
+    uml_TracedArtifact,
+    uml_TracedCallOperationAction,
+    uml_TracedLiteralUnlimitedNatural,
+    uml_TracedDurationObservation,
+    uml_TracedBehaviorExecutionSpecification,
+    uml_TracedActivityParameterNode,
+    uml_TracedExpansionNode,
+    uml_TracedProfileApplication,
+    uml_TracedAddStructuralFeatureValueAction,
+    uml_TracedQualifierValue,
+    uml_TracedImage,
+    uml_TracedExtensionEnd,
+    uml_TracedProperty,
+    uml_TracedDevice,
+    uml_TracedOpaqueAction,
+    uml_TracedFinalState,
+    uml_TracedReduceAction,
+    uml_TracedDuration,
+    uml_TracedTemplateParameterSubstitution,
+    uml_TracedOutputPin,
+    uml_TracedActionExecutionSpecification,
+    uml_TracedInformationItem,
+    uml_TracedOperationTemplateParameter,
+    uml_TracedConnectableElementTemplateParameter,
+    uml_TracedLinkEndData,
+    uml_TracedDurationInterval,
+    uml_TracedTransition,
+    uml_TracedTrigger,
+    uml_TracedReplyAction,
+    uml_TracedClause,
+    uml_TracedPackageMerge,
+    uml_TracedDecisionNode,
+    IntermediateActions_TracedReadStructuralFeatureActionActivation,
+    uml_TracedReadSelfAction,
+    uml_TracedOperation,
+    uml_TracedObjectFlow,
+    uml_TracedParameterSet,
+    uml_TracedOccurrenceSpecification,
+    umlTrace_uml_TracedMessageOccurrenceSpecification,
+    uml_TracedAcceptEventAction,
+    uml_TracedComponentRealization,
+    uml_TracedDataType,
+    uml_TracedComment,
+    uml_TracedLoopNode,
+    uml_TracedCallEvent,
+    uml_TracedPackage,
+    uml_TracedProtocolConformance,
+    uml_TracedOpaqueBehavior,
+    uml_TracedInterface,
+    IntermediateActivities_TracedDecisionNodeActivation,
+    uml_TracedInteractionConstraint,
+    uml_TracedTimeInterval,
+    uml_TracedExecutionOccurrenceSpecification,
+    uml_TracedSignal,
+    uml_TracedExtensionPoint,
+    uml_TracedCreateLinkAction,
+    Kernel_TracedLiteralIntegerEvaluation,
+    uml_TracedCentralBufferNode,
+    uml_TracedModel,
+    uml_TracedRedefinableTemplateSignature,
+    uml_TracedJoinNode,
+    BasicActions_TracedOpaqueActionActivation,
+    uml_TracedReadLinkObjectEndQualifierAction,
+    uml_TracedRealization,
+    uml_TracedConnectionPointReference,
+    uml_TracedConditionalNode,
+    Kernel_TracedBooleanValue,
+    uml_TracedSignalEvent,
+    uml_TracedLiteralInteger,
+    uml_TracedDestroyLinkAction,
+    IntermediateActivities_TracedActivityFinalNodeActivation,
+    uml_TracedReadVariableAction,
+    uml_TracedActionInputPin,
+    uml_TracedUsage,
+    uml_TracedDeploymentSpecification,
+    uml_TracedTemplateBinding,
+    uml_TracedMessageOccurrenceSpecification,
+    uml_TracedReception,
+    uml_TracedProtocolStateMachine,
+    uml_TracedDataStoreNode,
+    uml_TracedReadStructuralFeatureAction,
+    uml_TracedAnyReceiveEvent,
+    Kernel_TracedIntegerValue,
+    uml_TracedInterval,
+    uml_TracedRemoveStructuralFeatureValueAction,
+    uml_TracedGeneralization,
+    uml_TracedInteractionOperand,
+    uml_TracedProtocolTransition,
+    uml_TracedInterruptibleActivityRegion,
+    uml_TracedPartDecomposition,
+    uml_TracedTimeEvent,
+    uml_TracedDeployment,
+    Loci_TracedSemanticVisitor,
+    Kernel_TracedObject,
+    IntermediateActivities_TracedJoinNodeActivation,
+    uml_TracedUseCase,
+    uml_TracedReclassifyObjectAction,
+    uml_TracedInstanceValue,
+    IntermediateActions_TracedAddStructuralFeatureValueActionActivation,
+    Kernel_TracedReference,
+    uml_TracedForkNode,
+    uml_TracedActivity,
+    uml_TracedMessage,
+    uml_TracedStateMachine,
+    uml_TracedActivityPartition,
+    IntermediateActivities_TracedActivityParameterNodeActivation,
+    BasicActions_TracedCallBehaviorActionActivation,
+    uml_TracedDestroyObjectAction,
+    uml_TracedAssociationClass,
+    uml_TracedInformationFlow,
+    uml_TracedSubstitution,
+    uml_TracedEnumerationLiteral,
+    uml_TracedStereotype,
+    uml_TracedAcceptCallAction,
+    uml_TracedInstanceSpecification,
+    IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution,
+    uml_TracedStateInvariant,
+    BasicActions_TracedInputPinActivation,
+    uml_TracedLiteralString,
+    uml_TracedOpaqueExpression,
+    uml_TracedParameter,
+    IntermediateActivities_TracedActivityNodeActivation,
+    uml_TracedInteraction,
+    uml_TracedBroadcastSignalAction,
+    uml_TracedConstraint,
+    uml_TracedClearVariableAction,
+    uml_TracedInputPin,
+    uml_TracedTimeConstraint,
+    uml_TracedContinuation,
+    uml_TracedConsiderIgnoreFragment,
+    uml_TracedIntervalConstraint,
+    uml_TracedExecutionEnvironment,
+    uml_TracedStructuredActivityNode,
+    uml_TracedExtension,
+    IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution,
+    uml_TracedExtend,
+    uml_TracedStartClassifierBehaviorAction,
+    uml_TracedSequenceNode,
+    uml_TracedExceptionHandler,
+    uml_TracedNode,
+    uml_TracedValuePin,
+    IntermediateActivities_TracedActivityExecution,
+    uml_TracedCollaborationUse,
+    IntermediateActivities_TracedInitialNodeActivation,
+    uml_TracedPort,
+    uml_TracedDependency,
+    uml_TracedChangeEvent,
+    uml_TracedGeneralizationSet,
+    uml_TracedInteractionUse,
+    uml_TracedClass,
+    umlTrace_uml_TracedNode,
+    umlTrace_uml_TracedAssociationClass,
+    uml_TracedPackageImport,
+    uml_TracedSendObjectAction,
+    uml_TracedConnector,
+    uml_TracedDestructionOccurrenceSpecification,
+    uml_TracedDurationConstraint,
+    IntermediateActivities_TracedForkNodeActivation,
+    uml_TracedLifeline,
+    uml_TracedCreateObjectAction,
+    uml_TracedExpansionRegion,
+    uml_TracedFlowFinalNode,
+    uml_TracedInitialNode,
+    uml_TracedCreateLinkObjectAction,
+    uml_TracedCombinedFragment,
+    umlTrace_Traced_TracedObjects,
+    Traced_TracedObjects,
     State,
-    umlTrace::Trace,
-    Values::SemanticVisitor::runtimeModelElement::Value,
-    Values::ActionActivation::firing::Value,
-    umlTrace::State,
+    umlTrace_Trace,
+    Values_SemanticVisitor_runtimeModelElement_Value,
+    Values_ActionActivation_firing_Value,
+    umlTrace_State,
 )
 
 # =============================================================================
@@ -652,51 +652,541 @@ from classes import (
 
 
 
-def test_uml::activitycontent_is_not_abstract():
-    assert not inspect.isabstract(uml::ActivityContent)
+def test_tracedexecution_is_not_abstract():
+    assert not inspect.isabstract(TracedExecution)
 
 
-def test_uml::activitycontent_constructor_exists():
-    assert callable(uml::ActivityContent.__init__)
+def test_tracedexecution_constructor_exists():
+    assert callable(TracedExecution.__init__)
 
 
-def test_uml::activitycontent_constructor_args():
-    sig = inspect.signature(uml::ActivityContent.__init__)
+def test_tracedexecution_constructor_args():
+    sig = inspect.signature(TracedExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicactions::tracedactionactivation_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::TracedActionActivation)
+def test_umltrace_intermediateactivities_tracedactivityexecution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedActivityExecution)
 
 
-def test_basicactions::tracedactionactivation_constructor_exists():
-    assert callable(BasicActions::TracedActionActivation.__init__)
+def test_umltrace_intermediateactivities_tracedactivityexecution_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedActivityExecution.__init__)
 
 
-def test_basicactions::tracedactionactivation_constructor_args():
-    sig = inspect.signature(BasicActions::TracedActionActivation.__init__)
+def test_umltrace_intermediateactivities_tracedactivityexecution_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedActivityExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::values::actionactivation::firing::value_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Values::ActionActivation::firing::Value)
+def test_tracedsemanticvisitor_is_not_abstract():
+    assert not inspect.isabstract(TracedSemanticVisitor)
 
 
-def test_umltrace::values::actionactivation::firing::value_constructor_exists():
-    assert callable(umlTrace::Values::ActionActivation::firing::Value.__init__)
+def test_tracedsemanticvisitor_constructor_exists():
+    assert callable(TracedSemanticVisitor.__init__)
 
 
-def test_umltrace::values::actionactivation::firing::value_constructor_args():
-    sig = inspect.signature(umlTrace::Values::ActionActivation::firing::Value.__init__)
+def test_tracedsemanticvisitor_constructor_args():
+    sig = inspect.signature(TracedSemanticVisitor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedactivitynodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedActivityNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedactivitynodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedActivityNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedactivitynodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedActivityNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedactivitynodeactivation_is_not_abstract():
+    assert not inspect.isabstract(TracedActivityNodeActivation)
+
+
+def test_tracedactivitynodeactivation_constructor_exists():
+    assert callable(TracedActivityNodeActivation.__init__)
+
+
+def test_tracedactivitynodeactivation_constructor_args():
+    sig = inspect.signature(TracedActivityNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedobjectnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedObjectNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedobjectnodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedObjectNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedobjectnodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedObjectNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedcontrolnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedControlNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedcontrolnodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedControlNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedcontrolnodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedControlNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedcontrolnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(TracedControlNodeActivation)
+
+
+def test_tracedcontrolnodeactivation_constructor_exists():
+    assert callable(TracedControlNodeActivation.__init__)
+
+
+def test_tracedcontrolnodeactivation_constructor_args():
+    sig = inspect.signature(TracedControlNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedinitialnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedInitialNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedinitialnodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedInitialNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedinitialnodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedInitialNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedmergenodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedMergeNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedmergenodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedMergeNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedmergenodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedMergeNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedforknodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedForkNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedforknodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedForkNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedforknodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedForkNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedvertex_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedVertex)
+
+
+def test_uml_tracedvertex_constructor_exists():
+    assert callable(uml_TracedVertex.__init__)
+
+
+def test_uml_tracedvertex_constructor_args():
+    sig = inspect.signature(uml_TracedVertex.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedstate_is_not_abstract():
+    assert not inspect.isabstract(TracedState)
+
+
+def test_tracedstate_constructor_exists():
+    assert callable(TracedState.__init__)
+
+
+def test_tracedstate_constructor_args():
+    sig = inspect.signature(TracedState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedfinalstate_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedFinalState)
+
+
+def test_umltrace_uml_tracedfinalstate_constructor_exists():
+    assert callable(umlTrace_uml_TracedFinalState.__init__)
+
+
+def test_umltrace_uml_tracedfinalstate_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedFinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedexecutionspecification_is_not_abstract():
+    assert not inspect.isabstract(TracedExecutionSpecification)
+
+
+def test_tracedexecutionspecification_constructor_exists():
+    assert callable(TracedExecutionSpecification.__init__)
+
+
+def test_tracedexecutionspecification_constructor_args():
+    sig = inspect.signature(TracedExecutionSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedbehaviorexecutionspecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedBehaviorExecutionSpecification)
+
+
+def test_umltrace_uml_tracedbehaviorexecutionspecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedBehaviorExecutionSpecification.__init__)
+
+
+def test_umltrace_uml_tracedbehaviorexecutionspecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedBehaviorExecutionSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(TracedOccurrenceSpecification)
+
+
+def test_tracedoccurrencespecification_constructor_exists():
+    assert callable(TracedOccurrenceSpecification.__init__)
+
+
+def test_tracedoccurrencespecification_constructor_args():
+    sig = inspect.signature(TracedOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexecutionoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExecutionOccurrenceSpecification)
+
+
+def test_umltrace_uml_tracedexecutionoccurrencespecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedExecutionOccurrenceSpecification.__init__)
+
+
+def test_umltrace_uml_tracedexecutionoccurrencespecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExecutionOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedopaquebehavior_is_not_abstract():
+    assert not inspect.isabstract(TracedOpaqueBehavior)
+
+
+def test_tracedopaquebehavior_constructor_exists():
+    assert callable(TracedOpaqueBehavior.__init__)
+
+
+def test_tracedopaquebehavior_constructor_args():
+    sig = inspect.signature(TracedOpaqueBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedfunctionbehavior_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedFunctionBehavior)
+
+
+def test_umltrace_uml_tracedfunctionbehavior_constructor_exists():
+    assert callable(umlTrace_uml_TracedFunctionBehavior.__init__)
+
+
+def test_umltrace_uml_tracedfunctionbehavior_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedFunctionBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstructuredclassifier_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStructuredClassifier)
+
+
+def test_uml_tracedstructuredclassifier_constructor_exists():
+    assert callable(uml_TracedStructuredClassifier.__init__)
+
+
+def test_uml_tracedstructuredclassifier_constructor_args():
+    sig = inspect.signature(uml_TracedStructuredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedmultiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(TracedMultiplicityElement)
+
+
+def test_tracedmultiplicityelement_constructor_exists():
+    assert callable(TracedMultiplicityElement.__init__)
+
+
+def test_tracedmultiplicityelement_constructor_args():
+    sig = inspect.signature(TracedMultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedconnectorend_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConnectorEnd)
+
+
+def test_umltrace_uml_tracedconnectorend_constructor_exists():
+    assert callable(umlTrace_uml_TracedConnectorEnd.__init__)
+
+
+def test_umltrace_uml_tracedconnectorend_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConnectorEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactionexecutionspecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActionExecutionSpecification)
+
+
+def test_umltrace_uml_tracedactionexecutionspecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedActionExecutionSpecification.__init__)
+
+
+def test_umltrace_uml_tracedactionexecutionspecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActionExecutionSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedobjectnode_is_not_abstract():
+    assert not inspect.isabstract(TracedObjectNode)
+
+
+def test_tracedobjectnode_constructor_exists():
+    assert callable(TracedObjectNode.__init__)
+
+
+def test_tracedobjectnode_constructor_args():
+    sig = inspect.signature(TracedObjectNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexpansionnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExpansionNode)
+
+
+def test_umltrace_uml_tracedexpansionnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedExpansionNode.__init__)
+
+
+def test_umltrace_uml_tracedexpansionnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExpansionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivityparameternode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivityParameterNode)
+
+
+def test_umltrace_uml_tracedactivityparameternode_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivityParameterNode.__init__)
+
+
+def test_umltrace_uml_tracedactivityparameternode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivityParameterNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcentralbuffernode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCentralBufferNode)
+
+
+def test_umltrace_uml_tracedcentralbuffernode_constructor_exists():
+    assert callable(umlTrace_uml_TracedCentralBufferNode.__init__)
+
+
+def test_umltrace_uml_tracedcentralbuffernode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCentralBufferNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedcentralbuffernode_is_not_abstract():
+    assert not inspect.isabstract(TracedCentralBufferNode)
+
+
+def test_tracedcentralbuffernode_constructor_exists():
+    assert callable(TracedCentralBufferNode.__init__)
+
+
+def test_tracedcentralbuffernode_constructor_args():
+    sig = inspect.signature(TracedCentralBufferNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddatastorenode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDataStoreNode)
+
+
+def test_umltrace_uml_traceddatastorenode_constructor_exists():
+    assert callable(umlTrace_uml_TracedDataStoreNode.__init__)
+
+
+def test_umltrace_uml_traceddatastorenode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDataStoreNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_traceddatatype_is_not_abstract():
+    assert not inspect.isabstract(TracedDataType)
+
+
+def test_traceddatatype_constructor_exists():
+    assert callable(TracedDataType.__init__)
+
+
+def test_traceddatatype_constructor_args():
+    sig = inspect.signature(TracedDataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedenumeration_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedEnumeration)
+
+
+def test_umltrace_uml_tracedenumeration_constructor_exists():
+    assert callable(umlTrace_uml_TracedEnumeration.__init__)
+
+
+def test_umltrace_uml_tracedenumeration_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedEnumeration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPrimitiveType)
+
+
+def test_umltrace_uml_tracedprimitivetype_constructor_exists():
+    assert callable(umlTrace_uml_TracedPrimitiveType.__init__)
+
+
+def test_umltrace_uml_tracedprimitivetype_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedmessageevent_is_not_abstract():
+    assert not inspect.isabstract(TracedMessageEvent)
+
+
+def test_tracedmessageevent_constructor_exists():
+    assert callable(TracedMessageEvent.__init__)
+
+
+def test_tracedmessageevent_constructor_args():
+    sig = inspect.signature(TracedMessageEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcallevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCallEvent)
+
+
+def test_umltrace_uml_tracedcallevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedCallEvent.__init__)
+
+
+def test_umltrace_uml_tracedcallevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCallEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_activitycontent_is_not_abstract():
+    assert not inspect.isabstract(uml_ActivityContent)
+
+
+def test_uml_activitycontent_constructor_exists():
+    assert callable(uml_ActivityContent.__init__)
+
+
+def test_uml_activitycontent_constructor_args():
+    sig = inspect.signature(uml_ActivityContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_tracedactionactivation_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_TracedActionActivation)
+
+
+def test_basicactions_tracedactionactivation_constructor_exists():
+    assert callable(BasicActions_TracedActionActivation.__init__)
+
+
+def test_basicactions_tracedactionactivation_constructor_args():
+    sig = inspect.signature(BasicActions_TracedActionActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_values_actionactivation_firing_value_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Values_ActionActivation_firing_Value)
+
+
+def test_umltrace_values_actionactivation_firing_value_constructor_exists():
+    assert callable(umlTrace_Values_ActionActivation_firing_Value.__init__)
+
+
+def test_umltrace_values_actionactivation_firing_value_constructor_args():
+    sig = inspect.signature(umlTrace_Values_ActionActivation_firing_Value.__init__)
     params = list(sig.parameters.keys())
     assert "firing" in params, "Missing parameter 'firing'"
 
-def test_umltrace::values::actionactivation::firing::value_has_firing():
-    assert hasattr(umlTrace::Values::ActionActivation::firing::Value, "firing")
+def test_umltrace_values_actionactivation_firing_value_has_firing():
+    assert hasattr(umlTrace_Values_ActionActivation_firing_Value, "firing")
     descriptor = None
-    for klass in umlTrace::Values::ActionActivation::firing::Value.__mro__:
+    for klass in umlTrace_Values_ActionActivation_firing_Value.__mro__:
         if "firing" in klass.__dict__:
             descriptor = klass.__dict__["firing"]
             break
@@ -718,30 +1208,30 @@ def test_tracedliteralevaluation_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedliteralintegerevaluation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedLiteralIntegerEvaluation)
+def test_umltrace_kernel_tracedliteralintegerevaluation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedLiteralIntegerEvaluation)
 
 
-def test_umltrace::kernel::tracedliteralintegerevaluation_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedLiteralIntegerEvaluation.__init__)
+def test_umltrace_kernel_tracedliteralintegerevaluation_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedLiteralIntegerEvaluation.__init__)
 
 
-def test_umltrace::kernel::tracedliteralintegerevaluation_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedLiteralIntegerEvaluation.__init__)
+def test_umltrace_kernel_tracedliteralintegerevaluation_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedLiteralIntegerEvaluation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::kernel::tracedliteralbooleanevaluation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedLiteralBooleanEvaluation)
+def test_umltrace_kernel_tracedliteralbooleanevaluation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedLiteralBooleanEvaluation)
 
 
-def test_umltrace::kernel::tracedliteralbooleanevaluation_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedLiteralBooleanEvaluation.__init__)
+def test_umltrace_kernel_tracedliteralbooleanevaluation_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedLiteralBooleanEvaluation.__init__)
 
 
-def test_umltrace::kernel::tracedliteralbooleanevaluation_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedLiteralBooleanEvaluation.__init__)
+def test_umltrace_kernel_tracedliteralbooleanevaluation_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedLiteralBooleanEvaluation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -760,30 +1250,44 @@ def test_tracedprimitivevalue_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedbooleanvalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedBooleanValue)
+def test_umltrace_kernel_tracedbooleanvalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedBooleanValue)
 
 
-def test_umltrace::kernel::tracedbooleanvalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedBooleanValue.__init__)
+def test_umltrace_kernel_tracedbooleanvalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedBooleanValue.__init__)
 
 
-def test_umltrace::kernel::tracedbooleanvalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedBooleanValue.__init__)
+def test_umltrace_kernel_tracedbooleanvalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedBooleanValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::kernel::tracedintegervalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedIntegerValue)
+def test_umltrace_kernel_tracedintegervalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedIntegerValue)
 
 
-def test_umltrace::kernel::tracedintegervalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedIntegerValue.__init__)
+def test_umltrace_kernel_tracedintegervalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedIntegerValue.__init__)
 
 
-def test_umltrace::kernel::tracedintegervalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedIntegerValue.__init__)
+def test_umltrace_kernel_tracedintegervalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedIntegerValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_kernel_tracedevaluation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedEvaluation)
+
+
+def test_umltrace_kernel_tracedevaluation_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedEvaluation.__init__)
+
+
+def test_umltrace_kernel_tracedevaluation_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedEvaluation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -802,16 +1306,30 @@ def test_tracedevaluation_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedliteralevaluation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedLiteralEvaluation)
+def test_umltrace_kernel_tracedliteralevaluation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedLiteralEvaluation)
 
 
-def test_umltrace::kernel::tracedliteralevaluation_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedLiteralEvaluation.__init__)
+def test_umltrace_kernel_tracedliteralevaluation_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedLiteralEvaluation.__init__)
 
 
-def test_umltrace::kernel::tracedliteralevaluation_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedLiteralEvaluation.__init__)
+def test_umltrace_kernel_tracedliteralevaluation_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedLiteralEvaluation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_kernel_tracedvalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedValue)
+
+
+def test_umltrace_kernel_tracedvalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedValue.__init__)
+
+
+def test_umltrace_kernel_tracedvalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -830,30 +1348,30 @@ def test_tracedvalue_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedprimitivevalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedPrimitiveValue)
+def test_umltrace_kernel_tracedprimitivevalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedPrimitiveValue)
 
 
-def test_umltrace::kernel::tracedprimitivevalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedPrimitiveValue.__init__)
+def test_umltrace_kernel_tracedprimitivevalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedPrimitiveValue.__init__)
 
 
-def test_umltrace::kernel::tracedprimitivevalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedPrimitiveValue.__init__)
+def test_umltrace_kernel_tracedprimitivevalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedPrimitiveValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::kernel::tracedstructuredvalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedStructuredValue)
+def test_umltrace_kernel_tracedstructuredvalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedStructuredValue)
 
 
-def test_umltrace::kernel::tracedstructuredvalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedStructuredValue.__init__)
+def test_umltrace_kernel_tracedstructuredvalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedStructuredValue.__init__)
 
 
-def test_umltrace::kernel::tracedstructuredvalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedStructuredValue.__init__)
+def test_umltrace_kernel_tracedstructuredvalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedStructuredValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -872,30 +1390,30 @@ def test_tracedstructuredvalue_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedreference_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedReference)
+def test_umltrace_kernel_tracedreference_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedReference)
 
 
-def test_umltrace::kernel::tracedreference_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedReference.__init__)
+def test_umltrace_kernel_tracedreference_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedReference.__init__)
 
 
-def test_umltrace::kernel::tracedreference_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedReference.__init__)
+def test_umltrace_kernel_tracedreference_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::kernel::tracedcompoundvalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedCompoundValue)
+def test_umltrace_kernel_tracedcompoundvalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedCompoundValue)
 
 
-def test_umltrace::kernel::tracedcompoundvalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedCompoundValue.__init__)
+def test_umltrace_kernel_tracedcompoundvalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedCompoundValue.__init__)
 
 
-def test_umltrace::kernel::tracedcompoundvalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedCompoundValue.__init__)
+def test_umltrace_kernel_tracedcompoundvalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedCompoundValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -914,16 +1432,16 @@ def test_tracedcompoundvalue_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedextensionalvalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedExtensionalValue)
+def test_umltrace_kernel_tracedextensionalvalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedExtensionalValue)
 
 
-def test_umltrace::kernel::tracedextensionalvalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedExtensionalValue.__init__)
+def test_umltrace_kernel_tracedextensionalvalue_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedExtensionalValue.__init__)
 
 
-def test_umltrace::kernel::tracedextensionalvalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedExtensionalValue.__init__)
+def test_umltrace_kernel_tracedextensionalvalue_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedExtensionalValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -942,16 +1460,30 @@ def test_tracedextensionalvalue_constructor_args():
 
 
 
-def test_umltrace::kernel::tracedobject_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedObject)
+def test_umltrace_kernel_tracedobject_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Kernel_TracedObject)
 
 
-def test_umltrace::kernel::tracedobject_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedObject.__init__)
+def test_umltrace_kernel_tracedobject_constructor_exists():
+    assert callable(umlTrace_Kernel_TracedObject.__init__)
 
 
-def test_umltrace::kernel::tracedobject_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedObject.__init__)
+def test_umltrace_kernel_tracedobject_constructor_args():
+    sig = inspect.signature(umlTrace_Kernel_TracedObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_basicbehaviors_tracedopaquebehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution)
+
+
+def test_umltrace_basicbehaviors_tracedopaquebehaviorexecution_constructor_exists():
+    assert callable(umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution.__init__)
+
+
+def test_umltrace_basicbehaviors_tracedopaquebehaviorexecution_constructor_args():
+    sig = inspect.signature(umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -970,44 +1502,44 @@ def test_tracedobject_constructor_args():
 
 
 
-def test_umltrace::basicbehaviors::tracedexecution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicBehaviors::TracedExecution)
+def test_umltrace_basicbehaviors_tracedexecution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicBehaviors_TracedExecution)
 
 
-def test_umltrace::basicbehaviors::tracedexecution_constructor_exists():
-    assert callable(umlTrace::BasicBehaviors::TracedExecution.__init__)
+def test_umltrace_basicbehaviors_tracedexecution_constructor_exists():
+    assert callable(umlTrace_BasicBehaviors_TracedExecution.__init__)
 
 
-def test_umltrace::basicbehaviors::tracedexecution_constructor_args():
-    sig = inspect.signature(umlTrace::BasicBehaviors::TracedExecution.__init__)
+def test_umltrace_basicbehaviors_tracedexecution_constructor_args():
+    sig = inspect.signature(umlTrace_BasicBehaviors_TracedExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedElement)
+def test_uml_tracedelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedElement)
 
 
-def test_uml::tracedelement_constructor_exists():
-    assert callable(uml::TracedElement.__init__)
+def test_uml_tracedelement_constructor_exists():
+    assert callable(uml_TracedElement.__init__)
 
 
-def test_uml::tracedelement_constructor_args():
-    sig = inspect.signature(uml::TracedElement.__init__)
+def test_uml_tracedelement_constructor_args():
+    sig = inspect.signature(uml_TracedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::values::semanticvisitor::runtimemodelelement::value_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Values::SemanticVisitor::runtimeModelElement::Value)
+def test_umltrace_values_semanticvisitor_runtimemodelelement_value_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Values_SemanticVisitor_runtimeModelElement_Value)
 
 
-def test_umltrace::values::semanticvisitor::runtimemodelelement::value_constructor_exists():
-    assert callable(umlTrace::Values::SemanticVisitor::runtimeModelElement::Value.__init__)
+def test_umltrace_values_semanticvisitor_runtimemodelelement_value_constructor_exists():
+    assert callable(umlTrace_Values_SemanticVisitor_runtimeModelElement_Value.__init__)
 
 
-def test_umltrace::values::semanticvisitor::runtimemodelelement::value_constructor_args():
-    sig = inspect.signature(umlTrace::Values::SemanticVisitor::runtimeModelElement::Value.__init__)
+def test_umltrace_values_semanticvisitor_runtimemodelelement_value_constructor_args():
+    sig = inspect.signature(umlTrace_Values_SemanticVisitor_runtimeModelElement_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1026,44 +1558,44 @@ def test_tracedopaquebehaviorexecution_constructor_args():
 
 
 
-def test_umltrace::integerfunctions::tracedintegergreaterfunctionbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution)
+def test_umltrace_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution)
 
 
-def test_umltrace::integerfunctions::tracedintegergreaterfunctionbehaviorexecution_constructor_exists():
-    assert callable(umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution.__init__)
+def test_umltrace_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_constructor_exists():
+    assert callable(umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution.__init__)
 
 
-def test_umltrace::integerfunctions::tracedintegergreaterfunctionbehaviorexecution_constructor_args():
-    sig = inspect.signature(umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution.__init__)
+def test_umltrace_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_constructor_args():
+    sig = inspect.signature(umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::integerfunctions::tracedintegerlessfunctionbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution)
+def test_umltrace_integerfunctions_tracedintegerlessfunctionbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution)
 
 
-def test_umltrace::integerfunctions::tracedintegerlessfunctionbehaviorexecution_constructor_exists():
-    assert callable(umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution.__init__)
+def test_umltrace_integerfunctions_tracedintegerlessfunctionbehaviorexecution_constructor_exists():
+    assert callable(umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution.__init__)
 
 
-def test_umltrace::integerfunctions::tracedintegerlessfunctionbehaviorexecution_constructor_args():
-    sig = inspect.signature(umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution.__init__)
+def test_umltrace_integerfunctions_tracedintegerlessfunctionbehaviorexecution_constructor_args():
+    sig = inspect.signature(umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::integerfunctions::tracedintegerplusfunctionbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution)
+def test_umltrace_integerfunctions_tracedintegerplusfunctionbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution)
 
 
-def test_umltrace::integerfunctions::tracedintegerplusfunctionbehaviorexecution_constructor_exists():
-    assert callable(umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution.__init__)
+def test_umltrace_integerfunctions_tracedintegerplusfunctionbehaviorexecution_constructor_exists():
+    assert callable(umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution.__init__)
 
 
-def test_umltrace::integerfunctions::tracedintegerplusfunctionbehaviorexecution_constructor_args():
-    sig = inspect.signature(umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution.__init__)
+def test_umltrace_integerfunctions_tracedintegerplusfunctionbehaviorexecution_constructor_args():
+    sig = inspect.signature(umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1082,16 +1614,16 @@ def test_tracedcallactionactivation_constructor_args():
 
 
 
-def test_umltrace::basicactions::tracedcallbehavioractionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedCallBehaviorActionActivation)
+def test_umltrace_basicactions_tracedcallbehavioractionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedCallBehaviorActionActivation)
 
 
-def test_umltrace::basicactions::tracedcallbehavioractionactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedCallBehaviorActionActivation.__init__)
+def test_umltrace_basicactions_tracedcallbehavioractionactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedCallBehaviorActionActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedcallbehavioractionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedCallBehaviorActionActivation.__init__)
+def test_umltrace_basicactions_tracedcallbehavioractionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedCallBehaviorActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1110,30 +1642,30 @@ def test_tracedpinactivation_constructor_args():
 
 
 
-def test_umltrace::basicactions::tracedoutputpinactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedOutputPinActivation)
+def test_umltrace_basicactions_tracedoutputpinactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedOutputPinActivation)
 
 
-def test_umltrace::basicactions::tracedoutputpinactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedOutputPinActivation.__init__)
+def test_umltrace_basicactions_tracedoutputpinactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedOutputPinActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedoutputpinactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedOutputPinActivation.__init__)
+def test_umltrace_basicactions_tracedoutputpinactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedOutputPinActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::basicactions::tracedinputpinactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedInputPinActivation)
+def test_umltrace_basicactions_tracedinputpinactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedInputPinActivation)
 
 
-def test_umltrace::basicactions::tracedinputpinactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedInputPinActivation.__init__)
+def test_umltrace_basicactions_tracedinputpinactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedInputPinActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedinputpinactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedInputPinActivation.__init__)
+def test_umltrace_basicactions_tracedinputpinactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedInputPinActivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1152,16 +1684,16 @@ def test_tracedinvocationactionactivation_constructor_args():
 
 
 
-def test_umltrace::basicactions::tracedcallactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedCallActionActivation)
+def test_umltrace_basicactions_tracedcallactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedCallActionActivation)
 
 
-def test_umltrace::basicactions::tracedcallactionactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedCallActionActivation.__init__)
+def test_umltrace_basicactions_tracedcallactionactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedCallActionActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedcallactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedCallActionActivation.__init__)
+def test_umltrace_basicactions_tracedcallactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedCallActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1180,44 +1712,100 @@ def test_tracedactionactivation_constructor_args():
 
 
 
-def test_umltrace::basicactions::tracedopaqueactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedOpaqueActionActivation)
+def test_umltrace_basicactions_tracedopaqueactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedOpaqueActionActivation)
 
 
-def test_umltrace::basicactions::tracedopaqueactionactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedOpaqueActionActivation.__init__)
+def test_umltrace_basicactions_tracedopaqueactionactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedOpaqueActionActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedopaqueactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedOpaqueActionActivation.__init__)
+def test_umltrace_basicactions_tracedopaqueactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedOpaqueActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::basicactions::tracedinvocationactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedInvocationActionActivation)
+def test_umltrace_basicactions_tracedinvocationactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedInvocationActionActivation)
 
 
-def test_umltrace::basicactions::tracedinvocationactionactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedInvocationActionActivation.__init__)
+def test_umltrace_basicactions_tracedinvocationactionactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedInvocationActionActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedinvocationactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedInvocationActionActivation.__init__)
+def test_umltrace_basicactions_tracedinvocationactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedInvocationActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::loci::tracedsemanticvisitor_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Loci::TracedSemanticVisitor)
+def test_umltrace_basicactions_tracedactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedActionActivation)
 
 
-def test_umltrace::loci::tracedsemanticvisitor_constructor_exists():
-    assert callable(umlTrace::Loci::TracedSemanticVisitor.__init__)
+def test_umltrace_basicactions_tracedactionactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedActionActivation.__init__)
 
 
-def test_umltrace::loci::tracedsemanticvisitor_constructor_args():
-    sig = inspect.signature(umlTrace::Loci::TracedSemanticVisitor.__init__)
+def test_umltrace_basicactions_tracedactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedActionActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_loci_tracedsemanticvisitor_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Loci_TracedSemanticVisitor)
+
+
+def test_umltrace_loci_tracedsemanticvisitor_constructor_exists():
+    assert callable(umlTrace_Loci_TracedSemanticVisitor.__init__)
+
+
+def test_umltrace_loci_tracedsemanticvisitor_constructor_args():
+    sig = inspect.signature(umlTrace_Loci_TracedSemanticVisitor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_traceddecisionnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedDecisionNodeActivation)
+
+
+def test_umltrace_intermediateactivities_traceddecisionnodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedDecisionNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_traceddecisionnodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedDecisionNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedactivityfinalnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedactivityfinalnodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedactivityfinalnodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_intermediateactivities_tracedjoinnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedJoinNodeActivation)
+
+
+def test_umltrace_intermediateactivities_tracedjoinnodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedJoinNodeActivation.__init__)
+
+
+def test_umltrace_intermediateactivities_tracedjoinnodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedJoinNodeActivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1236,58 +1824,58 @@ def test_tracedobjectnodeactivation_constructor_args():
 
 
 
-def test_umltrace::basicactions::tracedpinactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedPinActivation)
+def test_umltrace_basicactions_tracedpinactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_BasicActions_TracedPinActivation)
 
 
-def test_umltrace::basicactions::tracedpinactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedPinActivation.__init__)
+def test_umltrace_basicactions_tracedpinactivation_constructor_exists():
+    assert callable(umlTrace_BasicActions_TracedPinActivation.__init__)
 
 
-def test_umltrace::basicactions::tracedpinactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedPinActivation.__init__)
+def test_umltrace_basicactions_tracedpinactivation_constructor_args():
+    sig = inspect.signature(umlTrace_BasicActions_TracedPinActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::intermediateactivities::tracedactivityparameternodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation)
+def test_umltrace_intermediateactivities_tracedactivityparameternodeactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation)
 
 
-def test_umltrace::intermediateactivities::tracedactivityparameternodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation.__init__)
+def test_umltrace_intermediateactivities_tracedactivityparameternodeactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation.__init__)
 
 
-def test_umltrace::intermediateactivities::tracedactivityparameternodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation.__init__)
+def test_umltrace_intermediateactivities_tracedactivityparameternodeactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::intermediateactions::tracedcreateobjectactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActions::TracedCreateObjectActionActivation)
+def test_umltrace_intermediateactions_tracedcreateobjectactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActions_TracedCreateObjectActionActivation)
 
 
-def test_umltrace::intermediateactions::tracedcreateobjectactionactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActions::TracedCreateObjectActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedcreateobjectactionactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActions_TracedCreateObjectActionActivation.__init__)
 
 
-def test_umltrace::intermediateactions::tracedcreateobjectactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActions::TracedCreateObjectActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedcreateobjectactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActions_TracedCreateObjectActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::intermediateactions::tracedvaluespecificationactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActions::TracedValueSpecificationActionActivation)
+def test_umltrace_intermediateactions_tracedvaluespecificationactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActions_TracedValueSpecificationActionActivation)
 
 
-def test_umltrace::intermediateactions::tracedvaluespecificationactionactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActions::TracedValueSpecificationActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedvaluespecificationactionactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActions_TracedValueSpecificationActionActivation.__init__)
 
 
-def test_umltrace::intermediateactions::tracedvaluespecificationactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActions::TracedValueSpecificationActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedvaluespecificationactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActions_TracedValueSpecificationActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1306,16 +1894,16 @@ def test_tracedwritestructuralfeatureactionactivation_constructor_args():
 
 
 
-def test_umltrace::intermediateactions::tracedaddstructuralfeaturevalueactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation)
+def test_umltrace_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation)
 
 
-def test_umltrace::intermediateactions::tracedaddstructuralfeaturevalueactionactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation.__init__)
 
 
-def test_umltrace::intermediateactions::tracedaddstructuralfeaturevalueactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1334,58 +1922,58 @@ def test_tracedstructuralfeatureactionactivation_constructor_args():
 
 
 
-def test_umltrace::intermediateactions::tracedwritestructuralfeatureactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation)
+def test_umltrace_intermediateactions_tracedwritestructuralfeatureactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation)
 
 
-def test_umltrace::intermediateactions::tracedwritestructuralfeatureactionactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedwritestructuralfeatureactionactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation.__init__)
 
 
-def test_umltrace::intermediateactions::tracedwritestructuralfeatureactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedwritestructuralfeatureactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::intermediateactions::tracedreadstructuralfeatureactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation)
+def test_umltrace_intermediateactions_tracedreadstructuralfeatureactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation)
 
 
-def test_umltrace::intermediateactions::tracedreadstructuralfeatureactionactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedreadstructuralfeatureactionactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation.__init__)
 
 
-def test_umltrace::intermediateactions::tracedreadstructuralfeatureactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedreadstructuralfeatureactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::intermediateactions::tracedstructuralfeatureactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation)
+def test_umltrace_intermediateactions_tracedstructuralfeatureactionactivation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation)
 
 
-def test_umltrace::intermediateactions::tracedstructuralfeatureactionactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedstructuralfeatureactionactivation_constructor_exists():
+    assert callable(umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation.__init__)
 
 
-def test_umltrace::intermediateactions::tracedstructuralfeatureactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation.__init__)
+def test_umltrace_intermediateactions_tracedstructuralfeatureactionactivation_constructor_args():
+    sig = inspect.signature(umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::ecore::tracedemodelelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::ecore::TracedEModelElement)
+def test_umltrace_ecore_tracedemodelelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_ecore_TracedEModelElement)
 
 
-def test_umltrace::ecore::tracedemodelelement_constructor_exists():
-    assert callable(umlTrace::ecore::TracedEModelElement.__init__)
+def test_umltrace_ecore_tracedemodelelement_constructor_exists():
+    assert callable(umlTrace_ecore_TracedEModelElement.__init__)
 
 
-def test_umltrace::ecore::tracedemodelelement_constructor_args():
-    sig = inspect.signature(umlTrace::ecore::TracedEModelElement.__init__)
+def test_umltrace_ecore_tracedemodelelement_constructor_args():
+    sig = inspect.signature(umlTrace_ecore_TracedEModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1404,5966 +1992,30 @@ def test_tracedmessageend_constructor_args():
 
 
 
-def test_umltrace::uml::tracedgate_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedGate)
+def test_umltrace_uml_tracedgate_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedGate)
 
 
-def test_umltrace::uml::tracedgate_constructor_exists():
-    assert callable(umlTrace::uml::TracedGate.__init__)
+def test_umltrace_uml_tracedgate_constructor_exists():
+    assert callable(umlTrace_uml_TracedGate.__init__)
 
 
-def test_umltrace::uml::tracedgate_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedGate.__init__)
+def test_umltrace_uml_tracedgate_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedGate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracedexecution_is_not_abstract():
-    assert not inspect.isabstract(TracedExecution)
+def test_uml_tracedaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAction)
 
 
-def test_tracedexecution_constructor_exists():
-    assert callable(TracedExecution.__init__)
+def test_uml_tracedaction_constructor_exists():
+    assert callable(uml_TracedAction.__init__)
 
 
-def test_tracedexecution_constructor_args():
-    sig = inspect.signature(TracedExecution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::basicbehaviors::tracedopaquebehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution)
-
-
-def test_umltrace::basicbehaviors::tracedopaquebehaviorexecution_constructor_exists():
-    assert callable(umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution.__init__)
-
-
-def test_umltrace::basicbehaviors::tracedopaquebehaviorexecution_constructor_args():
-    sig = inspect.signature(umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedexecutionspecification_is_not_abstract():
-    assert not inspect.isabstract(TracedExecutionSpecification)
-
-
-def test_tracedexecutionspecification_constructor_exists():
-    assert callable(TracedExecutionSpecification.__init__)
-
-
-def test_tracedexecutionspecification_constructor_args():
-    sig = inspect.signature(TracedExecutionSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedbehaviorexecutionspecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedBehaviorExecutionSpecification)
-
-
-def test_umltrace::uml::tracedbehaviorexecutionspecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedBehaviorExecutionSpecification.__init__)
-
-
-def test_umltrace::uml::tracedbehaviorexecutionspecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedBehaviorExecutionSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(TracedOccurrenceSpecification)
-
-
-def test_tracedoccurrencespecification_constructor_exists():
-    assert callable(TracedOccurrenceSpecification.__init__)
-
-
-def test_tracedoccurrencespecification_constructor_args():
-    sig = inspect.signature(TracedOccurrenceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedexecutionoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExecutionOccurrenceSpecification)
-
-
-def test_umltrace::uml::tracedexecutionoccurrencespecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedExecutionOccurrenceSpecification.__init__)
-
-
-def test_umltrace::uml::tracedexecutionoccurrencespecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExecutionOccurrenceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedopaquebehavior_is_not_abstract():
-    assert not inspect.isabstract(TracedOpaqueBehavior)
-
-
-def test_tracedopaquebehavior_constructor_exists():
-    assert callable(TracedOpaqueBehavior.__init__)
-
-
-def test_tracedopaquebehavior_constructor_args():
-    sig = inspect.signature(TracedOpaqueBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedfunctionbehavior_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedFunctionBehavior)
-
-
-def test_umltrace::uml::tracedfunctionbehavior_constructor_exists():
-    assert callable(umlTrace::uml::TracedFunctionBehavior.__init__)
-
-
-def test_umltrace::uml::tracedfunctionbehavior_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedFunctionBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedstructuredclassifier_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStructuredClassifier)
-
-
-def test_uml::tracedstructuredclassifier_constructor_exists():
-    assert callable(uml::TracedStructuredClassifier.__init__)
-
-
-def test_uml::tracedstructuredclassifier_constructor_args():
-    sig = inspect.signature(uml::TracedStructuredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedmultiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(TracedMultiplicityElement)
-
-
-def test_tracedmultiplicityelement_constructor_exists():
-    assert callable(TracedMultiplicityElement.__init__)
-
-
-def test_tracedmultiplicityelement_constructor_args():
-    sig = inspect.signature(TracedMultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconnectorend_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConnectorEnd)
-
-
-def test_umltrace::uml::tracedconnectorend_constructor_exists():
-    assert callable(umlTrace::uml::TracedConnectorEnd.__init__)
-
-
-def test_umltrace::uml::tracedconnectorend_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConnectorEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactionexecutionspecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActionExecutionSpecification)
-
-
-def test_umltrace::uml::tracedactionexecutionspecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedActionExecutionSpecification.__init__)
-
-
-def test_umltrace::uml::tracedactionexecutionspecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActionExecutionSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedobjectnode_is_not_abstract():
-    assert not inspect.isabstract(TracedObjectNode)
-
-
-def test_tracedobjectnode_constructor_exists():
-    assert callable(TracedObjectNode.__init__)
-
-
-def test_tracedobjectnode_constructor_args():
-    sig = inspect.signature(TracedObjectNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedexpansionnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExpansionNode)
-
-
-def test_umltrace::uml::tracedexpansionnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedExpansionNode.__init__)
-
-
-def test_umltrace::uml::tracedexpansionnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExpansionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivityparameternode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivityParameterNode)
-
-
-def test_umltrace::uml::tracedactivityparameternode_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivityParameterNode.__init__)
-
-
-def test_umltrace::uml::tracedactivityparameternode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivityParameterNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcentralbuffernode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCentralBufferNode)
-
-
-def test_umltrace::uml::tracedcentralbuffernode_constructor_exists():
-    assert callable(umlTrace::uml::TracedCentralBufferNode.__init__)
-
-
-def test_umltrace::uml::tracedcentralbuffernode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCentralBufferNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedcentralbuffernode_is_not_abstract():
-    assert not inspect.isabstract(TracedCentralBufferNode)
-
-
-def test_tracedcentralbuffernode_constructor_exists():
-    assert callable(TracedCentralBufferNode.__init__)
-
-
-def test_tracedcentralbuffernode_constructor_args():
-    sig = inspect.signature(TracedCentralBufferNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddatastorenode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDataStoreNode)
-
-
-def test_umltrace::uml::traceddatastorenode_constructor_exists():
-    assert callable(umlTrace::uml::TracedDataStoreNode.__init__)
-
-
-def test_umltrace::uml::traceddatastorenode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDataStoreNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_traceddatatype_is_not_abstract():
-    assert not inspect.isabstract(TracedDataType)
-
-
-def test_traceddatatype_constructor_exists():
-    assert callable(TracedDataType.__init__)
-
-
-def test_traceddatatype_constructor_args():
-    sig = inspect.signature(TracedDataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedenumeration_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedEnumeration)
-
-
-def test_umltrace::uml::tracedenumeration_constructor_exists():
-    assert callable(umlTrace::uml::TracedEnumeration.__init__)
-
-
-def test_umltrace::uml::tracedenumeration_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedEnumeration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPrimitiveType)
-
-
-def test_umltrace::uml::tracedprimitivetype_constructor_exists():
-    assert callable(umlTrace::uml::TracedPrimitiveType.__init__)
-
-
-def test_umltrace::uml::tracedprimitivetype_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedmessageevent_is_not_abstract():
-    assert not inspect.isabstract(TracedMessageEvent)
-
-
-def test_tracedmessageevent_constructor_exists():
-    assert callable(TracedMessageEvent.__init__)
-
-
-def test_tracedmessageevent_constructor_args():
-    sig = inspect.signature(TracedMessageEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcallevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCallEvent)
-
-
-def test_umltrace::uml::tracedcallevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedCallEvent.__init__)
-
-
-def test_umltrace::uml::tracedcallevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCallEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedanyreceiveevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAnyReceiveEvent)
-
-
-def test_umltrace::uml::tracedanyreceiveevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedAnyReceiveEvent.__init__)
-
-
-def test_umltrace::uml::tracedanyreceiveevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAnyReceiveEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedbehavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedBehavioralFeature)
-
-
-def test_uml::tracedbehavioralfeature_constructor_exists():
-    assert callable(uml::TracedBehavioralFeature.__init__)
-
-
-def test_uml::tracedbehavioralfeature_constructor_args():
-    sig = inspect.signature(uml::TracedBehavioralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(TracedTemplateParameter)
-
-
-def test_tracedtemplateparameter_constructor_exists():
-    assert callable(TracedTemplateParameter.__init__)
-
-
-def test_tracedtemplateparameter_constructor_args():
-    sig = inspect.signature(TracedTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconnectableelementtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConnectableElementTemplateParameter)
-
-
-def test_umltrace::uml::tracedconnectableelementtemplateparameter_constructor_exists():
-    assert callable(umlTrace::uml::TracedConnectableElementTemplateParameter.__init__)
-
-
-def test_umltrace::uml::tracedconnectableelementtemplateparameter_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConnectableElementTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclassifiertemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClassifierTemplateParameter)
-
-
-def test_umltrace::uml::tracedclassifiertemplateparameter_constructor_exists():
-    assert callable(umlTrace::uml::TracedClassifierTemplateParameter.__init__)
-
-
-def test_umltrace::uml::tracedclassifiertemplateparameter_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClassifierTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedpackage_is_not_abstract():
-    assert not inspect.isabstract(TracedPackage)
-
-
-def test_tracedpackage_constructor_exists():
-    assert callable(TracedPackage.__init__)
-
-
-def test_tracedpackage_constructor_args():
-    sig = inspect.signature(TracedPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedprofile_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedProfile)
-
-
-def test_umltrace::uml::tracedprofile_constructor_exists():
-    assert callable(umlTrace::uml::TracedProfile.__init__)
-
-
-def test_umltrace::uml::tracedprofile_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedProfile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmodel_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedModel)
-
-
-def test_umltrace::uml::tracedmodel_constructor_exists():
-    assert callable(umlTrace::uml::TracedModel.__init__)
-
-
-def test_umltrace::uml::tracedmodel_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedtransition_is_not_abstract():
-    assert not inspect.isabstract(TracedTransition)
-
-
-def test_tracedtransition_constructor_exists():
-    assert callable(TracedTransition.__init__)
-
-
-def test_tracedtransition_constructor_args():
-    sig = inspect.signature(TracedTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedprotocoltransition_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedProtocolTransition)
-
-
-def test_umltrace::uml::tracedprotocoltransition_constructor_exists():
-    assert callable(umlTrace::uml::TracedProtocolTransition.__init__)
-
-
-def test_umltrace::uml::tracedprotocoltransition_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedProtocolTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedwritevariableaction_is_not_abstract():
-    assert not inspect.isabstract(TracedWriteVariableAction)
-
-
-def test_tracedwritevariableaction_constructor_exists():
-    assert callable(TracedWriteVariableAction.__init__)
-
-
-def test_tracedwritevariableaction_constructor_args():
-    sig = inspect.signature(TracedWriteVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedremovevariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRemoveVariableValueAction)
-
-
-def test_umltrace::uml::tracedremovevariablevalueaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedRemoveVariableValueAction.__init__)
-
-
-def test_umltrace::uml::tracedremovevariablevalueaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRemoveVariableValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedaddvariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAddVariableValueAction)
-
-
-def test_umltrace::uml::tracedaddvariablevalueaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedAddVariableValueAction.__init__)
-
-
-def test_umltrace::uml::tracedaddvariablevalueaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAddVariableValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedinteractionuse_is_not_abstract():
-    assert not inspect.isabstract(TracedInteractionUse)
-
-
-def test_tracedinteractionuse_constructor_exists():
-    assert callable(TracedInteractionUse.__init__)
-
-
-def test_tracedinteractionuse_constructor_args():
-    sig = inspect.signature(TracedInteractionUse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedpartdecomposition_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPartDecomposition)
-
-
-def test_umltrace::uml::tracedpartdecomposition_constructor_exists():
-    assert callable(umlTrace::uml::TracedPartDecomposition.__init__)
-
-
-def test_umltrace::uml::tracedpartdecomposition_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPartDecomposition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedobservation_is_not_abstract():
-    assert not inspect.isabstract(TracedObservation)
-
-
-def test_tracedobservation_constructor_exists():
-    assert callable(TracedObservation.__init__)
-
-
-def test_tracedobservation_constructor_args():
-    sig = inspect.signature(TracedObservation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtimeobservation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTimeObservation)
-
-
-def test_umltrace::uml::tracedtimeobservation_constructor_exists():
-    assert callable(umlTrace::uml::TracedTimeObservation.__init__)
-
-
-def test_umltrace::uml::tracedtimeobservation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTimeObservation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddurationobservation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDurationObservation)
-
-
-def test_umltrace::uml::traceddurationobservation_constructor_exists():
-    assert callable(umlTrace::uml::TracedDurationObservation.__init__)
-
-
-def test_umltrace::uml::traceddurationobservation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDurationObservation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedoperationtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOperationTemplateParameter)
-
-
-def test_umltrace::uml::tracedoperationtemplateparameter_constructor_exists():
-    assert callable(umlTrace::uml::TracedOperationTemplateParameter.__init__)
-
-
-def test_umltrace::uml::tracedoperationtemplateparameter_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOperationTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedinterval_is_not_abstract():
-    assert not inspect.isabstract(TracedInterval)
-
-
-def test_tracedinterval_constructor_exists():
-    assert callable(TracedInterval.__init__)
-
-
-def test_tracedinterval_constructor_args():
-    sig = inspect.signature(TracedInterval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddurationinterval_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDurationInterval)
-
-
-def test_umltrace::uml::traceddurationinterval_constructor_exists():
-    assert callable(umlTrace::uml::TracedDurationInterval.__init__)
-
-
-def test_umltrace::uml::traceddurationinterval_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDurationInterval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtimeinterval_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTimeInterval)
-
-
-def test_umltrace::uml::tracedtimeinterval_constructor_exists():
-    assert callable(umlTrace::uml::TracedTimeInterval.__init__)
-
-
-def test_umltrace::uml::tracedtimeinterval_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTimeInterval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedsignalevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSignalEvent)
-
-
-def test_umltrace::uml::tracedsignalevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedSignalEvent.__init__)
-
-
-def test_umltrace::uml::tracedsignalevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSignalEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedbehavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(TracedBehavioralFeature)
-
-
-def test_tracedbehavioralfeature_constructor_exists():
-    assert callable(TracedBehavioralFeature.__init__)
-
-
-def test_tracedbehavioralfeature_constructor_args():
-    sig = inspect.signature(TracedBehavioralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreception_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReception)
-
-
-def test_umltrace::uml::tracedreception_constructor_exists():
-    assert callable(umlTrace::uml::TracedReception.__init__)
-
-
-def test_umltrace::uml::tracedreception_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReception.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_traceddependency_is_not_abstract():
-    assert not inspect.isabstract(TracedDependency)
-
-
-def test_traceddependency_constructor_exists():
-    assert callable(TracedDependency.__init__)
-
-
-def test_traceddependency_constructor_args():
-    sig = inspect.signature(TracedDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedusage_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedUsage)
-
-
-def test_umltrace::uml::tracedusage_constructor_exists():
-    assert callable(umlTrace::uml::TracedUsage.__init__)
-
-
-def test_umltrace::uml::tracedusage_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedUsage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedabstraction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAbstraction)
-
-
-def test_umltrace::uml::tracedabstraction_constructor_exists():
-    assert callable(umlTrace::uml::TracedAbstraction.__init__)
-
-
-def test_umltrace::uml::tracedabstraction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAbstraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedabstraction_is_not_abstract():
-    assert not inspect.isabstract(TracedAbstraction)
-
-
-def test_tracedabstraction_constructor_exists():
-    assert callable(TracedAbstraction.__init__)
-
-
-def test_tracedabstraction_constructor_args():
-    sig = inspect.signature(TracedAbstraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmanifestation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedManifestation)
-
-
-def test_umltrace::uml::tracedmanifestation_constructor_exists():
-    assert callable(umlTrace::uml::TracedManifestation.__init__)
-
-
-def test_umltrace::uml::tracedmanifestation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedManifestation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedrealization_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRealization)
-
-
-def test_umltrace::uml::tracedrealization_constructor_exists():
-    assert callable(umlTrace::uml::TracedRealization.__init__)
-
-
-def test_umltrace::uml::tracedrealization_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedrealization_is_not_abstract():
-    assert not inspect.isabstract(TracedRealization)
-
-
-def test_tracedrealization_constructor_exists():
-    assert callable(TracedRealization.__init__)
-
-
-def test_tracedrealization_constructor_args():
-    sig = inspect.signature(TracedRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcomponentrealization_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedComponentRealization)
-
-
-def test_umltrace::uml::tracedcomponentrealization_constructor_exists():
-    assert callable(umlTrace::uml::TracedComponentRealization.__init__)
-
-
-def test_umltrace::uml::tracedcomponentrealization_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedComponentRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinterfacerealization_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInterfaceRealization)
-
-
-def test_umltrace::uml::tracedinterfacerealization_constructor_exists():
-    assert callable(umlTrace::uml::TracedInterfaceRealization.__init__)
-
-
-def test_umltrace::uml::tracedinterfacerealization_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInterfaceRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedsubstitution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSubstitution)
-
-
-def test_umltrace::uml::tracedsubstitution_constructor_exists():
-    assert callable(umlTrace::uml::TracedSubstitution.__init__)
-
-
-def test_umltrace::uml::tracedsubstitution_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSubstitution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedinstancespecification_is_not_abstract():
-    assert not inspect.isabstract(TracedInstanceSpecification)
-
-
-def test_tracedinstancespecification_constructor_exists():
-    assert callable(TracedInstanceSpecification.__init__)
-
-
-def test_tracedinstancespecification_constructor_args():
-    sig = inspect.signature(TracedInstanceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedenumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedEnumerationLiteral)
-
-
-def test_umltrace::uml::tracedenumerationliteral_constructor_exists():
-    assert callable(umlTrace::uml::TracedEnumerationLiteral.__init__)
-
-
-def test_umltrace::uml::tracedenumerationliteral_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedEnumerationLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedaccepteventaction_is_not_abstract():
-    assert not inspect.isabstract(TracedAcceptEventAction)
-
-
-def test_tracedaccepteventaction_constructor_exists():
-    assert callable(TracedAcceptEventAction.__init__)
-
-
-def test_tracedaccepteventaction_constructor_args():
-    sig = inspect.signature(TracedAcceptEventAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedacceptcallaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAcceptCallAction)
-
-
-def test_umltrace::uml::tracedacceptcallaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedAcceptCallAction.__init__)
-
-
-def test_umltrace::uml::tracedacceptcallaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAcceptCallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedlinkenddata_is_not_abstract():
-    assert not inspect.isabstract(TracedLinkEndData)
-
-
-def test_tracedlinkenddata_constructor_exists():
-    assert callable(TracedLinkEndData.__init__)
-
-
-def test_tracedlinkenddata_constructor_args():
-    sig = inspect.signature(TracedLinkEndData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedlinkendcreationdata_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLinkEndCreationData)
-
-
-def test_umltrace::uml::tracedlinkendcreationdata_constructor_exists():
-    assert callable(umlTrace::uml::TracedLinkEndCreationData.__init__)
-
-
-def test_umltrace::uml::tracedlinkendcreationdata_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLinkEndCreationData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedlinkenddestructiondata_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLinkEndDestructionData)
-
-
-def test_umltrace::uml::tracedlinkenddestructiondata_constructor_exists():
-    assert callable(umlTrace::uml::TracedLinkEndDestructionData.__init__)
-
-
-def test_umltrace::uml::tracedlinkenddestructiondata_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLinkEndDestructionData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedclass_is_not_abstract():
-    assert not inspect.isabstract(TracedClass)
-
-
-def test_tracedclass_constructor_exists():
-    assert callable(TracedClass.__init__)
-
-
-def test_tracedclass_constructor_args():
-    sig = inspect.signature(TracedClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcomponent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedComponent)
-
-
-def test_umltrace::uml::tracedcomponent_constructor_exists():
-    assert callable(umlTrace::uml::TracedComponent.__init__)
-
-
-def test_umltrace::uml::tracedcomponent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstereotype_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStereotype)
-
-
-def test_umltrace::uml::tracedstereotype_constructor_exists():
-    assert callable(umlTrace::uml::TracedStereotype.__init__)
-
-
-def test_umltrace::uml::tracedstereotype_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStereotype.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedbehavior_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedBehavior)
-
-
-def test_umltrace::uml::tracedbehavior_constructor_exists():
-    assert callable(umlTrace::uml::TracedBehavior.__init__)
-
-
-def test_umltrace::uml::tracedbehavior_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedinteractionfragment_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInteractionFragment)
-
-
-def test_uml::tracedinteractionfragment_constructor_exists():
-    assert callable(uml::TracedInteractionFragment.__init__)
-
-
-def test_uml::tracedinteractionfragment_constructor_args():
-    sig = inspect.signature(uml::TracedInteractionFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedbehavior_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedBehavior)
-
-
-def test_uml::tracedbehavior_constructor_exists():
-    assert callable(uml::TracedBehavior.__init__)
-
-
-def test_uml::tracedbehavior_constructor_args():
-    sig = inspect.signature(uml::TracedBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinteraction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInteraction)
-
-
-def test_umltrace::uml::tracedinteraction_constructor_exists():
-    assert callable(umlTrace::uml::TracedInteraction.__init__)
-
-
-def test_umltrace::uml::tracedinteraction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInteraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedactivityedge_is_not_abstract():
-    assert not inspect.isabstract(TracedActivityEdge)
-
-
-def test_tracedactivityedge_constructor_exists():
-    assert callable(TracedActivityEdge.__init__)
-
-
-def test_tracedactivityedge_constructor_args():
-    sig = inspect.signature(TracedActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcontrolflow_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedControlFlow)
-
-
-def test_umltrace::uml::tracedcontrolflow_constructor_exists():
-    assert callable(umlTrace::uml::TracedControlFlow.__init__)
-
-
-def test_umltrace::uml::tracedcontrolflow_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedControlFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedobjectflow_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedObjectFlow)
-
-
-def test_umltrace::uml::tracedobjectflow_constructor_exists():
-    assert callable(umlTrace::uml::TracedObjectFlow.__init__)
-
-
-def test_umltrace::uml::tracedobjectflow_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedObjectFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedstatemachine_is_not_abstract():
-    assert not inspect.isabstract(TracedStateMachine)
-
-
-def test_tracedstatemachine_constructor_exists():
-    assert callable(TracedStateMachine.__init__)
-
-
-def test_tracedstatemachine_constructor_args():
-    sig = inspect.signature(TracedStateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedprotocolstatemachine_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedProtocolStateMachine)
-
-
-def test_umltrace::uml::tracedprotocolstatemachine_constructor_exists():
-    assert callable(umlTrace::uml::TracedProtocolStateMachine.__init__)
-
-
-def test_umltrace::uml::tracedprotocolstatemachine_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedProtocolStateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddeployment_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDeployment)
-
-
-def test_umltrace::uml::traceddeployment_constructor_exists():
-    assert callable(umlTrace::uml::TracedDeployment.__init__)
-
-
-def test_umltrace::uml::traceddeployment_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDeployment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedbehavior_is_not_abstract():
-    assert not inspect.isabstract(TracedBehavior)
-
-
-def test_tracedbehavior_constructor_exists():
-    assert callable(TracedBehavior.__init__)
-
-
-def test_tracedbehavior_constructor_args():
-    sig = inspect.signature(TracedBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedopaquebehavior_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOpaqueBehavior)
-
-
-def test_umltrace::uml::tracedopaquebehavior_constructor_exists():
-    assert callable(umlTrace::uml::TracedOpaqueBehavior.__init__)
-
-
-def test_umltrace::uml::tracedopaquebehavior_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOpaqueBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivity_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivity)
-
-
-def test_umltrace::uml::tracedactivity_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivity.__init__)
-
-
-def test_umltrace::uml::tracedactivity_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstatemachine_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStateMachine)
-
-
-def test_umltrace::uml::tracedstatemachine_constructor_exists():
-    assert callable(umlTrace::uml::TracedStateMachine.__init__)
-
-
-def test_umltrace::uml::tracedstatemachine_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedactivitygroup_is_not_abstract():
-    assert not inspect.isabstract(TracedActivityGroup)
-
-
-def test_tracedactivitygroup_constructor_exists():
-    assert callable(TracedActivityGroup.__init__)
-
-
-def test_tracedactivitygroup_constructor_args():
-    sig = inspect.signature(TracedActivityGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinterruptibleactivityregion_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInterruptibleActivityRegion)
-
-
-def test_umltrace::uml::tracedinterruptibleactivityregion_constructor_exists():
-    assert callable(umlTrace::uml::TracedInterruptibleActivityRegion.__init__)
-
-
-def test_umltrace::uml::tracedinterruptibleactivityregion_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInterruptibleActivityRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivitypartition_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivityPartition)
-
-
-def test_umltrace::uml::tracedactivitypartition_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivityPartition.__init__)
-
-
-def test_umltrace::uml::tracedactivitypartition_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivityPartition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedrelationship_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRelationship)
-
-
-def test_uml::tracedrelationship_constructor_exists():
-    assert callable(uml::TracedRelationship.__init__)
-
-
-def test_uml::tracedrelationship_constructor_args():
-    sig = inspect.signature(uml::TracedRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedactivityexecution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedActivityExecution)
-
-
-def test_umltrace::intermediateactivities::tracedactivityexecution_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedActivityExecution.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedactivityexecution_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedActivityExecution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedsemanticvisitor_is_not_abstract():
-    assert not inspect.isabstract(TracedSemanticVisitor)
-
-
-def test_tracedsemanticvisitor_constructor_exists():
-    assert callable(TracedSemanticVisitor.__init__)
-
-
-def test_tracedsemanticvisitor_constructor_args():
-    sig = inspect.signature(TracedSemanticVisitor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::kernel::tracedevaluation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedEvaluation)
-
-
-def test_umltrace::kernel::tracedevaluation_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedEvaluation.__init__)
-
-
-def test_umltrace::kernel::tracedevaluation_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedEvaluation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::kernel::tracedvalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Kernel::TracedValue)
-
-
-def test_umltrace::kernel::tracedvalue_constructor_exists():
-    assert callable(umlTrace::Kernel::TracedValue.__init__)
-
-
-def test_umltrace::kernel::tracedvalue_constructor_args():
-    sig = inspect.signature(umlTrace::Kernel::TracedValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedactivitynodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedActivityNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedactivitynodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedActivityNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedactivitynodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedActivityNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedactivitynodeactivation_is_not_abstract():
-    assert not inspect.isabstract(TracedActivityNodeActivation)
-
-
-def test_tracedactivitynodeactivation_constructor_exists():
-    assert callable(TracedActivityNodeActivation.__init__)
-
-
-def test_tracedactivitynodeactivation_constructor_args():
-    sig = inspect.signature(TracedActivityNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::basicactions::tracedactionactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::BasicActions::TracedActionActivation)
-
-
-def test_umltrace::basicactions::tracedactionactivation_constructor_exists():
-    assert callable(umlTrace::BasicActions::TracedActionActivation.__init__)
-
-
-def test_umltrace::basicactions::tracedactionactivation_constructor_args():
-    sig = inspect.signature(umlTrace::BasicActions::TracedActionActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedobjectnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedObjectNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedobjectnodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedObjectNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedobjectnodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedObjectNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedcontrolnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedControlNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedcontrolnodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedControlNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedcontrolnodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedControlNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedcontrolnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(TracedControlNodeActivation)
-
-
-def test_tracedcontrolnodeactivation_constructor_exists():
-    assert callable(TracedControlNodeActivation.__init__)
-
-
-def test_tracedcontrolnodeactivation_constructor_args():
-    sig = inspect.signature(TracedControlNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedinitialnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedInitialNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedinitialnodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedInitialNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedinitialnodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedInitialNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedactivityfinalnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedactivityfinalnodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedactivityfinalnodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::traceddecisionnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedDecisionNodeActivation)
-
-
-def test_umltrace::intermediateactivities::traceddecisionnodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedDecisionNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::traceddecisionnodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedDecisionNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedjoinnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedJoinNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedjoinnodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedJoinNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedjoinnodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedJoinNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedmergenodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedMergeNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedmergenodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedMergeNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedmergenodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedMergeNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::intermediateactivities::tracedforknodeactivation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::IntermediateActivities::TracedForkNodeActivation)
-
-
-def test_umltrace::intermediateactivities::tracedforknodeactivation_constructor_exists():
-    assert callable(umlTrace::IntermediateActivities::TracedForkNodeActivation.__init__)
-
-
-def test_umltrace::intermediateactivities::tracedforknodeactivation_constructor_args():
-    sig = inspect.signature(umlTrace::IntermediateActivities::TracedForkNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedvertex_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedVertex)
-
-
-def test_uml::tracedvertex_constructor_exists():
-    assert callable(uml::TracedVertex.__init__)
-
-
-def test_uml::tracedvertex_constructor_args():
-    sig = inspect.signature(uml::TracedVertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedstate_is_not_abstract():
-    assert not inspect.isabstract(TracedState)
-
-
-def test_tracedstate_constructor_exists():
-    assert callable(TracedState.__init__)
-
-
-def test_tracedstate_constructor_args():
-    sig = inspect.signature(TracedState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedfinalstate_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedFinalState)
-
-
-def test_umltrace::uml::tracedfinalstate_constructor_exists():
-    assert callable(umlTrace::uml::TracedFinalState.__init__)
-
-
-def test_umltrace::uml::tracedfinalstate_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedFinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactivityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActivityFinalNode)
-
-
-def test_uml::tracedactivityfinalnode_constructor_exists():
-    assert callable(uml::TracedActivityFinalNode.__init__)
-
-
-def test_uml::tracedactivityfinalnode_constructor_args():
-    sig = inspect.signature(uml::TracedActivityFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedclassifiertemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClassifierTemplateParameter)
-
-
-def test_uml::tracedclassifiertemplateparameter_constructor_exists():
-    assert callable(uml::TracedClassifierTemplateParameter.__init__)
-
-
-def test_uml::tracedclassifiertemplateparameter_constructor_args():
-    sig = inspect.signature(uml::TracedClassifierTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedinteractionfragment_is_not_abstract():
-    assert not inspect.isabstract(TracedInteractionFragment)
-
-
-def test_tracedinteractionfragment_constructor_exists():
-    assert callable(TracedInteractionFragment.__init__)
-
-
-def test_tracedinteractionfragment_constructor_args():
-    sig = inspect.signature(TracedInteractionFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstateinvariant_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStateInvariant)
-
-
-def test_umltrace::uml::tracedstateinvariant_constructor_exists():
-    assert callable(umlTrace::uml::TracedStateInvariant.__init__)
-
-
-def test_umltrace::uml::tracedstateinvariant_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStateInvariant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedexecutionspecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExecutionSpecification)
-
-
-def test_umltrace::uml::tracedexecutionspecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedExecutionSpecification.__init__)
-
-
-def test_umltrace::uml::tracedexecutionspecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExecutionSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcombinedfragment_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCombinedFragment)
-
-
-def test_umltrace::uml::tracedcombinedfragment_constructor_exists():
-    assert callable(umlTrace::uml::TracedCombinedFragment.__init__)
-
-
-def test_umltrace::uml::tracedcombinedfragment_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCombinedFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedgeneralordering_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedGeneralOrdering)
-
-
-def test_uml::tracedgeneralordering_constructor_exists():
-    assert callable(uml::TracedGeneralOrdering.__init__)
-
-
-def test_uml::tracedgeneralordering_constructor_args():
-    sig = inspect.signature(uml::TracedGeneralOrdering.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedelementimport_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedElementImport)
-
-
-def test_uml::tracedelementimport_constructor_exists():
-    assert callable(uml::TracedElementImport.__init__)
-
-
-def test_uml::tracedelementimport_constructor_args():
-    sig = inspect.signature(uml::TracedElementImport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedmergenode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedMergeNode)
-
-
-def test_uml::tracedmergenode_constructor_exists():
-    assert callable(uml::TracedMergeNode.__init__)
-
-
-def test_uml::tracedmergenode_constructor_args():
-    sig = inspect.signature(uml::TracedMergeNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedclearassociationaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClearAssociationAction)
-
-
-def test_uml::tracedclearassociationaction_constructor_exists():
-    assert callable(uml::TracedClearAssociationAction.__init__)
-
-
-def test_uml::tracedclearassociationaction_constructor_args():
-    sig = inspect.signature(uml::TracedClearAssociationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedlinkendcreationdata_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLinkEndCreationData)
-
-
-def test_uml::tracedlinkendcreationdata_constructor_exists():
-    assert callable(uml::TracedLinkEndCreationData.__init__)
-
-
-def test_uml::tracedlinkendcreationdata_constructor_args():
-    sig = inspect.signature(uml::TracedLinkEndCreationData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedpseudostate_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPseudostate)
-
-
-def test_uml::tracedpseudostate_constructor_exists():
-    assert callable(uml::TracedPseudostate.__init__)
-
-
-def test_uml::tracedpseudostate_constructor_args():
-    sig = inspect.signature(uml::TracedPseudostate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcomponent_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedComponent)
-
-
-def test_uml::tracedcomponent_constructor_exists():
-    assert callable(uml::TracedComponent.__init__)
-
-
-def test_uml::tracedcomponent_constructor_args():
-    sig = inspect.signature(uml::TracedComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadisclassifiedobjectaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadIsClassifiedObjectAction)
-
-
-def test_uml::tracedreadisclassifiedobjectaction_constructor_exists():
-    assert callable(uml::TracedReadIsClassifiedObjectAction.__init__)
-
-
-def test_uml::tracedreadisclassifiedobjectaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadIsClassifiedObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedabstraction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAbstraction)
-
-
-def test_uml::tracedabstraction_constructor_exists():
-    assert callable(uml::TracedAbstraction.__init__)
-
-
-def test_uml::tracedabstraction_constructor_args():
-    sig = inspect.signature(uml::TracedAbstraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtimeexpression_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTimeExpression)
-
-
-def test_uml::tracedtimeexpression_constructor_exists():
-    assert callable(uml::TracedTimeExpression.__init__)
-
-
-def test_uml::tracedtimeexpression_constructor_args():
-    sig = inspect.signature(uml::TracedTimeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedvaluespecificationaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedValueSpecificationAction)
-
-
-def test_uml::tracedvaluespecificationaction_constructor_exists():
-    assert callable(uml::TracedValueSpecificationAction.__init__)
-
-
-def test_uml::tracedvaluespecificationaction_constructor_args():
-    sig = inspect.signature(uml::TracedValueSpecificationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedfunctionbehavior_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedFunctionBehavior)
-
-
-def test_uml::tracedfunctionbehavior_constructor_exists():
-    assert callable(uml::TracedFunctionBehavior.__init__)
-
-
-def test_uml::tracedfunctionbehavior_constructor_args():
-    sig = inspect.signature(uml::TracedFunctionBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_integerfunctions::tracedintegergreaterfunctionbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution)
-
-
-def test_integerfunctions::tracedintegergreaterfunctionbehaviorexecution_constructor_exists():
-    assert callable(IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution.__init__)
-
-
-def test_integerfunctions::tracedintegergreaterfunctionbehaviorexecution_constructor_args():
-    sig = inspect.signature(IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactivities::tracedmergenodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedMergeNodeActivation)
-
-
-def test_intermediateactivities::tracedmergenodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedMergeNodeActivation.__init__)
-
-
-def test_intermediateactivities::tracedmergenodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedMergeNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTemplateParameter)
-
-
-def test_uml::tracedtemplateparameter_constructor_exists():
-    assert callable(uml::TracedTemplateParameter.__init__)
-
-
-def test_uml::tracedtemplateparameter_constructor_args():
-    sig = inspect.signature(uml::TracedTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedmanifestation_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedManifestation)
-
-
-def test_uml::tracedmanifestation_constructor_exists():
-    assert callable(uml::TracedManifestation.__init__)
-
-
-def test_uml::tracedmanifestation_constructor_args():
-    sig = inspect.signature(uml::TracedManifestation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactor_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActor)
-
-
-def test_uml::tracedactor_constructor_exists():
-    assert callable(uml::TracedActor.__init__)
-
-
-def test_uml::tracedactor_constructor_args():
-    sig = inspect.signature(uml::TracedActor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedremovevariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRemoveVariableValueAction)
-
-
-def test_uml::tracedremovevariablevalueaction_constructor_exists():
-    assert callable(uml::TracedRemoveVariableValueAction.__init__)
-
-
-def test_uml::tracedremovevariablevalueaction_constructor_args():
-    sig = inspect.signature(uml::TracedRemoveVariableValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedprofile_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedProfile)
-
-
-def test_uml::tracedprofile_constructor_exists():
-    assert callable(uml::TracedProfile.__init__)
-
-
-def test_uml::tracedprofile_constructor_args():
-    sig = inspect.signature(uml::TracedProfile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtestidentityaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTestIdentityAction)
-
-
-def test_uml::tracedtestidentityaction_constructor_exists():
-    assert callable(uml::TracedTestIdentityAction.__init__)
-
-
-def test_uml::tracedtestidentityaction_constructor_args():
-    sig = inspect.signature(uml::TracedTestIdentityAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcollaboration_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCollaboration)
-
-
-def test_uml::tracedcollaboration_constructor_exists():
-    assert callable(uml::TracedCollaboration.__init__)
-
-
-def test_uml::tracedcollaboration_constructor_args():
-    sig = inspect.signature(uml::TracedCollaboration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedsendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSendSignalAction)
-
-
-def test_uml::tracedsendsignalaction_constructor_exists():
-    assert callable(uml::TracedSendSignalAction.__init__)
-
-
-def test_uml::tracedsendsignalaction_constructor_args():
-    sig = inspect.signature(uml::TracedSendSignalAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedinterfacerealization_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInterfaceRealization)
-
-
-def test_uml::tracedinterfacerealization_constructor_exists():
-    assert callable(uml::TracedInterfaceRealization.__init__)
-
-
-def test_uml::tracedinterfacerealization_constructor_args():
-    sig = inspect.signature(uml::TracedInterfaceRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedunmarshallaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedUnmarshallAction)
-
-
-def test_uml::tracedunmarshallaction_constructor_exists():
-    assert callable(uml::TracedUnmarshallAction.__init__)
-
-
-def test_uml::tracedunmarshallaction_constructor_args():
-    sig = inspect.signature(uml::TracedUnmarshallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedexpression_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExpression)
-
-
-def test_uml::tracedexpression_constructor_exists():
-    assert callable(uml::TracedExpression.__init__)
-
-
-def test_uml::tracedexpression_constructor_args():
-    sig = inspect.signature(uml::TracedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedassociation_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAssociation)
-
-
-def test_uml::tracedassociation_constructor_exists():
-    assert callable(uml::TracedAssociation.__init__)
-
-
-def test_uml::tracedassociation_constructor_args():
-    sig = inspect.signature(uml::TracedAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedclearstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClearStructuralFeatureAction)
-
-
-def test_uml::tracedclearstructuralfeatureaction_constructor_exists():
-    assert callable(uml::TracedClearStructuralFeatureAction.__init__)
-
-
-def test_uml::tracedclearstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(uml::TracedClearStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedaddvariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAddVariableValueAction)
-
-
-def test_uml::tracedaddvariablevalueaction_constructor_exists():
-    assert callable(uml::TracedAddVariableValueAction.__init__)
-
-
-def test_uml::tracedaddvariablevalueaction_constructor_args():
-    sig = inspect.signature(uml::TracedAddVariableValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedliteralreal_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLiteralReal)
-
-
-def test_uml::tracedliteralreal_constructor_exists():
-    assert callable(uml::TracedLiteralReal.__init__)
-
-
-def test_uml::tracedliteralreal_constructor_args():
-    sig = inspect.signature(uml::TracedLiteralReal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactions::tracedcreateobjectactionactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::TracedCreateObjectActionActivation)
-
-
-def test_intermediateactions::tracedcreateobjectactionactivation_constructor_exists():
-    assert callable(IntermediateActions::TracedCreateObjectActionActivation.__init__)
-
-
-def test_intermediateactions::tracedcreateobjectactionactivation_constructor_args():
-    sig = inspect.signature(IntermediateActions::TracedCreateObjectActionActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedslot_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSlot)
-
-
-def test_uml::tracedslot_constructor_exists():
-    assert callable(uml::TracedSlot.__init__)
-
-
-def test_uml::tracedslot_constructor_args():
-    sig = inspect.signature(uml::TracedSlot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedliteralnull_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLiteralNull)
-
-
-def test_uml::tracedliteralnull_constructor_exists():
-    assert callable(uml::TracedLiteralNull.__init__)
-
-
-def test_uml::tracedliteralnull_constructor_args():
-    sig = inspect.signature(uml::TracedLiteralNull.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactions::tracedvaluespecificationactionactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::TracedValueSpecificationActionActivation)
-
-
-def test_intermediateactions::tracedvaluespecificationactionactivation_constructor_exists():
-    assert callable(IntermediateActions::TracedValueSpecificationActionActivation.__init__)
-
-
-def test_intermediateactions::tracedvaluespecificationactionactivation_constructor_args():
-    sig = inspect.signature(IntermediateActions::TracedValueSpecificationActionActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedstartobjectbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStartObjectBehaviorAction)
-
-
-def test_uml::tracedstartobjectbehavioraction_constructor_exists():
-    assert callable(uml::TracedStartObjectBehaviorAction.__init__)
-
-
-def test_uml::tracedstartobjectbehavioraction_constructor_args():
-    sig = inspect.signature(uml::TracedStartObjectBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedliteralboolean_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLiteralBoolean)
-
-
-def test_uml::tracedliteralboolean_constructor_exists():
-    assert callable(uml::TracedLiteralBoolean.__init__)
-
-
-def test_uml::tracedliteralboolean_constructor_args():
-    sig = inspect.signature(uml::TracedLiteralBoolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadlinkaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadLinkAction)
-
-
-def test_uml::tracedreadlinkaction_constructor_exists():
-    assert callable(uml::TracedReadLinkAction.__init__)
-
-
-def test_uml::tracedreadlinkaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedinclude_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInclude)
-
-
-def test_uml::tracedinclude_constructor_exists():
-    assert callable(uml::TracedInclude.__init__)
-
-
-def test_uml::tracedinclude_constructor_args():
-    sig = inspect.signature(uml::TracedInclude.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedregion_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRegion)
-
-
-def test_uml::tracedregion_constructor_exists():
-    assert callable(uml::TracedRegion.__init__)
-
-
-def test_uml::tracedregion_constructor_args():
-    sig = inspect.signature(uml::TracedRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedstate_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedState)
-
-
-def test_uml::tracedstate_constructor_exists():
-    assert callable(uml::TracedState.__init__)
-
-
-def test_uml::tracedstate_constructor_args():
-    sig = inspect.signature(uml::TracedState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPrimitiveType)
-
-
-def test_uml::tracedprimitivetype_constructor_exists():
-    assert callable(uml::TracedPrimitiveType.__init__)
-
-
-def test_uml::tracedprimitivetype_constructor_args():
-    sig = inspect.signature(uml::TracedPrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedstringexpression_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStringExpression)
-
-
-def test_uml::tracedstringexpression_constructor_exists():
-    assert callable(uml::TracedStringExpression.__init__)
-
-
-def test_uml::tracedstringexpression_constructor_args():
-    sig = inspect.signature(uml::TracedStringExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedlinkenddestructiondata_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLinkEndDestructionData)
-
-
-def test_uml::tracedlinkenddestructiondata_constructor_exists():
-    assert callable(uml::TracedLinkEndDestructionData.__init__)
-
-
-def test_uml::tracedlinkenddestructiondata_constructor_args():
-    sig = inspect.signature(uml::TracedLinkEndDestructionData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadextentaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadExtentAction)
-
-
-def test_uml::tracedreadextentaction_constructor_exists():
-    assert callable(uml::TracedReadExtentAction.__init__)
-
-
-def test_uml::tracedreadextentaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadExtentAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicactions::tracedoutputpinactivation_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::TracedOutputPinActivation)
-
-
-def test_basicactions::tracedoutputpinactivation_constructor_exists():
-    assert callable(BasicActions::TracedOutputPinActivation.__init__)
-
-
-def test_basicactions::tracedoutputpinactivation_constructor_args():
-    sig = inspect.signature(BasicActions::TracedOutputPinActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtemplatesignature_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTemplateSignature)
-
-
-def test_uml::tracedtemplatesignature_constructor_exists():
-    assert callable(uml::TracedTemplateSignature.__init__)
-
-
-def test_uml::tracedtemplatesignature_constructor_args():
-    sig = inspect.signature(uml::TracedTemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedraiseexceptionaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRaiseExceptionAction)
-
-
-def test_uml::tracedraiseexceptionaction_constructor_exists():
-    assert callable(uml::TracedRaiseExceptionAction.__init__)
-
-
-def test_uml::tracedraiseexceptionaction_constructor_args():
-    sig = inspect.signature(uml::TracedRaiseExceptionAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcommunicationpath_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCommunicationPath)
-
-
-def test_uml::tracedcommunicationpath_constructor_exists():
-    assert callable(uml::TracedCommunicationPath.__init__)
-
-
-def test_uml::tracedcommunicationpath_constructor_args():
-    sig = inspect.signature(uml::TracedCommunicationPath.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kernel::tracedliteralbooleanevaluation_is_not_abstract():
-    assert not inspect.isabstract(Kernel::TracedLiteralBooleanEvaluation)
-
-
-def test_kernel::tracedliteralbooleanevaluation_constructor_exists():
-    assert callable(Kernel::TracedLiteralBooleanEvaluation.__init__)
-
-
-def test_kernel::tracedliteralbooleanevaluation_constructor_args():
-    sig = inspect.signature(Kernel::TracedLiteralBooleanEvaluation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedenumeration_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedEnumeration)
-
-
-def test_uml::tracedenumeration_constructor_exists():
-    assert callable(uml::TracedEnumeration.__init__)
-
-
-def test_uml::tracedenumeration_constructor_args():
-    sig = inspect.signature(uml::TracedEnumeration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadlinkobjectendaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadLinkObjectEndAction)
-
-
-def test_uml::tracedreadlinkobjectendaction_constructor_exists():
-    assert callable(uml::TracedReadLinkObjectEndAction.__init__)
-
-
-def test_uml::tracedreadlinkobjectendaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadLinkObjectEndAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcallbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCallBehaviorAction)
-
-
-def test_uml::tracedcallbehavioraction_constructor_exists():
-    assert callable(uml::TracedCallBehaviorAction.__init__)
-
-
-def test_uml::tracedcallbehavioraction_constructor_args():
-    sig = inspect.signature(uml::TracedCallBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedvariable_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedVariable)
-
-
-def test_uml::tracedvariable_constructor_exists():
-    assert callable(uml::TracedVariable.__init__)
-
-
-def test_uml::tracedvariable_constructor_args():
-    sig = inspect.signature(uml::TracedVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedconnectorend_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConnectorEnd)
-
-
-def test_uml::tracedconnectorend_constructor_exists():
-    assert callable(uml::TracedConnectorEnd.__init__)
-
-
-def test_uml::tracedconnectorend_constructor_args():
-    sig = inspect.signature(uml::TracedConnectorEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedartifact_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedArtifact)
-
-
-def test_uml::tracedartifact_constructor_exists():
-    assert callable(uml::TracedArtifact.__init__)
-
-
-def test_uml::tracedartifact_constructor_args():
-    sig = inspect.signature(uml::TracedArtifact.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcalloperationaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCallOperationAction)
-
-
-def test_uml::tracedcalloperationaction_constructor_exists():
-    assert callable(uml::TracedCallOperationAction.__init__)
-
-
-def test_uml::tracedcalloperationaction_constructor_args():
-    sig = inspect.signature(uml::TracedCallOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedliteralunlimitednatural_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLiteralUnlimitedNatural)
-
-
-def test_uml::tracedliteralunlimitednatural_constructor_exists():
-    assert callable(uml::TracedLiteralUnlimitedNatural.__init__)
-
-
-def test_uml::tracedliteralunlimitednatural_constructor_args():
-    sig = inspect.signature(uml::TracedLiteralUnlimitedNatural.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddurationobservation_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDurationObservation)
-
-
-def test_uml::traceddurationobservation_constructor_exists():
-    assert callable(uml::TracedDurationObservation.__init__)
-
-
-def test_uml::traceddurationobservation_constructor_args():
-    sig = inspect.signature(uml::TracedDurationObservation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedbehaviorexecutionspecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedBehaviorExecutionSpecification)
-
-
-def test_uml::tracedbehaviorexecutionspecification_constructor_exists():
-    assert callable(uml::TracedBehaviorExecutionSpecification.__init__)
-
-
-def test_uml::tracedbehaviorexecutionspecification_constructor_args():
-    sig = inspect.signature(uml::TracedBehaviorExecutionSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactivityparameternode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActivityParameterNode)
-
-
-def test_uml::tracedactivityparameternode_constructor_exists():
-    assert callable(uml::TracedActivityParameterNode.__init__)
-
-
-def test_uml::tracedactivityparameternode_constructor_args():
-    sig = inspect.signature(uml::TracedActivityParameterNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedexpansionnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExpansionNode)
-
-
-def test_uml::tracedexpansionnode_constructor_exists():
-    assert callable(uml::TracedExpansionNode.__init__)
-
-
-def test_uml::tracedexpansionnode_constructor_args():
-    sig = inspect.signature(uml::TracedExpansionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedprofileapplication_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedProfileApplication)
-
-
-def test_uml::tracedprofileapplication_constructor_exists():
-    assert callable(uml::TracedProfileApplication.__init__)
-
-
-def test_uml::tracedprofileapplication_constructor_args():
-    sig = inspect.signature(uml::TracedProfileApplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedaddstructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAddStructuralFeatureValueAction)
-
-
-def test_uml::tracedaddstructuralfeaturevalueaction_constructor_exists():
-    assert callable(uml::TracedAddStructuralFeatureValueAction.__init__)
-
-
-def test_uml::tracedaddstructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(uml::TracedAddStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedqualifiervalue_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedQualifierValue)
-
-
-def test_uml::tracedqualifiervalue_constructor_exists():
-    assert callable(uml::TracedQualifierValue.__init__)
-
-
-def test_uml::tracedqualifiervalue_constructor_args():
-    sig = inspect.signature(uml::TracedQualifierValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedimage_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedImage)
-
-
-def test_uml::tracedimage_constructor_exists():
-    assert callable(uml::TracedImage.__init__)
-
-
-def test_uml::tracedimage_constructor_args():
-    sig = inspect.signature(uml::TracedImage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedextensionend_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExtensionEnd)
-
-
-def test_uml::tracedextensionend_constructor_exists():
-    assert callable(uml::TracedExtensionEnd.__init__)
-
-
-def test_uml::tracedextensionend_constructor_args():
-    sig = inspect.signature(uml::TracedExtensionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedproperty_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedProperty)
-
-
-def test_uml::tracedproperty_constructor_exists():
-    assert callable(uml::TracedProperty.__init__)
-
-
-def test_uml::tracedproperty_constructor_args():
-    sig = inspect.signature(uml::TracedProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddevice_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDevice)
-
-
-def test_uml::traceddevice_constructor_exists():
-    assert callable(uml::TracedDevice.__init__)
-
-
-def test_uml::traceddevice_constructor_args():
-    sig = inspect.signature(uml::TracedDevice.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedopaqueaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOpaqueAction)
-
-
-def test_uml::tracedopaqueaction_constructor_exists():
-    assert callable(uml::TracedOpaqueAction.__init__)
-
-
-def test_uml::tracedopaqueaction_constructor_args():
-    sig = inspect.signature(uml::TracedOpaqueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedfinalstate_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedFinalState)
-
-
-def test_uml::tracedfinalstate_constructor_exists():
-    assert callable(uml::TracedFinalState.__init__)
-
-
-def test_uml::tracedfinalstate_constructor_args():
-    sig = inspect.signature(uml::TracedFinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreduceaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReduceAction)
-
-
-def test_uml::tracedreduceaction_constructor_exists():
-    assert callable(uml::TracedReduceAction.__init__)
-
-
-def test_uml::tracedreduceaction_constructor_args():
-    sig = inspect.signature(uml::TracedReduceAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedduration_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDuration)
-
-
-def test_uml::tracedduration_constructor_exists():
-    assert callable(uml::TracedDuration.__init__)
-
-
-def test_uml::tracedduration_constructor_args():
-    sig = inspect.signature(uml::TracedDuration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtemplateparametersubstitution_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTemplateParameterSubstitution)
-
-
-def test_uml::tracedtemplateparametersubstitution_constructor_exists():
-    assert callable(uml::TracedTemplateParameterSubstitution.__init__)
-
-
-def test_uml::tracedtemplateparametersubstitution_constructor_args():
-    sig = inspect.signature(uml::TracedTemplateParameterSubstitution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedoutputpin_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOutputPin)
-
-
-def test_uml::tracedoutputpin_constructor_exists():
-    assert callable(uml::TracedOutputPin.__init__)
-
-
-def test_uml::tracedoutputpin_constructor_args():
-    sig = inspect.signature(uml::TracedOutputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactionexecutionspecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActionExecutionSpecification)
-
-
-def test_uml::tracedactionexecutionspecification_constructor_exists():
-    assert callable(uml::TracedActionExecutionSpecification.__init__)
-
-
-def test_uml::tracedactionexecutionspecification_constructor_args():
-    sig = inspect.signature(uml::TracedActionExecutionSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedinformationitem_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInformationItem)
-
-
-def test_uml::tracedinformationitem_constructor_exists():
-    assert callable(uml::TracedInformationItem.__init__)
-
-
-def test_uml::tracedinformationitem_constructor_args():
-    sig = inspect.signature(uml::TracedInformationItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedoperationtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOperationTemplateParameter)
-
-
-def test_uml::tracedoperationtemplateparameter_constructor_exists():
-    assert callable(uml::TracedOperationTemplateParameter.__init__)
-
-
-def test_uml::tracedoperationtemplateparameter_constructor_args():
-    sig = inspect.signature(uml::TracedOperationTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedconnectableelementtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConnectableElementTemplateParameter)
-
-
-def test_uml::tracedconnectableelementtemplateparameter_constructor_exists():
-    assert callable(uml::TracedConnectableElementTemplateParameter.__init__)
-
-
-def test_uml::tracedconnectableelementtemplateparameter_constructor_args():
-    sig = inspect.signature(uml::TracedConnectableElementTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedlinkenddata_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLinkEndData)
-
-
-def test_uml::tracedlinkenddata_constructor_exists():
-    assert callable(uml::TracedLinkEndData.__init__)
-
-
-def test_uml::tracedlinkenddata_constructor_args():
-    sig = inspect.signature(uml::TracedLinkEndData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddurationinterval_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDurationInterval)
-
-
-def test_uml::traceddurationinterval_constructor_exists():
-    assert callable(uml::TracedDurationInterval.__init__)
-
-
-def test_uml::traceddurationinterval_constructor_args():
-    sig = inspect.signature(uml::TracedDurationInterval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtransition_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTransition)
-
-
-def test_uml::tracedtransition_constructor_exists():
-    assert callable(uml::TracedTransition.__init__)
-
-
-def test_uml::tracedtransition_constructor_args():
-    sig = inspect.signature(uml::TracedTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtrigger_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTrigger)
-
-
-def test_uml::tracedtrigger_constructor_exists():
-    assert callable(uml::TracedTrigger.__init__)
-
-
-def test_uml::tracedtrigger_constructor_args():
-    sig = inspect.signature(uml::TracedTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreplyaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReplyAction)
-
-
-def test_uml::tracedreplyaction_constructor_exists():
-    assert callable(uml::TracedReplyAction.__init__)
-
-
-def test_uml::tracedreplyaction_constructor_args():
-    sig = inspect.signature(uml::TracedReplyAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedclause_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClause)
-
-
-def test_uml::tracedclause_constructor_exists():
-    assert callable(uml::TracedClause.__init__)
-
-
-def test_uml::tracedclause_constructor_args():
-    sig = inspect.signature(uml::TracedClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedpackagemerge_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPackageMerge)
-
-
-def test_uml::tracedpackagemerge_constructor_exists():
-    assert callable(uml::TracedPackageMerge.__init__)
-
-
-def test_uml::tracedpackagemerge_constructor_args():
-    sig = inspect.signature(uml::TracedPackageMerge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddecisionnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDecisionNode)
-
-
-def test_uml::traceddecisionnode_constructor_exists():
-    assert callable(uml::TracedDecisionNode.__init__)
-
-
-def test_uml::traceddecisionnode_constructor_args():
-    sig = inspect.signature(uml::TracedDecisionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactions::tracedreadstructuralfeatureactionactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::TracedReadStructuralFeatureActionActivation)
-
-
-def test_intermediateactions::tracedreadstructuralfeatureactionactivation_constructor_exists():
-    assert callable(IntermediateActions::TracedReadStructuralFeatureActionActivation.__init__)
-
-
-def test_intermediateactions::tracedreadstructuralfeatureactionactivation_constructor_args():
-    sig = inspect.signature(IntermediateActions::TracedReadStructuralFeatureActionActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadselfaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadSelfAction)
-
-
-def test_uml::tracedreadselfaction_constructor_exists():
-    assert callable(uml::TracedReadSelfAction.__init__)
-
-
-def test_uml::tracedreadselfaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadSelfAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedoperation_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOperation)
-
-
-def test_uml::tracedoperation_constructor_exists():
-    assert callable(uml::TracedOperation.__init__)
-
-
-def test_uml::tracedoperation_constructor_args():
-    sig = inspect.signature(uml::TracedOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedobjectflow_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedObjectFlow)
-
-
-def test_uml::tracedobjectflow_constructor_exists():
-    assert callable(uml::TracedObjectFlow.__init__)
-
-
-def test_uml::tracedobjectflow_constructor_args():
-    sig = inspect.signature(uml::TracedObjectFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedparameterset_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedParameterSet)
-
-
-def test_uml::tracedparameterset_constructor_exists():
-    assert callable(uml::TracedParameterSet.__init__)
-
-
-def test_uml::tracedparameterset_constructor_args():
-    sig = inspect.signature(uml::TracedParameterSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOccurrenceSpecification)
-
-
-def test_uml::tracedoccurrencespecification_constructor_exists():
-    assert callable(uml::TracedOccurrenceSpecification.__init__)
-
-
-def test_uml::tracedoccurrencespecification_constructor_args():
-    sig = inspect.signature(uml::TracedOccurrenceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedaccepteventaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAcceptEventAction)
-
-
-def test_uml::tracedaccepteventaction_constructor_exists():
-    assert callable(uml::TracedAcceptEventAction.__init__)
-
-
-def test_uml::tracedaccepteventaction_constructor_args():
-    sig = inspect.signature(uml::TracedAcceptEventAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcomponentrealization_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedComponentRealization)
-
-
-def test_uml::tracedcomponentrealization_constructor_exists():
-    assert callable(uml::TracedComponentRealization.__init__)
-
-
-def test_uml::tracedcomponentrealization_constructor_args():
-    sig = inspect.signature(uml::TracedComponentRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddatatype_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDataType)
-
-
-def test_uml::traceddatatype_constructor_exists():
-    assert callable(uml::TracedDataType.__init__)
-
-
-def test_uml::traceddatatype_constructor_args():
-    sig = inspect.signature(uml::TracedDataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcomment_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedComment)
-
-
-def test_uml::tracedcomment_constructor_exists():
-    assert callable(uml::TracedComment.__init__)
-
-
-def test_uml::tracedcomment_constructor_args():
-    sig = inspect.signature(uml::TracedComment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedloopnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLoopNode)
-
-
-def test_uml::tracedloopnode_constructor_exists():
-    assert callable(uml::TracedLoopNode.__init__)
-
-
-def test_uml::tracedloopnode_constructor_args():
-    sig = inspect.signature(uml::TracedLoopNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcallevent_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCallEvent)
-
-
-def test_uml::tracedcallevent_constructor_exists():
-    assert callable(uml::TracedCallEvent.__init__)
-
-
-def test_uml::tracedcallevent_constructor_args():
-    sig = inspect.signature(uml::TracedCallEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedpackage_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPackage)
-
-
-def test_uml::tracedpackage_constructor_exists():
-    assert callable(uml::TracedPackage.__init__)
-
-
-def test_uml::tracedpackage_constructor_args():
-    sig = inspect.signature(uml::TracedPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedprotocolconformance_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedProtocolConformance)
-
-
-def test_uml::tracedprotocolconformance_constructor_exists():
-    assert callable(uml::TracedProtocolConformance.__init__)
-
-
-def test_uml::tracedprotocolconformance_constructor_args():
-    sig = inspect.signature(uml::TracedProtocolConformance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedopaquebehavior_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOpaqueBehavior)
-
-
-def test_uml::tracedopaquebehavior_constructor_exists():
-    assert callable(uml::TracedOpaqueBehavior.__init__)
-
-
-def test_uml::tracedopaquebehavior_constructor_args():
-    sig = inspect.signature(uml::TracedOpaqueBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedinterface_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInterface)
-
-
-def test_uml::tracedinterface_constructor_exists():
-    assert callable(uml::TracedInterface.__init__)
-
-
-def test_uml::tracedinterface_constructor_args():
-    sig = inspect.signature(uml::TracedInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactivities::traceddecisionnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedDecisionNodeActivation)
-
-
-def test_intermediateactivities::traceddecisionnodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedDecisionNodeActivation.__init__)
-
-
-def test_intermediateactivities::traceddecisionnodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedDecisionNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedinteractionconstraint_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInteractionConstraint)
-
-
-def test_uml::tracedinteractionconstraint_constructor_exists():
-    assert callable(uml::TracedInteractionConstraint.__init__)
-
-
-def test_uml::tracedinteractionconstraint_constructor_args():
-    sig = inspect.signature(uml::TracedInteractionConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtimeinterval_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTimeInterval)
-
-
-def test_uml::tracedtimeinterval_constructor_exists():
-    assert callable(uml::TracedTimeInterval.__init__)
-
-
-def test_uml::tracedtimeinterval_constructor_args():
-    sig = inspect.signature(uml::TracedTimeInterval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedexecutionoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExecutionOccurrenceSpecification)
-
-
-def test_uml::tracedexecutionoccurrencespecification_constructor_exists():
-    assert callable(uml::TracedExecutionOccurrenceSpecification.__init__)
-
-
-def test_uml::tracedexecutionoccurrencespecification_constructor_args():
-    sig = inspect.signature(uml::TracedExecutionOccurrenceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedsignal_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSignal)
-
-
-def test_uml::tracedsignal_constructor_exists():
-    assert callable(uml::TracedSignal.__init__)
-
-
-def test_uml::tracedsignal_constructor_args():
-    sig = inspect.signature(uml::TracedSignal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedextensionpoint_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExtensionPoint)
-
-
-def test_uml::tracedextensionpoint_constructor_exists():
-    assert callable(uml::TracedExtensionPoint.__init__)
-
-
-def test_uml::tracedextensionpoint_constructor_args():
-    sig = inspect.signature(uml::TracedExtensionPoint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcreatelinkaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCreateLinkAction)
-
-
-def test_uml::tracedcreatelinkaction_constructor_exists():
-    assert callable(uml::TracedCreateLinkAction.__init__)
-
-
-def test_uml::tracedcreatelinkaction_constructor_args():
-    sig = inspect.signature(uml::TracedCreateLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kernel::tracedliteralintegerevaluation_is_not_abstract():
-    assert not inspect.isabstract(Kernel::TracedLiteralIntegerEvaluation)
-
-
-def test_kernel::tracedliteralintegerevaluation_constructor_exists():
-    assert callable(Kernel::TracedLiteralIntegerEvaluation.__init__)
-
-
-def test_kernel::tracedliteralintegerevaluation_constructor_args():
-    sig = inspect.signature(Kernel::TracedLiteralIntegerEvaluation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedcentralbuffernode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCentralBufferNode)
-
-
-def test_uml::tracedcentralbuffernode_constructor_exists():
-    assert callable(uml::TracedCentralBufferNode.__init__)
-
-
-def test_uml::tracedcentralbuffernode_constructor_args():
-    sig = inspect.signature(uml::TracedCentralBufferNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedmodel_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedModel)
-
-
-def test_uml::tracedmodel_constructor_exists():
-    assert callable(uml::TracedModel.__init__)
-
-
-def test_uml::tracedmodel_constructor_args():
-    sig = inspect.signature(uml::TracedModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedredefinabletemplatesignature_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRedefinableTemplateSignature)
-
-
-def test_uml::tracedredefinabletemplatesignature_constructor_exists():
-    assert callable(uml::TracedRedefinableTemplateSignature.__init__)
-
-
-def test_uml::tracedredefinabletemplatesignature_constructor_args():
-    sig = inspect.signature(uml::TracedRedefinableTemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedjoinnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedJoinNode)
-
-
-def test_uml::tracedjoinnode_constructor_exists():
-    assert callable(uml::TracedJoinNode.__init__)
-
-
-def test_uml::tracedjoinnode_constructor_args():
-    sig = inspect.signature(uml::TracedJoinNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicactions::tracedopaqueactionactivation_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::TracedOpaqueActionActivation)
-
-
-def test_basicactions::tracedopaqueactionactivation_constructor_exists():
-    assert callable(BasicActions::TracedOpaqueActionActivation.__init__)
-
-
-def test_basicactions::tracedopaqueactionactivation_constructor_args():
-    sig = inspect.signature(BasicActions::TracedOpaqueActionActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadlinkobjectendqualifieraction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadLinkObjectEndQualifierAction)
-
-
-def test_uml::tracedreadlinkobjectendqualifieraction_constructor_exists():
-    assert callable(uml::TracedReadLinkObjectEndQualifierAction.__init__)
-
-
-def test_uml::tracedreadlinkobjectendqualifieraction_constructor_args():
-    sig = inspect.signature(uml::TracedReadLinkObjectEndQualifierAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedrealization_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRealization)
-
-
-def test_uml::tracedrealization_constructor_exists():
-    assert callable(uml::TracedRealization.__init__)
-
-
-def test_uml::tracedrealization_constructor_args():
-    sig = inspect.signature(uml::TracedRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedconnectionpointreference_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConnectionPointReference)
-
-
-def test_uml::tracedconnectionpointreference_constructor_exists():
-    assert callable(uml::TracedConnectionPointReference.__init__)
-
-
-def test_uml::tracedconnectionpointreference_constructor_args():
-    sig = inspect.signature(uml::TracedConnectionPointReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedconditionalnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConditionalNode)
-
-
-def test_uml::tracedconditionalnode_constructor_exists():
-    assert callable(uml::TracedConditionalNode.__init__)
-
-
-def test_uml::tracedconditionalnode_constructor_args():
-    sig = inspect.signature(uml::TracedConditionalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kernel::tracedbooleanvalue_is_not_abstract():
-    assert not inspect.isabstract(Kernel::TracedBooleanValue)
-
-
-def test_kernel::tracedbooleanvalue_constructor_exists():
-    assert callable(Kernel::TracedBooleanValue.__init__)
-
-
-def test_kernel::tracedbooleanvalue_constructor_args():
-    sig = inspect.signature(Kernel::TracedBooleanValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedsignalevent_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSignalEvent)
-
-
-def test_uml::tracedsignalevent_constructor_exists():
-    assert callable(uml::TracedSignalEvent.__init__)
-
-
-def test_uml::tracedsignalevent_constructor_args():
-    sig = inspect.signature(uml::TracedSignalEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedliteralinteger_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLiteralInteger)
-
-
-def test_uml::tracedliteralinteger_constructor_exists():
-    assert callable(uml::TracedLiteralInteger.__init__)
-
-
-def test_uml::tracedliteralinteger_constructor_args():
-    sig = inspect.signature(uml::TracedLiteralInteger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddestroylinkaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDestroyLinkAction)
-
-
-def test_uml::traceddestroylinkaction_constructor_exists():
-    assert callable(uml::TracedDestroyLinkAction.__init__)
-
-
-def test_uml::traceddestroylinkaction_constructor_args():
-    sig = inspect.signature(uml::TracedDestroyLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactivities::tracedactivityfinalnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedActivityFinalNodeActivation)
-
-
-def test_intermediateactivities::tracedactivityfinalnodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedActivityFinalNodeActivation.__init__)
-
-
-def test_intermediateactivities::tracedactivityfinalnodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedActivityFinalNodeActivation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreadvariableaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadVariableAction)
-
-
-def test_uml::tracedreadvariableaction_constructor_exists():
-    assert callable(uml::TracedReadVariableAction.__init__)
-
-
-def test_uml::tracedreadvariableaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactioninputpin_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActionInputPin)
-
-
-def test_uml::tracedactioninputpin_constructor_exists():
-    assert callable(uml::TracedActionInputPin.__init__)
-
-
-def test_uml::tracedactioninputpin_constructor_args():
-    sig = inspect.signature(uml::TracedActionInputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedusage_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedUsage)
-
-
-def test_uml::tracedusage_constructor_exists():
-    assert callable(uml::TracedUsage.__init__)
-
-
-def test_uml::tracedusage_constructor_args():
-    sig = inspect.signature(uml::TracedUsage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddeploymentspecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDeploymentSpecification)
-
-
-def test_uml::traceddeploymentspecification_constructor_exists():
-    assert callable(uml::TracedDeploymentSpecification.__init__)
-
-
-def test_uml::traceddeploymentspecification_constructor_args():
-    sig = inspect.signature(uml::TracedDeploymentSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtemplatebinding_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTemplateBinding)
-
-
-def test_uml::tracedtemplatebinding_constructor_exists():
-    assert callable(uml::TracedTemplateBinding.__init__)
-
-
-def test_uml::tracedtemplatebinding_constructor_args():
-    sig = inspect.signature(uml::TracedTemplateBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedassociation_is_not_abstract():
-    assert not inspect.isabstract(TracedAssociation)
-
-
-def test_tracedassociation_constructor_exists():
-    assert callable(TracedAssociation.__init__)
-
-
-def test_tracedassociation_constructor_args():
-    sig = inspect.signature(TracedAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcommunicationpath_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCommunicationPath)
-
-
-def test_umltrace::uml::tracedcommunicationpath_constructor_exists():
-    assert callable(umlTrace::uml::TracedCommunicationPath.__init__)
-
-
-def test_umltrace::uml::tracedcommunicationpath_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCommunicationPath.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedextension_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExtension)
-
-
-def test_umltrace::uml::tracedextension_constructor_exists():
-    assert callable(umlTrace::uml::TracedExtension.__init__)
-
-
-def test_umltrace::uml::tracedextension_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExtension.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(TracedStructuralFeatureAction)
-
-
-def test_tracedstructuralfeatureaction_constructor_exists():
-    assert callable(TracedStructuralFeatureAction.__init__)
-
-
-def test_tracedstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(TracedStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclearstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClearStructuralFeatureAction)
-
-
-def test_umltrace::uml::tracedclearstructuralfeatureaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedClearStructuralFeatureAction.__init__)
-
-
-def test_umltrace::uml::tracedclearstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClearStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadStructuralFeatureAction)
-
-
-def test_umltrace::uml::tracedreadstructuralfeatureaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadStructuralFeatureAction.__init__)
-
-
-def test_umltrace::uml::tracedreadstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedmessageoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedMessageOccurrenceSpecification)
-
-
-def test_uml::tracedmessageoccurrencespecification_constructor_exists():
-    assert callable(uml::TracedMessageOccurrenceSpecification.__init__)
-
-
-def test_uml::tracedmessageoccurrencespecification_constructor_args():
-    sig = inspect.signature(uml::TracedMessageOccurrenceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedwritestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedWriteStructuralFeatureAction)
-
-
-def test_umltrace::uml::tracedwritestructuralfeatureaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedWriteStructuralFeatureAction.__init__)
-
-
-def test_umltrace::uml::tracedwritestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedWriteStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedreception_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReception)
-
-
-def test_uml::tracedreception_constructor_exists():
-    assert callable(uml::TracedReception.__init__)
-
-
-def test_uml::tracedreception_constructor_args():
-    sig = inspect.signature(uml::TracedReception.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedwritestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(TracedWriteStructuralFeatureAction)
-
-
-def test_tracedwritestructuralfeatureaction_constructor_exists():
-    assert callable(TracedWriteStructuralFeatureAction.__init__)
-
-
-def test_tracedwritestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(TracedWriteStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedaddstructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAddStructuralFeatureValueAction)
-
-
-def test_umltrace::uml::tracedaddstructuralfeaturevalueaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedAddStructuralFeatureValueAction.__init__)
-
-
-def test_umltrace::uml::tracedaddstructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAddStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedremovestructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRemoveStructuralFeatureValueAction)
-
-
-def test_umltrace::uml::tracedremovestructuralfeaturevalueaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedRemoveStructuralFeatureValueAction.__init__)
-
-
-def test_umltrace::uml::tracedremovestructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRemoveStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedbehavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(TracedBehavioredClassifier)
-
-
-def test_tracedbehavioredclassifier_constructor_exists():
-    assert callable(TracedBehavioredClassifier.__init__)
-
-
-def test_tracedbehavioredclassifier_constructor_args():
-    sig = inspect.signature(TracedBehavioredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactor_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActor)
-
-
-def test_umltrace::uml::tracedactor_constructor_exists():
-    assert callable(umlTrace::uml::TracedActor.__init__)
-
-
-def test_umltrace::uml::tracedactor_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedusecase_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedUseCase)
-
-
-def test_umltrace::uml::tracedusecase_constructor_exists():
-    assert callable(umlTrace::uml::TracedUseCase.__init__)
-
-
-def test_umltrace::uml::tracedusecase_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedUseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddeployedartifact_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDeployedArtifact)
-
-
-def test_uml::traceddeployedartifact_constructor_exists():
-    assert callable(uml::TracedDeployedArtifact.__init__)
-
-
-def test_uml::traceddeployedartifact_constructor_args():
-    sig = inspect.signature(uml::TracedDeployedArtifact.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedclassifier_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClassifier)
-
-
-def test_uml::tracedclassifier_constructor_exists():
-    assert callable(uml::TracedClassifier.__init__)
-
-
-def test_uml::tracedclassifier_constructor_args():
-    sig = inspect.signature(uml::TracedClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedassociation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAssociation)
-
-
-def test_umltrace::uml::tracedassociation_constructor_exists():
-    assert callable(umlTrace::uml::TracedAssociation.__init__)
-
-
-def test_umltrace::uml::tracedassociation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedartifact_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedArtifact)
-
-
-def test_umltrace::uml::tracedartifact_constructor_exists():
-    assert callable(umlTrace::uml::TracedArtifact.__init__)
-
-
-def test_umltrace::uml::tracedartifact_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedArtifact.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedartifact_is_not_abstract():
-    assert not inspect.isabstract(TracedArtifact)
-
-
-def test_tracedartifact_constructor_exists():
-    assert callable(TracedArtifact.__init__)
-
-
-def test_tracedartifact_constructor_args():
-    sig = inspect.signature(TracedArtifact.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddeploymentspecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDeploymentSpecification)
-
-
-def test_umltrace::uml::traceddeploymentspecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedDeploymentSpecification.__init__)
-
-
-def test_umltrace::uml::traceddeploymentspecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDeploymentSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactivitynode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActivityNode)
-
-
-def test_uml::tracedactivitynode_constructor_exists():
-    assert callable(uml::TracedActivityNode.__init__)
-
-
-def test_uml::tracedactivitynode_constructor_args():
-    sig = inspect.signature(uml::TracedActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedobjectnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedObjectNode)
-
-
-def test_uml::tracedobjectnode_constructor_exists():
-    assert callable(uml::TracedObjectNode.__init__)
-
-
-def test_uml::tracedobjectnode_constructor_args():
-    sig = inspect.signature(uml::TracedObjectNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedpin_is_not_abstract():
-    assert not inspect.isabstract(TracedPin)
-
-
-def test_tracedpin_constructor_exists():
-    assert callable(TracedPin.__init__)
-
-
-def test_tracedpin_constructor_args():
-    sig = inspect.signature(TracedPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedoutputpin_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOutputPin)
-
-
-def test_umltrace::uml::tracedoutputpin_constructor_exists():
-    assert callable(umlTrace::uml::TracedOutputPin.__init__)
-
-
-def test_umltrace::uml::tracedoutputpin_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOutputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinputpin_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInputPin)
-
-
-def test_umltrace::uml::tracedinputpin_constructor_exists():
-    assert callable(umlTrace::uml::TracedInputPin.__init__)
-
-
-def test_umltrace::uml::tracedinputpin_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedinputpin_is_not_abstract():
-    assert not inspect.isabstract(TracedInputPin)
-
-
-def test_tracedinputpin_constructor_exists():
-    assert callable(TracedInputPin.__init__)
-
-
-def test_tracedinputpin_constructor_args():
-    sig = inspect.signature(TracedInputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactioninputpin_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActionInputPin)
-
-
-def test_umltrace::uml::tracedactioninputpin_constructor_exists():
-    assert callable(umlTrace::uml::TracedActionInputPin.__init__)
-
-
-def test_umltrace::uml::tracedactioninputpin_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActionInputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedvaluepin_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedValuePin)
-
-
-def test_umltrace::uml::tracedvaluepin_constructor_exists():
-    assert callable(umlTrace::uml::TracedValuePin.__init__)
-
-
-def test_umltrace::uml::tracedvaluepin_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedValuePin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedmultiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedMultiplicityElement)
-
-
-def test_uml::tracedmultiplicityelement_constructor_exists():
-    assert callable(uml::TracedMultiplicityElement.__init__)
-
-
-def test_uml::tracedmultiplicityelement_constructor_args():
-    sig = inspect.signature(uml::TracedMultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedpin_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPin)
-
-
-def test_umltrace::uml::tracedpin_constructor_exists():
-    assert callable(umlTrace::uml::TracedPin.__init__)
-
-
-def test_umltrace::uml::tracedpin_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtypedelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTypedElement)
-
-
-def test_uml::tracedtypedelement_constructor_exists():
-    assert callable(uml::TracedTypedElement.__init__)
-
-
-def test_uml::tracedtypedelement_constructor_args():
-    sig = inspect.signature(uml::TracedTypedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedobjectnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedObjectNode)
-
-
-def test_umltrace::uml::tracedobjectnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedObjectNode.__init__)
-
-
-def test_umltrace::uml::tracedobjectnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedObjectNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedfeature_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedFeature)
-
-
-def test_uml::tracedfeature_constructor_exists():
-    assert callable(uml::TracedFeature.__init__)
-
-
-def test_uml::tracedfeature_constructor_args():
-    sig = inspect.signature(uml::TracedFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStructuralFeature)
-
-
-def test_umltrace::uml::tracedstructuralfeature_constructor_exists():
-    assert callable(umlTrace::uml::TracedStructuralFeature.__init__)
-
-
-def test_umltrace::uml::tracedstructuralfeature_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedvaluespecification_is_not_abstract():
-    assert not inspect.isabstract(TracedValueSpecification)
-
-
-def test_tracedvaluespecification_constructor_exists():
-    assert callable(TracedValueSpecification.__init__)
-
-
-def test_tracedvaluespecification_constructor_args():
-    sig = inspect.signature(TracedValueSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedexpression_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExpression)
-
-
-def test_umltrace::uml::tracedexpression_constructor_exists():
-    assert callable(umlTrace::uml::TracedExpression.__init__)
-
-
-def test_umltrace::uml::tracedexpression_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedduration_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDuration)
-
-
-def test_umltrace::uml::tracedduration_constructor_exists():
-    assert callable(umlTrace::uml::TracedDuration.__init__)
-
-
-def test_umltrace::uml::tracedduration_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDuration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinstancevalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInstanceValue)
-
-
-def test_umltrace::uml::tracedinstancevalue_constructor_exists():
-    assert callable(umlTrace::uml::TracedInstanceValue.__init__)
-
-
-def test_umltrace::uml::tracedinstancevalue_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInstanceValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedopaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOpaqueExpression)
-
-
-def test_umltrace::uml::tracedopaqueexpression_constructor_exists():
-    assert callable(umlTrace::uml::TracedOpaqueExpression.__init__)
-
-
-def test_umltrace::uml::tracedopaqueexpression_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOpaqueExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinterval_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInterval)
-
-
-def test_umltrace::uml::tracedinterval_constructor_exists():
-    assert callable(umlTrace::uml::TracedInterval.__init__)
-
-
-def test_umltrace::uml::tracedinterval_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInterval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtimeexpression_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTimeExpression)
-
-
-def test_umltrace::uml::tracedtimeexpression_constructor_exists():
-    assert callable(umlTrace::uml::TracedTimeExpression.__init__)
-
-
-def test_umltrace::uml::tracedtimeexpression_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTimeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralspecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralSpecification)
-
-
-def test_umltrace::uml::tracedliteralspecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralSpecification.__init__)
-
-
-def test_umltrace::uml::tracedliteralspecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedliteralspecification_is_not_abstract():
-    assert not inspect.isabstract(TracedLiteralSpecification)
-
-
-def test_tracedliteralspecification_constructor_exists():
-    assert callable(TracedLiteralSpecification.__init__)
-
-
-def test_tracedliteralspecification_constructor_args():
-    sig = inspect.signature(TracedLiteralSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralboolean_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralBoolean)
-
-
-def test_umltrace::uml::tracedliteralboolean_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralBoolean.__init__)
-
-
-def test_umltrace::uml::tracedliteralboolean_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralBoolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralnull_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralNull)
-
-
-def test_umltrace::uml::tracedliteralnull_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralNull.__init__)
-
-
-def test_umltrace::uml::tracedliteralnull_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralNull.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralreal_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralReal)
-
-
-def test_umltrace::uml::tracedliteralreal_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralReal.__init__)
-
-
-def test_umltrace::uml::tracedliteralreal_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralReal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralinteger_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralInteger)
-
-
-def test_umltrace::uml::tracedliteralinteger_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralInteger.__init__)
-
-
-def test_umltrace::uml::tracedliteralinteger_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralInteger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralunlimitednatural_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralUnlimitedNatural)
-
-
-def test_umltrace::uml::tracedliteralunlimitednatural_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralUnlimitedNatural.__init__)
-
-
-def test_umltrace::uml::tracedliteralunlimitednatural_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralUnlimitedNatural.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedliteralstring_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLiteralString)
-
-
-def test_umltrace::uml::tracedliteralstring_constructor_exists():
-    assert callable(umlTrace::uml::TracedLiteralString.__init__)
-
-
-def test_umltrace::uml::tracedliteralstring_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLiteralString.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedvariableaction_is_not_abstract():
-    assert not inspect.isabstract(TracedVariableAction)
-
-
-def test_tracedvariableaction_constructor_exists():
-    assert callable(TracedVariableAction.__init__)
-
-
-def test_tracedvariableaction_constructor_args():
-    sig = inspect.signature(TracedVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadvariableaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadVariableAction)
-
-
-def test_umltrace::uml::tracedreadvariableaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadVariableAction.__init__)
-
-
-def test_umltrace::uml::tracedreadvariableaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedwritevariableaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedWriteVariableAction)
-
-
-def test_umltrace::uml::tracedwritevariableaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedWriteVariableAction.__init__)
-
-
-def test_umltrace::uml::tracedwritevariableaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedWriteVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclearvariableaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClearVariableAction)
-
-
-def test_umltrace::uml::tracedclearvariableaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedClearVariableAction.__init__)
-
-
-def test_umltrace::uml::tracedclearvariableaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClearVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcontinuation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedContinuation)
-
-
-def test_umltrace::uml::tracedcontinuation_constructor_exists():
-    assert callable(umlTrace::uml::TracedContinuation.__init__)
-
-
-def test_umltrace::uml::tracedcontinuation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedContinuation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedcombinedfragment_is_not_abstract():
-    assert not inspect.isabstract(TracedCombinedFragment)
-
-
-def test_tracedcombinedfragment_constructor_exists():
-    assert callable(TracedCombinedFragment.__init__)
-
-
-def test_tracedcombinedfragment_constructor_args():
-    sig = inspect.signature(TracedCombinedFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconsiderignorefragment_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConsiderIgnoreFragment)
-
-
-def test_umltrace::uml::tracedconsiderignorefragment_constructor_exists():
-    assert callable(umlTrace::uml::TracedConsiderIgnoreFragment.__init__)
-
-
-def test_umltrace::uml::tracedconsiderignorefragment_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConsiderIgnoreFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracednode_is_not_abstract():
-    assert not inspect.isabstract(TracedNode)
-
-
-def test_tracednode_constructor_exists():
-    assert callable(TracedNode.__init__)
-
-
-def test_tracednode_constructor_args():
-    sig = inspect.signature(TracedNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedexecutionenvironment_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExecutionEnvironment)
-
-
-def test_umltrace::uml::tracedexecutionenvironment_constructor_exists():
-    assert callable(umlTrace::uml::TracedExecutionEnvironment.__init__)
-
-
-def test_umltrace::uml::tracedexecutionenvironment_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExecutionEnvironment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddevice_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDevice)
-
-
-def test_umltrace::uml::traceddevice_constructor_exists():
-    assert callable(umlTrace::uml::TracedDevice.__init__)
-
-
-def test_umltrace::uml::traceddevice_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDevice.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtype_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedType)
-
-
-def test_uml::tracedtype_constructor_exists():
-    assert callable(uml::TracedType.__init__)
-
-
-def test_uml::tracedtype_constructor_args():
-    sig = inspect.signature(uml::TracedType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedclassifier_is_not_abstract():
-    assert not inspect.isabstract(TracedClassifier)
-
-
-def test_tracedclassifier_constructor_exists():
-    assert callable(TracedClassifier.__init__)
-
-
-def test_tracedclassifier_constructor_args():
-    sig = inspect.signature(TracedClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedbehavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedBehavioredClassifier)
-
-
-def test_umltrace::uml::tracedbehavioredclassifier_constructor_exists():
-    assert callable(umlTrace::uml::TracedBehavioredClassifier.__init__)
-
-
-def test_umltrace::uml::tracedbehavioredclassifier_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedBehavioredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinformationitem_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInformationItem)
-
-
-def test_umltrace::uml::tracedinformationitem_constructor_exists():
-    assert callable(umlTrace::uml::TracedInformationItem.__init__)
-
-
-def test_umltrace::uml::tracedinformationitem_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInformationItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddatatype_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDataType)
-
-
-def test_umltrace::uml::traceddatatype_constructor_exists():
-    assert callable(umlTrace::uml::TracedDataType.__init__)
-
-
-def test_umltrace::uml::traceddatatype_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinterface_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInterface)
-
-
-def test_umltrace::uml::tracedinterface_constructor_exists():
-    assert callable(umlTrace::uml::TracedInterface.__init__)
-
-
-def test_umltrace::uml::tracedinterface_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstructuredclassifier_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStructuredClassifier)
-
-
-def test_umltrace::uml::tracedstructuredclassifier_constructor_exists():
-    assert callable(umlTrace::uml::TracedStructuredClassifier.__init__)
-
-
-def test_umltrace::uml::tracedstructuredclassifier_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStructuredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedstructuredclassifier_is_not_abstract():
-    assert not inspect.isabstract(TracedStructuredClassifier)
-
-
-def test_tracedstructuredclassifier_constructor_exists():
-    assert callable(TracedStructuredClassifier.__init__)
-
-
-def test_tracedstructuredclassifier_constructor_args():
-    sig = inspect.signature(TracedStructuredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedencapsulatedclassifier_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedEncapsulatedClassifier)
-
-
-def test_umltrace::uml::tracedencapsulatedclassifier_constructor_exists():
-    assert callable(umlTrace::uml::TracedEncapsulatedClassifier.__init__)
-
-
-def test_umltrace::uml::tracedencapsulatedclassifier_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedEncapsulatedClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedbehavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedBehavioredClassifier)
-
-
-def test_uml::tracedbehavioredclassifier_constructor_exists():
-    assert callable(uml::TracedBehavioredClassifier.__init__)
-
-
-def test_uml::tracedbehavioredclassifier_constructor_args():
-    sig = inspect.signature(uml::TracedBehavioredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcollaboration_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCollaboration)
-
-
-def test_umltrace::uml::tracedcollaboration_constructor_exists():
-    assert callable(umlTrace::uml::TracedCollaboration.__init__)
-
-
-def test_umltrace::uml::tracedcollaboration_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCollaboration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedencapsulatedclassifier_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedEncapsulatedClassifier)
-
-
-def test_uml::tracedencapsulatedclassifier_constructor_exists():
-    assert callable(uml::TracedEncapsulatedClassifier.__init__)
-
-
-def test_uml::tracedencapsulatedclassifier_constructor_args():
-    sig = inspect.signature(uml::TracedEncapsulatedClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclass_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClass)
-
-
-def test_umltrace::uml::tracedclass_constructor_exists():
-    assert callable(umlTrace::uml::TracedClass.__init__)
-
-
-def test_umltrace::uml::tracedclass_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedcallaction_is_not_abstract():
-    assert not inspect.isabstract(TracedCallAction)
-
-
-def test_tracedcallaction_constructor_exists():
-    assert callable(TracedCallAction.__init__)
-
-
-def test_tracedcallaction_constructor_args():
-    sig = inspect.signature(TracedCallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstartobjectbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStartObjectBehaviorAction)
-
-
-def test_umltrace::uml::tracedstartobjectbehavioraction_constructor_exists():
-    assert callable(umlTrace::uml::TracedStartObjectBehaviorAction.__init__)
-
-
-def test_umltrace::uml::tracedstartobjectbehavioraction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStartObjectBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcalloperationaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCallOperationAction)
-
-
-def test_umltrace::uml::tracedcalloperationaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedCallOperationAction.__init__)
-
-
-def test_umltrace::uml::tracedcalloperationaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCallOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcallbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCallBehaviorAction)
-
-
-def test_umltrace::uml::tracedcallbehavioraction_constructor_exists():
-    assert callable(umlTrace::uml::TracedCallBehaviorAction.__init__)
-
-
-def test_umltrace::uml::tracedcallbehavioraction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCallBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedrelationship_is_not_abstract():
-    assert not inspect.isabstract(TracedRelationship)
-
-
-def test_tracedrelationship_constructor_exists():
-    assert callable(TracedRelationship.__init__)
-
-
-def test_tracedrelationship_constructor_args():
-    sig = inspect.signature(TracedRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddirectedrelationship_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDirectedRelationship)
-
-
-def test_umltrace::uml::traceddirectedrelationship_constructor_exists():
-    assert callable(umlTrace::uml::TracedDirectedRelationship.__init__)
-
-
-def test_umltrace::uml::traceddirectedrelationship_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDirectedRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_traceddirectedrelationship_is_not_abstract():
-    assert not inspect.isabstract(TracedDirectedRelationship)
-
-
-def test_traceddirectedrelationship_constructor_exists():
-    assert callable(TracedDirectedRelationship.__init__)
-
-
-def test_traceddirectedrelationship_constructor_args():
-    sig = inspect.signature(TracedDirectedRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedgeneralization_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedGeneralization)
-
-
-def test_umltrace::uml::tracedgeneralization_constructor_exists():
-    assert callable(umlTrace::uml::TracedGeneralization.__init__)
-
-
-def test_umltrace::uml::tracedgeneralization_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedGeneralization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtemplatebinding_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTemplateBinding)
-
-
-def test_umltrace::uml::tracedtemplatebinding_constructor_exists():
-    assert callable(umlTrace::uml::TracedTemplateBinding.__init__)
-
-
-def test_umltrace::uml::tracedtemplatebinding_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTemplateBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedprofileapplication_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedProfileApplication)
-
-
-def test_umltrace::uml::tracedprofileapplication_constructor_exists():
-    assert callable(umlTrace::uml::TracedProfileApplication.__init__)
-
-
-def test_umltrace::uml::tracedprofileapplication_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedProfileApplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedpackageimport_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPackageImport)
-
-
-def test_umltrace::uml::tracedpackageimport_constructor_exists():
-    assert callable(umlTrace::uml::TracedPackageImport.__init__)
-
-
-def test_umltrace::uml::tracedpackageimport_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPackageImport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedelementimport_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedElementImport)
-
-
-def test_umltrace::uml::tracedelementimport_constructor_exists():
-    assert callable(umlTrace::uml::TracedElementImport.__init__)
-
-
-def test_umltrace::uml::tracedelementimport_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedElementImport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedpackagemerge_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPackageMerge)
-
-
-def test_umltrace::uml::tracedpackagemerge_constructor_exists():
-    assert callable(umlTrace::uml::TracedPackageMerge.__init__)
-
-
-def test_umltrace::uml::tracedpackagemerge_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPackageMerge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedprotocolconformance_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedProtocolConformance)
-
-
-def test_umltrace::uml::tracedprotocolconformance_constructor_exists():
-    assert callable(umlTrace::uml::TracedProtocolConformance.__init__)
-
-
-def test_umltrace::uml::tracedprotocolconformance_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedProtocolConformance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedinvocationaction_is_not_abstract():
-    assert not inspect.isabstract(TracedInvocationAction)
-
-
-def test_tracedinvocationaction_constructor_exists():
-    assert callable(TracedInvocationAction.__init__)
-
-
-def test_tracedinvocationaction_constructor_args():
-    sig = inspect.signature(TracedInvocationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedbroadcastsignalaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedBroadcastSignalAction)
-
-
-def test_umltrace::uml::tracedbroadcastsignalaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedBroadcastSignalAction.__init__)
-
-
-def test_umltrace::uml::tracedbroadcastsignalaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedBroadcastSignalAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedsendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSendSignalAction)
-
-
-def test_umltrace::uml::tracedsendsignalaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedSendSignalAction.__init__)
-
-
-def test_umltrace::uml::tracedsendsignalaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSendSignalAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcallaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCallAction)
-
-
-def test_umltrace::uml::tracedcallaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedCallAction.__init__)
-
-
-def test_umltrace::uml::tracedcallaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedsendobjectaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSendObjectAction)
-
-
-def test_umltrace::uml::tracedsendobjectaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedSendObjectAction.__init__)
-
-
-def test_umltrace::uml::tracedsendobjectaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSendObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedredefinableelement_is_not_abstract():
-    assert not inspect.isabstract(TracedRedefinableElement)
-
-
-def test_tracedredefinableelement_constructor_exists():
-    assert callable(TracedRedefinableElement.__init__)
-
-
-def test_tracedredefinableelement_constructor_args():
-    sig = inspect.signature(TracedRedefinableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedextensionpoint_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExtensionPoint)
-
-
-def test_umltrace::uml::tracedextensionpoint_constructor_exists():
-    assert callable(umlTrace::uml::TracedExtensionPoint.__init__)
-
-
-def test_umltrace::uml::tracedextensionpoint_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExtensionPoint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivityedge_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivityEdge)
-
-
-def test_umltrace::uml::tracedactivityedge_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivityEdge.__init__)
-
-
-def test_umltrace::uml::tracedactivityedge_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedfeature_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedFeature)
-
-
-def test_umltrace::uml::tracedfeature_constructor_exists():
-    assert callable(umlTrace::uml::TracedFeature.__init__)
-
-
-def test_umltrace::uml::tracedfeature_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedfeature_is_not_abstract():
-    assert not inspect.isabstract(TracedFeature)
-
-
-def test_tracedfeature_constructor_exists():
-    assert callable(TracedFeature.__init__)
-
-
-def test_tracedfeature_constructor_args():
-    sig = inspect.signature(TracedFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconnector_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConnector)
-
-
-def test_umltrace::uml::tracedconnector_constructor_exists():
-    assert callable(umlTrace::uml::TracedConnector.__init__)
-
-
-def test_umltrace::uml::tracedconnector_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConnector.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedtemplateableelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTemplateableElement)
-
-
-def test_uml::tracedtemplateableelement_constructor_exists():
-    assert callable(uml::TracedTemplateableElement.__init__)
-
-
-def test_uml::tracedtemplateableelement_constructor_args():
-    sig = inspect.signature(uml::TracedTemplateableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstringexpression_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStringExpression)
-
-
-def test_umltrace::uml::tracedstringexpression_constructor_exists():
-    assert callable(umlTrace::uml::TracedStringExpression.__init__)
-
-
-def test_umltrace::uml::tracedstringexpression_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStringExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedpackageableelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPackageableElement)
-
-
-def test_uml::tracedpackageableelement_constructor_exists():
-    assert callable(uml::TracedPackageableElement.__init__)
-
-
-def test_uml::tracedpackageableelement_constructor_args():
-    sig = inspect.signature(uml::TracedPackageableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedvaluespecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedValueSpecification)
-
-
-def test_umltrace::uml::tracedvaluespecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedValueSpecification.__init__)
-
-
-def test_umltrace::uml::tracedvaluespecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedValueSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddeploymenttarget_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDeploymentTarget)
-
-
-def test_uml::traceddeploymenttarget_constructor_exists():
-    assert callable(uml::TracedDeploymentTarget.__init__)
-
-
-def test_uml::traceddeploymenttarget_constructor_args():
-    sig = inspect.signature(uml::TracedDeploymentTarget.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinstancespecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInstanceSpecification)
-
-
-def test_umltrace::uml::tracedinstancespecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedInstanceSpecification.__init__)
-
-
-def test_umltrace::uml::tracedinstancespecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInstanceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedconnectableelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConnectableElement)
-
-
-def test_uml::tracedconnectableelement_constructor_exists():
-    assert callable(uml::TracedConnectableElement.__init__)
-
-
-def test_uml::tracedconnectableelement_constructor_args():
-    sig = inspect.signature(uml::TracedConnectableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedparameter_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedParameter)
-
-
-def test_umltrace::uml::tracedparameter_constructor_exists():
-    assert callable(umlTrace::uml::TracedParameter.__init__)
-
-
-def test_umltrace::uml::tracedparameter_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedvariable_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedVariable)
-
-
-def test_umltrace::uml::tracedvariable_constructor_exists():
-    assert callable(umlTrace::uml::TracedVariable.__init__)
-
-
-def test_umltrace::uml::tracedvariable_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedstructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStructuralFeature)
-
-
-def test_uml::tracedstructuralfeature_constructor_exists():
-    assert callable(uml::TracedStructuralFeature.__init__)
-
-
-def test_uml::tracedstructuralfeature_constructor_args():
-    sig = inspect.signature(uml::TracedStructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedproperty_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedProperty)
-
-
-def test_umltrace::uml::tracedproperty_constructor_exists():
-    assert callable(umlTrace::uml::TracedProperty.__init__)
-
-
-def test_umltrace::uml::tracedproperty_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedproperty_is_not_abstract():
-    assert not inspect.isabstract(TracedProperty)
-
-
-def test_tracedproperty_constructor_exists():
-    assert callable(TracedProperty.__init__)
-
-
-def test_tracedproperty_constructor_args():
-    sig = inspect.signature(TracedProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedextensionend_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExtensionEnd)
-
-
-def test_umltrace::uml::tracedextensionend_constructor_exists():
-    assert callable(umlTrace::uml::TracedExtensionEnd.__init__)
-
-
-def test_umltrace::uml::tracedextensionend_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExtensionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedport_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPort)
-
-
-def test_umltrace::uml::tracedport_constructor_exists():
-    assert callable(umlTrace::uml::TracedPort.__init__)
-
-
-def test_umltrace::uml::tracedport_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::traceddirectedrelationship_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDirectedRelationship)
-
-
-def test_uml::traceddirectedrelationship_constructor_exists():
-    assert callable(uml::TracedDirectedRelationship.__init__)
-
-
-def test_uml::traceddirectedrelationship_constructor_args():
-    sig = inspect.signature(uml::TracedDirectedRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinformationflow_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInformationFlow)
-
-
-def test_umltrace::uml::tracedinformationflow_constructor_exists():
-    assert callable(umlTrace::uml::TracedInformationFlow.__init__)
-
-
-def test_umltrace::uml::tracedinformationflow_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInformationFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddependency_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDependency)
-
-
-def test_umltrace::uml::traceddependency_constructor_exists():
-    assert callable(umlTrace::uml::TracedDependency.__init__)
-
-
-def test_umltrace::uml::traceddependency_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedevent_is_not_abstract():
-    assert not inspect.isabstract(TracedEvent)
-
-
-def test_tracedevent_constructor_exists():
-    assert callable(TracedEvent.__init__)
-
-
-def test_tracedevent_constructor_args():
-    sig = inspect.signature(TracedEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtimeevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTimeEvent)
-
-
-def test_umltrace::uml::tracedtimeevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedTimeEvent.__init__)
-
-
-def test_umltrace::uml::tracedtimeevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTimeEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmessageevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedMessageEvent)
-
-
-def test_umltrace::uml::tracedmessageevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedMessageEvent.__init__)
-
-
-def test_umltrace::uml::tracedmessageevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedMessageEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedchangeevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedChangeEvent)
-
-
-def test_umltrace::uml::tracedchangeevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedChangeEvent.__init__)
-
-
-def test_umltrace::uml::tracedchangeevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedChangeEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedsignal_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSignal)
-
-
-def test_umltrace::uml::tracedsignal_constructor_exists():
-    assert callable(umlTrace::uml::TracedSignal.__init__)
-
-
-def test_umltrace::uml::tracedsignal_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSignal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinteractionuse_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInteractionUse)
-
-
-def test_umltrace::uml::tracedinteractionuse_constructor_exists():
-    assert callable(umlTrace::uml::TracedInteractionUse.__init__)
-
-
-def test_umltrace::uml::tracedinteractionuse_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInteractionUse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedfinalnode_is_not_abstract():
-    assert not inspect.isabstract(TracedFinalNode)
-
-
-def test_tracedfinalnode_constructor_exists():
-    assert callable(TracedFinalNode.__init__)
-
-
-def test_tracedfinalnode_constructor_args():
-    sig = inspect.signature(TracedFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivityFinalNode)
-
-
-def test_umltrace::uml::tracedactivityfinalnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivityFinalNode.__init__)
-
-
-def test_umltrace::uml::tracedactivityfinalnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivityFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedflowfinalnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedFlowFinalNode)
-
-
-def test_umltrace::uml::tracedflowfinalnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedFlowFinalNode.__init__)
-
-
-def test_umltrace::uml::tracedflowfinalnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedFlowFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedcontrolnode_is_not_abstract():
-    assert not inspect.isabstract(TracedControlNode)
-
-
-def test_tracedcontrolnode_constructor_exists():
-    assert callable(TracedControlNode.__init__)
-
-
-def test_tracedcontrolnode_constructor_args():
-    sig = inspect.signature(TracedControlNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedjoinnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedJoinNode)
-
-
-def test_umltrace::uml::tracedjoinnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedJoinNode.__init__)
-
-
-def test_umltrace::uml::tracedjoinnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedJoinNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmergenode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedMergeNode)
-
-
-def test_umltrace::uml::tracedmergenode_constructor_exists():
-    assert callable(umlTrace::uml::TracedMergeNode.__init__)
-
-
-def test_umltrace::uml::tracedmergenode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedMergeNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedforknode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedForkNode)
-
-
-def test_umltrace::uml::tracedforknode_constructor_exists():
-    assert callable(umlTrace::uml::TracedForkNode.__init__)
-
-
-def test_umltrace::uml::tracedforknode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedForkNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedfinalnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedFinalNode)
-
-
-def test_umltrace::uml::tracedfinalnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedFinalNode.__init__)
-
-
-def test_umltrace::uml::tracedfinalnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddecisionnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDecisionNode)
-
-
-def test_umltrace::uml::traceddecisionnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedDecisionNode.__init__)
-
-
-def test_umltrace::uml::traceddecisionnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDecisionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinitialnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInitialNode)
-
-
-def test_umltrace::uml::tracedinitialnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedInitialNode.__init__)
-
-
-def test_umltrace::uml::tracedinitialnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInitialNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedaction_is_not_abstract():
-    assert not inspect.isabstract(TracedAction)
-
-
-def test_tracedaction_constructor_exists():
-    assert callable(TracedAction.__init__)
-
-
-def test_tracedaction_constructor_args():
-    sig = inspect.signature(TracedAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedaccepteventaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAcceptEventAction)
-
-
-def test_umltrace::uml::tracedaccepteventaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedAcceptEventAction.__init__)
-
-
-def test_umltrace::uml::tracedaccepteventaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAcceptEventAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstartclassifierbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStartClassifierBehaviorAction)
-
-
-def test_umltrace::uml::tracedstartclassifierbehavioraction_constructor_exists():
-    assert callable(umlTrace::uml::TracedStartClassifierBehaviorAction.__init__)
-
-
-def test_umltrace::uml::tracedstartclassifierbehavioraction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStartClassifierBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStructuralFeatureAction)
-
-
-def test_umltrace::uml::tracedstructuralfeatureaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedStructuralFeatureAction.__init__)
-
-
-def test_umltrace::uml::tracedstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreduceaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReduceAction)
-
-
-def test_umltrace::uml::tracedreduceaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReduceAction.__init__)
-
-
-def test_umltrace::uml::tracedreduceaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReduceAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedvaluespecificationaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedValueSpecificationAction)
-
-
-def test_umltrace::uml::tracedvaluespecificationaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedValueSpecificationAction.__init__)
-
-
-def test_umltrace::uml::tracedvaluespecificationaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedValueSpecificationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedopaqueaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOpaqueAction)
-
-
-def test_umltrace::uml::tracedopaqueaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedOpaqueAction.__init__)
-
-
-def test_umltrace::uml::tracedopaqueaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOpaqueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedunmarshallaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedUnmarshallAction)
-
-
-def test_umltrace::uml::tracedunmarshallaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedUnmarshallAction.__init__)
-
-
-def test_umltrace::uml::tracedunmarshallaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedUnmarshallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadselfaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadSelfAction)
-
-
-def test_umltrace::uml::tracedreadselfaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadSelfAction.__init__)
-
-
-def test_umltrace::uml::tracedreadselfaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadSelfAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadisclassifiedobjectaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadIsClassifiedObjectAction)
-
-
-def test_umltrace::uml::tracedreadisclassifiedobjectaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadIsClassifiedObjectAction.__init__)
-
-
-def test_umltrace::uml::tracedreadisclassifiedobjectaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadIsClassifiedObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddestroyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDestroyObjectAction)
-
-
-def test_umltrace::uml::traceddestroyobjectaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedDestroyObjectAction.__init__)
-
-
-def test_umltrace::uml::traceddestroyobjectaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDestroyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedvariableaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedVariableAction)
-
-
-def test_umltrace::uml::tracedvariableaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedVariableAction.__init__)
-
-
-def test_umltrace::uml::tracedvariableaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedVariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadlinkobjectendqualifieraction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadLinkObjectEndQualifierAction)
-
-
-def test_umltrace::uml::tracedreadlinkobjectendqualifieraction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadLinkObjectEndQualifierAction.__init__)
-
-
-def test_umltrace::uml::tracedreadlinkobjectendqualifieraction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadLinkObjectEndQualifierAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinvocationaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInvocationAction)
-
-
-def test_umltrace::uml::tracedinvocationaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedInvocationAction.__init__)
-
-
-def test_umltrace::uml::tracedinvocationaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInvocationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedraiseexceptionaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRaiseExceptionAction)
-
-
-def test_umltrace::uml::tracedraiseexceptionaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedRaiseExceptionAction.__init__)
-
-
-def test_umltrace::uml::tracedraiseexceptionaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRaiseExceptionAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadlinkobjectendaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadLinkObjectEndAction)
-
-
-def test_umltrace::uml::tracedreadlinkobjectendaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadLinkObjectEndAction.__init__)
-
-
-def test_umltrace::uml::tracedreadlinkobjectendaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadLinkObjectEndAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclearassociationaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClearAssociationAction)
-
-
-def test_umltrace::uml::tracedclearassociationaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedClearAssociationAction.__init__)
-
-
-def test_umltrace::uml::tracedclearassociationaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClearAssociationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadextentaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadExtentAction)
-
-
-def test_umltrace::uml::tracedreadextentaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadExtentAction.__init__)
-
-
-def test_umltrace::uml::tracedreadextentaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadExtentAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreplyaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReplyAction)
-
-
-def test_umltrace::uml::tracedreplyaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReplyAction.__init__)
-
-
-def test_umltrace::uml::tracedreplyaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReplyAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtestidentityaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTestIdentityAction)
-
-
-def test_umltrace::uml::tracedtestidentityaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedTestIdentityAction.__init__)
-
-
-def test_umltrace::uml::tracedtestidentityaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTestIdentityAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcreateobjectaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCreateObjectAction)
-
-
-def test_umltrace::uml::tracedcreateobjectaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedCreateObjectAction.__init__)
-
-
-def test_umltrace::uml::tracedcreateobjectaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCreateObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreclassifyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReclassifyObjectAction)
-
-
-def test_umltrace::uml::tracedreclassifyobjectaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReclassifyObjectAction.__init__)
-
-
-def test_umltrace::uml::tracedreclassifyobjectaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReclassifyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedlinkaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLinkAction)
-
-
-def test_umltrace::uml::tracedlinkaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedLinkAction.__init__)
-
-
-def test_umltrace::uml::tracedlinkaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedlinkaction_is_not_abstract():
-    assert not inspect.isabstract(TracedLinkAction)
-
-
-def test_tracedlinkaction_constructor_exists():
-    assert callable(TracedLinkAction.__init__)
-
-
-def test_tracedlinkaction_constructor_args():
-    sig = inspect.signature(TracedLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedreadlinkaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedReadLinkAction)
-
-
-def test_umltrace::uml::tracedreadlinkaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedReadLinkAction.__init__)
-
-
-def test_umltrace::uml::tracedreadlinkaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedReadLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedwritelinkaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedWriteLinkAction)
-
-
-def test_umltrace::uml::tracedwritelinkaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedWriteLinkAction.__init__)
-
-
-def test_umltrace::uml::tracedwritelinkaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedWriteLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedwritelinkaction_is_not_abstract():
-    assert not inspect.isabstract(TracedWriteLinkAction)
-
-
-def test_tracedwritelinkaction_constructor_exists():
-    assert callable(TracedWriteLinkAction.__init__)
-
-
-def test_tracedwritelinkaction_constructor_args():
-    sig = inspect.signature(TracedWriteLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddestroylinkaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDestroyLinkAction)
-
-
-def test_umltrace::uml::traceddestroylinkaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedDestroyLinkAction.__init__)
-
-
-def test_umltrace::uml::traceddestroylinkaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDestroyLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcreatelinkaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCreateLinkAction)
-
-
-def test_umltrace::uml::tracedcreatelinkaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedCreateLinkAction.__init__)
-
-
-def test_umltrace::uml::tracedcreatelinkaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCreateLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedcreatelinkaction_is_not_abstract():
-    assert not inspect.isabstract(TracedCreateLinkAction)
-
-
-def test_tracedcreatelinkaction_constructor_exists():
-    assert callable(TracedCreateLinkAction.__init__)
-
-
-def test_tracedcreatelinkaction_constructor_args():
-    sig = inspect.signature(TracedCreateLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcreatelinkobjectaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCreateLinkObjectAction)
-
-
-def test_umltrace::uml::tracedcreatelinkobjectaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedCreateLinkObjectAction.__init__)
-
-
-def test_umltrace::uml::tracedcreatelinkobjectaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCreateLinkObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracednamedelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedNamedElement)
-
-
-def test_uml::tracednamedelement_constructor_exists():
-    assert callable(uml::TracedNamedElement.__init__)
-
-
-def test_uml::tracednamedelement_constructor_args():
-    sig = inspect.signature(uml::TracedNamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinclude_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInclude)
-
-
-def test_umltrace::uml::tracedinclude_constructor_exists():
-    assert callable(umlTrace::uml::TracedInclude.__init__)
-
-
-def test_umltrace::uml::tracedinclude_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInclude.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedextend_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExtend)
-
-
-def test_umltrace::uml::tracedextend_constructor_exists():
-    assert callable(umlTrace::uml::TracedExtend.__init__)
-
-
-def test_umltrace::uml::tracedextend_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExtend.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitycontent_is_not_abstract():
-    assert not inspect.isabstract(ActivityContent)
-
-
-def test_activitycontent_constructor_exists():
-    assert callable(ActivityContent.__init__)
-
-
-def test_activitycontent_constructor_args():
-    sig = inspect.signature(ActivityContent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivitygroup_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivityGroup)
-
-
-def test_umltrace::uml::tracedactivitygroup_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivityGroup.__init__)
-
-
-def test_umltrace::uml::tracedactivitygroup_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivityGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedredefinableelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRedefinableElement)
-
-
-def test_uml::tracedredefinableelement_constructor_exists():
-    assert callable(uml::TracedRedefinableElement.__init__)
-
-
-def test_uml::tracedredefinableelement_constructor_args():
-    sig = inspect.signature(uml::TracedRedefinableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedredefinabletemplatesignature_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRedefinableTemplateSignature)
-
-
-def test_umltrace::uml::tracedredefinabletemplatesignature_constructor_exists():
-    assert callable(umlTrace::uml::TracedRedefinableTemplateSignature.__init__)
-
-
-def test_umltrace::uml::tracedredefinabletemplatesignature_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRedefinableTemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedactivitynode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedActivityNode)
-
-
-def test_umltrace::uml::tracedactivitynode_constructor_exists():
-    assert callable(umlTrace::uml::TracedActivityNode.__init__)
-
-
-def test_umltrace::uml::tracedactivitynode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedactivitynode_is_not_abstract():
-    assert not inspect.isabstract(TracedActivityNode)
-
-
-def test_tracedactivitynode_constructor_exists():
-    assert callable(TracedActivityNode.__init__)
-
-
-def test_tracedactivitynode_constructor_args():
-    sig = inspect.signature(TracedActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcontrolnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedControlNode)
-
-
-def test_umltrace::uml::tracedcontrolnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedControlNode.__init__)
-
-
-def test_umltrace::uml::tracedcontrolnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedControlNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedexecutablenode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExecutableNode)
-
-
-def test_umltrace::uml::tracedexecutablenode_constructor_exists():
-    assert callable(umlTrace::uml::TracedExecutableNode.__init__)
-
-
-def test_umltrace::uml::tracedexecutablenode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracedexecutablenode_is_not_abstract():
-    assert not inspect.isabstract(TracedExecutableNode)
-
-
-def test_tracedexecutablenode_constructor_exists():
-    assert callable(TracedExecutableNode.__init__)
-
-
-def test_tracedexecutablenode_constructor_args():
-    sig = inspect.signature(TracedExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedaction_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAction)
-
-
-def test_umltrace::uml::tracedaction_constructor_exists():
-    assert callable(umlTrace::uml::TracedAction.__init__)
-
-
-def test_umltrace::uml::tracedaction_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedactivitygroup_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActivityGroup)
-
-
-def test_uml::tracedactivitygroup_constructor_exists():
-    assert callable(uml::TracedActivityGroup.__init__)
-
-
-def test_uml::tracedactivitygroup_constructor_args():
-    sig = inspect.signature(uml::TracedActivityGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracednamespace_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedNamespace)
-
-
-def test_uml::tracednamespace_constructor_exists():
-    assert callable(uml::TracedNamespace.__init__)
-
-
-def test_uml::tracednamespace_constructor_args():
-    sig = inspect.signature(uml::TracedNamespace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtransition_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTransition)
-
-
-def test_umltrace::uml::tracedtransition_constructor_exists():
-    assert callable(umlTrace::uml::TracedTransition.__init__)
-
-
-def test_umltrace::uml::tracedtransition_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinteractionoperand_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInteractionOperand)
-
-
-def test_umltrace::uml::tracedinteractionoperand_constructor_exists():
-    assert callable(umlTrace::uml::TracedInteractionOperand.__init__)
-
-
-def test_umltrace::uml::tracedinteractionoperand_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInteractionOperand.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedregion_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRegion)
-
-
-def test_umltrace::uml::tracedregion_constructor_exists():
-    assert callable(umlTrace::uml::TracedRegion.__init__)
-
-
-def test_umltrace::uml::tracedregion_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedpackage_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPackage)
-
-
-def test_umltrace::uml::tracedpackage_constructor_exists():
-    assert callable(umlTrace::uml::TracedPackage.__init__)
-
-
-def test_umltrace::uml::tracedpackage_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstate_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedState)
-
-
-def test_umltrace::uml::tracedstate_constructor_exists():
-    assert callable(umlTrace::uml::TracedState.__init__)
-
-
-def test_umltrace::uml::tracedstate_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedbehavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedBehavioralFeature)
-
-
-def test_umltrace::uml::tracedbehavioralfeature_constructor_exists():
-    assert callable(umlTrace::uml::TracedBehavioralFeature.__init__)
-
-
-def test_umltrace::uml::tracedbehavioralfeature_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedBehavioralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclassifier_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClassifier)
-
-
-def test_umltrace::uml::tracedclassifier_constructor_exists():
-    assert callable(umlTrace::uml::TracedClassifier.__init__)
-
-
-def test_umltrace::uml::tracedclassifier_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAction)
-
-
-def test_uml::tracedaction_constructor_exists():
-    assert callable(uml::TracedAction.__init__)
-
-
-def test_uml::tracedaction_constructor_args():
-    sig = inspect.signature(uml::TracedAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedstructuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedStructuredActivityNode)
-
-
-def test_umltrace::uml::tracedstructuredactivitynode_constructor_exists():
-    assert callable(umlTrace::uml::TracedStructuredActivityNode.__init__)
-
-
-def test_umltrace::uml::tracedstructuredactivitynode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedStructuredActivityNode.__init__)
+def test_uml_tracedaction_constructor_args():
+    sig = inspect.signature(uml_TracedAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -7382,58 +2034,16 @@ def test_tracedstructuredactivitynode_constructor_args():
 
 
 
-def test_umltrace::uml::tracedexpansionregion_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExpansionRegion)
+def test_umltrace_uml_tracedconditionalnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConditionalNode)
 
 
-def test_umltrace::uml::tracedexpansionregion_constructor_exists():
-    assert callable(umlTrace::uml::TracedExpansionRegion.__init__)
+def test_umltrace_uml_tracedconditionalnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedConditionalNode.__init__)
 
 
-def test_umltrace::uml::tracedexpansionregion_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExpansionRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedloopnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLoopNode)
-
-
-def test_umltrace::uml::tracedloopnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedLoopNode.__init__)
-
-
-def test_umltrace::uml::tracedloopnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLoopNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedsequencenode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSequenceNode)
-
-
-def test_umltrace::uml::tracedsequencenode_constructor_exists():
-    assert callable(umlTrace::uml::TracedSequenceNode.__init__)
-
-
-def test_umltrace::uml::tracedsequencenode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSequenceNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconditionalnode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConditionalNode)
-
-
-def test_umltrace::uml::tracedconditionalnode_constructor_exists():
-    assert callable(umlTrace::uml::TracedConditionalNode.__init__)
-
-
-def test_umltrace::uml::tracedconditionalnode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConditionalNode.__init__)
+def test_umltrace_uml_tracedconditionalnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConditionalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -7452,16 +2062,16 @@ def test_tracedemodelelement_constructor_args():
 
 
 
-def test_umltrace::uml::tracedelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedElement)
+def test_umltrace_uml_tracedelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedElement)
 
 
-def test_umltrace::uml::tracedelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedElement.__init__)
+def test_umltrace_uml_tracedelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedElement.__init__)
 
 
-def test_umltrace::uml::tracedelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedElement.__init__)
+def test_umltrace_uml_tracedelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -7480,198 +2090,72 @@ def test_tracedelement_constructor_args():
 
 
 
-def test_umltrace::uml::tracedtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTemplateParameter)
+def test_umltrace_uml_tracedtemplateparametersubstitution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTemplateParameterSubstitution)
 
 
-def test_umltrace::uml::tracedtemplateparameter_constructor_exists():
-    assert callable(umlTrace::uml::TracedTemplateParameter.__init__)
+def test_umltrace_uml_tracedtemplateparametersubstitution_constructor_exists():
+    assert callable(umlTrace_uml_TracedTemplateParameterSubstitution.__init__)
 
 
-def test_umltrace::uml::tracedtemplateparameter_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTemplateParameter.__init__)
+def test_umltrace_uml_tracedtemplateparametersubstitution_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTemplateParameterSubstitution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedrelationship_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRelationship)
+def test_umltrace_uml_tracedqualifiervalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedQualifierValue)
 
 
-def test_umltrace::uml::tracedrelationship_constructor_exists():
-    assert callable(umlTrace::uml::TracedRelationship.__init__)
+def test_umltrace_uml_tracedqualifiervalue_constructor_exists():
+    assert callable(umlTrace_uml_TracedQualifierValue.__init__)
 
 
-def test_umltrace::uml::tracedrelationship_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRelationship.__init__)
+def test_umltrace_uml_tracedqualifiervalue_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedQualifierValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedlinkenddata_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLinkEndData)
+def test_umltrace_uml_tracedcomment_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedComment)
 
 
-def test_umltrace::uml::tracedlinkenddata_constructor_exists():
-    assert callable(umlTrace::uml::TracedLinkEndData.__init__)
+def test_umltrace_uml_tracedcomment_constructor_exists():
+    assert callable(umlTrace_uml_TracedComment.__init__)
 
 
-def test_umltrace::uml::tracedlinkenddata_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLinkEndData.__init__)
+def test_umltrace_uml_tracedcomment_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedComment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedexceptionhandler_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedExceptionHandler)
+def test_umltrace_uml_tracedclause_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClause)
 
 
-def test_umltrace::uml::tracedexceptionhandler_constructor_exists():
-    assert callable(umlTrace::uml::TracedExceptionHandler.__init__)
+def test_umltrace_uml_tracedclause_constructor_exists():
+    assert callable(umlTrace_uml_TracedClause.__init__)
 
 
-def test_umltrace::uml::tracedexceptionhandler_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedExceptionHandler.__init__)
+def test_umltrace_uml_tracedclause_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedslot_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedSlot)
+def test_umltrace_uml_tracednamedelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedNamedElement)
 
 
-def test_umltrace::uml::tracedslot_constructor_exists():
-    assert callable(umlTrace::uml::TracedSlot.__init__)
+def test_umltrace_uml_tracednamedelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedNamedElement.__init__)
 
 
-def test_umltrace::uml::tracedslot_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedSlot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtemplateparametersubstitution_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTemplateParameterSubstitution)
-
-
-def test_umltrace::uml::tracedtemplateparametersubstitution_constructor_exists():
-    assert callable(umlTrace::uml::TracedTemplateParameterSubstitution.__init__)
-
-
-def test_umltrace::uml::tracedtemplateparametersubstitution_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTemplateParameterSubstitution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtemplatesignature_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTemplateSignature)
-
-
-def test_umltrace::uml::tracedtemplatesignature_constructor_exists():
-    assert callable(umlTrace::uml::TracedTemplateSignature.__init__)
-
-
-def test_umltrace::uml::tracedtemplatesignature_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcomment_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedComment)
-
-
-def test_umltrace::uml::tracedcomment_constructor_exists():
-    assert callable(umlTrace::uml::TracedComment.__init__)
-
-
-def test_umltrace::uml::tracedcomment_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedComment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmultiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedMultiplicityElement)
-
-
-def test_umltrace::uml::tracedmultiplicityelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedMultiplicityElement.__init__)
-
-
-def test_umltrace::uml::tracedmultiplicityelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedMultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtemplateableelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTemplateableElement)
-
-
-def test_umltrace::uml::tracedtemplateableelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedTemplateableElement.__init__)
-
-
-def test_umltrace::uml::tracedtemplateableelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTemplateableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedclause_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedClause)
-
-
-def test_umltrace::uml::tracedclause_constructor_exists():
-    assert callable(umlTrace::uml::TracedClause.__init__)
-
-
-def test_umltrace::uml::tracedclause_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedimage_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedImage)
-
-
-def test_umltrace::uml::tracedimage_constructor_exists():
-    assert callable(umlTrace::uml::TracedImage.__init__)
-
-
-def test_umltrace::uml::tracedimage_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedImage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedqualifiervalue_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedQualifierValue)
-
-
-def test_umltrace::uml::tracedqualifiervalue_constructor_exists():
-    assert callable(umlTrace::uml::TracedQualifierValue.__init__)
-
-
-def test_umltrace::uml::tracedqualifiervalue_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedQualifierValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracednamedelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedNamedElement)
-
-
-def test_umltrace::uml::tracednamedelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedNamedElement.__init__)
-
-
-def test_umltrace::uml::tracednamedelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedNamedElement.__init__)
+def test_umltrace_uml_tracednamedelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedNamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -7690,226 +2174,58 @@ def test_tracednamedelement_constructor_args():
 
 
 
-def test_umltrace::uml::tracedtypedelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTypedElement)
+def test_umltrace_uml_tracedgeneralordering_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedGeneralOrdering)
 
 
-def test_umltrace::uml::tracedtypedelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedTypedElement.__init__)
+def test_umltrace_uml_tracedgeneralordering_constructor_exists():
+    assert callable(umlTrace_uml_TracedGeneralOrdering.__init__)
 
 
-def test_umltrace::uml::tracedtypedelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTypedElement.__init__)
+def test_umltrace_uml_tracedgeneralordering_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedGeneralOrdering.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracednamespace_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedNamespace)
+def test_umltrace_uml_tracedparameterset_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedParameterSet)
 
 
-def test_umltrace::uml::tracednamespace_constructor_exists():
-    assert callable(umlTrace::uml::TracedNamespace.__init__)
+def test_umltrace_uml_tracedparameterset_constructor_exists():
+    assert callable(umlTrace_uml_TracedParameterSet.__init__)
 
 
-def test_umltrace::uml::tracednamespace_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedNamespace.__init__)
+def test_umltrace_uml_tracedparameterset_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedParameterSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedredefinableelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedRedefinableElement)
+def test_umltrace_uml_tracedinteractionfragment_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInteractionFragment)
 
 
-def test_umltrace::uml::tracedredefinableelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedRedefinableElement.__init__)
+def test_umltrace_uml_tracedinteractionfragment_constructor_exists():
+    assert callable(umlTrace_uml_TracedInteractionFragment.__init__)
 
 
-def test_umltrace::uml::tracedredefinableelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedRedefinableElement.__init__)
+def test_umltrace_uml_tracedinteractionfragment_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInteractionFragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::traceddeploymenttarget_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDeploymentTarget)
+def test_uml_tracedmessageend_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedMessageEnd)
 
 
-def test_umltrace::uml::traceddeploymenttarget_constructor_exists():
-    assert callable(umlTrace::uml::TracedDeploymentTarget.__init__)
+def test_uml_tracedmessageend_constructor_exists():
+    assert callable(uml_TracedMessageEnd.__init__)
 
 
-def test_umltrace::uml::traceddeploymenttarget_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDeploymentTarget.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmessage_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedMessage)
-
-
-def test_umltrace::uml::tracedmessage_constructor_exists():
-    assert callable(umlTrace::uml::TracedMessage.__init__)
-
-
-def test_umltrace::uml::tracedmessage_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedMessage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedcollaborationuse_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedCollaborationUse)
-
-
-def test_umltrace::uml::tracedcollaborationuse_constructor_exists():
-    assert callable(umlTrace::uml::TracedCollaborationUse.__init__)
-
-
-def test_umltrace::uml::tracedcollaborationuse_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedCollaborationUse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmessageend_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedMessageEnd)
-
-
-def test_umltrace::uml::tracedmessageend_constructor_exists():
-    assert callable(umlTrace::uml::TracedMessageEnd.__init__)
-
-
-def test_umltrace::uml::tracedmessageend_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedMessageEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedgeneralordering_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedGeneralOrdering)
-
-
-def test_umltrace::uml::tracedgeneralordering_constructor_exists():
-    assert callable(umlTrace::uml::TracedGeneralOrdering.__init__)
-
-
-def test_umltrace::uml::tracedgeneralordering_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedGeneralOrdering.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedparameterset_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedParameterSet)
-
-
-def test_umltrace::uml::tracedparameterset_constructor_exists():
-    assert callable(umlTrace::uml::TracedParameterSet.__init__)
-
-
-def test_umltrace::uml::tracedparameterset_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedParameterSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtrigger_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTrigger)
-
-
-def test_umltrace::uml::tracedtrigger_constructor_exists():
-    assert callable(umlTrace::uml::TracedTrigger.__init__)
-
-
-def test_umltrace::uml::tracedtrigger_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedlifeline_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedLifeline)
-
-
-def test_umltrace::uml::tracedlifeline_constructor_exists():
-    assert callable(umlTrace::uml::TracedLifeline.__init__)
-
-
-def test_umltrace::uml::tracedlifeline_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedLifeline.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::traceddeployedartifact_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDeployedArtifact)
-
-
-def test_umltrace::uml::traceddeployedartifact_constructor_exists():
-    assert callable(umlTrace::uml::TracedDeployedArtifact.__init__)
-
-
-def test_umltrace::uml::traceddeployedartifact_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDeployedArtifact.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedinteractionfragment_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInteractionFragment)
-
-
-def test_umltrace::uml::tracedinteractionfragment_constructor_exists():
-    assert callable(umlTrace::uml::TracedInteractionFragment.__init__)
-
-
-def test_umltrace::uml::tracedinteractionfragment_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInteractionFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOccurrenceSpecification)
-
-
-def test_umltrace::uml::tracedoccurrencespecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedOccurrenceSpecification.__init__)
-
-
-def test_umltrace::uml::tracedoccurrencespecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOccurrenceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml::tracedmessageend_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedMessageEnd)
-
-
-def test_uml::tracedmessageend_constructor_exists():
-    assert callable(uml::TracedMessageEnd.__init__)
-
-
-def test_uml::tracedmessageend_constructor_args():
-    sig = inspect.signature(uml::TracedMessageEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedmessageoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedMessageOccurrenceSpecification)
-
-
-def test_umltrace::uml::tracedmessageoccurrencespecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedMessageOccurrenceSpecification.__init__)
-
-
-def test_umltrace::uml::tracedmessageoccurrencespecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedMessageOccurrenceSpecification.__init__)
+def test_uml_tracedmessageend_constructor_args():
+    sig = inspect.signature(uml_TracedMessageEnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -7928,30 +2244,30 @@ def test_tracedmessageoccurrencespecification_constructor_args():
 
 
 
-def test_umltrace::uml::traceddestructionoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDestructionOccurrenceSpecification)
+def test_umltrace_uml_traceddestructionoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDestructionOccurrenceSpecification)
 
 
-def test_umltrace::uml::traceddestructionoccurrencespecification_constructor_exists():
-    assert callable(umlTrace::uml::TracedDestructionOccurrenceSpecification.__init__)
+def test_umltrace_uml_traceddestructionoccurrencespecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedDestructionOccurrenceSpecification.__init__)
 
 
-def test_umltrace::uml::traceddestructionoccurrencespecification_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDestructionOccurrenceSpecification.__init__)
+def test_umltrace_uml_traceddestructionoccurrencespecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDestructionOccurrenceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedvertex_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedVertex)
+def test_umltrace_uml_tracedvertex_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedVertex)
 
 
-def test_umltrace::uml::tracedvertex_constructor_exists():
-    assert callable(umlTrace::uml::TracedVertex.__init__)
+def test_umltrace_uml_tracedvertex_constructor_exists():
+    assert callable(umlTrace_uml_TracedVertex.__init__)
 
 
-def test_umltrace::uml::tracedvertex_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedVertex.__init__)
+def test_umltrace_uml_tracedvertex_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedVertex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -7970,100 +2286,58 @@ def test_tracedvertex_constructor_args():
 
 
 
-def test_umltrace::uml::tracedconnectionpointreference_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConnectionPointReference)
+def test_umltrace_uml_tracedconnectionpointreference_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConnectionPointReference)
 
 
-def test_umltrace::uml::tracedconnectionpointreference_constructor_exists():
-    assert callable(umlTrace::uml::TracedConnectionPointReference.__init__)
+def test_umltrace_uml_tracedconnectionpointreference_constructor_exists():
+    assert callable(umlTrace_uml_TracedConnectionPointReference.__init__)
 
 
-def test_umltrace::uml::tracedconnectionpointreference_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConnectionPointReference.__init__)
+def test_umltrace_uml_tracedconnectionpointreference_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConnectionPointReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedpseudostate_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPseudostate)
+def test_umltrace_uml_tracedpseudostate_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPseudostate)
 
 
-def test_umltrace::uml::tracedpseudostate_constructor_exists():
-    assert callable(umlTrace::uml::TracedPseudostate.__init__)
+def test_umltrace_uml_tracedpseudostate_constructor_exists():
+    assert callable(umlTrace_uml_TracedPseudostate.__init__)
 
 
-def test_umltrace::uml::tracedpseudostate_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPseudostate.__init__)
+def test_umltrace_uml_tracedpseudostate_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedparameterableelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedParameterableElement)
+def test_umltrace_uml_tracedparameterableelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedParameterableElement)
 
 
-def test_umltrace::uml::tracedparameterableelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedParameterableElement.__init__)
+def test_umltrace_uml_tracedparameterableelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedParameterableElement.__init__)
 
 
-def test_umltrace::uml::tracedparameterableelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedParameterableElement.__init__)
+def test_umltrace_uml_tracedparameterableelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedParameterableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedparameterableelement_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedParameterableElement)
+def test_uml_tracedparameterableelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedParameterableElement)
 
 
-def test_uml::tracedparameterableelement_constructor_exists():
-    assert callable(uml::TracedParameterableElement.__init__)
+def test_uml_tracedparameterableelement_constructor_exists():
+    assert callable(uml_TracedParameterableElement.__init__)
 
 
-def test_uml::tracedparameterableelement_constructor_args():
-    sig = inspect.signature(uml::TracedParameterableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconnectableelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConnectableElement)
-
-
-def test_umltrace::uml::tracedconnectableelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedConnectableElement.__init__)
-
-
-def test_umltrace::uml::tracedconnectableelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConnectableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedoperation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedOperation)
-
-
-def test_umltrace::uml::tracedoperation_constructor_exists():
-    assert callable(umlTrace::uml::TracedOperation.__init__)
-
-
-def test_umltrace::uml::tracedoperation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedpackageableelement_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedPackageableElement)
-
-
-def test_umltrace::uml::tracedpackageableelement_constructor_exists():
-    assert callable(umlTrace::uml::TracedPackageableElement.__init__)
-
-
-def test_umltrace::uml::tracedpackageableelement_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedPackageableElement.__init__)
+def test_uml_tracedparameterableelement_constructor_args():
+    sig = inspect.signature(uml_TracedParameterableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -8082,72 +2356,16 @@ def test_tracedpackageableelement_constructor_args():
 
 
 
-def test_umltrace::uml::tracedobservation_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedObservation)
+def test_umltrace_uml_tracedconstraint_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConstraint)
 
 
-def test_umltrace::uml::tracedobservation_constructor_exists():
-    assert callable(umlTrace::uml::TracedObservation.__init__)
+def test_umltrace_uml_tracedconstraint_constructor_exists():
+    assert callable(umlTrace_uml_TracedConstraint.__init__)
 
 
-def test_umltrace::uml::tracedobservation_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedObservation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedevent_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedEvent)
-
-
-def test_umltrace::uml::tracedevent_constructor_exists():
-    assert callable(umlTrace::uml::TracedEvent.__init__)
-
-
-def test_umltrace::uml::tracedevent_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedgeneralizationset_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedGeneralizationSet)
-
-
-def test_umltrace::uml::tracedgeneralizationset_constructor_exists():
-    assert callable(umlTrace::uml::TracedGeneralizationSet.__init__)
-
-
-def test_umltrace::uml::tracedgeneralizationset_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedGeneralizationSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedtype_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedType)
-
-
-def test_umltrace::uml::tracedtype_constructor_exists():
-    assert callable(umlTrace::uml::TracedType.__init__)
-
-
-def test_umltrace::uml::tracedtype_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umltrace::uml::tracedconstraint_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedConstraint)
-
-
-def test_umltrace::uml::tracedconstraint_constructor_exists():
-    assert callable(umlTrace::uml::TracedConstraint.__init__)
-
-
-def test_umltrace::uml::tracedconstraint_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedConstraint.__init__)
+def test_umltrace_uml_tracedconstraint_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -8166,30 +2384,30 @@ def test_tracedconstraint_constructor_args():
 
 
 
-def test_umltrace::uml::tracedinteractionconstraint_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedInteractionConstraint)
+def test_umltrace_uml_tracedinteractionconstraint_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInteractionConstraint)
 
 
-def test_umltrace::uml::tracedinteractionconstraint_constructor_exists():
-    assert callable(umlTrace::uml::TracedInteractionConstraint.__init__)
+def test_umltrace_uml_tracedinteractionconstraint_constructor_exists():
+    assert callable(umlTrace_uml_TracedInteractionConstraint.__init__)
 
 
-def test_umltrace::uml::tracedinteractionconstraint_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedInteractionConstraint.__init__)
+def test_umltrace_uml_tracedinteractionconstraint_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInteractionConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedintervalconstraint_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedIntervalConstraint)
+def test_umltrace_uml_tracedintervalconstraint_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedIntervalConstraint)
 
 
-def test_umltrace::uml::tracedintervalconstraint_constructor_exists():
-    assert callable(umlTrace::uml::TracedIntervalConstraint.__init__)
+def test_umltrace_uml_tracedintervalconstraint_constructor_exists():
+    assert callable(umlTrace_uml_TracedIntervalConstraint.__init__)
 
 
-def test_umltrace::uml::tracedintervalconstraint_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedIntervalConstraint.__init__)
+def test_umltrace_uml_tracedintervalconstraint_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedIntervalConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -8208,1318 +2426,7100 @@ def test_tracedintervalconstraint_constructor_args():
 
 
 
-def test_umltrace::uml::tracedtimeconstraint_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedTimeConstraint)
+def test_umltrace_uml_traceddurationconstraint_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDurationConstraint)
 
 
-def test_umltrace::uml::tracedtimeconstraint_constructor_exists():
-    assert callable(umlTrace::uml::TracedTimeConstraint.__init__)
+def test_umltrace_uml_traceddurationconstraint_constructor_exists():
+    assert callable(umlTrace_uml_TracedDurationConstraint.__init__)
 
 
-def test_umltrace::uml::tracedtimeconstraint_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedTimeConstraint.__init__)
+def test_umltrace_uml_traceddurationconstraint_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDurationConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::traceddurationconstraint_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedDurationConstraint)
+def test_uml_tracedcontrolflow_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedControlFlow)
 
 
-def test_umltrace::uml::traceddurationconstraint_constructor_exists():
-    assert callable(umlTrace::uml::TracedDurationConstraint.__init__)
+def test_uml_tracedcontrolflow_constructor_exists():
+    assert callable(uml_TracedControlFlow.__init__)
 
 
-def test_umltrace::uml::traceddurationconstraint_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedDurationConstraint.__init__)
+def test_uml_tracedcontrolflow_constructor_args():
+    sig = inspect.signature(uml_TracedControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedcontrolflow_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedControlFlow)
+def test_uml_tracedtimeobservation_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTimeObservation)
 
 
-def test_uml::tracedcontrolflow_constructor_exists():
-    assert callable(uml::TracedControlFlow.__init__)
+def test_uml_tracedtimeobservation_constructor_exists():
+    assert callable(uml_TracedTimeObservation.__init__)
 
 
-def test_uml::tracedcontrolflow_constructor_args():
-    sig = inspect.signature(uml::TracedControlFlow.__init__)
+def test_uml_tracedtimeobservation_constructor_args():
+    sig = inspect.signature(uml_TracedTimeObservation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedtimeobservation_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTimeObservation)
+def test_uml_tracedgate_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedGate)
 
 
-def test_uml::tracedtimeobservation_constructor_exists():
-    assert callable(uml::TracedTimeObservation.__init__)
+def test_uml_tracedgate_constructor_exists():
+    assert callable(uml_TracedGate.__init__)
 
 
-def test_uml::tracedtimeobservation_constructor_args():
-    sig = inspect.signature(uml::TracedTimeObservation.__init__)
+def test_uml_tracedgate_constructor_args():
+    sig = inspect.signature(uml_TracedGate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedgate_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedGate)
+def test_uml_tracedactivityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActivityFinalNode)
 
 
-def test_uml::tracedgate_constructor_exists():
-    assert callable(uml::TracedGate.__init__)
+def test_uml_tracedactivityfinalnode_constructor_exists():
+    assert callable(uml_TracedActivityFinalNode.__init__)
 
 
-def test_uml::tracedgate_constructor_args():
-    sig = inspect.signature(uml::TracedGate.__init__)
+def test_uml_tracedactivityfinalnode_constructor_args():
+    sig = inspect.signature(uml_TracedActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedprotocolstatemachine_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedProtocolStateMachine)
+def test_uml_tracedclassifiertemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClassifierTemplateParameter)
 
 
-def test_uml::tracedprotocolstatemachine_constructor_exists():
-    assert callable(uml::TracedProtocolStateMachine.__init__)
+def test_uml_tracedclassifiertemplateparameter_constructor_exists():
+    assert callable(uml_TracedClassifierTemplateParameter.__init__)
 
 
-def test_uml::tracedprotocolstatemachine_constructor_args():
-    sig = inspect.signature(uml::TracedProtocolStateMachine.__init__)
+def test_uml_tracedclassifiertemplateparameter_constructor_args():
+    sig = inspect.signature(uml_TracedClassifierTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::traceddatastorenode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDataStoreNode)
+def test_tracedinteractionfragment_is_not_abstract():
+    assert not inspect.isabstract(TracedInteractionFragment)
 
 
-def test_uml::traceddatastorenode_constructor_exists():
-    assert callable(uml::TracedDataStoreNode.__init__)
+def test_tracedinteractionfragment_constructor_exists():
+    assert callable(TracedInteractionFragment.__init__)
 
 
-def test_uml::traceddatastorenode_constructor_args():
-    sig = inspect.signature(uml::TracedDataStoreNode.__init__)
+def test_tracedinteractionfragment_constructor_args():
+    sig = inspect.signature(TracedInteractionFragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedreadstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReadStructuralFeatureAction)
+def test_umltrace_uml_tracedoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOccurrenceSpecification)
 
 
-def test_uml::tracedreadstructuralfeatureaction_constructor_exists():
-    assert callable(uml::TracedReadStructuralFeatureAction.__init__)
+def test_umltrace_uml_tracedoccurrencespecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedOccurrenceSpecification.__init__)
 
 
-def test_uml::tracedreadstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(uml::TracedReadStructuralFeatureAction.__init__)
+def test_umltrace_uml_tracedoccurrencespecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOccurrenceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedanyreceiveevent_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAnyReceiveEvent)
+def test_umltrace_uml_tracedcombinedfragment_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCombinedFragment)
 
 
-def test_uml::tracedanyreceiveevent_constructor_exists():
-    assert callable(uml::TracedAnyReceiveEvent.__init__)
+def test_umltrace_uml_tracedcombinedfragment_constructor_exists():
+    assert callable(umlTrace_uml_TracedCombinedFragment.__init__)
 
 
-def test_uml::tracedanyreceiveevent_constructor_args():
-    sig = inspect.signature(uml::TracedAnyReceiveEvent.__init__)
+def test_umltrace_uml_tracedcombinedfragment_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCombinedFragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::tracedintegervalue_is_not_abstract():
-    assert not inspect.isabstract(Kernel::TracedIntegerValue)
+def test_uml_tracedgeneralordering_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedGeneralOrdering)
 
 
-def test_kernel::tracedintegervalue_constructor_exists():
-    assert callable(Kernel::TracedIntegerValue.__init__)
+def test_uml_tracedgeneralordering_constructor_exists():
+    assert callable(uml_TracedGeneralOrdering.__init__)
 
 
-def test_kernel::tracedintegervalue_constructor_args():
-    sig = inspect.signature(Kernel::TracedIntegerValue.__init__)
+def test_uml_tracedgeneralordering_constructor_args():
+    sig = inspect.signature(uml_TracedGeneralOrdering.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinterval_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInterval)
+def test_uml_tracedelementimport_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedElementImport)
 
 
-def test_uml::tracedinterval_constructor_exists():
-    assert callable(uml::TracedInterval.__init__)
+def test_uml_tracedelementimport_constructor_exists():
+    assert callable(uml_TracedElementImport.__init__)
 
 
-def test_uml::tracedinterval_constructor_args():
-    sig = inspect.signature(uml::TracedInterval.__init__)
+def test_uml_tracedelementimport_constructor_args():
+    sig = inspect.signature(uml_TracedElementImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedremovestructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedRemoveStructuralFeatureValueAction)
+def test_uml_tracedmergenode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedMergeNode)
 
 
-def test_uml::tracedremovestructuralfeaturevalueaction_constructor_exists():
-    assert callable(uml::TracedRemoveStructuralFeatureValueAction.__init__)
+def test_uml_tracedmergenode_constructor_exists():
+    assert callable(uml_TracedMergeNode.__init__)
 
 
-def test_uml::tracedremovestructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(uml::TracedRemoveStructuralFeatureValueAction.__init__)
+def test_uml_tracedmergenode_constructor_args():
+    sig = inspect.signature(uml_TracedMergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedgeneralization_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedGeneralization)
+def test_uml_tracedclearassociationaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClearAssociationAction)
 
 
-def test_uml::tracedgeneralization_constructor_exists():
-    assert callable(uml::TracedGeneralization.__init__)
+def test_uml_tracedclearassociationaction_constructor_exists():
+    assert callable(uml_TracedClearAssociationAction.__init__)
 
 
-def test_uml::tracedgeneralization_constructor_args():
-    sig = inspect.signature(uml::TracedGeneralization.__init__)
+def test_uml_tracedclearassociationaction_constructor_args():
+    sig = inspect.signature(uml_TracedClearAssociationAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinteractionoperand_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInteractionOperand)
+def test_uml_tracedlinkendcreationdata_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLinkEndCreationData)
 
 
-def test_uml::tracedinteractionoperand_constructor_exists():
-    assert callable(uml::TracedInteractionOperand.__init__)
+def test_uml_tracedlinkendcreationdata_constructor_exists():
+    assert callable(uml_TracedLinkEndCreationData.__init__)
 
 
-def test_uml::tracedinteractionoperand_constructor_args():
-    sig = inspect.signature(uml::TracedInteractionOperand.__init__)
+def test_uml_tracedlinkendcreationdata_constructor_args():
+    sig = inspect.signature(uml_TracedLinkEndCreationData.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedprotocoltransition_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedProtocolTransition)
+def test_uml_tracedpseudostate_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPseudostate)
 
 
-def test_uml::tracedprotocoltransition_constructor_exists():
-    assert callable(uml::TracedProtocolTransition.__init__)
+def test_uml_tracedpseudostate_constructor_exists():
+    assert callable(uml_TracedPseudostate.__init__)
 
 
-def test_uml::tracedprotocoltransition_constructor_args():
-    sig = inspect.signature(uml::TracedProtocolTransition.__init__)
+def test_uml_tracedpseudostate_constructor_args():
+    sig = inspect.signature(uml_TracedPseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinterruptibleactivityregion_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInterruptibleActivityRegion)
+def test_uml_tracedcomponent_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedComponent)
 
 
-def test_uml::tracedinterruptibleactivityregion_constructor_exists():
-    assert callable(uml::TracedInterruptibleActivityRegion.__init__)
+def test_uml_tracedcomponent_constructor_exists():
+    assert callable(uml_TracedComponent.__init__)
 
 
-def test_uml::tracedinterruptibleactivityregion_constructor_args():
-    sig = inspect.signature(uml::TracedInterruptibleActivityRegion.__init__)
+def test_uml_tracedcomponent_constructor_args():
+    sig = inspect.signature(uml_TracedComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedpartdecomposition_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPartDecomposition)
+def test_uml_tracedreadisclassifiedobjectaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadIsClassifiedObjectAction)
 
 
-def test_uml::tracedpartdecomposition_constructor_exists():
-    assert callable(uml::TracedPartDecomposition.__init__)
+def test_uml_tracedreadisclassifiedobjectaction_constructor_exists():
+    assert callable(uml_TracedReadIsClassifiedObjectAction.__init__)
 
 
-def test_uml::tracedpartdecomposition_constructor_args():
-    sig = inspect.signature(uml::TracedPartDecomposition.__init__)
+def test_uml_tracedreadisclassifiedobjectaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadIsClassifiedObjectAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedtimeevent_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTimeEvent)
+def test_uml_tracedabstraction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAbstraction)
 
 
-def test_uml::tracedtimeevent_constructor_exists():
-    assert callable(uml::TracedTimeEvent.__init__)
+def test_uml_tracedabstraction_constructor_exists():
+    assert callable(uml_TracedAbstraction.__init__)
 
 
-def test_uml::tracedtimeevent_constructor_args():
-    sig = inspect.signature(uml::TracedTimeEvent.__init__)
+def test_uml_tracedabstraction_constructor_args():
+    sig = inspect.signature(uml_TracedAbstraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::traceddeployment_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDeployment)
+def test_uml_tracedtimeexpression_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTimeExpression)
 
 
-def test_uml::traceddeployment_constructor_exists():
-    assert callable(uml::TracedDeployment.__init__)
+def test_uml_tracedtimeexpression_constructor_exists():
+    assert callable(uml_TracedTimeExpression.__init__)
 
 
-def test_uml::traceddeployment_constructor_args():
-    sig = inspect.signature(uml::TracedDeployment.__init__)
+def test_uml_tracedtimeexpression_constructor_args():
+    sig = inspect.signature(uml_TracedTimeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_loci::tracedsemanticvisitor_is_not_abstract():
-    assert not inspect.isabstract(Loci::TracedSemanticVisitor)
+def test_uml_tracedvaluespecificationaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedValueSpecificationAction)
 
 
-def test_loci::tracedsemanticvisitor_constructor_exists():
-    assert callable(Loci::TracedSemanticVisitor.__init__)
+def test_uml_tracedvaluespecificationaction_constructor_exists():
+    assert callable(uml_TracedValueSpecificationAction.__init__)
 
 
-def test_loci::tracedsemanticvisitor_constructor_args():
-    sig = inspect.signature(Loci::TracedSemanticVisitor.__init__)
+def test_uml_tracedvaluespecificationaction_constructor_args():
+    sig = inspect.signature(uml_TracedValueSpecificationAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::tracedobject_is_not_abstract():
-    assert not inspect.isabstract(Kernel::TracedObject)
+def test_uml_tracedfunctionbehavior_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedFunctionBehavior)
 
 
-def test_kernel::tracedobject_constructor_exists():
-    assert callable(Kernel::TracedObject.__init__)
+def test_uml_tracedfunctionbehavior_constructor_exists():
+    assert callable(uml_TracedFunctionBehavior.__init__)
 
 
-def test_kernel::tracedobject_constructor_args():
-    sig = inspect.signature(Kernel::TracedObject.__init__)
+def test_uml_tracedfunctionbehavior_constructor_args():
+    sig = inspect.signature(uml_TracedFunctionBehavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::tracedjoinnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedJoinNodeActivation)
+def test_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution)
 
 
-def test_intermediateactivities::tracedjoinnodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedJoinNodeActivation.__init__)
+def test_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_constructor_exists():
+    assert callable(IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution.__init__)
 
 
-def test_intermediateactivities::tracedjoinnodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedJoinNodeActivation.__init__)
+def test_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_constructor_args():
+    sig = inspect.signature(IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedusecase_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedUseCase)
+def test_intermediateactivities_tracedmergenodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedMergeNodeActivation)
 
 
-def test_uml::tracedusecase_constructor_exists():
-    assert callable(uml::TracedUseCase.__init__)
+def test_intermediateactivities_tracedmergenodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedMergeNodeActivation.__init__)
 
 
-def test_uml::tracedusecase_constructor_args():
-    sig = inspect.signature(uml::TracedUseCase.__init__)
+def test_intermediateactivities_tracedmergenodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedMergeNodeActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedreclassifyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedReclassifyObjectAction)
+def test_uml_tracedtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTemplateParameter)
 
 
-def test_uml::tracedreclassifyobjectaction_constructor_exists():
-    assert callable(uml::TracedReclassifyObjectAction.__init__)
+def test_uml_tracedtemplateparameter_constructor_exists():
+    assert callable(uml_TracedTemplateParameter.__init__)
 
 
-def test_uml::tracedreclassifyobjectaction_constructor_args():
-    sig = inspect.signature(uml::TracedReclassifyObjectAction.__init__)
+def test_uml_tracedtemplateparameter_constructor_args():
+    sig = inspect.signature(uml_TracedTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinstancevalue_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInstanceValue)
+def test_uml_tracedmanifestation_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedManifestation)
 
 
-def test_uml::tracedinstancevalue_constructor_exists():
-    assert callable(uml::TracedInstanceValue.__init__)
+def test_uml_tracedmanifestation_constructor_exists():
+    assert callable(uml_TracedManifestation.__init__)
 
 
-def test_uml::tracedinstancevalue_constructor_args():
-    sig = inspect.signature(uml::TracedInstanceValue.__init__)
+def test_uml_tracedmanifestation_constructor_args():
+    sig = inspect.signature(uml_TracedManifestation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactions::tracedaddstructuralfeaturevalueactionactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::TracedAddStructuralFeatureValueActionActivation)
+def test_uml_tracedactor_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActor)
 
 
-def test_intermediateactions::tracedaddstructuralfeaturevalueactionactivation_constructor_exists():
-    assert callable(IntermediateActions::TracedAddStructuralFeatureValueActionActivation.__init__)
+def test_uml_tracedactor_constructor_exists():
+    assert callable(uml_TracedActor.__init__)
 
 
-def test_intermediateactions::tracedaddstructuralfeaturevalueactionactivation_constructor_args():
-    sig = inspect.signature(IntermediateActions::TracedAddStructuralFeatureValueActionActivation.__init__)
+def test_uml_tracedactor_constructor_args():
+    sig = inspect.signature(uml_TracedActor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::tracedreference_is_not_abstract():
-    assert not inspect.isabstract(Kernel::TracedReference)
+def test_uml_tracedremovevariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRemoveVariableValueAction)
 
 
-def test_kernel::tracedreference_constructor_exists():
-    assert callable(Kernel::TracedReference.__init__)
+def test_uml_tracedremovevariablevalueaction_constructor_exists():
+    assert callable(uml_TracedRemoveVariableValueAction.__init__)
 
 
-def test_kernel::tracedreference_constructor_args():
-    sig = inspect.signature(Kernel::TracedReference.__init__)
+def test_uml_tracedremovevariablevalueaction_constructor_args():
+    sig = inspect.signature(uml_TracedRemoveVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedforknode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedForkNode)
+def test_uml_tracedprofile_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedProfile)
 
 
-def test_uml::tracedforknode_constructor_exists():
-    assert callable(uml::TracedForkNode.__init__)
+def test_uml_tracedprofile_constructor_exists():
+    assert callable(uml_TracedProfile.__init__)
 
 
-def test_uml::tracedforknode_constructor_args():
-    sig = inspect.signature(uml::TracedForkNode.__init__)
+def test_uml_tracedprofile_constructor_args():
+    sig = inspect.signature(uml_TracedProfile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedactivity_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActivity)
+def test_uml_tracedtestidentityaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTestIdentityAction)
 
 
-def test_uml::tracedactivity_constructor_exists():
-    assert callable(uml::TracedActivity.__init__)
+def test_uml_tracedtestidentityaction_constructor_exists():
+    assert callable(uml_TracedTestIdentityAction.__init__)
 
 
-def test_uml::tracedactivity_constructor_args():
-    sig = inspect.signature(uml::TracedActivity.__init__)
+def test_uml_tracedtestidentityaction_constructor_args():
+    sig = inspect.signature(uml_TracedTestIdentityAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedmessage_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedMessage)
+def test_uml_tracedcollaboration_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCollaboration)
 
 
-def test_uml::tracedmessage_constructor_exists():
-    assert callable(uml::TracedMessage.__init__)
+def test_uml_tracedcollaboration_constructor_exists():
+    assert callable(uml_TracedCollaboration.__init__)
 
 
-def test_uml::tracedmessage_constructor_args():
-    sig = inspect.signature(uml::TracedMessage.__init__)
+def test_uml_tracedcollaboration_constructor_args():
+    sig = inspect.signature(uml_TracedCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedstatemachine_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStateMachine)
+def test_uml_tracedsendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSendSignalAction)
 
 
-def test_uml::tracedstatemachine_constructor_exists():
-    assert callable(uml::TracedStateMachine.__init__)
+def test_uml_tracedsendsignalaction_constructor_exists():
+    assert callable(uml_TracedSendSignalAction.__init__)
 
 
-def test_uml::tracedstatemachine_constructor_args():
-    sig = inspect.signature(uml::TracedStateMachine.__init__)
+def test_uml_tracedsendsignalaction_constructor_args():
+    sig = inspect.signature(uml_TracedSendSignalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedactivitypartition_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedActivityPartition)
+def test_uml_tracedinterfacerealization_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInterfaceRealization)
 
 
-def test_uml::tracedactivitypartition_constructor_exists():
-    assert callable(uml::TracedActivityPartition.__init__)
+def test_uml_tracedinterfacerealization_constructor_exists():
+    assert callable(uml_TracedInterfaceRealization.__init__)
 
 
-def test_uml::tracedactivitypartition_constructor_args():
-    sig = inspect.signature(uml::TracedActivityPartition.__init__)
+def test_uml_tracedinterfacerealization_constructor_args():
+    sig = inspect.signature(uml_TracedInterfaceRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::tracedactivityparameternodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedActivityParameterNodeActivation)
+def test_uml_tracedunmarshallaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedUnmarshallAction)
 
 
-def test_intermediateactivities::tracedactivityparameternodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedActivityParameterNodeActivation.__init__)
+def test_uml_tracedunmarshallaction_constructor_exists():
+    assert callable(uml_TracedUnmarshallAction.__init__)
 
 
-def test_intermediateactivities::tracedactivityparameternodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedActivityParameterNodeActivation.__init__)
+def test_uml_tracedunmarshallaction_constructor_args():
+    sig = inspect.signature(uml_TracedUnmarshallAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicactions::tracedcallbehavioractionactivation_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::TracedCallBehaviorActionActivation)
+def test_uml_tracedexpression_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExpression)
 
 
-def test_basicactions::tracedcallbehavioractionactivation_constructor_exists():
-    assert callable(BasicActions::TracedCallBehaviorActionActivation.__init__)
+def test_uml_tracedexpression_constructor_exists():
+    assert callable(uml_TracedExpression.__init__)
 
 
-def test_basicactions::tracedcallbehavioractionactivation_constructor_args():
-    sig = inspect.signature(BasicActions::TracedCallBehaviorActionActivation.__init__)
+def test_uml_tracedexpression_constructor_args():
+    sig = inspect.signature(uml_TracedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::traceddestroyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDestroyObjectAction)
+def test_uml_tracedassociation_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAssociation)
 
 
-def test_uml::traceddestroyobjectaction_constructor_exists():
-    assert callable(uml::TracedDestroyObjectAction.__init__)
+def test_uml_tracedassociation_constructor_exists():
+    assert callable(uml_TracedAssociation.__init__)
 
 
-def test_uml::traceddestroyobjectaction_constructor_args():
-    sig = inspect.signature(uml::TracedDestroyObjectAction.__init__)
+def test_uml_tracedassociation_constructor_args():
+    sig = inspect.signature(uml_TracedAssociation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedassociationclass_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAssociationClass)
+def test_uml_tracedclearstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClearStructuralFeatureAction)
 
 
-def test_uml::tracedassociationclass_constructor_exists():
-    assert callable(uml::TracedAssociationClass.__init__)
+def test_uml_tracedclearstructuralfeatureaction_constructor_exists():
+    assert callable(uml_TracedClearStructuralFeatureAction.__init__)
 
 
-def test_uml::tracedassociationclass_constructor_args():
-    sig = inspect.signature(uml::TracedAssociationClass.__init__)
+def test_uml_tracedclearstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(uml_TracedClearStructuralFeatureAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinformationflow_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInformationFlow)
+def test_uml_tracedaddvariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAddVariableValueAction)
 
 
-def test_uml::tracedinformationflow_constructor_exists():
-    assert callable(uml::TracedInformationFlow.__init__)
+def test_uml_tracedaddvariablevalueaction_constructor_exists():
+    assert callable(uml_TracedAddVariableValueAction.__init__)
 
 
-def test_uml::tracedinformationflow_constructor_args():
-    sig = inspect.signature(uml::TracedInformationFlow.__init__)
+def test_uml_tracedaddvariablevalueaction_constructor_args():
+    sig = inspect.signature(uml_TracedAddVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedsubstitution_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSubstitution)
+def test_uml_tracedliteralreal_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLiteralReal)
 
 
-def test_uml::tracedsubstitution_constructor_exists():
-    assert callable(uml::TracedSubstitution.__init__)
+def test_uml_tracedliteralreal_constructor_exists():
+    assert callable(uml_TracedLiteralReal.__init__)
 
 
-def test_uml::tracedsubstitution_constructor_args():
-    sig = inspect.signature(uml::TracedSubstitution.__init__)
+def test_uml_tracedliteralreal_constructor_args():
+    sig = inspect.signature(uml_TracedLiteralReal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedenumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedEnumerationLiteral)
+def test_intermediateactions_tracedcreateobjectactionactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_TracedCreateObjectActionActivation)
 
 
-def test_uml::tracedenumerationliteral_constructor_exists():
-    assert callable(uml::TracedEnumerationLiteral.__init__)
+def test_intermediateactions_tracedcreateobjectactionactivation_constructor_exists():
+    assert callable(IntermediateActions_TracedCreateObjectActionActivation.__init__)
 
 
-def test_uml::tracedenumerationliteral_constructor_args():
-    sig = inspect.signature(uml::TracedEnumerationLiteral.__init__)
+def test_intermediateactions_tracedcreateobjectactionactivation_constructor_args():
+    sig = inspect.signature(IntermediateActions_TracedCreateObjectActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedstereotype_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStereotype)
+def test_uml_tracedslot_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSlot)
 
 
-def test_uml::tracedstereotype_constructor_exists():
-    assert callable(uml::TracedStereotype.__init__)
+def test_uml_tracedslot_constructor_exists():
+    assert callable(uml_TracedSlot.__init__)
 
 
-def test_uml::tracedstereotype_constructor_args():
-    sig = inspect.signature(uml::TracedStereotype.__init__)
+def test_uml_tracedslot_constructor_args():
+    sig = inspect.signature(uml_TracedSlot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedacceptcallaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedAcceptCallAction)
+def test_uml_tracedliteralnull_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLiteralNull)
 
 
-def test_uml::tracedacceptcallaction_constructor_exists():
-    assert callable(uml::TracedAcceptCallAction.__init__)
+def test_uml_tracedliteralnull_constructor_exists():
+    assert callable(uml_TracedLiteralNull.__init__)
 
 
-def test_uml::tracedacceptcallaction_constructor_args():
-    sig = inspect.signature(uml::TracedAcceptCallAction.__init__)
+def test_uml_tracedliteralnull_constructor_args():
+    sig = inspect.signature(uml_TracedLiteralNull.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinstancespecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInstanceSpecification)
+def test_intermediateactions_tracedvaluespecificationactionactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_TracedValueSpecificationActionActivation)
 
 
-def test_uml::tracedinstancespecification_constructor_exists():
-    assert callable(uml::TracedInstanceSpecification.__init__)
+def test_intermediateactions_tracedvaluespecificationactionactivation_constructor_exists():
+    assert callable(IntermediateActions_TracedValueSpecificationActionActivation.__init__)
 
 
-def test_uml::tracedinstancespecification_constructor_args():
-    sig = inspect.signature(uml::TracedInstanceSpecification.__init__)
+def test_intermediateactions_tracedvaluespecificationactionactivation_constructor_args():
+    sig = inspect.signature(IntermediateActions_TracedValueSpecificationActionActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integerfunctions::tracedintegerlessfunctionbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution)
+def test_uml_tracedstartobjectbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStartObjectBehaviorAction)
 
 
-def test_integerfunctions::tracedintegerlessfunctionbehaviorexecution_constructor_exists():
-    assert callable(IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution.__init__)
+def test_uml_tracedstartobjectbehavioraction_constructor_exists():
+    assert callable(uml_TracedStartObjectBehaviorAction.__init__)
 
 
-def test_integerfunctions::tracedintegerlessfunctionbehaviorexecution_constructor_args():
-    sig = inspect.signature(IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution.__init__)
+def test_uml_tracedstartobjectbehavioraction_constructor_args():
+    sig = inspect.signature(uml_TracedStartObjectBehaviorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedstateinvariant_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStateInvariant)
+def test_uml_tracedliteralboolean_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLiteralBoolean)
 
 
-def test_uml::tracedstateinvariant_constructor_exists():
-    assert callable(uml::TracedStateInvariant.__init__)
+def test_uml_tracedliteralboolean_constructor_exists():
+    assert callable(uml_TracedLiteralBoolean.__init__)
 
 
-def test_uml::tracedstateinvariant_constructor_args():
-    sig = inspect.signature(uml::TracedStateInvariant.__init__)
+def test_uml_tracedliteralboolean_constructor_args():
+    sig = inspect.signature(uml_TracedLiteralBoolean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicactions::tracedinputpinactivation_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::TracedInputPinActivation)
+def test_uml_tracedreadlinkaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadLinkAction)
 
 
-def test_basicactions::tracedinputpinactivation_constructor_exists():
-    assert callable(BasicActions::TracedInputPinActivation.__init__)
+def test_uml_tracedreadlinkaction_constructor_exists():
+    assert callable(uml_TracedReadLinkAction.__init__)
 
 
-def test_basicactions::tracedinputpinactivation_constructor_args():
-    sig = inspect.signature(BasicActions::TracedInputPinActivation.__init__)
+def test_uml_tracedreadlinkaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedliteralstring_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLiteralString)
+def test_uml_tracedinclude_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInclude)
 
 
-def test_uml::tracedliteralstring_constructor_exists():
-    assert callable(uml::TracedLiteralString.__init__)
+def test_uml_tracedinclude_constructor_exists():
+    assert callable(uml_TracedInclude.__init__)
 
 
-def test_uml::tracedliteralstring_constructor_args():
-    sig = inspect.signature(uml::TracedLiteralString.__init__)
+def test_uml_tracedinclude_constructor_args():
+    sig = inspect.signature(uml_TracedInclude.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedopaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedOpaqueExpression)
+def test_uml_tracedregion_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRegion)
 
 
-def test_uml::tracedopaqueexpression_constructor_exists():
-    assert callable(uml::TracedOpaqueExpression.__init__)
+def test_uml_tracedregion_constructor_exists():
+    assert callable(uml_TracedRegion.__init__)
 
 
-def test_uml::tracedopaqueexpression_constructor_args():
-    sig = inspect.signature(uml::TracedOpaqueExpression.__init__)
+def test_uml_tracedregion_constructor_args():
+    sig = inspect.signature(uml_TracedRegion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedparameter_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedParameter)
+def test_uml_tracedstate_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedState)
 
 
-def test_uml::tracedparameter_constructor_exists():
-    assert callable(uml::TracedParameter.__init__)
+def test_uml_tracedstate_constructor_exists():
+    assert callable(uml_TracedState.__init__)
 
 
-def test_uml::tracedparameter_constructor_args():
-    sig = inspect.signature(uml::TracedParameter.__init__)
+def test_uml_tracedstate_constructor_args():
+    sig = inspect.signature(uml_TracedState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::tracedactivitynodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedActivityNodeActivation)
+def test_uml_tracedprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPrimitiveType)
 
 
-def test_intermediateactivities::tracedactivitynodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedActivityNodeActivation.__init__)
+def test_uml_tracedprimitivetype_constructor_exists():
+    assert callable(uml_TracedPrimitiveType.__init__)
 
 
-def test_intermediateactivities::tracedactivitynodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedActivityNodeActivation.__init__)
+def test_uml_tracedprimitivetype_constructor_args():
+    sig = inspect.signature(uml_TracedPrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinteraction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInteraction)
+def test_uml_tracedstringexpression_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStringExpression)
 
 
-def test_uml::tracedinteraction_constructor_exists():
-    assert callable(uml::TracedInteraction.__init__)
+def test_uml_tracedstringexpression_constructor_exists():
+    assert callable(uml_TracedStringExpression.__init__)
 
 
-def test_uml::tracedinteraction_constructor_args():
-    sig = inspect.signature(uml::TracedInteraction.__init__)
+def test_uml_tracedstringexpression_constructor_args():
+    sig = inspect.signature(uml_TracedStringExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedbroadcastsignalaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedBroadcastSignalAction)
+def test_uml_tracedlinkenddestructiondata_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLinkEndDestructionData)
 
 
-def test_uml::tracedbroadcastsignalaction_constructor_exists():
-    assert callable(uml::TracedBroadcastSignalAction.__init__)
+def test_uml_tracedlinkenddestructiondata_constructor_exists():
+    assert callable(uml_TracedLinkEndDestructionData.__init__)
 
 
-def test_uml::tracedbroadcastsignalaction_constructor_args():
-    sig = inspect.signature(uml::TracedBroadcastSignalAction.__init__)
+def test_uml_tracedlinkenddestructiondata_constructor_args():
+    sig = inspect.signature(uml_TracedLinkEndDestructionData.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedconstraint_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConstraint)
+def test_umltrace_uml_tracedanyreceiveevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAnyReceiveEvent)
 
 
-def test_uml::tracedconstraint_constructor_exists():
-    assert callable(uml::TracedConstraint.__init__)
+def test_umltrace_uml_tracedanyreceiveevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedAnyReceiveEvent.__init__)
 
 
-def test_uml::tracedconstraint_constructor_args():
-    sig = inspect.signature(uml::TracedConstraint.__init__)
+def test_umltrace_uml_tracedanyreceiveevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAnyReceiveEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedclearvariableaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClearVariableAction)
+def test_uml_tracedreadextentaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadExtentAction)
 
 
-def test_uml::tracedclearvariableaction_constructor_exists():
-    assert callable(uml::TracedClearVariableAction.__init__)
+def test_uml_tracedreadextentaction_constructor_exists():
+    assert callable(uml_TracedReadExtentAction.__init__)
 
 
-def test_uml::tracedclearvariableaction_constructor_args():
-    sig = inspect.signature(uml::TracedClearVariableAction.__init__)
+def test_uml_tracedreadextentaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadExtentAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinputpin_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInputPin)
+def test_basicactions_tracedoutputpinactivation_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_TracedOutputPinActivation)
 
 
-def test_uml::tracedinputpin_constructor_exists():
-    assert callable(uml::TracedInputPin.__init__)
+def test_basicactions_tracedoutputpinactivation_constructor_exists():
+    assert callable(BasicActions_TracedOutputPinActivation.__init__)
 
 
-def test_uml::tracedinputpin_constructor_args():
-    sig = inspect.signature(uml::TracedInputPin.__init__)
+def test_basicactions_tracedoutputpinactivation_constructor_args():
+    sig = inspect.signature(BasicActions_TracedOutputPinActivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedtimeconstraint_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedTimeConstraint)
+def test_uml_tracedbehavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedBehavioralFeature)
 
 
-def test_uml::tracedtimeconstraint_constructor_exists():
-    assert callable(uml::TracedTimeConstraint.__init__)
+def test_uml_tracedbehavioralfeature_constructor_exists():
+    assert callable(uml_TracedBehavioralFeature.__init__)
 
 
-def test_uml::tracedtimeconstraint_constructor_args():
-    sig = inspect.signature(uml::TracedTimeConstraint.__init__)
+def test_uml_tracedbehavioralfeature_constructor_args():
+    sig = inspect.signature(uml_TracedBehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedcontinuation_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedContinuation)
+def test_uml_tracedtemplatesignature_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTemplateSignature)
 
 
-def test_uml::tracedcontinuation_constructor_exists():
-    assert callable(uml::TracedContinuation.__init__)
+def test_uml_tracedtemplatesignature_constructor_exists():
+    assert callable(uml_TracedTemplateSignature.__init__)
 
 
-def test_uml::tracedcontinuation_constructor_args():
-    sig = inspect.signature(uml::TracedContinuation.__init__)
+def test_uml_tracedtemplatesignature_constructor_args():
+    sig = inspect.signature(uml_TracedTemplateSignature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedconsiderignorefragment_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConsiderIgnoreFragment)
+def test_umltrace_uml_tracedtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTemplateParameter)
 
 
-def test_uml::tracedconsiderignorefragment_constructor_exists():
-    assert callable(uml::TracedConsiderIgnoreFragment.__init__)
+def test_umltrace_uml_tracedtemplateparameter_constructor_exists():
+    assert callable(umlTrace_uml_TracedTemplateParameter.__init__)
 
 
-def test_uml::tracedconsiderignorefragment_constructor_args():
-    sig = inspect.signature(uml::TracedConsiderIgnoreFragment.__init__)
+def test_umltrace_uml_tracedtemplateparameter_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedintervalconstraint_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedIntervalConstraint)
+def test_tracedtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(TracedTemplateParameter)
 
 
-def test_uml::tracedintervalconstraint_constructor_exists():
-    assert callable(uml::TracedIntervalConstraint.__init__)
+def test_tracedtemplateparameter_constructor_exists():
+    assert callable(TracedTemplateParameter.__init__)
 
 
-def test_uml::tracedintervalconstraint_constructor_args():
-    sig = inspect.signature(uml::TracedIntervalConstraint.__init__)
+def test_tracedtemplateparameter_constructor_args():
+    sig = inspect.signature(TracedTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedexecutionenvironment_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExecutionEnvironment)
+def test_umltrace_uml_tracedconnectableelementtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConnectableElementTemplateParameter)
 
 
-def test_uml::tracedexecutionenvironment_constructor_exists():
-    assert callable(uml::TracedExecutionEnvironment.__init__)
+def test_umltrace_uml_tracedconnectableelementtemplateparameter_constructor_exists():
+    assert callable(umlTrace_uml_TracedConnectableElementTemplateParameter.__init__)
 
 
-def test_uml::tracedexecutionenvironment_constructor_args():
-    sig = inspect.signature(uml::TracedExecutionEnvironment.__init__)
+def test_umltrace_uml_tracedconnectableelementtemplateparameter_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConnectableElementTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedstructuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStructuredActivityNode)
+def test_umltrace_uml_tracedclassifiertemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClassifierTemplateParameter)
 
 
-def test_uml::tracedstructuredactivitynode_constructor_exists():
-    assert callable(uml::TracedStructuredActivityNode.__init__)
+def test_umltrace_uml_tracedclassifiertemplateparameter_constructor_exists():
+    assert callable(umlTrace_uml_TracedClassifierTemplateParameter.__init__)
 
 
-def test_uml::tracedstructuredactivitynode_constructor_args():
-    sig = inspect.signature(uml::TracedStructuredActivityNode.__init__)
+def test_umltrace_uml_tracedclassifiertemplateparameter_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClassifierTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedextension_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExtension)
+def test_tracedpackage_is_not_abstract():
+    assert not inspect.isabstract(TracedPackage)
 
 
-def test_uml::tracedextension_constructor_exists():
-    assert callable(uml::TracedExtension.__init__)
+def test_tracedpackage_constructor_exists():
+    assert callable(TracedPackage.__init__)
 
 
-def test_uml::tracedextension_constructor_args():
-    sig = inspect.signature(uml::TracedExtension.__init__)
+def test_tracedpackage_constructor_args():
+    sig = inspect.signature(TracedPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integerfunctions::tracedintegerplusfunctionbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution)
+def test_umltrace_uml_tracedprofile_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedProfile)
 
 
-def test_integerfunctions::tracedintegerplusfunctionbehaviorexecution_constructor_exists():
-    assert callable(IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution.__init__)
+def test_umltrace_uml_tracedprofile_constructor_exists():
+    assert callable(umlTrace_uml_TracedProfile.__init__)
 
 
-def test_integerfunctions::tracedintegerplusfunctionbehaviorexecution_constructor_args():
-    sig = inspect.signature(IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution.__init__)
+def test_umltrace_uml_tracedprofile_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedProfile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedextend_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExtend)
+def test_umltrace_uml_tracedmodel_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedModel)
 
 
-def test_uml::tracedextend_constructor_exists():
-    assert callable(uml::TracedExtend.__init__)
+def test_umltrace_uml_tracedmodel_constructor_exists():
+    assert callable(umlTrace_uml_TracedModel.__init__)
 
 
-def test_uml::tracedextend_constructor_args():
-    sig = inspect.signature(uml::TracedExtend.__init__)
+def test_umltrace_uml_tracedmodel_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedstartclassifierbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedStartClassifierBehaviorAction)
+def test_umltrace_uml_tracedimage_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedImage)
 
 
-def test_uml::tracedstartclassifierbehavioraction_constructor_exists():
-    assert callable(uml::TracedStartClassifierBehaviorAction.__init__)
+def test_umltrace_uml_tracedimage_constructor_exists():
+    assert callable(umlTrace_uml_TracedImage.__init__)
 
 
-def test_uml::tracedstartclassifierbehavioraction_constructor_args():
-    sig = inspect.signature(uml::TracedStartClassifierBehaviorAction.__init__)
+def test_umltrace_uml_tracedimage_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedImage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedsequencenode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSequenceNode)
+def test_tracedtransition_is_not_abstract():
+    assert not inspect.isabstract(TracedTransition)
 
 
-def test_uml::tracedsequencenode_constructor_exists():
-    assert callable(uml::TracedSequenceNode.__init__)
+def test_tracedtransition_constructor_exists():
+    assert callable(TracedTransition.__init__)
 
 
-def test_uml::tracedsequencenode_constructor_args():
-    sig = inspect.signature(uml::TracedSequenceNode.__init__)
+def test_tracedtransition_constructor_args():
+    sig = inspect.signature(TracedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedexceptionhandler_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExceptionHandler)
+def test_umltrace_uml_tracedprotocoltransition_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedProtocolTransition)
 
 
-def test_uml::tracedexceptionhandler_constructor_exists():
-    assert callable(uml::TracedExceptionHandler.__init__)
+def test_umltrace_uml_tracedprotocoltransition_constructor_exists():
+    assert callable(umlTrace_uml_TracedProtocolTransition.__init__)
 
 
-def test_uml::tracedexceptionhandler_constructor_args():
-    sig = inspect.signature(uml::TracedExceptionHandler.__init__)
+def test_umltrace_uml_tracedprotocoltransition_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedProtocolTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracednode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedNode)
+def test_tracedwritevariableaction_is_not_abstract():
+    assert not inspect.isabstract(TracedWriteVariableAction)
 
 
-def test_uml::tracednode_constructor_exists():
-    assert callable(uml::TracedNode.__init__)
+def test_tracedwritevariableaction_constructor_exists():
+    assert callable(TracedWriteVariableAction.__init__)
 
 
-def test_uml::tracednode_constructor_args():
-    sig = inspect.signature(uml::TracedNode.__init__)
+def test_tracedwritevariableaction_constructor_args():
+    sig = inspect.signature(TracedWriteVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedvaluepin_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedValuePin)
+def test_umltrace_uml_tracedremovevariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRemoveVariableValueAction)
 
 
-def test_uml::tracedvaluepin_constructor_exists():
-    assert callable(uml::TracedValuePin.__init__)
+def test_umltrace_uml_tracedremovevariablevalueaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedRemoveVariableValueAction.__init__)
 
 
-def test_uml::tracedvaluepin_constructor_args():
-    sig = inspect.signature(uml::TracedValuePin.__init__)
+def test_umltrace_uml_tracedremovevariablevalueaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRemoveVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::tracedactivityexecution_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedActivityExecution)
+def test_umltrace_uml_tracedaddvariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAddVariableValueAction)
 
 
-def test_intermediateactivities::tracedactivityexecution_constructor_exists():
-    assert callable(IntermediateActivities::TracedActivityExecution.__init__)
+def test_umltrace_uml_tracedaddvariablevalueaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedAddVariableValueAction.__init__)
 
 
-def test_intermediateactivities::tracedactivityexecution_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedActivityExecution.__init__)
+def test_umltrace_uml_tracedaddvariablevalueaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAddVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedcollaborationuse_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCollaborationUse)
+def test_tracedinteractionuse_is_not_abstract():
+    assert not inspect.isabstract(TracedInteractionUse)
 
 
-def test_uml::tracedcollaborationuse_constructor_exists():
-    assert callable(uml::TracedCollaborationUse.__init__)
+def test_tracedinteractionuse_constructor_exists():
+    assert callable(TracedInteractionUse.__init__)
 
 
-def test_uml::tracedcollaborationuse_constructor_args():
-    sig = inspect.signature(uml::TracedCollaborationUse.__init__)
+def test_tracedinteractionuse_constructor_args():
+    sig = inspect.signature(TracedInteractionUse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::tracedinitialnodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedInitialNodeActivation)
+def test_umltrace_uml_tracedpartdecomposition_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPartDecomposition)
 
 
-def test_intermediateactivities::tracedinitialnodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedInitialNodeActivation.__init__)
+def test_umltrace_uml_tracedpartdecomposition_constructor_exists():
+    assert callable(umlTrace_uml_TracedPartDecomposition.__init__)
 
 
-def test_intermediateactivities::tracedinitialnodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedInitialNodeActivation.__init__)
+def test_umltrace_uml_tracedpartdecomposition_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPartDecomposition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedport_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPort)
+def test_tracedobservation_is_not_abstract():
+    assert not inspect.isabstract(TracedObservation)
 
 
-def test_uml::tracedport_constructor_exists():
-    assert callable(uml::TracedPort.__init__)
+def test_tracedobservation_constructor_exists():
+    assert callable(TracedObservation.__init__)
 
 
-def test_uml::tracedport_constructor_args():
-    sig = inspect.signature(uml::TracedPort.__init__)
+def test_tracedobservation_constructor_args():
+    sig = inspect.signature(TracedObservation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::traceddependency_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDependency)
+def test_umltrace_uml_tracedtimeobservation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTimeObservation)
 
 
-def test_uml::traceddependency_constructor_exists():
-    assert callable(uml::TracedDependency.__init__)
+def test_umltrace_uml_tracedtimeobservation_constructor_exists():
+    assert callable(umlTrace_uml_TracedTimeObservation.__init__)
 
 
-def test_uml::traceddependency_constructor_args():
-    sig = inspect.signature(uml::TracedDependency.__init__)
+def test_umltrace_uml_tracedtimeobservation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTimeObservation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedchangeevent_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedChangeEvent)
+def test_umltrace_uml_traceddurationobservation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDurationObservation)
 
 
-def test_uml::tracedchangeevent_constructor_exists():
-    assert callable(uml::TracedChangeEvent.__init__)
+def test_umltrace_uml_traceddurationobservation_constructor_exists():
+    assert callable(umlTrace_uml_TracedDurationObservation.__init__)
 
 
-def test_uml::tracedchangeevent_constructor_args():
-    sig = inspect.signature(uml::TracedChangeEvent.__init__)
+def test_umltrace_uml_traceddurationobservation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDurationObservation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedgeneralizationset_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedGeneralizationSet)
+def test_umltrace_uml_tracedoperationtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOperationTemplateParameter)
 
 
-def test_uml::tracedgeneralizationset_constructor_exists():
-    assert callable(uml::TracedGeneralizationSet.__init__)
+def test_umltrace_uml_tracedoperationtemplateparameter_constructor_exists():
+    assert callable(umlTrace_uml_TracedOperationTemplateParameter.__init__)
 
 
-def test_uml::tracedgeneralizationset_constructor_args():
-    sig = inspect.signature(uml::TracedGeneralizationSet.__init__)
+def test_umltrace_uml_tracedoperationtemplateparameter_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOperationTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinteractionuse_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInteractionUse)
+def test_tracedinterval_is_not_abstract():
+    assert not inspect.isabstract(TracedInterval)
 
 
-def test_uml::tracedinteractionuse_constructor_exists():
-    assert callable(uml::TracedInteractionUse.__init__)
+def test_tracedinterval_constructor_exists():
+    assert callable(TracedInterval.__init__)
 
 
-def test_uml::tracedinteractionuse_constructor_args():
-    sig = inspect.signature(uml::TracedInteractionUse.__init__)
+def test_tracedinterval_constructor_args():
+    sig = inspect.signature(TracedInterval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedclass_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedClass)
+def test_umltrace_uml_traceddurationinterval_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDurationInterval)
 
 
-def test_uml::tracedclass_constructor_exists():
-    assert callable(uml::TracedClass.__init__)
+def test_umltrace_uml_traceddurationinterval_constructor_exists():
+    assert callable(umlTrace_uml_TracedDurationInterval.__init__)
 
 
-def test_uml::tracedclass_constructor_args():
-    sig = inspect.signature(uml::TracedClass.__init__)
+def test_umltrace_uml_traceddurationinterval_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDurationInterval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracednode_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedNode)
+def test_umltrace_uml_tracedtimeinterval_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTimeInterval)
 
 
-def test_umltrace::uml::tracednode_constructor_exists():
-    assert callable(umlTrace::uml::TracedNode.__init__)
+def test_umltrace_uml_tracedtimeinterval_constructor_exists():
+    assert callable(umlTrace_uml_TracedTimeInterval.__init__)
 
 
-def test_umltrace::uml::tracednode_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedNode.__init__)
+def test_umltrace_uml_tracedtimeinterval_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTimeInterval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::uml::tracedassociationclass_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::uml::TracedAssociationClass)
+def test_umltrace_uml_tracedsignalevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSignalEvent)
 
 
-def test_umltrace::uml::tracedassociationclass_constructor_exists():
-    assert callable(umlTrace::uml::TracedAssociationClass.__init__)
+def test_umltrace_uml_tracedsignalevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedSignalEvent.__init__)
 
 
-def test_umltrace::uml::tracedassociationclass_constructor_args():
-    sig = inspect.signature(umlTrace::uml::TracedAssociationClass.__init__)
+def test_umltrace_uml_tracedsignalevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSignalEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedpackageimport_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedPackageImport)
+def test_tracedbehavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(TracedBehavioralFeature)
 
 
-def test_uml::tracedpackageimport_constructor_exists():
-    assert callable(uml::TracedPackageImport.__init__)
+def test_tracedbehavioralfeature_constructor_exists():
+    assert callable(TracedBehavioralFeature.__init__)
 
 
-def test_uml::tracedpackageimport_constructor_args():
-    sig = inspect.signature(uml::TracedPackageImport.__init__)
+def test_tracedbehavioralfeature_constructor_args():
+    sig = inspect.signature(TracedBehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedsendobjectaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedSendObjectAction)
+def test_umltrace_uml_tracedreception_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReception)
 
 
-def test_uml::tracedsendobjectaction_constructor_exists():
-    assert callable(uml::TracedSendObjectAction.__init__)
+def test_umltrace_uml_tracedreception_constructor_exists():
+    assert callable(umlTrace_uml_TracedReception.__init__)
 
 
-def test_uml::tracedsendobjectaction_constructor_args():
-    sig = inspect.signature(uml::TracedSendObjectAction.__init__)
+def test_umltrace_uml_tracedreception_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReception.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedconnector_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedConnector)
+def test_umltrace_uml_tracedexecutionspecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExecutionSpecification)
 
 
-def test_uml::tracedconnector_constructor_exists():
-    assert callable(uml::TracedConnector.__init__)
+def test_umltrace_uml_tracedexecutionspecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedExecutionSpecification.__init__)
 
 
-def test_uml::tracedconnector_constructor_args():
-    sig = inspect.signature(uml::TracedConnector.__init__)
+def test_umltrace_uml_tracedexecutionspecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExecutionSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::traceddestructionoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDestructionOccurrenceSpecification)
+def test_traceddependency_is_not_abstract():
+    assert not inspect.isabstract(TracedDependency)
 
 
-def test_uml::traceddestructionoccurrencespecification_constructor_exists():
-    assert callable(uml::TracedDestructionOccurrenceSpecification.__init__)
+def test_traceddependency_constructor_exists():
+    assert callable(TracedDependency.__init__)
 
 
-def test_uml::traceddestructionoccurrencespecification_constructor_args():
-    sig = inspect.signature(uml::TracedDestructionOccurrenceSpecification.__init__)
+def test_traceddependency_constructor_args():
+    sig = inspect.signature(TracedDependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::traceddurationconstraint_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedDurationConstraint)
+def test_umltrace_uml_tracedusage_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedUsage)
 
 
-def test_uml::traceddurationconstraint_constructor_exists():
-    assert callable(uml::TracedDurationConstraint.__init__)
+def test_umltrace_uml_tracedusage_constructor_exists():
+    assert callable(umlTrace_uml_TracedUsage.__init__)
 
 
-def test_uml::traceddurationconstraint_constructor_args():
-    sig = inspect.signature(uml::TracedDurationConstraint.__init__)
+def test_umltrace_uml_tracedusage_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedUsage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::tracedforknodeactivation_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::TracedForkNodeActivation)
+def test_umltrace_uml_tracedabstraction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAbstraction)
 
 
-def test_intermediateactivities::tracedforknodeactivation_constructor_exists():
-    assert callable(IntermediateActivities::TracedForkNodeActivation.__init__)
+def test_umltrace_uml_tracedabstraction_constructor_exists():
+    assert callable(umlTrace_uml_TracedAbstraction.__init__)
 
 
-def test_intermediateactivities::tracedforknodeactivation_constructor_args():
-    sig = inspect.signature(IntermediateActivities::TracedForkNodeActivation.__init__)
+def test_umltrace_uml_tracedabstraction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAbstraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedlifeline_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedLifeline)
+def test_tracedabstraction_is_not_abstract():
+    assert not inspect.isabstract(TracedAbstraction)
 
 
-def test_uml::tracedlifeline_constructor_exists():
-    assert callable(uml::TracedLifeline.__init__)
+def test_tracedabstraction_constructor_exists():
+    assert callable(TracedAbstraction.__init__)
 
 
-def test_uml::tracedlifeline_constructor_args():
-    sig = inspect.signature(uml::TracedLifeline.__init__)
+def test_tracedabstraction_constructor_args():
+    sig = inspect.signature(TracedAbstraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedcreateobjectaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCreateObjectAction)
+def test_umltrace_uml_tracedmanifestation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedManifestation)
 
 
-def test_uml::tracedcreateobjectaction_constructor_exists():
-    assert callable(uml::TracedCreateObjectAction.__init__)
+def test_umltrace_uml_tracedmanifestation_constructor_exists():
+    assert callable(umlTrace_uml_TracedManifestation.__init__)
 
 
-def test_uml::tracedcreateobjectaction_constructor_args():
-    sig = inspect.signature(uml::TracedCreateObjectAction.__init__)
+def test_umltrace_uml_tracedmanifestation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedManifestation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedexpansionregion_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedExpansionRegion)
+def test_umltrace_uml_tracedrealization_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRealization)
 
 
-def test_uml::tracedexpansionregion_constructor_exists():
-    assert callable(uml::TracedExpansionRegion.__init__)
+def test_umltrace_uml_tracedrealization_constructor_exists():
+    assert callable(umlTrace_uml_TracedRealization.__init__)
 
 
-def test_uml::tracedexpansionregion_constructor_args():
-    sig = inspect.signature(uml::TracedExpansionRegion.__init__)
+def test_umltrace_uml_tracedrealization_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedflowfinalnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedFlowFinalNode)
+def test_tracedrealization_is_not_abstract():
+    assert not inspect.isabstract(TracedRealization)
 
 
-def test_uml::tracedflowfinalnode_constructor_exists():
-    assert callable(uml::TracedFlowFinalNode.__init__)
+def test_tracedrealization_constructor_exists():
+    assert callable(TracedRealization.__init__)
 
 
-def test_uml::tracedflowfinalnode_constructor_args():
-    sig = inspect.signature(uml::TracedFlowFinalNode.__init__)
+def test_tracedrealization_constructor_args():
+    sig = inspect.signature(TracedRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedinitialnode_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedInitialNode)
+def test_umltrace_uml_tracedcomponentrealization_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedComponentRealization)
 
 
-def test_uml::tracedinitialnode_constructor_exists():
-    assert callable(uml::TracedInitialNode.__init__)
+def test_umltrace_uml_tracedcomponentrealization_constructor_exists():
+    assert callable(umlTrace_uml_TracedComponentRealization.__init__)
 
 
-def test_uml::tracedinitialnode_constructor_args():
-    sig = inspect.signature(uml::TracedInitialNode.__init__)
+def test_umltrace_uml_tracedcomponentrealization_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedComponentRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedcreatelinkobjectaction_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCreateLinkObjectAction)
+def test_umltrace_uml_tracedinterfacerealization_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInterfaceRealization)
 
 
-def test_uml::tracedcreatelinkobjectaction_constructor_exists():
-    assert callable(uml::TracedCreateLinkObjectAction.__init__)
+def test_umltrace_uml_tracedinterfacerealization_constructor_exists():
+    assert callable(umlTrace_uml_TracedInterfaceRealization.__init__)
 
 
-def test_uml::tracedcreatelinkobjectaction_constructor_args():
-    sig = inspect.signature(uml::TracedCreateLinkObjectAction.__init__)
+def test_umltrace_uml_tracedinterfacerealization_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInterfaceRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::tracedcombinedfragment_is_not_abstract():
-    assert not inspect.isabstract(uml::TracedCombinedFragment)
+def test_umltrace_uml_tracedsubstitution_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSubstitution)
 
 
-def test_uml::tracedcombinedfragment_constructor_exists():
-    assert callable(uml::TracedCombinedFragment.__init__)
+def test_umltrace_uml_tracedsubstitution_constructor_exists():
+    assert callable(umlTrace_uml_TracedSubstitution.__init__)
 
 
-def test_uml::tracedcombinedfragment_constructor_args():
-    sig = inspect.signature(uml::TracedCombinedFragment.__init__)
+def test_umltrace_uml_tracedsubstitution_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSubstitution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::traced::tracedobjects_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Traced::TracedObjects)
+def test_tracedinstancespecification_is_not_abstract():
+    assert not inspect.isabstract(TracedInstanceSpecification)
 
 
-def test_umltrace::traced::tracedobjects_constructor_exists():
-    assert callable(umlTrace::Traced::TracedObjects.__init__)
+def test_tracedinstancespecification_constructor_exists():
+    assert callable(TracedInstanceSpecification.__init__)
 
 
-def test_umltrace::traced::tracedobjects_constructor_args():
-    sig = inspect.signature(umlTrace::Traced::TracedObjects.__init__)
+def test_tracedinstancespecification_constructor_args():
+    sig = inspect.signature(TracedInstanceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traced::tracedobjects_is_not_abstract():
-    assert not inspect.isabstract(Traced::TracedObjects)
+def test_umltrace_uml_tracedenumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedEnumerationLiteral)
 
 
-def test_traced::tracedobjects_constructor_exists():
-    assert callable(Traced::TracedObjects.__init__)
+def test_umltrace_uml_tracedenumerationliteral_constructor_exists():
+    assert callable(umlTrace_uml_TracedEnumerationLiteral.__init__)
 
 
-def test_traced::tracedobjects_constructor_args():
-    sig = inspect.signature(Traced::TracedObjects.__init__)
+def test_umltrace_uml_tracedenumerationliteral_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedEnumerationLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedaccepteventaction_is_not_abstract():
+    assert not inspect.isabstract(TracedAcceptEventAction)
+
+
+def test_tracedaccepteventaction_constructor_exists():
+    assert callable(TracedAcceptEventAction.__init__)
+
+
+def test_tracedaccepteventaction_constructor_args():
+    sig = inspect.signature(TracedAcceptEventAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedacceptcallaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAcceptCallAction)
+
+
+def test_umltrace_uml_tracedacceptcallaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedAcceptCallAction.__init__)
+
+
+def test_umltrace_uml_tracedacceptcallaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAcceptCallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedlinkenddata_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLinkEndData)
+
+
+def test_umltrace_uml_tracedlinkenddata_constructor_exists():
+    assert callable(umlTrace_uml_TracedLinkEndData.__init__)
+
+
+def test_umltrace_uml_tracedlinkenddata_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedlinkenddata_is_not_abstract():
+    assert not inspect.isabstract(TracedLinkEndData)
+
+
+def test_tracedlinkenddata_constructor_exists():
+    assert callable(TracedLinkEndData.__init__)
+
+
+def test_tracedlinkenddata_constructor_args():
+    sig = inspect.signature(TracedLinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedlinkendcreationdata_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLinkEndCreationData)
+
+
+def test_umltrace_uml_tracedlinkendcreationdata_constructor_exists():
+    assert callable(umlTrace_uml_TracedLinkEndCreationData.__init__)
+
+
+def test_umltrace_uml_tracedlinkendcreationdata_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLinkEndCreationData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedlinkenddestructiondata_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLinkEndDestructionData)
+
+
+def test_umltrace_uml_tracedlinkenddestructiondata_constructor_exists():
+    assert callable(umlTrace_uml_TracedLinkEndDestructionData.__init__)
+
+
+def test_umltrace_uml_tracedlinkenddestructiondata_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLinkEndDestructionData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtemplatesignature_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTemplateSignature)
+
+
+def test_umltrace_uml_tracedtemplatesignature_constructor_exists():
+    assert callable(umlTrace_uml_TracedTemplateSignature.__init__)
+
+
+def test_umltrace_uml_tracedtemplatesignature_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTemplateSignature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstateinvariant_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStateInvariant)
+
+
+def test_umltrace_uml_tracedstateinvariant_constructor_exists():
+    assert callable(umlTrace_uml_TracedStateInvariant.__init__)
+
+
+def test_umltrace_uml_tracedstateinvariant_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStateInvariant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtrigger_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTrigger)
+
+
+def test_umltrace_uml_tracedtrigger_constructor_exists():
+    assert callable(umlTrace_uml_TracedTrigger.__init__)
+
+
+def test_umltrace_uml_tracedtrigger_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedslot_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSlot)
+
+
+def test_umltrace_uml_tracedslot_constructor_exists():
+    assert callable(umlTrace_uml_TracedSlot.__init__)
+
+
+def test_umltrace_uml_tracedslot_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSlot.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedclass_is_not_abstract():
+    assert not inspect.isabstract(TracedClass)
+
+
+def test_tracedclass_constructor_exists():
+    assert callable(TracedClass.__init__)
+
+
+def test_tracedclass_constructor_args():
+    sig = inspect.signature(TracedClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstereotype_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStereotype)
+
+
+def test_umltrace_uml_tracedstereotype_constructor_exists():
+    assert callable(umlTrace_uml_TracedStereotype.__init__)
+
+
+def test_umltrace_uml_tracedstereotype_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStereotype.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcomponent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedComponent)
+
+
+def test_umltrace_uml_tracedcomponent_constructor_exists():
+    assert callable(umlTrace_uml_TracedComponent.__init__)
+
+
+def test_umltrace_uml_tracedcomponent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedbehavior_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedBehavior)
+
+
+def test_umltrace_uml_tracedbehavior_constructor_exists():
+    assert callable(umlTrace_uml_TracedBehavior.__init__)
+
+
+def test_umltrace_uml_tracedbehavior_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinteractionfragment_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInteractionFragment)
+
+
+def test_uml_tracedinteractionfragment_constructor_exists():
+    assert callable(uml_TracedInteractionFragment.__init__)
+
+
+def test_uml_tracedinteractionfragment_constructor_args():
+    sig = inspect.signature(uml_TracedInteractionFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedbehavior_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedBehavior)
+
+
+def test_uml_tracedbehavior_constructor_exists():
+    assert callable(uml_TracedBehavior.__init__)
+
+
+def test_uml_tracedbehavior_constructor_args():
+    sig = inspect.signature(uml_TracedBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinteraction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInteraction)
+
+
+def test_umltrace_uml_tracedinteraction_constructor_exists():
+    assert callable(umlTrace_uml_TracedInteraction.__init__)
+
+
+def test_umltrace_uml_tracedinteraction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInteraction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedactivityedge_is_not_abstract():
+    assert not inspect.isabstract(TracedActivityEdge)
+
+
+def test_tracedactivityedge_constructor_exists():
+    assert callable(TracedActivityEdge.__init__)
+
+
+def test_tracedactivityedge_constructor_args():
+    sig = inspect.signature(TracedActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcontrolflow_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedControlFlow)
+
+
+def test_umltrace_uml_tracedcontrolflow_constructor_exists():
+    assert callable(umlTrace_uml_TracedControlFlow.__init__)
+
+
+def test_umltrace_uml_tracedcontrolflow_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedControlFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedobjectflow_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedObjectFlow)
+
+
+def test_umltrace_uml_tracedobjectflow_constructor_exists():
+    assert callable(umlTrace_uml_TracedObjectFlow.__init__)
+
+
+def test_umltrace_uml_tracedobjectflow_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedObjectFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedstatemachine_is_not_abstract():
+    assert not inspect.isabstract(TracedStateMachine)
+
+
+def test_tracedstatemachine_constructor_exists():
+    assert callable(TracedStateMachine.__init__)
+
+
+def test_tracedstatemachine_constructor_args():
+    sig = inspect.signature(TracedStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedprotocolstatemachine_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedProtocolStateMachine)
+
+
+def test_umltrace_uml_tracedprotocolstatemachine_constructor_exists():
+    assert callable(umlTrace_uml_TracedProtocolStateMachine.__init__)
+
+
+def test_umltrace_uml_tracedprotocolstatemachine_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedProtocolStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddeployment_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDeployment)
+
+
+def test_umltrace_uml_traceddeployment_constructor_exists():
+    assert callable(umlTrace_uml_TracedDeployment.__init__)
+
+
+def test_umltrace_uml_traceddeployment_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDeployment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedmessage_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedMessage)
+
+
+def test_umltrace_uml_tracedmessage_constructor_exists():
+    assert callable(umlTrace_uml_TracedMessage.__init__)
+
+
+def test_umltrace_uml_tracedmessage_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedMessage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedbehavior_is_not_abstract():
+    assert not inspect.isabstract(TracedBehavior)
+
+
+def test_tracedbehavior_constructor_exists():
+    assert callable(TracedBehavior.__init__)
+
+
+def test_tracedbehavior_constructor_args():
+    sig = inspect.signature(TracedBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedopaquebehavior_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOpaqueBehavior)
+
+
+def test_umltrace_uml_tracedopaquebehavior_constructor_exists():
+    assert callable(umlTrace_uml_TracedOpaqueBehavior.__init__)
+
+
+def test_umltrace_uml_tracedopaquebehavior_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOpaqueBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivity_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivity)
+
+
+def test_umltrace_uml_tracedactivity_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivity.__init__)
+
+
+def test_umltrace_uml_tracedactivity_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstatemachine_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStateMachine)
+
+
+def test_umltrace_uml_tracedstatemachine_constructor_exists():
+    assert callable(umlTrace_uml_TracedStateMachine.__init__)
+
+
+def test_umltrace_uml_tracedstatemachine_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedactivitygroup_is_not_abstract():
+    assert not inspect.isabstract(TracedActivityGroup)
+
+
+def test_tracedactivitygroup_constructor_exists():
+    assert callable(TracedActivityGroup.__init__)
+
+
+def test_tracedactivitygroup_constructor_args():
+    sig = inspect.signature(TracedActivityGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinterruptibleactivityregion_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInterruptibleActivityRegion)
+
+
+def test_umltrace_uml_tracedinterruptibleactivityregion_constructor_exists():
+    assert callable(umlTrace_uml_TracedInterruptibleActivityRegion.__init__)
+
+
+def test_umltrace_uml_tracedinterruptibleactivityregion_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInterruptibleActivityRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivitypartition_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivityPartition)
+
+
+def test_umltrace_uml_tracedactivitypartition_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivityPartition.__init__)
+
+
+def test_umltrace_uml_tracedactivitypartition_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivityPartition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedrelationship_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRelationship)
+
+
+def test_uml_tracedrelationship_constructor_exists():
+    assert callable(uml_TracedRelationship.__init__)
+
+
+def test_uml_tracedrelationship_constructor_args():
+    sig = inspect.signature(uml_TracedRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedassociation_is_not_abstract():
+    assert not inspect.isabstract(TracedAssociation)
+
+
+def test_tracedassociation_constructor_exists():
+    assert callable(TracedAssociation.__init__)
+
+
+def test_tracedassociation_constructor_args():
+    sig = inspect.signature(TracedAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcommunicationpath_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCommunicationPath)
+
+
+def test_umltrace_uml_tracedcommunicationpath_constructor_exists():
+    assert callable(umlTrace_uml_TracedCommunicationPath.__init__)
+
+
+def test_umltrace_uml_tracedcommunicationpath_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCommunicationPath.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedextension_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExtension)
+
+
+def test_umltrace_uml_tracedextension_constructor_exists():
+    assert callable(umlTrace_uml_TracedExtension.__init__)
+
+
+def test_umltrace_uml_tracedextension_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(TracedStructuralFeatureAction)
+
+
+def test_tracedstructuralfeatureaction_constructor_exists():
+    assert callable(TracedStructuralFeatureAction.__init__)
+
+
+def test_tracedstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(TracedStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadStructuralFeatureAction)
+
+
+def test_umltrace_uml_tracedreadstructuralfeatureaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadStructuralFeatureAction.__init__)
+
+
+def test_umltrace_uml_tracedreadstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedclearstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClearStructuralFeatureAction)
+
+
+def test_umltrace_uml_tracedclearstructuralfeatureaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedClearStructuralFeatureAction.__init__)
+
+
+def test_umltrace_uml_tracedclearstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClearStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedwritestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedWriteStructuralFeatureAction)
+
+
+def test_umltrace_uml_tracedwritestructuralfeatureaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedWriteStructuralFeatureAction.__init__)
+
+
+def test_umltrace_uml_tracedwritestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedWriteStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedwritestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(TracedWriteStructuralFeatureAction)
+
+
+def test_tracedwritestructuralfeatureaction_constructor_exists():
+    assert callable(TracedWriteStructuralFeatureAction.__init__)
+
+
+def test_tracedwritestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(TracedWriteStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedaddstructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAddStructuralFeatureValueAction)
+
+
+def test_umltrace_uml_tracedaddstructuralfeaturevalueaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedAddStructuralFeatureValueAction.__init__)
+
+
+def test_umltrace_uml_tracedaddstructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAddStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedremovestructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRemoveStructuralFeatureValueAction)
+
+
+def test_umltrace_uml_tracedremovestructuralfeaturevalueaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedRemoveStructuralFeatureValueAction.__init__)
+
+
+def test_umltrace_uml_tracedremovestructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRemoveStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedbehavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(TracedBehavioredClassifier)
+
+
+def test_tracedbehavioredclassifier_constructor_exists():
+    assert callable(TracedBehavioredClassifier.__init__)
+
+
+def test_tracedbehavioredclassifier_constructor_args():
+    sig = inspect.signature(TracedBehavioredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactor_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActor)
+
+
+def test_umltrace_uml_tracedactor_constructor_exists():
+    assert callable(umlTrace_uml_TracedActor.__init__)
+
+
+def test_umltrace_uml_tracedactor_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedusecase_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedUseCase)
+
+
+def test_umltrace_uml_tracedusecase_constructor_exists():
+    assert callable(umlTrace_uml_TracedUseCase.__init__)
+
+
+def test_umltrace_uml_tracedusecase_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedUseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedsequencenode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSequenceNode)
+
+
+def test_umltrace_uml_tracedsequencenode_constructor_exists():
+    assert callable(umlTrace_uml_TracedSequenceNode.__init__)
+
+
+def test_umltrace_uml_tracedsequencenode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSequenceNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexceptionhandler_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExceptionHandler)
+
+
+def test_umltrace_uml_tracedexceptionhandler_constructor_exists():
+    assert callable(umlTrace_uml_TracedExceptionHandler.__init__)
+
+
+def test_umltrace_uml_tracedexceptionhandler_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExceptionHandler.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddeployedartifact_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDeployedArtifact)
+
+
+def test_umltrace_uml_traceddeployedartifact_constructor_exists():
+    assert callable(umlTrace_uml_TracedDeployedArtifact.__init__)
+
+
+def test_umltrace_uml_traceddeployedartifact_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDeployedArtifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddeployedartifact_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDeployedArtifact)
+
+
+def test_uml_traceddeployedartifact_constructor_exists():
+    assert callable(uml_TracedDeployedArtifact.__init__)
+
+
+def test_uml_traceddeployedartifact_constructor_args():
+    sig = inspect.signature(uml_TracedDeployedArtifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedclassifier_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClassifier)
+
+
+def test_uml_tracedclassifier_constructor_exists():
+    assert callable(uml_TracedClassifier.__init__)
+
+
+def test_uml_tracedclassifier_constructor_args():
+    sig = inspect.signature(uml_TracedClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedassociation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAssociation)
+
+
+def test_umltrace_uml_tracedassociation_constructor_exists():
+    assert callable(umlTrace_uml_TracedAssociation.__init__)
+
+
+def test_umltrace_uml_tracedassociation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedartifact_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedArtifact)
+
+
+def test_umltrace_uml_tracedartifact_constructor_exists():
+    assert callable(umlTrace_uml_TracedArtifact.__init__)
+
+
+def test_umltrace_uml_tracedartifact_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedArtifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedartifact_is_not_abstract():
+    assert not inspect.isabstract(TracedArtifact)
+
+
+def test_tracedartifact_constructor_exists():
+    assert callable(TracedArtifact.__init__)
+
+
+def test_tracedartifact_constructor_args():
+    sig = inspect.signature(TracedArtifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddeploymentspecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDeploymentSpecification)
+
+
+def test_umltrace_uml_traceddeploymentspecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedDeploymentSpecification.__init__)
+
+
+def test_umltrace_uml_traceddeploymentspecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDeploymentSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactivitynode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActivityNode)
+
+
+def test_uml_tracedactivitynode_constructor_exists():
+    assert callable(uml_TracedActivityNode.__init__)
+
+
+def test_uml_tracedactivitynode_constructor_args():
+    sig = inspect.signature(uml_TracedActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedobjectnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedObjectNode)
+
+
+def test_uml_tracedobjectnode_constructor_exists():
+    assert callable(uml_TracedObjectNode.__init__)
+
+
+def test_uml_tracedobjectnode_constructor_args():
+    sig = inspect.signature(uml_TracedObjectNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedpin_is_not_abstract():
+    assert not inspect.isabstract(TracedPin)
+
+
+def test_tracedpin_constructor_exists():
+    assert callable(TracedPin.__init__)
+
+
+def test_tracedpin_constructor_args():
+    sig = inspect.signature(TracedPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedoutputpin_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOutputPin)
+
+
+def test_umltrace_uml_tracedoutputpin_constructor_exists():
+    assert callable(umlTrace_uml_TracedOutputPin.__init__)
+
+
+def test_umltrace_uml_tracedoutputpin_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOutputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinputpin_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInputPin)
+
+
+def test_umltrace_uml_tracedinputpin_constructor_exists():
+    assert callable(umlTrace_uml_TracedInputPin.__init__)
+
+
+def test_umltrace_uml_tracedinputpin_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedinputpin_is_not_abstract():
+    assert not inspect.isabstract(TracedInputPin)
+
+
+def test_tracedinputpin_constructor_exists():
+    assert callable(TracedInputPin.__init__)
+
+
+def test_tracedinputpin_constructor_args():
+    sig = inspect.signature(TracedInputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactioninputpin_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActionInputPin)
+
+
+def test_umltrace_uml_tracedactioninputpin_constructor_exists():
+    assert callable(umlTrace_uml_TracedActionInputPin.__init__)
+
+
+def test_umltrace_uml_tracedactioninputpin_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActionInputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedvaluepin_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedValuePin)
+
+
+def test_umltrace_uml_tracedvaluepin_constructor_exists():
+    assert callable(umlTrace_uml_TracedValuePin.__init__)
+
+
+def test_umltrace_uml_tracedvaluepin_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedValuePin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcollaborationuse_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCollaborationUse)
+
+
+def test_umltrace_uml_tracedcollaborationuse_constructor_exists():
+    assert callable(umlTrace_uml_TracedCollaborationUse.__init__)
+
+
+def test_umltrace_uml_tracedcollaborationuse_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCollaborationUse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddeploymenttarget_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDeploymentTarget)
+
+
+def test_umltrace_uml_traceddeploymenttarget_constructor_exists():
+    assert callable(umlTrace_uml_TracedDeploymentTarget.__init__)
+
+
+def test_umltrace_uml_traceddeploymenttarget_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDeploymentTarget.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedmultiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedMultiplicityElement)
+
+
+def test_umltrace_uml_tracedmultiplicityelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedMultiplicityElement.__init__)
+
+
+def test_umltrace_uml_tracedmultiplicityelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedMultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtypedelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTypedElement)
+
+
+def test_umltrace_uml_tracedtypedelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedTypedElement.__init__)
+
+
+def test_umltrace_uml_tracedtypedelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedmultiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedMultiplicityElement)
+
+
+def test_uml_tracedmultiplicityelement_constructor_exists():
+    assert callable(uml_TracedMultiplicityElement.__init__)
+
+
+def test_uml_tracedmultiplicityelement_constructor_args():
+    sig = inspect.signature(uml_TracedMultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedpin_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPin)
+
+
+def test_umltrace_uml_tracedpin_constructor_exists():
+    assert callable(umlTrace_uml_TracedPin.__init__)
+
+
+def test_umltrace_uml_tracedpin_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtypedelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTypedElement)
+
+
+def test_uml_tracedtypedelement_constructor_exists():
+    assert callable(uml_TracedTypedElement.__init__)
+
+
+def test_uml_tracedtypedelement_constructor_args():
+    sig = inspect.signature(uml_TracedTypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedconnectableelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConnectableElement)
+
+
+def test_umltrace_uml_tracedconnectableelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedConnectableElement.__init__)
+
+
+def test_umltrace_uml_tracedconnectableelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConnectableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedobjectnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedObjectNode)
+
+
+def test_umltrace_uml_tracedobjectnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedObjectNode.__init__)
+
+
+def test_umltrace_uml_tracedobjectnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedObjectNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedfeature_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedFeature)
+
+
+def test_uml_tracedfeature_constructor_exists():
+    assert callable(uml_TracedFeature.__init__)
+
+
+def test_uml_tracedfeature_constructor_args():
+    sig = inspect.signature(uml_TracedFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStructuralFeature)
+
+
+def test_umltrace_uml_tracedstructuralfeature_constructor_exists():
+    assert callable(umlTrace_uml_TracedStructuralFeature.__init__)
+
+
+def test_umltrace_uml_tracedstructuralfeature_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStructuralFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedvaluespecification_is_not_abstract():
+    assert not inspect.isabstract(TracedValueSpecification)
+
+
+def test_tracedvaluespecification_constructor_exists():
+    assert callable(TracedValueSpecification.__init__)
+
+
+def test_tracedvaluespecification_constructor_args():
+    sig = inspect.signature(TracedValueSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedopaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOpaqueExpression)
+
+
+def test_umltrace_uml_tracedopaqueexpression_constructor_exists():
+    assert callable(umlTrace_uml_TracedOpaqueExpression.__init__)
+
+
+def test_umltrace_uml_tracedopaqueexpression_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOpaqueExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtimeexpression_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTimeExpression)
+
+
+def test_umltrace_uml_tracedtimeexpression_constructor_exists():
+    assert callable(umlTrace_uml_TracedTimeExpression.__init__)
+
+
+def test_umltrace_uml_tracedtimeexpression_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTimeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinterval_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInterval)
+
+
+def test_umltrace_uml_tracedinterval_constructor_exists():
+    assert callable(umlTrace_uml_TracedInterval.__init__)
+
+
+def test_umltrace_uml_tracedinterval_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInterval.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexpression_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExpression)
+
+
+def test_umltrace_uml_tracedexpression_constructor_exists():
+    assert callable(umlTrace_uml_TracedExpression.__init__)
+
+
+def test_umltrace_uml_tracedexpression_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinstancevalue_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInstanceValue)
+
+
+def test_umltrace_uml_tracedinstancevalue_constructor_exists():
+    assert callable(umlTrace_uml_TracedInstanceValue.__init__)
+
+
+def test_umltrace_uml_tracedinstancevalue_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInstanceValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedduration_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDuration)
+
+
+def test_umltrace_uml_tracedduration_constructor_exists():
+    assert callable(umlTrace_uml_TracedDuration.__init__)
+
+
+def test_umltrace_uml_tracedduration_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDuration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralspecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralSpecification)
+
+
+def test_umltrace_uml_tracedliteralspecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralSpecification.__init__)
+
+
+def test_umltrace_uml_tracedliteralspecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedliteralspecification_is_not_abstract():
+    assert not inspect.isabstract(TracedLiteralSpecification)
+
+
+def test_tracedliteralspecification_constructor_exists():
+    assert callable(TracedLiteralSpecification.__init__)
+
+
+def test_tracedliteralspecification_constructor_args():
+    sig = inspect.signature(TracedLiteralSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralunlimitednatural_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralUnlimitedNatural)
+
+
+def test_umltrace_uml_tracedliteralunlimitednatural_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralUnlimitedNatural.__init__)
+
+
+def test_umltrace_uml_tracedliteralunlimitednatural_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralUnlimitedNatural.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralnull_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralNull)
+
+
+def test_umltrace_uml_tracedliteralnull_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralNull.__init__)
+
+
+def test_umltrace_uml_tracedliteralnull_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralNull.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralreal_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralReal)
+
+
+def test_umltrace_uml_tracedliteralreal_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralReal.__init__)
+
+
+def test_umltrace_uml_tracedliteralreal_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralReal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralboolean_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralBoolean)
+
+
+def test_umltrace_uml_tracedliteralboolean_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralBoolean.__init__)
+
+
+def test_umltrace_uml_tracedliteralboolean_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralBoolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralinteger_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralInteger)
+
+
+def test_umltrace_uml_tracedliteralinteger_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralInteger.__init__)
+
+
+def test_umltrace_uml_tracedliteralinteger_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralInteger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedliteralstring_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLiteralString)
+
+
+def test_umltrace_uml_tracedliteralstring_constructor_exists():
+    assert callable(umlTrace_uml_TracedLiteralString.__init__)
+
+
+def test_umltrace_uml_tracedliteralstring_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLiteralString.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedvariableaction_is_not_abstract():
+    assert not inspect.isabstract(TracedVariableAction)
+
+
+def test_tracedvariableaction_constructor_exists():
+    assert callable(TracedVariableAction.__init__)
+
+
+def test_tracedvariableaction_constructor_args():
+    sig = inspect.signature(TracedVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadvariableaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadVariableAction)
+
+
+def test_umltrace_uml_tracedreadvariableaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadVariableAction.__init__)
+
+
+def test_umltrace_uml_tracedreadvariableaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedwritevariableaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedWriteVariableAction)
+
+
+def test_umltrace_uml_tracedwritevariableaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedWriteVariableAction.__init__)
+
+
+def test_umltrace_uml_tracedwritevariableaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedWriteVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedclearvariableaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClearVariableAction)
+
+
+def test_umltrace_uml_tracedclearvariableaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedClearVariableAction.__init__)
+
+
+def test_umltrace_uml_tracedclearvariableaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClearVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtimeconstraint_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTimeConstraint)
+
+
+def test_umltrace_uml_tracedtimeconstraint_constructor_exists():
+    assert callable(umlTrace_uml_TracedTimeConstraint.__init__)
+
+
+def test_umltrace_uml_tracedtimeconstraint_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTimeConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcontinuation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedContinuation)
+
+
+def test_umltrace_uml_tracedcontinuation_constructor_exists():
+    assert callable(umlTrace_uml_TracedContinuation.__init__)
+
+
+def test_umltrace_uml_tracedcontinuation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedContinuation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedcombinedfragment_is_not_abstract():
+    assert not inspect.isabstract(TracedCombinedFragment)
+
+
+def test_tracedcombinedfragment_constructor_exists():
+    assert callable(TracedCombinedFragment.__init__)
+
+
+def test_tracedcombinedfragment_constructor_args():
+    sig = inspect.signature(TracedCombinedFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedconsiderignorefragment_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConsiderIgnoreFragment)
+
+
+def test_umltrace_uml_tracedconsiderignorefragment_constructor_exists():
+    assert callable(umlTrace_uml_TracedConsiderIgnoreFragment.__init__)
+
+
+def test_umltrace_uml_tracedconsiderignorefragment_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConsiderIgnoreFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracednode_is_not_abstract():
+    assert not inspect.isabstract(TracedNode)
+
+
+def test_tracednode_constructor_exists():
+    assert callable(TracedNode.__init__)
+
+
+def test_tracednode_constructor_args():
+    sig = inspect.signature(TracedNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddevice_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDevice)
+
+
+def test_umltrace_uml_traceddevice_constructor_exists():
+    assert callable(umlTrace_uml_TracedDevice.__init__)
+
+
+def test_umltrace_uml_traceddevice_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDevice.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexecutionenvironment_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExecutionEnvironment)
+
+
+def test_umltrace_uml_tracedexecutionenvironment_constructor_exists():
+    assert callable(umlTrace_uml_TracedExecutionEnvironment.__init__)
+
+
+def test_umltrace_uml_tracedexecutionenvironment_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExecutionEnvironment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtype_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedType)
+
+
+def test_umltrace_uml_tracedtype_constructor_exists():
+    assert callable(umlTrace_uml_TracedType.__init__)
+
+
+def test_umltrace_uml_tracedtype_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtype_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedType)
+
+
+def test_uml_tracedtype_constructor_exists():
+    assert callable(uml_TracedType.__init__)
+
+
+def test_uml_tracedtype_constructor_args():
+    sig = inspect.signature(uml_TracedType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedclassifier_is_not_abstract():
+    assert not inspect.isabstract(TracedClassifier)
+
+
+def test_tracedclassifier_constructor_exists():
+    assert callable(TracedClassifier.__init__)
+
+
+def test_tracedclassifier_constructor_args():
+    sig = inspect.signature(TracedClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddatatype_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDataType)
+
+
+def test_umltrace_uml_traceddatatype_constructor_exists():
+    assert callable(umlTrace_uml_TracedDataType.__init__)
+
+
+def test_umltrace_uml_traceddatatype_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinformationitem_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInformationItem)
+
+
+def test_umltrace_uml_tracedinformationitem_constructor_exists():
+    assert callable(umlTrace_uml_TracedInformationItem.__init__)
+
+
+def test_umltrace_uml_tracedinformationitem_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInformationItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinterface_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInterface)
+
+
+def test_umltrace_uml_tracedinterface_constructor_exists():
+    assert callable(umlTrace_uml_TracedInterface.__init__)
+
+
+def test_umltrace_uml_tracedinterface_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedbehavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedBehavioredClassifier)
+
+
+def test_umltrace_uml_tracedbehavioredclassifier_constructor_exists():
+    assert callable(umlTrace_uml_TracedBehavioredClassifier.__init__)
+
+
+def test_umltrace_uml_tracedbehavioredclassifier_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedBehavioredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstructuredclassifier_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStructuredClassifier)
+
+
+def test_umltrace_uml_tracedstructuredclassifier_constructor_exists():
+    assert callable(umlTrace_uml_TracedStructuredClassifier.__init__)
+
+
+def test_umltrace_uml_tracedstructuredclassifier_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStructuredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedstructuredclassifier_is_not_abstract():
+    assert not inspect.isabstract(TracedStructuredClassifier)
+
+
+def test_tracedstructuredclassifier_constructor_exists():
+    assert callable(TracedStructuredClassifier.__init__)
+
+
+def test_tracedstructuredclassifier_constructor_args():
+    sig = inspect.signature(TracedStructuredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedencapsulatedclassifier_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedEncapsulatedClassifier)
+
+
+def test_umltrace_uml_tracedencapsulatedclassifier_constructor_exists():
+    assert callable(umlTrace_uml_TracedEncapsulatedClassifier.__init__)
+
+
+def test_umltrace_uml_tracedencapsulatedclassifier_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedEncapsulatedClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedbehavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedBehavioredClassifier)
+
+
+def test_uml_tracedbehavioredclassifier_constructor_exists():
+    assert callable(uml_TracedBehavioredClassifier.__init__)
+
+
+def test_uml_tracedbehavioredclassifier_constructor_args():
+    sig = inspect.signature(uml_TracedBehavioredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcollaboration_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCollaboration)
+
+
+def test_umltrace_uml_tracedcollaboration_constructor_exists():
+    assert callable(umlTrace_uml_TracedCollaboration.__init__)
+
+
+def test_umltrace_uml_tracedcollaboration_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCollaboration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedencapsulatedclassifier_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedEncapsulatedClassifier)
+
+
+def test_uml_tracedencapsulatedclassifier_constructor_exists():
+    assert callable(uml_TracedEncapsulatedClassifier.__init__)
+
+
+def test_uml_tracedencapsulatedclassifier_constructor_args():
+    sig = inspect.signature(uml_TracedEncapsulatedClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedclass_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClass)
+
+
+def test_umltrace_uml_tracedclass_constructor_exists():
+    assert callable(umlTrace_uml_TracedClass.__init__)
+
+
+def test_umltrace_uml_tracedclass_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedcallaction_is_not_abstract():
+    assert not inspect.isabstract(TracedCallAction)
+
+
+def test_tracedcallaction_constructor_exists():
+    assert callable(TracedCallAction.__init__)
+
+
+def test_tracedcallaction_constructor_args():
+    sig = inspect.signature(TracedCallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstartobjectbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStartObjectBehaviorAction)
+
+
+def test_umltrace_uml_tracedstartobjectbehavioraction_constructor_exists():
+    assert callable(umlTrace_uml_TracedStartObjectBehaviorAction.__init__)
+
+
+def test_umltrace_uml_tracedstartobjectbehavioraction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStartObjectBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcalloperationaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCallOperationAction)
+
+
+def test_umltrace_uml_tracedcalloperationaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedCallOperationAction.__init__)
+
+
+def test_umltrace_uml_tracedcalloperationaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcallbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCallBehaviorAction)
+
+
+def test_umltrace_uml_tracedcallbehavioraction_constructor_exists():
+    assert callable(umlTrace_uml_TracedCallBehaviorAction.__init__)
+
+
+def test_umltrace_uml_tracedcallbehavioraction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCallBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedrelationship_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRelationship)
+
+
+def test_umltrace_uml_tracedrelationship_constructor_exists():
+    assert callable(umlTrace_uml_TracedRelationship.__init__)
+
+
+def test_umltrace_uml_tracedrelationship_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedrelationship_is_not_abstract():
+    assert not inspect.isabstract(TracedRelationship)
+
+
+def test_tracedrelationship_constructor_exists():
+    assert callable(TracedRelationship.__init__)
+
+
+def test_tracedrelationship_constructor_args():
+    sig = inspect.signature(TracedRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddirectedrelationship_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDirectedRelationship)
+
+
+def test_umltrace_uml_traceddirectedrelationship_constructor_exists():
+    assert callable(umlTrace_uml_TracedDirectedRelationship.__init__)
+
+
+def test_umltrace_uml_traceddirectedrelationship_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDirectedRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_traceddirectedrelationship_is_not_abstract():
+    assert not inspect.isabstract(TracedDirectedRelationship)
+
+
+def test_traceddirectedrelationship_constructor_exists():
+    assert callable(TracedDirectedRelationship.__init__)
+
+
+def test_traceddirectedrelationship_constructor_args():
+    sig = inspect.signature(TracedDirectedRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedgeneralization_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedGeneralization)
+
+
+def test_umltrace_uml_tracedgeneralization_constructor_exists():
+    assert callable(umlTrace_uml_TracedGeneralization.__init__)
+
+
+def test_umltrace_uml_tracedgeneralization_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedGeneralization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedelementimport_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedElementImport)
+
+
+def test_umltrace_uml_tracedelementimport_constructor_exists():
+    assert callable(umlTrace_uml_TracedElementImport.__init__)
+
+
+def test_umltrace_uml_tracedelementimport_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedElementImport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedprofileapplication_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedProfileApplication)
+
+
+def test_umltrace_uml_tracedprofileapplication_constructor_exists():
+    assert callable(umlTrace_uml_TracedProfileApplication.__init__)
+
+
+def test_umltrace_uml_tracedprofileapplication_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedProfileApplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedpackagemerge_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPackageMerge)
+
+
+def test_umltrace_uml_tracedpackagemerge_constructor_exists():
+    assert callable(umlTrace_uml_TracedPackageMerge.__init__)
+
+
+def test_umltrace_uml_tracedpackagemerge_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPackageMerge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtemplatebinding_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTemplateBinding)
+
+
+def test_umltrace_uml_tracedtemplatebinding_constructor_exists():
+    assert callable(umlTrace_uml_TracedTemplateBinding.__init__)
+
+
+def test_umltrace_uml_tracedtemplatebinding_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTemplateBinding.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedpackageimport_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPackageImport)
+
+
+def test_umltrace_uml_tracedpackageimport_constructor_exists():
+    assert callable(umlTrace_uml_TracedPackageImport.__init__)
+
+
+def test_umltrace_uml_tracedpackageimport_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPackageImport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedprotocolconformance_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedProtocolConformance)
+
+
+def test_umltrace_uml_tracedprotocolconformance_constructor_exists():
+    assert callable(umlTrace_uml_TracedProtocolConformance.__init__)
+
+
+def test_umltrace_uml_tracedprotocolconformance_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedProtocolConformance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedinvocationaction_is_not_abstract():
+    assert not inspect.isabstract(TracedInvocationAction)
+
+
+def test_tracedinvocationaction_constructor_exists():
+    assert callable(TracedInvocationAction.__init__)
+
+
+def test_tracedinvocationaction_constructor_args():
+    sig = inspect.signature(TracedInvocationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcallaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCallAction)
+
+
+def test_umltrace_uml_tracedcallaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedCallAction.__init__)
+
+
+def test_umltrace_uml_tracedcallaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedbroadcastsignalaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedBroadcastSignalAction)
+
+
+def test_umltrace_uml_tracedbroadcastsignalaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedBroadcastSignalAction.__init__)
+
+
+def test_umltrace_uml_tracedbroadcastsignalaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedBroadcastSignalAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedsendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSendSignalAction)
+
+
+def test_umltrace_uml_tracedsendsignalaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedSendSignalAction.__init__)
+
+
+def test_umltrace_uml_tracedsendsignalaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSendSignalAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedsendobjectaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSendObjectAction)
+
+
+def test_umltrace_uml_tracedsendobjectaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedSendObjectAction.__init__)
+
+
+def test_umltrace_uml_tracedsendobjectaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSendObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedredefinableelement_is_not_abstract():
+    assert not inspect.isabstract(TracedRedefinableElement)
+
+
+def test_tracedredefinableelement_constructor_exists():
+    assert callable(TracedRedefinableElement.__init__)
+
+
+def test_tracedredefinableelement_constructor_args():
+    sig = inspect.signature(TracedRedefinableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedextensionpoint_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExtensionPoint)
+
+
+def test_umltrace_uml_tracedextensionpoint_constructor_exists():
+    assert callable(umlTrace_uml_TracedExtensionPoint.__init__)
+
+
+def test_umltrace_uml_tracedextensionpoint_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExtensionPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivityedge_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivityEdge)
+
+
+def test_umltrace_uml_tracedactivityedge_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivityEdge.__init__)
+
+
+def test_umltrace_uml_tracedactivityedge_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedfeature_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedFeature)
+
+
+def test_umltrace_uml_tracedfeature_constructor_exists():
+    assert callable(umlTrace_uml_TracedFeature.__init__)
+
+
+def test_umltrace_uml_tracedfeature_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedfeature_is_not_abstract():
+    assert not inspect.isabstract(TracedFeature)
+
+
+def test_tracedfeature_constructor_exists():
+    assert callable(TracedFeature.__init__)
+
+
+def test_tracedfeature_constructor_args():
+    sig = inspect.signature(TracedFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedconnector_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedConnector)
+
+
+def test_umltrace_uml_tracedconnector_constructor_exists():
+    assert callable(umlTrace_uml_TracedConnector.__init__)
+
+
+def test_umltrace_uml_tracedconnector_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedConnector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtemplateableelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTemplateableElement)
+
+
+def test_umltrace_uml_tracedtemplateableelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedTemplateableElement.__init__)
+
+
+def test_umltrace_uml_tracedtemplateableelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTemplateableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtemplateableelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTemplateableElement)
+
+
+def test_uml_tracedtemplateableelement_constructor_exists():
+    assert callable(uml_TracedTemplateableElement.__init__)
+
+
+def test_uml_tracedtemplateableelement_constructor_args():
+    sig = inspect.signature(uml_TracedTemplateableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedoperation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOperation)
+
+
+def test_umltrace_uml_tracedoperation_constructor_exists():
+    assert callable(umlTrace_uml_TracedOperation.__init__)
+
+
+def test_umltrace_uml_tracedoperation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstringexpression_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStringExpression)
+
+
+def test_umltrace_uml_tracedstringexpression_constructor_exists():
+    assert callable(umlTrace_uml_TracedStringExpression.__init__)
+
+
+def test_umltrace_uml_tracedstringexpression_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStringExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedpackageableelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPackageableElement)
+
+
+def test_uml_tracedpackageableelement_constructor_exists():
+    assert callable(uml_TracedPackageableElement.__init__)
+
+
+def test_uml_tracedpackageableelement_constructor_args():
+    sig = inspect.signature(uml_TracedPackageableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedvaluespecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedValueSpecification)
+
+
+def test_umltrace_uml_tracedvaluespecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedValueSpecification.__init__)
+
+
+def test_umltrace_uml_tracedvaluespecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedValueSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedmessageend_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedMessageEnd)
+
+
+def test_umltrace_uml_tracedmessageend_constructor_exists():
+    assert callable(umlTrace_uml_TracedMessageEnd.__init__)
+
+
+def test_umltrace_uml_tracedmessageend_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedMessageEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddeploymenttarget_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDeploymentTarget)
+
+
+def test_uml_traceddeploymenttarget_constructor_exists():
+    assert callable(uml_TracedDeploymentTarget.__init__)
+
+
+def test_uml_traceddeploymenttarget_constructor_args():
+    sig = inspect.signature(uml_TracedDeploymentTarget.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinstancespecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInstanceSpecification)
+
+
+def test_umltrace_uml_tracedinstancespecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedInstanceSpecification.__init__)
+
+
+def test_umltrace_uml_tracedinstancespecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInstanceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconnectableelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConnectableElement)
+
+
+def test_uml_tracedconnectableelement_constructor_exists():
+    assert callable(uml_TracedConnectableElement.__init__)
+
+
+def test_uml_tracedconnectableelement_constructor_args():
+    sig = inspect.signature(uml_TracedConnectableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedparameter_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedParameter)
+
+
+def test_umltrace_uml_tracedparameter_constructor_exists():
+    assert callable(umlTrace_uml_TracedParameter.__init__)
+
+
+def test_umltrace_uml_tracedparameter_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedvariable_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedVariable)
+
+
+def test_umltrace_uml_tracedvariable_constructor_exists():
+    assert callable(umlTrace_uml_TracedVariable.__init__)
+
+
+def test_umltrace_uml_tracedvariable_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStructuralFeature)
+
+
+def test_uml_tracedstructuralfeature_constructor_exists():
+    assert callable(uml_TracedStructuralFeature.__init__)
+
+
+def test_uml_tracedstructuralfeature_constructor_args():
+    sig = inspect.signature(uml_TracedStructuralFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedproperty_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedProperty)
+
+
+def test_umltrace_uml_tracedproperty_constructor_exists():
+    assert callable(umlTrace_uml_TracedProperty.__init__)
+
+
+def test_umltrace_uml_tracedproperty_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedproperty_is_not_abstract():
+    assert not inspect.isabstract(TracedProperty)
+
+
+def test_tracedproperty_constructor_exists():
+    assert callable(TracedProperty.__init__)
+
+
+def test_tracedproperty_constructor_args():
+    sig = inspect.signature(TracedProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedextensionend_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExtensionEnd)
+
+
+def test_umltrace_uml_tracedextensionend_constructor_exists():
+    assert callable(umlTrace_uml_TracedExtensionEnd.__init__)
+
+
+def test_umltrace_uml_tracedextensionend_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExtensionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedport_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPort)
+
+
+def test_umltrace_uml_tracedport_constructor_exists():
+    assert callable(umlTrace_uml_TracedPort.__init__)
+
+
+def test_umltrace_uml_tracedport_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddirectedrelationship_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDirectedRelationship)
+
+
+def test_uml_traceddirectedrelationship_constructor_exists():
+    assert callable(uml_TracedDirectedRelationship.__init__)
+
+
+def test_uml_traceddirectedrelationship_constructor_args():
+    sig = inspect.signature(uml_TracedDirectedRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinformationflow_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInformationFlow)
+
+
+def test_umltrace_uml_tracedinformationflow_constructor_exists():
+    assert callable(umlTrace_uml_TracedInformationFlow.__init__)
+
+
+def test_umltrace_uml_tracedinformationflow_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInformationFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddependency_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDependency)
+
+
+def test_umltrace_uml_traceddependency_constructor_exists():
+    assert callable(umlTrace_uml_TracedDependency.__init__)
+
+
+def test_umltrace_uml_traceddependency_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedEvent)
+
+
+def test_umltrace_uml_tracedevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedEvent.__init__)
+
+
+def test_umltrace_uml_tracedevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedevent_is_not_abstract():
+    assert not inspect.isabstract(TracedEvent)
+
+
+def test_tracedevent_constructor_exists():
+    assert callable(TracedEvent.__init__)
+
+
+def test_tracedevent_constructor_args():
+    sig = inspect.signature(TracedEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedmessageevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedMessageEvent)
+
+
+def test_umltrace_uml_tracedmessageevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedMessageEvent.__init__)
+
+
+def test_umltrace_uml_tracedmessageevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedMessageEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtimeevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTimeEvent)
+
+
+def test_umltrace_uml_tracedtimeevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedTimeEvent.__init__)
+
+
+def test_umltrace_uml_tracedtimeevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTimeEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedchangeevent_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedChangeEvent)
+
+
+def test_umltrace_uml_tracedchangeevent_constructor_exists():
+    assert callable(umlTrace_uml_TracedChangeEvent.__init__)
+
+
+def test_umltrace_uml_tracedchangeevent_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedChangeEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedgeneralizationset_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedGeneralizationSet)
+
+
+def test_umltrace_uml_tracedgeneralizationset_constructor_exists():
+    assert callable(umlTrace_uml_TracedGeneralizationSet.__init__)
+
+
+def test_umltrace_uml_tracedgeneralizationset_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedGeneralizationSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedsignal_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedSignal)
+
+
+def test_umltrace_uml_tracedsignal_constructor_exists():
+    assert callable(umlTrace_uml_TracedSignal.__init__)
+
+
+def test_umltrace_uml_tracedsignal_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedSignal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedloopnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLoopNode)
+
+
+def test_umltrace_uml_tracedloopnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedLoopNode.__init__)
+
+
+def test_umltrace_uml_tracedloopnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLoopNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinteractionuse_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInteractionUse)
+
+
+def test_umltrace_uml_tracedinteractionuse_constructor_exists():
+    assert callable(umlTrace_uml_TracedInteractionUse.__init__)
+
+
+def test_umltrace_uml_tracedinteractionuse_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInteractionUse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedobservation_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedObservation)
+
+
+def test_umltrace_uml_tracedobservation_constructor_exists():
+    assert callable(umlTrace_uml_TracedObservation.__init__)
+
+
+def test_umltrace_uml_tracedobservation_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedObservation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedlifeline_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLifeline)
+
+
+def test_umltrace_uml_tracedlifeline_constructor_exists():
+    assert callable(umlTrace_uml_TracedLifeline.__init__)
+
+
+def test_umltrace_uml_tracedlifeline_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLifeline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexpansionregion_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExpansionRegion)
+
+
+def test_umltrace_uml_tracedexpansionregion_constructor_exists():
+    assert callable(umlTrace_uml_TracedExpansionRegion.__init__)
+
+
+def test_umltrace_uml_tracedexpansionregion_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExpansionRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedfinalnode_is_not_abstract():
+    assert not inspect.isabstract(TracedFinalNode)
+
+
+def test_tracedfinalnode_constructor_exists():
+    assert callable(TracedFinalNode.__init__)
+
+
+def test_tracedfinalnode_constructor_args():
+    sig = inspect.signature(TracedFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivityFinalNode)
+
+
+def test_umltrace_uml_tracedactivityfinalnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivityFinalNode.__init__)
+
+
+def test_umltrace_uml_tracedactivityfinalnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivityFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedflowfinalnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedFlowFinalNode)
+
+
+def test_umltrace_uml_tracedflowfinalnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedFlowFinalNode.__init__)
+
+
+def test_umltrace_uml_tracedflowfinalnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedFlowFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedcontrolnode_is_not_abstract():
+    assert not inspect.isabstract(TracedControlNode)
+
+
+def test_tracedcontrolnode_constructor_exists():
+    assert callable(TracedControlNode.__init__)
+
+
+def test_tracedcontrolnode_constructor_args():
+    sig = inspect.signature(TracedControlNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedjoinnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedJoinNode)
+
+
+def test_umltrace_uml_tracedjoinnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedJoinNode.__init__)
+
+
+def test_umltrace_uml_tracedjoinnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedJoinNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedmergenode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedMergeNode)
+
+
+def test_umltrace_uml_tracedmergenode_constructor_exists():
+    assert callable(umlTrace_uml_TracedMergeNode.__init__)
+
+
+def test_umltrace_uml_tracedmergenode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedMergeNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddecisionnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDecisionNode)
+
+
+def test_umltrace_uml_traceddecisionnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedDecisionNode.__init__)
+
+
+def test_umltrace_uml_traceddecisionnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDecisionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedfinalnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedFinalNode)
+
+
+def test_umltrace_uml_tracedfinalnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedFinalNode.__init__)
+
+
+def test_umltrace_uml_tracedfinalnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedforknode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedForkNode)
+
+
+def test_umltrace_uml_tracedforknode_constructor_exists():
+    assert callable(umlTrace_uml_TracedForkNode.__init__)
+
+
+def test_umltrace_uml_tracedforknode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedForkNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinitialnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInitialNode)
+
+
+def test_umltrace_uml_tracedinitialnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedInitialNode.__init__)
+
+
+def test_umltrace_uml_tracedinitialnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInitialNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedaction_is_not_abstract():
+    assert not inspect.isabstract(TracedAction)
+
+
+def test_tracedaction_constructor_exists():
+    assert callable(TracedAction.__init__)
+
+
+def test_tracedaction_constructor_args():
+    sig = inspect.signature(TracedAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreplyaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReplyAction)
+
+
+def test_umltrace_uml_tracedreplyaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReplyAction.__init__)
+
+
+def test_umltrace_uml_tracedreplyaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReplyAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadextentaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadExtentAction)
+
+
+def test_umltrace_uml_tracedreadextentaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadExtentAction.__init__)
+
+
+def test_umltrace_uml_tracedreadextentaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadExtentAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedaccepteventaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAcceptEventAction)
+
+
+def test_umltrace_uml_tracedaccepteventaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedAcceptEventAction.__init__)
+
+
+def test_umltrace_uml_tracedaccepteventaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAcceptEventAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinvocationaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInvocationAction)
+
+
+def test_umltrace_uml_tracedinvocationaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedInvocationAction.__init__)
+
+
+def test_umltrace_uml_tracedinvocationaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInvocationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedraiseexceptionaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRaiseExceptionAction)
+
+
+def test_umltrace_uml_tracedraiseexceptionaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedRaiseExceptionAction.__init__)
+
+
+def test_umltrace_uml_tracedraiseexceptionaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRaiseExceptionAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedvaluespecificationaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedValueSpecificationAction)
+
+
+def test_umltrace_uml_tracedvaluespecificationaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedValueSpecificationAction.__init__)
+
+
+def test_umltrace_uml_tracedvaluespecificationaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedValueSpecificationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedclearassociationaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClearAssociationAction)
+
+
+def test_umltrace_uml_tracedclearassociationaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedClearAssociationAction.__init__)
+
+
+def test_umltrace_uml_tracedclearassociationaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClearAssociationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedopaqueaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedOpaqueAction)
+
+
+def test_umltrace_uml_tracedopaqueaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedOpaqueAction.__init__)
+
+
+def test_umltrace_uml_tracedopaqueaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedOpaqueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcreateobjectaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCreateObjectAction)
+
+
+def test_umltrace_uml_tracedcreateobjectaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedCreateObjectAction.__init__)
+
+
+def test_umltrace_uml_tracedcreateobjectaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCreateObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreclassifyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReclassifyObjectAction)
+
+
+def test_umltrace_uml_tracedreclassifyobjectaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReclassifyObjectAction.__init__)
+
+
+def test_umltrace_uml_tracedreclassifyobjectaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReclassifyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstartclassifierbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStartClassifierBehaviorAction)
+
+
+def test_umltrace_uml_tracedstartclassifierbehavioraction_constructor_exists():
+    assert callable(umlTrace_uml_TracedStartClassifierBehaviorAction.__init__)
+
+
+def test_umltrace_uml_tracedstartclassifierbehavioraction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStartClassifierBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedvariableaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedVariableAction)
+
+
+def test_umltrace_uml_tracedvariableaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedVariableAction.__init__)
+
+
+def test_umltrace_uml_tracedvariableaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadisclassifiedobjectaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadIsClassifiedObjectAction)
+
+
+def test_umltrace_uml_tracedreadisclassifiedobjectaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadIsClassifiedObjectAction.__init__)
+
+
+def test_umltrace_uml_tracedreadisclassifiedobjectaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadIsClassifiedObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtestidentityaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTestIdentityAction)
+
+
+def test_umltrace_uml_tracedtestidentityaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedTestIdentityAction.__init__)
+
+
+def test_umltrace_uml_tracedtestidentityaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTestIdentityAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedunmarshallaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedUnmarshallAction)
+
+
+def test_umltrace_uml_tracedunmarshallaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedUnmarshallAction.__init__)
+
+
+def test_umltrace_uml_tracedunmarshallaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedUnmarshallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadselfaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadSelfAction)
+
+
+def test_umltrace_uml_tracedreadselfaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadSelfAction.__init__)
+
+
+def test_umltrace_uml_tracedreadselfaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadSelfAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreduceaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReduceAction)
+
+
+def test_umltrace_uml_tracedreduceaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReduceAction.__init__)
+
+
+def test_umltrace_uml_tracedreduceaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReduceAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStructuralFeatureAction)
+
+
+def test_umltrace_uml_tracedstructuralfeatureaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedStructuralFeatureAction.__init__)
+
+
+def test_umltrace_uml_tracedstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddestroyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDestroyObjectAction)
+
+
+def test_umltrace_uml_traceddestroyobjectaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedDestroyObjectAction.__init__)
+
+
+def test_umltrace_uml_traceddestroyobjectaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDestroyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadlinkobjectendqualifieraction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadLinkObjectEndQualifierAction)
+
+
+def test_umltrace_uml_tracedreadlinkobjectendqualifieraction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadLinkObjectEndQualifierAction.__init__)
+
+
+def test_umltrace_uml_tracedreadlinkobjectendqualifieraction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadLinkObjectEndQualifierAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadlinkobjectendaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadLinkObjectEndAction)
+
+
+def test_umltrace_uml_tracedreadlinkobjectendaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadLinkObjectEndAction.__init__)
+
+
+def test_umltrace_uml_tracedreadlinkobjectendaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadLinkObjectEndAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedlinkaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedLinkAction)
+
+
+def test_umltrace_uml_tracedlinkaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedLinkAction.__init__)
+
+
+def test_umltrace_uml_tracedlinkaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedlinkaction_is_not_abstract():
+    assert not inspect.isabstract(TracedLinkAction)
+
+
+def test_tracedlinkaction_constructor_exists():
+    assert callable(TracedLinkAction.__init__)
+
+
+def test_tracedlinkaction_constructor_args():
+    sig = inspect.signature(TracedLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedreadlinkaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedReadLinkAction)
+
+
+def test_umltrace_uml_tracedreadlinkaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedReadLinkAction.__init__)
+
+
+def test_umltrace_uml_tracedreadlinkaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedReadLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedwritelinkaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedWriteLinkAction)
+
+
+def test_umltrace_uml_tracedwritelinkaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedWriteLinkAction.__init__)
+
+
+def test_umltrace_uml_tracedwritelinkaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedWriteLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedwritelinkaction_is_not_abstract():
+    assert not inspect.isabstract(TracedWriteLinkAction)
+
+
+def test_tracedwritelinkaction_constructor_exists():
+    assert callable(TracedWriteLinkAction.__init__)
+
+
+def test_tracedwritelinkaction_constructor_args():
+    sig = inspect.signature(TracedWriteLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_traceddestroylinkaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedDestroyLinkAction)
+
+
+def test_umltrace_uml_traceddestroylinkaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedDestroyLinkAction.__init__)
+
+
+def test_umltrace_uml_traceddestroylinkaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedDestroyLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcreatelinkaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCreateLinkAction)
+
+
+def test_umltrace_uml_tracedcreatelinkaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedCreateLinkAction.__init__)
+
+
+def test_umltrace_uml_tracedcreatelinkaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCreateLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedcreatelinkaction_is_not_abstract():
+    assert not inspect.isabstract(TracedCreateLinkAction)
+
+
+def test_tracedcreatelinkaction_constructor_exists():
+    assert callable(TracedCreateLinkAction.__init__)
+
+
+def test_tracedcreatelinkaction_constructor_args():
+    sig = inspect.signature(TracedCreateLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcreatelinkobjectaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedCreateLinkObjectAction)
+
+
+def test_umltrace_uml_tracedcreatelinkobjectaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedCreateLinkObjectAction.__init__)
+
+
+def test_umltrace_uml_tracedcreatelinkobjectaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedCreateLinkObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracednamedelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedNamedElement)
+
+
+def test_uml_tracednamedelement_constructor_exists():
+    assert callable(uml_TracedNamedElement.__init__)
+
+
+def test_uml_tracednamedelement_constructor_args():
+    sig = inspect.signature(uml_TracedNamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedextend_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExtend)
+
+
+def test_umltrace_uml_tracedextend_constructor_exists():
+    assert callable(umlTrace_uml_TracedExtend.__init__)
+
+
+def test_umltrace_uml_tracedextend_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExtend.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinclude_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInclude)
+
+
+def test_umltrace_uml_tracedinclude_constructor_exists():
+    assert callable(umlTrace_uml_TracedInclude.__init__)
+
+
+def test_umltrace_uml_tracedinclude_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInclude.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedpackageableelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPackageableElement)
+
+
+def test_umltrace_uml_tracedpackageableelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedPackageableElement.__init__)
+
+
+def test_umltrace_uml_tracedpackageableelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPackageableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracednamespace_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedNamespace)
+
+
+def test_umltrace_uml_tracednamespace_constructor_exists():
+    assert callable(umlTrace_uml_TracedNamespace.__init__)
+
+
+def test_umltrace_uml_tracednamespace_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedNamespace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedredefinableelement_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRedefinableElement)
+
+
+def test_umltrace_uml_tracedredefinableelement_constructor_exists():
+    assert callable(umlTrace_uml_TracedRedefinableElement.__init__)
+
+
+def test_umltrace_uml_tracedredefinableelement_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRedefinableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitycontent_is_not_abstract():
+    assert not inspect.isabstract(ActivityContent)
+
+
+def test_activitycontent_constructor_exists():
+    assert callable(ActivityContent.__init__)
+
+
+def test_activitycontent_constructor_args():
+    sig = inspect.signature(ActivityContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivitygroup_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivityGroup)
+
+
+def test_umltrace_uml_tracedactivitygroup_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivityGroup.__init__)
+
+
+def test_umltrace_uml_tracedactivitygroup_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivityGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedredefinableelement_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRedefinableElement)
+
+
+def test_uml_tracedredefinableelement_constructor_exists():
+    assert callable(uml_TracedRedefinableElement.__init__)
+
+
+def test_uml_tracedredefinableelement_constructor_args():
+    sig = inspect.signature(uml_TracedRedefinableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedredefinabletemplatesignature_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRedefinableTemplateSignature)
+
+
+def test_umltrace_uml_tracedredefinabletemplatesignature_constructor_exists():
+    assert callable(umlTrace_uml_TracedRedefinableTemplateSignature.__init__)
+
+
+def test_umltrace_uml_tracedredefinabletemplatesignature_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRedefinableTemplateSignature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedactivitynode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedActivityNode)
+
+
+def test_umltrace_uml_tracedactivitynode_constructor_exists():
+    assert callable(umlTrace_uml_TracedActivityNode.__init__)
+
+
+def test_umltrace_uml_tracedactivitynode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedactivitynode_is_not_abstract():
+    assert not inspect.isabstract(TracedActivityNode)
+
+
+def test_tracedactivitynode_constructor_exists():
+    assert callable(TracedActivityNode.__init__)
+
+
+def test_tracedactivitynode_constructor_args():
+    sig = inspect.signature(TracedActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedcontrolnode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedControlNode)
+
+
+def test_umltrace_uml_tracedcontrolnode_constructor_exists():
+    assert callable(umlTrace_uml_TracedControlNode.__init__)
+
+
+def test_umltrace_uml_tracedcontrolnode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedControlNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedexecutablenode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedExecutableNode)
+
+
+def test_umltrace_uml_tracedexecutablenode_constructor_exists():
+    assert callable(umlTrace_uml_TracedExecutableNode.__init__)
+
+
+def test_umltrace_uml_tracedexecutablenode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracedexecutablenode_is_not_abstract():
+    assert not inspect.isabstract(TracedExecutableNode)
+
+
+def test_tracedexecutablenode_constructor_exists():
+    assert callable(TracedExecutableNode.__init__)
+
+
+def test_tracedexecutablenode_constructor_args():
+    sig = inspect.signature(TracedExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedaction_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAction)
+
+
+def test_umltrace_uml_tracedaction_constructor_exists():
+    assert callable(umlTrace_uml_TracedAction.__init__)
+
+
+def test_umltrace_uml_tracedaction_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactivitygroup_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActivityGroup)
+
+
+def test_uml_tracedactivitygroup_constructor_exists():
+    assert callable(uml_TracedActivityGroup.__init__)
+
+
+def test_uml_tracedactivitygroup_constructor_args():
+    sig = inspect.signature(uml_TracedActivityGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracednamespace_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedNamespace)
+
+
+def test_uml_tracednamespace_constructor_exists():
+    assert callable(uml_TracedNamespace.__init__)
+
+
+def test_uml_tracednamespace_constructor_args():
+    sig = inspect.signature(uml_TracedNamespace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedregion_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedRegion)
+
+
+def test_umltrace_uml_tracedregion_constructor_exists():
+    assert callable(umlTrace_uml_TracedRegion.__init__)
+
+
+def test_umltrace_uml_tracedregion_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedpackage_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedPackage)
+
+
+def test_umltrace_uml_tracedpackage_constructor_exists():
+    assert callable(umlTrace_uml_TracedPackage.__init__)
+
+
+def test_umltrace_uml_tracedpackage_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstate_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedState)
+
+
+def test_umltrace_uml_tracedstate_constructor_exists():
+    assert callable(umlTrace_uml_TracedState.__init__)
+
+
+def test_umltrace_uml_tracedstate_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedstructuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedStructuredActivityNode)
+
+
+def test_umltrace_uml_tracedstructuredactivitynode_constructor_exists():
+    assert callable(umlTrace_uml_TracedStructuredActivityNode.__init__)
+
+
+def test_umltrace_uml_tracedstructuredactivitynode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedStructuredActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedclassifier_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedClassifier)
+
+
+def test_umltrace_uml_tracedclassifier_constructor_exists():
+    assert callable(umlTrace_uml_TracedClassifier.__init__)
+
+
+def test_umltrace_uml_tracedclassifier_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedbehavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedBehavioralFeature)
+
+
+def test_umltrace_uml_tracedbehavioralfeature_constructor_exists():
+    assert callable(umlTrace_uml_TracedBehavioralFeature.__init__)
+
+
+def test_umltrace_uml_tracedbehavioralfeature_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedBehavioralFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedinteractionoperand_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedInteractionOperand)
+
+
+def test_umltrace_uml_tracedinteractionoperand_constructor_exists():
+    assert callable(umlTrace_uml_TracedInteractionOperand.__init__)
+
+
+def test_umltrace_uml_tracedinteractionoperand_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedInteractionOperand.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedtransition_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedTransition)
+
+
+def test_umltrace_uml_tracedtransition_constructor_exists():
+    assert callable(umlTrace_uml_TracedTransition.__init__)
+
+
+def test_umltrace_uml_tracedtransition_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedraiseexceptionaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRaiseExceptionAction)
+
+
+def test_uml_tracedraiseexceptionaction_constructor_exists():
+    assert callable(uml_TracedRaiseExceptionAction.__init__)
+
+
+def test_uml_tracedraiseexceptionaction_constructor_args():
+    sig = inspect.signature(uml_TracedRaiseExceptionAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcommunicationpath_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCommunicationPath)
+
+
+def test_uml_tracedcommunicationpath_constructor_exists():
+    assert callable(uml_TracedCommunicationPath.__init__)
+
+
+def test_uml_tracedcommunicationpath_constructor_args():
+    sig = inspect.signature(uml_TracedCommunicationPath.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kernel_tracedliteralbooleanevaluation_is_not_abstract():
+    assert not inspect.isabstract(Kernel_TracedLiteralBooleanEvaluation)
+
+
+def test_kernel_tracedliteralbooleanevaluation_constructor_exists():
+    assert callable(Kernel_TracedLiteralBooleanEvaluation.__init__)
+
+
+def test_kernel_tracedliteralbooleanevaluation_constructor_args():
+    sig = inspect.signature(Kernel_TracedLiteralBooleanEvaluation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedenumeration_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedEnumeration)
+
+
+def test_uml_tracedenumeration_constructor_exists():
+    assert callable(uml_TracedEnumeration.__init__)
+
+
+def test_uml_tracedenumeration_constructor_args():
+    sig = inspect.signature(uml_TracedEnumeration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreadlinkobjectendaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadLinkObjectEndAction)
+
+
+def test_uml_tracedreadlinkobjectendaction_constructor_exists():
+    assert callable(uml_TracedReadLinkObjectEndAction.__init__)
+
+
+def test_uml_tracedreadlinkobjectendaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadLinkObjectEndAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcallbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCallBehaviorAction)
+
+
+def test_uml_tracedcallbehavioraction_constructor_exists():
+    assert callable(uml_TracedCallBehaviorAction.__init__)
+
+
+def test_uml_tracedcallbehavioraction_constructor_args():
+    sig = inspect.signature(uml_TracedCallBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedvariable_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedVariable)
+
+
+def test_uml_tracedvariable_constructor_exists():
+    assert callable(uml_TracedVariable.__init__)
+
+
+def test_uml_tracedvariable_constructor_args():
+    sig = inspect.signature(uml_TracedVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconnectorend_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConnectorEnd)
+
+
+def test_uml_tracedconnectorend_constructor_exists():
+    assert callable(uml_TracedConnectorEnd.__init__)
+
+
+def test_uml_tracedconnectorend_constructor_args():
+    sig = inspect.signature(uml_TracedConnectorEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedartifact_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedArtifact)
+
+
+def test_uml_tracedartifact_constructor_exists():
+    assert callable(uml_TracedArtifact.__init__)
+
+
+def test_uml_tracedartifact_constructor_args():
+    sig = inspect.signature(uml_TracedArtifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcalloperationaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCallOperationAction)
+
+
+def test_uml_tracedcalloperationaction_constructor_exists():
+    assert callable(uml_TracedCallOperationAction.__init__)
+
+
+def test_uml_tracedcalloperationaction_constructor_args():
+    sig = inspect.signature(uml_TracedCallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedliteralunlimitednatural_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLiteralUnlimitedNatural)
+
+
+def test_uml_tracedliteralunlimitednatural_constructor_exists():
+    assert callable(uml_TracedLiteralUnlimitedNatural.__init__)
+
+
+def test_uml_tracedliteralunlimitednatural_constructor_args():
+    sig = inspect.signature(uml_TracedLiteralUnlimitedNatural.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddurationobservation_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDurationObservation)
+
+
+def test_uml_traceddurationobservation_constructor_exists():
+    assert callable(uml_TracedDurationObservation.__init__)
+
+
+def test_uml_traceddurationobservation_constructor_args():
+    sig = inspect.signature(uml_TracedDurationObservation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedbehaviorexecutionspecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedBehaviorExecutionSpecification)
+
+
+def test_uml_tracedbehaviorexecutionspecification_constructor_exists():
+    assert callable(uml_TracedBehaviorExecutionSpecification.__init__)
+
+
+def test_uml_tracedbehaviorexecutionspecification_constructor_args():
+    sig = inspect.signature(uml_TracedBehaviorExecutionSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactivityparameternode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActivityParameterNode)
+
+
+def test_uml_tracedactivityparameternode_constructor_exists():
+    assert callable(uml_TracedActivityParameterNode.__init__)
+
+
+def test_uml_tracedactivityparameternode_constructor_args():
+    sig = inspect.signature(uml_TracedActivityParameterNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedexpansionnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExpansionNode)
+
+
+def test_uml_tracedexpansionnode_constructor_exists():
+    assert callable(uml_TracedExpansionNode.__init__)
+
+
+def test_uml_tracedexpansionnode_constructor_args():
+    sig = inspect.signature(uml_TracedExpansionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedprofileapplication_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedProfileApplication)
+
+
+def test_uml_tracedprofileapplication_constructor_exists():
+    assert callable(uml_TracedProfileApplication.__init__)
+
+
+def test_uml_tracedprofileapplication_constructor_args():
+    sig = inspect.signature(uml_TracedProfileApplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedaddstructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAddStructuralFeatureValueAction)
+
+
+def test_uml_tracedaddstructuralfeaturevalueaction_constructor_exists():
+    assert callable(uml_TracedAddStructuralFeatureValueAction.__init__)
+
+
+def test_uml_tracedaddstructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(uml_TracedAddStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedqualifiervalue_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedQualifierValue)
+
+
+def test_uml_tracedqualifiervalue_constructor_exists():
+    assert callable(uml_TracedQualifierValue.__init__)
+
+
+def test_uml_tracedqualifiervalue_constructor_args():
+    sig = inspect.signature(uml_TracedQualifierValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedimage_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedImage)
+
+
+def test_uml_tracedimage_constructor_exists():
+    assert callable(uml_TracedImage.__init__)
+
+
+def test_uml_tracedimage_constructor_args():
+    sig = inspect.signature(uml_TracedImage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedextensionend_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExtensionEnd)
+
+
+def test_uml_tracedextensionend_constructor_exists():
+    assert callable(uml_TracedExtensionEnd.__init__)
+
+
+def test_uml_tracedextensionend_constructor_args():
+    sig = inspect.signature(uml_TracedExtensionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedproperty_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedProperty)
+
+
+def test_uml_tracedproperty_constructor_exists():
+    assert callable(uml_TracedProperty.__init__)
+
+
+def test_uml_tracedproperty_constructor_args():
+    sig = inspect.signature(uml_TracedProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddevice_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDevice)
+
+
+def test_uml_traceddevice_constructor_exists():
+    assert callable(uml_TracedDevice.__init__)
+
+
+def test_uml_traceddevice_constructor_args():
+    sig = inspect.signature(uml_TracedDevice.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedopaqueaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOpaqueAction)
+
+
+def test_uml_tracedopaqueaction_constructor_exists():
+    assert callable(uml_TracedOpaqueAction.__init__)
+
+
+def test_uml_tracedopaqueaction_constructor_args():
+    sig = inspect.signature(uml_TracedOpaqueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedfinalstate_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedFinalState)
+
+
+def test_uml_tracedfinalstate_constructor_exists():
+    assert callable(uml_TracedFinalState.__init__)
+
+
+def test_uml_tracedfinalstate_constructor_args():
+    sig = inspect.signature(uml_TracedFinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreduceaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReduceAction)
+
+
+def test_uml_tracedreduceaction_constructor_exists():
+    assert callable(uml_TracedReduceAction.__init__)
+
+
+def test_uml_tracedreduceaction_constructor_args():
+    sig = inspect.signature(uml_TracedReduceAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedduration_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDuration)
+
+
+def test_uml_tracedduration_constructor_exists():
+    assert callable(uml_TracedDuration.__init__)
+
+
+def test_uml_tracedduration_constructor_args():
+    sig = inspect.signature(uml_TracedDuration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtemplateparametersubstitution_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTemplateParameterSubstitution)
+
+
+def test_uml_tracedtemplateparametersubstitution_constructor_exists():
+    assert callable(uml_TracedTemplateParameterSubstitution.__init__)
+
+
+def test_uml_tracedtemplateparametersubstitution_constructor_args():
+    sig = inspect.signature(uml_TracedTemplateParameterSubstitution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedoutputpin_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOutputPin)
+
+
+def test_uml_tracedoutputpin_constructor_exists():
+    assert callable(uml_TracedOutputPin.__init__)
+
+
+def test_uml_tracedoutputpin_constructor_args():
+    sig = inspect.signature(uml_TracedOutputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactionexecutionspecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActionExecutionSpecification)
+
+
+def test_uml_tracedactionexecutionspecification_constructor_exists():
+    assert callable(uml_TracedActionExecutionSpecification.__init__)
+
+
+def test_uml_tracedactionexecutionspecification_constructor_args():
+    sig = inspect.signature(uml_TracedActionExecutionSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinformationitem_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInformationItem)
+
+
+def test_uml_tracedinformationitem_constructor_exists():
+    assert callable(uml_TracedInformationItem.__init__)
+
+
+def test_uml_tracedinformationitem_constructor_args():
+    sig = inspect.signature(uml_TracedInformationItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedoperationtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOperationTemplateParameter)
+
+
+def test_uml_tracedoperationtemplateparameter_constructor_exists():
+    assert callable(uml_TracedOperationTemplateParameter.__init__)
+
+
+def test_uml_tracedoperationtemplateparameter_constructor_args():
+    sig = inspect.signature(uml_TracedOperationTemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconnectableelementtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConnectableElementTemplateParameter)
+
+
+def test_uml_tracedconnectableelementtemplateparameter_constructor_exists():
+    assert callable(uml_TracedConnectableElementTemplateParameter.__init__)
+
+
+def test_uml_tracedconnectableelementtemplateparameter_constructor_args():
+    sig = inspect.signature(uml_TracedConnectableElementTemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedlinkenddata_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLinkEndData)
+
+
+def test_uml_tracedlinkenddata_constructor_exists():
+    assert callable(uml_TracedLinkEndData.__init__)
+
+
+def test_uml_tracedlinkenddata_constructor_args():
+    sig = inspect.signature(uml_TracedLinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddurationinterval_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDurationInterval)
+
+
+def test_uml_traceddurationinterval_constructor_exists():
+    assert callable(uml_TracedDurationInterval.__init__)
+
+
+def test_uml_traceddurationinterval_constructor_args():
+    sig = inspect.signature(uml_TracedDurationInterval.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtransition_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTransition)
+
+
+def test_uml_tracedtransition_constructor_exists():
+    assert callable(uml_TracedTransition.__init__)
+
+
+def test_uml_tracedtransition_constructor_args():
+    sig = inspect.signature(uml_TracedTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtrigger_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTrigger)
+
+
+def test_uml_tracedtrigger_constructor_exists():
+    assert callable(uml_TracedTrigger.__init__)
+
+
+def test_uml_tracedtrigger_constructor_args():
+    sig = inspect.signature(uml_TracedTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreplyaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReplyAction)
+
+
+def test_uml_tracedreplyaction_constructor_exists():
+    assert callable(uml_TracedReplyAction.__init__)
+
+
+def test_uml_tracedreplyaction_constructor_args():
+    sig = inspect.signature(uml_TracedReplyAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedclause_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClause)
+
+
+def test_uml_tracedclause_constructor_exists():
+    assert callable(uml_TracedClause.__init__)
+
+
+def test_uml_tracedclause_constructor_args():
+    sig = inspect.signature(uml_TracedClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedpackagemerge_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPackageMerge)
+
+
+def test_uml_tracedpackagemerge_constructor_exists():
+    assert callable(uml_TracedPackageMerge.__init__)
+
+
+def test_uml_tracedpackagemerge_constructor_args():
+    sig = inspect.signature(uml_TracedPackageMerge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddecisionnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDecisionNode)
+
+
+def test_uml_traceddecisionnode_constructor_exists():
+    assert callable(uml_TracedDecisionNode.__init__)
+
+
+def test_uml_traceddecisionnode_constructor_args():
+    sig = inspect.signature(uml_TracedDecisionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactions_tracedreadstructuralfeatureactionactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_TracedReadStructuralFeatureActionActivation)
+
+
+def test_intermediateactions_tracedreadstructuralfeatureactionactivation_constructor_exists():
+    assert callable(IntermediateActions_TracedReadStructuralFeatureActionActivation.__init__)
+
+
+def test_intermediateactions_tracedreadstructuralfeatureactionactivation_constructor_args():
+    sig = inspect.signature(IntermediateActions_TracedReadStructuralFeatureActionActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreadselfaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadSelfAction)
+
+
+def test_uml_tracedreadselfaction_constructor_exists():
+    assert callable(uml_TracedReadSelfAction.__init__)
+
+
+def test_uml_tracedreadselfaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadSelfAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedoperation_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOperation)
+
+
+def test_uml_tracedoperation_constructor_exists():
+    assert callable(uml_TracedOperation.__init__)
+
+
+def test_uml_tracedoperation_constructor_args():
+    sig = inspect.signature(uml_TracedOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedobjectflow_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedObjectFlow)
+
+
+def test_uml_tracedobjectflow_constructor_exists():
+    assert callable(uml_TracedObjectFlow.__init__)
+
+
+def test_uml_tracedobjectflow_constructor_args():
+    sig = inspect.signature(uml_TracedObjectFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedparameterset_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedParameterSet)
+
+
+def test_uml_tracedparameterset_constructor_exists():
+    assert callable(uml_TracedParameterSet.__init__)
+
+
+def test_uml_tracedparameterset_constructor_args():
+    sig = inspect.signature(uml_TracedParameterSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOccurrenceSpecification)
+
+
+def test_uml_tracedoccurrencespecification_constructor_exists():
+    assert callable(uml_TracedOccurrenceSpecification.__init__)
+
+
+def test_uml_tracedoccurrencespecification_constructor_args():
+    sig = inspect.signature(uml_TracedOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedmessageoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedMessageOccurrenceSpecification)
+
+
+def test_umltrace_uml_tracedmessageoccurrencespecification_constructor_exists():
+    assert callable(umlTrace_uml_TracedMessageOccurrenceSpecification.__init__)
+
+
+def test_umltrace_uml_tracedmessageoccurrencespecification_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedMessageOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedaccepteventaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAcceptEventAction)
+
+
+def test_uml_tracedaccepteventaction_constructor_exists():
+    assert callable(uml_TracedAcceptEventAction.__init__)
+
+
+def test_uml_tracedaccepteventaction_constructor_args():
+    sig = inspect.signature(uml_TracedAcceptEventAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcomponentrealization_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedComponentRealization)
+
+
+def test_uml_tracedcomponentrealization_constructor_exists():
+    assert callable(uml_TracedComponentRealization.__init__)
+
+
+def test_uml_tracedcomponentrealization_constructor_args():
+    sig = inspect.signature(uml_TracedComponentRealization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddatatype_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDataType)
+
+
+def test_uml_traceddatatype_constructor_exists():
+    assert callable(uml_TracedDataType.__init__)
+
+
+def test_uml_traceddatatype_constructor_args():
+    sig = inspect.signature(uml_TracedDataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcomment_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedComment)
+
+
+def test_uml_tracedcomment_constructor_exists():
+    assert callable(uml_TracedComment.__init__)
+
+
+def test_uml_tracedcomment_constructor_args():
+    sig = inspect.signature(uml_TracedComment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedloopnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLoopNode)
+
+
+def test_uml_tracedloopnode_constructor_exists():
+    assert callable(uml_TracedLoopNode.__init__)
+
+
+def test_uml_tracedloopnode_constructor_args():
+    sig = inspect.signature(uml_TracedLoopNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcallevent_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCallEvent)
+
+
+def test_uml_tracedcallevent_constructor_exists():
+    assert callable(uml_TracedCallEvent.__init__)
+
+
+def test_uml_tracedcallevent_constructor_args():
+    sig = inspect.signature(uml_TracedCallEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedpackage_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPackage)
+
+
+def test_uml_tracedpackage_constructor_exists():
+    assert callable(uml_TracedPackage.__init__)
+
+
+def test_uml_tracedpackage_constructor_args():
+    sig = inspect.signature(uml_TracedPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedprotocolconformance_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedProtocolConformance)
+
+
+def test_uml_tracedprotocolconformance_constructor_exists():
+    assert callable(uml_TracedProtocolConformance.__init__)
+
+
+def test_uml_tracedprotocolconformance_constructor_args():
+    sig = inspect.signature(uml_TracedProtocolConformance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedopaquebehavior_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOpaqueBehavior)
+
+
+def test_uml_tracedopaquebehavior_constructor_exists():
+    assert callable(uml_TracedOpaqueBehavior.__init__)
+
+
+def test_uml_tracedopaquebehavior_constructor_args():
+    sig = inspect.signature(uml_TracedOpaqueBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinterface_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInterface)
+
+
+def test_uml_tracedinterface_constructor_exists():
+    assert callable(uml_TracedInterface.__init__)
+
+
+def test_uml_tracedinterface_constructor_args():
+    sig = inspect.signature(uml_TracedInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_traceddecisionnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedDecisionNodeActivation)
+
+
+def test_intermediateactivities_traceddecisionnodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedDecisionNodeActivation.__init__)
+
+
+def test_intermediateactivities_traceddecisionnodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedDecisionNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinteractionconstraint_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInteractionConstraint)
+
+
+def test_uml_tracedinteractionconstraint_constructor_exists():
+    assert callable(uml_TracedInteractionConstraint.__init__)
+
+
+def test_uml_tracedinteractionconstraint_constructor_args():
+    sig = inspect.signature(uml_TracedInteractionConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtimeinterval_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTimeInterval)
+
+
+def test_uml_tracedtimeinterval_constructor_exists():
+    assert callable(uml_TracedTimeInterval.__init__)
+
+
+def test_uml_tracedtimeinterval_constructor_args():
+    sig = inspect.signature(uml_TracedTimeInterval.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedexecutionoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExecutionOccurrenceSpecification)
+
+
+def test_uml_tracedexecutionoccurrencespecification_constructor_exists():
+    assert callable(uml_TracedExecutionOccurrenceSpecification.__init__)
+
+
+def test_uml_tracedexecutionoccurrencespecification_constructor_args():
+    sig = inspect.signature(uml_TracedExecutionOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedsignal_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSignal)
+
+
+def test_uml_tracedsignal_constructor_exists():
+    assert callable(uml_TracedSignal.__init__)
+
+
+def test_uml_tracedsignal_constructor_args():
+    sig = inspect.signature(uml_TracedSignal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedextensionpoint_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExtensionPoint)
+
+
+def test_uml_tracedextensionpoint_constructor_exists():
+    assert callable(uml_TracedExtensionPoint.__init__)
+
+
+def test_uml_tracedextensionpoint_constructor_args():
+    sig = inspect.signature(uml_TracedExtensionPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcreatelinkaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCreateLinkAction)
+
+
+def test_uml_tracedcreatelinkaction_constructor_exists():
+    assert callable(uml_TracedCreateLinkAction.__init__)
+
+
+def test_uml_tracedcreatelinkaction_constructor_args():
+    sig = inspect.signature(uml_TracedCreateLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kernel_tracedliteralintegerevaluation_is_not_abstract():
+    assert not inspect.isabstract(Kernel_TracedLiteralIntegerEvaluation)
+
+
+def test_kernel_tracedliteralintegerevaluation_constructor_exists():
+    assert callable(Kernel_TracedLiteralIntegerEvaluation.__init__)
+
+
+def test_kernel_tracedliteralintegerevaluation_constructor_args():
+    sig = inspect.signature(Kernel_TracedLiteralIntegerEvaluation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcentralbuffernode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCentralBufferNode)
+
+
+def test_uml_tracedcentralbuffernode_constructor_exists():
+    assert callable(uml_TracedCentralBufferNode.__init__)
+
+
+def test_uml_tracedcentralbuffernode_constructor_args():
+    sig = inspect.signature(uml_TracedCentralBufferNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedmodel_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedModel)
+
+
+def test_uml_tracedmodel_constructor_exists():
+    assert callable(uml_TracedModel.__init__)
+
+
+def test_uml_tracedmodel_constructor_args():
+    sig = inspect.signature(uml_TracedModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedredefinabletemplatesignature_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRedefinableTemplateSignature)
+
+
+def test_uml_tracedredefinabletemplatesignature_constructor_exists():
+    assert callable(uml_TracedRedefinableTemplateSignature.__init__)
+
+
+def test_uml_tracedredefinabletemplatesignature_constructor_args():
+    sig = inspect.signature(uml_TracedRedefinableTemplateSignature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedjoinnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedJoinNode)
+
+
+def test_uml_tracedjoinnode_constructor_exists():
+    assert callable(uml_TracedJoinNode.__init__)
+
+
+def test_uml_tracedjoinnode_constructor_args():
+    sig = inspect.signature(uml_TracedJoinNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_tracedopaqueactionactivation_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_TracedOpaqueActionActivation)
+
+
+def test_basicactions_tracedopaqueactionactivation_constructor_exists():
+    assert callable(BasicActions_TracedOpaqueActionActivation.__init__)
+
+
+def test_basicactions_tracedopaqueactionactivation_constructor_args():
+    sig = inspect.signature(BasicActions_TracedOpaqueActionActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreadlinkobjectendqualifieraction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadLinkObjectEndQualifierAction)
+
+
+def test_uml_tracedreadlinkobjectendqualifieraction_constructor_exists():
+    assert callable(uml_TracedReadLinkObjectEndQualifierAction.__init__)
+
+
+def test_uml_tracedreadlinkobjectendqualifieraction_constructor_args():
+    sig = inspect.signature(uml_TracedReadLinkObjectEndQualifierAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedrealization_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRealization)
+
+
+def test_uml_tracedrealization_constructor_exists():
+    assert callable(uml_TracedRealization.__init__)
+
+
+def test_uml_tracedrealization_constructor_args():
+    sig = inspect.signature(uml_TracedRealization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconnectionpointreference_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConnectionPointReference)
+
+
+def test_uml_tracedconnectionpointreference_constructor_exists():
+    assert callable(uml_TracedConnectionPointReference.__init__)
+
+
+def test_uml_tracedconnectionpointreference_constructor_args():
+    sig = inspect.signature(uml_TracedConnectionPointReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconditionalnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConditionalNode)
+
+
+def test_uml_tracedconditionalnode_constructor_exists():
+    assert callable(uml_TracedConditionalNode.__init__)
+
+
+def test_uml_tracedconditionalnode_constructor_args():
+    sig = inspect.signature(uml_TracedConditionalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kernel_tracedbooleanvalue_is_not_abstract():
+    assert not inspect.isabstract(Kernel_TracedBooleanValue)
+
+
+def test_kernel_tracedbooleanvalue_constructor_exists():
+    assert callable(Kernel_TracedBooleanValue.__init__)
+
+
+def test_kernel_tracedbooleanvalue_constructor_args():
+    sig = inspect.signature(Kernel_TracedBooleanValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedsignalevent_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSignalEvent)
+
+
+def test_uml_tracedsignalevent_constructor_exists():
+    assert callable(uml_TracedSignalEvent.__init__)
+
+
+def test_uml_tracedsignalevent_constructor_args():
+    sig = inspect.signature(uml_TracedSignalEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedliteralinteger_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLiteralInteger)
+
+
+def test_uml_tracedliteralinteger_constructor_exists():
+    assert callable(uml_TracedLiteralInteger.__init__)
+
+
+def test_uml_tracedliteralinteger_constructor_args():
+    sig = inspect.signature(uml_TracedLiteralInteger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddestroylinkaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDestroyLinkAction)
+
+
+def test_uml_traceddestroylinkaction_constructor_exists():
+    assert callable(uml_TracedDestroyLinkAction.__init__)
+
+
+def test_uml_traceddestroylinkaction_constructor_args():
+    sig = inspect.signature(uml_TracedDestroyLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedactivityfinalnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedActivityFinalNodeActivation)
+
+
+def test_intermediateactivities_tracedactivityfinalnodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedActivityFinalNodeActivation.__init__)
+
+
+def test_intermediateactivities_tracedactivityfinalnodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedActivityFinalNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreadvariableaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadVariableAction)
+
+
+def test_uml_tracedreadvariableaction_constructor_exists():
+    assert callable(uml_TracedReadVariableAction.__init__)
+
+
+def test_uml_tracedreadvariableaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactioninputpin_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActionInputPin)
+
+
+def test_uml_tracedactioninputpin_constructor_exists():
+    assert callable(uml_TracedActionInputPin.__init__)
+
+
+def test_uml_tracedactioninputpin_constructor_args():
+    sig = inspect.signature(uml_TracedActionInputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedusage_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedUsage)
+
+
+def test_uml_tracedusage_constructor_exists():
+    assert callable(uml_TracedUsage.__init__)
+
+
+def test_uml_tracedusage_constructor_args():
+    sig = inspect.signature(uml_TracedUsage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddeploymentspecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDeploymentSpecification)
+
+
+def test_uml_traceddeploymentspecification_constructor_exists():
+    assert callable(uml_TracedDeploymentSpecification.__init__)
+
+
+def test_uml_traceddeploymentspecification_constructor_args():
+    sig = inspect.signature(uml_TracedDeploymentSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtemplatebinding_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTemplateBinding)
+
+
+def test_uml_tracedtemplatebinding_constructor_exists():
+    assert callable(uml_TracedTemplateBinding.__init__)
+
+
+def test_uml_tracedtemplatebinding_constructor_args():
+    sig = inspect.signature(uml_TracedTemplateBinding.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedmessageoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedMessageOccurrenceSpecification)
+
+
+def test_uml_tracedmessageoccurrencespecification_constructor_exists():
+    assert callable(uml_TracedMessageOccurrenceSpecification.__init__)
+
+
+def test_uml_tracedmessageoccurrencespecification_constructor_args():
+    sig = inspect.signature(uml_TracedMessageOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreception_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReception)
+
+
+def test_uml_tracedreception_constructor_exists():
+    assert callable(uml_TracedReception.__init__)
+
+
+def test_uml_tracedreception_constructor_args():
+    sig = inspect.signature(uml_TracedReception.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedprotocolstatemachine_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedProtocolStateMachine)
+
+
+def test_uml_tracedprotocolstatemachine_constructor_exists():
+    assert callable(uml_TracedProtocolStateMachine.__init__)
+
+
+def test_uml_tracedprotocolstatemachine_constructor_args():
+    sig = inspect.signature(uml_TracedProtocolStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddatastorenode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDataStoreNode)
+
+
+def test_uml_traceddatastorenode_constructor_exists():
+    assert callable(uml_TracedDataStoreNode.__init__)
+
+
+def test_uml_traceddatastorenode_constructor_args():
+    sig = inspect.signature(uml_TracedDataStoreNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreadstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReadStructuralFeatureAction)
+
+
+def test_uml_tracedreadstructuralfeatureaction_constructor_exists():
+    assert callable(uml_TracedReadStructuralFeatureAction.__init__)
+
+
+def test_uml_tracedreadstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(uml_TracedReadStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedanyreceiveevent_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAnyReceiveEvent)
+
+
+def test_uml_tracedanyreceiveevent_constructor_exists():
+    assert callable(uml_TracedAnyReceiveEvent.__init__)
+
+
+def test_uml_tracedanyreceiveevent_constructor_args():
+    sig = inspect.signature(uml_TracedAnyReceiveEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kernel_tracedintegervalue_is_not_abstract():
+    assert not inspect.isabstract(Kernel_TracedIntegerValue)
+
+
+def test_kernel_tracedintegervalue_constructor_exists():
+    assert callable(Kernel_TracedIntegerValue.__init__)
+
+
+def test_kernel_tracedintegervalue_constructor_args():
+    sig = inspect.signature(Kernel_TracedIntegerValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinterval_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInterval)
+
+
+def test_uml_tracedinterval_constructor_exists():
+    assert callable(uml_TracedInterval.__init__)
+
+
+def test_uml_tracedinterval_constructor_args():
+    sig = inspect.signature(uml_TracedInterval.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedremovestructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedRemoveStructuralFeatureValueAction)
+
+
+def test_uml_tracedremovestructuralfeaturevalueaction_constructor_exists():
+    assert callable(uml_TracedRemoveStructuralFeatureValueAction.__init__)
+
+
+def test_uml_tracedremovestructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(uml_TracedRemoveStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedgeneralization_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedGeneralization)
+
+
+def test_uml_tracedgeneralization_constructor_exists():
+    assert callable(uml_TracedGeneralization.__init__)
+
+
+def test_uml_tracedgeneralization_constructor_args():
+    sig = inspect.signature(uml_TracedGeneralization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinteractionoperand_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInteractionOperand)
+
+
+def test_uml_tracedinteractionoperand_constructor_exists():
+    assert callable(uml_TracedInteractionOperand.__init__)
+
+
+def test_uml_tracedinteractionoperand_constructor_args():
+    sig = inspect.signature(uml_TracedInteractionOperand.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedprotocoltransition_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedProtocolTransition)
+
+
+def test_uml_tracedprotocoltransition_constructor_exists():
+    assert callable(uml_TracedProtocolTransition.__init__)
+
+
+def test_uml_tracedprotocoltransition_constructor_args():
+    sig = inspect.signature(uml_TracedProtocolTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinterruptibleactivityregion_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInterruptibleActivityRegion)
+
+
+def test_uml_tracedinterruptibleactivityregion_constructor_exists():
+    assert callable(uml_TracedInterruptibleActivityRegion.__init__)
+
+
+def test_uml_tracedinterruptibleactivityregion_constructor_args():
+    sig = inspect.signature(uml_TracedInterruptibleActivityRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedpartdecomposition_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPartDecomposition)
+
+
+def test_uml_tracedpartdecomposition_constructor_exists():
+    assert callable(uml_TracedPartDecomposition.__init__)
+
+
+def test_uml_tracedpartdecomposition_constructor_args():
+    sig = inspect.signature(uml_TracedPartDecomposition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtimeevent_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTimeEvent)
+
+
+def test_uml_tracedtimeevent_constructor_exists():
+    assert callable(uml_TracedTimeEvent.__init__)
+
+
+def test_uml_tracedtimeevent_constructor_args():
+    sig = inspect.signature(uml_TracedTimeEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddeployment_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDeployment)
+
+
+def test_uml_traceddeployment_constructor_exists():
+    assert callable(uml_TracedDeployment.__init__)
+
+
+def test_uml_traceddeployment_constructor_args():
+    sig = inspect.signature(uml_TracedDeployment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_loci_tracedsemanticvisitor_is_not_abstract():
+    assert not inspect.isabstract(Loci_TracedSemanticVisitor)
+
+
+def test_loci_tracedsemanticvisitor_constructor_exists():
+    assert callable(Loci_TracedSemanticVisitor.__init__)
+
+
+def test_loci_tracedsemanticvisitor_constructor_args():
+    sig = inspect.signature(Loci_TracedSemanticVisitor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kernel_tracedobject_is_not_abstract():
+    assert not inspect.isabstract(Kernel_TracedObject)
+
+
+def test_kernel_tracedobject_constructor_exists():
+    assert callable(Kernel_TracedObject.__init__)
+
+
+def test_kernel_tracedobject_constructor_args():
+    sig = inspect.signature(Kernel_TracedObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedjoinnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedJoinNodeActivation)
+
+
+def test_intermediateactivities_tracedjoinnodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedJoinNodeActivation.__init__)
+
+
+def test_intermediateactivities_tracedjoinnodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedJoinNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedusecase_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedUseCase)
+
+
+def test_uml_tracedusecase_constructor_exists():
+    assert callable(uml_TracedUseCase.__init__)
+
+
+def test_uml_tracedusecase_constructor_args():
+    sig = inspect.signature(uml_TracedUseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedreclassifyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedReclassifyObjectAction)
+
+
+def test_uml_tracedreclassifyobjectaction_constructor_exists():
+    assert callable(uml_TracedReclassifyObjectAction.__init__)
+
+
+def test_uml_tracedreclassifyobjectaction_constructor_args():
+    sig = inspect.signature(uml_TracedReclassifyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinstancevalue_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInstanceValue)
+
+
+def test_uml_tracedinstancevalue_constructor_exists():
+    assert callable(uml_TracedInstanceValue.__init__)
+
+
+def test_uml_tracedinstancevalue_constructor_args():
+    sig = inspect.signature(uml_TracedInstanceValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_TracedAddStructuralFeatureValueActionActivation)
+
+
+def test_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_constructor_exists():
+    assert callable(IntermediateActions_TracedAddStructuralFeatureValueActionActivation.__init__)
+
+
+def test_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_constructor_args():
+    sig = inspect.signature(IntermediateActions_TracedAddStructuralFeatureValueActionActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kernel_tracedreference_is_not_abstract():
+    assert not inspect.isabstract(Kernel_TracedReference)
+
+
+def test_kernel_tracedreference_constructor_exists():
+    assert callable(Kernel_TracedReference.__init__)
+
+
+def test_kernel_tracedreference_constructor_args():
+    sig = inspect.signature(Kernel_TracedReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedforknode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedForkNode)
+
+
+def test_uml_tracedforknode_constructor_exists():
+    assert callable(uml_TracedForkNode.__init__)
+
+
+def test_uml_tracedforknode_constructor_args():
+    sig = inspect.signature(uml_TracedForkNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactivity_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActivity)
+
+
+def test_uml_tracedactivity_constructor_exists():
+    assert callable(uml_TracedActivity.__init__)
+
+
+def test_uml_tracedactivity_constructor_args():
+    sig = inspect.signature(uml_TracedActivity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedmessage_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedMessage)
+
+
+def test_uml_tracedmessage_constructor_exists():
+    assert callable(uml_TracedMessage.__init__)
+
+
+def test_uml_tracedmessage_constructor_args():
+    sig = inspect.signature(uml_TracedMessage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstatemachine_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStateMachine)
+
+
+def test_uml_tracedstatemachine_constructor_exists():
+    assert callable(uml_TracedStateMachine.__init__)
+
+
+def test_uml_tracedstatemachine_constructor_args():
+    sig = inspect.signature(uml_TracedStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedactivitypartition_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedActivityPartition)
+
+
+def test_uml_tracedactivitypartition_constructor_exists():
+    assert callable(uml_TracedActivityPartition.__init__)
+
+
+def test_uml_tracedactivitypartition_constructor_args():
+    sig = inspect.signature(uml_TracedActivityPartition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedactivityparameternodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedActivityParameterNodeActivation)
+
+
+def test_intermediateactivities_tracedactivityparameternodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedActivityParameterNodeActivation.__init__)
+
+
+def test_intermediateactivities_tracedactivityparameternodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedActivityParameterNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_tracedcallbehavioractionactivation_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_TracedCallBehaviorActionActivation)
+
+
+def test_basicactions_tracedcallbehavioractionactivation_constructor_exists():
+    assert callable(BasicActions_TracedCallBehaviorActionActivation.__init__)
+
+
+def test_basicactions_tracedcallbehavioractionactivation_constructor_args():
+    sig = inspect.signature(BasicActions_TracedCallBehaviorActionActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddestroyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDestroyObjectAction)
+
+
+def test_uml_traceddestroyobjectaction_constructor_exists():
+    assert callable(uml_TracedDestroyObjectAction.__init__)
+
+
+def test_uml_traceddestroyobjectaction_constructor_args():
+    sig = inspect.signature(uml_TracedDestroyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedassociationclass_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAssociationClass)
+
+
+def test_uml_tracedassociationclass_constructor_exists():
+    assert callable(uml_TracedAssociationClass.__init__)
+
+
+def test_uml_tracedassociationclass_constructor_args():
+    sig = inspect.signature(uml_TracedAssociationClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinformationflow_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInformationFlow)
+
+
+def test_uml_tracedinformationflow_constructor_exists():
+    assert callable(uml_TracedInformationFlow.__init__)
+
+
+def test_uml_tracedinformationflow_constructor_args():
+    sig = inspect.signature(uml_TracedInformationFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedsubstitution_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSubstitution)
+
+
+def test_uml_tracedsubstitution_constructor_exists():
+    assert callable(uml_TracedSubstitution.__init__)
+
+
+def test_uml_tracedsubstitution_constructor_args():
+    sig = inspect.signature(uml_TracedSubstitution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedenumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedEnumerationLiteral)
+
+
+def test_uml_tracedenumerationliteral_constructor_exists():
+    assert callable(uml_TracedEnumerationLiteral.__init__)
+
+
+def test_uml_tracedenumerationliteral_constructor_args():
+    sig = inspect.signature(uml_TracedEnumerationLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstereotype_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStereotype)
+
+
+def test_uml_tracedstereotype_constructor_exists():
+    assert callable(uml_TracedStereotype.__init__)
+
+
+def test_uml_tracedstereotype_constructor_args():
+    sig = inspect.signature(uml_TracedStereotype.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedacceptcallaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedAcceptCallAction)
+
+
+def test_uml_tracedacceptcallaction_constructor_exists():
+    assert callable(uml_TracedAcceptCallAction.__init__)
+
+
+def test_uml_tracedacceptcallaction_constructor_args():
+    sig = inspect.signature(uml_TracedAcceptCallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinstancespecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInstanceSpecification)
+
+
+def test_uml_tracedinstancespecification_constructor_exists():
+    assert callable(uml_TracedInstanceSpecification.__init__)
+
+
+def test_uml_tracedinstancespecification_constructor_args():
+    sig = inspect.signature(uml_TracedInstanceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_integerfunctions_tracedintegerlessfunctionbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution)
+
+
+def test_integerfunctions_tracedintegerlessfunctionbehaviorexecution_constructor_exists():
+    assert callable(IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution.__init__)
+
+
+def test_integerfunctions_tracedintegerlessfunctionbehaviorexecution_constructor_args():
+    sig = inspect.signature(IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstateinvariant_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStateInvariant)
+
+
+def test_uml_tracedstateinvariant_constructor_exists():
+    assert callable(uml_TracedStateInvariant.__init__)
+
+
+def test_uml_tracedstateinvariant_constructor_args():
+    sig = inspect.signature(uml_TracedStateInvariant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_tracedinputpinactivation_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_TracedInputPinActivation)
+
+
+def test_basicactions_tracedinputpinactivation_constructor_exists():
+    assert callable(BasicActions_TracedInputPinActivation.__init__)
+
+
+def test_basicactions_tracedinputpinactivation_constructor_args():
+    sig = inspect.signature(BasicActions_TracedInputPinActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedliteralstring_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLiteralString)
+
+
+def test_uml_tracedliteralstring_constructor_exists():
+    assert callable(uml_TracedLiteralString.__init__)
+
+
+def test_uml_tracedliteralstring_constructor_args():
+    sig = inspect.signature(uml_TracedLiteralString.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedopaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedOpaqueExpression)
+
+
+def test_uml_tracedopaqueexpression_constructor_exists():
+    assert callable(uml_TracedOpaqueExpression.__init__)
+
+
+def test_uml_tracedopaqueexpression_constructor_args():
+    sig = inspect.signature(uml_TracedOpaqueExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedparameter_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedParameter)
+
+
+def test_uml_tracedparameter_constructor_exists():
+    assert callable(uml_TracedParameter.__init__)
+
+
+def test_uml_tracedparameter_constructor_args():
+    sig = inspect.signature(uml_TracedParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedactivitynodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedActivityNodeActivation)
+
+
+def test_intermediateactivities_tracedactivitynodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedActivityNodeActivation.__init__)
+
+
+def test_intermediateactivities_tracedactivitynodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedActivityNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinteraction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInteraction)
+
+
+def test_uml_tracedinteraction_constructor_exists():
+    assert callable(uml_TracedInteraction.__init__)
+
+
+def test_uml_tracedinteraction_constructor_args():
+    sig = inspect.signature(uml_TracedInteraction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedbroadcastsignalaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedBroadcastSignalAction)
+
+
+def test_uml_tracedbroadcastsignalaction_constructor_exists():
+    assert callable(uml_TracedBroadcastSignalAction.__init__)
+
+
+def test_uml_tracedbroadcastsignalaction_constructor_args():
+    sig = inspect.signature(uml_TracedBroadcastSignalAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconstraint_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConstraint)
+
+
+def test_uml_tracedconstraint_constructor_exists():
+    assert callable(uml_TracedConstraint.__init__)
+
+
+def test_uml_tracedconstraint_constructor_args():
+    sig = inspect.signature(uml_TracedConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedclearvariableaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClearVariableAction)
+
+
+def test_uml_tracedclearvariableaction_constructor_exists():
+    assert callable(uml_TracedClearVariableAction.__init__)
+
+
+def test_uml_tracedclearvariableaction_constructor_args():
+    sig = inspect.signature(uml_TracedClearVariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinputpin_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInputPin)
+
+
+def test_uml_tracedinputpin_constructor_exists():
+    assert callable(uml_TracedInputPin.__init__)
+
+
+def test_uml_tracedinputpin_constructor_args():
+    sig = inspect.signature(uml_TracedInputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedtimeconstraint_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedTimeConstraint)
+
+
+def test_uml_tracedtimeconstraint_constructor_exists():
+    assert callable(uml_TracedTimeConstraint.__init__)
+
+
+def test_uml_tracedtimeconstraint_constructor_args():
+    sig = inspect.signature(uml_TracedTimeConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcontinuation_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedContinuation)
+
+
+def test_uml_tracedcontinuation_constructor_exists():
+    assert callable(uml_TracedContinuation.__init__)
+
+
+def test_uml_tracedcontinuation_constructor_args():
+    sig = inspect.signature(uml_TracedContinuation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconsiderignorefragment_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConsiderIgnoreFragment)
+
+
+def test_uml_tracedconsiderignorefragment_constructor_exists():
+    assert callable(uml_TracedConsiderIgnoreFragment.__init__)
+
+
+def test_uml_tracedconsiderignorefragment_constructor_args():
+    sig = inspect.signature(uml_TracedConsiderIgnoreFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedintervalconstraint_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedIntervalConstraint)
+
+
+def test_uml_tracedintervalconstraint_constructor_exists():
+    assert callable(uml_TracedIntervalConstraint.__init__)
+
+
+def test_uml_tracedintervalconstraint_constructor_args():
+    sig = inspect.signature(uml_TracedIntervalConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedexecutionenvironment_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExecutionEnvironment)
+
+
+def test_uml_tracedexecutionenvironment_constructor_exists():
+    assert callable(uml_TracedExecutionEnvironment.__init__)
+
+
+def test_uml_tracedexecutionenvironment_constructor_args():
+    sig = inspect.signature(uml_TracedExecutionEnvironment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstructuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStructuredActivityNode)
+
+
+def test_uml_tracedstructuredactivitynode_constructor_exists():
+    assert callable(uml_TracedStructuredActivityNode.__init__)
+
+
+def test_uml_tracedstructuredactivitynode_constructor_args():
+    sig = inspect.signature(uml_TracedStructuredActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedextension_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExtension)
+
+
+def test_uml_tracedextension_constructor_exists():
+    assert callable(uml_TracedExtension.__init__)
+
+
+def test_uml_tracedextension_constructor_args():
+    sig = inspect.signature(uml_TracedExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_integerfunctions_tracedintegerplusfunctionbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution)
+
+
+def test_integerfunctions_tracedintegerplusfunctionbehaviorexecution_constructor_exists():
+    assert callable(IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution.__init__)
+
+
+def test_integerfunctions_tracedintegerplusfunctionbehaviorexecution_constructor_args():
+    sig = inspect.signature(IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedextend_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExtend)
+
+
+def test_uml_tracedextend_constructor_exists():
+    assert callable(uml_TracedExtend.__init__)
+
+
+def test_uml_tracedextend_constructor_args():
+    sig = inspect.signature(uml_TracedExtend.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedstartclassifierbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedStartClassifierBehaviorAction)
+
+
+def test_uml_tracedstartclassifierbehavioraction_constructor_exists():
+    assert callable(uml_TracedStartClassifierBehaviorAction.__init__)
+
+
+def test_uml_tracedstartclassifierbehavioraction_constructor_args():
+    sig = inspect.signature(uml_TracedStartClassifierBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedsequencenode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSequenceNode)
+
+
+def test_uml_tracedsequencenode_constructor_exists():
+    assert callable(uml_TracedSequenceNode.__init__)
+
+
+def test_uml_tracedsequencenode_constructor_args():
+    sig = inspect.signature(uml_TracedSequenceNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedexceptionhandler_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExceptionHandler)
+
+
+def test_uml_tracedexceptionhandler_constructor_exists():
+    assert callable(uml_TracedExceptionHandler.__init__)
+
+
+def test_uml_tracedexceptionhandler_constructor_args():
+    sig = inspect.signature(uml_TracedExceptionHandler.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracednode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedNode)
+
+
+def test_uml_tracednode_constructor_exists():
+    assert callable(uml_TracedNode.__init__)
+
+
+def test_uml_tracednode_constructor_args():
+    sig = inspect.signature(uml_TracedNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedvaluepin_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedValuePin)
+
+
+def test_uml_tracedvaluepin_constructor_exists():
+    assert callable(uml_TracedValuePin.__init__)
+
+
+def test_uml_tracedvaluepin_constructor_args():
+    sig = inspect.signature(uml_TracedValuePin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedactivityexecution_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedActivityExecution)
+
+
+def test_intermediateactivities_tracedactivityexecution_constructor_exists():
+    assert callable(IntermediateActivities_TracedActivityExecution.__init__)
+
+
+def test_intermediateactivities_tracedactivityexecution_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedActivityExecution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcollaborationuse_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCollaborationUse)
+
+
+def test_uml_tracedcollaborationuse_constructor_exists():
+    assert callable(uml_TracedCollaborationUse.__init__)
+
+
+def test_uml_tracedcollaborationuse_constructor_args():
+    sig = inspect.signature(uml_TracedCollaborationUse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedinitialnodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedInitialNodeActivation)
+
+
+def test_intermediateactivities_tracedinitialnodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedInitialNodeActivation.__init__)
+
+
+def test_intermediateactivities_tracedinitialnodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedInitialNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedport_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPort)
+
+
+def test_uml_tracedport_constructor_exists():
+    assert callable(uml_TracedPort.__init__)
+
+
+def test_uml_tracedport_constructor_args():
+    sig = inspect.signature(uml_TracedPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddependency_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDependency)
+
+
+def test_uml_traceddependency_constructor_exists():
+    assert callable(uml_TracedDependency.__init__)
+
+
+def test_uml_traceddependency_constructor_args():
+    sig = inspect.signature(uml_TracedDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedchangeevent_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedChangeEvent)
+
+
+def test_uml_tracedchangeevent_constructor_exists():
+    assert callable(uml_TracedChangeEvent.__init__)
+
+
+def test_uml_tracedchangeevent_constructor_args():
+    sig = inspect.signature(uml_TracedChangeEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedgeneralizationset_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedGeneralizationSet)
+
+
+def test_uml_tracedgeneralizationset_constructor_exists():
+    assert callable(uml_TracedGeneralizationSet.__init__)
+
+
+def test_uml_tracedgeneralizationset_constructor_args():
+    sig = inspect.signature(uml_TracedGeneralizationSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinteractionuse_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInteractionUse)
+
+
+def test_uml_tracedinteractionuse_constructor_exists():
+    assert callable(uml_TracedInteractionUse.__init__)
+
+
+def test_uml_tracedinteractionuse_constructor_args():
+    sig = inspect.signature(uml_TracedInteractionUse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedclass_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedClass)
+
+
+def test_uml_tracedclass_constructor_exists():
+    assert callable(uml_TracedClass.__init__)
+
+
+def test_uml_tracedclass_constructor_args():
+    sig = inspect.signature(uml_TracedClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracednode_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedNode)
+
+
+def test_umltrace_uml_tracednode_constructor_exists():
+    assert callable(umlTrace_uml_TracedNode.__init__)
+
+
+def test_umltrace_uml_tracednode_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_uml_tracedassociationclass_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_uml_TracedAssociationClass)
+
+
+def test_umltrace_uml_tracedassociationclass_constructor_exists():
+    assert callable(umlTrace_uml_TracedAssociationClass.__init__)
+
+
+def test_umltrace_uml_tracedassociationclass_constructor_args():
+    sig = inspect.signature(umlTrace_uml_TracedAssociationClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedpackageimport_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedPackageImport)
+
+
+def test_uml_tracedpackageimport_constructor_exists():
+    assert callable(uml_TracedPackageImport.__init__)
+
+
+def test_uml_tracedpackageimport_constructor_args():
+    sig = inspect.signature(uml_TracedPackageImport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedsendobjectaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedSendObjectAction)
+
+
+def test_uml_tracedsendobjectaction_constructor_exists():
+    assert callable(uml_TracedSendObjectAction.__init__)
+
+
+def test_uml_tracedsendobjectaction_constructor_args():
+    sig = inspect.signature(uml_TracedSendObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedconnector_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedConnector)
+
+
+def test_uml_tracedconnector_constructor_exists():
+    assert callable(uml_TracedConnector.__init__)
+
+
+def test_uml_tracedconnector_constructor_args():
+    sig = inspect.signature(uml_TracedConnector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddestructionoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDestructionOccurrenceSpecification)
+
+
+def test_uml_traceddestructionoccurrencespecification_constructor_exists():
+    assert callable(uml_TracedDestructionOccurrenceSpecification.__init__)
+
+
+def test_uml_traceddestructionoccurrencespecification_constructor_args():
+    sig = inspect.signature(uml_TracedDestructionOccurrenceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_traceddurationconstraint_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedDurationConstraint)
+
+
+def test_uml_traceddurationconstraint_constructor_exists():
+    assert callable(uml_TracedDurationConstraint.__init__)
+
+
+def test_uml_traceddurationconstraint_constructor_args():
+    sig = inspect.signature(uml_TracedDurationConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_tracedforknodeactivation_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_TracedForkNodeActivation)
+
+
+def test_intermediateactivities_tracedforknodeactivation_constructor_exists():
+    assert callable(IntermediateActivities_TracedForkNodeActivation.__init__)
+
+
+def test_intermediateactivities_tracedforknodeactivation_constructor_args():
+    sig = inspect.signature(IntermediateActivities_TracedForkNodeActivation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedlifeline_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedLifeline)
+
+
+def test_uml_tracedlifeline_constructor_exists():
+    assert callable(uml_TracedLifeline.__init__)
+
+
+def test_uml_tracedlifeline_constructor_args():
+    sig = inspect.signature(uml_TracedLifeline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcreateobjectaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCreateObjectAction)
+
+
+def test_uml_tracedcreateobjectaction_constructor_exists():
+    assert callable(uml_TracedCreateObjectAction.__init__)
+
+
+def test_uml_tracedcreateobjectaction_constructor_args():
+    sig = inspect.signature(uml_TracedCreateObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedexpansionregion_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedExpansionRegion)
+
+
+def test_uml_tracedexpansionregion_constructor_exists():
+    assert callable(uml_TracedExpansionRegion.__init__)
+
+
+def test_uml_tracedexpansionregion_constructor_args():
+    sig = inspect.signature(uml_TracedExpansionRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedflowfinalnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedFlowFinalNode)
+
+
+def test_uml_tracedflowfinalnode_constructor_exists():
+    assert callable(uml_TracedFlowFinalNode.__init__)
+
+
+def test_uml_tracedflowfinalnode_constructor_args():
+    sig = inspect.signature(uml_TracedFlowFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedinitialnode_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedInitialNode)
+
+
+def test_uml_tracedinitialnode_constructor_exists():
+    assert callable(uml_TracedInitialNode.__init__)
+
+
+def test_uml_tracedinitialnode_constructor_args():
+    sig = inspect.signature(uml_TracedInitialNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcreatelinkobjectaction_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCreateLinkObjectAction)
+
+
+def test_uml_tracedcreatelinkobjectaction_constructor_exists():
+    assert callable(uml_TracedCreateLinkObjectAction.__init__)
+
+
+def test_uml_tracedcreatelinkobjectaction_constructor_args():
+    sig = inspect.signature(uml_TracedCreateLinkObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml_tracedcombinedfragment_is_not_abstract():
+    assert not inspect.isabstract(uml_TracedCombinedFragment)
+
+
+def test_uml_tracedcombinedfragment_constructor_exists():
+    assert callable(uml_TracedCombinedFragment.__init__)
+
+
+def test_uml_tracedcombinedfragment_constructor_args():
+    sig = inspect.signature(uml_TracedCombinedFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umltrace_traced_tracedobjects_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Traced_TracedObjects)
+
+
+def test_umltrace_traced_tracedobjects_constructor_exists():
+    assert callable(umlTrace_Traced_TracedObjects.__init__)
+
+
+def test_umltrace_traced_tracedobjects_constructor_args():
+    sig = inspect.signature(umlTrace_Traced_TracedObjects.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_traced_tracedobjects_is_not_abstract():
+    assert not inspect.isabstract(Traced_TracedObjects)
+
+
+def test_traced_tracedobjects_constructor_exists():
+    assert callable(Traced_TracedObjects.__init__)
+
+
+def test_traced_tracedobjects_constructor_args():
+    sig = inspect.signature(Traced_TracedObjects.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -9538,58 +9538,58 @@ def test_state_constructor_args():
 
 
 
-def test_umltrace::trace_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::Trace)
+def test_umltrace_trace_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_Trace)
 
 
-def test_umltrace::trace_constructor_exists():
-    assert callable(umlTrace::Trace.__init__)
+def test_umltrace_trace_constructor_exists():
+    assert callable(umlTrace_Trace.__init__)
 
 
-def test_umltrace::trace_constructor_args():
-    sig = inspect.signature(umlTrace::Trace.__init__)
+def test_umltrace_trace_constructor_args():
+    sig = inspect.signature(umlTrace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_values::semanticvisitor::runtimemodelelement::value_is_not_abstract():
-    assert not inspect.isabstract(Values::SemanticVisitor::runtimeModelElement::Value)
+def test_values_semanticvisitor_runtimemodelelement_value_is_not_abstract():
+    assert not inspect.isabstract(Values_SemanticVisitor_runtimeModelElement_Value)
 
 
-def test_values::semanticvisitor::runtimemodelelement::value_constructor_exists():
-    assert callable(Values::SemanticVisitor::runtimeModelElement::Value.__init__)
+def test_values_semanticvisitor_runtimemodelelement_value_constructor_exists():
+    assert callable(Values_SemanticVisitor_runtimeModelElement_Value.__init__)
 
 
-def test_values::semanticvisitor::runtimemodelelement::value_constructor_args():
-    sig = inspect.signature(Values::SemanticVisitor::runtimeModelElement::Value.__init__)
+def test_values_semanticvisitor_runtimemodelelement_value_constructor_args():
+    sig = inspect.signature(Values_SemanticVisitor_runtimeModelElement_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_values::actionactivation::firing::value_is_not_abstract():
-    assert not inspect.isabstract(Values::ActionActivation::firing::Value)
+def test_values_actionactivation_firing_value_is_not_abstract():
+    assert not inspect.isabstract(Values_ActionActivation_firing_Value)
 
 
-def test_values::actionactivation::firing::value_constructor_exists():
-    assert callable(Values::ActionActivation::firing::Value.__init__)
+def test_values_actionactivation_firing_value_constructor_exists():
+    assert callable(Values_ActionActivation_firing_Value.__init__)
 
 
-def test_values::actionactivation::firing::value_constructor_args():
-    sig = inspect.signature(Values::ActionActivation::firing::Value.__init__)
+def test_values_actionactivation_firing_value_constructor_args():
+    sig = inspect.signature(Values_ActionActivation_firing_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltrace::state_is_not_abstract():
-    assert not inspect.isabstract(umlTrace::State)
+def test_umltrace_state_is_not_abstract():
+    assert not inspect.isabstract(umlTrace_State)
 
 
-def test_umltrace::state_constructor_exists():
-    assert callable(umlTrace::State.__init__)
+def test_umltrace_state_constructor_exists():
+    assert callable(umlTrace_State.__init__)
 
 
-def test_umltrace::state_constructor_args():
-    sig = inspect.signature(umlTrace::State.__init__)
+def test_umltrace_state_constructor_args():
+    sig = inspect.signature(umlTrace_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -9604,1945 +9604,2117 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-uml::ActivityContent_strategy = st.builds(
-    uml::ActivityContent,
+TracedExecution_strategy = st.builds(
+    TracedExecution,
 )
-BasicActions::TracedActionActivation_strategy = st.builds(
-    BasicActions::TracedActionActivation,
+umlTrace_IntermediateActivities_TracedActivityExecution_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedActivityExecution,
 )
-umlTrace::Values::ActionActivation::firing::Value_strategy = st.builds(
-    umlTrace::Values::ActionActivation::firing::Value,
+TracedSemanticVisitor_strategy = st.builds(
+    TracedSemanticVisitor,
+)
+umlTrace_IntermediateActivities_TracedActivityNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedActivityNodeActivation,
+)
+TracedActivityNodeActivation_strategy = st.builds(
+    TracedActivityNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedObjectNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedObjectNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedControlNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedControlNodeActivation,
+)
+TracedControlNodeActivation_strategy = st.builds(
+    TracedControlNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedInitialNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedInitialNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedMergeNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedMergeNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedForkNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedForkNodeActivation,
+)
+uml_TracedVertex_strategy = st.builds(
+    uml_TracedVertex,
+)
+TracedState_strategy = st.builds(
+    TracedState,
+)
+umlTrace_uml_TracedFinalState_strategy = st.builds(
+    umlTrace_uml_TracedFinalState,
+)
+TracedExecutionSpecification_strategy = st.builds(
+    TracedExecutionSpecification,
+)
+umlTrace_uml_TracedBehaviorExecutionSpecification_strategy = st.builds(
+    umlTrace_uml_TracedBehaviorExecutionSpecification,
+)
+TracedOccurrenceSpecification_strategy = st.builds(
+    TracedOccurrenceSpecification,
+)
+umlTrace_uml_TracedExecutionOccurrenceSpecification_strategy = st.builds(
+    umlTrace_uml_TracedExecutionOccurrenceSpecification,
+)
+TracedOpaqueBehavior_strategy = st.builds(
+    TracedOpaqueBehavior,
+)
+umlTrace_uml_TracedFunctionBehavior_strategy = st.builds(
+    umlTrace_uml_TracedFunctionBehavior,
+)
+uml_TracedStructuredClassifier_strategy = st.builds(
+    uml_TracedStructuredClassifier,
+)
+TracedMultiplicityElement_strategy = st.builds(
+    TracedMultiplicityElement,
+)
+umlTrace_uml_TracedConnectorEnd_strategy = st.builds(
+    umlTrace_uml_TracedConnectorEnd,
+)
+umlTrace_uml_TracedActionExecutionSpecification_strategy = st.builds(
+    umlTrace_uml_TracedActionExecutionSpecification,
+)
+TracedObjectNode_strategy = st.builds(
+    TracedObjectNode,
+)
+umlTrace_uml_TracedExpansionNode_strategy = st.builds(
+    umlTrace_uml_TracedExpansionNode,
+)
+umlTrace_uml_TracedActivityParameterNode_strategy = st.builds(
+    umlTrace_uml_TracedActivityParameterNode,
+)
+umlTrace_uml_TracedCentralBufferNode_strategy = st.builds(
+    umlTrace_uml_TracedCentralBufferNode,
+)
+TracedCentralBufferNode_strategy = st.builds(
+    TracedCentralBufferNode,
+)
+umlTrace_uml_TracedDataStoreNode_strategy = st.builds(
+    umlTrace_uml_TracedDataStoreNode,
+)
+TracedDataType_strategy = st.builds(
+    TracedDataType,
+)
+umlTrace_uml_TracedEnumeration_strategy = st.builds(
+    umlTrace_uml_TracedEnumeration,
+)
+umlTrace_uml_TracedPrimitiveType_strategy = st.builds(
+    umlTrace_uml_TracedPrimitiveType,
+)
+TracedMessageEvent_strategy = st.builds(
+    TracedMessageEvent,
+)
+umlTrace_uml_TracedCallEvent_strategy = st.builds(
+    umlTrace_uml_TracedCallEvent,
+)
+uml_ActivityContent_strategy = st.builds(
+    uml_ActivityContent,
+)
+BasicActions_TracedActionActivation_strategy = st.builds(
+    BasicActions_TracedActionActivation,
+)
+umlTrace_Values_ActionActivation_firing_Value_strategy = st.builds(
+    umlTrace_Values_ActionActivation_firing_Value,
     firing=
         safe_text
 )
 TracedLiteralEvaluation_strategy = st.builds(
     TracedLiteralEvaluation,
 )
-umlTrace::Kernel::TracedLiteralIntegerEvaluation_strategy = st.builds(
-    umlTrace::Kernel::TracedLiteralIntegerEvaluation,
+umlTrace_Kernel_TracedLiteralIntegerEvaluation_strategy = st.builds(
+    umlTrace_Kernel_TracedLiteralIntegerEvaluation,
 )
-umlTrace::Kernel::TracedLiteralBooleanEvaluation_strategy = st.builds(
-    umlTrace::Kernel::TracedLiteralBooleanEvaluation,
+umlTrace_Kernel_TracedLiteralBooleanEvaluation_strategy = st.builds(
+    umlTrace_Kernel_TracedLiteralBooleanEvaluation,
 )
 TracedPrimitiveValue_strategy = st.builds(
     TracedPrimitiveValue,
 )
-umlTrace::Kernel::TracedBooleanValue_strategy = st.builds(
-    umlTrace::Kernel::TracedBooleanValue,
+umlTrace_Kernel_TracedBooleanValue_strategy = st.builds(
+    umlTrace_Kernel_TracedBooleanValue,
 )
-umlTrace::Kernel::TracedIntegerValue_strategy = st.builds(
-    umlTrace::Kernel::TracedIntegerValue,
+umlTrace_Kernel_TracedIntegerValue_strategy = st.builds(
+    umlTrace_Kernel_TracedIntegerValue,
+)
+umlTrace_Kernel_TracedEvaluation_strategy = st.builds(
+    umlTrace_Kernel_TracedEvaluation,
 )
 TracedEvaluation_strategy = st.builds(
     TracedEvaluation,
 )
-umlTrace::Kernel::TracedLiteralEvaluation_strategy = st.builds(
-    umlTrace::Kernel::TracedLiteralEvaluation,
+umlTrace_Kernel_TracedLiteralEvaluation_strategy = st.builds(
+    umlTrace_Kernel_TracedLiteralEvaluation,
+)
+umlTrace_Kernel_TracedValue_strategy = st.builds(
+    umlTrace_Kernel_TracedValue,
 )
 TracedValue_strategy = st.builds(
     TracedValue,
 )
-umlTrace::Kernel::TracedPrimitiveValue_strategy = st.builds(
-    umlTrace::Kernel::TracedPrimitiveValue,
+umlTrace_Kernel_TracedPrimitiveValue_strategy = st.builds(
+    umlTrace_Kernel_TracedPrimitiveValue,
 )
-umlTrace::Kernel::TracedStructuredValue_strategy = st.builds(
-    umlTrace::Kernel::TracedStructuredValue,
+umlTrace_Kernel_TracedStructuredValue_strategy = st.builds(
+    umlTrace_Kernel_TracedStructuredValue,
 )
 TracedStructuredValue_strategy = st.builds(
     TracedStructuredValue,
 )
-umlTrace::Kernel::TracedReference_strategy = st.builds(
-    umlTrace::Kernel::TracedReference,
+umlTrace_Kernel_TracedReference_strategy = st.builds(
+    umlTrace_Kernel_TracedReference,
 )
-umlTrace::Kernel::TracedCompoundValue_strategy = st.builds(
-    umlTrace::Kernel::TracedCompoundValue,
+umlTrace_Kernel_TracedCompoundValue_strategy = st.builds(
+    umlTrace_Kernel_TracedCompoundValue,
 )
 TracedCompoundValue_strategy = st.builds(
     TracedCompoundValue,
 )
-umlTrace::Kernel::TracedExtensionalValue_strategy = st.builds(
-    umlTrace::Kernel::TracedExtensionalValue,
+umlTrace_Kernel_TracedExtensionalValue_strategy = st.builds(
+    umlTrace_Kernel_TracedExtensionalValue,
 )
 TracedExtensionalValue_strategy = st.builds(
     TracedExtensionalValue,
 )
-umlTrace::Kernel::TracedObject_strategy = st.builds(
-    umlTrace::Kernel::TracedObject,
+umlTrace_Kernel_TracedObject_strategy = st.builds(
+    umlTrace_Kernel_TracedObject,
+)
+umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution_strategy = st.builds(
+    umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution,
 )
 TracedObject_strategy = st.builds(
     TracedObject,
 )
-umlTrace::BasicBehaviors::TracedExecution_strategy = st.builds(
-    umlTrace::BasicBehaviors::TracedExecution,
+umlTrace_BasicBehaviors_TracedExecution_strategy = st.builds(
+    umlTrace_BasicBehaviors_TracedExecution,
 )
-uml::TracedElement_strategy = st.builds(
-    uml::TracedElement,
+uml_TracedElement_strategy = st.builds(
+    uml_TracedElement,
 )
-umlTrace::Values::SemanticVisitor::runtimeModelElement::Value_strategy = st.builds(
-    umlTrace::Values::SemanticVisitor::runtimeModelElement::Value,
+umlTrace_Values_SemanticVisitor_runtimeModelElement_Value_strategy = st.builds(
+    umlTrace_Values_SemanticVisitor_runtimeModelElement_Value,
 )
 TracedOpaqueBehaviorExecution_strategy = st.builds(
     TracedOpaqueBehaviorExecution,
 )
-umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution_strategy = st.builds(
-    umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution,
+umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution_strategy = st.builds(
+    umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution,
 )
-umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution_strategy = st.builds(
-    umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution,
+umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution_strategy = st.builds(
+    umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution,
 )
-umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution_strategy = st.builds(
-    umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution,
+umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution_strategy = st.builds(
+    umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution,
 )
 TracedCallActionActivation_strategy = st.builds(
     TracedCallActionActivation,
 )
-umlTrace::BasicActions::TracedCallBehaviorActionActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedCallBehaviorActionActivation,
+umlTrace_BasicActions_TracedCallBehaviorActionActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedCallBehaviorActionActivation,
 )
 TracedPinActivation_strategy = st.builds(
     TracedPinActivation,
 )
-umlTrace::BasicActions::TracedOutputPinActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedOutputPinActivation,
+umlTrace_BasicActions_TracedOutputPinActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedOutputPinActivation,
 )
-umlTrace::BasicActions::TracedInputPinActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedInputPinActivation,
+umlTrace_BasicActions_TracedInputPinActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedInputPinActivation,
 )
 TracedInvocationActionActivation_strategy = st.builds(
     TracedInvocationActionActivation,
 )
-umlTrace::BasicActions::TracedCallActionActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedCallActionActivation,
+umlTrace_BasicActions_TracedCallActionActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedCallActionActivation,
 )
 TracedActionActivation_strategy = st.builds(
     TracedActionActivation,
 )
-umlTrace::BasicActions::TracedOpaqueActionActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedOpaqueActionActivation,
+umlTrace_BasicActions_TracedOpaqueActionActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedOpaqueActionActivation,
 )
-umlTrace::BasicActions::TracedInvocationActionActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedInvocationActionActivation,
+umlTrace_BasicActions_TracedInvocationActionActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedInvocationActionActivation,
 )
-umlTrace::Loci::TracedSemanticVisitor_strategy = st.builds(
-    umlTrace::Loci::TracedSemanticVisitor,
+umlTrace_BasicActions_TracedActionActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedActionActivation,
+)
+umlTrace_Loci_TracedSemanticVisitor_strategy = st.builds(
+    umlTrace_Loci_TracedSemanticVisitor,
+)
+umlTrace_IntermediateActivities_TracedDecisionNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedDecisionNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation,
+)
+umlTrace_IntermediateActivities_TracedJoinNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedJoinNodeActivation,
 )
 TracedObjectNodeActivation_strategy = st.builds(
     TracedObjectNodeActivation,
 )
-umlTrace::BasicActions::TracedPinActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedPinActivation,
+umlTrace_BasicActions_TracedPinActivation_strategy = st.builds(
+    umlTrace_BasicActions_TracedPinActivation,
 )
-umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation,
+umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation_strategy = st.builds(
+    umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation,
 )
-umlTrace::IntermediateActions::TracedCreateObjectActionActivation_strategy = st.builds(
-    umlTrace::IntermediateActions::TracedCreateObjectActionActivation,
+umlTrace_IntermediateActions_TracedCreateObjectActionActivation_strategy = st.builds(
+    umlTrace_IntermediateActions_TracedCreateObjectActionActivation,
 )
-umlTrace::IntermediateActions::TracedValueSpecificationActionActivation_strategy = st.builds(
-    umlTrace::IntermediateActions::TracedValueSpecificationActionActivation,
+umlTrace_IntermediateActions_TracedValueSpecificationActionActivation_strategy = st.builds(
+    umlTrace_IntermediateActions_TracedValueSpecificationActionActivation,
 )
 TracedWriteStructuralFeatureActionActivation_strategy = st.builds(
     TracedWriteStructuralFeatureActionActivation,
 )
-umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation_strategy = st.builds(
-    umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation,
+umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation_strategy = st.builds(
+    umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation,
 )
 TracedStructuralFeatureActionActivation_strategy = st.builds(
     TracedStructuralFeatureActionActivation,
 )
-umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation_strategy = st.builds(
-    umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation,
+umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation_strategy = st.builds(
+    umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation,
 )
-umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation_strategy = st.builds(
-    umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation,
+umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation_strategy = st.builds(
+    umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation,
 )
-umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation_strategy = st.builds(
-    umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation,
+umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation_strategy = st.builds(
+    umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation,
 )
-umlTrace::ecore::TracedEModelElement_strategy = st.builds(
-    umlTrace::ecore::TracedEModelElement,
+umlTrace_ecore_TracedEModelElement_strategy = st.builds(
+    umlTrace_ecore_TracedEModelElement,
 )
 TracedMessageEnd_strategy = st.builds(
     TracedMessageEnd,
 )
-umlTrace::uml::TracedGate_strategy = st.builds(
-    umlTrace::uml::TracedGate,
-)
-TracedExecution_strategy = st.builds(
-    TracedExecution,
-)
-umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution_strategy = st.builds(
-    umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution,
-)
-TracedExecutionSpecification_strategy = st.builds(
-    TracedExecutionSpecification,
-)
-umlTrace::uml::TracedBehaviorExecutionSpecification_strategy = st.builds(
-    umlTrace::uml::TracedBehaviorExecutionSpecification,
-)
-TracedOccurrenceSpecification_strategy = st.builds(
-    TracedOccurrenceSpecification,
-)
-umlTrace::uml::TracedExecutionOccurrenceSpecification_strategy = st.builds(
-    umlTrace::uml::TracedExecutionOccurrenceSpecification,
-)
-TracedOpaqueBehavior_strategy = st.builds(
-    TracedOpaqueBehavior,
-)
-umlTrace::uml::TracedFunctionBehavior_strategy = st.builds(
-    umlTrace::uml::TracedFunctionBehavior,
-)
-uml::TracedStructuredClassifier_strategy = st.builds(
-    uml::TracedStructuredClassifier,
-)
-TracedMultiplicityElement_strategy = st.builds(
-    TracedMultiplicityElement,
-)
-umlTrace::uml::TracedConnectorEnd_strategy = st.builds(
-    umlTrace::uml::TracedConnectorEnd,
-)
-umlTrace::uml::TracedActionExecutionSpecification_strategy = st.builds(
-    umlTrace::uml::TracedActionExecutionSpecification,
-)
-TracedObjectNode_strategy = st.builds(
-    TracedObjectNode,
-)
-umlTrace::uml::TracedExpansionNode_strategy = st.builds(
-    umlTrace::uml::TracedExpansionNode,
-)
-umlTrace::uml::TracedActivityParameterNode_strategy = st.builds(
-    umlTrace::uml::TracedActivityParameterNode,
-)
-umlTrace::uml::TracedCentralBufferNode_strategy = st.builds(
-    umlTrace::uml::TracedCentralBufferNode,
-)
-TracedCentralBufferNode_strategy = st.builds(
-    TracedCentralBufferNode,
-)
-umlTrace::uml::TracedDataStoreNode_strategy = st.builds(
-    umlTrace::uml::TracedDataStoreNode,
-)
-TracedDataType_strategy = st.builds(
-    TracedDataType,
-)
-umlTrace::uml::TracedEnumeration_strategy = st.builds(
-    umlTrace::uml::TracedEnumeration,
-)
-umlTrace::uml::TracedPrimitiveType_strategy = st.builds(
-    umlTrace::uml::TracedPrimitiveType,
-)
-TracedMessageEvent_strategy = st.builds(
-    TracedMessageEvent,
-)
-umlTrace::uml::TracedCallEvent_strategy = st.builds(
-    umlTrace::uml::TracedCallEvent,
-)
-umlTrace::uml::TracedAnyReceiveEvent_strategy = st.builds(
-    umlTrace::uml::TracedAnyReceiveEvent,
-)
-uml::TracedBehavioralFeature_strategy = st.builds(
-    uml::TracedBehavioralFeature,
-)
-TracedTemplateParameter_strategy = st.builds(
-    TracedTemplateParameter,
-)
-umlTrace::uml::TracedConnectableElementTemplateParameter_strategy = st.builds(
-    umlTrace::uml::TracedConnectableElementTemplateParameter,
-)
-umlTrace::uml::TracedClassifierTemplateParameter_strategy = st.builds(
-    umlTrace::uml::TracedClassifierTemplateParameter,
-)
-TracedPackage_strategy = st.builds(
-    TracedPackage,
-)
-umlTrace::uml::TracedProfile_strategy = st.builds(
-    umlTrace::uml::TracedProfile,
-)
-umlTrace::uml::TracedModel_strategy = st.builds(
-    umlTrace::uml::TracedModel,
-)
-TracedTransition_strategy = st.builds(
-    TracedTransition,
-)
-umlTrace::uml::TracedProtocolTransition_strategy = st.builds(
-    umlTrace::uml::TracedProtocolTransition,
-)
-TracedWriteVariableAction_strategy = st.builds(
-    TracedWriteVariableAction,
-)
-umlTrace::uml::TracedRemoveVariableValueAction_strategy = st.builds(
-    umlTrace::uml::TracedRemoveVariableValueAction,
-)
-umlTrace::uml::TracedAddVariableValueAction_strategy = st.builds(
-    umlTrace::uml::TracedAddVariableValueAction,
-)
-TracedInteractionUse_strategy = st.builds(
-    TracedInteractionUse,
-)
-umlTrace::uml::TracedPartDecomposition_strategy = st.builds(
-    umlTrace::uml::TracedPartDecomposition,
-)
-TracedObservation_strategy = st.builds(
-    TracedObservation,
-)
-umlTrace::uml::TracedTimeObservation_strategy = st.builds(
-    umlTrace::uml::TracedTimeObservation,
-)
-umlTrace::uml::TracedDurationObservation_strategy = st.builds(
-    umlTrace::uml::TracedDurationObservation,
-)
-umlTrace::uml::TracedOperationTemplateParameter_strategy = st.builds(
-    umlTrace::uml::TracedOperationTemplateParameter,
-)
-TracedInterval_strategy = st.builds(
-    TracedInterval,
-)
-umlTrace::uml::TracedDurationInterval_strategy = st.builds(
-    umlTrace::uml::TracedDurationInterval,
-)
-umlTrace::uml::TracedTimeInterval_strategy = st.builds(
-    umlTrace::uml::TracedTimeInterval,
-)
-umlTrace::uml::TracedSignalEvent_strategy = st.builds(
-    umlTrace::uml::TracedSignalEvent,
-)
-TracedBehavioralFeature_strategy = st.builds(
-    TracedBehavioralFeature,
-)
-umlTrace::uml::TracedReception_strategy = st.builds(
-    umlTrace::uml::TracedReception,
-)
-TracedDependency_strategy = st.builds(
-    TracedDependency,
-)
-umlTrace::uml::TracedUsage_strategy = st.builds(
-    umlTrace::uml::TracedUsage,
-)
-umlTrace::uml::TracedAbstraction_strategy = st.builds(
-    umlTrace::uml::TracedAbstraction,
-)
-TracedAbstraction_strategy = st.builds(
-    TracedAbstraction,
-)
-umlTrace::uml::TracedManifestation_strategy = st.builds(
-    umlTrace::uml::TracedManifestation,
-)
-umlTrace::uml::TracedRealization_strategy = st.builds(
-    umlTrace::uml::TracedRealization,
-)
-TracedRealization_strategy = st.builds(
-    TracedRealization,
-)
-umlTrace::uml::TracedComponentRealization_strategy = st.builds(
-    umlTrace::uml::TracedComponentRealization,
-)
-umlTrace::uml::TracedInterfaceRealization_strategy = st.builds(
-    umlTrace::uml::TracedInterfaceRealization,
-)
-umlTrace::uml::TracedSubstitution_strategy = st.builds(
-    umlTrace::uml::TracedSubstitution,
-)
-TracedInstanceSpecification_strategy = st.builds(
-    TracedInstanceSpecification,
-)
-umlTrace::uml::TracedEnumerationLiteral_strategy = st.builds(
-    umlTrace::uml::TracedEnumerationLiteral,
-)
-TracedAcceptEventAction_strategy = st.builds(
-    TracedAcceptEventAction,
-)
-umlTrace::uml::TracedAcceptCallAction_strategy = st.builds(
-    umlTrace::uml::TracedAcceptCallAction,
-)
-TracedLinkEndData_strategy = st.builds(
-    TracedLinkEndData,
-)
-umlTrace::uml::TracedLinkEndCreationData_strategy = st.builds(
-    umlTrace::uml::TracedLinkEndCreationData,
-)
-umlTrace::uml::TracedLinkEndDestructionData_strategy = st.builds(
-    umlTrace::uml::TracedLinkEndDestructionData,
-)
-TracedClass_strategy = st.builds(
-    TracedClass,
-)
-umlTrace::uml::TracedComponent_strategy = st.builds(
-    umlTrace::uml::TracedComponent,
-)
-umlTrace::uml::TracedStereotype_strategy = st.builds(
-    umlTrace::uml::TracedStereotype,
-)
-umlTrace::uml::TracedBehavior_strategy = st.builds(
-    umlTrace::uml::TracedBehavior,
-)
-uml::TracedInteractionFragment_strategy = st.builds(
-    uml::TracedInteractionFragment,
-)
-uml::TracedBehavior_strategy = st.builds(
-    uml::TracedBehavior,
-)
-umlTrace::uml::TracedInteraction_strategy = st.builds(
-    umlTrace::uml::TracedInteraction,
-)
-TracedActivityEdge_strategy = st.builds(
-    TracedActivityEdge,
-)
-umlTrace::uml::TracedControlFlow_strategy = st.builds(
-    umlTrace::uml::TracedControlFlow,
-)
-umlTrace::uml::TracedObjectFlow_strategy = st.builds(
-    umlTrace::uml::TracedObjectFlow,
-)
-TracedStateMachine_strategy = st.builds(
-    TracedStateMachine,
-)
-umlTrace::uml::TracedProtocolStateMachine_strategy = st.builds(
-    umlTrace::uml::TracedProtocolStateMachine,
-)
-umlTrace::uml::TracedDeployment_strategy = st.builds(
-    umlTrace::uml::TracedDeployment,
-)
-TracedBehavior_strategy = st.builds(
-    TracedBehavior,
-)
-umlTrace::uml::TracedOpaqueBehavior_strategy = st.builds(
-    umlTrace::uml::TracedOpaqueBehavior,
-)
-umlTrace::uml::TracedActivity_strategy = st.builds(
-    umlTrace::uml::TracedActivity,
-)
-umlTrace::uml::TracedStateMachine_strategy = st.builds(
-    umlTrace::uml::TracedStateMachine,
-)
-TracedActivityGroup_strategy = st.builds(
-    TracedActivityGroup,
-)
-umlTrace::uml::TracedInterruptibleActivityRegion_strategy = st.builds(
-    umlTrace::uml::TracedInterruptibleActivityRegion,
-)
-umlTrace::uml::TracedActivityPartition_strategy = st.builds(
-    umlTrace::uml::TracedActivityPartition,
-)
-uml::TracedRelationship_strategy = st.builds(
-    uml::TracedRelationship,
-)
-umlTrace::IntermediateActivities::TracedActivityExecution_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedActivityExecution,
-)
-TracedSemanticVisitor_strategy = st.builds(
-    TracedSemanticVisitor,
-)
-umlTrace::Kernel::TracedEvaluation_strategy = st.builds(
-    umlTrace::Kernel::TracedEvaluation,
-)
-umlTrace::Kernel::TracedValue_strategy = st.builds(
-    umlTrace::Kernel::TracedValue,
-)
-umlTrace::IntermediateActivities::TracedActivityNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedActivityNodeActivation,
-)
-TracedActivityNodeActivation_strategy = st.builds(
-    TracedActivityNodeActivation,
-)
-umlTrace::BasicActions::TracedActionActivation_strategy = st.builds(
-    umlTrace::BasicActions::TracedActionActivation,
-)
-umlTrace::IntermediateActivities::TracedObjectNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedObjectNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedControlNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedControlNodeActivation,
-)
-TracedControlNodeActivation_strategy = st.builds(
-    TracedControlNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedInitialNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedInitialNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedDecisionNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedDecisionNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedJoinNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedJoinNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedMergeNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedMergeNodeActivation,
-)
-umlTrace::IntermediateActivities::TracedForkNodeActivation_strategy = st.builds(
-    umlTrace::IntermediateActivities::TracedForkNodeActivation,
-)
-uml::TracedVertex_strategy = st.builds(
-    uml::TracedVertex,
-)
-TracedState_strategy = st.builds(
-    TracedState,
-)
-umlTrace::uml::TracedFinalState_strategy = st.builds(
-    umlTrace::uml::TracedFinalState,
-)
-uml::TracedActivityFinalNode_strategy = st.builds(
-    uml::TracedActivityFinalNode,
-)
-uml::TracedClassifierTemplateParameter_strategy = st.builds(
-    uml::TracedClassifierTemplateParameter,
-)
-TracedInteractionFragment_strategy = st.builds(
-    TracedInteractionFragment,
-)
-umlTrace::uml::TracedStateInvariant_strategy = st.builds(
-    umlTrace::uml::TracedStateInvariant,
-)
-umlTrace::uml::TracedExecutionSpecification_strategy = st.builds(
-    umlTrace::uml::TracedExecutionSpecification,
-)
-umlTrace::uml::TracedCombinedFragment_strategy = st.builds(
-    umlTrace::uml::TracedCombinedFragment,
-)
-uml::TracedGeneralOrdering_strategy = st.builds(
-    uml::TracedGeneralOrdering,
-)
-uml::TracedElementImport_strategy = st.builds(
-    uml::TracedElementImport,
-)
-uml::TracedMergeNode_strategy = st.builds(
-    uml::TracedMergeNode,
-)
-uml::TracedClearAssociationAction_strategy = st.builds(
-    uml::TracedClearAssociationAction,
-)
-uml::TracedLinkEndCreationData_strategy = st.builds(
-    uml::TracedLinkEndCreationData,
-)
-uml::TracedPseudostate_strategy = st.builds(
-    uml::TracedPseudostate,
-)
-uml::TracedComponent_strategy = st.builds(
-    uml::TracedComponent,
-)
-uml::TracedReadIsClassifiedObjectAction_strategy = st.builds(
-    uml::TracedReadIsClassifiedObjectAction,
-)
-uml::TracedAbstraction_strategy = st.builds(
-    uml::TracedAbstraction,
-)
-uml::TracedTimeExpression_strategy = st.builds(
-    uml::TracedTimeExpression,
-)
-uml::TracedValueSpecificationAction_strategy = st.builds(
-    uml::TracedValueSpecificationAction,
-)
-uml::TracedFunctionBehavior_strategy = st.builds(
-    uml::TracedFunctionBehavior,
-)
-IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution_strategy = st.builds(
-    IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution,
-)
-IntermediateActivities::TracedMergeNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedMergeNodeActivation,
-)
-uml::TracedTemplateParameter_strategy = st.builds(
-    uml::TracedTemplateParameter,
-)
-uml::TracedManifestation_strategy = st.builds(
-    uml::TracedManifestation,
-)
-uml::TracedActor_strategy = st.builds(
-    uml::TracedActor,
-)
-uml::TracedRemoveVariableValueAction_strategy = st.builds(
-    uml::TracedRemoveVariableValueAction,
-)
-uml::TracedProfile_strategy = st.builds(
-    uml::TracedProfile,
-)
-uml::TracedTestIdentityAction_strategy = st.builds(
-    uml::TracedTestIdentityAction,
-)
-uml::TracedCollaboration_strategy = st.builds(
-    uml::TracedCollaboration,
-)
-uml::TracedSendSignalAction_strategy = st.builds(
-    uml::TracedSendSignalAction,
-)
-uml::TracedInterfaceRealization_strategy = st.builds(
-    uml::TracedInterfaceRealization,
-)
-uml::TracedUnmarshallAction_strategy = st.builds(
-    uml::TracedUnmarshallAction,
-)
-uml::TracedExpression_strategy = st.builds(
-    uml::TracedExpression,
-)
-uml::TracedAssociation_strategy = st.builds(
-    uml::TracedAssociation,
-)
-uml::TracedClearStructuralFeatureAction_strategy = st.builds(
-    uml::TracedClearStructuralFeatureAction,
-)
-uml::TracedAddVariableValueAction_strategy = st.builds(
-    uml::TracedAddVariableValueAction,
-)
-uml::TracedLiteralReal_strategy = st.builds(
-    uml::TracedLiteralReal,
-)
-IntermediateActions::TracedCreateObjectActionActivation_strategy = st.builds(
-    IntermediateActions::TracedCreateObjectActionActivation,
-)
-uml::TracedSlot_strategy = st.builds(
-    uml::TracedSlot,
-)
-uml::TracedLiteralNull_strategy = st.builds(
-    uml::TracedLiteralNull,
-)
-IntermediateActions::TracedValueSpecificationActionActivation_strategy = st.builds(
-    IntermediateActions::TracedValueSpecificationActionActivation,
-)
-uml::TracedStartObjectBehaviorAction_strategy = st.builds(
-    uml::TracedStartObjectBehaviorAction,
-)
-uml::TracedLiteralBoolean_strategy = st.builds(
-    uml::TracedLiteralBoolean,
-)
-uml::TracedReadLinkAction_strategy = st.builds(
-    uml::TracedReadLinkAction,
-)
-uml::TracedInclude_strategy = st.builds(
-    uml::TracedInclude,
-)
-uml::TracedRegion_strategy = st.builds(
-    uml::TracedRegion,
-)
-uml::TracedState_strategy = st.builds(
-    uml::TracedState,
-)
-uml::TracedPrimitiveType_strategy = st.builds(
-    uml::TracedPrimitiveType,
-)
-uml::TracedStringExpression_strategy = st.builds(
-    uml::TracedStringExpression,
-)
-uml::TracedLinkEndDestructionData_strategy = st.builds(
-    uml::TracedLinkEndDestructionData,
-)
-uml::TracedReadExtentAction_strategy = st.builds(
-    uml::TracedReadExtentAction,
-)
-BasicActions::TracedOutputPinActivation_strategy = st.builds(
-    BasicActions::TracedOutputPinActivation,
-)
-uml::TracedTemplateSignature_strategy = st.builds(
-    uml::TracedTemplateSignature,
-)
-uml::TracedRaiseExceptionAction_strategy = st.builds(
-    uml::TracedRaiseExceptionAction,
-)
-uml::TracedCommunicationPath_strategy = st.builds(
-    uml::TracedCommunicationPath,
-)
-Kernel::TracedLiteralBooleanEvaluation_strategy = st.builds(
-    Kernel::TracedLiteralBooleanEvaluation,
-)
-uml::TracedEnumeration_strategy = st.builds(
-    uml::TracedEnumeration,
-)
-uml::TracedReadLinkObjectEndAction_strategy = st.builds(
-    uml::TracedReadLinkObjectEndAction,
-)
-uml::TracedCallBehaviorAction_strategy = st.builds(
-    uml::TracedCallBehaviorAction,
-)
-uml::TracedVariable_strategy = st.builds(
-    uml::TracedVariable,
-)
-uml::TracedConnectorEnd_strategy = st.builds(
-    uml::TracedConnectorEnd,
-)
-uml::TracedArtifact_strategy = st.builds(
-    uml::TracedArtifact,
-)
-uml::TracedCallOperationAction_strategy = st.builds(
-    uml::TracedCallOperationAction,
-)
-uml::TracedLiteralUnlimitedNatural_strategy = st.builds(
-    uml::TracedLiteralUnlimitedNatural,
-)
-uml::TracedDurationObservation_strategy = st.builds(
-    uml::TracedDurationObservation,
-)
-uml::TracedBehaviorExecutionSpecification_strategy = st.builds(
-    uml::TracedBehaviorExecutionSpecification,
-)
-uml::TracedActivityParameterNode_strategy = st.builds(
-    uml::TracedActivityParameterNode,
-)
-uml::TracedExpansionNode_strategy = st.builds(
-    uml::TracedExpansionNode,
-)
-uml::TracedProfileApplication_strategy = st.builds(
-    uml::TracedProfileApplication,
-)
-uml::TracedAddStructuralFeatureValueAction_strategy = st.builds(
-    uml::TracedAddStructuralFeatureValueAction,
-)
-uml::TracedQualifierValue_strategy = st.builds(
-    uml::TracedQualifierValue,
-)
-uml::TracedImage_strategy = st.builds(
-    uml::TracedImage,
-)
-uml::TracedExtensionEnd_strategy = st.builds(
-    uml::TracedExtensionEnd,
-)
-uml::TracedProperty_strategy = st.builds(
-    uml::TracedProperty,
-)
-uml::TracedDevice_strategy = st.builds(
-    uml::TracedDevice,
-)
-uml::TracedOpaqueAction_strategy = st.builds(
-    uml::TracedOpaqueAction,
-)
-uml::TracedFinalState_strategy = st.builds(
-    uml::TracedFinalState,
-)
-uml::TracedReduceAction_strategy = st.builds(
-    uml::TracedReduceAction,
-)
-uml::TracedDuration_strategy = st.builds(
-    uml::TracedDuration,
-)
-uml::TracedTemplateParameterSubstitution_strategy = st.builds(
-    uml::TracedTemplateParameterSubstitution,
-)
-uml::TracedOutputPin_strategy = st.builds(
-    uml::TracedOutputPin,
-)
-uml::TracedActionExecutionSpecification_strategy = st.builds(
-    uml::TracedActionExecutionSpecification,
-)
-uml::TracedInformationItem_strategy = st.builds(
-    uml::TracedInformationItem,
-)
-uml::TracedOperationTemplateParameter_strategy = st.builds(
-    uml::TracedOperationTemplateParameter,
-)
-uml::TracedConnectableElementTemplateParameter_strategy = st.builds(
-    uml::TracedConnectableElementTemplateParameter,
-)
-uml::TracedLinkEndData_strategy = st.builds(
-    uml::TracedLinkEndData,
-)
-uml::TracedDurationInterval_strategy = st.builds(
-    uml::TracedDurationInterval,
-)
-uml::TracedTransition_strategy = st.builds(
-    uml::TracedTransition,
-)
-uml::TracedTrigger_strategy = st.builds(
-    uml::TracedTrigger,
-)
-uml::TracedReplyAction_strategy = st.builds(
-    uml::TracedReplyAction,
-)
-uml::TracedClause_strategy = st.builds(
-    uml::TracedClause,
-)
-uml::TracedPackageMerge_strategy = st.builds(
-    uml::TracedPackageMerge,
-)
-uml::TracedDecisionNode_strategy = st.builds(
-    uml::TracedDecisionNode,
-)
-IntermediateActions::TracedReadStructuralFeatureActionActivation_strategy = st.builds(
-    IntermediateActions::TracedReadStructuralFeatureActionActivation,
-)
-uml::TracedReadSelfAction_strategy = st.builds(
-    uml::TracedReadSelfAction,
-)
-uml::TracedOperation_strategy = st.builds(
-    uml::TracedOperation,
-)
-uml::TracedObjectFlow_strategy = st.builds(
-    uml::TracedObjectFlow,
-)
-uml::TracedParameterSet_strategy = st.builds(
-    uml::TracedParameterSet,
-)
-uml::TracedOccurrenceSpecification_strategy = st.builds(
-    uml::TracedOccurrenceSpecification,
-)
-uml::TracedAcceptEventAction_strategy = st.builds(
-    uml::TracedAcceptEventAction,
-)
-uml::TracedComponentRealization_strategy = st.builds(
-    uml::TracedComponentRealization,
-)
-uml::TracedDataType_strategy = st.builds(
-    uml::TracedDataType,
-)
-uml::TracedComment_strategy = st.builds(
-    uml::TracedComment,
-)
-uml::TracedLoopNode_strategy = st.builds(
-    uml::TracedLoopNode,
-)
-uml::TracedCallEvent_strategy = st.builds(
-    uml::TracedCallEvent,
-)
-uml::TracedPackage_strategy = st.builds(
-    uml::TracedPackage,
-)
-uml::TracedProtocolConformance_strategy = st.builds(
-    uml::TracedProtocolConformance,
-)
-uml::TracedOpaqueBehavior_strategy = st.builds(
-    uml::TracedOpaqueBehavior,
-)
-uml::TracedInterface_strategy = st.builds(
-    uml::TracedInterface,
-)
-IntermediateActivities::TracedDecisionNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedDecisionNodeActivation,
-)
-uml::TracedInteractionConstraint_strategy = st.builds(
-    uml::TracedInteractionConstraint,
-)
-uml::TracedTimeInterval_strategy = st.builds(
-    uml::TracedTimeInterval,
-)
-uml::TracedExecutionOccurrenceSpecification_strategy = st.builds(
-    uml::TracedExecutionOccurrenceSpecification,
-)
-uml::TracedSignal_strategy = st.builds(
-    uml::TracedSignal,
-)
-uml::TracedExtensionPoint_strategy = st.builds(
-    uml::TracedExtensionPoint,
-)
-uml::TracedCreateLinkAction_strategy = st.builds(
-    uml::TracedCreateLinkAction,
-)
-Kernel::TracedLiteralIntegerEvaluation_strategy = st.builds(
-    Kernel::TracedLiteralIntegerEvaluation,
-)
-uml::TracedCentralBufferNode_strategy = st.builds(
-    uml::TracedCentralBufferNode,
-)
-uml::TracedModel_strategy = st.builds(
-    uml::TracedModel,
-)
-uml::TracedRedefinableTemplateSignature_strategy = st.builds(
-    uml::TracedRedefinableTemplateSignature,
-)
-uml::TracedJoinNode_strategy = st.builds(
-    uml::TracedJoinNode,
-)
-BasicActions::TracedOpaqueActionActivation_strategy = st.builds(
-    BasicActions::TracedOpaqueActionActivation,
-)
-uml::TracedReadLinkObjectEndQualifierAction_strategy = st.builds(
-    uml::TracedReadLinkObjectEndQualifierAction,
-)
-uml::TracedRealization_strategy = st.builds(
-    uml::TracedRealization,
-)
-uml::TracedConnectionPointReference_strategy = st.builds(
-    uml::TracedConnectionPointReference,
-)
-uml::TracedConditionalNode_strategy = st.builds(
-    uml::TracedConditionalNode,
-)
-Kernel::TracedBooleanValue_strategy = st.builds(
-    Kernel::TracedBooleanValue,
-)
-uml::TracedSignalEvent_strategy = st.builds(
-    uml::TracedSignalEvent,
-)
-uml::TracedLiteralInteger_strategy = st.builds(
-    uml::TracedLiteralInteger,
-)
-uml::TracedDestroyLinkAction_strategy = st.builds(
-    uml::TracedDestroyLinkAction,
-)
-IntermediateActivities::TracedActivityFinalNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedActivityFinalNodeActivation,
-)
-uml::TracedReadVariableAction_strategy = st.builds(
-    uml::TracedReadVariableAction,
-)
-uml::TracedActionInputPin_strategy = st.builds(
-    uml::TracedActionInputPin,
-)
-uml::TracedUsage_strategy = st.builds(
-    uml::TracedUsage,
-)
-uml::TracedDeploymentSpecification_strategy = st.builds(
-    uml::TracedDeploymentSpecification,
-)
-uml::TracedTemplateBinding_strategy = st.builds(
-    uml::TracedTemplateBinding,
-)
-TracedAssociation_strategy = st.builds(
-    TracedAssociation,
-)
-umlTrace::uml::TracedCommunicationPath_strategy = st.builds(
-    umlTrace::uml::TracedCommunicationPath,
-)
-umlTrace::uml::TracedExtension_strategy = st.builds(
-    umlTrace::uml::TracedExtension,
-)
-TracedStructuralFeatureAction_strategy = st.builds(
-    TracedStructuralFeatureAction,
-)
-umlTrace::uml::TracedClearStructuralFeatureAction_strategy = st.builds(
-    umlTrace::uml::TracedClearStructuralFeatureAction,
-)
-umlTrace::uml::TracedReadStructuralFeatureAction_strategy = st.builds(
-    umlTrace::uml::TracedReadStructuralFeatureAction,
-)
-uml::TracedMessageOccurrenceSpecification_strategy = st.builds(
-    uml::TracedMessageOccurrenceSpecification,
-)
-umlTrace::uml::TracedWriteStructuralFeatureAction_strategy = st.builds(
-    umlTrace::uml::TracedWriteStructuralFeatureAction,
-)
-uml::TracedReception_strategy = st.builds(
-    uml::TracedReception,
-)
-TracedWriteStructuralFeatureAction_strategy = st.builds(
-    TracedWriteStructuralFeatureAction,
-)
-umlTrace::uml::TracedAddStructuralFeatureValueAction_strategy = st.builds(
-    umlTrace::uml::TracedAddStructuralFeatureValueAction,
-)
-umlTrace::uml::TracedRemoveStructuralFeatureValueAction_strategy = st.builds(
-    umlTrace::uml::TracedRemoveStructuralFeatureValueAction,
-)
-TracedBehavioredClassifier_strategy = st.builds(
-    TracedBehavioredClassifier,
-)
-umlTrace::uml::TracedActor_strategy = st.builds(
-    umlTrace::uml::TracedActor,
-)
-umlTrace::uml::TracedUseCase_strategy = st.builds(
-    umlTrace::uml::TracedUseCase,
-)
-uml::TracedDeployedArtifact_strategy = st.builds(
-    uml::TracedDeployedArtifact,
-)
-uml::TracedClassifier_strategy = st.builds(
-    uml::TracedClassifier,
-)
-umlTrace::uml::TracedAssociation_strategy = st.builds(
-    umlTrace::uml::TracedAssociation,
-)
-umlTrace::uml::TracedArtifact_strategy = st.builds(
-    umlTrace::uml::TracedArtifact,
-)
-TracedArtifact_strategy = st.builds(
-    TracedArtifact,
-)
-umlTrace::uml::TracedDeploymentSpecification_strategy = st.builds(
-    umlTrace::uml::TracedDeploymentSpecification,
-)
-uml::TracedActivityNode_strategy = st.builds(
-    uml::TracedActivityNode,
-)
-uml::TracedObjectNode_strategy = st.builds(
-    uml::TracedObjectNode,
-)
-TracedPin_strategy = st.builds(
-    TracedPin,
-)
-umlTrace::uml::TracedOutputPin_strategy = st.builds(
-    umlTrace::uml::TracedOutputPin,
-)
-umlTrace::uml::TracedInputPin_strategy = st.builds(
-    umlTrace::uml::TracedInputPin,
-)
-TracedInputPin_strategy = st.builds(
-    TracedInputPin,
-)
-umlTrace::uml::TracedActionInputPin_strategy = st.builds(
-    umlTrace::uml::TracedActionInputPin,
-)
-umlTrace::uml::TracedValuePin_strategy = st.builds(
-    umlTrace::uml::TracedValuePin,
-)
-uml::TracedMultiplicityElement_strategy = st.builds(
-    uml::TracedMultiplicityElement,
-)
-umlTrace::uml::TracedPin_strategy = st.builds(
-    umlTrace::uml::TracedPin,
-)
-uml::TracedTypedElement_strategy = st.builds(
-    uml::TracedTypedElement,
-)
-umlTrace::uml::TracedObjectNode_strategy = st.builds(
-    umlTrace::uml::TracedObjectNode,
-)
-uml::TracedFeature_strategy = st.builds(
-    uml::TracedFeature,
-)
-umlTrace::uml::TracedStructuralFeature_strategy = st.builds(
-    umlTrace::uml::TracedStructuralFeature,
-)
-TracedValueSpecification_strategy = st.builds(
-    TracedValueSpecification,
-)
-umlTrace::uml::TracedExpression_strategy = st.builds(
-    umlTrace::uml::TracedExpression,
-)
-umlTrace::uml::TracedDuration_strategy = st.builds(
-    umlTrace::uml::TracedDuration,
-)
-umlTrace::uml::TracedInstanceValue_strategy = st.builds(
-    umlTrace::uml::TracedInstanceValue,
-)
-umlTrace::uml::TracedOpaqueExpression_strategy = st.builds(
-    umlTrace::uml::TracedOpaqueExpression,
-)
-umlTrace::uml::TracedInterval_strategy = st.builds(
-    umlTrace::uml::TracedInterval,
-)
-umlTrace::uml::TracedTimeExpression_strategy = st.builds(
-    umlTrace::uml::TracedTimeExpression,
-)
-umlTrace::uml::TracedLiteralSpecification_strategy = st.builds(
-    umlTrace::uml::TracedLiteralSpecification,
-)
-TracedLiteralSpecification_strategy = st.builds(
-    TracedLiteralSpecification,
-)
-umlTrace::uml::TracedLiteralBoolean_strategy = st.builds(
-    umlTrace::uml::TracedLiteralBoolean,
-)
-umlTrace::uml::TracedLiteralNull_strategy = st.builds(
-    umlTrace::uml::TracedLiteralNull,
-)
-umlTrace::uml::TracedLiteralReal_strategy = st.builds(
-    umlTrace::uml::TracedLiteralReal,
-)
-umlTrace::uml::TracedLiteralInteger_strategy = st.builds(
-    umlTrace::uml::TracedLiteralInteger,
-)
-umlTrace::uml::TracedLiteralUnlimitedNatural_strategy = st.builds(
-    umlTrace::uml::TracedLiteralUnlimitedNatural,
-)
-umlTrace::uml::TracedLiteralString_strategy = st.builds(
-    umlTrace::uml::TracedLiteralString,
-)
-TracedVariableAction_strategy = st.builds(
-    TracedVariableAction,
-)
-umlTrace::uml::TracedReadVariableAction_strategy = st.builds(
-    umlTrace::uml::TracedReadVariableAction,
-)
-umlTrace::uml::TracedWriteVariableAction_strategy = st.builds(
-    umlTrace::uml::TracedWriteVariableAction,
-)
-umlTrace::uml::TracedClearVariableAction_strategy = st.builds(
-    umlTrace::uml::TracedClearVariableAction,
-)
-umlTrace::uml::TracedContinuation_strategy = st.builds(
-    umlTrace::uml::TracedContinuation,
-)
-TracedCombinedFragment_strategy = st.builds(
-    TracedCombinedFragment,
-)
-umlTrace::uml::TracedConsiderIgnoreFragment_strategy = st.builds(
-    umlTrace::uml::TracedConsiderIgnoreFragment,
-)
-TracedNode_strategy = st.builds(
-    TracedNode,
-)
-umlTrace::uml::TracedExecutionEnvironment_strategy = st.builds(
-    umlTrace::uml::TracedExecutionEnvironment,
-)
-umlTrace::uml::TracedDevice_strategy = st.builds(
-    umlTrace::uml::TracedDevice,
-)
-uml::TracedType_strategy = st.builds(
-    uml::TracedType,
-)
-TracedClassifier_strategy = st.builds(
-    TracedClassifier,
-)
-umlTrace::uml::TracedBehavioredClassifier_strategy = st.builds(
-    umlTrace::uml::TracedBehavioredClassifier,
-)
-umlTrace::uml::TracedInformationItem_strategy = st.builds(
-    umlTrace::uml::TracedInformationItem,
-)
-umlTrace::uml::TracedDataType_strategy = st.builds(
-    umlTrace::uml::TracedDataType,
-)
-umlTrace::uml::TracedInterface_strategy = st.builds(
-    umlTrace::uml::TracedInterface,
-)
-umlTrace::uml::TracedStructuredClassifier_strategy = st.builds(
-    umlTrace::uml::TracedStructuredClassifier,
-)
-TracedStructuredClassifier_strategy = st.builds(
-    TracedStructuredClassifier,
-)
-umlTrace::uml::TracedEncapsulatedClassifier_strategy = st.builds(
-    umlTrace::uml::TracedEncapsulatedClassifier,
-)
-uml::TracedBehavioredClassifier_strategy = st.builds(
-    uml::TracedBehavioredClassifier,
-)
-umlTrace::uml::TracedCollaboration_strategy = st.builds(
-    umlTrace::uml::TracedCollaboration,
-)
-uml::TracedEncapsulatedClassifier_strategy = st.builds(
-    uml::TracedEncapsulatedClassifier,
-)
-umlTrace::uml::TracedClass_strategy = st.builds(
-    umlTrace::uml::TracedClass,
-)
-TracedCallAction_strategy = st.builds(
-    TracedCallAction,
-)
-umlTrace::uml::TracedStartObjectBehaviorAction_strategy = st.builds(
-    umlTrace::uml::TracedStartObjectBehaviorAction,
-)
-umlTrace::uml::TracedCallOperationAction_strategy = st.builds(
-    umlTrace::uml::TracedCallOperationAction,
-)
-umlTrace::uml::TracedCallBehaviorAction_strategy = st.builds(
-    umlTrace::uml::TracedCallBehaviorAction,
-)
-TracedRelationship_strategy = st.builds(
-    TracedRelationship,
-)
-umlTrace::uml::TracedDirectedRelationship_strategy = st.builds(
-    umlTrace::uml::TracedDirectedRelationship,
-)
-TracedDirectedRelationship_strategy = st.builds(
-    TracedDirectedRelationship,
-)
-umlTrace::uml::TracedGeneralization_strategy = st.builds(
-    umlTrace::uml::TracedGeneralization,
-)
-umlTrace::uml::TracedTemplateBinding_strategy = st.builds(
-    umlTrace::uml::TracedTemplateBinding,
-)
-umlTrace::uml::TracedProfileApplication_strategy = st.builds(
-    umlTrace::uml::TracedProfileApplication,
-)
-umlTrace::uml::TracedPackageImport_strategy = st.builds(
-    umlTrace::uml::TracedPackageImport,
-)
-umlTrace::uml::TracedElementImport_strategy = st.builds(
-    umlTrace::uml::TracedElementImport,
-)
-umlTrace::uml::TracedPackageMerge_strategy = st.builds(
-    umlTrace::uml::TracedPackageMerge,
-)
-umlTrace::uml::TracedProtocolConformance_strategy = st.builds(
-    umlTrace::uml::TracedProtocolConformance,
-)
-TracedInvocationAction_strategy = st.builds(
-    TracedInvocationAction,
-)
-umlTrace::uml::TracedBroadcastSignalAction_strategy = st.builds(
-    umlTrace::uml::TracedBroadcastSignalAction,
-)
-umlTrace::uml::TracedSendSignalAction_strategy = st.builds(
-    umlTrace::uml::TracedSendSignalAction,
-)
-umlTrace::uml::TracedCallAction_strategy = st.builds(
-    umlTrace::uml::TracedCallAction,
-)
-umlTrace::uml::TracedSendObjectAction_strategy = st.builds(
-    umlTrace::uml::TracedSendObjectAction,
-)
-TracedRedefinableElement_strategy = st.builds(
-    TracedRedefinableElement,
-)
-umlTrace::uml::TracedExtensionPoint_strategy = st.builds(
-    umlTrace::uml::TracedExtensionPoint,
-)
-umlTrace::uml::TracedActivityEdge_strategy = st.builds(
-    umlTrace::uml::TracedActivityEdge,
-)
-umlTrace::uml::TracedFeature_strategy = st.builds(
-    umlTrace::uml::TracedFeature,
-)
-TracedFeature_strategy = st.builds(
-    TracedFeature,
-)
-umlTrace::uml::TracedConnector_strategy = st.builds(
-    umlTrace::uml::TracedConnector,
-)
-uml::TracedTemplateableElement_strategy = st.builds(
-    uml::TracedTemplateableElement,
-)
-umlTrace::uml::TracedStringExpression_strategy = st.builds(
-    umlTrace::uml::TracedStringExpression,
-)
-uml::TracedPackageableElement_strategy = st.builds(
-    uml::TracedPackageableElement,
-)
-umlTrace::uml::TracedValueSpecification_strategy = st.builds(
-    umlTrace::uml::TracedValueSpecification,
-)
-uml::TracedDeploymentTarget_strategy = st.builds(
-    uml::TracedDeploymentTarget,
-)
-umlTrace::uml::TracedInstanceSpecification_strategy = st.builds(
-    umlTrace::uml::TracedInstanceSpecification,
-)
-uml::TracedConnectableElement_strategy = st.builds(
-    uml::TracedConnectableElement,
-)
-umlTrace::uml::TracedParameter_strategy = st.builds(
-    umlTrace::uml::TracedParameter,
-)
-umlTrace::uml::TracedVariable_strategy = st.builds(
-    umlTrace::uml::TracedVariable,
-)
-uml::TracedStructuralFeature_strategy = st.builds(
-    uml::TracedStructuralFeature,
-)
-umlTrace::uml::TracedProperty_strategy = st.builds(
-    umlTrace::uml::TracedProperty,
-)
-TracedProperty_strategy = st.builds(
-    TracedProperty,
-)
-umlTrace::uml::TracedExtensionEnd_strategy = st.builds(
-    umlTrace::uml::TracedExtensionEnd,
-)
-umlTrace::uml::TracedPort_strategy = st.builds(
-    umlTrace::uml::TracedPort,
-)
-uml::TracedDirectedRelationship_strategy = st.builds(
-    uml::TracedDirectedRelationship,
-)
-umlTrace::uml::TracedInformationFlow_strategy = st.builds(
-    umlTrace::uml::TracedInformationFlow,
-)
-umlTrace::uml::TracedDependency_strategy = st.builds(
-    umlTrace::uml::TracedDependency,
-)
-TracedEvent_strategy = st.builds(
-    TracedEvent,
-)
-umlTrace::uml::TracedTimeEvent_strategy = st.builds(
-    umlTrace::uml::TracedTimeEvent,
-)
-umlTrace::uml::TracedMessageEvent_strategy = st.builds(
-    umlTrace::uml::TracedMessageEvent,
-)
-umlTrace::uml::TracedChangeEvent_strategy = st.builds(
-    umlTrace::uml::TracedChangeEvent,
-)
-umlTrace::uml::TracedSignal_strategy = st.builds(
-    umlTrace::uml::TracedSignal,
-)
-umlTrace::uml::TracedInteractionUse_strategy = st.builds(
-    umlTrace::uml::TracedInteractionUse,
-)
-TracedFinalNode_strategy = st.builds(
-    TracedFinalNode,
-)
-umlTrace::uml::TracedActivityFinalNode_strategy = st.builds(
-    umlTrace::uml::TracedActivityFinalNode,
-)
-umlTrace::uml::TracedFlowFinalNode_strategy = st.builds(
-    umlTrace::uml::TracedFlowFinalNode,
-)
-TracedControlNode_strategy = st.builds(
-    TracedControlNode,
-)
-umlTrace::uml::TracedJoinNode_strategy = st.builds(
-    umlTrace::uml::TracedJoinNode,
-)
-umlTrace::uml::TracedMergeNode_strategy = st.builds(
-    umlTrace::uml::TracedMergeNode,
-)
-umlTrace::uml::TracedForkNode_strategy = st.builds(
-    umlTrace::uml::TracedForkNode,
-)
-umlTrace::uml::TracedFinalNode_strategy = st.builds(
-    umlTrace::uml::TracedFinalNode,
-)
-umlTrace::uml::TracedDecisionNode_strategy = st.builds(
-    umlTrace::uml::TracedDecisionNode,
-)
-umlTrace::uml::TracedInitialNode_strategy = st.builds(
-    umlTrace::uml::TracedInitialNode,
-)
-TracedAction_strategy = st.builds(
-    TracedAction,
-)
-umlTrace::uml::TracedAcceptEventAction_strategy = st.builds(
-    umlTrace::uml::TracedAcceptEventAction,
-)
-umlTrace::uml::TracedStartClassifierBehaviorAction_strategy = st.builds(
-    umlTrace::uml::TracedStartClassifierBehaviorAction,
-)
-umlTrace::uml::TracedStructuralFeatureAction_strategy = st.builds(
-    umlTrace::uml::TracedStructuralFeatureAction,
-)
-umlTrace::uml::TracedReduceAction_strategy = st.builds(
-    umlTrace::uml::TracedReduceAction,
-)
-umlTrace::uml::TracedValueSpecificationAction_strategy = st.builds(
-    umlTrace::uml::TracedValueSpecificationAction,
-)
-umlTrace::uml::TracedOpaqueAction_strategy = st.builds(
-    umlTrace::uml::TracedOpaqueAction,
-)
-umlTrace::uml::TracedUnmarshallAction_strategy = st.builds(
-    umlTrace::uml::TracedUnmarshallAction,
-)
-umlTrace::uml::TracedReadSelfAction_strategy = st.builds(
-    umlTrace::uml::TracedReadSelfAction,
-)
-umlTrace::uml::TracedReadIsClassifiedObjectAction_strategy = st.builds(
-    umlTrace::uml::TracedReadIsClassifiedObjectAction,
-)
-umlTrace::uml::TracedDestroyObjectAction_strategy = st.builds(
-    umlTrace::uml::TracedDestroyObjectAction,
-)
-umlTrace::uml::TracedVariableAction_strategy = st.builds(
-    umlTrace::uml::TracedVariableAction,
-)
-umlTrace::uml::TracedReadLinkObjectEndQualifierAction_strategy = st.builds(
-    umlTrace::uml::TracedReadLinkObjectEndQualifierAction,
-)
-umlTrace::uml::TracedInvocationAction_strategy = st.builds(
-    umlTrace::uml::TracedInvocationAction,
-)
-umlTrace::uml::TracedRaiseExceptionAction_strategy = st.builds(
-    umlTrace::uml::TracedRaiseExceptionAction,
-)
-umlTrace::uml::TracedReadLinkObjectEndAction_strategy = st.builds(
-    umlTrace::uml::TracedReadLinkObjectEndAction,
-)
-umlTrace::uml::TracedClearAssociationAction_strategy = st.builds(
-    umlTrace::uml::TracedClearAssociationAction,
-)
-umlTrace::uml::TracedReadExtentAction_strategy = st.builds(
-    umlTrace::uml::TracedReadExtentAction,
-)
-umlTrace::uml::TracedReplyAction_strategy = st.builds(
-    umlTrace::uml::TracedReplyAction,
-)
-umlTrace::uml::TracedTestIdentityAction_strategy = st.builds(
-    umlTrace::uml::TracedTestIdentityAction,
-)
-umlTrace::uml::TracedCreateObjectAction_strategy = st.builds(
-    umlTrace::uml::TracedCreateObjectAction,
-)
-umlTrace::uml::TracedReclassifyObjectAction_strategy = st.builds(
-    umlTrace::uml::TracedReclassifyObjectAction,
-)
-umlTrace::uml::TracedLinkAction_strategy = st.builds(
-    umlTrace::uml::TracedLinkAction,
-)
-TracedLinkAction_strategy = st.builds(
-    TracedLinkAction,
-)
-umlTrace::uml::TracedReadLinkAction_strategy = st.builds(
-    umlTrace::uml::TracedReadLinkAction,
-)
-umlTrace::uml::TracedWriteLinkAction_strategy = st.builds(
-    umlTrace::uml::TracedWriteLinkAction,
-)
-TracedWriteLinkAction_strategy = st.builds(
-    TracedWriteLinkAction,
-)
-umlTrace::uml::TracedDestroyLinkAction_strategy = st.builds(
-    umlTrace::uml::TracedDestroyLinkAction,
-)
-umlTrace::uml::TracedCreateLinkAction_strategy = st.builds(
-    umlTrace::uml::TracedCreateLinkAction,
-)
-TracedCreateLinkAction_strategy = st.builds(
-    TracedCreateLinkAction,
-)
-umlTrace::uml::TracedCreateLinkObjectAction_strategy = st.builds(
-    umlTrace::uml::TracedCreateLinkObjectAction,
-)
-uml::TracedNamedElement_strategy = st.builds(
-    uml::TracedNamedElement,
-)
-umlTrace::uml::TracedInclude_strategy = st.builds(
-    umlTrace::uml::TracedInclude,
-)
-umlTrace::uml::TracedExtend_strategy = st.builds(
-    umlTrace::uml::TracedExtend,
-)
-ActivityContent_strategy = st.builds(
-    ActivityContent,
-)
-umlTrace::uml::TracedActivityGroup_strategy = st.builds(
-    umlTrace::uml::TracedActivityGroup,
-)
-uml::TracedRedefinableElement_strategy = st.builds(
-    uml::TracedRedefinableElement,
-)
-umlTrace::uml::TracedRedefinableTemplateSignature_strategy = st.builds(
-    umlTrace::uml::TracedRedefinableTemplateSignature,
-)
-umlTrace::uml::TracedActivityNode_strategy = st.builds(
-    umlTrace::uml::TracedActivityNode,
-)
-TracedActivityNode_strategy = st.builds(
-    TracedActivityNode,
-)
-umlTrace::uml::TracedControlNode_strategy = st.builds(
-    umlTrace::uml::TracedControlNode,
-)
-umlTrace::uml::TracedExecutableNode_strategy = st.builds(
-    umlTrace::uml::TracedExecutableNode,
-)
-TracedExecutableNode_strategy = st.builds(
-    TracedExecutableNode,
-)
-umlTrace::uml::TracedAction_strategy = st.builds(
-    umlTrace::uml::TracedAction,
-)
-uml::TracedActivityGroup_strategy = st.builds(
-    uml::TracedActivityGroup,
-)
-uml::TracedNamespace_strategy = st.builds(
-    uml::TracedNamespace,
-)
-umlTrace::uml::TracedTransition_strategy = st.builds(
-    umlTrace::uml::TracedTransition,
-)
-umlTrace::uml::TracedInteractionOperand_strategy = st.builds(
-    umlTrace::uml::TracedInteractionOperand,
-)
-umlTrace::uml::TracedRegion_strategy = st.builds(
-    umlTrace::uml::TracedRegion,
-)
-umlTrace::uml::TracedPackage_strategy = st.builds(
-    umlTrace::uml::TracedPackage,
-)
-umlTrace::uml::TracedState_strategy = st.builds(
-    umlTrace::uml::TracedState,
-)
-umlTrace::uml::TracedBehavioralFeature_strategy = st.builds(
-    umlTrace::uml::TracedBehavioralFeature,
-)
-umlTrace::uml::TracedClassifier_strategy = st.builds(
-    umlTrace::uml::TracedClassifier,
-)
-uml::TracedAction_strategy = st.builds(
-    uml::TracedAction,
-)
-umlTrace::uml::TracedStructuredActivityNode_strategy = st.builds(
-    umlTrace::uml::TracedStructuredActivityNode,
+umlTrace_uml_TracedGate_strategy = st.builds(
+    umlTrace_uml_TracedGate,
+)
+uml_TracedAction_strategy = st.builds(
+    uml_TracedAction,
 )
 TracedStructuredActivityNode_strategy = st.builds(
     TracedStructuredActivityNode,
 )
-umlTrace::uml::TracedExpansionRegion_strategy = st.builds(
-    umlTrace::uml::TracedExpansionRegion,
-)
-umlTrace::uml::TracedLoopNode_strategy = st.builds(
-    umlTrace::uml::TracedLoopNode,
-)
-umlTrace::uml::TracedSequenceNode_strategy = st.builds(
-    umlTrace::uml::TracedSequenceNode,
-)
-umlTrace::uml::TracedConditionalNode_strategy = st.builds(
-    umlTrace::uml::TracedConditionalNode,
+umlTrace_uml_TracedConditionalNode_strategy = st.builds(
+    umlTrace_uml_TracedConditionalNode,
 )
 TracedEModelElement_strategy = st.builds(
     TracedEModelElement,
 )
-umlTrace::uml::TracedElement_strategy = st.builds(
-    umlTrace::uml::TracedElement,
+umlTrace_uml_TracedElement_strategy = st.builds(
+    umlTrace_uml_TracedElement,
 )
 TracedElement_strategy = st.builds(
     TracedElement,
 )
-umlTrace::uml::TracedTemplateParameter_strategy = st.builds(
-    umlTrace::uml::TracedTemplateParameter,
+umlTrace_uml_TracedTemplateParameterSubstitution_strategy = st.builds(
+    umlTrace_uml_TracedTemplateParameterSubstitution,
 )
-umlTrace::uml::TracedRelationship_strategy = st.builds(
-    umlTrace::uml::TracedRelationship,
+umlTrace_uml_TracedQualifierValue_strategy = st.builds(
+    umlTrace_uml_TracedQualifierValue,
 )
-umlTrace::uml::TracedLinkEndData_strategy = st.builds(
-    umlTrace::uml::TracedLinkEndData,
+umlTrace_uml_TracedComment_strategy = st.builds(
+    umlTrace_uml_TracedComment,
 )
-umlTrace::uml::TracedExceptionHandler_strategy = st.builds(
-    umlTrace::uml::TracedExceptionHandler,
+umlTrace_uml_TracedClause_strategy = st.builds(
+    umlTrace_uml_TracedClause,
 )
-umlTrace::uml::TracedSlot_strategy = st.builds(
-    umlTrace::uml::TracedSlot,
-)
-umlTrace::uml::TracedTemplateParameterSubstitution_strategy = st.builds(
-    umlTrace::uml::TracedTemplateParameterSubstitution,
-)
-umlTrace::uml::TracedTemplateSignature_strategy = st.builds(
-    umlTrace::uml::TracedTemplateSignature,
-)
-umlTrace::uml::TracedComment_strategy = st.builds(
-    umlTrace::uml::TracedComment,
-)
-umlTrace::uml::TracedMultiplicityElement_strategy = st.builds(
-    umlTrace::uml::TracedMultiplicityElement,
-)
-umlTrace::uml::TracedTemplateableElement_strategy = st.builds(
-    umlTrace::uml::TracedTemplateableElement,
-)
-umlTrace::uml::TracedClause_strategy = st.builds(
-    umlTrace::uml::TracedClause,
-)
-umlTrace::uml::TracedImage_strategy = st.builds(
-    umlTrace::uml::TracedImage,
-)
-umlTrace::uml::TracedQualifierValue_strategy = st.builds(
-    umlTrace::uml::TracedQualifierValue,
-)
-umlTrace::uml::TracedNamedElement_strategy = st.builds(
-    umlTrace::uml::TracedNamedElement,
+umlTrace_uml_TracedNamedElement_strategy = st.builds(
+    umlTrace_uml_TracedNamedElement,
 )
 TracedNamedElement_strategy = st.builds(
     TracedNamedElement,
 )
-umlTrace::uml::TracedTypedElement_strategy = st.builds(
-    umlTrace::uml::TracedTypedElement,
+umlTrace_uml_TracedGeneralOrdering_strategy = st.builds(
+    umlTrace_uml_TracedGeneralOrdering,
 )
-umlTrace::uml::TracedNamespace_strategy = st.builds(
-    umlTrace::uml::TracedNamespace,
+umlTrace_uml_TracedParameterSet_strategy = st.builds(
+    umlTrace_uml_TracedParameterSet,
 )
-umlTrace::uml::TracedRedefinableElement_strategy = st.builds(
-    umlTrace::uml::TracedRedefinableElement,
+umlTrace_uml_TracedInteractionFragment_strategy = st.builds(
+    umlTrace_uml_TracedInteractionFragment,
 )
-umlTrace::uml::TracedDeploymentTarget_strategy = st.builds(
-    umlTrace::uml::TracedDeploymentTarget,
-)
-umlTrace::uml::TracedMessage_strategy = st.builds(
-    umlTrace::uml::TracedMessage,
-)
-umlTrace::uml::TracedCollaborationUse_strategy = st.builds(
-    umlTrace::uml::TracedCollaborationUse,
-)
-umlTrace::uml::TracedMessageEnd_strategy = st.builds(
-    umlTrace::uml::TracedMessageEnd,
-)
-umlTrace::uml::TracedGeneralOrdering_strategy = st.builds(
-    umlTrace::uml::TracedGeneralOrdering,
-)
-umlTrace::uml::TracedParameterSet_strategy = st.builds(
-    umlTrace::uml::TracedParameterSet,
-)
-umlTrace::uml::TracedTrigger_strategy = st.builds(
-    umlTrace::uml::TracedTrigger,
-)
-umlTrace::uml::TracedLifeline_strategy = st.builds(
-    umlTrace::uml::TracedLifeline,
-)
-umlTrace::uml::TracedDeployedArtifact_strategy = st.builds(
-    umlTrace::uml::TracedDeployedArtifact,
-)
-umlTrace::uml::TracedInteractionFragment_strategy = st.builds(
-    umlTrace::uml::TracedInteractionFragment,
-)
-umlTrace::uml::TracedOccurrenceSpecification_strategy = st.builds(
-    umlTrace::uml::TracedOccurrenceSpecification,
-)
-uml::TracedMessageEnd_strategy = st.builds(
-    uml::TracedMessageEnd,
-)
-umlTrace::uml::TracedMessageOccurrenceSpecification_strategy = st.builds(
-    umlTrace::uml::TracedMessageOccurrenceSpecification,
+uml_TracedMessageEnd_strategy = st.builds(
+    uml_TracedMessageEnd,
 )
 TracedMessageOccurrenceSpecification_strategy = st.builds(
     TracedMessageOccurrenceSpecification,
 )
-umlTrace::uml::TracedDestructionOccurrenceSpecification_strategy = st.builds(
-    umlTrace::uml::TracedDestructionOccurrenceSpecification,
+umlTrace_uml_TracedDestructionOccurrenceSpecification_strategy = st.builds(
+    umlTrace_uml_TracedDestructionOccurrenceSpecification,
 )
-umlTrace::uml::TracedVertex_strategy = st.builds(
-    umlTrace::uml::TracedVertex,
+umlTrace_uml_TracedVertex_strategy = st.builds(
+    umlTrace_uml_TracedVertex,
 )
 TracedVertex_strategy = st.builds(
     TracedVertex,
 )
-umlTrace::uml::TracedConnectionPointReference_strategy = st.builds(
-    umlTrace::uml::TracedConnectionPointReference,
+umlTrace_uml_TracedConnectionPointReference_strategy = st.builds(
+    umlTrace_uml_TracedConnectionPointReference,
 )
-umlTrace::uml::TracedPseudostate_strategy = st.builds(
-    umlTrace::uml::TracedPseudostate,
+umlTrace_uml_TracedPseudostate_strategy = st.builds(
+    umlTrace_uml_TracedPseudostate,
 )
-umlTrace::uml::TracedParameterableElement_strategy = st.builds(
-    umlTrace::uml::TracedParameterableElement,
+umlTrace_uml_TracedParameterableElement_strategy = st.builds(
+    umlTrace_uml_TracedParameterableElement,
 )
-uml::TracedParameterableElement_strategy = st.builds(
-    uml::TracedParameterableElement,
-)
-umlTrace::uml::TracedConnectableElement_strategy = st.builds(
-    umlTrace::uml::TracedConnectableElement,
-)
-umlTrace::uml::TracedOperation_strategy = st.builds(
-    umlTrace::uml::TracedOperation,
-)
-umlTrace::uml::TracedPackageableElement_strategy = st.builds(
-    umlTrace::uml::TracedPackageableElement,
+uml_TracedParameterableElement_strategy = st.builds(
+    uml_TracedParameterableElement,
 )
 TracedPackageableElement_strategy = st.builds(
     TracedPackageableElement,
 )
-umlTrace::uml::TracedObservation_strategy = st.builds(
-    umlTrace::uml::TracedObservation,
-)
-umlTrace::uml::TracedEvent_strategy = st.builds(
-    umlTrace::uml::TracedEvent,
-)
-umlTrace::uml::TracedGeneralizationSet_strategy = st.builds(
-    umlTrace::uml::TracedGeneralizationSet,
-)
-umlTrace::uml::TracedType_strategy = st.builds(
-    umlTrace::uml::TracedType,
-)
-umlTrace::uml::TracedConstraint_strategy = st.builds(
-    umlTrace::uml::TracedConstraint,
+umlTrace_uml_TracedConstraint_strategy = st.builds(
+    umlTrace_uml_TracedConstraint,
 )
 TracedConstraint_strategy = st.builds(
     TracedConstraint,
 )
-umlTrace::uml::TracedInteractionConstraint_strategy = st.builds(
-    umlTrace::uml::TracedInteractionConstraint,
+umlTrace_uml_TracedInteractionConstraint_strategy = st.builds(
+    umlTrace_uml_TracedInteractionConstraint,
 )
-umlTrace::uml::TracedIntervalConstraint_strategy = st.builds(
-    umlTrace::uml::TracedIntervalConstraint,
+umlTrace_uml_TracedIntervalConstraint_strategy = st.builds(
+    umlTrace_uml_TracedIntervalConstraint,
 )
 TracedIntervalConstraint_strategy = st.builds(
     TracedIntervalConstraint,
 )
-umlTrace::uml::TracedTimeConstraint_strategy = st.builds(
-    umlTrace::uml::TracedTimeConstraint,
+umlTrace_uml_TracedDurationConstraint_strategy = st.builds(
+    umlTrace_uml_TracedDurationConstraint,
 )
-umlTrace::uml::TracedDurationConstraint_strategy = st.builds(
-    umlTrace::uml::TracedDurationConstraint,
+uml_TracedControlFlow_strategy = st.builds(
+    uml_TracedControlFlow,
 )
-uml::TracedControlFlow_strategy = st.builds(
-    uml::TracedControlFlow,
+uml_TracedTimeObservation_strategy = st.builds(
+    uml_TracedTimeObservation,
 )
-uml::TracedTimeObservation_strategy = st.builds(
-    uml::TracedTimeObservation,
+uml_TracedGate_strategy = st.builds(
+    uml_TracedGate,
 )
-uml::TracedGate_strategy = st.builds(
-    uml::TracedGate,
+uml_TracedActivityFinalNode_strategy = st.builds(
+    uml_TracedActivityFinalNode,
 )
-uml::TracedProtocolStateMachine_strategy = st.builds(
-    uml::TracedProtocolStateMachine,
+uml_TracedClassifierTemplateParameter_strategy = st.builds(
+    uml_TracedClassifierTemplateParameter,
 )
-uml::TracedDataStoreNode_strategy = st.builds(
-    uml::TracedDataStoreNode,
+TracedInteractionFragment_strategy = st.builds(
+    TracedInteractionFragment,
 )
-uml::TracedReadStructuralFeatureAction_strategy = st.builds(
-    uml::TracedReadStructuralFeatureAction,
+umlTrace_uml_TracedOccurrenceSpecification_strategy = st.builds(
+    umlTrace_uml_TracedOccurrenceSpecification,
 )
-uml::TracedAnyReceiveEvent_strategy = st.builds(
-    uml::TracedAnyReceiveEvent,
+umlTrace_uml_TracedCombinedFragment_strategy = st.builds(
+    umlTrace_uml_TracedCombinedFragment,
 )
-Kernel::TracedIntegerValue_strategy = st.builds(
-    Kernel::TracedIntegerValue,
+uml_TracedGeneralOrdering_strategy = st.builds(
+    uml_TracedGeneralOrdering,
 )
-uml::TracedInterval_strategy = st.builds(
-    uml::TracedInterval,
+uml_TracedElementImport_strategy = st.builds(
+    uml_TracedElementImport,
 )
-uml::TracedRemoveStructuralFeatureValueAction_strategy = st.builds(
-    uml::TracedRemoveStructuralFeatureValueAction,
+uml_TracedMergeNode_strategy = st.builds(
+    uml_TracedMergeNode,
 )
-uml::TracedGeneralization_strategy = st.builds(
-    uml::TracedGeneralization,
+uml_TracedClearAssociationAction_strategy = st.builds(
+    uml_TracedClearAssociationAction,
 )
-uml::TracedInteractionOperand_strategy = st.builds(
-    uml::TracedInteractionOperand,
+uml_TracedLinkEndCreationData_strategy = st.builds(
+    uml_TracedLinkEndCreationData,
 )
-uml::TracedProtocolTransition_strategy = st.builds(
-    uml::TracedProtocolTransition,
+uml_TracedPseudostate_strategy = st.builds(
+    uml_TracedPseudostate,
 )
-uml::TracedInterruptibleActivityRegion_strategy = st.builds(
-    uml::TracedInterruptibleActivityRegion,
+uml_TracedComponent_strategy = st.builds(
+    uml_TracedComponent,
 )
-uml::TracedPartDecomposition_strategy = st.builds(
-    uml::TracedPartDecomposition,
+uml_TracedReadIsClassifiedObjectAction_strategy = st.builds(
+    uml_TracedReadIsClassifiedObjectAction,
 )
-uml::TracedTimeEvent_strategy = st.builds(
-    uml::TracedTimeEvent,
+uml_TracedAbstraction_strategy = st.builds(
+    uml_TracedAbstraction,
 )
-uml::TracedDeployment_strategy = st.builds(
-    uml::TracedDeployment,
+uml_TracedTimeExpression_strategy = st.builds(
+    uml_TracedTimeExpression,
 )
-Loci::TracedSemanticVisitor_strategy = st.builds(
-    Loci::TracedSemanticVisitor,
+uml_TracedValueSpecificationAction_strategy = st.builds(
+    uml_TracedValueSpecificationAction,
 )
-Kernel::TracedObject_strategy = st.builds(
-    Kernel::TracedObject,
+uml_TracedFunctionBehavior_strategy = st.builds(
+    uml_TracedFunctionBehavior,
 )
-IntermediateActivities::TracedJoinNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedJoinNodeActivation,
+IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution_strategy = st.builds(
+    IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution,
 )
-uml::TracedUseCase_strategy = st.builds(
-    uml::TracedUseCase,
+IntermediateActivities_TracedMergeNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedMergeNodeActivation,
 )
-uml::TracedReclassifyObjectAction_strategy = st.builds(
-    uml::TracedReclassifyObjectAction,
+uml_TracedTemplateParameter_strategy = st.builds(
+    uml_TracedTemplateParameter,
 )
-uml::TracedInstanceValue_strategy = st.builds(
-    uml::TracedInstanceValue,
+uml_TracedManifestation_strategy = st.builds(
+    uml_TracedManifestation,
 )
-IntermediateActions::TracedAddStructuralFeatureValueActionActivation_strategy = st.builds(
-    IntermediateActions::TracedAddStructuralFeatureValueActionActivation,
+uml_TracedActor_strategy = st.builds(
+    uml_TracedActor,
 )
-Kernel::TracedReference_strategy = st.builds(
-    Kernel::TracedReference,
+uml_TracedRemoveVariableValueAction_strategy = st.builds(
+    uml_TracedRemoveVariableValueAction,
 )
-uml::TracedForkNode_strategy = st.builds(
-    uml::TracedForkNode,
+uml_TracedProfile_strategy = st.builds(
+    uml_TracedProfile,
 )
-uml::TracedActivity_strategy = st.builds(
-    uml::TracedActivity,
+uml_TracedTestIdentityAction_strategy = st.builds(
+    uml_TracedTestIdentityAction,
 )
-uml::TracedMessage_strategy = st.builds(
-    uml::TracedMessage,
+uml_TracedCollaboration_strategy = st.builds(
+    uml_TracedCollaboration,
 )
-uml::TracedStateMachine_strategy = st.builds(
-    uml::TracedStateMachine,
+uml_TracedSendSignalAction_strategy = st.builds(
+    uml_TracedSendSignalAction,
 )
-uml::TracedActivityPartition_strategy = st.builds(
-    uml::TracedActivityPartition,
+uml_TracedInterfaceRealization_strategy = st.builds(
+    uml_TracedInterfaceRealization,
 )
-IntermediateActivities::TracedActivityParameterNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedActivityParameterNodeActivation,
+uml_TracedUnmarshallAction_strategy = st.builds(
+    uml_TracedUnmarshallAction,
 )
-BasicActions::TracedCallBehaviorActionActivation_strategy = st.builds(
-    BasicActions::TracedCallBehaviorActionActivation,
+uml_TracedExpression_strategy = st.builds(
+    uml_TracedExpression,
 )
-uml::TracedDestroyObjectAction_strategy = st.builds(
-    uml::TracedDestroyObjectAction,
+uml_TracedAssociation_strategy = st.builds(
+    uml_TracedAssociation,
 )
-uml::TracedAssociationClass_strategy = st.builds(
-    uml::TracedAssociationClass,
+uml_TracedClearStructuralFeatureAction_strategy = st.builds(
+    uml_TracedClearStructuralFeatureAction,
 )
-uml::TracedInformationFlow_strategy = st.builds(
-    uml::TracedInformationFlow,
+uml_TracedAddVariableValueAction_strategy = st.builds(
+    uml_TracedAddVariableValueAction,
 )
-uml::TracedSubstitution_strategy = st.builds(
-    uml::TracedSubstitution,
+uml_TracedLiteralReal_strategy = st.builds(
+    uml_TracedLiteralReal,
 )
-uml::TracedEnumerationLiteral_strategy = st.builds(
-    uml::TracedEnumerationLiteral,
+IntermediateActions_TracedCreateObjectActionActivation_strategy = st.builds(
+    IntermediateActions_TracedCreateObjectActionActivation,
 )
-uml::TracedStereotype_strategy = st.builds(
-    uml::TracedStereotype,
+uml_TracedSlot_strategy = st.builds(
+    uml_TracedSlot,
 )
-uml::TracedAcceptCallAction_strategy = st.builds(
-    uml::TracedAcceptCallAction,
+uml_TracedLiteralNull_strategy = st.builds(
+    uml_TracedLiteralNull,
 )
-uml::TracedInstanceSpecification_strategy = st.builds(
-    uml::TracedInstanceSpecification,
+IntermediateActions_TracedValueSpecificationActionActivation_strategy = st.builds(
+    IntermediateActions_TracedValueSpecificationActionActivation,
 )
-IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution_strategy = st.builds(
-    IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution,
+uml_TracedStartObjectBehaviorAction_strategy = st.builds(
+    uml_TracedStartObjectBehaviorAction,
 )
-uml::TracedStateInvariant_strategy = st.builds(
-    uml::TracedStateInvariant,
+uml_TracedLiteralBoolean_strategy = st.builds(
+    uml_TracedLiteralBoolean,
 )
-BasicActions::TracedInputPinActivation_strategy = st.builds(
-    BasicActions::TracedInputPinActivation,
+uml_TracedReadLinkAction_strategy = st.builds(
+    uml_TracedReadLinkAction,
 )
-uml::TracedLiteralString_strategy = st.builds(
-    uml::TracedLiteralString,
+uml_TracedInclude_strategy = st.builds(
+    uml_TracedInclude,
 )
-uml::TracedOpaqueExpression_strategy = st.builds(
-    uml::TracedOpaqueExpression,
+uml_TracedRegion_strategy = st.builds(
+    uml_TracedRegion,
 )
-uml::TracedParameter_strategy = st.builds(
-    uml::TracedParameter,
+uml_TracedState_strategy = st.builds(
+    uml_TracedState,
 )
-IntermediateActivities::TracedActivityNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedActivityNodeActivation,
+uml_TracedPrimitiveType_strategy = st.builds(
+    uml_TracedPrimitiveType,
 )
-uml::TracedInteraction_strategy = st.builds(
-    uml::TracedInteraction,
+uml_TracedStringExpression_strategy = st.builds(
+    uml_TracedStringExpression,
 )
-uml::TracedBroadcastSignalAction_strategy = st.builds(
-    uml::TracedBroadcastSignalAction,
+uml_TracedLinkEndDestructionData_strategy = st.builds(
+    uml_TracedLinkEndDestructionData,
 )
-uml::TracedConstraint_strategy = st.builds(
-    uml::TracedConstraint,
+umlTrace_uml_TracedAnyReceiveEvent_strategy = st.builds(
+    umlTrace_uml_TracedAnyReceiveEvent,
 )
-uml::TracedClearVariableAction_strategy = st.builds(
-    uml::TracedClearVariableAction,
+uml_TracedReadExtentAction_strategy = st.builds(
+    uml_TracedReadExtentAction,
 )
-uml::TracedInputPin_strategy = st.builds(
-    uml::TracedInputPin,
+BasicActions_TracedOutputPinActivation_strategy = st.builds(
+    BasicActions_TracedOutputPinActivation,
 )
-uml::TracedTimeConstraint_strategy = st.builds(
-    uml::TracedTimeConstraint,
+uml_TracedBehavioralFeature_strategy = st.builds(
+    uml_TracedBehavioralFeature,
 )
-uml::TracedContinuation_strategy = st.builds(
-    uml::TracedContinuation,
+uml_TracedTemplateSignature_strategy = st.builds(
+    uml_TracedTemplateSignature,
 )
-uml::TracedConsiderIgnoreFragment_strategy = st.builds(
-    uml::TracedConsiderIgnoreFragment,
+umlTrace_uml_TracedTemplateParameter_strategy = st.builds(
+    umlTrace_uml_TracedTemplateParameter,
 )
-uml::TracedIntervalConstraint_strategy = st.builds(
-    uml::TracedIntervalConstraint,
+TracedTemplateParameter_strategy = st.builds(
+    TracedTemplateParameter,
 )
-uml::TracedExecutionEnvironment_strategy = st.builds(
-    uml::TracedExecutionEnvironment,
+umlTrace_uml_TracedConnectableElementTemplateParameter_strategy = st.builds(
+    umlTrace_uml_TracedConnectableElementTemplateParameter,
 )
-uml::TracedStructuredActivityNode_strategy = st.builds(
-    uml::TracedStructuredActivityNode,
+umlTrace_uml_TracedClassifierTemplateParameter_strategy = st.builds(
+    umlTrace_uml_TracedClassifierTemplateParameter,
 )
-uml::TracedExtension_strategy = st.builds(
-    uml::TracedExtension,
+TracedPackage_strategy = st.builds(
+    TracedPackage,
 )
-IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution_strategy = st.builds(
-    IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution,
+umlTrace_uml_TracedProfile_strategy = st.builds(
+    umlTrace_uml_TracedProfile,
 )
-uml::TracedExtend_strategy = st.builds(
-    uml::TracedExtend,
+umlTrace_uml_TracedModel_strategy = st.builds(
+    umlTrace_uml_TracedModel,
 )
-uml::TracedStartClassifierBehaviorAction_strategy = st.builds(
-    uml::TracedStartClassifierBehaviorAction,
+umlTrace_uml_TracedImage_strategy = st.builds(
+    umlTrace_uml_TracedImage,
 )
-uml::TracedSequenceNode_strategy = st.builds(
-    uml::TracedSequenceNode,
+TracedTransition_strategy = st.builds(
+    TracedTransition,
 )
-uml::TracedExceptionHandler_strategy = st.builds(
-    uml::TracedExceptionHandler,
+umlTrace_uml_TracedProtocolTransition_strategy = st.builds(
+    umlTrace_uml_TracedProtocolTransition,
 )
-uml::TracedNode_strategy = st.builds(
-    uml::TracedNode,
+TracedWriteVariableAction_strategy = st.builds(
+    TracedWriteVariableAction,
 )
-uml::TracedValuePin_strategy = st.builds(
-    uml::TracedValuePin,
+umlTrace_uml_TracedRemoveVariableValueAction_strategy = st.builds(
+    umlTrace_uml_TracedRemoveVariableValueAction,
 )
-IntermediateActivities::TracedActivityExecution_strategy = st.builds(
-    IntermediateActivities::TracedActivityExecution,
+umlTrace_uml_TracedAddVariableValueAction_strategy = st.builds(
+    umlTrace_uml_TracedAddVariableValueAction,
 )
-uml::TracedCollaborationUse_strategy = st.builds(
-    uml::TracedCollaborationUse,
+TracedInteractionUse_strategy = st.builds(
+    TracedInteractionUse,
 )
-IntermediateActivities::TracedInitialNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedInitialNodeActivation,
+umlTrace_uml_TracedPartDecomposition_strategy = st.builds(
+    umlTrace_uml_TracedPartDecomposition,
 )
-uml::TracedPort_strategy = st.builds(
-    uml::TracedPort,
+TracedObservation_strategy = st.builds(
+    TracedObservation,
 )
-uml::TracedDependency_strategy = st.builds(
-    uml::TracedDependency,
+umlTrace_uml_TracedTimeObservation_strategy = st.builds(
+    umlTrace_uml_TracedTimeObservation,
 )
-uml::TracedChangeEvent_strategy = st.builds(
-    uml::TracedChangeEvent,
+umlTrace_uml_TracedDurationObservation_strategy = st.builds(
+    umlTrace_uml_TracedDurationObservation,
 )
-uml::TracedGeneralizationSet_strategy = st.builds(
-    uml::TracedGeneralizationSet,
+umlTrace_uml_TracedOperationTemplateParameter_strategy = st.builds(
+    umlTrace_uml_TracedOperationTemplateParameter,
 )
-uml::TracedInteractionUse_strategy = st.builds(
-    uml::TracedInteractionUse,
+TracedInterval_strategy = st.builds(
+    TracedInterval,
 )
-uml::TracedClass_strategy = st.builds(
-    uml::TracedClass,
+umlTrace_uml_TracedDurationInterval_strategy = st.builds(
+    umlTrace_uml_TracedDurationInterval,
 )
-umlTrace::uml::TracedNode_strategy = st.builds(
-    umlTrace::uml::TracedNode,
+umlTrace_uml_TracedTimeInterval_strategy = st.builds(
+    umlTrace_uml_TracedTimeInterval,
 )
-umlTrace::uml::TracedAssociationClass_strategy = st.builds(
-    umlTrace::uml::TracedAssociationClass,
+umlTrace_uml_TracedSignalEvent_strategy = st.builds(
+    umlTrace_uml_TracedSignalEvent,
 )
-uml::TracedPackageImport_strategy = st.builds(
-    uml::TracedPackageImport,
+TracedBehavioralFeature_strategy = st.builds(
+    TracedBehavioralFeature,
 )
-uml::TracedSendObjectAction_strategy = st.builds(
-    uml::TracedSendObjectAction,
+umlTrace_uml_TracedReception_strategy = st.builds(
+    umlTrace_uml_TracedReception,
 )
-uml::TracedConnector_strategy = st.builds(
-    uml::TracedConnector,
+umlTrace_uml_TracedExecutionSpecification_strategy = st.builds(
+    umlTrace_uml_TracedExecutionSpecification,
 )
-uml::TracedDestructionOccurrenceSpecification_strategy = st.builds(
-    uml::TracedDestructionOccurrenceSpecification,
+TracedDependency_strategy = st.builds(
+    TracedDependency,
 )
-uml::TracedDurationConstraint_strategy = st.builds(
-    uml::TracedDurationConstraint,
+umlTrace_uml_TracedUsage_strategy = st.builds(
+    umlTrace_uml_TracedUsage,
 )
-IntermediateActivities::TracedForkNodeActivation_strategy = st.builds(
-    IntermediateActivities::TracedForkNodeActivation,
+umlTrace_uml_TracedAbstraction_strategy = st.builds(
+    umlTrace_uml_TracedAbstraction,
 )
-uml::TracedLifeline_strategy = st.builds(
-    uml::TracedLifeline,
+TracedAbstraction_strategy = st.builds(
+    TracedAbstraction,
 )
-uml::TracedCreateObjectAction_strategy = st.builds(
-    uml::TracedCreateObjectAction,
+umlTrace_uml_TracedManifestation_strategy = st.builds(
+    umlTrace_uml_TracedManifestation,
 )
-uml::TracedExpansionRegion_strategy = st.builds(
-    uml::TracedExpansionRegion,
+umlTrace_uml_TracedRealization_strategy = st.builds(
+    umlTrace_uml_TracedRealization,
 )
-uml::TracedFlowFinalNode_strategy = st.builds(
-    uml::TracedFlowFinalNode,
+TracedRealization_strategy = st.builds(
+    TracedRealization,
 )
-uml::TracedInitialNode_strategy = st.builds(
-    uml::TracedInitialNode,
+umlTrace_uml_TracedComponentRealization_strategy = st.builds(
+    umlTrace_uml_TracedComponentRealization,
 )
-uml::TracedCreateLinkObjectAction_strategy = st.builds(
-    uml::TracedCreateLinkObjectAction,
+umlTrace_uml_TracedInterfaceRealization_strategy = st.builds(
+    umlTrace_uml_TracedInterfaceRealization,
 )
-uml::TracedCombinedFragment_strategy = st.builds(
-    uml::TracedCombinedFragment,
+umlTrace_uml_TracedSubstitution_strategy = st.builds(
+    umlTrace_uml_TracedSubstitution,
 )
-umlTrace::Traced::TracedObjects_strategy = st.builds(
-    umlTrace::Traced::TracedObjects,
+TracedInstanceSpecification_strategy = st.builds(
+    TracedInstanceSpecification,
 )
-Traced::TracedObjects_strategy = st.builds(
-    Traced::TracedObjects,
+umlTrace_uml_TracedEnumerationLiteral_strategy = st.builds(
+    umlTrace_uml_TracedEnumerationLiteral,
+)
+TracedAcceptEventAction_strategy = st.builds(
+    TracedAcceptEventAction,
+)
+umlTrace_uml_TracedAcceptCallAction_strategy = st.builds(
+    umlTrace_uml_TracedAcceptCallAction,
+)
+umlTrace_uml_TracedLinkEndData_strategy = st.builds(
+    umlTrace_uml_TracedLinkEndData,
+)
+TracedLinkEndData_strategy = st.builds(
+    TracedLinkEndData,
+)
+umlTrace_uml_TracedLinkEndCreationData_strategy = st.builds(
+    umlTrace_uml_TracedLinkEndCreationData,
+)
+umlTrace_uml_TracedLinkEndDestructionData_strategy = st.builds(
+    umlTrace_uml_TracedLinkEndDestructionData,
+)
+umlTrace_uml_TracedTemplateSignature_strategy = st.builds(
+    umlTrace_uml_TracedTemplateSignature,
+)
+umlTrace_uml_TracedStateInvariant_strategy = st.builds(
+    umlTrace_uml_TracedStateInvariant,
+)
+umlTrace_uml_TracedTrigger_strategy = st.builds(
+    umlTrace_uml_TracedTrigger,
+)
+umlTrace_uml_TracedSlot_strategy = st.builds(
+    umlTrace_uml_TracedSlot,
+)
+TracedClass_strategy = st.builds(
+    TracedClass,
+)
+umlTrace_uml_TracedStereotype_strategy = st.builds(
+    umlTrace_uml_TracedStereotype,
+)
+umlTrace_uml_TracedComponent_strategy = st.builds(
+    umlTrace_uml_TracedComponent,
+)
+umlTrace_uml_TracedBehavior_strategy = st.builds(
+    umlTrace_uml_TracedBehavior,
+)
+uml_TracedInteractionFragment_strategy = st.builds(
+    uml_TracedInteractionFragment,
+)
+uml_TracedBehavior_strategy = st.builds(
+    uml_TracedBehavior,
+)
+umlTrace_uml_TracedInteraction_strategy = st.builds(
+    umlTrace_uml_TracedInteraction,
+)
+TracedActivityEdge_strategy = st.builds(
+    TracedActivityEdge,
+)
+umlTrace_uml_TracedControlFlow_strategy = st.builds(
+    umlTrace_uml_TracedControlFlow,
+)
+umlTrace_uml_TracedObjectFlow_strategy = st.builds(
+    umlTrace_uml_TracedObjectFlow,
+)
+TracedStateMachine_strategy = st.builds(
+    TracedStateMachine,
+)
+umlTrace_uml_TracedProtocolStateMachine_strategy = st.builds(
+    umlTrace_uml_TracedProtocolStateMachine,
+)
+umlTrace_uml_TracedDeployment_strategy = st.builds(
+    umlTrace_uml_TracedDeployment,
+)
+umlTrace_uml_TracedMessage_strategy = st.builds(
+    umlTrace_uml_TracedMessage,
+)
+TracedBehavior_strategy = st.builds(
+    TracedBehavior,
+)
+umlTrace_uml_TracedOpaqueBehavior_strategy = st.builds(
+    umlTrace_uml_TracedOpaqueBehavior,
+)
+umlTrace_uml_TracedActivity_strategy = st.builds(
+    umlTrace_uml_TracedActivity,
+)
+umlTrace_uml_TracedStateMachine_strategy = st.builds(
+    umlTrace_uml_TracedStateMachine,
+)
+TracedActivityGroup_strategy = st.builds(
+    TracedActivityGroup,
+)
+umlTrace_uml_TracedInterruptibleActivityRegion_strategy = st.builds(
+    umlTrace_uml_TracedInterruptibleActivityRegion,
+)
+umlTrace_uml_TracedActivityPartition_strategy = st.builds(
+    umlTrace_uml_TracedActivityPartition,
+)
+uml_TracedRelationship_strategy = st.builds(
+    uml_TracedRelationship,
+)
+TracedAssociation_strategy = st.builds(
+    TracedAssociation,
+)
+umlTrace_uml_TracedCommunicationPath_strategy = st.builds(
+    umlTrace_uml_TracedCommunicationPath,
+)
+umlTrace_uml_TracedExtension_strategy = st.builds(
+    umlTrace_uml_TracedExtension,
+)
+TracedStructuralFeatureAction_strategy = st.builds(
+    TracedStructuralFeatureAction,
+)
+umlTrace_uml_TracedReadStructuralFeatureAction_strategy = st.builds(
+    umlTrace_uml_TracedReadStructuralFeatureAction,
+)
+umlTrace_uml_TracedClearStructuralFeatureAction_strategy = st.builds(
+    umlTrace_uml_TracedClearStructuralFeatureAction,
+)
+umlTrace_uml_TracedWriteStructuralFeatureAction_strategy = st.builds(
+    umlTrace_uml_TracedWriteStructuralFeatureAction,
+)
+TracedWriteStructuralFeatureAction_strategy = st.builds(
+    TracedWriteStructuralFeatureAction,
+)
+umlTrace_uml_TracedAddStructuralFeatureValueAction_strategy = st.builds(
+    umlTrace_uml_TracedAddStructuralFeatureValueAction,
+)
+umlTrace_uml_TracedRemoveStructuralFeatureValueAction_strategy = st.builds(
+    umlTrace_uml_TracedRemoveStructuralFeatureValueAction,
+)
+TracedBehavioredClassifier_strategy = st.builds(
+    TracedBehavioredClassifier,
+)
+umlTrace_uml_TracedActor_strategy = st.builds(
+    umlTrace_uml_TracedActor,
+)
+umlTrace_uml_TracedUseCase_strategy = st.builds(
+    umlTrace_uml_TracedUseCase,
+)
+umlTrace_uml_TracedSequenceNode_strategy = st.builds(
+    umlTrace_uml_TracedSequenceNode,
+)
+umlTrace_uml_TracedExceptionHandler_strategy = st.builds(
+    umlTrace_uml_TracedExceptionHandler,
+)
+umlTrace_uml_TracedDeployedArtifact_strategy = st.builds(
+    umlTrace_uml_TracedDeployedArtifact,
+)
+uml_TracedDeployedArtifact_strategy = st.builds(
+    uml_TracedDeployedArtifact,
+)
+uml_TracedClassifier_strategy = st.builds(
+    uml_TracedClassifier,
+)
+umlTrace_uml_TracedAssociation_strategy = st.builds(
+    umlTrace_uml_TracedAssociation,
+)
+umlTrace_uml_TracedArtifact_strategy = st.builds(
+    umlTrace_uml_TracedArtifact,
+)
+TracedArtifact_strategy = st.builds(
+    TracedArtifact,
+)
+umlTrace_uml_TracedDeploymentSpecification_strategy = st.builds(
+    umlTrace_uml_TracedDeploymentSpecification,
+)
+uml_TracedActivityNode_strategy = st.builds(
+    uml_TracedActivityNode,
+)
+uml_TracedObjectNode_strategy = st.builds(
+    uml_TracedObjectNode,
+)
+TracedPin_strategy = st.builds(
+    TracedPin,
+)
+umlTrace_uml_TracedOutputPin_strategy = st.builds(
+    umlTrace_uml_TracedOutputPin,
+)
+umlTrace_uml_TracedInputPin_strategy = st.builds(
+    umlTrace_uml_TracedInputPin,
+)
+TracedInputPin_strategy = st.builds(
+    TracedInputPin,
+)
+umlTrace_uml_TracedActionInputPin_strategy = st.builds(
+    umlTrace_uml_TracedActionInputPin,
+)
+umlTrace_uml_TracedValuePin_strategy = st.builds(
+    umlTrace_uml_TracedValuePin,
+)
+umlTrace_uml_TracedCollaborationUse_strategy = st.builds(
+    umlTrace_uml_TracedCollaborationUse,
+)
+umlTrace_uml_TracedDeploymentTarget_strategy = st.builds(
+    umlTrace_uml_TracedDeploymentTarget,
+)
+umlTrace_uml_TracedMultiplicityElement_strategy = st.builds(
+    umlTrace_uml_TracedMultiplicityElement,
+)
+umlTrace_uml_TracedTypedElement_strategy = st.builds(
+    umlTrace_uml_TracedTypedElement,
+)
+uml_TracedMultiplicityElement_strategy = st.builds(
+    uml_TracedMultiplicityElement,
+)
+umlTrace_uml_TracedPin_strategy = st.builds(
+    umlTrace_uml_TracedPin,
+)
+uml_TracedTypedElement_strategy = st.builds(
+    uml_TracedTypedElement,
+)
+umlTrace_uml_TracedConnectableElement_strategy = st.builds(
+    umlTrace_uml_TracedConnectableElement,
+)
+umlTrace_uml_TracedObjectNode_strategy = st.builds(
+    umlTrace_uml_TracedObjectNode,
+)
+uml_TracedFeature_strategy = st.builds(
+    uml_TracedFeature,
+)
+umlTrace_uml_TracedStructuralFeature_strategy = st.builds(
+    umlTrace_uml_TracedStructuralFeature,
+)
+TracedValueSpecification_strategy = st.builds(
+    TracedValueSpecification,
+)
+umlTrace_uml_TracedOpaqueExpression_strategy = st.builds(
+    umlTrace_uml_TracedOpaqueExpression,
+)
+umlTrace_uml_TracedTimeExpression_strategy = st.builds(
+    umlTrace_uml_TracedTimeExpression,
+)
+umlTrace_uml_TracedInterval_strategy = st.builds(
+    umlTrace_uml_TracedInterval,
+)
+umlTrace_uml_TracedExpression_strategy = st.builds(
+    umlTrace_uml_TracedExpression,
+)
+umlTrace_uml_TracedInstanceValue_strategy = st.builds(
+    umlTrace_uml_TracedInstanceValue,
+)
+umlTrace_uml_TracedDuration_strategy = st.builds(
+    umlTrace_uml_TracedDuration,
+)
+umlTrace_uml_TracedLiteralSpecification_strategy = st.builds(
+    umlTrace_uml_TracedLiteralSpecification,
+)
+TracedLiteralSpecification_strategy = st.builds(
+    TracedLiteralSpecification,
+)
+umlTrace_uml_TracedLiteralUnlimitedNatural_strategy = st.builds(
+    umlTrace_uml_TracedLiteralUnlimitedNatural,
+)
+umlTrace_uml_TracedLiteralNull_strategy = st.builds(
+    umlTrace_uml_TracedLiteralNull,
+)
+umlTrace_uml_TracedLiteralReal_strategy = st.builds(
+    umlTrace_uml_TracedLiteralReal,
+)
+umlTrace_uml_TracedLiteralBoolean_strategy = st.builds(
+    umlTrace_uml_TracedLiteralBoolean,
+)
+umlTrace_uml_TracedLiteralInteger_strategy = st.builds(
+    umlTrace_uml_TracedLiteralInteger,
+)
+umlTrace_uml_TracedLiteralString_strategy = st.builds(
+    umlTrace_uml_TracedLiteralString,
+)
+TracedVariableAction_strategy = st.builds(
+    TracedVariableAction,
+)
+umlTrace_uml_TracedReadVariableAction_strategy = st.builds(
+    umlTrace_uml_TracedReadVariableAction,
+)
+umlTrace_uml_TracedWriteVariableAction_strategy = st.builds(
+    umlTrace_uml_TracedWriteVariableAction,
+)
+umlTrace_uml_TracedClearVariableAction_strategy = st.builds(
+    umlTrace_uml_TracedClearVariableAction,
+)
+umlTrace_uml_TracedTimeConstraint_strategy = st.builds(
+    umlTrace_uml_TracedTimeConstraint,
+)
+umlTrace_uml_TracedContinuation_strategy = st.builds(
+    umlTrace_uml_TracedContinuation,
+)
+TracedCombinedFragment_strategy = st.builds(
+    TracedCombinedFragment,
+)
+umlTrace_uml_TracedConsiderIgnoreFragment_strategy = st.builds(
+    umlTrace_uml_TracedConsiderIgnoreFragment,
+)
+TracedNode_strategy = st.builds(
+    TracedNode,
+)
+umlTrace_uml_TracedDevice_strategy = st.builds(
+    umlTrace_uml_TracedDevice,
+)
+umlTrace_uml_TracedExecutionEnvironment_strategy = st.builds(
+    umlTrace_uml_TracedExecutionEnvironment,
+)
+umlTrace_uml_TracedType_strategy = st.builds(
+    umlTrace_uml_TracedType,
+)
+uml_TracedType_strategy = st.builds(
+    uml_TracedType,
+)
+TracedClassifier_strategy = st.builds(
+    TracedClassifier,
+)
+umlTrace_uml_TracedDataType_strategy = st.builds(
+    umlTrace_uml_TracedDataType,
+)
+umlTrace_uml_TracedInformationItem_strategy = st.builds(
+    umlTrace_uml_TracedInformationItem,
+)
+umlTrace_uml_TracedInterface_strategy = st.builds(
+    umlTrace_uml_TracedInterface,
+)
+umlTrace_uml_TracedBehavioredClassifier_strategy = st.builds(
+    umlTrace_uml_TracedBehavioredClassifier,
+)
+umlTrace_uml_TracedStructuredClassifier_strategy = st.builds(
+    umlTrace_uml_TracedStructuredClassifier,
+)
+TracedStructuredClassifier_strategy = st.builds(
+    TracedStructuredClassifier,
+)
+umlTrace_uml_TracedEncapsulatedClassifier_strategy = st.builds(
+    umlTrace_uml_TracedEncapsulatedClassifier,
+)
+uml_TracedBehavioredClassifier_strategy = st.builds(
+    uml_TracedBehavioredClassifier,
+)
+umlTrace_uml_TracedCollaboration_strategy = st.builds(
+    umlTrace_uml_TracedCollaboration,
+)
+uml_TracedEncapsulatedClassifier_strategy = st.builds(
+    uml_TracedEncapsulatedClassifier,
+)
+umlTrace_uml_TracedClass_strategy = st.builds(
+    umlTrace_uml_TracedClass,
+)
+TracedCallAction_strategy = st.builds(
+    TracedCallAction,
+)
+umlTrace_uml_TracedStartObjectBehaviorAction_strategy = st.builds(
+    umlTrace_uml_TracedStartObjectBehaviorAction,
+)
+umlTrace_uml_TracedCallOperationAction_strategy = st.builds(
+    umlTrace_uml_TracedCallOperationAction,
+)
+umlTrace_uml_TracedCallBehaviorAction_strategy = st.builds(
+    umlTrace_uml_TracedCallBehaviorAction,
+)
+umlTrace_uml_TracedRelationship_strategy = st.builds(
+    umlTrace_uml_TracedRelationship,
+)
+TracedRelationship_strategy = st.builds(
+    TracedRelationship,
+)
+umlTrace_uml_TracedDirectedRelationship_strategy = st.builds(
+    umlTrace_uml_TracedDirectedRelationship,
+)
+TracedDirectedRelationship_strategy = st.builds(
+    TracedDirectedRelationship,
+)
+umlTrace_uml_TracedGeneralization_strategy = st.builds(
+    umlTrace_uml_TracedGeneralization,
+)
+umlTrace_uml_TracedElementImport_strategy = st.builds(
+    umlTrace_uml_TracedElementImport,
+)
+umlTrace_uml_TracedProfileApplication_strategy = st.builds(
+    umlTrace_uml_TracedProfileApplication,
+)
+umlTrace_uml_TracedPackageMerge_strategy = st.builds(
+    umlTrace_uml_TracedPackageMerge,
+)
+umlTrace_uml_TracedTemplateBinding_strategy = st.builds(
+    umlTrace_uml_TracedTemplateBinding,
+)
+umlTrace_uml_TracedPackageImport_strategy = st.builds(
+    umlTrace_uml_TracedPackageImport,
+)
+umlTrace_uml_TracedProtocolConformance_strategy = st.builds(
+    umlTrace_uml_TracedProtocolConformance,
+)
+TracedInvocationAction_strategy = st.builds(
+    TracedInvocationAction,
+)
+umlTrace_uml_TracedCallAction_strategy = st.builds(
+    umlTrace_uml_TracedCallAction,
+)
+umlTrace_uml_TracedBroadcastSignalAction_strategy = st.builds(
+    umlTrace_uml_TracedBroadcastSignalAction,
+)
+umlTrace_uml_TracedSendSignalAction_strategy = st.builds(
+    umlTrace_uml_TracedSendSignalAction,
+)
+umlTrace_uml_TracedSendObjectAction_strategy = st.builds(
+    umlTrace_uml_TracedSendObjectAction,
+)
+TracedRedefinableElement_strategy = st.builds(
+    TracedRedefinableElement,
+)
+umlTrace_uml_TracedExtensionPoint_strategy = st.builds(
+    umlTrace_uml_TracedExtensionPoint,
+)
+umlTrace_uml_TracedActivityEdge_strategy = st.builds(
+    umlTrace_uml_TracedActivityEdge,
+)
+umlTrace_uml_TracedFeature_strategy = st.builds(
+    umlTrace_uml_TracedFeature,
+)
+TracedFeature_strategy = st.builds(
+    TracedFeature,
+)
+umlTrace_uml_TracedConnector_strategy = st.builds(
+    umlTrace_uml_TracedConnector,
+)
+umlTrace_uml_TracedTemplateableElement_strategy = st.builds(
+    umlTrace_uml_TracedTemplateableElement,
+)
+uml_TracedTemplateableElement_strategy = st.builds(
+    uml_TracedTemplateableElement,
+)
+umlTrace_uml_TracedOperation_strategy = st.builds(
+    umlTrace_uml_TracedOperation,
+)
+umlTrace_uml_TracedStringExpression_strategy = st.builds(
+    umlTrace_uml_TracedStringExpression,
+)
+uml_TracedPackageableElement_strategy = st.builds(
+    uml_TracedPackageableElement,
+)
+umlTrace_uml_TracedValueSpecification_strategy = st.builds(
+    umlTrace_uml_TracedValueSpecification,
+)
+umlTrace_uml_TracedMessageEnd_strategy = st.builds(
+    umlTrace_uml_TracedMessageEnd,
+)
+uml_TracedDeploymentTarget_strategy = st.builds(
+    uml_TracedDeploymentTarget,
+)
+umlTrace_uml_TracedInstanceSpecification_strategy = st.builds(
+    umlTrace_uml_TracedInstanceSpecification,
+)
+uml_TracedConnectableElement_strategy = st.builds(
+    uml_TracedConnectableElement,
+)
+umlTrace_uml_TracedParameter_strategy = st.builds(
+    umlTrace_uml_TracedParameter,
+)
+umlTrace_uml_TracedVariable_strategy = st.builds(
+    umlTrace_uml_TracedVariable,
+)
+uml_TracedStructuralFeature_strategy = st.builds(
+    uml_TracedStructuralFeature,
+)
+umlTrace_uml_TracedProperty_strategy = st.builds(
+    umlTrace_uml_TracedProperty,
+)
+TracedProperty_strategy = st.builds(
+    TracedProperty,
+)
+umlTrace_uml_TracedExtensionEnd_strategy = st.builds(
+    umlTrace_uml_TracedExtensionEnd,
+)
+umlTrace_uml_TracedPort_strategy = st.builds(
+    umlTrace_uml_TracedPort,
+)
+uml_TracedDirectedRelationship_strategy = st.builds(
+    uml_TracedDirectedRelationship,
+)
+umlTrace_uml_TracedInformationFlow_strategy = st.builds(
+    umlTrace_uml_TracedInformationFlow,
+)
+umlTrace_uml_TracedDependency_strategy = st.builds(
+    umlTrace_uml_TracedDependency,
+)
+umlTrace_uml_TracedEvent_strategy = st.builds(
+    umlTrace_uml_TracedEvent,
+)
+TracedEvent_strategy = st.builds(
+    TracedEvent,
+)
+umlTrace_uml_TracedMessageEvent_strategy = st.builds(
+    umlTrace_uml_TracedMessageEvent,
+)
+umlTrace_uml_TracedTimeEvent_strategy = st.builds(
+    umlTrace_uml_TracedTimeEvent,
+)
+umlTrace_uml_TracedChangeEvent_strategy = st.builds(
+    umlTrace_uml_TracedChangeEvent,
+)
+umlTrace_uml_TracedGeneralizationSet_strategy = st.builds(
+    umlTrace_uml_TracedGeneralizationSet,
+)
+umlTrace_uml_TracedSignal_strategy = st.builds(
+    umlTrace_uml_TracedSignal,
+)
+umlTrace_uml_TracedLoopNode_strategy = st.builds(
+    umlTrace_uml_TracedLoopNode,
+)
+umlTrace_uml_TracedInteractionUse_strategy = st.builds(
+    umlTrace_uml_TracedInteractionUse,
+)
+umlTrace_uml_TracedObservation_strategy = st.builds(
+    umlTrace_uml_TracedObservation,
+)
+umlTrace_uml_TracedLifeline_strategy = st.builds(
+    umlTrace_uml_TracedLifeline,
+)
+umlTrace_uml_TracedExpansionRegion_strategy = st.builds(
+    umlTrace_uml_TracedExpansionRegion,
+)
+TracedFinalNode_strategy = st.builds(
+    TracedFinalNode,
+)
+umlTrace_uml_TracedActivityFinalNode_strategy = st.builds(
+    umlTrace_uml_TracedActivityFinalNode,
+)
+umlTrace_uml_TracedFlowFinalNode_strategy = st.builds(
+    umlTrace_uml_TracedFlowFinalNode,
+)
+TracedControlNode_strategy = st.builds(
+    TracedControlNode,
+)
+umlTrace_uml_TracedJoinNode_strategy = st.builds(
+    umlTrace_uml_TracedJoinNode,
+)
+umlTrace_uml_TracedMergeNode_strategy = st.builds(
+    umlTrace_uml_TracedMergeNode,
+)
+umlTrace_uml_TracedDecisionNode_strategy = st.builds(
+    umlTrace_uml_TracedDecisionNode,
+)
+umlTrace_uml_TracedFinalNode_strategy = st.builds(
+    umlTrace_uml_TracedFinalNode,
+)
+umlTrace_uml_TracedForkNode_strategy = st.builds(
+    umlTrace_uml_TracedForkNode,
+)
+umlTrace_uml_TracedInitialNode_strategy = st.builds(
+    umlTrace_uml_TracedInitialNode,
+)
+TracedAction_strategy = st.builds(
+    TracedAction,
+)
+umlTrace_uml_TracedReplyAction_strategy = st.builds(
+    umlTrace_uml_TracedReplyAction,
+)
+umlTrace_uml_TracedReadExtentAction_strategy = st.builds(
+    umlTrace_uml_TracedReadExtentAction,
+)
+umlTrace_uml_TracedAcceptEventAction_strategy = st.builds(
+    umlTrace_uml_TracedAcceptEventAction,
+)
+umlTrace_uml_TracedInvocationAction_strategy = st.builds(
+    umlTrace_uml_TracedInvocationAction,
+)
+umlTrace_uml_TracedRaiseExceptionAction_strategy = st.builds(
+    umlTrace_uml_TracedRaiseExceptionAction,
+)
+umlTrace_uml_TracedValueSpecificationAction_strategy = st.builds(
+    umlTrace_uml_TracedValueSpecificationAction,
+)
+umlTrace_uml_TracedClearAssociationAction_strategy = st.builds(
+    umlTrace_uml_TracedClearAssociationAction,
+)
+umlTrace_uml_TracedOpaqueAction_strategy = st.builds(
+    umlTrace_uml_TracedOpaqueAction,
+)
+umlTrace_uml_TracedCreateObjectAction_strategy = st.builds(
+    umlTrace_uml_TracedCreateObjectAction,
+)
+umlTrace_uml_TracedReclassifyObjectAction_strategy = st.builds(
+    umlTrace_uml_TracedReclassifyObjectAction,
+)
+umlTrace_uml_TracedStartClassifierBehaviorAction_strategy = st.builds(
+    umlTrace_uml_TracedStartClassifierBehaviorAction,
+)
+umlTrace_uml_TracedVariableAction_strategy = st.builds(
+    umlTrace_uml_TracedVariableAction,
+)
+umlTrace_uml_TracedReadIsClassifiedObjectAction_strategy = st.builds(
+    umlTrace_uml_TracedReadIsClassifiedObjectAction,
+)
+umlTrace_uml_TracedTestIdentityAction_strategy = st.builds(
+    umlTrace_uml_TracedTestIdentityAction,
+)
+umlTrace_uml_TracedUnmarshallAction_strategy = st.builds(
+    umlTrace_uml_TracedUnmarshallAction,
+)
+umlTrace_uml_TracedReadSelfAction_strategy = st.builds(
+    umlTrace_uml_TracedReadSelfAction,
+)
+umlTrace_uml_TracedReduceAction_strategy = st.builds(
+    umlTrace_uml_TracedReduceAction,
+)
+umlTrace_uml_TracedStructuralFeatureAction_strategy = st.builds(
+    umlTrace_uml_TracedStructuralFeatureAction,
+)
+umlTrace_uml_TracedDestroyObjectAction_strategy = st.builds(
+    umlTrace_uml_TracedDestroyObjectAction,
+)
+umlTrace_uml_TracedReadLinkObjectEndQualifierAction_strategy = st.builds(
+    umlTrace_uml_TracedReadLinkObjectEndQualifierAction,
+)
+umlTrace_uml_TracedReadLinkObjectEndAction_strategy = st.builds(
+    umlTrace_uml_TracedReadLinkObjectEndAction,
+)
+umlTrace_uml_TracedLinkAction_strategy = st.builds(
+    umlTrace_uml_TracedLinkAction,
+)
+TracedLinkAction_strategy = st.builds(
+    TracedLinkAction,
+)
+umlTrace_uml_TracedReadLinkAction_strategy = st.builds(
+    umlTrace_uml_TracedReadLinkAction,
+)
+umlTrace_uml_TracedWriteLinkAction_strategy = st.builds(
+    umlTrace_uml_TracedWriteLinkAction,
+)
+TracedWriteLinkAction_strategy = st.builds(
+    TracedWriteLinkAction,
+)
+umlTrace_uml_TracedDestroyLinkAction_strategy = st.builds(
+    umlTrace_uml_TracedDestroyLinkAction,
+)
+umlTrace_uml_TracedCreateLinkAction_strategy = st.builds(
+    umlTrace_uml_TracedCreateLinkAction,
+)
+TracedCreateLinkAction_strategy = st.builds(
+    TracedCreateLinkAction,
+)
+umlTrace_uml_TracedCreateLinkObjectAction_strategy = st.builds(
+    umlTrace_uml_TracedCreateLinkObjectAction,
+)
+uml_TracedNamedElement_strategy = st.builds(
+    uml_TracedNamedElement,
+)
+umlTrace_uml_TracedExtend_strategy = st.builds(
+    umlTrace_uml_TracedExtend,
+)
+umlTrace_uml_TracedInclude_strategy = st.builds(
+    umlTrace_uml_TracedInclude,
+)
+umlTrace_uml_TracedPackageableElement_strategy = st.builds(
+    umlTrace_uml_TracedPackageableElement,
+)
+umlTrace_uml_TracedNamespace_strategy = st.builds(
+    umlTrace_uml_TracedNamespace,
+)
+umlTrace_uml_TracedRedefinableElement_strategy = st.builds(
+    umlTrace_uml_TracedRedefinableElement,
+)
+ActivityContent_strategy = st.builds(
+    ActivityContent,
+)
+umlTrace_uml_TracedActivityGroup_strategy = st.builds(
+    umlTrace_uml_TracedActivityGroup,
+)
+uml_TracedRedefinableElement_strategy = st.builds(
+    uml_TracedRedefinableElement,
+)
+umlTrace_uml_TracedRedefinableTemplateSignature_strategy = st.builds(
+    umlTrace_uml_TracedRedefinableTemplateSignature,
+)
+umlTrace_uml_TracedActivityNode_strategy = st.builds(
+    umlTrace_uml_TracedActivityNode,
+)
+TracedActivityNode_strategy = st.builds(
+    TracedActivityNode,
+)
+umlTrace_uml_TracedControlNode_strategy = st.builds(
+    umlTrace_uml_TracedControlNode,
+)
+umlTrace_uml_TracedExecutableNode_strategy = st.builds(
+    umlTrace_uml_TracedExecutableNode,
+)
+TracedExecutableNode_strategy = st.builds(
+    TracedExecutableNode,
+)
+umlTrace_uml_TracedAction_strategy = st.builds(
+    umlTrace_uml_TracedAction,
+)
+uml_TracedActivityGroup_strategy = st.builds(
+    uml_TracedActivityGroup,
+)
+uml_TracedNamespace_strategy = st.builds(
+    uml_TracedNamespace,
+)
+umlTrace_uml_TracedRegion_strategy = st.builds(
+    umlTrace_uml_TracedRegion,
+)
+umlTrace_uml_TracedPackage_strategy = st.builds(
+    umlTrace_uml_TracedPackage,
+)
+umlTrace_uml_TracedState_strategy = st.builds(
+    umlTrace_uml_TracedState,
+)
+umlTrace_uml_TracedStructuredActivityNode_strategy = st.builds(
+    umlTrace_uml_TracedStructuredActivityNode,
+)
+umlTrace_uml_TracedClassifier_strategy = st.builds(
+    umlTrace_uml_TracedClassifier,
+)
+umlTrace_uml_TracedBehavioralFeature_strategy = st.builds(
+    umlTrace_uml_TracedBehavioralFeature,
+)
+umlTrace_uml_TracedInteractionOperand_strategy = st.builds(
+    umlTrace_uml_TracedInteractionOperand,
+)
+umlTrace_uml_TracedTransition_strategy = st.builds(
+    umlTrace_uml_TracedTransition,
+)
+uml_TracedRaiseExceptionAction_strategy = st.builds(
+    uml_TracedRaiseExceptionAction,
+)
+uml_TracedCommunicationPath_strategy = st.builds(
+    uml_TracedCommunicationPath,
+)
+Kernel_TracedLiteralBooleanEvaluation_strategy = st.builds(
+    Kernel_TracedLiteralBooleanEvaluation,
+)
+uml_TracedEnumeration_strategy = st.builds(
+    uml_TracedEnumeration,
+)
+uml_TracedReadLinkObjectEndAction_strategy = st.builds(
+    uml_TracedReadLinkObjectEndAction,
+)
+uml_TracedCallBehaviorAction_strategy = st.builds(
+    uml_TracedCallBehaviorAction,
+)
+uml_TracedVariable_strategy = st.builds(
+    uml_TracedVariable,
+)
+uml_TracedConnectorEnd_strategy = st.builds(
+    uml_TracedConnectorEnd,
+)
+uml_TracedArtifact_strategy = st.builds(
+    uml_TracedArtifact,
+)
+uml_TracedCallOperationAction_strategy = st.builds(
+    uml_TracedCallOperationAction,
+)
+uml_TracedLiteralUnlimitedNatural_strategy = st.builds(
+    uml_TracedLiteralUnlimitedNatural,
+)
+uml_TracedDurationObservation_strategy = st.builds(
+    uml_TracedDurationObservation,
+)
+uml_TracedBehaviorExecutionSpecification_strategy = st.builds(
+    uml_TracedBehaviorExecutionSpecification,
+)
+uml_TracedActivityParameterNode_strategy = st.builds(
+    uml_TracedActivityParameterNode,
+)
+uml_TracedExpansionNode_strategy = st.builds(
+    uml_TracedExpansionNode,
+)
+uml_TracedProfileApplication_strategy = st.builds(
+    uml_TracedProfileApplication,
+)
+uml_TracedAddStructuralFeatureValueAction_strategy = st.builds(
+    uml_TracedAddStructuralFeatureValueAction,
+)
+uml_TracedQualifierValue_strategy = st.builds(
+    uml_TracedQualifierValue,
+)
+uml_TracedImage_strategy = st.builds(
+    uml_TracedImage,
+)
+uml_TracedExtensionEnd_strategy = st.builds(
+    uml_TracedExtensionEnd,
+)
+uml_TracedProperty_strategy = st.builds(
+    uml_TracedProperty,
+)
+uml_TracedDevice_strategy = st.builds(
+    uml_TracedDevice,
+)
+uml_TracedOpaqueAction_strategy = st.builds(
+    uml_TracedOpaqueAction,
+)
+uml_TracedFinalState_strategy = st.builds(
+    uml_TracedFinalState,
+)
+uml_TracedReduceAction_strategy = st.builds(
+    uml_TracedReduceAction,
+)
+uml_TracedDuration_strategy = st.builds(
+    uml_TracedDuration,
+)
+uml_TracedTemplateParameterSubstitution_strategy = st.builds(
+    uml_TracedTemplateParameterSubstitution,
+)
+uml_TracedOutputPin_strategy = st.builds(
+    uml_TracedOutputPin,
+)
+uml_TracedActionExecutionSpecification_strategy = st.builds(
+    uml_TracedActionExecutionSpecification,
+)
+uml_TracedInformationItem_strategy = st.builds(
+    uml_TracedInformationItem,
+)
+uml_TracedOperationTemplateParameter_strategy = st.builds(
+    uml_TracedOperationTemplateParameter,
+)
+uml_TracedConnectableElementTemplateParameter_strategy = st.builds(
+    uml_TracedConnectableElementTemplateParameter,
+)
+uml_TracedLinkEndData_strategy = st.builds(
+    uml_TracedLinkEndData,
+)
+uml_TracedDurationInterval_strategy = st.builds(
+    uml_TracedDurationInterval,
+)
+uml_TracedTransition_strategy = st.builds(
+    uml_TracedTransition,
+)
+uml_TracedTrigger_strategy = st.builds(
+    uml_TracedTrigger,
+)
+uml_TracedReplyAction_strategy = st.builds(
+    uml_TracedReplyAction,
+)
+uml_TracedClause_strategy = st.builds(
+    uml_TracedClause,
+)
+uml_TracedPackageMerge_strategy = st.builds(
+    uml_TracedPackageMerge,
+)
+uml_TracedDecisionNode_strategy = st.builds(
+    uml_TracedDecisionNode,
+)
+IntermediateActions_TracedReadStructuralFeatureActionActivation_strategy = st.builds(
+    IntermediateActions_TracedReadStructuralFeatureActionActivation,
+)
+uml_TracedReadSelfAction_strategy = st.builds(
+    uml_TracedReadSelfAction,
+)
+uml_TracedOperation_strategy = st.builds(
+    uml_TracedOperation,
+)
+uml_TracedObjectFlow_strategy = st.builds(
+    uml_TracedObjectFlow,
+)
+uml_TracedParameterSet_strategy = st.builds(
+    uml_TracedParameterSet,
+)
+uml_TracedOccurrenceSpecification_strategy = st.builds(
+    uml_TracedOccurrenceSpecification,
+)
+umlTrace_uml_TracedMessageOccurrenceSpecification_strategy = st.builds(
+    umlTrace_uml_TracedMessageOccurrenceSpecification,
+)
+uml_TracedAcceptEventAction_strategy = st.builds(
+    uml_TracedAcceptEventAction,
+)
+uml_TracedComponentRealization_strategy = st.builds(
+    uml_TracedComponentRealization,
+)
+uml_TracedDataType_strategy = st.builds(
+    uml_TracedDataType,
+)
+uml_TracedComment_strategy = st.builds(
+    uml_TracedComment,
+)
+uml_TracedLoopNode_strategy = st.builds(
+    uml_TracedLoopNode,
+)
+uml_TracedCallEvent_strategy = st.builds(
+    uml_TracedCallEvent,
+)
+uml_TracedPackage_strategy = st.builds(
+    uml_TracedPackage,
+)
+uml_TracedProtocolConformance_strategy = st.builds(
+    uml_TracedProtocolConformance,
+)
+uml_TracedOpaqueBehavior_strategy = st.builds(
+    uml_TracedOpaqueBehavior,
+)
+uml_TracedInterface_strategy = st.builds(
+    uml_TracedInterface,
+)
+IntermediateActivities_TracedDecisionNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedDecisionNodeActivation,
+)
+uml_TracedInteractionConstraint_strategy = st.builds(
+    uml_TracedInteractionConstraint,
+)
+uml_TracedTimeInterval_strategy = st.builds(
+    uml_TracedTimeInterval,
+)
+uml_TracedExecutionOccurrenceSpecification_strategy = st.builds(
+    uml_TracedExecutionOccurrenceSpecification,
+)
+uml_TracedSignal_strategy = st.builds(
+    uml_TracedSignal,
+)
+uml_TracedExtensionPoint_strategy = st.builds(
+    uml_TracedExtensionPoint,
+)
+uml_TracedCreateLinkAction_strategy = st.builds(
+    uml_TracedCreateLinkAction,
+)
+Kernel_TracedLiteralIntegerEvaluation_strategy = st.builds(
+    Kernel_TracedLiteralIntegerEvaluation,
+)
+uml_TracedCentralBufferNode_strategy = st.builds(
+    uml_TracedCentralBufferNode,
+)
+uml_TracedModel_strategy = st.builds(
+    uml_TracedModel,
+)
+uml_TracedRedefinableTemplateSignature_strategy = st.builds(
+    uml_TracedRedefinableTemplateSignature,
+)
+uml_TracedJoinNode_strategy = st.builds(
+    uml_TracedJoinNode,
+)
+BasicActions_TracedOpaqueActionActivation_strategy = st.builds(
+    BasicActions_TracedOpaqueActionActivation,
+)
+uml_TracedReadLinkObjectEndQualifierAction_strategy = st.builds(
+    uml_TracedReadLinkObjectEndQualifierAction,
+)
+uml_TracedRealization_strategy = st.builds(
+    uml_TracedRealization,
+)
+uml_TracedConnectionPointReference_strategy = st.builds(
+    uml_TracedConnectionPointReference,
+)
+uml_TracedConditionalNode_strategy = st.builds(
+    uml_TracedConditionalNode,
+)
+Kernel_TracedBooleanValue_strategy = st.builds(
+    Kernel_TracedBooleanValue,
+)
+uml_TracedSignalEvent_strategy = st.builds(
+    uml_TracedSignalEvent,
+)
+uml_TracedLiteralInteger_strategy = st.builds(
+    uml_TracedLiteralInteger,
+)
+uml_TracedDestroyLinkAction_strategy = st.builds(
+    uml_TracedDestroyLinkAction,
+)
+IntermediateActivities_TracedActivityFinalNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedActivityFinalNodeActivation,
+)
+uml_TracedReadVariableAction_strategy = st.builds(
+    uml_TracedReadVariableAction,
+)
+uml_TracedActionInputPin_strategy = st.builds(
+    uml_TracedActionInputPin,
+)
+uml_TracedUsage_strategy = st.builds(
+    uml_TracedUsage,
+)
+uml_TracedDeploymentSpecification_strategy = st.builds(
+    uml_TracedDeploymentSpecification,
+)
+uml_TracedTemplateBinding_strategy = st.builds(
+    uml_TracedTemplateBinding,
+)
+uml_TracedMessageOccurrenceSpecification_strategy = st.builds(
+    uml_TracedMessageOccurrenceSpecification,
+)
+uml_TracedReception_strategy = st.builds(
+    uml_TracedReception,
+)
+uml_TracedProtocolStateMachine_strategy = st.builds(
+    uml_TracedProtocolStateMachine,
+)
+uml_TracedDataStoreNode_strategy = st.builds(
+    uml_TracedDataStoreNode,
+)
+uml_TracedReadStructuralFeatureAction_strategy = st.builds(
+    uml_TracedReadStructuralFeatureAction,
+)
+uml_TracedAnyReceiveEvent_strategy = st.builds(
+    uml_TracedAnyReceiveEvent,
+)
+Kernel_TracedIntegerValue_strategy = st.builds(
+    Kernel_TracedIntegerValue,
+)
+uml_TracedInterval_strategy = st.builds(
+    uml_TracedInterval,
+)
+uml_TracedRemoveStructuralFeatureValueAction_strategy = st.builds(
+    uml_TracedRemoveStructuralFeatureValueAction,
+)
+uml_TracedGeneralization_strategy = st.builds(
+    uml_TracedGeneralization,
+)
+uml_TracedInteractionOperand_strategy = st.builds(
+    uml_TracedInteractionOperand,
+)
+uml_TracedProtocolTransition_strategy = st.builds(
+    uml_TracedProtocolTransition,
+)
+uml_TracedInterruptibleActivityRegion_strategy = st.builds(
+    uml_TracedInterruptibleActivityRegion,
+)
+uml_TracedPartDecomposition_strategy = st.builds(
+    uml_TracedPartDecomposition,
+)
+uml_TracedTimeEvent_strategy = st.builds(
+    uml_TracedTimeEvent,
+)
+uml_TracedDeployment_strategy = st.builds(
+    uml_TracedDeployment,
+)
+Loci_TracedSemanticVisitor_strategy = st.builds(
+    Loci_TracedSemanticVisitor,
+)
+Kernel_TracedObject_strategy = st.builds(
+    Kernel_TracedObject,
+)
+IntermediateActivities_TracedJoinNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedJoinNodeActivation,
+)
+uml_TracedUseCase_strategy = st.builds(
+    uml_TracedUseCase,
+)
+uml_TracedReclassifyObjectAction_strategy = st.builds(
+    uml_TracedReclassifyObjectAction,
+)
+uml_TracedInstanceValue_strategy = st.builds(
+    uml_TracedInstanceValue,
+)
+IntermediateActions_TracedAddStructuralFeatureValueActionActivation_strategy = st.builds(
+    IntermediateActions_TracedAddStructuralFeatureValueActionActivation,
+)
+Kernel_TracedReference_strategy = st.builds(
+    Kernel_TracedReference,
+)
+uml_TracedForkNode_strategy = st.builds(
+    uml_TracedForkNode,
+)
+uml_TracedActivity_strategy = st.builds(
+    uml_TracedActivity,
+)
+uml_TracedMessage_strategy = st.builds(
+    uml_TracedMessage,
+)
+uml_TracedStateMachine_strategy = st.builds(
+    uml_TracedStateMachine,
+)
+uml_TracedActivityPartition_strategy = st.builds(
+    uml_TracedActivityPartition,
+)
+IntermediateActivities_TracedActivityParameterNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedActivityParameterNodeActivation,
+)
+BasicActions_TracedCallBehaviorActionActivation_strategy = st.builds(
+    BasicActions_TracedCallBehaviorActionActivation,
+)
+uml_TracedDestroyObjectAction_strategy = st.builds(
+    uml_TracedDestroyObjectAction,
+)
+uml_TracedAssociationClass_strategy = st.builds(
+    uml_TracedAssociationClass,
+)
+uml_TracedInformationFlow_strategy = st.builds(
+    uml_TracedInformationFlow,
+)
+uml_TracedSubstitution_strategy = st.builds(
+    uml_TracedSubstitution,
+)
+uml_TracedEnumerationLiteral_strategy = st.builds(
+    uml_TracedEnumerationLiteral,
+)
+uml_TracedStereotype_strategy = st.builds(
+    uml_TracedStereotype,
+)
+uml_TracedAcceptCallAction_strategy = st.builds(
+    uml_TracedAcceptCallAction,
+)
+uml_TracedInstanceSpecification_strategy = st.builds(
+    uml_TracedInstanceSpecification,
+)
+IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution_strategy = st.builds(
+    IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution,
+)
+uml_TracedStateInvariant_strategy = st.builds(
+    uml_TracedStateInvariant,
+)
+BasicActions_TracedInputPinActivation_strategy = st.builds(
+    BasicActions_TracedInputPinActivation,
+)
+uml_TracedLiteralString_strategy = st.builds(
+    uml_TracedLiteralString,
+)
+uml_TracedOpaqueExpression_strategy = st.builds(
+    uml_TracedOpaqueExpression,
+)
+uml_TracedParameter_strategy = st.builds(
+    uml_TracedParameter,
+)
+IntermediateActivities_TracedActivityNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedActivityNodeActivation,
+)
+uml_TracedInteraction_strategy = st.builds(
+    uml_TracedInteraction,
+)
+uml_TracedBroadcastSignalAction_strategy = st.builds(
+    uml_TracedBroadcastSignalAction,
+)
+uml_TracedConstraint_strategy = st.builds(
+    uml_TracedConstraint,
+)
+uml_TracedClearVariableAction_strategy = st.builds(
+    uml_TracedClearVariableAction,
+)
+uml_TracedInputPin_strategy = st.builds(
+    uml_TracedInputPin,
+)
+uml_TracedTimeConstraint_strategy = st.builds(
+    uml_TracedTimeConstraint,
+)
+uml_TracedContinuation_strategy = st.builds(
+    uml_TracedContinuation,
+)
+uml_TracedConsiderIgnoreFragment_strategy = st.builds(
+    uml_TracedConsiderIgnoreFragment,
+)
+uml_TracedIntervalConstraint_strategy = st.builds(
+    uml_TracedIntervalConstraint,
+)
+uml_TracedExecutionEnvironment_strategy = st.builds(
+    uml_TracedExecutionEnvironment,
+)
+uml_TracedStructuredActivityNode_strategy = st.builds(
+    uml_TracedStructuredActivityNode,
+)
+uml_TracedExtension_strategy = st.builds(
+    uml_TracedExtension,
+)
+IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution_strategy = st.builds(
+    IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution,
+)
+uml_TracedExtend_strategy = st.builds(
+    uml_TracedExtend,
+)
+uml_TracedStartClassifierBehaviorAction_strategy = st.builds(
+    uml_TracedStartClassifierBehaviorAction,
+)
+uml_TracedSequenceNode_strategy = st.builds(
+    uml_TracedSequenceNode,
+)
+uml_TracedExceptionHandler_strategy = st.builds(
+    uml_TracedExceptionHandler,
+)
+uml_TracedNode_strategy = st.builds(
+    uml_TracedNode,
+)
+uml_TracedValuePin_strategy = st.builds(
+    uml_TracedValuePin,
+)
+IntermediateActivities_TracedActivityExecution_strategy = st.builds(
+    IntermediateActivities_TracedActivityExecution,
+)
+uml_TracedCollaborationUse_strategy = st.builds(
+    uml_TracedCollaborationUse,
+)
+IntermediateActivities_TracedInitialNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedInitialNodeActivation,
+)
+uml_TracedPort_strategy = st.builds(
+    uml_TracedPort,
+)
+uml_TracedDependency_strategy = st.builds(
+    uml_TracedDependency,
+)
+uml_TracedChangeEvent_strategy = st.builds(
+    uml_TracedChangeEvent,
+)
+uml_TracedGeneralizationSet_strategy = st.builds(
+    uml_TracedGeneralizationSet,
+)
+uml_TracedInteractionUse_strategy = st.builds(
+    uml_TracedInteractionUse,
+)
+uml_TracedClass_strategy = st.builds(
+    uml_TracedClass,
+)
+umlTrace_uml_TracedNode_strategy = st.builds(
+    umlTrace_uml_TracedNode,
+)
+umlTrace_uml_TracedAssociationClass_strategy = st.builds(
+    umlTrace_uml_TracedAssociationClass,
+)
+uml_TracedPackageImport_strategy = st.builds(
+    uml_TracedPackageImport,
+)
+uml_TracedSendObjectAction_strategy = st.builds(
+    uml_TracedSendObjectAction,
+)
+uml_TracedConnector_strategy = st.builds(
+    uml_TracedConnector,
+)
+uml_TracedDestructionOccurrenceSpecification_strategy = st.builds(
+    uml_TracedDestructionOccurrenceSpecification,
+)
+uml_TracedDurationConstraint_strategy = st.builds(
+    uml_TracedDurationConstraint,
+)
+IntermediateActivities_TracedForkNodeActivation_strategy = st.builds(
+    IntermediateActivities_TracedForkNodeActivation,
+)
+uml_TracedLifeline_strategy = st.builds(
+    uml_TracedLifeline,
+)
+uml_TracedCreateObjectAction_strategy = st.builds(
+    uml_TracedCreateObjectAction,
+)
+uml_TracedExpansionRegion_strategy = st.builds(
+    uml_TracedExpansionRegion,
+)
+uml_TracedFlowFinalNode_strategy = st.builds(
+    uml_TracedFlowFinalNode,
+)
+uml_TracedInitialNode_strategy = st.builds(
+    uml_TracedInitialNode,
+)
+uml_TracedCreateLinkObjectAction_strategy = st.builds(
+    uml_TracedCreateLinkObjectAction,
+)
+uml_TracedCombinedFragment_strategy = st.builds(
+    uml_TracedCombinedFragment,
+)
+umlTrace_Traced_TracedObjects_strategy = st.builds(
+    umlTrace_Traced_TracedObjects,
+)
+Traced_TracedObjects_strategy = st.builds(
+    Traced_TracedObjects,
 )
 State_strategy = st.builds(
     State,
 )
-umlTrace::Trace_strategy = st.builds(
-    umlTrace::Trace,
+umlTrace_Trace_strategy = st.builds(
+    umlTrace_Trace,
 )
-Values::SemanticVisitor::runtimeModelElement::Value_strategy = st.builds(
-    Values::SemanticVisitor::runtimeModelElement::Value,
+Values_SemanticVisitor_runtimeModelElement_Value_strategy = st.builds(
+    Values_SemanticVisitor_runtimeModelElement_Value,
 )
-Values::ActionActivation::firing::Value_strategy = st.builds(
-    Values::ActionActivation::firing::Value,
+Values_ActionActivation_firing_Value_strategy = st.builds(
+    Values_ActionActivation_firing_Value,
 )
-umlTrace::State_strategy = st.builds(
-    umlTrace::State,
+umlTrace_State_strategy = st.builds(
+    umlTrace_State,
 )
 
-@given(instance=uml::ActivityContent_strategy)
+@given(instance=TracedExecution_strategy)
 @settings(max_examples=50)
-def test_uml::activitycontent_instantiation(instance):
-    assert isinstance(instance, uml::ActivityContent)
+def test_tracedexecution_instantiation(instance):
+    assert isinstance(instance, TracedExecution)
 
-@given(instance=BasicActions::TracedActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActivities_TracedActivityExecution_strategy)
 @settings(max_examples=50)
-def test_basicactions::tracedactionactivation_instantiation(instance):
-    assert isinstance(instance, BasicActions::TracedActionActivation)
+def test_umltrace_intermediateactivities_tracedactivityexecution_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedActivityExecution)
 
-@given(instance=umlTrace::Values::ActionActivation::firing::Value_strategy)
+@given(instance=TracedSemanticVisitor_strategy)
 @settings(max_examples=50)
-def test_umltrace::values::actionactivation::firing::value_instantiation(instance):
-    assert isinstance(instance, umlTrace::Values::ActionActivation::firing::Value)
+def test_tracedsemanticvisitor_instantiation(instance):
+    assert isinstance(instance, TracedSemanticVisitor)
 
-@given(instance=umlTrace::Values::ActionActivation::firing::Value_strategy)
-def test_umltrace::values::actionactivation::firing::value_firing_type(instance):
-    assert isinstance(instance.firing, str)
+@given(instance=umlTrace_IntermediateActivities_TracedActivityNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedactivitynodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedActivityNodeActivation)
+
+@given(instance=TracedActivityNodeActivation_strategy)
+@settings(max_examples=50)
+def test_tracedactivitynodeactivation_instantiation(instance):
+    assert isinstance(instance, TracedActivityNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedObjectNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedobjectnodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedObjectNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedControlNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedcontrolnodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedControlNodeActivation)
+
+@given(instance=TracedControlNodeActivation_strategy)
+@settings(max_examples=50)
+def test_tracedcontrolnodeactivation_instantiation(instance):
+    assert isinstance(instance, TracedControlNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedInitialNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedinitialnodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedInitialNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedMergeNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedmergenodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedMergeNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedForkNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedforknodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedForkNodeActivation)
+
+@given(instance=uml_TracedVertex_strategy)
+@settings(max_examples=50)
+def test_uml_tracedvertex_instantiation(instance):
+    assert isinstance(instance, uml_TracedVertex)
+
+@given(instance=TracedState_strategy)
+@settings(max_examples=50)
+def test_tracedstate_instantiation(instance):
+    assert isinstance(instance, TracedState)
+
+@given(instance=umlTrace_uml_TracedFinalState_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedfinalstate_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedFinalState)
+
+@given(instance=TracedExecutionSpecification_strategy)
+@settings(max_examples=50)
+def test_tracedexecutionspecification_instantiation(instance):
+    assert isinstance(instance, TracedExecutionSpecification)
+
+@given(instance=umlTrace_uml_TracedBehaviorExecutionSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedbehaviorexecutionspecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedBehaviorExecutionSpecification)
+
+@given(instance=TracedOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_tracedoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, TracedOccurrenceSpecification)
+
+@given(instance=umlTrace_uml_TracedExecutionOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexecutionoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExecutionOccurrenceSpecification)
+
+@given(instance=TracedOpaqueBehavior_strategy)
+@settings(max_examples=50)
+def test_tracedopaquebehavior_instantiation(instance):
+    assert isinstance(instance, TracedOpaqueBehavior)
+
+@given(instance=umlTrace_uml_TracedFunctionBehavior_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedfunctionbehavior_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedFunctionBehavior)
+
+@given(instance=uml_TracedStructuredClassifier_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstructuredclassifier_instantiation(instance):
+    assert isinstance(instance, uml_TracedStructuredClassifier)
+
+@given(instance=TracedMultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_tracedmultiplicityelement_instantiation(instance):
+    assert isinstance(instance, TracedMultiplicityElement)
+
+@given(instance=umlTrace_uml_TracedConnectorEnd_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedconnectorend_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConnectorEnd)
+
+@given(instance=umlTrace_uml_TracedActionExecutionSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactionexecutionspecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActionExecutionSpecification)
+
+@given(instance=TracedObjectNode_strategy)
+@settings(max_examples=50)
+def test_tracedobjectnode_instantiation(instance):
+    assert isinstance(instance, TracedObjectNode)
+
+@given(instance=umlTrace_uml_TracedExpansionNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexpansionnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExpansionNode)
+
+@given(instance=umlTrace_uml_TracedActivityParameterNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivityparameternode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivityParameterNode)
+
+@given(instance=umlTrace_uml_TracedCentralBufferNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcentralbuffernode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCentralBufferNode)
+
+@given(instance=TracedCentralBufferNode_strategy)
+@settings(max_examples=50)
+def test_tracedcentralbuffernode_instantiation(instance):
+    assert isinstance(instance, TracedCentralBufferNode)
+
+@given(instance=umlTrace_uml_TracedDataStoreNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddatastorenode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDataStoreNode)
+
+@given(instance=TracedDataType_strategy)
+@settings(max_examples=50)
+def test_traceddatatype_instantiation(instance):
+    assert isinstance(instance, TracedDataType)
+
+@given(instance=umlTrace_uml_TracedEnumeration_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedenumeration_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedEnumeration)
+
+@given(instance=umlTrace_uml_TracedPrimitiveType_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedprimitivetype_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPrimitiveType)
+
+@given(instance=TracedMessageEvent_strategy)
+@settings(max_examples=50)
+def test_tracedmessageevent_instantiation(instance):
+    assert isinstance(instance, TracedMessageEvent)
+
+@given(instance=umlTrace_uml_TracedCallEvent_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcallevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCallEvent)
+
+@given(instance=uml_ActivityContent_strategy)
+@settings(max_examples=50)
+def test_uml_activitycontent_instantiation(instance):
+    assert isinstance(instance, uml_ActivityContent)
+
+@given(instance=BasicActions_TracedActionActivation_strategy)
+@settings(max_examples=50)
+def test_basicactions_tracedactionactivation_instantiation(instance):
+    assert isinstance(instance, BasicActions_TracedActionActivation)
+
+@given(instance=umlTrace_Values_ActionActivation_firing_Value_strategy)
+@settings(max_examples=50)
+def test_umltrace_values_actionactivation_firing_value_instantiation(instance):
+    assert isinstance(instance, umlTrace_Values_ActionActivation_firing_Value)
 
 
-@given(instance=umlTrace::Values::ActionActivation::firing::Value_strategy)
-def test_umltrace::values::actionactivation::firing::value_firing_setter(instance):
+
+@given(instance=umlTrace_Values_ActionActivation_firing_Value_strategy)
+def test_umltrace_values_actionactivation_firing_value_firing_setter(instance):
     original = instance.firing
     instance.firing = original
     assert instance.firing == original
@@ -11552,3172 +11724,2997 @@ def test_umltrace::values::actionactivation::firing::value_firing_setter(instanc
 def test_tracedliteralevaluation_instantiation(instance):
     assert isinstance(instance, TracedLiteralEvaluation)
 
-@given(instance=umlTrace::Kernel::TracedLiteralIntegerEvaluation_strategy)
+@given(instance=umlTrace_Kernel_TracedLiteralIntegerEvaluation_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedliteralintegerevaluation_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedLiteralIntegerEvaluation)
+def test_umltrace_kernel_tracedliteralintegerevaluation_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedLiteralIntegerEvaluation)
 
-@given(instance=umlTrace::Kernel::TracedLiteralBooleanEvaluation_strategy)
+@given(instance=umlTrace_Kernel_TracedLiteralBooleanEvaluation_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedliteralbooleanevaluation_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedLiteralBooleanEvaluation)
+def test_umltrace_kernel_tracedliteralbooleanevaluation_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedLiteralBooleanEvaluation)
 
 @given(instance=TracedPrimitiveValue_strategy)
 @settings(max_examples=50)
 def test_tracedprimitivevalue_instantiation(instance):
     assert isinstance(instance, TracedPrimitiveValue)
 
-@given(instance=umlTrace::Kernel::TracedBooleanValue_strategy)
+@given(instance=umlTrace_Kernel_TracedBooleanValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedbooleanvalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedBooleanValue)
+def test_umltrace_kernel_tracedbooleanvalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedBooleanValue)
 
-@given(instance=umlTrace::Kernel::TracedIntegerValue_strategy)
+@given(instance=umlTrace_Kernel_TracedIntegerValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedintegervalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedIntegerValue)
+def test_umltrace_kernel_tracedintegervalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedIntegerValue)
+
+@given(instance=umlTrace_Kernel_TracedEvaluation_strategy)
+@settings(max_examples=50)
+def test_umltrace_kernel_tracedevaluation_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedEvaluation)
 
 @given(instance=TracedEvaluation_strategy)
 @settings(max_examples=50)
 def test_tracedevaluation_instantiation(instance):
     assert isinstance(instance, TracedEvaluation)
 
-@given(instance=umlTrace::Kernel::TracedLiteralEvaluation_strategy)
+@given(instance=umlTrace_Kernel_TracedLiteralEvaluation_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedliteralevaluation_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedLiteralEvaluation)
+def test_umltrace_kernel_tracedliteralevaluation_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedLiteralEvaluation)
+
+@given(instance=umlTrace_Kernel_TracedValue_strategy)
+@settings(max_examples=50)
+def test_umltrace_kernel_tracedvalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedValue)
 
 @given(instance=TracedValue_strategy)
 @settings(max_examples=50)
 def test_tracedvalue_instantiation(instance):
     assert isinstance(instance, TracedValue)
 
-@given(instance=umlTrace::Kernel::TracedPrimitiveValue_strategy)
+@given(instance=umlTrace_Kernel_TracedPrimitiveValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedprimitivevalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedPrimitiveValue)
+def test_umltrace_kernel_tracedprimitivevalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedPrimitiveValue)
 
-@given(instance=umlTrace::Kernel::TracedStructuredValue_strategy)
+@given(instance=umlTrace_Kernel_TracedStructuredValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedstructuredvalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedStructuredValue)
+def test_umltrace_kernel_tracedstructuredvalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedStructuredValue)
 
 @given(instance=TracedStructuredValue_strategy)
 @settings(max_examples=50)
 def test_tracedstructuredvalue_instantiation(instance):
     assert isinstance(instance, TracedStructuredValue)
 
-@given(instance=umlTrace::Kernel::TracedReference_strategy)
+@given(instance=umlTrace_Kernel_TracedReference_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedreference_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedReference)
+def test_umltrace_kernel_tracedreference_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedReference)
 
-@given(instance=umlTrace::Kernel::TracedCompoundValue_strategy)
+@given(instance=umlTrace_Kernel_TracedCompoundValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedcompoundvalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedCompoundValue)
+def test_umltrace_kernel_tracedcompoundvalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedCompoundValue)
 
 @given(instance=TracedCompoundValue_strategy)
 @settings(max_examples=50)
 def test_tracedcompoundvalue_instantiation(instance):
     assert isinstance(instance, TracedCompoundValue)
 
-@given(instance=umlTrace::Kernel::TracedExtensionalValue_strategy)
+@given(instance=umlTrace_Kernel_TracedExtensionalValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedextensionalvalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedExtensionalValue)
+def test_umltrace_kernel_tracedextensionalvalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedExtensionalValue)
 
 @given(instance=TracedExtensionalValue_strategy)
 @settings(max_examples=50)
 def test_tracedextensionalvalue_instantiation(instance):
     assert isinstance(instance, TracedExtensionalValue)
 
-@given(instance=umlTrace::Kernel::TracedObject_strategy)
+@given(instance=umlTrace_Kernel_TracedObject_strategy)
 @settings(max_examples=50)
-def test_umltrace::kernel::tracedobject_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedObject)
+def test_umltrace_kernel_tracedobject_instantiation(instance):
+    assert isinstance(instance, umlTrace_Kernel_TracedObject)
+
+@given(instance=umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution_strategy)
+@settings(max_examples=50)
+def test_umltrace_basicbehaviors_tracedopaquebehaviorexecution_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution)
 
 @given(instance=TracedObject_strategy)
 @settings(max_examples=50)
 def test_tracedobject_instantiation(instance):
     assert isinstance(instance, TracedObject)
 
-@given(instance=umlTrace::BasicBehaviors::TracedExecution_strategy)
+@given(instance=umlTrace_BasicBehaviors_TracedExecution_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicbehaviors::tracedexecution_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicBehaviors::TracedExecution)
+def test_umltrace_basicbehaviors_tracedexecution_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicBehaviors_TracedExecution)
 
-@given(instance=uml::TracedElement_strategy)
+@given(instance=uml_TracedElement_strategy)
 @settings(max_examples=50)
-def test_uml::tracedelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedElement)
+def test_uml_tracedelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedElement)
 
-@given(instance=umlTrace::Values::SemanticVisitor::runtimeModelElement::Value_strategy)
+@given(instance=umlTrace_Values_SemanticVisitor_runtimeModelElement_Value_strategy)
 @settings(max_examples=50)
-def test_umltrace::values::semanticvisitor::runtimemodelelement::value_instantiation(instance):
-    assert isinstance(instance, umlTrace::Values::SemanticVisitor::runtimeModelElement::Value)
+def test_umltrace_values_semanticvisitor_runtimemodelelement_value_instantiation(instance):
+    assert isinstance(instance, umlTrace_Values_SemanticVisitor_runtimeModelElement_Value)
 
 @given(instance=TracedOpaqueBehaviorExecution_strategy)
 @settings(max_examples=50)
 def test_tracedopaquebehaviorexecution_instantiation(instance):
     assert isinstance(instance, TracedOpaqueBehaviorExecution)
 
-@given(instance=umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution_strategy)
+@given(instance=umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution_strategy)
 @settings(max_examples=50)
-def test_umltrace::integerfunctions::tracedintegergreaterfunctionbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution)
+def test_umltrace_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution)
 
-@given(instance=umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution_strategy)
+@given(instance=umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution_strategy)
 @settings(max_examples=50)
-def test_umltrace::integerfunctions::tracedintegerlessfunctionbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution)
+def test_umltrace_integerfunctions_tracedintegerlessfunctionbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution)
 
-@given(instance=umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution_strategy)
+@given(instance=umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution_strategy)
 @settings(max_examples=50)
-def test_umltrace::integerfunctions::tracedintegerplusfunctionbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution)
+def test_umltrace_integerfunctions_tracedintegerplusfunctionbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution)
 
 @given(instance=TracedCallActionActivation_strategy)
 @settings(max_examples=50)
 def test_tracedcallactionactivation_instantiation(instance):
     assert isinstance(instance, TracedCallActionActivation)
 
-@given(instance=umlTrace::BasicActions::TracedCallBehaviorActionActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedCallBehaviorActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedcallbehavioractionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedCallBehaviorActionActivation)
+def test_umltrace_basicactions_tracedcallbehavioractionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedCallBehaviorActionActivation)
 
 @given(instance=TracedPinActivation_strategy)
 @settings(max_examples=50)
 def test_tracedpinactivation_instantiation(instance):
     assert isinstance(instance, TracedPinActivation)
 
-@given(instance=umlTrace::BasicActions::TracedOutputPinActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedOutputPinActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedoutputpinactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedOutputPinActivation)
+def test_umltrace_basicactions_tracedoutputpinactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedOutputPinActivation)
 
-@given(instance=umlTrace::BasicActions::TracedInputPinActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedInputPinActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedinputpinactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedInputPinActivation)
+def test_umltrace_basicactions_tracedinputpinactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedInputPinActivation)
 
 @given(instance=TracedInvocationActionActivation_strategy)
 @settings(max_examples=50)
 def test_tracedinvocationactionactivation_instantiation(instance):
     assert isinstance(instance, TracedInvocationActionActivation)
 
-@given(instance=umlTrace::BasicActions::TracedCallActionActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedCallActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedcallactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedCallActionActivation)
+def test_umltrace_basicactions_tracedcallactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedCallActionActivation)
 
 @given(instance=TracedActionActivation_strategy)
 @settings(max_examples=50)
 def test_tracedactionactivation_instantiation(instance):
     assert isinstance(instance, TracedActionActivation)
 
-@given(instance=umlTrace::BasicActions::TracedOpaqueActionActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedOpaqueActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedopaqueactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedOpaqueActionActivation)
+def test_umltrace_basicactions_tracedopaqueactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedOpaqueActionActivation)
 
-@given(instance=umlTrace::BasicActions::TracedInvocationActionActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedInvocationActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedinvocationactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedInvocationActionActivation)
+def test_umltrace_basicactions_tracedinvocationactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedInvocationActionActivation)
 
-@given(instance=umlTrace::Loci::TracedSemanticVisitor_strategy)
+@given(instance=umlTrace_BasicActions_TracedActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::loci::tracedsemanticvisitor_instantiation(instance):
-    assert isinstance(instance, umlTrace::Loci::TracedSemanticVisitor)
+def test_umltrace_basicactions_tracedactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedActionActivation)
+
+@given(instance=umlTrace_Loci_TracedSemanticVisitor_strategy)
+@settings(max_examples=50)
+def test_umltrace_loci_tracedsemanticvisitor_instantiation(instance):
+    assert isinstance(instance, umlTrace_Loci_TracedSemanticVisitor)
+
+@given(instance=umlTrace_IntermediateActivities_TracedDecisionNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_traceddecisionnodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedDecisionNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedactivityfinalnodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation)
+
+@given(instance=umlTrace_IntermediateActivities_TracedJoinNodeActivation_strategy)
+@settings(max_examples=50)
+def test_umltrace_intermediateactivities_tracedjoinnodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedJoinNodeActivation)
 
 @given(instance=TracedObjectNodeActivation_strategy)
 @settings(max_examples=50)
 def test_tracedobjectnodeactivation_instantiation(instance):
     assert isinstance(instance, TracedObjectNodeActivation)
 
-@given(instance=umlTrace::BasicActions::TracedPinActivation_strategy)
+@given(instance=umlTrace_BasicActions_TracedPinActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::basicactions::tracedpinactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedPinActivation)
+def test_umltrace_basicactions_tracedpinactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_BasicActions_TracedPinActivation)
 
-@given(instance=umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation_strategy)
+@given(instance=umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedactivityparameternodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation)
+def test_umltrace_intermediateactivities_tracedactivityparameternodeactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation)
 
-@given(instance=umlTrace::IntermediateActions::TracedCreateObjectActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActions_TracedCreateObjectActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactions::tracedcreateobjectactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActions::TracedCreateObjectActionActivation)
+def test_umltrace_intermediateactions_tracedcreateobjectactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActions_TracedCreateObjectActionActivation)
 
-@given(instance=umlTrace::IntermediateActions::TracedValueSpecificationActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActions_TracedValueSpecificationActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactions::tracedvaluespecificationactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActions::TracedValueSpecificationActionActivation)
+def test_umltrace_intermediateactions_tracedvaluespecificationactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActions_TracedValueSpecificationActionActivation)
 
 @given(instance=TracedWriteStructuralFeatureActionActivation_strategy)
 @settings(max_examples=50)
 def test_tracedwritestructuralfeatureactionactivation_instantiation(instance):
     assert isinstance(instance, TracedWriteStructuralFeatureActionActivation)
 
-@given(instance=umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactions::tracedaddstructuralfeaturevalueactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation)
+def test_umltrace_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation)
 
 @given(instance=TracedStructuralFeatureActionActivation_strategy)
 @settings(max_examples=50)
 def test_tracedstructuralfeatureactionactivation_instantiation(instance):
     assert isinstance(instance, TracedStructuralFeatureActionActivation)
 
-@given(instance=umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactions::tracedwritestructuralfeatureactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation)
+def test_umltrace_intermediateactions_tracedwritestructuralfeatureactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation)
 
-@given(instance=umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactions::tracedreadstructuralfeatureactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation)
+def test_umltrace_intermediateactions_tracedreadstructuralfeatureactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation)
 
-@given(instance=umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation_strategy)
+@given(instance=umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation_strategy)
 @settings(max_examples=50)
-def test_umltrace::intermediateactions::tracedstructuralfeatureactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation)
+def test_umltrace_intermediateactions_tracedstructuralfeatureactionactivation_instantiation(instance):
+    assert isinstance(instance, umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation)
 
-@given(instance=umlTrace::ecore::TracedEModelElement_strategy)
+@given(instance=umlTrace_ecore_TracedEModelElement_strategy)
 @settings(max_examples=50)
-def test_umltrace::ecore::tracedemodelelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::ecore::TracedEModelElement)
+def test_umltrace_ecore_tracedemodelelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_ecore_TracedEModelElement)
 
 @given(instance=TracedMessageEnd_strategy)
 @settings(max_examples=50)
 def test_tracedmessageend_instantiation(instance):
     assert isinstance(instance, TracedMessageEnd)
 
-@given(instance=umlTrace::uml::TracedGate_strategy)
+@given(instance=umlTrace_uml_TracedGate_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedgate_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedGate)
+def test_umltrace_uml_tracedgate_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedGate)
 
-@given(instance=TracedExecution_strategy)
+@given(instance=uml_TracedAction_strategy)
 @settings(max_examples=50)
-def test_tracedexecution_instantiation(instance):
-    assert isinstance(instance, TracedExecution)
-
-@given(instance=umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution_strategy)
-@settings(max_examples=50)
-def test_umltrace::basicbehaviors::tracedopaquebehaviorexecution_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution)
-
-@given(instance=TracedExecutionSpecification_strategy)
-@settings(max_examples=50)
-def test_tracedexecutionspecification_instantiation(instance):
-    assert isinstance(instance, TracedExecutionSpecification)
-
-@given(instance=umlTrace::uml::TracedBehaviorExecutionSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedbehaviorexecutionspecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedBehaviorExecutionSpecification)
-
-@given(instance=TracedOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_tracedoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, TracedOccurrenceSpecification)
-
-@given(instance=umlTrace::uml::TracedExecutionOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedexecutionoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExecutionOccurrenceSpecification)
-
-@given(instance=TracedOpaqueBehavior_strategy)
-@settings(max_examples=50)
-def test_tracedopaquebehavior_instantiation(instance):
-    assert isinstance(instance, TracedOpaqueBehavior)
-
-@given(instance=umlTrace::uml::TracedFunctionBehavior_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedfunctionbehavior_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedFunctionBehavior)
-
-@given(instance=uml::TracedStructuredClassifier_strategy)
-@settings(max_examples=50)
-def test_uml::tracedstructuredclassifier_instantiation(instance):
-    assert isinstance(instance, uml::TracedStructuredClassifier)
-
-@given(instance=TracedMultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_tracedmultiplicityelement_instantiation(instance):
-    assert isinstance(instance, TracedMultiplicityElement)
-
-@given(instance=umlTrace::uml::TracedConnectorEnd_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconnectorend_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConnectorEnd)
-
-@given(instance=umlTrace::uml::TracedActionExecutionSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactionexecutionspecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActionExecutionSpecification)
-
-@given(instance=TracedObjectNode_strategy)
-@settings(max_examples=50)
-def test_tracedobjectnode_instantiation(instance):
-    assert isinstance(instance, TracedObjectNode)
-
-@given(instance=umlTrace::uml::TracedExpansionNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedexpansionnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExpansionNode)
-
-@given(instance=umlTrace::uml::TracedActivityParameterNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivityparameternode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivityParameterNode)
-
-@given(instance=umlTrace::uml::TracedCentralBufferNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcentralbuffernode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCentralBufferNode)
-
-@given(instance=TracedCentralBufferNode_strategy)
-@settings(max_examples=50)
-def test_tracedcentralbuffernode_instantiation(instance):
-    assert isinstance(instance, TracedCentralBufferNode)
-
-@given(instance=umlTrace::uml::TracedDataStoreNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddatastorenode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDataStoreNode)
-
-@given(instance=TracedDataType_strategy)
-@settings(max_examples=50)
-def test_traceddatatype_instantiation(instance):
-    assert isinstance(instance, TracedDataType)
-
-@given(instance=umlTrace::uml::TracedEnumeration_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedenumeration_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedEnumeration)
-
-@given(instance=umlTrace::uml::TracedPrimitiveType_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedprimitivetype_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPrimitiveType)
-
-@given(instance=TracedMessageEvent_strategy)
-@settings(max_examples=50)
-def test_tracedmessageevent_instantiation(instance):
-    assert isinstance(instance, TracedMessageEvent)
-
-@given(instance=umlTrace::uml::TracedCallEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcallevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCallEvent)
-
-@given(instance=umlTrace::uml::TracedAnyReceiveEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedanyreceiveevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAnyReceiveEvent)
-
-@given(instance=uml::TracedBehavioralFeature_strategy)
-@settings(max_examples=50)
-def test_uml::tracedbehavioralfeature_instantiation(instance):
-    assert isinstance(instance, uml::TracedBehavioralFeature)
-
-@given(instance=TracedTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_tracedtemplateparameter_instantiation(instance):
-    assert isinstance(instance, TracedTemplateParameter)
-
-@given(instance=umlTrace::uml::TracedConnectableElementTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconnectableelementtemplateparameter_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConnectableElementTemplateParameter)
-
-@given(instance=umlTrace::uml::TracedClassifierTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclassifiertemplateparameter_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClassifierTemplateParameter)
-
-@given(instance=TracedPackage_strategy)
-@settings(max_examples=50)
-def test_tracedpackage_instantiation(instance):
-    assert isinstance(instance, TracedPackage)
-
-@given(instance=umlTrace::uml::TracedProfile_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedprofile_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedProfile)
-
-@given(instance=umlTrace::uml::TracedModel_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmodel_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedModel)
-
-@given(instance=TracedTransition_strategy)
-@settings(max_examples=50)
-def test_tracedtransition_instantiation(instance):
-    assert isinstance(instance, TracedTransition)
-
-@given(instance=umlTrace::uml::TracedProtocolTransition_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedprotocoltransition_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedProtocolTransition)
-
-@given(instance=TracedWriteVariableAction_strategy)
-@settings(max_examples=50)
-def test_tracedwritevariableaction_instantiation(instance):
-    assert isinstance(instance, TracedWriteVariableAction)
-
-@given(instance=umlTrace::uml::TracedRemoveVariableValueAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedremovevariablevalueaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRemoveVariableValueAction)
-
-@given(instance=umlTrace::uml::TracedAddVariableValueAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedaddvariablevalueaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAddVariableValueAction)
-
-@given(instance=TracedInteractionUse_strategy)
-@settings(max_examples=50)
-def test_tracedinteractionuse_instantiation(instance):
-    assert isinstance(instance, TracedInteractionUse)
-
-@given(instance=umlTrace::uml::TracedPartDecomposition_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedpartdecomposition_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPartDecomposition)
-
-@given(instance=TracedObservation_strategy)
-@settings(max_examples=50)
-def test_tracedobservation_instantiation(instance):
-    assert isinstance(instance, TracedObservation)
-
-@given(instance=umlTrace::uml::TracedTimeObservation_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtimeobservation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTimeObservation)
-
-@given(instance=umlTrace::uml::TracedDurationObservation_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddurationobservation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDurationObservation)
-
-@given(instance=umlTrace::uml::TracedOperationTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedoperationtemplateparameter_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOperationTemplateParameter)
-
-@given(instance=TracedInterval_strategy)
-@settings(max_examples=50)
-def test_tracedinterval_instantiation(instance):
-    assert isinstance(instance, TracedInterval)
-
-@given(instance=umlTrace::uml::TracedDurationInterval_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddurationinterval_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDurationInterval)
-
-@given(instance=umlTrace::uml::TracedTimeInterval_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtimeinterval_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTimeInterval)
-
-@given(instance=umlTrace::uml::TracedSignalEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedsignalevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSignalEvent)
-
-@given(instance=TracedBehavioralFeature_strategy)
-@settings(max_examples=50)
-def test_tracedbehavioralfeature_instantiation(instance):
-    assert isinstance(instance, TracedBehavioralFeature)
-
-@given(instance=umlTrace::uml::TracedReception_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreception_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReception)
-
-@given(instance=TracedDependency_strategy)
-@settings(max_examples=50)
-def test_traceddependency_instantiation(instance):
-    assert isinstance(instance, TracedDependency)
-
-@given(instance=umlTrace::uml::TracedUsage_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedusage_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedUsage)
-
-@given(instance=umlTrace::uml::TracedAbstraction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedabstraction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAbstraction)
-
-@given(instance=TracedAbstraction_strategy)
-@settings(max_examples=50)
-def test_tracedabstraction_instantiation(instance):
-    assert isinstance(instance, TracedAbstraction)
-
-@given(instance=umlTrace::uml::TracedManifestation_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmanifestation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedManifestation)
-
-@given(instance=umlTrace::uml::TracedRealization_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedrealization_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRealization)
-
-@given(instance=TracedRealization_strategy)
-@settings(max_examples=50)
-def test_tracedrealization_instantiation(instance):
-    assert isinstance(instance, TracedRealization)
-
-@given(instance=umlTrace::uml::TracedComponentRealization_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcomponentrealization_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedComponentRealization)
-
-@given(instance=umlTrace::uml::TracedInterfaceRealization_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinterfacerealization_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInterfaceRealization)
-
-@given(instance=umlTrace::uml::TracedSubstitution_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedsubstitution_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSubstitution)
-
-@given(instance=TracedInstanceSpecification_strategy)
-@settings(max_examples=50)
-def test_tracedinstancespecification_instantiation(instance):
-    assert isinstance(instance, TracedInstanceSpecification)
-
-@given(instance=umlTrace::uml::TracedEnumerationLiteral_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedenumerationliteral_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedEnumerationLiteral)
-
-@given(instance=TracedAcceptEventAction_strategy)
-@settings(max_examples=50)
-def test_tracedaccepteventaction_instantiation(instance):
-    assert isinstance(instance, TracedAcceptEventAction)
-
-@given(instance=umlTrace::uml::TracedAcceptCallAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedacceptcallaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAcceptCallAction)
-
-@given(instance=TracedLinkEndData_strategy)
-@settings(max_examples=50)
-def test_tracedlinkenddata_instantiation(instance):
-    assert isinstance(instance, TracedLinkEndData)
-
-@given(instance=umlTrace::uml::TracedLinkEndCreationData_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedlinkendcreationdata_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLinkEndCreationData)
-
-@given(instance=umlTrace::uml::TracedLinkEndDestructionData_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedlinkenddestructiondata_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLinkEndDestructionData)
-
-@given(instance=TracedClass_strategy)
-@settings(max_examples=50)
-def test_tracedclass_instantiation(instance):
-    assert isinstance(instance, TracedClass)
-
-@given(instance=umlTrace::uml::TracedComponent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcomponent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedComponent)
-
-@given(instance=umlTrace::uml::TracedStereotype_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstereotype_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStereotype)
-
-@given(instance=umlTrace::uml::TracedBehavior_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedbehavior_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedBehavior)
-
-@given(instance=uml::TracedInteractionFragment_strategy)
-@settings(max_examples=50)
-def test_uml::tracedinteractionfragment_instantiation(instance):
-    assert isinstance(instance, uml::TracedInteractionFragment)
-
-@given(instance=uml::TracedBehavior_strategy)
-@settings(max_examples=50)
-def test_uml::tracedbehavior_instantiation(instance):
-    assert isinstance(instance, uml::TracedBehavior)
-
-@given(instance=umlTrace::uml::TracedInteraction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinteraction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInteraction)
-
-@given(instance=TracedActivityEdge_strategy)
-@settings(max_examples=50)
-def test_tracedactivityedge_instantiation(instance):
-    assert isinstance(instance, TracedActivityEdge)
-
-@given(instance=umlTrace::uml::TracedControlFlow_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcontrolflow_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedControlFlow)
-
-@given(instance=umlTrace::uml::TracedObjectFlow_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedobjectflow_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedObjectFlow)
-
-@given(instance=TracedStateMachine_strategy)
-@settings(max_examples=50)
-def test_tracedstatemachine_instantiation(instance):
-    assert isinstance(instance, TracedStateMachine)
-
-@given(instance=umlTrace::uml::TracedProtocolStateMachine_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedprotocolstatemachine_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedProtocolStateMachine)
-
-@given(instance=umlTrace::uml::TracedDeployment_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddeployment_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDeployment)
-
-@given(instance=TracedBehavior_strategy)
-@settings(max_examples=50)
-def test_tracedbehavior_instantiation(instance):
-    assert isinstance(instance, TracedBehavior)
-
-@given(instance=umlTrace::uml::TracedOpaqueBehavior_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedopaquebehavior_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOpaqueBehavior)
-
-@given(instance=umlTrace::uml::TracedActivity_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivity_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivity)
-
-@given(instance=umlTrace::uml::TracedStateMachine_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstatemachine_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStateMachine)
-
-@given(instance=TracedActivityGroup_strategy)
-@settings(max_examples=50)
-def test_tracedactivitygroup_instantiation(instance):
-    assert isinstance(instance, TracedActivityGroup)
-
-@given(instance=umlTrace::uml::TracedInterruptibleActivityRegion_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinterruptibleactivityregion_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInterruptibleActivityRegion)
-
-@given(instance=umlTrace::uml::TracedActivityPartition_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivitypartition_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivityPartition)
-
-@given(instance=uml::TracedRelationship_strategy)
-@settings(max_examples=50)
-def test_uml::tracedrelationship_instantiation(instance):
-    assert isinstance(instance, uml::TracedRelationship)
-
-@given(instance=umlTrace::IntermediateActivities::TracedActivityExecution_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedactivityexecution_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedActivityExecution)
-
-@given(instance=TracedSemanticVisitor_strategy)
-@settings(max_examples=50)
-def test_tracedsemanticvisitor_instantiation(instance):
-    assert isinstance(instance, TracedSemanticVisitor)
-
-@given(instance=umlTrace::Kernel::TracedEvaluation_strategy)
-@settings(max_examples=50)
-def test_umltrace::kernel::tracedevaluation_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedEvaluation)
-
-@given(instance=umlTrace::Kernel::TracedValue_strategy)
-@settings(max_examples=50)
-def test_umltrace::kernel::tracedvalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::Kernel::TracedValue)
-
-@given(instance=umlTrace::IntermediateActivities::TracedActivityNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedactivitynodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedActivityNodeActivation)
-
-@given(instance=TracedActivityNodeActivation_strategy)
-@settings(max_examples=50)
-def test_tracedactivitynodeactivation_instantiation(instance):
-    assert isinstance(instance, TracedActivityNodeActivation)
-
-@given(instance=umlTrace::BasicActions::TracedActionActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::basicactions::tracedactionactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::BasicActions::TracedActionActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedObjectNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedobjectnodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedObjectNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedControlNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedcontrolnodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedControlNodeActivation)
-
-@given(instance=TracedControlNodeActivation_strategy)
-@settings(max_examples=50)
-def test_tracedcontrolnodeactivation_instantiation(instance):
-    assert isinstance(instance, TracedControlNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedInitialNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedinitialnodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedInitialNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedactivityfinalnodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedDecisionNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::traceddecisionnodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedDecisionNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedJoinNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedjoinnodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedJoinNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedMergeNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedmergenodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedMergeNodeActivation)
-
-@given(instance=umlTrace::IntermediateActivities::TracedForkNodeActivation_strategy)
-@settings(max_examples=50)
-def test_umltrace::intermediateactivities::tracedforknodeactivation_instantiation(instance):
-    assert isinstance(instance, umlTrace::IntermediateActivities::TracedForkNodeActivation)
-
-@given(instance=uml::TracedVertex_strategy)
-@settings(max_examples=50)
-def test_uml::tracedvertex_instantiation(instance):
-    assert isinstance(instance, uml::TracedVertex)
-
-@given(instance=TracedState_strategy)
-@settings(max_examples=50)
-def test_tracedstate_instantiation(instance):
-    assert isinstance(instance, TracedState)
-
-@given(instance=umlTrace::uml::TracedFinalState_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedfinalstate_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedFinalState)
-
-@given(instance=uml::TracedActivityFinalNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactivityfinalnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedActivityFinalNode)
-
-@given(instance=uml::TracedClassifierTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml::tracedclassifiertemplateparameter_instantiation(instance):
-    assert isinstance(instance, uml::TracedClassifierTemplateParameter)
-
-@given(instance=TracedInteractionFragment_strategy)
-@settings(max_examples=50)
-def test_tracedinteractionfragment_instantiation(instance):
-    assert isinstance(instance, TracedInteractionFragment)
-
-@given(instance=umlTrace::uml::TracedStateInvariant_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstateinvariant_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStateInvariant)
-
-@given(instance=umlTrace::uml::TracedExecutionSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedexecutionspecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExecutionSpecification)
-
-@given(instance=umlTrace::uml::TracedCombinedFragment_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcombinedfragment_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCombinedFragment)
-
-@given(instance=uml::TracedGeneralOrdering_strategy)
-@settings(max_examples=50)
-def test_uml::tracedgeneralordering_instantiation(instance):
-    assert isinstance(instance, uml::TracedGeneralOrdering)
-
-@given(instance=uml::TracedElementImport_strategy)
-@settings(max_examples=50)
-def test_uml::tracedelementimport_instantiation(instance):
-    assert isinstance(instance, uml::TracedElementImport)
-
-@given(instance=uml::TracedMergeNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedmergenode_instantiation(instance):
-    assert isinstance(instance, uml::TracedMergeNode)
-
-@given(instance=uml::TracedClearAssociationAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedclearassociationaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedClearAssociationAction)
-
-@given(instance=uml::TracedLinkEndCreationData_strategy)
-@settings(max_examples=50)
-def test_uml::tracedlinkendcreationdata_instantiation(instance):
-    assert isinstance(instance, uml::TracedLinkEndCreationData)
-
-@given(instance=uml::TracedPseudostate_strategy)
-@settings(max_examples=50)
-def test_uml::tracedpseudostate_instantiation(instance):
-    assert isinstance(instance, uml::TracedPseudostate)
-
-@given(instance=uml::TracedComponent_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcomponent_instantiation(instance):
-    assert isinstance(instance, uml::TracedComponent)
-
-@given(instance=uml::TracedReadIsClassifiedObjectAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadisclassifiedobjectaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadIsClassifiedObjectAction)
-
-@given(instance=uml::TracedAbstraction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedabstraction_instantiation(instance):
-    assert isinstance(instance, uml::TracedAbstraction)
-
-@given(instance=uml::TracedTimeExpression_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtimeexpression_instantiation(instance):
-    assert isinstance(instance, uml::TracedTimeExpression)
-
-@given(instance=uml::TracedValueSpecificationAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedvaluespecificationaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedValueSpecificationAction)
-
-@given(instance=uml::TracedFunctionBehavior_strategy)
-@settings(max_examples=50)
-def test_uml::tracedfunctionbehavior_instantiation(instance):
-    assert isinstance(instance, uml::TracedFunctionBehavior)
-
-@given(instance=IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution_strategy)
-@settings(max_examples=50)
-def test_integerfunctions::tracedintegergreaterfunctionbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution)
-
-@given(instance=IntermediateActivities::TracedMergeNodeActivation_strategy)
-@settings(max_examples=50)
-def test_intermediateactivities::tracedmergenodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedMergeNodeActivation)
-
-@given(instance=uml::TracedTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtemplateparameter_instantiation(instance):
-    assert isinstance(instance, uml::TracedTemplateParameter)
-
-@given(instance=uml::TracedManifestation_strategy)
-@settings(max_examples=50)
-def test_uml::tracedmanifestation_instantiation(instance):
-    assert isinstance(instance, uml::TracedManifestation)
-
-@given(instance=uml::TracedActor_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactor_instantiation(instance):
-    assert isinstance(instance, uml::TracedActor)
-
-@given(instance=uml::TracedRemoveVariableValueAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedremovevariablevalueaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedRemoveVariableValueAction)
-
-@given(instance=uml::TracedProfile_strategy)
-@settings(max_examples=50)
-def test_uml::tracedprofile_instantiation(instance):
-    assert isinstance(instance, uml::TracedProfile)
-
-@given(instance=uml::TracedTestIdentityAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtestidentityaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedTestIdentityAction)
-
-@given(instance=uml::TracedCollaboration_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcollaboration_instantiation(instance):
-    assert isinstance(instance, uml::TracedCollaboration)
-
-@given(instance=uml::TracedSendSignalAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedsendsignalaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedSendSignalAction)
-
-@given(instance=uml::TracedInterfaceRealization_strategy)
-@settings(max_examples=50)
-def test_uml::tracedinterfacerealization_instantiation(instance):
-    assert isinstance(instance, uml::TracedInterfaceRealization)
-
-@given(instance=uml::TracedUnmarshallAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedunmarshallaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedUnmarshallAction)
-
-@given(instance=uml::TracedExpression_strategy)
-@settings(max_examples=50)
-def test_uml::tracedexpression_instantiation(instance):
-    assert isinstance(instance, uml::TracedExpression)
-
-@given(instance=uml::TracedAssociation_strategy)
-@settings(max_examples=50)
-def test_uml::tracedassociation_instantiation(instance):
-    assert isinstance(instance, uml::TracedAssociation)
-
-@given(instance=uml::TracedClearStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedclearstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedClearStructuralFeatureAction)
-
-@given(instance=uml::TracedAddVariableValueAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedaddvariablevalueaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedAddVariableValueAction)
-
-@given(instance=uml::TracedLiteralReal_strategy)
-@settings(max_examples=50)
-def test_uml::tracedliteralreal_instantiation(instance):
-    assert isinstance(instance, uml::TracedLiteralReal)
-
-@given(instance=IntermediateActions::TracedCreateObjectActionActivation_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::tracedcreateobjectactionactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::TracedCreateObjectActionActivation)
-
-@given(instance=uml::TracedSlot_strategy)
-@settings(max_examples=50)
-def test_uml::tracedslot_instantiation(instance):
-    assert isinstance(instance, uml::TracedSlot)
-
-@given(instance=uml::TracedLiteralNull_strategy)
-@settings(max_examples=50)
-def test_uml::tracedliteralnull_instantiation(instance):
-    assert isinstance(instance, uml::TracedLiteralNull)
-
-@given(instance=IntermediateActions::TracedValueSpecificationActionActivation_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::tracedvaluespecificationactionactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::TracedValueSpecificationActionActivation)
-
-@given(instance=uml::TracedStartObjectBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedstartobjectbehavioraction_instantiation(instance):
-    assert isinstance(instance, uml::TracedStartObjectBehaviorAction)
-
-@given(instance=uml::TracedLiteralBoolean_strategy)
-@settings(max_examples=50)
-def test_uml::tracedliteralboolean_instantiation(instance):
-    assert isinstance(instance, uml::TracedLiteralBoolean)
-
-@given(instance=uml::TracedReadLinkAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadlinkaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadLinkAction)
-
-@given(instance=uml::TracedInclude_strategy)
-@settings(max_examples=50)
-def test_uml::tracedinclude_instantiation(instance):
-    assert isinstance(instance, uml::TracedInclude)
-
-@given(instance=uml::TracedRegion_strategy)
-@settings(max_examples=50)
-def test_uml::tracedregion_instantiation(instance):
-    assert isinstance(instance, uml::TracedRegion)
-
-@given(instance=uml::TracedState_strategy)
-@settings(max_examples=50)
-def test_uml::tracedstate_instantiation(instance):
-    assert isinstance(instance, uml::TracedState)
-
-@given(instance=uml::TracedPrimitiveType_strategy)
-@settings(max_examples=50)
-def test_uml::tracedprimitivetype_instantiation(instance):
-    assert isinstance(instance, uml::TracedPrimitiveType)
-
-@given(instance=uml::TracedStringExpression_strategy)
-@settings(max_examples=50)
-def test_uml::tracedstringexpression_instantiation(instance):
-    assert isinstance(instance, uml::TracedStringExpression)
-
-@given(instance=uml::TracedLinkEndDestructionData_strategy)
-@settings(max_examples=50)
-def test_uml::tracedlinkenddestructiondata_instantiation(instance):
-    assert isinstance(instance, uml::TracedLinkEndDestructionData)
-
-@given(instance=uml::TracedReadExtentAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadextentaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadExtentAction)
-
-@given(instance=BasicActions::TracedOutputPinActivation_strategy)
-@settings(max_examples=50)
-def test_basicactions::tracedoutputpinactivation_instantiation(instance):
-    assert isinstance(instance, BasicActions::TracedOutputPinActivation)
-
-@given(instance=uml::TracedTemplateSignature_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtemplatesignature_instantiation(instance):
-    assert isinstance(instance, uml::TracedTemplateSignature)
-
-@given(instance=uml::TracedRaiseExceptionAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedraiseexceptionaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedRaiseExceptionAction)
-
-@given(instance=uml::TracedCommunicationPath_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcommunicationpath_instantiation(instance):
-    assert isinstance(instance, uml::TracedCommunicationPath)
-
-@given(instance=Kernel::TracedLiteralBooleanEvaluation_strategy)
-@settings(max_examples=50)
-def test_kernel::tracedliteralbooleanevaluation_instantiation(instance):
-    assert isinstance(instance, Kernel::TracedLiteralBooleanEvaluation)
-
-@given(instance=uml::TracedEnumeration_strategy)
-@settings(max_examples=50)
-def test_uml::tracedenumeration_instantiation(instance):
-    assert isinstance(instance, uml::TracedEnumeration)
-
-@given(instance=uml::TracedReadLinkObjectEndAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadlinkobjectendaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadLinkObjectEndAction)
-
-@given(instance=uml::TracedCallBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcallbehavioraction_instantiation(instance):
-    assert isinstance(instance, uml::TracedCallBehaviorAction)
-
-@given(instance=uml::TracedVariable_strategy)
-@settings(max_examples=50)
-def test_uml::tracedvariable_instantiation(instance):
-    assert isinstance(instance, uml::TracedVariable)
-
-@given(instance=uml::TracedConnectorEnd_strategy)
-@settings(max_examples=50)
-def test_uml::tracedconnectorend_instantiation(instance):
-    assert isinstance(instance, uml::TracedConnectorEnd)
-
-@given(instance=uml::TracedArtifact_strategy)
-@settings(max_examples=50)
-def test_uml::tracedartifact_instantiation(instance):
-    assert isinstance(instance, uml::TracedArtifact)
-
-@given(instance=uml::TracedCallOperationAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcalloperationaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedCallOperationAction)
-
-@given(instance=uml::TracedLiteralUnlimitedNatural_strategy)
-@settings(max_examples=50)
-def test_uml::tracedliteralunlimitednatural_instantiation(instance):
-    assert isinstance(instance, uml::TracedLiteralUnlimitedNatural)
-
-@given(instance=uml::TracedDurationObservation_strategy)
-@settings(max_examples=50)
-def test_uml::traceddurationobservation_instantiation(instance):
-    assert isinstance(instance, uml::TracedDurationObservation)
-
-@given(instance=uml::TracedBehaviorExecutionSpecification_strategy)
-@settings(max_examples=50)
-def test_uml::tracedbehaviorexecutionspecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedBehaviorExecutionSpecification)
-
-@given(instance=uml::TracedActivityParameterNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactivityparameternode_instantiation(instance):
-    assert isinstance(instance, uml::TracedActivityParameterNode)
-
-@given(instance=uml::TracedExpansionNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedexpansionnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedExpansionNode)
-
-@given(instance=uml::TracedProfileApplication_strategy)
-@settings(max_examples=50)
-def test_uml::tracedprofileapplication_instantiation(instance):
-    assert isinstance(instance, uml::TracedProfileApplication)
-
-@given(instance=uml::TracedAddStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedaddstructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedAddStructuralFeatureValueAction)
-
-@given(instance=uml::TracedQualifierValue_strategy)
-@settings(max_examples=50)
-def test_uml::tracedqualifiervalue_instantiation(instance):
-    assert isinstance(instance, uml::TracedQualifierValue)
-
-@given(instance=uml::TracedImage_strategy)
-@settings(max_examples=50)
-def test_uml::tracedimage_instantiation(instance):
-    assert isinstance(instance, uml::TracedImage)
-
-@given(instance=uml::TracedExtensionEnd_strategy)
-@settings(max_examples=50)
-def test_uml::tracedextensionend_instantiation(instance):
-    assert isinstance(instance, uml::TracedExtensionEnd)
-
-@given(instance=uml::TracedProperty_strategy)
-@settings(max_examples=50)
-def test_uml::tracedproperty_instantiation(instance):
-    assert isinstance(instance, uml::TracedProperty)
-
-@given(instance=uml::TracedDevice_strategy)
-@settings(max_examples=50)
-def test_uml::traceddevice_instantiation(instance):
-    assert isinstance(instance, uml::TracedDevice)
-
-@given(instance=uml::TracedOpaqueAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedopaqueaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedOpaqueAction)
-
-@given(instance=uml::TracedFinalState_strategy)
-@settings(max_examples=50)
-def test_uml::tracedfinalstate_instantiation(instance):
-    assert isinstance(instance, uml::TracedFinalState)
-
-@given(instance=uml::TracedReduceAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreduceaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReduceAction)
-
-@given(instance=uml::TracedDuration_strategy)
-@settings(max_examples=50)
-def test_uml::tracedduration_instantiation(instance):
-    assert isinstance(instance, uml::TracedDuration)
-
-@given(instance=uml::TracedTemplateParameterSubstitution_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtemplateparametersubstitution_instantiation(instance):
-    assert isinstance(instance, uml::TracedTemplateParameterSubstitution)
-
-@given(instance=uml::TracedOutputPin_strategy)
-@settings(max_examples=50)
-def test_uml::tracedoutputpin_instantiation(instance):
-    assert isinstance(instance, uml::TracedOutputPin)
-
-@given(instance=uml::TracedActionExecutionSpecification_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactionexecutionspecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedActionExecutionSpecification)
-
-@given(instance=uml::TracedInformationItem_strategy)
-@settings(max_examples=50)
-def test_uml::tracedinformationitem_instantiation(instance):
-    assert isinstance(instance, uml::TracedInformationItem)
-
-@given(instance=uml::TracedOperationTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml::tracedoperationtemplateparameter_instantiation(instance):
-    assert isinstance(instance, uml::TracedOperationTemplateParameter)
-
-@given(instance=uml::TracedConnectableElementTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml::tracedconnectableelementtemplateparameter_instantiation(instance):
-    assert isinstance(instance, uml::TracedConnectableElementTemplateParameter)
-
-@given(instance=uml::TracedLinkEndData_strategy)
-@settings(max_examples=50)
-def test_uml::tracedlinkenddata_instantiation(instance):
-    assert isinstance(instance, uml::TracedLinkEndData)
-
-@given(instance=uml::TracedDurationInterval_strategy)
-@settings(max_examples=50)
-def test_uml::traceddurationinterval_instantiation(instance):
-    assert isinstance(instance, uml::TracedDurationInterval)
-
-@given(instance=uml::TracedTransition_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtransition_instantiation(instance):
-    assert isinstance(instance, uml::TracedTransition)
-
-@given(instance=uml::TracedTrigger_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtrigger_instantiation(instance):
-    assert isinstance(instance, uml::TracedTrigger)
-
-@given(instance=uml::TracedReplyAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreplyaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReplyAction)
-
-@given(instance=uml::TracedClause_strategy)
-@settings(max_examples=50)
-def test_uml::tracedclause_instantiation(instance):
-    assert isinstance(instance, uml::TracedClause)
-
-@given(instance=uml::TracedPackageMerge_strategy)
-@settings(max_examples=50)
-def test_uml::tracedpackagemerge_instantiation(instance):
-    assert isinstance(instance, uml::TracedPackageMerge)
-
-@given(instance=uml::TracedDecisionNode_strategy)
-@settings(max_examples=50)
-def test_uml::traceddecisionnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedDecisionNode)
-
-@given(instance=IntermediateActions::TracedReadStructuralFeatureActionActivation_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::tracedreadstructuralfeatureactionactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::TracedReadStructuralFeatureActionActivation)
-
-@given(instance=uml::TracedReadSelfAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadselfaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadSelfAction)
-
-@given(instance=uml::TracedOperation_strategy)
-@settings(max_examples=50)
-def test_uml::tracedoperation_instantiation(instance):
-    assert isinstance(instance, uml::TracedOperation)
-
-@given(instance=uml::TracedObjectFlow_strategy)
-@settings(max_examples=50)
-def test_uml::tracedobjectflow_instantiation(instance):
-    assert isinstance(instance, uml::TracedObjectFlow)
-
-@given(instance=uml::TracedParameterSet_strategy)
-@settings(max_examples=50)
-def test_uml::tracedparameterset_instantiation(instance):
-    assert isinstance(instance, uml::TracedParameterSet)
-
-@given(instance=uml::TracedOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_uml::tracedoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedOccurrenceSpecification)
-
-@given(instance=uml::TracedAcceptEventAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedaccepteventaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedAcceptEventAction)
-
-@given(instance=uml::TracedComponentRealization_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcomponentrealization_instantiation(instance):
-    assert isinstance(instance, uml::TracedComponentRealization)
-
-@given(instance=uml::TracedDataType_strategy)
-@settings(max_examples=50)
-def test_uml::traceddatatype_instantiation(instance):
-    assert isinstance(instance, uml::TracedDataType)
-
-@given(instance=uml::TracedComment_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcomment_instantiation(instance):
-    assert isinstance(instance, uml::TracedComment)
-
-@given(instance=uml::TracedLoopNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedloopnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedLoopNode)
-
-@given(instance=uml::TracedCallEvent_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcallevent_instantiation(instance):
-    assert isinstance(instance, uml::TracedCallEvent)
-
-@given(instance=uml::TracedPackage_strategy)
-@settings(max_examples=50)
-def test_uml::tracedpackage_instantiation(instance):
-    assert isinstance(instance, uml::TracedPackage)
-
-@given(instance=uml::TracedProtocolConformance_strategy)
-@settings(max_examples=50)
-def test_uml::tracedprotocolconformance_instantiation(instance):
-    assert isinstance(instance, uml::TracedProtocolConformance)
-
-@given(instance=uml::TracedOpaqueBehavior_strategy)
-@settings(max_examples=50)
-def test_uml::tracedopaquebehavior_instantiation(instance):
-    assert isinstance(instance, uml::TracedOpaqueBehavior)
-
-@given(instance=uml::TracedInterface_strategy)
-@settings(max_examples=50)
-def test_uml::tracedinterface_instantiation(instance):
-    assert isinstance(instance, uml::TracedInterface)
-
-@given(instance=IntermediateActivities::TracedDecisionNodeActivation_strategy)
-@settings(max_examples=50)
-def test_intermediateactivities::traceddecisionnodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedDecisionNodeActivation)
-
-@given(instance=uml::TracedInteractionConstraint_strategy)
-@settings(max_examples=50)
-def test_uml::tracedinteractionconstraint_instantiation(instance):
-    assert isinstance(instance, uml::TracedInteractionConstraint)
-
-@given(instance=uml::TracedTimeInterval_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtimeinterval_instantiation(instance):
-    assert isinstance(instance, uml::TracedTimeInterval)
-
-@given(instance=uml::TracedExecutionOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_uml::tracedexecutionoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedExecutionOccurrenceSpecification)
-
-@given(instance=uml::TracedSignal_strategy)
-@settings(max_examples=50)
-def test_uml::tracedsignal_instantiation(instance):
-    assert isinstance(instance, uml::TracedSignal)
-
-@given(instance=uml::TracedExtensionPoint_strategy)
-@settings(max_examples=50)
-def test_uml::tracedextensionpoint_instantiation(instance):
-    assert isinstance(instance, uml::TracedExtensionPoint)
-
-@given(instance=uml::TracedCreateLinkAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcreatelinkaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedCreateLinkAction)
-
-@given(instance=Kernel::TracedLiteralIntegerEvaluation_strategy)
-@settings(max_examples=50)
-def test_kernel::tracedliteralintegerevaluation_instantiation(instance):
-    assert isinstance(instance, Kernel::TracedLiteralIntegerEvaluation)
-
-@given(instance=uml::TracedCentralBufferNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedcentralbuffernode_instantiation(instance):
-    assert isinstance(instance, uml::TracedCentralBufferNode)
-
-@given(instance=uml::TracedModel_strategy)
-@settings(max_examples=50)
-def test_uml::tracedmodel_instantiation(instance):
-    assert isinstance(instance, uml::TracedModel)
-
-@given(instance=uml::TracedRedefinableTemplateSignature_strategy)
-@settings(max_examples=50)
-def test_uml::tracedredefinabletemplatesignature_instantiation(instance):
-    assert isinstance(instance, uml::TracedRedefinableTemplateSignature)
-
-@given(instance=uml::TracedJoinNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedjoinnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedJoinNode)
-
-@given(instance=BasicActions::TracedOpaqueActionActivation_strategy)
-@settings(max_examples=50)
-def test_basicactions::tracedopaqueactionactivation_instantiation(instance):
-    assert isinstance(instance, BasicActions::TracedOpaqueActionActivation)
-
-@given(instance=uml::TracedReadLinkObjectEndQualifierAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadlinkobjectendqualifieraction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadLinkObjectEndQualifierAction)
-
-@given(instance=uml::TracedRealization_strategy)
-@settings(max_examples=50)
-def test_uml::tracedrealization_instantiation(instance):
-    assert isinstance(instance, uml::TracedRealization)
-
-@given(instance=uml::TracedConnectionPointReference_strategy)
-@settings(max_examples=50)
-def test_uml::tracedconnectionpointreference_instantiation(instance):
-    assert isinstance(instance, uml::TracedConnectionPointReference)
-
-@given(instance=uml::TracedConditionalNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedconditionalnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedConditionalNode)
-
-@given(instance=Kernel::TracedBooleanValue_strategy)
-@settings(max_examples=50)
-def test_kernel::tracedbooleanvalue_instantiation(instance):
-    assert isinstance(instance, Kernel::TracedBooleanValue)
-
-@given(instance=uml::TracedSignalEvent_strategy)
-@settings(max_examples=50)
-def test_uml::tracedsignalevent_instantiation(instance):
-    assert isinstance(instance, uml::TracedSignalEvent)
-
-@given(instance=uml::TracedLiteralInteger_strategy)
-@settings(max_examples=50)
-def test_uml::tracedliteralinteger_instantiation(instance):
-    assert isinstance(instance, uml::TracedLiteralInteger)
-
-@given(instance=uml::TracedDestroyLinkAction_strategy)
-@settings(max_examples=50)
-def test_uml::traceddestroylinkaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedDestroyLinkAction)
-
-@given(instance=IntermediateActivities::TracedActivityFinalNodeActivation_strategy)
-@settings(max_examples=50)
-def test_intermediateactivities::tracedactivityfinalnodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedActivityFinalNodeActivation)
-
-@given(instance=uml::TracedReadVariableAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreadvariableaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadVariableAction)
-
-@given(instance=uml::TracedActionInputPin_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactioninputpin_instantiation(instance):
-    assert isinstance(instance, uml::TracedActionInputPin)
-
-@given(instance=uml::TracedUsage_strategy)
-@settings(max_examples=50)
-def test_uml::tracedusage_instantiation(instance):
-    assert isinstance(instance, uml::TracedUsage)
-
-@given(instance=uml::TracedDeploymentSpecification_strategy)
-@settings(max_examples=50)
-def test_uml::traceddeploymentspecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedDeploymentSpecification)
-
-@given(instance=uml::TracedTemplateBinding_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtemplatebinding_instantiation(instance):
-    assert isinstance(instance, uml::TracedTemplateBinding)
-
-@given(instance=TracedAssociation_strategy)
-@settings(max_examples=50)
-def test_tracedassociation_instantiation(instance):
-    assert isinstance(instance, TracedAssociation)
-
-@given(instance=umlTrace::uml::TracedCommunicationPath_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcommunicationpath_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCommunicationPath)
-
-@given(instance=umlTrace::uml::TracedExtension_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedextension_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExtension)
-
-@given(instance=TracedStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_tracedstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, TracedStructuralFeatureAction)
-
-@given(instance=umlTrace::uml::TracedClearStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclearstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClearStructuralFeatureAction)
-
-@given(instance=umlTrace::uml::TracedReadStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadStructuralFeatureAction)
-
-@given(instance=uml::TracedMessageOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_uml::tracedmessageoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedMessageOccurrenceSpecification)
-
-@given(instance=umlTrace::uml::TracedWriteStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedwritestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedWriteStructuralFeatureAction)
-
-@given(instance=uml::TracedReception_strategy)
-@settings(max_examples=50)
-def test_uml::tracedreception_instantiation(instance):
-    assert isinstance(instance, uml::TracedReception)
-
-@given(instance=TracedWriteStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_tracedwritestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, TracedWriteStructuralFeatureAction)
-
-@given(instance=umlTrace::uml::TracedAddStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedaddstructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAddStructuralFeatureValueAction)
-
-@given(instance=umlTrace::uml::TracedRemoveStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedremovestructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRemoveStructuralFeatureValueAction)
-
-@given(instance=TracedBehavioredClassifier_strategy)
-@settings(max_examples=50)
-def test_tracedbehavioredclassifier_instantiation(instance):
-    assert isinstance(instance, TracedBehavioredClassifier)
-
-@given(instance=umlTrace::uml::TracedActor_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactor_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActor)
-
-@given(instance=umlTrace::uml::TracedUseCase_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedusecase_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedUseCase)
-
-@given(instance=uml::TracedDeployedArtifact_strategy)
-@settings(max_examples=50)
-def test_uml::traceddeployedartifact_instantiation(instance):
-    assert isinstance(instance, uml::TracedDeployedArtifact)
-
-@given(instance=uml::TracedClassifier_strategy)
-@settings(max_examples=50)
-def test_uml::tracedclassifier_instantiation(instance):
-    assert isinstance(instance, uml::TracedClassifier)
-
-@given(instance=umlTrace::uml::TracedAssociation_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedassociation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAssociation)
-
-@given(instance=umlTrace::uml::TracedArtifact_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedartifact_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedArtifact)
-
-@given(instance=TracedArtifact_strategy)
-@settings(max_examples=50)
-def test_tracedartifact_instantiation(instance):
-    assert isinstance(instance, TracedArtifact)
-
-@given(instance=umlTrace::uml::TracedDeploymentSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddeploymentspecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDeploymentSpecification)
-
-@given(instance=uml::TracedActivityNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactivitynode_instantiation(instance):
-    assert isinstance(instance, uml::TracedActivityNode)
-
-@given(instance=uml::TracedObjectNode_strategy)
-@settings(max_examples=50)
-def test_uml::tracedobjectnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedObjectNode)
-
-@given(instance=TracedPin_strategy)
-@settings(max_examples=50)
-def test_tracedpin_instantiation(instance):
-    assert isinstance(instance, TracedPin)
-
-@given(instance=umlTrace::uml::TracedOutputPin_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedoutputpin_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOutputPin)
-
-@given(instance=umlTrace::uml::TracedInputPin_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinputpin_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInputPin)
-
-@given(instance=TracedInputPin_strategy)
-@settings(max_examples=50)
-def test_tracedinputpin_instantiation(instance):
-    assert isinstance(instance, TracedInputPin)
-
-@given(instance=umlTrace::uml::TracedActionInputPin_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactioninputpin_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActionInputPin)
-
-@given(instance=umlTrace::uml::TracedValuePin_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedvaluepin_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedValuePin)
-
-@given(instance=uml::TracedMultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracedmultiplicityelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedMultiplicityElement)
-
-@given(instance=umlTrace::uml::TracedPin_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedpin_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPin)
-
-@given(instance=uml::TracedTypedElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtypedelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedTypedElement)
-
-@given(instance=umlTrace::uml::TracedObjectNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedobjectnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedObjectNode)
-
-@given(instance=uml::TracedFeature_strategy)
-@settings(max_examples=50)
-def test_uml::tracedfeature_instantiation(instance):
-    assert isinstance(instance, uml::TracedFeature)
-
-@given(instance=umlTrace::uml::TracedStructuralFeature_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstructuralfeature_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStructuralFeature)
-
-@given(instance=TracedValueSpecification_strategy)
-@settings(max_examples=50)
-def test_tracedvaluespecification_instantiation(instance):
-    assert isinstance(instance, TracedValueSpecification)
-
-@given(instance=umlTrace::uml::TracedExpression_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedexpression_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExpression)
-
-@given(instance=umlTrace::uml::TracedDuration_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedduration_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDuration)
-
-@given(instance=umlTrace::uml::TracedInstanceValue_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinstancevalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInstanceValue)
-
-@given(instance=umlTrace::uml::TracedOpaqueExpression_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedopaqueexpression_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOpaqueExpression)
-
-@given(instance=umlTrace::uml::TracedInterval_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinterval_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInterval)
-
-@given(instance=umlTrace::uml::TracedTimeExpression_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtimeexpression_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTimeExpression)
-
-@given(instance=umlTrace::uml::TracedLiteralSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralspecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralSpecification)
-
-@given(instance=TracedLiteralSpecification_strategy)
-@settings(max_examples=50)
-def test_tracedliteralspecification_instantiation(instance):
-    assert isinstance(instance, TracedLiteralSpecification)
-
-@given(instance=umlTrace::uml::TracedLiteralBoolean_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralboolean_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralBoolean)
-
-@given(instance=umlTrace::uml::TracedLiteralNull_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralnull_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralNull)
-
-@given(instance=umlTrace::uml::TracedLiteralReal_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralreal_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralReal)
-
-@given(instance=umlTrace::uml::TracedLiteralInteger_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralinteger_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralInteger)
-
-@given(instance=umlTrace::uml::TracedLiteralUnlimitedNatural_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralunlimitednatural_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralUnlimitedNatural)
-
-@given(instance=umlTrace::uml::TracedLiteralString_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedliteralstring_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLiteralString)
-
-@given(instance=TracedVariableAction_strategy)
-@settings(max_examples=50)
-def test_tracedvariableaction_instantiation(instance):
-    assert isinstance(instance, TracedVariableAction)
-
-@given(instance=umlTrace::uml::TracedReadVariableAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadvariableaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadVariableAction)
-
-@given(instance=umlTrace::uml::TracedWriteVariableAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedwritevariableaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedWriteVariableAction)
-
-@given(instance=umlTrace::uml::TracedClearVariableAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclearvariableaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClearVariableAction)
-
-@given(instance=umlTrace::uml::TracedContinuation_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcontinuation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedContinuation)
-
-@given(instance=TracedCombinedFragment_strategy)
-@settings(max_examples=50)
-def test_tracedcombinedfragment_instantiation(instance):
-    assert isinstance(instance, TracedCombinedFragment)
-
-@given(instance=umlTrace::uml::TracedConsiderIgnoreFragment_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconsiderignorefragment_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConsiderIgnoreFragment)
-
-@given(instance=TracedNode_strategy)
-@settings(max_examples=50)
-def test_tracednode_instantiation(instance):
-    assert isinstance(instance, TracedNode)
-
-@given(instance=umlTrace::uml::TracedExecutionEnvironment_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedexecutionenvironment_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExecutionEnvironment)
-
-@given(instance=umlTrace::uml::TracedDevice_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddevice_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDevice)
-
-@given(instance=uml::TracedType_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtype_instantiation(instance):
-    assert isinstance(instance, uml::TracedType)
-
-@given(instance=TracedClassifier_strategy)
-@settings(max_examples=50)
-def test_tracedclassifier_instantiation(instance):
-    assert isinstance(instance, TracedClassifier)
-
-@given(instance=umlTrace::uml::TracedBehavioredClassifier_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedbehavioredclassifier_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedBehavioredClassifier)
-
-@given(instance=umlTrace::uml::TracedInformationItem_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinformationitem_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInformationItem)
-
-@given(instance=umlTrace::uml::TracedDataType_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddatatype_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDataType)
-
-@given(instance=umlTrace::uml::TracedInterface_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinterface_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInterface)
-
-@given(instance=umlTrace::uml::TracedStructuredClassifier_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstructuredclassifier_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStructuredClassifier)
-
-@given(instance=TracedStructuredClassifier_strategy)
-@settings(max_examples=50)
-def test_tracedstructuredclassifier_instantiation(instance):
-    assert isinstance(instance, TracedStructuredClassifier)
-
-@given(instance=umlTrace::uml::TracedEncapsulatedClassifier_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedencapsulatedclassifier_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedEncapsulatedClassifier)
-
-@given(instance=uml::TracedBehavioredClassifier_strategy)
-@settings(max_examples=50)
-def test_uml::tracedbehavioredclassifier_instantiation(instance):
-    assert isinstance(instance, uml::TracedBehavioredClassifier)
-
-@given(instance=umlTrace::uml::TracedCollaboration_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcollaboration_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCollaboration)
-
-@given(instance=uml::TracedEncapsulatedClassifier_strategy)
-@settings(max_examples=50)
-def test_uml::tracedencapsulatedclassifier_instantiation(instance):
-    assert isinstance(instance, uml::TracedEncapsulatedClassifier)
-
-@given(instance=umlTrace::uml::TracedClass_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclass_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClass)
-
-@given(instance=TracedCallAction_strategy)
-@settings(max_examples=50)
-def test_tracedcallaction_instantiation(instance):
-    assert isinstance(instance, TracedCallAction)
-
-@given(instance=umlTrace::uml::TracedStartObjectBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstartobjectbehavioraction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStartObjectBehaviorAction)
-
-@given(instance=umlTrace::uml::TracedCallOperationAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcalloperationaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCallOperationAction)
-
-@given(instance=umlTrace::uml::TracedCallBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcallbehavioraction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCallBehaviorAction)
-
-@given(instance=TracedRelationship_strategy)
-@settings(max_examples=50)
-def test_tracedrelationship_instantiation(instance):
-    assert isinstance(instance, TracedRelationship)
-
-@given(instance=umlTrace::uml::TracedDirectedRelationship_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddirectedrelationship_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDirectedRelationship)
-
-@given(instance=TracedDirectedRelationship_strategy)
-@settings(max_examples=50)
-def test_traceddirectedrelationship_instantiation(instance):
-    assert isinstance(instance, TracedDirectedRelationship)
-
-@given(instance=umlTrace::uml::TracedGeneralization_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedgeneralization_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedGeneralization)
-
-@given(instance=umlTrace::uml::TracedTemplateBinding_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtemplatebinding_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTemplateBinding)
-
-@given(instance=umlTrace::uml::TracedProfileApplication_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedprofileapplication_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedProfileApplication)
-
-@given(instance=umlTrace::uml::TracedPackageImport_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedpackageimport_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPackageImport)
-
-@given(instance=umlTrace::uml::TracedElementImport_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedelementimport_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedElementImport)
-
-@given(instance=umlTrace::uml::TracedPackageMerge_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedpackagemerge_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPackageMerge)
-
-@given(instance=umlTrace::uml::TracedProtocolConformance_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedprotocolconformance_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedProtocolConformance)
-
-@given(instance=TracedInvocationAction_strategy)
-@settings(max_examples=50)
-def test_tracedinvocationaction_instantiation(instance):
-    assert isinstance(instance, TracedInvocationAction)
-
-@given(instance=umlTrace::uml::TracedBroadcastSignalAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedbroadcastsignalaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedBroadcastSignalAction)
-
-@given(instance=umlTrace::uml::TracedSendSignalAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedsendsignalaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSendSignalAction)
-
-@given(instance=umlTrace::uml::TracedCallAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcallaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCallAction)
-
-@given(instance=umlTrace::uml::TracedSendObjectAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedsendobjectaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSendObjectAction)
-
-@given(instance=TracedRedefinableElement_strategy)
-@settings(max_examples=50)
-def test_tracedredefinableelement_instantiation(instance):
-    assert isinstance(instance, TracedRedefinableElement)
-
-@given(instance=umlTrace::uml::TracedExtensionPoint_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedextensionpoint_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExtensionPoint)
-
-@given(instance=umlTrace::uml::TracedActivityEdge_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivityedge_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivityEdge)
-
-@given(instance=umlTrace::uml::TracedFeature_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedfeature_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedFeature)
-
-@given(instance=TracedFeature_strategy)
-@settings(max_examples=50)
-def test_tracedfeature_instantiation(instance):
-    assert isinstance(instance, TracedFeature)
-
-@given(instance=umlTrace::uml::TracedConnector_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconnector_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConnector)
-
-@given(instance=uml::TracedTemplateableElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracedtemplateableelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedTemplateableElement)
-
-@given(instance=umlTrace::uml::TracedStringExpression_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstringexpression_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStringExpression)
-
-@given(instance=uml::TracedPackageableElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracedpackageableelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedPackageableElement)
-
-@given(instance=umlTrace::uml::TracedValueSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedvaluespecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedValueSpecification)
-
-@given(instance=uml::TracedDeploymentTarget_strategy)
-@settings(max_examples=50)
-def test_uml::traceddeploymenttarget_instantiation(instance):
-    assert isinstance(instance, uml::TracedDeploymentTarget)
-
-@given(instance=umlTrace::uml::TracedInstanceSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinstancespecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInstanceSpecification)
-
-@given(instance=uml::TracedConnectableElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracedconnectableelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedConnectableElement)
-
-@given(instance=umlTrace::uml::TracedParameter_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedparameter_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedParameter)
-
-@given(instance=umlTrace::uml::TracedVariable_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedvariable_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedVariable)
-
-@given(instance=uml::TracedStructuralFeature_strategy)
-@settings(max_examples=50)
-def test_uml::tracedstructuralfeature_instantiation(instance):
-    assert isinstance(instance, uml::TracedStructuralFeature)
-
-@given(instance=umlTrace::uml::TracedProperty_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedproperty_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedProperty)
-
-@given(instance=TracedProperty_strategy)
-@settings(max_examples=50)
-def test_tracedproperty_instantiation(instance):
-    assert isinstance(instance, TracedProperty)
-
-@given(instance=umlTrace::uml::TracedExtensionEnd_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedextensionend_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExtensionEnd)
-
-@given(instance=umlTrace::uml::TracedPort_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedport_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPort)
-
-@given(instance=uml::TracedDirectedRelationship_strategy)
-@settings(max_examples=50)
-def test_uml::traceddirectedrelationship_instantiation(instance):
-    assert isinstance(instance, uml::TracedDirectedRelationship)
-
-@given(instance=umlTrace::uml::TracedInformationFlow_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinformationflow_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInformationFlow)
-
-@given(instance=umlTrace::uml::TracedDependency_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddependency_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDependency)
-
-@given(instance=TracedEvent_strategy)
-@settings(max_examples=50)
-def test_tracedevent_instantiation(instance):
-    assert isinstance(instance, TracedEvent)
-
-@given(instance=umlTrace::uml::TracedTimeEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtimeevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTimeEvent)
-
-@given(instance=umlTrace::uml::TracedMessageEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmessageevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedMessageEvent)
-
-@given(instance=umlTrace::uml::TracedChangeEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedchangeevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedChangeEvent)
-
-@given(instance=umlTrace::uml::TracedSignal_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedsignal_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSignal)
-
-@given(instance=umlTrace::uml::TracedInteractionUse_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinteractionuse_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInteractionUse)
-
-@given(instance=TracedFinalNode_strategy)
-@settings(max_examples=50)
-def test_tracedfinalnode_instantiation(instance):
-    assert isinstance(instance, TracedFinalNode)
-
-@given(instance=umlTrace::uml::TracedActivityFinalNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivityfinalnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivityFinalNode)
-
-@given(instance=umlTrace::uml::TracedFlowFinalNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedflowfinalnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedFlowFinalNode)
-
-@given(instance=TracedControlNode_strategy)
-@settings(max_examples=50)
-def test_tracedcontrolnode_instantiation(instance):
-    assert isinstance(instance, TracedControlNode)
-
-@given(instance=umlTrace::uml::TracedJoinNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedjoinnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedJoinNode)
-
-@given(instance=umlTrace::uml::TracedMergeNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmergenode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedMergeNode)
-
-@given(instance=umlTrace::uml::TracedForkNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedforknode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedForkNode)
-
-@given(instance=umlTrace::uml::TracedFinalNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedfinalnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedFinalNode)
-
-@given(instance=umlTrace::uml::TracedDecisionNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddecisionnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDecisionNode)
-
-@given(instance=umlTrace::uml::TracedInitialNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinitialnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInitialNode)
-
-@given(instance=TracedAction_strategy)
-@settings(max_examples=50)
-def test_tracedaction_instantiation(instance):
-    assert isinstance(instance, TracedAction)
-
-@given(instance=umlTrace::uml::TracedAcceptEventAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedaccepteventaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAcceptEventAction)
-
-@given(instance=umlTrace::uml::TracedStartClassifierBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstartclassifierbehavioraction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStartClassifierBehaviorAction)
-
-@given(instance=umlTrace::uml::TracedStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStructuralFeatureAction)
-
-@given(instance=umlTrace::uml::TracedReduceAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreduceaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReduceAction)
-
-@given(instance=umlTrace::uml::TracedValueSpecificationAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedvaluespecificationaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedValueSpecificationAction)
-
-@given(instance=umlTrace::uml::TracedOpaqueAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedopaqueaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOpaqueAction)
-
-@given(instance=umlTrace::uml::TracedUnmarshallAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedunmarshallaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedUnmarshallAction)
-
-@given(instance=umlTrace::uml::TracedReadSelfAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadselfaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadSelfAction)
-
-@given(instance=umlTrace::uml::TracedReadIsClassifiedObjectAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadisclassifiedobjectaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadIsClassifiedObjectAction)
-
-@given(instance=umlTrace::uml::TracedDestroyObjectAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddestroyobjectaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDestroyObjectAction)
-
-@given(instance=umlTrace::uml::TracedVariableAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedvariableaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedVariableAction)
-
-@given(instance=umlTrace::uml::TracedReadLinkObjectEndQualifierAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadlinkobjectendqualifieraction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadLinkObjectEndQualifierAction)
-
-@given(instance=umlTrace::uml::TracedInvocationAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinvocationaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInvocationAction)
-
-@given(instance=umlTrace::uml::TracedRaiseExceptionAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedraiseexceptionaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRaiseExceptionAction)
-
-@given(instance=umlTrace::uml::TracedReadLinkObjectEndAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadlinkobjectendaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadLinkObjectEndAction)
-
-@given(instance=umlTrace::uml::TracedClearAssociationAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclearassociationaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClearAssociationAction)
-
-@given(instance=umlTrace::uml::TracedReadExtentAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadextentaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadExtentAction)
-
-@given(instance=umlTrace::uml::TracedReplyAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreplyaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReplyAction)
-
-@given(instance=umlTrace::uml::TracedTestIdentityAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtestidentityaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTestIdentityAction)
-
-@given(instance=umlTrace::uml::TracedCreateObjectAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcreateobjectaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCreateObjectAction)
-
-@given(instance=umlTrace::uml::TracedReclassifyObjectAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreclassifyobjectaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReclassifyObjectAction)
-
-@given(instance=umlTrace::uml::TracedLinkAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedlinkaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLinkAction)
-
-@given(instance=TracedLinkAction_strategy)
-@settings(max_examples=50)
-def test_tracedlinkaction_instantiation(instance):
-    assert isinstance(instance, TracedLinkAction)
-
-@given(instance=umlTrace::uml::TracedReadLinkAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedreadlinkaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedReadLinkAction)
-
-@given(instance=umlTrace::uml::TracedWriteLinkAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedwritelinkaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedWriteLinkAction)
-
-@given(instance=TracedWriteLinkAction_strategy)
-@settings(max_examples=50)
-def test_tracedwritelinkaction_instantiation(instance):
-    assert isinstance(instance, TracedWriteLinkAction)
-
-@given(instance=umlTrace::uml::TracedDestroyLinkAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddestroylinkaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDestroyLinkAction)
-
-@given(instance=umlTrace::uml::TracedCreateLinkAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcreatelinkaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCreateLinkAction)
-
-@given(instance=TracedCreateLinkAction_strategy)
-@settings(max_examples=50)
-def test_tracedcreatelinkaction_instantiation(instance):
-    assert isinstance(instance, TracedCreateLinkAction)
-
-@given(instance=umlTrace::uml::TracedCreateLinkObjectAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcreatelinkobjectaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCreateLinkObjectAction)
-
-@given(instance=uml::TracedNamedElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracednamedelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedNamedElement)
-
-@given(instance=umlTrace::uml::TracedInclude_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinclude_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInclude)
-
-@given(instance=umlTrace::uml::TracedExtend_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedextend_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExtend)
-
-@given(instance=ActivityContent_strategy)
-@settings(max_examples=50)
-def test_activitycontent_instantiation(instance):
-    assert isinstance(instance, ActivityContent)
-
-@given(instance=umlTrace::uml::TracedActivityGroup_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivitygroup_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivityGroup)
-
-@given(instance=uml::TracedRedefinableElement_strategy)
-@settings(max_examples=50)
-def test_uml::tracedredefinableelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedRedefinableElement)
-
-@given(instance=umlTrace::uml::TracedRedefinableTemplateSignature_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedredefinabletemplatesignature_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRedefinableTemplateSignature)
-
-@given(instance=umlTrace::uml::TracedActivityNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedactivitynode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedActivityNode)
-
-@given(instance=TracedActivityNode_strategy)
-@settings(max_examples=50)
-def test_tracedactivitynode_instantiation(instance):
-    assert isinstance(instance, TracedActivityNode)
-
-@given(instance=umlTrace::uml::TracedControlNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcontrolnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedControlNode)
-
-@given(instance=umlTrace::uml::TracedExecutableNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedexecutablenode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExecutableNode)
-
-@given(instance=TracedExecutableNode_strategy)
-@settings(max_examples=50)
-def test_tracedexecutablenode_instantiation(instance):
-    assert isinstance(instance, TracedExecutableNode)
-
-@given(instance=umlTrace::uml::TracedAction_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedaction_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAction)
-
-@given(instance=uml::TracedActivityGroup_strategy)
-@settings(max_examples=50)
-def test_uml::tracedactivitygroup_instantiation(instance):
-    assert isinstance(instance, uml::TracedActivityGroup)
-
-@given(instance=uml::TracedNamespace_strategy)
-@settings(max_examples=50)
-def test_uml::tracednamespace_instantiation(instance):
-    assert isinstance(instance, uml::TracedNamespace)
-
-@given(instance=umlTrace::uml::TracedTransition_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtransition_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTransition)
-
-@given(instance=umlTrace::uml::TracedInteractionOperand_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinteractionoperand_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInteractionOperand)
-
-@given(instance=umlTrace::uml::TracedRegion_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedregion_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRegion)
-
-@given(instance=umlTrace::uml::TracedPackage_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedpackage_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPackage)
-
-@given(instance=umlTrace::uml::TracedState_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstate_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedState)
-
-@given(instance=umlTrace::uml::TracedBehavioralFeature_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedbehavioralfeature_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedBehavioralFeature)
-
-@given(instance=umlTrace::uml::TracedClassifier_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclassifier_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClassifier)
-
-@given(instance=uml::TracedAction_strategy)
-@settings(max_examples=50)
-def test_uml::tracedaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedAction)
-
-@given(instance=umlTrace::uml::TracedStructuredActivityNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedstructuredactivitynode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedStructuredActivityNode)
+def test_uml_tracedaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedAction)
 
 @given(instance=TracedStructuredActivityNode_strategy)
 @settings(max_examples=50)
 def test_tracedstructuredactivitynode_instantiation(instance):
     assert isinstance(instance, TracedStructuredActivityNode)
 
-@given(instance=umlTrace::uml::TracedExpansionRegion_strategy)
+@given(instance=umlTrace_uml_TracedConditionalNode_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedexpansionregion_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExpansionRegion)
-
-@given(instance=umlTrace::uml::TracedLoopNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedloopnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLoopNode)
-
-@given(instance=umlTrace::uml::TracedSequenceNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedsequencenode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSequenceNode)
-
-@given(instance=umlTrace::uml::TracedConditionalNode_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconditionalnode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConditionalNode)
+def test_umltrace_uml_tracedconditionalnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConditionalNode)
 
 @given(instance=TracedEModelElement_strategy)
 @settings(max_examples=50)
 def test_tracedemodelelement_instantiation(instance):
     assert isinstance(instance, TracedEModelElement)
 
-@given(instance=umlTrace::uml::TracedElement_strategy)
+@given(instance=umlTrace_uml_TracedElement_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedElement)
+def test_umltrace_uml_tracedelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedElement)
 
 @given(instance=TracedElement_strategy)
 @settings(max_examples=50)
 def test_tracedelement_instantiation(instance):
     assert isinstance(instance, TracedElement)
 
-@given(instance=umlTrace::uml::TracedTemplateParameter_strategy)
+@given(instance=umlTrace_uml_TracedTemplateParameterSubstitution_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedtemplateparameter_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTemplateParameter)
+def test_umltrace_uml_tracedtemplateparametersubstitution_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTemplateParameterSubstitution)
 
-@given(instance=umlTrace::uml::TracedRelationship_strategy)
+@given(instance=umlTrace_uml_TracedQualifierValue_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedrelationship_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRelationship)
+def test_umltrace_uml_tracedqualifiervalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedQualifierValue)
 
-@given(instance=umlTrace::uml::TracedLinkEndData_strategy)
+@given(instance=umlTrace_uml_TracedComment_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedlinkenddata_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLinkEndData)
+def test_umltrace_uml_tracedcomment_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedComment)
 
-@given(instance=umlTrace::uml::TracedExceptionHandler_strategy)
+@given(instance=umlTrace_uml_TracedClause_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedexceptionhandler_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedExceptionHandler)
+def test_umltrace_uml_tracedclause_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClause)
 
-@given(instance=umlTrace::uml::TracedSlot_strategy)
+@given(instance=umlTrace_uml_TracedNamedElement_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedslot_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedSlot)
-
-@given(instance=umlTrace::uml::TracedTemplateParameterSubstitution_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtemplateparametersubstitution_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTemplateParameterSubstitution)
-
-@given(instance=umlTrace::uml::TracedTemplateSignature_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtemplatesignature_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTemplateSignature)
-
-@given(instance=umlTrace::uml::TracedComment_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcomment_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedComment)
-
-@given(instance=umlTrace::uml::TracedMultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmultiplicityelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedMultiplicityElement)
-
-@given(instance=umlTrace::uml::TracedTemplateableElement_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtemplateableelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTemplateableElement)
-
-@given(instance=umlTrace::uml::TracedClause_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedclause_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedClause)
-
-@given(instance=umlTrace::uml::TracedImage_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedimage_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedImage)
-
-@given(instance=umlTrace::uml::TracedQualifierValue_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedqualifiervalue_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedQualifierValue)
-
-@given(instance=umlTrace::uml::TracedNamedElement_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracednamedelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedNamedElement)
+def test_umltrace_uml_tracednamedelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedNamedElement)
 
 @given(instance=TracedNamedElement_strategy)
 @settings(max_examples=50)
 def test_tracednamedelement_instantiation(instance):
     assert isinstance(instance, TracedNamedElement)
 
-@given(instance=umlTrace::uml::TracedTypedElement_strategy)
+@given(instance=umlTrace_uml_TracedGeneralOrdering_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedtypedelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTypedElement)
+def test_umltrace_uml_tracedgeneralordering_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedGeneralOrdering)
 
-@given(instance=umlTrace::uml::TracedNamespace_strategy)
+@given(instance=umlTrace_uml_TracedParameterSet_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracednamespace_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedNamespace)
+def test_umltrace_uml_tracedparameterset_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedParameterSet)
 
-@given(instance=umlTrace::uml::TracedRedefinableElement_strategy)
+@given(instance=umlTrace_uml_TracedInteractionFragment_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedredefinableelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedRedefinableElement)
+def test_umltrace_uml_tracedinteractionfragment_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInteractionFragment)
 
-@given(instance=umlTrace::uml::TracedDeploymentTarget_strategy)
+@given(instance=uml_TracedMessageEnd_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::traceddeploymenttarget_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDeploymentTarget)
-
-@given(instance=umlTrace::uml::TracedMessage_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmessage_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedMessage)
-
-@given(instance=umlTrace::uml::TracedCollaborationUse_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedcollaborationuse_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedCollaborationUse)
-
-@given(instance=umlTrace::uml::TracedMessageEnd_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmessageend_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedMessageEnd)
-
-@given(instance=umlTrace::uml::TracedGeneralOrdering_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedgeneralordering_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedGeneralOrdering)
-
-@given(instance=umlTrace::uml::TracedParameterSet_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedparameterset_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedParameterSet)
-
-@given(instance=umlTrace::uml::TracedTrigger_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtrigger_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTrigger)
-
-@given(instance=umlTrace::uml::TracedLifeline_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedlifeline_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedLifeline)
-
-@given(instance=umlTrace::uml::TracedDeployedArtifact_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::traceddeployedartifact_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDeployedArtifact)
-
-@given(instance=umlTrace::uml::TracedInteractionFragment_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedinteractionfragment_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInteractionFragment)
-
-@given(instance=umlTrace::uml::TracedOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOccurrenceSpecification)
-
-@given(instance=uml::TracedMessageEnd_strategy)
-@settings(max_examples=50)
-def test_uml::tracedmessageend_instantiation(instance):
-    assert isinstance(instance, uml::TracedMessageEnd)
-
-@given(instance=umlTrace::uml::TracedMessageOccurrenceSpecification_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedmessageoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedMessageOccurrenceSpecification)
+def test_uml_tracedmessageend_instantiation(instance):
+    assert isinstance(instance, uml_TracedMessageEnd)
 
 @given(instance=TracedMessageOccurrenceSpecification_strategy)
 @settings(max_examples=50)
 def test_tracedmessageoccurrencespecification_instantiation(instance):
     assert isinstance(instance, TracedMessageOccurrenceSpecification)
 
-@given(instance=umlTrace::uml::TracedDestructionOccurrenceSpecification_strategy)
+@given(instance=umlTrace_uml_TracedDestructionOccurrenceSpecification_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::traceddestructionoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDestructionOccurrenceSpecification)
+def test_umltrace_uml_traceddestructionoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDestructionOccurrenceSpecification)
 
-@given(instance=umlTrace::uml::TracedVertex_strategy)
+@given(instance=umlTrace_uml_TracedVertex_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedvertex_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedVertex)
+def test_umltrace_uml_tracedvertex_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedVertex)
 
 @given(instance=TracedVertex_strategy)
 @settings(max_examples=50)
 def test_tracedvertex_instantiation(instance):
     assert isinstance(instance, TracedVertex)
 
-@given(instance=umlTrace::uml::TracedConnectionPointReference_strategy)
+@given(instance=umlTrace_uml_TracedConnectionPointReference_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedconnectionpointreference_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConnectionPointReference)
+def test_umltrace_uml_tracedconnectionpointreference_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConnectionPointReference)
 
-@given(instance=umlTrace::uml::TracedPseudostate_strategy)
+@given(instance=umlTrace_uml_TracedPseudostate_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedpseudostate_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPseudostate)
+def test_umltrace_uml_tracedpseudostate_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPseudostate)
 
-@given(instance=umlTrace::uml::TracedParameterableElement_strategy)
+@given(instance=umlTrace_uml_TracedParameterableElement_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedparameterableelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedParameterableElement)
+def test_umltrace_uml_tracedparameterableelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedParameterableElement)
 
-@given(instance=uml::TracedParameterableElement_strategy)
+@given(instance=uml_TracedParameterableElement_strategy)
 @settings(max_examples=50)
-def test_uml::tracedparameterableelement_instantiation(instance):
-    assert isinstance(instance, uml::TracedParameterableElement)
-
-@given(instance=umlTrace::uml::TracedConnectableElement_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconnectableelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConnectableElement)
-
-@given(instance=umlTrace::uml::TracedOperation_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedoperation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedOperation)
-
-@given(instance=umlTrace::uml::TracedPackageableElement_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedpackageableelement_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedPackageableElement)
+def test_uml_tracedparameterableelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedParameterableElement)
 
 @given(instance=TracedPackageableElement_strategy)
 @settings(max_examples=50)
 def test_tracedpackageableelement_instantiation(instance):
     assert isinstance(instance, TracedPackageableElement)
 
-@given(instance=umlTrace::uml::TracedObservation_strategy)
+@given(instance=umlTrace_uml_TracedConstraint_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedobservation_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedObservation)
-
-@given(instance=umlTrace::uml::TracedEvent_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedevent_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedEvent)
-
-@given(instance=umlTrace::uml::TracedGeneralizationSet_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedgeneralizationset_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedGeneralizationSet)
-
-@given(instance=umlTrace::uml::TracedType_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedtype_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedType)
-
-@given(instance=umlTrace::uml::TracedConstraint_strategy)
-@settings(max_examples=50)
-def test_umltrace::uml::tracedconstraint_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedConstraint)
+def test_umltrace_uml_tracedconstraint_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConstraint)
 
 @given(instance=TracedConstraint_strategy)
 @settings(max_examples=50)
 def test_tracedconstraint_instantiation(instance):
     assert isinstance(instance, TracedConstraint)
 
-@given(instance=umlTrace::uml::TracedInteractionConstraint_strategy)
+@given(instance=umlTrace_uml_TracedInteractionConstraint_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedinteractionconstraint_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedInteractionConstraint)
+def test_umltrace_uml_tracedinteractionconstraint_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInteractionConstraint)
 
-@given(instance=umlTrace::uml::TracedIntervalConstraint_strategy)
+@given(instance=umlTrace_uml_TracedIntervalConstraint_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedintervalconstraint_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedIntervalConstraint)
+def test_umltrace_uml_tracedintervalconstraint_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedIntervalConstraint)
 
 @given(instance=TracedIntervalConstraint_strategy)
 @settings(max_examples=50)
 def test_tracedintervalconstraint_instantiation(instance):
     assert isinstance(instance, TracedIntervalConstraint)
 
-@given(instance=umlTrace::uml::TracedTimeConstraint_strategy)
+@given(instance=umlTrace_uml_TracedDurationConstraint_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedtimeconstraint_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedTimeConstraint)
+def test_umltrace_uml_traceddurationconstraint_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDurationConstraint)
 
-@given(instance=umlTrace::uml::TracedDurationConstraint_strategy)
+@given(instance=uml_TracedControlFlow_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::traceddurationconstraint_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedDurationConstraint)
+def test_uml_tracedcontrolflow_instantiation(instance):
+    assert isinstance(instance, uml_TracedControlFlow)
 
-@given(instance=uml::TracedControlFlow_strategy)
+@given(instance=uml_TracedTimeObservation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedcontrolflow_instantiation(instance):
-    assert isinstance(instance, uml::TracedControlFlow)
+def test_uml_tracedtimeobservation_instantiation(instance):
+    assert isinstance(instance, uml_TracedTimeObservation)
 
-@given(instance=uml::TracedTimeObservation_strategy)
+@given(instance=uml_TracedGate_strategy)
 @settings(max_examples=50)
-def test_uml::tracedtimeobservation_instantiation(instance):
-    assert isinstance(instance, uml::TracedTimeObservation)
+def test_uml_tracedgate_instantiation(instance):
+    assert isinstance(instance, uml_TracedGate)
 
-@given(instance=uml::TracedGate_strategy)
+@given(instance=uml_TracedActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_uml::tracedgate_instantiation(instance):
-    assert isinstance(instance, uml::TracedGate)
+def test_uml_tracedactivityfinalnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedActivityFinalNode)
 
-@given(instance=uml::TracedProtocolStateMachine_strategy)
+@given(instance=uml_TracedClassifierTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedprotocolstatemachine_instantiation(instance):
-    assert isinstance(instance, uml::TracedProtocolStateMachine)
+def test_uml_tracedclassifiertemplateparameter_instantiation(instance):
+    assert isinstance(instance, uml_TracedClassifierTemplateParameter)
 
-@given(instance=uml::TracedDataStoreNode_strategy)
+@given(instance=TracedInteractionFragment_strategy)
 @settings(max_examples=50)
-def test_uml::traceddatastorenode_instantiation(instance):
-    assert isinstance(instance, uml::TracedDataStoreNode)
+def test_tracedinteractionfragment_instantiation(instance):
+    assert isinstance(instance, TracedInteractionFragment)
 
-@given(instance=uml::TracedReadStructuralFeatureAction_strategy)
+@given(instance=umlTrace_uml_TracedOccurrenceSpecification_strategy)
 @settings(max_examples=50)
-def test_uml::tracedreadstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReadStructuralFeatureAction)
+def test_umltrace_uml_tracedoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOccurrenceSpecification)
 
-@given(instance=uml::TracedAnyReceiveEvent_strategy)
+@given(instance=umlTrace_uml_TracedCombinedFragment_strategy)
 @settings(max_examples=50)
-def test_uml::tracedanyreceiveevent_instantiation(instance):
-    assert isinstance(instance, uml::TracedAnyReceiveEvent)
+def test_umltrace_uml_tracedcombinedfragment_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCombinedFragment)
 
-@given(instance=Kernel::TracedIntegerValue_strategy)
+@given(instance=uml_TracedGeneralOrdering_strategy)
 @settings(max_examples=50)
-def test_kernel::tracedintegervalue_instantiation(instance):
-    assert isinstance(instance, Kernel::TracedIntegerValue)
+def test_uml_tracedgeneralordering_instantiation(instance):
+    assert isinstance(instance, uml_TracedGeneralOrdering)
 
-@given(instance=uml::TracedInterval_strategy)
+@given(instance=uml_TracedElementImport_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinterval_instantiation(instance):
-    assert isinstance(instance, uml::TracedInterval)
+def test_uml_tracedelementimport_instantiation(instance):
+    assert isinstance(instance, uml_TracedElementImport)
 
-@given(instance=uml::TracedRemoveStructuralFeatureValueAction_strategy)
+@given(instance=uml_TracedMergeNode_strategy)
 @settings(max_examples=50)
-def test_uml::tracedremovestructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedRemoveStructuralFeatureValueAction)
+def test_uml_tracedmergenode_instantiation(instance):
+    assert isinstance(instance, uml_TracedMergeNode)
 
-@given(instance=uml::TracedGeneralization_strategy)
+@given(instance=uml_TracedClearAssociationAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedgeneralization_instantiation(instance):
-    assert isinstance(instance, uml::TracedGeneralization)
+def test_uml_tracedclearassociationaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedClearAssociationAction)
 
-@given(instance=uml::TracedInteractionOperand_strategy)
+@given(instance=uml_TracedLinkEndCreationData_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinteractionoperand_instantiation(instance):
-    assert isinstance(instance, uml::TracedInteractionOperand)
+def test_uml_tracedlinkendcreationdata_instantiation(instance):
+    assert isinstance(instance, uml_TracedLinkEndCreationData)
 
-@given(instance=uml::TracedProtocolTransition_strategy)
+@given(instance=uml_TracedPseudostate_strategy)
 @settings(max_examples=50)
-def test_uml::tracedprotocoltransition_instantiation(instance):
-    assert isinstance(instance, uml::TracedProtocolTransition)
+def test_uml_tracedpseudostate_instantiation(instance):
+    assert isinstance(instance, uml_TracedPseudostate)
 
-@given(instance=uml::TracedInterruptibleActivityRegion_strategy)
+@given(instance=uml_TracedComponent_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinterruptibleactivityregion_instantiation(instance):
-    assert isinstance(instance, uml::TracedInterruptibleActivityRegion)
+def test_uml_tracedcomponent_instantiation(instance):
+    assert isinstance(instance, uml_TracedComponent)
 
-@given(instance=uml::TracedPartDecomposition_strategy)
+@given(instance=uml_TracedReadIsClassifiedObjectAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedpartdecomposition_instantiation(instance):
-    assert isinstance(instance, uml::TracedPartDecomposition)
+def test_uml_tracedreadisclassifiedobjectaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadIsClassifiedObjectAction)
 
-@given(instance=uml::TracedTimeEvent_strategy)
+@given(instance=uml_TracedAbstraction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedtimeevent_instantiation(instance):
-    assert isinstance(instance, uml::TracedTimeEvent)
+def test_uml_tracedabstraction_instantiation(instance):
+    assert isinstance(instance, uml_TracedAbstraction)
 
-@given(instance=uml::TracedDeployment_strategy)
+@given(instance=uml_TracedTimeExpression_strategy)
 @settings(max_examples=50)
-def test_uml::traceddeployment_instantiation(instance):
-    assert isinstance(instance, uml::TracedDeployment)
+def test_uml_tracedtimeexpression_instantiation(instance):
+    assert isinstance(instance, uml_TracedTimeExpression)
 
-@given(instance=Loci::TracedSemanticVisitor_strategy)
+@given(instance=uml_TracedValueSpecificationAction_strategy)
 @settings(max_examples=50)
-def test_loci::tracedsemanticvisitor_instantiation(instance):
-    assert isinstance(instance, Loci::TracedSemanticVisitor)
+def test_uml_tracedvaluespecificationaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedValueSpecificationAction)
 
-@given(instance=Kernel::TracedObject_strategy)
+@given(instance=uml_TracedFunctionBehavior_strategy)
 @settings(max_examples=50)
-def test_kernel::tracedobject_instantiation(instance):
-    assert isinstance(instance, Kernel::TracedObject)
+def test_uml_tracedfunctionbehavior_instantiation(instance):
+    assert isinstance(instance, uml_TracedFunctionBehavior)
 
-@given(instance=IntermediateActivities::TracedJoinNodeActivation_strategy)
+@given(instance=IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::tracedjoinnodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedJoinNodeActivation)
+def test_integerfunctions_tracedintegergreaterfunctionbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution)
 
-@given(instance=uml::TracedUseCase_strategy)
+@given(instance=IntermediateActivities_TracedMergeNodeActivation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedusecase_instantiation(instance):
-    assert isinstance(instance, uml::TracedUseCase)
+def test_intermediateactivities_tracedmergenodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedMergeNodeActivation)
 
-@given(instance=uml::TracedReclassifyObjectAction_strategy)
+@given(instance=uml_TracedTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedreclassifyobjectaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedReclassifyObjectAction)
+def test_uml_tracedtemplateparameter_instantiation(instance):
+    assert isinstance(instance, uml_TracedTemplateParameter)
 
-@given(instance=uml::TracedInstanceValue_strategy)
+@given(instance=uml_TracedManifestation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinstancevalue_instantiation(instance):
-    assert isinstance(instance, uml::TracedInstanceValue)
+def test_uml_tracedmanifestation_instantiation(instance):
+    assert isinstance(instance, uml_TracedManifestation)
 
-@given(instance=IntermediateActions::TracedAddStructuralFeatureValueActionActivation_strategy)
+@given(instance=uml_TracedActor_strategy)
 @settings(max_examples=50)
-def test_intermediateactions::tracedaddstructuralfeaturevalueactionactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::TracedAddStructuralFeatureValueActionActivation)
+def test_uml_tracedactor_instantiation(instance):
+    assert isinstance(instance, uml_TracedActor)
 
-@given(instance=Kernel::TracedReference_strategy)
+@given(instance=uml_TracedRemoveVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_kernel::tracedreference_instantiation(instance):
-    assert isinstance(instance, Kernel::TracedReference)
+def test_uml_tracedremovevariablevalueaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedRemoveVariableValueAction)
 
-@given(instance=uml::TracedForkNode_strategy)
+@given(instance=uml_TracedProfile_strategy)
 @settings(max_examples=50)
-def test_uml::tracedforknode_instantiation(instance):
-    assert isinstance(instance, uml::TracedForkNode)
+def test_uml_tracedprofile_instantiation(instance):
+    assert isinstance(instance, uml_TracedProfile)
 
-@given(instance=uml::TracedActivity_strategy)
+@given(instance=uml_TracedTestIdentityAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedactivity_instantiation(instance):
-    assert isinstance(instance, uml::TracedActivity)
+def test_uml_tracedtestidentityaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedTestIdentityAction)
 
-@given(instance=uml::TracedMessage_strategy)
+@given(instance=uml_TracedCollaboration_strategy)
 @settings(max_examples=50)
-def test_uml::tracedmessage_instantiation(instance):
-    assert isinstance(instance, uml::TracedMessage)
+def test_uml_tracedcollaboration_instantiation(instance):
+    assert isinstance(instance, uml_TracedCollaboration)
 
-@given(instance=uml::TracedStateMachine_strategy)
+@given(instance=uml_TracedSendSignalAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedstatemachine_instantiation(instance):
-    assert isinstance(instance, uml::TracedStateMachine)
+def test_uml_tracedsendsignalaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedSendSignalAction)
 
-@given(instance=uml::TracedActivityPartition_strategy)
+@given(instance=uml_TracedInterfaceRealization_strategy)
 @settings(max_examples=50)
-def test_uml::tracedactivitypartition_instantiation(instance):
-    assert isinstance(instance, uml::TracedActivityPartition)
+def test_uml_tracedinterfacerealization_instantiation(instance):
+    assert isinstance(instance, uml_TracedInterfaceRealization)
 
-@given(instance=IntermediateActivities::TracedActivityParameterNodeActivation_strategy)
+@given(instance=uml_TracedUnmarshallAction_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::tracedactivityparameternodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedActivityParameterNodeActivation)
+def test_uml_tracedunmarshallaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedUnmarshallAction)
 
-@given(instance=BasicActions::TracedCallBehaviorActionActivation_strategy)
+@given(instance=uml_TracedExpression_strategy)
 @settings(max_examples=50)
-def test_basicactions::tracedcallbehavioractionactivation_instantiation(instance):
-    assert isinstance(instance, BasicActions::TracedCallBehaviorActionActivation)
+def test_uml_tracedexpression_instantiation(instance):
+    assert isinstance(instance, uml_TracedExpression)
 
-@given(instance=uml::TracedDestroyObjectAction_strategy)
+@given(instance=uml_TracedAssociation_strategy)
 @settings(max_examples=50)
-def test_uml::traceddestroyobjectaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedDestroyObjectAction)
+def test_uml_tracedassociation_instantiation(instance):
+    assert isinstance(instance, uml_TracedAssociation)
 
-@given(instance=uml::TracedAssociationClass_strategy)
+@given(instance=uml_TracedClearStructuralFeatureAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedassociationclass_instantiation(instance):
-    assert isinstance(instance, uml::TracedAssociationClass)
+def test_uml_tracedclearstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedClearStructuralFeatureAction)
 
-@given(instance=uml::TracedInformationFlow_strategy)
+@given(instance=uml_TracedAddVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinformationflow_instantiation(instance):
-    assert isinstance(instance, uml::TracedInformationFlow)
+def test_uml_tracedaddvariablevalueaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedAddVariableValueAction)
 
-@given(instance=uml::TracedSubstitution_strategy)
+@given(instance=uml_TracedLiteralReal_strategy)
 @settings(max_examples=50)
-def test_uml::tracedsubstitution_instantiation(instance):
-    assert isinstance(instance, uml::TracedSubstitution)
+def test_uml_tracedliteralreal_instantiation(instance):
+    assert isinstance(instance, uml_TracedLiteralReal)
 
-@given(instance=uml::TracedEnumerationLiteral_strategy)
+@given(instance=IntermediateActions_TracedCreateObjectActionActivation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedenumerationliteral_instantiation(instance):
-    assert isinstance(instance, uml::TracedEnumerationLiteral)
+def test_intermediateactions_tracedcreateobjectactionactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_TracedCreateObjectActionActivation)
 
-@given(instance=uml::TracedStereotype_strategy)
+@given(instance=uml_TracedSlot_strategy)
 @settings(max_examples=50)
-def test_uml::tracedstereotype_instantiation(instance):
-    assert isinstance(instance, uml::TracedStereotype)
+def test_uml_tracedslot_instantiation(instance):
+    assert isinstance(instance, uml_TracedSlot)
 
-@given(instance=uml::TracedAcceptCallAction_strategy)
+@given(instance=uml_TracedLiteralNull_strategy)
 @settings(max_examples=50)
-def test_uml::tracedacceptcallaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedAcceptCallAction)
+def test_uml_tracedliteralnull_instantiation(instance):
+    assert isinstance(instance, uml_TracedLiteralNull)
 
-@given(instance=uml::TracedInstanceSpecification_strategy)
+@given(instance=IntermediateActions_TracedValueSpecificationActionActivation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinstancespecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedInstanceSpecification)
+def test_intermediateactions_tracedvaluespecificationactionactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_TracedValueSpecificationActionActivation)
 
-@given(instance=IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution_strategy)
+@given(instance=uml_TracedStartObjectBehaviorAction_strategy)
 @settings(max_examples=50)
-def test_integerfunctions::tracedintegerlessfunctionbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution)
+def test_uml_tracedstartobjectbehavioraction_instantiation(instance):
+    assert isinstance(instance, uml_TracedStartObjectBehaviorAction)
 
-@given(instance=uml::TracedStateInvariant_strategy)
+@given(instance=uml_TracedLiteralBoolean_strategy)
 @settings(max_examples=50)
-def test_uml::tracedstateinvariant_instantiation(instance):
-    assert isinstance(instance, uml::TracedStateInvariant)
+def test_uml_tracedliteralboolean_instantiation(instance):
+    assert isinstance(instance, uml_TracedLiteralBoolean)
 
-@given(instance=BasicActions::TracedInputPinActivation_strategy)
+@given(instance=uml_TracedReadLinkAction_strategy)
 @settings(max_examples=50)
-def test_basicactions::tracedinputpinactivation_instantiation(instance):
-    assert isinstance(instance, BasicActions::TracedInputPinActivation)
+def test_uml_tracedreadlinkaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadLinkAction)
 
-@given(instance=uml::TracedLiteralString_strategy)
+@given(instance=uml_TracedInclude_strategy)
 @settings(max_examples=50)
-def test_uml::tracedliteralstring_instantiation(instance):
-    assert isinstance(instance, uml::TracedLiteralString)
+def test_uml_tracedinclude_instantiation(instance):
+    assert isinstance(instance, uml_TracedInclude)
 
-@given(instance=uml::TracedOpaqueExpression_strategy)
+@given(instance=uml_TracedRegion_strategy)
 @settings(max_examples=50)
-def test_uml::tracedopaqueexpression_instantiation(instance):
-    assert isinstance(instance, uml::TracedOpaqueExpression)
+def test_uml_tracedregion_instantiation(instance):
+    assert isinstance(instance, uml_TracedRegion)
 
-@given(instance=uml::TracedParameter_strategy)
+@given(instance=uml_TracedState_strategy)
 @settings(max_examples=50)
-def test_uml::tracedparameter_instantiation(instance):
-    assert isinstance(instance, uml::TracedParameter)
+def test_uml_tracedstate_instantiation(instance):
+    assert isinstance(instance, uml_TracedState)
 
-@given(instance=IntermediateActivities::TracedActivityNodeActivation_strategy)
+@given(instance=uml_TracedPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::tracedactivitynodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedActivityNodeActivation)
+def test_uml_tracedprimitivetype_instantiation(instance):
+    assert isinstance(instance, uml_TracedPrimitiveType)
 
-@given(instance=uml::TracedInteraction_strategy)
+@given(instance=uml_TracedStringExpression_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinteraction_instantiation(instance):
-    assert isinstance(instance, uml::TracedInteraction)
+def test_uml_tracedstringexpression_instantiation(instance):
+    assert isinstance(instance, uml_TracedStringExpression)
 
-@given(instance=uml::TracedBroadcastSignalAction_strategy)
+@given(instance=uml_TracedLinkEndDestructionData_strategy)
 @settings(max_examples=50)
-def test_uml::tracedbroadcastsignalaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedBroadcastSignalAction)
+def test_uml_tracedlinkenddestructiondata_instantiation(instance):
+    assert isinstance(instance, uml_TracedLinkEndDestructionData)
 
-@given(instance=uml::TracedConstraint_strategy)
+@given(instance=umlTrace_uml_TracedAnyReceiveEvent_strategy)
 @settings(max_examples=50)
-def test_uml::tracedconstraint_instantiation(instance):
-    assert isinstance(instance, uml::TracedConstraint)
+def test_umltrace_uml_tracedanyreceiveevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAnyReceiveEvent)
 
-@given(instance=uml::TracedClearVariableAction_strategy)
+@given(instance=uml_TracedReadExtentAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedclearvariableaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedClearVariableAction)
+def test_uml_tracedreadextentaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadExtentAction)
 
-@given(instance=uml::TracedInputPin_strategy)
+@given(instance=BasicActions_TracedOutputPinActivation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinputpin_instantiation(instance):
-    assert isinstance(instance, uml::TracedInputPin)
+def test_basicactions_tracedoutputpinactivation_instantiation(instance):
+    assert isinstance(instance, BasicActions_TracedOutputPinActivation)
 
-@given(instance=uml::TracedTimeConstraint_strategy)
+@given(instance=uml_TracedBehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_uml::tracedtimeconstraint_instantiation(instance):
-    assert isinstance(instance, uml::TracedTimeConstraint)
+def test_uml_tracedbehavioralfeature_instantiation(instance):
+    assert isinstance(instance, uml_TracedBehavioralFeature)
 
-@given(instance=uml::TracedContinuation_strategy)
+@given(instance=uml_TracedTemplateSignature_strategy)
 @settings(max_examples=50)
-def test_uml::tracedcontinuation_instantiation(instance):
-    assert isinstance(instance, uml::TracedContinuation)
+def test_uml_tracedtemplatesignature_instantiation(instance):
+    assert isinstance(instance, uml_TracedTemplateSignature)
 
-@given(instance=uml::TracedConsiderIgnoreFragment_strategy)
+@given(instance=umlTrace_uml_TracedTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedconsiderignorefragment_instantiation(instance):
-    assert isinstance(instance, uml::TracedConsiderIgnoreFragment)
+def test_umltrace_uml_tracedtemplateparameter_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTemplateParameter)
 
-@given(instance=uml::TracedIntervalConstraint_strategy)
+@given(instance=TracedTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedintervalconstraint_instantiation(instance):
-    assert isinstance(instance, uml::TracedIntervalConstraint)
+def test_tracedtemplateparameter_instantiation(instance):
+    assert isinstance(instance, TracedTemplateParameter)
 
-@given(instance=uml::TracedExecutionEnvironment_strategy)
+@given(instance=umlTrace_uml_TracedConnectableElementTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedexecutionenvironment_instantiation(instance):
-    assert isinstance(instance, uml::TracedExecutionEnvironment)
+def test_umltrace_uml_tracedconnectableelementtemplateparameter_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConnectableElementTemplateParameter)
 
-@given(instance=uml::TracedStructuredActivityNode_strategy)
+@given(instance=umlTrace_uml_TracedClassifierTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedstructuredactivitynode_instantiation(instance):
-    assert isinstance(instance, uml::TracedStructuredActivityNode)
+def test_umltrace_uml_tracedclassifiertemplateparameter_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClassifierTemplateParameter)
 
-@given(instance=uml::TracedExtension_strategy)
+@given(instance=TracedPackage_strategy)
 @settings(max_examples=50)
-def test_uml::tracedextension_instantiation(instance):
-    assert isinstance(instance, uml::TracedExtension)
+def test_tracedpackage_instantiation(instance):
+    assert isinstance(instance, TracedPackage)
 
-@given(instance=IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution_strategy)
+@given(instance=umlTrace_uml_TracedProfile_strategy)
 @settings(max_examples=50)
-def test_integerfunctions::tracedintegerplusfunctionbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution)
+def test_umltrace_uml_tracedprofile_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedProfile)
 
-@given(instance=uml::TracedExtend_strategy)
+@given(instance=umlTrace_uml_TracedModel_strategy)
 @settings(max_examples=50)
-def test_uml::tracedextend_instantiation(instance):
-    assert isinstance(instance, uml::TracedExtend)
+def test_umltrace_uml_tracedmodel_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedModel)
 
-@given(instance=uml::TracedStartClassifierBehaviorAction_strategy)
+@given(instance=umlTrace_uml_TracedImage_strategy)
 @settings(max_examples=50)
-def test_uml::tracedstartclassifierbehavioraction_instantiation(instance):
-    assert isinstance(instance, uml::TracedStartClassifierBehaviorAction)
+def test_umltrace_uml_tracedimage_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedImage)
 
-@given(instance=uml::TracedSequenceNode_strategy)
+@given(instance=TracedTransition_strategy)
 @settings(max_examples=50)
-def test_uml::tracedsequencenode_instantiation(instance):
-    assert isinstance(instance, uml::TracedSequenceNode)
+def test_tracedtransition_instantiation(instance):
+    assert isinstance(instance, TracedTransition)
 
-@given(instance=uml::TracedExceptionHandler_strategy)
+@given(instance=umlTrace_uml_TracedProtocolTransition_strategy)
 @settings(max_examples=50)
-def test_uml::tracedexceptionhandler_instantiation(instance):
-    assert isinstance(instance, uml::TracedExceptionHandler)
+def test_umltrace_uml_tracedprotocoltransition_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedProtocolTransition)
 
-@given(instance=uml::TracedNode_strategy)
+@given(instance=TracedWriteVariableAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracednode_instantiation(instance):
-    assert isinstance(instance, uml::TracedNode)
+def test_tracedwritevariableaction_instantiation(instance):
+    assert isinstance(instance, TracedWriteVariableAction)
 
-@given(instance=uml::TracedValuePin_strategy)
+@given(instance=umlTrace_uml_TracedRemoveVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedvaluepin_instantiation(instance):
-    assert isinstance(instance, uml::TracedValuePin)
+def test_umltrace_uml_tracedremovevariablevalueaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRemoveVariableValueAction)
 
-@given(instance=IntermediateActivities::TracedActivityExecution_strategy)
+@given(instance=umlTrace_uml_TracedAddVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::tracedactivityexecution_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedActivityExecution)
+def test_umltrace_uml_tracedaddvariablevalueaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAddVariableValueAction)
 
-@given(instance=uml::TracedCollaborationUse_strategy)
+@given(instance=TracedInteractionUse_strategy)
 @settings(max_examples=50)
-def test_uml::tracedcollaborationuse_instantiation(instance):
-    assert isinstance(instance, uml::TracedCollaborationUse)
+def test_tracedinteractionuse_instantiation(instance):
+    assert isinstance(instance, TracedInteractionUse)
 
-@given(instance=IntermediateActivities::TracedInitialNodeActivation_strategy)
+@given(instance=umlTrace_uml_TracedPartDecomposition_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::tracedinitialnodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedInitialNodeActivation)
+def test_umltrace_uml_tracedpartdecomposition_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPartDecomposition)
 
-@given(instance=uml::TracedPort_strategy)
+@given(instance=TracedObservation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedport_instantiation(instance):
-    assert isinstance(instance, uml::TracedPort)
+def test_tracedobservation_instantiation(instance):
+    assert isinstance(instance, TracedObservation)
 
-@given(instance=uml::TracedDependency_strategy)
+@given(instance=umlTrace_uml_TracedTimeObservation_strategy)
 @settings(max_examples=50)
-def test_uml::traceddependency_instantiation(instance):
-    assert isinstance(instance, uml::TracedDependency)
+def test_umltrace_uml_tracedtimeobservation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTimeObservation)
 
-@given(instance=uml::TracedChangeEvent_strategy)
+@given(instance=umlTrace_uml_TracedDurationObservation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedchangeevent_instantiation(instance):
-    assert isinstance(instance, uml::TracedChangeEvent)
+def test_umltrace_uml_traceddurationobservation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDurationObservation)
 
-@given(instance=uml::TracedGeneralizationSet_strategy)
+@given(instance=umlTrace_uml_TracedOperationTemplateParameter_strategy)
 @settings(max_examples=50)
-def test_uml::tracedgeneralizationset_instantiation(instance):
-    assert isinstance(instance, uml::TracedGeneralizationSet)
+def test_umltrace_uml_tracedoperationtemplateparameter_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOperationTemplateParameter)
 
-@given(instance=uml::TracedInteractionUse_strategy)
+@given(instance=TracedInterval_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinteractionuse_instantiation(instance):
-    assert isinstance(instance, uml::TracedInteractionUse)
+def test_tracedinterval_instantiation(instance):
+    assert isinstance(instance, TracedInterval)
 
-@given(instance=uml::TracedClass_strategy)
+@given(instance=umlTrace_uml_TracedDurationInterval_strategy)
 @settings(max_examples=50)
-def test_uml::tracedclass_instantiation(instance):
-    assert isinstance(instance, uml::TracedClass)
+def test_umltrace_uml_traceddurationinterval_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDurationInterval)
 
-@given(instance=umlTrace::uml::TracedNode_strategy)
+@given(instance=umlTrace_uml_TracedTimeInterval_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracednode_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedNode)
+def test_umltrace_uml_tracedtimeinterval_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTimeInterval)
 
-@given(instance=umlTrace::uml::TracedAssociationClass_strategy)
+@given(instance=umlTrace_uml_TracedSignalEvent_strategy)
 @settings(max_examples=50)
-def test_umltrace::uml::tracedassociationclass_instantiation(instance):
-    assert isinstance(instance, umlTrace::uml::TracedAssociationClass)
+def test_umltrace_uml_tracedsignalevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSignalEvent)
 
-@given(instance=uml::TracedPackageImport_strategy)
+@given(instance=TracedBehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_uml::tracedpackageimport_instantiation(instance):
-    assert isinstance(instance, uml::TracedPackageImport)
+def test_tracedbehavioralfeature_instantiation(instance):
+    assert isinstance(instance, TracedBehavioralFeature)
 
-@given(instance=uml::TracedSendObjectAction_strategy)
+@given(instance=umlTrace_uml_TracedReception_strategy)
 @settings(max_examples=50)
-def test_uml::tracedsendobjectaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedSendObjectAction)
+def test_umltrace_uml_tracedreception_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReception)
 
-@given(instance=uml::TracedConnector_strategy)
+@given(instance=umlTrace_uml_TracedExecutionSpecification_strategy)
 @settings(max_examples=50)
-def test_uml::tracedconnector_instantiation(instance):
-    assert isinstance(instance, uml::TracedConnector)
+def test_umltrace_uml_tracedexecutionspecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExecutionSpecification)
 
-@given(instance=uml::TracedDestructionOccurrenceSpecification_strategy)
+@given(instance=TracedDependency_strategy)
 @settings(max_examples=50)
-def test_uml::traceddestructionoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, uml::TracedDestructionOccurrenceSpecification)
+def test_traceddependency_instantiation(instance):
+    assert isinstance(instance, TracedDependency)
 
-@given(instance=uml::TracedDurationConstraint_strategy)
+@given(instance=umlTrace_uml_TracedUsage_strategy)
 @settings(max_examples=50)
-def test_uml::traceddurationconstraint_instantiation(instance):
-    assert isinstance(instance, uml::TracedDurationConstraint)
+def test_umltrace_uml_tracedusage_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedUsage)
 
-@given(instance=IntermediateActivities::TracedForkNodeActivation_strategy)
+@given(instance=umlTrace_uml_TracedAbstraction_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::tracedforknodeactivation_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::TracedForkNodeActivation)
+def test_umltrace_uml_tracedabstraction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAbstraction)
 
-@given(instance=uml::TracedLifeline_strategy)
+@given(instance=TracedAbstraction_strategy)
 @settings(max_examples=50)
-def test_uml::tracedlifeline_instantiation(instance):
-    assert isinstance(instance, uml::TracedLifeline)
+def test_tracedabstraction_instantiation(instance):
+    assert isinstance(instance, TracedAbstraction)
 
-@given(instance=uml::TracedCreateObjectAction_strategy)
+@given(instance=umlTrace_uml_TracedManifestation_strategy)
 @settings(max_examples=50)
-def test_uml::tracedcreateobjectaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedCreateObjectAction)
+def test_umltrace_uml_tracedmanifestation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedManifestation)
 
-@given(instance=uml::TracedExpansionRegion_strategy)
+@given(instance=umlTrace_uml_TracedRealization_strategy)
 @settings(max_examples=50)
-def test_uml::tracedexpansionregion_instantiation(instance):
-    assert isinstance(instance, uml::TracedExpansionRegion)
+def test_umltrace_uml_tracedrealization_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRealization)
 
-@given(instance=uml::TracedFlowFinalNode_strategy)
+@given(instance=TracedRealization_strategy)
 @settings(max_examples=50)
-def test_uml::tracedflowfinalnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedFlowFinalNode)
+def test_tracedrealization_instantiation(instance):
+    assert isinstance(instance, TracedRealization)
 
-@given(instance=uml::TracedInitialNode_strategy)
+@given(instance=umlTrace_uml_TracedComponentRealization_strategy)
 @settings(max_examples=50)
-def test_uml::tracedinitialnode_instantiation(instance):
-    assert isinstance(instance, uml::TracedInitialNode)
+def test_umltrace_uml_tracedcomponentrealization_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedComponentRealization)
 
-@given(instance=uml::TracedCreateLinkObjectAction_strategy)
+@given(instance=umlTrace_uml_TracedInterfaceRealization_strategy)
 @settings(max_examples=50)
-def test_uml::tracedcreatelinkobjectaction_instantiation(instance):
-    assert isinstance(instance, uml::TracedCreateLinkObjectAction)
+def test_umltrace_uml_tracedinterfacerealization_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInterfaceRealization)
 
-@given(instance=uml::TracedCombinedFragment_strategy)
+@given(instance=umlTrace_uml_TracedSubstitution_strategy)
 @settings(max_examples=50)
-def test_uml::tracedcombinedfragment_instantiation(instance):
-    assert isinstance(instance, uml::TracedCombinedFragment)
+def test_umltrace_uml_tracedsubstitution_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSubstitution)
 
-@given(instance=umlTrace::Traced::TracedObjects_strategy)
+@given(instance=TracedInstanceSpecification_strategy)
 @settings(max_examples=50)
-def test_umltrace::traced::tracedobjects_instantiation(instance):
-    assert isinstance(instance, umlTrace::Traced::TracedObjects)
+def test_tracedinstancespecification_instantiation(instance):
+    assert isinstance(instance, TracedInstanceSpecification)
 
-@given(instance=Traced::TracedObjects_strategy)
+@given(instance=umlTrace_uml_TracedEnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_traced::tracedobjects_instantiation(instance):
-    assert isinstance(instance, Traced::TracedObjects)
+def test_umltrace_uml_tracedenumerationliteral_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedEnumerationLiteral)
+
+@given(instance=TracedAcceptEventAction_strategy)
+@settings(max_examples=50)
+def test_tracedaccepteventaction_instantiation(instance):
+    assert isinstance(instance, TracedAcceptEventAction)
+
+@given(instance=umlTrace_uml_TracedAcceptCallAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedacceptcallaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAcceptCallAction)
+
+@given(instance=umlTrace_uml_TracedLinkEndData_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedlinkenddata_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLinkEndData)
+
+@given(instance=TracedLinkEndData_strategy)
+@settings(max_examples=50)
+def test_tracedlinkenddata_instantiation(instance):
+    assert isinstance(instance, TracedLinkEndData)
+
+@given(instance=umlTrace_uml_TracedLinkEndCreationData_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedlinkendcreationdata_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLinkEndCreationData)
+
+@given(instance=umlTrace_uml_TracedLinkEndDestructionData_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedlinkenddestructiondata_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLinkEndDestructionData)
+
+@given(instance=umlTrace_uml_TracedTemplateSignature_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtemplatesignature_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTemplateSignature)
+
+@given(instance=umlTrace_uml_TracedStateInvariant_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstateinvariant_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStateInvariant)
+
+@given(instance=umlTrace_uml_TracedTrigger_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtrigger_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTrigger)
+
+@given(instance=umlTrace_uml_TracedSlot_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedslot_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSlot)
+
+@given(instance=TracedClass_strategy)
+@settings(max_examples=50)
+def test_tracedclass_instantiation(instance):
+    assert isinstance(instance, TracedClass)
+
+@given(instance=umlTrace_uml_TracedStereotype_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstereotype_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStereotype)
+
+@given(instance=umlTrace_uml_TracedComponent_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcomponent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedComponent)
+
+@given(instance=umlTrace_uml_TracedBehavior_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedbehavior_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedBehavior)
+
+@given(instance=uml_TracedInteractionFragment_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinteractionfragment_instantiation(instance):
+    assert isinstance(instance, uml_TracedInteractionFragment)
+
+@given(instance=uml_TracedBehavior_strategy)
+@settings(max_examples=50)
+def test_uml_tracedbehavior_instantiation(instance):
+    assert isinstance(instance, uml_TracedBehavior)
+
+@given(instance=umlTrace_uml_TracedInteraction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinteraction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInteraction)
+
+@given(instance=TracedActivityEdge_strategy)
+@settings(max_examples=50)
+def test_tracedactivityedge_instantiation(instance):
+    assert isinstance(instance, TracedActivityEdge)
+
+@given(instance=umlTrace_uml_TracedControlFlow_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcontrolflow_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedControlFlow)
+
+@given(instance=umlTrace_uml_TracedObjectFlow_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedobjectflow_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedObjectFlow)
+
+@given(instance=TracedStateMachine_strategy)
+@settings(max_examples=50)
+def test_tracedstatemachine_instantiation(instance):
+    assert isinstance(instance, TracedStateMachine)
+
+@given(instance=umlTrace_uml_TracedProtocolStateMachine_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedprotocolstatemachine_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedProtocolStateMachine)
+
+@given(instance=umlTrace_uml_TracedDeployment_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddeployment_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDeployment)
+
+@given(instance=umlTrace_uml_TracedMessage_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedmessage_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedMessage)
+
+@given(instance=TracedBehavior_strategy)
+@settings(max_examples=50)
+def test_tracedbehavior_instantiation(instance):
+    assert isinstance(instance, TracedBehavior)
+
+@given(instance=umlTrace_uml_TracedOpaqueBehavior_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedopaquebehavior_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOpaqueBehavior)
+
+@given(instance=umlTrace_uml_TracedActivity_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivity_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivity)
+
+@given(instance=umlTrace_uml_TracedStateMachine_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstatemachine_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStateMachine)
+
+@given(instance=TracedActivityGroup_strategy)
+@settings(max_examples=50)
+def test_tracedactivitygroup_instantiation(instance):
+    assert isinstance(instance, TracedActivityGroup)
+
+@given(instance=umlTrace_uml_TracedInterruptibleActivityRegion_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinterruptibleactivityregion_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInterruptibleActivityRegion)
+
+@given(instance=umlTrace_uml_TracedActivityPartition_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivitypartition_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivityPartition)
+
+@given(instance=uml_TracedRelationship_strategy)
+@settings(max_examples=50)
+def test_uml_tracedrelationship_instantiation(instance):
+    assert isinstance(instance, uml_TracedRelationship)
+
+@given(instance=TracedAssociation_strategy)
+@settings(max_examples=50)
+def test_tracedassociation_instantiation(instance):
+    assert isinstance(instance, TracedAssociation)
+
+@given(instance=umlTrace_uml_TracedCommunicationPath_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcommunicationpath_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCommunicationPath)
+
+@given(instance=umlTrace_uml_TracedExtension_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedextension_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExtension)
+
+@given(instance=TracedStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_tracedstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, TracedStructuralFeatureAction)
+
+@given(instance=umlTrace_uml_TracedReadStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadStructuralFeatureAction)
+
+@given(instance=umlTrace_uml_TracedClearStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedclearstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClearStructuralFeatureAction)
+
+@given(instance=umlTrace_uml_TracedWriteStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedwritestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedWriteStructuralFeatureAction)
+
+@given(instance=TracedWriteStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_tracedwritestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, TracedWriteStructuralFeatureAction)
+
+@given(instance=umlTrace_uml_TracedAddStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedaddstructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAddStructuralFeatureValueAction)
+
+@given(instance=umlTrace_uml_TracedRemoveStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedremovestructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRemoveStructuralFeatureValueAction)
+
+@given(instance=TracedBehavioredClassifier_strategy)
+@settings(max_examples=50)
+def test_tracedbehavioredclassifier_instantiation(instance):
+    assert isinstance(instance, TracedBehavioredClassifier)
+
+@given(instance=umlTrace_uml_TracedActor_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactor_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActor)
+
+@given(instance=umlTrace_uml_TracedUseCase_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedusecase_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedUseCase)
+
+@given(instance=umlTrace_uml_TracedSequenceNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedsequencenode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSequenceNode)
+
+@given(instance=umlTrace_uml_TracedExceptionHandler_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexceptionhandler_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExceptionHandler)
+
+@given(instance=umlTrace_uml_TracedDeployedArtifact_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddeployedartifact_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDeployedArtifact)
+
+@given(instance=uml_TracedDeployedArtifact_strategy)
+@settings(max_examples=50)
+def test_uml_traceddeployedartifact_instantiation(instance):
+    assert isinstance(instance, uml_TracedDeployedArtifact)
+
+@given(instance=uml_TracedClassifier_strategy)
+@settings(max_examples=50)
+def test_uml_tracedclassifier_instantiation(instance):
+    assert isinstance(instance, uml_TracedClassifier)
+
+@given(instance=umlTrace_uml_TracedAssociation_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedassociation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAssociation)
+
+@given(instance=umlTrace_uml_TracedArtifact_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedartifact_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedArtifact)
+
+@given(instance=TracedArtifact_strategy)
+@settings(max_examples=50)
+def test_tracedartifact_instantiation(instance):
+    assert isinstance(instance, TracedArtifact)
+
+@given(instance=umlTrace_uml_TracedDeploymentSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddeploymentspecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDeploymentSpecification)
+
+@given(instance=uml_TracedActivityNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactivitynode_instantiation(instance):
+    assert isinstance(instance, uml_TracedActivityNode)
+
+@given(instance=uml_TracedObjectNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedobjectnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedObjectNode)
+
+@given(instance=TracedPin_strategy)
+@settings(max_examples=50)
+def test_tracedpin_instantiation(instance):
+    assert isinstance(instance, TracedPin)
+
+@given(instance=umlTrace_uml_TracedOutputPin_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedoutputpin_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOutputPin)
+
+@given(instance=umlTrace_uml_TracedInputPin_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinputpin_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInputPin)
+
+@given(instance=TracedInputPin_strategy)
+@settings(max_examples=50)
+def test_tracedinputpin_instantiation(instance):
+    assert isinstance(instance, TracedInputPin)
+
+@given(instance=umlTrace_uml_TracedActionInputPin_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactioninputpin_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActionInputPin)
+
+@given(instance=umlTrace_uml_TracedValuePin_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedvaluepin_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedValuePin)
+
+@given(instance=umlTrace_uml_TracedCollaborationUse_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcollaborationuse_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCollaborationUse)
+
+@given(instance=umlTrace_uml_TracedDeploymentTarget_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddeploymenttarget_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDeploymentTarget)
+
+@given(instance=umlTrace_uml_TracedMultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedmultiplicityelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedMultiplicityElement)
+
+@given(instance=umlTrace_uml_TracedTypedElement_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtypedelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTypedElement)
+
+@given(instance=uml_TracedMultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracedmultiplicityelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedMultiplicityElement)
+
+@given(instance=umlTrace_uml_TracedPin_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedpin_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPin)
+
+@given(instance=uml_TracedTypedElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtypedelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedTypedElement)
+
+@given(instance=umlTrace_uml_TracedConnectableElement_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedconnectableelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConnectableElement)
+
+@given(instance=umlTrace_uml_TracedObjectNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedobjectnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedObjectNode)
+
+@given(instance=uml_TracedFeature_strategy)
+@settings(max_examples=50)
+def test_uml_tracedfeature_instantiation(instance):
+    assert isinstance(instance, uml_TracedFeature)
+
+@given(instance=umlTrace_uml_TracedStructuralFeature_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstructuralfeature_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStructuralFeature)
+
+@given(instance=TracedValueSpecification_strategy)
+@settings(max_examples=50)
+def test_tracedvaluespecification_instantiation(instance):
+    assert isinstance(instance, TracedValueSpecification)
+
+@given(instance=umlTrace_uml_TracedOpaqueExpression_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedopaqueexpression_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOpaqueExpression)
+
+@given(instance=umlTrace_uml_TracedTimeExpression_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtimeexpression_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTimeExpression)
+
+@given(instance=umlTrace_uml_TracedInterval_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinterval_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInterval)
+
+@given(instance=umlTrace_uml_TracedExpression_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexpression_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExpression)
+
+@given(instance=umlTrace_uml_TracedInstanceValue_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinstancevalue_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInstanceValue)
+
+@given(instance=umlTrace_uml_TracedDuration_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedduration_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDuration)
+
+@given(instance=umlTrace_uml_TracedLiteralSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralspecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralSpecification)
+
+@given(instance=TracedLiteralSpecification_strategy)
+@settings(max_examples=50)
+def test_tracedliteralspecification_instantiation(instance):
+    assert isinstance(instance, TracedLiteralSpecification)
+
+@given(instance=umlTrace_uml_TracedLiteralUnlimitedNatural_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralunlimitednatural_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralUnlimitedNatural)
+
+@given(instance=umlTrace_uml_TracedLiteralNull_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralnull_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralNull)
+
+@given(instance=umlTrace_uml_TracedLiteralReal_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralreal_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralReal)
+
+@given(instance=umlTrace_uml_TracedLiteralBoolean_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralboolean_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralBoolean)
+
+@given(instance=umlTrace_uml_TracedLiteralInteger_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralinteger_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralInteger)
+
+@given(instance=umlTrace_uml_TracedLiteralString_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedliteralstring_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLiteralString)
+
+@given(instance=TracedVariableAction_strategy)
+@settings(max_examples=50)
+def test_tracedvariableaction_instantiation(instance):
+    assert isinstance(instance, TracedVariableAction)
+
+@given(instance=umlTrace_uml_TracedReadVariableAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadvariableaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadVariableAction)
+
+@given(instance=umlTrace_uml_TracedWriteVariableAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedwritevariableaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedWriteVariableAction)
+
+@given(instance=umlTrace_uml_TracedClearVariableAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedclearvariableaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClearVariableAction)
+
+@given(instance=umlTrace_uml_TracedTimeConstraint_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtimeconstraint_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTimeConstraint)
+
+@given(instance=umlTrace_uml_TracedContinuation_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcontinuation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedContinuation)
+
+@given(instance=TracedCombinedFragment_strategy)
+@settings(max_examples=50)
+def test_tracedcombinedfragment_instantiation(instance):
+    assert isinstance(instance, TracedCombinedFragment)
+
+@given(instance=umlTrace_uml_TracedConsiderIgnoreFragment_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedconsiderignorefragment_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConsiderIgnoreFragment)
+
+@given(instance=TracedNode_strategy)
+@settings(max_examples=50)
+def test_tracednode_instantiation(instance):
+    assert isinstance(instance, TracedNode)
+
+@given(instance=umlTrace_uml_TracedDevice_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddevice_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDevice)
+
+@given(instance=umlTrace_uml_TracedExecutionEnvironment_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexecutionenvironment_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExecutionEnvironment)
+
+@given(instance=umlTrace_uml_TracedType_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtype_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedType)
+
+@given(instance=uml_TracedType_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtype_instantiation(instance):
+    assert isinstance(instance, uml_TracedType)
+
+@given(instance=TracedClassifier_strategy)
+@settings(max_examples=50)
+def test_tracedclassifier_instantiation(instance):
+    assert isinstance(instance, TracedClassifier)
+
+@given(instance=umlTrace_uml_TracedDataType_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddatatype_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDataType)
+
+@given(instance=umlTrace_uml_TracedInformationItem_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinformationitem_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInformationItem)
+
+@given(instance=umlTrace_uml_TracedInterface_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinterface_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInterface)
+
+@given(instance=umlTrace_uml_TracedBehavioredClassifier_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedbehavioredclassifier_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedBehavioredClassifier)
+
+@given(instance=umlTrace_uml_TracedStructuredClassifier_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstructuredclassifier_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStructuredClassifier)
+
+@given(instance=TracedStructuredClassifier_strategy)
+@settings(max_examples=50)
+def test_tracedstructuredclassifier_instantiation(instance):
+    assert isinstance(instance, TracedStructuredClassifier)
+
+@given(instance=umlTrace_uml_TracedEncapsulatedClassifier_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedencapsulatedclassifier_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedEncapsulatedClassifier)
+
+@given(instance=uml_TracedBehavioredClassifier_strategy)
+@settings(max_examples=50)
+def test_uml_tracedbehavioredclassifier_instantiation(instance):
+    assert isinstance(instance, uml_TracedBehavioredClassifier)
+
+@given(instance=umlTrace_uml_TracedCollaboration_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcollaboration_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCollaboration)
+
+@given(instance=uml_TracedEncapsulatedClassifier_strategy)
+@settings(max_examples=50)
+def test_uml_tracedencapsulatedclassifier_instantiation(instance):
+    assert isinstance(instance, uml_TracedEncapsulatedClassifier)
+
+@given(instance=umlTrace_uml_TracedClass_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedclass_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClass)
+
+@given(instance=TracedCallAction_strategy)
+@settings(max_examples=50)
+def test_tracedcallaction_instantiation(instance):
+    assert isinstance(instance, TracedCallAction)
+
+@given(instance=umlTrace_uml_TracedStartObjectBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstartobjectbehavioraction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStartObjectBehaviorAction)
+
+@given(instance=umlTrace_uml_TracedCallOperationAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcalloperationaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCallOperationAction)
+
+@given(instance=umlTrace_uml_TracedCallBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcallbehavioraction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCallBehaviorAction)
+
+@given(instance=umlTrace_uml_TracedRelationship_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedrelationship_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRelationship)
+
+@given(instance=TracedRelationship_strategy)
+@settings(max_examples=50)
+def test_tracedrelationship_instantiation(instance):
+    assert isinstance(instance, TracedRelationship)
+
+@given(instance=umlTrace_uml_TracedDirectedRelationship_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddirectedrelationship_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDirectedRelationship)
+
+@given(instance=TracedDirectedRelationship_strategy)
+@settings(max_examples=50)
+def test_traceddirectedrelationship_instantiation(instance):
+    assert isinstance(instance, TracedDirectedRelationship)
+
+@given(instance=umlTrace_uml_TracedGeneralization_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedgeneralization_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedGeneralization)
+
+@given(instance=umlTrace_uml_TracedElementImport_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedelementimport_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedElementImport)
+
+@given(instance=umlTrace_uml_TracedProfileApplication_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedprofileapplication_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedProfileApplication)
+
+@given(instance=umlTrace_uml_TracedPackageMerge_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedpackagemerge_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPackageMerge)
+
+@given(instance=umlTrace_uml_TracedTemplateBinding_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtemplatebinding_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTemplateBinding)
+
+@given(instance=umlTrace_uml_TracedPackageImport_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedpackageimport_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPackageImport)
+
+@given(instance=umlTrace_uml_TracedProtocolConformance_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedprotocolconformance_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedProtocolConformance)
+
+@given(instance=TracedInvocationAction_strategy)
+@settings(max_examples=50)
+def test_tracedinvocationaction_instantiation(instance):
+    assert isinstance(instance, TracedInvocationAction)
+
+@given(instance=umlTrace_uml_TracedCallAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcallaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCallAction)
+
+@given(instance=umlTrace_uml_TracedBroadcastSignalAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedbroadcastsignalaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedBroadcastSignalAction)
+
+@given(instance=umlTrace_uml_TracedSendSignalAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedsendsignalaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSendSignalAction)
+
+@given(instance=umlTrace_uml_TracedSendObjectAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedsendobjectaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSendObjectAction)
+
+@given(instance=TracedRedefinableElement_strategy)
+@settings(max_examples=50)
+def test_tracedredefinableelement_instantiation(instance):
+    assert isinstance(instance, TracedRedefinableElement)
+
+@given(instance=umlTrace_uml_TracedExtensionPoint_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedextensionpoint_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExtensionPoint)
+
+@given(instance=umlTrace_uml_TracedActivityEdge_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivityedge_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivityEdge)
+
+@given(instance=umlTrace_uml_TracedFeature_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedfeature_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedFeature)
+
+@given(instance=TracedFeature_strategy)
+@settings(max_examples=50)
+def test_tracedfeature_instantiation(instance):
+    assert isinstance(instance, TracedFeature)
+
+@given(instance=umlTrace_uml_TracedConnector_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedconnector_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedConnector)
+
+@given(instance=umlTrace_uml_TracedTemplateableElement_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtemplateableelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTemplateableElement)
+
+@given(instance=uml_TracedTemplateableElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtemplateableelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedTemplateableElement)
+
+@given(instance=umlTrace_uml_TracedOperation_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedoperation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOperation)
+
+@given(instance=umlTrace_uml_TracedStringExpression_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstringexpression_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStringExpression)
+
+@given(instance=uml_TracedPackageableElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracedpackageableelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedPackageableElement)
+
+@given(instance=umlTrace_uml_TracedValueSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedvaluespecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedValueSpecification)
+
+@given(instance=umlTrace_uml_TracedMessageEnd_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedmessageend_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedMessageEnd)
+
+@given(instance=uml_TracedDeploymentTarget_strategy)
+@settings(max_examples=50)
+def test_uml_traceddeploymenttarget_instantiation(instance):
+    assert isinstance(instance, uml_TracedDeploymentTarget)
+
+@given(instance=umlTrace_uml_TracedInstanceSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinstancespecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInstanceSpecification)
+
+@given(instance=uml_TracedConnectableElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconnectableelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedConnectableElement)
+
+@given(instance=umlTrace_uml_TracedParameter_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedparameter_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedParameter)
+
+@given(instance=umlTrace_uml_TracedVariable_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedvariable_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedVariable)
+
+@given(instance=uml_TracedStructuralFeature_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstructuralfeature_instantiation(instance):
+    assert isinstance(instance, uml_TracedStructuralFeature)
+
+@given(instance=umlTrace_uml_TracedProperty_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedproperty_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedProperty)
+
+@given(instance=TracedProperty_strategy)
+@settings(max_examples=50)
+def test_tracedproperty_instantiation(instance):
+    assert isinstance(instance, TracedProperty)
+
+@given(instance=umlTrace_uml_TracedExtensionEnd_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedextensionend_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExtensionEnd)
+
+@given(instance=umlTrace_uml_TracedPort_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedport_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPort)
+
+@given(instance=uml_TracedDirectedRelationship_strategy)
+@settings(max_examples=50)
+def test_uml_traceddirectedrelationship_instantiation(instance):
+    assert isinstance(instance, uml_TracedDirectedRelationship)
+
+@given(instance=umlTrace_uml_TracedInformationFlow_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinformationflow_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInformationFlow)
+
+@given(instance=umlTrace_uml_TracedDependency_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddependency_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDependency)
+
+@given(instance=umlTrace_uml_TracedEvent_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedEvent)
+
+@given(instance=TracedEvent_strategy)
+@settings(max_examples=50)
+def test_tracedevent_instantiation(instance):
+    assert isinstance(instance, TracedEvent)
+
+@given(instance=umlTrace_uml_TracedMessageEvent_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedmessageevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedMessageEvent)
+
+@given(instance=umlTrace_uml_TracedTimeEvent_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtimeevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTimeEvent)
+
+@given(instance=umlTrace_uml_TracedChangeEvent_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedchangeevent_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedChangeEvent)
+
+@given(instance=umlTrace_uml_TracedGeneralizationSet_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedgeneralizationset_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedGeneralizationSet)
+
+@given(instance=umlTrace_uml_TracedSignal_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedsignal_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedSignal)
+
+@given(instance=umlTrace_uml_TracedLoopNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedloopnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLoopNode)
+
+@given(instance=umlTrace_uml_TracedInteractionUse_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinteractionuse_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInteractionUse)
+
+@given(instance=umlTrace_uml_TracedObservation_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedobservation_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedObservation)
+
+@given(instance=umlTrace_uml_TracedLifeline_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedlifeline_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLifeline)
+
+@given(instance=umlTrace_uml_TracedExpansionRegion_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexpansionregion_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExpansionRegion)
+
+@given(instance=TracedFinalNode_strategy)
+@settings(max_examples=50)
+def test_tracedfinalnode_instantiation(instance):
+    assert isinstance(instance, TracedFinalNode)
+
+@given(instance=umlTrace_uml_TracedActivityFinalNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivityfinalnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivityFinalNode)
+
+@given(instance=umlTrace_uml_TracedFlowFinalNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedflowfinalnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedFlowFinalNode)
+
+@given(instance=TracedControlNode_strategy)
+@settings(max_examples=50)
+def test_tracedcontrolnode_instantiation(instance):
+    assert isinstance(instance, TracedControlNode)
+
+@given(instance=umlTrace_uml_TracedJoinNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedjoinnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedJoinNode)
+
+@given(instance=umlTrace_uml_TracedMergeNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedmergenode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedMergeNode)
+
+@given(instance=umlTrace_uml_TracedDecisionNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddecisionnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDecisionNode)
+
+@given(instance=umlTrace_uml_TracedFinalNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedfinalnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedFinalNode)
+
+@given(instance=umlTrace_uml_TracedForkNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedforknode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedForkNode)
+
+@given(instance=umlTrace_uml_TracedInitialNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinitialnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInitialNode)
+
+@given(instance=TracedAction_strategy)
+@settings(max_examples=50)
+def test_tracedaction_instantiation(instance):
+    assert isinstance(instance, TracedAction)
+
+@given(instance=umlTrace_uml_TracedReplyAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreplyaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReplyAction)
+
+@given(instance=umlTrace_uml_TracedReadExtentAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadextentaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadExtentAction)
+
+@given(instance=umlTrace_uml_TracedAcceptEventAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedaccepteventaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAcceptEventAction)
+
+@given(instance=umlTrace_uml_TracedInvocationAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinvocationaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInvocationAction)
+
+@given(instance=umlTrace_uml_TracedRaiseExceptionAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedraiseexceptionaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRaiseExceptionAction)
+
+@given(instance=umlTrace_uml_TracedValueSpecificationAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedvaluespecificationaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedValueSpecificationAction)
+
+@given(instance=umlTrace_uml_TracedClearAssociationAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedclearassociationaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClearAssociationAction)
+
+@given(instance=umlTrace_uml_TracedOpaqueAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedopaqueaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedOpaqueAction)
+
+@given(instance=umlTrace_uml_TracedCreateObjectAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcreateobjectaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCreateObjectAction)
+
+@given(instance=umlTrace_uml_TracedReclassifyObjectAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreclassifyobjectaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReclassifyObjectAction)
+
+@given(instance=umlTrace_uml_TracedStartClassifierBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstartclassifierbehavioraction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStartClassifierBehaviorAction)
+
+@given(instance=umlTrace_uml_TracedVariableAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedvariableaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedVariableAction)
+
+@given(instance=umlTrace_uml_TracedReadIsClassifiedObjectAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadisclassifiedobjectaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadIsClassifiedObjectAction)
+
+@given(instance=umlTrace_uml_TracedTestIdentityAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtestidentityaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTestIdentityAction)
+
+@given(instance=umlTrace_uml_TracedUnmarshallAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedunmarshallaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedUnmarshallAction)
+
+@given(instance=umlTrace_uml_TracedReadSelfAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadselfaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadSelfAction)
+
+@given(instance=umlTrace_uml_TracedReduceAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreduceaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReduceAction)
+
+@given(instance=umlTrace_uml_TracedStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStructuralFeatureAction)
+
+@given(instance=umlTrace_uml_TracedDestroyObjectAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddestroyobjectaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDestroyObjectAction)
+
+@given(instance=umlTrace_uml_TracedReadLinkObjectEndQualifierAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadlinkobjectendqualifieraction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadLinkObjectEndQualifierAction)
+
+@given(instance=umlTrace_uml_TracedReadLinkObjectEndAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadlinkobjectendaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadLinkObjectEndAction)
+
+@given(instance=umlTrace_uml_TracedLinkAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedlinkaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedLinkAction)
+
+@given(instance=TracedLinkAction_strategy)
+@settings(max_examples=50)
+def test_tracedlinkaction_instantiation(instance):
+    assert isinstance(instance, TracedLinkAction)
+
+@given(instance=umlTrace_uml_TracedReadLinkAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedreadlinkaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedReadLinkAction)
+
+@given(instance=umlTrace_uml_TracedWriteLinkAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedwritelinkaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedWriteLinkAction)
+
+@given(instance=TracedWriteLinkAction_strategy)
+@settings(max_examples=50)
+def test_tracedwritelinkaction_instantiation(instance):
+    assert isinstance(instance, TracedWriteLinkAction)
+
+@given(instance=umlTrace_uml_TracedDestroyLinkAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_traceddestroylinkaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedDestroyLinkAction)
+
+@given(instance=umlTrace_uml_TracedCreateLinkAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcreatelinkaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCreateLinkAction)
+
+@given(instance=TracedCreateLinkAction_strategy)
+@settings(max_examples=50)
+def test_tracedcreatelinkaction_instantiation(instance):
+    assert isinstance(instance, TracedCreateLinkAction)
+
+@given(instance=umlTrace_uml_TracedCreateLinkObjectAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcreatelinkobjectaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedCreateLinkObjectAction)
+
+@given(instance=uml_TracedNamedElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracednamedelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedNamedElement)
+
+@given(instance=umlTrace_uml_TracedExtend_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedextend_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExtend)
+
+@given(instance=umlTrace_uml_TracedInclude_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinclude_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInclude)
+
+@given(instance=umlTrace_uml_TracedPackageableElement_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedpackageableelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPackageableElement)
+
+@given(instance=umlTrace_uml_TracedNamespace_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracednamespace_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedNamespace)
+
+@given(instance=umlTrace_uml_TracedRedefinableElement_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedredefinableelement_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRedefinableElement)
+
+@given(instance=ActivityContent_strategy)
+@settings(max_examples=50)
+def test_activitycontent_instantiation(instance):
+    assert isinstance(instance, ActivityContent)
+
+@given(instance=umlTrace_uml_TracedActivityGroup_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivitygroup_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivityGroup)
+
+@given(instance=uml_TracedRedefinableElement_strategy)
+@settings(max_examples=50)
+def test_uml_tracedredefinableelement_instantiation(instance):
+    assert isinstance(instance, uml_TracedRedefinableElement)
+
+@given(instance=umlTrace_uml_TracedRedefinableTemplateSignature_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedredefinabletemplatesignature_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRedefinableTemplateSignature)
+
+@given(instance=umlTrace_uml_TracedActivityNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedactivitynode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedActivityNode)
+
+@given(instance=TracedActivityNode_strategy)
+@settings(max_examples=50)
+def test_tracedactivitynode_instantiation(instance):
+    assert isinstance(instance, TracedActivityNode)
+
+@given(instance=umlTrace_uml_TracedControlNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedcontrolnode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedControlNode)
+
+@given(instance=umlTrace_uml_TracedExecutableNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedexecutablenode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedExecutableNode)
+
+@given(instance=TracedExecutableNode_strategy)
+@settings(max_examples=50)
+def test_tracedexecutablenode_instantiation(instance):
+    assert isinstance(instance, TracedExecutableNode)
+
+@given(instance=umlTrace_uml_TracedAction_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedaction_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAction)
+
+@given(instance=uml_TracedActivityGroup_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactivitygroup_instantiation(instance):
+    assert isinstance(instance, uml_TracedActivityGroup)
+
+@given(instance=uml_TracedNamespace_strategy)
+@settings(max_examples=50)
+def test_uml_tracednamespace_instantiation(instance):
+    assert isinstance(instance, uml_TracedNamespace)
+
+@given(instance=umlTrace_uml_TracedRegion_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedregion_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedRegion)
+
+@given(instance=umlTrace_uml_TracedPackage_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedpackage_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedPackage)
+
+@given(instance=umlTrace_uml_TracedState_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstate_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedState)
+
+@given(instance=umlTrace_uml_TracedStructuredActivityNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedstructuredactivitynode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedStructuredActivityNode)
+
+@given(instance=umlTrace_uml_TracedClassifier_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedclassifier_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedClassifier)
+
+@given(instance=umlTrace_uml_TracedBehavioralFeature_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedbehavioralfeature_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedBehavioralFeature)
+
+@given(instance=umlTrace_uml_TracedInteractionOperand_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedinteractionoperand_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedInteractionOperand)
+
+@given(instance=umlTrace_uml_TracedTransition_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedtransition_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedTransition)
+
+@given(instance=uml_TracedRaiseExceptionAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedraiseexceptionaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedRaiseExceptionAction)
+
+@given(instance=uml_TracedCommunicationPath_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcommunicationpath_instantiation(instance):
+    assert isinstance(instance, uml_TracedCommunicationPath)
+
+@given(instance=Kernel_TracedLiteralBooleanEvaluation_strategy)
+@settings(max_examples=50)
+def test_kernel_tracedliteralbooleanevaluation_instantiation(instance):
+    assert isinstance(instance, Kernel_TracedLiteralBooleanEvaluation)
+
+@given(instance=uml_TracedEnumeration_strategy)
+@settings(max_examples=50)
+def test_uml_tracedenumeration_instantiation(instance):
+    assert isinstance(instance, uml_TracedEnumeration)
+
+@given(instance=uml_TracedReadLinkObjectEndAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreadlinkobjectendaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadLinkObjectEndAction)
+
+@given(instance=uml_TracedCallBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcallbehavioraction_instantiation(instance):
+    assert isinstance(instance, uml_TracedCallBehaviorAction)
+
+@given(instance=uml_TracedVariable_strategy)
+@settings(max_examples=50)
+def test_uml_tracedvariable_instantiation(instance):
+    assert isinstance(instance, uml_TracedVariable)
+
+@given(instance=uml_TracedConnectorEnd_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconnectorend_instantiation(instance):
+    assert isinstance(instance, uml_TracedConnectorEnd)
+
+@given(instance=uml_TracedArtifact_strategy)
+@settings(max_examples=50)
+def test_uml_tracedartifact_instantiation(instance):
+    assert isinstance(instance, uml_TracedArtifact)
+
+@given(instance=uml_TracedCallOperationAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcalloperationaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedCallOperationAction)
+
+@given(instance=uml_TracedLiteralUnlimitedNatural_strategy)
+@settings(max_examples=50)
+def test_uml_tracedliteralunlimitednatural_instantiation(instance):
+    assert isinstance(instance, uml_TracedLiteralUnlimitedNatural)
+
+@given(instance=uml_TracedDurationObservation_strategy)
+@settings(max_examples=50)
+def test_uml_traceddurationobservation_instantiation(instance):
+    assert isinstance(instance, uml_TracedDurationObservation)
+
+@given(instance=uml_TracedBehaviorExecutionSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_tracedbehaviorexecutionspecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedBehaviorExecutionSpecification)
+
+@given(instance=uml_TracedActivityParameterNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactivityparameternode_instantiation(instance):
+    assert isinstance(instance, uml_TracedActivityParameterNode)
+
+@given(instance=uml_TracedExpansionNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedexpansionnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedExpansionNode)
+
+@given(instance=uml_TracedProfileApplication_strategy)
+@settings(max_examples=50)
+def test_uml_tracedprofileapplication_instantiation(instance):
+    assert isinstance(instance, uml_TracedProfileApplication)
+
+@given(instance=uml_TracedAddStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedaddstructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedAddStructuralFeatureValueAction)
+
+@given(instance=uml_TracedQualifierValue_strategy)
+@settings(max_examples=50)
+def test_uml_tracedqualifiervalue_instantiation(instance):
+    assert isinstance(instance, uml_TracedQualifierValue)
+
+@given(instance=uml_TracedImage_strategy)
+@settings(max_examples=50)
+def test_uml_tracedimage_instantiation(instance):
+    assert isinstance(instance, uml_TracedImage)
+
+@given(instance=uml_TracedExtensionEnd_strategy)
+@settings(max_examples=50)
+def test_uml_tracedextensionend_instantiation(instance):
+    assert isinstance(instance, uml_TracedExtensionEnd)
+
+@given(instance=uml_TracedProperty_strategy)
+@settings(max_examples=50)
+def test_uml_tracedproperty_instantiation(instance):
+    assert isinstance(instance, uml_TracedProperty)
+
+@given(instance=uml_TracedDevice_strategy)
+@settings(max_examples=50)
+def test_uml_traceddevice_instantiation(instance):
+    assert isinstance(instance, uml_TracedDevice)
+
+@given(instance=uml_TracedOpaqueAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedopaqueaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedOpaqueAction)
+
+@given(instance=uml_TracedFinalState_strategy)
+@settings(max_examples=50)
+def test_uml_tracedfinalstate_instantiation(instance):
+    assert isinstance(instance, uml_TracedFinalState)
+
+@given(instance=uml_TracedReduceAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreduceaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReduceAction)
+
+@given(instance=uml_TracedDuration_strategy)
+@settings(max_examples=50)
+def test_uml_tracedduration_instantiation(instance):
+    assert isinstance(instance, uml_TracedDuration)
+
+@given(instance=uml_TracedTemplateParameterSubstitution_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtemplateparametersubstitution_instantiation(instance):
+    assert isinstance(instance, uml_TracedTemplateParameterSubstitution)
+
+@given(instance=uml_TracedOutputPin_strategy)
+@settings(max_examples=50)
+def test_uml_tracedoutputpin_instantiation(instance):
+    assert isinstance(instance, uml_TracedOutputPin)
+
+@given(instance=uml_TracedActionExecutionSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactionexecutionspecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedActionExecutionSpecification)
+
+@given(instance=uml_TracedInformationItem_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinformationitem_instantiation(instance):
+    assert isinstance(instance, uml_TracedInformationItem)
+
+@given(instance=uml_TracedOperationTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_uml_tracedoperationtemplateparameter_instantiation(instance):
+    assert isinstance(instance, uml_TracedOperationTemplateParameter)
+
+@given(instance=uml_TracedConnectableElementTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconnectableelementtemplateparameter_instantiation(instance):
+    assert isinstance(instance, uml_TracedConnectableElementTemplateParameter)
+
+@given(instance=uml_TracedLinkEndData_strategy)
+@settings(max_examples=50)
+def test_uml_tracedlinkenddata_instantiation(instance):
+    assert isinstance(instance, uml_TracedLinkEndData)
+
+@given(instance=uml_TracedDurationInterval_strategy)
+@settings(max_examples=50)
+def test_uml_traceddurationinterval_instantiation(instance):
+    assert isinstance(instance, uml_TracedDurationInterval)
+
+@given(instance=uml_TracedTransition_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtransition_instantiation(instance):
+    assert isinstance(instance, uml_TracedTransition)
+
+@given(instance=uml_TracedTrigger_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtrigger_instantiation(instance):
+    assert isinstance(instance, uml_TracedTrigger)
+
+@given(instance=uml_TracedReplyAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreplyaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReplyAction)
+
+@given(instance=uml_TracedClause_strategy)
+@settings(max_examples=50)
+def test_uml_tracedclause_instantiation(instance):
+    assert isinstance(instance, uml_TracedClause)
+
+@given(instance=uml_TracedPackageMerge_strategy)
+@settings(max_examples=50)
+def test_uml_tracedpackagemerge_instantiation(instance):
+    assert isinstance(instance, uml_TracedPackageMerge)
+
+@given(instance=uml_TracedDecisionNode_strategy)
+@settings(max_examples=50)
+def test_uml_traceddecisionnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedDecisionNode)
+
+@given(instance=IntermediateActions_TracedReadStructuralFeatureActionActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactions_tracedreadstructuralfeatureactionactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_TracedReadStructuralFeatureActionActivation)
+
+@given(instance=uml_TracedReadSelfAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreadselfaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadSelfAction)
+
+@given(instance=uml_TracedOperation_strategy)
+@settings(max_examples=50)
+def test_uml_tracedoperation_instantiation(instance):
+    assert isinstance(instance, uml_TracedOperation)
+
+@given(instance=uml_TracedObjectFlow_strategy)
+@settings(max_examples=50)
+def test_uml_tracedobjectflow_instantiation(instance):
+    assert isinstance(instance, uml_TracedObjectFlow)
+
+@given(instance=uml_TracedParameterSet_strategy)
+@settings(max_examples=50)
+def test_uml_tracedparameterset_instantiation(instance):
+    assert isinstance(instance, uml_TracedParameterSet)
+
+@given(instance=uml_TracedOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_tracedoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedOccurrenceSpecification)
+
+@given(instance=umlTrace_uml_TracedMessageOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedmessageoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedMessageOccurrenceSpecification)
+
+@given(instance=uml_TracedAcceptEventAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedaccepteventaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedAcceptEventAction)
+
+@given(instance=uml_TracedComponentRealization_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcomponentrealization_instantiation(instance):
+    assert isinstance(instance, uml_TracedComponentRealization)
+
+@given(instance=uml_TracedDataType_strategy)
+@settings(max_examples=50)
+def test_uml_traceddatatype_instantiation(instance):
+    assert isinstance(instance, uml_TracedDataType)
+
+@given(instance=uml_TracedComment_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcomment_instantiation(instance):
+    assert isinstance(instance, uml_TracedComment)
+
+@given(instance=uml_TracedLoopNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedloopnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedLoopNode)
+
+@given(instance=uml_TracedCallEvent_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcallevent_instantiation(instance):
+    assert isinstance(instance, uml_TracedCallEvent)
+
+@given(instance=uml_TracedPackage_strategy)
+@settings(max_examples=50)
+def test_uml_tracedpackage_instantiation(instance):
+    assert isinstance(instance, uml_TracedPackage)
+
+@given(instance=uml_TracedProtocolConformance_strategy)
+@settings(max_examples=50)
+def test_uml_tracedprotocolconformance_instantiation(instance):
+    assert isinstance(instance, uml_TracedProtocolConformance)
+
+@given(instance=uml_TracedOpaqueBehavior_strategy)
+@settings(max_examples=50)
+def test_uml_tracedopaquebehavior_instantiation(instance):
+    assert isinstance(instance, uml_TracedOpaqueBehavior)
+
+@given(instance=uml_TracedInterface_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinterface_instantiation(instance):
+    assert isinstance(instance, uml_TracedInterface)
+
+@given(instance=IntermediateActivities_TracedDecisionNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_traceddecisionnodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedDecisionNodeActivation)
+
+@given(instance=uml_TracedInteractionConstraint_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinteractionconstraint_instantiation(instance):
+    assert isinstance(instance, uml_TracedInteractionConstraint)
+
+@given(instance=uml_TracedTimeInterval_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtimeinterval_instantiation(instance):
+    assert isinstance(instance, uml_TracedTimeInterval)
+
+@given(instance=uml_TracedExecutionOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_tracedexecutionoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedExecutionOccurrenceSpecification)
+
+@given(instance=uml_TracedSignal_strategy)
+@settings(max_examples=50)
+def test_uml_tracedsignal_instantiation(instance):
+    assert isinstance(instance, uml_TracedSignal)
+
+@given(instance=uml_TracedExtensionPoint_strategy)
+@settings(max_examples=50)
+def test_uml_tracedextensionpoint_instantiation(instance):
+    assert isinstance(instance, uml_TracedExtensionPoint)
+
+@given(instance=uml_TracedCreateLinkAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcreatelinkaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedCreateLinkAction)
+
+@given(instance=Kernel_TracedLiteralIntegerEvaluation_strategy)
+@settings(max_examples=50)
+def test_kernel_tracedliteralintegerevaluation_instantiation(instance):
+    assert isinstance(instance, Kernel_TracedLiteralIntegerEvaluation)
+
+@given(instance=uml_TracedCentralBufferNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcentralbuffernode_instantiation(instance):
+    assert isinstance(instance, uml_TracedCentralBufferNode)
+
+@given(instance=uml_TracedModel_strategy)
+@settings(max_examples=50)
+def test_uml_tracedmodel_instantiation(instance):
+    assert isinstance(instance, uml_TracedModel)
+
+@given(instance=uml_TracedRedefinableTemplateSignature_strategy)
+@settings(max_examples=50)
+def test_uml_tracedredefinabletemplatesignature_instantiation(instance):
+    assert isinstance(instance, uml_TracedRedefinableTemplateSignature)
+
+@given(instance=uml_TracedJoinNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedjoinnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedJoinNode)
+
+@given(instance=BasicActions_TracedOpaqueActionActivation_strategy)
+@settings(max_examples=50)
+def test_basicactions_tracedopaqueactionactivation_instantiation(instance):
+    assert isinstance(instance, BasicActions_TracedOpaqueActionActivation)
+
+@given(instance=uml_TracedReadLinkObjectEndQualifierAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreadlinkobjectendqualifieraction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadLinkObjectEndQualifierAction)
+
+@given(instance=uml_TracedRealization_strategy)
+@settings(max_examples=50)
+def test_uml_tracedrealization_instantiation(instance):
+    assert isinstance(instance, uml_TracedRealization)
+
+@given(instance=uml_TracedConnectionPointReference_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconnectionpointreference_instantiation(instance):
+    assert isinstance(instance, uml_TracedConnectionPointReference)
+
+@given(instance=uml_TracedConditionalNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconditionalnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedConditionalNode)
+
+@given(instance=Kernel_TracedBooleanValue_strategy)
+@settings(max_examples=50)
+def test_kernel_tracedbooleanvalue_instantiation(instance):
+    assert isinstance(instance, Kernel_TracedBooleanValue)
+
+@given(instance=uml_TracedSignalEvent_strategy)
+@settings(max_examples=50)
+def test_uml_tracedsignalevent_instantiation(instance):
+    assert isinstance(instance, uml_TracedSignalEvent)
+
+@given(instance=uml_TracedLiteralInteger_strategy)
+@settings(max_examples=50)
+def test_uml_tracedliteralinteger_instantiation(instance):
+    assert isinstance(instance, uml_TracedLiteralInteger)
+
+@given(instance=uml_TracedDestroyLinkAction_strategy)
+@settings(max_examples=50)
+def test_uml_traceddestroylinkaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedDestroyLinkAction)
+
+@given(instance=IntermediateActivities_TracedActivityFinalNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedactivityfinalnodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedActivityFinalNodeActivation)
+
+@given(instance=uml_TracedReadVariableAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreadvariableaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadVariableAction)
+
+@given(instance=uml_TracedActionInputPin_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactioninputpin_instantiation(instance):
+    assert isinstance(instance, uml_TracedActionInputPin)
+
+@given(instance=uml_TracedUsage_strategy)
+@settings(max_examples=50)
+def test_uml_tracedusage_instantiation(instance):
+    assert isinstance(instance, uml_TracedUsage)
+
+@given(instance=uml_TracedDeploymentSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_traceddeploymentspecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedDeploymentSpecification)
+
+@given(instance=uml_TracedTemplateBinding_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtemplatebinding_instantiation(instance):
+    assert isinstance(instance, uml_TracedTemplateBinding)
+
+@given(instance=uml_TracedMessageOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_tracedmessageoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedMessageOccurrenceSpecification)
+
+@given(instance=uml_TracedReception_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreception_instantiation(instance):
+    assert isinstance(instance, uml_TracedReception)
+
+@given(instance=uml_TracedProtocolStateMachine_strategy)
+@settings(max_examples=50)
+def test_uml_tracedprotocolstatemachine_instantiation(instance):
+    assert isinstance(instance, uml_TracedProtocolStateMachine)
+
+@given(instance=uml_TracedDataStoreNode_strategy)
+@settings(max_examples=50)
+def test_uml_traceddatastorenode_instantiation(instance):
+    assert isinstance(instance, uml_TracedDataStoreNode)
+
+@given(instance=uml_TracedReadStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreadstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReadStructuralFeatureAction)
+
+@given(instance=uml_TracedAnyReceiveEvent_strategy)
+@settings(max_examples=50)
+def test_uml_tracedanyreceiveevent_instantiation(instance):
+    assert isinstance(instance, uml_TracedAnyReceiveEvent)
+
+@given(instance=Kernel_TracedIntegerValue_strategy)
+@settings(max_examples=50)
+def test_kernel_tracedintegervalue_instantiation(instance):
+    assert isinstance(instance, Kernel_TracedIntegerValue)
+
+@given(instance=uml_TracedInterval_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinterval_instantiation(instance):
+    assert isinstance(instance, uml_TracedInterval)
+
+@given(instance=uml_TracedRemoveStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedremovestructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedRemoveStructuralFeatureValueAction)
+
+@given(instance=uml_TracedGeneralization_strategy)
+@settings(max_examples=50)
+def test_uml_tracedgeneralization_instantiation(instance):
+    assert isinstance(instance, uml_TracedGeneralization)
+
+@given(instance=uml_TracedInteractionOperand_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinteractionoperand_instantiation(instance):
+    assert isinstance(instance, uml_TracedInteractionOperand)
+
+@given(instance=uml_TracedProtocolTransition_strategy)
+@settings(max_examples=50)
+def test_uml_tracedprotocoltransition_instantiation(instance):
+    assert isinstance(instance, uml_TracedProtocolTransition)
+
+@given(instance=uml_TracedInterruptibleActivityRegion_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinterruptibleactivityregion_instantiation(instance):
+    assert isinstance(instance, uml_TracedInterruptibleActivityRegion)
+
+@given(instance=uml_TracedPartDecomposition_strategy)
+@settings(max_examples=50)
+def test_uml_tracedpartdecomposition_instantiation(instance):
+    assert isinstance(instance, uml_TracedPartDecomposition)
+
+@given(instance=uml_TracedTimeEvent_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtimeevent_instantiation(instance):
+    assert isinstance(instance, uml_TracedTimeEvent)
+
+@given(instance=uml_TracedDeployment_strategy)
+@settings(max_examples=50)
+def test_uml_traceddeployment_instantiation(instance):
+    assert isinstance(instance, uml_TracedDeployment)
+
+@given(instance=Loci_TracedSemanticVisitor_strategy)
+@settings(max_examples=50)
+def test_loci_tracedsemanticvisitor_instantiation(instance):
+    assert isinstance(instance, Loci_TracedSemanticVisitor)
+
+@given(instance=Kernel_TracedObject_strategy)
+@settings(max_examples=50)
+def test_kernel_tracedobject_instantiation(instance):
+    assert isinstance(instance, Kernel_TracedObject)
+
+@given(instance=IntermediateActivities_TracedJoinNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedjoinnodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedJoinNodeActivation)
+
+@given(instance=uml_TracedUseCase_strategy)
+@settings(max_examples=50)
+def test_uml_tracedusecase_instantiation(instance):
+    assert isinstance(instance, uml_TracedUseCase)
+
+@given(instance=uml_TracedReclassifyObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedreclassifyobjectaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedReclassifyObjectAction)
+
+@given(instance=uml_TracedInstanceValue_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinstancevalue_instantiation(instance):
+    assert isinstance(instance, uml_TracedInstanceValue)
+
+@given(instance=IntermediateActions_TracedAddStructuralFeatureValueActionActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactions_tracedaddstructuralfeaturevalueactionactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_TracedAddStructuralFeatureValueActionActivation)
+
+@given(instance=Kernel_TracedReference_strategy)
+@settings(max_examples=50)
+def test_kernel_tracedreference_instantiation(instance):
+    assert isinstance(instance, Kernel_TracedReference)
+
+@given(instance=uml_TracedForkNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedforknode_instantiation(instance):
+    assert isinstance(instance, uml_TracedForkNode)
+
+@given(instance=uml_TracedActivity_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactivity_instantiation(instance):
+    assert isinstance(instance, uml_TracedActivity)
+
+@given(instance=uml_TracedMessage_strategy)
+@settings(max_examples=50)
+def test_uml_tracedmessage_instantiation(instance):
+    assert isinstance(instance, uml_TracedMessage)
+
+@given(instance=uml_TracedStateMachine_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstatemachine_instantiation(instance):
+    assert isinstance(instance, uml_TracedStateMachine)
+
+@given(instance=uml_TracedActivityPartition_strategy)
+@settings(max_examples=50)
+def test_uml_tracedactivitypartition_instantiation(instance):
+    assert isinstance(instance, uml_TracedActivityPartition)
+
+@given(instance=IntermediateActivities_TracedActivityParameterNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedactivityparameternodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedActivityParameterNodeActivation)
+
+@given(instance=BasicActions_TracedCallBehaviorActionActivation_strategy)
+@settings(max_examples=50)
+def test_basicactions_tracedcallbehavioractionactivation_instantiation(instance):
+    assert isinstance(instance, BasicActions_TracedCallBehaviorActionActivation)
+
+@given(instance=uml_TracedDestroyObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml_traceddestroyobjectaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedDestroyObjectAction)
+
+@given(instance=uml_TracedAssociationClass_strategy)
+@settings(max_examples=50)
+def test_uml_tracedassociationclass_instantiation(instance):
+    assert isinstance(instance, uml_TracedAssociationClass)
+
+@given(instance=uml_TracedInformationFlow_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinformationflow_instantiation(instance):
+    assert isinstance(instance, uml_TracedInformationFlow)
+
+@given(instance=uml_TracedSubstitution_strategy)
+@settings(max_examples=50)
+def test_uml_tracedsubstitution_instantiation(instance):
+    assert isinstance(instance, uml_TracedSubstitution)
+
+@given(instance=uml_TracedEnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_uml_tracedenumerationliteral_instantiation(instance):
+    assert isinstance(instance, uml_TracedEnumerationLiteral)
+
+@given(instance=uml_TracedStereotype_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstereotype_instantiation(instance):
+    assert isinstance(instance, uml_TracedStereotype)
+
+@given(instance=uml_TracedAcceptCallAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedacceptcallaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedAcceptCallAction)
+
+@given(instance=uml_TracedInstanceSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinstancespecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedInstanceSpecification)
+
+@given(instance=IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution_strategy)
+@settings(max_examples=50)
+def test_integerfunctions_tracedintegerlessfunctionbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution)
+
+@given(instance=uml_TracedStateInvariant_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstateinvariant_instantiation(instance):
+    assert isinstance(instance, uml_TracedStateInvariant)
+
+@given(instance=BasicActions_TracedInputPinActivation_strategy)
+@settings(max_examples=50)
+def test_basicactions_tracedinputpinactivation_instantiation(instance):
+    assert isinstance(instance, BasicActions_TracedInputPinActivation)
+
+@given(instance=uml_TracedLiteralString_strategy)
+@settings(max_examples=50)
+def test_uml_tracedliteralstring_instantiation(instance):
+    assert isinstance(instance, uml_TracedLiteralString)
+
+@given(instance=uml_TracedOpaqueExpression_strategy)
+@settings(max_examples=50)
+def test_uml_tracedopaqueexpression_instantiation(instance):
+    assert isinstance(instance, uml_TracedOpaqueExpression)
+
+@given(instance=uml_TracedParameter_strategy)
+@settings(max_examples=50)
+def test_uml_tracedparameter_instantiation(instance):
+    assert isinstance(instance, uml_TracedParameter)
+
+@given(instance=IntermediateActivities_TracedActivityNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedactivitynodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedActivityNodeActivation)
+
+@given(instance=uml_TracedInteraction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinteraction_instantiation(instance):
+    assert isinstance(instance, uml_TracedInteraction)
+
+@given(instance=uml_TracedBroadcastSignalAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedbroadcastsignalaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedBroadcastSignalAction)
+
+@given(instance=uml_TracedConstraint_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconstraint_instantiation(instance):
+    assert isinstance(instance, uml_TracedConstraint)
+
+@given(instance=uml_TracedClearVariableAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedclearvariableaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedClearVariableAction)
+
+@given(instance=uml_TracedInputPin_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinputpin_instantiation(instance):
+    assert isinstance(instance, uml_TracedInputPin)
+
+@given(instance=uml_TracedTimeConstraint_strategy)
+@settings(max_examples=50)
+def test_uml_tracedtimeconstraint_instantiation(instance):
+    assert isinstance(instance, uml_TracedTimeConstraint)
+
+@given(instance=uml_TracedContinuation_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcontinuation_instantiation(instance):
+    assert isinstance(instance, uml_TracedContinuation)
+
+@given(instance=uml_TracedConsiderIgnoreFragment_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconsiderignorefragment_instantiation(instance):
+    assert isinstance(instance, uml_TracedConsiderIgnoreFragment)
+
+@given(instance=uml_TracedIntervalConstraint_strategy)
+@settings(max_examples=50)
+def test_uml_tracedintervalconstraint_instantiation(instance):
+    assert isinstance(instance, uml_TracedIntervalConstraint)
+
+@given(instance=uml_TracedExecutionEnvironment_strategy)
+@settings(max_examples=50)
+def test_uml_tracedexecutionenvironment_instantiation(instance):
+    assert isinstance(instance, uml_TracedExecutionEnvironment)
+
+@given(instance=uml_TracedStructuredActivityNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstructuredactivitynode_instantiation(instance):
+    assert isinstance(instance, uml_TracedStructuredActivityNode)
+
+@given(instance=uml_TracedExtension_strategy)
+@settings(max_examples=50)
+def test_uml_tracedextension_instantiation(instance):
+    assert isinstance(instance, uml_TracedExtension)
+
+@given(instance=IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution_strategy)
+@settings(max_examples=50)
+def test_integerfunctions_tracedintegerplusfunctionbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution)
+
+@given(instance=uml_TracedExtend_strategy)
+@settings(max_examples=50)
+def test_uml_tracedextend_instantiation(instance):
+    assert isinstance(instance, uml_TracedExtend)
+
+@given(instance=uml_TracedStartClassifierBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedstartclassifierbehavioraction_instantiation(instance):
+    assert isinstance(instance, uml_TracedStartClassifierBehaviorAction)
+
+@given(instance=uml_TracedSequenceNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedsequencenode_instantiation(instance):
+    assert isinstance(instance, uml_TracedSequenceNode)
+
+@given(instance=uml_TracedExceptionHandler_strategy)
+@settings(max_examples=50)
+def test_uml_tracedexceptionhandler_instantiation(instance):
+    assert isinstance(instance, uml_TracedExceptionHandler)
+
+@given(instance=uml_TracedNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracednode_instantiation(instance):
+    assert isinstance(instance, uml_TracedNode)
+
+@given(instance=uml_TracedValuePin_strategy)
+@settings(max_examples=50)
+def test_uml_tracedvaluepin_instantiation(instance):
+    assert isinstance(instance, uml_TracedValuePin)
+
+@given(instance=IntermediateActivities_TracedActivityExecution_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedactivityexecution_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedActivityExecution)
+
+@given(instance=uml_TracedCollaborationUse_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcollaborationuse_instantiation(instance):
+    assert isinstance(instance, uml_TracedCollaborationUse)
+
+@given(instance=IntermediateActivities_TracedInitialNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedinitialnodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedInitialNodeActivation)
+
+@given(instance=uml_TracedPort_strategy)
+@settings(max_examples=50)
+def test_uml_tracedport_instantiation(instance):
+    assert isinstance(instance, uml_TracedPort)
+
+@given(instance=uml_TracedDependency_strategy)
+@settings(max_examples=50)
+def test_uml_traceddependency_instantiation(instance):
+    assert isinstance(instance, uml_TracedDependency)
+
+@given(instance=uml_TracedChangeEvent_strategy)
+@settings(max_examples=50)
+def test_uml_tracedchangeevent_instantiation(instance):
+    assert isinstance(instance, uml_TracedChangeEvent)
+
+@given(instance=uml_TracedGeneralizationSet_strategy)
+@settings(max_examples=50)
+def test_uml_tracedgeneralizationset_instantiation(instance):
+    assert isinstance(instance, uml_TracedGeneralizationSet)
+
+@given(instance=uml_TracedInteractionUse_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinteractionuse_instantiation(instance):
+    assert isinstance(instance, uml_TracedInteractionUse)
+
+@given(instance=uml_TracedClass_strategy)
+@settings(max_examples=50)
+def test_uml_tracedclass_instantiation(instance):
+    assert isinstance(instance, uml_TracedClass)
+
+@given(instance=umlTrace_uml_TracedNode_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracednode_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedNode)
+
+@given(instance=umlTrace_uml_TracedAssociationClass_strategy)
+@settings(max_examples=50)
+def test_umltrace_uml_tracedassociationclass_instantiation(instance):
+    assert isinstance(instance, umlTrace_uml_TracedAssociationClass)
+
+@given(instance=uml_TracedPackageImport_strategy)
+@settings(max_examples=50)
+def test_uml_tracedpackageimport_instantiation(instance):
+    assert isinstance(instance, uml_TracedPackageImport)
+
+@given(instance=uml_TracedSendObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedsendobjectaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedSendObjectAction)
+
+@given(instance=uml_TracedConnector_strategy)
+@settings(max_examples=50)
+def test_uml_tracedconnector_instantiation(instance):
+    assert isinstance(instance, uml_TracedConnector)
+
+@given(instance=uml_TracedDestructionOccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_uml_traceddestructionoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, uml_TracedDestructionOccurrenceSpecification)
+
+@given(instance=uml_TracedDurationConstraint_strategy)
+@settings(max_examples=50)
+def test_uml_traceddurationconstraint_instantiation(instance):
+    assert isinstance(instance, uml_TracedDurationConstraint)
+
+@given(instance=IntermediateActivities_TracedForkNodeActivation_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_tracedforknodeactivation_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_TracedForkNodeActivation)
+
+@given(instance=uml_TracedLifeline_strategy)
+@settings(max_examples=50)
+def test_uml_tracedlifeline_instantiation(instance):
+    assert isinstance(instance, uml_TracedLifeline)
+
+@given(instance=uml_TracedCreateObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcreateobjectaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedCreateObjectAction)
+
+@given(instance=uml_TracedExpansionRegion_strategy)
+@settings(max_examples=50)
+def test_uml_tracedexpansionregion_instantiation(instance):
+    assert isinstance(instance, uml_TracedExpansionRegion)
+
+@given(instance=uml_TracedFlowFinalNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedflowfinalnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedFlowFinalNode)
+
+@given(instance=uml_TracedInitialNode_strategy)
+@settings(max_examples=50)
+def test_uml_tracedinitialnode_instantiation(instance):
+    assert isinstance(instance, uml_TracedInitialNode)
+
+@given(instance=uml_TracedCreateLinkObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcreatelinkobjectaction_instantiation(instance):
+    assert isinstance(instance, uml_TracedCreateLinkObjectAction)
+
+@given(instance=uml_TracedCombinedFragment_strategy)
+@settings(max_examples=50)
+def test_uml_tracedcombinedfragment_instantiation(instance):
+    assert isinstance(instance, uml_TracedCombinedFragment)
+
+@given(instance=umlTrace_Traced_TracedObjects_strategy)
+@settings(max_examples=50)
+def test_umltrace_traced_tracedobjects_instantiation(instance):
+    assert isinstance(instance, umlTrace_Traced_TracedObjects)
+
+@given(instance=Traced_TracedObjects_strategy)
+@settings(max_examples=50)
+def test_traced_tracedobjects_instantiation(instance):
+    assert isinstance(instance, Traced_TracedObjects)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=umlTrace::Trace_strategy)
+@given(instance=umlTrace_Trace_strategy)
 @settings(max_examples=50)
-def test_umltrace::trace_instantiation(instance):
-    assert isinstance(instance, umlTrace::Trace)
+def test_umltrace_trace_instantiation(instance):
+    assert isinstance(instance, umlTrace_Trace)
 
-@given(instance=Values::SemanticVisitor::runtimeModelElement::Value_strategy)
+@given(instance=Values_SemanticVisitor_runtimeModelElement_Value_strategy)
 @settings(max_examples=50)
-def test_values::semanticvisitor::runtimemodelelement::value_instantiation(instance):
-    assert isinstance(instance, Values::SemanticVisitor::runtimeModelElement::Value)
+def test_values_semanticvisitor_runtimemodelelement_value_instantiation(instance):
+    assert isinstance(instance, Values_SemanticVisitor_runtimeModelElement_Value)
 
-@given(instance=Values::ActionActivation::firing::Value_strategy)
+@given(instance=Values_ActionActivation_firing_Value_strategy)
 @settings(max_examples=50)
-def test_values::actionactivation::firing::value_instantiation(instance):
-    assert isinstance(instance, Values::ActionActivation::firing::Value)
+def test_values_actionactivation_firing_value_instantiation(instance):
+    assert isinstance(instance, Values_ActionActivation_firing_Value)
 
-@given(instance=umlTrace::State_strategy)
+@given(instance=umlTrace_State_strategy)
 @settings(max_examples=50)
-def test_umltrace::state_instantiation(instance):
-    assert isinstance(instance, umlTrace::State)
+def test_umltrace_state_instantiation(instance):
+    assert isinstance(instance, umlTrace_State)

@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    metaModelSM::Signal,
-    metaModelSM::Guard,
-    metaModelSM::NewEClass2,
-    metaModelSM::NewEClass1,
-    metaModelSM::Transition,
+from python_code import (
+    metaModelSM_Signal,
+    metaModelSM_Guard,
+    metaModelSM_NewEClass2,
+    metaModelSM_NewEClass1,
+    metaModelSM_Transition,
     State,
-    metaModelSM::FinalState,
-    metaModelSM::InitialState,
-    metaModelSM::Triggers,
-    metaModelSM::State,
-    metaModelSM::Region,
-    metaModelSM::StateMachine,
+    metaModelSM_FinalState,
+    metaModelSM_InitialState,
+    metaModelSM_Triggers,
+    metaModelSM_State,
+    metaModelSM_Region,
+    metaModelSM_StateMachine,
 )
 
 # =============================================================================
@@ -26,72 +26,72 @@ from classes import (
 
 
 
-def test_metamodelsm::signal_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::Signal)
+def test_metamodelsm_signal_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_Signal)
 
 
-def test_metamodelsm::signal_constructor_exists():
-    assert callable(metaModelSM::Signal.__init__)
+def test_metamodelsm_signal_constructor_exists():
+    assert callable(metaModelSM_Signal.__init__)
 
 
-def test_metamodelsm::signal_constructor_args():
-    sig = inspect.signature(metaModelSM::Signal.__init__)
+def test_metamodelsm_signal_constructor_args():
+    sig = inspect.signature(metaModelSM_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::guard_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::Guard)
+def test_metamodelsm_guard_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_Guard)
 
 
-def test_metamodelsm::guard_constructor_exists():
-    assert callable(metaModelSM::Guard.__init__)
+def test_metamodelsm_guard_constructor_exists():
+    assert callable(metaModelSM_Guard.__init__)
 
 
-def test_metamodelsm::guard_constructor_args():
-    sig = inspect.signature(metaModelSM::Guard.__init__)
+def test_metamodelsm_guard_constructor_args():
+    sig = inspect.signature(metaModelSM_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::neweclass2_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::NewEClass2)
+def test_metamodelsm_neweclass2_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_NewEClass2)
 
 
-def test_metamodelsm::neweclass2_constructor_exists():
-    assert callable(metaModelSM::NewEClass2.__init__)
+def test_metamodelsm_neweclass2_constructor_exists():
+    assert callable(metaModelSM_NewEClass2.__init__)
 
 
-def test_metamodelsm::neweclass2_constructor_args():
-    sig = inspect.signature(metaModelSM::NewEClass2.__init__)
+def test_metamodelsm_neweclass2_constructor_args():
+    sig = inspect.signature(metaModelSM_NewEClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::neweclass1_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::NewEClass1)
+def test_metamodelsm_neweclass1_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_NewEClass1)
 
 
-def test_metamodelsm::neweclass1_constructor_exists():
-    assert callable(metaModelSM::NewEClass1.__init__)
+def test_metamodelsm_neweclass1_constructor_exists():
+    assert callable(metaModelSM_NewEClass1.__init__)
 
 
-def test_metamodelsm::neweclass1_constructor_args():
-    sig = inspect.signature(metaModelSM::NewEClass1.__init__)
+def test_metamodelsm_neweclass1_constructor_args():
+    sig = inspect.signature(metaModelSM_NewEClass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::transition_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::Transition)
+def test_metamodelsm_transition_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_Transition)
 
 
-def test_metamodelsm::transition_constructor_exists():
-    assert callable(metaModelSM::Transition.__init__)
+def test_metamodelsm_transition_constructor_exists():
+    assert callable(metaModelSM_Transition.__init__)
 
 
-def test_metamodelsm::transition_constructor_args():
-    sig = inspect.signature(metaModelSM::Transition.__init__)
+def test_metamodelsm_transition_constructor_args():
+    sig = inspect.signature(metaModelSM_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -110,86 +110,86 @@ def test_state_constructor_args():
 
 
 
-def test_metamodelsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::FinalState)
+def test_metamodelsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_FinalState)
 
 
-def test_metamodelsm::finalstate_constructor_exists():
-    assert callable(metaModelSM::FinalState.__init__)
+def test_metamodelsm_finalstate_constructor_exists():
+    assert callable(metaModelSM_FinalState.__init__)
 
 
-def test_metamodelsm::finalstate_constructor_args():
-    sig = inspect.signature(metaModelSM::FinalState.__init__)
+def test_metamodelsm_finalstate_constructor_args():
+    sig = inspect.signature(metaModelSM_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::InitialState)
+def test_metamodelsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_InitialState)
 
 
-def test_metamodelsm::initialstate_constructor_exists():
-    assert callable(metaModelSM::InitialState.__init__)
+def test_metamodelsm_initialstate_constructor_exists():
+    assert callable(metaModelSM_InitialState.__init__)
 
 
-def test_metamodelsm::initialstate_constructor_args():
-    sig = inspect.signature(metaModelSM::InitialState.__init__)
+def test_metamodelsm_initialstate_constructor_args():
+    sig = inspect.signature(metaModelSM_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::triggers_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::Triggers)
+def test_metamodelsm_triggers_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_Triggers)
 
 
-def test_metamodelsm::triggers_constructor_exists():
-    assert callable(metaModelSM::Triggers.__init__)
+def test_metamodelsm_triggers_constructor_exists():
+    assert callable(metaModelSM_Triggers.__init__)
 
 
-def test_metamodelsm::triggers_constructor_args():
-    sig = inspect.signature(metaModelSM::Triggers.__init__)
+def test_metamodelsm_triggers_constructor_args():
+    sig = inspect.signature(metaModelSM_Triggers.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::state_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::State)
+def test_metamodelsm_state_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_State)
 
 
-def test_metamodelsm::state_constructor_exists():
-    assert callable(metaModelSM::State.__init__)
+def test_metamodelsm_state_constructor_exists():
+    assert callable(metaModelSM_State.__init__)
 
 
-def test_metamodelsm::state_constructor_args():
-    sig = inspect.signature(metaModelSM::State.__init__)
+def test_metamodelsm_state_constructor_args():
+    sig = inspect.signature(metaModelSM_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::region_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::Region)
+def test_metamodelsm_region_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_Region)
 
 
-def test_metamodelsm::region_constructor_exists():
-    assert callable(metaModelSM::Region.__init__)
+def test_metamodelsm_region_constructor_exists():
+    assert callable(metaModelSM_Region.__init__)
 
 
-def test_metamodelsm::region_constructor_args():
-    sig = inspect.signature(metaModelSM::Region.__init__)
+def test_metamodelsm_region_constructor_args():
+    sig = inspect.signature(metaModelSM_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(metaModelSM::StateMachine)
+def test_metamodelsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(metaModelSM_StateMachine)
 
 
-def test_metamodelsm::statemachine_constructor_exists():
-    assert callable(metaModelSM::StateMachine.__init__)
+def test_metamodelsm_statemachine_constructor_exists():
+    assert callable(metaModelSM_StateMachine.__init__)
 
 
-def test_metamodelsm::statemachine_constructor_args():
-    sig = inspect.signature(metaModelSM::StateMachine.__init__)
+def test_metamodelsm_statemachine_constructor_args():
+    sig = inspect.signature(metaModelSM_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -204,99 +204,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-metaModelSM::Signal_strategy = st.builds(
-    metaModelSM::Signal,
+metaModelSM_Signal_strategy = st.builds(
+    metaModelSM_Signal,
 )
-metaModelSM::Guard_strategy = st.builds(
-    metaModelSM::Guard,
+metaModelSM_Guard_strategy = st.builds(
+    metaModelSM_Guard,
 )
-metaModelSM::NewEClass2_strategy = st.builds(
-    metaModelSM::NewEClass2,
+metaModelSM_NewEClass2_strategy = st.builds(
+    metaModelSM_NewEClass2,
 )
-metaModelSM::NewEClass1_strategy = st.builds(
-    metaModelSM::NewEClass1,
+metaModelSM_NewEClass1_strategy = st.builds(
+    metaModelSM_NewEClass1,
 )
-metaModelSM::Transition_strategy = st.builds(
-    metaModelSM::Transition,
+metaModelSM_Transition_strategy = st.builds(
+    metaModelSM_Transition,
 )
 State_strategy = st.builds(
     State,
 )
-metaModelSM::FinalState_strategy = st.builds(
-    metaModelSM::FinalState,
+metaModelSM_FinalState_strategy = st.builds(
+    metaModelSM_FinalState,
 )
-metaModelSM::InitialState_strategy = st.builds(
-    metaModelSM::InitialState,
+metaModelSM_InitialState_strategy = st.builds(
+    metaModelSM_InitialState,
 )
-metaModelSM::Triggers_strategy = st.builds(
-    metaModelSM::Triggers,
+metaModelSM_Triggers_strategy = st.builds(
+    metaModelSM_Triggers,
 )
-metaModelSM::State_strategy = st.builds(
-    metaModelSM::State,
+metaModelSM_State_strategy = st.builds(
+    metaModelSM_State,
 )
-metaModelSM::Region_strategy = st.builds(
-    metaModelSM::Region,
+metaModelSM_Region_strategy = st.builds(
+    metaModelSM_Region,
 )
-metaModelSM::StateMachine_strategy = st.builds(
-    metaModelSM::StateMachine,
+metaModelSM_StateMachine_strategy = st.builds(
+    metaModelSM_StateMachine,
 )
 
-@given(instance=metaModelSM::Signal_strategy)
+@given(instance=metaModelSM_Signal_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::signal_instantiation(instance):
-    assert isinstance(instance, metaModelSM::Signal)
+def test_metamodelsm_signal_instantiation(instance):
+    assert isinstance(instance, metaModelSM_Signal)
 
-@given(instance=metaModelSM::Guard_strategy)
+@given(instance=metaModelSM_Guard_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::guard_instantiation(instance):
-    assert isinstance(instance, metaModelSM::Guard)
+def test_metamodelsm_guard_instantiation(instance):
+    assert isinstance(instance, metaModelSM_Guard)
 
-@given(instance=metaModelSM::NewEClass2_strategy)
+@given(instance=metaModelSM_NewEClass2_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::neweclass2_instantiation(instance):
-    assert isinstance(instance, metaModelSM::NewEClass2)
+def test_metamodelsm_neweclass2_instantiation(instance):
+    assert isinstance(instance, metaModelSM_NewEClass2)
 
-@given(instance=metaModelSM::NewEClass1_strategy)
+@given(instance=metaModelSM_NewEClass1_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::neweclass1_instantiation(instance):
-    assert isinstance(instance, metaModelSM::NewEClass1)
+def test_metamodelsm_neweclass1_instantiation(instance):
+    assert isinstance(instance, metaModelSM_NewEClass1)
 
-@given(instance=metaModelSM::Transition_strategy)
+@given(instance=metaModelSM_Transition_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::transition_instantiation(instance):
-    assert isinstance(instance, metaModelSM::Transition)
+def test_metamodelsm_transition_instantiation(instance):
+    assert isinstance(instance, metaModelSM_Transition)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=metaModelSM::FinalState_strategy)
+@given(instance=metaModelSM_FinalState_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::finalstate_instantiation(instance):
-    assert isinstance(instance, metaModelSM::FinalState)
+def test_metamodelsm_finalstate_instantiation(instance):
+    assert isinstance(instance, metaModelSM_FinalState)
 
-@given(instance=metaModelSM::InitialState_strategy)
+@given(instance=metaModelSM_InitialState_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::initialstate_instantiation(instance):
-    assert isinstance(instance, metaModelSM::InitialState)
+def test_metamodelsm_initialstate_instantiation(instance):
+    assert isinstance(instance, metaModelSM_InitialState)
 
-@given(instance=metaModelSM::Triggers_strategy)
+@given(instance=metaModelSM_Triggers_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::triggers_instantiation(instance):
-    assert isinstance(instance, metaModelSM::Triggers)
+def test_metamodelsm_triggers_instantiation(instance):
+    assert isinstance(instance, metaModelSM_Triggers)
 
-@given(instance=metaModelSM::State_strategy)
+@given(instance=metaModelSM_State_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::state_instantiation(instance):
-    assert isinstance(instance, metaModelSM::State)
+def test_metamodelsm_state_instantiation(instance):
+    assert isinstance(instance, metaModelSM_State)
 
-@given(instance=metaModelSM::Region_strategy)
+@given(instance=metaModelSM_Region_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::region_instantiation(instance):
-    assert isinstance(instance, metaModelSM::Region)
+def test_metamodelsm_region_instantiation(instance):
+    assert isinstance(instance, metaModelSM_Region)
 
-@given(instance=metaModelSM::StateMachine_strategy)
+@given(instance=metaModelSM_StateMachine_strategy)
 @settings(max_examples=50)
-def test_metamodelsm::statemachine_instantiation(instance):
-    assert isinstance(instance, metaModelSM::StateMachine)
+def test_metamodelsm_statemachine_instantiation(instance):
+    assert isinstance(instance, metaModelSM_StateMachine)

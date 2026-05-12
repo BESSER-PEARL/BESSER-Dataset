@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    traceability::DeploymentElement,
-    traceability::Identifiable,
-    traceability::CPS2DeploymentTrace,
-    traceability::Deployment,
-    traceability::CyberPhysicalSystem,
-    traceability::CPSToDeployment,
+from python_code import (
+    traceability_DeploymentElement,
+    traceability_Identifiable,
+    traceability_CPS2DeploymentTrace,
+    traceability_Deployment,
+    traceability_CyberPhysicalSystem,
+    traceability_CPSToDeployment,
 )
 
 # =============================================================================
@@ -20,86 +20,86 @@ from classes import (
 
 
 
-def test_traceability::deploymentelement_is_not_abstract():
-    assert not inspect.isabstract(traceability::DeploymentElement)
+def test_traceability_deploymentelement_is_not_abstract():
+    assert not inspect.isabstract(traceability_DeploymentElement)
 
 
-def test_traceability::deploymentelement_constructor_exists():
-    assert callable(traceability::DeploymentElement.__init__)
+def test_traceability_deploymentelement_constructor_exists():
+    assert callable(traceability_DeploymentElement.__init__)
 
 
-def test_traceability::deploymentelement_constructor_args():
-    sig = inspect.signature(traceability::DeploymentElement.__init__)
+def test_traceability_deploymentelement_constructor_args():
+    sig = inspect.signature(traceability_DeploymentElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::identifiable_is_not_abstract():
-    assert not inspect.isabstract(traceability::Identifiable)
+def test_traceability_identifiable_is_not_abstract():
+    assert not inspect.isabstract(traceability_Identifiable)
 
 
-def test_traceability::identifiable_constructor_exists():
-    assert callable(traceability::Identifiable.__init__)
+def test_traceability_identifiable_constructor_exists():
+    assert callable(traceability_Identifiable.__init__)
 
 
-def test_traceability::identifiable_constructor_args():
-    sig = inspect.signature(traceability::Identifiable.__init__)
+def test_traceability_identifiable_constructor_args():
+    sig = inspect.signature(traceability_Identifiable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::cps2deploymenttrace_is_not_abstract():
-    assert not inspect.isabstract(traceability::CPS2DeploymentTrace)
+def test_traceability_cps2deploymenttrace_is_not_abstract():
+    assert not inspect.isabstract(traceability_CPS2DeploymentTrace)
 
 
-def test_traceability::cps2deploymenttrace_constructor_exists():
-    assert callable(traceability::CPS2DeploymentTrace.__init__)
+def test_traceability_cps2deploymenttrace_constructor_exists():
+    assert callable(traceability_CPS2DeploymentTrace.__init__)
 
 
-def test_traceability::cps2deploymenttrace_constructor_args():
-    sig = inspect.signature(traceability::CPS2DeploymentTrace.__init__)
+def test_traceability_cps2deploymenttrace_constructor_args():
+    sig = inspect.signature(traceability_CPS2DeploymentTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::deployment_is_not_abstract():
-    assert not inspect.isabstract(traceability::Deployment)
+def test_traceability_deployment_is_not_abstract():
+    assert not inspect.isabstract(traceability_Deployment)
 
 
-def test_traceability::deployment_constructor_exists():
-    assert callable(traceability::Deployment.__init__)
+def test_traceability_deployment_constructor_exists():
+    assert callable(traceability_Deployment.__init__)
 
 
-def test_traceability::deployment_constructor_args():
-    sig = inspect.signature(traceability::Deployment.__init__)
+def test_traceability_deployment_constructor_args():
+    sig = inspect.signature(traceability_Deployment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::cyberphysicalsystem_is_not_abstract():
-    assert not inspect.isabstract(traceability::CyberPhysicalSystem)
+def test_traceability_cyberphysicalsystem_is_not_abstract():
+    assert not inspect.isabstract(traceability_CyberPhysicalSystem)
 
 
-def test_traceability::cyberphysicalsystem_constructor_exists():
-    assert callable(traceability::CyberPhysicalSystem.__init__)
+def test_traceability_cyberphysicalsystem_constructor_exists():
+    assert callable(traceability_CyberPhysicalSystem.__init__)
 
 
-def test_traceability::cyberphysicalsystem_constructor_args():
-    sig = inspect.signature(traceability::CyberPhysicalSystem.__init__)
+def test_traceability_cyberphysicalsystem_constructor_args():
+    sig = inspect.signature(traceability_CyberPhysicalSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::cpstodeployment_is_not_abstract():
-    assert not inspect.isabstract(traceability::CPSToDeployment)
+def test_traceability_cpstodeployment_is_not_abstract():
+    assert not inspect.isabstract(traceability_CPSToDeployment)
 
 
-def test_traceability::cpstodeployment_constructor_exists():
-    assert callable(traceability::CPSToDeployment.__init__)
+def test_traceability_cpstodeployment_constructor_exists():
+    assert callable(traceability_CPSToDeployment.__init__)
 
 
-def test_traceability::cpstodeployment_constructor_args():
-    sig = inspect.signature(traceability::CPSToDeployment.__init__)
+def test_traceability_cpstodeployment_constructor_args():
+    sig = inspect.signature(traceability_CPSToDeployment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,51 +114,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-traceability::DeploymentElement_strategy = st.builds(
-    traceability::DeploymentElement,
+traceability_DeploymentElement_strategy = st.builds(
+    traceability_DeploymentElement,
 )
-traceability::Identifiable_strategy = st.builds(
-    traceability::Identifiable,
+traceability_Identifiable_strategy = st.builds(
+    traceability_Identifiable,
 )
-traceability::CPS2DeploymentTrace_strategy = st.builds(
-    traceability::CPS2DeploymentTrace,
+traceability_CPS2DeploymentTrace_strategy = st.builds(
+    traceability_CPS2DeploymentTrace,
 )
-traceability::Deployment_strategy = st.builds(
-    traceability::Deployment,
+traceability_Deployment_strategy = st.builds(
+    traceability_Deployment,
 )
-traceability::CyberPhysicalSystem_strategy = st.builds(
-    traceability::CyberPhysicalSystem,
+traceability_CyberPhysicalSystem_strategy = st.builds(
+    traceability_CyberPhysicalSystem,
 )
-traceability::CPSToDeployment_strategy = st.builds(
-    traceability::CPSToDeployment,
+traceability_CPSToDeployment_strategy = st.builds(
+    traceability_CPSToDeployment,
 )
 
-@given(instance=traceability::DeploymentElement_strategy)
+@given(instance=traceability_DeploymentElement_strategy)
 @settings(max_examples=50)
-def test_traceability::deploymentelement_instantiation(instance):
-    assert isinstance(instance, traceability::DeploymentElement)
+def test_traceability_deploymentelement_instantiation(instance):
+    assert isinstance(instance, traceability_DeploymentElement)
 
-@given(instance=traceability::Identifiable_strategy)
+@given(instance=traceability_Identifiable_strategy)
 @settings(max_examples=50)
-def test_traceability::identifiable_instantiation(instance):
-    assert isinstance(instance, traceability::Identifiable)
+def test_traceability_identifiable_instantiation(instance):
+    assert isinstance(instance, traceability_Identifiable)
 
-@given(instance=traceability::CPS2DeploymentTrace_strategy)
+@given(instance=traceability_CPS2DeploymentTrace_strategy)
 @settings(max_examples=50)
-def test_traceability::cps2deploymenttrace_instantiation(instance):
-    assert isinstance(instance, traceability::CPS2DeploymentTrace)
+def test_traceability_cps2deploymenttrace_instantiation(instance):
+    assert isinstance(instance, traceability_CPS2DeploymentTrace)
 
-@given(instance=traceability::Deployment_strategy)
+@given(instance=traceability_Deployment_strategy)
 @settings(max_examples=50)
-def test_traceability::deployment_instantiation(instance):
-    assert isinstance(instance, traceability::Deployment)
+def test_traceability_deployment_instantiation(instance):
+    assert isinstance(instance, traceability_Deployment)
 
-@given(instance=traceability::CyberPhysicalSystem_strategy)
+@given(instance=traceability_CyberPhysicalSystem_strategy)
 @settings(max_examples=50)
-def test_traceability::cyberphysicalsystem_instantiation(instance):
-    assert isinstance(instance, traceability::CyberPhysicalSystem)
+def test_traceability_cyberphysicalsystem_instantiation(instance):
+    assert isinstance(instance, traceability_CyberPhysicalSystem)
 
-@given(instance=traceability::CPSToDeployment_strategy)
+@given(instance=traceability_CPSToDeployment_strategy)
 @settings(max_examples=50)
-def test_traceability::cpstodeployment_instantiation(instance):
-    assert isinstance(instance, traceability::CPSToDeployment)
+def test_traceability_cpstodeployment_instantiation(instance):
+    assert isinstance(instance, traceability_CPSToDeployment)

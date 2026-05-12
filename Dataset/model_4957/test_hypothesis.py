@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    extmetadata::Attribute,
-    extmetadata::Class,
-    extmetadata::NamedElement,
+    extmetadata_Attribute,
+    extmetadata_Class,
+    extmetadata_NamedElement,
 )
 
 # =============================================================================
@@ -32,51 +32,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_extmetadata::attribute_is_not_abstract():
-    assert not inspect.isabstract(extmetadata::Attribute)
+def test_extmetadata_attribute_is_not_abstract():
+    assert not inspect.isabstract(extmetadata_Attribute)
 
 
-def test_extmetadata::attribute_constructor_exists():
-    assert callable(extmetadata::Attribute.__init__)
+def test_extmetadata_attribute_constructor_exists():
+    assert callable(extmetadata_Attribute.__init__)
 
 
-def test_extmetadata::attribute_constructor_args():
-    sig = inspect.signature(extmetadata::Attribute.__init__)
+def test_extmetadata_attribute_constructor_args():
+    sig = inspect.signature(extmetadata_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extmetadata::class_is_not_abstract():
-    assert not inspect.isabstract(extmetadata::Class)
+def test_extmetadata_class_is_not_abstract():
+    assert not inspect.isabstract(extmetadata_Class)
 
 
-def test_extmetadata::class_constructor_exists():
-    assert callable(extmetadata::Class.__init__)
+def test_extmetadata_class_constructor_exists():
+    assert callable(extmetadata_Class.__init__)
 
 
-def test_extmetadata::class_constructor_args():
-    sig = inspect.signature(extmetadata::Class.__init__)
+def test_extmetadata_class_constructor_args():
+    sig = inspect.signature(extmetadata_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extmetadata::namedelement_is_not_abstract():
-    assert not inspect.isabstract(extmetadata::NamedElement)
+def test_extmetadata_namedelement_is_not_abstract():
+    assert not inspect.isabstract(extmetadata_NamedElement)
 
 
-def test_extmetadata::namedelement_constructor_exists():
-    assert callable(extmetadata::NamedElement.__init__)
+def test_extmetadata_namedelement_constructor_exists():
+    assert callable(extmetadata_NamedElement.__init__)
 
 
-def test_extmetadata::namedelement_constructor_args():
-    sig = inspect.signature(extmetadata::NamedElement.__init__)
+def test_extmetadata_namedelement_constructor_args():
+    sig = inspect.signature(extmetadata_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extmetadata::namedelement_has_name():
-    assert hasattr(extmetadata::NamedElement, "name")
+def test_extmetadata_namedelement_has_name():
+    assert hasattr(extmetadata_NamedElement, "name")
     descriptor = None
-    for klass in extmetadata::NamedElement.__mro__:
+    for klass in extmetadata_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -97,14 +97,14 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-extmetadata::Attribute_strategy = st.builds(
-    extmetadata::Attribute,
+extmetadata_Attribute_strategy = st.builds(
+    extmetadata_Attribute,
 )
-extmetadata::Class_strategy = st.builds(
-    extmetadata::Class,
+extmetadata_Class_strategy = st.builds(
+    extmetadata_Class,
 )
-extmetadata::NamedElement_strategy = st.builds(
-    extmetadata::NamedElement,
+extmetadata_NamedElement_strategy = st.builds(
+    extmetadata_NamedElement,
     name=
         safe_text
 )
@@ -114,28 +114,25 @@ extmetadata::NamedElement_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=extmetadata::Attribute_strategy)
+@given(instance=extmetadata_Attribute_strategy)
 @settings(max_examples=50)
-def test_extmetadata::attribute_instantiation(instance):
-    assert isinstance(instance, extmetadata::Attribute)
+def test_extmetadata_attribute_instantiation(instance):
+    assert isinstance(instance, extmetadata_Attribute)
 
-@given(instance=extmetadata::Class_strategy)
+@given(instance=extmetadata_Class_strategy)
 @settings(max_examples=50)
-def test_extmetadata::class_instantiation(instance):
-    assert isinstance(instance, extmetadata::Class)
+def test_extmetadata_class_instantiation(instance):
+    assert isinstance(instance, extmetadata_Class)
 
-@given(instance=extmetadata::NamedElement_strategy)
+@given(instance=extmetadata_NamedElement_strategy)
 @settings(max_examples=50)
-def test_extmetadata::namedelement_instantiation(instance):
-    assert isinstance(instance, extmetadata::NamedElement)
-
-@given(instance=extmetadata::NamedElement_strategy)
-def test_extmetadata::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extmetadata_namedelement_instantiation(instance):
+    assert isinstance(instance, extmetadata_NamedElement)
 
 
-@given(instance=extmetadata::NamedElement_strategy)
-def test_extmetadata::namedelement_name_setter(instance):
+
+@given(instance=extmetadata_NamedElement_strategy)
+def test_extmetadata_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

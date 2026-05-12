@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    personDsl::Person,
-    personDsl::PersonContainer,
+from python_code import (
+    personDsl_Person,
+    personDsl_PersonContainer,
 )
 
 # =============================================================================
@@ -16,50 +16,50 @@ from classes import (
 
 
 
-def test_persondsl::person_is_not_abstract():
-    assert not inspect.isabstract(personDsl::Person)
+def test_persondsl_person_is_not_abstract():
+    assert not inspect.isabstract(personDsl_Person)
 
 
-def test_persondsl::person_constructor_exists():
-    assert callable(personDsl::Person.__init__)
+def test_persondsl_person_constructor_exists():
+    assert callable(personDsl_Person.__init__)
 
 
-def test_persondsl::person_constructor_args():
-    sig = inspect.signature(personDsl::Person.__init__)
+def test_persondsl_person_constructor_args():
+    sig = inspect.signature(personDsl_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "ID" in params, "Missing parameter 'ID'"
 
-def test_persondsl::person_has_ID():
-    assert hasattr(personDsl::Person, "ID")
+def test_persondsl_person_has_name():
+    assert hasattr(personDsl_Person, "name")
     descriptor = None
-    for klass in personDsl::Person.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_persondsl::person_has_name():
-    assert hasattr(personDsl::Person, "name")
-    descriptor = None
-    for klass in personDsl::Person.__mro__:
+    for klass in personDsl_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_persondsl_person_has_ID():
+    assert hasattr(personDsl_Person, "ID")
+    descriptor = None
+    for klass in personDsl_Person.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_persondsl::personcontainer_is_not_abstract():
-    assert not inspect.isabstract(personDsl::PersonContainer)
+
+def test_persondsl_personcontainer_is_not_abstract():
+    assert not inspect.isabstract(personDsl_PersonContainer)
 
 
-def test_persondsl::personcontainer_constructor_exists():
-    assert callable(personDsl::PersonContainer.__init__)
+def test_persondsl_personcontainer_constructor_exists():
+    assert callable(personDsl_PersonContainer.__init__)
 
 
-def test_persondsl::personcontainer_constructor_args():
-    sig = inspect.signature(personDsl::PersonContainer.__init__)
+def test_persondsl_personcontainer_constructor_args():
+    sig = inspect.signature(personDsl_PersonContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-personDsl::Person_strategy = st.builds(
-    personDsl::Person,
-    ID=
-        st.integers(),
+personDsl_Person_strategy = st.builds(
+    personDsl_Person,
     name=
-        safe_text
+        safe_text,
+    ID=
+        st.integers()
 )
-personDsl::PersonContainer_strategy = st.builds(
-    personDsl::PersonContainer,
+personDsl_PersonContainer_strategy = st.builds(
+    personDsl_PersonContainer,
 )
 
-@given(instance=personDsl::Person_strategy)
+@given(instance=personDsl_Person_strategy)
 @settings(max_examples=50)
-def test_persondsl::person_instantiation(instance):
-    assert isinstance(instance, personDsl::Person)
-
-@given(instance=personDsl::Person_strategy)
-def test_persondsl::person_ID_type(instance):
-    assert isinstance(instance.ID, int)
+def test_persondsl_person_instantiation(instance):
+    assert isinstance(instance, personDsl_Person)
 
 
-@given(instance=personDsl::Person_strategy)
-def test_persondsl::person_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
 
-@given(instance=personDsl::Person_strategy)
-def test_persondsl::person_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=personDsl::Person_strategy)
-def test_persondsl::person_name_setter(instance):
+@given(instance=personDsl_Person_strategy)
+def test_persondsl_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=personDsl::PersonContainer_strategy)
+
+
+@given(instance=personDsl_Person_strategy)
+def test_persondsl_person_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
+@given(instance=personDsl_PersonContainer_strategy)
 @settings(max_examples=50)
-def test_persondsl::personcontainer_instantiation(instance):
-    assert isinstance(instance, personDsl::PersonContainer)
+def test_persondsl_personcontainer_instantiation(instance):
+    assert isinstance(instance, personDsl_PersonContainer)

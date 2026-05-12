@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::OnoObject,
+from python_code import (
+    model_OnoObject,
     Diagram,
-    model::DomainDiagram,
+    model_DomainDiagram,
     ReifiableTopicType,
     AbstractUniqueValueTopicType,
     AbstractRegExpTopicType,
     ScopedReifiableTopicType,
     ScopedTopicType,
-    model::ScopedReifiableTopicType,
-    model::OccurrenceType,
-    model::NameType,
-    model::AssociationType,
+    model_ScopedReifiableTopicType,
+    model_NameType,
+    model_OccurrenceType,
+    model_AssociationType,
     TopicType,
-    model::AbstractUniqueValueTopicType,
-    model::ReifiableTopicType,
-    model::AbstractRegExpTopicType,
-    model::ScopedTopicType,
-    model::RoleType,
+    model_AbstractUniqueValueTopicType,
+    model_AbstractRegExpTopicType,
+    model_ReifiableTopicType,
+    model_ScopedTopicType,
+    model_RoleType,
     Node,
-    model::Comment,
-    model::TypeNode,
+    model_Comment,
+    model_TypeNode,
     OnoObject,
-    model::File,
-    model::TMCLConstruct,
-    model::Node,
-    model::Annotation,
-    model::Bendpoint,
-    model::Edge,
-    model::LabelPos,
-    model::Diagram,
+    model_Bendpoint,
+    model_LabelPos,
+    model_TMCLConstruct,
+    model_Node,
+    model_Edge,
+    model_Annotation,
+    model_File,
+    model_Diagram,
     AbstractTypedConstraint,
-    model::AssociationNode,
-    model::MappingElement,
-    model::AssociationTypeConstraint,
+    model_AssociationNode,
+    model_MappingElement,
+    model_AssociationTypeConstraint,
     AbstractCardinalityConstraint,
-    model::AbstractTypedCardinalityConstraint,
-    model::RolePlayerConstraint,
+    model_AbstractTypedCardinalityConstraint,
+    model_RolePlayerConstraint,
     AbstractTypedCardinalityConstraint,
-    model::NameTypeConstraint,
-    model::ScopeConstraint,
-    model::OccurrenceTypeConstraint,
-    model::RoleConstraint,
-    model::ReifierConstraint,
+    model_ReifierConstraint,
+    model_ScopeConstraint,
+    model_OccurrenceTypeConstraint,
+    model_NameTypeConstraint,
+    model_RoleConstraint,
     AbstractConstraint,
-    model::RoleCombinationConstraint,
-    model::AbstractTypedConstraint,
-    model::AbstractCardinalityConstraint,
-    model::AbstractRegExpConstraint,
-    model::TopicReifiesConstraint,
+    model_RoleCombinationConstraint,
+    model_AbstractTypedConstraint,
+    model_AbstractCardinalityConstraint,
+    model_AbstractRegExpConstraint,
+    model_TopicReifiesConstraint,
     AbstractRegExpConstraint,
-    model::ItemIdentifierConstraint,
-    model::SubjectLocatorConstraint,
-    model::SubjectIdentifierConstraint,
+    model_SubjectIdentifierConstraint,
+    model_SubjectLocatorConstraint,
+    model_ItemIdentifierConstraint,
     TMCLConstruct,
-    model::AbstractConstraint,
-    model::TopicMapSchema,
-    model::TopicType,
+    model_AbstractConstraint,
+    model_TopicMapSchema,
+    model_TopicType,
     TopicId,
-    EdgeType,
     KindOfTopicType,
+    EdgeType,
 )
 
 # =============================================================================
@@ -74,23 +74,23 @@ from classes import (
 
 
 
-def test_model::onoobject_is_not_abstract():
-    assert not inspect.isabstract(model::OnoObject)
+def test_model_onoobject_is_not_abstract():
+    assert not inspect.isabstract(model_OnoObject)
 
 
-def test_model::onoobject_constructor_exists():
-    assert callable(model::OnoObject.__init__)
+def test_model_onoobject_constructor_exists():
+    assert callable(model_OnoObject.__init__)
 
 
-def test_model::onoobject_constructor_args():
-    sig = inspect.signature(model::OnoObject.__init__)
+def test_model_onoobject_constructor_args():
+    sig = inspect.signature(model_OnoObject.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_model::onoobject_has_id():
-    assert hasattr(model::OnoObject, "id")
+def test_model_onoobject_has_id():
+    assert hasattr(model_OnoObject, "id")
     descriptor = None
-    for klass in model::OnoObject.__mro__:
+    for klass in model_OnoObject.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -112,16 +112,16 @@ def test_diagram_constructor_args():
 
 
 
-def test_model::domaindiagram_is_not_abstract():
-    assert not inspect.isabstract(model::DomainDiagram)
+def test_model_domaindiagram_is_not_abstract():
+    assert not inspect.isabstract(model_DomainDiagram)
 
 
-def test_model::domaindiagram_constructor_exists():
-    assert callable(model::DomainDiagram.__init__)
+def test_model_domaindiagram_constructor_exists():
+    assert callable(model_DomainDiagram.__init__)
 
 
-def test_model::domaindiagram_constructor_args():
-    sig = inspect.signature(model::DomainDiagram.__init__)
+def test_model_domaindiagram_constructor_args():
+    sig = inspect.signature(model_DomainDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -196,37 +196,51 @@ def test_scopedtopictype_constructor_args():
 
 
 
-def test_model::scopedreifiabletopictype_is_not_abstract():
-    assert not inspect.isabstract(model::ScopedReifiableTopicType)
+def test_model_scopedreifiabletopictype_is_not_abstract():
+    assert not inspect.isabstract(model_ScopedReifiableTopicType)
 
 
-def test_model::scopedreifiabletopictype_constructor_exists():
-    assert callable(model::ScopedReifiableTopicType.__init__)
+def test_model_scopedreifiabletopictype_constructor_exists():
+    assert callable(model_ScopedReifiableTopicType.__init__)
 
 
-def test_model::scopedreifiabletopictype_constructor_args():
-    sig = inspect.signature(model::ScopedReifiableTopicType.__init__)
+def test_model_scopedreifiabletopictype_constructor_args():
+    sig = inspect.signature(model_ScopedReifiableTopicType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::occurrencetype_is_not_abstract():
-    assert not inspect.isabstract(model::OccurrenceType)
+def test_model_nametype_is_not_abstract():
+    assert not inspect.isabstract(model_NameType)
 
 
-def test_model::occurrencetype_constructor_exists():
-    assert callable(model::OccurrenceType.__init__)
+def test_model_nametype_constructor_exists():
+    assert callable(model_NameType.__init__)
 
 
-def test_model::occurrencetype_constructor_args():
-    sig = inspect.signature(model::OccurrenceType.__init__)
+def test_model_nametype_constructor_args():
+    sig = inspect.signature(model_NameType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_occurrencetype_is_not_abstract():
+    assert not inspect.isabstract(model_OccurrenceType)
+
+
+def test_model_occurrencetype_constructor_exists():
+    assert callable(model_OccurrenceType.__init__)
+
+
+def test_model_occurrencetype_constructor_args():
+    sig = inspect.signature(model_OccurrenceType.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_model::occurrencetype_has_dataType():
-    assert hasattr(model::OccurrenceType, "dataType")
+def test_model_occurrencetype_has_dataType():
+    assert hasattr(model_OccurrenceType, "dataType")
     descriptor = None
-    for klass in model::OccurrenceType.__mro__:
+    for klass in model_OccurrenceType.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -234,30 +248,16 @@ def test_model::occurrencetype_has_dataType():
 
 
 
-def test_model::nametype_is_not_abstract():
-    assert not inspect.isabstract(model::NameType)
+def test_model_associationtype_is_not_abstract():
+    assert not inspect.isabstract(model_AssociationType)
 
 
-def test_model::nametype_constructor_exists():
-    assert callable(model::NameType.__init__)
+def test_model_associationtype_constructor_exists():
+    assert callable(model_AssociationType.__init__)
 
 
-def test_model::nametype_constructor_args():
-    sig = inspect.signature(model::NameType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::associationtype_is_not_abstract():
-    assert not inspect.isabstract(model::AssociationType)
-
-
-def test_model::associationtype_constructor_exists():
-    assert callable(model::AssociationType.__init__)
-
-
-def test_model::associationtype_constructor_args():
-    sig = inspect.signature(model::AssociationType.__init__)
+def test_model_associationtype_constructor_args():
+    sig = inspect.signature(model_AssociationType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -276,23 +276,23 @@ def test_topictype_constructor_args():
 
 
 
-def test_model::abstractuniquevaluetopictype_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractUniqueValueTopicType)
+def test_model_abstractuniquevaluetopictype_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractUniqueValueTopicType)
 
 
-def test_model::abstractuniquevaluetopictype_constructor_exists():
-    assert callable(model::AbstractUniqueValueTopicType.__init__)
+def test_model_abstractuniquevaluetopictype_constructor_exists():
+    assert callable(model_AbstractUniqueValueTopicType.__init__)
 
 
-def test_model::abstractuniquevaluetopictype_constructor_args():
-    sig = inspect.signature(model::AbstractUniqueValueTopicType.__init__)
+def test_model_abstractuniquevaluetopictype_constructor_args():
+    sig = inspect.signature(model_AbstractUniqueValueTopicType.__init__)
     params = list(sig.parameters.keys())
     assert "unique" in params, "Missing parameter 'unique'"
 
-def test_model::abstractuniquevaluetopictype_has_unique():
-    assert hasattr(model::AbstractUniqueValueTopicType, "unique")
+def test_model_abstractuniquevaluetopictype_has_unique():
+    assert hasattr(model_AbstractUniqueValueTopicType, "unique")
     descriptor = None
-    for klass in model::AbstractUniqueValueTopicType.__mro__:
+    for klass in model_AbstractUniqueValueTopicType.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
@@ -300,37 +300,23 @@ def test_model::abstractuniquevaluetopictype_has_unique():
 
 
 
-def test_model::reifiabletopictype_is_not_abstract():
-    assert not inspect.isabstract(model::ReifiableTopicType)
+def test_model_abstractregexptopictype_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractRegExpTopicType)
 
 
-def test_model::reifiabletopictype_constructor_exists():
-    assert callable(model::ReifiableTopicType.__init__)
+def test_model_abstractregexptopictype_constructor_exists():
+    assert callable(model_AbstractRegExpTopicType.__init__)
 
 
-def test_model::reifiabletopictype_constructor_args():
-    sig = inspect.signature(model::ReifiableTopicType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::abstractregexptopictype_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractRegExpTopicType)
-
-
-def test_model::abstractregexptopictype_constructor_exists():
-    assert callable(model::AbstractRegExpTopicType.__init__)
-
-
-def test_model::abstractregexptopictype_constructor_args():
-    sig = inspect.signature(model::AbstractRegExpTopicType.__init__)
+def test_model_abstractregexptopictype_constructor_args():
+    sig = inspect.signature(model_AbstractRegExpTopicType.__init__)
     params = list(sig.parameters.keys())
     assert "regExp" in params, "Missing parameter 'regExp'"
 
-def test_model::abstractregexptopictype_has_regExp():
-    assert hasattr(model::AbstractRegExpTopicType, "regExp")
+def test_model_abstractregexptopictype_has_regExp():
+    assert hasattr(model_AbstractRegExpTopicType, "regExp")
     descriptor = None
-    for klass in model::AbstractRegExpTopicType.__mro__:
+    for klass in model_AbstractRegExpTopicType.__mro__:
         if "regExp" in klass.__dict__:
             descriptor = klass.__dict__["regExp"]
             break
@@ -338,30 +324,44 @@ def test_model::abstractregexptopictype_has_regExp():
 
 
 
-def test_model::scopedtopictype_is_not_abstract():
-    assert not inspect.isabstract(model::ScopedTopicType)
+def test_model_reifiabletopictype_is_not_abstract():
+    assert not inspect.isabstract(model_ReifiableTopicType)
 
 
-def test_model::scopedtopictype_constructor_exists():
-    assert callable(model::ScopedTopicType.__init__)
+def test_model_reifiabletopictype_constructor_exists():
+    assert callable(model_ReifiableTopicType.__init__)
 
 
-def test_model::scopedtopictype_constructor_args():
-    sig = inspect.signature(model::ScopedTopicType.__init__)
+def test_model_reifiabletopictype_constructor_args():
+    sig = inspect.signature(model_ReifiableTopicType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::roletype_is_not_abstract():
-    assert not inspect.isabstract(model::RoleType)
+def test_model_scopedtopictype_is_not_abstract():
+    assert not inspect.isabstract(model_ScopedTopicType)
 
 
-def test_model::roletype_constructor_exists():
-    assert callable(model::RoleType.__init__)
+def test_model_scopedtopictype_constructor_exists():
+    assert callable(model_ScopedTopicType.__init__)
 
 
-def test_model::roletype_constructor_args():
-    sig = inspect.signature(model::RoleType.__init__)
+def test_model_scopedtopictype_constructor_args():
+    sig = inspect.signature(model_ScopedTopicType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_roletype_is_not_abstract():
+    assert not inspect.isabstract(model_RoleType)
+
+
+def test_model_roletype_constructor_exists():
+    assert callable(model_RoleType.__init__)
+
+
+def test_model_roletype_constructor_args():
+    sig = inspect.signature(model_RoleType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -380,43 +380,43 @@ def test_node_constructor_args():
 
 
 
-def test_model::comment_is_not_abstract():
-    assert not inspect.isabstract(model::Comment)
+def test_model_comment_is_not_abstract():
+    assert not inspect.isabstract(model_Comment)
 
 
-def test_model::comment_constructor_exists():
-    assert callable(model::Comment.__init__)
+def test_model_comment_constructor_exists():
+    assert callable(model_Comment.__init__)
 
 
-def test_model::comment_constructor_args():
-    sig = inspect.signature(model::Comment.__init__)
+def test_model_comment_constructor_args():
+    sig = inspect.signature(model_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "width" in params, "Missing parameter 'width'"
     assert "height" in params, "Missing parameter 'height'"
     assert "content" in params, "Missing parameter 'content'"
 
-def test_model::comment_has_width():
-    assert hasattr(model::Comment, "width")
+def test_model_comment_has_width():
+    assert hasattr(model_Comment, "width")
     descriptor = None
-    for klass in model::Comment.__mro__:
+    for klass in model_Comment.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::comment_has_height():
-    assert hasattr(model::Comment, "height")
+def test_model_comment_has_height():
+    assert hasattr(model_Comment, "height")
     descriptor = None
-    for klass in model::Comment.__mro__:
+    for klass in model_Comment.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::comment_has_content():
-    assert hasattr(model::Comment, "content")
+def test_model_comment_has_content():
+    assert hasattr(model_Comment, "content")
     descriptor = None
-    for klass in model::Comment.__mro__:
+    for klass in model_Comment.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -424,23 +424,23 @@ def test_model::comment_has_content():
 
 
 
-def test_model::typenode_is_not_abstract():
-    assert not inspect.isabstract(model::TypeNode)
+def test_model_typenode_is_not_abstract():
+    assert not inspect.isabstract(model_TypeNode)
 
 
-def test_model::typenode_constructor_exists():
-    assert callable(model::TypeNode.__init__)
+def test_model_typenode_constructor_exists():
+    assert callable(model_TypeNode.__init__)
 
 
-def test_model::typenode_constructor_args():
-    sig = inspect.signature(model::TypeNode.__init__)
+def test_model_typenode_constructor_args():
+    sig = inspect.signature(model_TypeNode.__init__)
     params = list(sig.parameters.keys())
     assert "image" in params, "Missing parameter 'image'"
 
-def test_model::typenode_has_image():
-    assert hasattr(model::TypeNode, "image")
+def test_model_typenode_has_image():
+    assert hasattr(model_TypeNode, "image")
     descriptor = None
-    for klass in model::TypeNode.__mro__:
+    for klass in model_TypeNode.__mro__:
         if "image" in klass.__dict__:
             descriptor = klass.__dict__["image"]
             break
@@ -462,189 +462,145 @@ def test_onoobject_constructor_args():
 
 
 
-def test_model::file_is_not_abstract():
-    assert not inspect.isabstract(model::File)
+def test_model_bendpoint_is_not_abstract():
+    assert not inspect.isabstract(model_Bendpoint)
 
 
-def test_model::file_constructor_exists():
-    assert callable(model::File.__init__)
+def test_model_bendpoint_constructor_exists():
+    assert callable(model_Bendpoint.__init__)
 
 
-def test_model::file_constructor_args():
-    sig = inspect.signature(model::File.__init__)
+def test_model_bendpoint_constructor_args():
+    sig = inspect.signature(model_Bendpoint.__init__)
     params = list(sig.parameters.keys())
-    assert "dirty" in params, "Missing parameter 'dirty'"
-    assert "filename" in params, "Missing parameter 'filename'"
-    assert "notes" in params, "Missing parameter 'notes'"
+    assert "posY" in params, "Missing parameter 'posY'"
+    assert "posX" in params, "Missing parameter 'posX'"
 
-def test_model::file_has_dirty():
-    assert hasattr(model::File, "dirty")
+def test_model_bendpoint_has_posY():
+    assert hasattr(model_Bendpoint, "posY")
     descriptor = None
-    for klass in model::File.__mro__:
-        if "dirty" in klass.__dict__:
-            descriptor = klass.__dict__["dirty"]
+    for klass in model_Bendpoint.__mro__:
+        if "posY" in klass.__dict__:
+            descriptor = klass.__dict__["posY"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::file_has_filename():
-    assert hasattr(model::File, "filename")
+def test_model_bendpoint_has_posX():
+    assert hasattr(model_Bendpoint, "posX")
     descriptor = None
-    for klass in model::File.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::file_has_notes():
-    assert hasattr(model::File, "notes")
-    descriptor = None
-    for klass in model::File.__mro__:
-        if "notes" in klass.__dict__:
-            descriptor = klass.__dict__["notes"]
+    for klass in model_Bendpoint.__mro__:
+        if "posX" in klass.__dict__:
+            descriptor = klass.__dict__["posX"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_model::tmclconstruct_is_not_abstract():
-    assert not inspect.isabstract(model::TMCLConstruct)
+def test_model_labelpos_is_not_abstract():
+    assert not inspect.isabstract(model_LabelPos)
 
 
-def test_model::tmclconstruct_constructor_exists():
-    assert callable(model::TMCLConstruct.__init__)
+def test_model_labelpos_constructor_exists():
+    assert callable(model_LabelPos.__init__)
 
 
-def test_model::tmclconstruct_constructor_args():
-    sig = inspect.signature(model::TMCLConstruct.__init__)
+def test_model_labelpos_constructor_args():
+    sig = inspect.signature(model_LabelPos.__init__)
+    params = list(sig.parameters.keys())
+    assert "posX" in params, "Missing parameter 'posX'"
+    assert "posY" in params, "Missing parameter 'posY'"
+
+def test_model_labelpos_has_posX():
+    assert hasattr(model_LabelPos, "posX")
+    descriptor = None
+    for klass in model_LabelPos.__mro__:
+        if "posX" in klass.__dict__:
+            descriptor = klass.__dict__["posX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_labelpos_has_posY():
+    assert hasattr(model_LabelPos, "posY")
+    descriptor = None
+    for klass in model_LabelPos.__mro__:
+        if "posY" in klass.__dict__:
+            descriptor = klass.__dict__["posY"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_tmclconstruct_is_not_abstract():
+    assert not inspect.isabstract(model_TMCLConstruct)
+
+
+def test_model_tmclconstruct_constructor_exists():
+    assert callable(model_TMCLConstruct.__init__)
+
+
+def test_model_tmclconstruct_constructor_args():
+    sig = inspect.signature(model_TMCLConstruct.__init__)
     params = list(sig.parameters.keys())
     assert "see_also" in params, "Missing parameter 'see_also'"
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_model::tmclconstruct_has_see_also():
-    assert hasattr(model::TMCLConstruct, "see_also")
+def test_model_tmclconstruct_has_see_also():
+    assert hasattr(model_TMCLConstruct, "see_also")
     descriptor = None
-    for klass in model::TMCLConstruct.__mro__:
+    for klass in model_TMCLConstruct.__mro__:
         if "see_also" in klass.__dict__:
             descriptor = klass.__dict__["see_also"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::tmclconstruct_has_comment():
-    assert hasattr(model::TMCLConstruct, "comment")
+def test_model_tmclconstruct_has_description():
+    assert hasattr(model_TMCLConstruct, "description")
     descriptor = None
-    for klass in model::TMCLConstruct.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::tmclconstruct_has_description():
-    assert hasattr(model::TMCLConstruct, "description")
-    descriptor = None
-    for klass in model::TMCLConstruct.__mro__:
+    for klass in model_TMCLConstruct.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_model::node_is_not_abstract():
-    assert not inspect.isabstract(model::Node)
-
-
-def test_model::node_constructor_exists():
-    assert callable(model::Node.__init__)
-
-
-def test_model::node_constructor_args():
-    sig = inspect.signature(model::Node.__init__)
-    params = list(sig.parameters.keys())
-    assert "posX" in params, "Missing parameter 'posX'"
-    assert "posY" in params, "Missing parameter 'posY'"
-
-def test_model::node_has_posX():
-    assert hasattr(model::Node, "posX")
+def test_model_tmclconstruct_has_comment():
+    assert hasattr(model_TMCLConstruct, "comment")
     descriptor = None
-    for klass in model::Node.__mro__:
-        if "posX" in klass.__dict__:
-            descriptor = klass.__dict__["posX"]
+    for klass in model_TMCLConstruct.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::node_has_posY():
-    assert hasattr(model::Node, "posY")
+
+
+def test_model_node_is_not_abstract():
+    assert not inspect.isabstract(model_Node)
+
+
+def test_model_node_constructor_exists():
+    assert callable(model_Node.__init__)
+
+
+def test_model_node_constructor_args():
+    sig = inspect.signature(model_Node.__init__)
+    params = list(sig.parameters.keys())
+    assert "posY" in params, "Missing parameter 'posY'"
+    assert "posX" in params, "Missing parameter 'posX'"
+
+def test_model_node_has_posY():
+    assert hasattr(model_Node, "posY")
     descriptor = None
-    for klass in model::Node.__mro__:
+    for klass in model_Node.__mro__:
         if "posY" in klass.__dict__:
             descriptor = klass.__dict__["posY"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_model::annotation_is_not_abstract():
-    assert not inspect.isabstract(model::Annotation)
-
-
-def test_model::annotation_constructor_exists():
-    assert callable(model::Annotation.__init__)
-
-
-def test_model::annotation_constructor_args():
-    sig = inspect.signature(model::Annotation.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "key" in params, "Missing parameter 'key'"
-
-def test_model::annotation_has_value():
-    assert hasattr(model::Annotation, "value")
+def test_model_node_has_posX():
+    assert hasattr(model_Node, "posX")
     descriptor = None
-    for klass in model::Annotation.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::annotation_has_key():
-    assert hasattr(model::Annotation, "key")
-    descriptor = None
-    for klass in model::Annotation.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::bendpoint_is_not_abstract():
-    assert not inspect.isabstract(model::Bendpoint)
-
-
-def test_model::bendpoint_constructor_exists():
-    assert callable(model::Bendpoint.__init__)
-
-
-def test_model::bendpoint_constructor_args():
-    sig = inspect.signature(model::Bendpoint.__init__)
-    params = list(sig.parameters.keys())
-    assert "posY" in params, "Missing parameter 'posY'"
-    assert "posX" in params, "Missing parameter 'posX'"
-
-def test_model::bendpoint_has_posY():
-    assert hasattr(model::Bendpoint, "posY")
-    descriptor = None
-    for klass in model::Bendpoint.__mro__:
-        if "posY" in klass.__dict__:
-            descriptor = klass.__dict__["posY"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::bendpoint_has_posX():
-    assert hasattr(model::Bendpoint, "posX")
-    descriptor = None
-    for klass in model::Bendpoint.__mro__:
+    for klass in model_Node.__mro__:
         if "posX" in klass.__dict__:
             descriptor = klass.__dict__["posX"]
             break
@@ -652,23 +608,23 @@ def test_model::bendpoint_has_posX():
 
 
 
-def test_model::edge_is_not_abstract():
-    assert not inspect.isabstract(model::Edge)
+def test_model_edge_is_not_abstract():
+    assert not inspect.isabstract(model_Edge)
 
 
-def test_model::edge_constructor_exists():
-    assert callable(model::Edge.__init__)
+def test_model_edge_constructor_exists():
+    assert callable(model_Edge.__init__)
 
 
-def test_model::edge_constructor_args():
-    sig = inspect.signature(model::Edge.__init__)
+def test_model_edge_constructor_args():
+    sig = inspect.signature(model_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_model::edge_has_type():
-    assert hasattr(model::Edge, "type")
+def test_model_edge_has_type():
+    assert hasattr(model_Edge, "type")
     descriptor = None
-    for klass in model::Edge.__mro__:
+    for klass in model_Edge.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -676,57 +632,101 @@ def test_model::edge_has_type():
 
 
 
-def test_model::labelpos_is_not_abstract():
-    assert not inspect.isabstract(model::LabelPos)
+def test_model_annotation_is_not_abstract():
+    assert not inspect.isabstract(model_Annotation)
 
 
-def test_model::labelpos_constructor_exists():
-    assert callable(model::LabelPos.__init__)
+def test_model_annotation_constructor_exists():
+    assert callable(model_Annotation.__init__)
 
 
-def test_model::labelpos_constructor_args():
-    sig = inspect.signature(model::LabelPos.__init__)
+def test_model_annotation_constructor_args():
+    sig = inspect.signature(model_Annotation.__init__)
     params = list(sig.parameters.keys())
-    assert "posX" in params, "Missing parameter 'posX'"
-    assert "posY" in params, "Missing parameter 'posY'"
+    assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_model::labelpos_has_posX():
-    assert hasattr(model::LabelPos, "posX")
+def test_model_annotation_has_key():
+    assert hasattr(model_Annotation, "key")
     descriptor = None
-    for klass in model::LabelPos.__mro__:
-        if "posX" in klass.__dict__:
-            descriptor = klass.__dict__["posX"]
+    for klass in model_Annotation.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::labelpos_has_posY():
-    assert hasattr(model::LabelPos, "posY")
+def test_model_annotation_has_value():
+    assert hasattr(model_Annotation, "value")
     descriptor = None
-    for klass in model::LabelPos.__mro__:
-        if "posY" in klass.__dict__:
-            descriptor = klass.__dict__["posY"]
+    for klass in model_Annotation.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_model::diagram_is_not_abstract():
-    assert not inspect.isabstract(model::Diagram)
+def test_model_file_is_not_abstract():
+    assert not inspect.isabstract(model_File)
 
 
-def test_model::diagram_constructor_exists():
-    assert callable(model::Diagram.__init__)
+def test_model_file_constructor_exists():
+    assert callable(model_File.__init__)
 
 
-def test_model::diagram_constructor_args():
-    sig = inspect.signature(model::Diagram.__init__)
+def test_model_file_constructor_args():
+    sig = inspect.signature(model_File.__init__)
+    params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
+    assert "notes" in params, "Missing parameter 'notes'"
+    assert "dirty" in params, "Missing parameter 'dirty'"
+
+def test_model_file_has_filename():
+    assert hasattr(model_File, "filename")
+    descriptor = None
+    for klass in model_File.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_file_has_notes():
+    assert hasattr(model_File, "notes")
+    descriptor = None
+    for klass in model_File.__mro__:
+        if "notes" in klass.__dict__:
+            descriptor = klass.__dict__["notes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_file_has_dirty():
+    assert hasattr(model_File, "dirty")
+    descriptor = None
+    for klass in model_File.__mro__:
+        if "dirty" in klass.__dict__:
+            descriptor = klass.__dict__["dirty"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_diagram_is_not_abstract():
+    assert not inspect.isabstract(model_Diagram)
+
+
+def test_model_diagram_constructor_exists():
+    assert callable(model_Diagram.__init__)
+
+
+def test_model_diagram_constructor_args():
+    sig = inspect.signature(model_Diagram.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::diagram_has_name():
-    assert hasattr(model::Diagram, "name")
+def test_model_diagram_has_name():
+    assert hasattr(model_Diagram, "name")
     descriptor = None
-    for klass in model::Diagram.__mro__:
+    for klass in model_Diagram.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -748,64 +748,64 @@ def test_abstracttypedconstraint_constructor_args():
 
 
 
-def test_model::associationnode_is_not_abstract():
-    assert not inspect.isabstract(model::AssociationNode)
+def test_model_associationnode_is_not_abstract():
+    assert not inspect.isabstract(model_AssociationNode)
 
 
-def test_model::associationnode_constructor_exists():
-    assert callable(model::AssociationNode.__init__)
+def test_model_associationnode_constructor_exists():
+    assert callable(model_AssociationNode.__init__)
 
 
-def test_model::associationnode_constructor_args():
-    sig = inspect.signature(model::AssociationNode.__init__)
+def test_model_associationnode_constructor_args():
+    sig = inspect.signature(model_AssociationNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mappingelement_is_not_abstract():
-    assert not inspect.isabstract(model::MappingElement)
+def test_model_mappingelement_is_not_abstract():
+    assert not inspect.isabstract(model_MappingElement)
 
 
-def test_model::mappingelement_constructor_exists():
-    assert callable(model::MappingElement.__init__)
+def test_model_mappingelement_constructor_exists():
+    assert callable(model_MappingElement.__init__)
 
 
-def test_model::mappingelement_constructor_args():
-    sig = inspect.signature(model::MappingElement.__init__)
+def test_model_mappingelement_constructor_args():
+    sig = inspect.signature(model_MappingElement.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_model::mappingelement_has_value():
-    assert hasattr(model::MappingElement, "value")
+def test_model_mappingelement_has_key():
+    assert hasattr(model_MappingElement, "key")
     descriptor = None
-    for klass in model::MappingElement.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::mappingelement_has_key():
-    assert hasattr(model::MappingElement, "key")
-    descriptor = None
-    for klass in model::MappingElement.__mro__:
+    for klass in model_MappingElement.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_mappingelement_has_value():
+    assert hasattr(model_MappingElement, "value")
+    descriptor = None
+    for klass in model_MappingElement.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::associationtypeconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::AssociationTypeConstraint)
+
+def test_model_associationtypeconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_AssociationTypeConstraint)
 
 
-def test_model::associationtypeconstraint_constructor_exists():
-    assert callable(model::AssociationTypeConstraint.__init__)
+def test_model_associationtypeconstraint_constructor_exists():
+    assert callable(model_AssociationTypeConstraint.__init__)
 
 
-def test_model::associationtypeconstraint_constructor_args():
-    sig = inspect.signature(model::AssociationTypeConstraint.__init__)
+def test_model_associationtypeconstraint_constructor_args():
+    sig = inspect.signature(model_AssociationTypeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -824,30 +824,30 @@ def test_abstractcardinalityconstraint_constructor_args():
 
 
 
-def test_model::abstracttypedcardinalityconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractTypedCardinalityConstraint)
+def test_model_abstracttypedcardinalityconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractTypedCardinalityConstraint)
 
 
-def test_model::abstracttypedcardinalityconstraint_constructor_exists():
-    assert callable(model::AbstractTypedCardinalityConstraint.__init__)
+def test_model_abstracttypedcardinalityconstraint_constructor_exists():
+    assert callable(model_AbstractTypedCardinalityConstraint.__init__)
 
 
-def test_model::abstracttypedcardinalityconstraint_constructor_args():
-    sig = inspect.signature(model::AbstractTypedCardinalityConstraint.__init__)
+def test_model_abstracttypedcardinalityconstraint_constructor_args():
+    sig = inspect.signature(model_AbstractTypedCardinalityConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::roleplayerconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::RolePlayerConstraint)
+def test_model_roleplayerconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_RolePlayerConstraint)
 
 
-def test_model::roleplayerconstraint_constructor_exists():
-    assert callable(model::RolePlayerConstraint.__init__)
+def test_model_roleplayerconstraint_constructor_exists():
+    assert callable(model_RolePlayerConstraint.__init__)
 
 
-def test_model::roleplayerconstraint_constructor_args():
-    sig = inspect.signature(model::RolePlayerConstraint.__init__)
+def test_model_roleplayerconstraint_constructor_args():
+    sig = inspect.signature(model_RolePlayerConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -866,72 +866,72 @@ def test_abstracttypedcardinalityconstraint_constructor_args():
 
 
 
-def test_model::nametypeconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::NameTypeConstraint)
+def test_model_reifierconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_ReifierConstraint)
 
 
-def test_model::nametypeconstraint_constructor_exists():
-    assert callable(model::NameTypeConstraint.__init__)
+def test_model_reifierconstraint_constructor_exists():
+    assert callable(model_ReifierConstraint.__init__)
 
 
-def test_model::nametypeconstraint_constructor_args():
-    sig = inspect.signature(model::NameTypeConstraint.__init__)
+def test_model_reifierconstraint_constructor_args():
+    sig = inspect.signature(model_ReifierConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::scopeconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::ScopeConstraint)
+def test_model_scopeconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_ScopeConstraint)
 
 
-def test_model::scopeconstraint_constructor_exists():
-    assert callable(model::ScopeConstraint.__init__)
+def test_model_scopeconstraint_constructor_exists():
+    assert callable(model_ScopeConstraint.__init__)
 
 
-def test_model::scopeconstraint_constructor_args():
-    sig = inspect.signature(model::ScopeConstraint.__init__)
+def test_model_scopeconstraint_constructor_args():
+    sig = inspect.signature(model_ScopeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::occurrencetypeconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::OccurrenceTypeConstraint)
+def test_model_occurrencetypeconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_OccurrenceTypeConstraint)
 
 
-def test_model::occurrencetypeconstraint_constructor_exists():
-    assert callable(model::OccurrenceTypeConstraint.__init__)
+def test_model_occurrencetypeconstraint_constructor_exists():
+    assert callable(model_OccurrenceTypeConstraint.__init__)
 
 
-def test_model::occurrencetypeconstraint_constructor_args():
-    sig = inspect.signature(model::OccurrenceTypeConstraint.__init__)
+def test_model_occurrencetypeconstraint_constructor_args():
+    sig = inspect.signature(model_OccurrenceTypeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::roleconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::RoleConstraint)
+def test_model_nametypeconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_NameTypeConstraint)
 
 
-def test_model::roleconstraint_constructor_exists():
-    assert callable(model::RoleConstraint.__init__)
+def test_model_nametypeconstraint_constructor_exists():
+    assert callable(model_NameTypeConstraint.__init__)
 
 
-def test_model::roleconstraint_constructor_args():
-    sig = inspect.signature(model::RoleConstraint.__init__)
+def test_model_nametypeconstraint_constructor_args():
+    sig = inspect.signature(model_NameTypeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::reifierconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::ReifierConstraint)
+def test_model_roleconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_RoleConstraint)
 
 
-def test_model::reifierconstraint_constructor_exists():
-    assert callable(model::ReifierConstraint.__init__)
+def test_model_roleconstraint_constructor_exists():
+    assert callable(model_RoleConstraint.__init__)
 
 
-def test_model::reifierconstraint_constructor_args():
-    sig = inspect.signature(model::ReifierConstraint.__init__)
+def test_model_roleconstraint_constructor_args():
+    sig = inspect.signature(model_RoleConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -950,61 +950,61 @@ def test_abstractconstraint_constructor_args():
 
 
 
-def test_model::rolecombinationconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::RoleCombinationConstraint)
+def test_model_rolecombinationconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_RoleCombinationConstraint)
 
 
-def test_model::rolecombinationconstraint_constructor_exists():
-    assert callable(model::RoleCombinationConstraint.__init__)
+def test_model_rolecombinationconstraint_constructor_exists():
+    assert callable(model_RoleCombinationConstraint.__init__)
 
 
-def test_model::rolecombinationconstraint_constructor_args():
-    sig = inspect.signature(model::RoleCombinationConstraint.__init__)
+def test_model_rolecombinationconstraint_constructor_args():
+    sig = inspect.signature(model_RoleCombinationConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstracttypedconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractTypedConstraint)
+def test_model_abstracttypedconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractTypedConstraint)
 
 
-def test_model::abstracttypedconstraint_constructor_exists():
-    assert callable(model::AbstractTypedConstraint.__init__)
+def test_model_abstracttypedconstraint_constructor_exists():
+    assert callable(model_AbstractTypedConstraint.__init__)
 
 
-def test_model::abstracttypedconstraint_constructor_args():
-    sig = inspect.signature(model::AbstractTypedConstraint.__init__)
+def test_model_abstracttypedconstraint_constructor_args():
+    sig = inspect.signature(model_AbstractTypedConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractcardinalityconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractCardinalityConstraint)
+def test_model_abstractcardinalityconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractCardinalityConstraint)
 
 
-def test_model::abstractcardinalityconstraint_constructor_exists():
-    assert callable(model::AbstractCardinalityConstraint.__init__)
+def test_model_abstractcardinalityconstraint_constructor_exists():
+    assert callable(model_AbstractCardinalityConstraint.__init__)
 
 
-def test_model::abstractcardinalityconstraint_constructor_args():
-    sig = inspect.signature(model::AbstractCardinalityConstraint.__init__)
+def test_model_abstractcardinalityconstraint_constructor_args():
+    sig = inspect.signature(model_AbstractCardinalityConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "cardMax" in params, "Missing parameter 'cardMax'"
     assert "cardMin" in params, "Missing parameter 'cardMin'"
 
-def test_model::abstractcardinalityconstraint_has_cardMax():
-    assert hasattr(model::AbstractCardinalityConstraint, "cardMax")
+def test_model_abstractcardinalityconstraint_has_cardMax():
+    assert hasattr(model_AbstractCardinalityConstraint, "cardMax")
     descriptor = None
-    for klass in model::AbstractCardinalityConstraint.__mro__:
+    for klass in model_AbstractCardinalityConstraint.__mro__:
         if "cardMax" in klass.__dict__:
             descriptor = klass.__dict__["cardMax"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::abstractcardinalityconstraint_has_cardMin():
-    assert hasattr(model::AbstractCardinalityConstraint, "cardMin")
+def test_model_abstractcardinalityconstraint_has_cardMin():
+    assert hasattr(model_AbstractCardinalityConstraint, "cardMin")
     descriptor = None
-    for klass in model::AbstractCardinalityConstraint.__mro__:
+    for klass in model_AbstractCardinalityConstraint.__mro__:
         if "cardMin" in klass.__dict__:
             descriptor = klass.__dict__["cardMin"]
             break
@@ -1012,23 +1012,23 @@ def test_model::abstractcardinalityconstraint_has_cardMin():
 
 
 
-def test_model::abstractregexpconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractRegExpConstraint)
+def test_model_abstractregexpconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractRegExpConstraint)
 
 
-def test_model::abstractregexpconstraint_constructor_exists():
-    assert callable(model::AbstractRegExpConstraint.__init__)
+def test_model_abstractregexpconstraint_constructor_exists():
+    assert callable(model_AbstractRegExpConstraint.__init__)
 
 
-def test_model::abstractregexpconstraint_constructor_args():
-    sig = inspect.signature(model::AbstractRegExpConstraint.__init__)
+def test_model_abstractregexpconstraint_constructor_args():
+    sig = inspect.signature(model_AbstractRegExpConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "regexp" in params, "Missing parameter 'regexp'"
 
-def test_model::abstractregexpconstraint_has_regexp():
-    assert hasattr(model::AbstractRegExpConstraint, "regexp")
+def test_model_abstractregexpconstraint_has_regexp():
+    assert hasattr(model_AbstractRegExpConstraint, "regexp")
     descriptor = None
-    for klass in model::AbstractRegExpConstraint.__mro__:
+    for klass in model_AbstractRegExpConstraint.__mro__:
         if "regexp" in klass.__dict__:
             descriptor = klass.__dict__["regexp"]
             break
@@ -1036,16 +1036,16 @@ def test_model::abstractregexpconstraint_has_regexp():
 
 
 
-def test_model::topicreifiesconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::TopicReifiesConstraint)
+def test_model_topicreifiesconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_TopicReifiesConstraint)
 
 
-def test_model::topicreifiesconstraint_constructor_exists():
-    assert callable(model::TopicReifiesConstraint.__init__)
+def test_model_topicreifiesconstraint_constructor_exists():
+    assert callable(model_TopicReifiesConstraint.__init__)
 
 
-def test_model::topicreifiesconstraint_constructor_args():
-    sig = inspect.signature(model::TopicReifiesConstraint.__init__)
+def test_model_topicreifiesconstraint_constructor_args():
+    sig = inspect.signature(model_TopicReifiesConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1064,44 +1064,44 @@ def test_abstractregexpconstraint_constructor_args():
 
 
 
-def test_model::itemidentifierconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::ItemIdentifierConstraint)
+def test_model_subjectidentifierconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_SubjectIdentifierConstraint)
 
 
-def test_model::itemidentifierconstraint_constructor_exists():
-    assert callable(model::ItemIdentifierConstraint.__init__)
+def test_model_subjectidentifierconstraint_constructor_exists():
+    assert callable(model_SubjectIdentifierConstraint.__init__)
 
 
-def test_model::itemidentifierconstraint_constructor_args():
-    sig = inspect.signature(model::ItemIdentifierConstraint.__init__)
+def test_model_subjectidentifierconstraint_constructor_args():
+    sig = inspect.signature(model_SubjectIdentifierConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::subjectlocatorconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::SubjectLocatorConstraint)
+def test_model_subjectlocatorconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_SubjectLocatorConstraint)
 
 
-def test_model::subjectlocatorconstraint_constructor_exists():
-    assert callable(model::SubjectLocatorConstraint.__init__)
+def test_model_subjectlocatorconstraint_constructor_exists():
+    assert callable(model_SubjectLocatorConstraint.__init__)
 
 
-def test_model::subjectlocatorconstraint_constructor_args():
-    sig = inspect.signature(model::SubjectLocatorConstraint.__init__)
+def test_model_subjectlocatorconstraint_constructor_args():
+    sig = inspect.signature(model_SubjectLocatorConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::subjectidentifierconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::SubjectIdentifierConstraint)
+def test_model_itemidentifierconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_ItemIdentifierConstraint)
 
 
-def test_model::subjectidentifierconstraint_constructor_exists():
-    assert callable(model::SubjectIdentifierConstraint.__init__)
+def test_model_itemidentifierconstraint_constructor_exists():
+    assert callable(model_ItemIdentifierConstraint.__init__)
 
 
-def test_model::subjectidentifierconstraint_constructor_args():
-    sig = inspect.signature(model::SubjectIdentifierConstraint.__init__)
+def test_model_itemidentifierconstraint_constructor_args():
+    sig = inspect.signature(model_ItemIdentifierConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1120,77 +1120,77 @@ def test_tmclconstruct_constructor_args():
 
 
 
-def test_model::abstractconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractConstraint)
+def test_model_abstractconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractConstraint)
 
 
-def test_model::abstractconstraint_constructor_exists():
-    assert callable(model::AbstractConstraint.__init__)
+def test_model_abstractconstraint_constructor_exists():
+    assert callable(model_AbstractConstraint.__init__)
 
 
-def test_model::abstractconstraint_constructor_args():
-    sig = inspect.signature(model::AbstractConstraint.__init__)
+def test_model_abstractconstraint_constructor_args():
+    sig = inspect.signature(model_AbstractConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::topicmapschema_is_not_abstract():
-    assert not inspect.isabstract(model::TopicMapSchema)
+def test_model_topicmapschema_is_not_abstract():
+    assert not inspect.isabstract(model_TopicMapSchema)
 
 
-def test_model::topicmapschema_constructor_exists():
-    assert callable(model::TopicMapSchema.__init__)
+def test_model_topicmapschema_constructor_exists():
+    assert callable(model_TopicMapSchema.__init__)
 
 
-def test_model::topicmapschema_constructor_args():
-    sig = inspect.signature(model::TopicMapSchema.__init__)
+def test_model_topicmapschema_constructor_args():
+    sig = inspect.signature(model_TopicMapSchema.__init__)
     params = list(sig.parameters.keys())
+    assert "version" in params, "Missing parameter 'version'"
+    assert "includes" in params, "Missing parameter 'includes'"
     assert "baseLocator" in params, "Missing parameter 'baseLocator'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "includes" in params, "Missing parameter 'includes'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "schemaResource" in params, "Missing parameter 'schemaResource'"
 
-def test_model::topicmapschema_has_baseLocator():
-    assert hasattr(model::TopicMapSchema, "baseLocator")
+def test_model_topicmapschema_has_version():
+    assert hasattr(model_TopicMapSchema, "version")
     descriptor = None
-    for klass in model::TopicMapSchema.__mro__:
-        if "baseLocator" in klass.__dict__:
-            descriptor = klass.__dict__["baseLocator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::topicmapschema_has_name():
-    assert hasattr(model::TopicMapSchema, "name")
-    descriptor = None
-    for klass in model::TopicMapSchema.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::topicmapschema_has_includes():
-    assert hasattr(model::TopicMapSchema, "includes")
-    descriptor = None
-    for klass in model::TopicMapSchema.__mro__:
-        if "includes" in klass.__dict__:
-            descriptor = klass.__dict__["includes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::topicmapschema_has_version():
-    assert hasattr(model::TopicMapSchema, "version")
-    descriptor = None
-    for klass in model::TopicMapSchema.__mro__:
+    for klass in model_TopicMapSchema.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::topicmapschema_has_schemaResource():
-    assert hasattr(model::TopicMapSchema, "schemaResource")
+def test_model_topicmapschema_has_includes():
+    assert hasattr(model_TopicMapSchema, "includes")
     descriptor = None
-    for klass in model::TopicMapSchema.__mro__:
+    for klass in model_TopicMapSchema.__mro__:
+        if "includes" in klass.__dict__:
+            descriptor = klass.__dict__["includes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_topicmapschema_has_baseLocator():
+    assert hasattr(model_TopicMapSchema, "baseLocator")
+    descriptor = None
+    for klass in model_TopicMapSchema.__mro__:
+        if "baseLocator" in klass.__dict__:
+            descriptor = klass.__dict__["baseLocator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_topicmapschema_has_name():
+    assert hasattr(model_TopicMapSchema, "name")
+    descriptor = None
+    for klass in model_TopicMapSchema.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_topicmapschema_has_schemaResource():
+    assert hasattr(model_TopicMapSchema, "schemaResource")
+    descriptor = None
+    for klass in model_TopicMapSchema.__mro__:
         if "schemaResource" in klass.__dict__:
             descriptor = klass.__dict__["schemaResource"]
             break
@@ -1198,75 +1198,75 @@ def test_model::topicmapschema_has_schemaResource():
 
 
 
-def test_model::topictype_is_not_abstract():
-    assert not inspect.isabstract(model::TopicType)
+def test_model_topictype_is_not_abstract():
+    assert not inspect.isabstract(model_TopicType)
 
 
-def test_model::topictype_constructor_exists():
-    assert callable(model::TopicType.__init__)
+def test_model_topictype_constructor_exists():
+    assert callable(model_TopicType.__init__)
 
 
-def test_model::topictype_constructor_args():
-    sig = inspect.signature(model::TopicType.__init__)
+def test_model_topictype_constructor_args():
+    sig = inspect.signature(model_TopicType.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "idType" in params, "Missing parameter 'idType'"
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "locators" in params, "Missing parameter 'locators'"
+    assert "idType" in params, "Missing parameter 'idType'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "identifiers" in params, "Missing parameter 'identifiers'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_model::topictype_has_name():
-    assert hasattr(model::TopicType, "name")
+def test_model_topictype_has_locators():
+    assert hasattr(model_TopicType, "locators")
     descriptor = None
-    for klass in model::TopicType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::topictype_has_idType():
-    assert hasattr(model::TopicType, "idType")
-    descriptor = None
-    for klass in model::TopicType.__mro__:
-        if "idType" in klass.__dict__:
-            descriptor = klass.__dict__["idType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::topictype_has_kind():
-    assert hasattr(model::TopicType, "kind")
-    descriptor = None
-    for klass in model::TopicType.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::topictype_has_locators():
-    assert hasattr(model::TopicType, "locators")
-    descriptor = None
-    for klass in model::TopicType.__mro__:
+    for klass in model_TopicType.__mro__:
         if "locators" in klass.__dict__:
             descriptor = klass.__dict__["locators"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::topictype_has_identifiers():
-    assert hasattr(model::TopicType, "identifiers")
+def test_model_topictype_has_idType():
+    assert hasattr(model_TopicType, "idType")
     descriptor = None
-    for klass in model::TopicType.__mro__:
+    for klass in model_TopicType.__mro__:
+        if "idType" in klass.__dict__:
+            descriptor = klass.__dict__["idType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_topictype_has_name():
+    assert hasattr(model_TopicType, "name")
+    descriptor = None
+    for klass in model_TopicType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_topictype_has_identifiers():
+    assert hasattr(model_TopicType, "identifiers")
+    descriptor = None
+    for klass in model_TopicType.__mro__:
         if "identifiers" in klass.__dict__:
             descriptor = klass.__dict__["identifiers"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::topictype_has_abstract():
-    assert hasattr(model::TopicType, "abstract")
+def test_model_topictype_has_abstract():
+    assert hasattr(model_TopicType, "abstract")
     descriptor = None
-    for klass in model::TopicType.__mro__:
+    for klass in model_TopicType.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_topictype_has_kind():
+    assert hasattr(model_TopicType, "kind")
+    descriptor = None
+    for klass in model_TopicType.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
@@ -1287,22 +1287,6 @@ def test_topicid_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TopicId"
 
-def test_edgetype_exists():
-    # Check that the Enumeration exists
-    assert EdgeType is not None
-
-def test_edgetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EdgeType]
-    expected_literals = [
-        "IS_ATYPE",
-        "AKO_TYPE",
-        "ROLE_CONSTRAINT_TYPE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EdgeType"
-
 def test_kindoftopictype_exists():
     # Check that the Enumeration exists
     assert KindOfTopicType is not None
@@ -1311,17 +1295,33 @@ def test_kindoftopictype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in KindOfTopicType]
     expected_literals = [
+        "OccurrenceType",
         "RoleType",
+        "ScopeType",
         "TopicType",
         "AssociationType",
-        "ScopeType",
-        "OccurrenceType",
-        "NoType",
         "NameType",
+        "NoType",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in KindOfTopicType"
+
+def test_edgetype_exists():
+    # Check that the Enumeration exists
+    assert EdgeType is not None
+
+def test_edgetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EdgeType]
+    expected_literals = [
+        "AKO_TYPE",
+        "IS_ATYPE",
+        "ROLE_CONSTRAINT_TYPE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EdgeType"
 
 
 # =============================================================================
@@ -1335,16 +1335,16 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::OnoObject_strategy = st.builds(
-    model::OnoObject,
+model_OnoObject_strategy = st.builds(
+    model_OnoObject,
     id=
         st.integers()
 )
 Diagram_strategy = st.builds(
     Diagram,
 )
-model::DomainDiagram_strategy = st.builds(
-    model::DomainDiagram,
+model_DomainDiagram_strategy = st.builds(
+    model_DomainDiagram,
 )
 ReifiableTopicType_strategy = st.builds(
     ReifiableTopicType,
@@ -1361,47 +1361,47 @@ ScopedReifiableTopicType_strategy = st.builds(
 ScopedTopicType_strategy = st.builds(
     ScopedTopicType,
 )
-model::ScopedReifiableTopicType_strategy = st.builds(
-    model::ScopedReifiableTopicType,
+model_ScopedReifiableTopicType_strategy = st.builds(
+    model_ScopedReifiableTopicType,
 )
-model::OccurrenceType_strategy = st.builds(
-    model::OccurrenceType,
+model_NameType_strategy = st.builds(
+    model_NameType,
+)
+model_OccurrenceType_strategy = st.builds(
+    model_OccurrenceType,
     dataType=
         safe_text
 )
-model::NameType_strategy = st.builds(
-    model::NameType,
-)
-model::AssociationType_strategy = st.builds(
-    model::AssociationType,
+model_AssociationType_strategy = st.builds(
+    model_AssociationType,
 )
 TopicType_strategy = st.builds(
     TopicType,
 )
-model::AbstractUniqueValueTopicType_strategy = st.builds(
-    model::AbstractUniqueValueTopicType,
+model_AbstractUniqueValueTopicType_strategy = st.builds(
+    model_AbstractUniqueValueTopicType,
     unique=
         st.booleans()
 )
-model::ReifiableTopicType_strategy = st.builds(
-    model::ReifiableTopicType,
-)
-model::AbstractRegExpTopicType_strategy = st.builds(
-    model::AbstractRegExpTopicType,
+model_AbstractRegExpTopicType_strategy = st.builds(
+    model_AbstractRegExpTopicType,
     regExp=
         safe_text
 )
-model::ScopedTopicType_strategy = st.builds(
-    model::ScopedTopicType,
+model_ReifiableTopicType_strategy = st.builds(
+    model_ReifiableTopicType,
 )
-model::RoleType_strategy = st.builds(
-    model::RoleType,
+model_ScopedTopicType_strategy = st.builds(
+    model_ScopedTopicType,
+)
+model_RoleType_strategy = st.builds(
+    model_RoleType,
 )
 Node_strategy = st.builds(
     Node,
 )
-model::Comment_strategy = st.builds(
-    model::Comment,
+model_Comment_strategy = st.builds(
+    model_Comment,
     width=
         st.integers(),
     height=
@@ -1409,196 +1409,193 @@ model::Comment_strategy = st.builds(
     content=
         safe_text
 )
-model::TypeNode_strategy = st.builds(
-    model::TypeNode,
+model_TypeNode_strategy = st.builds(
+    model_TypeNode,
     image=
         safe_text
 )
 OnoObject_strategy = st.builds(
     OnoObject,
 )
-model::File_strategy = st.builds(
-    model::File,
-    dirty=
-        st.booleans(),
-    filename=
-        safe_text,
-    notes=
-        safe_text
+model_Bendpoint_strategy = st.builds(
+    model_Bendpoint,
+    posY=
+        st.integers(),
+    posX=
+        st.integers()
 )
-model::TMCLConstruct_strategy = st.builds(
-    model::TMCLConstruct,
+model_LabelPos_strategy = st.builds(
+    model_LabelPos,
+    posX=
+        st.integers(),
+    posY=
+        st.integers()
+)
+model_TMCLConstruct_strategy = st.builds(
+    model_TMCLConstruct,
     see_also=
         safe_text,
-    comment=
-        safe_text,
     description=
-        safe_text
-)
-model::Node_strategy = st.builds(
-    model::Node,
-    posX=
-        st.integers(),
-    posY=
-        st.integers()
-)
-model::Annotation_strategy = st.builds(
-    model::Annotation,
-    value=
         safe_text,
-    key=
+    comment=
         safe_text
 )
-model::Bendpoint_strategy = st.builds(
-    model::Bendpoint,
+model_Node_strategy = st.builds(
+    model_Node,
     posY=
         st.integers(),
     posX=
         st.integers()
 )
-model::Edge_strategy = st.builds(
-    model::Edge,
+model_Edge_strategy = st.builds(
+    model_Edge,
     type=
         safe_text
 )
-model::LabelPos_strategy = st.builds(
-    model::LabelPos,
-    posX=
-        st.integers(),
-    posY=
-        st.integers()
+model_Annotation_strategy = st.builds(
+    model_Annotation,
+    key=
+        safe_text,
+    value=
+        safe_text
 )
-model::Diagram_strategy = st.builds(
-    model::Diagram,
+model_File_strategy = st.builds(
+    model_File,
+    filename=
+        safe_text,
+    notes=
+        safe_text,
+    dirty=
+        st.booleans()
+)
+model_Diagram_strategy = st.builds(
+    model_Diagram,
     name=
         safe_text
 )
 AbstractTypedConstraint_strategy = st.builds(
     AbstractTypedConstraint,
 )
-model::AssociationNode_strategy = st.builds(
-    model::AssociationNode,
+model_AssociationNode_strategy = st.builds(
+    model_AssociationNode,
 )
-model::MappingElement_strategy = st.builds(
-    model::MappingElement,
-    value=
-        safe_text,
+model_MappingElement_strategy = st.builds(
+    model_MappingElement,
     key=
+        safe_text,
+    value=
         safe_text
 )
-model::AssociationTypeConstraint_strategy = st.builds(
-    model::AssociationTypeConstraint,
+model_AssociationTypeConstraint_strategy = st.builds(
+    model_AssociationTypeConstraint,
 )
 AbstractCardinalityConstraint_strategy = st.builds(
     AbstractCardinalityConstraint,
 )
-model::AbstractTypedCardinalityConstraint_strategy = st.builds(
-    model::AbstractTypedCardinalityConstraint,
+model_AbstractTypedCardinalityConstraint_strategy = st.builds(
+    model_AbstractTypedCardinalityConstraint,
 )
-model::RolePlayerConstraint_strategy = st.builds(
-    model::RolePlayerConstraint,
+model_RolePlayerConstraint_strategy = st.builds(
+    model_RolePlayerConstraint,
 )
 AbstractTypedCardinalityConstraint_strategy = st.builds(
     AbstractTypedCardinalityConstraint,
 )
-model::NameTypeConstraint_strategy = st.builds(
-    model::NameTypeConstraint,
+model_ReifierConstraint_strategy = st.builds(
+    model_ReifierConstraint,
 )
-model::ScopeConstraint_strategy = st.builds(
-    model::ScopeConstraint,
+model_ScopeConstraint_strategy = st.builds(
+    model_ScopeConstraint,
 )
-model::OccurrenceTypeConstraint_strategy = st.builds(
-    model::OccurrenceTypeConstraint,
+model_OccurrenceTypeConstraint_strategy = st.builds(
+    model_OccurrenceTypeConstraint,
 )
-model::RoleConstraint_strategy = st.builds(
-    model::RoleConstraint,
+model_NameTypeConstraint_strategy = st.builds(
+    model_NameTypeConstraint,
 )
-model::ReifierConstraint_strategy = st.builds(
-    model::ReifierConstraint,
+model_RoleConstraint_strategy = st.builds(
+    model_RoleConstraint,
 )
 AbstractConstraint_strategy = st.builds(
     AbstractConstraint,
 )
-model::RoleCombinationConstraint_strategy = st.builds(
-    model::RoleCombinationConstraint,
+model_RoleCombinationConstraint_strategy = st.builds(
+    model_RoleCombinationConstraint,
 )
-model::AbstractTypedConstraint_strategy = st.builds(
-    model::AbstractTypedConstraint,
+model_AbstractTypedConstraint_strategy = st.builds(
+    model_AbstractTypedConstraint,
 )
-model::AbstractCardinalityConstraint_strategy = st.builds(
-    model::AbstractCardinalityConstraint,
+model_AbstractCardinalityConstraint_strategy = st.builds(
+    model_AbstractCardinalityConstraint,
     cardMax=
         safe_text,
     cardMin=
         safe_text
 )
-model::AbstractRegExpConstraint_strategy = st.builds(
-    model::AbstractRegExpConstraint,
+model_AbstractRegExpConstraint_strategy = st.builds(
+    model_AbstractRegExpConstraint,
     regexp=
         safe_text
 )
-model::TopicReifiesConstraint_strategy = st.builds(
-    model::TopicReifiesConstraint,
+model_TopicReifiesConstraint_strategy = st.builds(
+    model_TopicReifiesConstraint,
 )
 AbstractRegExpConstraint_strategy = st.builds(
     AbstractRegExpConstraint,
 )
-model::ItemIdentifierConstraint_strategy = st.builds(
-    model::ItemIdentifierConstraint,
+model_SubjectIdentifierConstraint_strategy = st.builds(
+    model_SubjectIdentifierConstraint,
 )
-model::SubjectLocatorConstraint_strategy = st.builds(
-    model::SubjectLocatorConstraint,
+model_SubjectLocatorConstraint_strategy = st.builds(
+    model_SubjectLocatorConstraint,
 )
-model::SubjectIdentifierConstraint_strategy = st.builds(
-    model::SubjectIdentifierConstraint,
+model_ItemIdentifierConstraint_strategy = st.builds(
+    model_ItemIdentifierConstraint,
 )
 TMCLConstruct_strategy = st.builds(
     TMCLConstruct,
 )
-model::AbstractConstraint_strategy = st.builds(
-    model::AbstractConstraint,
+model_AbstractConstraint_strategy = st.builds(
+    model_AbstractConstraint,
 )
-model::TopicMapSchema_strategy = st.builds(
-    model::TopicMapSchema,
+model_TopicMapSchema_strategy = st.builds(
+    model_TopicMapSchema,
+    version=
+        safe_text,
+    includes=
+        safe_text,
     baseLocator=
         safe_text,
     name=
         safe_text,
-    includes=
-        safe_text,
-    version=
-        safe_text,
     schemaResource=
         safe_text
 )
-model::TopicType_strategy = st.builds(
-    model::TopicType,
-    name=
+model_TopicType_strategy = st.builds(
+    model_TopicType,
+    locators=
         safe_text,
     idType=
         safe_text,
-    kind=
-        safe_text,
-    locators=
+    name=
         safe_text,
     identifiers=
         safe_text,
     abstract=
-        st.booleans()
+        st.booleans(),
+    kind=
+        safe_text
 )
 
-@given(instance=model::OnoObject_strategy)
+@given(instance=model_OnoObject_strategy)
 @settings(max_examples=50)
-def test_model::onoobject_instantiation(instance):
-    assert isinstance(instance, model::OnoObject)
-
-@given(instance=model::OnoObject_strategy)
-def test_model::onoobject_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_model_onoobject_instantiation(instance):
+    assert isinstance(instance, model_OnoObject)
 
 
-@given(instance=model::OnoObject_strategy)
-def test_model::onoobject_id_setter(instance):
+
+@given(instance=model_OnoObject_strategy)
+def test_model_onoobject_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -1608,10 +1605,10 @@ def test_model::onoobject_id_setter(instance):
 def test_diagram_instantiation(instance):
     assert isinstance(instance, Diagram)
 
-@given(instance=model::DomainDiagram_strategy)
+@given(instance=model_DomainDiagram_strategy)
 @settings(max_examples=50)
-def test_model::domaindiagram_instantiation(instance):
-    assert isinstance(instance, model::DomainDiagram)
+def test_model_domaindiagram_instantiation(instance):
+    assert isinstance(instance, model_DomainDiagram)
 
 @given(instance=ReifiableTopicType_strategy)
 @settings(max_examples=50)
@@ -1638,144 +1635,123 @@ def test_scopedreifiabletopictype_instantiation(instance):
 def test_scopedtopictype_instantiation(instance):
     assert isinstance(instance, ScopedTopicType)
 
-@given(instance=model::ScopedReifiableTopicType_strategy)
+@given(instance=model_ScopedReifiableTopicType_strategy)
 @settings(max_examples=50)
-def test_model::scopedreifiabletopictype_instantiation(instance):
-    assert isinstance(instance, model::ScopedReifiableTopicType)
+def test_model_scopedreifiabletopictype_instantiation(instance):
+    assert isinstance(instance, model_ScopedReifiableTopicType)
 
-@given(instance=model::OccurrenceType_strategy)
+@given(instance=model_NameType_strategy)
 @settings(max_examples=50)
-def test_model::occurrencetype_instantiation(instance):
-    assert isinstance(instance, model::OccurrenceType)
+def test_model_nametype_instantiation(instance):
+    assert isinstance(instance, model_NameType)
 
-@given(instance=model::OccurrenceType_strategy)
-def test_model::occurrencetype_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+@given(instance=model_OccurrenceType_strategy)
+@settings(max_examples=50)
+def test_model_occurrencetype_instantiation(instance):
+    assert isinstance(instance, model_OccurrenceType)
 
 
-@given(instance=model::OccurrenceType_strategy)
-def test_model::occurrencetype_dataType_setter(instance):
+
+@given(instance=model_OccurrenceType_strategy)
+def test_model_occurrencetype_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=model::NameType_strategy)
+@given(instance=model_AssociationType_strategy)
 @settings(max_examples=50)
-def test_model::nametype_instantiation(instance):
-    assert isinstance(instance, model::NameType)
-
-@given(instance=model::AssociationType_strategy)
-@settings(max_examples=50)
-def test_model::associationtype_instantiation(instance):
-    assert isinstance(instance, model::AssociationType)
+def test_model_associationtype_instantiation(instance):
+    assert isinstance(instance, model_AssociationType)
 
 @given(instance=TopicType_strategy)
 @settings(max_examples=50)
 def test_topictype_instantiation(instance):
     assert isinstance(instance, TopicType)
 
-@given(instance=model::AbstractUniqueValueTopicType_strategy)
+@given(instance=model_AbstractUniqueValueTopicType_strategy)
 @settings(max_examples=50)
-def test_model::abstractuniquevaluetopictype_instantiation(instance):
-    assert isinstance(instance, model::AbstractUniqueValueTopicType)
-
-@given(instance=model::AbstractUniqueValueTopicType_strategy)
-def test_model::abstractuniquevaluetopictype_unique_type(instance):
-    assert isinstance(instance.unique, bool)
+def test_model_abstractuniquevaluetopictype_instantiation(instance):
+    assert isinstance(instance, model_AbstractUniqueValueTopicType)
 
 
-@given(instance=model::AbstractUniqueValueTopicType_strategy)
-def test_model::abstractuniquevaluetopictype_unique_setter(instance):
+
+@given(instance=model_AbstractUniqueValueTopicType_strategy)
+def test_model_abstractuniquevaluetopictype_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
 
-@given(instance=model::ReifiableTopicType_strategy)
+@given(instance=model_AbstractRegExpTopicType_strategy)
 @settings(max_examples=50)
-def test_model::reifiabletopictype_instantiation(instance):
-    assert isinstance(instance, model::ReifiableTopicType)
-
-@given(instance=model::AbstractRegExpTopicType_strategy)
-@settings(max_examples=50)
-def test_model::abstractregexptopictype_instantiation(instance):
-    assert isinstance(instance, model::AbstractRegExpTopicType)
-
-@given(instance=model::AbstractRegExpTopicType_strategy)
-def test_model::abstractregexptopictype_regExp_type(instance):
-    assert isinstance(instance.regExp, str)
+def test_model_abstractregexptopictype_instantiation(instance):
+    assert isinstance(instance, model_AbstractRegExpTopicType)
 
 
-@given(instance=model::AbstractRegExpTopicType_strategy)
-def test_model::abstractregexptopictype_regExp_setter(instance):
+
+@given(instance=model_AbstractRegExpTopicType_strategy)
+def test_model_abstractregexptopictype_regExp_setter(instance):
     original = instance.regExp
     instance.regExp = original
     assert instance.regExp == original
 
-@given(instance=model::ScopedTopicType_strategy)
+@given(instance=model_ReifiableTopicType_strategy)
 @settings(max_examples=50)
-def test_model::scopedtopictype_instantiation(instance):
-    assert isinstance(instance, model::ScopedTopicType)
+def test_model_reifiabletopictype_instantiation(instance):
+    assert isinstance(instance, model_ReifiableTopicType)
 
-@given(instance=model::RoleType_strategy)
+@given(instance=model_ScopedTopicType_strategy)
 @settings(max_examples=50)
-def test_model::roletype_instantiation(instance):
-    assert isinstance(instance, model::RoleType)
+def test_model_scopedtopictype_instantiation(instance):
+    assert isinstance(instance, model_ScopedTopicType)
+
+@given(instance=model_RoleType_strategy)
+@settings(max_examples=50)
+def test_model_roletype_instantiation(instance):
+    assert isinstance(instance, model_RoleType)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=model::Comment_strategy)
+@given(instance=model_Comment_strategy)
 @settings(max_examples=50)
-def test_model::comment_instantiation(instance):
-    assert isinstance(instance, model::Comment)
-
-@given(instance=model::Comment_strategy)
-def test_model::comment_width_type(instance):
-    assert isinstance(instance.width, int)
+def test_model_comment_instantiation(instance):
+    assert isinstance(instance, model_Comment)
 
 
-@given(instance=model::Comment_strategy)
-def test_model::comment_width_setter(instance):
+
+@given(instance=model_Comment_strategy)
+def test_model_comment_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=model::Comment_strategy)
-def test_model::comment_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=model::Comment_strategy)
-def test_model::comment_height_setter(instance):
+@given(instance=model_Comment_strategy)
+def test_model_comment_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=model::Comment_strategy)
-def test_model::comment_content_type(instance):
-    assert isinstance(instance.content, str)
 
 
-@given(instance=model::Comment_strategy)
-def test_model::comment_content_setter(instance):
+@given(instance=model_Comment_strategy)
+def test_model_comment_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=model::TypeNode_strategy)
+@given(instance=model_TypeNode_strategy)
 @settings(max_examples=50)
-def test_model::typenode_instantiation(instance):
-    assert isinstance(instance, model::TypeNode)
-
-@given(instance=model::TypeNode_strategy)
-def test_model::typenode_image_type(instance):
-    assert isinstance(instance.image, str)
+def test_model_typenode_instantiation(instance):
+    assert isinstance(instance, model_TypeNode)
 
 
-@given(instance=model::TypeNode_strategy)
-def test_model::typenode_image_setter(instance):
+
+@given(instance=model_TypeNode_strategy)
+def test_model_typenode_image_setter(instance):
     original = instance.image
     instance.image = original
     assert instance.image == original
@@ -1785,218 +1761,170 @@ def test_model::typenode_image_setter(instance):
 def test_onoobject_instantiation(instance):
     assert isinstance(instance, OnoObject)
 
-@given(instance=model::File_strategy)
+@given(instance=model_Bendpoint_strategy)
 @settings(max_examples=50)
-def test_model::file_instantiation(instance):
-    assert isinstance(instance, model::File)
-
-@given(instance=model::File_strategy)
-def test_model::file_dirty_type(instance):
-    assert isinstance(instance.dirty, bool)
+def test_model_bendpoint_instantiation(instance):
+    assert isinstance(instance, model_Bendpoint)
 
 
-@given(instance=model::File_strategy)
-def test_model::file_dirty_setter(instance):
-    original = instance.dirty
-    instance.dirty = original
-    assert instance.dirty == original
 
-@given(instance=model::File_strategy)
-def test_model::file_filename_type(instance):
-    assert isinstance(instance.filename, str)
+@given(instance=model_Bendpoint_strategy)
+def test_model_bendpoint_posY_setter(instance):
+    original = instance.posY
+    instance.posY = original
+    assert instance.posY == original
 
 
-@given(instance=model::File_strategy)
-def test_model::file_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
 
-@given(instance=model::File_strategy)
-def test_model::file_notes_type(instance):
-    assert isinstance(instance.notes, str)
+@given(instance=model_Bendpoint_strategy)
+def test_model_bendpoint_posX_setter(instance):
+    original = instance.posX
+    instance.posX = original
+    assert instance.posX == original
 
-
-@given(instance=model::File_strategy)
-def test_model::file_notes_setter(instance):
-    original = instance.notes
-    instance.notes = original
-    assert instance.notes == original
-
-@given(instance=model::TMCLConstruct_strategy)
+@given(instance=model_LabelPos_strategy)
 @settings(max_examples=50)
-def test_model::tmclconstruct_instantiation(instance):
-    assert isinstance(instance, model::TMCLConstruct)
-
-@given(instance=model::TMCLConstruct_strategy)
-def test_model::tmclconstruct_see_also_type(instance):
-    assert isinstance(instance.see_also, str)
+def test_model_labelpos_instantiation(instance):
+    assert isinstance(instance, model_LabelPos)
 
 
-@given(instance=model::TMCLConstruct_strategy)
-def test_model::tmclconstruct_see_also_setter(instance):
+
+@given(instance=model_LabelPos_strategy)
+def test_model_labelpos_posX_setter(instance):
+    original = instance.posX
+    instance.posX = original
+    assert instance.posX == original
+
+
+
+@given(instance=model_LabelPos_strategy)
+def test_model_labelpos_posY_setter(instance):
+    original = instance.posY
+    instance.posY = original
+    assert instance.posY == original
+
+@given(instance=model_TMCLConstruct_strategy)
+@settings(max_examples=50)
+def test_model_tmclconstruct_instantiation(instance):
+    assert isinstance(instance, model_TMCLConstruct)
+
+
+
+@given(instance=model_TMCLConstruct_strategy)
+def test_model_tmclconstruct_see_also_setter(instance):
     original = instance.see_also
     instance.see_also = original
     assert instance.see_also == original
 
-@given(instance=model::TMCLConstruct_strategy)
-def test_model::tmclconstruct_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=model::TMCLConstruct_strategy)
-def test_model::tmclconstruct_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=model::TMCLConstruct_strategy)
-def test_model::tmclconstruct_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=model::TMCLConstruct_strategy)
-def test_model::tmclconstruct_description_setter(instance):
+@given(instance=model_TMCLConstruct_strategy)
+def test_model_tmclconstruct_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=model::Node_strategy)
+
+
+@given(instance=model_TMCLConstruct_strategy)
+def test_model_tmclconstruct_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=model_Node_strategy)
 @settings(max_examples=50)
-def test_model::node_instantiation(instance):
-    assert isinstance(instance, model::Node)
-
-@given(instance=model::Node_strategy)
-def test_model::node_posX_type(instance):
-    assert isinstance(instance.posX, int)
+def test_model_node_instantiation(instance):
+    assert isinstance(instance, model_Node)
 
 
-@given(instance=model::Node_strategy)
-def test_model::node_posX_setter(instance):
-    original = instance.posX
-    instance.posX = original
-    assert instance.posX == original
 
-@given(instance=model::Node_strategy)
-def test_model::node_posY_type(instance):
-    assert isinstance(instance.posY, int)
-
-
-@given(instance=model::Node_strategy)
-def test_model::node_posY_setter(instance):
+@given(instance=model_Node_strategy)
+def test_model_node_posY_setter(instance):
     original = instance.posY
     instance.posY = original
     assert instance.posY == original
 
-@given(instance=model::Annotation_strategy)
-@settings(max_examples=50)
-def test_model::annotation_instantiation(instance):
-    assert isinstance(instance, model::Annotation)
-
-@given(instance=model::Annotation_strategy)
-def test_model::annotation_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=model::Annotation_strategy)
-def test_model::annotation_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=model::Annotation_strategy)
-def test_model::annotation_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=model::Annotation_strategy)
-def test_model::annotation_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=model::Bendpoint_strategy)
-@settings(max_examples=50)
-def test_model::bendpoint_instantiation(instance):
-    assert isinstance(instance, model::Bendpoint)
-
-@given(instance=model::Bendpoint_strategy)
-def test_model::bendpoint_posY_type(instance):
-    assert isinstance(instance.posY, int)
-
-
-@given(instance=model::Bendpoint_strategy)
-def test_model::bendpoint_posY_setter(instance):
-    original = instance.posY
-    instance.posY = original
-    assert instance.posY == original
-
-@given(instance=model::Bendpoint_strategy)
-def test_model::bendpoint_posX_type(instance):
-    assert isinstance(instance.posX, int)
-
-
-@given(instance=model::Bendpoint_strategy)
-def test_model::bendpoint_posX_setter(instance):
+@given(instance=model_Node_strategy)
+def test_model_node_posX_setter(instance):
     original = instance.posX
     instance.posX = original
     assert instance.posX == original
 
-@given(instance=model::Edge_strategy)
+@given(instance=model_Edge_strategy)
 @settings(max_examples=50)
-def test_model::edge_instantiation(instance):
-    assert isinstance(instance, model::Edge)
-
-@given(instance=model::Edge_strategy)
-def test_model::edge_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_model_edge_instantiation(instance):
+    assert isinstance(instance, model_Edge)
 
 
-@given(instance=model::Edge_strategy)
-def test_model::edge_type_setter(instance):
+
+@given(instance=model_Edge_strategy)
+def test_model_edge_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=model::LabelPos_strategy)
+@given(instance=model_Annotation_strategy)
 @settings(max_examples=50)
-def test_model::labelpos_instantiation(instance):
-    assert isinstance(instance, model::LabelPos)
-
-@given(instance=model::LabelPos_strategy)
-def test_model::labelpos_posX_type(instance):
-    assert isinstance(instance.posX, int)
+def test_model_annotation_instantiation(instance):
+    assert isinstance(instance, model_Annotation)
 
 
-@given(instance=model::LabelPos_strategy)
-def test_model::labelpos_posX_setter(instance):
-    original = instance.posX
-    instance.posX = original
-    assert instance.posX == original
 
-@given(instance=model::LabelPos_strategy)
-def test_model::labelpos_posY_type(instance):
-    assert isinstance(instance.posY, int)
+@given(instance=model_Annotation_strategy)
+def test_model_annotation_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
 
 
-@given(instance=model::LabelPos_strategy)
-def test_model::labelpos_posY_setter(instance):
-    original = instance.posY
-    instance.posY = original
-    assert instance.posY == original
 
-@given(instance=model::Diagram_strategy)
+@given(instance=model_Annotation_strategy)
+def test_model_annotation_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=model_File_strategy)
 @settings(max_examples=50)
-def test_model::diagram_instantiation(instance):
-    assert isinstance(instance, model::Diagram)
-
-@given(instance=model::Diagram_strategy)
-def test_model::diagram_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_file_instantiation(instance):
+    assert isinstance(instance, model_File)
 
 
-@given(instance=model::Diagram_strategy)
-def test_model::diagram_name_setter(instance):
+
+@given(instance=model_File_strategy)
+def test_model_file_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+
+
+@given(instance=model_File_strategy)
+def test_model_file_notes_setter(instance):
+    original = instance.notes
+    instance.notes = original
+    assert instance.notes == original
+
+
+
+@given(instance=model_File_strategy)
+def test_model_file_dirty_setter(instance):
+    original = instance.dirty
+    instance.dirty = original
+    assert instance.dirty == original
+
+@given(instance=model_Diagram_strategy)
+@settings(max_examples=50)
+def test_model_diagram_instantiation(instance):
+    assert isinstance(instance, model_Diagram)
+
+
+
+@given(instance=model_Diagram_strategy)
+def test_model_diagram_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2006,308 +1934,260 @@ def test_model::diagram_name_setter(instance):
 def test_abstracttypedconstraint_instantiation(instance):
     assert isinstance(instance, AbstractTypedConstraint)
 
-@given(instance=model::AssociationNode_strategy)
+@given(instance=model_AssociationNode_strategy)
 @settings(max_examples=50)
-def test_model::associationnode_instantiation(instance):
-    assert isinstance(instance, model::AssociationNode)
+def test_model_associationnode_instantiation(instance):
+    assert isinstance(instance, model_AssociationNode)
 
-@given(instance=model::MappingElement_strategy)
+@given(instance=model_MappingElement_strategy)
 @settings(max_examples=50)
-def test_model::mappingelement_instantiation(instance):
-    assert isinstance(instance, model::MappingElement)
-
-@given(instance=model::MappingElement_strategy)
-def test_model::mappingelement_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_model_mappingelement_instantiation(instance):
+    assert isinstance(instance, model_MappingElement)
 
 
-@given(instance=model::MappingElement_strategy)
-def test_model::mappingelement_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=model::MappingElement_strategy)
-def test_model::mappingelement_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=model::MappingElement_strategy)
-def test_model::mappingelement_key_setter(instance):
+@given(instance=model_MappingElement_strategy)
+def test_model_mappingelement_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=model::AssociationTypeConstraint_strategy)
+
+
+@given(instance=model_MappingElement_strategy)
+def test_model_mappingelement_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=model_AssociationTypeConstraint_strategy)
 @settings(max_examples=50)
-def test_model::associationtypeconstraint_instantiation(instance):
-    assert isinstance(instance, model::AssociationTypeConstraint)
+def test_model_associationtypeconstraint_instantiation(instance):
+    assert isinstance(instance, model_AssociationTypeConstraint)
 
 @given(instance=AbstractCardinalityConstraint_strategy)
 @settings(max_examples=50)
 def test_abstractcardinalityconstraint_instantiation(instance):
     assert isinstance(instance, AbstractCardinalityConstraint)
 
-@given(instance=model::AbstractTypedCardinalityConstraint_strategy)
+@given(instance=model_AbstractTypedCardinalityConstraint_strategy)
 @settings(max_examples=50)
-def test_model::abstracttypedcardinalityconstraint_instantiation(instance):
-    assert isinstance(instance, model::AbstractTypedCardinalityConstraint)
+def test_model_abstracttypedcardinalityconstraint_instantiation(instance):
+    assert isinstance(instance, model_AbstractTypedCardinalityConstraint)
 
-@given(instance=model::RolePlayerConstraint_strategy)
+@given(instance=model_RolePlayerConstraint_strategy)
 @settings(max_examples=50)
-def test_model::roleplayerconstraint_instantiation(instance):
-    assert isinstance(instance, model::RolePlayerConstraint)
+def test_model_roleplayerconstraint_instantiation(instance):
+    assert isinstance(instance, model_RolePlayerConstraint)
 
 @given(instance=AbstractTypedCardinalityConstraint_strategy)
 @settings(max_examples=50)
 def test_abstracttypedcardinalityconstraint_instantiation(instance):
     assert isinstance(instance, AbstractTypedCardinalityConstraint)
 
-@given(instance=model::NameTypeConstraint_strategy)
+@given(instance=model_ReifierConstraint_strategy)
 @settings(max_examples=50)
-def test_model::nametypeconstraint_instantiation(instance):
-    assert isinstance(instance, model::NameTypeConstraint)
+def test_model_reifierconstraint_instantiation(instance):
+    assert isinstance(instance, model_ReifierConstraint)
 
-@given(instance=model::ScopeConstraint_strategy)
+@given(instance=model_ScopeConstraint_strategy)
 @settings(max_examples=50)
-def test_model::scopeconstraint_instantiation(instance):
-    assert isinstance(instance, model::ScopeConstraint)
+def test_model_scopeconstraint_instantiation(instance):
+    assert isinstance(instance, model_ScopeConstraint)
 
-@given(instance=model::OccurrenceTypeConstraint_strategy)
+@given(instance=model_OccurrenceTypeConstraint_strategy)
 @settings(max_examples=50)
-def test_model::occurrencetypeconstraint_instantiation(instance):
-    assert isinstance(instance, model::OccurrenceTypeConstraint)
+def test_model_occurrencetypeconstraint_instantiation(instance):
+    assert isinstance(instance, model_OccurrenceTypeConstraint)
 
-@given(instance=model::RoleConstraint_strategy)
+@given(instance=model_NameTypeConstraint_strategy)
 @settings(max_examples=50)
-def test_model::roleconstraint_instantiation(instance):
-    assert isinstance(instance, model::RoleConstraint)
+def test_model_nametypeconstraint_instantiation(instance):
+    assert isinstance(instance, model_NameTypeConstraint)
 
-@given(instance=model::ReifierConstraint_strategy)
+@given(instance=model_RoleConstraint_strategy)
 @settings(max_examples=50)
-def test_model::reifierconstraint_instantiation(instance):
-    assert isinstance(instance, model::ReifierConstraint)
+def test_model_roleconstraint_instantiation(instance):
+    assert isinstance(instance, model_RoleConstraint)
 
 @given(instance=AbstractConstraint_strategy)
 @settings(max_examples=50)
 def test_abstractconstraint_instantiation(instance):
     assert isinstance(instance, AbstractConstraint)
 
-@given(instance=model::RoleCombinationConstraint_strategy)
+@given(instance=model_RoleCombinationConstraint_strategy)
 @settings(max_examples=50)
-def test_model::rolecombinationconstraint_instantiation(instance):
-    assert isinstance(instance, model::RoleCombinationConstraint)
+def test_model_rolecombinationconstraint_instantiation(instance):
+    assert isinstance(instance, model_RoleCombinationConstraint)
 
-@given(instance=model::AbstractTypedConstraint_strategy)
+@given(instance=model_AbstractTypedConstraint_strategy)
 @settings(max_examples=50)
-def test_model::abstracttypedconstraint_instantiation(instance):
-    assert isinstance(instance, model::AbstractTypedConstraint)
+def test_model_abstracttypedconstraint_instantiation(instance):
+    assert isinstance(instance, model_AbstractTypedConstraint)
 
-@given(instance=model::AbstractCardinalityConstraint_strategy)
+@given(instance=model_AbstractCardinalityConstraint_strategy)
 @settings(max_examples=50)
-def test_model::abstractcardinalityconstraint_instantiation(instance):
-    assert isinstance(instance, model::AbstractCardinalityConstraint)
-
-@given(instance=model::AbstractCardinalityConstraint_strategy)
-def test_model::abstractcardinalityconstraint_cardMax_type(instance):
-    assert isinstance(instance.cardMax, str)
+def test_model_abstractcardinalityconstraint_instantiation(instance):
+    assert isinstance(instance, model_AbstractCardinalityConstraint)
 
 
-@given(instance=model::AbstractCardinalityConstraint_strategy)
-def test_model::abstractcardinalityconstraint_cardMax_setter(instance):
+
+@given(instance=model_AbstractCardinalityConstraint_strategy)
+def test_model_abstractcardinalityconstraint_cardMax_setter(instance):
     original = instance.cardMax
     instance.cardMax = original
     assert instance.cardMax == original
 
-@given(instance=model::AbstractCardinalityConstraint_strategy)
-def test_model::abstractcardinalityconstraint_cardMin_type(instance):
-    assert isinstance(instance.cardMin, str)
 
 
-@given(instance=model::AbstractCardinalityConstraint_strategy)
-def test_model::abstractcardinalityconstraint_cardMin_setter(instance):
+@given(instance=model_AbstractCardinalityConstraint_strategy)
+def test_model_abstractcardinalityconstraint_cardMin_setter(instance):
     original = instance.cardMin
     instance.cardMin = original
     assert instance.cardMin == original
 
-@given(instance=model::AbstractRegExpConstraint_strategy)
+@given(instance=model_AbstractRegExpConstraint_strategy)
 @settings(max_examples=50)
-def test_model::abstractregexpconstraint_instantiation(instance):
-    assert isinstance(instance, model::AbstractRegExpConstraint)
-
-@given(instance=model::AbstractRegExpConstraint_strategy)
-def test_model::abstractregexpconstraint_regexp_type(instance):
-    assert isinstance(instance.regexp, str)
+def test_model_abstractregexpconstraint_instantiation(instance):
+    assert isinstance(instance, model_AbstractRegExpConstraint)
 
 
-@given(instance=model::AbstractRegExpConstraint_strategy)
-def test_model::abstractregexpconstraint_regexp_setter(instance):
+
+@given(instance=model_AbstractRegExpConstraint_strategy)
+def test_model_abstractregexpconstraint_regexp_setter(instance):
     original = instance.regexp
     instance.regexp = original
     assert instance.regexp == original
 
-@given(instance=model::TopicReifiesConstraint_strategy)
+@given(instance=model_TopicReifiesConstraint_strategy)
 @settings(max_examples=50)
-def test_model::topicreifiesconstraint_instantiation(instance):
-    assert isinstance(instance, model::TopicReifiesConstraint)
+def test_model_topicreifiesconstraint_instantiation(instance):
+    assert isinstance(instance, model_TopicReifiesConstraint)
 
 @given(instance=AbstractRegExpConstraint_strategy)
 @settings(max_examples=50)
 def test_abstractregexpconstraint_instantiation(instance):
     assert isinstance(instance, AbstractRegExpConstraint)
 
-@given(instance=model::ItemIdentifierConstraint_strategy)
+@given(instance=model_SubjectIdentifierConstraint_strategy)
 @settings(max_examples=50)
-def test_model::itemidentifierconstraint_instantiation(instance):
-    assert isinstance(instance, model::ItemIdentifierConstraint)
+def test_model_subjectidentifierconstraint_instantiation(instance):
+    assert isinstance(instance, model_SubjectIdentifierConstraint)
 
-@given(instance=model::SubjectLocatorConstraint_strategy)
+@given(instance=model_SubjectLocatorConstraint_strategy)
 @settings(max_examples=50)
-def test_model::subjectlocatorconstraint_instantiation(instance):
-    assert isinstance(instance, model::SubjectLocatorConstraint)
+def test_model_subjectlocatorconstraint_instantiation(instance):
+    assert isinstance(instance, model_SubjectLocatorConstraint)
 
-@given(instance=model::SubjectIdentifierConstraint_strategy)
+@given(instance=model_ItemIdentifierConstraint_strategy)
 @settings(max_examples=50)
-def test_model::subjectidentifierconstraint_instantiation(instance):
-    assert isinstance(instance, model::SubjectIdentifierConstraint)
+def test_model_itemidentifierconstraint_instantiation(instance):
+    assert isinstance(instance, model_ItemIdentifierConstraint)
 
 @given(instance=TMCLConstruct_strategy)
 @settings(max_examples=50)
 def test_tmclconstruct_instantiation(instance):
     assert isinstance(instance, TMCLConstruct)
 
-@given(instance=model::AbstractConstraint_strategy)
+@given(instance=model_AbstractConstraint_strategy)
 @settings(max_examples=50)
-def test_model::abstractconstraint_instantiation(instance):
-    assert isinstance(instance, model::AbstractConstraint)
+def test_model_abstractconstraint_instantiation(instance):
+    assert isinstance(instance, model_AbstractConstraint)
 
-@given(instance=model::TopicMapSchema_strategy)
+@given(instance=model_TopicMapSchema_strategy)
 @settings(max_examples=50)
-def test_model::topicmapschema_instantiation(instance):
-    assert isinstance(instance, model::TopicMapSchema)
-
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_baseLocator_type(instance):
-    assert isinstance(instance.baseLocator, str)
+def test_model_topicmapschema_instantiation(instance):
+    assert isinstance(instance, model_TopicMapSchema)
 
 
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_baseLocator_setter(instance):
-    original = instance.baseLocator
-    instance.baseLocator = original
-    assert instance.baseLocator == original
 
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_includes_type(instance):
-    assert isinstance(instance.includes, str)
-
-
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_includes_setter(instance):
-    original = instance.includes
-    instance.includes = original
-    assert instance.includes == original
-
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_version_setter(instance):
+@given(instance=model_TopicMapSchema_strategy)
+def test_model_topicmapschema_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_schemaResource_type(instance):
-    assert isinstance(instance.schemaResource, str)
 
 
-@given(instance=model::TopicMapSchema_strategy)
-def test_model::topicmapschema_schemaResource_setter(instance):
-    original = instance.schemaResource
-    instance.schemaResource = original
-    assert instance.schemaResource == original
-
-@given(instance=model::TopicType_strategy)
-@settings(max_examples=50)
-def test_model::topictype_instantiation(instance):
-    assert isinstance(instance, model::TopicType)
-
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=model_TopicMapSchema_strategy)
+def test_model_topicmapschema_includes_setter(instance):
+    original = instance.includes
+    instance.includes = original
+    assert instance.includes == original
 
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_name_setter(instance):
+
+@given(instance=model_TopicMapSchema_strategy)
+def test_model_topicmapschema_baseLocator_setter(instance):
+    original = instance.baseLocator
+    instance.baseLocator = original
+    assert instance.baseLocator == original
+
+
+
+@given(instance=model_TopicMapSchema_strategy)
+def test_model_topicmapschema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_idType_type(instance):
-    assert isinstance(instance.idType, str)
 
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_idType_setter(instance):
-    original = instance.idType
-    instance.idType = original
-    assert instance.idType == original
+@given(instance=model_TopicMapSchema_strategy)
+def test_model_topicmapschema_schemaResource_setter(instance):
+    original = instance.schemaResource
+    instance.schemaResource = original
+    assert instance.schemaResource == original
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_locators_type(instance):
-    assert isinstance(instance.locators, str)
+@given(instance=model_TopicType_strategy)
+@settings(max_examples=50)
+def test_model_topictype_instantiation(instance):
+    assert isinstance(instance, model_TopicType)
 
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_locators_setter(instance):
+
+@given(instance=model_TopicType_strategy)
+def test_model_topictype_locators_setter(instance):
     original = instance.locators
     instance.locators = original
     assert instance.locators == original
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_identifiers_type(instance):
-    assert isinstance(instance.identifiers, str)
 
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_identifiers_setter(instance):
+@given(instance=model_TopicType_strategy)
+def test_model_topictype_idType_setter(instance):
+    original = instance.idType
+    instance.idType = original
+    assert instance.idType == original
+
+
+
+@given(instance=model_TopicType_strategy)
+def test_model_topictype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=model_TopicType_strategy)
+def test_model_topictype_identifiers_setter(instance):
     original = instance.identifiers
     instance.identifiers = original
     assert instance.identifiers == original
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
 
 
-@given(instance=model::TopicType_strategy)
-def test_model::topictype_abstract_setter(instance):
+@given(instance=model_TopicType_strategy)
+def test_model_topictype_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
+
+
+
+@given(instance=model_TopicType_strategy)
+def test_model_topictype_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original

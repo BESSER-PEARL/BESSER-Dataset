@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    textlink::Region,
-    textlink::EObject,
+from python_code import (
+    textlink_Region,
+    textlink_EObject,
     ModelLocation,
-    textlink::EmfModelLocation,
+    textlink_EmfModelLocation,
     TraceLinkEnd,
-    textlink::TraceLinkEnd,
-    textlink::TextLocation,
-    textlink::TraceLink,
-    textlink::Trace,
-    textlink::ModelLocation,
+    textlink_TraceLinkEnd,
+    textlink_TextLocation,
+    textlink_TraceLink,
+    textlink_Trace,
+    textlink_ModelLocation,
 )
 
 # =============================================================================
@@ -24,33 +24,33 @@ from classes import (
 
 
 
-def test_textlink::region_is_not_abstract():
-    assert not inspect.isabstract(textlink::Region)
+def test_textlink_region_is_not_abstract():
+    assert not inspect.isabstract(textlink_Region)
 
 
-def test_textlink::region_constructor_exists():
-    assert callable(textlink::Region.__init__)
+def test_textlink_region_constructor_exists():
+    assert callable(textlink_Region.__init__)
 
 
-def test_textlink::region_constructor_args():
-    sig = inspect.signature(textlink::Region.__init__)
+def test_textlink_region_constructor_args():
+    sig = inspect.signature(textlink_Region.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
     assert "offset" in params, "Missing parameter 'offset'"
 
-def test_textlink::region_has_length():
-    assert hasattr(textlink::Region, "length")
+def test_textlink_region_has_length():
+    assert hasattr(textlink_Region, "length")
     descriptor = None
-    for klass in textlink::Region.__mro__:
+    for klass in textlink_Region.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
-def test_textlink::region_has_offset():
-    assert hasattr(textlink::Region, "offset")
+def test_textlink_region_has_offset():
+    assert hasattr(textlink_Region, "offset")
     descriptor = None
-    for klass in textlink::Region.__mro__:
+    for klass in textlink_Region.__mro__:
         if "offset" in klass.__dict__:
             descriptor = klass.__dict__["offset"]
             break
@@ -58,16 +58,16 @@ def test_textlink::region_has_offset():
 
 
 
-def test_textlink::eobject_is_not_abstract():
-    assert not inspect.isabstract(textlink::EObject)
+def test_textlink_eobject_is_not_abstract():
+    assert not inspect.isabstract(textlink_EObject)
 
 
-def test_textlink::eobject_constructor_exists():
-    assert callable(textlink::EObject.__init__)
+def test_textlink_eobject_constructor_exists():
+    assert callable(textlink_EObject.__init__)
 
 
-def test_textlink::eobject_constructor_args():
-    sig = inspect.signature(textlink::EObject.__init__)
+def test_textlink_eobject_constructor_args():
+    sig = inspect.signature(textlink_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,16 +86,16 @@ def test_modellocation_constructor_args():
 
 
 
-def test_textlink::emfmodellocation_is_not_abstract():
-    assert not inspect.isabstract(textlink::EmfModelLocation)
+def test_textlink_emfmodellocation_is_not_abstract():
+    assert not inspect.isabstract(textlink_EmfModelLocation)
 
 
-def test_textlink::emfmodellocation_constructor_exists():
-    assert callable(textlink::EmfModelLocation.__init__)
+def test_textlink_emfmodellocation_constructor_exists():
+    assert callable(textlink_EmfModelLocation.__init__)
 
 
-def test_textlink::emfmodellocation_constructor_args():
-    sig = inspect.signature(textlink::EmfModelLocation.__init__)
+def test_textlink_emfmodellocation_constructor_args():
+    sig = inspect.signature(textlink_EmfModelLocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,37 +114,37 @@ def test_tracelinkend_constructor_args():
 
 
 
-def test_textlink::tracelinkend_is_not_abstract():
-    assert not inspect.isabstract(textlink::TraceLinkEnd)
+def test_textlink_tracelinkend_is_not_abstract():
+    assert not inspect.isabstract(textlink_TraceLinkEnd)
 
 
-def test_textlink::tracelinkend_constructor_exists():
-    assert callable(textlink::TraceLinkEnd.__init__)
+def test_textlink_tracelinkend_constructor_exists():
+    assert callable(textlink_TraceLinkEnd.__init__)
 
 
-def test_textlink::tracelinkend_constructor_args():
-    sig = inspect.signature(textlink::TraceLinkEnd.__init__)
+def test_textlink_tracelinkend_constructor_args():
+    sig = inspect.signature(textlink_TraceLinkEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textlink::textlocation_is_not_abstract():
-    assert not inspect.isabstract(textlink::TextLocation)
+def test_textlink_textlocation_is_not_abstract():
+    assert not inspect.isabstract(textlink_TextLocation)
 
 
-def test_textlink::textlocation_constructor_exists():
-    assert callable(textlink::TextLocation.__init__)
+def test_textlink_textlocation_constructor_exists():
+    assert callable(textlink_TextLocation.__init__)
 
 
-def test_textlink::textlocation_constructor_args():
-    sig = inspect.signature(textlink::TextLocation.__init__)
+def test_textlink_textlocation_constructor_args():
+    sig = inspect.signature(textlink_TextLocation.__init__)
     params = list(sig.parameters.keys())
     assert "resource" in params, "Missing parameter 'resource'"
 
-def test_textlink::textlocation_has_resource():
-    assert hasattr(textlink::TextLocation, "resource")
+def test_textlink_textlocation_has_resource():
+    assert hasattr(textlink_TextLocation, "resource")
     descriptor = None
-    for klass in textlink::TextLocation.__mro__:
+    for klass in textlink_TextLocation.__mro__:
         if "resource" in klass.__dict__:
             descriptor = klass.__dict__["resource"]
             break
@@ -152,51 +152,51 @@ def test_textlink::textlocation_has_resource():
 
 
 
-def test_textlink::tracelink_is_not_abstract():
-    assert not inspect.isabstract(textlink::TraceLink)
+def test_textlink_tracelink_is_not_abstract():
+    assert not inspect.isabstract(textlink_TraceLink)
 
 
-def test_textlink::tracelink_constructor_exists():
-    assert callable(textlink::TraceLink.__init__)
+def test_textlink_tracelink_constructor_exists():
+    assert callable(textlink_TraceLink.__init__)
 
 
-def test_textlink::tracelink_constructor_args():
-    sig = inspect.signature(textlink::TraceLink.__init__)
+def test_textlink_tracelink_constructor_args():
+    sig = inspect.signature(textlink_TraceLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textlink::trace_is_not_abstract():
-    assert not inspect.isabstract(textlink::Trace)
+def test_textlink_trace_is_not_abstract():
+    assert not inspect.isabstract(textlink_Trace)
 
 
-def test_textlink::trace_constructor_exists():
-    assert callable(textlink::Trace.__init__)
+def test_textlink_trace_constructor_exists():
+    assert callable(textlink_Trace.__init__)
 
 
-def test_textlink::trace_constructor_args():
-    sig = inspect.signature(textlink::Trace.__init__)
+def test_textlink_trace_constructor_args():
+    sig = inspect.signature(textlink_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textlink::modellocation_is_not_abstract():
-    assert not inspect.isabstract(textlink::ModelLocation)
+def test_textlink_modellocation_is_not_abstract():
+    assert not inspect.isabstract(textlink_ModelLocation)
 
 
-def test_textlink::modellocation_constructor_exists():
-    assert callable(textlink::ModelLocation.__init__)
+def test_textlink_modellocation_constructor_exists():
+    assert callable(textlink_ModelLocation.__init__)
 
 
-def test_textlink::modellocation_constructor_args():
-    sig = inspect.signature(textlink::ModelLocation.__init__)
+def test_textlink_modellocation_constructor_args():
+    sig = inspect.signature(textlink_ModelLocation.__init__)
     params = list(sig.parameters.keys())
     assert "propertyName" in params, "Missing parameter 'propertyName'"
 
-def test_textlink::modellocation_has_propertyName():
-    assert hasattr(textlink::ModelLocation, "propertyName")
+def test_textlink_modellocation_has_propertyName():
+    assert hasattr(textlink_ModelLocation, "propertyName")
     descriptor = None
-    for klass in textlink::ModelLocation.__mro__:
+    for klass in textlink_ModelLocation.__mro__:
         if "propertyName" in klass.__dict__:
             descriptor = klass.__dict__["propertyName"]
             break
@@ -214,135 +214,123 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-textlink::Region_strategy = st.builds(
-    textlink::Region,
+textlink_Region_strategy = st.builds(
+    textlink_Region,
     length=
         safe_text,
     offset=
         safe_text
 )
-textlink::EObject_strategy = st.builds(
-    textlink::EObject,
+textlink_EObject_strategy = st.builds(
+    textlink_EObject,
 )
 ModelLocation_strategy = st.builds(
     ModelLocation,
 )
-textlink::EmfModelLocation_strategy = st.builds(
-    textlink::EmfModelLocation,
+textlink_EmfModelLocation_strategy = st.builds(
+    textlink_EmfModelLocation,
 )
 TraceLinkEnd_strategy = st.builds(
     TraceLinkEnd,
 )
-textlink::TraceLinkEnd_strategy = st.builds(
-    textlink::TraceLinkEnd,
+textlink_TraceLinkEnd_strategy = st.builds(
+    textlink_TraceLinkEnd,
 )
-textlink::TextLocation_strategy = st.builds(
-    textlink::TextLocation,
+textlink_TextLocation_strategy = st.builds(
+    textlink_TextLocation,
     resource=
         safe_text
 )
-textlink::TraceLink_strategy = st.builds(
-    textlink::TraceLink,
+textlink_TraceLink_strategy = st.builds(
+    textlink_TraceLink,
 )
-textlink::Trace_strategy = st.builds(
-    textlink::Trace,
+textlink_Trace_strategy = st.builds(
+    textlink_Trace,
 )
-textlink::ModelLocation_strategy = st.builds(
-    textlink::ModelLocation,
+textlink_ModelLocation_strategy = st.builds(
+    textlink_ModelLocation,
     propertyName=
         safe_text
 )
 
-@given(instance=textlink::Region_strategy)
+@given(instance=textlink_Region_strategy)
 @settings(max_examples=50)
-def test_textlink::region_instantiation(instance):
-    assert isinstance(instance, textlink::Region)
-
-@given(instance=textlink::Region_strategy)
-def test_textlink::region_length_type(instance):
-    assert isinstance(instance.length, str)
+def test_textlink_region_instantiation(instance):
+    assert isinstance(instance, textlink_Region)
 
 
-@given(instance=textlink::Region_strategy)
-def test_textlink::region_length_setter(instance):
+
+@given(instance=textlink_Region_strategy)
+def test_textlink_region_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=textlink::Region_strategy)
-def test_textlink::region_offset_type(instance):
-    assert isinstance(instance.offset, str)
 
 
-@given(instance=textlink::Region_strategy)
-def test_textlink::region_offset_setter(instance):
+@given(instance=textlink_Region_strategy)
+def test_textlink_region_offset_setter(instance):
     original = instance.offset
     instance.offset = original
     assert instance.offset == original
 
-@given(instance=textlink::EObject_strategy)
+@given(instance=textlink_EObject_strategy)
 @settings(max_examples=50)
-def test_textlink::eobject_instantiation(instance):
-    assert isinstance(instance, textlink::EObject)
+def test_textlink_eobject_instantiation(instance):
+    assert isinstance(instance, textlink_EObject)
 
 @given(instance=ModelLocation_strategy)
 @settings(max_examples=50)
 def test_modellocation_instantiation(instance):
     assert isinstance(instance, ModelLocation)
 
-@given(instance=textlink::EmfModelLocation_strategy)
+@given(instance=textlink_EmfModelLocation_strategy)
 @settings(max_examples=50)
-def test_textlink::emfmodellocation_instantiation(instance):
-    assert isinstance(instance, textlink::EmfModelLocation)
+def test_textlink_emfmodellocation_instantiation(instance):
+    assert isinstance(instance, textlink_EmfModelLocation)
 
 @given(instance=TraceLinkEnd_strategy)
 @settings(max_examples=50)
 def test_tracelinkend_instantiation(instance):
     assert isinstance(instance, TraceLinkEnd)
 
-@given(instance=textlink::TraceLinkEnd_strategy)
+@given(instance=textlink_TraceLinkEnd_strategy)
 @settings(max_examples=50)
-def test_textlink::tracelinkend_instantiation(instance):
-    assert isinstance(instance, textlink::TraceLinkEnd)
+def test_textlink_tracelinkend_instantiation(instance):
+    assert isinstance(instance, textlink_TraceLinkEnd)
 
-@given(instance=textlink::TextLocation_strategy)
+@given(instance=textlink_TextLocation_strategy)
 @settings(max_examples=50)
-def test_textlink::textlocation_instantiation(instance):
-    assert isinstance(instance, textlink::TextLocation)
-
-@given(instance=textlink::TextLocation_strategy)
-def test_textlink::textlocation_resource_type(instance):
-    assert isinstance(instance.resource, str)
+def test_textlink_textlocation_instantiation(instance):
+    assert isinstance(instance, textlink_TextLocation)
 
 
-@given(instance=textlink::TextLocation_strategy)
-def test_textlink::textlocation_resource_setter(instance):
+
+@given(instance=textlink_TextLocation_strategy)
+def test_textlink_textlocation_resource_setter(instance):
     original = instance.resource
     instance.resource = original
     assert instance.resource == original
 
-@given(instance=textlink::TraceLink_strategy)
+@given(instance=textlink_TraceLink_strategy)
 @settings(max_examples=50)
-def test_textlink::tracelink_instantiation(instance):
-    assert isinstance(instance, textlink::TraceLink)
+def test_textlink_tracelink_instantiation(instance):
+    assert isinstance(instance, textlink_TraceLink)
 
-@given(instance=textlink::Trace_strategy)
+@given(instance=textlink_Trace_strategy)
 @settings(max_examples=50)
-def test_textlink::trace_instantiation(instance):
-    assert isinstance(instance, textlink::Trace)
+def test_textlink_trace_instantiation(instance):
+    assert isinstance(instance, textlink_Trace)
 
-@given(instance=textlink::ModelLocation_strategy)
+@given(instance=textlink_ModelLocation_strategy)
 @settings(max_examples=50)
-def test_textlink::modellocation_instantiation(instance):
-    assert isinstance(instance, textlink::ModelLocation)
-
-@given(instance=textlink::ModelLocation_strategy)
-def test_textlink::modellocation_propertyName_type(instance):
-    assert isinstance(instance.propertyName, str)
+def test_textlink_modellocation_instantiation(instance):
+    assert isinstance(instance, textlink_ModelLocation)
 
 
-@given(instance=textlink::ModelLocation_strategy)
-def test_textlink::modellocation_propertyName_setter(instance):
+
+@given(instance=textlink_ModelLocation_strategy)
+def test_textlink_modellocation_propertyName_setter(instance):
     original = instance.propertyName
     instance.propertyName = original
     assert instance.propertyName == original

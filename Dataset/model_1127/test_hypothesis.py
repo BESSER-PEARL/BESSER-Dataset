@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    robotmodel::Property,
-    robotmodel::Role,
-    robotmodel::Action,
-    robotmodel::Transition,
-    robotmodel::Event,
-    robotmodel::State,
-    robotmodel::Property::List,
-    robotmodel::Port,
-    robotmodel::Connector,
-    robotmodel::Component,
-    robotmodel::System,
+from python_code import (
+    robotmodel_Property,
+    robotmodel_Role,
+    robotmodel_Action,
+    robotmodel_Transition,
+    robotmodel_Event,
+    robotmodel_State,
+    robotmodel_Property_List,
+    robotmodel_Port,
+    robotmodel_Connector,
+    robotmodel_Component,
+    robotmodel_System,
     Is_Style,
 )
 
@@ -26,255 +26,67 @@ from classes import (
 
 
 
-def test_robotmodel::property_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Property)
+def test_robotmodel_property_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Property)
 
 
-def test_robotmodel::property_constructor_exists():
-    assert callable(robotmodel::Property.__init__)
+def test_robotmodel_property_constructor_exists():
+    assert callable(robotmodel_Property.__init__)
 
 
-def test_robotmodel::property_constructor_args():
-    sig = inspect.signature(robotmodel::Property.__init__)
+def test_robotmodel_property_constructor_args():
+    sig = inspect.signature(robotmodel_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_robotmodel::property_has_type():
-    assert hasattr(robotmodel::Property, "type")
+def test_robotmodel_property_has_name():
+    assert hasattr(robotmodel_Property, "name")
     descriptor = None
-    for klass in robotmodel::Property.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robotmodel::property_has_name():
-    assert hasattr(robotmodel::Property, "name")
-    descriptor = None
-    for klass in robotmodel::Property.__mro__:
+    for klass in robotmodel_Property.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_robotmodel::property_has_value():
-    assert hasattr(robotmodel::Property, "value")
+def test_robotmodel_property_has_value():
+    assert hasattr(robotmodel_Property, "value")
     descriptor = None
-    for klass in robotmodel::Property.__mro__:
+    for klass in robotmodel_Property.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_robotmodel::role_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Role)
-
-
-def test_robotmodel::role_constructor_exists():
-    assert callable(robotmodel::Role.__init__)
-
-
-def test_robotmodel::role_constructor_args():
-    sig = inspect.signature(robotmodel::Role.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::role_has_name():
-    assert hasattr(robotmodel::Role, "name")
+def test_robotmodel_property_has_type():
+    assert hasattr(robotmodel_Property, "type")
     descriptor = None
-    for klass in robotmodel::Role.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::action_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Action)
-
-
-def test_robotmodel::action_constructor_exists():
-    assert callable(robotmodel::Action.__init__)
-
-
-def test_robotmodel::action_constructor_args():
-    sig = inspect.signature(robotmodel::Action.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::action_has_name():
-    assert hasattr(robotmodel::Action, "name")
-    descriptor = None
-    for klass in robotmodel::Action.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::transition_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Transition)
-
-
-def test_robotmodel::transition_constructor_exists():
-    assert callable(robotmodel::Transition.__init__)
-
-
-def test_robotmodel::transition_constructor_args():
-    sig = inspect.signature(robotmodel::Transition.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::transition_has_name():
-    assert hasattr(robotmodel::Transition, "name")
-    descriptor = None
-    for klass in robotmodel::Transition.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::event_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Event)
-
-
-def test_robotmodel::event_constructor_exists():
-    assert callable(robotmodel::Event.__init__)
-
-
-def test_robotmodel::event_constructor_args():
-    sig = inspect.signature(robotmodel::Event.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::event_has_name():
-    assert hasattr(robotmodel::Event, "name")
-    descriptor = None
-    for klass in robotmodel::Event.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::state_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::State)
-
-
-def test_robotmodel::state_constructor_exists():
-    assert callable(robotmodel::State.__init__)
-
-
-def test_robotmodel::state_constructor_args():
-    sig = inspect.signature(robotmodel::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::state_has_name():
-    assert hasattr(robotmodel::State, "name")
-    descriptor = None
-    for klass in robotmodel::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::property::list_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Property::List)
-
-
-def test_robotmodel::property::list_constructor_exists():
-    assert callable(robotmodel::Property::List.__init__)
-
-
-def test_robotmodel::property::list_constructor_args():
-    sig = inspect.signature(robotmodel::Property::List.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::property::list_has_name():
-    assert hasattr(robotmodel::Property::List, "name")
-    descriptor = None
-    for klass in robotmodel::Property::List.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::port_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Port)
-
-
-def test_robotmodel::port_constructor_exists():
-    assert callable(robotmodel::Port.__init__)
-
-
-def test_robotmodel::port_constructor_args():
-    sig = inspect.signature(robotmodel::Port.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::port_has_name():
-    assert hasattr(robotmodel::Port, "name")
-    descriptor = None
-    for klass in robotmodel::Port.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robotmodel::connector_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Connector)
-
-
-def test_robotmodel::connector_constructor_exists():
-    assert callable(robotmodel::Connector.__init__)
-
-
-def test_robotmodel::connector_constructor_args():
-    sig = inspect.signature(robotmodel::Connector.__init__)
-    params = list(sig.parameters.keys())
-    assert "atype" in params, "Missing parameter 'atype'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_robotmodel::connector_has_atype():
-    assert hasattr(robotmodel::Connector, "atype")
-    descriptor = None
-    for klass in robotmodel::Connector.__mro__:
-        if "atype" in klass.__dict__:
-            descriptor = klass.__dict__["atype"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robotmodel::connector_has_type():
-    assert hasattr(robotmodel::Connector, "type")
-    descriptor = None
-    for klass in robotmodel::Connector.__mro__:
+    for klass in robotmodel_Property.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_robotmodel::connector_has_name():
-    assert hasattr(robotmodel::Connector, "name")
+
+
+def test_robotmodel_role_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Role)
+
+
+def test_robotmodel_role_constructor_exists():
+    assert callable(robotmodel_Role.__init__)
+
+
+def test_robotmodel_role_constructor_args():
+    sig = inspect.signature(robotmodel_Role.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_role_has_name():
+    assert hasattr(robotmodel_Role, "name")
     descriptor = None
-    for klass in robotmodel::Connector.__mro__:
+    for klass in robotmodel_Role.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -282,63 +94,251 @@ def test_robotmodel::connector_has_name():
 
 
 
-def test_robotmodel::component_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::Component)
+def test_robotmodel_action_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Action)
 
 
-def test_robotmodel::component_constructor_exists():
-    assert callable(robotmodel::Component.__init__)
+def test_robotmodel_action_constructor_exists():
+    assert callable(robotmodel_Action.__init__)
 
 
-def test_robotmodel::component_constructor_args():
-    sig = inspect.signature(robotmodel::Component.__init__)
+def test_robotmodel_action_constructor_args():
+    sig = inspect.signature(robotmodel_Action.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_action_has_name():
+    assert hasattr(robotmodel_Action, "name")
+    descriptor = None
+    for klass in robotmodel_Action.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_transition_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Transition)
+
+
+def test_robotmodel_transition_constructor_exists():
+    assert callable(robotmodel_Transition.__init__)
+
+
+def test_robotmodel_transition_constructor_args():
+    sig = inspect.signature(robotmodel_Transition.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_transition_has_name():
+    assert hasattr(robotmodel_Transition, "name")
+    descriptor = None
+    for klass in robotmodel_Transition.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_event_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Event)
+
+
+def test_robotmodel_event_constructor_exists():
+    assert callable(robotmodel_Event.__init__)
+
+
+def test_robotmodel_event_constructor_args():
+    sig = inspect.signature(robotmodel_Event.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_event_has_name():
+    assert hasattr(robotmodel_Event, "name")
+    descriptor = None
+    for klass in robotmodel_Event.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_state_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_State)
+
+
+def test_robotmodel_state_constructor_exists():
+    assert callable(robotmodel_State.__init__)
+
+
+def test_robotmodel_state_constructor_args():
+    sig = inspect.signature(robotmodel_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_state_has_name():
+    assert hasattr(robotmodel_State, "name")
+    descriptor = None
+    for klass in robotmodel_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_property_list_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Property_List)
+
+
+def test_robotmodel_property_list_constructor_exists():
+    assert callable(robotmodel_Property_List.__init__)
+
+
+def test_robotmodel_property_list_constructor_args():
+    sig = inspect.signature(robotmodel_Property_List.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_property_list_has_name():
+    assert hasattr(robotmodel_Property_List, "name")
+    descriptor = None
+    for klass in robotmodel_Property_List.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_port_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Port)
+
+
+def test_robotmodel_port_constructor_exists():
+    assert callable(robotmodel_Port.__init__)
+
+
+def test_robotmodel_port_constructor_args():
+    sig = inspect.signature(robotmodel_Port.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_robotmodel_port_has_name():
+    assert hasattr(robotmodel_Port, "name")
+    descriptor = None
+    for klass in robotmodel_Port.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_connector_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Connector)
+
+
+def test_robotmodel_connector_constructor_exists():
+    assert callable(robotmodel_Connector.__init__)
+
+
+def test_robotmodel_connector_constructor_args():
+    sig = inspect.signature(robotmodel_Connector.__init__)
+    params = list(sig.parameters.keys())
+    assert "atype" in params, "Missing parameter 'atype'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_robotmodel_connector_has_atype():
+    assert hasattr(robotmodel_Connector, "atype")
+    descriptor = None
+    for klass in robotmodel_Connector.__mro__:
+        if "atype" in klass.__dict__:
+            descriptor = klass.__dict__["atype"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robotmodel_connector_has_name():
+    assert hasattr(robotmodel_Connector, "name")
+    descriptor = None
+    for klass in robotmodel_Connector.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robotmodel_connector_has_type():
+    assert hasattr(robotmodel_Connector, "type")
+    descriptor = None
+    for klass in robotmodel_Connector.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robotmodel_component_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_Component)
+
+
+def test_robotmodel_component_constructor_exists():
+    assert callable(robotmodel_Component.__init__)
+
+
+def test_robotmodel_component_constructor_args():
+    sig = inspect.signature(robotmodel_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "atype" in params, "Missing parameter 'atype'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "frequency" in params, "Missing parameter 'frequency'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "depends" in params, "Missing parameter 'depends'"
 
-def test_robotmodel::component_has_name():
-    assert hasattr(robotmodel::Component, "name")
+def test_robotmodel_component_has_name():
+    assert hasattr(robotmodel_Component, "name")
     descriptor = None
-    for klass in robotmodel::Component.__mro__:
+    for klass in robotmodel_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_robotmodel::component_has_atype():
-    assert hasattr(robotmodel::Component, "atype")
+def test_robotmodel_component_has_atype():
+    assert hasattr(robotmodel_Component, "atype")
     descriptor = None
-    for klass in robotmodel::Component.__mro__:
+    for klass in robotmodel_Component.__mro__:
         if "atype" in klass.__dict__:
             descriptor = klass.__dict__["atype"]
             break
     assert isinstance(descriptor, property)
 
-def test_robotmodel::component_has_type():
-    assert hasattr(robotmodel::Component, "type")
+def test_robotmodel_component_has_frequency():
+    assert hasattr(robotmodel_Component, "frequency")
     descriptor = None
-    for klass in robotmodel::Component.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robotmodel::component_has_frequency():
-    assert hasattr(robotmodel::Component, "frequency")
-    descriptor = None
-    for klass in robotmodel::Component.__mro__:
+    for klass in robotmodel_Component.__mro__:
         if "frequency" in klass.__dict__:
             descriptor = klass.__dict__["frequency"]
             break
     assert isinstance(descriptor, property)
 
-def test_robotmodel::component_has_depends():
-    assert hasattr(robotmodel::Component, "depends")
+def test_robotmodel_component_has_type():
+    assert hasattr(robotmodel_Component, "type")
     descriptor = None
-    for klass in robotmodel::Component.__mro__:
+    for klass in robotmodel_Component.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robotmodel_component_has_depends():
+    assert hasattr(robotmodel_Component, "depends")
+    descriptor = None
+    for klass in robotmodel_Component.__mro__:
         if "depends" in klass.__dict__:
             descriptor = klass.__dict__["depends"]
             break
@@ -346,63 +346,63 @@ def test_robotmodel::component_has_depends():
 
 
 
-def test_robotmodel::system_is_not_abstract():
-    assert not inspect.isabstract(robotmodel::System)
+def test_robotmodel_system_is_not_abstract():
+    assert not inspect.isabstract(robotmodel_System)
 
 
-def test_robotmodel::system_constructor_exists():
-    assert callable(robotmodel::System.__init__)
+def test_robotmodel_system_constructor_exists():
+    assert callable(robotmodel_System.__init__)
 
 
-def test_robotmodel::system_constructor_args():
-    sig = inspect.signature(robotmodel::System.__init__)
+def test_robotmodel_system_constructor_args():
+    sig = inspect.signature(robotmodel_System.__init__)
     params = list(sig.parameters.keys())
+    assert "author" in params, "Missing parameter 'author'"
+    assert "author_email" in params, "Missing parameter 'author_email'"
     assert "depends" in params, "Missing parameter 'depends'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "author_email" in params, "Missing parameter 'author_email'"
-    assert "author" in params, "Missing parameter 'author'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_robotmodel::system_has_depends():
-    assert hasattr(robotmodel::System, "depends")
+def test_robotmodel_system_has_author():
+    assert hasattr(robotmodel_System, "author")
     descriptor = None
-    for klass in robotmodel::System.__mro__:
-        if "depends" in klass.__dict__:
-            descriptor = klass.__dict__["depends"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robotmodel::system_has_name():
-    assert hasattr(robotmodel::System, "name")
-    descriptor = None
-    for klass in robotmodel::System.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robotmodel::system_has_author_email():
-    assert hasattr(robotmodel::System, "author_email")
-    descriptor = None
-    for klass in robotmodel::System.__mro__:
-        if "author_email" in klass.__dict__:
-            descriptor = klass.__dict__["author_email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robotmodel::system_has_author():
-    assert hasattr(robotmodel::System, "author")
-    descriptor = None
-    for klass in robotmodel::System.__mro__:
+    for klass in robotmodel_System.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_robotmodel::system_has_description():
-    assert hasattr(robotmodel::System, "description")
+def test_robotmodel_system_has_author_email():
+    assert hasattr(robotmodel_System, "author_email")
     descriptor = None
-    for klass in robotmodel::System.__mro__:
+    for klass in robotmodel_System.__mro__:
+        if "author_email" in klass.__dict__:
+            descriptor = klass.__dict__["author_email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robotmodel_system_has_depends():
+    assert hasattr(robotmodel_System, "depends")
+    descriptor = None
+    for klass in robotmodel_System.__mro__:
+        if "depends" in klass.__dict__:
+            descriptor = klass.__dict__["depends"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robotmodel_system_has_name():
+    assert hasattr(robotmodel_System, "name")
+    descriptor = None
+    for klass in robotmodel_System.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robotmodel_system_has_description():
+    assert hasattr(robotmodel_System, "description")
+    descriptor = None
+    for klass in robotmodel_System.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -435,390 +435,321 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-robotmodel::Property_strategy = st.builds(
-    robotmodel::Property,
-    type=
-        safe_text,
+robotmodel_Property_strategy = st.builds(
+    robotmodel_Property,
     name=
         safe_text,
     value=
-        safe_text
-)
-robotmodel::Role_strategy = st.builds(
-    robotmodel::Role,
-    name=
-        safe_text
-)
-robotmodel::Action_strategy = st.builds(
-    robotmodel::Action,
-    name=
-        safe_text
-)
-robotmodel::Transition_strategy = st.builds(
-    robotmodel::Transition,
-    name=
-        safe_text
-)
-robotmodel::Event_strategy = st.builds(
-    robotmodel::Event,
-    name=
-        safe_text
-)
-robotmodel::State_strategy = st.builds(
-    robotmodel::State,
-    name=
-        safe_text
-)
-robotmodel::Property::List_strategy = st.builds(
-    robotmodel::Property::List,
-    name=
-        safe_text
-)
-robotmodel::Port_strategy = st.builds(
-    robotmodel::Port,
-    name=
-        safe_text
-)
-robotmodel::Connector_strategy = st.builds(
-    robotmodel::Connector,
-    atype=
         safe_text,
     type=
-        safe_text,
+        safe_text
+)
+robotmodel_Role_strategy = st.builds(
+    robotmodel_Role,
     name=
         safe_text
 )
-robotmodel::Component_strategy = st.builds(
-    robotmodel::Component,
+robotmodel_Action_strategy = st.builds(
+    robotmodel_Action,
+    name=
+        safe_text
+)
+robotmodel_Transition_strategy = st.builds(
+    robotmodel_Transition,
+    name=
+        safe_text
+)
+robotmodel_Event_strategy = st.builds(
+    robotmodel_Event,
+    name=
+        safe_text
+)
+robotmodel_State_strategy = st.builds(
+    robotmodel_State,
+    name=
+        safe_text
+)
+robotmodel_Property_List_strategy = st.builds(
+    robotmodel_Property_List,
+    name=
+        safe_text
+)
+robotmodel_Port_strategy = st.builds(
+    robotmodel_Port,
+    name=
+        safe_text
+)
+robotmodel_Connector_strategy = st.builds(
+    robotmodel_Connector,
+    atype=
+        safe_text,
+    name=
+        safe_text,
+    type=
+        safe_text
+)
+robotmodel_Component_strategy = st.builds(
+    robotmodel_Component,
     name=
         safe_text,
     atype=
-        safe_text,
-    type=
         safe_text,
     frequency=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    type=
+        safe_text,
     depends=
         safe_text
 )
-robotmodel::System_strategy = st.builds(
-    robotmodel::System,
-    depends=
-        safe_text,
-    name=
+robotmodel_System_strategy = st.builds(
+    robotmodel_System,
+    author=
         safe_text,
     author_email=
         safe_text,
-    author=
+    depends=
+        safe_text,
+    name=
         safe_text,
     description=
         safe_text
 )
 
-@given(instance=robotmodel::Property_strategy)
+@given(instance=robotmodel_Property_strategy)
 @settings(max_examples=50)
-def test_robotmodel::property_instantiation(instance):
-    assert isinstance(instance, robotmodel::Property)
-
-@given(instance=robotmodel::Property_strategy)
-def test_robotmodel::property_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_robotmodel_property_instantiation(instance):
+    assert isinstance(instance, robotmodel_Property)
 
 
-@given(instance=robotmodel::Property_strategy)
-def test_robotmodel::property_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=robotmodel::Property_strategy)
-def test_robotmodel::property_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Property_strategy)
-def test_robotmodel::property_name_setter(instance):
+@given(instance=robotmodel_Property_strategy)
+def test_robotmodel_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=robotmodel::Property_strategy)
-def test_robotmodel::property_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=robotmodel::Property_strategy)
-def test_robotmodel::property_value_setter(instance):
+@given(instance=robotmodel_Property_strategy)
+def test_robotmodel_property_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=robotmodel::Role_strategy)
-@settings(max_examples=50)
-def test_robotmodel::role_instantiation(instance):
-    assert isinstance(instance, robotmodel::Role)
-
-@given(instance=robotmodel::Role_strategy)
-def test_robotmodel::role_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=robotmodel::Role_strategy)
-def test_robotmodel::role_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Action_strategy)
-@settings(max_examples=50)
-def test_robotmodel::action_instantiation(instance):
-    assert isinstance(instance, robotmodel::Action)
-
-@given(instance=robotmodel::Action_strategy)
-def test_robotmodel::action_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Action_strategy)
-def test_robotmodel::action_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Transition_strategy)
-@settings(max_examples=50)
-def test_robotmodel::transition_instantiation(instance):
-    assert isinstance(instance, robotmodel::Transition)
-
-@given(instance=robotmodel::Transition_strategy)
-def test_robotmodel::transition_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Transition_strategy)
-def test_robotmodel::transition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Event_strategy)
-@settings(max_examples=50)
-def test_robotmodel::event_instantiation(instance):
-    assert isinstance(instance, robotmodel::Event)
-
-@given(instance=robotmodel::Event_strategy)
-def test_robotmodel::event_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Event_strategy)
-def test_robotmodel::event_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::State_strategy)
-@settings(max_examples=50)
-def test_robotmodel::state_instantiation(instance):
-    assert isinstance(instance, robotmodel::State)
-
-@given(instance=robotmodel::State_strategy)
-def test_robotmodel::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::State_strategy)
-def test_robotmodel::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Property::List_strategy)
-@settings(max_examples=50)
-def test_robotmodel::property::list_instantiation(instance):
-    assert isinstance(instance, robotmodel::Property::List)
-
-@given(instance=robotmodel::Property::List_strategy)
-def test_robotmodel::property::list_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Property::List_strategy)
-def test_robotmodel::property::list_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Port_strategy)
-@settings(max_examples=50)
-def test_robotmodel::port_instantiation(instance):
-    assert isinstance(instance, robotmodel::Port)
-
-@given(instance=robotmodel::Port_strategy)
-def test_robotmodel::port_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Port_strategy)
-def test_robotmodel::port_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Connector_strategy)
-@settings(max_examples=50)
-def test_robotmodel::connector_instantiation(instance):
-    assert isinstance(instance, robotmodel::Connector)
-
-@given(instance=robotmodel::Connector_strategy)
-def test_robotmodel::connector_atype_type(instance):
-    assert isinstance(instance.atype, str)
-
-
-@given(instance=robotmodel::Connector_strategy)
-def test_robotmodel::connector_atype_setter(instance):
-    original = instance.atype
-    instance.atype = original
-    assert instance.atype == original
-
-@given(instance=robotmodel::Connector_strategy)
-def test_robotmodel::connector_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=robotmodel::Connector_strategy)
-def test_robotmodel::connector_type_setter(instance):
+@given(instance=robotmodel_Property_strategy)
+def test_robotmodel_property_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=robotmodel::Connector_strategy)
-def test_robotmodel::connector_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::Connector_strategy)
-def test_robotmodel::connector_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::Component_strategy)
+@given(instance=robotmodel_Role_strategy)
 @settings(max_examples=50)
-def test_robotmodel::component_instantiation(instance):
-    assert isinstance(instance, robotmodel::Component)
-
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_robotmodel_role_instantiation(instance):
+    assert isinstance(instance, robotmodel_Role)
 
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_name_setter(instance):
+
+@given(instance=robotmodel_Role_strategy)
+def test_robotmodel_role_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_atype_type(instance):
-    assert isinstance(instance.atype, str)
+@given(instance=robotmodel_Action_strategy)
+@settings(max_examples=50)
+def test_robotmodel_action_instantiation(instance):
+    assert isinstance(instance, robotmodel_Action)
 
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_atype_setter(instance):
+
+@given(instance=robotmodel_Action_strategy)
+def test_robotmodel_action_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robotmodel_Transition_strategy)
+@settings(max_examples=50)
+def test_robotmodel_transition_instantiation(instance):
+    assert isinstance(instance, robotmodel_Transition)
+
+
+
+@given(instance=robotmodel_Transition_strategy)
+def test_robotmodel_transition_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robotmodel_Event_strategy)
+@settings(max_examples=50)
+def test_robotmodel_event_instantiation(instance):
+    assert isinstance(instance, robotmodel_Event)
+
+
+
+@given(instance=robotmodel_Event_strategy)
+def test_robotmodel_event_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robotmodel_State_strategy)
+@settings(max_examples=50)
+def test_robotmodel_state_instantiation(instance):
+    assert isinstance(instance, robotmodel_State)
+
+
+
+@given(instance=robotmodel_State_strategy)
+def test_robotmodel_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robotmodel_Property_List_strategy)
+@settings(max_examples=50)
+def test_robotmodel_property_list_instantiation(instance):
+    assert isinstance(instance, robotmodel_Property_List)
+
+
+
+@given(instance=robotmodel_Property_List_strategy)
+def test_robotmodel_property_list_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robotmodel_Port_strategy)
+@settings(max_examples=50)
+def test_robotmodel_port_instantiation(instance):
+    assert isinstance(instance, robotmodel_Port)
+
+
+
+@given(instance=robotmodel_Port_strategy)
+def test_robotmodel_port_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=robotmodel_Connector_strategy)
+@settings(max_examples=50)
+def test_robotmodel_connector_instantiation(instance):
+    assert isinstance(instance, robotmodel_Connector)
+
+
+
+@given(instance=robotmodel_Connector_strategy)
+def test_robotmodel_connector_atype_setter(instance):
     original = instance.atype
     instance.atype = original
     assert instance.atype == original
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_type_setter(instance):
+@given(instance=robotmodel_Connector_strategy)
+def test_robotmodel_connector_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=robotmodel_Connector_strategy)
+def test_robotmodel_connector_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_frequency_type(instance):
-    assert isinstance(instance.frequency, float)
+@given(instance=robotmodel_Component_strategy)
+@settings(max_examples=50)
+def test_robotmodel_component_instantiation(instance):
+    assert isinstance(instance, robotmodel_Component)
 
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_frequency_setter(instance):
+
+@given(instance=robotmodel_Component_strategy)
+def test_robotmodel_component_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=robotmodel_Component_strategy)
+def test_robotmodel_component_atype_setter(instance):
+    original = instance.atype
+    instance.atype = original
+    assert instance.atype == original
+
+
+
+@given(instance=robotmodel_Component_strategy)
+def test_robotmodel_component_frequency_setter(instance):
     original = instance.frequency
     instance.frequency = original
     assert instance.frequency == original
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_depends_type(instance):
-    assert isinstance(instance.depends, str)
 
 
-@given(instance=robotmodel::Component_strategy)
-def test_robotmodel::component_depends_setter(instance):
+@given(instance=robotmodel_Component_strategy)
+def test_robotmodel_component_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=robotmodel_Component_strategy)
+def test_robotmodel_component_depends_setter(instance):
     original = instance.depends
     instance.depends = original
     assert instance.depends == original
 
-@given(instance=robotmodel::System_strategy)
+@given(instance=robotmodel_System_strategy)
 @settings(max_examples=50)
-def test_robotmodel::system_instantiation(instance):
-    assert isinstance(instance, robotmodel::System)
-
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_depends_type(instance):
-    assert isinstance(instance.depends, str)
+def test_robotmodel_system_instantiation(instance):
+    assert isinstance(instance, robotmodel_System)
 
 
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_depends_setter(instance):
-    original = instance.depends
-    instance.depends = original
-    assert instance.depends == original
 
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_author_email_type(instance):
-    assert isinstance(instance.author_email, str)
-
-
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_author_email_setter(instance):
-    original = instance.author_email
-    instance.author_email = original
-    assert instance.author_email == original
-
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_author_setter(instance):
+@given(instance=robotmodel_System_strategy)
+def test_robotmodel_system_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=robotmodel::System_strategy)
-def test_robotmodel::system_description_setter(instance):
+@given(instance=robotmodel_System_strategy)
+def test_robotmodel_system_author_email_setter(instance):
+    original = instance.author_email
+    instance.author_email = original
+    assert instance.author_email == original
+
+
+
+@given(instance=robotmodel_System_strategy)
+def test_robotmodel_system_depends_setter(instance):
+    original = instance.depends
+    instance.depends = original
+    assert instance.depends == original
+
+
+
+@given(instance=robotmodel_System_strategy)
+def test_robotmodel_system_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=robotmodel_System_strategy)
+def test_robotmodel_system_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

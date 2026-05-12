@@ -3,46 +3,46 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    adaptations::smartadapters4MODERATES::ActionBlock,
-    adaptations::smartadapters4MODERATES::PlatformAnnotation,
-    adaptations::smartadapters4MODERATES::AnnotatedElement,
-    adaptations::smartadapters4MODERATES::Expression,
-    adaptations::smartadapters4MODERATES::Event,
-    adaptations::smartadapters4MODERATES::Property,
-    adaptations::smartadapters4MODERATES::Action,
-    adaptations::smartadapters4MODERATES::Transition,
-    smartadapters4MODERATES::Adaptation,
+from python_code import (
+    adaptations_smartadapters4MODERATES_ActionBlock,
+    adaptations_smartadapters4MODERATES_PlatformAnnotation,
+    adaptations_smartadapters4MODERATES_AnnotatedElement,
+    adaptations_smartadapters4MODERATES_Expression,
+    adaptations_smartadapters4MODERATES_Event,
+    adaptations_smartadapters4MODERATES_Property,
+    adaptations_smartadapters4MODERATES_Action,
+    adaptations_smartadapters4MODERATES_Transition,
+    smartadapters4MODERATES_Adaptation,
     UnsetAdaptation,
-    smartadapters4MODERATES::adaptations::UnsetState,
-    smartadapters4MODERATES::adaptations::UnsetTransition,
-    smartadapters4MODERATES::adaptations::UnsetCompositeState,
-    adaptations::smartadapters4MODERATES::State,
-    adaptations::smartadapters4MODERATES::CompositeState,
+    smartadapters4MODERATES_adaptations_UnsetTransition,
+    smartadapters4MODERATES_adaptations_UnsetState,
+    smartadapters4MODERATES_adaptations_UnsetCompositeState,
+    adaptations_smartadapters4MODERATES_State,
+    adaptations_smartadapters4MODERATES_CompositeState,
     SetAdaptation,
-    smartadapters4MODERATES::adaptations::SetTransition,
-    smartadapters4MODERATES::adaptations::SetAnnotatedElement,
-    smartadapters4MODERATES::adaptations::SetState,
-    smartadapters4MODERATES::adaptations::SetActionBlock,
-    smartadapters4MODERATES::adaptations::SetCompositeState,
+    smartadapters4MODERATES_adaptations_SetActionBlock,
+    smartadapters4MODERATES_adaptations_SetTransition,
+    smartadapters4MODERATES_adaptations_SetState,
+    smartadapters4MODERATES_adaptations_SetAnnotatedElement,
+    smartadapters4MODERATES_adaptations_SetCompositeState,
     ScopedInstantiation,
-    smartadapters4MODERATES::PerElementMatch,
-    smartadapters4MODERATES::PerRoleMatch,
+    smartadapters4MODERATES_PerElementMatch,
+    smartadapters4MODERATES_PerRoleMatch,
     InstantiationStrategy,
-    smartadapters4MODERATES::ScopedInstantiation,
-    smartadapters4MODERATES::GlobalInstantiation,
-    smartadapters4MODERATES::AspectModelElement,
+    smartadapters4MODERATES_ScopedInstantiation,
+    smartadapters4MODERATES_GlobalInstantiation,
+    smartadapters4MODERATES_AspectModelElement,
     Adaptation,
-    smartadapters4MODERATES::SetAdaptation,
-    smartadapters4MODERATES::UnsetAdaptation,
-    smartadapters4MODERATES::CreateAdaptation,
-    smartadapters4MODERATES::CloneAdaptation,
-    smartadapters4MODERATES::InstantiationStrategy,
-    smartadapters4MODERATES::AdviceModel,
-    smartadapters4MODERATES::PointcutModel,
-    smartadapters4MODERATES::Aspect,
+    smartadapters4MODERATES_CreateAdaptation,
+    smartadapters4MODERATES_SetAdaptation,
+    smartadapters4MODERATES_UnsetAdaptation,
+    smartadapters4MODERATES_CloneAdaptation,
+    smartadapters4MODERATES_InstantiationStrategy,
+    smartadapters4MODERATES_AdviceModel,
+    smartadapters4MODERATES_PointcutModel,
+    smartadapters4MODERATES_Aspect,
 )
 
 # =============================================================================
@@ -51,128 +51,128 @@ from classes import (
 
 
 
-def test_adaptations::smartadapters4moderates::actionblock_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::ActionBlock)
+def test_adaptations_smartadapters4moderates_actionblock_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_ActionBlock)
 
 
-def test_adaptations::smartadapters4moderates::actionblock_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::ActionBlock.__init__)
+def test_adaptations_smartadapters4moderates_actionblock_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_ActionBlock.__init__)
 
 
-def test_adaptations::smartadapters4moderates::actionblock_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::ActionBlock.__init__)
+def test_adaptations_smartadapters4moderates_actionblock_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_ActionBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::platformannotation_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::PlatformAnnotation)
+def test_adaptations_smartadapters4moderates_platformannotation_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_PlatformAnnotation)
 
 
-def test_adaptations::smartadapters4moderates::platformannotation_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::PlatformAnnotation.__init__)
+def test_adaptations_smartadapters4moderates_platformannotation_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_PlatformAnnotation.__init__)
 
 
-def test_adaptations::smartadapters4moderates::platformannotation_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::PlatformAnnotation.__init__)
+def test_adaptations_smartadapters4moderates_platformannotation_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_PlatformAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::annotatedelement_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::AnnotatedElement)
+def test_adaptations_smartadapters4moderates_annotatedelement_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_AnnotatedElement)
 
 
-def test_adaptations::smartadapters4moderates::annotatedelement_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::AnnotatedElement.__init__)
+def test_adaptations_smartadapters4moderates_annotatedelement_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_AnnotatedElement.__init__)
 
 
-def test_adaptations::smartadapters4moderates::annotatedelement_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::AnnotatedElement.__init__)
+def test_adaptations_smartadapters4moderates_annotatedelement_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_AnnotatedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::expression_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::Expression)
+def test_adaptations_smartadapters4moderates_expression_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_Expression)
 
 
-def test_adaptations::smartadapters4moderates::expression_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::Expression.__init__)
+def test_adaptations_smartadapters4moderates_expression_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_Expression.__init__)
 
 
-def test_adaptations::smartadapters4moderates::expression_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::Expression.__init__)
+def test_adaptations_smartadapters4moderates_expression_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::event_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::Event)
+def test_adaptations_smartadapters4moderates_event_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_Event)
 
 
-def test_adaptations::smartadapters4moderates::event_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::Event.__init__)
+def test_adaptations_smartadapters4moderates_event_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_Event.__init__)
 
 
-def test_adaptations::smartadapters4moderates::event_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::Event.__init__)
+def test_adaptations_smartadapters4moderates_event_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::property_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::Property)
+def test_adaptations_smartadapters4moderates_property_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_Property)
 
 
-def test_adaptations::smartadapters4moderates::property_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::Property.__init__)
+def test_adaptations_smartadapters4moderates_property_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_Property.__init__)
 
 
-def test_adaptations::smartadapters4moderates::property_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::Property.__init__)
+def test_adaptations_smartadapters4moderates_property_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::action_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::Action)
+def test_adaptations_smartadapters4moderates_action_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_Action)
 
 
-def test_adaptations::smartadapters4moderates::action_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::Action.__init__)
+def test_adaptations_smartadapters4moderates_action_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_Action.__init__)
 
 
-def test_adaptations::smartadapters4moderates::action_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::Action.__init__)
+def test_adaptations_smartadapters4moderates_action_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::transition_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::Transition)
+def test_adaptations_smartadapters4moderates_transition_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_Transition)
 
 
-def test_adaptations::smartadapters4moderates::transition_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::Transition.__init__)
+def test_adaptations_smartadapters4moderates_transition_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_Transition.__init__)
 
 
-def test_adaptations::smartadapters4moderates::transition_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::Transition.__init__)
+def test_adaptations_smartadapters4moderates_transition_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::Adaptation)
+def test_smartadapters4moderates_adaptation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_Adaptation)
 
 
-def test_smartadapters4moderates::adaptation_constructor_exists():
-    assert callable(smartadapters4MODERATES::Adaptation.__init__)
+def test_smartadapters4moderates_adaptation_constructor_exists():
+    assert callable(smartadapters4MODERATES_Adaptation.__init__)
 
 
-def test_smartadapters4moderates::adaptation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::Adaptation.__init__)
+def test_smartadapters4moderates_adaptation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_Adaptation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -191,72 +191,72 @@ def test_unsetadaptation_constructor_args():
 
 
 
-def test_smartadapters4moderates::adaptations::unsetstate_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::UnsetState)
+def test_smartadapters4moderates_adaptations_unsettransition_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_UnsetTransition)
 
 
-def test_smartadapters4moderates::adaptations::unsetstate_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::UnsetState.__init__)
+def test_smartadapters4moderates_adaptations_unsettransition_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_UnsetTransition.__init__)
 
 
-def test_smartadapters4moderates::adaptations::unsetstate_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::UnsetState.__init__)
+def test_smartadapters4moderates_adaptations_unsettransition_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_UnsetTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptations::unsettransition_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::UnsetTransition)
+def test_smartadapters4moderates_adaptations_unsetstate_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_UnsetState)
 
 
-def test_smartadapters4moderates::adaptations::unsettransition_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::UnsetTransition.__init__)
+def test_smartadapters4moderates_adaptations_unsetstate_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_UnsetState.__init__)
 
 
-def test_smartadapters4moderates::adaptations::unsettransition_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::UnsetTransition.__init__)
+def test_smartadapters4moderates_adaptations_unsetstate_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_UnsetState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptations::unsetcompositestate_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::UnsetCompositeState)
+def test_smartadapters4moderates_adaptations_unsetcompositestate_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_UnsetCompositeState)
 
 
-def test_smartadapters4moderates::adaptations::unsetcompositestate_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::UnsetCompositeState.__init__)
+def test_smartadapters4moderates_adaptations_unsetcompositestate_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_UnsetCompositeState.__init__)
 
 
-def test_smartadapters4moderates::adaptations::unsetcompositestate_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::UnsetCompositeState.__init__)
+def test_smartadapters4moderates_adaptations_unsetcompositestate_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_UnsetCompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::state_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::State)
+def test_adaptations_smartadapters4moderates_state_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_State)
 
 
-def test_adaptations::smartadapters4moderates::state_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::State.__init__)
+def test_adaptations_smartadapters4moderates_state_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_State.__init__)
 
 
-def test_adaptations::smartadapters4moderates::state_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::State.__init__)
+def test_adaptations_smartadapters4moderates_state_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adaptations::smartadapters4moderates::compositestate_is_not_abstract():
-    assert not inspect.isabstract(adaptations::smartadapters4MODERATES::CompositeState)
+def test_adaptations_smartadapters4moderates_compositestate_is_not_abstract():
+    assert not inspect.isabstract(adaptations_smartadapters4MODERATES_CompositeState)
 
 
-def test_adaptations::smartadapters4moderates::compositestate_constructor_exists():
-    assert callable(adaptations::smartadapters4MODERATES::CompositeState.__init__)
+def test_adaptations_smartadapters4moderates_compositestate_constructor_exists():
+    assert callable(adaptations_smartadapters4MODERATES_CompositeState.__init__)
 
 
-def test_adaptations::smartadapters4moderates::compositestate_constructor_args():
-    sig = inspect.signature(adaptations::smartadapters4MODERATES::CompositeState.__init__)
+def test_adaptations_smartadapters4moderates_compositestate_constructor_args():
+    sig = inspect.signature(adaptations_smartadapters4MODERATES_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -275,72 +275,72 @@ def test_setadaptation_constructor_args():
 
 
 
-def test_smartadapters4moderates::adaptations::settransition_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::SetTransition)
+def test_smartadapters4moderates_adaptations_setactionblock_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_SetActionBlock)
 
 
-def test_smartadapters4moderates::adaptations::settransition_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::SetTransition.__init__)
+def test_smartadapters4moderates_adaptations_setactionblock_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_SetActionBlock.__init__)
 
 
-def test_smartadapters4moderates::adaptations::settransition_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::SetTransition.__init__)
+def test_smartadapters4moderates_adaptations_setactionblock_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_SetActionBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptations::setannotatedelement_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::SetAnnotatedElement)
+def test_smartadapters4moderates_adaptations_settransition_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_SetTransition)
 
 
-def test_smartadapters4moderates::adaptations::setannotatedelement_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::SetAnnotatedElement.__init__)
+def test_smartadapters4moderates_adaptations_settransition_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_SetTransition.__init__)
 
 
-def test_smartadapters4moderates::adaptations::setannotatedelement_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::SetAnnotatedElement.__init__)
+def test_smartadapters4moderates_adaptations_settransition_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_SetTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptations::setstate_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::SetState)
+def test_smartadapters4moderates_adaptations_setstate_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_SetState)
 
 
-def test_smartadapters4moderates::adaptations::setstate_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::SetState.__init__)
+def test_smartadapters4moderates_adaptations_setstate_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_SetState.__init__)
 
 
-def test_smartadapters4moderates::adaptations::setstate_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::SetState.__init__)
+def test_smartadapters4moderates_adaptations_setstate_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_SetState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptations::setactionblock_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::SetActionBlock)
+def test_smartadapters4moderates_adaptations_setannotatedelement_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_SetAnnotatedElement)
 
 
-def test_smartadapters4moderates::adaptations::setactionblock_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::SetActionBlock.__init__)
+def test_smartadapters4moderates_adaptations_setannotatedelement_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_SetAnnotatedElement.__init__)
 
 
-def test_smartadapters4moderates::adaptations::setactionblock_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::SetActionBlock.__init__)
+def test_smartadapters4moderates_adaptations_setannotatedelement_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_SetAnnotatedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::adaptations::setcompositestate_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::adaptations::SetCompositeState)
+def test_smartadapters4moderates_adaptations_setcompositestate_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_adaptations_SetCompositeState)
 
 
-def test_smartadapters4moderates::adaptations::setcompositestate_constructor_exists():
-    assert callable(smartadapters4MODERATES::adaptations::SetCompositeState.__init__)
+def test_smartadapters4moderates_adaptations_setcompositestate_constructor_exists():
+    assert callable(smartadapters4MODERATES_adaptations_SetCompositeState.__init__)
 
 
-def test_smartadapters4moderates::adaptations::setcompositestate_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::adaptations::SetCompositeState.__init__)
+def test_smartadapters4moderates_adaptations_setcompositestate_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_adaptations_SetCompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -359,30 +359,30 @@ def test_scopedinstantiation_constructor_args():
 
 
 
-def test_smartadapters4moderates::perelementmatch_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::PerElementMatch)
+def test_smartadapters4moderates_perelementmatch_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_PerElementMatch)
 
 
-def test_smartadapters4moderates::perelementmatch_constructor_exists():
-    assert callable(smartadapters4MODERATES::PerElementMatch.__init__)
+def test_smartadapters4moderates_perelementmatch_constructor_exists():
+    assert callable(smartadapters4MODERATES_PerElementMatch.__init__)
 
 
-def test_smartadapters4moderates::perelementmatch_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::PerElementMatch.__init__)
+def test_smartadapters4moderates_perelementmatch_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_PerElementMatch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::perrolematch_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::PerRoleMatch)
+def test_smartadapters4moderates_perrolematch_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_PerRoleMatch)
 
 
-def test_smartadapters4moderates::perrolematch_constructor_exists():
-    assert callable(smartadapters4MODERATES::PerRoleMatch.__init__)
+def test_smartadapters4moderates_perrolematch_constructor_exists():
+    assert callable(smartadapters4MODERATES_PerRoleMatch.__init__)
 
 
-def test_smartadapters4moderates::perrolematch_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::PerRoleMatch.__init__)
+def test_smartadapters4moderates_perrolematch_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_PerRoleMatch.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -401,44 +401,44 @@ def test_instantiationstrategy_constructor_args():
 
 
 
-def test_smartadapters4moderates::scopedinstantiation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::ScopedInstantiation)
+def test_smartadapters4moderates_scopedinstantiation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_ScopedInstantiation)
 
 
-def test_smartadapters4moderates::scopedinstantiation_constructor_exists():
-    assert callable(smartadapters4MODERATES::ScopedInstantiation.__init__)
+def test_smartadapters4moderates_scopedinstantiation_constructor_exists():
+    assert callable(smartadapters4MODERATES_ScopedInstantiation.__init__)
 
 
-def test_smartadapters4moderates::scopedinstantiation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::ScopedInstantiation.__init__)
+def test_smartadapters4moderates_scopedinstantiation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_ScopedInstantiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::globalinstantiation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::GlobalInstantiation)
+def test_smartadapters4moderates_globalinstantiation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_GlobalInstantiation)
 
 
-def test_smartadapters4moderates::globalinstantiation_constructor_exists():
-    assert callable(smartadapters4MODERATES::GlobalInstantiation.__init__)
+def test_smartadapters4moderates_globalinstantiation_constructor_exists():
+    assert callable(smartadapters4MODERATES_GlobalInstantiation.__init__)
 
 
-def test_smartadapters4moderates::globalinstantiation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::GlobalInstantiation.__init__)
+def test_smartadapters4moderates_globalinstantiation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_GlobalInstantiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::aspectmodelelement_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::AspectModelElement)
+def test_smartadapters4moderates_aspectmodelelement_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_AspectModelElement)
 
 
-def test_smartadapters4moderates::aspectmodelelement_constructor_exists():
-    assert callable(smartadapters4MODERATES::AspectModelElement.__init__)
+def test_smartadapters4moderates_aspectmodelelement_constructor_exists():
+    assert callable(smartadapters4MODERATES_AspectModelElement.__init__)
 
 
-def test_smartadapters4moderates::aspectmodelelement_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::AspectModelElement.__init__)
+def test_smartadapters4moderates_aspectmodelelement_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_AspectModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -457,121 +457,121 @@ def test_adaptation_constructor_args():
 
 
 
-def test_smartadapters4moderates::setadaptation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::SetAdaptation)
+def test_smartadapters4moderates_createadaptation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_CreateAdaptation)
 
 
-def test_smartadapters4moderates::setadaptation_constructor_exists():
-    assert callable(smartadapters4MODERATES::SetAdaptation.__init__)
+def test_smartadapters4moderates_createadaptation_constructor_exists():
+    assert callable(smartadapters4MODERATES_CreateAdaptation.__init__)
 
 
-def test_smartadapters4moderates::setadaptation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::SetAdaptation.__init__)
+def test_smartadapters4moderates_createadaptation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_CreateAdaptation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::unsetadaptation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::UnsetAdaptation)
+def test_smartadapters4moderates_setadaptation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_SetAdaptation)
 
 
-def test_smartadapters4moderates::unsetadaptation_constructor_exists():
-    assert callable(smartadapters4MODERATES::UnsetAdaptation.__init__)
+def test_smartadapters4moderates_setadaptation_constructor_exists():
+    assert callable(smartadapters4MODERATES_SetAdaptation.__init__)
 
 
-def test_smartadapters4moderates::unsetadaptation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::UnsetAdaptation.__init__)
+def test_smartadapters4moderates_setadaptation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_SetAdaptation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::createadaptation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::CreateAdaptation)
+def test_smartadapters4moderates_unsetadaptation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_UnsetAdaptation)
 
 
-def test_smartadapters4moderates::createadaptation_constructor_exists():
-    assert callable(smartadapters4MODERATES::CreateAdaptation.__init__)
+def test_smartadapters4moderates_unsetadaptation_constructor_exists():
+    assert callable(smartadapters4MODERATES_UnsetAdaptation.__init__)
 
 
-def test_smartadapters4moderates::createadaptation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::CreateAdaptation.__init__)
+def test_smartadapters4moderates_unsetadaptation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_UnsetAdaptation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::cloneadaptation_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::CloneAdaptation)
+def test_smartadapters4moderates_cloneadaptation_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_CloneAdaptation)
 
 
-def test_smartadapters4moderates::cloneadaptation_constructor_exists():
-    assert callable(smartadapters4MODERATES::CloneAdaptation.__init__)
+def test_smartadapters4moderates_cloneadaptation_constructor_exists():
+    assert callable(smartadapters4MODERATES_CloneAdaptation.__init__)
 
 
-def test_smartadapters4moderates::cloneadaptation_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::CloneAdaptation.__init__)
+def test_smartadapters4moderates_cloneadaptation_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_CloneAdaptation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::instantiationstrategy_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::InstantiationStrategy)
+def test_smartadapters4moderates_instantiationstrategy_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_InstantiationStrategy)
 
 
-def test_smartadapters4moderates::instantiationstrategy_constructor_exists():
-    assert callable(smartadapters4MODERATES::InstantiationStrategy.__init__)
+def test_smartadapters4moderates_instantiationstrategy_constructor_exists():
+    assert callable(smartadapters4MODERATES_InstantiationStrategy.__init__)
 
 
-def test_smartadapters4moderates::instantiationstrategy_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::InstantiationStrategy.__init__)
+def test_smartadapters4moderates_instantiationstrategy_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_InstantiationStrategy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::advicemodel_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::AdviceModel)
+def test_smartadapters4moderates_advicemodel_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_AdviceModel)
 
 
-def test_smartadapters4moderates::advicemodel_constructor_exists():
-    assert callable(smartadapters4MODERATES::AdviceModel.__init__)
+def test_smartadapters4moderates_advicemodel_constructor_exists():
+    assert callable(smartadapters4MODERATES_AdviceModel.__init__)
 
 
-def test_smartadapters4moderates::advicemodel_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::AdviceModel.__init__)
+def test_smartadapters4moderates_advicemodel_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_AdviceModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::pointcutmodel_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::PointcutModel)
+def test_smartadapters4moderates_pointcutmodel_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_PointcutModel)
 
 
-def test_smartadapters4moderates::pointcutmodel_constructor_exists():
-    assert callable(smartadapters4MODERATES::PointcutModel.__init__)
+def test_smartadapters4moderates_pointcutmodel_constructor_exists():
+    assert callable(smartadapters4MODERATES_PointcutModel.__init__)
 
 
-def test_smartadapters4moderates::pointcutmodel_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::PointcutModel.__init__)
+def test_smartadapters4moderates_pointcutmodel_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_PointcutModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smartadapters4moderates::aspect_is_not_abstract():
-    assert not inspect.isabstract(smartadapters4MODERATES::Aspect)
+def test_smartadapters4moderates_aspect_is_not_abstract():
+    assert not inspect.isabstract(smartadapters4MODERATES_Aspect)
 
 
-def test_smartadapters4moderates::aspect_constructor_exists():
-    assert callable(smartadapters4MODERATES::Aspect.__init__)
+def test_smartadapters4moderates_aspect_constructor_exists():
+    assert callable(smartadapters4MODERATES_Aspect.__init__)
 
 
-def test_smartadapters4moderates::aspect_constructor_args():
-    sig = inspect.signature(smartadapters4MODERATES::Aspect.__init__)
+def test_smartadapters4moderates_aspect_constructor_args():
+    sig = inspect.signature(smartadapters4MODERATES_Aspect.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_smartadapters4moderates::aspect_has_name():
-    assert hasattr(smartadapters4MODERATES::Aspect, "name")
+def test_smartadapters4moderates_aspect_has_name():
+    assert hasattr(smartadapters4MODERATES_Aspect, "name")
     descriptor = None
-    for klass in smartadapters4MODERATES::Aspect.__mro__:
+    for klass in smartadapters4MODERATES_Aspect.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -589,312 +589,309 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-adaptations::smartadapters4MODERATES::ActionBlock_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::ActionBlock,
+adaptations_smartadapters4MODERATES_ActionBlock_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_ActionBlock,
 )
-adaptations::smartadapters4MODERATES::PlatformAnnotation_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::PlatformAnnotation,
+adaptations_smartadapters4MODERATES_PlatformAnnotation_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_PlatformAnnotation,
 )
-adaptations::smartadapters4MODERATES::AnnotatedElement_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::AnnotatedElement,
+adaptations_smartadapters4MODERATES_AnnotatedElement_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_AnnotatedElement,
 )
-adaptations::smartadapters4MODERATES::Expression_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::Expression,
+adaptations_smartadapters4MODERATES_Expression_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_Expression,
 )
-adaptations::smartadapters4MODERATES::Event_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::Event,
+adaptations_smartadapters4MODERATES_Event_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_Event,
 )
-adaptations::smartadapters4MODERATES::Property_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::Property,
+adaptations_smartadapters4MODERATES_Property_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_Property,
 )
-adaptations::smartadapters4MODERATES::Action_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::Action,
+adaptations_smartadapters4MODERATES_Action_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_Action,
 )
-adaptations::smartadapters4MODERATES::Transition_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::Transition,
+adaptations_smartadapters4MODERATES_Transition_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_Transition,
 )
-smartadapters4MODERATES::Adaptation_strategy = st.builds(
-    smartadapters4MODERATES::Adaptation,
+smartadapters4MODERATES_Adaptation_strategy = st.builds(
+    smartadapters4MODERATES_Adaptation,
 )
 UnsetAdaptation_strategy = st.builds(
     UnsetAdaptation,
 )
-smartadapters4MODERATES::adaptations::UnsetState_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::UnsetState,
+smartadapters4MODERATES_adaptations_UnsetTransition_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_UnsetTransition,
 )
-smartadapters4MODERATES::adaptations::UnsetTransition_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::UnsetTransition,
+smartadapters4MODERATES_adaptations_UnsetState_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_UnsetState,
 )
-smartadapters4MODERATES::adaptations::UnsetCompositeState_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::UnsetCompositeState,
+smartadapters4MODERATES_adaptations_UnsetCompositeState_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_UnsetCompositeState,
 )
-adaptations::smartadapters4MODERATES::State_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::State,
+adaptations_smartadapters4MODERATES_State_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_State,
 )
-adaptations::smartadapters4MODERATES::CompositeState_strategy = st.builds(
-    adaptations::smartadapters4MODERATES::CompositeState,
+adaptations_smartadapters4MODERATES_CompositeState_strategy = st.builds(
+    adaptations_smartadapters4MODERATES_CompositeState,
 )
 SetAdaptation_strategy = st.builds(
     SetAdaptation,
 )
-smartadapters4MODERATES::adaptations::SetTransition_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::SetTransition,
+smartadapters4MODERATES_adaptations_SetActionBlock_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_SetActionBlock,
 )
-smartadapters4MODERATES::adaptations::SetAnnotatedElement_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::SetAnnotatedElement,
+smartadapters4MODERATES_adaptations_SetTransition_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_SetTransition,
 )
-smartadapters4MODERATES::adaptations::SetState_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::SetState,
+smartadapters4MODERATES_adaptations_SetState_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_SetState,
 )
-smartadapters4MODERATES::adaptations::SetActionBlock_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::SetActionBlock,
+smartadapters4MODERATES_adaptations_SetAnnotatedElement_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_SetAnnotatedElement,
 )
-smartadapters4MODERATES::adaptations::SetCompositeState_strategy = st.builds(
-    smartadapters4MODERATES::adaptations::SetCompositeState,
+smartadapters4MODERATES_adaptations_SetCompositeState_strategy = st.builds(
+    smartadapters4MODERATES_adaptations_SetCompositeState,
 )
 ScopedInstantiation_strategy = st.builds(
     ScopedInstantiation,
 )
-smartadapters4MODERATES::PerElementMatch_strategy = st.builds(
-    smartadapters4MODERATES::PerElementMatch,
+smartadapters4MODERATES_PerElementMatch_strategy = st.builds(
+    smartadapters4MODERATES_PerElementMatch,
 )
-smartadapters4MODERATES::PerRoleMatch_strategy = st.builds(
-    smartadapters4MODERATES::PerRoleMatch,
+smartadapters4MODERATES_PerRoleMatch_strategy = st.builds(
+    smartadapters4MODERATES_PerRoleMatch,
 )
 InstantiationStrategy_strategy = st.builds(
     InstantiationStrategy,
 )
-smartadapters4MODERATES::ScopedInstantiation_strategy = st.builds(
-    smartadapters4MODERATES::ScopedInstantiation,
+smartadapters4MODERATES_ScopedInstantiation_strategy = st.builds(
+    smartadapters4MODERATES_ScopedInstantiation,
 )
-smartadapters4MODERATES::GlobalInstantiation_strategy = st.builds(
-    smartadapters4MODERATES::GlobalInstantiation,
+smartadapters4MODERATES_GlobalInstantiation_strategy = st.builds(
+    smartadapters4MODERATES_GlobalInstantiation,
 )
-smartadapters4MODERATES::AspectModelElement_strategy = st.builds(
-    smartadapters4MODERATES::AspectModelElement,
+smartadapters4MODERATES_AspectModelElement_strategy = st.builds(
+    smartadapters4MODERATES_AspectModelElement,
 )
 Adaptation_strategy = st.builds(
     Adaptation,
 )
-smartadapters4MODERATES::SetAdaptation_strategy = st.builds(
-    smartadapters4MODERATES::SetAdaptation,
+smartadapters4MODERATES_CreateAdaptation_strategy = st.builds(
+    smartadapters4MODERATES_CreateAdaptation,
 )
-smartadapters4MODERATES::UnsetAdaptation_strategy = st.builds(
-    smartadapters4MODERATES::UnsetAdaptation,
+smartadapters4MODERATES_SetAdaptation_strategy = st.builds(
+    smartadapters4MODERATES_SetAdaptation,
 )
-smartadapters4MODERATES::CreateAdaptation_strategy = st.builds(
-    smartadapters4MODERATES::CreateAdaptation,
+smartadapters4MODERATES_UnsetAdaptation_strategy = st.builds(
+    smartadapters4MODERATES_UnsetAdaptation,
 )
-smartadapters4MODERATES::CloneAdaptation_strategy = st.builds(
-    smartadapters4MODERATES::CloneAdaptation,
+smartadapters4MODERATES_CloneAdaptation_strategy = st.builds(
+    smartadapters4MODERATES_CloneAdaptation,
 )
-smartadapters4MODERATES::InstantiationStrategy_strategy = st.builds(
-    smartadapters4MODERATES::InstantiationStrategy,
+smartadapters4MODERATES_InstantiationStrategy_strategy = st.builds(
+    smartadapters4MODERATES_InstantiationStrategy,
 )
-smartadapters4MODERATES::AdviceModel_strategy = st.builds(
-    smartadapters4MODERATES::AdviceModel,
+smartadapters4MODERATES_AdviceModel_strategy = st.builds(
+    smartadapters4MODERATES_AdviceModel,
 )
-smartadapters4MODERATES::PointcutModel_strategy = st.builds(
-    smartadapters4MODERATES::PointcutModel,
+smartadapters4MODERATES_PointcutModel_strategy = st.builds(
+    smartadapters4MODERATES_PointcutModel,
 )
-smartadapters4MODERATES::Aspect_strategy = st.builds(
-    smartadapters4MODERATES::Aspect,
+smartadapters4MODERATES_Aspect_strategy = st.builds(
+    smartadapters4MODERATES_Aspect,
     name=
         safe_text
 )
 
-@given(instance=adaptations::smartadapters4MODERATES::ActionBlock_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_ActionBlock_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::actionblock_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::ActionBlock)
+def test_adaptations_smartadapters4moderates_actionblock_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_ActionBlock)
 
-@given(instance=adaptations::smartadapters4MODERATES::PlatformAnnotation_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_PlatformAnnotation_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::platformannotation_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::PlatformAnnotation)
+def test_adaptations_smartadapters4moderates_platformannotation_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_PlatformAnnotation)
 
-@given(instance=adaptations::smartadapters4MODERATES::AnnotatedElement_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_AnnotatedElement_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::annotatedelement_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::AnnotatedElement)
+def test_adaptations_smartadapters4moderates_annotatedelement_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_AnnotatedElement)
 
-@given(instance=adaptations::smartadapters4MODERATES::Expression_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_Expression_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::expression_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::Expression)
+def test_adaptations_smartadapters4moderates_expression_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_Expression)
 
-@given(instance=adaptations::smartadapters4MODERATES::Event_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_Event_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::event_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::Event)
+def test_adaptations_smartadapters4moderates_event_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_Event)
 
-@given(instance=adaptations::smartadapters4MODERATES::Property_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_Property_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::property_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::Property)
+def test_adaptations_smartadapters4moderates_property_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_Property)
 
-@given(instance=adaptations::smartadapters4MODERATES::Action_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_Action_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::action_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::Action)
+def test_adaptations_smartadapters4moderates_action_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_Action)
 
-@given(instance=adaptations::smartadapters4MODERATES::Transition_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_Transition_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::transition_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::Transition)
+def test_adaptations_smartadapters4moderates_transition_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_Transition)
 
-@given(instance=smartadapters4MODERATES::Adaptation_strategy)
+@given(instance=smartadapters4MODERATES_Adaptation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::Adaptation)
+def test_smartadapters4moderates_adaptation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_Adaptation)
 
 @given(instance=UnsetAdaptation_strategy)
 @settings(max_examples=50)
 def test_unsetadaptation_instantiation(instance):
     assert isinstance(instance, UnsetAdaptation)
 
-@given(instance=smartadapters4MODERATES::adaptations::UnsetState_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_UnsetTransition_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::unsetstate_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::UnsetState)
+def test_smartadapters4moderates_adaptations_unsettransition_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_UnsetTransition)
 
-@given(instance=smartadapters4MODERATES::adaptations::UnsetTransition_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_UnsetState_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::unsettransition_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::UnsetTransition)
+def test_smartadapters4moderates_adaptations_unsetstate_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_UnsetState)
 
-@given(instance=smartadapters4MODERATES::adaptations::UnsetCompositeState_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_UnsetCompositeState_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::unsetcompositestate_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::UnsetCompositeState)
+def test_smartadapters4moderates_adaptations_unsetcompositestate_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_UnsetCompositeState)
 
-@given(instance=adaptations::smartadapters4MODERATES::State_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_State_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::state_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::State)
+def test_adaptations_smartadapters4moderates_state_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_State)
 
-@given(instance=adaptations::smartadapters4MODERATES::CompositeState_strategy)
+@given(instance=adaptations_smartadapters4MODERATES_CompositeState_strategy)
 @settings(max_examples=50)
-def test_adaptations::smartadapters4moderates::compositestate_instantiation(instance):
-    assert isinstance(instance, adaptations::smartadapters4MODERATES::CompositeState)
+def test_adaptations_smartadapters4moderates_compositestate_instantiation(instance):
+    assert isinstance(instance, adaptations_smartadapters4MODERATES_CompositeState)
 
 @given(instance=SetAdaptation_strategy)
 @settings(max_examples=50)
 def test_setadaptation_instantiation(instance):
     assert isinstance(instance, SetAdaptation)
 
-@given(instance=smartadapters4MODERATES::adaptations::SetTransition_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_SetActionBlock_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::settransition_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::SetTransition)
+def test_smartadapters4moderates_adaptations_setactionblock_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_SetActionBlock)
 
-@given(instance=smartadapters4MODERATES::adaptations::SetAnnotatedElement_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_SetTransition_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::setannotatedelement_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::SetAnnotatedElement)
+def test_smartadapters4moderates_adaptations_settransition_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_SetTransition)
 
-@given(instance=smartadapters4MODERATES::adaptations::SetState_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_SetState_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::setstate_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::SetState)
+def test_smartadapters4moderates_adaptations_setstate_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_SetState)
 
-@given(instance=smartadapters4MODERATES::adaptations::SetActionBlock_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_SetAnnotatedElement_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::setactionblock_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::SetActionBlock)
+def test_smartadapters4moderates_adaptations_setannotatedelement_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_SetAnnotatedElement)
 
-@given(instance=smartadapters4MODERATES::adaptations::SetCompositeState_strategy)
+@given(instance=smartadapters4MODERATES_adaptations_SetCompositeState_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::adaptations::setcompositestate_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::adaptations::SetCompositeState)
+def test_smartadapters4moderates_adaptations_setcompositestate_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_adaptations_SetCompositeState)
 
 @given(instance=ScopedInstantiation_strategy)
 @settings(max_examples=50)
 def test_scopedinstantiation_instantiation(instance):
     assert isinstance(instance, ScopedInstantiation)
 
-@given(instance=smartadapters4MODERATES::PerElementMatch_strategy)
+@given(instance=smartadapters4MODERATES_PerElementMatch_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::perelementmatch_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::PerElementMatch)
+def test_smartadapters4moderates_perelementmatch_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_PerElementMatch)
 
-@given(instance=smartadapters4MODERATES::PerRoleMatch_strategy)
+@given(instance=smartadapters4MODERATES_PerRoleMatch_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::perrolematch_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::PerRoleMatch)
+def test_smartadapters4moderates_perrolematch_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_PerRoleMatch)
 
 @given(instance=InstantiationStrategy_strategy)
 @settings(max_examples=50)
 def test_instantiationstrategy_instantiation(instance):
     assert isinstance(instance, InstantiationStrategy)
 
-@given(instance=smartadapters4MODERATES::ScopedInstantiation_strategy)
+@given(instance=smartadapters4MODERATES_ScopedInstantiation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::scopedinstantiation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::ScopedInstantiation)
+def test_smartadapters4moderates_scopedinstantiation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_ScopedInstantiation)
 
-@given(instance=smartadapters4MODERATES::GlobalInstantiation_strategy)
+@given(instance=smartadapters4MODERATES_GlobalInstantiation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::globalinstantiation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::GlobalInstantiation)
+def test_smartadapters4moderates_globalinstantiation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_GlobalInstantiation)
 
-@given(instance=smartadapters4MODERATES::AspectModelElement_strategy)
+@given(instance=smartadapters4MODERATES_AspectModelElement_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::aspectmodelelement_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::AspectModelElement)
+def test_smartadapters4moderates_aspectmodelelement_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_AspectModelElement)
 
 @given(instance=Adaptation_strategy)
 @settings(max_examples=50)
 def test_adaptation_instantiation(instance):
     assert isinstance(instance, Adaptation)
 
-@given(instance=smartadapters4MODERATES::SetAdaptation_strategy)
+@given(instance=smartadapters4MODERATES_CreateAdaptation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::setadaptation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::SetAdaptation)
+def test_smartadapters4moderates_createadaptation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_CreateAdaptation)
 
-@given(instance=smartadapters4MODERATES::UnsetAdaptation_strategy)
+@given(instance=smartadapters4MODERATES_SetAdaptation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::unsetadaptation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::UnsetAdaptation)
+def test_smartadapters4moderates_setadaptation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_SetAdaptation)
 
-@given(instance=smartadapters4MODERATES::CreateAdaptation_strategy)
+@given(instance=smartadapters4MODERATES_UnsetAdaptation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::createadaptation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::CreateAdaptation)
+def test_smartadapters4moderates_unsetadaptation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_UnsetAdaptation)
 
-@given(instance=smartadapters4MODERATES::CloneAdaptation_strategy)
+@given(instance=smartadapters4MODERATES_CloneAdaptation_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::cloneadaptation_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::CloneAdaptation)
+def test_smartadapters4moderates_cloneadaptation_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_CloneAdaptation)
 
-@given(instance=smartadapters4MODERATES::InstantiationStrategy_strategy)
+@given(instance=smartadapters4MODERATES_InstantiationStrategy_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::instantiationstrategy_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::InstantiationStrategy)
+def test_smartadapters4moderates_instantiationstrategy_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_InstantiationStrategy)
 
-@given(instance=smartadapters4MODERATES::AdviceModel_strategy)
+@given(instance=smartadapters4MODERATES_AdviceModel_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::advicemodel_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::AdviceModel)
+def test_smartadapters4moderates_advicemodel_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_AdviceModel)
 
-@given(instance=smartadapters4MODERATES::PointcutModel_strategy)
+@given(instance=smartadapters4MODERATES_PointcutModel_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::pointcutmodel_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::PointcutModel)
+def test_smartadapters4moderates_pointcutmodel_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_PointcutModel)
 
-@given(instance=smartadapters4MODERATES::Aspect_strategy)
+@given(instance=smartadapters4MODERATES_Aspect_strategy)
 @settings(max_examples=50)
-def test_smartadapters4moderates::aspect_instantiation(instance):
-    assert isinstance(instance, smartadapters4MODERATES::Aspect)
-
-@given(instance=smartadapters4MODERATES::Aspect_strategy)
-def test_smartadapters4moderates::aspect_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_smartadapters4moderates_aspect_instantiation(instance):
+    assert isinstance(instance, smartadapters4MODERATES_Aspect)
 
 
-@given(instance=smartadapters4MODERATES::Aspect_strategy)
-def test_smartadapters4moderates::aspect_name_setter(instance):
+
+@given(instance=smartadapters4MODERATES_Aspect_strategy)
+def test_smartadapters4moderates_aspect_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

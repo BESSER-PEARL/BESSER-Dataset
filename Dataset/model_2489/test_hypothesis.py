@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    z5fsm::AbstractState,
+from python_code import (
+    z5fsm_AbstractState,
     AbstractState,
-    z5fsm::State,
-    z5fsm::Region,
+    z5fsm_State,
+    z5fsm_Region,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_z5fsm::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(z5fsm::AbstractState)
+def test_z5fsm_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(z5fsm_AbstractState)
 
 
-def test_z5fsm::abstractstate_constructor_exists():
-    assert callable(z5fsm::AbstractState.__init__)
+def test_z5fsm_abstractstate_constructor_exists():
+    assert callable(z5fsm_AbstractState.__init__)
 
 
-def test_z5fsm::abstractstate_constructor_args():
-    sig = inspect.signature(z5fsm::AbstractState.__init__)
+def test_z5fsm_abstractstate_constructor_args():
+    sig = inspect.signature(z5fsm_AbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_z5fsm::abstractstate_has_id():
-    assert hasattr(z5fsm::AbstractState, "id")
+def test_z5fsm_abstractstate_has_id():
+    assert hasattr(z5fsm_AbstractState, "id")
     descriptor = None
-    for klass in z5fsm::AbstractState.__mro__:
+    for klass in z5fsm_AbstractState.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -56,37 +56,37 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_z5fsm::state_is_not_abstract():
-    assert not inspect.isabstract(z5fsm::State)
+def test_z5fsm_state_is_not_abstract():
+    assert not inspect.isabstract(z5fsm_State)
 
 
-def test_z5fsm::state_constructor_exists():
-    assert callable(z5fsm::State.__init__)
+def test_z5fsm_state_constructor_exists():
+    assert callable(z5fsm_State.__init__)
 
 
-def test_z5fsm::state_constructor_args():
-    sig = inspect.signature(z5fsm::State.__init__)
+def test_z5fsm_state_constructor_args():
+    sig = inspect.signature(z5fsm_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_z5fsm::region_is_not_abstract():
-    assert not inspect.isabstract(z5fsm::Region)
+def test_z5fsm_region_is_not_abstract():
+    assert not inspect.isabstract(z5fsm_Region)
 
 
-def test_z5fsm::region_constructor_exists():
-    assert callable(z5fsm::Region.__init__)
+def test_z5fsm_region_constructor_exists():
+    assert callable(z5fsm_Region.__init__)
 
 
-def test_z5fsm::region_constructor_args():
-    sig = inspect.signature(z5fsm::Region.__init__)
+def test_z5fsm_region_constructor_args():
+    sig = inspect.signature(z5fsm_Region.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_z5fsm::region_has_name():
-    assert hasattr(z5fsm::Region, "name")
+def test_z5fsm_region_has_name():
+    assert hasattr(z5fsm_Region, "name")
     descriptor = None
-    for klass in z5fsm::Region.__mro__:
+    for klass in z5fsm_Region.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,35 +104,32 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-z5fsm::AbstractState_strategy = st.builds(
-    z5fsm::AbstractState,
+z5fsm_AbstractState_strategy = st.builds(
+    z5fsm_AbstractState,
     id=
         safe_text
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-z5fsm::State_strategy = st.builds(
-    z5fsm::State,
+z5fsm_State_strategy = st.builds(
+    z5fsm_State,
 )
-z5fsm::Region_strategy = st.builds(
-    z5fsm::Region,
+z5fsm_Region_strategy = st.builds(
+    z5fsm_Region,
     name=
         safe_text
 )
 
-@given(instance=z5fsm::AbstractState_strategy)
+@given(instance=z5fsm_AbstractState_strategy)
 @settings(max_examples=50)
-def test_z5fsm::abstractstate_instantiation(instance):
-    assert isinstance(instance, z5fsm::AbstractState)
-
-@given(instance=z5fsm::AbstractState_strategy)
-def test_z5fsm::abstractstate_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_z5fsm_abstractstate_instantiation(instance):
+    assert isinstance(instance, z5fsm_AbstractState)
 
 
-@given(instance=z5fsm::AbstractState_strategy)
-def test_z5fsm::abstractstate_id_setter(instance):
+
+@given(instance=z5fsm_AbstractState_strategy)
+def test_z5fsm_abstractstate_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -142,23 +139,20 @@ def test_z5fsm::abstractstate_id_setter(instance):
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=z5fsm::State_strategy)
+@given(instance=z5fsm_State_strategy)
 @settings(max_examples=50)
-def test_z5fsm::state_instantiation(instance):
-    assert isinstance(instance, z5fsm::State)
+def test_z5fsm_state_instantiation(instance):
+    assert isinstance(instance, z5fsm_State)
 
-@given(instance=z5fsm::Region_strategy)
+@given(instance=z5fsm_Region_strategy)
 @settings(max_examples=50)
-def test_z5fsm::region_instantiation(instance):
-    assert isinstance(instance, z5fsm::Region)
-
-@given(instance=z5fsm::Region_strategy)
-def test_z5fsm::region_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_z5fsm_region_instantiation(instance):
+    assert isinstance(instance, z5fsm_Region)
 
 
-@given(instance=z5fsm::Region_strategy)
-def test_z5fsm::region_name_setter(instance):
+
+@given(instance=z5fsm_Region_strategy)
+def test_z5fsm_region_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

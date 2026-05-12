@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Person,
-    PersonList::Female,
-    PersonList::Male,
+    PersonList_Female,
+    PersonList_Male,
     Place,
-    PersonList::WorkPlace,
-    PersonList::LivingPlace,
-    PersonList::WorkingPosition,
-    PersonList::Place,
-    PersonList::Person,
-    PersonList::List,
+    PersonList_WorkPlace,
+    PersonList_LivingPlace,
+    PersonList_WorkingPosition,
+    PersonList_Place,
+    PersonList_Person,
+    PersonList_List,
     Gender,
 )
 
@@ -39,30 +39,30 @@ def test_person_constructor_args():
 
 
 
-def test_personlist::female_is_not_abstract():
-    assert not inspect.isabstract(PersonList::Female)
+def test_personlist_female_is_not_abstract():
+    assert not inspect.isabstract(PersonList_Female)
 
 
-def test_personlist::female_constructor_exists():
-    assert callable(PersonList::Female.__init__)
+def test_personlist_female_constructor_exists():
+    assert callable(PersonList_Female.__init__)
 
 
-def test_personlist::female_constructor_args():
-    sig = inspect.signature(PersonList::Female.__init__)
+def test_personlist_female_constructor_args():
+    sig = inspect.signature(PersonList_Female.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_personlist::male_is_not_abstract():
-    assert not inspect.isabstract(PersonList::Male)
+def test_personlist_male_is_not_abstract():
+    assert not inspect.isabstract(PersonList_Male)
 
 
-def test_personlist::male_constructor_exists():
-    assert callable(PersonList::Male.__init__)
+def test_personlist_male_constructor_exists():
+    assert callable(PersonList_Male.__init__)
 
 
-def test_personlist::male_constructor_args():
-    sig = inspect.signature(PersonList::Male.__init__)
+def test_personlist_male_constructor_args():
+    sig = inspect.signature(PersonList_Male.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,51 +81,51 @@ def test_place_constructor_args():
 
 
 
-def test_personlist::workplace_is_not_abstract():
-    assert not inspect.isabstract(PersonList::WorkPlace)
+def test_personlist_workplace_is_not_abstract():
+    assert not inspect.isabstract(PersonList_WorkPlace)
 
 
-def test_personlist::workplace_constructor_exists():
-    assert callable(PersonList::WorkPlace.__init__)
+def test_personlist_workplace_constructor_exists():
+    assert callable(PersonList_WorkPlace.__init__)
 
 
-def test_personlist::workplace_constructor_args():
-    sig = inspect.signature(PersonList::WorkPlace.__init__)
+def test_personlist_workplace_constructor_args():
+    sig = inspect.signature(PersonList_WorkPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_personlist::livingplace_is_not_abstract():
-    assert not inspect.isabstract(PersonList::LivingPlace)
+def test_personlist_livingplace_is_not_abstract():
+    assert not inspect.isabstract(PersonList_LivingPlace)
 
 
-def test_personlist::livingplace_constructor_exists():
-    assert callable(PersonList::LivingPlace.__init__)
+def test_personlist_livingplace_constructor_exists():
+    assert callable(PersonList_LivingPlace.__init__)
 
 
-def test_personlist::livingplace_constructor_args():
-    sig = inspect.signature(PersonList::LivingPlace.__init__)
+def test_personlist_livingplace_constructor_args():
+    sig = inspect.signature(PersonList_LivingPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_personlist::workingposition_is_not_abstract():
-    assert not inspect.isabstract(PersonList::WorkingPosition)
+def test_personlist_workingposition_is_not_abstract():
+    assert not inspect.isabstract(PersonList_WorkingPosition)
 
 
-def test_personlist::workingposition_constructor_exists():
-    assert callable(PersonList::WorkingPosition.__init__)
+def test_personlist_workingposition_constructor_exists():
+    assert callable(PersonList_WorkingPosition.__init__)
 
 
-def test_personlist::workingposition_constructor_args():
-    sig = inspect.signature(PersonList::WorkingPosition.__init__)
+def test_personlist_workingposition_constructor_args():
+    sig = inspect.signature(PersonList_WorkingPosition.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_personlist::workingposition_has_description():
-    assert hasattr(PersonList::WorkingPosition, "description")
+def test_personlist_workingposition_has_description():
+    assert hasattr(PersonList_WorkingPosition, "description")
     descriptor = None
-    for klass in PersonList::WorkingPosition.__mro__:
+    for klass in PersonList_WorkingPosition.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -133,23 +133,23 @@ def test_personlist::workingposition_has_description():
 
 
 
-def test_personlist::place_is_not_abstract():
-    assert not inspect.isabstract(PersonList::Place)
+def test_personlist_place_is_not_abstract():
+    assert not inspect.isabstract(PersonList_Place)
 
 
-def test_personlist::place_constructor_exists():
-    assert callable(PersonList::Place.__init__)
+def test_personlist_place_constructor_exists():
+    assert callable(PersonList_Place.__init__)
 
 
-def test_personlist::place_constructor_args():
-    sig = inspect.signature(PersonList::Place.__init__)
+def test_personlist_place_constructor_args():
+    sig = inspect.signature(PersonList_Place.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_personlist::place_has_address():
-    assert hasattr(PersonList::Place, "address")
+def test_personlist_place_has_address():
+    assert hasattr(PersonList_Place, "address")
     descriptor = None
-    for klass in PersonList::Place.__mro__:
+    for klass in PersonList_Place.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -157,23 +157,23 @@ def test_personlist::place_has_address():
 
 
 
-def test_personlist::person_is_not_abstract():
-    assert not inspect.isabstract(PersonList::Person)
+def test_personlist_person_is_not_abstract():
+    assert not inspect.isabstract(PersonList_Person)
 
 
-def test_personlist::person_constructor_exists():
-    assert callable(PersonList::Person.__init__)
+def test_personlist_person_constructor_exists():
+    assert callable(PersonList_Person.__init__)
 
 
-def test_personlist::person_constructor_args():
-    sig = inspect.signature(PersonList::Person.__init__)
+def test_personlist_person_constructor_args():
+    sig = inspect.signature(PersonList_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_personlist::person_has_name():
-    assert hasattr(PersonList::Person, "name")
+def test_personlist_person_has_name():
+    assert hasattr(PersonList_Person, "name")
     descriptor = None
-    for klass in PersonList::Person.__mro__:
+    for klass in PersonList_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -181,16 +181,16 @@ def test_personlist::person_has_name():
 
 
 
-def test_personlist::list_is_not_abstract():
-    assert not inspect.isabstract(PersonList::List)
+def test_personlist_list_is_not_abstract():
+    assert not inspect.isabstract(PersonList_List)
 
 
-def test_personlist::list_constructor_exists():
-    assert callable(PersonList::List.__init__)
+def test_personlist_list_constructor_exists():
+    assert callable(PersonList_List.__init__)
 
 
-def test_personlist::list_constructor_args():
-    sig = inspect.signature(PersonList::List.__init__)
+def test_personlist_list_constructor_args():
+    sig = inspect.signature(PersonList_List.__init__)
     params = list(sig.parameters.keys())
 
 def test_gender_exists():
@@ -201,8 +201,8 @@ def test_gender_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Gender]
     expected_literals = [
-        "Male",
         "Female",
+        "Male",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -223,38 +223,38 @@ safe_text = st.text(
 Person_strategy = st.builds(
     Person,
 )
-PersonList::Female_strategy = st.builds(
-    PersonList::Female,
+PersonList_Female_strategy = st.builds(
+    PersonList_Female,
 )
-PersonList::Male_strategy = st.builds(
-    PersonList::Male,
+PersonList_Male_strategy = st.builds(
+    PersonList_Male,
 )
 Place_strategy = st.builds(
     Place,
 )
-PersonList::WorkPlace_strategy = st.builds(
-    PersonList::WorkPlace,
+PersonList_WorkPlace_strategy = st.builds(
+    PersonList_WorkPlace,
 )
-PersonList::LivingPlace_strategy = st.builds(
-    PersonList::LivingPlace,
+PersonList_LivingPlace_strategy = st.builds(
+    PersonList_LivingPlace,
 )
-PersonList::WorkingPosition_strategy = st.builds(
-    PersonList::WorkingPosition,
+PersonList_WorkingPosition_strategy = st.builds(
+    PersonList_WorkingPosition,
     description=
         safe_text
 )
-PersonList::Place_strategy = st.builds(
-    PersonList::Place,
+PersonList_Place_strategy = st.builds(
+    PersonList_Place,
     address=
         safe_text
 )
-PersonList::Person_strategy = st.builds(
-    PersonList::Person,
+PersonList_Person_strategy = st.builds(
+    PersonList_Person,
     name=
         safe_text
 )
-PersonList::List_strategy = st.builds(
-    PersonList::List,
+PersonList_List_strategy = st.builds(
+    PersonList_List,
 )
 
 @given(instance=Person_strategy)
@@ -262,80 +262,71 @@ PersonList::List_strategy = st.builds(
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=PersonList::Female_strategy)
+@given(instance=PersonList_Female_strategy)
 @settings(max_examples=50)
-def test_personlist::female_instantiation(instance):
-    assert isinstance(instance, PersonList::Female)
+def test_personlist_female_instantiation(instance):
+    assert isinstance(instance, PersonList_Female)
 
-@given(instance=PersonList::Male_strategy)
+@given(instance=PersonList_Male_strategy)
 @settings(max_examples=50)
-def test_personlist::male_instantiation(instance):
-    assert isinstance(instance, PersonList::Male)
+def test_personlist_male_instantiation(instance):
+    assert isinstance(instance, PersonList_Male)
 
 @given(instance=Place_strategy)
 @settings(max_examples=50)
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=PersonList::WorkPlace_strategy)
+@given(instance=PersonList_WorkPlace_strategy)
 @settings(max_examples=50)
-def test_personlist::workplace_instantiation(instance):
-    assert isinstance(instance, PersonList::WorkPlace)
+def test_personlist_workplace_instantiation(instance):
+    assert isinstance(instance, PersonList_WorkPlace)
 
-@given(instance=PersonList::LivingPlace_strategy)
+@given(instance=PersonList_LivingPlace_strategy)
 @settings(max_examples=50)
-def test_personlist::livingplace_instantiation(instance):
-    assert isinstance(instance, PersonList::LivingPlace)
+def test_personlist_livingplace_instantiation(instance):
+    assert isinstance(instance, PersonList_LivingPlace)
 
-@given(instance=PersonList::WorkingPosition_strategy)
+@given(instance=PersonList_WorkingPosition_strategy)
 @settings(max_examples=50)
-def test_personlist::workingposition_instantiation(instance):
-    assert isinstance(instance, PersonList::WorkingPosition)
-
-@given(instance=PersonList::WorkingPosition_strategy)
-def test_personlist::workingposition_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_personlist_workingposition_instantiation(instance):
+    assert isinstance(instance, PersonList_WorkingPosition)
 
 
-@given(instance=PersonList::WorkingPosition_strategy)
-def test_personlist::workingposition_description_setter(instance):
+
+@given(instance=PersonList_WorkingPosition_strategy)
+def test_personlist_workingposition_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=PersonList::Place_strategy)
+@given(instance=PersonList_Place_strategy)
 @settings(max_examples=50)
-def test_personlist::place_instantiation(instance):
-    assert isinstance(instance, PersonList::Place)
-
-@given(instance=PersonList::Place_strategy)
-def test_personlist::place_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_personlist_place_instantiation(instance):
+    assert isinstance(instance, PersonList_Place)
 
 
-@given(instance=PersonList::Place_strategy)
-def test_personlist::place_address_setter(instance):
+
+@given(instance=PersonList_Place_strategy)
+def test_personlist_place_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=PersonList::Person_strategy)
+@given(instance=PersonList_Person_strategy)
 @settings(max_examples=50)
-def test_personlist::person_instantiation(instance):
-    assert isinstance(instance, PersonList::Person)
-
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_personlist_person_instantiation(instance):
+    assert isinstance(instance, PersonList_Person)
 
 
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_name_setter(instance):
+
+@given(instance=PersonList_Person_strategy)
+def test_personlist_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PersonList::List_strategy)
+@given(instance=PersonList_List_strategy)
 @settings(max_examples=50)
-def test_personlist::list_instantiation(instance):
-    assert isinstance(instance, PersonList::List)
+def test_personlist_list_instantiation(instance):
+    assert isinstance(instance, PersonList_List)

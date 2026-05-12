@@ -16,7 +16,7 @@ from besser.BUML.metamodel.structural import (
 # Domain Model
 domain_model = DomainModel(
     name="datatypes",
-    types=None,,
+    types=None,
     associations={},
     generalizations={},
     metadata=None

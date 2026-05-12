@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Data::Model,
+from python_code import (
+    Data_Model,
     Type,
-    Data::PrimitiveType,
-    Data::Entity,
-    Data::Attribute,
-    Data::Type,
+    Data_PrimitiveType,
+    Data_Entity,
+    Data_Attribute,
+    Data_Type,
 )
 
 # =============================================================================
@@ -20,16 +20,16 @@ from classes import (
 
 
 
-def test_data::model_is_not_abstract():
-    assert not inspect.isabstract(Data::Model)
+def test_data_model_is_not_abstract():
+    assert not inspect.isabstract(Data_Model)
 
 
-def test_data::model_constructor_exists():
-    assert callable(Data::Model.__init__)
+def test_data_model_constructor_exists():
+    assert callable(Data_Model.__init__)
 
 
-def test_data::model_constructor_args():
-    sig = inspect.signature(Data::Model.__init__)
+def test_data_model_constructor_args():
+    sig = inspect.signature(Data_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -48,51 +48,51 @@ def test_type_constructor_args():
 
 
 
-def test_data::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(Data::PrimitiveType)
+def test_data_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(Data_PrimitiveType)
 
 
-def test_data::primitivetype_constructor_exists():
-    assert callable(Data::PrimitiveType.__init__)
+def test_data_primitivetype_constructor_exists():
+    assert callable(Data_PrimitiveType.__init__)
 
 
-def test_data::primitivetype_constructor_args():
-    sig = inspect.signature(Data::PrimitiveType.__init__)
+def test_data_primitivetype_constructor_args():
+    sig = inspect.signature(Data_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::entity_is_not_abstract():
-    assert not inspect.isabstract(Data::Entity)
+def test_data_entity_is_not_abstract():
+    assert not inspect.isabstract(Data_Entity)
 
 
-def test_data::entity_constructor_exists():
-    assert callable(Data::Entity.__init__)
+def test_data_entity_constructor_exists():
+    assert callable(Data_Entity.__init__)
 
 
-def test_data::entity_constructor_args():
-    sig = inspect.signature(Data::Entity.__init__)
+def test_data_entity_constructor_args():
+    sig = inspect.signature(Data_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::attribute_is_not_abstract():
-    assert not inspect.isabstract(Data::Attribute)
+def test_data_attribute_is_not_abstract():
+    assert not inspect.isabstract(Data_Attribute)
 
 
-def test_data::attribute_constructor_exists():
-    assert callable(Data::Attribute.__init__)
+def test_data_attribute_constructor_exists():
+    assert callable(Data_Attribute.__init__)
 
 
-def test_data::attribute_constructor_args():
-    sig = inspect.signature(Data::Attribute.__init__)
+def test_data_attribute_constructor_args():
+    sig = inspect.signature(Data_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_data::attribute_has_name():
-    assert hasattr(Data::Attribute, "name")
+def test_data_attribute_has_name():
+    assert hasattr(Data_Attribute, "name")
     descriptor = None
-    for klass in Data::Attribute.__mro__:
+    for klass in Data_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -100,23 +100,23 @@ def test_data::attribute_has_name():
 
 
 
-def test_data::type_is_not_abstract():
-    assert not inspect.isabstract(Data::Type)
+def test_data_type_is_not_abstract():
+    assert not inspect.isabstract(Data_Type)
 
 
-def test_data::type_constructor_exists():
-    assert callable(Data::Type.__init__)
+def test_data_type_constructor_exists():
+    assert callable(Data_Type.__init__)
 
 
-def test_data::type_constructor_args():
-    sig = inspect.signature(Data::Type.__init__)
+def test_data_type_constructor_args():
+    sig = inspect.signature(Data_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_data::type_has_name():
-    assert hasattr(Data::Type, "name")
+def test_data_type_has_name():
+    assert hasattr(Data_Type, "name")
     descriptor = None
-    for klass in Data::Type.__mro__:
+    for klass in Data_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,77 +134,71 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Data::Model_strategy = st.builds(
-    Data::Model,
+Data_Model_strategy = st.builds(
+    Data_Model,
 )
 Type_strategy = st.builds(
     Type,
 )
-Data::PrimitiveType_strategy = st.builds(
-    Data::PrimitiveType,
+Data_PrimitiveType_strategy = st.builds(
+    Data_PrimitiveType,
 )
-Data::Entity_strategy = st.builds(
-    Data::Entity,
+Data_Entity_strategy = st.builds(
+    Data_Entity,
 )
-Data::Attribute_strategy = st.builds(
-    Data::Attribute,
+Data_Attribute_strategy = st.builds(
+    Data_Attribute,
     name=
         safe_text
 )
-Data::Type_strategy = st.builds(
-    Data::Type,
+Data_Type_strategy = st.builds(
+    Data_Type,
     name=
         safe_text
 )
 
-@given(instance=Data::Model_strategy)
+@given(instance=Data_Model_strategy)
 @settings(max_examples=50)
-def test_data::model_instantiation(instance):
-    assert isinstance(instance, Data::Model)
+def test_data_model_instantiation(instance):
+    assert isinstance(instance, Data_Model)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=Data::PrimitiveType_strategy)
+@given(instance=Data_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_data::primitivetype_instantiation(instance):
-    assert isinstance(instance, Data::PrimitiveType)
+def test_data_primitivetype_instantiation(instance):
+    assert isinstance(instance, Data_PrimitiveType)
 
-@given(instance=Data::Entity_strategy)
+@given(instance=Data_Entity_strategy)
 @settings(max_examples=50)
-def test_data::entity_instantiation(instance):
-    assert isinstance(instance, Data::Entity)
+def test_data_entity_instantiation(instance):
+    assert isinstance(instance, Data_Entity)
 
-@given(instance=Data::Attribute_strategy)
+@given(instance=Data_Attribute_strategy)
 @settings(max_examples=50)
-def test_data::attribute_instantiation(instance):
-    assert isinstance(instance, Data::Attribute)
-
-@given(instance=Data::Attribute_strategy)
-def test_data::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_data_attribute_instantiation(instance):
+    assert isinstance(instance, Data_Attribute)
 
 
-@given(instance=Data::Attribute_strategy)
-def test_data::attribute_name_setter(instance):
+
+@given(instance=Data_Attribute_strategy)
+def test_data_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Data::Type_strategy)
+@given(instance=Data_Type_strategy)
 @settings(max_examples=50)
-def test_data::type_instantiation(instance):
-    assert isinstance(instance, Data::Type)
-
-@given(instance=Data::Type_strategy)
-def test_data::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_data_type_instantiation(instance):
+    assert isinstance(instance, Data_Type)
 
 
-@given(instance=Data::Type_strategy)
-def test_data::type_name_setter(instance):
+
+@given(instance=Data_Type_strategy)
+def test_data_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

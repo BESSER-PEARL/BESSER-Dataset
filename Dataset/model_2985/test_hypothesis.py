@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    automata::Initial,
-    automata::Current,
-    automata::Automata,
-    automata::Final,
-    automata::Transition,
-    automata::State,
+from python_code import (
+    automata_Initial,
+    automata_Current,
+    automata_Automata,
+    automata_Final,
+    automata_Transition,
+    automata_State,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_automata::initial_is_not_abstract():
-    assert not inspect.isabstract(automata::Initial)
+def test_automata_initial_is_not_abstract():
+    assert not inspect.isabstract(automata_Initial)
 
 
-def test_automata::initial_constructor_exists():
-    assert callable(automata::Initial.__init__)
+def test_automata_initial_constructor_exists():
+    assert callable(automata_Initial.__init__)
 
 
-def test_automata::initial_constructor_args():
-    sig = inspect.signature(automata::Initial.__init__)
+def test_automata_initial_constructor_args():
+    sig = inspect.signature(automata_Initial.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_automata::initial_has_name():
-    assert hasattr(automata::Initial, "name")
+def test_automata_initial_has_name():
+    assert hasattr(automata_Initial, "name")
     descriptor = None
-    for klass in automata::Initial.__mro__:
+    for klass in automata_Initial.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,23 +44,23 @@ def test_automata::initial_has_name():
 
 
 
-def test_automata::current_is_not_abstract():
-    assert not inspect.isabstract(automata::Current)
+def test_automata_current_is_not_abstract():
+    assert not inspect.isabstract(automata_Current)
 
 
-def test_automata::current_constructor_exists():
-    assert callable(automata::Current.__init__)
+def test_automata_current_constructor_exists():
+    assert callable(automata_Current.__init__)
 
 
-def test_automata::current_constructor_args():
-    sig = inspect.signature(automata::Current.__init__)
+def test_automata_current_constructor_args():
+    sig = inspect.signature(automata_Current.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_automata::current_has_name():
-    assert hasattr(automata::Current, "name")
+def test_automata_current_has_name():
+    assert hasattr(automata_Current, "name")
     descriptor = None
-    for klass in automata::Current.__mro__:
+    for klass in automata_Current.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -68,37 +68,37 @@ def test_automata::current_has_name():
 
 
 
-def test_automata::automata_is_not_abstract():
-    assert not inspect.isabstract(automata::Automata)
+def test_automata_automata_is_not_abstract():
+    assert not inspect.isabstract(automata_Automata)
 
 
-def test_automata::automata_constructor_exists():
-    assert callable(automata::Automata.__init__)
+def test_automata_automata_constructor_exists():
+    assert callable(automata_Automata.__init__)
 
 
-def test_automata::automata_constructor_args():
-    sig = inspect.signature(automata::Automata.__init__)
+def test_automata_automata_constructor_args():
+    sig = inspect.signature(automata_Automata.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automata::final_is_not_abstract():
-    assert not inspect.isabstract(automata::Final)
+def test_automata_final_is_not_abstract():
+    assert not inspect.isabstract(automata_Final)
 
 
-def test_automata::final_constructor_exists():
-    assert callable(automata::Final.__init__)
+def test_automata_final_constructor_exists():
+    assert callable(automata_Final.__init__)
 
 
-def test_automata::final_constructor_args():
-    sig = inspect.signature(automata::Final.__init__)
+def test_automata_final_constructor_args():
+    sig = inspect.signature(automata_Final.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_automata::final_has_name():
-    assert hasattr(automata::Final, "name")
+def test_automata_final_has_name():
+    assert hasattr(automata_Final, "name")
     descriptor = None
-    for klass in automata::Final.__mro__:
+    for klass in automata_Final.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,57 +106,57 @@ def test_automata::final_has_name():
 
 
 
-def test_automata::transition_is_not_abstract():
-    assert not inspect.isabstract(automata::Transition)
+def test_automata_transition_is_not_abstract():
+    assert not inspect.isabstract(automata_Transition)
 
 
-def test_automata::transition_constructor_exists():
-    assert callable(automata::Transition.__init__)
+def test_automata_transition_constructor_exists():
+    assert callable(automata_Transition.__init__)
 
 
-def test_automata::transition_constructor_args():
-    sig = inspect.signature(automata::Transition.__init__)
+def test_automata_transition_constructor_args():
+    sig = inspect.signature(automata_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "token" in params, "Missing parameter 'token'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_automata::transition_has_name():
-    assert hasattr(automata::Transition, "name")
+def test_automata_transition_has_token():
+    assert hasattr(automata_Transition, "token")
     descriptor = None
-    for klass in automata::Transition.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automata::transition_has_token():
-    assert hasattr(automata::Transition, "token")
-    descriptor = None
-    for klass in automata::Transition.__mro__:
+    for klass in automata_Transition.__mro__:
         if "token" in klass.__dict__:
             descriptor = klass.__dict__["token"]
             break
     assert isinstance(descriptor, property)
 
+def test_automata_transition_has_name():
+    assert hasattr(automata_Transition, "name")
+    descriptor = None
+    for klass in automata_Transition.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_automata::state_is_not_abstract():
-    assert not inspect.isabstract(automata::State)
+
+def test_automata_state_is_not_abstract():
+    assert not inspect.isabstract(automata_State)
 
 
-def test_automata::state_constructor_exists():
-    assert callable(automata::State.__init__)
+def test_automata_state_constructor_exists():
+    assert callable(automata_State.__init__)
 
 
-def test_automata::state_constructor_args():
-    sig = inspect.signature(automata::State.__init__)
+def test_automata_state_constructor_args():
+    sig = inspect.signature(automata_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_automata::state_has_name():
-    assert hasattr(automata::State, "name")
+def test_automata_state_has_name():
+    assert hasattr(automata_State, "name")
     descriptor = None
-    for klass in automata::State.__mro__:
+    for klass in automata_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -174,129 +174,111 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-automata::Initial_strategy = st.builds(
-    automata::Initial,
+automata_Initial_strategy = st.builds(
+    automata_Initial,
     name=
         safe_text
 )
-automata::Current_strategy = st.builds(
-    automata::Current,
+automata_Current_strategy = st.builds(
+    automata_Current,
     name=
         safe_text
 )
-automata::Automata_strategy = st.builds(
-    automata::Automata,
+automata_Automata_strategy = st.builds(
+    automata_Automata,
 )
-automata::Final_strategy = st.builds(
-    automata::Final,
+automata_Final_strategy = st.builds(
+    automata_Final,
     name=
         safe_text
 )
-automata::Transition_strategy = st.builds(
-    automata::Transition,
-    name=
-        safe_text,
+automata_Transition_strategy = st.builds(
+    automata_Transition,
     token=
+        safe_text,
+    name=
         safe_text
 )
-automata::State_strategy = st.builds(
-    automata::State,
+automata_State_strategy = st.builds(
+    automata_State,
     name=
         safe_text
 )
 
-@given(instance=automata::Initial_strategy)
+@given(instance=automata_Initial_strategy)
 @settings(max_examples=50)
-def test_automata::initial_instantiation(instance):
-    assert isinstance(instance, automata::Initial)
-
-@given(instance=automata::Initial_strategy)
-def test_automata::initial_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automata_initial_instantiation(instance):
+    assert isinstance(instance, automata_Initial)
 
 
-@given(instance=automata::Initial_strategy)
-def test_automata::initial_name_setter(instance):
+
+@given(instance=automata_Initial_strategy)
+def test_automata_initial_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=automata::Current_strategy)
+@given(instance=automata_Current_strategy)
 @settings(max_examples=50)
-def test_automata::current_instantiation(instance):
-    assert isinstance(instance, automata::Current)
-
-@given(instance=automata::Current_strategy)
-def test_automata::current_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automata_current_instantiation(instance):
+    assert isinstance(instance, automata_Current)
 
 
-@given(instance=automata::Current_strategy)
-def test_automata::current_name_setter(instance):
+
+@given(instance=automata_Current_strategy)
+def test_automata_current_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=automata::Automata_strategy)
+@given(instance=automata_Automata_strategy)
 @settings(max_examples=50)
-def test_automata::automata_instantiation(instance):
-    assert isinstance(instance, automata::Automata)
+def test_automata_automata_instantiation(instance):
+    assert isinstance(instance, automata_Automata)
 
-@given(instance=automata::Final_strategy)
+@given(instance=automata_Final_strategy)
 @settings(max_examples=50)
-def test_automata::final_instantiation(instance):
-    assert isinstance(instance, automata::Final)
-
-@given(instance=automata::Final_strategy)
-def test_automata::final_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automata_final_instantiation(instance):
+    assert isinstance(instance, automata_Final)
 
 
-@given(instance=automata::Final_strategy)
-def test_automata::final_name_setter(instance):
+
+@given(instance=automata_Final_strategy)
+def test_automata_final_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=automata::Transition_strategy)
+@given(instance=automata_Transition_strategy)
 @settings(max_examples=50)
-def test_automata::transition_instantiation(instance):
-    assert isinstance(instance, automata::Transition)
-
-@given(instance=automata::Transition_strategy)
-def test_automata::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automata_transition_instantiation(instance):
+    assert isinstance(instance, automata_Transition)
 
 
-@given(instance=automata::Transition_strategy)
-def test_automata::transition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=automata::Transition_strategy)
-def test_automata::transition_token_type(instance):
-    assert isinstance(instance.token, str)
-
-
-@given(instance=automata::Transition_strategy)
-def test_automata::transition_token_setter(instance):
+@given(instance=automata_Transition_strategy)
+def test_automata_transition_token_setter(instance):
     original = instance.token
     instance.token = original
     assert instance.token == original
 
-@given(instance=automata::State_strategy)
+
+
+@given(instance=automata_Transition_strategy)
+def test_automata_transition_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=automata_State_strategy)
 @settings(max_examples=50)
-def test_automata::state_instantiation(instance):
-    assert isinstance(instance, automata::State)
-
-@given(instance=automata::State_strategy)
-def test_automata::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automata_state_instantiation(instance):
+    assert isinstance(instance, automata_State)
 
 
-@given(instance=automata::State_strategy)
-def test_automata::state_name_setter(instance):
+
+@given(instance=automata_State_strategy)
+def test_automata_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    feaMo::FeamoFSelector,
-    feaMo::Feature,
-    feaMo::SimpleFeature,
-    feaMo::FeatureGroup,
-    feaMo::FeatureConstraint,
-    feaMo::FeatureDef,
-    feaMo::FeatureDetails,
-    feaMo::FeatureModel,
-    feaMo::Model,
-    feaMo::FeamoFeatureConfig,
+from python_code import (
+    feaMo_FeamoFSelector,
+    feaMo_Feature,
+    feaMo_SimpleFeature,
+    feaMo_FeatureGroup,
+    feaMo_FeatureConstraint,
+    feaMo_FeatureDef,
+    feaMo_FeatureDetails,
+    feaMo_FeatureModel,
+    feaMo_Model,
+    feaMo_FeamoFeatureConfig,
 )
 
 # =============================================================================
@@ -24,37 +24,37 @@ from classes import (
 
 
 
-def test_feamo::feamofselector_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeamoFSelector)
+def test_feamo_feamofselector_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeamoFSelector)
 
 
-def test_feamo::feamofselector_constructor_exists():
-    assert callable(feaMo::FeamoFSelector.__init__)
+def test_feamo_feamofselector_constructor_exists():
+    assert callable(feaMo_FeamoFSelector.__init__)
 
 
-def test_feamo::feamofselector_constructor_args():
-    sig = inspect.signature(feaMo::FeamoFSelector.__init__)
+def test_feamo_feamofselector_constructor_args():
+    sig = inspect.signature(feaMo_FeamoFSelector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feamo::feature_is_not_abstract():
-    assert not inspect.isabstract(feaMo::Feature)
+def test_feamo_feature_is_not_abstract():
+    assert not inspect.isabstract(feaMo_Feature)
 
 
-def test_feamo::feature_constructor_exists():
-    assert callable(feaMo::Feature.__init__)
+def test_feamo_feature_constructor_exists():
+    assert callable(feaMo_Feature.__init__)
 
 
-def test_feamo::feature_constructor_args():
-    sig = inspect.signature(feaMo::Feature.__init__)
+def test_feamo_feature_constructor_args():
+    sig = inspect.signature(feaMo_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_feamo::feature_has_name():
-    assert hasattr(feaMo::Feature, "name")
+def test_feamo_feature_has_name():
+    assert hasattr(feaMo_Feature, "name")
     descriptor = None
-    for klass in feaMo::Feature.__mro__:
+    for klass in feaMo_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -62,51 +62,51 @@ def test_feamo::feature_has_name():
 
 
 
-def test_feamo::simplefeature_is_not_abstract():
-    assert not inspect.isabstract(feaMo::SimpleFeature)
+def test_feamo_simplefeature_is_not_abstract():
+    assert not inspect.isabstract(feaMo_SimpleFeature)
 
 
-def test_feamo::simplefeature_constructor_exists():
-    assert callable(feaMo::SimpleFeature.__init__)
+def test_feamo_simplefeature_constructor_exists():
+    assert callable(feaMo_SimpleFeature.__init__)
 
 
-def test_feamo::simplefeature_constructor_args():
-    sig = inspect.signature(feaMo::SimpleFeature.__init__)
+def test_feamo_simplefeature_constructor_args():
+    sig = inspect.signature(feaMo_SimpleFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feamo::featuregroup_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeatureGroup)
+def test_feamo_featuregroup_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeatureGroup)
 
 
-def test_feamo::featuregroup_constructor_exists():
-    assert callable(feaMo::FeatureGroup.__init__)
+def test_feamo_featuregroup_constructor_exists():
+    assert callable(feaMo_FeatureGroup.__init__)
 
 
-def test_feamo::featuregroup_constructor_args():
-    sig = inspect.signature(feaMo::FeatureGroup.__init__)
+def test_feamo_featuregroup_constructor_args():
+    sig = inspect.signature(feaMo_FeatureGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feamo::featureconstraint_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeatureConstraint)
+def test_feamo_featureconstraint_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeatureConstraint)
 
 
-def test_feamo::featureconstraint_constructor_exists():
-    assert callable(feaMo::FeatureConstraint.__init__)
+def test_feamo_featureconstraint_constructor_exists():
+    assert callable(feaMo_FeatureConstraint.__init__)
 
 
-def test_feamo::featureconstraint_constructor_args():
-    sig = inspect.signature(feaMo::FeatureConstraint.__init__)
+def test_feamo_featureconstraint_constructor_args():
+    sig = inspect.signature(feaMo_FeatureConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "rel" in params, "Missing parameter 'rel'"
 
-def test_feamo::featureconstraint_has_rel():
-    assert hasattr(feaMo::FeatureConstraint, "rel")
+def test_feamo_featureconstraint_has_rel():
+    assert hasattr(feaMo_FeatureConstraint, "rel")
     descriptor = None
-    for klass in feaMo::FeatureConstraint.__mro__:
+    for klass in feaMo_FeatureConstraint.__mro__:
         if "rel" in klass.__dict__:
             descriptor = klass.__dict__["rel"]
             break
@@ -114,51 +114,51 @@ def test_feamo::featureconstraint_has_rel():
 
 
 
-def test_feamo::featuredef_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeatureDef)
+def test_feamo_featuredef_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeatureDef)
 
 
-def test_feamo::featuredef_constructor_exists():
-    assert callable(feaMo::FeatureDef.__init__)
+def test_feamo_featuredef_constructor_exists():
+    assert callable(feaMo_FeatureDef.__init__)
 
 
-def test_feamo::featuredef_constructor_args():
-    sig = inspect.signature(feaMo::FeatureDef.__init__)
+def test_feamo_featuredef_constructor_args():
+    sig = inspect.signature(feaMo_FeatureDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feamo::featuredetails_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeatureDetails)
+def test_feamo_featuredetails_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeatureDetails)
 
 
-def test_feamo::featuredetails_constructor_exists():
-    assert callable(feaMo::FeatureDetails.__init__)
+def test_feamo_featuredetails_constructor_exists():
+    assert callable(feaMo_FeatureDetails.__init__)
 
 
-def test_feamo::featuredetails_constructor_args():
-    sig = inspect.signature(feaMo::FeatureDetails.__init__)
+def test_feamo_featuredetails_constructor_args():
+    sig = inspect.signature(feaMo_FeatureDetails.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feamo::featuremodel_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeatureModel)
+def test_feamo_featuremodel_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeatureModel)
 
 
-def test_feamo::featuremodel_constructor_exists():
-    assert callable(feaMo::FeatureModel.__init__)
+def test_feamo_featuremodel_constructor_exists():
+    assert callable(feaMo_FeatureModel.__init__)
 
 
-def test_feamo::featuremodel_constructor_args():
-    sig = inspect.signature(feaMo::FeatureModel.__init__)
+def test_feamo_featuremodel_constructor_args():
+    sig = inspect.signature(feaMo_FeatureModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_feamo::featuremodel_has_name():
-    assert hasattr(feaMo::FeatureModel, "name")
+def test_feamo_featuremodel_has_name():
+    assert hasattr(feaMo_FeatureModel, "name")
     descriptor = None
-    for klass in feaMo::FeatureModel.__mro__:
+    for klass in feaMo_FeatureModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,37 +166,37 @@ def test_feamo::featuremodel_has_name():
 
 
 
-def test_feamo::model_is_not_abstract():
-    assert not inspect.isabstract(feaMo::Model)
+def test_feamo_model_is_not_abstract():
+    assert not inspect.isabstract(feaMo_Model)
 
 
-def test_feamo::model_constructor_exists():
-    assert callable(feaMo::Model.__init__)
+def test_feamo_model_constructor_exists():
+    assert callable(feaMo_Model.__init__)
 
 
-def test_feamo::model_constructor_args():
-    sig = inspect.signature(feaMo::Model.__init__)
+def test_feamo_model_constructor_args():
+    sig = inspect.signature(feaMo_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feamo::feamofeatureconfig_is_not_abstract():
-    assert not inspect.isabstract(feaMo::FeamoFeatureConfig)
+def test_feamo_feamofeatureconfig_is_not_abstract():
+    assert not inspect.isabstract(feaMo_FeamoFeatureConfig)
 
 
-def test_feamo::feamofeatureconfig_constructor_exists():
-    assert callable(feaMo::FeamoFeatureConfig.__init__)
+def test_feamo_feamofeatureconfig_constructor_exists():
+    assert callable(feaMo_FeamoFeatureConfig.__init__)
 
 
-def test_feamo::feamofeatureconfig_constructor_args():
-    sig = inspect.signature(feaMo::FeamoFeatureConfig.__init__)
+def test_feamo_feamofeatureconfig_constructor_args():
+    sig = inspect.signature(feaMo_FeamoFeatureConfig.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_feamo::feamofeatureconfig_has_name():
-    assert hasattr(feaMo::FeamoFeatureConfig, "name")
+def test_feamo_feamofeatureconfig_has_name():
+    assert hasattr(feaMo_FeamoFeatureConfig, "name")
     descriptor = None
-    for klass in feaMo::FeamoFeatureConfig.__mro__:
+    for klass in feaMo_FeamoFeatureConfig.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -214,135 +214,123 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-feaMo::FeamoFSelector_strategy = st.builds(
-    feaMo::FeamoFSelector,
+feaMo_FeamoFSelector_strategy = st.builds(
+    feaMo_FeamoFSelector,
 )
-feaMo::Feature_strategy = st.builds(
-    feaMo::Feature,
+feaMo_Feature_strategy = st.builds(
+    feaMo_Feature,
     name=
         safe_text
 )
-feaMo::SimpleFeature_strategy = st.builds(
-    feaMo::SimpleFeature,
+feaMo_SimpleFeature_strategy = st.builds(
+    feaMo_SimpleFeature,
 )
-feaMo::FeatureGroup_strategy = st.builds(
-    feaMo::FeatureGroup,
+feaMo_FeatureGroup_strategy = st.builds(
+    feaMo_FeatureGroup,
 )
-feaMo::FeatureConstraint_strategy = st.builds(
-    feaMo::FeatureConstraint,
+feaMo_FeatureConstraint_strategy = st.builds(
+    feaMo_FeatureConstraint,
     rel=
         safe_text
 )
-feaMo::FeatureDef_strategy = st.builds(
-    feaMo::FeatureDef,
+feaMo_FeatureDef_strategy = st.builds(
+    feaMo_FeatureDef,
 )
-feaMo::FeatureDetails_strategy = st.builds(
-    feaMo::FeatureDetails,
+feaMo_FeatureDetails_strategy = st.builds(
+    feaMo_FeatureDetails,
 )
-feaMo::FeatureModel_strategy = st.builds(
-    feaMo::FeatureModel,
+feaMo_FeatureModel_strategy = st.builds(
+    feaMo_FeatureModel,
     name=
         safe_text
 )
-feaMo::Model_strategy = st.builds(
-    feaMo::Model,
+feaMo_Model_strategy = st.builds(
+    feaMo_Model,
 )
-feaMo::FeamoFeatureConfig_strategy = st.builds(
-    feaMo::FeamoFeatureConfig,
+feaMo_FeamoFeatureConfig_strategy = st.builds(
+    feaMo_FeamoFeatureConfig,
     name=
         safe_text
 )
 
-@given(instance=feaMo::FeamoFSelector_strategy)
+@given(instance=feaMo_FeamoFSelector_strategy)
 @settings(max_examples=50)
-def test_feamo::feamofselector_instantiation(instance):
-    assert isinstance(instance, feaMo::FeamoFSelector)
+def test_feamo_feamofselector_instantiation(instance):
+    assert isinstance(instance, feaMo_FeamoFSelector)
 
-@given(instance=feaMo::Feature_strategy)
+@given(instance=feaMo_Feature_strategy)
 @settings(max_examples=50)
-def test_feamo::feature_instantiation(instance):
-    assert isinstance(instance, feaMo::Feature)
-
-@given(instance=feaMo::Feature_strategy)
-def test_feamo::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_feamo_feature_instantiation(instance):
+    assert isinstance(instance, feaMo_Feature)
 
 
-@given(instance=feaMo::Feature_strategy)
-def test_feamo::feature_name_setter(instance):
+
+@given(instance=feaMo_Feature_strategy)
+def test_feamo_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=feaMo::SimpleFeature_strategy)
+@given(instance=feaMo_SimpleFeature_strategy)
 @settings(max_examples=50)
-def test_feamo::simplefeature_instantiation(instance):
-    assert isinstance(instance, feaMo::SimpleFeature)
+def test_feamo_simplefeature_instantiation(instance):
+    assert isinstance(instance, feaMo_SimpleFeature)
 
-@given(instance=feaMo::FeatureGroup_strategy)
+@given(instance=feaMo_FeatureGroup_strategy)
 @settings(max_examples=50)
-def test_feamo::featuregroup_instantiation(instance):
-    assert isinstance(instance, feaMo::FeatureGroup)
+def test_feamo_featuregroup_instantiation(instance):
+    assert isinstance(instance, feaMo_FeatureGroup)
 
-@given(instance=feaMo::FeatureConstraint_strategy)
+@given(instance=feaMo_FeatureConstraint_strategy)
 @settings(max_examples=50)
-def test_feamo::featureconstraint_instantiation(instance):
-    assert isinstance(instance, feaMo::FeatureConstraint)
-
-@given(instance=feaMo::FeatureConstraint_strategy)
-def test_feamo::featureconstraint_rel_type(instance):
-    assert isinstance(instance.rel, str)
+def test_feamo_featureconstraint_instantiation(instance):
+    assert isinstance(instance, feaMo_FeatureConstraint)
 
 
-@given(instance=feaMo::FeatureConstraint_strategy)
-def test_feamo::featureconstraint_rel_setter(instance):
+
+@given(instance=feaMo_FeatureConstraint_strategy)
+def test_feamo_featureconstraint_rel_setter(instance):
     original = instance.rel
     instance.rel = original
     assert instance.rel == original
 
-@given(instance=feaMo::FeatureDef_strategy)
+@given(instance=feaMo_FeatureDef_strategy)
 @settings(max_examples=50)
-def test_feamo::featuredef_instantiation(instance):
-    assert isinstance(instance, feaMo::FeatureDef)
+def test_feamo_featuredef_instantiation(instance):
+    assert isinstance(instance, feaMo_FeatureDef)
 
-@given(instance=feaMo::FeatureDetails_strategy)
+@given(instance=feaMo_FeatureDetails_strategy)
 @settings(max_examples=50)
-def test_feamo::featuredetails_instantiation(instance):
-    assert isinstance(instance, feaMo::FeatureDetails)
+def test_feamo_featuredetails_instantiation(instance):
+    assert isinstance(instance, feaMo_FeatureDetails)
 
-@given(instance=feaMo::FeatureModel_strategy)
+@given(instance=feaMo_FeatureModel_strategy)
 @settings(max_examples=50)
-def test_feamo::featuremodel_instantiation(instance):
-    assert isinstance(instance, feaMo::FeatureModel)
-
-@given(instance=feaMo::FeatureModel_strategy)
-def test_feamo::featuremodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_feamo_featuremodel_instantiation(instance):
+    assert isinstance(instance, feaMo_FeatureModel)
 
 
-@given(instance=feaMo::FeatureModel_strategy)
-def test_feamo::featuremodel_name_setter(instance):
+
+@given(instance=feaMo_FeatureModel_strategy)
+def test_feamo_featuremodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=feaMo::Model_strategy)
+@given(instance=feaMo_Model_strategy)
 @settings(max_examples=50)
-def test_feamo::model_instantiation(instance):
-    assert isinstance(instance, feaMo::Model)
+def test_feamo_model_instantiation(instance):
+    assert isinstance(instance, feaMo_Model)
 
-@given(instance=feaMo::FeamoFeatureConfig_strategy)
+@given(instance=feaMo_FeamoFeatureConfig_strategy)
 @settings(max_examples=50)
-def test_feamo::feamofeatureconfig_instantiation(instance):
-    assert isinstance(instance, feaMo::FeamoFeatureConfig)
-
-@given(instance=feaMo::FeamoFeatureConfig_strategy)
-def test_feamo::feamofeatureconfig_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_feamo_feamofeatureconfig_instantiation(instance):
+    assert isinstance(instance, feaMo_FeamoFeatureConfig)
 
 
-@given(instance=feaMo::FeamoFeatureConfig_strategy)
-def test_feamo::feamofeatureconfig_name_setter(instance):
+
+@given(instance=feaMo_FeamoFeatureConfig_strategy)
+def test_feamo_feamofeatureconfig_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

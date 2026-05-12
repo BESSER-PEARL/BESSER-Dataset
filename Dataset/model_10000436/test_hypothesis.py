@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Restaurant,
@@ -35,8 +35,8 @@ def test_restaurant_constructor_args():
     sig = inspect.signature(Restaurant.__init__)
     params = list(sig.parameters.keys())
     assert "Address" in params, "Missing parameter 'Address'"
-    assert "PostCode" in params, "Missing parameter 'PostCode'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "PostCode" in params, "Missing parameter 'PostCode'"
     assert "Menu" in params, "Missing parameter 'Menu'"
 
 def test_restaurant_has_Address():
@@ -48,21 +48,21 @@ def test_restaurant_has_Address():
             break
     assert isinstance(descriptor, property)
 
-def test_restaurant_has_PostCode():
-    assert hasattr(Restaurant, "PostCode")
-    descriptor = None
-    for klass in Restaurant.__mro__:
-        if "PostCode" in klass.__dict__:
-            descriptor = klass.__dict__["PostCode"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_restaurant_has_Name():
     assert hasattr(Restaurant, "Name")
     descriptor = None
     for klass in Restaurant.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_restaurant_has_PostCode():
+    assert hasattr(Restaurant, "PostCode")
+    descriptor = None
+    for klass in Restaurant.__mro__:
+        if "PostCode" in klass.__dict__:
+            descriptor = klass.__dict__["PostCode"]
             break
     assert isinstance(descriptor, property)
 
@@ -136,29 +136,11 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "CreditCard" in params, "Missing parameter 'CreditCard'"
-    assert "Address" in params, "Missing parameter 'Address'"
     assert "FullName" in params, "Missing parameter 'FullName'"
     assert "Cellphone" in params, "Missing parameter 'Cellphone'"
+    assert "Address" in params, "Missing parameter 'Address'"
+    assert "CreditCard" in params, "Missing parameter 'CreditCard'"
     assert "PostCode" in params, "Missing parameter 'PostCode'"
-
-def test_customer_has_CreditCard():
-    assert hasattr(Customer, "CreditCard")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "CreditCard" in klass.__dict__:
-            descriptor = klass.__dict__["CreditCard"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_Address():
-    assert hasattr(Customer, "Address")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_customer_has_FullName():
     assert hasattr(Customer, "FullName")
@@ -175,6 +157,24 @@ def test_customer_has_Cellphone():
     for klass in Customer.__mro__:
         if "Cellphone" in klass.__dict__:
             descriptor = klass.__dict__["Cellphone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_Address():
+    assert hasattr(Customer, "Address")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_CreditCard():
+    assert hasattr(Customer, "CreditCard")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "CreditCard" in klass.__dict__:
+            descriptor = klass.__dict__["CreditCard"]
             break
     assert isinstance(descriptor, property)
 
@@ -200,18 +200,9 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "Restaurant" in params, "Missing parameter 'Restaurant'"
     assert "ItemList" in params, "Missing parameter 'ItemList'"
+    assert "Restaurant" in params, "Missing parameter 'Restaurant'"
     assert "Customer" in params, "Missing parameter 'Customer'"
-
-def test_order_has_Restaurant():
-    assert hasattr(Order, "Restaurant")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "Restaurant" in klass.__dict__:
-            descriptor = klass.__dict__["Restaurant"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_order_has_ItemList():
     assert hasattr(Order, "ItemList")
@@ -219,6 +210,15 @@ def test_order_has_ItemList():
     for klass in Order.__mro__:
         if "ItemList" in klass.__dict__:
             descriptor = klass.__dict__["ItemList"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_Restaurant():
+    assert hasattr(Order, "Restaurant")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "Restaurant" in klass.__dict__:
+            descriptor = klass.__dict__["Restaurant"]
             break
     assert isinstance(descriptor, property)
 
@@ -363,10 +363,10 @@ Restaurant_strategy = st.builds(
     Restaurant,
     Address=
         safe_text,
-    PostCode=
-        st.integers(),
     Name=
         safe_text,
+    PostCode=
+        st.integers(),
     Menu=
         st.none()
 )
@@ -382,22 +382,22 @@ RestaurantController_strategy = st.builds(
 )
 Customer_strategy = st.builds(
     Customer,
-    CreditCard=
-        safe_text,
-    Address=
-        safe_text,
     FullName=
         safe_text,
     Cellphone=
+        safe_text,
+    Address=
+        safe_text,
+    CreditCard=
         safe_text,
     PostCode=
         st.integers()
 )
 Order_strategy = st.builds(
     Order,
-    Restaurant=
-        st.none(),
     ItemList=
+        st.none(),
+    Restaurant=
         st.none(),
     Customer=
         st.none()
@@ -432,9 +432,6 @@ MenuItem_strategy = st.builds(
 def test_restaurant_instantiation(instance):
     assert isinstance(instance, Restaurant)
 
-@given(instance=Restaurant_strategy)
-def test_restaurant_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Restaurant_strategy)
@@ -443,20 +440,6 @@ def test_restaurant_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=Restaurant_strategy)
-def test_restaurant_PostCode_type(instance):
-    assert isinstance(instance.PostCode, int)
-
-
-@given(instance=Restaurant_strategy)
-def test_restaurant_PostCode_setter(instance):
-    original = instance.PostCode
-    instance.PostCode = original
-    assert instance.PostCode == original
-
-@given(instance=Restaurant_strategy)
-def test_restaurant_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Restaurant_strategy)
@@ -465,9 +448,14 @@ def test_restaurant_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
 @given(instance=Restaurant_strategy)
-def test_restaurant_Menu_type(instance):
-    assert isinstance(instance.Menu, menuitem)
+def test_restaurant_PostCode_setter(instance):
+    original = instance.PostCode
+    instance.PostCode = original
+    assert instance.PostCode == original
+
 
 
 @given(instance=Restaurant_strategy)
@@ -481,9 +469,6 @@ def test_restaurant_Menu_setter(instance):
 def test_ordercontroller_instantiation(instance):
     assert isinstance(instance, OrderController)
 
-@given(instance=OrderController_strategy)
-def test_ordercontroller_Order_type(instance):
-    assert isinstance(instance.Order, order)
 
 
 @given(instance=OrderController_strategy)
@@ -497,9 +482,6 @@ def test_ordercontroller_Order_setter(instance):
 def test_restaurantcontroller_instantiation(instance):
     assert isinstance(instance, RestaurantController)
 
-@given(instance=RestaurantController_strategy)
-def test_restaurantcontroller_Restaurant_type(instance):
-    assert isinstance(instance.Restaurant, restaurant)
 
 
 @given(instance=RestaurantController_strategy)
@@ -513,31 +495,6 @@ def test_restaurantcontroller_Restaurant_setter(instance):
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_CreditCard_type(instance):
-    assert isinstance(instance.CreditCard, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_CreditCard_setter(instance):
-    original = instance.CreditCard
-    instance.CreditCard = original
-    assert instance.CreditCard == original
-
-@given(instance=Customer_strategy)
-def test_customer_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Customer_strategy)
-def test_customer_FullName_type(instance):
-    assert isinstance(instance.FullName, str)
 
 
 @given(instance=Customer_strategy)
@@ -546,9 +503,6 @@ def test_customer_FullName_setter(instance):
     instance.FullName = original
     assert instance.FullName == original
 
-@given(instance=Customer_strategy)
-def test_customer_Cellphone_type(instance):
-    assert isinstance(instance.Cellphone, str)
 
 
 @given(instance=Customer_strategy)
@@ -557,9 +511,22 @@ def test_customer_Cellphone_setter(instance):
     instance.Cellphone = original
     assert instance.Cellphone == original
 
+
+
 @given(instance=Customer_strategy)
-def test_customer_PostCode_type(instance):
-    assert isinstance(instance.PostCode, int)
+def test_customer_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_CreditCard_setter(instance):
+    original = instance.CreditCard
+    instance.CreditCard = original
+    assert instance.CreditCard == original
+
 
 
 @given(instance=Customer_strategy)
@@ -573,20 +540,6 @@ def test_customer_PostCode_setter(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_Restaurant_type(instance):
-    assert isinstance(instance.Restaurant, restaurant)
-
-
-@given(instance=Order_strategy)
-def test_order_Restaurant_setter(instance):
-    original = instance.Restaurant
-    instance.Restaurant = original
-    assert instance.Restaurant == original
-
-@given(instance=Order_strategy)
-def test_order_ItemList_type(instance):
-    assert isinstance(instance.ItemList, menuitem)
 
 
 @given(instance=Order_strategy)
@@ -595,9 +548,14 @@ def test_order_ItemList_setter(instance):
     instance.ItemList = original
     assert instance.ItemList == original
 
+
+
 @given(instance=Order_strategy)
-def test_order_Customer_type(instance):
-    assert isinstance(instance.Customer, customer)
+def test_order_Restaurant_setter(instance):
+    original = instance.Restaurant
+    instance.Restaurant = original
+    assert instance.Restaurant == original
+
 
 
 @given(instance=Order_strategy)
@@ -611,9 +569,6 @@ def test_order_Customer_setter(instance):
 def test_food_instantiation(instance):
     assert isinstance(instance, Food)
 
-@given(instance=Food_strategy)
-def test_food_Calories_type(instance):
-    assert isinstance(instance.Calories, int)
 
 
 @given(instance=Food_strategy)
@@ -622,9 +577,6 @@ def test_food_Calories_setter(instance):
     instance.Calories = original
     assert instance.Calories == original
 
-@given(instance=Food_strategy)
-def test_food_Vegetarian_type(instance):
-    assert isinstance(instance.Vegetarian, bool)
 
 
 @given(instance=Food_strategy)
@@ -633,9 +585,6 @@ def test_food_Vegetarian_setter(instance):
     instance.Vegetarian = original
     assert instance.Vegetarian == original
 
-@given(instance=Food_strategy)
-def test_food_Price_type(instance):
-    assert isinstance(instance.Price, int)
 
 
 @given(instance=Food_strategy)
@@ -649,9 +598,6 @@ def test_food_Price_setter(instance):
 def test_fooditem_instantiation(instance):
     assert isinstance(instance, FoodItem)
 
-@given(instance=FoodItem_strategy)
-def test_fooditem_Food_type(instance):
-    assert isinstance(instance.Food, food)
 
 
 @given(instance=FoodItem_strategy)
@@ -665,9 +611,6 @@ def test_fooditem_Food_setter(instance):
 def test_foodpackage_instantiation(instance):
     assert isinstance(instance, FoodPackage)
 
-@given(instance=FoodPackage_strategy)
-def test_foodpackage_FoodList_type(instance):
-    assert isinstance(instance.FoodList, food)
 
 
 @given(instance=FoodPackage_strategy)
@@ -681,9 +624,6 @@ def test_foodpackage_FoodList_setter(instance):
 def test_menuitem_instantiation(instance):
     assert isinstance(instance, MenuItem)
 
-@given(instance=MenuItem_strategy)
-def test_menuitem_Description_type(instance):
-    assert isinstance(instance.Description, str)
 
 
 @given(instance=MenuItem_strategy)

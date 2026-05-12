@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    education::Course,
+from python_code import (
+    education_Course,
     Person,
-    education::Teacher,
-    education::Student,
-    education::Person,
+    education_Teacher,
+    education_Student,
+    education_Person,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_education::course_is_not_abstract():
-    assert not inspect.isabstract(education::Course)
+def test_education_course_is_not_abstract():
+    assert not inspect.isabstract(education_Course)
 
 
-def test_education::course_constructor_exists():
-    assert callable(education::Course.__init__)
+def test_education_course_constructor_exists():
+    assert callable(education_Course.__init__)
 
 
-def test_education::course_constructor_args():
-    sig = inspect.signature(education::Course.__init__)
+def test_education_course_constructor_args():
+    sig = inspect.signature(education_Course.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_education::course_has_name():
-    assert hasattr(education::Course, "name")
+def test_education_course_has_name():
+    assert hasattr(education_Course, "name")
     descriptor = None
-    for klass in education::Course.__mro__:
+    for klass in education_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,63 +57,63 @@ def test_person_constructor_args():
 
 
 
-def test_education::teacher_is_not_abstract():
-    assert not inspect.isabstract(education::Teacher)
+def test_education_teacher_is_not_abstract():
+    assert not inspect.isabstract(education_Teacher)
 
 
-def test_education::teacher_constructor_exists():
-    assert callable(education::Teacher.__init__)
+def test_education_teacher_constructor_exists():
+    assert callable(education_Teacher.__init__)
 
 
-def test_education::teacher_constructor_args():
-    sig = inspect.signature(education::Teacher.__init__)
+def test_education_teacher_constructor_args():
+    sig = inspect.signature(education_Teacher.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_education::student_is_not_abstract():
-    assert not inspect.isabstract(education::Student)
+def test_education_student_is_not_abstract():
+    assert not inspect.isabstract(education_Student)
 
 
-def test_education::student_constructor_exists():
-    assert callable(education::Student.__init__)
+def test_education_student_constructor_exists():
+    assert callable(education_Student.__init__)
 
 
-def test_education::student_constructor_args():
-    sig = inspect.signature(education::Student.__init__)
+def test_education_student_constructor_args():
+    sig = inspect.signature(education_Student.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_education::person_is_not_abstract():
-    assert not inspect.isabstract(education::Person)
+def test_education_person_is_not_abstract():
+    assert not inspect.isabstract(education_Person)
 
 
-def test_education::person_constructor_exists():
-    assert callable(education::Person.__init__)
+def test_education_person_constructor_exists():
+    assert callable(education_Person.__init__)
 
 
-def test_education::person_constructor_args():
-    sig = inspect.signature(education::Person.__init__)
+def test_education_person_constructor_args():
+    sig = inspect.signature(education_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "firstname" in params, "Missing parameter 'firstname'"
     assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_education::person_has_firstname():
-    assert hasattr(education::Person, "firstname")
+def test_education_person_has_lastname():
+    assert hasattr(education_Person, "lastname")
     descriptor = None
-    for klass in education::Person.__mro__:
-        if "firstname" in klass.__dict__:
-            descriptor = klass.__dict__["firstname"]
+    for klass in education_Person.__mro__:
+        if "lastname" in klass.__dict__:
+            descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_education::person_has_lastname():
-    assert hasattr(education::Person, "lastname")
+def test_education_person_has_firstname():
+    assert hasattr(education_Person, "firstname")
     descriptor = None
-    for klass in education::Person.__mro__:
-        if "lastname" in klass.__dict__:
-            descriptor = klass.__dict__["lastname"]
+    for klass in education_Person.__mro__:
+        if "firstname" in klass.__dict__:
+            descriptor = klass.__dict__["firstname"]
             break
     assert isinstance(descriptor, property)
 
@@ -129,40 +129,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-education::Course_strategy = st.builds(
-    education::Course,
+education_Course_strategy = st.builds(
+    education_Course,
     name=
         safe_text
 )
 Person_strategy = st.builds(
     Person,
 )
-education::Teacher_strategy = st.builds(
-    education::Teacher,
+education_Teacher_strategy = st.builds(
+    education_Teacher,
 )
-education::Student_strategy = st.builds(
-    education::Student,
+education_Student_strategy = st.builds(
+    education_Student,
 )
-education::Person_strategy = st.builds(
-    education::Person,
-    firstname=
-        safe_text,
+education_Person_strategy = st.builds(
+    education_Person,
     lastname=
+        safe_text,
+    firstname=
         safe_text
 )
 
-@given(instance=education::Course_strategy)
+@given(instance=education_Course_strategy)
 @settings(max_examples=50)
-def test_education::course_instantiation(instance):
-    assert isinstance(instance, education::Course)
-
-@given(instance=education::Course_strategy)
-def test_education::course_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_education_course_instantiation(instance):
+    assert isinstance(instance, education_Course)
 
 
-@given(instance=education::Course_strategy)
-def test_education::course_name_setter(instance):
+
+@given(instance=education_Course_strategy)
+def test_education_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -173,9 +170,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=education::Course_strategy)
+@given(instance=education_Course_strategy)
 @settings(max_examples=30)
-def test_education::course_finish_changes_state(instance):
+def test_education_course_finish_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -189,14 +186,14 @@ def test_education::course_finish_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'finish' in education::Course is empty"
+        assert has_statements, f"Function 'finish' in education_Course is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'finish' in education::Course did not change state; check implementation")
+            warnings.warn(f"Operation 'finish' in education_Course did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'finish' in education::Course is not implemented or raised an error")
+        warnings.warn(f"Operation 'finish' in education_Course is not implemented or raised an error")
 
 import warnings
 import copy
@@ -204,9 +201,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=education::Course_strategy)
+@given(instance=education_Course_strategy)
 @settings(max_examples=30)
-def test_education::course_start_changes_state(instance):
+def test_education_course_start_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -220,53 +217,47 @@ def test_education::course_start_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'start' in education::Course is empty"
+        assert has_statements, f"Function 'start' in education_Course is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'start' in education::Course did not change state; check implementation")
+            warnings.warn(f"Operation 'start' in education_Course did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'start' in education::Course is not implemented or raised an error")
+        warnings.warn(f"Operation 'start' in education_Course is not implemented or raised an error")
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=education::Teacher_strategy)
+@given(instance=education_Teacher_strategy)
 @settings(max_examples=50)
-def test_education::teacher_instantiation(instance):
-    assert isinstance(instance, education::Teacher)
+def test_education_teacher_instantiation(instance):
+    assert isinstance(instance, education_Teacher)
 
-@given(instance=education::Student_strategy)
+@given(instance=education_Student_strategy)
 @settings(max_examples=50)
-def test_education::student_instantiation(instance):
-    assert isinstance(instance, education::Student)
+def test_education_student_instantiation(instance):
+    assert isinstance(instance, education_Student)
 
-@given(instance=education::Person_strategy)
+@given(instance=education_Person_strategy)
 @settings(max_examples=50)
-def test_education::person_instantiation(instance):
-    assert isinstance(instance, education::Person)
-
-@given(instance=education::Person_strategy)
-def test_education::person_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
+def test_education_person_instantiation(instance):
+    assert isinstance(instance, education_Person)
 
 
-@given(instance=education::Person_strategy)
-def test_education::person_firstname_setter(instance):
-    original = instance.firstname
-    instance.firstname = original
-    assert instance.firstname == original
 
-@given(instance=education::Person_strategy)
-def test_education::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=education::Person_strategy)
-def test_education::person_lastname_setter(instance):
+@given(instance=education_Person_strategy)
+def test_education_person_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
+
+
+
+@given(instance=education_Person_strategy)
+def test_education_person_firstname_setter(instance):
+    original = instance.firstname
+    instance.firstname = original
+    assert instance.firstname == original

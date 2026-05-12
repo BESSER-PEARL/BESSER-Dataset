@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Boolean_external,
@@ -19,9 +19,9 @@ from python_code import (
     Vehicle_Interface,
     Parking_Space,
     Parking_Structure,
-    Parking_Space_Type,
     Enumeration2,
     Structure_Type,
+    Parking_Space_Type,
     Enumeration,
 )
 
@@ -250,16 +250,16 @@ def test_parking_structure_constructor_exists():
 def test_parking_structure_constructor_args():
     sig = inspect.signature(Parking_Structure.__init__)
     params = list(sig.parameters.keys())
-    assert "Type" in params, "Missing parameter 'Type'"
-    assert "City" in params, "Missing parameter 'City'"
     assert "Address" in params, "Missing parameter 'Address'"
+    assert "City" in params, "Missing parameter 'City'"
+    assert "Type" in params, "Missing parameter 'Type'"
 
-def test_parking_structure_has_Type():
-    assert hasattr(Parking_Structure, "Type")
+def test_parking_structure_has_Address():
+    assert hasattr(Parking_Structure, "Address")
     descriptor = None
     for klass in Parking_Structure.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -272,27 +272,14 @@ def test_parking_structure_has_City():
             break
     assert isinstance(descriptor, property)
 
-def test_parking_structure_has_Address():
-    assert hasattr(Parking_Structure, "Address")
+def test_parking_structure_has_Type():
+    assert hasattr(Parking_Structure, "Type")
     descriptor = None
     for klass in Parking_Structure.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
             break
     assert isinstance(descriptor, property)
-
-def test_parking_space_type_exists():
-    # Check that the Enumeration exists
-    assert Parking_Space_Type is not None
-
-def test_parking_space_type_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Parking_Space_Type]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Parking_Space_Type"
 
 def test_enumeration2_exists():
     # Check that the Enumeration exists
@@ -319,6 +306,19 @@ def test_structure_type_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Structure_Type"
+
+def test_parking_space_type_exists():
+    # Check that the Enumeration exists
+    assert Parking_Space_Type is not None
+
+def test_parking_space_type_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Parking_Space_Type]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Parking_Space_Type"
 
 def test_enumeration_exists():
     # Check that the Enumeration exists
@@ -391,12 +391,12 @@ Parking_Space_strategy = st.builds(
 )
 Parking_Structure_strategy = st.builds(
     Parking_Structure,
-    Type=
-        st.none(),
+    Address=
+        safe_text,
     City=
         safe_text,
-    Address=
-        safe_text
+    Type=
+        st.none()
 )
 
 @given(instance=Boolean_external_strategy)
@@ -424,9 +424,6 @@ def test_class_instantiation(instance):
 def test_parking_level_instantiation(instance):
     assert isinstance(instance, Parking_Level)
 
-@given(instance=Parking_Level_strategy)
-def test_parking_level_Fl_Number_type(instance):
-    assert isinstance(instance.Fl_Number, int)
 
 
 @given(instance=Parking_Level_strategy)
@@ -470,9 +467,6 @@ def test_vehicle_interface_instantiation(instance):
 def test_parking_space_instantiation(instance):
     assert isinstance(instance, Parking_Space)
 
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Floor_Number_type(instance):
-    assert isinstance(instance.Floor_Number, parking_level)
 
 
 @given(instance=Parking_Space_strategy)
@@ -481,9 +475,6 @@ def test_parking_space_Floor_Number_setter(instance):
     instance.Floor_Number = original
     assert instance.Floor_Number == original
 
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Space_Number_type(instance):
-    assert isinstance(instance.Space_Number, int)
 
 
 @given(instance=Parking_Space_strategy)
@@ -492,9 +483,6 @@ def test_parking_space_Space_Number_setter(instance):
     instance.Space_Number = original
     assert instance.Space_Number == original
 
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Space_Type_type(instance):
-    assert isinstance(instance.Space_Type, parking_space_type)
 
 
 @given(instance=Parking_Space_strategy)
@@ -508,20 +496,14 @@ def test_parking_space_Space_Type_setter(instance):
 def test_parking_structure_instantiation(instance):
     assert isinstance(instance, Parking_Structure)
 
-@given(instance=Parking_Structure_strategy)
-def test_parking_structure_Type_type(instance):
-    assert isinstance(instance.Type, structure_type)
 
 
 @given(instance=Parking_Structure_strategy)
-def test_parking_structure_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
+def test_parking_structure_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
 
-@given(instance=Parking_Structure_strategy)
-def test_parking_structure_City_type(instance):
-    assert isinstance(instance.City, str)
 
 
 @given(instance=Parking_Structure_strategy)
@@ -530,13 +512,10 @@ def test_parking_structure_City_setter(instance):
     instance.City = original
     assert instance.City == original
 
-@given(instance=Parking_Structure_strategy)
-def test_parking_structure_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Parking_Structure_strategy)
-def test_parking_structure_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
+def test_parking_structure_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original

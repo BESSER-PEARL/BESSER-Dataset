@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleany::LibraryType,
-    simpleany::EStringToStringMapEntry,
-    simpleany::Description,
-    simpleany::BookType,
-    simpleany::DocumentRoot,
+from python_code import (
+    simpleany_LibraryType,
+    simpleany_EStringToStringMapEntry,
+    simpleany_Description,
+    simpleany_BookType,
+    simpleany_DocumentRoot,
 )
 
 # =============================================================================
@@ -19,61 +19,61 @@ from classes import (
 
 
 
-def test_simpleany::librarytype_is_not_abstract():
-    assert not inspect.isabstract(simpleany::LibraryType)
+def test_simpleany_librarytype_is_not_abstract():
+    assert not inspect.isabstract(simpleany_LibraryType)
 
 
-def test_simpleany::librarytype_constructor_exists():
-    assert callable(simpleany::LibraryType.__init__)
+def test_simpleany_librarytype_constructor_exists():
+    assert callable(simpleany_LibraryType.__init__)
 
 
-def test_simpleany::librarytype_constructor_args():
-    sig = inspect.signature(simpleany::LibraryType.__init__)
+def test_simpleany_librarytype_constructor_args():
+    sig = inspect.signature(simpleany_LibraryType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleany::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(simpleany::EStringToStringMapEntry)
+def test_simpleany_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(simpleany_EStringToStringMapEntry)
 
 
-def test_simpleany::estringtostringmapentry_constructor_exists():
-    assert callable(simpleany::EStringToStringMapEntry.__init__)
+def test_simpleany_estringtostringmapentry_constructor_exists():
+    assert callable(simpleany_EStringToStringMapEntry.__init__)
 
 
-def test_simpleany::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(simpleany::EStringToStringMapEntry.__init__)
+def test_simpleany_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(simpleany_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleany::description_is_not_abstract():
-    assert not inspect.isabstract(simpleany::Description)
+def test_simpleany_description_is_not_abstract():
+    assert not inspect.isabstract(simpleany_Description)
 
 
-def test_simpleany::description_constructor_exists():
-    assert callable(simpleany::Description.__init__)
+def test_simpleany_description_constructor_exists():
+    assert callable(simpleany_Description.__init__)
 
 
-def test_simpleany::description_constructor_args():
-    sig = inspect.signature(simpleany::Description.__init__)
+def test_simpleany_description_constructor_args():
+    sig = inspect.signature(simpleany_Description.__init__)
     params = list(sig.parameters.keys())
     assert "keyword" in params, "Missing parameter 'keyword'"
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_simpleany::description_has_keyword():
-    assert hasattr(simpleany::Description, "keyword")
+def test_simpleany_description_has_keyword():
+    assert hasattr(simpleany_Description, "keyword")
     descriptor = None
-    for klass in simpleany::Description.__mro__:
+    for klass in simpleany_Description.__mro__:
         if "keyword" in klass.__dict__:
             descriptor = klass.__dict__["keyword"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleany::description_has_mixed():
-    assert hasattr(simpleany::Description, "mixed")
+def test_simpleany_description_has_mixed():
+    assert hasattr(simpleany_Description, "mixed")
     descriptor = None
-    for klass in simpleany::Description.__mro__:
+    for klass in simpleany_Description.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -81,67 +81,67 @@ def test_simpleany::description_has_mixed():
 
 
 
-def test_simpleany::booktype_is_not_abstract():
-    assert not inspect.isabstract(simpleany::BookType)
+def test_simpleany_booktype_is_not_abstract():
+    assert not inspect.isabstract(simpleany_BookType)
 
 
-def test_simpleany::booktype_constructor_exists():
-    assert callable(simpleany::BookType.__init__)
+def test_simpleany_booktype_constructor_exists():
+    assert callable(simpleany_BookType.__init__)
 
 
-def test_simpleany::booktype_constructor_args():
-    sig = inspect.signature(simpleany::BookType.__init__)
+def test_simpleany_booktype_constructor_args():
+    sig = inspect.signature(simpleany_BookType.__init__)
     params = list(sig.parameters.keys())
     assert "author" in params, "Missing parameter 'author'"
-    assert "title" in params, "Missing parameter 'title'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "title" in params, "Missing parameter 'title'"
 
-def test_simpleany::booktype_has_author():
-    assert hasattr(simpleany::BookType, "author")
+def test_simpleany_booktype_has_author():
+    assert hasattr(simpleany_BookType, "author")
     descriptor = None
-    for klass in simpleany::BookType.__mro__:
+    for klass in simpleany_BookType.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleany::booktype_has_title():
-    assert hasattr(simpleany::BookType, "title")
+def test_simpleany_booktype_has_name():
+    assert hasattr(simpleany_BookType, "name")
     descriptor = None
-    for klass in simpleany::BookType.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simpleany::booktype_has_name():
-    assert hasattr(simpleany::BookType, "name")
-    descriptor = None
-    for klass in simpleany::BookType.__mro__:
+    for klass in simpleany_BookType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_simpleany_booktype_has_title():
+    assert hasattr(simpleany_BookType, "title")
+    descriptor = None
+    for klass in simpleany_BookType.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simpleany::documentroot_is_not_abstract():
-    assert not inspect.isabstract(simpleany::DocumentRoot)
+
+def test_simpleany_documentroot_is_not_abstract():
+    assert not inspect.isabstract(simpleany_DocumentRoot)
 
 
-def test_simpleany::documentroot_constructor_exists():
-    assert callable(simpleany::DocumentRoot.__init__)
+def test_simpleany_documentroot_constructor_exists():
+    assert callable(simpleany_DocumentRoot.__init__)
 
 
-def test_simpleany::documentroot_constructor_args():
-    sig = inspect.signature(simpleany::DocumentRoot.__init__)
+def test_simpleany_documentroot_constructor_args():
+    sig = inspect.signature(simpleany_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_simpleany::documentroot_has_mixed():
-    assert hasattr(simpleany::DocumentRoot, "mixed")
+def test_simpleany_documentroot_has_mixed():
+    assert hasattr(simpleany_DocumentRoot, "mixed")
     descriptor = None
-    for klass in simpleany::DocumentRoot.__mro__:
+    for klass in simpleany_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -159,121 +159,103 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleany::LibraryType_strategy = st.builds(
-    simpleany::LibraryType,
+simpleany_LibraryType_strategy = st.builds(
+    simpleany_LibraryType,
 )
-simpleany::EStringToStringMapEntry_strategy = st.builds(
-    simpleany::EStringToStringMapEntry,
+simpleany_EStringToStringMapEntry_strategy = st.builds(
+    simpleany_EStringToStringMapEntry,
 )
-simpleany::Description_strategy = st.builds(
-    simpleany::Description,
+simpleany_Description_strategy = st.builds(
+    simpleany_Description,
     keyword=
         safe_text,
     mixed=
         safe_text
 )
-simpleany::BookType_strategy = st.builds(
-    simpleany::BookType,
+simpleany_BookType_strategy = st.builds(
+    simpleany_BookType,
     author=
         safe_text,
-    title=
-        safe_text,
     name=
+        safe_text,
+    title=
         safe_text
 )
-simpleany::DocumentRoot_strategy = st.builds(
-    simpleany::DocumentRoot,
+simpleany_DocumentRoot_strategy = st.builds(
+    simpleany_DocumentRoot,
     mixed=
         safe_text
 )
 
-@given(instance=simpleany::LibraryType_strategy)
+@given(instance=simpleany_LibraryType_strategy)
 @settings(max_examples=50)
-def test_simpleany::librarytype_instantiation(instance):
-    assert isinstance(instance, simpleany::LibraryType)
+def test_simpleany_librarytype_instantiation(instance):
+    assert isinstance(instance, simpleany_LibraryType)
 
-@given(instance=simpleany::EStringToStringMapEntry_strategy)
+@given(instance=simpleany_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_simpleany::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, simpleany::EStringToStringMapEntry)
+def test_simpleany_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, simpleany_EStringToStringMapEntry)
 
-@given(instance=simpleany::Description_strategy)
+@given(instance=simpleany_Description_strategy)
 @settings(max_examples=50)
-def test_simpleany::description_instantiation(instance):
-    assert isinstance(instance, simpleany::Description)
-
-@given(instance=simpleany::Description_strategy)
-def test_simpleany::description_keyword_type(instance):
-    assert isinstance(instance.keyword, str)
+def test_simpleany_description_instantiation(instance):
+    assert isinstance(instance, simpleany_Description)
 
 
-@given(instance=simpleany::Description_strategy)
-def test_simpleany::description_keyword_setter(instance):
+
+@given(instance=simpleany_Description_strategy)
+def test_simpleany_description_keyword_setter(instance):
     original = instance.keyword
     instance.keyword = original
     assert instance.keyword == original
 
-@given(instance=simpleany::Description_strategy)
-def test_simpleany::description_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=simpleany::Description_strategy)
-def test_simpleany::description_mixed_setter(instance):
+@given(instance=simpleany_Description_strategy)
+def test_simpleany_description_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=simpleany::BookType_strategy)
+@given(instance=simpleany_BookType_strategy)
 @settings(max_examples=50)
-def test_simpleany::booktype_instantiation(instance):
-    assert isinstance(instance, simpleany::BookType)
-
-@given(instance=simpleany::BookType_strategy)
-def test_simpleany::booktype_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_simpleany_booktype_instantiation(instance):
+    assert isinstance(instance, simpleany_BookType)
 
 
-@given(instance=simpleany::BookType_strategy)
-def test_simpleany::booktype_author_setter(instance):
+
+@given(instance=simpleany_BookType_strategy)
+def test_simpleany_booktype_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=simpleany::BookType_strategy)
-def test_simpleany::booktype_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=simpleany::BookType_strategy)
-def test_simpleany::booktype_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=simpleany::BookType_strategy)
-def test_simpleany::booktype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simpleany::BookType_strategy)
-def test_simpleany::booktype_name_setter(instance):
+@given(instance=simpleany_BookType_strategy)
+def test_simpleany_booktype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleany::DocumentRoot_strategy)
+
+
+@given(instance=simpleany_BookType_strategy)
+def test_simpleany_booktype_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=simpleany_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_simpleany::documentroot_instantiation(instance):
-    assert isinstance(instance, simpleany::DocumentRoot)
-
-@given(instance=simpleany::DocumentRoot_strategy)
-def test_simpleany::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_simpleany_documentroot_instantiation(instance):
+    assert isinstance(instance, simpleany_DocumentRoot)
 
 
-@given(instance=simpleany::DocumentRoot_strategy)
-def test_simpleany::documentroot_mixed_setter(instance):
+
+@given(instance=simpleany_DocumentRoot_strategy)
+def test_simpleany_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original

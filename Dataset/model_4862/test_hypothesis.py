@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    units::av::pc::PerJoinPointScope,
-    units::av::pc::GlobalScope,
-    units::av::pc::EObject,
-    units::av::pc::Advice,
+from python_code import (
+    units_av_pc_PerJoinPointScope,
+    units_av_pc_GlobalScope,
+    units_av_pc_EObject,
+    units_av_pc_Advice,
     Unit,
-    units::av::pc::UnitLiteral,
-    units::av::pc::UnitPower,
-    units::av::pc::UnitMultiplication,
-    units::av::pc::UnitRepository,
-    units::av::pc::BaseUnit,
-    units::av::pc::Pointcut,
-    units::av::pc::Unit,
-    units::av::pc::UnitCarryingElement,
+    units_av_pc_UnitLiteral,
+    units_av_pc_UnitPower,
+    units_av_pc_UnitMultiplication,
+    units_av_pc_UnitRepository,
+    units_av_pc_BaseUnit,
+    units_av_pc_Pointcut,
+    units_av_pc_Unit,
+    units_av_pc_UnitCarryingElement,
 )
 
 # =============================================================================
@@ -27,58 +27,58 @@ from classes import (
 
 
 
-def test_units::av::pc::perjoinpointscope_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::PerJoinPointScope)
+def test_units_av_pc_perjoinpointscope_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_PerJoinPointScope)
 
 
-def test_units::av::pc::perjoinpointscope_constructor_exists():
-    assert callable(units::av::pc::PerJoinPointScope.__init__)
+def test_units_av_pc_perjoinpointscope_constructor_exists():
+    assert callable(units_av_pc_PerJoinPointScope.__init__)
 
 
-def test_units::av::pc::perjoinpointscope_constructor_args():
-    sig = inspect.signature(units::av::pc::PerJoinPointScope.__init__)
+def test_units_av_pc_perjoinpointscope_constructor_args():
+    sig = inspect.signature(units_av_pc_PerJoinPointScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::globalscope_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::GlobalScope)
+def test_units_av_pc_globalscope_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_GlobalScope)
 
 
-def test_units::av::pc::globalscope_constructor_exists():
-    assert callable(units::av::pc::GlobalScope.__init__)
+def test_units_av_pc_globalscope_constructor_exists():
+    assert callable(units_av_pc_GlobalScope.__init__)
 
 
-def test_units::av::pc::globalscope_constructor_args():
-    sig = inspect.signature(units::av::pc::GlobalScope.__init__)
+def test_units_av_pc_globalscope_constructor_args():
+    sig = inspect.signature(units_av_pc_GlobalScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::eobject_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::EObject)
+def test_units_av_pc_eobject_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_EObject)
 
 
-def test_units::av::pc::eobject_constructor_exists():
-    assert callable(units::av::pc::EObject.__init__)
+def test_units_av_pc_eobject_constructor_exists():
+    assert callable(units_av_pc_EObject.__init__)
 
 
-def test_units::av::pc::eobject_constructor_args():
-    sig = inspect.signature(units::av::pc::EObject.__init__)
+def test_units_av_pc_eobject_constructor_args():
+    sig = inspect.signature(units_av_pc_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::advice_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::Advice)
+def test_units_av_pc_advice_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_Advice)
 
 
-def test_units::av::pc::advice_constructor_exists():
-    assert callable(units::av::pc::Advice.__init__)
+def test_units_av_pc_advice_constructor_exists():
+    assert callable(units_av_pc_Advice.__init__)
 
 
-def test_units::av::pc::advice_constructor_args():
-    sig = inspect.signature(units::av::pc::Advice.__init__)
+def test_units_av_pc_advice_constructor_args():
+    sig = inspect.signature(units_av_pc_Advice.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -97,37 +97,37 @@ def test_unit_constructor_args():
 
 
 
-def test_units::av::pc::unitliteral_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::UnitLiteral)
+def test_units_av_pc_unitliteral_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_UnitLiteral)
 
 
-def test_units::av::pc::unitliteral_constructor_exists():
-    assert callable(units::av::pc::UnitLiteral.__init__)
+def test_units_av_pc_unitliteral_constructor_exists():
+    assert callable(units_av_pc_UnitLiteral.__init__)
 
 
-def test_units::av::pc::unitliteral_constructor_args():
-    sig = inspect.signature(units::av::pc::UnitLiteral.__init__)
+def test_units_av_pc_unitliteral_constructor_args():
+    sig = inspect.signature(units_av_pc_UnitLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::unitpower_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::UnitPower)
+def test_units_av_pc_unitpower_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_UnitPower)
 
 
-def test_units::av::pc::unitpower_constructor_exists():
-    assert callable(units::av::pc::UnitPower.__init__)
+def test_units_av_pc_unitpower_constructor_exists():
+    assert callable(units_av_pc_UnitPower.__init__)
 
 
-def test_units::av::pc::unitpower_constructor_args():
-    sig = inspect.signature(units::av::pc::UnitPower.__init__)
+def test_units_av_pc_unitpower_constructor_args():
+    sig = inspect.signature(units_av_pc_UnitPower.__init__)
     params = list(sig.parameters.keys())
     assert "exponent" in params, "Missing parameter 'exponent'"
 
-def test_units::av::pc::unitpower_has_exponent():
-    assert hasattr(units::av::pc::UnitPower, "exponent")
+def test_units_av_pc_unitpower_has_exponent():
+    assert hasattr(units_av_pc_UnitPower, "exponent")
     descriptor = None
-    for klass in units::av::pc::UnitPower.__mro__:
+    for klass in units_av_pc_UnitPower.__mro__:
         if "exponent" in klass.__dict__:
             descriptor = klass.__dict__["exponent"]
             break
@@ -135,51 +135,51 @@ def test_units::av::pc::unitpower_has_exponent():
 
 
 
-def test_units::av::pc::unitmultiplication_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::UnitMultiplication)
+def test_units_av_pc_unitmultiplication_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_UnitMultiplication)
 
 
-def test_units::av::pc::unitmultiplication_constructor_exists():
-    assert callable(units::av::pc::UnitMultiplication.__init__)
+def test_units_av_pc_unitmultiplication_constructor_exists():
+    assert callable(units_av_pc_UnitMultiplication.__init__)
 
 
-def test_units::av::pc::unitmultiplication_constructor_args():
-    sig = inspect.signature(units::av::pc::UnitMultiplication.__init__)
+def test_units_av_pc_unitmultiplication_constructor_args():
+    sig = inspect.signature(units_av_pc_UnitMultiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::unitrepository_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::UnitRepository)
+def test_units_av_pc_unitrepository_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_UnitRepository)
 
 
-def test_units::av::pc::unitrepository_constructor_exists():
-    assert callable(units::av::pc::UnitRepository.__init__)
+def test_units_av_pc_unitrepository_constructor_exists():
+    assert callable(units_av_pc_UnitRepository.__init__)
 
 
-def test_units::av::pc::unitrepository_constructor_args():
-    sig = inspect.signature(units::av::pc::UnitRepository.__init__)
+def test_units_av_pc_unitrepository_constructor_args():
+    sig = inspect.signature(units_av_pc_UnitRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::baseunit_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::BaseUnit)
+def test_units_av_pc_baseunit_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_BaseUnit)
 
 
-def test_units::av::pc::baseunit_constructor_exists():
-    assert callable(units::av::pc::BaseUnit.__init__)
+def test_units_av_pc_baseunit_constructor_exists():
+    assert callable(units_av_pc_BaseUnit.__init__)
 
 
-def test_units::av::pc::baseunit_constructor_args():
-    sig = inspect.signature(units::av::pc::BaseUnit.__init__)
+def test_units_av_pc_baseunit_constructor_args():
+    sig = inspect.signature(units_av_pc_BaseUnit.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_units::av::pc::baseunit_has_name():
-    assert hasattr(units::av::pc::BaseUnit, "name")
+def test_units_av_pc_baseunit_has_name():
+    assert hasattr(units_av_pc_BaseUnit, "name")
     descriptor = None
-    for klass in units::av::pc::BaseUnit.__mro__:
+    for klass in units_av_pc_BaseUnit.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -187,51 +187,51 @@ def test_units::av::pc::baseunit_has_name():
 
 
 
-def test_units::av::pc::pointcut_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::Pointcut)
+def test_units_av_pc_pointcut_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_Pointcut)
 
 
-def test_units::av::pc::pointcut_constructor_exists():
-    assert callable(units::av::pc::Pointcut.__init__)
+def test_units_av_pc_pointcut_constructor_exists():
+    assert callable(units_av_pc_Pointcut.__init__)
 
 
-def test_units::av::pc::pointcut_constructor_args():
-    sig = inspect.signature(units::av::pc::Pointcut.__init__)
+def test_units_av_pc_pointcut_constructor_args():
+    sig = inspect.signature(units_av_pc_Pointcut.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::unit_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::Unit)
+def test_units_av_pc_unit_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_Unit)
 
 
-def test_units::av::pc::unit_constructor_exists():
-    assert callable(units::av::pc::Unit.__init__)
+def test_units_av_pc_unit_constructor_exists():
+    assert callable(units_av_pc_Unit.__init__)
 
 
-def test_units::av::pc::unit_constructor_args():
-    sig = inspect.signature(units::av::pc::Unit.__init__)
+def test_units_av_pc_unit_constructor_args():
+    sig = inspect.signature(units_av_pc_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::pc::unitcarryingelement_is_not_abstract():
-    assert not inspect.isabstract(units::av::pc::UnitCarryingElement)
+def test_units_av_pc_unitcarryingelement_is_not_abstract():
+    assert not inspect.isabstract(units_av_pc_UnitCarryingElement)
 
 
-def test_units::av::pc::unitcarryingelement_constructor_exists():
-    assert callable(units::av::pc::UnitCarryingElement.__init__)
+def test_units_av_pc_unitcarryingelement_constructor_exists():
+    assert callable(units_av_pc_UnitCarryingElement.__init__)
 
 
-def test_units::av::pc::unitcarryingelement_constructor_args():
-    sig = inspect.signature(units::av::pc::UnitCarryingElement.__init__)
+def test_units_av_pc_unitcarryingelement_constructor_args():
+    sig = inspect.signature(units_av_pc_UnitCarryingElement.__init__)
     params = list(sig.parameters.keys())
     assert "unitSpecification" in params, "Missing parameter 'unitSpecification'"
 
-def test_units::av::pc::unitcarryingelement_has_unitSpecification():
-    assert hasattr(units::av::pc::UnitCarryingElement, "unitSpecification")
+def test_units_av_pc_unitcarryingelement_has_unitSpecification():
+    assert hasattr(units_av_pc_UnitCarryingElement, "unitSpecification")
     descriptor = None
-    for klass in units::av::pc::UnitCarryingElement.__mro__:
+    for klass in units_av_pc_UnitCarryingElement.__mro__:
         if "unitSpecification" in klass.__dict__:
             descriptor = klass.__dict__["unitSpecification"]
             break
@@ -249,146 +249,137 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-units::av::pc::PerJoinPointScope_strategy = st.builds(
-    units::av::pc::PerJoinPointScope,
+units_av_pc_PerJoinPointScope_strategy = st.builds(
+    units_av_pc_PerJoinPointScope,
 )
-units::av::pc::GlobalScope_strategy = st.builds(
-    units::av::pc::GlobalScope,
+units_av_pc_GlobalScope_strategy = st.builds(
+    units_av_pc_GlobalScope,
 )
-units::av::pc::EObject_strategy = st.builds(
-    units::av::pc::EObject,
+units_av_pc_EObject_strategy = st.builds(
+    units_av_pc_EObject,
 )
-units::av::pc::Advice_strategy = st.builds(
-    units::av::pc::Advice,
+units_av_pc_Advice_strategy = st.builds(
+    units_av_pc_Advice,
 )
 Unit_strategy = st.builds(
     Unit,
 )
-units::av::pc::UnitLiteral_strategy = st.builds(
-    units::av::pc::UnitLiteral,
+units_av_pc_UnitLiteral_strategy = st.builds(
+    units_av_pc_UnitLiteral,
 )
-units::av::pc::UnitPower_strategy = st.builds(
-    units::av::pc::UnitPower,
+units_av_pc_UnitPower_strategy = st.builds(
+    units_av_pc_UnitPower,
     exponent=
         st.integers()
 )
-units::av::pc::UnitMultiplication_strategy = st.builds(
-    units::av::pc::UnitMultiplication,
+units_av_pc_UnitMultiplication_strategy = st.builds(
+    units_av_pc_UnitMultiplication,
 )
-units::av::pc::UnitRepository_strategy = st.builds(
-    units::av::pc::UnitRepository,
+units_av_pc_UnitRepository_strategy = st.builds(
+    units_av_pc_UnitRepository,
 )
-units::av::pc::BaseUnit_strategy = st.builds(
-    units::av::pc::BaseUnit,
+units_av_pc_BaseUnit_strategy = st.builds(
+    units_av_pc_BaseUnit,
     name=
         safe_text
 )
-units::av::pc::Pointcut_strategy = st.builds(
-    units::av::pc::Pointcut,
+units_av_pc_Pointcut_strategy = st.builds(
+    units_av_pc_Pointcut,
 )
-units::av::pc::Unit_strategy = st.builds(
-    units::av::pc::Unit,
+units_av_pc_Unit_strategy = st.builds(
+    units_av_pc_Unit,
 )
-units::av::pc::UnitCarryingElement_strategy = st.builds(
-    units::av::pc::UnitCarryingElement,
+units_av_pc_UnitCarryingElement_strategy = st.builds(
+    units_av_pc_UnitCarryingElement,
     unitSpecification=
         safe_text
 )
 
-@given(instance=units::av::pc::PerJoinPointScope_strategy)
+@given(instance=units_av_pc_PerJoinPointScope_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::perjoinpointscope_instantiation(instance):
-    assert isinstance(instance, units::av::pc::PerJoinPointScope)
+def test_units_av_pc_perjoinpointscope_instantiation(instance):
+    assert isinstance(instance, units_av_pc_PerJoinPointScope)
 
-@given(instance=units::av::pc::GlobalScope_strategy)
+@given(instance=units_av_pc_GlobalScope_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::globalscope_instantiation(instance):
-    assert isinstance(instance, units::av::pc::GlobalScope)
+def test_units_av_pc_globalscope_instantiation(instance):
+    assert isinstance(instance, units_av_pc_GlobalScope)
 
-@given(instance=units::av::pc::EObject_strategy)
+@given(instance=units_av_pc_EObject_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::eobject_instantiation(instance):
-    assert isinstance(instance, units::av::pc::EObject)
+def test_units_av_pc_eobject_instantiation(instance):
+    assert isinstance(instance, units_av_pc_EObject)
 
-@given(instance=units::av::pc::Advice_strategy)
+@given(instance=units_av_pc_Advice_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::advice_instantiation(instance):
-    assert isinstance(instance, units::av::pc::Advice)
+def test_units_av_pc_advice_instantiation(instance):
+    assert isinstance(instance, units_av_pc_Advice)
 
 @given(instance=Unit_strategy)
 @settings(max_examples=50)
 def test_unit_instantiation(instance):
     assert isinstance(instance, Unit)
 
-@given(instance=units::av::pc::UnitLiteral_strategy)
+@given(instance=units_av_pc_UnitLiteral_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::unitliteral_instantiation(instance):
-    assert isinstance(instance, units::av::pc::UnitLiteral)
+def test_units_av_pc_unitliteral_instantiation(instance):
+    assert isinstance(instance, units_av_pc_UnitLiteral)
 
-@given(instance=units::av::pc::UnitPower_strategy)
+@given(instance=units_av_pc_UnitPower_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::unitpower_instantiation(instance):
-    assert isinstance(instance, units::av::pc::UnitPower)
-
-@given(instance=units::av::pc::UnitPower_strategy)
-def test_units::av::pc::unitpower_exponent_type(instance):
-    assert isinstance(instance.exponent, int)
+def test_units_av_pc_unitpower_instantiation(instance):
+    assert isinstance(instance, units_av_pc_UnitPower)
 
 
-@given(instance=units::av::pc::UnitPower_strategy)
-def test_units::av::pc::unitpower_exponent_setter(instance):
+
+@given(instance=units_av_pc_UnitPower_strategy)
+def test_units_av_pc_unitpower_exponent_setter(instance):
     original = instance.exponent
     instance.exponent = original
     assert instance.exponent == original
 
-@given(instance=units::av::pc::UnitMultiplication_strategy)
+@given(instance=units_av_pc_UnitMultiplication_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::unitmultiplication_instantiation(instance):
-    assert isinstance(instance, units::av::pc::UnitMultiplication)
+def test_units_av_pc_unitmultiplication_instantiation(instance):
+    assert isinstance(instance, units_av_pc_UnitMultiplication)
 
-@given(instance=units::av::pc::UnitRepository_strategy)
+@given(instance=units_av_pc_UnitRepository_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::unitrepository_instantiation(instance):
-    assert isinstance(instance, units::av::pc::UnitRepository)
+def test_units_av_pc_unitrepository_instantiation(instance):
+    assert isinstance(instance, units_av_pc_UnitRepository)
 
-@given(instance=units::av::pc::BaseUnit_strategy)
+@given(instance=units_av_pc_BaseUnit_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::baseunit_instantiation(instance):
-    assert isinstance(instance, units::av::pc::BaseUnit)
-
-@given(instance=units::av::pc::BaseUnit_strategy)
-def test_units::av::pc::baseunit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_units_av_pc_baseunit_instantiation(instance):
+    assert isinstance(instance, units_av_pc_BaseUnit)
 
 
-@given(instance=units::av::pc::BaseUnit_strategy)
-def test_units::av::pc::baseunit_name_setter(instance):
+
+@given(instance=units_av_pc_BaseUnit_strategy)
+def test_units_av_pc_baseunit_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=units::av::pc::Pointcut_strategy)
+@given(instance=units_av_pc_Pointcut_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::pointcut_instantiation(instance):
-    assert isinstance(instance, units::av::pc::Pointcut)
+def test_units_av_pc_pointcut_instantiation(instance):
+    assert isinstance(instance, units_av_pc_Pointcut)
 
-@given(instance=units::av::pc::Unit_strategy)
+@given(instance=units_av_pc_Unit_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::unit_instantiation(instance):
-    assert isinstance(instance, units::av::pc::Unit)
+def test_units_av_pc_unit_instantiation(instance):
+    assert isinstance(instance, units_av_pc_Unit)
 
-@given(instance=units::av::pc::UnitCarryingElement_strategy)
+@given(instance=units_av_pc_UnitCarryingElement_strategy)
 @settings(max_examples=50)
-def test_units::av::pc::unitcarryingelement_instantiation(instance):
-    assert isinstance(instance, units::av::pc::UnitCarryingElement)
-
-@given(instance=units::av::pc::UnitCarryingElement_strategy)
-def test_units::av::pc::unitcarryingelement_unitSpecification_type(instance):
-    assert isinstance(instance.unitSpecification, str)
+def test_units_av_pc_unitcarryingelement_instantiation(instance):
+    assert isinstance(instance, units_av_pc_UnitCarryingElement)
 
 
-@given(instance=units::av::pc::UnitCarryingElement_strategy)
-def test_units::av::pc::unitcarryingelement_unitSpecification_setter(instance):
+
+@given(instance=units_av_pc_UnitCarryingElement_strategy)
+def test_units_av_pc_unitcarryingelement_unitSpecification_setter(instance):
     original = instance.unitSpecification
     instance.unitSpecification = original
     assert instance.unitSpecification == original

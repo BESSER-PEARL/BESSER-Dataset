@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    syswb101::NamedElement,
+from python_code import (
+    syswb101_NamedElement,
     NamedElement,
-    syswb101::RelatedTo,
-    syswb101::PatternCatalog,
-    syswb101::Named,
-    syswb101::Thoughts,
-    syswb101::Thing,
+    syswb101_RelatedTo,
+    syswb101_PatternCatalog,
+    syswb101_Named,
+    syswb101_Thoughts,
+    syswb101_Thing,
     Named,
-    syswb101::Function,
-    syswb101::FunctionProperty,
-    syswb101::System,
-    syswb101::Component,
-    syswb101::Workbench,
+    syswb101_System,
+    syswb101_Function,
+    syswb101_FunctionProperty,
+    syswb101_Component,
+    syswb101_Workbench,
 )
 
 # =============================================================================
@@ -27,23 +27,23 @@ from classes import (
 
 
 
-def test_syswb101::namedelement_is_not_abstract():
-    assert not inspect.isabstract(syswb101::NamedElement)
+def test_syswb101_namedelement_is_not_abstract():
+    assert not inspect.isabstract(syswb101_NamedElement)
 
 
-def test_syswb101::namedelement_constructor_exists():
-    assert callable(syswb101::NamedElement.__init__)
+def test_syswb101_namedelement_constructor_exists():
+    assert callable(syswb101_NamedElement.__init__)
 
 
-def test_syswb101::namedelement_constructor_args():
-    sig = inspect.signature(syswb101::NamedElement.__init__)
+def test_syswb101_namedelement_constructor_args():
+    sig = inspect.signature(syswb101_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_syswb101::namedelement_has_name():
-    assert hasattr(syswb101::NamedElement, "name")
+def test_syswb101_namedelement_has_name():
+    assert hasattr(syswb101_NamedElement, "name")
     descriptor = None
-    for klass in syswb101::NamedElement.__mro__:
+    for klass in syswb101_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_syswb101::relatedto_is_not_abstract():
-    assert not inspect.isabstract(syswb101::RelatedTo)
+def test_syswb101_relatedto_is_not_abstract():
+    assert not inspect.isabstract(syswb101_RelatedTo)
 
 
-def test_syswb101::relatedto_constructor_exists():
-    assert callable(syswb101::RelatedTo.__init__)
+def test_syswb101_relatedto_constructor_exists():
+    assert callable(syswb101_RelatedTo.__init__)
 
 
-def test_syswb101::relatedto_constructor_args():
-    sig = inspect.signature(syswb101::RelatedTo.__init__)
+def test_syswb101_relatedto_constructor_args():
+    sig = inspect.signature(syswb101_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_syswb101::relatedto_has_since():
-    assert hasattr(syswb101::RelatedTo, "since")
+def test_syswb101_relatedto_has_since():
+    assert hasattr(syswb101_RelatedTo, "since")
     descriptor = None
-    for klass in syswb101::RelatedTo.__mro__:
+    for klass in syswb101_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -89,23 +89,23 @@ def test_syswb101::relatedto_has_since():
 
 
 
-def test_syswb101::patterncatalog_is_not_abstract():
-    assert not inspect.isabstract(syswb101::PatternCatalog)
+def test_syswb101_patterncatalog_is_not_abstract():
+    assert not inspect.isabstract(syswb101_PatternCatalog)
 
 
-def test_syswb101::patterncatalog_constructor_exists():
-    assert callable(syswb101::PatternCatalog.__init__)
+def test_syswb101_patterncatalog_constructor_exists():
+    assert callable(syswb101_PatternCatalog.__init__)
 
 
-def test_syswb101::patterncatalog_constructor_args():
-    sig = inspect.signature(syswb101::PatternCatalog.__init__)
+def test_syswb101_patterncatalog_constructor_args():
+    sig = inspect.signature(syswb101_PatternCatalog.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswb101::patterncatalog_has_id():
-    assert hasattr(syswb101::PatternCatalog, "id")
+def test_syswb101_patterncatalog_has_id():
+    assert hasattr(syswb101_PatternCatalog, "id")
     descriptor = None
-    for klass in syswb101::PatternCatalog.__mro__:
+    for klass in syswb101_PatternCatalog.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -113,23 +113,23 @@ def test_syswb101::patterncatalog_has_id():
 
 
 
-def test_syswb101::named_is_not_abstract():
-    assert not inspect.isabstract(syswb101::Named)
+def test_syswb101_named_is_not_abstract():
+    assert not inspect.isabstract(syswb101_Named)
 
 
-def test_syswb101::named_constructor_exists():
-    assert callable(syswb101::Named.__init__)
+def test_syswb101_named_constructor_exists():
+    assert callable(syswb101_Named.__init__)
 
 
-def test_syswb101::named_constructor_args():
-    sig = inspect.signature(syswb101::Named.__init__)
+def test_syswb101_named_constructor_args():
+    sig = inspect.signature(syswb101_Named.__init__)
     params = list(sig.parameters.keys())
     assert "ident" in params, "Missing parameter 'ident'"
 
-def test_syswb101::named_has_ident():
-    assert hasattr(syswb101::Named, "ident")
+def test_syswb101_named_has_ident():
+    assert hasattr(syswb101_Named, "ident")
     descriptor = None
-    for klass in syswb101::Named.__mro__:
+    for klass in syswb101_Named.__mro__:
         if "ident" in klass.__dict__:
             descriptor = klass.__dict__["ident"]
             break
@@ -137,37 +137,37 @@ def test_syswb101::named_has_ident():
 
 
 
-def test_syswb101::thoughts_is_not_abstract():
-    assert not inspect.isabstract(syswb101::Thoughts)
+def test_syswb101_thoughts_is_not_abstract():
+    assert not inspect.isabstract(syswb101_Thoughts)
 
 
-def test_syswb101::thoughts_constructor_exists():
-    assert callable(syswb101::Thoughts.__init__)
+def test_syswb101_thoughts_constructor_exists():
+    assert callable(syswb101_Thoughts.__init__)
 
 
-def test_syswb101::thoughts_constructor_args():
-    sig = inspect.signature(syswb101::Thoughts.__init__)
+def test_syswb101_thoughts_constructor_args():
+    sig = inspect.signature(syswb101_Thoughts.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswb101::thing_is_not_abstract():
-    assert not inspect.isabstract(syswb101::Thing)
+def test_syswb101_thing_is_not_abstract():
+    assert not inspect.isabstract(syswb101_Thing)
 
 
-def test_syswb101::thing_constructor_exists():
-    assert callable(syswb101::Thing.__init__)
+def test_syswb101_thing_constructor_exists():
+    assert callable(syswb101_Thing.__init__)
 
 
-def test_syswb101::thing_constructor_args():
-    sig = inspect.signature(syswb101::Thing.__init__)
+def test_syswb101_thing_constructor_args():
+    sig = inspect.signature(syswb101_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswb101::thing_has_id():
-    assert hasattr(syswb101::Thing, "id")
+def test_syswb101_thing_has_id():
+    assert hasattr(syswb101_Thing, "id")
     descriptor = None
-    for klass in syswb101::Thing.__mro__:
+    for klass in syswb101_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -189,37 +189,51 @@ def test_named_constructor_args():
 
 
 
-def test_syswb101::function_is_not_abstract():
-    assert not inspect.isabstract(syswb101::Function)
+def test_syswb101_system_is_not_abstract():
+    assert not inspect.isabstract(syswb101_System)
 
 
-def test_syswb101::function_constructor_exists():
-    assert callable(syswb101::Function.__init__)
+def test_syswb101_system_constructor_exists():
+    assert callable(syswb101_System.__init__)
 
 
-def test_syswb101::function_constructor_args():
-    sig = inspect.signature(syswb101::Function.__init__)
+def test_syswb101_system_constructor_args():
+    sig = inspect.signature(syswb101_System.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswb101::functionproperty_is_not_abstract():
-    assert not inspect.isabstract(syswb101::FunctionProperty)
+def test_syswb101_function_is_not_abstract():
+    assert not inspect.isabstract(syswb101_Function)
 
 
-def test_syswb101::functionproperty_constructor_exists():
-    assert callable(syswb101::FunctionProperty.__init__)
+def test_syswb101_function_constructor_exists():
+    assert callable(syswb101_Function.__init__)
 
 
-def test_syswb101::functionproperty_constructor_args():
-    sig = inspect.signature(syswb101::FunctionProperty.__init__)
+def test_syswb101_function_constructor_args():
+    sig = inspect.signature(syswb101_Function.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_syswb101_functionproperty_is_not_abstract():
+    assert not inspect.isabstract(syswb101_FunctionProperty)
+
+
+def test_syswb101_functionproperty_constructor_exists():
+    assert callable(syswb101_FunctionProperty.__init__)
+
+
+def test_syswb101_functionproperty_constructor_args():
+    sig = inspect.signature(syswb101_FunctionProperty.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_syswb101::functionproperty_has_description():
-    assert hasattr(syswb101::FunctionProperty, "description")
+def test_syswb101_functionproperty_has_description():
+    assert hasattr(syswb101_FunctionProperty, "description")
     descriptor = None
-    for klass in syswb101::FunctionProperty.__mro__:
+    for klass in syswb101_FunctionProperty.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -227,51 +241,37 @@ def test_syswb101::functionproperty_has_description():
 
 
 
-def test_syswb101::system_is_not_abstract():
-    assert not inspect.isabstract(syswb101::System)
+def test_syswb101_component_is_not_abstract():
+    assert not inspect.isabstract(syswb101_Component)
 
 
-def test_syswb101::system_constructor_exists():
-    assert callable(syswb101::System.__init__)
+def test_syswb101_component_constructor_exists():
+    assert callable(syswb101_Component.__init__)
 
 
-def test_syswb101::system_constructor_args():
-    sig = inspect.signature(syswb101::System.__init__)
+def test_syswb101_component_constructor_args():
+    sig = inspect.signature(syswb101_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswb101::component_is_not_abstract():
-    assert not inspect.isabstract(syswb101::Component)
+def test_syswb101_workbench_is_not_abstract():
+    assert not inspect.isabstract(syswb101_Workbench)
 
 
-def test_syswb101::component_constructor_exists():
-    assert callable(syswb101::Component.__init__)
+def test_syswb101_workbench_constructor_exists():
+    assert callable(syswb101_Workbench.__init__)
 
 
-def test_syswb101::component_constructor_args():
-    sig = inspect.signature(syswb101::Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_syswb101::workbench_is_not_abstract():
-    assert not inspect.isabstract(syswb101::Workbench)
-
-
-def test_syswb101::workbench_constructor_exists():
-    assert callable(syswb101::Workbench.__init__)
-
-
-def test_syswb101::workbench_constructor_args():
-    sig = inspect.signature(syswb101::Workbench.__init__)
+def test_syswb101_workbench_constructor_args():
+    sig = inspect.signature(syswb101_Workbench.__init__)
     params = list(sig.parameters.keys())
     assert "aprop" in params, "Missing parameter 'aprop'"
 
-def test_syswb101::workbench_has_aprop():
-    assert hasattr(syswb101::Workbench, "aprop")
+def test_syswb101_workbench_has_aprop():
+    assert hasattr(syswb101_Workbench, "aprop")
     descriptor = None
-    for klass in syswb101::Workbench.__mro__:
+    for klass in syswb101_Workbench.__mro__:
         if "aprop" in klass.__dict__:
             descriptor = klass.__dict__["aprop"]
             break
@@ -289,72 +289,69 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-syswb101::NamedElement_strategy = st.builds(
-    syswb101::NamedElement,
+syswb101_NamedElement_strategy = st.builds(
+    syswb101_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-syswb101::RelatedTo_strategy = st.builds(
-    syswb101::RelatedTo,
+syswb101_RelatedTo_strategy = st.builds(
+    syswb101_RelatedTo,
     since=
         safe_text
 )
-syswb101::PatternCatalog_strategy = st.builds(
-    syswb101::PatternCatalog,
+syswb101_PatternCatalog_strategy = st.builds(
+    syswb101_PatternCatalog,
     id=
         safe_text
 )
-syswb101::Named_strategy = st.builds(
-    syswb101::Named,
+syswb101_Named_strategy = st.builds(
+    syswb101_Named,
     ident=
         safe_text
 )
-syswb101::Thoughts_strategy = st.builds(
-    syswb101::Thoughts,
+syswb101_Thoughts_strategy = st.builds(
+    syswb101_Thoughts,
 )
-syswb101::Thing_strategy = st.builds(
-    syswb101::Thing,
+syswb101_Thing_strategy = st.builds(
+    syswb101_Thing,
     id=
         st.integers()
 )
 Named_strategy = st.builds(
     Named,
 )
-syswb101::Function_strategy = st.builds(
-    syswb101::Function,
+syswb101_System_strategy = st.builds(
+    syswb101_System,
 )
-syswb101::FunctionProperty_strategy = st.builds(
-    syswb101::FunctionProperty,
+syswb101_Function_strategy = st.builds(
+    syswb101_Function,
+)
+syswb101_FunctionProperty_strategy = st.builds(
+    syswb101_FunctionProperty,
     description=
         safe_text
 )
-syswb101::System_strategy = st.builds(
-    syswb101::System,
+syswb101_Component_strategy = st.builds(
+    syswb101_Component,
 )
-syswb101::Component_strategy = st.builds(
-    syswb101::Component,
-)
-syswb101::Workbench_strategy = st.builds(
-    syswb101::Workbench,
+syswb101_Workbench_strategy = st.builds(
+    syswb101_Workbench,
     aprop=
         safe_text
 )
 
-@given(instance=syswb101::NamedElement_strategy)
+@given(instance=syswb101_NamedElement_strategy)
 @settings(max_examples=50)
-def test_syswb101::namedelement_instantiation(instance):
-    assert isinstance(instance, syswb101::NamedElement)
-
-@given(instance=syswb101::NamedElement_strategy)
-def test_syswb101::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_syswb101_namedelement_instantiation(instance):
+    assert isinstance(instance, syswb101_NamedElement)
 
 
-@given(instance=syswb101::NamedElement_strategy)
-def test_syswb101::namedelement_name_setter(instance):
+
+@given(instance=syswb101_NamedElement_strategy)
+def test_syswb101_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -364,71 +361,59 @@ def test_syswb101::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=syswb101::RelatedTo_strategy)
+@given(instance=syswb101_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_syswb101::relatedto_instantiation(instance):
-    assert isinstance(instance, syswb101::RelatedTo)
-
-@given(instance=syswb101::RelatedTo_strategy)
-def test_syswb101::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_syswb101_relatedto_instantiation(instance):
+    assert isinstance(instance, syswb101_RelatedTo)
 
 
-@given(instance=syswb101::RelatedTo_strategy)
-def test_syswb101::relatedto_since_setter(instance):
+
+@given(instance=syswb101_RelatedTo_strategy)
+def test_syswb101_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=syswb101::PatternCatalog_strategy)
+@given(instance=syswb101_PatternCatalog_strategy)
 @settings(max_examples=50)
-def test_syswb101::patterncatalog_instantiation(instance):
-    assert isinstance(instance, syswb101::PatternCatalog)
-
-@given(instance=syswb101::PatternCatalog_strategy)
-def test_syswb101::patterncatalog_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswb101_patterncatalog_instantiation(instance):
+    assert isinstance(instance, syswb101_PatternCatalog)
 
 
-@given(instance=syswb101::PatternCatalog_strategy)
-def test_syswb101::patterncatalog_id_setter(instance):
+
+@given(instance=syswb101_PatternCatalog_strategy)
+def test_syswb101_patterncatalog_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswb101::Named_strategy)
+@given(instance=syswb101_Named_strategy)
 @settings(max_examples=50)
-def test_syswb101::named_instantiation(instance):
-    assert isinstance(instance, syswb101::Named)
-
-@given(instance=syswb101::Named_strategy)
-def test_syswb101::named_ident_type(instance):
-    assert isinstance(instance.ident, str)
+def test_syswb101_named_instantiation(instance):
+    assert isinstance(instance, syswb101_Named)
 
 
-@given(instance=syswb101::Named_strategy)
-def test_syswb101::named_ident_setter(instance):
+
+@given(instance=syswb101_Named_strategy)
+def test_syswb101_named_ident_setter(instance):
     original = instance.ident
     instance.ident = original
     assert instance.ident == original
 
-@given(instance=syswb101::Thoughts_strategy)
+@given(instance=syswb101_Thoughts_strategy)
 @settings(max_examples=50)
-def test_syswb101::thoughts_instantiation(instance):
-    assert isinstance(instance, syswb101::Thoughts)
+def test_syswb101_thoughts_instantiation(instance):
+    assert isinstance(instance, syswb101_Thoughts)
 
-@given(instance=syswb101::Thing_strategy)
+@given(instance=syswb101_Thing_strategy)
 @settings(max_examples=50)
-def test_syswb101::thing_instantiation(instance):
-    assert isinstance(instance, syswb101::Thing)
-
-@given(instance=syswb101::Thing_strategy)
-def test_syswb101::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_syswb101_thing_instantiation(instance):
+    assert isinstance(instance, syswb101_Thing)
 
 
-@given(instance=syswb101::Thing_strategy)
-def test_syswb101::thing_id_setter(instance):
+
+@given(instance=syswb101_Thing_strategy)
+def test_syswb101_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -438,49 +423,43 @@ def test_syswb101::thing_id_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=syswb101::Function_strategy)
+@given(instance=syswb101_System_strategy)
 @settings(max_examples=50)
-def test_syswb101::function_instantiation(instance):
-    assert isinstance(instance, syswb101::Function)
+def test_syswb101_system_instantiation(instance):
+    assert isinstance(instance, syswb101_System)
 
-@given(instance=syswb101::FunctionProperty_strategy)
+@given(instance=syswb101_Function_strategy)
 @settings(max_examples=50)
-def test_syswb101::functionproperty_instantiation(instance):
-    assert isinstance(instance, syswb101::FunctionProperty)
+def test_syswb101_function_instantiation(instance):
+    assert isinstance(instance, syswb101_Function)
 
-@given(instance=syswb101::FunctionProperty_strategy)
-def test_syswb101::functionproperty_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=syswb101_FunctionProperty_strategy)
+@settings(max_examples=50)
+def test_syswb101_functionproperty_instantiation(instance):
+    assert isinstance(instance, syswb101_FunctionProperty)
 
 
-@given(instance=syswb101::FunctionProperty_strategy)
-def test_syswb101::functionproperty_description_setter(instance):
+
+@given(instance=syswb101_FunctionProperty_strategy)
+def test_syswb101_functionproperty_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=syswb101::System_strategy)
+@given(instance=syswb101_Component_strategy)
 @settings(max_examples=50)
-def test_syswb101::system_instantiation(instance):
-    assert isinstance(instance, syswb101::System)
+def test_syswb101_component_instantiation(instance):
+    assert isinstance(instance, syswb101_Component)
 
-@given(instance=syswb101::Component_strategy)
+@given(instance=syswb101_Workbench_strategy)
 @settings(max_examples=50)
-def test_syswb101::component_instantiation(instance):
-    assert isinstance(instance, syswb101::Component)
-
-@given(instance=syswb101::Workbench_strategy)
-@settings(max_examples=50)
-def test_syswb101::workbench_instantiation(instance):
-    assert isinstance(instance, syswb101::Workbench)
-
-@given(instance=syswb101::Workbench_strategy)
-def test_syswb101::workbench_aprop_type(instance):
-    assert isinstance(instance.aprop, str)
+def test_syswb101_workbench_instantiation(instance):
+    assert isinstance(instance, syswb101_Workbench)
 
 
-@given(instance=syswb101::Workbench_strategy)
-def test_syswb101::workbench_aprop_setter(instance):
+
+@given(instance=syswb101_Workbench_strategy)
+def test_syswb101_workbench_aprop_setter(instance):
     original = instance.aprop
     instance.aprop = original
     assert instance.aprop == original

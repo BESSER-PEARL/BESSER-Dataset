@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsm::NamedElement,
+from python_code import (
+    fsm_NamedElement,
     State,
-    fsm::FinalState,
+    fsm_FinalState,
     Pseudostate,
-    fsm::InitialState,
-    fsm::Constraint,
+    fsm_InitialState,
+    fsm_Constraint,
     NamedElement,
-    fsm::Transition,
-    fsm::AbstractState,
-    fsm::Region,
-    fsm::StateMachine,
-    fsm::Trigger,
+    fsm_Transition,
+    fsm_Region,
+    fsm_AbstractState,
+    fsm_StateMachine,
+    fsm_Trigger,
     AbstractState,
-    fsm::Pseudostate,
-    fsm::State,
+    fsm_Pseudostate,
+    fsm_State,
 )
 
 # =============================================================================
@@ -29,23 +29,23 @@ from classes import (
 
 
 
-def test_fsm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(fsm::NamedElement)
+def test_fsm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(fsm_NamedElement)
 
 
-def test_fsm::namedelement_constructor_exists():
-    assert callable(fsm::NamedElement.__init__)
+def test_fsm_namedelement_constructor_exists():
+    assert callable(fsm_NamedElement.__init__)
 
 
-def test_fsm::namedelement_constructor_args():
-    sig = inspect.signature(fsm::NamedElement.__init__)
+def test_fsm_namedelement_constructor_args():
+    sig = inspect.signature(fsm_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::namedelement_has_name():
-    assert hasattr(fsm::NamedElement, "name")
+def test_fsm_namedelement_has_name():
+    assert hasattr(fsm_NamedElement, "name")
     descriptor = None
-    for klass in fsm::NamedElement.__mro__:
+    for klass in fsm_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -67,16 +67,16 @@ def test_state_constructor_args():
 
 
 
-def test_fsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(fsm::FinalState)
+def test_fsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(fsm_FinalState)
 
 
-def test_fsm::finalstate_constructor_exists():
-    assert callable(fsm::FinalState.__init__)
+def test_fsm_finalstate_constructor_exists():
+    assert callable(fsm_FinalState.__init__)
 
 
-def test_fsm::finalstate_constructor_args():
-    sig = inspect.signature(fsm::FinalState.__init__)
+def test_fsm_finalstate_constructor_args():
+    sig = inspect.signature(fsm_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -95,30 +95,30 @@ def test_pseudostate_constructor_args():
 
 
 
-def test_fsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(fsm::InitialState)
+def test_fsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(fsm_InitialState)
 
 
-def test_fsm::initialstate_constructor_exists():
-    assert callable(fsm::InitialState.__init__)
+def test_fsm_initialstate_constructor_exists():
+    assert callable(fsm_InitialState.__init__)
 
 
-def test_fsm::initialstate_constructor_args():
-    sig = inspect.signature(fsm::InitialState.__init__)
+def test_fsm_initialstate_constructor_args():
+    sig = inspect.signature(fsm_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::constraint_is_not_abstract():
-    assert not inspect.isabstract(fsm::Constraint)
+def test_fsm_constraint_is_not_abstract():
+    assert not inspect.isabstract(fsm_Constraint)
 
 
-def test_fsm::constraint_constructor_exists():
-    assert callable(fsm::Constraint.__init__)
+def test_fsm_constraint_constructor_exists():
+    assert callable(fsm_Constraint.__init__)
 
 
-def test_fsm::constraint_constructor_args():
-    sig = inspect.signature(fsm::Constraint.__init__)
+def test_fsm_constraint_constructor_args():
+    sig = inspect.signature(fsm_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,79 +137,79 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(fsm::AbstractState)
+def test_fsm_region_is_not_abstract():
+    assert not inspect.isabstract(fsm_Region)
 
 
-def test_fsm::abstractstate_constructor_exists():
-    assert callable(fsm::AbstractState.__init__)
+def test_fsm_region_constructor_exists():
+    assert callable(fsm_Region.__init__)
 
 
-def test_fsm::abstractstate_constructor_args():
-    sig = inspect.signature(fsm::AbstractState.__init__)
+def test_fsm_region_constructor_args():
+    sig = inspect.signature(fsm_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::region_is_not_abstract():
-    assert not inspect.isabstract(fsm::Region)
+def test_fsm_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(fsm_AbstractState)
 
 
-def test_fsm::region_constructor_exists():
-    assert callable(fsm::Region.__init__)
+def test_fsm_abstractstate_constructor_exists():
+    assert callable(fsm_AbstractState.__init__)
 
 
-def test_fsm::region_constructor_args():
-    sig = inspect.signature(fsm::Region.__init__)
+def test_fsm_abstractstate_constructor_args():
+    sig = inspect.signature(fsm_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(fsm::StateMachine)
+def test_fsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(fsm_StateMachine)
 
 
-def test_fsm::statemachine_constructor_exists():
-    assert callable(fsm::StateMachine.__init__)
+def test_fsm_statemachine_constructor_exists():
+    assert callable(fsm_StateMachine.__init__)
 
 
-def test_fsm::statemachine_constructor_args():
-    sig = inspect.signature(fsm::StateMachine.__init__)
+def test_fsm_statemachine_constructor_args():
+    sig = inspect.signature(fsm_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::trigger_is_not_abstract():
-    assert not inspect.isabstract(fsm::Trigger)
+def test_fsm_trigger_is_not_abstract():
+    assert not inspect.isabstract(fsm_Trigger)
 
 
-def test_fsm::trigger_constructor_exists():
-    assert callable(fsm::Trigger.__init__)
+def test_fsm_trigger_constructor_exists():
+    assert callable(fsm_Trigger.__init__)
 
 
-def test_fsm::trigger_constructor_args():
-    sig = inspect.signature(fsm::Trigger.__init__)
+def test_fsm_trigger_constructor_args():
+    sig = inspect.signature(fsm_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_fsm::trigger_has_expression():
-    assert hasattr(fsm::Trigger, "expression")
+def test_fsm_trigger_has_expression():
+    assert hasattr(fsm_Trigger, "expression")
     descriptor = None
-    for klass in fsm::Trigger.__mro__:
+    for klass in fsm_Trigger.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -231,30 +231,30 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_fsm::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(fsm::Pseudostate)
+def test_fsm_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(fsm_Pseudostate)
 
 
-def test_fsm::pseudostate_constructor_exists():
-    assert callable(fsm::Pseudostate.__init__)
+def test_fsm_pseudostate_constructor_exists():
+    assert callable(fsm_Pseudostate.__init__)
 
 
-def test_fsm::pseudostate_constructor_args():
-    sig = inspect.signature(fsm::Pseudostate.__init__)
+def test_fsm_pseudostate_constructor_args():
+    sig = inspect.signature(fsm_Pseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -269,68 +269,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsm::NamedElement_strategy = st.builds(
-    fsm::NamedElement,
+fsm_NamedElement_strategy = st.builds(
+    fsm_NamedElement,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-fsm::FinalState_strategy = st.builds(
-    fsm::FinalState,
+fsm_FinalState_strategy = st.builds(
+    fsm_FinalState,
 )
 Pseudostate_strategy = st.builds(
     Pseudostate,
 )
-fsm::InitialState_strategy = st.builds(
-    fsm::InitialState,
+fsm_InitialState_strategy = st.builds(
+    fsm_InitialState,
 )
-fsm::Constraint_strategy = st.builds(
-    fsm::Constraint,
+fsm_Constraint_strategy = st.builds(
+    fsm_Constraint,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
 )
-fsm::AbstractState_strategy = st.builds(
-    fsm::AbstractState,
+fsm_Region_strategy = st.builds(
+    fsm_Region,
 )
-fsm::Region_strategy = st.builds(
-    fsm::Region,
+fsm_AbstractState_strategy = st.builds(
+    fsm_AbstractState,
 )
-fsm::StateMachine_strategy = st.builds(
-    fsm::StateMachine,
+fsm_StateMachine_strategy = st.builds(
+    fsm_StateMachine,
 )
-fsm::Trigger_strategy = st.builds(
-    fsm::Trigger,
+fsm_Trigger_strategy = st.builds(
+    fsm_Trigger,
     expression=
         safe_text
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-fsm::Pseudostate_strategy = st.builds(
-    fsm::Pseudostate,
+fsm_Pseudostate_strategy = st.builds(
+    fsm_Pseudostate,
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
+fsm_State_strategy = st.builds(
+    fsm_State,
 )
 
-@given(instance=fsm::NamedElement_strategy)
+@given(instance=fsm_NamedElement_strategy)
 @settings(max_examples=50)
-def test_fsm::namedelement_instantiation(instance):
-    assert isinstance(instance, fsm::NamedElement)
-
-@given(instance=fsm::NamedElement_strategy)
-def test_fsm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_namedelement_instantiation(instance):
+    assert isinstance(instance, fsm_NamedElement)
 
 
-@given(instance=fsm::NamedElement_strategy)
-def test_fsm::namedelement_name_setter(instance):
+
+@given(instance=fsm_NamedElement_strategy)
+def test_fsm_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -340,25 +337,25 @@ def test_fsm::namedelement_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=fsm::FinalState_strategy)
+@given(instance=fsm_FinalState_strategy)
 @settings(max_examples=50)
-def test_fsm::finalstate_instantiation(instance):
-    assert isinstance(instance, fsm::FinalState)
+def test_fsm_finalstate_instantiation(instance):
+    assert isinstance(instance, fsm_FinalState)
 
 @given(instance=Pseudostate_strategy)
 @settings(max_examples=50)
 def test_pseudostate_instantiation(instance):
     assert isinstance(instance, Pseudostate)
 
-@given(instance=fsm::InitialState_strategy)
+@given(instance=fsm_InitialState_strategy)
 @settings(max_examples=50)
-def test_fsm::initialstate_instantiation(instance):
-    assert isinstance(instance, fsm::InitialState)
+def test_fsm_initialstate_instantiation(instance):
+    assert isinstance(instance, fsm_InitialState)
 
-@given(instance=fsm::Constraint_strategy)
+@given(instance=fsm_Constraint_strategy)
 @settings(max_examples=50)
-def test_fsm::constraint_instantiation(instance):
-    assert isinstance(instance, fsm::Constraint)
+def test_fsm_constraint_instantiation(instance):
+    assert isinstance(instance, fsm_Constraint)
 
 import warnings
 import copy
@@ -366,9 +363,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::Constraint_strategy)
+@given(instance=fsm_Constraint_strategy)
 @settings(max_examples=30)
-def test_fsm::constraint_eval_changes_state(instance):
+def test_fsm_constraint_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -382,52 +379,49 @@ def test_fsm::constraint_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in fsm::Constraint is empty"
+        assert has_statements, f"Function 'eval' in fsm_Constraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in fsm::Constraint did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in fsm_Constraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in fsm::Constraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in fsm_Constraint is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
-@given(instance=fsm::AbstractState_strategy)
+@given(instance=fsm_Region_strategy)
 @settings(max_examples=50)
-def test_fsm::abstractstate_instantiation(instance):
-    assert isinstance(instance, fsm::AbstractState)
+def test_fsm_region_instantiation(instance):
+    assert isinstance(instance, fsm_Region)
 
-@given(instance=fsm::Region_strategy)
+@given(instance=fsm_AbstractState_strategy)
 @settings(max_examples=50)
-def test_fsm::region_instantiation(instance):
-    assert isinstance(instance, fsm::Region)
+def test_fsm_abstractstate_instantiation(instance):
+    assert isinstance(instance, fsm_AbstractState)
 
-@given(instance=fsm::StateMachine_strategy)
+@given(instance=fsm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_fsm::statemachine_instantiation(instance):
-    assert isinstance(instance, fsm::StateMachine)
+def test_fsm_statemachine_instantiation(instance):
+    assert isinstance(instance, fsm_StateMachine)
 
-@given(instance=fsm::Trigger_strategy)
+@given(instance=fsm_Trigger_strategy)
 @settings(max_examples=50)
-def test_fsm::trigger_instantiation(instance):
-    assert isinstance(instance, fsm::Trigger)
-
-@given(instance=fsm::Trigger_strategy)
-def test_fsm::trigger_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_fsm_trigger_instantiation(instance):
+    assert isinstance(instance, fsm_Trigger)
 
 
-@given(instance=fsm::Trigger_strategy)
-def test_fsm::trigger_expression_setter(instance):
+
+@given(instance=fsm_Trigger_strategy)
+def test_fsm_trigger_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -437,12 +431,12 @@ def test_fsm::trigger_expression_setter(instance):
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=fsm::Pseudostate_strategy)
+@given(instance=fsm_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_fsm::pseudostate_instantiation(instance):
-    assert isinstance(instance, fsm::Pseudostate)
+def test_fsm_pseudostate_instantiation(instance):
+    assert isinstance(instance, fsm_Pseudostate)
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)

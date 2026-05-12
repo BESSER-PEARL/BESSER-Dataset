@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     AuthenticationService,
@@ -37,22 +37,13 @@ def test_authenticationservice_constructor_exists():
 def test_authenticationservice_constructor_args():
     sig = inspect.signature(AuthenticationService.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "authState" in params, "Missing parameter 'authState'"
     assert "role" in params, "Missing parameter 'role'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "user" in params, "Missing parameter 'user'"
     assert "attribute4" in params, "Missing parameter 'attribute4'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_authenticationservice_has_attribute3():
-    assert hasattr(AuthenticationService, "attribute3")
-    descriptor = None
-    for klass in AuthenticationService.__mro__:
-        if "attribute3" in klass.__dict__:
-            descriptor = klass.__dict__["attribute3"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_authenticationservice_has_authState():
     assert hasattr(AuthenticationService, "authState")
@@ -81,6 +72,24 @@ def test_authenticationservice_has_attribute2():
             break
     assert isinstance(descriptor, property)
 
+def test_authenticationservice_has_attribute3():
+    assert hasattr(AuthenticationService, "attribute3")
+    descriptor = None
+    for klass in AuthenticationService.__mro__:
+        if "attribute3" in klass.__dict__:
+            descriptor = klass.__dict__["attribute3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_authenticationservice_has_attribute():
+    assert hasattr(AuthenticationService, "attribute")
+    descriptor = None
+    for klass in AuthenticationService.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_authenticationservice_has_user():
     assert hasattr(AuthenticationService, "user")
     descriptor = None
@@ -99,15 +108,6 @@ def test_authenticationservice_has_attribute4():
             break
     assert isinstance(descriptor, property)
 
-def test_authenticationservice_has_attribute():
-    assert hasattr(AuthenticationService, "attribute")
-    descriptor = None
-    for klass in AuthenticationService.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_speechrecognitionservice_is_not_abstract():
@@ -121,18 +121,9 @@ def test_speechrecognitionservice_constructor_exists():
 def test_speechrecognitionservice_constructor_args():
     sig = inspect.signature(SpeechRecognitionService.__init__)
     params = list(sig.parameters.keys())
-    assert "_attr" in params, "Missing parameter '_attr'"
     assert "grabando" in params, "Missing parameter 'grabando'"
+    assert "_attr" in params, "Missing parameter '_attr'"
     assert "speechRecognition" in params, "Missing parameter 'speechRecognition'"
-
-def test_speechrecognitionservice_has__attr():
-    assert hasattr(SpeechRecognitionService, "_attr")
-    descriptor = None
-    for klass in SpeechRecognitionService.__mro__:
-        if "_attr" in klass.__dict__:
-            descriptor = klass.__dict__["_attr"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_speechrecognitionservice_has_grabando():
     assert hasattr(SpeechRecognitionService, "grabando")
@@ -140,6 +131,15 @@ def test_speechrecognitionservice_has_grabando():
     for klass in SpeechRecognitionService.__mro__:
         if "grabando" in klass.__dict__:
             descriptor = klass.__dict__["grabando"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_speechrecognitionservice_has__attr():
+    assert hasattr(SpeechRecognitionService, "_attr")
+    descriptor = None
+    for klass in SpeechRecognitionService.__mro__:
+        if "_attr" in klass.__dict__:
+            descriptor = klass.__dict__["_attr"]
             break
     assert isinstance(descriptor, property)
 
@@ -165,17 +165,17 @@ def test_roomservice_constructor_exists():
 def test_roomservice_constructor_args():
     sig = inspect.signature(RoomService.__init__)
     params = list(sig.parameters.keys())
-    assert "itemsCollection" in params, "Missing parameter 'itemsCollection'"
-    assert "idiomas" in params, "Missing parameter 'idiomas'"
     assert "niveles" in params, "Missing parameter 'niveles'"
+    assert "idiomas" in params, "Missing parameter 'idiomas'"
+    assert "itemsCollection" in params, "Missing parameter 'itemsCollection'"
     assert "roomsCollection" in params, "Missing parameter 'roomsCollection'"
 
-def test_roomservice_has_itemsCollection():
-    assert hasattr(RoomService, "itemsCollection")
+def test_roomservice_has_niveles():
+    assert hasattr(RoomService, "niveles")
     descriptor = None
     for klass in RoomService.__mro__:
-        if "itemsCollection" in klass.__dict__:
-            descriptor = klass.__dict__["itemsCollection"]
+        if "niveles" in klass.__dict__:
+            descriptor = klass.__dict__["niveles"]
             break
     assert isinstance(descriptor, property)
 
@@ -188,12 +188,12 @@ def test_roomservice_has_idiomas():
             break
     assert isinstance(descriptor, property)
 
-def test_roomservice_has_niveles():
-    assert hasattr(RoomService, "niveles")
+def test_roomservice_has_itemsCollection():
+    assert hasattr(RoomService, "itemsCollection")
     descriptor = None
     for klass in RoomService.__mro__:
-        if "niveles" in klass.__dict__:
-            descriptor = klass.__dict__["niveles"]
+        if "itemsCollection" in klass.__dict__:
+            descriptor = klass.__dict__["itemsCollection"]
             break
     assert isinstance(descriptor, property)
 
@@ -219,12 +219,21 @@ def test_chatservice_constructor_exists():
 def test_chatservice_constructor_args():
     sig = inspect.signature(ChatService.__init__)
     params = list(sig.parameters.keys())
+    assert "usuario" in params, "Missing parameter 'usuario'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
-    assert "salasCollection" in params, "Missing parameter 'salasCollection'"
     assert "itemsCollection" in params, "Missing parameter 'itemsCollection'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "usuario" in params, "Missing parameter 'usuario'"
+    assert "salasCollection" in params, "Missing parameter 'salasCollection'"
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
+
+def test_chatservice_has_usuario():
+    assert hasattr(ChatService, "usuario")
+    descriptor = None
+    for klass in ChatService.__mro__:
+        if "usuario" in klass.__dict__:
+            descriptor = klass.__dict__["usuario"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_chatservice_has_attribute2():
     assert hasattr(ChatService, "attribute2")
@@ -232,24 +241,6 @@ def test_chatservice_has_attribute2():
     for klass in ChatService.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_chatservice_has_attribute3():
-    assert hasattr(ChatService, "attribute3")
-    descriptor = None
-    for klass in ChatService.__mro__:
-        if "attribute3" in klass.__dict__:
-            descriptor = klass.__dict__["attribute3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_chatservice_has_salasCollection():
-    assert hasattr(ChatService, "salasCollection")
-    descriptor = None
-    for klass in ChatService.__mro__:
-        if "salasCollection" in klass.__dict__:
-            descriptor = klass.__dict__["salasCollection"]
             break
     assert isinstance(descriptor, property)
 
@@ -271,12 +262,21 @@ def test_chatservice_has_attribute():
             break
     assert isinstance(descriptor, property)
 
-def test_chatservice_has_usuario():
-    assert hasattr(ChatService, "usuario")
+def test_chatservice_has_salasCollection():
+    assert hasattr(ChatService, "salasCollection")
     descriptor = None
     for klass in ChatService.__mro__:
-        if "usuario" in klass.__dict__:
-            descriptor = klass.__dict__["usuario"]
+        if "salasCollection" in klass.__dict__:
+            descriptor = klass.__dict__["salasCollection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_chatservice_has_attribute3():
+    assert hasattr(ChatService, "attribute3")
+    descriptor = None
+    for klass in ChatService.__mro__:
+        if "attribute3" in klass.__dict__:
+            descriptor = klass.__dict__["attribute3"]
             break
     assert isinstance(descriptor, property)
 
@@ -335,18 +335,9 @@ def test_role_constructor_exists():
 def test_role_constructor_args():
     sig = inspect.signature(Role.__init__)
     params = list(sig.parameters.keys())
-    assert "descripcion" in params, "Missing parameter 'descripcion'"
     assert "nombre" in params, "Missing parameter 'nombre'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_role_has_descripcion():
-    assert hasattr(Role, "descripcion")
-    descriptor = None
-    for klass in Role.__mro__:
-        if "descripcion" in klass.__dict__:
-            descriptor = klass.__dict__["descripcion"]
-            break
-    assert isinstance(descriptor, property)
+    assert "descripcion" in params, "Missing parameter 'descripcion'"
 
 def test_role_has_nombre():
     assert hasattr(Role, "nombre")
@@ -366,6 +357,15 @@ def test_role_has_Name():
             break
     assert isinstance(descriptor, property)
 
+def test_role_has_descripcion():
+    assert hasattr(Role, "descripcion")
+    descriptor = None
+    for klass in Role.__mro__:
+        if "descripcion" in klass.__dict__:
+            descriptor = klass.__dict__["descripcion"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_attachment_is_not_abstract():
@@ -379,23 +379,14 @@ def test_attachment_constructor_exists():
 def test_attachment_constructor_args():
     sig = inspect.signature(Attachment.__init__)
     params = list(sig.parameters.keys())
-    assert "Project" in params, "Missing parameter 'Project'"
     assert "Path" in params, "Missing parameter 'Path'"
-    assert "Created" in params, "Missing parameter 'Created'"
-    assert "Size" in params, "Missing parameter 'Size'"
+    assert "Extension" in params, "Missing parameter 'Extension'"
     assert "User" in params, "Missing parameter 'User'"
+    assert "Size" in params, "Missing parameter 'Size'"
     assert "AttachmentID" in params, "Missing parameter 'AttachmentID'"
     assert "Name" in params, "Missing parameter 'Name'"
-    assert "Extension" in params, "Missing parameter 'Extension'"
-
-def test_attachment_has_Project():
-    assert hasattr(Attachment, "Project")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Project" in klass.__dict__:
-            descriptor = klass.__dict__["Project"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Project" in params, "Missing parameter 'Project'"
+    assert "Created" in params, "Missing parameter 'Created'"
 
 def test_attachment_has_Path():
     assert hasattr(Attachment, "Path")
@@ -406,21 +397,12 @@ def test_attachment_has_Path():
             break
     assert isinstance(descriptor, property)
 
-def test_attachment_has_Created():
-    assert hasattr(Attachment, "Created")
+def test_attachment_has_Extension():
+    assert hasattr(Attachment, "Extension")
     descriptor = None
     for klass in Attachment.__mro__:
-        if "Created" in klass.__dict__:
-            descriptor = klass.__dict__["Created"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attachment_has_Size():
-    assert hasattr(Attachment, "Size")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Size" in klass.__dict__:
-            descriptor = klass.__dict__["Size"]
+        if "Extension" in klass.__dict__:
+            descriptor = klass.__dict__["Extension"]
             break
     assert isinstance(descriptor, property)
 
@@ -430,6 +412,15 @@ def test_attachment_has_User():
     for klass in Attachment.__mro__:
         if "User" in klass.__dict__:
             descriptor = klass.__dict__["User"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_Size():
+    assert hasattr(Attachment, "Size")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Size" in klass.__dict__:
+            descriptor = klass.__dict__["Size"]
             break
     assert isinstance(descriptor, property)
 
@@ -451,12 +442,21 @@ def test_attachment_has_Name():
             break
     assert isinstance(descriptor, property)
 
-def test_attachment_has_Extension():
-    assert hasattr(Attachment, "Extension")
+def test_attachment_has_Project():
+    assert hasattr(Attachment, "Project")
     descriptor = None
     for klass in Attachment.__mro__:
-        if "Extension" in klass.__dict__:
-            descriptor = klass.__dict__["Extension"]
+        if "Project" in klass.__dict__:
+            descriptor = klass.__dict__["Project"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_Created():
+    assert hasattr(Attachment, "Created")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Created" in klass.__dict__:
+            descriptor = klass.__dict__["Created"]
             break
     assert isinstance(descriptor, property)
 
@@ -475,9 +475,9 @@ def test_comment_constructor_args():
     params = list(sig.parameters.keys())
     assert "Content" in params, "Missing parameter 'Content'"
     assert "Created" in params, "Missing parameter 'Created'"
-    assert "CommentID" in params, "Missing parameter 'CommentID'"
-    assert "Project" in params, "Missing parameter 'Project'"
     assert "User" in params, "Missing parameter 'User'"
+    assert "Project" in params, "Missing parameter 'Project'"
+    assert "CommentID" in params, "Missing parameter 'CommentID'"
 
 def test_comment_has_Content():
     assert hasattr(Comment, "Content")
@@ -497,12 +497,12 @@ def test_comment_has_Created():
             break
     assert isinstance(descriptor, property)
 
-def test_comment_has_CommentID():
-    assert hasattr(Comment, "CommentID")
+def test_comment_has_User():
+    assert hasattr(Comment, "User")
     descriptor = None
     for klass in Comment.__mro__:
-        if "CommentID" in klass.__dict__:
-            descriptor = klass.__dict__["CommentID"]
+        if "User" in klass.__dict__:
+            descriptor = klass.__dict__["User"]
             break
     assert isinstance(descriptor, property)
 
@@ -515,12 +515,12 @@ def test_comment_has_Project():
             break
     assert isinstance(descriptor, property)
 
-def test_comment_has_User():
-    assert hasattr(Comment, "User")
+def test_comment_has_CommentID():
+    assert hasattr(Comment, "CommentID")
     descriptor = None
     for klass in Comment.__mro__:
-        if "User" in klass.__dict__:
-            descriptor = klass.__dict__["User"]
+        if "CommentID" in klass.__dict__:
+            descriptor = klass.__dict__["CommentID"]
             break
     assert isinstance(descriptor, property)
 
@@ -537,21 +537,21 @@ def test_activity_constructor_exists():
 def test_activity_constructor_args():
     sig = inspect.signature(Activity.__init__)
     params = list(sig.parameters.keys())
-    assert "ActivityType" in params, "Missing parameter 'ActivityType'"
-    assert "User" in params, "Missing parameter 'User'"
-    assert "Seen" in params, "Missing parameter 'Seen'"
-    assert "ActivitySubType" in params, "Missing parameter 'ActivitySubType'"
-    assert "PrevValue" in params, "Missing parameter 'PrevValue'"
-    assert "NewValue" in params, "Missing parameter 'NewValue'"
     assert "Project" in params, "Missing parameter 'Project'"
+    assert "User" in params, "Missing parameter 'User'"
+    assert "NewValue" in params, "Missing parameter 'NewValue'"
+    assert "ActivityType" in params, "Missing parameter 'ActivityType'"
+    assert "PrevValue" in params, "Missing parameter 'PrevValue'"
+    assert "ActivitySubType" in params, "Missing parameter 'ActivitySubType'"
+    assert "Seen" in params, "Missing parameter 'Seen'"
     assert "ActivityID" in params, "Missing parameter 'ActivityID'"
 
-def test_activity_has_ActivityType():
-    assert hasattr(Activity, "ActivityType")
+def test_activity_has_Project():
+    assert hasattr(Activity, "Project")
     descriptor = None
     for klass in Activity.__mro__:
-        if "ActivityType" in klass.__dict__:
-            descriptor = klass.__dict__["ActivityType"]
+        if "Project" in klass.__dict__:
+            descriptor = klass.__dict__["Project"]
             break
     assert isinstance(descriptor, property)
 
@@ -564,21 +564,21 @@ def test_activity_has_User():
             break
     assert isinstance(descriptor, property)
 
-def test_activity_has_Seen():
-    assert hasattr(Activity, "Seen")
+def test_activity_has_NewValue():
+    assert hasattr(Activity, "NewValue")
     descriptor = None
     for klass in Activity.__mro__:
-        if "Seen" in klass.__dict__:
-            descriptor = klass.__dict__["Seen"]
+        if "NewValue" in klass.__dict__:
+            descriptor = klass.__dict__["NewValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_activity_has_ActivitySubType():
-    assert hasattr(Activity, "ActivitySubType")
+def test_activity_has_ActivityType():
+    assert hasattr(Activity, "ActivityType")
     descriptor = None
     for klass in Activity.__mro__:
-        if "ActivitySubType" in klass.__dict__:
-            descriptor = klass.__dict__["ActivitySubType"]
+        if "ActivityType" in klass.__dict__:
+            descriptor = klass.__dict__["ActivityType"]
             break
     assert isinstance(descriptor, property)
 
@@ -591,21 +591,21 @@ def test_activity_has_PrevValue():
             break
     assert isinstance(descriptor, property)
 
-def test_activity_has_NewValue():
-    assert hasattr(Activity, "NewValue")
+def test_activity_has_ActivitySubType():
+    assert hasattr(Activity, "ActivitySubType")
     descriptor = None
     for klass in Activity.__mro__:
-        if "NewValue" in klass.__dict__:
-            descriptor = klass.__dict__["NewValue"]
+        if "ActivitySubType" in klass.__dict__:
+            descriptor = klass.__dict__["ActivitySubType"]
             break
     assert isinstance(descriptor, property)
 
-def test_activity_has_Project():
-    assert hasattr(Activity, "Project")
+def test_activity_has_Seen():
+    assert hasattr(Activity, "Seen")
     descriptor = None
     for klass in Activity.__mro__:
-        if "Project" in klass.__dict__:
-            descriptor = klass.__dict__["Project"]
+        if "Seen" in klass.__dict__:
+            descriptor = klass.__dict__["Seen"]
             break
     assert isinstance(descriptor, property)
 
@@ -645,55 +645,55 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 AuthenticationService_strategy = st.builds(
     AuthenticationService,
-    attribute3=
-        safe_text,
     authState=
         safe_text,
     role=
         st.none(),
     attribute2=
         safe_text,
+    attribute3=
+        safe_text,
+    attribute=
+        safe_text,
     user=
         safe_text,
     attribute4=
-        safe_text,
-    attribute=
         safe_text
 )
 SpeechRecognitionService_strategy = st.builds(
     SpeechRecognitionService,
-    _attr=
-        safe_text,
     grabando=
         st.booleans(),
+    _attr=
+        safe_text,
     speechRecognition=
         safe_text
 )
 RoomService_strategy = st.builds(
     RoomService,
-    itemsCollection=
+    niveles=
         safe_text,
     idiomas=
         safe_text,
-    niveles=
+    itemsCollection=
         safe_text,
     roomsCollection=
         safe_text
 )
 ChatService_strategy = st.builds(
     ChatService,
+    usuario=
+        st.none(),
     attribute2=
-        safe_text,
-    attribute3=
-        safe_text,
-    salasCollection=
         safe_text,
     itemsCollection=
         safe_text,
     attribute=
         safe_text,
-    usuario=
-        st.none()
+    salasCollection=
+        safe_text,
+    attribute3=
+        safe_text
 )
 Room_Interface_strategy = st.builds(
     Room_Interface,
@@ -706,30 +706,30 @@ Usuario_Interface_strategy = st.builds(
 )
 Role_strategy = st.builds(
     Role,
-    descripcion=
-        safe_text,
     nombre=
         st.none(),
     Name=
-        st.none()
+        st.none(),
+    descripcion=
+        safe_text
 )
 Attachment_strategy = st.builds(
     Attachment,
-    Project=
-        safe_text,
     Path=
         safe_text,
-    Created=
-        safe_text,
-    Size=
+    Extension=
         safe_text,
     User=
+        safe_text,
+    Size=
         safe_text,
     AttachmentID=
         st.integers(),
     Name=
         safe_text,
-    Extension=
+    Project=
+        safe_text,
+    Created=
         safe_text
 )
 Comment_strategy = st.builds(
@@ -738,29 +738,29 @@ Comment_strategy = st.builds(
         safe_text,
     Created=
         safe_text,
-    CommentID=
-        st.integers(),
+    User=
+        safe_text,
     Project=
         safe_text,
-    User=
-        safe_text
+    CommentID=
+        st.integers()
 )
 Activity_strategy = st.builds(
     Activity,
-    ActivityType=
-        st.integers(),
-    User=
+    Project=
         safe_text,
-    Seen=
-        st.booleans(),
-    ActivitySubType=
-        st.integers(),
-    PrevValue=
+    User=
         safe_text,
     NewValue=
         safe_text,
-    Project=
+    ActivityType=
+        st.integers(),
+    PrevValue=
         safe_text,
+    ActivitySubType=
+        st.integers(),
+    Seen=
+        st.booleans(),
     ActivityID=
         st.integers()
 )
@@ -770,20 +770,6 @@ Activity_strategy = st.builds(
 def test_authenticationservice_instantiation(instance):
     assert isinstance(instance, AuthenticationService)
 
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_authState_type(instance):
-    assert isinstance(instance.authState, str)
 
 
 @given(instance=AuthenticationService_strategy)
@@ -792,9 +778,6 @@ def test_authenticationservice_authState_setter(instance):
     instance.authState = original
     assert instance.authState == original
 
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_role_type(instance):
-    assert isinstance(instance.role, string)
 
 
 @given(instance=AuthenticationService_strategy)
@@ -803,9 +786,6 @@ def test_authenticationservice_role_setter(instance):
     instance.role = original
     assert instance.role == original
 
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=AuthenticationService_strategy)
@@ -814,31 +794,14 @@ def test_authenticationservice_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_user_type(instance):
-    assert isinstance(instance.user, str)
 
 
 @given(instance=AuthenticationService_strategy)
-def test_authenticationservice_user_setter(instance):
-    original = instance.user
-    instance.user = original
-    assert instance.user == original
+def test_authenticationservice_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
 
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_attribute4_type(instance):
-    assert isinstance(instance.attribute4, str)
-
-
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_attribute4_setter(instance):
-    original = instance.attribute4
-    instance.attribute4 = original
-    assert instance.attribute4 == original
-
-@given(instance=AuthenticationService_strategy)
-def test_authenticationservice_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=AuthenticationService_strategy)
@@ -847,25 +810,27 @@ def test_authenticationservice_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=AuthenticationService_strategy)
+def test_authenticationservice_user_setter(instance):
+    original = instance.user
+    instance.user = original
+    assert instance.user == original
+
+
+
+@given(instance=AuthenticationService_strategy)
+def test_authenticationservice_attribute4_setter(instance):
+    original = instance.attribute4
+    instance.attribute4 = original
+    assert instance.attribute4 == original
+
 @given(instance=SpeechRecognitionService_strategy)
 @settings(max_examples=50)
 def test_speechrecognitionservice_instantiation(instance):
     assert isinstance(instance, SpeechRecognitionService)
 
-@given(instance=SpeechRecognitionService_strategy)
-def test_speechrecognitionservice__attr_type(instance):
-    assert isinstance(instance._attr, str)
-
-
-@given(instance=SpeechRecognitionService_strategy)
-def test_speechrecognitionservice__attr_setter(instance):
-    original = instance._attr
-    instance._attr = original
-    assert instance._attr == original
-
-@given(instance=SpeechRecognitionService_strategy)
-def test_speechrecognitionservice_grabando_type(instance):
-    assert isinstance(instance.grabando, bool)
 
 
 @given(instance=SpeechRecognitionService_strategy)
@@ -874,9 +839,14 @@ def test_speechrecognitionservice_grabando_setter(instance):
     instance.grabando = original
     assert instance.grabando == original
 
+
+
 @given(instance=SpeechRecognitionService_strategy)
-def test_speechrecognitionservice_speechRecognition_type(instance):
-    assert isinstance(instance.speechRecognition, str)
+def test_speechrecognitionservice__attr_setter(instance):
+    original = instance._attr
+    instance._attr = original
+    assert instance._attr == original
+
 
 
 @given(instance=SpeechRecognitionService_strategy)
@@ -890,31 +860,6 @@ def test_speechrecognitionservice_speechRecognition_setter(instance):
 def test_roomservice_instantiation(instance):
     assert isinstance(instance, RoomService)
 
-@given(instance=RoomService_strategy)
-def test_roomservice_itemsCollection_type(instance):
-    assert isinstance(instance.itemsCollection, str)
-
-
-@given(instance=RoomService_strategy)
-def test_roomservice_itemsCollection_setter(instance):
-    original = instance.itemsCollection
-    instance.itemsCollection = original
-    assert instance.itemsCollection == original
-
-@given(instance=RoomService_strategy)
-def test_roomservice_idiomas_type(instance):
-    assert isinstance(instance.idiomas, str)
-
-
-@given(instance=RoomService_strategy)
-def test_roomservice_idiomas_setter(instance):
-    original = instance.idiomas
-    instance.idiomas = original
-    assert instance.idiomas == original
-
-@given(instance=RoomService_strategy)
-def test_roomservice_niveles_type(instance):
-    assert isinstance(instance.niveles, str)
 
 
 @given(instance=RoomService_strategy)
@@ -923,9 +868,22 @@ def test_roomservice_niveles_setter(instance):
     instance.niveles = original
     assert instance.niveles == original
 
+
+
 @given(instance=RoomService_strategy)
-def test_roomservice_roomsCollection_type(instance):
-    assert isinstance(instance.roomsCollection, str)
+def test_roomservice_idiomas_setter(instance):
+    original = instance.idiomas
+    instance.idiomas = original
+    assert instance.idiomas == original
+
+
+
+@given(instance=RoomService_strategy)
+def test_roomservice_itemsCollection_setter(instance):
+    original = instance.itemsCollection
+    instance.itemsCollection = original
+    assert instance.itemsCollection == original
+
 
 
 @given(instance=RoomService_strategy)
@@ -939,9 +897,14 @@ def test_roomservice_roomsCollection_setter(instance):
 def test_chatservice_instantiation(instance):
     assert isinstance(instance, ChatService)
 
+
+
 @given(instance=ChatService_strategy)
-def test_chatservice_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
+def test_chatservice_usuario_setter(instance):
+    original = instance.usuario
+    instance.usuario = original
+    assert instance.usuario == original
+
 
 
 @given(instance=ChatService_strategy)
@@ -950,31 +913,6 @@ def test_chatservice_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=ChatService_strategy)
-def test_chatservice_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=ChatService_strategy)
-def test_chatservice_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=ChatService_strategy)
-def test_chatservice_salasCollection_type(instance):
-    assert isinstance(instance.salasCollection, str)
-
-
-@given(instance=ChatService_strategy)
-def test_chatservice_salasCollection_setter(instance):
-    original = instance.salasCollection
-    instance.salasCollection = original
-    assert instance.salasCollection == original
-
-@given(instance=ChatService_strategy)
-def test_chatservice_itemsCollection_type(instance):
-    assert isinstance(instance.itemsCollection, str)
 
 
 @given(instance=ChatService_strategy)
@@ -983,9 +921,6 @@ def test_chatservice_itemsCollection_setter(instance):
     instance.itemsCollection = original
     assert instance.itemsCollection == original
 
-@given(instance=ChatService_strategy)
-def test_chatservice_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=ChatService_strategy)
@@ -994,16 +929,21 @@ def test_chatservice_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=ChatService_strategy)
-def test_chatservice_usuario_type(instance):
-    assert isinstance(instance.usuario, usuario_interface)
 
 
 @given(instance=ChatService_strategy)
-def test_chatservice_usuario_setter(instance):
-    original = instance.usuario
-    instance.usuario = original
-    assert instance.usuario == original
+def test_chatservice_salasCollection_setter(instance):
+    original = instance.salasCollection
+    instance.salasCollection = original
+    assert instance.salasCollection == original
+
+
+
+@given(instance=ChatService_strategy)
+def test_chatservice_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
 
 @given(instance=Room_Interface_strategy)
 @settings(max_examples=50)
@@ -1025,20 +965,6 @@ def test_usuario_interface_instantiation(instance):
 def test_role_instantiation(instance):
     assert isinstance(instance, Role)
 
-@given(instance=Role_strategy)
-def test_role_descripcion_type(instance):
-    assert isinstance(instance.descripcion, str)
-
-
-@given(instance=Role_strategy)
-def test_role_descripcion_setter(instance):
-    original = instance.descripcion
-    instance.descripcion = original
-    assert instance.descripcion == original
-
-@given(instance=Role_strategy)
-def test_role_nombre_type(instance):
-    assert isinstance(instance.nombre, string)
 
 
 @given(instance=Role_strategy)
@@ -1047,9 +973,6 @@ def test_role_nombre_setter(instance):
     instance.nombre = original
     assert instance.nombre == original
 
-@given(instance=Role_strategy)
-def test_role_Name_type(instance):
-    assert isinstance(instance.Name, string)
 
 
 @given(instance=Role_strategy)
@@ -1058,25 +981,19 @@ def test_role_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Role_strategy)
+def test_role_descripcion_setter(instance):
+    original = instance.descripcion
+    instance.descripcion = original
+    assert instance.descripcion == original
+
 @given(instance=Attachment_strategy)
 @settings(max_examples=50)
 def test_attachment_instantiation(instance):
     assert isinstance(instance, Attachment)
 
-@given(instance=Attachment_strategy)
-def test_attachment_Project_type(instance):
-    assert isinstance(instance.Project, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Project_setter(instance):
-    original = instance.Project
-    instance.Project = original
-    assert instance.Project == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Path_type(instance):
-    assert isinstance(instance.Path, str)
 
 
 @given(instance=Attachment_strategy)
@@ -1085,64 +1002,6 @@ def test_attachment_Path_setter(instance):
     instance.Path = original
     assert instance.Path == original
 
-@given(instance=Attachment_strategy)
-def test_attachment_Created_type(instance):
-    assert isinstance(instance.Created, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Created_setter(instance):
-    original = instance.Created
-    instance.Created = original
-    assert instance.Created == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Size_type(instance):
-    assert isinstance(instance.Size, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Size_setter(instance):
-    original = instance.Size
-    instance.Size = original
-    assert instance.Size == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_User_type(instance):
-    assert isinstance(instance.User, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_User_setter(instance):
-    original = instance.User
-    instance.User = original
-    assert instance.User == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_AttachmentID_type(instance):
-    assert isinstance(instance.AttachmentID, int)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_AttachmentID_setter(instance):
-    original = instance.AttachmentID
-    instance.AttachmentID = original
-    assert instance.AttachmentID == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Extension_type(instance):
-    assert isinstance(instance.Extension, str)
 
 
 @given(instance=Attachment_strategy)
@@ -1151,14 +1010,59 @@ def test_attachment_Extension_setter(instance):
     instance.Extension = original
     assert instance.Extension == original
 
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_User_setter(instance):
+    original = instance.User
+    instance.User = original
+    assert instance.User == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Size_setter(instance):
+    original = instance.Size
+    instance.Size = original
+    assert instance.Size == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_AttachmentID_setter(instance):
+    original = instance.AttachmentID
+    instance.AttachmentID = original
+    assert instance.AttachmentID == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Project_setter(instance):
+    original = instance.Project
+    instance.Project = original
+    assert instance.Project == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Created_setter(instance):
+    original = instance.Created
+    instance.Created = original
+    assert instance.Created == original
+
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=Comment_strategy)
-def test_comment_Content_type(instance):
-    assert isinstance(instance.Content, str)
 
 
 @given(instance=Comment_strategy)
@@ -1167,9 +1071,6 @@ def test_comment_Content_setter(instance):
     instance.Content = original
     assert instance.Content == original
 
-@given(instance=Comment_strategy)
-def test_comment_Created_type(instance):
-    assert isinstance(instance.Created, str)
 
 
 @given(instance=Comment_strategy)
@@ -1178,31 +1079,6 @@ def test_comment_Created_setter(instance):
     instance.Created = original
     assert instance.Created == original
 
-@given(instance=Comment_strategy)
-def test_comment_CommentID_type(instance):
-    assert isinstance(instance.CommentID, int)
-
-
-@given(instance=Comment_strategy)
-def test_comment_CommentID_setter(instance):
-    original = instance.CommentID
-    instance.CommentID = original
-    assert instance.CommentID == original
-
-@given(instance=Comment_strategy)
-def test_comment_Project_type(instance):
-    assert isinstance(instance.Project, str)
-
-
-@given(instance=Comment_strategy)
-def test_comment_Project_setter(instance):
-    original = instance.Project
-    instance.Project = original
-    assert instance.Project == original
-
-@given(instance=Comment_strategy)
-def test_comment_User_type(instance):
-    assert isinstance(instance.User, str)
 
 
 @given(instance=Comment_strategy)
@@ -1211,80 +1087,27 @@ def test_comment_User_setter(instance):
     instance.User = original
     assert instance.User == original
 
+
+
+@given(instance=Comment_strategy)
+def test_comment_Project_setter(instance):
+    original = instance.Project
+    instance.Project = original
+    assert instance.Project == original
+
+
+
+@given(instance=Comment_strategy)
+def test_comment_CommentID_setter(instance):
+    original = instance.CommentID
+    instance.CommentID = original
+    assert instance.CommentID == original
+
 @given(instance=Activity_strategy)
 @settings(max_examples=50)
 def test_activity_instantiation(instance):
     assert isinstance(instance, Activity)
 
-@given(instance=Activity_strategy)
-def test_activity_ActivityType_type(instance):
-    assert isinstance(instance.ActivityType, int)
-
-
-@given(instance=Activity_strategy)
-def test_activity_ActivityType_setter(instance):
-    original = instance.ActivityType
-    instance.ActivityType = original
-    assert instance.ActivityType == original
-
-@given(instance=Activity_strategy)
-def test_activity_User_type(instance):
-    assert isinstance(instance.User, str)
-
-
-@given(instance=Activity_strategy)
-def test_activity_User_setter(instance):
-    original = instance.User
-    instance.User = original
-    assert instance.User == original
-
-@given(instance=Activity_strategy)
-def test_activity_Seen_type(instance):
-    assert isinstance(instance.Seen, bool)
-
-
-@given(instance=Activity_strategy)
-def test_activity_Seen_setter(instance):
-    original = instance.Seen
-    instance.Seen = original
-    assert instance.Seen == original
-
-@given(instance=Activity_strategy)
-def test_activity_ActivitySubType_type(instance):
-    assert isinstance(instance.ActivitySubType, int)
-
-
-@given(instance=Activity_strategy)
-def test_activity_ActivitySubType_setter(instance):
-    original = instance.ActivitySubType
-    instance.ActivitySubType = original
-    assert instance.ActivitySubType == original
-
-@given(instance=Activity_strategy)
-def test_activity_PrevValue_type(instance):
-    assert isinstance(instance.PrevValue, str)
-
-
-@given(instance=Activity_strategy)
-def test_activity_PrevValue_setter(instance):
-    original = instance.PrevValue
-    instance.PrevValue = original
-    assert instance.PrevValue == original
-
-@given(instance=Activity_strategy)
-def test_activity_NewValue_type(instance):
-    assert isinstance(instance.NewValue, str)
-
-
-@given(instance=Activity_strategy)
-def test_activity_NewValue_setter(instance):
-    original = instance.NewValue
-    instance.NewValue = original
-    assert instance.NewValue == original
-
-@given(instance=Activity_strategy)
-def test_activity_Project_type(instance):
-    assert isinstance(instance.Project, str)
 
 
 @given(instance=Activity_strategy)
@@ -1293,9 +1116,54 @@ def test_activity_Project_setter(instance):
     instance.Project = original
     assert instance.Project == original
 
+
+
 @given(instance=Activity_strategy)
-def test_activity_ActivityID_type(instance):
-    assert isinstance(instance.ActivityID, int)
+def test_activity_User_setter(instance):
+    original = instance.User
+    instance.User = original
+    assert instance.User == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_NewValue_setter(instance):
+    original = instance.NewValue
+    instance.NewValue = original
+    assert instance.NewValue == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_ActivityType_setter(instance):
+    original = instance.ActivityType
+    instance.ActivityType = original
+    assert instance.ActivityType == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_PrevValue_setter(instance):
+    original = instance.PrevValue
+    instance.PrevValue = original
+    assert instance.PrevValue == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_ActivitySubType_setter(instance):
+    original = instance.ActivitySubType
+    instance.ActivitySubType = original
+    assert instance.ActivitySubType == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_Seen_setter(instance):
+    original = instance.Seen
+    instance.Seen = original
+    assert instance.Seen == original
+
 
 
 @given(instance=Activity_strategy)

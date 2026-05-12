@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testmultipleinheritanceedgeclasses::K,
-    testmultipleinheritanceedgeclasses::D,
-    testmultipleinheritanceedgeclasses::EdgeCD,
-    testmultipleinheritanceedgeclasses::C,
+from python_code import (
+    testmultipleinheritanceedgeclasses_K,
+    testmultipleinheritanceedgeclasses_D,
+    testmultipleinheritanceedgeclasses_EdgeCD,
+    testmultipleinheritanceedgeclasses_C,
     EdgeAB,
-    testmultipleinheritanceedgeclasses::BetterEdgeAB,
+    testmultipleinheritanceedgeclasses_BetterEdgeAB,
     D,
-    testmultipleinheritanceedgeclasses::B,
+    testmultipleinheritanceedgeclasses_B,
     EdgeCD,
-    testmultipleinheritanceedgeclasses::EdgeAB,
+    testmultipleinheritanceedgeclasses_EdgeAB,
     C,
-    testmultipleinheritanceedgeclasses::A,
+    testmultipleinheritanceedgeclasses_A,
     EdgeKL,
-    testmultipleinheritanceedgeclasses::BetterEdgeKL,
-    testmultipleinheritanceedgeclasses::L,
-    testmultipleinheritanceedgeclasses::EdgeKL,
+    testmultipleinheritanceedgeclasses_BetterEdgeKL,
+    testmultipleinheritanceedgeclasses_L,
+    testmultipleinheritanceedgeclasses_EdgeKL,
 )
 
 # =============================================================================
@@ -30,58 +30,58 @@ from classes import (
 
 
 
-def test_testmultipleinheritanceedgeclasses::k_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::K)
+def test_testmultipleinheritanceedgeclasses_k_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_K)
 
 
-def test_testmultipleinheritanceedgeclasses::k_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::K.__init__)
+def test_testmultipleinheritanceedgeclasses_k_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_K.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::k_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::K.__init__)
+def test_testmultipleinheritanceedgeclasses_k_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmultipleinheritanceedgeclasses::d_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::D)
+def test_testmultipleinheritanceedgeclasses_d_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_D)
 
 
-def test_testmultipleinheritanceedgeclasses::d_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::D.__init__)
+def test_testmultipleinheritanceedgeclasses_d_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_D.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::d_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::D.__init__)
+def test_testmultipleinheritanceedgeclasses_d_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmultipleinheritanceedgeclasses::edgecd_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::EdgeCD)
+def test_testmultipleinheritanceedgeclasses_edgecd_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_EdgeCD)
 
 
-def test_testmultipleinheritanceedgeclasses::edgecd_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::EdgeCD.__init__)
+def test_testmultipleinheritanceedgeclasses_edgecd_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_EdgeCD.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::edgecd_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::EdgeCD.__init__)
+def test_testmultipleinheritanceedgeclasses_edgecd_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_EdgeCD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmultipleinheritanceedgeclasses::c_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::C)
+def test_testmultipleinheritanceedgeclasses_c_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_C)
 
 
-def test_testmultipleinheritanceedgeclasses::c_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::C.__init__)
+def test_testmultipleinheritanceedgeclasses_c_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_C.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::c_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::C.__init__)
+def test_testmultipleinheritanceedgeclasses_c_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,16 +100,16 @@ def test_edgeab_constructor_args():
 
 
 
-def test_testmultipleinheritanceedgeclasses::betteredgeab_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::BetterEdgeAB)
+def test_testmultipleinheritanceedgeclasses_betteredgeab_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_BetterEdgeAB)
 
 
-def test_testmultipleinheritanceedgeclasses::betteredgeab_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::BetterEdgeAB.__init__)
+def test_testmultipleinheritanceedgeclasses_betteredgeab_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_BetterEdgeAB.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::betteredgeab_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::BetterEdgeAB.__init__)
+def test_testmultipleinheritanceedgeclasses_betteredgeab_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_BetterEdgeAB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,16 +128,16 @@ def test_d_constructor_args():
 
 
 
-def test_testmultipleinheritanceedgeclasses::b_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::B)
+def test_testmultipleinheritanceedgeclasses_b_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_B)
 
 
-def test_testmultipleinheritanceedgeclasses::b_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::B.__init__)
+def test_testmultipleinheritanceedgeclasses_b_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_B.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::b_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::B.__init__)
+def test_testmultipleinheritanceedgeclasses_b_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -156,16 +156,16 @@ def test_edgecd_constructor_args():
 
 
 
-def test_testmultipleinheritanceedgeclasses::edgeab_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::EdgeAB)
+def test_testmultipleinheritanceedgeclasses_edgeab_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_EdgeAB)
 
 
-def test_testmultipleinheritanceedgeclasses::edgeab_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::EdgeAB.__init__)
+def test_testmultipleinheritanceedgeclasses_edgeab_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_EdgeAB.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::edgeab_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::EdgeAB.__init__)
+def test_testmultipleinheritanceedgeclasses_edgeab_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_EdgeAB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -184,16 +184,16 @@ def test_c_constructor_args():
 
 
 
-def test_testmultipleinheritanceedgeclasses::a_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::A)
+def test_testmultipleinheritanceedgeclasses_a_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_A)
 
 
-def test_testmultipleinheritanceedgeclasses::a_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::A.__init__)
+def test_testmultipleinheritanceedgeclasses_a_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_A.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::a_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::A.__init__)
+def test_testmultipleinheritanceedgeclasses_a_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,44 +212,44 @@ def test_edgekl_constructor_args():
 
 
 
-def test_testmultipleinheritanceedgeclasses::betteredgekl_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::BetterEdgeKL)
+def test_testmultipleinheritanceedgeclasses_betteredgekl_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_BetterEdgeKL)
 
 
-def test_testmultipleinheritanceedgeclasses::betteredgekl_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::BetterEdgeKL.__init__)
+def test_testmultipleinheritanceedgeclasses_betteredgekl_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_BetterEdgeKL.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::betteredgekl_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::BetterEdgeKL.__init__)
+def test_testmultipleinheritanceedgeclasses_betteredgekl_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_BetterEdgeKL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmultipleinheritanceedgeclasses::l_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::L)
+def test_testmultipleinheritanceedgeclasses_l_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_L)
 
 
-def test_testmultipleinheritanceedgeclasses::l_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::L.__init__)
+def test_testmultipleinheritanceedgeclasses_l_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_L.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::l_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::L.__init__)
+def test_testmultipleinheritanceedgeclasses_l_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_L.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmultipleinheritanceedgeclasses::edgekl_is_not_abstract():
-    assert not inspect.isabstract(testmultipleinheritanceedgeclasses::EdgeKL)
+def test_testmultipleinheritanceedgeclasses_edgekl_is_not_abstract():
+    assert not inspect.isabstract(testmultipleinheritanceedgeclasses_EdgeKL)
 
 
-def test_testmultipleinheritanceedgeclasses::edgekl_constructor_exists():
-    assert callable(testmultipleinheritanceedgeclasses::EdgeKL.__init__)
+def test_testmultipleinheritanceedgeclasses_edgekl_constructor_exists():
+    assert callable(testmultipleinheritanceedgeclasses_EdgeKL.__init__)
 
 
-def test_testmultipleinheritanceedgeclasses::edgekl_constructor_args():
-    sig = inspect.signature(testmultipleinheritanceedgeclasses::EdgeKL.__init__)
+def test_testmultipleinheritanceedgeclasses_edgekl_constructor_args():
+    sig = inspect.signature(testmultipleinheritanceedgeclasses_EdgeKL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -264,131 +264,131 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testmultipleinheritanceedgeclasses::K_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::K,
+testmultipleinheritanceedgeclasses_K_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_K,
 )
-testmultipleinheritanceedgeclasses::D_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::D,
+testmultipleinheritanceedgeclasses_D_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_D,
 )
-testmultipleinheritanceedgeclasses::EdgeCD_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::EdgeCD,
+testmultipleinheritanceedgeclasses_EdgeCD_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_EdgeCD,
 )
-testmultipleinheritanceedgeclasses::C_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::C,
+testmultipleinheritanceedgeclasses_C_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_C,
 )
 EdgeAB_strategy = st.builds(
     EdgeAB,
 )
-testmultipleinheritanceedgeclasses::BetterEdgeAB_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::BetterEdgeAB,
+testmultipleinheritanceedgeclasses_BetterEdgeAB_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_BetterEdgeAB,
 )
 D_strategy = st.builds(
     D,
 )
-testmultipleinheritanceedgeclasses::B_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::B,
+testmultipleinheritanceedgeclasses_B_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_B,
 )
 EdgeCD_strategy = st.builds(
     EdgeCD,
 )
-testmultipleinheritanceedgeclasses::EdgeAB_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::EdgeAB,
+testmultipleinheritanceedgeclasses_EdgeAB_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_EdgeAB,
 )
 C_strategy = st.builds(
     C,
 )
-testmultipleinheritanceedgeclasses::A_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::A,
+testmultipleinheritanceedgeclasses_A_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_A,
 )
 EdgeKL_strategy = st.builds(
     EdgeKL,
 )
-testmultipleinheritanceedgeclasses::BetterEdgeKL_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::BetterEdgeKL,
+testmultipleinheritanceedgeclasses_BetterEdgeKL_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_BetterEdgeKL,
 )
-testmultipleinheritanceedgeclasses::L_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::L,
+testmultipleinheritanceedgeclasses_L_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_L,
 )
-testmultipleinheritanceedgeclasses::EdgeKL_strategy = st.builds(
-    testmultipleinheritanceedgeclasses::EdgeKL,
+testmultipleinheritanceedgeclasses_EdgeKL_strategy = st.builds(
+    testmultipleinheritanceedgeclasses_EdgeKL,
 )
 
-@given(instance=testmultipleinheritanceedgeclasses::K_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_K_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::k_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::K)
+def test_testmultipleinheritanceedgeclasses_k_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_K)
 
-@given(instance=testmultipleinheritanceedgeclasses::D_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_D_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::d_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::D)
+def test_testmultipleinheritanceedgeclasses_d_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_D)
 
-@given(instance=testmultipleinheritanceedgeclasses::EdgeCD_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_EdgeCD_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::edgecd_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::EdgeCD)
+def test_testmultipleinheritanceedgeclasses_edgecd_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_EdgeCD)
 
-@given(instance=testmultipleinheritanceedgeclasses::C_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_C_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::c_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::C)
+def test_testmultipleinheritanceedgeclasses_c_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_C)
 
 @given(instance=EdgeAB_strategy)
 @settings(max_examples=50)
 def test_edgeab_instantiation(instance):
     assert isinstance(instance, EdgeAB)
 
-@given(instance=testmultipleinheritanceedgeclasses::BetterEdgeAB_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_BetterEdgeAB_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::betteredgeab_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::BetterEdgeAB)
+def test_testmultipleinheritanceedgeclasses_betteredgeab_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_BetterEdgeAB)
 
 @given(instance=D_strategy)
 @settings(max_examples=50)
 def test_d_instantiation(instance):
     assert isinstance(instance, D)
 
-@given(instance=testmultipleinheritanceedgeclasses::B_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_B_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::b_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::B)
+def test_testmultipleinheritanceedgeclasses_b_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_B)
 
 @given(instance=EdgeCD_strategy)
 @settings(max_examples=50)
 def test_edgecd_instantiation(instance):
     assert isinstance(instance, EdgeCD)
 
-@given(instance=testmultipleinheritanceedgeclasses::EdgeAB_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_EdgeAB_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::edgeab_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::EdgeAB)
+def test_testmultipleinheritanceedgeclasses_edgeab_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_EdgeAB)
 
 @given(instance=C_strategy)
 @settings(max_examples=50)
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=testmultipleinheritanceedgeclasses::A_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_A_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::a_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::A)
+def test_testmultipleinheritanceedgeclasses_a_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_A)
 
 @given(instance=EdgeKL_strategy)
 @settings(max_examples=50)
 def test_edgekl_instantiation(instance):
     assert isinstance(instance, EdgeKL)
 
-@given(instance=testmultipleinheritanceedgeclasses::BetterEdgeKL_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_BetterEdgeKL_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::betteredgekl_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::BetterEdgeKL)
+def test_testmultipleinheritanceedgeclasses_betteredgekl_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_BetterEdgeKL)
 
-@given(instance=testmultipleinheritanceedgeclasses::L_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_L_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::l_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::L)
+def test_testmultipleinheritanceedgeclasses_l_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_L)
 
-@given(instance=testmultipleinheritanceedgeclasses::EdgeKL_strategy)
+@given(instance=testmultipleinheritanceedgeclasses_EdgeKL_strategy)
 @settings(max_examples=50)
-def test_testmultipleinheritanceedgeclasses::edgekl_instantiation(instance):
-    assert isinstance(instance, testmultipleinheritanceedgeclasses::EdgeKL)
+def test_testmultipleinheritanceedgeclasses_edgekl_instantiation(instance):
+    assert isinstance(instance, testmultipleinheritanceedgeclasses_EdgeKL)

@@ -3,154 +3,154 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Actions,
-    PhotosMetaModel::Services,
-    PhotosMetaModel::Request,
-    PhotosMetaModel::Files,
-    PhotosMetaModel::Directories,
+    PhotosMetaModel_Services,
+    PhotosMetaModel_Request,
+    PhotosMetaModel_Files,
+    PhotosMetaModel_Directories,
     Components,
-    PhotosMetaModel::UI,
-    PhotosMetaModel::Logic,
+    PhotosMetaModel_UI,
+    PhotosMetaModel_Logic,
     ReactConfiguration,
-    PhotosMetaModel::Dependencies,
-    PhotosMetaModel::ReactDOM,
-    PhotosMetaModel::MetaData,
+    PhotosMetaModel_Dependencies,
+    PhotosMetaModel_ReactDOM,
+    PhotosMetaModel_MetaData,
     UI,
-    PhotosMetaModel::Subcomponents,
-    PhotosMetaModel::ViewComponents,
+    PhotosMetaModel_Subcomponents,
+    PhotosMetaModel_ViewComponents,
     Logic,
-    PhotosMetaModel::Structure,
-    PhotosMetaModel::Router,
-    PhotosMetaModel::State,
-    PhotosMetaModel::Props,
-    PhotosMetaModel::Bucket,
+    PhotosMetaModel_Structure,
+    PhotosMetaModel_Router,
+    PhotosMetaModel_State,
+    PhotosMetaModel_Props,
+    PhotosMetaModel_Bucket,
     ReactFunctions,
-    PhotosMetaModel::LifeCycle,
-    PhotosMetaModel::Constructor,
-    PhotosMetaModel::CoreFunctions,
-    PhotosMetaModel::Render,
-    PhotosMetaModel::ReactFunctions,
-    PhotosMetaModel::ReactClasses,
+    PhotosMetaModel_CoreFunctions,
+    PhotosMetaModel_LifeCycle,
+    PhotosMetaModel_Constructor,
+    PhotosMetaModel_Render,
+    PhotosMetaModel_ReactFunctions,
+    PhotosMetaModel_ReactClasses,
     Modules,
-    PhotosMetaModel::ReactConfiguration,
-    PhotosMetaModel::Libraries,
-    PhotosMetaModel::Information,
-    PhotosMetaModel::Actions,
-    PhotosMetaModel::Components,
+    PhotosMetaModel_ReactConfiguration,
+    PhotosMetaModel_Actions,
+    PhotosMetaModel_Libraries,
+    PhotosMetaModel_Information,
+    PhotosMetaModel_Components,
     DataSegment,
-    PhotosMetaModel::AmazonS3Storage,
-    PhotosMetaModel::PostgreSQL::a,
-    Access,
-    PhotosMetaModel::ObjectsPublic,
-    PhotosMetaModel::BucketObjectsNotPublic,
-    PhotosMetaModel::OnlyAuthorized,
-    PhotosMetaModel::Public,
-    PhotosMetaModel::Folder::a,
-    PhotosMetaModel::File::a,
-    PhotosMetaModel::Access,
-    PhotosMetaModel::BatchOperation,
-    PhotosMetaModel::PresentationSegment,
-    Layer,
-    PhotosMetaModel::BusinessLogic,
-    PhotosMetaModel::Presentation,
-    Connection,
-    PhotosMetaModel::PostgreSQLConnection,
-    PhotosMetaModel::AmazonS3API,
-    PhotosMetaModel::REST,
-    BusinessLogicSegment,
-    PhotosMetaModel::Model::a,
-    PhotosMetaModel::Repository::a,
-    PhotosMetaModel::Security::a,
-    PhotosMetaModel::Controller::a,
-    PresentationSegment,
-    PhotosMetaModel::Action::a,
-    PhotosMetaModel::Component::a,
-    PhotosMetaModel::View::a,
-    PhotosMetaModel::SegmentStructure,
-    Relation,
-    PhotosMetaModel::AllowedToUse,
-    PhotosMetaModel::DataSegment,
-    PhotosMetaModel::Data,
-    PhotosMetaModel::BusinessLogicSegment,
+    PhotosMetaModel_AmazonS3Storage,
+    PhotosMetaModel_PostgreSQL_a,
     Functionalities,
-    PhotosMetaModel::ProfileManagement,
-    PhotosMetaModel::PhotoActions,
-    PhotosMetaModel::AlbumManagement,
-    PhotosMetaModel::AppAccess,
-    PhotosMetaModel::Relation,
-    PhotosMetaModel::Layer,
-    PhotosMetaModel::Connection,
-    PhotosMetaModel::AmazonElasticComputeCloud,
-    PhotosMetaModel::AmazonSimpleStorageService,
-    PhotosMetaModel::Privilege,
-    PhotosMetaModel::User::p,
+    PhotosMetaModel_AlbumManagement,
+    PhotosMetaModel_PhotoActions,
+    PhotosMetaModel_ProfileManagement,
+    PhotosMetaModel_AppAccess,
+    PhotosMetaModel_Relation,
+    PhotosMetaModel_Layer,
+    PhotosMetaModel_Connection,
+    PhotosMetaModel_AmazonElasticComputeCloud,
+    PhotosMetaModel_AmazonSimpleStorageService,
+    PhotosMetaModel_Privilege,
+    PhotosMetaModel_User_p,
     Entities,
-    PhotosMetaModel::Album,
-    PhotosMetaModel::Photo,
-    PhotosMetaModel::User::d,
-    PhotosMetaModel::Index,
-    PhotosMetaModel::Column,
-    PhotosMetaModel::Policy,
-    PhotosMetaModel::Index::p,
-    PhotosMetaModel::View,
-    PhotosMetaModel::Trigger,
-    PhotosMetaModel::Table::p,
-    PhotosMetaModel::ForeignKey,
-    PhotosMetaModel::Clause,
-    PhotosMetaModel::Query,
-    PhotosMetaModel::Cluster,
-    PhotosMetaModel::Order::s,
-    PhotosMetaModel::EnableGlobalMethodSecurity,
-    PhotosMetaModel::Scheme,
-    PhotosMetaModel::Database,
-    PhotosMetaModel::Function::p,
-    PhotosMetaModel::Row,
-    PhotosMetaModel::Column::p,
-    PhotosMetaModel::GeneratedValue,
-    PhotosMetaModel::Id,
-    PhotosMetaModel::Column::s,
-    PhotosMetaModel::NamedNativeQuery,
-    PhotosMetaModel::Table::s,
-    PhotosMetaModel::Exception,
-    PhotosMetaModel::EnableAuthorizationServer,
-    PhotosMetaModel::EnableResourceServer,
-    PhotosMetaModel::EnableWebSecurity,
-    PhotosMetaModel::Bean,
-    PhotosMetaModel::Predicate,
-    PhotosMetaModel::SearchCriteria,
-    PhotosMetaModel::DataType,
-    PhotosMetaModel::Constraint,
-    PhotosMetaModel::Specification,
-    PhotosMetaModel::Autowired,
-    PhotosMetaModel::ExceptionHandler,
-    PhotosMetaModel::RequestMapping,
-    PhotosMetaModel::RestController,
-    PhotosMetaModel::Repository,
-    PhotosMetaModel::Modules,
-    PhotosMetaModel::SpringBootApplication,
-    PhotosMetaModel::AmazonWebServices,
-    PhotosMetaModel::React,
+    PhotosMetaModel_Photo,
+    PhotosMetaModel_User_d,
+    PhotosMetaModel_Index,
+    PhotosMetaModel_Column,
+    PhotosMetaModel_Policy,
+    PhotosMetaModel_Index_p,
+    PhotosMetaModel_View,
+    PhotosMetaModel_Trigger,
+    PhotosMetaModel_Table_p,
+    PhotosMetaModel_ForeignKey,
+    PhotosMetaModel_Clause,
+    PhotosMetaModel_Query,
+    PhotosMetaModel_Cluster,
+    PhotosMetaModel_Order_s,
+    PhotosMetaModel_EnableGlobalMethodSecurity,
+    PhotosMetaModel_Scheme,
+    PhotosMetaModel_Database,
+    PhotosMetaModel_Function_p,
+    PhotosMetaModel_Row,
+    PhotosMetaModel_Column_p,
+    Access,
+    PhotosMetaModel_ObjectsPublic,
+    PhotosMetaModel_BucketObjectsNotPublic,
+    PhotosMetaModel_OnlyAuthorized,
+    PhotosMetaModel_Public,
+    PhotosMetaModel_Folder_a,
+    PhotosMetaModel_File_a,
+    PhotosMetaModel_Access,
+    PhotosMetaModel_BatchOperation,
+    PhotosMetaModel_PresentationSegment,
+    Layer,
+    PhotosMetaModel_BusinessLogic,
+    PhotosMetaModel_Presentation,
+    Connection,
+    PhotosMetaModel_PostgreSQLConnection,
+    PhotosMetaModel_AmazonS3API,
+    PhotosMetaModel_REST,
+    BusinessLogicSegment,
+    PhotosMetaModel_Repository_a,
+    PhotosMetaModel_Model_a,
+    PhotosMetaModel_Security_a,
+    PhotosMetaModel_Controller_a,
+    PresentationSegment,
+    PhotosMetaModel_Component_a,
+    PhotosMetaModel_Action_a,
+    PhotosMetaModel_View_a,
+    PhotosMetaModel_SegmentStructure,
+    Relation,
+    PhotosMetaModel_AllowedToUse,
+    PhotosMetaModel_DataSegment,
+    PhotosMetaModel_Data,
+    PhotosMetaModel_BusinessLogicSegment,
+    PhotosMetaModel_Album,
+    PhotosMetaModel_GeneratedValue,
+    PhotosMetaModel_Id,
+    PhotosMetaModel_Column_s,
+    PhotosMetaModel_NamedNativeQuery,
+    PhotosMetaModel_Table_s,
+    PhotosMetaModel_Exception,
+    PhotosMetaModel_EnableAuthorizationServer,
+    PhotosMetaModel_EnableResourceServer,
+    PhotosMetaModel_EnableWebSecurity,
+    PhotosMetaModel_Bean,
+    PhotosMetaModel_Predicate,
+    PhotosMetaModel_SearchCriteria,
+    PhotosMetaModel_DataType,
+    PhotosMetaModel_Constraint,
+    PhotosMetaModel_Specification,
+    PhotosMetaModel_Autowired,
+    PhotosMetaModel_ExceptionHandler,
+    PhotosMetaModel_RequestMapping,
+    PhotosMetaModel_RestController,
+    PhotosMetaModel_Repository,
+    PhotosMetaModel_Modules,
+    PhotosMetaModel_SpringBootApplication,
+    PhotosMetaModel_AmazonWebServices,
+    PhotosMetaModel_React,
     RequestMapping,
-    PhotosMetaModel::PutMapping,
-    PhotosMetaModel::DeleteMapping,
-    PhotosMetaModel::GetMapping,
-    PhotosMetaModel::PostMapping,
-    PhotosMetaModel::RequestPart,
-    PhotosMetaModel::Configuration,
-    PhotosMetaModel::Component,
-    PhotosMetaModel::Entity,
-    PhotosMetaModel::Domain,
-    PhotosMetaModel::SoftGallery,
-    PhotosMetaModel::PostgreSQL,
-    PhotosMetaModel::Spring,
-    PhotosMetaModel::NTier,
-    PhotosMetaModel::Entities,
-    PhotosMetaModel::Functionalities,
-    PhotosMetaModel::Technology,
-    PhotosMetaModel::Architecture,
+    PhotosMetaModel_GetMapping,
+    PhotosMetaModel_PutMapping,
+    PhotosMetaModel_DeleteMapping,
+    PhotosMetaModel_PostMapping,
+    PhotosMetaModel_RequestPart,
+    PhotosMetaModel_Configuration,
+    PhotosMetaModel_Component,
+    PhotosMetaModel_Entity,
+    PhotosMetaModel_Domain,
+    PhotosMetaModel_SoftGallery,
+    PhotosMetaModel_PostgreSQL,
+    PhotosMetaModel_Spring,
+    PhotosMetaModel_NTier,
+    PhotosMetaModel_Entities,
+    PhotosMetaModel_Functionalities,
+    PhotosMetaModel_Technology,
+    PhotosMetaModel_Architecture,
 )
 
 # =============================================================================
@@ -173,61 +173,61 @@ def test_actions_constructor_args():
 
 
 
-def test_photosmetamodel::services_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Services)
+def test_photosmetamodel_services_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Services)
 
 
-def test_photosmetamodel::services_constructor_exists():
-    assert callable(PhotosMetaModel::Services.__init__)
+def test_photosmetamodel_services_constructor_exists():
+    assert callable(PhotosMetaModel_Services.__init__)
 
 
-def test_photosmetamodel::services_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Services.__init__)
+def test_photosmetamodel_services_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Services.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::request_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Request)
+def test_photosmetamodel_request_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Request)
 
 
-def test_photosmetamodel::request_constructor_exists():
-    assert callable(PhotosMetaModel::Request.__init__)
+def test_photosmetamodel_request_constructor_exists():
+    assert callable(PhotosMetaModel_Request.__init__)
 
 
-def test_photosmetamodel::request_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Request.__init__)
+def test_photosmetamodel_request_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Request.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::files_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Files)
+def test_photosmetamodel_files_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Files)
 
 
-def test_photosmetamodel::files_constructor_exists():
-    assert callable(PhotosMetaModel::Files.__init__)
+def test_photosmetamodel_files_constructor_exists():
+    assert callable(PhotosMetaModel_Files.__init__)
 
 
-def test_photosmetamodel::files_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Files.__init__)
+def test_photosmetamodel_files_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Files.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "extension" in params, "Missing parameter 'extension'"
 
-def test_photosmetamodel::files_has_type():
-    assert hasattr(PhotosMetaModel::Files, "type")
+def test_photosmetamodel_files_has_type():
+    assert hasattr(PhotosMetaModel_Files, "type")
     descriptor = None
-    for klass in PhotosMetaModel::Files.__mro__:
+    for klass in PhotosMetaModel_Files.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_photosmetamodel::files_has_extension():
-    assert hasattr(PhotosMetaModel::Files, "extension")
+def test_photosmetamodel_files_has_extension():
+    assert hasattr(PhotosMetaModel_Files, "extension")
     descriptor = None
-    for klass in PhotosMetaModel::Files.__mro__:
+    for klass in PhotosMetaModel_Files.__mro__:
         if "extension" in klass.__dict__:
             descriptor = klass.__dict__["extension"]
             break
@@ -235,16 +235,16 @@ def test_photosmetamodel::files_has_extension():
 
 
 
-def test_photosmetamodel::directories_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Directories)
+def test_photosmetamodel_directories_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Directories)
 
 
-def test_photosmetamodel::directories_constructor_exists():
-    assert callable(PhotosMetaModel::Directories.__init__)
+def test_photosmetamodel_directories_constructor_exists():
+    assert callable(PhotosMetaModel_Directories.__init__)
 
 
-def test_photosmetamodel::directories_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Directories.__init__)
+def test_photosmetamodel_directories_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Directories.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -263,30 +263,30 @@ def test_components_constructor_args():
 
 
 
-def test_photosmetamodel::ui_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::UI)
+def test_photosmetamodel_ui_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_UI)
 
 
-def test_photosmetamodel::ui_constructor_exists():
-    assert callable(PhotosMetaModel::UI.__init__)
+def test_photosmetamodel_ui_constructor_exists():
+    assert callable(PhotosMetaModel_UI.__init__)
 
 
-def test_photosmetamodel::ui_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::UI.__init__)
+def test_photosmetamodel_ui_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_UI.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::logic_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Logic)
+def test_photosmetamodel_logic_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Logic)
 
 
-def test_photosmetamodel::logic_constructor_exists():
-    assert callable(PhotosMetaModel::Logic.__init__)
+def test_photosmetamodel_logic_constructor_exists():
+    assert callable(PhotosMetaModel_Logic.__init__)
 
 
-def test_photosmetamodel::logic_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Logic.__init__)
+def test_photosmetamodel_logic_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Logic.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -305,74 +305,74 @@ def test_reactconfiguration_constructor_args():
 
 
 
-def test_photosmetamodel::dependencies_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Dependencies)
+def test_photosmetamodel_dependencies_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Dependencies)
 
 
-def test_photosmetamodel::dependencies_constructor_exists():
-    assert callable(PhotosMetaModel::Dependencies.__init__)
+def test_photosmetamodel_dependencies_constructor_exists():
+    assert callable(PhotosMetaModel_Dependencies.__init__)
 
 
-def test_photosmetamodel::dependencies_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Dependencies.__init__)
+def test_photosmetamodel_dependencies_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Dependencies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::reactdom_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ReactDOM)
+def test_photosmetamodel_reactdom_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ReactDOM)
 
 
-def test_photosmetamodel::reactdom_constructor_exists():
-    assert callable(PhotosMetaModel::ReactDOM.__init__)
+def test_photosmetamodel_reactdom_constructor_exists():
+    assert callable(PhotosMetaModel_ReactDOM.__init__)
 
 
-def test_photosmetamodel::reactdom_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ReactDOM.__init__)
+def test_photosmetamodel_reactdom_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ReactDOM.__init__)
     params = list(sig.parameters.keys())
+    assert "isConstant" in params, "Missing parameter 'isConstant'"
     assert "isStruct" in params, "Missing parameter 'isStruct'"
     assert "isRoute" in params, "Missing parameter 'isRoute'"
-    assert "isConstant" in params, "Missing parameter 'isConstant'"
 
-def test_photosmetamodel::reactdom_has_isStruct():
-    assert hasattr(PhotosMetaModel::ReactDOM, "isStruct")
+def test_photosmetamodel_reactdom_has_isConstant():
+    assert hasattr(PhotosMetaModel_ReactDOM, "isConstant")
     descriptor = None
-    for klass in PhotosMetaModel::ReactDOM.__mro__:
-        if "isStruct" in klass.__dict__:
-            descriptor = klass.__dict__["isStruct"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::reactdom_has_isRoute():
-    assert hasattr(PhotosMetaModel::ReactDOM, "isRoute")
-    descriptor = None
-    for klass in PhotosMetaModel::ReactDOM.__mro__:
-        if "isRoute" in klass.__dict__:
-            descriptor = klass.__dict__["isRoute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::reactdom_has_isConstant():
-    assert hasattr(PhotosMetaModel::ReactDOM, "isConstant")
-    descriptor = None
-    for klass in PhotosMetaModel::ReactDOM.__mro__:
+    for klass in PhotosMetaModel_ReactDOM.__mro__:
         if "isConstant" in klass.__dict__:
             descriptor = klass.__dict__["isConstant"]
             break
     assert isinstance(descriptor, property)
 
+def test_photosmetamodel_reactdom_has_isStruct():
+    assert hasattr(PhotosMetaModel_ReactDOM, "isStruct")
+    descriptor = None
+    for klass in PhotosMetaModel_ReactDOM.__mro__:
+        if "isStruct" in klass.__dict__:
+            descriptor = klass.__dict__["isStruct"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_reactdom_has_isRoute():
+    assert hasattr(PhotosMetaModel_ReactDOM, "isRoute")
+    descriptor = None
+    for klass in PhotosMetaModel_ReactDOM.__mro__:
+        if "isRoute" in klass.__dict__:
+            descriptor = klass.__dict__["isRoute"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_photosmetamodel::metadata_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::MetaData)
+
+def test_photosmetamodel_metadata_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_MetaData)
 
 
-def test_photosmetamodel::metadata_constructor_exists():
-    assert callable(PhotosMetaModel::MetaData.__init__)
+def test_photosmetamodel_metadata_constructor_exists():
+    assert callable(PhotosMetaModel_MetaData.__init__)
 
 
-def test_photosmetamodel::metadata_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::MetaData.__init__)
+def test_photosmetamodel_metadata_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_MetaData.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -391,30 +391,30 @@ def test_ui_constructor_args():
 
 
 
-def test_photosmetamodel::subcomponents_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Subcomponents)
+def test_photosmetamodel_subcomponents_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Subcomponents)
 
 
-def test_photosmetamodel::subcomponents_constructor_exists():
-    assert callable(PhotosMetaModel::Subcomponents.__init__)
+def test_photosmetamodel_subcomponents_constructor_exists():
+    assert callable(PhotosMetaModel_Subcomponents.__init__)
 
 
-def test_photosmetamodel::subcomponents_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Subcomponents.__init__)
+def test_photosmetamodel_subcomponents_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Subcomponents.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::viewcomponents_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ViewComponents)
+def test_photosmetamodel_viewcomponents_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ViewComponents)
 
 
-def test_photosmetamodel::viewcomponents_constructor_exists():
-    assert callable(PhotosMetaModel::ViewComponents.__init__)
+def test_photosmetamodel_viewcomponents_constructor_exists():
+    assert callable(PhotosMetaModel_ViewComponents.__init__)
 
 
-def test_photosmetamodel::viewcomponents_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ViewComponents.__init__)
+def test_photosmetamodel_viewcomponents_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ViewComponents.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -433,51 +433,51 @@ def test_logic_constructor_args():
 
 
 
-def test_photosmetamodel::structure_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Structure)
+def test_photosmetamodel_structure_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Structure)
 
 
-def test_photosmetamodel::structure_constructor_exists():
-    assert callable(PhotosMetaModel::Structure.__init__)
+def test_photosmetamodel_structure_constructor_exists():
+    assert callable(PhotosMetaModel_Structure.__init__)
 
 
-def test_photosmetamodel::structure_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Structure.__init__)
+def test_photosmetamodel_structure_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Structure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::router_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Router)
+def test_photosmetamodel_router_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Router)
 
 
-def test_photosmetamodel::router_constructor_exists():
-    assert callable(PhotosMetaModel::Router.__init__)
+def test_photosmetamodel_router_constructor_exists():
+    assert callable(PhotosMetaModel_Router.__init__)
 
 
-def test_photosmetamodel::router_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Router.__init__)
+def test_photosmetamodel_router_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Router.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::state_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::State)
+def test_photosmetamodel_state_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_State)
 
 
-def test_photosmetamodel::state_constructor_exists():
-    assert callable(PhotosMetaModel::State.__init__)
+def test_photosmetamodel_state_constructor_exists():
+    assert callable(PhotosMetaModel_State.__init__)
 
 
-def test_photosmetamodel::state_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::State.__init__)
+def test_photosmetamodel_state_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_State.__init__)
     params = list(sig.parameters.keys())
     assert "active" in params, "Missing parameter 'active'"
 
-def test_photosmetamodel::state_has_active():
-    assert hasattr(PhotosMetaModel::State, "active")
+def test_photosmetamodel_state_has_active():
+    assert hasattr(PhotosMetaModel_State, "active")
     descriptor = None
-    for klass in PhotosMetaModel::State.__mro__:
+    for klass in PhotosMetaModel_State.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
@@ -485,57 +485,57 @@ def test_photosmetamodel::state_has_active():
 
 
 
-def test_photosmetamodel::props_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Props)
+def test_photosmetamodel_props_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Props)
 
 
-def test_photosmetamodel::props_constructor_exists():
-    assert callable(PhotosMetaModel::Props.__init__)
+def test_photosmetamodel_props_constructor_exists():
+    assert callable(PhotosMetaModel_Props.__init__)
 
 
-def test_photosmetamodel::props_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Props.__init__)
+def test_photosmetamodel_props_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Props.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "dataType" in params, "Missing parameter 'dataType'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_photosmetamodel::props_has_type():
-    assert hasattr(PhotosMetaModel::Props, "type")
+def test_photosmetamodel_props_has_dataType():
+    assert hasattr(PhotosMetaModel_Props, "dataType")
     descriptor = None
-    for klass in PhotosMetaModel::Props.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::props_has_dataType():
-    assert hasattr(PhotosMetaModel::Props, "dataType")
-    descriptor = None
-    for klass in PhotosMetaModel::Props.__mro__:
+    for klass in PhotosMetaModel_Props.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
     assert isinstance(descriptor, property)
 
+def test_photosmetamodel_props_has_type():
+    assert hasattr(PhotosMetaModel_Props, "type")
+    descriptor = None
+    for klass in PhotosMetaModel_Props.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_photosmetamodel::bucket_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Bucket)
+
+def test_photosmetamodel_bucket_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Bucket)
 
 
-def test_photosmetamodel::bucket_constructor_exists():
-    assert callable(PhotosMetaModel::Bucket.__init__)
+def test_photosmetamodel_bucket_constructor_exists():
+    assert callable(PhotosMetaModel_Bucket.__init__)
 
 
-def test_photosmetamodel::bucket_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Bucket.__init__)
+def test_photosmetamodel_bucket_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Bucket.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::bucket_has_name():
-    assert hasattr(PhotosMetaModel::Bucket, "name")
+def test_photosmetamodel_bucket_has_name():
+    assert hasattr(PhotosMetaModel_Bucket, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Bucket.__mro__:
+    for klass in PhotosMetaModel_Bucket.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -557,79 +557,79 @@ def test_reactfunctions_constructor_args():
 
 
 
-def test_photosmetamodel::lifecycle_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::LifeCycle)
+def test_photosmetamodel_corefunctions_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_CoreFunctions)
 
 
-def test_photosmetamodel::lifecycle_constructor_exists():
-    assert callable(PhotosMetaModel::LifeCycle.__init__)
+def test_photosmetamodel_corefunctions_constructor_exists():
+    assert callable(PhotosMetaModel_CoreFunctions.__init__)
 
 
-def test_photosmetamodel::lifecycle_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::LifeCycle.__init__)
+def test_photosmetamodel_corefunctions_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_CoreFunctions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::constructor_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Constructor)
+def test_photosmetamodel_lifecycle_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_LifeCycle)
 
 
-def test_photosmetamodel::constructor_constructor_exists():
-    assert callable(PhotosMetaModel::Constructor.__init__)
+def test_photosmetamodel_lifecycle_constructor_exists():
+    assert callable(PhotosMetaModel_LifeCycle.__init__)
 
 
-def test_photosmetamodel::constructor_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Constructor.__init__)
+def test_photosmetamodel_lifecycle_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_LifeCycle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::corefunctions_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::CoreFunctions)
+def test_photosmetamodel_constructor_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Constructor)
 
 
-def test_photosmetamodel::corefunctions_constructor_exists():
-    assert callable(PhotosMetaModel::CoreFunctions.__init__)
+def test_photosmetamodel_constructor_constructor_exists():
+    assert callable(PhotosMetaModel_Constructor.__init__)
 
 
-def test_photosmetamodel::corefunctions_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::CoreFunctions.__init__)
+def test_photosmetamodel_constructor_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Constructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::render_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Render)
+def test_photosmetamodel_render_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Render)
 
 
-def test_photosmetamodel::render_constructor_exists():
-    assert callable(PhotosMetaModel::Render.__init__)
+def test_photosmetamodel_render_constructor_exists():
+    assert callable(PhotosMetaModel_Render.__init__)
 
 
-def test_photosmetamodel::render_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Render.__init__)
+def test_photosmetamodel_render_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Render.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::reactfunctions_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ReactFunctions)
+def test_photosmetamodel_reactfunctions_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ReactFunctions)
 
 
-def test_photosmetamodel::reactfunctions_constructor_exists():
-    assert callable(PhotosMetaModel::ReactFunctions.__init__)
+def test_photosmetamodel_reactfunctions_constructor_exists():
+    assert callable(PhotosMetaModel_ReactFunctions.__init__)
 
 
-def test_photosmetamodel::reactfunctions_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ReactFunctions.__init__)
+def test_photosmetamodel_reactfunctions_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ReactFunctions.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::reactfunctions_has_name():
-    assert hasattr(PhotosMetaModel::ReactFunctions, "name")
+def test_photosmetamodel_reactfunctions_has_name():
+    assert hasattr(PhotosMetaModel_ReactFunctions, "name")
     descriptor = None
-    for klass in PhotosMetaModel::ReactFunctions.__mro__:
+    for klass in PhotosMetaModel_ReactFunctions.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -637,16 +637,16 @@ def test_photosmetamodel::reactfunctions_has_name():
 
 
 
-def test_photosmetamodel::reactclasses_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ReactClasses)
+def test_photosmetamodel_reactclasses_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ReactClasses)
 
 
-def test_photosmetamodel::reactclasses_constructor_exists():
-    assert callable(PhotosMetaModel::ReactClasses.__init__)
+def test_photosmetamodel_reactclasses_constructor_exists():
+    assert callable(PhotosMetaModel_ReactClasses.__init__)
 
 
-def test_photosmetamodel::reactclasses_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ReactClasses.__init__)
+def test_photosmetamodel_reactclasses_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ReactClasses.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -665,37 +665,51 @@ def test_modules_constructor_args():
 
 
 
-def test_photosmetamodel::reactconfiguration_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ReactConfiguration)
+def test_photosmetamodel_reactconfiguration_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ReactConfiguration)
 
 
-def test_photosmetamodel::reactconfiguration_constructor_exists():
-    assert callable(PhotosMetaModel::ReactConfiguration.__init__)
+def test_photosmetamodel_reactconfiguration_constructor_exists():
+    assert callable(PhotosMetaModel_ReactConfiguration.__init__)
 
 
-def test_photosmetamodel::reactconfiguration_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ReactConfiguration.__init__)
+def test_photosmetamodel_reactconfiguration_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ReactConfiguration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::libraries_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Libraries)
+def test_photosmetamodel_actions_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Actions)
 
 
-def test_photosmetamodel::libraries_constructor_exists():
-    assert callable(PhotosMetaModel::Libraries.__init__)
+def test_photosmetamodel_actions_constructor_exists():
+    assert callable(PhotosMetaModel_Actions.__init__)
 
 
-def test_photosmetamodel::libraries_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Libraries.__init__)
+def test_photosmetamodel_actions_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Actions.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_libraries_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Libraries)
+
+
+def test_photosmetamodel_libraries_constructor_exists():
+    assert callable(PhotosMetaModel_Libraries.__init__)
+
+
+def test_photosmetamodel_libraries_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Libraries.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_photosmetamodel::libraries_has_type():
-    assert hasattr(PhotosMetaModel::Libraries, "type")
+def test_photosmetamodel_libraries_has_type():
+    assert hasattr(PhotosMetaModel_Libraries, "type")
     descriptor = None
-    for klass in PhotosMetaModel::Libraries.__mro__:
+    for klass in PhotosMetaModel_Libraries.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -703,23 +717,23 @@ def test_photosmetamodel::libraries_has_type():
 
 
 
-def test_photosmetamodel::information_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Information)
+def test_photosmetamodel_information_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Information)
 
 
-def test_photosmetamodel::information_constructor_exists():
-    assert callable(PhotosMetaModel::Information.__init__)
+def test_photosmetamodel_information_constructor_exists():
+    assert callable(PhotosMetaModel_Information.__init__)
 
 
-def test_photosmetamodel::information_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Information.__init__)
+def test_photosmetamodel_information_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Information.__init__)
     params = list(sig.parameters.keys())
     assert "fileType" in params, "Missing parameter 'fileType'"
 
-def test_photosmetamodel::information_has_fileType():
-    assert hasattr(PhotosMetaModel::Information, "fileType")
+def test_photosmetamodel_information_has_fileType():
+    assert hasattr(PhotosMetaModel_Information, "fileType")
     descriptor = None
-    for klass in PhotosMetaModel::Information.__mro__:
+    for klass in PhotosMetaModel_Information.__mro__:
         if "fileType" in klass.__dict__:
             descriptor = klass.__dict__["fileType"]
             break
@@ -727,30 +741,16 @@ def test_photosmetamodel::information_has_fileType():
 
 
 
-def test_photosmetamodel::actions_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Actions)
+def test_photosmetamodel_components_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Components)
 
 
-def test_photosmetamodel::actions_constructor_exists():
-    assert callable(PhotosMetaModel::Actions.__init__)
+def test_photosmetamodel_components_constructor_exists():
+    assert callable(PhotosMetaModel_Components.__init__)
 
 
-def test_photosmetamodel::actions_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Actions.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::components_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Components)
-
-
-def test_photosmetamodel::components_constructor_exists():
-    assert callable(PhotosMetaModel::Components.__init__)
-
-
-def test_photosmetamodel::components_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Components.__init__)
+def test_photosmetamodel_components_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Components.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -769,608 +769,30 @@ def test_datasegment_constructor_args():
 
 
 
-def test_photosmetamodel::amazons3storage_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AmazonS3Storage)
+def test_photosmetamodel_amazons3storage_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AmazonS3Storage)
 
 
-def test_photosmetamodel::amazons3storage_constructor_exists():
-    assert callable(PhotosMetaModel::AmazonS3Storage.__init__)
+def test_photosmetamodel_amazons3storage_constructor_exists():
+    assert callable(PhotosMetaModel_AmazonS3Storage.__init__)
 
 
-def test_photosmetamodel::amazons3storage_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AmazonS3Storage.__init__)
+def test_photosmetamodel_amazons3storage_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AmazonS3Storage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::postgresql::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PostgreSQL::a)
+def test_photosmetamodel_postgresql_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PostgreSQL_a)
 
 
-def test_photosmetamodel::postgresql::a_constructor_exists():
-    assert callable(PhotosMetaModel::PostgreSQL::a.__init__)
+def test_photosmetamodel_postgresql_a_constructor_exists():
+    assert callable(PhotosMetaModel_PostgreSQL_a.__init__)
 
 
-def test_photosmetamodel::postgresql::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PostgreSQL::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_access_is_not_abstract():
-    assert not inspect.isabstract(Access)
-
-
-def test_access_constructor_exists():
-    assert callable(Access.__init__)
-
-
-def test_access_constructor_args():
-    sig = inspect.signature(Access.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::objectspublic_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ObjectsPublic)
-
-
-def test_photosmetamodel::objectspublic_constructor_exists():
-    assert callable(PhotosMetaModel::ObjectsPublic.__init__)
-
-
-def test_photosmetamodel::objectspublic_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ObjectsPublic.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::bucketobjectsnotpublic_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::BucketObjectsNotPublic)
-
-
-def test_photosmetamodel::bucketobjectsnotpublic_constructor_exists():
-    assert callable(PhotosMetaModel::BucketObjectsNotPublic.__init__)
-
-
-def test_photosmetamodel::bucketobjectsnotpublic_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::BucketObjectsNotPublic.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::onlyauthorized_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::OnlyAuthorized)
-
-
-def test_photosmetamodel::onlyauthorized_constructor_exists():
-    assert callable(PhotosMetaModel::OnlyAuthorized.__init__)
-
-
-def test_photosmetamodel::onlyauthorized_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::OnlyAuthorized.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::public_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Public)
-
-
-def test_photosmetamodel::public_constructor_exists():
-    assert callable(PhotosMetaModel::Public.__init__)
-
-
-def test_photosmetamodel::public_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Public.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::folder::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Folder::a)
-
-
-def test_photosmetamodel::folder::a_constructor_exists():
-    assert callable(PhotosMetaModel::Folder::a.__init__)
-
-
-def test_photosmetamodel::folder::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Folder::a.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_photosmetamodel::folder::a_has_name():
-    assert hasattr(PhotosMetaModel::Folder::a, "name")
-    descriptor = None
-    for klass in PhotosMetaModel::Folder::a.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_photosmetamodel::file::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::File::a)
-
-
-def test_photosmetamodel::file::a_constructor_exists():
-    assert callable(PhotosMetaModel::File::a.__init__)
-
-
-def test_photosmetamodel::file::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::File::a.__init__)
-    params = list(sig.parameters.keys())
-    assert "Onwer" in params, "Missing parameter 'Onwer'"
-    assert "ObjectURL" in params, "Missing parameter 'ObjectURL'"
-    assert "size" in params, "Missing parameter 'size'"
-
-def test_photosmetamodel::file::a_has_Onwer():
-    assert hasattr(PhotosMetaModel::File::a, "Onwer")
-    descriptor = None
-    for klass in PhotosMetaModel::File::a.__mro__:
-        if "Onwer" in klass.__dict__:
-            descriptor = klass.__dict__["Onwer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::file::a_has_ObjectURL():
-    assert hasattr(PhotosMetaModel::File::a, "ObjectURL")
-    descriptor = None
-    for klass in PhotosMetaModel::File::a.__mro__:
-        if "ObjectURL" in klass.__dict__:
-            descriptor = klass.__dict__["ObjectURL"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::file::a_has_size():
-    assert hasattr(PhotosMetaModel::File::a, "size")
-    descriptor = None
-    for klass in PhotosMetaModel::File::a.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_photosmetamodel::access_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Access)
-
-
-def test_photosmetamodel::access_constructor_exists():
-    assert callable(PhotosMetaModel::Access.__init__)
-
-
-def test_photosmetamodel::access_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Access.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::batchoperation_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::BatchOperation)
-
-
-def test_photosmetamodel::batchoperation_constructor_exists():
-    assert callable(PhotosMetaModel::BatchOperation.__init__)
-
-
-def test_photosmetamodel::batchoperation_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::BatchOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::presentationsegment_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PresentationSegment)
-
-
-def test_photosmetamodel::presentationsegment_constructor_exists():
-    assert callable(PhotosMetaModel::PresentationSegment.__init__)
-
-
-def test_photosmetamodel::presentationsegment_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PresentationSegment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_layer_is_not_abstract():
-    assert not inspect.isabstract(Layer)
-
-
-def test_layer_constructor_exists():
-    assert callable(Layer.__init__)
-
-
-def test_layer_constructor_args():
-    sig = inspect.signature(Layer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::businesslogic_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::BusinessLogic)
-
-
-def test_photosmetamodel::businesslogic_constructor_exists():
-    assert callable(PhotosMetaModel::BusinessLogic.__init__)
-
-
-def test_photosmetamodel::businesslogic_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::BusinessLogic.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::presentation_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Presentation)
-
-
-def test_photosmetamodel::presentation_constructor_exists():
-    assert callable(PhotosMetaModel::Presentation.__init__)
-
-
-def test_photosmetamodel::presentation_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Presentation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_connection_is_not_abstract():
-    assert not inspect.isabstract(Connection)
-
-
-def test_connection_constructor_exists():
-    assert callable(Connection.__init__)
-
-
-def test_connection_constructor_args():
-    sig = inspect.signature(Connection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::postgresqlconnection_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PostgreSQLConnection)
-
-
-def test_photosmetamodel::postgresqlconnection_constructor_exists():
-    assert callable(PhotosMetaModel::PostgreSQLConnection.__init__)
-
-
-def test_photosmetamodel::postgresqlconnection_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PostgreSQLConnection.__init__)
-    params = list(sig.parameters.keys())
-    assert "url" in params, "Missing parameter 'url'"
-    assert "username" in params, "Missing parameter 'username'"
-    assert "port" in params, "Missing parameter 'port'"
-    assert "password" in params, "Missing parameter 'password'"
-
-def test_photosmetamodel::postgresqlconnection_has_url():
-    assert hasattr(PhotosMetaModel::PostgreSQLConnection, "url")
-    descriptor = None
-    for klass in PhotosMetaModel::PostgreSQLConnection.__mro__:
-        if "url" in klass.__dict__:
-            descriptor = klass.__dict__["url"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::postgresqlconnection_has_username():
-    assert hasattr(PhotosMetaModel::PostgreSQLConnection, "username")
-    descriptor = None
-    for klass in PhotosMetaModel::PostgreSQLConnection.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::postgresqlconnection_has_port():
-    assert hasattr(PhotosMetaModel::PostgreSQLConnection, "port")
-    descriptor = None
-    for klass in PhotosMetaModel::PostgreSQLConnection.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::postgresqlconnection_has_password():
-    assert hasattr(PhotosMetaModel::PostgreSQLConnection, "password")
-    descriptor = None
-    for klass in PhotosMetaModel::PostgreSQLConnection.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_photosmetamodel::amazons3api_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AmazonS3API)
-
-
-def test_photosmetamodel::amazons3api_constructor_exists():
-    assert callable(PhotosMetaModel::AmazonS3API.__init__)
-
-
-def test_photosmetamodel::amazons3api_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AmazonS3API.__init__)
-    params = list(sig.parameters.keys())
-    assert "endpointUrl" in params, "Missing parameter 'endpointUrl'"
-    assert "bucketName" in params, "Missing parameter 'bucketName'"
-    assert "secretKey" in params, "Missing parameter 'secretKey'"
-    assert "accessKey" in params, "Missing parameter 'accessKey'"
-
-def test_photosmetamodel::amazons3api_has_endpointUrl():
-    assert hasattr(PhotosMetaModel::AmazonS3API, "endpointUrl")
-    descriptor = None
-    for klass in PhotosMetaModel::AmazonS3API.__mro__:
-        if "endpointUrl" in klass.__dict__:
-            descriptor = klass.__dict__["endpointUrl"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::amazons3api_has_bucketName():
-    assert hasattr(PhotosMetaModel::AmazonS3API, "bucketName")
-    descriptor = None
-    for klass in PhotosMetaModel::AmazonS3API.__mro__:
-        if "bucketName" in klass.__dict__:
-            descriptor = klass.__dict__["bucketName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::amazons3api_has_secretKey():
-    assert hasattr(PhotosMetaModel::AmazonS3API, "secretKey")
-    descriptor = None
-    for klass in PhotosMetaModel::AmazonS3API.__mro__:
-        if "secretKey" in klass.__dict__:
-            descriptor = klass.__dict__["secretKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::amazons3api_has_accessKey():
-    assert hasattr(PhotosMetaModel::AmazonS3API, "accessKey")
-    descriptor = None
-    for klass in PhotosMetaModel::AmazonS3API.__mro__:
-        if "accessKey" in klass.__dict__:
-            descriptor = klass.__dict__["accessKey"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_photosmetamodel::rest_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::REST)
-
-
-def test_photosmetamodel::rest_constructor_exists():
-    assert callable(PhotosMetaModel::REST.__init__)
-
-
-def test_photosmetamodel::rest_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::REST.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_businesslogicsegment_is_not_abstract():
-    assert not inspect.isabstract(BusinessLogicSegment)
-
-
-def test_businesslogicsegment_constructor_exists():
-    assert callable(BusinessLogicSegment.__init__)
-
-
-def test_businesslogicsegment_constructor_args():
-    sig = inspect.signature(BusinessLogicSegment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::model::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Model::a)
-
-
-def test_photosmetamodel::model::a_constructor_exists():
-    assert callable(PhotosMetaModel::Model::a.__init__)
-
-
-def test_photosmetamodel::model::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Model::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::repository::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Repository::a)
-
-
-def test_photosmetamodel::repository::a_constructor_exists():
-    assert callable(PhotosMetaModel::Repository::a.__init__)
-
-
-def test_photosmetamodel::repository::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Repository::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::security::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Security::a)
-
-
-def test_photosmetamodel::security::a_constructor_exists():
-    assert callable(PhotosMetaModel::Security::a.__init__)
-
-
-def test_photosmetamodel::security::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Security::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::controller::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Controller::a)
-
-
-def test_photosmetamodel::controller::a_constructor_exists():
-    assert callable(PhotosMetaModel::Controller::a.__init__)
-
-
-def test_photosmetamodel::controller::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Controller::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_presentationsegment_is_not_abstract():
-    assert not inspect.isabstract(PresentationSegment)
-
-
-def test_presentationsegment_constructor_exists():
-    assert callable(PresentationSegment.__init__)
-
-
-def test_presentationsegment_constructor_args():
-    sig = inspect.signature(PresentationSegment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::action::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Action::a)
-
-
-def test_photosmetamodel::action::a_constructor_exists():
-    assert callable(PhotosMetaModel::Action::a.__init__)
-
-
-def test_photosmetamodel::action::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Action::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::component::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Component::a)
-
-
-def test_photosmetamodel::component::a_constructor_exists():
-    assert callable(PhotosMetaModel::Component::a.__init__)
-
-
-def test_photosmetamodel::component::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Component::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::view::a_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::View::a)
-
-
-def test_photosmetamodel::view::a_constructor_exists():
-    assert callable(PhotosMetaModel::View::a.__init__)
-
-
-def test_photosmetamodel::view::a_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::View::a.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::segmentstructure_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::SegmentStructure)
-
-
-def test_photosmetamodel::segmentstructure_constructor_exists():
-    assert callable(PhotosMetaModel::SegmentStructure.__init__)
-
-
-def test_photosmetamodel::segmentstructure_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::SegmentStructure.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_photosmetamodel::segmentstructure_has_name():
-    assert hasattr(PhotosMetaModel::SegmentStructure, "name")
-    descriptor = None
-    for klass in PhotosMetaModel::SegmentStructure.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_relation_is_not_abstract():
-    assert not inspect.isabstract(Relation)
-
-
-def test_relation_constructor_exists():
-    assert callable(Relation.__init__)
-
-
-def test_relation_constructor_args():
-    sig = inspect.signature(Relation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::allowedtouse_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AllowedToUse)
-
-
-def test_photosmetamodel::allowedtouse_constructor_exists():
-    assert callable(PhotosMetaModel::AllowedToUse.__init__)
-
-
-def test_photosmetamodel::allowedtouse_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AllowedToUse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::datasegment_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::DataSegment)
-
-
-def test_photosmetamodel::datasegment_constructor_exists():
-    assert callable(PhotosMetaModel::DataSegment.__init__)
-
-
-def test_photosmetamodel::datasegment_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::DataSegment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::data_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Data)
-
-
-def test_photosmetamodel::data_constructor_exists():
-    assert callable(PhotosMetaModel::Data.__init__)
-
-
-def test_photosmetamodel::data_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Data.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::businesslogicsegment_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::BusinessLogicSegment)
-
-
-def test_photosmetamodel::businesslogicsegment_constructor_exists():
-    assert callable(PhotosMetaModel::BusinessLogicSegment.__init__)
-
-
-def test_photosmetamodel::businesslogicsegment_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::BusinessLogicSegment.__init__)
+def test_photosmetamodel_postgresql_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PostgreSQL_a.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1389,173 +811,173 @@ def test_functionalities_constructor_args():
 
 
 
-def test_photosmetamodel::profilemanagement_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ProfileManagement)
+def test_photosmetamodel_albummanagement_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AlbumManagement)
 
 
-def test_photosmetamodel::profilemanagement_constructor_exists():
-    assert callable(PhotosMetaModel::ProfileManagement.__init__)
+def test_photosmetamodel_albummanagement_constructor_exists():
+    assert callable(PhotosMetaModel_AlbumManagement.__init__)
 
 
-def test_photosmetamodel::profilemanagement_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ProfileManagement.__init__)
+def test_photosmetamodel_albummanagement_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AlbumManagement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::photoactions_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PhotoActions)
+def test_photosmetamodel_photoactions_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PhotoActions)
 
 
-def test_photosmetamodel::photoactions_constructor_exists():
-    assert callable(PhotosMetaModel::PhotoActions.__init__)
+def test_photosmetamodel_photoactions_constructor_exists():
+    assert callable(PhotosMetaModel_PhotoActions.__init__)
 
 
-def test_photosmetamodel::photoactions_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PhotoActions.__init__)
+def test_photosmetamodel_photoactions_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PhotoActions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::albummanagement_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AlbumManagement)
+def test_photosmetamodel_profilemanagement_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ProfileManagement)
 
 
-def test_photosmetamodel::albummanagement_constructor_exists():
-    assert callable(PhotosMetaModel::AlbumManagement.__init__)
+def test_photosmetamodel_profilemanagement_constructor_exists():
+    assert callable(PhotosMetaModel_ProfileManagement.__init__)
 
 
-def test_photosmetamodel::albummanagement_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AlbumManagement.__init__)
+def test_photosmetamodel_profilemanagement_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ProfileManagement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::appaccess_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AppAccess)
+def test_photosmetamodel_appaccess_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AppAccess)
 
 
-def test_photosmetamodel::appaccess_constructor_exists():
-    assert callable(PhotosMetaModel::AppAccess.__init__)
+def test_photosmetamodel_appaccess_constructor_exists():
+    assert callable(PhotosMetaModel_AppAccess.__init__)
 
 
-def test_photosmetamodel::appaccess_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AppAccess.__init__)
+def test_photosmetamodel_appaccess_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AppAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::relation_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Relation)
+def test_photosmetamodel_relation_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Relation)
 
 
-def test_photosmetamodel::relation_constructor_exists():
-    assert callable(PhotosMetaModel::Relation.__init__)
+def test_photosmetamodel_relation_constructor_exists():
+    assert callable(PhotosMetaModel_Relation.__init__)
 
 
-def test_photosmetamodel::relation_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Relation.__init__)
+def test_photosmetamodel_relation_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::layer_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Layer)
+def test_photosmetamodel_layer_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Layer)
 
 
-def test_photosmetamodel::layer_constructor_exists():
-    assert callable(PhotosMetaModel::Layer.__init__)
+def test_photosmetamodel_layer_constructor_exists():
+    assert callable(PhotosMetaModel_Layer.__init__)
 
 
-def test_photosmetamodel::layer_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Layer.__init__)
+def test_photosmetamodel_layer_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Layer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::connection_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Connection)
+def test_photosmetamodel_connection_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Connection)
 
 
-def test_photosmetamodel::connection_constructor_exists():
-    assert callable(PhotosMetaModel::Connection.__init__)
+def test_photosmetamodel_connection_constructor_exists():
+    assert callable(PhotosMetaModel_Connection.__init__)
 
 
-def test_photosmetamodel::connection_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Connection.__init__)
+def test_photosmetamodel_connection_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::amazonelasticcomputecloud_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AmazonElasticComputeCloud)
+def test_photosmetamodel_amazonelasticcomputecloud_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AmazonElasticComputeCloud)
 
 
-def test_photosmetamodel::amazonelasticcomputecloud_constructor_exists():
-    assert callable(PhotosMetaModel::AmazonElasticComputeCloud.__init__)
+def test_photosmetamodel_amazonelasticcomputecloud_constructor_exists():
+    assert callable(PhotosMetaModel_AmazonElasticComputeCloud.__init__)
 
 
-def test_photosmetamodel::amazonelasticcomputecloud_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AmazonElasticComputeCloud.__init__)
+def test_photosmetamodel_amazonelasticcomputecloud_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AmazonElasticComputeCloud.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::amazonsimplestorageservice_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AmazonSimpleStorageService)
+def test_photosmetamodel_amazonsimplestorageservice_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AmazonSimpleStorageService)
 
 
-def test_photosmetamodel::amazonsimplestorageservice_constructor_exists():
-    assert callable(PhotosMetaModel::AmazonSimpleStorageService.__init__)
+def test_photosmetamodel_amazonsimplestorageservice_constructor_exists():
+    assert callable(PhotosMetaModel_AmazonSimpleStorageService.__init__)
 
 
-def test_photosmetamodel::amazonsimplestorageservice_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AmazonSimpleStorageService.__init__)
+def test_photosmetamodel_amazonsimplestorageservice_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AmazonSimpleStorageService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::privilege_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Privilege)
+def test_photosmetamodel_privilege_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Privilege)
 
 
-def test_photosmetamodel::privilege_constructor_exists():
-    assert callable(PhotosMetaModel::Privilege.__init__)
+def test_photosmetamodel_privilege_constructor_exists():
+    assert callable(PhotosMetaModel_Privilege.__init__)
 
 
-def test_photosmetamodel::privilege_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Privilege.__init__)
+def test_photosmetamodel_privilege_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Privilege.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::user::p_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::User::p)
+def test_photosmetamodel_user_p_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_User_p)
 
 
-def test_photosmetamodel::user::p_constructor_exists():
-    assert callable(PhotosMetaModel::User::p.__init__)
+def test_photosmetamodel_user_p_constructor_exists():
+    assert callable(PhotosMetaModel_User_p.__init__)
 
 
-def test_photosmetamodel::user::p_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::User::p.__init__)
+def test_photosmetamodel_user_p_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_User_p.__init__)
     params = list(sig.parameters.keys())
     assert "password" in params, "Missing parameter 'password'"
     assert "username" in params, "Missing parameter 'username'"
 
-def test_photosmetamodel::user::p_has_password():
-    assert hasattr(PhotosMetaModel::User::p, "password")
+def test_photosmetamodel_user_p_has_password():
+    assert hasattr(PhotosMetaModel_User_p, "password")
     descriptor = None
-    for klass in PhotosMetaModel::User::p.__mro__:
+    for klass in PhotosMetaModel_User_p.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
-def test_photosmetamodel::user::p_has_username():
-    assert hasattr(PhotosMetaModel::User::p, "username")
+def test_photosmetamodel_user_p_has_username():
+    assert hasattr(PhotosMetaModel_User_p, "username")
     descriptor = None
-    for klass in PhotosMetaModel::User::p.__mro__:
+    for klass in PhotosMetaModel_User_p.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
@@ -1577,33 +999,23 @@ def test_entities_constructor_args():
 
 
 
-def test_photosmetamodel::album_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Album)
+def test_photosmetamodel_photo_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Photo)
 
 
-def test_photosmetamodel::album_constructor_exists():
-    assert callable(PhotosMetaModel::Album.__init__)
+def test_photosmetamodel_photo_constructor_exists():
+    assert callable(PhotosMetaModel_Photo.__init__)
 
 
-def test_photosmetamodel::album_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Album.__init__)
+def test_photosmetamodel_photo_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Photo.__init__)
     params = list(sig.parameters.keys())
-    assert "url" in params, "Missing parameter 'url'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::album_has_url():
-    assert hasattr(PhotosMetaModel::Album, "url")
+def test_photosmetamodel_photo_has_name():
+    assert hasattr(PhotosMetaModel_Photo, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Album.__mro__:
-        if "url" in klass.__dict__:
-            descriptor = klass.__dict__["url"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::album_has_name():
-    assert hasattr(PhotosMetaModel::Album, "name")
-    descriptor = None
-    for klass in PhotosMetaModel::Album.__mro__:
+    for klass in PhotosMetaModel_Photo.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1611,205 +1023,181 @@ def test_photosmetamodel::album_has_name():
 
 
 
-def test_photosmetamodel::photo_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Photo)
+def test_photosmetamodel_user_d_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_User_d)
 
 
-def test_photosmetamodel::photo_constructor_exists():
-    assert callable(PhotosMetaModel::Photo.__init__)
+def test_photosmetamodel_user_d_constructor_exists():
+    assert callable(PhotosMetaModel_User_d.__init__)
 
 
-def test_photosmetamodel::photo_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Photo.__init__)
+def test_photosmetamodel_user_d_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_User_d.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_photosmetamodel::photo_has_name():
-    assert hasattr(PhotosMetaModel::Photo, "name")
-    descriptor = None
-    for klass in PhotosMetaModel::Photo.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_photosmetamodel::user::d_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::User::d)
-
-
-def test_photosmetamodel::user::d_constructor_exists():
-    assert callable(PhotosMetaModel::User::d.__init__)
-
-
-def test_photosmetamodel::user::d_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::User::d.__init__)
-    params = list(sig.parameters.keys())
-    assert "profile_description" in params, "Missing parameter 'profile_description'"
     assert "password" in params, "Missing parameter 'password'"
     assert "username" in params, "Missing parameter 'username'"
+    assert "first_name" in params, "Missing parameter 'first_name'"
+    assert "profile_description" in params, "Missing parameter 'profile_description'"
     assert "last_name" in params, "Missing parameter 'last_name'"
     assert "email" in params, "Missing parameter 'email'"
-    assert "first_name" in params, "Missing parameter 'first_name'"
 
-def test_photosmetamodel::user::d_has_profile_description():
-    assert hasattr(PhotosMetaModel::User::d, "profile_description")
+def test_photosmetamodel_user_d_has_password():
+    assert hasattr(PhotosMetaModel_User_d, "password")
     descriptor = None
-    for klass in PhotosMetaModel::User::d.__mro__:
-        if "profile_description" in klass.__dict__:
-            descriptor = klass.__dict__["profile_description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::user::d_has_password():
-    assert hasattr(PhotosMetaModel::User::d, "password")
-    descriptor = None
-    for klass in PhotosMetaModel::User::d.__mro__:
+    for klass in PhotosMetaModel_User_d.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
-def test_photosmetamodel::user::d_has_username():
-    assert hasattr(PhotosMetaModel::User::d, "username")
+def test_photosmetamodel_user_d_has_username():
+    assert hasattr(PhotosMetaModel_User_d, "username")
     descriptor = None
-    for klass in PhotosMetaModel::User::d.__mro__:
+    for klass in PhotosMetaModel_User_d.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
-def test_photosmetamodel::user::d_has_last_name():
-    assert hasattr(PhotosMetaModel::User::d, "last_name")
+def test_photosmetamodel_user_d_has_first_name():
+    assert hasattr(PhotosMetaModel_User_d, "first_name")
     descriptor = None
-    for klass in PhotosMetaModel::User::d.__mro__:
-        if "last_name" in klass.__dict__:
-            descriptor = klass.__dict__["last_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::user::d_has_email():
-    assert hasattr(PhotosMetaModel::User::d, "email")
-    descriptor = None
-    for klass in PhotosMetaModel::User::d.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_photosmetamodel::user::d_has_first_name():
-    assert hasattr(PhotosMetaModel::User::d, "first_name")
-    descriptor = None
-    for klass in PhotosMetaModel::User::d.__mro__:
+    for klass in PhotosMetaModel_User_d.__mro__:
         if "first_name" in klass.__dict__:
             descriptor = klass.__dict__["first_name"]
             break
     assert isinstance(descriptor, property)
 
+def test_photosmetamodel_user_d_has_profile_description():
+    assert hasattr(PhotosMetaModel_User_d, "profile_description")
+    descriptor = None
+    for klass in PhotosMetaModel_User_d.__mro__:
+        if "profile_description" in klass.__dict__:
+            descriptor = klass.__dict__["profile_description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_user_d_has_last_name():
+    assert hasattr(PhotosMetaModel_User_d, "last_name")
+    descriptor = None
+    for klass in PhotosMetaModel_User_d.__mro__:
+        if "last_name" in klass.__dict__:
+            descriptor = klass.__dict__["last_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_user_d_has_email():
+    assert hasattr(PhotosMetaModel_User_d, "email")
+    descriptor = None
+    for klass in PhotosMetaModel_User_d.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_photosmetamodel::index_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Index)
+
+def test_photosmetamodel_index_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Index)
 
 
-def test_photosmetamodel::index_constructor_exists():
-    assert callable(PhotosMetaModel::Index.__init__)
+def test_photosmetamodel_index_constructor_exists():
+    assert callable(PhotosMetaModel_Index.__init__)
 
 
-def test_photosmetamodel::index_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Index.__init__)
+def test_photosmetamodel_index_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Index.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::column_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Column)
+def test_photosmetamodel_column_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Column)
 
 
-def test_photosmetamodel::column_constructor_exists():
-    assert callable(PhotosMetaModel::Column.__init__)
+def test_photosmetamodel_column_constructor_exists():
+    assert callable(PhotosMetaModel_Column.__init__)
 
 
-def test_photosmetamodel::column_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Column.__init__)
+def test_photosmetamodel_column_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::policy_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Policy)
+def test_photosmetamodel_policy_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Policy)
 
 
-def test_photosmetamodel::policy_constructor_exists():
-    assert callable(PhotosMetaModel::Policy.__init__)
+def test_photosmetamodel_policy_constructor_exists():
+    assert callable(PhotosMetaModel_Policy.__init__)
 
 
-def test_photosmetamodel::policy_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Policy.__init__)
+def test_photosmetamodel_policy_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Policy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::index::p_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Index::p)
+def test_photosmetamodel_index_p_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Index_p)
 
 
-def test_photosmetamodel::index::p_constructor_exists():
-    assert callable(PhotosMetaModel::Index::p.__init__)
+def test_photosmetamodel_index_p_constructor_exists():
+    assert callable(PhotosMetaModel_Index_p.__init__)
 
 
-def test_photosmetamodel::index::p_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Index::p.__init__)
+def test_photosmetamodel_index_p_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Index_p.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::view_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::View)
+def test_photosmetamodel_view_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_View)
 
 
-def test_photosmetamodel::view_constructor_exists():
-    assert callable(PhotosMetaModel::View.__init__)
+def test_photosmetamodel_view_constructor_exists():
+    assert callable(PhotosMetaModel_View.__init__)
 
 
-def test_photosmetamodel::view_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::View.__init__)
+def test_photosmetamodel_view_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_View.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::trigger_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Trigger)
+def test_photosmetamodel_trigger_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Trigger)
 
 
-def test_photosmetamodel::trigger_constructor_exists():
-    assert callable(PhotosMetaModel::Trigger.__init__)
+def test_photosmetamodel_trigger_constructor_exists():
+    assert callable(PhotosMetaModel_Trigger.__init__)
 
 
-def test_photosmetamodel::trigger_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Trigger.__init__)
+def test_photosmetamodel_trigger_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::table::p_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Table::p)
+def test_photosmetamodel_table_p_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Table_p)
 
 
-def test_photosmetamodel::table::p_constructor_exists():
-    assert callable(PhotosMetaModel::Table::p.__init__)
+def test_photosmetamodel_table_p_constructor_exists():
+    assert callable(PhotosMetaModel_Table_p.__init__)
 
 
-def test_photosmetamodel::table::p_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Table::p.__init__)
+def test_photosmetamodel_table_p_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Table_p.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::table::p_has_name():
-    assert hasattr(PhotosMetaModel::Table::p, "name")
+def test_photosmetamodel_table_p_has_name():
+    assert hasattr(PhotosMetaModel_Table_p, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Table::p.__mro__:
+    for klass in PhotosMetaModel_Table_p.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1817,107 +1205,107 @@ def test_photosmetamodel::table::p_has_name():
 
 
 
-def test_photosmetamodel::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ForeignKey)
+def test_photosmetamodel_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ForeignKey)
 
 
-def test_photosmetamodel::foreignkey_constructor_exists():
-    assert callable(PhotosMetaModel::ForeignKey.__init__)
+def test_photosmetamodel_foreignkey_constructor_exists():
+    assert callable(PhotosMetaModel_ForeignKey.__init__)
 
 
-def test_photosmetamodel::foreignkey_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ForeignKey.__init__)
+def test_photosmetamodel_foreignkey_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::clause_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Clause)
+def test_photosmetamodel_clause_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Clause)
 
 
-def test_photosmetamodel::clause_constructor_exists():
-    assert callable(PhotosMetaModel::Clause.__init__)
+def test_photosmetamodel_clause_constructor_exists():
+    assert callable(PhotosMetaModel_Clause.__init__)
 
 
-def test_photosmetamodel::clause_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Clause.__init__)
+def test_photosmetamodel_clause_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Clause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::query_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Query)
+def test_photosmetamodel_query_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Query)
 
 
-def test_photosmetamodel::query_constructor_exists():
-    assert callable(PhotosMetaModel::Query.__init__)
+def test_photosmetamodel_query_constructor_exists():
+    assert callable(PhotosMetaModel_Query.__init__)
 
 
-def test_photosmetamodel::query_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Query.__init__)
+def test_photosmetamodel_query_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::cluster_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Cluster)
+def test_photosmetamodel_cluster_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Cluster)
 
 
-def test_photosmetamodel::cluster_constructor_exists():
-    assert callable(PhotosMetaModel::Cluster.__init__)
+def test_photosmetamodel_cluster_constructor_exists():
+    assert callable(PhotosMetaModel_Cluster.__init__)
 
 
-def test_photosmetamodel::cluster_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Cluster.__init__)
+def test_photosmetamodel_cluster_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Cluster.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::order::s_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Order::s)
+def test_photosmetamodel_order_s_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Order_s)
 
 
-def test_photosmetamodel::order::s_constructor_exists():
-    assert callable(PhotosMetaModel::Order::s.__init__)
+def test_photosmetamodel_order_s_constructor_exists():
+    assert callable(PhotosMetaModel_Order_s.__init__)
 
 
-def test_photosmetamodel::order::s_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Order::s.__init__)
+def test_photosmetamodel_order_s_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Order_s.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::enableglobalmethodsecurity_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::EnableGlobalMethodSecurity)
+def test_photosmetamodel_enableglobalmethodsecurity_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_EnableGlobalMethodSecurity)
 
 
-def test_photosmetamodel::enableglobalmethodsecurity_constructor_exists():
-    assert callable(PhotosMetaModel::EnableGlobalMethodSecurity.__init__)
+def test_photosmetamodel_enableglobalmethodsecurity_constructor_exists():
+    assert callable(PhotosMetaModel_EnableGlobalMethodSecurity.__init__)
 
 
-def test_photosmetamodel::enableglobalmethodsecurity_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::EnableGlobalMethodSecurity.__init__)
+def test_photosmetamodel_enableglobalmethodsecurity_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_EnableGlobalMethodSecurity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::scheme_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Scheme)
+def test_photosmetamodel_scheme_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Scheme)
 
 
-def test_photosmetamodel::scheme_constructor_exists():
-    assert callable(PhotosMetaModel::Scheme.__init__)
+def test_photosmetamodel_scheme_constructor_exists():
+    assert callable(PhotosMetaModel_Scheme.__init__)
 
 
-def test_photosmetamodel::scheme_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Scheme.__init__)
+def test_photosmetamodel_scheme_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Scheme.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::scheme_has_name():
-    assert hasattr(PhotosMetaModel::Scheme, "name")
+def test_photosmetamodel_scheme_has_name():
+    assert hasattr(PhotosMetaModel_Scheme, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Scheme.__mro__:
+    for klass in PhotosMetaModel_Scheme.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1925,23 +1313,23 @@ def test_photosmetamodel::scheme_has_name():
 
 
 
-def test_photosmetamodel::database_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Database)
+def test_photosmetamodel_database_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Database)
 
 
-def test_photosmetamodel::database_constructor_exists():
-    assert callable(PhotosMetaModel::Database.__init__)
+def test_photosmetamodel_database_constructor_exists():
+    assert callable(PhotosMetaModel_Database.__init__)
 
 
-def test_photosmetamodel::database_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Database.__init__)
+def test_photosmetamodel_database_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Database.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::database_has_name():
-    assert hasattr(PhotosMetaModel::Database, "name")
+def test_photosmetamodel_database_has_name():
+    assert hasattr(PhotosMetaModel_Database, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Database.__mro__:
+    for klass in PhotosMetaModel_Database.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1949,37 +1337,37 @@ def test_photosmetamodel::database_has_name():
 
 
 
-def test_photosmetamodel::function::p_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Function::p)
+def test_photosmetamodel_function_p_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Function_p)
 
 
-def test_photosmetamodel::function::p_constructor_exists():
-    assert callable(PhotosMetaModel::Function::p.__init__)
+def test_photosmetamodel_function_p_constructor_exists():
+    assert callable(PhotosMetaModel_Function_p.__init__)
 
 
-def test_photosmetamodel::function::p_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Function::p.__init__)
+def test_photosmetamodel_function_p_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Function_p.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::row_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Row)
+def test_photosmetamodel_row_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Row)
 
 
-def test_photosmetamodel::row_constructor_exists():
-    assert callable(PhotosMetaModel::Row.__init__)
+def test_photosmetamodel_row_constructor_exists():
+    assert callable(PhotosMetaModel_Row.__init__)
 
 
-def test_photosmetamodel::row_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Row.__init__)
+def test_photosmetamodel_row_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Row.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::row_has_name():
-    assert hasattr(PhotosMetaModel::Row, "name")
+def test_photosmetamodel_row_has_name():
+    assert hasattr(PhotosMetaModel_Row, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Row.__mro__:
+    for klass in PhotosMetaModel_Row.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1987,23 +1375,23 @@ def test_photosmetamodel::row_has_name():
 
 
 
-def test_photosmetamodel::column::p_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Column::p)
+def test_photosmetamodel_column_p_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Column_p)
 
 
-def test_photosmetamodel::column::p_constructor_exists():
-    assert callable(PhotosMetaModel::Column::p.__init__)
+def test_photosmetamodel_column_p_constructor_exists():
+    assert callable(PhotosMetaModel_Column_p.__init__)
 
 
-def test_photosmetamodel::column::p_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Column::p.__init__)
+def test_photosmetamodel_column_p_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Column_p.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::column::p_has_name():
-    assert hasattr(PhotosMetaModel::Column::p, "name")
+def test_photosmetamodel_column_p_has_name():
+    assert hasattr(PhotosMetaModel_Column_p, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Column::p.__mro__:
+    for klass in PhotosMetaModel_Column_p.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2011,51 +1399,93 @@ def test_photosmetamodel::column::p_has_name():
 
 
 
-def test_photosmetamodel::generatedvalue_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::GeneratedValue)
+def test_access_is_not_abstract():
+    assert not inspect.isabstract(Access)
 
 
-def test_photosmetamodel::generatedvalue_constructor_exists():
-    assert callable(PhotosMetaModel::GeneratedValue.__init__)
+def test_access_constructor_exists():
+    assert callable(Access.__init__)
 
 
-def test_photosmetamodel::generatedvalue_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::GeneratedValue.__init__)
+def test_access_constructor_args():
+    sig = inspect.signature(Access.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::id_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Id)
+def test_photosmetamodel_objectspublic_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ObjectsPublic)
 
 
-def test_photosmetamodel::id_constructor_exists():
-    assert callable(PhotosMetaModel::Id.__init__)
+def test_photosmetamodel_objectspublic_constructor_exists():
+    assert callable(PhotosMetaModel_ObjectsPublic.__init__)
 
 
-def test_photosmetamodel::id_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Id.__init__)
+def test_photosmetamodel_objectspublic_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ObjectsPublic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::column::s_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Column::s)
+def test_photosmetamodel_bucketobjectsnotpublic_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_BucketObjectsNotPublic)
 
 
-def test_photosmetamodel::column::s_constructor_exists():
-    assert callable(PhotosMetaModel::Column::s.__init__)
+def test_photosmetamodel_bucketobjectsnotpublic_constructor_exists():
+    assert callable(PhotosMetaModel_BucketObjectsNotPublic.__init__)
 
 
-def test_photosmetamodel::column::s_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Column::s.__init__)
+def test_photosmetamodel_bucketobjectsnotpublic_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_BucketObjectsNotPublic.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_onlyauthorized_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_OnlyAuthorized)
+
+
+def test_photosmetamodel_onlyauthorized_constructor_exists():
+    assert callable(PhotosMetaModel_OnlyAuthorized.__init__)
+
+
+def test_photosmetamodel_onlyauthorized_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_OnlyAuthorized.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_public_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Public)
+
+
+def test_photosmetamodel_public_constructor_exists():
+    assert callable(PhotosMetaModel_Public.__init__)
+
+
+def test_photosmetamodel_public_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Public.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_folder_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Folder_a)
+
+
+def test_photosmetamodel_folder_a_constructor_exists():
+    assert callable(PhotosMetaModel_Folder_a.__init__)
+
+
+def test_photosmetamodel_folder_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Folder_a.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::column::s_has_name():
-    assert hasattr(PhotosMetaModel::Column::s, "name")
+def test_photosmetamodel_folder_a_has_name():
+    assert hasattr(PhotosMetaModel_Folder_a, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Column::s.__mro__:
+    for klass in PhotosMetaModel_Folder_a.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2063,37 +1493,413 @@ def test_photosmetamodel::column::s_has_name():
 
 
 
-def test_photosmetamodel::namednativequery_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::NamedNativeQuery)
+def test_photosmetamodel_file_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_File_a)
 
 
-def test_photosmetamodel::namednativequery_constructor_exists():
-    assert callable(PhotosMetaModel::NamedNativeQuery.__init__)
+def test_photosmetamodel_file_a_constructor_exists():
+    assert callable(PhotosMetaModel_File_a.__init__)
 
 
-def test_photosmetamodel::namednativequery_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::NamedNativeQuery.__init__)
+def test_photosmetamodel_file_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_File_a.__init__)
+    params = list(sig.parameters.keys())
+    assert "ObjectURL" in params, "Missing parameter 'ObjectURL'"
+    assert "size" in params, "Missing parameter 'size'"
+    assert "Onwer" in params, "Missing parameter 'Onwer'"
+
+def test_photosmetamodel_file_a_has_ObjectURL():
+    assert hasattr(PhotosMetaModel_File_a, "ObjectURL")
+    descriptor = None
+    for klass in PhotosMetaModel_File_a.__mro__:
+        if "ObjectURL" in klass.__dict__:
+            descriptor = klass.__dict__["ObjectURL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_file_a_has_size():
+    assert hasattr(PhotosMetaModel_File_a, "size")
+    descriptor = None
+    for klass in PhotosMetaModel_File_a.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_file_a_has_Onwer():
+    assert hasattr(PhotosMetaModel_File_a, "Onwer")
+    descriptor = None
+    for klass in PhotosMetaModel_File_a.__mro__:
+        if "Onwer" in klass.__dict__:
+            descriptor = klass.__dict__["Onwer"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_photosmetamodel_access_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Access)
+
+
+def test_photosmetamodel_access_constructor_exists():
+    assert callable(PhotosMetaModel_Access.__init__)
+
+
+def test_photosmetamodel_access_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Access.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::table::s_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Table::s)
+def test_photosmetamodel_batchoperation_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_BatchOperation)
 
 
-def test_photosmetamodel::table::s_constructor_exists():
-    assert callable(PhotosMetaModel::Table::s.__init__)
+def test_photosmetamodel_batchoperation_constructor_exists():
+    assert callable(PhotosMetaModel_BatchOperation.__init__)
 
 
-def test_photosmetamodel::table::s_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Table::s.__init__)
+def test_photosmetamodel_batchoperation_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_BatchOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_presentationsegment_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PresentationSegment)
+
+
+def test_photosmetamodel_presentationsegment_constructor_exists():
+    assert callable(PhotosMetaModel_PresentationSegment.__init__)
+
+
+def test_photosmetamodel_presentationsegment_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PresentationSegment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_layer_is_not_abstract():
+    assert not inspect.isabstract(Layer)
+
+
+def test_layer_constructor_exists():
+    assert callable(Layer.__init__)
+
+
+def test_layer_constructor_args():
+    sig = inspect.signature(Layer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_businesslogic_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_BusinessLogic)
+
+
+def test_photosmetamodel_businesslogic_constructor_exists():
+    assert callable(PhotosMetaModel_BusinessLogic.__init__)
+
+
+def test_photosmetamodel_businesslogic_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_BusinessLogic.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_presentation_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Presentation)
+
+
+def test_photosmetamodel_presentation_constructor_exists():
+    assert callable(PhotosMetaModel_Presentation.__init__)
+
+
+def test_photosmetamodel_presentation_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Presentation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_connection_is_not_abstract():
+    assert not inspect.isabstract(Connection)
+
+
+def test_connection_constructor_exists():
+    assert callable(Connection.__init__)
+
+
+def test_connection_constructor_args():
+    sig = inspect.signature(Connection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_postgresqlconnection_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PostgreSQLConnection)
+
+
+def test_photosmetamodel_postgresqlconnection_constructor_exists():
+    assert callable(PhotosMetaModel_PostgreSQLConnection.__init__)
+
+
+def test_photosmetamodel_postgresqlconnection_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PostgreSQLConnection.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+    assert "url" in params, "Missing parameter 'url'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "username" in params, "Missing parameter 'username'"
+
+def test_photosmetamodel_postgresqlconnection_has_port():
+    assert hasattr(PhotosMetaModel_PostgreSQLConnection, "port")
+    descriptor = None
+    for klass in PhotosMetaModel_PostgreSQLConnection.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_postgresqlconnection_has_url():
+    assert hasattr(PhotosMetaModel_PostgreSQLConnection, "url")
+    descriptor = None
+    for klass in PhotosMetaModel_PostgreSQLConnection.__mro__:
+        if "url" in klass.__dict__:
+            descriptor = klass.__dict__["url"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_postgresqlconnection_has_password():
+    assert hasattr(PhotosMetaModel_PostgreSQLConnection, "password")
+    descriptor = None
+    for klass in PhotosMetaModel_PostgreSQLConnection.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_postgresqlconnection_has_username():
+    assert hasattr(PhotosMetaModel_PostgreSQLConnection, "username")
+    descriptor = None
+    for klass in PhotosMetaModel_PostgreSQLConnection.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_photosmetamodel_amazons3api_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AmazonS3API)
+
+
+def test_photosmetamodel_amazons3api_constructor_exists():
+    assert callable(PhotosMetaModel_AmazonS3API.__init__)
+
+
+def test_photosmetamodel_amazons3api_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AmazonS3API.__init__)
+    params = list(sig.parameters.keys())
+    assert "endpointUrl" in params, "Missing parameter 'endpointUrl'"
+    assert "accessKey" in params, "Missing parameter 'accessKey'"
+    assert "bucketName" in params, "Missing parameter 'bucketName'"
+    assert "secretKey" in params, "Missing parameter 'secretKey'"
+
+def test_photosmetamodel_amazons3api_has_endpointUrl():
+    assert hasattr(PhotosMetaModel_AmazonS3API, "endpointUrl")
+    descriptor = None
+    for klass in PhotosMetaModel_AmazonS3API.__mro__:
+        if "endpointUrl" in klass.__dict__:
+            descriptor = klass.__dict__["endpointUrl"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_amazons3api_has_accessKey():
+    assert hasattr(PhotosMetaModel_AmazonS3API, "accessKey")
+    descriptor = None
+    for klass in PhotosMetaModel_AmazonS3API.__mro__:
+        if "accessKey" in klass.__dict__:
+            descriptor = klass.__dict__["accessKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_amazons3api_has_bucketName():
+    assert hasattr(PhotosMetaModel_AmazonS3API, "bucketName")
+    descriptor = None
+    for klass in PhotosMetaModel_AmazonS3API.__mro__:
+        if "bucketName" in klass.__dict__:
+            descriptor = klass.__dict__["bucketName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_amazons3api_has_secretKey():
+    assert hasattr(PhotosMetaModel_AmazonS3API, "secretKey")
+    descriptor = None
+    for klass in PhotosMetaModel_AmazonS3API.__mro__:
+        if "secretKey" in klass.__dict__:
+            descriptor = klass.__dict__["secretKey"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_photosmetamodel_rest_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_REST)
+
+
+def test_photosmetamodel_rest_constructor_exists():
+    assert callable(PhotosMetaModel_REST.__init__)
+
+
+def test_photosmetamodel_rest_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_REST.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_businesslogicsegment_is_not_abstract():
+    assert not inspect.isabstract(BusinessLogicSegment)
+
+
+def test_businesslogicsegment_constructor_exists():
+    assert callable(BusinessLogicSegment.__init__)
+
+
+def test_businesslogicsegment_constructor_args():
+    sig = inspect.signature(BusinessLogicSegment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_repository_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Repository_a)
+
+
+def test_photosmetamodel_repository_a_constructor_exists():
+    assert callable(PhotosMetaModel_Repository_a.__init__)
+
+
+def test_photosmetamodel_repository_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Repository_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_model_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Model_a)
+
+
+def test_photosmetamodel_model_a_constructor_exists():
+    assert callable(PhotosMetaModel_Model_a.__init__)
+
+
+def test_photosmetamodel_model_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Model_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_security_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Security_a)
+
+
+def test_photosmetamodel_security_a_constructor_exists():
+    assert callable(PhotosMetaModel_Security_a.__init__)
+
+
+def test_photosmetamodel_security_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Security_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_controller_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Controller_a)
+
+
+def test_photosmetamodel_controller_a_constructor_exists():
+    assert callable(PhotosMetaModel_Controller_a.__init__)
+
+
+def test_photosmetamodel_controller_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Controller_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_presentationsegment_is_not_abstract():
+    assert not inspect.isabstract(PresentationSegment)
+
+
+def test_presentationsegment_constructor_exists():
+    assert callable(PresentationSegment.__init__)
+
+
+def test_presentationsegment_constructor_args():
+    sig = inspect.signature(PresentationSegment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_component_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Component_a)
+
+
+def test_photosmetamodel_component_a_constructor_exists():
+    assert callable(PhotosMetaModel_Component_a.__init__)
+
+
+def test_photosmetamodel_component_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Component_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_action_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Action_a)
+
+
+def test_photosmetamodel_action_a_constructor_exists():
+    assert callable(PhotosMetaModel_Action_a.__init__)
+
+
+def test_photosmetamodel_action_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Action_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_view_a_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_View_a)
+
+
+def test_photosmetamodel_view_a_constructor_exists():
+    assert callable(PhotosMetaModel_View_a.__init__)
+
+
+def test_photosmetamodel_view_a_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_View_a.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_segmentstructure_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_SegmentStructure)
+
+
+def test_photosmetamodel_segmentstructure_constructor_exists():
+    assert callable(PhotosMetaModel_SegmentStructure.__init__)
+
+
+def test_photosmetamodel_segmentstructure_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_SegmentStructure.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::table::s_has_name():
-    assert hasattr(PhotosMetaModel::Table::s, "name")
+def test_photosmetamodel_segmentstructure_has_name():
+    assert hasattr(PhotosMetaModel_SegmentStructure, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Table::s.__mro__:
+    for klass in PhotosMetaModel_SegmentStructure.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2101,121 +1907,155 @@ def test_photosmetamodel::table::s_has_name():
 
 
 
-def test_photosmetamodel::exception_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Exception)
+def test_relation_is_not_abstract():
+    assert not inspect.isabstract(Relation)
 
 
-def test_photosmetamodel::exception_constructor_exists():
-    assert callable(PhotosMetaModel::Exception.__init__)
+def test_relation_constructor_exists():
+    assert callable(Relation.__init__)
 
 
-def test_photosmetamodel::exception_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Exception.__init__)
+def test_relation_constructor_args():
+    sig = inspect.signature(Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::enableauthorizationserver_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::EnableAuthorizationServer)
+def test_photosmetamodel_allowedtouse_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AllowedToUse)
 
 
-def test_photosmetamodel::enableauthorizationserver_constructor_exists():
-    assert callable(PhotosMetaModel::EnableAuthorizationServer.__init__)
+def test_photosmetamodel_allowedtouse_constructor_exists():
+    assert callable(PhotosMetaModel_AllowedToUse.__init__)
 
 
-def test_photosmetamodel::enableauthorizationserver_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::EnableAuthorizationServer.__init__)
+def test_photosmetamodel_allowedtouse_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AllowedToUse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::enableresourceserver_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::EnableResourceServer)
+def test_photosmetamodel_datasegment_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_DataSegment)
 
 
-def test_photosmetamodel::enableresourceserver_constructor_exists():
-    assert callable(PhotosMetaModel::EnableResourceServer.__init__)
+def test_photosmetamodel_datasegment_constructor_exists():
+    assert callable(PhotosMetaModel_DataSegment.__init__)
 
 
-def test_photosmetamodel::enableresourceserver_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::EnableResourceServer.__init__)
+def test_photosmetamodel_datasegment_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_DataSegment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::enablewebsecurity_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::EnableWebSecurity)
+def test_photosmetamodel_data_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Data)
 
 
-def test_photosmetamodel::enablewebsecurity_constructor_exists():
-    assert callable(PhotosMetaModel::EnableWebSecurity.__init__)
+def test_photosmetamodel_data_constructor_exists():
+    assert callable(PhotosMetaModel_Data.__init__)
 
 
-def test_photosmetamodel::enablewebsecurity_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::EnableWebSecurity.__init__)
+def test_photosmetamodel_data_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Data.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::bean_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Bean)
+def test_photosmetamodel_businesslogicsegment_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_BusinessLogicSegment)
 
 
-def test_photosmetamodel::bean_constructor_exists():
-    assert callable(PhotosMetaModel::Bean.__init__)
+def test_photosmetamodel_businesslogicsegment_constructor_exists():
+    assert callable(PhotosMetaModel_BusinessLogicSegment.__init__)
 
 
-def test_photosmetamodel::bean_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Bean.__init__)
+def test_photosmetamodel_businesslogicsegment_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_BusinessLogicSegment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::predicate_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Predicate)
+def test_photosmetamodel_album_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Album)
 
 
-def test_photosmetamodel::predicate_constructor_exists():
-    assert callable(PhotosMetaModel::Predicate.__init__)
+def test_photosmetamodel_album_constructor_exists():
+    assert callable(PhotosMetaModel_Album.__init__)
 
 
-def test_photosmetamodel::predicate_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Predicate.__init__)
+def test_photosmetamodel_album_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Album.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "url" in params, "Missing parameter 'url'"
+
+def test_photosmetamodel_album_has_name():
+    assert hasattr(PhotosMetaModel_Album, "name")
+    descriptor = None
+    for klass in PhotosMetaModel_Album.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_photosmetamodel_album_has_url():
+    assert hasattr(PhotosMetaModel_Album, "url")
+    descriptor = None
+    for klass in PhotosMetaModel_Album.__mro__:
+        if "url" in klass.__dict__:
+            descriptor = klass.__dict__["url"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_photosmetamodel_generatedvalue_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_GeneratedValue)
+
+
+def test_photosmetamodel_generatedvalue_constructor_exists():
+    assert callable(PhotosMetaModel_GeneratedValue.__init__)
+
+
+def test_photosmetamodel_generatedvalue_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_GeneratedValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::searchcriteria_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::SearchCriteria)
+def test_photosmetamodel_id_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Id)
 
 
-def test_photosmetamodel::searchcriteria_constructor_exists():
-    assert callable(PhotosMetaModel::SearchCriteria.__init__)
+def test_photosmetamodel_id_constructor_exists():
+    assert callable(PhotosMetaModel_Id.__init__)
 
 
-def test_photosmetamodel::searchcriteria_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::SearchCriteria.__init__)
+def test_photosmetamodel_id_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Id.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::datatype_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::DataType)
+def test_photosmetamodel_column_s_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Column_s)
 
 
-def test_photosmetamodel::datatype_constructor_exists():
-    assert callable(PhotosMetaModel::DataType.__init__)
+def test_photosmetamodel_column_s_constructor_exists():
+    assert callable(PhotosMetaModel_Column_s.__init__)
 
 
-def test_photosmetamodel::datatype_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::DataType.__init__)
+def test_photosmetamodel_column_s_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Column_s.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::datatype_has_name():
-    assert hasattr(PhotosMetaModel::DataType, "name")
+def test_photosmetamodel_column_s_has_name():
+    assert hasattr(PhotosMetaModel_Column_s, "name")
     descriptor = None
-    for klass in PhotosMetaModel::DataType.__mro__:
+    for klass in PhotosMetaModel_Column_s.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2223,93 +2063,37 @@ def test_photosmetamodel::datatype_has_name():
 
 
 
-def test_photosmetamodel::constraint_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Constraint)
+def test_photosmetamodel_namednativequery_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_NamedNativeQuery)
 
 
-def test_photosmetamodel::constraint_constructor_exists():
-    assert callable(PhotosMetaModel::Constraint.__init__)
+def test_photosmetamodel_namednativequery_constructor_exists():
+    assert callable(PhotosMetaModel_NamedNativeQuery.__init__)
 
 
-def test_photosmetamodel::constraint_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Constraint.__init__)
+def test_photosmetamodel_namednativequery_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_NamedNativeQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::specification_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Specification)
+def test_photosmetamodel_table_s_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Table_s)
 
 
-def test_photosmetamodel::specification_constructor_exists():
-    assert callable(PhotosMetaModel::Specification.__init__)
+def test_photosmetamodel_table_s_constructor_exists():
+    assert callable(PhotosMetaModel_Table_s.__init__)
 
 
-def test_photosmetamodel::specification_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Specification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::autowired_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Autowired)
-
-
-def test_photosmetamodel::autowired_constructor_exists():
-    assert callable(PhotosMetaModel::Autowired.__init__)
-
-
-def test_photosmetamodel::autowired_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Autowired.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::exceptionhandler_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::ExceptionHandler)
-
-
-def test_photosmetamodel::exceptionhandler_constructor_exists():
-    assert callable(PhotosMetaModel::ExceptionHandler.__init__)
-
-
-def test_photosmetamodel::exceptionhandler_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::ExceptionHandler.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::requestmapping_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::RequestMapping)
-
-
-def test_photosmetamodel::requestmapping_constructor_exists():
-    assert callable(PhotosMetaModel::RequestMapping.__init__)
-
-
-def test_photosmetamodel::requestmapping_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::RequestMapping.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_photosmetamodel::restcontroller_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::RestController)
-
-
-def test_photosmetamodel::restcontroller_constructor_exists():
-    assert callable(PhotosMetaModel::RestController.__init__)
-
-
-def test_photosmetamodel::restcontroller_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::RestController.__init__)
+def test_photosmetamodel_table_s_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Table_s.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::restcontroller_has_name():
-    assert hasattr(PhotosMetaModel::RestController, "name")
+def test_photosmetamodel_table_s_has_name():
+    assert hasattr(PhotosMetaModel_Table_s, "name")
     descriptor = None
-    for klass in PhotosMetaModel::RestController.__mro__:
+    for klass in PhotosMetaModel_Table_s.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2317,37 +2101,121 @@ def test_photosmetamodel::restcontroller_has_name():
 
 
 
-def test_photosmetamodel::repository_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Repository)
+def test_photosmetamodel_exception_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Exception)
 
 
-def test_photosmetamodel::repository_constructor_exists():
-    assert callable(PhotosMetaModel::Repository.__init__)
+def test_photosmetamodel_exception_constructor_exists():
+    assert callable(PhotosMetaModel_Exception.__init__)
 
 
-def test_photosmetamodel::repository_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Repository.__init__)
+def test_photosmetamodel_exception_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Exception.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::modules_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Modules)
+def test_photosmetamodel_enableauthorizationserver_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_EnableAuthorizationServer)
 
 
-def test_photosmetamodel::modules_constructor_exists():
-    assert callable(PhotosMetaModel::Modules.__init__)
+def test_photosmetamodel_enableauthorizationserver_constructor_exists():
+    assert callable(PhotosMetaModel_EnableAuthorizationServer.__init__)
 
 
-def test_photosmetamodel::modules_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Modules.__init__)
+def test_photosmetamodel_enableauthorizationserver_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_EnableAuthorizationServer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_enableresourceserver_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_EnableResourceServer)
+
+
+def test_photosmetamodel_enableresourceserver_constructor_exists():
+    assert callable(PhotosMetaModel_EnableResourceServer.__init__)
+
+
+def test_photosmetamodel_enableresourceserver_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_EnableResourceServer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_enablewebsecurity_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_EnableWebSecurity)
+
+
+def test_photosmetamodel_enablewebsecurity_constructor_exists():
+    assert callable(PhotosMetaModel_EnableWebSecurity.__init__)
+
+
+def test_photosmetamodel_enablewebsecurity_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_EnableWebSecurity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_bean_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Bean)
+
+
+def test_photosmetamodel_bean_constructor_exists():
+    assert callable(PhotosMetaModel_Bean.__init__)
+
+
+def test_photosmetamodel_bean_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Bean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_predicate_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Predicate)
+
+
+def test_photosmetamodel_predicate_constructor_exists():
+    assert callable(PhotosMetaModel_Predicate.__init__)
+
+
+def test_photosmetamodel_predicate_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Predicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_searchcriteria_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_SearchCriteria)
+
+
+def test_photosmetamodel_searchcriteria_constructor_exists():
+    assert callable(PhotosMetaModel_SearchCriteria.__init__)
+
+
+def test_photosmetamodel_searchcriteria_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_SearchCriteria.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_datatype_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_DataType)
+
+
+def test_photosmetamodel_datatype_constructor_exists():
+    assert callable(PhotosMetaModel_DataType.__init__)
+
+
+def test_photosmetamodel_datatype_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_photosmetamodel::modules_has_name():
-    assert hasattr(PhotosMetaModel::Modules, "name")
+def test_photosmetamodel_datatype_has_name():
+    assert hasattr(PhotosMetaModel_DataType, "name")
     descriptor = None
-    for klass in PhotosMetaModel::Modules.__mro__:
+    for klass in PhotosMetaModel_DataType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2355,44 +2223,176 @@ def test_photosmetamodel::modules_has_name():
 
 
 
-def test_photosmetamodel::springbootapplication_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::SpringBootApplication)
+def test_photosmetamodel_constraint_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Constraint)
 
 
-def test_photosmetamodel::springbootapplication_constructor_exists():
-    assert callable(PhotosMetaModel::SpringBootApplication.__init__)
+def test_photosmetamodel_constraint_constructor_exists():
+    assert callable(PhotosMetaModel_Constraint.__init__)
 
 
-def test_photosmetamodel::springbootapplication_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::SpringBootApplication.__init__)
+def test_photosmetamodel_constraint_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::amazonwebservices_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::AmazonWebServices)
+def test_photosmetamodel_specification_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Specification)
 
 
-def test_photosmetamodel::amazonwebservices_constructor_exists():
-    assert callable(PhotosMetaModel::AmazonWebServices.__init__)
+def test_photosmetamodel_specification_constructor_exists():
+    assert callable(PhotosMetaModel_Specification.__init__)
 
 
-def test_photosmetamodel::amazonwebservices_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::AmazonWebServices.__init__)
+def test_photosmetamodel_specification_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::react_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::React)
+def test_photosmetamodel_autowired_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Autowired)
 
 
-def test_photosmetamodel::react_constructor_exists():
-    assert callable(PhotosMetaModel::React.__init__)
+def test_photosmetamodel_autowired_constructor_exists():
+    assert callable(PhotosMetaModel_Autowired.__init__)
 
 
-def test_photosmetamodel::react_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::React.__init__)
+def test_photosmetamodel_autowired_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Autowired.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_exceptionhandler_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_ExceptionHandler)
+
+
+def test_photosmetamodel_exceptionhandler_constructor_exists():
+    assert callable(PhotosMetaModel_ExceptionHandler.__init__)
+
+
+def test_photosmetamodel_exceptionhandler_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_ExceptionHandler.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_requestmapping_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_RequestMapping)
+
+
+def test_photosmetamodel_requestmapping_constructor_exists():
+    assert callable(PhotosMetaModel_RequestMapping.__init__)
+
+
+def test_photosmetamodel_requestmapping_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_RequestMapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_restcontroller_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_RestController)
+
+
+def test_photosmetamodel_restcontroller_constructor_exists():
+    assert callable(PhotosMetaModel_RestController.__init__)
+
+
+def test_photosmetamodel_restcontroller_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_RestController.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_photosmetamodel_restcontroller_has_name():
+    assert hasattr(PhotosMetaModel_RestController, "name")
+    descriptor = None
+    for klass in PhotosMetaModel_RestController.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_photosmetamodel_repository_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Repository)
+
+
+def test_photosmetamodel_repository_constructor_exists():
+    assert callable(PhotosMetaModel_Repository.__init__)
+
+
+def test_photosmetamodel_repository_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Repository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_modules_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Modules)
+
+
+def test_photosmetamodel_modules_constructor_exists():
+    assert callable(PhotosMetaModel_Modules.__init__)
+
+
+def test_photosmetamodel_modules_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Modules.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_photosmetamodel_modules_has_name():
+    assert hasattr(PhotosMetaModel_Modules, "name")
+    descriptor = None
+    for klass in PhotosMetaModel_Modules.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_photosmetamodel_springbootapplication_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_SpringBootApplication)
+
+
+def test_photosmetamodel_springbootapplication_constructor_exists():
+    assert callable(PhotosMetaModel_SpringBootApplication.__init__)
+
+
+def test_photosmetamodel_springbootapplication_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_SpringBootApplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_amazonwebservices_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_AmazonWebServices)
+
+
+def test_photosmetamodel_amazonwebservices_constructor_exists():
+    assert callable(PhotosMetaModel_AmazonWebServices.__init__)
+
+
+def test_photosmetamodel_amazonwebservices_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_AmazonWebServices.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_photosmetamodel_react_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_React)
+
+
+def test_photosmetamodel_react_constructor_exists():
+    assert callable(PhotosMetaModel_React.__init__)
+
+
+def test_photosmetamodel_react_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_React.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2411,205 +2411,205 @@ def test_requestmapping_constructor_args():
 
 
 
-def test_photosmetamodel::putmapping_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PutMapping)
+def test_photosmetamodel_getmapping_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_GetMapping)
 
 
-def test_photosmetamodel::putmapping_constructor_exists():
-    assert callable(PhotosMetaModel::PutMapping.__init__)
+def test_photosmetamodel_getmapping_constructor_exists():
+    assert callable(PhotosMetaModel_GetMapping.__init__)
 
 
-def test_photosmetamodel::putmapping_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PutMapping.__init__)
+def test_photosmetamodel_getmapping_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_GetMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::deletemapping_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::DeleteMapping)
+def test_photosmetamodel_putmapping_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PutMapping)
 
 
-def test_photosmetamodel::deletemapping_constructor_exists():
-    assert callable(PhotosMetaModel::DeleteMapping.__init__)
+def test_photosmetamodel_putmapping_constructor_exists():
+    assert callable(PhotosMetaModel_PutMapping.__init__)
 
 
-def test_photosmetamodel::deletemapping_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::DeleteMapping.__init__)
+def test_photosmetamodel_putmapping_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PutMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::getmapping_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::GetMapping)
+def test_photosmetamodel_deletemapping_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_DeleteMapping)
 
 
-def test_photosmetamodel::getmapping_constructor_exists():
-    assert callable(PhotosMetaModel::GetMapping.__init__)
+def test_photosmetamodel_deletemapping_constructor_exists():
+    assert callable(PhotosMetaModel_DeleteMapping.__init__)
 
 
-def test_photosmetamodel::getmapping_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::GetMapping.__init__)
+def test_photosmetamodel_deletemapping_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_DeleteMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::postmapping_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PostMapping)
+def test_photosmetamodel_postmapping_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PostMapping)
 
 
-def test_photosmetamodel::postmapping_constructor_exists():
-    assert callable(PhotosMetaModel::PostMapping.__init__)
+def test_photosmetamodel_postmapping_constructor_exists():
+    assert callable(PhotosMetaModel_PostMapping.__init__)
 
 
-def test_photosmetamodel::postmapping_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PostMapping.__init__)
+def test_photosmetamodel_postmapping_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PostMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::requestpart_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::RequestPart)
+def test_photosmetamodel_requestpart_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_RequestPart)
 
 
-def test_photosmetamodel::requestpart_constructor_exists():
-    assert callable(PhotosMetaModel::RequestPart.__init__)
+def test_photosmetamodel_requestpart_constructor_exists():
+    assert callable(PhotosMetaModel_RequestPart.__init__)
 
 
-def test_photosmetamodel::requestpart_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::RequestPart.__init__)
+def test_photosmetamodel_requestpart_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_RequestPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::configuration_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Configuration)
+def test_photosmetamodel_configuration_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Configuration)
 
 
-def test_photosmetamodel::configuration_constructor_exists():
-    assert callable(PhotosMetaModel::Configuration.__init__)
+def test_photosmetamodel_configuration_constructor_exists():
+    assert callable(PhotosMetaModel_Configuration.__init__)
 
 
-def test_photosmetamodel::configuration_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Configuration.__init__)
+def test_photosmetamodel_configuration_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Configuration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::component_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Component)
+def test_photosmetamodel_component_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Component)
 
 
-def test_photosmetamodel::component_constructor_exists():
-    assert callable(PhotosMetaModel::Component.__init__)
+def test_photosmetamodel_component_constructor_exists():
+    assert callable(PhotosMetaModel_Component.__init__)
 
 
-def test_photosmetamodel::component_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Component.__init__)
+def test_photosmetamodel_component_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::entity_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Entity)
+def test_photosmetamodel_entity_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Entity)
 
 
-def test_photosmetamodel::entity_constructor_exists():
-    assert callable(PhotosMetaModel::Entity.__init__)
+def test_photosmetamodel_entity_constructor_exists():
+    assert callable(PhotosMetaModel_Entity.__init__)
 
 
-def test_photosmetamodel::entity_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Entity.__init__)
+def test_photosmetamodel_entity_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::domain_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Domain)
+def test_photosmetamodel_domain_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Domain)
 
 
-def test_photosmetamodel::domain_constructor_exists():
-    assert callable(PhotosMetaModel::Domain.__init__)
+def test_photosmetamodel_domain_constructor_exists():
+    assert callable(PhotosMetaModel_Domain.__init__)
 
 
-def test_photosmetamodel::domain_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Domain.__init__)
+def test_photosmetamodel_domain_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Domain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::softgallery_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::SoftGallery)
+def test_photosmetamodel_softgallery_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_SoftGallery)
 
 
-def test_photosmetamodel::softgallery_constructor_exists():
-    assert callable(PhotosMetaModel::SoftGallery.__init__)
+def test_photosmetamodel_softgallery_constructor_exists():
+    assert callable(PhotosMetaModel_SoftGallery.__init__)
 
 
-def test_photosmetamodel::softgallery_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::SoftGallery.__init__)
+def test_photosmetamodel_softgallery_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_SoftGallery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::postgresql_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::PostgreSQL)
+def test_photosmetamodel_postgresql_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_PostgreSQL)
 
 
-def test_photosmetamodel::postgresql_constructor_exists():
-    assert callable(PhotosMetaModel::PostgreSQL.__init__)
+def test_photosmetamodel_postgresql_constructor_exists():
+    assert callable(PhotosMetaModel_PostgreSQL.__init__)
 
 
-def test_photosmetamodel::postgresql_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::PostgreSQL.__init__)
+def test_photosmetamodel_postgresql_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_PostgreSQL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::spring_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Spring)
+def test_photosmetamodel_spring_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Spring)
 
 
-def test_photosmetamodel::spring_constructor_exists():
-    assert callable(PhotosMetaModel::Spring.__init__)
+def test_photosmetamodel_spring_constructor_exists():
+    assert callable(PhotosMetaModel_Spring.__init__)
 
 
-def test_photosmetamodel::spring_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Spring.__init__)
+def test_photosmetamodel_spring_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Spring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::ntier_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::NTier)
+def test_photosmetamodel_ntier_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_NTier)
 
 
-def test_photosmetamodel::ntier_constructor_exists():
-    assert callable(PhotosMetaModel::NTier.__init__)
+def test_photosmetamodel_ntier_constructor_exists():
+    assert callable(PhotosMetaModel_NTier.__init__)
 
 
-def test_photosmetamodel::ntier_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::NTier.__init__)
+def test_photosmetamodel_ntier_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_NTier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::entities_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Entities)
+def test_photosmetamodel_entities_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Entities)
 
 
-def test_photosmetamodel::entities_constructor_exists():
-    assert callable(PhotosMetaModel::Entities.__init__)
+def test_photosmetamodel_entities_constructor_exists():
+    assert callable(PhotosMetaModel_Entities.__init__)
 
 
-def test_photosmetamodel::entities_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Entities.__init__)
+def test_photosmetamodel_entities_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Entities.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_photosmetamodel::entities_has_id():
-    assert hasattr(PhotosMetaModel::Entities, "id")
+def test_photosmetamodel_entities_has_id():
+    assert hasattr(PhotosMetaModel_Entities, "id")
     descriptor = None
-    for klass in PhotosMetaModel::Entities.__mro__:
+    for klass in PhotosMetaModel_Entities.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2617,44 +2617,44 @@ def test_photosmetamodel::entities_has_id():
 
 
 
-def test_photosmetamodel::functionalities_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Functionalities)
+def test_photosmetamodel_functionalities_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Functionalities)
 
 
-def test_photosmetamodel::functionalities_constructor_exists():
-    assert callable(PhotosMetaModel::Functionalities.__init__)
+def test_photosmetamodel_functionalities_constructor_exists():
+    assert callable(PhotosMetaModel_Functionalities.__init__)
 
 
-def test_photosmetamodel::functionalities_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Functionalities.__init__)
+def test_photosmetamodel_functionalities_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Functionalities.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::technology_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Technology)
+def test_photosmetamodel_technology_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Technology)
 
 
-def test_photosmetamodel::technology_constructor_exists():
-    assert callable(PhotosMetaModel::Technology.__init__)
+def test_photosmetamodel_technology_constructor_exists():
+    assert callable(PhotosMetaModel_Technology.__init__)
 
 
-def test_photosmetamodel::technology_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Technology.__init__)
+def test_photosmetamodel_technology_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Technology.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_photosmetamodel::architecture_is_not_abstract():
-    assert not inspect.isabstract(PhotosMetaModel::Architecture)
+def test_photosmetamodel_architecture_is_not_abstract():
+    assert not inspect.isabstract(PhotosMetaModel_Architecture)
 
 
-def test_photosmetamodel::architecture_constructor_exists():
-    assert callable(PhotosMetaModel::Architecture.__init__)
+def test_photosmetamodel_architecture_constructor_exists():
+    assert callable(PhotosMetaModel_Architecture.__init__)
 
 
-def test_photosmetamodel::architecture_constructor_args():
-    sig = inspect.signature(PhotosMetaModel::Architecture.__init__)
+def test_photosmetamodel_architecture_constructor_args():
+    sig = inspect.signature(PhotosMetaModel_Architecture.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2672,295 +2672,173 @@ safe_text = st.text(
 Actions_strategy = st.builds(
     Actions,
 )
-PhotosMetaModel::Services_strategy = st.builds(
-    PhotosMetaModel::Services,
+PhotosMetaModel_Services_strategy = st.builds(
+    PhotosMetaModel_Services,
 )
-PhotosMetaModel::Request_strategy = st.builds(
-    PhotosMetaModel::Request,
+PhotosMetaModel_Request_strategy = st.builds(
+    PhotosMetaModel_Request,
 )
-PhotosMetaModel::Files_strategy = st.builds(
-    PhotosMetaModel::Files,
+PhotosMetaModel_Files_strategy = st.builds(
+    PhotosMetaModel_Files,
     type=
         safe_text,
     extension=
         safe_text
 )
-PhotosMetaModel::Directories_strategy = st.builds(
-    PhotosMetaModel::Directories,
+PhotosMetaModel_Directories_strategy = st.builds(
+    PhotosMetaModel_Directories,
 )
 Components_strategy = st.builds(
     Components,
 )
-PhotosMetaModel::UI_strategy = st.builds(
-    PhotosMetaModel::UI,
+PhotosMetaModel_UI_strategy = st.builds(
+    PhotosMetaModel_UI,
 )
-PhotosMetaModel::Logic_strategy = st.builds(
-    PhotosMetaModel::Logic,
+PhotosMetaModel_Logic_strategy = st.builds(
+    PhotosMetaModel_Logic,
 )
 ReactConfiguration_strategy = st.builds(
     ReactConfiguration,
 )
-PhotosMetaModel::Dependencies_strategy = st.builds(
-    PhotosMetaModel::Dependencies,
+PhotosMetaModel_Dependencies_strategy = st.builds(
+    PhotosMetaModel_Dependencies,
 )
-PhotosMetaModel::ReactDOM_strategy = st.builds(
-    PhotosMetaModel::ReactDOM,
+PhotosMetaModel_ReactDOM_strategy = st.builds(
+    PhotosMetaModel_ReactDOM,
+    isConstant=
+        safe_text,
     isStruct=
         safe_text,
     isRoute=
-        safe_text,
-    isConstant=
         safe_text
 )
-PhotosMetaModel::MetaData_strategy = st.builds(
-    PhotosMetaModel::MetaData,
+PhotosMetaModel_MetaData_strategy = st.builds(
+    PhotosMetaModel_MetaData,
 )
 UI_strategy = st.builds(
     UI,
 )
-PhotosMetaModel::Subcomponents_strategy = st.builds(
-    PhotosMetaModel::Subcomponents,
+PhotosMetaModel_Subcomponents_strategy = st.builds(
+    PhotosMetaModel_Subcomponents,
 )
-PhotosMetaModel::ViewComponents_strategy = st.builds(
-    PhotosMetaModel::ViewComponents,
+PhotosMetaModel_ViewComponents_strategy = st.builds(
+    PhotosMetaModel_ViewComponents,
 )
 Logic_strategy = st.builds(
     Logic,
 )
-PhotosMetaModel::Structure_strategy = st.builds(
-    PhotosMetaModel::Structure,
+PhotosMetaModel_Structure_strategy = st.builds(
+    PhotosMetaModel_Structure,
 )
-PhotosMetaModel::Router_strategy = st.builds(
-    PhotosMetaModel::Router,
+PhotosMetaModel_Router_strategy = st.builds(
+    PhotosMetaModel_Router,
 )
-PhotosMetaModel::State_strategy = st.builds(
-    PhotosMetaModel::State,
+PhotosMetaModel_State_strategy = st.builds(
+    PhotosMetaModel_State,
     active=
         safe_text
 )
-PhotosMetaModel::Props_strategy = st.builds(
-    PhotosMetaModel::Props,
-    type=
-        safe_text,
+PhotosMetaModel_Props_strategy = st.builds(
+    PhotosMetaModel_Props,
     dataType=
+        safe_text,
+    type=
         safe_text
 )
-PhotosMetaModel::Bucket_strategy = st.builds(
-    PhotosMetaModel::Bucket,
+PhotosMetaModel_Bucket_strategy = st.builds(
+    PhotosMetaModel_Bucket,
     name=
         safe_text
 )
 ReactFunctions_strategy = st.builds(
     ReactFunctions,
 )
-PhotosMetaModel::LifeCycle_strategy = st.builds(
-    PhotosMetaModel::LifeCycle,
+PhotosMetaModel_CoreFunctions_strategy = st.builds(
+    PhotosMetaModel_CoreFunctions,
 )
-PhotosMetaModel::Constructor_strategy = st.builds(
-    PhotosMetaModel::Constructor,
+PhotosMetaModel_LifeCycle_strategy = st.builds(
+    PhotosMetaModel_LifeCycle,
 )
-PhotosMetaModel::CoreFunctions_strategy = st.builds(
-    PhotosMetaModel::CoreFunctions,
+PhotosMetaModel_Constructor_strategy = st.builds(
+    PhotosMetaModel_Constructor,
 )
-PhotosMetaModel::Render_strategy = st.builds(
-    PhotosMetaModel::Render,
+PhotosMetaModel_Render_strategy = st.builds(
+    PhotosMetaModel_Render,
 )
-PhotosMetaModel::ReactFunctions_strategy = st.builds(
-    PhotosMetaModel::ReactFunctions,
+PhotosMetaModel_ReactFunctions_strategy = st.builds(
+    PhotosMetaModel_ReactFunctions,
     name=
         safe_text
 )
-PhotosMetaModel::ReactClasses_strategy = st.builds(
-    PhotosMetaModel::ReactClasses,
+PhotosMetaModel_ReactClasses_strategy = st.builds(
+    PhotosMetaModel_ReactClasses,
 )
 Modules_strategy = st.builds(
     Modules,
 )
-PhotosMetaModel::ReactConfiguration_strategy = st.builds(
-    PhotosMetaModel::ReactConfiguration,
+PhotosMetaModel_ReactConfiguration_strategy = st.builds(
+    PhotosMetaModel_ReactConfiguration,
 )
-PhotosMetaModel::Libraries_strategy = st.builds(
-    PhotosMetaModel::Libraries,
+PhotosMetaModel_Actions_strategy = st.builds(
+    PhotosMetaModel_Actions,
+)
+PhotosMetaModel_Libraries_strategy = st.builds(
+    PhotosMetaModel_Libraries,
     type=
         safe_text
 )
-PhotosMetaModel::Information_strategy = st.builds(
-    PhotosMetaModel::Information,
+PhotosMetaModel_Information_strategy = st.builds(
+    PhotosMetaModel_Information,
     fileType=
         safe_text
 )
-PhotosMetaModel::Actions_strategy = st.builds(
-    PhotosMetaModel::Actions,
-)
-PhotosMetaModel::Components_strategy = st.builds(
-    PhotosMetaModel::Components,
+PhotosMetaModel_Components_strategy = st.builds(
+    PhotosMetaModel_Components,
 )
 DataSegment_strategy = st.builds(
     DataSegment,
 )
-PhotosMetaModel::AmazonS3Storage_strategy = st.builds(
-    PhotosMetaModel::AmazonS3Storage,
+PhotosMetaModel_AmazonS3Storage_strategy = st.builds(
+    PhotosMetaModel_AmazonS3Storage,
 )
-PhotosMetaModel::PostgreSQL::a_strategy = st.builds(
-    PhotosMetaModel::PostgreSQL::a,
-)
-Access_strategy = st.builds(
-    Access,
-)
-PhotosMetaModel::ObjectsPublic_strategy = st.builds(
-    PhotosMetaModel::ObjectsPublic,
-)
-PhotosMetaModel::BucketObjectsNotPublic_strategy = st.builds(
-    PhotosMetaModel::BucketObjectsNotPublic,
-)
-PhotosMetaModel::OnlyAuthorized_strategy = st.builds(
-    PhotosMetaModel::OnlyAuthorized,
-)
-PhotosMetaModel::Public_strategy = st.builds(
-    PhotosMetaModel::Public,
-)
-PhotosMetaModel::Folder::a_strategy = st.builds(
-    PhotosMetaModel::Folder::a,
-    name=
-        safe_text
-)
-PhotosMetaModel::File::a_strategy = st.builds(
-    PhotosMetaModel::File::a,
-    Onwer=
-        safe_text,
-    ObjectURL=
-        safe_text,
-    size=
-        safe_text
-)
-PhotosMetaModel::Access_strategy = st.builds(
-    PhotosMetaModel::Access,
-)
-PhotosMetaModel::BatchOperation_strategy = st.builds(
-    PhotosMetaModel::BatchOperation,
-)
-PhotosMetaModel::PresentationSegment_strategy = st.builds(
-    PhotosMetaModel::PresentationSegment,
-)
-Layer_strategy = st.builds(
-    Layer,
-)
-PhotosMetaModel::BusinessLogic_strategy = st.builds(
-    PhotosMetaModel::BusinessLogic,
-)
-PhotosMetaModel::Presentation_strategy = st.builds(
-    PhotosMetaModel::Presentation,
-)
-Connection_strategy = st.builds(
-    Connection,
-)
-PhotosMetaModel::PostgreSQLConnection_strategy = st.builds(
-    PhotosMetaModel::PostgreSQLConnection,
-    url=
-        safe_text,
-    username=
-        safe_text,
-    port=
-        st.integers(),
-    password=
-        safe_text
-)
-PhotosMetaModel::AmazonS3API_strategy = st.builds(
-    PhotosMetaModel::AmazonS3API,
-    endpointUrl=
-        safe_text,
-    bucketName=
-        safe_text,
-    secretKey=
-        safe_text,
-    accessKey=
-        safe_text
-)
-PhotosMetaModel::REST_strategy = st.builds(
-    PhotosMetaModel::REST,
-)
-BusinessLogicSegment_strategy = st.builds(
-    BusinessLogicSegment,
-)
-PhotosMetaModel::Model::a_strategy = st.builds(
-    PhotosMetaModel::Model::a,
-)
-PhotosMetaModel::Repository::a_strategy = st.builds(
-    PhotosMetaModel::Repository::a,
-)
-PhotosMetaModel::Security::a_strategy = st.builds(
-    PhotosMetaModel::Security::a,
-)
-PhotosMetaModel::Controller::a_strategy = st.builds(
-    PhotosMetaModel::Controller::a,
-)
-PresentationSegment_strategy = st.builds(
-    PresentationSegment,
-)
-PhotosMetaModel::Action::a_strategy = st.builds(
-    PhotosMetaModel::Action::a,
-)
-PhotosMetaModel::Component::a_strategy = st.builds(
-    PhotosMetaModel::Component::a,
-)
-PhotosMetaModel::View::a_strategy = st.builds(
-    PhotosMetaModel::View::a,
-)
-PhotosMetaModel::SegmentStructure_strategy = st.builds(
-    PhotosMetaModel::SegmentStructure,
-    name=
-        safe_text
-)
-Relation_strategy = st.builds(
-    Relation,
-)
-PhotosMetaModel::AllowedToUse_strategy = st.builds(
-    PhotosMetaModel::AllowedToUse,
-)
-PhotosMetaModel::DataSegment_strategy = st.builds(
-    PhotosMetaModel::DataSegment,
-)
-PhotosMetaModel::Data_strategy = st.builds(
-    PhotosMetaModel::Data,
-)
-PhotosMetaModel::BusinessLogicSegment_strategy = st.builds(
-    PhotosMetaModel::BusinessLogicSegment,
+PhotosMetaModel_PostgreSQL_a_strategy = st.builds(
+    PhotosMetaModel_PostgreSQL_a,
 )
 Functionalities_strategy = st.builds(
     Functionalities,
 )
-PhotosMetaModel::ProfileManagement_strategy = st.builds(
-    PhotosMetaModel::ProfileManagement,
+PhotosMetaModel_AlbumManagement_strategy = st.builds(
+    PhotosMetaModel_AlbumManagement,
 )
-PhotosMetaModel::PhotoActions_strategy = st.builds(
-    PhotosMetaModel::PhotoActions,
+PhotosMetaModel_PhotoActions_strategy = st.builds(
+    PhotosMetaModel_PhotoActions,
 )
-PhotosMetaModel::AlbumManagement_strategy = st.builds(
-    PhotosMetaModel::AlbumManagement,
+PhotosMetaModel_ProfileManagement_strategy = st.builds(
+    PhotosMetaModel_ProfileManagement,
 )
-PhotosMetaModel::AppAccess_strategy = st.builds(
-    PhotosMetaModel::AppAccess,
+PhotosMetaModel_AppAccess_strategy = st.builds(
+    PhotosMetaModel_AppAccess,
 )
-PhotosMetaModel::Relation_strategy = st.builds(
-    PhotosMetaModel::Relation,
+PhotosMetaModel_Relation_strategy = st.builds(
+    PhotosMetaModel_Relation,
 )
-PhotosMetaModel::Layer_strategy = st.builds(
-    PhotosMetaModel::Layer,
+PhotosMetaModel_Layer_strategy = st.builds(
+    PhotosMetaModel_Layer,
 )
-PhotosMetaModel::Connection_strategy = st.builds(
-    PhotosMetaModel::Connection,
+PhotosMetaModel_Connection_strategy = st.builds(
+    PhotosMetaModel_Connection,
 )
-PhotosMetaModel::AmazonElasticComputeCloud_strategy = st.builds(
-    PhotosMetaModel::AmazonElasticComputeCloud,
+PhotosMetaModel_AmazonElasticComputeCloud_strategy = st.builds(
+    PhotosMetaModel_AmazonElasticComputeCloud,
 )
-PhotosMetaModel::AmazonSimpleStorageService_strategy = st.builds(
-    PhotosMetaModel::AmazonSimpleStorageService,
+PhotosMetaModel_AmazonSimpleStorageService_strategy = st.builds(
+    PhotosMetaModel_AmazonSimpleStorageService,
 )
-PhotosMetaModel::Privilege_strategy = st.builds(
-    PhotosMetaModel::Privilege,
+PhotosMetaModel_Privilege_strategy = st.builds(
+    PhotosMetaModel_Privilege,
 )
-PhotosMetaModel::User::p_strategy = st.builds(
-    PhotosMetaModel::User::p,
+PhotosMetaModel_User_p_strategy = st.builds(
+    PhotosMetaModel_User_p,
     password=
         safe_text,
     username=
@@ -2969,234 +2847,356 @@ PhotosMetaModel::User::p_strategy = st.builds(
 Entities_strategy = st.builds(
     Entities,
 )
-PhotosMetaModel::Album_strategy = st.builds(
-    PhotosMetaModel::Album,
-    url=
-        safe_text,
+PhotosMetaModel_Photo_strategy = st.builds(
+    PhotosMetaModel_Photo,
     name=
         safe_text
 )
-PhotosMetaModel::Photo_strategy = st.builds(
-    PhotosMetaModel::Photo,
-    name=
-        safe_text
-)
-PhotosMetaModel::User::d_strategy = st.builds(
-    PhotosMetaModel::User::d,
-    profile_description=
-        safe_text,
+PhotosMetaModel_User_d_strategy = st.builds(
+    PhotosMetaModel_User_d,
     password=
         safe_text,
     username=
         safe_text,
+    first_name=
+        safe_text,
+    profile_description=
+        safe_text,
     last_name=
         safe_text,
     email=
+        safe_text
+)
+PhotosMetaModel_Index_strategy = st.builds(
+    PhotosMetaModel_Index,
+)
+PhotosMetaModel_Column_strategy = st.builds(
+    PhotosMetaModel_Column,
+)
+PhotosMetaModel_Policy_strategy = st.builds(
+    PhotosMetaModel_Policy,
+)
+PhotosMetaModel_Index_p_strategy = st.builds(
+    PhotosMetaModel_Index_p,
+)
+PhotosMetaModel_View_strategy = st.builds(
+    PhotosMetaModel_View,
+)
+PhotosMetaModel_Trigger_strategy = st.builds(
+    PhotosMetaModel_Trigger,
+)
+PhotosMetaModel_Table_p_strategy = st.builds(
+    PhotosMetaModel_Table_p,
+    name=
+        safe_text
+)
+PhotosMetaModel_ForeignKey_strategy = st.builds(
+    PhotosMetaModel_ForeignKey,
+)
+PhotosMetaModel_Clause_strategy = st.builds(
+    PhotosMetaModel_Clause,
+)
+PhotosMetaModel_Query_strategy = st.builds(
+    PhotosMetaModel_Query,
+)
+PhotosMetaModel_Cluster_strategy = st.builds(
+    PhotosMetaModel_Cluster,
+)
+PhotosMetaModel_Order_s_strategy = st.builds(
+    PhotosMetaModel_Order_s,
+)
+PhotosMetaModel_EnableGlobalMethodSecurity_strategy = st.builds(
+    PhotosMetaModel_EnableGlobalMethodSecurity,
+)
+PhotosMetaModel_Scheme_strategy = st.builds(
+    PhotosMetaModel_Scheme,
+    name=
+        safe_text
+)
+PhotosMetaModel_Database_strategy = st.builds(
+    PhotosMetaModel_Database,
+    name=
+        safe_text
+)
+PhotosMetaModel_Function_p_strategy = st.builds(
+    PhotosMetaModel_Function_p,
+)
+PhotosMetaModel_Row_strategy = st.builds(
+    PhotosMetaModel_Row,
+    name=
+        safe_text
+)
+PhotosMetaModel_Column_p_strategy = st.builds(
+    PhotosMetaModel_Column_p,
+    name=
+        safe_text
+)
+Access_strategy = st.builds(
+    Access,
+)
+PhotosMetaModel_ObjectsPublic_strategy = st.builds(
+    PhotosMetaModel_ObjectsPublic,
+)
+PhotosMetaModel_BucketObjectsNotPublic_strategy = st.builds(
+    PhotosMetaModel_BucketObjectsNotPublic,
+)
+PhotosMetaModel_OnlyAuthorized_strategy = st.builds(
+    PhotosMetaModel_OnlyAuthorized,
+)
+PhotosMetaModel_Public_strategy = st.builds(
+    PhotosMetaModel_Public,
+)
+PhotosMetaModel_Folder_a_strategy = st.builds(
+    PhotosMetaModel_Folder_a,
+    name=
+        safe_text
+)
+PhotosMetaModel_File_a_strategy = st.builds(
+    PhotosMetaModel_File_a,
+    ObjectURL=
         safe_text,
-    first_name=
+    size=
+        safe_text,
+    Onwer=
         safe_text
 )
-PhotosMetaModel::Index_strategy = st.builds(
-    PhotosMetaModel::Index,
+PhotosMetaModel_Access_strategy = st.builds(
+    PhotosMetaModel_Access,
 )
-PhotosMetaModel::Column_strategy = st.builds(
-    PhotosMetaModel::Column,
+PhotosMetaModel_BatchOperation_strategy = st.builds(
+    PhotosMetaModel_BatchOperation,
 )
-PhotosMetaModel::Policy_strategy = st.builds(
-    PhotosMetaModel::Policy,
+PhotosMetaModel_PresentationSegment_strategy = st.builds(
+    PhotosMetaModel_PresentationSegment,
 )
-PhotosMetaModel::Index::p_strategy = st.builds(
-    PhotosMetaModel::Index::p,
+Layer_strategy = st.builds(
+    Layer,
 )
-PhotosMetaModel::View_strategy = st.builds(
-    PhotosMetaModel::View,
+PhotosMetaModel_BusinessLogic_strategy = st.builds(
+    PhotosMetaModel_BusinessLogic,
 )
-PhotosMetaModel::Trigger_strategy = st.builds(
-    PhotosMetaModel::Trigger,
+PhotosMetaModel_Presentation_strategy = st.builds(
+    PhotosMetaModel_Presentation,
 )
-PhotosMetaModel::Table::p_strategy = st.builds(
-    PhotosMetaModel::Table::p,
+Connection_strategy = st.builds(
+    Connection,
+)
+PhotosMetaModel_PostgreSQLConnection_strategy = st.builds(
+    PhotosMetaModel_PostgreSQLConnection,
+    port=
+        st.integers(),
+    url=
+        safe_text,
+    password=
+        safe_text,
+    username=
+        safe_text
+)
+PhotosMetaModel_AmazonS3API_strategy = st.builds(
+    PhotosMetaModel_AmazonS3API,
+    endpointUrl=
+        safe_text,
+    accessKey=
+        safe_text,
+    bucketName=
+        safe_text,
+    secretKey=
+        safe_text
+)
+PhotosMetaModel_REST_strategy = st.builds(
+    PhotosMetaModel_REST,
+)
+BusinessLogicSegment_strategy = st.builds(
+    BusinessLogicSegment,
+)
+PhotosMetaModel_Repository_a_strategy = st.builds(
+    PhotosMetaModel_Repository_a,
+)
+PhotosMetaModel_Model_a_strategy = st.builds(
+    PhotosMetaModel_Model_a,
+)
+PhotosMetaModel_Security_a_strategy = st.builds(
+    PhotosMetaModel_Security_a,
+)
+PhotosMetaModel_Controller_a_strategy = st.builds(
+    PhotosMetaModel_Controller_a,
+)
+PresentationSegment_strategy = st.builds(
+    PresentationSegment,
+)
+PhotosMetaModel_Component_a_strategy = st.builds(
+    PhotosMetaModel_Component_a,
+)
+PhotosMetaModel_Action_a_strategy = st.builds(
+    PhotosMetaModel_Action_a,
+)
+PhotosMetaModel_View_a_strategy = st.builds(
+    PhotosMetaModel_View_a,
+)
+PhotosMetaModel_SegmentStructure_strategy = st.builds(
+    PhotosMetaModel_SegmentStructure,
     name=
         safe_text
 )
-PhotosMetaModel::ForeignKey_strategy = st.builds(
-    PhotosMetaModel::ForeignKey,
+Relation_strategy = st.builds(
+    Relation,
 )
-PhotosMetaModel::Clause_strategy = st.builds(
-    PhotosMetaModel::Clause,
+PhotosMetaModel_AllowedToUse_strategy = st.builds(
+    PhotosMetaModel_AllowedToUse,
 )
-PhotosMetaModel::Query_strategy = st.builds(
-    PhotosMetaModel::Query,
+PhotosMetaModel_DataSegment_strategy = st.builds(
+    PhotosMetaModel_DataSegment,
 )
-PhotosMetaModel::Cluster_strategy = st.builds(
-    PhotosMetaModel::Cluster,
+PhotosMetaModel_Data_strategy = st.builds(
+    PhotosMetaModel_Data,
 )
-PhotosMetaModel::Order::s_strategy = st.builds(
-    PhotosMetaModel::Order::s,
+PhotosMetaModel_BusinessLogicSegment_strategy = st.builds(
+    PhotosMetaModel_BusinessLogicSegment,
 )
-PhotosMetaModel::EnableGlobalMethodSecurity_strategy = st.builds(
-    PhotosMetaModel::EnableGlobalMethodSecurity,
+PhotosMetaModel_Album_strategy = st.builds(
+    PhotosMetaModel_Album,
+    name=
+        safe_text,
+    url=
+        safe_text
 )
-PhotosMetaModel::Scheme_strategy = st.builds(
-    PhotosMetaModel::Scheme,
+PhotosMetaModel_GeneratedValue_strategy = st.builds(
+    PhotosMetaModel_GeneratedValue,
+)
+PhotosMetaModel_Id_strategy = st.builds(
+    PhotosMetaModel_Id,
+)
+PhotosMetaModel_Column_s_strategy = st.builds(
+    PhotosMetaModel_Column_s,
     name=
         safe_text
 )
-PhotosMetaModel::Database_strategy = st.builds(
-    PhotosMetaModel::Database,
+PhotosMetaModel_NamedNativeQuery_strategy = st.builds(
+    PhotosMetaModel_NamedNativeQuery,
+)
+PhotosMetaModel_Table_s_strategy = st.builds(
+    PhotosMetaModel_Table_s,
     name=
         safe_text
 )
-PhotosMetaModel::Function::p_strategy = st.builds(
-    PhotosMetaModel::Function::p,
+PhotosMetaModel_Exception_strategy = st.builds(
+    PhotosMetaModel_Exception,
 )
-PhotosMetaModel::Row_strategy = st.builds(
-    PhotosMetaModel::Row,
+PhotosMetaModel_EnableAuthorizationServer_strategy = st.builds(
+    PhotosMetaModel_EnableAuthorizationServer,
+)
+PhotosMetaModel_EnableResourceServer_strategy = st.builds(
+    PhotosMetaModel_EnableResourceServer,
+)
+PhotosMetaModel_EnableWebSecurity_strategy = st.builds(
+    PhotosMetaModel_EnableWebSecurity,
+)
+PhotosMetaModel_Bean_strategy = st.builds(
+    PhotosMetaModel_Bean,
+)
+PhotosMetaModel_Predicate_strategy = st.builds(
+    PhotosMetaModel_Predicate,
+)
+PhotosMetaModel_SearchCriteria_strategy = st.builds(
+    PhotosMetaModel_SearchCriteria,
+)
+PhotosMetaModel_DataType_strategy = st.builds(
+    PhotosMetaModel_DataType,
     name=
         safe_text
 )
-PhotosMetaModel::Column::p_strategy = st.builds(
-    PhotosMetaModel::Column::p,
+PhotosMetaModel_Constraint_strategy = st.builds(
+    PhotosMetaModel_Constraint,
+)
+PhotosMetaModel_Specification_strategy = st.builds(
+    PhotosMetaModel_Specification,
+)
+PhotosMetaModel_Autowired_strategy = st.builds(
+    PhotosMetaModel_Autowired,
+)
+PhotosMetaModel_ExceptionHandler_strategy = st.builds(
+    PhotosMetaModel_ExceptionHandler,
+)
+PhotosMetaModel_RequestMapping_strategy = st.builds(
+    PhotosMetaModel_RequestMapping,
+)
+PhotosMetaModel_RestController_strategy = st.builds(
+    PhotosMetaModel_RestController,
     name=
         safe_text
 )
-PhotosMetaModel::GeneratedValue_strategy = st.builds(
-    PhotosMetaModel::GeneratedValue,
+PhotosMetaModel_Repository_strategy = st.builds(
+    PhotosMetaModel_Repository,
 )
-PhotosMetaModel::Id_strategy = st.builds(
-    PhotosMetaModel::Id,
-)
-PhotosMetaModel::Column::s_strategy = st.builds(
-    PhotosMetaModel::Column::s,
+PhotosMetaModel_Modules_strategy = st.builds(
+    PhotosMetaModel_Modules,
     name=
         safe_text
 )
-PhotosMetaModel::NamedNativeQuery_strategy = st.builds(
-    PhotosMetaModel::NamedNativeQuery,
+PhotosMetaModel_SpringBootApplication_strategy = st.builds(
+    PhotosMetaModel_SpringBootApplication,
 )
-PhotosMetaModel::Table::s_strategy = st.builds(
-    PhotosMetaModel::Table::s,
-    name=
-        safe_text
+PhotosMetaModel_AmazonWebServices_strategy = st.builds(
+    PhotosMetaModel_AmazonWebServices,
 )
-PhotosMetaModel::Exception_strategy = st.builds(
-    PhotosMetaModel::Exception,
-)
-PhotosMetaModel::EnableAuthorizationServer_strategy = st.builds(
-    PhotosMetaModel::EnableAuthorizationServer,
-)
-PhotosMetaModel::EnableResourceServer_strategy = st.builds(
-    PhotosMetaModel::EnableResourceServer,
-)
-PhotosMetaModel::EnableWebSecurity_strategy = st.builds(
-    PhotosMetaModel::EnableWebSecurity,
-)
-PhotosMetaModel::Bean_strategy = st.builds(
-    PhotosMetaModel::Bean,
-)
-PhotosMetaModel::Predicate_strategy = st.builds(
-    PhotosMetaModel::Predicate,
-)
-PhotosMetaModel::SearchCriteria_strategy = st.builds(
-    PhotosMetaModel::SearchCriteria,
-)
-PhotosMetaModel::DataType_strategy = st.builds(
-    PhotosMetaModel::DataType,
-    name=
-        safe_text
-)
-PhotosMetaModel::Constraint_strategy = st.builds(
-    PhotosMetaModel::Constraint,
-)
-PhotosMetaModel::Specification_strategy = st.builds(
-    PhotosMetaModel::Specification,
-)
-PhotosMetaModel::Autowired_strategy = st.builds(
-    PhotosMetaModel::Autowired,
-)
-PhotosMetaModel::ExceptionHandler_strategy = st.builds(
-    PhotosMetaModel::ExceptionHandler,
-)
-PhotosMetaModel::RequestMapping_strategy = st.builds(
-    PhotosMetaModel::RequestMapping,
-)
-PhotosMetaModel::RestController_strategy = st.builds(
-    PhotosMetaModel::RestController,
-    name=
-        safe_text
-)
-PhotosMetaModel::Repository_strategy = st.builds(
-    PhotosMetaModel::Repository,
-)
-PhotosMetaModel::Modules_strategy = st.builds(
-    PhotosMetaModel::Modules,
-    name=
-        safe_text
-)
-PhotosMetaModel::SpringBootApplication_strategy = st.builds(
-    PhotosMetaModel::SpringBootApplication,
-)
-PhotosMetaModel::AmazonWebServices_strategy = st.builds(
-    PhotosMetaModel::AmazonWebServices,
-)
-PhotosMetaModel::React_strategy = st.builds(
-    PhotosMetaModel::React,
+PhotosMetaModel_React_strategy = st.builds(
+    PhotosMetaModel_React,
 )
 RequestMapping_strategy = st.builds(
     RequestMapping,
 )
-PhotosMetaModel::PutMapping_strategy = st.builds(
-    PhotosMetaModel::PutMapping,
+PhotosMetaModel_GetMapping_strategy = st.builds(
+    PhotosMetaModel_GetMapping,
 )
-PhotosMetaModel::DeleteMapping_strategy = st.builds(
-    PhotosMetaModel::DeleteMapping,
+PhotosMetaModel_PutMapping_strategy = st.builds(
+    PhotosMetaModel_PutMapping,
 )
-PhotosMetaModel::GetMapping_strategy = st.builds(
-    PhotosMetaModel::GetMapping,
+PhotosMetaModel_DeleteMapping_strategy = st.builds(
+    PhotosMetaModel_DeleteMapping,
 )
-PhotosMetaModel::PostMapping_strategy = st.builds(
-    PhotosMetaModel::PostMapping,
+PhotosMetaModel_PostMapping_strategy = st.builds(
+    PhotosMetaModel_PostMapping,
 )
-PhotosMetaModel::RequestPart_strategy = st.builds(
-    PhotosMetaModel::RequestPart,
+PhotosMetaModel_RequestPart_strategy = st.builds(
+    PhotosMetaModel_RequestPart,
 )
-PhotosMetaModel::Configuration_strategy = st.builds(
-    PhotosMetaModel::Configuration,
+PhotosMetaModel_Configuration_strategy = st.builds(
+    PhotosMetaModel_Configuration,
 )
-PhotosMetaModel::Component_strategy = st.builds(
-    PhotosMetaModel::Component,
+PhotosMetaModel_Component_strategy = st.builds(
+    PhotosMetaModel_Component,
 )
-PhotosMetaModel::Entity_strategy = st.builds(
-    PhotosMetaModel::Entity,
+PhotosMetaModel_Entity_strategy = st.builds(
+    PhotosMetaModel_Entity,
 )
-PhotosMetaModel::Domain_strategy = st.builds(
-    PhotosMetaModel::Domain,
+PhotosMetaModel_Domain_strategy = st.builds(
+    PhotosMetaModel_Domain,
 )
-PhotosMetaModel::SoftGallery_strategy = st.builds(
-    PhotosMetaModel::SoftGallery,
+PhotosMetaModel_SoftGallery_strategy = st.builds(
+    PhotosMetaModel_SoftGallery,
 )
-PhotosMetaModel::PostgreSQL_strategy = st.builds(
-    PhotosMetaModel::PostgreSQL,
+PhotosMetaModel_PostgreSQL_strategy = st.builds(
+    PhotosMetaModel_PostgreSQL,
 )
-PhotosMetaModel::Spring_strategy = st.builds(
-    PhotosMetaModel::Spring,
+PhotosMetaModel_Spring_strategy = st.builds(
+    PhotosMetaModel_Spring,
 )
-PhotosMetaModel::NTier_strategy = st.builds(
-    PhotosMetaModel::NTier,
+PhotosMetaModel_NTier_strategy = st.builds(
+    PhotosMetaModel_NTier,
 )
-PhotosMetaModel::Entities_strategy = st.builds(
-    PhotosMetaModel::Entities,
+PhotosMetaModel_Entities_strategy = st.builds(
+    PhotosMetaModel_Entities,
     id=
         safe_text
 )
-PhotosMetaModel::Functionalities_strategy = st.builds(
-    PhotosMetaModel::Functionalities,
+PhotosMetaModel_Functionalities_strategy = st.builds(
+    PhotosMetaModel_Functionalities,
 )
-PhotosMetaModel::Technology_strategy = st.builds(
-    PhotosMetaModel::Technology,
+PhotosMetaModel_Technology_strategy = st.builds(
+    PhotosMetaModel_Technology,
 )
-PhotosMetaModel::Architecture_strategy = st.builds(
-    PhotosMetaModel::Architecture,
+PhotosMetaModel_Architecture_strategy = st.builds(
+    PhotosMetaModel_Architecture,
 )
 
 @given(instance=Actions_strategy)
@@ -3204,201 +3204,174 @@ PhotosMetaModel::Architecture_strategy = st.builds(
 def test_actions_instantiation(instance):
     assert isinstance(instance, Actions)
 
-@given(instance=PhotosMetaModel::Services_strategy)
+@given(instance=PhotosMetaModel_Services_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::services_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Services)
+def test_photosmetamodel_services_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Services)
 
-@given(instance=PhotosMetaModel::Request_strategy)
+@given(instance=PhotosMetaModel_Request_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::request_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Request)
+def test_photosmetamodel_request_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Request)
 
-@given(instance=PhotosMetaModel::Files_strategy)
+@given(instance=PhotosMetaModel_Files_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::files_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Files)
-
-@given(instance=PhotosMetaModel::Files_strategy)
-def test_photosmetamodel::files_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_photosmetamodel_files_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Files)
 
 
-@given(instance=PhotosMetaModel::Files_strategy)
-def test_photosmetamodel::files_type_setter(instance):
+
+@given(instance=PhotosMetaModel_Files_strategy)
+def test_photosmetamodel_files_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=PhotosMetaModel::Files_strategy)
-def test_photosmetamodel::files_extension_type(instance):
-    assert isinstance(instance.extension, str)
 
 
-@given(instance=PhotosMetaModel::Files_strategy)
-def test_photosmetamodel::files_extension_setter(instance):
+@given(instance=PhotosMetaModel_Files_strategy)
+def test_photosmetamodel_files_extension_setter(instance):
     original = instance.extension
     instance.extension = original
     assert instance.extension == original
 
-@given(instance=PhotosMetaModel::Directories_strategy)
+@given(instance=PhotosMetaModel_Directories_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::directories_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Directories)
+def test_photosmetamodel_directories_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Directories)
 
 @given(instance=Components_strategy)
 @settings(max_examples=50)
 def test_components_instantiation(instance):
     assert isinstance(instance, Components)
 
-@given(instance=PhotosMetaModel::UI_strategy)
+@given(instance=PhotosMetaModel_UI_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::ui_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::UI)
+def test_photosmetamodel_ui_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_UI)
 
-@given(instance=PhotosMetaModel::Logic_strategy)
+@given(instance=PhotosMetaModel_Logic_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::logic_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Logic)
+def test_photosmetamodel_logic_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Logic)
 
 @given(instance=ReactConfiguration_strategy)
 @settings(max_examples=50)
 def test_reactconfiguration_instantiation(instance):
     assert isinstance(instance, ReactConfiguration)
 
-@given(instance=PhotosMetaModel::Dependencies_strategy)
+@given(instance=PhotosMetaModel_Dependencies_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::dependencies_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Dependencies)
+def test_photosmetamodel_dependencies_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Dependencies)
 
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
+@given(instance=PhotosMetaModel_ReactDOM_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::reactdom_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ReactDOM)
-
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
-def test_photosmetamodel::reactdom_isStruct_type(instance):
-    assert isinstance(instance.isStruct, str)
+def test_photosmetamodel_reactdom_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ReactDOM)
 
 
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
-def test_photosmetamodel::reactdom_isStruct_setter(instance):
-    original = instance.isStruct
-    instance.isStruct = original
-    assert instance.isStruct == original
 
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
-def test_photosmetamodel::reactdom_isRoute_type(instance):
-    assert isinstance(instance.isRoute, str)
-
-
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
-def test_photosmetamodel::reactdom_isRoute_setter(instance):
-    original = instance.isRoute
-    instance.isRoute = original
-    assert instance.isRoute == original
-
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
-def test_photosmetamodel::reactdom_isConstant_type(instance):
-    assert isinstance(instance.isConstant, str)
-
-
-@given(instance=PhotosMetaModel::ReactDOM_strategy)
-def test_photosmetamodel::reactdom_isConstant_setter(instance):
+@given(instance=PhotosMetaModel_ReactDOM_strategy)
+def test_photosmetamodel_reactdom_isConstant_setter(instance):
     original = instance.isConstant
     instance.isConstant = original
     assert instance.isConstant == original
 
-@given(instance=PhotosMetaModel::MetaData_strategy)
+
+
+@given(instance=PhotosMetaModel_ReactDOM_strategy)
+def test_photosmetamodel_reactdom_isStruct_setter(instance):
+    original = instance.isStruct
+    instance.isStruct = original
+    assert instance.isStruct == original
+
+
+
+@given(instance=PhotosMetaModel_ReactDOM_strategy)
+def test_photosmetamodel_reactdom_isRoute_setter(instance):
+    original = instance.isRoute
+    instance.isRoute = original
+    assert instance.isRoute == original
+
+@given(instance=PhotosMetaModel_MetaData_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::metadata_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::MetaData)
+def test_photosmetamodel_metadata_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_MetaData)
 
 @given(instance=UI_strategy)
 @settings(max_examples=50)
 def test_ui_instantiation(instance):
     assert isinstance(instance, UI)
 
-@given(instance=PhotosMetaModel::Subcomponents_strategy)
+@given(instance=PhotosMetaModel_Subcomponents_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::subcomponents_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Subcomponents)
+def test_photosmetamodel_subcomponents_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Subcomponents)
 
-@given(instance=PhotosMetaModel::ViewComponents_strategy)
+@given(instance=PhotosMetaModel_ViewComponents_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::viewcomponents_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ViewComponents)
+def test_photosmetamodel_viewcomponents_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ViewComponents)
 
 @given(instance=Logic_strategy)
 @settings(max_examples=50)
 def test_logic_instantiation(instance):
     assert isinstance(instance, Logic)
 
-@given(instance=PhotosMetaModel::Structure_strategy)
+@given(instance=PhotosMetaModel_Structure_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::structure_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Structure)
+def test_photosmetamodel_structure_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Structure)
 
-@given(instance=PhotosMetaModel::Router_strategy)
+@given(instance=PhotosMetaModel_Router_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::router_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Router)
+def test_photosmetamodel_router_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Router)
 
-@given(instance=PhotosMetaModel::State_strategy)
+@given(instance=PhotosMetaModel_State_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::state_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::State)
-
-@given(instance=PhotosMetaModel::State_strategy)
-def test_photosmetamodel::state_active_type(instance):
-    assert isinstance(instance.active, str)
+def test_photosmetamodel_state_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_State)
 
 
-@given(instance=PhotosMetaModel::State_strategy)
-def test_photosmetamodel::state_active_setter(instance):
+
+@given(instance=PhotosMetaModel_State_strategy)
+def test_photosmetamodel_state_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
 
-@given(instance=PhotosMetaModel::Props_strategy)
+@given(instance=PhotosMetaModel_Props_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::props_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Props)
-
-@given(instance=PhotosMetaModel::Props_strategy)
-def test_photosmetamodel::props_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_photosmetamodel_props_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Props)
 
 
-@given(instance=PhotosMetaModel::Props_strategy)
-def test_photosmetamodel::props_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=PhotosMetaModel::Props_strategy)
-def test_photosmetamodel::props_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
-
-
-@given(instance=PhotosMetaModel::Props_strategy)
-def test_photosmetamodel::props_dataType_setter(instance):
+@given(instance=PhotosMetaModel_Props_strategy)
+def test_photosmetamodel_props_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=PhotosMetaModel::Bucket_strategy)
+
+
+@given(instance=PhotosMetaModel_Props_strategy)
+def test_photosmetamodel_props_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=PhotosMetaModel_Bucket_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::bucket_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Bucket)
-
-@given(instance=PhotosMetaModel::Bucket_strategy)
-def test_photosmetamodel::bucket_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_bucket_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Bucket)
 
 
-@given(instance=PhotosMetaModel::Bucket_strategy)
-def test_photosmetamodel::bucket_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Bucket_strategy)
+def test_photosmetamodel_bucket_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3408,495 +3381,177 @@ def test_photosmetamodel::bucket_name_setter(instance):
 def test_reactfunctions_instantiation(instance):
     assert isinstance(instance, ReactFunctions)
 
-@given(instance=PhotosMetaModel::LifeCycle_strategy)
+@given(instance=PhotosMetaModel_CoreFunctions_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::lifecycle_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::LifeCycle)
+def test_photosmetamodel_corefunctions_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_CoreFunctions)
 
-@given(instance=PhotosMetaModel::Constructor_strategy)
+@given(instance=PhotosMetaModel_LifeCycle_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::constructor_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Constructor)
+def test_photosmetamodel_lifecycle_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_LifeCycle)
 
-@given(instance=PhotosMetaModel::CoreFunctions_strategy)
+@given(instance=PhotosMetaModel_Constructor_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::corefunctions_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::CoreFunctions)
+def test_photosmetamodel_constructor_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Constructor)
 
-@given(instance=PhotosMetaModel::Render_strategy)
+@given(instance=PhotosMetaModel_Render_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::render_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Render)
+def test_photosmetamodel_render_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Render)
 
-@given(instance=PhotosMetaModel::ReactFunctions_strategy)
+@given(instance=PhotosMetaModel_ReactFunctions_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::reactfunctions_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ReactFunctions)
-
-@given(instance=PhotosMetaModel::ReactFunctions_strategy)
-def test_photosmetamodel::reactfunctions_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_reactfunctions_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ReactFunctions)
 
 
-@given(instance=PhotosMetaModel::ReactFunctions_strategy)
-def test_photosmetamodel::reactfunctions_name_setter(instance):
+
+@given(instance=PhotosMetaModel_ReactFunctions_strategy)
+def test_photosmetamodel_reactfunctions_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::ReactClasses_strategy)
+@given(instance=PhotosMetaModel_ReactClasses_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::reactclasses_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ReactClasses)
+def test_photosmetamodel_reactclasses_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ReactClasses)
 
 @given(instance=Modules_strategy)
 @settings(max_examples=50)
 def test_modules_instantiation(instance):
     assert isinstance(instance, Modules)
 
-@given(instance=PhotosMetaModel::ReactConfiguration_strategy)
+@given(instance=PhotosMetaModel_ReactConfiguration_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::reactconfiguration_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ReactConfiguration)
+def test_photosmetamodel_reactconfiguration_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ReactConfiguration)
 
-@given(instance=PhotosMetaModel::Libraries_strategy)
+@given(instance=PhotosMetaModel_Actions_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::libraries_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Libraries)
+def test_photosmetamodel_actions_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Actions)
 
-@given(instance=PhotosMetaModel::Libraries_strategy)
-def test_photosmetamodel::libraries_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=PhotosMetaModel_Libraries_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_libraries_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Libraries)
 
 
-@given(instance=PhotosMetaModel::Libraries_strategy)
-def test_photosmetamodel::libraries_type_setter(instance):
+
+@given(instance=PhotosMetaModel_Libraries_strategy)
+def test_photosmetamodel_libraries_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=PhotosMetaModel::Information_strategy)
+@given(instance=PhotosMetaModel_Information_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::information_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Information)
-
-@given(instance=PhotosMetaModel::Information_strategy)
-def test_photosmetamodel::information_fileType_type(instance):
-    assert isinstance(instance.fileType, str)
+def test_photosmetamodel_information_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Information)
 
 
-@given(instance=PhotosMetaModel::Information_strategy)
-def test_photosmetamodel::information_fileType_setter(instance):
+
+@given(instance=PhotosMetaModel_Information_strategy)
+def test_photosmetamodel_information_fileType_setter(instance):
     original = instance.fileType
     instance.fileType = original
     assert instance.fileType == original
 
-@given(instance=PhotosMetaModel::Actions_strategy)
+@given(instance=PhotosMetaModel_Components_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::actions_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Actions)
-
-@given(instance=PhotosMetaModel::Components_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::components_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Components)
+def test_photosmetamodel_components_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Components)
 
 @given(instance=DataSegment_strategy)
 @settings(max_examples=50)
 def test_datasegment_instantiation(instance):
     assert isinstance(instance, DataSegment)
 
-@given(instance=PhotosMetaModel::AmazonS3Storage_strategy)
+@given(instance=PhotosMetaModel_AmazonS3Storage_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::amazons3storage_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AmazonS3Storage)
+def test_photosmetamodel_amazons3storage_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AmazonS3Storage)
 
-@given(instance=PhotosMetaModel::PostgreSQL::a_strategy)
+@given(instance=PhotosMetaModel_PostgreSQL_a_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::postgresql::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PostgreSQL::a)
-
-@given(instance=Access_strategy)
-@settings(max_examples=50)
-def test_access_instantiation(instance):
-    assert isinstance(instance, Access)
-
-@given(instance=PhotosMetaModel::ObjectsPublic_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::objectspublic_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ObjectsPublic)
-
-@given(instance=PhotosMetaModel::BucketObjectsNotPublic_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::bucketobjectsnotpublic_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::BucketObjectsNotPublic)
-
-@given(instance=PhotosMetaModel::OnlyAuthorized_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::onlyauthorized_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::OnlyAuthorized)
-
-@given(instance=PhotosMetaModel::Public_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::public_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Public)
-
-@given(instance=PhotosMetaModel::Folder::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::folder::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Folder::a)
-
-@given(instance=PhotosMetaModel::Folder::a_strategy)
-def test_photosmetamodel::folder::a_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=PhotosMetaModel::Folder::a_strategy)
-def test_photosmetamodel::folder::a_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::file::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::File::a)
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-def test_photosmetamodel::file::a_Onwer_type(instance):
-    assert isinstance(instance.Onwer, str)
-
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-def test_photosmetamodel::file::a_Onwer_setter(instance):
-    original = instance.Onwer
-    instance.Onwer = original
-    assert instance.Onwer == original
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-def test_photosmetamodel::file::a_ObjectURL_type(instance):
-    assert isinstance(instance.ObjectURL, str)
-
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-def test_photosmetamodel::file::a_ObjectURL_setter(instance):
-    original = instance.ObjectURL
-    instance.ObjectURL = original
-    assert instance.ObjectURL == original
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-def test_photosmetamodel::file::a_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=PhotosMetaModel::File::a_strategy)
-def test_photosmetamodel::file::a_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=PhotosMetaModel::Access_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::access_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Access)
-
-@given(instance=PhotosMetaModel::BatchOperation_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::batchoperation_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::BatchOperation)
-
-@given(instance=PhotosMetaModel::PresentationSegment_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::presentationsegment_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PresentationSegment)
-
-@given(instance=Layer_strategy)
-@settings(max_examples=50)
-def test_layer_instantiation(instance):
-    assert isinstance(instance, Layer)
-
-@given(instance=PhotosMetaModel::BusinessLogic_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::businesslogic_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::BusinessLogic)
-
-@given(instance=PhotosMetaModel::Presentation_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::presentation_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Presentation)
-
-@given(instance=Connection_strategy)
-@settings(max_examples=50)
-def test_connection_instantiation(instance):
-    assert isinstance(instance, Connection)
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::postgresqlconnection_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PostgreSQLConnection)
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_url_type(instance):
-    assert isinstance(instance.url, str)
-
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_url_setter(instance):
-    original = instance.url
-    instance.url = original
-    assert instance.url == original
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_port_type(instance):
-    assert isinstance(instance.port, int)
-
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=PhotosMetaModel::PostgreSQLConnection_strategy)
-def test_photosmetamodel::postgresqlconnection_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::amazons3api_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AmazonS3API)
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_endpointUrl_type(instance):
-    assert isinstance(instance.endpointUrl, str)
-
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_endpointUrl_setter(instance):
-    original = instance.endpointUrl
-    instance.endpointUrl = original
-    assert instance.endpointUrl == original
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_bucketName_type(instance):
-    assert isinstance(instance.bucketName, str)
-
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_bucketName_setter(instance):
-    original = instance.bucketName
-    instance.bucketName = original
-    assert instance.bucketName == original
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_secretKey_type(instance):
-    assert isinstance(instance.secretKey, str)
-
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_secretKey_setter(instance):
-    original = instance.secretKey
-    instance.secretKey = original
-    assert instance.secretKey == original
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_accessKey_type(instance):
-    assert isinstance(instance.accessKey, str)
-
-
-@given(instance=PhotosMetaModel::AmazonS3API_strategy)
-def test_photosmetamodel::amazons3api_accessKey_setter(instance):
-    original = instance.accessKey
-    instance.accessKey = original
-    assert instance.accessKey == original
-
-@given(instance=PhotosMetaModel::REST_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::rest_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::REST)
-
-@given(instance=BusinessLogicSegment_strategy)
-@settings(max_examples=50)
-def test_businesslogicsegment_instantiation(instance):
-    assert isinstance(instance, BusinessLogicSegment)
-
-@given(instance=PhotosMetaModel::Model::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::model::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Model::a)
-
-@given(instance=PhotosMetaModel::Repository::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::repository::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Repository::a)
-
-@given(instance=PhotosMetaModel::Security::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::security::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Security::a)
-
-@given(instance=PhotosMetaModel::Controller::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::controller::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Controller::a)
-
-@given(instance=PresentationSegment_strategy)
-@settings(max_examples=50)
-def test_presentationsegment_instantiation(instance):
-    assert isinstance(instance, PresentationSegment)
-
-@given(instance=PhotosMetaModel::Action::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::action::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Action::a)
-
-@given(instance=PhotosMetaModel::Component::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::component::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Component::a)
-
-@given(instance=PhotosMetaModel::View::a_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::view::a_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::View::a)
-
-@given(instance=PhotosMetaModel::SegmentStructure_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::segmentstructure_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::SegmentStructure)
-
-@given(instance=PhotosMetaModel::SegmentStructure_strategy)
-def test_photosmetamodel::segmentstructure_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=PhotosMetaModel::SegmentStructure_strategy)
-def test_photosmetamodel::segmentstructure_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Relation_strategy)
-@settings(max_examples=50)
-def test_relation_instantiation(instance):
-    assert isinstance(instance, Relation)
-
-@given(instance=PhotosMetaModel::AllowedToUse_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::allowedtouse_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AllowedToUse)
-
-@given(instance=PhotosMetaModel::DataSegment_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::datasegment_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::DataSegment)
-
-@given(instance=PhotosMetaModel::Data_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::data_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Data)
-
-@given(instance=PhotosMetaModel::BusinessLogicSegment_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::businesslogicsegment_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::BusinessLogicSegment)
+def test_photosmetamodel_postgresql_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PostgreSQL_a)
 
 @given(instance=Functionalities_strategy)
 @settings(max_examples=50)
 def test_functionalities_instantiation(instance):
     assert isinstance(instance, Functionalities)
 
-@given(instance=PhotosMetaModel::ProfileManagement_strategy)
+@given(instance=PhotosMetaModel_AlbumManagement_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::profilemanagement_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ProfileManagement)
+def test_photosmetamodel_albummanagement_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AlbumManagement)
 
-@given(instance=PhotosMetaModel::PhotoActions_strategy)
+@given(instance=PhotosMetaModel_PhotoActions_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::photoactions_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PhotoActions)
+def test_photosmetamodel_photoactions_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PhotoActions)
 
-@given(instance=PhotosMetaModel::AlbumManagement_strategy)
+@given(instance=PhotosMetaModel_ProfileManagement_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::albummanagement_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AlbumManagement)
+def test_photosmetamodel_profilemanagement_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ProfileManagement)
 
-@given(instance=PhotosMetaModel::AppAccess_strategy)
+@given(instance=PhotosMetaModel_AppAccess_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::appaccess_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AppAccess)
+def test_photosmetamodel_appaccess_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AppAccess)
 
-@given(instance=PhotosMetaModel::Relation_strategy)
+@given(instance=PhotosMetaModel_Relation_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::relation_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Relation)
+def test_photosmetamodel_relation_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Relation)
 
-@given(instance=PhotosMetaModel::Layer_strategy)
+@given(instance=PhotosMetaModel_Layer_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::layer_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Layer)
+def test_photosmetamodel_layer_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Layer)
 
-@given(instance=PhotosMetaModel::Connection_strategy)
+@given(instance=PhotosMetaModel_Connection_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::connection_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Connection)
+def test_photosmetamodel_connection_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Connection)
 
-@given(instance=PhotosMetaModel::AmazonElasticComputeCloud_strategy)
+@given(instance=PhotosMetaModel_AmazonElasticComputeCloud_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::amazonelasticcomputecloud_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AmazonElasticComputeCloud)
+def test_photosmetamodel_amazonelasticcomputecloud_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AmazonElasticComputeCloud)
 
-@given(instance=PhotosMetaModel::AmazonSimpleStorageService_strategy)
+@given(instance=PhotosMetaModel_AmazonSimpleStorageService_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::amazonsimplestorageservice_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AmazonSimpleStorageService)
+def test_photosmetamodel_amazonsimplestorageservice_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AmazonSimpleStorageService)
 
-@given(instance=PhotosMetaModel::Privilege_strategy)
+@given(instance=PhotosMetaModel_Privilege_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::privilege_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Privilege)
+def test_photosmetamodel_privilege_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Privilege)
 
-@given(instance=PhotosMetaModel::User::p_strategy)
+@given(instance=PhotosMetaModel_User_p_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::user::p_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::User::p)
-
-@given(instance=PhotosMetaModel::User::p_strategy)
-def test_photosmetamodel::user::p_password_type(instance):
-    assert isinstance(instance.password, str)
+def test_photosmetamodel_user_p_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_User_p)
 
 
-@given(instance=PhotosMetaModel::User::p_strategy)
-def test_photosmetamodel::user::p_password_setter(instance):
+
+@given(instance=PhotosMetaModel_User_p_strategy)
+def test_photosmetamodel_user_p_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
-@given(instance=PhotosMetaModel::User::p_strategy)
-def test_photosmetamodel::user::p_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
-@given(instance=PhotosMetaModel::User::p_strategy)
-def test_photosmetamodel::user::p_username_setter(instance):
+@given(instance=PhotosMetaModel_User_p_strategy)
+def test_photosmetamodel_user_p_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
@@ -3906,537 +3561,741 @@ def test_photosmetamodel::user::p_username_setter(instance):
 def test_entities_instantiation(instance):
     assert isinstance(instance, Entities)
 
-@given(instance=PhotosMetaModel::Album_strategy)
+@given(instance=PhotosMetaModel_Photo_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::album_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Album)
-
-@given(instance=PhotosMetaModel::Album_strategy)
-def test_photosmetamodel::album_url_type(instance):
-    assert isinstance(instance.url, str)
+def test_photosmetamodel_photo_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Photo)
 
 
-@given(instance=PhotosMetaModel::Album_strategy)
-def test_photosmetamodel::album_url_setter(instance):
-    original = instance.url
-    instance.url = original
-    assert instance.url == original
 
-@given(instance=PhotosMetaModel::Album_strategy)
-def test_photosmetamodel::album_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=PhotosMetaModel::Album_strategy)
-def test_photosmetamodel::album_name_setter(instance):
+@given(instance=PhotosMetaModel_Photo_strategy)
+def test_photosmetamodel_photo_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Photo_strategy)
+@given(instance=PhotosMetaModel_User_d_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::photo_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Photo)
-
-@given(instance=PhotosMetaModel::Photo_strategy)
-def test_photosmetamodel::photo_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_user_d_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_User_d)
 
 
-@given(instance=PhotosMetaModel::Photo_strategy)
-def test_photosmetamodel::photo_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=PhotosMetaModel::User::d_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::user::d_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::User::d)
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_profile_description_type(instance):
-    assert isinstance(instance.profile_description, str)
-
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_profile_description_setter(instance):
-    original = instance.profile_description
-    instance.profile_description = original
-    assert instance.profile_description == original
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_password_setter(instance):
+@given(instance=PhotosMetaModel_User_d_strategy)
+def test_photosmetamodel_user_d_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_username_setter(instance):
+@given(instance=PhotosMetaModel_User_d_strategy)
+def test_photosmetamodel_user_d_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
 
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_last_name_type(instance):
-    assert isinstance(instance.last_name, str)
 
 
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_last_name_setter(instance):
-    original = instance.last_name
-    instance.last_name = original
-    assert instance.last_name == original
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_first_name_type(instance):
-    assert isinstance(instance.first_name, str)
-
-
-@given(instance=PhotosMetaModel::User::d_strategy)
-def test_photosmetamodel::user::d_first_name_setter(instance):
+@given(instance=PhotosMetaModel_User_d_strategy)
+def test_photosmetamodel_user_d_first_name_setter(instance):
     original = instance.first_name
     instance.first_name = original
     assert instance.first_name == original
 
-@given(instance=PhotosMetaModel::Index_strategy)
+
+
+@given(instance=PhotosMetaModel_User_d_strategy)
+def test_photosmetamodel_user_d_profile_description_setter(instance):
+    original = instance.profile_description
+    instance.profile_description = original
+    assert instance.profile_description == original
+
+
+
+@given(instance=PhotosMetaModel_User_d_strategy)
+def test_photosmetamodel_user_d_last_name_setter(instance):
+    original = instance.last_name
+    instance.last_name = original
+    assert instance.last_name == original
+
+
+
+@given(instance=PhotosMetaModel_User_d_strategy)
+def test_photosmetamodel_user_d_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+@given(instance=PhotosMetaModel_Index_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::index_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Index)
+def test_photosmetamodel_index_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Index)
 
-@given(instance=PhotosMetaModel::Column_strategy)
+@given(instance=PhotosMetaModel_Column_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::column_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Column)
+def test_photosmetamodel_column_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Column)
 
-@given(instance=PhotosMetaModel::Policy_strategy)
+@given(instance=PhotosMetaModel_Policy_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::policy_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Policy)
+def test_photosmetamodel_policy_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Policy)
 
-@given(instance=PhotosMetaModel::Index::p_strategy)
+@given(instance=PhotosMetaModel_Index_p_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::index::p_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Index::p)
+def test_photosmetamodel_index_p_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Index_p)
 
-@given(instance=PhotosMetaModel::View_strategy)
+@given(instance=PhotosMetaModel_View_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::view_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::View)
+def test_photosmetamodel_view_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_View)
 
-@given(instance=PhotosMetaModel::Trigger_strategy)
+@given(instance=PhotosMetaModel_Trigger_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::trigger_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Trigger)
+def test_photosmetamodel_trigger_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Trigger)
 
-@given(instance=PhotosMetaModel::Table::p_strategy)
+@given(instance=PhotosMetaModel_Table_p_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::table::p_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Table::p)
-
-@given(instance=PhotosMetaModel::Table::p_strategy)
-def test_photosmetamodel::table::p_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_table_p_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Table_p)
 
 
-@given(instance=PhotosMetaModel::Table::p_strategy)
-def test_photosmetamodel::table::p_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Table_p_strategy)
+def test_photosmetamodel_table_p_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::ForeignKey_strategy)
+@given(instance=PhotosMetaModel_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::foreignkey_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ForeignKey)
+def test_photosmetamodel_foreignkey_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ForeignKey)
 
-@given(instance=PhotosMetaModel::Clause_strategy)
+@given(instance=PhotosMetaModel_Clause_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::clause_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Clause)
+def test_photosmetamodel_clause_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Clause)
 
-@given(instance=PhotosMetaModel::Query_strategy)
+@given(instance=PhotosMetaModel_Query_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::query_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Query)
+def test_photosmetamodel_query_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Query)
 
-@given(instance=PhotosMetaModel::Cluster_strategy)
+@given(instance=PhotosMetaModel_Cluster_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::cluster_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Cluster)
+def test_photosmetamodel_cluster_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Cluster)
 
-@given(instance=PhotosMetaModel::Order::s_strategy)
+@given(instance=PhotosMetaModel_Order_s_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::order::s_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Order::s)
+def test_photosmetamodel_order_s_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Order_s)
 
-@given(instance=PhotosMetaModel::EnableGlobalMethodSecurity_strategy)
+@given(instance=PhotosMetaModel_EnableGlobalMethodSecurity_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::enableglobalmethodsecurity_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::EnableGlobalMethodSecurity)
+def test_photosmetamodel_enableglobalmethodsecurity_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_EnableGlobalMethodSecurity)
 
-@given(instance=PhotosMetaModel::Scheme_strategy)
+@given(instance=PhotosMetaModel_Scheme_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::scheme_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Scheme)
-
-@given(instance=PhotosMetaModel::Scheme_strategy)
-def test_photosmetamodel::scheme_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_scheme_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Scheme)
 
 
-@given(instance=PhotosMetaModel::Scheme_strategy)
-def test_photosmetamodel::scheme_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Scheme_strategy)
+def test_photosmetamodel_scheme_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Database_strategy)
+@given(instance=PhotosMetaModel_Database_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::database_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Database)
-
-@given(instance=PhotosMetaModel::Database_strategy)
-def test_photosmetamodel::database_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_database_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Database)
 
 
-@given(instance=PhotosMetaModel::Database_strategy)
-def test_photosmetamodel::database_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Database_strategy)
+def test_photosmetamodel_database_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Function::p_strategy)
+@given(instance=PhotosMetaModel_Function_p_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::function::p_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Function::p)
+def test_photosmetamodel_function_p_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Function_p)
 
-@given(instance=PhotosMetaModel::Row_strategy)
+@given(instance=PhotosMetaModel_Row_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::row_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Row)
-
-@given(instance=PhotosMetaModel::Row_strategy)
-def test_photosmetamodel::row_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_row_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Row)
 
 
-@given(instance=PhotosMetaModel::Row_strategy)
-def test_photosmetamodel::row_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Row_strategy)
+def test_photosmetamodel_row_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Column::p_strategy)
+@given(instance=PhotosMetaModel_Column_p_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::column::p_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Column::p)
-
-@given(instance=PhotosMetaModel::Column::p_strategy)
-def test_photosmetamodel::column::p_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_column_p_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Column_p)
 
 
-@given(instance=PhotosMetaModel::Column::p_strategy)
-def test_photosmetamodel::column::p_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Column_p_strategy)
+def test_photosmetamodel_column_p_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::GeneratedValue_strategy)
+@given(instance=Access_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::generatedvalue_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::GeneratedValue)
+def test_access_instantiation(instance):
+    assert isinstance(instance, Access)
 
-@given(instance=PhotosMetaModel::Id_strategy)
+@given(instance=PhotosMetaModel_ObjectsPublic_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::id_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Id)
+def test_photosmetamodel_objectspublic_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ObjectsPublic)
 
-@given(instance=PhotosMetaModel::Column::s_strategy)
+@given(instance=PhotosMetaModel_BucketObjectsNotPublic_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::column::s_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Column::s)
+def test_photosmetamodel_bucketobjectsnotpublic_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_BucketObjectsNotPublic)
 
-@given(instance=PhotosMetaModel::Column::s_strategy)
-def test_photosmetamodel::column::s_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=PhotosMetaModel_OnlyAuthorized_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_onlyauthorized_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_OnlyAuthorized)
+
+@given(instance=PhotosMetaModel_Public_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_public_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Public)
+
+@given(instance=PhotosMetaModel_Folder_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_folder_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Folder_a)
 
 
-@given(instance=PhotosMetaModel::Column::s_strategy)
-def test_photosmetamodel::column::s_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Folder_a_strategy)
+def test_photosmetamodel_folder_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::NamedNativeQuery_strategy)
+@given(instance=PhotosMetaModel_File_a_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::namednativequery_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::NamedNativeQuery)
+def test_photosmetamodel_file_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_File_a)
 
-@given(instance=PhotosMetaModel::Table::s_strategy)
+
+
+@given(instance=PhotosMetaModel_File_a_strategy)
+def test_photosmetamodel_file_a_ObjectURL_setter(instance):
+    original = instance.ObjectURL
+    instance.ObjectURL = original
+    assert instance.ObjectURL == original
+
+
+
+@given(instance=PhotosMetaModel_File_a_strategy)
+def test_photosmetamodel_file_a_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=PhotosMetaModel_File_a_strategy)
+def test_photosmetamodel_file_a_Onwer_setter(instance):
+    original = instance.Onwer
+    instance.Onwer = original
+    assert instance.Onwer == original
+
+@given(instance=PhotosMetaModel_Access_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::table::s_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Table::s)
+def test_photosmetamodel_access_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Access)
 
-@given(instance=PhotosMetaModel::Table::s_strategy)
-def test_photosmetamodel::table::s_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=PhotosMetaModel_BatchOperation_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_batchoperation_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_BatchOperation)
+
+@given(instance=PhotosMetaModel_PresentationSegment_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_presentationsegment_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PresentationSegment)
+
+@given(instance=Layer_strategy)
+@settings(max_examples=50)
+def test_layer_instantiation(instance):
+    assert isinstance(instance, Layer)
+
+@given(instance=PhotosMetaModel_BusinessLogic_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_businesslogic_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_BusinessLogic)
+
+@given(instance=PhotosMetaModel_Presentation_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_presentation_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Presentation)
+
+@given(instance=Connection_strategy)
+@settings(max_examples=50)
+def test_connection_instantiation(instance):
+    assert isinstance(instance, Connection)
+
+@given(instance=PhotosMetaModel_PostgreSQLConnection_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_postgresqlconnection_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PostgreSQLConnection)
 
 
-@given(instance=PhotosMetaModel::Table::s_strategy)
-def test_photosmetamodel::table::s_name_setter(instance):
+
+@given(instance=PhotosMetaModel_PostgreSQLConnection_strategy)
+def test_photosmetamodel_postgresqlconnection_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+
+
+@given(instance=PhotosMetaModel_PostgreSQLConnection_strategy)
+def test_photosmetamodel_postgresqlconnection_url_setter(instance):
+    original = instance.url
+    instance.url = original
+    assert instance.url == original
+
+
+
+@given(instance=PhotosMetaModel_PostgreSQLConnection_strategy)
+def test_photosmetamodel_postgresqlconnection_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=PhotosMetaModel_PostgreSQLConnection_strategy)
+def test_photosmetamodel_postgresqlconnection_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+@given(instance=PhotosMetaModel_AmazonS3API_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_amazons3api_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AmazonS3API)
+
+
+
+@given(instance=PhotosMetaModel_AmazonS3API_strategy)
+def test_photosmetamodel_amazons3api_endpointUrl_setter(instance):
+    original = instance.endpointUrl
+    instance.endpointUrl = original
+    assert instance.endpointUrl == original
+
+
+
+@given(instance=PhotosMetaModel_AmazonS3API_strategy)
+def test_photosmetamodel_amazons3api_accessKey_setter(instance):
+    original = instance.accessKey
+    instance.accessKey = original
+    assert instance.accessKey == original
+
+
+
+@given(instance=PhotosMetaModel_AmazonS3API_strategy)
+def test_photosmetamodel_amazons3api_bucketName_setter(instance):
+    original = instance.bucketName
+    instance.bucketName = original
+    assert instance.bucketName == original
+
+
+
+@given(instance=PhotosMetaModel_AmazonS3API_strategy)
+def test_photosmetamodel_amazons3api_secretKey_setter(instance):
+    original = instance.secretKey
+    instance.secretKey = original
+    assert instance.secretKey == original
+
+@given(instance=PhotosMetaModel_REST_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_rest_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_REST)
+
+@given(instance=BusinessLogicSegment_strategy)
+@settings(max_examples=50)
+def test_businesslogicsegment_instantiation(instance):
+    assert isinstance(instance, BusinessLogicSegment)
+
+@given(instance=PhotosMetaModel_Repository_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_repository_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Repository_a)
+
+@given(instance=PhotosMetaModel_Model_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_model_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Model_a)
+
+@given(instance=PhotosMetaModel_Security_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_security_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Security_a)
+
+@given(instance=PhotosMetaModel_Controller_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_controller_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Controller_a)
+
+@given(instance=PresentationSegment_strategy)
+@settings(max_examples=50)
+def test_presentationsegment_instantiation(instance):
+    assert isinstance(instance, PresentationSegment)
+
+@given(instance=PhotosMetaModel_Component_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_component_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Component_a)
+
+@given(instance=PhotosMetaModel_Action_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_action_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Action_a)
+
+@given(instance=PhotosMetaModel_View_a_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_view_a_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_View_a)
+
+@given(instance=PhotosMetaModel_SegmentStructure_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_segmentstructure_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_SegmentStructure)
+
+
+
+@given(instance=PhotosMetaModel_SegmentStructure_strategy)
+def test_photosmetamodel_segmentstructure_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Exception_strategy)
+@given(instance=Relation_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::exception_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Exception)
+def test_relation_instantiation(instance):
+    assert isinstance(instance, Relation)
 
-@given(instance=PhotosMetaModel::EnableAuthorizationServer_strategy)
+@given(instance=PhotosMetaModel_AllowedToUse_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::enableauthorizationserver_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::EnableAuthorizationServer)
+def test_photosmetamodel_allowedtouse_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AllowedToUse)
 
-@given(instance=PhotosMetaModel::EnableResourceServer_strategy)
+@given(instance=PhotosMetaModel_DataSegment_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::enableresourceserver_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::EnableResourceServer)
+def test_photosmetamodel_datasegment_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_DataSegment)
 
-@given(instance=PhotosMetaModel::EnableWebSecurity_strategy)
+@given(instance=PhotosMetaModel_Data_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::enablewebsecurity_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::EnableWebSecurity)
+def test_photosmetamodel_data_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Data)
 
-@given(instance=PhotosMetaModel::Bean_strategy)
+@given(instance=PhotosMetaModel_BusinessLogicSegment_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::bean_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Bean)
+def test_photosmetamodel_businesslogicsegment_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_BusinessLogicSegment)
 
-@given(instance=PhotosMetaModel::Predicate_strategy)
+@given(instance=PhotosMetaModel_Album_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::predicate_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Predicate)
-
-@given(instance=PhotosMetaModel::SearchCriteria_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::searchcriteria_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::SearchCriteria)
-
-@given(instance=PhotosMetaModel::DataType_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::datatype_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::DataType)
-
-@given(instance=PhotosMetaModel::DataType_strategy)
-def test_photosmetamodel::datatype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_album_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Album)
 
 
-@given(instance=PhotosMetaModel::DataType_strategy)
-def test_photosmetamodel::datatype_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Album_strategy)
+def test_photosmetamodel_album_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Constraint_strategy)
+
+
+@given(instance=PhotosMetaModel_Album_strategy)
+def test_photosmetamodel_album_url_setter(instance):
+    original = instance.url
+    instance.url = original
+    assert instance.url == original
+
+@given(instance=PhotosMetaModel_GeneratedValue_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::constraint_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Constraint)
+def test_photosmetamodel_generatedvalue_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_GeneratedValue)
 
-@given(instance=PhotosMetaModel::Specification_strategy)
+@given(instance=PhotosMetaModel_Id_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::specification_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Specification)
+def test_photosmetamodel_id_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Id)
 
-@given(instance=PhotosMetaModel::Autowired_strategy)
+@given(instance=PhotosMetaModel_Column_s_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::autowired_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Autowired)
-
-@given(instance=PhotosMetaModel::ExceptionHandler_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::exceptionhandler_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::ExceptionHandler)
-
-@given(instance=PhotosMetaModel::RequestMapping_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::requestmapping_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::RequestMapping)
-
-@given(instance=PhotosMetaModel::RestController_strategy)
-@settings(max_examples=50)
-def test_photosmetamodel::restcontroller_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::RestController)
-
-@given(instance=PhotosMetaModel::RestController_strategy)
-def test_photosmetamodel::restcontroller_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_column_s_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Column_s)
 
 
-@given(instance=PhotosMetaModel::RestController_strategy)
-def test_photosmetamodel::restcontroller_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Column_s_strategy)
+def test_photosmetamodel_column_s_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::Repository_strategy)
+@given(instance=PhotosMetaModel_NamedNativeQuery_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::repository_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Repository)
+def test_photosmetamodel_namednativequery_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_NamedNativeQuery)
 
-@given(instance=PhotosMetaModel::Modules_strategy)
+@given(instance=PhotosMetaModel_Table_s_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::modules_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Modules)
-
-@given(instance=PhotosMetaModel::Modules_strategy)
-def test_photosmetamodel::modules_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_photosmetamodel_table_s_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Table_s)
 
 
-@given(instance=PhotosMetaModel::Modules_strategy)
-def test_photosmetamodel::modules_name_setter(instance):
+
+@given(instance=PhotosMetaModel_Table_s_strategy)
+def test_photosmetamodel_table_s_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PhotosMetaModel::SpringBootApplication_strategy)
+@given(instance=PhotosMetaModel_Exception_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::springbootapplication_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::SpringBootApplication)
+def test_photosmetamodel_exception_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Exception)
 
-@given(instance=PhotosMetaModel::AmazonWebServices_strategy)
+@given(instance=PhotosMetaModel_EnableAuthorizationServer_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::amazonwebservices_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::AmazonWebServices)
+def test_photosmetamodel_enableauthorizationserver_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_EnableAuthorizationServer)
 
-@given(instance=PhotosMetaModel::React_strategy)
+@given(instance=PhotosMetaModel_EnableResourceServer_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::react_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::React)
+def test_photosmetamodel_enableresourceserver_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_EnableResourceServer)
+
+@given(instance=PhotosMetaModel_EnableWebSecurity_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_enablewebsecurity_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_EnableWebSecurity)
+
+@given(instance=PhotosMetaModel_Bean_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_bean_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Bean)
+
+@given(instance=PhotosMetaModel_Predicate_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_predicate_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Predicate)
+
+@given(instance=PhotosMetaModel_SearchCriteria_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_searchcriteria_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_SearchCriteria)
+
+@given(instance=PhotosMetaModel_DataType_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_datatype_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_DataType)
+
+
+
+@given(instance=PhotosMetaModel_DataType_strategy)
+def test_photosmetamodel_datatype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=PhotosMetaModel_Constraint_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_constraint_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Constraint)
+
+@given(instance=PhotosMetaModel_Specification_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_specification_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Specification)
+
+@given(instance=PhotosMetaModel_Autowired_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_autowired_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Autowired)
+
+@given(instance=PhotosMetaModel_ExceptionHandler_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_exceptionhandler_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_ExceptionHandler)
+
+@given(instance=PhotosMetaModel_RequestMapping_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_requestmapping_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_RequestMapping)
+
+@given(instance=PhotosMetaModel_RestController_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_restcontroller_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_RestController)
+
+
+
+@given(instance=PhotosMetaModel_RestController_strategy)
+def test_photosmetamodel_restcontroller_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=PhotosMetaModel_Repository_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_repository_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Repository)
+
+@given(instance=PhotosMetaModel_Modules_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_modules_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Modules)
+
+
+
+@given(instance=PhotosMetaModel_Modules_strategy)
+def test_photosmetamodel_modules_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=PhotosMetaModel_SpringBootApplication_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_springbootapplication_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_SpringBootApplication)
+
+@given(instance=PhotosMetaModel_AmazonWebServices_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_amazonwebservices_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_AmazonWebServices)
+
+@given(instance=PhotosMetaModel_React_strategy)
+@settings(max_examples=50)
+def test_photosmetamodel_react_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_React)
 
 @given(instance=RequestMapping_strategy)
 @settings(max_examples=50)
 def test_requestmapping_instantiation(instance):
     assert isinstance(instance, RequestMapping)
 
-@given(instance=PhotosMetaModel::PutMapping_strategy)
+@given(instance=PhotosMetaModel_GetMapping_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::putmapping_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PutMapping)
+def test_photosmetamodel_getmapping_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_GetMapping)
 
-@given(instance=PhotosMetaModel::DeleteMapping_strategy)
+@given(instance=PhotosMetaModel_PutMapping_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::deletemapping_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::DeleteMapping)
+def test_photosmetamodel_putmapping_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PutMapping)
 
-@given(instance=PhotosMetaModel::GetMapping_strategy)
+@given(instance=PhotosMetaModel_DeleteMapping_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::getmapping_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::GetMapping)
+def test_photosmetamodel_deletemapping_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_DeleteMapping)
 
-@given(instance=PhotosMetaModel::PostMapping_strategy)
+@given(instance=PhotosMetaModel_PostMapping_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::postmapping_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PostMapping)
+def test_photosmetamodel_postmapping_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PostMapping)
 
-@given(instance=PhotosMetaModel::RequestPart_strategy)
+@given(instance=PhotosMetaModel_RequestPart_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::requestpart_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::RequestPart)
+def test_photosmetamodel_requestpart_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_RequestPart)
 
-@given(instance=PhotosMetaModel::Configuration_strategy)
+@given(instance=PhotosMetaModel_Configuration_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::configuration_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Configuration)
+def test_photosmetamodel_configuration_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Configuration)
 
-@given(instance=PhotosMetaModel::Component_strategy)
+@given(instance=PhotosMetaModel_Component_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::component_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Component)
+def test_photosmetamodel_component_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Component)
 
-@given(instance=PhotosMetaModel::Entity_strategy)
+@given(instance=PhotosMetaModel_Entity_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::entity_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Entity)
+def test_photosmetamodel_entity_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Entity)
 
-@given(instance=PhotosMetaModel::Domain_strategy)
+@given(instance=PhotosMetaModel_Domain_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::domain_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Domain)
+def test_photosmetamodel_domain_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Domain)
 
-@given(instance=PhotosMetaModel::SoftGallery_strategy)
+@given(instance=PhotosMetaModel_SoftGallery_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::softgallery_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::SoftGallery)
+def test_photosmetamodel_softgallery_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_SoftGallery)
 
-@given(instance=PhotosMetaModel::PostgreSQL_strategy)
+@given(instance=PhotosMetaModel_PostgreSQL_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::postgresql_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::PostgreSQL)
+def test_photosmetamodel_postgresql_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_PostgreSQL)
 
-@given(instance=PhotosMetaModel::Spring_strategy)
+@given(instance=PhotosMetaModel_Spring_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::spring_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Spring)
+def test_photosmetamodel_spring_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Spring)
 
-@given(instance=PhotosMetaModel::NTier_strategy)
+@given(instance=PhotosMetaModel_NTier_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::ntier_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::NTier)
+def test_photosmetamodel_ntier_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_NTier)
 
-@given(instance=PhotosMetaModel::Entities_strategy)
+@given(instance=PhotosMetaModel_Entities_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::entities_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Entities)
-
-@given(instance=PhotosMetaModel::Entities_strategy)
-def test_photosmetamodel::entities_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_photosmetamodel_entities_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Entities)
 
 
-@given(instance=PhotosMetaModel::Entities_strategy)
-def test_photosmetamodel::entities_id_setter(instance):
+
+@given(instance=PhotosMetaModel_Entities_strategy)
+def test_photosmetamodel_entities_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=PhotosMetaModel::Functionalities_strategy)
+@given(instance=PhotosMetaModel_Functionalities_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::functionalities_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Functionalities)
+def test_photosmetamodel_functionalities_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Functionalities)
 
-@given(instance=PhotosMetaModel::Technology_strategy)
+@given(instance=PhotosMetaModel_Technology_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::technology_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Technology)
+def test_photosmetamodel_technology_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Technology)
 
-@given(instance=PhotosMetaModel::Architecture_strategy)
+@given(instance=PhotosMetaModel_Architecture_strategy)
 @settings(max_examples=50)
-def test_photosmetamodel::architecture_instantiation(instance):
-    assert isinstance(instance, PhotosMetaModel::Architecture)
+def test_photosmetamodel_architecture_instantiation(instance):
+    assert isinstance(instance, PhotosMetaModel_Architecture)

@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    requirement::NamedElement,
-    requirement::EObject,
+from python_code import (
+    requirement_NamedElement,
+    requirement_EObject,
     NamedElement,
-    requirement::Category,
-    requirement::Requirement,
-    requirement::Repository,
+    requirement_Requirement,
+    requirement_Category,
+    requirement_Repository,
     RequirementType,
 )
 
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_requirement::namedelement_is_not_abstract():
-    assert not inspect.isabstract(requirement::NamedElement)
+def test_requirement_namedelement_is_not_abstract():
+    assert not inspect.isabstract(requirement_NamedElement)
 
 
-def test_requirement::namedelement_constructor_exists():
-    assert callable(requirement::NamedElement.__init__)
+def test_requirement_namedelement_constructor_exists():
+    assert callable(requirement_NamedElement.__init__)
 
 
-def test_requirement::namedelement_constructor_args():
-    sig = inspect.signature(requirement::NamedElement.__init__)
+def test_requirement_namedelement_constructor_args():
+    sig = inspect.signature(requirement_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_requirement::namedelement_has_name():
-    assert hasattr(requirement::NamedElement, "name")
+def test_requirement_namedelement_has_name():
+    assert hasattr(requirement_NamedElement, "name")
     descriptor = None
-    for klass in requirement::NamedElement.__mro__:
+    for klass in requirement_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -45,16 +45,16 @@ def test_requirement::namedelement_has_name():
 
 
 
-def test_requirement::eobject_is_not_abstract():
-    assert not inspect.isabstract(requirement::EObject)
+def test_requirement_eobject_is_not_abstract():
+    assert not inspect.isabstract(requirement_EObject)
 
 
-def test_requirement::eobject_constructor_exists():
-    assert callable(requirement::EObject.__init__)
+def test_requirement_eobject_constructor_exists():
+    assert callable(requirement_EObject.__init__)
 
 
-def test_requirement::eobject_constructor_args():
-    sig = inspect.signature(requirement::EObject.__init__)
+def test_requirement_eobject_constructor_args():
+    sig = inspect.signature(requirement_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,154 +73,154 @@ def test_namedelement_constructor_args():
 
 
 
-def test_requirement::category_is_not_abstract():
-    assert not inspect.isabstract(requirement::Category)
+def test_requirement_requirement_is_not_abstract():
+    assert not inspect.isabstract(requirement_Requirement)
 
 
-def test_requirement::category_constructor_exists():
-    assert callable(requirement::Category.__init__)
+def test_requirement_requirement_constructor_exists():
+    assert callable(requirement_Requirement.__init__)
 
 
-def test_requirement::category_constructor_args():
-    sig = inspect.signature(requirement::Category.__init__)
+def test_requirement_requirement_constructor_args():
+    sig = inspect.signature(requirement_Requirement.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_requirement::category_has_id():
-    assert hasattr(requirement::Category, "id")
-    descriptor = None
-    for klass in requirement::Category.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_requirement::requirement_is_not_abstract():
-    assert not inspect.isabstract(requirement::Requirement)
-
-
-def test_requirement::requirement_constructor_exists():
-    assert callable(requirement::Requirement.__init__)
-
-
-def test_requirement::requirement_constructor_args():
-    sig = inspect.signature(requirement::Requirement.__init__)
-    params = list(sig.parameters.keys())
-    assert "createdOn" in params, "Missing parameter 'createdOn'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "acceptanceCriteria" in params, "Missing parameter 'acceptanceCriteria'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "rationale" in params, "Missing parameter 'rationale'"
+    assert "acceptanceCriteria" in params, "Missing parameter 'acceptanceCriteria'"
+    assert "createdOn" in params, "Missing parameter 'createdOn'"
+    assert "version" in params, "Missing parameter 'version'"
     assert "subtype" in params, "Missing parameter 'subtype'"
     assert "statement" in params, "Missing parameter 'statement'"
     assert "modifiedOn" in params, "Missing parameter 'modifiedOn'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "rationale" in params, "Missing parameter 'rationale'"
 
-def test_requirement::requirement_has_createdOn():
-    assert hasattr(requirement::Requirement, "createdOn")
+def test_requirement_requirement_has_type():
+    assert hasattr(requirement_Requirement, "type")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
-        if "createdOn" in klass.__dict__:
-            descriptor = klass.__dict__["createdOn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_requirement::requirement_has_type():
-    assert hasattr(requirement::Requirement, "type")
-    descriptor = None
-    for klass in requirement::Requirement.__mro__:
+    for klass in requirement_Requirement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirement::requirement_has_acceptanceCriteria():
-    assert hasattr(requirement::Requirement, "acceptanceCriteria")
+def test_requirement_requirement_has_id():
+    assert hasattr(requirement_Requirement, "id")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
-        if "acceptanceCriteria" in klass.__dict__:
-            descriptor = klass.__dict__["acceptanceCriteria"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_requirement::requirement_has_version():
-    assert hasattr(requirement::Requirement, "version")
-    descriptor = None
-    for klass in requirement::Requirement.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_requirement::requirement_has_id():
-    assert hasattr(requirement::Requirement, "id")
-    descriptor = None
-    for klass in requirement::Requirement.__mro__:
+    for klass in requirement_Requirement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirement::requirement_has_rationale():
-    assert hasattr(requirement::Requirement, "rationale")
+def test_requirement_requirement_has_acceptanceCriteria():
+    assert hasattr(requirement_Requirement, "acceptanceCriteria")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
-        if "rationale" in klass.__dict__:
-            descriptor = klass.__dict__["rationale"]
+    for klass in requirement_Requirement.__mro__:
+        if "acceptanceCriteria" in klass.__dict__:
+            descriptor = klass.__dict__["acceptanceCriteria"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirement::requirement_has_subtype():
-    assert hasattr(requirement::Requirement, "subtype")
+def test_requirement_requirement_has_createdOn():
+    assert hasattr(requirement_Requirement, "createdOn")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
+    for klass in requirement_Requirement.__mro__:
+        if "createdOn" in klass.__dict__:
+            descriptor = klass.__dict__["createdOn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_requirement_requirement_has_version():
+    assert hasattr(requirement_Requirement, "version")
+    descriptor = None
+    for klass in requirement_Requirement.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_requirement_requirement_has_subtype():
+    assert hasattr(requirement_Requirement, "subtype")
+    descriptor = None
+    for klass in requirement_Requirement.__mro__:
         if "subtype" in klass.__dict__:
             descriptor = klass.__dict__["subtype"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirement::requirement_has_statement():
-    assert hasattr(requirement::Requirement, "statement")
+def test_requirement_requirement_has_statement():
+    assert hasattr(requirement_Requirement, "statement")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
+    for klass in requirement_Requirement.__mro__:
         if "statement" in klass.__dict__:
             descriptor = klass.__dict__["statement"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirement::requirement_has_modifiedOn():
-    assert hasattr(requirement::Requirement, "modifiedOn")
+def test_requirement_requirement_has_modifiedOn():
+    assert hasattr(requirement_Requirement, "modifiedOn")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
+    for klass in requirement_Requirement.__mro__:
         if "modifiedOn" in klass.__dict__:
             descriptor = klass.__dict__["modifiedOn"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirement::requirement_has_status():
-    assert hasattr(requirement::Requirement, "status")
+def test_requirement_requirement_has_status():
+    assert hasattr(requirement_Requirement, "status")
     descriptor = None
-    for klass in requirement::Requirement.__mro__:
+    for klass in requirement_Requirement.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
+def test_requirement_requirement_has_rationale():
+    assert hasattr(requirement_Requirement, "rationale")
+    descriptor = None
+    for klass in requirement_Requirement.__mro__:
+        if "rationale" in klass.__dict__:
+            descriptor = klass.__dict__["rationale"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_requirement::repository_is_not_abstract():
-    assert not inspect.isabstract(requirement::Repository)
+
+def test_requirement_category_is_not_abstract():
+    assert not inspect.isabstract(requirement_Category)
 
 
-def test_requirement::repository_constructor_exists():
-    assert callable(requirement::Repository.__init__)
+def test_requirement_category_constructor_exists():
+    assert callable(requirement_Category.__init__)
 
 
-def test_requirement::repository_constructor_args():
-    sig = inspect.signature(requirement::Repository.__init__)
+def test_requirement_category_constructor_args():
+    sig = inspect.signature(requirement_Category.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_requirement_category_has_id():
+    assert hasattr(requirement_Category, "id")
+    descriptor = None
+    for klass in requirement_Category.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_requirement_repository_is_not_abstract():
+    assert not inspect.isabstract(requirement_Repository)
+
+
+def test_requirement_repository_constructor_exists():
+    assert callable(requirement_Repository.__init__)
+
+
+def test_requirement_repository_constructor_args():
+    sig = inspect.signature(requirement_Repository.__init__)
     params = list(sig.parameters.keys())
 
 def test_requirementtype_exists():
@@ -250,36 +250,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-requirement::NamedElement_strategy = st.builds(
-    requirement::NamedElement,
+requirement_NamedElement_strategy = st.builds(
+    requirement_NamedElement,
     name=
         safe_text
 )
-requirement::EObject_strategy = st.builds(
-    requirement::EObject,
+requirement_EObject_strategy = st.builds(
+    requirement_EObject,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-requirement::Category_strategy = st.builds(
-    requirement::Category,
-    id=
-        safe_text
-)
-requirement::Requirement_strategy = st.builds(
-    requirement::Requirement,
-    createdOn=
-        st.dates(),
+requirement_Requirement_strategy = st.builds(
+    requirement_Requirement,
     type=
+        safe_text,
+    id=
         safe_text,
     acceptanceCriteria=
         safe_text,
+    createdOn=
+        st.dates(),
     version=
         st.integers(),
-    id=
-        safe_text,
-    rationale=
-        safe_text,
     subtype=
         safe_text,
     statement=
@@ -287,170 +280,141 @@ requirement::Requirement_strategy = st.builds(
     modifiedOn=
         st.dates(),
     status=
+        safe_text,
+    rationale=
         safe_text
 )
-requirement::Repository_strategy = st.builds(
-    requirement::Repository,
+requirement_Category_strategy = st.builds(
+    requirement_Category,
+    id=
+        safe_text
+)
+requirement_Repository_strategy = st.builds(
+    requirement_Repository,
 )
 
-@given(instance=requirement::NamedElement_strategy)
+@given(instance=requirement_NamedElement_strategy)
 @settings(max_examples=50)
-def test_requirement::namedelement_instantiation(instance):
-    assert isinstance(instance, requirement::NamedElement)
-
-@given(instance=requirement::NamedElement_strategy)
-def test_requirement::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_requirement_namedelement_instantiation(instance):
+    assert isinstance(instance, requirement_NamedElement)
 
 
-@given(instance=requirement::NamedElement_strategy)
-def test_requirement::namedelement_name_setter(instance):
+
+@given(instance=requirement_NamedElement_strategy)
+def test_requirement_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=requirement::EObject_strategy)
+@given(instance=requirement_EObject_strategy)
 @settings(max_examples=50)
-def test_requirement::eobject_instantiation(instance):
-    assert isinstance(instance, requirement::EObject)
+def test_requirement_eobject_instantiation(instance):
+    assert isinstance(instance, requirement_EObject)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=requirement::Category_strategy)
+@given(instance=requirement_Requirement_strategy)
 @settings(max_examples=50)
-def test_requirement::category_instantiation(instance):
-    assert isinstance(instance, requirement::Category)
-
-@given(instance=requirement::Category_strategy)
-def test_requirement::category_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_requirement_requirement_instantiation(instance):
+    assert isinstance(instance, requirement_Requirement)
 
 
-@given(instance=requirement::Category_strategy)
-def test_requirement::category_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=requirement::Requirement_strategy)
-@settings(max_examples=50)
-def test_requirement::requirement_instantiation(instance):
-    assert isinstance(instance, requirement::Requirement)
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_createdOn_type(instance):
-    assert isinstance(instance.createdOn, date)
-
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_createdOn_setter(instance):
-    original = instance.createdOn
-    instance.createdOn = original
-    assert instance.createdOn == original
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_type_setter(instance):
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_acceptanceCriteria_type(instance):
-    assert isinstance(instance.acceptanceCriteria, str)
 
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_acceptanceCriteria_setter(instance):
-    original = instance.acceptanceCriteria
-    instance.acceptanceCriteria = original
-    assert instance.acceptanceCriteria == original
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_version_type(instance):
-    assert isinstance(instance.version, int)
-
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_id_setter(instance):
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_rationale_type(instance):
-    assert isinstance(instance.rationale, str)
 
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_rationale_setter(instance):
-    original = instance.rationale
-    instance.rationale = original
-    assert instance.rationale == original
-
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_subtype_type(instance):
-    assert isinstance(instance.subtype, str)
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_acceptanceCriteria_setter(instance):
+    original = instance.acceptanceCriteria
+    instance.acceptanceCriteria = original
+    assert instance.acceptanceCriteria == original
 
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_subtype_setter(instance):
+
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_createdOn_setter(instance):
+    original = instance.createdOn
+    instance.createdOn = original
+    assert instance.createdOn == original
+
+
+
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_subtype_setter(instance):
     original = instance.subtype
     instance.subtype = original
     assert instance.subtype == original
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_statement_type(instance):
-    assert isinstance(instance.statement, str)
 
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_statement_setter(instance):
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_statement_setter(instance):
     original = instance.statement
     instance.statement = original
     assert instance.statement == original
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_modifiedOn_type(instance):
-    assert isinstance(instance.modifiedOn, date)
 
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_modifiedOn_setter(instance):
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_modifiedOn_setter(instance):
     original = instance.modifiedOn
     instance.modifiedOn = original
     assert instance.modifiedOn == original
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
-@given(instance=requirement::Requirement_strategy)
-def test_requirement::requirement_status_setter(instance):
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=requirement::Repository_strategy)
+
+
+@given(instance=requirement_Requirement_strategy)
+def test_requirement_requirement_rationale_setter(instance):
+    original = instance.rationale
+    instance.rationale = original
+    assert instance.rationale == original
+
+@given(instance=requirement_Category_strategy)
 @settings(max_examples=50)
-def test_requirement::repository_instantiation(instance):
-    assert isinstance(instance, requirement::Repository)
+def test_requirement_category_instantiation(instance):
+    assert isinstance(instance, requirement_Category)
+
+
+
+@given(instance=requirement_Category_strategy)
+def test_requirement_category_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=requirement_Repository_strategy)
+@settings(max_examples=50)
+def test_requirement_repository_instantiation(instance):
+    assert isinstance(instance, requirement_Repository)

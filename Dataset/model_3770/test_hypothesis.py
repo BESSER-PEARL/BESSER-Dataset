@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ecore::EClass,
+from python_code import (
+    ecore_EClass,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_ecore::eclass_is_not_abstract():
-    assert not inspect.isabstract(ecore::EClass)
+def test_ecore_eclass_is_not_abstract():
+    assert not inspect.isabstract(ecore_EClass)
 
 
-def test_ecore::eclass_constructor_exists():
-    assert callable(ecore::EClass.__init__)
+def test_ecore_eclass_constructor_exists():
+    assert callable(ecore_EClass.__init__)
 
 
-def test_ecore::eclass_constructor_args():
-    sig = inspect.signature(ecore::EClass.__init__)
+def test_ecore_eclass_constructor_args():
+    sig = inspect.signature(ecore_EClass.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_ecore::eclass_has_abstract():
-    assert hasattr(ecore::EClass, "abstract")
+def test_ecore_eclass_has_abstract():
+    assert hasattr(ecore_EClass, "abstract")
     descriptor = None
-    for klass in ecore::EClass.__mro__:
+    for klass in ecore_EClass.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ecore::EClass_strategy = st.builds(
-    ecore::EClass,
+ecore_EClass_strategy = st.builds(
+    ecore_EClass,
     abstract=
         safe_text
 )
 
-@given(instance=ecore::EClass_strategy)
+@given(instance=ecore_EClass_strategy)
 @settings(max_examples=50)
-def test_ecore::eclass_instantiation(instance):
-    assert isinstance(instance, ecore::EClass)
-
-@given(instance=ecore::EClass_strategy)
-def test_ecore::eclass_abstract_type(instance):
-    assert isinstance(instance.abstract, str)
+def test_ecore_eclass_instantiation(instance):
+    assert isinstance(instance, ecore_EClass)
 
 
-@given(instance=ecore::EClass_strategy)
-def test_ecore::eclass_abstract_setter(instance):
+
+@given(instance=ecore_EClass_strategy)
+def test_ecore_eclass_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original

@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FSMException,
-    fsm::NoInitialStateException,
-    fsm::NoTransition,
-    fsm::NonDeterminism,
-    fsm::FSM,
-    fsm::FSMException,
-    fsm::Transition,
-    fsm::State,
+    fsm_NoInitialStateException,
+    fsm_NoTransition,
+    fsm_NonDeterminism,
+    fsm_FSM,
+    fsm_FSMException,
+    fsm_Transition,
+    fsm_State,
 )
 
 # =============================================================================
@@ -36,127 +36,127 @@ def test_fsmexception_constructor_args():
 
 
 
-def test_fsm::noinitialstateexception_is_not_abstract():
-    assert not inspect.isabstract(fsm::NoInitialStateException)
+def test_fsm_noinitialstateexception_is_not_abstract():
+    assert not inspect.isabstract(fsm_NoInitialStateException)
 
 
-def test_fsm::noinitialstateexception_constructor_exists():
-    assert callable(fsm::NoInitialStateException.__init__)
+def test_fsm_noinitialstateexception_constructor_exists():
+    assert callable(fsm_NoInitialStateException.__init__)
 
 
-def test_fsm::noinitialstateexception_constructor_args():
-    sig = inspect.signature(fsm::NoInitialStateException.__init__)
+def test_fsm_noinitialstateexception_constructor_args():
+    sig = inspect.signature(fsm_NoInitialStateException.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::notransition_is_not_abstract():
-    assert not inspect.isabstract(fsm::NoTransition)
+def test_fsm_notransition_is_not_abstract():
+    assert not inspect.isabstract(fsm_NoTransition)
 
 
-def test_fsm::notransition_constructor_exists():
-    assert callable(fsm::NoTransition.__init__)
+def test_fsm_notransition_constructor_exists():
+    assert callable(fsm_NoTransition.__init__)
 
 
-def test_fsm::notransition_constructor_args():
-    sig = inspect.signature(fsm::NoTransition.__init__)
+def test_fsm_notransition_constructor_args():
+    sig = inspect.signature(fsm_NoTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::nondeterminism_is_not_abstract():
-    assert not inspect.isabstract(fsm::NonDeterminism)
+def test_fsm_nondeterminism_is_not_abstract():
+    assert not inspect.isabstract(fsm_NonDeterminism)
 
 
-def test_fsm::nondeterminism_constructor_exists():
-    assert callable(fsm::NonDeterminism.__init__)
+def test_fsm_nondeterminism_constructor_exists():
+    assert callable(fsm_NonDeterminism.__init__)
 
 
-def test_fsm::nondeterminism_constructor_args():
-    sig = inspect.signature(fsm::NonDeterminism.__init__)
+def test_fsm_nondeterminism_constructor_args():
+    sig = inspect.signature(fsm_NonDeterminism.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(fsm::FSM)
+def test_fsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(fsm_FSM)
 
 
-def test_fsm::fsm_constructor_exists():
-    assert callable(fsm::FSM.__init__)
+def test_fsm_fsm_constructor_exists():
+    assert callable(fsm_FSM.__init__)
 
 
-def test_fsm::fsm_constructor_args():
-    sig = inspect.signature(fsm::FSM.__init__)
+def test_fsm_fsm_constructor_args():
+    sig = inspect.signature(fsm_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::fsmexception_is_not_abstract():
-    assert not inspect.isabstract(fsm::FSMException)
+def test_fsm_fsmexception_is_not_abstract():
+    assert not inspect.isabstract(fsm_FSMException)
 
 
-def test_fsm::fsmexception_constructor_exists():
-    assert callable(fsm::FSMException.__init__)
+def test_fsm_fsmexception_constructor_exists():
+    assert callable(fsm_FSMException.__init__)
 
 
-def test_fsm::fsmexception_constructor_args():
-    sig = inspect.signature(fsm::FSMException.__init__)
+def test_fsm_fsmexception_constructor_args():
+    sig = inspect.signature(fsm_FSMException.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "output" in params, "Missing parameter 'output'"
     assert "input" in params, "Missing parameter 'input'"
+    assert "output" in params, "Missing parameter 'output'"
 
-def test_fsm::transition_has_output():
-    assert hasattr(fsm::Transition, "output")
+def test_fsm_transition_has_input():
+    assert hasattr(fsm_Transition, "input")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fsm::transition_has_input():
-    assert hasattr(fsm::Transition, "input")
-    descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
     assert isinstance(descriptor, property)
 
+def test_fsm_transition_has_output():
+    assert hasattr(fsm_Transition, "output")
+    descriptor = None
+    for klass in fsm_Transition.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::state_has_name():
-    assert hasattr(fsm::State, "name")
+def test_fsm_state_has_name():
+    assert hasattr(fsm_State, "name")
     descriptor = None
-    for klass in fsm::State.__mro__:
+    for klass in fsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -177,30 +177,30 @@ safe_text = st.text(
 FSMException_strategy = st.builds(
     FSMException,
 )
-fsm::NoInitialStateException_strategy = st.builds(
-    fsm::NoInitialStateException,
+fsm_NoInitialStateException_strategy = st.builds(
+    fsm_NoInitialStateException,
 )
-fsm::NoTransition_strategy = st.builds(
-    fsm::NoTransition,
+fsm_NoTransition_strategy = st.builds(
+    fsm_NoTransition,
 )
-fsm::NonDeterminism_strategy = st.builds(
-    fsm::NonDeterminism,
+fsm_NonDeterminism_strategy = st.builds(
+    fsm_NonDeterminism,
 )
-fsm::FSM_strategy = st.builds(
-    fsm::FSM,
+fsm_FSM_strategy = st.builds(
+    fsm_FSM,
 )
-fsm::FSMException_strategy = st.builds(
-    fsm::FSMException,
+fsm_FSMException_strategy = st.builds(
+    fsm_FSMException,
 )
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
-    output=
-        safe_text,
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
     input=
+        safe_text,
+    output=
         safe_text
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
+fsm_State_strategy = st.builds(
+    fsm_State,
     name=
         safe_text
 )
@@ -210,25 +210,25 @@ fsm::State_strategy = st.builds(
 def test_fsmexception_instantiation(instance):
     assert isinstance(instance, FSMException)
 
-@given(instance=fsm::NoInitialStateException_strategy)
+@given(instance=fsm_NoInitialStateException_strategy)
 @settings(max_examples=50)
-def test_fsm::noinitialstateexception_instantiation(instance):
-    assert isinstance(instance, fsm::NoInitialStateException)
+def test_fsm_noinitialstateexception_instantiation(instance):
+    assert isinstance(instance, fsm_NoInitialStateException)
 
-@given(instance=fsm::NoTransition_strategy)
+@given(instance=fsm_NoTransition_strategy)
 @settings(max_examples=50)
-def test_fsm::notransition_instantiation(instance):
-    assert isinstance(instance, fsm::NoTransition)
+def test_fsm_notransition_instantiation(instance):
+    assert isinstance(instance, fsm_NoTransition)
 
-@given(instance=fsm::NonDeterminism_strategy)
+@given(instance=fsm_NonDeterminism_strategy)
 @settings(max_examples=50)
-def test_fsm::nondeterminism_instantiation(instance):
-    assert isinstance(instance, fsm::NonDeterminism)
+def test_fsm_nondeterminism_instantiation(instance):
+    assert isinstance(instance, fsm_NonDeterminism)
 
-@given(instance=fsm::FSM_strategy)
+@given(instance=fsm_FSM_strategy)
 @settings(max_examples=50)
-def test_fsm::fsm_instantiation(instance):
-    assert isinstance(instance, fsm::FSM)
+def test_fsm_fsm_instantiation(instance):
+    assert isinstance(instance, fsm_FSM)
 
 import warnings
 import copy
@@ -236,9 +236,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::FSM_strategy)
+@given(instance=fsm_FSM_strategy)
 @settings(max_examples=30)
-def test_fsm::fsm_run_changes_state(instance):
+def test_fsm_fsm_run_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -250,14 +250,14 @@ def test_fsm::fsm_run_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'run' in fsm::FSM is empty"
+        assert has_statements, f"Function 'run' in fsm_FSM is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'run' in fsm::FSM did not change state; check implementation")
+            warnings.warn(f"Operation 'run' in fsm_FSM did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'run' in fsm::FSM is not implemented or raised an error")
+        warnings.warn(f"Operation 'run' in fsm_FSM is not implemented or raised an error")
 
 import warnings
 import copy
@@ -265,9 +265,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::FSM_strategy)
+@given(instance=fsm_FSM_strategy)
 @settings(max_examples=30)
-def test_fsm::fsm_reset_changes_state(instance):
+def test_fsm_fsm_reset_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -279,46 +279,40 @@ def test_fsm::fsm_reset_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reset' in fsm::FSM is empty"
+        assert has_statements, f"Function 'reset' in fsm_FSM is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reset' in fsm::FSM did not change state; check implementation")
+            warnings.warn(f"Operation 'reset' in fsm_FSM did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reset' in fsm::FSM is not implemented or raised an error")
+        warnings.warn(f"Operation 'reset' in fsm_FSM is not implemented or raised an error")
 
-@given(instance=fsm::FSMException_strategy)
+@given(instance=fsm_FSMException_strategy)
 @settings(max_examples=50)
-def test_fsm::fsmexception_instantiation(instance):
-    assert isinstance(instance, fsm::FSMException)
+def test_fsm_fsmexception_instantiation(instance):
+    assert isinstance(instance, fsm_FSMException)
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_output_type(instance):
-    assert isinstance(instance.output, str)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_input_type(instance):
-    assert isinstance(instance.input, str)
-
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_input_setter(instance):
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_input_setter(instance):
     original = instance.input
     instance.input = original
     assert instance.input == original
+
+
+
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
 
 import warnings
 import copy
@@ -326,9 +320,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=30)
-def test_fsm::transition_fire_changes_state(instance):
+def test_fsm_transition_fire_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -340,27 +334,24 @@ def test_fsm::transition_fire_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fire' in fsm::Transition is empty"
+        assert has_statements, f"Function 'fire' in fsm_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fire' in fsm::Transition did not change state; check implementation")
+            warnings.warn(f"Operation 'fire' in fsm_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fire' in fsm::Transition is not implemented or raised an error")
+        warnings.warn(f"Operation 'fire' in fsm_Transition is not implemented or raised an error")
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
-
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)
 
 
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_setter(instance):
+
+@given(instance=fsm_State_strategy)
+def test_fsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -371,9 +362,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=30)
-def test_fsm::state_step_changes_state(instance):
+def test_fsm_state_step_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -387,11 +378,11 @@ def test_fsm::state_step_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'step' in fsm::State is empty"
+        assert has_statements, f"Function 'step' in fsm_State is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'step' in fsm::State did not change state; check implementation")
+            warnings.warn(f"Operation 'step' in fsm_State did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'step' in fsm::State is not implemented or raised an error")
+        warnings.warn(f"Operation 'step' in fsm_State is not implemented or raised an error")

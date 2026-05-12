@@ -3,9 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    A,
     C3,
     C2,
     R,
@@ -13,12 +14,35 @@ from python_code import (
     Z,
     C,
     B,
-    A,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_a_is_not_abstract():
+    assert not inspect.isabstract(A)
+
+
+def test_a_constructor_exists():
+    assert callable(A.__init__)
+
+
+def test_a_constructor_args():
+    sig = inspect.signature(A.__init__)
+    params = list(sig.parameters.keys())
+    assert "attA" in params, "Missing parameter 'attA'"
+
+def test_a_has_attA():
+    assert hasattr(A, "attA")
+    descriptor = None
+    for klass in A.__mro__:
+        if "attA" in klass.__dict__:
+            descriptor = klass.__dict__["attA"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -159,30 +183,6 @@ def test_b_has_attB():
     assert isinstance(descriptor, property)
 
 
-
-def test_a_is_not_abstract():
-    assert not inspect.isabstract(A)
-
-
-def test_a_constructor_exists():
-    assert callable(A.__init__)
-
-
-def test_a_constructor_args():
-    sig = inspect.signature(A.__init__)
-    params = list(sig.parameters.keys())
-    assert "attA" in params, "Missing parameter 'attA'"
-
-def test_a_has_attA():
-    assert hasattr(A, "attA")
-    descriptor = None
-    for klass in A.__mro__:
-        if "attA" in klass.__dict__:
-            descriptor = klass.__dict__["attA"]
-            break
-    assert isinstance(descriptor, property)
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -194,6 +194,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+A_strategy = st.builds(
+    A,
+    attA=
+        safe_text
+)
 C3_strategy = st.builds(
     C3,
 )
@@ -223,11 +228,19 @@ B_strategy = st.builds(
     attB=
         st.integers()
 )
-A_strategy = st.builds(
-    A,
-    attA=
-        safe_text
-)
+
+@given(instance=A_strategy)
+@settings(max_examples=50)
+def test_a_instantiation(instance):
+    assert isinstance(instance, A)
+
+
+
+@given(instance=A_strategy)
+def test_a_attA_setter(instance):
+    original = instance.attA
+    instance.attA = original
+    assert instance.attA == original
 
 @given(instance=C3_strategy)
 @settings(max_examples=50)
@@ -249,9 +262,6 @@ def test_r_instantiation(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_attY_type(instance):
-    assert isinstance(instance.attY, str)
 
 
 @given(instance=Y_strategy)
@@ -270,9 +280,6 @@ def test_z_instantiation(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_attC1_type(instance):
-    assert isinstance(instance.attC1, int)
 
 
 @given(instance=C_strategy)
@@ -281,9 +288,6 @@ def test_c_attC1_setter(instance):
     instance.attC1 = original
     assert instance.attC1 == original
 
-@given(instance=C_strategy)
-def test_c_attC2_type(instance):
-    assert isinstance(instance.attC2, bool)
 
 
 @given(instance=C_strategy)
@@ -297,9 +301,6 @@ def test_c_attC2_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B_strategy)
@@ -307,19 +308,3 @@ def test_b_attB_setter(instance):
     original = instance.attB
     instance.attB = original
     assert instance.attB == original
-
-@given(instance=A_strategy)
-@settings(max_examples=50)
-def test_a_instantiation(instance):
-    assert isinstance(instance, A)
-
-@given(instance=A_strategy)
-def test_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
-
-
-@given(instance=A_strategy)
-def test_a_attA_setter(instance):
-    original = instance.attA
-    instance.attA = original
-    assert instance.attA == original

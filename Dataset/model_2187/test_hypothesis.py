@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    coloredTree::HueTree,
+from python_code import (
+    coloredTree_HueTree,
     Color,
 )
 
@@ -16,33 +16,33 @@ from classes import (
 
 
 
-def test_coloredtree::huetree_is_not_abstract():
-    assert not inspect.isabstract(coloredTree::HueTree)
+def test_coloredtree_huetree_is_not_abstract():
+    assert not inspect.isabstract(coloredTree_HueTree)
 
 
-def test_coloredtree::huetree_constructor_exists():
-    assert callable(coloredTree::HueTree.__init__)
+def test_coloredtree_huetree_constructor_exists():
+    assert callable(coloredTree_HueTree.__init__)
 
 
-def test_coloredtree::huetree_constructor_args():
-    sig = inspect.signature(coloredTree::HueTree.__init__)
+def test_coloredtree_huetree_constructor_args():
+    sig = inspect.signature(coloredTree_HueTree.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
     assert "label" in params, "Missing parameter 'label'"
 
-def test_coloredtree::huetree_has_color():
-    assert hasattr(coloredTree::HueTree, "color")
+def test_coloredtree_huetree_has_color():
+    assert hasattr(coloredTree_HueTree, "color")
     descriptor = None
-    for klass in coloredTree::HueTree.__mro__:
+    for klass in coloredTree_HueTree.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
-def test_coloredtree::huetree_has_label():
-    assert hasattr(coloredTree::HueTree, "label")
+def test_coloredtree_huetree_has_label():
+    assert hasattr(coloredTree_HueTree, "label")
     descriptor = None
-    for klass in coloredTree::HueTree.__mro__:
+    for klass in coloredTree_HueTree.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -56,9 +56,9 @@ def test_color_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Color]
     expected_literals = [
+        "green",
         "blue",
         "red",
-        "green",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -76,37 +76,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-coloredTree::HueTree_strategy = st.builds(
-    coloredTree::HueTree,
+coloredTree_HueTree_strategy = st.builds(
+    coloredTree_HueTree,
     color=
         safe_text,
     label=
         safe_text
 )
 
-@given(instance=coloredTree::HueTree_strategy)
+@given(instance=coloredTree_HueTree_strategy)
 @settings(max_examples=50)
-def test_coloredtree::huetree_instantiation(instance):
-    assert isinstance(instance, coloredTree::HueTree)
-
-@given(instance=coloredTree::HueTree_strategy)
-def test_coloredtree::huetree_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_coloredtree_huetree_instantiation(instance):
+    assert isinstance(instance, coloredTree_HueTree)
 
 
-@given(instance=coloredTree::HueTree_strategy)
-def test_coloredtree::huetree_color_setter(instance):
+
+@given(instance=coloredTree_HueTree_strategy)
+def test_coloredtree_huetree_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=coloredTree::HueTree_strategy)
-def test_coloredtree::huetree_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
-@given(instance=coloredTree::HueTree_strategy)
-def test_coloredtree::huetree_label_setter(instance):
+@given(instance=coloredTree_HueTree_strategy)
+def test_coloredtree_huetree_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

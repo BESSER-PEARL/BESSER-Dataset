@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    imports::RootElementType,
-    imports::BookType,
-    imports::EStringToStringMapEntry,
-    imports::DocumentRoot,
+from python_code import (
+    imports_RootElementType,
+    imports_BookType,
+    imports_EStringToStringMapEntry,
+    imports_DocumentRoot,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_imports::rootelementtype_is_not_abstract():
-    assert not inspect.isabstract(imports::RootElementType)
+def test_imports_rootelementtype_is_not_abstract():
+    assert not inspect.isabstract(imports_RootElementType)
 
 
-def test_imports::rootelementtype_constructor_exists():
-    assert callable(imports::RootElementType.__init__)
+def test_imports_rootelementtype_constructor_exists():
+    assert callable(imports_RootElementType.__init__)
 
 
-def test_imports::rootelementtype_constructor_args():
-    sig = inspect.signature(imports::RootElementType.__init__)
+def test_imports_rootelementtype_constructor_args():
+    sig = inspect.signature(imports_RootElementType.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_imports::rootelementtype_has_importURI():
-    assert hasattr(imports::RootElementType, "importURI")
+def test_imports_rootelementtype_has_importURI():
+    assert hasattr(imports_RootElementType, "importURI")
     descriptor = None
-    for klass in imports::RootElementType.__mro__:
+    for klass in imports_RootElementType.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -42,81 +42,81 @@ def test_imports::rootelementtype_has_importURI():
 
 
 
-def test_imports::booktype_is_not_abstract():
-    assert not inspect.isabstract(imports::BookType)
+def test_imports_booktype_is_not_abstract():
+    assert not inspect.isabstract(imports_BookType)
 
 
-def test_imports::booktype_constructor_exists():
-    assert callable(imports::BookType.__init__)
+def test_imports_booktype_constructor_exists():
+    assert callable(imports_BookType.__init__)
 
 
-def test_imports::booktype_constructor_args():
-    sig = inspect.signature(imports::BookType.__init__)
+def test_imports_booktype_constructor_args():
+    sig = inspect.signature(imports_BookType.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
     assert "isbn" in params, "Missing parameter 'isbn'"
     assert "author" in params, "Missing parameter 'author'"
+    assert "title" in params, "Missing parameter 'title'"
 
-def test_imports::booktype_has_title():
-    assert hasattr(imports::BookType, "title")
+def test_imports_booktype_has_isbn():
+    assert hasattr(imports_BookType, "isbn")
     descriptor = None
-    for klass in imports::BookType.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_imports::booktype_has_isbn():
-    assert hasattr(imports::BookType, "isbn")
-    descriptor = None
-    for klass in imports::BookType.__mro__:
+    for klass in imports_BookType.__mro__:
         if "isbn" in klass.__dict__:
             descriptor = klass.__dict__["isbn"]
             break
     assert isinstance(descriptor, property)
 
-def test_imports::booktype_has_author():
-    assert hasattr(imports::BookType, "author")
+def test_imports_booktype_has_author():
+    assert hasattr(imports_BookType, "author")
     descriptor = None
-    for klass in imports::BookType.__mro__:
+    for klass in imports_BookType.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
+def test_imports_booktype_has_title():
+    assert hasattr(imports_BookType, "title")
+    descriptor = None
+    for klass in imports_BookType.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_imports::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(imports::EStringToStringMapEntry)
+
+def test_imports_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(imports_EStringToStringMapEntry)
 
 
-def test_imports::estringtostringmapentry_constructor_exists():
-    assert callable(imports::EStringToStringMapEntry.__init__)
+def test_imports_estringtostringmapentry_constructor_exists():
+    assert callable(imports_EStringToStringMapEntry.__init__)
 
 
-def test_imports::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(imports::EStringToStringMapEntry.__init__)
+def test_imports_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(imports_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imports::documentroot_is_not_abstract():
-    assert not inspect.isabstract(imports::DocumentRoot)
+def test_imports_documentroot_is_not_abstract():
+    assert not inspect.isabstract(imports_DocumentRoot)
 
 
-def test_imports::documentroot_constructor_exists():
-    assert callable(imports::DocumentRoot.__init__)
+def test_imports_documentroot_constructor_exists():
+    assert callable(imports_DocumentRoot.__init__)
 
 
-def test_imports::documentroot_constructor_args():
-    sig = inspect.signature(imports::DocumentRoot.__init__)
+def test_imports_documentroot_constructor_args():
+    sig = inspect.signature(imports_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_imports::documentroot_has_mixed():
-    assert hasattr(imports::DocumentRoot, "mixed")
+def test_imports_documentroot_has_mixed():
+    assert hasattr(imports_DocumentRoot, "mixed")
     descriptor = None
-    for klass in imports::DocumentRoot.__mro__:
+    for klass in imports_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-imports::RootElementType_strategy = st.builds(
-    imports::RootElementType,
+imports_RootElementType_strategy = st.builds(
+    imports_RootElementType,
     importURI=
         safe_text
 )
-imports::BookType_strategy = st.builds(
-    imports::BookType,
-    title=
-        safe_text,
+imports_BookType_strategy = st.builds(
+    imports_BookType,
     isbn=
         safe_text,
     author=
+        safe_text,
+    title=
         safe_text
 )
-imports::EStringToStringMapEntry_strategy = st.builds(
-    imports::EStringToStringMapEntry,
+imports_EStringToStringMapEntry_strategy = st.builds(
+    imports_EStringToStringMapEntry,
 )
-imports::DocumentRoot_strategy = st.builds(
-    imports::DocumentRoot,
+imports_DocumentRoot_strategy = st.builds(
+    imports_DocumentRoot,
     mixed=
         safe_text
 )
 
-@given(instance=imports::RootElementType_strategy)
+@given(instance=imports_RootElementType_strategy)
 @settings(max_examples=50)
-def test_imports::rootelementtype_instantiation(instance):
-    assert isinstance(instance, imports::RootElementType)
-
-@given(instance=imports::RootElementType_strategy)
-def test_imports::rootelementtype_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_imports_rootelementtype_instantiation(instance):
+    assert isinstance(instance, imports_RootElementType)
 
 
-@given(instance=imports::RootElementType_strategy)
-def test_imports::rootelementtype_importURI_setter(instance):
+
+@given(instance=imports_RootElementType_strategy)
+def test_imports_rootelementtype_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=imports::BookType_strategy)
+@given(instance=imports_BookType_strategy)
 @settings(max_examples=50)
-def test_imports::booktype_instantiation(instance):
-    assert isinstance(instance, imports::BookType)
-
-@given(instance=imports::BookType_strategy)
-def test_imports::booktype_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_imports_booktype_instantiation(instance):
+    assert isinstance(instance, imports_BookType)
 
 
-@given(instance=imports::BookType_strategy)
-def test_imports::booktype_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=imports::BookType_strategy)
-def test_imports::booktype_isbn_type(instance):
-    assert isinstance(instance.isbn, str)
-
-
-@given(instance=imports::BookType_strategy)
-def test_imports::booktype_isbn_setter(instance):
+@given(instance=imports_BookType_strategy)
+def test_imports_booktype_isbn_setter(instance):
     original = instance.isbn
     instance.isbn = original
     assert instance.isbn == original
 
-@given(instance=imports::BookType_strategy)
-def test_imports::booktype_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
-@given(instance=imports::BookType_strategy)
-def test_imports::booktype_author_setter(instance):
+@given(instance=imports_BookType_strategy)
+def test_imports_booktype_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=imports::EStringToStringMapEntry_strategy)
+
+
+@given(instance=imports_BookType_strategy)
+def test_imports_booktype_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=imports_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_imports::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, imports::EStringToStringMapEntry)
+def test_imports_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, imports_EStringToStringMapEntry)
 
-@given(instance=imports::DocumentRoot_strategy)
+@given(instance=imports_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_imports::documentroot_instantiation(instance):
-    assert isinstance(instance, imports::DocumentRoot)
-
-@given(instance=imports::DocumentRoot_strategy)
-def test_imports::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_imports_documentroot_instantiation(instance):
+    assert isinstance(instance, imports_DocumentRoot)
 
 
-@given(instance=imports::DocumentRoot_strategy)
-def test_imports::documentroot_mixed_setter(instance):
+
+@given(instance=imports_DocumentRoot_strategy)
+def test_imports_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original

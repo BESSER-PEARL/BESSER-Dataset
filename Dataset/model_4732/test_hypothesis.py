@@ -3,57 +3,57 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simple::csp::DescribedElement,
+from python_code import (
+    simple_csp_DescribedElement,
     Goal,
-    simple::csp::MaximizeGoal,
+    simple_csp_MaximizeGoal,
     BooleanLiteral,
-    simple::csp::FalseValue,
-    simple::csp::TrueValue,
+    simple_csp_FalseValue,
+    simple_csp_TrueValue,
     SetOp,
-    simple::csp::Min,
-    simple::csp::Max,
-    simple::csp::Sum,
-    simple::csp::NamedElement,
-    simple::csp::MinimizeGoal,
+    simple_csp_Min,
+    simple_csp_Max,
+    simple_csp_Sum,
+    simple_csp_NamedElement,
+    simple_csp_MinimizeGoal,
     BinaryOp,
-    simple::csp::Less,
-    simple::csp::UnEqual,
-    simple::csp::Or,
-    simple::csp::LessEqual,
-    simple::csp::Equal,
-    simple::csp::Implies,
-    simple::csp::Greater,
-    simple::csp::GreaterEqual,
-    simple::csp::And,
+    simple_csp_Equal,
+    simple_csp_UnEqual,
+    simple_csp_Implies,
+    simple_csp_Greater,
+    simple_csp_LessEqual,
+    simple_csp_Or,
+    simple_csp_Less,
+    simple_csp_GreaterEqual,
+    simple_csp_And,
     UnaryOp,
-    simple::csp::Not,
-    simple::csp::Power,
-    simple::csp::Times,
-    simple::csp::Plus,
-    simple::csp::Minus,
+    simple_csp_Not,
+    simple_csp_Power,
+    simple_csp_Times,
+    simple_csp_Plus,
+    simple_csp_Minus,
     Operator,
-    simple::csp::UnaryOp,
-    simple::csp::SetOp,
+    simple_csp_UnaryOp,
+    simple_csp_SetOp,
     Expression,
-    simple::csp::VarOccurence,
-    simple::csp::BooleanLiteral,
-    simple::csp::Operator,
-    simple::csp::Expression,
+    simple_csp_VarOccurence,
+    simple_csp_BooleanLiteral,
+    simple_csp_Operator,
+    simple_csp_Expression,
     TypedElement,
     DescribedElement,
     Domain,
-    simple::csp::IntegerDomain,
-    simple::csp::BinaryOp,
-    simple::csp::Domain,
+    simple_csp_IntegerDomain,
+    simple_csp_BinaryOp,
+    simple_csp_Domain,
     NamedElement,
-    simple::csp::Variable,
-    simple::csp::Constraint,
-    simple::csp::Goal,
-    simple::csp::Problem,
-    simple::csp::TypedElement,
+    simple_csp_Variable,
+    simple_csp_Constraint,
+    simple_csp_Goal,
+    simple_csp_Problem,
+    simple_csp_TypedElement,
     Type,
 )
 
@@ -63,23 +63,23 @@ from classes import (
 
 
 
-def test_simple::csp::describedelement_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::DescribedElement)
+def test_simple_csp_describedelement_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_DescribedElement)
 
 
-def test_simple::csp::describedelement_constructor_exists():
-    assert callable(simple::csp::DescribedElement.__init__)
+def test_simple_csp_describedelement_constructor_exists():
+    assert callable(simple_csp_DescribedElement.__init__)
 
 
-def test_simple::csp::describedelement_constructor_args():
-    sig = inspect.signature(simple::csp::DescribedElement.__init__)
+def test_simple_csp_describedelement_constructor_args():
+    sig = inspect.signature(simple_csp_DescribedElement.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_simple::csp::describedelement_has_description():
-    assert hasattr(simple::csp::DescribedElement, "description")
+def test_simple_csp_describedelement_has_description():
+    assert hasattr(simple_csp_DescribedElement, "description")
     descriptor = None
-    for klass in simple::csp::DescribedElement.__mro__:
+    for klass in simple_csp_DescribedElement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -101,16 +101,16 @@ def test_goal_constructor_args():
 
 
 
-def test_simple::csp::maximizegoal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::MaximizeGoal)
+def test_simple_csp_maximizegoal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_MaximizeGoal)
 
 
-def test_simple::csp::maximizegoal_constructor_exists():
-    assert callable(simple::csp::MaximizeGoal.__init__)
+def test_simple_csp_maximizegoal_constructor_exists():
+    assert callable(simple_csp_MaximizeGoal.__init__)
 
 
-def test_simple::csp::maximizegoal_constructor_args():
-    sig = inspect.signature(simple::csp::MaximizeGoal.__init__)
+def test_simple_csp_maximizegoal_constructor_args():
+    sig = inspect.signature(simple_csp_MaximizeGoal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,30 +129,30 @@ def test_booleanliteral_constructor_args():
 
 
 
-def test_simple::csp::falsevalue_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::FalseValue)
+def test_simple_csp_falsevalue_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_FalseValue)
 
 
-def test_simple::csp::falsevalue_constructor_exists():
-    assert callable(simple::csp::FalseValue.__init__)
+def test_simple_csp_falsevalue_constructor_exists():
+    assert callable(simple_csp_FalseValue.__init__)
 
 
-def test_simple::csp::falsevalue_constructor_args():
-    sig = inspect.signature(simple::csp::FalseValue.__init__)
+def test_simple_csp_falsevalue_constructor_args():
+    sig = inspect.signature(simple_csp_FalseValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::truevalue_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::TrueValue)
+def test_simple_csp_truevalue_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_TrueValue)
 
 
-def test_simple::csp::truevalue_constructor_exists():
-    assert callable(simple::csp::TrueValue.__init__)
+def test_simple_csp_truevalue_constructor_exists():
+    assert callable(simple_csp_TrueValue.__init__)
 
 
-def test_simple::csp::truevalue_constructor_args():
-    sig = inspect.signature(simple::csp::TrueValue.__init__)
+def test_simple_csp_truevalue_constructor_args():
+    sig = inspect.signature(simple_csp_TrueValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -171,65 +171,65 @@ def test_setop_constructor_args():
 
 
 
-def test_simple::csp::min_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Min)
+def test_simple_csp_min_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Min)
 
 
-def test_simple::csp::min_constructor_exists():
-    assert callable(simple::csp::Min.__init__)
+def test_simple_csp_min_constructor_exists():
+    assert callable(simple_csp_Min.__init__)
 
 
-def test_simple::csp::min_constructor_args():
-    sig = inspect.signature(simple::csp::Min.__init__)
+def test_simple_csp_min_constructor_args():
+    sig = inspect.signature(simple_csp_Min.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::max_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Max)
+def test_simple_csp_max_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Max)
 
 
-def test_simple::csp::max_constructor_exists():
-    assert callable(simple::csp::Max.__init__)
+def test_simple_csp_max_constructor_exists():
+    assert callable(simple_csp_Max.__init__)
 
 
-def test_simple::csp::max_constructor_args():
-    sig = inspect.signature(simple::csp::Max.__init__)
+def test_simple_csp_max_constructor_args():
+    sig = inspect.signature(simple_csp_Max.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::sum_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Sum)
+def test_simple_csp_sum_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Sum)
 
 
-def test_simple::csp::sum_constructor_exists():
-    assert callable(simple::csp::Sum.__init__)
+def test_simple_csp_sum_constructor_exists():
+    assert callable(simple_csp_Sum.__init__)
 
 
-def test_simple::csp::sum_constructor_args():
-    sig = inspect.signature(simple::csp::Sum.__init__)
+def test_simple_csp_sum_constructor_args():
+    sig = inspect.signature(simple_csp_Sum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::NamedElement)
+def test_simple_csp_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_NamedElement)
 
 
-def test_simple::csp::namedelement_constructor_exists():
-    assert callable(simple::csp::NamedElement.__init__)
+def test_simple_csp_namedelement_constructor_exists():
+    assert callable(simple_csp_NamedElement.__init__)
 
 
-def test_simple::csp::namedelement_constructor_args():
-    sig = inspect.signature(simple::csp::NamedElement.__init__)
+def test_simple_csp_namedelement_constructor_args():
+    sig = inspect.signature(simple_csp_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simple::csp::namedelement_has_name():
-    assert hasattr(simple::csp::NamedElement, "name")
+def test_simple_csp_namedelement_has_name():
+    assert hasattr(simple_csp_NamedElement, "name")
     descriptor = None
-    for klass in simple::csp::NamedElement.__mro__:
+    for klass in simple_csp_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -237,16 +237,16 @@ def test_simple::csp::namedelement_has_name():
 
 
 
-def test_simple::csp::minimizegoal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::MinimizeGoal)
+def test_simple_csp_minimizegoal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_MinimizeGoal)
 
 
-def test_simple::csp::minimizegoal_constructor_exists():
-    assert callable(simple::csp::MinimizeGoal.__init__)
+def test_simple_csp_minimizegoal_constructor_exists():
+    assert callable(simple_csp_MinimizeGoal.__init__)
 
 
-def test_simple::csp::minimizegoal_constructor_args():
-    sig = inspect.signature(simple::csp::MinimizeGoal.__init__)
+def test_simple_csp_minimizegoal_constructor_args():
+    sig = inspect.signature(simple_csp_MinimizeGoal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -265,128 +265,128 @@ def test_binaryop_constructor_args():
 
 
 
-def test_simple::csp::less_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Less)
+def test_simple_csp_equal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Equal)
 
 
-def test_simple::csp::less_constructor_exists():
-    assert callable(simple::csp::Less.__init__)
+def test_simple_csp_equal_constructor_exists():
+    assert callable(simple_csp_Equal.__init__)
 
 
-def test_simple::csp::less_constructor_args():
-    sig = inspect.signature(simple::csp::Less.__init__)
+def test_simple_csp_equal_constructor_args():
+    sig = inspect.signature(simple_csp_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::unequal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::UnEqual)
+def test_simple_csp_unequal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_UnEqual)
 
 
-def test_simple::csp::unequal_constructor_exists():
-    assert callable(simple::csp::UnEqual.__init__)
+def test_simple_csp_unequal_constructor_exists():
+    assert callable(simple_csp_UnEqual.__init__)
 
 
-def test_simple::csp::unequal_constructor_args():
-    sig = inspect.signature(simple::csp::UnEqual.__init__)
+def test_simple_csp_unequal_constructor_args():
+    sig = inspect.signature(simple_csp_UnEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::or_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Or)
+def test_simple_csp_implies_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Implies)
 
 
-def test_simple::csp::or_constructor_exists():
-    assert callable(simple::csp::Or.__init__)
+def test_simple_csp_implies_constructor_exists():
+    assert callable(simple_csp_Implies.__init__)
 
 
-def test_simple::csp::or_constructor_args():
-    sig = inspect.signature(simple::csp::Or.__init__)
+def test_simple_csp_implies_constructor_args():
+    sig = inspect.signature(simple_csp_Implies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::lessequal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::LessEqual)
+def test_simple_csp_greater_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Greater)
 
 
-def test_simple::csp::lessequal_constructor_exists():
-    assert callable(simple::csp::LessEqual.__init__)
+def test_simple_csp_greater_constructor_exists():
+    assert callable(simple_csp_Greater.__init__)
 
 
-def test_simple::csp::lessequal_constructor_args():
-    sig = inspect.signature(simple::csp::LessEqual.__init__)
+def test_simple_csp_greater_constructor_args():
+    sig = inspect.signature(simple_csp_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::equal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Equal)
+def test_simple_csp_lessequal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_LessEqual)
 
 
-def test_simple::csp::equal_constructor_exists():
-    assert callable(simple::csp::Equal.__init__)
+def test_simple_csp_lessequal_constructor_exists():
+    assert callable(simple_csp_LessEqual.__init__)
 
 
-def test_simple::csp::equal_constructor_args():
-    sig = inspect.signature(simple::csp::Equal.__init__)
+def test_simple_csp_lessequal_constructor_args():
+    sig = inspect.signature(simple_csp_LessEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::implies_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Implies)
+def test_simple_csp_or_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Or)
 
 
-def test_simple::csp::implies_constructor_exists():
-    assert callable(simple::csp::Implies.__init__)
+def test_simple_csp_or_constructor_exists():
+    assert callable(simple_csp_Or.__init__)
 
 
-def test_simple::csp::implies_constructor_args():
-    sig = inspect.signature(simple::csp::Implies.__init__)
+def test_simple_csp_or_constructor_args():
+    sig = inspect.signature(simple_csp_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::greater_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Greater)
+def test_simple_csp_less_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Less)
 
 
-def test_simple::csp::greater_constructor_exists():
-    assert callable(simple::csp::Greater.__init__)
+def test_simple_csp_less_constructor_exists():
+    assert callable(simple_csp_Less.__init__)
 
 
-def test_simple::csp::greater_constructor_args():
-    sig = inspect.signature(simple::csp::Greater.__init__)
+def test_simple_csp_less_constructor_args():
+    sig = inspect.signature(simple_csp_Less.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::greaterequal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::GreaterEqual)
+def test_simple_csp_greaterequal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_GreaterEqual)
 
 
-def test_simple::csp::greaterequal_constructor_exists():
-    assert callable(simple::csp::GreaterEqual.__init__)
+def test_simple_csp_greaterequal_constructor_exists():
+    assert callable(simple_csp_GreaterEqual.__init__)
 
 
-def test_simple::csp::greaterequal_constructor_args():
-    sig = inspect.signature(simple::csp::GreaterEqual.__init__)
+def test_simple_csp_greaterequal_constructor_args():
+    sig = inspect.signature(simple_csp_GreaterEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::and_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::And)
+def test_simple_csp_and_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_And)
 
 
-def test_simple::csp::and_constructor_exists():
-    assert callable(simple::csp::And.__init__)
+def test_simple_csp_and_constructor_exists():
+    assert callable(simple_csp_And.__init__)
 
 
-def test_simple::csp::and_constructor_args():
-    sig = inspect.signature(simple::csp::And.__init__)
+def test_simple_csp_and_constructor_args():
+    sig = inspect.signature(simple_csp_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -405,72 +405,72 @@ def test_unaryop_constructor_args():
 
 
 
-def test_simple::csp::not_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Not)
+def test_simple_csp_not_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Not)
 
 
-def test_simple::csp::not_constructor_exists():
-    assert callable(simple::csp::Not.__init__)
+def test_simple_csp_not_constructor_exists():
+    assert callable(simple_csp_Not.__init__)
 
 
-def test_simple::csp::not_constructor_args():
-    sig = inspect.signature(simple::csp::Not.__init__)
+def test_simple_csp_not_constructor_args():
+    sig = inspect.signature(simple_csp_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::power_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Power)
+def test_simple_csp_power_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Power)
 
 
-def test_simple::csp::power_constructor_exists():
-    assert callable(simple::csp::Power.__init__)
+def test_simple_csp_power_constructor_exists():
+    assert callable(simple_csp_Power.__init__)
 
 
-def test_simple::csp::power_constructor_args():
-    sig = inspect.signature(simple::csp::Power.__init__)
+def test_simple_csp_power_constructor_args():
+    sig = inspect.signature(simple_csp_Power.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::times_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Times)
+def test_simple_csp_times_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Times)
 
 
-def test_simple::csp::times_constructor_exists():
-    assert callable(simple::csp::Times.__init__)
+def test_simple_csp_times_constructor_exists():
+    assert callable(simple_csp_Times.__init__)
 
 
-def test_simple::csp::times_constructor_args():
-    sig = inspect.signature(simple::csp::Times.__init__)
+def test_simple_csp_times_constructor_args():
+    sig = inspect.signature(simple_csp_Times.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::plus_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Plus)
+def test_simple_csp_plus_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Plus)
 
 
-def test_simple::csp::plus_constructor_exists():
-    assert callable(simple::csp::Plus.__init__)
+def test_simple_csp_plus_constructor_exists():
+    assert callable(simple_csp_Plus.__init__)
 
 
-def test_simple::csp::plus_constructor_args():
-    sig = inspect.signature(simple::csp::Plus.__init__)
+def test_simple_csp_plus_constructor_args():
+    sig = inspect.signature(simple_csp_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::minus_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Minus)
+def test_simple_csp_minus_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Minus)
 
 
-def test_simple::csp::minus_constructor_exists():
-    assert callable(simple::csp::Minus.__init__)
+def test_simple_csp_minus_constructor_exists():
+    assert callable(simple_csp_Minus.__init__)
 
 
-def test_simple::csp::minus_constructor_args():
-    sig = inspect.signature(simple::csp::Minus.__init__)
+def test_simple_csp_minus_constructor_args():
+    sig = inspect.signature(simple_csp_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -489,30 +489,30 @@ def test_operator_constructor_args():
 
 
 
-def test_simple::csp::unaryop_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::UnaryOp)
+def test_simple_csp_unaryop_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_UnaryOp)
 
 
-def test_simple::csp::unaryop_constructor_exists():
-    assert callable(simple::csp::UnaryOp.__init__)
+def test_simple_csp_unaryop_constructor_exists():
+    assert callable(simple_csp_UnaryOp.__init__)
 
 
-def test_simple::csp::unaryop_constructor_args():
-    sig = inspect.signature(simple::csp::UnaryOp.__init__)
+def test_simple_csp_unaryop_constructor_args():
+    sig = inspect.signature(simple_csp_UnaryOp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::setop_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::SetOp)
+def test_simple_csp_setop_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_SetOp)
 
 
-def test_simple::csp::setop_constructor_exists():
-    assert callable(simple::csp::SetOp.__init__)
+def test_simple_csp_setop_constructor_exists():
+    assert callable(simple_csp_SetOp.__init__)
 
 
-def test_simple::csp::setop_constructor_args():
-    sig = inspect.signature(simple::csp::SetOp.__init__)
+def test_simple_csp_setop_constructor_args():
+    sig = inspect.signature(simple_csp_SetOp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -531,58 +531,58 @@ def test_expression_constructor_args():
 
 
 
-def test_simple::csp::varoccurence_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::VarOccurence)
+def test_simple_csp_varoccurence_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_VarOccurence)
 
 
-def test_simple::csp::varoccurence_constructor_exists():
-    assert callable(simple::csp::VarOccurence.__init__)
+def test_simple_csp_varoccurence_constructor_exists():
+    assert callable(simple_csp_VarOccurence.__init__)
 
 
-def test_simple::csp::varoccurence_constructor_args():
-    sig = inspect.signature(simple::csp::VarOccurence.__init__)
+def test_simple_csp_varoccurence_constructor_args():
+    sig = inspect.signature(simple_csp_VarOccurence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::BooleanLiteral)
+def test_simple_csp_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_BooleanLiteral)
 
 
-def test_simple::csp::booleanliteral_constructor_exists():
-    assert callable(simple::csp::BooleanLiteral.__init__)
+def test_simple_csp_booleanliteral_constructor_exists():
+    assert callable(simple_csp_BooleanLiteral.__init__)
 
 
-def test_simple::csp::booleanliteral_constructor_args():
-    sig = inspect.signature(simple::csp::BooleanLiteral.__init__)
+def test_simple_csp_booleanliteral_constructor_args():
+    sig = inspect.signature(simple_csp_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::operator_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Operator)
+def test_simple_csp_operator_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Operator)
 
 
-def test_simple::csp::operator_constructor_exists():
-    assert callable(simple::csp::Operator.__init__)
+def test_simple_csp_operator_constructor_exists():
+    assert callable(simple_csp_Operator.__init__)
 
 
-def test_simple::csp::operator_constructor_args():
-    sig = inspect.signature(simple::csp::Operator.__init__)
+def test_simple_csp_operator_constructor_args():
+    sig = inspect.signature(simple_csp_Operator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::expression_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Expression)
+def test_simple_csp_expression_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Expression)
 
 
-def test_simple::csp::expression_constructor_exists():
-    assert callable(simple::csp::Expression.__init__)
+def test_simple_csp_expression_constructor_exists():
+    assert callable(simple_csp_Expression.__init__)
 
 
-def test_simple::csp::expression_constructor_args():
-    sig = inspect.signature(simple::csp::Expression.__init__)
+def test_simple_csp_expression_constructor_args():
+    sig = inspect.signature(simple_csp_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -629,64 +629,64 @@ def test_domain_constructor_args():
 
 
 
-def test_simple::csp::integerdomain_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::IntegerDomain)
+def test_simple_csp_integerdomain_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_IntegerDomain)
 
 
-def test_simple::csp::integerdomain_constructor_exists():
-    assert callable(simple::csp::IntegerDomain.__init__)
+def test_simple_csp_integerdomain_constructor_exists():
+    assert callable(simple_csp_IntegerDomain.__init__)
 
 
-def test_simple::csp::integerdomain_constructor_args():
-    sig = inspect.signature(simple::csp::IntegerDomain.__init__)
+def test_simple_csp_integerdomain_constructor_args():
+    sig = inspect.signature(simple_csp_IntegerDomain.__init__)
     params = list(sig.parameters.keys())
-    assert "maxValue" in params, "Missing parameter 'maxValue'"
     assert "minValue" in params, "Missing parameter 'minValue'"
+    assert "maxValue" in params, "Missing parameter 'maxValue'"
 
-def test_simple::csp::integerdomain_has_maxValue():
-    assert hasattr(simple::csp::IntegerDomain, "maxValue")
+def test_simple_csp_integerdomain_has_minValue():
+    assert hasattr(simple_csp_IntegerDomain, "minValue")
     descriptor = None
-    for klass in simple::csp::IntegerDomain.__mro__:
-        if "maxValue" in klass.__dict__:
-            descriptor = klass.__dict__["maxValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simple::csp::integerdomain_has_minValue():
-    assert hasattr(simple::csp::IntegerDomain, "minValue")
-    descriptor = None
-    for klass in simple::csp::IntegerDomain.__mro__:
+    for klass in simple_csp_IntegerDomain.__mro__:
         if "minValue" in klass.__dict__:
             descriptor = klass.__dict__["minValue"]
             break
     assert isinstance(descriptor, property)
 
+def test_simple_csp_integerdomain_has_maxValue():
+    assert hasattr(simple_csp_IntegerDomain, "maxValue")
+    descriptor = None
+    for klass in simple_csp_IntegerDomain.__mro__:
+        if "maxValue" in klass.__dict__:
+            descriptor = klass.__dict__["maxValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simple::csp::binaryop_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::BinaryOp)
+
+def test_simple_csp_binaryop_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_BinaryOp)
 
 
-def test_simple::csp::binaryop_constructor_exists():
-    assert callable(simple::csp::BinaryOp.__init__)
+def test_simple_csp_binaryop_constructor_exists():
+    assert callable(simple_csp_BinaryOp.__init__)
 
 
-def test_simple::csp::binaryop_constructor_args():
-    sig = inspect.signature(simple::csp::BinaryOp.__init__)
+def test_simple_csp_binaryop_constructor_args():
+    sig = inspect.signature(simple_csp_BinaryOp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::domain_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Domain)
+def test_simple_csp_domain_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Domain)
 
 
-def test_simple::csp::domain_constructor_exists():
-    assert callable(simple::csp::Domain.__init__)
+def test_simple_csp_domain_constructor_exists():
+    assert callable(simple_csp_Domain.__init__)
 
 
-def test_simple::csp::domain_constructor_args():
-    sig = inspect.signature(simple::csp::Domain.__init__)
+def test_simple_csp_domain_constructor_args():
+    sig = inspect.signature(simple_csp_Domain.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -705,79 +705,79 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simple::csp::variable_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Variable)
+def test_simple_csp_variable_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Variable)
 
 
-def test_simple::csp::variable_constructor_exists():
-    assert callable(simple::csp::Variable.__init__)
+def test_simple_csp_variable_constructor_exists():
+    assert callable(simple_csp_Variable.__init__)
 
 
-def test_simple::csp::variable_constructor_args():
-    sig = inspect.signature(simple::csp::Variable.__init__)
+def test_simple_csp_variable_constructor_args():
+    sig = inspect.signature(simple_csp_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::constraint_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Constraint)
+def test_simple_csp_constraint_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Constraint)
 
 
-def test_simple::csp::constraint_constructor_exists():
-    assert callable(simple::csp::Constraint.__init__)
+def test_simple_csp_constraint_constructor_exists():
+    assert callable(simple_csp_Constraint.__init__)
 
 
-def test_simple::csp::constraint_constructor_args():
-    sig = inspect.signature(simple::csp::Constraint.__init__)
+def test_simple_csp_constraint_constructor_args():
+    sig = inspect.signature(simple_csp_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::goal_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Goal)
+def test_simple_csp_goal_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Goal)
 
 
-def test_simple::csp::goal_constructor_exists():
-    assert callable(simple::csp::Goal.__init__)
+def test_simple_csp_goal_constructor_exists():
+    assert callable(simple_csp_Goal.__init__)
 
 
-def test_simple::csp::goal_constructor_args():
-    sig = inspect.signature(simple::csp::Goal.__init__)
+def test_simple_csp_goal_constructor_args():
+    sig = inspect.signature(simple_csp_Goal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::problem_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::Problem)
+def test_simple_csp_problem_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_Problem)
 
 
-def test_simple::csp::problem_constructor_exists():
-    assert callable(simple::csp::Problem.__init__)
+def test_simple_csp_problem_constructor_exists():
+    assert callable(simple_csp_Problem.__init__)
 
 
-def test_simple::csp::problem_constructor_args():
-    sig = inspect.signature(simple::csp::Problem.__init__)
+def test_simple_csp_problem_constructor_args():
+    sig = inspect.signature(simple_csp_Problem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::csp::typedelement_is_not_abstract():
-    assert not inspect.isabstract(simple::csp::TypedElement)
+def test_simple_csp_typedelement_is_not_abstract():
+    assert not inspect.isabstract(simple_csp_TypedElement)
 
 
-def test_simple::csp::typedelement_constructor_exists():
-    assert callable(simple::csp::TypedElement.__init__)
+def test_simple_csp_typedelement_constructor_exists():
+    assert callable(simple_csp_TypedElement.__init__)
 
 
-def test_simple::csp::typedelement_constructor_args():
-    sig = inspect.signature(simple::csp::TypedElement.__init__)
+def test_simple_csp_typedelement_constructor_args():
+    sig = inspect.signature(simple_csp_TypedElement.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_simple::csp::typedelement_has_type():
-    assert hasattr(simple::csp::TypedElement, "type")
+def test_simple_csp_typedelement_has_type():
+    assert hasattr(simple_csp_TypedElement, "type")
     descriptor = None
-    for klass in simple::csp::TypedElement.__mro__:
+    for klass in simple_csp_TypedElement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -810,117 +810,117 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simple::csp::DescribedElement_strategy = st.builds(
-    simple::csp::DescribedElement,
+simple_csp_DescribedElement_strategy = st.builds(
+    simple_csp_DescribedElement,
     description=
         safe_text
 )
 Goal_strategy = st.builds(
     Goal,
 )
-simple::csp::MaximizeGoal_strategy = st.builds(
-    simple::csp::MaximizeGoal,
+simple_csp_MaximizeGoal_strategy = st.builds(
+    simple_csp_MaximizeGoal,
 )
 BooleanLiteral_strategy = st.builds(
     BooleanLiteral,
 )
-simple::csp::FalseValue_strategy = st.builds(
-    simple::csp::FalseValue,
+simple_csp_FalseValue_strategy = st.builds(
+    simple_csp_FalseValue,
 )
-simple::csp::TrueValue_strategy = st.builds(
-    simple::csp::TrueValue,
+simple_csp_TrueValue_strategy = st.builds(
+    simple_csp_TrueValue,
 )
 SetOp_strategy = st.builds(
     SetOp,
 )
-simple::csp::Min_strategy = st.builds(
-    simple::csp::Min,
+simple_csp_Min_strategy = st.builds(
+    simple_csp_Min,
 )
-simple::csp::Max_strategy = st.builds(
-    simple::csp::Max,
+simple_csp_Max_strategy = st.builds(
+    simple_csp_Max,
 )
-simple::csp::Sum_strategy = st.builds(
-    simple::csp::Sum,
+simple_csp_Sum_strategy = st.builds(
+    simple_csp_Sum,
 )
-simple::csp::NamedElement_strategy = st.builds(
-    simple::csp::NamedElement,
+simple_csp_NamedElement_strategy = st.builds(
+    simple_csp_NamedElement,
     name=
         safe_text
 )
-simple::csp::MinimizeGoal_strategy = st.builds(
-    simple::csp::MinimizeGoal,
+simple_csp_MinimizeGoal_strategy = st.builds(
+    simple_csp_MinimizeGoal,
 )
 BinaryOp_strategy = st.builds(
     BinaryOp,
 )
-simple::csp::Less_strategy = st.builds(
-    simple::csp::Less,
+simple_csp_Equal_strategy = st.builds(
+    simple_csp_Equal,
 )
-simple::csp::UnEqual_strategy = st.builds(
-    simple::csp::UnEqual,
+simple_csp_UnEqual_strategy = st.builds(
+    simple_csp_UnEqual,
 )
-simple::csp::Or_strategy = st.builds(
-    simple::csp::Or,
+simple_csp_Implies_strategy = st.builds(
+    simple_csp_Implies,
 )
-simple::csp::LessEqual_strategy = st.builds(
-    simple::csp::LessEqual,
+simple_csp_Greater_strategy = st.builds(
+    simple_csp_Greater,
 )
-simple::csp::Equal_strategy = st.builds(
-    simple::csp::Equal,
+simple_csp_LessEqual_strategy = st.builds(
+    simple_csp_LessEqual,
 )
-simple::csp::Implies_strategy = st.builds(
-    simple::csp::Implies,
+simple_csp_Or_strategy = st.builds(
+    simple_csp_Or,
 )
-simple::csp::Greater_strategy = st.builds(
-    simple::csp::Greater,
+simple_csp_Less_strategy = st.builds(
+    simple_csp_Less,
 )
-simple::csp::GreaterEqual_strategy = st.builds(
-    simple::csp::GreaterEqual,
+simple_csp_GreaterEqual_strategy = st.builds(
+    simple_csp_GreaterEqual,
 )
-simple::csp::And_strategy = st.builds(
-    simple::csp::And,
+simple_csp_And_strategy = st.builds(
+    simple_csp_And,
 )
 UnaryOp_strategy = st.builds(
     UnaryOp,
 )
-simple::csp::Not_strategy = st.builds(
-    simple::csp::Not,
+simple_csp_Not_strategy = st.builds(
+    simple_csp_Not,
 )
-simple::csp::Power_strategy = st.builds(
-    simple::csp::Power,
+simple_csp_Power_strategy = st.builds(
+    simple_csp_Power,
 )
-simple::csp::Times_strategy = st.builds(
-    simple::csp::Times,
+simple_csp_Times_strategy = st.builds(
+    simple_csp_Times,
 )
-simple::csp::Plus_strategy = st.builds(
-    simple::csp::Plus,
+simple_csp_Plus_strategy = st.builds(
+    simple_csp_Plus,
 )
-simple::csp::Minus_strategy = st.builds(
-    simple::csp::Minus,
+simple_csp_Minus_strategy = st.builds(
+    simple_csp_Minus,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-simple::csp::UnaryOp_strategy = st.builds(
-    simple::csp::UnaryOp,
+simple_csp_UnaryOp_strategy = st.builds(
+    simple_csp_UnaryOp,
 )
-simple::csp::SetOp_strategy = st.builds(
-    simple::csp::SetOp,
+simple_csp_SetOp_strategy = st.builds(
+    simple_csp_SetOp,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-simple::csp::VarOccurence_strategy = st.builds(
-    simple::csp::VarOccurence,
+simple_csp_VarOccurence_strategy = st.builds(
+    simple_csp_VarOccurence,
 )
-simple::csp::BooleanLiteral_strategy = st.builds(
-    simple::csp::BooleanLiteral,
+simple_csp_BooleanLiteral_strategy = st.builds(
+    simple_csp_BooleanLiteral,
 )
-simple::csp::Operator_strategy = st.builds(
-    simple::csp::Operator,
+simple_csp_Operator_strategy = st.builds(
+    simple_csp_Operator,
 )
-simple::csp::Expression_strategy = st.builds(
-    simple::csp::Expression,
+simple_csp_Expression_strategy = st.builds(
+    simple_csp_Expression,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
@@ -931,52 +931,49 @@ DescribedElement_strategy = st.builds(
 Domain_strategy = st.builds(
     Domain,
 )
-simple::csp::IntegerDomain_strategy = st.builds(
-    simple::csp::IntegerDomain,
-    maxValue=
-        safe_text,
+simple_csp_IntegerDomain_strategy = st.builds(
+    simple_csp_IntegerDomain,
     minValue=
+        safe_text,
+    maxValue=
         safe_text
 )
-simple::csp::BinaryOp_strategy = st.builds(
-    simple::csp::BinaryOp,
+simple_csp_BinaryOp_strategy = st.builds(
+    simple_csp_BinaryOp,
 )
-simple::csp::Domain_strategy = st.builds(
-    simple::csp::Domain,
+simple_csp_Domain_strategy = st.builds(
+    simple_csp_Domain,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-simple::csp::Variable_strategy = st.builds(
-    simple::csp::Variable,
+simple_csp_Variable_strategy = st.builds(
+    simple_csp_Variable,
 )
-simple::csp::Constraint_strategy = st.builds(
-    simple::csp::Constraint,
+simple_csp_Constraint_strategy = st.builds(
+    simple_csp_Constraint,
 )
-simple::csp::Goal_strategy = st.builds(
-    simple::csp::Goal,
+simple_csp_Goal_strategy = st.builds(
+    simple_csp_Goal,
 )
-simple::csp::Problem_strategy = st.builds(
-    simple::csp::Problem,
+simple_csp_Problem_strategy = st.builds(
+    simple_csp_Problem,
 )
-simple::csp::TypedElement_strategy = st.builds(
-    simple::csp::TypedElement,
+simple_csp_TypedElement_strategy = st.builds(
+    simple_csp_TypedElement,
     type=
         safe_text
 )
 
-@given(instance=simple::csp::DescribedElement_strategy)
+@given(instance=simple_csp_DescribedElement_strategy)
 @settings(max_examples=50)
-def test_simple::csp::describedelement_instantiation(instance):
-    assert isinstance(instance, simple::csp::DescribedElement)
-
-@given(instance=simple::csp::DescribedElement_strategy)
-def test_simple::csp::describedelement_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_simple_csp_describedelement_instantiation(instance):
+    assert isinstance(instance, simple_csp_DescribedElement)
 
 
-@given(instance=simple::csp::DescribedElement_strategy)
-def test_simple::csp::describedelement_description_setter(instance):
+
+@given(instance=simple_csp_DescribedElement_strategy)
+def test_simple_csp_describedelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -986,186 +983,183 @@ def test_simple::csp::describedelement_description_setter(instance):
 def test_goal_instantiation(instance):
     assert isinstance(instance, Goal)
 
-@given(instance=simple::csp::MaximizeGoal_strategy)
+@given(instance=simple_csp_MaximizeGoal_strategy)
 @settings(max_examples=50)
-def test_simple::csp::maximizegoal_instantiation(instance):
-    assert isinstance(instance, simple::csp::MaximizeGoal)
+def test_simple_csp_maximizegoal_instantiation(instance):
+    assert isinstance(instance, simple_csp_MaximizeGoal)
 
 @given(instance=BooleanLiteral_strategy)
 @settings(max_examples=50)
 def test_booleanliteral_instantiation(instance):
     assert isinstance(instance, BooleanLiteral)
 
-@given(instance=simple::csp::FalseValue_strategy)
+@given(instance=simple_csp_FalseValue_strategy)
 @settings(max_examples=50)
-def test_simple::csp::falsevalue_instantiation(instance):
-    assert isinstance(instance, simple::csp::FalseValue)
+def test_simple_csp_falsevalue_instantiation(instance):
+    assert isinstance(instance, simple_csp_FalseValue)
 
-@given(instance=simple::csp::TrueValue_strategy)
+@given(instance=simple_csp_TrueValue_strategy)
 @settings(max_examples=50)
-def test_simple::csp::truevalue_instantiation(instance):
-    assert isinstance(instance, simple::csp::TrueValue)
+def test_simple_csp_truevalue_instantiation(instance):
+    assert isinstance(instance, simple_csp_TrueValue)
 
 @given(instance=SetOp_strategy)
 @settings(max_examples=50)
 def test_setop_instantiation(instance):
     assert isinstance(instance, SetOp)
 
-@given(instance=simple::csp::Min_strategy)
+@given(instance=simple_csp_Min_strategy)
 @settings(max_examples=50)
-def test_simple::csp::min_instantiation(instance):
-    assert isinstance(instance, simple::csp::Min)
+def test_simple_csp_min_instantiation(instance):
+    assert isinstance(instance, simple_csp_Min)
 
-@given(instance=simple::csp::Max_strategy)
+@given(instance=simple_csp_Max_strategy)
 @settings(max_examples=50)
-def test_simple::csp::max_instantiation(instance):
-    assert isinstance(instance, simple::csp::Max)
+def test_simple_csp_max_instantiation(instance):
+    assert isinstance(instance, simple_csp_Max)
 
-@given(instance=simple::csp::Sum_strategy)
+@given(instance=simple_csp_Sum_strategy)
 @settings(max_examples=50)
-def test_simple::csp::sum_instantiation(instance):
-    assert isinstance(instance, simple::csp::Sum)
+def test_simple_csp_sum_instantiation(instance):
+    assert isinstance(instance, simple_csp_Sum)
 
-@given(instance=simple::csp::NamedElement_strategy)
+@given(instance=simple_csp_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simple::csp::namedelement_instantiation(instance):
-    assert isinstance(instance, simple::csp::NamedElement)
-
-@given(instance=simple::csp::NamedElement_strategy)
-def test_simple::csp::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simple_csp_namedelement_instantiation(instance):
+    assert isinstance(instance, simple_csp_NamedElement)
 
 
-@given(instance=simple::csp::NamedElement_strategy)
-def test_simple::csp::namedelement_name_setter(instance):
+
+@given(instance=simple_csp_NamedElement_strategy)
+def test_simple_csp_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simple::csp::MinimizeGoal_strategy)
+@given(instance=simple_csp_MinimizeGoal_strategy)
 @settings(max_examples=50)
-def test_simple::csp::minimizegoal_instantiation(instance):
-    assert isinstance(instance, simple::csp::MinimizeGoal)
+def test_simple_csp_minimizegoal_instantiation(instance):
+    assert isinstance(instance, simple_csp_MinimizeGoal)
 
 @given(instance=BinaryOp_strategy)
 @settings(max_examples=50)
 def test_binaryop_instantiation(instance):
     assert isinstance(instance, BinaryOp)
 
-@given(instance=simple::csp::Less_strategy)
+@given(instance=simple_csp_Equal_strategy)
 @settings(max_examples=50)
-def test_simple::csp::less_instantiation(instance):
-    assert isinstance(instance, simple::csp::Less)
+def test_simple_csp_equal_instantiation(instance):
+    assert isinstance(instance, simple_csp_Equal)
 
-@given(instance=simple::csp::UnEqual_strategy)
+@given(instance=simple_csp_UnEqual_strategy)
 @settings(max_examples=50)
-def test_simple::csp::unequal_instantiation(instance):
-    assert isinstance(instance, simple::csp::UnEqual)
+def test_simple_csp_unequal_instantiation(instance):
+    assert isinstance(instance, simple_csp_UnEqual)
 
-@given(instance=simple::csp::Or_strategy)
+@given(instance=simple_csp_Implies_strategy)
 @settings(max_examples=50)
-def test_simple::csp::or_instantiation(instance):
-    assert isinstance(instance, simple::csp::Or)
+def test_simple_csp_implies_instantiation(instance):
+    assert isinstance(instance, simple_csp_Implies)
 
-@given(instance=simple::csp::LessEqual_strategy)
+@given(instance=simple_csp_Greater_strategy)
 @settings(max_examples=50)
-def test_simple::csp::lessequal_instantiation(instance):
-    assert isinstance(instance, simple::csp::LessEqual)
+def test_simple_csp_greater_instantiation(instance):
+    assert isinstance(instance, simple_csp_Greater)
 
-@given(instance=simple::csp::Equal_strategy)
+@given(instance=simple_csp_LessEqual_strategy)
 @settings(max_examples=50)
-def test_simple::csp::equal_instantiation(instance):
-    assert isinstance(instance, simple::csp::Equal)
+def test_simple_csp_lessequal_instantiation(instance):
+    assert isinstance(instance, simple_csp_LessEqual)
 
-@given(instance=simple::csp::Implies_strategy)
+@given(instance=simple_csp_Or_strategy)
 @settings(max_examples=50)
-def test_simple::csp::implies_instantiation(instance):
-    assert isinstance(instance, simple::csp::Implies)
+def test_simple_csp_or_instantiation(instance):
+    assert isinstance(instance, simple_csp_Or)
 
-@given(instance=simple::csp::Greater_strategy)
+@given(instance=simple_csp_Less_strategy)
 @settings(max_examples=50)
-def test_simple::csp::greater_instantiation(instance):
-    assert isinstance(instance, simple::csp::Greater)
+def test_simple_csp_less_instantiation(instance):
+    assert isinstance(instance, simple_csp_Less)
 
-@given(instance=simple::csp::GreaterEqual_strategy)
+@given(instance=simple_csp_GreaterEqual_strategy)
 @settings(max_examples=50)
-def test_simple::csp::greaterequal_instantiation(instance):
-    assert isinstance(instance, simple::csp::GreaterEqual)
+def test_simple_csp_greaterequal_instantiation(instance):
+    assert isinstance(instance, simple_csp_GreaterEqual)
 
-@given(instance=simple::csp::And_strategy)
+@given(instance=simple_csp_And_strategy)
 @settings(max_examples=50)
-def test_simple::csp::and_instantiation(instance):
-    assert isinstance(instance, simple::csp::And)
+def test_simple_csp_and_instantiation(instance):
+    assert isinstance(instance, simple_csp_And)
 
 @given(instance=UnaryOp_strategy)
 @settings(max_examples=50)
 def test_unaryop_instantiation(instance):
     assert isinstance(instance, UnaryOp)
 
-@given(instance=simple::csp::Not_strategy)
+@given(instance=simple_csp_Not_strategy)
 @settings(max_examples=50)
-def test_simple::csp::not_instantiation(instance):
-    assert isinstance(instance, simple::csp::Not)
+def test_simple_csp_not_instantiation(instance):
+    assert isinstance(instance, simple_csp_Not)
 
-@given(instance=simple::csp::Power_strategy)
+@given(instance=simple_csp_Power_strategy)
 @settings(max_examples=50)
-def test_simple::csp::power_instantiation(instance):
-    assert isinstance(instance, simple::csp::Power)
+def test_simple_csp_power_instantiation(instance):
+    assert isinstance(instance, simple_csp_Power)
 
-@given(instance=simple::csp::Times_strategy)
+@given(instance=simple_csp_Times_strategy)
 @settings(max_examples=50)
-def test_simple::csp::times_instantiation(instance):
-    assert isinstance(instance, simple::csp::Times)
+def test_simple_csp_times_instantiation(instance):
+    assert isinstance(instance, simple_csp_Times)
 
-@given(instance=simple::csp::Plus_strategy)
+@given(instance=simple_csp_Plus_strategy)
 @settings(max_examples=50)
-def test_simple::csp::plus_instantiation(instance):
-    assert isinstance(instance, simple::csp::Plus)
+def test_simple_csp_plus_instantiation(instance):
+    assert isinstance(instance, simple_csp_Plus)
 
-@given(instance=simple::csp::Minus_strategy)
+@given(instance=simple_csp_Minus_strategy)
 @settings(max_examples=50)
-def test_simple::csp::minus_instantiation(instance):
-    assert isinstance(instance, simple::csp::Minus)
+def test_simple_csp_minus_instantiation(instance):
+    assert isinstance(instance, simple_csp_Minus)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=simple::csp::UnaryOp_strategy)
+@given(instance=simple_csp_UnaryOp_strategy)
 @settings(max_examples=50)
-def test_simple::csp::unaryop_instantiation(instance):
-    assert isinstance(instance, simple::csp::UnaryOp)
+def test_simple_csp_unaryop_instantiation(instance):
+    assert isinstance(instance, simple_csp_UnaryOp)
 
-@given(instance=simple::csp::SetOp_strategy)
+@given(instance=simple_csp_SetOp_strategy)
 @settings(max_examples=50)
-def test_simple::csp::setop_instantiation(instance):
-    assert isinstance(instance, simple::csp::SetOp)
+def test_simple_csp_setop_instantiation(instance):
+    assert isinstance(instance, simple_csp_SetOp)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=simple::csp::VarOccurence_strategy)
+@given(instance=simple_csp_VarOccurence_strategy)
 @settings(max_examples=50)
-def test_simple::csp::varoccurence_instantiation(instance):
-    assert isinstance(instance, simple::csp::VarOccurence)
+def test_simple_csp_varoccurence_instantiation(instance):
+    assert isinstance(instance, simple_csp_VarOccurence)
 
-@given(instance=simple::csp::BooleanLiteral_strategy)
+@given(instance=simple_csp_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_simple::csp::booleanliteral_instantiation(instance):
-    assert isinstance(instance, simple::csp::BooleanLiteral)
+def test_simple_csp_booleanliteral_instantiation(instance):
+    assert isinstance(instance, simple_csp_BooleanLiteral)
 
-@given(instance=simple::csp::Operator_strategy)
+@given(instance=simple_csp_Operator_strategy)
 @settings(max_examples=50)
-def test_simple::csp::operator_instantiation(instance):
-    assert isinstance(instance, simple::csp::Operator)
+def test_simple_csp_operator_instantiation(instance):
+    assert isinstance(instance, simple_csp_Operator)
 
-@given(instance=simple::csp::Expression_strategy)
+@given(instance=simple_csp_Expression_strategy)
 @settings(max_examples=50)
-def test_simple::csp::expression_instantiation(instance):
-    assert isinstance(instance, simple::csp::Expression)
+def test_simple_csp_expression_instantiation(instance):
+    assert isinstance(instance, simple_csp_Expression)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
@@ -1182,80 +1176,71 @@ def test_describedelement_instantiation(instance):
 def test_domain_instantiation(instance):
     assert isinstance(instance, Domain)
 
-@given(instance=simple::csp::IntegerDomain_strategy)
+@given(instance=simple_csp_IntegerDomain_strategy)
 @settings(max_examples=50)
-def test_simple::csp::integerdomain_instantiation(instance):
-    assert isinstance(instance, simple::csp::IntegerDomain)
-
-@given(instance=simple::csp::IntegerDomain_strategy)
-def test_simple::csp::integerdomain_maxValue_type(instance):
-    assert isinstance(instance.maxValue, str)
+def test_simple_csp_integerdomain_instantiation(instance):
+    assert isinstance(instance, simple_csp_IntegerDomain)
 
 
-@given(instance=simple::csp::IntegerDomain_strategy)
-def test_simple::csp::integerdomain_maxValue_setter(instance):
-    original = instance.maxValue
-    instance.maxValue = original
-    assert instance.maxValue == original
 
-@given(instance=simple::csp::IntegerDomain_strategy)
-def test_simple::csp::integerdomain_minValue_type(instance):
-    assert isinstance(instance.minValue, str)
-
-
-@given(instance=simple::csp::IntegerDomain_strategy)
-def test_simple::csp::integerdomain_minValue_setter(instance):
+@given(instance=simple_csp_IntegerDomain_strategy)
+def test_simple_csp_integerdomain_minValue_setter(instance):
     original = instance.minValue
     instance.minValue = original
     assert instance.minValue == original
 
-@given(instance=simple::csp::BinaryOp_strategy)
-@settings(max_examples=50)
-def test_simple::csp::binaryop_instantiation(instance):
-    assert isinstance(instance, simple::csp::BinaryOp)
 
-@given(instance=simple::csp::Domain_strategy)
+
+@given(instance=simple_csp_IntegerDomain_strategy)
+def test_simple_csp_integerdomain_maxValue_setter(instance):
+    original = instance.maxValue
+    instance.maxValue = original
+    assert instance.maxValue == original
+
+@given(instance=simple_csp_BinaryOp_strategy)
 @settings(max_examples=50)
-def test_simple::csp::domain_instantiation(instance):
-    assert isinstance(instance, simple::csp::Domain)
+def test_simple_csp_binaryop_instantiation(instance):
+    assert isinstance(instance, simple_csp_BinaryOp)
+
+@given(instance=simple_csp_Domain_strategy)
+@settings(max_examples=50)
+def test_simple_csp_domain_instantiation(instance):
+    assert isinstance(instance, simple_csp_Domain)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simple::csp::Variable_strategy)
+@given(instance=simple_csp_Variable_strategy)
 @settings(max_examples=50)
-def test_simple::csp::variable_instantiation(instance):
-    assert isinstance(instance, simple::csp::Variable)
+def test_simple_csp_variable_instantiation(instance):
+    assert isinstance(instance, simple_csp_Variable)
 
-@given(instance=simple::csp::Constraint_strategy)
+@given(instance=simple_csp_Constraint_strategy)
 @settings(max_examples=50)
-def test_simple::csp::constraint_instantiation(instance):
-    assert isinstance(instance, simple::csp::Constraint)
+def test_simple_csp_constraint_instantiation(instance):
+    assert isinstance(instance, simple_csp_Constraint)
 
-@given(instance=simple::csp::Goal_strategy)
+@given(instance=simple_csp_Goal_strategy)
 @settings(max_examples=50)
-def test_simple::csp::goal_instantiation(instance):
-    assert isinstance(instance, simple::csp::Goal)
+def test_simple_csp_goal_instantiation(instance):
+    assert isinstance(instance, simple_csp_Goal)
 
-@given(instance=simple::csp::Problem_strategy)
+@given(instance=simple_csp_Problem_strategy)
 @settings(max_examples=50)
-def test_simple::csp::problem_instantiation(instance):
-    assert isinstance(instance, simple::csp::Problem)
+def test_simple_csp_problem_instantiation(instance):
+    assert isinstance(instance, simple_csp_Problem)
 
-@given(instance=simple::csp::TypedElement_strategy)
+@given(instance=simple_csp_TypedElement_strategy)
 @settings(max_examples=50)
-def test_simple::csp::typedelement_instantiation(instance):
-    assert isinstance(instance, simple::csp::TypedElement)
-
-@given(instance=simple::csp::TypedElement_strategy)
-def test_simple::csp::typedelement_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_simple_csp_typedelement_instantiation(instance):
+    assert isinstance(instance, simple_csp_TypedElement)
 
 
-@given(instance=simple::csp::TypedElement_strategy)
-def test_simple::csp::typedelement_type_setter(instance):
+
+@given(instance=simple_csp_TypedElement_strategy)
+def test_simple_csp_typedelement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original

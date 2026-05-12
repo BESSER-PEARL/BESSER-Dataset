@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    roverDSL::DetectBottle,
-    roverDSL::Colors,
-    roverDSL::Mission,
-    roverDSL::Robot,
+from python_code import (
+    roverDSL_DetectBottle,
+    roverDSL_Colors,
+    roverDSL_Mission,
+    roverDSL_Robot,
     Color,
 )
 
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_roverdsl::detectbottle_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::DetectBottle)
+def test_roverdsl_detectbottle_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_DetectBottle)
 
 
-def test_roverdsl::detectbottle_constructor_exists():
-    assert callable(roverDSL::DetectBottle.__init__)
+def test_roverdsl_detectbottle_constructor_exists():
+    assert callable(roverDSL_DetectBottle.__init__)
 
 
-def test_roverdsl::detectbottle_constructor_args():
-    sig = inspect.signature(roverDSL::DetectBottle.__init__)
+def test_roverdsl_detectbottle_constructor_args():
+    sig = inspect.signature(roverDSL_DetectBottle.__init__)
     params = list(sig.parameters.keys())
     assert "maxDistance" in params, "Missing parameter 'maxDistance'"
 
-def test_roverdsl::detectbottle_has_maxDistance():
-    assert hasattr(roverDSL::DetectBottle, "maxDistance")
+def test_roverdsl_detectbottle_has_maxDistance():
+    assert hasattr(roverDSL_DetectBottle, "maxDistance")
     descriptor = None
-    for klass in roverDSL::DetectBottle.__mro__:
+    for klass in roverDSL_DetectBottle.__mro__:
         if "maxDistance" in klass.__dict__:
             descriptor = klass.__dict__["maxDistance"]
             break
@@ -43,23 +43,23 @@ def test_roverdsl::detectbottle_has_maxDistance():
 
 
 
-def test_roverdsl::colors_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Colors)
+def test_roverdsl_colors_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Colors)
 
 
-def test_roverdsl::colors_constructor_exists():
-    assert callable(roverDSL::Colors.__init__)
+def test_roverdsl_colors_constructor_exists():
+    assert callable(roverDSL_Colors.__init__)
 
 
-def test_roverdsl::colors_constructor_args():
-    sig = inspect.signature(roverDSL::Colors.__init__)
+def test_roverdsl_colors_constructor_args():
+    sig = inspect.signature(roverDSL_Colors.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_roverdsl::colors_has_color():
-    assert hasattr(roverDSL::Colors, "color")
+def test_roverdsl_colors_has_color():
+    assert hasattr(roverDSL_Colors, "color")
     descriptor = None
-    for klass in roverDSL::Colors.__mro__:
+    for klass in roverDSL_Colors.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -67,23 +67,23 @@ def test_roverdsl::colors_has_color():
 
 
 
-def test_roverdsl::mission_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Mission)
+def test_roverdsl_mission_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Mission)
 
 
-def test_roverdsl::mission_constructor_exists():
-    assert callable(roverDSL::Mission.__init__)
+def test_roverdsl_mission_constructor_exists():
+    assert callable(roverDSL_Mission.__init__)
 
 
-def test_roverdsl::mission_constructor_args():
-    sig = inspect.signature(roverDSL::Mission.__init__)
+def test_roverdsl_mission_constructor_args():
+    sig = inspect.signature(roverDSL_Mission.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_roverdsl::mission_has_id():
-    assert hasattr(roverDSL::Mission, "id")
+def test_roverdsl_mission_has_id():
+    assert hasattr(roverDSL_Mission, "id")
     descriptor = None
-    for klass in roverDSL::Mission.__mro__:
+    for klass in roverDSL_Mission.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -91,53 +91,53 @@ def test_roverdsl::mission_has_id():
 
 
 
-def test_roverdsl::robot_is_not_abstract():
-    assert not inspect.isabstract(roverDSL::Robot)
+def test_roverdsl_robot_is_not_abstract():
+    assert not inspect.isabstract(roverDSL_Robot)
 
 
-def test_roverdsl::robot_constructor_exists():
-    assert callable(roverDSL::Robot.__init__)
+def test_roverdsl_robot_constructor_exists():
+    assert callable(roverDSL_Robot.__init__)
 
 
-def test_roverdsl::robot_constructor_args():
-    sig = inspect.signature(roverDSL::Robot.__init__)
+def test_roverdsl_robot_constructor_args():
+    sig = inspect.signature(roverDSL_Robot.__init__)
     params = list(sig.parameters.keys())
     assert "defaultSpeed" in params, "Missing parameter 'defaultSpeed'"
-    assert "slowSpeed" in params, "Missing parameter 'slowSpeed'"
     assert "minAngle" in params, "Missing parameter 'minAngle'"
+    assert "slowSpeed" in params, "Missing parameter 'slowSpeed'"
     assert "maxAngle" in params, "Missing parameter 'maxAngle'"
 
-def test_roverdsl::robot_has_defaultSpeed():
-    assert hasattr(roverDSL::Robot, "defaultSpeed")
+def test_roverdsl_robot_has_defaultSpeed():
+    assert hasattr(roverDSL_Robot, "defaultSpeed")
     descriptor = None
-    for klass in roverDSL::Robot.__mro__:
+    for klass in roverDSL_Robot.__mro__:
         if "defaultSpeed" in klass.__dict__:
             descriptor = klass.__dict__["defaultSpeed"]
             break
     assert isinstance(descriptor, property)
 
-def test_roverdsl::robot_has_slowSpeed():
-    assert hasattr(roverDSL::Robot, "slowSpeed")
+def test_roverdsl_robot_has_minAngle():
+    assert hasattr(roverDSL_Robot, "minAngle")
     descriptor = None
-    for klass in roverDSL::Robot.__mro__:
-        if "slowSpeed" in klass.__dict__:
-            descriptor = klass.__dict__["slowSpeed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_roverdsl::robot_has_minAngle():
-    assert hasattr(roverDSL::Robot, "minAngle")
-    descriptor = None
-    for klass in roverDSL::Robot.__mro__:
+    for klass in roverDSL_Robot.__mro__:
         if "minAngle" in klass.__dict__:
             descriptor = klass.__dict__["minAngle"]
             break
     assert isinstance(descriptor, property)
 
-def test_roverdsl::robot_has_maxAngle():
-    assert hasattr(roverDSL::Robot, "maxAngle")
+def test_roverdsl_robot_has_slowSpeed():
+    assert hasattr(roverDSL_Robot, "slowSpeed")
     descriptor = None
-    for klass in roverDSL::Robot.__mro__:
+    for klass in roverDSL_Robot.__mro__:
+        if "slowSpeed" in klass.__dict__:
+            descriptor = klass.__dict__["slowSpeed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_roverdsl_robot_has_maxAngle():
+    assert hasattr(roverDSL_Robot, "maxAngle")
+    descriptor = None
+    for klass in roverDSL_Robot.__mro__:
         if "maxAngle" in klass.__dict__:
             descriptor = klass.__dict__["maxAngle"]
             break
@@ -171,126 +171,105 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-roverDSL::DetectBottle_strategy = st.builds(
-    roverDSL::DetectBottle,
+roverDSL_DetectBottle_strategy = st.builds(
+    roverDSL_DetectBottle,
     maxDistance=
         st.integers()
 )
-roverDSL::Colors_strategy = st.builds(
-    roverDSL::Colors,
+roverDSL_Colors_strategy = st.builds(
+    roverDSL_Colors,
     color=
         safe_text
 )
-roverDSL::Mission_strategy = st.builds(
-    roverDSL::Mission,
+roverDSL_Mission_strategy = st.builds(
+    roverDSL_Mission,
     id=
         safe_text
 )
-roverDSL::Robot_strategy = st.builds(
-    roverDSL::Robot,
+roverDSL_Robot_strategy = st.builds(
+    roverDSL_Robot,
     defaultSpeed=
         st.integers(),
-    slowSpeed=
-        st.integers(),
     minAngle=
+        st.integers(),
+    slowSpeed=
         st.integers(),
     maxAngle=
         st.integers()
 )
 
-@given(instance=roverDSL::DetectBottle_strategy)
+@given(instance=roverDSL_DetectBottle_strategy)
 @settings(max_examples=50)
-def test_roverdsl::detectbottle_instantiation(instance):
-    assert isinstance(instance, roverDSL::DetectBottle)
-
-@given(instance=roverDSL::DetectBottle_strategy)
-def test_roverdsl::detectbottle_maxDistance_type(instance):
-    assert isinstance(instance.maxDistance, int)
+def test_roverdsl_detectbottle_instantiation(instance):
+    assert isinstance(instance, roverDSL_DetectBottle)
 
 
-@given(instance=roverDSL::DetectBottle_strategy)
-def test_roverdsl::detectbottle_maxDistance_setter(instance):
+
+@given(instance=roverDSL_DetectBottle_strategy)
+def test_roverdsl_detectbottle_maxDistance_setter(instance):
     original = instance.maxDistance
     instance.maxDistance = original
     assert instance.maxDistance == original
 
-@given(instance=roverDSL::Colors_strategy)
+@given(instance=roverDSL_Colors_strategy)
 @settings(max_examples=50)
-def test_roverdsl::colors_instantiation(instance):
-    assert isinstance(instance, roverDSL::Colors)
-
-@given(instance=roverDSL::Colors_strategy)
-def test_roverdsl::colors_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_roverdsl_colors_instantiation(instance):
+    assert isinstance(instance, roverDSL_Colors)
 
 
-@given(instance=roverDSL::Colors_strategy)
-def test_roverdsl::colors_color_setter(instance):
+
+@given(instance=roverDSL_Colors_strategy)
+def test_roverdsl_colors_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=roverDSL::Mission_strategy)
+@given(instance=roverDSL_Mission_strategy)
 @settings(max_examples=50)
-def test_roverdsl::mission_instantiation(instance):
-    assert isinstance(instance, roverDSL::Mission)
-
-@given(instance=roverDSL::Mission_strategy)
-def test_roverdsl::mission_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_roverdsl_mission_instantiation(instance):
+    assert isinstance(instance, roverDSL_Mission)
 
 
-@given(instance=roverDSL::Mission_strategy)
-def test_roverdsl::mission_id_setter(instance):
+
+@given(instance=roverDSL_Mission_strategy)
+def test_roverdsl_mission_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=roverDSL::Robot_strategy)
+@given(instance=roverDSL_Robot_strategy)
 @settings(max_examples=50)
-def test_roverdsl::robot_instantiation(instance):
-    assert isinstance(instance, roverDSL::Robot)
-
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_defaultSpeed_type(instance):
-    assert isinstance(instance.defaultSpeed, int)
+def test_roverdsl_robot_instantiation(instance):
+    assert isinstance(instance, roverDSL_Robot)
 
 
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_defaultSpeed_setter(instance):
+
+@given(instance=roverDSL_Robot_strategy)
+def test_roverdsl_robot_defaultSpeed_setter(instance):
     original = instance.defaultSpeed
     instance.defaultSpeed = original
     assert instance.defaultSpeed == original
 
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_slowSpeed_type(instance):
-    assert isinstance(instance.slowSpeed, int)
 
 
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_slowSpeed_setter(instance):
-    original = instance.slowSpeed
-    instance.slowSpeed = original
-    assert instance.slowSpeed == original
-
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_minAngle_type(instance):
-    assert isinstance(instance.minAngle, int)
-
-
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_minAngle_setter(instance):
+@given(instance=roverDSL_Robot_strategy)
+def test_roverdsl_robot_minAngle_setter(instance):
     original = instance.minAngle
     instance.minAngle = original
     assert instance.minAngle == original
 
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_maxAngle_type(instance):
-    assert isinstance(instance.maxAngle, int)
 
 
-@given(instance=roverDSL::Robot_strategy)
-def test_roverdsl::robot_maxAngle_setter(instance):
+@given(instance=roverDSL_Robot_strategy)
+def test_roverdsl_robot_slowSpeed_setter(instance):
+    original = instance.slowSpeed
+    instance.slowSpeed = original
+    assert instance.slowSpeed == original
+
+
+
+@given(instance=roverDSL_Robot_strategy)
+def test_roverdsl_robot_maxAngle_setter(instance):
     original = instance.maxAngle
     instance.maxAngle = original
     assert instance.maxAngle == original

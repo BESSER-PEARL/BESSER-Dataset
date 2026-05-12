@@ -3,177 +3,177 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Assignable,
-    robochart::ArrayAssignable,
-    robochart::VarRef,
-    robochart::VarSelection,
-    robochart::NamedExpression,
+from python_code import (
+    robochart_NamedExpression,
     BinaryExpression,
-    robochart::Different,
-    robochart::LessOrEqual,
-    robochart::GreaterOrEqual,
-    robochart::And,
-    robochart::Minus,
-    robochart::Mult,
-    robochart::GreaterThan,
-    robochart::Or,
-    robochart::Div,
-    robochart::Cat,
-    robochart::Equals,
-    robochart::Implies,
-    robochart::Modulus,
-    robochart::Plus,
-    robochart::LessThan,
-    robochart::Iff,
+    robochart_Plus,
+    robochart_Different,
+    robochart_Cat,
+    robochart_Mult,
+    robochart_LessThan,
+    robochart_GreaterThan,
+    robochart_Modulus,
+    robochart_Implies,
+    robochart_LessOrEqual,
+    robochart_Div,
+    robochart_Minus,
+    robochart_GreaterOrEqual,
+    robochart_Equals,
+    robochart_Or,
+    robochart_And,
+    robochart_Iff,
     LambdaExp,
-    robochart::DefiniteDescription,
+    robochart_DefiniteDescription,
     QuantifierExpression,
-    robochart::Exists,
-    robochart::Forall,
+    robochart_Exists,
+    robochart_Forall,
     Expression,
-    robochart::LetExpression,
-    robochart::RefExp,
-    robochart::StringExp,
-    robochart::IsExp,
-    robochart::IdExp,
-    robochart::IntegerExp,
-    robochart::Not,
-    robochart::TupleExp,
-    robochart::SetExp,
-    robochart::StateClockExp,
-    robochart::IfExpression,
-    robochart::SetRange,
-    robochart::EnumExp,
-    robochart::FromExp,
-    robochart::ToExp,
-    robochart::AsExp,
-    robochart::FloatExp,
-    robochart::ParExp,
-    robochart::Neg,
-    robochart::ArrayExp,
-    robochart::CallExp,
-    robochart::ElseExp,
-    robochart::LambdaExp,
-    robochart::SetComp,
-    robochart::QuantifierExpression,
-    robochart::WaitingConditionRef,
-    robochart::ClockExp,
-    robochart::InExp,
-    robochart::BooleanExp,
-    robochart::Selection,
-    robochart::BinaryExpression,
-    robochart::TypeExp,
-    robochart::SeqExp,
-    robochart::VarExp,
-    robochart::RangeExp,
-    robochart::ResultExp,
-    robochart::Assignable,
+    robochart_InExp,
+    robochart_IfExpression,
+    robochart_VarExp,
+    robochart_TupleExp,
+    robochart_BooleanExp,
+    robochart_IntegerExp,
+    robochart_LetExpression,
+    robochart_ToExp,
+    robochart_IsExp,
+    robochart_ArrayExp,
+    robochart_LambdaExp,
+    robochart_Not,
+    robochart_TypeExp,
+    robochart_QuantifierExpression,
+    robochart_ElseExp,
+    robochart_StateClockExp,
+    robochart_SetExp,
+    robochart_EnumExp,
+    robochart_SeqExp,
+    robochart_SetComp,
+    robochart_IdExp,
+    robochart_AsExp,
+    robochart_BinaryExpression,
+    robochart_FromExp,
+    robochart_RangeExp,
+    robochart_Neg,
+    robochart_StringExp,
+    robochart_FloatExp,
+    robochart_RefExp,
+    robochart_SetRange,
+    robochart_ParExp,
+    robochart_ClockExp,
+    robochart_Selection,
+    robochart_ResultExp,
+    robochart_Assignable,
     Statement,
-    robochart::SendEvent,
-    robochart::IfStmt,
-    robochart::Wait,
-    robochart::ParStmt,
-    robochart::Assignment,
-    robochart::Skip,
-    robochart::Call,
-    robochart::SeqStatement,
-    robochart::TimedStatement,
-    robochart::ClockReset,
-    robochart::ConnectionNode,
-    robochart::Connection,
+    robochart_Skip,
+    robochart_Assignment,
+    robochart_SendEvent,
+    robochart_Wait,
+    robochart_Call,
+    robochart_ParStmt,
+    robochart_IfStmt,
+    robochart_SeqStatement,
+    robochart_TimedStatement,
+    robochart_ClockReset,
+    robochart_ConnectionNode,
+    robochart_Connection,
     Controller,
-    robochart::ControllerRef,
+    robochart_ControllerRef,
     Action,
-    robochart::ExitAction,
-    robochart::DuringAction,
-    robochart::EntryAction,
+    robochart_DuringAction,
+    robochart_ExitAction,
+    robochart_EntryAction,
     State,
-    robochart::Final,
-    robochart::Action,
+    robochart_Final,
+    robochart_Action,
     Junction,
-    robochart::Initial,
+    robochart_Initial,
     Node,
-    robochart::Junction,
-    robochart::Statement,
-    robochart::Trigger,
-    robochart::ProbabilisticJunction,
+    robochart_Junction,
+    robochart_Statement,
+    robochart_Trigger,
+    robochart_ProbabilisticJunction,
     RoboticPlatform,
     Context,
-    robochart::NodeContainer,
+    robochart_NodeContainer,
     NodeContainer,
-    robochart::State,
-    robochart::StateMachineBody,
+    robochart_State,
+    robochart_StateMachineBody,
     StateMachine,
     Variable,
-    robochart::BasicContext,
+    robochart_BasicContext,
     BasicContext,
-    robochart::Context,
+    robochart_Context,
     Reference,
-    robochart::StateMachineRef,
-    robochart::RoboticPlatformRef,
-    robochart::Reference,
+    robochart_RoboticPlatformRef,
+    robochart_StateMachineRef,
+    robochart_Reference,
     StateMachineBody,
     OperationSig,
     Operation,
-    robochart::OperationRef,
+    robochart_OperationRef,
     ConnectionNode,
-    robochart::VariableList,
+    robochart_VariableList,
     SetType,
-    robochart::SeqType,
+    robochart_SeqType,
+    robochart_WaitingConditionRef,
+    robochart_CallExp,
+    Assignable,
+    robochart_ArrayAssignable,
+    robochart_VarSelection,
+    robochart_VarRef,
     RelationType,
-    robochart::FunctionType,
-    robochart::Parameter,
-    robochart::Expression,
+    robochart_FunctionType,
+    robochart_Parameter,
+    robochart_Expression,
     TypedNamedElement,
-    robochart::Member,
-    robochart::Type,
+    robochart_Member,
+    robochart_Type,
     NamedExpression,
     Member,
-    robochart::Variable,
-    robochart::Field,
+    robochart_Variable,
+    robochart_Field,
     Type,
-    robochart::SetType,
-    robochart::TypeRef,
-    robochart::VectorType,
-    robochart::RelationType,
-    robochart::AnyType,
-    robochart::MatrixType,
-    robochart::ProductType,
-    robochart::StateMachineDef,
+    robochart_SetType,
+    robochart_AnyType,
+    robochart_RelationType,
+    robochart_VectorType,
+    robochart_TypeRef,
+    robochart_MatrixType,
+    robochart_ProductType,
+    robochart_StateMachineDef,
     TypeDecl,
-    robochart::Literal,
-    robochart::Enumeration,
-    robochart::RecordType,
-    robochart::NameType,
-    robochart::PrimitiveType,
+    robochart_Enumeration,
+    robochart_Literal,
+    robochart_RecordType,
+    robochart_NameType,
+    robochart_PrimitiveType,
     NamedElement,
-    robochart::RoboticPlatform,
-    robochart::Operation,
-    robochart::TypedNamedElement,
-    robochart::Transition,
-    robochart::Event,
-    robochart::WaitingCondition,
-    robochart::TypeDecl,
-    robochart::Declaration,
-    robochart::Clock,
-    robochart::Node,
-    robochart::OperationSig,
-    robochart::StateMachine,
-    robochart::Controller,
-    robochart::NamedElement,
-    robochart::Function,
-    robochart::OperationDef,
-    robochart::RCModule,
-    robochart::ControllerDef,
-    robochart::RoboticPlatformDef,
-    robochart::Interface,
+    robochart_Event,
+    robochart_StateMachine,
+    robochart_Controller,
+    robochart_OperationSig,
+    robochart_Operation,
+    robochart_Declaration,
+    robochart_Transition,
+    robochart_Clock,
+    robochart_WaitingCondition,
+    robochart_RoboticPlatform,
+    robochart_Node,
+    robochart_TypedNamedElement,
+    robochart_TypeDecl,
+    robochart_NamedElement,
+    robochart_Function,
+    robochart_OperationDef,
+    robochart_RCModule,
+    robochart_ControllerDef,
+    robochart_RoboticPlatformDef,
+    robochart_Interface,
     BasicPackage,
-    robochart::RCPackage,
-    robochart::Import,
-    robochart::BasicPackage,
+    robochart_RCPackage,
+    robochart_Import,
+    robochart_BasicPackage,
     TriggerType,
     VariableModifier,
 )
@@ -184,72 +184,16 @@ from classes import (
 
 
 
-def test_assignable_is_not_abstract():
-    assert not inspect.isabstract(Assignable)
+def test_robochart_namedexpression_is_not_abstract():
+    assert not inspect.isabstract(robochart_NamedExpression)
 
 
-def test_assignable_constructor_exists():
-    assert callable(Assignable.__init__)
+def test_robochart_namedexpression_constructor_exists():
+    assert callable(robochart_NamedExpression.__init__)
 
 
-def test_assignable_constructor_args():
-    sig = inspect.signature(Assignable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::arrayassignable_is_not_abstract():
-    assert not inspect.isabstract(robochart::ArrayAssignable)
-
-
-def test_robochart::arrayassignable_constructor_exists():
-    assert callable(robochart::ArrayAssignable.__init__)
-
-
-def test_robochart::arrayassignable_constructor_args():
-    sig = inspect.signature(robochart::ArrayAssignable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::varref_is_not_abstract():
-    assert not inspect.isabstract(robochart::VarRef)
-
-
-def test_robochart::varref_constructor_exists():
-    assert callable(robochart::VarRef.__init__)
-
-
-def test_robochart::varref_constructor_args():
-    sig = inspect.signature(robochart::VarRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::varselection_is_not_abstract():
-    assert not inspect.isabstract(robochart::VarSelection)
-
-
-def test_robochart::varselection_constructor_exists():
-    assert callable(robochart::VarSelection.__init__)
-
-
-def test_robochart::varselection_constructor_args():
-    sig = inspect.signature(robochart::VarSelection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::namedexpression_is_not_abstract():
-    assert not inspect.isabstract(robochart::NamedExpression)
-
-
-def test_robochart::namedexpression_constructor_exists():
-    assert callable(robochart::NamedExpression.__init__)
-
-
-def test_robochart::namedexpression_constructor_args():
-    sig = inspect.signature(robochart::NamedExpression.__init__)
+def test_robochart_namedexpression_constructor_args():
+    sig = inspect.signature(robochart_NamedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -268,226 +212,226 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_robochart::different_is_not_abstract():
-    assert not inspect.isabstract(robochart::Different)
+def test_robochart_plus_is_not_abstract():
+    assert not inspect.isabstract(robochart_Plus)
 
 
-def test_robochart::different_constructor_exists():
-    assert callable(robochart::Different.__init__)
+def test_robochart_plus_constructor_exists():
+    assert callable(robochart_Plus.__init__)
 
 
-def test_robochart::different_constructor_args():
-    sig = inspect.signature(robochart::Different.__init__)
+def test_robochart_plus_constructor_args():
+    sig = inspect.signature(robochart_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::lessorequal_is_not_abstract():
-    assert not inspect.isabstract(robochart::LessOrEqual)
+def test_robochart_different_is_not_abstract():
+    assert not inspect.isabstract(robochart_Different)
 
 
-def test_robochart::lessorequal_constructor_exists():
-    assert callable(robochart::LessOrEqual.__init__)
+def test_robochart_different_constructor_exists():
+    assert callable(robochart_Different.__init__)
 
 
-def test_robochart::lessorequal_constructor_args():
-    sig = inspect.signature(robochart::LessOrEqual.__init__)
+def test_robochart_different_constructor_args():
+    sig = inspect.signature(robochart_Different.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::greaterorequal_is_not_abstract():
-    assert not inspect.isabstract(robochart::GreaterOrEqual)
+def test_robochart_cat_is_not_abstract():
+    assert not inspect.isabstract(robochart_Cat)
 
 
-def test_robochart::greaterorequal_constructor_exists():
-    assert callable(robochart::GreaterOrEqual.__init__)
+def test_robochart_cat_constructor_exists():
+    assert callable(robochart_Cat.__init__)
 
 
-def test_robochart::greaterorequal_constructor_args():
-    sig = inspect.signature(robochart::GreaterOrEqual.__init__)
+def test_robochart_cat_constructor_args():
+    sig = inspect.signature(robochart_Cat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::and_is_not_abstract():
-    assert not inspect.isabstract(robochart::And)
+def test_robochart_mult_is_not_abstract():
+    assert not inspect.isabstract(robochart_Mult)
 
 
-def test_robochart::and_constructor_exists():
-    assert callable(robochart::And.__init__)
+def test_robochart_mult_constructor_exists():
+    assert callable(robochart_Mult.__init__)
 
 
-def test_robochart::and_constructor_args():
-    sig = inspect.signature(robochart::And.__init__)
+def test_robochart_mult_constructor_args():
+    sig = inspect.signature(robochart_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::minus_is_not_abstract():
-    assert not inspect.isabstract(robochart::Minus)
+def test_robochart_lessthan_is_not_abstract():
+    assert not inspect.isabstract(robochart_LessThan)
 
 
-def test_robochart::minus_constructor_exists():
-    assert callable(robochart::Minus.__init__)
+def test_robochart_lessthan_constructor_exists():
+    assert callable(robochart_LessThan.__init__)
 
 
-def test_robochart::minus_constructor_args():
-    sig = inspect.signature(robochart::Minus.__init__)
+def test_robochart_lessthan_constructor_args():
+    sig = inspect.signature(robochart_LessThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::mult_is_not_abstract():
-    assert not inspect.isabstract(robochart::Mult)
+def test_robochart_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(robochart_GreaterThan)
 
 
-def test_robochart::mult_constructor_exists():
-    assert callable(robochart::Mult.__init__)
+def test_robochart_greaterthan_constructor_exists():
+    assert callable(robochart_GreaterThan.__init__)
 
 
-def test_robochart::mult_constructor_args():
-    sig = inspect.signature(robochart::Mult.__init__)
+def test_robochart_greaterthan_constructor_args():
+    sig = inspect.signature(robochart_GreaterThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(robochart::GreaterThan)
+def test_robochart_modulus_is_not_abstract():
+    assert not inspect.isabstract(robochart_Modulus)
 
 
-def test_robochart::greaterthan_constructor_exists():
-    assert callable(robochart::GreaterThan.__init__)
+def test_robochart_modulus_constructor_exists():
+    assert callable(robochart_Modulus.__init__)
 
 
-def test_robochart::greaterthan_constructor_args():
-    sig = inspect.signature(robochart::GreaterThan.__init__)
+def test_robochart_modulus_constructor_args():
+    sig = inspect.signature(robochart_Modulus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::or_is_not_abstract():
-    assert not inspect.isabstract(robochart::Or)
+def test_robochart_implies_is_not_abstract():
+    assert not inspect.isabstract(robochart_Implies)
 
 
-def test_robochart::or_constructor_exists():
-    assert callable(robochart::Or.__init__)
+def test_robochart_implies_constructor_exists():
+    assert callable(robochart_Implies.__init__)
 
 
-def test_robochart::or_constructor_args():
-    sig = inspect.signature(robochart::Or.__init__)
+def test_robochart_implies_constructor_args():
+    sig = inspect.signature(robochart_Implies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::div_is_not_abstract():
-    assert not inspect.isabstract(robochart::Div)
+def test_robochart_lessorequal_is_not_abstract():
+    assert not inspect.isabstract(robochart_LessOrEqual)
 
 
-def test_robochart::div_constructor_exists():
-    assert callable(robochart::Div.__init__)
+def test_robochart_lessorequal_constructor_exists():
+    assert callable(robochart_LessOrEqual.__init__)
 
 
-def test_robochart::div_constructor_args():
-    sig = inspect.signature(robochart::Div.__init__)
+def test_robochart_lessorequal_constructor_args():
+    sig = inspect.signature(robochart_LessOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::cat_is_not_abstract():
-    assert not inspect.isabstract(robochart::Cat)
+def test_robochart_div_is_not_abstract():
+    assert not inspect.isabstract(robochart_Div)
 
 
-def test_robochart::cat_constructor_exists():
-    assert callable(robochart::Cat.__init__)
+def test_robochart_div_constructor_exists():
+    assert callable(robochart_Div.__init__)
 
 
-def test_robochart::cat_constructor_args():
-    sig = inspect.signature(robochart::Cat.__init__)
+def test_robochart_div_constructor_args():
+    sig = inspect.signature(robochart_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::equals_is_not_abstract():
-    assert not inspect.isabstract(robochart::Equals)
+def test_robochart_minus_is_not_abstract():
+    assert not inspect.isabstract(robochart_Minus)
 
 
-def test_robochart::equals_constructor_exists():
-    assert callable(robochart::Equals.__init__)
+def test_robochart_minus_constructor_exists():
+    assert callable(robochart_Minus.__init__)
 
 
-def test_robochart::equals_constructor_args():
-    sig = inspect.signature(robochart::Equals.__init__)
+def test_robochart_minus_constructor_args():
+    sig = inspect.signature(robochart_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::implies_is_not_abstract():
-    assert not inspect.isabstract(robochart::Implies)
+def test_robochart_greaterorequal_is_not_abstract():
+    assert not inspect.isabstract(robochart_GreaterOrEqual)
 
 
-def test_robochart::implies_constructor_exists():
-    assert callable(robochart::Implies.__init__)
+def test_robochart_greaterorequal_constructor_exists():
+    assert callable(robochart_GreaterOrEqual.__init__)
 
 
-def test_robochart::implies_constructor_args():
-    sig = inspect.signature(robochart::Implies.__init__)
+def test_robochart_greaterorequal_constructor_args():
+    sig = inspect.signature(robochart_GreaterOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::modulus_is_not_abstract():
-    assert not inspect.isabstract(robochart::Modulus)
+def test_robochart_equals_is_not_abstract():
+    assert not inspect.isabstract(robochart_Equals)
 
 
-def test_robochart::modulus_constructor_exists():
-    assert callable(robochart::Modulus.__init__)
+def test_robochart_equals_constructor_exists():
+    assert callable(robochart_Equals.__init__)
 
 
-def test_robochart::modulus_constructor_args():
-    sig = inspect.signature(robochart::Modulus.__init__)
+def test_robochart_equals_constructor_args():
+    sig = inspect.signature(robochart_Equals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::plus_is_not_abstract():
-    assert not inspect.isabstract(robochart::Plus)
+def test_robochart_or_is_not_abstract():
+    assert not inspect.isabstract(robochart_Or)
 
 
-def test_robochart::plus_constructor_exists():
-    assert callable(robochart::Plus.__init__)
+def test_robochart_or_constructor_exists():
+    assert callable(robochart_Or.__init__)
 
 
-def test_robochart::plus_constructor_args():
-    sig = inspect.signature(robochart::Plus.__init__)
+def test_robochart_or_constructor_args():
+    sig = inspect.signature(robochart_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::lessthan_is_not_abstract():
-    assert not inspect.isabstract(robochart::LessThan)
+def test_robochart_and_is_not_abstract():
+    assert not inspect.isabstract(robochart_And)
 
 
-def test_robochart::lessthan_constructor_exists():
-    assert callable(robochart::LessThan.__init__)
+def test_robochart_and_constructor_exists():
+    assert callable(robochart_And.__init__)
 
 
-def test_robochart::lessthan_constructor_args():
-    sig = inspect.signature(robochart::LessThan.__init__)
+def test_robochart_and_constructor_args():
+    sig = inspect.signature(robochart_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::iff_is_not_abstract():
-    assert not inspect.isabstract(robochart::Iff)
+def test_robochart_iff_is_not_abstract():
+    assert not inspect.isabstract(robochart_Iff)
 
 
-def test_robochart::iff_constructor_exists():
-    assert callable(robochart::Iff.__init__)
+def test_robochart_iff_constructor_exists():
+    assert callable(robochart_Iff.__init__)
 
 
-def test_robochart::iff_constructor_args():
-    sig = inspect.signature(robochart::Iff.__init__)
+def test_robochart_iff_constructor_args():
+    sig = inspect.signature(robochart_Iff.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -506,16 +450,16 @@ def test_lambdaexp_constructor_args():
 
 
 
-def test_robochart::definitedescription_is_not_abstract():
-    assert not inspect.isabstract(robochart::DefiniteDescription)
+def test_robochart_definitedescription_is_not_abstract():
+    assert not inspect.isabstract(robochart_DefiniteDescription)
 
 
-def test_robochart::definitedescription_constructor_exists():
-    assert callable(robochart::DefiniteDescription.__init__)
+def test_robochart_definitedescription_constructor_exists():
+    assert callable(robochart_DefiniteDescription.__init__)
 
 
-def test_robochart::definitedescription_constructor_args():
-    sig = inspect.signature(robochart::DefiniteDescription.__init__)
+def test_robochart_definitedescription_constructor_args():
+    sig = inspect.signature(robochart_DefiniteDescription.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -534,23 +478,23 @@ def test_quantifierexpression_constructor_args():
 
 
 
-def test_robochart::exists_is_not_abstract():
-    assert not inspect.isabstract(robochart::Exists)
+def test_robochart_exists_is_not_abstract():
+    assert not inspect.isabstract(robochart_Exists)
 
 
-def test_robochart::exists_constructor_exists():
-    assert callable(robochart::Exists.__init__)
+def test_robochart_exists_constructor_exists():
+    assert callable(robochart_Exists.__init__)
 
 
-def test_robochart::exists_constructor_args():
-    sig = inspect.signature(robochart::Exists.__init__)
+def test_robochart_exists_constructor_args():
+    sig = inspect.signature(robochart_Exists.__init__)
     params = list(sig.parameters.keys())
     assert "unique" in params, "Missing parameter 'unique'"
 
-def test_robochart::exists_has_unique():
-    assert hasattr(robochart::Exists, "unique")
+def test_robochart_exists_has_unique():
+    assert hasattr(robochart_Exists, "unique")
     descriptor = None
-    for klass in robochart::Exists.__mro__:
+    for klass in robochart_Exists.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
@@ -558,16 +502,16 @@ def test_robochart::exists_has_unique():
 
 
 
-def test_robochart::forall_is_not_abstract():
-    assert not inspect.isabstract(robochart::Forall)
+def test_robochart_forall_is_not_abstract():
+    assert not inspect.isabstract(robochart_Forall)
 
 
-def test_robochart::forall_constructor_exists():
-    assert callable(robochart::Forall.__init__)
+def test_robochart_forall_constructor_exists():
+    assert callable(robochart_Forall.__init__)
 
 
-def test_robochart::forall_constructor_args():
-    sig = inspect.signature(robochart::Forall.__init__)
+def test_robochart_forall_constructor_args():
+    sig = inspect.signature(robochart_Forall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -586,51 +530,79 @@ def test_expression_constructor_args():
 
 
 
-def test_robochart::letexpression_is_not_abstract():
-    assert not inspect.isabstract(robochart::LetExpression)
+def test_robochart_inexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_InExp)
 
 
-def test_robochart::letexpression_constructor_exists():
-    assert callable(robochart::LetExpression.__init__)
+def test_robochart_inexp_constructor_exists():
+    assert callable(robochart_InExp.__init__)
 
 
-def test_robochart::letexpression_constructor_args():
-    sig = inspect.signature(robochart::LetExpression.__init__)
+def test_robochart_inexp_constructor_args():
+    sig = inspect.signature(robochart_InExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::refexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::RefExp)
+def test_robochart_ifexpression_is_not_abstract():
+    assert not inspect.isabstract(robochart_IfExpression)
 
 
-def test_robochart::refexp_constructor_exists():
-    assert callable(robochart::RefExp.__init__)
+def test_robochart_ifexpression_constructor_exists():
+    assert callable(robochart_IfExpression.__init__)
 
 
-def test_robochart::refexp_constructor_args():
-    sig = inspect.signature(robochart::RefExp.__init__)
+def test_robochart_ifexpression_constructor_args():
+    sig = inspect.signature(robochart_IfExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::stringexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::StringExp)
+def test_robochart_varexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_VarExp)
 
 
-def test_robochart::stringexp_constructor_exists():
-    assert callable(robochart::StringExp.__init__)
+def test_robochart_varexp_constructor_exists():
+    assert callable(robochart_VarExp.__init__)
 
 
-def test_robochart::stringexp_constructor_args():
-    sig = inspect.signature(robochart::StringExp.__init__)
+def test_robochart_varexp_constructor_args():
+    sig = inspect.signature(robochart_VarExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_TupleExp)
+
+
+def test_robochart_tupleexp_constructor_exists():
+    assert callable(robochart_TupleExp.__init__)
+
+
+def test_robochart_tupleexp_constructor_args():
+    sig = inspect.signature(robochart_TupleExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_booleanexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_BooleanExp)
+
+
+def test_robochart_booleanexp_constructor_exists():
+    assert callable(robochart_BooleanExp.__init__)
+
+
+def test_robochart_booleanexp_constructor_args():
+    sig = inspect.signature(robochart_BooleanExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_robochart::stringexp_has_value():
-    assert hasattr(robochart::StringExp, "value")
+def test_robochart_booleanexp_has_value():
+    assert hasattr(robochart_BooleanExp, "value")
     descriptor = None
-    for klass in robochart::StringExp.__mro__:
+    for klass in robochart_BooleanExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -638,51 +610,23 @@ def test_robochart::stringexp_has_value():
 
 
 
-def test_robochart::isexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::IsExp)
+def test_robochart_integerexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_IntegerExp)
 
 
-def test_robochart::isexp_constructor_exists():
-    assert callable(robochart::IsExp.__init__)
+def test_robochart_integerexp_constructor_exists():
+    assert callable(robochart_IntegerExp.__init__)
 
 
-def test_robochart::isexp_constructor_args():
-    sig = inspect.signature(robochart::IsExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::idexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::IdExp)
-
-
-def test_robochart::idexp_constructor_exists():
-    assert callable(robochart::IdExp.__init__)
-
-
-def test_robochart::idexp_constructor_args():
-    sig = inspect.signature(robochart::IdExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::integerexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::IntegerExp)
-
-
-def test_robochart::integerexp_constructor_exists():
-    assert callable(robochart::IntegerExp.__init__)
-
-
-def test_robochart::integerexp_constructor_args():
-    sig = inspect.signature(robochart::IntegerExp.__init__)
+def test_robochart_integerexp_constructor_args():
+    sig = inspect.signature(robochart_IntegerExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_robochart::integerexp_has_value():
-    assert hasattr(robochart::IntegerExp, "value")
+def test_robochart_integerexp_has_value():
+    assert hasattr(robochart_IntegerExp, "value")
     descriptor = None
-    for klass in robochart::IntegerExp.__mro__:
+    for klass in robochart_IntegerExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -690,445 +634,285 @@ def test_robochart::integerexp_has_value():
 
 
 
-def test_robochart::not_is_not_abstract():
-    assert not inspect.isabstract(robochart::Not)
+def test_robochart_letexpression_is_not_abstract():
+    assert not inspect.isabstract(robochart_LetExpression)
 
 
-def test_robochart::not_constructor_exists():
-    assert callable(robochart::Not.__init__)
+def test_robochart_letexpression_constructor_exists():
+    assert callable(robochart_LetExpression.__init__)
 
 
-def test_robochart::not_constructor_args():
-    sig = inspect.signature(robochart::Not.__init__)
+def test_robochart_letexpression_constructor_args():
+    sig = inspect.signature(robochart_LetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::tupleexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::TupleExp)
+def test_robochart_toexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_ToExp)
 
 
-def test_robochart::tupleexp_constructor_exists():
-    assert callable(robochart::TupleExp.__init__)
+def test_robochart_toexp_constructor_exists():
+    assert callable(robochart_ToExp.__init__)
 
 
-def test_robochart::tupleexp_constructor_args():
-    sig = inspect.signature(robochart::TupleExp.__init__)
+def test_robochart_toexp_constructor_args():
+    sig = inspect.signature(robochart_ToExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::setexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::SetExp)
+def test_robochart_isexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_IsExp)
 
 
-def test_robochart::setexp_constructor_exists():
-    assert callable(robochart::SetExp.__init__)
+def test_robochart_isexp_constructor_exists():
+    assert callable(robochart_IsExp.__init__)
 
 
-def test_robochart::setexp_constructor_args():
-    sig = inspect.signature(robochart::SetExp.__init__)
+def test_robochart_isexp_constructor_args():
+    sig = inspect.signature(robochart_IsExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::stateclockexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::StateClockExp)
+def test_robochart_arrayexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_ArrayExp)
 
 
-def test_robochart::stateclockexp_constructor_exists():
-    assert callable(robochart::StateClockExp.__init__)
+def test_robochart_arrayexp_constructor_exists():
+    assert callable(robochart_ArrayExp.__init__)
 
 
-def test_robochart::stateclockexp_constructor_args():
-    sig = inspect.signature(robochart::StateClockExp.__init__)
+def test_robochart_arrayexp_constructor_args():
+    sig = inspect.signature(robochart_ArrayExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::ifexpression_is_not_abstract():
-    assert not inspect.isabstract(robochart::IfExpression)
+def test_robochart_lambdaexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_LambdaExp)
 
 
-def test_robochart::ifexpression_constructor_exists():
-    assert callable(robochart::IfExpression.__init__)
+def test_robochart_lambdaexp_constructor_exists():
+    assert callable(robochart_LambdaExp.__init__)
 
 
-def test_robochart::ifexpression_constructor_args():
-    sig = inspect.signature(robochart::IfExpression.__init__)
+def test_robochart_lambdaexp_constructor_args():
+    sig = inspect.signature(robochart_LambdaExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::setrange_is_not_abstract():
-    assert not inspect.isabstract(robochart::SetRange)
+def test_robochart_not_is_not_abstract():
+    assert not inspect.isabstract(robochart_Not)
 
 
-def test_robochart::setrange_constructor_exists():
-    assert callable(robochart::SetRange.__init__)
+def test_robochart_not_constructor_exists():
+    assert callable(robochart_Not.__init__)
 
 
-def test_robochart::setrange_constructor_args():
-    sig = inspect.signature(robochart::SetRange.__init__)
+def test_robochart_not_constructor_args():
+    sig = inspect.signature(robochart_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::enumexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::EnumExp)
+def test_robochart_typeexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_TypeExp)
 
 
-def test_robochart::enumexp_constructor_exists():
-    assert callable(robochart::EnumExp.__init__)
+def test_robochart_typeexp_constructor_exists():
+    assert callable(robochart_TypeExp.__init__)
 
 
-def test_robochart::enumexp_constructor_args():
-    sig = inspect.signature(robochart::EnumExp.__init__)
+def test_robochart_typeexp_constructor_args():
+    sig = inspect.signature(robochart_TypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::fromexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::FromExp)
+def test_robochart_quantifierexpression_is_not_abstract():
+    assert not inspect.isabstract(robochart_QuantifierExpression)
 
 
-def test_robochart::fromexp_constructor_exists():
-    assert callable(robochart::FromExp.__init__)
+def test_robochart_quantifierexpression_constructor_exists():
+    assert callable(robochart_QuantifierExpression.__init__)
 
 
-def test_robochart::fromexp_constructor_args():
-    sig = inspect.signature(robochart::FromExp.__init__)
+def test_robochart_quantifierexpression_constructor_args():
+    sig = inspect.signature(robochart_QuantifierExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::toexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::ToExp)
+def test_robochart_elseexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_ElseExp)
 
 
-def test_robochart::toexp_constructor_exists():
-    assert callable(robochart::ToExp.__init__)
+def test_robochart_elseexp_constructor_exists():
+    assert callable(robochart_ElseExp.__init__)
 
 
-def test_robochart::toexp_constructor_args():
-    sig = inspect.signature(robochart::ToExp.__init__)
+def test_robochart_elseexp_constructor_args():
+    sig = inspect.signature(robochart_ElseExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::asexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::AsExp)
+def test_robochart_stateclockexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_StateClockExp)
 
 
-def test_robochart::asexp_constructor_exists():
-    assert callable(robochart::AsExp.__init__)
+def test_robochart_stateclockexp_constructor_exists():
+    assert callable(robochart_StateClockExp.__init__)
 
 
-def test_robochart::asexp_constructor_args():
-    sig = inspect.signature(robochart::AsExp.__init__)
+def test_robochart_stateclockexp_constructor_args():
+    sig = inspect.signature(robochart_StateClockExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::floatexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::FloatExp)
+def test_robochart_setexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_SetExp)
 
 
-def test_robochart::floatexp_constructor_exists():
-    assert callable(robochart::FloatExp.__init__)
+def test_robochart_setexp_constructor_exists():
+    assert callable(robochart_SetExp.__init__)
 
 
-def test_robochart::floatexp_constructor_args():
-    sig = inspect.signature(robochart::FloatExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_robochart::floatexp_has_value():
-    assert hasattr(robochart::FloatExp, "value")
-    descriptor = None
-    for klass in robochart::FloatExp.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robochart::parexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::ParExp)
-
-
-def test_robochart::parexp_constructor_exists():
-    assert callable(robochart::ParExp.__init__)
-
-
-def test_robochart::parexp_constructor_args():
-    sig = inspect.signature(robochart::ParExp.__init__)
+def test_robochart_setexp_constructor_args():
+    sig = inspect.signature(robochart_SetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::neg_is_not_abstract():
-    assert not inspect.isabstract(robochart::Neg)
+def test_robochart_enumexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_EnumExp)
 
 
-def test_robochart::neg_constructor_exists():
-    assert callable(robochart::Neg.__init__)
+def test_robochart_enumexp_constructor_exists():
+    assert callable(robochart_EnumExp.__init__)
 
 
-def test_robochart::neg_constructor_args():
-    sig = inspect.signature(robochart::Neg.__init__)
+def test_robochart_enumexp_constructor_args():
+    sig = inspect.signature(robochart_EnumExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::arrayexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::ArrayExp)
+def test_robochart_seqexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_SeqExp)
 
 
-def test_robochart::arrayexp_constructor_exists():
-    assert callable(robochart::ArrayExp.__init__)
+def test_robochart_seqexp_constructor_exists():
+    assert callable(robochart_SeqExp.__init__)
 
 
-def test_robochart::arrayexp_constructor_args():
-    sig = inspect.signature(robochart::ArrayExp.__init__)
+def test_robochart_seqexp_constructor_args():
+    sig = inspect.signature(robochart_SeqExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::callexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::CallExp)
+def test_robochart_setcomp_is_not_abstract():
+    assert not inspect.isabstract(robochart_SetComp)
 
 
-def test_robochart::callexp_constructor_exists():
-    assert callable(robochart::CallExp.__init__)
+def test_robochart_setcomp_constructor_exists():
+    assert callable(robochart_SetComp.__init__)
 
 
-def test_robochart::callexp_constructor_args():
-    sig = inspect.signature(robochart::CallExp.__init__)
+def test_robochart_setcomp_constructor_args():
+    sig = inspect.signature(robochart_SetComp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::elseexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::ElseExp)
+def test_robochart_idexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_IdExp)
 
 
-def test_robochart::elseexp_constructor_exists():
-    assert callable(robochart::ElseExp.__init__)
+def test_robochart_idexp_constructor_exists():
+    assert callable(robochart_IdExp.__init__)
 
 
-def test_robochart::elseexp_constructor_args():
-    sig = inspect.signature(robochart::ElseExp.__init__)
+def test_robochart_idexp_constructor_args():
+    sig = inspect.signature(robochart_IdExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::lambdaexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::LambdaExp)
+def test_robochart_asexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_AsExp)
 
 
-def test_robochart::lambdaexp_constructor_exists():
-    assert callable(robochart::LambdaExp.__init__)
+def test_robochart_asexp_constructor_exists():
+    assert callable(robochart_AsExp.__init__)
 
 
-def test_robochart::lambdaexp_constructor_args():
-    sig = inspect.signature(robochart::LambdaExp.__init__)
+def test_robochart_asexp_constructor_args():
+    sig = inspect.signature(robochart_AsExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::setcomp_is_not_abstract():
-    assert not inspect.isabstract(robochart::SetComp)
+def test_robochart_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(robochart_BinaryExpression)
 
 
-def test_robochart::setcomp_constructor_exists():
-    assert callable(robochart::SetComp.__init__)
+def test_robochart_binaryexpression_constructor_exists():
+    assert callable(robochart_BinaryExpression.__init__)
 
 
-def test_robochart::setcomp_constructor_args():
-    sig = inspect.signature(robochart::SetComp.__init__)
+def test_robochart_binaryexpression_constructor_args():
+    sig = inspect.signature(robochart_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::quantifierexpression_is_not_abstract():
-    assert not inspect.isabstract(robochart::QuantifierExpression)
+def test_robochart_fromexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_FromExp)
 
 
-def test_robochart::quantifierexpression_constructor_exists():
-    assert callable(robochart::QuantifierExpression.__init__)
+def test_robochart_fromexp_constructor_exists():
+    assert callable(robochart_FromExp.__init__)
 
 
-def test_robochart::quantifierexpression_constructor_args():
-    sig = inspect.signature(robochart::QuantifierExpression.__init__)
+def test_robochart_fromexp_constructor_args():
+    sig = inspect.signature(robochart_FromExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::waitingconditionref_is_not_abstract():
-    assert not inspect.isabstract(robochart::WaitingConditionRef)
+def test_robochart_rangeexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_RangeExp)
 
 
-def test_robochart::waitingconditionref_constructor_exists():
-    assert callable(robochart::WaitingConditionRef.__init__)
+def test_robochart_rangeexp_constructor_exists():
+    assert callable(robochart_RangeExp.__init__)
 
 
-def test_robochart::waitingconditionref_constructor_args():
-    sig = inspect.signature(robochart::WaitingConditionRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::clockexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::ClockExp)
-
-
-def test_robochart::clockexp_constructor_exists():
-    assert callable(robochart::ClockExp.__init__)
-
-
-def test_robochart::clockexp_constructor_args():
-    sig = inspect.signature(robochart::ClockExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::inexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::InExp)
-
-
-def test_robochart::inexp_constructor_exists():
-    assert callable(robochart::InExp.__init__)
-
-
-def test_robochart::inexp_constructor_args():
-    sig = inspect.signature(robochart::InExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::booleanexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::BooleanExp)
-
-
-def test_robochart::booleanexp_constructor_exists():
-    assert callable(robochart::BooleanExp.__init__)
-
-
-def test_robochart::booleanexp_constructor_args():
-    sig = inspect.signature(robochart::BooleanExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_robochart::booleanexp_has_value():
-    assert hasattr(robochart::BooleanExp, "value")
-    descriptor = None
-    for klass in robochart::BooleanExp.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robochart::selection_is_not_abstract():
-    assert not inspect.isabstract(robochart::Selection)
-
-
-def test_robochart::selection_constructor_exists():
-    assert callable(robochart::Selection.__init__)
-
-
-def test_robochart::selection_constructor_args():
-    sig = inspect.signature(robochart::Selection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(robochart::BinaryExpression)
-
-
-def test_robochart::binaryexpression_constructor_exists():
-    assert callable(robochart::BinaryExpression.__init__)
-
-
-def test_robochart::binaryexpression_constructor_args():
-    sig = inspect.signature(robochart::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::typeexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::TypeExp)
-
-
-def test_robochart::typeexp_constructor_exists():
-    assert callable(robochart::TypeExp.__init__)
-
-
-def test_robochart::typeexp_constructor_args():
-    sig = inspect.signature(robochart::TypeExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::seqexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::SeqExp)
-
-
-def test_robochart::seqexp_constructor_exists():
-    assert callable(robochart::SeqExp.__init__)
-
-
-def test_robochart::seqexp_constructor_args():
-    sig = inspect.signature(robochart::SeqExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::varexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::VarExp)
-
-
-def test_robochart::varexp_constructor_exists():
-    assert callable(robochart::VarExp.__init__)
-
-
-def test_robochart::varexp_constructor_args():
-    sig = inspect.signature(robochart::VarExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::rangeexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::RangeExp)
-
-
-def test_robochart::rangeexp_constructor_exists():
-    assert callable(robochart::RangeExp.__init__)
-
-
-def test_robochart::rangeexp_constructor_args():
-    sig = inspect.signature(robochart::RangeExp.__init__)
+def test_robochart_rangeexp_constructor_args():
+    sig = inspect.signature(robochart_RangeExp.__init__)
     params = list(sig.parameters.keys())
     assert "linterval" in params, "Missing parameter 'linterval'"
     assert "rinterval" in params, "Missing parameter 'rinterval'"
 
-def test_robochart::rangeexp_has_linterval():
-    assert hasattr(robochart::RangeExp, "linterval")
+def test_robochart_rangeexp_has_linterval():
+    assert hasattr(robochart_RangeExp, "linterval")
     descriptor = None
-    for klass in robochart::RangeExp.__mro__:
+    for klass in robochart_RangeExp.__mro__:
         if "linterval" in klass.__dict__:
             descriptor = klass.__dict__["linterval"]
             break
     assert isinstance(descriptor, property)
 
-def test_robochart::rangeexp_has_rinterval():
-    assert hasattr(robochart::RangeExp, "rinterval")
+def test_robochart_rangeexp_has_rinterval():
+    assert hasattr(robochart_RangeExp, "rinterval")
     descriptor = None
-    for klass in robochart::RangeExp.__mro__:
+    for klass in robochart_RangeExp.__mro__:
         if "rinterval" in klass.__dict__:
             descriptor = klass.__dict__["rinterval"]
             break
@@ -1136,30 +920,162 @@ def test_robochart::rangeexp_has_rinterval():
 
 
 
-def test_robochart::resultexp_is_not_abstract():
-    assert not inspect.isabstract(robochart::ResultExp)
+def test_robochart_neg_is_not_abstract():
+    assert not inspect.isabstract(robochart_Neg)
 
 
-def test_robochart::resultexp_constructor_exists():
-    assert callable(robochart::ResultExp.__init__)
+def test_robochart_neg_constructor_exists():
+    assert callable(robochart_Neg.__init__)
 
 
-def test_robochart::resultexp_constructor_args():
-    sig = inspect.signature(robochart::ResultExp.__init__)
+def test_robochart_neg_constructor_args():
+    sig = inspect.signature(robochart_Neg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::assignable_is_not_abstract():
-    assert not inspect.isabstract(robochart::Assignable)
+def test_robochart_stringexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_StringExp)
 
 
-def test_robochart::assignable_constructor_exists():
-    assert callable(robochart::Assignable.__init__)
+def test_robochart_stringexp_constructor_exists():
+    assert callable(robochart_StringExp.__init__)
 
 
-def test_robochart::assignable_constructor_args():
-    sig = inspect.signature(robochart::Assignable.__init__)
+def test_robochart_stringexp_constructor_args():
+    sig = inspect.signature(robochart_StringExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_robochart_stringexp_has_value():
+    assert hasattr(robochart_StringExp, "value")
+    descriptor = None
+    for klass in robochart_StringExp.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robochart_floatexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_FloatExp)
+
+
+def test_robochart_floatexp_constructor_exists():
+    assert callable(robochart_FloatExp.__init__)
+
+
+def test_robochart_floatexp_constructor_args():
+    sig = inspect.signature(robochart_FloatExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_robochart_floatexp_has_value():
+    assert hasattr(robochart_FloatExp, "value")
+    descriptor = None
+    for klass in robochart_FloatExp.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robochart_refexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_RefExp)
+
+
+def test_robochart_refexp_constructor_exists():
+    assert callable(robochart_RefExp.__init__)
+
+
+def test_robochart_refexp_constructor_args():
+    sig = inspect.signature(robochart_RefExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_setrange_is_not_abstract():
+    assert not inspect.isabstract(robochart_SetRange)
+
+
+def test_robochart_setrange_constructor_exists():
+    assert callable(robochart_SetRange.__init__)
+
+
+def test_robochart_setrange_constructor_args():
+    sig = inspect.signature(robochart_SetRange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_parexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_ParExp)
+
+
+def test_robochart_parexp_constructor_exists():
+    assert callable(robochart_ParExp.__init__)
+
+
+def test_robochart_parexp_constructor_args():
+    sig = inspect.signature(robochart_ParExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_clockexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_ClockExp)
+
+
+def test_robochart_clockexp_constructor_exists():
+    assert callable(robochart_ClockExp.__init__)
+
+
+def test_robochart_clockexp_constructor_args():
+    sig = inspect.signature(robochart_ClockExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_selection_is_not_abstract():
+    assert not inspect.isabstract(robochart_Selection)
+
+
+def test_robochart_selection_constructor_exists():
+    assert callable(robochart_Selection.__init__)
+
+
+def test_robochart_selection_constructor_args():
+    sig = inspect.signature(robochart_Selection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_resultexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_ResultExp)
+
+
+def test_robochart_resultexp_constructor_exists():
+    assert callable(robochart_ResultExp.__init__)
+
+
+def test_robochart_resultexp_constructor_args():
+    sig = inspect.signature(robochart_ResultExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_assignable_is_not_abstract():
+    assert not inspect.isabstract(robochart_Assignable)
+
+
+def test_robochart_assignable_constructor_exists():
+    assert callable(robochart_Assignable.__init__)
+
+
+def test_robochart_assignable_constructor_args():
+    sig = inspect.signature(robochart_Assignable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1178,187 +1094,187 @@ def test_statement_constructor_args():
 
 
 
-def test_robochart::sendevent_is_not_abstract():
-    assert not inspect.isabstract(robochart::SendEvent)
+def test_robochart_skip_is_not_abstract():
+    assert not inspect.isabstract(robochart_Skip)
 
 
-def test_robochart::sendevent_constructor_exists():
-    assert callable(robochart::SendEvent.__init__)
+def test_robochart_skip_constructor_exists():
+    assert callable(robochart_Skip.__init__)
 
 
-def test_robochart::sendevent_constructor_args():
-    sig = inspect.signature(robochart::SendEvent.__init__)
+def test_robochart_skip_constructor_args():
+    sig = inspect.signature(robochart_Skip.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::ifstmt_is_not_abstract():
-    assert not inspect.isabstract(robochart::IfStmt)
+def test_robochart_assignment_is_not_abstract():
+    assert not inspect.isabstract(robochart_Assignment)
 
 
-def test_robochart::ifstmt_constructor_exists():
-    assert callable(robochart::IfStmt.__init__)
+def test_robochart_assignment_constructor_exists():
+    assert callable(robochart_Assignment.__init__)
 
 
-def test_robochart::ifstmt_constructor_args():
-    sig = inspect.signature(robochart::IfStmt.__init__)
+def test_robochart_assignment_constructor_args():
+    sig = inspect.signature(robochart_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::wait_is_not_abstract():
-    assert not inspect.isabstract(robochart::Wait)
+def test_robochart_sendevent_is_not_abstract():
+    assert not inspect.isabstract(robochart_SendEvent)
 
 
-def test_robochart::wait_constructor_exists():
-    assert callable(robochart::Wait.__init__)
+def test_robochart_sendevent_constructor_exists():
+    assert callable(robochart_SendEvent.__init__)
 
 
-def test_robochart::wait_constructor_args():
-    sig = inspect.signature(robochart::Wait.__init__)
+def test_robochart_sendevent_constructor_args():
+    sig = inspect.signature(robochart_SendEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::parstmt_is_not_abstract():
-    assert not inspect.isabstract(robochart::ParStmt)
+def test_robochart_wait_is_not_abstract():
+    assert not inspect.isabstract(robochart_Wait)
 
 
-def test_robochart::parstmt_constructor_exists():
-    assert callable(robochart::ParStmt.__init__)
+def test_robochart_wait_constructor_exists():
+    assert callable(robochart_Wait.__init__)
 
 
-def test_robochart::parstmt_constructor_args():
-    sig = inspect.signature(robochart::ParStmt.__init__)
+def test_robochart_wait_constructor_args():
+    sig = inspect.signature(robochart_Wait.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::assignment_is_not_abstract():
-    assert not inspect.isabstract(robochart::Assignment)
+def test_robochart_call_is_not_abstract():
+    assert not inspect.isabstract(robochart_Call)
 
 
-def test_robochart::assignment_constructor_exists():
-    assert callable(robochart::Assignment.__init__)
+def test_robochart_call_constructor_exists():
+    assert callable(robochart_Call.__init__)
 
 
-def test_robochart::assignment_constructor_args():
-    sig = inspect.signature(robochart::Assignment.__init__)
+def test_robochart_call_constructor_args():
+    sig = inspect.signature(robochart_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::skip_is_not_abstract():
-    assert not inspect.isabstract(robochart::Skip)
+def test_robochart_parstmt_is_not_abstract():
+    assert not inspect.isabstract(robochart_ParStmt)
 
 
-def test_robochart::skip_constructor_exists():
-    assert callable(robochart::Skip.__init__)
+def test_robochart_parstmt_constructor_exists():
+    assert callable(robochart_ParStmt.__init__)
 
 
-def test_robochart::skip_constructor_args():
-    sig = inspect.signature(robochart::Skip.__init__)
+def test_robochart_parstmt_constructor_args():
+    sig = inspect.signature(robochart_ParStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::call_is_not_abstract():
-    assert not inspect.isabstract(robochart::Call)
+def test_robochart_ifstmt_is_not_abstract():
+    assert not inspect.isabstract(robochart_IfStmt)
 
 
-def test_robochart::call_constructor_exists():
-    assert callable(robochart::Call.__init__)
+def test_robochart_ifstmt_constructor_exists():
+    assert callable(robochart_IfStmt.__init__)
 
 
-def test_robochart::call_constructor_args():
-    sig = inspect.signature(robochart::Call.__init__)
+def test_robochart_ifstmt_constructor_args():
+    sig = inspect.signature(robochart_IfStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::seqstatement_is_not_abstract():
-    assert not inspect.isabstract(robochart::SeqStatement)
+def test_robochart_seqstatement_is_not_abstract():
+    assert not inspect.isabstract(robochart_SeqStatement)
 
 
-def test_robochart::seqstatement_constructor_exists():
-    assert callable(robochart::SeqStatement.__init__)
+def test_robochart_seqstatement_constructor_exists():
+    assert callable(robochart_SeqStatement.__init__)
 
 
-def test_robochart::seqstatement_constructor_args():
-    sig = inspect.signature(robochart::SeqStatement.__init__)
+def test_robochart_seqstatement_constructor_args():
+    sig = inspect.signature(robochart_SeqStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::timedstatement_is_not_abstract():
-    assert not inspect.isabstract(robochart::TimedStatement)
+def test_robochart_timedstatement_is_not_abstract():
+    assert not inspect.isabstract(robochart_TimedStatement)
 
 
-def test_robochart::timedstatement_constructor_exists():
-    assert callable(robochart::TimedStatement.__init__)
+def test_robochart_timedstatement_constructor_exists():
+    assert callable(robochart_TimedStatement.__init__)
 
 
-def test_robochart::timedstatement_constructor_args():
-    sig = inspect.signature(robochart::TimedStatement.__init__)
+def test_robochart_timedstatement_constructor_args():
+    sig = inspect.signature(robochart_TimedStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::clockreset_is_not_abstract():
-    assert not inspect.isabstract(robochart::ClockReset)
+def test_robochart_clockreset_is_not_abstract():
+    assert not inspect.isabstract(robochart_ClockReset)
 
 
-def test_robochart::clockreset_constructor_exists():
-    assert callable(robochart::ClockReset.__init__)
+def test_robochart_clockreset_constructor_exists():
+    assert callable(robochart_ClockReset.__init__)
 
 
-def test_robochart::clockreset_constructor_args():
-    sig = inspect.signature(robochart::ClockReset.__init__)
+def test_robochart_clockreset_constructor_args():
+    sig = inspect.signature(robochart_ClockReset.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::connectionnode_is_not_abstract():
-    assert not inspect.isabstract(robochart::ConnectionNode)
+def test_robochart_connectionnode_is_not_abstract():
+    assert not inspect.isabstract(robochart_ConnectionNode)
 
 
-def test_robochart::connectionnode_constructor_exists():
-    assert callable(robochart::ConnectionNode.__init__)
+def test_robochart_connectionnode_constructor_exists():
+    assert callable(robochart_ConnectionNode.__init__)
 
 
-def test_robochart::connectionnode_constructor_args():
-    sig = inspect.signature(robochart::ConnectionNode.__init__)
+def test_robochart_connectionnode_constructor_args():
+    sig = inspect.signature(robochart_ConnectionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::connection_is_not_abstract():
-    assert not inspect.isabstract(robochart::Connection)
+def test_robochart_connection_is_not_abstract():
+    assert not inspect.isabstract(robochart_Connection)
 
 
-def test_robochart::connection_constructor_exists():
-    assert callable(robochart::Connection.__init__)
+def test_robochart_connection_constructor_exists():
+    assert callable(robochart_Connection.__init__)
 
 
-def test_robochart::connection_constructor_args():
-    sig = inspect.signature(robochart::Connection.__init__)
+def test_robochart_connection_constructor_args():
+    sig = inspect.signature(robochart_Connection.__init__)
     params = list(sig.parameters.keys())
     assert "async_" in params, "Missing parameter 'async_'"
     assert "bidirec" in params, "Missing parameter 'bidirec'"
 
-def test_robochart::connection_has_async_():
-    assert hasattr(robochart::Connection, "async_")
+def test_robochart_connection_has_async_():
+    assert hasattr(robochart_Connection, "async_")
     descriptor = None
-    for klass in robochart::Connection.__mro__:
+    for klass in robochart_Connection.__mro__:
         if "async_" in klass.__dict__:
             descriptor = klass.__dict__["async_"]
             break
     assert isinstance(descriptor, property)
 
-def test_robochart::connection_has_bidirec():
-    assert hasattr(robochart::Connection, "bidirec")
+def test_robochart_connection_has_bidirec():
+    assert hasattr(robochart_Connection, "bidirec")
     descriptor = None
-    for klass in robochart::Connection.__mro__:
+    for klass in robochart_Connection.__mro__:
         if "bidirec" in klass.__dict__:
             descriptor = klass.__dict__["bidirec"]
             break
@@ -1380,16 +1296,16 @@ def test_controller_constructor_args():
 
 
 
-def test_robochart::controllerref_is_not_abstract():
-    assert not inspect.isabstract(robochart::ControllerRef)
+def test_robochart_controllerref_is_not_abstract():
+    assert not inspect.isabstract(robochart_ControllerRef)
 
 
-def test_robochart::controllerref_constructor_exists():
-    assert callable(robochart::ControllerRef.__init__)
+def test_robochart_controllerref_constructor_exists():
+    assert callable(robochart_ControllerRef.__init__)
 
 
-def test_robochart::controllerref_constructor_args():
-    sig = inspect.signature(robochart::ControllerRef.__init__)
+def test_robochart_controllerref_constructor_args():
+    sig = inspect.signature(robochart_ControllerRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1408,44 +1324,44 @@ def test_action_constructor_args():
 
 
 
-def test_robochart::exitaction_is_not_abstract():
-    assert not inspect.isabstract(robochart::ExitAction)
+def test_robochart_duringaction_is_not_abstract():
+    assert not inspect.isabstract(robochart_DuringAction)
 
 
-def test_robochart::exitaction_constructor_exists():
-    assert callable(robochart::ExitAction.__init__)
+def test_robochart_duringaction_constructor_exists():
+    assert callable(robochart_DuringAction.__init__)
 
 
-def test_robochart::exitaction_constructor_args():
-    sig = inspect.signature(robochart::ExitAction.__init__)
+def test_robochart_duringaction_constructor_args():
+    sig = inspect.signature(robochart_DuringAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::duringaction_is_not_abstract():
-    assert not inspect.isabstract(robochart::DuringAction)
+def test_robochart_exitaction_is_not_abstract():
+    assert not inspect.isabstract(robochart_ExitAction)
 
 
-def test_robochart::duringaction_constructor_exists():
-    assert callable(robochart::DuringAction.__init__)
+def test_robochart_exitaction_constructor_exists():
+    assert callable(robochart_ExitAction.__init__)
 
 
-def test_robochart::duringaction_constructor_args():
-    sig = inspect.signature(robochart::DuringAction.__init__)
+def test_robochart_exitaction_constructor_args():
+    sig = inspect.signature(robochart_ExitAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::entryaction_is_not_abstract():
-    assert not inspect.isabstract(robochart::EntryAction)
+def test_robochart_entryaction_is_not_abstract():
+    assert not inspect.isabstract(robochart_EntryAction)
 
 
-def test_robochart::entryaction_constructor_exists():
-    assert callable(robochart::EntryAction.__init__)
+def test_robochart_entryaction_constructor_exists():
+    assert callable(robochart_EntryAction.__init__)
 
 
-def test_robochart::entryaction_constructor_args():
-    sig = inspect.signature(robochart::EntryAction.__init__)
+def test_robochart_entryaction_constructor_args():
+    sig = inspect.signature(robochart_EntryAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1464,30 +1380,30 @@ def test_state_constructor_args():
 
 
 
-def test_robochart::final_is_not_abstract():
-    assert not inspect.isabstract(robochart::Final)
+def test_robochart_final_is_not_abstract():
+    assert not inspect.isabstract(robochart_Final)
 
 
-def test_robochart::final_constructor_exists():
-    assert callable(robochart::Final.__init__)
+def test_robochart_final_constructor_exists():
+    assert callable(robochart_Final.__init__)
 
 
-def test_robochart::final_constructor_args():
-    sig = inspect.signature(robochart::Final.__init__)
+def test_robochart_final_constructor_args():
+    sig = inspect.signature(robochart_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::action_is_not_abstract():
-    assert not inspect.isabstract(robochart::Action)
+def test_robochart_action_is_not_abstract():
+    assert not inspect.isabstract(robochart_Action)
 
 
-def test_robochart::action_constructor_exists():
-    assert callable(robochart::Action.__init__)
+def test_robochart_action_constructor_exists():
+    assert callable(robochart_Action.__init__)
 
 
-def test_robochart::action_constructor_args():
-    sig = inspect.signature(robochart::Action.__init__)
+def test_robochart_action_constructor_args():
+    sig = inspect.signature(robochart_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1506,16 +1422,16 @@ def test_junction_constructor_args():
 
 
 
-def test_robochart::initial_is_not_abstract():
-    assert not inspect.isabstract(robochart::Initial)
+def test_robochart_initial_is_not_abstract():
+    assert not inspect.isabstract(robochart_Initial)
 
 
-def test_robochart::initial_constructor_exists():
-    assert callable(robochart::Initial.__init__)
+def test_robochart_initial_constructor_exists():
+    assert callable(robochart_Initial.__init__)
 
 
-def test_robochart::initial_constructor_args():
-    sig = inspect.signature(robochart::Initial.__init__)
+def test_robochart_initial_constructor_args():
+    sig = inspect.signature(robochart_Initial.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1534,51 +1450,51 @@ def test_node_constructor_args():
 
 
 
-def test_robochart::junction_is_not_abstract():
-    assert not inspect.isabstract(robochart::Junction)
+def test_robochart_junction_is_not_abstract():
+    assert not inspect.isabstract(robochart_Junction)
 
 
-def test_robochart::junction_constructor_exists():
-    assert callable(robochart::Junction.__init__)
+def test_robochart_junction_constructor_exists():
+    assert callable(robochart_Junction.__init__)
 
 
-def test_robochart::junction_constructor_args():
-    sig = inspect.signature(robochart::Junction.__init__)
+def test_robochart_junction_constructor_args():
+    sig = inspect.signature(robochart_Junction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::statement_is_not_abstract():
-    assert not inspect.isabstract(robochart::Statement)
+def test_robochart_statement_is_not_abstract():
+    assert not inspect.isabstract(robochart_Statement)
 
 
-def test_robochart::statement_constructor_exists():
-    assert callable(robochart::Statement.__init__)
+def test_robochart_statement_constructor_exists():
+    assert callable(robochart_Statement.__init__)
 
 
-def test_robochart::statement_constructor_args():
-    sig = inspect.signature(robochart::Statement.__init__)
+def test_robochart_statement_constructor_args():
+    sig = inspect.signature(robochart_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::trigger_is_not_abstract():
-    assert not inspect.isabstract(robochart::Trigger)
+def test_robochart_trigger_is_not_abstract():
+    assert not inspect.isabstract(robochart_Trigger)
 
 
-def test_robochart::trigger_constructor_exists():
-    assert callable(robochart::Trigger.__init__)
+def test_robochart_trigger_constructor_exists():
+    assert callable(robochart_Trigger.__init__)
 
 
-def test_robochart::trigger_constructor_args():
-    sig = inspect.signature(robochart::Trigger.__init__)
+def test_robochart_trigger_constructor_args():
+    sig = inspect.signature(robochart_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "_type" in params, "Missing parameter '_type'"
 
-def test_robochart::trigger_has__type():
-    assert hasattr(robochart::Trigger, "_type")
+def test_robochart_trigger_has__type():
+    assert hasattr(robochart_Trigger, "_type")
     descriptor = None
-    for klass in robochart::Trigger.__mro__:
+    for klass in robochart_Trigger.__mro__:
         if "_type" in klass.__dict__:
             descriptor = klass.__dict__["_type"]
             break
@@ -1586,16 +1502,16 @@ def test_robochart::trigger_has__type():
 
 
 
-def test_robochart::probabilisticjunction_is_not_abstract():
-    assert not inspect.isabstract(robochart::ProbabilisticJunction)
+def test_robochart_probabilisticjunction_is_not_abstract():
+    assert not inspect.isabstract(robochart_ProbabilisticJunction)
 
 
-def test_robochart::probabilisticjunction_constructor_exists():
-    assert callable(robochart::ProbabilisticJunction.__init__)
+def test_robochart_probabilisticjunction_constructor_exists():
+    assert callable(robochart_ProbabilisticJunction.__init__)
 
 
-def test_robochart::probabilisticjunction_constructor_args():
-    sig = inspect.signature(robochart::ProbabilisticJunction.__init__)
+def test_robochart_probabilisticjunction_constructor_args():
+    sig = inspect.signature(robochart_ProbabilisticJunction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1628,16 +1544,16 @@ def test_context_constructor_args():
 
 
 
-def test_robochart::nodecontainer_is_not_abstract():
-    assert not inspect.isabstract(robochart::NodeContainer)
+def test_robochart_nodecontainer_is_not_abstract():
+    assert not inspect.isabstract(robochart_NodeContainer)
 
 
-def test_robochart::nodecontainer_constructor_exists():
-    assert callable(robochart::NodeContainer.__init__)
+def test_robochart_nodecontainer_constructor_exists():
+    assert callable(robochart_NodeContainer.__init__)
 
 
-def test_robochart::nodecontainer_constructor_args():
-    sig = inspect.signature(robochart::NodeContainer.__init__)
+def test_robochart_nodecontainer_constructor_args():
+    sig = inspect.signature(robochart_NodeContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1656,30 +1572,30 @@ def test_nodecontainer_constructor_args():
 
 
 
-def test_robochart::state_is_not_abstract():
-    assert not inspect.isabstract(robochart::State)
+def test_robochart_state_is_not_abstract():
+    assert not inspect.isabstract(robochart_State)
 
 
-def test_robochart::state_constructor_exists():
-    assert callable(robochart::State.__init__)
+def test_robochart_state_constructor_exists():
+    assert callable(robochart_State.__init__)
 
 
-def test_robochart::state_constructor_args():
-    sig = inspect.signature(robochart::State.__init__)
+def test_robochart_state_constructor_args():
+    sig = inspect.signature(robochart_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::statemachinebody_is_not_abstract():
-    assert not inspect.isabstract(robochart::StateMachineBody)
+def test_robochart_statemachinebody_is_not_abstract():
+    assert not inspect.isabstract(robochart_StateMachineBody)
 
 
-def test_robochart::statemachinebody_constructor_exists():
-    assert callable(robochart::StateMachineBody.__init__)
+def test_robochart_statemachinebody_constructor_exists():
+    assert callable(robochart_StateMachineBody.__init__)
 
 
-def test_robochart::statemachinebody_constructor_args():
-    sig = inspect.signature(robochart::StateMachineBody.__init__)
+def test_robochart_statemachinebody_constructor_args():
+    sig = inspect.signature(robochart_StateMachineBody.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1712,16 +1628,16 @@ def test_variable_constructor_args():
 
 
 
-def test_robochart::basiccontext_is_not_abstract():
-    assert not inspect.isabstract(robochart::BasicContext)
+def test_robochart_basiccontext_is_not_abstract():
+    assert not inspect.isabstract(robochart_BasicContext)
 
 
-def test_robochart::basiccontext_constructor_exists():
-    assert callable(robochart::BasicContext.__init__)
+def test_robochart_basiccontext_constructor_exists():
+    assert callable(robochart_BasicContext.__init__)
 
 
-def test_robochart::basiccontext_constructor_args():
-    sig = inspect.signature(robochart::BasicContext.__init__)
+def test_robochart_basiccontext_constructor_args():
+    sig = inspect.signature(robochart_BasicContext.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1740,16 +1656,16 @@ def test_basiccontext_constructor_args():
 
 
 
-def test_robochart::context_is_not_abstract():
-    assert not inspect.isabstract(robochart::Context)
+def test_robochart_context_is_not_abstract():
+    assert not inspect.isabstract(robochart_Context)
 
 
-def test_robochart::context_constructor_exists():
-    assert callable(robochart::Context.__init__)
+def test_robochart_context_constructor_exists():
+    assert callable(robochart_Context.__init__)
 
 
-def test_robochart::context_constructor_args():
-    sig = inspect.signature(robochart::Context.__init__)
+def test_robochart_context_constructor_args():
+    sig = inspect.signature(robochart_Context.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1768,44 +1684,44 @@ def test_reference_constructor_args():
 
 
 
-def test_robochart::statemachineref_is_not_abstract():
-    assert not inspect.isabstract(robochart::StateMachineRef)
+def test_robochart_roboticplatformref_is_not_abstract():
+    assert not inspect.isabstract(robochart_RoboticPlatformRef)
 
 
-def test_robochart::statemachineref_constructor_exists():
-    assert callable(robochart::StateMachineRef.__init__)
+def test_robochart_roboticplatformref_constructor_exists():
+    assert callable(robochart_RoboticPlatformRef.__init__)
 
 
-def test_robochart::statemachineref_constructor_args():
-    sig = inspect.signature(robochart::StateMachineRef.__init__)
+def test_robochart_roboticplatformref_constructor_args():
+    sig = inspect.signature(robochart_RoboticPlatformRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::roboticplatformref_is_not_abstract():
-    assert not inspect.isabstract(robochart::RoboticPlatformRef)
+def test_robochart_statemachineref_is_not_abstract():
+    assert not inspect.isabstract(robochart_StateMachineRef)
 
 
-def test_robochart::roboticplatformref_constructor_exists():
-    assert callable(robochart::RoboticPlatformRef.__init__)
+def test_robochart_statemachineref_constructor_exists():
+    assert callable(robochart_StateMachineRef.__init__)
 
 
-def test_robochart::roboticplatformref_constructor_args():
-    sig = inspect.signature(robochart::RoboticPlatformRef.__init__)
+def test_robochart_statemachineref_constructor_args():
+    sig = inspect.signature(robochart_StateMachineRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::reference_is_not_abstract():
-    assert not inspect.isabstract(robochart::Reference)
+def test_robochart_reference_is_not_abstract():
+    assert not inspect.isabstract(robochart_Reference)
 
 
-def test_robochart::reference_constructor_exists():
-    assert callable(robochart::Reference.__init__)
+def test_robochart_reference_constructor_exists():
+    assert callable(robochart_Reference.__init__)
 
 
-def test_robochart::reference_constructor_args():
-    sig = inspect.signature(robochart::Reference.__init__)
+def test_robochart_reference_constructor_args():
+    sig = inspect.signature(robochart_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1852,16 +1768,16 @@ def test_operation_constructor_args():
 
 
 
-def test_robochart::operationref_is_not_abstract():
-    assert not inspect.isabstract(robochart::OperationRef)
+def test_robochart_operationref_is_not_abstract():
+    assert not inspect.isabstract(robochart_OperationRef)
 
 
-def test_robochart::operationref_constructor_exists():
-    assert callable(robochart::OperationRef.__init__)
+def test_robochart_operationref_constructor_exists():
+    assert callable(robochart_OperationRef.__init__)
 
 
-def test_robochart::operationref_constructor_args():
-    sig = inspect.signature(robochart::OperationRef.__init__)
+def test_robochart_operationref_constructor_args():
+    sig = inspect.signature(robochart_OperationRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1880,23 +1796,23 @@ def test_connectionnode_constructor_args():
 
 
 
-def test_robochart::variablelist_is_not_abstract():
-    assert not inspect.isabstract(robochart::VariableList)
+def test_robochart_variablelist_is_not_abstract():
+    assert not inspect.isabstract(robochart_VariableList)
 
 
-def test_robochart::variablelist_constructor_exists():
-    assert callable(robochart::VariableList.__init__)
+def test_robochart_variablelist_constructor_exists():
+    assert callable(robochart_VariableList.__init__)
 
 
-def test_robochart::variablelist_constructor_args():
-    sig = inspect.signature(robochart::VariableList.__init__)
+def test_robochart_variablelist_constructor_args():
+    sig = inspect.signature(robochart_VariableList.__init__)
     params = list(sig.parameters.keys())
     assert "modifier" in params, "Missing parameter 'modifier'"
 
-def test_robochart::variablelist_has_modifier():
-    assert hasattr(robochart::VariableList, "modifier")
+def test_robochart_variablelist_has_modifier():
+    assert hasattr(robochart_VariableList, "modifier")
     descriptor = None
-    for klass in robochart::VariableList.__mro__:
+    for klass in robochart_VariableList.__mro__:
         if "modifier" in klass.__dict__:
             descriptor = klass.__dict__["modifier"]
             break
@@ -1918,16 +1834,100 @@ def test_settype_constructor_args():
 
 
 
-def test_robochart::seqtype_is_not_abstract():
-    assert not inspect.isabstract(robochart::SeqType)
+def test_robochart_seqtype_is_not_abstract():
+    assert not inspect.isabstract(robochart_SeqType)
 
 
-def test_robochart::seqtype_constructor_exists():
-    assert callable(robochart::SeqType.__init__)
+def test_robochart_seqtype_constructor_exists():
+    assert callable(robochart_SeqType.__init__)
 
 
-def test_robochart::seqtype_constructor_args():
-    sig = inspect.signature(robochart::SeqType.__init__)
+def test_robochart_seqtype_constructor_args():
+    sig = inspect.signature(robochart_SeqType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_waitingconditionref_is_not_abstract():
+    assert not inspect.isabstract(robochart_WaitingConditionRef)
+
+
+def test_robochart_waitingconditionref_constructor_exists():
+    assert callable(robochart_WaitingConditionRef.__init__)
+
+
+def test_robochart_waitingconditionref_constructor_args():
+    sig = inspect.signature(robochart_WaitingConditionRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_callexp_is_not_abstract():
+    assert not inspect.isabstract(robochart_CallExp)
+
+
+def test_robochart_callexp_constructor_exists():
+    assert callable(robochart_CallExp.__init__)
+
+
+def test_robochart_callexp_constructor_args():
+    sig = inspect.signature(robochart_CallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_assignable_is_not_abstract():
+    assert not inspect.isabstract(Assignable)
+
+
+def test_assignable_constructor_exists():
+    assert callable(Assignable.__init__)
+
+
+def test_assignable_constructor_args():
+    sig = inspect.signature(Assignable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_arrayassignable_is_not_abstract():
+    assert not inspect.isabstract(robochart_ArrayAssignable)
+
+
+def test_robochart_arrayassignable_constructor_exists():
+    assert callable(robochart_ArrayAssignable.__init__)
+
+
+def test_robochart_arrayassignable_constructor_args():
+    sig = inspect.signature(robochart_ArrayAssignable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_varselection_is_not_abstract():
+    assert not inspect.isabstract(robochart_VarSelection)
+
+
+def test_robochart_varselection_constructor_exists():
+    assert callable(robochart_VarSelection.__init__)
+
+
+def test_robochart_varselection_constructor_args():
+    sig = inspect.signature(robochart_VarSelection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_varref_is_not_abstract():
+    assert not inspect.isabstract(robochart_VarRef)
+
+
+def test_robochart_varref_constructor_exists():
+    assert callable(robochart_VarRef.__init__)
+
+
+def test_robochart_varref_constructor_args():
+    sig = inspect.signature(robochart_VarRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1946,44 +1946,44 @@ def test_relationtype_constructor_args():
 
 
 
-def test_robochart::functiontype_is_not_abstract():
-    assert not inspect.isabstract(robochart::FunctionType)
+def test_robochart_functiontype_is_not_abstract():
+    assert not inspect.isabstract(robochart_FunctionType)
 
 
-def test_robochart::functiontype_constructor_exists():
-    assert callable(robochart::FunctionType.__init__)
+def test_robochart_functiontype_constructor_exists():
+    assert callable(robochart_FunctionType.__init__)
 
 
-def test_robochart::functiontype_constructor_args():
-    sig = inspect.signature(robochart::FunctionType.__init__)
+def test_robochart_functiontype_constructor_args():
+    sig = inspect.signature(robochart_FunctionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::parameter_is_not_abstract():
-    assert not inspect.isabstract(robochart::Parameter)
+def test_robochart_parameter_is_not_abstract():
+    assert not inspect.isabstract(robochart_Parameter)
 
 
-def test_robochart::parameter_constructor_exists():
-    assert callable(robochart::Parameter.__init__)
+def test_robochart_parameter_constructor_exists():
+    assert callable(robochart_Parameter.__init__)
 
 
-def test_robochart::parameter_constructor_args():
-    sig = inspect.signature(robochart::Parameter.__init__)
+def test_robochart_parameter_constructor_args():
+    sig = inspect.signature(robochart_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::expression_is_not_abstract():
-    assert not inspect.isabstract(robochart::Expression)
+def test_robochart_expression_is_not_abstract():
+    assert not inspect.isabstract(robochart_Expression)
 
 
-def test_robochart::expression_constructor_exists():
-    assert callable(robochart::Expression.__init__)
+def test_robochart_expression_constructor_exists():
+    assert callable(robochart_Expression.__init__)
 
 
-def test_robochart::expression_constructor_args():
-    sig = inspect.signature(robochart::Expression.__init__)
+def test_robochart_expression_constructor_args():
+    sig = inspect.signature(robochart_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2002,30 +2002,30 @@ def test_typednamedelement_constructor_args():
 
 
 
-def test_robochart::member_is_not_abstract():
-    assert not inspect.isabstract(robochart::Member)
+def test_robochart_member_is_not_abstract():
+    assert not inspect.isabstract(robochart_Member)
 
 
-def test_robochart::member_constructor_exists():
-    assert callable(robochart::Member.__init__)
+def test_robochart_member_constructor_exists():
+    assert callable(robochart_Member.__init__)
 
 
-def test_robochart::member_constructor_args():
-    sig = inspect.signature(robochart::Member.__init__)
+def test_robochart_member_constructor_args():
+    sig = inspect.signature(robochart_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::type_is_not_abstract():
-    assert not inspect.isabstract(robochart::Type)
+def test_robochart_type_is_not_abstract():
+    assert not inspect.isabstract(robochart_Type)
 
 
-def test_robochart::type_constructor_exists():
-    assert callable(robochart::Type.__init__)
+def test_robochart_type_constructor_exists():
+    assert callable(robochart_Type.__init__)
 
 
-def test_robochart::type_constructor_args():
-    sig = inspect.signature(robochart::Type.__init__)
+def test_robochart_type_constructor_args():
+    sig = inspect.signature(robochart_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2058,23 +2058,23 @@ def test_member_constructor_args():
 
 
 
-def test_robochart::variable_is_not_abstract():
-    assert not inspect.isabstract(robochart::Variable)
+def test_robochart_variable_is_not_abstract():
+    assert not inspect.isabstract(robochart_Variable)
 
 
-def test_robochart::variable_constructor_exists():
-    assert callable(robochart::Variable.__init__)
+def test_robochart_variable_constructor_exists():
+    assert callable(robochart_Variable.__init__)
 
 
-def test_robochart::variable_constructor_args():
-    sig = inspect.signature(robochart::Variable.__init__)
+def test_robochart_variable_constructor_args():
+    sig = inspect.signature(robochart_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "modifier" in params, "Missing parameter 'modifier'"
 
-def test_robochart::variable_has_modifier():
-    assert hasattr(robochart::Variable, "modifier")
+def test_robochart_variable_has_modifier():
+    assert hasattr(robochart_Variable, "modifier")
     descriptor = None
-    for klass in robochart::Variable.__mro__:
+    for klass in robochart_Variable.__mro__:
         if "modifier" in klass.__dict__:
             descriptor = klass.__dict__["modifier"]
             break
@@ -2082,16 +2082,16 @@ def test_robochart::variable_has_modifier():
 
 
 
-def test_robochart::field_is_not_abstract():
-    assert not inspect.isabstract(robochart::Field)
+def test_robochart_field_is_not_abstract():
+    assert not inspect.isabstract(robochart_Field)
 
 
-def test_robochart::field_constructor_exists():
-    assert callable(robochart::Field.__init__)
+def test_robochart_field_constructor_exists():
+    assert callable(robochart_Field.__init__)
 
 
-def test_robochart::field_constructor_args():
-    sig = inspect.signature(robochart::Field.__init__)
+def test_robochart_field_constructor_args():
+    sig = inspect.signature(robochart_Field.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2110,89 +2110,37 @@ def test_type_constructor_args():
 
 
 
-def test_robochart::settype_is_not_abstract():
-    assert not inspect.isabstract(robochart::SetType)
+def test_robochart_settype_is_not_abstract():
+    assert not inspect.isabstract(robochart_SetType)
 
 
-def test_robochart::settype_constructor_exists():
-    assert callable(robochart::SetType.__init__)
+def test_robochart_settype_constructor_exists():
+    assert callable(robochart_SetType.__init__)
 
 
-def test_robochart::settype_constructor_args():
-    sig = inspect.signature(robochart::SetType.__init__)
+def test_robochart_settype_constructor_args():
+    sig = inspect.signature(robochart_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::typeref_is_not_abstract():
-    assert not inspect.isabstract(robochart::TypeRef)
+def test_robochart_anytype_is_not_abstract():
+    assert not inspect.isabstract(robochart_AnyType)
 
 
-def test_robochart::typeref_constructor_exists():
-    assert callable(robochart::TypeRef.__init__)
+def test_robochart_anytype_constructor_exists():
+    assert callable(robochart_AnyType.__init__)
 
 
-def test_robochart::typeref_constructor_args():
-    sig = inspect.signature(robochart::TypeRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::vectortype_is_not_abstract():
-    assert not inspect.isabstract(robochart::VectorType)
-
-
-def test_robochart::vectortype_constructor_exists():
-    assert callable(robochart::VectorType.__init__)
-
-
-def test_robochart::vectortype_constructor_args():
-    sig = inspect.signature(robochart::VectorType.__init__)
-    params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-
-def test_robochart::vectortype_has_size():
-    assert hasattr(robochart::VectorType, "size")
-    descriptor = None
-    for klass in robochart::VectorType.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robochart::relationtype_is_not_abstract():
-    assert not inspect.isabstract(robochart::RelationType)
-
-
-def test_robochart::relationtype_constructor_exists():
-    assert callable(robochart::RelationType.__init__)
-
-
-def test_robochart::relationtype_constructor_args():
-    sig = inspect.signature(robochart::RelationType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::anytype_is_not_abstract():
-    assert not inspect.isabstract(robochart::AnyType)
-
-
-def test_robochart::anytype_constructor_exists():
-    assert callable(robochart::AnyType.__init__)
-
-
-def test_robochart::anytype_constructor_args():
-    sig = inspect.signature(robochart::AnyType.__init__)
+def test_robochart_anytype_constructor_args():
+    sig = inspect.signature(robochart_AnyType.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_robochart::anytype_has_identifier():
-    assert hasattr(robochart::AnyType, "identifier")
+def test_robochart_anytype_has_identifier():
+    assert hasattr(robochart_AnyType, "identifier")
     descriptor = None
-    for klass in robochart::AnyType.__mro__:
+    for klass in robochart_AnyType.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -2200,33 +2148,85 @@ def test_robochart::anytype_has_identifier():
 
 
 
-def test_robochart::matrixtype_is_not_abstract():
-    assert not inspect.isabstract(robochart::MatrixType)
+def test_robochart_relationtype_is_not_abstract():
+    assert not inspect.isabstract(robochart_RelationType)
 
 
-def test_robochart::matrixtype_constructor_exists():
-    assert callable(robochart::MatrixType.__init__)
+def test_robochart_relationtype_constructor_exists():
+    assert callable(robochart_RelationType.__init__)
 
 
-def test_robochart::matrixtype_constructor_args():
-    sig = inspect.signature(robochart::MatrixType.__init__)
+def test_robochart_relationtype_constructor_args():
+    sig = inspect.signature(robochart_RelationType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_vectortype_is_not_abstract():
+    assert not inspect.isabstract(robochart_VectorType)
+
+
+def test_robochart_vectortype_constructor_exists():
+    assert callable(robochart_VectorType.__init__)
+
+
+def test_robochart_vectortype_constructor_args():
+    sig = inspect.signature(robochart_VectorType.__init__)
+    params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
+
+def test_robochart_vectortype_has_size():
+    assert hasattr(robochart_VectorType, "size")
+    descriptor = None
+    for klass in robochart_VectorType.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robochart_typeref_is_not_abstract():
+    assert not inspect.isabstract(robochart_TypeRef)
+
+
+def test_robochart_typeref_constructor_exists():
+    assert callable(robochart_TypeRef.__init__)
+
+
+def test_robochart_typeref_constructor_args():
+    sig = inspect.signature(robochart_TypeRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_matrixtype_is_not_abstract():
+    assert not inspect.isabstract(robochart_MatrixType)
+
+
+def test_robochart_matrixtype_constructor_exists():
+    assert callable(robochart_MatrixType.__init__)
+
+
+def test_robochart_matrixtype_constructor_args():
+    sig = inspect.signature(robochart_MatrixType.__init__)
     params = list(sig.parameters.keys())
     assert "columns" in params, "Missing parameter 'columns'"
     assert "rows" in params, "Missing parameter 'rows'"
 
-def test_robochart::matrixtype_has_columns():
-    assert hasattr(robochart::MatrixType, "columns")
+def test_robochart_matrixtype_has_columns():
+    assert hasattr(robochart_MatrixType, "columns")
     descriptor = None
-    for klass in robochart::MatrixType.__mro__:
+    for klass in robochart_MatrixType.__mro__:
         if "columns" in klass.__dict__:
             descriptor = klass.__dict__["columns"]
             break
     assert isinstance(descriptor, property)
 
-def test_robochart::matrixtype_has_rows():
-    assert hasattr(robochart::MatrixType, "rows")
+def test_robochart_matrixtype_has_rows():
+    assert hasattr(robochart_MatrixType, "rows")
     descriptor = None
-    for klass in robochart::MatrixType.__mro__:
+    for klass in robochart_MatrixType.__mro__:
         if "rows" in klass.__dict__:
             descriptor = klass.__dict__["rows"]
             break
@@ -2234,30 +2234,30 @@ def test_robochart::matrixtype_has_rows():
 
 
 
-def test_robochart::producttype_is_not_abstract():
-    assert not inspect.isabstract(robochart::ProductType)
+def test_robochart_producttype_is_not_abstract():
+    assert not inspect.isabstract(robochart_ProductType)
 
 
-def test_robochart::producttype_constructor_exists():
-    assert callable(robochart::ProductType.__init__)
+def test_robochart_producttype_constructor_exists():
+    assert callable(robochart_ProductType.__init__)
 
 
-def test_robochart::producttype_constructor_args():
-    sig = inspect.signature(robochart::ProductType.__init__)
+def test_robochart_producttype_constructor_args():
+    sig = inspect.signature(robochart_ProductType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::statemachinedef_is_not_abstract():
-    assert not inspect.isabstract(robochart::StateMachineDef)
+def test_robochart_statemachinedef_is_not_abstract():
+    assert not inspect.isabstract(robochart_StateMachineDef)
 
 
-def test_robochart::statemachinedef_constructor_exists():
-    assert callable(robochart::StateMachineDef.__init__)
+def test_robochart_statemachinedef_constructor_exists():
+    assert callable(robochart_StateMachineDef.__init__)
 
 
-def test_robochart::statemachinedef_constructor_args():
-    sig = inspect.signature(robochart::StateMachineDef.__init__)
+def test_robochart_statemachinedef_constructor_args():
+    sig = inspect.signature(robochart_StateMachineDef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2276,72 +2276,72 @@ def test_typedecl_constructor_args():
 
 
 
-def test_robochart::literal_is_not_abstract():
-    assert not inspect.isabstract(robochart::Literal)
+def test_robochart_enumeration_is_not_abstract():
+    assert not inspect.isabstract(robochart_Enumeration)
 
 
-def test_robochart::literal_constructor_exists():
-    assert callable(robochart::Literal.__init__)
+def test_robochart_enumeration_constructor_exists():
+    assert callable(robochart_Enumeration.__init__)
 
 
-def test_robochart::literal_constructor_args():
-    sig = inspect.signature(robochart::Literal.__init__)
+def test_robochart_enumeration_constructor_args():
+    sig = inspect.signature(robochart_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::enumeration_is_not_abstract():
-    assert not inspect.isabstract(robochart::Enumeration)
+def test_robochart_literal_is_not_abstract():
+    assert not inspect.isabstract(robochart_Literal)
 
 
-def test_robochart::enumeration_constructor_exists():
-    assert callable(robochart::Enumeration.__init__)
+def test_robochart_literal_constructor_exists():
+    assert callable(robochart_Literal.__init__)
 
 
-def test_robochart::enumeration_constructor_args():
-    sig = inspect.signature(robochart::Enumeration.__init__)
+def test_robochart_literal_constructor_args():
+    sig = inspect.signature(robochart_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::recordtype_is_not_abstract():
-    assert not inspect.isabstract(robochart::RecordType)
+def test_robochart_recordtype_is_not_abstract():
+    assert not inspect.isabstract(robochart_RecordType)
 
 
-def test_robochart::recordtype_constructor_exists():
-    assert callable(robochart::RecordType.__init__)
+def test_robochart_recordtype_constructor_exists():
+    assert callable(robochart_RecordType.__init__)
 
 
-def test_robochart::recordtype_constructor_args():
-    sig = inspect.signature(robochart::RecordType.__init__)
+def test_robochart_recordtype_constructor_args():
+    sig = inspect.signature(robochart_RecordType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::nametype_is_not_abstract():
-    assert not inspect.isabstract(robochart::NameType)
+def test_robochart_nametype_is_not_abstract():
+    assert not inspect.isabstract(robochart_NameType)
 
 
-def test_robochart::nametype_constructor_exists():
-    assert callable(robochart::NameType.__init__)
+def test_robochart_nametype_constructor_exists():
+    assert callable(robochart_NameType.__init__)
 
 
-def test_robochart::nametype_constructor_args():
-    sig = inspect.signature(robochart::NameType.__init__)
+def test_robochart_nametype_constructor_args():
+    sig = inspect.signature(robochart_NameType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(robochart::PrimitiveType)
+def test_robochart_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(robochart_PrimitiveType)
 
 
-def test_robochart::primitivetype_constructor_exists():
-    assert callable(robochart::PrimitiveType.__init__)
+def test_robochart_primitivetype_constructor_exists():
+    assert callable(robochart_PrimitiveType.__init__)
 
 
-def test_robochart::primitivetype_constructor_args():
-    sig = inspect.signature(robochart::PrimitiveType.__init__)
+def test_robochart_primitivetype_constructor_args():
+    sig = inspect.signature(robochart_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2360,79 +2360,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_robochart::roboticplatform_is_not_abstract():
-    assert not inspect.isabstract(robochart::RoboticPlatform)
+def test_robochart_event_is_not_abstract():
+    assert not inspect.isabstract(robochart_Event)
 
 
-def test_robochart::roboticplatform_constructor_exists():
-    assert callable(robochart::RoboticPlatform.__init__)
+def test_robochart_event_constructor_exists():
+    assert callable(robochart_Event.__init__)
 
 
-def test_robochart::roboticplatform_constructor_args():
-    sig = inspect.signature(robochart::RoboticPlatform.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::operation_is_not_abstract():
-    assert not inspect.isabstract(robochart::Operation)
-
-
-def test_robochart::operation_constructor_exists():
-    assert callable(robochart::Operation.__init__)
-
-
-def test_robochart::operation_constructor_args():
-    sig = inspect.signature(robochart::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::typednamedelement_is_not_abstract():
-    assert not inspect.isabstract(robochart::TypedNamedElement)
-
-
-def test_robochart::typednamedelement_constructor_exists():
-    assert callable(robochart::TypedNamedElement.__init__)
-
-
-def test_robochart::typednamedelement_constructor_args():
-    sig = inspect.signature(robochart::TypedNamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::transition_is_not_abstract():
-    assert not inspect.isabstract(robochart::Transition)
-
-
-def test_robochart::transition_constructor_exists():
-    assert callable(robochart::Transition.__init__)
-
-
-def test_robochart::transition_constructor_args():
-    sig = inspect.signature(robochart::Transition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::event_is_not_abstract():
-    assert not inspect.isabstract(robochart::Event)
-
-
-def test_robochart::event_constructor_exists():
-    assert callable(robochart::Event.__init__)
-
-
-def test_robochart::event_constructor_args():
-    sig = inspect.signature(robochart::Event.__init__)
+def test_robochart_event_constructor_args():
+    sig = inspect.signature(robochart_Event.__init__)
     params = list(sig.parameters.keys())
     assert "broadcast" in params, "Missing parameter 'broadcast'"
 
-def test_robochart::event_has_broadcast():
-    assert hasattr(robochart::Event, "broadcast")
+def test_robochart_event_has_broadcast():
+    assert hasattr(robochart_Event, "broadcast")
     descriptor = None
-    for klass in robochart::Event.__mro__:
+    for klass in robochart_Event.__mro__:
         if "broadcast" in klass.__dict__:
             descriptor = klass.__dict__["broadcast"]
             break
@@ -2440,93 +2384,51 @@ def test_robochart::event_has_broadcast():
 
 
 
-def test_robochart::waitingcondition_is_not_abstract():
-    assert not inspect.isabstract(robochart::WaitingCondition)
+def test_robochart_statemachine_is_not_abstract():
+    assert not inspect.isabstract(robochart_StateMachine)
 
 
-def test_robochart::waitingcondition_constructor_exists():
-    assert callable(robochart::WaitingCondition.__init__)
+def test_robochart_statemachine_constructor_exists():
+    assert callable(robochart_StateMachine.__init__)
 
 
-def test_robochart::waitingcondition_constructor_args():
-    sig = inspect.signature(robochart::WaitingCondition.__init__)
+def test_robochart_statemachine_constructor_args():
+    sig = inspect.signature(robochart_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::typedecl_is_not_abstract():
-    assert not inspect.isabstract(robochart::TypeDecl)
+def test_robochart_controller_is_not_abstract():
+    assert not inspect.isabstract(robochart_Controller)
 
 
-def test_robochart::typedecl_constructor_exists():
-    assert callable(robochart::TypeDecl.__init__)
+def test_robochart_controller_constructor_exists():
+    assert callable(robochart_Controller.__init__)
 
 
-def test_robochart::typedecl_constructor_args():
-    sig = inspect.signature(robochart::TypeDecl.__init__)
+def test_robochart_controller_constructor_args():
+    sig = inspect.signature(robochart_Controller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::declaration_is_not_abstract():
-    assert not inspect.isabstract(robochart::Declaration)
+def test_robochart_operationsig_is_not_abstract():
+    assert not inspect.isabstract(robochart_OperationSig)
 
 
-def test_robochart::declaration_constructor_exists():
-    assert callable(robochart::Declaration.__init__)
+def test_robochart_operationsig_constructor_exists():
+    assert callable(robochart_OperationSig.__init__)
 
 
-def test_robochart::declaration_constructor_args():
-    sig = inspect.signature(robochart::Declaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::clock_is_not_abstract():
-    assert not inspect.isabstract(robochart::Clock)
-
-
-def test_robochart::clock_constructor_exists():
-    assert callable(robochart::Clock.__init__)
-
-
-def test_robochart::clock_constructor_args():
-    sig = inspect.signature(robochart::Clock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::node_is_not_abstract():
-    assert not inspect.isabstract(robochart::Node)
-
-
-def test_robochart::node_constructor_exists():
-    assert callable(robochart::Node.__init__)
-
-
-def test_robochart::node_constructor_args():
-    sig = inspect.signature(robochart::Node.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robochart::operationsig_is_not_abstract():
-    assert not inspect.isabstract(robochart::OperationSig)
-
-
-def test_robochart::operationsig_constructor_exists():
-    assert callable(robochart::OperationSig.__init__)
-
-
-def test_robochart::operationsig_constructor_args():
-    sig = inspect.signature(robochart::OperationSig.__init__)
+def test_robochart_operationsig_constructor_args():
+    sig = inspect.signature(robochart_OperationSig.__init__)
     params = list(sig.parameters.keys())
     assert "terminates" in params, "Missing parameter 'terminates'"
 
-def test_robochart::operationsig_has_terminates():
-    assert hasattr(robochart::OperationSig, "terminates")
+def test_robochart_operationsig_has_terminates():
+    assert hasattr(robochart_OperationSig, "terminates")
     descriptor = None
-    for klass in robochart::OperationSig.__mro__:
+    for klass in robochart_OperationSig.__mro__:
         if "terminates" in klass.__dict__:
             descriptor = klass.__dict__["terminates"]
             break
@@ -2534,51 +2436,149 @@ def test_robochart::operationsig_has_terminates():
 
 
 
-def test_robochart::statemachine_is_not_abstract():
-    assert not inspect.isabstract(robochart::StateMachine)
+def test_robochart_operation_is_not_abstract():
+    assert not inspect.isabstract(robochart_Operation)
 
 
-def test_robochart::statemachine_constructor_exists():
-    assert callable(robochart::StateMachine.__init__)
+def test_robochart_operation_constructor_exists():
+    assert callable(robochart_Operation.__init__)
 
 
-def test_robochart::statemachine_constructor_args():
-    sig = inspect.signature(robochart::StateMachine.__init__)
+def test_robochart_operation_constructor_args():
+    sig = inspect.signature(robochart_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::controller_is_not_abstract():
-    assert not inspect.isabstract(robochart::Controller)
+def test_robochart_declaration_is_not_abstract():
+    assert not inspect.isabstract(robochart_Declaration)
 
 
-def test_robochart::controller_constructor_exists():
-    assert callable(robochart::Controller.__init__)
+def test_robochart_declaration_constructor_exists():
+    assert callable(robochart_Declaration.__init__)
 
 
-def test_robochart::controller_constructor_args():
-    sig = inspect.signature(robochart::Controller.__init__)
+def test_robochart_declaration_constructor_args():
+    sig = inspect.signature(robochart_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::namedelement_is_not_abstract():
-    assert not inspect.isabstract(robochart::NamedElement)
+def test_robochart_transition_is_not_abstract():
+    assert not inspect.isabstract(robochart_Transition)
 
 
-def test_robochart::namedelement_constructor_exists():
-    assert callable(robochart::NamedElement.__init__)
+def test_robochart_transition_constructor_exists():
+    assert callable(robochart_Transition.__init__)
 
 
-def test_robochart::namedelement_constructor_args():
-    sig = inspect.signature(robochart::NamedElement.__init__)
+def test_robochart_transition_constructor_args():
+    sig = inspect.signature(robochart_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_clock_is_not_abstract():
+    assert not inspect.isabstract(robochart_Clock)
+
+
+def test_robochart_clock_constructor_exists():
+    assert callable(robochart_Clock.__init__)
+
+
+def test_robochart_clock_constructor_args():
+    sig = inspect.signature(robochart_Clock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_waitingcondition_is_not_abstract():
+    assert not inspect.isabstract(robochart_WaitingCondition)
+
+
+def test_robochart_waitingcondition_constructor_exists():
+    assert callable(robochart_WaitingCondition.__init__)
+
+
+def test_robochart_waitingcondition_constructor_args():
+    sig = inspect.signature(robochart_WaitingCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_roboticplatform_is_not_abstract():
+    assert not inspect.isabstract(robochart_RoboticPlatform)
+
+
+def test_robochart_roboticplatform_constructor_exists():
+    assert callable(robochart_RoboticPlatform.__init__)
+
+
+def test_robochart_roboticplatform_constructor_args():
+    sig = inspect.signature(robochart_RoboticPlatform.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_node_is_not_abstract():
+    assert not inspect.isabstract(robochart_Node)
+
+
+def test_robochart_node_constructor_exists():
+    assert callable(robochart_Node.__init__)
+
+
+def test_robochart_node_constructor_args():
+    sig = inspect.signature(robochart_Node.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_typednamedelement_is_not_abstract():
+    assert not inspect.isabstract(robochart_TypedNamedElement)
+
+
+def test_robochart_typednamedelement_constructor_exists():
+    assert callable(robochart_TypedNamedElement.__init__)
+
+
+def test_robochart_typednamedelement_constructor_args():
+    sig = inspect.signature(robochart_TypedNamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_typedecl_is_not_abstract():
+    assert not inspect.isabstract(robochart_TypeDecl)
+
+
+def test_robochart_typedecl_constructor_exists():
+    assert callable(robochart_TypeDecl.__init__)
+
+
+def test_robochart_typedecl_constructor_args():
+    sig = inspect.signature(robochart_TypeDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robochart_namedelement_is_not_abstract():
+    assert not inspect.isabstract(robochart_NamedElement)
+
+
+def test_robochart_namedelement_constructor_exists():
+    assert callable(robochart_NamedElement.__init__)
+
+
+def test_robochart_namedelement_constructor_args():
+    sig = inspect.signature(robochart_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_robochart::namedelement_has_name():
-    assert hasattr(robochart::NamedElement, "name")
+def test_robochart_namedelement_has_name():
+    assert hasattr(robochart_NamedElement, "name")
     descriptor = None
-    for klass in robochart::NamedElement.__mro__:
+    for klass in robochart_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2586,86 +2586,86 @@ def test_robochart::namedelement_has_name():
 
 
 
-def test_robochart::function_is_not_abstract():
-    assert not inspect.isabstract(robochart::Function)
+def test_robochart_function_is_not_abstract():
+    assert not inspect.isabstract(robochart_Function)
 
 
-def test_robochart::function_constructor_exists():
-    assert callable(robochart::Function.__init__)
+def test_robochart_function_constructor_exists():
+    assert callable(robochart_Function.__init__)
 
 
-def test_robochart::function_constructor_args():
-    sig = inspect.signature(robochart::Function.__init__)
+def test_robochart_function_constructor_args():
+    sig = inspect.signature(robochart_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::operationdef_is_not_abstract():
-    assert not inspect.isabstract(robochart::OperationDef)
+def test_robochart_operationdef_is_not_abstract():
+    assert not inspect.isabstract(robochart_OperationDef)
 
 
-def test_robochart::operationdef_constructor_exists():
-    assert callable(robochart::OperationDef.__init__)
+def test_robochart_operationdef_constructor_exists():
+    assert callable(robochart_OperationDef.__init__)
 
 
-def test_robochart::operationdef_constructor_args():
-    sig = inspect.signature(robochart::OperationDef.__init__)
+def test_robochart_operationdef_constructor_args():
+    sig = inspect.signature(robochart_OperationDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::rcmodule_is_not_abstract():
-    assert not inspect.isabstract(robochart::RCModule)
+def test_robochart_rcmodule_is_not_abstract():
+    assert not inspect.isabstract(robochart_RCModule)
 
 
-def test_robochart::rcmodule_constructor_exists():
-    assert callable(robochart::RCModule.__init__)
+def test_robochart_rcmodule_constructor_exists():
+    assert callable(robochart_RCModule.__init__)
 
 
-def test_robochart::rcmodule_constructor_args():
-    sig = inspect.signature(robochart::RCModule.__init__)
+def test_robochart_rcmodule_constructor_args():
+    sig = inspect.signature(robochart_RCModule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::controllerdef_is_not_abstract():
-    assert not inspect.isabstract(robochart::ControllerDef)
+def test_robochart_controllerdef_is_not_abstract():
+    assert not inspect.isabstract(robochart_ControllerDef)
 
 
-def test_robochart::controllerdef_constructor_exists():
-    assert callable(robochart::ControllerDef.__init__)
+def test_robochart_controllerdef_constructor_exists():
+    assert callable(robochart_ControllerDef.__init__)
 
 
-def test_robochart::controllerdef_constructor_args():
-    sig = inspect.signature(robochart::ControllerDef.__init__)
+def test_robochart_controllerdef_constructor_args():
+    sig = inspect.signature(robochart_ControllerDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::roboticplatformdef_is_not_abstract():
-    assert not inspect.isabstract(robochart::RoboticPlatformDef)
+def test_robochart_roboticplatformdef_is_not_abstract():
+    assert not inspect.isabstract(robochart_RoboticPlatformDef)
 
 
-def test_robochart::roboticplatformdef_constructor_exists():
-    assert callable(robochart::RoboticPlatformDef.__init__)
+def test_robochart_roboticplatformdef_constructor_exists():
+    assert callable(robochart_RoboticPlatformDef.__init__)
 
 
-def test_robochart::roboticplatformdef_constructor_args():
-    sig = inspect.signature(robochart::RoboticPlatformDef.__init__)
+def test_robochart_roboticplatformdef_constructor_args():
+    sig = inspect.signature(robochart_RoboticPlatformDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::interface_is_not_abstract():
-    assert not inspect.isabstract(robochart::Interface)
+def test_robochart_interface_is_not_abstract():
+    assert not inspect.isabstract(robochart_Interface)
 
 
-def test_robochart::interface_constructor_exists():
-    assert callable(robochart::Interface.__init__)
+def test_robochart_interface_constructor_exists():
+    assert callable(robochart_Interface.__init__)
 
 
-def test_robochart::interface_constructor_args():
-    sig = inspect.signature(robochart::Interface.__init__)
+def test_robochart_interface_constructor_args():
+    sig = inspect.signature(robochart_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2684,37 +2684,37 @@ def test_basicpackage_constructor_args():
 
 
 
-def test_robochart::rcpackage_is_not_abstract():
-    assert not inspect.isabstract(robochart::RCPackage)
+def test_robochart_rcpackage_is_not_abstract():
+    assert not inspect.isabstract(robochart_RCPackage)
 
 
-def test_robochart::rcpackage_constructor_exists():
-    assert callable(robochart::RCPackage.__init__)
+def test_robochart_rcpackage_constructor_exists():
+    assert callable(robochart_RCPackage.__init__)
 
 
-def test_robochart::rcpackage_constructor_args():
-    sig = inspect.signature(robochart::RCPackage.__init__)
+def test_robochart_rcpackage_constructor_args():
+    sig = inspect.signature(robochart_RCPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robochart::import_is_not_abstract():
-    assert not inspect.isabstract(robochart::Import)
+def test_robochart_import_is_not_abstract():
+    assert not inspect.isabstract(robochart_Import)
 
 
-def test_robochart::import_constructor_exists():
-    assert callable(robochart::Import.__init__)
+def test_robochart_import_constructor_exists():
+    assert callable(robochart_Import.__init__)
 
 
-def test_robochart::import_constructor_args():
-    sig = inspect.signature(robochart::Import.__init__)
+def test_robochart_import_constructor_args():
+    sig = inspect.signature(robochart_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_robochart::import_has_importedNamespace():
-    assert hasattr(robochart::Import, "importedNamespace")
+def test_robochart_import_has_importedNamespace():
+    assert hasattr(robochart_Import, "importedNamespace")
     descriptor = None
-    for klass in robochart::Import.__mro__:
+    for klass in robochart_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -2722,23 +2722,23 @@ def test_robochart::import_has_importedNamespace():
 
 
 
-def test_robochart::basicpackage_is_not_abstract():
-    assert not inspect.isabstract(robochart::BasicPackage)
+def test_robochart_basicpackage_is_not_abstract():
+    assert not inspect.isabstract(robochart_BasicPackage)
 
 
-def test_robochart::basicpackage_constructor_exists():
-    assert callable(robochart::BasicPackage.__init__)
+def test_robochart_basicpackage_constructor_exists():
+    assert callable(robochart_BasicPackage.__init__)
 
 
-def test_robochart::basicpackage_constructor_args():
-    sig = inspect.signature(robochart::BasicPackage.__init__)
+def test_robochart_basicpackage_constructor_args():
+    sig = inspect.signature(robochart_BasicPackage.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_robochart::basicpackage_has_name():
-    assert hasattr(robochart::BasicPackage, "name")
+def test_robochart_basicpackage_has_name():
+    assert hasattr(robochart_BasicPackage, "name")
     descriptor = None
-    for klass in robochart::BasicPackage.__mro__:
+    for klass in robochart_BasicPackage.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2752,11 +2752,11 @@ def test_triggertype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TriggerType]
     expected_literals = [
+        "INPUT",
         "SIMPLE",
+        "OUTPUT",
         "EMPTY",
         "SYNC",
-        "OUTPUT",
-        "INPUT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2770,8 +2770,8 @@ def test_variablemodifier_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VariableModifier]
     expected_literals = [
-        "VAR",
         "CONST",
+        "VAR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2789,253 +2789,235 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Assignable_strategy = st.builds(
-    Assignable,
-)
-robochart::ArrayAssignable_strategy = st.builds(
-    robochart::ArrayAssignable,
-)
-robochart::VarRef_strategy = st.builds(
-    robochart::VarRef,
-)
-robochart::VarSelection_strategy = st.builds(
-    robochart::VarSelection,
-)
-robochart::NamedExpression_strategy = st.builds(
-    robochart::NamedExpression,
+robochart_NamedExpression_strategy = st.builds(
+    robochart_NamedExpression,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-robochart::Different_strategy = st.builds(
-    robochart::Different,
+robochart_Plus_strategy = st.builds(
+    robochart_Plus,
 )
-robochart::LessOrEqual_strategy = st.builds(
-    robochart::LessOrEqual,
+robochart_Different_strategy = st.builds(
+    robochart_Different,
 )
-robochart::GreaterOrEqual_strategy = st.builds(
-    robochart::GreaterOrEqual,
+robochart_Cat_strategy = st.builds(
+    robochart_Cat,
 )
-robochart::And_strategy = st.builds(
-    robochart::And,
+robochart_Mult_strategy = st.builds(
+    robochart_Mult,
 )
-robochart::Minus_strategy = st.builds(
-    robochart::Minus,
+robochart_LessThan_strategy = st.builds(
+    robochart_LessThan,
 )
-robochart::Mult_strategy = st.builds(
-    robochart::Mult,
+robochart_GreaterThan_strategy = st.builds(
+    robochart_GreaterThan,
 )
-robochart::GreaterThan_strategy = st.builds(
-    robochart::GreaterThan,
+robochart_Modulus_strategy = st.builds(
+    robochart_Modulus,
 )
-robochart::Or_strategy = st.builds(
-    robochart::Or,
+robochart_Implies_strategy = st.builds(
+    robochart_Implies,
 )
-robochart::Div_strategy = st.builds(
-    robochart::Div,
+robochart_LessOrEqual_strategy = st.builds(
+    robochart_LessOrEqual,
 )
-robochart::Cat_strategy = st.builds(
-    robochart::Cat,
+robochart_Div_strategy = st.builds(
+    robochart_Div,
 )
-robochart::Equals_strategy = st.builds(
-    robochart::Equals,
+robochart_Minus_strategy = st.builds(
+    robochart_Minus,
 )
-robochart::Implies_strategy = st.builds(
-    robochart::Implies,
+robochart_GreaterOrEqual_strategy = st.builds(
+    robochart_GreaterOrEqual,
 )
-robochart::Modulus_strategy = st.builds(
-    robochart::Modulus,
+robochart_Equals_strategy = st.builds(
+    robochart_Equals,
 )
-robochart::Plus_strategy = st.builds(
-    robochart::Plus,
+robochart_Or_strategy = st.builds(
+    robochart_Or,
 )
-robochart::LessThan_strategy = st.builds(
-    robochart::LessThan,
+robochart_And_strategy = st.builds(
+    robochart_And,
 )
-robochart::Iff_strategy = st.builds(
-    robochart::Iff,
+robochart_Iff_strategy = st.builds(
+    robochart_Iff,
 )
 LambdaExp_strategy = st.builds(
     LambdaExp,
 )
-robochart::DefiniteDescription_strategy = st.builds(
-    robochart::DefiniteDescription,
+robochart_DefiniteDescription_strategy = st.builds(
+    robochart_DefiniteDescription,
 )
 QuantifierExpression_strategy = st.builds(
     QuantifierExpression,
 )
-robochart::Exists_strategy = st.builds(
-    robochart::Exists,
+robochart_Exists_strategy = st.builds(
+    robochart_Exists,
     unique=
         st.booleans()
 )
-robochart::Forall_strategy = st.builds(
-    robochart::Forall,
+robochart_Forall_strategy = st.builds(
+    robochart_Forall,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-robochart::LetExpression_strategy = st.builds(
-    robochart::LetExpression,
+robochart_InExp_strategy = st.builds(
+    robochart_InExp,
 )
-robochart::RefExp_strategy = st.builds(
-    robochart::RefExp,
+robochart_IfExpression_strategy = st.builds(
+    robochart_IfExpression,
 )
-robochart::StringExp_strategy = st.builds(
-    robochart::StringExp,
+robochart_VarExp_strategy = st.builds(
+    robochart_VarExp,
+)
+robochart_TupleExp_strategy = st.builds(
+    robochart_TupleExp,
+)
+robochart_BooleanExp_strategy = st.builds(
+    robochart_BooleanExp,
     value=
         safe_text
 )
-robochart::IsExp_strategy = st.builds(
-    robochart::IsExp,
-)
-robochart::IdExp_strategy = st.builds(
-    robochart::IdExp,
-)
-robochart::IntegerExp_strategy = st.builds(
-    robochart::IntegerExp,
+robochart_IntegerExp_strategy = st.builds(
+    robochart_IntegerExp,
     value=
         st.integers()
 )
-robochart::Not_strategy = st.builds(
-    robochart::Not,
+robochart_LetExpression_strategy = st.builds(
+    robochart_LetExpression,
 )
-robochart::TupleExp_strategy = st.builds(
-    robochart::TupleExp,
+robochart_ToExp_strategy = st.builds(
+    robochart_ToExp,
 )
-robochart::SetExp_strategy = st.builds(
-    robochart::SetExp,
+robochart_IsExp_strategy = st.builds(
+    robochart_IsExp,
 )
-robochart::StateClockExp_strategy = st.builds(
-    robochart::StateClockExp,
+robochart_ArrayExp_strategy = st.builds(
+    robochart_ArrayExp,
 )
-robochart::IfExpression_strategy = st.builds(
-    robochart::IfExpression,
+robochart_LambdaExp_strategy = st.builds(
+    robochart_LambdaExp,
 )
-robochart::SetRange_strategy = st.builds(
-    robochart::SetRange,
+robochart_Not_strategy = st.builds(
+    robochart_Not,
 )
-robochart::EnumExp_strategy = st.builds(
-    robochart::EnumExp,
+robochart_TypeExp_strategy = st.builds(
+    robochart_TypeExp,
 )
-robochart::FromExp_strategy = st.builds(
-    robochart::FromExp,
+robochart_QuantifierExpression_strategy = st.builds(
+    robochart_QuantifierExpression,
 )
-robochart::ToExp_strategy = st.builds(
-    robochart::ToExp,
+robochart_ElseExp_strategy = st.builds(
+    robochart_ElseExp,
 )
-robochart::AsExp_strategy = st.builds(
-    robochart::AsExp,
+robochart_StateClockExp_strategy = st.builds(
+    robochart_StateClockExp,
 )
-robochart::FloatExp_strategy = st.builds(
-    robochart::FloatExp,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+robochart_SetExp_strategy = st.builds(
+    robochart_SetExp,
 )
-robochart::ParExp_strategy = st.builds(
-    robochart::ParExp,
+robochart_EnumExp_strategy = st.builds(
+    robochart_EnumExp,
 )
-robochart::Neg_strategy = st.builds(
-    robochart::Neg,
+robochart_SeqExp_strategy = st.builds(
+    robochart_SeqExp,
 )
-robochart::ArrayExp_strategy = st.builds(
-    robochart::ArrayExp,
+robochart_SetComp_strategy = st.builds(
+    robochart_SetComp,
 )
-robochart::CallExp_strategy = st.builds(
-    robochart::CallExp,
+robochart_IdExp_strategy = st.builds(
+    robochart_IdExp,
 )
-robochart::ElseExp_strategy = st.builds(
-    robochart::ElseExp,
+robochart_AsExp_strategy = st.builds(
+    robochart_AsExp,
 )
-robochart::LambdaExp_strategy = st.builds(
-    robochart::LambdaExp,
+robochart_BinaryExpression_strategy = st.builds(
+    robochart_BinaryExpression,
 )
-robochart::SetComp_strategy = st.builds(
-    robochart::SetComp,
+robochart_FromExp_strategy = st.builds(
+    robochart_FromExp,
 )
-robochart::QuantifierExpression_strategy = st.builds(
-    robochart::QuantifierExpression,
-)
-robochart::WaitingConditionRef_strategy = st.builds(
-    robochart::WaitingConditionRef,
-)
-robochart::ClockExp_strategy = st.builds(
-    robochart::ClockExp,
-)
-robochart::InExp_strategy = st.builds(
-    robochart::InExp,
-)
-robochart::BooleanExp_strategy = st.builds(
-    robochart::BooleanExp,
-    value=
-        safe_text
-)
-robochart::Selection_strategy = st.builds(
-    robochart::Selection,
-)
-robochart::BinaryExpression_strategy = st.builds(
-    robochart::BinaryExpression,
-)
-robochart::TypeExp_strategy = st.builds(
-    robochart::TypeExp,
-)
-robochart::SeqExp_strategy = st.builds(
-    robochart::SeqExp,
-)
-robochart::VarExp_strategy = st.builds(
-    robochart::VarExp,
-)
-robochart::RangeExp_strategy = st.builds(
-    robochart::RangeExp,
+robochart_RangeExp_strategy = st.builds(
+    robochart_RangeExp,
     linterval=
         safe_text,
     rinterval=
         safe_text
 )
-robochart::ResultExp_strategy = st.builds(
-    robochart::ResultExp,
+robochart_Neg_strategy = st.builds(
+    robochart_Neg,
 )
-robochart::Assignable_strategy = st.builds(
-    robochart::Assignable,
+robochart_StringExp_strategy = st.builds(
+    robochart_StringExp,
+    value=
+        safe_text
+)
+robochart_FloatExp_strategy = st.builds(
+    robochart_FloatExp,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+robochart_RefExp_strategy = st.builds(
+    robochart_RefExp,
+)
+robochart_SetRange_strategy = st.builds(
+    robochart_SetRange,
+)
+robochart_ParExp_strategy = st.builds(
+    robochart_ParExp,
+)
+robochart_ClockExp_strategy = st.builds(
+    robochart_ClockExp,
+)
+robochart_Selection_strategy = st.builds(
+    robochart_Selection,
+)
+robochart_ResultExp_strategy = st.builds(
+    robochart_ResultExp,
+)
+robochart_Assignable_strategy = st.builds(
+    robochart_Assignable,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-robochart::SendEvent_strategy = st.builds(
-    robochart::SendEvent,
+robochart_Skip_strategy = st.builds(
+    robochart_Skip,
 )
-robochart::IfStmt_strategy = st.builds(
-    robochart::IfStmt,
+robochart_Assignment_strategy = st.builds(
+    robochart_Assignment,
 )
-robochart::Wait_strategy = st.builds(
-    robochart::Wait,
+robochart_SendEvent_strategy = st.builds(
+    robochart_SendEvent,
 )
-robochart::ParStmt_strategy = st.builds(
-    robochart::ParStmt,
+robochart_Wait_strategy = st.builds(
+    robochart_Wait,
 )
-robochart::Assignment_strategy = st.builds(
-    robochart::Assignment,
+robochart_Call_strategy = st.builds(
+    robochart_Call,
 )
-robochart::Skip_strategy = st.builds(
-    robochart::Skip,
+robochart_ParStmt_strategy = st.builds(
+    robochart_ParStmt,
 )
-robochart::Call_strategy = st.builds(
-    robochart::Call,
+robochart_IfStmt_strategy = st.builds(
+    robochart_IfStmt,
 )
-robochart::SeqStatement_strategy = st.builds(
-    robochart::SeqStatement,
+robochart_SeqStatement_strategy = st.builds(
+    robochart_SeqStatement,
 )
-robochart::TimedStatement_strategy = st.builds(
-    robochart::TimedStatement,
+robochart_TimedStatement_strategy = st.builds(
+    robochart_TimedStatement,
 )
-robochart::ClockReset_strategy = st.builds(
-    robochart::ClockReset,
+robochart_ClockReset_strategy = st.builds(
+    robochart_ClockReset,
 )
-robochart::ConnectionNode_strategy = st.builds(
-    robochart::ConnectionNode,
+robochart_ConnectionNode_strategy = st.builds(
+    robochart_ConnectionNode,
 )
-robochart::Connection_strategy = st.builds(
-    robochart::Connection,
+robochart_Connection_strategy = st.builds(
+    robochart_Connection,
     async_=
         st.booleans(),
     bidirec=
@@ -3044,52 +3026,52 @@ robochart::Connection_strategy = st.builds(
 Controller_strategy = st.builds(
     Controller,
 )
-robochart::ControllerRef_strategy = st.builds(
-    robochart::ControllerRef,
+robochart_ControllerRef_strategy = st.builds(
+    robochart_ControllerRef,
 )
 Action_strategy = st.builds(
     Action,
 )
-robochart::ExitAction_strategy = st.builds(
-    robochart::ExitAction,
+robochart_DuringAction_strategy = st.builds(
+    robochart_DuringAction,
 )
-robochart::DuringAction_strategy = st.builds(
-    robochart::DuringAction,
+robochart_ExitAction_strategy = st.builds(
+    robochart_ExitAction,
 )
-robochart::EntryAction_strategy = st.builds(
-    robochart::EntryAction,
+robochart_EntryAction_strategy = st.builds(
+    robochart_EntryAction,
 )
 State_strategy = st.builds(
     State,
 )
-robochart::Final_strategy = st.builds(
-    robochart::Final,
+robochart_Final_strategy = st.builds(
+    robochart_Final,
 )
-robochart::Action_strategy = st.builds(
-    robochart::Action,
+robochart_Action_strategy = st.builds(
+    robochart_Action,
 )
 Junction_strategy = st.builds(
     Junction,
 )
-robochart::Initial_strategy = st.builds(
-    robochart::Initial,
+robochart_Initial_strategy = st.builds(
+    robochart_Initial,
 )
 Node_strategy = st.builds(
     Node,
 )
-robochart::Junction_strategy = st.builds(
-    robochart::Junction,
+robochart_Junction_strategy = st.builds(
+    robochart_Junction,
 )
-robochart::Statement_strategy = st.builds(
-    robochart::Statement,
+robochart_Statement_strategy = st.builds(
+    robochart_Statement,
 )
-robochart::Trigger_strategy = st.builds(
-    robochart::Trigger,
+robochart_Trigger_strategy = st.builds(
+    robochart_Trigger,
     _type=
         safe_text
 )
-robochart::ProbabilisticJunction_strategy = st.builds(
-    robochart::ProbabilisticJunction,
+robochart_ProbabilisticJunction_strategy = st.builds(
+    robochart_ProbabilisticJunction,
 )
 RoboticPlatform_strategy = st.builds(
     RoboticPlatform,
@@ -3097,17 +3079,17 @@ RoboticPlatform_strategy = st.builds(
 Context_strategy = st.builds(
     Context,
 )
-robochart::NodeContainer_strategy = st.builds(
-    robochart::NodeContainer,
+robochart_NodeContainer_strategy = st.builds(
+    robochart_NodeContainer,
 )
 NodeContainer_strategy = st.builds(
     NodeContainer,
 )
-robochart::State_strategy = st.builds(
-    robochart::State,
+robochart_State_strategy = st.builds(
+    robochart_State,
 )
-robochart::StateMachineBody_strategy = st.builds(
-    robochart::StateMachineBody,
+robochart_StateMachineBody_strategy = st.builds(
+    robochart_StateMachineBody,
 )
 StateMachine_strategy = st.builds(
     StateMachine,
@@ -3115,26 +3097,26 @@ StateMachine_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-robochart::BasicContext_strategy = st.builds(
-    robochart::BasicContext,
+robochart_BasicContext_strategy = st.builds(
+    robochart_BasicContext,
 )
 BasicContext_strategy = st.builds(
     BasicContext,
 )
-robochart::Context_strategy = st.builds(
-    robochart::Context,
+robochart_Context_strategy = st.builds(
+    robochart_Context,
 )
 Reference_strategy = st.builds(
     Reference,
 )
-robochart::StateMachineRef_strategy = st.builds(
-    robochart::StateMachineRef,
+robochart_RoboticPlatformRef_strategy = st.builds(
+    robochart_RoboticPlatformRef,
 )
-robochart::RoboticPlatformRef_strategy = st.builds(
-    robochart::RoboticPlatformRef,
+robochart_StateMachineRef_strategy = st.builds(
+    robochart_StateMachineRef,
 )
-robochart::Reference_strategy = st.builds(
-    robochart::Reference,
+robochart_Reference_strategy = st.builds(
+    robochart_Reference,
 )
 StateMachineBody_strategy = st.builds(
     StateMachineBody,
@@ -3145,43 +3127,61 @@ OperationSig_strategy = st.builds(
 Operation_strategy = st.builds(
     Operation,
 )
-robochart::OperationRef_strategy = st.builds(
-    robochart::OperationRef,
+robochart_OperationRef_strategy = st.builds(
+    robochart_OperationRef,
 )
 ConnectionNode_strategy = st.builds(
     ConnectionNode,
 )
-robochart::VariableList_strategy = st.builds(
-    robochart::VariableList,
+robochart_VariableList_strategy = st.builds(
+    robochart_VariableList,
     modifier=
         safe_text
 )
 SetType_strategy = st.builds(
     SetType,
 )
-robochart::SeqType_strategy = st.builds(
-    robochart::SeqType,
+robochart_SeqType_strategy = st.builds(
+    robochart_SeqType,
+)
+robochart_WaitingConditionRef_strategy = st.builds(
+    robochart_WaitingConditionRef,
+)
+robochart_CallExp_strategy = st.builds(
+    robochart_CallExp,
+)
+Assignable_strategy = st.builds(
+    Assignable,
+)
+robochart_ArrayAssignable_strategy = st.builds(
+    robochart_ArrayAssignable,
+)
+robochart_VarSelection_strategy = st.builds(
+    robochart_VarSelection,
+)
+robochart_VarRef_strategy = st.builds(
+    robochart_VarRef,
 )
 RelationType_strategy = st.builds(
     RelationType,
 )
-robochart::FunctionType_strategy = st.builds(
-    robochart::FunctionType,
+robochart_FunctionType_strategy = st.builds(
+    robochart_FunctionType,
 )
-robochart::Parameter_strategy = st.builds(
-    robochart::Parameter,
+robochart_Parameter_strategy = st.builds(
+    robochart_Parameter,
 )
-robochart::Expression_strategy = st.builds(
-    robochart::Expression,
+robochart_Expression_strategy = st.builds(
+    robochart_Expression,
 )
 TypedNamedElement_strategy = st.builds(
     TypedNamedElement,
 )
-robochart::Member_strategy = st.builds(
-    robochart::Member,
+robochart_Member_strategy = st.builds(
+    robochart_Member,
 )
-robochart::Type_strategy = st.builds(
-    robochart::Type,
+robochart_Type_strategy = st.builds(
+    robochart_Type,
 )
 NamedExpression_strategy = st.builds(
     NamedExpression,
@@ -3189,638 +3189,581 @@ NamedExpression_strategy = st.builds(
 Member_strategy = st.builds(
     Member,
 )
-robochart::Variable_strategy = st.builds(
-    robochart::Variable,
+robochart_Variable_strategy = st.builds(
+    robochart_Variable,
     modifier=
         safe_text
 )
-robochart::Field_strategy = st.builds(
-    robochart::Field,
+robochart_Field_strategy = st.builds(
+    robochart_Field,
 )
 Type_strategy = st.builds(
     Type,
 )
-robochart::SetType_strategy = st.builds(
-    robochart::SetType,
+robochart_SetType_strategy = st.builds(
+    robochart_SetType,
 )
-robochart::TypeRef_strategy = st.builds(
-    robochart::TypeRef,
-)
-robochart::VectorType_strategy = st.builds(
-    robochart::VectorType,
-    size=
-        st.integers()
-)
-robochart::RelationType_strategy = st.builds(
-    robochart::RelationType,
-)
-robochart::AnyType_strategy = st.builds(
-    robochart::AnyType,
+robochart_AnyType_strategy = st.builds(
+    robochart_AnyType,
     identifier=
         safe_text
 )
-robochart::MatrixType_strategy = st.builds(
-    robochart::MatrixType,
+robochart_RelationType_strategy = st.builds(
+    robochart_RelationType,
+)
+robochart_VectorType_strategy = st.builds(
+    robochart_VectorType,
+    size=
+        st.integers()
+)
+robochart_TypeRef_strategy = st.builds(
+    robochart_TypeRef,
+)
+robochart_MatrixType_strategy = st.builds(
+    robochart_MatrixType,
     columns=
         st.integers(),
     rows=
         st.integers()
 )
-robochart::ProductType_strategy = st.builds(
-    robochart::ProductType,
+robochart_ProductType_strategy = st.builds(
+    robochart_ProductType,
 )
-robochart::StateMachineDef_strategy = st.builds(
-    robochart::StateMachineDef,
+robochart_StateMachineDef_strategy = st.builds(
+    robochart_StateMachineDef,
 )
 TypeDecl_strategy = st.builds(
     TypeDecl,
 )
-robochart::Literal_strategy = st.builds(
-    robochart::Literal,
+robochart_Enumeration_strategy = st.builds(
+    robochart_Enumeration,
 )
-robochart::Enumeration_strategy = st.builds(
-    robochart::Enumeration,
+robochart_Literal_strategy = st.builds(
+    robochart_Literal,
 )
-robochart::RecordType_strategy = st.builds(
-    robochart::RecordType,
+robochart_RecordType_strategy = st.builds(
+    robochart_RecordType,
 )
-robochart::NameType_strategy = st.builds(
-    robochart::NameType,
+robochart_NameType_strategy = st.builds(
+    robochart_NameType,
 )
-robochart::PrimitiveType_strategy = st.builds(
-    robochart::PrimitiveType,
+robochart_PrimitiveType_strategy = st.builds(
+    robochart_PrimitiveType,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-robochart::RoboticPlatform_strategy = st.builds(
-    robochart::RoboticPlatform,
-)
-robochart::Operation_strategy = st.builds(
-    robochart::Operation,
-)
-robochart::TypedNamedElement_strategy = st.builds(
-    robochart::TypedNamedElement,
-)
-robochart::Transition_strategy = st.builds(
-    robochart::Transition,
-)
-robochart::Event_strategy = st.builds(
-    robochart::Event,
+robochart_Event_strategy = st.builds(
+    robochart_Event,
     broadcast=
         st.booleans()
 )
-robochart::WaitingCondition_strategy = st.builds(
-    robochart::WaitingCondition,
+robochart_StateMachine_strategy = st.builds(
+    robochart_StateMachine,
 )
-robochart::TypeDecl_strategy = st.builds(
-    robochart::TypeDecl,
+robochart_Controller_strategy = st.builds(
+    robochart_Controller,
 )
-robochart::Declaration_strategy = st.builds(
-    robochart::Declaration,
-)
-robochart::Clock_strategy = st.builds(
-    robochart::Clock,
-)
-robochart::Node_strategy = st.builds(
-    robochart::Node,
-)
-robochart::OperationSig_strategy = st.builds(
-    robochart::OperationSig,
+robochart_OperationSig_strategy = st.builds(
+    robochart_OperationSig,
     terminates=
         st.booleans()
 )
-robochart::StateMachine_strategy = st.builds(
-    robochart::StateMachine,
+robochart_Operation_strategy = st.builds(
+    robochart_Operation,
 )
-robochart::Controller_strategy = st.builds(
-    robochart::Controller,
+robochart_Declaration_strategy = st.builds(
+    robochart_Declaration,
 )
-robochart::NamedElement_strategy = st.builds(
-    robochart::NamedElement,
+robochart_Transition_strategy = st.builds(
+    robochart_Transition,
+)
+robochart_Clock_strategy = st.builds(
+    robochart_Clock,
+)
+robochart_WaitingCondition_strategy = st.builds(
+    robochart_WaitingCondition,
+)
+robochart_RoboticPlatform_strategy = st.builds(
+    robochart_RoboticPlatform,
+)
+robochart_Node_strategy = st.builds(
+    robochart_Node,
+)
+robochart_TypedNamedElement_strategy = st.builds(
+    robochart_TypedNamedElement,
+)
+robochart_TypeDecl_strategy = st.builds(
+    robochart_TypeDecl,
+)
+robochart_NamedElement_strategy = st.builds(
+    robochart_NamedElement,
     name=
         safe_text
 )
-robochart::Function_strategy = st.builds(
-    robochart::Function,
+robochart_Function_strategy = st.builds(
+    robochart_Function,
 )
-robochart::OperationDef_strategy = st.builds(
-    robochart::OperationDef,
+robochart_OperationDef_strategy = st.builds(
+    robochart_OperationDef,
 )
-robochart::RCModule_strategy = st.builds(
-    robochart::RCModule,
+robochart_RCModule_strategy = st.builds(
+    robochart_RCModule,
 )
-robochart::ControllerDef_strategy = st.builds(
-    robochart::ControllerDef,
+robochart_ControllerDef_strategy = st.builds(
+    robochart_ControllerDef,
 )
-robochart::RoboticPlatformDef_strategy = st.builds(
-    robochart::RoboticPlatformDef,
+robochart_RoboticPlatformDef_strategy = st.builds(
+    robochart_RoboticPlatformDef,
 )
-robochart::Interface_strategy = st.builds(
-    robochart::Interface,
+robochart_Interface_strategy = st.builds(
+    robochart_Interface,
 )
 BasicPackage_strategy = st.builds(
     BasicPackage,
 )
-robochart::RCPackage_strategy = st.builds(
-    robochart::RCPackage,
+robochart_RCPackage_strategy = st.builds(
+    robochart_RCPackage,
 )
-robochart::Import_strategy = st.builds(
-    robochart::Import,
+robochart_Import_strategy = st.builds(
+    robochart_Import,
     importedNamespace=
         safe_text
 )
-robochart::BasicPackage_strategy = st.builds(
-    robochart::BasicPackage,
+robochart_BasicPackage_strategy = st.builds(
+    robochart_BasicPackage,
     name=
         safe_text
 )
 
-@given(instance=Assignable_strategy)
+@given(instance=robochart_NamedExpression_strategy)
 @settings(max_examples=50)
-def test_assignable_instantiation(instance):
-    assert isinstance(instance, Assignable)
-
-@given(instance=robochart::ArrayAssignable_strategy)
-@settings(max_examples=50)
-def test_robochart::arrayassignable_instantiation(instance):
-    assert isinstance(instance, robochart::ArrayAssignable)
-
-@given(instance=robochart::VarRef_strategy)
-@settings(max_examples=50)
-def test_robochart::varref_instantiation(instance):
-    assert isinstance(instance, robochart::VarRef)
-
-@given(instance=robochart::VarSelection_strategy)
-@settings(max_examples=50)
-def test_robochart::varselection_instantiation(instance):
-    assert isinstance(instance, robochart::VarSelection)
-
-@given(instance=robochart::NamedExpression_strategy)
-@settings(max_examples=50)
-def test_robochart::namedexpression_instantiation(instance):
-    assert isinstance(instance, robochart::NamedExpression)
+def test_robochart_namedexpression_instantiation(instance):
+    assert isinstance(instance, robochart_NamedExpression)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=robochart::Different_strategy)
+@given(instance=robochart_Plus_strategy)
 @settings(max_examples=50)
-def test_robochart::different_instantiation(instance):
-    assert isinstance(instance, robochart::Different)
+def test_robochart_plus_instantiation(instance):
+    assert isinstance(instance, robochart_Plus)
 
-@given(instance=robochart::LessOrEqual_strategy)
+@given(instance=robochart_Different_strategy)
 @settings(max_examples=50)
-def test_robochart::lessorequal_instantiation(instance):
-    assert isinstance(instance, robochart::LessOrEqual)
+def test_robochart_different_instantiation(instance):
+    assert isinstance(instance, robochart_Different)
 
-@given(instance=robochart::GreaterOrEqual_strategy)
+@given(instance=robochart_Cat_strategy)
 @settings(max_examples=50)
-def test_robochart::greaterorequal_instantiation(instance):
-    assert isinstance(instance, robochart::GreaterOrEqual)
+def test_robochart_cat_instantiation(instance):
+    assert isinstance(instance, robochart_Cat)
 
-@given(instance=robochart::And_strategy)
+@given(instance=robochart_Mult_strategy)
 @settings(max_examples=50)
-def test_robochart::and_instantiation(instance):
-    assert isinstance(instance, robochart::And)
+def test_robochart_mult_instantiation(instance):
+    assert isinstance(instance, robochart_Mult)
 
-@given(instance=robochart::Minus_strategy)
+@given(instance=robochart_LessThan_strategy)
 @settings(max_examples=50)
-def test_robochart::minus_instantiation(instance):
-    assert isinstance(instance, robochart::Minus)
+def test_robochart_lessthan_instantiation(instance):
+    assert isinstance(instance, robochart_LessThan)
 
-@given(instance=robochart::Mult_strategy)
+@given(instance=robochart_GreaterThan_strategy)
 @settings(max_examples=50)
-def test_robochart::mult_instantiation(instance):
-    assert isinstance(instance, robochart::Mult)
+def test_robochart_greaterthan_instantiation(instance):
+    assert isinstance(instance, robochart_GreaterThan)
 
-@given(instance=robochart::GreaterThan_strategy)
+@given(instance=robochart_Modulus_strategy)
 @settings(max_examples=50)
-def test_robochart::greaterthan_instantiation(instance):
-    assert isinstance(instance, robochart::GreaterThan)
+def test_robochart_modulus_instantiation(instance):
+    assert isinstance(instance, robochart_Modulus)
 
-@given(instance=robochart::Or_strategy)
+@given(instance=robochart_Implies_strategy)
 @settings(max_examples=50)
-def test_robochart::or_instantiation(instance):
-    assert isinstance(instance, robochart::Or)
+def test_robochart_implies_instantiation(instance):
+    assert isinstance(instance, robochart_Implies)
 
-@given(instance=robochart::Div_strategy)
+@given(instance=robochart_LessOrEqual_strategy)
 @settings(max_examples=50)
-def test_robochart::div_instantiation(instance):
-    assert isinstance(instance, robochart::Div)
+def test_robochart_lessorequal_instantiation(instance):
+    assert isinstance(instance, robochart_LessOrEqual)
 
-@given(instance=robochart::Cat_strategy)
+@given(instance=robochart_Div_strategy)
 @settings(max_examples=50)
-def test_robochart::cat_instantiation(instance):
-    assert isinstance(instance, robochart::Cat)
+def test_robochart_div_instantiation(instance):
+    assert isinstance(instance, robochart_Div)
 
-@given(instance=robochart::Equals_strategy)
+@given(instance=robochart_Minus_strategy)
 @settings(max_examples=50)
-def test_robochart::equals_instantiation(instance):
-    assert isinstance(instance, robochart::Equals)
+def test_robochart_minus_instantiation(instance):
+    assert isinstance(instance, robochart_Minus)
 
-@given(instance=robochart::Implies_strategy)
+@given(instance=robochart_GreaterOrEqual_strategy)
 @settings(max_examples=50)
-def test_robochart::implies_instantiation(instance):
-    assert isinstance(instance, robochart::Implies)
+def test_robochart_greaterorequal_instantiation(instance):
+    assert isinstance(instance, robochart_GreaterOrEqual)
 
-@given(instance=robochart::Modulus_strategy)
+@given(instance=robochart_Equals_strategy)
 @settings(max_examples=50)
-def test_robochart::modulus_instantiation(instance):
-    assert isinstance(instance, robochart::Modulus)
+def test_robochart_equals_instantiation(instance):
+    assert isinstance(instance, robochart_Equals)
 
-@given(instance=robochart::Plus_strategy)
+@given(instance=robochart_Or_strategy)
 @settings(max_examples=50)
-def test_robochart::plus_instantiation(instance):
-    assert isinstance(instance, robochart::Plus)
+def test_robochart_or_instantiation(instance):
+    assert isinstance(instance, robochart_Or)
 
-@given(instance=robochart::LessThan_strategy)
+@given(instance=robochart_And_strategy)
 @settings(max_examples=50)
-def test_robochart::lessthan_instantiation(instance):
-    assert isinstance(instance, robochart::LessThan)
+def test_robochart_and_instantiation(instance):
+    assert isinstance(instance, robochart_And)
 
-@given(instance=robochart::Iff_strategy)
+@given(instance=robochart_Iff_strategy)
 @settings(max_examples=50)
-def test_robochart::iff_instantiation(instance):
-    assert isinstance(instance, robochart::Iff)
+def test_robochart_iff_instantiation(instance):
+    assert isinstance(instance, robochart_Iff)
 
 @given(instance=LambdaExp_strategy)
 @settings(max_examples=50)
 def test_lambdaexp_instantiation(instance):
     assert isinstance(instance, LambdaExp)
 
-@given(instance=robochart::DefiniteDescription_strategy)
+@given(instance=robochart_DefiniteDescription_strategy)
 @settings(max_examples=50)
-def test_robochart::definitedescription_instantiation(instance):
-    assert isinstance(instance, robochart::DefiniteDescription)
+def test_robochart_definitedescription_instantiation(instance):
+    assert isinstance(instance, robochart_DefiniteDescription)
 
 @given(instance=QuantifierExpression_strategy)
 @settings(max_examples=50)
 def test_quantifierexpression_instantiation(instance):
     assert isinstance(instance, QuantifierExpression)
 
-@given(instance=robochart::Exists_strategy)
+@given(instance=robochart_Exists_strategy)
 @settings(max_examples=50)
-def test_robochart::exists_instantiation(instance):
-    assert isinstance(instance, robochart::Exists)
-
-@given(instance=robochart::Exists_strategy)
-def test_robochart::exists_unique_type(instance):
-    assert isinstance(instance.unique, bool)
+def test_robochart_exists_instantiation(instance):
+    assert isinstance(instance, robochart_Exists)
 
 
-@given(instance=robochart::Exists_strategy)
-def test_robochart::exists_unique_setter(instance):
+
+@given(instance=robochart_Exists_strategy)
+def test_robochart_exists_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
 
-@given(instance=robochart::Forall_strategy)
+@given(instance=robochart_Forall_strategy)
 @settings(max_examples=50)
-def test_robochart::forall_instantiation(instance):
-    assert isinstance(instance, robochart::Forall)
+def test_robochart_forall_instantiation(instance):
+    assert isinstance(instance, robochart_Forall)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=robochart::LetExpression_strategy)
+@given(instance=robochart_InExp_strategy)
 @settings(max_examples=50)
-def test_robochart::letexpression_instantiation(instance):
-    assert isinstance(instance, robochart::LetExpression)
+def test_robochart_inexp_instantiation(instance):
+    assert isinstance(instance, robochart_InExp)
 
-@given(instance=robochart::RefExp_strategy)
+@given(instance=robochart_IfExpression_strategy)
 @settings(max_examples=50)
-def test_robochart::refexp_instantiation(instance):
-    assert isinstance(instance, robochart::RefExp)
+def test_robochart_ifexpression_instantiation(instance):
+    assert isinstance(instance, robochart_IfExpression)
 
-@given(instance=robochart::StringExp_strategy)
+@given(instance=robochart_VarExp_strategy)
 @settings(max_examples=50)
-def test_robochart::stringexp_instantiation(instance):
-    assert isinstance(instance, robochart::StringExp)
+def test_robochart_varexp_instantiation(instance):
+    assert isinstance(instance, robochart_VarExp)
 
-@given(instance=robochart::StringExp_strategy)
-def test_robochart::stringexp_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=robochart_TupleExp_strategy)
+@settings(max_examples=50)
+def test_robochart_tupleexp_instantiation(instance):
+    assert isinstance(instance, robochart_TupleExp)
+
+@given(instance=robochart_BooleanExp_strategy)
+@settings(max_examples=50)
+def test_robochart_booleanexp_instantiation(instance):
+    assert isinstance(instance, robochart_BooleanExp)
 
 
-@given(instance=robochart::StringExp_strategy)
-def test_robochart::stringexp_value_setter(instance):
+
+@given(instance=robochart_BooleanExp_strategy)
+def test_robochart_booleanexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=robochart::IsExp_strategy)
+@given(instance=robochart_IntegerExp_strategy)
 @settings(max_examples=50)
-def test_robochart::isexp_instantiation(instance):
-    assert isinstance(instance, robochart::IsExp)
-
-@given(instance=robochart::IdExp_strategy)
-@settings(max_examples=50)
-def test_robochart::idexp_instantiation(instance):
-    assert isinstance(instance, robochart::IdExp)
-
-@given(instance=robochart::IntegerExp_strategy)
-@settings(max_examples=50)
-def test_robochart::integerexp_instantiation(instance):
-    assert isinstance(instance, robochart::IntegerExp)
-
-@given(instance=robochart::IntegerExp_strategy)
-def test_robochart::integerexp_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_robochart_integerexp_instantiation(instance):
+    assert isinstance(instance, robochart_IntegerExp)
 
 
-@given(instance=robochart::IntegerExp_strategy)
-def test_robochart::integerexp_value_setter(instance):
+
+@given(instance=robochart_IntegerExp_strategy)
+def test_robochart_integerexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=robochart::Not_strategy)
+@given(instance=robochart_LetExpression_strategy)
 @settings(max_examples=50)
-def test_robochart::not_instantiation(instance):
-    assert isinstance(instance, robochart::Not)
+def test_robochart_letexpression_instantiation(instance):
+    assert isinstance(instance, robochart_LetExpression)
 
-@given(instance=robochart::TupleExp_strategy)
+@given(instance=robochart_ToExp_strategy)
 @settings(max_examples=50)
-def test_robochart::tupleexp_instantiation(instance):
-    assert isinstance(instance, robochart::TupleExp)
+def test_robochart_toexp_instantiation(instance):
+    assert isinstance(instance, robochart_ToExp)
 
-@given(instance=robochart::SetExp_strategy)
+@given(instance=robochart_IsExp_strategy)
 @settings(max_examples=50)
-def test_robochart::setexp_instantiation(instance):
-    assert isinstance(instance, robochart::SetExp)
+def test_robochart_isexp_instantiation(instance):
+    assert isinstance(instance, robochart_IsExp)
 
-@given(instance=robochart::StateClockExp_strategy)
+@given(instance=robochart_ArrayExp_strategy)
 @settings(max_examples=50)
-def test_robochart::stateclockexp_instantiation(instance):
-    assert isinstance(instance, robochart::StateClockExp)
+def test_robochart_arrayexp_instantiation(instance):
+    assert isinstance(instance, robochart_ArrayExp)
 
-@given(instance=robochart::IfExpression_strategy)
+@given(instance=robochart_LambdaExp_strategy)
 @settings(max_examples=50)
-def test_robochart::ifexpression_instantiation(instance):
-    assert isinstance(instance, robochart::IfExpression)
+def test_robochart_lambdaexp_instantiation(instance):
+    assert isinstance(instance, robochart_LambdaExp)
 
-@given(instance=robochart::SetRange_strategy)
+@given(instance=robochart_Not_strategy)
 @settings(max_examples=50)
-def test_robochart::setrange_instantiation(instance):
-    assert isinstance(instance, robochart::SetRange)
+def test_robochart_not_instantiation(instance):
+    assert isinstance(instance, robochart_Not)
 
-@given(instance=robochart::EnumExp_strategy)
+@given(instance=robochart_TypeExp_strategy)
 @settings(max_examples=50)
-def test_robochart::enumexp_instantiation(instance):
-    assert isinstance(instance, robochart::EnumExp)
+def test_robochart_typeexp_instantiation(instance):
+    assert isinstance(instance, robochart_TypeExp)
 
-@given(instance=robochart::FromExp_strategy)
+@given(instance=robochart_QuantifierExpression_strategy)
 @settings(max_examples=50)
-def test_robochart::fromexp_instantiation(instance):
-    assert isinstance(instance, robochart::FromExp)
+def test_robochart_quantifierexpression_instantiation(instance):
+    assert isinstance(instance, robochart_QuantifierExpression)
 
-@given(instance=robochart::ToExp_strategy)
+@given(instance=robochart_ElseExp_strategy)
 @settings(max_examples=50)
-def test_robochart::toexp_instantiation(instance):
-    assert isinstance(instance, robochart::ToExp)
+def test_robochart_elseexp_instantiation(instance):
+    assert isinstance(instance, robochart_ElseExp)
 
-@given(instance=robochart::AsExp_strategy)
+@given(instance=robochart_StateClockExp_strategy)
 @settings(max_examples=50)
-def test_robochart::asexp_instantiation(instance):
-    assert isinstance(instance, robochart::AsExp)
+def test_robochart_stateclockexp_instantiation(instance):
+    assert isinstance(instance, robochart_StateClockExp)
 
-@given(instance=robochart::FloatExp_strategy)
+@given(instance=robochart_SetExp_strategy)
 @settings(max_examples=50)
-def test_robochart::floatexp_instantiation(instance):
-    assert isinstance(instance, robochart::FloatExp)
+def test_robochart_setexp_instantiation(instance):
+    assert isinstance(instance, robochart_SetExp)
 
-@given(instance=robochart::FloatExp_strategy)
-def test_robochart::floatexp_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=robochart::FloatExp_strategy)
-def test_robochart::floatexp_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=robochart::ParExp_strategy)
+@given(instance=robochart_EnumExp_strategy)
 @settings(max_examples=50)
-def test_robochart::parexp_instantiation(instance):
-    assert isinstance(instance, robochart::ParExp)
+def test_robochart_enumexp_instantiation(instance):
+    assert isinstance(instance, robochart_EnumExp)
 
-@given(instance=robochart::Neg_strategy)
+@given(instance=robochart_SeqExp_strategy)
 @settings(max_examples=50)
-def test_robochart::neg_instantiation(instance):
-    assert isinstance(instance, robochart::Neg)
+def test_robochart_seqexp_instantiation(instance):
+    assert isinstance(instance, robochart_SeqExp)
 
-@given(instance=robochart::ArrayExp_strategy)
+@given(instance=robochart_SetComp_strategy)
 @settings(max_examples=50)
-def test_robochart::arrayexp_instantiation(instance):
-    assert isinstance(instance, robochart::ArrayExp)
+def test_robochart_setcomp_instantiation(instance):
+    assert isinstance(instance, robochart_SetComp)
 
-@given(instance=robochart::CallExp_strategy)
+@given(instance=robochart_IdExp_strategy)
 @settings(max_examples=50)
-def test_robochart::callexp_instantiation(instance):
-    assert isinstance(instance, robochart::CallExp)
+def test_robochart_idexp_instantiation(instance):
+    assert isinstance(instance, robochart_IdExp)
 
-@given(instance=robochart::ElseExp_strategy)
+@given(instance=robochart_AsExp_strategy)
 @settings(max_examples=50)
-def test_robochart::elseexp_instantiation(instance):
-    assert isinstance(instance, robochart::ElseExp)
+def test_robochart_asexp_instantiation(instance):
+    assert isinstance(instance, robochart_AsExp)
 
-@given(instance=robochart::LambdaExp_strategy)
+@given(instance=robochart_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_robochart::lambdaexp_instantiation(instance):
-    assert isinstance(instance, robochart::LambdaExp)
+def test_robochart_binaryexpression_instantiation(instance):
+    assert isinstance(instance, robochart_BinaryExpression)
 
-@given(instance=robochart::SetComp_strategy)
+@given(instance=robochart_FromExp_strategy)
 @settings(max_examples=50)
-def test_robochart::setcomp_instantiation(instance):
-    assert isinstance(instance, robochart::SetComp)
+def test_robochart_fromexp_instantiation(instance):
+    assert isinstance(instance, robochart_FromExp)
 
-@given(instance=robochart::QuantifierExpression_strategy)
+@given(instance=robochart_RangeExp_strategy)
 @settings(max_examples=50)
-def test_robochart::quantifierexpression_instantiation(instance):
-    assert isinstance(instance, robochart::QuantifierExpression)
-
-@given(instance=robochart::WaitingConditionRef_strategy)
-@settings(max_examples=50)
-def test_robochart::waitingconditionref_instantiation(instance):
-    assert isinstance(instance, robochart::WaitingConditionRef)
-
-@given(instance=robochart::ClockExp_strategy)
-@settings(max_examples=50)
-def test_robochart::clockexp_instantiation(instance):
-    assert isinstance(instance, robochart::ClockExp)
-
-@given(instance=robochart::InExp_strategy)
-@settings(max_examples=50)
-def test_robochart::inexp_instantiation(instance):
-    assert isinstance(instance, robochart::InExp)
-
-@given(instance=robochart::BooleanExp_strategy)
-@settings(max_examples=50)
-def test_robochart::booleanexp_instantiation(instance):
-    assert isinstance(instance, robochart::BooleanExp)
-
-@given(instance=robochart::BooleanExp_strategy)
-def test_robochart::booleanexp_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_robochart_rangeexp_instantiation(instance):
+    assert isinstance(instance, robochart_RangeExp)
 
 
-@given(instance=robochart::BooleanExp_strategy)
-def test_robochart::booleanexp_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=robochart::Selection_strategy)
-@settings(max_examples=50)
-def test_robochart::selection_instantiation(instance):
-    assert isinstance(instance, robochart::Selection)
-
-@given(instance=robochart::BinaryExpression_strategy)
-@settings(max_examples=50)
-def test_robochart::binaryexpression_instantiation(instance):
-    assert isinstance(instance, robochart::BinaryExpression)
-
-@given(instance=robochart::TypeExp_strategy)
-@settings(max_examples=50)
-def test_robochart::typeexp_instantiation(instance):
-    assert isinstance(instance, robochart::TypeExp)
-
-@given(instance=robochart::SeqExp_strategy)
-@settings(max_examples=50)
-def test_robochart::seqexp_instantiation(instance):
-    assert isinstance(instance, robochart::SeqExp)
-
-@given(instance=robochart::VarExp_strategy)
-@settings(max_examples=50)
-def test_robochart::varexp_instantiation(instance):
-    assert isinstance(instance, robochart::VarExp)
-
-@given(instance=robochart::RangeExp_strategy)
-@settings(max_examples=50)
-def test_robochart::rangeexp_instantiation(instance):
-    assert isinstance(instance, robochart::RangeExp)
-
-@given(instance=robochart::RangeExp_strategy)
-def test_robochart::rangeexp_linterval_type(instance):
-    assert isinstance(instance.linterval, str)
-
-
-@given(instance=robochart::RangeExp_strategy)
-def test_robochart::rangeexp_linterval_setter(instance):
+@given(instance=robochart_RangeExp_strategy)
+def test_robochart_rangeexp_linterval_setter(instance):
     original = instance.linterval
     instance.linterval = original
     assert instance.linterval == original
 
-@given(instance=robochart::RangeExp_strategy)
-def test_robochart::rangeexp_rinterval_type(instance):
-    assert isinstance(instance.rinterval, str)
 
 
-@given(instance=robochart::RangeExp_strategy)
-def test_robochart::rangeexp_rinterval_setter(instance):
+@given(instance=robochart_RangeExp_strategy)
+def test_robochart_rangeexp_rinterval_setter(instance):
     original = instance.rinterval
     instance.rinterval = original
     assert instance.rinterval == original
 
-@given(instance=robochart::ResultExp_strategy)
+@given(instance=robochart_Neg_strategy)
 @settings(max_examples=50)
-def test_robochart::resultexp_instantiation(instance):
-    assert isinstance(instance, robochart::ResultExp)
+def test_robochart_neg_instantiation(instance):
+    assert isinstance(instance, robochart_Neg)
 
-@given(instance=robochart::Assignable_strategy)
+@given(instance=robochart_StringExp_strategy)
 @settings(max_examples=50)
-def test_robochart::assignable_instantiation(instance):
-    assert isinstance(instance, robochart::Assignable)
+def test_robochart_stringexp_instantiation(instance):
+    assert isinstance(instance, robochart_StringExp)
+
+
+
+@given(instance=robochart_StringExp_strategy)
+def test_robochart_stringexp_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=robochart_FloatExp_strategy)
+@settings(max_examples=50)
+def test_robochart_floatexp_instantiation(instance):
+    assert isinstance(instance, robochart_FloatExp)
+
+
+
+@given(instance=robochart_FloatExp_strategy)
+def test_robochart_floatexp_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=robochart_RefExp_strategy)
+@settings(max_examples=50)
+def test_robochart_refexp_instantiation(instance):
+    assert isinstance(instance, robochart_RefExp)
+
+@given(instance=robochart_SetRange_strategy)
+@settings(max_examples=50)
+def test_robochart_setrange_instantiation(instance):
+    assert isinstance(instance, robochart_SetRange)
+
+@given(instance=robochart_ParExp_strategy)
+@settings(max_examples=50)
+def test_robochart_parexp_instantiation(instance):
+    assert isinstance(instance, robochart_ParExp)
+
+@given(instance=robochart_ClockExp_strategy)
+@settings(max_examples=50)
+def test_robochart_clockexp_instantiation(instance):
+    assert isinstance(instance, robochart_ClockExp)
+
+@given(instance=robochart_Selection_strategy)
+@settings(max_examples=50)
+def test_robochart_selection_instantiation(instance):
+    assert isinstance(instance, robochart_Selection)
+
+@given(instance=robochart_ResultExp_strategy)
+@settings(max_examples=50)
+def test_robochart_resultexp_instantiation(instance):
+    assert isinstance(instance, robochart_ResultExp)
+
+@given(instance=robochart_Assignable_strategy)
+@settings(max_examples=50)
+def test_robochart_assignable_instantiation(instance):
+    assert isinstance(instance, robochart_Assignable)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=robochart::SendEvent_strategy)
+@given(instance=robochart_Skip_strategy)
 @settings(max_examples=50)
-def test_robochart::sendevent_instantiation(instance):
-    assert isinstance(instance, robochart::SendEvent)
+def test_robochart_skip_instantiation(instance):
+    assert isinstance(instance, robochart_Skip)
 
-@given(instance=robochart::IfStmt_strategy)
+@given(instance=robochart_Assignment_strategy)
 @settings(max_examples=50)
-def test_robochart::ifstmt_instantiation(instance):
-    assert isinstance(instance, robochart::IfStmt)
+def test_robochart_assignment_instantiation(instance):
+    assert isinstance(instance, robochart_Assignment)
 
-@given(instance=robochart::Wait_strategy)
+@given(instance=robochart_SendEvent_strategy)
 @settings(max_examples=50)
-def test_robochart::wait_instantiation(instance):
-    assert isinstance(instance, robochart::Wait)
+def test_robochart_sendevent_instantiation(instance):
+    assert isinstance(instance, robochart_SendEvent)
 
-@given(instance=robochart::ParStmt_strategy)
+@given(instance=robochart_Wait_strategy)
 @settings(max_examples=50)
-def test_robochart::parstmt_instantiation(instance):
-    assert isinstance(instance, robochart::ParStmt)
+def test_robochart_wait_instantiation(instance):
+    assert isinstance(instance, robochart_Wait)
 
-@given(instance=robochart::Assignment_strategy)
+@given(instance=robochart_Call_strategy)
 @settings(max_examples=50)
-def test_robochart::assignment_instantiation(instance):
-    assert isinstance(instance, robochart::Assignment)
+def test_robochart_call_instantiation(instance):
+    assert isinstance(instance, robochart_Call)
 
-@given(instance=robochart::Skip_strategy)
+@given(instance=robochart_ParStmt_strategy)
 @settings(max_examples=50)
-def test_robochart::skip_instantiation(instance):
-    assert isinstance(instance, robochart::Skip)
+def test_robochart_parstmt_instantiation(instance):
+    assert isinstance(instance, robochart_ParStmt)
 
-@given(instance=robochart::Call_strategy)
+@given(instance=robochart_IfStmt_strategy)
 @settings(max_examples=50)
-def test_robochart::call_instantiation(instance):
-    assert isinstance(instance, robochart::Call)
+def test_robochart_ifstmt_instantiation(instance):
+    assert isinstance(instance, robochart_IfStmt)
 
-@given(instance=robochart::SeqStatement_strategy)
+@given(instance=robochart_SeqStatement_strategy)
 @settings(max_examples=50)
-def test_robochart::seqstatement_instantiation(instance):
-    assert isinstance(instance, robochart::SeqStatement)
+def test_robochart_seqstatement_instantiation(instance):
+    assert isinstance(instance, robochart_SeqStatement)
 
-@given(instance=robochart::TimedStatement_strategy)
+@given(instance=robochart_TimedStatement_strategy)
 @settings(max_examples=50)
-def test_robochart::timedstatement_instantiation(instance):
-    assert isinstance(instance, robochart::TimedStatement)
+def test_robochart_timedstatement_instantiation(instance):
+    assert isinstance(instance, robochart_TimedStatement)
 
-@given(instance=robochart::ClockReset_strategy)
+@given(instance=robochart_ClockReset_strategy)
 @settings(max_examples=50)
-def test_robochart::clockreset_instantiation(instance):
-    assert isinstance(instance, robochart::ClockReset)
+def test_robochart_clockreset_instantiation(instance):
+    assert isinstance(instance, robochart_ClockReset)
 
-@given(instance=robochart::ConnectionNode_strategy)
+@given(instance=robochart_ConnectionNode_strategy)
 @settings(max_examples=50)
-def test_robochart::connectionnode_instantiation(instance):
-    assert isinstance(instance, robochart::ConnectionNode)
+def test_robochart_connectionnode_instantiation(instance):
+    assert isinstance(instance, robochart_ConnectionNode)
 
-@given(instance=robochart::Connection_strategy)
+@given(instance=robochart_Connection_strategy)
 @settings(max_examples=50)
-def test_robochart::connection_instantiation(instance):
-    assert isinstance(instance, robochart::Connection)
-
-@given(instance=robochart::Connection_strategy)
-def test_robochart::connection_async__type(instance):
-    assert isinstance(instance.async_, bool)
+def test_robochart_connection_instantiation(instance):
+    assert isinstance(instance, robochart_Connection)
 
 
-@given(instance=robochart::Connection_strategy)
-def test_robochart::connection_async__setter(instance):
+
+@given(instance=robochart_Connection_strategy)
+def test_robochart_connection_async__setter(instance):
     original = instance.async_
     instance.async_ = original
     assert instance.async_ == original
 
-@given(instance=robochart::Connection_strategy)
-def test_robochart::connection_bidirec_type(instance):
-    assert isinstance(instance.bidirec, bool)
 
 
-@given(instance=robochart::Connection_strategy)
-def test_robochart::connection_bidirec_setter(instance):
+@given(instance=robochart_Connection_strategy)
+def test_robochart_connection_bidirec_setter(instance):
     original = instance.bidirec
     instance.bidirec = original
     assert instance.bidirec == original
@@ -3830,91 +3773,88 @@ def test_robochart::connection_bidirec_setter(instance):
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=robochart::ControllerRef_strategy)
+@given(instance=robochart_ControllerRef_strategy)
 @settings(max_examples=50)
-def test_robochart::controllerref_instantiation(instance):
-    assert isinstance(instance, robochart::ControllerRef)
+def test_robochart_controllerref_instantiation(instance):
+    assert isinstance(instance, robochart_ControllerRef)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=robochart::ExitAction_strategy)
+@given(instance=robochart_DuringAction_strategy)
 @settings(max_examples=50)
-def test_robochart::exitaction_instantiation(instance):
-    assert isinstance(instance, robochart::ExitAction)
+def test_robochart_duringaction_instantiation(instance):
+    assert isinstance(instance, robochart_DuringAction)
 
-@given(instance=robochart::DuringAction_strategy)
+@given(instance=robochart_ExitAction_strategy)
 @settings(max_examples=50)
-def test_robochart::duringaction_instantiation(instance):
-    assert isinstance(instance, robochart::DuringAction)
+def test_robochart_exitaction_instantiation(instance):
+    assert isinstance(instance, robochart_ExitAction)
 
-@given(instance=robochart::EntryAction_strategy)
+@given(instance=robochart_EntryAction_strategy)
 @settings(max_examples=50)
-def test_robochart::entryaction_instantiation(instance):
-    assert isinstance(instance, robochart::EntryAction)
+def test_robochart_entryaction_instantiation(instance):
+    assert isinstance(instance, robochart_EntryAction)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=robochart::Final_strategy)
+@given(instance=robochart_Final_strategy)
 @settings(max_examples=50)
-def test_robochart::final_instantiation(instance):
-    assert isinstance(instance, robochart::Final)
+def test_robochart_final_instantiation(instance):
+    assert isinstance(instance, robochart_Final)
 
-@given(instance=robochart::Action_strategy)
+@given(instance=robochart_Action_strategy)
 @settings(max_examples=50)
-def test_robochart::action_instantiation(instance):
-    assert isinstance(instance, robochart::Action)
+def test_robochart_action_instantiation(instance):
+    assert isinstance(instance, robochart_Action)
 
 @given(instance=Junction_strategy)
 @settings(max_examples=50)
 def test_junction_instantiation(instance):
     assert isinstance(instance, Junction)
 
-@given(instance=robochart::Initial_strategy)
+@given(instance=robochart_Initial_strategy)
 @settings(max_examples=50)
-def test_robochart::initial_instantiation(instance):
-    assert isinstance(instance, robochart::Initial)
+def test_robochart_initial_instantiation(instance):
+    assert isinstance(instance, robochart_Initial)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=robochart::Junction_strategy)
+@given(instance=robochart_Junction_strategy)
 @settings(max_examples=50)
-def test_robochart::junction_instantiation(instance):
-    assert isinstance(instance, robochart::Junction)
+def test_robochart_junction_instantiation(instance):
+    assert isinstance(instance, robochart_Junction)
 
-@given(instance=robochart::Statement_strategy)
+@given(instance=robochart_Statement_strategy)
 @settings(max_examples=50)
-def test_robochart::statement_instantiation(instance):
-    assert isinstance(instance, robochart::Statement)
+def test_robochart_statement_instantiation(instance):
+    assert isinstance(instance, robochart_Statement)
 
-@given(instance=robochart::Trigger_strategy)
+@given(instance=robochart_Trigger_strategy)
 @settings(max_examples=50)
-def test_robochart::trigger_instantiation(instance):
-    assert isinstance(instance, robochart::Trigger)
-
-@given(instance=robochart::Trigger_strategy)
-def test_robochart::trigger__type_type(instance):
-    assert isinstance(instance._type, str)
+def test_robochart_trigger_instantiation(instance):
+    assert isinstance(instance, robochart_Trigger)
 
 
-@given(instance=robochart::Trigger_strategy)
-def test_robochart::trigger__type_setter(instance):
+
+@given(instance=robochart_Trigger_strategy)
+def test_robochart_trigger__type_setter(instance):
     original = instance._type
     instance._type = original
     assert instance._type == original
 
-@given(instance=robochart::ProbabilisticJunction_strategy)
+@given(instance=robochart_ProbabilisticJunction_strategy)
 @settings(max_examples=50)
-def test_robochart::probabilisticjunction_instantiation(instance):
-    assert isinstance(instance, robochart::ProbabilisticJunction)
+def test_robochart_probabilisticjunction_instantiation(instance):
+    assert isinstance(instance, robochart_ProbabilisticJunction)
 
 @given(instance=RoboticPlatform_strategy)
 @settings(max_examples=50)
@@ -3926,25 +3866,25 @@ def test_roboticplatform_instantiation(instance):
 def test_context_instantiation(instance):
     assert isinstance(instance, Context)
 
-@given(instance=robochart::NodeContainer_strategy)
+@given(instance=robochart_NodeContainer_strategy)
 @settings(max_examples=50)
-def test_robochart::nodecontainer_instantiation(instance):
-    assert isinstance(instance, robochart::NodeContainer)
+def test_robochart_nodecontainer_instantiation(instance):
+    assert isinstance(instance, robochart_NodeContainer)
 
 @given(instance=NodeContainer_strategy)
 @settings(max_examples=50)
 def test_nodecontainer_instantiation(instance):
     assert isinstance(instance, NodeContainer)
 
-@given(instance=robochart::State_strategy)
+@given(instance=robochart_State_strategy)
 @settings(max_examples=50)
-def test_robochart::state_instantiation(instance):
-    assert isinstance(instance, robochart::State)
+def test_robochart_state_instantiation(instance):
+    assert isinstance(instance, robochart_State)
 
-@given(instance=robochart::StateMachineBody_strategy)
+@given(instance=robochart_StateMachineBody_strategy)
 @settings(max_examples=50)
-def test_robochart::statemachinebody_instantiation(instance):
-    assert isinstance(instance, robochart::StateMachineBody)
+def test_robochart_statemachinebody_instantiation(instance):
+    assert isinstance(instance, robochart_StateMachineBody)
 
 @given(instance=StateMachine_strategy)
 @settings(max_examples=50)
@@ -3956,40 +3896,40 @@ def test_statemachine_instantiation(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=robochart::BasicContext_strategy)
+@given(instance=robochart_BasicContext_strategy)
 @settings(max_examples=50)
-def test_robochart::basiccontext_instantiation(instance):
-    assert isinstance(instance, robochart::BasicContext)
+def test_robochart_basiccontext_instantiation(instance):
+    assert isinstance(instance, robochart_BasicContext)
 
 @given(instance=BasicContext_strategy)
 @settings(max_examples=50)
 def test_basiccontext_instantiation(instance):
     assert isinstance(instance, BasicContext)
 
-@given(instance=robochart::Context_strategy)
+@given(instance=robochart_Context_strategy)
 @settings(max_examples=50)
-def test_robochart::context_instantiation(instance):
-    assert isinstance(instance, robochart::Context)
+def test_robochart_context_instantiation(instance):
+    assert isinstance(instance, robochart_Context)
 
 @given(instance=Reference_strategy)
 @settings(max_examples=50)
 def test_reference_instantiation(instance):
     assert isinstance(instance, Reference)
 
-@given(instance=robochart::StateMachineRef_strategy)
+@given(instance=robochart_RoboticPlatformRef_strategy)
 @settings(max_examples=50)
-def test_robochart::statemachineref_instantiation(instance):
-    assert isinstance(instance, robochart::StateMachineRef)
+def test_robochart_roboticplatformref_instantiation(instance):
+    assert isinstance(instance, robochart_RoboticPlatformRef)
 
-@given(instance=robochart::RoboticPlatformRef_strategy)
+@given(instance=robochart_StateMachineRef_strategy)
 @settings(max_examples=50)
-def test_robochart::roboticplatformref_instantiation(instance):
-    assert isinstance(instance, robochart::RoboticPlatformRef)
+def test_robochart_statemachineref_instantiation(instance):
+    assert isinstance(instance, robochart_StateMachineRef)
 
-@given(instance=robochart::Reference_strategy)
+@given(instance=robochart_Reference_strategy)
 @settings(max_examples=50)
-def test_robochart::reference_instantiation(instance):
-    assert isinstance(instance, robochart::Reference)
+def test_robochart_reference_instantiation(instance):
+    assert isinstance(instance, robochart_Reference)
 
 @given(instance=StateMachineBody_strategy)
 @settings(max_examples=50)
@@ -4006,28 +3946,25 @@ def test_operationsig_instantiation(instance):
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=robochart::OperationRef_strategy)
+@given(instance=robochart_OperationRef_strategy)
 @settings(max_examples=50)
-def test_robochart::operationref_instantiation(instance):
-    assert isinstance(instance, robochart::OperationRef)
+def test_robochart_operationref_instantiation(instance):
+    assert isinstance(instance, robochart_OperationRef)
 
 @given(instance=ConnectionNode_strategy)
 @settings(max_examples=50)
 def test_connectionnode_instantiation(instance):
     assert isinstance(instance, ConnectionNode)
 
-@given(instance=robochart::VariableList_strategy)
+@given(instance=robochart_VariableList_strategy)
 @settings(max_examples=50)
-def test_robochart::variablelist_instantiation(instance):
-    assert isinstance(instance, robochart::VariableList)
-
-@given(instance=robochart::VariableList_strategy)
-def test_robochart::variablelist_modifier_type(instance):
-    assert isinstance(instance.modifier, str)
+def test_robochart_variablelist_instantiation(instance):
+    assert isinstance(instance, robochart_VariableList)
 
 
-@given(instance=robochart::VariableList_strategy)
-def test_robochart::variablelist_modifier_setter(instance):
+
+@given(instance=robochart_VariableList_strategy)
+def test_robochart_variablelist_modifier_setter(instance):
     original = instance.modifier
     instance.modifier = original
     assert instance.modifier == original
@@ -4037,45 +3974,75 @@ def test_robochart::variablelist_modifier_setter(instance):
 def test_settype_instantiation(instance):
     assert isinstance(instance, SetType)
 
-@given(instance=robochart::SeqType_strategy)
+@given(instance=robochart_SeqType_strategy)
 @settings(max_examples=50)
-def test_robochart::seqtype_instantiation(instance):
-    assert isinstance(instance, robochart::SeqType)
+def test_robochart_seqtype_instantiation(instance):
+    assert isinstance(instance, robochart_SeqType)
+
+@given(instance=robochart_WaitingConditionRef_strategy)
+@settings(max_examples=50)
+def test_robochart_waitingconditionref_instantiation(instance):
+    assert isinstance(instance, robochart_WaitingConditionRef)
+
+@given(instance=robochart_CallExp_strategy)
+@settings(max_examples=50)
+def test_robochart_callexp_instantiation(instance):
+    assert isinstance(instance, robochart_CallExp)
+
+@given(instance=Assignable_strategy)
+@settings(max_examples=50)
+def test_assignable_instantiation(instance):
+    assert isinstance(instance, Assignable)
+
+@given(instance=robochart_ArrayAssignable_strategy)
+@settings(max_examples=50)
+def test_robochart_arrayassignable_instantiation(instance):
+    assert isinstance(instance, robochart_ArrayAssignable)
+
+@given(instance=robochart_VarSelection_strategy)
+@settings(max_examples=50)
+def test_robochart_varselection_instantiation(instance):
+    assert isinstance(instance, robochart_VarSelection)
+
+@given(instance=robochart_VarRef_strategy)
+@settings(max_examples=50)
+def test_robochart_varref_instantiation(instance):
+    assert isinstance(instance, robochart_VarRef)
 
 @given(instance=RelationType_strategy)
 @settings(max_examples=50)
 def test_relationtype_instantiation(instance):
     assert isinstance(instance, RelationType)
 
-@given(instance=robochart::FunctionType_strategy)
+@given(instance=robochart_FunctionType_strategy)
 @settings(max_examples=50)
-def test_robochart::functiontype_instantiation(instance):
-    assert isinstance(instance, robochart::FunctionType)
+def test_robochart_functiontype_instantiation(instance):
+    assert isinstance(instance, robochart_FunctionType)
 
-@given(instance=robochart::Parameter_strategy)
+@given(instance=robochart_Parameter_strategy)
 @settings(max_examples=50)
-def test_robochart::parameter_instantiation(instance):
-    assert isinstance(instance, robochart::Parameter)
+def test_robochart_parameter_instantiation(instance):
+    assert isinstance(instance, robochart_Parameter)
 
-@given(instance=robochart::Expression_strategy)
+@given(instance=robochart_Expression_strategy)
 @settings(max_examples=50)
-def test_robochart::expression_instantiation(instance):
-    assert isinstance(instance, robochart::Expression)
+def test_robochart_expression_instantiation(instance):
+    assert isinstance(instance, robochart_Expression)
 
 @given(instance=TypedNamedElement_strategy)
 @settings(max_examples=50)
 def test_typednamedelement_instantiation(instance):
     assert isinstance(instance, TypedNamedElement)
 
-@given(instance=robochart::Member_strategy)
+@given(instance=robochart_Member_strategy)
 @settings(max_examples=50)
-def test_robochart::member_instantiation(instance):
-    assert isinstance(instance, robochart::Member)
+def test_robochart_member_instantiation(instance):
+    assert isinstance(instance, robochart_Member)
 
-@given(instance=robochart::Type_strategy)
+@given(instance=robochart_Type_strategy)
 @settings(max_examples=50)
-def test_robochart::type_instantiation(instance):
-    assert isinstance(instance, robochart::Type)
+def test_robochart_type_instantiation(instance):
+    assert isinstance(instance, robochart_Type)
 
 @given(instance=NamedExpression_strategy)
 @settings(max_examples=50)
@@ -4087,322 +4054,292 @@ def test_namedexpression_instantiation(instance):
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=robochart::Variable_strategy)
+@given(instance=robochart_Variable_strategy)
 @settings(max_examples=50)
-def test_robochart::variable_instantiation(instance):
-    assert isinstance(instance, robochart::Variable)
-
-@given(instance=robochart::Variable_strategy)
-def test_robochart::variable_modifier_type(instance):
-    assert isinstance(instance.modifier, str)
+def test_robochart_variable_instantiation(instance):
+    assert isinstance(instance, robochart_Variable)
 
 
-@given(instance=robochart::Variable_strategy)
-def test_robochart::variable_modifier_setter(instance):
+
+@given(instance=robochart_Variable_strategy)
+def test_robochart_variable_modifier_setter(instance):
     original = instance.modifier
     instance.modifier = original
     assert instance.modifier == original
 
-@given(instance=robochart::Field_strategy)
+@given(instance=robochart_Field_strategy)
 @settings(max_examples=50)
-def test_robochart::field_instantiation(instance):
-    assert isinstance(instance, robochart::Field)
+def test_robochart_field_instantiation(instance):
+    assert isinstance(instance, robochart_Field)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=robochart::SetType_strategy)
+@given(instance=robochart_SetType_strategy)
 @settings(max_examples=50)
-def test_robochart::settype_instantiation(instance):
-    assert isinstance(instance, robochart::SetType)
+def test_robochart_settype_instantiation(instance):
+    assert isinstance(instance, robochart_SetType)
 
-@given(instance=robochart::TypeRef_strategy)
+@given(instance=robochart_AnyType_strategy)
 @settings(max_examples=50)
-def test_robochart::typeref_instantiation(instance):
-    assert isinstance(instance, robochart::TypeRef)
-
-@given(instance=robochart::VectorType_strategy)
-@settings(max_examples=50)
-def test_robochart::vectortype_instantiation(instance):
-    assert isinstance(instance, robochart::VectorType)
-
-@given(instance=robochart::VectorType_strategy)
-def test_robochart::vectortype_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_robochart_anytype_instantiation(instance):
+    assert isinstance(instance, robochart_AnyType)
 
 
-@given(instance=robochart::VectorType_strategy)
-def test_robochart::vectortype_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
 
-@given(instance=robochart::RelationType_strategy)
-@settings(max_examples=50)
-def test_robochart::relationtype_instantiation(instance):
-    assert isinstance(instance, robochart::RelationType)
-
-@given(instance=robochart::AnyType_strategy)
-@settings(max_examples=50)
-def test_robochart::anytype_instantiation(instance):
-    assert isinstance(instance, robochart::AnyType)
-
-@given(instance=robochart::AnyType_strategy)
-def test_robochart::anytype_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=robochart::AnyType_strategy)
-def test_robochart::anytype_identifier_setter(instance):
+@given(instance=robochart_AnyType_strategy)
+def test_robochart_anytype_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=robochart::MatrixType_strategy)
+@given(instance=robochart_RelationType_strategy)
 @settings(max_examples=50)
-def test_robochart::matrixtype_instantiation(instance):
-    assert isinstance(instance, robochart::MatrixType)
+def test_robochart_relationtype_instantiation(instance):
+    assert isinstance(instance, robochart_RelationType)
 
-@given(instance=robochart::MatrixType_strategy)
-def test_robochart::matrixtype_columns_type(instance):
-    assert isinstance(instance.columns, int)
+@given(instance=robochart_VectorType_strategy)
+@settings(max_examples=50)
+def test_robochart_vectortype_instantiation(instance):
+    assert isinstance(instance, robochart_VectorType)
 
 
-@given(instance=robochart::MatrixType_strategy)
-def test_robochart::matrixtype_columns_setter(instance):
+
+@given(instance=robochart_VectorType_strategy)
+def test_robochart_vectortype_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=robochart_TypeRef_strategy)
+@settings(max_examples=50)
+def test_robochart_typeref_instantiation(instance):
+    assert isinstance(instance, robochart_TypeRef)
+
+@given(instance=robochart_MatrixType_strategy)
+@settings(max_examples=50)
+def test_robochart_matrixtype_instantiation(instance):
+    assert isinstance(instance, robochart_MatrixType)
+
+
+
+@given(instance=robochart_MatrixType_strategy)
+def test_robochart_matrixtype_columns_setter(instance):
     original = instance.columns
     instance.columns = original
     assert instance.columns == original
 
-@given(instance=robochart::MatrixType_strategy)
-def test_robochart::matrixtype_rows_type(instance):
-    assert isinstance(instance.rows, int)
 
 
-@given(instance=robochart::MatrixType_strategy)
-def test_robochart::matrixtype_rows_setter(instance):
+@given(instance=robochart_MatrixType_strategy)
+def test_robochart_matrixtype_rows_setter(instance):
     original = instance.rows
     instance.rows = original
     assert instance.rows == original
 
-@given(instance=robochart::ProductType_strategy)
+@given(instance=robochart_ProductType_strategy)
 @settings(max_examples=50)
-def test_robochart::producttype_instantiation(instance):
-    assert isinstance(instance, robochart::ProductType)
+def test_robochart_producttype_instantiation(instance):
+    assert isinstance(instance, robochart_ProductType)
 
-@given(instance=robochart::StateMachineDef_strategy)
+@given(instance=robochart_StateMachineDef_strategy)
 @settings(max_examples=50)
-def test_robochart::statemachinedef_instantiation(instance):
-    assert isinstance(instance, robochart::StateMachineDef)
+def test_robochart_statemachinedef_instantiation(instance):
+    assert isinstance(instance, robochart_StateMachineDef)
 
 @given(instance=TypeDecl_strategy)
 @settings(max_examples=50)
 def test_typedecl_instantiation(instance):
     assert isinstance(instance, TypeDecl)
 
-@given(instance=robochart::Literal_strategy)
+@given(instance=robochart_Enumeration_strategy)
 @settings(max_examples=50)
-def test_robochart::literal_instantiation(instance):
-    assert isinstance(instance, robochart::Literal)
+def test_robochart_enumeration_instantiation(instance):
+    assert isinstance(instance, robochart_Enumeration)
 
-@given(instance=robochart::Enumeration_strategy)
+@given(instance=robochart_Literal_strategy)
 @settings(max_examples=50)
-def test_robochart::enumeration_instantiation(instance):
-    assert isinstance(instance, robochart::Enumeration)
+def test_robochart_literal_instantiation(instance):
+    assert isinstance(instance, robochart_Literal)
 
-@given(instance=robochart::RecordType_strategy)
+@given(instance=robochart_RecordType_strategy)
 @settings(max_examples=50)
-def test_robochart::recordtype_instantiation(instance):
-    assert isinstance(instance, robochart::RecordType)
+def test_robochart_recordtype_instantiation(instance):
+    assert isinstance(instance, robochart_RecordType)
 
-@given(instance=robochart::NameType_strategy)
+@given(instance=robochart_NameType_strategy)
 @settings(max_examples=50)
-def test_robochart::nametype_instantiation(instance):
-    assert isinstance(instance, robochart::NameType)
+def test_robochart_nametype_instantiation(instance):
+    assert isinstance(instance, robochart_NameType)
 
-@given(instance=robochart::PrimitiveType_strategy)
+@given(instance=robochart_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_robochart::primitivetype_instantiation(instance):
-    assert isinstance(instance, robochart::PrimitiveType)
+def test_robochart_primitivetype_instantiation(instance):
+    assert isinstance(instance, robochart_PrimitiveType)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=robochart::RoboticPlatform_strategy)
+@given(instance=robochart_Event_strategy)
 @settings(max_examples=50)
-def test_robochart::roboticplatform_instantiation(instance):
-    assert isinstance(instance, robochart::RoboticPlatform)
-
-@given(instance=robochart::Operation_strategy)
-@settings(max_examples=50)
-def test_robochart::operation_instantiation(instance):
-    assert isinstance(instance, robochart::Operation)
-
-@given(instance=robochart::TypedNamedElement_strategy)
-@settings(max_examples=50)
-def test_robochart::typednamedelement_instantiation(instance):
-    assert isinstance(instance, robochart::TypedNamedElement)
-
-@given(instance=robochart::Transition_strategy)
-@settings(max_examples=50)
-def test_robochart::transition_instantiation(instance):
-    assert isinstance(instance, robochart::Transition)
-
-@given(instance=robochart::Event_strategy)
-@settings(max_examples=50)
-def test_robochart::event_instantiation(instance):
-    assert isinstance(instance, robochart::Event)
-
-@given(instance=robochart::Event_strategy)
-def test_robochart::event_broadcast_type(instance):
-    assert isinstance(instance.broadcast, bool)
+def test_robochart_event_instantiation(instance):
+    assert isinstance(instance, robochart_Event)
 
 
-@given(instance=robochart::Event_strategy)
-def test_robochart::event_broadcast_setter(instance):
+
+@given(instance=robochart_Event_strategy)
+def test_robochart_event_broadcast_setter(instance):
     original = instance.broadcast
     instance.broadcast = original
     assert instance.broadcast == original
 
-@given(instance=robochart::WaitingCondition_strategy)
+@given(instance=robochart_StateMachine_strategy)
 @settings(max_examples=50)
-def test_robochart::waitingcondition_instantiation(instance):
-    assert isinstance(instance, robochart::WaitingCondition)
+def test_robochart_statemachine_instantiation(instance):
+    assert isinstance(instance, robochart_StateMachine)
 
-@given(instance=robochart::TypeDecl_strategy)
+@given(instance=robochart_Controller_strategy)
 @settings(max_examples=50)
-def test_robochart::typedecl_instantiation(instance):
-    assert isinstance(instance, robochart::TypeDecl)
+def test_robochart_controller_instantiation(instance):
+    assert isinstance(instance, robochart_Controller)
 
-@given(instance=robochart::Declaration_strategy)
+@given(instance=robochart_OperationSig_strategy)
 @settings(max_examples=50)
-def test_robochart::declaration_instantiation(instance):
-    assert isinstance(instance, robochart::Declaration)
-
-@given(instance=robochart::Clock_strategy)
-@settings(max_examples=50)
-def test_robochart::clock_instantiation(instance):
-    assert isinstance(instance, robochart::Clock)
-
-@given(instance=robochart::Node_strategy)
-@settings(max_examples=50)
-def test_robochart::node_instantiation(instance):
-    assert isinstance(instance, robochart::Node)
-
-@given(instance=robochart::OperationSig_strategy)
-@settings(max_examples=50)
-def test_robochart::operationsig_instantiation(instance):
-    assert isinstance(instance, robochart::OperationSig)
-
-@given(instance=robochart::OperationSig_strategy)
-def test_robochart::operationsig_terminates_type(instance):
-    assert isinstance(instance.terminates, bool)
+def test_robochart_operationsig_instantiation(instance):
+    assert isinstance(instance, robochart_OperationSig)
 
 
-@given(instance=robochart::OperationSig_strategy)
-def test_robochart::operationsig_terminates_setter(instance):
+
+@given(instance=robochart_OperationSig_strategy)
+def test_robochart_operationsig_terminates_setter(instance):
     original = instance.terminates
     instance.terminates = original
     assert instance.terminates == original
 
-@given(instance=robochart::StateMachine_strategy)
+@given(instance=robochart_Operation_strategy)
 @settings(max_examples=50)
-def test_robochart::statemachine_instantiation(instance):
-    assert isinstance(instance, robochart::StateMachine)
+def test_robochart_operation_instantiation(instance):
+    assert isinstance(instance, robochart_Operation)
 
-@given(instance=robochart::Controller_strategy)
+@given(instance=robochart_Declaration_strategy)
 @settings(max_examples=50)
-def test_robochart::controller_instantiation(instance):
-    assert isinstance(instance, robochart::Controller)
+def test_robochart_declaration_instantiation(instance):
+    assert isinstance(instance, robochart_Declaration)
 
-@given(instance=robochart::NamedElement_strategy)
+@given(instance=robochart_Transition_strategy)
 @settings(max_examples=50)
-def test_robochart::namedelement_instantiation(instance):
-    assert isinstance(instance, robochart::NamedElement)
+def test_robochart_transition_instantiation(instance):
+    assert isinstance(instance, robochart_Transition)
 
-@given(instance=robochart::NamedElement_strategy)
-def test_robochart::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=robochart_Clock_strategy)
+@settings(max_examples=50)
+def test_robochart_clock_instantiation(instance):
+    assert isinstance(instance, robochart_Clock)
+
+@given(instance=robochart_WaitingCondition_strategy)
+@settings(max_examples=50)
+def test_robochart_waitingcondition_instantiation(instance):
+    assert isinstance(instance, robochart_WaitingCondition)
+
+@given(instance=robochart_RoboticPlatform_strategy)
+@settings(max_examples=50)
+def test_robochart_roboticplatform_instantiation(instance):
+    assert isinstance(instance, robochart_RoboticPlatform)
+
+@given(instance=robochart_Node_strategy)
+@settings(max_examples=50)
+def test_robochart_node_instantiation(instance):
+    assert isinstance(instance, robochart_Node)
+
+@given(instance=robochart_TypedNamedElement_strategy)
+@settings(max_examples=50)
+def test_robochart_typednamedelement_instantiation(instance):
+    assert isinstance(instance, robochart_TypedNamedElement)
+
+@given(instance=robochart_TypeDecl_strategy)
+@settings(max_examples=50)
+def test_robochart_typedecl_instantiation(instance):
+    assert isinstance(instance, robochart_TypeDecl)
+
+@given(instance=robochart_NamedElement_strategy)
+@settings(max_examples=50)
+def test_robochart_namedelement_instantiation(instance):
+    assert isinstance(instance, robochart_NamedElement)
 
 
-@given(instance=robochart::NamedElement_strategy)
-def test_robochart::namedelement_name_setter(instance):
+
+@given(instance=robochart_NamedElement_strategy)
+def test_robochart_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=robochart::Function_strategy)
+@given(instance=robochart_Function_strategy)
 @settings(max_examples=50)
-def test_robochart::function_instantiation(instance):
-    assert isinstance(instance, robochart::Function)
+def test_robochart_function_instantiation(instance):
+    assert isinstance(instance, robochart_Function)
 
-@given(instance=robochart::OperationDef_strategy)
+@given(instance=robochart_OperationDef_strategy)
 @settings(max_examples=50)
-def test_robochart::operationdef_instantiation(instance):
-    assert isinstance(instance, robochart::OperationDef)
+def test_robochart_operationdef_instantiation(instance):
+    assert isinstance(instance, robochart_OperationDef)
 
-@given(instance=robochart::RCModule_strategy)
+@given(instance=robochart_RCModule_strategy)
 @settings(max_examples=50)
-def test_robochart::rcmodule_instantiation(instance):
-    assert isinstance(instance, robochart::RCModule)
+def test_robochart_rcmodule_instantiation(instance):
+    assert isinstance(instance, robochart_RCModule)
 
-@given(instance=robochart::ControllerDef_strategy)
+@given(instance=robochart_ControllerDef_strategy)
 @settings(max_examples=50)
-def test_robochart::controllerdef_instantiation(instance):
-    assert isinstance(instance, robochart::ControllerDef)
+def test_robochart_controllerdef_instantiation(instance):
+    assert isinstance(instance, robochart_ControllerDef)
 
-@given(instance=robochart::RoboticPlatformDef_strategy)
+@given(instance=robochart_RoboticPlatformDef_strategy)
 @settings(max_examples=50)
-def test_robochart::roboticplatformdef_instantiation(instance):
-    assert isinstance(instance, robochart::RoboticPlatformDef)
+def test_robochart_roboticplatformdef_instantiation(instance):
+    assert isinstance(instance, robochart_RoboticPlatformDef)
 
-@given(instance=robochart::Interface_strategy)
+@given(instance=robochart_Interface_strategy)
 @settings(max_examples=50)
-def test_robochart::interface_instantiation(instance):
-    assert isinstance(instance, robochart::Interface)
+def test_robochart_interface_instantiation(instance):
+    assert isinstance(instance, robochart_Interface)
 
 @given(instance=BasicPackage_strategy)
 @settings(max_examples=50)
 def test_basicpackage_instantiation(instance):
     assert isinstance(instance, BasicPackage)
 
-@given(instance=robochart::RCPackage_strategy)
+@given(instance=robochart_RCPackage_strategy)
 @settings(max_examples=50)
-def test_robochart::rcpackage_instantiation(instance):
-    assert isinstance(instance, robochart::RCPackage)
+def test_robochart_rcpackage_instantiation(instance):
+    assert isinstance(instance, robochart_RCPackage)
 
-@given(instance=robochart::Import_strategy)
+@given(instance=robochart_Import_strategy)
 @settings(max_examples=50)
-def test_robochart::import_instantiation(instance):
-    assert isinstance(instance, robochart::Import)
-
-@given(instance=robochart::Import_strategy)
-def test_robochart::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_robochart_import_instantiation(instance):
+    assert isinstance(instance, robochart_Import)
 
 
-@given(instance=robochart::Import_strategy)
-def test_robochart::import_importedNamespace_setter(instance):
+
+@given(instance=robochart_Import_strategy)
+def test_robochart_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=robochart::BasicPackage_strategy)
+@given(instance=robochart_BasicPackage_strategy)
 @settings(max_examples=50)
-def test_robochart::basicpackage_instantiation(instance):
-    assert isinstance(instance, robochart::BasicPackage)
-
-@given(instance=robochart::BasicPackage_strategy)
-def test_robochart::basicpackage_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_robochart_basicpackage_instantiation(instance):
+    assert isinstance(instance, robochart_BasicPackage)
 
 
-@given(instance=robochart::BasicPackage_strategy)
-def test_robochart::basicpackage_name_setter(instance):
+
+@given(instance=robochart_BasicPackage_strategy)
+def test_robochart_basicpackage_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

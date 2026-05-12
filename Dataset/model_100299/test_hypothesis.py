@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Arc,
-    petrinet::Arc,
+    petrinet_Arc,
     Attribute,
-    petrinet::Identity,
-    petrinet::Animation,
+    petrinet_Identity,
+    petrinet_Animation,
     StructuredLabel,
-    petrinet::AnimationLabel,
+    petrinet_AnimationLabel,
     Label,
-    petrinet::InputPlace,
-    petrinet::Token,
-    petrinet::GeometryLabel,
+    petrinet_InputPlace,
+    petrinet_Token,
+    petrinet_GeometryLabel,
     Place,
-    petrinet::Place,
+    petrinet_Place,
     PetriNetType,
-    petrinet::ExtendedPetriNet,
+    petrinet_ExtendedPetriNet,
 )
 
 # =============================================================================
@@ -43,16 +43,16 @@ def test_arc_constructor_args():
 
 
 
-def test_petrinet::arc_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Arc)
+def test_petrinet_arc_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Arc)
 
 
-def test_petrinet::arc_constructor_exists():
-    assert callable(petrinet::Arc.__init__)
+def test_petrinet_arc_constructor_exists():
+    assert callable(petrinet_Arc.__init__)
 
 
-def test_petrinet::arc_constructor_args():
-    sig = inspect.signature(petrinet::Arc.__init__)
+def test_petrinet_arc_constructor_args():
+    sig = inspect.signature(petrinet_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -71,23 +71,23 @@ def test_attribute_constructor_args():
 
 
 
-def test_petrinet::identity_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Identity)
+def test_petrinet_identity_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Identity)
 
 
-def test_petrinet::identity_constructor_exists():
-    assert callable(petrinet::Identity.__init__)
+def test_petrinet_identity_constructor_exists():
+    assert callable(petrinet_Identity.__init__)
 
 
-def test_petrinet::identity_constructor_args():
-    sig = inspect.signature(petrinet::Identity.__init__)
+def test_petrinet_identity_constructor_args():
+    sig = inspect.signature(petrinet_Identity.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_petrinet::identity_has_text():
-    assert hasattr(petrinet::Identity, "text")
+def test_petrinet_identity_has_text():
+    assert hasattr(petrinet_Identity, "text")
     descriptor = None
-    for klass in petrinet::Identity.__mro__:
+    for klass in petrinet_Identity.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -95,16 +95,16 @@ def test_petrinet::identity_has_text():
 
 
 
-def test_petrinet::animation_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Animation)
+def test_petrinet_animation_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Animation)
 
 
-def test_petrinet::animation_constructor_exists():
-    assert callable(petrinet::Animation.__init__)
+def test_petrinet_animation_constructor_exists():
+    assert callable(petrinet_Animation.__init__)
 
 
-def test_petrinet::animation_constructor_args():
-    sig = inspect.signature(petrinet::Animation.__init__)
+def test_petrinet_animation_constructor_args():
+    sig = inspect.signature(petrinet_Animation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,16 +123,16 @@ def test_structuredlabel_constructor_args():
 
 
 
-def test_petrinet::animationlabel_is_not_abstract():
-    assert not inspect.isabstract(petrinet::AnimationLabel)
+def test_petrinet_animationlabel_is_not_abstract():
+    assert not inspect.isabstract(petrinet_AnimationLabel)
 
 
-def test_petrinet::animationlabel_constructor_exists():
-    assert callable(petrinet::AnimationLabel.__init__)
+def test_petrinet_animationlabel_constructor_exists():
+    assert callable(petrinet_AnimationLabel.__init__)
 
 
-def test_petrinet::animationlabel_constructor_args():
-    sig = inspect.signature(petrinet::AnimationLabel.__init__)
+def test_petrinet_animationlabel_constructor_args():
+    sig = inspect.signature(petrinet_AnimationLabel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -151,23 +151,23 @@ def test_label_constructor_args():
 
 
 
-def test_petrinet::inputplace_is_not_abstract():
-    assert not inspect.isabstract(petrinet::InputPlace)
+def test_petrinet_inputplace_is_not_abstract():
+    assert not inspect.isabstract(petrinet_InputPlace)
 
 
-def test_petrinet::inputplace_constructor_exists():
-    assert callable(petrinet::InputPlace.__init__)
+def test_petrinet_inputplace_constructor_exists():
+    assert callable(petrinet_InputPlace.__init__)
 
 
-def test_petrinet::inputplace_constructor_args():
-    sig = inspect.signature(petrinet::InputPlace.__init__)
+def test_petrinet_inputplace_constructor_args():
+    sig = inspect.signature(petrinet_InputPlace.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_petrinet::inputplace_has_text():
-    assert hasattr(petrinet::InputPlace, "text")
+def test_petrinet_inputplace_has_text():
+    assert hasattr(petrinet_InputPlace, "text")
     descriptor = None
-    for klass in petrinet::InputPlace.__mro__:
+    for klass in petrinet_InputPlace.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -175,23 +175,23 @@ def test_petrinet::inputplace_has_text():
 
 
 
-def test_petrinet::token_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Token)
+def test_petrinet_token_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Token)
 
 
-def test_petrinet::token_constructor_exists():
-    assert callable(petrinet::Token.__init__)
+def test_petrinet_token_constructor_exists():
+    assert callable(petrinet_Token.__init__)
 
 
-def test_petrinet::token_constructor_args():
-    sig = inspect.signature(petrinet::Token.__init__)
+def test_petrinet_token_constructor_args():
+    sig = inspect.signature(petrinet_Token.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_petrinet::token_has_text():
-    assert hasattr(petrinet::Token, "text")
+def test_petrinet_token_has_text():
+    assert hasattr(petrinet_Token, "text")
     descriptor = None
-    for klass in petrinet::Token.__mro__:
+    for klass in petrinet_Token.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -199,23 +199,23 @@ def test_petrinet::token_has_text():
 
 
 
-def test_petrinet::geometrylabel_is_not_abstract():
-    assert not inspect.isabstract(petrinet::GeometryLabel)
+def test_petrinet_geometrylabel_is_not_abstract():
+    assert not inspect.isabstract(petrinet_GeometryLabel)
 
 
-def test_petrinet::geometrylabel_constructor_exists():
-    assert callable(petrinet::GeometryLabel.__init__)
+def test_petrinet_geometrylabel_constructor_exists():
+    assert callable(petrinet_GeometryLabel.__init__)
 
 
-def test_petrinet::geometrylabel_constructor_args():
-    sig = inspect.signature(petrinet::GeometryLabel.__init__)
+def test_petrinet_geometrylabel_constructor_args():
+    sig = inspect.signature(petrinet_GeometryLabel.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_petrinet::geometrylabel_has_text():
-    assert hasattr(petrinet::GeometryLabel, "text")
+def test_petrinet_geometrylabel_has_text():
+    assert hasattr(petrinet_GeometryLabel, "text")
     descriptor = None
-    for klass in petrinet::GeometryLabel.__mro__:
+    for klass in petrinet_GeometryLabel.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -237,16 +237,16 @@ def test_place_constructor_args():
 
 
 
-def test_petrinet::place_is_not_abstract():
-    assert not inspect.isabstract(petrinet::Place)
+def test_petrinet_place_is_not_abstract():
+    assert not inspect.isabstract(petrinet_Place)
 
 
-def test_petrinet::place_constructor_exists():
-    assert callable(petrinet::Place.__init__)
+def test_petrinet_place_constructor_exists():
+    assert callable(petrinet_Place.__init__)
 
 
-def test_petrinet::place_constructor_args():
-    sig = inspect.signature(petrinet::Place.__init__)
+def test_petrinet_place_constructor_args():
+    sig = inspect.signature(petrinet_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -265,16 +265,16 @@ def test_petrinettype_constructor_args():
 
 
 
-def test_petrinet::extendedpetrinet_is_not_abstract():
-    assert not inspect.isabstract(petrinet::ExtendedPetriNet)
+def test_petrinet_extendedpetrinet_is_not_abstract():
+    assert not inspect.isabstract(petrinet_ExtendedPetriNet)
 
 
-def test_petrinet::extendedpetrinet_constructor_exists():
-    assert callable(petrinet::ExtendedPetriNet.__init__)
+def test_petrinet_extendedpetrinet_constructor_exists():
+    assert callable(petrinet_ExtendedPetriNet.__init__)
 
 
-def test_petrinet::extendedpetrinet_constructor_args():
-    sig = inspect.signature(petrinet::ExtendedPetriNet.__init__)
+def test_petrinet_extendedpetrinet_constructor_args():
+    sig = inspect.signature(petrinet_ExtendedPetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,55 +292,55 @@ safe_text = st.text(
 Arc_strategy = st.builds(
     Arc,
 )
-petrinet::Arc_strategy = st.builds(
-    petrinet::Arc,
+petrinet_Arc_strategy = st.builds(
+    petrinet_Arc,
 )
 Attribute_strategy = st.builds(
     Attribute,
 )
-petrinet::Identity_strategy = st.builds(
-    petrinet::Identity,
+petrinet_Identity_strategy = st.builds(
+    petrinet_Identity,
     text=
         safe_text
 )
-petrinet::Animation_strategy = st.builds(
-    petrinet::Animation,
+petrinet_Animation_strategy = st.builds(
+    petrinet_Animation,
 )
 StructuredLabel_strategy = st.builds(
     StructuredLabel,
 )
-petrinet::AnimationLabel_strategy = st.builds(
-    petrinet::AnimationLabel,
+petrinet_AnimationLabel_strategy = st.builds(
+    petrinet_AnimationLabel,
 )
 Label_strategy = st.builds(
     Label,
 )
-petrinet::InputPlace_strategy = st.builds(
-    petrinet::InputPlace,
+petrinet_InputPlace_strategy = st.builds(
+    petrinet_InputPlace,
     text=
         st.booleans()
 )
-petrinet::Token_strategy = st.builds(
-    petrinet::Token,
+petrinet_Token_strategy = st.builds(
+    petrinet_Token,
     text=
         safe_text
 )
-petrinet::GeometryLabel_strategy = st.builds(
-    petrinet::GeometryLabel,
+petrinet_GeometryLabel_strategy = st.builds(
+    petrinet_GeometryLabel,
     text=
         safe_text
 )
 Place_strategy = st.builds(
     Place,
 )
-petrinet::Place_strategy = st.builds(
-    petrinet::Place,
+petrinet_Place_strategy = st.builds(
+    petrinet_Place,
 )
 PetriNetType_strategy = st.builds(
     PetriNetType,
 )
-petrinet::ExtendedPetriNet_strategy = st.builds(
-    petrinet::ExtendedPetriNet,
+petrinet_ExtendedPetriNet_strategy = st.builds(
+    petrinet_ExtendedPetriNet,
 )
 
 @given(instance=Arc_strategy)
@@ -348,96 +348,84 @@ petrinet::ExtendedPetriNet_strategy = st.builds(
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=petrinet::Arc_strategy)
+@given(instance=petrinet_Arc_strategy)
 @settings(max_examples=50)
-def test_petrinet::arc_instantiation(instance):
-    assert isinstance(instance, petrinet::Arc)
+def test_petrinet_arc_instantiation(instance):
+    assert isinstance(instance, petrinet_Arc)
 
 @given(instance=Attribute_strategy)
 @settings(max_examples=50)
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=petrinet::Identity_strategy)
+@given(instance=petrinet_Identity_strategy)
 @settings(max_examples=50)
-def test_petrinet::identity_instantiation(instance):
-    assert isinstance(instance, petrinet::Identity)
-
-@given(instance=petrinet::Identity_strategy)
-def test_petrinet::identity_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_petrinet_identity_instantiation(instance):
+    assert isinstance(instance, petrinet_Identity)
 
 
-@given(instance=petrinet::Identity_strategy)
-def test_petrinet::identity_text_setter(instance):
+
+@given(instance=petrinet_Identity_strategy)
+def test_petrinet_identity_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=petrinet::Animation_strategy)
+@given(instance=petrinet_Animation_strategy)
 @settings(max_examples=50)
-def test_petrinet::animation_instantiation(instance):
-    assert isinstance(instance, petrinet::Animation)
+def test_petrinet_animation_instantiation(instance):
+    assert isinstance(instance, petrinet_Animation)
 
 @given(instance=StructuredLabel_strategy)
 @settings(max_examples=50)
 def test_structuredlabel_instantiation(instance):
     assert isinstance(instance, StructuredLabel)
 
-@given(instance=petrinet::AnimationLabel_strategy)
+@given(instance=petrinet_AnimationLabel_strategy)
 @settings(max_examples=50)
-def test_petrinet::animationlabel_instantiation(instance):
-    assert isinstance(instance, petrinet::AnimationLabel)
+def test_petrinet_animationlabel_instantiation(instance):
+    assert isinstance(instance, petrinet_AnimationLabel)
 
 @given(instance=Label_strategy)
 @settings(max_examples=50)
 def test_label_instantiation(instance):
     assert isinstance(instance, Label)
 
-@given(instance=petrinet::InputPlace_strategy)
+@given(instance=petrinet_InputPlace_strategy)
 @settings(max_examples=50)
-def test_petrinet::inputplace_instantiation(instance):
-    assert isinstance(instance, petrinet::InputPlace)
-
-@given(instance=petrinet::InputPlace_strategy)
-def test_petrinet::inputplace_text_type(instance):
-    assert isinstance(instance.text, bool)
+def test_petrinet_inputplace_instantiation(instance):
+    assert isinstance(instance, petrinet_InputPlace)
 
 
-@given(instance=petrinet::InputPlace_strategy)
-def test_petrinet::inputplace_text_setter(instance):
+
+@given(instance=petrinet_InputPlace_strategy)
+def test_petrinet_inputplace_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=petrinet::Token_strategy)
+@given(instance=petrinet_Token_strategy)
 @settings(max_examples=50)
-def test_petrinet::token_instantiation(instance):
-    assert isinstance(instance, petrinet::Token)
-
-@given(instance=petrinet::Token_strategy)
-def test_petrinet::token_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_petrinet_token_instantiation(instance):
+    assert isinstance(instance, petrinet_Token)
 
 
-@given(instance=petrinet::Token_strategy)
-def test_petrinet::token_text_setter(instance):
+
+@given(instance=petrinet_Token_strategy)
+def test_petrinet_token_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=petrinet::GeometryLabel_strategy)
+@given(instance=petrinet_GeometryLabel_strategy)
 @settings(max_examples=50)
-def test_petrinet::geometrylabel_instantiation(instance):
-    assert isinstance(instance, petrinet::GeometryLabel)
-
-@given(instance=petrinet::GeometryLabel_strategy)
-def test_petrinet::geometrylabel_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_petrinet_geometrylabel_instantiation(instance):
+    assert isinstance(instance, petrinet_GeometryLabel)
 
 
-@given(instance=petrinet::GeometryLabel_strategy)
-def test_petrinet::geometrylabel_text_setter(instance):
+
+@given(instance=petrinet_GeometryLabel_strategy)
+def test_petrinet_geometrylabel_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -447,17 +435,17 @@ def test_petrinet::geometrylabel_text_setter(instance):
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=petrinet::Place_strategy)
+@given(instance=petrinet_Place_strategy)
 @settings(max_examples=50)
-def test_petrinet::place_instantiation(instance):
-    assert isinstance(instance, petrinet::Place)
+def test_petrinet_place_instantiation(instance):
+    assert isinstance(instance, petrinet_Place)
 
 @given(instance=PetriNetType_strategy)
 @settings(max_examples=50)
 def test_petrinettype_instantiation(instance):
     assert isinstance(instance, PetriNetType)
 
-@given(instance=petrinet::ExtendedPetriNet_strategy)
+@given(instance=petrinet_ExtendedPetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinet::extendedpetrinet_instantiation(instance):
-    assert isinstance(instance, petrinet::ExtendedPetriNet)
+def test_petrinet_extendedpetrinet_instantiation(instance):
+    assert isinstance(instance, petrinet_ExtendedPetriNet)

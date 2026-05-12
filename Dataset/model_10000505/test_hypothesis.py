@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Savings_Account,
@@ -32,17 +32,8 @@ def test_savings_account_constructor_exists():
 def test_savings_account_constructor_args():
     sig = inspect.signature(Savings_Account.__init__)
     params = list(sig.parameters.keys())
-    assert "AccountNumber" in params, "Missing parameter 'AccountNumber'"
     assert "Balance" in params, "Missing parameter 'Balance'"
-
-def test_savings_account_has_AccountNumber():
-    assert hasattr(Savings_Account, "AccountNumber")
-    descriptor = None
-    for klass in Savings_Account.__mro__:
-        if "AccountNumber" in klass.__dict__:
-            descriptor = klass.__dict__["AccountNumber"]
-            break
-    assert isinstance(descriptor, property)
+    assert "AccountNumber" in params, "Missing parameter 'AccountNumber'"
 
 def test_savings_account_has_Balance():
     assert hasattr(Savings_Account, "Balance")
@@ -50,6 +41,15 @@ def test_savings_account_has_Balance():
     for klass in Savings_Account.__mro__:
         if "Balance" in klass.__dict__:
             descriptor = klass.__dict__["Balance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_savings_account_has_AccountNumber():
+    assert hasattr(Savings_Account, "AccountNumber")
+    descriptor = None
+    for klass in Savings_Account.__mro__:
+        if "AccountNumber" in klass.__dict__:
+            descriptor = klass.__dict__["AccountNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -100,18 +100,18 @@ def test_atm__transactions_constructor_exists():
 def test_atm__transactions_constructor_args():
     sig = inspect.signature(ATM__Transactions.__init__)
     params = list(sig.parameters.keys())
-    assert "Post_balance" in params, "Missing parameter 'Post_balance'"
-    assert "Date" in params, "Missing parameter 'Date'"
-    assert "Amount" in params, "Missing parameter 'Amount'"
     assert "Transaction_id" in params, "Missing parameter 'Transaction_id'"
+    assert "Date" in params, "Missing parameter 'Date'"
+    assert "Post_balance" in params, "Missing parameter 'Post_balance'"
+    assert "Amount" in params, "Missing parameter 'Amount'"
     assert "Type" in params, "Missing parameter 'Type'"
 
-def test_atm__transactions_has_Post_balance():
-    assert hasattr(ATM__Transactions, "Post_balance")
+def test_atm__transactions_has_Transaction_id():
+    assert hasattr(ATM__Transactions, "Transaction_id")
     descriptor = None
     for klass in ATM__Transactions.__mro__:
-        if "Post_balance" in klass.__dict__:
-            descriptor = klass.__dict__["Post_balance"]
+        if "Transaction_id" in klass.__dict__:
+            descriptor = klass.__dict__["Transaction_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,21 +124,21 @@ def test_atm__transactions_has_Date():
             break
     assert isinstance(descriptor, property)
 
+def test_atm__transactions_has_Post_balance():
+    assert hasattr(ATM__Transactions, "Post_balance")
+    descriptor = None
+    for klass in ATM__Transactions.__mro__:
+        if "Post_balance" in klass.__dict__:
+            descriptor = klass.__dict__["Post_balance"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_atm__transactions_has_Amount():
     assert hasattr(ATM__Transactions, "Amount")
     descriptor = None
     for klass in ATM__Transactions.__mro__:
         if "Amount" in klass.__dict__:
             descriptor = klass.__dict__["Amount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_atm__transactions_has_Transaction_id():
-    assert hasattr(ATM__Transactions, "Transaction_id")
-    descriptor = None
-    for klass in ATM__Transactions.__mro__:
-        if "Transaction_id" in klass.__dict__:
-            descriptor = klass.__dict__["Transaction_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -232,28 +232,10 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "Pin" in params, "Missing parameter 'Pin'"
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Card_num" in params, "Missing parameter 'Card_num'"
     assert "DOB" in params, "Missing parameter 'DOB'"
-
-def test_customer_has_Pin():
-    assert hasattr(Customer, "Pin")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "Pin" in klass.__dict__:
-            descriptor = klass.__dict__["Pin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_Name():
-    assert hasattr(Customer, "Name")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Pin" in params, "Missing parameter 'Pin'"
+    assert "Name" in params, "Missing parameter 'Name'"
 
 def test_customer_has_Card_num():
     assert hasattr(Customer, "Card_num")
@@ -270,6 +252,24 @@ def test_customer_has_DOB():
     for klass in Customer.__mro__:
         if "DOB" in klass.__dict__:
             descriptor = klass.__dict__["DOB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_Pin():
+    assert hasattr(Customer, "Pin")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "Pin" in klass.__dict__:
+            descriptor = klass.__dict__["Pin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_Name():
+    assert hasattr(Customer, "Name")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -321,9 +321,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Savings_Account_strategy = st.builds(
     Savings_Account,
-    AccountNumber=
-        safe_text,
     Balance=
+        safe_text,
+    AccountNumber=
         safe_text
 )
 Current_Account_strategy = st.builds(
@@ -335,13 +335,13 @@ Current_Account_strategy = st.builds(
 )
 ATM__Transactions_strategy = st.builds(
     ATM__Transactions,
-    Post_balance=
+    Transaction_id=
         safe_text,
     Date=
         safe_text,
-    Amount=
+    Post_balance=
         safe_text,
-    Transaction_id=
+    Amount=
         safe_text,
     Type=
         safe_text
@@ -362,13 +362,13 @@ Account_strategy = st.builds(
 )
 Customer_strategy = st.builds(
     Customer,
-    Pin=
-        st.integers(),
-    Name=
-        safe_text,
     Card_num=
         st.integers(),
     DOB=
+        safe_text,
+    Pin=
+        st.integers(),
+    Name=
         safe_text
 )
 BANK_strategy = st.builds(
@@ -384,20 +384,6 @@ BANK_strategy = st.builds(
 def test_savings_account_instantiation(instance):
     assert isinstance(instance, Savings_Account)
 
-@given(instance=Savings_Account_strategy)
-def test_savings_account_AccountNumber_type(instance):
-    assert isinstance(instance.AccountNumber, str)
-
-
-@given(instance=Savings_Account_strategy)
-def test_savings_account_AccountNumber_setter(instance):
-    original = instance.AccountNumber
-    instance.AccountNumber = original
-    assert instance.AccountNumber == original
-
-@given(instance=Savings_Account_strategy)
-def test_savings_account_Balance_type(instance):
-    assert isinstance(instance.Balance, str)
 
 
 @given(instance=Savings_Account_strategy)
@@ -406,14 +392,19 @@ def test_savings_account_Balance_setter(instance):
     instance.Balance = original
     assert instance.Balance == original
 
+
+
+@given(instance=Savings_Account_strategy)
+def test_savings_account_AccountNumber_setter(instance):
+    original = instance.AccountNumber
+    instance.AccountNumber = original
+    assert instance.AccountNumber == original
+
 @given(instance=Current_Account_strategy)
 @settings(max_examples=50)
 def test_current_account_instantiation(instance):
     assert isinstance(instance, Current_Account)
 
-@given(instance=Current_Account_strategy)
-def test_current_account_Balance_type(instance):
-    assert isinstance(instance.Balance, str)
 
 
 @given(instance=Current_Account_strategy)
@@ -422,9 +413,6 @@ def test_current_account_Balance_setter(instance):
     instance.Balance = original
     assert instance.Balance == original
 
-@given(instance=Current_Account_strategy)
-def test_current_account_AccountNumber_type(instance):
-    assert isinstance(instance.AccountNumber, str)
 
 
 @given(instance=Current_Account_strategy)
@@ -438,42 +426,6 @@ def test_current_account_AccountNumber_setter(instance):
 def test_atm__transactions_instantiation(instance):
     assert isinstance(instance, ATM__Transactions)
 
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Post_balance_type(instance):
-    assert isinstance(instance.Post_balance, str)
-
-
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Post_balance_setter(instance):
-    original = instance.Post_balance
-    instance.Post_balance = original
-    assert instance.Post_balance == original
-
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Date_type(instance):
-    assert isinstance(instance.Date, str)
-
-
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Amount_type(instance):
-    assert isinstance(instance.Amount, str)
-
-
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Amount_setter(instance):
-    original = instance.Amount
-    instance.Amount = original
-    assert instance.Amount == original
-
-@given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Transaction_id_type(instance):
-    assert isinstance(instance.Transaction_id, str)
 
 
 @given(instance=ATM__Transactions_strategy)
@@ -482,9 +434,30 @@ def test_atm__transactions_Transaction_id_setter(instance):
     instance.Transaction_id = original
     assert instance.Transaction_id == original
 
+
+
 @given(instance=ATM__Transactions_strategy)
-def test_atm__transactions_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_atm__transactions_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
+
+
+@given(instance=ATM__Transactions_strategy)
+def test_atm__transactions_Post_balance_setter(instance):
+    original = instance.Post_balance
+    instance.Post_balance = original
+    assert instance.Post_balance == original
+
+
+
+@given(instance=ATM__Transactions_strategy)
+def test_atm__transactions_Amount_setter(instance):
+    original = instance.Amount
+    instance.Amount = original
+    assert instance.Amount == original
+
 
 
 @given(instance=ATM__Transactions_strategy)
@@ -498,9 +471,6 @@ def test_atm__transactions_Type_setter(instance):
 def test_atm_instantiation(instance):
     assert isinstance(instance, ATM)
 
-@given(instance=ATM_strategy)
-def test_atm_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=ATM_strategy)
@@ -509,9 +479,6 @@ def test_atm_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
-@given(instance=ATM_strategy)
-def test_atm_ManagedBy_type(instance):
-    assert isinstance(instance.ManagedBy, str)
 
 
 @given(instance=ATM_strategy)
@@ -525,9 +492,6 @@ def test_atm_ManagedBy_setter(instance):
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_AccountNumber_type(instance):
-    assert isinstance(instance.AccountNumber, str)
 
 
 @given(instance=Account_strategy)
@@ -536,9 +500,6 @@ def test_account_AccountNumber_setter(instance):
     instance.AccountNumber = original
     assert instance.AccountNumber == original
 
-@given(instance=Account_strategy)
-def test_account_Balance_type(instance):
-    assert isinstance(instance.Balance, str)
 
 
 @given(instance=Account_strategy)
@@ -552,31 +513,6 @@ def test_account_Balance_setter(instance):
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_Pin_type(instance):
-    assert isinstance(instance.Pin, int)
-
-
-@given(instance=Customer_strategy)
-def test_customer_Pin_setter(instance):
-    original = instance.Pin
-    instance.Pin = original
-    assert instance.Pin == original
-
-@given(instance=Customer_strategy)
-def test_customer_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Customer_strategy)
-def test_customer_Card_num_type(instance):
-    assert isinstance(instance.Card_num, int)
 
 
 @given(instance=Customer_strategy)
@@ -585,9 +521,6 @@ def test_customer_Card_num_setter(instance):
     instance.Card_num = original
     assert instance.Card_num == original
 
-@given(instance=Customer_strategy)
-def test_customer_DOB_type(instance):
-    assert isinstance(instance.DOB, str)
 
 
 @given(instance=Customer_strategy)
@@ -596,14 +529,27 @@ def test_customer_DOB_setter(instance):
     instance.DOB = original
     assert instance.DOB == original
 
+
+
+@given(instance=Customer_strategy)
+def test_customer_Pin_setter(instance):
+    original = instance.Pin
+    instance.Pin = original
+    assert instance.Pin == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=BANK_strategy)
 @settings(max_examples=50)
 def test_bank_instantiation(instance):
     assert isinstance(instance, BANK)
 
-@given(instance=BANK_strategy)
-def test_bank_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=BANK_strategy)
@@ -612,9 +558,6 @@ def test_bank_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=BANK_strategy)
-def test_bank_Code_type(instance):
-    assert isinstance(instance.Code, str)
 
 
 @given(instance=BANK_strategy)

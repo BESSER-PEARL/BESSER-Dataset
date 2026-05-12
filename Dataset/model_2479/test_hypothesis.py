@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tracelinks::TraceLink,
-    tracelinks::TraceLinksModel,
-    tracelinks::TraceLinkEnd,
+from python_code import (
+    tracelinks_TraceLink,
+    tracelinks_TraceLinksModel,
+    tracelinks_TraceLinkEnd,
 )
 
 # =============================================================================
@@ -17,63 +17,63 @@ from classes import (
 
 
 
-def test_tracelinks::tracelink_is_not_abstract():
-    assert not inspect.isabstract(tracelinks::TraceLink)
+def test_tracelinks_tracelink_is_not_abstract():
+    assert not inspect.isabstract(tracelinks_TraceLink)
 
 
-def test_tracelinks::tracelink_constructor_exists():
-    assert callable(tracelinks::TraceLink.__init__)
+def test_tracelinks_tracelink_constructor_exists():
+    assert callable(tracelinks_TraceLink.__init__)
 
 
-def test_tracelinks::tracelink_constructor_args():
-    sig = inspect.signature(tracelinks::TraceLink.__init__)
+def test_tracelinks_tracelink_constructor_args():
+    sig = inspect.signature(tracelinks_TraceLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracelinks::tracelinksmodel_is_not_abstract():
-    assert not inspect.isabstract(tracelinks::TraceLinksModel)
+def test_tracelinks_tracelinksmodel_is_not_abstract():
+    assert not inspect.isabstract(tracelinks_TraceLinksModel)
 
 
-def test_tracelinks::tracelinksmodel_constructor_exists():
-    assert callable(tracelinks::TraceLinksModel.__init__)
+def test_tracelinks_tracelinksmodel_constructor_exists():
+    assert callable(tracelinks_TraceLinksModel.__init__)
 
 
-def test_tracelinks::tracelinksmodel_constructor_args():
-    sig = inspect.signature(tracelinks::TraceLinksModel.__init__)
+def test_tracelinks_tracelinksmodel_constructor_args():
+    sig = inspect.signature(tracelinks_TraceLinksModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracelinks::tracelinkend_is_not_abstract():
-    assert not inspect.isabstract(tracelinks::TraceLinkEnd)
+def test_tracelinks_tracelinkend_is_not_abstract():
+    assert not inspect.isabstract(tracelinks_TraceLinkEnd)
 
 
-def test_tracelinks::tracelinkend_constructor_exists():
-    assert callable(tracelinks::TraceLinkEnd.__init__)
+def test_tracelinks_tracelinkend_constructor_exists():
+    assert callable(tracelinks_TraceLinkEnd.__init__)
 
 
-def test_tracelinks::tracelinkend_constructor_args():
-    sig = inspect.signature(tracelinks::TraceLinkEnd.__init__)
+def test_tracelinks_tracelinkend_constructor_args():
+    sig = inspect.signature(tracelinks_TraceLinkEnd.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_tracelinks::tracelinkend_has_id():
-    assert hasattr(tracelinks::TraceLinkEnd, "id")
+def test_tracelinks_tracelinkend_has_version():
+    assert hasattr(tracelinks_TraceLinkEnd, "version")
     descriptor = None
-    for klass in tracelinks::TraceLinkEnd.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in tracelinks_TraceLinkEnd.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracelinks::tracelinkend_has_version():
-    assert hasattr(tracelinks::TraceLinkEnd, "version")
+def test_tracelinks_tracelinkend_has_id():
+    assert hasattr(tracelinks_TraceLinkEnd, "id")
     descriptor = None
-    for klass in tracelinks::TraceLinkEnd.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
+    for klass in tracelinks_TraceLinkEnd.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tracelinks::TraceLink_strategy = st.builds(
-    tracelinks::TraceLink,
+tracelinks_TraceLink_strategy = st.builds(
+    tracelinks_TraceLink,
 )
-tracelinks::TraceLinksModel_strategy = st.builds(
-    tracelinks::TraceLinksModel,
+tracelinks_TraceLinksModel_strategy = st.builds(
+    tracelinks_TraceLinksModel,
 )
-tracelinks::TraceLinkEnd_strategy = st.builds(
-    tracelinks::TraceLinkEnd,
-    id=
-        safe_text,
+tracelinks_TraceLinkEnd_strategy = st.builds(
+    tracelinks_TraceLinkEnd,
     version=
+        safe_text,
+    id=
         safe_text
 )
 
-@given(instance=tracelinks::TraceLink_strategy)
+@given(instance=tracelinks_TraceLink_strategy)
 @settings(max_examples=50)
-def test_tracelinks::tracelink_instantiation(instance):
-    assert isinstance(instance, tracelinks::TraceLink)
+def test_tracelinks_tracelink_instantiation(instance):
+    assert isinstance(instance, tracelinks_TraceLink)
 
-@given(instance=tracelinks::TraceLinksModel_strategy)
+@given(instance=tracelinks_TraceLinksModel_strategy)
 @settings(max_examples=50)
-def test_tracelinks::tracelinksmodel_instantiation(instance):
-    assert isinstance(instance, tracelinks::TraceLinksModel)
+def test_tracelinks_tracelinksmodel_instantiation(instance):
+    assert isinstance(instance, tracelinks_TraceLinksModel)
 
-@given(instance=tracelinks::TraceLinkEnd_strategy)
+@given(instance=tracelinks_TraceLinkEnd_strategy)
 @settings(max_examples=50)
-def test_tracelinks::tracelinkend_instantiation(instance):
-    assert isinstance(instance, tracelinks::TraceLinkEnd)
-
-@given(instance=tracelinks::TraceLinkEnd_strategy)
-def test_tracelinks::tracelinkend_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_tracelinks_tracelinkend_instantiation(instance):
+    assert isinstance(instance, tracelinks_TraceLinkEnd)
 
 
-@given(instance=tracelinks::TraceLinkEnd_strategy)
-def test_tracelinks::tracelinkend_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=tracelinks::TraceLinkEnd_strategy)
-def test_tracelinks::tracelinkend_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=tracelinks::TraceLinkEnd_strategy)
-def test_tracelinks::tracelinkend_version_setter(instance):
+@given(instance=tracelinks_TraceLinkEnd_strategy)
+def test_tracelinks_tracelinkend_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
+
+
+
+@given(instance=tracelinks_TraceLinkEnd_strategy)
+def test_tracelinks_tracelinkend_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

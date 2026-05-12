@@ -3,78 +3,78 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ModuleGet,
     Variable,
     InstantaneousInstruction,
-    arduino::Synchro,
+    arduino_Synchro,
     UnaryExpression,
     IntegerExpression,
-    arduino::IntegerModuleGet,
-    arduino::IntegerVariable,
-    arduino::UnaryIntegerExpression,
+    arduino_IntegerModuleGet,
+    arduino_IntegerVariable,
+    arduino_UnaryIntegerExpression,
     BinaryExpression,
-    arduino::BinaryIntegerExpression,
+    arduino_BinaryIntegerExpression,
     Constant,
-    arduino::IntegerConstant,
+    arduino_IntegerConstant,
     BooleanExpression,
-    arduino::BooleanModuleGet,
-    arduino::UnaryBooleanExpression,
-    arduino::BooleanConstant,
-    arduino::BooleanVariable,
-    arduino::BinaryBooleanExpression,
+    arduino_BooleanConstant,
+    arduino_UnaryBooleanExpression,
+    arduino_BooleanModuleGet,
+    arduino_BooleanVariable,
+    arduino_BinaryBooleanExpression,
     Utilities,
-    arduino::Delay,
+    arduino_Delay,
     Assignment,
     ModuleInstruction,
-    arduino::ModuleAssignment,
-    arduino::Expression,
+    arduino_ModuleAssignment,
+    arduino_Expression,
     Expression,
-    arduino::BinaryExpression,
-    arduino::UnaryExpression,
-    arduino::IntegerExpression,
-    arduino::VariableRef,
-    arduino::Constant,
-    arduino::BooleanExpression,
-    arduino::ModuleGet,
+    arduino_IntegerExpression,
+    arduino_BinaryExpression,
+    arduino_UnaryExpression,
+    arduino_Constant,
+    arduino_VariableRef,
+    arduino_BooleanExpression,
+    arduino_ModuleGet,
     Control,
-    arduino::While,
-    arduino::If,
-    arduino::Repeat,
-    arduino::NamedElement,
+    arduino_While,
+    arduino_If,
+    arduino_Repeat,
+    arduino_NamedElement,
     Module,
-    arduino::Actuator,
-    arduino::Sensor,
+    arduino_Actuator,
+    arduino_Sensor,
     Instruction,
-    arduino::Utilities,
-    arduino::ModuleInstruction,
-    arduino::VariableAssignment,
-    arduino::Control,
-    arduino::InstantaneousInstruction,
-    arduino::Assignment,
-    arduino::VariableDeclaration,
-    arduino::Pin,
+    arduino_InstantaneousInstruction,
+    arduino_VariableDeclaration,
+    arduino_Utilities,
+    arduino_Control,
+    arduino_Assignment,
+    arduino_ModuleInstruction,
+    arduino_VariableAssignment,
+    arduino_Pin,
     Pin,
-    arduino::Project,
-    arduino::AnalogPin,
-    arduino::DigitalPin,
-    arduino::Connector,
+    arduino_Project,
+    arduino_AnalogPin,
+    arduino_DigitalPin,
+    arduino_Connector,
     NamedElement,
-    arduino::Module,
-    arduino::Instruction,
-    arduino::Variable,
-    arduino::Platform,
-    arduino::Sketch,
-    arduino::Hardware,
-    UnaryBooleanOperatorKind,
-    UnaryIntegerOperatorKind,
+    arduino_Sketch,
+    arduino_Platform,
+    arduino_Module,
+    arduino_Variable,
+    arduino_Instruction,
+    arduino_Hardware,
     Library,
-    BinaryIntegerOperatorKind,
     BinaryBooleanOperatorKind,
     ModuleKind,
+    UnaryBooleanOperatorKind,
     Time,
+    UnaryIntegerOperatorKind,
+    BinaryIntegerOperatorKind,
 )
 
 # =============================================================================
@@ -125,16 +125,16 @@ def test_instantaneousinstruction_constructor_args():
 
 
 
-def test_arduino::synchro_is_not_abstract():
-    assert not inspect.isabstract(arduino::Synchro)
+def test_arduino_synchro_is_not_abstract():
+    assert not inspect.isabstract(arduino_Synchro)
 
 
-def test_arduino::synchro_constructor_exists():
-    assert callable(arduino::Synchro.__init__)
+def test_arduino_synchro_constructor_exists():
+    assert callable(arduino_Synchro.__init__)
 
 
-def test_arduino::synchro_constructor_args():
-    sig = inspect.signature(arduino::Synchro.__init__)
+def test_arduino_synchro_constructor_args():
+    sig = inspect.signature(arduino_Synchro.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -167,37 +167,37 @@ def test_integerexpression_constructor_args():
 
 
 
-def test_arduino::integermoduleget_is_not_abstract():
-    assert not inspect.isabstract(arduino::IntegerModuleGet)
+def test_arduino_integermoduleget_is_not_abstract():
+    assert not inspect.isabstract(arduino_IntegerModuleGet)
 
 
-def test_arduino::integermoduleget_constructor_exists():
-    assert callable(arduino::IntegerModuleGet.__init__)
+def test_arduino_integermoduleget_constructor_exists():
+    assert callable(arduino_IntegerModuleGet.__init__)
 
 
-def test_arduino::integermoduleget_constructor_args():
-    sig = inspect.signature(arduino::IntegerModuleGet.__init__)
+def test_arduino_integermoduleget_constructor_args():
+    sig = inspect.signature(arduino_IntegerModuleGet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::integervariable_is_not_abstract():
-    assert not inspect.isabstract(arduino::IntegerVariable)
+def test_arduino_integervariable_is_not_abstract():
+    assert not inspect.isabstract(arduino_IntegerVariable)
 
 
-def test_arduino::integervariable_constructor_exists():
-    assert callable(arduino::IntegerVariable.__init__)
+def test_arduino_integervariable_constructor_exists():
+    assert callable(arduino_IntegerVariable.__init__)
 
 
-def test_arduino::integervariable_constructor_args():
-    sig = inspect.signature(arduino::IntegerVariable.__init__)
+def test_arduino_integervariable_constructor_args():
+    sig = inspect.signature(arduino_IntegerVariable.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
 
-def test_arduino::integervariable_has_initialValue():
-    assert hasattr(arduino::IntegerVariable, "initialValue")
+def test_arduino_integervariable_has_initialValue():
+    assert hasattr(arduino_IntegerVariable, "initialValue")
     descriptor = None
-    for klass in arduino::IntegerVariable.__mro__:
+    for klass in arduino_IntegerVariable.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
@@ -205,23 +205,23 @@ def test_arduino::integervariable_has_initialValue():
 
 
 
-def test_arduino::unaryintegerexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::UnaryIntegerExpression)
+def test_arduino_unaryintegerexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_UnaryIntegerExpression)
 
 
-def test_arduino::unaryintegerexpression_constructor_exists():
-    assert callable(arduino::UnaryIntegerExpression.__init__)
+def test_arduino_unaryintegerexpression_constructor_exists():
+    assert callable(arduino_UnaryIntegerExpression.__init__)
 
 
-def test_arduino::unaryintegerexpression_constructor_args():
-    sig = inspect.signature(arduino::UnaryIntegerExpression.__init__)
+def test_arduino_unaryintegerexpression_constructor_args():
+    sig = inspect.signature(arduino_UnaryIntegerExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_arduino::unaryintegerexpression_has_operator():
-    assert hasattr(arduino::UnaryIntegerExpression, "operator")
+def test_arduino_unaryintegerexpression_has_operator():
+    assert hasattr(arduino_UnaryIntegerExpression, "operator")
     descriptor = None
-    for klass in arduino::UnaryIntegerExpression.__mro__:
+    for klass in arduino_UnaryIntegerExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -243,23 +243,23 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_arduino::binaryintegerexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::BinaryIntegerExpression)
+def test_arduino_binaryintegerexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_BinaryIntegerExpression)
 
 
-def test_arduino::binaryintegerexpression_constructor_exists():
-    assert callable(arduino::BinaryIntegerExpression.__init__)
+def test_arduino_binaryintegerexpression_constructor_exists():
+    assert callable(arduino_BinaryIntegerExpression.__init__)
 
 
-def test_arduino::binaryintegerexpression_constructor_args():
-    sig = inspect.signature(arduino::BinaryIntegerExpression.__init__)
+def test_arduino_binaryintegerexpression_constructor_args():
+    sig = inspect.signature(arduino_BinaryIntegerExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_arduino::binaryintegerexpression_has_operator():
-    assert hasattr(arduino::BinaryIntegerExpression, "operator")
+def test_arduino_binaryintegerexpression_has_operator():
+    assert hasattr(arduino_BinaryIntegerExpression, "operator")
     descriptor = None
-    for klass in arduino::BinaryIntegerExpression.__mro__:
+    for klass in arduino_BinaryIntegerExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -281,23 +281,23 @@ def test_constant_constructor_args():
 
 
 
-def test_arduino::integerconstant_is_not_abstract():
-    assert not inspect.isabstract(arduino::IntegerConstant)
+def test_arduino_integerconstant_is_not_abstract():
+    assert not inspect.isabstract(arduino_IntegerConstant)
 
 
-def test_arduino::integerconstant_constructor_exists():
-    assert callable(arduino::IntegerConstant.__init__)
+def test_arduino_integerconstant_constructor_exists():
+    assert callable(arduino_IntegerConstant.__init__)
 
 
-def test_arduino::integerconstant_constructor_args():
-    sig = inspect.signature(arduino::IntegerConstant.__init__)
+def test_arduino_integerconstant_constructor_args():
+    sig = inspect.signature(arduino_IntegerConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arduino::integerconstant_has_value():
-    assert hasattr(arduino::IntegerConstant, "value")
+def test_arduino_integerconstant_has_value():
+    assert hasattr(arduino_IntegerConstant, "value")
     descriptor = None
-    for klass in arduino::IntegerConstant.__mro__:
+    for klass in arduino_IntegerConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -319,61 +319,23 @@ def test_booleanexpression_constructor_args():
 
 
 
-def test_arduino::booleanmoduleget_is_not_abstract():
-    assert not inspect.isabstract(arduino::BooleanModuleGet)
+def test_arduino_booleanconstant_is_not_abstract():
+    assert not inspect.isabstract(arduino_BooleanConstant)
 
 
-def test_arduino::booleanmoduleget_constructor_exists():
-    assert callable(arduino::BooleanModuleGet.__init__)
+def test_arduino_booleanconstant_constructor_exists():
+    assert callable(arduino_BooleanConstant.__init__)
 
 
-def test_arduino::booleanmoduleget_constructor_args():
-    sig = inspect.signature(arduino::BooleanModuleGet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arduino::unarybooleanexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::UnaryBooleanExpression)
-
-
-def test_arduino::unarybooleanexpression_constructor_exists():
-    assert callable(arduino::UnaryBooleanExpression.__init__)
-
-
-def test_arduino::unarybooleanexpression_constructor_args():
-    sig = inspect.signature(arduino::UnaryBooleanExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_arduino::unarybooleanexpression_has_operator():
-    assert hasattr(arduino::UnaryBooleanExpression, "operator")
-    descriptor = None
-    for klass in arduino::UnaryBooleanExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_arduino::booleanconstant_is_not_abstract():
-    assert not inspect.isabstract(arduino::BooleanConstant)
-
-
-def test_arduino::booleanconstant_constructor_exists():
-    assert callable(arduino::BooleanConstant.__init__)
-
-
-def test_arduino::booleanconstant_constructor_args():
-    sig = inspect.signature(arduino::BooleanConstant.__init__)
+def test_arduino_booleanconstant_constructor_args():
+    sig = inspect.signature(arduino_BooleanConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arduino::booleanconstant_has_value():
-    assert hasattr(arduino::BooleanConstant, "value")
+def test_arduino_booleanconstant_has_value():
+    assert hasattr(arduino_BooleanConstant, "value")
     descriptor = None
-    for klass in arduino::BooleanConstant.__mro__:
+    for klass in arduino_BooleanConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -381,23 +343,61 @@ def test_arduino::booleanconstant_has_value():
 
 
 
-def test_arduino::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(arduino::BooleanVariable)
+def test_arduino_unarybooleanexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_UnaryBooleanExpression)
 
 
-def test_arduino::booleanvariable_constructor_exists():
-    assert callable(arduino::BooleanVariable.__init__)
+def test_arduino_unarybooleanexpression_constructor_exists():
+    assert callable(arduino_UnaryBooleanExpression.__init__)
 
 
-def test_arduino::booleanvariable_constructor_args():
-    sig = inspect.signature(arduino::BooleanVariable.__init__)
+def test_arduino_unarybooleanexpression_constructor_args():
+    sig = inspect.signature(arduino_UnaryBooleanExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_arduino_unarybooleanexpression_has_operator():
+    assert hasattr(arduino_UnaryBooleanExpression, "operator")
+    descriptor = None
+    for klass in arduino_UnaryBooleanExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_arduino_booleanmoduleget_is_not_abstract():
+    assert not inspect.isabstract(arduino_BooleanModuleGet)
+
+
+def test_arduino_booleanmoduleget_constructor_exists():
+    assert callable(arduino_BooleanModuleGet.__init__)
+
+
+def test_arduino_booleanmoduleget_constructor_args():
+    sig = inspect.signature(arduino_BooleanModuleGet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arduino_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(arduino_BooleanVariable)
+
+
+def test_arduino_booleanvariable_constructor_exists():
+    assert callable(arduino_BooleanVariable.__init__)
+
+
+def test_arduino_booleanvariable_constructor_args():
+    sig = inspect.signature(arduino_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
 
-def test_arduino::booleanvariable_has_initialValue():
-    assert hasattr(arduino::BooleanVariable, "initialValue")
+def test_arduino_booleanvariable_has_initialValue():
+    assert hasattr(arduino_BooleanVariable, "initialValue")
     descriptor = None
-    for klass in arduino::BooleanVariable.__mro__:
+    for klass in arduino_BooleanVariable.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
@@ -405,23 +405,23 @@ def test_arduino::booleanvariable_has_initialValue():
 
 
 
-def test_arduino::binarybooleanexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::BinaryBooleanExpression)
+def test_arduino_binarybooleanexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_BinaryBooleanExpression)
 
 
-def test_arduino::binarybooleanexpression_constructor_exists():
-    assert callable(arduino::BinaryBooleanExpression.__init__)
+def test_arduino_binarybooleanexpression_constructor_exists():
+    assert callable(arduino_BinaryBooleanExpression.__init__)
 
 
-def test_arduino::binarybooleanexpression_constructor_args():
-    sig = inspect.signature(arduino::BinaryBooleanExpression.__init__)
+def test_arduino_binarybooleanexpression_constructor_args():
+    sig = inspect.signature(arduino_BinaryBooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_arduino::binarybooleanexpression_has_operator():
-    assert hasattr(arduino::BinaryBooleanExpression, "operator")
+def test_arduino_binarybooleanexpression_has_operator():
+    assert hasattr(arduino_BinaryBooleanExpression, "operator")
     descriptor = None
-    for klass in arduino::BinaryBooleanExpression.__mro__:
+    for klass in arduino_BinaryBooleanExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -443,35 +443,35 @@ def test_utilities_constructor_args():
 
 
 
-def test_arduino::delay_is_not_abstract():
-    assert not inspect.isabstract(arduino::Delay)
+def test_arduino_delay_is_not_abstract():
+    assert not inspect.isabstract(arduino_Delay)
 
 
-def test_arduino::delay_constructor_exists():
-    assert callable(arduino::Delay.__init__)
+def test_arduino_delay_constructor_exists():
+    assert callable(arduino_Delay.__init__)
 
 
-def test_arduino::delay_constructor_args():
-    sig = inspect.signature(arduino::Delay.__init__)
+def test_arduino_delay_constructor_args():
+    sig = inspect.signature(arduino_Delay.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "unit" in params, "Missing parameter 'unit'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_arduino::delay_has_value():
-    assert hasattr(arduino::Delay, "value")
+def test_arduino_delay_has_unit():
+    assert hasattr(arduino_Delay, "unit")
     descriptor = None
-    for klass in arduino::Delay.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in arduino_Delay.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::delay_has_unit():
-    assert hasattr(arduino::Delay, "unit")
+def test_arduino_delay_has_value():
+    assert hasattr(arduino_Delay, "value")
     descriptor = None
-    for klass in arduino::Delay.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
+    for klass in arduino_Delay.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -505,30 +505,30 @@ def test_moduleinstruction_constructor_args():
 
 
 
-def test_arduino::moduleassignment_is_not_abstract():
-    assert not inspect.isabstract(arduino::ModuleAssignment)
+def test_arduino_moduleassignment_is_not_abstract():
+    assert not inspect.isabstract(arduino_ModuleAssignment)
 
 
-def test_arduino::moduleassignment_constructor_exists():
-    assert callable(arduino::ModuleAssignment.__init__)
+def test_arduino_moduleassignment_constructor_exists():
+    assert callable(arduino_ModuleAssignment.__init__)
 
 
-def test_arduino::moduleassignment_constructor_args():
-    sig = inspect.signature(arduino::ModuleAssignment.__init__)
+def test_arduino_moduleassignment_constructor_args():
+    sig = inspect.signature(arduino_ModuleAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::expression_is_not_abstract():
-    assert not inspect.isabstract(arduino::Expression)
+def test_arduino_expression_is_not_abstract():
+    assert not inspect.isabstract(arduino_Expression)
 
 
-def test_arduino::expression_constructor_exists():
-    assert callable(arduino::Expression.__init__)
+def test_arduino_expression_constructor_exists():
+    assert callable(arduino_Expression.__init__)
 
 
-def test_arduino::expression_constructor_args():
-    sig = inspect.signature(arduino::Expression.__init__)
+def test_arduino_expression_constructor_args():
+    sig = inspect.signature(arduino_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -547,100 +547,100 @@ def test_expression_constructor_args():
 
 
 
-def test_arduino::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::BinaryExpression)
+def test_arduino_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_IntegerExpression)
 
 
-def test_arduino::binaryexpression_constructor_exists():
-    assert callable(arduino::BinaryExpression.__init__)
+def test_arduino_integerexpression_constructor_exists():
+    assert callable(arduino_IntegerExpression.__init__)
 
 
-def test_arduino::binaryexpression_constructor_args():
-    sig = inspect.signature(arduino::BinaryExpression.__init__)
+def test_arduino_integerexpression_constructor_args():
+    sig = inspect.signature(arduino_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::UnaryExpression)
+def test_arduino_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_BinaryExpression)
 
 
-def test_arduino::unaryexpression_constructor_exists():
-    assert callable(arduino::UnaryExpression.__init__)
+def test_arduino_binaryexpression_constructor_exists():
+    assert callable(arduino_BinaryExpression.__init__)
 
 
-def test_arduino::unaryexpression_constructor_args():
-    sig = inspect.signature(arduino::UnaryExpression.__init__)
+def test_arduino_binaryexpression_constructor_args():
+    sig = inspect.signature(arduino_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::IntegerExpression)
+def test_arduino_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_UnaryExpression)
 
 
-def test_arduino::integerexpression_constructor_exists():
-    assert callable(arduino::IntegerExpression.__init__)
+def test_arduino_unaryexpression_constructor_exists():
+    assert callable(arduino_UnaryExpression.__init__)
 
 
-def test_arduino::integerexpression_constructor_args():
-    sig = inspect.signature(arduino::IntegerExpression.__init__)
+def test_arduino_unaryexpression_constructor_args():
+    sig = inspect.signature(arduino_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::variableref_is_not_abstract():
-    assert not inspect.isabstract(arduino::VariableRef)
+def test_arduino_constant_is_not_abstract():
+    assert not inspect.isabstract(arduino_Constant)
 
 
-def test_arduino::variableref_constructor_exists():
-    assert callable(arduino::VariableRef.__init__)
+def test_arduino_constant_constructor_exists():
+    assert callable(arduino_Constant.__init__)
 
 
-def test_arduino::variableref_constructor_args():
-    sig = inspect.signature(arduino::VariableRef.__init__)
+def test_arduino_constant_constructor_args():
+    sig = inspect.signature(arduino_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::constant_is_not_abstract():
-    assert not inspect.isabstract(arduino::Constant)
+def test_arduino_variableref_is_not_abstract():
+    assert not inspect.isabstract(arduino_VariableRef)
 
 
-def test_arduino::constant_constructor_exists():
-    assert callable(arduino::Constant.__init__)
+def test_arduino_variableref_constructor_exists():
+    assert callable(arduino_VariableRef.__init__)
 
 
-def test_arduino::constant_constructor_args():
-    sig = inspect.signature(arduino::Constant.__init__)
+def test_arduino_variableref_constructor_args():
+    sig = inspect.signature(arduino_VariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(arduino::BooleanExpression)
+def test_arduino_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(arduino_BooleanExpression)
 
 
-def test_arduino::booleanexpression_constructor_exists():
-    assert callable(arduino::BooleanExpression.__init__)
+def test_arduino_booleanexpression_constructor_exists():
+    assert callable(arduino_BooleanExpression.__init__)
 
 
-def test_arduino::booleanexpression_constructor_args():
-    sig = inspect.signature(arduino::BooleanExpression.__init__)
+def test_arduino_booleanexpression_constructor_args():
+    sig = inspect.signature(arduino_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::moduleget_is_not_abstract():
-    assert not inspect.isabstract(arduino::ModuleGet)
+def test_arduino_moduleget_is_not_abstract():
+    assert not inspect.isabstract(arduino_ModuleGet)
 
 
-def test_arduino::moduleget_constructor_exists():
-    assert callable(arduino::ModuleGet.__init__)
+def test_arduino_moduleget_constructor_exists():
+    assert callable(arduino_ModuleGet.__init__)
 
 
-def test_arduino::moduleget_constructor_args():
-    sig = inspect.signature(arduino::ModuleGet.__init__)
+def test_arduino_moduleget_constructor_args():
+    sig = inspect.signature(arduino_ModuleGet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -659,51 +659,51 @@ def test_control_constructor_args():
 
 
 
-def test_arduino::while_is_not_abstract():
-    assert not inspect.isabstract(arduino::While)
+def test_arduino_while_is_not_abstract():
+    assert not inspect.isabstract(arduino_While)
 
 
-def test_arduino::while_constructor_exists():
-    assert callable(arduino::While.__init__)
+def test_arduino_while_constructor_exists():
+    assert callable(arduino_While.__init__)
 
 
-def test_arduino::while_constructor_args():
-    sig = inspect.signature(arduino::While.__init__)
+def test_arduino_while_constructor_args():
+    sig = inspect.signature(arduino_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::if_is_not_abstract():
-    assert not inspect.isabstract(arduino::If)
+def test_arduino_if_is_not_abstract():
+    assert not inspect.isabstract(arduino_If)
 
 
-def test_arduino::if_constructor_exists():
-    assert callable(arduino::If.__init__)
+def test_arduino_if_constructor_exists():
+    assert callable(arduino_If.__init__)
 
 
-def test_arduino::if_constructor_args():
-    sig = inspect.signature(arduino::If.__init__)
+def test_arduino_if_constructor_args():
+    sig = inspect.signature(arduino_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::repeat_is_not_abstract():
-    assert not inspect.isabstract(arduino::Repeat)
+def test_arduino_repeat_is_not_abstract():
+    assert not inspect.isabstract(arduino_Repeat)
 
 
-def test_arduino::repeat_constructor_exists():
-    assert callable(arduino::Repeat.__init__)
+def test_arduino_repeat_constructor_exists():
+    assert callable(arduino_Repeat.__init__)
 
 
-def test_arduino::repeat_constructor_args():
-    sig = inspect.signature(arduino::Repeat.__init__)
+def test_arduino_repeat_constructor_args():
+    sig = inspect.signature(arduino_Repeat.__init__)
     params = list(sig.parameters.keys())
     assert "iteration" in params, "Missing parameter 'iteration'"
 
-def test_arduino::repeat_has_iteration():
-    assert hasattr(arduino::Repeat, "iteration")
+def test_arduino_repeat_has_iteration():
+    assert hasattr(arduino_Repeat, "iteration")
     descriptor = None
-    for klass in arduino::Repeat.__mro__:
+    for klass in arduino_Repeat.__mro__:
         if "iteration" in klass.__dict__:
             descriptor = klass.__dict__["iteration"]
             break
@@ -711,23 +711,23 @@ def test_arduino::repeat_has_iteration():
 
 
 
-def test_arduino::namedelement_is_not_abstract():
-    assert not inspect.isabstract(arduino::NamedElement)
+def test_arduino_namedelement_is_not_abstract():
+    assert not inspect.isabstract(arduino_NamedElement)
 
 
-def test_arduino::namedelement_constructor_exists():
-    assert callable(arduino::NamedElement.__init__)
+def test_arduino_namedelement_constructor_exists():
+    assert callable(arduino_NamedElement.__init__)
 
 
-def test_arduino::namedelement_constructor_args():
-    sig = inspect.signature(arduino::NamedElement.__init__)
+def test_arduino_namedelement_constructor_args():
+    sig = inspect.signature(arduino_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arduino::namedelement_has_name():
-    assert hasattr(arduino::NamedElement, "name")
+def test_arduino_namedelement_has_name():
+    assert hasattr(arduino_NamedElement, "name")
     descriptor = None
-    for klass in arduino::NamedElement.__mro__:
+    for klass in arduino_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -749,30 +749,30 @@ def test_module_constructor_args():
 
 
 
-def test_arduino::actuator_is_not_abstract():
-    assert not inspect.isabstract(arduino::Actuator)
+def test_arduino_actuator_is_not_abstract():
+    assert not inspect.isabstract(arduino_Actuator)
 
 
-def test_arduino::actuator_constructor_exists():
-    assert callable(arduino::Actuator.__init__)
+def test_arduino_actuator_constructor_exists():
+    assert callable(arduino_Actuator.__init__)
 
 
-def test_arduino::actuator_constructor_args():
-    sig = inspect.signature(arduino::Actuator.__init__)
+def test_arduino_actuator_constructor_args():
+    sig = inspect.signature(arduino_Actuator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::sensor_is_not_abstract():
-    assert not inspect.isabstract(arduino::Sensor)
+def test_arduino_sensor_is_not_abstract():
+    assert not inspect.isabstract(arduino_Sensor)
 
 
-def test_arduino::sensor_constructor_exists():
-    assert callable(arduino::Sensor.__init__)
+def test_arduino_sensor_constructor_exists():
+    assert callable(arduino_Sensor.__init__)
 
 
-def test_arduino::sensor_constructor_args():
-    sig = inspect.signature(arduino::Sensor.__init__)
+def test_arduino_sensor_constructor_args():
+    sig = inspect.signature(arduino_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -791,131 +791,131 @@ def test_instruction_constructor_args():
 
 
 
-def test_arduino::utilities_is_not_abstract():
-    assert not inspect.isabstract(arduino::Utilities)
+def test_arduino_instantaneousinstruction_is_not_abstract():
+    assert not inspect.isabstract(arduino_InstantaneousInstruction)
 
 
-def test_arduino::utilities_constructor_exists():
-    assert callable(arduino::Utilities.__init__)
+def test_arduino_instantaneousinstruction_constructor_exists():
+    assert callable(arduino_InstantaneousInstruction.__init__)
 
 
-def test_arduino::utilities_constructor_args():
-    sig = inspect.signature(arduino::Utilities.__init__)
+def test_arduino_instantaneousinstruction_constructor_args():
+    sig = inspect.signature(arduino_InstantaneousInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::moduleinstruction_is_not_abstract():
-    assert not inspect.isabstract(arduino::ModuleInstruction)
+def test_arduino_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(arduino_VariableDeclaration)
 
 
-def test_arduino::moduleinstruction_constructor_exists():
-    assert callable(arduino::ModuleInstruction.__init__)
+def test_arduino_variabledeclaration_constructor_exists():
+    assert callable(arduino_VariableDeclaration.__init__)
 
 
-def test_arduino::moduleinstruction_constructor_args():
-    sig = inspect.signature(arduino::ModuleInstruction.__init__)
+def test_arduino_variabledeclaration_constructor_args():
+    sig = inspect.signature(arduino_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(arduino::VariableAssignment)
+def test_arduino_utilities_is_not_abstract():
+    assert not inspect.isabstract(arduino_Utilities)
 
 
-def test_arduino::variableassignment_constructor_exists():
-    assert callable(arduino::VariableAssignment.__init__)
+def test_arduino_utilities_constructor_exists():
+    assert callable(arduino_Utilities.__init__)
 
 
-def test_arduino::variableassignment_constructor_args():
-    sig = inspect.signature(arduino::VariableAssignment.__init__)
+def test_arduino_utilities_constructor_args():
+    sig = inspect.signature(arduino_Utilities.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::control_is_not_abstract():
-    assert not inspect.isabstract(arduino::Control)
+def test_arduino_control_is_not_abstract():
+    assert not inspect.isabstract(arduino_Control)
 
 
-def test_arduino::control_constructor_exists():
-    assert callable(arduino::Control.__init__)
+def test_arduino_control_constructor_exists():
+    assert callable(arduino_Control.__init__)
 
 
-def test_arduino::control_constructor_args():
-    sig = inspect.signature(arduino::Control.__init__)
+def test_arduino_control_constructor_args():
+    sig = inspect.signature(arduino_Control.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::instantaneousinstruction_is_not_abstract():
-    assert not inspect.isabstract(arduino::InstantaneousInstruction)
+def test_arduino_assignment_is_not_abstract():
+    assert not inspect.isabstract(arduino_Assignment)
 
 
-def test_arduino::instantaneousinstruction_constructor_exists():
-    assert callable(arduino::InstantaneousInstruction.__init__)
+def test_arduino_assignment_constructor_exists():
+    assert callable(arduino_Assignment.__init__)
 
 
-def test_arduino::instantaneousinstruction_constructor_args():
-    sig = inspect.signature(arduino::InstantaneousInstruction.__init__)
+def test_arduino_assignment_constructor_args():
+    sig = inspect.signature(arduino_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::assignment_is_not_abstract():
-    assert not inspect.isabstract(arduino::Assignment)
+def test_arduino_moduleinstruction_is_not_abstract():
+    assert not inspect.isabstract(arduino_ModuleInstruction)
 
 
-def test_arduino::assignment_constructor_exists():
-    assert callable(arduino::Assignment.__init__)
+def test_arduino_moduleinstruction_constructor_exists():
+    assert callable(arduino_ModuleInstruction.__init__)
 
 
-def test_arduino::assignment_constructor_args():
-    sig = inspect.signature(arduino::Assignment.__init__)
+def test_arduino_moduleinstruction_constructor_args():
+    sig = inspect.signature(arduino_ModuleInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(arduino::VariableDeclaration)
+def test_arduino_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(arduino_VariableAssignment)
 
 
-def test_arduino::variabledeclaration_constructor_exists():
-    assert callable(arduino::VariableDeclaration.__init__)
+def test_arduino_variableassignment_constructor_exists():
+    assert callable(arduino_VariableAssignment.__init__)
 
 
-def test_arduino::variabledeclaration_constructor_args():
-    sig = inspect.signature(arduino::VariableDeclaration.__init__)
+def test_arduino_variableassignment_constructor_args():
+    sig = inspect.signature(arduino_VariableAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::pin_is_not_abstract():
-    assert not inspect.isabstract(arduino::Pin)
+def test_arduino_pin_is_not_abstract():
+    assert not inspect.isabstract(arduino_Pin)
 
 
-def test_arduino::pin_constructor_exists():
-    assert callable(arduino::Pin.__init__)
+def test_arduino_pin_constructor_exists():
+    assert callable(arduino_Pin.__init__)
 
 
-def test_arduino::pin_constructor_args():
-    sig = inspect.signature(arduino::Pin.__init__)
+def test_arduino_pin_constructor_args():
+    sig = inspect.signature(arduino_Pin.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "level" in params, "Missing parameter 'level'"
 
-def test_arduino::pin_has_id():
-    assert hasattr(arduino::Pin, "id")
+def test_arduino_pin_has_id():
+    assert hasattr(arduino_Pin, "id")
     descriptor = None
-    for klass in arduino::Pin.__mro__:
+    for klass in arduino_Pin.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::pin_has_level():
-    assert hasattr(arduino::Pin, "level")
+def test_arduino_pin_has_level():
+    assert hasattr(arduino_Pin, "level")
     descriptor = None
-    for klass in arduino::Pin.__mro__:
+    for klass in arduino_Pin.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
@@ -937,58 +937,58 @@ def test_pin_constructor_args():
 
 
 
-def test_arduino::project_is_not_abstract():
-    assert not inspect.isabstract(arduino::Project)
+def test_arduino_project_is_not_abstract():
+    assert not inspect.isabstract(arduino_Project)
 
 
-def test_arduino::project_constructor_exists():
-    assert callable(arduino::Project.__init__)
+def test_arduino_project_constructor_exists():
+    assert callable(arduino_Project.__init__)
 
 
-def test_arduino::project_constructor_args():
-    sig = inspect.signature(arduino::Project.__init__)
+def test_arduino_project_constructor_args():
+    sig = inspect.signature(arduino_Project.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::analogpin_is_not_abstract():
-    assert not inspect.isabstract(arduino::AnalogPin)
+def test_arduino_analogpin_is_not_abstract():
+    assert not inspect.isabstract(arduino_AnalogPin)
 
 
-def test_arduino::analogpin_constructor_exists():
-    assert callable(arduino::AnalogPin.__init__)
+def test_arduino_analogpin_constructor_exists():
+    assert callable(arduino_AnalogPin.__init__)
 
 
-def test_arduino::analogpin_constructor_args():
-    sig = inspect.signature(arduino::AnalogPin.__init__)
+def test_arduino_analogpin_constructor_args():
+    sig = inspect.signature(arduino_AnalogPin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::digitalpin_is_not_abstract():
-    assert not inspect.isabstract(arduino::DigitalPin)
+def test_arduino_digitalpin_is_not_abstract():
+    assert not inspect.isabstract(arduino_DigitalPin)
 
 
-def test_arduino::digitalpin_constructor_exists():
-    assert callable(arduino::DigitalPin.__init__)
+def test_arduino_digitalpin_constructor_exists():
+    assert callable(arduino_DigitalPin.__init__)
 
 
-def test_arduino::digitalpin_constructor_args():
-    sig = inspect.signature(arduino::DigitalPin.__init__)
+def test_arduino_digitalpin_constructor_args():
+    sig = inspect.signature(arduino_DigitalPin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::connector_is_not_abstract():
-    assert not inspect.isabstract(arduino::Connector)
+def test_arduino_connector_is_not_abstract():
+    assert not inspect.isabstract(arduino_Connector)
 
 
-def test_arduino::connector_constructor_exists():
-    assert callable(arduino::Connector.__init__)
+def test_arduino_connector_constructor_exists():
+    assert callable(arduino_Connector.__init__)
 
 
-def test_arduino::connector_constructor_args():
-    sig = inspect.signature(arduino::Connector.__init__)
+def test_arduino_connector_constructor_args():
+    sig = inspect.signature(arduino_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1007,166 +1007,137 @@ def test_namedelement_constructor_args():
 
 
 
-def test_arduino::module_is_not_abstract():
-    assert not inspect.isabstract(arduino::Module)
+def test_arduino_sketch_is_not_abstract():
+    assert not inspect.isabstract(arduino_Sketch)
 
 
-def test_arduino::module_constructor_exists():
-    assert callable(arduino::Module.__init__)
+def test_arduino_sketch_constructor_exists():
+    assert callable(arduino_Sketch.__init__)
 
 
-def test_arduino::module_constructor_args():
-    sig = inspect.signature(arduino::Module.__init__)
+def test_arduino_sketch_constructor_args():
+    sig = inspect.signature(arduino_Sketch.__init__)
     params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
-    assert "library" in params, "Missing parameter 'library'"
-    assert "image" in params, "Missing parameter 'image'"
-    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_arduino::module_has_level():
-    assert hasattr(arduino::Module, "level")
+
+
+def test_arduino_platform_is_not_abstract():
+    assert not inspect.isabstract(arduino_Platform)
+
+
+def test_arduino_platform_constructor_exists():
+    assert callable(arduino_Platform.__init__)
+
+
+def test_arduino_platform_constructor_args():
+    sig = inspect.signature(arduino_Platform.__init__)
+    params = list(sig.parameters.keys())
+    assert "image" in params, "Missing parameter 'image'"
+
+def test_arduino_platform_has_image():
+    assert hasattr(arduino_Platform, "image")
     descriptor = None
-    for klass in arduino::Module.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
+    for klass in arduino_Platform.__mro__:
+        if "image" in klass.__dict__:
+            descriptor = klass.__dict__["image"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::module_has_library():
-    assert hasattr(arduino::Module, "library")
+
+
+def test_arduino_module_is_not_abstract():
+    assert not inspect.isabstract(arduino_Module)
+
+
+def test_arduino_module_constructor_exists():
+    assert callable(arduino_Module.__init__)
+
+
+def test_arduino_module_constructor_args():
+    sig = inspect.signature(arduino_Module.__init__)
+    params = list(sig.parameters.keys())
+    assert "library" in params, "Missing parameter 'library'"
+    assert "image" in params, "Missing parameter 'image'"
+    assert "kind" in params, "Missing parameter 'kind'"
+    assert "level" in params, "Missing parameter 'level'"
+
+def test_arduino_module_has_library():
+    assert hasattr(arduino_Module, "library")
     descriptor = None
-    for klass in arduino::Module.__mro__:
+    for klass in arduino_Module.__mro__:
         if "library" in klass.__dict__:
             descriptor = klass.__dict__["library"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::module_has_image():
-    assert hasattr(arduino::Module, "image")
+def test_arduino_module_has_image():
+    assert hasattr(arduino_Module, "image")
     descriptor = None
-    for klass in arduino::Module.__mro__:
+    for klass in arduino_Module.__mro__:
         if "image" in klass.__dict__:
             descriptor = klass.__dict__["image"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::module_has_kind():
-    assert hasattr(arduino::Module, "kind")
+def test_arduino_module_has_kind():
+    assert hasattr(arduino_Module, "kind")
     descriptor = None
-    for klass in arduino::Module.__mro__:
+    for klass in arduino_Module.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_arduino::instruction_is_not_abstract():
-    assert not inspect.isabstract(arduino::Instruction)
-
-
-def test_arduino::instruction_constructor_exists():
-    assert callable(arduino::Instruction.__init__)
-
-
-def test_arduino::instruction_constructor_args():
-    sig = inspect.signature(arduino::Instruction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arduino::variable_is_not_abstract():
-    assert not inspect.isabstract(arduino::Variable)
-
-
-def test_arduino::variable_constructor_exists():
-    assert callable(arduino::Variable.__init__)
-
-
-def test_arduino::variable_constructor_args():
-    sig = inspect.signature(arduino::Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arduino::platform_is_not_abstract():
-    assert not inspect.isabstract(arduino::Platform)
-
-
-def test_arduino::platform_constructor_exists():
-    assert callable(arduino::Platform.__init__)
-
-
-def test_arduino::platform_constructor_args():
-    sig = inspect.signature(arduino::Platform.__init__)
-    params = list(sig.parameters.keys())
-    assert "image" in params, "Missing parameter 'image'"
-
-def test_arduino::platform_has_image():
-    assert hasattr(arduino::Platform, "image")
+def test_arduino_module_has_level():
+    assert hasattr(arduino_Module, "level")
     descriptor = None
-    for klass in arduino::Platform.__mro__:
-        if "image" in klass.__dict__:
-            descriptor = klass.__dict__["image"]
+    for klass in arduino_Module.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_arduino::sketch_is_not_abstract():
-    assert not inspect.isabstract(arduino::Sketch)
+def test_arduino_variable_is_not_abstract():
+    assert not inspect.isabstract(arduino_Variable)
 
 
-def test_arduino::sketch_constructor_exists():
-    assert callable(arduino::Sketch.__init__)
+def test_arduino_variable_constructor_exists():
+    assert callable(arduino_Variable.__init__)
 
 
-def test_arduino::sketch_constructor_args():
-    sig = inspect.signature(arduino::Sketch.__init__)
+def test_arduino_variable_constructor_args():
+    sig = inspect.signature(arduino_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::hardware_is_not_abstract():
-    assert not inspect.isabstract(arduino::Hardware)
+def test_arduino_instruction_is_not_abstract():
+    assert not inspect.isabstract(arduino_Instruction)
 
 
-def test_arduino::hardware_constructor_exists():
-    assert callable(arduino::Hardware.__init__)
+def test_arduino_instruction_constructor_exists():
+    assert callable(arduino_Instruction.__init__)
 
 
-def test_arduino::hardware_constructor_args():
-    sig = inspect.signature(arduino::Hardware.__init__)
+def test_arduino_instruction_constructor_args():
+    sig = inspect.signature(arduino_Instruction.__init__)
     params = list(sig.parameters.keys())
 
-def test_unarybooleanoperatorkind_exists():
-    # Check that the Enumeration exists
-    assert UnaryBooleanOperatorKind is not None
 
-def test_unarybooleanoperatorkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryBooleanOperatorKind]
-    expected_literals = [
-        "not_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryBooleanOperatorKind"
 
-def test_unaryintegeroperatorkind_exists():
-    # Check that the Enumeration exists
-    assert UnaryIntegerOperatorKind is not None
+def test_arduino_hardware_is_not_abstract():
+    assert not inspect.isabstract(arduino_Hardware)
 
-def test_unaryintegeroperatorkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryIntegerOperatorKind]
-    expected_literals = [
-        "squareRoot",
-        "minus",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryIntegerOperatorKind"
+
+def test_arduino_hardware_constructor_exists():
+    assert callable(arduino_Hardware.__init__)
+
+
+def test_arduino_hardware_constructor_args():
+    sig = inspect.signature(arduino_Hardware.__init__)
+    params = list(sig.parameters.keys())
 
 def test_library_exists():
     # Check that the Enumeration exists
@@ -1176,33 +1147,13 @@ def test_library_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Library]
     expected_literals = [
+        "music",
         "none",
         "servo",
-        "music",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Library"
-
-def test_binaryintegeroperatorkind_exists():
-    # Check that the Enumeration exists
-    assert BinaryIntegerOperatorKind is not None
-
-def test_binaryintegeroperatorkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BinaryIntegerOperatorKind]
-    expected_literals = [
-        "plus",
-        "max",
-        "min",
-        "minus",
-        "mul",
-        "pourcent",
-        "div",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BinaryIntegerOperatorKind"
 
 def test_binarybooleanoperatorkind_exists():
     # Check that the Enumeration exists
@@ -1212,14 +1163,14 @@ def test_binarybooleanoperatorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BinaryBooleanOperatorKind]
     expected_literals = [
-        "infOrEqual",
-        "equal",
-        "sup",
-        "and_",
-        "inf",
-        "Different",
         "supOrEqual",
+        "and_",
+        "sup",
         "or_",
+        "infOrEqual",
+        "Different",
+        "equal",
+        "inf",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1240,6 +1191,20 @@ def test_modulekind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ModuleKind"
 
+def test_unarybooleanoperatorkind_exists():
+    # Check that the Enumeration exists
+    assert UnaryBooleanOperatorKind is not None
+
+def test_unarybooleanoperatorkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryBooleanOperatorKind]
+    expected_literals = [
+        "not_",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryBooleanOperatorKind"
+
 def test_time_exists():
     # Check that the Enumeration exists
     assert Time is not None
@@ -1254,6 +1219,41 @@ def test_time_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Time"
+
+def test_unaryintegeroperatorkind_exists():
+    # Check that the Enumeration exists
+    assert UnaryIntegerOperatorKind is not None
+
+def test_unaryintegeroperatorkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryIntegerOperatorKind]
+    expected_literals = [
+        "minus",
+        "squareRoot",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryIntegerOperatorKind"
+
+def test_binaryintegeroperatorkind_exists():
+    # Check that the Enumeration exists
+    assert BinaryIntegerOperatorKind is not None
+
+def test_binaryintegeroperatorkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BinaryIntegerOperatorKind]
+    expected_literals = [
+        "minus",
+        "min",
+        "plus",
+        "pourcent",
+        "div",
+        "max",
+        "mul",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BinaryIntegerOperatorKind"
 
 
 # =============================================================================
@@ -1276,8 +1276,8 @@ Variable_strategy = st.builds(
 InstantaneousInstruction_strategy = st.builds(
     InstantaneousInstruction,
 )
-arduino::Synchro_strategy = st.builds(
-    arduino::Synchro,
+arduino_Synchro_strategy = st.builds(
+    arduino_Synchro,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
@@ -1285,70 +1285,70 @@ UnaryExpression_strategy = st.builds(
 IntegerExpression_strategy = st.builds(
     IntegerExpression,
 )
-arduino::IntegerModuleGet_strategy = st.builds(
-    arduino::IntegerModuleGet,
+arduino_IntegerModuleGet_strategy = st.builds(
+    arduino_IntegerModuleGet,
 )
-arduino::IntegerVariable_strategy = st.builds(
-    arduino::IntegerVariable,
+arduino_IntegerVariable_strategy = st.builds(
+    arduino_IntegerVariable,
     initialValue=
         st.integers()
 )
-arduino::UnaryIntegerExpression_strategy = st.builds(
-    arduino::UnaryIntegerExpression,
+arduino_UnaryIntegerExpression_strategy = st.builds(
+    arduino_UnaryIntegerExpression,
     operator=
         safe_text
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-arduino::BinaryIntegerExpression_strategy = st.builds(
-    arduino::BinaryIntegerExpression,
+arduino_BinaryIntegerExpression_strategy = st.builds(
+    arduino_BinaryIntegerExpression,
     operator=
         safe_text
 )
 Constant_strategy = st.builds(
     Constant,
 )
-arduino::IntegerConstant_strategy = st.builds(
-    arduino::IntegerConstant,
+arduino_IntegerConstant_strategy = st.builds(
+    arduino_IntegerConstant,
     value=
         st.integers()
 )
 BooleanExpression_strategy = st.builds(
     BooleanExpression,
 )
-arduino::BooleanModuleGet_strategy = st.builds(
-    arduino::BooleanModuleGet,
-)
-arduino::UnaryBooleanExpression_strategy = st.builds(
-    arduino::UnaryBooleanExpression,
-    operator=
-        safe_text
-)
-arduino::BooleanConstant_strategy = st.builds(
-    arduino::BooleanConstant,
+arduino_BooleanConstant_strategy = st.builds(
+    arduino_BooleanConstant,
     value=
         st.booleans()
 )
-arduino::BooleanVariable_strategy = st.builds(
-    arduino::BooleanVariable,
+arduino_UnaryBooleanExpression_strategy = st.builds(
+    arduino_UnaryBooleanExpression,
+    operator=
+        safe_text
+)
+arduino_BooleanModuleGet_strategy = st.builds(
+    arduino_BooleanModuleGet,
+)
+arduino_BooleanVariable_strategy = st.builds(
+    arduino_BooleanVariable,
     initialValue=
         st.booleans()
 )
-arduino::BinaryBooleanExpression_strategy = st.builds(
-    arduino::BinaryBooleanExpression,
+arduino_BinaryBooleanExpression_strategy = st.builds(
+    arduino_BinaryBooleanExpression,
     operator=
         safe_text
 )
 Utilities_strategy = st.builds(
     Utilities,
 )
-arduino::Delay_strategy = st.builds(
-    arduino::Delay,
-    value=
-        st.integers(),
+arduino_Delay_strategy = st.builds(
+    arduino_Delay,
     unit=
-        safe_text
+        safe_text,
+    value=
+        st.integers()
 )
 Assignment_strategy = st.builds(
     Assignment,
@@ -1356,90 +1356,90 @@ Assignment_strategy = st.builds(
 ModuleInstruction_strategy = st.builds(
     ModuleInstruction,
 )
-arduino::ModuleAssignment_strategy = st.builds(
-    arduino::ModuleAssignment,
+arduino_ModuleAssignment_strategy = st.builds(
+    arduino_ModuleAssignment,
 )
-arduino::Expression_strategy = st.builds(
-    arduino::Expression,
+arduino_Expression_strategy = st.builds(
+    arduino_Expression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-arduino::BinaryExpression_strategy = st.builds(
-    arduino::BinaryExpression,
+arduino_IntegerExpression_strategy = st.builds(
+    arduino_IntegerExpression,
 )
-arduino::UnaryExpression_strategy = st.builds(
-    arduino::UnaryExpression,
+arduino_BinaryExpression_strategy = st.builds(
+    arduino_BinaryExpression,
 )
-arduino::IntegerExpression_strategy = st.builds(
-    arduino::IntegerExpression,
+arduino_UnaryExpression_strategy = st.builds(
+    arduino_UnaryExpression,
 )
-arduino::VariableRef_strategy = st.builds(
-    arduino::VariableRef,
+arduino_Constant_strategy = st.builds(
+    arduino_Constant,
 )
-arduino::Constant_strategy = st.builds(
-    arduino::Constant,
+arduino_VariableRef_strategy = st.builds(
+    arduino_VariableRef,
 )
-arduino::BooleanExpression_strategy = st.builds(
-    arduino::BooleanExpression,
+arduino_BooleanExpression_strategy = st.builds(
+    arduino_BooleanExpression,
 )
-arduino::ModuleGet_strategy = st.builds(
-    arduino::ModuleGet,
+arduino_ModuleGet_strategy = st.builds(
+    arduino_ModuleGet,
 )
 Control_strategy = st.builds(
     Control,
 )
-arduino::While_strategy = st.builds(
-    arduino::While,
+arduino_While_strategy = st.builds(
+    arduino_While,
 )
-arduino::If_strategy = st.builds(
-    arduino::If,
+arduino_If_strategy = st.builds(
+    arduino_If,
 )
-arduino::Repeat_strategy = st.builds(
-    arduino::Repeat,
+arduino_Repeat_strategy = st.builds(
+    arduino_Repeat,
     iteration=
         st.integers()
 )
-arduino::NamedElement_strategy = st.builds(
-    arduino::NamedElement,
+arduino_NamedElement_strategy = st.builds(
+    arduino_NamedElement,
     name=
         safe_text
 )
 Module_strategy = st.builds(
     Module,
 )
-arduino::Actuator_strategy = st.builds(
-    arduino::Actuator,
+arduino_Actuator_strategy = st.builds(
+    arduino_Actuator,
 )
-arduino::Sensor_strategy = st.builds(
-    arduino::Sensor,
+arduino_Sensor_strategy = st.builds(
+    arduino_Sensor,
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-arduino::Utilities_strategy = st.builds(
-    arduino::Utilities,
+arduino_InstantaneousInstruction_strategy = st.builds(
+    arduino_InstantaneousInstruction,
 )
-arduino::ModuleInstruction_strategy = st.builds(
-    arduino::ModuleInstruction,
+arduino_VariableDeclaration_strategy = st.builds(
+    arduino_VariableDeclaration,
 )
-arduino::VariableAssignment_strategy = st.builds(
-    arduino::VariableAssignment,
+arduino_Utilities_strategy = st.builds(
+    arduino_Utilities,
 )
-arduino::Control_strategy = st.builds(
-    arduino::Control,
+arduino_Control_strategy = st.builds(
+    arduino_Control,
 )
-arduino::InstantaneousInstruction_strategy = st.builds(
-    arduino::InstantaneousInstruction,
+arduino_Assignment_strategy = st.builds(
+    arduino_Assignment,
 )
-arduino::Assignment_strategy = st.builds(
-    arduino::Assignment,
+arduino_ModuleInstruction_strategy = st.builds(
+    arduino_ModuleInstruction,
 )
-arduino::VariableDeclaration_strategy = st.builds(
-    arduino::VariableDeclaration,
+arduino_VariableAssignment_strategy = st.builds(
+    arduino_VariableAssignment,
 )
-arduino::Pin_strategy = st.builds(
-    arduino::Pin,
+arduino_Pin_strategy = st.builds(
+    arduino_Pin,
     id=
         st.integers(),
     level=
@@ -1448,48 +1448,48 @@ arduino::Pin_strategy = st.builds(
 Pin_strategy = st.builds(
     Pin,
 )
-arduino::Project_strategy = st.builds(
-    arduino::Project,
+arduino_Project_strategy = st.builds(
+    arduino_Project,
 )
-arduino::AnalogPin_strategy = st.builds(
-    arduino::AnalogPin,
+arduino_AnalogPin_strategy = st.builds(
+    arduino_AnalogPin,
 )
-arduino::DigitalPin_strategy = st.builds(
-    arduino::DigitalPin,
+arduino_DigitalPin_strategy = st.builds(
+    arduino_DigitalPin,
 )
-arduino::Connector_strategy = st.builds(
-    arduino::Connector,
+arduino_Connector_strategy = st.builds(
+    arduino_Connector,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-arduino::Module_strategy = st.builds(
-    arduino::Module,
-    level=
-        st.booleans(),
+arduino_Sketch_strategy = st.builds(
+    arduino_Sketch,
+)
+arduino_Platform_strategy = st.builds(
+    arduino_Platform,
+    image=
+        safe_text
+)
+arduino_Module_strategy = st.builds(
+    arduino_Module,
     library=
         safe_text,
     image=
         safe_text,
     kind=
-        safe_text
+        safe_text,
+    level=
+        st.booleans()
 )
-arduino::Instruction_strategy = st.builds(
-    arduino::Instruction,
+arduino_Variable_strategy = st.builds(
+    arduino_Variable,
 )
-arduino::Variable_strategy = st.builds(
-    arduino::Variable,
+arduino_Instruction_strategy = st.builds(
+    arduino_Instruction,
 )
-arduino::Platform_strategy = st.builds(
-    arduino::Platform,
-    image=
-        safe_text
-)
-arduino::Sketch_strategy = st.builds(
-    arduino::Sketch,
-)
-arduino::Hardware_strategy = st.builds(
-    arduino::Hardware,
+arduino_Hardware_strategy = st.builds(
+    arduino_Hardware,
 )
 
 @given(instance=ModuleGet_strategy)
@@ -1507,10 +1507,10 @@ def test_variable_instantiation(instance):
 def test_instantaneousinstruction_instantiation(instance):
     assert isinstance(instance, InstantaneousInstruction)
 
-@given(instance=arduino::Synchro_strategy)
+@given(instance=arduino_Synchro_strategy)
 @settings(max_examples=50)
-def test_arduino::synchro_instantiation(instance):
-    assert isinstance(instance, arduino::Synchro)
+def test_arduino_synchro_instantiation(instance):
+    assert isinstance(instance, arduino_Synchro)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
@@ -1522,39 +1522,33 @@ def test_unaryexpression_instantiation(instance):
 def test_integerexpression_instantiation(instance):
     assert isinstance(instance, IntegerExpression)
 
-@given(instance=arduino::IntegerModuleGet_strategy)
+@given(instance=arduino_IntegerModuleGet_strategy)
 @settings(max_examples=50)
-def test_arduino::integermoduleget_instantiation(instance):
-    assert isinstance(instance, arduino::IntegerModuleGet)
+def test_arduino_integermoduleget_instantiation(instance):
+    assert isinstance(instance, arduino_IntegerModuleGet)
 
-@given(instance=arduino::IntegerVariable_strategy)
+@given(instance=arduino_IntegerVariable_strategy)
 @settings(max_examples=50)
-def test_arduino::integervariable_instantiation(instance):
-    assert isinstance(instance, arduino::IntegerVariable)
-
-@given(instance=arduino::IntegerVariable_strategy)
-def test_arduino::integervariable_initialValue_type(instance):
-    assert isinstance(instance.initialValue, int)
+def test_arduino_integervariable_instantiation(instance):
+    assert isinstance(instance, arduino_IntegerVariable)
 
 
-@given(instance=arduino::IntegerVariable_strategy)
-def test_arduino::integervariable_initialValue_setter(instance):
+
+@given(instance=arduino_IntegerVariable_strategy)
+def test_arduino_integervariable_initialValue_setter(instance):
     original = instance.initialValue
     instance.initialValue = original
     assert instance.initialValue == original
 
-@given(instance=arduino::UnaryIntegerExpression_strategy)
+@given(instance=arduino_UnaryIntegerExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::unaryintegerexpression_instantiation(instance):
-    assert isinstance(instance, arduino::UnaryIntegerExpression)
-
-@given(instance=arduino::UnaryIntegerExpression_strategy)
-def test_arduino::unaryintegerexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_arduino_unaryintegerexpression_instantiation(instance):
+    assert isinstance(instance, arduino_UnaryIntegerExpression)
 
 
-@given(instance=arduino::UnaryIntegerExpression_strategy)
-def test_arduino::unaryintegerexpression_operator_setter(instance):
+
+@given(instance=arduino_UnaryIntegerExpression_strategy)
+def test_arduino_unaryintegerexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -1564,18 +1558,15 @@ def test_arduino::unaryintegerexpression_operator_setter(instance):
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=arduino::BinaryIntegerExpression_strategy)
+@given(instance=arduino_BinaryIntegerExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::binaryintegerexpression_instantiation(instance):
-    assert isinstance(instance, arduino::BinaryIntegerExpression)
-
-@given(instance=arduino::BinaryIntegerExpression_strategy)
-def test_arduino::binaryintegerexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_arduino_binaryintegerexpression_instantiation(instance):
+    assert isinstance(instance, arduino_BinaryIntegerExpression)
 
 
-@given(instance=arduino::BinaryIntegerExpression_strategy)
-def test_arduino::binaryintegerexpression_operator_setter(instance):
+
+@given(instance=arduino_BinaryIntegerExpression_strategy)
+def test_arduino_binaryintegerexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -1585,18 +1576,15 @@ def test_arduino::binaryintegerexpression_operator_setter(instance):
 def test_constant_instantiation(instance):
     assert isinstance(instance, Constant)
 
-@given(instance=arduino::IntegerConstant_strategy)
+@given(instance=arduino_IntegerConstant_strategy)
 @settings(max_examples=50)
-def test_arduino::integerconstant_instantiation(instance):
-    assert isinstance(instance, arduino::IntegerConstant)
-
-@given(instance=arduino::IntegerConstant_strategy)
-def test_arduino::integerconstant_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_arduino_integerconstant_instantiation(instance):
+    assert isinstance(instance, arduino_IntegerConstant)
 
 
-@given(instance=arduino::IntegerConstant_strategy)
-def test_arduino::integerconstant_value_setter(instance):
+
+@given(instance=arduino_IntegerConstant_strategy)
+def test_arduino_integerconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1606,71 +1594,59 @@ def test_arduino::integerconstant_value_setter(instance):
 def test_booleanexpression_instantiation(instance):
     assert isinstance(instance, BooleanExpression)
 
-@given(instance=arduino::BooleanModuleGet_strategy)
+@given(instance=arduino_BooleanConstant_strategy)
 @settings(max_examples=50)
-def test_arduino::booleanmoduleget_instantiation(instance):
-    assert isinstance(instance, arduino::BooleanModuleGet)
-
-@given(instance=arduino::UnaryBooleanExpression_strategy)
-@settings(max_examples=50)
-def test_arduino::unarybooleanexpression_instantiation(instance):
-    assert isinstance(instance, arduino::UnaryBooleanExpression)
-
-@given(instance=arduino::UnaryBooleanExpression_strategy)
-def test_arduino::unarybooleanexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_arduino_booleanconstant_instantiation(instance):
+    assert isinstance(instance, arduino_BooleanConstant)
 
 
-@given(instance=arduino::UnaryBooleanExpression_strategy)
-def test_arduino::unarybooleanexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=arduino::BooleanConstant_strategy)
-@settings(max_examples=50)
-def test_arduino::booleanconstant_instantiation(instance):
-    assert isinstance(instance, arduino::BooleanConstant)
-
-@given(instance=arduino::BooleanConstant_strategy)
-def test_arduino::booleanconstant_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=arduino::BooleanConstant_strategy)
-def test_arduino::booleanconstant_value_setter(instance):
+@given(instance=arduino_BooleanConstant_strategy)
+def test_arduino_booleanconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arduino::BooleanVariable_strategy)
+@given(instance=arduino_UnaryBooleanExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::booleanvariable_instantiation(instance):
-    assert isinstance(instance, arduino::BooleanVariable)
-
-@given(instance=arduino::BooleanVariable_strategy)
-def test_arduino::booleanvariable_initialValue_type(instance):
-    assert isinstance(instance.initialValue, bool)
+def test_arduino_unarybooleanexpression_instantiation(instance):
+    assert isinstance(instance, arduino_UnaryBooleanExpression)
 
 
-@given(instance=arduino::BooleanVariable_strategy)
-def test_arduino::booleanvariable_initialValue_setter(instance):
+
+@given(instance=arduino_UnaryBooleanExpression_strategy)
+def test_arduino_unarybooleanexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=arduino_BooleanModuleGet_strategy)
+@settings(max_examples=50)
+def test_arduino_booleanmoduleget_instantiation(instance):
+    assert isinstance(instance, arduino_BooleanModuleGet)
+
+@given(instance=arduino_BooleanVariable_strategy)
+@settings(max_examples=50)
+def test_arduino_booleanvariable_instantiation(instance):
+    assert isinstance(instance, arduino_BooleanVariable)
+
+
+
+@given(instance=arduino_BooleanVariable_strategy)
+def test_arduino_booleanvariable_initialValue_setter(instance):
     original = instance.initialValue
     instance.initialValue = original
     assert instance.initialValue == original
 
-@given(instance=arduino::BinaryBooleanExpression_strategy)
+@given(instance=arduino_BinaryBooleanExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::binarybooleanexpression_instantiation(instance):
-    assert isinstance(instance, arduino::BinaryBooleanExpression)
-
-@given(instance=arduino::BinaryBooleanExpression_strategy)
-def test_arduino::binarybooleanexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_arduino_binarybooleanexpression_instantiation(instance):
+    assert isinstance(instance, arduino_BinaryBooleanExpression)
 
 
-@given(instance=arduino::BinaryBooleanExpression_strategy)
-def test_arduino::binarybooleanexpression_operator_setter(instance):
+
+@given(instance=arduino_BinaryBooleanExpression_strategy)
+def test_arduino_binarybooleanexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -1680,32 +1656,26 @@ def test_arduino::binarybooleanexpression_operator_setter(instance):
 def test_utilities_instantiation(instance):
     assert isinstance(instance, Utilities)
 
-@given(instance=arduino::Delay_strategy)
+@given(instance=arduino_Delay_strategy)
 @settings(max_examples=50)
-def test_arduino::delay_instantiation(instance):
-    assert isinstance(instance, arduino::Delay)
-
-@given(instance=arduino::Delay_strategy)
-def test_arduino::delay_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_arduino_delay_instantiation(instance):
+    assert isinstance(instance, arduino_Delay)
 
 
-@given(instance=arduino::Delay_strategy)
-def test_arduino::delay_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=arduino::Delay_strategy)
-def test_arduino::delay_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=arduino::Delay_strategy)
-def test_arduino::delay_unit_setter(instance):
+@given(instance=arduino_Delay_strategy)
+def test_arduino_delay_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
+
+
+
+@given(instance=arduino_Delay_strategy)
+def test_arduino_delay_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=Assignment_strategy)
 @settings(max_examples=50)
@@ -1717,99 +1687,93 @@ def test_assignment_instantiation(instance):
 def test_moduleinstruction_instantiation(instance):
     assert isinstance(instance, ModuleInstruction)
 
-@given(instance=arduino::ModuleAssignment_strategy)
+@given(instance=arduino_ModuleAssignment_strategy)
 @settings(max_examples=50)
-def test_arduino::moduleassignment_instantiation(instance):
-    assert isinstance(instance, arduino::ModuleAssignment)
+def test_arduino_moduleassignment_instantiation(instance):
+    assert isinstance(instance, arduino_ModuleAssignment)
 
-@given(instance=arduino::Expression_strategy)
+@given(instance=arduino_Expression_strategy)
 @settings(max_examples=50)
-def test_arduino::expression_instantiation(instance):
-    assert isinstance(instance, arduino::Expression)
+def test_arduino_expression_instantiation(instance):
+    assert isinstance(instance, arduino_Expression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=arduino::BinaryExpression_strategy)
+@given(instance=arduino_IntegerExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::binaryexpression_instantiation(instance):
-    assert isinstance(instance, arduino::BinaryExpression)
+def test_arduino_integerexpression_instantiation(instance):
+    assert isinstance(instance, arduino_IntegerExpression)
 
-@given(instance=arduino::UnaryExpression_strategy)
+@given(instance=arduino_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::unaryexpression_instantiation(instance):
-    assert isinstance(instance, arduino::UnaryExpression)
+def test_arduino_binaryexpression_instantiation(instance):
+    assert isinstance(instance, arduino_BinaryExpression)
 
-@given(instance=arduino::IntegerExpression_strategy)
+@given(instance=arduino_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::integerexpression_instantiation(instance):
-    assert isinstance(instance, arduino::IntegerExpression)
+def test_arduino_unaryexpression_instantiation(instance):
+    assert isinstance(instance, arduino_UnaryExpression)
 
-@given(instance=arduino::VariableRef_strategy)
+@given(instance=arduino_Constant_strategy)
 @settings(max_examples=50)
-def test_arduino::variableref_instantiation(instance):
-    assert isinstance(instance, arduino::VariableRef)
+def test_arduino_constant_instantiation(instance):
+    assert isinstance(instance, arduino_Constant)
 
-@given(instance=arduino::Constant_strategy)
+@given(instance=arduino_VariableRef_strategy)
 @settings(max_examples=50)
-def test_arduino::constant_instantiation(instance):
-    assert isinstance(instance, arduino::Constant)
+def test_arduino_variableref_instantiation(instance):
+    assert isinstance(instance, arduino_VariableRef)
 
-@given(instance=arduino::BooleanExpression_strategy)
+@given(instance=arduino_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_arduino::booleanexpression_instantiation(instance):
-    assert isinstance(instance, arduino::BooleanExpression)
+def test_arduino_booleanexpression_instantiation(instance):
+    assert isinstance(instance, arduino_BooleanExpression)
 
-@given(instance=arduino::ModuleGet_strategy)
+@given(instance=arduino_ModuleGet_strategy)
 @settings(max_examples=50)
-def test_arduino::moduleget_instantiation(instance):
-    assert isinstance(instance, arduino::ModuleGet)
+def test_arduino_moduleget_instantiation(instance):
+    assert isinstance(instance, arduino_ModuleGet)
 
 @given(instance=Control_strategy)
 @settings(max_examples=50)
 def test_control_instantiation(instance):
     assert isinstance(instance, Control)
 
-@given(instance=arduino::While_strategy)
+@given(instance=arduino_While_strategy)
 @settings(max_examples=50)
-def test_arduino::while_instantiation(instance):
-    assert isinstance(instance, arduino::While)
+def test_arduino_while_instantiation(instance):
+    assert isinstance(instance, arduino_While)
 
-@given(instance=arduino::If_strategy)
+@given(instance=arduino_If_strategy)
 @settings(max_examples=50)
-def test_arduino::if_instantiation(instance):
-    assert isinstance(instance, arduino::If)
+def test_arduino_if_instantiation(instance):
+    assert isinstance(instance, arduino_If)
 
-@given(instance=arduino::Repeat_strategy)
+@given(instance=arduino_Repeat_strategy)
 @settings(max_examples=50)
-def test_arduino::repeat_instantiation(instance):
-    assert isinstance(instance, arduino::Repeat)
-
-@given(instance=arduino::Repeat_strategy)
-def test_arduino::repeat_iteration_type(instance):
-    assert isinstance(instance.iteration, int)
+def test_arduino_repeat_instantiation(instance):
+    assert isinstance(instance, arduino_Repeat)
 
 
-@given(instance=arduino::Repeat_strategy)
-def test_arduino::repeat_iteration_setter(instance):
+
+@given(instance=arduino_Repeat_strategy)
+def test_arduino_repeat_iteration_setter(instance):
     original = instance.iteration
     instance.iteration = original
     assert instance.iteration == original
 
-@given(instance=arduino::NamedElement_strategy)
+@given(instance=arduino_NamedElement_strategy)
 @settings(max_examples=50)
-def test_arduino::namedelement_instantiation(instance):
-    assert isinstance(instance, arduino::NamedElement)
-
-@given(instance=arduino::NamedElement_strategy)
-def test_arduino::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arduino_namedelement_instantiation(instance):
+    assert isinstance(instance, arduino_NamedElement)
 
 
-@given(instance=arduino::NamedElement_strategy)
-def test_arduino::namedelement_name_setter(instance):
+
+@given(instance=arduino_NamedElement_strategy)
+def test_arduino_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1819,40 +1783,40 @@ def test_arduino::namedelement_name_setter(instance):
 def test_module_instantiation(instance):
     assert isinstance(instance, Module)
 
-@given(instance=arduino::Actuator_strategy)
+@given(instance=arduino_Actuator_strategy)
 @settings(max_examples=50)
-def test_arduino::actuator_instantiation(instance):
-    assert isinstance(instance, arduino::Actuator)
+def test_arduino_actuator_instantiation(instance):
+    assert isinstance(instance, arduino_Actuator)
 
-@given(instance=arduino::Sensor_strategy)
+@given(instance=arduino_Sensor_strategy)
 @settings(max_examples=50)
-def test_arduino::sensor_instantiation(instance):
-    assert isinstance(instance, arduino::Sensor)
+def test_arduino_sensor_instantiation(instance):
+    assert isinstance(instance, arduino_Sensor)
 
 @given(instance=Instruction_strategy)
 @settings(max_examples=50)
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=arduino::Utilities_strategy)
+@given(instance=arduino_InstantaneousInstruction_strategy)
 @settings(max_examples=50)
-def test_arduino::utilities_instantiation(instance):
-    assert isinstance(instance, arduino::Utilities)
+def test_arduino_instantaneousinstruction_instantiation(instance):
+    assert isinstance(instance, arduino_InstantaneousInstruction)
 
-@given(instance=arduino::ModuleInstruction_strategy)
+@given(instance=arduino_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_arduino::moduleinstruction_instantiation(instance):
-    assert isinstance(instance, arduino::ModuleInstruction)
+def test_arduino_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, arduino_VariableDeclaration)
 
-@given(instance=arduino::VariableAssignment_strategy)
+@given(instance=arduino_Utilities_strategy)
 @settings(max_examples=50)
-def test_arduino::variableassignment_instantiation(instance):
-    assert isinstance(instance, arduino::VariableAssignment)
+def test_arduino_utilities_instantiation(instance):
+    assert isinstance(instance, arduino_Utilities)
 
-@given(instance=arduino::Control_strategy)
+@given(instance=arduino_Control_strategy)
 @settings(max_examples=50)
-def test_arduino::control_instantiation(instance):
-    assert isinstance(instance, arduino::Control)
+def test_arduino_control_instantiation(instance):
+    assert isinstance(instance, arduino_Control)
 
 import warnings
 import copy
@@ -1860,9 +1824,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=arduino::Control_strategy)
+@given(instance=arduino_Control_strategy)
 @settings(max_examples=30)
-def test_arduino::control_evaluate_changes_state(instance):
+def test_arduino_control_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1874,53 +1838,47 @@ def test_arduino::control_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in arduino::Control is empty"
+        assert has_statements, f"Function 'evaluate' in arduino_Control is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in arduino::Control did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in arduino_Control did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in arduino::Control is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in arduino_Control is not implemented or raised an error")
 
-@given(instance=arduino::InstantaneousInstruction_strategy)
+@given(instance=arduino_Assignment_strategy)
 @settings(max_examples=50)
-def test_arduino::instantaneousinstruction_instantiation(instance):
-    assert isinstance(instance, arduino::InstantaneousInstruction)
+def test_arduino_assignment_instantiation(instance):
+    assert isinstance(instance, arduino_Assignment)
 
-@given(instance=arduino::Assignment_strategy)
+@given(instance=arduino_ModuleInstruction_strategy)
 @settings(max_examples=50)
-def test_arduino::assignment_instantiation(instance):
-    assert isinstance(instance, arduino::Assignment)
+def test_arduino_moduleinstruction_instantiation(instance):
+    assert isinstance(instance, arduino_ModuleInstruction)
 
-@given(instance=arduino::VariableDeclaration_strategy)
+@given(instance=arduino_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_arduino::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, arduino::VariableDeclaration)
+def test_arduino_variableassignment_instantiation(instance):
+    assert isinstance(instance, arduino_VariableAssignment)
 
-@given(instance=arduino::Pin_strategy)
+@given(instance=arduino_Pin_strategy)
 @settings(max_examples=50)
-def test_arduino::pin_instantiation(instance):
-    assert isinstance(instance, arduino::Pin)
-
-@given(instance=arduino::Pin_strategy)
-def test_arduino::pin_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_arduino_pin_instantiation(instance):
+    assert isinstance(instance, arduino_Pin)
 
 
-@given(instance=arduino::Pin_strategy)
-def test_arduino::pin_id_setter(instance):
+
+@given(instance=arduino_Pin_strategy)
+def test_arduino_pin_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=arduino::Pin_strategy)
-def test_arduino::pin_level_type(instance):
-    assert isinstance(instance.level, int)
 
 
-@given(instance=arduino::Pin_strategy)
-def test_arduino::pin_level_setter(instance):
+@given(instance=arduino_Pin_strategy)
+def test_arduino_pin_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
@@ -1930,84 +1888,95 @@ def test_arduino::pin_level_setter(instance):
 def test_pin_instantiation(instance):
     assert isinstance(instance, Pin)
 
-@given(instance=arduino::Project_strategy)
+@given(instance=arduino_Project_strategy)
 @settings(max_examples=50)
-def test_arduino::project_instantiation(instance):
-    assert isinstance(instance, arduino::Project)
+def test_arduino_project_instantiation(instance):
+    assert isinstance(instance, arduino_Project)
 
-@given(instance=arduino::AnalogPin_strategy)
+@given(instance=arduino_AnalogPin_strategy)
 @settings(max_examples=50)
-def test_arduino::analogpin_instantiation(instance):
-    assert isinstance(instance, arduino::AnalogPin)
+def test_arduino_analogpin_instantiation(instance):
+    assert isinstance(instance, arduino_AnalogPin)
 
-@given(instance=arduino::DigitalPin_strategy)
+@given(instance=arduino_DigitalPin_strategy)
 @settings(max_examples=50)
-def test_arduino::digitalpin_instantiation(instance):
-    assert isinstance(instance, arduino::DigitalPin)
+def test_arduino_digitalpin_instantiation(instance):
+    assert isinstance(instance, arduino_DigitalPin)
 
-@given(instance=arduino::Connector_strategy)
+@given(instance=arduino_Connector_strategy)
 @settings(max_examples=50)
-def test_arduino::connector_instantiation(instance):
-    assert isinstance(instance, arduino::Connector)
+def test_arduino_connector_instantiation(instance):
+    assert isinstance(instance, arduino_Connector)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=arduino::Module_strategy)
+@given(instance=arduino_Sketch_strategy)
 @settings(max_examples=50)
-def test_arduino::module_instantiation(instance):
-    assert isinstance(instance, arduino::Module)
+def test_arduino_sketch_instantiation(instance):
+    assert isinstance(instance, arduino_Sketch)
 
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_level_type(instance):
-    assert isinstance(instance.level, bool)
-
-
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_library_type(instance):
-    assert isinstance(instance.library, str)
+@given(instance=arduino_Platform_strategy)
+@settings(max_examples=50)
+def test_arduino_platform_instantiation(instance):
+    assert isinstance(instance, arduino_Platform)
 
 
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_library_setter(instance):
-    original = instance.library
-    instance.library = original
-    assert instance.library == original
 
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_image_type(instance):
-    assert isinstance(instance.image, str)
-
-
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_image_setter(instance):
+@given(instance=arduino_Platform_strategy)
+def test_arduino_platform_image_setter(instance):
     original = instance.image
     instance.image = original
     assert instance.image == original
 
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_kind_type(instance):
-    assert isinstance(instance.kind, str)
+@given(instance=arduino_Module_strategy)
+@settings(max_examples=50)
+def test_arduino_module_instantiation(instance):
+    assert isinstance(instance, arduino_Module)
 
 
-@given(instance=arduino::Module_strategy)
-def test_arduino::module_kind_setter(instance):
+
+@given(instance=arduino_Module_strategy)
+def test_arduino_module_library_setter(instance):
+    original = instance.library
+    instance.library = original
+    assert instance.library == original
+
+
+
+@given(instance=arduino_Module_strategy)
+def test_arduino_module_image_setter(instance):
+    original = instance.image
+    instance.image = original
+    assert instance.image == original
+
+
+
+@given(instance=arduino_Module_strategy)
+def test_arduino_module_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=arduino::Instruction_strategy)
+
+
+@given(instance=arduino_Module_strategy)
+def test_arduino_module_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+@given(instance=arduino_Variable_strategy)
 @settings(max_examples=50)
-def test_arduino::instruction_instantiation(instance):
-    assert isinstance(instance, arduino::Instruction)
+def test_arduino_variable_instantiation(instance):
+    assert isinstance(instance, arduino_Variable)
+
+@given(instance=arduino_Instruction_strategy)
+@settings(max_examples=50)
+def test_arduino_instruction_instantiation(instance):
+    assert isinstance(instance, arduino_Instruction)
 
 import warnings
 import copy
@@ -2015,9 +1984,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=arduino::Instruction_strategy)
+@given(instance=arduino_Instruction_strategy)
 @settings(max_examples=30)
-def test_arduino::instruction_finalize_changes_state(instance):
+def test_arduino_instruction_finalize_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2029,14 +1998,14 @@ def test_arduino::instruction_finalize_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'finalize' in arduino::Instruction is empty"
+        assert has_statements, f"Function 'finalize' in arduino_Instruction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'finalize' in arduino::Instruction did not change state; check implementation")
+            warnings.warn(f"Operation 'finalize' in arduino_Instruction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'finalize' in arduino::Instruction is not implemented or raised an error")
+        warnings.warn(f"Operation 'finalize' in arduino_Instruction is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2044,9 +2013,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=arduino::Instruction_strategy)
+@given(instance=arduino_Instruction_strategy)
 @settings(max_examples=30)
-def test_arduino::instruction_execute_changes_state(instance):
+def test_arduino_instruction_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2058,42 +2027,16 @@ def test_arduino::instruction_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in arduino::Instruction is empty"
+        assert has_statements, f"Function 'execute' in arduino_Instruction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in arduino::Instruction did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in arduino_Instruction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in arduino::Instruction is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in arduino_Instruction is not implemented or raised an error")
 
-@given(instance=arduino::Variable_strategy)
+@given(instance=arduino_Hardware_strategy)
 @settings(max_examples=50)
-def test_arduino::variable_instantiation(instance):
-    assert isinstance(instance, arduino::Variable)
-
-@given(instance=arduino::Platform_strategy)
-@settings(max_examples=50)
-def test_arduino::platform_instantiation(instance):
-    assert isinstance(instance, arduino::Platform)
-
-@given(instance=arduino::Platform_strategy)
-def test_arduino::platform_image_type(instance):
-    assert isinstance(instance.image, str)
-
-
-@given(instance=arduino::Platform_strategy)
-def test_arduino::platform_image_setter(instance):
-    original = instance.image
-    instance.image = original
-    assert instance.image == original
-
-@given(instance=arduino::Sketch_strategy)
-@settings(max_examples=50)
-def test_arduino::sketch_instantiation(instance):
-    assert isinstance(instance, arduino::Sketch)
-
-@given(instance=arduino::Hardware_strategy)
-@settings(max_examples=50)
-def test_arduino::hardware_instantiation(instance):
-    assert isinstance(instance, arduino::Hardware)
+def test_arduino_hardware_instantiation(instance):
+    assert isinstance(instance, arduino_Hardware)

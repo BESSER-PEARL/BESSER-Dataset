@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    AbcToNothing::C,
-    AbcToNothing::classB,
-    AbcToNothing::A,
+from python_code import (
+    AbcToNothing_C,
+    AbcToNothing_classB,
+    AbcToNothing_A,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_abctonothing::c_is_not_abstract():
-    assert not inspect.isabstract(AbcToNothing::C)
+def test_abctonothing_c_is_not_abstract():
+    assert not inspect.isabstract(AbcToNothing_C)
 
 
-def test_abctonothing::c_constructor_exists():
-    assert callable(AbcToNothing::C.__init__)
+def test_abctonothing_c_constructor_exists():
+    assert callable(AbcToNothing_C.__init__)
 
 
-def test_abctonothing::c_constructor_args():
-    sig = inspect.signature(AbcToNothing::C.__init__)
+def test_abctonothing_c_constructor_args():
+    sig = inspect.signature(AbcToNothing_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_abctonothing::classb_is_not_abstract():
-    assert not inspect.isabstract(AbcToNothing::classB)
+def test_abctonothing_classb_is_not_abstract():
+    assert not inspect.isabstract(AbcToNothing_classB)
 
 
-def test_abctonothing::classb_constructor_exists():
-    assert callable(AbcToNothing::classB.__init__)
+def test_abctonothing_classb_constructor_exists():
+    assert callable(AbcToNothing_classB.__init__)
 
 
-def test_abctonothing::classb_constructor_args():
-    sig = inspect.signature(AbcToNothing::classB.__init__)
+def test_abctonothing_classb_constructor_args():
+    sig = inspect.signature(AbcToNothing_classB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_abctonothing::a_is_not_abstract():
-    assert not inspect.isabstract(AbcToNothing::A)
+def test_abctonothing_a_is_not_abstract():
+    assert not inspect.isabstract(AbcToNothing_A)
 
 
-def test_abctonothing::a_constructor_exists():
-    assert callable(AbcToNothing::A.__init__)
+def test_abctonothing_a_constructor_exists():
+    assert callable(AbcToNothing_A.__init__)
 
 
-def test_abctonothing::a_constructor_args():
-    sig = inspect.signature(AbcToNothing::A.__init__)
+def test_abctonothing_a_constructor_args():
+    sig = inspect.signature(AbcToNothing_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-AbcToNothing::C_strategy = st.builds(
-    AbcToNothing::C,
+AbcToNothing_C_strategy = st.builds(
+    AbcToNothing_C,
 )
-AbcToNothing::classB_strategy = st.builds(
-    AbcToNothing::classB,
+AbcToNothing_classB_strategy = st.builds(
+    AbcToNothing_classB,
 )
-AbcToNothing::A_strategy = st.builds(
-    AbcToNothing::A,
+AbcToNothing_A_strategy = st.builds(
+    AbcToNothing_A,
 )
 
-@given(instance=AbcToNothing::C_strategy)
+@given(instance=AbcToNothing_C_strategy)
 @settings(max_examples=50)
-def test_abctonothing::c_instantiation(instance):
-    assert isinstance(instance, AbcToNothing::C)
+def test_abctonothing_c_instantiation(instance):
+    assert isinstance(instance, AbcToNothing_C)
 
-@given(instance=AbcToNothing::classB_strategy)
+@given(instance=AbcToNothing_classB_strategy)
 @settings(max_examples=50)
-def test_abctonothing::classb_instantiation(instance):
-    assert isinstance(instance, AbcToNothing::classB)
+def test_abctonothing_classb_instantiation(instance):
+    assert isinstance(instance, AbcToNothing_classB)
 
-@given(instance=AbcToNothing::A_strategy)
+@given(instance=AbcToNothing_A_strategy)
 @settings(max_examples=50)
-def test_abctonothing::a_instantiation(instance):
-    assert isinstance(instance, AbcToNothing::A)
+def test_abctonothing_a_instantiation(instance):
+    assert isinstance(instance, AbcToNothing_A)

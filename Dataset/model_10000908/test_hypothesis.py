@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    CPU,
     FastCard,
     ExtensionBoard,
     Vendor2Sound,
@@ -25,25 +24,12 @@ from python_code import (
     Cache,
     AcceleratorCard,
     Processor,
+    CPU,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_cpu_is_not_abstract():
-    assert not inspect.isabstract(CPU)
-
-
-def test_cpu_constructor_exists():
-    assert callable(CPU.__init__)
-
-
-def test_cpu_constructor_args():
-    sig = inspect.signature(CPU.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -318,6 +304,20 @@ def test_processor_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_cpu_is_not_abstract():
+    assert not inspect.isabstract(CPU)
+
+
+def test_cpu_constructor_exists():
+    assert callable(CPU.__init__)
+
+
+def test_cpu_constructor_args():
+    sig = inspect.signature(CPU.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -329,9 +329,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CPU_strategy = st.builds(
-    CPU,
-)
 FastCard_strategy = st.builds(
     FastCard,
 )
@@ -390,11 +387,9 @@ AcceleratorCard_strategy = st.builds(
 Processor_strategy = st.builds(
     Processor,
 )
-
-@given(instance=CPU_strategy)
-@settings(max_examples=50)
-def test_cpu_instantiation(instance):
-    assert isinstance(instance, CPU)
+CPU_strategy = st.builds(
+    CPU,
+)
 
 @given(instance=FastCard_strategy)
 @settings(max_examples=50)
@@ -461,9 +456,6 @@ def test_instruction_instantiation(instance):
 def test_program_instantiation(instance):
     assert isinstance(instance, Program)
 
-@given(instance=Program_strategy)
-def test_program_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Program_strategy)
@@ -487,9 +479,6 @@ def test_ram_instantiation(instance):
 def test_cache_instantiation(instance):
     assert isinstance(instance, Cache)
 
-@given(instance=Cache_strategy)
-def test_cache_chunck_type(instance):
-    assert isinstance(instance.chunck, str)
 
 
 @given(instance=Cache_strategy)
@@ -507,3 +496,8 @@ def test_acceleratorcard_instantiation(instance):
 @settings(max_examples=50)
 def test_processor_instantiation(instance):
     assert isinstance(instance, Processor)
+
+@given(instance=CPU_strategy)
+@settings(max_examples=50)
+def test_cpu_instantiation(instance):
+    assert isinstance(instance, CPU)

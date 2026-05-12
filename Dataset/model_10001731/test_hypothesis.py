@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Book_Delivery__UseCase,
@@ -141,8 +141,8 @@ def test_bookborrow_constructor_args():
     assert "UserCode" in params, "Missing parameter 'UserCode'"
     assert "BookID" in params, "Missing parameter 'BookID'"
     assert "InDate" in params, "Missing parameter 'InDate'"
-    assert "BorrowID" in params, "Missing parameter 'BorrowID'"
     assert "OutDate" in params, "Missing parameter 'OutDate'"
+    assert "BorrowID" in params, "Missing parameter 'BorrowID'"
 
 def test_bookborrow_has_UserCode():
     assert hasattr(BookBorrow, "UserCode")
@@ -171,21 +171,21 @@ def test_bookborrow_has_InDate():
             break
     assert isinstance(descriptor, property)
 
-def test_bookborrow_has_BorrowID():
-    assert hasattr(BookBorrow, "BorrowID")
-    descriptor = None
-    for klass in BookBorrow.__mro__:
-        if "BorrowID" in klass.__dict__:
-            descriptor = klass.__dict__["BorrowID"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_bookborrow_has_OutDate():
     assert hasattr(BookBorrow, "OutDate")
     descriptor = None
     for klass in BookBorrow.__mro__:
         if "OutDate" in klass.__dict__:
             descriptor = klass.__dict__["OutDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bookborrow_has_BorrowID():
+    assert hasattr(BookBorrow, "BorrowID")
+    descriptor = None
+    for klass in BookBorrow.__mro__:
+        if "BorrowID" in klass.__dict__:
+            descriptor = klass.__dict__["BorrowID"]
             break
     assert isinstance(descriptor, property)
 
@@ -202,38 +202,29 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "Mail" in params, "Missing parameter 'Mail'"
-    assert "UserCode" in params, "Missing parameter 'UserCode'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "Phone" in params, "Missing parameter 'Phone'"
     assert "Address" in params, "Missing parameter 'Address'"
-    assert "RegistrationDate" in params, "Missing parameter 'RegistrationDate'"
     assert "Active" in params, "Missing parameter 'Active'"
+    assert "Phone" in params, "Missing parameter 'Phone'"
+    assert "RegistrationDate" in params, "Missing parameter 'RegistrationDate'"
+    assert "UserCode" in params, "Missing parameter 'UserCode'"
+    assert "Mail" in params, "Missing parameter 'Mail'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
-def test_user_has_Mail():
-    assert hasattr(User, "Mail")
+def test_user_has_Address():
+    assert hasattr(User, "Address")
     descriptor = None
     for klass in User.__mro__:
-        if "Mail" in klass.__dict__:
-            descriptor = klass.__dict__["Mail"]
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_UserCode():
-    assert hasattr(User, "UserCode")
+def test_user_has_Active():
+    assert hasattr(User, "Active")
     descriptor = None
     for klass in User.__mro__:
-        if "UserCode" in klass.__dict__:
-            descriptor = klass.__dict__["UserCode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_attribute():
-    assert hasattr(User, "attribute")
-    descriptor = None
-    for klass in User.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
+        if "Active" in klass.__dict__:
+            descriptor = klass.__dict__["Active"]
             break
     assert isinstance(descriptor, property)
 
@@ -246,15 +237,6 @@ def test_user_has_Phone():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Address():
-    assert hasattr(User, "Address")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_user_has_RegistrationDate():
     assert hasattr(User, "RegistrationDate")
     descriptor = None
@@ -264,12 +246,30 @@ def test_user_has_RegistrationDate():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Active():
-    assert hasattr(User, "Active")
+def test_user_has_UserCode():
+    assert hasattr(User, "UserCode")
     descriptor = None
     for klass in User.__mro__:
-        if "Active" in klass.__dict__:
-            descriptor = klass.__dict__["Active"]
+        if "UserCode" in klass.__dict__:
+            descriptor = klass.__dict__["UserCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Mail():
+    assert hasattr(User, "Mail")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Mail" in klass.__dict__:
+            descriptor = klass.__dict__["Mail"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_attribute():
+    assert hasattr(User, "attribute")
+    descriptor = None
+    for klass in User.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -286,17 +286,8 @@ def test_librarian_constructor_exists():
 def test_librarian_constructor_args():
     sig = inspect.signature(Librarian.__init__)
     params = list(sig.parameters.keys())
-    assert "LibID" in params, "Missing parameter 'LibID'"
     assert "Department" in params, "Missing parameter 'Department'"
-
-def test_librarian_has_LibID():
-    assert hasattr(Librarian, "LibID")
-    descriptor = None
-    for klass in Librarian.__mro__:
-        if "LibID" in klass.__dict__:
-            descriptor = klass.__dict__["LibID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "LibID" in params, "Missing parameter 'LibID'"
 
 def test_librarian_has_Department():
     assert hasattr(Librarian, "Department")
@@ -304,6 +295,15 @@ def test_librarian_has_Department():
     for klass in Librarian.__mro__:
         if "Department" in klass.__dict__:
             descriptor = klass.__dict__["Department"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_librarian_has_LibID():
+    assert hasattr(Librarian, "LibID")
+    descriptor = None
+    for klass in Librarian.__mro__:
+        if "LibID" in klass.__dict__:
+            descriptor = klass.__dict__["LibID"]
             break
     assert isinstance(descriptor, property)
 
@@ -345,9 +345,9 @@ def test_person_constructor_args():
     sig = inspect.signature(Person.__init__)
     params = list(sig.parameters.keys())
     assert "LibraryID" in params, "Missing parameter 'LibraryID'"
-    assert "PersonID" in params, "Missing parameter 'PersonID'"
     assert "BirthDay" in params, "Missing parameter 'BirthDay'"
     assert "PersonName" in params, "Missing parameter 'PersonName'"
+    assert "PersonID" in params, "Missing parameter 'PersonID'"
 
 def test_person_has_LibraryID():
     assert hasattr(Person, "LibraryID")
@@ -355,15 +355,6 @@ def test_person_has_LibraryID():
     for klass in Person.__mro__:
         if "LibraryID" in klass.__dict__:
             descriptor = klass.__dict__["LibraryID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_person_has_PersonID():
-    assert hasattr(Person, "PersonID")
-    descriptor = None
-    for klass in Person.__mro__:
-        if "PersonID" in klass.__dict__:
-            descriptor = klass.__dict__["PersonID"]
             break
     assert isinstance(descriptor, property)
 
@@ -385,6 +376,15 @@ def test_person_has_PersonName():
             break
     assert isinstance(descriptor, property)
 
+def test_person_has_PersonID():
+    assert hasattr(Person, "PersonID")
+    descriptor = None
+    for klass in Person.__mro__:
+        if "PersonID" in klass.__dict__:
+            descriptor = klass.__dict__["PersonID"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_book_is_not_abstract():
@@ -398,11 +398,20 @@ def test_book_constructor_exists():
 def test_book_constructor_args():
     sig = inspect.signature(Book.__init__)
     params = list(sig.parameters.keys())
+    assert "BookName" in params, "Missing parameter 'BookName'"
     assert "Price" in params, "Missing parameter 'Price'"
     assert "BookID" in params, "Missing parameter 'BookID'"
-    assert "BookName" in params, "Missing parameter 'BookName'"
     assert "PubName" in params, "Missing parameter 'PubName'"
     assert "LibraryID" in params, "Missing parameter 'LibraryID'"
+
+def test_book_has_BookName():
+    assert hasattr(Book, "BookName")
+    descriptor = None
+    for klass in Book.__mro__:
+        if "BookName" in klass.__dict__:
+            descriptor = klass.__dict__["BookName"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_book_has_Price():
     assert hasattr(Book, "Price")
@@ -419,15 +428,6 @@ def test_book_has_BookID():
     for klass in Book.__mro__:
         if "BookID" in klass.__dict__:
             descriptor = klass.__dict__["BookID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_book_has_BookName():
-    assert hasattr(Book, "BookName")
-    descriptor = None
-    for klass in Book.__mro__:
-        if "BookName" in klass.__dict__:
-            descriptor = klass.__dict__["BookName"]
             break
     assert isinstance(descriptor, property)
 
@@ -1070,34 +1070,34 @@ BookBorrow_strategy = st.builds(
         st.integers(),
     InDate=
         safe_text,
-    BorrowID=
-        st.integers(),
     OutDate=
-        safe_text
+        safe_text,
+    BorrowID=
+        st.integers()
 )
 User_strategy = st.builds(
     User,
-    Mail=
+    Address=
+        safe_text,
+    Active=
+        st.booleans(),
+    Phone=
+        st.integers(),
+    RegistrationDate=
         safe_text,
     UserCode=
         st.integers(),
+    Mail=
+        safe_text,
     attribute=
-        safe_text,
-    Phone=
-        st.integers(),
-    Address=
-        safe_text,
-    RegistrationDate=
-        safe_text,
-    Active=
-        st.booleans()
+        safe_text
 )
 Librarian_strategy = st.builds(
     Librarian,
-    LibID=
-        st.integers(),
     Department=
-        safe_text
+        safe_text,
+    LibID=
+        st.integers()
 )
 Guest_strategy = st.builds(
     Guest,
@@ -1108,21 +1108,21 @@ Person_strategy = st.builds(
     Person,
     LibraryID=
         st.integers(),
-    PersonID=
-        st.integers(),
     BirthDay=
         safe_text,
     PersonName=
-        safe_text
+        safe_text,
+    PersonID=
+        st.integers()
 )
 Book_strategy = st.builds(
     Book,
+    BookName=
+        safe_text,
     Price=
         st.integers(),
     BookID=
         st.integers(),
-    BookName=
-        safe_text,
     PubName=
         safe_text,
     LibraryID=
@@ -1270,9 +1270,6 @@ def test_billing_usecase1_instantiation(instance):
 def test_library_instantiation(instance):
     assert isinstance(instance, Library)
 
-@given(instance=Library_strategy)
-def test_library_LibraryID_type(instance):
-    assert isinstance(instance.LibraryID, int)
 
 
 @given(instance=Library_strategy)
@@ -1281,9 +1278,6 @@ def test_library_LibraryID_setter(instance):
     instance.LibraryID = original
     assert instance.LibraryID == original
 
-@given(instance=Library_strategy)
-def test_library_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Library_strategy)
@@ -1297,9 +1291,6 @@ def test_library_Address_setter(instance):
 def test_bookborrow_instantiation(instance):
     assert isinstance(instance, BookBorrow)
 
-@given(instance=BookBorrow_strategy)
-def test_bookborrow_UserCode_type(instance):
-    assert isinstance(instance.UserCode, enter__username_usecase)
 
 
 @given(instance=BookBorrow_strategy)
@@ -1308,9 +1299,6 @@ def test_bookborrow_UserCode_setter(instance):
     instance.UserCode = original
     assert instance.UserCode == original
 
-@given(instance=BookBorrow_strategy)
-def test_bookborrow_BookID_type(instance):
-    assert isinstance(instance.BookID, int)
 
 
 @given(instance=BookBorrow_strategy)
@@ -1319,9 +1307,6 @@ def test_bookborrow_BookID_setter(instance):
     instance.BookID = original
     assert instance.BookID == original
 
-@given(instance=BookBorrow_strategy)
-def test_bookborrow_InDate_type(instance):
-    assert isinstance(instance.InDate, str)
 
 
 @given(instance=BookBorrow_strategy)
@@ -1330,20 +1315,6 @@ def test_bookborrow_InDate_setter(instance):
     instance.InDate = original
     assert instance.InDate == original
 
-@given(instance=BookBorrow_strategy)
-def test_bookborrow_BorrowID_type(instance):
-    assert isinstance(instance.BorrowID, int)
-
-
-@given(instance=BookBorrow_strategy)
-def test_bookborrow_BorrowID_setter(instance):
-    original = instance.BorrowID
-    instance.BorrowID = original
-    assert instance.BorrowID == original
-
-@given(instance=BookBorrow_strategy)
-def test_bookborrow_OutDate_type(instance):
-    assert isinstance(instance.OutDate, str)
 
 
 @given(instance=BookBorrow_strategy)
@@ -1352,58 +1323,19 @@ def test_bookborrow_OutDate_setter(instance):
     instance.OutDate = original
     assert instance.OutDate == original
 
+
+
+@given(instance=BookBorrow_strategy)
+def test_bookborrow_BorrowID_setter(instance):
+    original = instance.BorrowID
+    instance.BorrowID = original
+    assert instance.BorrowID == original
+
 @given(instance=User_strategy)
 @settings(max_examples=50)
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Mail_type(instance):
-    assert isinstance(instance.Mail, str)
-
-
-@given(instance=User_strategy)
-def test_user_Mail_setter(instance):
-    original = instance.Mail
-    instance.Mail = original
-    assert instance.Mail == original
-
-@given(instance=User_strategy)
-def test_user_UserCode_type(instance):
-    assert isinstance(instance.UserCode, int)
-
-
-@given(instance=User_strategy)
-def test_user_UserCode_setter(instance):
-    original = instance.UserCode
-    instance.UserCode = original
-    assert instance.UserCode == original
-
-@given(instance=User_strategy)
-def test_user_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=User_strategy)
-def test_user_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=User_strategy)
-def test_user_Phone_type(instance):
-    assert isinstance(instance.Phone, int)
-
-
-@given(instance=User_strategy)
-def test_user_Phone_setter(instance):
-    original = instance.Phone
-    instance.Phone = original
-    assert instance.Phone == original
-
-@given(instance=User_strategy)
-def test_user_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=User_strategy)
@@ -1412,20 +1344,6 @@ def test_user_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=User_strategy)
-def test_user_RegistrationDate_type(instance):
-    assert isinstance(instance.RegistrationDate, str)
-
-
-@given(instance=User_strategy)
-def test_user_RegistrationDate_setter(instance):
-    original = instance.RegistrationDate
-    instance.RegistrationDate = original
-    assert instance.RegistrationDate == original
-
-@given(instance=User_strategy)
-def test_user_Active_type(instance):
-    assert isinstance(instance.Active, bool)
 
 
 @given(instance=User_strategy)
@@ -1434,25 +1352,51 @@ def test_user_Active_setter(instance):
     instance.Active = original
     assert instance.Active == original
 
+
+
+@given(instance=User_strategy)
+def test_user_Phone_setter(instance):
+    original = instance.Phone
+    instance.Phone = original
+    assert instance.Phone == original
+
+
+
+@given(instance=User_strategy)
+def test_user_RegistrationDate_setter(instance):
+    original = instance.RegistrationDate
+    instance.RegistrationDate = original
+    assert instance.RegistrationDate == original
+
+
+
+@given(instance=User_strategy)
+def test_user_UserCode_setter(instance):
+    original = instance.UserCode
+    instance.UserCode = original
+    assert instance.UserCode == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Mail_setter(instance):
+    original = instance.Mail
+    instance.Mail = original
+    assert instance.Mail == original
+
+
+
+@given(instance=User_strategy)
+def test_user_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Librarian_strategy)
 @settings(max_examples=50)
 def test_librarian_instantiation(instance):
     assert isinstance(instance, Librarian)
 
-@given(instance=Librarian_strategy)
-def test_librarian_LibID_type(instance):
-    assert isinstance(instance.LibID, int)
-
-
-@given(instance=Librarian_strategy)
-def test_librarian_LibID_setter(instance):
-    original = instance.LibID
-    instance.LibID = original
-    assert instance.LibID == original
-
-@given(instance=Librarian_strategy)
-def test_librarian_Department_type(instance):
-    assert isinstance(instance.Department, str)
 
 
 @given(instance=Librarian_strategy)
@@ -1461,14 +1405,19 @@ def test_librarian_Department_setter(instance):
     instance.Department = original
     assert instance.Department == original
 
+
+
+@given(instance=Librarian_strategy)
+def test_librarian_LibID_setter(instance):
+    original = instance.LibID
+    instance.LibID = original
+    assert instance.LibID == original
+
 @given(instance=Guest_strategy)
 @settings(max_examples=50)
 def test_guest_instantiation(instance):
     assert isinstance(instance, Guest)
 
-@given(instance=Guest_strategy)
-def test_guest_GuestID_type(instance):
-    assert isinstance(instance.GuestID, int)
 
 
 @given(instance=Guest_strategy)
@@ -1482,9 +1431,6 @@ def test_guest_GuestID_setter(instance):
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Person_strategy)
-def test_person_LibraryID_type(instance):
-    assert isinstance(instance.LibraryID, int)
 
 
 @given(instance=Person_strategy)
@@ -1493,20 +1439,6 @@ def test_person_LibraryID_setter(instance):
     instance.LibraryID = original
     assert instance.LibraryID == original
 
-@given(instance=Person_strategy)
-def test_person_PersonID_type(instance):
-    assert isinstance(instance.PersonID, int)
-
-
-@given(instance=Person_strategy)
-def test_person_PersonID_setter(instance):
-    original = instance.PersonID
-    instance.PersonID = original
-    assert instance.PersonID == original
-
-@given(instance=Person_strategy)
-def test_person_BirthDay_type(instance):
-    assert isinstance(instance.BirthDay, str)
 
 
 @given(instance=Person_strategy)
@@ -1515,9 +1447,6 @@ def test_person_BirthDay_setter(instance):
     instance.BirthDay = original
     assert instance.BirthDay == original
 
-@given(instance=Person_strategy)
-def test_person_PersonName_type(instance):
-    assert isinstance(instance.PersonName, str)
 
 
 @given(instance=Person_strategy)
@@ -1526,36 +1455,19 @@ def test_person_PersonName_setter(instance):
     instance.PersonName = original
     assert instance.PersonName == original
 
+
+
+@given(instance=Person_strategy)
+def test_person_PersonID_setter(instance):
+    original = instance.PersonID
+    instance.PersonID = original
+    assert instance.PersonID == original
+
 @given(instance=Book_strategy)
 @settings(max_examples=50)
 def test_book_instantiation(instance):
     assert isinstance(instance, Book)
 
-@given(instance=Book_strategy)
-def test_book_Price_type(instance):
-    assert isinstance(instance.Price, int)
-
-
-@given(instance=Book_strategy)
-def test_book_Price_setter(instance):
-    original = instance.Price
-    instance.Price = original
-    assert instance.Price == original
-
-@given(instance=Book_strategy)
-def test_book_BookID_type(instance):
-    assert isinstance(instance.BookID, int)
-
-
-@given(instance=Book_strategy)
-def test_book_BookID_setter(instance):
-    original = instance.BookID
-    instance.BookID = original
-    assert instance.BookID == original
-
-@given(instance=Book_strategy)
-def test_book_BookName_type(instance):
-    assert isinstance(instance.BookName, str)
 
 
 @given(instance=Book_strategy)
@@ -1564,9 +1476,22 @@ def test_book_BookName_setter(instance):
     instance.BookName = original
     assert instance.BookName == original
 
+
+
 @given(instance=Book_strategy)
-def test_book_PubName_type(instance):
-    assert isinstance(instance.PubName, str)
+def test_book_Price_setter(instance):
+    original = instance.Price
+    instance.Price = original
+    assert instance.Price == original
+
+
+
+@given(instance=Book_strategy)
+def test_book_BookID_setter(instance):
+    original = instance.BookID
+    instance.BookID = original
+    assert instance.BookID == original
+
 
 
 @given(instance=Book_strategy)
@@ -1575,9 +1500,6 @@ def test_book_PubName_setter(instance):
     instance.PubName = original
     assert instance.PubName == original
 
-@given(instance=Book_strategy)
-def test_book_LibraryID_type(instance):
-    assert isinstance(instance.LibraryID, int)
 
 
 @given(instance=Book_strategy)

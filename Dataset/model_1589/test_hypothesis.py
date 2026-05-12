@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    PN::Transition,
+    PN_Transition,
     NamedElement,
-    PN::Node,
-    PN::NamedElement,
-    PN::PetriNet,
+    PN_Node,
+    PN_NamedElement,
+    PN_PetriNet,
     Arc,
-    PN::InputArc,
-    PN::OutputArc,
-    PN::Arc,
-    PN::Place,
+    PN_InputArc,
+    PN_OutputArc,
+    PN_Arc,
+    PN_Place,
 )
 
 # =============================================================================
@@ -39,35 +39,35 @@ def test_node_constructor_args():
 
 
 
-def test_pn::transition_is_not_abstract():
-    assert not inspect.isabstract(PN::Transition)
+def test_pn_transition_is_not_abstract():
+    assert not inspect.isabstract(PN_Transition)
 
 
-def test_pn::transition_constructor_exists():
-    assert callable(PN::Transition.__init__)
+def test_pn_transition_constructor_exists():
+    assert callable(PN_Transition.__init__)
 
 
-def test_pn::transition_constructor_args():
-    sig = inspect.signature(PN::Transition.__init__)
+def test_pn_transition_constructor_args():
+    sig = inspect.signature(PN_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "minDelay" in params, "Missing parameter 'minDelay'"
     assert "maxDelay" in params, "Missing parameter 'maxDelay'"
+    assert "minDelay" in params, "Missing parameter 'minDelay'"
 
-def test_pn::transition_has_minDelay():
-    assert hasattr(PN::Transition, "minDelay")
+def test_pn_transition_has_maxDelay():
+    assert hasattr(PN_Transition, "maxDelay")
     descriptor = None
-    for klass in PN::Transition.__mro__:
-        if "minDelay" in klass.__dict__:
-            descriptor = klass.__dict__["minDelay"]
+    for klass in PN_Transition.__mro__:
+        if "maxDelay" in klass.__dict__:
+            descriptor = klass.__dict__["maxDelay"]
             break
     assert isinstance(descriptor, property)
 
-def test_pn::transition_has_maxDelay():
-    assert hasattr(PN::Transition, "maxDelay")
+def test_pn_transition_has_minDelay():
+    assert hasattr(PN_Transition, "minDelay")
     descriptor = None
-    for klass in PN::Transition.__mro__:
-        if "maxDelay" in klass.__dict__:
-            descriptor = klass.__dict__["maxDelay"]
+    for klass in PN_Transition.__mro__:
+        if "minDelay" in klass.__dict__:
+            descriptor = klass.__dict__["minDelay"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,37 +87,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_pn::node_is_not_abstract():
-    assert not inspect.isabstract(PN::Node)
+def test_pn_node_is_not_abstract():
+    assert not inspect.isabstract(PN_Node)
 
 
-def test_pn::node_constructor_exists():
-    assert callable(PN::Node.__init__)
+def test_pn_node_constructor_exists():
+    assert callable(PN_Node.__init__)
 
 
-def test_pn::node_constructor_args():
-    sig = inspect.signature(PN::Node.__init__)
+def test_pn_node_constructor_args():
+    sig = inspect.signature(PN_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pn::namedelement_is_not_abstract():
-    assert not inspect.isabstract(PN::NamedElement)
+def test_pn_namedelement_is_not_abstract():
+    assert not inspect.isabstract(PN_NamedElement)
 
 
-def test_pn::namedelement_constructor_exists():
-    assert callable(PN::NamedElement.__init__)
+def test_pn_namedelement_constructor_exists():
+    assert callable(PN_NamedElement.__init__)
 
 
-def test_pn::namedelement_constructor_args():
-    sig = inspect.signature(PN::NamedElement.__init__)
+def test_pn_namedelement_constructor_args():
+    sig = inspect.signature(PN_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pn::namedelement_has_name():
-    assert hasattr(PN::NamedElement, "name")
+def test_pn_namedelement_has_name():
+    assert hasattr(PN_NamedElement, "name")
     descriptor = None
-    for klass in PN::NamedElement.__mro__:
+    for klass in PN_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,23 +125,23 @@ def test_pn::namedelement_has_name():
 
 
 
-def test_pn::petrinet_is_not_abstract():
-    assert not inspect.isabstract(PN::PetriNet)
+def test_pn_petrinet_is_not_abstract():
+    assert not inspect.isabstract(PN_PetriNet)
 
 
-def test_pn::petrinet_constructor_exists():
-    assert callable(PN::PetriNet.__init__)
+def test_pn_petrinet_constructor_exists():
+    assert callable(PN_PetriNet.__init__)
 
 
-def test_pn::petrinet_constructor_args():
-    sig = inspect.signature(PN::PetriNet.__init__)
+def test_pn_petrinet_constructor_args():
+    sig = inspect.signature(PN_PetriNet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pn::petrinet_has_name():
-    assert hasattr(PN::PetriNet, "name")
+def test_pn_petrinet_has_name():
+    assert hasattr(PN_PetriNet, "name")
     descriptor = None
-    for klass in PN::PetriNet.__mro__:
+    for klass in PN_PetriNet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -163,58 +163,58 @@ def test_arc_constructor_args():
 
 
 
-def test_pn::inputarc_is_not_abstract():
-    assert not inspect.isabstract(PN::InputArc)
+def test_pn_inputarc_is_not_abstract():
+    assert not inspect.isabstract(PN_InputArc)
 
 
-def test_pn::inputarc_constructor_exists():
-    assert callable(PN::InputArc.__init__)
+def test_pn_inputarc_constructor_exists():
+    assert callable(PN_InputArc.__init__)
 
 
-def test_pn::inputarc_constructor_args():
-    sig = inspect.signature(PN::InputArc.__init__)
+def test_pn_inputarc_constructor_args():
+    sig = inspect.signature(PN_InputArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pn::outputarc_is_not_abstract():
-    assert not inspect.isabstract(PN::OutputArc)
+def test_pn_outputarc_is_not_abstract():
+    assert not inspect.isabstract(PN_OutputArc)
 
 
-def test_pn::outputarc_constructor_exists():
-    assert callable(PN::OutputArc.__init__)
+def test_pn_outputarc_constructor_exists():
+    assert callable(PN_OutputArc.__init__)
 
 
-def test_pn::outputarc_constructor_args():
-    sig = inspect.signature(PN::OutputArc.__init__)
+def test_pn_outputarc_constructor_args():
+    sig = inspect.signature(PN_OutputArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pn::arc_is_not_abstract():
-    assert not inspect.isabstract(PN::Arc)
+def test_pn_arc_is_not_abstract():
+    assert not inspect.isabstract(PN_Arc)
 
 
-def test_pn::arc_constructor_exists():
-    assert callable(PN::Arc.__init__)
+def test_pn_arc_constructor_exists():
+    assert callable(PN_Arc.__init__)
 
 
-def test_pn::arc_constructor_args():
-    sig = inspect.signature(PN::Arc.__init__)
+def test_pn_arc_constructor_args():
+    sig = inspect.signature(PN_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pn::place_is_not_abstract():
-    assert not inspect.isabstract(PN::Place)
+def test_pn_place_is_not_abstract():
+    assert not inspect.isabstract(PN_Place)
 
 
-def test_pn::place_constructor_exists():
-    assert callable(PN::Place.__init__)
+def test_pn_place_constructor_exists():
+    assert callable(PN_Place.__init__)
 
 
-def test_pn::place_constructor_args():
-    sig = inspect.signature(PN::Place.__init__)
+def test_pn_place_constructor_args():
+    sig = inspect.signature(PN_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,43 +232,43 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-PN::Transition_strategy = st.builds(
-    PN::Transition,
-    minDelay=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+PN_Transition_strategy = st.builds(
+    PN_Transition,
     maxDelay=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    minDelay=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-PN::Node_strategy = st.builds(
-    PN::Node,
+PN_Node_strategy = st.builds(
+    PN_Node,
 )
-PN::NamedElement_strategy = st.builds(
-    PN::NamedElement,
+PN_NamedElement_strategy = st.builds(
+    PN_NamedElement,
     name=
         safe_text
 )
-PN::PetriNet_strategy = st.builds(
-    PN::PetriNet,
+PN_PetriNet_strategy = st.builds(
+    PN_PetriNet,
     name=
         safe_text
 )
 Arc_strategy = st.builds(
     Arc,
 )
-PN::InputArc_strategy = st.builds(
-    PN::InputArc,
+PN_InputArc_strategy = st.builds(
+    PN_InputArc,
 )
-PN::OutputArc_strategy = st.builds(
-    PN::OutputArc,
+PN_OutputArc_strategy = st.builds(
+    PN_OutputArc,
 )
-PN::Arc_strategy = st.builds(
-    PN::Arc,
+PN_Arc_strategy = st.builds(
+    PN_Arc,
 )
-PN::Place_strategy = st.builds(
-    PN::Place,
+PN_Place_strategy = st.builds(
+    PN_Place,
 )
 
 @given(instance=Node_strategy)
@@ -276,71 +276,59 @@ PN::Place_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=PN::Transition_strategy)
+@given(instance=PN_Transition_strategy)
 @settings(max_examples=50)
-def test_pn::transition_instantiation(instance):
-    assert isinstance(instance, PN::Transition)
-
-@given(instance=PN::Transition_strategy)
-def test_pn::transition_minDelay_type(instance):
-    assert isinstance(instance.minDelay, float)
+def test_pn_transition_instantiation(instance):
+    assert isinstance(instance, PN_Transition)
 
 
-@given(instance=PN::Transition_strategy)
-def test_pn::transition_minDelay_setter(instance):
-    original = instance.minDelay
-    instance.minDelay = original
-    assert instance.minDelay == original
 
-@given(instance=PN::Transition_strategy)
-def test_pn::transition_maxDelay_type(instance):
-    assert isinstance(instance.maxDelay, float)
-
-
-@given(instance=PN::Transition_strategy)
-def test_pn::transition_maxDelay_setter(instance):
+@given(instance=PN_Transition_strategy)
+def test_pn_transition_maxDelay_setter(instance):
     original = instance.maxDelay
     instance.maxDelay = original
     assert instance.maxDelay == original
+
+
+
+@given(instance=PN_Transition_strategy)
+def test_pn_transition_minDelay_setter(instance):
+    original = instance.minDelay
+    instance.minDelay = original
+    assert instance.minDelay == original
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=PN::Node_strategy)
+@given(instance=PN_Node_strategy)
 @settings(max_examples=50)
-def test_pn::node_instantiation(instance):
-    assert isinstance(instance, PN::Node)
+def test_pn_node_instantiation(instance):
+    assert isinstance(instance, PN_Node)
 
-@given(instance=PN::NamedElement_strategy)
+@given(instance=PN_NamedElement_strategy)
 @settings(max_examples=50)
-def test_pn::namedelement_instantiation(instance):
-    assert isinstance(instance, PN::NamedElement)
-
-@given(instance=PN::NamedElement_strategy)
-def test_pn::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pn_namedelement_instantiation(instance):
+    assert isinstance(instance, PN_NamedElement)
 
 
-@given(instance=PN::NamedElement_strategy)
-def test_pn::namedelement_name_setter(instance):
+
+@given(instance=PN_NamedElement_strategy)
+def test_pn_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PN::PetriNet_strategy)
+@given(instance=PN_PetriNet_strategy)
 @settings(max_examples=50)
-def test_pn::petrinet_instantiation(instance):
-    assert isinstance(instance, PN::PetriNet)
-
-@given(instance=PN::PetriNet_strategy)
-def test_pn::petrinet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pn_petrinet_instantiation(instance):
+    assert isinstance(instance, PN_PetriNet)
 
 
-@given(instance=PN::PetriNet_strategy)
-def test_pn::petrinet_name_setter(instance):
+
+@given(instance=PN_PetriNet_strategy)
+def test_pn_petrinet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -350,22 +338,22 @@ def test_pn::petrinet_name_setter(instance):
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=PN::InputArc_strategy)
+@given(instance=PN_InputArc_strategy)
 @settings(max_examples=50)
-def test_pn::inputarc_instantiation(instance):
-    assert isinstance(instance, PN::InputArc)
+def test_pn_inputarc_instantiation(instance):
+    assert isinstance(instance, PN_InputArc)
 
-@given(instance=PN::OutputArc_strategy)
+@given(instance=PN_OutputArc_strategy)
 @settings(max_examples=50)
-def test_pn::outputarc_instantiation(instance):
-    assert isinstance(instance, PN::OutputArc)
+def test_pn_outputarc_instantiation(instance):
+    assert isinstance(instance, PN_OutputArc)
 
-@given(instance=PN::Arc_strategy)
+@given(instance=PN_Arc_strategy)
 @settings(max_examples=50)
-def test_pn::arc_instantiation(instance):
-    assert isinstance(instance, PN::Arc)
+def test_pn_arc_instantiation(instance):
+    assert isinstance(instance, PN_Arc)
 
-@given(instance=PN::Place_strategy)
+@given(instance=PN_Place_strategy)
 @settings(max_examples=50)
-def test_pn::place_instantiation(instance):
-    assert isinstance(instance, PN::Place)
+def test_pn_place_instantiation(instance):
+    assert isinstance(instance, PN_Place)

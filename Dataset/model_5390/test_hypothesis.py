@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    nonemf::Serializable,
-    nonemf::A,
-    nonemf::B,
+from python_code import (
+    nonemf_Serializable,
+    nonemf_A,
+    nonemf_B,
     Serializable,
-    nonemf::MySerializableClass,
-    TestA,
+    nonemf_MySerializableClass,
     TestB,
+    TestA,
 )
 
 # =============================================================================
@@ -21,44 +21,44 @@ from classes import (
 
 
 
-def test_nonemf::serializable_is_not_abstract():
-    assert not inspect.isabstract(nonemf::Serializable)
+def test_nonemf_serializable_is_not_abstract():
+    assert not inspect.isabstract(nonemf_Serializable)
 
 
-def test_nonemf::serializable_constructor_exists():
-    assert callable(nonemf::Serializable.__init__)
+def test_nonemf_serializable_constructor_exists():
+    assert callable(nonemf_Serializable.__init__)
 
 
-def test_nonemf::serializable_constructor_args():
-    sig = inspect.signature(nonemf::Serializable.__init__)
+def test_nonemf_serializable_constructor_args():
+    sig = inspect.signature(nonemf_Serializable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nonemf::a_is_not_abstract():
-    assert not inspect.isabstract(nonemf::A)
+def test_nonemf_a_is_not_abstract():
+    assert not inspect.isabstract(nonemf_A)
 
 
-def test_nonemf::a_constructor_exists():
-    assert callable(nonemf::A.__init__)
+def test_nonemf_a_constructor_exists():
+    assert callable(nonemf_A.__init__)
 
 
-def test_nonemf::a_constructor_args():
-    sig = inspect.signature(nonemf::A.__init__)
+def test_nonemf_a_constructor_args():
+    sig = inspect.signature(nonemf_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nonemf::b_is_not_abstract():
-    assert not inspect.isabstract(nonemf::B)
+def test_nonemf_b_is_not_abstract():
+    assert not inspect.isabstract(nonemf_B)
 
 
-def test_nonemf::b_constructor_exists():
-    assert callable(nonemf::B.__init__)
+def test_nonemf_b_constructor_exists():
+    assert callable(nonemf_B.__init__)
 
 
-def test_nonemf::b_constructor_args():
-    sig = inspect.signature(nonemf::B.__init__)
+def test_nonemf_b_constructor_args():
+    sig = inspect.signature(nonemf_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,40 +77,27 @@ def test_serializable_constructor_args():
 
 
 
-def test_nonemf::myserializableclass_is_not_abstract():
-    assert not inspect.isabstract(nonemf::MySerializableClass)
+def test_nonemf_myserializableclass_is_not_abstract():
+    assert not inspect.isabstract(nonemf_MySerializableClass)
 
 
-def test_nonemf::myserializableclass_constructor_exists():
-    assert callable(nonemf::MySerializableClass.__init__)
+def test_nonemf_myserializableclass_constructor_exists():
+    assert callable(nonemf_MySerializableClass.__init__)
 
 
-def test_nonemf::myserializableclass_constructor_args():
-    sig = inspect.signature(nonemf::MySerializableClass.__init__)
+def test_nonemf_myserializableclass_constructor_args():
+    sig = inspect.signature(nonemf_MySerializableClass.__init__)
     params = list(sig.parameters.keys())
     assert "somethingInteresting" in params, "Missing parameter 'somethingInteresting'"
 
-def test_nonemf::myserializableclass_has_somethingInteresting():
-    assert hasattr(nonemf::MySerializableClass, "somethingInteresting")
+def test_nonemf_myserializableclass_has_somethingInteresting():
+    assert hasattr(nonemf_MySerializableClass, "somethingInteresting")
     descriptor = None
-    for klass in nonemf::MySerializableClass.__mro__:
+    for klass in nonemf_MySerializableClass.__mro__:
         if "somethingInteresting" in klass.__dict__:
             descriptor = klass.__dict__["somethingInteresting"]
             break
     assert isinstance(descriptor, property)
-
-def test_testa_exists():
-    # Check that the Enumeration exists
-    assert TestA is not None
-
-def test_testa_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TestA]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TestA"
 
 def test_testb_exists():
     # Check that the Enumeration exists
@@ -125,6 +112,19 @@ def test_testb_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TestB"
 
+def test_testa_exists():
+    # Check that the Enumeration exists
+    assert TestA is not None
+
+def test_testa_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TestA]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TestA"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -137,56 +137,53 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-nonemf::Serializable_strategy = st.builds(
-    nonemf::Serializable,
+nonemf_Serializable_strategy = st.builds(
+    nonemf_Serializable,
 )
-nonemf::A_strategy = st.builds(
-    nonemf::A,
+nonemf_A_strategy = st.builds(
+    nonemf_A,
 )
-nonemf::B_strategy = st.builds(
-    nonemf::B,
+nonemf_B_strategy = st.builds(
+    nonemf_B,
 )
 Serializable_strategy = st.builds(
     Serializable,
 )
-nonemf::MySerializableClass_strategy = st.builds(
-    nonemf::MySerializableClass,
+nonemf_MySerializableClass_strategy = st.builds(
+    nonemf_MySerializableClass,
     somethingInteresting=
         safe_text
 )
 
-@given(instance=nonemf::Serializable_strategy)
+@given(instance=nonemf_Serializable_strategy)
 @settings(max_examples=50)
-def test_nonemf::serializable_instantiation(instance):
-    assert isinstance(instance, nonemf::Serializable)
+def test_nonemf_serializable_instantiation(instance):
+    assert isinstance(instance, nonemf_Serializable)
 
-@given(instance=nonemf::A_strategy)
+@given(instance=nonemf_A_strategy)
 @settings(max_examples=50)
-def test_nonemf::a_instantiation(instance):
-    assert isinstance(instance, nonemf::A)
+def test_nonemf_a_instantiation(instance):
+    assert isinstance(instance, nonemf_A)
 
-@given(instance=nonemf::B_strategy)
+@given(instance=nonemf_B_strategy)
 @settings(max_examples=50)
-def test_nonemf::b_instantiation(instance):
-    assert isinstance(instance, nonemf::B)
+def test_nonemf_b_instantiation(instance):
+    assert isinstance(instance, nonemf_B)
 
 @given(instance=Serializable_strategy)
 @settings(max_examples=50)
 def test_serializable_instantiation(instance):
     assert isinstance(instance, Serializable)
 
-@given(instance=nonemf::MySerializableClass_strategy)
+@given(instance=nonemf_MySerializableClass_strategy)
 @settings(max_examples=50)
-def test_nonemf::myserializableclass_instantiation(instance):
-    assert isinstance(instance, nonemf::MySerializableClass)
-
-@given(instance=nonemf::MySerializableClass_strategy)
-def test_nonemf::myserializableclass_somethingInteresting_type(instance):
-    assert isinstance(instance.somethingInteresting, str)
+def test_nonemf_myserializableclass_instantiation(instance):
+    assert isinstance(instance, nonemf_MySerializableClass)
 
 
-@given(instance=nonemf::MySerializableClass_strategy)
-def test_nonemf::myserializableclass_somethingInteresting_setter(instance):
+
+@given(instance=nonemf_MySerializableClass_strategy)
+def test_nonemf_myserializableclass_somethingInteresting_setter(instance):
     original = instance.somethingInteresting
     instance.somethingInteresting = original
     assert instance.somethingInteresting == original

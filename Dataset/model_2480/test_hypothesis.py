@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    traceability::EObject,
-    traceability::Trace,
-    traceability::Traceability,
+from python_code import (
+    traceability_EObject,
+    traceability_Trace,
+    traceability_Traceability,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_traceability::eobject_is_not_abstract():
-    assert not inspect.isabstract(traceability::EObject)
+def test_traceability_eobject_is_not_abstract():
+    assert not inspect.isabstract(traceability_EObject)
 
 
-def test_traceability::eobject_constructor_exists():
-    assert callable(traceability::EObject.__init__)
+def test_traceability_eobject_constructor_exists():
+    assert callable(traceability_EObject.__init__)
 
 
-def test_traceability::eobject_constructor_args():
-    sig = inspect.signature(traceability::EObject.__init__)
+def test_traceability_eobject_constructor_args():
+    sig = inspect.signature(traceability_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::trace_is_not_abstract():
-    assert not inspect.isabstract(traceability::Trace)
+def test_traceability_trace_is_not_abstract():
+    assert not inspect.isabstract(traceability_Trace)
 
 
-def test_traceability::trace_constructor_exists():
-    assert callable(traceability::Trace.__init__)
+def test_traceability_trace_constructor_exists():
+    assert callable(traceability_Trace.__init__)
 
 
-def test_traceability::trace_constructor_args():
-    sig = inspect.signature(traceability::Trace.__init__)
+def test_traceability_trace_constructor_args():
+    sig = inspect.signature(traceability_Trace.__init__)
     params = list(sig.parameters.keys())
     assert "ruleDescriptorId" in params, "Missing parameter 'ruleDescriptorId'"
 
-def test_traceability::trace_has_ruleDescriptorId():
-    assert hasattr(traceability::Trace, "ruleDescriptorId")
+def test_traceability_trace_has_ruleDescriptorId():
+    assert hasattr(traceability_Trace, "ruleDescriptorId")
     descriptor = None
-    for klass in traceability::Trace.__mro__:
+    for klass in traceability_Trace.__mro__:
         if "ruleDescriptorId" in klass.__dict__:
             descriptor = klass.__dict__["ruleDescriptorId"]
             break
@@ -55,16 +55,16 @@ def test_traceability::trace_has_ruleDescriptorId():
 
 
 
-def test_traceability::traceability_is_not_abstract():
-    assert not inspect.isabstract(traceability::Traceability)
+def test_traceability_traceability_is_not_abstract():
+    assert not inspect.isabstract(traceability_Traceability)
 
 
-def test_traceability::traceability_constructor_exists():
-    assert callable(traceability::Traceability.__init__)
+def test_traceability_traceability_constructor_exists():
+    assert callable(traceability_Traceability.__init__)
 
 
-def test_traceability::traceability_constructor_args():
-    sig = inspect.signature(traceability::Traceability.__init__)
+def test_traceability_traceability_constructor_args():
+    sig = inspect.signature(traceability_Traceability.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-traceability::EObject_strategy = st.builds(
-    traceability::EObject,
+traceability_EObject_strategy = st.builds(
+    traceability_EObject,
 )
-traceability::Trace_strategy = st.builds(
-    traceability::Trace,
+traceability_Trace_strategy = st.builds(
+    traceability_Trace,
     ruleDescriptorId=
         safe_text
 )
-traceability::Traceability_strategy = st.builds(
-    traceability::Traceability,
+traceability_Traceability_strategy = st.builds(
+    traceability_Traceability,
 )
 
-@given(instance=traceability::EObject_strategy)
+@given(instance=traceability_EObject_strategy)
 @settings(max_examples=50)
-def test_traceability::eobject_instantiation(instance):
-    assert isinstance(instance, traceability::EObject)
+def test_traceability_eobject_instantiation(instance):
+    assert isinstance(instance, traceability_EObject)
 
-@given(instance=traceability::Trace_strategy)
+@given(instance=traceability_Trace_strategy)
 @settings(max_examples=50)
-def test_traceability::trace_instantiation(instance):
-    assert isinstance(instance, traceability::Trace)
-
-@given(instance=traceability::Trace_strategy)
-def test_traceability::trace_ruleDescriptorId_type(instance):
-    assert isinstance(instance.ruleDescriptorId, str)
+def test_traceability_trace_instantiation(instance):
+    assert isinstance(instance, traceability_Trace)
 
 
-@given(instance=traceability::Trace_strategy)
-def test_traceability::trace_ruleDescriptorId_setter(instance):
+
+@given(instance=traceability_Trace_strategy)
+def test_traceability_trace_ruleDescriptorId_setter(instance):
     original = instance.ruleDescriptorId
     instance.ruleDescriptorId = original
     assert instance.ruleDescriptorId == original
 
-@given(instance=traceability::Traceability_strategy)
+@given(instance=traceability_Traceability_strategy)
 @settings(max_examples=50)
-def test_traceability::traceability_instantiation(instance):
-    assert isinstance(instance, traceability::Traceability)
+def test_traceability_traceability_instantiation(instance):
+    assert isinstance(instance, traceability_Traceability)

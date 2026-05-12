@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    genealogy::Person,
-    genealogy::Genealogy,
+from python_code import (
+    genealogy_Person,
+    genealogy_Genealogy,
 )
 
 # =============================================================================
@@ -16,60 +16,60 @@ from classes import (
 
 
 
-def test_genealogy::person_is_not_abstract():
-    assert not inspect.isabstract(genealogy::Person)
+def test_genealogy_person_is_not_abstract():
+    assert not inspect.isabstract(genealogy_Person)
 
 
-def test_genealogy::person_constructor_exists():
-    assert callable(genealogy::Person.__init__)
+def test_genealogy_person_constructor_exists():
+    assert callable(genealogy_Person.__init__)
 
 
-def test_genealogy::person_constructor_args():
-    sig = inspect.signature(genealogy::Person.__init__)
+def test_genealogy_person_constructor_args():
+    sig = inspect.signature(genealogy_Person.__init__)
     params = list(sig.parameters.keys())
     assert "alive" in params, "Missing parameter 'alive'"
-    assert "age" in params, "Missing parameter 'age'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "age" in params, "Missing parameter 'age'"
 
-def test_genealogy::person_has_alive():
-    assert hasattr(genealogy::Person, "alive")
+def test_genealogy_person_has_alive():
+    assert hasattr(genealogy_Person, "alive")
     descriptor = None
-    for klass in genealogy::Person.__mro__:
+    for klass in genealogy_Person.__mro__:
         if "alive" in klass.__dict__:
             descriptor = klass.__dict__["alive"]
             break
     assert isinstance(descriptor, property)
 
-def test_genealogy::person_has_age():
-    assert hasattr(genealogy::Person, "age")
+def test_genealogy_person_has_name():
+    assert hasattr(genealogy_Person, "name")
     descriptor = None
-    for klass in genealogy::Person.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_genealogy::person_has_name():
-    assert hasattr(genealogy::Person, "name")
-    descriptor = None
-    for klass in genealogy::Person.__mro__:
+    for klass in genealogy_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_genealogy_person_has_age():
+    assert hasattr(genealogy_Person, "age")
+    descriptor = None
+    for klass in genealogy_Person.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_genealogy::genealogy_is_not_abstract():
-    assert not inspect.isabstract(genealogy::Genealogy)
+
+def test_genealogy_genealogy_is_not_abstract():
+    assert not inspect.isabstract(genealogy_Genealogy)
 
 
-def test_genealogy::genealogy_constructor_exists():
-    assert callable(genealogy::Genealogy.__init__)
+def test_genealogy_genealogy_constructor_exists():
+    assert callable(genealogy_Genealogy.__init__)
 
 
-def test_genealogy::genealogy_constructor_args():
-    sig = inspect.signature(genealogy::Genealogy.__init__)
+def test_genealogy_genealogy_constructor_args():
+    sig = inspect.signature(genealogy_Genealogy.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,58 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-genealogy::Person_strategy = st.builds(
-    genealogy::Person,
+genealogy_Person_strategy = st.builds(
+    genealogy_Person,
     alive=
         st.booleans(),
-    age=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    age=
+        st.integers()
 )
-genealogy::Genealogy_strategy = st.builds(
-    genealogy::Genealogy,
+genealogy_Genealogy_strategy = st.builds(
+    genealogy_Genealogy,
 )
 
-@given(instance=genealogy::Person_strategy)
+@given(instance=genealogy_Person_strategy)
 @settings(max_examples=50)
-def test_genealogy::person_instantiation(instance):
-    assert isinstance(instance, genealogy::Person)
-
-@given(instance=genealogy::Person_strategy)
-def test_genealogy::person_alive_type(instance):
-    assert isinstance(instance.alive, bool)
+def test_genealogy_person_instantiation(instance):
+    assert isinstance(instance, genealogy_Person)
 
 
-@given(instance=genealogy::Person_strategy)
-def test_genealogy::person_alive_setter(instance):
+
+@given(instance=genealogy_Person_strategy)
+def test_genealogy_person_alive_setter(instance):
     original = instance.alive
     instance.alive = original
     assert instance.alive == original
 
-@given(instance=genealogy::Person_strategy)
-def test_genealogy::person_age_type(instance):
-    assert isinstance(instance.age, int)
 
 
-@given(instance=genealogy::Person_strategy)
-def test_genealogy::person_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
-
-@given(instance=genealogy::Person_strategy)
-def test_genealogy::person_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=genealogy::Person_strategy)
-def test_genealogy::person_name_setter(instance):
+@given(instance=genealogy_Person_strategy)
+def test_genealogy_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=genealogy::Genealogy_strategy)
+
+
+@given(instance=genealogy_Person_strategy)
+def test_genealogy_person_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original
+
+@given(instance=genealogy_Genealogy_strategy)
 @settings(max_examples=50)
-def test_genealogy::genealogy_instantiation(instance):
-    assert isinstance(instance, genealogy::Genealogy)
+def test_genealogy_genealogy_instantiation(instance):
+    assert isinstance(instance, genealogy_Genealogy)

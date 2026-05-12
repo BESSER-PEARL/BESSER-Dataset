@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dot::StrictIdentifiable,
-    dot::Statement,
+from python_code import (
+    dot_StrictIdentifiable,
+    dot_Statement,
     StrictIdentifiable,
     Connectable,
     Attribute,
-    dot::Identifiable,
-    dot::Commentable,
+    dot_Identifiable,
+    dot_Commentable,
     Attributable,
-    dot::Attributable,
+    dot_Attributable,
     AbstractGraph,
-    dot::Connectable,
+    dot_Connectable,
     Commentable,
-    dot::Target,
-    dot::Attribute,
-    dot::Graph,
-    dot::NodeID,
-    dot::Subgraph,
-    dot::AttributeList,
-    dot::AList,
-    dot::StatementList,
+    dot_AttributeList,
+    dot_Graph,
+    dot_Target,
+    dot_Subgraph,
+    dot_NodeID,
+    dot_AList,
+    dot_StatementList,
     Identifiable,
-    dot::Port,
-    dot::AbstractGraph,
+    dot_Port,
+    dot_AbstractGraph,
     Statement,
-    dot::EdgeStatement,
-    dot::AssignmentStatement,
-    dot::AttributeStatement,
-    dot::NodeStatement,
+    dot_NodeStatement,
+    dot_EdgeStatement,
+    dot_AttributeStatement,
+    dot_AssignmentStatement,
+    dot_Attribute,
     Compass,
 )
 
@@ -43,23 +43,23 @@ from classes import (
 
 
 
-def test_dot::strictidentifiable_is_not_abstract():
-    assert not inspect.isabstract(dot::StrictIdentifiable)
+def test_dot_strictidentifiable_is_not_abstract():
+    assert not inspect.isabstract(dot_StrictIdentifiable)
 
 
-def test_dot::strictidentifiable_constructor_exists():
-    assert callable(dot::StrictIdentifiable.__init__)
+def test_dot_strictidentifiable_constructor_exists():
+    assert callable(dot_StrictIdentifiable.__init__)
 
 
-def test_dot::strictidentifiable_constructor_args():
-    sig = inspect.signature(dot::StrictIdentifiable.__init__)
+def test_dot_strictidentifiable_constructor_args():
+    sig = inspect.signature(dot_StrictIdentifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dot::strictidentifiable_has_id():
-    assert hasattr(dot::StrictIdentifiable, "id")
+def test_dot_strictidentifiable_has_id():
+    assert hasattr(dot_StrictIdentifiable, "id")
     descriptor = None
-    for klass in dot::StrictIdentifiable.__mro__:
+    for klass in dot_StrictIdentifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -67,16 +67,16 @@ def test_dot::strictidentifiable_has_id():
 
 
 
-def test_dot::statement_is_not_abstract():
-    assert not inspect.isabstract(dot::Statement)
+def test_dot_statement_is_not_abstract():
+    assert not inspect.isabstract(dot_Statement)
 
 
-def test_dot::statement_constructor_exists():
-    assert callable(dot::Statement.__init__)
+def test_dot_statement_constructor_exists():
+    assert callable(dot_Statement.__init__)
 
 
-def test_dot::statement_constructor_args():
-    sig = inspect.signature(dot::Statement.__init__)
+def test_dot_statement_constructor_args():
+    sig = inspect.signature(dot_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,23 +123,23 @@ def test_attribute_constructor_args():
 
 
 
-def test_dot::identifiable_is_not_abstract():
-    assert not inspect.isabstract(dot::Identifiable)
+def test_dot_identifiable_is_not_abstract():
+    assert not inspect.isabstract(dot_Identifiable)
 
 
-def test_dot::identifiable_constructor_exists():
-    assert callable(dot::Identifiable.__init__)
+def test_dot_identifiable_constructor_exists():
+    assert callable(dot_Identifiable.__init__)
 
 
-def test_dot::identifiable_constructor_args():
-    sig = inspect.signature(dot::Identifiable.__init__)
+def test_dot_identifiable_constructor_args():
+    sig = inspect.signature(dot_Identifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dot::identifiable_has_id():
-    assert hasattr(dot::Identifiable, "id")
+def test_dot_identifiable_has_id():
+    assert hasattr(dot_Identifiable, "id")
     descriptor = None
-    for klass in dot::Identifiable.__mro__:
+    for klass in dot_Identifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -147,23 +147,23 @@ def test_dot::identifiable_has_id():
 
 
 
-def test_dot::commentable_is_not_abstract():
-    assert not inspect.isabstract(dot::Commentable)
+def test_dot_commentable_is_not_abstract():
+    assert not inspect.isabstract(dot_Commentable)
 
 
-def test_dot::commentable_constructor_exists():
-    assert callable(dot::Commentable.__init__)
+def test_dot_commentable_constructor_exists():
+    assert callable(dot_Commentable.__init__)
 
 
-def test_dot::commentable_constructor_args():
-    sig = inspect.signature(dot::Commentable.__init__)
+def test_dot_commentable_constructor_args():
+    sig = inspect.signature(dot_Commentable.__init__)
     params = list(sig.parameters.keys())
     assert "comments" in params, "Missing parameter 'comments'"
 
-def test_dot::commentable_has_comments():
-    assert hasattr(dot::Commentable, "comments")
+def test_dot_commentable_has_comments():
+    assert hasattr(dot_Commentable, "comments")
     descriptor = None
-    for klass in dot::Commentable.__mro__:
+    for klass in dot_Commentable.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
@@ -185,16 +185,16 @@ def test_attributable_constructor_args():
 
 
 
-def test_dot::attributable_is_not_abstract():
-    assert not inspect.isabstract(dot::Attributable)
+def test_dot_attributable_is_not_abstract():
+    assert not inspect.isabstract(dot_Attributable)
 
 
-def test_dot::attributable_constructor_exists():
-    assert callable(dot::Attributable.__init__)
+def test_dot_attributable_constructor_exists():
+    assert callable(dot_Attributable.__init__)
 
 
-def test_dot::attributable_constructor_args():
-    sig = inspect.signature(dot::Attributable.__init__)
+def test_dot_attributable_constructor_args():
+    sig = inspect.signature(dot_Attributable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -213,16 +213,16 @@ def test_abstractgraph_constructor_args():
 
 
 
-def test_dot::connectable_is_not_abstract():
-    assert not inspect.isabstract(dot::Connectable)
+def test_dot_connectable_is_not_abstract():
+    assert not inspect.isabstract(dot_Connectable)
 
 
-def test_dot::connectable_constructor_exists():
-    assert callable(dot::Connectable.__init__)
+def test_dot_connectable_constructor_exists():
+    assert callable(dot_Connectable.__init__)
 
 
-def test_dot::connectable_constructor_args():
-    sig = inspect.signature(dot::Connectable.__init__)
+def test_dot_connectable_constructor_args():
+    sig = inspect.signature(dot_Connectable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -241,23 +241,71 @@ def test_commentable_constructor_args():
 
 
 
-def test_dot::target_is_not_abstract():
-    assert not inspect.isabstract(dot::Target)
+def test_dot_attributelist_is_not_abstract():
+    assert not inspect.isabstract(dot_AttributeList)
 
 
-def test_dot::target_constructor_exists():
-    assert callable(dot::Target.__init__)
+def test_dot_attributelist_constructor_exists():
+    assert callable(dot_AttributeList.__init__)
 
 
-def test_dot::target_constructor_args():
-    sig = inspect.signature(dot::Target.__init__)
+def test_dot_attributelist_constructor_args():
+    sig = inspect.signature(dot_AttributeList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dot_graph_is_not_abstract():
+    assert not inspect.isabstract(dot_Graph)
+
+
+def test_dot_graph_constructor_exists():
+    assert callable(dot_Graph.__init__)
+
+
+def test_dot_graph_constructor_args():
+    sig = inspect.signature(dot_Graph.__init__)
+    params = list(sig.parameters.keys())
+    assert "strict" in params, "Missing parameter 'strict'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_dot_graph_has_strict():
+    assert hasattr(dot_Graph, "strict")
+    descriptor = None
+    for klass in dot_Graph.__mro__:
+        if "strict" in klass.__dict__:
+            descriptor = klass.__dict__["strict"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dot_graph_has_type():
+    assert hasattr(dot_Graph, "type")
+    descriptor = None
+    for klass in dot_Graph.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dot_target_is_not_abstract():
+    assert not inspect.isabstract(dot_Target)
+
+
+def test_dot_target_constructor_exists():
+    assert callable(dot_Target.__init__)
+
+
+def test_dot_target_constructor_args():
+    sig = inspect.signature(dot_Target.__init__)
     params = list(sig.parameters.keys())
     assert "operation" in params, "Missing parameter 'operation'"
 
-def test_dot::target_has_operation():
-    assert hasattr(dot::Target, "operation")
+def test_dot_target_has_operation():
+    assert hasattr(dot_Target, "operation")
     descriptor = None
-    for klass in dot::Target.__mro__:
+    for klass in dot_Target.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
             break
@@ -265,105 +313,23 @@ def test_dot::target_has_operation():
 
 
 
-def test_dot::attribute_is_not_abstract():
-    assert not inspect.isabstract(dot::Attribute)
+def test_dot_subgraph_is_not_abstract():
+    assert not inspect.isabstract(dot_Subgraph)
 
 
-def test_dot::attribute_constructor_exists():
-    assert callable(dot::Attribute.__init__)
+def test_dot_subgraph_constructor_exists():
+    assert callable(dot_Subgraph.__init__)
 
 
-def test_dot::attribute_constructor_args():
-    sig = inspect.signature(dot::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_dot::attribute_has_key():
-    assert hasattr(dot::Attribute, "key")
-    descriptor = None
-    for klass in dot::Attribute.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dot::attribute_has_value():
-    assert hasattr(dot::Attribute, "value")
-    descriptor = None
-    for klass in dot::Attribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dot::graph_is_not_abstract():
-    assert not inspect.isabstract(dot::Graph)
-
-
-def test_dot::graph_constructor_exists():
-    assert callable(dot::Graph.__init__)
-
-
-def test_dot::graph_constructor_args():
-    sig = inspect.signature(dot::Graph.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "strict" in params, "Missing parameter 'strict'"
-
-def test_dot::graph_has_type():
-    assert hasattr(dot::Graph, "type")
-    descriptor = None
-    for klass in dot::Graph.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dot::graph_has_strict():
-    assert hasattr(dot::Graph, "strict")
-    descriptor = None
-    for klass in dot::Graph.__mro__:
-        if "strict" in klass.__dict__:
-            descriptor = klass.__dict__["strict"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dot::nodeid_is_not_abstract():
-    assert not inspect.isabstract(dot::NodeID)
-
-
-def test_dot::nodeid_constructor_exists():
-    assert callable(dot::NodeID.__init__)
-
-
-def test_dot::nodeid_constructor_args():
-    sig = inspect.signature(dot::NodeID.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dot::subgraph_is_not_abstract():
-    assert not inspect.isabstract(dot::Subgraph)
-
-
-def test_dot::subgraph_constructor_exists():
-    assert callable(dot::Subgraph.__init__)
-
-
-def test_dot::subgraph_constructor_args():
-    sig = inspect.signature(dot::Subgraph.__init__)
+def test_dot_subgraph_constructor_args():
+    sig = inspect.signature(dot_Subgraph.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_dot::subgraph_has_type():
-    assert hasattr(dot::Subgraph, "type")
+def test_dot_subgraph_has_type():
+    assert hasattr(dot_Subgraph, "type")
     descriptor = None
-    for klass in dot::Subgraph.__mro__:
+    for klass in dot_Subgraph.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -371,44 +337,44 @@ def test_dot::subgraph_has_type():
 
 
 
-def test_dot::attributelist_is_not_abstract():
-    assert not inspect.isabstract(dot::AttributeList)
+def test_dot_nodeid_is_not_abstract():
+    assert not inspect.isabstract(dot_NodeID)
 
 
-def test_dot::attributelist_constructor_exists():
-    assert callable(dot::AttributeList.__init__)
+def test_dot_nodeid_constructor_exists():
+    assert callable(dot_NodeID.__init__)
 
 
-def test_dot::attributelist_constructor_args():
-    sig = inspect.signature(dot::AttributeList.__init__)
+def test_dot_nodeid_constructor_args():
+    sig = inspect.signature(dot_NodeID.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::alist_is_not_abstract():
-    assert not inspect.isabstract(dot::AList)
+def test_dot_alist_is_not_abstract():
+    assert not inspect.isabstract(dot_AList)
 
 
-def test_dot::alist_constructor_exists():
-    assert callable(dot::AList.__init__)
+def test_dot_alist_constructor_exists():
+    assert callable(dot_AList.__init__)
 
 
-def test_dot::alist_constructor_args():
-    sig = inspect.signature(dot::AList.__init__)
+def test_dot_alist_constructor_args():
+    sig = inspect.signature(dot_AList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::statementlist_is_not_abstract():
-    assert not inspect.isabstract(dot::StatementList)
+def test_dot_statementlist_is_not_abstract():
+    assert not inspect.isabstract(dot_StatementList)
 
 
-def test_dot::statementlist_constructor_exists():
-    assert callable(dot::StatementList.__init__)
+def test_dot_statementlist_constructor_exists():
+    assert callable(dot_StatementList.__init__)
 
 
-def test_dot::statementlist_constructor_args():
-    sig = inspect.signature(dot::StatementList.__init__)
+def test_dot_statementlist_constructor_args():
+    sig = inspect.signature(dot_StatementList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -427,23 +393,23 @@ def test_identifiable_constructor_args():
 
 
 
-def test_dot::port_is_not_abstract():
-    assert not inspect.isabstract(dot::Port)
+def test_dot_port_is_not_abstract():
+    assert not inspect.isabstract(dot_Port)
 
 
-def test_dot::port_constructor_exists():
-    assert callable(dot::Port.__init__)
+def test_dot_port_constructor_exists():
+    assert callable(dot_Port.__init__)
 
 
-def test_dot::port_constructor_args():
-    sig = inspect.signature(dot::Port.__init__)
+def test_dot_port_constructor_args():
+    sig = inspect.signature(dot_Port.__init__)
     params = list(sig.parameters.keys())
     assert "compass" in params, "Missing parameter 'compass'"
 
-def test_dot::port_has_compass():
-    assert hasattr(dot::Port, "compass")
+def test_dot_port_has_compass():
+    assert hasattr(dot_Port, "compass")
     descriptor = None
-    for klass in dot::Port.__mro__:
+    for klass in dot_Port.__mro__:
         if "compass" in klass.__dict__:
             descriptor = klass.__dict__["compass"]
             break
@@ -451,16 +417,16 @@ def test_dot::port_has_compass():
 
 
 
-def test_dot::abstractgraph_is_not_abstract():
-    assert not inspect.isabstract(dot::AbstractGraph)
+def test_dot_abstractgraph_is_not_abstract():
+    assert not inspect.isabstract(dot_AbstractGraph)
 
 
-def test_dot::abstractgraph_constructor_exists():
-    assert callable(dot::AbstractGraph.__init__)
+def test_dot_abstractgraph_constructor_exists():
+    assert callable(dot_AbstractGraph.__init__)
 
 
-def test_dot::abstractgraph_constructor_args():
-    sig = inspect.signature(dot::AbstractGraph.__init__)
+def test_dot_abstractgraph_constructor_args():
+    sig = inspect.signature(dot_AbstractGraph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -479,71 +445,51 @@ def test_statement_constructor_args():
 
 
 
-def test_dot::edgestatement_is_not_abstract():
-    assert not inspect.isabstract(dot::EdgeStatement)
+def test_dot_nodestatement_is_not_abstract():
+    assert not inspect.isabstract(dot_NodeStatement)
 
 
-def test_dot::edgestatement_constructor_exists():
-    assert callable(dot::EdgeStatement.__init__)
+def test_dot_nodestatement_constructor_exists():
+    assert callable(dot_NodeStatement.__init__)
 
 
-def test_dot::edgestatement_constructor_args():
-    sig = inspect.signature(dot::EdgeStatement.__init__)
+def test_dot_nodestatement_constructor_args():
+    sig = inspect.signature(dot_NodeStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(dot::AssignmentStatement)
+def test_dot_edgestatement_is_not_abstract():
+    assert not inspect.isabstract(dot_EdgeStatement)
 
 
-def test_dot::assignmentstatement_constructor_exists():
-    assert callable(dot::AssignmentStatement.__init__)
+def test_dot_edgestatement_constructor_exists():
+    assert callable(dot_EdgeStatement.__init__)
 
 
-def test_dot::assignmentstatement_constructor_args():
-    sig = inspect.signature(dot::AssignmentStatement.__init__)
+def test_dot_edgestatement_constructor_args():
+    sig = inspect.signature(dot_EdgeStatement.__init__)
     params = list(sig.parameters.keys())
-    assert "left" in params, "Missing parameter 'left'"
-    assert "right" in params, "Missing parameter 'right'"
-
-def test_dot::assignmentstatement_has_left():
-    assert hasattr(dot::AssignmentStatement, "left")
-    descriptor = None
-    for klass in dot::AssignmentStatement.__mro__:
-        if "left" in klass.__dict__:
-            descriptor = klass.__dict__["left"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dot::assignmentstatement_has_right():
-    assert hasattr(dot::AssignmentStatement, "right")
-    descriptor = None
-    for klass in dot::AssignmentStatement.__mro__:
-        if "right" in klass.__dict__:
-            descriptor = klass.__dict__["right"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_dot::attributestatement_is_not_abstract():
-    assert not inspect.isabstract(dot::AttributeStatement)
+def test_dot_attributestatement_is_not_abstract():
+    assert not inspect.isabstract(dot_AttributeStatement)
 
 
-def test_dot::attributestatement_constructor_exists():
-    assert callable(dot::AttributeStatement.__init__)
+def test_dot_attributestatement_constructor_exists():
+    assert callable(dot_AttributeStatement.__init__)
 
 
-def test_dot::attributestatement_constructor_args():
-    sig = inspect.signature(dot::AttributeStatement.__init__)
+def test_dot_attributestatement_constructor_args():
+    sig = inspect.signature(dot_AttributeStatement.__init__)
     params = list(sig.parameters.keys())
     assert "context" in params, "Missing parameter 'context'"
 
-def test_dot::attributestatement_has_context():
-    assert hasattr(dot::AttributeStatement, "context")
+def test_dot_attributestatement_has_context():
+    assert hasattr(dot_AttributeStatement, "context")
     descriptor = None
-    for klass in dot::AttributeStatement.__mro__:
+    for klass in dot_AttributeStatement.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
@@ -551,17 +497,71 @@ def test_dot::attributestatement_has_context():
 
 
 
-def test_dot::nodestatement_is_not_abstract():
-    assert not inspect.isabstract(dot::NodeStatement)
+def test_dot_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(dot_AssignmentStatement)
 
 
-def test_dot::nodestatement_constructor_exists():
-    assert callable(dot::NodeStatement.__init__)
+def test_dot_assignmentstatement_constructor_exists():
+    assert callable(dot_AssignmentStatement.__init__)
 
 
-def test_dot::nodestatement_constructor_args():
-    sig = inspect.signature(dot::NodeStatement.__init__)
+def test_dot_assignmentstatement_constructor_args():
+    sig = inspect.signature(dot_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
+    assert "left" in params, "Missing parameter 'left'"
+    assert "right" in params, "Missing parameter 'right'"
+
+def test_dot_assignmentstatement_has_left():
+    assert hasattr(dot_AssignmentStatement, "left")
+    descriptor = None
+    for klass in dot_AssignmentStatement.__mro__:
+        if "left" in klass.__dict__:
+            descriptor = klass.__dict__["left"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dot_assignmentstatement_has_right():
+    assert hasattr(dot_AssignmentStatement, "right")
+    descriptor = None
+    for klass in dot_AssignmentStatement.__mro__:
+        if "right" in klass.__dict__:
+            descriptor = klass.__dict__["right"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dot_attribute_is_not_abstract():
+    assert not inspect.isabstract(dot_Attribute)
+
+
+def test_dot_attribute_constructor_exists():
+    assert callable(dot_Attribute.__init__)
+
+
+def test_dot_attribute_constructor_args():
+    sig = inspect.signature(dot_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_dot_attribute_has_value():
+    assert hasattr(dot_Attribute, "value")
+    descriptor = None
+    for klass in dot_Attribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dot_attribute_has_key():
+    assert hasattr(dot_Attribute, "key")
+    descriptor = None
+    for klass in dot_Attribute.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_compass_exists():
     # Check that the Enumeration exists
@@ -571,16 +571,16 @@ def test_compass_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Compass]
     expected_literals = [
-        "CENTER",
-        "NORTH_WEST",
-        "SOUTH_WEST",
-        "APPROPRIATE",
-        "NORTH",
         "SOUTH",
-        "EAST",
-        "SOUTH_EAST",
-        "NORTH_EAST",
         "WEST",
+        "SOUTH_WEST",
+        "CENTER",
+        "NORTH",
+        "NORTH_WEST",
+        "EAST",
+        "APPROPRIATE",
+        "NORTH_EAST",
+        "SOUTH_EAST",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -598,13 +598,13 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dot::StrictIdentifiable_strategy = st.builds(
-    dot::StrictIdentifiable,
+dot_StrictIdentifiable_strategy = st.builds(
+    dot_StrictIdentifiable,
     id=
         safe_text
 )
-dot::Statement_strategy = st.builds(
-    dot::Statement,
+dot_Statement_strategy = st.builds(
+    dot_Statement,
 )
 StrictIdentifiable_strategy = st.builds(
     StrictIdentifiable,
@@ -615,120 +615,117 @@ Connectable_strategy = st.builds(
 Attribute_strategy = st.builds(
     Attribute,
 )
-dot::Identifiable_strategy = st.builds(
-    dot::Identifiable,
+dot_Identifiable_strategy = st.builds(
+    dot_Identifiable,
     id=
         safe_text
 )
-dot::Commentable_strategy = st.builds(
-    dot::Commentable,
+dot_Commentable_strategy = st.builds(
+    dot_Commentable,
     comments=
         safe_text
 )
 Attributable_strategy = st.builds(
     Attributable,
 )
-dot::Attributable_strategy = st.builds(
-    dot::Attributable,
+dot_Attributable_strategy = st.builds(
+    dot_Attributable,
 )
 AbstractGraph_strategy = st.builds(
     AbstractGraph,
 )
-dot::Connectable_strategy = st.builds(
-    dot::Connectable,
+dot_Connectable_strategy = st.builds(
+    dot_Connectable,
 )
 Commentable_strategy = st.builds(
     Commentable,
 )
-dot::Target_strategy = st.builds(
-    dot::Target,
+dot_AttributeList_strategy = st.builds(
+    dot_AttributeList,
+)
+dot_Graph_strategy = st.builds(
+    dot_Graph,
+    strict=
+        safe_text,
+    type=
+        safe_text
+)
+dot_Target_strategy = st.builds(
+    dot_Target,
     operation=
         safe_text
 )
-dot::Attribute_strategy = st.builds(
-    dot::Attribute,
-    key=
-        safe_text,
-    value=
-        safe_text
-)
-dot::Graph_strategy = st.builds(
-    dot::Graph,
-    type=
-        safe_text,
-    strict=
-        safe_text
-)
-dot::NodeID_strategy = st.builds(
-    dot::NodeID,
-)
-dot::Subgraph_strategy = st.builds(
-    dot::Subgraph,
+dot_Subgraph_strategy = st.builds(
+    dot_Subgraph,
     type=
         safe_text
 )
-dot::AttributeList_strategy = st.builds(
-    dot::AttributeList,
+dot_NodeID_strategy = st.builds(
+    dot_NodeID,
 )
-dot::AList_strategy = st.builds(
-    dot::AList,
+dot_AList_strategy = st.builds(
+    dot_AList,
 )
-dot::StatementList_strategy = st.builds(
-    dot::StatementList,
+dot_StatementList_strategy = st.builds(
+    dot_StatementList,
 )
 Identifiable_strategy = st.builds(
     Identifiable,
 )
-dot::Port_strategy = st.builds(
-    dot::Port,
+dot_Port_strategy = st.builds(
+    dot_Port,
     compass=
         safe_text
 )
-dot::AbstractGraph_strategy = st.builds(
-    dot::AbstractGraph,
+dot_AbstractGraph_strategy = st.builds(
+    dot_AbstractGraph,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-dot::EdgeStatement_strategy = st.builds(
-    dot::EdgeStatement,
+dot_NodeStatement_strategy = st.builds(
+    dot_NodeStatement,
 )
-dot::AssignmentStatement_strategy = st.builds(
-    dot::AssignmentStatement,
+dot_EdgeStatement_strategy = st.builds(
+    dot_EdgeStatement,
+)
+dot_AttributeStatement_strategy = st.builds(
+    dot_AttributeStatement,
+    context=
+        safe_text
+)
+dot_AssignmentStatement_strategy = st.builds(
+    dot_AssignmentStatement,
     left=
         safe_text,
     right=
         safe_text
 )
-dot::AttributeStatement_strategy = st.builds(
-    dot::AttributeStatement,
-    context=
+dot_Attribute_strategy = st.builds(
+    dot_Attribute,
+    value=
+        safe_text,
+    key=
         safe_text
 )
-dot::NodeStatement_strategy = st.builds(
-    dot::NodeStatement,
-)
 
-@given(instance=dot::StrictIdentifiable_strategy)
+@given(instance=dot_StrictIdentifiable_strategy)
 @settings(max_examples=50)
-def test_dot::strictidentifiable_instantiation(instance):
-    assert isinstance(instance, dot::StrictIdentifiable)
-
-@given(instance=dot::StrictIdentifiable_strategy)
-def test_dot::strictidentifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dot_strictidentifiable_instantiation(instance):
+    assert isinstance(instance, dot_StrictIdentifiable)
 
 
-@given(instance=dot::StrictIdentifiable_strategy)
-def test_dot::strictidentifiable_id_setter(instance):
+
+@given(instance=dot_StrictIdentifiable_strategy)
+def test_dot_strictidentifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dot::Statement_strategy)
+@given(instance=dot_Statement_strategy)
 @settings(max_examples=50)
-def test_dot::statement_instantiation(instance):
-    assert isinstance(instance, dot::Statement)
+def test_dot_statement_instantiation(instance):
+    assert isinstance(instance, dot_Statement)
 
 @given(instance=StrictIdentifiable_strategy)
 @settings(max_examples=50)
@@ -745,34 +742,28 @@ def test_connectable_instantiation(instance):
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=dot::Identifiable_strategy)
+@given(instance=dot_Identifiable_strategy)
 @settings(max_examples=50)
-def test_dot::identifiable_instantiation(instance):
-    assert isinstance(instance, dot::Identifiable)
-
-@given(instance=dot::Identifiable_strategy)
-def test_dot::identifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dot_identifiable_instantiation(instance):
+    assert isinstance(instance, dot_Identifiable)
 
 
-@given(instance=dot::Identifiable_strategy)
-def test_dot::identifiable_id_setter(instance):
+
+@given(instance=dot_Identifiable_strategy)
+def test_dot_identifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dot::Commentable_strategy)
+@given(instance=dot_Commentable_strategy)
 @settings(max_examples=50)
-def test_dot::commentable_instantiation(instance):
-    assert isinstance(instance, dot::Commentable)
-
-@given(instance=dot::Commentable_strategy)
-def test_dot::commentable_comments_type(instance):
-    assert isinstance(instance.comments, str)
+def test_dot_commentable_instantiation(instance):
+    assert isinstance(instance, dot_Commentable)
 
 
-@given(instance=dot::Commentable_strategy)
-def test_dot::commentable_comments_setter(instance):
+
+@given(instance=dot_Commentable_strategy)
+def test_dot_commentable_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
@@ -782,212 +773,182 @@ def test_dot::commentable_comments_setter(instance):
 def test_attributable_instantiation(instance):
     assert isinstance(instance, Attributable)
 
-@given(instance=dot::Attributable_strategy)
+@given(instance=dot_Attributable_strategy)
 @settings(max_examples=50)
-def test_dot::attributable_instantiation(instance):
-    assert isinstance(instance, dot::Attributable)
+def test_dot_attributable_instantiation(instance):
+    assert isinstance(instance, dot_Attributable)
 
 @given(instance=AbstractGraph_strategy)
 @settings(max_examples=50)
 def test_abstractgraph_instantiation(instance):
     assert isinstance(instance, AbstractGraph)
 
-@given(instance=dot::Connectable_strategy)
+@given(instance=dot_Connectable_strategy)
 @settings(max_examples=50)
-def test_dot::connectable_instantiation(instance):
-    assert isinstance(instance, dot::Connectable)
+def test_dot_connectable_instantiation(instance):
+    assert isinstance(instance, dot_Connectable)
 
 @given(instance=Commentable_strategy)
 @settings(max_examples=50)
 def test_commentable_instantiation(instance):
     assert isinstance(instance, Commentable)
 
-@given(instance=dot::Target_strategy)
+@given(instance=dot_AttributeList_strategy)
 @settings(max_examples=50)
-def test_dot::target_instantiation(instance):
-    assert isinstance(instance, dot::Target)
+def test_dot_attributelist_instantiation(instance):
+    assert isinstance(instance, dot_AttributeList)
 
-@given(instance=dot::Target_strategy)
-def test_dot::target_operation_type(instance):
-    assert isinstance(instance.operation, str)
-
-
-@given(instance=dot::Target_strategy)
-def test_dot::target_operation_setter(instance):
-    original = instance.operation
-    instance.operation = original
-    assert instance.operation == original
-
-@given(instance=dot::Attribute_strategy)
+@given(instance=dot_Graph_strategy)
 @settings(max_examples=50)
-def test_dot::attribute_instantiation(instance):
-    assert isinstance(instance, dot::Attribute)
-
-@given(instance=dot::Attribute_strategy)
-def test_dot::attribute_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_dot_graph_instantiation(instance):
+    assert isinstance(instance, dot_Graph)
 
 
-@given(instance=dot::Attribute_strategy)
-def test_dot::attribute_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=dot::Attribute_strategy)
-def test_dot::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=dot::Attribute_strategy)
-def test_dot::attribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=dot::Graph_strategy)
-@settings(max_examples=50)
-def test_dot::graph_instantiation(instance):
-    assert isinstance(instance, dot::Graph)
-
-@given(instance=dot::Graph_strategy)
-def test_dot::graph_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=dot::Graph_strategy)
-def test_dot::graph_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=dot::Graph_strategy)
-def test_dot::graph_strict_type(instance):
-    assert isinstance(instance.strict, str)
-
-
-@given(instance=dot::Graph_strategy)
-def test_dot::graph_strict_setter(instance):
+@given(instance=dot_Graph_strategy)
+def test_dot_graph_strict_setter(instance):
     original = instance.strict
     instance.strict = original
     assert instance.strict == original
 
-@given(instance=dot::NodeID_strategy)
-@settings(max_examples=50)
-def test_dot::nodeid_instantiation(instance):
-    assert isinstance(instance, dot::NodeID)
-
-@given(instance=dot::Subgraph_strategy)
-@settings(max_examples=50)
-def test_dot::subgraph_instantiation(instance):
-    assert isinstance(instance, dot::Subgraph)
-
-@given(instance=dot::Subgraph_strategy)
-def test_dot::subgraph_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=dot::Subgraph_strategy)
-def test_dot::subgraph_type_setter(instance):
+@given(instance=dot_Graph_strategy)
+def test_dot_graph_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=dot::AttributeList_strategy)
+@given(instance=dot_Target_strategy)
 @settings(max_examples=50)
-def test_dot::attributelist_instantiation(instance):
-    assert isinstance(instance, dot::AttributeList)
+def test_dot_target_instantiation(instance):
+    assert isinstance(instance, dot_Target)
 
-@given(instance=dot::AList_strategy)
-@settings(max_examples=50)
-def test_dot::alist_instantiation(instance):
-    assert isinstance(instance, dot::AList)
 
-@given(instance=dot::StatementList_strategy)
+
+@given(instance=dot_Target_strategy)
+def test_dot_target_operation_setter(instance):
+    original = instance.operation
+    instance.operation = original
+    assert instance.operation == original
+
+@given(instance=dot_Subgraph_strategy)
 @settings(max_examples=50)
-def test_dot::statementlist_instantiation(instance):
-    assert isinstance(instance, dot::StatementList)
+def test_dot_subgraph_instantiation(instance):
+    assert isinstance(instance, dot_Subgraph)
+
+
+
+@given(instance=dot_Subgraph_strategy)
+def test_dot_subgraph_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=dot_NodeID_strategy)
+@settings(max_examples=50)
+def test_dot_nodeid_instantiation(instance):
+    assert isinstance(instance, dot_NodeID)
+
+@given(instance=dot_AList_strategy)
+@settings(max_examples=50)
+def test_dot_alist_instantiation(instance):
+    assert isinstance(instance, dot_AList)
+
+@given(instance=dot_StatementList_strategy)
+@settings(max_examples=50)
+def test_dot_statementlist_instantiation(instance):
+    assert isinstance(instance, dot_StatementList)
 
 @given(instance=Identifiable_strategy)
 @settings(max_examples=50)
 def test_identifiable_instantiation(instance):
     assert isinstance(instance, Identifiable)
 
-@given(instance=dot::Port_strategy)
+@given(instance=dot_Port_strategy)
 @settings(max_examples=50)
-def test_dot::port_instantiation(instance):
-    assert isinstance(instance, dot::Port)
-
-@given(instance=dot::Port_strategy)
-def test_dot::port_compass_type(instance):
-    assert isinstance(instance.compass, str)
+def test_dot_port_instantiation(instance):
+    assert isinstance(instance, dot_Port)
 
 
-@given(instance=dot::Port_strategy)
-def test_dot::port_compass_setter(instance):
+
+@given(instance=dot_Port_strategy)
+def test_dot_port_compass_setter(instance):
     original = instance.compass
     instance.compass = original
     assert instance.compass == original
 
-@given(instance=dot::AbstractGraph_strategy)
+@given(instance=dot_AbstractGraph_strategy)
 @settings(max_examples=50)
-def test_dot::abstractgraph_instantiation(instance):
-    assert isinstance(instance, dot::AbstractGraph)
+def test_dot_abstractgraph_instantiation(instance):
+    assert isinstance(instance, dot_AbstractGraph)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=dot::EdgeStatement_strategy)
+@given(instance=dot_NodeStatement_strategy)
 @settings(max_examples=50)
-def test_dot::edgestatement_instantiation(instance):
-    assert isinstance(instance, dot::EdgeStatement)
+def test_dot_nodestatement_instantiation(instance):
+    assert isinstance(instance, dot_NodeStatement)
 
-@given(instance=dot::AssignmentStatement_strategy)
+@given(instance=dot_EdgeStatement_strategy)
 @settings(max_examples=50)
-def test_dot::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, dot::AssignmentStatement)
+def test_dot_edgestatement_instantiation(instance):
+    assert isinstance(instance, dot_EdgeStatement)
 
-@given(instance=dot::AssignmentStatement_strategy)
-def test_dot::assignmentstatement_left_type(instance):
-    assert isinstance(instance.left, str)
-
-
-@given(instance=dot::AssignmentStatement_strategy)
-def test_dot::assignmentstatement_left_setter(instance):
-    original = instance.left
-    instance.left = original
-    assert instance.left == original
-
-@given(instance=dot::AssignmentStatement_strategy)
-def test_dot::assignmentstatement_right_type(instance):
-    assert isinstance(instance.right, str)
-
-
-@given(instance=dot::AssignmentStatement_strategy)
-def test_dot::assignmentstatement_right_setter(instance):
-    original = instance.right
-    instance.right = original
-    assert instance.right == original
-
-@given(instance=dot::AttributeStatement_strategy)
+@given(instance=dot_AttributeStatement_strategy)
 @settings(max_examples=50)
-def test_dot::attributestatement_instantiation(instance):
-    assert isinstance(instance, dot::AttributeStatement)
-
-@given(instance=dot::AttributeStatement_strategy)
-def test_dot::attributestatement_context_type(instance):
-    assert isinstance(instance.context, str)
+def test_dot_attributestatement_instantiation(instance):
+    assert isinstance(instance, dot_AttributeStatement)
 
 
-@given(instance=dot::AttributeStatement_strategy)
-def test_dot::attributestatement_context_setter(instance):
+
+@given(instance=dot_AttributeStatement_strategy)
+def test_dot_attributestatement_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
 
-@given(instance=dot::NodeStatement_strategy)
+@given(instance=dot_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_dot::nodestatement_instantiation(instance):
-    assert isinstance(instance, dot::NodeStatement)
+def test_dot_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, dot_AssignmentStatement)
+
+
+
+@given(instance=dot_AssignmentStatement_strategy)
+def test_dot_assignmentstatement_left_setter(instance):
+    original = instance.left
+    instance.left = original
+    assert instance.left == original
+
+
+
+@given(instance=dot_AssignmentStatement_strategy)
+def test_dot_assignmentstatement_right_setter(instance):
+    original = instance.right
+    instance.right = original
+    assert instance.right == original
+
+@given(instance=dot_Attribute_strategy)
+@settings(max_examples=50)
+def test_dot_attribute_instantiation(instance):
+    assert isinstance(instance, dot_Attribute)
+
+
+
+@given(instance=dot_Attribute_strategy)
+def test_dot_attribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=dot_Attribute_strategy)
+def test_dot_attribute_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original

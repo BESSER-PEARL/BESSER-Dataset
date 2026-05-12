@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    t3::Tree,
+from python_code import (
+    t3_Tree,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_t3::tree_is_not_abstract():
-    assert not inspect.isabstract(t3::Tree)
+def test_t3_tree_is_not_abstract():
+    assert not inspect.isabstract(t3_Tree)
 
 
-def test_t3::tree_constructor_exists():
-    assert callable(t3::Tree.__init__)
+def test_t3_tree_constructor_exists():
+    assert callable(t3_Tree.__init__)
 
 
-def test_t3::tree_constructor_args():
-    sig = inspect.signature(t3::Tree.__init__)
+def test_t3_tree_constructor_args():
+    sig = inspect.signature(t3_Tree.__init__)
     params = list(sig.parameters.keys())
     assert "balanced" in params, "Missing parameter 'balanced'"
 
-def test_t3::tree_has_balanced():
-    assert hasattr(t3::Tree, "balanced")
+def test_t3_tree_has_balanced():
+    assert hasattr(t3_Tree, "balanced")
     descriptor = None
-    for klass in t3::Tree.__mro__:
+    for klass in t3_Tree.__mro__:
         if "balanced" in klass.__dict__:
             descriptor = klass.__dict__["balanced"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-t3::Tree_strategy = st.builds(
-    t3::Tree,
+t3_Tree_strategy = st.builds(
+    t3_Tree,
     balanced=
         st.booleans()
 )
 
-@given(instance=t3::Tree_strategy)
+@given(instance=t3_Tree_strategy)
 @settings(max_examples=50)
-def test_t3::tree_instantiation(instance):
-    assert isinstance(instance, t3::Tree)
-
-@given(instance=t3::Tree_strategy)
-def test_t3::tree_balanced_type(instance):
-    assert isinstance(instance.balanced, bool)
+def test_t3_tree_instantiation(instance):
+    assert isinstance(instance, t3_Tree)
 
 
-@given(instance=t3::Tree_strategy)
-def test_t3::tree_balanced_setter(instance):
+
+@given(instance=t3_Tree_strategy)
+def test_t3_tree_balanced_setter(instance):
     original = instance.balanced
     instance.balanced = original
     assert instance.balanced == original

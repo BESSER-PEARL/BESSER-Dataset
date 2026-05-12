@@ -3,59 +3,59 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::expression::Expression,
-    trigger::model::Database,
-    index::model::Database,
-    model::index::Index,
-    view::model::Database,
-    model::column::DefaultRealValueColumnConstraint,
-    model::column::DefaultIntegerValueColumnConstraint,
-    model::column::DefaultStringValueColumnConstraint,
-    model::column::DefaultExpressionValueColumnConstraint,
-    model::column::ColumnConstraint,
-    model::column::IndexedColumn,
+from python_code import (
+    model_expression_Expression,
+    trigger_model_Database,
+    index_model_Database,
+    model_index_Index,
+    view_model_Database,
+    model_column_DefaultRealValueColumnConstraint,
+    model_column_DefaultIntegerValueColumnConstraint,
+    model_column_DefaultStringValueColumnConstraint,
+    model_column_DefaultExpressionValueColumnConstraint,
+    model_column_ColumnConstraint,
+    model_column_IndexedColumn,
     ColumnConstraint,
-    model::column::NotNullColumnConstraint,
-    model::column::DefaultValueColumnConstraint,
-    model::column::CheckColumnConstraint,
-    model::column::UniqueColumnConstraint,
-    model::column::PrimaryKeyColumnConstraint,
-    model::column::ForeignKeyColumnConstraint,
+    model_column_CheckColumnConstraint,
+    model_column_ForeignKeyColumnConstraint,
+    model_column_NotNullColumnConstraint,
+    model_column_PrimaryKeyColumnConstraint,
+    model_column_DefaultValueColumnConstraint,
+    model_column_UniqueColumnConstraint,
     Expression,
     IndexedColumn,
-    model::table::TableConstraint,
+    model_table_TableConstraint,
     TableConstraint,
-    model::table::UniqueTableConstraint,
-    model::table::CheckTableConstraint,
-    model::table::ForeignKeyTableConstraint,
-    model::table::PrimaryKeyTableConstraint,
+    model_table_CheckTableConstraint,
+    model_table_ForeignKeyTableConstraint,
+    model_table_PrimaryKeyTableConstraint,
+    model_table_UniqueTableConstraint,
     Column,
-    table::model::Database,
+    table_model_Database,
     StringToColumnMappingEntryMap,
-    model::common::ColumnMapping,
+    model_common_ColumnMapping,
     StringToTableMappingEntryMap,
-    model::common::TableMapping,
-    model::common::StringToColumnMappingEntryMap,
-    model::common::StringToTableMappingEntryMap,
-    model::common::MappingEntry,
-    model::common::NameProvider,
+    model_common_TableMapping,
+    model_common_StringToColumnMappingEntryMap,
+    model_common_StringToTableMappingEntryMap,
+    model_common_MappingEntry,
+    model_common_NameProvider,
     Index,
     Trigger,
     View,
     Table,
     NameProvider,
-    model::column::Column,
-    model::view::View,
-    model::trigger::Trigger,
-    model::table::Table,
+    model_view_View,
+    model_trigger_Trigger,
+    model_column_Column,
+    model_table_Table,
     ColumnMapping,
     TableMapping,
-    model::Database,
-    model::DatabaseVersion,
-    model::DatabaseVersions,
+    model_Database,
+    model_DatabaseVersion,
+    model_DatabaseVersions,
     DataType,
 )
 
@@ -65,149 +65,149 @@ from classes import (
 
 
 
-def test_model::expression::expression_is_not_abstract():
-    assert not inspect.isabstract(model::expression::Expression)
+def test_model_expression_expression_is_not_abstract():
+    assert not inspect.isabstract(model_expression_Expression)
 
 
-def test_model::expression::expression_constructor_exists():
-    assert callable(model::expression::Expression.__init__)
+def test_model_expression_expression_constructor_exists():
+    assert callable(model_expression_Expression.__init__)
 
 
-def test_model::expression::expression_constructor_args():
-    sig = inspect.signature(model::expression::Expression.__init__)
+def test_model_expression_expression_constructor_args():
+    sig = inspect.signature(model_expression_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trigger::model::database_is_not_abstract():
-    assert not inspect.isabstract(trigger::model::Database)
+def test_trigger_model_database_is_not_abstract():
+    assert not inspect.isabstract(trigger_model_Database)
 
 
-def test_trigger::model::database_constructor_exists():
-    assert callable(trigger::model::Database.__init__)
+def test_trigger_model_database_constructor_exists():
+    assert callable(trigger_model_Database.__init__)
 
 
-def test_trigger::model::database_constructor_args():
-    sig = inspect.signature(trigger::model::Database.__init__)
+def test_trigger_model_database_constructor_args():
+    sig = inspect.signature(trigger_model_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_index::model::database_is_not_abstract():
-    assert not inspect.isabstract(index::model::Database)
+def test_index_model_database_is_not_abstract():
+    assert not inspect.isabstract(index_model_Database)
 
 
-def test_index::model::database_constructor_exists():
-    assert callable(index::model::Database.__init__)
+def test_index_model_database_constructor_exists():
+    assert callable(index_model_Database.__init__)
 
 
-def test_index::model::database_constructor_args():
-    sig = inspect.signature(index::model::Database.__init__)
+def test_index_model_database_constructor_args():
+    sig = inspect.signature(index_model_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::index::index_is_not_abstract():
-    assert not inspect.isabstract(model::index::Index)
+def test_model_index_index_is_not_abstract():
+    assert not inspect.isabstract(model_index_Index)
 
 
-def test_model::index::index_constructor_exists():
-    assert callable(model::index::Index.__init__)
+def test_model_index_index_constructor_exists():
+    assert callable(model_index_Index.__init__)
 
 
-def test_model::index::index_constructor_args():
-    sig = inspect.signature(model::index::Index.__init__)
+def test_model_index_index_constructor_args():
+    sig = inspect.signature(model_index_Index.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_view::model::database_is_not_abstract():
-    assert not inspect.isabstract(view::model::Database)
+def test_view_model_database_is_not_abstract():
+    assert not inspect.isabstract(view_model_Database)
 
 
-def test_view::model::database_constructor_exists():
-    assert callable(view::model::Database.__init__)
+def test_view_model_database_constructor_exists():
+    assert callable(view_model_Database.__init__)
 
 
-def test_view::model::database_constructor_args():
-    sig = inspect.signature(view::model::Database.__init__)
+def test_view_model_database_constructor_args():
+    sig = inspect.signature(view_model_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::defaultrealvaluecolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::DefaultRealValueColumnConstraint)
+def test_model_column_defaultrealvaluecolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_DefaultRealValueColumnConstraint)
 
 
-def test_model::column::defaultrealvaluecolumnconstraint_constructor_exists():
-    assert callable(model::column::DefaultRealValueColumnConstraint.__init__)
+def test_model_column_defaultrealvaluecolumnconstraint_constructor_exists():
+    assert callable(model_column_DefaultRealValueColumnConstraint.__init__)
 
 
-def test_model::column::defaultrealvaluecolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::DefaultRealValueColumnConstraint.__init__)
+def test_model_column_defaultrealvaluecolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_DefaultRealValueColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::defaultintegervaluecolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::DefaultIntegerValueColumnConstraint)
+def test_model_column_defaultintegervaluecolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_DefaultIntegerValueColumnConstraint)
 
 
-def test_model::column::defaultintegervaluecolumnconstraint_constructor_exists():
-    assert callable(model::column::DefaultIntegerValueColumnConstraint.__init__)
+def test_model_column_defaultintegervaluecolumnconstraint_constructor_exists():
+    assert callable(model_column_DefaultIntegerValueColumnConstraint.__init__)
 
 
-def test_model::column::defaultintegervaluecolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::DefaultIntegerValueColumnConstraint.__init__)
+def test_model_column_defaultintegervaluecolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_DefaultIntegerValueColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::defaultstringvaluecolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::DefaultStringValueColumnConstraint)
+def test_model_column_defaultstringvaluecolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_DefaultStringValueColumnConstraint)
 
 
-def test_model::column::defaultstringvaluecolumnconstraint_constructor_exists():
-    assert callable(model::column::DefaultStringValueColumnConstraint.__init__)
+def test_model_column_defaultstringvaluecolumnconstraint_constructor_exists():
+    assert callable(model_column_DefaultStringValueColumnConstraint.__init__)
 
 
-def test_model::column::defaultstringvaluecolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::DefaultStringValueColumnConstraint.__init__)
+def test_model_column_defaultstringvaluecolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_DefaultStringValueColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::defaultexpressionvaluecolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::DefaultExpressionValueColumnConstraint)
+def test_model_column_defaultexpressionvaluecolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_DefaultExpressionValueColumnConstraint)
 
 
-def test_model::column::defaultexpressionvaluecolumnconstraint_constructor_exists():
-    assert callable(model::column::DefaultExpressionValueColumnConstraint.__init__)
+def test_model_column_defaultexpressionvaluecolumnconstraint_constructor_exists():
+    assert callable(model_column_DefaultExpressionValueColumnConstraint.__init__)
 
 
-def test_model::column::defaultexpressionvaluecolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::DefaultExpressionValueColumnConstraint.__init__)
+def test_model_column_defaultexpressionvaluecolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_DefaultExpressionValueColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::columnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::ColumnConstraint)
+def test_model_column_columnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_ColumnConstraint)
 
 
-def test_model::column::columnconstraint_constructor_exists():
-    assert callable(model::column::ColumnConstraint.__init__)
+def test_model_column_columnconstraint_constructor_exists():
+    assert callable(model_column_ColumnConstraint.__init__)
 
 
-def test_model::column::columnconstraint_constructor_args():
-    sig = inspect.signature(model::column::ColumnConstraint.__init__)
+def test_model_column_columnconstraint_constructor_args():
+    sig = inspect.signature(model_column_ColumnConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::column::columnconstraint_has_name():
-    assert hasattr(model::column::ColumnConstraint, "name")
+def test_model_column_columnconstraint_has_name():
+    assert hasattr(model_column_ColumnConstraint, "name")
     descriptor = None
-    for klass in model::column::ColumnConstraint.__mro__:
+    for klass in model_column_ColumnConstraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -215,16 +215,16 @@ def test_model::column::columnconstraint_has_name():
 
 
 
-def test_model::column::indexedcolumn_is_not_abstract():
-    assert not inspect.isabstract(model::column::IndexedColumn)
+def test_model_column_indexedcolumn_is_not_abstract():
+    assert not inspect.isabstract(model_column_IndexedColumn)
 
 
-def test_model::column::indexedcolumn_constructor_exists():
-    assert callable(model::column::IndexedColumn.__init__)
+def test_model_column_indexedcolumn_constructor_exists():
+    assert callable(model_column_IndexedColumn.__init__)
 
 
-def test_model::column::indexedcolumn_constructor_args():
-    sig = inspect.signature(model::column::IndexedColumn.__init__)
+def test_model_column_indexedcolumn_constructor_args():
+    sig = inspect.signature(model_column_IndexedColumn.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -243,86 +243,86 @@ def test_columnconstraint_constructor_args():
 
 
 
-def test_model::column::notnullcolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::NotNullColumnConstraint)
+def test_model_column_checkcolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_CheckColumnConstraint)
 
 
-def test_model::column::notnullcolumnconstraint_constructor_exists():
-    assert callable(model::column::NotNullColumnConstraint.__init__)
+def test_model_column_checkcolumnconstraint_constructor_exists():
+    assert callable(model_column_CheckColumnConstraint.__init__)
 
 
-def test_model::column::notnullcolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::NotNullColumnConstraint.__init__)
+def test_model_column_checkcolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_CheckColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::defaultvaluecolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::DefaultValueColumnConstraint)
+def test_model_column_foreignkeycolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_ForeignKeyColumnConstraint)
 
 
-def test_model::column::defaultvaluecolumnconstraint_constructor_exists():
-    assert callable(model::column::DefaultValueColumnConstraint.__init__)
+def test_model_column_foreignkeycolumnconstraint_constructor_exists():
+    assert callable(model_column_ForeignKeyColumnConstraint.__init__)
 
 
-def test_model::column::defaultvaluecolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::DefaultValueColumnConstraint.__init__)
+def test_model_column_foreignkeycolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_ForeignKeyColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::checkcolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::CheckColumnConstraint)
+def test_model_column_notnullcolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_NotNullColumnConstraint)
 
 
-def test_model::column::checkcolumnconstraint_constructor_exists():
-    assert callable(model::column::CheckColumnConstraint.__init__)
+def test_model_column_notnullcolumnconstraint_constructor_exists():
+    assert callable(model_column_NotNullColumnConstraint.__init__)
 
 
-def test_model::column::checkcolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::CheckColumnConstraint.__init__)
+def test_model_column_notnullcolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_NotNullColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::uniquecolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::UniqueColumnConstraint)
+def test_model_column_primarykeycolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_PrimaryKeyColumnConstraint)
 
 
-def test_model::column::uniquecolumnconstraint_constructor_exists():
-    assert callable(model::column::UniqueColumnConstraint.__init__)
+def test_model_column_primarykeycolumnconstraint_constructor_exists():
+    assert callable(model_column_PrimaryKeyColumnConstraint.__init__)
 
 
-def test_model::column::uniquecolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::UniqueColumnConstraint.__init__)
+def test_model_column_primarykeycolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_PrimaryKeyColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::primarykeycolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::PrimaryKeyColumnConstraint)
+def test_model_column_defaultvaluecolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_DefaultValueColumnConstraint)
 
 
-def test_model::column::primarykeycolumnconstraint_constructor_exists():
-    assert callable(model::column::PrimaryKeyColumnConstraint.__init__)
+def test_model_column_defaultvaluecolumnconstraint_constructor_exists():
+    assert callable(model_column_DefaultValueColumnConstraint.__init__)
 
 
-def test_model::column::primarykeycolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::PrimaryKeyColumnConstraint.__init__)
+def test_model_column_defaultvaluecolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_DefaultValueColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::column::foreignkeycolumnconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::column::ForeignKeyColumnConstraint)
+def test_model_column_uniquecolumnconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_column_UniqueColumnConstraint)
 
 
-def test_model::column::foreignkeycolumnconstraint_constructor_exists():
-    assert callable(model::column::ForeignKeyColumnConstraint.__init__)
+def test_model_column_uniquecolumnconstraint_constructor_exists():
+    assert callable(model_column_UniqueColumnConstraint.__init__)
 
 
-def test_model::column::foreignkeycolumnconstraint_constructor_args():
-    sig = inspect.signature(model::column::ForeignKeyColumnConstraint.__init__)
+def test_model_column_uniquecolumnconstraint_constructor_args():
+    sig = inspect.signature(model_column_UniqueColumnConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -355,23 +355,23 @@ def test_indexedcolumn_constructor_args():
 
 
 
-def test_model::table::tableconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::table::TableConstraint)
+def test_model_table_tableconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_table_TableConstraint)
 
 
-def test_model::table::tableconstraint_constructor_exists():
-    assert callable(model::table::TableConstraint.__init__)
+def test_model_table_tableconstraint_constructor_exists():
+    assert callable(model_table_TableConstraint.__init__)
 
 
-def test_model::table::tableconstraint_constructor_args():
-    sig = inspect.signature(model::table::TableConstraint.__init__)
+def test_model_table_tableconstraint_constructor_args():
+    sig = inspect.signature(model_table_TableConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::table::tableconstraint_has_name():
-    assert hasattr(model::table::TableConstraint, "name")
+def test_model_table_tableconstraint_has_name():
+    assert hasattr(model_table_TableConstraint, "name")
     descriptor = None
-    for klass in model::table::TableConstraint.__mro__:
+    for klass in model_table_TableConstraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -393,58 +393,58 @@ def test_tableconstraint_constructor_args():
 
 
 
-def test_model::table::uniquetableconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::table::UniqueTableConstraint)
+def test_model_table_checktableconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_table_CheckTableConstraint)
 
 
-def test_model::table::uniquetableconstraint_constructor_exists():
-    assert callable(model::table::UniqueTableConstraint.__init__)
+def test_model_table_checktableconstraint_constructor_exists():
+    assert callable(model_table_CheckTableConstraint.__init__)
 
 
-def test_model::table::uniquetableconstraint_constructor_args():
-    sig = inspect.signature(model::table::UniqueTableConstraint.__init__)
+def test_model_table_checktableconstraint_constructor_args():
+    sig = inspect.signature(model_table_CheckTableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::table::checktableconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::table::CheckTableConstraint)
+def test_model_table_foreignkeytableconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_table_ForeignKeyTableConstraint)
 
 
-def test_model::table::checktableconstraint_constructor_exists():
-    assert callable(model::table::CheckTableConstraint.__init__)
+def test_model_table_foreignkeytableconstraint_constructor_exists():
+    assert callable(model_table_ForeignKeyTableConstraint.__init__)
 
 
-def test_model::table::checktableconstraint_constructor_args():
-    sig = inspect.signature(model::table::CheckTableConstraint.__init__)
+def test_model_table_foreignkeytableconstraint_constructor_args():
+    sig = inspect.signature(model_table_ForeignKeyTableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::table::foreignkeytableconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::table::ForeignKeyTableConstraint)
+def test_model_table_primarykeytableconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_table_PrimaryKeyTableConstraint)
 
 
-def test_model::table::foreignkeytableconstraint_constructor_exists():
-    assert callable(model::table::ForeignKeyTableConstraint.__init__)
+def test_model_table_primarykeytableconstraint_constructor_exists():
+    assert callable(model_table_PrimaryKeyTableConstraint.__init__)
 
 
-def test_model::table::foreignkeytableconstraint_constructor_args():
-    sig = inspect.signature(model::table::ForeignKeyTableConstraint.__init__)
+def test_model_table_primarykeytableconstraint_constructor_args():
+    sig = inspect.signature(model_table_PrimaryKeyTableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::table::primarykeytableconstraint_is_not_abstract():
-    assert not inspect.isabstract(model::table::PrimaryKeyTableConstraint)
+def test_model_table_uniquetableconstraint_is_not_abstract():
+    assert not inspect.isabstract(model_table_UniqueTableConstraint)
 
 
-def test_model::table::primarykeytableconstraint_constructor_exists():
-    assert callable(model::table::PrimaryKeyTableConstraint.__init__)
+def test_model_table_uniquetableconstraint_constructor_exists():
+    assert callable(model_table_UniqueTableConstraint.__init__)
 
 
-def test_model::table::primarykeytableconstraint_constructor_args():
-    sig = inspect.signature(model::table::PrimaryKeyTableConstraint.__init__)
+def test_model_table_uniquetableconstraint_constructor_args():
+    sig = inspect.signature(model_table_UniqueTableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -463,16 +463,16 @@ def test_column_constructor_args():
 
 
 
-def test_table::model::database_is_not_abstract():
-    assert not inspect.isabstract(table::model::Database)
+def test_table_model_database_is_not_abstract():
+    assert not inspect.isabstract(table_model_Database)
 
 
-def test_table::model::database_constructor_exists():
-    assert callable(table::model::Database.__init__)
+def test_table_model_database_constructor_exists():
+    assert callable(table_model_Database.__init__)
 
 
-def test_table::model::database_constructor_args():
-    sig = inspect.signature(table::model::Database.__init__)
+def test_table_model_database_constructor_args():
+    sig = inspect.signature(table_model_Database.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -491,16 +491,16 @@ def test_stringtocolumnmappingentrymap_constructor_args():
 
 
 
-def test_model::common::columnmapping_is_not_abstract():
-    assert not inspect.isabstract(model::common::ColumnMapping)
+def test_model_common_columnmapping_is_not_abstract():
+    assert not inspect.isabstract(model_common_ColumnMapping)
 
 
-def test_model::common::columnmapping_constructor_exists():
-    assert callable(model::common::ColumnMapping.__init__)
+def test_model_common_columnmapping_constructor_exists():
+    assert callable(model_common_ColumnMapping.__init__)
 
 
-def test_model::common::columnmapping_constructor_args():
-    sig = inspect.signature(model::common::ColumnMapping.__init__)
+def test_model_common_columnmapping_constructor_args():
+    sig = inspect.signature(model_common_ColumnMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -519,37 +519,37 @@ def test_stringtotablemappingentrymap_constructor_args():
 
 
 
-def test_model::common::tablemapping_is_not_abstract():
-    assert not inspect.isabstract(model::common::TableMapping)
+def test_model_common_tablemapping_is_not_abstract():
+    assert not inspect.isabstract(model_common_TableMapping)
 
 
-def test_model::common::tablemapping_constructor_exists():
-    assert callable(model::common::TableMapping.__init__)
+def test_model_common_tablemapping_constructor_exists():
+    assert callable(model_common_TableMapping.__init__)
 
 
-def test_model::common::tablemapping_constructor_args():
-    sig = inspect.signature(model::common::TableMapping.__init__)
+def test_model_common_tablemapping_constructor_args():
+    sig = inspect.signature(model_common_TableMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::common::stringtocolumnmappingentrymap_is_not_abstract():
-    assert not inspect.isabstract(model::common::StringToColumnMappingEntryMap)
+def test_model_common_stringtocolumnmappingentrymap_is_not_abstract():
+    assert not inspect.isabstract(model_common_StringToColumnMappingEntryMap)
 
 
-def test_model::common::stringtocolumnmappingentrymap_constructor_exists():
-    assert callable(model::common::StringToColumnMappingEntryMap.__init__)
+def test_model_common_stringtocolumnmappingentrymap_constructor_exists():
+    assert callable(model_common_StringToColumnMappingEntryMap.__init__)
 
 
-def test_model::common::stringtocolumnmappingentrymap_constructor_args():
-    sig = inspect.signature(model::common::StringToColumnMappingEntryMap.__init__)
+def test_model_common_stringtocolumnmappingentrymap_constructor_args():
+    sig = inspect.signature(model_common_StringToColumnMappingEntryMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_model::common::stringtocolumnmappingentrymap_has_key():
-    assert hasattr(model::common::StringToColumnMappingEntryMap, "key")
+def test_model_common_stringtocolumnmappingentrymap_has_key():
+    assert hasattr(model_common_StringToColumnMappingEntryMap, "key")
     descriptor = None
-    for klass in model::common::StringToColumnMappingEntryMap.__mro__:
+    for klass in model_common_StringToColumnMappingEntryMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -557,23 +557,23 @@ def test_model::common::stringtocolumnmappingentrymap_has_key():
 
 
 
-def test_model::common::stringtotablemappingentrymap_is_not_abstract():
-    assert not inspect.isabstract(model::common::StringToTableMappingEntryMap)
+def test_model_common_stringtotablemappingentrymap_is_not_abstract():
+    assert not inspect.isabstract(model_common_StringToTableMappingEntryMap)
 
 
-def test_model::common::stringtotablemappingentrymap_constructor_exists():
-    assert callable(model::common::StringToTableMappingEntryMap.__init__)
+def test_model_common_stringtotablemappingentrymap_constructor_exists():
+    assert callable(model_common_StringToTableMappingEntryMap.__init__)
 
 
-def test_model::common::stringtotablemappingentrymap_constructor_args():
-    sig = inspect.signature(model::common::StringToTableMappingEntryMap.__init__)
+def test_model_common_stringtotablemappingentrymap_constructor_args():
+    sig = inspect.signature(model_common_StringToTableMappingEntryMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_model::common::stringtotablemappingentrymap_has_key():
-    assert hasattr(model::common::StringToTableMappingEntryMap, "key")
+def test_model_common_stringtotablemappingentrymap_has_key():
+    assert hasattr(model_common_StringToTableMappingEntryMap, "key")
     descriptor = None
-    for klass in model::common::StringToTableMappingEntryMap.__mro__:
+    for klass in model_common_StringToTableMappingEntryMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -581,57 +581,57 @@ def test_model::common::stringtotablemappingentrymap_has_key():
 
 
 
-def test_model::common::mappingentry_is_not_abstract():
-    assert not inspect.isabstract(model::common::MappingEntry)
+def test_model_common_mappingentry_is_not_abstract():
+    assert not inspect.isabstract(model_common_MappingEntry)
 
 
-def test_model::common::mappingentry_constructor_exists():
-    assert callable(model::common::MappingEntry.__init__)
+def test_model_common_mappingentry_constructor_exists():
+    assert callable(model_common_MappingEntry.__init__)
 
 
-def test_model::common::mappingentry_constructor_args():
-    sig = inspect.signature(model::common::MappingEntry.__init__)
+def test_model_common_mappingentry_constructor_args():
+    sig = inspect.signature(model_common_MappingEntry.__init__)
     params = list(sig.parameters.keys())
-    assert "previous" in params, "Missing parameter 'previous'"
     assert "current" in params, "Missing parameter 'current'"
+    assert "previous" in params, "Missing parameter 'previous'"
 
-def test_model::common::mappingentry_has_previous():
-    assert hasattr(model::common::MappingEntry, "previous")
+def test_model_common_mappingentry_has_current():
+    assert hasattr(model_common_MappingEntry, "current")
     descriptor = None
-    for klass in model::common::MappingEntry.__mro__:
-        if "previous" in klass.__dict__:
-            descriptor = klass.__dict__["previous"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::common::mappingentry_has_current():
-    assert hasattr(model::common::MappingEntry, "current")
-    descriptor = None
-    for klass in model::common::MappingEntry.__mro__:
+    for klass in model_common_MappingEntry.__mro__:
         if "current" in klass.__dict__:
             descriptor = klass.__dict__["current"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_common_mappingentry_has_previous():
+    assert hasattr(model_common_MappingEntry, "previous")
+    descriptor = None
+    for klass in model_common_MappingEntry.__mro__:
+        if "previous" in klass.__dict__:
+            descriptor = klass.__dict__["previous"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::common::nameprovider_is_not_abstract():
-    assert not inspect.isabstract(model::common::NameProvider)
+
+def test_model_common_nameprovider_is_not_abstract():
+    assert not inspect.isabstract(model_common_NameProvider)
 
 
-def test_model::common::nameprovider_constructor_exists():
-    assert callable(model::common::NameProvider.__init__)
+def test_model_common_nameprovider_constructor_exists():
+    assert callable(model_common_NameProvider.__init__)
 
 
-def test_model::common::nameprovider_constructor_args():
-    sig = inspect.signature(model::common::NameProvider.__init__)
+def test_model_common_nameprovider_constructor_args():
+    sig = inspect.signature(model_common_NameProvider.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::common::nameprovider_has_name():
-    assert hasattr(model::common::NameProvider, "name")
+def test_model_common_nameprovider_has_name():
+    assert hasattr(model_common_NameProvider, "name")
     descriptor = None
-    for klass in model::common::NameProvider.__mro__:
+    for klass in model_common_NameProvider.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -709,23 +709,51 @@ def test_nameprovider_constructor_args():
 
 
 
-def test_model::column::column_is_not_abstract():
-    assert not inspect.isabstract(model::column::Column)
+def test_model_view_view_is_not_abstract():
+    assert not inspect.isabstract(model_view_View)
 
 
-def test_model::column::column_constructor_exists():
-    assert callable(model::column::Column.__init__)
+def test_model_view_view_constructor_exists():
+    assert callable(model_view_View.__init__)
 
 
-def test_model::column::column_constructor_args():
-    sig = inspect.signature(model::column::Column.__init__)
+def test_model_view_view_constructor_args():
+    sig = inspect.signature(model_view_View.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_trigger_trigger_is_not_abstract():
+    assert not inspect.isabstract(model_trigger_Trigger)
+
+
+def test_model_trigger_trigger_constructor_exists():
+    assert callable(model_trigger_Trigger.__init__)
+
+
+def test_model_trigger_trigger_constructor_args():
+    sig = inspect.signature(model_trigger_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_column_column_is_not_abstract():
+    assert not inspect.isabstract(model_column_Column)
+
+
+def test_model_column_column_constructor_exists():
+    assert callable(model_column_Column.__init__)
+
+
+def test_model_column_column_constructor_args():
+    sig = inspect.signature(model_column_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_model::column::column_has_type():
-    assert hasattr(model::column::Column, "type")
+def test_model_column_column_has_type():
+    assert hasattr(model_column_Column, "type")
     descriptor = None
-    for klass in model::column::Column.__mro__:
+    for klass in model_column_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -733,44 +761,16 @@ def test_model::column::column_has_type():
 
 
 
-def test_model::view::view_is_not_abstract():
-    assert not inspect.isabstract(model::view::View)
+def test_model_table_table_is_not_abstract():
+    assert not inspect.isabstract(model_table_Table)
 
 
-def test_model::view::view_constructor_exists():
-    assert callable(model::view::View.__init__)
+def test_model_table_table_constructor_exists():
+    assert callable(model_table_Table.__init__)
 
 
-def test_model::view::view_constructor_args():
-    sig = inspect.signature(model::view::View.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::trigger::trigger_is_not_abstract():
-    assert not inspect.isabstract(model::trigger::Trigger)
-
-
-def test_model::trigger::trigger_constructor_exists():
-    assert callable(model::trigger::Trigger.__init__)
-
-
-def test_model::trigger::trigger_constructor_args():
-    sig = inspect.signature(model::trigger::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::table::table_is_not_abstract():
-    assert not inspect.isabstract(model::table::Table)
-
-
-def test_model::table::table_constructor_exists():
-    assert callable(model::table::Table.__init__)
-
-
-def test_model::table::table_constructor_args():
-    sig = inspect.signature(model::table::Table.__init__)
+def test_model_table_table_constructor_args():
+    sig = inspect.signature(model_table_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -803,63 +803,63 @@ def test_tablemapping_constructor_args():
 
 
 
-def test_model::database_is_not_abstract():
-    assert not inspect.isabstract(model::Database)
+def test_model_database_is_not_abstract():
+    assert not inspect.isabstract(model_Database)
 
 
-def test_model::database_constructor_exists():
-    assert callable(model::Database.__init__)
+def test_model_database_constructor_exists():
+    assert callable(model_Database.__init__)
 
 
-def test_model::database_constructor_args():
-    sig = inspect.signature(model::Database.__init__)
+def test_model_database_constructor_args():
+    sig = inspect.signature(model_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::databaseversion_is_not_abstract():
-    assert not inspect.isabstract(model::DatabaseVersion)
+def test_model_databaseversion_is_not_abstract():
+    assert not inspect.isabstract(model_DatabaseVersion)
 
 
-def test_model::databaseversion_constructor_exists():
-    assert callable(model::DatabaseVersion.__init__)
+def test_model_databaseversion_constructor_exists():
+    assert callable(model_DatabaseVersion.__init__)
 
 
-def test_model::databaseversion_constructor_args():
-    sig = inspect.signature(model::DatabaseVersion.__init__)
+def test_model_databaseversion_constructor_args():
+    sig = inspect.signature(model_DatabaseVersion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::databaseversions_is_not_abstract():
-    assert not inspect.isabstract(model::DatabaseVersions)
+def test_model_databaseversions_is_not_abstract():
+    assert not inspect.isabstract(model_DatabaseVersions)
 
 
-def test_model::databaseversions_constructor_exists():
-    assert callable(model::DatabaseVersions.__init__)
+def test_model_databaseversions_constructor_exists():
+    assert callable(model_DatabaseVersions.__init__)
 
 
-def test_model::databaseversions_constructor_args():
-    sig = inspect.signature(model::DatabaseVersions.__init__)
+def test_model_databaseversions_constructor_args():
+    sig = inspect.signature(model_DatabaseVersions.__init__)
     params = list(sig.parameters.keys())
-    assert "packageName" in params, "Missing parameter 'packageName'"
     assert "fileName" in params, "Missing parameter 'fileName'"
+    assert "packageName" in params, "Missing parameter 'packageName'"
 
-def test_model::databaseversions_has_packageName():
-    assert hasattr(model::DatabaseVersions, "packageName")
+def test_model_databaseversions_has_fileName():
+    assert hasattr(model_DatabaseVersions, "fileName")
     descriptor = None
-    for klass in model::DatabaseVersions.__mro__:
-        if "packageName" in klass.__dict__:
-            descriptor = klass.__dict__["packageName"]
+    for klass in model_DatabaseVersions.__mro__:
+        if "fileName" in klass.__dict__:
+            descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::databaseversions_has_fileName():
-    assert hasattr(model::DatabaseVersions, "fileName")
+def test_model_databaseversions_has_packageName():
+    assert hasattr(model_DatabaseVersions, "packageName")
     descriptor = None
-    for klass in model::DatabaseVersions.__mro__:
-        if "fileName" in klass.__dict__:
-            descriptor = klass.__dict__["fileName"]
+    for klass in model_DatabaseVersions.__mro__:
+        if "packageName" in klass.__dict__:
+            descriptor = klass.__dict__["packageName"]
             break
     assert isinstance(descriptor, property)
 
@@ -871,11 +871,11 @@ def test_datatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
-        "TEXT",
-        "REAL",
-        "BLOB",
-        "INTEGER",
         "NULL",
+        "TEXT",
+        "BLOB",
+        "REAL",
+        "INTEGER",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -893,61 +893,61 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::expression::Expression_strategy = st.builds(
-    model::expression::Expression,
+model_expression_Expression_strategy = st.builds(
+    model_expression_Expression,
 )
-trigger::model::Database_strategy = st.builds(
-    trigger::model::Database,
+trigger_model_Database_strategy = st.builds(
+    trigger_model_Database,
 )
-index::model::Database_strategy = st.builds(
-    index::model::Database,
+index_model_Database_strategy = st.builds(
+    index_model_Database,
 )
-model::index::Index_strategy = st.builds(
-    model::index::Index,
+model_index_Index_strategy = st.builds(
+    model_index_Index,
 )
-view::model::Database_strategy = st.builds(
-    view::model::Database,
+view_model_Database_strategy = st.builds(
+    view_model_Database,
 )
-model::column::DefaultRealValueColumnConstraint_strategy = st.builds(
-    model::column::DefaultRealValueColumnConstraint,
+model_column_DefaultRealValueColumnConstraint_strategy = st.builds(
+    model_column_DefaultRealValueColumnConstraint,
 )
-model::column::DefaultIntegerValueColumnConstraint_strategy = st.builds(
-    model::column::DefaultIntegerValueColumnConstraint,
+model_column_DefaultIntegerValueColumnConstraint_strategy = st.builds(
+    model_column_DefaultIntegerValueColumnConstraint,
 )
-model::column::DefaultStringValueColumnConstraint_strategy = st.builds(
-    model::column::DefaultStringValueColumnConstraint,
+model_column_DefaultStringValueColumnConstraint_strategy = st.builds(
+    model_column_DefaultStringValueColumnConstraint,
 )
-model::column::DefaultExpressionValueColumnConstraint_strategy = st.builds(
-    model::column::DefaultExpressionValueColumnConstraint,
+model_column_DefaultExpressionValueColumnConstraint_strategy = st.builds(
+    model_column_DefaultExpressionValueColumnConstraint,
 )
-model::column::ColumnConstraint_strategy = st.builds(
-    model::column::ColumnConstraint,
+model_column_ColumnConstraint_strategy = st.builds(
+    model_column_ColumnConstraint,
     name=
         safe_text
 )
-model::column::IndexedColumn_strategy = st.builds(
-    model::column::IndexedColumn,
+model_column_IndexedColumn_strategy = st.builds(
+    model_column_IndexedColumn,
 )
 ColumnConstraint_strategy = st.builds(
     ColumnConstraint,
 )
-model::column::NotNullColumnConstraint_strategy = st.builds(
-    model::column::NotNullColumnConstraint,
+model_column_CheckColumnConstraint_strategy = st.builds(
+    model_column_CheckColumnConstraint,
 )
-model::column::DefaultValueColumnConstraint_strategy = st.builds(
-    model::column::DefaultValueColumnConstraint,
+model_column_ForeignKeyColumnConstraint_strategy = st.builds(
+    model_column_ForeignKeyColumnConstraint,
 )
-model::column::CheckColumnConstraint_strategy = st.builds(
-    model::column::CheckColumnConstraint,
+model_column_NotNullColumnConstraint_strategy = st.builds(
+    model_column_NotNullColumnConstraint,
 )
-model::column::UniqueColumnConstraint_strategy = st.builds(
-    model::column::UniqueColumnConstraint,
+model_column_PrimaryKeyColumnConstraint_strategy = st.builds(
+    model_column_PrimaryKeyColumnConstraint,
 )
-model::column::PrimaryKeyColumnConstraint_strategy = st.builds(
-    model::column::PrimaryKeyColumnConstraint,
+model_column_DefaultValueColumnConstraint_strategy = st.builds(
+    model_column_DefaultValueColumnConstraint,
 )
-model::column::ForeignKeyColumnConstraint_strategy = st.builds(
-    model::column::ForeignKeyColumnConstraint,
+model_column_UniqueColumnConstraint_strategy = st.builds(
+    model_column_UniqueColumnConstraint,
 )
 Expression_strategy = st.builds(
     Expression,
@@ -955,63 +955,63 @@ Expression_strategy = st.builds(
 IndexedColumn_strategy = st.builds(
     IndexedColumn,
 )
-model::table::TableConstraint_strategy = st.builds(
-    model::table::TableConstraint,
+model_table_TableConstraint_strategy = st.builds(
+    model_table_TableConstraint,
     name=
         safe_text
 )
 TableConstraint_strategy = st.builds(
     TableConstraint,
 )
-model::table::UniqueTableConstraint_strategy = st.builds(
-    model::table::UniqueTableConstraint,
+model_table_CheckTableConstraint_strategy = st.builds(
+    model_table_CheckTableConstraint,
 )
-model::table::CheckTableConstraint_strategy = st.builds(
-    model::table::CheckTableConstraint,
+model_table_ForeignKeyTableConstraint_strategy = st.builds(
+    model_table_ForeignKeyTableConstraint,
 )
-model::table::ForeignKeyTableConstraint_strategy = st.builds(
-    model::table::ForeignKeyTableConstraint,
+model_table_PrimaryKeyTableConstraint_strategy = st.builds(
+    model_table_PrimaryKeyTableConstraint,
 )
-model::table::PrimaryKeyTableConstraint_strategy = st.builds(
-    model::table::PrimaryKeyTableConstraint,
+model_table_UniqueTableConstraint_strategy = st.builds(
+    model_table_UniqueTableConstraint,
 )
 Column_strategy = st.builds(
     Column,
 )
-table::model::Database_strategy = st.builds(
-    table::model::Database,
+table_model_Database_strategy = st.builds(
+    table_model_Database,
 )
 StringToColumnMappingEntryMap_strategy = st.builds(
     StringToColumnMappingEntryMap,
 )
-model::common::ColumnMapping_strategy = st.builds(
-    model::common::ColumnMapping,
+model_common_ColumnMapping_strategy = st.builds(
+    model_common_ColumnMapping,
 )
 StringToTableMappingEntryMap_strategy = st.builds(
     StringToTableMappingEntryMap,
 )
-model::common::TableMapping_strategy = st.builds(
-    model::common::TableMapping,
+model_common_TableMapping_strategy = st.builds(
+    model_common_TableMapping,
 )
-model::common::StringToColumnMappingEntryMap_strategy = st.builds(
-    model::common::StringToColumnMappingEntryMap,
+model_common_StringToColumnMappingEntryMap_strategy = st.builds(
+    model_common_StringToColumnMappingEntryMap,
     key=
         safe_text
 )
-model::common::StringToTableMappingEntryMap_strategy = st.builds(
-    model::common::StringToTableMappingEntryMap,
+model_common_StringToTableMappingEntryMap_strategy = st.builds(
+    model_common_StringToTableMappingEntryMap,
     key=
         safe_text
 )
-model::common::MappingEntry_strategy = st.builds(
-    model::common::MappingEntry,
-    previous=
-        safe_text,
+model_common_MappingEntry_strategy = st.builds(
+    model_common_MappingEntry,
     current=
+        safe_text,
+    previous=
         safe_text
 )
-model::common::NameProvider_strategy = st.builds(
-    model::common::NameProvider,
+model_common_NameProvider_strategy = st.builds(
+    model_common_NameProvider,
     name=
         safe_text
 )
@@ -1030,19 +1030,19 @@ Table_strategy = st.builds(
 NameProvider_strategy = st.builds(
     NameProvider,
 )
-model::column::Column_strategy = st.builds(
-    model::column::Column,
+model_view_View_strategy = st.builds(
+    model_view_View,
+)
+model_trigger_Trigger_strategy = st.builds(
+    model_trigger_Trigger,
+)
+model_column_Column_strategy = st.builds(
+    model_column_Column,
     type=
         safe_text
 )
-model::view::View_strategy = st.builds(
-    model::view::View,
-)
-model::trigger::Trigger_strategy = st.builds(
-    model::trigger::Trigger,
-)
-model::table::Table_strategy = st.builds(
-    model::table::Table,
+model_table_Table_strategy = st.builds(
+    model_table_Table,
 )
 ColumnMapping_strategy = st.builds(
     ColumnMapping,
@@ -1050,120 +1050,117 @@ ColumnMapping_strategy = st.builds(
 TableMapping_strategy = st.builds(
     TableMapping,
 )
-model::Database_strategy = st.builds(
-    model::Database,
+model_Database_strategy = st.builds(
+    model_Database,
 )
-model::DatabaseVersion_strategy = st.builds(
-    model::DatabaseVersion,
+model_DatabaseVersion_strategy = st.builds(
+    model_DatabaseVersion,
 )
-model::DatabaseVersions_strategy = st.builds(
-    model::DatabaseVersions,
-    packageName=
-        safe_text,
+model_DatabaseVersions_strategy = st.builds(
+    model_DatabaseVersions,
     fileName=
+        safe_text,
+    packageName=
         safe_text
 )
 
-@given(instance=model::expression::Expression_strategy)
+@given(instance=model_expression_Expression_strategy)
 @settings(max_examples=50)
-def test_model::expression::expression_instantiation(instance):
-    assert isinstance(instance, model::expression::Expression)
+def test_model_expression_expression_instantiation(instance):
+    assert isinstance(instance, model_expression_Expression)
 
-@given(instance=trigger::model::Database_strategy)
+@given(instance=trigger_model_Database_strategy)
 @settings(max_examples=50)
-def test_trigger::model::database_instantiation(instance):
-    assert isinstance(instance, trigger::model::Database)
+def test_trigger_model_database_instantiation(instance):
+    assert isinstance(instance, trigger_model_Database)
 
-@given(instance=index::model::Database_strategy)
+@given(instance=index_model_Database_strategy)
 @settings(max_examples=50)
-def test_index::model::database_instantiation(instance):
-    assert isinstance(instance, index::model::Database)
+def test_index_model_database_instantiation(instance):
+    assert isinstance(instance, index_model_Database)
 
-@given(instance=model::index::Index_strategy)
+@given(instance=model_index_Index_strategy)
 @settings(max_examples=50)
-def test_model::index::index_instantiation(instance):
-    assert isinstance(instance, model::index::Index)
+def test_model_index_index_instantiation(instance):
+    assert isinstance(instance, model_index_Index)
 
-@given(instance=view::model::Database_strategy)
+@given(instance=view_model_Database_strategy)
 @settings(max_examples=50)
-def test_view::model::database_instantiation(instance):
-    assert isinstance(instance, view::model::Database)
+def test_view_model_database_instantiation(instance):
+    assert isinstance(instance, view_model_Database)
 
-@given(instance=model::column::DefaultRealValueColumnConstraint_strategy)
+@given(instance=model_column_DefaultRealValueColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::defaultrealvaluecolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::DefaultRealValueColumnConstraint)
+def test_model_column_defaultrealvaluecolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_DefaultRealValueColumnConstraint)
 
-@given(instance=model::column::DefaultIntegerValueColumnConstraint_strategy)
+@given(instance=model_column_DefaultIntegerValueColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::defaultintegervaluecolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::DefaultIntegerValueColumnConstraint)
+def test_model_column_defaultintegervaluecolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_DefaultIntegerValueColumnConstraint)
 
-@given(instance=model::column::DefaultStringValueColumnConstraint_strategy)
+@given(instance=model_column_DefaultStringValueColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::defaultstringvaluecolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::DefaultStringValueColumnConstraint)
+def test_model_column_defaultstringvaluecolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_DefaultStringValueColumnConstraint)
 
-@given(instance=model::column::DefaultExpressionValueColumnConstraint_strategy)
+@given(instance=model_column_DefaultExpressionValueColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::defaultexpressionvaluecolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::DefaultExpressionValueColumnConstraint)
+def test_model_column_defaultexpressionvaluecolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_DefaultExpressionValueColumnConstraint)
 
-@given(instance=model::column::ColumnConstraint_strategy)
+@given(instance=model_column_ColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::columnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::ColumnConstraint)
-
-@given(instance=model::column::ColumnConstraint_strategy)
-def test_model::column::columnconstraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_column_columnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_ColumnConstraint)
 
 
-@given(instance=model::column::ColumnConstraint_strategy)
-def test_model::column::columnconstraint_name_setter(instance):
+
+@given(instance=model_column_ColumnConstraint_strategy)
+def test_model_column_columnconstraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::column::IndexedColumn_strategy)
+@given(instance=model_column_IndexedColumn_strategy)
 @settings(max_examples=50)
-def test_model::column::indexedcolumn_instantiation(instance):
-    assert isinstance(instance, model::column::IndexedColumn)
+def test_model_column_indexedcolumn_instantiation(instance):
+    assert isinstance(instance, model_column_IndexedColumn)
 
 @given(instance=ColumnConstraint_strategy)
 @settings(max_examples=50)
 def test_columnconstraint_instantiation(instance):
     assert isinstance(instance, ColumnConstraint)
 
-@given(instance=model::column::NotNullColumnConstraint_strategy)
+@given(instance=model_column_CheckColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::notnullcolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::NotNullColumnConstraint)
+def test_model_column_checkcolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_CheckColumnConstraint)
 
-@given(instance=model::column::DefaultValueColumnConstraint_strategy)
+@given(instance=model_column_ForeignKeyColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::defaultvaluecolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::DefaultValueColumnConstraint)
+def test_model_column_foreignkeycolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_ForeignKeyColumnConstraint)
 
-@given(instance=model::column::CheckColumnConstraint_strategy)
+@given(instance=model_column_NotNullColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::checkcolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::CheckColumnConstraint)
+def test_model_column_notnullcolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_NotNullColumnConstraint)
 
-@given(instance=model::column::UniqueColumnConstraint_strategy)
+@given(instance=model_column_PrimaryKeyColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::uniquecolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::UniqueColumnConstraint)
+def test_model_column_primarykeycolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_PrimaryKeyColumnConstraint)
 
-@given(instance=model::column::PrimaryKeyColumnConstraint_strategy)
+@given(instance=model_column_DefaultValueColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::primarykeycolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::PrimaryKeyColumnConstraint)
+def test_model_column_defaultvaluecolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_DefaultValueColumnConstraint)
 
-@given(instance=model::column::ForeignKeyColumnConstraint_strategy)
+@given(instance=model_column_UniqueColumnConstraint_strategy)
 @settings(max_examples=50)
-def test_model::column::foreignkeycolumnconstraint_instantiation(instance):
-    assert isinstance(instance, model::column::ForeignKeyColumnConstraint)
+def test_model_column_uniquecolumnconstraint_instantiation(instance):
+    assert isinstance(instance, model_column_UniqueColumnConstraint)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
@@ -1175,18 +1172,15 @@ def test_expression_instantiation(instance):
 def test_indexedcolumn_instantiation(instance):
     assert isinstance(instance, IndexedColumn)
 
-@given(instance=model::table::TableConstraint_strategy)
+@given(instance=model_table_TableConstraint_strategy)
 @settings(max_examples=50)
-def test_model::table::tableconstraint_instantiation(instance):
-    assert isinstance(instance, model::table::TableConstraint)
-
-@given(instance=model::table::TableConstraint_strategy)
-def test_model::table::tableconstraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_table_tableconstraint_instantiation(instance):
+    assert isinstance(instance, model_table_TableConstraint)
 
 
-@given(instance=model::table::TableConstraint_strategy)
-def test_model::table::tableconstraint_name_setter(instance):
+
+@given(instance=model_table_TableConstraint_strategy)
+def test_model_table_tableconstraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1196,45 +1190,45 @@ def test_model::table::tableconstraint_name_setter(instance):
 def test_tableconstraint_instantiation(instance):
     assert isinstance(instance, TableConstraint)
 
-@given(instance=model::table::UniqueTableConstraint_strategy)
+@given(instance=model_table_CheckTableConstraint_strategy)
 @settings(max_examples=50)
-def test_model::table::uniquetableconstraint_instantiation(instance):
-    assert isinstance(instance, model::table::UniqueTableConstraint)
+def test_model_table_checktableconstraint_instantiation(instance):
+    assert isinstance(instance, model_table_CheckTableConstraint)
 
-@given(instance=model::table::CheckTableConstraint_strategy)
+@given(instance=model_table_ForeignKeyTableConstraint_strategy)
 @settings(max_examples=50)
-def test_model::table::checktableconstraint_instantiation(instance):
-    assert isinstance(instance, model::table::CheckTableConstraint)
+def test_model_table_foreignkeytableconstraint_instantiation(instance):
+    assert isinstance(instance, model_table_ForeignKeyTableConstraint)
 
-@given(instance=model::table::ForeignKeyTableConstraint_strategy)
+@given(instance=model_table_PrimaryKeyTableConstraint_strategy)
 @settings(max_examples=50)
-def test_model::table::foreignkeytableconstraint_instantiation(instance):
-    assert isinstance(instance, model::table::ForeignKeyTableConstraint)
+def test_model_table_primarykeytableconstraint_instantiation(instance):
+    assert isinstance(instance, model_table_PrimaryKeyTableConstraint)
 
-@given(instance=model::table::PrimaryKeyTableConstraint_strategy)
+@given(instance=model_table_UniqueTableConstraint_strategy)
 @settings(max_examples=50)
-def test_model::table::primarykeytableconstraint_instantiation(instance):
-    assert isinstance(instance, model::table::PrimaryKeyTableConstraint)
+def test_model_table_uniquetableconstraint_instantiation(instance):
+    assert isinstance(instance, model_table_UniqueTableConstraint)
 
 @given(instance=Column_strategy)
 @settings(max_examples=50)
 def test_column_instantiation(instance):
     assert isinstance(instance, Column)
 
-@given(instance=table::model::Database_strategy)
+@given(instance=table_model_Database_strategy)
 @settings(max_examples=50)
-def test_table::model::database_instantiation(instance):
-    assert isinstance(instance, table::model::Database)
+def test_table_model_database_instantiation(instance):
+    assert isinstance(instance, table_model_Database)
 
 @given(instance=StringToColumnMappingEntryMap_strategy)
 @settings(max_examples=50)
 def test_stringtocolumnmappingentrymap_instantiation(instance):
     assert isinstance(instance, StringToColumnMappingEntryMap)
 
-@given(instance=model::common::ColumnMapping_strategy)
+@given(instance=model_common_ColumnMapping_strategy)
 @settings(max_examples=50)
-def test_model::common::columnmapping_instantiation(instance):
-    assert isinstance(instance, model::common::ColumnMapping)
+def test_model_common_columnmapping_instantiation(instance):
+    assert isinstance(instance, model_common_ColumnMapping)
 
 import warnings
 import copy
@@ -1242,9 +1236,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::common::ColumnMapping_strategy)
+@given(instance=model_common_ColumnMapping_strategy)
 @settings(max_examples=30)
-def test_model::common::columnmapping_put_changes_state(instance):
+def test_model_common_columnmapping_entries_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.entries()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.entries).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'entries' in model_common_ColumnMapping is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'entries' in model_common_ColumnMapping did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'entries' in model_common_ColumnMapping is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_common_ColumnMapping_strategy)
+@settings(max_examples=30)
+def test_model_common_columnmapping_put_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1259,53 +1282,24 @@ def test_model::common::columnmapping_put_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'put' in model::common::ColumnMapping is empty"
+        assert has_statements, f"Function 'put' in model_common_ColumnMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'put' in model::common::ColumnMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'put' in model_common_ColumnMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'put' in model::common::ColumnMapping is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::common::ColumnMapping_strategy)
-@settings(max_examples=30)
-def test_model::common::columnmapping_entries_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.entries()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.entries).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'entries' in model::common::ColumnMapping is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'entries' in model::common::ColumnMapping did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'entries' in model::common::ColumnMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'put' in model_common_ColumnMapping is not implemented or raised an error")
 
 @given(instance=StringToTableMappingEntryMap_strategy)
 @settings(max_examples=50)
 def test_stringtotablemappingentrymap_instantiation(instance):
     assert isinstance(instance, StringToTableMappingEntryMap)
 
-@given(instance=model::common::TableMapping_strategy)
+@given(instance=model_common_TableMapping_strategy)
 @settings(max_examples=50)
-def test_model::common::tablemapping_instantiation(instance):
-    assert isinstance(instance, model::common::TableMapping)
+def test_model_common_tablemapping_instantiation(instance):
+    assert isinstance(instance, model_common_TableMapping)
 
 import warnings
 import copy
@@ -1313,38 +1307,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::common::TableMapping_strategy)
+@given(instance=model_common_TableMapping_strategy)
 @settings(max_examples=30)
-def test_model::common::tablemapping_entries_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.entries()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.entries).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'entries' in model::common::TableMapping is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'entries' in model::common::TableMapping did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'entries' in model::common::TableMapping is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::common::TableMapping_strategy)
-@settings(max_examples=30)
-def test_model::common::tablemapping_put_changes_state(instance):
+def test_model_common_tablemapping_put_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1359,86 +1324,100 @@ def test_model::common::tablemapping_put_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'put' in model::common::TableMapping is empty"
+        assert has_statements, f"Function 'put' in model_common_TableMapping is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'put' in model::common::TableMapping did not change state; check implementation")
+            warnings.warn(f"Operation 'put' in model_common_TableMapping did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'put' in model::common::TableMapping is not implemented or raised an error")
+        warnings.warn(f"Operation 'put' in model_common_TableMapping is not implemented or raised an error")
 
-@given(instance=model::common::StringToColumnMappingEntryMap_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_common_TableMapping_strategy)
+@settings(max_examples=30)
+def test_model_common_tablemapping_entries_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.entries()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.entries).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'entries' in model_common_TableMapping is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'entries' in model_common_TableMapping did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'entries' in model_common_TableMapping is not implemented or raised an error")
+
+@given(instance=model_common_StringToColumnMappingEntryMap_strategy)
 @settings(max_examples=50)
-def test_model::common::stringtocolumnmappingentrymap_instantiation(instance):
-    assert isinstance(instance, model::common::StringToColumnMappingEntryMap)
-
-@given(instance=model::common::StringToColumnMappingEntryMap_strategy)
-def test_model::common::stringtocolumnmappingentrymap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_model_common_stringtocolumnmappingentrymap_instantiation(instance):
+    assert isinstance(instance, model_common_StringToColumnMappingEntryMap)
 
 
-@given(instance=model::common::StringToColumnMappingEntryMap_strategy)
-def test_model::common::stringtocolumnmappingentrymap_key_setter(instance):
+
+@given(instance=model_common_StringToColumnMappingEntryMap_strategy)
+def test_model_common_stringtocolumnmappingentrymap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=model::common::StringToTableMappingEntryMap_strategy)
+@given(instance=model_common_StringToTableMappingEntryMap_strategy)
 @settings(max_examples=50)
-def test_model::common::stringtotablemappingentrymap_instantiation(instance):
-    assert isinstance(instance, model::common::StringToTableMappingEntryMap)
-
-@given(instance=model::common::StringToTableMappingEntryMap_strategy)
-def test_model::common::stringtotablemappingentrymap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_model_common_stringtotablemappingentrymap_instantiation(instance):
+    assert isinstance(instance, model_common_StringToTableMappingEntryMap)
 
 
-@given(instance=model::common::StringToTableMappingEntryMap_strategy)
-def test_model::common::stringtotablemappingentrymap_key_setter(instance):
+
+@given(instance=model_common_StringToTableMappingEntryMap_strategy)
+def test_model_common_stringtotablemappingentrymap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=model::common::MappingEntry_strategy)
+@given(instance=model_common_MappingEntry_strategy)
 @settings(max_examples=50)
-def test_model::common::mappingentry_instantiation(instance):
-    assert isinstance(instance, model::common::MappingEntry)
-
-@given(instance=model::common::MappingEntry_strategy)
-def test_model::common::mappingentry_previous_type(instance):
-    assert isinstance(instance.previous, str)
+def test_model_common_mappingentry_instantiation(instance):
+    assert isinstance(instance, model_common_MappingEntry)
 
 
-@given(instance=model::common::MappingEntry_strategy)
-def test_model::common::mappingentry_previous_setter(instance):
-    original = instance.previous
-    instance.previous = original
-    assert instance.previous == original
 
-@given(instance=model::common::MappingEntry_strategy)
-def test_model::common::mappingentry_current_type(instance):
-    assert isinstance(instance.current, str)
-
-
-@given(instance=model::common::MappingEntry_strategy)
-def test_model::common::mappingentry_current_setter(instance):
+@given(instance=model_common_MappingEntry_strategy)
+def test_model_common_mappingentry_current_setter(instance):
     original = instance.current
     instance.current = original
     assert instance.current == original
 
-@given(instance=model::common::NameProvider_strategy)
+
+
+@given(instance=model_common_MappingEntry_strategy)
+def test_model_common_mappingentry_previous_setter(instance):
+    original = instance.previous
+    instance.previous = original
+    assert instance.previous == original
+
+@given(instance=model_common_NameProvider_strategy)
 @settings(max_examples=50)
-def test_model::common::nameprovider_instantiation(instance):
-    assert isinstance(instance, model::common::NameProvider)
-
-@given(instance=model::common::NameProvider_strategy)
-def test_model::common::nameprovider_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_common_nameprovider_instantiation(instance):
+    assert isinstance(instance, model_common_NameProvider)
 
 
-@given(instance=model::common::NameProvider_strategy)
-def test_model::common::nameprovider_name_setter(instance):
+
+@given(instance=model_common_NameProvider_strategy)
+def test_model_common_nameprovider_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1468,36 +1447,33 @@ def test_table_instantiation(instance):
 def test_nameprovider_instantiation(instance):
     assert isinstance(instance, NameProvider)
 
-@given(instance=model::column::Column_strategy)
+@given(instance=model_view_View_strategy)
 @settings(max_examples=50)
-def test_model::column::column_instantiation(instance):
-    assert isinstance(instance, model::column::Column)
+def test_model_view_view_instantiation(instance):
+    assert isinstance(instance, model_view_View)
 
-@given(instance=model::column::Column_strategy)
-def test_model::column::column_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=model_trigger_Trigger_strategy)
+@settings(max_examples=50)
+def test_model_trigger_trigger_instantiation(instance):
+    assert isinstance(instance, model_trigger_Trigger)
+
+@given(instance=model_column_Column_strategy)
+@settings(max_examples=50)
+def test_model_column_column_instantiation(instance):
+    assert isinstance(instance, model_column_Column)
 
 
-@given(instance=model::column::Column_strategy)
-def test_model::column::column_type_setter(instance):
+
+@given(instance=model_column_Column_strategy)
+def test_model_column_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=model::view::View_strategy)
+@given(instance=model_table_Table_strategy)
 @settings(max_examples=50)
-def test_model::view::view_instantiation(instance):
-    assert isinstance(instance, model::view::View)
-
-@given(instance=model::trigger::Trigger_strategy)
-@settings(max_examples=50)
-def test_model::trigger::trigger_instantiation(instance):
-    assert isinstance(instance, model::trigger::Trigger)
-
-@given(instance=model::table::Table_strategy)
-@settings(max_examples=50)
-def test_model::table::table_instantiation(instance):
-    assert isinstance(instance, model::table::Table)
+def test_model_table_table_instantiation(instance):
+    assert isinstance(instance, model_table_Table)
 
 @given(instance=ColumnMapping_strategy)
 @settings(max_examples=50)
@@ -1509,42 +1485,36 @@ def test_columnmapping_instantiation(instance):
 def test_tablemapping_instantiation(instance):
     assert isinstance(instance, TableMapping)
 
-@given(instance=model::Database_strategy)
+@given(instance=model_Database_strategy)
 @settings(max_examples=50)
-def test_model::database_instantiation(instance):
-    assert isinstance(instance, model::Database)
+def test_model_database_instantiation(instance):
+    assert isinstance(instance, model_Database)
 
-@given(instance=model::DatabaseVersion_strategy)
+@given(instance=model_DatabaseVersion_strategy)
 @settings(max_examples=50)
-def test_model::databaseversion_instantiation(instance):
-    assert isinstance(instance, model::DatabaseVersion)
+def test_model_databaseversion_instantiation(instance):
+    assert isinstance(instance, model_DatabaseVersion)
 
-@given(instance=model::DatabaseVersions_strategy)
+@given(instance=model_DatabaseVersions_strategy)
 @settings(max_examples=50)
-def test_model::databaseversions_instantiation(instance):
-    assert isinstance(instance, model::DatabaseVersions)
-
-@given(instance=model::DatabaseVersions_strategy)
-def test_model::databaseversions_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_model_databaseversions_instantiation(instance):
+    assert isinstance(instance, model_DatabaseVersions)
 
 
-@given(instance=model::DatabaseVersions_strategy)
-def test_model::databaseversions_packageName_setter(instance):
-    original = instance.packageName
-    instance.packageName = original
-    assert instance.packageName == original
 
-@given(instance=model::DatabaseVersions_strategy)
-def test_model::databaseversions_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
-
-
-@given(instance=model::DatabaseVersions_strategy)
-def test_model::databaseversions_fileName_setter(instance):
+@given(instance=model_DatabaseVersions_strategy)
+def test_model_databaseversions_fileName_setter(instance):
     original = instance.fileName
     instance.fileName = original
     assert instance.fileName == original
+
+
+
+@given(instance=model_DatabaseVersions_strategy)
+def test_model_databaseversions_packageName_setter(instance):
+    original = instance.packageName
+    instance.packageName = original
+    assert instance.packageName == original
 
 import warnings
 import copy
@@ -1552,9 +1522,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::DatabaseVersions_strategy)
+@given(instance=model_DatabaseVersions_strategy)
 @settings(max_examples=30)
-def test_model::databaseversions_createversion_changes_state(instance):
+def test_model_databaseversions_createversion_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1566,11 +1536,11 @@ def test_model::databaseversions_createversion_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createVersion' in model::DatabaseVersions is empty"
+        assert has_statements, f"Function 'createVersion' in model_DatabaseVersions is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createVersion' in model::DatabaseVersions did not change state; check implementation")
+            warnings.warn(f"Operation 'createVersion' in model_DatabaseVersions did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createVersion' in model::DatabaseVersions is not implemented or raised an error")
+        warnings.warn(f"Operation 'createVersion' in model_DatabaseVersions is not implemented or raised an error")

@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    while::Exp,
+from python_code import (
+    while_Exp,
     Exp,
-    while::VarExp,
-    while::BinaryExp,
+    while_VarExp,
+    while_BinaryExp,
     BoolExp,
     BinaryExp,
-    while::NEqExp,
-    while::AndExp,
-    while::EqExp,
-    while::BoolExp,
+    while_NEqExp,
+    while_AndExp,
+    while_EqExp,
+    while_BoolExp,
     Statement,
-    while::Assignment,
-    while::Ret,
-    while::If,
-    while::While,
-    while::Val,
-    while::Var,
-    while::Statement,
-    while::Program,
+    while_Ret,
+    while_Assignment,
+    while_If,
+    while_While,
+    while_Val,
+    while_Var,
+    while_Statement,
+    while_Program,
 )
 
 # =============================================================================
@@ -33,16 +33,16 @@ from classes import (
 
 
 
-def test_while::exp_is_not_abstract():
-    assert not inspect.isabstract(while::Exp)
+def test_while_exp_is_not_abstract():
+    assert not inspect.isabstract(while_Exp)
 
 
-def test_while::exp_constructor_exists():
-    assert callable(while::Exp.__init__)
+def test_while_exp_constructor_exists():
+    assert callable(while_Exp.__init__)
 
 
-def test_while::exp_constructor_args():
-    sig = inspect.signature(while::Exp.__init__)
+def test_while_exp_constructor_args():
+    sig = inspect.signature(while_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -61,30 +61,30 @@ def test_exp_constructor_args():
 
 
 
-def test_while::varexp_is_not_abstract():
-    assert not inspect.isabstract(while::VarExp)
+def test_while_varexp_is_not_abstract():
+    assert not inspect.isabstract(while_VarExp)
 
 
-def test_while::varexp_constructor_exists():
-    assert callable(while::VarExp.__init__)
+def test_while_varexp_constructor_exists():
+    assert callable(while_VarExp.__init__)
 
 
-def test_while::varexp_constructor_args():
-    sig = inspect.signature(while::VarExp.__init__)
+def test_while_varexp_constructor_args():
+    sig = inspect.signature(while_VarExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::binaryexp_is_not_abstract():
-    assert not inspect.isabstract(while::BinaryExp)
+def test_while_binaryexp_is_not_abstract():
+    assert not inspect.isabstract(while_BinaryExp)
 
 
-def test_while::binaryexp_constructor_exists():
-    assert callable(while::BinaryExp.__init__)
+def test_while_binaryexp_constructor_exists():
+    assert callable(while_BinaryExp.__init__)
 
 
-def test_while::binaryexp_constructor_args():
-    sig = inspect.signature(while::BinaryExp.__init__)
+def test_while_binaryexp_constructor_args():
+    sig = inspect.signature(while_BinaryExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,58 +117,58 @@ def test_binaryexp_constructor_args():
 
 
 
-def test_while::neqexp_is_not_abstract():
-    assert not inspect.isabstract(while::NEqExp)
+def test_while_neqexp_is_not_abstract():
+    assert not inspect.isabstract(while_NEqExp)
 
 
-def test_while::neqexp_constructor_exists():
-    assert callable(while::NEqExp.__init__)
+def test_while_neqexp_constructor_exists():
+    assert callable(while_NEqExp.__init__)
 
 
-def test_while::neqexp_constructor_args():
-    sig = inspect.signature(while::NEqExp.__init__)
+def test_while_neqexp_constructor_args():
+    sig = inspect.signature(while_NEqExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::andexp_is_not_abstract():
-    assert not inspect.isabstract(while::AndExp)
+def test_while_andexp_is_not_abstract():
+    assert not inspect.isabstract(while_AndExp)
 
 
-def test_while::andexp_constructor_exists():
-    assert callable(while::AndExp.__init__)
+def test_while_andexp_constructor_exists():
+    assert callable(while_AndExp.__init__)
 
 
-def test_while::andexp_constructor_args():
-    sig = inspect.signature(while::AndExp.__init__)
+def test_while_andexp_constructor_args():
+    sig = inspect.signature(while_AndExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::eqexp_is_not_abstract():
-    assert not inspect.isabstract(while::EqExp)
+def test_while_eqexp_is_not_abstract():
+    assert not inspect.isabstract(while_EqExp)
 
 
-def test_while::eqexp_constructor_exists():
-    assert callable(while::EqExp.__init__)
+def test_while_eqexp_constructor_exists():
+    assert callable(while_EqExp.__init__)
 
 
-def test_while::eqexp_constructor_args():
-    sig = inspect.signature(while::EqExp.__init__)
+def test_while_eqexp_constructor_args():
+    sig = inspect.signature(while_EqExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::boolexp_is_not_abstract():
-    assert not inspect.isabstract(while::BoolExp)
+def test_while_boolexp_is_not_abstract():
+    assert not inspect.isabstract(while_BoolExp)
 
 
-def test_while::boolexp_constructor_exists():
-    assert callable(while::BoolExp.__init__)
+def test_while_boolexp_constructor_exists():
+    assert callable(while_BoolExp.__init__)
 
 
-def test_while::boolexp_constructor_args():
-    sig = inspect.signature(while::BoolExp.__init__)
+def test_while_boolexp_constructor_args():
+    sig = inspect.signature(while_BoolExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,79 +187,79 @@ def test_statement_constructor_args():
 
 
 
-def test_while::assignment_is_not_abstract():
-    assert not inspect.isabstract(while::Assignment)
+def test_while_ret_is_not_abstract():
+    assert not inspect.isabstract(while_Ret)
 
 
-def test_while::assignment_constructor_exists():
-    assert callable(while::Assignment.__init__)
+def test_while_ret_constructor_exists():
+    assert callable(while_Ret.__init__)
 
 
-def test_while::assignment_constructor_args():
-    sig = inspect.signature(while::Assignment.__init__)
+def test_while_ret_constructor_args():
+    sig = inspect.signature(while_Ret.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::ret_is_not_abstract():
-    assert not inspect.isabstract(while::Ret)
+def test_while_assignment_is_not_abstract():
+    assert not inspect.isabstract(while_Assignment)
 
 
-def test_while::ret_constructor_exists():
-    assert callable(while::Ret.__init__)
+def test_while_assignment_constructor_exists():
+    assert callable(while_Assignment.__init__)
 
 
-def test_while::ret_constructor_args():
-    sig = inspect.signature(while::Ret.__init__)
+def test_while_assignment_constructor_args():
+    sig = inspect.signature(while_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::if_is_not_abstract():
-    assert not inspect.isabstract(while::If)
+def test_while_if_is_not_abstract():
+    assert not inspect.isabstract(while_If)
 
 
-def test_while::if_constructor_exists():
-    assert callable(while::If.__init__)
+def test_while_if_constructor_exists():
+    assert callable(while_If.__init__)
 
 
-def test_while::if_constructor_args():
-    sig = inspect.signature(while::If.__init__)
+def test_while_if_constructor_args():
+    sig = inspect.signature(while_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::while_is_not_abstract():
-    assert not inspect.isabstract(while::While)
+def test_while_while_is_not_abstract():
+    assert not inspect.isabstract(while_While)
 
 
-def test_while::while_constructor_exists():
-    assert callable(while::While.__init__)
+def test_while_while_constructor_exists():
+    assert callable(while_While.__init__)
 
 
-def test_while::while_constructor_args():
-    sig = inspect.signature(while::While.__init__)
+def test_while_while_constructor_args():
+    sig = inspect.signature(while_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::val_is_not_abstract():
-    assert not inspect.isabstract(while::Val)
+def test_while_val_is_not_abstract():
+    assert not inspect.isabstract(while_Val)
 
 
-def test_while::val_constructor_exists():
-    assert callable(while::Val.__init__)
+def test_while_val_constructor_exists():
+    assert callable(while_Val.__init__)
 
 
-def test_while::val_constructor_args():
-    sig = inspect.signature(while::Val.__init__)
+def test_while_val_constructor_args():
+    sig = inspect.signature(while_Val.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_while::val_has_id():
-    assert hasattr(while::Val, "id")
+def test_while_val_has_id():
+    assert hasattr(while_Val, "id")
     descriptor = None
-    for klass in while::Val.__mro__:
+    for klass in while_Val.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -267,23 +267,23 @@ def test_while::val_has_id():
 
 
 
-def test_while::var_is_not_abstract():
-    assert not inspect.isabstract(while::Var)
+def test_while_var_is_not_abstract():
+    assert not inspect.isabstract(while_Var)
 
 
-def test_while::var_constructor_exists():
-    assert callable(while::Var.__init__)
+def test_while_var_constructor_exists():
+    assert callable(while_Var.__init__)
 
 
-def test_while::var_constructor_args():
-    sig = inspect.signature(while::Var.__init__)
+def test_while_var_constructor_args():
+    sig = inspect.signature(while_Var.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_while::var_has_id():
-    assert hasattr(while::Var, "id")
+def test_while_var_has_id():
+    assert hasattr(while_Var, "id")
     descriptor = None
-    for klass in while::Var.__mro__:
+    for klass in while_Var.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -291,30 +291,30 @@ def test_while::var_has_id():
 
 
 
-def test_while::statement_is_not_abstract():
-    assert not inspect.isabstract(while::Statement)
+def test_while_statement_is_not_abstract():
+    assert not inspect.isabstract(while_Statement)
 
 
-def test_while::statement_constructor_exists():
-    assert callable(while::Statement.__init__)
+def test_while_statement_constructor_exists():
+    assert callable(while_Statement.__init__)
 
 
-def test_while::statement_constructor_args():
-    sig = inspect.signature(while::Statement.__init__)
+def test_while_statement_constructor_args():
+    sig = inspect.signature(while_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_while::program_is_not_abstract():
-    assert not inspect.isabstract(while::Program)
+def test_while_program_is_not_abstract():
+    assert not inspect.isabstract(while_Program)
 
 
-def test_while::program_constructor_exists():
-    assert callable(while::Program.__init__)
+def test_while_program_constructor_exists():
+    assert callable(while_Program.__init__)
 
 
-def test_while::program_constructor_args():
-    sig = inspect.signature(while::Program.__init__)
+def test_while_program_constructor_args():
+    sig = inspect.signature(while_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -329,17 +329,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-while::Exp_strategy = st.builds(
-    while::Exp,
+while_Exp_strategy = st.builds(
+    while_Exp,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-while::VarExp_strategy = st.builds(
-    while::VarExp,
+while_VarExp_strategy = st.builds(
+    while_VarExp,
 )
-while::BinaryExp_strategy = st.builds(
-    while::BinaryExp,
+while_BinaryExp_strategy = st.builds(
+    while_BinaryExp,
 )
 BoolExp_strategy = st.builds(
     BoolExp,
@@ -347,69 +347,69 @@ BoolExp_strategy = st.builds(
 BinaryExp_strategy = st.builds(
     BinaryExp,
 )
-while::NEqExp_strategy = st.builds(
-    while::NEqExp,
+while_NEqExp_strategy = st.builds(
+    while_NEqExp,
 )
-while::AndExp_strategy = st.builds(
-    while::AndExp,
+while_AndExp_strategy = st.builds(
+    while_AndExp,
 )
-while::EqExp_strategy = st.builds(
-    while::EqExp,
+while_EqExp_strategy = st.builds(
+    while_EqExp,
 )
-while::BoolExp_strategy = st.builds(
-    while::BoolExp,
+while_BoolExp_strategy = st.builds(
+    while_BoolExp,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-while::Assignment_strategy = st.builds(
-    while::Assignment,
+while_Ret_strategy = st.builds(
+    while_Ret,
 )
-while::Ret_strategy = st.builds(
-    while::Ret,
+while_Assignment_strategy = st.builds(
+    while_Assignment,
 )
-while::If_strategy = st.builds(
-    while::If,
+while_If_strategy = st.builds(
+    while_If,
 )
-while::While_strategy = st.builds(
-    while::While,
+while_While_strategy = st.builds(
+    while_While,
 )
-while::Val_strategy = st.builds(
-    while::Val,
+while_Val_strategy = st.builds(
+    while_Val,
     id=
         safe_text
 )
-while::Var_strategy = st.builds(
-    while::Var,
+while_Var_strategy = st.builds(
+    while_Var,
     id=
         safe_text
 )
-while::Statement_strategy = st.builds(
-    while::Statement,
+while_Statement_strategy = st.builds(
+    while_Statement,
 )
-while::Program_strategy = st.builds(
-    while::Program,
+while_Program_strategy = st.builds(
+    while_Program,
 )
 
-@given(instance=while::Exp_strategy)
+@given(instance=while_Exp_strategy)
 @settings(max_examples=50)
-def test_while::exp_instantiation(instance):
-    assert isinstance(instance, while::Exp)
+def test_while_exp_instantiation(instance):
+    assert isinstance(instance, while_Exp)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=while::VarExp_strategy)
+@given(instance=while_VarExp_strategy)
 @settings(max_examples=50)
-def test_while::varexp_instantiation(instance):
-    assert isinstance(instance, while::VarExp)
+def test_while_varexp_instantiation(instance):
+    assert isinstance(instance, while_VarExp)
 
-@given(instance=while::BinaryExp_strategy)
+@given(instance=while_BinaryExp_strategy)
 @settings(max_examples=50)
-def test_while::binaryexp_instantiation(instance):
-    assert isinstance(instance, while::BinaryExp)
+def test_while_binaryexp_instantiation(instance):
+    assert isinstance(instance, while_BinaryExp)
 
 @given(instance=BoolExp_strategy)
 @settings(max_examples=50)
@@ -421,89 +421,83 @@ def test_boolexp_instantiation(instance):
 def test_binaryexp_instantiation(instance):
     assert isinstance(instance, BinaryExp)
 
-@given(instance=while::NEqExp_strategy)
+@given(instance=while_NEqExp_strategy)
 @settings(max_examples=50)
-def test_while::neqexp_instantiation(instance):
-    assert isinstance(instance, while::NEqExp)
+def test_while_neqexp_instantiation(instance):
+    assert isinstance(instance, while_NEqExp)
 
-@given(instance=while::AndExp_strategy)
+@given(instance=while_AndExp_strategy)
 @settings(max_examples=50)
-def test_while::andexp_instantiation(instance):
-    assert isinstance(instance, while::AndExp)
+def test_while_andexp_instantiation(instance):
+    assert isinstance(instance, while_AndExp)
 
-@given(instance=while::EqExp_strategy)
+@given(instance=while_EqExp_strategy)
 @settings(max_examples=50)
-def test_while::eqexp_instantiation(instance):
-    assert isinstance(instance, while::EqExp)
+def test_while_eqexp_instantiation(instance):
+    assert isinstance(instance, while_EqExp)
 
-@given(instance=while::BoolExp_strategy)
+@given(instance=while_BoolExp_strategy)
 @settings(max_examples=50)
-def test_while::boolexp_instantiation(instance):
-    assert isinstance(instance, while::BoolExp)
+def test_while_boolexp_instantiation(instance):
+    assert isinstance(instance, while_BoolExp)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=while::Assignment_strategy)
+@given(instance=while_Ret_strategy)
 @settings(max_examples=50)
-def test_while::assignment_instantiation(instance):
-    assert isinstance(instance, while::Assignment)
+def test_while_ret_instantiation(instance):
+    assert isinstance(instance, while_Ret)
 
-@given(instance=while::Ret_strategy)
+@given(instance=while_Assignment_strategy)
 @settings(max_examples=50)
-def test_while::ret_instantiation(instance):
-    assert isinstance(instance, while::Ret)
+def test_while_assignment_instantiation(instance):
+    assert isinstance(instance, while_Assignment)
 
-@given(instance=while::If_strategy)
+@given(instance=while_If_strategy)
 @settings(max_examples=50)
-def test_while::if_instantiation(instance):
-    assert isinstance(instance, while::If)
+def test_while_if_instantiation(instance):
+    assert isinstance(instance, while_If)
 
-@given(instance=while::While_strategy)
+@given(instance=while_While_strategy)
 @settings(max_examples=50)
-def test_while::while_instantiation(instance):
-    assert isinstance(instance, while::While)
+def test_while_while_instantiation(instance):
+    assert isinstance(instance, while_While)
 
-@given(instance=while::Val_strategy)
+@given(instance=while_Val_strategy)
 @settings(max_examples=50)
-def test_while::val_instantiation(instance):
-    assert isinstance(instance, while::Val)
-
-@given(instance=while::Val_strategy)
-def test_while::val_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_while_val_instantiation(instance):
+    assert isinstance(instance, while_Val)
 
 
-@given(instance=while::Val_strategy)
-def test_while::val_id_setter(instance):
+
+@given(instance=while_Val_strategy)
+def test_while_val_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=while::Var_strategy)
+@given(instance=while_Var_strategy)
 @settings(max_examples=50)
-def test_while::var_instantiation(instance):
-    assert isinstance(instance, while::Var)
-
-@given(instance=while::Var_strategy)
-def test_while::var_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_while_var_instantiation(instance):
+    assert isinstance(instance, while_Var)
 
 
-@given(instance=while::Var_strategy)
-def test_while::var_id_setter(instance):
+
+@given(instance=while_Var_strategy)
+def test_while_var_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=while::Statement_strategy)
+@given(instance=while_Statement_strategy)
 @settings(max_examples=50)
-def test_while::statement_instantiation(instance):
-    assert isinstance(instance, while::Statement)
+def test_while_statement_instantiation(instance):
+    assert isinstance(instance, while_Statement)
 
-@given(instance=while::Program_strategy)
+@given(instance=while_Program_strategy)
 @settings(max_examples=50)
-def test_while::program_instantiation(instance):
-    assert isinstance(instance, while::Program)
+def test_while_program_instantiation(instance):
+    assert isinstance(instance, while_Program)

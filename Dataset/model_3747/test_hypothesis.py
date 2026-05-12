@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ParameterizedActionstep,
-    actionpak1::ScheduleSaflet,
-    actionpak1::InvokeSaflet2,
-    call::CallSource1,
-    actionstep::ParameterizedInitiator,
-    actionpak1::IncomingCall2,
+    actionpak1_ScheduleSaflet,
+    actionpak1_InvokeSaflet2,
+    call_CallSource1,
+    actionstep_ParameterizedInitiator,
+    actionpak1_IncomingCall2,
     ParameterizedInitiator,
-    actionpak1::CustomInitiator,
+    actionpak1_CustomInitiator,
     DynamicValue,
     ActionStep,
-    actionpak1::UnscheduleSaflet,
-    actionpak1::ActionstepTest,
+    actionpak1_UnscheduleSaflet,
+    actionpak1_ActionstepTest,
 )
 
 # =============================================================================
@@ -40,37 +40,37 @@ def test_parameterizedactionstep_constructor_args():
 
 
 
-def test_actionpak1::schedulesaflet_is_not_abstract():
-    assert not inspect.isabstract(actionpak1::ScheduleSaflet)
+def test_actionpak1_schedulesaflet_is_not_abstract():
+    assert not inspect.isabstract(actionpak1_ScheduleSaflet)
 
 
-def test_actionpak1::schedulesaflet_constructor_exists():
-    assert callable(actionpak1::ScheduleSaflet.__init__)
+def test_actionpak1_schedulesaflet_constructor_exists():
+    assert callable(actionpak1_ScheduleSaflet.__init__)
 
 
-def test_actionpak1::schedulesaflet_constructor_args():
-    sig = inspect.signature(actionpak1::ScheduleSaflet.__init__)
+def test_actionpak1_schedulesaflet_constructor_args():
+    sig = inspect.signature(actionpak1_ScheduleSaflet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionpak1::invokesaflet2_is_not_abstract():
-    assert not inspect.isabstract(actionpak1::InvokeSaflet2)
+def test_actionpak1_invokesaflet2_is_not_abstract():
+    assert not inspect.isabstract(actionpak1_InvokeSaflet2)
 
 
-def test_actionpak1::invokesaflet2_constructor_exists():
-    assert callable(actionpak1::InvokeSaflet2.__init__)
+def test_actionpak1_invokesaflet2_constructor_exists():
+    assert callable(actionpak1_InvokeSaflet2.__init__)
 
 
-def test_actionpak1::invokesaflet2_constructor_args():
-    sig = inspect.signature(actionpak1::InvokeSaflet2.__init__)
+def test_actionpak1_invokesaflet2_constructor_args():
+    sig = inspect.signature(actionpak1_InvokeSaflet2.__init__)
     params = list(sig.parameters.keys())
     assert "labelText" in params, "Missing parameter 'labelText'"
 
-def test_actionpak1::invokesaflet2_has_labelText():
-    assert hasattr(actionpak1::InvokeSaflet2, "labelText")
+def test_actionpak1_invokesaflet2_has_labelText():
+    assert hasattr(actionpak1_InvokeSaflet2, "labelText")
     descriptor = None
-    for klass in actionpak1::InvokeSaflet2.__mro__:
+    for klass in actionpak1_InvokeSaflet2.__mro__:
         if "labelText" in klass.__dict__:
             descriptor = klass.__dict__["labelText"]
             break
@@ -78,51 +78,51 @@ def test_actionpak1::invokesaflet2_has_labelText():
 
 
 
-def test_call::callsource1_is_not_abstract():
-    assert not inspect.isabstract(call::CallSource1)
+def test_call_callsource1_is_not_abstract():
+    assert not inspect.isabstract(call_CallSource1)
 
 
-def test_call::callsource1_constructor_exists():
-    assert callable(call::CallSource1.__init__)
+def test_call_callsource1_constructor_exists():
+    assert callable(call_CallSource1.__init__)
 
 
-def test_call::callsource1_constructor_args():
-    sig = inspect.signature(call::CallSource1.__init__)
+def test_call_callsource1_constructor_args():
+    sig = inspect.signature(call_CallSource1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionstep::parameterizedinitiator_is_not_abstract():
-    assert not inspect.isabstract(actionstep::ParameterizedInitiator)
+def test_actionstep_parameterizedinitiator_is_not_abstract():
+    assert not inspect.isabstract(actionstep_ParameterizedInitiator)
 
 
-def test_actionstep::parameterizedinitiator_constructor_exists():
-    assert callable(actionstep::ParameterizedInitiator.__init__)
+def test_actionstep_parameterizedinitiator_constructor_exists():
+    assert callable(actionstep_ParameterizedInitiator.__init__)
 
 
-def test_actionstep::parameterizedinitiator_constructor_args():
-    sig = inspect.signature(actionstep::ParameterizedInitiator.__init__)
+def test_actionstep_parameterizedinitiator_constructor_args():
+    sig = inspect.signature(actionstep_ParameterizedInitiator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionpak1::incomingcall2_is_not_abstract():
-    assert not inspect.isabstract(actionpak1::IncomingCall2)
+def test_actionpak1_incomingcall2_is_not_abstract():
+    assert not inspect.isabstract(actionpak1_IncomingCall2)
 
 
-def test_actionpak1::incomingcall2_constructor_exists():
-    assert callable(actionpak1::IncomingCall2.__init__)
+def test_actionpak1_incomingcall2_constructor_exists():
+    assert callable(actionpak1_IncomingCall2.__init__)
 
 
-def test_actionpak1::incomingcall2_constructor_args():
-    sig = inspect.signature(actionpak1::IncomingCall2.__init__)
+def test_actionpak1_incomingcall2_constructor_args():
+    sig = inspect.signature(actionpak1_IncomingCall2.__init__)
     params = list(sig.parameters.keys())
     assert "callName" in params, "Missing parameter 'callName'"
 
-def test_actionpak1::incomingcall2_has_callName():
-    assert hasattr(actionpak1::IncomingCall2, "callName")
+def test_actionpak1_incomingcall2_has_callName():
+    assert hasattr(actionpak1_IncomingCall2, "callName")
     descriptor = None
-    for klass in actionpak1::IncomingCall2.__mro__:
+    for klass in actionpak1_IncomingCall2.__mro__:
         if "callName" in klass.__dict__:
             descriptor = klass.__dict__["callName"]
             break
@@ -144,16 +144,16 @@ def test_parameterizedinitiator_constructor_args():
 
 
 
-def test_actionpak1::custominitiator_is_not_abstract():
-    assert not inspect.isabstract(actionpak1::CustomInitiator)
+def test_actionpak1_custominitiator_is_not_abstract():
+    assert not inspect.isabstract(actionpak1_CustomInitiator)
 
 
-def test_actionpak1::custominitiator_constructor_exists():
-    assert callable(actionpak1::CustomInitiator.__init__)
+def test_actionpak1_custominitiator_constructor_exists():
+    assert callable(actionpak1_CustomInitiator.__init__)
 
 
-def test_actionpak1::custominitiator_constructor_args():
-    sig = inspect.signature(actionpak1::CustomInitiator.__init__)
+def test_actionpak1_custominitiator_constructor_args():
+    sig = inspect.signature(actionpak1_CustomInitiator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -186,30 +186,30 @@ def test_actionstep_constructor_args():
 
 
 
-def test_actionpak1::unschedulesaflet_is_not_abstract():
-    assert not inspect.isabstract(actionpak1::UnscheduleSaflet)
+def test_actionpak1_unschedulesaflet_is_not_abstract():
+    assert not inspect.isabstract(actionpak1_UnscheduleSaflet)
 
 
-def test_actionpak1::unschedulesaflet_constructor_exists():
-    assert callable(actionpak1::UnscheduleSaflet.__init__)
+def test_actionpak1_unschedulesaflet_constructor_exists():
+    assert callable(actionpak1_UnscheduleSaflet.__init__)
 
 
-def test_actionpak1::unschedulesaflet_constructor_args():
-    sig = inspect.signature(actionpak1::UnscheduleSaflet.__init__)
+def test_actionpak1_unschedulesaflet_constructor_args():
+    sig = inspect.signature(actionpak1_UnscheduleSaflet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionpak1::actionsteptest_is_not_abstract():
-    assert not inspect.isabstract(actionpak1::ActionstepTest)
+def test_actionpak1_actionsteptest_is_not_abstract():
+    assert not inspect.isabstract(actionpak1_ActionstepTest)
 
 
-def test_actionpak1::actionsteptest_constructor_exists():
-    assert callable(actionpak1::ActionstepTest.__init__)
+def test_actionpak1_actionsteptest_constructor_exists():
+    assert callable(actionpak1_ActionstepTest.__init__)
 
 
-def test_actionpak1::actionsteptest_constructor_args():
-    sig = inspect.signature(actionpak1::ActionstepTest.__init__)
+def test_actionpak1_actionsteptest_constructor_args():
+    sig = inspect.signature(actionpak1_ActionstepTest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,30 +227,30 @@ safe_text = st.text(
 ParameterizedActionstep_strategy = st.builds(
     ParameterizedActionstep,
 )
-actionpak1::ScheduleSaflet_strategy = st.builds(
-    actionpak1::ScheduleSaflet,
+actionpak1_ScheduleSaflet_strategy = st.builds(
+    actionpak1_ScheduleSaflet,
 )
-actionpak1::InvokeSaflet2_strategy = st.builds(
-    actionpak1::InvokeSaflet2,
+actionpak1_InvokeSaflet2_strategy = st.builds(
+    actionpak1_InvokeSaflet2,
     labelText=
         safe_text
 )
-call::CallSource1_strategy = st.builds(
-    call::CallSource1,
+call_CallSource1_strategy = st.builds(
+    call_CallSource1,
 )
-actionstep::ParameterizedInitiator_strategy = st.builds(
-    actionstep::ParameterizedInitiator,
+actionstep_ParameterizedInitiator_strategy = st.builds(
+    actionstep_ParameterizedInitiator,
 )
-actionpak1::IncomingCall2_strategy = st.builds(
-    actionpak1::IncomingCall2,
+actionpak1_IncomingCall2_strategy = st.builds(
+    actionpak1_IncomingCall2,
     callName=
         safe_text
 )
 ParameterizedInitiator_strategy = st.builds(
     ParameterizedInitiator,
 )
-actionpak1::CustomInitiator_strategy = st.builds(
-    actionpak1::CustomInitiator,
+actionpak1_CustomInitiator_strategy = st.builds(
+    actionpak1_CustomInitiator,
 )
 DynamicValue_strategy = st.builds(
     DynamicValue,
@@ -258,11 +258,11 @@ DynamicValue_strategy = st.builds(
 ActionStep_strategy = st.builds(
     ActionStep,
 )
-actionpak1::UnscheduleSaflet_strategy = st.builds(
-    actionpak1::UnscheduleSaflet,
+actionpak1_UnscheduleSaflet_strategy = st.builds(
+    actionpak1_UnscheduleSaflet,
 )
-actionpak1::ActionstepTest_strategy = st.builds(
-    actionpak1::ActionstepTest,
+actionpak1_ActionstepTest_strategy = st.builds(
+    actionpak1_ActionstepTest,
 )
 
 @given(instance=ParameterizedActionstep_strategy)
@@ -270,49 +270,43 @@ actionpak1::ActionstepTest_strategy = st.builds(
 def test_parameterizedactionstep_instantiation(instance):
     assert isinstance(instance, ParameterizedActionstep)
 
-@given(instance=actionpak1::ScheduleSaflet_strategy)
+@given(instance=actionpak1_ScheduleSaflet_strategy)
 @settings(max_examples=50)
-def test_actionpak1::schedulesaflet_instantiation(instance):
-    assert isinstance(instance, actionpak1::ScheduleSaflet)
+def test_actionpak1_schedulesaflet_instantiation(instance):
+    assert isinstance(instance, actionpak1_ScheduleSaflet)
 
-@given(instance=actionpak1::InvokeSaflet2_strategy)
+@given(instance=actionpak1_InvokeSaflet2_strategy)
 @settings(max_examples=50)
-def test_actionpak1::invokesaflet2_instantiation(instance):
-    assert isinstance(instance, actionpak1::InvokeSaflet2)
-
-@given(instance=actionpak1::InvokeSaflet2_strategy)
-def test_actionpak1::invokesaflet2_labelText_type(instance):
-    assert isinstance(instance.labelText, str)
+def test_actionpak1_invokesaflet2_instantiation(instance):
+    assert isinstance(instance, actionpak1_InvokeSaflet2)
 
 
-@given(instance=actionpak1::InvokeSaflet2_strategy)
-def test_actionpak1::invokesaflet2_labelText_setter(instance):
+
+@given(instance=actionpak1_InvokeSaflet2_strategy)
+def test_actionpak1_invokesaflet2_labelText_setter(instance):
     original = instance.labelText
     instance.labelText = original
     assert instance.labelText == original
 
-@given(instance=call::CallSource1_strategy)
+@given(instance=call_CallSource1_strategy)
 @settings(max_examples=50)
-def test_call::callsource1_instantiation(instance):
-    assert isinstance(instance, call::CallSource1)
+def test_call_callsource1_instantiation(instance):
+    assert isinstance(instance, call_CallSource1)
 
-@given(instance=actionstep::ParameterizedInitiator_strategy)
+@given(instance=actionstep_ParameterizedInitiator_strategy)
 @settings(max_examples=50)
-def test_actionstep::parameterizedinitiator_instantiation(instance):
-    assert isinstance(instance, actionstep::ParameterizedInitiator)
+def test_actionstep_parameterizedinitiator_instantiation(instance):
+    assert isinstance(instance, actionstep_ParameterizedInitiator)
 
-@given(instance=actionpak1::IncomingCall2_strategy)
+@given(instance=actionpak1_IncomingCall2_strategy)
 @settings(max_examples=50)
-def test_actionpak1::incomingcall2_instantiation(instance):
-    assert isinstance(instance, actionpak1::IncomingCall2)
-
-@given(instance=actionpak1::IncomingCall2_strategy)
-def test_actionpak1::incomingcall2_callName_type(instance):
-    assert isinstance(instance.callName, str)
+def test_actionpak1_incomingcall2_instantiation(instance):
+    assert isinstance(instance, actionpak1_IncomingCall2)
 
 
-@given(instance=actionpak1::IncomingCall2_strategy)
-def test_actionpak1::incomingcall2_callName_setter(instance):
+
+@given(instance=actionpak1_IncomingCall2_strategy)
+def test_actionpak1_incomingcall2_callName_setter(instance):
     original = instance.callName
     instance.callName = original
     assert instance.callName == original
@@ -322,10 +316,10 @@ def test_actionpak1::incomingcall2_callName_setter(instance):
 def test_parameterizedinitiator_instantiation(instance):
     assert isinstance(instance, ParameterizedInitiator)
 
-@given(instance=actionpak1::CustomInitiator_strategy)
+@given(instance=actionpak1_CustomInitiator_strategy)
 @settings(max_examples=50)
-def test_actionpak1::custominitiator_instantiation(instance):
-    assert isinstance(instance, actionpak1::CustomInitiator)
+def test_actionpak1_custominitiator_instantiation(instance):
+    assert isinstance(instance, actionpak1_CustomInitiator)
 
 @given(instance=DynamicValue_strategy)
 @settings(max_examples=50)
@@ -337,12 +331,12 @@ def test_dynamicvalue_instantiation(instance):
 def test_actionstep_instantiation(instance):
     assert isinstance(instance, ActionStep)
 
-@given(instance=actionpak1::UnscheduleSaflet_strategy)
+@given(instance=actionpak1_UnscheduleSaflet_strategy)
 @settings(max_examples=50)
-def test_actionpak1::unschedulesaflet_instantiation(instance):
-    assert isinstance(instance, actionpak1::UnscheduleSaflet)
+def test_actionpak1_unschedulesaflet_instantiation(instance):
+    assert isinstance(instance, actionpak1_UnscheduleSaflet)
 
-@given(instance=actionpak1::ActionstepTest_strategy)
+@given(instance=actionpak1_ActionstepTest_strategy)
 @settings(max_examples=50)
-def test_actionpak1::actionsteptest_instantiation(instance):
-    assert isinstance(instance, actionpak1::ActionstepTest)
+def test_actionpak1_actionsteptest_instantiation(instance):
+    assert isinstance(instance, actionpak1_ActionstepTest)

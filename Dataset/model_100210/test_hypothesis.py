@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Documentation::InformalTableValueBody,
-    Documentation::InformalTableValueHead,
-    Documentation::InformalTableValueGroup,
-    Documentation::InformalTableValueEntry,
-    Documentation::InformalTableValueRow,
+from python_code import (
+    Documentation_InformalTableValueBody,
+    Documentation_InformalTableValueHead,
+    Documentation_InformalTableValueGroup,
+    Documentation_InformalTableValueEntry,
+    Documentation_InformalTableValueRow,
     ParagraphValue,
-    Documentation::InformalTableValue,
-    Documentation::ItemizedListValue,
-    Documentation::TextualValue,
-    Documentation::XRefValue,
-    Documentation::EmphasisValue,
+    Documentation_ItemizedListValue,
+    Documentation_InformalTableValue,
+    Documentation_TextualValue,
+    Documentation_XRefValue,
+    Documentation_EmphasisValue,
     Paragraph,
-    Documentation::ItemizedListValueItem,
-    Documentation::Section,
-    Documentation::Book,
-    Documentation::ParagraphValue,
-    Documentation::Paragraph,
+    Documentation_ItemizedListValueItem,
+    Documentation_Section,
+    Documentation_Book,
+    Documentation_ParagraphValue,
+    Documentation_Paragraph,
 )
 
 # =============================================================================
@@ -31,51 +31,51 @@ from classes import (
 
 
 
-def test_documentation::informaltablevaluebody_is_not_abstract():
-    assert not inspect.isabstract(Documentation::InformalTableValueBody)
+def test_documentation_informaltablevaluebody_is_not_abstract():
+    assert not inspect.isabstract(Documentation_InformalTableValueBody)
 
 
-def test_documentation::informaltablevaluebody_constructor_exists():
-    assert callable(Documentation::InformalTableValueBody.__init__)
+def test_documentation_informaltablevaluebody_constructor_exists():
+    assert callable(Documentation_InformalTableValueBody.__init__)
 
 
-def test_documentation::informaltablevaluebody_constructor_args():
-    sig = inspect.signature(Documentation::InformalTableValueBody.__init__)
+def test_documentation_informaltablevaluebody_constructor_args():
+    sig = inspect.signature(Documentation_InformalTableValueBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::informaltablevaluehead_is_not_abstract():
-    assert not inspect.isabstract(Documentation::InformalTableValueHead)
+def test_documentation_informaltablevaluehead_is_not_abstract():
+    assert not inspect.isabstract(Documentation_InformalTableValueHead)
 
 
-def test_documentation::informaltablevaluehead_constructor_exists():
-    assert callable(Documentation::InformalTableValueHead.__init__)
+def test_documentation_informaltablevaluehead_constructor_exists():
+    assert callable(Documentation_InformalTableValueHead.__init__)
 
 
-def test_documentation::informaltablevaluehead_constructor_args():
-    sig = inspect.signature(Documentation::InformalTableValueHead.__init__)
+def test_documentation_informaltablevaluehead_constructor_args():
+    sig = inspect.signature(Documentation_InformalTableValueHead.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::informaltablevaluegroup_is_not_abstract():
-    assert not inspect.isabstract(Documentation::InformalTableValueGroup)
+def test_documentation_informaltablevaluegroup_is_not_abstract():
+    assert not inspect.isabstract(Documentation_InformalTableValueGroup)
 
 
-def test_documentation::informaltablevaluegroup_constructor_exists():
-    assert callable(Documentation::InformalTableValueGroup.__init__)
+def test_documentation_informaltablevaluegroup_constructor_exists():
+    assert callable(Documentation_InformalTableValueGroup.__init__)
 
 
-def test_documentation::informaltablevaluegroup_constructor_args():
-    sig = inspect.signature(Documentation::InformalTableValueGroup.__init__)
+def test_documentation_informaltablevaluegroup_constructor_args():
+    sig = inspect.signature(Documentation_InformalTableValueGroup.__init__)
     params = list(sig.parameters.keys())
     assert "cols" in params, "Missing parameter 'cols'"
 
-def test_documentation::informaltablevaluegroup_has_cols():
-    assert hasattr(Documentation::InformalTableValueGroup, "cols")
+def test_documentation_informaltablevaluegroup_has_cols():
+    assert hasattr(Documentation_InformalTableValueGroup, "cols")
     descriptor = None
-    for klass in Documentation::InformalTableValueGroup.__mro__:
+    for klass in Documentation_InformalTableValueGroup.__mro__:
         if "cols" in klass.__dict__:
             descriptor = klass.__dict__["cols"]
             break
@@ -83,23 +83,23 @@ def test_documentation::informaltablevaluegroup_has_cols():
 
 
 
-def test_documentation::informaltablevalueentry_is_not_abstract():
-    assert not inspect.isabstract(Documentation::InformalTableValueEntry)
+def test_documentation_informaltablevalueentry_is_not_abstract():
+    assert not inspect.isabstract(Documentation_InformalTableValueEntry)
 
 
-def test_documentation::informaltablevalueentry_constructor_exists():
-    assert callable(Documentation::InformalTableValueEntry.__init__)
+def test_documentation_informaltablevalueentry_constructor_exists():
+    assert callable(Documentation_InformalTableValueEntry.__init__)
 
 
-def test_documentation::informaltablevalueentry_constructor_args():
-    sig = inspect.signature(Documentation::InformalTableValueEntry.__init__)
+def test_documentation_informaltablevalueentry_constructor_args():
+    sig = inspect.signature(Documentation_InformalTableValueEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_documentation::informaltablevalueentry_has_value():
-    assert hasattr(Documentation::InformalTableValueEntry, "value")
+def test_documentation_informaltablevalueentry_has_value():
+    assert hasattr(Documentation_InformalTableValueEntry, "value")
     descriptor = None
-    for klass in Documentation::InformalTableValueEntry.__mro__:
+    for klass in Documentation_InformalTableValueEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -107,16 +107,16 @@ def test_documentation::informaltablevalueentry_has_value():
 
 
 
-def test_documentation::informaltablevaluerow_is_not_abstract():
-    assert not inspect.isabstract(Documentation::InformalTableValueRow)
+def test_documentation_informaltablevaluerow_is_not_abstract():
+    assert not inspect.isabstract(Documentation_InformalTableValueRow)
 
 
-def test_documentation::informaltablevaluerow_constructor_exists():
-    assert callable(Documentation::InformalTableValueRow.__init__)
+def test_documentation_informaltablevaluerow_constructor_exists():
+    assert callable(Documentation_InformalTableValueRow.__init__)
 
 
-def test_documentation::informaltablevaluerow_constructor_args():
-    sig = inspect.signature(Documentation::InformalTableValueRow.__init__)
+def test_documentation_informaltablevaluerow_constructor_args():
+    sig = inspect.signature(Documentation_InformalTableValueRow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -135,51 +135,51 @@ def test_paragraphvalue_constructor_args():
 
 
 
-def test_documentation::informaltablevalue_is_not_abstract():
-    assert not inspect.isabstract(Documentation::InformalTableValue)
+def test_documentation_itemizedlistvalue_is_not_abstract():
+    assert not inspect.isabstract(Documentation_ItemizedListValue)
 
 
-def test_documentation::informaltablevalue_constructor_exists():
-    assert callable(Documentation::InformalTableValue.__init__)
+def test_documentation_itemizedlistvalue_constructor_exists():
+    assert callable(Documentation_ItemizedListValue.__init__)
 
 
-def test_documentation::informaltablevalue_constructor_args():
-    sig = inspect.signature(Documentation::InformalTableValue.__init__)
+def test_documentation_itemizedlistvalue_constructor_args():
+    sig = inspect.signature(Documentation_ItemizedListValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::itemizedlistvalue_is_not_abstract():
-    assert not inspect.isabstract(Documentation::ItemizedListValue)
+def test_documentation_informaltablevalue_is_not_abstract():
+    assert not inspect.isabstract(Documentation_InformalTableValue)
 
 
-def test_documentation::itemizedlistvalue_constructor_exists():
-    assert callable(Documentation::ItemizedListValue.__init__)
+def test_documentation_informaltablevalue_constructor_exists():
+    assert callable(Documentation_InformalTableValue.__init__)
 
 
-def test_documentation::itemizedlistvalue_constructor_args():
-    sig = inspect.signature(Documentation::ItemizedListValue.__init__)
+def test_documentation_informaltablevalue_constructor_args():
+    sig = inspect.signature(Documentation_InformalTableValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::textualvalue_is_not_abstract():
-    assert not inspect.isabstract(Documentation::TextualValue)
+def test_documentation_textualvalue_is_not_abstract():
+    assert not inspect.isabstract(Documentation_TextualValue)
 
 
-def test_documentation::textualvalue_constructor_exists():
-    assert callable(Documentation::TextualValue.__init__)
+def test_documentation_textualvalue_constructor_exists():
+    assert callable(Documentation_TextualValue.__init__)
 
 
-def test_documentation::textualvalue_constructor_args():
-    sig = inspect.signature(Documentation::TextualValue.__init__)
+def test_documentation_textualvalue_constructor_args():
+    sig = inspect.signature(Documentation_TextualValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_documentation::textualvalue_has_value():
-    assert hasattr(Documentation::TextualValue, "value")
+def test_documentation_textualvalue_has_value():
+    assert hasattr(Documentation_TextualValue, "value")
     descriptor = None
-    for klass in Documentation::TextualValue.__mro__:
+    for klass in Documentation_TextualValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -187,47 +187,47 @@ def test_documentation::textualvalue_has_value():
 
 
 
-def test_documentation::xrefvalue_is_not_abstract():
-    assert not inspect.isabstract(Documentation::XRefValue)
+def test_documentation_xrefvalue_is_not_abstract():
+    assert not inspect.isabstract(Documentation_XRefValue)
 
 
-def test_documentation::xrefvalue_constructor_exists():
-    assert callable(Documentation::XRefValue.__init__)
+def test_documentation_xrefvalue_constructor_exists():
+    assert callable(Documentation_XRefValue.__init__)
 
 
-def test_documentation::xrefvalue_constructor_args():
-    sig = inspect.signature(Documentation::XRefValue.__init__)
+def test_documentation_xrefvalue_constructor_args():
+    sig = inspect.signature(Documentation_XRefValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::emphasisvalue_is_not_abstract():
-    assert not inspect.isabstract(Documentation::EmphasisValue)
+def test_documentation_emphasisvalue_is_not_abstract():
+    assert not inspect.isabstract(Documentation_EmphasisValue)
 
 
-def test_documentation::emphasisvalue_constructor_exists():
-    assert callable(Documentation::EmphasisValue.__init__)
+def test_documentation_emphasisvalue_constructor_exists():
+    assert callable(Documentation_EmphasisValue.__init__)
 
 
-def test_documentation::emphasisvalue_constructor_args():
-    sig = inspect.signature(Documentation::EmphasisValue.__init__)
+def test_documentation_emphasisvalue_constructor_args():
+    sig = inspect.signature(Documentation_EmphasisValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "role" in params, "Missing parameter 'role'"
 
-def test_documentation::emphasisvalue_has_value():
-    assert hasattr(Documentation::EmphasisValue, "value")
+def test_documentation_emphasisvalue_has_value():
+    assert hasattr(Documentation_EmphasisValue, "value")
     descriptor = None
-    for klass in Documentation::EmphasisValue.__mro__:
+    for klass in Documentation_EmphasisValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_documentation::emphasisvalue_has_role():
-    assert hasattr(Documentation::EmphasisValue, "role")
+def test_documentation_emphasisvalue_has_role():
+    assert hasattr(Documentation_EmphasisValue, "role")
     descriptor = None
-    for klass in Documentation::EmphasisValue.__mro__:
+    for klass in Documentation_EmphasisValue.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
             break
@@ -249,37 +249,37 @@ def test_paragraph_constructor_args():
 
 
 
-def test_documentation::itemizedlistvalueitem_is_not_abstract():
-    assert not inspect.isabstract(Documentation::ItemizedListValueItem)
+def test_documentation_itemizedlistvalueitem_is_not_abstract():
+    assert not inspect.isabstract(Documentation_ItemizedListValueItem)
 
 
-def test_documentation::itemizedlistvalueitem_constructor_exists():
-    assert callable(Documentation::ItemizedListValueItem.__init__)
+def test_documentation_itemizedlistvalueitem_constructor_exists():
+    assert callable(Documentation_ItemizedListValueItem.__init__)
 
 
-def test_documentation::itemizedlistvalueitem_constructor_args():
-    sig = inspect.signature(Documentation::ItemizedListValueItem.__init__)
+def test_documentation_itemizedlistvalueitem_constructor_args():
+    sig = inspect.signature(Documentation_ItemizedListValueItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::section_is_not_abstract():
-    assert not inspect.isabstract(Documentation::Section)
+def test_documentation_section_is_not_abstract():
+    assert not inspect.isabstract(Documentation_Section)
 
 
-def test_documentation::section_constructor_exists():
-    assert callable(Documentation::Section.__init__)
+def test_documentation_section_constructor_exists():
+    assert callable(Documentation_Section.__init__)
 
 
-def test_documentation::section_constructor_args():
-    sig = inspect.signature(Documentation::Section.__init__)
+def test_documentation_section_constructor_args():
+    sig = inspect.signature(Documentation_Section.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_documentation::section_has_title():
-    assert hasattr(Documentation::Section, "title")
+def test_documentation_section_has_title():
+    assert hasattr(Documentation_Section, "title")
     descriptor = None
-    for klass in Documentation::Section.__mro__:
+    for klass in Documentation_Section.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -287,23 +287,23 @@ def test_documentation::section_has_title():
 
 
 
-def test_documentation::book_is_not_abstract():
-    assert not inspect.isabstract(Documentation::Book)
+def test_documentation_book_is_not_abstract():
+    assert not inspect.isabstract(Documentation_Book)
 
 
-def test_documentation::book_constructor_exists():
-    assert callable(Documentation::Book.__init__)
+def test_documentation_book_constructor_exists():
+    assert callable(Documentation_Book.__init__)
 
 
-def test_documentation::book_constructor_args():
-    sig = inspect.signature(Documentation::Book.__init__)
+def test_documentation_book_constructor_args():
+    sig = inspect.signature(Documentation_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_documentation::book_has_title():
-    assert hasattr(Documentation::Book, "title")
+def test_documentation_book_has_title():
+    assert hasattr(Documentation_Book, "title")
     descriptor = None
-    for klass in Documentation::Book.__mro__:
+    for klass in Documentation_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -311,30 +311,30 @@ def test_documentation::book_has_title():
 
 
 
-def test_documentation::paragraphvalue_is_not_abstract():
-    assert not inspect.isabstract(Documentation::ParagraphValue)
+def test_documentation_paragraphvalue_is_not_abstract():
+    assert not inspect.isabstract(Documentation_ParagraphValue)
 
 
-def test_documentation::paragraphvalue_constructor_exists():
-    assert callable(Documentation::ParagraphValue.__init__)
+def test_documentation_paragraphvalue_constructor_exists():
+    assert callable(Documentation_ParagraphValue.__init__)
 
 
-def test_documentation::paragraphvalue_constructor_args():
-    sig = inspect.signature(Documentation::ParagraphValue.__init__)
+def test_documentation_paragraphvalue_constructor_args():
+    sig = inspect.signature(Documentation_ParagraphValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_documentation::paragraph_is_not_abstract():
-    assert not inspect.isabstract(Documentation::Paragraph)
+def test_documentation_paragraph_is_not_abstract():
+    assert not inspect.isabstract(Documentation_Paragraph)
 
 
-def test_documentation::paragraph_constructor_exists():
-    assert callable(Documentation::Paragraph.__init__)
+def test_documentation_paragraph_constructor_exists():
+    assert callable(Documentation_Paragraph.__init__)
 
 
-def test_documentation::paragraph_constructor_args():
-    sig = inspect.signature(Documentation::Paragraph.__init__)
+def test_documentation_paragraph_constructor_args():
+    sig = inspect.signature(Documentation_Paragraph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -349,44 +349,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Documentation::InformalTableValueBody_strategy = st.builds(
-    Documentation::InformalTableValueBody,
+Documentation_InformalTableValueBody_strategy = st.builds(
+    Documentation_InformalTableValueBody,
 )
-Documentation::InformalTableValueHead_strategy = st.builds(
-    Documentation::InformalTableValueHead,
+Documentation_InformalTableValueHead_strategy = st.builds(
+    Documentation_InformalTableValueHead,
 )
-Documentation::InformalTableValueGroup_strategy = st.builds(
-    Documentation::InformalTableValueGroup,
+Documentation_InformalTableValueGroup_strategy = st.builds(
+    Documentation_InformalTableValueGroup,
     cols=
         st.integers()
 )
-Documentation::InformalTableValueEntry_strategy = st.builds(
-    Documentation::InformalTableValueEntry,
+Documentation_InformalTableValueEntry_strategy = st.builds(
+    Documentation_InformalTableValueEntry,
     value=
         safe_text
 )
-Documentation::InformalTableValueRow_strategy = st.builds(
-    Documentation::InformalTableValueRow,
+Documentation_InformalTableValueRow_strategy = st.builds(
+    Documentation_InformalTableValueRow,
 )
 ParagraphValue_strategy = st.builds(
     ParagraphValue,
 )
-Documentation::InformalTableValue_strategy = st.builds(
-    Documentation::InformalTableValue,
+Documentation_ItemizedListValue_strategy = st.builds(
+    Documentation_ItemizedListValue,
 )
-Documentation::ItemizedListValue_strategy = st.builds(
-    Documentation::ItemizedListValue,
+Documentation_InformalTableValue_strategy = st.builds(
+    Documentation_InformalTableValue,
 )
-Documentation::TextualValue_strategy = st.builds(
-    Documentation::TextualValue,
+Documentation_TextualValue_strategy = st.builds(
+    Documentation_TextualValue,
     value=
         safe_text
 )
-Documentation::XRefValue_strategy = st.builds(
-    Documentation::XRefValue,
+Documentation_XRefValue_strategy = st.builds(
+    Documentation_XRefValue,
 )
-Documentation::EmphasisValue_strategy = st.builds(
-    Documentation::EmphasisValue,
+Documentation_EmphasisValue_strategy = st.builds(
+    Documentation_EmphasisValue,
     value=
         safe_text,
     role=
@@ -395,132 +395,117 @@ Documentation::EmphasisValue_strategy = st.builds(
 Paragraph_strategy = st.builds(
     Paragraph,
 )
-Documentation::ItemizedListValueItem_strategy = st.builds(
-    Documentation::ItemizedListValueItem,
+Documentation_ItemizedListValueItem_strategy = st.builds(
+    Documentation_ItemizedListValueItem,
 )
-Documentation::Section_strategy = st.builds(
-    Documentation::Section,
+Documentation_Section_strategy = st.builds(
+    Documentation_Section,
     title=
         safe_text
 )
-Documentation::Book_strategy = st.builds(
-    Documentation::Book,
+Documentation_Book_strategy = st.builds(
+    Documentation_Book,
     title=
         safe_text
 )
-Documentation::ParagraphValue_strategy = st.builds(
-    Documentation::ParagraphValue,
+Documentation_ParagraphValue_strategy = st.builds(
+    Documentation_ParagraphValue,
 )
-Documentation::Paragraph_strategy = st.builds(
-    Documentation::Paragraph,
+Documentation_Paragraph_strategy = st.builds(
+    Documentation_Paragraph,
 )
 
-@given(instance=Documentation::InformalTableValueBody_strategy)
+@given(instance=Documentation_InformalTableValueBody_strategy)
 @settings(max_examples=50)
-def test_documentation::informaltablevaluebody_instantiation(instance):
-    assert isinstance(instance, Documentation::InformalTableValueBody)
+def test_documentation_informaltablevaluebody_instantiation(instance):
+    assert isinstance(instance, Documentation_InformalTableValueBody)
 
-@given(instance=Documentation::InformalTableValueHead_strategy)
+@given(instance=Documentation_InformalTableValueHead_strategy)
 @settings(max_examples=50)
-def test_documentation::informaltablevaluehead_instantiation(instance):
-    assert isinstance(instance, Documentation::InformalTableValueHead)
+def test_documentation_informaltablevaluehead_instantiation(instance):
+    assert isinstance(instance, Documentation_InformalTableValueHead)
 
-@given(instance=Documentation::InformalTableValueGroup_strategy)
+@given(instance=Documentation_InformalTableValueGroup_strategy)
 @settings(max_examples=50)
-def test_documentation::informaltablevaluegroup_instantiation(instance):
-    assert isinstance(instance, Documentation::InformalTableValueGroup)
-
-@given(instance=Documentation::InformalTableValueGroup_strategy)
-def test_documentation::informaltablevaluegroup_cols_type(instance):
-    assert isinstance(instance.cols, int)
+def test_documentation_informaltablevaluegroup_instantiation(instance):
+    assert isinstance(instance, Documentation_InformalTableValueGroup)
 
 
-@given(instance=Documentation::InformalTableValueGroup_strategy)
-def test_documentation::informaltablevaluegroup_cols_setter(instance):
+
+@given(instance=Documentation_InformalTableValueGroup_strategy)
+def test_documentation_informaltablevaluegroup_cols_setter(instance):
     original = instance.cols
     instance.cols = original
     assert instance.cols == original
 
-@given(instance=Documentation::InformalTableValueEntry_strategy)
+@given(instance=Documentation_InformalTableValueEntry_strategy)
 @settings(max_examples=50)
-def test_documentation::informaltablevalueentry_instantiation(instance):
-    assert isinstance(instance, Documentation::InformalTableValueEntry)
-
-@given(instance=Documentation::InformalTableValueEntry_strategy)
-def test_documentation::informaltablevalueentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_documentation_informaltablevalueentry_instantiation(instance):
+    assert isinstance(instance, Documentation_InformalTableValueEntry)
 
 
-@given(instance=Documentation::InformalTableValueEntry_strategy)
-def test_documentation::informaltablevalueentry_value_setter(instance):
+
+@given(instance=Documentation_InformalTableValueEntry_strategy)
+def test_documentation_informaltablevalueentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Documentation::InformalTableValueRow_strategy)
+@given(instance=Documentation_InformalTableValueRow_strategy)
 @settings(max_examples=50)
-def test_documentation::informaltablevaluerow_instantiation(instance):
-    assert isinstance(instance, Documentation::InformalTableValueRow)
+def test_documentation_informaltablevaluerow_instantiation(instance):
+    assert isinstance(instance, Documentation_InformalTableValueRow)
 
 @given(instance=ParagraphValue_strategy)
 @settings(max_examples=50)
 def test_paragraphvalue_instantiation(instance):
     assert isinstance(instance, ParagraphValue)
 
-@given(instance=Documentation::InformalTableValue_strategy)
+@given(instance=Documentation_ItemizedListValue_strategy)
 @settings(max_examples=50)
-def test_documentation::informaltablevalue_instantiation(instance):
-    assert isinstance(instance, Documentation::InformalTableValue)
+def test_documentation_itemizedlistvalue_instantiation(instance):
+    assert isinstance(instance, Documentation_ItemizedListValue)
 
-@given(instance=Documentation::ItemizedListValue_strategy)
+@given(instance=Documentation_InformalTableValue_strategy)
 @settings(max_examples=50)
-def test_documentation::itemizedlistvalue_instantiation(instance):
-    assert isinstance(instance, Documentation::ItemizedListValue)
+def test_documentation_informaltablevalue_instantiation(instance):
+    assert isinstance(instance, Documentation_InformalTableValue)
 
-@given(instance=Documentation::TextualValue_strategy)
+@given(instance=Documentation_TextualValue_strategy)
 @settings(max_examples=50)
-def test_documentation::textualvalue_instantiation(instance):
-    assert isinstance(instance, Documentation::TextualValue)
-
-@given(instance=Documentation::TextualValue_strategy)
-def test_documentation::textualvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_documentation_textualvalue_instantiation(instance):
+    assert isinstance(instance, Documentation_TextualValue)
 
 
-@given(instance=Documentation::TextualValue_strategy)
-def test_documentation::textualvalue_value_setter(instance):
+
+@given(instance=Documentation_TextualValue_strategy)
+def test_documentation_textualvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Documentation::XRefValue_strategy)
+@given(instance=Documentation_XRefValue_strategy)
 @settings(max_examples=50)
-def test_documentation::xrefvalue_instantiation(instance):
-    assert isinstance(instance, Documentation::XRefValue)
+def test_documentation_xrefvalue_instantiation(instance):
+    assert isinstance(instance, Documentation_XRefValue)
 
-@given(instance=Documentation::EmphasisValue_strategy)
+@given(instance=Documentation_EmphasisValue_strategy)
 @settings(max_examples=50)
-def test_documentation::emphasisvalue_instantiation(instance):
-    assert isinstance(instance, Documentation::EmphasisValue)
-
-@given(instance=Documentation::EmphasisValue_strategy)
-def test_documentation::emphasisvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_documentation_emphasisvalue_instantiation(instance):
+    assert isinstance(instance, Documentation_EmphasisValue)
 
 
-@given(instance=Documentation::EmphasisValue_strategy)
-def test_documentation::emphasisvalue_value_setter(instance):
+
+@given(instance=Documentation_EmphasisValue_strategy)
+def test_documentation_emphasisvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Documentation::EmphasisValue_strategy)
-def test_documentation::emphasisvalue_role_type(instance):
-    assert isinstance(instance.role, str)
 
 
-@given(instance=Documentation::EmphasisValue_strategy)
-def test_documentation::emphasisvalue_role_setter(instance):
+@given(instance=Documentation_EmphasisValue_strategy)
+def test_documentation_emphasisvalue_role_setter(instance):
     original = instance.role
     instance.role = original
     assert instance.role == original
@@ -530,49 +515,43 @@ def test_documentation::emphasisvalue_role_setter(instance):
 def test_paragraph_instantiation(instance):
     assert isinstance(instance, Paragraph)
 
-@given(instance=Documentation::ItemizedListValueItem_strategy)
+@given(instance=Documentation_ItemizedListValueItem_strategy)
 @settings(max_examples=50)
-def test_documentation::itemizedlistvalueitem_instantiation(instance):
-    assert isinstance(instance, Documentation::ItemizedListValueItem)
+def test_documentation_itemizedlistvalueitem_instantiation(instance):
+    assert isinstance(instance, Documentation_ItemizedListValueItem)
 
-@given(instance=Documentation::Section_strategy)
+@given(instance=Documentation_Section_strategy)
 @settings(max_examples=50)
-def test_documentation::section_instantiation(instance):
-    assert isinstance(instance, Documentation::Section)
-
-@given(instance=Documentation::Section_strategy)
-def test_documentation::section_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_documentation_section_instantiation(instance):
+    assert isinstance(instance, Documentation_Section)
 
 
-@given(instance=Documentation::Section_strategy)
-def test_documentation::section_title_setter(instance):
+
+@given(instance=Documentation_Section_strategy)
+def test_documentation_section_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=Documentation::Book_strategy)
+@given(instance=Documentation_Book_strategy)
 @settings(max_examples=50)
-def test_documentation::book_instantiation(instance):
-    assert isinstance(instance, Documentation::Book)
-
-@given(instance=Documentation::Book_strategy)
-def test_documentation::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_documentation_book_instantiation(instance):
+    assert isinstance(instance, Documentation_Book)
 
 
-@given(instance=Documentation::Book_strategy)
-def test_documentation::book_title_setter(instance):
+
+@given(instance=Documentation_Book_strategy)
+def test_documentation_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=Documentation::ParagraphValue_strategy)
+@given(instance=Documentation_ParagraphValue_strategy)
 @settings(max_examples=50)
-def test_documentation::paragraphvalue_instantiation(instance):
-    assert isinstance(instance, Documentation::ParagraphValue)
+def test_documentation_paragraphvalue_instantiation(instance):
+    assert isinstance(instance, Documentation_ParagraphValue)
 
-@given(instance=Documentation::Paragraph_strategy)
+@given(instance=Documentation_Paragraph_strategy)
 @settings(max_examples=50)
-def test_documentation::paragraph_instantiation(instance):
-    assert isinstance(instance, Documentation::Paragraph)
+def test_documentation_paragraph_instantiation(instance):
+    assert isinstance(instance, Documentation_Paragraph)

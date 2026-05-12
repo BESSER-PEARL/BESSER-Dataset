@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    example4::Sirius::B,
-    example4::Sirius::A,
-    example4::Sirius::Element,
-    example4::Sirius::Container,
+from python_code import (
+    example4_Sirius_B,
+    example4_Sirius_A,
+    example4_Sirius_Element,
+    example4_Sirius_Container,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_example4::sirius::b_is_not_abstract():
-    assert not inspect.isabstract(example4::Sirius::B)
+def test_example4_sirius_b_is_not_abstract():
+    assert not inspect.isabstract(example4_Sirius_B)
 
 
-def test_example4::sirius::b_constructor_exists():
-    assert callable(example4::Sirius::B.__init__)
+def test_example4_sirius_b_constructor_exists():
+    assert callable(example4_Sirius_B.__init__)
 
 
-def test_example4::sirius::b_constructor_args():
-    sig = inspect.signature(example4::Sirius::B.__init__)
+def test_example4_sirius_b_constructor_args():
+    sig = inspect.signature(example4_Sirius_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_example4::sirius::a_is_not_abstract():
-    assert not inspect.isabstract(example4::Sirius::A)
+def test_example4_sirius_a_is_not_abstract():
+    assert not inspect.isabstract(example4_Sirius_A)
 
 
-def test_example4::sirius::a_constructor_exists():
-    assert callable(example4::Sirius::A.__init__)
+def test_example4_sirius_a_constructor_exists():
+    assert callable(example4_Sirius_A.__init__)
 
 
-def test_example4::sirius::a_constructor_args():
-    sig = inspect.signature(example4::Sirius::A.__init__)
+def test_example4_sirius_a_constructor_args():
+    sig = inspect.signature(example4_Sirius_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_example4::sirius::element_is_not_abstract():
-    assert not inspect.isabstract(example4::Sirius::Element)
+def test_example4_sirius_element_is_not_abstract():
+    assert not inspect.isabstract(example4_Sirius_Element)
 
 
-def test_example4::sirius::element_constructor_exists():
-    assert callable(example4::Sirius::Element.__init__)
+def test_example4_sirius_element_constructor_exists():
+    assert callable(example4_Sirius_Element.__init__)
 
 
-def test_example4::sirius::element_constructor_args():
-    sig = inspect.signature(example4::Sirius::Element.__init__)
+def test_example4_sirius_element_constructor_args():
+    sig = inspect.signature(example4_Sirius_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_example4::sirius::container_is_not_abstract():
-    assert not inspect.isabstract(example4::Sirius::Container)
+def test_example4_sirius_container_is_not_abstract():
+    assert not inspect.isabstract(example4_Sirius_Container)
 
 
-def test_example4::sirius::container_constructor_exists():
-    assert callable(example4::Sirius::Container.__init__)
+def test_example4_sirius_container_constructor_exists():
+    assert callable(example4_Sirius_Container.__init__)
 
 
-def test_example4::sirius::container_constructor_args():
-    sig = inspect.signature(example4::Sirius::Container.__init__)
+def test_example4_sirius_container_constructor_args():
+    sig = inspect.signature(example4_Sirius_Container.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-example4::Sirius::B_strategy = st.builds(
-    example4::Sirius::B,
+example4_Sirius_B_strategy = st.builds(
+    example4_Sirius_B,
 )
-example4::Sirius::A_strategy = st.builds(
-    example4::Sirius::A,
+example4_Sirius_A_strategy = st.builds(
+    example4_Sirius_A,
 )
-example4::Sirius::Element_strategy = st.builds(
-    example4::Sirius::Element,
+example4_Sirius_Element_strategy = st.builds(
+    example4_Sirius_Element,
 )
-example4::Sirius::Container_strategy = st.builds(
-    example4::Sirius::Container,
+example4_Sirius_Container_strategy = st.builds(
+    example4_Sirius_Container,
 )
 
-@given(instance=example4::Sirius::B_strategy)
+@given(instance=example4_Sirius_B_strategy)
 @settings(max_examples=50)
-def test_example4::sirius::b_instantiation(instance):
-    assert isinstance(instance, example4::Sirius::B)
+def test_example4_sirius_b_instantiation(instance):
+    assert isinstance(instance, example4_Sirius_B)
 
-@given(instance=example4::Sirius::A_strategy)
+@given(instance=example4_Sirius_A_strategy)
 @settings(max_examples=50)
-def test_example4::sirius::a_instantiation(instance):
-    assert isinstance(instance, example4::Sirius::A)
+def test_example4_sirius_a_instantiation(instance):
+    assert isinstance(instance, example4_Sirius_A)
 
-@given(instance=example4::Sirius::Element_strategy)
+@given(instance=example4_Sirius_Element_strategy)
 @settings(max_examples=50)
-def test_example4::sirius::element_instantiation(instance):
-    assert isinstance(instance, example4::Sirius::Element)
+def test_example4_sirius_element_instantiation(instance):
+    assert isinstance(instance, example4_Sirius_Element)
 
-@given(instance=example4::Sirius::Container_strategy)
+@given(instance=example4_Sirius_Container_strategy)
 @settings(max_examples=50)
-def test_example4::sirius::container_instantiation(instance):
-    assert isinstance(instance, example4::Sirius::Container)
+def test_example4_sirius_container_instantiation(instance):
+    assert isinstance(instance, example4_Sirius_Container)

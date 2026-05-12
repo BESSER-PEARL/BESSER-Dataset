@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    source::ClassDiagram,
-    source::PrimitiveDataType,
-    source::Association,
-    source::Attribute,
-    source::Class,
+from python_code import (
+    source_ClassDiagram,
+    source_PrimitiveDataType,
+    source_Association,
+    source_Attribute,
+    source_Class,
 )
 
 # =============================================================================
@@ -19,37 +19,37 @@ from classes import (
 
 
 
-def test_source::classdiagram_is_not_abstract():
-    assert not inspect.isabstract(source::ClassDiagram)
+def test_source_classdiagram_is_not_abstract():
+    assert not inspect.isabstract(source_ClassDiagram)
 
 
-def test_source::classdiagram_constructor_exists():
-    assert callable(source::ClassDiagram.__init__)
+def test_source_classdiagram_constructor_exists():
+    assert callable(source_ClassDiagram.__init__)
 
 
-def test_source::classdiagram_constructor_args():
-    sig = inspect.signature(source::ClassDiagram.__init__)
+def test_source_classdiagram_constructor_args():
+    sig = inspect.signature(source_ClassDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_source::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(source::PrimitiveDataType)
+def test_source_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(source_PrimitiveDataType)
 
 
-def test_source::primitivedatatype_constructor_exists():
-    assert callable(source::PrimitiveDataType.__init__)
+def test_source_primitivedatatype_constructor_exists():
+    assert callable(source_PrimitiveDataType.__init__)
 
 
-def test_source::primitivedatatype_constructor_args():
-    sig = inspect.signature(source::PrimitiveDataType.__init__)
+def test_source_primitivedatatype_constructor_args():
+    sig = inspect.signature(source_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_source::primitivedatatype_has_name():
-    assert hasattr(source::PrimitiveDataType, "name")
+def test_source_primitivedatatype_has_name():
+    assert hasattr(source_PrimitiveDataType, "name")
     descriptor = None
-    for klass in source::PrimitiveDataType.__mro__:
+    for klass in source_PrimitiveDataType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,91 +57,91 @@ def test_source::primitivedatatype_has_name():
 
 
 
-def test_source::association_is_not_abstract():
-    assert not inspect.isabstract(source::Association)
+def test_source_association_is_not_abstract():
+    assert not inspect.isabstract(source_Association)
 
 
-def test_source::association_constructor_exists():
-    assert callable(source::Association.__init__)
+def test_source_association_constructor_exists():
+    assert callable(source_Association.__init__)
 
 
-def test_source::association_constructor_args():
-    sig = inspect.signature(source::Association.__init__)
+def test_source_association_constructor_args():
+    sig = inspect.signature(source_Association.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "leftMultiplicity" in params, "Missing parameter 'leftMultiplicity'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_source::association_has_name():
-    assert hasattr(source::Association, "name")
+def test_source_association_has_leftMultiplicity():
+    assert hasattr(source_Association, "leftMultiplicity")
     descriptor = None
-    for klass in source::Association.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_source::association_has_leftMultiplicity():
-    assert hasattr(source::Association, "leftMultiplicity")
-    descriptor = None
-    for klass in source::Association.__mro__:
+    for klass in source_Association.__mro__:
         if "leftMultiplicity" in klass.__dict__:
             descriptor = klass.__dict__["leftMultiplicity"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_source::attribute_is_not_abstract():
-    assert not inspect.isabstract(source::Attribute)
-
-
-def test_source::attribute_constructor_exists():
-    assert callable(source::Attribute.__init__)
-
-
-def test_source::attribute_constructor_args():
-    sig = inspect.signature(source::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "is_primary" in params, "Missing parameter 'is_primary'"
-
-def test_source::attribute_has_name():
-    assert hasattr(source::Attribute, "name")
+def test_source_association_has_name():
+    assert hasattr(source_Association, "name")
     descriptor = None
-    for klass in source::Attribute.__mro__:
+    for klass in source_Association.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_source::attribute_has_is_primary():
-    assert hasattr(source::Attribute, "is_primary")
+
+
+def test_source_attribute_is_not_abstract():
+    assert not inspect.isabstract(source_Attribute)
+
+
+def test_source_attribute_constructor_exists():
+    assert callable(source_Attribute.__init__)
+
+
+def test_source_attribute_constructor_args():
+    sig = inspect.signature(source_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "is_primary" in params, "Missing parameter 'is_primary'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_source_attribute_has_is_primary():
+    assert hasattr(source_Attribute, "is_primary")
     descriptor = None
-    for klass in source::Attribute.__mro__:
+    for klass in source_Attribute.__mro__:
         if "is_primary" in klass.__dict__:
             descriptor = klass.__dict__["is_primary"]
             break
     assert isinstance(descriptor, property)
 
+def test_source_attribute_has_name():
+    assert hasattr(source_Attribute, "name")
+    descriptor = None
+    for klass in source_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_source::class_is_not_abstract():
-    assert not inspect.isabstract(source::Class)
+
+def test_source_class_is_not_abstract():
+    assert not inspect.isabstract(source_Class)
 
 
-def test_source::class_constructor_exists():
-    assert callable(source::Class.__init__)
+def test_source_class_constructor_exists():
+    assert callable(source_Class.__init__)
 
 
-def test_source::class_constructor_args():
-    sig = inspect.signature(source::Class.__init__)
+def test_source_class_constructor_args():
+    sig = inspect.signature(source_Class.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_source::class_has_name():
-    assert hasattr(source::Class, "name")
+def test_source_class_has_name():
+    assert hasattr(source_Class, "name")
     descriptor = None
-    for klass in source::Class.__mro__:
+    for klass in source_Class.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -159,121 +159,103 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-source::ClassDiagram_strategy = st.builds(
-    source::ClassDiagram,
+source_ClassDiagram_strategy = st.builds(
+    source_ClassDiagram,
 )
-source::PrimitiveDataType_strategy = st.builds(
-    source::PrimitiveDataType,
+source_PrimitiveDataType_strategy = st.builds(
+    source_PrimitiveDataType,
     name=
         safe_text
 )
-source::Association_strategy = st.builds(
-    source::Association,
-    name=
-        safe_text,
+source_Association_strategy = st.builds(
+    source_Association,
     leftMultiplicity=
-        st.integers()
-)
-source::Attribute_strategy = st.builds(
-    source::Attribute,
+        st.integers(),
     name=
-        safe_text,
-    is_primary=
-        st.booleans()
+        safe_text
 )
-source::Class_strategy = st.builds(
-    source::Class,
+source_Attribute_strategy = st.builds(
+    source_Attribute,
+    is_primary=
+        st.booleans(),
+    name=
+        safe_text
+)
+source_Class_strategy = st.builds(
+    source_Class,
     name=
         safe_text
 )
 
-@given(instance=source::ClassDiagram_strategy)
+@given(instance=source_ClassDiagram_strategy)
 @settings(max_examples=50)
-def test_source::classdiagram_instantiation(instance):
-    assert isinstance(instance, source::ClassDiagram)
+def test_source_classdiagram_instantiation(instance):
+    assert isinstance(instance, source_ClassDiagram)
 
-@given(instance=source::PrimitiveDataType_strategy)
+@given(instance=source_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_source::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, source::PrimitiveDataType)
-
-@given(instance=source::PrimitiveDataType_strategy)
-def test_source::primitivedatatype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_source_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, source_PrimitiveDataType)
 
 
-@given(instance=source::PrimitiveDataType_strategy)
-def test_source::primitivedatatype_name_setter(instance):
+
+@given(instance=source_PrimitiveDataType_strategy)
+def test_source_primitivedatatype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=source::Association_strategy)
+@given(instance=source_Association_strategy)
 @settings(max_examples=50)
-def test_source::association_instantiation(instance):
-    assert isinstance(instance, source::Association)
-
-@given(instance=source::Association_strategy)
-def test_source::association_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_source_association_instantiation(instance):
+    assert isinstance(instance, source_Association)
 
 
-@given(instance=source::Association_strategy)
-def test_source::association_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=source::Association_strategy)
-def test_source::association_leftMultiplicity_type(instance):
-    assert isinstance(instance.leftMultiplicity, int)
-
-
-@given(instance=source::Association_strategy)
-def test_source::association_leftMultiplicity_setter(instance):
+@given(instance=source_Association_strategy)
+def test_source_association_leftMultiplicity_setter(instance):
     original = instance.leftMultiplicity
     instance.leftMultiplicity = original
     assert instance.leftMultiplicity == original
 
-@given(instance=source::Attribute_strategy)
-@settings(max_examples=50)
-def test_source::attribute_instantiation(instance):
-    assert isinstance(instance, source::Attribute)
-
-@given(instance=source::Attribute_strategy)
-def test_source::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=source::Attribute_strategy)
-def test_source::attribute_name_setter(instance):
+@given(instance=source_Association_strategy)
+def test_source_association_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=source::Attribute_strategy)
-def test_source::attribute_is_primary_type(instance):
-    assert isinstance(instance.is_primary, bool)
+@given(instance=source_Attribute_strategy)
+@settings(max_examples=50)
+def test_source_attribute_instantiation(instance):
+    assert isinstance(instance, source_Attribute)
 
 
-@given(instance=source::Attribute_strategy)
-def test_source::attribute_is_primary_setter(instance):
+
+@given(instance=source_Attribute_strategy)
+def test_source_attribute_is_primary_setter(instance):
     original = instance.is_primary
     instance.is_primary = original
     assert instance.is_primary == original
 
-@given(instance=source::Class_strategy)
+
+
+@given(instance=source_Attribute_strategy)
+def test_source_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=source_Class_strategy)
 @settings(max_examples=50)
-def test_source::class_instantiation(instance):
-    assert isinstance(instance, source::Class)
-
-@given(instance=source::Class_strategy)
-def test_source::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_source_class_instantiation(instance):
+    assert isinstance(instance, source_Class)
 
 
-@given(instance=source::Class_strategy)
-def test_source::class_name_setter(instance):
+
+@given(instance=source_Class_strategy)
+def test_source_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

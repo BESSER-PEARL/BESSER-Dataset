@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::TraceElement,
-    trace::Trace,
+from python_code import (
+    trace_TraceElement,
+    trace_Trace,
 )
 
 # =============================================================================
@@ -16,50 +16,50 @@ from classes import (
 
 
 
-def test_trace::traceelement_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceElement)
+def test_trace_traceelement_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceElement)
 
 
-def test_trace::traceelement_constructor_exists():
-    assert callable(trace::TraceElement.__init__)
+def test_trace_traceelement_constructor_exists():
+    assert callable(trace_TraceElement.__init__)
 
 
-def test_trace::traceelement_constructor_args():
-    sig = inspect.signature(trace::TraceElement.__init__)
+def test_trace_traceelement_constructor_args():
+    sig = inspect.signature(trace_TraceElement.__init__)
     params = list(sig.parameters.keys())
-    assert "timestamp" in params, "Missing parameter 'timestamp'"
     assert "event" in params, "Missing parameter 'event'"
+    assert "timestamp" in params, "Missing parameter 'timestamp'"
 
-def test_trace::traceelement_has_timestamp():
-    assert hasattr(trace::TraceElement, "timestamp")
+def test_trace_traceelement_has_event():
+    assert hasattr(trace_TraceElement, "event")
     descriptor = None
-    for klass in trace::TraceElement.__mro__:
-        if "timestamp" in klass.__dict__:
-            descriptor = klass.__dict__["timestamp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::traceelement_has_event():
-    assert hasattr(trace::TraceElement, "event")
-    descriptor = None
-    for klass in trace::TraceElement.__mro__:
+    for klass in trace_TraceElement.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
     assert isinstance(descriptor, property)
 
+def test_trace_traceelement_has_timestamp():
+    assert hasattr(trace_TraceElement, "timestamp")
+    descriptor = None
+    for klass in trace_TraceElement.__mro__:
+        if "timestamp" in klass.__dict__:
+            descriptor = klass.__dict__["timestamp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::TraceElement_strategy = st.builds(
-    trace::TraceElement,
-    timestamp=
-        st.integers(),
+trace_TraceElement_strategy = st.builds(
+    trace_TraceElement,
     event=
-        safe_text
+        safe_text,
+    timestamp=
+        st.integers()
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
 
-@given(instance=trace::TraceElement_strategy)
+@given(instance=trace_TraceElement_strategy)
 @settings(max_examples=50)
-def test_trace::traceelement_instantiation(instance):
-    assert isinstance(instance, trace::TraceElement)
-
-@given(instance=trace::TraceElement_strategy)
-def test_trace::traceelement_timestamp_type(instance):
-    assert isinstance(instance.timestamp, int)
+def test_trace_traceelement_instantiation(instance):
+    assert isinstance(instance, trace_TraceElement)
 
 
-@given(instance=trace::TraceElement_strategy)
-def test_trace::traceelement_timestamp_setter(instance):
-    original = instance.timestamp
-    instance.timestamp = original
-    assert instance.timestamp == original
 
-@given(instance=trace::TraceElement_strategy)
-def test_trace::traceelement_event_type(instance):
-    assert isinstance(instance.event, str)
-
-
-@given(instance=trace::TraceElement_strategy)
-def test_trace::traceelement_event_setter(instance):
+@given(instance=trace_TraceElement_strategy)
+def test_trace_traceelement_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=trace::Trace_strategy)
+
+
+@given(instance=trace_TraceElement_strategy)
+def test_trace_traceelement_timestamp_setter(instance):
+    original = instance.timestamp
+    instance.timestamp = original
+    assert instance.timestamp == original
+
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)

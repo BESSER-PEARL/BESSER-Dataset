@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    HSVTree::HSVNode,
+from python_code import (
+    HSVTree_HSVNode,
 )
 
 # =============================================================================
@@ -15,33 +15,33 @@ from classes import (
 
 
 
-def test_hsvtree::hsvnode_is_not_abstract():
-    assert not inspect.isabstract(HSVTree::HSVNode)
+def test_hsvtree_hsvnode_is_not_abstract():
+    assert not inspect.isabstract(HSVTree_HSVNode)
 
 
-def test_hsvtree::hsvnode_constructor_exists():
-    assert callable(HSVTree::HSVNode.__init__)
+def test_hsvtree_hsvnode_constructor_exists():
+    assert callable(HSVTree_HSVNode.__init__)
 
 
-def test_hsvtree::hsvnode_constructor_args():
-    sig = inspect.signature(HSVTree::HSVNode.__init__)
+def test_hsvtree_hsvnode_constructor_args():
+    sig = inspect.signature(HSVTree_HSVNode.__init__)
     params = list(sig.parameters.keys())
     assert "hsv" in params, "Missing parameter 'hsv'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hsvtree::hsvnode_has_hsv():
-    assert hasattr(HSVTree::HSVNode, "hsv")
+def test_hsvtree_hsvnode_has_hsv():
+    assert hasattr(HSVTree_HSVNode, "hsv")
     descriptor = None
-    for klass in HSVTree::HSVNode.__mro__:
+    for klass in HSVTree_HSVNode.__mro__:
         if "hsv" in klass.__dict__:
             descriptor = klass.__dict__["hsv"]
             break
     assert isinstance(descriptor, property)
 
-def test_hsvtree::hsvnode_has_name():
-    assert hasattr(HSVTree::HSVNode, "name")
+def test_hsvtree_hsvnode_has_name():
+    assert hasattr(HSVTree_HSVNode, "name")
     descriptor = None
-    for klass in HSVTree::HSVNode.__mro__:
+    for klass in HSVTree_HSVNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,37 +59,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-HSVTree::HSVNode_strategy = st.builds(
-    HSVTree::HSVNode,
+HSVTree_HSVNode_strategy = st.builds(
+    HSVTree_HSVNode,
     hsv=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=HSVTree::HSVNode_strategy)
+@given(instance=HSVTree_HSVNode_strategy)
 @settings(max_examples=50)
-def test_hsvtree::hsvnode_instantiation(instance):
-    assert isinstance(instance, HSVTree::HSVNode)
-
-@given(instance=HSVTree::HSVNode_strategy)
-def test_hsvtree::hsvnode_hsv_type(instance):
-    assert isinstance(instance.hsv, str)
+def test_hsvtree_hsvnode_instantiation(instance):
+    assert isinstance(instance, HSVTree_HSVNode)
 
 
-@given(instance=HSVTree::HSVNode_strategy)
-def test_hsvtree::hsvnode_hsv_setter(instance):
+
+@given(instance=HSVTree_HSVNode_strategy)
+def test_hsvtree_hsvnode_hsv_setter(instance):
     original = instance.hsv
     instance.hsv = original
     assert instance.hsv == original
 
-@given(instance=HSVTree::HSVNode_strategy)
-def test_hsvtree::hsvnode_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=HSVTree::HSVNode_strategy)
-def test_hsvtree::hsvnode_name_setter(instance):
+@given(instance=HSVTree_HSVNode_strategy)
+def test_hsvtree_hsvnode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

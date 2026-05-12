@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tests::ObjectUnionOf::A::B,
-    tests::C,
-    ObjectIntersectionOf::A::C,
-    ObjectUnionOf::A::B,
-    tests::B,
-    tests::A,
+from python_code import (
+    tests_ObjectUnionOf_A_B,
+    tests_C,
+    ObjectIntersectionOf_A_C,
+    ObjectUnionOf_A_B,
+    tests_B,
+    tests_A,
     C,
     A,
-    tests::ObjectIntersectionOf::A::C,
+    tests_ObjectIntersectionOf_A_C,
 )
 
 # =============================================================================
@@ -23,86 +23,86 @@ from classes import (
 
 
 
-def test_tests::objectunionof::a::b_is_not_abstract():
-    assert not inspect.isabstract(tests::ObjectUnionOf::A::B)
+def test_tests_objectunionof_a_b_is_not_abstract():
+    assert not inspect.isabstract(tests_ObjectUnionOf_A_B)
 
 
-def test_tests::objectunionof::a::b_constructor_exists():
-    assert callable(tests::ObjectUnionOf::A::B.__init__)
+def test_tests_objectunionof_a_b_constructor_exists():
+    assert callable(tests_ObjectUnionOf_A_B.__init__)
 
 
-def test_tests::objectunionof::a::b_constructor_args():
-    sig = inspect.signature(tests::ObjectUnionOf::A::B.__init__)
+def test_tests_objectunionof_a_b_constructor_args():
+    sig = inspect.signature(tests_ObjectUnionOf_A_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::c_is_not_abstract():
-    assert not inspect.isabstract(tests::C)
+def test_tests_c_is_not_abstract():
+    assert not inspect.isabstract(tests_C)
 
 
-def test_tests::c_constructor_exists():
-    assert callable(tests::C.__init__)
+def test_tests_c_constructor_exists():
+    assert callable(tests_C.__init__)
 
 
-def test_tests::c_constructor_args():
-    sig = inspect.signature(tests::C.__init__)
+def test_tests_c_constructor_args():
+    sig = inspect.signature(tests_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_objectintersectionof::a::c_is_not_abstract():
-    assert not inspect.isabstract(ObjectIntersectionOf::A::C)
+def test_objectintersectionof_a_c_is_not_abstract():
+    assert not inspect.isabstract(ObjectIntersectionOf_A_C)
 
 
-def test_objectintersectionof::a::c_constructor_exists():
-    assert callable(ObjectIntersectionOf::A::C.__init__)
+def test_objectintersectionof_a_c_constructor_exists():
+    assert callable(ObjectIntersectionOf_A_C.__init__)
 
 
-def test_objectintersectionof::a::c_constructor_args():
-    sig = inspect.signature(ObjectIntersectionOf::A::C.__init__)
+def test_objectintersectionof_a_c_constructor_args():
+    sig = inspect.signature(ObjectIntersectionOf_A_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_objectunionof::a::b_is_not_abstract():
-    assert not inspect.isabstract(ObjectUnionOf::A::B)
+def test_objectunionof_a_b_is_not_abstract():
+    assert not inspect.isabstract(ObjectUnionOf_A_B)
 
 
-def test_objectunionof::a::b_constructor_exists():
-    assert callable(ObjectUnionOf::A::B.__init__)
+def test_objectunionof_a_b_constructor_exists():
+    assert callable(ObjectUnionOf_A_B.__init__)
 
 
-def test_objectunionof::a::b_constructor_args():
-    sig = inspect.signature(ObjectUnionOf::A::B.__init__)
+def test_objectunionof_a_b_constructor_args():
+    sig = inspect.signature(ObjectUnionOf_A_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::b_is_not_abstract():
-    assert not inspect.isabstract(tests::B)
+def test_tests_b_is_not_abstract():
+    assert not inspect.isabstract(tests_B)
 
 
-def test_tests::b_constructor_exists():
-    assert callable(tests::B.__init__)
+def test_tests_b_constructor_exists():
+    assert callable(tests_B.__init__)
 
 
-def test_tests::b_constructor_args():
-    sig = inspect.signature(tests::B.__init__)
+def test_tests_b_constructor_args():
+    sig = inspect.signature(tests_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::a_is_not_abstract():
-    assert not inspect.isabstract(tests::A)
+def test_tests_a_is_not_abstract():
+    assert not inspect.isabstract(tests_A)
 
 
-def test_tests::a_constructor_exists():
-    assert callable(tests::A.__init__)
+def test_tests_a_constructor_exists():
+    assert callable(tests_A.__init__)
 
 
-def test_tests::a_constructor_args():
-    sig = inspect.signature(tests::A.__init__)
+def test_tests_a_constructor_args():
+    sig = inspect.signature(tests_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -135,16 +135,16 @@ def test_a_constructor_args():
 
 
 
-def test_tests::objectintersectionof::a::c_is_not_abstract():
-    assert not inspect.isabstract(tests::ObjectIntersectionOf::A::C)
+def test_tests_objectintersectionof_a_c_is_not_abstract():
+    assert not inspect.isabstract(tests_ObjectIntersectionOf_A_C)
 
 
-def test_tests::objectintersectionof::a::c_constructor_exists():
-    assert callable(tests::ObjectIntersectionOf::A::C.__init__)
+def test_tests_objectintersectionof_a_c_constructor_exists():
+    assert callable(tests_ObjectIntersectionOf_A_C.__init__)
 
 
-def test_tests::objectintersectionof::a::c_constructor_args():
-    sig = inspect.signature(tests::ObjectIntersectionOf::A::C.__init__)
+def test_tests_objectintersectionof_a_c_constructor_args():
+    sig = inspect.signature(tests_ObjectIntersectionOf_A_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,23 +159,23 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tests::ObjectUnionOf::A::B_strategy = st.builds(
-    tests::ObjectUnionOf::A::B,
+tests_ObjectUnionOf_A_B_strategy = st.builds(
+    tests_ObjectUnionOf_A_B,
 )
-tests::C_strategy = st.builds(
-    tests::C,
+tests_C_strategy = st.builds(
+    tests_C,
 )
-ObjectIntersectionOf::A::C_strategy = st.builds(
-    ObjectIntersectionOf::A::C,
+ObjectIntersectionOf_A_C_strategy = st.builds(
+    ObjectIntersectionOf_A_C,
 )
-ObjectUnionOf::A::B_strategy = st.builds(
-    ObjectUnionOf::A::B,
+ObjectUnionOf_A_B_strategy = st.builds(
+    ObjectUnionOf_A_B,
 )
-tests::B_strategy = st.builds(
-    tests::B,
+tests_B_strategy = st.builds(
+    tests_B,
 )
-tests::A_strategy = st.builds(
-    tests::A,
+tests_A_strategy = st.builds(
+    tests_A,
 )
 C_strategy = st.builds(
     C,
@@ -183,39 +183,39 @@ C_strategy = st.builds(
 A_strategy = st.builds(
     A,
 )
-tests::ObjectIntersectionOf::A::C_strategy = st.builds(
-    tests::ObjectIntersectionOf::A::C,
+tests_ObjectIntersectionOf_A_C_strategy = st.builds(
+    tests_ObjectIntersectionOf_A_C,
 )
 
-@given(instance=tests::ObjectUnionOf::A::B_strategy)
+@given(instance=tests_ObjectUnionOf_A_B_strategy)
 @settings(max_examples=50)
-def test_tests::objectunionof::a::b_instantiation(instance):
-    assert isinstance(instance, tests::ObjectUnionOf::A::B)
+def test_tests_objectunionof_a_b_instantiation(instance):
+    assert isinstance(instance, tests_ObjectUnionOf_A_B)
 
-@given(instance=tests::C_strategy)
+@given(instance=tests_C_strategy)
 @settings(max_examples=50)
-def test_tests::c_instantiation(instance):
-    assert isinstance(instance, tests::C)
+def test_tests_c_instantiation(instance):
+    assert isinstance(instance, tests_C)
 
-@given(instance=ObjectIntersectionOf::A::C_strategy)
+@given(instance=ObjectIntersectionOf_A_C_strategy)
 @settings(max_examples=50)
-def test_objectintersectionof::a::c_instantiation(instance):
-    assert isinstance(instance, ObjectIntersectionOf::A::C)
+def test_objectintersectionof_a_c_instantiation(instance):
+    assert isinstance(instance, ObjectIntersectionOf_A_C)
 
-@given(instance=ObjectUnionOf::A::B_strategy)
+@given(instance=ObjectUnionOf_A_B_strategy)
 @settings(max_examples=50)
-def test_objectunionof::a::b_instantiation(instance):
-    assert isinstance(instance, ObjectUnionOf::A::B)
+def test_objectunionof_a_b_instantiation(instance):
+    assert isinstance(instance, ObjectUnionOf_A_B)
 
-@given(instance=tests::B_strategy)
+@given(instance=tests_B_strategy)
 @settings(max_examples=50)
-def test_tests::b_instantiation(instance):
-    assert isinstance(instance, tests::B)
+def test_tests_b_instantiation(instance):
+    assert isinstance(instance, tests_B)
 
-@given(instance=tests::A_strategy)
+@given(instance=tests_A_strategy)
 @settings(max_examples=50)
-def test_tests::a_instantiation(instance):
-    assert isinstance(instance, tests::A)
+def test_tests_a_instantiation(instance):
+    assert isinstance(instance, tests_A)
 
 @given(instance=C_strategy)
 @settings(max_examples=50)
@@ -227,7 +227,7 @@ def test_c_instantiation(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=tests::ObjectIntersectionOf::A::C_strategy)
+@given(instance=tests_ObjectIntersectionOf_A_C_strategy)
 @settings(max_examples=50)
-def test_tests::objectintersectionof::a::c_instantiation(instance):
-    assert isinstance(instance, tests::ObjectIntersectionOf::A::C)
+def test_tests_objectintersectionof_a_c_instantiation(instance):
+    assert isinstance(instance, tests_ObjectIntersectionOf_A_C)

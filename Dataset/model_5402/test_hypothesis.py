@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     OpaqueExpression,
-    UML2::Expression,
-    UML2::Behavior,
-    UML2::OpaqueExpression,
-    UML2::ParameterSet,
+    UML2_Expression,
+    UML2_Behavior,
+    UML2_OpaqueExpression,
+    UML2_ParameterSet,
     Behavior,
-    UML2::StateMachine,
-    UML2::Interaction,
-    UML2::Activity,
-    UML2::Parameter,
+    UML2_StateMachine,
+    UML2_Interaction,
+    UML2_Activity,
+    UML2_Parameter,
     StateMachine,
-    UML2::ProtocolStateMachine,
+    UML2_ProtocolStateMachine,
     ParameterDirectionKind,
 )
 
@@ -41,58 +41,58 @@ def test_opaqueexpression_constructor_args():
 
 
 
-def test_uml2::expression_is_not_abstract():
-    assert not inspect.isabstract(UML2::Expression)
+def test_uml2_expression_is_not_abstract():
+    assert not inspect.isabstract(UML2_Expression)
 
 
-def test_uml2::expression_constructor_exists():
-    assert callable(UML2::Expression.__init__)
+def test_uml2_expression_constructor_exists():
+    assert callable(UML2_Expression.__init__)
 
 
-def test_uml2::expression_constructor_args():
-    sig = inspect.signature(UML2::Expression.__init__)
+def test_uml2_expression_constructor_args():
+    sig = inspect.signature(UML2_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::behavior_is_not_abstract():
-    assert not inspect.isabstract(UML2::Behavior)
+def test_uml2_behavior_is_not_abstract():
+    assert not inspect.isabstract(UML2_Behavior)
 
 
-def test_uml2::behavior_constructor_exists():
-    assert callable(UML2::Behavior.__init__)
+def test_uml2_behavior_constructor_exists():
+    assert callable(UML2_Behavior.__init__)
 
 
-def test_uml2::behavior_constructor_args():
-    sig = inspect.signature(UML2::Behavior.__init__)
+def test_uml2_behavior_constructor_args():
+    sig = inspect.signature(UML2_Behavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(UML2::OpaqueExpression)
+def test_uml2_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(UML2_OpaqueExpression)
 
 
-def test_uml2::opaqueexpression_constructor_exists():
-    assert callable(UML2::OpaqueExpression.__init__)
+def test_uml2_opaqueexpression_constructor_exists():
+    assert callable(UML2_OpaqueExpression.__init__)
 
 
-def test_uml2::opaqueexpression_constructor_args():
-    sig = inspect.signature(UML2::OpaqueExpression.__init__)
+def test_uml2_opaqueexpression_constructor_args():
+    sig = inspect.signature(UML2_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::parameterset_is_not_abstract():
-    assert not inspect.isabstract(UML2::ParameterSet)
+def test_uml2_parameterset_is_not_abstract():
+    assert not inspect.isabstract(UML2_ParameterSet)
 
 
-def test_uml2::parameterset_constructor_exists():
-    assert callable(UML2::ParameterSet.__init__)
+def test_uml2_parameterset_constructor_exists():
+    assert callable(UML2_ParameterSet.__init__)
 
 
-def test_uml2::parameterset_constructor_args():
-    sig = inspect.signature(UML2::ParameterSet.__init__)
+def test_uml2_parameterset_constructor_args():
+    sig = inspect.signature(UML2_ParameterSet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -111,65 +111,65 @@ def test_behavior_constructor_args():
 
 
 
-def test_uml2::statemachine_is_not_abstract():
-    assert not inspect.isabstract(UML2::StateMachine)
+def test_uml2_statemachine_is_not_abstract():
+    assert not inspect.isabstract(UML2_StateMachine)
 
 
-def test_uml2::statemachine_constructor_exists():
-    assert callable(UML2::StateMachine.__init__)
+def test_uml2_statemachine_constructor_exists():
+    assert callable(UML2_StateMachine.__init__)
 
 
-def test_uml2::statemachine_constructor_args():
-    sig = inspect.signature(UML2::StateMachine.__init__)
+def test_uml2_statemachine_constructor_args():
+    sig = inspect.signature(UML2_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::interaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::Interaction)
+def test_uml2_interaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_Interaction)
 
 
-def test_uml2::interaction_constructor_exists():
-    assert callable(UML2::Interaction.__init__)
+def test_uml2_interaction_constructor_exists():
+    assert callable(UML2_Interaction.__init__)
 
 
-def test_uml2::interaction_constructor_args():
-    sig = inspect.signature(UML2::Interaction.__init__)
+def test_uml2_interaction_constructor_args():
+    sig = inspect.signature(UML2_Interaction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::activity_is_not_abstract():
-    assert not inspect.isabstract(UML2::Activity)
+def test_uml2_activity_is_not_abstract():
+    assert not inspect.isabstract(UML2_Activity)
 
 
-def test_uml2::activity_constructor_exists():
-    assert callable(UML2::Activity.__init__)
+def test_uml2_activity_constructor_exists():
+    assert callable(UML2_Activity.__init__)
 
 
-def test_uml2::activity_constructor_args():
-    sig = inspect.signature(UML2::Activity.__init__)
+def test_uml2_activity_constructor_args():
+    sig = inspect.signature(UML2_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::parameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::Parameter)
+def test_uml2_parameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_Parameter)
 
 
-def test_uml2::parameter_constructor_exists():
-    assert callable(UML2::Parameter.__init__)
+def test_uml2_parameter_constructor_exists():
+    assert callable(UML2_Parameter.__init__)
 
 
-def test_uml2::parameter_constructor_args():
-    sig = inspect.signature(UML2::Parameter.__init__)
+def test_uml2_parameter_constructor_args():
+    sig = inspect.signature(UML2_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_uml2::parameter_has_direction():
-    assert hasattr(UML2::Parameter, "direction")
+def test_uml2_parameter_has_direction():
+    assert hasattr(UML2_Parameter, "direction")
     descriptor = None
-    for klass in UML2::Parameter.__mro__:
+    for klass in UML2_Parameter.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -191,16 +191,16 @@ def test_statemachine_constructor_args():
 
 
 
-def test_uml2::protocolstatemachine_is_not_abstract():
-    assert not inspect.isabstract(UML2::ProtocolStateMachine)
+def test_uml2_protocolstatemachine_is_not_abstract():
+    assert not inspect.isabstract(UML2_ProtocolStateMachine)
 
 
-def test_uml2::protocolstatemachine_constructor_exists():
-    assert callable(UML2::ProtocolStateMachine.__init__)
+def test_uml2_protocolstatemachine_constructor_exists():
+    assert callable(UML2_ProtocolStateMachine.__init__)
 
 
-def test_uml2::protocolstatemachine_constructor_args():
-    sig = inspect.signature(UML2::ProtocolStateMachine.__init__)
+def test_uml2_protocolstatemachine_constructor_args():
+    sig = inspect.signature(UML2_ProtocolStateMachine.__init__)
     params = list(sig.parameters.keys())
 
 def test_parameterdirectionkind_exists():
@@ -211,9 +211,9 @@ def test_parameterdirectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParameterDirectionKind]
     expected_literals = [
+        "out",
         "in_",
         "return_",
-        "out",
         "inout",
     ]
     # Check that all expected literals exist
@@ -235,40 +235,40 @@ safe_text = st.text(
 OpaqueExpression_strategy = st.builds(
     OpaqueExpression,
 )
-UML2::Expression_strategy = st.builds(
-    UML2::Expression,
+UML2_Expression_strategy = st.builds(
+    UML2_Expression,
 )
-UML2::Behavior_strategy = st.builds(
-    UML2::Behavior,
+UML2_Behavior_strategy = st.builds(
+    UML2_Behavior,
 )
-UML2::OpaqueExpression_strategy = st.builds(
-    UML2::OpaqueExpression,
+UML2_OpaqueExpression_strategy = st.builds(
+    UML2_OpaqueExpression,
 )
-UML2::ParameterSet_strategy = st.builds(
-    UML2::ParameterSet,
+UML2_ParameterSet_strategy = st.builds(
+    UML2_ParameterSet,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-UML2::StateMachine_strategy = st.builds(
-    UML2::StateMachine,
+UML2_StateMachine_strategy = st.builds(
+    UML2_StateMachine,
 )
-UML2::Interaction_strategy = st.builds(
-    UML2::Interaction,
+UML2_Interaction_strategy = st.builds(
+    UML2_Interaction,
 )
-UML2::Activity_strategy = st.builds(
-    UML2::Activity,
+UML2_Activity_strategy = st.builds(
+    UML2_Activity,
 )
-UML2::Parameter_strategy = st.builds(
-    UML2::Parameter,
+UML2_Parameter_strategy = st.builds(
+    UML2_Parameter,
     direction=
         safe_text
 )
 StateMachine_strategy = st.builds(
     StateMachine,
 )
-UML2::ProtocolStateMachine_strategy = st.builds(
-    UML2::ProtocolStateMachine,
+UML2_ProtocolStateMachine_strategy = st.builds(
+    UML2_ProtocolStateMachine,
 )
 
 @given(instance=OpaqueExpression_strategy)
@@ -276,58 +276,55 @@ UML2::ProtocolStateMachine_strategy = st.builds(
 def test_opaqueexpression_instantiation(instance):
     assert isinstance(instance, OpaqueExpression)
 
-@given(instance=UML2::Expression_strategy)
+@given(instance=UML2_Expression_strategy)
 @settings(max_examples=50)
-def test_uml2::expression_instantiation(instance):
-    assert isinstance(instance, UML2::Expression)
+def test_uml2_expression_instantiation(instance):
+    assert isinstance(instance, UML2_Expression)
 
-@given(instance=UML2::Behavior_strategy)
+@given(instance=UML2_Behavior_strategy)
 @settings(max_examples=50)
-def test_uml2::behavior_instantiation(instance):
-    assert isinstance(instance, UML2::Behavior)
+def test_uml2_behavior_instantiation(instance):
+    assert isinstance(instance, UML2_Behavior)
 
-@given(instance=UML2::OpaqueExpression_strategy)
+@given(instance=UML2_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_uml2::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, UML2::OpaqueExpression)
+def test_uml2_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, UML2_OpaqueExpression)
 
-@given(instance=UML2::ParameterSet_strategy)
+@given(instance=UML2_ParameterSet_strategy)
 @settings(max_examples=50)
-def test_uml2::parameterset_instantiation(instance):
-    assert isinstance(instance, UML2::ParameterSet)
+def test_uml2_parameterset_instantiation(instance):
+    assert isinstance(instance, UML2_ParameterSet)
 
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=UML2::StateMachine_strategy)
+@given(instance=UML2_StateMachine_strategy)
 @settings(max_examples=50)
-def test_uml2::statemachine_instantiation(instance):
-    assert isinstance(instance, UML2::StateMachine)
+def test_uml2_statemachine_instantiation(instance):
+    assert isinstance(instance, UML2_StateMachine)
 
-@given(instance=UML2::Interaction_strategy)
+@given(instance=UML2_Interaction_strategy)
 @settings(max_examples=50)
-def test_uml2::interaction_instantiation(instance):
-    assert isinstance(instance, UML2::Interaction)
+def test_uml2_interaction_instantiation(instance):
+    assert isinstance(instance, UML2_Interaction)
 
-@given(instance=UML2::Activity_strategy)
+@given(instance=UML2_Activity_strategy)
 @settings(max_examples=50)
-def test_uml2::activity_instantiation(instance):
-    assert isinstance(instance, UML2::Activity)
+def test_uml2_activity_instantiation(instance):
+    assert isinstance(instance, UML2_Activity)
 
-@given(instance=UML2::Parameter_strategy)
+@given(instance=UML2_Parameter_strategy)
 @settings(max_examples=50)
-def test_uml2::parameter_instantiation(instance):
-    assert isinstance(instance, UML2::Parameter)
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_uml2_parameter_instantiation(instance):
+    assert isinstance(instance, UML2_Parameter)
 
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_direction_setter(instance):
+
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
@@ -337,7 +334,7 @@ def test_uml2::parameter_direction_setter(instance):
 def test_statemachine_instantiation(instance):
     assert isinstance(instance, StateMachine)
 
-@given(instance=UML2::ProtocolStateMachine_strategy)
+@given(instance=UML2_ProtocolStateMachine_strategy)
 @settings(max_examples=50)
-def test_uml2::protocolstatemachine_instantiation(instance):
-    assert isinstance(instance, UML2::ProtocolStateMachine)
+def test_uml2_protocolstatemachine_instantiation(instance):
+    assert isinstance(instance, UML2_ProtocolStateMachine)

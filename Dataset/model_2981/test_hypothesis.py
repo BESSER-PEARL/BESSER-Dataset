@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Action,
-    automata::NumberAction,
-    automata::BooleanAction,
-    automata::StringAction,
+    automata_BooleanAction,
+    automata_NumberAction,
+    automata_StringAction,
     Guard,
-    automata::NumberGuard,
-    automata::BooleanGuard,
+    automata_NumberGuard,
+    automata_BooleanGuard,
     Variable,
-    automata::NumberVariable,
-    automata::BooleanVariable,
-    automata::StringVariable,
-    automata::Action,
-    automata::Guard,
-    automata::Variable,
-    automata::Transition,
-    automata::State,
-    automata::StringGuard,
-    automata::Automaton,
+    automata_NumberVariable,
+    automata_BooleanVariable,
+    automata_StringVariable,
+    automata_Action,
+    automata_Guard,
+    automata_Variable,
+    automata_Transition,
+    automata_State,
+    automata_StringGuard,
+    automata_Automaton,
     BooleanOperator,
     StringOperator,
     NumberOperator,
@@ -49,23 +49,23 @@ def test_action_constructor_args():
 
 
 
-def test_automata::numberaction_is_not_abstract():
-    assert not inspect.isabstract(automata::NumberAction)
+def test_automata_booleanaction_is_not_abstract():
+    assert not inspect.isabstract(automata_BooleanAction)
 
 
-def test_automata::numberaction_constructor_exists():
-    assert callable(automata::NumberAction.__init__)
+def test_automata_booleanaction_constructor_exists():
+    assert callable(automata_BooleanAction.__init__)
 
 
-def test_automata::numberaction_constructor_args():
-    sig = inspect.signature(automata::NumberAction.__init__)
+def test_automata_booleanaction_constructor_args():
+    sig = inspect.signature(automata_BooleanAction.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_automata::numberaction_has_value():
-    assert hasattr(automata::NumberAction, "value")
+def test_automata_booleanaction_has_value():
+    assert hasattr(automata_BooleanAction, "value")
     descriptor = None
-    for klass in automata::NumberAction.__mro__:
+    for klass in automata_BooleanAction.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -73,23 +73,23 @@ def test_automata::numberaction_has_value():
 
 
 
-def test_automata::booleanaction_is_not_abstract():
-    assert not inspect.isabstract(automata::BooleanAction)
+def test_automata_numberaction_is_not_abstract():
+    assert not inspect.isabstract(automata_NumberAction)
 
 
-def test_automata::booleanaction_constructor_exists():
-    assert callable(automata::BooleanAction.__init__)
+def test_automata_numberaction_constructor_exists():
+    assert callable(automata_NumberAction.__init__)
 
 
-def test_automata::booleanaction_constructor_args():
-    sig = inspect.signature(automata::BooleanAction.__init__)
+def test_automata_numberaction_constructor_args():
+    sig = inspect.signature(automata_NumberAction.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_automata::booleanaction_has_value():
-    assert hasattr(automata::BooleanAction, "value")
+def test_automata_numberaction_has_value():
+    assert hasattr(automata_NumberAction, "value")
     descriptor = None
-    for klass in automata::BooleanAction.__mro__:
+    for klass in automata_NumberAction.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -97,23 +97,23 @@ def test_automata::booleanaction_has_value():
 
 
 
-def test_automata::stringaction_is_not_abstract():
-    assert not inspect.isabstract(automata::StringAction)
+def test_automata_stringaction_is_not_abstract():
+    assert not inspect.isabstract(automata_StringAction)
 
 
-def test_automata::stringaction_constructor_exists():
-    assert callable(automata::StringAction.__init__)
+def test_automata_stringaction_constructor_exists():
+    assert callable(automata_StringAction.__init__)
 
 
-def test_automata::stringaction_constructor_args():
-    sig = inspect.signature(automata::StringAction.__init__)
+def test_automata_stringaction_constructor_args():
+    sig = inspect.signature(automata_StringAction.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_automata::stringaction_has_value():
-    assert hasattr(automata::StringAction, "value")
+def test_automata_stringaction_has_value():
+    assert hasattr(automata_StringAction, "value")
     descriptor = None
-    for klass in automata::StringAction.__mro__:
+    for klass in automata_StringAction.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -135,33 +135,33 @@ def test_guard_constructor_args():
 
 
 
-def test_automata::numberguard_is_not_abstract():
-    assert not inspect.isabstract(automata::NumberGuard)
+def test_automata_numberguard_is_not_abstract():
+    assert not inspect.isabstract(automata_NumberGuard)
 
 
-def test_automata::numberguard_constructor_exists():
-    assert callable(automata::NumberGuard.__init__)
+def test_automata_numberguard_constructor_exists():
+    assert callable(automata_NumberGuard.__init__)
 
 
-def test_automata::numberguard_constructor_args():
-    sig = inspect.signature(automata::NumberGuard.__init__)
+def test_automata_numberguard_constructor_args():
+    sig = inspect.signature(automata_NumberGuard.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_automata::numberguard_has_operator():
-    assert hasattr(automata::NumberGuard, "operator")
+def test_automata_numberguard_has_operator():
+    assert hasattr(automata_NumberGuard, "operator")
     descriptor = None
-    for klass in automata::NumberGuard.__mro__:
+    for klass in automata_NumberGuard.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
-def test_automata::numberguard_has_value():
-    assert hasattr(automata::NumberGuard, "value")
+def test_automata_numberguard_has_value():
+    assert hasattr(automata_NumberGuard, "value")
     descriptor = None
-    for klass in automata::NumberGuard.__mro__:
+    for klass in automata_NumberGuard.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -169,33 +169,33 @@ def test_automata::numberguard_has_value():
 
 
 
-def test_automata::booleanguard_is_not_abstract():
-    assert not inspect.isabstract(automata::BooleanGuard)
+def test_automata_booleanguard_is_not_abstract():
+    assert not inspect.isabstract(automata_BooleanGuard)
 
 
-def test_automata::booleanguard_constructor_exists():
-    assert callable(automata::BooleanGuard.__init__)
+def test_automata_booleanguard_constructor_exists():
+    assert callable(automata_BooleanGuard.__init__)
 
 
-def test_automata::booleanguard_constructor_args():
-    sig = inspect.signature(automata::BooleanGuard.__init__)
+def test_automata_booleanguard_constructor_args():
+    sig = inspect.signature(automata_BooleanGuard.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_automata::booleanguard_has_operator():
-    assert hasattr(automata::BooleanGuard, "operator")
+def test_automata_booleanguard_has_operator():
+    assert hasattr(automata_BooleanGuard, "operator")
     descriptor = None
-    for klass in automata::BooleanGuard.__mro__:
+    for klass in automata_BooleanGuard.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
-def test_automata::booleanguard_has_value():
-    assert hasattr(automata::BooleanGuard, "value")
+def test_automata_booleanguard_has_value():
+    assert hasattr(automata_BooleanGuard, "value")
     descriptor = None
-    for klass in automata::BooleanGuard.__mro__:
+    for klass in automata_BooleanGuard.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -217,23 +217,23 @@ def test_variable_constructor_args():
 
 
 
-def test_automata::numbervariable_is_not_abstract():
-    assert not inspect.isabstract(automata::NumberVariable)
+def test_automata_numbervariable_is_not_abstract():
+    assert not inspect.isabstract(automata_NumberVariable)
 
 
-def test_automata::numbervariable_constructor_exists():
-    assert callable(automata::NumberVariable.__init__)
+def test_automata_numbervariable_constructor_exists():
+    assert callable(automata_NumberVariable.__init__)
 
 
-def test_automata::numbervariable_constructor_args():
-    sig = inspect.signature(automata::NumberVariable.__init__)
+def test_automata_numbervariable_constructor_args():
+    sig = inspect.signature(automata_NumberVariable.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
 
-def test_automata::numbervariable_has_initialValue():
-    assert hasattr(automata::NumberVariable, "initialValue")
+def test_automata_numbervariable_has_initialValue():
+    assert hasattr(automata_NumberVariable, "initialValue")
     descriptor = None
-    for klass in automata::NumberVariable.__mro__:
+    for klass in automata_NumberVariable.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
@@ -241,23 +241,23 @@ def test_automata::numbervariable_has_initialValue():
 
 
 
-def test_automata::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(automata::BooleanVariable)
+def test_automata_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(automata_BooleanVariable)
 
 
-def test_automata::booleanvariable_constructor_exists():
-    assert callable(automata::BooleanVariable.__init__)
+def test_automata_booleanvariable_constructor_exists():
+    assert callable(automata_BooleanVariable.__init__)
 
 
-def test_automata::booleanvariable_constructor_args():
-    sig = inspect.signature(automata::BooleanVariable.__init__)
+def test_automata_booleanvariable_constructor_args():
+    sig = inspect.signature(automata_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
 
-def test_automata::booleanvariable_has_initialValue():
-    assert hasattr(automata::BooleanVariable, "initialValue")
+def test_automata_booleanvariable_has_initialValue():
+    assert hasattr(automata_BooleanVariable, "initialValue")
     descriptor = None
-    for klass in automata::BooleanVariable.__mro__:
+    for klass in automata_BooleanVariable.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
@@ -265,23 +265,23 @@ def test_automata::booleanvariable_has_initialValue():
 
 
 
-def test_automata::stringvariable_is_not_abstract():
-    assert not inspect.isabstract(automata::StringVariable)
+def test_automata_stringvariable_is_not_abstract():
+    assert not inspect.isabstract(automata_StringVariable)
 
 
-def test_automata::stringvariable_constructor_exists():
-    assert callable(automata::StringVariable.__init__)
+def test_automata_stringvariable_constructor_exists():
+    assert callable(automata_StringVariable.__init__)
 
 
-def test_automata::stringvariable_constructor_args():
-    sig = inspect.signature(automata::StringVariable.__init__)
+def test_automata_stringvariable_constructor_args():
+    sig = inspect.signature(automata_StringVariable.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
 
-def test_automata::stringvariable_has_initialValue():
-    assert hasattr(automata::StringVariable, "initialValue")
+def test_automata_stringvariable_has_initialValue():
+    assert hasattr(automata_StringVariable, "initialValue")
     descriptor = None
-    for klass in automata::StringVariable.__mro__:
+    for klass in automata_StringVariable.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
@@ -289,51 +289,51 @@ def test_automata::stringvariable_has_initialValue():
 
 
 
-def test_automata::action_is_not_abstract():
-    assert not inspect.isabstract(automata::Action)
+def test_automata_action_is_not_abstract():
+    assert not inspect.isabstract(automata_Action)
 
 
-def test_automata::action_constructor_exists():
-    assert callable(automata::Action.__init__)
+def test_automata_action_constructor_exists():
+    assert callable(automata_Action.__init__)
 
 
-def test_automata::action_constructor_args():
-    sig = inspect.signature(automata::Action.__init__)
+def test_automata_action_constructor_args():
+    sig = inspect.signature(automata_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automata::guard_is_not_abstract():
-    assert not inspect.isabstract(automata::Guard)
+def test_automata_guard_is_not_abstract():
+    assert not inspect.isabstract(automata_Guard)
 
 
-def test_automata::guard_constructor_exists():
-    assert callable(automata::Guard.__init__)
+def test_automata_guard_constructor_exists():
+    assert callable(automata_Guard.__init__)
 
 
-def test_automata::guard_constructor_args():
-    sig = inspect.signature(automata::Guard.__init__)
+def test_automata_guard_constructor_args():
+    sig = inspect.signature(automata_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automata::variable_is_not_abstract():
-    assert not inspect.isabstract(automata::Variable)
+def test_automata_variable_is_not_abstract():
+    assert not inspect.isabstract(automata_Variable)
 
 
-def test_automata::variable_constructor_exists():
-    assert callable(automata::Variable.__init__)
+def test_automata_variable_constructor_exists():
+    assert callable(automata_Variable.__init__)
 
 
-def test_automata::variable_constructor_args():
-    sig = inspect.signature(automata::Variable.__init__)
+def test_automata_variable_constructor_args():
+    sig = inspect.signature(automata_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_automata::variable_has_name():
-    assert hasattr(automata::Variable, "name")
+def test_automata_variable_has_name():
+    assert hasattr(automata_Variable, "name")
     descriptor = None
-    for klass in automata::Variable.__mro__:
+    for klass in automata_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -341,98 +341,98 @@ def test_automata::variable_has_name():
 
 
 
-def test_automata::transition_is_not_abstract():
-    assert not inspect.isabstract(automata::Transition)
+def test_automata_transition_is_not_abstract():
+    assert not inspect.isabstract(automata_Transition)
 
 
-def test_automata::transition_constructor_exists():
-    assert callable(automata::Transition.__init__)
+def test_automata_transition_constructor_exists():
+    assert callable(automata_Transition.__init__)
 
 
-def test_automata::transition_constructor_args():
-    sig = inspect.signature(automata::Transition.__init__)
+def test_automata_transition_constructor_args():
+    sig = inspect.signature(automata_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automata::state_is_not_abstract():
-    assert not inspect.isabstract(automata::State)
+def test_automata_state_is_not_abstract():
+    assert not inspect.isabstract(automata_State)
 
 
-def test_automata::state_constructor_exists():
-    assert callable(automata::State.__init__)
+def test_automata_state_constructor_exists():
+    assert callable(automata_State.__init__)
 
 
-def test_automata::state_constructor_args():
-    sig = inspect.signature(automata::State.__init__)
+def test_automata_state_constructor_args():
+    sig = inspect.signature(automata_State.__init__)
     params = list(sig.parameters.keys())
-    assert "initial" in params, "Missing parameter 'initial'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "initial" in params, "Missing parameter 'initial'"
 
-def test_automata::state_has_initial():
-    assert hasattr(automata::State, "initial")
+def test_automata_state_has_name():
+    assert hasattr(automata_State, "name")
     descriptor = None
-    for klass in automata::State.__mro__:
+    for klass in automata_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_automata_state_has_initial():
+    assert hasattr(automata_State, "initial")
+    descriptor = None
+    for klass in automata_State.__mro__:
         if "initial" in klass.__dict__:
             descriptor = klass.__dict__["initial"]
             break
     assert isinstance(descriptor, property)
 
-def test_automata::state_has_name():
-    assert hasattr(automata::State, "name")
-    descriptor = None
-    for klass in automata::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_automata::stringguard_is_not_abstract():
-    assert not inspect.isabstract(automata::StringGuard)
-
-
-def test_automata::stringguard_constructor_exists():
-    assert callable(automata::StringGuard.__init__)
+def test_automata_stringguard_is_not_abstract():
+    assert not inspect.isabstract(automata_StringGuard)
 
 
-def test_automata::stringguard_constructor_args():
-    sig = inspect.signature(automata::StringGuard.__init__)
+def test_automata_stringguard_constructor_exists():
+    assert callable(automata_StringGuard.__init__)
+
+
+def test_automata_stringguard_constructor_args():
+    sig = inspect.signature(automata_StringGuard.__init__)
     params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "operator" in params, "Missing parameter 'operator'"
 
-def test_automata::stringguard_has_operator():
-    assert hasattr(automata::StringGuard, "operator")
+def test_automata_stringguard_has_value():
+    assert hasattr(automata_StringGuard, "value")
     descriptor = None
-    for klass in automata::StringGuard.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automata::stringguard_has_value():
-    assert hasattr(automata::StringGuard, "value")
-    descriptor = None
-    for klass in automata::StringGuard.__mro__:
+    for klass in automata_StringGuard.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_automata_stringguard_has_operator():
+    assert hasattr(automata_StringGuard, "operator")
+    descriptor = None
+    for klass in automata_StringGuard.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_automata::automaton_is_not_abstract():
-    assert not inspect.isabstract(automata::Automaton)
+
+def test_automata_automaton_is_not_abstract():
+    assert not inspect.isabstract(automata_Automaton)
 
 
-def test_automata::automaton_constructor_exists():
-    assert callable(automata::Automaton.__init__)
+def test_automata_automaton_constructor_exists():
+    assert callable(automata_Automaton.__init__)
 
 
-def test_automata::automaton_constructor_args():
-    sig = inspect.signature(automata::Automaton.__init__)
+def test_automata_automaton_constructor_args():
+    sig = inspect.signature(automata_Automaton.__init__)
     params = list(sig.parameters.keys())
 
 def test_booleanoperator_exists():
@@ -458,8 +458,8 @@ def test_stringoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StringOperator]
     expected_literals = [
-        "Equal",
         "Unequal",
+        "Equal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -475,9 +475,9 @@ def test_numberoperator_has_all_literals():
     expected_literals = [
         "LessOrEqualThan",
         "GreaterThan",
+        "LessThan",
         "Unequal",
         "GreaterOrEqualThan",
-        "LessThan",
         "Equal",
     ]
     # Check that all expected literals exist
@@ -499,33 +499,33 @@ safe_text = st.text(
 Action_strategy = st.builds(
     Action,
 )
-automata::NumberAction_strategy = st.builds(
-    automata::NumberAction,
-    value=
-        safe_text
-)
-automata::BooleanAction_strategy = st.builds(
-    automata::BooleanAction,
+automata_BooleanAction_strategy = st.builds(
+    automata_BooleanAction,
     value=
         st.booleans()
 )
-automata::StringAction_strategy = st.builds(
-    automata::StringAction,
+automata_NumberAction_strategy = st.builds(
+    automata_NumberAction,
+    value=
+        safe_text
+)
+automata_StringAction_strategy = st.builds(
+    automata_StringAction,
     value=
         safe_text
 )
 Guard_strategy = st.builds(
     Guard,
 )
-automata::NumberGuard_strategy = st.builds(
-    automata::NumberGuard,
+automata_NumberGuard_strategy = st.builds(
+    automata_NumberGuard,
     operator=
         safe_text,
     value=
         safe_text
 )
-automata::BooleanGuard_strategy = st.builds(
-    automata::BooleanGuard,
+automata_BooleanGuard_strategy = st.builds(
+    automata_BooleanGuard,
     operator=
         safe_text,
     value=
@@ -534,51 +534,51 @@ automata::BooleanGuard_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-automata::NumberVariable_strategy = st.builds(
-    automata::NumberVariable,
+automata_NumberVariable_strategy = st.builds(
+    automata_NumberVariable,
     initialValue=
         safe_text
 )
-automata::BooleanVariable_strategy = st.builds(
-    automata::BooleanVariable,
+automata_BooleanVariable_strategy = st.builds(
+    automata_BooleanVariable,
     initialValue=
         st.booleans()
 )
-automata::StringVariable_strategy = st.builds(
-    automata::StringVariable,
+automata_StringVariable_strategy = st.builds(
+    automata_StringVariable,
     initialValue=
         safe_text
 )
-automata::Action_strategy = st.builds(
-    automata::Action,
+automata_Action_strategy = st.builds(
+    automata_Action,
 )
-automata::Guard_strategy = st.builds(
-    automata::Guard,
+automata_Guard_strategy = st.builds(
+    automata_Guard,
 )
-automata::Variable_strategy = st.builds(
-    automata::Variable,
+automata_Variable_strategy = st.builds(
+    automata_Variable,
     name=
         safe_text
 )
-automata::Transition_strategy = st.builds(
-    automata::Transition,
+automata_Transition_strategy = st.builds(
+    automata_Transition,
 )
-automata::State_strategy = st.builds(
-    automata::State,
-    initial=
-        st.booleans(),
+automata_State_strategy = st.builds(
+    automata_State,
     name=
-        safe_text
-)
-automata::StringGuard_strategy = st.builds(
-    automata::StringGuard,
-    operator=
         safe_text,
+    initial=
+        st.booleans()
+)
+automata_StringGuard_strategy = st.builds(
+    automata_StringGuard,
     value=
+        safe_text,
+    operator=
         safe_text
 )
-automata::Automaton_strategy = st.builds(
-    automata::Automaton,
+automata_Automaton_strategy = st.builds(
+    automata_Automaton,
 )
 
 @given(instance=Action_strategy)
@@ -586,50 +586,41 @@ automata::Automaton_strategy = st.builds(
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=automata::NumberAction_strategy)
+@given(instance=automata_BooleanAction_strategy)
 @settings(max_examples=50)
-def test_automata::numberaction_instantiation(instance):
-    assert isinstance(instance, automata::NumberAction)
-
-@given(instance=automata::NumberAction_strategy)
-def test_automata::numberaction_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_automata_booleanaction_instantiation(instance):
+    assert isinstance(instance, automata_BooleanAction)
 
 
-@given(instance=automata::NumberAction_strategy)
-def test_automata::numberaction_value_setter(instance):
+
+@given(instance=automata_BooleanAction_strategy)
+def test_automata_booleanaction_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=automata::BooleanAction_strategy)
+@given(instance=automata_NumberAction_strategy)
 @settings(max_examples=50)
-def test_automata::booleanaction_instantiation(instance):
-    assert isinstance(instance, automata::BooleanAction)
-
-@given(instance=automata::BooleanAction_strategy)
-def test_automata::booleanaction_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_automata_numberaction_instantiation(instance):
+    assert isinstance(instance, automata_NumberAction)
 
 
-@given(instance=automata::BooleanAction_strategy)
-def test_automata::booleanaction_value_setter(instance):
+
+@given(instance=automata_NumberAction_strategy)
+def test_automata_numberaction_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=automata::StringAction_strategy)
+@given(instance=automata_StringAction_strategy)
 @settings(max_examples=50)
-def test_automata::stringaction_instantiation(instance):
-    assert isinstance(instance, automata::StringAction)
-
-@given(instance=automata::StringAction_strategy)
-def test_automata::stringaction_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_automata_stringaction_instantiation(instance):
+    assert isinstance(instance, automata_StringAction)
 
 
-@given(instance=automata::StringAction_strategy)
-def test_automata::stringaction_value_setter(instance):
+
+@given(instance=automata_StringAction_strategy)
+def test_automata_stringaction_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -639,56 +630,44 @@ def test_automata::stringaction_value_setter(instance):
 def test_guard_instantiation(instance):
     assert isinstance(instance, Guard)
 
-@given(instance=automata::NumberGuard_strategy)
+@given(instance=automata_NumberGuard_strategy)
 @settings(max_examples=50)
-def test_automata::numberguard_instantiation(instance):
-    assert isinstance(instance, automata::NumberGuard)
-
-@given(instance=automata::NumberGuard_strategy)
-def test_automata::numberguard_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_automata_numberguard_instantiation(instance):
+    assert isinstance(instance, automata_NumberGuard)
 
 
-@given(instance=automata::NumberGuard_strategy)
-def test_automata::numberguard_operator_setter(instance):
+
+@given(instance=automata_NumberGuard_strategy)
+def test_automata_numberguard_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=automata::NumberGuard_strategy)
-def test_automata::numberguard_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=automata::NumberGuard_strategy)
-def test_automata::numberguard_value_setter(instance):
+@given(instance=automata_NumberGuard_strategy)
+def test_automata_numberguard_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=automata::BooleanGuard_strategy)
+@given(instance=automata_BooleanGuard_strategy)
 @settings(max_examples=50)
-def test_automata::booleanguard_instantiation(instance):
-    assert isinstance(instance, automata::BooleanGuard)
-
-@given(instance=automata::BooleanGuard_strategy)
-def test_automata::booleanguard_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_automata_booleanguard_instantiation(instance):
+    assert isinstance(instance, automata_BooleanGuard)
 
 
-@given(instance=automata::BooleanGuard_strategy)
-def test_automata::booleanguard_operator_setter(instance):
+
+@given(instance=automata_BooleanGuard_strategy)
+def test_automata_booleanguard_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=automata::BooleanGuard_strategy)
-def test_automata::booleanguard_value_type(instance):
-    assert isinstance(instance.value, bool)
 
 
-@given(instance=automata::BooleanGuard_strategy)
-def test_automata::booleanguard_value_setter(instance):
+@given(instance=automata_BooleanGuard_strategy)
+def test_automata_booleanguard_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -698,140 +677,116 @@ def test_automata::booleanguard_value_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=automata::NumberVariable_strategy)
+@given(instance=automata_NumberVariable_strategy)
 @settings(max_examples=50)
-def test_automata::numbervariable_instantiation(instance):
-    assert isinstance(instance, automata::NumberVariable)
-
-@given(instance=automata::NumberVariable_strategy)
-def test_automata::numbervariable_initialValue_type(instance):
-    assert isinstance(instance.initialValue, str)
+def test_automata_numbervariable_instantiation(instance):
+    assert isinstance(instance, automata_NumberVariable)
 
 
-@given(instance=automata::NumberVariable_strategy)
-def test_automata::numbervariable_initialValue_setter(instance):
+
+@given(instance=automata_NumberVariable_strategy)
+def test_automata_numbervariable_initialValue_setter(instance):
     original = instance.initialValue
     instance.initialValue = original
     assert instance.initialValue == original
 
-@given(instance=automata::BooleanVariable_strategy)
+@given(instance=automata_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_automata::booleanvariable_instantiation(instance):
-    assert isinstance(instance, automata::BooleanVariable)
-
-@given(instance=automata::BooleanVariable_strategy)
-def test_automata::booleanvariable_initialValue_type(instance):
-    assert isinstance(instance.initialValue, bool)
+def test_automata_booleanvariable_instantiation(instance):
+    assert isinstance(instance, automata_BooleanVariable)
 
 
-@given(instance=automata::BooleanVariable_strategy)
-def test_automata::booleanvariable_initialValue_setter(instance):
+
+@given(instance=automata_BooleanVariable_strategy)
+def test_automata_booleanvariable_initialValue_setter(instance):
     original = instance.initialValue
     instance.initialValue = original
     assert instance.initialValue == original
 
-@given(instance=automata::StringVariable_strategy)
+@given(instance=automata_StringVariable_strategy)
 @settings(max_examples=50)
-def test_automata::stringvariable_instantiation(instance):
-    assert isinstance(instance, automata::StringVariable)
-
-@given(instance=automata::StringVariable_strategy)
-def test_automata::stringvariable_initialValue_type(instance):
-    assert isinstance(instance.initialValue, str)
+def test_automata_stringvariable_instantiation(instance):
+    assert isinstance(instance, automata_StringVariable)
 
 
-@given(instance=automata::StringVariable_strategy)
-def test_automata::stringvariable_initialValue_setter(instance):
+
+@given(instance=automata_StringVariable_strategy)
+def test_automata_stringvariable_initialValue_setter(instance):
     original = instance.initialValue
     instance.initialValue = original
     assert instance.initialValue == original
 
-@given(instance=automata::Action_strategy)
+@given(instance=automata_Action_strategy)
 @settings(max_examples=50)
-def test_automata::action_instantiation(instance):
-    assert isinstance(instance, automata::Action)
+def test_automata_action_instantiation(instance):
+    assert isinstance(instance, automata_Action)
 
-@given(instance=automata::Guard_strategy)
+@given(instance=automata_Guard_strategy)
 @settings(max_examples=50)
-def test_automata::guard_instantiation(instance):
-    assert isinstance(instance, automata::Guard)
+def test_automata_guard_instantiation(instance):
+    assert isinstance(instance, automata_Guard)
 
-@given(instance=automata::Variable_strategy)
+@given(instance=automata_Variable_strategy)
 @settings(max_examples=50)
-def test_automata::variable_instantiation(instance):
-    assert isinstance(instance, automata::Variable)
-
-@given(instance=automata::Variable_strategy)
-def test_automata::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automata_variable_instantiation(instance):
+    assert isinstance(instance, automata_Variable)
 
 
-@given(instance=automata::Variable_strategy)
-def test_automata::variable_name_setter(instance):
+
+@given(instance=automata_Variable_strategy)
+def test_automata_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=automata::Transition_strategy)
+@given(instance=automata_Transition_strategy)
 @settings(max_examples=50)
-def test_automata::transition_instantiation(instance):
-    assert isinstance(instance, automata::Transition)
+def test_automata_transition_instantiation(instance):
+    assert isinstance(instance, automata_Transition)
 
-@given(instance=automata::State_strategy)
+@given(instance=automata_State_strategy)
 @settings(max_examples=50)
-def test_automata::state_instantiation(instance):
-    assert isinstance(instance, automata::State)
-
-@given(instance=automata::State_strategy)
-def test_automata::state_initial_type(instance):
-    assert isinstance(instance.initial, bool)
+def test_automata_state_instantiation(instance):
+    assert isinstance(instance, automata_State)
 
 
-@given(instance=automata::State_strategy)
-def test_automata::state_initial_setter(instance):
+
+@given(instance=automata_State_strategy)
+def test_automata_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=automata_State_strategy)
+def test_automata_state_initial_setter(instance):
     original = instance.initial
     instance.initial = original
     assert instance.initial == original
 
-@given(instance=automata::State_strategy)
-def test_automata::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=automata::State_strategy)
-def test_automata::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=automata::StringGuard_strategy)
+@given(instance=automata_StringGuard_strategy)
 @settings(max_examples=50)
-def test_automata::stringguard_instantiation(instance):
-    assert isinstance(instance, automata::StringGuard)
-
-@given(instance=automata::StringGuard_strategy)
-def test_automata::stringguard_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_automata_stringguard_instantiation(instance):
+    assert isinstance(instance, automata_StringGuard)
 
 
-@given(instance=automata::StringGuard_strategy)
-def test_automata::stringguard_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=automata::StringGuard_strategy)
-def test_automata::stringguard_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=automata::StringGuard_strategy)
-def test_automata::stringguard_value_setter(instance):
+@given(instance=automata_StringGuard_strategy)
+def test_automata_stringguard_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=automata::Automaton_strategy)
+
+
+@given(instance=automata_StringGuard_strategy)
+def test_automata_stringguard_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=automata_Automaton_strategy)
 @settings(max_examples=50)
-def test_automata::automaton_instantiation(instance):
-    assert isinstance(instance, automata::Automaton)
+def test_automata_automaton_instantiation(instance):
+    assert isinstance(instance, automata_Automaton)

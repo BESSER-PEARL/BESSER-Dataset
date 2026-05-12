@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     node,
-    cfg::endnode,
-    cfg::startnode,
-    cfg::edge,
-    cfg::node,
-    cfg::cfg,
+    cfg_endnode,
+    cfg_startnode,
+    cfg_edge,
+    cfg_node,
+    cfg_cfg,
 )
 
 # =============================================================================
@@ -34,65 +34,65 @@ def test_node_constructor_args():
 
 
 
-def test_cfg::endnode_is_not_abstract():
-    assert not inspect.isabstract(cfg::endnode)
+def test_cfg_endnode_is_not_abstract():
+    assert not inspect.isabstract(cfg_endnode)
 
 
-def test_cfg::endnode_constructor_exists():
-    assert callable(cfg::endnode.__init__)
+def test_cfg_endnode_constructor_exists():
+    assert callable(cfg_endnode.__init__)
 
 
-def test_cfg::endnode_constructor_args():
-    sig = inspect.signature(cfg::endnode.__init__)
+def test_cfg_endnode_constructor_args():
+    sig = inspect.signature(cfg_endnode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cfg::startnode_is_not_abstract():
-    assert not inspect.isabstract(cfg::startnode)
+def test_cfg_startnode_is_not_abstract():
+    assert not inspect.isabstract(cfg_startnode)
 
 
-def test_cfg::startnode_constructor_exists():
-    assert callable(cfg::startnode.__init__)
+def test_cfg_startnode_constructor_exists():
+    assert callable(cfg_startnode.__init__)
 
 
-def test_cfg::startnode_constructor_args():
-    sig = inspect.signature(cfg::startnode.__init__)
+def test_cfg_startnode_constructor_args():
+    sig = inspect.signature(cfg_startnode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cfg::edge_is_not_abstract():
-    assert not inspect.isabstract(cfg::edge)
+def test_cfg_edge_is_not_abstract():
+    assert not inspect.isabstract(cfg_edge)
 
 
-def test_cfg::edge_constructor_exists():
-    assert callable(cfg::edge.__init__)
+def test_cfg_edge_constructor_exists():
+    assert callable(cfg_edge.__init__)
 
 
-def test_cfg::edge_constructor_args():
-    sig = inspect.signature(cfg::edge.__init__)
+def test_cfg_edge_constructor_args():
+    sig = inspect.signature(cfg_edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cfg::node_is_not_abstract():
-    assert not inspect.isabstract(cfg::node)
+def test_cfg_node_is_not_abstract():
+    assert not inspect.isabstract(cfg_node)
 
 
-def test_cfg::node_constructor_exists():
-    assert callable(cfg::node.__init__)
+def test_cfg_node_constructor_exists():
+    assert callable(cfg_node.__init__)
 
 
-def test_cfg::node_constructor_args():
-    sig = inspect.signature(cfg::node.__init__)
+def test_cfg_node_constructor_args():
+    sig = inspect.signature(cfg_node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cfg::node_has_name():
-    assert hasattr(cfg::node, "name")
+def test_cfg_node_has_name():
+    assert hasattr(cfg_node, "name")
     descriptor = None
-    for klass in cfg::node.__mro__:
+    for klass in cfg_node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -100,16 +100,16 @@ def test_cfg::node_has_name():
 
 
 
-def test_cfg::cfg_is_not_abstract():
-    assert not inspect.isabstract(cfg::cfg)
+def test_cfg_cfg_is_not_abstract():
+    assert not inspect.isabstract(cfg_cfg)
 
 
-def test_cfg::cfg_constructor_exists():
-    assert callable(cfg::cfg.__init__)
+def test_cfg_cfg_constructor_exists():
+    assert callable(cfg_cfg.__init__)
 
 
-def test_cfg::cfg_constructor_args():
-    sig = inspect.signature(cfg::cfg.__init__)
+def test_cfg_cfg_constructor_args():
+    sig = inspect.signature(cfg_cfg.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,22 +127,22 @@ safe_text = st.text(
 node_strategy = st.builds(
     node,
 )
-cfg::endnode_strategy = st.builds(
-    cfg::endnode,
+cfg_endnode_strategy = st.builds(
+    cfg_endnode,
 )
-cfg::startnode_strategy = st.builds(
-    cfg::startnode,
+cfg_startnode_strategy = st.builds(
+    cfg_startnode,
 )
-cfg::edge_strategy = st.builds(
-    cfg::edge,
+cfg_edge_strategy = st.builds(
+    cfg_edge,
 )
-cfg::node_strategy = st.builds(
-    cfg::node,
+cfg_node_strategy = st.builds(
+    cfg_node,
     name=
         safe_text
 )
-cfg::cfg_strategy = st.builds(
-    cfg::cfg,
+cfg_cfg_strategy = st.builds(
+    cfg_cfg,
 )
 
 @given(instance=node_strategy)
@@ -150,38 +150,35 @@ cfg::cfg_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, node)
 
-@given(instance=cfg::endnode_strategy)
+@given(instance=cfg_endnode_strategy)
 @settings(max_examples=50)
-def test_cfg::endnode_instantiation(instance):
-    assert isinstance(instance, cfg::endnode)
+def test_cfg_endnode_instantiation(instance):
+    assert isinstance(instance, cfg_endnode)
 
-@given(instance=cfg::startnode_strategy)
+@given(instance=cfg_startnode_strategy)
 @settings(max_examples=50)
-def test_cfg::startnode_instantiation(instance):
-    assert isinstance(instance, cfg::startnode)
+def test_cfg_startnode_instantiation(instance):
+    assert isinstance(instance, cfg_startnode)
 
-@given(instance=cfg::edge_strategy)
+@given(instance=cfg_edge_strategy)
 @settings(max_examples=50)
-def test_cfg::edge_instantiation(instance):
-    assert isinstance(instance, cfg::edge)
+def test_cfg_edge_instantiation(instance):
+    assert isinstance(instance, cfg_edge)
 
-@given(instance=cfg::node_strategy)
+@given(instance=cfg_node_strategy)
 @settings(max_examples=50)
-def test_cfg::node_instantiation(instance):
-    assert isinstance(instance, cfg::node)
-
-@given(instance=cfg::node_strategy)
-def test_cfg::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cfg_node_instantiation(instance):
+    assert isinstance(instance, cfg_node)
 
 
-@given(instance=cfg::node_strategy)
-def test_cfg::node_name_setter(instance):
+
+@given(instance=cfg_node_strategy)
+def test_cfg_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cfg::cfg_strategy)
+@given(instance=cfg_cfg_strategy)
 @settings(max_examples=50)
-def test_cfg::cfg_instantiation(instance):
-    assert isinstance(instance, cfg::cfg)
+def test_cfg_cfg_instantiation(instance):
+    assert isinstance(instance, cfg_cfg)

@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent,
+from python_code import (
+    SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent,
     SPDLScenario,
-    SimplePDLSemantics::TM3SimplePDL::SPDLTrace,
+    SimplePDLSemantics_TM3SimplePDL_SPDLTrace,
     SPDLTrace,
     WorkDefinitionEvent,
-    SimplePDLSemantics::EDMMSimplePDL::FinishWD,
-    SimplePDLSemantics::EDMMSimplePDL::StartWD,
+    SimplePDLSemantics_EDMMSimplePDL_FinishWD,
+    SimplePDLSemantics_EDMMSimplePDL_StartWD,
     Event,
-    SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent,
+    SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent,
     SPDLSimEvent,
-    SimplePDLSemantics::EDMMSimplePDL::Event,
-    SimplePDLSemantics::DDMMSimplePDL::ProcessElement,
+    SimplePDLSemantics_EDMMSimplePDL_Event,
+    SimplePDLSemantics_DDMMSimplePDL_ProcessElement,
     Process,
     WorkSequence,
     WorkDefinition,
-    SimplePDLSemantics::TM3SimplePDL::SPDLScenario,
+    SimplePDLSemantics_TM3SimplePDL_SPDLScenario,
     ProcessElement,
-    SimplePDLSemantics::DDMMSimplePDL::Guidance,
-    SimplePDLSemantics::DDMMSimplePDL::WorkDefinition,
-    SimplePDLSemantics::DDMMSimplePDL::WorkSequence,
-    SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition,
-    SimplePDLSemantics::DDMMSimplePDL::Process,
-    ExecutionState,
+    SimplePDLSemantics_DDMMSimplePDL_WorkSequence,
+    SimplePDLSemantics_DDMMSimplePDL_Guidance,
+    SimplePDLSemantics_DDMMSimplePDL_WorkDefinition,
+    SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition,
+    SimplePDLSemantics_DDMMSimplePDL_Process,
     WorkSequenceType,
     TimeState,
+    ExecutionState,
 )
 
 # =============================================================================
@@ -39,45 +39,45 @@ from classes import (
 
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent)
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_constructor_exists():
-    assert callable(SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent.__init__)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_constructor_exists():
+    assert callable(SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent.__init__)
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent.__init__)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "date" in params, "Missing parameter 'date'"
     assert "internal" in params, "Missing parameter 'internal'"
+    assert "date" in params, "Missing parameter 'date'"
 
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_has_name():
-    assert hasattr(SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent, "name")
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_has_name():
+    assert hasattr(SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent, "name")
     descriptor = None
-    for klass in SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent.__mro__:
+    for klass in SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_has_date():
-    assert hasattr(SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent, "date")
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_has_internal():
+    assert hasattr(SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent, "internal")
     descriptor = None
-    for klass in SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
+    for klass in SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent.__mro__:
+        if "internal" in klass.__dict__:
+            descriptor = klass.__dict__["internal"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_has_internal():
-    assert hasattr(SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent, "internal")
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_has_date():
+    assert hasattr(SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent, "date")
     descriptor = None
-    for klass in SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent.__mro__:
-        if "internal" in klass.__dict__:
-            descriptor = klass.__dict__["internal"]
+    for klass in SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -97,16 +97,16 @@ def test_spdlscenario_constructor_args():
 
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdltrace_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::TM3SimplePDL::SPDLTrace)
+def test_simplepdlsemantics_tm3simplepdl_spdltrace_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_TM3SimplePDL_SPDLTrace)
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdltrace_constructor_exists():
-    assert callable(SimplePDLSemantics::TM3SimplePDL::SPDLTrace.__init__)
+def test_simplepdlsemantics_tm3simplepdl_spdltrace_constructor_exists():
+    assert callable(SimplePDLSemantics_TM3SimplePDL_SPDLTrace.__init__)
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdltrace_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::TM3SimplePDL::SPDLTrace.__init__)
+def test_simplepdlsemantics_tm3simplepdl_spdltrace_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_TM3SimplePDL_SPDLTrace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,30 +139,30 @@ def test_workdefinitionevent_constructor_args():
 
 
 
-def test_simplepdlsemantics::edmmsimplepdl::finishwd_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::EDMMSimplePDL::FinishWD)
+def test_simplepdlsemantics_edmmsimplepdl_finishwd_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_EDMMSimplePDL_FinishWD)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::finishwd_constructor_exists():
-    assert callable(SimplePDLSemantics::EDMMSimplePDL::FinishWD.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_finishwd_constructor_exists():
+    assert callable(SimplePDLSemantics_EDMMSimplePDL_FinishWD.__init__)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::finishwd_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::EDMMSimplePDL::FinishWD.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_finishwd_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_EDMMSimplePDL_FinishWD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplepdlsemantics::edmmsimplepdl::startwd_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::EDMMSimplePDL::StartWD)
+def test_simplepdlsemantics_edmmsimplepdl_startwd_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_EDMMSimplePDL_StartWD)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::startwd_constructor_exists():
-    assert callable(SimplePDLSemantics::EDMMSimplePDL::StartWD.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_startwd_constructor_exists():
+    assert callable(SimplePDLSemantics_EDMMSimplePDL_StartWD.__init__)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::startwd_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::EDMMSimplePDL::StartWD.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_startwd_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_EDMMSimplePDL_StartWD.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -181,16 +181,16 @@ def test_event_constructor_args():
 
 
 
-def test_simplepdlsemantics::edmmsimplepdl::workdefinitionevent_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent)
+def test_simplepdlsemantics_edmmsimplepdl_workdefinitionevent_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::workdefinitionevent_constructor_exists():
-    assert callable(SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_workdefinitionevent_constructor_exists():
+    assert callable(SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent.__init__)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::workdefinitionevent_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_workdefinitionevent_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -209,30 +209,30 @@ def test_spdlsimevent_constructor_args():
 
 
 
-def test_simplepdlsemantics::edmmsimplepdl::event_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::EDMMSimplePDL::Event)
+def test_simplepdlsemantics_edmmsimplepdl_event_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_EDMMSimplePDL_Event)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::event_constructor_exists():
-    assert callable(SimplePDLSemantics::EDMMSimplePDL::Event.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_event_constructor_exists():
+    assert callable(SimplePDLSemantics_EDMMSimplePDL_Event.__init__)
 
 
-def test_simplepdlsemantics::edmmsimplepdl::event_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::EDMMSimplePDL::Event.__init__)
+def test_simplepdlsemantics_edmmsimplepdl_event_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_EDMMSimplePDL_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::processelement_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::DDMMSimplePDL::ProcessElement)
+def test_simplepdlsemantics_ddmmsimplepdl_processelement_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_DDMMSimplePDL_ProcessElement)
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::processelement_constructor_exists():
-    assert callable(SimplePDLSemantics::DDMMSimplePDL::ProcessElement.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_processelement_constructor_exists():
+    assert callable(SimplePDLSemantics_DDMMSimplePDL_ProcessElement.__init__)
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::processelement_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::DDMMSimplePDL::ProcessElement.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_processelement_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_DDMMSimplePDL_ProcessElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -279,16 +279,16 @@ def test_workdefinition_constructor_args():
 
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdlscenario_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::TM3SimplePDL::SPDLScenario)
+def test_simplepdlsemantics_tm3simplepdl_spdlscenario_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_TM3SimplePDL_SPDLScenario)
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdlscenario_constructor_exists():
-    assert callable(SimplePDLSemantics::TM3SimplePDL::SPDLScenario.__init__)
+def test_simplepdlsemantics_tm3simplepdl_spdlscenario_constructor_exists():
+    assert callable(SimplePDLSemantics_TM3SimplePDL_SPDLScenario.__init__)
 
 
-def test_simplepdlsemantics::tm3simplepdl::spdlscenario_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::TM3SimplePDL::SPDLScenario.__init__)
+def test_simplepdlsemantics_tm3simplepdl_spdlscenario_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_TM3SimplePDL_SPDLScenario.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -307,71 +307,23 @@ def test_processelement_constructor_args():
 
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::DDMMSimplePDL::Guidance)
+def test_simplepdlsemantics_ddmmsimplepdl_worksequence_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_DDMMSimplePDL_WorkSequence)
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_constructor_exists():
-    assert callable(SimplePDLSemantics::DDMMSimplePDL::Guidance.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_worksequence_constructor_exists():
+    assert callable(SimplePDLSemantics_DDMMSimplePDL_WorkSequence.__init__)
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::DDMMSimplePDL::Guidance.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_has_text():
-    assert hasattr(SimplePDLSemantics::DDMMSimplePDL::Guidance, "text")
-    descriptor = None
-    for klass in SimplePDLSemantics::DDMMSimplePDL::Guidance.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::DDMMSimplePDL::WorkDefinition)
-
-
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_constructor_exists():
-    assert callable(SimplePDLSemantics::DDMMSimplePDL::WorkDefinition.__init__)
-
-
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::DDMMSimplePDL::WorkDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_has_name():
-    assert hasattr(SimplePDLSemantics::DDMMSimplePDL::WorkDefinition, "name")
-    descriptor = None
-    for klass in SimplePDLSemantics::DDMMSimplePDL::WorkDefinition.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::DDMMSimplePDL::WorkSequence)
-
-
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_constructor_exists():
-    assert callable(SimplePDLSemantics::DDMMSimplePDL::WorkSequence.__init__)
-
-
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::DDMMSimplePDL::WorkSequence.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_worksequence_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_DDMMSimplePDL_WorkSequence.__init__)
     params = list(sig.parameters.keys())
     assert "linkType" in params, "Missing parameter 'linkType'"
 
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_has_linkType():
-    assert hasattr(SimplePDLSemantics::DDMMSimplePDL::WorkSequence, "linkType")
+def test_simplepdlsemantics_ddmmsimplepdl_worksequence_has_linkType():
+    assert hasattr(SimplePDLSemantics_DDMMSimplePDL_WorkSequence, "linkType")
     descriptor = None
-    for klass in SimplePDLSemantics::DDMMSimplePDL::WorkSequence.__mro__:
+    for klass in SimplePDLSemantics_DDMMSimplePDL_WorkSequence.__mro__:
         if "linkType" in klass.__dict__:
             descriptor = klass.__dict__["linkType"]
             break
@@ -379,87 +331,119 @@ def test_simplepdlsemantics::ddmmsimplepdl::worksequence_has_linkType():
 
 
 
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition)
+def test_simplepdlsemantics_ddmmsimplepdl_guidance_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_DDMMSimplePDL_Guidance)
 
 
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_constructor_exists():
-    assert callable(SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_guidance_constructor_exists():
+    assert callable(SimplePDLSemantics_DDMMSimplePDL_Guidance.__init__)
 
 
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_guidance_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_DDMMSimplePDL_Guidance.__init__)
     params = list(sig.parameters.keys())
-    assert "state" in params, "Missing parameter 'state'"
-    assert "timeElapsed" in params, "Missing parameter 'timeElapsed'"
-    assert "time" in params, "Missing parameter 'time'"
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_has_state():
-    assert hasattr(SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition, "state")
+def test_simplepdlsemantics_ddmmsimplepdl_guidance_has_text():
+    assert hasattr(SimplePDLSemantics_DDMMSimplePDL_Guidance, "text")
     descriptor = None
-    for klass in SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_has_timeElapsed():
-    assert hasattr(SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition, "timeElapsed")
-    descriptor = None
-    for klass in SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition.__mro__:
-        if "timeElapsed" in klass.__dict__:
-            descriptor = klass.__dict__["timeElapsed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_has_time():
-    assert hasattr(SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition, "time")
-    descriptor = None
-    for klass in SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition.__mro__:
-        if "time" in klass.__dict__:
-            descriptor = klass.__dict__["time"]
+    for klass in SimplePDLSemantics_DDMMSimplePDL_Guidance.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::process_is_not_abstract():
-    assert not inspect.isabstract(SimplePDLSemantics::DDMMSimplePDL::Process)
+def test_simplepdlsemantics_ddmmsimplepdl_workdefinition_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_DDMMSimplePDL_WorkDefinition)
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::process_constructor_exists():
-    assert callable(SimplePDLSemantics::DDMMSimplePDL::Process.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_workdefinition_constructor_exists():
+    assert callable(SimplePDLSemantics_DDMMSimplePDL_WorkDefinition.__init__)
 
 
-def test_simplepdlsemantics::ddmmsimplepdl::process_constructor_args():
-    sig = inspect.signature(SimplePDLSemantics::DDMMSimplePDL::Process.__init__)
+def test_simplepdlsemantics_ddmmsimplepdl_workdefinition_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_DDMMSimplePDL_WorkDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdlsemantics::ddmmsimplepdl::process_has_name():
-    assert hasattr(SimplePDLSemantics::DDMMSimplePDL::Process, "name")
+def test_simplepdlsemantics_ddmmsimplepdl_workdefinition_has_name():
+    assert hasattr(SimplePDLSemantics_DDMMSimplePDL_WorkDefinition, "name")
     descriptor = None
-    for klass in SimplePDLSemantics::DDMMSimplePDL::Process.__mro__:
+    for klass in SimplePDLSemantics_DDMMSimplePDL_WorkDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_executionstate_exists():
-    # Check that the Enumeration exists
-    assert ExecutionState is not None
 
-def test_executionstate_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExecutionState]
-    expected_literals = [
-        "notStarted",
-        "finished",
-        "running",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExecutionState"
+
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition)
+
+
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_constructor_exists():
+    assert callable(SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition.__init__)
+
+
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "time" in params, "Missing parameter 'time'"
+    assert "timeElapsed" in params, "Missing parameter 'timeElapsed'"
+    assert "state" in params, "Missing parameter 'state'"
+
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_has_time():
+    assert hasattr(SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition, "time")
+    descriptor = None
+    for klass in SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition.__mro__:
+        if "time" in klass.__dict__:
+            descriptor = klass.__dict__["time"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_has_timeElapsed():
+    assert hasattr(SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition, "timeElapsed")
+    descriptor = None
+    for klass in SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition.__mro__:
+        if "timeElapsed" in klass.__dict__:
+            descriptor = klass.__dict__["timeElapsed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_has_state():
+    assert hasattr(SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition, "state")
+    descriptor = None
+    for klass in SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simplepdlsemantics_ddmmsimplepdl_process_is_not_abstract():
+    assert not inspect.isabstract(SimplePDLSemantics_DDMMSimplePDL_Process)
+
+
+def test_simplepdlsemantics_ddmmsimplepdl_process_constructor_exists():
+    assert callable(SimplePDLSemantics_DDMMSimplePDL_Process.__init__)
+
+
+def test_simplepdlsemantics_ddmmsimplepdl_process_constructor_args():
+    sig = inspect.signature(SimplePDLSemantics_DDMMSimplePDL_Process.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_simplepdlsemantics_ddmmsimplepdl_process_has_name():
+    assert hasattr(SimplePDLSemantics_DDMMSimplePDL_Process, "name")
+    descriptor = None
+    for klass in SimplePDLSemantics_DDMMSimplePDL_Process.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_worksequencetype_exists():
     # Check that the Enumeration exists
@@ -469,10 +453,10 @@ def test_worksequencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in WorkSequenceType]
     expected_literals = [
-        "startToStart",
-        "finishToFinish",
-        "startToFinish",
         "finishToStart",
+        "finishToFinish",
+        "startToStart",
+        "startToFinish",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -486,13 +470,29 @@ def test_timestate_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TimeState]
     expected_literals = [
-        "inTime",
-        "tooLate",
         "tooEarly",
+        "tooLate",
+        "inTime",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TimeState"
+
+def test_executionstate_exists():
+    # Check that the Enumeration exists
+    assert ExecutionState is not None
+
+def test_executionstate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ExecutionState]
+    expected_literals = [
+        "running",
+        "finished",
+        "notStarted",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ExecutionState"
 
 
 # =============================================================================
@@ -506,20 +506,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy = st.builds(
-    SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent,
+SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent_strategy = st.builds(
+    SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent,
     name=
         safe_text,
-    date=
-        st.integers(),
     internal=
-        st.booleans()
+        st.booleans(),
+    date=
+        st.integers()
 )
 SPDLScenario_strategy = st.builds(
     SPDLScenario,
 )
-SimplePDLSemantics::TM3SimplePDL::SPDLTrace_strategy = st.builds(
-    SimplePDLSemantics::TM3SimplePDL::SPDLTrace,
+SimplePDLSemantics_TM3SimplePDL_SPDLTrace_strategy = st.builds(
+    SimplePDLSemantics_TM3SimplePDL_SPDLTrace,
 )
 SPDLTrace_strategy = st.builds(
     SPDLTrace,
@@ -527,26 +527,26 @@ SPDLTrace_strategy = st.builds(
 WorkDefinitionEvent_strategy = st.builds(
     WorkDefinitionEvent,
 )
-SimplePDLSemantics::EDMMSimplePDL::FinishWD_strategy = st.builds(
-    SimplePDLSemantics::EDMMSimplePDL::FinishWD,
+SimplePDLSemantics_EDMMSimplePDL_FinishWD_strategy = st.builds(
+    SimplePDLSemantics_EDMMSimplePDL_FinishWD,
 )
-SimplePDLSemantics::EDMMSimplePDL::StartWD_strategy = st.builds(
-    SimplePDLSemantics::EDMMSimplePDL::StartWD,
+SimplePDLSemantics_EDMMSimplePDL_StartWD_strategy = st.builds(
+    SimplePDLSemantics_EDMMSimplePDL_StartWD,
 )
 Event_strategy = st.builds(
     Event,
 )
-SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent_strategy = st.builds(
-    SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent,
+SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent_strategy = st.builds(
+    SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent,
 )
 SPDLSimEvent_strategy = st.builds(
     SPDLSimEvent,
 )
-SimplePDLSemantics::EDMMSimplePDL::Event_strategy = st.builds(
-    SimplePDLSemantics::EDMMSimplePDL::Event,
+SimplePDLSemantics_EDMMSimplePDL_Event_strategy = st.builds(
+    SimplePDLSemantics_EDMMSimplePDL_Event,
 )
-SimplePDLSemantics::DDMMSimplePDL::ProcessElement_strategy = st.builds(
-    SimplePDLSemantics::DDMMSimplePDL::ProcessElement,
+SimplePDLSemantics_DDMMSimplePDL_ProcessElement_strategy = st.builds(
+    SimplePDLSemantics_DDMMSimplePDL_ProcessElement,
 )
 Process_strategy = st.builds(
     Process,
@@ -557,89 +557,80 @@ WorkSequence_strategy = st.builds(
 WorkDefinition_strategy = st.builds(
     WorkDefinition,
 )
-SimplePDLSemantics::TM3SimplePDL::SPDLScenario_strategy = st.builds(
-    SimplePDLSemantics::TM3SimplePDL::SPDLScenario,
+SimplePDLSemantics_TM3SimplePDL_SPDLScenario_strategy = st.builds(
+    SimplePDLSemantics_TM3SimplePDL_SPDLScenario,
 )
 ProcessElement_strategy = st.builds(
     ProcessElement,
 )
-SimplePDLSemantics::DDMMSimplePDL::Guidance_strategy = st.builds(
-    SimplePDLSemantics::DDMMSimplePDL::Guidance,
-    text=
-        safe_text
-)
-SimplePDLSemantics::DDMMSimplePDL::WorkDefinition_strategy = st.builds(
-    SimplePDLSemantics::DDMMSimplePDL::WorkDefinition,
-    name=
-        safe_text
-)
-SimplePDLSemantics::DDMMSimplePDL::WorkSequence_strategy = st.builds(
-    SimplePDLSemantics::DDMMSimplePDL::WorkSequence,
+SimplePDLSemantics_DDMMSimplePDL_WorkSequence_strategy = st.builds(
+    SimplePDLSemantics_DDMMSimplePDL_WorkSequence,
     linkType=
         safe_text
 )
-SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy = st.builds(
-    SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition,
-    state=
+SimplePDLSemantics_DDMMSimplePDL_Guidance_strategy = st.builds(
+    SimplePDLSemantics_DDMMSimplePDL_Guidance,
+    text=
+        safe_text
+)
+SimplePDLSemantics_DDMMSimplePDL_WorkDefinition_strategy = st.builds(
+    SimplePDLSemantics_DDMMSimplePDL_WorkDefinition,
+    name=
+        safe_text
+)
+SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition_strategy = st.builds(
+    SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition,
+    time=
         safe_text,
     timeElapsed=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    time=
+    state=
         safe_text
 )
-SimplePDLSemantics::DDMMSimplePDL::Process_strategy = st.builds(
-    SimplePDLSemantics::DDMMSimplePDL::Process,
+SimplePDLSemantics_DDMMSimplePDL_Process_strategy = st.builds(
+    SimplePDLSemantics_DDMMSimplePDL_Process,
     name=
         safe_text
 )
 
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
+@given(instance=SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent)
-
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent)
 
 
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_name_setter(instance):
+
+@given(instance=SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent_strategy)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_date_type(instance):
-    assert isinstance(instance.date, int)
 
 
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_internal_type(instance):
-    assert isinstance(instance.internal, bool)
-
-
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLSimEvent_strategy)
-def test_simplepdlsemantics::tm3simplepdl::spdlsimevent_internal_setter(instance):
+@given(instance=SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent_strategy)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_internal_setter(instance):
     original = instance.internal
     instance.internal = original
     assert instance.internal == original
+
+
+
+@given(instance=SimplePDLSemantics_TM3SimplePDL_SPDLSimEvent_strategy)
+def test_simplepdlsemantics_tm3simplepdl_spdlsimevent_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
 
 @given(instance=SPDLScenario_strategy)
 @settings(max_examples=50)
 def test_spdlscenario_instantiation(instance):
     assert isinstance(instance, SPDLScenario)
 
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLTrace_strategy)
+@given(instance=SimplePDLSemantics_TM3SimplePDL_SPDLTrace_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::tm3simplepdl::spdltrace_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::TM3SimplePDL::SPDLTrace)
+def test_simplepdlsemantics_tm3simplepdl_spdltrace_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_TM3SimplePDL_SPDLTrace)
 
 @given(instance=SPDLTrace_strategy)
 @settings(max_examples=50)
@@ -651,40 +642,40 @@ def test_spdltrace_instantiation(instance):
 def test_workdefinitionevent_instantiation(instance):
     assert isinstance(instance, WorkDefinitionEvent)
 
-@given(instance=SimplePDLSemantics::EDMMSimplePDL::FinishWD_strategy)
+@given(instance=SimplePDLSemantics_EDMMSimplePDL_FinishWD_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::edmmsimplepdl::finishwd_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::EDMMSimplePDL::FinishWD)
+def test_simplepdlsemantics_edmmsimplepdl_finishwd_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_EDMMSimplePDL_FinishWD)
 
-@given(instance=SimplePDLSemantics::EDMMSimplePDL::StartWD_strategy)
+@given(instance=SimplePDLSemantics_EDMMSimplePDL_StartWD_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::edmmsimplepdl::startwd_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::EDMMSimplePDL::StartWD)
+def test_simplepdlsemantics_edmmsimplepdl_startwd_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_EDMMSimplePDL_StartWD)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent_strategy)
+@given(instance=SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::edmmsimplepdl::workdefinitionevent_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::EDMMSimplePDL::WorkDefinitionEvent)
+def test_simplepdlsemantics_edmmsimplepdl_workdefinitionevent_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_EDMMSimplePDL_WorkDefinitionEvent)
 
 @given(instance=SPDLSimEvent_strategy)
 @settings(max_examples=50)
 def test_spdlsimevent_instantiation(instance):
     assert isinstance(instance, SPDLSimEvent)
 
-@given(instance=SimplePDLSemantics::EDMMSimplePDL::Event_strategy)
+@given(instance=SimplePDLSemantics_EDMMSimplePDL_Event_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::edmmsimplepdl::event_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::EDMMSimplePDL::Event)
+def test_simplepdlsemantics_edmmsimplepdl_event_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_EDMMSimplePDL_Event)
 
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::ProcessElement_strategy)
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_ProcessElement_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::ddmmsimplepdl::processelement_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::DDMMSimplePDL::ProcessElement)
+def test_simplepdlsemantics_ddmmsimplepdl_processelement_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_DDMMSimplePDL_ProcessElement)
 
 @given(instance=Process_strategy)
 @settings(max_examples=50)
@@ -701,114 +692,93 @@ def test_worksequence_instantiation(instance):
 def test_workdefinition_instantiation(instance):
     assert isinstance(instance, WorkDefinition)
 
-@given(instance=SimplePDLSemantics::TM3SimplePDL::SPDLScenario_strategy)
+@given(instance=SimplePDLSemantics_TM3SimplePDL_SPDLScenario_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::tm3simplepdl::spdlscenario_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::TM3SimplePDL::SPDLScenario)
+def test_simplepdlsemantics_tm3simplepdl_spdlscenario_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_TM3SimplePDL_SPDLScenario)
 
 @given(instance=ProcessElement_strategy)
 @settings(max_examples=50)
 def test_processelement_instantiation(instance):
     assert isinstance(instance, ProcessElement)
 
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::Guidance_strategy)
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_WorkSequence_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::DDMMSimplePDL::Guidance)
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::Guidance_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_simplepdlsemantics_ddmmsimplepdl_worksequence_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_DDMMSimplePDL_WorkSequence)
 
 
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::Guidance_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::guidance_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::WorkDefinition_strategy)
-@settings(max_examples=50)
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::DDMMSimplePDL::WorkDefinition)
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::WorkDefinition_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::WorkDefinition_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::workdefinition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::WorkSequence_strategy)
-@settings(max_examples=50)
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::DDMMSimplePDL::WorkSequence)
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::WorkSequence_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_linkType_type(instance):
-    assert isinstance(instance.linkType, str)
-
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::WorkSequence_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::worksequence_linkType_setter(instance):
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_WorkSequence_strategy)
+def test_simplepdlsemantics_ddmmsimplepdl_worksequence_linkType_setter(instance):
     original = instance.linkType
     instance.linkType = original
     assert instance.linkType == original
 
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_Guidance_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition)
-
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_state_type(instance):
-    assert isinstance(instance.state, str)
+def test_simplepdlsemantics_ddmmsimplepdl_guidance_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_DDMMSimplePDL_Guidance)
 
 
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
 
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_timeElapsed_type(instance):
-    assert isinstance(instance.timeElapsed, float)
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_Guidance_strategy)
+def test_simplepdlsemantics_ddmmsimplepdl_guidance_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
 
-
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_timeElapsed_setter(instance):
-    original = instance.timeElapsed
-    instance.timeElapsed = original
-    assert instance.timeElapsed == original
-
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_time_type(instance):
-    assert isinstance(instance.time, str)
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_WorkDefinition_strategy)
+@settings(max_examples=50)
+def test_simplepdlsemantics_ddmmsimplepdl_workdefinition_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_DDMMSimplePDL_WorkDefinition)
 
 
-@given(instance=SimplePDLSemantics::SDMMSimplePDL::DynamicWorkDefinition_strategy)
-def test_simplepdlsemantics::sdmmsimplepdl::dynamicworkdefinition_time_setter(instance):
+
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_WorkDefinition_strategy)
+def test_simplepdlsemantics_ddmmsimplepdl_workdefinition_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition_strategy)
+@settings(max_examples=50)
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition)
+
+
+
+@given(instance=SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition_strategy)
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::Process_strategy)
+
+
+@given(instance=SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition_strategy)
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_timeElapsed_setter(instance):
+    original = instance.timeElapsed
+    instance.timeElapsed = original
+    assert instance.timeElapsed == original
+
+
+
+@given(instance=SimplePDLSemantics_SDMMSimplePDL_DynamicWorkDefinition_strategy)
+def test_simplepdlsemantics_sdmmsimplepdl_dynamicworkdefinition_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_Process_strategy)
 @settings(max_examples=50)
-def test_simplepdlsemantics::ddmmsimplepdl::process_instantiation(instance):
-    assert isinstance(instance, SimplePDLSemantics::DDMMSimplePDL::Process)
-
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::Process_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::process_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplepdlsemantics_ddmmsimplepdl_process_instantiation(instance):
+    assert isinstance(instance, SimplePDLSemantics_DDMMSimplePDL_Process)
 
 
-@given(instance=SimplePDLSemantics::DDMMSimplePDL::Process_strategy)
-def test_simplepdlsemantics::ddmmsimplepdl::process_name_setter(instance):
+
+@given(instance=SimplePDLSemantics_DDMMSimplePDL_Process_strategy)
+def test_simplepdlsemantics_ddmmsimplepdl_process_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

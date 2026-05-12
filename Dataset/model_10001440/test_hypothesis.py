@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Data_Pembayaran,
@@ -38,28 +38,19 @@ def test_data_pembayaran_constructor_exists():
 def test_data_pembayaran_constructor_args():
     sig = inspect.signature(Data_Pembayaran.__init__)
     params = list(sig.parameters.keys())
-    assert "kode_bayar" in params, "Missing parameter 'kode_bayar'"
-    assert "keterangan" in params, "Missing parameter 'keterangan'"
+    assert "angsuranke" in params, "Missing parameter 'angsuranke'"
     assert "kode_kredit" in params, "Missing parameter 'kode_kredit'"
     assert "angsuran" in params, "Missing parameter 'angsuran'"
-    assert "angsuranke" in params, "Missing parameter 'angsuranke'"
+    assert "kode_bayar" in params, "Missing parameter 'kode_bayar'"
+    assert "keterangan" in params, "Missing parameter 'keterangan'"
     assert "tanggal_bayar" in params, "Missing parameter 'tanggal_bayar'"
 
-def test_data_pembayaran_has_kode_bayar():
-    assert hasattr(Data_Pembayaran, "kode_bayar")
+def test_data_pembayaran_has_angsuranke():
+    assert hasattr(Data_Pembayaran, "angsuranke")
     descriptor = None
     for klass in Data_Pembayaran.__mro__:
-        if "kode_bayar" in klass.__dict__:
-            descriptor = klass.__dict__["kode_bayar"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data_pembayaran_has_keterangan():
-    assert hasattr(Data_Pembayaran, "keterangan")
-    descriptor = None
-    for klass in Data_Pembayaran.__mro__:
-        if "keterangan" in klass.__dict__:
-            descriptor = klass.__dict__["keterangan"]
+        if "angsuranke" in klass.__dict__:
+            descriptor = klass.__dict__["angsuranke"]
             break
     assert isinstance(descriptor, property)
 
@@ -81,12 +72,21 @@ def test_data_pembayaran_has_angsuran():
             break
     assert isinstance(descriptor, property)
 
-def test_data_pembayaran_has_angsuranke():
-    assert hasattr(Data_Pembayaran, "angsuranke")
+def test_data_pembayaran_has_kode_bayar():
+    assert hasattr(Data_Pembayaran, "kode_bayar")
     descriptor = None
     for klass in Data_Pembayaran.__mro__:
-        if "angsuranke" in klass.__dict__:
-            descriptor = klass.__dict__["angsuranke"]
+        if "kode_bayar" in klass.__dict__:
+            descriptor = klass.__dict__["kode_bayar"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_pembayaran_has_keterangan():
+    assert hasattr(Data_Pembayaran, "keterangan")
+    descriptor = None
+    for klass in Data_Pembayaran.__mro__:
+        if "keterangan" in klass.__dict__:
+            descriptor = klass.__dict__["keterangan"]
             break
     assert isinstance(descriptor, property)
 
@@ -112,16 +112,16 @@ def test_pelanggan_constructor_exists():
 def test_pelanggan_constructor_args():
     sig = inspect.signature(Pelanggan.__init__)
     params = list(sig.parameters.keys())
-    assert "nama" in params, "Missing parameter 'nama'"
-    assert "alamat" in params, "Missing parameter 'alamat'"
     assert "kode_pelanggan" in params, "Missing parameter 'kode_pelanggan'"
+    assert "alamat" in params, "Missing parameter 'alamat'"
+    assert "nama" in params, "Missing parameter 'nama'"
 
-def test_pelanggan_has_nama():
-    assert hasattr(Pelanggan, "nama")
+def test_pelanggan_has_kode_pelanggan():
+    assert hasattr(Pelanggan, "kode_pelanggan")
     descriptor = None
     for klass in Pelanggan.__mro__:
-        if "nama" in klass.__dict__:
-            descriptor = klass.__dict__["nama"]
+        if "kode_pelanggan" in klass.__dict__:
+            descriptor = klass.__dict__["kode_pelanggan"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,12 +134,12 @@ def test_pelanggan_has_alamat():
             break
     assert isinstance(descriptor, property)
 
-def test_pelanggan_has_kode_pelanggan():
-    assert hasattr(Pelanggan, "kode_pelanggan")
+def test_pelanggan_has_nama():
+    assert hasattr(Pelanggan, "nama")
     descriptor = None
     for klass in Pelanggan.__mro__:
-        if "kode_pelanggan" in klass.__dict__:
-            descriptor = klass.__dict__["kode_pelanggan"]
+        if "nama" in klass.__dict__:
+            descriptor = klass.__dict__["nama"]
             break
     assert isinstance(descriptor, property)
 
@@ -156,17 +156,17 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "nama" in params, "Missing parameter 'nama'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "alamat" in params, "Missing parameter 'alamat'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "nama" in params, "Missing parameter 'nama'"
     assert "no_tlp" in params, "Missing parameter 'no_tlp'"
 
-def test_admin_has_nama():
-    assert hasattr(Admin, "nama")
+def test_admin_has_alamat():
+    assert hasattr(Admin, "alamat")
     descriptor = None
     for klass in Admin.__mro__:
-        if "nama" in klass.__dict__:
-            descriptor = klass.__dict__["nama"]
+        if "alamat" in klass.__dict__:
+            descriptor = klass.__dict__["alamat"]
             break
     assert isinstance(descriptor, property)
 
@@ -179,12 +179,12 @@ def test_admin_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_admin_has_alamat():
-    assert hasattr(Admin, "alamat")
+def test_admin_has_nama():
+    assert hasattr(Admin, "nama")
     descriptor = None
     for klass in Admin.__mro__:
-        if "alamat" in klass.__dict__:
-            descriptor = klass.__dict__["alamat"]
+        if "nama" in klass.__dict__:
+            descriptor = klass.__dict__["nama"]
             break
     assert isinstance(descriptor, property)
 
@@ -210,17 +210,8 @@ def test_login_admin_constructor_exists():
 def test_login_admin_constructor_args():
     sig = inspect.signature(Login_Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "User_name" in params, "Missing parameter 'User_name'"
-
-def test_login_admin_has_attribute():
-    assert hasattr(Login_Admin, "attribute")
-    descriptor = None
-    for klass in Login_Admin.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_login_admin_has_User_name():
     assert hasattr(Login_Admin, "User_name")
@@ -228,6 +219,15 @@ def test_login_admin_has_User_name():
     for klass in Login_Admin.__mro__:
         if "User_name" in klass.__dict__:
             descriptor = klass.__dict__["User_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_admin_has_attribute():
+    assert hasattr(Login_Admin, "attribute")
+    descriptor = None
+    for klass in Login_Admin.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -371,44 +371,44 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Data_Pembayaran_strategy = st.builds(
     Data_Pembayaran,
-    kode_bayar=
-        safe_text,
-    keterangan=
-        safe_text,
+    angsuranke=
+        st.integers(),
     kode_kredit=
         safe_text,
     angsuran=
         st.integers(),
-    angsuranke=
-        st.integers(),
+    kode_bayar=
+        safe_text,
+    keterangan=
+        safe_text,
     tanggal_bayar=
         safe_text
 )
 Pelanggan_strategy = st.builds(
     Pelanggan,
-    nama=
+    kode_pelanggan=
         safe_text,
     alamat=
         safe_text,
-    kode_pelanggan=
+    nama=
         safe_text
 )
 Admin_strategy = st.builds(
     Admin,
-    nama=
+    alamat=
         safe_text,
     id=
         safe_text,
-    alamat=
+    nama=
         safe_text,
     no_tlp=
         st.integers()
 )
 Login_Admin_strategy = st.builds(
     Login_Admin,
-    attribute=
-        safe_text,
     User_name=
+        safe_text,
+    attribute=
         safe_text
 )
 Cetak_Slip_UseCase_strategy = st.builds(
@@ -444,53 +444,6 @@ Melakukan_Login_UseCase_strategy = st.builds(
 def test_data_pembayaran_instantiation(instance):
     assert isinstance(instance, Data_Pembayaran)
 
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_kode_bayar_type(instance):
-    assert isinstance(instance.kode_bayar, str)
-
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_kode_bayar_setter(instance):
-    original = instance.kode_bayar
-    instance.kode_bayar = original
-    assert instance.kode_bayar == original
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_keterangan_type(instance):
-    assert isinstance(instance.keterangan, str)
-
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_keterangan_setter(instance):
-    original = instance.keterangan
-    instance.keterangan = original
-    assert instance.keterangan == original
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_kode_kredit_type(instance):
-    assert isinstance(instance.kode_kredit, str)
-
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_kode_kredit_setter(instance):
-    original = instance.kode_kredit
-    instance.kode_kredit = original
-    assert instance.kode_kredit == original
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_angsuran_type(instance):
-    assert isinstance(instance.angsuran, int)
-
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_angsuran_setter(instance):
-    original = instance.angsuran
-    instance.angsuran = original
-    assert instance.angsuran == original
-
-@given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_angsuranke_type(instance):
-    assert isinstance(instance.angsuranke, int)
 
 
 @given(instance=Data_Pembayaran_strategy)
@@ -499,9 +452,38 @@ def test_data_pembayaran_angsuranke_setter(instance):
     instance.angsuranke = original
     assert instance.angsuranke == original
 
+
+
 @given(instance=Data_Pembayaran_strategy)
-def test_data_pembayaran_tanggal_bayar_type(instance):
-    assert isinstance(instance.tanggal_bayar, str)
+def test_data_pembayaran_kode_kredit_setter(instance):
+    original = instance.kode_kredit
+    instance.kode_kredit = original
+    assert instance.kode_kredit == original
+
+
+
+@given(instance=Data_Pembayaran_strategy)
+def test_data_pembayaran_angsuran_setter(instance):
+    original = instance.angsuran
+    instance.angsuran = original
+    assert instance.angsuran == original
+
+
+
+@given(instance=Data_Pembayaran_strategy)
+def test_data_pembayaran_kode_bayar_setter(instance):
+    original = instance.kode_bayar
+    instance.kode_bayar = original
+    assert instance.kode_bayar == original
+
+
+
+@given(instance=Data_Pembayaran_strategy)
+def test_data_pembayaran_keterangan_setter(instance):
+    original = instance.keterangan
+    instance.keterangan = original
+    assert instance.keterangan == original
+
 
 
 @given(instance=Data_Pembayaran_strategy)
@@ -515,31 +497,6 @@ def test_data_pembayaran_tanggal_bayar_setter(instance):
 def test_pelanggan_instantiation(instance):
     assert isinstance(instance, Pelanggan)
 
-@given(instance=Pelanggan_strategy)
-def test_pelanggan_nama_type(instance):
-    assert isinstance(instance.nama, str)
-
-
-@given(instance=Pelanggan_strategy)
-def test_pelanggan_nama_setter(instance):
-    original = instance.nama
-    instance.nama = original
-    assert instance.nama == original
-
-@given(instance=Pelanggan_strategy)
-def test_pelanggan_alamat_type(instance):
-    assert isinstance(instance.alamat, str)
-
-
-@given(instance=Pelanggan_strategy)
-def test_pelanggan_alamat_setter(instance):
-    original = instance.alamat
-    instance.alamat = original
-    assert instance.alamat == original
-
-@given(instance=Pelanggan_strategy)
-def test_pelanggan_kode_pelanggan_type(instance):
-    assert isinstance(instance.kode_pelanggan, str)
 
 
 @given(instance=Pelanggan_strategy)
@@ -548,36 +505,27 @@ def test_pelanggan_kode_pelanggan_setter(instance):
     instance.kode_pelanggan = original
     assert instance.kode_pelanggan == original
 
-@given(instance=Admin_strategy)
-@settings(max_examples=50)
-def test_admin_instantiation(instance):
-    assert isinstance(instance, Admin)
-
-@given(instance=Admin_strategy)
-def test_admin_nama_type(instance):
-    assert isinstance(instance.nama, str)
 
 
-@given(instance=Admin_strategy)
-def test_admin_nama_setter(instance):
+@given(instance=Pelanggan_strategy)
+def test_pelanggan_alamat_setter(instance):
+    original = instance.alamat
+    instance.alamat = original
+    assert instance.alamat == original
+
+
+
+@given(instance=Pelanggan_strategy)
+def test_pelanggan_nama_setter(instance):
     original = instance.nama
     instance.nama = original
     assert instance.nama == original
 
 @given(instance=Admin_strategy)
-def test_admin_id_type(instance):
-    assert isinstance(instance.id, str)
+@settings(max_examples=50)
+def test_admin_instantiation(instance):
+    assert isinstance(instance, Admin)
 
-
-@given(instance=Admin_strategy)
-def test_admin_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Admin_strategy)
-def test_admin_alamat_type(instance):
-    assert isinstance(instance.alamat, str)
 
 
 @given(instance=Admin_strategy)
@@ -586,9 +534,22 @@ def test_admin_alamat_setter(instance):
     instance.alamat = original
     assert instance.alamat == original
 
+
+
 @given(instance=Admin_strategy)
-def test_admin_no_tlp_type(instance):
-    assert isinstance(instance.no_tlp, int)
+def test_admin_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Admin_strategy)
+def test_admin_nama_setter(instance):
+    original = instance.nama
+    instance.nama = original
+    assert instance.nama == original
+
 
 
 @given(instance=Admin_strategy)
@@ -602,20 +563,6 @@ def test_admin_no_tlp_setter(instance):
 def test_login_admin_instantiation(instance):
     assert isinstance(instance, Login_Admin)
 
-@given(instance=Login_Admin_strategy)
-def test_login_admin_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Login_Admin_strategy)
-def test_login_admin_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Login_Admin_strategy)
-def test_login_admin_User_name_type(instance):
-    assert isinstance(instance.User_name, str)
 
 
 @given(instance=Login_Admin_strategy)
@@ -623,6 +570,14 @@ def test_login_admin_User_name_setter(instance):
     original = instance.User_name
     instance.User_name = original
     assert instance.User_name == original
+
+
+
+@given(instance=Login_Admin_strategy)
+def test_login_admin_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
 
 @given(instance=Cetak_Slip_UseCase_strategy)
 @settings(max_examples=50)

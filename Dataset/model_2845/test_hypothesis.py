@@ -3,2467 +3,301 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    DiscreteChoice,
-    ExplicitGenericActualParameter,
-    EntryIndex,
-    adb::Primary,
-    adb::RealRangeSpecification,
-    adb::DiscreteChoice,
-    adb::Variant,
-    adb::ComponentClause,
-    adb::ModClause,
-    RealTypeDefinition,
-    adb::FixedPointDefinition,
-    adb::FloatingPointDefinition,
-    ComponentItem,
-    adb::VariantPart,
-    adb::OptVariantPart,
-    adb::ComponentItem,
-    adb::ComponentList,
-    adb::SimpleExpression,
-    IntegerTypeDefinition,
-    adb::ModularTypeDefinition,
-    adb::SignedIntegerTypeDefinition,
-    adb::ParameterSpecification,
-    ReturnSubtypeIndication,
-    ArrayIndexes,
-    adb::ConstrainedIndexes,
-    adb::UnconstrainedIndexes,
-    adb::ComponentDefinition,
-    adb::ArrayIndexes,
-    NotNullAccessDefinition,
-    AccessSpecification,
-    adb::AccessToDataDefinition,
-    adb::AccessToSubprogramDefinition,
-    adb::AccessSpecification,
-    adb::AccessToDataInstance,
-    TypeDefinition,
-    adb::IntegerTypeDefinition,
-    adb::EnumerationTypeDefinition,
-    adb::DerivedTypeDefinition,
-    adb::RecordTypeDefinition,
-    adb::RealTypeDefinition,
-    adb::NotNullAccessDefinition,
-    adb::DiscriminantSpecification,
-    adb::RecordDefinition,
-    adb::RecordExtensionPart,
-    DiscriminantPart,
-    adb::UnknownDiscriminantPart,
-    adb::ExplicitGenericActualParameter,
-    AbortStatement,
-    adb::TaskNames,
-    adb::EntryCallAlternative,
-    SelectAlternative,
-    adb::DelayAlternative,
-    adb::AcceptAlternative,
-    adb::GuardedAlternative,
-    adb::SelectAlternative,
-    adb::Guard,
-    SelectStatement,
-    adb::ConditionalEntryCall,
-    adb::TimedEntryCall,
-    adb::SelectiveAccept,
-    adb::TriggeringStatement,
-    adb::AbortablePart,
-    adb::TriggeringAlternative,
-    adb::AsynchronousSelect,
-    adb::EntryIndexSpecification,
-    adb::EntryBarrier,
-    adb::EntryBodyFormalPart,
-    adb::EntryIndex,
-    adb::ProtectedOperationItem,
-    adb::ReturnSubtypeIndication,
-    TriggeringStatement,
-    adb::LoopParameterSpecification,
-    adb::IterationScheme,
-    CompoundStatement,
-    adb::ExtendedReturnStatement,
-    adb::SelectStatement,
-    adb::AcceptStatement,
-    adb::LoopStatement,
-    adb::IfStatement,
-    adb::PragmaArgumentAssociation,
-    adb::DiscreteChoiceList,
-    adb::CaseStatementAlternative,
-    adb::CaseStatement,
-    ObjectDeclaration,
-    adb::DataInstanceDeclaration,
-    adb::GenericAssociation,
-    adb::FormalPackageAssociation,
-    adb::FormalPackageActualPart,
-    adb::SubprogramDefault,
-    adb::AnonymousAccessDefinition,
-    adb::OptNullExclusion,
-    adb::SingleProtectedDeclaration,
-    adb::Mode,
-    adb::DefiningIdentifierList,
-    FormalTypeDefinition,
-    adb::FormalDerivedTypeDefinition,
-    adb::AccessTypeDefinition,
-    adb::InterfaceTypeDefinition,
-    adb::ArrayTypeDefinition,
-    GenericFormalParameterDeclaration,
-    adb::FormalSubprogramDeclaration,
-    adb::FormalPackageDeclaration,
-    adb::FormalTypeDeclaration,
-    adb::FormalObjectDeclaration,
-    adb::FormalPrivateTypeDefinition,
-    adb::FormalTypeDefinition,
-    Range,
-    adb::ExplicitRange,
-    adb::EntityRange,
-    RangeConstraint,
-    adb::ParameterEffectiveValue,
-    adb::AttributeDesignator,
-    adb::PrimaryName,
-    Interval,
-    adb::ArrayComponentAssociation,
-    ArrayAggregate,
-    adb::NamedArrayAggregate,
-    adb::PositionalArrayAggregate,
-    adb::AncestorPart,
+from python_code import (
     RecordComponentAssociation,
-    adb::UninitializedComponents,
-    adb::InitializedComponents,
-    adb::ParameterAssociation,
-    adb::RecordComponentAssociation,
+    adb_UninitializedComponents,
+    adb_InitializedComponents,
+    adb_ParameterAssociation,
+    adb_RecordComponentAssociation,
     RecordAggregate,
-    adb::RecordComponentAssociationList,
+    adb_RecordComponentAssociationList,
     Aggregate,
-    adb::ArrayAggregate,
-    adb::ExtensionAggregate,
-    adb::RecordAggregate,
+    adb_ExtensionAggregate,
+    adb_RecordAggregate,
     Qualifier,
     ParenthesizedExpression,
-    adb::Aggregate,
-    adb::ComponentChoiceList,
-    adb::DiscriminantSelectors,
-    adb::DiscriminantAssociation,
+    adb_Aggregate,
+    adb_ComponentChoiceList,
+    adb_DiscriminantSelectors,
+    adb_DiscriminantAssociation,
     CompositeConstraint,
-    adb::IndexConstraint,
-    adb::DiscriminantConstraint,
-    adb::CompositeConstraint,
-    adb::OptConstraint,
+    adb_IndexConstraint,
+    adb_DiscriminantConstraint,
+    adb_CompositeConstraint,
+    adb_OptConstraint,
     DiscreteRange,
     DiscreteSubtypeDefinition,
-    adb::DiscreteRange,
-    adb::Qualifier,
+    adb_DiscreteRange,
+    adb_Qualifier,
     Primary,
-    adb::Allocator,
-    adb::Null,
-    adb::QualifiedName,
-    adb::StringLiteral,
-    adb::ParenthesizedExpression,
-    adb::NumericLiteral,
+    adb_QualifiedName,
+    adb_StringLiteral,
+    adb_Allocator,
+    adb_Null,
+    adb_ParenthesizedExpression,
+    adb_NumericLiteral,
+    Range,
+    adb_ExplicitRange,
+    adb_EntityRange,
+    RangeConstraint,
+    adb_ParameterEffectiveValue,
+    adb_AttributeDesignator,
+    adb_PrimaryName,
+    Interval,
+    adb_ArrayComponentAssociation,
+    ArrayAggregate,
+    adb_NamedArrayAggregate,
+    adb_PositionalArrayAggregate,
+    adb_ArrayAggregate,
+    adb_AncestorPart,
     ScalarConstraint,
-    adb::DeltaConstraint,
-    adb::RangeConstraint,
-    adb::DigitsConstraint,
-    adb::ScalarConstraint,
-    adb::EObject,
-    adb::Factor,
-    adb::Term,
-    adb::Interval,
-    adb::Membership,
-    adb::Relation,
+    adb_RangeConstraint,
+    adb_DeltaConstraint,
+    adb_DigitsConstraint,
+    adb_ScalarConstraint,
+    adb_EObject,
+    adb_Factor,
+    adb_Term,
+    adb_Interval,
+    adb_Membership,
+    adb_Relation,
     ParameterEffectiveValue,
-    adb::Range,
     AncestorPart,
-    adb::Expression,
-    adb::ExceptionHandler,
-    adb::GenericItem,
+    DiscreteChoice,
+    adb_Range,
+    ExplicitGenericActualParameter,
+    EntryIndex,
+    adb_Primary,
+    adb_RealRangeSpecification,
+    adb_DiscreteChoice,
+    adb_Variant,
+    adb_ComponentClause,
+    adb_ModClause,
+    RealTypeDefinition,
+    adb_FixedPointDefinition,
+    adb_FloatingPointDefinition,
+    ComponentItem,
+    adb_VariantPart,
+    adb_OptVariantPart,
+    adb_ComponentItem,
+    adb_ComponentList,
+    adb_SimpleExpression,
+    IntegerTypeDefinition,
+    adb_ModularTypeDefinition,
+    adb_SignedIntegerTypeDefinition,
+    adb_ParameterSpecification,
+    ReturnSubtypeIndication,
+    ArrayIndexes,
+    adb_ConstrainedIndexes,
+    adb_UnconstrainedIndexes,
+    adb_ComponentDefinition,
+    adb_ArrayIndexes,
+    NotNullAccessDefinition,
+    AccessSpecification,
+    adb_AccessToDataDefinition,
+    adb_AccessToSubprogramDefinition,
+    adb_AccessSpecification,
+    adb_AccessToDataInstance,
+    TypeDefinition,
+    adb_IntegerTypeDefinition,
+    adb_RealTypeDefinition,
+    adb_RecordTypeDefinition,
+    adb_DerivedTypeDefinition,
+    adb_EnumerationTypeDefinition,
+    adb_NotNullAccessDefinition,
+    adb_DiscriminantSpecification,
+    adb_RecordDefinition,
+    adb_RecordExtensionPart,
+    DiscriminantPart,
+    adb_UnknownDiscriminantPart,
+    adb_ExplicitGenericActualParameter,
+    AbortStatement,
+    adb_TaskNames,
+    adb_EntryCallAlternative,
+    SelectAlternative,
+    adb_DelayAlternative,
+    adb_AcceptAlternative,
+    adb_GuardedAlternative,
+    adb_SelectAlternative,
+    adb_Guard,
+    SelectStatement,
+    adb_ConditionalEntryCall,
+    adb_TimedEntryCall,
+    adb_SelectiveAccept,
+    adb_TriggeringStatement,
+    adb_AbortablePart,
+    adb_TriggeringAlternative,
+    adb_AsynchronousSelect,
+    adb_EntryIndexSpecification,
+    adb_EntryBarrier,
+    adb_EntryBodyFormalPart,
+    adb_EntryIndex,
+    adb_ProtectedOperationItem,
+    adb_ReturnSubtypeIndication,
+    TriggeringStatement,
+    adb_LoopParameterSpecification,
+    adb_IterationScheme,
+    CompoundStatement,
+    adb_ExtendedReturnStatement,
+    adb_AcceptStatement,
+    adb_SelectStatement,
+    adb_LoopStatement,
+    adb_IfStatement,
+    adb_PragmaArgumentAssociation,
+    adb_DiscreteChoiceList,
+    adb_CaseStatementAlternative,
+    adb_CaseStatement,
+    ObjectDeclaration,
+    adb_DataInstanceDeclaration,
+    adb_GenericAssociation,
+    adb_FormalPackageAssociation,
+    adb_FormalPackageActualPart,
+    adb_SubprogramDefault,
+    adb_Expression,
+    adb_AnonymousAccessDefinition,
+    adb_OptNullExclusion,
+    adb_SingleProtectedDeclaration,
+    adb_Mode,
+    adb_DefiningIdentifierList,
+    FormalTypeDefinition,
+    adb_InterfaceTypeDefinition,
+    adb_ArrayTypeDefinition,
+    adb_AccessTypeDefinition,
+    adb_FormalDerivedTypeDefinition,
+    GenericFormalParameterDeclaration,
+    adb_FormalTypeDeclaration,
+    adb_FormalPackageDeclaration,
+    adb_FormalSubprogramDeclaration,
+    adb_FormalObjectDeclaration,
+    adb_FormalPrivateTypeDefinition,
+    adb_FormalTypeDefinition,
+    adb_ExceptionHandler,
+    adb_GenericItem,
     SimpleStatement,
-    adb::AbortStatement,
-    adb::SimpleReturnStatement,
-    adb::GotoStatement,
-    adb::ProcedureOrEntryCallStatement,
-    adb::DelayStatement,
-    adb::RaiseStatement,
-    adb::AssignmentStatement,
-    adb::RequeueStatement,
-    adb::ExitStatement,
-    adb::NullStatement,
+    adb_SimpleReturnStatement,
+    adb_GotoStatement,
+    adb_AbortStatement,
+    adb_ExitStatement,
+    adb_AssignmentStatement,
+    adb_DelayStatement,
+    adb_ProcedureOrEntryCallStatement,
+    adb_RaiseStatement,
+    adb_RequeueStatement,
+    adb_NullStatement,
     Statement,
-    adb::CompoundStatement,
-    adb::SimpleStatement,
-    adb::Statement,
-    adb::LabelisableStatement,
+    adb_CompoundStatement,
+    adb_SimpleStatement,
+    adb_Statement,
+    adb_LabelisableStatement,
     AbortablePart,
     HandledSequenceOfStatements,
-    adb::SequenceOfStatements,
-    adb::Label,
+    adb_SequenceOfStatements,
+    adb_Label,
     Body,
-    adb::BodyStub,
-    adb::ProperBody,
+    adb_ProperBody,
+    adb_BodyStub,
     ProtectedElementDeclaration,
-    adb::ComponentDeclaration,
-    adb::ProtectedOperationDeclaration,
-    adb::ProtectedElementDeclaration,
-    adb::ProtectedDefinition,
-    adb::FormalPart,
-    adb::DiscreteSubtypeDefinition,
-    adb::Name,
-    adb::ExceptionChoice,
-    adb::ParameterAndResultProfile,
+    adb_ComponentDeclaration,
+    adb_ProtectedOperationDeclaration,
+    adb_ProtectedElementDeclaration,
+    adb_ProtectedDefinition,
+    adb_FormalPart,
+    adb_DiscreteSubtypeDefinition,
+    adb_Name,
+    adb_ExceptionChoice,
+    adb_ParameterAndResultProfile,
     SubprogramSpecification,
-    adb::FunctionSpecification,
-    adb::ProcedureSpecification,
+    adb_FunctionSpecification,
+    adb_ProcedureSpecification,
     BodyStub,
-    adb::ProtectedBodyStub,
-    adb::PackageBodyStub,
-    adb::TaskBodyStub,
+    adb_TaskBodyStub,
+    adb_PackageBodyStub,
+    adb_ProtectedBodyStub,
     NewTypeDeclaration,
-    adb::FullTypeDeclaration,
+    adb_FullTypeDeclaration,
     TypeDeclaration,
-    adb::SubtypeDeclaration,
-    adb::NewTypeDeclaration,
-    adb::TaskDefinition,
-    adb::InterfaceList,
-    adb::KnownDiscriminantPart,
+    adb_SubtypeDeclaration,
+    adb_NewTypeDeclaration,
+    adb_TaskDefinition,
+    adb_InterfaceList,
+    adb_KnownDiscriminantPart,
     DeclarativeItem,
-    adb::Body,
+    adb_Body,
     ProtectedOperationDeclaration,
     TaskItem,
-    adb::EntryDeclaration,
-    adb::TaskItem,
-    adb::SubtypeIndication,
-    adb::PrivateExtensionDeclaration,
-    adb::PrivateTypeDeclaration,
-    adb::DiscriminantPart,
-    adb::IncompleteTypeDeclaration,
-    adb::TypeDefinition,
+    adb_EntryDeclaration,
+    adb_TaskItem,
+    adb_SubtypeIndication,
+    adb_PrivateExtensionDeclaration,
+    adb_PrivateTypeDeclaration,
+    adb_DiscriminantPart,
+    adb_IncompleteTypeDeclaration,
+    adb_TypeDefinition,
     FullTypeDeclaration,
-    adb::ProtectedTypeDeclaration,
-    adb::FullDataTypeDeclaration,
-    adb::PackageSpecification,
+    adb_ProtectedTypeDeclaration,
+    adb_FullDataTypeDeclaration,
+    adb_PackageSpecification,
     LibrarySpecification,
     PackageDeclaration,
-    adb::Renaming,
-    adb::PackageDefinition,
+    adb_Renaming,
+    adb_PackageDefinition,
     BasicDeclaration,
-    adb::NumberDeclaration,
-    adb::TaskDeclaration,
-    adb::TypeDeclaration,
-    adb::ExceptionDeclaration,
-    adb::ObjectDeclaration,
+    adb_ExceptionDeclaration,
+    adb_NumberDeclaration,
+    adb_ObjectDeclaration,
+    adb_TaskDeclaration,
+    adb_TypeDeclaration,
     LibraryUnitSpecification,
-    adb::PackageDeclaration,
-    adb::LibraryUnitSpecification,
+    adb_PackageDeclaration,
+    adb_LibraryUnitSpecification,
     Unit,
-    adb::SeparateSubunit,
-    adb::HandledSequenceOfStatements,
-    adb::DeclarativeItem,
-    adb::DeclarativeBlock,
-    adb::SubprogramSpecification,
+    adb_SeparateSubunit,
+    adb_HandledSequenceOfStatements,
+    adb_DeclarativeItem,
+    adb_DeclarativeBlock,
+    adb_SubprogramSpecification,
     ProtectedOperationItem,
-    adb::SubprogramDeclaration,
+    adb_SubprogramDeclaration,
     ProperBody,
-    adb::ProtectedBody,
+    adb_ProtectedBody,
     DeclarativeBlock,
-    adb::EntryBody,
-    adb::TaskBody,
-    adb::BlockStatement,
-    adb::PackageBody,
-    adb::SubprogramBody,
-    adb::BasicDeclarativeItem,
-    adb::GenericActualPart,
-    adb::OverridingIndicator,
-    adb::GenericInstantiation,
-    adb::LibrarySpecification,
-    adb::GenericItems,
-    adb::GenericDeclaration,
+    adb_TaskBody,
+    adb_EntryBody,
+    adb_PackageBody,
+    adb_BlockStatement,
+    adb_SubprogramBody,
+    adb_BasicDeclarativeItem,
+    adb_GenericActualPart,
+    adb_OverridingIndicator,
+    adb_GenericInstantiation,
+    adb_LibrarySpecification,
+    adb_GenericItems,
+    adb_GenericDeclaration,
     UseClause,
-    adb::UseTypeClause,
-    adb::UsePackageClause,
+    adb_UseTypeClause,
+    adb_UsePackageClause,
     GenericItem,
-    adb::GenericFormalParameterDeclaration,
+    adb_GenericFormalParameterDeclaration,
     BasicDeclarativeItem,
-    adb::AspectClause,
-    adb::BasicDeclaration,
-    adb::LibraryUnitDeclaration,
+    adb_BasicDeclaration,
+    adb_AspectClause,
+    adb_LibraryUnitDeclaration,
     ContextItem,
-    adb::UseClause,
-    adb::WithClause,
-    adb::ContextItem,
-    adb::Pragma,
-    adb::Unit,
-    adb::ContextClause,
-    adb::CompilationUnit,
-    adb::Compilation,
+    adb_UseClause,
+    adb_WithClause,
+    adb_ContextItem,
+    adb_Pragma,
+    adb_Unit,
+    adb_ContextClause,
+    adb_CompilationUnit,
+    adb_Compilation,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_discretechoice_is_not_abstract():
-    assert not inspect.isabstract(DiscreteChoice)
-
-
-def test_discretechoice_constructor_exists():
-    assert callable(DiscreteChoice.__init__)
-
-
-def test_discretechoice_constructor_args():
-    sig = inspect.signature(DiscreteChoice.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_explicitgenericactualparameter_is_not_abstract():
-    assert not inspect.isabstract(ExplicitGenericActualParameter)
-
-
-def test_explicitgenericactualparameter_constructor_exists():
-    assert callable(ExplicitGenericActualParameter.__init__)
-
-
-def test_explicitgenericactualparameter_constructor_args():
-    sig = inspect.signature(ExplicitGenericActualParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_entryindex_is_not_abstract():
-    assert not inspect.isabstract(EntryIndex)
-
-
-def test_entryindex_constructor_exists():
-    assert callable(EntryIndex.__init__)
-
-
-def test_entryindex_constructor_args():
-    sig = inspect.signature(EntryIndex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::primary_is_not_abstract():
-    assert not inspect.isabstract(adb::Primary)
-
-
-def test_adb::primary_constructor_exists():
-    assert callable(adb::Primary.__init__)
-
-
-def test_adb::primary_constructor_args():
-    sig = inspect.signature(adb::Primary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::realrangespecification_is_not_abstract():
-    assert not inspect.isabstract(adb::RealRangeSpecification)
-
-
-def test_adb::realrangespecification_constructor_exists():
-    assert callable(adb::RealRangeSpecification.__init__)
-
-
-def test_adb::realrangespecification_constructor_args():
-    sig = inspect.signature(adb::RealRangeSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::discretechoice_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscreteChoice)
-
-
-def test_adb::discretechoice_constructor_exists():
-    assert callable(adb::DiscreteChoice.__init__)
-
-
-def test_adb::discretechoice_constructor_args():
-    sig = inspect.signature(adb::DiscreteChoice.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::variant_is_not_abstract():
-    assert not inspect.isabstract(adb::Variant)
-
-
-def test_adb::variant_constructor_exists():
-    assert callable(adb::Variant.__init__)
-
-
-def test_adb::variant_constructor_args():
-    sig = inspect.signature(adb::Variant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::componentclause_is_not_abstract():
-    assert not inspect.isabstract(adb::ComponentClause)
-
-
-def test_adb::componentclause_constructor_exists():
-    assert callable(adb::ComponentClause.__init__)
-
-
-def test_adb::componentclause_constructor_args():
-    sig = inspect.signature(adb::ComponentClause.__init__)
-    params = list(sig.parameters.keys())
-    assert "localName" in params, "Missing parameter 'localName'"
-
-def test_adb::componentclause_has_localName():
-    assert hasattr(adb::ComponentClause, "localName")
-    descriptor = None
-    for klass in adb::ComponentClause.__mro__:
-        if "localName" in klass.__dict__:
-            descriptor = klass.__dict__["localName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::modclause_is_not_abstract():
-    assert not inspect.isabstract(adb::ModClause)
-
-
-def test_adb::modclause_constructor_exists():
-    assert callable(adb::ModClause.__init__)
-
-
-def test_adb::modclause_constructor_args():
-    sig = inspect.signature(adb::ModClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_realtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(RealTypeDefinition)
-
-
-def test_realtypedefinition_constructor_exists():
-    assert callable(RealTypeDefinition.__init__)
-
-
-def test_realtypedefinition_constructor_args():
-    sig = inspect.signature(RealTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::fixedpointdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::FixedPointDefinition)
-
-
-def test_adb::fixedpointdefinition_constructor_exists():
-    assert callable(adb::FixedPointDefinition.__init__)
-
-
-def test_adb::fixedpointdefinition_constructor_args():
-    sig = inspect.signature(adb::FixedPointDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::floatingpointdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::FloatingPointDefinition)
-
-
-def test_adb::floatingpointdefinition_constructor_exists():
-    assert callable(adb::FloatingPointDefinition.__init__)
-
-
-def test_adb::floatingpointdefinition_constructor_args():
-    sig = inspect.signature(adb::FloatingPointDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentitem_is_not_abstract():
-    assert not inspect.isabstract(ComponentItem)
-
-
-def test_componentitem_constructor_exists():
-    assert callable(ComponentItem.__init__)
-
-
-def test_componentitem_constructor_args():
-    sig = inspect.signature(ComponentItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::variantpart_is_not_abstract():
-    assert not inspect.isabstract(adb::VariantPart)
-
-
-def test_adb::variantpart_constructor_exists():
-    assert callable(adb::VariantPart.__init__)
-
-
-def test_adb::variantpart_constructor_args():
-    sig = inspect.signature(adb::VariantPart.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_adb::variantpart_has_name():
-    assert hasattr(adb::VariantPart, "name")
-    descriptor = None
-    for klass in adb::VariantPart.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::optvariantpart_is_not_abstract():
-    assert not inspect.isabstract(adb::OptVariantPart)
-
-
-def test_adb::optvariantpart_constructor_exists():
-    assert callable(adb::OptVariantPart.__init__)
-
-
-def test_adb::optvariantpart_constructor_args():
-    sig = inspect.signature(adb::OptVariantPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::componentitem_is_not_abstract():
-    assert not inspect.isabstract(adb::ComponentItem)
-
-
-def test_adb::componentitem_constructor_exists():
-    assert callable(adb::ComponentItem.__init__)
-
-
-def test_adb::componentitem_constructor_args():
-    sig = inspect.signature(adb::ComponentItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::componentlist_is_not_abstract():
-    assert not inspect.isabstract(adb::ComponentList)
-
-
-def test_adb::componentlist_constructor_exists():
-    assert callable(adb::ComponentList.__init__)
-
-
-def test_adb::componentlist_constructor_args():
-    sig = inspect.signature(adb::ComponentList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::simpleexpression_is_not_abstract():
-    assert not inspect.isabstract(adb::SimpleExpression)
-
-
-def test_adb::simpleexpression_constructor_exists():
-    assert callable(adb::SimpleExpression.__init__)
-
-
-def test_adb::simpleexpression_constructor_args():
-    sig = inspect.signature(adb::SimpleExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "unaryAddingOperator" in params, "Missing parameter 'unaryAddingOperator'"
-    assert "binaryAddingOperators" in params, "Missing parameter 'binaryAddingOperators'"
-
-def test_adb::simpleexpression_has_unaryAddingOperator():
-    assert hasattr(adb::SimpleExpression, "unaryAddingOperator")
-    descriptor = None
-    for klass in adb::SimpleExpression.__mro__:
-        if "unaryAddingOperator" in klass.__dict__:
-            descriptor = klass.__dict__["unaryAddingOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::simpleexpression_has_binaryAddingOperators():
-    assert hasattr(adb::SimpleExpression, "binaryAddingOperators")
-    descriptor = None
-    for klass in adb::SimpleExpression.__mro__:
-        if "binaryAddingOperators" in klass.__dict__:
-            descriptor = klass.__dict__["binaryAddingOperators"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_integertypedefinition_is_not_abstract():
-    assert not inspect.isabstract(IntegerTypeDefinition)
-
-
-def test_integertypedefinition_constructor_exists():
-    assert callable(IntegerTypeDefinition.__init__)
-
-
-def test_integertypedefinition_constructor_args():
-    sig = inspect.signature(IntegerTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::modulartypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::ModularTypeDefinition)
-
-
-def test_adb::modulartypedefinition_constructor_exists():
-    assert callable(adb::ModularTypeDefinition.__init__)
-
-
-def test_adb::modulartypedefinition_constructor_args():
-    sig = inspect.signature(adb::ModularTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::signedintegertypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::SignedIntegerTypeDefinition)
-
-
-def test_adb::signedintegertypedefinition_constructor_exists():
-    assert callable(adb::SignedIntegerTypeDefinition.__init__)
-
-
-def test_adb::signedintegertypedefinition_constructor_args():
-    sig = inspect.signature(adb::SignedIntegerTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::parameterspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::ParameterSpecification)
-
-
-def test_adb::parameterspecification_constructor_exists():
-    assert callable(adb::ParameterSpecification.__init__)
-
-
-def test_adb::parameterspecification_constructor_args():
-    sig = inspect.signature(adb::ParameterSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_returnsubtypeindication_is_not_abstract():
-    assert not inspect.isabstract(ReturnSubtypeIndication)
-
-
-def test_returnsubtypeindication_constructor_exists():
-    assert callable(ReturnSubtypeIndication.__init__)
-
-
-def test_returnsubtypeindication_constructor_args():
-    sig = inspect.signature(ReturnSubtypeIndication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrayindexes_is_not_abstract():
-    assert not inspect.isabstract(ArrayIndexes)
-
-
-def test_arrayindexes_constructor_exists():
-    assert callable(ArrayIndexes.__init__)
-
-
-def test_arrayindexes_constructor_args():
-    sig = inspect.signature(ArrayIndexes.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::constrainedindexes_is_not_abstract():
-    assert not inspect.isabstract(adb::ConstrainedIndexes)
-
-
-def test_adb::constrainedindexes_constructor_exists():
-    assert callable(adb::ConstrainedIndexes.__init__)
-
-
-def test_adb::constrainedindexes_constructor_args():
-    sig = inspect.signature(adb::ConstrainedIndexes.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::unconstrainedindexes_is_not_abstract():
-    assert not inspect.isabstract(adb::UnconstrainedIndexes)
-
-
-def test_adb::unconstrainedindexes_constructor_exists():
-    assert callable(adb::UnconstrainedIndexes.__init__)
-
-
-def test_adb::unconstrainedindexes_constructor_args():
-    sig = inspect.signature(adb::UnconstrainedIndexes.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::componentdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::ComponentDefinition)
-
-
-def test_adb::componentdefinition_constructor_exists():
-    assert callable(adb::ComponentDefinition.__init__)
-
-
-def test_adb::componentdefinition_constructor_args():
-    sig = inspect.signature(adb::ComponentDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "aliased" in params, "Missing parameter 'aliased'"
-
-def test_adb::componentdefinition_has_aliased():
-    assert hasattr(adb::ComponentDefinition, "aliased")
-    descriptor = None
-    for klass in adb::ComponentDefinition.__mro__:
-        if "aliased" in klass.__dict__:
-            descriptor = klass.__dict__["aliased"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::arrayindexes_is_not_abstract():
-    assert not inspect.isabstract(adb::ArrayIndexes)
-
-
-def test_adb::arrayindexes_constructor_exists():
-    assert callable(adb::ArrayIndexes.__init__)
-
-
-def test_adb::arrayindexes_constructor_args():
-    sig = inspect.signature(adb::ArrayIndexes.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notnullaccessdefinition_is_not_abstract():
-    assert not inspect.isabstract(NotNullAccessDefinition)
-
-
-def test_notnullaccessdefinition_constructor_exists():
-    assert callable(NotNullAccessDefinition.__init__)
-
-
-def test_notnullaccessdefinition_constructor_args():
-    sig = inspect.signature(NotNullAccessDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_accessspecification_is_not_abstract():
-    assert not inspect.isabstract(AccessSpecification)
-
-
-def test_accessspecification_constructor_exists():
-    assert callable(AccessSpecification.__init__)
-
-
-def test_accessspecification_constructor_args():
-    sig = inspect.signature(AccessSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::accesstodatadefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::AccessToDataDefinition)
-
-
-def test_adb::accesstodatadefinition_constructor_exists():
-    assert callable(adb::AccessToDataDefinition.__init__)
-
-
-def test_adb::accesstodatadefinition_constructor_args():
-    sig = inspect.signature(adb::AccessToDataDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "generalAccessModifier" in params, "Missing parameter 'generalAccessModifier'"
-
-def test_adb::accesstodatadefinition_has_generalAccessModifier():
-    assert hasattr(adb::AccessToDataDefinition, "generalAccessModifier")
-    descriptor = None
-    for klass in adb::AccessToDataDefinition.__mro__:
-        if "generalAccessModifier" in klass.__dict__:
-            descriptor = klass.__dict__["generalAccessModifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::accesstosubprogramdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::AccessToSubprogramDefinition)
-
-
-def test_adb::accesstosubprogramdefinition_constructor_exists():
-    assert callable(adb::AccessToSubprogramDefinition.__init__)
-
-
-def test_adb::accesstosubprogramdefinition_constructor_args():
-    sig = inspect.signature(adb::AccessToSubprogramDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "protected" in params, "Missing parameter 'protected'"
-
-def test_adb::accesstosubprogramdefinition_has_protected():
-    assert hasattr(adb::AccessToSubprogramDefinition, "protected")
-    descriptor = None
-    for klass in adb::AccessToSubprogramDefinition.__mro__:
-        if "protected" in klass.__dict__:
-            descriptor = klass.__dict__["protected"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::accessspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::AccessSpecification)
-
-
-def test_adb::accessspecification_constructor_exists():
-    assert callable(adb::AccessSpecification.__init__)
-
-
-def test_adb::accessspecification_constructor_args():
-    sig = inspect.signature(adb::AccessSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::accesstodatainstance_is_not_abstract():
-    assert not inspect.isabstract(adb::AccessToDataInstance)
-
-
-def test_adb::accesstodatainstance_constructor_exists():
-    assert callable(adb::AccessToDataInstance.__init__)
-
-
-def test_adb::accesstodatainstance_constructor_args():
-    sig = inspect.signature(adb::AccessToDataInstance.__init__)
-    params = list(sig.parameters.keys())
-    assert "constant" in params, "Missing parameter 'constant'"
-
-def test_adb::accesstodatainstance_has_constant():
-    assert hasattr(adb::AccessToDataInstance, "constant")
-    descriptor = None
-    for klass in adb::AccessToDataInstance.__mro__:
-        if "constant" in klass.__dict__:
-            descriptor = klass.__dict__["constant"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_typedefinition_is_not_abstract():
-    assert not inspect.isabstract(TypeDefinition)
-
-
-def test_typedefinition_constructor_exists():
-    assert callable(TypeDefinition.__init__)
-
-
-def test_typedefinition_constructor_args():
-    sig = inspect.signature(TypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::integertypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::IntegerTypeDefinition)
-
-
-def test_adb::integertypedefinition_constructor_exists():
-    assert callable(adb::IntegerTypeDefinition.__init__)
-
-
-def test_adb::integertypedefinition_constructor_args():
-    sig = inspect.signature(adb::IntegerTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::enumerationtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::EnumerationTypeDefinition)
-
-
-def test_adb::enumerationtypedefinition_constructor_exists():
-    assert callable(adb::EnumerationTypeDefinition.__init__)
-
-
-def test_adb::enumerationtypedefinition_constructor_args():
-    sig = inspect.signature(adb::EnumerationTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "enumerationliteralspecifications" in params, "Missing parameter 'enumerationliteralspecifications'"
-
-def test_adb::enumerationtypedefinition_has_enumerationliteralspecifications():
-    assert hasattr(adb::EnumerationTypeDefinition, "enumerationliteralspecifications")
-    descriptor = None
-    for klass in adb::EnumerationTypeDefinition.__mro__:
-        if "enumerationliteralspecifications" in klass.__dict__:
-            descriptor = klass.__dict__["enumerationliteralspecifications"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::derivedtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::DerivedTypeDefinition)
-
-
-def test_adb::derivedtypedefinition_constructor_exists():
-    assert callable(adb::DerivedTypeDefinition.__init__)
-
-
-def test_adb::derivedtypedefinition_constructor_args():
-    sig = inspect.signature(adb::DerivedTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "limited" in params, "Missing parameter 'limited'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-
-def test_adb::derivedtypedefinition_has_limited():
-    assert hasattr(adb::DerivedTypeDefinition, "limited")
-    descriptor = None
-    for klass in adb::DerivedTypeDefinition.__mro__:
-        if "limited" in klass.__dict__:
-            descriptor = klass.__dict__["limited"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::derivedtypedefinition_has_abstract():
-    assert hasattr(adb::DerivedTypeDefinition, "abstract")
-    descriptor = None
-    for klass in adb::DerivedTypeDefinition.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::recordtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::RecordTypeDefinition)
-
-
-def test_adb::recordtypedefinition_constructor_exists():
-    assert callable(adb::RecordTypeDefinition.__init__)
-
-
-def test_adb::recordtypedefinition_constructor_args():
-    sig = inspect.signature(adb::RecordTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "tagged" in params, "Missing parameter 'tagged'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "limited" in params, "Missing parameter 'limited'"
-
-def test_adb::recordtypedefinition_has_tagged():
-    assert hasattr(adb::RecordTypeDefinition, "tagged")
-    descriptor = None
-    for klass in adb::RecordTypeDefinition.__mro__:
-        if "tagged" in klass.__dict__:
-            descriptor = klass.__dict__["tagged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::recordtypedefinition_has_abstract():
-    assert hasattr(adb::RecordTypeDefinition, "abstract")
-    descriptor = None
-    for klass in adb::RecordTypeDefinition.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::recordtypedefinition_has_limited():
-    assert hasattr(adb::RecordTypeDefinition, "limited")
-    descriptor = None
-    for klass in adb::RecordTypeDefinition.__mro__:
-        if "limited" in klass.__dict__:
-            descriptor = klass.__dict__["limited"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::realtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::RealTypeDefinition)
-
-
-def test_adb::realtypedefinition_constructor_exists():
-    assert callable(adb::RealTypeDefinition.__init__)
-
-
-def test_adb::realtypedefinition_constructor_args():
-    sig = inspect.signature(adb::RealTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::notnullaccessdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::NotNullAccessDefinition)
-
-
-def test_adb::notnullaccessdefinition_constructor_exists():
-    assert callable(adb::NotNullAccessDefinition.__init__)
-
-
-def test_adb::notnullaccessdefinition_constructor_args():
-    sig = inspect.signature(adb::NotNullAccessDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::discriminantspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscriminantSpecification)
-
-
-def test_adb::discriminantspecification_constructor_exists():
-    assert callable(adb::DiscriminantSpecification.__init__)
-
-
-def test_adb::discriminantspecification_constructor_args():
-    sig = inspect.signature(adb::DiscriminantSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::recorddefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::RecordDefinition)
-
-
-def test_adb::recorddefinition_constructor_exists():
-    assert callable(adb::RecordDefinition.__init__)
-
-
-def test_adb::recorddefinition_constructor_args():
-    sig = inspect.signature(adb::RecordDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "null" in params, "Missing parameter 'null'"
-
-def test_adb::recorddefinition_has_null():
-    assert hasattr(adb::RecordDefinition, "null")
-    descriptor = None
-    for klass in adb::RecordDefinition.__mro__:
-        if "null" in klass.__dict__:
-            descriptor = klass.__dict__["null"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::recordextensionpart_is_not_abstract():
-    assert not inspect.isabstract(adb::RecordExtensionPart)
-
-
-def test_adb::recordextensionpart_constructor_exists():
-    assert callable(adb::RecordExtensionPart.__init__)
-
-
-def test_adb::recordextensionpart_constructor_args():
-    sig = inspect.signature(adb::RecordExtensionPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_discriminantpart_is_not_abstract():
-    assert not inspect.isabstract(DiscriminantPart)
-
-
-def test_discriminantpart_constructor_exists():
-    assert callable(DiscriminantPart.__init__)
-
-
-def test_discriminantpart_constructor_args():
-    sig = inspect.signature(DiscriminantPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::unknowndiscriminantpart_is_not_abstract():
-    assert not inspect.isabstract(adb::UnknownDiscriminantPart)
-
-
-def test_adb::unknowndiscriminantpart_constructor_exists():
-    assert callable(adb::UnknownDiscriminantPart.__init__)
-
-
-def test_adb::unknowndiscriminantpart_constructor_args():
-    sig = inspect.signature(adb::UnknownDiscriminantPart.__init__)
-    params = list(sig.parameters.keys())
-    assert "box" in params, "Missing parameter 'box'"
-
-def test_adb::unknowndiscriminantpart_has_box():
-    assert hasattr(adb::UnknownDiscriminantPart, "box")
-    descriptor = None
-    for klass in adb::UnknownDiscriminantPart.__mro__:
-        if "box" in klass.__dict__:
-            descriptor = klass.__dict__["box"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::explicitgenericactualparameter_is_not_abstract():
-    assert not inspect.isabstract(adb::ExplicitGenericActualParameter)
-
-
-def test_adb::explicitgenericactualparameter_constructor_exists():
-    assert callable(adb::ExplicitGenericActualParameter.__init__)
-
-
-def test_adb::explicitgenericactualparameter_constructor_args():
-    sig = inspect.signature(adb::ExplicitGenericActualParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_abortstatement_is_not_abstract():
-    assert not inspect.isabstract(AbortStatement)
-
-
-def test_abortstatement_constructor_exists():
-    assert callable(AbortStatement.__init__)
-
-
-def test_abortstatement_constructor_args():
-    sig = inspect.signature(AbortStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::tasknames_is_not_abstract():
-    assert not inspect.isabstract(adb::TaskNames)
-
-
-def test_adb::tasknames_constructor_exists():
-    assert callable(adb::TaskNames.__init__)
-
-
-def test_adb::tasknames_constructor_args():
-    sig = inspect.signature(adb::TaskNames.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::entrycallalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryCallAlternative)
-
-
-def test_adb::entrycallalternative_constructor_exists():
-    assert callable(adb::EntryCallAlternative.__init__)
-
-
-def test_adb::entrycallalternative_constructor_args():
-    sig = inspect.signature(adb::EntryCallAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_selectalternative_is_not_abstract():
-    assert not inspect.isabstract(SelectAlternative)
-
-
-def test_selectalternative_constructor_exists():
-    assert callable(SelectAlternative.__init__)
-
-
-def test_selectalternative_constructor_args():
-    sig = inspect.signature(SelectAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::delayalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::DelayAlternative)
-
-
-def test_adb::delayalternative_constructor_exists():
-    assert callable(adb::DelayAlternative.__init__)
-
-
-def test_adb::delayalternative_constructor_args():
-    sig = inspect.signature(adb::DelayAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::acceptalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::AcceptAlternative)
-
-
-def test_adb::acceptalternative_constructor_exists():
-    assert callable(adb::AcceptAlternative.__init__)
-
-
-def test_adb::acceptalternative_constructor_args():
-    sig = inspect.signature(adb::AcceptAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::guardedalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::GuardedAlternative)
-
-
-def test_adb::guardedalternative_constructor_exists():
-    assert callable(adb::GuardedAlternative.__init__)
-
-
-def test_adb::guardedalternative_constructor_args():
-    sig = inspect.signature(adb::GuardedAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::selectalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::SelectAlternative)
-
-
-def test_adb::selectalternative_constructor_exists():
-    assert callable(adb::SelectAlternative.__init__)
-
-
-def test_adb::selectalternative_constructor_args():
-    sig = inspect.signature(adb::SelectAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::guard_is_not_abstract():
-    assert not inspect.isabstract(adb::Guard)
-
-
-def test_adb::guard_constructor_exists():
-    assert callable(adb::Guard.__init__)
-
-
-def test_adb::guard_constructor_args():
-    sig = inspect.signature(adb::Guard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_selectstatement_is_not_abstract():
-    assert not inspect.isabstract(SelectStatement)
-
-
-def test_selectstatement_constructor_exists():
-    assert callable(SelectStatement.__init__)
-
-
-def test_selectstatement_constructor_args():
-    sig = inspect.signature(SelectStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::conditionalentrycall_is_not_abstract():
-    assert not inspect.isabstract(adb::ConditionalEntryCall)
-
-
-def test_adb::conditionalentrycall_constructor_exists():
-    assert callable(adb::ConditionalEntryCall.__init__)
-
-
-def test_adb::conditionalentrycall_constructor_args():
-    sig = inspect.signature(adb::ConditionalEntryCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::timedentrycall_is_not_abstract():
-    assert not inspect.isabstract(adb::TimedEntryCall)
-
-
-def test_adb::timedentrycall_constructor_exists():
-    assert callable(adb::TimedEntryCall.__init__)
-
-
-def test_adb::timedentrycall_constructor_args():
-    sig = inspect.signature(adb::TimedEntryCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::selectiveaccept_is_not_abstract():
-    assert not inspect.isabstract(adb::SelectiveAccept)
-
-
-def test_adb::selectiveaccept_constructor_exists():
-    assert callable(adb::SelectiveAccept.__init__)
-
-
-def test_adb::selectiveaccept_constructor_args():
-    sig = inspect.signature(adb::SelectiveAccept.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::triggeringstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::TriggeringStatement)
-
-
-def test_adb::triggeringstatement_constructor_exists():
-    assert callable(adb::TriggeringStatement.__init__)
-
-
-def test_adb::triggeringstatement_constructor_args():
-    sig = inspect.signature(adb::TriggeringStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::abortablepart_is_not_abstract():
-    assert not inspect.isabstract(adb::AbortablePart)
-
-
-def test_adb::abortablepart_constructor_exists():
-    assert callable(adb::AbortablePart.__init__)
-
-
-def test_adb::abortablepart_constructor_args():
-    sig = inspect.signature(adb::AbortablePart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::triggeringalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::TriggeringAlternative)
-
-
-def test_adb::triggeringalternative_constructor_exists():
-    assert callable(adb::TriggeringAlternative.__init__)
-
-
-def test_adb::triggeringalternative_constructor_args():
-    sig = inspect.signature(adb::TriggeringAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::asynchronousselect_is_not_abstract():
-    assert not inspect.isabstract(adb::AsynchronousSelect)
-
-
-def test_adb::asynchronousselect_constructor_exists():
-    assert callable(adb::AsynchronousSelect.__init__)
-
-
-def test_adb::asynchronousselect_constructor_args():
-    sig = inspect.signature(adb::AsynchronousSelect.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::entryindexspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryIndexSpecification)
-
-
-def test_adb::entryindexspecification_constructor_exists():
-    assert callable(adb::EntryIndexSpecification.__init__)
-
-
-def test_adb::entryindexspecification_constructor_args():
-    sig = inspect.signature(adb::EntryIndexSpecification.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_adb::entryindexspecification_has_name():
-    assert hasattr(adb::EntryIndexSpecification, "name")
-    descriptor = None
-    for klass in adb::EntryIndexSpecification.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::entrybarrier_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryBarrier)
-
-
-def test_adb::entrybarrier_constructor_exists():
-    assert callable(adb::EntryBarrier.__init__)
-
-
-def test_adb::entrybarrier_constructor_args():
-    sig = inspect.signature(adb::EntryBarrier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::entrybodyformalpart_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryBodyFormalPart)
-
-
-def test_adb::entrybodyformalpart_constructor_exists():
-    assert callable(adb::EntryBodyFormalPart.__init__)
-
-
-def test_adb::entrybodyformalpart_constructor_args():
-    sig = inspect.signature(adb::EntryBodyFormalPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::entryindex_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryIndex)
-
-
-def test_adb::entryindex_constructor_exists():
-    assert callable(adb::EntryIndex.__init__)
-
-
-def test_adb::entryindex_constructor_args():
-    sig = inspect.signature(adb::EntryIndex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::protectedoperationitem_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedOperationItem)
-
-
-def test_adb::protectedoperationitem_constructor_exists():
-    assert callable(adb::ProtectedOperationItem.__init__)
-
-
-def test_adb::protectedoperationitem_constructor_args():
-    sig = inspect.signature(adb::ProtectedOperationItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::returnsubtypeindication_is_not_abstract():
-    assert not inspect.isabstract(adb::ReturnSubtypeIndication)
-
-
-def test_adb::returnsubtypeindication_constructor_exists():
-    assert callable(adb::ReturnSubtypeIndication.__init__)
-
-
-def test_adb::returnsubtypeindication_constructor_args():
-    sig = inspect.signature(adb::ReturnSubtypeIndication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_triggeringstatement_is_not_abstract():
-    assert not inspect.isabstract(TriggeringStatement)
-
-
-def test_triggeringstatement_constructor_exists():
-    assert callable(TriggeringStatement.__init__)
-
-
-def test_triggeringstatement_constructor_args():
-    sig = inspect.signature(TriggeringStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::loopparameterspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::LoopParameterSpecification)
-
-
-def test_adb::loopparameterspecification_constructor_exists():
-    assert callable(adb::LoopParameterSpecification.__init__)
-
-
-def test_adb::loopparameterspecification_constructor_args():
-    sig = inspect.signature(adb::LoopParameterSpecification.__init__)
-    params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
-
-def test_adb::loopparameterspecification_has_identifier():
-    assert hasattr(adb::LoopParameterSpecification, "identifier")
-    descriptor = None
-    for klass in adb::LoopParameterSpecification.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::iterationscheme_is_not_abstract():
-    assert not inspect.isabstract(adb::IterationScheme)
-
-
-def test_adb::iterationscheme_constructor_exists():
-    assert callable(adb::IterationScheme.__init__)
-
-
-def test_adb::iterationscheme_constructor_args():
-    sig = inspect.signature(adb::IterationScheme.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_compoundstatement_is_not_abstract():
-    assert not inspect.isabstract(CompoundStatement)
-
-
-def test_compoundstatement_constructor_exists():
-    assert callable(CompoundStatement.__init__)
-
-
-def test_compoundstatement_constructor_args():
-    sig = inspect.signature(CompoundStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::extendedreturnstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::ExtendedReturnStatement)
-
-
-def test_adb::extendedreturnstatement_constructor_exists():
-    assert callable(adb::ExtendedReturnStatement.__init__)
-
-
-def test_adb::extendedreturnstatement_constructor_args():
-    sig = inspect.signature(adb::ExtendedReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
-
-def test_adb::extendedreturnstatement_has_identifier():
-    assert hasattr(adb::ExtendedReturnStatement, "identifier")
-    descriptor = None
-    for klass in adb::ExtendedReturnStatement.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::selectstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::SelectStatement)
-
-
-def test_adb::selectstatement_constructor_exists():
-    assert callable(adb::SelectStatement.__init__)
-
-
-def test_adb::selectstatement_constructor_args():
-    sig = inspect.signature(adb::SelectStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::acceptstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::AcceptStatement)
-
-
-def test_adb::acceptstatement_constructor_exists():
-    assert callable(adb::AcceptStatement.__init__)
-
-
-def test_adb::acceptstatement_constructor_args():
-    sig = inspect.signature(adb::AcceptStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "entryidentifier" in params, "Missing parameter 'entryidentifier'"
-
-def test_adb::acceptstatement_has_entryidentifier():
-    assert hasattr(adb::AcceptStatement, "entryidentifier")
-    descriptor = None
-    for klass in adb::AcceptStatement.__mro__:
-        if "entryidentifier" in klass.__dict__:
-            descriptor = klass.__dict__["entryidentifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::LoopStatement)
-
-
-def test_adb::loopstatement_constructor_exists():
-    assert callable(adb::LoopStatement.__init__)
-
-
-def test_adb::loopstatement_constructor_args():
-    sig = inspect.signature(adb::LoopStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "sameName" in params, "Missing parameter 'sameName'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_adb::loopstatement_has_sameName():
-    assert hasattr(adb::LoopStatement, "sameName")
-    descriptor = None
-    for klass in adb::LoopStatement.__mro__:
-        if "sameName" in klass.__dict__:
-            descriptor = klass.__dict__["sameName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::loopstatement_has_name():
-    assert hasattr(adb::LoopStatement, "name")
-    descriptor = None
-    for klass in adb::LoopStatement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::IfStatement)
-
-
-def test_adb::ifstatement_constructor_exists():
-    assert callable(adb::IfStatement.__init__)
-
-
-def test_adb::ifstatement_constructor_args():
-    sig = inspect.signature(adb::IfStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::pragmaargumentassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::PragmaArgumentAssociation)
-
-
-def test_adb::pragmaargumentassociation_constructor_exists():
-    assert callable(adb::PragmaArgumentAssociation.__init__)
-
-
-def test_adb::pragmaargumentassociation_constructor_args():
-    sig = inspect.signature(adb::PragmaArgumentAssociation.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_adb::pragmaargumentassociation_has_name():
-    assert hasattr(adb::PragmaArgumentAssociation, "name")
-    descriptor = None
-    for klass in adb::PragmaArgumentAssociation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::discretechoicelist_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscreteChoiceList)
-
-
-def test_adb::discretechoicelist_constructor_exists():
-    assert callable(adb::DiscreteChoiceList.__init__)
-
-
-def test_adb::discretechoicelist_constructor_args():
-    sig = inspect.signature(adb::DiscreteChoiceList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::casestatementalternative_is_not_abstract():
-    assert not inspect.isabstract(adb::CaseStatementAlternative)
-
-
-def test_adb::casestatementalternative_constructor_exists():
-    assert callable(adb::CaseStatementAlternative.__init__)
-
-
-def test_adb::casestatementalternative_constructor_args():
-    sig = inspect.signature(adb::CaseStatementAlternative.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::casestatement_is_not_abstract():
-    assert not inspect.isabstract(adb::CaseStatement)
-
-
-def test_adb::casestatement_constructor_exists():
-    assert callable(adb::CaseStatement.__init__)
-
-
-def test_adb::casestatement_constructor_args():
-    sig = inspect.signature(adb::CaseStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_objectdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ObjectDeclaration)
-
-
-def test_objectdeclaration_constructor_exists():
-    assert callable(ObjectDeclaration.__init__)
-
-
-def test_objectdeclaration_constructor_args():
-    sig = inspect.signature(ObjectDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::datainstancedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::DataInstanceDeclaration)
-
-
-def test_adb::datainstancedeclaration_constructor_exists():
-    assert callable(adb::DataInstanceDeclaration.__init__)
-
-
-def test_adb::datainstancedeclaration_constructor_args():
-    sig = inspect.signature(adb::DataInstanceDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "aliased" in params, "Missing parameter 'aliased'"
-    assert "constant" in params, "Missing parameter 'constant'"
-
-def test_adb::datainstancedeclaration_has_aliased():
-    assert hasattr(adb::DataInstanceDeclaration, "aliased")
-    descriptor = None
-    for klass in adb::DataInstanceDeclaration.__mro__:
-        if "aliased" in klass.__dict__:
-            descriptor = klass.__dict__["aliased"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::datainstancedeclaration_has_constant():
-    assert hasattr(adb::DataInstanceDeclaration, "constant")
-    descriptor = None
-    for klass in adb::DataInstanceDeclaration.__mro__:
-        if "constant" in klass.__dict__:
-            descriptor = klass.__dict__["constant"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::genericassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericAssociation)
-
-
-def test_adb::genericassociation_constructor_exists():
-    assert callable(adb::GenericAssociation.__init__)
-
-
-def test_adb::genericassociation_constructor_args():
-    sig = inspect.signature(adb::GenericAssociation.__init__)
-    params = list(sig.parameters.keys())
-    assert "selectorName" in params, "Missing parameter 'selectorName'"
-
-def test_adb::genericassociation_has_selectorName():
-    assert hasattr(adb::GenericAssociation, "selectorName")
-    descriptor = None
-    for klass in adb::GenericAssociation.__mro__:
-        if "selectorName" in klass.__dict__:
-            descriptor = klass.__dict__["selectorName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::formalpackageassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalPackageAssociation)
-
-
-def test_adb::formalpackageassociation_constructor_exists():
-    assert callable(adb::FormalPackageAssociation.__init__)
-
-
-def test_adb::formalpackageassociation_constructor_args():
-    sig = inspect.signature(adb::FormalPackageAssociation.__init__)
-    params = list(sig.parameters.keys())
-    assert "genericFormalParameterSelectorName" in params, "Missing parameter 'genericFormalParameterSelectorName'"
-
-def test_adb::formalpackageassociation_has_genericFormalParameterSelectorName():
-    assert hasattr(adb::FormalPackageAssociation, "genericFormalParameterSelectorName")
-    descriptor = None
-    for klass in adb::FormalPackageAssociation.__mro__:
-        if "genericFormalParameterSelectorName" in klass.__dict__:
-            descriptor = klass.__dict__["genericFormalParameterSelectorName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::formalpackageactualpart_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalPackageActualPart)
-
-
-def test_adb::formalpackageactualpart_constructor_exists():
-    assert callable(adb::FormalPackageActualPart.__init__)
-
-
-def test_adb::formalpackageactualpart_constructor_args():
-    sig = inspect.signature(adb::FormalPackageActualPart.__init__)
-    params = list(sig.parameters.keys())
-    assert "box" in params, "Missing parameter 'box'"
-
-def test_adb::formalpackageactualpart_has_box():
-    assert hasattr(adb::FormalPackageActualPart, "box")
-    descriptor = None
-    for klass in adb::FormalPackageActualPart.__mro__:
-        if "box" in klass.__dict__:
-            descriptor = klass.__dict__["box"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::subprogramdefault_is_not_abstract():
-    assert not inspect.isabstract(adb::SubprogramDefault)
-
-
-def test_adb::subprogramdefault_constructor_exists():
-    assert callable(adb::SubprogramDefault.__init__)
-
-
-def test_adb::subprogramdefault_constructor_args():
-    sig = inspect.signature(adb::SubprogramDefault.__init__)
-    params = list(sig.parameters.keys())
-    assert "defaultName" in params, "Missing parameter 'defaultName'"
-
-def test_adb::subprogramdefault_has_defaultName():
-    assert hasattr(adb::SubprogramDefault, "defaultName")
-    descriptor = None
-    for klass in adb::SubprogramDefault.__mro__:
-        if "defaultName" in klass.__dict__:
-            descriptor = klass.__dict__["defaultName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::anonymousaccessdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::AnonymousAccessDefinition)
-
-
-def test_adb::anonymousaccessdefinition_constructor_exists():
-    assert callable(adb::AnonymousAccessDefinition.__init__)
-
-
-def test_adb::anonymousaccessdefinition_constructor_args():
-    sig = inspect.signature(adb::AnonymousAccessDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::optnullexclusion_is_not_abstract():
-    assert not inspect.isabstract(adb::OptNullExclusion)
-
-
-def test_adb::optnullexclusion_constructor_exists():
-    assert callable(adb::OptNullExclusion.__init__)
-
-
-def test_adb::optnullexclusion_constructor_args():
-    sig = inspect.signature(adb::OptNullExclusion.__init__)
-    params = list(sig.parameters.keys())
-    assert "not_null" in params, "Missing parameter 'not_null'"
-
-def test_adb::optnullexclusion_has_not_null():
-    assert hasattr(adb::OptNullExclusion, "not_null")
-    descriptor = None
-    for klass in adb::OptNullExclusion.__mro__:
-        if "not_null" in klass.__dict__:
-            descriptor = klass.__dict__["not_null"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::singleprotecteddeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::SingleProtectedDeclaration)
-
-
-def test_adb::singleprotecteddeclaration_constructor_exists():
-    assert callable(adb::SingleProtectedDeclaration.__init__)
-
-
-def test_adb::singleprotecteddeclaration_constructor_args():
-    sig = inspect.signature(adb::SingleProtectedDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_adb::singleprotecteddeclaration_has_name():
-    assert hasattr(adb::SingleProtectedDeclaration, "name")
-    descriptor = None
-    for klass in adb::SingleProtectedDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::mode_is_not_abstract():
-    assert not inspect.isabstract(adb::Mode)
-
-
-def test_adb::mode_constructor_exists():
-    assert callable(adb::Mode.__init__)
-
-
-def test_adb::mode_constructor_args():
-    sig = inspect.signature(adb::Mode.__init__)
-    params = list(sig.parameters.keys())
-    assert "out" in params, "Missing parameter 'out'"
-    assert "in_" in params, "Missing parameter 'in_'"
-
-def test_adb::mode_has_out():
-    assert hasattr(adb::Mode, "out")
-    descriptor = None
-    for klass in adb::Mode.__mro__:
-        if "out" in klass.__dict__:
-            descriptor = klass.__dict__["out"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::mode_has_in_():
-    assert hasattr(adb::Mode, "in_")
-    descriptor = None
-    for klass in adb::Mode.__mro__:
-        if "in_" in klass.__dict__:
-            descriptor = klass.__dict__["in_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::definingidentifierlist_is_not_abstract():
-    assert not inspect.isabstract(adb::DefiningIdentifierList)
-
-
-def test_adb::definingidentifierlist_constructor_exists():
-    assert callable(adb::DefiningIdentifierList.__init__)
-
-
-def test_adb::definingidentifierlist_constructor_args():
-    sig = inspect.signature(adb::DefiningIdentifierList.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_adb::definingidentifierlist_has_name():
-    assert hasattr(adb::DefiningIdentifierList, "name")
-    descriptor = None
-    for klass in adb::DefiningIdentifierList.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_formaltypedefinition_is_not_abstract():
-    assert not inspect.isabstract(FormalTypeDefinition)
-
-
-def test_formaltypedefinition_constructor_exists():
-    assert callable(FormalTypeDefinition.__init__)
-
-
-def test_formaltypedefinition_constructor_args():
-    sig = inspect.signature(FormalTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::formalderivedtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalDerivedTypeDefinition)
-
-
-def test_adb::formalderivedtypedefinition_constructor_exists():
-    assert callable(adb::FormalDerivedTypeDefinition.__init__)
-
-
-def test_adb::formalderivedtypedefinition_constructor_args():
-    sig = inspect.signature(adb::FormalDerivedTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "absract" in params, "Missing parameter 'absract'"
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "limited" in params, "Missing parameter 'limited'"
-
-def test_adb::formalderivedtypedefinition_has_absract():
-    assert hasattr(adb::FormalDerivedTypeDefinition, "absract")
-    descriptor = None
-    for klass in adb::FormalDerivedTypeDefinition.__mro__:
-        if "absract" in klass.__dict__:
-            descriptor = klass.__dict__["absract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::formalderivedtypedefinition_has_synchronized():
-    assert hasattr(adb::FormalDerivedTypeDefinition, "synchronized")
-    descriptor = None
-    for klass in adb::FormalDerivedTypeDefinition.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::formalderivedtypedefinition_has_limited():
-    assert hasattr(adb::FormalDerivedTypeDefinition, "limited")
-    descriptor = None
-    for klass in adb::FormalDerivedTypeDefinition.__mro__:
-        if "limited" in klass.__dict__:
-            descriptor = klass.__dict__["limited"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::accesstypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::AccessTypeDefinition)
-
-
-def test_adb::accesstypedefinition_constructor_exists():
-    assert callable(adb::AccessTypeDefinition.__init__)
-
-
-def test_adb::accesstypedefinition_constructor_args():
-    sig = inspect.signature(adb::AccessTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::interfacetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::InterfaceTypeDefinition)
-
-
-def test_adb::interfacetypedefinition_constructor_exists():
-    assert callable(adb::InterfaceTypeDefinition.__init__)
-
-
-def test_adb::interfacetypedefinition_constructor_args():
-    sig = inspect.signature(adb::InterfaceTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "synchro" in params, "Missing parameter 'synchro'"
-    assert "limited" in params, "Missing parameter 'limited'"
-    assert "task" in params, "Missing parameter 'task'"
-    assert "protected" in params, "Missing parameter 'protected'"
-
-def test_adb::interfacetypedefinition_has_synchro():
-    assert hasattr(adb::InterfaceTypeDefinition, "synchro")
-    descriptor = None
-    for klass in adb::InterfaceTypeDefinition.__mro__:
-        if "synchro" in klass.__dict__:
-            descriptor = klass.__dict__["synchro"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::interfacetypedefinition_has_limited():
-    assert hasattr(adb::InterfaceTypeDefinition, "limited")
-    descriptor = None
-    for klass in adb::InterfaceTypeDefinition.__mro__:
-        if "limited" in klass.__dict__:
-            descriptor = klass.__dict__["limited"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::interfacetypedefinition_has_task():
-    assert hasattr(adb::InterfaceTypeDefinition, "task")
-    descriptor = None
-    for klass in adb::InterfaceTypeDefinition.__mro__:
-        if "task" in klass.__dict__:
-            descriptor = klass.__dict__["task"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::interfacetypedefinition_has_protected():
-    assert hasattr(adb::InterfaceTypeDefinition, "protected")
-    descriptor = None
-    for klass in adb::InterfaceTypeDefinition.__mro__:
-        if "protected" in klass.__dict__:
-            descriptor = klass.__dict__["protected"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::arraytypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::ArrayTypeDefinition)
-
-
-def test_adb::arraytypedefinition_constructor_exists():
-    assert callable(adb::ArrayTypeDefinition.__init__)
-
-
-def test_adb::arraytypedefinition_constructor_args():
-    sig = inspect.signature(adb::ArrayTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_genericformalparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(GenericFormalParameterDeclaration)
-
-
-def test_genericformalparameterdeclaration_constructor_exists():
-    assert callable(GenericFormalParameterDeclaration.__init__)
-
-
-def test_genericformalparameterdeclaration_constructor_args():
-    sig = inspect.signature(GenericFormalParameterDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::formalsubprogramdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalSubprogramDeclaration)
-
-
-def test_adb::formalsubprogramdeclaration_constructor_exists():
-    assert callable(adb::FormalSubprogramDeclaration.__init__)
-
-
-def test_adb::formalsubprogramdeclaration_constructor_args():
-    sig = inspect.signature(adb::FormalSubprogramDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "abstract" in params, "Missing parameter 'abstract'"
-
-def test_adb::formalsubprogramdeclaration_has_abstract():
-    assert hasattr(adb::FormalSubprogramDeclaration, "abstract")
-    descriptor = None
-    for klass in adb::FormalSubprogramDeclaration.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::formalpackagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalPackageDeclaration)
-
-
-def test_adb::formalpackagedeclaration_constructor_exists():
-    assert callable(adb::FormalPackageDeclaration.__init__)
-
-
-def test_adb::formalpackagedeclaration_constructor_args():
-    sig = inspect.signature(adb::FormalPackageDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "genericPackageName" in params, "Missing parameter 'genericPackageName'"
-
-def test_adb::formalpackagedeclaration_has_name():
-    assert hasattr(adb::FormalPackageDeclaration, "name")
-    descriptor = None
-    for klass in adb::FormalPackageDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::formalpackagedeclaration_has_genericPackageName():
-    assert hasattr(adb::FormalPackageDeclaration, "genericPackageName")
-    descriptor = None
-    for klass in adb::FormalPackageDeclaration.__mro__:
-        if "genericPackageName" in klass.__dict__:
-            descriptor = klass.__dict__["genericPackageName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::formaltypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalTypeDeclaration)
-
-
-def test_adb::formaltypedeclaration_constructor_exists():
-    assert callable(adb::FormalTypeDeclaration.__init__)
-
-
-def test_adb::formaltypedeclaration_constructor_args():
-    sig = inspect.signature(adb::FormalTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
-
-def test_adb::formaltypedeclaration_has_identifier():
-    assert hasattr(adb::FormalTypeDeclaration, "identifier")
-    descriptor = None
-    for klass in adb::FormalTypeDeclaration.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::formalobjectdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalObjectDeclaration)
-
-
-def test_adb::formalobjectdeclaration_constructor_exists():
-    assert callable(adb::FormalObjectDeclaration.__init__)
-
-
-def test_adb::formalobjectdeclaration_constructor_args():
-    sig = inspect.signature(adb::FormalObjectDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::formalprivatetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalPrivateTypeDefinition)
-
-
-def test_adb::formalprivatetypedefinition_constructor_exists():
-    assert callable(adb::FormalPrivateTypeDefinition.__init__)
-
-
-def test_adb::formalprivatetypedefinition_constructor_args():
-    sig = inspect.signature(adb::FormalPrivateTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "tagged" in params, "Missing parameter 'tagged'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "limited" in params, "Missing parameter 'limited'"
-
-def test_adb::formalprivatetypedefinition_has_tagged():
-    assert hasattr(adb::FormalPrivateTypeDefinition, "tagged")
-    descriptor = None
-    for klass in adb::FormalPrivateTypeDefinition.__mro__:
-        if "tagged" in klass.__dict__:
-            descriptor = klass.__dict__["tagged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::formalprivatetypedefinition_has_abstract():
-    assert hasattr(adb::FormalPrivateTypeDefinition, "abstract")
-    descriptor = None
-    for klass in adb::FormalPrivateTypeDefinition.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::formalprivatetypedefinition_has_limited():
-    assert hasattr(adb::FormalPrivateTypeDefinition, "limited")
-    descriptor = None
-    for klass in adb::FormalPrivateTypeDefinition.__mro__:
-        if "limited" in klass.__dict__:
-            descriptor = klass.__dict__["limited"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::formaltypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalTypeDefinition)
-
-
-def test_adb::formaltypedefinition_constructor_exists():
-    assert callable(adb::FormalTypeDefinition.__init__)
-
-
-def test_adb::formaltypedefinition_constructor_args():
-    sig = inspect.signature(adb::FormalTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_range_is_not_abstract():
-    assert not inspect.isabstract(Range)
-
-
-def test_range_constructor_exists():
-    assert callable(Range.__init__)
-
-
-def test_range_constructor_args():
-    sig = inspect.signature(Range.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::explicitrange_is_not_abstract():
-    assert not inspect.isabstract(adb::ExplicitRange)
-
-
-def test_adb::explicitrange_constructor_exists():
-    assert callable(adb::ExplicitRange.__init__)
-
-
-def test_adb::explicitrange_constructor_args():
-    sig = inspect.signature(adb::ExplicitRange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::entityrange_is_not_abstract():
-    assert not inspect.isabstract(adb::EntityRange)
-
-
-def test_adb::entityrange_constructor_exists():
-    assert callable(adb::EntityRange.__init__)
-
-
-def test_adb::entityrange_constructor_args():
-    sig = inspect.signature(adb::EntityRange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rangeconstraint_is_not_abstract():
-    assert not inspect.isabstract(RangeConstraint)
-
-
-def test_rangeconstraint_constructor_exists():
-    assert callable(RangeConstraint.__init__)
-
-
-def test_rangeconstraint_constructor_args():
-    sig = inspect.signature(RangeConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::parametereffectivevalue_is_not_abstract():
-    assert not inspect.isabstract(adb::ParameterEffectiveValue)
-
-
-def test_adb::parametereffectivevalue_constructor_exists():
-    assert callable(adb::ParameterEffectiveValue.__init__)
-
-
-def test_adb::parametereffectivevalue_constructor_args():
-    sig = inspect.signature(adb::ParameterEffectiveValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::attributedesignator_is_not_abstract():
-    assert not inspect.isabstract(adb::AttributeDesignator)
-
-
-def test_adb::attributedesignator_constructor_exists():
-    assert callable(adb::AttributeDesignator.__init__)
-
-
-def test_adb::attributedesignator_constructor_args():
-    sig = inspect.signature(adb::AttributeDesignator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::primaryname_is_not_abstract():
-    assert not inspect.isabstract(adb::PrimaryName)
-
-
-def test_adb::primaryname_constructor_exists():
-    assert callable(adb::PrimaryName.__init__)
-
-
-def test_adb::primaryname_constructor_args():
-    sig = inspect.signature(adb::PrimaryName.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interval_is_not_abstract():
-    assert not inspect.isabstract(Interval)
-
-
-def test_interval_constructor_exists():
-    assert callable(Interval.__init__)
-
-
-def test_interval_constructor_args():
-    sig = inspect.signature(Interval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::arraycomponentassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::ArrayComponentAssociation)
-
-
-def test_adb::arraycomponentassociation_constructor_exists():
-    assert callable(adb::ArrayComponentAssociation.__init__)
-
-
-def test_adb::arraycomponentassociation_constructor_args():
-    sig = inspect.signature(adb::ArrayComponentAssociation.__init__)
-    params = list(sig.parameters.keys())
-    assert "box" in params, "Missing parameter 'box'"
-
-def test_adb::arraycomponentassociation_has_box():
-    assert hasattr(adb::ArrayComponentAssociation, "box")
-    descriptor = None
-    for klass in adb::ArrayComponentAssociation.__mro__:
-        if "box" in klass.__dict__:
-            descriptor = klass.__dict__["box"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_arrayaggregate_is_not_abstract():
-    assert not inspect.isabstract(ArrayAggregate)
-
-
-def test_arrayaggregate_constructor_exists():
-    assert callable(ArrayAggregate.__init__)
-
-
-def test_arrayaggregate_constructor_args():
-    sig = inspect.signature(ArrayAggregate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::namedarrayaggregate_is_not_abstract():
-    assert not inspect.isabstract(adb::NamedArrayAggregate)
-
-
-def test_adb::namedarrayaggregate_constructor_exists():
-    assert callable(adb::NamedArrayAggregate.__init__)
-
-
-def test_adb::namedarrayaggregate_constructor_args():
-    sig = inspect.signature(adb::NamedArrayAggregate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::positionalarrayaggregate_is_not_abstract():
-    assert not inspect.isabstract(adb::PositionalArrayAggregate)
-
-
-def test_adb::positionalarrayaggregate_constructor_exists():
-    assert callable(adb::PositionalArrayAggregate.__init__)
-
-
-def test_adb::positionalarrayaggregate_constructor_args():
-    sig = inspect.signature(adb::PositionalArrayAggregate.__init__)
-    params = list(sig.parameters.keys())
-    assert "othersBox" in params, "Missing parameter 'othersBox'"
-
-def test_adb::positionalarrayaggregate_has_othersBox():
-    assert hasattr(adb::PositionalArrayAggregate, "othersBox")
-    descriptor = None
-    for klass in adb::PositionalArrayAggregate.__mro__:
-        if "othersBox" in klass.__dict__:
-            descriptor = klass.__dict__["othersBox"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_adb::ancestorpart_is_not_abstract():
-    assert not inspect.isabstract(adb::AncestorPart)
-
-
-def test_adb::ancestorpart_constructor_exists():
-    assert callable(adb::AncestorPart.__init__)
-
-
-def test_adb::ancestorpart_constructor_args():
-    sig = inspect.signature(adb::AncestorPart.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2481,23 +315,23 @@ def test_recordcomponentassociation_constructor_args():
 
 
 
-def test_adb::uninitializedcomponents_is_not_abstract():
-    assert not inspect.isabstract(adb::UninitializedComponents)
+def test_adb_uninitializedcomponents_is_not_abstract():
+    assert not inspect.isabstract(adb_UninitializedComponents)
 
 
-def test_adb::uninitializedcomponents_constructor_exists():
-    assert callable(adb::UninitializedComponents.__init__)
+def test_adb_uninitializedcomponents_constructor_exists():
+    assert callable(adb_UninitializedComponents.__init__)
 
 
-def test_adb::uninitializedcomponents_constructor_args():
-    sig = inspect.signature(adb::UninitializedComponents.__init__)
+def test_adb_uninitializedcomponents_constructor_args():
+    sig = inspect.signature(adb_UninitializedComponents.__init__)
     params = list(sig.parameters.keys())
     assert "box" in params, "Missing parameter 'box'"
 
-def test_adb::uninitializedcomponents_has_box():
-    assert hasattr(adb::UninitializedComponents, "box")
+def test_adb_uninitializedcomponents_has_box():
+    assert hasattr(adb_UninitializedComponents, "box")
     descriptor = None
-    for klass in adb::UninitializedComponents.__mro__:
+    for klass in adb_UninitializedComponents.__mro__:
         if "box" in klass.__dict__:
             descriptor = klass.__dict__["box"]
             break
@@ -2505,37 +339,37 @@ def test_adb::uninitializedcomponents_has_box():
 
 
 
-def test_adb::initializedcomponents_is_not_abstract():
-    assert not inspect.isabstract(adb::InitializedComponents)
+def test_adb_initializedcomponents_is_not_abstract():
+    assert not inspect.isabstract(adb_InitializedComponents)
 
 
-def test_adb::initializedcomponents_constructor_exists():
-    assert callable(adb::InitializedComponents.__init__)
+def test_adb_initializedcomponents_constructor_exists():
+    assert callable(adb_InitializedComponents.__init__)
 
 
-def test_adb::initializedcomponents_constructor_args():
-    sig = inspect.signature(adb::InitializedComponents.__init__)
+def test_adb_initializedcomponents_constructor_args():
+    sig = inspect.signature(adb_InitializedComponents.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::parameterassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::ParameterAssociation)
+def test_adb_parameterassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_ParameterAssociation)
 
 
-def test_adb::parameterassociation_constructor_exists():
-    assert callable(adb::ParameterAssociation.__init__)
+def test_adb_parameterassociation_constructor_exists():
+    assert callable(adb_ParameterAssociation.__init__)
 
 
-def test_adb::parameterassociation_constructor_args():
-    sig = inspect.signature(adb::ParameterAssociation.__init__)
+def test_adb_parameterassociation_constructor_args():
+    sig = inspect.signature(adb_ParameterAssociation.__init__)
     params = list(sig.parameters.keys())
     assert "selectorName" in params, "Missing parameter 'selectorName'"
 
-def test_adb::parameterassociation_has_selectorName():
-    assert hasattr(adb::ParameterAssociation, "selectorName")
+def test_adb_parameterassociation_has_selectorName():
+    assert hasattr(adb_ParameterAssociation, "selectorName")
     descriptor = None
-    for klass in adb::ParameterAssociation.__mro__:
+    for klass in adb_ParameterAssociation.__mro__:
         if "selectorName" in klass.__dict__:
             descriptor = klass.__dict__["selectorName"]
             break
@@ -2543,16 +377,16 @@ def test_adb::parameterassociation_has_selectorName():
 
 
 
-def test_adb::recordcomponentassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::RecordComponentAssociation)
+def test_adb_recordcomponentassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_RecordComponentAssociation)
 
 
-def test_adb::recordcomponentassociation_constructor_exists():
-    assert callable(adb::RecordComponentAssociation.__init__)
+def test_adb_recordcomponentassociation_constructor_exists():
+    assert callable(adb_RecordComponentAssociation.__init__)
 
 
-def test_adb::recordcomponentassociation_constructor_args():
-    sig = inspect.signature(adb::RecordComponentAssociation.__init__)
+def test_adb_recordcomponentassociation_constructor_args():
+    sig = inspect.signature(adb_RecordComponentAssociation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2571,23 +405,23 @@ def test_recordaggregate_constructor_args():
 
 
 
-def test_adb::recordcomponentassociationlist_is_not_abstract():
-    assert not inspect.isabstract(adb::RecordComponentAssociationList)
+def test_adb_recordcomponentassociationlist_is_not_abstract():
+    assert not inspect.isabstract(adb_RecordComponentAssociationList)
 
 
-def test_adb::recordcomponentassociationlist_constructor_exists():
-    assert callable(adb::RecordComponentAssociationList.__init__)
+def test_adb_recordcomponentassociationlist_constructor_exists():
+    assert callable(adb_RecordComponentAssociationList.__init__)
 
 
-def test_adb::recordcomponentassociationlist_constructor_args():
-    sig = inspect.signature(adb::RecordComponentAssociationList.__init__)
+def test_adb_recordcomponentassociationlist_constructor_args():
+    sig = inspect.signature(adb_RecordComponentAssociationList.__init__)
     params = list(sig.parameters.keys())
     assert "nullRecord" in params, "Missing parameter 'nullRecord'"
 
-def test_adb::recordcomponentassociationlist_has_nullRecord():
-    assert hasattr(adb::RecordComponentAssociationList, "nullRecord")
+def test_adb_recordcomponentassociationlist_has_nullRecord():
+    assert hasattr(adb_RecordComponentAssociationList, "nullRecord")
     descriptor = None
-    for klass in adb::RecordComponentAssociationList.__mro__:
+    for klass in adb_RecordComponentAssociationList.__mro__:
         if "nullRecord" in klass.__dict__:
             descriptor = klass.__dict__["nullRecord"]
             break
@@ -2609,44 +443,30 @@ def test_aggregate_constructor_args():
 
 
 
-def test_adb::arrayaggregate_is_not_abstract():
-    assert not inspect.isabstract(adb::ArrayAggregate)
+def test_adb_extensionaggregate_is_not_abstract():
+    assert not inspect.isabstract(adb_ExtensionAggregate)
 
 
-def test_adb::arrayaggregate_constructor_exists():
-    assert callable(adb::ArrayAggregate.__init__)
+def test_adb_extensionaggregate_constructor_exists():
+    assert callable(adb_ExtensionAggregate.__init__)
 
 
-def test_adb::arrayaggregate_constructor_args():
-    sig = inspect.signature(adb::ArrayAggregate.__init__)
+def test_adb_extensionaggregate_constructor_args():
+    sig = inspect.signature(adb_ExtensionAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::extensionaggregate_is_not_abstract():
-    assert not inspect.isabstract(adb::ExtensionAggregate)
+def test_adb_recordaggregate_is_not_abstract():
+    assert not inspect.isabstract(adb_RecordAggregate)
 
 
-def test_adb::extensionaggregate_constructor_exists():
-    assert callable(adb::ExtensionAggregate.__init__)
+def test_adb_recordaggregate_constructor_exists():
+    assert callable(adb_RecordAggregate.__init__)
 
 
-def test_adb::extensionaggregate_constructor_args():
-    sig = inspect.signature(adb::ExtensionAggregate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::recordaggregate_is_not_abstract():
-    assert not inspect.isabstract(adb::RecordAggregate)
-
-
-def test_adb::recordaggregate_constructor_exists():
-    assert callable(adb::RecordAggregate.__init__)
-
-
-def test_adb::recordaggregate_constructor_args():
-    sig = inspect.signature(adb::RecordAggregate.__init__)
+def test_adb_recordaggregate_constructor_args():
+    sig = inspect.signature(adb_RecordAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2679,71 +499,71 @@ def test_parenthesizedexpression_constructor_args():
 
 
 
-def test_adb::aggregate_is_not_abstract():
-    assert not inspect.isabstract(adb::Aggregate)
+def test_adb_aggregate_is_not_abstract():
+    assert not inspect.isabstract(adb_Aggregate)
 
 
-def test_adb::aggregate_constructor_exists():
-    assert callable(adb::Aggregate.__init__)
+def test_adb_aggregate_constructor_exists():
+    assert callable(adb_Aggregate.__init__)
 
 
-def test_adb::aggregate_constructor_args():
-    sig = inspect.signature(adb::Aggregate.__init__)
+def test_adb_aggregate_constructor_args():
+    sig = inspect.signature(adb_Aggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::componentchoicelist_is_not_abstract():
-    assert not inspect.isabstract(adb::ComponentChoiceList)
+def test_adb_componentchoicelist_is_not_abstract():
+    assert not inspect.isabstract(adb_ComponentChoiceList)
 
 
-def test_adb::componentchoicelist_constructor_exists():
-    assert callable(adb::ComponentChoiceList.__init__)
+def test_adb_componentchoicelist_constructor_exists():
+    assert callable(adb_ComponentChoiceList.__init__)
 
 
-def test_adb::componentchoicelist_constructor_args():
-    sig = inspect.signature(adb::ComponentChoiceList.__init__)
+def test_adb_componentchoicelist_constructor_args():
+    sig = inspect.signature(adb_ComponentChoiceList.__init__)
     params = list(sig.parameters.keys())
-    assert "componentSelectorName" in params, "Missing parameter 'componentSelectorName'"
     assert "others" in params, "Missing parameter 'others'"
+    assert "componentSelectorName" in params, "Missing parameter 'componentSelectorName'"
 
-def test_adb::componentchoicelist_has_componentSelectorName():
-    assert hasattr(adb::ComponentChoiceList, "componentSelectorName")
+def test_adb_componentchoicelist_has_others():
+    assert hasattr(adb_ComponentChoiceList, "others")
     descriptor = None
-    for klass in adb::ComponentChoiceList.__mro__:
-        if "componentSelectorName" in klass.__dict__:
-            descriptor = klass.__dict__["componentSelectorName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::componentchoicelist_has_others():
-    assert hasattr(adb::ComponentChoiceList, "others")
-    descriptor = None
-    for klass in adb::ComponentChoiceList.__mro__:
+    for klass in adb_ComponentChoiceList.__mro__:
         if "others" in klass.__dict__:
             descriptor = klass.__dict__["others"]
             break
     assert isinstance(descriptor, property)
 
+def test_adb_componentchoicelist_has_componentSelectorName():
+    assert hasattr(adb_ComponentChoiceList, "componentSelectorName")
+    descriptor = None
+    for klass in adb_ComponentChoiceList.__mro__:
+        if "componentSelectorName" in klass.__dict__:
+            descriptor = klass.__dict__["componentSelectorName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_adb::discriminantselectors_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscriminantSelectors)
+
+def test_adb_discriminantselectors_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscriminantSelectors)
 
 
-def test_adb::discriminantselectors_constructor_exists():
-    assert callable(adb::DiscriminantSelectors.__init__)
+def test_adb_discriminantselectors_constructor_exists():
+    assert callable(adb_DiscriminantSelectors.__init__)
 
 
-def test_adb::discriminantselectors_constructor_args():
-    sig = inspect.signature(adb::DiscriminantSelectors.__init__)
+def test_adb_discriminantselectors_constructor_args():
+    sig = inspect.signature(adb_DiscriminantSelectors.__init__)
     params = list(sig.parameters.keys())
     assert "discriminantSelectorName" in params, "Missing parameter 'discriminantSelectorName'"
 
-def test_adb::discriminantselectors_has_discriminantSelectorName():
-    assert hasattr(adb::DiscriminantSelectors, "discriminantSelectorName")
+def test_adb_discriminantselectors_has_discriminantSelectorName():
+    assert hasattr(adb_DiscriminantSelectors, "discriminantSelectorName")
     descriptor = None
-    for klass in adb::DiscriminantSelectors.__mro__:
+    for klass in adb_DiscriminantSelectors.__mro__:
         if "discriminantSelectorName" in klass.__dict__:
             descriptor = klass.__dict__["discriminantSelectorName"]
             break
@@ -2751,16 +571,16 @@ def test_adb::discriminantselectors_has_discriminantSelectorName():
 
 
 
-def test_adb::discriminantassociation_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscriminantAssociation)
+def test_adb_discriminantassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscriminantAssociation)
 
 
-def test_adb::discriminantassociation_constructor_exists():
-    assert callable(adb::DiscriminantAssociation.__init__)
+def test_adb_discriminantassociation_constructor_exists():
+    assert callable(adb_DiscriminantAssociation.__init__)
 
 
-def test_adb::discriminantassociation_constructor_args():
-    sig = inspect.signature(adb::DiscriminantAssociation.__init__)
+def test_adb_discriminantassociation_constructor_args():
+    sig = inspect.signature(adb_DiscriminantAssociation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2779,58 +599,58 @@ def test_compositeconstraint_constructor_args():
 
 
 
-def test_adb::indexconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::IndexConstraint)
+def test_adb_indexconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_IndexConstraint)
 
 
-def test_adb::indexconstraint_constructor_exists():
-    assert callable(adb::IndexConstraint.__init__)
+def test_adb_indexconstraint_constructor_exists():
+    assert callable(adb_IndexConstraint.__init__)
 
 
-def test_adb::indexconstraint_constructor_args():
-    sig = inspect.signature(adb::IndexConstraint.__init__)
+def test_adb_indexconstraint_constructor_args():
+    sig = inspect.signature(adb_IndexConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::discriminantconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscriminantConstraint)
+def test_adb_discriminantconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscriminantConstraint)
 
 
-def test_adb::discriminantconstraint_constructor_exists():
-    assert callable(adb::DiscriminantConstraint.__init__)
+def test_adb_discriminantconstraint_constructor_exists():
+    assert callable(adb_DiscriminantConstraint.__init__)
 
 
-def test_adb::discriminantconstraint_constructor_args():
-    sig = inspect.signature(adb::DiscriminantConstraint.__init__)
+def test_adb_discriminantconstraint_constructor_args():
+    sig = inspect.signature(adb_DiscriminantConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::compositeconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::CompositeConstraint)
+def test_adb_compositeconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_CompositeConstraint)
 
 
-def test_adb::compositeconstraint_constructor_exists():
-    assert callable(adb::CompositeConstraint.__init__)
+def test_adb_compositeconstraint_constructor_exists():
+    assert callable(adb_CompositeConstraint.__init__)
 
 
-def test_adb::compositeconstraint_constructor_args():
-    sig = inspect.signature(adb::CompositeConstraint.__init__)
+def test_adb_compositeconstraint_constructor_args():
+    sig = inspect.signature(adb_CompositeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::optconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::OptConstraint)
+def test_adb_optconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_OptConstraint)
 
 
-def test_adb::optconstraint_constructor_exists():
-    assert callable(adb::OptConstraint.__init__)
+def test_adb_optconstraint_constructor_exists():
+    assert callable(adb_OptConstraint.__init__)
 
 
-def test_adb::optconstraint_constructor_args():
-    sig = inspect.signature(adb::OptConstraint.__init__)
+def test_adb_optconstraint_constructor_args():
+    sig = inspect.signature(adb_OptConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2863,30 +683,30 @@ def test_discretesubtypedefinition_constructor_args():
 
 
 
-def test_adb::discreterange_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscreteRange)
+def test_adb_discreterange_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscreteRange)
 
 
-def test_adb::discreterange_constructor_exists():
-    assert callable(adb::DiscreteRange.__init__)
+def test_adb_discreterange_constructor_exists():
+    assert callable(adb_DiscreteRange.__init__)
 
 
-def test_adb::discreterange_constructor_args():
-    sig = inspect.signature(adb::DiscreteRange.__init__)
+def test_adb_discreterange_constructor_args():
+    sig = inspect.signature(adb_DiscreteRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::qualifier_is_not_abstract():
-    assert not inspect.isabstract(adb::Qualifier)
+def test_adb_qualifier_is_not_abstract():
+    assert not inspect.isabstract(adb_Qualifier)
 
 
-def test_adb::qualifier_constructor_exists():
-    assert callable(adb::Qualifier.__init__)
+def test_adb_qualifier_constructor_exists():
+    assert callable(adb_Qualifier.__init__)
 
 
-def test_adb::qualifier_constructor_args():
-    sig = inspect.signature(adb::Qualifier.__init__)
+def test_adb_qualifier_constructor_args():
+    sig = inspect.signature(adb_Qualifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2905,37 +725,37 @@ def test_primary_constructor_args():
 
 
 
-def test_adb::allocator_is_not_abstract():
-    assert not inspect.isabstract(adb::Allocator)
+def test_adb_qualifiedname_is_not_abstract():
+    assert not inspect.isabstract(adb_QualifiedName)
 
 
-def test_adb::allocator_constructor_exists():
-    assert callable(adb::Allocator.__init__)
+def test_adb_qualifiedname_constructor_exists():
+    assert callable(adb_QualifiedName.__init__)
 
 
-def test_adb::allocator_constructor_args():
-    sig = inspect.signature(adb::Allocator.__init__)
+def test_adb_qualifiedname_constructor_args():
+    sig = inspect.signature(adb_QualifiedName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::null_is_not_abstract():
-    assert not inspect.isabstract(adb::Null)
+def test_adb_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(adb_StringLiteral)
 
 
-def test_adb::null_constructor_exists():
-    assert callable(adb::Null.__init__)
+def test_adb_stringliteral_constructor_exists():
+    assert callable(adb_StringLiteral.__init__)
 
 
-def test_adb::null_constructor_args():
-    sig = inspect.signature(adb::Null.__init__)
+def test_adb_stringliteral_constructor_args():
+    sig = inspect.signature(adb_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_adb::null_has_value():
-    assert hasattr(adb::Null, "value")
+def test_adb_stringliteral_has_value():
+    assert hasattr(adb_StringLiteral, "value")
     descriptor = None
-    for klass in adb::Null.__mro__:
+    for klass in adb_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2943,37 +763,37 @@ def test_adb::null_has_value():
 
 
 
-def test_adb::qualifiedname_is_not_abstract():
-    assert not inspect.isabstract(adb::QualifiedName)
+def test_adb_allocator_is_not_abstract():
+    assert not inspect.isabstract(adb_Allocator)
 
 
-def test_adb::qualifiedname_constructor_exists():
-    assert callable(adb::QualifiedName.__init__)
+def test_adb_allocator_constructor_exists():
+    assert callable(adb_Allocator.__init__)
 
 
-def test_adb::qualifiedname_constructor_args():
-    sig = inspect.signature(adb::QualifiedName.__init__)
+def test_adb_allocator_constructor_args():
+    sig = inspect.signature(adb_Allocator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(adb::StringLiteral)
+def test_adb_null_is_not_abstract():
+    assert not inspect.isabstract(adb_Null)
 
 
-def test_adb::stringliteral_constructor_exists():
-    assert callable(adb::StringLiteral.__init__)
+def test_adb_null_constructor_exists():
+    assert callable(adb_Null.__init__)
 
 
-def test_adb::stringliteral_constructor_args():
-    sig = inspect.signature(adb::StringLiteral.__init__)
+def test_adb_null_constructor_args():
+    sig = inspect.signature(adb_Null.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_adb::stringliteral_has_value():
-    assert hasattr(adb::StringLiteral, "value")
+def test_adb_null_has_value():
+    assert hasattr(adb_Null, "value")
     descriptor = None
-    for klass in adb::StringLiteral.__mro__:
+    for klass in adb_Null.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2981,41 +801,257 @@ def test_adb::stringliteral_has_value():
 
 
 
-def test_adb::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(adb::ParenthesizedExpression)
+def test_adb_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(adb_ParenthesizedExpression)
 
 
-def test_adb::parenthesizedexpression_constructor_exists():
-    assert callable(adb::ParenthesizedExpression.__init__)
+def test_adb_parenthesizedexpression_constructor_exists():
+    assert callable(adb_ParenthesizedExpression.__init__)
 
 
-def test_adb::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(adb::ParenthesizedExpression.__init__)
+def test_adb_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(adb_ParenthesizedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::numericliteral_is_not_abstract():
-    assert not inspect.isabstract(adb::NumericLiteral)
+def test_adb_numericliteral_is_not_abstract():
+    assert not inspect.isabstract(adb_NumericLiteral)
 
 
-def test_adb::numericliteral_constructor_exists():
-    assert callable(adb::NumericLiteral.__init__)
+def test_adb_numericliteral_constructor_exists():
+    assert callable(adb_NumericLiteral.__init__)
 
 
-def test_adb::numericliteral_constructor_args():
-    sig = inspect.signature(adb::NumericLiteral.__init__)
+def test_adb_numericliteral_constructor_args():
+    sig = inspect.signature(adb_NumericLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_adb::numericliteral_has_value():
-    assert hasattr(adb::NumericLiteral, "value")
+def test_adb_numericliteral_has_value():
+    assert hasattr(adb_NumericLiteral, "value")
     descriptor = None
-    for klass in adb::NumericLiteral.__mro__:
+    for klass in adb_NumericLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_range_is_not_abstract():
+    assert not inspect.isabstract(Range)
+
+
+def test_range_constructor_exists():
+    assert callable(Range.__init__)
+
+
+def test_range_constructor_args():
+    sig = inspect.signature(Range.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_explicitrange_is_not_abstract():
+    assert not inspect.isabstract(adb_ExplicitRange)
+
+
+def test_adb_explicitrange_constructor_exists():
+    assert callable(adb_ExplicitRange.__init__)
+
+
+def test_adb_explicitrange_constructor_args():
+    sig = inspect.signature(adb_ExplicitRange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_entityrange_is_not_abstract():
+    assert not inspect.isabstract(adb_EntityRange)
+
+
+def test_adb_entityrange_constructor_exists():
+    assert callable(adb_EntityRange.__init__)
+
+
+def test_adb_entityrange_constructor_args():
+    sig = inspect.signature(adb_EntityRange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rangeconstraint_is_not_abstract():
+    assert not inspect.isabstract(RangeConstraint)
+
+
+def test_rangeconstraint_constructor_exists():
+    assert callable(RangeConstraint.__init__)
+
+
+def test_rangeconstraint_constructor_args():
+    sig = inspect.signature(RangeConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_parametereffectivevalue_is_not_abstract():
+    assert not inspect.isabstract(adb_ParameterEffectiveValue)
+
+
+def test_adb_parametereffectivevalue_constructor_exists():
+    assert callable(adb_ParameterEffectiveValue.__init__)
+
+
+def test_adb_parametereffectivevalue_constructor_args():
+    sig = inspect.signature(adb_ParameterEffectiveValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_attributedesignator_is_not_abstract():
+    assert not inspect.isabstract(adb_AttributeDesignator)
+
+
+def test_adb_attributedesignator_constructor_exists():
+    assert callable(adb_AttributeDesignator.__init__)
+
+
+def test_adb_attributedesignator_constructor_args():
+    sig = inspect.signature(adb_AttributeDesignator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_primaryname_is_not_abstract():
+    assert not inspect.isabstract(adb_PrimaryName)
+
+
+def test_adb_primaryname_constructor_exists():
+    assert callable(adb_PrimaryName.__init__)
+
+
+def test_adb_primaryname_constructor_args():
+    sig = inspect.signature(adb_PrimaryName.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interval_is_not_abstract():
+    assert not inspect.isabstract(Interval)
+
+
+def test_interval_constructor_exists():
+    assert callable(Interval.__init__)
+
+
+def test_interval_constructor_args():
+    sig = inspect.signature(Interval.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_arraycomponentassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_ArrayComponentAssociation)
+
+
+def test_adb_arraycomponentassociation_constructor_exists():
+    assert callable(adb_ArrayComponentAssociation.__init__)
+
+
+def test_adb_arraycomponentassociation_constructor_args():
+    sig = inspect.signature(adb_ArrayComponentAssociation.__init__)
+    params = list(sig.parameters.keys())
+    assert "box" in params, "Missing parameter 'box'"
+
+def test_adb_arraycomponentassociation_has_box():
+    assert hasattr(adb_ArrayComponentAssociation, "box")
+    descriptor = None
+    for klass in adb_ArrayComponentAssociation.__mro__:
+        if "box" in klass.__dict__:
+            descriptor = klass.__dict__["box"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_arrayaggregate_is_not_abstract():
+    assert not inspect.isabstract(ArrayAggregate)
+
+
+def test_arrayaggregate_constructor_exists():
+    assert callable(ArrayAggregate.__init__)
+
+
+def test_arrayaggregate_constructor_args():
+    sig = inspect.signature(ArrayAggregate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_namedarrayaggregate_is_not_abstract():
+    assert not inspect.isabstract(adb_NamedArrayAggregate)
+
+
+def test_adb_namedarrayaggregate_constructor_exists():
+    assert callable(adb_NamedArrayAggregate.__init__)
+
+
+def test_adb_namedarrayaggregate_constructor_args():
+    sig = inspect.signature(adb_NamedArrayAggregate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_positionalarrayaggregate_is_not_abstract():
+    assert not inspect.isabstract(adb_PositionalArrayAggregate)
+
+
+def test_adb_positionalarrayaggregate_constructor_exists():
+    assert callable(adb_PositionalArrayAggregate.__init__)
+
+
+def test_adb_positionalarrayaggregate_constructor_args():
+    sig = inspect.signature(adb_PositionalArrayAggregate.__init__)
+    params = list(sig.parameters.keys())
+    assert "othersBox" in params, "Missing parameter 'othersBox'"
+
+def test_adb_positionalarrayaggregate_has_othersBox():
+    assert hasattr(adb_PositionalArrayAggregate, "othersBox")
+    descriptor = None
+    for klass in adb_PositionalArrayAggregate.__mro__:
+        if "othersBox" in klass.__dict__:
+            descriptor = klass.__dict__["othersBox"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_arrayaggregate_is_not_abstract():
+    assert not inspect.isabstract(adb_ArrayAggregate)
+
+
+def test_adb_arrayaggregate_constructor_exists():
+    assert callable(adb_ArrayAggregate.__init__)
+
+
+def test_adb_arrayaggregate_constructor_args():
+    sig = inspect.signature(adb_ArrayAggregate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_ancestorpart_is_not_abstract():
+    assert not inspect.isabstract(adb_AncestorPart)
+
+
+def test_adb_ancestorpart_constructor_exists():
+    assert callable(adb_AncestorPart.__init__)
+
+
+def test_adb_ancestorpart_constructor_args():
+    sig = inspect.signature(adb_AncestorPart.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -3033,127 +1069,127 @@ def test_scalarconstraint_constructor_args():
 
 
 
-def test_adb::deltaconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::DeltaConstraint)
+def test_adb_rangeconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_RangeConstraint)
 
 
-def test_adb::deltaconstraint_constructor_exists():
-    assert callable(adb::DeltaConstraint.__init__)
+def test_adb_rangeconstraint_constructor_exists():
+    assert callable(adb_RangeConstraint.__init__)
 
 
-def test_adb::deltaconstraint_constructor_args():
-    sig = inspect.signature(adb::DeltaConstraint.__init__)
+def test_adb_rangeconstraint_constructor_args():
+    sig = inspect.signature(adb_RangeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::rangeconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::RangeConstraint)
+def test_adb_deltaconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_DeltaConstraint)
 
 
-def test_adb::rangeconstraint_constructor_exists():
-    assert callable(adb::RangeConstraint.__init__)
+def test_adb_deltaconstraint_constructor_exists():
+    assert callable(adb_DeltaConstraint.__init__)
 
 
-def test_adb::rangeconstraint_constructor_args():
-    sig = inspect.signature(adb::RangeConstraint.__init__)
+def test_adb_deltaconstraint_constructor_args():
+    sig = inspect.signature(adb_DeltaConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::digitsconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::DigitsConstraint)
+def test_adb_digitsconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_DigitsConstraint)
 
 
-def test_adb::digitsconstraint_constructor_exists():
-    assert callable(adb::DigitsConstraint.__init__)
+def test_adb_digitsconstraint_constructor_exists():
+    assert callable(adb_DigitsConstraint.__init__)
 
 
-def test_adb::digitsconstraint_constructor_args():
-    sig = inspect.signature(adb::DigitsConstraint.__init__)
+def test_adb_digitsconstraint_constructor_args():
+    sig = inspect.signature(adb_DigitsConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::scalarconstraint_is_not_abstract():
-    assert not inspect.isabstract(adb::ScalarConstraint)
+def test_adb_scalarconstraint_is_not_abstract():
+    assert not inspect.isabstract(adb_ScalarConstraint)
 
 
-def test_adb::scalarconstraint_constructor_exists():
-    assert callable(adb::ScalarConstraint.__init__)
+def test_adb_scalarconstraint_constructor_exists():
+    assert callable(adb_ScalarConstraint.__init__)
 
 
-def test_adb::scalarconstraint_constructor_args():
-    sig = inspect.signature(adb::ScalarConstraint.__init__)
+def test_adb_scalarconstraint_constructor_args():
+    sig = inspect.signature(adb_ScalarConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::eobject_is_not_abstract():
-    assert not inspect.isabstract(adb::EObject)
+def test_adb_eobject_is_not_abstract():
+    assert not inspect.isabstract(adb_EObject)
 
 
-def test_adb::eobject_constructor_exists():
-    assert callable(adb::EObject.__init__)
+def test_adb_eobject_constructor_exists():
+    assert callable(adb_EObject.__init__)
 
 
-def test_adb::eobject_constructor_args():
-    sig = inspect.signature(adb::EObject.__init__)
+def test_adb_eobject_constructor_args():
+    sig = inspect.signature(adb_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::factor_is_not_abstract():
-    assert not inspect.isabstract(adb::Factor)
+def test_adb_factor_is_not_abstract():
+    assert not inspect.isabstract(adb_Factor)
 
 
-def test_adb::factor_constructor_exists():
-    assert callable(adb::Factor.__init__)
+def test_adb_factor_constructor_exists():
+    assert callable(adb_Factor.__init__)
 
 
-def test_adb::factor_constructor_args():
-    sig = inspect.signature(adb::Factor.__init__)
+def test_adb_factor_constructor_args():
+    sig = inspect.signature(adb_Factor.__init__)
     params = list(sig.parameters.keys())
-    assert "abs" in params, "Missing parameter 'abs'"
     assert "not_" in params, "Missing parameter 'not_'"
+    assert "abs" in params, "Missing parameter 'abs'"
 
-def test_adb::factor_has_abs():
-    assert hasattr(adb::Factor, "abs")
+def test_adb_factor_has_not_():
+    assert hasattr(adb_Factor, "not_")
     descriptor = None
-    for klass in adb::Factor.__mro__:
-        if "abs" in klass.__dict__:
-            descriptor = klass.__dict__["abs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::factor_has_not_():
-    assert hasattr(adb::Factor, "not_")
-    descriptor = None
-    for klass in adb::Factor.__mro__:
+    for klass in adb_Factor.__mro__:
         if "not_" in klass.__dict__:
             descriptor = klass.__dict__["not_"]
             break
     assert isinstance(descriptor, property)
 
+def test_adb_factor_has_abs():
+    assert hasattr(adb_Factor, "abs")
+    descriptor = None
+    for klass in adb_Factor.__mro__:
+        if "abs" in klass.__dict__:
+            descriptor = klass.__dict__["abs"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_adb::term_is_not_abstract():
-    assert not inspect.isabstract(adb::Term)
+
+def test_adb_term_is_not_abstract():
+    assert not inspect.isabstract(adb_Term)
 
 
-def test_adb::term_constructor_exists():
-    assert callable(adb::Term.__init__)
+def test_adb_term_constructor_exists():
+    assert callable(adb_Term.__init__)
 
 
-def test_adb::term_constructor_args():
-    sig = inspect.signature(adb::Term.__init__)
+def test_adb_term_constructor_args():
+    sig = inspect.signature(adb_Term.__init__)
     params = list(sig.parameters.keys())
     assert "multiplyingOperators" in params, "Missing parameter 'multiplyingOperators'"
 
-def test_adb::term_has_multiplyingOperators():
-    assert hasattr(adb::Term, "multiplyingOperators")
+def test_adb_term_has_multiplyingOperators():
+    assert hasattr(adb_Term, "multiplyingOperators")
     descriptor = None
-    for klass in adb::Term.__mro__:
+    for klass in adb_Term.__mro__:
         if "multiplyingOperators" in klass.__dict__:
             descriptor = klass.__dict__["multiplyingOperators"]
             break
@@ -3161,37 +1197,37 @@ def test_adb::term_has_multiplyingOperators():
 
 
 
-def test_adb::interval_is_not_abstract():
-    assert not inspect.isabstract(adb::Interval)
+def test_adb_interval_is_not_abstract():
+    assert not inspect.isabstract(adb_Interval)
 
 
-def test_adb::interval_constructor_exists():
-    assert callable(adb::Interval.__init__)
+def test_adb_interval_constructor_exists():
+    assert callable(adb_Interval.__init__)
 
 
-def test_adb::interval_constructor_args():
-    sig = inspect.signature(adb::Interval.__init__)
+def test_adb_interval_constructor_args():
+    sig = inspect.signature(adb_Interval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::membership_is_not_abstract():
-    assert not inspect.isabstract(adb::Membership)
+def test_adb_membership_is_not_abstract():
+    assert not inspect.isabstract(adb_Membership)
 
 
-def test_adb::membership_constructor_exists():
-    assert callable(adb::Membership.__init__)
+def test_adb_membership_constructor_exists():
+    assert callable(adb_Membership.__init__)
 
 
-def test_adb::membership_constructor_args():
-    sig = inspect.signature(adb::Membership.__init__)
+def test_adb_membership_constructor_args():
+    sig = inspect.signature(adb_Membership.__init__)
     params = list(sig.parameters.keys())
     assert "not_" in params, "Missing parameter 'not_'"
 
-def test_adb::membership_has_not_():
-    assert hasattr(adb::Membership, "not_")
+def test_adb_membership_has_not_():
+    assert hasattr(adb_Membership, "not_")
     descriptor = None
-    for klass in adb::Membership.__mro__:
+    for klass in adb_Membership.__mro__:
         if "not_" in klass.__dict__:
             descriptor = klass.__dict__["not_"]
             break
@@ -3199,23 +1235,23 @@ def test_adb::membership_has_not_():
 
 
 
-def test_adb::relation_is_not_abstract():
-    assert not inspect.isabstract(adb::Relation)
+def test_adb_relation_is_not_abstract():
+    assert not inspect.isabstract(adb_Relation)
 
 
-def test_adb::relation_constructor_exists():
-    assert callable(adb::Relation.__init__)
+def test_adb_relation_constructor_exists():
+    assert callable(adb_Relation.__init__)
 
 
-def test_adb::relation_constructor_args():
-    sig = inspect.signature(adb::Relation.__init__)
+def test_adb_relation_constructor_args():
+    sig = inspect.signature(adb_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "relationalOperator" in params, "Missing parameter 'relationalOperator'"
 
-def test_adb::relation_has_relationalOperator():
-    assert hasattr(adb::Relation, "relationalOperator")
+def test_adb_relation_has_relationalOperator():
+    assert hasattr(adb_Relation, "relationalOperator")
     descriptor = None
-    for klass in adb::Relation.__mro__:
+    for klass in adb_Relation.__mro__:
         if "relationalOperator" in klass.__dict__:
             descriptor = klass.__dict__["relationalOperator"]
             break
@@ -3237,20 +1273,6 @@ def test_parametereffectivevalue_constructor_args():
 
 
 
-def test_adb::range_is_not_abstract():
-    assert not inspect.isabstract(adb::Range)
-
-
-def test_adb::range_constructor_exists():
-    assert callable(adb::Range.__init__)
-
-
-def test_adb::range_constructor_args():
-    sig = inspect.signature(adb::Range.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_ancestorpart_is_not_abstract():
     assert not inspect.isabstract(AncestorPart)
 
@@ -3265,47 +1287,229 @@ def test_ancestorpart_constructor_args():
 
 
 
-def test_adb::expression_is_not_abstract():
-    assert not inspect.isabstract(adb::Expression)
+def test_discretechoice_is_not_abstract():
+    assert not inspect.isabstract(DiscreteChoice)
 
 
-def test_adb::expression_constructor_exists():
-    assert callable(adb::Expression.__init__)
+def test_discretechoice_constructor_exists():
+    assert callable(DiscreteChoice.__init__)
 
 
-def test_adb::expression_constructor_args():
-    sig = inspect.signature(adb::Expression.__init__)
+def test_discretechoice_constructor_args():
+    sig = inspect.signature(DiscreteChoice.__init__)
     params = list(sig.parameters.keys())
-    assert "booleanOperator" in params, "Missing parameter 'booleanOperator'"
 
-def test_adb::expression_has_booleanOperator():
-    assert hasattr(adb::Expression, "booleanOperator")
+
+
+def test_adb_range_is_not_abstract():
+    assert not inspect.isabstract(adb_Range)
+
+
+def test_adb_range_constructor_exists():
+    assert callable(adb_Range.__init__)
+
+
+def test_adb_range_constructor_args():
+    sig = inspect.signature(adb_Range.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_explicitgenericactualparameter_is_not_abstract():
+    assert not inspect.isabstract(ExplicitGenericActualParameter)
+
+
+def test_explicitgenericactualparameter_constructor_exists():
+    assert callable(ExplicitGenericActualParameter.__init__)
+
+
+def test_explicitgenericactualparameter_constructor_args():
+    sig = inspect.signature(ExplicitGenericActualParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_entryindex_is_not_abstract():
+    assert not inspect.isabstract(EntryIndex)
+
+
+def test_entryindex_constructor_exists():
+    assert callable(EntryIndex.__init__)
+
+
+def test_entryindex_constructor_args():
+    sig = inspect.signature(EntryIndex.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_primary_is_not_abstract():
+    assert not inspect.isabstract(adb_Primary)
+
+
+def test_adb_primary_constructor_exists():
+    assert callable(adb_Primary.__init__)
+
+
+def test_adb_primary_constructor_args():
+    sig = inspect.signature(adb_Primary.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_realrangespecification_is_not_abstract():
+    assert not inspect.isabstract(adb_RealRangeSpecification)
+
+
+def test_adb_realrangespecification_constructor_exists():
+    assert callable(adb_RealRangeSpecification.__init__)
+
+
+def test_adb_realrangespecification_constructor_args():
+    sig = inspect.signature(adb_RealRangeSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_discretechoice_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscreteChoice)
+
+
+def test_adb_discretechoice_constructor_exists():
+    assert callable(adb_DiscreteChoice.__init__)
+
+
+def test_adb_discretechoice_constructor_args():
+    sig = inspect.signature(adb_DiscreteChoice.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_variant_is_not_abstract():
+    assert not inspect.isabstract(adb_Variant)
+
+
+def test_adb_variant_constructor_exists():
+    assert callable(adb_Variant.__init__)
+
+
+def test_adb_variant_constructor_args():
+    sig = inspect.signature(adb_Variant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_componentclause_is_not_abstract():
+    assert not inspect.isabstract(adb_ComponentClause)
+
+
+def test_adb_componentclause_constructor_exists():
+    assert callable(adb_ComponentClause.__init__)
+
+
+def test_adb_componentclause_constructor_args():
+    sig = inspect.signature(adb_ComponentClause.__init__)
+    params = list(sig.parameters.keys())
+    assert "localName" in params, "Missing parameter 'localName'"
+
+def test_adb_componentclause_has_localName():
+    assert hasattr(adb_ComponentClause, "localName")
     descriptor = None
-    for klass in adb::Expression.__mro__:
-        if "booleanOperator" in klass.__dict__:
-            descriptor = klass.__dict__["booleanOperator"]
+    for klass in adb_ComponentClause.__mro__:
+        if "localName" in klass.__dict__:
+            descriptor = klass.__dict__["localName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_adb::exceptionhandler_is_not_abstract():
-    assert not inspect.isabstract(adb::ExceptionHandler)
+def test_adb_modclause_is_not_abstract():
+    assert not inspect.isabstract(adb_ModClause)
 
 
-def test_adb::exceptionhandler_constructor_exists():
-    assert callable(adb::ExceptionHandler.__init__)
+def test_adb_modclause_constructor_exists():
+    assert callable(adb_ModClause.__init__)
 
 
-def test_adb::exceptionhandler_constructor_args():
-    sig = inspect.signature(adb::ExceptionHandler.__init__)
+def test_adb_modclause_constructor_args():
+    sig = inspect.signature(adb_ModClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_realtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(RealTypeDefinition)
+
+
+def test_realtypedefinition_constructor_exists():
+    assert callable(RealTypeDefinition.__init__)
+
+
+def test_realtypedefinition_constructor_args():
+    sig = inspect.signature(RealTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_fixedpointdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_FixedPointDefinition)
+
+
+def test_adb_fixedpointdefinition_constructor_exists():
+    assert callable(adb_FixedPointDefinition.__init__)
+
+
+def test_adb_fixedpointdefinition_constructor_args():
+    sig = inspect.signature(adb_FixedPointDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_floatingpointdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_FloatingPointDefinition)
+
+
+def test_adb_floatingpointdefinition_constructor_exists():
+    assert callable(adb_FloatingPointDefinition.__init__)
+
+
+def test_adb_floatingpointdefinition_constructor_args():
+    sig = inspect.signature(adb_FloatingPointDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentitem_is_not_abstract():
+    assert not inspect.isabstract(ComponentItem)
+
+
+def test_componentitem_constructor_exists():
+    assert callable(ComponentItem.__init__)
+
+
+def test_componentitem_constructor_args():
+    sig = inspect.signature(ComponentItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_variantpart_is_not_abstract():
+    assert not inspect.isabstract(adb_VariantPart)
+
+
+def test_adb_variantpart_constructor_exists():
+    assert callable(adb_VariantPart.__init__)
+
+
+def test_adb_variantpart_constructor_args():
+    sig = inspect.signature(adb_VariantPart.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::exceptionhandler_has_name():
-    assert hasattr(adb::ExceptionHandler, "name")
+def test_adb_variantpart_has_name():
+    assert hasattr(adb_VariantPart, "name")
     descriptor = None
-    for klass in adb::ExceptionHandler.__mro__:
+    for klass in adb_VariantPart.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3313,16 +1517,1812 @@ def test_adb::exceptionhandler_has_name():
 
 
 
-def test_adb::genericitem_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericItem)
+def test_adb_optvariantpart_is_not_abstract():
+    assert not inspect.isabstract(adb_OptVariantPart)
 
 
-def test_adb::genericitem_constructor_exists():
-    assert callable(adb::GenericItem.__init__)
+def test_adb_optvariantpart_constructor_exists():
+    assert callable(adb_OptVariantPart.__init__)
 
 
-def test_adb::genericitem_constructor_args():
-    sig = inspect.signature(adb::GenericItem.__init__)
+def test_adb_optvariantpart_constructor_args():
+    sig = inspect.signature(adb_OptVariantPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_componentitem_is_not_abstract():
+    assert not inspect.isabstract(adb_ComponentItem)
+
+
+def test_adb_componentitem_constructor_exists():
+    assert callable(adb_ComponentItem.__init__)
+
+
+def test_adb_componentitem_constructor_args():
+    sig = inspect.signature(adb_ComponentItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_componentlist_is_not_abstract():
+    assert not inspect.isabstract(adb_ComponentList)
+
+
+def test_adb_componentlist_constructor_exists():
+    assert callable(adb_ComponentList.__init__)
+
+
+def test_adb_componentlist_constructor_args():
+    sig = inspect.signature(adb_ComponentList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_simpleexpression_is_not_abstract():
+    assert not inspect.isabstract(adb_SimpleExpression)
+
+
+def test_adb_simpleexpression_constructor_exists():
+    assert callable(adb_SimpleExpression.__init__)
+
+
+def test_adb_simpleexpression_constructor_args():
+    sig = inspect.signature(adb_SimpleExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "unaryAddingOperator" in params, "Missing parameter 'unaryAddingOperator'"
+    assert "binaryAddingOperators" in params, "Missing parameter 'binaryAddingOperators'"
+
+def test_adb_simpleexpression_has_unaryAddingOperator():
+    assert hasattr(adb_SimpleExpression, "unaryAddingOperator")
+    descriptor = None
+    for klass in adb_SimpleExpression.__mro__:
+        if "unaryAddingOperator" in klass.__dict__:
+            descriptor = klass.__dict__["unaryAddingOperator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_simpleexpression_has_binaryAddingOperators():
+    assert hasattr(adb_SimpleExpression, "binaryAddingOperators")
+    descriptor = None
+    for klass in adb_SimpleExpression.__mro__:
+        if "binaryAddingOperators" in klass.__dict__:
+            descriptor = klass.__dict__["binaryAddingOperators"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_integertypedefinition_is_not_abstract():
+    assert not inspect.isabstract(IntegerTypeDefinition)
+
+
+def test_integertypedefinition_constructor_exists():
+    assert callable(IntegerTypeDefinition.__init__)
+
+
+def test_integertypedefinition_constructor_args():
+    sig = inspect.signature(IntegerTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_modulartypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_ModularTypeDefinition)
+
+
+def test_adb_modulartypedefinition_constructor_exists():
+    assert callable(adb_ModularTypeDefinition.__init__)
+
+
+def test_adb_modulartypedefinition_constructor_args():
+    sig = inspect.signature(adb_ModularTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_signedintegertypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_SignedIntegerTypeDefinition)
+
+
+def test_adb_signedintegertypedefinition_constructor_exists():
+    assert callable(adb_SignedIntegerTypeDefinition.__init__)
+
+
+def test_adb_signedintegertypedefinition_constructor_args():
+    sig = inspect.signature(adb_SignedIntegerTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_parameterspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_ParameterSpecification)
+
+
+def test_adb_parameterspecification_constructor_exists():
+    assert callable(adb_ParameterSpecification.__init__)
+
+
+def test_adb_parameterspecification_constructor_args():
+    sig = inspect.signature(adb_ParameterSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_returnsubtypeindication_is_not_abstract():
+    assert not inspect.isabstract(ReturnSubtypeIndication)
+
+
+def test_returnsubtypeindication_constructor_exists():
+    assert callable(ReturnSubtypeIndication.__init__)
+
+
+def test_returnsubtypeindication_constructor_args():
+    sig = inspect.signature(ReturnSubtypeIndication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrayindexes_is_not_abstract():
+    assert not inspect.isabstract(ArrayIndexes)
+
+
+def test_arrayindexes_constructor_exists():
+    assert callable(ArrayIndexes.__init__)
+
+
+def test_arrayindexes_constructor_args():
+    sig = inspect.signature(ArrayIndexes.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_constrainedindexes_is_not_abstract():
+    assert not inspect.isabstract(adb_ConstrainedIndexes)
+
+
+def test_adb_constrainedindexes_constructor_exists():
+    assert callable(adb_ConstrainedIndexes.__init__)
+
+
+def test_adb_constrainedindexes_constructor_args():
+    sig = inspect.signature(adb_ConstrainedIndexes.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_unconstrainedindexes_is_not_abstract():
+    assert not inspect.isabstract(adb_UnconstrainedIndexes)
+
+
+def test_adb_unconstrainedindexes_constructor_exists():
+    assert callable(adb_UnconstrainedIndexes.__init__)
+
+
+def test_adb_unconstrainedindexes_constructor_args():
+    sig = inspect.signature(adb_UnconstrainedIndexes.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_componentdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_ComponentDefinition)
+
+
+def test_adb_componentdefinition_constructor_exists():
+    assert callable(adb_ComponentDefinition.__init__)
+
+
+def test_adb_componentdefinition_constructor_args():
+    sig = inspect.signature(adb_ComponentDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "aliased" in params, "Missing parameter 'aliased'"
+
+def test_adb_componentdefinition_has_aliased():
+    assert hasattr(adb_ComponentDefinition, "aliased")
+    descriptor = None
+    for klass in adb_ComponentDefinition.__mro__:
+        if "aliased" in klass.__dict__:
+            descriptor = klass.__dict__["aliased"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_arrayindexes_is_not_abstract():
+    assert not inspect.isabstract(adb_ArrayIndexes)
+
+
+def test_adb_arrayindexes_constructor_exists():
+    assert callable(adb_ArrayIndexes.__init__)
+
+
+def test_adb_arrayindexes_constructor_args():
+    sig = inspect.signature(adb_ArrayIndexes.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notnullaccessdefinition_is_not_abstract():
+    assert not inspect.isabstract(NotNullAccessDefinition)
+
+
+def test_notnullaccessdefinition_constructor_exists():
+    assert callable(NotNullAccessDefinition.__init__)
+
+
+def test_notnullaccessdefinition_constructor_args():
+    sig = inspect.signature(NotNullAccessDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_accessspecification_is_not_abstract():
+    assert not inspect.isabstract(AccessSpecification)
+
+
+def test_accessspecification_constructor_exists():
+    assert callable(AccessSpecification.__init__)
+
+
+def test_accessspecification_constructor_args():
+    sig = inspect.signature(AccessSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_accesstodatadefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_AccessToDataDefinition)
+
+
+def test_adb_accesstodatadefinition_constructor_exists():
+    assert callable(adb_AccessToDataDefinition.__init__)
+
+
+def test_adb_accesstodatadefinition_constructor_args():
+    sig = inspect.signature(adb_AccessToDataDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "generalAccessModifier" in params, "Missing parameter 'generalAccessModifier'"
+
+def test_adb_accesstodatadefinition_has_generalAccessModifier():
+    assert hasattr(adb_AccessToDataDefinition, "generalAccessModifier")
+    descriptor = None
+    for klass in adb_AccessToDataDefinition.__mro__:
+        if "generalAccessModifier" in klass.__dict__:
+            descriptor = klass.__dict__["generalAccessModifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_accesstosubprogramdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_AccessToSubprogramDefinition)
+
+
+def test_adb_accesstosubprogramdefinition_constructor_exists():
+    assert callable(adb_AccessToSubprogramDefinition.__init__)
+
+
+def test_adb_accesstosubprogramdefinition_constructor_args():
+    sig = inspect.signature(adb_AccessToSubprogramDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "protected" in params, "Missing parameter 'protected'"
+
+def test_adb_accesstosubprogramdefinition_has_protected():
+    assert hasattr(adb_AccessToSubprogramDefinition, "protected")
+    descriptor = None
+    for klass in adb_AccessToSubprogramDefinition.__mro__:
+        if "protected" in klass.__dict__:
+            descriptor = klass.__dict__["protected"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_accessspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_AccessSpecification)
+
+
+def test_adb_accessspecification_constructor_exists():
+    assert callable(adb_AccessSpecification.__init__)
+
+
+def test_adb_accessspecification_constructor_args():
+    sig = inspect.signature(adb_AccessSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_accesstodatainstance_is_not_abstract():
+    assert not inspect.isabstract(adb_AccessToDataInstance)
+
+
+def test_adb_accesstodatainstance_constructor_exists():
+    assert callable(adb_AccessToDataInstance.__init__)
+
+
+def test_adb_accesstodatainstance_constructor_args():
+    sig = inspect.signature(adb_AccessToDataInstance.__init__)
+    params = list(sig.parameters.keys())
+    assert "constant" in params, "Missing parameter 'constant'"
+
+def test_adb_accesstodatainstance_has_constant():
+    assert hasattr(adb_AccessToDataInstance, "constant")
+    descriptor = None
+    for klass in adb_AccessToDataInstance.__mro__:
+        if "constant" in klass.__dict__:
+            descriptor = klass.__dict__["constant"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(TypeDefinition)
+
+
+def test_typedefinition_constructor_exists():
+    assert callable(TypeDefinition.__init__)
+
+
+def test_typedefinition_constructor_args():
+    sig = inspect.signature(TypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_integertypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_IntegerTypeDefinition)
+
+
+def test_adb_integertypedefinition_constructor_exists():
+    assert callable(adb_IntegerTypeDefinition.__init__)
+
+
+def test_adb_integertypedefinition_constructor_args():
+    sig = inspect.signature(adb_IntegerTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_realtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_RealTypeDefinition)
+
+
+def test_adb_realtypedefinition_constructor_exists():
+    assert callable(adb_RealTypeDefinition.__init__)
+
+
+def test_adb_realtypedefinition_constructor_args():
+    sig = inspect.signature(adb_RealTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_recordtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_RecordTypeDefinition)
+
+
+def test_adb_recordtypedefinition_constructor_exists():
+    assert callable(adb_RecordTypeDefinition.__init__)
+
+
+def test_adb_recordtypedefinition_constructor_args():
+    sig = inspect.signature(adb_RecordTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "limited" in params, "Missing parameter 'limited'"
+    assert "tagged" in params, "Missing parameter 'tagged'"
+
+def test_adb_recordtypedefinition_has_abstract():
+    assert hasattr(adb_RecordTypeDefinition, "abstract")
+    descriptor = None
+    for klass in adb_RecordTypeDefinition.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_recordtypedefinition_has_limited():
+    assert hasattr(adb_RecordTypeDefinition, "limited")
+    descriptor = None
+    for klass in adb_RecordTypeDefinition.__mro__:
+        if "limited" in klass.__dict__:
+            descriptor = klass.__dict__["limited"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_recordtypedefinition_has_tagged():
+    assert hasattr(adb_RecordTypeDefinition, "tagged")
+    descriptor = None
+    for klass in adb_RecordTypeDefinition.__mro__:
+        if "tagged" in klass.__dict__:
+            descriptor = klass.__dict__["tagged"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_derivedtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_DerivedTypeDefinition)
+
+
+def test_adb_derivedtypedefinition_constructor_exists():
+    assert callable(adb_DerivedTypeDefinition.__init__)
+
+
+def test_adb_derivedtypedefinition_constructor_args():
+    sig = inspect.signature(adb_DerivedTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "limited" in params, "Missing parameter 'limited'"
+    assert "abstract" in params, "Missing parameter 'abstract'"
+
+def test_adb_derivedtypedefinition_has_limited():
+    assert hasattr(adb_DerivedTypeDefinition, "limited")
+    descriptor = None
+    for klass in adb_DerivedTypeDefinition.__mro__:
+        if "limited" in klass.__dict__:
+            descriptor = klass.__dict__["limited"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_derivedtypedefinition_has_abstract():
+    assert hasattr(adb_DerivedTypeDefinition, "abstract")
+    descriptor = None
+    for klass in adb_DerivedTypeDefinition.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_enumerationtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_EnumerationTypeDefinition)
+
+
+def test_adb_enumerationtypedefinition_constructor_exists():
+    assert callable(adb_EnumerationTypeDefinition.__init__)
+
+
+def test_adb_enumerationtypedefinition_constructor_args():
+    sig = inspect.signature(adb_EnumerationTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "enumerationliteralspecifications" in params, "Missing parameter 'enumerationliteralspecifications'"
+
+def test_adb_enumerationtypedefinition_has_enumerationliteralspecifications():
+    assert hasattr(adb_EnumerationTypeDefinition, "enumerationliteralspecifications")
+    descriptor = None
+    for klass in adb_EnumerationTypeDefinition.__mro__:
+        if "enumerationliteralspecifications" in klass.__dict__:
+            descriptor = klass.__dict__["enumerationliteralspecifications"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_notnullaccessdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_NotNullAccessDefinition)
+
+
+def test_adb_notnullaccessdefinition_constructor_exists():
+    assert callable(adb_NotNullAccessDefinition.__init__)
+
+
+def test_adb_notnullaccessdefinition_constructor_args():
+    sig = inspect.signature(adb_NotNullAccessDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_discriminantspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscriminantSpecification)
+
+
+def test_adb_discriminantspecification_constructor_exists():
+    assert callable(adb_DiscriminantSpecification.__init__)
+
+
+def test_adb_discriminantspecification_constructor_args():
+    sig = inspect.signature(adb_DiscriminantSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_recorddefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_RecordDefinition)
+
+
+def test_adb_recorddefinition_constructor_exists():
+    assert callable(adb_RecordDefinition.__init__)
+
+
+def test_adb_recorddefinition_constructor_args():
+    sig = inspect.signature(adb_RecordDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "null" in params, "Missing parameter 'null'"
+
+def test_adb_recorddefinition_has_null():
+    assert hasattr(adb_RecordDefinition, "null")
+    descriptor = None
+    for klass in adb_RecordDefinition.__mro__:
+        if "null" in klass.__dict__:
+            descriptor = klass.__dict__["null"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_recordextensionpart_is_not_abstract():
+    assert not inspect.isabstract(adb_RecordExtensionPart)
+
+
+def test_adb_recordextensionpart_constructor_exists():
+    assert callable(adb_RecordExtensionPart.__init__)
+
+
+def test_adb_recordextensionpart_constructor_args():
+    sig = inspect.signature(adb_RecordExtensionPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_discriminantpart_is_not_abstract():
+    assert not inspect.isabstract(DiscriminantPart)
+
+
+def test_discriminantpart_constructor_exists():
+    assert callable(DiscriminantPart.__init__)
+
+
+def test_discriminantpart_constructor_args():
+    sig = inspect.signature(DiscriminantPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_unknowndiscriminantpart_is_not_abstract():
+    assert not inspect.isabstract(adb_UnknownDiscriminantPart)
+
+
+def test_adb_unknowndiscriminantpart_constructor_exists():
+    assert callable(adb_UnknownDiscriminantPart.__init__)
+
+
+def test_adb_unknowndiscriminantpart_constructor_args():
+    sig = inspect.signature(adb_UnknownDiscriminantPart.__init__)
+    params = list(sig.parameters.keys())
+    assert "box" in params, "Missing parameter 'box'"
+
+def test_adb_unknowndiscriminantpart_has_box():
+    assert hasattr(adb_UnknownDiscriminantPart, "box")
+    descriptor = None
+    for klass in adb_UnknownDiscriminantPart.__mro__:
+        if "box" in klass.__dict__:
+            descriptor = klass.__dict__["box"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_explicitgenericactualparameter_is_not_abstract():
+    assert not inspect.isabstract(adb_ExplicitGenericActualParameter)
+
+
+def test_adb_explicitgenericactualparameter_constructor_exists():
+    assert callable(adb_ExplicitGenericActualParameter.__init__)
+
+
+def test_adb_explicitgenericactualparameter_constructor_args():
+    sig = inspect.signature(adb_ExplicitGenericActualParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_abortstatement_is_not_abstract():
+    assert not inspect.isabstract(AbortStatement)
+
+
+def test_abortstatement_constructor_exists():
+    assert callable(AbortStatement.__init__)
+
+
+def test_abortstatement_constructor_args():
+    sig = inspect.signature(AbortStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_tasknames_is_not_abstract():
+    assert not inspect.isabstract(adb_TaskNames)
+
+
+def test_adb_tasknames_constructor_exists():
+    assert callable(adb_TaskNames.__init__)
+
+
+def test_adb_tasknames_constructor_args():
+    sig = inspect.signature(adb_TaskNames.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_entrycallalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryCallAlternative)
+
+
+def test_adb_entrycallalternative_constructor_exists():
+    assert callable(adb_EntryCallAlternative.__init__)
+
+
+def test_adb_entrycallalternative_constructor_args():
+    sig = inspect.signature(adb_EntryCallAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_selectalternative_is_not_abstract():
+    assert not inspect.isabstract(SelectAlternative)
+
+
+def test_selectalternative_constructor_exists():
+    assert callable(SelectAlternative.__init__)
+
+
+def test_selectalternative_constructor_args():
+    sig = inspect.signature(SelectAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_delayalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_DelayAlternative)
+
+
+def test_adb_delayalternative_constructor_exists():
+    assert callable(adb_DelayAlternative.__init__)
+
+
+def test_adb_delayalternative_constructor_args():
+    sig = inspect.signature(adb_DelayAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_acceptalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_AcceptAlternative)
+
+
+def test_adb_acceptalternative_constructor_exists():
+    assert callable(adb_AcceptAlternative.__init__)
+
+
+def test_adb_acceptalternative_constructor_args():
+    sig = inspect.signature(adb_AcceptAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_guardedalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_GuardedAlternative)
+
+
+def test_adb_guardedalternative_constructor_exists():
+    assert callable(adb_GuardedAlternative.__init__)
+
+
+def test_adb_guardedalternative_constructor_args():
+    sig = inspect.signature(adb_GuardedAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_selectalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_SelectAlternative)
+
+
+def test_adb_selectalternative_constructor_exists():
+    assert callable(adb_SelectAlternative.__init__)
+
+
+def test_adb_selectalternative_constructor_args():
+    sig = inspect.signature(adb_SelectAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_guard_is_not_abstract():
+    assert not inspect.isabstract(adb_Guard)
+
+
+def test_adb_guard_constructor_exists():
+    assert callable(adb_Guard.__init__)
+
+
+def test_adb_guard_constructor_args():
+    sig = inspect.signature(adb_Guard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_selectstatement_is_not_abstract():
+    assert not inspect.isabstract(SelectStatement)
+
+
+def test_selectstatement_constructor_exists():
+    assert callable(SelectStatement.__init__)
+
+
+def test_selectstatement_constructor_args():
+    sig = inspect.signature(SelectStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_conditionalentrycall_is_not_abstract():
+    assert not inspect.isabstract(adb_ConditionalEntryCall)
+
+
+def test_adb_conditionalentrycall_constructor_exists():
+    assert callable(adb_ConditionalEntryCall.__init__)
+
+
+def test_adb_conditionalentrycall_constructor_args():
+    sig = inspect.signature(adb_ConditionalEntryCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_timedentrycall_is_not_abstract():
+    assert not inspect.isabstract(adb_TimedEntryCall)
+
+
+def test_adb_timedentrycall_constructor_exists():
+    assert callable(adb_TimedEntryCall.__init__)
+
+
+def test_adb_timedentrycall_constructor_args():
+    sig = inspect.signature(adb_TimedEntryCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_selectiveaccept_is_not_abstract():
+    assert not inspect.isabstract(adb_SelectiveAccept)
+
+
+def test_adb_selectiveaccept_constructor_exists():
+    assert callable(adb_SelectiveAccept.__init__)
+
+
+def test_adb_selectiveaccept_constructor_args():
+    sig = inspect.signature(adb_SelectiveAccept.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_triggeringstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_TriggeringStatement)
+
+
+def test_adb_triggeringstatement_constructor_exists():
+    assert callable(adb_TriggeringStatement.__init__)
+
+
+def test_adb_triggeringstatement_constructor_args():
+    sig = inspect.signature(adb_TriggeringStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_abortablepart_is_not_abstract():
+    assert not inspect.isabstract(adb_AbortablePart)
+
+
+def test_adb_abortablepart_constructor_exists():
+    assert callable(adb_AbortablePart.__init__)
+
+
+def test_adb_abortablepart_constructor_args():
+    sig = inspect.signature(adb_AbortablePart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_triggeringalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_TriggeringAlternative)
+
+
+def test_adb_triggeringalternative_constructor_exists():
+    assert callable(adb_TriggeringAlternative.__init__)
+
+
+def test_adb_triggeringalternative_constructor_args():
+    sig = inspect.signature(adb_TriggeringAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_asynchronousselect_is_not_abstract():
+    assert not inspect.isabstract(adb_AsynchronousSelect)
+
+
+def test_adb_asynchronousselect_constructor_exists():
+    assert callable(adb_AsynchronousSelect.__init__)
+
+
+def test_adb_asynchronousselect_constructor_args():
+    sig = inspect.signature(adb_AsynchronousSelect.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_entryindexspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryIndexSpecification)
+
+
+def test_adb_entryindexspecification_constructor_exists():
+    assert callable(adb_EntryIndexSpecification.__init__)
+
+
+def test_adb_entryindexspecification_constructor_args():
+    sig = inspect.signature(adb_EntryIndexSpecification.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_adb_entryindexspecification_has_name():
+    assert hasattr(adb_EntryIndexSpecification, "name")
+    descriptor = None
+    for klass in adb_EntryIndexSpecification.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_entrybarrier_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryBarrier)
+
+
+def test_adb_entrybarrier_constructor_exists():
+    assert callable(adb_EntryBarrier.__init__)
+
+
+def test_adb_entrybarrier_constructor_args():
+    sig = inspect.signature(adb_EntryBarrier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_entrybodyformalpart_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryBodyFormalPart)
+
+
+def test_adb_entrybodyformalpart_constructor_exists():
+    assert callable(adb_EntryBodyFormalPart.__init__)
+
+
+def test_adb_entrybodyformalpart_constructor_args():
+    sig = inspect.signature(adb_EntryBodyFormalPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_entryindex_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryIndex)
+
+
+def test_adb_entryindex_constructor_exists():
+    assert callable(adb_EntryIndex.__init__)
+
+
+def test_adb_entryindex_constructor_args():
+    sig = inspect.signature(adb_EntryIndex.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_protectedoperationitem_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedOperationItem)
+
+
+def test_adb_protectedoperationitem_constructor_exists():
+    assert callable(adb_ProtectedOperationItem.__init__)
+
+
+def test_adb_protectedoperationitem_constructor_args():
+    sig = inspect.signature(adb_ProtectedOperationItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_returnsubtypeindication_is_not_abstract():
+    assert not inspect.isabstract(adb_ReturnSubtypeIndication)
+
+
+def test_adb_returnsubtypeindication_constructor_exists():
+    assert callable(adb_ReturnSubtypeIndication.__init__)
+
+
+def test_adb_returnsubtypeindication_constructor_args():
+    sig = inspect.signature(adb_ReturnSubtypeIndication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_triggeringstatement_is_not_abstract():
+    assert not inspect.isabstract(TriggeringStatement)
+
+
+def test_triggeringstatement_constructor_exists():
+    assert callable(TriggeringStatement.__init__)
+
+
+def test_triggeringstatement_constructor_args():
+    sig = inspect.signature(TriggeringStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_loopparameterspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_LoopParameterSpecification)
+
+
+def test_adb_loopparameterspecification_constructor_exists():
+    assert callable(adb_LoopParameterSpecification.__init__)
+
+
+def test_adb_loopparameterspecification_constructor_args():
+    sig = inspect.signature(adb_LoopParameterSpecification.__init__)
+    params = list(sig.parameters.keys())
+    assert "identifier" in params, "Missing parameter 'identifier'"
+
+def test_adb_loopparameterspecification_has_identifier():
+    assert hasattr(adb_LoopParameterSpecification, "identifier")
+    descriptor = None
+    for klass in adb_LoopParameterSpecification.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_iterationscheme_is_not_abstract():
+    assert not inspect.isabstract(adb_IterationScheme)
+
+
+def test_adb_iterationscheme_constructor_exists():
+    assert callable(adb_IterationScheme.__init__)
+
+
+def test_adb_iterationscheme_constructor_args():
+    sig = inspect.signature(adb_IterationScheme.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_compoundstatement_is_not_abstract():
+    assert not inspect.isabstract(CompoundStatement)
+
+
+def test_compoundstatement_constructor_exists():
+    assert callable(CompoundStatement.__init__)
+
+
+def test_compoundstatement_constructor_args():
+    sig = inspect.signature(CompoundStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_extendedreturnstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_ExtendedReturnStatement)
+
+
+def test_adb_extendedreturnstatement_constructor_exists():
+    assert callable(adb_ExtendedReturnStatement.__init__)
+
+
+def test_adb_extendedreturnstatement_constructor_args():
+    sig = inspect.signature(adb_ExtendedReturnStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "identifier" in params, "Missing parameter 'identifier'"
+
+def test_adb_extendedreturnstatement_has_identifier():
+    assert hasattr(adb_ExtendedReturnStatement, "identifier")
+    descriptor = None
+    for klass in adb_ExtendedReturnStatement.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_acceptstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_AcceptStatement)
+
+
+def test_adb_acceptstatement_constructor_exists():
+    assert callable(adb_AcceptStatement.__init__)
+
+
+def test_adb_acceptstatement_constructor_args():
+    sig = inspect.signature(adb_AcceptStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "entryidentifier" in params, "Missing parameter 'entryidentifier'"
+
+def test_adb_acceptstatement_has_entryidentifier():
+    assert hasattr(adb_AcceptStatement, "entryidentifier")
+    descriptor = None
+    for klass in adb_AcceptStatement.__mro__:
+        if "entryidentifier" in klass.__dict__:
+            descriptor = klass.__dict__["entryidentifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_selectstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_SelectStatement)
+
+
+def test_adb_selectstatement_constructor_exists():
+    assert callable(adb_SelectStatement.__init__)
+
+
+def test_adb_selectstatement_constructor_args():
+    sig = inspect.signature(adb_SelectStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_LoopStatement)
+
+
+def test_adb_loopstatement_constructor_exists():
+    assert callable(adb_LoopStatement.__init__)
+
+
+def test_adb_loopstatement_constructor_args():
+    sig = inspect.signature(adb_LoopStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "sameName" in params, "Missing parameter 'sameName'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_adb_loopstatement_has_sameName():
+    assert hasattr(adb_LoopStatement, "sameName")
+    descriptor = None
+    for klass in adb_LoopStatement.__mro__:
+        if "sameName" in klass.__dict__:
+            descriptor = klass.__dict__["sameName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_loopstatement_has_name():
+    assert hasattr(adb_LoopStatement, "name")
+    descriptor = None
+    for klass in adb_LoopStatement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_IfStatement)
+
+
+def test_adb_ifstatement_constructor_exists():
+    assert callable(adb_IfStatement.__init__)
+
+
+def test_adb_ifstatement_constructor_args():
+    sig = inspect.signature(adb_IfStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_pragmaargumentassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_PragmaArgumentAssociation)
+
+
+def test_adb_pragmaargumentassociation_constructor_exists():
+    assert callable(adb_PragmaArgumentAssociation.__init__)
+
+
+def test_adb_pragmaargumentassociation_constructor_args():
+    sig = inspect.signature(adb_PragmaArgumentAssociation.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_adb_pragmaargumentassociation_has_name():
+    assert hasattr(adb_PragmaArgumentAssociation, "name")
+    descriptor = None
+    for klass in adb_PragmaArgumentAssociation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_discretechoicelist_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscreteChoiceList)
+
+
+def test_adb_discretechoicelist_constructor_exists():
+    assert callable(adb_DiscreteChoiceList.__init__)
+
+
+def test_adb_discretechoicelist_constructor_args():
+    sig = inspect.signature(adb_DiscreteChoiceList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_casestatementalternative_is_not_abstract():
+    assert not inspect.isabstract(adb_CaseStatementAlternative)
+
+
+def test_adb_casestatementalternative_constructor_exists():
+    assert callable(adb_CaseStatementAlternative.__init__)
+
+
+def test_adb_casestatementalternative_constructor_args():
+    sig = inspect.signature(adb_CaseStatementAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_casestatement_is_not_abstract():
+    assert not inspect.isabstract(adb_CaseStatement)
+
+
+def test_adb_casestatement_constructor_exists():
+    assert callable(adb_CaseStatement.__init__)
+
+
+def test_adb_casestatement_constructor_args():
+    sig = inspect.signature(adb_CaseStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_objectdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ObjectDeclaration)
+
+
+def test_objectdeclaration_constructor_exists():
+    assert callable(ObjectDeclaration.__init__)
+
+
+def test_objectdeclaration_constructor_args():
+    sig = inspect.signature(ObjectDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_datainstancedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_DataInstanceDeclaration)
+
+
+def test_adb_datainstancedeclaration_constructor_exists():
+    assert callable(adb_DataInstanceDeclaration.__init__)
+
+
+def test_adb_datainstancedeclaration_constructor_args():
+    sig = inspect.signature(adb_DataInstanceDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "constant" in params, "Missing parameter 'constant'"
+    assert "aliased" in params, "Missing parameter 'aliased'"
+
+def test_adb_datainstancedeclaration_has_constant():
+    assert hasattr(adb_DataInstanceDeclaration, "constant")
+    descriptor = None
+    for klass in adb_DataInstanceDeclaration.__mro__:
+        if "constant" in klass.__dict__:
+            descriptor = klass.__dict__["constant"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_datainstancedeclaration_has_aliased():
+    assert hasattr(adb_DataInstanceDeclaration, "aliased")
+    descriptor = None
+    for klass in adb_DataInstanceDeclaration.__mro__:
+        if "aliased" in klass.__dict__:
+            descriptor = klass.__dict__["aliased"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_genericassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericAssociation)
+
+
+def test_adb_genericassociation_constructor_exists():
+    assert callable(adb_GenericAssociation.__init__)
+
+
+def test_adb_genericassociation_constructor_args():
+    sig = inspect.signature(adb_GenericAssociation.__init__)
+    params = list(sig.parameters.keys())
+    assert "selectorName" in params, "Missing parameter 'selectorName'"
+
+def test_adb_genericassociation_has_selectorName():
+    assert hasattr(adb_GenericAssociation, "selectorName")
+    descriptor = None
+    for klass in adb_GenericAssociation.__mro__:
+        if "selectorName" in klass.__dict__:
+            descriptor = klass.__dict__["selectorName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_formalpackageassociation_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalPackageAssociation)
+
+
+def test_adb_formalpackageassociation_constructor_exists():
+    assert callable(adb_FormalPackageAssociation.__init__)
+
+
+def test_adb_formalpackageassociation_constructor_args():
+    sig = inspect.signature(adb_FormalPackageAssociation.__init__)
+    params = list(sig.parameters.keys())
+    assert "genericFormalParameterSelectorName" in params, "Missing parameter 'genericFormalParameterSelectorName'"
+
+def test_adb_formalpackageassociation_has_genericFormalParameterSelectorName():
+    assert hasattr(adb_FormalPackageAssociation, "genericFormalParameterSelectorName")
+    descriptor = None
+    for klass in adb_FormalPackageAssociation.__mro__:
+        if "genericFormalParameterSelectorName" in klass.__dict__:
+            descriptor = klass.__dict__["genericFormalParameterSelectorName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_formalpackageactualpart_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalPackageActualPart)
+
+
+def test_adb_formalpackageactualpart_constructor_exists():
+    assert callable(adb_FormalPackageActualPart.__init__)
+
+
+def test_adb_formalpackageactualpart_constructor_args():
+    sig = inspect.signature(adb_FormalPackageActualPart.__init__)
+    params = list(sig.parameters.keys())
+    assert "box" in params, "Missing parameter 'box'"
+
+def test_adb_formalpackageactualpart_has_box():
+    assert hasattr(adb_FormalPackageActualPart, "box")
+    descriptor = None
+    for klass in adb_FormalPackageActualPart.__mro__:
+        if "box" in klass.__dict__:
+            descriptor = klass.__dict__["box"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_subprogramdefault_is_not_abstract():
+    assert not inspect.isabstract(adb_SubprogramDefault)
+
+
+def test_adb_subprogramdefault_constructor_exists():
+    assert callable(adb_SubprogramDefault.__init__)
+
+
+def test_adb_subprogramdefault_constructor_args():
+    sig = inspect.signature(adb_SubprogramDefault.__init__)
+    params = list(sig.parameters.keys())
+    assert "defaultName" in params, "Missing parameter 'defaultName'"
+
+def test_adb_subprogramdefault_has_defaultName():
+    assert hasattr(adb_SubprogramDefault, "defaultName")
+    descriptor = None
+    for klass in adb_SubprogramDefault.__mro__:
+        if "defaultName" in klass.__dict__:
+            descriptor = klass.__dict__["defaultName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_expression_is_not_abstract():
+    assert not inspect.isabstract(adb_Expression)
+
+
+def test_adb_expression_constructor_exists():
+    assert callable(adb_Expression.__init__)
+
+
+def test_adb_expression_constructor_args():
+    sig = inspect.signature(adb_Expression.__init__)
+    params = list(sig.parameters.keys())
+    assert "booleanOperator" in params, "Missing parameter 'booleanOperator'"
+
+def test_adb_expression_has_booleanOperator():
+    assert hasattr(adb_Expression, "booleanOperator")
+    descriptor = None
+    for klass in adb_Expression.__mro__:
+        if "booleanOperator" in klass.__dict__:
+            descriptor = klass.__dict__["booleanOperator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_anonymousaccessdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_AnonymousAccessDefinition)
+
+
+def test_adb_anonymousaccessdefinition_constructor_exists():
+    assert callable(adb_AnonymousAccessDefinition.__init__)
+
+
+def test_adb_anonymousaccessdefinition_constructor_args():
+    sig = inspect.signature(adb_AnonymousAccessDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_optnullexclusion_is_not_abstract():
+    assert not inspect.isabstract(adb_OptNullExclusion)
+
+
+def test_adb_optnullexclusion_constructor_exists():
+    assert callable(adb_OptNullExclusion.__init__)
+
+
+def test_adb_optnullexclusion_constructor_args():
+    sig = inspect.signature(adb_OptNullExclusion.__init__)
+    params = list(sig.parameters.keys())
+    assert "not_null" in params, "Missing parameter 'not_null'"
+
+def test_adb_optnullexclusion_has_not_null():
+    assert hasattr(adb_OptNullExclusion, "not_null")
+    descriptor = None
+    for klass in adb_OptNullExclusion.__mro__:
+        if "not_null" in klass.__dict__:
+            descriptor = klass.__dict__["not_null"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_singleprotecteddeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_SingleProtectedDeclaration)
+
+
+def test_adb_singleprotecteddeclaration_constructor_exists():
+    assert callable(adb_SingleProtectedDeclaration.__init__)
+
+
+def test_adb_singleprotecteddeclaration_constructor_args():
+    sig = inspect.signature(adb_SingleProtectedDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_adb_singleprotecteddeclaration_has_name():
+    assert hasattr(adb_SingleProtectedDeclaration, "name")
+    descriptor = None
+    for klass in adb_SingleProtectedDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_mode_is_not_abstract():
+    assert not inspect.isabstract(adb_Mode)
+
+
+def test_adb_mode_constructor_exists():
+    assert callable(adb_Mode.__init__)
+
+
+def test_adb_mode_constructor_args():
+    sig = inspect.signature(adb_Mode.__init__)
+    params = list(sig.parameters.keys())
+    assert "out" in params, "Missing parameter 'out'"
+    assert "in_" in params, "Missing parameter 'in_'"
+
+def test_adb_mode_has_out():
+    assert hasattr(adb_Mode, "out")
+    descriptor = None
+    for klass in adb_Mode.__mro__:
+        if "out" in klass.__dict__:
+            descriptor = klass.__dict__["out"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_mode_has_in_():
+    assert hasattr(adb_Mode, "in_")
+    descriptor = None
+    for klass in adb_Mode.__mro__:
+        if "in_" in klass.__dict__:
+            descriptor = klass.__dict__["in_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_definingidentifierlist_is_not_abstract():
+    assert not inspect.isabstract(adb_DefiningIdentifierList)
+
+
+def test_adb_definingidentifierlist_constructor_exists():
+    assert callable(adb_DefiningIdentifierList.__init__)
+
+
+def test_adb_definingidentifierlist_constructor_args():
+    sig = inspect.signature(adb_DefiningIdentifierList.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_adb_definingidentifierlist_has_name():
+    assert hasattr(adb_DefiningIdentifierList, "name")
+    descriptor = None
+    for klass in adb_DefiningIdentifierList.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_formaltypedefinition_is_not_abstract():
+    assert not inspect.isabstract(FormalTypeDefinition)
+
+
+def test_formaltypedefinition_constructor_exists():
+    assert callable(FormalTypeDefinition.__init__)
+
+
+def test_formaltypedefinition_constructor_args():
+    sig = inspect.signature(FormalTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_interfacetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_InterfaceTypeDefinition)
+
+
+def test_adb_interfacetypedefinition_constructor_exists():
+    assert callable(adb_InterfaceTypeDefinition.__init__)
+
+
+def test_adb_interfacetypedefinition_constructor_args():
+    sig = inspect.signature(adb_InterfaceTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "synchro" in params, "Missing parameter 'synchro'"
+    assert "protected" in params, "Missing parameter 'protected'"
+    assert "task" in params, "Missing parameter 'task'"
+    assert "limited" in params, "Missing parameter 'limited'"
+
+def test_adb_interfacetypedefinition_has_synchro():
+    assert hasattr(adb_InterfaceTypeDefinition, "synchro")
+    descriptor = None
+    for klass in adb_InterfaceTypeDefinition.__mro__:
+        if "synchro" in klass.__dict__:
+            descriptor = klass.__dict__["synchro"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_interfacetypedefinition_has_protected():
+    assert hasattr(adb_InterfaceTypeDefinition, "protected")
+    descriptor = None
+    for klass in adb_InterfaceTypeDefinition.__mro__:
+        if "protected" in klass.__dict__:
+            descriptor = klass.__dict__["protected"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_interfacetypedefinition_has_task():
+    assert hasattr(adb_InterfaceTypeDefinition, "task")
+    descriptor = None
+    for klass in adb_InterfaceTypeDefinition.__mro__:
+        if "task" in klass.__dict__:
+            descriptor = klass.__dict__["task"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_interfacetypedefinition_has_limited():
+    assert hasattr(adb_InterfaceTypeDefinition, "limited")
+    descriptor = None
+    for klass in adb_InterfaceTypeDefinition.__mro__:
+        if "limited" in klass.__dict__:
+            descriptor = klass.__dict__["limited"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_arraytypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_ArrayTypeDefinition)
+
+
+def test_adb_arraytypedefinition_constructor_exists():
+    assert callable(adb_ArrayTypeDefinition.__init__)
+
+
+def test_adb_arraytypedefinition_constructor_args():
+    sig = inspect.signature(adb_ArrayTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_accesstypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_AccessTypeDefinition)
+
+
+def test_adb_accesstypedefinition_constructor_exists():
+    assert callable(adb_AccessTypeDefinition.__init__)
+
+
+def test_adb_accesstypedefinition_constructor_args():
+    sig = inspect.signature(adb_AccessTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_formalderivedtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalDerivedTypeDefinition)
+
+
+def test_adb_formalderivedtypedefinition_constructor_exists():
+    assert callable(adb_FormalDerivedTypeDefinition.__init__)
+
+
+def test_adb_formalderivedtypedefinition_constructor_args():
+    sig = inspect.signature(adb_FormalDerivedTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "absract" in params, "Missing parameter 'absract'"
+    assert "limited" in params, "Missing parameter 'limited'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
+
+def test_adb_formalderivedtypedefinition_has_absract():
+    assert hasattr(adb_FormalDerivedTypeDefinition, "absract")
+    descriptor = None
+    for klass in adb_FormalDerivedTypeDefinition.__mro__:
+        if "absract" in klass.__dict__:
+            descriptor = klass.__dict__["absract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_formalderivedtypedefinition_has_limited():
+    assert hasattr(adb_FormalDerivedTypeDefinition, "limited")
+    descriptor = None
+    for klass in adb_FormalDerivedTypeDefinition.__mro__:
+        if "limited" in klass.__dict__:
+            descriptor = klass.__dict__["limited"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_formalderivedtypedefinition_has_synchronized():
+    assert hasattr(adb_FormalDerivedTypeDefinition, "synchronized")
+    descriptor = None
+    for klass in adb_FormalDerivedTypeDefinition.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_genericformalparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(GenericFormalParameterDeclaration)
+
+
+def test_genericformalparameterdeclaration_constructor_exists():
+    assert callable(GenericFormalParameterDeclaration.__init__)
+
+
+def test_genericformalparameterdeclaration_constructor_args():
+    sig = inspect.signature(GenericFormalParameterDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_formaltypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalTypeDeclaration)
+
+
+def test_adb_formaltypedeclaration_constructor_exists():
+    assert callable(adb_FormalTypeDeclaration.__init__)
+
+
+def test_adb_formaltypedeclaration_constructor_args():
+    sig = inspect.signature(adb_FormalTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "identifier" in params, "Missing parameter 'identifier'"
+
+def test_adb_formaltypedeclaration_has_identifier():
+    assert hasattr(adb_FormalTypeDeclaration, "identifier")
+    descriptor = None
+    for klass in adb_FormalTypeDeclaration.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_formalpackagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalPackageDeclaration)
+
+
+def test_adb_formalpackagedeclaration_constructor_exists():
+    assert callable(adb_FormalPackageDeclaration.__init__)
+
+
+def test_adb_formalpackagedeclaration_constructor_args():
+    sig = inspect.signature(adb_FormalPackageDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "genericPackageName" in params, "Missing parameter 'genericPackageName'"
+
+def test_adb_formalpackagedeclaration_has_name():
+    assert hasattr(adb_FormalPackageDeclaration, "name")
+    descriptor = None
+    for klass in adb_FormalPackageDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_formalpackagedeclaration_has_genericPackageName():
+    assert hasattr(adb_FormalPackageDeclaration, "genericPackageName")
+    descriptor = None
+    for klass in adb_FormalPackageDeclaration.__mro__:
+        if "genericPackageName" in klass.__dict__:
+            descriptor = klass.__dict__["genericPackageName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_formalsubprogramdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalSubprogramDeclaration)
+
+
+def test_adb_formalsubprogramdeclaration_constructor_exists():
+    assert callable(adb_FormalSubprogramDeclaration.__init__)
+
+
+def test_adb_formalsubprogramdeclaration_constructor_args():
+    sig = inspect.signature(adb_FormalSubprogramDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "abstract" in params, "Missing parameter 'abstract'"
+
+def test_adb_formalsubprogramdeclaration_has_abstract():
+    assert hasattr(adb_FormalSubprogramDeclaration, "abstract")
+    descriptor = None
+    for klass in adb_FormalSubprogramDeclaration.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_formalobjectdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalObjectDeclaration)
+
+
+def test_adb_formalobjectdeclaration_constructor_exists():
+    assert callable(adb_FormalObjectDeclaration.__init__)
+
+
+def test_adb_formalobjectdeclaration_constructor_args():
+    sig = inspect.signature(adb_FormalObjectDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_formalprivatetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalPrivateTypeDefinition)
+
+
+def test_adb_formalprivatetypedefinition_constructor_exists():
+    assert callable(adb_FormalPrivateTypeDefinition.__init__)
+
+
+def test_adb_formalprivatetypedefinition_constructor_args():
+    sig = inspect.signature(adb_FormalPrivateTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "limited" in params, "Missing parameter 'limited'"
+    assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "tagged" in params, "Missing parameter 'tagged'"
+
+def test_adb_formalprivatetypedefinition_has_limited():
+    assert hasattr(adb_FormalPrivateTypeDefinition, "limited")
+    descriptor = None
+    for klass in adb_FormalPrivateTypeDefinition.__mro__:
+        if "limited" in klass.__dict__:
+            descriptor = klass.__dict__["limited"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_formalprivatetypedefinition_has_abstract():
+    assert hasattr(adb_FormalPrivateTypeDefinition, "abstract")
+    descriptor = None
+    for klass in adb_FormalPrivateTypeDefinition.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_formalprivatetypedefinition_has_tagged():
+    assert hasattr(adb_FormalPrivateTypeDefinition, "tagged")
+    descriptor = None
+    for klass in adb_FormalPrivateTypeDefinition.__mro__:
+        if "tagged" in klass.__dict__:
+            descriptor = klass.__dict__["tagged"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_formaltypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalTypeDefinition)
+
+
+def test_adb_formaltypedefinition_constructor_exists():
+    assert callable(adb_FormalTypeDefinition.__init__)
+
+
+def test_adb_formaltypedefinition_constructor_args():
+    sig = inspect.signature(adb_FormalTypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_exceptionhandler_is_not_abstract():
+    assert not inspect.isabstract(adb_ExceptionHandler)
+
+
+def test_adb_exceptionhandler_constructor_exists():
+    assert callable(adb_ExceptionHandler.__init__)
+
+
+def test_adb_exceptionhandler_constructor_args():
+    sig = inspect.signature(adb_ExceptionHandler.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_adb_exceptionhandler_has_name():
+    assert hasattr(adb_ExceptionHandler, "name")
+    descriptor = None
+    for klass in adb_ExceptionHandler.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_adb_genericitem_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericItem)
+
+
+def test_adb_genericitem_constructor_exists():
+    assert callable(adb_GenericItem.__init__)
+
+
+def test_adb_genericitem_constructor_args():
+    sig = inspect.signature(adb_GenericItem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3341,51 +3341,37 @@ def test_simplestatement_constructor_args():
 
 
 
-def test_adb::abortstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::AbortStatement)
+def test_adb_simplereturnstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_SimpleReturnStatement)
 
 
-def test_adb::abortstatement_constructor_exists():
-    assert callable(adb::AbortStatement.__init__)
+def test_adb_simplereturnstatement_constructor_exists():
+    assert callable(adb_SimpleReturnStatement.__init__)
 
 
-def test_adb::abortstatement_constructor_args():
-    sig = inspect.signature(adb::AbortStatement.__init__)
+def test_adb_simplereturnstatement_constructor_args():
+    sig = inspect.signature(adb_SimpleReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::simplereturnstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::SimpleReturnStatement)
+def test_adb_gotostatement_is_not_abstract():
+    assert not inspect.isabstract(adb_GotoStatement)
 
 
-def test_adb::simplereturnstatement_constructor_exists():
-    assert callable(adb::SimpleReturnStatement.__init__)
+def test_adb_gotostatement_constructor_exists():
+    assert callable(adb_GotoStatement.__init__)
 
 
-def test_adb::simplereturnstatement_constructor_args():
-    sig = inspect.signature(adb::SimpleReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::gotostatement_is_not_abstract():
-    assert not inspect.isabstract(adb::GotoStatement)
-
-
-def test_adb::gotostatement_constructor_exists():
-    assert callable(adb::GotoStatement.__init__)
-
-
-def test_adb::gotostatement_constructor_args():
-    sig = inspect.signature(adb::GotoStatement.__init__)
+def test_adb_gotostatement_constructor_args():
+    sig = inspect.signature(adb_GotoStatement.__init__)
     params = list(sig.parameters.keys())
     assert "labelId" in params, "Missing parameter 'labelId'"
 
-def test_adb::gotostatement_has_labelId():
-    assert hasattr(adb::GotoStatement, "labelId")
+def test_adb_gotostatement_has_labelId():
+    assert hasattr(adb_GotoStatement, "labelId")
     descriptor = None
-    for klass in adb::GotoStatement.__mro__:
+    for klass in adb_GotoStatement.__mro__:
         if "labelId" in klass.__dict__:
             descriptor = klass.__dict__["labelId"]
             break
@@ -3393,37 +3379,65 @@ def test_adb::gotostatement_has_labelId():
 
 
 
-def test_adb::procedureorentrycallstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::ProcedureOrEntryCallStatement)
+def test_adb_abortstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_AbortStatement)
 
 
-def test_adb::procedureorentrycallstatement_constructor_exists():
-    assert callable(adb::ProcedureOrEntryCallStatement.__init__)
+def test_adb_abortstatement_constructor_exists():
+    assert callable(adb_AbortStatement.__init__)
 
 
-def test_adb::procedureorentrycallstatement_constructor_args():
-    sig = inspect.signature(adb::ProcedureOrEntryCallStatement.__init__)
+def test_adb_abortstatement_constructor_args():
+    sig = inspect.signature(adb_AbortStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::delaystatement_is_not_abstract():
-    assert not inspect.isabstract(adb::DelayStatement)
+def test_adb_exitstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_ExitStatement)
 
 
-def test_adb::delaystatement_constructor_exists():
-    assert callable(adb::DelayStatement.__init__)
+def test_adb_exitstatement_constructor_exists():
+    assert callable(adb_ExitStatement.__init__)
 
 
-def test_adb::delaystatement_constructor_args():
-    sig = inspect.signature(adb::DelayStatement.__init__)
+def test_adb_exitstatement_constructor_args():
+    sig = inspect.signature(adb_ExitStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_AssignmentStatement)
+
+
+def test_adb_assignmentstatement_constructor_exists():
+    assert callable(adb_AssignmentStatement.__init__)
+
+
+def test_adb_assignmentstatement_constructor_args():
+    sig = inspect.signature(adb_AssignmentStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_delaystatement_is_not_abstract():
+    assert not inspect.isabstract(adb_DelayStatement)
+
+
+def test_adb_delaystatement_constructor_exists():
+    assert callable(adb_DelayStatement.__init__)
+
+
+def test_adb_delaystatement_constructor_args():
+    sig = inspect.signature(adb_DelayStatement.__init__)
     params = list(sig.parameters.keys())
     assert "until" in params, "Missing parameter 'until'"
 
-def test_adb::delaystatement_has_until():
-    assert hasattr(adb::DelayStatement, "until")
+def test_adb_delaystatement_has_until():
+    assert hasattr(adb_DelayStatement, "until")
     descriptor = None
-    for klass in adb::DelayStatement.__mro__:
+    for klass in adb_DelayStatement.__mro__:
         if "until" in klass.__dict__:
             descriptor = klass.__dict__["until"]
             break
@@ -3431,51 +3445,51 @@ def test_adb::delaystatement_has_until():
 
 
 
-def test_adb::raisestatement_is_not_abstract():
-    assert not inspect.isabstract(adb::RaiseStatement)
+def test_adb_procedureorentrycallstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_ProcedureOrEntryCallStatement)
 
 
-def test_adb::raisestatement_constructor_exists():
-    assert callable(adb::RaiseStatement.__init__)
+def test_adb_procedureorentrycallstatement_constructor_exists():
+    assert callable(adb_ProcedureOrEntryCallStatement.__init__)
 
 
-def test_adb::raisestatement_constructor_args():
-    sig = inspect.signature(adb::RaiseStatement.__init__)
+def test_adb_procedureorentrycallstatement_constructor_args():
+    sig = inspect.signature(adb_ProcedureOrEntryCallStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::AssignmentStatement)
+def test_adb_raisestatement_is_not_abstract():
+    assert not inspect.isabstract(adb_RaiseStatement)
 
 
-def test_adb::assignmentstatement_constructor_exists():
-    assert callable(adb::AssignmentStatement.__init__)
+def test_adb_raisestatement_constructor_exists():
+    assert callable(adb_RaiseStatement.__init__)
 
 
-def test_adb::assignmentstatement_constructor_args():
-    sig = inspect.signature(adb::AssignmentStatement.__init__)
+def test_adb_raisestatement_constructor_args():
+    sig = inspect.signature(adb_RaiseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::requeuestatement_is_not_abstract():
-    assert not inspect.isabstract(adb::RequeueStatement)
+def test_adb_requeuestatement_is_not_abstract():
+    assert not inspect.isabstract(adb_RequeueStatement)
 
 
-def test_adb::requeuestatement_constructor_exists():
-    assert callable(adb::RequeueStatement.__init__)
+def test_adb_requeuestatement_constructor_exists():
+    assert callable(adb_RequeueStatement.__init__)
 
 
-def test_adb::requeuestatement_constructor_args():
-    sig = inspect.signature(adb::RequeueStatement.__init__)
+def test_adb_requeuestatement_constructor_args():
+    sig = inspect.signature(adb_RequeueStatement.__init__)
     params = list(sig.parameters.keys())
     assert "abort" in params, "Missing parameter 'abort'"
 
-def test_adb::requeuestatement_has_abort():
-    assert hasattr(adb::RequeueStatement, "abort")
+def test_adb_requeuestatement_has_abort():
+    assert hasattr(adb_RequeueStatement, "abort")
     descriptor = None
-    for klass in adb::RequeueStatement.__mro__:
+    for klass in adb_RequeueStatement.__mro__:
         if "abort" in klass.__dict__:
             descriptor = klass.__dict__["abort"]
             break
@@ -3483,37 +3497,23 @@ def test_adb::requeuestatement_has_abort():
 
 
 
-def test_adb::exitstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::ExitStatement)
+def test_adb_nullstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_NullStatement)
 
 
-def test_adb::exitstatement_constructor_exists():
-    assert callable(adb::ExitStatement.__init__)
+def test_adb_nullstatement_constructor_exists():
+    assert callable(adb_NullStatement.__init__)
 
 
-def test_adb::exitstatement_constructor_args():
-    sig = inspect.signature(adb::ExitStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::nullstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::NullStatement)
-
-
-def test_adb::nullstatement_constructor_exists():
-    assert callable(adb::NullStatement.__init__)
-
-
-def test_adb::nullstatement_constructor_args():
-    sig = inspect.signature(adb::NullStatement.__init__)
+def test_adb_nullstatement_constructor_args():
+    sig = inspect.signature(adb_NullStatement.__init__)
     params = list(sig.parameters.keys())
     assert "null" in params, "Missing parameter 'null'"
 
-def test_adb::nullstatement_has_null():
-    assert hasattr(adb::NullStatement, "null")
+def test_adb_nullstatement_has_null():
+    assert hasattr(adb_NullStatement, "null")
     descriptor = None
-    for klass in adb::NullStatement.__mro__:
+    for klass in adb_NullStatement.__mro__:
         if "null" in klass.__dict__:
             descriptor = klass.__dict__["null"]
             break
@@ -3535,58 +3535,58 @@ def test_statement_constructor_args():
 
 
 
-def test_adb::compoundstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::CompoundStatement)
+def test_adb_compoundstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_CompoundStatement)
 
 
-def test_adb::compoundstatement_constructor_exists():
-    assert callable(adb::CompoundStatement.__init__)
+def test_adb_compoundstatement_constructor_exists():
+    assert callable(adb_CompoundStatement.__init__)
 
 
-def test_adb::compoundstatement_constructor_args():
-    sig = inspect.signature(adb::CompoundStatement.__init__)
+def test_adb_compoundstatement_constructor_args():
+    sig = inspect.signature(adb_CompoundStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::simplestatement_is_not_abstract():
-    assert not inspect.isabstract(adb::SimpleStatement)
+def test_adb_simplestatement_is_not_abstract():
+    assert not inspect.isabstract(adb_SimpleStatement)
 
 
-def test_adb::simplestatement_constructor_exists():
-    assert callable(adb::SimpleStatement.__init__)
+def test_adb_simplestatement_constructor_exists():
+    assert callable(adb_SimpleStatement.__init__)
 
 
-def test_adb::simplestatement_constructor_args():
-    sig = inspect.signature(adb::SimpleStatement.__init__)
+def test_adb_simplestatement_constructor_args():
+    sig = inspect.signature(adb_SimpleStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::statement_is_not_abstract():
-    assert not inspect.isabstract(adb::Statement)
+def test_adb_statement_is_not_abstract():
+    assert not inspect.isabstract(adb_Statement)
 
 
-def test_adb::statement_constructor_exists():
-    assert callable(adb::Statement.__init__)
+def test_adb_statement_constructor_exists():
+    assert callable(adb_Statement.__init__)
 
 
-def test_adb::statement_constructor_args():
-    sig = inspect.signature(adb::Statement.__init__)
+def test_adb_statement_constructor_args():
+    sig = inspect.signature(adb_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::labelisablestatement_is_not_abstract():
-    assert not inspect.isabstract(adb::LabelisableStatement)
+def test_adb_labelisablestatement_is_not_abstract():
+    assert not inspect.isabstract(adb_LabelisableStatement)
 
 
-def test_adb::labelisablestatement_constructor_exists():
-    assert callable(adb::LabelisableStatement.__init__)
+def test_adb_labelisablestatement_constructor_exists():
+    assert callable(adb_LabelisableStatement.__init__)
 
 
-def test_adb::labelisablestatement_constructor_args():
-    sig = inspect.signature(adb::LabelisableStatement.__init__)
+def test_adb_labelisablestatement_constructor_args():
+    sig = inspect.signature(adb_LabelisableStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3619,37 +3619,37 @@ def test_handledsequenceofstatements_constructor_args():
 
 
 
-def test_adb::sequenceofstatements_is_not_abstract():
-    assert not inspect.isabstract(adb::SequenceOfStatements)
+def test_adb_sequenceofstatements_is_not_abstract():
+    assert not inspect.isabstract(adb_SequenceOfStatements)
 
 
-def test_adb::sequenceofstatements_constructor_exists():
-    assert callable(adb::SequenceOfStatements.__init__)
+def test_adb_sequenceofstatements_constructor_exists():
+    assert callable(adb_SequenceOfStatements.__init__)
 
 
-def test_adb::sequenceofstatements_constructor_args():
-    sig = inspect.signature(adb::SequenceOfStatements.__init__)
+def test_adb_sequenceofstatements_constructor_args():
+    sig = inspect.signature(adb_SequenceOfStatements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::label_is_not_abstract():
-    assert not inspect.isabstract(adb::Label)
+def test_adb_label_is_not_abstract():
+    assert not inspect.isabstract(adb_Label)
 
 
-def test_adb::label_constructor_exists():
-    assert callable(adb::Label.__init__)
+def test_adb_label_constructor_exists():
+    assert callable(adb_Label.__init__)
 
 
-def test_adb::label_constructor_args():
-    sig = inspect.signature(adb::Label.__init__)
+def test_adb_label_constructor_args():
+    sig = inspect.signature(adb_Label.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_adb::label_has_identifier():
-    assert hasattr(adb::Label, "identifier")
+def test_adb_label_has_identifier():
+    assert hasattr(adb_Label, "identifier")
     descriptor = None
-    for klass in adb::Label.__mro__:
+    for klass in adb_Label.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -3671,41 +3671,41 @@ def test_body_constructor_args():
 
 
 
-def test_adb::bodystub_is_not_abstract():
-    assert not inspect.isabstract(adb::BodyStub)
+def test_adb_properbody_is_not_abstract():
+    assert not inspect.isabstract(adb_ProperBody)
 
 
-def test_adb::bodystub_constructor_exists():
-    assert callable(adb::BodyStub.__init__)
+def test_adb_properbody_constructor_exists():
+    assert callable(adb_ProperBody.__init__)
 
 
-def test_adb::bodystub_constructor_args():
-    sig = inspect.signature(adb::BodyStub.__init__)
+def test_adb_properbody_constructor_args():
+    sig = inspect.signature(adb_ProperBody.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_bodystub_is_not_abstract():
+    assert not inspect.isabstract(adb_BodyStub)
+
+
+def test_adb_bodystub_constructor_exists():
+    assert callable(adb_BodyStub.__init__)
+
+
+def test_adb_bodystub_constructor_args():
+    sig = inspect.signature(adb_BodyStub.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::bodystub_has_name():
-    assert hasattr(adb::BodyStub, "name")
+def test_adb_bodystub_has_name():
+    assert hasattr(adb_BodyStub, "name")
     descriptor = None
-    for klass in adb::BodyStub.__mro__:
+    for klass in adb_BodyStub.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_adb::properbody_is_not_abstract():
-    assert not inspect.isabstract(adb::ProperBody)
-
-
-def test_adb::properbody_constructor_exists():
-    assert callable(adb::ProperBody.__init__)
-
-
-def test_adb::properbody_constructor_args():
-    sig = inspect.signature(adb::ProperBody.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -3723,107 +3723,107 @@ def test_protectedelementdeclaration_constructor_args():
 
 
 
-def test_adb::componentdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::ComponentDeclaration)
+def test_adb_componentdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_ComponentDeclaration)
 
 
-def test_adb::componentdeclaration_constructor_exists():
-    assert callable(adb::ComponentDeclaration.__init__)
+def test_adb_componentdeclaration_constructor_exists():
+    assert callable(adb_ComponentDeclaration.__init__)
 
 
-def test_adb::componentdeclaration_constructor_args():
-    sig = inspect.signature(adb::ComponentDeclaration.__init__)
+def test_adb_componentdeclaration_constructor_args():
+    sig = inspect.signature(adb_ComponentDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::protectedoperationdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedOperationDeclaration)
+def test_adb_protectedoperationdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedOperationDeclaration)
 
 
-def test_adb::protectedoperationdeclaration_constructor_exists():
-    assert callable(adb::ProtectedOperationDeclaration.__init__)
+def test_adb_protectedoperationdeclaration_constructor_exists():
+    assert callable(adb_ProtectedOperationDeclaration.__init__)
 
 
-def test_adb::protectedoperationdeclaration_constructor_args():
-    sig = inspect.signature(adb::ProtectedOperationDeclaration.__init__)
+def test_adb_protectedoperationdeclaration_constructor_args():
+    sig = inspect.signature(adb_ProtectedOperationDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::protectedelementdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedElementDeclaration)
+def test_adb_protectedelementdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedElementDeclaration)
 
 
-def test_adb::protectedelementdeclaration_constructor_exists():
-    assert callable(adb::ProtectedElementDeclaration.__init__)
+def test_adb_protectedelementdeclaration_constructor_exists():
+    assert callable(adb_ProtectedElementDeclaration.__init__)
 
 
-def test_adb::protectedelementdeclaration_constructor_args():
-    sig = inspect.signature(adb::ProtectedElementDeclaration.__init__)
+def test_adb_protectedelementdeclaration_constructor_args():
+    sig = inspect.signature(adb_ProtectedElementDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::protecteddefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedDefinition)
+def test_adb_protecteddefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedDefinition)
 
 
-def test_adb::protecteddefinition_constructor_exists():
-    assert callable(adb::ProtectedDefinition.__init__)
+def test_adb_protecteddefinition_constructor_exists():
+    assert callable(adb_ProtectedDefinition.__init__)
 
 
-def test_adb::protecteddefinition_constructor_args():
-    sig = inspect.signature(adb::ProtectedDefinition.__init__)
+def test_adb_protecteddefinition_constructor_args():
+    sig = inspect.signature(adb_ProtectedDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::formalpart_is_not_abstract():
-    assert not inspect.isabstract(adb::FormalPart)
+def test_adb_formalpart_is_not_abstract():
+    assert not inspect.isabstract(adb_FormalPart)
 
 
-def test_adb::formalpart_constructor_exists():
-    assert callable(adb::FormalPart.__init__)
+def test_adb_formalpart_constructor_exists():
+    assert callable(adb_FormalPart.__init__)
 
 
-def test_adb::formalpart_constructor_args():
-    sig = inspect.signature(adb::FormalPart.__init__)
+def test_adb_formalpart_constructor_args():
+    sig = inspect.signature(adb_FormalPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::discretesubtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscreteSubtypeDefinition)
+def test_adb_discretesubtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscreteSubtypeDefinition)
 
 
-def test_adb::discretesubtypedefinition_constructor_exists():
-    assert callable(adb::DiscreteSubtypeDefinition.__init__)
+def test_adb_discretesubtypedefinition_constructor_exists():
+    assert callable(adb_DiscreteSubtypeDefinition.__init__)
 
 
-def test_adb::discretesubtypedefinition_constructor_args():
-    sig = inspect.signature(adb::DiscreteSubtypeDefinition.__init__)
+def test_adb_discretesubtypedefinition_constructor_args():
+    sig = inspect.signature(adb_DiscreteSubtypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::name_is_not_abstract():
-    assert not inspect.isabstract(adb::Name)
+def test_adb_name_is_not_abstract():
+    assert not inspect.isabstract(adb_Name)
 
 
-def test_adb::name_constructor_exists():
-    assert callable(adb::Name.__init__)
+def test_adb_name_constructor_exists():
+    assert callable(adb_Name.__init__)
 
 
-def test_adb::name_constructor_args():
-    sig = inspect.signature(adb::Name.__init__)
+def test_adb_name_constructor_args():
+    sig = inspect.signature(adb_Name.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::name_has_name():
-    assert hasattr(adb::Name, "name")
+def test_adb_name_has_name():
+    assert hasattr(adb_Name, "name")
     descriptor = None
-    for klass in adb::Name.__mro__:
+    for klass in adb_Name.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3831,23 +3831,23 @@ def test_adb::name_has_name():
 
 
 
-def test_adb::exceptionchoice_is_not_abstract():
-    assert not inspect.isabstract(adb::ExceptionChoice)
+def test_adb_exceptionchoice_is_not_abstract():
+    assert not inspect.isabstract(adb_ExceptionChoice)
 
 
-def test_adb::exceptionchoice_constructor_exists():
-    assert callable(adb::ExceptionChoice.__init__)
+def test_adb_exceptionchoice_constructor_exists():
+    assert callable(adb_ExceptionChoice.__init__)
 
 
-def test_adb::exceptionchoice_constructor_args():
-    sig = inspect.signature(adb::ExceptionChoice.__init__)
+def test_adb_exceptionchoice_constructor_args():
+    sig = inspect.signature(adb_ExceptionChoice.__init__)
     params = list(sig.parameters.keys())
     assert "others" in params, "Missing parameter 'others'"
 
-def test_adb::exceptionchoice_has_others():
-    assert hasattr(adb::ExceptionChoice, "others")
+def test_adb_exceptionchoice_has_others():
+    assert hasattr(adb_ExceptionChoice, "others")
     descriptor = None
-    for klass in adb::ExceptionChoice.__mro__:
+    for klass in adb_ExceptionChoice.__mro__:
         if "others" in klass.__dict__:
             descriptor = klass.__dict__["others"]
             break
@@ -3855,16 +3855,16 @@ def test_adb::exceptionchoice_has_others():
 
 
 
-def test_adb::parameterandresultprofile_is_not_abstract():
-    assert not inspect.isabstract(adb::ParameterAndResultProfile)
+def test_adb_parameterandresultprofile_is_not_abstract():
+    assert not inspect.isabstract(adb_ParameterAndResultProfile)
 
 
-def test_adb::parameterandresultprofile_constructor_exists():
-    assert callable(adb::ParameterAndResultProfile.__init__)
+def test_adb_parameterandresultprofile_constructor_exists():
+    assert callable(adb_ParameterAndResultProfile.__init__)
 
 
-def test_adb::parameterandresultprofile_constructor_args():
-    sig = inspect.signature(adb::ParameterAndResultProfile.__init__)
+def test_adb_parameterandresultprofile_constructor_args():
+    sig = inspect.signature(adb_ParameterAndResultProfile.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3883,30 +3883,30 @@ def test_subprogramspecification_constructor_args():
 
 
 
-def test_adb::functionspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::FunctionSpecification)
+def test_adb_functionspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_FunctionSpecification)
 
 
-def test_adb::functionspecification_constructor_exists():
-    assert callable(adb::FunctionSpecification.__init__)
+def test_adb_functionspecification_constructor_exists():
+    assert callable(adb_FunctionSpecification.__init__)
 
 
-def test_adb::functionspecification_constructor_args():
-    sig = inspect.signature(adb::FunctionSpecification.__init__)
+def test_adb_functionspecification_constructor_args():
+    sig = inspect.signature(adb_FunctionSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::procedurespecification_is_not_abstract():
-    assert not inspect.isabstract(adb::ProcedureSpecification)
+def test_adb_procedurespecification_is_not_abstract():
+    assert not inspect.isabstract(adb_ProcedureSpecification)
 
 
-def test_adb::procedurespecification_constructor_exists():
-    assert callable(adb::ProcedureSpecification.__init__)
+def test_adb_procedurespecification_constructor_exists():
+    assert callable(adb_ProcedureSpecification.__init__)
 
 
-def test_adb::procedurespecification_constructor_args():
-    sig = inspect.signature(adb::ProcedureSpecification.__init__)
+def test_adb_procedurespecification_constructor_args():
+    sig = inspect.signature(adb_ProcedureSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3925,44 +3925,44 @@ def test_bodystub_constructor_args():
 
 
 
-def test_adb::protectedbodystub_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedBodyStub)
+def test_adb_taskbodystub_is_not_abstract():
+    assert not inspect.isabstract(adb_TaskBodyStub)
 
 
-def test_adb::protectedbodystub_constructor_exists():
-    assert callable(adb::ProtectedBodyStub.__init__)
+def test_adb_taskbodystub_constructor_exists():
+    assert callable(adb_TaskBodyStub.__init__)
 
 
-def test_adb::protectedbodystub_constructor_args():
-    sig = inspect.signature(adb::ProtectedBodyStub.__init__)
+def test_adb_taskbodystub_constructor_args():
+    sig = inspect.signature(adb_TaskBodyStub.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::packagebodystub_is_not_abstract():
-    assert not inspect.isabstract(adb::PackageBodyStub)
+def test_adb_packagebodystub_is_not_abstract():
+    assert not inspect.isabstract(adb_PackageBodyStub)
 
 
-def test_adb::packagebodystub_constructor_exists():
-    assert callable(adb::PackageBodyStub.__init__)
+def test_adb_packagebodystub_constructor_exists():
+    assert callable(adb_PackageBodyStub.__init__)
 
 
-def test_adb::packagebodystub_constructor_args():
-    sig = inspect.signature(adb::PackageBodyStub.__init__)
+def test_adb_packagebodystub_constructor_args():
+    sig = inspect.signature(adb_PackageBodyStub.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::taskbodystub_is_not_abstract():
-    assert not inspect.isabstract(adb::TaskBodyStub)
+def test_adb_protectedbodystub_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedBodyStub)
 
 
-def test_adb::taskbodystub_constructor_exists():
-    assert callable(adb::TaskBodyStub.__init__)
+def test_adb_protectedbodystub_constructor_exists():
+    assert callable(adb_ProtectedBodyStub.__init__)
 
 
-def test_adb::taskbodystub_constructor_args():
-    sig = inspect.signature(adb::TaskBodyStub.__init__)
+def test_adb_protectedbodystub_constructor_args():
+    sig = inspect.signature(adb_ProtectedBodyStub.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3981,16 +3981,16 @@ def test_newtypedeclaration_constructor_args():
 
 
 
-def test_adb::fulltypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::FullTypeDeclaration)
+def test_adb_fulltypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_FullTypeDeclaration)
 
 
-def test_adb::fulltypedeclaration_constructor_exists():
-    assert callable(adb::FullTypeDeclaration.__init__)
+def test_adb_fulltypedeclaration_constructor_exists():
+    assert callable(adb_FullTypeDeclaration.__init__)
 
 
-def test_adb::fulltypedeclaration_constructor_args():
-    sig = inspect.signature(adb::FullTypeDeclaration.__init__)
+def test_adb_fulltypedeclaration_constructor_args():
+    sig = inspect.signature(adb_FullTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4009,72 +4009,72 @@ def test_typedeclaration_constructor_args():
 
 
 
-def test_adb::subtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::SubtypeDeclaration)
+def test_adb_subtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_SubtypeDeclaration)
 
 
-def test_adb::subtypedeclaration_constructor_exists():
-    assert callable(adb::SubtypeDeclaration.__init__)
+def test_adb_subtypedeclaration_constructor_exists():
+    assert callable(adb_SubtypeDeclaration.__init__)
 
 
-def test_adb::subtypedeclaration_constructor_args():
-    sig = inspect.signature(adb::SubtypeDeclaration.__init__)
+def test_adb_subtypedeclaration_constructor_args():
+    sig = inspect.signature(adb_SubtypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::newtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::NewTypeDeclaration)
+def test_adb_newtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_NewTypeDeclaration)
 
 
-def test_adb::newtypedeclaration_constructor_exists():
-    assert callable(adb::NewTypeDeclaration.__init__)
+def test_adb_newtypedeclaration_constructor_exists():
+    assert callable(adb_NewTypeDeclaration.__init__)
 
 
-def test_adb::newtypedeclaration_constructor_args():
-    sig = inspect.signature(adb::NewTypeDeclaration.__init__)
+def test_adb_newtypedeclaration_constructor_args():
+    sig = inspect.signature(adb_NewTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::taskdefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::TaskDefinition)
+def test_adb_taskdefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_TaskDefinition)
 
 
-def test_adb::taskdefinition_constructor_exists():
-    assert callable(adb::TaskDefinition.__init__)
+def test_adb_taskdefinition_constructor_exists():
+    assert callable(adb_TaskDefinition.__init__)
 
 
-def test_adb::taskdefinition_constructor_args():
-    sig = inspect.signature(adb::TaskDefinition.__init__)
+def test_adb_taskdefinition_constructor_args():
+    sig = inspect.signature(adb_TaskDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::interfacelist_is_not_abstract():
-    assert not inspect.isabstract(adb::InterfaceList)
+def test_adb_interfacelist_is_not_abstract():
+    assert not inspect.isabstract(adb_InterfaceList)
 
 
-def test_adb::interfacelist_constructor_exists():
-    assert callable(adb::InterfaceList.__init__)
+def test_adb_interfacelist_constructor_exists():
+    assert callable(adb_InterfaceList.__init__)
 
 
-def test_adb::interfacelist_constructor_args():
-    sig = inspect.signature(adb::InterfaceList.__init__)
+def test_adb_interfacelist_constructor_args():
+    sig = inspect.signature(adb_InterfaceList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::knowndiscriminantpart_is_not_abstract():
-    assert not inspect.isabstract(adb::KnownDiscriminantPart)
+def test_adb_knowndiscriminantpart_is_not_abstract():
+    assert not inspect.isabstract(adb_KnownDiscriminantPart)
 
 
-def test_adb::knowndiscriminantpart_constructor_exists():
-    assert callable(adb::KnownDiscriminantPart.__init__)
+def test_adb_knowndiscriminantpart_constructor_exists():
+    assert callable(adb_KnownDiscriminantPart.__init__)
 
 
-def test_adb::knowndiscriminantpart_constructor_args():
-    sig = inspect.signature(adb::KnownDiscriminantPart.__init__)
+def test_adb_knowndiscriminantpart_constructor_args():
+    sig = inspect.signature(adb_KnownDiscriminantPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4093,16 +4093,16 @@ def test_declarativeitem_constructor_args():
 
 
 
-def test_adb::body_is_not_abstract():
-    assert not inspect.isabstract(adb::Body)
+def test_adb_body_is_not_abstract():
+    assert not inspect.isabstract(adb_Body)
 
 
-def test_adb::body_constructor_exists():
-    assert callable(adb::Body.__init__)
+def test_adb_body_constructor_exists():
+    assert callable(adb_Body.__init__)
 
 
-def test_adb::body_constructor_args():
-    sig = inspect.signature(adb::Body.__init__)
+def test_adb_body_constructor_args():
+    sig = inspect.signature(adb_Body.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4135,23 +4135,23 @@ def test_taskitem_constructor_args():
 
 
 
-def test_adb::entrydeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryDeclaration)
+def test_adb_entrydeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryDeclaration)
 
 
-def test_adb::entrydeclaration_constructor_exists():
-    assert callable(adb::EntryDeclaration.__init__)
+def test_adb_entrydeclaration_constructor_exists():
+    assert callable(adb_EntryDeclaration.__init__)
 
 
-def test_adb::entrydeclaration_constructor_args():
-    sig = inspect.signature(adb::EntryDeclaration.__init__)
+def test_adb_entrydeclaration_constructor_args():
+    sig = inspect.signature(adb_EntryDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::entrydeclaration_has_name():
-    assert hasattr(adb::EntryDeclaration, "name")
+def test_adb_entrydeclaration_has_name():
+    assert hasattr(adb_EntryDeclaration, "name")
     descriptor = None
-    for klass in adb::EntryDeclaration.__mro__:
+    for klass in adb_EntryDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4159,37 +4159,37 @@ def test_adb::entrydeclaration_has_name():
 
 
 
-def test_adb::taskitem_is_not_abstract():
-    assert not inspect.isabstract(adb::TaskItem)
+def test_adb_taskitem_is_not_abstract():
+    assert not inspect.isabstract(adb_TaskItem)
 
 
-def test_adb::taskitem_constructor_exists():
-    assert callable(adb::TaskItem.__init__)
+def test_adb_taskitem_constructor_exists():
+    assert callable(adb_TaskItem.__init__)
 
 
-def test_adb::taskitem_constructor_args():
-    sig = inspect.signature(adb::TaskItem.__init__)
+def test_adb_taskitem_constructor_args():
+    sig = inspect.signature(adb_TaskItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::subtypeindication_is_not_abstract():
-    assert not inspect.isabstract(adb::SubtypeIndication)
+def test_adb_subtypeindication_is_not_abstract():
+    assert not inspect.isabstract(adb_SubtypeIndication)
 
 
-def test_adb::subtypeindication_constructor_exists():
-    assert callable(adb::SubtypeIndication.__init__)
+def test_adb_subtypeindication_constructor_exists():
+    assert callable(adb_SubtypeIndication.__init__)
 
 
-def test_adb::subtypeindication_constructor_args():
-    sig = inspect.signature(adb::SubtypeIndication.__init__)
+def test_adb_subtypeindication_constructor_args():
+    sig = inspect.signature(adb_SubtypeIndication.__init__)
     params = list(sig.parameters.keys())
     assert "subtypeMark" in params, "Missing parameter 'subtypeMark'"
 
-def test_adb::subtypeindication_has_subtypeMark():
-    assert hasattr(adb::SubtypeIndication, "subtypeMark")
+def test_adb_subtypeindication_has_subtypeMark():
+    assert hasattr(adb_SubtypeIndication, "subtypeMark")
     descriptor = None
-    for klass in adb::SubtypeIndication.__mro__:
+    for klass in adb_SubtypeIndication.__mro__:
         if "subtypeMark" in klass.__dict__:
             descriptor = klass.__dict__["subtypeMark"]
             break
@@ -4197,125 +4197,125 @@ def test_adb::subtypeindication_has_subtypeMark():
 
 
 
-def test_adb::privateextensiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::PrivateExtensionDeclaration)
+def test_adb_privateextensiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_PrivateExtensionDeclaration)
 
 
-def test_adb::privateextensiondeclaration_constructor_exists():
-    assert callable(adb::PrivateExtensionDeclaration.__init__)
+def test_adb_privateextensiondeclaration_constructor_exists():
+    assert callable(adb_PrivateExtensionDeclaration.__init__)
 
 
-def test_adb::privateextensiondeclaration_constructor_args():
-    sig = inspect.signature(adb::PrivateExtensionDeclaration.__init__)
+def test_adb_privateextensiondeclaration_constructor_args():
+    sig = inspect.signature(adb_PrivateExtensionDeclaration.__init__)
     params = list(sig.parameters.keys())
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
     assert "limited" in params, "Missing parameter 'limited'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
 
-def test_adb::privateextensiondeclaration_has_synchronized():
-    assert hasattr(adb::PrivateExtensionDeclaration, "synchronized")
+def test_adb_privateextensiondeclaration_has_limited():
+    assert hasattr(adb_PrivateExtensionDeclaration, "limited")
     descriptor = None
-    for klass in adb::PrivateExtensionDeclaration.__mro__:
+    for klass in adb_PrivateExtensionDeclaration.__mro__:
+        if "limited" in klass.__dict__:
+            descriptor = klass.__dict__["limited"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_privateextensiondeclaration_has_abstract():
+    assert hasattr(adb_PrivateExtensionDeclaration, "abstract")
+    descriptor = None
+    for klass in adb_PrivateExtensionDeclaration.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_privateextensiondeclaration_has_synchronized():
+    assert hasattr(adb_PrivateExtensionDeclaration, "synchronized")
+    descriptor = None
+    for klass in adb_PrivateExtensionDeclaration.__mro__:
         if "synchronized" in klass.__dict__:
             descriptor = klass.__dict__["synchronized"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::privateextensiondeclaration_has_limited():
-    assert hasattr(adb::PrivateExtensionDeclaration, "limited")
-    descriptor = None
-    for klass in adb::PrivateExtensionDeclaration.__mro__:
-        if "limited" in klass.__dict__:
-            descriptor = klass.__dict__["limited"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::privateextensiondeclaration_has_abstract():
-    assert hasattr(adb::PrivateExtensionDeclaration, "abstract")
-    descriptor = None
-    for klass in adb::PrivateExtensionDeclaration.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_adb::privatetypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::PrivateTypeDeclaration)
-
-
-def test_adb::privatetypedeclaration_constructor_exists():
-    assert callable(adb::PrivateTypeDeclaration.__init__)
+def test_adb_privatetypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_PrivateTypeDeclaration)
 
 
-def test_adb::privatetypedeclaration_constructor_args():
-    sig = inspect.signature(adb::PrivateTypeDeclaration.__init__)
+def test_adb_privatetypedeclaration_constructor_exists():
+    assert callable(adb_PrivateTypeDeclaration.__init__)
+
+
+def test_adb_privatetypedeclaration_constructor_args():
+    sig = inspect.signature(adb_PrivateTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "limited" in params, "Missing parameter 'limited'"
     assert "tagged" in params, "Missing parameter 'tagged'"
+    assert "limited" in params, "Missing parameter 'limited'"
 
-def test_adb::privatetypedeclaration_has_abstract():
-    assert hasattr(adb::PrivateTypeDeclaration, "abstract")
+def test_adb_privatetypedeclaration_has_abstract():
+    assert hasattr(adb_PrivateTypeDeclaration, "abstract")
     descriptor = None
-    for klass in adb::PrivateTypeDeclaration.__mro__:
+    for klass in adb_PrivateTypeDeclaration.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::privatetypedeclaration_has_limited():
-    assert hasattr(adb::PrivateTypeDeclaration, "limited")
+def test_adb_privatetypedeclaration_has_tagged():
+    assert hasattr(adb_PrivateTypeDeclaration, "tagged")
     descriptor = None
-    for klass in adb::PrivateTypeDeclaration.__mro__:
+    for klass in adb_PrivateTypeDeclaration.__mro__:
+        if "tagged" in klass.__dict__:
+            descriptor = klass.__dict__["tagged"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_privatetypedeclaration_has_limited():
+    assert hasattr(adb_PrivateTypeDeclaration, "limited")
+    descriptor = None
+    for klass in adb_PrivateTypeDeclaration.__mro__:
         if "limited" in klass.__dict__:
             descriptor = klass.__dict__["limited"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::privatetypedeclaration_has_tagged():
-    assert hasattr(adb::PrivateTypeDeclaration, "tagged")
-    descriptor = None
-    for klass in adb::PrivateTypeDeclaration.__mro__:
-        if "tagged" in klass.__dict__:
-            descriptor = klass.__dict__["tagged"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_adb::discriminantpart_is_not_abstract():
-    assert not inspect.isabstract(adb::DiscriminantPart)
-
-
-def test_adb::discriminantpart_constructor_exists():
-    assert callable(adb::DiscriminantPart.__init__)
+def test_adb_discriminantpart_is_not_abstract():
+    assert not inspect.isabstract(adb_DiscriminantPart)
 
 
-def test_adb::discriminantpart_constructor_args():
-    sig = inspect.signature(adb::DiscriminantPart.__init__)
+def test_adb_discriminantpart_constructor_exists():
+    assert callable(adb_DiscriminantPart.__init__)
+
+
+def test_adb_discriminantpart_constructor_args():
+    sig = inspect.signature(adb_DiscriminantPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::incompletetypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::IncompleteTypeDeclaration)
+def test_adb_incompletetypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_IncompleteTypeDeclaration)
 
 
-def test_adb::incompletetypedeclaration_constructor_exists():
-    assert callable(adb::IncompleteTypeDeclaration.__init__)
+def test_adb_incompletetypedeclaration_constructor_exists():
+    assert callable(adb_IncompleteTypeDeclaration.__init__)
 
 
-def test_adb::incompletetypedeclaration_constructor_args():
-    sig = inspect.signature(adb::IncompleteTypeDeclaration.__init__)
+def test_adb_incompletetypedeclaration_constructor_args():
+    sig = inspect.signature(adb_IncompleteTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "tagged" in params, "Missing parameter 'tagged'"
 
-def test_adb::incompletetypedeclaration_has_tagged():
-    assert hasattr(adb::IncompleteTypeDeclaration, "tagged")
+def test_adb_incompletetypedeclaration_has_tagged():
+    assert hasattr(adb_IncompleteTypeDeclaration, "tagged")
     descriptor = None
-    for klass in adb::IncompleteTypeDeclaration.__mro__:
+    for klass in adb_IncompleteTypeDeclaration.__mro__:
         if "tagged" in klass.__dict__:
             descriptor = klass.__dict__["tagged"]
             break
@@ -4323,16 +4323,16 @@ def test_adb::incompletetypedeclaration_has_tagged():
 
 
 
-def test_adb::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::TypeDefinition)
+def test_adb_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_TypeDefinition)
 
 
-def test_adb::typedefinition_constructor_exists():
-    assert callable(adb::TypeDefinition.__init__)
+def test_adb_typedefinition_constructor_exists():
+    assert callable(adb_TypeDefinition.__init__)
 
 
-def test_adb::typedefinition_constructor_args():
-    sig = inspect.signature(adb::TypeDefinition.__init__)
+def test_adb_typedefinition_constructor_args():
+    sig = inspect.signature(adb_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4351,51 +4351,51 @@ def test_fulltypedeclaration_constructor_args():
 
 
 
-def test_adb::protectedtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedTypeDeclaration)
+def test_adb_protectedtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedTypeDeclaration)
 
 
-def test_adb::protectedtypedeclaration_constructor_exists():
-    assert callable(adb::ProtectedTypeDeclaration.__init__)
+def test_adb_protectedtypedeclaration_constructor_exists():
+    assert callable(adb_ProtectedTypeDeclaration.__init__)
 
 
-def test_adb::protectedtypedeclaration_constructor_args():
-    sig = inspect.signature(adb::ProtectedTypeDeclaration.__init__)
+def test_adb_protectedtypedeclaration_constructor_args():
+    sig = inspect.signature(adb_ProtectedTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::fulldatatypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::FullDataTypeDeclaration)
+def test_adb_fulldatatypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_FullDataTypeDeclaration)
 
 
-def test_adb::fulldatatypedeclaration_constructor_exists():
-    assert callable(adb::FullDataTypeDeclaration.__init__)
+def test_adb_fulldatatypedeclaration_constructor_exists():
+    assert callable(adb_FullDataTypeDeclaration.__init__)
 
 
-def test_adb::fulldatatypedeclaration_constructor_args():
-    sig = inspect.signature(adb::FullDataTypeDeclaration.__init__)
+def test_adb_fulldatatypedeclaration_constructor_args():
+    sig = inspect.signature(adb_FullDataTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::packagespecification_is_not_abstract():
-    assert not inspect.isabstract(adb::PackageSpecification)
+def test_adb_packagespecification_is_not_abstract():
+    assert not inspect.isabstract(adb_PackageSpecification)
 
 
-def test_adb::packagespecification_constructor_exists():
-    assert callable(adb::PackageSpecification.__init__)
+def test_adb_packagespecification_constructor_exists():
+    assert callable(adb_PackageSpecification.__init__)
 
 
-def test_adb::packagespecification_constructor_args():
-    sig = inspect.signature(adb::PackageSpecification.__init__)
+def test_adb_packagespecification_constructor_args():
+    sig = inspect.signature(adb_PackageSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "endname" in params, "Missing parameter 'endname'"
 
-def test_adb::packagespecification_has_endname():
-    assert hasattr(adb::PackageSpecification, "endname")
+def test_adb_packagespecification_has_endname():
+    assert hasattr(adb_PackageSpecification, "endname")
     descriptor = None
-    for klass in adb::PackageSpecification.__mro__:
+    for klass in adb_PackageSpecification.__mro__:
         if "endname" in klass.__dict__:
             descriptor = klass.__dict__["endname"]
             break
@@ -4431,23 +4431,23 @@ def test_packagedeclaration_constructor_args():
 
 
 
-def test_adb::renaming_is_not_abstract():
-    assert not inspect.isabstract(adb::Renaming)
+def test_adb_renaming_is_not_abstract():
+    assert not inspect.isabstract(adb_Renaming)
 
 
-def test_adb::renaming_constructor_exists():
-    assert callable(adb::Renaming.__init__)
+def test_adb_renaming_constructor_exists():
+    assert callable(adb_Renaming.__init__)
 
 
-def test_adb::renaming_constructor_args():
-    sig = inspect.signature(adb::Renaming.__init__)
+def test_adb_renaming_constructor_args():
+    sig = inspect.signature(adb_Renaming.__init__)
     params = list(sig.parameters.keys())
     assert "renamed" in params, "Missing parameter 'renamed'"
 
-def test_adb::renaming_has_renamed():
-    assert hasattr(adb::Renaming, "renamed")
+def test_adb_renaming_has_renamed():
+    assert hasattr(adb_Renaming, "renamed")
     descriptor = None
-    for klass in adb::Renaming.__mro__:
+    for klass in adb_Renaming.__mro__:
         if "renamed" in klass.__dict__:
             descriptor = klass.__dict__["renamed"]
             break
@@ -4455,16 +4455,16 @@ def test_adb::renaming_has_renamed():
 
 
 
-def test_adb::packagedefinition_is_not_abstract():
-    assert not inspect.isabstract(adb::PackageDefinition)
+def test_adb_packagedefinition_is_not_abstract():
+    assert not inspect.isabstract(adb_PackageDefinition)
 
 
-def test_adb::packagedefinition_constructor_exists():
-    assert callable(adb::PackageDefinition.__init__)
+def test_adb_packagedefinition_constructor_exists():
+    assert callable(adb_PackageDefinition.__init__)
 
 
-def test_adb::packagedefinition_constructor_args():
-    sig = inspect.signature(adb::PackageDefinition.__init__)
+def test_adb_packagedefinition_constructor_args():
+    sig = inspect.signature(adb_PackageDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4483,37 +4483,65 @@ def test_basicdeclaration_constructor_args():
 
 
 
-def test_adb::numberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::NumberDeclaration)
+def test_adb_exceptiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_ExceptionDeclaration)
 
 
-def test_adb::numberdeclaration_constructor_exists():
-    assert callable(adb::NumberDeclaration.__init__)
+def test_adb_exceptiondeclaration_constructor_exists():
+    assert callable(adb_ExceptionDeclaration.__init__)
 
 
-def test_adb::numberdeclaration_constructor_args():
-    sig = inspect.signature(adb::NumberDeclaration.__init__)
+def test_adb_exceptiondeclaration_constructor_args():
+    sig = inspect.signature(adb_ExceptionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::taskdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::TaskDeclaration)
+def test_adb_numberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_NumberDeclaration)
 
 
-def test_adb::taskdeclaration_constructor_exists():
-    assert callable(adb::TaskDeclaration.__init__)
+def test_adb_numberdeclaration_constructor_exists():
+    assert callable(adb_NumberDeclaration.__init__)
 
 
-def test_adb::taskdeclaration_constructor_args():
-    sig = inspect.signature(adb::TaskDeclaration.__init__)
+def test_adb_numberdeclaration_constructor_args():
+    sig = inspect.signature(adb_NumberDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_objectdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_ObjectDeclaration)
+
+
+def test_adb_objectdeclaration_constructor_exists():
+    assert callable(adb_ObjectDeclaration.__init__)
+
+
+def test_adb_objectdeclaration_constructor_args():
+    sig = inspect.signature(adb_ObjectDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_taskdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_TaskDeclaration)
+
+
+def test_adb_taskdeclaration_constructor_exists():
+    assert callable(adb_TaskDeclaration.__init__)
+
+
+def test_adb_taskdeclaration_constructor_args():
+    sig = inspect.signature(adb_TaskDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::taskdeclaration_has_name():
-    assert hasattr(adb::TaskDeclaration, "name")
+def test_adb_taskdeclaration_has_name():
+    assert hasattr(adb_TaskDeclaration, "name")
     descriptor = None
-    for klass in adb::TaskDeclaration.__mro__:
+    for klass in adb_TaskDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4521,55 +4549,27 @@ def test_adb::taskdeclaration_has_name():
 
 
 
-def test_adb::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::TypeDeclaration)
+def test_adb_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_TypeDeclaration)
 
 
-def test_adb::typedeclaration_constructor_exists():
-    assert callable(adb::TypeDeclaration.__init__)
+def test_adb_typedeclaration_constructor_exists():
+    assert callable(adb_TypeDeclaration.__init__)
 
 
-def test_adb::typedeclaration_constructor_args():
-    sig = inspect.signature(adb::TypeDeclaration.__init__)
+def test_adb_typedeclaration_constructor_args():
+    sig = inspect.signature(adb_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::typedeclaration_has_name():
-    assert hasattr(adb::TypeDeclaration, "name")
+def test_adb_typedeclaration_has_name():
+    assert hasattr(adb_TypeDeclaration, "name")
     descriptor = None
-    for klass in adb::TypeDeclaration.__mro__:
+    for klass in adb_TypeDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_adb::exceptiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::ExceptionDeclaration)
-
-
-def test_adb::exceptiondeclaration_constructor_exists():
-    assert callable(adb::ExceptionDeclaration.__init__)
-
-
-def test_adb::exceptiondeclaration_constructor_args():
-    sig = inspect.signature(adb::ExceptionDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::objectdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::ObjectDeclaration)
-
-
-def test_adb::objectdeclaration_constructor_exists():
-    assert callable(adb::ObjectDeclaration.__init__)
-
-
-def test_adb::objectdeclaration_constructor_args():
-    sig = inspect.signature(adb::ObjectDeclaration.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -4587,23 +4587,23 @@ def test_libraryunitspecification_constructor_args():
 
 
 
-def test_adb::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::PackageDeclaration)
+def test_adb_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_PackageDeclaration)
 
 
-def test_adb::packagedeclaration_constructor_exists():
-    assert callable(adb::PackageDeclaration.__init__)
+def test_adb_packagedeclaration_constructor_exists():
+    assert callable(adb_PackageDeclaration.__init__)
 
 
-def test_adb::packagedeclaration_constructor_args():
-    sig = inspect.signature(adb::PackageDeclaration.__init__)
+def test_adb_packagedeclaration_constructor_args():
+    sig = inspect.signature(adb_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::packagedeclaration_has_name():
-    assert hasattr(adb::PackageDeclaration, "name")
+def test_adb_packagedeclaration_has_name():
+    assert hasattr(adb_PackageDeclaration, "name")
     descriptor = None
-    for klass in adb::PackageDeclaration.__mro__:
+    for klass in adb_PackageDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4611,16 +4611,16 @@ def test_adb::packagedeclaration_has_name():
 
 
 
-def test_adb::libraryunitspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::LibraryUnitSpecification)
+def test_adb_libraryunitspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_LibraryUnitSpecification)
 
 
-def test_adb::libraryunitspecification_constructor_exists():
-    assert callable(adb::LibraryUnitSpecification.__init__)
+def test_adb_libraryunitspecification_constructor_exists():
+    assert callable(adb_LibraryUnitSpecification.__init__)
 
 
-def test_adb::libraryunitspecification_constructor_args():
-    sig = inspect.signature(adb::LibraryUnitSpecification.__init__)
+def test_adb_libraryunitspecification_constructor_args():
+    sig = inspect.signature(adb_LibraryUnitSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4639,23 +4639,23 @@ def test_unit_constructor_args():
 
 
 
-def test_adb::separatesubunit_is_not_abstract():
-    assert not inspect.isabstract(adb::SeparateSubunit)
+def test_adb_separatesubunit_is_not_abstract():
+    assert not inspect.isabstract(adb_SeparateSubunit)
 
 
-def test_adb::separatesubunit_constructor_exists():
-    assert callable(adb::SeparateSubunit.__init__)
+def test_adb_separatesubunit_constructor_exists():
+    assert callable(adb_SeparateSubunit.__init__)
 
 
-def test_adb::separatesubunit_constructor_args():
-    sig = inspect.signature(adb::SeparateSubunit.__init__)
+def test_adb_separatesubunit_constructor_args():
+    sig = inspect.signature(adb_SeparateSubunit.__init__)
     params = list(sig.parameters.keys())
     assert "parentUnitName" in params, "Missing parameter 'parentUnitName'"
 
-def test_adb::separatesubunit_has_parentUnitName():
-    assert hasattr(adb::SeparateSubunit, "parentUnitName")
+def test_adb_separatesubunit_has_parentUnitName():
+    assert hasattr(adb_SeparateSubunit, "parentUnitName")
     descriptor = None
-    for klass in adb::SeparateSubunit.__mro__:
+    for klass in adb_SeparateSubunit.__mro__:
         if "parentUnitName" in klass.__dict__:
             descriptor = klass.__dict__["parentUnitName"]
             break
@@ -4663,58 +4663,58 @@ def test_adb::separatesubunit_has_parentUnitName():
 
 
 
-def test_adb::handledsequenceofstatements_is_not_abstract():
-    assert not inspect.isabstract(adb::HandledSequenceOfStatements)
+def test_adb_handledsequenceofstatements_is_not_abstract():
+    assert not inspect.isabstract(adb_HandledSequenceOfStatements)
 
 
-def test_adb::handledsequenceofstatements_constructor_exists():
-    assert callable(adb::HandledSequenceOfStatements.__init__)
+def test_adb_handledsequenceofstatements_constructor_exists():
+    assert callable(adb_HandledSequenceOfStatements.__init__)
 
 
-def test_adb::handledsequenceofstatements_constructor_args():
-    sig = inspect.signature(adb::HandledSequenceOfStatements.__init__)
+def test_adb_handledsequenceofstatements_constructor_args():
+    sig = inspect.signature(adb_HandledSequenceOfStatements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::declarativeitem_is_not_abstract():
-    assert not inspect.isabstract(adb::DeclarativeItem)
+def test_adb_declarativeitem_is_not_abstract():
+    assert not inspect.isabstract(adb_DeclarativeItem)
 
 
-def test_adb::declarativeitem_constructor_exists():
-    assert callable(adb::DeclarativeItem.__init__)
+def test_adb_declarativeitem_constructor_exists():
+    assert callable(adb_DeclarativeItem.__init__)
 
 
-def test_adb::declarativeitem_constructor_args():
-    sig = inspect.signature(adb::DeclarativeItem.__init__)
+def test_adb_declarativeitem_constructor_args():
+    sig = inspect.signature(adb_DeclarativeItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::declarativeblock_is_not_abstract():
-    assert not inspect.isabstract(adb::DeclarativeBlock)
+def test_adb_declarativeblock_is_not_abstract():
+    assert not inspect.isabstract(adb_DeclarativeBlock)
 
 
-def test_adb::declarativeblock_constructor_exists():
-    assert callable(adb::DeclarativeBlock.__init__)
+def test_adb_declarativeblock_constructor_exists():
+    assert callable(adb_DeclarativeBlock.__init__)
 
 
-def test_adb::declarativeblock_constructor_args():
-    sig = inspect.signature(adb::DeclarativeBlock.__init__)
+def test_adb_declarativeblock_constructor_args():
+    sig = inspect.signature(adb_DeclarativeBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::subprogramspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::SubprogramSpecification)
+def test_adb_subprogramspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_SubprogramSpecification)
 
 
-def test_adb::subprogramspecification_constructor_exists():
-    assert callable(adb::SubprogramSpecification.__init__)
+def test_adb_subprogramspecification_constructor_exists():
+    assert callable(adb_SubprogramSpecification.__init__)
 
 
-def test_adb::subprogramspecification_constructor_args():
-    sig = inspect.signature(adb::SubprogramSpecification.__init__)
+def test_adb_subprogramspecification_constructor_args():
+    sig = inspect.signature(adb_SubprogramSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4733,45 +4733,45 @@ def test_protectedoperationitem_constructor_args():
 
 
 
-def test_adb::subprogramdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::SubprogramDeclaration)
+def test_adb_subprogramdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_SubprogramDeclaration)
 
 
-def test_adb::subprogramdeclaration_constructor_exists():
-    assert callable(adb::SubprogramDeclaration.__init__)
+def test_adb_subprogramdeclaration_constructor_exists():
+    assert callable(adb_SubprogramDeclaration.__init__)
 
 
-def test_adb::subprogramdeclaration_constructor_args():
-    sig = inspect.signature(adb::SubprogramDeclaration.__init__)
+def test_adb_subprogramdeclaration_constructor_args():
+    sig = inspect.signature(adb_SubprogramDeclaration.__init__)
     params = list(sig.parameters.keys())
+    assert "renamedName" in params, "Missing parameter 'renamedName'"
     assert "abstract" in params, "Missing parameter 'abstract'"
     assert "null" in params, "Missing parameter 'null'"
-    assert "renamedName" in params, "Missing parameter 'renamedName'"
 
-def test_adb::subprogramdeclaration_has_abstract():
-    assert hasattr(adb::SubprogramDeclaration, "abstract")
+def test_adb_subprogramdeclaration_has_renamedName():
+    assert hasattr(adb_SubprogramDeclaration, "renamedName")
     descriptor = None
-    for klass in adb::SubprogramDeclaration.__mro__:
+    for klass in adb_SubprogramDeclaration.__mro__:
+        if "renamedName" in klass.__dict__:
+            descriptor = klass.__dict__["renamedName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adb_subprogramdeclaration_has_abstract():
+    assert hasattr(adb_SubprogramDeclaration, "abstract")
+    descriptor = None
+    for klass in adb_SubprogramDeclaration.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::subprogramdeclaration_has_null():
-    assert hasattr(adb::SubprogramDeclaration, "null")
+def test_adb_subprogramdeclaration_has_null():
+    assert hasattr(adb_SubprogramDeclaration, "null")
     descriptor = None
-    for klass in adb::SubprogramDeclaration.__mro__:
+    for klass in adb_SubprogramDeclaration.__mro__:
         if "null" in klass.__dict__:
             descriptor = klass.__dict__["null"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::subprogramdeclaration_has_renamedName():
-    assert hasattr(adb::SubprogramDeclaration, "renamedName")
-    descriptor = None
-    for klass in adb::SubprogramDeclaration.__mro__:
-        if "renamedName" in klass.__dict__:
-            descriptor = klass.__dict__["renamedName"]
             break
     assert isinstance(descriptor, property)
 
@@ -4791,35 +4791,35 @@ def test_properbody_constructor_args():
 
 
 
-def test_adb::protectedbody_is_not_abstract():
-    assert not inspect.isabstract(adb::ProtectedBody)
+def test_adb_protectedbody_is_not_abstract():
+    assert not inspect.isabstract(adb_ProtectedBody)
 
 
-def test_adb::protectedbody_constructor_exists():
-    assert callable(adb::ProtectedBody.__init__)
+def test_adb_protectedbody_constructor_exists():
+    assert callable(adb_ProtectedBody.__init__)
 
 
-def test_adb::protectedbody_constructor_args():
-    sig = inspect.signature(adb::ProtectedBody.__init__)
+def test_adb_protectedbody_constructor_args():
+    sig = inspect.signature(adb_ProtectedBody.__init__)
     params = list(sig.parameters.keys())
-    assert "idTask" in params, "Missing parameter 'idTask'"
     assert "identifier" in params, "Missing parameter 'identifier'"
+    assert "idTask" in params, "Missing parameter 'idTask'"
 
-def test_adb::protectedbody_has_idTask():
-    assert hasattr(adb::ProtectedBody, "idTask")
+def test_adb_protectedbody_has_identifier():
+    assert hasattr(adb_ProtectedBody, "identifier")
     descriptor = None
-    for klass in adb::ProtectedBody.__mro__:
-        if "idTask" in klass.__dict__:
-            descriptor = klass.__dict__["idTask"]
+    for klass in adb_ProtectedBody.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::protectedbody_has_identifier():
-    assert hasattr(adb::ProtectedBody, "identifier")
+def test_adb_protectedbody_has_idTask():
+    assert hasattr(adb_ProtectedBody, "idTask")
     descriptor = None
-    for klass in adb::ProtectedBody.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
+    for klass in adb_ProtectedBody.__mro__:
+        if "idTask" in klass.__dict__:
+            descriptor = klass.__dict__["idTask"]
             break
     assert isinstance(descriptor, property)
 
@@ -4839,23 +4839,37 @@ def test_declarativeblock_constructor_args():
 
 
 
-def test_adb::entrybody_is_not_abstract():
-    assert not inspect.isabstract(adb::EntryBody)
+def test_adb_taskbody_is_not_abstract():
+    assert not inspect.isabstract(adb_TaskBody)
 
 
-def test_adb::entrybody_constructor_exists():
-    assert callable(adb::EntryBody.__init__)
+def test_adb_taskbody_constructor_exists():
+    assert callable(adb_TaskBody.__init__)
 
 
-def test_adb::entrybody_constructor_args():
-    sig = inspect.signature(adb::EntryBody.__init__)
+def test_adb_taskbody_constructor_args():
+    sig = inspect.signature(adb_TaskBody.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_entrybody_is_not_abstract():
+    assert not inspect.isabstract(adb_EntryBody)
+
+
+def test_adb_entrybody_constructor_exists():
+    assert callable(adb_EntryBody.__init__)
+
+
+def test_adb_entrybody_constructor_args():
+    sig = inspect.signature(adb_EntryBody.__init__)
     params = list(sig.parameters.keys())
     assert "endid" in params, "Missing parameter 'endid'"
 
-def test_adb::entrybody_has_endid():
-    assert hasattr(adb::EntryBody, "endid")
+def test_adb_entrybody_has_endid():
+    assert hasattr(adb_EntryBody, "endid")
     descriptor = None
-    for klass in adb::EntryBody.__mro__:
+    for klass in adb_EntryBody.__mro__:
         if "endid" in klass.__dict__:
             descriptor = klass.__dict__["endid"]
             break
@@ -4863,37 +4877,37 @@ def test_adb::entrybody_has_endid():
 
 
 
-def test_adb::taskbody_is_not_abstract():
-    assert not inspect.isabstract(adb::TaskBody)
+def test_adb_packagebody_is_not_abstract():
+    assert not inspect.isabstract(adb_PackageBody)
 
 
-def test_adb::taskbody_constructor_exists():
-    assert callable(adb::TaskBody.__init__)
+def test_adb_packagebody_constructor_exists():
+    assert callable(adb_PackageBody.__init__)
 
 
-def test_adb::taskbody_constructor_args():
-    sig = inspect.signature(adb::TaskBody.__init__)
+def test_adb_packagebody_constructor_args():
+    sig = inspect.signature(adb_PackageBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(adb::BlockStatement)
+def test_adb_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(adb_BlockStatement)
 
 
-def test_adb::blockstatement_constructor_exists():
-    assert callable(adb::BlockStatement.__init__)
+def test_adb_blockstatement_constructor_exists():
+    assert callable(adb_BlockStatement.__init__)
 
 
-def test_adb::blockstatement_constructor_args():
-    sig = inspect.signature(adb::BlockStatement.__init__)
+def test_adb_blockstatement_constructor_args():
+    sig = inspect.signature(adb_BlockStatement.__init__)
     params = list(sig.parameters.keys())
     assert "blockStatementIdentifier" in params, "Missing parameter 'blockStatementIdentifier'"
 
-def test_adb::blockstatement_has_blockStatementIdentifier():
-    assert hasattr(adb::BlockStatement, "blockStatementIdentifier")
+def test_adb_blockstatement_has_blockStatementIdentifier():
+    assert hasattr(adb_BlockStatement, "blockStatementIdentifier")
     descriptor = None
-    for klass in adb::BlockStatement.__mro__:
+    for klass in adb_BlockStatement.__mro__:
         if "blockStatementIdentifier" in klass.__dict__:
             descriptor = klass.__dict__["blockStatementIdentifier"]
             break
@@ -4901,37 +4915,23 @@ def test_adb::blockstatement_has_blockStatementIdentifier():
 
 
 
-def test_adb::packagebody_is_not_abstract():
-    assert not inspect.isabstract(adb::PackageBody)
+def test_adb_subprogrambody_is_not_abstract():
+    assert not inspect.isabstract(adb_SubprogramBody)
 
 
-def test_adb::packagebody_constructor_exists():
-    assert callable(adb::PackageBody.__init__)
+def test_adb_subprogrambody_constructor_exists():
+    assert callable(adb_SubprogramBody.__init__)
 
 
-def test_adb::packagebody_constructor_args():
-    sig = inspect.signature(adb::PackageBody.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::subprogrambody_is_not_abstract():
-    assert not inspect.isabstract(adb::SubprogramBody)
-
-
-def test_adb::subprogrambody_constructor_exists():
-    assert callable(adb::SubprogramBody.__init__)
-
-
-def test_adb::subprogrambody_constructor_args():
-    sig = inspect.signature(adb::SubprogramBody.__init__)
+def test_adb_subprogrambody_constructor_args():
+    sig = inspect.signature(adb_SubprogramBody.__init__)
     params = list(sig.parameters.keys())
     assert "endname" in params, "Missing parameter 'endname'"
 
-def test_adb::subprogrambody_has_endname():
-    assert hasattr(adb::SubprogramBody, "endname")
+def test_adb_subprogrambody_has_endname():
+    assert hasattr(adb_SubprogramBody, "endname")
     descriptor = None
-    for klass in adb::SubprogramBody.__mro__:
+    for klass in adb_SubprogramBody.__mro__:
         if "endname" in klass.__dict__:
             descriptor = klass.__dict__["endname"]
             break
@@ -4939,51 +4939,51 @@ def test_adb::subprogrambody_has_endname():
 
 
 
-def test_adb::basicdeclarativeitem_is_not_abstract():
-    assert not inspect.isabstract(adb::BasicDeclarativeItem)
+def test_adb_basicdeclarativeitem_is_not_abstract():
+    assert not inspect.isabstract(adb_BasicDeclarativeItem)
 
 
-def test_adb::basicdeclarativeitem_constructor_exists():
-    assert callable(adb::BasicDeclarativeItem.__init__)
+def test_adb_basicdeclarativeitem_constructor_exists():
+    assert callable(adb_BasicDeclarativeItem.__init__)
 
 
-def test_adb::basicdeclarativeitem_constructor_args():
-    sig = inspect.signature(adb::BasicDeclarativeItem.__init__)
+def test_adb_basicdeclarativeitem_constructor_args():
+    sig = inspect.signature(adb_BasicDeclarativeItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::genericactualpart_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericActualPart)
+def test_adb_genericactualpart_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericActualPart)
 
 
-def test_adb::genericactualpart_constructor_exists():
-    assert callable(adb::GenericActualPart.__init__)
+def test_adb_genericactualpart_constructor_exists():
+    assert callable(adb_GenericActualPart.__init__)
 
 
-def test_adb::genericactualpart_constructor_args():
-    sig = inspect.signature(adb::GenericActualPart.__init__)
+def test_adb_genericactualpart_constructor_args():
+    sig = inspect.signature(adb_GenericActualPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::overridingindicator_is_not_abstract():
-    assert not inspect.isabstract(adb::OverridingIndicator)
+def test_adb_overridingindicator_is_not_abstract():
+    assert not inspect.isabstract(adb_OverridingIndicator)
 
 
-def test_adb::overridingindicator_constructor_exists():
-    assert callable(adb::OverridingIndicator.__init__)
+def test_adb_overridingindicator_constructor_exists():
+    assert callable(adb_OverridingIndicator.__init__)
 
 
-def test_adb::overridingindicator_constructor_args():
-    sig = inspect.signature(adb::OverridingIndicator.__init__)
+def test_adb_overridingindicator_constructor_args():
+    sig = inspect.signature(adb_OverridingIndicator.__init__)
     params = list(sig.parameters.keys())
     assert "not_" in params, "Missing parameter 'not_'"
 
-def test_adb::overridingindicator_has_not_():
-    assert hasattr(adb::OverridingIndicator, "not_")
+def test_adb_overridingindicator_has_not_():
+    assert hasattr(adb_OverridingIndicator, "not_")
     descriptor = None
-    for klass in adb::OverridingIndicator.__mro__:
+    for klass in adb_OverridingIndicator.__mro__:
         if "not_" in klass.__dict__:
             descriptor = klass.__dict__["not_"]
             break
@@ -4991,33 +4991,33 @@ def test_adb::overridingindicator_has_not_():
 
 
 
-def test_adb::genericinstantiation_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericInstantiation)
+def test_adb_genericinstantiation_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericInstantiation)
 
 
-def test_adb::genericinstantiation_constructor_exists():
-    assert callable(adb::GenericInstantiation.__init__)
+def test_adb_genericinstantiation_constructor_exists():
+    assert callable(adb_GenericInstantiation.__init__)
 
 
-def test_adb::genericinstantiation_constructor_args():
-    sig = inspect.signature(adb::GenericInstantiation.__init__)
+def test_adb_genericinstantiation_constructor_args():
+    sig = inspect.signature(adb_GenericInstantiation.__init__)
     params = list(sig.parameters.keys())
     assert "genericName" in params, "Missing parameter 'genericName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::genericinstantiation_has_genericName():
-    assert hasattr(adb::GenericInstantiation, "genericName")
+def test_adb_genericinstantiation_has_genericName():
+    assert hasattr(adb_GenericInstantiation, "genericName")
     descriptor = None
-    for klass in adb::GenericInstantiation.__mro__:
+    for klass in adb_GenericInstantiation.__mro__:
         if "genericName" in klass.__dict__:
             descriptor = klass.__dict__["genericName"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::genericinstantiation_has_name():
-    assert hasattr(adb::GenericInstantiation, "name")
+def test_adb_genericinstantiation_has_name():
+    assert hasattr(adb_GenericInstantiation, "name")
     descriptor = None
-    for klass in adb::GenericInstantiation.__mro__:
+    for klass in adb_GenericInstantiation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -5025,44 +5025,44 @@ def test_adb::genericinstantiation_has_name():
 
 
 
-def test_adb::libraryspecification_is_not_abstract():
-    assert not inspect.isabstract(adb::LibrarySpecification)
+def test_adb_libraryspecification_is_not_abstract():
+    assert not inspect.isabstract(adb_LibrarySpecification)
 
 
-def test_adb::libraryspecification_constructor_exists():
-    assert callable(adb::LibrarySpecification.__init__)
+def test_adb_libraryspecification_constructor_exists():
+    assert callable(adb_LibrarySpecification.__init__)
 
 
-def test_adb::libraryspecification_constructor_args():
-    sig = inspect.signature(adb::LibrarySpecification.__init__)
+def test_adb_libraryspecification_constructor_args():
+    sig = inspect.signature(adb_LibrarySpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::genericitems_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericItems)
+def test_adb_genericitems_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericItems)
 
 
-def test_adb::genericitems_constructor_exists():
-    assert callable(adb::GenericItems.__init__)
+def test_adb_genericitems_constructor_exists():
+    assert callable(adb_GenericItems.__init__)
 
 
-def test_adb::genericitems_constructor_args():
-    sig = inspect.signature(adb::GenericItems.__init__)
+def test_adb_genericitems_constructor_args():
+    sig = inspect.signature(adb_GenericItems.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::genericdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericDeclaration)
+def test_adb_genericdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericDeclaration)
 
 
-def test_adb::genericdeclaration_constructor_exists():
-    assert callable(adb::GenericDeclaration.__init__)
+def test_adb_genericdeclaration_constructor_exists():
+    assert callable(adb_GenericDeclaration.__init__)
 
 
-def test_adb::genericdeclaration_constructor_args():
-    sig = inspect.signature(adb::GenericDeclaration.__init__)
+def test_adb_genericdeclaration_constructor_args():
+    sig = inspect.signature(adb_GenericDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5081,50 +5081,50 @@ def test_useclause_constructor_args():
 
 
 
-def test_adb::usetypeclause_is_not_abstract():
-    assert not inspect.isabstract(adb::UseTypeClause)
+def test_adb_usetypeclause_is_not_abstract():
+    assert not inspect.isabstract(adb_UseTypeClause)
 
 
-def test_adb::usetypeclause_constructor_exists():
-    assert callable(adb::UseTypeClause.__init__)
+def test_adb_usetypeclause_constructor_exists():
+    assert callable(adb_UseTypeClause.__init__)
 
 
-def test_adb::usetypeclause_constructor_args():
-    sig = inspect.signature(adb::UseTypeClause.__init__)
+def test_adb_usetypeclause_constructor_args():
+    sig = inspect.signature(adb_UseTypeClause.__init__)
     params = list(sig.parameters.keys())
-    assert "typesNames" in params, "Missing parameter 'typesNames'"
     assert "useTypeRefs" in params, "Missing parameter 'useTypeRefs'"
+    assert "typesNames" in params, "Missing parameter 'typesNames'"
 
-def test_adb::usetypeclause_has_typesNames():
-    assert hasattr(adb::UseTypeClause, "typesNames")
+def test_adb_usetypeclause_has_useTypeRefs():
+    assert hasattr(adb_UseTypeClause, "useTypeRefs")
     descriptor = None
-    for klass in adb::UseTypeClause.__mro__:
-        if "typesNames" in klass.__dict__:
-            descriptor = klass.__dict__["typesNames"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adb::usetypeclause_has_useTypeRefs():
-    assert hasattr(adb::UseTypeClause, "useTypeRefs")
-    descriptor = None
-    for klass in adb::UseTypeClause.__mro__:
+    for klass in adb_UseTypeClause.__mro__:
         if "useTypeRefs" in klass.__dict__:
             descriptor = klass.__dict__["useTypeRefs"]
             break
     assert isinstance(descriptor, property)
 
+def test_adb_usetypeclause_has_typesNames():
+    assert hasattr(adb_UseTypeClause, "typesNames")
+    descriptor = None
+    for klass in adb_UseTypeClause.__mro__:
+        if "typesNames" in klass.__dict__:
+            descriptor = klass.__dict__["typesNames"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_adb::usepackageclause_is_not_abstract():
-    assert not inspect.isabstract(adb::UsePackageClause)
+
+def test_adb_usepackageclause_is_not_abstract():
+    assert not inspect.isabstract(adb_UsePackageClause)
 
 
-def test_adb::usepackageclause_constructor_exists():
-    assert callable(adb::UsePackageClause.__init__)
+def test_adb_usepackageclause_constructor_exists():
+    assert callable(adb_UsePackageClause.__init__)
 
 
-def test_adb::usepackageclause_constructor_args():
-    sig = inspect.signature(adb::UsePackageClause.__init__)
+def test_adb_usepackageclause_constructor_args():
+    sig = inspect.signature(adb_UsePackageClause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5143,16 +5143,16 @@ def test_genericitem_constructor_args():
 
 
 
-def test_adb::genericformalparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::GenericFormalParameterDeclaration)
+def test_adb_genericformalparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_GenericFormalParameterDeclaration)
 
 
-def test_adb::genericformalparameterdeclaration_constructor_exists():
-    assert callable(adb::GenericFormalParameterDeclaration.__init__)
+def test_adb_genericformalparameterdeclaration_constructor_exists():
+    assert callable(adb_GenericFormalParameterDeclaration.__init__)
 
 
-def test_adb::genericformalparameterdeclaration_constructor_args():
-    sig = inspect.signature(adb::GenericFormalParameterDeclaration.__init__)
+def test_adb_genericformalparameterdeclaration_constructor_args():
+    sig = inspect.signature(adb_GenericFormalParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5171,23 +5171,37 @@ def test_basicdeclarativeitem_constructor_args():
 
 
 
-def test_adb::aspectclause_is_not_abstract():
-    assert not inspect.isabstract(adb::AspectClause)
+def test_adb_basicdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_BasicDeclaration)
 
 
-def test_adb::aspectclause_constructor_exists():
-    assert callable(adb::AspectClause.__init__)
+def test_adb_basicdeclaration_constructor_exists():
+    assert callable(adb_BasicDeclaration.__init__)
 
 
-def test_adb::aspectclause_constructor_args():
-    sig = inspect.signature(adb::AspectClause.__init__)
+def test_adb_basicdeclaration_constructor_args():
+    sig = inspect.signature(adb_BasicDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adb_aspectclause_is_not_abstract():
+    assert not inspect.isabstract(adb_AspectClause)
+
+
+def test_adb_aspectclause_constructor_exists():
+    assert callable(adb_AspectClause.__init__)
+
+
+def test_adb_aspectclause_constructor_args():
+    sig = inspect.signature(adb_AspectClause.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::aspectclause_has_name():
-    assert hasattr(adb::AspectClause, "name")
+def test_adb_aspectclause_has_name():
+    assert hasattr(adb_AspectClause, "name")
     descriptor = None
-    for klass in adb::AspectClause.__mro__:
+    for klass in adb_AspectClause.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -5195,37 +5209,23 @@ def test_adb::aspectclause_has_name():
 
 
 
-def test_adb::basicdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::BasicDeclaration)
+def test_adb_libraryunitdeclaration_is_not_abstract():
+    assert not inspect.isabstract(adb_LibraryUnitDeclaration)
 
 
-def test_adb::basicdeclaration_constructor_exists():
-    assert callable(adb::BasicDeclaration.__init__)
+def test_adb_libraryunitdeclaration_constructor_exists():
+    assert callable(adb_LibraryUnitDeclaration.__init__)
 
 
-def test_adb::basicdeclaration_constructor_args():
-    sig = inspect.signature(adb::BasicDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adb::libraryunitdeclaration_is_not_abstract():
-    assert not inspect.isabstract(adb::LibraryUnitDeclaration)
-
-
-def test_adb::libraryunitdeclaration_constructor_exists():
-    assert callable(adb::LibraryUnitDeclaration.__init__)
-
-
-def test_adb::libraryunitdeclaration_constructor_args():
-    sig = inspect.signature(adb::LibraryUnitDeclaration.__init__)
+def test_adb_libraryunitdeclaration_constructor_args():
+    sig = inspect.signature(adb_LibraryUnitDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "private" in params, "Missing parameter 'private'"
 
-def test_adb::libraryunitdeclaration_has_private():
-    assert hasattr(adb::LibraryUnitDeclaration, "private")
+def test_adb_libraryunitdeclaration_has_private():
+    assert hasattr(adb_LibraryUnitDeclaration, "private")
     descriptor = None
-    for klass in adb::LibraryUnitDeclaration.__mro__:
+    for klass in adb_LibraryUnitDeclaration.__mro__:
         if "private" in klass.__dict__:
             descriptor = klass.__dict__["private"]
             break
@@ -5247,47 +5247,47 @@ def test_contextitem_constructor_args():
 
 
 
-def test_adb::useclause_is_not_abstract():
-    assert not inspect.isabstract(adb::UseClause)
+def test_adb_useclause_is_not_abstract():
+    assert not inspect.isabstract(adb_UseClause)
 
 
-def test_adb::useclause_constructor_exists():
-    assert callable(adb::UseClause.__init__)
+def test_adb_useclause_constructor_exists():
+    assert callable(adb_UseClause.__init__)
 
 
-def test_adb::useclause_constructor_args():
-    sig = inspect.signature(adb::UseClause.__init__)
+def test_adb_useclause_constructor_args():
+    sig = inspect.signature(adb_UseClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::withclause_is_not_abstract():
-    assert not inspect.isabstract(adb::WithClause)
+def test_adb_withclause_is_not_abstract():
+    assert not inspect.isabstract(adb_WithClause)
 
 
-def test_adb::withclause_constructor_exists():
-    assert callable(adb::WithClause.__init__)
+def test_adb_withclause_constructor_exists():
+    assert callable(adb_WithClause.__init__)
 
 
-def test_adb::withclause_constructor_args():
-    sig = inspect.signature(adb::WithClause.__init__)
+def test_adb_withclause_constructor_args():
+    sig = inspect.signature(adb_WithClause.__init__)
     params = list(sig.parameters.keys())
     assert "limited" in params, "Missing parameter 'limited'"
     assert "private" in params, "Missing parameter 'private'"
 
-def test_adb::withclause_has_limited():
-    assert hasattr(adb::WithClause, "limited")
+def test_adb_withclause_has_limited():
+    assert hasattr(adb_WithClause, "limited")
     descriptor = None
-    for klass in adb::WithClause.__mro__:
+    for klass in adb_WithClause.__mro__:
         if "limited" in klass.__dict__:
             descriptor = klass.__dict__["limited"]
             break
     assert isinstance(descriptor, property)
 
-def test_adb::withclause_has_private():
-    assert hasattr(adb::WithClause, "private")
+def test_adb_withclause_has_private():
+    assert hasattr(adb_WithClause, "private")
     descriptor = None
-    for klass in adb::WithClause.__mro__:
+    for klass in adb_WithClause.__mro__:
         if "private" in klass.__dict__:
             descriptor = klass.__dict__["private"]
             break
@@ -5295,37 +5295,37 @@ def test_adb::withclause_has_private():
 
 
 
-def test_adb::contextitem_is_not_abstract():
-    assert not inspect.isabstract(adb::ContextItem)
+def test_adb_contextitem_is_not_abstract():
+    assert not inspect.isabstract(adb_ContextItem)
 
 
-def test_adb::contextitem_constructor_exists():
-    assert callable(adb::ContextItem.__init__)
+def test_adb_contextitem_constructor_exists():
+    assert callable(adb_ContextItem.__init__)
 
 
-def test_adb::contextitem_constructor_args():
-    sig = inspect.signature(adb::ContextItem.__init__)
+def test_adb_contextitem_constructor_args():
+    sig = inspect.signature(adb_ContextItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::pragma_is_not_abstract():
-    assert not inspect.isabstract(adb::Pragma)
+def test_adb_pragma_is_not_abstract():
+    assert not inspect.isabstract(adb_Pragma)
 
 
-def test_adb::pragma_constructor_exists():
-    assert callable(adb::Pragma.__init__)
+def test_adb_pragma_constructor_exists():
+    assert callable(adb_Pragma.__init__)
 
 
-def test_adb::pragma_constructor_args():
-    sig = inspect.signature(adb::Pragma.__init__)
+def test_adb_pragma_constructor_args():
+    sig = inspect.signature(adb_Pragma.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adb::pragma_has_name():
-    assert hasattr(adb::Pragma, "name")
+def test_adb_pragma_has_name():
+    assert hasattr(adb_Pragma, "name")
     descriptor = None
-    for klass in adb::Pragma.__mro__:
+    for klass in adb_Pragma.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -5333,58 +5333,58 @@ def test_adb::pragma_has_name():
 
 
 
-def test_adb::unit_is_not_abstract():
-    assert not inspect.isabstract(adb::Unit)
+def test_adb_unit_is_not_abstract():
+    assert not inspect.isabstract(adb_Unit)
 
 
-def test_adb::unit_constructor_exists():
-    assert callable(adb::Unit.__init__)
+def test_adb_unit_constructor_exists():
+    assert callable(adb_Unit.__init__)
 
 
-def test_adb::unit_constructor_args():
-    sig = inspect.signature(adb::Unit.__init__)
+def test_adb_unit_constructor_args():
+    sig = inspect.signature(adb_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::contextclause_is_not_abstract():
-    assert not inspect.isabstract(adb::ContextClause)
+def test_adb_contextclause_is_not_abstract():
+    assert not inspect.isabstract(adb_ContextClause)
 
 
-def test_adb::contextclause_constructor_exists():
-    assert callable(adb::ContextClause.__init__)
+def test_adb_contextclause_constructor_exists():
+    assert callable(adb_ContextClause.__init__)
 
 
-def test_adb::contextclause_constructor_args():
-    sig = inspect.signature(adb::ContextClause.__init__)
+def test_adb_contextclause_constructor_args():
+    sig = inspect.signature(adb_ContextClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(adb::CompilationUnit)
+def test_adb_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(adb_CompilationUnit)
 
 
-def test_adb::compilationunit_constructor_exists():
-    assert callable(adb::CompilationUnit.__init__)
+def test_adb_compilationunit_constructor_exists():
+    assert callable(adb_CompilationUnit.__init__)
 
 
-def test_adb::compilationunit_constructor_args():
-    sig = inspect.signature(adb::CompilationUnit.__init__)
+def test_adb_compilationunit_constructor_args():
+    sig = inspect.signature(adb_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adb::compilation_is_not_abstract():
-    assert not inspect.isabstract(adb::Compilation)
+def test_adb_compilation_is_not_abstract():
+    assert not inspect.isabstract(adb_Compilation)
 
 
-def test_adb::compilation_constructor_exists():
-    assert callable(adb::Compilation.__init__)
+def test_adb_compilation_constructor_exists():
+    assert callable(adb_Compilation.__init__)
 
 
-def test_adb::compilation_constructor_args():
-    sig = inspect.signature(adb::Compilation.__init__)
+def test_adb_compilation_constructor_args():
+    sig = inspect.signature(adb_Compilation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5399,8 +5399,220 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+RecordComponentAssociation_strategy = st.builds(
+    RecordComponentAssociation,
+)
+adb_UninitializedComponents_strategy = st.builds(
+    adb_UninitializedComponents,
+    box=
+        st.booleans()
+)
+adb_InitializedComponents_strategy = st.builds(
+    adb_InitializedComponents,
+)
+adb_ParameterAssociation_strategy = st.builds(
+    adb_ParameterAssociation,
+    selectorName=
+        safe_text
+)
+adb_RecordComponentAssociation_strategy = st.builds(
+    adb_RecordComponentAssociation,
+)
+RecordAggregate_strategy = st.builds(
+    RecordAggregate,
+)
+adb_RecordComponentAssociationList_strategy = st.builds(
+    adb_RecordComponentAssociationList,
+    nullRecord=
+        st.booleans()
+)
+Aggregate_strategy = st.builds(
+    Aggregate,
+)
+adb_ExtensionAggregate_strategy = st.builds(
+    adb_ExtensionAggregate,
+)
+adb_RecordAggregate_strategy = st.builds(
+    adb_RecordAggregate,
+)
+Qualifier_strategy = st.builds(
+    Qualifier,
+)
+ParenthesizedExpression_strategy = st.builds(
+    ParenthesizedExpression,
+)
+adb_Aggregate_strategy = st.builds(
+    adb_Aggregate,
+)
+adb_ComponentChoiceList_strategy = st.builds(
+    adb_ComponentChoiceList,
+    others=
+        st.booleans(),
+    componentSelectorName=
+        safe_text
+)
+adb_DiscriminantSelectors_strategy = st.builds(
+    adb_DiscriminantSelectors,
+    discriminantSelectorName=
+        safe_text
+)
+adb_DiscriminantAssociation_strategy = st.builds(
+    adb_DiscriminantAssociation,
+)
+CompositeConstraint_strategy = st.builds(
+    CompositeConstraint,
+)
+adb_IndexConstraint_strategy = st.builds(
+    adb_IndexConstraint,
+)
+adb_DiscriminantConstraint_strategy = st.builds(
+    adb_DiscriminantConstraint,
+)
+adb_CompositeConstraint_strategy = st.builds(
+    adb_CompositeConstraint,
+)
+adb_OptConstraint_strategy = st.builds(
+    adb_OptConstraint,
+)
+DiscreteRange_strategy = st.builds(
+    DiscreteRange,
+)
+DiscreteSubtypeDefinition_strategy = st.builds(
+    DiscreteSubtypeDefinition,
+)
+adb_DiscreteRange_strategy = st.builds(
+    adb_DiscreteRange,
+)
+adb_Qualifier_strategy = st.builds(
+    adb_Qualifier,
+)
+Primary_strategy = st.builds(
+    Primary,
+)
+adb_QualifiedName_strategy = st.builds(
+    adb_QualifiedName,
+)
+adb_StringLiteral_strategy = st.builds(
+    adb_StringLiteral,
+    value=
+        safe_text
+)
+adb_Allocator_strategy = st.builds(
+    adb_Allocator,
+)
+adb_Null_strategy = st.builds(
+    adb_Null,
+    value=
+        safe_text
+)
+adb_ParenthesizedExpression_strategy = st.builds(
+    adb_ParenthesizedExpression,
+)
+adb_NumericLiteral_strategy = st.builds(
+    adb_NumericLiteral,
+    value=
+        safe_text
+)
+Range_strategy = st.builds(
+    Range,
+)
+adb_ExplicitRange_strategy = st.builds(
+    adb_ExplicitRange,
+)
+adb_EntityRange_strategy = st.builds(
+    adb_EntityRange,
+)
+RangeConstraint_strategy = st.builds(
+    RangeConstraint,
+)
+adb_ParameterEffectiveValue_strategy = st.builds(
+    adb_ParameterEffectiveValue,
+)
+adb_AttributeDesignator_strategy = st.builds(
+    adb_AttributeDesignator,
+)
+adb_PrimaryName_strategy = st.builds(
+    adb_PrimaryName,
+)
+Interval_strategy = st.builds(
+    Interval,
+)
+adb_ArrayComponentAssociation_strategy = st.builds(
+    adb_ArrayComponentAssociation,
+    box=
+        st.booleans()
+)
+ArrayAggregate_strategy = st.builds(
+    ArrayAggregate,
+)
+adb_NamedArrayAggregate_strategy = st.builds(
+    adb_NamedArrayAggregate,
+)
+adb_PositionalArrayAggregate_strategy = st.builds(
+    adb_PositionalArrayAggregate,
+    othersBox=
+        st.booleans()
+)
+adb_ArrayAggregate_strategy = st.builds(
+    adb_ArrayAggregate,
+)
+adb_AncestorPart_strategy = st.builds(
+    adb_AncestorPart,
+)
+ScalarConstraint_strategy = st.builds(
+    ScalarConstraint,
+)
+adb_RangeConstraint_strategy = st.builds(
+    adb_RangeConstraint,
+)
+adb_DeltaConstraint_strategy = st.builds(
+    adb_DeltaConstraint,
+)
+adb_DigitsConstraint_strategy = st.builds(
+    adb_DigitsConstraint,
+)
+adb_ScalarConstraint_strategy = st.builds(
+    adb_ScalarConstraint,
+)
+adb_EObject_strategy = st.builds(
+    adb_EObject,
+)
+adb_Factor_strategy = st.builds(
+    adb_Factor,
+    not_=
+        st.booleans(),
+    abs=
+        st.booleans()
+)
+adb_Term_strategy = st.builds(
+    adb_Term,
+    multiplyingOperators=
+        safe_text
+)
+adb_Interval_strategy = st.builds(
+    adb_Interval,
+)
+adb_Membership_strategy = st.builds(
+    adb_Membership,
+    not_=
+        st.booleans()
+)
+adb_Relation_strategy = st.builds(
+    adb_Relation,
+    relationalOperator=
+        safe_text
+)
+ParameterEffectiveValue_strategy = st.builds(
+    ParameterEffectiveValue,
+)
+AncestorPart_strategy = st.builds(
+    AncestorPart,
+)
 DiscreteChoice_strategy = st.builds(
     DiscreteChoice,
+)
+adb_Range_strategy = st.builds(
+    adb_Range,
 )
 ExplicitGenericActualParameter_strategy = st.builds(
     ExplicitGenericActualParameter,
@@ -5408,54 +5620,54 @@ ExplicitGenericActualParameter_strategy = st.builds(
 EntryIndex_strategy = st.builds(
     EntryIndex,
 )
-adb::Primary_strategy = st.builds(
-    adb::Primary,
+adb_Primary_strategy = st.builds(
+    adb_Primary,
 )
-adb::RealRangeSpecification_strategy = st.builds(
-    adb::RealRangeSpecification,
+adb_RealRangeSpecification_strategy = st.builds(
+    adb_RealRangeSpecification,
 )
-adb::DiscreteChoice_strategy = st.builds(
-    adb::DiscreteChoice,
+adb_DiscreteChoice_strategy = st.builds(
+    adb_DiscreteChoice,
 )
-adb::Variant_strategy = st.builds(
-    adb::Variant,
+adb_Variant_strategy = st.builds(
+    adb_Variant,
 )
-adb::ComponentClause_strategy = st.builds(
-    adb::ComponentClause,
+adb_ComponentClause_strategy = st.builds(
+    adb_ComponentClause,
     localName=
         safe_text
 )
-adb::ModClause_strategy = st.builds(
-    adb::ModClause,
+adb_ModClause_strategy = st.builds(
+    adb_ModClause,
 )
 RealTypeDefinition_strategy = st.builds(
     RealTypeDefinition,
 )
-adb::FixedPointDefinition_strategy = st.builds(
-    adb::FixedPointDefinition,
+adb_FixedPointDefinition_strategy = st.builds(
+    adb_FixedPointDefinition,
 )
-adb::FloatingPointDefinition_strategy = st.builds(
-    adb::FloatingPointDefinition,
+adb_FloatingPointDefinition_strategy = st.builds(
+    adb_FloatingPointDefinition,
 )
 ComponentItem_strategy = st.builds(
     ComponentItem,
 )
-adb::VariantPart_strategy = st.builds(
-    adb::VariantPart,
+adb_VariantPart_strategy = st.builds(
+    adb_VariantPart,
     name=
         safe_text
 )
-adb::OptVariantPart_strategy = st.builds(
-    adb::OptVariantPart,
+adb_OptVariantPart_strategy = st.builds(
+    adb_OptVariantPart,
 )
-adb::ComponentItem_strategy = st.builds(
-    adb::ComponentItem,
+adb_ComponentItem_strategy = st.builds(
+    adb_ComponentItem,
 )
-adb::ComponentList_strategy = st.builds(
-    adb::ComponentList,
+adb_ComponentList_strategy = st.builds(
+    adb_ComponentList,
 )
-adb::SimpleExpression_strategy = st.builds(
-    adb::SimpleExpression,
+adb_SimpleExpression_strategy = st.builds(
+    adb_SimpleExpression,
     unaryAddingOperator=
         safe_text,
     binaryAddingOperators=
@@ -5464,14 +5676,14 @@ adb::SimpleExpression_strategy = st.builds(
 IntegerTypeDefinition_strategy = st.builds(
     IntegerTypeDefinition,
 )
-adb::ModularTypeDefinition_strategy = st.builds(
-    adb::ModularTypeDefinition,
+adb_ModularTypeDefinition_strategy = st.builds(
+    adb_ModularTypeDefinition,
 )
-adb::SignedIntegerTypeDefinition_strategy = st.builds(
-    adb::SignedIntegerTypeDefinition,
+adb_SignedIntegerTypeDefinition_strategy = st.builds(
+    adb_SignedIntegerTypeDefinition,
 )
-adb::ParameterSpecification_strategy = st.builds(
-    adb::ParameterSpecification,
+adb_ParameterSpecification_strategy = st.builds(
+    adb_ParameterSpecification,
 )
 ReturnSubtypeIndication_strategy = st.builds(
     ReturnSubtypeIndication,
@@ -5479,19 +5691,19 @@ ReturnSubtypeIndication_strategy = st.builds(
 ArrayIndexes_strategy = st.builds(
     ArrayIndexes,
 )
-adb::ConstrainedIndexes_strategy = st.builds(
-    adb::ConstrainedIndexes,
+adb_ConstrainedIndexes_strategy = st.builds(
+    adb_ConstrainedIndexes,
 )
-adb::UnconstrainedIndexes_strategy = st.builds(
-    adb::UnconstrainedIndexes,
+adb_UnconstrainedIndexes_strategy = st.builds(
+    adb_UnconstrainedIndexes,
 )
-adb::ComponentDefinition_strategy = st.builds(
-    adb::ComponentDefinition,
+adb_ComponentDefinition_strategy = st.builds(
+    adb_ComponentDefinition,
     aliased=
         st.booleans()
 )
-adb::ArrayIndexes_strategy = st.builds(
-    adb::ArrayIndexes,
+adb_ArrayIndexes_strategy = st.builds(
+    adb_ArrayIndexes,
 )
 NotNullAccessDefinition_strategy = st.builds(
     NotNullAccessDefinition,
@@ -5499,600 +5711,388 @@ NotNullAccessDefinition_strategy = st.builds(
 AccessSpecification_strategy = st.builds(
     AccessSpecification,
 )
-adb::AccessToDataDefinition_strategy = st.builds(
-    adb::AccessToDataDefinition,
+adb_AccessToDataDefinition_strategy = st.builds(
+    adb_AccessToDataDefinition,
     generalAccessModifier=
         safe_text
 )
-adb::AccessToSubprogramDefinition_strategy = st.builds(
-    adb::AccessToSubprogramDefinition,
+adb_AccessToSubprogramDefinition_strategy = st.builds(
+    adb_AccessToSubprogramDefinition,
     protected=
         st.booleans()
 )
-adb::AccessSpecification_strategy = st.builds(
-    adb::AccessSpecification,
+adb_AccessSpecification_strategy = st.builds(
+    adb_AccessSpecification,
 )
-adb::AccessToDataInstance_strategy = st.builds(
-    adb::AccessToDataInstance,
+adb_AccessToDataInstance_strategy = st.builds(
+    adb_AccessToDataInstance,
     constant=
         safe_text
 )
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-adb::IntegerTypeDefinition_strategy = st.builds(
-    adb::IntegerTypeDefinition,
+adb_IntegerTypeDefinition_strategy = st.builds(
+    adb_IntegerTypeDefinition,
 )
-adb::EnumerationTypeDefinition_strategy = st.builds(
-    adb::EnumerationTypeDefinition,
-    enumerationliteralspecifications=
-        safe_text
+adb_RealTypeDefinition_strategy = st.builds(
+    adb_RealTypeDefinition,
 )
-adb::DerivedTypeDefinition_strategy = st.builds(
-    adb::DerivedTypeDefinition,
+adb_RecordTypeDefinition_strategy = st.builds(
+    adb_RecordTypeDefinition,
+    abstract=
+        st.booleans(),
+    limited=
+        st.booleans(),
+    tagged=
+        st.booleans()
+)
+adb_DerivedTypeDefinition_strategy = st.builds(
+    adb_DerivedTypeDefinition,
     limited=
         safe_text,
     abstract=
         safe_text
 )
-adb::RecordTypeDefinition_strategy = st.builds(
-    adb::RecordTypeDefinition,
-    tagged=
-        st.booleans(),
-    abstract=
-        st.booleans(),
-    limited=
-        st.booleans()
+adb_EnumerationTypeDefinition_strategy = st.builds(
+    adb_EnumerationTypeDefinition,
+    enumerationliteralspecifications=
+        safe_text
 )
-adb::RealTypeDefinition_strategy = st.builds(
-    adb::RealTypeDefinition,
+adb_NotNullAccessDefinition_strategy = st.builds(
+    adb_NotNullAccessDefinition,
 )
-adb::NotNullAccessDefinition_strategy = st.builds(
-    adb::NotNullAccessDefinition,
+adb_DiscriminantSpecification_strategy = st.builds(
+    adb_DiscriminantSpecification,
 )
-adb::DiscriminantSpecification_strategy = st.builds(
-    adb::DiscriminantSpecification,
-)
-adb::RecordDefinition_strategy = st.builds(
-    adb::RecordDefinition,
+adb_RecordDefinition_strategy = st.builds(
+    adb_RecordDefinition,
     null=
         safe_text
 )
-adb::RecordExtensionPart_strategy = st.builds(
-    adb::RecordExtensionPart,
+adb_RecordExtensionPart_strategy = st.builds(
+    adb_RecordExtensionPart,
 )
 DiscriminantPart_strategy = st.builds(
     DiscriminantPart,
 )
-adb::UnknownDiscriminantPart_strategy = st.builds(
-    adb::UnknownDiscriminantPart,
+adb_UnknownDiscriminantPart_strategy = st.builds(
+    adb_UnknownDiscriminantPart,
     box=
         st.booleans()
 )
-adb::ExplicitGenericActualParameter_strategy = st.builds(
-    adb::ExplicitGenericActualParameter,
+adb_ExplicitGenericActualParameter_strategy = st.builds(
+    adb_ExplicitGenericActualParameter,
 )
 AbortStatement_strategy = st.builds(
     AbortStatement,
 )
-adb::TaskNames_strategy = st.builds(
-    adb::TaskNames,
+adb_TaskNames_strategy = st.builds(
+    adb_TaskNames,
 )
-adb::EntryCallAlternative_strategy = st.builds(
-    adb::EntryCallAlternative,
+adb_EntryCallAlternative_strategy = st.builds(
+    adb_EntryCallAlternative,
 )
 SelectAlternative_strategy = st.builds(
     SelectAlternative,
 )
-adb::DelayAlternative_strategy = st.builds(
-    adb::DelayAlternative,
+adb_DelayAlternative_strategy = st.builds(
+    adb_DelayAlternative,
 )
-adb::AcceptAlternative_strategy = st.builds(
-    adb::AcceptAlternative,
+adb_AcceptAlternative_strategy = st.builds(
+    adb_AcceptAlternative,
 )
-adb::GuardedAlternative_strategy = st.builds(
-    adb::GuardedAlternative,
+adb_GuardedAlternative_strategy = st.builds(
+    adb_GuardedAlternative,
 )
-adb::SelectAlternative_strategy = st.builds(
-    adb::SelectAlternative,
+adb_SelectAlternative_strategy = st.builds(
+    adb_SelectAlternative,
 )
-adb::Guard_strategy = st.builds(
-    adb::Guard,
+adb_Guard_strategy = st.builds(
+    adb_Guard,
 )
 SelectStatement_strategy = st.builds(
     SelectStatement,
 )
-adb::ConditionalEntryCall_strategy = st.builds(
-    adb::ConditionalEntryCall,
+adb_ConditionalEntryCall_strategy = st.builds(
+    adb_ConditionalEntryCall,
 )
-adb::TimedEntryCall_strategy = st.builds(
-    adb::TimedEntryCall,
+adb_TimedEntryCall_strategy = st.builds(
+    adb_TimedEntryCall,
 )
-adb::SelectiveAccept_strategy = st.builds(
-    adb::SelectiveAccept,
+adb_SelectiveAccept_strategy = st.builds(
+    adb_SelectiveAccept,
 )
-adb::TriggeringStatement_strategy = st.builds(
-    adb::TriggeringStatement,
+adb_TriggeringStatement_strategy = st.builds(
+    adb_TriggeringStatement,
 )
-adb::AbortablePart_strategy = st.builds(
-    adb::AbortablePart,
+adb_AbortablePart_strategy = st.builds(
+    adb_AbortablePart,
 )
-adb::TriggeringAlternative_strategy = st.builds(
-    adb::TriggeringAlternative,
+adb_TriggeringAlternative_strategy = st.builds(
+    adb_TriggeringAlternative,
 )
-adb::AsynchronousSelect_strategy = st.builds(
-    adb::AsynchronousSelect,
+adb_AsynchronousSelect_strategy = st.builds(
+    adb_AsynchronousSelect,
 )
-adb::EntryIndexSpecification_strategy = st.builds(
-    adb::EntryIndexSpecification,
+adb_EntryIndexSpecification_strategy = st.builds(
+    adb_EntryIndexSpecification,
     name=
         safe_text
 )
-adb::EntryBarrier_strategy = st.builds(
-    adb::EntryBarrier,
+adb_EntryBarrier_strategy = st.builds(
+    adb_EntryBarrier,
 )
-adb::EntryBodyFormalPart_strategy = st.builds(
-    adb::EntryBodyFormalPart,
+adb_EntryBodyFormalPart_strategy = st.builds(
+    adb_EntryBodyFormalPart,
 )
-adb::EntryIndex_strategy = st.builds(
-    adb::EntryIndex,
+adb_EntryIndex_strategy = st.builds(
+    adb_EntryIndex,
 )
-adb::ProtectedOperationItem_strategy = st.builds(
-    adb::ProtectedOperationItem,
+adb_ProtectedOperationItem_strategy = st.builds(
+    adb_ProtectedOperationItem,
 )
-adb::ReturnSubtypeIndication_strategy = st.builds(
-    adb::ReturnSubtypeIndication,
+adb_ReturnSubtypeIndication_strategy = st.builds(
+    adb_ReturnSubtypeIndication,
 )
 TriggeringStatement_strategy = st.builds(
     TriggeringStatement,
 )
-adb::LoopParameterSpecification_strategy = st.builds(
-    adb::LoopParameterSpecification,
+adb_LoopParameterSpecification_strategy = st.builds(
+    adb_LoopParameterSpecification,
     identifier=
         safe_text
 )
-adb::IterationScheme_strategy = st.builds(
-    adb::IterationScheme,
+adb_IterationScheme_strategy = st.builds(
+    adb_IterationScheme,
 )
 CompoundStatement_strategy = st.builds(
     CompoundStatement,
 )
-adb::ExtendedReturnStatement_strategy = st.builds(
-    adb::ExtendedReturnStatement,
+adb_ExtendedReturnStatement_strategy = st.builds(
+    adb_ExtendedReturnStatement,
     identifier=
         safe_text
 )
-adb::SelectStatement_strategy = st.builds(
-    adb::SelectStatement,
-)
-adb::AcceptStatement_strategy = st.builds(
-    adb::AcceptStatement,
+adb_AcceptStatement_strategy = st.builds(
+    adb_AcceptStatement,
     entryidentifier=
         safe_text
 )
-adb::LoopStatement_strategy = st.builds(
-    adb::LoopStatement,
+adb_SelectStatement_strategy = st.builds(
+    adb_SelectStatement,
+)
+adb_LoopStatement_strategy = st.builds(
+    adb_LoopStatement,
     sameName=
         safe_text,
     name=
         safe_text
 )
-adb::IfStatement_strategy = st.builds(
-    adb::IfStatement,
+adb_IfStatement_strategy = st.builds(
+    adb_IfStatement,
 )
-adb::PragmaArgumentAssociation_strategy = st.builds(
-    adb::PragmaArgumentAssociation,
+adb_PragmaArgumentAssociation_strategy = st.builds(
+    adb_PragmaArgumentAssociation,
     name=
         safe_text
 )
-adb::DiscreteChoiceList_strategy = st.builds(
-    adb::DiscreteChoiceList,
+adb_DiscreteChoiceList_strategy = st.builds(
+    adb_DiscreteChoiceList,
 )
-adb::CaseStatementAlternative_strategy = st.builds(
-    adb::CaseStatementAlternative,
+adb_CaseStatementAlternative_strategy = st.builds(
+    adb_CaseStatementAlternative,
 )
-adb::CaseStatement_strategy = st.builds(
-    adb::CaseStatement,
+adb_CaseStatement_strategy = st.builds(
+    adb_CaseStatement,
 )
 ObjectDeclaration_strategy = st.builds(
     ObjectDeclaration,
 )
-adb::DataInstanceDeclaration_strategy = st.builds(
-    adb::DataInstanceDeclaration,
-    aliased=
-        st.booleans(),
+adb_DataInstanceDeclaration_strategy = st.builds(
+    adb_DataInstanceDeclaration,
     constant=
+        st.booleans(),
+    aliased=
         st.booleans()
 )
-adb::GenericAssociation_strategy = st.builds(
-    adb::GenericAssociation,
+adb_GenericAssociation_strategy = st.builds(
+    adb_GenericAssociation,
     selectorName=
         safe_text
 )
-adb::FormalPackageAssociation_strategy = st.builds(
-    adb::FormalPackageAssociation,
+adb_FormalPackageAssociation_strategy = st.builds(
+    adb_FormalPackageAssociation,
     genericFormalParameterSelectorName=
         safe_text
 )
-adb::FormalPackageActualPart_strategy = st.builds(
-    adb::FormalPackageActualPart,
+adb_FormalPackageActualPart_strategy = st.builds(
+    adb_FormalPackageActualPart,
     box=
         st.booleans()
 )
-adb::SubprogramDefault_strategy = st.builds(
-    adb::SubprogramDefault,
+adb_SubprogramDefault_strategy = st.builds(
+    adb_SubprogramDefault,
     defaultName=
         safe_text
 )
-adb::AnonymousAccessDefinition_strategy = st.builds(
-    adb::AnonymousAccessDefinition,
+adb_Expression_strategy = st.builds(
+    adb_Expression,
+    booleanOperator=
+        safe_text
 )
-adb::OptNullExclusion_strategy = st.builds(
-    adb::OptNullExclusion,
+adb_AnonymousAccessDefinition_strategy = st.builds(
+    adb_AnonymousAccessDefinition,
+)
+adb_OptNullExclusion_strategy = st.builds(
+    adb_OptNullExclusion,
     not_null=
         safe_text
 )
-adb::SingleProtectedDeclaration_strategy = st.builds(
-    adb::SingleProtectedDeclaration,
+adb_SingleProtectedDeclaration_strategy = st.builds(
+    adb_SingleProtectedDeclaration,
     name=
         safe_text
 )
-adb::Mode_strategy = st.builds(
-    adb::Mode,
+adb_Mode_strategy = st.builds(
+    adb_Mode,
     out=
         st.booleans(),
     in_=
         st.booleans()
 )
-adb::DefiningIdentifierList_strategy = st.builds(
-    adb::DefiningIdentifierList,
+adb_DefiningIdentifierList_strategy = st.builds(
+    adb_DefiningIdentifierList,
     name=
         safe_text
 )
 FormalTypeDefinition_strategy = st.builds(
     FormalTypeDefinition,
 )
-adb::FormalDerivedTypeDefinition_strategy = st.builds(
-    adb::FormalDerivedTypeDefinition,
-    absract=
-        safe_text,
-    synchronized=
-        st.booleans(),
-    limited=
-        st.booleans()
-)
-adb::AccessTypeDefinition_strategy = st.builds(
-    adb::AccessTypeDefinition,
-)
-adb::InterfaceTypeDefinition_strategy = st.builds(
-    adb::InterfaceTypeDefinition,
+adb_InterfaceTypeDefinition_strategy = st.builds(
+    adb_InterfaceTypeDefinition,
     synchro=
         st.booleans(),
-    limited=
+    protected=
         st.booleans(),
     task=
         st.booleans(),
-    protected=
+    limited=
         st.booleans()
 )
-adb::ArrayTypeDefinition_strategy = st.builds(
-    adb::ArrayTypeDefinition,
+adb_ArrayTypeDefinition_strategy = st.builds(
+    adb_ArrayTypeDefinition,
+)
+adb_AccessTypeDefinition_strategy = st.builds(
+    adb_AccessTypeDefinition,
+)
+adb_FormalDerivedTypeDefinition_strategy = st.builds(
+    adb_FormalDerivedTypeDefinition,
+    absract=
+        safe_text,
+    limited=
+        st.booleans(),
+    synchronized=
+        st.booleans()
 )
 GenericFormalParameterDeclaration_strategy = st.builds(
     GenericFormalParameterDeclaration,
 )
-adb::FormalSubprogramDeclaration_strategy = st.builds(
-    adb::FormalSubprogramDeclaration,
-    abstract=
+adb_FormalTypeDeclaration_strategy = st.builds(
+    adb_FormalTypeDeclaration,
+    identifier=
         safe_text
 )
-adb::FormalPackageDeclaration_strategy = st.builds(
-    adb::FormalPackageDeclaration,
+adb_FormalPackageDeclaration_strategy = st.builds(
+    adb_FormalPackageDeclaration,
     name=
         safe_text,
     genericPackageName=
         safe_text
 )
-adb::FormalTypeDeclaration_strategy = st.builds(
-    adb::FormalTypeDeclaration,
-    identifier=
+adb_FormalSubprogramDeclaration_strategy = st.builds(
+    adb_FormalSubprogramDeclaration,
+    abstract=
         safe_text
 )
-adb::FormalObjectDeclaration_strategy = st.builds(
-    adb::FormalObjectDeclaration,
+adb_FormalObjectDeclaration_strategy = st.builds(
+    adb_FormalObjectDeclaration,
 )
-adb::FormalPrivateTypeDefinition_strategy = st.builds(
-    adb::FormalPrivateTypeDefinition,
-    tagged=
+adb_FormalPrivateTypeDefinition_strategy = st.builds(
+    adb_FormalPrivateTypeDefinition,
+    limited=
         st.booleans(),
     abstract=
         st.booleans(),
-    limited=
+    tagged=
         st.booleans()
 )
-adb::FormalTypeDefinition_strategy = st.builds(
-    adb::FormalTypeDefinition,
+adb_FormalTypeDefinition_strategy = st.builds(
+    adb_FormalTypeDefinition,
 )
-Range_strategy = st.builds(
-    Range,
-)
-adb::ExplicitRange_strategy = st.builds(
-    adb::ExplicitRange,
-)
-adb::EntityRange_strategy = st.builds(
-    adb::EntityRange,
-)
-RangeConstraint_strategy = st.builds(
-    RangeConstraint,
-)
-adb::ParameterEffectiveValue_strategy = st.builds(
-    adb::ParameterEffectiveValue,
-)
-adb::AttributeDesignator_strategy = st.builds(
-    adb::AttributeDesignator,
-)
-adb::PrimaryName_strategy = st.builds(
-    adb::PrimaryName,
-)
-Interval_strategy = st.builds(
-    Interval,
-)
-adb::ArrayComponentAssociation_strategy = st.builds(
-    adb::ArrayComponentAssociation,
-    box=
-        st.booleans()
-)
-ArrayAggregate_strategy = st.builds(
-    ArrayAggregate,
-)
-adb::NamedArrayAggregate_strategy = st.builds(
-    adb::NamedArrayAggregate,
-)
-adb::PositionalArrayAggregate_strategy = st.builds(
-    adb::PositionalArrayAggregate,
-    othersBox=
-        st.booleans()
-)
-adb::AncestorPart_strategy = st.builds(
-    adb::AncestorPart,
-)
-RecordComponentAssociation_strategy = st.builds(
-    RecordComponentAssociation,
-)
-adb::UninitializedComponents_strategy = st.builds(
-    adb::UninitializedComponents,
-    box=
-        st.booleans()
-)
-adb::InitializedComponents_strategy = st.builds(
-    adb::InitializedComponents,
-)
-adb::ParameterAssociation_strategy = st.builds(
-    adb::ParameterAssociation,
-    selectorName=
-        safe_text
-)
-adb::RecordComponentAssociation_strategy = st.builds(
-    adb::RecordComponentAssociation,
-)
-RecordAggregate_strategy = st.builds(
-    RecordAggregate,
-)
-adb::RecordComponentAssociationList_strategy = st.builds(
-    adb::RecordComponentAssociationList,
-    nullRecord=
-        st.booleans()
-)
-Aggregate_strategy = st.builds(
-    Aggregate,
-)
-adb::ArrayAggregate_strategy = st.builds(
-    adb::ArrayAggregate,
-)
-adb::ExtensionAggregate_strategy = st.builds(
-    adb::ExtensionAggregate,
-)
-adb::RecordAggregate_strategy = st.builds(
-    adb::RecordAggregate,
-)
-Qualifier_strategy = st.builds(
-    Qualifier,
-)
-ParenthesizedExpression_strategy = st.builds(
-    ParenthesizedExpression,
-)
-adb::Aggregate_strategy = st.builds(
-    adb::Aggregate,
-)
-adb::ComponentChoiceList_strategy = st.builds(
-    adb::ComponentChoiceList,
-    componentSelectorName=
-        safe_text,
-    others=
-        st.booleans()
-)
-adb::DiscriminantSelectors_strategy = st.builds(
-    adb::DiscriminantSelectors,
-    discriminantSelectorName=
-        safe_text
-)
-adb::DiscriminantAssociation_strategy = st.builds(
-    adb::DiscriminantAssociation,
-)
-CompositeConstraint_strategy = st.builds(
-    CompositeConstraint,
-)
-adb::IndexConstraint_strategy = st.builds(
-    adb::IndexConstraint,
-)
-adb::DiscriminantConstraint_strategy = st.builds(
-    adb::DiscriminantConstraint,
-)
-adb::CompositeConstraint_strategy = st.builds(
-    adb::CompositeConstraint,
-)
-adb::OptConstraint_strategy = st.builds(
-    adb::OptConstraint,
-)
-DiscreteRange_strategy = st.builds(
-    DiscreteRange,
-)
-DiscreteSubtypeDefinition_strategy = st.builds(
-    DiscreteSubtypeDefinition,
-)
-adb::DiscreteRange_strategy = st.builds(
-    adb::DiscreteRange,
-)
-adb::Qualifier_strategy = st.builds(
-    adb::Qualifier,
-)
-Primary_strategy = st.builds(
-    Primary,
-)
-adb::Allocator_strategy = st.builds(
-    adb::Allocator,
-)
-adb::Null_strategy = st.builds(
-    adb::Null,
-    value=
-        safe_text
-)
-adb::QualifiedName_strategy = st.builds(
-    adb::QualifiedName,
-)
-adb::StringLiteral_strategy = st.builds(
-    adb::StringLiteral,
-    value=
-        safe_text
-)
-adb::ParenthesizedExpression_strategy = st.builds(
-    adb::ParenthesizedExpression,
-)
-adb::NumericLiteral_strategy = st.builds(
-    adb::NumericLiteral,
-    value=
-        safe_text
-)
-ScalarConstraint_strategy = st.builds(
-    ScalarConstraint,
-)
-adb::DeltaConstraint_strategy = st.builds(
-    adb::DeltaConstraint,
-)
-adb::RangeConstraint_strategy = st.builds(
-    adb::RangeConstraint,
-)
-adb::DigitsConstraint_strategy = st.builds(
-    adb::DigitsConstraint,
-)
-adb::ScalarConstraint_strategy = st.builds(
-    adb::ScalarConstraint,
-)
-adb::EObject_strategy = st.builds(
-    adb::EObject,
-)
-adb::Factor_strategy = st.builds(
-    adb::Factor,
-    abs=
-        st.booleans(),
-    not_=
-        st.booleans()
-)
-adb::Term_strategy = st.builds(
-    adb::Term,
-    multiplyingOperators=
-        safe_text
-)
-adb::Interval_strategy = st.builds(
-    adb::Interval,
-)
-adb::Membership_strategy = st.builds(
-    adb::Membership,
-    not_=
-        st.booleans()
-)
-adb::Relation_strategy = st.builds(
-    adb::Relation,
-    relationalOperator=
-        safe_text
-)
-ParameterEffectiveValue_strategy = st.builds(
-    ParameterEffectiveValue,
-)
-adb::Range_strategy = st.builds(
-    adb::Range,
-)
-AncestorPart_strategy = st.builds(
-    AncestorPart,
-)
-adb::Expression_strategy = st.builds(
-    adb::Expression,
-    booleanOperator=
-        safe_text
-)
-adb::ExceptionHandler_strategy = st.builds(
-    adb::ExceptionHandler,
+adb_ExceptionHandler_strategy = st.builds(
+    adb_ExceptionHandler,
     name=
         safe_text
 )
-adb::GenericItem_strategy = st.builds(
-    adb::GenericItem,
+adb_GenericItem_strategy = st.builds(
+    adb_GenericItem,
 )
 SimpleStatement_strategy = st.builds(
     SimpleStatement,
 )
-adb::AbortStatement_strategy = st.builds(
-    adb::AbortStatement,
+adb_SimpleReturnStatement_strategy = st.builds(
+    adb_SimpleReturnStatement,
 )
-adb::SimpleReturnStatement_strategy = st.builds(
-    adb::SimpleReturnStatement,
-)
-adb::GotoStatement_strategy = st.builds(
-    adb::GotoStatement,
+adb_GotoStatement_strategy = st.builds(
+    adb_GotoStatement,
     labelId=
         safe_text
 )
-adb::ProcedureOrEntryCallStatement_strategy = st.builds(
-    adb::ProcedureOrEntryCallStatement,
+adb_AbortStatement_strategy = st.builds(
+    adb_AbortStatement,
 )
-adb::DelayStatement_strategy = st.builds(
-    adb::DelayStatement,
+adb_ExitStatement_strategy = st.builds(
+    adb_ExitStatement,
+)
+adb_AssignmentStatement_strategy = st.builds(
+    adb_AssignmentStatement,
+)
+adb_DelayStatement_strategy = st.builds(
+    adb_DelayStatement,
     until=
         safe_text
 )
-adb::RaiseStatement_strategy = st.builds(
-    adb::RaiseStatement,
+adb_ProcedureOrEntryCallStatement_strategy = st.builds(
+    adb_ProcedureOrEntryCallStatement,
 )
-adb::AssignmentStatement_strategy = st.builds(
-    adb::AssignmentStatement,
+adb_RaiseStatement_strategy = st.builds(
+    adb_RaiseStatement,
 )
-adb::RequeueStatement_strategy = st.builds(
-    adb::RequeueStatement,
+adb_RequeueStatement_strategy = st.builds(
+    adb_RequeueStatement,
     abort=
         st.booleans()
 )
-adb::ExitStatement_strategy = st.builds(
-    adb::ExitStatement,
-)
-adb::NullStatement_strategy = st.builds(
-    adb::NullStatement,
+adb_NullStatement_strategy = st.builds(
+    adb_NullStatement,
     null=
         st.booleans()
 )
 Statement_strategy = st.builds(
     Statement,
 )
-adb::CompoundStatement_strategy = st.builds(
-    adb::CompoundStatement,
+adb_CompoundStatement_strategy = st.builds(
+    adb_CompoundStatement,
 )
-adb::SimpleStatement_strategy = st.builds(
-    adb::SimpleStatement,
+adb_SimpleStatement_strategy = st.builds(
+    adb_SimpleStatement,
 )
-adb::Statement_strategy = st.builds(
-    adb::Statement,
+adb_Statement_strategy = st.builds(
+    adb_Statement,
 )
-adb::LabelisableStatement_strategy = st.builds(
-    adb::LabelisableStatement,
+adb_LabelisableStatement_strategy = st.builds(
+    adb_LabelisableStatement,
 )
 AbortablePart_strategy = st.builds(
     AbortablePart,
@@ -6100,109 +6100,109 @@ AbortablePart_strategy = st.builds(
 HandledSequenceOfStatements_strategy = st.builds(
     HandledSequenceOfStatements,
 )
-adb::SequenceOfStatements_strategy = st.builds(
-    adb::SequenceOfStatements,
+adb_SequenceOfStatements_strategy = st.builds(
+    adb_SequenceOfStatements,
 )
-adb::Label_strategy = st.builds(
-    adb::Label,
+adb_Label_strategy = st.builds(
+    adb_Label,
     identifier=
         safe_text
 )
 Body_strategy = st.builds(
     Body,
 )
-adb::BodyStub_strategy = st.builds(
-    adb::BodyStub,
+adb_ProperBody_strategy = st.builds(
+    adb_ProperBody,
+)
+adb_BodyStub_strategy = st.builds(
+    adb_BodyStub,
     name=
         safe_text
-)
-adb::ProperBody_strategy = st.builds(
-    adb::ProperBody,
 )
 ProtectedElementDeclaration_strategy = st.builds(
     ProtectedElementDeclaration,
 )
-adb::ComponentDeclaration_strategy = st.builds(
-    adb::ComponentDeclaration,
+adb_ComponentDeclaration_strategy = st.builds(
+    adb_ComponentDeclaration,
 )
-adb::ProtectedOperationDeclaration_strategy = st.builds(
-    adb::ProtectedOperationDeclaration,
+adb_ProtectedOperationDeclaration_strategy = st.builds(
+    adb_ProtectedOperationDeclaration,
 )
-adb::ProtectedElementDeclaration_strategy = st.builds(
-    adb::ProtectedElementDeclaration,
+adb_ProtectedElementDeclaration_strategy = st.builds(
+    adb_ProtectedElementDeclaration,
 )
-adb::ProtectedDefinition_strategy = st.builds(
-    adb::ProtectedDefinition,
+adb_ProtectedDefinition_strategy = st.builds(
+    adb_ProtectedDefinition,
 )
-adb::FormalPart_strategy = st.builds(
-    adb::FormalPart,
+adb_FormalPart_strategy = st.builds(
+    adb_FormalPart,
 )
-adb::DiscreteSubtypeDefinition_strategy = st.builds(
-    adb::DiscreteSubtypeDefinition,
+adb_DiscreteSubtypeDefinition_strategy = st.builds(
+    adb_DiscreteSubtypeDefinition,
 )
-adb::Name_strategy = st.builds(
-    adb::Name,
+adb_Name_strategy = st.builds(
+    adb_Name,
     name=
         safe_text
 )
-adb::ExceptionChoice_strategy = st.builds(
-    adb::ExceptionChoice,
+adb_ExceptionChoice_strategy = st.builds(
+    adb_ExceptionChoice,
     others=
         st.booleans()
 )
-adb::ParameterAndResultProfile_strategy = st.builds(
-    adb::ParameterAndResultProfile,
+adb_ParameterAndResultProfile_strategy = st.builds(
+    adb_ParameterAndResultProfile,
 )
 SubprogramSpecification_strategy = st.builds(
     SubprogramSpecification,
 )
-adb::FunctionSpecification_strategy = st.builds(
-    adb::FunctionSpecification,
+adb_FunctionSpecification_strategy = st.builds(
+    adb_FunctionSpecification,
 )
-adb::ProcedureSpecification_strategy = st.builds(
-    adb::ProcedureSpecification,
+adb_ProcedureSpecification_strategy = st.builds(
+    adb_ProcedureSpecification,
 )
 BodyStub_strategy = st.builds(
     BodyStub,
 )
-adb::ProtectedBodyStub_strategy = st.builds(
-    adb::ProtectedBodyStub,
+adb_TaskBodyStub_strategy = st.builds(
+    adb_TaskBodyStub,
 )
-adb::PackageBodyStub_strategy = st.builds(
-    adb::PackageBodyStub,
+adb_PackageBodyStub_strategy = st.builds(
+    adb_PackageBodyStub,
 )
-adb::TaskBodyStub_strategy = st.builds(
-    adb::TaskBodyStub,
+adb_ProtectedBodyStub_strategy = st.builds(
+    adb_ProtectedBodyStub,
 )
 NewTypeDeclaration_strategy = st.builds(
     NewTypeDeclaration,
 )
-adb::FullTypeDeclaration_strategy = st.builds(
-    adb::FullTypeDeclaration,
+adb_FullTypeDeclaration_strategy = st.builds(
+    adb_FullTypeDeclaration,
 )
 TypeDeclaration_strategy = st.builds(
     TypeDeclaration,
 )
-adb::SubtypeDeclaration_strategy = st.builds(
-    adb::SubtypeDeclaration,
+adb_SubtypeDeclaration_strategy = st.builds(
+    adb_SubtypeDeclaration,
 )
-adb::NewTypeDeclaration_strategy = st.builds(
-    adb::NewTypeDeclaration,
+adb_NewTypeDeclaration_strategy = st.builds(
+    adb_NewTypeDeclaration,
 )
-adb::TaskDefinition_strategy = st.builds(
-    adb::TaskDefinition,
+adb_TaskDefinition_strategy = st.builds(
+    adb_TaskDefinition,
 )
-adb::InterfaceList_strategy = st.builds(
-    adb::InterfaceList,
+adb_InterfaceList_strategy = st.builds(
+    adb_InterfaceList,
 )
-adb::KnownDiscriminantPart_strategy = st.builds(
-    adb::KnownDiscriminantPart,
+adb_KnownDiscriminantPart_strategy = st.builds(
+    adb_KnownDiscriminantPart,
 )
 DeclarativeItem_strategy = st.builds(
     DeclarativeItem,
 )
-adb::Body_strategy = st.builds(
-    adb::Body,
+adb_Body_strategy = st.builds(
+    adb_Body,
 )
 ProtectedOperationDeclaration_strategy = st.builds(
     ProtectedOperationDeclaration,
@@ -6210,59 +6210,59 @@ ProtectedOperationDeclaration_strategy = st.builds(
 TaskItem_strategy = st.builds(
     TaskItem,
 )
-adb::EntryDeclaration_strategy = st.builds(
-    adb::EntryDeclaration,
+adb_EntryDeclaration_strategy = st.builds(
+    adb_EntryDeclaration,
     name=
         safe_text
 )
-adb::TaskItem_strategy = st.builds(
-    adb::TaskItem,
+adb_TaskItem_strategy = st.builds(
+    adb_TaskItem,
 )
-adb::SubtypeIndication_strategy = st.builds(
-    adb::SubtypeIndication,
+adb_SubtypeIndication_strategy = st.builds(
+    adb_SubtypeIndication,
     subtypeMark=
         safe_text
 )
-adb::PrivateExtensionDeclaration_strategy = st.builds(
-    adb::PrivateExtensionDeclaration,
+adb_PrivateExtensionDeclaration_strategy = st.builds(
+    adb_PrivateExtensionDeclaration,
+    limited=
+        st.booleans(),
+    abstract=
+        st.booleans(),
     synchronized=
-        st.booleans(),
-    limited=
-        st.booleans(),
-    abstract=
         st.booleans()
 )
-adb::PrivateTypeDeclaration_strategy = st.builds(
-    adb::PrivateTypeDeclaration,
+adb_PrivateTypeDeclaration_strategy = st.builds(
+    adb_PrivateTypeDeclaration,
     abstract=
         st.booleans(),
-    limited=
+    tagged=
         st.booleans(),
+    limited=
+        st.booleans()
+)
+adb_DiscriminantPart_strategy = st.builds(
+    adb_DiscriminantPart,
+)
+adb_IncompleteTypeDeclaration_strategy = st.builds(
+    adb_IncompleteTypeDeclaration,
     tagged=
         st.booleans()
 )
-adb::DiscriminantPart_strategy = st.builds(
-    adb::DiscriminantPart,
-)
-adb::IncompleteTypeDeclaration_strategy = st.builds(
-    adb::IncompleteTypeDeclaration,
-    tagged=
-        st.booleans()
-)
-adb::TypeDefinition_strategy = st.builds(
-    adb::TypeDefinition,
+adb_TypeDefinition_strategy = st.builds(
+    adb_TypeDefinition,
 )
 FullTypeDeclaration_strategy = st.builds(
     FullTypeDeclaration,
 )
-adb::ProtectedTypeDeclaration_strategy = st.builds(
-    adb::ProtectedTypeDeclaration,
+adb_ProtectedTypeDeclaration_strategy = st.builds(
+    adb_ProtectedTypeDeclaration,
 )
-adb::FullDataTypeDeclaration_strategy = st.builds(
-    adb::FullDataTypeDeclaration,
+adb_FullDataTypeDeclaration_strategy = st.builds(
+    adb_FullDataTypeDeclaration,
 )
-adb::PackageSpecification_strategy = st.builds(
-    adb::PackageSpecification,
+adb_PackageSpecification_strategy = st.builds(
+    adb_PackageSpecification,
     endname=
         safe_text
 )
@@ -6272,1418 +6272,264 @@ LibrarySpecification_strategy = st.builds(
 PackageDeclaration_strategy = st.builds(
     PackageDeclaration,
 )
-adb::Renaming_strategy = st.builds(
-    adb::Renaming,
+adb_Renaming_strategy = st.builds(
+    adb_Renaming,
     renamed=
         safe_text
 )
-adb::PackageDefinition_strategy = st.builds(
-    adb::PackageDefinition,
+adb_PackageDefinition_strategy = st.builds(
+    adb_PackageDefinition,
 )
 BasicDeclaration_strategy = st.builds(
     BasicDeclaration,
 )
-adb::NumberDeclaration_strategy = st.builds(
-    adb::NumberDeclaration,
+adb_ExceptionDeclaration_strategy = st.builds(
+    adb_ExceptionDeclaration,
 )
-adb::TaskDeclaration_strategy = st.builds(
-    adb::TaskDeclaration,
+adb_NumberDeclaration_strategy = st.builds(
+    adb_NumberDeclaration,
+)
+adb_ObjectDeclaration_strategy = st.builds(
+    adb_ObjectDeclaration,
+)
+adb_TaskDeclaration_strategy = st.builds(
+    adb_TaskDeclaration,
     name=
         safe_text
 )
-adb::TypeDeclaration_strategy = st.builds(
-    adb::TypeDeclaration,
+adb_TypeDeclaration_strategy = st.builds(
+    adb_TypeDeclaration,
     name=
         safe_text
-)
-adb::ExceptionDeclaration_strategy = st.builds(
-    adb::ExceptionDeclaration,
-)
-adb::ObjectDeclaration_strategy = st.builds(
-    adb::ObjectDeclaration,
 )
 LibraryUnitSpecification_strategy = st.builds(
     LibraryUnitSpecification,
 )
-adb::PackageDeclaration_strategy = st.builds(
-    adb::PackageDeclaration,
+adb_PackageDeclaration_strategy = st.builds(
+    adb_PackageDeclaration,
     name=
         safe_text
 )
-adb::LibraryUnitSpecification_strategy = st.builds(
-    adb::LibraryUnitSpecification,
+adb_LibraryUnitSpecification_strategy = st.builds(
+    adb_LibraryUnitSpecification,
 )
 Unit_strategy = st.builds(
     Unit,
 )
-adb::SeparateSubunit_strategy = st.builds(
-    adb::SeparateSubunit,
+adb_SeparateSubunit_strategy = st.builds(
+    adb_SeparateSubunit,
     parentUnitName=
         safe_text
 )
-adb::HandledSequenceOfStatements_strategy = st.builds(
-    adb::HandledSequenceOfStatements,
+adb_HandledSequenceOfStatements_strategy = st.builds(
+    adb_HandledSequenceOfStatements,
 )
-adb::DeclarativeItem_strategy = st.builds(
-    adb::DeclarativeItem,
+adb_DeclarativeItem_strategy = st.builds(
+    adb_DeclarativeItem,
 )
-adb::DeclarativeBlock_strategy = st.builds(
-    adb::DeclarativeBlock,
+adb_DeclarativeBlock_strategy = st.builds(
+    adb_DeclarativeBlock,
 )
-adb::SubprogramSpecification_strategy = st.builds(
-    adb::SubprogramSpecification,
+adb_SubprogramSpecification_strategy = st.builds(
+    adb_SubprogramSpecification,
 )
 ProtectedOperationItem_strategy = st.builds(
     ProtectedOperationItem,
 )
-adb::SubprogramDeclaration_strategy = st.builds(
-    adb::SubprogramDeclaration,
+adb_SubprogramDeclaration_strategy = st.builds(
+    adb_SubprogramDeclaration,
+    renamedName=
+        safe_text,
     abstract=
         st.booleans(),
     null=
-        st.booleans(),
-    renamedName=
-        safe_text
+        st.booleans()
 )
 ProperBody_strategy = st.builds(
     ProperBody,
 )
-adb::ProtectedBody_strategy = st.builds(
-    adb::ProtectedBody,
-    idTask=
-        safe_text,
+adb_ProtectedBody_strategy = st.builds(
+    adb_ProtectedBody,
     identifier=
+        safe_text,
+    idTask=
         safe_text
 )
 DeclarativeBlock_strategy = st.builds(
     DeclarativeBlock,
 )
-adb::EntryBody_strategy = st.builds(
-    adb::EntryBody,
+adb_TaskBody_strategy = st.builds(
+    adb_TaskBody,
+)
+adb_EntryBody_strategy = st.builds(
+    adb_EntryBody,
     endid=
         safe_text
 )
-adb::TaskBody_strategy = st.builds(
-    adb::TaskBody,
+adb_PackageBody_strategy = st.builds(
+    adb_PackageBody,
 )
-adb::BlockStatement_strategy = st.builds(
-    adb::BlockStatement,
+adb_BlockStatement_strategy = st.builds(
+    adb_BlockStatement,
     blockStatementIdentifier=
         safe_text
 )
-adb::PackageBody_strategy = st.builds(
-    adb::PackageBody,
-)
-adb::SubprogramBody_strategy = st.builds(
-    adb::SubprogramBody,
+adb_SubprogramBody_strategy = st.builds(
+    adb_SubprogramBody,
     endname=
         safe_text
 )
-adb::BasicDeclarativeItem_strategy = st.builds(
-    adb::BasicDeclarativeItem,
+adb_BasicDeclarativeItem_strategy = st.builds(
+    adb_BasicDeclarativeItem,
 )
-adb::GenericActualPart_strategy = st.builds(
-    adb::GenericActualPart,
+adb_GenericActualPart_strategy = st.builds(
+    adb_GenericActualPart,
 )
-adb::OverridingIndicator_strategy = st.builds(
-    adb::OverridingIndicator,
+adb_OverridingIndicator_strategy = st.builds(
+    adb_OverridingIndicator,
     not_=
         st.booleans()
 )
-adb::GenericInstantiation_strategy = st.builds(
-    adb::GenericInstantiation,
+adb_GenericInstantiation_strategy = st.builds(
+    adb_GenericInstantiation,
     genericName=
         safe_text,
     name=
         safe_text
 )
-adb::LibrarySpecification_strategy = st.builds(
-    adb::LibrarySpecification,
+adb_LibrarySpecification_strategy = st.builds(
+    adb_LibrarySpecification,
 )
-adb::GenericItems_strategy = st.builds(
-    adb::GenericItems,
+adb_GenericItems_strategy = st.builds(
+    adb_GenericItems,
 )
-adb::GenericDeclaration_strategy = st.builds(
-    adb::GenericDeclaration,
+adb_GenericDeclaration_strategy = st.builds(
+    adb_GenericDeclaration,
 )
 UseClause_strategy = st.builds(
     UseClause,
 )
-adb::UseTypeClause_strategy = st.builds(
-    adb::UseTypeClause,
-    typesNames=
-        safe_text,
+adb_UseTypeClause_strategy = st.builds(
+    adb_UseTypeClause,
     useTypeRefs=
+        safe_text,
+    typesNames=
         safe_text
 )
-adb::UsePackageClause_strategy = st.builds(
-    adb::UsePackageClause,
+adb_UsePackageClause_strategy = st.builds(
+    adb_UsePackageClause,
 )
 GenericItem_strategy = st.builds(
     GenericItem,
 )
-adb::GenericFormalParameterDeclaration_strategy = st.builds(
-    adb::GenericFormalParameterDeclaration,
+adb_GenericFormalParameterDeclaration_strategy = st.builds(
+    adb_GenericFormalParameterDeclaration,
 )
 BasicDeclarativeItem_strategy = st.builds(
     BasicDeclarativeItem,
 )
-adb::AspectClause_strategy = st.builds(
-    adb::AspectClause,
+adb_BasicDeclaration_strategy = st.builds(
+    adb_BasicDeclaration,
+)
+adb_AspectClause_strategy = st.builds(
+    adb_AspectClause,
     name=
         safe_text
 )
-adb::BasicDeclaration_strategy = st.builds(
-    adb::BasicDeclaration,
-)
-adb::LibraryUnitDeclaration_strategy = st.builds(
-    adb::LibraryUnitDeclaration,
+adb_LibraryUnitDeclaration_strategy = st.builds(
+    adb_LibraryUnitDeclaration,
     private=
         st.booleans()
 )
 ContextItem_strategy = st.builds(
     ContextItem,
 )
-adb::UseClause_strategy = st.builds(
-    adb::UseClause,
+adb_UseClause_strategy = st.builds(
+    adb_UseClause,
 )
-adb::WithClause_strategy = st.builds(
-    adb::WithClause,
+adb_WithClause_strategy = st.builds(
+    adb_WithClause,
     limited=
         st.booleans(),
     private=
         st.booleans()
 )
-adb::ContextItem_strategy = st.builds(
-    adb::ContextItem,
+adb_ContextItem_strategy = st.builds(
+    adb_ContextItem,
 )
-adb::Pragma_strategy = st.builds(
-    adb::Pragma,
+adb_Pragma_strategy = st.builds(
+    adb_Pragma,
     name=
         safe_text
 )
-adb::Unit_strategy = st.builds(
-    adb::Unit,
+adb_Unit_strategy = st.builds(
+    adb_Unit,
 )
-adb::ContextClause_strategy = st.builds(
-    adb::ContextClause,
+adb_ContextClause_strategy = st.builds(
+    adb_ContextClause,
 )
-adb::CompilationUnit_strategy = st.builds(
-    adb::CompilationUnit,
+adb_CompilationUnit_strategy = st.builds(
+    adb_CompilationUnit,
 )
-adb::Compilation_strategy = st.builds(
-    adb::Compilation,
+adb_Compilation_strategy = st.builds(
+    adb_Compilation,
 )
-
-@given(instance=DiscreteChoice_strategy)
-@settings(max_examples=50)
-def test_discretechoice_instantiation(instance):
-    assert isinstance(instance, DiscreteChoice)
-
-@given(instance=ExplicitGenericActualParameter_strategy)
-@settings(max_examples=50)
-def test_explicitgenericactualparameter_instantiation(instance):
-    assert isinstance(instance, ExplicitGenericActualParameter)
-
-@given(instance=EntryIndex_strategy)
-@settings(max_examples=50)
-def test_entryindex_instantiation(instance):
-    assert isinstance(instance, EntryIndex)
-
-@given(instance=adb::Primary_strategy)
-@settings(max_examples=50)
-def test_adb::primary_instantiation(instance):
-    assert isinstance(instance, adb::Primary)
-
-@given(instance=adb::RealRangeSpecification_strategy)
-@settings(max_examples=50)
-def test_adb::realrangespecification_instantiation(instance):
-    assert isinstance(instance, adb::RealRangeSpecification)
-
-@given(instance=adb::DiscreteChoice_strategy)
-@settings(max_examples=50)
-def test_adb::discretechoice_instantiation(instance):
-    assert isinstance(instance, adb::DiscreteChoice)
-
-@given(instance=adb::Variant_strategy)
-@settings(max_examples=50)
-def test_adb::variant_instantiation(instance):
-    assert isinstance(instance, adb::Variant)
-
-@given(instance=adb::ComponentClause_strategy)
-@settings(max_examples=50)
-def test_adb::componentclause_instantiation(instance):
-    assert isinstance(instance, adb::ComponentClause)
-
-@given(instance=adb::ComponentClause_strategy)
-def test_adb::componentclause_localName_type(instance):
-    assert isinstance(instance.localName, str)
-
-
-@given(instance=adb::ComponentClause_strategy)
-def test_adb::componentclause_localName_setter(instance):
-    original = instance.localName
-    instance.localName = original
-    assert instance.localName == original
-
-@given(instance=adb::ModClause_strategy)
-@settings(max_examples=50)
-def test_adb::modclause_instantiation(instance):
-    assert isinstance(instance, adb::ModClause)
-
-@given(instance=RealTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_realtypedefinition_instantiation(instance):
-    assert isinstance(instance, RealTypeDefinition)
-
-@given(instance=adb::FixedPointDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::fixedpointdefinition_instantiation(instance):
-    assert isinstance(instance, adb::FixedPointDefinition)
-
-@given(instance=adb::FloatingPointDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::floatingpointdefinition_instantiation(instance):
-    assert isinstance(instance, adb::FloatingPointDefinition)
-
-@given(instance=ComponentItem_strategy)
-@settings(max_examples=50)
-def test_componentitem_instantiation(instance):
-    assert isinstance(instance, ComponentItem)
-
-@given(instance=adb::VariantPart_strategy)
-@settings(max_examples=50)
-def test_adb::variantpart_instantiation(instance):
-    assert isinstance(instance, adb::VariantPart)
-
-@given(instance=adb::VariantPart_strategy)
-def test_adb::variantpart_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::VariantPart_strategy)
-def test_adb::variantpart_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adb::OptVariantPart_strategy)
-@settings(max_examples=50)
-def test_adb::optvariantpart_instantiation(instance):
-    assert isinstance(instance, adb::OptVariantPart)
-
-@given(instance=adb::ComponentItem_strategy)
-@settings(max_examples=50)
-def test_adb::componentitem_instantiation(instance):
-    assert isinstance(instance, adb::ComponentItem)
-
-@given(instance=adb::ComponentList_strategy)
-@settings(max_examples=50)
-def test_adb::componentlist_instantiation(instance):
-    assert isinstance(instance, adb::ComponentList)
-
-@given(instance=adb::SimpleExpression_strategy)
-@settings(max_examples=50)
-def test_adb::simpleexpression_instantiation(instance):
-    assert isinstance(instance, adb::SimpleExpression)
-
-@given(instance=adb::SimpleExpression_strategy)
-def test_adb::simpleexpression_unaryAddingOperator_type(instance):
-    assert isinstance(instance.unaryAddingOperator, str)
-
-
-@given(instance=adb::SimpleExpression_strategy)
-def test_adb::simpleexpression_unaryAddingOperator_setter(instance):
-    original = instance.unaryAddingOperator
-    instance.unaryAddingOperator = original
-    assert instance.unaryAddingOperator == original
-
-@given(instance=adb::SimpleExpression_strategy)
-def test_adb::simpleexpression_binaryAddingOperators_type(instance):
-    assert isinstance(instance.binaryAddingOperators, str)
-
-
-@given(instance=adb::SimpleExpression_strategy)
-def test_adb::simpleexpression_binaryAddingOperators_setter(instance):
-    original = instance.binaryAddingOperators
-    instance.binaryAddingOperators = original
-    assert instance.binaryAddingOperators == original
-
-@given(instance=IntegerTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_integertypedefinition_instantiation(instance):
-    assert isinstance(instance, IntegerTypeDefinition)
-
-@given(instance=adb::ModularTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::modulartypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::ModularTypeDefinition)
-
-@given(instance=adb::SignedIntegerTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::signedintegertypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::SignedIntegerTypeDefinition)
-
-@given(instance=adb::ParameterSpecification_strategy)
-@settings(max_examples=50)
-def test_adb::parameterspecification_instantiation(instance):
-    assert isinstance(instance, adb::ParameterSpecification)
-
-@given(instance=ReturnSubtypeIndication_strategy)
-@settings(max_examples=50)
-def test_returnsubtypeindication_instantiation(instance):
-    assert isinstance(instance, ReturnSubtypeIndication)
-
-@given(instance=ArrayIndexes_strategy)
-@settings(max_examples=50)
-def test_arrayindexes_instantiation(instance):
-    assert isinstance(instance, ArrayIndexes)
-
-@given(instance=adb::ConstrainedIndexes_strategy)
-@settings(max_examples=50)
-def test_adb::constrainedindexes_instantiation(instance):
-    assert isinstance(instance, adb::ConstrainedIndexes)
-
-@given(instance=adb::UnconstrainedIndexes_strategy)
-@settings(max_examples=50)
-def test_adb::unconstrainedindexes_instantiation(instance):
-    assert isinstance(instance, adb::UnconstrainedIndexes)
-
-@given(instance=adb::ComponentDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::componentdefinition_instantiation(instance):
-    assert isinstance(instance, adb::ComponentDefinition)
-
-@given(instance=adb::ComponentDefinition_strategy)
-def test_adb::componentdefinition_aliased_type(instance):
-    assert isinstance(instance.aliased, bool)
-
-
-@given(instance=adb::ComponentDefinition_strategy)
-def test_adb::componentdefinition_aliased_setter(instance):
-    original = instance.aliased
-    instance.aliased = original
-    assert instance.aliased == original
-
-@given(instance=adb::ArrayIndexes_strategy)
-@settings(max_examples=50)
-def test_adb::arrayindexes_instantiation(instance):
-    assert isinstance(instance, adb::ArrayIndexes)
-
-@given(instance=NotNullAccessDefinition_strategy)
-@settings(max_examples=50)
-def test_notnullaccessdefinition_instantiation(instance):
-    assert isinstance(instance, NotNullAccessDefinition)
-
-@given(instance=AccessSpecification_strategy)
-@settings(max_examples=50)
-def test_accessspecification_instantiation(instance):
-    assert isinstance(instance, AccessSpecification)
-
-@given(instance=adb::AccessToDataDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::accesstodatadefinition_instantiation(instance):
-    assert isinstance(instance, adb::AccessToDataDefinition)
-
-@given(instance=adb::AccessToDataDefinition_strategy)
-def test_adb::accesstodatadefinition_generalAccessModifier_type(instance):
-    assert isinstance(instance.generalAccessModifier, str)
-
-
-@given(instance=adb::AccessToDataDefinition_strategy)
-def test_adb::accesstodatadefinition_generalAccessModifier_setter(instance):
-    original = instance.generalAccessModifier
-    instance.generalAccessModifier = original
-    assert instance.generalAccessModifier == original
-
-@given(instance=adb::AccessToSubprogramDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::accesstosubprogramdefinition_instantiation(instance):
-    assert isinstance(instance, adb::AccessToSubprogramDefinition)
-
-@given(instance=adb::AccessToSubprogramDefinition_strategy)
-def test_adb::accesstosubprogramdefinition_protected_type(instance):
-    assert isinstance(instance.protected, bool)
-
-
-@given(instance=adb::AccessToSubprogramDefinition_strategy)
-def test_adb::accesstosubprogramdefinition_protected_setter(instance):
-    original = instance.protected
-    instance.protected = original
-    assert instance.protected == original
-
-@given(instance=adb::AccessSpecification_strategy)
-@settings(max_examples=50)
-def test_adb::accessspecification_instantiation(instance):
-    assert isinstance(instance, adb::AccessSpecification)
-
-@given(instance=adb::AccessToDataInstance_strategy)
-@settings(max_examples=50)
-def test_adb::accesstodatainstance_instantiation(instance):
-    assert isinstance(instance, adb::AccessToDataInstance)
-
-@given(instance=adb::AccessToDataInstance_strategy)
-def test_adb::accesstodatainstance_constant_type(instance):
-    assert isinstance(instance.constant, str)
-
-
-@given(instance=adb::AccessToDataInstance_strategy)
-def test_adb::accesstodatainstance_constant_setter(instance):
-    original = instance.constant
-    instance.constant = original
-    assert instance.constant == original
-
-@given(instance=TypeDefinition_strategy)
-@settings(max_examples=50)
-def test_typedefinition_instantiation(instance):
-    assert isinstance(instance, TypeDefinition)
-
-@given(instance=adb::IntegerTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::integertypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::IntegerTypeDefinition)
-
-@given(instance=adb::EnumerationTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::enumerationtypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::EnumerationTypeDefinition)
-
-@given(instance=adb::EnumerationTypeDefinition_strategy)
-def test_adb::enumerationtypedefinition_enumerationliteralspecifications_type(instance):
-    assert isinstance(instance.enumerationliteralspecifications, str)
-
-
-@given(instance=adb::EnumerationTypeDefinition_strategy)
-def test_adb::enumerationtypedefinition_enumerationliteralspecifications_setter(instance):
-    original = instance.enumerationliteralspecifications
-    instance.enumerationliteralspecifications = original
-    assert instance.enumerationliteralspecifications == original
-
-@given(instance=adb::DerivedTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::derivedtypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::DerivedTypeDefinition)
-
-@given(instance=adb::DerivedTypeDefinition_strategy)
-def test_adb::derivedtypedefinition_limited_type(instance):
-    assert isinstance(instance.limited, str)
-
-
-@given(instance=adb::DerivedTypeDefinition_strategy)
-def test_adb::derivedtypedefinition_limited_setter(instance):
-    original = instance.limited
-    instance.limited = original
-    assert instance.limited == original
-
-@given(instance=adb::DerivedTypeDefinition_strategy)
-def test_adb::derivedtypedefinition_abstract_type(instance):
-    assert isinstance(instance.abstract, str)
-
-
-@given(instance=adb::DerivedTypeDefinition_strategy)
-def test_adb::derivedtypedefinition_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::recordtypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::RecordTypeDefinition)
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-def test_adb::recordtypedefinition_tagged_type(instance):
-    assert isinstance(instance.tagged, bool)
-
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-def test_adb::recordtypedefinition_tagged_setter(instance):
-    original = instance.tagged
-    instance.tagged = original
-    assert instance.tagged == original
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-def test_adb::recordtypedefinition_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-def test_adb::recordtypedefinition_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-def test_adb::recordtypedefinition_limited_type(instance):
-    assert isinstance(instance.limited, bool)
-
-
-@given(instance=adb::RecordTypeDefinition_strategy)
-def test_adb::recordtypedefinition_limited_setter(instance):
-    original = instance.limited
-    instance.limited = original
-    assert instance.limited == original
-
-@given(instance=adb::RealTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::realtypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::RealTypeDefinition)
-
-@given(instance=adb::NotNullAccessDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::notnullaccessdefinition_instantiation(instance):
-    assert isinstance(instance, adb::NotNullAccessDefinition)
-
-@given(instance=adb::DiscriminantSpecification_strategy)
-@settings(max_examples=50)
-def test_adb::discriminantspecification_instantiation(instance):
-    assert isinstance(instance, adb::DiscriminantSpecification)
-
-@given(instance=adb::RecordDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::recorddefinition_instantiation(instance):
-    assert isinstance(instance, adb::RecordDefinition)
-
-@given(instance=adb::RecordDefinition_strategy)
-def test_adb::recorddefinition_null_type(instance):
-    assert isinstance(instance.null, str)
-
-
-@given(instance=adb::RecordDefinition_strategy)
-def test_adb::recorddefinition_null_setter(instance):
-    original = instance.null
-    instance.null = original
-    assert instance.null == original
-
-@given(instance=adb::RecordExtensionPart_strategy)
-@settings(max_examples=50)
-def test_adb::recordextensionpart_instantiation(instance):
-    assert isinstance(instance, adb::RecordExtensionPart)
-
-@given(instance=DiscriminantPart_strategy)
-@settings(max_examples=50)
-def test_discriminantpart_instantiation(instance):
-    assert isinstance(instance, DiscriminantPart)
-
-@given(instance=adb::UnknownDiscriminantPart_strategy)
-@settings(max_examples=50)
-def test_adb::unknowndiscriminantpart_instantiation(instance):
-    assert isinstance(instance, adb::UnknownDiscriminantPart)
-
-@given(instance=adb::UnknownDiscriminantPart_strategy)
-def test_adb::unknowndiscriminantpart_box_type(instance):
-    assert isinstance(instance.box, bool)
-
-
-@given(instance=adb::UnknownDiscriminantPart_strategy)
-def test_adb::unknowndiscriminantpart_box_setter(instance):
-    original = instance.box
-    instance.box = original
-    assert instance.box == original
-
-@given(instance=adb::ExplicitGenericActualParameter_strategy)
-@settings(max_examples=50)
-def test_adb::explicitgenericactualparameter_instantiation(instance):
-    assert isinstance(instance, adb::ExplicitGenericActualParameter)
-
-@given(instance=AbortStatement_strategy)
-@settings(max_examples=50)
-def test_abortstatement_instantiation(instance):
-    assert isinstance(instance, AbortStatement)
-
-@given(instance=adb::TaskNames_strategy)
-@settings(max_examples=50)
-def test_adb::tasknames_instantiation(instance):
-    assert isinstance(instance, adb::TaskNames)
-
-@given(instance=adb::EntryCallAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::entrycallalternative_instantiation(instance):
-    assert isinstance(instance, adb::EntryCallAlternative)
-
-@given(instance=SelectAlternative_strategy)
-@settings(max_examples=50)
-def test_selectalternative_instantiation(instance):
-    assert isinstance(instance, SelectAlternative)
-
-@given(instance=adb::DelayAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::delayalternative_instantiation(instance):
-    assert isinstance(instance, adb::DelayAlternative)
-
-@given(instance=adb::AcceptAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::acceptalternative_instantiation(instance):
-    assert isinstance(instance, adb::AcceptAlternative)
-
-@given(instance=adb::GuardedAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::guardedalternative_instantiation(instance):
-    assert isinstance(instance, adb::GuardedAlternative)
-
-@given(instance=adb::SelectAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::selectalternative_instantiation(instance):
-    assert isinstance(instance, adb::SelectAlternative)
-
-@given(instance=adb::Guard_strategy)
-@settings(max_examples=50)
-def test_adb::guard_instantiation(instance):
-    assert isinstance(instance, adb::Guard)
-
-@given(instance=SelectStatement_strategy)
-@settings(max_examples=50)
-def test_selectstatement_instantiation(instance):
-    assert isinstance(instance, SelectStatement)
-
-@given(instance=adb::ConditionalEntryCall_strategy)
-@settings(max_examples=50)
-def test_adb::conditionalentrycall_instantiation(instance):
-    assert isinstance(instance, adb::ConditionalEntryCall)
-
-@given(instance=adb::TimedEntryCall_strategy)
-@settings(max_examples=50)
-def test_adb::timedentrycall_instantiation(instance):
-    assert isinstance(instance, adb::TimedEntryCall)
-
-@given(instance=adb::SelectiveAccept_strategy)
-@settings(max_examples=50)
-def test_adb::selectiveaccept_instantiation(instance):
-    assert isinstance(instance, adb::SelectiveAccept)
-
-@given(instance=adb::TriggeringStatement_strategy)
-@settings(max_examples=50)
-def test_adb::triggeringstatement_instantiation(instance):
-    assert isinstance(instance, adb::TriggeringStatement)
-
-@given(instance=adb::AbortablePart_strategy)
-@settings(max_examples=50)
-def test_adb::abortablepart_instantiation(instance):
-    assert isinstance(instance, adb::AbortablePart)
-
-@given(instance=adb::TriggeringAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::triggeringalternative_instantiation(instance):
-    assert isinstance(instance, adb::TriggeringAlternative)
-
-@given(instance=adb::AsynchronousSelect_strategy)
-@settings(max_examples=50)
-def test_adb::asynchronousselect_instantiation(instance):
-    assert isinstance(instance, adb::AsynchronousSelect)
-
-@given(instance=adb::EntryIndexSpecification_strategy)
-@settings(max_examples=50)
-def test_adb::entryindexspecification_instantiation(instance):
-    assert isinstance(instance, adb::EntryIndexSpecification)
-
-@given(instance=adb::EntryIndexSpecification_strategy)
-def test_adb::entryindexspecification_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::EntryIndexSpecification_strategy)
-def test_adb::entryindexspecification_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adb::EntryBarrier_strategy)
-@settings(max_examples=50)
-def test_adb::entrybarrier_instantiation(instance):
-    assert isinstance(instance, adb::EntryBarrier)
-
-@given(instance=adb::EntryBodyFormalPart_strategy)
-@settings(max_examples=50)
-def test_adb::entrybodyformalpart_instantiation(instance):
-    assert isinstance(instance, adb::EntryBodyFormalPart)
-
-@given(instance=adb::EntryIndex_strategy)
-@settings(max_examples=50)
-def test_adb::entryindex_instantiation(instance):
-    assert isinstance(instance, adb::EntryIndex)
-
-@given(instance=adb::ProtectedOperationItem_strategy)
-@settings(max_examples=50)
-def test_adb::protectedoperationitem_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedOperationItem)
-
-@given(instance=adb::ReturnSubtypeIndication_strategy)
-@settings(max_examples=50)
-def test_adb::returnsubtypeindication_instantiation(instance):
-    assert isinstance(instance, adb::ReturnSubtypeIndication)
-
-@given(instance=TriggeringStatement_strategy)
-@settings(max_examples=50)
-def test_triggeringstatement_instantiation(instance):
-    assert isinstance(instance, TriggeringStatement)
-
-@given(instance=adb::LoopParameterSpecification_strategy)
-@settings(max_examples=50)
-def test_adb::loopparameterspecification_instantiation(instance):
-    assert isinstance(instance, adb::LoopParameterSpecification)
-
-@given(instance=adb::LoopParameterSpecification_strategy)
-def test_adb::loopparameterspecification_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=adb::LoopParameterSpecification_strategy)
-def test_adb::loopparameterspecification_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
-
-@given(instance=adb::IterationScheme_strategy)
-@settings(max_examples=50)
-def test_adb::iterationscheme_instantiation(instance):
-    assert isinstance(instance, adb::IterationScheme)
-
-@given(instance=CompoundStatement_strategy)
-@settings(max_examples=50)
-def test_compoundstatement_instantiation(instance):
-    assert isinstance(instance, CompoundStatement)
-
-@given(instance=adb::ExtendedReturnStatement_strategy)
-@settings(max_examples=50)
-def test_adb::extendedreturnstatement_instantiation(instance):
-    assert isinstance(instance, adb::ExtendedReturnStatement)
-
-@given(instance=adb::ExtendedReturnStatement_strategy)
-def test_adb::extendedreturnstatement_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=adb::ExtendedReturnStatement_strategy)
-def test_adb::extendedreturnstatement_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
-
-@given(instance=adb::SelectStatement_strategy)
-@settings(max_examples=50)
-def test_adb::selectstatement_instantiation(instance):
-    assert isinstance(instance, adb::SelectStatement)
-
-@given(instance=adb::AcceptStatement_strategy)
-@settings(max_examples=50)
-def test_adb::acceptstatement_instantiation(instance):
-    assert isinstance(instance, adb::AcceptStatement)
-
-@given(instance=adb::AcceptStatement_strategy)
-def test_adb::acceptstatement_entryidentifier_type(instance):
-    assert isinstance(instance.entryidentifier, str)
-
-
-@given(instance=adb::AcceptStatement_strategy)
-def test_adb::acceptstatement_entryidentifier_setter(instance):
-    original = instance.entryidentifier
-    instance.entryidentifier = original
-    assert instance.entryidentifier == original
-
-@given(instance=adb::LoopStatement_strategy)
-@settings(max_examples=50)
-def test_adb::loopstatement_instantiation(instance):
-    assert isinstance(instance, adb::LoopStatement)
-
-@given(instance=adb::LoopStatement_strategy)
-def test_adb::loopstatement_sameName_type(instance):
-    assert isinstance(instance.sameName, str)
-
-
-@given(instance=adb::LoopStatement_strategy)
-def test_adb::loopstatement_sameName_setter(instance):
-    original = instance.sameName
-    instance.sameName = original
-    assert instance.sameName == original
-
-@given(instance=adb::LoopStatement_strategy)
-def test_adb::loopstatement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::LoopStatement_strategy)
-def test_adb::loopstatement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adb::IfStatement_strategy)
-@settings(max_examples=50)
-def test_adb::ifstatement_instantiation(instance):
-    assert isinstance(instance, adb::IfStatement)
-
-@given(instance=adb::PragmaArgumentAssociation_strategy)
-@settings(max_examples=50)
-def test_adb::pragmaargumentassociation_instantiation(instance):
-    assert isinstance(instance, adb::PragmaArgumentAssociation)
-
-@given(instance=adb::PragmaArgumentAssociation_strategy)
-def test_adb::pragmaargumentassociation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::PragmaArgumentAssociation_strategy)
-def test_adb::pragmaargumentassociation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adb::DiscreteChoiceList_strategy)
-@settings(max_examples=50)
-def test_adb::discretechoicelist_instantiation(instance):
-    assert isinstance(instance, adb::DiscreteChoiceList)
-
-@given(instance=adb::CaseStatementAlternative_strategy)
-@settings(max_examples=50)
-def test_adb::casestatementalternative_instantiation(instance):
-    assert isinstance(instance, adb::CaseStatementAlternative)
-
-@given(instance=adb::CaseStatement_strategy)
-@settings(max_examples=50)
-def test_adb::casestatement_instantiation(instance):
-    assert isinstance(instance, adb::CaseStatement)
-
-@given(instance=ObjectDeclaration_strategy)
-@settings(max_examples=50)
-def test_objectdeclaration_instantiation(instance):
-    assert isinstance(instance, ObjectDeclaration)
-
-@given(instance=adb::DataInstanceDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::datainstancedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::DataInstanceDeclaration)
-
-@given(instance=adb::DataInstanceDeclaration_strategy)
-def test_adb::datainstancedeclaration_aliased_type(instance):
-    assert isinstance(instance.aliased, bool)
-
-
-@given(instance=adb::DataInstanceDeclaration_strategy)
-def test_adb::datainstancedeclaration_aliased_setter(instance):
-    original = instance.aliased
-    instance.aliased = original
-    assert instance.aliased == original
-
-@given(instance=adb::DataInstanceDeclaration_strategy)
-def test_adb::datainstancedeclaration_constant_type(instance):
-    assert isinstance(instance.constant, bool)
-
-
-@given(instance=adb::DataInstanceDeclaration_strategy)
-def test_adb::datainstancedeclaration_constant_setter(instance):
-    original = instance.constant
-    instance.constant = original
-    assert instance.constant == original
-
-@given(instance=adb::GenericAssociation_strategy)
-@settings(max_examples=50)
-def test_adb::genericassociation_instantiation(instance):
-    assert isinstance(instance, adb::GenericAssociation)
-
-@given(instance=adb::GenericAssociation_strategy)
-def test_adb::genericassociation_selectorName_type(instance):
-    assert isinstance(instance.selectorName, str)
-
-
-@given(instance=adb::GenericAssociation_strategy)
-def test_adb::genericassociation_selectorName_setter(instance):
-    original = instance.selectorName
-    instance.selectorName = original
-    assert instance.selectorName == original
-
-@given(instance=adb::FormalPackageAssociation_strategy)
-@settings(max_examples=50)
-def test_adb::formalpackageassociation_instantiation(instance):
-    assert isinstance(instance, adb::FormalPackageAssociation)
-
-@given(instance=adb::FormalPackageAssociation_strategy)
-def test_adb::formalpackageassociation_genericFormalParameterSelectorName_type(instance):
-    assert isinstance(instance.genericFormalParameterSelectorName, str)
-
-
-@given(instance=adb::FormalPackageAssociation_strategy)
-def test_adb::formalpackageassociation_genericFormalParameterSelectorName_setter(instance):
-    original = instance.genericFormalParameterSelectorName
-    instance.genericFormalParameterSelectorName = original
-    assert instance.genericFormalParameterSelectorName == original
-
-@given(instance=adb::FormalPackageActualPart_strategy)
-@settings(max_examples=50)
-def test_adb::formalpackageactualpart_instantiation(instance):
-    assert isinstance(instance, adb::FormalPackageActualPart)
-
-@given(instance=adb::FormalPackageActualPart_strategy)
-def test_adb::formalpackageactualpart_box_type(instance):
-    assert isinstance(instance.box, bool)
-
-
-@given(instance=adb::FormalPackageActualPart_strategy)
-def test_adb::formalpackageactualpart_box_setter(instance):
-    original = instance.box
-    instance.box = original
-    assert instance.box == original
-
-@given(instance=adb::SubprogramDefault_strategy)
-@settings(max_examples=50)
-def test_adb::subprogramdefault_instantiation(instance):
-    assert isinstance(instance, adb::SubprogramDefault)
-
-@given(instance=adb::SubprogramDefault_strategy)
-def test_adb::subprogramdefault_defaultName_type(instance):
-    assert isinstance(instance.defaultName, str)
-
-
-@given(instance=adb::SubprogramDefault_strategy)
-def test_adb::subprogramdefault_defaultName_setter(instance):
-    original = instance.defaultName
-    instance.defaultName = original
-    assert instance.defaultName == original
-
-@given(instance=adb::AnonymousAccessDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::anonymousaccessdefinition_instantiation(instance):
-    assert isinstance(instance, adb::AnonymousAccessDefinition)
-
-@given(instance=adb::OptNullExclusion_strategy)
-@settings(max_examples=50)
-def test_adb::optnullexclusion_instantiation(instance):
-    assert isinstance(instance, adb::OptNullExclusion)
-
-@given(instance=adb::OptNullExclusion_strategy)
-def test_adb::optnullexclusion_not_null_type(instance):
-    assert isinstance(instance.not_null, str)
-
-
-@given(instance=adb::OptNullExclusion_strategy)
-def test_adb::optnullexclusion_not_null_setter(instance):
-    original = instance.not_null
-    instance.not_null = original
-    assert instance.not_null == original
-
-@given(instance=adb::SingleProtectedDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::singleprotecteddeclaration_instantiation(instance):
-    assert isinstance(instance, adb::SingleProtectedDeclaration)
-
-@given(instance=adb::SingleProtectedDeclaration_strategy)
-def test_adb::singleprotecteddeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::SingleProtectedDeclaration_strategy)
-def test_adb::singleprotecteddeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adb::Mode_strategy)
-@settings(max_examples=50)
-def test_adb::mode_instantiation(instance):
-    assert isinstance(instance, adb::Mode)
-
-@given(instance=adb::Mode_strategy)
-def test_adb::mode_out_type(instance):
-    assert isinstance(instance.out, bool)
-
-
-@given(instance=adb::Mode_strategy)
-def test_adb::mode_out_setter(instance):
-    original = instance.out
-    instance.out = original
-    assert instance.out == original
-
-@given(instance=adb::Mode_strategy)
-def test_adb::mode_in__type(instance):
-    assert isinstance(instance.in_, bool)
-
-
-@given(instance=adb::Mode_strategy)
-def test_adb::mode_in__setter(instance):
-    original = instance.in_
-    instance.in_ = original
-    assert instance.in_ == original
-
-@given(instance=adb::DefiningIdentifierList_strategy)
-@settings(max_examples=50)
-def test_adb::definingidentifierlist_instantiation(instance):
-    assert isinstance(instance, adb::DefiningIdentifierList)
-
-@given(instance=adb::DefiningIdentifierList_strategy)
-def test_adb::definingidentifierlist_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::DefiningIdentifierList_strategy)
-def test_adb::definingidentifierlist_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=FormalTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_formaltypedefinition_instantiation(instance):
-    assert isinstance(instance, FormalTypeDefinition)
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::formalderivedtypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::FormalDerivedTypeDefinition)
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-def test_adb::formalderivedtypedefinition_absract_type(instance):
-    assert isinstance(instance.absract, str)
-
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-def test_adb::formalderivedtypedefinition_absract_setter(instance):
-    original = instance.absract
-    instance.absract = original
-    assert instance.absract == original
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-def test_adb::formalderivedtypedefinition_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
-
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-def test_adb::formalderivedtypedefinition_synchronized_setter(instance):
-    original = instance.synchronized
-    instance.synchronized = original
-    assert instance.synchronized == original
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-def test_adb::formalderivedtypedefinition_limited_type(instance):
-    assert isinstance(instance.limited, bool)
-
-
-@given(instance=adb::FormalDerivedTypeDefinition_strategy)
-def test_adb::formalderivedtypedefinition_limited_setter(instance):
-    original = instance.limited
-    instance.limited = original
-    assert instance.limited == original
-
-@given(instance=adb::AccessTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::accesstypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::AccessTypeDefinition)
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::interfacetypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::InterfaceTypeDefinition)
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_synchro_type(instance):
-    assert isinstance(instance.synchro, bool)
-
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_synchro_setter(instance):
-    original = instance.synchro
-    instance.synchro = original
-    assert instance.synchro == original
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_limited_type(instance):
-    assert isinstance(instance.limited, bool)
-
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_limited_setter(instance):
-    original = instance.limited
-    instance.limited = original
-    assert instance.limited == original
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_task_type(instance):
-    assert isinstance(instance.task, bool)
-
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_task_setter(instance):
-    original = instance.task
-    instance.task = original
-    assert instance.task == original
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_protected_type(instance):
-    assert isinstance(instance.protected, bool)
-
-
-@given(instance=adb::InterfaceTypeDefinition_strategy)
-def test_adb::interfacetypedefinition_protected_setter(instance):
-    original = instance.protected
-    instance.protected = original
-    assert instance.protected == original
-
-@given(instance=adb::ArrayTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::arraytypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::ArrayTypeDefinition)
-
-@given(instance=GenericFormalParameterDeclaration_strategy)
-@settings(max_examples=50)
-def test_genericformalparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, GenericFormalParameterDeclaration)
-
-@given(instance=adb::FormalSubprogramDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::formalsubprogramdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::FormalSubprogramDeclaration)
-
-@given(instance=adb::FormalSubprogramDeclaration_strategy)
-def test_adb::formalsubprogramdeclaration_abstract_type(instance):
-    assert isinstance(instance.abstract, str)
-
-
-@given(instance=adb::FormalSubprogramDeclaration_strategy)
-def test_adb::formalsubprogramdeclaration_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=adb::FormalPackageDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::formalpackagedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::FormalPackageDeclaration)
-
-@given(instance=adb::FormalPackageDeclaration_strategy)
-def test_adb::formalpackagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adb::FormalPackageDeclaration_strategy)
-def test_adb::formalpackagedeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adb::FormalPackageDeclaration_strategy)
-def test_adb::formalpackagedeclaration_genericPackageName_type(instance):
-    assert isinstance(instance.genericPackageName, str)
-
-
-@given(instance=adb::FormalPackageDeclaration_strategy)
-def test_adb::formalpackagedeclaration_genericPackageName_setter(instance):
-    original = instance.genericPackageName
-    instance.genericPackageName = original
-    assert instance.genericPackageName == original
-
-@given(instance=adb::FormalTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::formaltypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::FormalTypeDeclaration)
-
-@given(instance=adb::FormalTypeDeclaration_strategy)
-def test_adb::formaltypedeclaration_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=adb::FormalTypeDeclaration_strategy)
-def test_adb::formaltypedeclaration_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
-
-@given(instance=adb::FormalObjectDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::formalobjectdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::FormalObjectDeclaration)
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::formalprivatetypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::FormalPrivateTypeDefinition)
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-def test_adb::formalprivatetypedefinition_tagged_type(instance):
-    assert isinstance(instance.tagged, bool)
-
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-def test_adb::formalprivatetypedefinition_tagged_setter(instance):
-    original = instance.tagged
-    instance.tagged = original
-    assert instance.tagged == original
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-def test_adb::formalprivatetypedefinition_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-def test_adb::formalprivatetypedefinition_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-def test_adb::formalprivatetypedefinition_limited_type(instance):
-    assert isinstance(instance.limited, bool)
-
-
-@given(instance=adb::FormalPrivateTypeDefinition_strategy)
-def test_adb::formalprivatetypedefinition_limited_setter(instance):
-    original = instance.limited
-    instance.limited = original
-    assert instance.limited == original
-
-@given(instance=adb::FormalTypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::formaltypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::FormalTypeDefinition)
-
-@given(instance=Range_strategy)
-@settings(max_examples=50)
-def test_range_instantiation(instance):
-    assert isinstance(instance, Range)
-
-@given(instance=adb::ExplicitRange_strategy)
-@settings(max_examples=50)
-def test_adb::explicitrange_instantiation(instance):
-    assert isinstance(instance, adb::ExplicitRange)
-
-@given(instance=adb::EntityRange_strategy)
-@settings(max_examples=50)
-def test_adb::entityrange_instantiation(instance):
-    assert isinstance(instance, adb::EntityRange)
-
-@given(instance=RangeConstraint_strategy)
-@settings(max_examples=50)
-def test_rangeconstraint_instantiation(instance):
-    assert isinstance(instance, RangeConstraint)
-
-@given(instance=adb::ParameterEffectiveValue_strategy)
-@settings(max_examples=50)
-def test_adb::parametereffectivevalue_instantiation(instance):
-    assert isinstance(instance, adb::ParameterEffectiveValue)
-
-@given(instance=adb::AttributeDesignator_strategy)
-@settings(max_examples=50)
-def test_adb::attributedesignator_instantiation(instance):
-    assert isinstance(instance, adb::AttributeDesignator)
-
-@given(instance=adb::PrimaryName_strategy)
-@settings(max_examples=50)
-def test_adb::primaryname_instantiation(instance):
-    assert isinstance(instance, adb::PrimaryName)
-
-@given(instance=Interval_strategy)
-@settings(max_examples=50)
-def test_interval_instantiation(instance):
-    assert isinstance(instance, Interval)
-
-@given(instance=adb::ArrayComponentAssociation_strategy)
-@settings(max_examples=50)
-def test_adb::arraycomponentassociation_instantiation(instance):
-    assert isinstance(instance, adb::ArrayComponentAssociation)
-
-@given(instance=adb::ArrayComponentAssociation_strategy)
-def test_adb::arraycomponentassociation_box_type(instance):
-    assert isinstance(instance.box, bool)
-
-
-@given(instance=adb::ArrayComponentAssociation_strategy)
-def test_adb::arraycomponentassociation_box_setter(instance):
-    original = instance.box
-    instance.box = original
-    assert instance.box == original
-
-@given(instance=ArrayAggregate_strategy)
-@settings(max_examples=50)
-def test_arrayaggregate_instantiation(instance):
-    assert isinstance(instance, ArrayAggregate)
-
-@given(instance=adb::NamedArrayAggregate_strategy)
-@settings(max_examples=50)
-def test_adb::namedarrayaggregate_instantiation(instance):
-    assert isinstance(instance, adb::NamedArrayAggregate)
-
-@given(instance=adb::PositionalArrayAggregate_strategy)
-@settings(max_examples=50)
-def test_adb::positionalarrayaggregate_instantiation(instance):
-    assert isinstance(instance, adb::PositionalArrayAggregate)
-
-@given(instance=adb::PositionalArrayAggregate_strategy)
-def test_adb::positionalarrayaggregate_othersBox_type(instance):
-    assert isinstance(instance.othersBox, bool)
-
-
-@given(instance=adb::PositionalArrayAggregate_strategy)
-def test_adb::positionalarrayaggregate_othersBox_setter(instance):
-    original = instance.othersBox
-    instance.othersBox = original
-    assert instance.othersBox == original
-
-@given(instance=adb::AncestorPart_strategy)
-@settings(max_examples=50)
-def test_adb::ancestorpart_instantiation(instance):
-    assert isinstance(instance, adb::AncestorPart)
 
 @given(instance=RecordComponentAssociation_strategy)
 @settings(max_examples=50)
 def test_recordcomponentassociation_instantiation(instance):
     assert isinstance(instance, RecordComponentAssociation)
 
-@given(instance=adb::UninitializedComponents_strategy)
+@given(instance=adb_UninitializedComponents_strategy)
 @settings(max_examples=50)
-def test_adb::uninitializedcomponents_instantiation(instance):
-    assert isinstance(instance, adb::UninitializedComponents)
-
-@given(instance=adb::UninitializedComponents_strategy)
-def test_adb::uninitializedcomponents_box_type(instance):
-    assert isinstance(instance.box, bool)
+def test_adb_uninitializedcomponents_instantiation(instance):
+    assert isinstance(instance, adb_UninitializedComponents)
 
 
-@given(instance=adb::UninitializedComponents_strategy)
-def test_adb::uninitializedcomponents_box_setter(instance):
+
+@given(instance=adb_UninitializedComponents_strategy)
+def test_adb_uninitializedcomponents_box_setter(instance):
     original = instance.box
     instance.box = original
     assert instance.box == original
 
-@given(instance=adb::InitializedComponents_strategy)
+@given(instance=adb_InitializedComponents_strategy)
 @settings(max_examples=50)
-def test_adb::initializedcomponents_instantiation(instance):
-    assert isinstance(instance, adb::InitializedComponents)
+def test_adb_initializedcomponents_instantiation(instance):
+    assert isinstance(instance, adb_InitializedComponents)
 
-@given(instance=adb::ParameterAssociation_strategy)
+@given(instance=adb_ParameterAssociation_strategy)
 @settings(max_examples=50)
-def test_adb::parameterassociation_instantiation(instance):
-    assert isinstance(instance, adb::ParameterAssociation)
-
-@given(instance=adb::ParameterAssociation_strategy)
-def test_adb::parameterassociation_selectorName_type(instance):
-    assert isinstance(instance.selectorName, str)
+def test_adb_parameterassociation_instantiation(instance):
+    assert isinstance(instance, adb_ParameterAssociation)
 
 
-@given(instance=adb::ParameterAssociation_strategy)
-def test_adb::parameterassociation_selectorName_setter(instance):
+
+@given(instance=adb_ParameterAssociation_strategy)
+def test_adb_parameterassociation_selectorName_setter(instance):
     original = instance.selectorName
     instance.selectorName = original
     assert instance.selectorName == original
 
-@given(instance=adb::RecordComponentAssociation_strategy)
+@given(instance=adb_RecordComponentAssociation_strategy)
 @settings(max_examples=50)
-def test_adb::recordcomponentassociation_instantiation(instance):
-    assert isinstance(instance, adb::RecordComponentAssociation)
+def test_adb_recordcomponentassociation_instantiation(instance):
+    assert isinstance(instance, adb_RecordComponentAssociation)
 
 @given(instance=RecordAggregate_strategy)
 @settings(max_examples=50)
 def test_recordaggregate_instantiation(instance):
     assert isinstance(instance, RecordAggregate)
 
-@given(instance=adb::RecordComponentAssociationList_strategy)
+@given(instance=adb_RecordComponentAssociationList_strategy)
 @settings(max_examples=50)
-def test_adb::recordcomponentassociationlist_instantiation(instance):
-    assert isinstance(instance, adb::RecordComponentAssociationList)
-
-@given(instance=adb::RecordComponentAssociationList_strategy)
-def test_adb::recordcomponentassociationlist_nullRecord_type(instance):
-    assert isinstance(instance.nullRecord, bool)
+def test_adb_recordcomponentassociationlist_instantiation(instance):
+    assert isinstance(instance, adb_RecordComponentAssociationList)
 
 
-@given(instance=adb::RecordComponentAssociationList_strategy)
-def test_adb::recordcomponentassociationlist_nullRecord_setter(instance):
+
+@given(instance=adb_RecordComponentAssociationList_strategy)
+def test_adb_recordcomponentassociationlist_nullRecord_setter(instance):
     original = instance.nullRecord
     instance.nullRecord = original
     assert instance.nullRecord == original
@@ -7693,20 +6539,15 @@ def test_adb::recordcomponentassociationlist_nullRecord_setter(instance):
 def test_aggregate_instantiation(instance):
     assert isinstance(instance, Aggregate)
 
-@given(instance=adb::ArrayAggregate_strategy)
+@given(instance=adb_ExtensionAggregate_strategy)
 @settings(max_examples=50)
-def test_adb::arrayaggregate_instantiation(instance):
-    assert isinstance(instance, adb::ArrayAggregate)
+def test_adb_extensionaggregate_instantiation(instance):
+    assert isinstance(instance, adb_ExtensionAggregate)
 
-@given(instance=adb::ExtensionAggregate_strategy)
+@given(instance=adb_RecordAggregate_strategy)
 @settings(max_examples=50)
-def test_adb::extensionaggregate_instantiation(instance):
-    assert isinstance(instance, adb::ExtensionAggregate)
-
-@given(instance=adb::RecordAggregate_strategy)
-@settings(max_examples=50)
-def test_adb::recordaggregate_instantiation(instance):
-    assert isinstance(instance, adb::RecordAggregate)
+def test_adb_recordaggregate_instantiation(instance):
+    assert isinstance(instance, adb_RecordAggregate)
 
 @given(instance=Qualifier_strategy)
 @settings(max_examples=50)
@@ -7718,83 +6559,74 @@ def test_qualifier_instantiation(instance):
 def test_parenthesizedexpression_instantiation(instance):
     assert isinstance(instance, ParenthesizedExpression)
 
-@given(instance=adb::Aggregate_strategy)
+@given(instance=adb_Aggregate_strategy)
 @settings(max_examples=50)
-def test_adb::aggregate_instantiation(instance):
-    assert isinstance(instance, adb::Aggregate)
+def test_adb_aggregate_instantiation(instance):
+    assert isinstance(instance, adb_Aggregate)
 
-@given(instance=adb::ComponentChoiceList_strategy)
+@given(instance=adb_ComponentChoiceList_strategy)
 @settings(max_examples=50)
-def test_adb::componentchoicelist_instantiation(instance):
-    assert isinstance(instance, adb::ComponentChoiceList)
-
-@given(instance=adb::ComponentChoiceList_strategy)
-def test_adb::componentchoicelist_componentSelectorName_type(instance):
-    assert isinstance(instance.componentSelectorName, str)
+def test_adb_componentchoicelist_instantiation(instance):
+    assert isinstance(instance, adb_ComponentChoiceList)
 
 
-@given(instance=adb::ComponentChoiceList_strategy)
-def test_adb::componentchoicelist_componentSelectorName_setter(instance):
-    original = instance.componentSelectorName
-    instance.componentSelectorName = original
-    assert instance.componentSelectorName == original
 
-@given(instance=adb::ComponentChoiceList_strategy)
-def test_adb::componentchoicelist_others_type(instance):
-    assert isinstance(instance.others, bool)
-
-
-@given(instance=adb::ComponentChoiceList_strategy)
-def test_adb::componentchoicelist_others_setter(instance):
+@given(instance=adb_ComponentChoiceList_strategy)
+def test_adb_componentchoicelist_others_setter(instance):
     original = instance.others
     instance.others = original
     assert instance.others == original
 
-@given(instance=adb::DiscriminantSelectors_strategy)
+
+
+@given(instance=adb_ComponentChoiceList_strategy)
+def test_adb_componentchoicelist_componentSelectorName_setter(instance):
+    original = instance.componentSelectorName
+    instance.componentSelectorName = original
+    assert instance.componentSelectorName == original
+
+@given(instance=adb_DiscriminantSelectors_strategy)
 @settings(max_examples=50)
-def test_adb::discriminantselectors_instantiation(instance):
-    assert isinstance(instance, adb::DiscriminantSelectors)
-
-@given(instance=adb::DiscriminantSelectors_strategy)
-def test_adb::discriminantselectors_discriminantSelectorName_type(instance):
-    assert isinstance(instance.discriminantSelectorName, str)
+def test_adb_discriminantselectors_instantiation(instance):
+    assert isinstance(instance, adb_DiscriminantSelectors)
 
 
-@given(instance=adb::DiscriminantSelectors_strategy)
-def test_adb::discriminantselectors_discriminantSelectorName_setter(instance):
+
+@given(instance=adb_DiscriminantSelectors_strategy)
+def test_adb_discriminantselectors_discriminantSelectorName_setter(instance):
     original = instance.discriminantSelectorName
     instance.discriminantSelectorName = original
     assert instance.discriminantSelectorName == original
 
-@given(instance=adb::DiscriminantAssociation_strategy)
+@given(instance=adb_DiscriminantAssociation_strategy)
 @settings(max_examples=50)
-def test_adb::discriminantassociation_instantiation(instance):
-    assert isinstance(instance, adb::DiscriminantAssociation)
+def test_adb_discriminantassociation_instantiation(instance):
+    assert isinstance(instance, adb_DiscriminantAssociation)
 
 @given(instance=CompositeConstraint_strategy)
 @settings(max_examples=50)
 def test_compositeconstraint_instantiation(instance):
     assert isinstance(instance, CompositeConstraint)
 
-@given(instance=adb::IndexConstraint_strategy)
+@given(instance=adb_IndexConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::indexconstraint_instantiation(instance):
-    assert isinstance(instance, adb::IndexConstraint)
+def test_adb_indexconstraint_instantiation(instance):
+    assert isinstance(instance, adb_IndexConstraint)
 
-@given(instance=adb::DiscriminantConstraint_strategy)
+@given(instance=adb_DiscriminantConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::discriminantconstraint_instantiation(instance):
-    assert isinstance(instance, adb::DiscriminantConstraint)
+def test_adb_discriminantconstraint_instantiation(instance):
+    assert isinstance(instance, adb_DiscriminantConstraint)
 
-@given(instance=adb::CompositeConstraint_strategy)
+@given(instance=adb_CompositeConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::compositeconstraint_instantiation(instance):
-    assert isinstance(instance, adb::CompositeConstraint)
+def test_adb_compositeconstraint_instantiation(instance):
+    assert isinstance(instance, adb_CompositeConstraint)
 
-@given(instance=adb::OptConstraint_strategy)
+@given(instance=adb_OptConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::optconstraint_instantiation(instance):
-    assert isinstance(instance, adb::OptConstraint)
+def test_adb_optconstraint_instantiation(instance):
+    assert isinstance(instance, adb_OptConstraint)
 
 @given(instance=DiscreteRange_strategy)
 @settings(max_examples=50)
@@ -7806,190 +6638,252 @@ def test_discreterange_instantiation(instance):
 def test_discretesubtypedefinition_instantiation(instance):
     assert isinstance(instance, DiscreteSubtypeDefinition)
 
-@given(instance=adb::DiscreteRange_strategy)
+@given(instance=adb_DiscreteRange_strategy)
 @settings(max_examples=50)
-def test_adb::discreterange_instantiation(instance):
-    assert isinstance(instance, adb::DiscreteRange)
+def test_adb_discreterange_instantiation(instance):
+    assert isinstance(instance, adb_DiscreteRange)
 
-@given(instance=adb::Qualifier_strategy)
+@given(instance=adb_Qualifier_strategy)
 @settings(max_examples=50)
-def test_adb::qualifier_instantiation(instance):
-    assert isinstance(instance, adb::Qualifier)
+def test_adb_qualifier_instantiation(instance):
+    assert isinstance(instance, adb_Qualifier)
 
 @given(instance=Primary_strategy)
 @settings(max_examples=50)
 def test_primary_instantiation(instance):
     assert isinstance(instance, Primary)
 
-@given(instance=adb::Allocator_strategy)
+@given(instance=adb_QualifiedName_strategy)
 @settings(max_examples=50)
-def test_adb::allocator_instantiation(instance):
-    assert isinstance(instance, adb::Allocator)
+def test_adb_qualifiedname_instantiation(instance):
+    assert isinstance(instance, adb_QualifiedName)
 
-@given(instance=adb::Null_strategy)
+@given(instance=adb_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_adb::null_instantiation(instance):
-    assert isinstance(instance, adb::Null)
-
-@given(instance=adb::Null_strategy)
-def test_adb::null_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_adb_stringliteral_instantiation(instance):
+    assert isinstance(instance, adb_StringLiteral)
 
 
-@given(instance=adb::Null_strategy)
-def test_adb::null_value_setter(instance):
+
+@given(instance=adb_StringLiteral_strategy)
+def test_adb_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=adb::QualifiedName_strategy)
+@given(instance=adb_Allocator_strategy)
 @settings(max_examples=50)
-def test_adb::qualifiedname_instantiation(instance):
-    assert isinstance(instance, adb::QualifiedName)
+def test_adb_allocator_instantiation(instance):
+    assert isinstance(instance, adb_Allocator)
 
-@given(instance=adb::StringLiteral_strategy)
+@given(instance=adb_Null_strategy)
 @settings(max_examples=50)
-def test_adb::stringliteral_instantiation(instance):
-    assert isinstance(instance, adb::StringLiteral)
-
-@given(instance=adb::StringLiteral_strategy)
-def test_adb::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_adb_null_instantiation(instance):
+    assert isinstance(instance, adb_Null)
 
 
-@given(instance=adb::StringLiteral_strategy)
-def test_adb::stringliteral_value_setter(instance):
+
+@given(instance=adb_Null_strategy)
+def test_adb_null_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=adb::ParenthesizedExpression_strategy)
+@given(instance=adb_ParenthesizedExpression_strategy)
 @settings(max_examples=50)
-def test_adb::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, adb::ParenthesizedExpression)
+def test_adb_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, adb_ParenthesizedExpression)
 
-@given(instance=adb::NumericLiteral_strategy)
+@given(instance=adb_NumericLiteral_strategy)
 @settings(max_examples=50)
-def test_adb::numericliteral_instantiation(instance):
-    assert isinstance(instance, adb::NumericLiteral)
-
-@given(instance=adb::NumericLiteral_strategy)
-def test_adb::numericliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_adb_numericliteral_instantiation(instance):
+    assert isinstance(instance, adb_NumericLiteral)
 
 
-@given(instance=adb::NumericLiteral_strategy)
-def test_adb::numericliteral_value_setter(instance):
+
+@given(instance=adb_NumericLiteral_strategy)
+def test_adb_numericliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+@given(instance=Range_strategy)
+@settings(max_examples=50)
+def test_range_instantiation(instance):
+    assert isinstance(instance, Range)
+
+@given(instance=adb_ExplicitRange_strategy)
+@settings(max_examples=50)
+def test_adb_explicitrange_instantiation(instance):
+    assert isinstance(instance, adb_ExplicitRange)
+
+@given(instance=adb_EntityRange_strategy)
+@settings(max_examples=50)
+def test_adb_entityrange_instantiation(instance):
+    assert isinstance(instance, adb_EntityRange)
+
+@given(instance=RangeConstraint_strategy)
+@settings(max_examples=50)
+def test_rangeconstraint_instantiation(instance):
+    assert isinstance(instance, RangeConstraint)
+
+@given(instance=adb_ParameterEffectiveValue_strategy)
+@settings(max_examples=50)
+def test_adb_parametereffectivevalue_instantiation(instance):
+    assert isinstance(instance, adb_ParameterEffectiveValue)
+
+@given(instance=adb_AttributeDesignator_strategy)
+@settings(max_examples=50)
+def test_adb_attributedesignator_instantiation(instance):
+    assert isinstance(instance, adb_AttributeDesignator)
+
+@given(instance=adb_PrimaryName_strategy)
+@settings(max_examples=50)
+def test_adb_primaryname_instantiation(instance):
+    assert isinstance(instance, adb_PrimaryName)
+
+@given(instance=Interval_strategy)
+@settings(max_examples=50)
+def test_interval_instantiation(instance):
+    assert isinstance(instance, Interval)
+
+@given(instance=adb_ArrayComponentAssociation_strategy)
+@settings(max_examples=50)
+def test_adb_arraycomponentassociation_instantiation(instance):
+    assert isinstance(instance, adb_ArrayComponentAssociation)
+
+
+
+@given(instance=adb_ArrayComponentAssociation_strategy)
+def test_adb_arraycomponentassociation_box_setter(instance):
+    original = instance.box
+    instance.box = original
+    assert instance.box == original
+
+@given(instance=ArrayAggregate_strategy)
+@settings(max_examples=50)
+def test_arrayaggregate_instantiation(instance):
+    assert isinstance(instance, ArrayAggregate)
+
+@given(instance=adb_NamedArrayAggregate_strategy)
+@settings(max_examples=50)
+def test_adb_namedarrayaggregate_instantiation(instance):
+    assert isinstance(instance, adb_NamedArrayAggregate)
+
+@given(instance=adb_PositionalArrayAggregate_strategy)
+@settings(max_examples=50)
+def test_adb_positionalarrayaggregate_instantiation(instance):
+    assert isinstance(instance, adb_PositionalArrayAggregate)
+
+
+
+@given(instance=adb_PositionalArrayAggregate_strategy)
+def test_adb_positionalarrayaggregate_othersBox_setter(instance):
+    original = instance.othersBox
+    instance.othersBox = original
+    assert instance.othersBox == original
+
+@given(instance=adb_ArrayAggregate_strategy)
+@settings(max_examples=50)
+def test_adb_arrayaggregate_instantiation(instance):
+    assert isinstance(instance, adb_ArrayAggregate)
+
+@given(instance=adb_AncestorPart_strategy)
+@settings(max_examples=50)
+def test_adb_ancestorpart_instantiation(instance):
+    assert isinstance(instance, adb_AncestorPart)
 
 @given(instance=ScalarConstraint_strategy)
 @settings(max_examples=50)
 def test_scalarconstraint_instantiation(instance):
     assert isinstance(instance, ScalarConstraint)
 
-@given(instance=adb::DeltaConstraint_strategy)
+@given(instance=adb_RangeConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::deltaconstraint_instantiation(instance):
-    assert isinstance(instance, adb::DeltaConstraint)
+def test_adb_rangeconstraint_instantiation(instance):
+    assert isinstance(instance, adb_RangeConstraint)
 
-@given(instance=adb::RangeConstraint_strategy)
+@given(instance=adb_DeltaConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::rangeconstraint_instantiation(instance):
-    assert isinstance(instance, adb::RangeConstraint)
+def test_adb_deltaconstraint_instantiation(instance):
+    assert isinstance(instance, adb_DeltaConstraint)
 
-@given(instance=adb::DigitsConstraint_strategy)
+@given(instance=adb_DigitsConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::digitsconstraint_instantiation(instance):
-    assert isinstance(instance, adb::DigitsConstraint)
+def test_adb_digitsconstraint_instantiation(instance):
+    assert isinstance(instance, adb_DigitsConstraint)
 
-@given(instance=adb::ScalarConstraint_strategy)
+@given(instance=adb_ScalarConstraint_strategy)
 @settings(max_examples=50)
-def test_adb::scalarconstraint_instantiation(instance):
-    assert isinstance(instance, adb::ScalarConstraint)
+def test_adb_scalarconstraint_instantiation(instance):
+    assert isinstance(instance, adb_ScalarConstraint)
 
-@given(instance=adb::EObject_strategy)
+@given(instance=adb_EObject_strategy)
 @settings(max_examples=50)
-def test_adb::eobject_instantiation(instance):
-    assert isinstance(instance, adb::EObject)
+def test_adb_eobject_instantiation(instance):
+    assert isinstance(instance, adb_EObject)
 
-@given(instance=adb::Factor_strategy)
+@given(instance=adb_Factor_strategy)
 @settings(max_examples=50)
-def test_adb::factor_instantiation(instance):
-    assert isinstance(instance, adb::Factor)
-
-@given(instance=adb::Factor_strategy)
-def test_adb::factor_abs_type(instance):
-    assert isinstance(instance.abs, bool)
+def test_adb_factor_instantiation(instance):
+    assert isinstance(instance, adb_Factor)
 
 
-@given(instance=adb::Factor_strategy)
-def test_adb::factor_abs_setter(instance):
+
+@given(instance=adb_Factor_strategy)
+def test_adb_factor_not__setter(instance):
+    original = instance.not_
+    instance.not_ = original
+    assert instance.not_ == original
+
+
+
+@given(instance=adb_Factor_strategy)
+def test_adb_factor_abs_setter(instance):
     original = instance.abs
     instance.abs = original
     assert instance.abs == original
 
-@given(instance=adb::Factor_strategy)
-def test_adb::factor_not__type(instance):
-    assert isinstance(instance.not_, bool)
-
-
-@given(instance=adb::Factor_strategy)
-def test_adb::factor_not__setter(instance):
-    original = instance.not_
-    instance.not_ = original
-    assert instance.not_ == original
-
-@given(instance=adb::Term_strategy)
+@given(instance=adb_Term_strategy)
 @settings(max_examples=50)
-def test_adb::term_instantiation(instance):
-    assert isinstance(instance, adb::Term)
-
-@given(instance=adb::Term_strategy)
-def test_adb::term_multiplyingOperators_type(instance):
-    assert isinstance(instance.multiplyingOperators, str)
+def test_adb_term_instantiation(instance):
+    assert isinstance(instance, adb_Term)
 
 
-@given(instance=adb::Term_strategy)
-def test_adb::term_multiplyingOperators_setter(instance):
+
+@given(instance=adb_Term_strategy)
+def test_adb_term_multiplyingOperators_setter(instance):
     original = instance.multiplyingOperators
     instance.multiplyingOperators = original
     assert instance.multiplyingOperators == original
 
-@given(instance=adb::Interval_strategy)
+@given(instance=adb_Interval_strategy)
 @settings(max_examples=50)
-def test_adb::interval_instantiation(instance):
-    assert isinstance(instance, adb::Interval)
+def test_adb_interval_instantiation(instance):
+    assert isinstance(instance, adb_Interval)
 
-@given(instance=adb::Membership_strategy)
+@given(instance=adb_Membership_strategy)
 @settings(max_examples=50)
-def test_adb::membership_instantiation(instance):
-    assert isinstance(instance, adb::Membership)
-
-@given(instance=adb::Membership_strategy)
-def test_adb::membership_not__type(instance):
-    assert isinstance(instance.not_, bool)
+def test_adb_membership_instantiation(instance):
+    assert isinstance(instance, adb_Membership)
 
 
-@given(instance=adb::Membership_strategy)
-def test_adb::membership_not__setter(instance):
+
+@given(instance=adb_Membership_strategy)
+def test_adb_membership_not__setter(instance):
     original = instance.not_
     instance.not_ = original
     assert instance.not_ == original
 
-@given(instance=adb::Relation_strategy)
+@given(instance=adb_Relation_strategy)
 @settings(max_examples=50)
-def test_adb::relation_instantiation(instance):
-    assert isinstance(instance, adb::Relation)
-
-@given(instance=adb::Relation_strategy)
-def test_adb::relation_relationalOperator_type(instance):
-    assert isinstance(instance.relationalOperator, str)
+def test_adb_relation_instantiation(instance):
+    assert isinstance(instance, adb_Relation)
 
 
-@given(instance=adb::Relation_strategy)
-def test_adb::relation_relationalOperator_setter(instance):
+
+@given(instance=adb_Relation_strategy)
+def test_adb_relation_relationalOperator_setter(instance):
     original = instance.relationalOperator
     instance.relationalOperator = original
     assert instance.relationalOperator == original
@@ -7999,148 +6893,1044 @@ def test_adb::relation_relationalOperator_setter(instance):
 def test_parametereffectivevalue_instantiation(instance):
     assert isinstance(instance, ParameterEffectiveValue)
 
-@given(instance=adb::Range_strategy)
-@settings(max_examples=50)
-def test_adb::range_instantiation(instance):
-    assert isinstance(instance, adb::Range)
-
 @given(instance=AncestorPart_strategy)
 @settings(max_examples=50)
 def test_ancestorpart_instantiation(instance):
     assert isinstance(instance, AncestorPart)
 
-@given(instance=adb::Expression_strategy)
+@given(instance=DiscreteChoice_strategy)
 @settings(max_examples=50)
-def test_adb::expression_instantiation(instance):
-    assert isinstance(instance, adb::Expression)
+def test_discretechoice_instantiation(instance):
+    assert isinstance(instance, DiscreteChoice)
 
-@given(instance=adb::Expression_strategy)
-def test_adb::expression_booleanOperator_type(instance):
-    assert isinstance(instance.booleanOperator, str)
-
-
-@given(instance=adb::Expression_strategy)
-def test_adb::expression_booleanOperator_setter(instance):
-    original = instance.booleanOperator
-    instance.booleanOperator = original
-    assert instance.booleanOperator == original
-
-@given(instance=adb::ExceptionHandler_strategy)
+@given(instance=adb_Range_strategy)
 @settings(max_examples=50)
-def test_adb::exceptionhandler_instantiation(instance):
-    assert isinstance(instance, adb::ExceptionHandler)
+def test_adb_range_instantiation(instance):
+    assert isinstance(instance, adb_Range)
 
-@given(instance=adb::ExceptionHandler_strategy)
-def test_adb::exceptionhandler_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=ExplicitGenericActualParameter_strategy)
+@settings(max_examples=50)
+def test_explicitgenericactualparameter_instantiation(instance):
+    assert isinstance(instance, ExplicitGenericActualParameter)
+
+@given(instance=EntryIndex_strategy)
+@settings(max_examples=50)
+def test_entryindex_instantiation(instance):
+    assert isinstance(instance, EntryIndex)
+
+@given(instance=adb_Primary_strategy)
+@settings(max_examples=50)
+def test_adb_primary_instantiation(instance):
+    assert isinstance(instance, adb_Primary)
+
+@given(instance=adb_RealRangeSpecification_strategy)
+@settings(max_examples=50)
+def test_adb_realrangespecification_instantiation(instance):
+    assert isinstance(instance, adb_RealRangeSpecification)
+
+@given(instance=adb_DiscreteChoice_strategy)
+@settings(max_examples=50)
+def test_adb_discretechoice_instantiation(instance):
+    assert isinstance(instance, adb_DiscreteChoice)
+
+@given(instance=adb_Variant_strategy)
+@settings(max_examples=50)
+def test_adb_variant_instantiation(instance):
+    assert isinstance(instance, adb_Variant)
+
+@given(instance=adb_ComponentClause_strategy)
+@settings(max_examples=50)
+def test_adb_componentclause_instantiation(instance):
+    assert isinstance(instance, adb_ComponentClause)
 
 
-@given(instance=adb::ExceptionHandler_strategy)
-def test_adb::exceptionhandler_name_setter(instance):
+
+@given(instance=adb_ComponentClause_strategy)
+def test_adb_componentclause_localName_setter(instance):
+    original = instance.localName
+    instance.localName = original
+    assert instance.localName == original
+
+@given(instance=adb_ModClause_strategy)
+@settings(max_examples=50)
+def test_adb_modclause_instantiation(instance):
+    assert isinstance(instance, adb_ModClause)
+
+@given(instance=RealTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_realtypedefinition_instantiation(instance):
+    assert isinstance(instance, RealTypeDefinition)
+
+@given(instance=adb_FixedPointDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_fixedpointdefinition_instantiation(instance):
+    assert isinstance(instance, adb_FixedPointDefinition)
+
+@given(instance=adb_FloatingPointDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_floatingpointdefinition_instantiation(instance):
+    assert isinstance(instance, adb_FloatingPointDefinition)
+
+@given(instance=ComponentItem_strategy)
+@settings(max_examples=50)
+def test_componentitem_instantiation(instance):
+    assert isinstance(instance, ComponentItem)
+
+@given(instance=adb_VariantPart_strategy)
+@settings(max_examples=50)
+def test_adb_variantpart_instantiation(instance):
+    assert isinstance(instance, adb_VariantPart)
+
+
+
+@given(instance=adb_VariantPart_strategy)
+def test_adb_variantpart_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::GenericItem_strategy)
+@given(instance=adb_OptVariantPart_strategy)
 @settings(max_examples=50)
-def test_adb::genericitem_instantiation(instance):
-    assert isinstance(instance, adb::GenericItem)
+def test_adb_optvariantpart_instantiation(instance):
+    assert isinstance(instance, adb_OptVariantPart)
+
+@given(instance=adb_ComponentItem_strategy)
+@settings(max_examples=50)
+def test_adb_componentitem_instantiation(instance):
+    assert isinstance(instance, adb_ComponentItem)
+
+@given(instance=adb_ComponentList_strategy)
+@settings(max_examples=50)
+def test_adb_componentlist_instantiation(instance):
+    assert isinstance(instance, adb_ComponentList)
+
+@given(instance=adb_SimpleExpression_strategy)
+@settings(max_examples=50)
+def test_adb_simpleexpression_instantiation(instance):
+    assert isinstance(instance, adb_SimpleExpression)
+
+
+
+@given(instance=adb_SimpleExpression_strategy)
+def test_adb_simpleexpression_unaryAddingOperator_setter(instance):
+    original = instance.unaryAddingOperator
+    instance.unaryAddingOperator = original
+    assert instance.unaryAddingOperator == original
+
+
+
+@given(instance=adb_SimpleExpression_strategy)
+def test_adb_simpleexpression_binaryAddingOperators_setter(instance):
+    original = instance.binaryAddingOperators
+    instance.binaryAddingOperators = original
+    assert instance.binaryAddingOperators == original
+
+@given(instance=IntegerTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_integertypedefinition_instantiation(instance):
+    assert isinstance(instance, IntegerTypeDefinition)
+
+@given(instance=adb_ModularTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_modulartypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_ModularTypeDefinition)
+
+@given(instance=adb_SignedIntegerTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_signedintegertypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_SignedIntegerTypeDefinition)
+
+@given(instance=adb_ParameterSpecification_strategy)
+@settings(max_examples=50)
+def test_adb_parameterspecification_instantiation(instance):
+    assert isinstance(instance, adb_ParameterSpecification)
+
+@given(instance=ReturnSubtypeIndication_strategy)
+@settings(max_examples=50)
+def test_returnsubtypeindication_instantiation(instance):
+    assert isinstance(instance, ReturnSubtypeIndication)
+
+@given(instance=ArrayIndexes_strategy)
+@settings(max_examples=50)
+def test_arrayindexes_instantiation(instance):
+    assert isinstance(instance, ArrayIndexes)
+
+@given(instance=adb_ConstrainedIndexes_strategy)
+@settings(max_examples=50)
+def test_adb_constrainedindexes_instantiation(instance):
+    assert isinstance(instance, adb_ConstrainedIndexes)
+
+@given(instance=adb_UnconstrainedIndexes_strategy)
+@settings(max_examples=50)
+def test_adb_unconstrainedindexes_instantiation(instance):
+    assert isinstance(instance, adb_UnconstrainedIndexes)
+
+@given(instance=adb_ComponentDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_componentdefinition_instantiation(instance):
+    assert isinstance(instance, adb_ComponentDefinition)
+
+
+
+@given(instance=adb_ComponentDefinition_strategy)
+def test_adb_componentdefinition_aliased_setter(instance):
+    original = instance.aliased
+    instance.aliased = original
+    assert instance.aliased == original
+
+@given(instance=adb_ArrayIndexes_strategy)
+@settings(max_examples=50)
+def test_adb_arrayindexes_instantiation(instance):
+    assert isinstance(instance, adb_ArrayIndexes)
+
+@given(instance=NotNullAccessDefinition_strategy)
+@settings(max_examples=50)
+def test_notnullaccessdefinition_instantiation(instance):
+    assert isinstance(instance, NotNullAccessDefinition)
+
+@given(instance=AccessSpecification_strategy)
+@settings(max_examples=50)
+def test_accessspecification_instantiation(instance):
+    assert isinstance(instance, AccessSpecification)
+
+@given(instance=adb_AccessToDataDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_accesstodatadefinition_instantiation(instance):
+    assert isinstance(instance, adb_AccessToDataDefinition)
+
+
+
+@given(instance=adb_AccessToDataDefinition_strategy)
+def test_adb_accesstodatadefinition_generalAccessModifier_setter(instance):
+    original = instance.generalAccessModifier
+    instance.generalAccessModifier = original
+    assert instance.generalAccessModifier == original
+
+@given(instance=adb_AccessToSubprogramDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_accesstosubprogramdefinition_instantiation(instance):
+    assert isinstance(instance, adb_AccessToSubprogramDefinition)
+
+
+
+@given(instance=adb_AccessToSubprogramDefinition_strategy)
+def test_adb_accesstosubprogramdefinition_protected_setter(instance):
+    original = instance.protected
+    instance.protected = original
+    assert instance.protected == original
+
+@given(instance=adb_AccessSpecification_strategy)
+@settings(max_examples=50)
+def test_adb_accessspecification_instantiation(instance):
+    assert isinstance(instance, adb_AccessSpecification)
+
+@given(instance=adb_AccessToDataInstance_strategy)
+@settings(max_examples=50)
+def test_adb_accesstodatainstance_instantiation(instance):
+    assert isinstance(instance, adb_AccessToDataInstance)
+
+
+
+@given(instance=adb_AccessToDataInstance_strategy)
+def test_adb_accesstodatainstance_constant_setter(instance):
+    original = instance.constant
+    instance.constant = original
+    assert instance.constant == original
+
+@given(instance=TypeDefinition_strategy)
+@settings(max_examples=50)
+def test_typedefinition_instantiation(instance):
+    assert isinstance(instance, TypeDefinition)
+
+@given(instance=adb_IntegerTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_integertypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_IntegerTypeDefinition)
+
+@given(instance=adb_RealTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_realtypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_RealTypeDefinition)
+
+@given(instance=adb_RecordTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_recordtypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_RecordTypeDefinition)
+
+
+
+@given(instance=adb_RecordTypeDefinition_strategy)
+def test_adb_recordtypedefinition_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+
+
+@given(instance=adb_RecordTypeDefinition_strategy)
+def test_adb_recordtypedefinition_limited_setter(instance):
+    original = instance.limited
+    instance.limited = original
+    assert instance.limited == original
+
+
+
+@given(instance=adb_RecordTypeDefinition_strategy)
+def test_adb_recordtypedefinition_tagged_setter(instance):
+    original = instance.tagged
+    instance.tagged = original
+    assert instance.tagged == original
+
+@given(instance=adb_DerivedTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_derivedtypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_DerivedTypeDefinition)
+
+
+
+@given(instance=adb_DerivedTypeDefinition_strategy)
+def test_adb_derivedtypedefinition_limited_setter(instance):
+    original = instance.limited
+    instance.limited = original
+    assert instance.limited == original
+
+
+
+@given(instance=adb_DerivedTypeDefinition_strategy)
+def test_adb_derivedtypedefinition_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+@given(instance=adb_EnumerationTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_enumerationtypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_EnumerationTypeDefinition)
+
+
+
+@given(instance=adb_EnumerationTypeDefinition_strategy)
+def test_adb_enumerationtypedefinition_enumerationliteralspecifications_setter(instance):
+    original = instance.enumerationliteralspecifications
+    instance.enumerationliteralspecifications = original
+    assert instance.enumerationliteralspecifications == original
+
+@given(instance=adb_NotNullAccessDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_notnullaccessdefinition_instantiation(instance):
+    assert isinstance(instance, adb_NotNullAccessDefinition)
+
+@given(instance=adb_DiscriminantSpecification_strategy)
+@settings(max_examples=50)
+def test_adb_discriminantspecification_instantiation(instance):
+    assert isinstance(instance, adb_DiscriminantSpecification)
+
+@given(instance=adb_RecordDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_recorddefinition_instantiation(instance):
+    assert isinstance(instance, adb_RecordDefinition)
+
+
+
+@given(instance=adb_RecordDefinition_strategy)
+def test_adb_recorddefinition_null_setter(instance):
+    original = instance.null
+    instance.null = original
+    assert instance.null == original
+
+@given(instance=adb_RecordExtensionPart_strategy)
+@settings(max_examples=50)
+def test_adb_recordextensionpart_instantiation(instance):
+    assert isinstance(instance, adb_RecordExtensionPart)
+
+@given(instance=DiscriminantPart_strategy)
+@settings(max_examples=50)
+def test_discriminantpart_instantiation(instance):
+    assert isinstance(instance, DiscriminantPart)
+
+@given(instance=adb_UnknownDiscriminantPart_strategy)
+@settings(max_examples=50)
+def test_adb_unknowndiscriminantpart_instantiation(instance):
+    assert isinstance(instance, adb_UnknownDiscriminantPart)
+
+
+
+@given(instance=adb_UnknownDiscriminantPart_strategy)
+def test_adb_unknowndiscriminantpart_box_setter(instance):
+    original = instance.box
+    instance.box = original
+    assert instance.box == original
+
+@given(instance=adb_ExplicitGenericActualParameter_strategy)
+@settings(max_examples=50)
+def test_adb_explicitgenericactualparameter_instantiation(instance):
+    assert isinstance(instance, adb_ExplicitGenericActualParameter)
+
+@given(instance=AbortStatement_strategy)
+@settings(max_examples=50)
+def test_abortstatement_instantiation(instance):
+    assert isinstance(instance, AbortStatement)
+
+@given(instance=adb_TaskNames_strategy)
+@settings(max_examples=50)
+def test_adb_tasknames_instantiation(instance):
+    assert isinstance(instance, adb_TaskNames)
+
+@given(instance=adb_EntryCallAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_entrycallalternative_instantiation(instance):
+    assert isinstance(instance, adb_EntryCallAlternative)
+
+@given(instance=SelectAlternative_strategy)
+@settings(max_examples=50)
+def test_selectalternative_instantiation(instance):
+    assert isinstance(instance, SelectAlternative)
+
+@given(instance=adb_DelayAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_delayalternative_instantiation(instance):
+    assert isinstance(instance, adb_DelayAlternative)
+
+@given(instance=adb_AcceptAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_acceptalternative_instantiation(instance):
+    assert isinstance(instance, adb_AcceptAlternative)
+
+@given(instance=adb_GuardedAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_guardedalternative_instantiation(instance):
+    assert isinstance(instance, adb_GuardedAlternative)
+
+@given(instance=adb_SelectAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_selectalternative_instantiation(instance):
+    assert isinstance(instance, adb_SelectAlternative)
+
+@given(instance=adb_Guard_strategy)
+@settings(max_examples=50)
+def test_adb_guard_instantiation(instance):
+    assert isinstance(instance, adb_Guard)
+
+@given(instance=SelectStatement_strategy)
+@settings(max_examples=50)
+def test_selectstatement_instantiation(instance):
+    assert isinstance(instance, SelectStatement)
+
+@given(instance=adb_ConditionalEntryCall_strategy)
+@settings(max_examples=50)
+def test_adb_conditionalentrycall_instantiation(instance):
+    assert isinstance(instance, adb_ConditionalEntryCall)
+
+@given(instance=adb_TimedEntryCall_strategy)
+@settings(max_examples=50)
+def test_adb_timedentrycall_instantiation(instance):
+    assert isinstance(instance, adb_TimedEntryCall)
+
+@given(instance=adb_SelectiveAccept_strategy)
+@settings(max_examples=50)
+def test_adb_selectiveaccept_instantiation(instance):
+    assert isinstance(instance, adb_SelectiveAccept)
+
+@given(instance=adb_TriggeringStatement_strategy)
+@settings(max_examples=50)
+def test_adb_triggeringstatement_instantiation(instance):
+    assert isinstance(instance, adb_TriggeringStatement)
+
+@given(instance=adb_AbortablePart_strategy)
+@settings(max_examples=50)
+def test_adb_abortablepart_instantiation(instance):
+    assert isinstance(instance, adb_AbortablePart)
+
+@given(instance=adb_TriggeringAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_triggeringalternative_instantiation(instance):
+    assert isinstance(instance, adb_TriggeringAlternative)
+
+@given(instance=adb_AsynchronousSelect_strategy)
+@settings(max_examples=50)
+def test_adb_asynchronousselect_instantiation(instance):
+    assert isinstance(instance, adb_AsynchronousSelect)
+
+@given(instance=adb_EntryIndexSpecification_strategy)
+@settings(max_examples=50)
+def test_adb_entryindexspecification_instantiation(instance):
+    assert isinstance(instance, adb_EntryIndexSpecification)
+
+
+
+@given(instance=adb_EntryIndexSpecification_strategy)
+def test_adb_entryindexspecification_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=adb_EntryBarrier_strategy)
+@settings(max_examples=50)
+def test_adb_entrybarrier_instantiation(instance):
+    assert isinstance(instance, adb_EntryBarrier)
+
+@given(instance=adb_EntryBodyFormalPart_strategy)
+@settings(max_examples=50)
+def test_adb_entrybodyformalpart_instantiation(instance):
+    assert isinstance(instance, adb_EntryBodyFormalPart)
+
+@given(instance=adb_EntryIndex_strategy)
+@settings(max_examples=50)
+def test_adb_entryindex_instantiation(instance):
+    assert isinstance(instance, adb_EntryIndex)
+
+@given(instance=adb_ProtectedOperationItem_strategy)
+@settings(max_examples=50)
+def test_adb_protectedoperationitem_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedOperationItem)
+
+@given(instance=adb_ReturnSubtypeIndication_strategy)
+@settings(max_examples=50)
+def test_adb_returnsubtypeindication_instantiation(instance):
+    assert isinstance(instance, adb_ReturnSubtypeIndication)
+
+@given(instance=TriggeringStatement_strategy)
+@settings(max_examples=50)
+def test_triggeringstatement_instantiation(instance):
+    assert isinstance(instance, TriggeringStatement)
+
+@given(instance=adb_LoopParameterSpecification_strategy)
+@settings(max_examples=50)
+def test_adb_loopparameterspecification_instantiation(instance):
+    assert isinstance(instance, adb_LoopParameterSpecification)
+
+
+
+@given(instance=adb_LoopParameterSpecification_strategy)
+def test_adb_loopparameterspecification_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+@given(instance=adb_IterationScheme_strategy)
+@settings(max_examples=50)
+def test_adb_iterationscheme_instantiation(instance):
+    assert isinstance(instance, adb_IterationScheme)
+
+@given(instance=CompoundStatement_strategy)
+@settings(max_examples=50)
+def test_compoundstatement_instantiation(instance):
+    assert isinstance(instance, CompoundStatement)
+
+@given(instance=adb_ExtendedReturnStatement_strategy)
+@settings(max_examples=50)
+def test_adb_extendedreturnstatement_instantiation(instance):
+    assert isinstance(instance, adb_ExtendedReturnStatement)
+
+
+
+@given(instance=adb_ExtendedReturnStatement_strategy)
+def test_adb_extendedreturnstatement_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+@given(instance=adb_AcceptStatement_strategy)
+@settings(max_examples=50)
+def test_adb_acceptstatement_instantiation(instance):
+    assert isinstance(instance, adb_AcceptStatement)
+
+
+
+@given(instance=adb_AcceptStatement_strategy)
+def test_adb_acceptstatement_entryidentifier_setter(instance):
+    original = instance.entryidentifier
+    instance.entryidentifier = original
+    assert instance.entryidentifier == original
+
+@given(instance=adb_SelectStatement_strategy)
+@settings(max_examples=50)
+def test_adb_selectstatement_instantiation(instance):
+    assert isinstance(instance, adb_SelectStatement)
+
+@given(instance=adb_LoopStatement_strategy)
+@settings(max_examples=50)
+def test_adb_loopstatement_instantiation(instance):
+    assert isinstance(instance, adb_LoopStatement)
+
+
+
+@given(instance=adb_LoopStatement_strategy)
+def test_adb_loopstatement_sameName_setter(instance):
+    original = instance.sameName
+    instance.sameName = original
+    assert instance.sameName == original
+
+
+
+@given(instance=adb_LoopStatement_strategy)
+def test_adb_loopstatement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=adb_IfStatement_strategy)
+@settings(max_examples=50)
+def test_adb_ifstatement_instantiation(instance):
+    assert isinstance(instance, adb_IfStatement)
+
+@given(instance=adb_PragmaArgumentAssociation_strategy)
+@settings(max_examples=50)
+def test_adb_pragmaargumentassociation_instantiation(instance):
+    assert isinstance(instance, adb_PragmaArgumentAssociation)
+
+
+
+@given(instance=adb_PragmaArgumentAssociation_strategy)
+def test_adb_pragmaargumentassociation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=adb_DiscreteChoiceList_strategy)
+@settings(max_examples=50)
+def test_adb_discretechoicelist_instantiation(instance):
+    assert isinstance(instance, adb_DiscreteChoiceList)
+
+@given(instance=adb_CaseStatementAlternative_strategy)
+@settings(max_examples=50)
+def test_adb_casestatementalternative_instantiation(instance):
+    assert isinstance(instance, adb_CaseStatementAlternative)
+
+@given(instance=adb_CaseStatement_strategy)
+@settings(max_examples=50)
+def test_adb_casestatement_instantiation(instance):
+    assert isinstance(instance, adb_CaseStatement)
+
+@given(instance=ObjectDeclaration_strategy)
+@settings(max_examples=50)
+def test_objectdeclaration_instantiation(instance):
+    assert isinstance(instance, ObjectDeclaration)
+
+@given(instance=adb_DataInstanceDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_datainstancedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_DataInstanceDeclaration)
+
+
+
+@given(instance=adb_DataInstanceDeclaration_strategy)
+def test_adb_datainstancedeclaration_constant_setter(instance):
+    original = instance.constant
+    instance.constant = original
+    assert instance.constant == original
+
+
+
+@given(instance=adb_DataInstanceDeclaration_strategy)
+def test_adb_datainstancedeclaration_aliased_setter(instance):
+    original = instance.aliased
+    instance.aliased = original
+    assert instance.aliased == original
+
+@given(instance=adb_GenericAssociation_strategy)
+@settings(max_examples=50)
+def test_adb_genericassociation_instantiation(instance):
+    assert isinstance(instance, adb_GenericAssociation)
+
+
+
+@given(instance=adb_GenericAssociation_strategy)
+def test_adb_genericassociation_selectorName_setter(instance):
+    original = instance.selectorName
+    instance.selectorName = original
+    assert instance.selectorName == original
+
+@given(instance=adb_FormalPackageAssociation_strategy)
+@settings(max_examples=50)
+def test_adb_formalpackageassociation_instantiation(instance):
+    assert isinstance(instance, adb_FormalPackageAssociation)
+
+
+
+@given(instance=adb_FormalPackageAssociation_strategy)
+def test_adb_formalpackageassociation_genericFormalParameterSelectorName_setter(instance):
+    original = instance.genericFormalParameterSelectorName
+    instance.genericFormalParameterSelectorName = original
+    assert instance.genericFormalParameterSelectorName == original
+
+@given(instance=adb_FormalPackageActualPart_strategy)
+@settings(max_examples=50)
+def test_adb_formalpackageactualpart_instantiation(instance):
+    assert isinstance(instance, adb_FormalPackageActualPart)
+
+
+
+@given(instance=adb_FormalPackageActualPart_strategy)
+def test_adb_formalpackageactualpart_box_setter(instance):
+    original = instance.box
+    instance.box = original
+    assert instance.box == original
+
+@given(instance=adb_SubprogramDefault_strategy)
+@settings(max_examples=50)
+def test_adb_subprogramdefault_instantiation(instance):
+    assert isinstance(instance, adb_SubprogramDefault)
+
+
+
+@given(instance=adb_SubprogramDefault_strategy)
+def test_adb_subprogramdefault_defaultName_setter(instance):
+    original = instance.defaultName
+    instance.defaultName = original
+    assert instance.defaultName == original
+
+@given(instance=adb_Expression_strategy)
+@settings(max_examples=50)
+def test_adb_expression_instantiation(instance):
+    assert isinstance(instance, adb_Expression)
+
+
+
+@given(instance=adb_Expression_strategy)
+def test_adb_expression_booleanOperator_setter(instance):
+    original = instance.booleanOperator
+    instance.booleanOperator = original
+    assert instance.booleanOperator == original
+
+@given(instance=adb_AnonymousAccessDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_anonymousaccessdefinition_instantiation(instance):
+    assert isinstance(instance, adb_AnonymousAccessDefinition)
+
+@given(instance=adb_OptNullExclusion_strategy)
+@settings(max_examples=50)
+def test_adb_optnullexclusion_instantiation(instance):
+    assert isinstance(instance, adb_OptNullExclusion)
+
+
+
+@given(instance=adb_OptNullExclusion_strategy)
+def test_adb_optnullexclusion_not_null_setter(instance):
+    original = instance.not_null
+    instance.not_null = original
+    assert instance.not_null == original
+
+@given(instance=adb_SingleProtectedDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_singleprotecteddeclaration_instantiation(instance):
+    assert isinstance(instance, adb_SingleProtectedDeclaration)
+
+
+
+@given(instance=adb_SingleProtectedDeclaration_strategy)
+def test_adb_singleprotecteddeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=adb_Mode_strategy)
+@settings(max_examples=50)
+def test_adb_mode_instantiation(instance):
+    assert isinstance(instance, adb_Mode)
+
+
+
+@given(instance=adb_Mode_strategy)
+def test_adb_mode_out_setter(instance):
+    original = instance.out
+    instance.out = original
+    assert instance.out == original
+
+
+
+@given(instance=adb_Mode_strategy)
+def test_adb_mode_in__setter(instance):
+    original = instance.in_
+    instance.in_ = original
+    assert instance.in_ == original
+
+@given(instance=adb_DefiningIdentifierList_strategy)
+@settings(max_examples=50)
+def test_adb_definingidentifierlist_instantiation(instance):
+    assert isinstance(instance, adb_DefiningIdentifierList)
+
+
+
+@given(instance=adb_DefiningIdentifierList_strategy)
+def test_adb_definingidentifierlist_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=FormalTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_formaltypedefinition_instantiation(instance):
+    assert isinstance(instance, FormalTypeDefinition)
+
+@given(instance=adb_InterfaceTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_interfacetypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_InterfaceTypeDefinition)
+
+
+
+@given(instance=adb_InterfaceTypeDefinition_strategy)
+def test_adb_interfacetypedefinition_synchro_setter(instance):
+    original = instance.synchro
+    instance.synchro = original
+    assert instance.synchro == original
+
+
+
+@given(instance=adb_InterfaceTypeDefinition_strategy)
+def test_adb_interfacetypedefinition_protected_setter(instance):
+    original = instance.protected
+    instance.protected = original
+    assert instance.protected == original
+
+
+
+@given(instance=adb_InterfaceTypeDefinition_strategy)
+def test_adb_interfacetypedefinition_task_setter(instance):
+    original = instance.task
+    instance.task = original
+    assert instance.task == original
+
+
+
+@given(instance=adb_InterfaceTypeDefinition_strategy)
+def test_adb_interfacetypedefinition_limited_setter(instance):
+    original = instance.limited
+    instance.limited = original
+    assert instance.limited == original
+
+@given(instance=adb_ArrayTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_arraytypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_ArrayTypeDefinition)
+
+@given(instance=adb_AccessTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_accesstypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_AccessTypeDefinition)
+
+@given(instance=adb_FormalDerivedTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_formalderivedtypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_FormalDerivedTypeDefinition)
+
+
+
+@given(instance=adb_FormalDerivedTypeDefinition_strategy)
+def test_adb_formalderivedtypedefinition_absract_setter(instance):
+    original = instance.absract
+    instance.absract = original
+    assert instance.absract == original
+
+
+
+@given(instance=adb_FormalDerivedTypeDefinition_strategy)
+def test_adb_formalderivedtypedefinition_limited_setter(instance):
+    original = instance.limited
+    instance.limited = original
+    assert instance.limited == original
+
+
+
+@given(instance=adb_FormalDerivedTypeDefinition_strategy)
+def test_adb_formalderivedtypedefinition_synchronized_setter(instance):
+    original = instance.synchronized
+    instance.synchronized = original
+    assert instance.synchronized == original
+
+@given(instance=GenericFormalParameterDeclaration_strategy)
+@settings(max_examples=50)
+def test_genericformalparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, GenericFormalParameterDeclaration)
+
+@given(instance=adb_FormalTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_formaltypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_FormalTypeDeclaration)
+
+
+
+@given(instance=adb_FormalTypeDeclaration_strategy)
+def test_adb_formaltypedeclaration_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+@given(instance=adb_FormalPackageDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_formalpackagedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_FormalPackageDeclaration)
+
+
+
+@given(instance=adb_FormalPackageDeclaration_strategy)
+def test_adb_formalpackagedeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=adb_FormalPackageDeclaration_strategy)
+def test_adb_formalpackagedeclaration_genericPackageName_setter(instance):
+    original = instance.genericPackageName
+    instance.genericPackageName = original
+    assert instance.genericPackageName == original
+
+@given(instance=adb_FormalSubprogramDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_formalsubprogramdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_FormalSubprogramDeclaration)
+
+
+
+@given(instance=adb_FormalSubprogramDeclaration_strategy)
+def test_adb_formalsubprogramdeclaration_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+@given(instance=adb_FormalObjectDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_formalobjectdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_FormalObjectDeclaration)
+
+@given(instance=adb_FormalPrivateTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_formalprivatetypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_FormalPrivateTypeDefinition)
+
+
+
+@given(instance=adb_FormalPrivateTypeDefinition_strategy)
+def test_adb_formalprivatetypedefinition_limited_setter(instance):
+    original = instance.limited
+    instance.limited = original
+    assert instance.limited == original
+
+
+
+@given(instance=adb_FormalPrivateTypeDefinition_strategy)
+def test_adb_formalprivatetypedefinition_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+
+
+@given(instance=adb_FormalPrivateTypeDefinition_strategy)
+def test_adb_formalprivatetypedefinition_tagged_setter(instance):
+    original = instance.tagged
+    instance.tagged = original
+    assert instance.tagged == original
+
+@given(instance=adb_FormalTypeDefinition_strategy)
+@settings(max_examples=50)
+def test_adb_formaltypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_FormalTypeDefinition)
+
+@given(instance=adb_ExceptionHandler_strategy)
+@settings(max_examples=50)
+def test_adb_exceptionhandler_instantiation(instance):
+    assert isinstance(instance, adb_ExceptionHandler)
+
+
+
+@given(instance=adb_ExceptionHandler_strategy)
+def test_adb_exceptionhandler_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=adb_GenericItem_strategy)
+@settings(max_examples=50)
+def test_adb_genericitem_instantiation(instance):
+    assert isinstance(instance, adb_GenericItem)
 
 @given(instance=SimpleStatement_strategy)
 @settings(max_examples=50)
 def test_simplestatement_instantiation(instance):
     assert isinstance(instance, SimpleStatement)
 
-@given(instance=adb::AbortStatement_strategy)
+@given(instance=adb_SimpleReturnStatement_strategy)
 @settings(max_examples=50)
-def test_adb::abortstatement_instantiation(instance):
-    assert isinstance(instance, adb::AbortStatement)
+def test_adb_simplereturnstatement_instantiation(instance):
+    assert isinstance(instance, adb_SimpleReturnStatement)
 
-@given(instance=adb::SimpleReturnStatement_strategy)
+@given(instance=adb_GotoStatement_strategy)
 @settings(max_examples=50)
-def test_adb::simplereturnstatement_instantiation(instance):
-    assert isinstance(instance, adb::SimpleReturnStatement)
-
-@given(instance=adb::GotoStatement_strategy)
-@settings(max_examples=50)
-def test_adb::gotostatement_instantiation(instance):
-    assert isinstance(instance, adb::GotoStatement)
-
-@given(instance=adb::GotoStatement_strategy)
-def test_adb::gotostatement_labelId_type(instance):
-    assert isinstance(instance.labelId, str)
+def test_adb_gotostatement_instantiation(instance):
+    assert isinstance(instance, adb_GotoStatement)
 
 
-@given(instance=adb::GotoStatement_strategy)
-def test_adb::gotostatement_labelId_setter(instance):
+
+@given(instance=adb_GotoStatement_strategy)
+def test_adb_gotostatement_labelId_setter(instance):
     original = instance.labelId
     instance.labelId = original
     assert instance.labelId == original
 
-@given(instance=adb::ProcedureOrEntryCallStatement_strategy)
+@given(instance=adb_AbortStatement_strategy)
 @settings(max_examples=50)
-def test_adb::procedureorentrycallstatement_instantiation(instance):
-    assert isinstance(instance, adb::ProcedureOrEntryCallStatement)
+def test_adb_abortstatement_instantiation(instance):
+    assert isinstance(instance, adb_AbortStatement)
 
-@given(instance=adb::DelayStatement_strategy)
+@given(instance=adb_ExitStatement_strategy)
 @settings(max_examples=50)
-def test_adb::delaystatement_instantiation(instance):
-    assert isinstance(instance, adb::DelayStatement)
+def test_adb_exitstatement_instantiation(instance):
+    assert isinstance(instance, adb_ExitStatement)
 
-@given(instance=adb::DelayStatement_strategy)
-def test_adb::delaystatement_until_type(instance):
-    assert isinstance(instance.until, str)
+@given(instance=adb_AssignmentStatement_strategy)
+@settings(max_examples=50)
+def test_adb_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, adb_AssignmentStatement)
+
+@given(instance=adb_DelayStatement_strategy)
+@settings(max_examples=50)
+def test_adb_delaystatement_instantiation(instance):
+    assert isinstance(instance, adb_DelayStatement)
 
 
-@given(instance=adb::DelayStatement_strategy)
-def test_adb::delaystatement_until_setter(instance):
+
+@given(instance=adb_DelayStatement_strategy)
+def test_adb_delaystatement_until_setter(instance):
     original = instance.until
     instance.until = original
     assert instance.until == original
 
-@given(instance=adb::RaiseStatement_strategy)
+@given(instance=adb_ProcedureOrEntryCallStatement_strategy)
 @settings(max_examples=50)
-def test_adb::raisestatement_instantiation(instance):
-    assert isinstance(instance, adb::RaiseStatement)
+def test_adb_procedureorentrycallstatement_instantiation(instance):
+    assert isinstance(instance, adb_ProcedureOrEntryCallStatement)
 
-@given(instance=adb::AssignmentStatement_strategy)
+@given(instance=adb_RaiseStatement_strategy)
 @settings(max_examples=50)
-def test_adb::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, adb::AssignmentStatement)
+def test_adb_raisestatement_instantiation(instance):
+    assert isinstance(instance, adb_RaiseStatement)
 
-@given(instance=adb::RequeueStatement_strategy)
+@given(instance=adb_RequeueStatement_strategy)
 @settings(max_examples=50)
-def test_adb::requeuestatement_instantiation(instance):
-    assert isinstance(instance, adb::RequeueStatement)
-
-@given(instance=adb::RequeueStatement_strategy)
-def test_adb::requeuestatement_abort_type(instance):
-    assert isinstance(instance.abort, bool)
+def test_adb_requeuestatement_instantiation(instance):
+    assert isinstance(instance, adb_RequeueStatement)
 
 
-@given(instance=adb::RequeueStatement_strategy)
-def test_adb::requeuestatement_abort_setter(instance):
+
+@given(instance=adb_RequeueStatement_strategy)
+def test_adb_requeuestatement_abort_setter(instance):
     original = instance.abort
     instance.abort = original
     assert instance.abort == original
 
-@given(instance=adb::ExitStatement_strategy)
+@given(instance=adb_NullStatement_strategy)
 @settings(max_examples=50)
-def test_adb::exitstatement_instantiation(instance):
-    assert isinstance(instance, adb::ExitStatement)
-
-@given(instance=adb::NullStatement_strategy)
-@settings(max_examples=50)
-def test_adb::nullstatement_instantiation(instance):
-    assert isinstance(instance, adb::NullStatement)
-
-@given(instance=adb::NullStatement_strategy)
-def test_adb::nullstatement_null_type(instance):
-    assert isinstance(instance.null, bool)
+def test_adb_nullstatement_instantiation(instance):
+    assert isinstance(instance, adb_NullStatement)
 
 
-@given(instance=adb::NullStatement_strategy)
-def test_adb::nullstatement_null_setter(instance):
+
+@given(instance=adb_NullStatement_strategy)
+def test_adb_nullstatement_null_setter(instance):
     original = instance.null
     instance.null = original
     assert instance.null == original
@@ -8150,25 +7940,25 @@ def test_adb::nullstatement_null_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=adb::CompoundStatement_strategy)
+@given(instance=adb_CompoundStatement_strategy)
 @settings(max_examples=50)
-def test_adb::compoundstatement_instantiation(instance):
-    assert isinstance(instance, adb::CompoundStatement)
+def test_adb_compoundstatement_instantiation(instance):
+    assert isinstance(instance, adb_CompoundStatement)
 
-@given(instance=adb::SimpleStatement_strategy)
+@given(instance=adb_SimpleStatement_strategy)
 @settings(max_examples=50)
-def test_adb::simplestatement_instantiation(instance):
-    assert isinstance(instance, adb::SimpleStatement)
+def test_adb_simplestatement_instantiation(instance):
+    assert isinstance(instance, adb_SimpleStatement)
 
-@given(instance=adb::Statement_strategy)
+@given(instance=adb_Statement_strategy)
 @settings(max_examples=50)
-def test_adb::statement_instantiation(instance):
-    assert isinstance(instance, adb::Statement)
+def test_adb_statement_instantiation(instance):
+    assert isinstance(instance, adb_Statement)
 
-@given(instance=adb::LabelisableStatement_strategy)
+@given(instance=adb_LabelisableStatement_strategy)
 @settings(max_examples=50)
-def test_adb::labelisablestatement_instantiation(instance):
-    assert isinstance(instance, adb::LabelisableStatement)
+def test_adb_labelisablestatement_instantiation(instance):
+    assert isinstance(instance, adb_LabelisableStatement)
 
 @given(instance=AbortablePart_strategy)
 @settings(max_examples=50)
@@ -8180,23 +7970,20 @@ def test_abortablepart_instantiation(instance):
 def test_handledsequenceofstatements_instantiation(instance):
     assert isinstance(instance, HandledSequenceOfStatements)
 
-@given(instance=adb::SequenceOfStatements_strategy)
+@given(instance=adb_SequenceOfStatements_strategy)
 @settings(max_examples=50)
-def test_adb::sequenceofstatements_instantiation(instance):
-    assert isinstance(instance, adb::SequenceOfStatements)
+def test_adb_sequenceofstatements_instantiation(instance):
+    assert isinstance(instance, adb_SequenceOfStatements)
 
-@given(instance=adb::Label_strategy)
+@given(instance=adb_Label_strategy)
 @settings(max_examples=50)
-def test_adb::label_instantiation(instance):
-    assert isinstance(instance, adb::Label)
-
-@given(instance=adb::Label_strategy)
-def test_adb::label_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_adb_label_instantiation(instance):
+    assert isinstance(instance, adb_Label)
 
 
-@given(instance=adb::Label_strategy)
-def test_adb::label_identifier_setter(instance):
+
+@given(instance=adb_Label_strategy)
+def test_adb_label_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
@@ -8206,183 +7993,174 @@ def test_adb::label_identifier_setter(instance):
 def test_body_instantiation(instance):
     assert isinstance(instance, Body)
 
-@given(instance=adb::BodyStub_strategy)
+@given(instance=adb_ProperBody_strategy)
 @settings(max_examples=50)
-def test_adb::bodystub_instantiation(instance):
-    assert isinstance(instance, adb::BodyStub)
+def test_adb_properbody_instantiation(instance):
+    assert isinstance(instance, adb_ProperBody)
 
-@given(instance=adb::BodyStub_strategy)
-def test_adb::bodystub_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=adb_BodyStub_strategy)
+@settings(max_examples=50)
+def test_adb_bodystub_instantiation(instance):
+    assert isinstance(instance, adb_BodyStub)
 
 
-@given(instance=adb::BodyStub_strategy)
-def test_adb::bodystub_name_setter(instance):
+
+@given(instance=adb_BodyStub_strategy)
+def test_adb_bodystub_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=adb::ProperBody_strategy)
-@settings(max_examples=50)
-def test_adb::properbody_instantiation(instance):
-    assert isinstance(instance, adb::ProperBody)
 
 @given(instance=ProtectedElementDeclaration_strategy)
 @settings(max_examples=50)
 def test_protectedelementdeclaration_instantiation(instance):
     assert isinstance(instance, ProtectedElementDeclaration)
 
-@given(instance=adb::ComponentDeclaration_strategy)
+@given(instance=adb_ComponentDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::componentdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::ComponentDeclaration)
+def test_adb_componentdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_ComponentDeclaration)
 
-@given(instance=adb::ProtectedOperationDeclaration_strategy)
+@given(instance=adb_ProtectedOperationDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::protectedoperationdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedOperationDeclaration)
+def test_adb_protectedoperationdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedOperationDeclaration)
 
-@given(instance=adb::ProtectedElementDeclaration_strategy)
+@given(instance=adb_ProtectedElementDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::protectedelementdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedElementDeclaration)
+def test_adb_protectedelementdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedElementDeclaration)
 
-@given(instance=adb::ProtectedDefinition_strategy)
+@given(instance=adb_ProtectedDefinition_strategy)
 @settings(max_examples=50)
-def test_adb::protecteddefinition_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedDefinition)
+def test_adb_protecteddefinition_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedDefinition)
 
-@given(instance=adb::FormalPart_strategy)
+@given(instance=adb_FormalPart_strategy)
 @settings(max_examples=50)
-def test_adb::formalpart_instantiation(instance):
-    assert isinstance(instance, adb::FormalPart)
+def test_adb_formalpart_instantiation(instance):
+    assert isinstance(instance, adb_FormalPart)
 
-@given(instance=adb::DiscreteSubtypeDefinition_strategy)
+@given(instance=adb_DiscreteSubtypeDefinition_strategy)
 @settings(max_examples=50)
-def test_adb::discretesubtypedefinition_instantiation(instance):
-    assert isinstance(instance, adb::DiscreteSubtypeDefinition)
+def test_adb_discretesubtypedefinition_instantiation(instance):
+    assert isinstance(instance, adb_DiscreteSubtypeDefinition)
 
-@given(instance=adb::Name_strategy)
+@given(instance=adb_Name_strategy)
 @settings(max_examples=50)
-def test_adb::name_instantiation(instance):
-    assert isinstance(instance, adb::Name)
-
-@given(instance=adb::Name_strategy)
-def test_adb::name_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adb_name_instantiation(instance):
+    assert isinstance(instance, adb_Name)
 
 
-@given(instance=adb::Name_strategy)
-def test_adb::name_name_setter(instance):
+
+@given(instance=adb_Name_strategy)
+def test_adb_name_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::ExceptionChoice_strategy)
+@given(instance=adb_ExceptionChoice_strategy)
 @settings(max_examples=50)
-def test_adb::exceptionchoice_instantiation(instance):
-    assert isinstance(instance, adb::ExceptionChoice)
-
-@given(instance=adb::ExceptionChoice_strategy)
-def test_adb::exceptionchoice_others_type(instance):
-    assert isinstance(instance.others, bool)
+def test_adb_exceptionchoice_instantiation(instance):
+    assert isinstance(instance, adb_ExceptionChoice)
 
 
-@given(instance=adb::ExceptionChoice_strategy)
-def test_adb::exceptionchoice_others_setter(instance):
+
+@given(instance=adb_ExceptionChoice_strategy)
+def test_adb_exceptionchoice_others_setter(instance):
     original = instance.others
     instance.others = original
     assert instance.others == original
 
-@given(instance=adb::ParameterAndResultProfile_strategy)
+@given(instance=adb_ParameterAndResultProfile_strategy)
 @settings(max_examples=50)
-def test_adb::parameterandresultprofile_instantiation(instance):
-    assert isinstance(instance, adb::ParameterAndResultProfile)
+def test_adb_parameterandresultprofile_instantiation(instance):
+    assert isinstance(instance, adb_ParameterAndResultProfile)
 
 @given(instance=SubprogramSpecification_strategy)
 @settings(max_examples=50)
 def test_subprogramspecification_instantiation(instance):
     assert isinstance(instance, SubprogramSpecification)
 
-@given(instance=adb::FunctionSpecification_strategy)
+@given(instance=adb_FunctionSpecification_strategy)
 @settings(max_examples=50)
-def test_adb::functionspecification_instantiation(instance):
-    assert isinstance(instance, adb::FunctionSpecification)
+def test_adb_functionspecification_instantiation(instance):
+    assert isinstance(instance, adb_FunctionSpecification)
 
-@given(instance=adb::ProcedureSpecification_strategy)
+@given(instance=adb_ProcedureSpecification_strategy)
 @settings(max_examples=50)
-def test_adb::procedurespecification_instantiation(instance):
-    assert isinstance(instance, adb::ProcedureSpecification)
+def test_adb_procedurespecification_instantiation(instance):
+    assert isinstance(instance, adb_ProcedureSpecification)
 
 @given(instance=BodyStub_strategy)
 @settings(max_examples=50)
 def test_bodystub_instantiation(instance):
     assert isinstance(instance, BodyStub)
 
-@given(instance=adb::ProtectedBodyStub_strategy)
+@given(instance=adb_TaskBodyStub_strategy)
 @settings(max_examples=50)
-def test_adb::protectedbodystub_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedBodyStub)
+def test_adb_taskbodystub_instantiation(instance):
+    assert isinstance(instance, adb_TaskBodyStub)
 
-@given(instance=adb::PackageBodyStub_strategy)
+@given(instance=adb_PackageBodyStub_strategy)
 @settings(max_examples=50)
-def test_adb::packagebodystub_instantiation(instance):
-    assert isinstance(instance, adb::PackageBodyStub)
+def test_adb_packagebodystub_instantiation(instance):
+    assert isinstance(instance, adb_PackageBodyStub)
 
-@given(instance=adb::TaskBodyStub_strategy)
+@given(instance=adb_ProtectedBodyStub_strategy)
 @settings(max_examples=50)
-def test_adb::taskbodystub_instantiation(instance):
-    assert isinstance(instance, adb::TaskBodyStub)
+def test_adb_protectedbodystub_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedBodyStub)
 
 @given(instance=NewTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_newtypedeclaration_instantiation(instance):
     assert isinstance(instance, NewTypeDeclaration)
 
-@given(instance=adb::FullTypeDeclaration_strategy)
+@given(instance=adb_FullTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::fulltypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::FullTypeDeclaration)
+def test_adb_fulltypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_FullTypeDeclaration)
 
 @given(instance=TypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_typedeclaration_instantiation(instance):
     assert isinstance(instance, TypeDeclaration)
 
-@given(instance=adb::SubtypeDeclaration_strategy)
+@given(instance=adb_SubtypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::subtypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::SubtypeDeclaration)
+def test_adb_subtypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_SubtypeDeclaration)
 
-@given(instance=adb::NewTypeDeclaration_strategy)
+@given(instance=adb_NewTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::newtypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::NewTypeDeclaration)
+def test_adb_newtypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_NewTypeDeclaration)
 
-@given(instance=adb::TaskDefinition_strategy)
+@given(instance=adb_TaskDefinition_strategy)
 @settings(max_examples=50)
-def test_adb::taskdefinition_instantiation(instance):
-    assert isinstance(instance, adb::TaskDefinition)
+def test_adb_taskdefinition_instantiation(instance):
+    assert isinstance(instance, adb_TaskDefinition)
 
-@given(instance=adb::InterfaceList_strategy)
+@given(instance=adb_InterfaceList_strategy)
 @settings(max_examples=50)
-def test_adb::interfacelist_instantiation(instance):
-    assert isinstance(instance, adb::InterfaceList)
+def test_adb_interfacelist_instantiation(instance):
+    assert isinstance(instance, adb_InterfaceList)
 
-@given(instance=adb::KnownDiscriminantPart_strategy)
+@given(instance=adb_KnownDiscriminantPart_strategy)
 @settings(max_examples=50)
-def test_adb::knowndiscriminantpart_instantiation(instance):
-    assert isinstance(instance, adb::KnownDiscriminantPart)
+def test_adb_knowndiscriminantpart_instantiation(instance):
+    assert isinstance(instance, adb_KnownDiscriminantPart)
 
 @given(instance=DeclarativeItem_strategy)
 @settings(max_examples=50)
 def test_declarativeitem_instantiation(instance):
     assert isinstance(instance, DeclarativeItem)
 
-@given(instance=adb::Body_strategy)
+@given(instance=adb_Body_strategy)
 @settings(max_examples=50)
-def test_adb::body_instantiation(instance):
-    assert isinstance(instance, adb::Body)
+def test_adb_body_instantiation(instance):
+    assert isinstance(instance, adb_Body)
 
 @given(instance=ProtectedOperationDeclaration_strategy)
 @settings(max_examples=50)
@@ -8394,172 +8172,142 @@ def test_protectedoperationdeclaration_instantiation(instance):
 def test_taskitem_instantiation(instance):
     assert isinstance(instance, TaskItem)
 
-@given(instance=adb::EntryDeclaration_strategy)
+@given(instance=adb_EntryDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::entrydeclaration_instantiation(instance):
-    assert isinstance(instance, adb::EntryDeclaration)
-
-@given(instance=adb::EntryDeclaration_strategy)
-def test_adb::entrydeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adb_entrydeclaration_instantiation(instance):
+    assert isinstance(instance, adb_EntryDeclaration)
 
 
-@given(instance=adb::EntryDeclaration_strategy)
-def test_adb::entrydeclaration_name_setter(instance):
+
+@given(instance=adb_EntryDeclaration_strategy)
+def test_adb_entrydeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::TaskItem_strategy)
+@given(instance=adb_TaskItem_strategy)
 @settings(max_examples=50)
-def test_adb::taskitem_instantiation(instance):
-    assert isinstance(instance, adb::TaskItem)
+def test_adb_taskitem_instantiation(instance):
+    assert isinstance(instance, adb_TaskItem)
 
-@given(instance=adb::SubtypeIndication_strategy)
+@given(instance=adb_SubtypeIndication_strategy)
 @settings(max_examples=50)
-def test_adb::subtypeindication_instantiation(instance):
-    assert isinstance(instance, adb::SubtypeIndication)
-
-@given(instance=adb::SubtypeIndication_strategy)
-def test_adb::subtypeindication_subtypeMark_type(instance):
-    assert isinstance(instance.subtypeMark, str)
+def test_adb_subtypeindication_instantiation(instance):
+    assert isinstance(instance, adb_SubtypeIndication)
 
 
-@given(instance=adb::SubtypeIndication_strategy)
-def test_adb::subtypeindication_subtypeMark_setter(instance):
+
+@given(instance=adb_SubtypeIndication_strategy)
+def test_adb_subtypeindication_subtypeMark_setter(instance):
     original = instance.subtypeMark
     instance.subtypeMark = original
     assert instance.subtypeMark == original
 
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
+@given(instance=adb_PrivateExtensionDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::privateextensiondeclaration_instantiation(instance):
-    assert isinstance(instance, adb::PrivateExtensionDeclaration)
-
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
-def test_adb::privateextensiondeclaration_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
+def test_adb_privateextensiondeclaration_instantiation(instance):
+    assert isinstance(instance, adb_PrivateExtensionDeclaration)
 
 
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
-def test_adb::privateextensiondeclaration_synchronized_setter(instance):
+
+@given(instance=adb_PrivateExtensionDeclaration_strategy)
+def test_adb_privateextensiondeclaration_limited_setter(instance):
+    original = instance.limited
+    instance.limited = original
+    assert instance.limited == original
+
+
+
+@given(instance=adb_PrivateExtensionDeclaration_strategy)
+def test_adb_privateextensiondeclaration_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+
+
+@given(instance=adb_PrivateExtensionDeclaration_strategy)
+def test_adb_privateextensiondeclaration_synchronized_setter(instance):
     original = instance.synchronized
     instance.synchronized = original
     assert instance.synchronized == original
 
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
-def test_adb::privateextensiondeclaration_limited_type(instance):
-    assert isinstance(instance.limited, bool)
+@given(instance=adb_PrivateTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_privatetypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_PrivateTypeDeclaration)
 
 
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
-def test_adb::privateextensiondeclaration_limited_setter(instance):
-    original = instance.limited
-    instance.limited = original
-    assert instance.limited == original
 
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
-def test_adb::privateextensiondeclaration_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=adb::PrivateExtensionDeclaration_strategy)
-def test_adb::privateextensiondeclaration_abstract_setter(instance):
+@given(instance=adb_PrivateTypeDeclaration_strategy)
+def test_adb_privatetypedeclaration_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::privatetypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::PrivateTypeDeclaration)
-
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-def test_adb::privatetypedeclaration_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
 
 
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-def test_adb::privatetypedeclaration_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-def test_adb::privatetypedeclaration_limited_type(instance):
-    assert isinstance(instance.limited, bool)
+@given(instance=adb_PrivateTypeDeclaration_strategy)
+def test_adb_privatetypedeclaration_tagged_setter(instance):
+    original = instance.tagged
+    instance.tagged = original
+    assert instance.tagged == original
 
 
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-def test_adb::privatetypedeclaration_limited_setter(instance):
+
+@given(instance=adb_PrivateTypeDeclaration_strategy)
+def test_adb_privatetypedeclaration_limited_setter(instance):
     original = instance.limited
     instance.limited = original
     assert instance.limited == original
 
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-def test_adb::privatetypedeclaration_tagged_type(instance):
-    assert isinstance(instance.tagged, bool)
+@given(instance=adb_DiscriminantPart_strategy)
+@settings(max_examples=50)
+def test_adb_discriminantpart_instantiation(instance):
+    assert isinstance(instance, adb_DiscriminantPart)
+
+@given(instance=adb_IncompleteTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_incompletetypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_IncompleteTypeDeclaration)
 
 
-@given(instance=adb::PrivateTypeDeclaration_strategy)
-def test_adb::privatetypedeclaration_tagged_setter(instance):
+
+@given(instance=adb_IncompleteTypeDeclaration_strategy)
+def test_adb_incompletetypedeclaration_tagged_setter(instance):
     original = instance.tagged
     instance.tagged = original
     assert instance.tagged == original
 
-@given(instance=adb::DiscriminantPart_strategy)
+@given(instance=adb_TypeDefinition_strategy)
 @settings(max_examples=50)
-def test_adb::discriminantpart_instantiation(instance):
-    assert isinstance(instance, adb::DiscriminantPart)
-
-@given(instance=adb::IncompleteTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::incompletetypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::IncompleteTypeDeclaration)
-
-@given(instance=adb::IncompleteTypeDeclaration_strategy)
-def test_adb::incompletetypedeclaration_tagged_type(instance):
-    assert isinstance(instance.tagged, bool)
-
-
-@given(instance=adb::IncompleteTypeDeclaration_strategy)
-def test_adb::incompletetypedeclaration_tagged_setter(instance):
-    original = instance.tagged
-    instance.tagged = original
-    assert instance.tagged == original
-
-@given(instance=adb::TypeDefinition_strategy)
-@settings(max_examples=50)
-def test_adb::typedefinition_instantiation(instance):
-    assert isinstance(instance, adb::TypeDefinition)
+def test_adb_typedefinition_instantiation(instance):
+    assert isinstance(instance, adb_TypeDefinition)
 
 @given(instance=FullTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_fulltypedeclaration_instantiation(instance):
     assert isinstance(instance, FullTypeDeclaration)
 
-@given(instance=adb::ProtectedTypeDeclaration_strategy)
+@given(instance=adb_ProtectedTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::protectedtypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedTypeDeclaration)
+def test_adb_protectedtypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedTypeDeclaration)
 
-@given(instance=adb::FullDataTypeDeclaration_strategy)
+@given(instance=adb_FullDataTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::fulldatatypedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::FullDataTypeDeclaration)
+def test_adb_fulldatatypedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_FullDataTypeDeclaration)
 
-@given(instance=adb::PackageSpecification_strategy)
+@given(instance=adb_PackageSpecification_strategy)
 @settings(max_examples=50)
-def test_adb::packagespecification_instantiation(instance):
-    assert isinstance(instance, adb::PackageSpecification)
-
-@given(instance=adb::PackageSpecification_strategy)
-def test_adb::packagespecification_endname_type(instance):
-    assert isinstance(instance.endname, str)
+def test_adb_packagespecification_instantiation(instance):
+    assert isinstance(instance, adb_PackageSpecification)
 
 
-@given(instance=adb::PackageSpecification_strategy)
-def test_adb::packagespecification_endname_setter(instance):
+
+@given(instance=adb_PackageSpecification_strategy)
+def test_adb_packagespecification_endname_setter(instance):
     original = instance.endname
     instance.endname = original
     assert instance.endname == original
@@ -8574,437 +8322,377 @@ def test_libraryspecification_instantiation(instance):
 def test_packagedeclaration_instantiation(instance):
     assert isinstance(instance, PackageDeclaration)
 
-@given(instance=adb::Renaming_strategy)
+@given(instance=adb_Renaming_strategy)
 @settings(max_examples=50)
-def test_adb::renaming_instantiation(instance):
-    assert isinstance(instance, adb::Renaming)
-
-@given(instance=adb::Renaming_strategy)
-def test_adb::renaming_renamed_type(instance):
-    assert isinstance(instance.renamed, str)
+def test_adb_renaming_instantiation(instance):
+    assert isinstance(instance, adb_Renaming)
 
 
-@given(instance=adb::Renaming_strategy)
-def test_adb::renaming_renamed_setter(instance):
+
+@given(instance=adb_Renaming_strategy)
+def test_adb_renaming_renamed_setter(instance):
     original = instance.renamed
     instance.renamed = original
     assert instance.renamed == original
 
-@given(instance=adb::PackageDefinition_strategy)
+@given(instance=adb_PackageDefinition_strategy)
 @settings(max_examples=50)
-def test_adb::packagedefinition_instantiation(instance):
-    assert isinstance(instance, adb::PackageDefinition)
+def test_adb_packagedefinition_instantiation(instance):
+    assert isinstance(instance, adb_PackageDefinition)
 
 @given(instance=BasicDeclaration_strategy)
 @settings(max_examples=50)
 def test_basicdeclaration_instantiation(instance):
     assert isinstance(instance, BasicDeclaration)
 
-@given(instance=adb::NumberDeclaration_strategy)
+@given(instance=adb_ExceptionDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::numberdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::NumberDeclaration)
+def test_adb_exceptiondeclaration_instantiation(instance):
+    assert isinstance(instance, adb_ExceptionDeclaration)
 
-@given(instance=adb::TaskDeclaration_strategy)
+@given(instance=adb_NumberDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::taskdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::TaskDeclaration)
+def test_adb_numberdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_NumberDeclaration)
 
-@given(instance=adb::TaskDeclaration_strategy)
-def test_adb::taskdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=adb_ObjectDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_objectdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_ObjectDeclaration)
+
+@given(instance=adb_TaskDeclaration_strategy)
+@settings(max_examples=50)
+def test_adb_taskdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_TaskDeclaration)
 
 
-@given(instance=adb::TaskDeclaration_strategy)
-def test_adb::taskdeclaration_name_setter(instance):
+
+@given(instance=adb_TaskDeclaration_strategy)
+def test_adb_taskdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::TypeDeclaration_strategy)
+@given(instance=adb_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::typedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::TypeDeclaration)
-
-@given(instance=adb::TypeDeclaration_strategy)
-def test_adb::typedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adb_typedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_TypeDeclaration)
 
 
-@given(instance=adb::TypeDeclaration_strategy)
-def test_adb::typedeclaration_name_setter(instance):
+
+@given(instance=adb_TypeDeclaration_strategy)
+def test_adb_typedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=adb::ExceptionDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::exceptiondeclaration_instantiation(instance):
-    assert isinstance(instance, adb::ExceptionDeclaration)
-
-@given(instance=adb::ObjectDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::objectdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::ObjectDeclaration)
 
 @given(instance=LibraryUnitSpecification_strategy)
 @settings(max_examples=50)
 def test_libraryunitspecification_instantiation(instance):
     assert isinstance(instance, LibraryUnitSpecification)
 
-@given(instance=adb::PackageDeclaration_strategy)
+@given(instance=adb_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, adb::PackageDeclaration)
-
-@given(instance=adb::PackageDeclaration_strategy)
-def test_adb::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adb_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, adb_PackageDeclaration)
 
 
-@given(instance=adb::PackageDeclaration_strategy)
-def test_adb::packagedeclaration_name_setter(instance):
+
+@given(instance=adb_PackageDeclaration_strategy)
+def test_adb_packagedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::LibraryUnitSpecification_strategy)
+@given(instance=adb_LibraryUnitSpecification_strategy)
 @settings(max_examples=50)
-def test_adb::libraryunitspecification_instantiation(instance):
-    assert isinstance(instance, adb::LibraryUnitSpecification)
+def test_adb_libraryunitspecification_instantiation(instance):
+    assert isinstance(instance, adb_LibraryUnitSpecification)
 
 @given(instance=Unit_strategy)
 @settings(max_examples=50)
 def test_unit_instantiation(instance):
     assert isinstance(instance, Unit)
 
-@given(instance=adb::SeparateSubunit_strategy)
+@given(instance=adb_SeparateSubunit_strategy)
 @settings(max_examples=50)
-def test_adb::separatesubunit_instantiation(instance):
-    assert isinstance(instance, adb::SeparateSubunit)
-
-@given(instance=adb::SeparateSubunit_strategy)
-def test_adb::separatesubunit_parentUnitName_type(instance):
-    assert isinstance(instance.parentUnitName, str)
+def test_adb_separatesubunit_instantiation(instance):
+    assert isinstance(instance, adb_SeparateSubunit)
 
 
-@given(instance=adb::SeparateSubunit_strategy)
-def test_adb::separatesubunit_parentUnitName_setter(instance):
+
+@given(instance=adb_SeparateSubunit_strategy)
+def test_adb_separatesubunit_parentUnitName_setter(instance):
     original = instance.parentUnitName
     instance.parentUnitName = original
     assert instance.parentUnitName == original
 
-@given(instance=adb::HandledSequenceOfStatements_strategy)
+@given(instance=adb_HandledSequenceOfStatements_strategy)
 @settings(max_examples=50)
-def test_adb::handledsequenceofstatements_instantiation(instance):
-    assert isinstance(instance, adb::HandledSequenceOfStatements)
+def test_adb_handledsequenceofstatements_instantiation(instance):
+    assert isinstance(instance, adb_HandledSequenceOfStatements)
 
-@given(instance=adb::DeclarativeItem_strategy)
+@given(instance=adb_DeclarativeItem_strategy)
 @settings(max_examples=50)
-def test_adb::declarativeitem_instantiation(instance):
-    assert isinstance(instance, adb::DeclarativeItem)
+def test_adb_declarativeitem_instantiation(instance):
+    assert isinstance(instance, adb_DeclarativeItem)
 
-@given(instance=adb::DeclarativeBlock_strategy)
+@given(instance=adb_DeclarativeBlock_strategy)
 @settings(max_examples=50)
-def test_adb::declarativeblock_instantiation(instance):
-    assert isinstance(instance, adb::DeclarativeBlock)
+def test_adb_declarativeblock_instantiation(instance):
+    assert isinstance(instance, adb_DeclarativeBlock)
 
-@given(instance=adb::SubprogramSpecification_strategy)
+@given(instance=adb_SubprogramSpecification_strategy)
 @settings(max_examples=50)
-def test_adb::subprogramspecification_instantiation(instance):
-    assert isinstance(instance, adb::SubprogramSpecification)
+def test_adb_subprogramspecification_instantiation(instance):
+    assert isinstance(instance, adb_SubprogramSpecification)
 
 @given(instance=ProtectedOperationItem_strategy)
 @settings(max_examples=50)
 def test_protectedoperationitem_instantiation(instance):
     assert isinstance(instance, ProtectedOperationItem)
 
-@given(instance=adb::SubprogramDeclaration_strategy)
+@given(instance=adb_SubprogramDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::subprogramdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::SubprogramDeclaration)
-
-@given(instance=adb::SubprogramDeclaration_strategy)
-def test_adb::subprogramdeclaration_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+def test_adb_subprogramdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_SubprogramDeclaration)
 
 
-@given(instance=adb::SubprogramDeclaration_strategy)
-def test_adb::subprogramdeclaration_abstract_setter(instance):
+
+@given(instance=adb_SubprogramDeclaration_strategy)
+def test_adb_subprogramdeclaration_renamedName_setter(instance):
+    original = instance.renamedName
+    instance.renamedName = original
+    assert instance.renamedName == original
+
+
+
+@given(instance=adb_SubprogramDeclaration_strategy)
+def test_adb_subprogramdeclaration_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=adb::SubprogramDeclaration_strategy)
-def test_adb::subprogramdeclaration_null_type(instance):
-    assert isinstance(instance.null, bool)
 
 
-@given(instance=adb::SubprogramDeclaration_strategy)
-def test_adb::subprogramdeclaration_null_setter(instance):
+@given(instance=adb_SubprogramDeclaration_strategy)
+def test_adb_subprogramdeclaration_null_setter(instance):
     original = instance.null
     instance.null = original
     assert instance.null == original
-
-@given(instance=adb::SubprogramDeclaration_strategy)
-def test_adb::subprogramdeclaration_renamedName_type(instance):
-    assert isinstance(instance.renamedName, str)
-
-
-@given(instance=adb::SubprogramDeclaration_strategy)
-def test_adb::subprogramdeclaration_renamedName_setter(instance):
-    original = instance.renamedName
-    instance.renamedName = original
-    assert instance.renamedName == original
 
 @given(instance=ProperBody_strategy)
 @settings(max_examples=50)
 def test_properbody_instantiation(instance):
     assert isinstance(instance, ProperBody)
 
-@given(instance=adb::ProtectedBody_strategy)
+@given(instance=adb_ProtectedBody_strategy)
 @settings(max_examples=50)
-def test_adb::protectedbody_instantiation(instance):
-    assert isinstance(instance, adb::ProtectedBody)
-
-@given(instance=adb::ProtectedBody_strategy)
-def test_adb::protectedbody_idTask_type(instance):
-    assert isinstance(instance.idTask, str)
+def test_adb_protectedbody_instantiation(instance):
+    assert isinstance(instance, adb_ProtectedBody)
 
 
-@given(instance=adb::ProtectedBody_strategy)
-def test_adb::protectedbody_idTask_setter(instance):
-    original = instance.idTask
-    instance.idTask = original
-    assert instance.idTask == original
 
-@given(instance=adb::ProtectedBody_strategy)
-def test_adb::protectedbody_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=adb::ProtectedBody_strategy)
-def test_adb::protectedbody_identifier_setter(instance):
+@given(instance=adb_ProtectedBody_strategy)
+def test_adb_protectedbody_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
+
+
+
+@given(instance=adb_ProtectedBody_strategy)
+def test_adb_protectedbody_idTask_setter(instance):
+    original = instance.idTask
+    instance.idTask = original
+    assert instance.idTask == original
 
 @given(instance=DeclarativeBlock_strategy)
 @settings(max_examples=50)
 def test_declarativeblock_instantiation(instance):
     assert isinstance(instance, DeclarativeBlock)
 
-@given(instance=adb::EntryBody_strategy)
+@given(instance=adb_TaskBody_strategy)
 @settings(max_examples=50)
-def test_adb::entrybody_instantiation(instance):
-    assert isinstance(instance, adb::EntryBody)
+def test_adb_taskbody_instantiation(instance):
+    assert isinstance(instance, adb_TaskBody)
 
-@given(instance=adb::EntryBody_strategy)
-def test_adb::entrybody_endid_type(instance):
-    assert isinstance(instance.endid, str)
+@given(instance=adb_EntryBody_strategy)
+@settings(max_examples=50)
+def test_adb_entrybody_instantiation(instance):
+    assert isinstance(instance, adb_EntryBody)
 
 
-@given(instance=adb::EntryBody_strategy)
-def test_adb::entrybody_endid_setter(instance):
+
+@given(instance=adb_EntryBody_strategy)
+def test_adb_entrybody_endid_setter(instance):
     original = instance.endid
     instance.endid = original
     assert instance.endid == original
 
-@given(instance=adb::TaskBody_strategy)
+@given(instance=adb_PackageBody_strategy)
 @settings(max_examples=50)
-def test_adb::taskbody_instantiation(instance):
-    assert isinstance(instance, adb::TaskBody)
+def test_adb_packagebody_instantiation(instance):
+    assert isinstance(instance, adb_PackageBody)
 
-@given(instance=adb::BlockStatement_strategy)
+@given(instance=adb_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_adb::blockstatement_instantiation(instance):
-    assert isinstance(instance, adb::BlockStatement)
-
-@given(instance=adb::BlockStatement_strategy)
-def test_adb::blockstatement_blockStatementIdentifier_type(instance):
-    assert isinstance(instance.blockStatementIdentifier, str)
+def test_adb_blockstatement_instantiation(instance):
+    assert isinstance(instance, adb_BlockStatement)
 
 
-@given(instance=adb::BlockStatement_strategy)
-def test_adb::blockstatement_blockStatementIdentifier_setter(instance):
+
+@given(instance=adb_BlockStatement_strategy)
+def test_adb_blockstatement_blockStatementIdentifier_setter(instance):
     original = instance.blockStatementIdentifier
     instance.blockStatementIdentifier = original
     assert instance.blockStatementIdentifier == original
 
-@given(instance=adb::PackageBody_strategy)
+@given(instance=adb_SubprogramBody_strategy)
 @settings(max_examples=50)
-def test_adb::packagebody_instantiation(instance):
-    assert isinstance(instance, adb::PackageBody)
-
-@given(instance=adb::SubprogramBody_strategy)
-@settings(max_examples=50)
-def test_adb::subprogrambody_instantiation(instance):
-    assert isinstance(instance, adb::SubprogramBody)
-
-@given(instance=adb::SubprogramBody_strategy)
-def test_adb::subprogrambody_endname_type(instance):
-    assert isinstance(instance.endname, str)
+def test_adb_subprogrambody_instantiation(instance):
+    assert isinstance(instance, adb_SubprogramBody)
 
 
-@given(instance=adb::SubprogramBody_strategy)
-def test_adb::subprogrambody_endname_setter(instance):
+
+@given(instance=adb_SubprogramBody_strategy)
+def test_adb_subprogrambody_endname_setter(instance):
     original = instance.endname
     instance.endname = original
     assert instance.endname == original
 
-@given(instance=adb::BasicDeclarativeItem_strategy)
+@given(instance=adb_BasicDeclarativeItem_strategy)
 @settings(max_examples=50)
-def test_adb::basicdeclarativeitem_instantiation(instance):
-    assert isinstance(instance, adb::BasicDeclarativeItem)
+def test_adb_basicdeclarativeitem_instantiation(instance):
+    assert isinstance(instance, adb_BasicDeclarativeItem)
 
-@given(instance=adb::GenericActualPart_strategy)
+@given(instance=adb_GenericActualPart_strategy)
 @settings(max_examples=50)
-def test_adb::genericactualpart_instantiation(instance):
-    assert isinstance(instance, adb::GenericActualPart)
+def test_adb_genericactualpart_instantiation(instance):
+    assert isinstance(instance, adb_GenericActualPart)
 
-@given(instance=adb::OverridingIndicator_strategy)
+@given(instance=adb_OverridingIndicator_strategy)
 @settings(max_examples=50)
-def test_adb::overridingindicator_instantiation(instance):
-    assert isinstance(instance, adb::OverridingIndicator)
-
-@given(instance=adb::OverridingIndicator_strategy)
-def test_adb::overridingindicator_not__type(instance):
-    assert isinstance(instance.not_, bool)
+def test_adb_overridingindicator_instantiation(instance):
+    assert isinstance(instance, adb_OverridingIndicator)
 
 
-@given(instance=adb::OverridingIndicator_strategy)
-def test_adb::overridingindicator_not__setter(instance):
+
+@given(instance=adb_OverridingIndicator_strategy)
+def test_adb_overridingindicator_not__setter(instance):
     original = instance.not_
     instance.not_ = original
     assert instance.not_ == original
 
-@given(instance=adb::GenericInstantiation_strategy)
+@given(instance=adb_GenericInstantiation_strategy)
 @settings(max_examples=50)
-def test_adb::genericinstantiation_instantiation(instance):
-    assert isinstance(instance, adb::GenericInstantiation)
-
-@given(instance=adb::GenericInstantiation_strategy)
-def test_adb::genericinstantiation_genericName_type(instance):
-    assert isinstance(instance.genericName, str)
+def test_adb_genericinstantiation_instantiation(instance):
+    assert isinstance(instance, adb_GenericInstantiation)
 
 
-@given(instance=adb::GenericInstantiation_strategy)
-def test_adb::genericinstantiation_genericName_setter(instance):
+
+@given(instance=adb_GenericInstantiation_strategy)
+def test_adb_genericinstantiation_genericName_setter(instance):
     original = instance.genericName
     instance.genericName = original
     assert instance.genericName == original
 
-@given(instance=adb::GenericInstantiation_strategy)
-def test_adb::genericinstantiation_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=adb::GenericInstantiation_strategy)
-def test_adb::genericinstantiation_name_setter(instance):
+@given(instance=adb_GenericInstantiation_strategy)
+def test_adb_genericinstantiation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::LibrarySpecification_strategy)
+@given(instance=adb_LibrarySpecification_strategy)
 @settings(max_examples=50)
-def test_adb::libraryspecification_instantiation(instance):
-    assert isinstance(instance, adb::LibrarySpecification)
+def test_adb_libraryspecification_instantiation(instance):
+    assert isinstance(instance, adb_LibrarySpecification)
 
-@given(instance=adb::GenericItems_strategy)
+@given(instance=adb_GenericItems_strategy)
 @settings(max_examples=50)
-def test_adb::genericitems_instantiation(instance):
-    assert isinstance(instance, adb::GenericItems)
+def test_adb_genericitems_instantiation(instance):
+    assert isinstance(instance, adb_GenericItems)
 
-@given(instance=adb::GenericDeclaration_strategy)
+@given(instance=adb_GenericDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::genericdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::GenericDeclaration)
+def test_adb_genericdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_GenericDeclaration)
 
 @given(instance=UseClause_strategy)
 @settings(max_examples=50)
 def test_useclause_instantiation(instance):
     assert isinstance(instance, UseClause)
 
-@given(instance=adb::UseTypeClause_strategy)
+@given(instance=adb_UseTypeClause_strategy)
 @settings(max_examples=50)
-def test_adb::usetypeclause_instantiation(instance):
-    assert isinstance(instance, adb::UseTypeClause)
-
-@given(instance=adb::UseTypeClause_strategy)
-def test_adb::usetypeclause_typesNames_type(instance):
-    assert isinstance(instance.typesNames, str)
+def test_adb_usetypeclause_instantiation(instance):
+    assert isinstance(instance, adb_UseTypeClause)
 
 
-@given(instance=adb::UseTypeClause_strategy)
-def test_adb::usetypeclause_typesNames_setter(instance):
-    original = instance.typesNames
-    instance.typesNames = original
-    assert instance.typesNames == original
 
-@given(instance=adb::UseTypeClause_strategy)
-def test_adb::usetypeclause_useTypeRefs_type(instance):
-    assert isinstance(instance.useTypeRefs, str)
-
-
-@given(instance=adb::UseTypeClause_strategy)
-def test_adb::usetypeclause_useTypeRefs_setter(instance):
+@given(instance=adb_UseTypeClause_strategy)
+def test_adb_usetypeclause_useTypeRefs_setter(instance):
     original = instance.useTypeRefs
     instance.useTypeRefs = original
     assert instance.useTypeRefs == original
 
-@given(instance=adb::UsePackageClause_strategy)
+
+
+@given(instance=adb_UseTypeClause_strategy)
+def test_adb_usetypeclause_typesNames_setter(instance):
+    original = instance.typesNames
+    instance.typesNames = original
+    assert instance.typesNames == original
+
+@given(instance=adb_UsePackageClause_strategy)
 @settings(max_examples=50)
-def test_adb::usepackageclause_instantiation(instance):
-    assert isinstance(instance, adb::UsePackageClause)
+def test_adb_usepackageclause_instantiation(instance):
+    assert isinstance(instance, adb_UsePackageClause)
 
 @given(instance=GenericItem_strategy)
 @settings(max_examples=50)
 def test_genericitem_instantiation(instance):
     assert isinstance(instance, GenericItem)
 
-@given(instance=adb::GenericFormalParameterDeclaration_strategy)
+@given(instance=adb_GenericFormalParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::genericformalparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::GenericFormalParameterDeclaration)
+def test_adb_genericformalparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_GenericFormalParameterDeclaration)
 
 @given(instance=BasicDeclarativeItem_strategy)
 @settings(max_examples=50)
 def test_basicdeclarativeitem_instantiation(instance):
     assert isinstance(instance, BasicDeclarativeItem)
 
-@given(instance=adb::AspectClause_strategy)
+@given(instance=adb_BasicDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::aspectclause_instantiation(instance):
-    assert isinstance(instance, adb::AspectClause)
+def test_adb_basicdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_BasicDeclaration)
 
-@given(instance=adb::AspectClause_strategy)
-def test_adb::aspectclause_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=adb_AspectClause_strategy)
+@settings(max_examples=50)
+def test_adb_aspectclause_instantiation(instance):
+    assert isinstance(instance, adb_AspectClause)
 
 
-@given(instance=adb::AspectClause_strategy)
-def test_adb::aspectclause_name_setter(instance):
+
+@given(instance=adb_AspectClause_strategy)
+def test_adb_aspectclause_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::BasicDeclaration_strategy)
+@given(instance=adb_LibraryUnitDeclaration_strategy)
 @settings(max_examples=50)
-def test_adb::basicdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::BasicDeclaration)
-
-@given(instance=adb::LibraryUnitDeclaration_strategy)
-@settings(max_examples=50)
-def test_adb::libraryunitdeclaration_instantiation(instance):
-    assert isinstance(instance, adb::LibraryUnitDeclaration)
-
-@given(instance=adb::LibraryUnitDeclaration_strategy)
-def test_adb::libraryunitdeclaration_private_type(instance):
-    assert isinstance(instance.private, bool)
+def test_adb_libraryunitdeclaration_instantiation(instance):
+    assert isinstance(instance, adb_LibraryUnitDeclaration)
 
 
-@given(instance=adb::LibraryUnitDeclaration_strategy)
-def test_adb::libraryunitdeclaration_private_setter(instance):
+
+@given(instance=adb_LibraryUnitDeclaration_strategy)
+def test_adb_libraryunitdeclaration_private_setter(instance):
     original = instance.private
     instance.private = original
     assert instance.private == original
@@ -9014,75 +8702,66 @@ def test_adb::libraryunitdeclaration_private_setter(instance):
 def test_contextitem_instantiation(instance):
     assert isinstance(instance, ContextItem)
 
-@given(instance=adb::UseClause_strategy)
+@given(instance=adb_UseClause_strategy)
 @settings(max_examples=50)
-def test_adb::useclause_instantiation(instance):
-    assert isinstance(instance, adb::UseClause)
+def test_adb_useclause_instantiation(instance):
+    assert isinstance(instance, adb_UseClause)
 
-@given(instance=adb::WithClause_strategy)
+@given(instance=adb_WithClause_strategy)
 @settings(max_examples=50)
-def test_adb::withclause_instantiation(instance):
-    assert isinstance(instance, adb::WithClause)
-
-@given(instance=adb::WithClause_strategy)
-def test_adb::withclause_limited_type(instance):
-    assert isinstance(instance.limited, bool)
+def test_adb_withclause_instantiation(instance):
+    assert isinstance(instance, adb_WithClause)
 
 
-@given(instance=adb::WithClause_strategy)
-def test_adb::withclause_limited_setter(instance):
+
+@given(instance=adb_WithClause_strategy)
+def test_adb_withclause_limited_setter(instance):
     original = instance.limited
     instance.limited = original
     assert instance.limited == original
 
-@given(instance=adb::WithClause_strategy)
-def test_adb::withclause_private_type(instance):
-    assert isinstance(instance.private, bool)
 
 
-@given(instance=adb::WithClause_strategy)
-def test_adb::withclause_private_setter(instance):
+@given(instance=adb_WithClause_strategy)
+def test_adb_withclause_private_setter(instance):
     original = instance.private
     instance.private = original
     assert instance.private == original
 
-@given(instance=adb::ContextItem_strategy)
+@given(instance=adb_ContextItem_strategy)
 @settings(max_examples=50)
-def test_adb::contextitem_instantiation(instance):
-    assert isinstance(instance, adb::ContextItem)
+def test_adb_contextitem_instantiation(instance):
+    assert isinstance(instance, adb_ContextItem)
 
-@given(instance=adb::Pragma_strategy)
+@given(instance=adb_Pragma_strategy)
 @settings(max_examples=50)
-def test_adb::pragma_instantiation(instance):
-    assert isinstance(instance, adb::Pragma)
-
-@given(instance=adb::Pragma_strategy)
-def test_adb::pragma_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adb_pragma_instantiation(instance):
+    assert isinstance(instance, adb_Pragma)
 
 
-@given(instance=adb::Pragma_strategy)
-def test_adb::pragma_name_setter(instance):
+
+@given(instance=adb_Pragma_strategy)
+def test_adb_pragma_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adb::Unit_strategy)
+@given(instance=adb_Unit_strategy)
 @settings(max_examples=50)
-def test_adb::unit_instantiation(instance):
-    assert isinstance(instance, adb::Unit)
+def test_adb_unit_instantiation(instance):
+    assert isinstance(instance, adb_Unit)
 
-@given(instance=adb::ContextClause_strategy)
+@given(instance=adb_ContextClause_strategy)
 @settings(max_examples=50)
-def test_adb::contextclause_instantiation(instance):
-    assert isinstance(instance, adb::ContextClause)
+def test_adb_contextclause_instantiation(instance):
+    assert isinstance(instance, adb_ContextClause)
 
-@given(instance=adb::CompilationUnit_strategy)
+@given(instance=adb_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_adb::compilationunit_instantiation(instance):
-    assert isinstance(instance, adb::CompilationUnit)
+def test_adb_compilationunit_instantiation(instance):
+    assert isinstance(instance, adb_CompilationUnit)
 
-@given(instance=adb::Compilation_strategy)
+@given(instance=adb_Compilation_strategy)
 @settings(max_examples=50)
-def test_adb::compilation_instantiation(instance):
-    assert isinstance(instance, adb::Compilation)
+def test_adb_compilation_instantiation(instance):
+    assert isinstance(instance, adb_Compilation)

@@ -3,41 +3,41 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ArchimateImplementationAndMigration::Relationship,
+from python_code import (
+    ArchimateImplementationAndMigration_Relationship,
     Relationship,
-    ArchimateImplementationAndMigration::Flow,
-    ArchimateImplementationAndMigration::Composition,
-    ArchimateImplementationAndMigration::Assignment,
-    ArchimateImplementationAndMigration::Aggregation,
-    ArchimateImplementationAndMigration::Access,
-    ArchimateImplementationAndMigration::Specialization,
-    ArchimateImplementationAndMigration::Realization,
-    ArchimateImplementationAndMigration::Association,
-    ArchimateImplementationAndMigration::Triggering,
-    ArchimateImplementationAndMigration::UsedBy,
-    ArchimateImplementationAndMigration::Junction,
+    ArchimateImplementationAndMigration_Association,
+    ArchimateImplementationAndMigration_Realization,
+    ArchimateImplementationAndMigration_UsedBy,
+    ArchimateImplementationAndMigration_Triggering,
+    ArchimateImplementationAndMigration_Aggregation,
+    ArchimateImplementationAndMigration_Assignment,
+    ArchimateImplementationAndMigration_Composition,
+    ArchimateImplementationAndMigration_Flow,
+    ArchimateImplementationAndMigration_Specialization,
+    ArchimateImplementationAndMigration_Access,
+    ArchimateImplementationAndMigration_Junction,
     NodeElement,
-    ArchimateImplementationAndMigration::Meaning,
-    ArchimateImplementationAndMigration::Product,
-    ArchimateImplementationAndMigration::BusinessRole,
-    ArchimateImplementationAndMigration::BusinessInterface,
-    ArchimateImplementationAndMigration::BusinessObject,
-    ArchimateImplementationAndMigration::Contract,
-    ArchimateImplementationAndMigration::Value,
-    ArchimateImplementationAndMigration::BusinessCollaboration,
-    ArchimateImplementationAndMigration::Grouping,
-    ArchimateImplementationAndMigration::Representation,
-    ArchimateImplementationAndMigration::BusinessActor,
-    ArchimateImplementationAndMigration::NodeElement,
-    ArchimateImplementationAndMigration::BusinessService,
-    ArchimateImplementationAndMigration::BusinessEvent,
-    ArchimateImplementationAndMigration::BusinessInteraction,
-    ArchimateImplementationAndMigration::BusinessFunction,
-    ArchimateImplementationAndMigration::BusinessProcess,
-    ArchimateImplementationAndMigration::Location,
+    ArchimateImplementationAndMigration_Value,
+    ArchimateImplementationAndMigration_BusinessRole,
+    ArchimateImplementationAndMigration_Representation,
+    ArchimateImplementationAndMigration_Grouping,
+    ArchimateImplementationAndMigration_Contract,
+    ArchimateImplementationAndMigration_BusinessCollaboration,
+    ArchimateImplementationAndMigration_BusinessObject,
+    ArchimateImplementationAndMigration_Product,
+    ArchimateImplementationAndMigration_BusinessInterface,
+    ArchimateImplementationAndMigration_Meaning,
+    ArchimateImplementationAndMigration_BusinessActor,
+    ArchimateImplementationAndMigration_NodeElement,
+    ArchimateImplementationAndMigration_BusinessService,
+    ArchimateImplementationAndMigration_BusinessEvent,
+    ArchimateImplementationAndMigration_BusinessInteraction,
+    ArchimateImplementationAndMigration_BusinessFunction,
+    ArchimateImplementationAndMigration_BusinessProcess,
+    ArchimateImplementationAndMigration_Location,
 )
 
 # =============================================================================
@@ -46,16 +46,16 @@ from classes import (
 
 
 
-def test_archimateimplementationandmigration::relationship_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Relationship)
+def test_archimateimplementationandmigration_relationship_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Relationship)
 
 
-def test_archimateimplementationandmigration::relationship_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Relationship.__init__)
+def test_archimateimplementationandmigration_relationship_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Relationship.__init__)
 
 
-def test_archimateimplementationandmigration::relationship_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Relationship.__init__)
+def test_archimateimplementationandmigration_relationship_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Relationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -74,156 +74,156 @@ def test_relationship_constructor_args():
 
 
 
-def test_archimateimplementationandmigration::flow_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Flow)
+def test_archimateimplementationandmigration_association_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Association)
 
 
-def test_archimateimplementationandmigration::flow_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Flow.__init__)
+def test_archimateimplementationandmigration_association_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Association.__init__)
 
 
-def test_archimateimplementationandmigration::flow_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Flow.__init__)
+def test_archimateimplementationandmigration_association_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::composition_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Composition)
+def test_archimateimplementationandmigration_realization_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Realization)
 
 
-def test_archimateimplementationandmigration::composition_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Composition.__init__)
+def test_archimateimplementationandmigration_realization_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Realization.__init__)
 
 
-def test_archimateimplementationandmigration::composition_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Composition.__init__)
+def test_archimateimplementationandmigration_realization_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::assignment_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Assignment)
+def test_archimateimplementationandmigration_usedby_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_UsedBy)
 
 
-def test_archimateimplementationandmigration::assignment_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Assignment.__init__)
+def test_archimateimplementationandmigration_usedby_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_UsedBy.__init__)
 
 
-def test_archimateimplementationandmigration::assignment_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Assignment.__init__)
+def test_archimateimplementationandmigration_usedby_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_UsedBy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::aggregation_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Aggregation)
+def test_archimateimplementationandmigration_triggering_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Triggering)
 
 
-def test_archimateimplementationandmigration::aggregation_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Aggregation.__init__)
+def test_archimateimplementationandmigration_triggering_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Triggering.__init__)
 
 
-def test_archimateimplementationandmigration::aggregation_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Aggregation.__init__)
+def test_archimateimplementationandmigration_triggering_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Triggering.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::access_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Access)
+def test_archimateimplementationandmigration_aggregation_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Aggregation)
 
 
-def test_archimateimplementationandmigration::access_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Access.__init__)
+def test_archimateimplementationandmigration_aggregation_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Aggregation.__init__)
 
 
-def test_archimateimplementationandmigration::access_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Access.__init__)
+def test_archimateimplementationandmigration_aggregation_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Aggregation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::specialization_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Specialization)
+def test_archimateimplementationandmigration_assignment_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Assignment)
 
 
-def test_archimateimplementationandmigration::specialization_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Specialization.__init__)
+def test_archimateimplementationandmigration_assignment_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Assignment.__init__)
 
 
-def test_archimateimplementationandmigration::specialization_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Specialization.__init__)
+def test_archimateimplementationandmigration_assignment_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::realization_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Realization)
+def test_archimateimplementationandmigration_composition_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Composition)
 
 
-def test_archimateimplementationandmigration::realization_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Realization.__init__)
+def test_archimateimplementationandmigration_composition_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Composition.__init__)
 
 
-def test_archimateimplementationandmigration::realization_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Realization.__init__)
+def test_archimateimplementationandmigration_composition_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Composition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::association_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Association)
+def test_archimateimplementationandmigration_flow_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Flow)
 
 
-def test_archimateimplementationandmigration::association_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Association.__init__)
+def test_archimateimplementationandmigration_flow_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Flow.__init__)
 
 
-def test_archimateimplementationandmigration::association_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Association.__init__)
+def test_archimateimplementationandmigration_flow_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::triggering_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Triggering)
+def test_archimateimplementationandmigration_specialization_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Specialization)
 
 
-def test_archimateimplementationandmigration::triggering_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Triggering.__init__)
+def test_archimateimplementationandmigration_specialization_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Specialization.__init__)
 
 
-def test_archimateimplementationandmigration::triggering_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Triggering.__init__)
+def test_archimateimplementationandmigration_specialization_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Specialization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::usedby_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::UsedBy)
+def test_archimateimplementationandmigration_access_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Access)
 
 
-def test_archimateimplementationandmigration::usedby_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::UsedBy.__init__)
+def test_archimateimplementationandmigration_access_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Access.__init__)
 
 
-def test_archimateimplementationandmigration::usedby_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::UsedBy.__init__)
+def test_archimateimplementationandmigration_access_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Access.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::junction_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Junction)
+def test_archimateimplementationandmigration_junction_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Junction)
 
 
-def test_archimateimplementationandmigration::junction_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Junction.__init__)
+def test_archimateimplementationandmigration_junction_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Junction.__init__)
 
 
-def test_archimateimplementationandmigration::junction_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Junction.__init__)
+def test_archimateimplementationandmigration_junction_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Junction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -242,254 +242,254 @@ def test_nodeelement_constructor_args():
 
 
 
-def test_archimateimplementationandmigration::meaning_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Meaning)
+def test_archimateimplementationandmigration_value_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Value)
 
 
-def test_archimateimplementationandmigration::meaning_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Meaning.__init__)
+def test_archimateimplementationandmigration_value_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Value.__init__)
 
 
-def test_archimateimplementationandmigration::meaning_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Meaning.__init__)
+def test_archimateimplementationandmigration_value_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::product_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Product)
+def test_archimateimplementationandmigration_businessrole_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessRole)
 
 
-def test_archimateimplementationandmigration::product_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Product.__init__)
+def test_archimateimplementationandmigration_businessrole_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessRole.__init__)
 
 
-def test_archimateimplementationandmigration::product_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Product.__init__)
+def test_archimateimplementationandmigration_businessrole_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessrole_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessRole)
+def test_archimateimplementationandmigration_representation_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Representation)
 
 
-def test_archimateimplementationandmigration::businessrole_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessRole.__init__)
+def test_archimateimplementationandmigration_representation_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Representation.__init__)
 
 
-def test_archimateimplementationandmigration::businessrole_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessRole.__init__)
+def test_archimateimplementationandmigration_representation_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Representation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessinterface_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessInterface)
+def test_archimateimplementationandmigration_grouping_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Grouping)
 
 
-def test_archimateimplementationandmigration::businessinterface_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessInterface.__init__)
+def test_archimateimplementationandmigration_grouping_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Grouping.__init__)
 
 
-def test_archimateimplementationandmigration::businessinterface_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessInterface.__init__)
+def test_archimateimplementationandmigration_grouping_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Grouping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessobject_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessObject)
+def test_archimateimplementationandmigration_contract_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Contract)
 
 
-def test_archimateimplementationandmigration::businessobject_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessObject.__init__)
+def test_archimateimplementationandmigration_contract_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Contract.__init__)
 
 
-def test_archimateimplementationandmigration::businessobject_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessObject.__init__)
+def test_archimateimplementationandmigration_contract_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Contract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::contract_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Contract)
+def test_archimateimplementationandmigration_businesscollaboration_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessCollaboration)
 
 
-def test_archimateimplementationandmigration::contract_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Contract.__init__)
+def test_archimateimplementationandmigration_businesscollaboration_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessCollaboration.__init__)
 
 
-def test_archimateimplementationandmigration::contract_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Contract.__init__)
+def test_archimateimplementationandmigration_businesscollaboration_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::value_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Value)
+def test_archimateimplementationandmigration_businessobject_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessObject)
 
 
-def test_archimateimplementationandmigration::value_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Value.__init__)
+def test_archimateimplementationandmigration_businessobject_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessObject.__init__)
 
 
-def test_archimateimplementationandmigration::value_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Value.__init__)
+def test_archimateimplementationandmigration_businessobject_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businesscollaboration_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessCollaboration)
+def test_archimateimplementationandmigration_product_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Product)
 
 
-def test_archimateimplementationandmigration::businesscollaboration_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessCollaboration.__init__)
+def test_archimateimplementationandmigration_product_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Product.__init__)
 
 
-def test_archimateimplementationandmigration::businesscollaboration_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessCollaboration.__init__)
+def test_archimateimplementationandmigration_product_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Product.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::grouping_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Grouping)
+def test_archimateimplementationandmigration_businessinterface_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessInterface)
 
 
-def test_archimateimplementationandmigration::grouping_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Grouping.__init__)
+def test_archimateimplementationandmigration_businessinterface_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessInterface.__init__)
 
 
-def test_archimateimplementationandmigration::grouping_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Grouping.__init__)
+def test_archimateimplementationandmigration_businessinterface_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::representation_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Representation)
+def test_archimateimplementationandmigration_meaning_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Meaning)
 
 
-def test_archimateimplementationandmigration::representation_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Representation.__init__)
+def test_archimateimplementationandmigration_meaning_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Meaning.__init__)
 
 
-def test_archimateimplementationandmigration::representation_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Representation.__init__)
+def test_archimateimplementationandmigration_meaning_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Meaning.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessactor_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessActor)
+def test_archimateimplementationandmigration_businessactor_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessActor)
 
 
-def test_archimateimplementationandmigration::businessactor_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessActor.__init__)
+def test_archimateimplementationandmigration_businessactor_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessActor.__init__)
 
 
-def test_archimateimplementationandmigration::businessactor_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessActor.__init__)
+def test_archimateimplementationandmigration_businessactor_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessActor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::nodeelement_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::NodeElement)
+def test_archimateimplementationandmigration_nodeelement_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_NodeElement)
 
 
-def test_archimateimplementationandmigration::nodeelement_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::NodeElement.__init__)
+def test_archimateimplementationandmigration_nodeelement_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_NodeElement.__init__)
 
 
-def test_archimateimplementationandmigration::nodeelement_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::NodeElement.__init__)
+def test_archimateimplementationandmigration_nodeelement_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_NodeElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessservice_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessService)
+def test_archimateimplementationandmigration_businessservice_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessService)
 
 
-def test_archimateimplementationandmigration::businessservice_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessService.__init__)
+def test_archimateimplementationandmigration_businessservice_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessService.__init__)
 
 
-def test_archimateimplementationandmigration::businessservice_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessService.__init__)
+def test_archimateimplementationandmigration_businessservice_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessevent_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessEvent)
+def test_archimateimplementationandmigration_businessevent_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessEvent)
 
 
-def test_archimateimplementationandmigration::businessevent_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessEvent.__init__)
+def test_archimateimplementationandmigration_businessevent_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessEvent.__init__)
 
 
-def test_archimateimplementationandmigration::businessevent_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessEvent.__init__)
+def test_archimateimplementationandmigration_businessevent_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessinteraction_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessInteraction)
+def test_archimateimplementationandmigration_businessinteraction_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessInteraction)
 
 
-def test_archimateimplementationandmigration::businessinteraction_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessInteraction.__init__)
+def test_archimateimplementationandmigration_businessinteraction_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessInteraction.__init__)
 
 
-def test_archimateimplementationandmigration::businessinteraction_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessInteraction.__init__)
+def test_archimateimplementationandmigration_businessinteraction_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessfunction_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessFunction)
+def test_archimateimplementationandmigration_businessfunction_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessFunction)
 
 
-def test_archimateimplementationandmigration::businessfunction_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessFunction.__init__)
+def test_archimateimplementationandmigration_businessfunction_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessFunction.__init__)
 
 
-def test_archimateimplementationandmigration::businessfunction_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessFunction.__init__)
+def test_archimateimplementationandmigration_businessfunction_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::businessprocess_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::BusinessProcess)
+def test_archimateimplementationandmigration_businessprocess_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_BusinessProcess)
 
 
-def test_archimateimplementationandmigration::businessprocess_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::BusinessProcess.__init__)
+def test_archimateimplementationandmigration_businessprocess_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_BusinessProcess.__init__)
 
 
-def test_archimateimplementationandmigration::businessprocess_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::BusinessProcess.__init__)
+def test_archimateimplementationandmigration_businessprocess_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_BusinessProcess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimateimplementationandmigration::location_is_not_abstract():
-    assert not inspect.isabstract(ArchimateImplementationAndMigration::Location)
+def test_archimateimplementationandmigration_location_is_not_abstract():
+    assert not inspect.isabstract(ArchimateImplementationAndMigration_Location)
 
 
-def test_archimateimplementationandmigration::location_constructor_exists():
-    assert callable(ArchimateImplementationAndMigration::Location.__init__)
+def test_archimateimplementationandmigration_location_constructor_exists():
+    assert callable(ArchimateImplementationAndMigration_Location.__init__)
 
 
-def test_archimateimplementationandmigration::location_constructor_args():
-    sig = inspect.signature(ArchimateImplementationAndMigration::Location.__init__)
+def test_archimateimplementationandmigration_location_constructor_args():
+    sig = inspect.signature(ArchimateImplementationAndMigration_Location.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -504,259 +504,259 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ArchimateImplementationAndMigration::Relationship_strategy = st.builds(
-    ArchimateImplementationAndMigration::Relationship,
+ArchimateImplementationAndMigration_Relationship_strategy = st.builds(
+    ArchimateImplementationAndMigration_Relationship,
 )
 Relationship_strategy = st.builds(
     Relationship,
 )
-ArchimateImplementationAndMigration::Flow_strategy = st.builds(
-    ArchimateImplementationAndMigration::Flow,
+ArchimateImplementationAndMigration_Association_strategy = st.builds(
+    ArchimateImplementationAndMigration_Association,
 )
-ArchimateImplementationAndMigration::Composition_strategy = st.builds(
-    ArchimateImplementationAndMigration::Composition,
+ArchimateImplementationAndMigration_Realization_strategy = st.builds(
+    ArchimateImplementationAndMigration_Realization,
 )
-ArchimateImplementationAndMigration::Assignment_strategy = st.builds(
-    ArchimateImplementationAndMigration::Assignment,
+ArchimateImplementationAndMigration_UsedBy_strategy = st.builds(
+    ArchimateImplementationAndMigration_UsedBy,
 )
-ArchimateImplementationAndMigration::Aggregation_strategy = st.builds(
-    ArchimateImplementationAndMigration::Aggregation,
+ArchimateImplementationAndMigration_Triggering_strategy = st.builds(
+    ArchimateImplementationAndMigration_Triggering,
 )
-ArchimateImplementationAndMigration::Access_strategy = st.builds(
-    ArchimateImplementationAndMigration::Access,
+ArchimateImplementationAndMigration_Aggregation_strategy = st.builds(
+    ArchimateImplementationAndMigration_Aggregation,
 )
-ArchimateImplementationAndMigration::Specialization_strategy = st.builds(
-    ArchimateImplementationAndMigration::Specialization,
+ArchimateImplementationAndMigration_Assignment_strategy = st.builds(
+    ArchimateImplementationAndMigration_Assignment,
 )
-ArchimateImplementationAndMigration::Realization_strategy = st.builds(
-    ArchimateImplementationAndMigration::Realization,
+ArchimateImplementationAndMigration_Composition_strategy = st.builds(
+    ArchimateImplementationAndMigration_Composition,
 )
-ArchimateImplementationAndMigration::Association_strategy = st.builds(
-    ArchimateImplementationAndMigration::Association,
+ArchimateImplementationAndMigration_Flow_strategy = st.builds(
+    ArchimateImplementationAndMigration_Flow,
 )
-ArchimateImplementationAndMigration::Triggering_strategy = st.builds(
-    ArchimateImplementationAndMigration::Triggering,
+ArchimateImplementationAndMigration_Specialization_strategy = st.builds(
+    ArchimateImplementationAndMigration_Specialization,
 )
-ArchimateImplementationAndMigration::UsedBy_strategy = st.builds(
-    ArchimateImplementationAndMigration::UsedBy,
+ArchimateImplementationAndMigration_Access_strategy = st.builds(
+    ArchimateImplementationAndMigration_Access,
 )
-ArchimateImplementationAndMigration::Junction_strategy = st.builds(
-    ArchimateImplementationAndMigration::Junction,
+ArchimateImplementationAndMigration_Junction_strategy = st.builds(
+    ArchimateImplementationAndMigration_Junction,
 )
 NodeElement_strategy = st.builds(
     NodeElement,
 )
-ArchimateImplementationAndMigration::Meaning_strategy = st.builds(
-    ArchimateImplementationAndMigration::Meaning,
+ArchimateImplementationAndMigration_Value_strategy = st.builds(
+    ArchimateImplementationAndMigration_Value,
 )
-ArchimateImplementationAndMigration::Product_strategy = st.builds(
-    ArchimateImplementationAndMigration::Product,
+ArchimateImplementationAndMigration_BusinessRole_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessRole,
 )
-ArchimateImplementationAndMigration::BusinessRole_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessRole,
+ArchimateImplementationAndMigration_Representation_strategy = st.builds(
+    ArchimateImplementationAndMigration_Representation,
 )
-ArchimateImplementationAndMigration::BusinessInterface_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessInterface,
+ArchimateImplementationAndMigration_Grouping_strategy = st.builds(
+    ArchimateImplementationAndMigration_Grouping,
 )
-ArchimateImplementationAndMigration::BusinessObject_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessObject,
+ArchimateImplementationAndMigration_Contract_strategy = st.builds(
+    ArchimateImplementationAndMigration_Contract,
 )
-ArchimateImplementationAndMigration::Contract_strategy = st.builds(
-    ArchimateImplementationAndMigration::Contract,
+ArchimateImplementationAndMigration_BusinessCollaboration_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessCollaboration,
 )
-ArchimateImplementationAndMigration::Value_strategy = st.builds(
-    ArchimateImplementationAndMigration::Value,
+ArchimateImplementationAndMigration_BusinessObject_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessObject,
 )
-ArchimateImplementationAndMigration::BusinessCollaboration_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessCollaboration,
+ArchimateImplementationAndMigration_Product_strategy = st.builds(
+    ArchimateImplementationAndMigration_Product,
 )
-ArchimateImplementationAndMigration::Grouping_strategy = st.builds(
-    ArchimateImplementationAndMigration::Grouping,
+ArchimateImplementationAndMigration_BusinessInterface_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessInterface,
 )
-ArchimateImplementationAndMigration::Representation_strategy = st.builds(
-    ArchimateImplementationAndMigration::Representation,
+ArchimateImplementationAndMigration_Meaning_strategy = st.builds(
+    ArchimateImplementationAndMigration_Meaning,
 )
-ArchimateImplementationAndMigration::BusinessActor_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessActor,
+ArchimateImplementationAndMigration_BusinessActor_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessActor,
 )
-ArchimateImplementationAndMigration::NodeElement_strategy = st.builds(
-    ArchimateImplementationAndMigration::NodeElement,
+ArchimateImplementationAndMigration_NodeElement_strategy = st.builds(
+    ArchimateImplementationAndMigration_NodeElement,
 )
-ArchimateImplementationAndMigration::BusinessService_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessService,
+ArchimateImplementationAndMigration_BusinessService_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessService,
 )
-ArchimateImplementationAndMigration::BusinessEvent_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessEvent,
+ArchimateImplementationAndMigration_BusinessEvent_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessEvent,
 )
-ArchimateImplementationAndMigration::BusinessInteraction_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessInteraction,
+ArchimateImplementationAndMigration_BusinessInteraction_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessInteraction,
 )
-ArchimateImplementationAndMigration::BusinessFunction_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessFunction,
+ArchimateImplementationAndMigration_BusinessFunction_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessFunction,
 )
-ArchimateImplementationAndMigration::BusinessProcess_strategy = st.builds(
-    ArchimateImplementationAndMigration::BusinessProcess,
+ArchimateImplementationAndMigration_BusinessProcess_strategy = st.builds(
+    ArchimateImplementationAndMigration_BusinessProcess,
 )
-ArchimateImplementationAndMigration::Location_strategy = st.builds(
-    ArchimateImplementationAndMigration::Location,
+ArchimateImplementationAndMigration_Location_strategy = st.builds(
+    ArchimateImplementationAndMigration_Location,
 )
 
-@given(instance=ArchimateImplementationAndMigration::Relationship_strategy)
+@given(instance=ArchimateImplementationAndMigration_Relationship_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::relationship_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Relationship)
+def test_archimateimplementationandmigration_relationship_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Relationship)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=ArchimateImplementationAndMigration::Flow_strategy)
+@given(instance=ArchimateImplementationAndMigration_Association_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::flow_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Flow)
+def test_archimateimplementationandmigration_association_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Association)
 
-@given(instance=ArchimateImplementationAndMigration::Composition_strategy)
+@given(instance=ArchimateImplementationAndMigration_Realization_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::composition_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Composition)
+def test_archimateimplementationandmigration_realization_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Realization)
 
-@given(instance=ArchimateImplementationAndMigration::Assignment_strategy)
+@given(instance=ArchimateImplementationAndMigration_UsedBy_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::assignment_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Assignment)
+def test_archimateimplementationandmigration_usedby_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_UsedBy)
 
-@given(instance=ArchimateImplementationAndMigration::Aggregation_strategy)
+@given(instance=ArchimateImplementationAndMigration_Triggering_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::aggregation_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Aggregation)
+def test_archimateimplementationandmigration_triggering_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Triggering)
 
-@given(instance=ArchimateImplementationAndMigration::Access_strategy)
+@given(instance=ArchimateImplementationAndMigration_Aggregation_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::access_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Access)
+def test_archimateimplementationandmigration_aggregation_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Aggregation)
 
-@given(instance=ArchimateImplementationAndMigration::Specialization_strategy)
+@given(instance=ArchimateImplementationAndMigration_Assignment_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::specialization_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Specialization)
+def test_archimateimplementationandmigration_assignment_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Assignment)
 
-@given(instance=ArchimateImplementationAndMigration::Realization_strategy)
+@given(instance=ArchimateImplementationAndMigration_Composition_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::realization_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Realization)
+def test_archimateimplementationandmigration_composition_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Composition)
 
-@given(instance=ArchimateImplementationAndMigration::Association_strategy)
+@given(instance=ArchimateImplementationAndMigration_Flow_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::association_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Association)
+def test_archimateimplementationandmigration_flow_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Flow)
 
-@given(instance=ArchimateImplementationAndMigration::Triggering_strategy)
+@given(instance=ArchimateImplementationAndMigration_Specialization_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::triggering_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Triggering)
+def test_archimateimplementationandmigration_specialization_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Specialization)
 
-@given(instance=ArchimateImplementationAndMigration::UsedBy_strategy)
+@given(instance=ArchimateImplementationAndMigration_Access_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::usedby_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::UsedBy)
+def test_archimateimplementationandmigration_access_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Access)
 
-@given(instance=ArchimateImplementationAndMigration::Junction_strategy)
+@given(instance=ArchimateImplementationAndMigration_Junction_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::junction_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Junction)
+def test_archimateimplementationandmigration_junction_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Junction)
 
 @given(instance=NodeElement_strategy)
 @settings(max_examples=50)
 def test_nodeelement_instantiation(instance):
     assert isinstance(instance, NodeElement)
 
-@given(instance=ArchimateImplementationAndMigration::Meaning_strategy)
+@given(instance=ArchimateImplementationAndMigration_Value_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::meaning_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Meaning)
+def test_archimateimplementationandmigration_value_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Value)
 
-@given(instance=ArchimateImplementationAndMigration::Product_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessRole_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::product_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Product)
+def test_archimateimplementationandmigration_businessrole_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessRole)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessRole_strategy)
+@given(instance=ArchimateImplementationAndMigration_Representation_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessrole_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessRole)
+def test_archimateimplementationandmigration_representation_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Representation)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessInterface_strategy)
+@given(instance=ArchimateImplementationAndMigration_Grouping_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessinterface_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessInterface)
+def test_archimateimplementationandmigration_grouping_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Grouping)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessObject_strategy)
+@given(instance=ArchimateImplementationAndMigration_Contract_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessobject_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessObject)
+def test_archimateimplementationandmigration_contract_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Contract)
 
-@given(instance=ArchimateImplementationAndMigration::Contract_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessCollaboration_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::contract_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Contract)
+def test_archimateimplementationandmigration_businesscollaboration_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessCollaboration)
 
-@given(instance=ArchimateImplementationAndMigration::Value_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessObject_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::value_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Value)
+def test_archimateimplementationandmigration_businessobject_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessObject)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessCollaboration_strategy)
+@given(instance=ArchimateImplementationAndMigration_Product_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businesscollaboration_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessCollaboration)
+def test_archimateimplementationandmigration_product_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Product)
 
-@given(instance=ArchimateImplementationAndMigration::Grouping_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessInterface_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::grouping_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Grouping)
+def test_archimateimplementationandmigration_businessinterface_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessInterface)
 
-@given(instance=ArchimateImplementationAndMigration::Representation_strategy)
+@given(instance=ArchimateImplementationAndMigration_Meaning_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::representation_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Representation)
+def test_archimateimplementationandmigration_meaning_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Meaning)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessActor_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessActor_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessactor_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessActor)
+def test_archimateimplementationandmigration_businessactor_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessActor)
 
-@given(instance=ArchimateImplementationAndMigration::NodeElement_strategy)
+@given(instance=ArchimateImplementationAndMigration_NodeElement_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::nodeelement_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::NodeElement)
+def test_archimateimplementationandmigration_nodeelement_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_NodeElement)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessService_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessService_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessservice_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessService)
+def test_archimateimplementationandmigration_businessservice_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessService)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessEvent_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessEvent_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessevent_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessEvent)
+def test_archimateimplementationandmigration_businessevent_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessEvent)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessInteraction_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessInteraction_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessinteraction_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessInteraction)
+def test_archimateimplementationandmigration_businessinteraction_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessInteraction)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessFunction_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessFunction_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessfunction_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessFunction)
+def test_archimateimplementationandmigration_businessfunction_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessFunction)
 
-@given(instance=ArchimateImplementationAndMigration::BusinessProcess_strategy)
+@given(instance=ArchimateImplementationAndMigration_BusinessProcess_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::businessprocess_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::BusinessProcess)
+def test_archimateimplementationandmigration_businessprocess_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_BusinessProcess)
 
-@given(instance=ArchimateImplementationAndMigration::Location_strategy)
+@given(instance=ArchimateImplementationAndMigration_Location_strategy)
 @settings(max_examples=50)
-def test_archimateimplementationandmigration::location_instantiation(instance):
-    assert isinstance(instance, ArchimateImplementationAndMigration::Location)
+def test_archimateimplementationandmigration_location_instantiation(instance):
+    assert isinstance(instance, ArchimateImplementationAndMigration_Location)

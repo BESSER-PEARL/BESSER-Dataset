@@ -3,64 +3,64 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ExactNumericType,
-    DDL::Dec,
-    DDL::Integer,
-    DDL::Decimal,
-    DDL::Numeric,
+    DDL_Decimal,
+    DDL_Integer,
+    DDL_Dec,
+    DDL_Numeric,
     NumericType,
-    DDL::ExactNumericType,
+    DDL_ExactNumericType,
     BitStringType,
-    DDL::BitVarying,
-    DDL::Bit,
+    DDL_BitVarying,
+    DDL_Bit,
     DatetimeType,
-    DDL::Time,
-    DDL::TimeStamp,
-    DDL::Date,
+    DDL_Time,
+    DDL_TimeStamp,
+    DDL_Date,
     ApproximateNumericType,
-    DDL::DoublePrecision,
-    DDL::Real,
-    DDL::Float,
-    DDL::ApproximateNumericType,
-    DDL::Small,
-    DDL::Int,
-    DDL::ValuesCheck,
-    DDL::Type,
+    DDL_Real,
+    DDL_DoublePrecision,
+    DDL_Float,
+    DDL_ApproximateNumericType,
+    DDL_Small,
+    DDL_Int,
+    DDL_ValuesCheck,
+    DDL_Type,
     NationalCharacterStringType,
-    DDL::NationalCharVarying,
-    DDL::NChar,
-    DDL::NCharVarying,
-    DDL::NationalChar,
-    DDL::NationalCharacterVarying,
-    DDL::NationalCharacter,
+    DDL_NationalCharacterVarying,
+    DDL_NCharVarying,
+    DDL_NationalChar,
+    DDL_NChar,
+    DDL_NationalCharVarying,
+    DDL_NationalCharacter,
     CharacterStringType,
-    DDL::CharVarying,
-    DDL::Char,
-    DDL::Varchar,
-    DDL::CharacterVarying,
-    DDL::Character,
+    DDL_CharVarying,
+    DDL_Varchar,
+    DDL_CharacterVarying,
+    DDL_Char,
+    DDL_Character,
     Type,
-    DDL::Interval,
-    DDL::NationalCharacterStringType,
-    DDL::DatetimeType,
-    DDL::BitStringType,
-    DDL::NumericType,
-    DDL::CharacterStringType,
+    DDL_DatetimeType,
+    DDL_Interval,
+    DDL_BitStringType,
+    DDL_NationalCharacterStringType,
+    DDL_NumericType,
+    DDL_CharacterStringType,
     NamedElement,
     Statement,
-    DDL::Table,
-    DDL::Database,
-    DDL::NamedElement,
-    DDL::Statement,
-    DDL::DDLDefinition,
-    DDL::Check,
-    DDL::Fk,
-    DDL::Ck,
-    DDL::Pk,
-    DDL::Column,
+    DDL_Table,
+    DDL_Database,
+    DDL_NamedElement,
+    DDL_Statement,
+    DDL_DDLDefinition,
+    DDL_Check,
+    DDL_Fk,
+    DDL_Ck,
+    DDL_Pk,
+    DDL_Column,
 )
 
 # =============================================================================
@@ -83,33 +83,33 @@ def test_exactnumerictype_constructor_args():
 
 
 
-def test_ddl::dec_is_not_abstract():
-    assert not inspect.isabstract(DDL::Dec)
+def test_ddl_decimal_is_not_abstract():
+    assert not inspect.isabstract(DDL_Decimal)
 
 
-def test_ddl::dec_constructor_exists():
-    assert callable(DDL::Dec.__init__)
+def test_ddl_decimal_constructor_exists():
+    assert callable(DDL_Decimal.__init__)
 
 
-def test_ddl::dec_constructor_args():
-    sig = inspect.signature(DDL::Dec.__init__)
+def test_ddl_decimal_constructor_args():
+    sig = inspect.signature(DDL_Decimal.__init__)
     params = list(sig.parameters.keys())
     assert "precision" in params, "Missing parameter 'precision'"
     assert "scale" in params, "Missing parameter 'scale'"
 
-def test_ddl::dec_has_precision():
-    assert hasattr(DDL::Dec, "precision")
+def test_ddl_decimal_has_precision():
+    assert hasattr(DDL_Decimal, "precision")
     descriptor = None
-    for klass in DDL::Dec.__mro__:
+    for klass in DDL_Decimal.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::dec_has_scale():
-    assert hasattr(DDL::Dec, "scale")
+def test_ddl_decimal_has_scale():
+    assert hasattr(DDL_Decimal, "scale")
     descriptor = None
-    for klass in DDL::Dec.__mro__:
+    for klass in DDL_Decimal.__mro__:
         if "scale" in klass.__dict__:
             descriptor = klass.__dict__["scale"]
             break
@@ -117,81 +117,81 @@ def test_ddl::dec_has_scale():
 
 
 
-def test_ddl::integer_is_not_abstract():
-    assert not inspect.isabstract(DDL::Integer)
+def test_ddl_integer_is_not_abstract():
+    assert not inspect.isabstract(DDL_Integer)
 
 
-def test_ddl::integer_constructor_exists():
-    assert callable(DDL::Integer.__init__)
+def test_ddl_integer_constructor_exists():
+    assert callable(DDL_Integer.__init__)
 
 
-def test_ddl::integer_constructor_args():
-    sig = inspect.signature(DDL::Integer.__init__)
+def test_ddl_integer_constructor_args():
+    sig = inspect.signature(DDL_Integer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::decimal_is_not_abstract():
-    assert not inspect.isabstract(DDL::Decimal)
+def test_ddl_dec_is_not_abstract():
+    assert not inspect.isabstract(DDL_Dec)
 
 
-def test_ddl::decimal_constructor_exists():
-    assert callable(DDL::Decimal.__init__)
+def test_ddl_dec_constructor_exists():
+    assert callable(DDL_Dec.__init__)
 
 
-def test_ddl::decimal_constructor_args():
-    sig = inspect.signature(DDL::Decimal.__init__)
+def test_ddl_dec_constructor_args():
+    sig = inspect.signature(DDL_Dec.__init__)
     params = list(sig.parameters.keys())
-    assert "precision" in params, "Missing parameter 'precision'"
     assert "scale" in params, "Missing parameter 'scale'"
+    assert "precision" in params, "Missing parameter 'precision'"
 
-def test_ddl::decimal_has_precision():
-    assert hasattr(DDL::Decimal, "precision")
+def test_ddl_dec_has_scale():
+    assert hasattr(DDL_Dec, "scale")
     descriptor = None
-    for klass in DDL::Decimal.__mro__:
-        if "precision" in klass.__dict__:
-            descriptor = klass.__dict__["precision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::decimal_has_scale():
-    assert hasattr(DDL::Decimal, "scale")
-    descriptor = None
-    for klass in DDL::Decimal.__mro__:
+    for klass in DDL_Dec.__mro__:
         if "scale" in klass.__dict__:
             descriptor = klass.__dict__["scale"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ddl::numeric_is_not_abstract():
-    assert not inspect.isabstract(DDL::Numeric)
-
-
-def test_ddl::numeric_constructor_exists():
-    assert callable(DDL::Numeric.__init__)
-
-
-def test_ddl::numeric_constructor_args():
-    sig = inspect.signature(DDL::Numeric.__init__)
-    params = list(sig.parameters.keys())
-    assert "precision" in params, "Missing parameter 'precision'"
-    assert "scale" in params, "Missing parameter 'scale'"
-
-def test_ddl::numeric_has_precision():
-    assert hasattr(DDL::Numeric, "precision")
+def test_ddl_dec_has_precision():
+    assert hasattr(DDL_Dec, "precision")
     descriptor = None
-    for klass in DDL::Numeric.__mro__:
+    for klass in DDL_Dec.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::numeric_has_scale():
-    assert hasattr(DDL::Numeric, "scale")
+
+
+def test_ddl_numeric_is_not_abstract():
+    assert not inspect.isabstract(DDL_Numeric)
+
+
+def test_ddl_numeric_constructor_exists():
+    assert callable(DDL_Numeric.__init__)
+
+
+def test_ddl_numeric_constructor_args():
+    sig = inspect.signature(DDL_Numeric.__init__)
+    params = list(sig.parameters.keys())
+    assert "precision" in params, "Missing parameter 'precision'"
+    assert "scale" in params, "Missing parameter 'scale'"
+
+def test_ddl_numeric_has_precision():
+    assert hasattr(DDL_Numeric, "precision")
     descriptor = None
-    for klass in DDL::Numeric.__mro__:
+    for klass in DDL_Numeric.__mro__:
+        if "precision" in klass.__dict__:
+            descriptor = klass.__dict__["precision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddl_numeric_has_scale():
+    assert hasattr(DDL_Numeric, "scale")
+    descriptor = None
+    for klass in DDL_Numeric.__mro__:
         if "scale" in klass.__dict__:
             descriptor = klass.__dict__["scale"]
             break
@@ -213,16 +213,16 @@ def test_numerictype_constructor_args():
 
 
 
-def test_ddl::exactnumerictype_is_not_abstract():
-    assert not inspect.isabstract(DDL::ExactNumericType)
+def test_ddl_exactnumerictype_is_not_abstract():
+    assert not inspect.isabstract(DDL_ExactNumericType)
 
 
-def test_ddl::exactnumerictype_constructor_exists():
-    assert callable(DDL::ExactNumericType.__init__)
+def test_ddl_exactnumerictype_constructor_exists():
+    assert callable(DDL_ExactNumericType.__init__)
 
 
-def test_ddl::exactnumerictype_constructor_args():
-    sig = inspect.signature(DDL::ExactNumericType.__init__)
+def test_ddl_exactnumerictype_constructor_args():
+    sig = inspect.signature(DDL_ExactNumericType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -241,30 +241,30 @@ def test_bitstringtype_constructor_args():
 
 
 
-def test_ddl::bitvarying_is_not_abstract():
-    assert not inspect.isabstract(DDL::BitVarying)
+def test_ddl_bitvarying_is_not_abstract():
+    assert not inspect.isabstract(DDL_BitVarying)
 
 
-def test_ddl::bitvarying_constructor_exists():
-    assert callable(DDL::BitVarying.__init__)
+def test_ddl_bitvarying_constructor_exists():
+    assert callable(DDL_BitVarying.__init__)
 
 
-def test_ddl::bitvarying_constructor_args():
-    sig = inspect.signature(DDL::BitVarying.__init__)
+def test_ddl_bitvarying_constructor_args():
+    sig = inspect.signature(DDL_BitVarying.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::bit_is_not_abstract():
-    assert not inspect.isabstract(DDL::Bit)
+def test_ddl_bit_is_not_abstract():
+    assert not inspect.isabstract(DDL_Bit)
 
 
-def test_ddl::bit_constructor_exists():
-    assert callable(DDL::Bit.__init__)
+def test_ddl_bit_constructor_exists():
+    assert callable(DDL_Bit.__init__)
 
 
-def test_ddl::bit_constructor_args():
-    sig = inspect.signature(DDL::Bit.__init__)
+def test_ddl_bit_constructor_args():
+    sig = inspect.signature(DDL_Bit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -283,33 +283,33 @@ def test_datetimetype_constructor_args():
 
 
 
-def test_ddl::time_is_not_abstract():
-    assert not inspect.isabstract(DDL::Time)
+def test_ddl_time_is_not_abstract():
+    assert not inspect.isabstract(DDL_Time)
 
 
-def test_ddl::time_constructor_exists():
-    assert callable(DDL::Time.__init__)
+def test_ddl_time_constructor_exists():
+    assert callable(DDL_Time.__init__)
 
 
-def test_ddl::time_constructor_args():
-    sig = inspect.signature(DDL::Time.__init__)
+def test_ddl_time_constructor_args():
+    sig = inspect.signature(DDL_Time.__init__)
     params = list(sig.parameters.keys())
     assert "precision" in params, "Missing parameter 'precision'"
     assert "withTimeZone" in params, "Missing parameter 'withTimeZone'"
 
-def test_ddl::time_has_precision():
-    assert hasattr(DDL::Time, "precision")
+def test_ddl_time_has_precision():
+    assert hasattr(DDL_Time, "precision")
     descriptor = None
-    for klass in DDL::Time.__mro__:
+    for klass in DDL_Time.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::time_has_withTimeZone():
-    assert hasattr(DDL::Time, "withTimeZone")
+def test_ddl_time_has_withTimeZone():
+    assert hasattr(DDL_Time, "withTimeZone")
     descriptor = None
-    for klass in DDL::Time.__mro__:
+    for klass in DDL_Time.__mro__:
         if "withTimeZone" in klass.__dict__:
             descriptor = klass.__dict__["withTimeZone"]
             break
@@ -317,50 +317,50 @@ def test_ddl::time_has_withTimeZone():
 
 
 
-def test_ddl::timestamp_is_not_abstract():
-    assert not inspect.isabstract(DDL::TimeStamp)
+def test_ddl_timestamp_is_not_abstract():
+    assert not inspect.isabstract(DDL_TimeStamp)
 
 
-def test_ddl::timestamp_constructor_exists():
-    assert callable(DDL::TimeStamp.__init__)
+def test_ddl_timestamp_constructor_exists():
+    assert callable(DDL_TimeStamp.__init__)
 
 
-def test_ddl::timestamp_constructor_args():
-    sig = inspect.signature(DDL::TimeStamp.__init__)
+def test_ddl_timestamp_constructor_args():
+    sig = inspect.signature(DDL_TimeStamp.__init__)
     params = list(sig.parameters.keys())
-    assert "precision" in params, "Missing parameter 'precision'"
     assert "withTimeZone" in params, "Missing parameter 'withTimeZone'"
+    assert "precision" in params, "Missing parameter 'precision'"
 
-def test_ddl::timestamp_has_precision():
-    assert hasattr(DDL::TimeStamp, "precision")
+def test_ddl_timestamp_has_withTimeZone():
+    assert hasattr(DDL_TimeStamp, "withTimeZone")
     descriptor = None
-    for klass in DDL::TimeStamp.__mro__:
-        if "precision" in klass.__dict__:
-            descriptor = klass.__dict__["precision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::timestamp_has_withTimeZone():
-    assert hasattr(DDL::TimeStamp, "withTimeZone")
-    descriptor = None
-    for klass in DDL::TimeStamp.__mro__:
+    for klass in DDL_TimeStamp.__mro__:
         if "withTimeZone" in klass.__dict__:
             descriptor = klass.__dict__["withTimeZone"]
             break
     assert isinstance(descriptor, property)
 
+def test_ddl_timestamp_has_precision():
+    assert hasattr(DDL_TimeStamp, "precision")
+    descriptor = None
+    for klass in DDL_TimeStamp.__mro__:
+        if "precision" in klass.__dict__:
+            descriptor = klass.__dict__["precision"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ddl::date_is_not_abstract():
-    assert not inspect.isabstract(DDL::Date)
+
+def test_ddl_date_is_not_abstract():
+    assert not inspect.isabstract(DDL_Date)
 
 
-def test_ddl::date_constructor_exists():
-    assert callable(DDL::Date.__init__)
+def test_ddl_date_constructor_exists():
+    assert callable(DDL_Date.__init__)
 
 
-def test_ddl::date_constructor_args():
-    sig = inspect.signature(DDL::Date.__init__)
+def test_ddl_date_constructor_args():
+    sig = inspect.signature(DDL_Date.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -379,51 +379,51 @@ def test_approximatenumerictype_constructor_args():
 
 
 
-def test_ddl::doubleprecision_is_not_abstract():
-    assert not inspect.isabstract(DDL::DoublePrecision)
+def test_ddl_real_is_not_abstract():
+    assert not inspect.isabstract(DDL_Real)
 
 
-def test_ddl::doubleprecision_constructor_exists():
-    assert callable(DDL::DoublePrecision.__init__)
+def test_ddl_real_constructor_exists():
+    assert callable(DDL_Real.__init__)
 
 
-def test_ddl::doubleprecision_constructor_args():
-    sig = inspect.signature(DDL::DoublePrecision.__init__)
+def test_ddl_real_constructor_args():
+    sig = inspect.signature(DDL_Real.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::real_is_not_abstract():
-    assert not inspect.isabstract(DDL::Real)
+def test_ddl_doubleprecision_is_not_abstract():
+    assert not inspect.isabstract(DDL_DoublePrecision)
 
 
-def test_ddl::real_constructor_exists():
-    assert callable(DDL::Real.__init__)
+def test_ddl_doubleprecision_constructor_exists():
+    assert callable(DDL_DoublePrecision.__init__)
 
 
-def test_ddl::real_constructor_args():
-    sig = inspect.signature(DDL::Real.__init__)
+def test_ddl_doubleprecision_constructor_args():
+    sig = inspect.signature(DDL_DoublePrecision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::float_is_not_abstract():
-    assert not inspect.isabstract(DDL::Float)
+def test_ddl_float_is_not_abstract():
+    assert not inspect.isabstract(DDL_Float)
 
 
-def test_ddl::float_constructor_exists():
-    assert callable(DDL::Float.__init__)
+def test_ddl_float_constructor_exists():
+    assert callable(DDL_Float.__init__)
 
 
-def test_ddl::float_constructor_args():
-    sig = inspect.signature(DDL::Float.__init__)
+def test_ddl_float_constructor_args():
+    sig = inspect.signature(DDL_Float.__init__)
     params = list(sig.parameters.keys())
     assert "precision" in params, "Missing parameter 'precision'"
 
-def test_ddl::float_has_precision():
-    assert hasattr(DDL::Float, "precision")
+def test_ddl_float_has_precision():
+    assert hasattr(DDL_Float, "precision")
     descriptor = None
-    for klass in DDL::Float.__mro__:
+    for klass in DDL_Float.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
@@ -431,95 +431,95 @@ def test_ddl::float_has_precision():
 
 
 
-def test_ddl::approximatenumerictype_is_not_abstract():
-    assert not inspect.isabstract(DDL::ApproximateNumericType)
+def test_ddl_approximatenumerictype_is_not_abstract():
+    assert not inspect.isabstract(DDL_ApproximateNumericType)
 
 
-def test_ddl::approximatenumerictype_constructor_exists():
-    assert callable(DDL::ApproximateNumericType.__init__)
+def test_ddl_approximatenumerictype_constructor_exists():
+    assert callable(DDL_ApproximateNumericType.__init__)
 
 
-def test_ddl::approximatenumerictype_constructor_args():
-    sig = inspect.signature(DDL::ApproximateNumericType.__init__)
+def test_ddl_approximatenumerictype_constructor_args():
+    sig = inspect.signature(DDL_ApproximateNumericType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::small_is_not_abstract():
-    assert not inspect.isabstract(DDL::Small)
+def test_ddl_small_is_not_abstract():
+    assert not inspect.isabstract(DDL_Small)
 
 
-def test_ddl::small_constructor_exists():
-    assert callable(DDL::Small.__init__)
+def test_ddl_small_constructor_exists():
+    assert callable(DDL_Small.__init__)
 
 
-def test_ddl::small_constructor_args():
-    sig = inspect.signature(DDL::Small.__init__)
+def test_ddl_small_constructor_args():
+    sig = inspect.signature(DDL_Small.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::int_is_not_abstract():
-    assert not inspect.isabstract(DDL::Int)
+def test_ddl_int_is_not_abstract():
+    assert not inspect.isabstract(DDL_Int)
 
 
-def test_ddl::int_constructor_exists():
-    assert callable(DDL::Int.__init__)
+def test_ddl_int_constructor_exists():
+    assert callable(DDL_Int.__init__)
 
 
-def test_ddl::int_constructor_args():
-    sig = inspect.signature(DDL::Int.__init__)
+def test_ddl_int_constructor_args():
+    sig = inspect.signature(DDL_Int.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::valuescheck_is_not_abstract():
-    assert not inspect.isabstract(DDL::ValuesCheck)
+def test_ddl_valuescheck_is_not_abstract():
+    assert not inspect.isabstract(DDL_ValuesCheck)
 
 
-def test_ddl::valuescheck_constructor_exists():
-    assert callable(DDL::ValuesCheck.__init__)
+def test_ddl_valuescheck_constructor_exists():
+    assert callable(DDL_ValuesCheck.__init__)
 
 
-def test_ddl::valuescheck_constructor_args():
-    sig = inspect.signature(DDL::ValuesCheck.__init__)
+def test_ddl_valuescheck_constructor_args():
+    sig = inspect.signature(DDL_ValuesCheck.__init__)
     params = list(sig.parameters.keys())
     assert "columnName" in params, "Missing parameter 'columnName'"
     assert "comparator" in params, "Missing parameter 'comparator'"
     assert "logConjuntion" in params, "Missing parameter 'logConjuntion'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ddl::valuescheck_has_columnName():
-    assert hasattr(DDL::ValuesCheck, "columnName")
+def test_ddl_valuescheck_has_columnName():
+    assert hasattr(DDL_ValuesCheck, "columnName")
     descriptor = None
-    for klass in DDL::ValuesCheck.__mro__:
+    for klass in DDL_ValuesCheck.__mro__:
         if "columnName" in klass.__dict__:
             descriptor = klass.__dict__["columnName"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::valuescheck_has_comparator():
-    assert hasattr(DDL::ValuesCheck, "comparator")
+def test_ddl_valuescheck_has_comparator():
+    assert hasattr(DDL_ValuesCheck, "comparator")
     descriptor = None
-    for klass in DDL::ValuesCheck.__mro__:
+    for klass in DDL_ValuesCheck.__mro__:
         if "comparator" in klass.__dict__:
             descriptor = klass.__dict__["comparator"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::valuescheck_has_logConjuntion():
-    assert hasattr(DDL::ValuesCheck, "logConjuntion")
+def test_ddl_valuescheck_has_logConjuntion():
+    assert hasattr(DDL_ValuesCheck, "logConjuntion")
     descriptor = None
-    for klass in DDL::ValuesCheck.__mro__:
+    for klass in DDL_ValuesCheck.__mro__:
         if "logConjuntion" in klass.__dict__:
             descriptor = klass.__dict__["logConjuntion"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::valuescheck_has_value():
-    assert hasattr(DDL::ValuesCheck, "value")
+def test_ddl_valuescheck_has_value():
+    assert hasattr(DDL_ValuesCheck, "value")
     descriptor = None
-    for klass in DDL::ValuesCheck.__mro__:
+    for klass in DDL_ValuesCheck.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -527,16 +527,16 @@ def test_ddl::valuescheck_has_value():
 
 
 
-def test_ddl::type_is_not_abstract():
-    assert not inspect.isabstract(DDL::Type)
+def test_ddl_type_is_not_abstract():
+    assert not inspect.isabstract(DDL_Type)
 
 
-def test_ddl::type_constructor_exists():
-    assert callable(DDL::Type.__init__)
+def test_ddl_type_constructor_exists():
+    assert callable(DDL_Type.__init__)
 
 
-def test_ddl::type_constructor_args():
-    sig = inspect.signature(DDL::Type.__init__)
+def test_ddl_type_constructor_args():
+    sig = inspect.signature(DDL_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -555,86 +555,86 @@ def test_nationalcharacterstringtype_constructor_args():
 
 
 
-def test_ddl::nationalcharvarying_is_not_abstract():
-    assert not inspect.isabstract(DDL::NationalCharVarying)
+def test_ddl_nationalcharactervarying_is_not_abstract():
+    assert not inspect.isabstract(DDL_NationalCharacterVarying)
 
 
-def test_ddl::nationalcharvarying_constructor_exists():
-    assert callable(DDL::NationalCharVarying.__init__)
+def test_ddl_nationalcharactervarying_constructor_exists():
+    assert callable(DDL_NationalCharacterVarying.__init__)
 
 
-def test_ddl::nationalcharvarying_constructor_args():
-    sig = inspect.signature(DDL::NationalCharVarying.__init__)
+def test_ddl_nationalcharactervarying_constructor_args():
+    sig = inspect.signature(DDL_NationalCharacterVarying.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::nchar_is_not_abstract():
-    assert not inspect.isabstract(DDL::NChar)
+def test_ddl_ncharvarying_is_not_abstract():
+    assert not inspect.isabstract(DDL_NCharVarying)
 
 
-def test_ddl::nchar_constructor_exists():
-    assert callable(DDL::NChar.__init__)
+def test_ddl_ncharvarying_constructor_exists():
+    assert callable(DDL_NCharVarying.__init__)
 
 
-def test_ddl::nchar_constructor_args():
-    sig = inspect.signature(DDL::NChar.__init__)
+def test_ddl_ncharvarying_constructor_args():
+    sig = inspect.signature(DDL_NCharVarying.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::ncharvarying_is_not_abstract():
-    assert not inspect.isabstract(DDL::NCharVarying)
+def test_ddl_nationalchar_is_not_abstract():
+    assert not inspect.isabstract(DDL_NationalChar)
 
 
-def test_ddl::ncharvarying_constructor_exists():
-    assert callable(DDL::NCharVarying.__init__)
+def test_ddl_nationalchar_constructor_exists():
+    assert callable(DDL_NationalChar.__init__)
 
 
-def test_ddl::ncharvarying_constructor_args():
-    sig = inspect.signature(DDL::NCharVarying.__init__)
+def test_ddl_nationalchar_constructor_args():
+    sig = inspect.signature(DDL_NationalChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::nationalchar_is_not_abstract():
-    assert not inspect.isabstract(DDL::NationalChar)
+def test_ddl_nchar_is_not_abstract():
+    assert not inspect.isabstract(DDL_NChar)
 
 
-def test_ddl::nationalchar_constructor_exists():
-    assert callable(DDL::NationalChar.__init__)
+def test_ddl_nchar_constructor_exists():
+    assert callable(DDL_NChar.__init__)
 
 
-def test_ddl::nationalchar_constructor_args():
-    sig = inspect.signature(DDL::NationalChar.__init__)
+def test_ddl_nchar_constructor_args():
+    sig = inspect.signature(DDL_NChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::nationalcharactervarying_is_not_abstract():
-    assert not inspect.isabstract(DDL::NationalCharacterVarying)
+def test_ddl_nationalcharvarying_is_not_abstract():
+    assert not inspect.isabstract(DDL_NationalCharVarying)
 
 
-def test_ddl::nationalcharactervarying_constructor_exists():
-    assert callable(DDL::NationalCharacterVarying.__init__)
+def test_ddl_nationalcharvarying_constructor_exists():
+    assert callable(DDL_NationalCharVarying.__init__)
 
 
-def test_ddl::nationalcharactervarying_constructor_args():
-    sig = inspect.signature(DDL::NationalCharacterVarying.__init__)
+def test_ddl_nationalcharvarying_constructor_args():
+    sig = inspect.signature(DDL_NationalCharVarying.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::nationalcharacter_is_not_abstract():
-    assert not inspect.isabstract(DDL::NationalCharacter)
+def test_ddl_nationalcharacter_is_not_abstract():
+    assert not inspect.isabstract(DDL_NationalCharacter)
 
 
-def test_ddl::nationalcharacter_constructor_exists():
-    assert callable(DDL::NationalCharacter.__init__)
+def test_ddl_nationalcharacter_constructor_exists():
+    assert callable(DDL_NationalCharacter.__init__)
 
 
-def test_ddl::nationalcharacter_constructor_args():
-    sig = inspect.signature(DDL::NationalCharacter.__init__)
+def test_ddl_nationalcharacter_constructor_args():
+    sig = inspect.signature(DDL_NationalCharacter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -653,72 +653,72 @@ def test_characterstringtype_constructor_args():
 
 
 
-def test_ddl::charvarying_is_not_abstract():
-    assert not inspect.isabstract(DDL::CharVarying)
+def test_ddl_charvarying_is_not_abstract():
+    assert not inspect.isabstract(DDL_CharVarying)
 
 
-def test_ddl::charvarying_constructor_exists():
-    assert callable(DDL::CharVarying.__init__)
+def test_ddl_charvarying_constructor_exists():
+    assert callable(DDL_CharVarying.__init__)
 
 
-def test_ddl::charvarying_constructor_args():
-    sig = inspect.signature(DDL::CharVarying.__init__)
+def test_ddl_charvarying_constructor_args():
+    sig = inspect.signature(DDL_CharVarying.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::char_is_not_abstract():
-    assert not inspect.isabstract(DDL::Char)
+def test_ddl_varchar_is_not_abstract():
+    assert not inspect.isabstract(DDL_Varchar)
 
 
-def test_ddl::char_constructor_exists():
-    assert callable(DDL::Char.__init__)
+def test_ddl_varchar_constructor_exists():
+    assert callable(DDL_Varchar.__init__)
 
 
-def test_ddl::char_constructor_args():
-    sig = inspect.signature(DDL::Char.__init__)
+def test_ddl_varchar_constructor_args():
+    sig = inspect.signature(DDL_Varchar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::varchar_is_not_abstract():
-    assert not inspect.isabstract(DDL::Varchar)
+def test_ddl_charactervarying_is_not_abstract():
+    assert not inspect.isabstract(DDL_CharacterVarying)
 
 
-def test_ddl::varchar_constructor_exists():
-    assert callable(DDL::Varchar.__init__)
+def test_ddl_charactervarying_constructor_exists():
+    assert callable(DDL_CharacterVarying.__init__)
 
 
-def test_ddl::varchar_constructor_args():
-    sig = inspect.signature(DDL::Varchar.__init__)
+def test_ddl_charactervarying_constructor_args():
+    sig = inspect.signature(DDL_CharacterVarying.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::charactervarying_is_not_abstract():
-    assert not inspect.isabstract(DDL::CharacterVarying)
+def test_ddl_char_is_not_abstract():
+    assert not inspect.isabstract(DDL_Char)
 
 
-def test_ddl::charactervarying_constructor_exists():
-    assert callable(DDL::CharacterVarying.__init__)
+def test_ddl_char_constructor_exists():
+    assert callable(DDL_Char.__init__)
 
 
-def test_ddl::charactervarying_constructor_args():
-    sig = inspect.signature(DDL::CharacterVarying.__init__)
+def test_ddl_char_constructor_args():
+    sig = inspect.signature(DDL_Char.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::character_is_not_abstract():
-    assert not inspect.isabstract(DDL::Character)
+def test_ddl_character_is_not_abstract():
+    assert not inspect.isabstract(DDL_Character)
 
 
-def test_ddl::character_constructor_exists():
-    assert callable(DDL::Character.__init__)
+def test_ddl_character_constructor_exists():
+    assert callable(DDL_Character.__init__)
 
 
-def test_ddl::character_constructor_args():
-    sig = inspect.signature(DDL::Character.__init__)
+def test_ddl_character_constructor_args():
+    sig = inspect.signature(DDL_Character.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -737,53 +737,67 @@ def test_type_constructor_args():
 
 
 
-def test_ddl::interval_is_not_abstract():
-    assert not inspect.isabstract(DDL::Interval)
+def test_ddl_datetimetype_is_not_abstract():
+    assert not inspect.isabstract(DDL_DatetimeType)
 
 
-def test_ddl::interval_constructor_exists():
-    assert callable(DDL::Interval.__init__)
+def test_ddl_datetimetype_constructor_exists():
+    assert callable(DDL_DatetimeType.__init__)
 
 
-def test_ddl::interval_constructor_args():
-    sig = inspect.signature(DDL::Interval.__init__)
+def test_ddl_datetimetype_constructor_args():
+    sig = inspect.signature(DDL_DatetimeType.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_ddl_interval_is_not_abstract():
+    assert not inspect.isabstract(DDL_Interval)
+
+
+def test_ddl_interval_constructor_exists():
+    assert callable(DDL_Interval.__init__)
+
+
+def test_ddl_interval_constructor_args():
+    sig = inspect.signature(DDL_Interval.__init__)
+    params = list(sig.parameters.keys())
+    assert "precision1" in params, "Missing parameter 'precision1'"
     assert "field2" in params, "Missing parameter 'field2'"
     assert "precision2" in params, "Missing parameter 'precision2'"
-    assert "precision1" in params, "Missing parameter 'precision1'"
     assert "field1" in params, "Missing parameter 'field1'"
 
-def test_ddl::interval_has_field2():
-    assert hasattr(DDL::Interval, "field2")
+def test_ddl_interval_has_precision1():
+    assert hasattr(DDL_Interval, "precision1")
     descriptor = None
-    for klass in DDL::Interval.__mro__:
-        if "field2" in klass.__dict__:
-            descriptor = klass.__dict__["field2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::interval_has_precision2():
-    assert hasattr(DDL::Interval, "precision2")
-    descriptor = None
-    for klass in DDL::Interval.__mro__:
-        if "precision2" in klass.__dict__:
-            descriptor = klass.__dict__["precision2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::interval_has_precision1():
-    assert hasattr(DDL::Interval, "precision1")
-    descriptor = None
-    for klass in DDL::Interval.__mro__:
+    for klass in DDL_Interval.__mro__:
         if "precision1" in klass.__dict__:
             descriptor = klass.__dict__["precision1"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::interval_has_field1():
-    assert hasattr(DDL::Interval, "field1")
+def test_ddl_interval_has_field2():
+    assert hasattr(DDL_Interval, "field2")
     descriptor = None
-    for klass in DDL::Interval.__mro__:
+    for klass in DDL_Interval.__mro__:
+        if "field2" in klass.__dict__:
+            descriptor = klass.__dict__["field2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddl_interval_has_precision2():
+    assert hasattr(DDL_Interval, "precision2")
+    descriptor = None
+    for klass in DDL_Interval.__mro__:
+        if "precision2" in klass.__dict__:
+            descriptor = klass.__dict__["precision2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddl_interval_has_field1():
+    assert hasattr(DDL_Interval, "field1")
+    descriptor = None
+    for klass in DDL_Interval.__mro__:
         if "field1" in klass.__dict__:
             descriptor = klass.__dict__["field1"]
             break
@@ -791,23 +805,23 @@ def test_ddl::interval_has_field1():
 
 
 
-def test_ddl::nationalcharacterstringtype_is_not_abstract():
-    assert not inspect.isabstract(DDL::NationalCharacterStringType)
+def test_ddl_bitstringtype_is_not_abstract():
+    assert not inspect.isabstract(DDL_BitStringType)
 
 
-def test_ddl::nationalcharacterstringtype_constructor_exists():
-    assert callable(DDL::NationalCharacterStringType.__init__)
+def test_ddl_bitstringtype_constructor_exists():
+    assert callable(DDL_BitStringType.__init__)
 
 
-def test_ddl::nationalcharacterstringtype_constructor_args():
-    sig = inspect.signature(DDL::NationalCharacterStringType.__init__)
+def test_ddl_bitstringtype_constructor_args():
+    sig = inspect.signature(DDL_BitStringType.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_ddl::nationalcharacterstringtype_has_length():
-    assert hasattr(DDL::NationalCharacterStringType, "length")
+def test_ddl_bitstringtype_has_length():
+    assert hasattr(DDL_BitStringType, "length")
     descriptor = None
-    for klass in DDL::NationalCharacterStringType.__mro__:
+    for klass in DDL_BitStringType.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -815,37 +829,23 @@ def test_ddl::nationalcharacterstringtype_has_length():
 
 
 
-def test_ddl::datetimetype_is_not_abstract():
-    assert not inspect.isabstract(DDL::DatetimeType)
+def test_ddl_nationalcharacterstringtype_is_not_abstract():
+    assert not inspect.isabstract(DDL_NationalCharacterStringType)
 
 
-def test_ddl::datetimetype_constructor_exists():
-    assert callable(DDL::DatetimeType.__init__)
+def test_ddl_nationalcharacterstringtype_constructor_exists():
+    assert callable(DDL_NationalCharacterStringType.__init__)
 
 
-def test_ddl::datetimetype_constructor_args():
-    sig = inspect.signature(DDL::DatetimeType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ddl::bitstringtype_is_not_abstract():
-    assert not inspect.isabstract(DDL::BitStringType)
-
-
-def test_ddl::bitstringtype_constructor_exists():
-    assert callable(DDL::BitStringType.__init__)
-
-
-def test_ddl::bitstringtype_constructor_args():
-    sig = inspect.signature(DDL::BitStringType.__init__)
+def test_ddl_nationalcharacterstringtype_constructor_args():
+    sig = inspect.signature(DDL_NationalCharacterStringType.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_ddl::bitstringtype_has_length():
-    assert hasattr(DDL::BitStringType, "length")
+def test_ddl_nationalcharacterstringtype_has_length():
+    assert hasattr(DDL_NationalCharacterStringType, "length")
     descriptor = None
-    for klass in DDL::BitStringType.__mro__:
+    for klass in DDL_NationalCharacterStringType.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -853,37 +853,37 @@ def test_ddl::bitstringtype_has_length():
 
 
 
-def test_ddl::numerictype_is_not_abstract():
-    assert not inspect.isabstract(DDL::NumericType)
+def test_ddl_numerictype_is_not_abstract():
+    assert not inspect.isabstract(DDL_NumericType)
 
 
-def test_ddl::numerictype_constructor_exists():
-    assert callable(DDL::NumericType.__init__)
+def test_ddl_numerictype_constructor_exists():
+    assert callable(DDL_NumericType.__init__)
 
 
-def test_ddl::numerictype_constructor_args():
-    sig = inspect.signature(DDL::NumericType.__init__)
+def test_ddl_numerictype_constructor_args():
+    sig = inspect.signature(DDL_NumericType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::characterstringtype_is_not_abstract():
-    assert not inspect.isabstract(DDL::CharacterStringType)
+def test_ddl_characterstringtype_is_not_abstract():
+    assert not inspect.isabstract(DDL_CharacterStringType)
 
 
-def test_ddl::characterstringtype_constructor_exists():
-    assert callable(DDL::CharacterStringType.__init__)
+def test_ddl_characterstringtype_constructor_exists():
+    assert callable(DDL_CharacterStringType.__init__)
 
 
-def test_ddl::characterstringtype_constructor_args():
-    sig = inspect.signature(DDL::CharacterStringType.__init__)
+def test_ddl_characterstringtype_constructor_args():
+    sig = inspect.signature(DDL_CharacterStringType.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_ddl::characterstringtype_has_length():
-    assert hasattr(DDL::CharacterStringType, "length")
+def test_ddl_characterstringtype_has_length():
+    assert hasattr(DDL_CharacterStringType, "length")
     descriptor = None
-    for klass in DDL::CharacterStringType.__mro__:
+    for klass in DDL_CharacterStringType.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -919,51 +919,51 @@ def test_statement_constructor_args():
 
 
 
-def test_ddl::table_is_not_abstract():
-    assert not inspect.isabstract(DDL::Table)
+def test_ddl_table_is_not_abstract():
+    assert not inspect.isabstract(DDL_Table)
 
 
-def test_ddl::table_constructor_exists():
-    assert callable(DDL::Table.__init__)
+def test_ddl_table_constructor_exists():
+    assert callable(DDL_Table.__init__)
 
 
-def test_ddl::table_constructor_args():
-    sig = inspect.signature(DDL::Table.__init__)
+def test_ddl_table_constructor_args():
+    sig = inspect.signature(DDL_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::database_is_not_abstract():
-    assert not inspect.isabstract(DDL::Database)
+def test_ddl_database_is_not_abstract():
+    assert not inspect.isabstract(DDL_Database)
 
 
-def test_ddl::database_constructor_exists():
-    assert callable(DDL::Database.__init__)
+def test_ddl_database_constructor_exists():
+    assert callable(DDL_Database.__init__)
 
 
-def test_ddl::database_constructor_args():
-    sig = inspect.signature(DDL::Database.__init__)
+def test_ddl_database_constructor_args():
+    sig = inspect.signature(DDL_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(DDL::NamedElement)
+def test_ddl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(DDL_NamedElement)
 
 
-def test_ddl::namedelement_constructor_exists():
-    assert callable(DDL::NamedElement.__init__)
+def test_ddl_namedelement_constructor_exists():
+    assert callable(DDL_NamedElement.__init__)
 
 
-def test_ddl::namedelement_constructor_args():
-    sig = inspect.signature(DDL::NamedElement.__init__)
+def test_ddl_namedelement_constructor_args():
+    sig = inspect.signature(DDL_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ddl::namedelement_has_name():
-    assert hasattr(DDL::NamedElement, "name")
+def test_ddl_namedelement_has_name():
+    assert hasattr(DDL_NamedElement, "name")
     descriptor = None
-    for klass in DDL::NamedElement.__mro__:
+    for klass in DDL_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -971,99 +971,75 @@ def test_ddl::namedelement_has_name():
 
 
 
-def test_ddl::statement_is_not_abstract():
-    assert not inspect.isabstract(DDL::Statement)
+def test_ddl_statement_is_not_abstract():
+    assert not inspect.isabstract(DDL_Statement)
 
 
-def test_ddl::statement_constructor_exists():
-    assert callable(DDL::Statement.__init__)
+def test_ddl_statement_constructor_exists():
+    assert callable(DDL_Statement.__init__)
 
 
-def test_ddl::statement_constructor_args():
-    sig = inspect.signature(DDL::Statement.__init__)
+def test_ddl_statement_constructor_args():
+    sig = inspect.signature(DDL_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::ddldefinition_is_not_abstract():
-    assert not inspect.isabstract(DDL::DDLDefinition)
+def test_ddl_ddldefinition_is_not_abstract():
+    assert not inspect.isabstract(DDL_DDLDefinition)
 
 
-def test_ddl::ddldefinition_constructor_exists():
-    assert callable(DDL::DDLDefinition.__init__)
+def test_ddl_ddldefinition_constructor_exists():
+    assert callable(DDL_DDLDefinition.__init__)
 
 
-def test_ddl::ddldefinition_constructor_args():
-    sig = inspect.signature(DDL::DDLDefinition.__init__)
+def test_ddl_ddldefinition_constructor_args():
+    sig = inspect.signature(DDL_DDLDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::check_is_not_abstract():
-    assert not inspect.isabstract(DDL::Check)
+def test_ddl_check_is_not_abstract():
+    assert not inspect.isabstract(DDL_Check)
 
 
-def test_ddl::check_constructor_exists():
-    assert callable(DDL::Check.__init__)
+def test_ddl_check_constructor_exists():
+    assert callable(DDL_Check.__init__)
 
 
-def test_ddl::check_constructor_args():
-    sig = inspect.signature(DDL::Check.__init__)
+def test_ddl_check_constructor_args():
+    sig = inspect.signature(DDL_Check.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::fk_is_not_abstract():
-    assert not inspect.isabstract(DDL::Fk)
+def test_ddl_fk_is_not_abstract():
+    assert not inspect.isabstract(DDL_Fk)
 
 
-def test_ddl::fk_constructor_exists():
-    assert callable(DDL::Fk.__init__)
+def test_ddl_fk_constructor_exists():
+    assert callable(DDL_Fk.__init__)
 
 
-def test_ddl::fk_constructor_args():
-    sig = inspect.signature(DDL::Fk.__init__)
+def test_ddl_fk_constructor_args():
+    sig = inspect.signature(DDL_Fk.__init__)
     params = list(sig.parameters.keys())
-    assert "columnName" in params, "Missing parameter 'columnName'"
     assert "columnReference" in params, "Missing parameter 'columnReference'"
+    assert "columnName" in params, "Missing parameter 'columnName'"
 
-def test_ddl::fk_has_columnName():
-    assert hasattr(DDL::Fk, "columnName")
+def test_ddl_fk_has_columnReference():
+    assert hasattr(DDL_Fk, "columnReference")
     descriptor = None
-    for klass in DDL::Fk.__mro__:
-        if "columnName" in klass.__dict__:
-            descriptor = klass.__dict__["columnName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::fk_has_columnReference():
-    assert hasattr(DDL::Fk, "columnReference")
-    descriptor = None
-    for klass in DDL::Fk.__mro__:
+    for klass in DDL_Fk.__mro__:
         if "columnReference" in klass.__dict__:
             descriptor = klass.__dict__["columnReference"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ddl::ck_is_not_abstract():
-    assert not inspect.isabstract(DDL::Ck)
-
-
-def test_ddl::ck_constructor_exists():
-    assert callable(DDL::Ck.__init__)
-
-
-def test_ddl::ck_constructor_args():
-    sig = inspect.signature(DDL::Ck.__init__)
-    params = list(sig.parameters.keys())
-    assert "columnName" in params, "Missing parameter 'columnName'"
-
-def test_ddl::ck_has_columnName():
-    assert hasattr(DDL::Ck, "columnName")
+def test_ddl_fk_has_columnName():
+    assert hasattr(DDL_Fk, "columnName")
     descriptor = None
-    for klass in DDL::Ck.__mro__:
+    for klass in DDL_Fk.__mro__:
         if "columnName" in klass.__dict__:
             descriptor = klass.__dict__["columnName"]
             break
@@ -1071,23 +1047,23 @@ def test_ddl::ck_has_columnName():
 
 
 
-def test_ddl::pk_is_not_abstract():
-    assert not inspect.isabstract(DDL::Pk)
+def test_ddl_ck_is_not_abstract():
+    assert not inspect.isabstract(DDL_Ck)
 
 
-def test_ddl::pk_constructor_exists():
-    assert callable(DDL::Pk.__init__)
+def test_ddl_ck_constructor_exists():
+    assert callable(DDL_Ck.__init__)
 
 
-def test_ddl::pk_constructor_args():
-    sig = inspect.signature(DDL::Pk.__init__)
+def test_ddl_ck_constructor_args():
+    sig = inspect.signature(DDL_Ck.__init__)
     params = list(sig.parameters.keys())
     assert "columnName" in params, "Missing parameter 'columnName'"
 
-def test_ddl::pk_has_columnName():
-    assert hasattr(DDL::Pk, "columnName")
+def test_ddl_ck_has_columnName():
+    assert hasattr(DDL_Ck, "columnName")
     descriptor = None
-    for klass in DDL::Pk.__mro__:
+    for klass in DDL_Ck.__mro__:
         if "columnName" in klass.__dict__:
             descriptor = klass.__dict__["columnName"]
             break
@@ -1095,23 +1071,47 @@ def test_ddl::pk_has_columnName():
 
 
 
-def test_ddl::column_is_not_abstract():
-    assert not inspect.isabstract(DDL::Column)
+def test_ddl_pk_is_not_abstract():
+    assert not inspect.isabstract(DDL_Pk)
 
 
-def test_ddl::column_constructor_exists():
-    assert callable(DDL::Column.__init__)
+def test_ddl_pk_constructor_exists():
+    assert callable(DDL_Pk.__init__)
 
 
-def test_ddl::column_constructor_args():
-    sig = inspect.signature(DDL::Column.__init__)
+def test_ddl_pk_constructor_args():
+    sig = inspect.signature(DDL_Pk.__init__)
+    params = list(sig.parameters.keys())
+    assert "columnName" in params, "Missing parameter 'columnName'"
+
+def test_ddl_pk_has_columnName():
+    assert hasattr(DDL_Pk, "columnName")
+    descriptor = None
+    for klass in DDL_Pk.__mro__:
+        if "columnName" in klass.__dict__:
+            descriptor = klass.__dict__["columnName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ddl_column_is_not_abstract():
+    assert not inspect.isabstract(DDL_Column)
+
+
+def test_ddl_column_constructor_exists():
+    assert callable(DDL_Column.__init__)
+
+
+def test_ddl_column_constructor_args():
+    sig = inspect.signature(DDL_Column.__init__)
     params = list(sig.parameters.keys())
     assert "columnNull" in params, "Missing parameter 'columnNull'"
 
-def test_ddl::column_has_columnNull():
-    assert hasattr(DDL::Column, "columnNull")
+def test_ddl_column_has_columnNull():
+    assert hasattr(DDL_Column, "columnNull")
     descriptor = None
-    for klass in DDL::Column.__mro__:
+    for klass in DDL_Column.__mro__:
         if "columnNull" in klass.__dict__:
             descriptor = klass.__dict__["columnNull"]
             break
@@ -1132,25 +1132,25 @@ safe_text = st.text(
 ExactNumericType_strategy = st.builds(
     ExactNumericType,
 )
-DDL::Dec_strategy = st.builds(
-    DDL::Dec,
+DDL_Decimal_strategy = st.builds(
+    DDL_Decimal,
     precision=
         st.integers(),
     scale=
         st.integers()
 )
-DDL::Integer_strategy = st.builds(
-    DDL::Integer,
+DDL_Integer_strategy = st.builds(
+    DDL_Integer,
 )
-DDL::Decimal_strategy = st.builds(
-    DDL::Decimal,
-    precision=
-        st.integers(),
+DDL_Dec_strategy = st.builds(
+    DDL_Dec,
     scale=
+        st.integers(),
+    precision=
         st.integers()
 )
-DDL::Numeric_strategy = st.builds(
-    DDL::Numeric,
+DDL_Numeric_strategy = st.builds(
+    DDL_Numeric,
     precision=
         st.integers(),
     scale=
@@ -1159,63 +1159,63 @@ DDL::Numeric_strategy = st.builds(
 NumericType_strategy = st.builds(
     NumericType,
 )
-DDL::ExactNumericType_strategy = st.builds(
-    DDL::ExactNumericType,
+DDL_ExactNumericType_strategy = st.builds(
+    DDL_ExactNumericType,
 )
 BitStringType_strategy = st.builds(
     BitStringType,
 )
-DDL::BitVarying_strategy = st.builds(
-    DDL::BitVarying,
+DDL_BitVarying_strategy = st.builds(
+    DDL_BitVarying,
 )
-DDL::Bit_strategy = st.builds(
-    DDL::Bit,
+DDL_Bit_strategy = st.builds(
+    DDL_Bit,
 )
 DatetimeType_strategy = st.builds(
     DatetimeType,
 )
-DDL::Time_strategy = st.builds(
-    DDL::Time,
+DDL_Time_strategy = st.builds(
+    DDL_Time,
     precision=
         st.integers(),
     withTimeZone=
         st.booleans()
 )
-DDL::TimeStamp_strategy = st.builds(
-    DDL::TimeStamp,
-    precision=
-        st.integers(),
+DDL_TimeStamp_strategy = st.builds(
+    DDL_TimeStamp,
     withTimeZone=
-        st.booleans()
+        st.booleans(),
+    precision=
+        st.integers()
 )
-DDL::Date_strategy = st.builds(
-    DDL::Date,
+DDL_Date_strategy = st.builds(
+    DDL_Date,
 )
 ApproximateNumericType_strategy = st.builds(
     ApproximateNumericType,
 )
-DDL::DoublePrecision_strategy = st.builds(
-    DDL::DoublePrecision,
+DDL_Real_strategy = st.builds(
+    DDL_Real,
 )
-DDL::Real_strategy = st.builds(
-    DDL::Real,
+DDL_DoublePrecision_strategy = st.builds(
+    DDL_DoublePrecision,
 )
-DDL::Float_strategy = st.builds(
-    DDL::Float,
+DDL_Float_strategy = st.builds(
+    DDL_Float,
     precision=
         st.integers()
 )
-DDL::ApproximateNumericType_strategy = st.builds(
-    DDL::ApproximateNumericType,
+DDL_ApproximateNumericType_strategy = st.builds(
+    DDL_ApproximateNumericType,
 )
-DDL::Small_strategy = st.builds(
-    DDL::Small,
+DDL_Small_strategy = st.builds(
+    DDL_Small,
 )
-DDL::Int_strategy = st.builds(
-    DDL::Int,
+DDL_Int_strategy = st.builds(
+    DDL_Int,
 )
-DDL::ValuesCheck_strategy = st.builds(
-    DDL::ValuesCheck,
+DDL_ValuesCheck_strategy = st.builds(
+    DDL_ValuesCheck,
     columnName=
         safe_text,
     comparator=
@@ -1225,80 +1225,80 @@ DDL::ValuesCheck_strategy = st.builds(
     value=
         safe_text
 )
-DDL::Type_strategy = st.builds(
-    DDL::Type,
+DDL_Type_strategy = st.builds(
+    DDL_Type,
 )
 NationalCharacterStringType_strategy = st.builds(
     NationalCharacterStringType,
 )
-DDL::NationalCharVarying_strategy = st.builds(
-    DDL::NationalCharVarying,
+DDL_NationalCharacterVarying_strategy = st.builds(
+    DDL_NationalCharacterVarying,
 )
-DDL::NChar_strategy = st.builds(
-    DDL::NChar,
+DDL_NCharVarying_strategy = st.builds(
+    DDL_NCharVarying,
 )
-DDL::NCharVarying_strategy = st.builds(
-    DDL::NCharVarying,
+DDL_NationalChar_strategy = st.builds(
+    DDL_NationalChar,
 )
-DDL::NationalChar_strategy = st.builds(
-    DDL::NationalChar,
+DDL_NChar_strategy = st.builds(
+    DDL_NChar,
 )
-DDL::NationalCharacterVarying_strategy = st.builds(
-    DDL::NationalCharacterVarying,
+DDL_NationalCharVarying_strategy = st.builds(
+    DDL_NationalCharVarying,
 )
-DDL::NationalCharacter_strategy = st.builds(
-    DDL::NationalCharacter,
+DDL_NationalCharacter_strategy = st.builds(
+    DDL_NationalCharacter,
 )
 CharacterStringType_strategy = st.builds(
     CharacterStringType,
 )
-DDL::CharVarying_strategy = st.builds(
-    DDL::CharVarying,
+DDL_CharVarying_strategy = st.builds(
+    DDL_CharVarying,
 )
-DDL::Char_strategy = st.builds(
-    DDL::Char,
+DDL_Varchar_strategy = st.builds(
+    DDL_Varchar,
 )
-DDL::Varchar_strategy = st.builds(
-    DDL::Varchar,
+DDL_CharacterVarying_strategy = st.builds(
+    DDL_CharacterVarying,
 )
-DDL::CharacterVarying_strategy = st.builds(
-    DDL::CharacterVarying,
+DDL_Char_strategy = st.builds(
+    DDL_Char,
 )
-DDL::Character_strategy = st.builds(
-    DDL::Character,
+DDL_Character_strategy = st.builds(
+    DDL_Character,
 )
 Type_strategy = st.builds(
     Type,
 )
-DDL::Interval_strategy = st.builds(
-    DDL::Interval,
+DDL_DatetimeType_strategy = st.builds(
+    DDL_DatetimeType,
+)
+DDL_Interval_strategy = st.builds(
+    DDL_Interval,
+    precision1=
+        st.integers(),
     field2=
         safe_text,
     precision2=
         st.integers(),
-    precision1=
-        st.integers(),
     field1=
         safe_text
 )
-DDL::NationalCharacterStringType_strategy = st.builds(
-    DDL::NationalCharacterStringType,
+DDL_BitStringType_strategy = st.builds(
+    DDL_BitStringType,
     length=
         st.integers()
 )
-DDL::DatetimeType_strategy = st.builds(
-    DDL::DatetimeType,
-)
-DDL::BitStringType_strategy = st.builds(
-    DDL::BitStringType,
+DDL_NationalCharacterStringType_strategy = st.builds(
+    DDL_NationalCharacterStringType,
     length=
         st.integers()
 )
-DDL::NumericType_strategy = st.builds(
-    DDL::NumericType,
+DDL_NumericType_strategy = st.builds(
+    DDL_NumericType,
 )
-DDL::CharacterStringType_strategy = st.builds(
-    DDL::CharacterStringType,
+DDL_CharacterStringType_strategy = st.builds(
+    DDL_CharacterStringType,
     length=
         st.integers()
 )
@@ -1308,45 +1308,45 @@ NamedElement_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-DDL::Table_strategy = st.builds(
-    DDL::Table,
+DDL_Table_strategy = st.builds(
+    DDL_Table,
 )
-DDL::Database_strategy = st.builds(
-    DDL::Database,
+DDL_Database_strategy = st.builds(
+    DDL_Database,
 )
-DDL::NamedElement_strategy = st.builds(
-    DDL::NamedElement,
+DDL_NamedElement_strategy = st.builds(
+    DDL_NamedElement,
     name=
         safe_text
 )
-DDL::Statement_strategy = st.builds(
-    DDL::Statement,
+DDL_Statement_strategy = st.builds(
+    DDL_Statement,
 )
-DDL::DDLDefinition_strategy = st.builds(
-    DDL::DDLDefinition,
+DDL_DDLDefinition_strategy = st.builds(
+    DDL_DDLDefinition,
 )
-DDL::Check_strategy = st.builds(
-    DDL::Check,
+DDL_Check_strategy = st.builds(
+    DDL_Check,
 )
-DDL::Fk_strategy = st.builds(
-    DDL::Fk,
-    columnName=
-        safe_text,
+DDL_Fk_strategy = st.builds(
+    DDL_Fk,
     columnReference=
-        safe_text
-)
-DDL::Ck_strategy = st.builds(
-    DDL::Ck,
+        safe_text,
     columnName=
         safe_text
 )
-DDL::Pk_strategy = st.builds(
-    DDL::Pk,
+DDL_Ck_strategy = st.builds(
+    DDL_Ck,
     columnName=
         safe_text
 )
-DDL::Column_strategy = st.builds(
-    DDL::Column,
+DDL_Pk_strategy = st.builds(
+    DDL_Pk,
+    columnName=
+        safe_text
+)
+DDL_Column_strategy = st.builds(
+    DDL_Column,
     columnNull=
         st.booleans()
 )
@@ -1356,88 +1356,70 @@ DDL::Column_strategy = st.builds(
 def test_exactnumerictype_instantiation(instance):
     assert isinstance(instance, ExactNumericType)
 
-@given(instance=DDL::Dec_strategy)
+@given(instance=DDL_Decimal_strategy)
 @settings(max_examples=50)
-def test_ddl::dec_instantiation(instance):
-    assert isinstance(instance, DDL::Dec)
-
-@given(instance=DDL::Dec_strategy)
-def test_ddl::dec_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_ddl_decimal_instantiation(instance):
+    assert isinstance(instance, DDL_Decimal)
 
 
-@given(instance=DDL::Dec_strategy)
-def test_ddl::dec_precision_setter(instance):
+
+@given(instance=DDL_Decimal_strategy)
+def test_ddl_decimal_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=DDL::Dec_strategy)
-def test_ddl::dec_scale_type(instance):
-    assert isinstance(instance.scale, int)
 
 
-@given(instance=DDL::Dec_strategy)
-def test_ddl::dec_scale_setter(instance):
+@given(instance=DDL_Decimal_strategy)
+def test_ddl_decimal_scale_setter(instance):
     original = instance.scale
     instance.scale = original
     assert instance.scale == original
 
-@given(instance=DDL::Integer_strategy)
+@given(instance=DDL_Integer_strategy)
 @settings(max_examples=50)
-def test_ddl::integer_instantiation(instance):
-    assert isinstance(instance, DDL::Integer)
+def test_ddl_integer_instantiation(instance):
+    assert isinstance(instance, DDL_Integer)
 
-@given(instance=DDL::Decimal_strategy)
+@given(instance=DDL_Dec_strategy)
 @settings(max_examples=50)
-def test_ddl::decimal_instantiation(instance):
-    assert isinstance(instance, DDL::Decimal)
-
-@given(instance=DDL::Decimal_strategy)
-def test_ddl::decimal_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_ddl_dec_instantiation(instance):
+    assert isinstance(instance, DDL_Dec)
 
 
-@given(instance=DDL::Decimal_strategy)
-def test_ddl::decimal_precision_setter(instance):
-    original = instance.precision
-    instance.precision = original
-    assert instance.precision == original
 
-@given(instance=DDL::Decimal_strategy)
-def test_ddl::decimal_scale_type(instance):
-    assert isinstance(instance.scale, int)
-
-
-@given(instance=DDL::Decimal_strategy)
-def test_ddl::decimal_scale_setter(instance):
+@given(instance=DDL_Dec_strategy)
+def test_ddl_dec_scale_setter(instance):
     original = instance.scale
     instance.scale = original
     assert instance.scale == original
 
-@given(instance=DDL::Numeric_strategy)
-@settings(max_examples=50)
-def test_ddl::numeric_instantiation(instance):
-    assert isinstance(instance, DDL::Numeric)
-
-@given(instance=DDL::Numeric_strategy)
-def test_ddl::numeric_precision_type(instance):
-    assert isinstance(instance.precision, int)
 
 
-@given(instance=DDL::Numeric_strategy)
-def test_ddl::numeric_precision_setter(instance):
+@given(instance=DDL_Dec_strategy)
+def test_ddl_dec_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=DDL::Numeric_strategy)
-def test_ddl::numeric_scale_type(instance):
-    assert isinstance(instance.scale, int)
+@given(instance=DDL_Numeric_strategy)
+@settings(max_examples=50)
+def test_ddl_numeric_instantiation(instance):
+    assert isinstance(instance, DDL_Numeric)
 
 
-@given(instance=DDL::Numeric_strategy)
-def test_ddl::numeric_scale_setter(instance):
+
+@given(instance=DDL_Numeric_strategy)
+def test_ddl_numeric_precision_setter(instance):
+    original = instance.precision
+    instance.precision = original
+    assert instance.precision == original
+
+
+
+@given(instance=DDL_Numeric_strategy)
+def test_ddl_numeric_scale_setter(instance):
     original = instance.scale
     instance.scale = original
     assert instance.scale == original
@@ -1447,363 +1429,315 @@ def test_ddl::numeric_scale_setter(instance):
 def test_numerictype_instantiation(instance):
     assert isinstance(instance, NumericType)
 
-@given(instance=DDL::ExactNumericType_strategy)
+@given(instance=DDL_ExactNumericType_strategy)
 @settings(max_examples=50)
-def test_ddl::exactnumerictype_instantiation(instance):
-    assert isinstance(instance, DDL::ExactNumericType)
+def test_ddl_exactnumerictype_instantiation(instance):
+    assert isinstance(instance, DDL_ExactNumericType)
 
 @given(instance=BitStringType_strategy)
 @settings(max_examples=50)
 def test_bitstringtype_instantiation(instance):
     assert isinstance(instance, BitStringType)
 
-@given(instance=DDL::BitVarying_strategy)
+@given(instance=DDL_BitVarying_strategy)
 @settings(max_examples=50)
-def test_ddl::bitvarying_instantiation(instance):
-    assert isinstance(instance, DDL::BitVarying)
+def test_ddl_bitvarying_instantiation(instance):
+    assert isinstance(instance, DDL_BitVarying)
 
-@given(instance=DDL::Bit_strategy)
+@given(instance=DDL_Bit_strategy)
 @settings(max_examples=50)
-def test_ddl::bit_instantiation(instance):
-    assert isinstance(instance, DDL::Bit)
+def test_ddl_bit_instantiation(instance):
+    assert isinstance(instance, DDL_Bit)
 
 @given(instance=DatetimeType_strategy)
 @settings(max_examples=50)
 def test_datetimetype_instantiation(instance):
     assert isinstance(instance, DatetimeType)
 
-@given(instance=DDL::Time_strategy)
+@given(instance=DDL_Time_strategy)
 @settings(max_examples=50)
-def test_ddl::time_instantiation(instance):
-    assert isinstance(instance, DDL::Time)
-
-@given(instance=DDL::Time_strategy)
-def test_ddl::time_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_ddl_time_instantiation(instance):
+    assert isinstance(instance, DDL_Time)
 
 
-@given(instance=DDL::Time_strategy)
-def test_ddl::time_precision_setter(instance):
+
+@given(instance=DDL_Time_strategy)
+def test_ddl_time_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=DDL::Time_strategy)
-def test_ddl::time_withTimeZone_type(instance):
-    assert isinstance(instance.withTimeZone, bool)
 
 
-@given(instance=DDL::Time_strategy)
-def test_ddl::time_withTimeZone_setter(instance):
+@given(instance=DDL_Time_strategy)
+def test_ddl_time_withTimeZone_setter(instance):
     original = instance.withTimeZone
     instance.withTimeZone = original
     assert instance.withTimeZone == original
 
-@given(instance=DDL::TimeStamp_strategy)
+@given(instance=DDL_TimeStamp_strategy)
 @settings(max_examples=50)
-def test_ddl::timestamp_instantiation(instance):
-    assert isinstance(instance, DDL::TimeStamp)
-
-@given(instance=DDL::TimeStamp_strategy)
-def test_ddl::timestamp_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_ddl_timestamp_instantiation(instance):
+    assert isinstance(instance, DDL_TimeStamp)
 
 
-@given(instance=DDL::TimeStamp_strategy)
-def test_ddl::timestamp_precision_setter(instance):
+
+@given(instance=DDL_TimeStamp_strategy)
+def test_ddl_timestamp_withTimeZone_setter(instance):
+    original = instance.withTimeZone
+    instance.withTimeZone = original
+    assert instance.withTimeZone == original
+
+
+
+@given(instance=DDL_TimeStamp_strategy)
+def test_ddl_timestamp_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=DDL::TimeStamp_strategy)
-def test_ddl::timestamp_withTimeZone_type(instance):
-    assert isinstance(instance.withTimeZone, bool)
-
-
-@given(instance=DDL::TimeStamp_strategy)
-def test_ddl::timestamp_withTimeZone_setter(instance):
-    original = instance.withTimeZone
-    instance.withTimeZone = original
-    assert instance.withTimeZone == original
-
-@given(instance=DDL::Date_strategy)
+@given(instance=DDL_Date_strategy)
 @settings(max_examples=50)
-def test_ddl::date_instantiation(instance):
-    assert isinstance(instance, DDL::Date)
+def test_ddl_date_instantiation(instance):
+    assert isinstance(instance, DDL_Date)
 
 @given(instance=ApproximateNumericType_strategy)
 @settings(max_examples=50)
 def test_approximatenumerictype_instantiation(instance):
     assert isinstance(instance, ApproximateNumericType)
 
-@given(instance=DDL::DoublePrecision_strategy)
+@given(instance=DDL_Real_strategy)
 @settings(max_examples=50)
-def test_ddl::doubleprecision_instantiation(instance):
-    assert isinstance(instance, DDL::DoublePrecision)
+def test_ddl_real_instantiation(instance):
+    assert isinstance(instance, DDL_Real)
 
-@given(instance=DDL::Real_strategy)
+@given(instance=DDL_DoublePrecision_strategy)
 @settings(max_examples=50)
-def test_ddl::real_instantiation(instance):
-    assert isinstance(instance, DDL::Real)
+def test_ddl_doubleprecision_instantiation(instance):
+    assert isinstance(instance, DDL_DoublePrecision)
 
-@given(instance=DDL::Float_strategy)
+@given(instance=DDL_Float_strategy)
 @settings(max_examples=50)
-def test_ddl::float_instantiation(instance):
-    assert isinstance(instance, DDL::Float)
-
-@given(instance=DDL::Float_strategy)
-def test_ddl::float_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_ddl_float_instantiation(instance):
+    assert isinstance(instance, DDL_Float)
 
 
-@given(instance=DDL::Float_strategy)
-def test_ddl::float_precision_setter(instance):
+
+@given(instance=DDL_Float_strategy)
+def test_ddl_float_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=DDL::ApproximateNumericType_strategy)
+@given(instance=DDL_ApproximateNumericType_strategy)
 @settings(max_examples=50)
-def test_ddl::approximatenumerictype_instantiation(instance):
-    assert isinstance(instance, DDL::ApproximateNumericType)
+def test_ddl_approximatenumerictype_instantiation(instance):
+    assert isinstance(instance, DDL_ApproximateNumericType)
 
-@given(instance=DDL::Small_strategy)
+@given(instance=DDL_Small_strategy)
 @settings(max_examples=50)
-def test_ddl::small_instantiation(instance):
-    assert isinstance(instance, DDL::Small)
+def test_ddl_small_instantiation(instance):
+    assert isinstance(instance, DDL_Small)
 
-@given(instance=DDL::Int_strategy)
+@given(instance=DDL_Int_strategy)
 @settings(max_examples=50)
-def test_ddl::int_instantiation(instance):
-    assert isinstance(instance, DDL::Int)
+def test_ddl_int_instantiation(instance):
+    assert isinstance(instance, DDL_Int)
 
-@given(instance=DDL::ValuesCheck_strategy)
+@given(instance=DDL_ValuesCheck_strategy)
 @settings(max_examples=50)
-def test_ddl::valuescheck_instantiation(instance):
-    assert isinstance(instance, DDL::ValuesCheck)
-
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
+def test_ddl_valuescheck_instantiation(instance):
+    assert isinstance(instance, DDL_ValuesCheck)
 
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_columnName_setter(instance):
+
+@given(instance=DDL_ValuesCheck_strategy)
+def test_ddl_valuescheck_columnName_setter(instance):
     original = instance.columnName
     instance.columnName = original
     assert instance.columnName == original
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_comparator_type(instance):
-    assert isinstance(instance.comparator, str)
 
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_comparator_setter(instance):
+@given(instance=DDL_ValuesCheck_strategy)
+def test_ddl_valuescheck_comparator_setter(instance):
     original = instance.comparator
     instance.comparator = original
     assert instance.comparator == original
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_logConjuntion_type(instance):
-    assert isinstance(instance.logConjuntion, str)
 
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_logConjuntion_setter(instance):
+@given(instance=DDL_ValuesCheck_strategy)
+def test_ddl_valuescheck_logConjuntion_setter(instance):
     original = instance.logConjuntion
     instance.logConjuntion = original
     assert instance.logConjuntion == original
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=DDL::ValuesCheck_strategy)
-def test_ddl::valuescheck_value_setter(instance):
+@given(instance=DDL_ValuesCheck_strategy)
+def test_ddl_valuescheck_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=DDL::Type_strategy)
+@given(instance=DDL_Type_strategy)
 @settings(max_examples=50)
-def test_ddl::type_instantiation(instance):
-    assert isinstance(instance, DDL::Type)
+def test_ddl_type_instantiation(instance):
+    assert isinstance(instance, DDL_Type)
 
 @given(instance=NationalCharacterStringType_strategy)
 @settings(max_examples=50)
 def test_nationalcharacterstringtype_instantiation(instance):
     assert isinstance(instance, NationalCharacterStringType)
 
-@given(instance=DDL::NationalCharVarying_strategy)
+@given(instance=DDL_NationalCharacterVarying_strategy)
 @settings(max_examples=50)
-def test_ddl::nationalcharvarying_instantiation(instance):
-    assert isinstance(instance, DDL::NationalCharVarying)
+def test_ddl_nationalcharactervarying_instantiation(instance):
+    assert isinstance(instance, DDL_NationalCharacterVarying)
 
-@given(instance=DDL::NChar_strategy)
+@given(instance=DDL_NCharVarying_strategy)
 @settings(max_examples=50)
-def test_ddl::nchar_instantiation(instance):
-    assert isinstance(instance, DDL::NChar)
+def test_ddl_ncharvarying_instantiation(instance):
+    assert isinstance(instance, DDL_NCharVarying)
 
-@given(instance=DDL::NCharVarying_strategy)
+@given(instance=DDL_NationalChar_strategy)
 @settings(max_examples=50)
-def test_ddl::ncharvarying_instantiation(instance):
-    assert isinstance(instance, DDL::NCharVarying)
+def test_ddl_nationalchar_instantiation(instance):
+    assert isinstance(instance, DDL_NationalChar)
 
-@given(instance=DDL::NationalChar_strategy)
+@given(instance=DDL_NChar_strategy)
 @settings(max_examples=50)
-def test_ddl::nationalchar_instantiation(instance):
-    assert isinstance(instance, DDL::NationalChar)
+def test_ddl_nchar_instantiation(instance):
+    assert isinstance(instance, DDL_NChar)
 
-@given(instance=DDL::NationalCharacterVarying_strategy)
+@given(instance=DDL_NationalCharVarying_strategy)
 @settings(max_examples=50)
-def test_ddl::nationalcharactervarying_instantiation(instance):
-    assert isinstance(instance, DDL::NationalCharacterVarying)
+def test_ddl_nationalcharvarying_instantiation(instance):
+    assert isinstance(instance, DDL_NationalCharVarying)
 
-@given(instance=DDL::NationalCharacter_strategy)
+@given(instance=DDL_NationalCharacter_strategy)
 @settings(max_examples=50)
-def test_ddl::nationalcharacter_instantiation(instance):
-    assert isinstance(instance, DDL::NationalCharacter)
+def test_ddl_nationalcharacter_instantiation(instance):
+    assert isinstance(instance, DDL_NationalCharacter)
 
 @given(instance=CharacterStringType_strategy)
 @settings(max_examples=50)
 def test_characterstringtype_instantiation(instance):
     assert isinstance(instance, CharacterStringType)
 
-@given(instance=DDL::CharVarying_strategy)
+@given(instance=DDL_CharVarying_strategy)
 @settings(max_examples=50)
-def test_ddl::charvarying_instantiation(instance):
-    assert isinstance(instance, DDL::CharVarying)
+def test_ddl_charvarying_instantiation(instance):
+    assert isinstance(instance, DDL_CharVarying)
 
-@given(instance=DDL::Char_strategy)
+@given(instance=DDL_Varchar_strategy)
 @settings(max_examples=50)
-def test_ddl::char_instantiation(instance):
-    assert isinstance(instance, DDL::Char)
+def test_ddl_varchar_instantiation(instance):
+    assert isinstance(instance, DDL_Varchar)
 
-@given(instance=DDL::Varchar_strategy)
+@given(instance=DDL_CharacterVarying_strategy)
 @settings(max_examples=50)
-def test_ddl::varchar_instantiation(instance):
-    assert isinstance(instance, DDL::Varchar)
+def test_ddl_charactervarying_instantiation(instance):
+    assert isinstance(instance, DDL_CharacterVarying)
 
-@given(instance=DDL::CharacterVarying_strategy)
+@given(instance=DDL_Char_strategy)
 @settings(max_examples=50)
-def test_ddl::charactervarying_instantiation(instance):
-    assert isinstance(instance, DDL::CharacterVarying)
+def test_ddl_char_instantiation(instance):
+    assert isinstance(instance, DDL_Char)
 
-@given(instance=DDL::Character_strategy)
+@given(instance=DDL_Character_strategy)
 @settings(max_examples=50)
-def test_ddl::character_instantiation(instance):
-    assert isinstance(instance, DDL::Character)
+def test_ddl_character_instantiation(instance):
+    assert isinstance(instance, DDL_Character)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=DDL::Interval_strategy)
+@given(instance=DDL_DatetimeType_strategy)
 @settings(max_examples=50)
-def test_ddl::interval_instantiation(instance):
-    assert isinstance(instance, DDL::Interval)
+def test_ddl_datetimetype_instantiation(instance):
+    assert isinstance(instance, DDL_DatetimeType)
 
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_field2_type(instance):
-    assert isinstance(instance.field2, str)
-
-
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_field2_setter(instance):
-    original = instance.field2
-    instance.field2 = original
-    assert instance.field2 == original
-
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_precision2_type(instance):
-    assert isinstance(instance.precision2, int)
+@given(instance=DDL_Interval_strategy)
+@settings(max_examples=50)
+def test_ddl_interval_instantiation(instance):
+    assert isinstance(instance, DDL_Interval)
 
 
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_precision2_setter(instance):
-    original = instance.precision2
-    instance.precision2 = original
-    assert instance.precision2 == original
 
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_precision1_type(instance):
-    assert isinstance(instance.precision1, int)
-
-
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_precision1_setter(instance):
+@given(instance=DDL_Interval_strategy)
+def test_ddl_interval_precision1_setter(instance):
     original = instance.precision1
     instance.precision1 = original
     assert instance.precision1 == original
 
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_field1_type(instance):
-    assert isinstance(instance.field1, str)
 
 
-@given(instance=DDL::Interval_strategy)
-def test_ddl::interval_field1_setter(instance):
+@given(instance=DDL_Interval_strategy)
+def test_ddl_interval_field2_setter(instance):
+    original = instance.field2
+    instance.field2 = original
+    assert instance.field2 == original
+
+
+
+@given(instance=DDL_Interval_strategy)
+def test_ddl_interval_precision2_setter(instance):
+    original = instance.precision2
+    instance.precision2 = original
+    assert instance.precision2 == original
+
+
+
+@given(instance=DDL_Interval_strategy)
+def test_ddl_interval_field1_setter(instance):
     original = instance.field1
     instance.field1 = original
     assert instance.field1 == original
 
-@given(instance=DDL::NationalCharacterStringType_strategy)
+@given(instance=DDL_BitStringType_strategy)
 @settings(max_examples=50)
-def test_ddl::nationalcharacterstringtype_instantiation(instance):
-    assert isinstance(instance, DDL::NationalCharacterStringType)
-
-@given(instance=DDL::NationalCharacterStringType_strategy)
-def test_ddl::nationalcharacterstringtype_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_ddl_bitstringtype_instantiation(instance):
+    assert isinstance(instance, DDL_BitStringType)
 
 
-@given(instance=DDL::NationalCharacterStringType_strategy)
-def test_ddl::nationalcharacterstringtype_length_setter(instance):
+
+@given(instance=DDL_BitStringType_strategy)
+def test_ddl_bitstringtype_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=DDL::DatetimeType_strategy)
+@given(instance=DDL_NationalCharacterStringType_strategy)
 @settings(max_examples=50)
-def test_ddl::datetimetype_instantiation(instance):
-    assert isinstance(instance, DDL::DatetimeType)
-
-@given(instance=DDL::BitStringType_strategy)
-@settings(max_examples=50)
-def test_ddl::bitstringtype_instantiation(instance):
-    assert isinstance(instance, DDL::BitStringType)
-
-@given(instance=DDL::BitStringType_strategy)
-def test_ddl::bitstringtype_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_ddl_nationalcharacterstringtype_instantiation(instance):
+    assert isinstance(instance, DDL_NationalCharacterStringType)
 
 
-@given(instance=DDL::BitStringType_strategy)
-def test_ddl::bitstringtype_length_setter(instance):
+
+@given(instance=DDL_NationalCharacterStringType_strategy)
+def test_ddl_nationalcharacterstringtype_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=DDL::NumericType_strategy)
+@given(instance=DDL_NumericType_strategy)
 @settings(max_examples=50)
-def test_ddl::numerictype_instantiation(instance):
-    assert isinstance(instance, DDL::NumericType)
+def test_ddl_numerictype_instantiation(instance):
+    assert isinstance(instance, DDL_NumericType)
 
-@given(instance=DDL::CharacterStringType_strategy)
+@given(instance=DDL_CharacterStringType_strategy)
 @settings(max_examples=50)
-def test_ddl::characterstringtype_instantiation(instance):
-    assert isinstance(instance, DDL::CharacterStringType)
-
-@given(instance=DDL::CharacterStringType_strategy)
-def test_ddl::characterstringtype_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_ddl_characterstringtype_instantiation(instance):
+    assert isinstance(instance, DDL_CharacterStringType)
 
 
-@given(instance=DDL::CharacterStringType_strategy)
-def test_ddl::characterstringtype_length_setter(instance):
+
+@given(instance=DDL_CharacterStringType_strategy)
+def test_ddl_characterstringtype_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
@@ -1818,118 +1752,100 @@ def test_namedelement_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=DDL::Table_strategy)
+@given(instance=DDL_Table_strategy)
 @settings(max_examples=50)
-def test_ddl::table_instantiation(instance):
-    assert isinstance(instance, DDL::Table)
+def test_ddl_table_instantiation(instance):
+    assert isinstance(instance, DDL_Table)
 
-@given(instance=DDL::Database_strategy)
+@given(instance=DDL_Database_strategy)
 @settings(max_examples=50)
-def test_ddl::database_instantiation(instance):
-    assert isinstance(instance, DDL::Database)
+def test_ddl_database_instantiation(instance):
+    assert isinstance(instance, DDL_Database)
 
-@given(instance=DDL::NamedElement_strategy)
+@given(instance=DDL_NamedElement_strategy)
 @settings(max_examples=50)
-def test_ddl::namedelement_instantiation(instance):
-    assert isinstance(instance, DDL::NamedElement)
-
-@given(instance=DDL::NamedElement_strategy)
-def test_ddl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ddl_namedelement_instantiation(instance):
+    assert isinstance(instance, DDL_NamedElement)
 
 
-@given(instance=DDL::NamedElement_strategy)
-def test_ddl::namedelement_name_setter(instance):
+
+@given(instance=DDL_NamedElement_strategy)
+def test_ddl_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=DDL::Statement_strategy)
+@given(instance=DDL_Statement_strategy)
 @settings(max_examples=50)
-def test_ddl::statement_instantiation(instance):
-    assert isinstance(instance, DDL::Statement)
+def test_ddl_statement_instantiation(instance):
+    assert isinstance(instance, DDL_Statement)
 
-@given(instance=DDL::DDLDefinition_strategy)
+@given(instance=DDL_DDLDefinition_strategy)
 @settings(max_examples=50)
-def test_ddl::ddldefinition_instantiation(instance):
-    assert isinstance(instance, DDL::DDLDefinition)
+def test_ddl_ddldefinition_instantiation(instance):
+    assert isinstance(instance, DDL_DDLDefinition)
 
-@given(instance=DDL::Check_strategy)
+@given(instance=DDL_Check_strategy)
 @settings(max_examples=50)
-def test_ddl::check_instantiation(instance):
-    assert isinstance(instance, DDL::Check)
+def test_ddl_check_instantiation(instance):
+    assert isinstance(instance, DDL_Check)
 
-@given(instance=DDL::Fk_strategy)
+@given(instance=DDL_Fk_strategy)
 @settings(max_examples=50)
-def test_ddl::fk_instantiation(instance):
-    assert isinstance(instance, DDL::Fk)
-
-@given(instance=DDL::Fk_strategy)
-def test_ddl::fk_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
+def test_ddl_fk_instantiation(instance):
+    assert isinstance(instance, DDL_Fk)
 
 
-@given(instance=DDL::Fk_strategy)
-def test_ddl::fk_columnName_setter(instance):
-    original = instance.columnName
-    instance.columnName = original
-    assert instance.columnName == original
 
-@given(instance=DDL::Fk_strategy)
-def test_ddl::fk_columnReference_type(instance):
-    assert isinstance(instance.columnReference, str)
-
-
-@given(instance=DDL::Fk_strategy)
-def test_ddl::fk_columnReference_setter(instance):
+@given(instance=DDL_Fk_strategy)
+def test_ddl_fk_columnReference_setter(instance):
     original = instance.columnReference
     instance.columnReference = original
     assert instance.columnReference == original
 
-@given(instance=DDL::Ck_strategy)
-@settings(max_examples=50)
-def test_ddl::ck_instantiation(instance):
-    assert isinstance(instance, DDL::Ck)
-
-@given(instance=DDL::Ck_strategy)
-def test_ddl::ck_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
 
 
-@given(instance=DDL::Ck_strategy)
-def test_ddl::ck_columnName_setter(instance):
+@given(instance=DDL_Fk_strategy)
+def test_ddl_fk_columnName_setter(instance):
     original = instance.columnName
     instance.columnName = original
     assert instance.columnName == original
 
-@given(instance=DDL::Pk_strategy)
+@given(instance=DDL_Ck_strategy)
 @settings(max_examples=50)
-def test_ddl::pk_instantiation(instance):
-    assert isinstance(instance, DDL::Pk)
-
-@given(instance=DDL::Pk_strategy)
-def test_ddl::pk_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
+def test_ddl_ck_instantiation(instance):
+    assert isinstance(instance, DDL_Ck)
 
 
-@given(instance=DDL::Pk_strategy)
-def test_ddl::pk_columnName_setter(instance):
+
+@given(instance=DDL_Ck_strategy)
+def test_ddl_ck_columnName_setter(instance):
     original = instance.columnName
     instance.columnName = original
     assert instance.columnName == original
 
-@given(instance=DDL::Column_strategy)
+@given(instance=DDL_Pk_strategy)
 @settings(max_examples=50)
-def test_ddl::column_instantiation(instance):
-    assert isinstance(instance, DDL::Column)
-
-@given(instance=DDL::Column_strategy)
-def test_ddl::column_columnNull_type(instance):
-    assert isinstance(instance.columnNull, bool)
+def test_ddl_pk_instantiation(instance):
+    assert isinstance(instance, DDL_Pk)
 
 
-@given(instance=DDL::Column_strategy)
-def test_ddl::column_columnNull_setter(instance):
+
+@given(instance=DDL_Pk_strategy)
+def test_ddl_pk_columnName_setter(instance):
+    original = instance.columnName
+    instance.columnName = original
+    assert instance.columnName == original
+
+@given(instance=DDL_Column_strategy)
+@settings(max_examples=50)
+def test_ddl_column_instantiation(instance):
+    assert isinstance(instance, DDL_Column)
+
+
+
+@given(instance=DDL_Column_strategy)
+def test_ddl_column_columnNull_setter(instance):
     original = instance.columnNull
     instance.columnNull = original
     assert instance.columnNull == original

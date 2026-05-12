@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ScaffoldGraph::Edge,
-    ScaffoldGraph::Vertex,
-    ScaffoldGraph::Graph,
+from python_code import (
+    ScaffoldGraph_Edge,
+    ScaffoldGraph_Vertex,
+    ScaffoldGraph_Graph,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_scaffoldgraph::edge_is_not_abstract():
-    assert not inspect.isabstract(ScaffoldGraph::Edge)
+def test_scaffoldgraph_edge_is_not_abstract():
+    assert not inspect.isabstract(ScaffoldGraph_Edge)
 
 
-def test_scaffoldgraph::edge_constructor_exists():
-    assert callable(ScaffoldGraph::Edge.__init__)
+def test_scaffoldgraph_edge_constructor_exists():
+    assert callable(ScaffoldGraph_Edge.__init__)
 
 
-def test_scaffoldgraph::edge_constructor_args():
-    sig = inspect.signature(ScaffoldGraph::Edge.__init__)
+def test_scaffoldgraph_edge_constructor_args():
+    sig = inspect.signature(ScaffoldGraph_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_scaffoldgraph::edge_has_weight():
-    assert hasattr(ScaffoldGraph::Edge, "weight")
+def test_scaffoldgraph_edge_has_weight():
+    assert hasattr(ScaffoldGraph_Edge, "weight")
     descriptor = None
-    for klass in ScaffoldGraph::Edge.__mro__:
+    for klass in ScaffoldGraph_Edge.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -41,37 +41,37 @@ def test_scaffoldgraph::edge_has_weight():
 
 
 
-def test_scaffoldgraph::vertex_is_not_abstract():
-    assert not inspect.isabstract(ScaffoldGraph::Vertex)
+def test_scaffoldgraph_vertex_is_not_abstract():
+    assert not inspect.isabstract(ScaffoldGraph_Vertex)
 
 
-def test_scaffoldgraph::vertex_constructor_exists():
-    assert callable(ScaffoldGraph::Vertex.__init__)
+def test_scaffoldgraph_vertex_constructor_exists():
+    assert callable(ScaffoldGraph_Vertex.__init__)
 
 
-def test_scaffoldgraph::vertex_constructor_args():
-    sig = inspect.signature(ScaffoldGraph::Vertex.__init__)
+def test_scaffoldgraph_vertex_constructor_args():
+    sig = inspect.signature(ScaffoldGraph_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scaffoldgraph::graph_is_not_abstract():
-    assert not inspect.isabstract(ScaffoldGraph::Graph)
+def test_scaffoldgraph_graph_is_not_abstract():
+    assert not inspect.isabstract(ScaffoldGraph_Graph)
 
 
-def test_scaffoldgraph::graph_constructor_exists():
-    assert callable(ScaffoldGraph::Graph.__init__)
+def test_scaffoldgraph_graph_constructor_exists():
+    assert callable(ScaffoldGraph_Graph.__init__)
 
 
-def test_scaffoldgraph::graph_constructor_args():
-    sig = inspect.signature(ScaffoldGraph::Graph.__init__)
+def test_scaffoldgraph_graph_constructor_args():
+    sig = inspect.signature(ScaffoldGraph_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_scaffoldgraph::graph_has_name():
-    assert hasattr(ScaffoldGraph::Graph, "name")
+def test_scaffoldgraph_graph_has_name():
+    assert hasattr(ScaffoldGraph_Graph, "name")
     descriptor = None
-    for klass in ScaffoldGraph::Graph.__mro__:
+    for klass in ScaffoldGraph_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ScaffoldGraph::Edge_strategy = st.builds(
-    ScaffoldGraph::Edge,
+ScaffoldGraph_Edge_strategy = st.builds(
+    ScaffoldGraph_Edge,
     weight=
         st.integers()
 )
-ScaffoldGraph::Vertex_strategy = st.builds(
-    ScaffoldGraph::Vertex,
+ScaffoldGraph_Vertex_strategy = st.builds(
+    ScaffoldGraph_Vertex,
 )
-ScaffoldGraph::Graph_strategy = st.builds(
-    ScaffoldGraph::Graph,
+ScaffoldGraph_Graph_strategy = st.builds(
+    ScaffoldGraph_Graph,
     name=
         safe_text
 )
 
-@given(instance=ScaffoldGraph::Edge_strategy)
+@given(instance=ScaffoldGraph_Edge_strategy)
 @settings(max_examples=50)
-def test_scaffoldgraph::edge_instantiation(instance):
-    assert isinstance(instance, ScaffoldGraph::Edge)
-
-@given(instance=ScaffoldGraph::Edge_strategy)
-def test_scaffoldgraph::edge_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_scaffoldgraph_edge_instantiation(instance):
+    assert isinstance(instance, ScaffoldGraph_Edge)
 
 
-@given(instance=ScaffoldGraph::Edge_strategy)
-def test_scaffoldgraph::edge_weight_setter(instance):
+
+@given(instance=ScaffoldGraph_Edge_strategy)
+def test_scaffoldgraph_edge_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=ScaffoldGraph::Vertex_strategy)
+@given(instance=ScaffoldGraph_Vertex_strategy)
 @settings(max_examples=50)
-def test_scaffoldgraph::vertex_instantiation(instance):
-    assert isinstance(instance, ScaffoldGraph::Vertex)
+def test_scaffoldgraph_vertex_instantiation(instance):
+    assert isinstance(instance, ScaffoldGraph_Vertex)
 
-@given(instance=ScaffoldGraph::Graph_strategy)
+@given(instance=ScaffoldGraph_Graph_strategy)
 @settings(max_examples=50)
-def test_scaffoldgraph::graph_instantiation(instance):
-    assert isinstance(instance, ScaffoldGraph::Graph)
-
-@given(instance=ScaffoldGraph::Graph_strategy)
-def test_scaffoldgraph::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_scaffoldgraph_graph_instantiation(instance):
+    assert isinstance(instance, ScaffoldGraph_Graph)
 
 
-@given(instance=ScaffoldGraph::Graph_strategy)
-def test_scaffoldgraph::graph_name_setter(instance):
+
+@given(instance=ScaffoldGraph_Graph_strategy)
+def test_scaffoldgraph_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

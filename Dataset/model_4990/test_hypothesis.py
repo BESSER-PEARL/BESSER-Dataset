@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SimulinkReference,
     OutPort,
-    simulink::State,
-    simulink::SimulinkReference,
+    simulink_State,
+    simulink_SimulinkReference,
     InPortBlock,
-    simulink::EnableBlock,
-    simulink::TriggerBlock,
+    simulink_EnableBlock,
+    simulink_TriggerBlock,
     Connection,
-    simulink::MultiConnection,
+    simulink_MultiConnection,
     Block,
-    simulink::ModelReference,
-    simulink::VirtualBlock,
+    simulink_ModelReference,
+    simulink_VirtualBlock,
     VirtualBlock,
-    simulink::GotoTagVisibility,
-    simulink::From,
-    simulink::Goto,
+    simulink_GotoTagVisibility,
+    simulink_From,
+    simulink_Goto,
     PortBlock,
-    simulink::InPortBlock,
-    simulink::OutPortBlock,
+    simulink_InPortBlock,
+    simulink_OutPortBlock,
     InPort,
-    simulink::SingleConnection,
+    simulink_SingleConnection,
     Port,
-    simulink::BusSpecification,
-    simulink::BusSignalMapping,
+    simulink_BusSpecification,
+    simulink_BusSignalMapping,
     BusSpecification,
-    simulink::BusCreator,
-    simulink::BusSelector,
-    simulink::SubSystem,
-    simulink::OutPort,
-    simulink::InPort,
-    simulink::Enable,
-    simulink::PortBlock,
-    simulink::LibraryLinkReference,
-    simulink::IdentifierReference,
-    simulink::SimulinkElement,
-    simulink::Trigger,
-    simulink::Parameter,
+    simulink_BusCreator,
+    simulink_BusSelector,
+    simulink_SubSystem,
+    simulink_OutPort,
+    simulink_InPort,
+    simulink_Enable,
+    simulink_PortBlock,
+    simulink_LibraryLinkReference,
+    simulink_IdentifierReference,
+    simulink_SimulinkElement,
+    simulink_Trigger,
+    simulink_Parameter,
     SimulinkElement,
-    simulink::SimulinkModel,
-    simulink::Port,
-    simulink::Connection,
-    simulink::Block,
+    simulink_SimulinkModel,
+    simulink_Connection,
+    simulink_Port,
+    simulink_Block,
     TriggerType,
     TagVisibility,
     EnableStates,
@@ -87,49 +87,49 @@ def test_outport_constructor_args():
 
 
 
-def test_simulink::state_is_not_abstract():
-    assert not inspect.isabstract(simulink::State)
+def test_simulink_state_is_not_abstract():
+    assert not inspect.isabstract(simulink_State)
 
 
-def test_simulink::state_constructor_exists():
-    assert callable(simulink::State.__init__)
+def test_simulink_state_constructor_exists():
+    assert callable(simulink_State.__init__)
 
 
-def test_simulink::state_constructor_args():
-    sig = inspect.signature(simulink::State.__init__)
+def test_simulink_state_constructor_args():
+    sig = inspect.signature(simulink_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::simulinkreference_is_not_abstract():
-    assert not inspect.isabstract(simulink::SimulinkReference)
+def test_simulink_simulinkreference_is_not_abstract():
+    assert not inspect.isabstract(simulink_SimulinkReference)
 
 
-def test_simulink::simulinkreference_constructor_exists():
-    assert callable(simulink::SimulinkReference.__init__)
+def test_simulink_simulinkreference_constructor_exists():
+    assert callable(simulink_SimulinkReference.__init__)
 
 
-def test_simulink::simulinkreference_constructor_args():
-    sig = inspect.signature(simulink::SimulinkReference.__init__)
+def test_simulink_simulinkreference_constructor_args():
+    sig = inspect.signature(simulink_SimulinkReference.__init__)
     params = list(sig.parameters.keys())
-    assert "qualifier" in params, "Missing parameter 'qualifier'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "qualifier" in params, "Missing parameter 'qualifier'"
 
-def test_simulink::simulinkreference_has_qualifier():
-    assert hasattr(simulink::SimulinkReference, "qualifier")
+def test_simulink_simulinkreference_has_name():
+    assert hasattr(simulink_SimulinkReference, "name")
     descriptor = None
-    for klass in simulink::SimulinkReference.__mro__:
-        if "qualifier" in klass.__dict__:
-            descriptor = klass.__dict__["qualifier"]
+    for klass in simulink_SimulinkReference.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::simulinkreference_has_name():
-    assert hasattr(simulink::SimulinkReference, "name")
+def test_simulink_simulinkreference_has_qualifier():
+    assert hasattr(simulink_SimulinkReference, "qualifier")
     descriptor = None
-    for klass in simulink::SimulinkReference.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in simulink_SimulinkReference.__mro__:
+        if "qualifier" in klass.__dict__:
+            descriptor = klass.__dict__["qualifier"]
             break
     assert isinstance(descriptor, property)
 
@@ -149,30 +149,30 @@ def test_inportblock_constructor_args():
 
 
 
-def test_simulink::enableblock_is_not_abstract():
-    assert not inspect.isabstract(simulink::EnableBlock)
+def test_simulink_enableblock_is_not_abstract():
+    assert not inspect.isabstract(simulink_EnableBlock)
 
 
-def test_simulink::enableblock_constructor_exists():
-    assert callable(simulink::EnableBlock.__init__)
+def test_simulink_enableblock_constructor_exists():
+    assert callable(simulink_EnableBlock.__init__)
 
 
-def test_simulink::enableblock_constructor_args():
-    sig = inspect.signature(simulink::EnableBlock.__init__)
+def test_simulink_enableblock_constructor_args():
+    sig = inspect.signature(simulink_EnableBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::triggerblock_is_not_abstract():
-    assert not inspect.isabstract(simulink::TriggerBlock)
+def test_simulink_triggerblock_is_not_abstract():
+    assert not inspect.isabstract(simulink_TriggerBlock)
 
 
-def test_simulink::triggerblock_constructor_exists():
-    assert callable(simulink::TriggerBlock.__init__)
+def test_simulink_triggerblock_constructor_exists():
+    assert callable(simulink_TriggerBlock.__init__)
 
 
-def test_simulink::triggerblock_constructor_args():
-    sig = inspect.signature(simulink::TriggerBlock.__init__)
+def test_simulink_triggerblock_constructor_args():
+    sig = inspect.signature(simulink_TriggerBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -191,16 +191,16 @@ def test_connection_constructor_args():
 
 
 
-def test_simulink::multiconnection_is_not_abstract():
-    assert not inspect.isabstract(simulink::MultiConnection)
+def test_simulink_multiconnection_is_not_abstract():
+    assert not inspect.isabstract(simulink_MultiConnection)
 
 
-def test_simulink::multiconnection_constructor_exists():
-    assert callable(simulink::MultiConnection.__init__)
+def test_simulink_multiconnection_constructor_exists():
+    assert callable(simulink_MultiConnection.__init__)
 
 
-def test_simulink::multiconnection_constructor_args():
-    sig = inspect.signature(simulink::MultiConnection.__init__)
+def test_simulink_multiconnection_constructor_args():
+    sig = inspect.signature(simulink_MultiConnection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,30 +219,30 @@ def test_block_constructor_args():
 
 
 
-def test_simulink::modelreference_is_not_abstract():
-    assert not inspect.isabstract(simulink::ModelReference)
+def test_simulink_modelreference_is_not_abstract():
+    assert not inspect.isabstract(simulink_ModelReference)
 
 
-def test_simulink::modelreference_constructor_exists():
-    assert callable(simulink::ModelReference.__init__)
+def test_simulink_modelreference_constructor_exists():
+    assert callable(simulink_ModelReference.__init__)
 
 
-def test_simulink::modelreference_constructor_args():
-    sig = inspect.signature(simulink::ModelReference.__init__)
+def test_simulink_modelreference_constructor_args():
+    sig = inspect.signature(simulink_ModelReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::virtualblock_is_not_abstract():
-    assert not inspect.isabstract(simulink::VirtualBlock)
+def test_simulink_virtualblock_is_not_abstract():
+    assert not inspect.isabstract(simulink_VirtualBlock)
 
 
-def test_simulink::virtualblock_constructor_exists():
-    assert callable(simulink::VirtualBlock.__init__)
+def test_simulink_virtualblock_constructor_exists():
+    assert callable(simulink_VirtualBlock.__init__)
 
 
-def test_simulink::virtualblock_constructor_args():
-    sig = inspect.signature(simulink::VirtualBlock.__init__)
+def test_simulink_virtualblock_constructor_args():
+    sig = inspect.signature(simulink_VirtualBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -261,63 +261,63 @@ def test_virtualblock_constructor_args():
 
 
 
-def test_simulink::gototagvisibility_is_not_abstract():
-    assert not inspect.isabstract(simulink::GotoTagVisibility)
+def test_simulink_gototagvisibility_is_not_abstract():
+    assert not inspect.isabstract(simulink_GotoTagVisibility)
 
 
-def test_simulink::gototagvisibility_constructor_exists():
-    assert callable(simulink::GotoTagVisibility.__init__)
+def test_simulink_gototagvisibility_constructor_exists():
+    assert callable(simulink_GotoTagVisibility.__init__)
 
 
-def test_simulink::gototagvisibility_constructor_args():
-    sig = inspect.signature(simulink::GotoTagVisibility.__init__)
+def test_simulink_gototagvisibility_constructor_args():
+    sig = inspect.signature(simulink_GotoTagVisibility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::from_is_not_abstract():
-    assert not inspect.isabstract(simulink::From)
+def test_simulink_from_is_not_abstract():
+    assert not inspect.isabstract(simulink_From)
 
 
-def test_simulink::from_constructor_exists():
-    assert callable(simulink::From.__init__)
+def test_simulink_from_constructor_exists():
+    assert callable(simulink_From.__init__)
 
 
-def test_simulink::from_constructor_args():
-    sig = inspect.signature(simulink::From.__init__)
+def test_simulink_from_constructor_args():
+    sig = inspect.signature(simulink_From.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::goto_is_not_abstract():
-    assert not inspect.isabstract(simulink::Goto)
+def test_simulink_goto_is_not_abstract():
+    assert not inspect.isabstract(simulink_Goto)
 
 
-def test_simulink::goto_constructor_exists():
-    assert callable(simulink::Goto.__init__)
+def test_simulink_goto_constructor_exists():
+    assert callable(simulink_Goto.__init__)
 
 
-def test_simulink::goto_constructor_args():
-    sig = inspect.signature(simulink::Goto.__init__)
+def test_simulink_goto_constructor_args():
+    sig = inspect.signature(simulink_Goto.__init__)
     params = list(sig.parameters.keys())
-    assert "tagVisibility" in params, "Missing parameter 'tagVisibility'"
     assert "gotoTag" in params, "Missing parameter 'gotoTag'"
+    assert "tagVisibility" in params, "Missing parameter 'tagVisibility'"
 
-def test_simulink::goto_has_tagVisibility():
-    assert hasattr(simulink::Goto, "tagVisibility")
+def test_simulink_goto_has_gotoTag():
+    assert hasattr(simulink_Goto, "gotoTag")
     descriptor = None
-    for klass in simulink::Goto.__mro__:
-        if "tagVisibility" in klass.__dict__:
-            descriptor = klass.__dict__["tagVisibility"]
+    for klass in simulink_Goto.__mro__:
+        if "gotoTag" in klass.__dict__:
+            descriptor = klass.__dict__["gotoTag"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::goto_has_gotoTag():
-    assert hasattr(simulink::Goto, "gotoTag")
+def test_simulink_goto_has_tagVisibility():
+    assert hasattr(simulink_Goto, "tagVisibility")
     descriptor = None
-    for klass in simulink::Goto.__mro__:
-        if "gotoTag" in klass.__dict__:
-            descriptor = klass.__dict__["gotoTag"]
+    for klass in simulink_Goto.__mro__:
+        if "tagVisibility" in klass.__dict__:
+            descriptor = klass.__dict__["tagVisibility"]
             break
     assert isinstance(descriptor, property)
 
@@ -337,30 +337,30 @@ def test_portblock_constructor_args():
 
 
 
-def test_simulink::inportblock_is_not_abstract():
-    assert not inspect.isabstract(simulink::InPortBlock)
+def test_simulink_inportblock_is_not_abstract():
+    assert not inspect.isabstract(simulink_InPortBlock)
 
 
-def test_simulink::inportblock_constructor_exists():
-    assert callable(simulink::InPortBlock.__init__)
+def test_simulink_inportblock_constructor_exists():
+    assert callable(simulink_InPortBlock.__init__)
 
 
-def test_simulink::inportblock_constructor_args():
-    sig = inspect.signature(simulink::InPortBlock.__init__)
+def test_simulink_inportblock_constructor_args():
+    sig = inspect.signature(simulink_InPortBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::outportblock_is_not_abstract():
-    assert not inspect.isabstract(simulink::OutPortBlock)
+def test_simulink_outportblock_is_not_abstract():
+    assert not inspect.isabstract(simulink_OutPortBlock)
 
 
-def test_simulink::outportblock_constructor_exists():
-    assert callable(simulink::OutPortBlock.__init__)
+def test_simulink_outportblock_constructor_exists():
+    assert callable(simulink_OutPortBlock.__init__)
 
 
-def test_simulink::outportblock_constructor_args():
-    sig = inspect.signature(simulink::OutPortBlock.__init__)
+def test_simulink_outportblock_constructor_args():
+    sig = inspect.signature(simulink_OutPortBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -379,16 +379,16 @@ def test_inport_constructor_args():
 
 
 
-def test_simulink::singleconnection_is_not_abstract():
-    assert not inspect.isabstract(simulink::SingleConnection)
+def test_simulink_singleconnection_is_not_abstract():
+    assert not inspect.isabstract(simulink_SingleConnection)
 
 
-def test_simulink::singleconnection_constructor_exists():
-    assert callable(simulink::SingleConnection.__init__)
+def test_simulink_singleconnection_constructor_exists():
+    assert callable(simulink_SingleConnection.__init__)
 
 
-def test_simulink::singleconnection_constructor_args():
-    sig = inspect.signature(simulink::SingleConnection.__init__)
+def test_simulink_singleconnection_constructor_args():
+    sig = inspect.signature(simulink_SingleConnection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -407,49 +407,49 @@ def test_port_constructor_args():
 
 
 
-def test_simulink::busspecification_is_not_abstract():
-    assert not inspect.isabstract(simulink::BusSpecification)
+def test_simulink_busspecification_is_not_abstract():
+    assert not inspect.isabstract(simulink_BusSpecification)
 
 
-def test_simulink::busspecification_constructor_exists():
-    assert callable(simulink::BusSpecification.__init__)
+def test_simulink_busspecification_constructor_exists():
+    assert callable(simulink_BusSpecification.__init__)
 
 
-def test_simulink::busspecification_constructor_args():
-    sig = inspect.signature(simulink::BusSpecification.__init__)
+def test_simulink_busspecification_constructor_args():
+    sig = inspect.signature(simulink_BusSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::bussignalmapping_is_not_abstract():
-    assert not inspect.isabstract(simulink::BusSignalMapping)
+def test_simulink_bussignalmapping_is_not_abstract():
+    assert not inspect.isabstract(simulink_BusSignalMapping)
 
 
-def test_simulink::bussignalmapping_constructor_exists():
-    assert callable(simulink::BusSignalMapping.__init__)
+def test_simulink_bussignalmapping_constructor_exists():
+    assert callable(simulink_BusSignalMapping.__init__)
 
 
-def test_simulink::bussignalmapping_constructor_args():
-    sig = inspect.signature(simulink::BusSignalMapping.__init__)
+def test_simulink_bussignalmapping_constructor_args():
+    sig = inspect.signature(simulink_BusSignalMapping.__init__)
     params = list(sig.parameters.keys())
-    assert "incomplete" in params, "Missing parameter 'incomplete'"
     assert "mappingPath" in params, "Missing parameter 'mappingPath'"
+    assert "incomplete" in params, "Missing parameter 'incomplete'"
 
-def test_simulink::bussignalmapping_has_incomplete():
-    assert hasattr(simulink::BusSignalMapping, "incomplete")
+def test_simulink_bussignalmapping_has_mappingPath():
+    assert hasattr(simulink_BusSignalMapping, "mappingPath")
     descriptor = None
-    for klass in simulink::BusSignalMapping.__mro__:
-        if "incomplete" in klass.__dict__:
-            descriptor = klass.__dict__["incomplete"]
+    for klass in simulink_BusSignalMapping.__mro__:
+        if "mappingPath" in klass.__dict__:
+            descriptor = klass.__dict__["mappingPath"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::bussignalmapping_has_mappingPath():
-    assert hasattr(simulink::BusSignalMapping, "mappingPath")
+def test_simulink_bussignalmapping_has_incomplete():
+    assert hasattr(simulink_BusSignalMapping, "incomplete")
     descriptor = None
-    for klass in simulink::BusSignalMapping.__mro__:
-        if "mappingPath" in klass.__dict__:
-            descriptor = klass.__dict__["mappingPath"]
+    for klass in simulink_BusSignalMapping.__mro__:
+        if "incomplete" in klass.__dict__:
+            descriptor = klass.__dict__["incomplete"]
             break
     assert isinstance(descriptor, property)
 
@@ -469,37 +469,37 @@ def test_busspecification_constructor_args():
 
 
 
-def test_simulink::buscreator_is_not_abstract():
-    assert not inspect.isabstract(simulink::BusCreator)
+def test_simulink_buscreator_is_not_abstract():
+    assert not inspect.isabstract(simulink_BusCreator)
 
 
-def test_simulink::buscreator_constructor_exists():
-    assert callable(simulink::BusCreator.__init__)
+def test_simulink_buscreator_constructor_exists():
+    assert callable(simulink_BusCreator.__init__)
 
 
-def test_simulink::buscreator_constructor_args():
-    sig = inspect.signature(simulink::BusCreator.__init__)
+def test_simulink_buscreator_constructor_args():
+    sig = inspect.signature(simulink_BusCreator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::busselector_is_not_abstract():
-    assert not inspect.isabstract(simulink::BusSelector)
+def test_simulink_busselector_is_not_abstract():
+    assert not inspect.isabstract(simulink_BusSelector)
 
 
-def test_simulink::busselector_constructor_exists():
-    assert callable(simulink::BusSelector.__init__)
+def test_simulink_busselector_constructor_exists():
+    assert callable(simulink_BusSelector.__init__)
 
 
-def test_simulink::busselector_constructor_args():
-    sig = inspect.signature(simulink::BusSelector.__init__)
+def test_simulink_busselector_constructor_args():
+    sig = inspect.signature(simulink_BusSelector.__init__)
     params = list(sig.parameters.keys())
     assert "outputAsBus" in params, "Missing parameter 'outputAsBus'"
 
-def test_simulink::busselector_has_outputAsBus():
-    assert hasattr(simulink::BusSelector, "outputAsBus")
+def test_simulink_busselector_has_outputAsBus():
+    assert hasattr(simulink_BusSelector, "outputAsBus")
     descriptor = None
-    for klass in simulink::BusSelector.__mro__:
+    for klass in simulink_BusSelector.__mro__:
         if "outputAsBus" in klass.__dict__:
             descriptor = klass.__dict__["outputAsBus"]
             break
@@ -507,23 +507,23 @@ def test_simulink::busselector_has_outputAsBus():
 
 
 
-def test_simulink::subsystem_is_not_abstract():
-    assert not inspect.isabstract(simulink::SubSystem)
+def test_simulink_subsystem_is_not_abstract():
+    assert not inspect.isabstract(simulink_SubSystem)
 
 
-def test_simulink::subsystem_constructor_exists():
-    assert callable(simulink::SubSystem.__init__)
+def test_simulink_subsystem_constructor_exists():
+    assert callable(simulink_SubSystem.__init__)
 
 
-def test_simulink::subsystem_constructor_args():
-    sig = inspect.signature(simulink::SubSystem.__init__)
+def test_simulink_subsystem_constructor_args():
+    sig = inspect.signature(simulink_SubSystem.__init__)
     params = list(sig.parameters.keys())
     assert "tag" in params, "Missing parameter 'tag'"
 
-def test_simulink::subsystem_has_tag():
-    assert hasattr(simulink::SubSystem, "tag")
+def test_simulink_subsystem_has_tag():
+    assert hasattr(simulink_SubSystem, "tag")
     descriptor = None
-    for klass in simulink::SubSystem.__mro__:
+    for klass in simulink_SubSystem.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
@@ -531,51 +531,51 @@ def test_simulink::subsystem_has_tag():
 
 
 
-def test_simulink::outport_is_not_abstract():
-    assert not inspect.isabstract(simulink::OutPort)
+def test_simulink_outport_is_not_abstract():
+    assert not inspect.isabstract(simulink_OutPort)
 
 
-def test_simulink::outport_constructor_exists():
-    assert callable(simulink::OutPort.__init__)
+def test_simulink_outport_constructor_exists():
+    assert callable(simulink_OutPort.__init__)
 
 
-def test_simulink::outport_constructor_args():
-    sig = inspect.signature(simulink::OutPort.__init__)
+def test_simulink_outport_constructor_args():
+    sig = inspect.signature(simulink_OutPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::inport_is_not_abstract():
-    assert not inspect.isabstract(simulink::InPort)
+def test_simulink_inport_is_not_abstract():
+    assert not inspect.isabstract(simulink_InPort)
 
 
-def test_simulink::inport_constructor_exists():
-    assert callable(simulink::InPort.__init__)
+def test_simulink_inport_constructor_exists():
+    assert callable(simulink_InPort.__init__)
 
 
-def test_simulink::inport_constructor_args():
-    sig = inspect.signature(simulink::InPort.__init__)
+def test_simulink_inport_constructor_args():
+    sig = inspect.signature(simulink_InPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::enable_is_not_abstract():
-    assert not inspect.isabstract(simulink::Enable)
+def test_simulink_enable_is_not_abstract():
+    assert not inspect.isabstract(simulink_Enable)
 
 
-def test_simulink::enable_constructor_exists():
-    assert callable(simulink::Enable.__init__)
+def test_simulink_enable_constructor_exists():
+    assert callable(simulink_Enable.__init__)
 
 
-def test_simulink::enable_constructor_args():
-    sig = inspect.signature(simulink::Enable.__init__)
+def test_simulink_enable_constructor_args():
+    sig = inspect.signature(simulink_Enable.__init__)
     params = list(sig.parameters.keys())
     assert "statesWhenEnabling" in params, "Missing parameter 'statesWhenEnabling'"
 
-def test_simulink::enable_has_statesWhenEnabling():
-    assert hasattr(simulink::Enable, "statesWhenEnabling")
+def test_simulink_enable_has_statesWhenEnabling():
+    assert hasattr(simulink_Enable, "statesWhenEnabling")
     descriptor = None
-    for klass in simulink::Enable.__mro__:
+    for klass in simulink_Enable.__mro__:
         if "statesWhenEnabling" in klass.__dict__:
             descriptor = klass.__dict__["statesWhenEnabling"]
             break
@@ -583,37 +583,37 @@ def test_simulink::enable_has_statesWhenEnabling():
 
 
 
-def test_simulink::portblock_is_not_abstract():
-    assert not inspect.isabstract(simulink::PortBlock)
+def test_simulink_portblock_is_not_abstract():
+    assert not inspect.isabstract(simulink_PortBlock)
 
 
-def test_simulink::portblock_constructor_exists():
-    assert callable(simulink::PortBlock.__init__)
+def test_simulink_portblock_constructor_exists():
+    assert callable(simulink_PortBlock.__init__)
 
 
-def test_simulink::portblock_constructor_args():
-    sig = inspect.signature(simulink::PortBlock.__init__)
+def test_simulink_portblock_constructor_args():
+    sig = inspect.signature(simulink_PortBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::librarylinkreference_is_not_abstract():
-    assert not inspect.isabstract(simulink::LibraryLinkReference)
+def test_simulink_librarylinkreference_is_not_abstract():
+    assert not inspect.isabstract(simulink_LibraryLinkReference)
 
 
-def test_simulink::librarylinkreference_constructor_exists():
-    assert callable(simulink::LibraryLinkReference.__init__)
+def test_simulink_librarylinkreference_constructor_exists():
+    assert callable(simulink_LibraryLinkReference.__init__)
 
 
-def test_simulink::librarylinkreference_constructor_args():
-    sig = inspect.signature(simulink::LibraryLinkReference.__init__)
+def test_simulink_librarylinkreference_constructor_args():
+    sig = inspect.signature(simulink_LibraryLinkReference.__init__)
     params = list(sig.parameters.keys())
     assert "disabled" in params, "Missing parameter 'disabled'"
 
-def test_simulink::librarylinkreference_has_disabled():
-    assert hasattr(simulink::LibraryLinkReference, "disabled")
+def test_simulink_librarylinkreference_has_disabled():
+    assert hasattr(simulink_LibraryLinkReference, "disabled")
     descriptor = None
-    for klass in simulink::LibraryLinkReference.__mro__:
+    for klass in simulink_LibraryLinkReference.__mro__:
         if "disabled" in klass.__dict__:
             descriptor = klass.__dict__["disabled"]
             break
@@ -621,37 +621,37 @@ def test_simulink::librarylinkreference_has_disabled():
 
 
 
-def test_simulink::identifierreference_is_not_abstract():
-    assert not inspect.isabstract(simulink::IdentifierReference)
+def test_simulink_identifierreference_is_not_abstract():
+    assert not inspect.isabstract(simulink_IdentifierReference)
 
 
-def test_simulink::identifierreference_constructor_exists():
-    assert callable(simulink::IdentifierReference.__init__)
+def test_simulink_identifierreference_constructor_exists():
+    assert callable(simulink_IdentifierReference.__init__)
 
 
-def test_simulink::identifierreference_constructor_args():
-    sig = inspect.signature(simulink::IdentifierReference.__init__)
+def test_simulink_identifierreference_constructor_args():
+    sig = inspect.signature(simulink_IdentifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simulink::simulinkelement_is_not_abstract():
-    assert not inspect.isabstract(simulink::SimulinkElement)
+def test_simulink_simulinkelement_is_not_abstract():
+    assert not inspect.isabstract(simulink_SimulinkElement)
 
 
-def test_simulink::simulinkelement_constructor_exists():
-    assert callable(simulink::SimulinkElement.__init__)
+def test_simulink_simulinkelement_constructor_exists():
+    assert callable(simulink_SimulinkElement.__init__)
 
 
-def test_simulink::simulinkelement_constructor_args():
-    sig = inspect.signature(simulink::SimulinkElement.__init__)
+def test_simulink_simulinkelement_constructor_args():
+    sig = inspect.signature(simulink_SimulinkElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simulink::simulinkelement_has_name():
-    assert hasattr(simulink::SimulinkElement, "name")
+def test_simulink_simulinkelement_has_name():
+    assert hasattr(simulink_SimulinkElement, "name")
     descriptor = None
-    for klass in simulink::SimulinkElement.__mro__:
+    for klass in simulink_SimulinkElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -659,33 +659,33 @@ def test_simulink::simulinkelement_has_name():
 
 
 
-def test_simulink::trigger_is_not_abstract():
-    assert not inspect.isabstract(simulink::Trigger)
+def test_simulink_trigger_is_not_abstract():
+    assert not inspect.isabstract(simulink_Trigger)
 
 
-def test_simulink::trigger_constructor_exists():
-    assert callable(simulink::Trigger.__init__)
+def test_simulink_trigger_constructor_exists():
+    assert callable(simulink_Trigger.__init__)
 
 
-def test_simulink::trigger_constructor_args():
-    sig = inspect.signature(simulink::Trigger.__init__)
+def test_simulink_trigger_constructor_args():
+    sig = inspect.signature(simulink_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "triggerType" in params, "Missing parameter 'triggerType'"
     assert "statesWhenEnabling" in params, "Missing parameter 'statesWhenEnabling'"
 
-def test_simulink::trigger_has_triggerType():
-    assert hasattr(simulink::Trigger, "triggerType")
+def test_simulink_trigger_has_triggerType():
+    assert hasattr(simulink_Trigger, "triggerType")
     descriptor = None
-    for klass in simulink::Trigger.__mro__:
+    for klass in simulink_Trigger.__mro__:
         if "triggerType" in klass.__dict__:
             descriptor = klass.__dict__["triggerType"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::trigger_has_statesWhenEnabling():
-    assert hasattr(simulink::Trigger, "statesWhenEnabling")
+def test_simulink_trigger_has_statesWhenEnabling():
+    assert hasattr(simulink_Trigger, "statesWhenEnabling")
     descriptor = None
-    for klass in simulink::Trigger.__mro__:
+    for klass in simulink_Trigger.__mro__:
         if "statesWhenEnabling" in klass.__dict__:
             descriptor = klass.__dict__["statesWhenEnabling"]
             break
@@ -693,55 +693,55 @@ def test_simulink::trigger_has_statesWhenEnabling():
 
 
 
-def test_simulink::parameter_is_not_abstract():
-    assert not inspect.isabstract(simulink::Parameter)
+def test_simulink_parameter_is_not_abstract():
+    assert not inspect.isabstract(simulink_Parameter)
 
 
-def test_simulink::parameter_constructor_exists():
-    assert callable(simulink::Parameter.__init__)
+def test_simulink_parameter_constructor_exists():
+    assert callable(simulink_Parameter.__init__)
 
 
-def test_simulink::parameter_constructor_args():
-    sig = inspect.signature(simulink::Parameter.__init__)
+def test_simulink_parameter_constructor_args():
+    sig = inspect.signature(simulink_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "readOnly" in params, "Missing parameter 'readOnly'"
-    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_simulink::parameter_has_readOnly():
-    assert hasattr(simulink::Parameter, "readOnly")
+def test_simulink_parameter_has_readOnly():
+    assert hasattr(simulink_Parameter, "readOnly")
     descriptor = None
-    for klass in simulink::Parameter.__mro__:
+    for klass in simulink_Parameter.__mro__:
         if "readOnly" in klass.__dict__:
             descriptor = klass.__dict__["readOnly"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::parameter_has_value():
-    assert hasattr(simulink::Parameter, "value")
+def test_simulink_parameter_has_name():
+    assert hasattr(simulink_Parameter, "name")
     descriptor = None
-    for klass in simulink::Parameter.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simulink::parameter_has_name():
-    assert hasattr(simulink::Parameter, "name")
-    descriptor = None
-    for klass in simulink::Parameter.__mro__:
+    for klass in simulink_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::parameter_has_type():
-    assert hasattr(simulink::Parameter, "type")
+def test_simulink_parameter_has_type():
+    assert hasattr(simulink_Parameter, "type")
     descriptor = None
-    for klass in simulink::Parameter.__mro__:
+    for klass in simulink_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simulink_parameter_has_value():
+    assert hasattr(simulink_Parameter, "value")
+    descriptor = None
+    for klass in simulink_Parameter.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -761,43 +761,43 @@ def test_simulinkelement_constructor_args():
 
 
 
-def test_simulink::simulinkmodel_is_not_abstract():
-    assert not inspect.isabstract(simulink::SimulinkModel)
+def test_simulink_simulinkmodel_is_not_abstract():
+    assert not inspect.isabstract(simulink_SimulinkModel)
 
 
-def test_simulink::simulinkmodel_constructor_exists():
-    assert callable(simulink::SimulinkModel.__init__)
+def test_simulink_simulinkmodel_constructor_exists():
+    assert callable(simulink_SimulinkModel.__init__)
 
 
-def test_simulink::simulinkmodel_constructor_args():
-    sig = inspect.signature(simulink::SimulinkModel.__init__)
+def test_simulink_simulinkmodel_constructor_args():
+    sig = inspect.signature(simulink_SimulinkModel.__init__)
     params = list(sig.parameters.keys())
     assert "library" in params, "Missing parameter 'library'"
     assert "file" in params, "Missing parameter 'file'"
     assert "version" in params, "Missing parameter 'version'"
 
-def test_simulink::simulinkmodel_has_library():
-    assert hasattr(simulink::SimulinkModel, "library")
+def test_simulink_simulinkmodel_has_library():
+    assert hasattr(simulink_SimulinkModel, "library")
     descriptor = None
-    for klass in simulink::SimulinkModel.__mro__:
+    for klass in simulink_SimulinkModel.__mro__:
         if "library" in klass.__dict__:
             descriptor = klass.__dict__["library"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::simulinkmodel_has_file():
-    assert hasattr(simulink::SimulinkModel, "file")
+def test_simulink_simulinkmodel_has_file():
+    assert hasattr(simulink_SimulinkModel, "file")
     descriptor = None
-    for klass in simulink::SimulinkModel.__mro__:
+    for klass in simulink_SimulinkModel.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
     assert isinstance(descriptor, property)
 
-def test_simulink::simulinkmodel_has_version():
-    assert hasattr(simulink::SimulinkModel, "version")
+def test_simulink_simulinkmodel_has_version():
+    assert hasattr(simulink_SimulinkModel, "version")
     descriptor = None
-    for klass in simulink::SimulinkModel.__mro__:
+    for klass in simulink_SimulinkModel.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -805,37 +805,23 @@ def test_simulink::simulinkmodel_has_version():
 
 
 
-def test_simulink::port_is_not_abstract():
-    assert not inspect.isabstract(simulink::Port)
+def test_simulink_connection_is_not_abstract():
+    assert not inspect.isabstract(simulink_Connection)
 
 
-def test_simulink::port_constructor_exists():
-    assert callable(simulink::Port.__init__)
+def test_simulink_connection_constructor_exists():
+    assert callable(simulink_Connection.__init__)
 
 
-def test_simulink::port_constructor_args():
-    sig = inspect.signature(simulink::Port.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simulink::connection_is_not_abstract():
-    assert not inspect.isabstract(simulink::Connection)
-
-
-def test_simulink::connection_constructor_exists():
-    assert callable(simulink::Connection.__init__)
-
-
-def test_simulink::connection_constructor_args():
-    sig = inspect.signature(simulink::Connection.__init__)
+def test_simulink_connection_constructor_args():
+    sig = inspect.signature(simulink_Connection.__init__)
     params = list(sig.parameters.keys())
     assert "lineName" in params, "Missing parameter 'lineName'"
 
-def test_simulink::connection_has_lineName():
-    assert hasattr(simulink::Connection, "lineName")
+def test_simulink_connection_has_lineName():
+    assert hasattr(simulink_Connection, "lineName")
     descriptor = None
-    for klass in simulink::Connection.__mro__:
+    for klass in simulink_Connection.__mro__:
         if "lineName" in klass.__dict__:
             descriptor = klass.__dict__["lineName"]
             break
@@ -843,16 +829,30 @@ def test_simulink::connection_has_lineName():
 
 
 
-def test_simulink::block_is_not_abstract():
-    assert not inspect.isabstract(simulink::Block)
+def test_simulink_port_is_not_abstract():
+    assert not inspect.isabstract(simulink_Port)
 
 
-def test_simulink::block_constructor_exists():
-    assert callable(simulink::Block.__init__)
+def test_simulink_port_constructor_exists():
+    assert callable(simulink_Port.__init__)
 
 
-def test_simulink::block_constructor_args():
-    sig = inspect.signature(simulink::Block.__init__)
+def test_simulink_port_constructor_args():
+    sig = inspect.signature(simulink_Port.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simulink_block_is_not_abstract():
+    assert not inspect.isabstract(simulink_Block)
+
+
+def test_simulink_block_constructor_exists():
+    assert callable(simulink_Block.__init__)
+
+
+def test_simulink_block_constructor_args():
+    sig = inspect.signature(simulink_Block.__init__)
     params = list(sig.parameters.keys())
 
 def test_triggertype_exists():
@@ -863,10 +863,10 @@ def test_triggertype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TriggerType]
     expected_literals = [
-        "Rising",
-        "Either",
         "FunctionCall",
         "Falling",
+        "Either",
+        "Rising",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -881,8 +881,8 @@ def test_tagvisibility_has_all_literals():
     enum_literals = [lit.name for lit in TagVisibility]
     expected_literals = [
         "Global",
-        "Scoped",
         "Local",
+        "Scoped",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -896,8 +896,8 @@ def test_enablestates_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EnableStates]
     expected_literals = [
-        "Held",
         "Inherit",
+        "Held",
         "Reset",
     ]
     # Check that all expected literals exist
@@ -922,150 +922,150 @@ SimulinkReference_strategy = st.builds(
 OutPort_strategy = st.builds(
     OutPort,
 )
-simulink::State_strategy = st.builds(
-    simulink::State,
+simulink_State_strategy = st.builds(
+    simulink_State,
 )
-simulink::SimulinkReference_strategy = st.builds(
-    simulink::SimulinkReference,
-    qualifier=
-        safe_text,
+simulink_SimulinkReference_strategy = st.builds(
+    simulink_SimulinkReference,
     name=
+        safe_text,
+    qualifier=
         safe_text
 )
 InPortBlock_strategy = st.builds(
     InPortBlock,
 )
-simulink::EnableBlock_strategy = st.builds(
-    simulink::EnableBlock,
+simulink_EnableBlock_strategy = st.builds(
+    simulink_EnableBlock,
 )
-simulink::TriggerBlock_strategy = st.builds(
-    simulink::TriggerBlock,
+simulink_TriggerBlock_strategy = st.builds(
+    simulink_TriggerBlock,
 )
 Connection_strategy = st.builds(
     Connection,
 )
-simulink::MultiConnection_strategy = st.builds(
-    simulink::MultiConnection,
+simulink_MultiConnection_strategy = st.builds(
+    simulink_MultiConnection,
 )
 Block_strategy = st.builds(
     Block,
 )
-simulink::ModelReference_strategy = st.builds(
-    simulink::ModelReference,
+simulink_ModelReference_strategy = st.builds(
+    simulink_ModelReference,
 )
-simulink::VirtualBlock_strategy = st.builds(
-    simulink::VirtualBlock,
+simulink_VirtualBlock_strategy = st.builds(
+    simulink_VirtualBlock,
 )
 VirtualBlock_strategy = st.builds(
     VirtualBlock,
 )
-simulink::GotoTagVisibility_strategy = st.builds(
-    simulink::GotoTagVisibility,
+simulink_GotoTagVisibility_strategy = st.builds(
+    simulink_GotoTagVisibility,
 )
-simulink::From_strategy = st.builds(
-    simulink::From,
+simulink_From_strategy = st.builds(
+    simulink_From,
 )
-simulink::Goto_strategy = st.builds(
-    simulink::Goto,
-    tagVisibility=
-        safe_text,
+simulink_Goto_strategy = st.builds(
+    simulink_Goto,
     gotoTag=
+        safe_text,
+    tagVisibility=
         safe_text
 )
 PortBlock_strategy = st.builds(
     PortBlock,
 )
-simulink::InPortBlock_strategy = st.builds(
-    simulink::InPortBlock,
+simulink_InPortBlock_strategy = st.builds(
+    simulink_InPortBlock,
 )
-simulink::OutPortBlock_strategy = st.builds(
-    simulink::OutPortBlock,
+simulink_OutPortBlock_strategy = st.builds(
+    simulink_OutPortBlock,
 )
 InPort_strategy = st.builds(
     InPort,
 )
-simulink::SingleConnection_strategy = st.builds(
-    simulink::SingleConnection,
+simulink_SingleConnection_strategy = st.builds(
+    simulink_SingleConnection,
 )
 Port_strategy = st.builds(
     Port,
 )
-simulink::BusSpecification_strategy = st.builds(
-    simulink::BusSpecification,
+simulink_BusSpecification_strategy = st.builds(
+    simulink_BusSpecification,
 )
-simulink::BusSignalMapping_strategy = st.builds(
-    simulink::BusSignalMapping,
-    incomplete=
-        st.booleans(),
+simulink_BusSignalMapping_strategy = st.builds(
+    simulink_BusSignalMapping,
     mappingPath=
-        safe_text
+        safe_text,
+    incomplete=
+        st.booleans()
 )
 BusSpecification_strategy = st.builds(
     BusSpecification,
 )
-simulink::BusCreator_strategy = st.builds(
-    simulink::BusCreator,
+simulink_BusCreator_strategy = st.builds(
+    simulink_BusCreator,
 )
-simulink::BusSelector_strategy = st.builds(
-    simulink::BusSelector,
+simulink_BusSelector_strategy = st.builds(
+    simulink_BusSelector,
     outputAsBus=
         st.booleans()
 )
-simulink::SubSystem_strategy = st.builds(
-    simulink::SubSystem,
+simulink_SubSystem_strategy = st.builds(
+    simulink_SubSystem,
     tag=
         safe_text
 )
-simulink::OutPort_strategy = st.builds(
-    simulink::OutPort,
+simulink_OutPort_strategy = st.builds(
+    simulink_OutPort,
 )
-simulink::InPort_strategy = st.builds(
-    simulink::InPort,
+simulink_InPort_strategy = st.builds(
+    simulink_InPort,
 )
-simulink::Enable_strategy = st.builds(
-    simulink::Enable,
+simulink_Enable_strategy = st.builds(
+    simulink_Enable,
     statesWhenEnabling=
         safe_text
 )
-simulink::PortBlock_strategy = st.builds(
-    simulink::PortBlock,
+simulink_PortBlock_strategy = st.builds(
+    simulink_PortBlock,
 )
-simulink::LibraryLinkReference_strategy = st.builds(
-    simulink::LibraryLinkReference,
+simulink_LibraryLinkReference_strategy = st.builds(
+    simulink_LibraryLinkReference,
     disabled=
         st.booleans()
 )
-simulink::IdentifierReference_strategy = st.builds(
-    simulink::IdentifierReference,
+simulink_IdentifierReference_strategy = st.builds(
+    simulink_IdentifierReference,
 )
-simulink::SimulinkElement_strategy = st.builds(
-    simulink::SimulinkElement,
+simulink_SimulinkElement_strategy = st.builds(
+    simulink_SimulinkElement,
     name=
         safe_text
 )
-simulink::Trigger_strategy = st.builds(
-    simulink::Trigger,
+simulink_Trigger_strategy = st.builds(
+    simulink_Trigger,
     triggerType=
         safe_text,
     statesWhenEnabling=
         safe_text
 )
-simulink::Parameter_strategy = st.builds(
-    simulink::Parameter,
+simulink_Parameter_strategy = st.builds(
+    simulink_Parameter,
     readOnly=
         st.booleans(),
-    value=
-        safe_text,
     name=
         safe_text,
     type=
+        safe_text,
+    value=
         safe_text
 )
 SimulinkElement_strategy = st.builds(
     SimulinkElement,
 )
-simulink::SimulinkModel_strategy = st.builds(
-    simulink::SimulinkModel,
+simulink_SimulinkModel_strategy = st.builds(
+    simulink_SimulinkModel,
     library=
         st.booleans(),
     file=
@@ -1073,16 +1073,16 @@ simulink::SimulinkModel_strategy = st.builds(
     version=
         safe_text
 )
-simulink::Port_strategy = st.builds(
-    simulink::Port,
-)
-simulink::Connection_strategy = st.builds(
-    simulink::Connection,
+simulink_Connection_strategy = st.builds(
+    simulink_Connection,
     lineName=
         safe_text
 )
-simulink::Block_strategy = st.builds(
-    simulink::Block,
+simulink_Port_strategy = st.builds(
+    simulink_Port,
+)
+simulink_Block_strategy = st.builds(
+    simulink_Block,
 )
 
 @given(instance=SimulinkReference_strategy)
@@ -1095,433 +1095,370 @@ def test_simulinkreference_instantiation(instance):
 def test_outport_instantiation(instance):
     assert isinstance(instance, OutPort)
 
-@given(instance=simulink::State_strategy)
+@given(instance=simulink_State_strategy)
 @settings(max_examples=50)
-def test_simulink::state_instantiation(instance):
-    assert isinstance(instance, simulink::State)
+def test_simulink_state_instantiation(instance):
+    assert isinstance(instance, simulink_State)
 
-@given(instance=simulink::SimulinkReference_strategy)
+@given(instance=simulink_SimulinkReference_strategy)
 @settings(max_examples=50)
-def test_simulink::simulinkreference_instantiation(instance):
-    assert isinstance(instance, simulink::SimulinkReference)
-
-@given(instance=simulink::SimulinkReference_strategy)
-def test_simulink::simulinkreference_qualifier_type(instance):
-    assert isinstance(instance.qualifier, str)
+def test_simulink_simulinkreference_instantiation(instance):
+    assert isinstance(instance, simulink_SimulinkReference)
 
 
-@given(instance=simulink::SimulinkReference_strategy)
-def test_simulink::simulinkreference_qualifier_setter(instance):
-    original = instance.qualifier
-    instance.qualifier = original
-    assert instance.qualifier == original
 
-@given(instance=simulink::SimulinkReference_strategy)
-def test_simulink::simulinkreference_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simulink::SimulinkReference_strategy)
-def test_simulink::simulinkreference_name_setter(instance):
+@given(instance=simulink_SimulinkReference_strategy)
+def test_simulink_simulinkreference_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=simulink_SimulinkReference_strategy)
+def test_simulink_simulinkreference_qualifier_setter(instance):
+    original = instance.qualifier
+    instance.qualifier = original
+    assert instance.qualifier == original
 
 @given(instance=InPortBlock_strategy)
 @settings(max_examples=50)
 def test_inportblock_instantiation(instance):
     assert isinstance(instance, InPortBlock)
 
-@given(instance=simulink::EnableBlock_strategy)
+@given(instance=simulink_EnableBlock_strategy)
 @settings(max_examples=50)
-def test_simulink::enableblock_instantiation(instance):
-    assert isinstance(instance, simulink::EnableBlock)
+def test_simulink_enableblock_instantiation(instance):
+    assert isinstance(instance, simulink_EnableBlock)
 
-@given(instance=simulink::TriggerBlock_strategy)
+@given(instance=simulink_TriggerBlock_strategy)
 @settings(max_examples=50)
-def test_simulink::triggerblock_instantiation(instance):
-    assert isinstance(instance, simulink::TriggerBlock)
+def test_simulink_triggerblock_instantiation(instance):
+    assert isinstance(instance, simulink_TriggerBlock)
 
 @given(instance=Connection_strategy)
 @settings(max_examples=50)
 def test_connection_instantiation(instance):
     assert isinstance(instance, Connection)
 
-@given(instance=simulink::MultiConnection_strategy)
+@given(instance=simulink_MultiConnection_strategy)
 @settings(max_examples=50)
-def test_simulink::multiconnection_instantiation(instance):
-    assert isinstance(instance, simulink::MultiConnection)
+def test_simulink_multiconnection_instantiation(instance):
+    assert isinstance(instance, simulink_MultiConnection)
 
 @given(instance=Block_strategy)
 @settings(max_examples=50)
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=simulink::ModelReference_strategy)
+@given(instance=simulink_ModelReference_strategy)
 @settings(max_examples=50)
-def test_simulink::modelreference_instantiation(instance):
-    assert isinstance(instance, simulink::ModelReference)
+def test_simulink_modelreference_instantiation(instance):
+    assert isinstance(instance, simulink_ModelReference)
 
-@given(instance=simulink::VirtualBlock_strategy)
+@given(instance=simulink_VirtualBlock_strategy)
 @settings(max_examples=50)
-def test_simulink::virtualblock_instantiation(instance):
-    assert isinstance(instance, simulink::VirtualBlock)
+def test_simulink_virtualblock_instantiation(instance):
+    assert isinstance(instance, simulink_VirtualBlock)
 
 @given(instance=VirtualBlock_strategy)
 @settings(max_examples=50)
 def test_virtualblock_instantiation(instance):
     assert isinstance(instance, VirtualBlock)
 
-@given(instance=simulink::GotoTagVisibility_strategy)
+@given(instance=simulink_GotoTagVisibility_strategy)
 @settings(max_examples=50)
-def test_simulink::gototagvisibility_instantiation(instance):
-    assert isinstance(instance, simulink::GotoTagVisibility)
+def test_simulink_gototagvisibility_instantiation(instance):
+    assert isinstance(instance, simulink_GotoTagVisibility)
 
-@given(instance=simulink::From_strategy)
+@given(instance=simulink_From_strategy)
 @settings(max_examples=50)
-def test_simulink::from_instantiation(instance):
-    assert isinstance(instance, simulink::From)
+def test_simulink_from_instantiation(instance):
+    assert isinstance(instance, simulink_From)
 
-@given(instance=simulink::Goto_strategy)
+@given(instance=simulink_Goto_strategy)
 @settings(max_examples=50)
-def test_simulink::goto_instantiation(instance):
-    assert isinstance(instance, simulink::Goto)
-
-@given(instance=simulink::Goto_strategy)
-def test_simulink::goto_tagVisibility_type(instance):
-    assert isinstance(instance.tagVisibility, str)
+def test_simulink_goto_instantiation(instance):
+    assert isinstance(instance, simulink_Goto)
 
 
-@given(instance=simulink::Goto_strategy)
-def test_simulink::goto_tagVisibility_setter(instance):
-    original = instance.tagVisibility
-    instance.tagVisibility = original
-    assert instance.tagVisibility == original
 
-@given(instance=simulink::Goto_strategy)
-def test_simulink::goto_gotoTag_type(instance):
-    assert isinstance(instance.gotoTag, str)
-
-
-@given(instance=simulink::Goto_strategy)
-def test_simulink::goto_gotoTag_setter(instance):
+@given(instance=simulink_Goto_strategy)
+def test_simulink_goto_gotoTag_setter(instance):
     original = instance.gotoTag
     instance.gotoTag = original
     assert instance.gotoTag == original
+
+
+
+@given(instance=simulink_Goto_strategy)
+def test_simulink_goto_tagVisibility_setter(instance):
+    original = instance.tagVisibility
+    instance.tagVisibility = original
+    assert instance.tagVisibility == original
 
 @given(instance=PortBlock_strategy)
 @settings(max_examples=50)
 def test_portblock_instantiation(instance):
     assert isinstance(instance, PortBlock)
 
-@given(instance=simulink::InPortBlock_strategy)
+@given(instance=simulink_InPortBlock_strategy)
 @settings(max_examples=50)
-def test_simulink::inportblock_instantiation(instance):
-    assert isinstance(instance, simulink::InPortBlock)
+def test_simulink_inportblock_instantiation(instance):
+    assert isinstance(instance, simulink_InPortBlock)
 
-@given(instance=simulink::OutPortBlock_strategy)
+@given(instance=simulink_OutPortBlock_strategy)
 @settings(max_examples=50)
-def test_simulink::outportblock_instantiation(instance):
-    assert isinstance(instance, simulink::OutPortBlock)
+def test_simulink_outportblock_instantiation(instance):
+    assert isinstance(instance, simulink_OutPortBlock)
 
 @given(instance=InPort_strategy)
 @settings(max_examples=50)
 def test_inport_instantiation(instance):
     assert isinstance(instance, InPort)
 
-@given(instance=simulink::SingleConnection_strategy)
+@given(instance=simulink_SingleConnection_strategy)
 @settings(max_examples=50)
-def test_simulink::singleconnection_instantiation(instance):
-    assert isinstance(instance, simulink::SingleConnection)
+def test_simulink_singleconnection_instantiation(instance):
+    assert isinstance(instance, simulink_SingleConnection)
 
 @given(instance=Port_strategy)
 @settings(max_examples=50)
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=simulink::BusSpecification_strategy)
+@given(instance=simulink_BusSpecification_strategy)
 @settings(max_examples=50)
-def test_simulink::busspecification_instantiation(instance):
-    assert isinstance(instance, simulink::BusSpecification)
+def test_simulink_busspecification_instantiation(instance):
+    assert isinstance(instance, simulink_BusSpecification)
 
-@given(instance=simulink::BusSignalMapping_strategy)
+@given(instance=simulink_BusSignalMapping_strategy)
 @settings(max_examples=50)
-def test_simulink::bussignalmapping_instantiation(instance):
-    assert isinstance(instance, simulink::BusSignalMapping)
-
-@given(instance=simulink::BusSignalMapping_strategy)
-def test_simulink::bussignalmapping_incomplete_type(instance):
-    assert isinstance(instance.incomplete, bool)
+def test_simulink_bussignalmapping_instantiation(instance):
+    assert isinstance(instance, simulink_BusSignalMapping)
 
 
-@given(instance=simulink::BusSignalMapping_strategy)
-def test_simulink::bussignalmapping_incomplete_setter(instance):
-    original = instance.incomplete
-    instance.incomplete = original
-    assert instance.incomplete == original
 
-@given(instance=simulink::BusSignalMapping_strategy)
-def test_simulink::bussignalmapping_mappingPath_type(instance):
-    assert isinstance(instance.mappingPath, str)
-
-
-@given(instance=simulink::BusSignalMapping_strategy)
-def test_simulink::bussignalmapping_mappingPath_setter(instance):
+@given(instance=simulink_BusSignalMapping_strategy)
+def test_simulink_bussignalmapping_mappingPath_setter(instance):
     original = instance.mappingPath
     instance.mappingPath = original
     assert instance.mappingPath == original
+
+
+
+@given(instance=simulink_BusSignalMapping_strategy)
+def test_simulink_bussignalmapping_incomplete_setter(instance):
+    original = instance.incomplete
+    instance.incomplete = original
+    assert instance.incomplete == original
 
 @given(instance=BusSpecification_strategy)
 @settings(max_examples=50)
 def test_busspecification_instantiation(instance):
     assert isinstance(instance, BusSpecification)
 
-@given(instance=simulink::BusCreator_strategy)
+@given(instance=simulink_BusCreator_strategy)
 @settings(max_examples=50)
-def test_simulink::buscreator_instantiation(instance):
-    assert isinstance(instance, simulink::BusCreator)
+def test_simulink_buscreator_instantiation(instance):
+    assert isinstance(instance, simulink_BusCreator)
 
-@given(instance=simulink::BusSelector_strategy)
+@given(instance=simulink_BusSelector_strategy)
 @settings(max_examples=50)
-def test_simulink::busselector_instantiation(instance):
-    assert isinstance(instance, simulink::BusSelector)
-
-@given(instance=simulink::BusSelector_strategy)
-def test_simulink::busselector_outputAsBus_type(instance):
-    assert isinstance(instance.outputAsBus, bool)
+def test_simulink_busselector_instantiation(instance):
+    assert isinstance(instance, simulink_BusSelector)
 
 
-@given(instance=simulink::BusSelector_strategy)
-def test_simulink::busselector_outputAsBus_setter(instance):
+
+@given(instance=simulink_BusSelector_strategy)
+def test_simulink_busselector_outputAsBus_setter(instance):
     original = instance.outputAsBus
     instance.outputAsBus = original
     assert instance.outputAsBus == original
 
-@given(instance=simulink::SubSystem_strategy)
+@given(instance=simulink_SubSystem_strategy)
 @settings(max_examples=50)
-def test_simulink::subsystem_instantiation(instance):
-    assert isinstance(instance, simulink::SubSystem)
-
-@given(instance=simulink::SubSystem_strategy)
-def test_simulink::subsystem_tag_type(instance):
-    assert isinstance(instance.tag, str)
+def test_simulink_subsystem_instantiation(instance):
+    assert isinstance(instance, simulink_SubSystem)
 
 
-@given(instance=simulink::SubSystem_strategy)
-def test_simulink::subsystem_tag_setter(instance):
+
+@given(instance=simulink_SubSystem_strategy)
+def test_simulink_subsystem_tag_setter(instance):
     original = instance.tag
     instance.tag = original
     assert instance.tag == original
 
-@given(instance=simulink::OutPort_strategy)
+@given(instance=simulink_OutPort_strategy)
 @settings(max_examples=50)
-def test_simulink::outport_instantiation(instance):
-    assert isinstance(instance, simulink::OutPort)
+def test_simulink_outport_instantiation(instance):
+    assert isinstance(instance, simulink_OutPort)
 
-@given(instance=simulink::InPort_strategy)
+@given(instance=simulink_InPort_strategy)
 @settings(max_examples=50)
-def test_simulink::inport_instantiation(instance):
-    assert isinstance(instance, simulink::InPort)
+def test_simulink_inport_instantiation(instance):
+    assert isinstance(instance, simulink_InPort)
 
-@given(instance=simulink::Enable_strategy)
+@given(instance=simulink_Enable_strategy)
 @settings(max_examples=50)
-def test_simulink::enable_instantiation(instance):
-    assert isinstance(instance, simulink::Enable)
-
-@given(instance=simulink::Enable_strategy)
-def test_simulink::enable_statesWhenEnabling_type(instance):
-    assert isinstance(instance.statesWhenEnabling, str)
+def test_simulink_enable_instantiation(instance):
+    assert isinstance(instance, simulink_Enable)
 
 
-@given(instance=simulink::Enable_strategy)
-def test_simulink::enable_statesWhenEnabling_setter(instance):
+
+@given(instance=simulink_Enable_strategy)
+def test_simulink_enable_statesWhenEnabling_setter(instance):
     original = instance.statesWhenEnabling
     instance.statesWhenEnabling = original
     assert instance.statesWhenEnabling == original
 
-@given(instance=simulink::PortBlock_strategy)
+@given(instance=simulink_PortBlock_strategy)
 @settings(max_examples=50)
-def test_simulink::portblock_instantiation(instance):
-    assert isinstance(instance, simulink::PortBlock)
+def test_simulink_portblock_instantiation(instance):
+    assert isinstance(instance, simulink_PortBlock)
 
-@given(instance=simulink::LibraryLinkReference_strategy)
+@given(instance=simulink_LibraryLinkReference_strategy)
 @settings(max_examples=50)
-def test_simulink::librarylinkreference_instantiation(instance):
-    assert isinstance(instance, simulink::LibraryLinkReference)
-
-@given(instance=simulink::LibraryLinkReference_strategy)
-def test_simulink::librarylinkreference_disabled_type(instance):
-    assert isinstance(instance.disabled, bool)
+def test_simulink_librarylinkreference_instantiation(instance):
+    assert isinstance(instance, simulink_LibraryLinkReference)
 
 
-@given(instance=simulink::LibraryLinkReference_strategy)
-def test_simulink::librarylinkreference_disabled_setter(instance):
+
+@given(instance=simulink_LibraryLinkReference_strategy)
+def test_simulink_librarylinkreference_disabled_setter(instance):
     original = instance.disabled
     instance.disabled = original
     assert instance.disabled == original
 
-@given(instance=simulink::IdentifierReference_strategy)
+@given(instance=simulink_IdentifierReference_strategy)
 @settings(max_examples=50)
-def test_simulink::identifierreference_instantiation(instance):
-    assert isinstance(instance, simulink::IdentifierReference)
+def test_simulink_identifierreference_instantiation(instance):
+    assert isinstance(instance, simulink_IdentifierReference)
 
-@given(instance=simulink::SimulinkElement_strategy)
+@given(instance=simulink_SimulinkElement_strategy)
 @settings(max_examples=50)
-def test_simulink::simulinkelement_instantiation(instance):
-    assert isinstance(instance, simulink::SimulinkElement)
-
-@given(instance=simulink::SimulinkElement_strategy)
-def test_simulink::simulinkelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simulink_simulinkelement_instantiation(instance):
+    assert isinstance(instance, simulink_SimulinkElement)
 
 
-@given(instance=simulink::SimulinkElement_strategy)
-def test_simulink::simulinkelement_name_setter(instance):
+
+@given(instance=simulink_SimulinkElement_strategy)
+def test_simulink_simulinkelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simulink::Trigger_strategy)
+@given(instance=simulink_Trigger_strategy)
 @settings(max_examples=50)
-def test_simulink::trigger_instantiation(instance):
-    assert isinstance(instance, simulink::Trigger)
-
-@given(instance=simulink::Trigger_strategy)
-def test_simulink::trigger_triggerType_type(instance):
-    assert isinstance(instance.triggerType, str)
+def test_simulink_trigger_instantiation(instance):
+    assert isinstance(instance, simulink_Trigger)
 
 
-@given(instance=simulink::Trigger_strategy)
-def test_simulink::trigger_triggerType_setter(instance):
+
+@given(instance=simulink_Trigger_strategy)
+def test_simulink_trigger_triggerType_setter(instance):
     original = instance.triggerType
     instance.triggerType = original
     assert instance.triggerType == original
 
-@given(instance=simulink::Trigger_strategy)
-def test_simulink::trigger_statesWhenEnabling_type(instance):
-    assert isinstance(instance.statesWhenEnabling, str)
 
 
-@given(instance=simulink::Trigger_strategy)
-def test_simulink::trigger_statesWhenEnabling_setter(instance):
+@given(instance=simulink_Trigger_strategy)
+def test_simulink_trigger_statesWhenEnabling_setter(instance):
     original = instance.statesWhenEnabling
     instance.statesWhenEnabling = original
     assert instance.statesWhenEnabling == original
 
-@given(instance=simulink::Parameter_strategy)
+@given(instance=simulink_Parameter_strategy)
 @settings(max_examples=50)
-def test_simulink::parameter_instantiation(instance):
-    assert isinstance(instance, simulink::Parameter)
-
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_readOnly_type(instance):
-    assert isinstance(instance.readOnly, bool)
+def test_simulink_parameter_instantiation(instance):
+    assert isinstance(instance, simulink_Parameter)
 
 
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_readOnly_setter(instance):
+
+@given(instance=simulink_Parameter_strategy)
+def test_simulink_parameter_readOnly_setter(instance):
     original = instance.readOnly
     instance.readOnly = original
     assert instance.readOnly == original
 
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_name_setter(instance):
+@given(instance=simulink_Parameter_strategy)
+def test_simulink_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=simulink::Parameter_strategy)
-def test_simulink::parameter_type_setter(instance):
+@given(instance=simulink_Parameter_strategy)
+def test_simulink_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
+
+
+
+@given(instance=simulink_Parameter_strategy)
+def test_simulink_parameter_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=SimulinkElement_strategy)
 @settings(max_examples=50)
 def test_simulinkelement_instantiation(instance):
     assert isinstance(instance, SimulinkElement)
 
-@given(instance=simulink::SimulinkModel_strategy)
+@given(instance=simulink_SimulinkModel_strategy)
 @settings(max_examples=50)
-def test_simulink::simulinkmodel_instantiation(instance):
-    assert isinstance(instance, simulink::SimulinkModel)
-
-@given(instance=simulink::SimulinkModel_strategy)
-def test_simulink::simulinkmodel_library_type(instance):
-    assert isinstance(instance.library, bool)
+def test_simulink_simulinkmodel_instantiation(instance):
+    assert isinstance(instance, simulink_SimulinkModel)
 
 
-@given(instance=simulink::SimulinkModel_strategy)
-def test_simulink::simulinkmodel_library_setter(instance):
+
+@given(instance=simulink_SimulinkModel_strategy)
+def test_simulink_simulinkmodel_library_setter(instance):
     original = instance.library
     instance.library = original
     assert instance.library == original
 
-@given(instance=simulink::SimulinkModel_strategy)
-def test_simulink::simulinkmodel_file_type(instance):
-    assert isinstance(instance.file, str)
 
 
-@given(instance=simulink::SimulinkModel_strategy)
-def test_simulink::simulinkmodel_file_setter(instance):
+@given(instance=simulink_SimulinkModel_strategy)
+def test_simulink_simulinkmodel_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=simulink::SimulinkModel_strategy)
-def test_simulink::simulinkmodel_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=simulink::SimulinkModel_strategy)
-def test_simulink::simulinkmodel_version_setter(instance):
+@given(instance=simulink_SimulinkModel_strategy)
+def test_simulink_simulinkmodel_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=simulink::Port_strategy)
+@given(instance=simulink_Connection_strategy)
 @settings(max_examples=50)
-def test_simulink::port_instantiation(instance):
-    assert isinstance(instance, simulink::Port)
-
-@given(instance=simulink::Connection_strategy)
-@settings(max_examples=50)
-def test_simulink::connection_instantiation(instance):
-    assert isinstance(instance, simulink::Connection)
-
-@given(instance=simulink::Connection_strategy)
-def test_simulink::connection_lineName_type(instance):
-    assert isinstance(instance.lineName, str)
+def test_simulink_connection_instantiation(instance):
+    assert isinstance(instance, simulink_Connection)
 
 
-@given(instance=simulink::Connection_strategy)
-def test_simulink::connection_lineName_setter(instance):
+
+@given(instance=simulink_Connection_strategy)
+def test_simulink_connection_lineName_setter(instance):
     original = instance.lineName
     instance.lineName = original
     assert instance.lineName == original
 
-@given(instance=simulink::Block_strategy)
+@given(instance=simulink_Port_strategy)
 @settings(max_examples=50)
-def test_simulink::block_instantiation(instance):
-    assert isinstance(instance, simulink::Block)
+def test_simulink_port_instantiation(instance):
+    assert isinstance(instance, simulink_Port)
+
+@given(instance=simulink_Block_strategy)
+@settings(max_examples=50)
+def test_simulink_block_instantiation(instance):
+    assert isinstance(instance, simulink_Block)

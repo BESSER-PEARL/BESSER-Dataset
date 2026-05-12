@@ -3,57 +3,57 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Parallele,
-    droneDSLLib::Parallele4,
-    droneDSLLib::Parallele3,
-    droneDSLLib::Parallele2,
-    droneDSLLib::CommandeBasique,
-    droneDSLLib::DecollerAtterrir,
-    droneDSLLib::Mouvement,
-    droneDSLLib::AR,
-    droneDSLLib::RGRD,
-    droneDSLLib::GDr,
-    droneDSLLib::MD,
+    droneDSLLib_Parallele3,
+    droneDSLLib_Parallele4,
+    droneDSLLib_Parallele2,
+    droneDSLLib_CommandeBasique,
+    droneDSLLib_DecollerAtterrir,
+    droneDSLLib_Mouvement,
+    droneDSLLib_AR,
+    droneDSLLib_RGRD,
+    droneDSLLib_GDr,
+    droneDSLLib_MD,
     FonctionCall,
-    droneDSLLib::FonctionCallInterne,
-    droneDSLLib::FonctionCall,
-    droneDSLLib::EObject,
+    droneDSLLib_FonctionCallInterne,
+    droneDSLLib_FonctionCall,
+    droneDSLLib_EObject,
     AR,
     RGRD,
     GDr,
     VarDecl,
-    droneDSLLib::PourcentDecl,
-    droneDSLLib::SecondeDecl,
+    droneDSLLib_PourcentDecl,
+    droneDSLLib_SecondeDecl,
     PourcentExp,
-    droneDSLLib::PourcentConst,
+    droneDSLLib_PourcentConst,
     MD,
     CommandeBasique,
-    droneDSLLib::Pause,
+    droneDSLLib_Pause,
     Mouvement,
-    droneDSLLib::Droite,
-    droneDSLLib::RotationDroite,
-    droneDSLLib::Gauche,
-    droneDSLLib::RotationGauche,
-    droneDSLLib::Avancer,
-    droneDSLLib::Parallele,
-    droneDSLLib::Reculer,
-    droneDSLLib::Descendre,
-    droneDSLLib::Monter,
+    droneDSLLib_Avancer,
+    droneDSLLib_Reculer,
+    droneDSLLib_Droite,
+    droneDSLLib_RotationDroite,
+    droneDSLLib_RotationGauche,
+    droneDSLLib_Descendre,
+    droneDSLLib_Parallele,
+    droneDSLLib_Gauche,
+    droneDSLLib_Monter,
     DecollerAtterrir,
-    droneDSLLib::Atterrir,
-    droneDSLLib::Decoller,
-    droneDSLLib::SecondeExp,
-    droneDSLLib::PourcentExp,
-    droneDSLLib::RefPourcentVar,
-    droneDSLLib::VarDecl,
+    droneDSLLib_Atterrir,
+    droneDSLLib_Decoller,
+    droneDSLLib_SecondeExp,
+    droneDSLLib_PourcentExp,
+    droneDSLLib_RefPourcentVar,
+    droneDSLLib_VarDecl,
     SecondeExp,
-    droneDSLLib::RefSecondeVar,
-    droneDSLLib::SecondeConst,
-    droneDSLLib::FonctionDecl,
-    droneDSLLib::Model,
+    droneDSLLib_RefSecondeVar,
+    droneDSLLib_SecondeConst,
+    droneDSLLib_FonctionDecl,
+    droneDSLLib_Model,
 )
 
 # =============================================================================
@@ -76,79 +76,79 @@ def test_parallele_constructor_args():
 
 
 
-def test_dronedsllib::parallele4_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Parallele4)
+def test_dronedsllib_parallele3_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Parallele3)
 
 
-def test_dronedsllib::parallele4_constructor_exists():
-    assert callable(droneDSLLib::Parallele4.__init__)
+def test_dronedsllib_parallele3_constructor_exists():
+    assert callable(droneDSLLib_Parallele3.__init__)
 
 
-def test_dronedsllib::parallele4_constructor_args():
-    sig = inspect.signature(droneDSLLib::Parallele4.__init__)
+def test_dronedsllib_parallele3_constructor_args():
+    sig = inspect.signature(droneDSLLib_Parallele3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::parallele3_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Parallele3)
+def test_dronedsllib_parallele4_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Parallele4)
 
 
-def test_dronedsllib::parallele3_constructor_exists():
-    assert callable(droneDSLLib::Parallele3.__init__)
+def test_dronedsllib_parallele4_constructor_exists():
+    assert callable(droneDSLLib_Parallele4.__init__)
 
 
-def test_dronedsllib::parallele3_constructor_args():
-    sig = inspect.signature(droneDSLLib::Parallele3.__init__)
+def test_dronedsllib_parallele4_constructor_args():
+    sig = inspect.signature(droneDSLLib_Parallele4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::parallele2_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Parallele2)
+def test_dronedsllib_parallele2_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Parallele2)
 
 
-def test_dronedsllib::parallele2_constructor_exists():
-    assert callable(droneDSLLib::Parallele2.__init__)
+def test_dronedsllib_parallele2_constructor_exists():
+    assert callable(droneDSLLib_Parallele2.__init__)
 
 
-def test_dronedsllib::parallele2_constructor_args():
-    sig = inspect.signature(droneDSLLib::Parallele2.__init__)
+def test_dronedsllib_parallele2_constructor_args():
+    sig = inspect.signature(droneDSLLib_Parallele2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::commandebasique_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::CommandeBasique)
+def test_dronedsllib_commandebasique_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_CommandeBasique)
 
 
-def test_dronedsllib::commandebasique_constructor_exists():
-    assert callable(droneDSLLib::CommandeBasique.__init__)
+def test_dronedsllib_commandebasique_constructor_exists():
+    assert callable(droneDSLLib_CommandeBasique.__init__)
 
 
-def test_dronedsllib::commandebasique_constructor_args():
-    sig = inspect.signature(droneDSLLib::CommandeBasique.__init__)
+def test_dronedsllib_commandebasique_constructor_args():
+    sig = inspect.signature(droneDSLLib_CommandeBasique.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::decolleratterrir_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::DecollerAtterrir)
+def test_dronedsllib_decolleratterrir_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_DecollerAtterrir)
 
 
-def test_dronedsllib::decolleratterrir_constructor_exists():
-    assert callable(droneDSLLib::DecollerAtterrir.__init__)
+def test_dronedsllib_decolleratterrir_constructor_exists():
+    assert callable(droneDSLLib_DecollerAtterrir.__init__)
 
 
-def test_dronedsllib::decolleratterrir_constructor_args():
-    sig = inspect.signature(droneDSLLib::DecollerAtterrir.__init__)
+def test_dronedsllib_decolleratterrir_constructor_args():
+    sig = inspect.signature(droneDSLLib_DecollerAtterrir.__init__)
     params = list(sig.parameters.keys())
     assert "str" in params, "Missing parameter 'str'"
 
-def test_dronedsllib::decolleratterrir_has_str():
-    assert hasattr(droneDSLLib::DecollerAtterrir, "str")
+def test_dronedsllib_decolleratterrir_has_str():
+    assert hasattr(droneDSLLib_DecollerAtterrir, "str")
     descriptor = None
-    for klass in droneDSLLib::DecollerAtterrir.__mro__:
+    for klass in droneDSLLib_DecollerAtterrir.__mro__:
         if "str" in klass.__dict__:
             descriptor = klass.__dict__["str"]
             break
@@ -156,72 +156,72 @@ def test_dronedsllib::decolleratterrir_has_str():
 
 
 
-def test_dronedsllib::mouvement_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Mouvement)
+def test_dronedsllib_mouvement_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Mouvement)
 
 
-def test_dronedsllib::mouvement_constructor_exists():
-    assert callable(droneDSLLib::Mouvement.__init__)
+def test_dronedsllib_mouvement_constructor_exists():
+    assert callable(droneDSLLib_Mouvement.__init__)
 
 
-def test_dronedsllib::mouvement_constructor_args():
-    sig = inspect.signature(droneDSLLib::Mouvement.__init__)
+def test_dronedsllib_mouvement_constructor_args():
+    sig = inspect.signature(droneDSLLib_Mouvement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::ar_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::AR)
+def test_dronedsllib_ar_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_AR)
 
 
-def test_dronedsllib::ar_constructor_exists():
-    assert callable(droneDSLLib::AR.__init__)
+def test_dronedsllib_ar_constructor_exists():
+    assert callable(droneDSLLib_AR.__init__)
 
 
-def test_dronedsllib::ar_constructor_args():
-    sig = inspect.signature(droneDSLLib::AR.__init__)
+def test_dronedsllib_ar_constructor_args():
+    sig = inspect.signature(droneDSLLib_AR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::rgrd_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::RGRD)
+def test_dronedsllib_rgrd_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_RGRD)
 
 
-def test_dronedsllib::rgrd_constructor_exists():
-    assert callable(droneDSLLib::RGRD.__init__)
+def test_dronedsllib_rgrd_constructor_exists():
+    assert callable(droneDSLLib_RGRD.__init__)
 
 
-def test_dronedsllib::rgrd_constructor_args():
-    sig = inspect.signature(droneDSLLib::RGRD.__init__)
+def test_dronedsllib_rgrd_constructor_args():
+    sig = inspect.signature(droneDSLLib_RGRD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::gdr_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::GDr)
+def test_dronedsllib_gdr_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_GDr)
 
 
-def test_dronedsllib::gdr_constructor_exists():
-    assert callable(droneDSLLib::GDr.__init__)
+def test_dronedsllib_gdr_constructor_exists():
+    assert callable(droneDSLLib_GDr.__init__)
 
 
-def test_dronedsllib::gdr_constructor_args():
-    sig = inspect.signature(droneDSLLib::GDr.__init__)
+def test_dronedsllib_gdr_constructor_args():
+    sig = inspect.signature(droneDSLLib_GDr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::md_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::MD)
+def test_dronedsllib_md_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_MD)
 
 
-def test_dronedsllib::md_constructor_exists():
-    assert callable(droneDSLLib::MD.__init__)
+def test_dronedsllib_md_constructor_exists():
+    assert callable(droneDSLLib_MD.__init__)
 
 
-def test_dronedsllib::md_constructor_args():
-    sig = inspect.signature(droneDSLLib::MD.__init__)
+def test_dronedsllib_md_constructor_args():
+    sig = inspect.signature(droneDSLLib_MD.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,44 +240,44 @@ def test_fonctioncall_constructor_args():
 
 
 
-def test_dronedsllib::fonctioncallinterne_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::FonctionCallInterne)
+def test_dronedsllib_fonctioncallinterne_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_FonctionCallInterne)
 
 
-def test_dronedsllib::fonctioncallinterne_constructor_exists():
-    assert callable(droneDSLLib::FonctionCallInterne.__init__)
+def test_dronedsllib_fonctioncallinterne_constructor_exists():
+    assert callable(droneDSLLib_FonctionCallInterne.__init__)
 
 
-def test_dronedsllib::fonctioncallinterne_constructor_args():
-    sig = inspect.signature(droneDSLLib::FonctionCallInterne.__init__)
+def test_dronedsllib_fonctioncallinterne_constructor_args():
+    sig = inspect.signature(droneDSLLib_FonctionCallInterne.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::fonctioncall_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::FonctionCall)
+def test_dronedsllib_fonctioncall_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_FonctionCall)
 
 
-def test_dronedsllib::fonctioncall_constructor_exists():
-    assert callable(droneDSLLib::FonctionCall.__init__)
+def test_dronedsllib_fonctioncall_constructor_exists():
+    assert callable(droneDSLLib_FonctionCall.__init__)
 
 
-def test_dronedsllib::fonctioncall_constructor_args():
-    sig = inspect.signature(droneDSLLib::FonctionCall.__init__)
+def test_dronedsllib_fonctioncall_constructor_args():
+    sig = inspect.signature(droneDSLLib_FonctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::eobject_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::EObject)
+def test_dronedsllib_eobject_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_EObject)
 
 
-def test_dronedsllib::eobject_constructor_exists():
-    assert callable(droneDSLLib::EObject.__init__)
+def test_dronedsllib_eobject_constructor_exists():
+    assert callable(droneDSLLib_EObject.__init__)
 
 
-def test_dronedsllib::eobject_constructor_args():
-    sig = inspect.signature(droneDSLLib::EObject.__init__)
+def test_dronedsllib_eobject_constructor_args():
+    sig = inspect.signature(droneDSLLib_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -338,30 +338,30 @@ def test_vardecl_constructor_args():
 
 
 
-def test_dronedsllib::pourcentdecl_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::PourcentDecl)
+def test_dronedsllib_pourcentdecl_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_PourcentDecl)
 
 
-def test_dronedsllib::pourcentdecl_constructor_exists():
-    assert callable(droneDSLLib::PourcentDecl.__init__)
+def test_dronedsllib_pourcentdecl_constructor_exists():
+    assert callable(droneDSLLib_PourcentDecl.__init__)
 
 
-def test_dronedsllib::pourcentdecl_constructor_args():
-    sig = inspect.signature(droneDSLLib::PourcentDecl.__init__)
+def test_dronedsllib_pourcentdecl_constructor_args():
+    sig = inspect.signature(droneDSLLib_PourcentDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::secondedecl_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::SecondeDecl)
+def test_dronedsllib_secondedecl_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_SecondeDecl)
 
 
-def test_dronedsllib::secondedecl_constructor_exists():
-    assert callable(droneDSLLib::SecondeDecl.__init__)
+def test_dronedsllib_secondedecl_constructor_exists():
+    assert callable(droneDSLLib_SecondeDecl.__init__)
 
 
-def test_dronedsllib::secondedecl_constructor_args():
-    sig = inspect.signature(droneDSLLib::SecondeDecl.__init__)
+def test_dronedsllib_secondedecl_constructor_args():
+    sig = inspect.signature(droneDSLLib_SecondeDecl.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -380,23 +380,23 @@ def test_pourcentexp_constructor_args():
 
 
 
-def test_dronedsllib::pourcentconst_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::PourcentConst)
+def test_dronedsllib_pourcentconst_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_PourcentConst)
 
 
-def test_dronedsllib::pourcentconst_constructor_exists():
-    assert callable(droneDSLLib::PourcentConst.__init__)
+def test_dronedsllib_pourcentconst_constructor_exists():
+    assert callable(droneDSLLib_PourcentConst.__init__)
 
 
-def test_dronedsllib::pourcentconst_constructor_args():
-    sig = inspect.signature(droneDSLLib::PourcentConst.__init__)
+def test_dronedsllib_pourcentconst_constructor_args():
+    sig = inspect.signature(droneDSLLib_PourcentConst.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_dronedsllib::pourcentconst_has_val():
-    assert hasattr(droneDSLLib::PourcentConst, "val")
+def test_dronedsllib_pourcentconst_has_val():
+    assert hasattr(droneDSLLib_PourcentConst, "val")
     descriptor = None
-    for klass in droneDSLLib::PourcentConst.__mro__:
+    for klass in droneDSLLib_PourcentConst.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -432,16 +432,16 @@ def test_commandebasique_constructor_args():
 
 
 
-def test_dronedsllib::pause_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Pause)
+def test_dronedsllib_pause_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Pause)
 
 
-def test_dronedsllib::pause_constructor_exists():
-    assert callable(droneDSLLib::Pause.__init__)
+def test_dronedsllib_pause_constructor_exists():
+    assert callable(droneDSLLib_Pause.__init__)
 
 
-def test_dronedsllib::pause_constructor_args():
-    sig = inspect.signature(droneDSLLib::Pause.__init__)
+def test_dronedsllib_pause_constructor_args():
+    sig = inspect.signature(droneDSLLib_Pause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -460,128 +460,128 @@ def test_mouvement_constructor_args():
 
 
 
-def test_dronedsllib::droite_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Droite)
+def test_dronedsllib_avancer_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Avancer)
 
 
-def test_dronedsllib::droite_constructor_exists():
-    assert callable(droneDSLLib::Droite.__init__)
+def test_dronedsllib_avancer_constructor_exists():
+    assert callable(droneDSLLib_Avancer.__init__)
 
 
-def test_dronedsllib::droite_constructor_args():
-    sig = inspect.signature(droneDSLLib::Droite.__init__)
+def test_dronedsllib_avancer_constructor_args():
+    sig = inspect.signature(droneDSLLib_Avancer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::rotationdroite_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::RotationDroite)
+def test_dronedsllib_reculer_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Reculer)
 
 
-def test_dronedsllib::rotationdroite_constructor_exists():
-    assert callable(droneDSLLib::RotationDroite.__init__)
+def test_dronedsllib_reculer_constructor_exists():
+    assert callable(droneDSLLib_Reculer.__init__)
 
 
-def test_dronedsllib::rotationdroite_constructor_args():
-    sig = inspect.signature(droneDSLLib::RotationDroite.__init__)
+def test_dronedsllib_reculer_constructor_args():
+    sig = inspect.signature(droneDSLLib_Reculer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::gauche_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Gauche)
+def test_dronedsllib_droite_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Droite)
 
 
-def test_dronedsllib::gauche_constructor_exists():
-    assert callable(droneDSLLib::Gauche.__init__)
+def test_dronedsllib_droite_constructor_exists():
+    assert callable(droneDSLLib_Droite.__init__)
 
 
-def test_dronedsllib::gauche_constructor_args():
-    sig = inspect.signature(droneDSLLib::Gauche.__init__)
+def test_dronedsllib_droite_constructor_args():
+    sig = inspect.signature(droneDSLLib_Droite.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::rotationgauche_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::RotationGauche)
+def test_dronedsllib_rotationdroite_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_RotationDroite)
 
 
-def test_dronedsllib::rotationgauche_constructor_exists():
-    assert callable(droneDSLLib::RotationGauche.__init__)
+def test_dronedsllib_rotationdroite_constructor_exists():
+    assert callable(droneDSLLib_RotationDroite.__init__)
 
 
-def test_dronedsllib::rotationgauche_constructor_args():
-    sig = inspect.signature(droneDSLLib::RotationGauche.__init__)
+def test_dronedsllib_rotationdroite_constructor_args():
+    sig = inspect.signature(droneDSLLib_RotationDroite.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::avancer_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Avancer)
+def test_dronedsllib_rotationgauche_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_RotationGauche)
 
 
-def test_dronedsllib::avancer_constructor_exists():
-    assert callable(droneDSLLib::Avancer.__init__)
+def test_dronedsllib_rotationgauche_constructor_exists():
+    assert callable(droneDSLLib_RotationGauche.__init__)
 
 
-def test_dronedsllib::avancer_constructor_args():
-    sig = inspect.signature(droneDSLLib::Avancer.__init__)
+def test_dronedsllib_rotationgauche_constructor_args():
+    sig = inspect.signature(droneDSLLib_RotationGauche.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::parallele_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Parallele)
+def test_dronedsllib_descendre_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Descendre)
 
 
-def test_dronedsllib::parallele_constructor_exists():
-    assert callable(droneDSLLib::Parallele.__init__)
+def test_dronedsllib_descendre_constructor_exists():
+    assert callable(droneDSLLib_Descendre.__init__)
 
 
-def test_dronedsllib::parallele_constructor_args():
-    sig = inspect.signature(droneDSLLib::Parallele.__init__)
+def test_dronedsllib_descendre_constructor_args():
+    sig = inspect.signature(droneDSLLib_Descendre.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::reculer_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Reculer)
+def test_dronedsllib_parallele_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Parallele)
 
 
-def test_dronedsllib::reculer_constructor_exists():
-    assert callable(droneDSLLib::Reculer.__init__)
+def test_dronedsllib_parallele_constructor_exists():
+    assert callable(droneDSLLib_Parallele.__init__)
 
 
-def test_dronedsllib::reculer_constructor_args():
-    sig = inspect.signature(droneDSLLib::Reculer.__init__)
+def test_dronedsllib_parallele_constructor_args():
+    sig = inspect.signature(droneDSLLib_Parallele.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::descendre_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Descendre)
+def test_dronedsllib_gauche_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Gauche)
 
 
-def test_dronedsllib::descendre_constructor_exists():
-    assert callable(droneDSLLib::Descendre.__init__)
+def test_dronedsllib_gauche_constructor_exists():
+    assert callable(droneDSLLib_Gauche.__init__)
 
 
-def test_dronedsllib::descendre_constructor_args():
-    sig = inspect.signature(droneDSLLib::Descendre.__init__)
+def test_dronedsllib_gauche_constructor_args():
+    sig = inspect.signature(droneDSLLib_Gauche.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::monter_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Monter)
+def test_dronedsllib_monter_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Monter)
 
 
-def test_dronedsllib::monter_constructor_exists():
-    assert callable(droneDSLLib::Monter.__init__)
+def test_dronedsllib_monter_constructor_exists():
+    assert callable(droneDSLLib_Monter.__init__)
 
 
-def test_dronedsllib::monter_constructor_args():
-    sig = inspect.signature(droneDSLLib::Monter.__init__)
+def test_dronedsllib_monter_constructor_args():
+    sig = inspect.signature(droneDSLLib_Monter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -600,93 +600,93 @@ def test_decolleratterrir_constructor_args():
 
 
 
-def test_dronedsllib::atterrir_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Atterrir)
+def test_dronedsllib_atterrir_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Atterrir)
 
 
-def test_dronedsllib::atterrir_constructor_exists():
-    assert callable(droneDSLLib::Atterrir.__init__)
+def test_dronedsllib_atterrir_constructor_exists():
+    assert callable(droneDSLLib_Atterrir.__init__)
 
 
-def test_dronedsllib::atterrir_constructor_args():
-    sig = inspect.signature(droneDSLLib::Atterrir.__init__)
+def test_dronedsllib_atterrir_constructor_args():
+    sig = inspect.signature(droneDSLLib_Atterrir.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::decoller_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Decoller)
+def test_dronedsllib_decoller_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Decoller)
 
 
-def test_dronedsllib::decoller_constructor_exists():
-    assert callable(droneDSLLib::Decoller.__init__)
+def test_dronedsllib_decoller_constructor_exists():
+    assert callable(droneDSLLib_Decoller.__init__)
 
 
-def test_dronedsllib::decoller_constructor_args():
-    sig = inspect.signature(droneDSLLib::Decoller.__init__)
+def test_dronedsllib_decoller_constructor_args():
+    sig = inspect.signature(droneDSLLib_Decoller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::secondeexp_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::SecondeExp)
+def test_dronedsllib_secondeexp_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_SecondeExp)
 
 
-def test_dronedsllib::secondeexp_constructor_exists():
-    assert callable(droneDSLLib::SecondeExp.__init__)
+def test_dronedsllib_secondeexp_constructor_exists():
+    assert callable(droneDSLLib_SecondeExp.__init__)
 
 
-def test_dronedsllib::secondeexp_constructor_args():
-    sig = inspect.signature(droneDSLLib::SecondeExp.__init__)
+def test_dronedsllib_secondeexp_constructor_args():
+    sig = inspect.signature(droneDSLLib_SecondeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::pourcentexp_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::PourcentExp)
+def test_dronedsllib_pourcentexp_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_PourcentExp)
 
 
-def test_dronedsllib::pourcentexp_constructor_exists():
-    assert callable(droneDSLLib::PourcentExp.__init__)
+def test_dronedsllib_pourcentexp_constructor_exists():
+    assert callable(droneDSLLib_PourcentExp.__init__)
 
 
-def test_dronedsllib::pourcentexp_constructor_args():
-    sig = inspect.signature(droneDSLLib::PourcentExp.__init__)
+def test_dronedsllib_pourcentexp_constructor_args():
+    sig = inspect.signature(droneDSLLib_PourcentExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::refpourcentvar_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::RefPourcentVar)
+def test_dronedsllib_refpourcentvar_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_RefPourcentVar)
 
 
-def test_dronedsllib::refpourcentvar_constructor_exists():
-    assert callable(droneDSLLib::RefPourcentVar.__init__)
+def test_dronedsllib_refpourcentvar_constructor_exists():
+    assert callable(droneDSLLib_RefPourcentVar.__init__)
 
 
-def test_dronedsllib::refpourcentvar_constructor_args():
-    sig = inspect.signature(droneDSLLib::RefPourcentVar.__init__)
+def test_dronedsllib_refpourcentvar_constructor_args():
+    sig = inspect.signature(droneDSLLib_RefPourcentVar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::vardecl_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::VarDecl)
+def test_dronedsllib_vardecl_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_VarDecl)
 
 
-def test_dronedsllib::vardecl_constructor_exists():
-    assert callable(droneDSLLib::VarDecl.__init__)
+def test_dronedsllib_vardecl_constructor_exists():
+    assert callable(droneDSLLib_VarDecl.__init__)
 
 
-def test_dronedsllib::vardecl_constructor_args():
-    sig = inspect.signature(droneDSLLib::VarDecl.__init__)
+def test_dronedsllib_vardecl_constructor_args():
+    sig = inspect.signature(droneDSLLib_VarDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dronedsllib::vardecl_has_name():
-    assert hasattr(droneDSLLib::VarDecl, "name")
+def test_dronedsllib_vardecl_has_name():
+    assert hasattr(droneDSLLib_VarDecl, "name")
     descriptor = None
-    for klass in droneDSLLib::VarDecl.__mro__:
+    for klass in droneDSLLib_VarDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -708,37 +708,37 @@ def test_secondeexp_constructor_args():
 
 
 
-def test_dronedsllib::refsecondevar_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::RefSecondeVar)
+def test_dronedsllib_refsecondevar_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_RefSecondeVar)
 
 
-def test_dronedsllib::refsecondevar_constructor_exists():
-    assert callable(droneDSLLib::RefSecondeVar.__init__)
+def test_dronedsllib_refsecondevar_constructor_exists():
+    assert callable(droneDSLLib_RefSecondeVar.__init__)
 
 
-def test_dronedsllib::refsecondevar_constructor_args():
-    sig = inspect.signature(droneDSLLib::RefSecondeVar.__init__)
+def test_dronedsllib_refsecondevar_constructor_args():
+    sig = inspect.signature(droneDSLLib_RefSecondeVar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dronedsllib::secondeconst_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::SecondeConst)
+def test_dronedsllib_secondeconst_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_SecondeConst)
 
 
-def test_dronedsllib::secondeconst_constructor_exists():
-    assert callable(droneDSLLib::SecondeConst.__init__)
+def test_dronedsllib_secondeconst_constructor_exists():
+    assert callable(droneDSLLib_SecondeConst.__init__)
 
 
-def test_dronedsllib::secondeconst_constructor_args():
-    sig = inspect.signature(droneDSLLib::SecondeConst.__init__)
+def test_dronedsllib_secondeconst_constructor_args():
+    sig = inspect.signature(droneDSLLib_SecondeConst.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_dronedsllib::secondeconst_has_val():
-    assert hasattr(droneDSLLib::SecondeConst, "val")
+def test_dronedsllib_secondeconst_has_val():
+    assert hasattr(droneDSLLib_SecondeConst, "val")
     descriptor = None
-    for klass in droneDSLLib::SecondeConst.__mro__:
+    for klass in droneDSLLib_SecondeConst.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -746,23 +746,23 @@ def test_dronedsllib::secondeconst_has_val():
 
 
 
-def test_dronedsllib::fonctiondecl_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::FonctionDecl)
+def test_dronedsllib_fonctiondecl_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_FonctionDecl)
 
 
-def test_dronedsllib::fonctiondecl_constructor_exists():
-    assert callable(droneDSLLib::FonctionDecl.__init__)
+def test_dronedsllib_fonctiondecl_constructor_exists():
+    assert callable(droneDSLLib_FonctionDecl.__init__)
 
 
-def test_dronedsllib::fonctiondecl_constructor_args():
-    sig = inspect.signature(droneDSLLib::FonctionDecl.__init__)
+def test_dronedsllib_fonctiondecl_constructor_args():
+    sig = inspect.signature(droneDSLLib_FonctionDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dronedsllib::fonctiondecl_has_name():
-    assert hasattr(droneDSLLib::FonctionDecl, "name")
+def test_dronedsllib_fonctiondecl_has_name():
+    assert hasattr(droneDSLLib_FonctionDecl, "name")
     descriptor = None
-    for klass in droneDSLLib::FonctionDecl.__mro__:
+    for klass in droneDSLLib_FonctionDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -770,16 +770,16 @@ def test_dronedsllib::fonctiondecl_has_name():
 
 
 
-def test_dronedsllib::model_is_not_abstract():
-    assert not inspect.isabstract(droneDSLLib::Model)
+def test_dronedsllib_model_is_not_abstract():
+    assert not inspect.isabstract(droneDSLLib_Model)
 
 
-def test_dronedsllib::model_constructor_exists():
-    assert callable(droneDSLLib::Model.__init__)
+def test_dronedsllib_model_constructor_exists():
+    assert callable(droneDSLLib_Model.__init__)
 
 
-def test_dronedsllib::model_constructor_args():
-    sig = inspect.signature(droneDSLLib::Model.__init__)
+def test_dronedsllib_model_constructor_args():
+    sig = inspect.signature(droneDSLLib_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -797,49 +797,49 @@ safe_text = st.text(
 Parallele_strategy = st.builds(
     Parallele,
 )
-droneDSLLib::Parallele4_strategy = st.builds(
-    droneDSLLib::Parallele4,
+droneDSLLib_Parallele3_strategy = st.builds(
+    droneDSLLib_Parallele3,
 )
-droneDSLLib::Parallele3_strategy = st.builds(
-    droneDSLLib::Parallele3,
+droneDSLLib_Parallele4_strategy = st.builds(
+    droneDSLLib_Parallele4,
 )
-droneDSLLib::Parallele2_strategy = st.builds(
-    droneDSLLib::Parallele2,
+droneDSLLib_Parallele2_strategy = st.builds(
+    droneDSLLib_Parallele2,
 )
-droneDSLLib::CommandeBasique_strategy = st.builds(
-    droneDSLLib::CommandeBasique,
+droneDSLLib_CommandeBasique_strategy = st.builds(
+    droneDSLLib_CommandeBasique,
 )
-droneDSLLib::DecollerAtterrir_strategy = st.builds(
-    droneDSLLib::DecollerAtterrir,
+droneDSLLib_DecollerAtterrir_strategy = st.builds(
+    droneDSLLib_DecollerAtterrir,
     str=
         safe_text
 )
-droneDSLLib::Mouvement_strategy = st.builds(
-    droneDSLLib::Mouvement,
+droneDSLLib_Mouvement_strategy = st.builds(
+    droneDSLLib_Mouvement,
 )
-droneDSLLib::AR_strategy = st.builds(
-    droneDSLLib::AR,
+droneDSLLib_AR_strategy = st.builds(
+    droneDSLLib_AR,
 )
-droneDSLLib::RGRD_strategy = st.builds(
-    droneDSLLib::RGRD,
+droneDSLLib_RGRD_strategy = st.builds(
+    droneDSLLib_RGRD,
 )
-droneDSLLib::GDr_strategy = st.builds(
-    droneDSLLib::GDr,
+droneDSLLib_GDr_strategy = st.builds(
+    droneDSLLib_GDr,
 )
-droneDSLLib::MD_strategy = st.builds(
-    droneDSLLib::MD,
+droneDSLLib_MD_strategy = st.builds(
+    droneDSLLib_MD,
 )
 FonctionCall_strategy = st.builds(
     FonctionCall,
 )
-droneDSLLib::FonctionCallInterne_strategy = st.builds(
-    droneDSLLib::FonctionCallInterne,
+droneDSLLib_FonctionCallInterne_strategy = st.builds(
+    droneDSLLib_FonctionCallInterne,
 )
-droneDSLLib::FonctionCall_strategy = st.builds(
-    droneDSLLib::FonctionCall,
+droneDSLLib_FonctionCall_strategy = st.builds(
+    droneDSLLib_FonctionCall,
 )
-droneDSLLib::EObject_strategy = st.builds(
-    droneDSLLib::EObject,
+droneDSLLib_EObject_strategy = st.builds(
+    droneDSLLib_EObject,
 )
 AR_strategy = st.builds(
     AR,
@@ -853,17 +853,17 @@ GDr_strategy = st.builds(
 VarDecl_strategy = st.builds(
     VarDecl,
 )
-droneDSLLib::PourcentDecl_strategy = st.builds(
-    droneDSLLib::PourcentDecl,
+droneDSLLib_PourcentDecl_strategy = st.builds(
+    droneDSLLib_PourcentDecl,
 )
-droneDSLLib::SecondeDecl_strategy = st.builds(
-    droneDSLLib::SecondeDecl,
+droneDSLLib_SecondeDecl_strategy = st.builds(
+    droneDSLLib_SecondeDecl,
 )
 PourcentExp_strategy = st.builds(
     PourcentExp,
 )
-droneDSLLib::PourcentConst_strategy = st.builds(
-    droneDSLLib::PourcentConst,
+droneDSLLib_PourcentConst_strategy = st.builds(
+    droneDSLLib_PourcentConst,
     val=
         safe_text
 )
@@ -873,80 +873,80 @@ MD_strategy = st.builds(
 CommandeBasique_strategy = st.builds(
     CommandeBasique,
 )
-droneDSLLib::Pause_strategy = st.builds(
-    droneDSLLib::Pause,
+droneDSLLib_Pause_strategy = st.builds(
+    droneDSLLib_Pause,
 )
 Mouvement_strategy = st.builds(
     Mouvement,
 )
-droneDSLLib::Droite_strategy = st.builds(
-    droneDSLLib::Droite,
+droneDSLLib_Avancer_strategy = st.builds(
+    droneDSLLib_Avancer,
 )
-droneDSLLib::RotationDroite_strategy = st.builds(
-    droneDSLLib::RotationDroite,
+droneDSLLib_Reculer_strategy = st.builds(
+    droneDSLLib_Reculer,
 )
-droneDSLLib::Gauche_strategy = st.builds(
-    droneDSLLib::Gauche,
+droneDSLLib_Droite_strategy = st.builds(
+    droneDSLLib_Droite,
 )
-droneDSLLib::RotationGauche_strategy = st.builds(
-    droneDSLLib::RotationGauche,
+droneDSLLib_RotationDroite_strategy = st.builds(
+    droneDSLLib_RotationDroite,
 )
-droneDSLLib::Avancer_strategy = st.builds(
-    droneDSLLib::Avancer,
+droneDSLLib_RotationGauche_strategy = st.builds(
+    droneDSLLib_RotationGauche,
 )
-droneDSLLib::Parallele_strategy = st.builds(
-    droneDSLLib::Parallele,
+droneDSLLib_Descendre_strategy = st.builds(
+    droneDSLLib_Descendre,
 )
-droneDSLLib::Reculer_strategy = st.builds(
-    droneDSLLib::Reculer,
+droneDSLLib_Parallele_strategy = st.builds(
+    droneDSLLib_Parallele,
 )
-droneDSLLib::Descendre_strategy = st.builds(
-    droneDSLLib::Descendre,
+droneDSLLib_Gauche_strategy = st.builds(
+    droneDSLLib_Gauche,
 )
-droneDSLLib::Monter_strategy = st.builds(
-    droneDSLLib::Monter,
+droneDSLLib_Monter_strategy = st.builds(
+    droneDSLLib_Monter,
 )
 DecollerAtterrir_strategy = st.builds(
     DecollerAtterrir,
 )
-droneDSLLib::Atterrir_strategy = st.builds(
-    droneDSLLib::Atterrir,
+droneDSLLib_Atterrir_strategy = st.builds(
+    droneDSLLib_Atterrir,
 )
-droneDSLLib::Decoller_strategy = st.builds(
-    droneDSLLib::Decoller,
+droneDSLLib_Decoller_strategy = st.builds(
+    droneDSLLib_Decoller,
 )
-droneDSLLib::SecondeExp_strategy = st.builds(
-    droneDSLLib::SecondeExp,
+droneDSLLib_SecondeExp_strategy = st.builds(
+    droneDSLLib_SecondeExp,
 )
-droneDSLLib::PourcentExp_strategy = st.builds(
-    droneDSLLib::PourcentExp,
+droneDSLLib_PourcentExp_strategy = st.builds(
+    droneDSLLib_PourcentExp,
 )
-droneDSLLib::RefPourcentVar_strategy = st.builds(
-    droneDSLLib::RefPourcentVar,
+droneDSLLib_RefPourcentVar_strategy = st.builds(
+    droneDSLLib_RefPourcentVar,
 )
-droneDSLLib::VarDecl_strategy = st.builds(
-    droneDSLLib::VarDecl,
+droneDSLLib_VarDecl_strategy = st.builds(
+    droneDSLLib_VarDecl,
     name=
         safe_text
 )
 SecondeExp_strategy = st.builds(
     SecondeExp,
 )
-droneDSLLib::RefSecondeVar_strategy = st.builds(
-    droneDSLLib::RefSecondeVar,
+droneDSLLib_RefSecondeVar_strategy = st.builds(
+    droneDSLLib_RefSecondeVar,
 )
-droneDSLLib::SecondeConst_strategy = st.builds(
-    droneDSLLib::SecondeConst,
+droneDSLLib_SecondeConst_strategy = st.builds(
+    droneDSLLib_SecondeConst,
     val=
         safe_text
 )
-droneDSLLib::FonctionDecl_strategy = st.builds(
-    droneDSLLib::FonctionDecl,
+droneDSLLib_FonctionDecl_strategy = st.builds(
+    droneDSLLib_FonctionDecl,
     name=
         safe_text
 )
-droneDSLLib::Model_strategy = st.builds(
-    droneDSLLib::Model,
+droneDSLLib_Model_strategy = st.builds(
+    droneDSLLib_Model,
 )
 
 @given(instance=Parallele_strategy)
@@ -954,86 +954,83 @@ droneDSLLib::Model_strategy = st.builds(
 def test_parallele_instantiation(instance):
     assert isinstance(instance, Parallele)
 
-@given(instance=droneDSLLib::Parallele4_strategy)
+@given(instance=droneDSLLib_Parallele3_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::parallele4_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Parallele4)
+def test_dronedsllib_parallele3_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Parallele3)
 
-@given(instance=droneDSLLib::Parallele3_strategy)
+@given(instance=droneDSLLib_Parallele4_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::parallele3_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Parallele3)
+def test_dronedsllib_parallele4_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Parallele4)
 
-@given(instance=droneDSLLib::Parallele2_strategy)
+@given(instance=droneDSLLib_Parallele2_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::parallele2_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Parallele2)
+def test_dronedsllib_parallele2_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Parallele2)
 
-@given(instance=droneDSLLib::CommandeBasique_strategy)
+@given(instance=droneDSLLib_CommandeBasique_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::commandebasique_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::CommandeBasique)
+def test_dronedsllib_commandebasique_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_CommandeBasique)
 
-@given(instance=droneDSLLib::DecollerAtterrir_strategy)
+@given(instance=droneDSLLib_DecollerAtterrir_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::decolleratterrir_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::DecollerAtterrir)
-
-@given(instance=droneDSLLib::DecollerAtterrir_strategy)
-def test_dronedsllib::decolleratterrir_str_type(instance):
-    assert isinstance(instance.str, str)
+def test_dronedsllib_decolleratterrir_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_DecollerAtterrir)
 
 
-@given(instance=droneDSLLib::DecollerAtterrir_strategy)
-def test_dronedsllib::decolleratterrir_str_setter(instance):
+
+@given(instance=droneDSLLib_DecollerAtterrir_strategy)
+def test_dronedsllib_decolleratterrir_str_setter(instance):
     original = instance.str
     instance.str = original
     assert instance.str == original
 
-@given(instance=droneDSLLib::Mouvement_strategy)
+@given(instance=droneDSLLib_Mouvement_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::mouvement_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Mouvement)
+def test_dronedsllib_mouvement_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Mouvement)
 
-@given(instance=droneDSLLib::AR_strategy)
+@given(instance=droneDSLLib_AR_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::ar_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::AR)
+def test_dronedsllib_ar_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_AR)
 
-@given(instance=droneDSLLib::RGRD_strategy)
+@given(instance=droneDSLLib_RGRD_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::rgrd_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::RGRD)
+def test_dronedsllib_rgrd_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_RGRD)
 
-@given(instance=droneDSLLib::GDr_strategy)
+@given(instance=droneDSLLib_GDr_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::gdr_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::GDr)
+def test_dronedsllib_gdr_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_GDr)
 
-@given(instance=droneDSLLib::MD_strategy)
+@given(instance=droneDSLLib_MD_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::md_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::MD)
+def test_dronedsllib_md_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_MD)
 
 @given(instance=FonctionCall_strategy)
 @settings(max_examples=50)
 def test_fonctioncall_instantiation(instance):
     assert isinstance(instance, FonctionCall)
 
-@given(instance=droneDSLLib::FonctionCallInterne_strategy)
+@given(instance=droneDSLLib_FonctionCallInterne_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::fonctioncallinterne_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::FonctionCallInterne)
+def test_dronedsllib_fonctioncallinterne_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_FonctionCallInterne)
 
-@given(instance=droneDSLLib::FonctionCall_strategy)
+@given(instance=droneDSLLib_FonctionCall_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::fonctioncall_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::FonctionCall)
+def test_dronedsllib_fonctioncall_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_FonctionCall)
 
-@given(instance=droneDSLLib::EObject_strategy)
+@given(instance=droneDSLLib_EObject_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::eobject_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::EObject)
+def test_dronedsllib_eobject_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_EObject)
 
 @given(instance=AR_strategy)
 @settings(max_examples=50)
@@ -1055,33 +1052,30 @@ def test_gdr_instantiation(instance):
 def test_vardecl_instantiation(instance):
     assert isinstance(instance, VarDecl)
 
-@given(instance=droneDSLLib::PourcentDecl_strategy)
+@given(instance=droneDSLLib_PourcentDecl_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::pourcentdecl_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::PourcentDecl)
+def test_dronedsllib_pourcentdecl_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_PourcentDecl)
 
-@given(instance=droneDSLLib::SecondeDecl_strategy)
+@given(instance=droneDSLLib_SecondeDecl_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::secondedecl_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::SecondeDecl)
+def test_dronedsllib_secondedecl_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_SecondeDecl)
 
 @given(instance=PourcentExp_strategy)
 @settings(max_examples=50)
 def test_pourcentexp_instantiation(instance):
     assert isinstance(instance, PourcentExp)
 
-@given(instance=droneDSLLib::PourcentConst_strategy)
+@given(instance=droneDSLLib_PourcentConst_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::pourcentconst_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::PourcentConst)
-
-@given(instance=droneDSLLib::PourcentConst_strategy)
-def test_dronedsllib::pourcentconst_val_type(instance):
-    assert isinstance(instance.val, str)
+def test_dronedsllib_pourcentconst_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_PourcentConst)
 
 
-@given(instance=droneDSLLib::PourcentConst_strategy)
-def test_dronedsllib::pourcentconst_val_setter(instance):
+
+@given(instance=droneDSLLib_PourcentConst_strategy)
+def test_dronedsllib_pourcentconst_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
@@ -1096,103 +1090,100 @@ def test_md_instantiation(instance):
 def test_commandebasique_instantiation(instance):
     assert isinstance(instance, CommandeBasique)
 
-@given(instance=droneDSLLib::Pause_strategy)
+@given(instance=droneDSLLib_Pause_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::pause_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Pause)
+def test_dronedsllib_pause_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Pause)
 
 @given(instance=Mouvement_strategy)
 @settings(max_examples=50)
 def test_mouvement_instantiation(instance):
     assert isinstance(instance, Mouvement)
 
-@given(instance=droneDSLLib::Droite_strategy)
+@given(instance=droneDSLLib_Avancer_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::droite_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Droite)
+def test_dronedsllib_avancer_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Avancer)
 
-@given(instance=droneDSLLib::RotationDroite_strategy)
+@given(instance=droneDSLLib_Reculer_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::rotationdroite_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::RotationDroite)
+def test_dronedsllib_reculer_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Reculer)
 
-@given(instance=droneDSLLib::Gauche_strategy)
+@given(instance=droneDSLLib_Droite_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::gauche_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Gauche)
+def test_dronedsllib_droite_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Droite)
 
-@given(instance=droneDSLLib::RotationGauche_strategy)
+@given(instance=droneDSLLib_RotationDroite_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::rotationgauche_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::RotationGauche)
+def test_dronedsllib_rotationdroite_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_RotationDroite)
 
-@given(instance=droneDSLLib::Avancer_strategy)
+@given(instance=droneDSLLib_RotationGauche_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::avancer_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Avancer)
+def test_dronedsllib_rotationgauche_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_RotationGauche)
 
-@given(instance=droneDSLLib::Parallele_strategy)
+@given(instance=droneDSLLib_Descendre_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::parallele_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Parallele)
+def test_dronedsllib_descendre_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Descendre)
 
-@given(instance=droneDSLLib::Reculer_strategy)
+@given(instance=droneDSLLib_Parallele_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::reculer_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Reculer)
+def test_dronedsllib_parallele_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Parallele)
 
-@given(instance=droneDSLLib::Descendre_strategy)
+@given(instance=droneDSLLib_Gauche_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::descendre_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Descendre)
+def test_dronedsllib_gauche_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Gauche)
 
-@given(instance=droneDSLLib::Monter_strategy)
+@given(instance=droneDSLLib_Monter_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::monter_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Monter)
+def test_dronedsllib_monter_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Monter)
 
 @given(instance=DecollerAtterrir_strategy)
 @settings(max_examples=50)
 def test_decolleratterrir_instantiation(instance):
     assert isinstance(instance, DecollerAtterrir)
 
-@given(instance=droneDSLLib::Atterrir_strategy)
+@given(instance=droneDSLLib_Atterrir_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::atterrir_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Atterrir)
+def test_dronedsllib_atterrir_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Atterrir)
 
-@given(instance=droneDSLLib::Decoller_strategy)
+@given(instance=droneDSLLib_Decoller_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::decoller_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Decoller)
+def test_dronedsllib_decoller_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Decoller)
 
-@given(instance=droneDSLLib::SecondeExp_strategy)
+@given(instance=droneDSLLib_SecondeExp_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::secondeexp_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::SecondeExp)
+def test_dronedsllib_secondeexp_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_SecondeExp)
 
-@given(instance=droneDSLLib::PourcentExp_strategy)
+@given(instance=droneDSLLib_PourcentExp_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::pourcentexp_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::PourcentExp)
+def test_dronedsllib_pourcentexp_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_PourcentExp)
 
-@given(instance=droneDSLLib::RefPourcentVar_strategy)
+@given(instance=droneDSLLib_RefPourcentVar_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::refpourcentvar_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::RefPourcentVar)
+def test_dronedsllib_refpourcentvar_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_RefPourcentVar)
 
-@given(instance=droneDSLLib::VarDecl_strategy)
+@given(instance=droneDSLLib_VarDecl_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::vardecl_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::VarDecl)
-
-@given(instance=droneDSLLib::VarDecl_strategy)
-def test_dronedsllib::vardecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dronedsllib_vardecl_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_VarDecl)
 
 
-@given(instance=droneDSLLib::VarDecl_strategy)
-def test_dronedsllib::vardecl_name_setter(instance):
+
+@given(instance=droneDSLLib_VarDecl_strategy)
+def test_dronedsllib_vardecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1202,44 +1193,38 @@ def test_dronedsllib::vardecl_name_setter(instance):
 def test_secondeexp_instantiation(instance):
     assert isinstance(instance, SecondeExp)
 
-@given(instance=droneDSLLib::RefSecondeVar_strategy)
+@given(instance=droneDSLLib_RefSecondeVar_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::refsecondevar_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::RefSecondeVar)
+def test_dronedsllib_refsecondevar_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_RefSecondeVar)
 
-@given(instance=droneDSLLib::SecondeConst_strategy)
+@given(instance=droneDSLLib_SecondeConst_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::secondeconst_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::SecondeConst)
-
-@given(instance=droneDSLLib::SecondeConst_strategy)
-def test_dronedsllib::secondeconst_val_type(instance):
-    assert isinstance(instance.val, str)
+def test_dronedsllib_secondeconst_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_SecondeConst)
 
 
-@given(instance=droneDSLLib::SecondeConst_strategy)
-def test_dronedsllib::secondeconst_val_setter(instance):
+
+@given(instance=droneDSLLib_SecondeConst_strategy)
+def test_dronedsllib_secondeconst_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=droneDSLLib::FonctionDecl_strategy)
+@given(instance=droneDSLLib_FonctionDecl_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::fonctiondecl_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::FonctionDecl)
-
-@given(instance=droneDSLLib::FonctionDecl_strategy)
-def test_dronedsllib::fonctiondecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dronedsllib_fonctiondecl_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_FonctionDecl)
 
 
-@given(instance=droneDSLLib::FonctionDecl_strategy)
-def test_dronedsllib::fonctiondecl_name_setter(instance):
+
+@given(instance=droneDSLLib_FonctionDecl_strategy)
+def test_dronedsllib_fonctiondecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=droneDSLLib::Model_strategy)
+@given(instance=droneDSLLib_Model_strategy)
 @settings(max_examples=50)
-def test_dronedsllib::model_instantiation(instance):
-    assert isinstance(instance, droneDSLLib::Model)
+def test_dronedsllib_model_instantiation(instance):
+    assert isinstance(instance, droneDSLLib_Model)

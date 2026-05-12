@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Add_Property_Deatilas_external,
@@ -336,11 +336,29 @@ def test_independenthouse_constructor_exists():
 def test_independenthouse_constructor_args():
     sig = inspect.signature(IndependentHouse.__init__)
     params = list(sig.parameters.keys())
+    assert "Price" in params, "Missing parameter 'Price'"
+    assert "Size" in params, "Missing parameter 'Size'"
     assert "Bathroom" in params, "Missing parameter 'Bathroom'"
     assert "Bedroom" in params, "Missing parameter 'Bedroom'"
-    assert "Size" in params, "Missing parameter 'Size'"
-    assert "Price" in params, "Missing parameter 'Price'"
     assert "YardSpace" in params, "Missing parameter 'YardSpace'"
+
+def test_independenthouse_has_Price():
+    assert hasattr(IndependentHouse, "Price")
+    descriptor = None
+    for klass in IndependentHouse.__mro__:
+        if "Price" in klass.__dict__:
+            descriptor = klass.__dict__["Price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_independenthouse_has_Size():
+    assert hasattr(IndependentHouse, "Size")
+    descriptor = None
+    for klass in IndependentHouse.__mro__:
+        if "Size" in klass.__dict__:
+            descriptor = klass.__dict__["Size"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_independenthouse_has_Bathroom():
     assert hasattr(IndependentHouse, "Bathroom")
@@ -357,24 +375,6 @@ def test_independenthouse_has_Bedroom():
     for klass in IndependentHouse.__mro__:
         if "Bedroom" in klass.__dict__:
             descriptor = klass.__dict__["Bedroom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_independenthouse_has_Size():
-    assert hasattr(IndependentHouse, "Size")
-    descriptor = None
-    for klass in IndependentHouse.__mro__:
-        if "Size" in klass.__dict__:
-            descriptor = klass.__dict__["Size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_independenthouse_has_Price():
-    assert hasattr(IndependentHouse, "Price")
-    descriptor = None
-    for klass in IndependentHouse.__mro__:
-        if "Price" in klass.__dict__:
-            descriptor = klass.__dict__["Price"]
             break
     assert isinstance(descriptor, property)
 
@@ -400,11 +400,20 @@ def test_residentialapartment_constructor_exists():
 def test_residentialapartment_constructor_args():
     sig = inspect.signature(ResidentialApartment.__init__)
     params = list(sig.parameters.keys())
-    assert "BEDROOMS" in params, "Missing parameter 'BEDROOMS'"
     assert "PARKING" in params, "Missing parameter 'PARKING'"
+    assert "BEDROOMS" in params, "Missing parameter 'BEDROOMS'"
+    assert "Price" in params, "Missing parameter 'Price'"
     assert "Size" in params, "Missing parameter 'Size'"
     assert "MAINTAINENCE" in params, "Missing parameter 'MAINTAINENCE'"
-    assert "Price" in params, "Missing parameter 'Price'"
+
+def test_residentialapartment_has_PARKING():
+    assert hasattr(ResidentialApartment, "PARKING")
+    descriptor = None
+    for klass in ResidentialApartment.__mro__:
+        if "PARKING" in klass.__dict__:
+            descriptor = klass.__dict__["PARKING"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_residentialapartment_has_BEDROOMS():
     assert hasattr(ResidentialApartment, "BEDROOMS")
@@ -415,12 +424,12 @@ def test_residentialapartment_has_BEDROOMS():
             break
     assert isinstance(descriptor, property)
 
-def test_residentialapartment_has_PARKING():
-    assert hasattr(ResidentialApartment, "PARKING")
+def test_residentialapartment_has_Price():
+    assert hasattr(ResidentialApartment, "Price")
     descriptor = None
     for klass in ResidentialApartment.__mro__:
-        if "PARKING" in klass.__dict__:
-            descriptor = klass.__dict__["PARKING"]
+        if "Price" in klass.__dict__:
+            descriptor = klass.__dict__["Price"]
             break
     assert isinstance(descriptor, property)
 
@@ -442,15 +451,6 @@ def test_residentialapartment_has_MAINTAINENCE():
             break
     assert isinstance(descriptor, property)
 
-def test_residentialapartment_has_Price():
-    assert hasattr(ResidentialApartment, "Price")
-    descriptor = None
-    for klass in ResidentialApartment.__mro__:
-        if "Price" in klass.__dict__:
-            descriptor = klass.__dict__["Price"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_presales_team_is_not_abstract():
@@ -464,17 +464,8 @@ def test_presales_team_constructor_exists():
 def test_presales_team_constructor_args():
     sig = inspect.signature(Presales_team.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "usename" in params, "Missing parameter 'usename'"
-
-def test_presales_team_has_password():
-    assert hasattr(Presales_team, "password")
-    descriptor = None
-    for klass in Presales_team.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_presales_team_has_usename():
     assert hasattr(Presales_team, "usename")
@@ -482,6 +473,15 @@ def test_presales_team_has_usename():
     for klass in Presales_team.__mro__:
         if "usename" in klass.__dict__:
             descriptor = klass.__dict__["usename"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_presales_team_has_password():
+    assert hasattr(Presales_team, "password")
+    descriptor = None
+    for klass in Presales_team.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -498,17 +498,8 @@ def test_owner_constructor_exists():
 def test_owner_constructor_args():
     sig = inspect.signature(Owner.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "Address" in params, "Missing parameter 'Address'"
-
-def test_owner_has_name():
-    assert hasattr(Owner, "name")
-    descriptor = None
-    for klass in Owner.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_owner_has_Address():
     assert hasattr(Owner, "Address")
@@ -516,6 +507,15 @@ def test_owner_has_Address():
     for klass in Owner.__mro__:
         if "Address" in klass.__dict__:
             descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_owner_has_name():
+    assert hasattr(Owner, "name")
+    descriptor = None
+    for klass in Owner.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -600,10 +600,28 @@ def test_property1_constructor_exists():
 def test_property1_constructor_args():
     sig = inspect.signature(Property1.__init__)
     params = list(sig.parameters.keys())
+    assert "property_type" in params, "Missing parameter 'property_type'"
+    assert "address" in params, "Missing parameter 'address'"
     assert "location" in params, "Missing parameter 'location'"
     assert "property_id" in params, "Missing parameter 'property_id'"
-    assert "address" in params, "Missing parameter 'address'"
-    assert "property_type" in params, "Missing parameter 'property_type'"
+
+def test_property1_has_property_type():
+    assert hasattr(Property1, "property_type")
+    descriptor = None
+    for klass in Property1.__mro__:
+        if "property_type" in klass.__dict__:
+            descriptor = klass.__dict__["property_type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_property1_has_address():
+    assert hasattr(Property1, "address")
+    descriptor = None
+    for klass in Property1.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_property1_has_location():
     assert hasattr(Property1, "location")
@@ -620,24 +638,6 @@ def test_property1_has_property_id():
     for klass in Property1.__mro__:
         if "property_id" in klass.__dict__:
             descriptor = klass.__dict__["property_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_property1_has_address():
-    assert hasattr(Property1, "address")
-    descriptor = None
-    for klass in Property1.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_property1_has_property_type():
-    assert hasattr(Property1, "property_type")
-    descriptor = None
-    for klass in Property1.__mro__:
-        if "property_type" in klass.__dict__:
-            descriptor = klass.__dict__["property_type"]
             break
     assert isinstance(descriptor, property)
 
@@ -1128,18 +1128,9 @@ def test_reg_user_constructor_exists():
 def test_reg_user_constructor_args():
     sig = inspect.signature(Reg_User.__init__)
     params = list(sig.parameters.keys())
-    assert "username" in params, "Missing parameter 'username'"
     assert "password" in params, "Missing parameter 'password'"
     assert "Address" in params, "Missing parameter 'Address'"
-
-def test_reg_user_has_username():
-    assert hasattr(Reg_User, "username")
-    descriptor = None
-    for klass in Reg_User.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
+    assert "username" in params, "Missing parameter 'username'"
 
 def test_reg_user_has_password():
     assert hasattr(Reg_User, "password")
@@ -1159,6 +1150,15 @@ def test_reg_user_has_Address():
             break
     assert isinstance(descriptor, property)
 
+def test_reg_user_has_username():
+    assert hasattr(Reg_User, "username")
+    descriptor = None
+    for klass in Reg_User.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_user_is_not_abstract():
@@ -1172,17 +1172,8 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
     assert "location" in params, "Missing parameter 'location'"
-
-def test_user_has_email():
-    assert hasattr(User, "email")
-    descriptor = None
-    for klass in User.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "email" in params, "Missing parameter 'email'"
 
 def test_user_has_location():
     assert hasattr(User, "location")
@@ -1190,6 +1181,15 @@ def test_user_has_location():
     for klass in User.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_email():
+    assert hasattr(User, "email")
+    descriptor = None
+    for klass in User.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -1206,10 +1206,28 @@ def test_property_constructor_exists():
 def test_property_constructor_args():
     sig = inspect.signature(Property.__init__)
     params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+    assert "property_type" in params, "Missing parameter 'property_type'"
     assert "property_id" in params, "Missing parameter 'property_id'"
     assert "address" in params, "Missing parameter 'address'"
-    assert "property_type" in params, "Missing parameter 'property_type'"
-    assert "location" in params, "Missing parameter 'location'"
+
+def test_property_has_location():
+    assert hasattr(Property, "location")
+    descriptor = None
+    for klass in Property.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_property_has_property_type():
+    assert hasattr(Property, "property_type")
+    descriptor = None
+    for klass in Property.__mro__:
+        if "property_type" in klass.__dict__:
+            descriptor = klass.__dict__["property_type"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_property_has_property_id():
     assert hasattr(Property, "property_id")
@@ -1226,24 +1244,6 @@ def test_property_has_address():
     for klass in Property.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_property_has_property_type():
-    assert hasattr(Property, "property_type")
-    descriptor = None
-    for klass in Property.__mro__:
-        if "property_type" in klass.__dict__:
-            descriptor = klass.__dict__["property_type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_property_has_location():
-    assert hasattr(Property, "location")
-    descriptor = None
-    for klass in Property.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
@@ -1315,42 +1315,42 @@ Login_external_strategy = st.builds(
 )
 IndependentHouse_strategy = st.builds(
     IndependentHouse,
-    Bathroom=
-        safe_text,
-    Bedroom=
+    Price=
         safe_text,
     Size=
         safe_text,
-    Price=
+    Bathroom=
+        safe_text,
+    Bedroom=
         safe_text,
     YardSpace=
         safe_text
 )
 ResidentialApartment_strategy = st.builds(
     ResidentialApartment,
+    PARKING=
+        safe_text,
     BEDROOMS=
         safe_text,
-    PARKING=
+    Price=
         safe_text,
     Size=
         safe_text,
     MAINTAINENCE=
-        safe_text,
-    Price=
         safe_text
 )
 Presales_team_strategy = st.builds(
     Presales_team,
-    password=
-        safe_text,
     usename=
+        safe_text,
+    password=
         safe_text
 )
 Owner_strategy = st.builds(
     Owner,
-    name=
-        safe_text,
     Address=
+        safe_text,
+    name=
         safe_text
 )
 Client_Relationship_Team_strategy = st.builds(
@@ -1369,13 +1369,13 @@ User1_strategy = st.builds(
 )
 Property1_strategy = st.builds(
     Property1,
-    location=
-        safe_text,
-    property_id=
+    property_type=
         safe_text,
     address=
         safe_text,
-    property_type=
+    location=
+        safe_text,
+    property_id=
         safe_text
 )
 Client_Relationship_Team_Actor1_strategy = st.builds(
@@ -1481,29 +1481,29 @@ Unreg_User_strategy = st.builds(
 )
 Reg_User_strategy = st.builds(
     Reg_User,
-    username=
-        safe_text,
     password=
         safe_text,
     Address=
+        safe_text,
+    username=
         safe_text
 )
 User_strategy = st.builds(
     User,
-    email=
-        safe_text,
     location=
+        safe_text,
+    email=
         safe_text
 )
 Property_strategy = st.builds(
     Property,
-    property_id=
-        safe_text,
-    address=
+    location=
         safe_text,
     property_type=
         safe_text,
-    location=
+    property_id=
+        safe_text,
+    address=
         safe_text
 )
 
@@ -1602,42 +1602,6 @@ def test_login_external_instantiation(instance):
 def test_independenthouse_instantiation(instance):
     assert isinstance(instance, IndependentHouse)
 
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Bathroom_type(instance):
-    assert isinstance(instance.Bathroom, str)
-
-
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Bathroom_setter(instance):
-    original = instance.Bathroom
-    instance.Bathroom = original
-    assert instance.Bathroom == original
-
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Bedroom_type(instance):
-    assert isinstance(instance.Bedroom, str)
-
-
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Bedroom_setter(instance):
-    original = instance.Bedroom
-    instance.Bedroom = original
-    assert instance.Bedroom == original
-
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Size_type(instance):
-    assert isinstance(instance.Size, str)
-
-
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Size_setter(instance):
-    original = instance.Size
-    instance.Size = original
-    assert instance.Size == original
-
-@given(instance=IndependentHouse_strategy)
-def test_independenthouse_Price_type(instance):
-    assert isinstance(instance.Price, str)
 
 
 @given(instance=IndependentHouse_strategy)
@@ -1646,9 +1610,30 @@ def test_independenthouse_Price_setter(instance):
     instance.Price = original
     assert instance.Price == original
 
+
+
 @given(instance=IndependentHouse_strategy)
-def test_independenthouse_YardSpace_type(instance):
-    assert isinstance(instance.YardSpace, str)
+def test_independenthouse_Size_setter(instance):
+    original = instance.Size
+    instance.Size = original
+    assert instance.Size == original
+
+
+
+@given(instance=IndependentHouse_strategy)
+def test_independenthouse_Bathroom_setter(instance):
+    original = instance.Bathroom
+    instance.Bathroom = original
+    assert instance.Bathroom == original
+
+
+
+@given(instance=IndependentHouse_strategy)
+def test_independenthouse_Bedroom_setter(instance):
+    original = instance.Bedroom
+    instance.Bedroom = original
+    assert instance.Bedroom == original
+
 
 
 @given(instance=IndependentHouse_strategy)
@@ -1662,20 +1647,6 @@ def test_independenthouse_YardSpace_setter(instance):
 def test_residentialapartment_instantiation(instance):
     assert isinstance(instance, ResidentialApartment)
 
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_BEDROOMS_type(instance):
-    assert isinstance(instance.BEDROOMS, str)
-
-
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_BEDROOMS_setter(instance):
-    original = instance.BEDROOMS
-    instance.BEDROOMS = original
-    assert instance.BEDROOMS == original
-
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_PARKING_type(instance):
-    assert isinstance(instance.PARKING, str)
 
 
 @given(instance=ResidentialApartment_strategy)
@@ -1684,31 +1655,14 @@ def test_residentialapartment_PARKING_setter(instance):
     instance.PARKING = original
     assert instance.PARKING == original
 
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_Size_type(instance):
-    assert isinstance(instance.Size, str)
 
 
 @given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_Size_setter(instance):
-    original = instance.Size
-    instance.Size = original
-    assert instance.Size == original
+def test_residentialapartment_BEDROOMS_setter(instance):
+    original = instance.BEDROOMS
+    instance.BEDROOMS = original
+    assert instance.BEDROOMS == original
 
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_MAINTAINENCE_type(instance):
-    assert isinstance(instance.MAINTAINENCE, str)
-
-
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_MAINTAINENCE_setter(instance):
-    original = instance.MAINTAINENCE
-    instance.MAINTAINENCE = original
-    assert instance.MAINTAINENCE == original
-
-@given(instance=ResidentialApartment_strategy)
-def test_residentialapartment_Price_type(instance):
-    assert isinstance(instance.Price, str)
 
 
 @given(instance=ResidentialApartment_strategy)
@@ -1717,25 +1671,27 @@ def test_residentialapartment_Price_setter(instance):
     instance.Price = original
     assert instance.Price == original
 
+
+
+@given(instance=ResidentialApartment_strategy)
+def test_residentialapartment_Size_setter(instance):
+    original = instance.Size
+    instance.Size = original
+    assert instance.Size == original
+
+
+
+@given(instance=ResidentialApartment_strategy)
+def test_residentialapartment_MAINTAINENCE_setter(instance):
+    original = instance.MAINTAINENCE
+    instance.MAINTAINENCE = original
+    assert instance.MAINTAINENCE == original
+
 @given(instance=Presales_team_strategy)
 @settings(max_examples=50)
 def test_presales_team_instantiation(instance):
     assert isinstance(instance, Presales_team)
 
-@given(instance=Presales_team_strategy)
-def test_presales_team_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Presales_team_strategy)
-def test_presales_team_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Presales_team_strategy)
-def test_presales_team_usename_type(instance):
-    assert isinstance(instance.usename, str)
 
 
 @given(instance=Presales_team_strategy)
@@ -1744,25 +1700,19 @@ def test_presales_team_usename_setter(instance):
     instance.usename = original
     assert instance.usename == original
 
+
+
+@given(instance=Presales_team_strategy)
+def test_presales_team_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=Owner_strategy)
 @settings(max_examples=50)
 def test_owner_instantiation(instance):
     assert isinstance(instance, Owner)
 
-@given(instance=Owner_strategy)
-def test_owner_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Owner_strategy)
-def test_owner_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Owner_strategy)
-def test_owner_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Owner_strategy)
@@ -1771,14 +1721,19 @@ def test_owner_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
+
+
+@given(instance=Owner_strategy)
+def test_owner_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=Client_Relationship_Team_strategy)
 @settings(max_examples=50)
 def test_client_relationship_team_instantiation(instance):
     assert isinstance(instance, Client_Relationship_Team)
 
-@given(instance=Client_Relationship_Team_strategy)
-def test_client_relationship_team_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Client_Relationship_Team_strategy)
@@ -1787,9 +1742,6 @@ def test_client_relationship_team_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Client_Relationship_Team_strategy)
-def test_client_relationship_team_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Client_Relationship_Team_strategy)
@@ -1803,9 +1755,6 @@ def test_client_relationship_team_username_setter(instance):
 def test_user1_instantiation(instance):
     assert isinstance(instance, User1)
 
-@given(instance=User1_strategy)
-def test_user1_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=User1_strategy)
@@ -1814,9 +1763,6 @@ def test_user1_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=User1_strategy)
-def test_user1_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=User1_strategy)
@@ -1830,31 +1776,14 @@ def test_user1_password_setter(instance):
 def test_property1_instantiation(instance):
     assert isinstance(instance, Property1)
 
-@given(instance=Property1_strategy)
-def test_property1_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=Property1_strategy)
-def test_property1_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
+def test_property1_property_type_setter(instance):
+    original = instance.property_type
+    instance.property_type = original
+    assert instance.property_type == original
 
-@given(instance=Property1_strategy)
-def test_property1_property_id_type(instance):
-    assert isinstance(instance.property_id, str)
-
-
-@given(instance=Property1_strategy)
-def test_property1_property_id_setter(instance):
-    original = instance.property_id
-    instance.property_id = original
-    assert instance.property_id == original
-
-@given(instance=Property1_strategy)
-def test_property1_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Property1_strategy)
@@ -1863,16 +1792,21 @@ def test_property1_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=Property1_strategy)
-def test_property1_property_type_type(instance):
-    assert isinstance(instance.property_type, str)
 
 
 @given(instance=Property1_strategy)
-def test_property1_property_type_setter(instance):
-    original = instance.property_type
-    instance.property_type = original
-    assert instance.property_type == original
+def test_property1_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=Property1_strategy)
+def test_property1_property_id_setter(instance):
+    original = instance.property_id
+    instance.property_id = original
+    assert instance.property_id == original
 
 @given(instance=Client_Relationship_Team_Actor1_strategy)
 @settings(max_examples=50)
@@ -2014,9 +1948,6 @@ def test_buyer_actor_instantiation(instance):
 def test_seller_instantiation(instance):
     assert isinstance(instance, Seller)
 
-@given(instance=Seller_strategy)
-def test_seller_property_id_type(instance):
-    assert isinstance(instance.property_id, str)
 
 
 @given(instance=Seller_strategy)
@@ -2025,9 +1956,6 @@ def test_seller_property_id_setter(instance):
     instance.property_id = original
     assert instance.property_id == original
 
-@given(instance=Seller_strategy)
-def test_seller_seller_id_type(instance):
-    assert isinstance(instance.seller_id, str)
 
 
 @given(instance=Seller_strategy)
@@ -2041,9 +1969,6 @@ def test_seller_seller_id_setter(instance):
 def test_buyer_instantiation(instance):
     assert isinstance(instance, Buyer)
 
-@given(instance=Buyer_strategy)
-def test_buyer_buyer_id_type(instance):
-    assert isinstance(instance.buyer_id, str)
 
 
 @given(instance=Buyer_strategy)
@@ -2057,9 +1982,6 @@ def test_buyer_buyer_id_setter(instance):
 def test_rent_instantiation(instance):
     assert isinstance(instance, Rent)
 
-@given(instance=Rent_strategy)
-def test_rent_rent_id_type(instance):
-    assert isinstance(instance.rent_id, str)
 
 
 @given(instance=Rent_strategy)
@@ -2078,20 +2000,6 @@ def test_unreg_user_instantiation(instance):
 def test_reg_user_instantiation(instance):
     assert isinstance(instance, Reg_User)
 
-@given(instance=Reg_User_strategy)
-def test_reg_user_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Reg_User_strategy)
-def test_reg_user_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Reg_User_strategy)
-def test_reg_user_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Reg_User_strategy)
@@ -2100,9 +2008,6 @@ def test_reg_user_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Reg_User_strategy)
-def test_reg_user_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Reg_User_strategy)
@@ -2111,25 +2016,19 @@ def test_reg_user_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
+
+
+@given(instance=Reg_User_strategy)
+def test_reg_user_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
 @given(instance=User_strategy)
 @settings(max_examples=50)
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=User_strategy)
-def test_user_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=User_strategy)
-def test_user_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=User_strategy)
@@ -2138,36 +2037,27 @@ def test_user_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
+
+
+@given(instance=User_strategy)
+def test_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=Property_strategy)
-def test_property_property_id_type(instance):
-    assert isinstance(instance.property_id, str)
 
 
 @given(instance=Property_strategy)
-def test_property_property_id_setter(instance):
-    original = instance.property_id
-    instance.property_id = original
-    assert instance.property_id == original
+def test_property_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
 
-@given(instance=Property_strategy)
-def test_property_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Property_strategy)
-def test_property_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Property_strategy)
-def test_property_property_type_type(instance):
-    assert isinstance(instance.property_type, str)
 
 
 @given(instance=Property_strategy)
@@ -2176,13 +2066,18 @@ def test_property_property_type_setter(instance):
     instance.property_type = original
     assert instance.property_type == original
 
-@given(instance=Property_strategy)
-def test_property_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=Property_strategy)
-def test_property_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
+def test_property_property_id_setter(instance):
+    original = instance.property_id
+    instance.property_id = original
+    assert instance.property_id == original
+
+
+
+@given(instance=Property_strategy)
+def test_property_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original

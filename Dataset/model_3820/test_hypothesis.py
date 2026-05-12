@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ioAutomaton::Actor,
-    ioAutomaton::Return,
-    ioAutomaton::OutMessage,
-    ioAutomaton::Operation,
+from python_code import (
+    ioAutomaton_Actor,
+    ioAutomaton_Return,
+    ioAutomaton_OutMessage,
+    ioAutomaton_Operation,
     State,
-    ioAutomaton::Transition,
-    ioAutomaton::State,
-    ioAutomaton::SystemActor,
-    ioAutomaton::Automaton,
-    ioAutomaton::AutomatonCollection,
+    ioAutomaton_Transition,
+    ioAutomaton_State,
+    ioAutomaton_SystemActor,
+    ioAutomaton_Automaton,
+    ioAutomaton_AutomatonCollection,
 )
 
 # =============================================================================
@@ -24,58 +24,58 @@ from classes import (
 
 
 
-def test_ioautomaton::actor_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::Actor)
+def test_ioautomaton_actor_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_Actor)
 
 
-def test_ioautomaton::actor_constructor_exists():
-    assert callable(ioAutomaton::Actor.__init__)
+def test_ioautomaton_actor_constructor_exists():
+    assert callable(ioAutomaton_Actor.__init__)
 
 
-def test_ioautomaton::actor_constructor_args():
-    sig = inspect.signature(ioAutomaton::Actor.__init__)
+def test_ioautomaton_actor_constructor_args():
+    sig = inspect.signature(ioAutomaton_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::return_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::Return)
+def test_ioautomaton_return_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_Return)
 
 
-def test_ioautomaton::return_constructor_exists():
-    assert callable(ioAutomaton::Return.__init__)
+def test_ioautomaton_return_constructor_exists():
+    assert callable(ioAutomaton_Return.__init__)
 
 
-def test_ioautomaton::return_constructor_args():
-    sig = inspect.signature(ioAutomaton::Return.__init__)
+def test_ioautomaton_return_constructor_args():
+    sig = inspect.signature(ioAutomaton_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::outmessage_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::OutMessage)
+def test_ioautomaton_outmessage_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_OutMessage)
 
 
-def test_ioautomaton::outmessage_constructor_exists():
-    assert callable(ioAutomaton::OutMessage.__init__)
+def test_ioautomaton_outmessage_constructor_exists():
+    assert callable(ioAutomaton_OutMessage.__init__)
 
 
-def test_ioautomaton::outmessage_constructor_args():
-    sig = inspect.signature(ioAutomaton::OutMessage.__init__)
+def test_ioautomaton_outmessage_constructor_args():
+    sig = inspect.signature(ioAutomaton_OutMessage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::operation_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::Operation)
+def test_ioautomaton_operation_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_Operation)
 
 
-def test_ioautomaton::operation_constructor_exists():
-    assert callable(ioAutomaton::Operation.__init__)
+def test_ioautomaton_operation_constructor_exists():
+    assert callable(ioAutomaton_Operation.__init__)
 
 
-def test_ioautomaton::operation_constructor_args():
-    sig = inspect.signature(ioAutomaton::Operation.__init__)
+def test_ioautomaton_operation_constructor_args():
+    sig = inspect.signature(ioAutomaton_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,72 +94,72 @@ def test_state_constructor_args():
 
 
 
-def test_ioautomaton::transition_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::Transition)
+def test_ioautomaton_transition_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_Transition)
 
 
-def test_ioautomaton::transition_constructor_exists():
-    assert callable(ioAutomaton::Transition.__init__)
+def test_ioautomaton_transition_constructor_exists():
+    assert callable(ioAutomaton_Transition.__init__)
 
 
-def test_ioautomaton::transition_constructor_args():
-    sig = inspect.signature(ioAutomaton::Transition.__init__)
+def test_ioautomaton_transition_constructor_args():
+    sig = inspect.signature(ioAutomaton_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::state_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::State)
+def test_ioautomaton_state_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_State)
 
 
-def test_ioautomaton::state_constructor_exists():
-    assert callable(ioAutomaton::State.__init__)
+def test_ioautomaton_state_constructor_exists():
+    assert callable(ioAutomaton_State.__init__)
 
 
-def test_ioautomaton::state_constructor_args():
-    sig = inspect.signature(ioAutomaton::State.__init__)
+def test_ioautomaton_state_constructor_args():
+    sig = inspect.signature(ioAutomaton_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::systemactor_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::SystemActor)
+def test_ioautomaton_systemactor_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_SystemActor)
 
 
-def test_ioautomaton::systemactor_constructor_exists():
-    assert callable(ioAutomaton::SystemActor.__init__)
+def test_ioautomaton_systemactor_constructor_exists():
+    assert callable(ioAutomaton_SystemActor.__init__)
 
 
-def test_ioautomaton::systemactor_constructor_args():
-    sig = inspect.signature(ioAutomaton::SystemActor.__init__)
+def test_ioautomaton_systemactor_constructor_args():
+    sig = inspect.signature(ioAutomaton_SystemActor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::automaton_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::Automaton)
+def test_ioautomaton_automaton_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_Automaton)
 
 
-def test_ioautomaton::automaton_constructor_exists():
-    assert callable(ioAutomaton::Automaton.__init__)
+def test_ioautomaton_automaton_constructor_exists():
+    assert callable(ioAutomaton_Automaton.__init__)
 
 
-def test_ioautomaton::automaton_constructor_args():
-    sig = inspect.signature(ioAutomaton::Automaton.__init__)
+def test_ioautomaton_automaton_constructor_args():
+    sig = inspect.signature(ioAutomaton_Automaton.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioautomaton::automatoncollection_is_not_abstract():
-    assert not inspect.isabstract(ioAutomaton::AutomatonCollection)
+def test_ioautomaton_automatoncollection_is_not_abstract():
+    assert not inspect.isabstract(ioAutomaton_AutomatonCollection)
 
 
-def test_ioautomaton::automatoncollection_constructor_exists():
-    assert callable(ioAutomaton::AutomatonCollection.__init__)
+def test_ioautomaton_automatoncollection_constructor_exists():
+    assert callable(ioAutomaton_AutomatonCollection.__init__)
 
 
-def test_ioautomaton::automatoncollection_constructor_args():
-    sig = inspect.signature(ioAutomaton::AutomatonCollection.__init__)
+def test_ioautomaton_automatoncollection_constructor_args():
+    sig = inspect.signature(ioAutomaton_AutomatonCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,83 +174,83 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ioAutomaton::Actor_strategy = st.builds(
-    ioAutomaton::Actor,
+ioAutomaton_Actor_strategy = st.builds(
+    ioAutomaton_Actor,
 )
-ioAutomaton::Return_strategy = st.builds(
-    ioAutomaton::Return,
+ioAutomaton_Return_strategy = st.builds(
+    ioAutomaton_Return,
 )
-ioAutomaton::OutMessage_strategy = st.builds(
-    ioAutomaton::OutMessage,
+ioAutomaton_OutMessage_strategy = st.builds(
+    ioAutomaton_OutMessage,
 )
-ioAutomaton::Operation_strategy = st.builds(
-    ioAutomaton::Operation,
+ioAutomaton_Operation_strategy = st.builds(
+    ioAutomaton_Operation,
 )
 State_strategy = st.builds(
     State,
 )
-ioAutomaton::Transition_strategy = st.builds(
-    ioAutomaton::Transition,
+ioAutomaton_Transition_strategy = st.builds(
+    ioAutomaton_Transition,
 )
-ioAutomaton::State_strategy = st.builds(
-    ioAutomaton::State,
+ioAutomaton_State_strategy = st.builds(
+    ioAutomaton_State,
 )
-ioAutomaton::SystemActor_strategy = st.builds(
-    ioAutomaton::SystemActor,
+ioAutomaton_SystemActor_strategy = st.builds(
+    ioAutomaton_SystemActor,
 )
-ioAutomaton::Automaton_strategy = st.builds(
-    ioAutomaton::Automaton,
+ioAutomaton_Automaton_strategy = st.builds(
+    ioAutomaton_Automaton,
 )
-ioAutomaton::AutomatonCollection_strategy = st.builds(
-    ioAutomaton::AutomatonCollection,
+ioAutomaton_AutomatonCollection_strategy = st.builds(
+    ioAutomaton_AutomatonCollection,
 )
 
-@given(instance=ioAutomaton::Actor_strategy)
+@given(instance=ioAutomaton_Actor_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::actor_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::Actor)
+def test_ioautomaton_actor_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_Actor)
 
-@given(instance=ioAutomaton::Return_strategy)
+@given(instance=ioAutomaton_Return_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::return_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::Return)
+def test_ioautomaton_return_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_Return)
 
-@given(instance=ioAutomaton::OutMessage_strategy)
+@given(instance=ioAutomaton_OutMessage_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::outmessage_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::OutMessage)
+def test_ioautomaton_outmessage_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_OutMessage)
 
-@given(instance=ioAutomaton::Operation_strategy)
+@given(instance=ioAutomaton_Operation_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::operation_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::Operation)
+def test_ioautomaton_operation_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_Operation)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=ioAutomaton::Transition_strategy)
+@given(instance=ioAutomaton_Transition_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::transition_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::Transition)
+def test_ioautomaton_transition_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_Transition)
 
-@given(instance=ioAutomaton::State_strategy)
+@given(instance=ioAutomaton_State_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::state_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::State)
+def test_ioautomaton_state_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_State)
 
-@given(instance=ioAutomaton::SystemActor_strategy)
+@given(instance=ioAutomaton_SystemActor_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::systemactor_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::SystemActor)
+def test_ioautomaton_systemactor_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_SystemActor)
 
-@given(instance=ioAutomaton::Automaton_strategy)
+@given(instance=ioAutomaton_Automaton_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::automaton_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::Automaton)
+def test_ioautomaton_automaton_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_Automaton)
 
-@given(instance=ioAutomaton::AutomatonCollection_strategy)
+@given(instance=ioAutomaton_AutomatonCollection_strategy)
 @settings(max_examples=50)
-def test_ioautomaton::automatoncollection_instantiation(instance):
-    assert isinstance(instance, ioAutomaton::AutomatonCollection)
+def test_ioautomaton_automatoncollection_instantiation(instance):
+    assert isinstance(instance, ioAutomaton_AutomatonCollection)

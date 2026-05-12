@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Annotable,
-    mvc::ControllerView,
-    mvc::Association,
-    mvc::EventAction,
-    mvc::MVCModel,
-    mvc::Action,
-    mvc::Attribute,
-    mvc::Component,
-    mvc::UIComponent,
-    mvc::Entity,
-    mvc::Controller,
-    mvc::View,
-    mvc::Event,
-    mvc::Model,
+    mvc_Controller,
+    mvc_View,
+    mvc_Component,
+    mvc_Action,
+    mvc_MVCModel,
+    mvc_Attribute,
+    mvc_ControllerView,
+    mvc_Entity,
+    mvc_UIComponent,
+    mvc_Association,
+    mvc_Event,
+    mvc_EventAction,
+    mvc_Model,
     AssociationType,
 )
 
@@ -43,77 +43,23 @@ def test_annotable_constructor_args():
 
 
 
-def test_mvc::controllerview_is_not_abstract():
-    assert not inspect.isabstract(mvc::ControllerView)
+def test_mvc_controller_is_not_abstract():
+    assert not inspect.isabstract(mvc_Controller)
 
 
-def test_mvc::controllerview_constructor_exists():
-    assert callable(mvc::ControllerView.__init__)
+def test_mvc_controller_constructor_exists():
+    assert callable(mvc_Controller.__init__)
 
 
-def test_mvc::controllerview_constructor_args():
-    sig = inspect.signature(mvc::ControllerView.__init__)
+def test_mvc_controller_constructor_args():
+    sig = inspect.signature(mvc_Controller.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_mvc::association_is_not_abstract():
-    assert not inspect.isabstract(mvc::Association)
-
-
-def test_mvc::association_constructor_exists():
-    assert callable(mvc::Association.__init__)
-
-
-def test_mvc::association_constructor_args():
-    sig = inspect.signature(mvc::Association.__init__)
-    params = list(sig.parameters.keys())
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "containment" in params, "Missing parameter 'containment'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mvc::association_has_upperBound():
-    assert hasattr(mvc::Association, "upperBound")
+def test_mvc_controller_has_name():
+    assert hasattr(mvc_Controller, "name")
     descriptor = None
-    for klass in mvc::Association.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mvc::association_has_lowerBound():
-    assert hasattr(mvc::Association, "lowerBound")
-    descriptor = None
-    for klass in mvc::Association.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mvc::association_has_containment():
-    assert hasattr(mvc::Association, "containment")
-    descriptor = None
-    for klass in mvc::Association.__mro__:
-        if "containment" in klass.__dict__:
-            descriptor = klass.__dict__["containment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mvc::association_has_type():
-    assert hasattr(mvc::Association, "type")
-    descriptor = None
-    for klass in mvc::Association.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mvc::association_has_name():
-    assert hasattr(mvc::Association, "name")
-    descriptor = None
-    for klass in mvc::Association.__mro__:
+    for klass in mvc_Controller.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -121,47 +67,105 @@ def test_mvc::association_has_name():
 
 
 
-def test_mvc::eventaction_is_not_abstract():
-    assert not inspect.isabstract(mvc::EventAction)
+def test_mvc_view_is_not_abstract():
+    assert not inspect.isabstract(mvc_View)
 
 
-def test_mvc::eventaction_constructor_exists():
-    assert callable(mvc::EventAction.__init__)
+def test_mvc_view_constructor_exists():
+    assert callable(mvc_View.__init__)
 
 
-def test_mvc::eventaction_constructor_args():
-    sig = inspect.signature(mvc::EventAction.__init__)
+def test_mvc_view_constructor_args():
+    sig = inspect.signature(mvc_View.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mvc_view_has_name():
+    assert hasattr(mvc_View, "name")
+    descriptor = None
+    for klass in mvc_View.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_mvc::mvcmodel_is_not_abstract():
-    assert not inspect.isabstract(mvc::MVCModel)
+def test_mvc_component_is_not_abstract():
+    assert not inspect.isabstract(mvc_Component)
 
 
-def test_mvc::mvcmodel_constructor_exists():
-    assert callable(mvc::MVCModel.__init__)
+def test_mvc_component_constructor_exists():
+    assert callable(mvc_Component.__init__)
 
 
-def test_mvc::mvcmodel_constructor_args():
-    sig = inspect.signature(mvc::MVCModel.__init__)
+def test_mvc_component_constructor_args():
+    sig = inspect.signature(mvc_Component.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mvc_component_has_name():
+    assert hasattr(mvc_Component, "name")
+    descriptor = None
+    for klass in mvc_Component.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mvc_action_is_not_abstract():
+    assert not inspect.isabstract(mvc_Action)
+
+
+def test_mvc_action_constructor_exists():
+    assert callable(mvc_Action.__init__)
+
+
+def test_mvc_action_constructor_args():
+    sig = inspect.signature(mvc_Action.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mvc_action_has_name():
+    assert hasattr(mvc_Action, "name")
+    descriptor = None
+    for klass in mvc_Action.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mvc_mvcmodel_is_not_abstract():
+    assert not inspect.isabstract(mvc_MVCModel)
+
+
+def test_mvc_mvcmodel_constructor_exists():
+    assert callable(mvc_MVCModel.__init__)
+
+
+def test_mvc_mvcmodel_constructor_args():
+    sig = inspect.signature(mvc_MVCModel.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mvc::mvcmodel_has_version():
-    assert hasattr(mvc::MVCModel, "version")
+def test_mvc_mvcmodel_has_version():
+    assert hasattr(mvc_MVCModel, "version")
     descriptor = None
-    for klass in mvc::MVCModel.__mro__:
+    for klass in mvc_MVCModel.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_mvc::mvcmodel_has_name():
-    assert hasattr(mvc::MVCModel, "name")
+def test_mvc_mvcmodel_has_name():
+    assert hasattr(mvc_MVCModel, "name")
     descriptor = None
-    for klass in mvc::MVCModel.__mro__:
+    for klass in mvc_MVCModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -169,81 +173,33 @@ def test_mvc::mvcmodel_has_name():
 
 
 
-def test_mvc::action_is_not_abstract():
-    assert not inspect.isabstract(mvc::Action)
+def test_mvc_attribute_is_not_abstract():
+    assert not inspect.isabstract(mvc_Attribute)
 
 
-def test_mvc::action_constructor_exists():
-    assert callable(mvc::Action.__init__)
+def test_mvc_attribute_constructor_exists():
+    assert callable(mvc_Attribute.__init__)
 
 
-def test_mvc::action_constructor_args():
-    sig = inspect.signature(mvc::Action.__init__)
+def test_mvc_attribute_constructor_args():
+    sig = inspect.signature(mvc_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mvc::action_has_name():
-    assert hasattr(mvc::Action, "name")
-    descriptor = None
-    for klass in mvc::Action.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mvc::attribute_is_not_abstract():
-    assert not inspect.isabstract(mvc::Attribute)
-
-
-def test_mvc::attribute_constructor_exists():
-    assert callable(mvc::Attribute.__init__)
-
-
-def test_mvc::attribute_constructor_args():
-    sig = inspect.signature(mvc::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_mvc::attribute_has_name():
-    assert hasattr(mvc::Attribute, "name")
+def test_mvc_attribute_has_type():
+    assert hasattr(mvc_Attribute, "type")
     descriptor = None
-    for klass in mvc::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mvc::attribute_has_type():
-    assert hasattr(mvc::Attribute, "type")
-    descriptor = None
-    for klass in mvc::Attribute.__mro__:
+    for klass in mvc_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mvc::component_is_not_abstract():
-    assert not inspect.isabstract(mvc::Component)
-
-
-def test_mvc::component_constructor_exists():
-    assert callable(mvc::Component.__init__)
-
-
-def test_mvc::component_constructor_args():
-    sig = inspect.signature(mvc::Component.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mvc::component_has_name():
-    assert hasattr(mvc::Component, "name")
+def test_mvc_attribute_has_name():
+    assert hasattr(mvc_Attribute, "name")
     descriptor = None
-    for klass in mvc::Component.__mro__:
+    for klass in mvc_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -251,53 +207,91 @@ def test_mvc::component_has_name():
 
 
 
-def test_mvc::uicomponent_is_not_abstract():
-    assert not inspect.isabstract(mvc::UIComponent)
+def test_mvc_controllerview_is_not_abstract():
+    assert not inspect.isabstract(mvc_ControllerView)
 
 
-def test_mvc::uicomponent_constructor_exists():
-    assert callable(mvc::UIComponent.__init__)
+def test_mvc_controllerview_constructor_exists():
+    assert callable(mvc_ControllerView.__init__)
 
 
-def test_mvc::uicomponent_constructor_args():
-    sig = inspect.signature(mvc::UIComponent.__init__)
+def test_mvc_controllerview_constructor_args():
+    sig = inspect.signature(mvc_ControllerView.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
+
+
+
+def test_mvc_entity_is_not_abstract():
+    assert not inspect.isabstract(mvc_Entity)
+
+
+def test_mvc_entity_constructor_exists():
+    assert callable(mvc_Entity.__init__)
+
+
+def test_mvc_entity_constructor_args():
+    sig = inspect.signature(mvc_Entity.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mvc_entity_has_name():
+    assert hasattr(mvc_Entity, "name")
+    descriptor = None
+    for klass in mvc_Entity.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mvc_uicomponent_is_not_abstract():
+    assert not inspect.isabstract(mvc_UIComponent)
+
+
+def test_mvc_uicomponent_constructor_exists():
+    assert callable(mvc_UIComponent.__init__)
+
+
+def test_mvc_uicomponent_constructor_args():
+    sig = inspect.signature(mvc_UIComponent.__init__)
+    params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "layout" in params, "Missing parameter 'layout'"
 
-def test_mvc::uicomponent_has_type():
-    assert hasattr(mvc::UIComponent, "type")
+def test_mvc_uicomponent_has_id():
+    assert hasattr(mvc_UIComponent, "id")
     descriptor = None
-    for klass in mvc::UIComponent.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mvc::uicomponent_has_id():
-    assert hasattr(mvc::UIComponent, "id")
-    descriptor = None
-    for klass in mvc::UIComponent.__mro__:
+    for klass in mvc_UIComponent.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_mvc::uicomponent_has_name():
-    assert hasattr(mvc::UIComponent, "name")
+def test_mvc_uicomponent_has_name():
+    assert hasattr(mvc_UIComponent, "name")
     descriptor = None
-    for klass in mvc::UIComponent.__mro__:
+    for klass in mvc_UIComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mvc::uicomponent_has_layout():
-    assert hasattr(mvc::UIComponent, "layout")
+def test_mvc_uicomponent_has_type():
+    assert hasattr(mvc_UIComponent, "type")
     descriptor = None
-    for klass in mvc::UIComponent.__mro__:
+    for klass in mvc_UIComponent.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mvc_uicomponent_has_layout():
+    assert hasattr(mvc_UIComponent, "layout")
+    descriptor = None
+    for klass in mvc_UIComponent.__mro__:
         if "layout" in klass.__dict__:
             descriptor = klass.__dict__["layout"]
             break
@@ -305,23 +299,87 @@ def test_mvc::uicomponent_has_layout():
 
 
 
-def test_mvc::entity_is_not_abstract():
-    assert not inspect.isabstract(mvc::Entity)
+def test_mvc_association_is_not_abstract():
+    assert not inspect.isabstract(mvc_Association)
 
 
-def test_mvc::entity_constructor_exists():
-    assert callable(mvc::Entity.__init__)
+def test_mvc_association_constructor_exists():
+    assert callable(mvc_Association.__init__)
 
 
-def test_mvc::entity_constructor_args():
-    sig = inspect.signature(mvc::Entity.__init__)
+def test_mvc_association_constructor_args():
+    sig = inspect.signature(mvc_Association.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+    assert "containment" in params, "Missing parameter 'containment'"
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_mvc_association_has_name():
+    assert hasattr(mvc_Association, "name")
+    descriptor = None
+    for klass in mvc_Association.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mvc_association_has_lowerBound():
+    assert hasattr(mvc_Association, "lowerBound")
+    descriptor = None
+    for klass in mvc_Association.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mvc_association_has_containment():
+    assert hasattr(mvc_Association, "containment")
+    descriptor = None
+    for klass in mvc_Association.__mro__:
+        if "containment" in klass.__dict__:
+            descriptor = klass.__dict__["containment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mvc_association_has_upperBound():
+    assert hasattr(mvc_Association, "upperBound")
+    descriptor = None
+    for klass in mvc_Association.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mvc_association_has_type():
+    assert hasattr(mvc_Association, "type")
+    descriptor = None
+    for klass in mvc_Association.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mvc_event_is_not_abstract():
+    assert not inspect.isabstract(mvc_Event)
+
+
+def test_mvc_event_constructor_exists():
+    assert callable(mvc_Event.__init__)
+
+
+def test_mvc_event_constructor_args():
+    sig = inspect.signature(mvc_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mvc::entity_has_name():
-    assert hasattr(mvc::Entity, "name")
+def test_mvc_event_has_name():
+    assert hasattr(mvc_Event, "name")
     descriptor = None
-    for klass in mvc::Entity.__mro__:
+    for klass in mvc_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -329,95 +387,37 @@ def test_mvc::entity_has_name():
 
 
 
-def test_mvc::controller_is_not_abstract():
-    assert not inspect.isabstract(mvc::Controller)
+def test_mvc_eventaction_is_not_abstract():
+    assert not inspect.isabstract(mvc_EventAction)
 
 
-def test_mvc::controller_constructor_exists():
-    assert callable(mvc::Controller.__init__)
+def test_mvc_eventaction_constructor_exists():
+    assert callable(mvc_EventAction.__init__)
 
 
-def test_mvc::controller_constructor_args():
-    sig = inspect.signature(mvc::Controller.__init__)
+def test_mvc_eventaction_constructor_args():
+    sig = inspect.signature(mvc_EventAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mvc_model_is_not_abstract():
+    assert not inspect.isabstract(mvc_Model)
+
+
+def test_mvc_model_constructor_exists():
+    assert callable(mvc_Model.__init__)
+
+
+def test_mvc_model_constructor_args():
+    sig = inspect.signature(mvc_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mvc::controller_has_name():
-    assert hasattr(mvc::Controller, "name")
+def test_mvc_model_has_name():
+    assert hasattr(mvc_Model, "name")
     descriptor = None
-    for klass in mvc::Controller.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mvc::view_is_not_abstract():
-    assert not inspect.isabstract(mvc::View)
-
-
-def test_mvc::view_constructor_exists():
-    assert callable(mvc::View.__init__)
-
-
-def test_mvc::view_constructor_args():
-    sig = inspect.signature(mvc::View.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mvc::view_has_name():
-    assert hasattr(mvc::View, "name")
-    descriptor = None
-    for klass in mvc::View.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mvc::event_is_not_abstract():
-    assert not inspect.isabstract(mvc::Event)
-
-
-def test_mvc::event_constructor_exists():
-    assert callable(mvc::Event.__init__)
-
-
-def test_mvc::event_constructor_args():
-    sig = inspect.signature(mvc::Event.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mvc::event_has_name():
-    assert hasattr(mvc::Event, "name")
-    descriptor = None
-    for klass in mvc::Event.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mvc::model_is_not_abstract():
-    assert not inspect.isabstract(mvc::Model)
-
-
-def test_mvc::model_constructor_exists():
-    assert callable(mvc::Model.__init__)
-
-
-def test_mvc::model_constructor_args():
-    sig = inspect.signature(mvc::Model.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mvc::model_has_name():
-    assert hasattr(mvc::Model, "name")
-    descriptor = None
-    for klass in mvc::Model.__mro__:
+    for klass in mvc_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -451,82 +451,82 @@ safe_text = st.text(
 Annotable_strategy = st.builds(
     Annotable,
 )
-mvc::ControllerView_strategy = st.builds(
-    mvc::ControllerView,
-)
-mvc::Association_strategy = st.builds(
-    mvc::Association,
-    upperBound=
-        st.integers(),
-    lowerBound=
-        st.integers(),
-    containment=
-        st.booleans(),
-    type=
-        safe_text,
+mvc_Controller_strategy = st.builds(
+    mvc_Controller,
     name=
         safe_text
 )
-mvc::EventAction_strategy = st.builds(
-    mvc::EventAction,
+mvc_View_strategy = st.builds(
+    mvc_View,
+    name=
+        safe_text
 )
-mvc::MVCModel_strategy = st.builds(
-    mvc::MVCModel,
+mvc_Component_strategy = st.builds(
+    mvc_Component,
+    name=
+        safe_text
+)
+mvc_Action_strategy = st.builds(
+    mvc_Action,
+    name=
+        safe_text
+)
+mvc_MVCModel_strategy = st.builds(
+    mvc_MVCModel,
     version=
         safe_text,
     name=
         safe_text
 )
-mvc::Action_strategy = st.builds(
-    mvc::Action,
-    name=
-        safe_text
-)
-mvc::Attribute_strategy = st.builds(
-    mvc::Attribute,
-    name=
-        safe_text,
-    type=
-        safe_text
-)
-mvc::Component_strategy = st.builds(
-    mvc::Component,
-    name=
-        safe_text
-)
-mvc::UIComponent_strategy = st.builds(
-    mvc::UIComponent,
+mvc_Attribute_strategy = st.builds(
+    mvc_Attribute,
     type=
         safe_text,
+    name=
+        safe_text
+)
+mvc_ControllerView_strategy = st.builds(
+    mvc_ControllerView,
+)
+mvc_Entity_strategy = st.builds(
+    mvc_Entity,
+    name=
+        safe_text
+)
+mvc_UIComponent_strategy = st.builds(
+    mvc_UIComponent,
     id=
         safe_text,
     name=
         safe_text,
+    type=
+        safe_text,
     layout=
         safe_text
 )
-mvc::Entity_strategy = st.builds(
-    mvc::Entity,
+mvc_Association_strategy = st.builds(
+    mvc_Association,
+    name=
+        safe_text,
+    lowerBound=
+        st.integers(),
+    containment=
+        st.booleans(),
+    upperBound=
+        st.integers(),
+    type=
+        safe_text
+)
+mvc_Event_strategy = st.builds(
+    mvc_Event,
     name=
         safe_text
 )
-mvc::Controller_strategy = st.builds(
-    mvc::Controller,
-    name=
-        safe_text
+mvc_EventAction_strategy = st.builds(
+    mvc_EventAction,
 )
-mvc::View_strategy = st.builds(
-    mvc::View,
-    name=
-        safe_text
-)
-mvc::Event_strategy = st.builds(
-    mvc::Event,
-    name=
-        safe_text
-)
-mvc::Model_strategy = st.builds(
-    mvc::Model,
+mvc_Model_strategy = st.builds(
+    mvc_Model,
     name=
         safe_text
 )
@@ -536,287 +536,227 @@ mvc::Model_strategy = st.builds(
 def test_annotable_instantiation(instance):
     assert isinstance(instance, Annotable)
 
-@given(instance=mvc::ControllerView_strategy)
+@given(instance=mvc_Controller_strategy)
 @settings(max_examples=50)
-def test_mvc::controllerview_instantiation(instance):
-    assert isinstance(instance, mvc::ControllerView)
-
-@given(instance=mvc::Association_strategy)
-@settings(max_examples=50)
-def test_mvc::association_instantiation(instance):
-    assert isinstance(instance, mvc::Association)
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
+def test_mvc_controller_instantiation(instance):
+    assert isinstance(instance, mvc_Controller)
 
 
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_upperBound_setter(instance):
-    original = instance.upperBound
-    instance.upperBound = original
-    assert instance.upperBound == original
 
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
-
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_containment_type(instance):
-    assert isinstance(instance.containment, bool)
-
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_containment_setter(instance):
-    original = instance.containment
-    instance.containment = original
-    assert instance.containment == original
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mvc::Association_strategy)
-def test_mvc::association_name_setter(instance):
+@given(instance=mvc_Controller_strategy)
+def test_mvc_controller_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mvc::EventAction_strategy)
+@given(instance=mvc_View_strategy)
 @settings(max_examples=50)
-def test_mvc::eventaction_instantiation(instance):
-    assert isinstance(instance, mvc::EventAction)
+def test_mvc_view_instantiation(instance):
+    assert isinstance(instance, mvc_View)
 
-@given(instance=mvc::MVCModel_strategy)
+
+
+@given(instance=mvc_View_strategy)
+def test_mvc_view_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mvc_Component_strategy)
 @settings(max_examples=50)
-def test_mvc::mvcmodel_instantiation(instance):
-    assert isinstance(instance, mvc::MVCModel)
-
-@given(instance=mvc::MVCModel_strategy)
-def test_mvc::mvcmodel_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_mvc_component_instantiation(instance):
+    assert isinstance(instance, mvc_Component)
 
 
-@given(instance=mvc::MVCModel_strategy)
-def test_mvc::mvcmodel_version_setter(instance):
+
+@given(instance=mvc_Component_strategy)
+def test_mvc_component_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mvc_Action_strategy)
+@settings(max_examples=50)
+def test_mvc_action_instantiation(instance):
+    assert isinstance(instance, mvc_Action)
+
+
+
+@given(instance=mvc_Action_strategy)
+def test_mvc_action_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mvc_MVCModel_strategy)
+@settings(max_examples=50)
+def test_mvc_mvcmodel_instantiation(instance):
+    assert isinstance(instance, mvc_MVCModel)
+
+
+
+@given(instance=mvc_MVCModel_strategy)
+def test_mvc_mvcmodel_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=mvc::MVCModel_strategy)
-def test_mvc::mvcmodel_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mvc::MVCModel_strategy)
-def test_mvc::mvcmodel_name_setter(instance):
+@given(instance=mvc_MVCModel_strategy)
+def test_mvc_mvcmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mvc::Action_strategy)
+@given(instance=mvc_Attribute_strategy)
 @settings(max_examples=50)
-def test_mvc::action_instantiation(instance):
-    assert isinstance(instance, mvc::Action)
-
-@given(instance=mvc::Action_strategy)
-def test_mvc::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mvc_attribute_instantiation(instance):
+    assert isinstance(instance, mvc_Attribute)
 
 
-@given(instance=mvc::Action_strategy)
-def test_mvc::action_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=mvc::Attribute_strategy)
-@settings(max_examples=50)
-def test_mvc::attribute_instantiation(instance):
-    assert isinstance(instance, mvc::Attribute)
-
-@given(instance=mvc::Attribute_strategy)
-def test_mvc::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mvc::Attribute_strategy)
-def test_mvc::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=mvc::Attribute_strategy)
-def test_mvc::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=mvc::Attribute_strategy)
-def test_mvc::attribute_type_setter(instance):
+@given(instance=mvc_Attribute_strategy)
+def test_mvc_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mvc::Component_strategy)
-@settings(max_examples=50)
-def test_mvc::component_instantiation(instance):
-    assert isinstance(instance, mvc::Component)
-
-@given(instance=mvc::Component_strategy)
-def test_mvc::component_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mvc::Component_strategy)
-def test_mvc::component_name_setter(instance):
+@given(instance=mvc_Attribute_strategy)
+def test_mvc_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mvc::UIComponent_strategy)
+@given(instance=mvc_ControllerView_strategy)
 @settings(max_examples=50)
-def test_mvc::uicomponent_instantiation(instance):
-    assert isinstance(instance, mvc::UIComponent)
+def test_mvc_controllerview_instantiation(instance):
+    assert isinstance(instance, mvc_ControllerView)
 
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=mvc_Entity_strategy)
+@settings(max_examples=50)
+def test_mvc_entity_instantiation(instance):
+    assert isinstance(instance, mvc_Entity)
 
 
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_id_setter(instance):
+
+@given(instance=mvc_Entity_strategy)
+def test_mvc_entity_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mvc_UIComponent_strategy)
+@settings(max_examples=50)
+def test_mvc_uicomponent_instantiation(instance):
+    assert isinstance(instance, mvc_UIComponent)
+
+
+
+@given(instance=mvc_UIComponent_strategy)
+def test_mvc_uicomponent_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_name_setter(instance):
+@given(instance=mvc_UIComponent_strategy)
+def test_mvc_uicomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_layout_type(instance):
-    assert isinstance(instance.layout, str)
 
 
-@given(instance=mvc::UIComponent_strategy)
-def test_mvc::uicomponent_layout_setter(instance):
+@given(instance=mvc_UIComponent_strategy)
+def test_mvc_uicomponent_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=mvc_UIComponent_strategy)
+def test_mvc_uicomponent_layout_setter(instance):
     original = instance.layout
     instance.layout = original
     assert instance.layout == original
 
-@given(instance=mvc::Entity_strategy)
+@given(instance=mvc_Association_strategy)
 @settings(max_examples=50)
-def test_mvc::entity_instantiation(instance):
-    assert isinstance(instance, mvc::Entity)
-
-@given(instance=mvc::Entity_strategy)
-def test_mvc::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mvc_association_instantiation(instance):
+    assert isinstance(instance, mvc_Association)
 
 
-@given(instance=mvc::Entity_strategy)
-def test_mvc::entity_name_setter(instance):
+
+@given(instance=mvc_Association_strategy)
+def test_mvc_association_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mvc::Controller_strategy)
+
+
+@given(instance=mvc_Association_strategy)
+def test_mvc_association_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+
+
+@given(instance=mvc_Association_strategy)
+def test_mvc_association_containment_setter(instance):
+    original = instance.containment
+    instance.containment = original
+    assert instance.containment == original
+
+
+
+@given(instance=mvc_Association_strategy)
+def test_mvc_association_upperBound_setter(instance):
+    original = instance.upperBound
+    instance.upperBound = original
+    assert instance.upperBound == original
+
+
+
+@given(instance=mvc_Association_strategy)
+def test_mvc_association_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=mvc_Event_strategy)
 @settings(max_examples=50)
-def test_mvc::controller_instantiation(instance):
-    assert isinstance(instance, mvc::Controller)
-
-@given(instance=mvc::Controller_strategy)
-def test_mvc::controller_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mvc_event_instantiation(instance):
+    assert isinstance(instance, mvc_Event)
 
 
-@given(instance=mvc::Controller_strategy)
-def test_mvc::controller_name_setter(instance):
+
+@given(instance=mvc_Event_strategy)
+def test_mvc_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mvc::View_strategy)
+@given(instance=mvc_EventAction_strategy)
 @settings(max_examples=50)
-def test_mvc::view_instantiation(instance):
-    assert isinstance(instance, mvc::View)
+def test_mvc_eventaction_instantiation(instance):
+    assert isinstance(instance, mvc_EventAction)
 
-@given(instance=mvc::View_strategy)
-def test_mvc::view_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mvc::View_strategy)
-def test_mvc::view_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=mvc::Event_strategy)
+@given(instance=mvc_Model_strategy)
 @settings(max_examples=50)
-def test_mvc::event_instantiation(instance):
-    assert isinstance(instance, mvc::Event)
-
-@given(instance=mvc::Event_strategy)
-def test_mvc::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mvc_model_instantiation(instance):
+    assert isinstance(instance, mvc_Model)
 
 
-@given(instance=mvc::Event_strategy)
-def test_mvc::event_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=mvc::Model_strategy)
-@settings(max_examples=50)
-def test_mvc::model_instantiation(instance):
-    assert isinstance(instance, mvc::Model)
-
-@given(instance=mvc::Model_strategy)
-def test_mvc::model_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mvc::Model_strategy)
-def test_mvc::model_name_setter(instance):
+@given(instance=mvc_Model_strategy)
+def test_mvc_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

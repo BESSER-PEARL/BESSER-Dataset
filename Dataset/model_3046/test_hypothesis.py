@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    entities::DomainModel,
-    entities::Feature,
-    entities::Entity,
+from python_code import (
+    entities_Feature,
+    entities_Entity,
+    entities_DomainModel,
 )
 
 # =============================================================================
@@ -17,75 +17,75 @@ from classes import (
 
 
 
-def test_entities::domainmodel_is_not_abstract():
-    assert not inspect.isabstract(entities::DomainModel)
+def test_entities_feature_is_not_abstract():
+    assert not inspect.isabstract(entities_Feature)
 
 
-def test_entities::domainmodel_constructor_exists():
-    assert callable(entities::DomainModel.__init__)
+def test_entities_feature_constructor_exists():
+    assert callable(entities_Feature.__init__)
 
 
-def test_entities::domainmodel_constructor_args():
-    sig = inspect.signature(entities::DomainModel.__init__)
+def test_entities_feature_constructor_args():
+    sig = inspect.signature(entities_Feature.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_entities::feature_is_not_abstract():
-    assert not inspect.isabstract(entities::Feature)
-
-
-def test_entities::feature_constructor_exists():
-    assert callable(entities::Feature.__init__)
-
-
-def test_entities::feature_constructor_args():
-    sig = inspect.signature(entities::Feature.__init__)
-    params = list(sig.parameters.keys())
-    assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "many" in params, "Missing parameter 'many'"
 
-def test_entities::feature_has_many():
-    assert hasattr(entities::Feature, "many")
+def test_entities_feature_has_name():
+    assert hasattr(entities_Feature, "name")
     descriptor = None
-    for klass in entities::Feature.__mro__:
+    for klass in entities_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_entities_feature_has_many():
+    assert hasattr(entities_Feature, "many")
+    descriptor = None
+    for klass in entities_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_entities::feature_has_name():
-    assert hasattr(entities::Feature, "name")
-    descriptor = None
-    for klass in entities::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_entities::entity_is_not_abstract():
-    assert not inspect.isabstract(entities::Entity)
-
-
-def test_entities::entity_constructor_exists():
-    assert callable(entities::Entity.__init__)
+def test_entities_entity_is_not_abstract():
+    assert not inspect.isabstract(entities_Entity)
 
 
-def test_entities::entity_constructor_args():
-    sig = inspect.signature(entities::Entity.__init__)
+def test_entities_entity_constructor_exists():
+    assert callable(entities_Entity.__init__)
+
+
+def test_entities_entity_constructor_args():
+    sig = inspect.signature(entities_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entities::entity_has_name():
-    assert hasattr(entities::Entity, "name")
+def test_entities_entity_has_name():
+    assert hasattr(entities_Entity, "name")
     descriptor = None
-    for klass in entities::Entity.__mro__:
+    for klass in entities_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_entities_domainmodel_is_not_abstract():
+    assert not inspect.isabstract(entities_DomainModel)
+
+
+def test_entities_domainmodel_constructor_exists():
+    assert callable(entities_DomainModel.__init__)
+
+
+def test_entities_domainmodel_constructor_args():
+    sig = inspect.signature(entities_DomainModel.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-entities::DomainModel_strategy = st.builds(
-    entities::DomainModel,
-)
-entities::Feature_strategy = st.builds(
-    entities::Feature,
+entities_Feature_strategy = st.builds(
+    entities_Feature,
+    name=
+        safe_text,
     many=
-        st.booleans(),
+        st.booleans()
+)
+entities_Entity_strategy = st.builds(
+    entities_Entity,
     name=
         safe_text
 )
-entities::Entity_strategy = st.builds(
-    entities::Entity,
-    name=
-        safe_text
+entities_DomainModel_strategy = st.builds(
+    entities_DomainModel,
 )
 
-@given(instance=entities::DomainModel_strategy)
+@given(instance=entities_Feature_strategy)
 @settings(max_examples=50)
-def test_entities::domainmodel_instantiation(instance):
-    assert isinstance(instance, entities::DomainModel)
-
-@given(instance=entities::Feature_strategy)
-@settings(max_examples=50)
-def test_entities::feature_instantiation(instance):
-    assert isinstance(instance, entities::Feature)
-
-@given(instance=entities::Feature_strategy)
-def test_entities::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_entities_feature_instantiation(instance):
+    assert isinstance(instance, entities_Feature)
 
 
-@given(instance=entities::Feature_strategy)
-def test_entities::feature_many_setter(instance):
+
+@given(instance=entities_Feature_strategy)
+def test_entities_feature_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=entities_Feature_strategy)
+def test_entities_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=entities::Feature_strategy)
-def test_entities::feature_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=entities::Feature_strategy)
-def test_entities::feature_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=entities::Entity_strategy)
+@given(instance=entities_Entity_strategy)
 @settings(max_examples=50)
-def test_entities::entity_instantiation(instance):
-    assert isinstance(instance, entities::Entity)
-
-@given(instance=entities::Entity_strategy)
-def test_entities::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_entity_instantiation(instance):
+    assert isinstance(instance, entities_Entity)
 
 
-@given(instance=entities::Entity_strategy)
-def test_entities::entity_name_setter(instance):
+
+@given(instance=entities_Entity_strategy)
+def test_entities_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=entities_DomainModel_strategy)
+@settings(max_examples=50)
+def test_entities_domainmodel_instantiation(instance):
+    assert isinstance(instance, entities_DomainModel)

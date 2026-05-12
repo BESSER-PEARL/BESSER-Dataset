@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    martinfowlerdsl::State,
-    martinfowlerdsl::StateMachine,
+from python_code import (
+    martinfowlerdsl_StateMachine,
     AbstractEvent,
-    martinfowlerdsl::Event,
-    martinfowlerdsl::Transition,
-    martinfowlerdsl::Command,
-    martinfowlerdsl::AbstractEvent,
+    martinfowlerdsl_Event,
+    martinfowlerdsl_Transition,
+    martinfowlerdsl_Command,
+    martinfowlerdsl_AbstractEvent,
+    martinfowlerdsl_State,
 )
 
 # =============================================================================
@@ -21,40 +21,16 @@ from classes import (
 
 
 
-def test_martinfowlerdsl::state_is_not_abstract():
-    assert not inspect.isabstract(martinfowlerdsl::State)
+def test_martinfowlerdsl_statemachine_is_not_abstract():
+    assert not inspect.isabstract(martinfowlerdsl_StateMachine)
 
 
-def test_martinfowlerdsl::state_constructor_exists():
-    assert callable(martinfowlerdsl::State.__init__)
+def test_martinfowlerdsl_statemachine_constructor_exists():
+    assert callable(martinfowlerdsl_StateMachine.__init__)
 
 
-def test_martinfowlerdsl::state_constructor_args():
-    sig = inspect.signature(martinfowlerdsl::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_martinfowlerdsl::state_has_name():
-    assert hasattr(martinfowlerdsl::State, "name")
-    descriptor = None
-    for klass in martinfowlerdsl::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_martinfowlerdsl::statemachine_is_not_abstract():
-    assert not inspect.isabstract(martinfowlerdsl::StateMachine)
-
-
-def test_martinfowlerdsl::statemachine_constructor_exists():
-    assert callable(martinfowlerdsl::StateMachine.__init__)
-
-
-def test_martinfowlerdsl::statemachine_constructor_args():
-    sig = inspect.signature(martinfowlerdsl::StateMachine.__init__)
+def test_martinfowlerdsl_statemachine_constructor_args():
+    sig = inspect.signature(martinfowlerdsl_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,23 +49,23 @@ def test_abstractevent_constructor_args():
 
 
 
-def test_martinfowlerdsl::event_is_not_abstract():
-    assert not inspect.isabstract(martinfowlerdsl::Event)
+def test_martinfowlerdsl_event_is_not_abstract():
+    assert not inspect.isabstract(martinfowlerdsl_Event)
 
 
-def test_martinfowlerdsl::event_constructor_exists():
-    assert callable(martinfowlerdsl::Event.__init__)
+def test_martinfowlerdsl_event_constructor_exists():
+    assert callable(martinfowlerdsl_Event.__init__)
 
 
-def test_martinfowlerdsl::event_constructor_args():
-    sig = inspect.signature(martinfowlerdsl::Event.__init__)
+def test_martinfowlerdsl_event_constructor_args():
+    sig = inspect.signature(martinfowlerdsl_Event.__init__)
     params = list(sig.parameters.keys())
     assert "resetting" in params, "Missing parameter 'resetting'"
 
-def test_martinfowlerdsl::event_has_resetting():
-    assert hasattr(martinfowlerdsl::Event, "resetting")
+def test_martinfowlerdsl_event_has_resetting():
+    assert hasattr(martinfowlerdsl_Event, "resetting")
     descriptor = None
-    for klass in martinfowlerdsl::Event.__mro__:
+    for klass in martinfowlerdsl_Event.__mro__:
         if "resetting" in klass.__dict__:
             descriptor = klass.__dict__["resetting"]
             break
@@ -97,63 +73,87 @@ def test_martinfowlerdsl::event_has_resetting():
 
 
 
-def test_martinfowlerdsl::transition_is_not_abstract():
-    assert not inspect.isabstract(martinfowlerdsl::Transition)
+def test_martinfowlerdsl_transition_is_not_abstract():
+    assert not inspect.isabstract(martinfowlerdsl_Transition)
 
 
-def test_martinfowlerdsl::transition_constructor_exists():
-    assert callable(martinfowlerdsl::Transition.__init__)
+def test_martinfowlerdsl_transition_constructor_exists():
+    assert callable(martinfowlerdsl_Transition.__init__)
 
 
-def test_martinfowlerdsl::transition_constructor_args():
-    sig = inspect.signature(martinfowlerdsl::Transition.__init__)
+def test_martinfowlerdsl_transition_constructor_args():
+    sig = inspect.signature(martinfowlerdsl_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_martinfowlerdsl::command_is_not_abstract():
-    assert not inspect.isabstract(martinfowlerdsl::Command)
+def test_martinfowlerdsl_command_is_not_abstract():
+    assert not inspect.isabstract(martinfowlerdsl_Command)
 
 
-def test_martinfowlerdsl::command_constructor_exists():
-    assert callable(martinfowlerdsl::Command.__init__)
+def test_martinfowlerdsl_command_constructor_exists():
+    assert callable(martinfowlerdsl_Command.__init__)
 
 
-def test_martinfowlerdsl::command_constructor_args():
-    sig = inspect.signature(martinfowlerdsl::Command.__init__)
+def test_martinfowlerdsl_command_constructor_args():
+    sig = inspect.signature(martinfowlerdsl_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_martinfowlerdsl::abstractevent_is_not_abstract():
-    assert not inspect.isabstract(martinfowlerdsl::AbstractEvent)
+def test_martinfowlerdsl_abstractevent_is_not_abstract():
+    assert not inspect.isabstract(martinfowlerdsl_AbstractEvent)
 
 
-def test_martinfowlerdsl::abstractevent_constructor_exists():
-    assert callable(martinfowlerdsl::AbstractEvent.__init__)
+def test_martinfowlerdsl_abstractevent_constructor_exists():
+    assert callable(martinfowlerdsl_AbstractEvent.__init__)
 
 
-def test_martinfowlerdsl::abstractevent_constructor_args():
-    sig = inspect.signature(martinfowlerdsl::AbstractEvent.__init__)
+def test_martinfowlerdsl_abstractevent_constructor_args():
+    sig = inspect.signature(martinfowlerdsl_AbstractEvent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "code" in params, "Missing parameter 'code'"
 
-def test_martinfowlerdsl::abstractevent_has_name():
-    assert hasattr(martinfowlerdsl::AbstractEvent, "name")
+def test_martinfowlerdsl_abstractevent_has_name():
+    assert hasattr(martinfowlerdsl_AbstractEvent, "name")
     descriptor = None
-    for klass in martinfowlerdsl::AbstractEvent.__mro__:
+    for klass in martinfowlerdsl_AbstractEvent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_martinfowlerdsl::abstractevent_has_code():
-    assert hasattr(martinfowlerdsl::AbstractEvent, "code")
+def test_martinfowlerdsl_abstractevent_has_code():
+    assert hasattr(martinfowlerdsl_AbstractEvent, "code")
     descriptor = None
-    for klass in martinfowlerdsl::AbstractEvent.__mro__:
+    for klass in martinfowlerdsl_AbstractEvent.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_martinfowlerdsl_state_is_not_abstract():
+    assert not inspect.isabstract(martinfowlerdsl_State)
+
+
+def test_martinfowlerdsl_state_constructor_exists():
+    assert callable(martinfowlerdsl_State.__init__)
+
+
+def test_martinfowlerdsl_state_constructor_args():
+    sig = inspect.signature(martinfowlerdsl_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_martinfowlerdsl_state_has_name():
+    assert hasattr(martinfowlerdsl_State, "name")
+    descriptor = None
+    for klass in martinfowlerdsl_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -169,111 +169,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-martinfowlerdsl::State_strategy = st.builds(
-    martinfowlerdsl::State,
-    name=
-        safe_text
-)
-martinfowlerdsl::StateMachine_strategy = st.builds(
-    martinfowlerdsl::StateMachine,
+martinfowlerdsl_StateMachine_strategy = st.builds(
+    martinfowlerdsl_StateMachine,
 )
 AbstractEvent_strategy = st.builds(
     AbstractEvent,
 )
-martinfowlerdsl::Event_strategy = st.builds(
-    martinfowlerdsl::Event,
+martinfowlerdsl_Event_strategy = st.builds(
+    martinfowlerdsl_Event,
     resetting=
         st.booleans()
 )
-martinfowlerdsl::Transition_strategy = st.builds(
-    martinfowlerdsl::Transition,
+martinfowlerdsl_Transition_strategy = st.builds(
+    martinfowlerdsl_Transition,
 )
-martinfowlerdsl::Command_strategy = st.builds(
-    martinfowlerdsl::Command,
+martinfowlerdsl_Command_strategy = st.builds(
+    martinfowlerdsl_Command,
 )
-martinfowlerdsl::AbstractEvent_strategy = st.builds(
-    martinfowlerdsl::AbstractEvent,
+martinfowlerdsl_AbstractEvent_strategy = st.builds(
+    martinfowlerdsl_AbstractEvent,
     name=
         safe_text,
     code=
         safe_text
 )
+martinfowlerdsl_State_strategy = st.builds(
+    martinfowlerdsl_State,
+    name=
+        safe_text
+)
 
-@given(instance=martinfowlerdsl::State_strategy)
+@given(instance=martinfowlerdsl_StateMachine_strategy)
 @settings(max_examples=50)
-def test_martinfowlerdsl::state_instantiation(instance):
-    assert isinstance(instance, martinfowlerdsl::State)
-
-@given(instance=martinfowlerdsl::State_strategy)
-def test_martinfowlerdsl::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=martinfowlerdsl::State_strategy)
-def test_martinfowlerdsl::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=martinfowlerdsl::StateMachine_strategy)
-@settings(max_examples=50)
-def test_martinfowlerdsl::statemachine_instantiation(instance):
-    assert isinstance(instance, martinfowlerdsl::StateMachine)
+def test_martinfowlerdsl_statemachine_instantiation(instance):
+    assert isinstance(instance, martinfowlerdsl_StateMachine)
 
 @given(instance=AbstractEvent_strategy)
 @settings(max_examples=50)
 def test_abstractevent_instantiation(instance):
     assert isinstance(instance, AbstractEvent)
 
-@given(instance=martinfowlerdsl::Event_strategy)
+@given(instance=martinfowlerdsl_Event_strategy)
 @settings(max_examples=50)
-def test_martinfowlerdsl::event_instantiation(instance):
-    assert isinstance(instance, martinfowlerdsl::Event)
-
-@given(instance=martinfowlerdsl::Event_strategy)
-def test_martinfowlerdsl::event_resetting_type(instance):
-    assert isinstance(instance.resetting, bool)
+def test_martinfowlerdsl_event_instantiation(instance):
+    assert isinstance(instance, martinfowlerdsl_Event)
 
 
-@given(instance=martinfowlerdsl::Event_strategy)
-def test_martinfowlerdsl::event_resetting_setter(instance):
+
+@given(instance=martinfowlerdsl_Event_strategy)
+def test_martinfowlerdsl_event_resetting_setter(instance):
     original = instance.resetting
     instance.resetting = original
     assert instance.resetting == original
 
-@given(instance=martinfowlerdsl::Transition_strategy)
+@given(instance=martinfowlerdsl_Transition_strategy)
 @settings(max_examples=50)
-def test_martinfowlerdsl::transition_instantiation(instance):
-    assert isinstance(instance, martinfowlerdsl::Transition)
+def test_martinfowlerdsl_transition_instantiation(instance):
+    assert isinstance(instance, martinfowlerdsl_Transition)
 
-@given(instance=martinfowlerdsl::Command_strategy)
+@given(instance=martinfowlerdsl_Command_strategy)
 @settings(max_examples=50)
-def test_martinfowlerdsl::command_instantiation(instance):
-    assert isinstance(instance, martinfowlerdsl::Command)
+def test_martinfowlerdsl_command_instantiation(instance):
+    assert isinstance(instance, martinfowlerdsl_Command)
 
-@given(instance=martinfowlerdsl::AbstractEvent_strategy)
+@given(instance=martinfowlerdsl_AbstractEvent_strategy)
 @settings(max_examples=50)
-def test_martinfowlerdsl::abstractevent_instantiation(instance):
-    assert isinstance(instance, martinfowlerdsl::AbstractEvent)
-
-@given(instance=martinfowlerdsl::AbstractEvent_strategy)
-def test_martinfowlerdsl::abstractevent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_martinfowlerdsl_abstractevent_instantiation(instance):
+    assert isinstance(instance, martinfowlerdsl_AbstractEvent)
 
 
-@given(instance=martinfowlerdsl::AbstractEvent_strategy)
-def test_martinfowlerdsl::abstractevent_name_setter(instance):
+
+@given(instance=martinfowlerdsl_AbstractEvent_strategy)
+def test_martinfowlerdsl_abstractevent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=martinfowlerdsl::AbstractEvent_strategy)
-def test_martinfowlerdsl::abstractevent_code_type(instance):
-    assert isinstance(instance.code, str)
 
 
-@given(instance=martinfowlerdsl::AbstractEvent_strategy)
-def test_martinfowlerdsl::abstractevent_code_setter(instance):
+@given(instance=martinfowlerdsl_AbstractEvent_strategy)
+def test_martinfowlerdsl_abstractevent_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
+
+@given(instance=martinfowlerdsl_State_strategy)
+@settings(max_examples=50)
+def test_martinfowlerdsl_state_instantiation(instance):
+    assert isinstance(instance, martinfowlerdsl_State)
+
+
+
+@given(instance=martinfowlerdsl_State_strategy)
+def test_martinfowlerdsl_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

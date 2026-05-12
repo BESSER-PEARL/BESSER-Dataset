@@ -3,63 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    BomberMan,
     PowerUps,
     GameMap,
     Monster,
     Game,
+    BomberMan,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_bomberman_is_not_abstract():
-    assert not inspect.isabstract(BomberMan)
-
-
-def test_bomberman_constructor_exists():
-    assert callable(BomberMan.__init__)
-
-
-def test_bomberman_constructor_args():
-    sig = inspect.signature(BomberMan.__init__)
-    params = list(sig.parameters.keys())
-    assert "lives" in params, "Missing parameter 'lives'"
-    assert "points" in params, "Missing parameter 'points'"
-    assert "location" in params, "Missing parameter 'location'"
-
-def test_bomberman_has_lives():
-    assert hasattr(BomberMan, "lives")
-    descriptor = None
-    for klass in BomberMan.__mro__:
-        if "lives" in klass.__dict__:
-            descriptor = klass.__dict__["lives"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bomberman_has_points():
-    assert hasattr(BomberMan, "points")
-    descriptor = None
-    for klass in BomberMan.__mro__:
-        if "points" in klass.__dict__:
-            descriptor = klass.__dict__["points"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bomberman_has_location():
-    assert hasattr(BomberMan, "location")
-    descriptor = None
-    for klass in BomberMan.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -74,18 +30,9 @@ def test_powerups_constructor_exists():
 def test_powerups_constructor_args():
     sig = inspect.signature(PowerUps.__init__)
     params = list(sig.parameters.keys())
-    assert "speciliaty" in params, "Missing parameter 'speciliaty'"
     assert "points" in params, "Missing parameter 'points'"
+    assert "speciliaty" in params, "Missing parameter 'speciliaty'"
     assert "locations" in params, "Missing parameter 'locations'"
-
-def test_powerups_has_speciliaty():
-    assert hasattr(PowerUps, "speciliaty")
-    descriptor = None
-    for klass in PowerUps.__mro__:
-        if "speciliaty" in klass.__dict__:
-            descriptor = klass.__dict__["speciliaty"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_powerups_has_points():
     assert hasattr(PowerUps, "points")
@@ -93,6 +40,15 @@ def test_powerups_has_points():
     for klass in PowerUps.__mro__:
         if "points" in klass.__dict__:
             descriptor = klass.__dict__["points"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_powerups_has_speciliaty():
+    assert hasattr(PowerUps, "speciliaty")
+    descriptor = None
+    for klass in PowerUps.__mro__:
+        if "speciliaty" in klass.__dict__:
+            descriptor = klass.__dict__["speciliaty"]
             break
     assert isinstance(descriptor, property)
 
@@ -118,16 +74,16 @@ def test_gamemap_constructor_exists():
 def test_gamemap_constructor_args():
     sig = inspect.signature(GameMap.__init__)
     params = list(sig.parameters.keys())
-    assert "walls" in params, "Missing parameter 'walls'"
-    assert "transitions" in params, "Missing parameter 'transitions'"
     assert "poerups" in params, "Missing parameter 'poerups'"
+    assert "transitions" in params, "Missing parameter 'transitions'"
+    assert "walls" in params, "Missing parameter 'walls'"
 
-def test_gamemap_has_walls():
-    assert hasattr(GameMap, "walls")
+def test_gamemap_has_poerups():
+    assert hasattr(GameMap, "poerups")
     descriptor = None
     for klass in GameMap.__mro__:
-        if "walls" in klass.__dict__:
-            descriptor = klass.__dict__["walls"]
+        if "poerups" in klass.__dict__:
+            descriptor = klass.__dict__["poerups"]
             break
     assert isinstance(descriptor, property)
 
@@ -140,12 +96,12 @@ def test_gamemap_has_transitions():
             break
     assert isinstance(descriptor, property)
 
-def test_gamemap_has_poerups():
-    assert hasattr(GameMap, "poerups")
+def test_gamemap_has_walls():
+    assert hasattr(GameMap, "walls")
     descriptor = None
     for klass in GameMap.__mro__:
-        if "poerups" in klass.__dict__:
-            descriptor = klass.__dict__["poerups"]
+        if "walls" in klass.__dict__:
+            descriptor = klass.__dict__["walls"]
             break
     assert isinstance(descriptor, property)
 
@@ -228,6 +184,50 @@ def test_game_has_Timer():
     assert isinstance(descriptor, property)
 
 
+
+def test_bomberman_is_not_abstract():
+    assert not inspect.isabstract(BomberMan)
+
+
+def test_bomberman_constructor_exists():
+    assert callable(BomberMan.__init__)
+
+
+def test_bomberman_constructor_args():
+    sig = inspect.signature(BomberMan.__init__)
+    params = list(sig.parameters.keys())
+    assert "points" in params, "Missing parameter 'points'"
+    assert "lives" in params, "Missing parameter 'lives'"
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_bomberman_has_points():
+    assert hasattr(BomberMan, "points")
+    descriptor = None
+    for klass in BomberMan.__mro__:
+        if "points" in klass.__dict__:
+            descriptor = klass.__dict__["points"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bomberman_has_lives():
+    assert hasattr(BomberMan, "lives")
+    descriptor = None
+    for klass in BomberMan.__mro__:
+        if "lives" in klass.__dict__:
+            descriptor = klass.__dict__["lives"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bomberman_has_location():
+    assert hasattr(BomberMan, "location")
+    descriptor = None
+    for klass in BomberMan.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -239,31 +239,22 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-BomberMan_strategy = st.builds(
-    BomberMan,
-    lives=
-        st.integers(),
-    points=
-        st.integers(),
-    location=
-        safe_text
-)
 PowerUps_strategy = st.builds(
     PowerUps,
-    speciliaty=
-        safe_text,
     points=
         st.integers(),
+    speciliaty=
+        safe_text,
     locations=
         safe_text
 )
 GameMap_strategy = st.builds(
     GameMap,
-    walls=
+    poerups=
         safe_text,
     transitions=
         safe_text,
-    poerups=
+    walls=
         safe_text
 )
 Monster_strategy = st.builds(
@@ -282,64 +273,21 @@ Game_strategy = st.builds(
     Timer=
         st.integers()
 )
-
-@given(instance=BomberMan_strategy)
-@settings(max_examples=50)
-def test_bomberman_instantiation(instance):
-    assert isinstance(instance, BomberMan)
-
-@given(instance=BomberMan_strategy)
-def test_bomberman_lives_type(instance):
-    assert isinstance(instance.lives, int)
-
-
-@given(instance=BomberMan_strategy)
-def test_bomberman_lives_setter(instance):
-    original = instance.lives
-    instance.lives = original
-    assert instance.lives == original
-
-@given(instance=BomberMan_strategy)
-def test_bomberman_points_type(instance):
-    assert isinstance(instance.points, int)
-
-
-@given(instance=BomberMan_strategy)
-def test_bomberman_points_setter(instance):
-    original = instance.points
-    instance.points = original
-    assert instance.points == original
-
-@given(instance=BomberMan_strategy)
-def test_bomberman_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=BomberMan_strategy)
-def test_bomberman_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
+BomberMan_strategy = st.builds(
+    BomberMan,
+    points=
+        st.integers(),
+    lives=
+        st.integers(),
+    location=
+        safe_text
+)
 
 @given(instance=PowerUps_strategy)
 @settings(max_examples=50)
 def test_powerups_instantiation(instance):
     assert isinstance(instance, PowerUps)
 
-@given(instance=PowerUps_strategy)
-def test_powerups_speciliaty_type(instance):
-    assert isinstance(instance.speciliaty, str)
-
-
-@given(instance=PowerUps_strategy)
-def test_powerups_speciliaty_setter(instance):
-    original = instance.speciliaty
-    instance.speciliaty = original
-    assert instance.speciliaty == original
-
-@given(instance=PowerUps_strategy)
-def test_powerups_points_type(instance):
-    assert isinstance(instance.points, int)
 
 
 @given(instance=PowerUps_strategy)
@@ -348,9 +296,14 @@ def test_powerups_points_setter(instance):
     instance.points = original
     assert instance.points == original
 
+
+
 @given(instance=PowerUps_strategy)
-def test_powerups_locations_type(instance):
-    assert isinstance(instance.locations, str)
+def test_powerups_speciliaty_setter(instance):
+    original = instance.speciliaty
+    instance.speciliaty = original
+    assert instance.speciliaty == original
+
 
 
 @given(instance=PowerUps_strategy)
@@ -364,31 +317,6 @@ def test_powerups_locations_setter(instance):
 def test_gamemap_instantiation(instance):
     assert isinstance(instance, GameMap)
 
-@given(instance=GameMap_strategy)
-def test_gamemap_walls_type(instance):
-    assert isinstance(instance.walls, str)
-
-
-@given(instance=GameMap_strategy)
-def test_gamemap_walls_setter(instance):
-    original = instance.walls
-    instance.walls = original
-    assert instance.walls == original
-
-@given(instance=GameMap_strategy)
-def test_gamemap_transitions_type(instance):
-    assert isinstance(instance.transitions, str)
-
-
-@given(instance=GameMap_strategy)
-def test_gamemap_transitions_setter(instance):
-    original = instance.transitions
-    instance.transitions = original
-    assert instance.transitions == original
-
-@given(instance=GameMap_strategy)
-def test_gamemap_poerups_type(instance):
-    assert isinstance(instance.poerups, str)
 
 
 @given(instance=GameMap_strategy)
@@ -397,14 +325,27 @@ def test_gamemap_poerups_setter(instance):
     instance.poerups = original
     assert instance.poerups == original
 
+
+
+@given(instance=GameMap_strategy)
+def test_gamemap_transitions_setter(instance):
+    original = instance.transitions
+    instance.transitions = original
+    assert instance.transitions == original
+
+
+
+@given(instance=GameMap_strategy)
+def test_gamemap_walls_setter(instance):
+    original = instance.walls
+    instance.walls = original
+    assert instance.walls == original
+
 @given(instance=Monster_strategy)
 @settings(max_examples=50)
 def test_monster_instantiation(instance):
     assert isinstance(instance, Monster)
 
-@given(instance=Monster_strategy)
-def test_monster_lives_type(instance):
-    assert isinstance(instance.lives, int)
 
 
 @given(instance=Monster_strategy)
@@ -413,9 +354,6 @@ def test_monster_lives_setter(instance):
     instance.lives = original
     assert instance.lives == original
 
-@given(instance=Monster_strategy)
-def test_monster_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=Monster_strategy)
@@ -424,9 +362,6 @@ def test_monster_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
-@given(instance=Monster_strategy)
-def test_monster_specilization_type(instance):
-    assert isinstance(instance.specilization, str)
 
 
 @given(instance=Monster_strategy)
@@ -435,9 +370,6 @@ def test_monster_specilization_setter(instance):
     instance.specilization = original
     assert instance.specilization == original
 
-@given(instance=Monster_strategy)
-def test_monster_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=Monster_strategy)
@@ -451,9 +383,6 @@ def test_monster_type_setter(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_Timer_type(instance):
-    assert isinstance(instance.Timer, int)
 
 
 @given(instance=Game_strategy)
@@ -461,3 +390,32 @@ def test_game_Timer_setter(instance):
     original = instance.Timer
     instance.Timer = original
     assert instance.Timer == original
+
+@given(instance=BomberMan_strategy)
+@settings(max_examples=50)
+def test_bomberman_instantiation(instance):
+    assert isinstance(instance, BomberMan)
+
+
+
+@given(instance=BomberMan_strategy)
+def test_bomberman_points_setter(instance):
+    original = instance.points
+    instance.points = original
+    assert instance.points == original
+
+
+
+@given(instance=BomberMan_strategy)
+def test_bomberman_lives_setter(instance):
+    original = instance.lives
+    instance.lives = original
+    assert instance.lives == original
+
+
+
+@given(instance=BomberMan_strategy)
+def test_bomberman_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Household::Member,
-    Household::Family,
-    Household::HouseholdRoot,
+from python_code import (
+    Household_Member,
+    Household_Family,
+    Household_HouseholdRoot,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_household::member_is_not_abstract():
-    assert not inspect.isabstract(Household::Member)
+def test_household_member_is_not_abstract():
+    assert not inspect.isabstract(Household_Member)
 
 
-def test_household::member_constructor_exists():
-    assert callable(Household::Member.__init__)
+def test_household_member_constructor_exists():
+    assert callable(Household_Member.__init__)
 
 
-def test_household::member_constructor_args():
-    sig = inspect.signature(Household::Member.__init__)
+def test_household_member_constructor_args():
+    sig = inspect.signature(Household_Member.__init__)
     params = list(sig.parameters.keys())
     assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_household::member_has_firstName():
-    assert hasattr(Household::Member, "firstName")
+def test_household_member_has_firstName():
+    assert hasattr(Household_Member, "firstName")
     descriptor = None
-    for klass in Household::Member.__mro__:
+    for klass in Household_Member.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
@@ -41,23 +41,23 @@ def test_household::member_has_firstName():
 
 
 
-def test_household::family_is_not_abstract():
-    assert not inspect.isabstract(Household::Family)
+def test_household_family_is_not_abstract():
+    assert not inspect.isabstract(Household_Family)
 
 
-def test_household::family_constructor_exists():
-    assert callable(Household::Family.__init__)
+def test_household_family_constructor_exists():
+    assert callable(Household_Family.__init__)
 
 
-def test_household::family_constructor_args():
-    sig = inspect.signature(Household::Family.__init__)
+def test_household_family_constructor_args():
+    sig = inspect.signature(Household_Family.__init__)
     params = list(sig.parameters.keys())
     assert "lastName" in params, "Missing parameter 'lastName'"
 
-def test_household::family_has_lastName():
-    assert hasattr(Household::Family, "lastName")
+def test_household_family_has_lastName():
+    assert hasattr(Household_Family, "lastName")
     descriptor = None
-    for klass in Household::Family.__mro__:
+    for klass in Household_Family.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
@@ -65,16 +65,16 @@ def test_household::family_has_lastName():
 
 
 
-def test_household::householdroot_is_not_abstract():
-    assert not inspect.isabstract(Household::HouseholdRoot)
+def test_household_householdroot_is_not_abstract():
+    assert not inspect.isabstract(Household_HouseholdRoot)
 
 
-def test_household::householdroot_constructor_exists():
-    assert callable(Household::HouseholdRoot.__init__)
+def test_household_householdroot_constructor_exists():
+    assert callable(Household_HouseholdRoot.__init__)
 
 
-def test_household::householdroot_constructor_args():
-    sig = inspect.signature(Household::HouseholdRoot.__init__)
+def test_household_householdroot_constructor_args():
+    sig = inspect.signature(Household_HouseholdRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Household::Member_strategy = st.builds(
-    Household::Member,
+Household_Member_strategy = st.builds(
+    Household_Member,
     firstName=
         safe_text
 )
-Household::Family_strategy = st.builds(
-    Household::Family,
+Household_Family_strategy = st.builds(
+    Household_Family,
     lastName=
         safe_text
 )
-Household::HouseholdRoot_strategy = st.builds(
-    Household::HouseholdRoot,
+Household_HouseholdRoot_strategy = st.builds(
+    Household_HouseholdRoot,
 )
 
-@given(instance=Household::Member_strategy)
+@given(instance=Household_Member_strategy)
 @settings(max_examples=50)
-def test_household::member_instantiation(instance):
-    assert isinstance(instance, Household::Member)
-
-@given(instance=Household::Member_strategy)
-def test_household::member_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_household_member_instantiation(instance):
+    assert isinstance(instance, Household_Member)
 
 
-@given(instance=Household::Member_strategy)
-def test_household::member_firstName_setter(instance):
+
+@given(instance=Household_Member_strategy)
+def test_household_member_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=Household::Family_strategy)
+@given(instance=Household_Family_strategy)
 @settings(max_examples=50)
-def test_household::family_instantiation(instance):
-    assert isinstance(instance, Household::Family)
-
-@given(instance=Household::Family_strategy)
-def test_household::family_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_household_family_instantiation(instance):
+    assert isinstance(instance, Household_Family)
 
 
-@given(instance=Household::Family_strategy)
-def test_household::family_lastName_setter(instance):
+
+@given(instance=Household_Family_strategy)
+def test_household_family_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=Household::HouseholdRoot_strategy)
+@given(instance=Household_HouseholdRoot_strategy)
 @settings(max_examples=50)
-def test_household::householdroot_instantiation(instance):
-    assert isinstance(instance, Household::HouseholdRoot)
+def test_household_householdroot_instantiation(instance):
+    assert isinstance(instance, Household_HouseholdRoot)

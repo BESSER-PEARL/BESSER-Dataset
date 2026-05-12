@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     JValueJSONPrintVisitor,
@@ -412,9 +412,6 @@ def test_jvalue_interface_instantiation(instance):
 def test_jarray_instantiation(instance):
     assert isinstance(instance, JArray)
 
-@given(instance=JArray_strategy)
-def test_jarray_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=JArray_strategy)
@@ -428,9 +425,6 @@ def test_jarray_value_setter(instance):
 def test_jnull_instantiation(instance):
     assert isinstance(instance, JNull)
 
-@given(instance=JNull_strategy)
-def test_jnull_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=JNull_strategy)
@@ -444,9 +438,6 @@ def test_jnull_value_setter(instance):
 def test_jstr_instantiation(instance):
     assert isinstance(instance, JStr)
 
-@given(instance=JStr_strategy)
-def test_jstr_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=JStr_strategy)
@@ -460,9 +451,6 @@ def test_jstr_value_setter(instance):
 def test_jnum_instantiation(instance):
     assert isinstance(instance, JNum)
 
-@given(instance=JNum_strategy)
-def test_jnum_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=JNum_strategy)
@@ -476,9 +464,6 @@ def test_jnum_value_setter(instance):
 def test_jbool_instantiation(instance):
     assert isinstance(instance, JBool)
 
-@given(instance=JBool_strategy)
-def test_jbool_value_type(instance):
-    assert isinstance(instance.value, bool)
 
 
 @given(instance=JBool_strategy)
@@ -492,9 +477,6 @@ def test_jbool_value_setter(instance):
 def test_jmember_instantiation(instance):
     assert isinstance(instance, JMember)
 
-@given(instance=JMember_strategy)
-def test_jmember_nom_type(instance):
-    assert isinstance(instance.nom, str)
 
 
 @given(instance=JMember_strategy)

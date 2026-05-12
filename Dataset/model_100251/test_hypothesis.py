@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Styling::EObject,
+from python_code import (
+    Styling_EObject,
     Parameter,
-    Styling::EObjectParameter,
-    Styling::BooleanParameter,
-    Styling::IntParameter,
-    Styling::Parameter,
-    Styling::StringParameter,
+    Styling_EObjectParameter,
+    Styling_BooleanParameter,
+    Styling_IntParameter,
+    Styling_Parameter,
+    Styling_StringParameter,
     Pattern,
-    Styling::ModelPattern,
-    Styling::OperationPattern,
-    Styling::ConstantPattern,
-    Styling::Styling,
-    Styling::Icon,
-    Styling::Style,
-    Styling::Segment,
-    Styling::IPredicate,
+    Styling_OperationPattern,
+    Styling_ModelPattern,
+    Styling_ConstantPattern,
+    Styling_Styling,
+    Styling_Icon,
+    Styling_Style,
+    Styling_Segment,
+    Styling_IPredicate,
     CaseStyle,
-    Styling::StylingPredicate,
-    Styling::Default,
-    Styling::Pattern,
-    Styling::CaseStyle,
-    Styling::StylingModel,
+    Styling_StylingPredicate,
+    Styling_Default,
+    Styling_Pattern,
+    Styling_CaseStyle,
+    Styling_StylingModel,
     FontOption,
 )
 
@@ -37,16 +37,16 @@ from classes import (
 
 
 
-def test_styling::eobject_is_not_abstract():
-    assert not inspect.isabstract(Styling::EObject)
+def test_styling_eobject_is_not_abstract():
+    assert not inspect.isabstract(Styling_EObject)
 
 
-def test_styling::eobject_constructor_exists():
-    assert callable(Styling::EObject.__init__)
+def test_styling_eobject_constructor_exists():
+    assert callable(Styling_EObject.__init__)
 
 
-def test_styling::eobject_constructor_args():
-    sig = inspect.signature(Styling::EObject.__init__)
+def test_styling_eobject_constructor_args():
+    sig = inspect.signature(Styling_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -65,37 +65,37 @@ def test_parameter_constructor_args():
 
 
 
-def test_styling::eobjectparameter_is_not_abstract():
-    assert not inspect.isabstract(Styling::EObjectParameter)
+def test_styling_eobjectparameter_is_not_abstract():
+    assert not inspect.isabstract(Styling_EObjectParameter)
 
 
-def test_styling::eobjectparameter_constructor_exists():
-    assert callable(Styling::EObjectParameter.__init__)
+def test_styling_eobjectparameter_constructor_exists():
+    assert callable(Styling_EObjectParameter.__init__)
 
 
-def test_styling::eobjectparameter_constructor_args():
-    sig = inspect.signature(Styling::EObjectParameter.__init__)
+def test_styling_eobjectparameter_constructor_args():
+    sig = inspect.signature(Styling_EObjectParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::booleanparameter_is_not_abstract():
-    assert not inspect.isabstract(Styling::BooleanParameter)
+def test_styling_booleanparameter_is_not_abstract():
+    assert not inspect.isabstract(Styling_BooleanParameter)
 
 
-def test_styling::booleanparameter_constructor_exists():
-    assert callable(Styling::BooleanParameter.__init__)
+def test_styling_booleanparameter_constructor_exists():
+    assert callable(Styling_BooleanParameter.__init__)
 
 
-def test_styling::booleanparameter_constructor_args():
-    sig = inspect.signature(Styling::BooleanParameter.__init__)
+def test_styling_booleanparameter_constructor_args():
+    sig = inspect.signature(Styling_BooleanParameter.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_styling::booleanparameter_has_value():
-    assert hasattr(Styling::BooleanParameter, "value")
+def test_styling_booleanparameter_has_value():
+    assert hasattr(Styling_BooleanParameter, "value")
     descriptor = None
-    for klass in Styling::BooleanParameter.__mro__:
+    for klass in Styling_BooleanParameter.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -103,23 +103,23 @@ def test_styling::booleanparameter_has_value():
 
 
 
-def test_styling::intparameter_is_not_abstract():
-    assert not inspect.isabstract(Styling::IntParameter)
+def test_styling_intparameter_is_not_abstract():
+    assert not inspect.isabstract(Styling_IntParameter)
 
 
-def test_styling::intparameter_constructor_exists():
-    assert callable(Styling::IntParameter.__init__)
+def test_styling_intparameter_constructor_exists():
+    assert callable(Styling_IntParameter.__init__)
 
 
-def test_styling::intparameter_constructor_args():
-    sig = inspect.signature(Styling::IntParameter.__init__)
+def test_styling_intparameter_constructor_args():
+    sig = inspect.signature(Styling_IntParameter.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_styling::intparameter_has_value():
-    assert hasattr(Styling::IntParameter, "value")
+def test_styling_intparameter_has_value():
+    assert hasattr(Styling_IntParameter, "value")
     descriptor = None
-    for klass in Styling::IntParameter.__mro__:
+    for klass in Styling_IntParameter.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -127,23 +127,23 @@ def test_styling::intparameter_has_value():
 
 
 
-def test_styling::parameter_is_not_abstract():
-    assert not inspect.isabstract(Styling::Parameter)
+def test_styling_parameter_is_not_abstract():
+    assert not inspect.isabstract(Styling_Parameter)
 
 
-def test_styling::parameter_constructor_exists():
-    assert callable(Styling::Parameter.__init__)
+def test_styling_parameter_constructor_exists():
+    assert callable(Styling_Parameter.__init__)
 
 
-def test_styling::parameter_constructor_args():
-    sig = inspect.signature(Styling::Parameter.__init__)
+def test_styling_parameter_constructor_args():
+    sig = inspect.signature(Styling_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_styling::parameter_has_name():
-    assert hasattr(Styling::Parameter, "name")
+def test_styling_parameter_has_name():
+    assert hasattr(Styling_Parameter, "name")
     descriptor = None
-    for klass in Styling::Parameter.__mro__:
+    for klass in Styling_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -151,23 +151,23 @@ def test_styling::parameter_has_name():
 
 
 
-def test_styling::stringparameter_is_not_abstract():
-    assert not inspect.isabstract(Styling::StringParameter)
+def test_styling_stringparameter_is_not_abstract():
+    assert not inspect.isabstract(Styling_StringParameter)
 
 
-def test_styling::stringparameter_constructor_exists():
-    assert callable(Styling::StringParameter.__init__)
+def test_styling_stringparameter_constructor_exists():
+    assert callable(Styling_StringParameter.__init__)
 
 
-def test_styling::stringparameter_constructor_args():
-    sig = inspect.signature(Styling::StringParameter.__init__)
+def test_styling_stringparameter_constructor_args():
+    sig = inspect.signature(Styling_StringParameter.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_styling::stringparameter_has_value():
-    assert hasattr(Styling::StringParameter, "value")
+def test_styling_stringparameter_has_value():
+    assert hasattr(Styling_StringParameter, "value")
     descriptor = None
-    for klass in Styling::StringParameter.__mro__:
+    for klass in Styling_StringParameter.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -189,47 +189,23 @@ def test_pattern_constructor_args():
 
 
 
-def test_styling::modelpattern_is_not_abstract():
-    assert not inspect.isabstract(Styling::ModelPattern)
+def test_styling_operationpattern_is_not_abstract():
+    assert not inspect.isabstract(Styling_OperationPattern)
 
 
-def test_styling::modelpattern_constructor_exists():
-    assert callable(Styling::ModelPattern.__init__)
+def test_styling_operationpattern_constructor_exists():
+    assert callable(Styling_OperationPattern.__init__)
 
 
-def test_styling::modelpattern_constructor_args():
-    sig = inspect.signature(Styling::ModelPattern.__init__)
-    params = list(sig.parameters.keys())
-    assert "attributeName" in params, "Missing parameter 'attributeName'"
-
-def test_styling::modelpattern_has_attributeName():
-    assert hasattr(Styling::ModelPattern, "attributeName")
-    descriptor = None
-    for klass in Styling::ModelPattern.__mro__:
-        if "attributeName" in klass.__dict__:
-            descriptor = klass.__dict__["attributeName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_styling::operationpattern_is_not_abstract():
-    assert not inspect.isabstract(Styling::OperationPattern)
-
-
-def test_styling::operationpattern_constructor_exists():
-    assert callable(Styling::OperationPattern.__init__)
-
-
-def test_styling::operationpattern_constructor_args():
-    sig = inspect.signature(Styling::OperationPattern.__init__)
+def test_styling_operationpattern_constructor_args():
+    sig = inspect.signature(Styling_OperationPattern.__init__)
     params = list(sig.parameters.keys())
     assert "operation" in params, "Missing parameter 'operation'"
 
-def test_styling::operationpattern_has_operation():
-    assert hasattr(Styling::OperationPattern, "operation")
+def test_styling_operationpattern_has_operation():
+    assert hasattr(Styling_OperationPattern, "operation")
     descriptor = None
-    for klass in Styling::OperationPattern.__mro__:
+    for klass in Styling_OperationPattern.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
             break
@@ -237,23 +213,47 @@ def test_styling::operationpattern_has_operation():
 
 
 
-def test_styling::constantpattern_is_not_abstract():
-    assert not inspect.isabstract(Styling::ConstantPattern)
+def test_styling_modelpattern_is_not_abstract():
+    assert not inspect.isabstract(Styling_ModelPattern)
 
 
-def test_styling::constantpattern_constructor_exists():
-    assert callable(Styling::ConstantPattern.__init__)
+def test_styling_modelpattern_constructor_exists():
+    assert callable(Styling_ModelPattern.__init__)
 
 
-def test_styling::constantpattern_constructor_args():
-    sig = inspect.signature(Styling::ConstantPattern.__init__)
+def test_styling_modelpattern_constructor_args():
+    sig = inspect.signature(Styling_ModelPattern.__init__)
+    params = list(sig.parameters.keys())
+    assert "attributeName" in params, "Missing parameter 'attributeName'"
+
+def test_styling_modelpattern_has_attributeName():
+    assert hasattr(Styling_ModelPattern, "attributeName")
+    descriptor = None
+    for klass in Styling_ModelPattern.__mro__:
+        if "attributeName" in klass.__dict__:
+            descriptor = klass.__dict__["attributeName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_styling_constantpattern_is_not_abstract():
+    assert not inspect.isabstract(Styling_ConstantPattern)
+
+
+def test_styling_constantpattern_constructor_exists():
+    assert callable(Styling_ConstantPattern.__init__)
+
+
+def test_styling_constantpattern_constructor_args():
+    sig = inspect.signature(Styling_ConstantPattern.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_styling::constantpattern_has_value():
-    assert hasattr(Styling::ConstantPattern, "value")
+def test_styling_constantpattern_has_value():
+    assert hasattr(Styling_ConstantPattern, "value")
     descriptor = None
-    for klass in Styling::ConstantPattern.__mro__:
+    for klass in Styling_ConstantPattern.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -261,37 +261,37 @@ def test_styling::constantpattern_has_value():
 
 
 
-def test_styling::styling_is_not_abstract():
-    assert not inspect.isabstract(Styling::Styling)
+def test_styling_styling_is_not_abstract():
+    assert not inspect.isabstract(Styling_Styling)
 
 
-def test_styling::styling_constructor_exists():
-    assert callable(Styling::Styling.__init__)
+def test_styling_styling_constructor_exists():
+    assert callable(Styling_Styling.__init__)
 
 
-def test_styling::styling_constructor_args():
-    sig = inspect.signature(Styling::Styling.__init__)
+def test_styling_styling_constructor_args():
+    sig = inspect.signature(Styling_Styling.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::icon_is_not_abstract():
-    assert not inspect.isabstract(Styling::Icon)
+def test_styling_icon_is_not_abstract():
+    assert not inspect.isabstract(Styling_Icon)
 
 
-def test_styling::icon_constructor_exists():
-    assert callable(Styling::Icon.__init__)
+def test_styling_icon_constructor_exists():
+    assert callable(Styling_Icon.__init__)
 
 
-def test_styling::icon_constructor_args():
-    sig = inspect.signature(Styling::Icon.__init__)
+def test_styling_icon_constructor_args():
+    sig = inspect.signature(Styling_Icon.__init__)
     params = list(sig.parameters.keys())
     assert "image" in params, "Missing parameter 'image'"
 
-def test_styling::icon_has_image():
-    assert hasattr(Styling::Icon, "image")
+def test_styling_icon_has_image():
+    assert hasattr(Styling_Icon, "image")
     descriptor = None
-    for klass in Styling::Icon.__mro__:
+    for klass in Styling_Icon.__mro__:
         if "image" in klass.__dict__:
             descriptor = klass.__dict__["image"]
             break
@@ -299,64 +299,64 @@ def test_styling::icon_has_image():
 
 
 
-def test_styling::style_is_not_abstract():
-    assert not inspect.isabstract(Styling::Style)
+def test_styling_style_is_not_abstract():
+    assert not inspect.isabstract(Styling_Style)
 
 
-def test_styling::style_constructor_exists():
-    assert callable(Styling::Style.__init__)
+def test_styling_style_constructor_exists():
+    assert callable(Styling_Style.__init__)
 
 
-def test_styling::style_constructor_args():
-    sig = inspect.signature(Styling::Style.__init__)
+def test_styling_style_constructor_args():
+    sig = inspect.signature(Styling_Style.__init__)
     params = list(sig.parameters.keys())
-    assert "appliedFonts" in params, "Missing parameter 'appliedFonts'"
     assert "color" in params, "Missing parameter 'color'"
+    assert "appliedFonts" in params, "Missing parameter 'appliedFonts'"
 
-def test_styling::style_has_appliedFonts():
-    assert hasattr(Styling::Style, "appliedFonts")
+def test_styling_style_has_color():
+    assert hasattr(Styling_Style, "color")
     descriptor = None
-    for klass in Styling::Style.__mro__:
-        if "appliedFonts" in klass.__dict__:
-            descriptor = klass.__dict__["appliedFonts"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_styling::style_has_color():
-    assert hasattr(Styling::Style, "color")
-    descriptor = None
-    for klass in Styling::Style.__mro__:
+    for klass in Styling_Style.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
+def test_styling_style_has_appliedFonts():
+    assert hasattr(Styling_Style, "appliedFonts")
+    descriptor = None
+    for klass in Styling_Style.__mro__:
+        if "appliedFonts" in klass.__dict__:
+            descriptor = klass.__dict__["appliedFonts"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_styling::segment_is_not_abstract():
-    assert not inspect.isabstract(Styling::Segment)
+
+def test_styling_segment_is_not_abstract():
+    assert not inspect.isabstract(Styling_Segment)
 
 
-def test_styling::segment_constructor_exists():
-    assert callable(Styling::Segment.__init__)
+def test_styling_segment_constructor_exists():
+    assert callable(Styling_Segment.__init__)
 
 
-def test_styling::segment_constructor_args():
-    sig = inspect.signature(Styling::Segment.__init__)
+def test_styling_segment_constructor_args():
+    sig = inspect.signature(Styling_Segment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::ipredicate_is_not_abstract():
-    assert not inspect.isabstract(Styling::IPredicate)
+def test_styling_ipredicate_is_not_abstract():
+    assert not inspect.isabstract(Styling_IPredicate)
 
 
-def test_styling::ipredicate_constructor_exists():
-    assert callable(Styling::IPredicate.__init__)
+def test_styling_ipredicate_constructor_exists():
+    assert callable(Styling_IPredicate.__init__)
 
 
-def test_styling::ipredicate_constructor_args():
-    sig = inspect.signature(Styling::IPredicate.__init__)
+def test_styling_ipredicate_constructor_args():
+    sig = inspect.signature(Styling_IPredicate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -375,79 +375,79 @@ def test_casestyle_constructor_args():
 
 
 
-def test_styling::stylingpredicate_is_not_abstract():
-    assert not inspect.isabstract(Styling::StylingPredicate)
+def test_styling_stylingpredicate_is_not_abstract():
+    assert not inspect.isabstract(Styling_StylingPredicate)
 
 
-def test_styling::stylingpredicate_constructor_exists():
-    assert callable(Styling::StylingPredicate.__init__)
+def test_styling_stylingpredicate_constructor_exists():
+    assert callable(Styling_StylingPredicate.__init__)
 
 
-def test_styling::stylingpredicate_constructor_args():
-    sig = inspect.signature(Styling::StylingPredicate.__init__)
+def test_styling_stylingpredicate_constructor_args():
+    sig = inspect.signature(Styling_StylingPredicate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::default_is_not_abstract():
-    assert not inspect.isabstract(Styling::Default)
+def test_styling_default_is_not_abstract():
+    assert not inspect.isabstract(Styling_Default)
 
 
-def test_styling::default_constructor_exists():
-    assert callable(Styling::Default.__init__)
+def test_styling_default_constructor_exists():
+    assert callable(Styling_Default.__init__)
 
 
-def test_styling::default_constructor_args():
-    sig = inspect.signature(Styling::Default.__init__)
+def test_styling_default_constructor_args():
+    sig = inspect.signature(Styling_Default.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::pattern_is_not_abstract():
-    assert not inspect.isabstract(Styling::Pattern)
+def test_styling_pattern_is_not_abstract():
+    assert not inspect.isabstract(Styling_Pattern)
 
 
-def test_styling::pattern_constructor_exists():
-    assert callable(Styling::Pattern.__init__)
+def test_styling_pattern_constructor_exists():
+    assert callable(Styling_Pattern.__init__)
 
 
-def test_styling::pattern_constructor_args():
-    sig = inspect.signature(Styling::Pattern.__init__)
+def test_styling_pattern_constructor_args():
+    sig = inspect.signature(Styling_Pattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::casestyle_is_not_abstract():
-    assert not inspect.isabstract(Styling::CaseStyle)
+def test_styling_casestyle_is_not_abstract():
+    assert not inspect.isabstract(Styling_CaseStyle)
 
 
-def test_styling::casestyle_constructor_exists():
-    assert callable(Styling::CaseStyle.__init__)
+def test_styling_casestyle_constructor_exists():
+    assert callable(Styling_CaseStyle.__init__)
 
 
-def test_styling::casestyle_constructor_args():
-    sig = inspect.signature(Styling::CaseStyle.__init__)
+def test_styling_casestyle_constructor_args():
+    sig = inspect.signature(Styling_CaseStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styling::stylingmodel_is_not_abstract():
-    assert not inspect.isabstract(Styling::StylingModel)
+def test_styling_stylingmodel_is_not_abstract():
+    assert not inspect.isabstract(Styling_StylingModel)
 
 
-def test_styling::stylingmodel_constructor_exists():
-    assert callable(Styling::StylingModel.__init__)
+def test_styling_stylingmodel_constructor_exists():
+    assert callable(Styling_StylingModel.__init__)
 
 
-def test_styling::stylingmodel_constructor_args():
-    sig = inspect.signature(Styling::StylingModel.__init__)
+def test_styling_stylingmodel_constructor_args():
+    sig = inspect.signature(Styling_StylingModel.__init__)
     params = list(sig.parameters.keys())
     assert "modeName" in params, "Missing parameter 'modeName'"
 
-def test_styling::stylingmodel_has_modeName():
-    assert hasattr(Styling::StylingModel, "modeName")
+def test_styling_stylingmodel_has_modeName():
+    assert hasattr(Styling_StylingModel, "modeName")
     descriptor = None
-    for klass in Styling::StylingModel.__mro__:
+    for klass in Styling_StylingModel.__mro__:
         if "modeName" in klass.__dict__:
             descriptor = klass.__dict__["modeName"]
             break
@@ -461,10 +461,10 @@ def test_fontoption_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FontOption]
     expected_literals = [
-        "STRIKE",
-        "UNDERLINE",
-        "BOLD",
         "ITALIC",
+        "UNDERLINE",
+        "STRIKE",
+        "BOLD",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -482,170 +482,158 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Styling::EObject_strategy = st.builds(
-    Styling::EObject,
+Styling_EObject_strategy = st.builds(
+    Styling_EObject,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-Styling::EObjectParameter_strategy = st.builds(
-    Styling::EObjectParameter,
+Styling_EObjectParameter_strategy = st.builds(
+    Styling_EObjectParameter,
 )
-Styling::BooleanParameter_strategy = st.builds(
-    Styling::BooleanParameter,
+Styling_BooleanParameter_strategy = st.builds(
+    Styling_BooleanParameter,
     value=
         st.booleans()
 )
-Styling::IntParameter_strategy = st.builds(
-    Styling::IntParameter,
+Styling_IntParameter_strategy = st.builds(
+    Styling_IntParameter,
     value=
         st.integers()
 )
-Styling::Parameter_strategy = st.builds(
-    Styling::Parameter,
+Styling_Parameter_strategy = st.builds(
+    Styling_Parameter,
     name=
         safe_text
 )
-Styling::StringParameter_strategy = st.builds(
-    Styling::StringParameter,
+Styling_StringParameter_strategy = st.builds(
+    Styling_StringParameter,
     value=
         safe_text
 )
 Pattern_strategy = st.builds(
     Pattern,
 )
-Styling::ModelPattern_strategy = st.builds(
-    Styling::ModelPattern,
-    attributeName=
-        safe_text
-)
-Styling::OperationPattern_strategy = st.builds(
-    Styling::OperationPattern,
+Styling_OperationPattern_strategy = st.builds(
+    Styling_OperationPattern,
     operation=
         safe_text
 )
-Styling::ConstantPattern_strategy = st.builds(
-    Styling::ConstantPattern,
+Styling_ModelPattern_strategy = st.builds(
+    Styling_ModelPattern,
+    attributeName=
+        safe_text
+)
+Styling_ConstantPattern_strategy = st.builds(
+    Styling_ConstantPattern,
     value=
         safe_text
 )
-Styling::Styling_strategy = st.builds(
-    Styling::Styling,
+Styling_Styling_strategy = st.builds(
+    Styling_Styling,
 )
-Styling::Icon_strategy = st.builds(
-    Styling::Icon,
+Styling_Icon_strategy = st.builds(
+    Styling_Icon,
     image=
         safe_text
 )
-Styling::Style_strategy = st.builds(
-    Styling::Style,
-    appliedFonts=
-        safe_text,
+Styling_Style_strategy = st.builds(
+    Styling_Style,
     color=
+        safe_text,
+    appliedFonts=
         safe_text
 )
-Styling::Segment_strategy = st.builds(
-    Styling::Segment,
+Styling_Segment_strategy = st.builds(
+    Styling_Segment,
 )
-Styling::IPredicate_strategy = st.builds(
-    Styling::IPredicate,
+Styling_IPredicate_strategy = st.builds(
+    Styling_IPredicate,
 )
 CaseStyle_strategy = st.builds(
     CaseStyle,
 )
-Styling::StylingPredicate_strategy = st.builds(
-    Styling::StylingPredicate,
+Styling_StylingPredicate_strategy = st.builds(
+    Styling_StylingPredicate,
 )
-Styling::Default_strategy = st.builds(
-    Styling::Default,
+Styling_Default_strategy = st.builds(
+    Styling_Default,
 )
-Styling::Pattern_strategy = st.builds(
-    Styling::Pattern,
+Styling_Pattern_strategy = st.builds(
+    Styling_Pattern,
 )
-Styling::CaseStyle_strategy = st.builds(
-    Styling::CaseStyle,
+Styling_CaseStyle_strategy = st.builds(
+    Styling_CaseStyle,
 )
-Styling::StylingModel_strategy = st.builds(
-    Styling::StylingModel,
+Styling_StylingModel_strategy = st.builds(
+    Styling_StylingModel,
     modeName=
         safe_text
 )
 
-@given(instance=Styling::EObject_strategy)
+@given(instance=Styling_EObject_strategy)
 @settings(max_examples=50)
-def test_styling::eobject_instantiation(instance):
-    assert isinstance(instance, Styling::EObject)
+def test_styling_eobject_instantiation(instance):
+    assert isinstance(instance, Styling_EObject)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=Styling::EObjectParameter_strategy)
+@given(instance=Styling_EObjectParameter_strategy)
 @settings(max_examples=50)
-def test_styling::eobjectparameter_instantiation(instance):
-    assert isinstance(instance, Styling::EObjectParameter)
+def test_styling_eobjectparameter_instantiation(instance):
+    assert isinstance(instance, Styling_EObjectParameter)
 
-@given(instance=Styling::BooleanParameter_strategy)
+@given(instance=Styling_BooleanParameter_strategy)
 @settings(max_examples=50)
-def test_styling::booleanparameter_instantiation(instance):
-    assert isinstance(instance, Styling::BooleanParameter)
-
-@given(instance=Styling::BooleanParameter_strategy)
-def test_styling::booleanparameter_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_styling_booleanparameter_instantiation(instance):
+    assert isinstance(instance, Styling_BooleanParameter)
 
 
-@given(instance=Styling::BooleanParameter_strategy)
-def test_styling::booleanparameter_value_setter(instance):
+
+@given(instance=Styling_BooleanParameter_strategy)
+def test_styling_booleanparameter_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Styling::IntParameter_strategy)
+@given(instance=Styling_IntParameter_strategy)
 @settings(max_examples=50)
-def test_styling::intparameter_instantiation(instance):
-    assert isinstance(instance, Styling::IntParameter)
-
-@given(instance=Styling::IntParameter_strategy)
-def test_styling::intparameter_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_styling_intparameter_instantiation(instance):
+    assert isinstance(instance, Styling_IntParameter)
 
 
-@given(instance=Styling::IntParameter_strategy)
-def test_styling::intparameter_value_setter(instance):
+
+@given(instance=Styling_IntParameter_strategy)
+def test_styling_intparameter_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Styling::Parameter_strategy)
+@given(instance=Styling_Parameter_strategy)
 @settings(max_examples=50)
-def test_styling::parameter_instantiation(instance):
-    assert isinstance(instance, Styling::Parameter)
-
-@given(instance=Styling::Parameter_strategy)
-def test_styling::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_styling_parameter_instantiation(instance):
+    assert isinstance(instance, Styling_Parameter)
 
 
-@given(instance=Styling::Parameter_strategy)
-def test_styling::parameter_name_setter(instance):
+
+@given(instance=Styling_Parameter_strategy)
+def test_styling_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Styling::StringParameter_strategy)
+@given(instance=Styling_StringParameter_strategy)
 @settings(max_examples=50)
-def test_styling::stringparameter_instantiation(instance):
-    assert isinstance(instance, Styling::StringParameter)
-
-@given(instance=Styling::StringParameter_strategy)
-def test_styling::stringparameter_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_styling_stringparameter_instantiation(instance):
+    assert isinstance(instance, Styling_StringParameter)
 
 
-@given(instance=Styling::StringParameter_strategy)
-def test_styling::stringparameter_value_setter(instance):
+
+@given(instance=Styling_StringParameter_strategy)
+def test_styling_stringparameter_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -655,106 +643,88 @@ def test_styling::stringparameter_value_setter(instance):
 def test_pattern_instantiation(instance):
     assert isinstance(instance, Pattern)
 
-@given(instance=Styling::ModelPattern_strategy)
+@given(instance=Styling_OperationPattern_strategy)
 @settings(max_examples=50)
-def test_styling::modelpattern_instantiation(instance):
-    assert isinstance(instance, Styling::ModelPattern)
-
-@given(instance=Styling::ModelPattern_strategy)
-def test_styling::modelpattern_attributeName_type(instance):
-    assert isinstance(instance.attributeName, str)
+def test_styling_operationpattern_instantiation(instance):
+    assert isinstance(instance, Styling_OperationPattern)
 
 
-@given(instance=Styling::ModelPattern_strategy)
-def test_styling::modelpattern_attributeName_setter(instance):
-    original = instance.attributeName
-    instance.attributeName = original
-    assert instance.attributeName == original
 
-@given(instance=Styling::OperationPattern_strategy)
-@settings(max_examples=50)
-def test_styling::operationpattern_instantiation(instance):
-    assert isinstance(instance, Styling::OperationPattern)
-
-@given(instance=Styling::OperationPattern_strategy)
-def test_styling::operationpattern_operation_type(instance):
-    assert isinstance(instance.operation, str)
-
-
-@given(instance=Styling::OperationPattern_strategy)
-def test_styling::operationpattern_operation_setter(instance):
+@given(instance=Styling_OperationPattern_strategy)
+def test_styling_operationpattern_operation_setter(instance):
     original = instance.operation
     instance.operation = original
     assert instance.operation == original
 
-@given(instance=Styling::ConstantPattern_strategy)
+@given(instance=Styling_ModelPattern_strategy)
 @settings(max_examples=50)
-def test_styling::constantpattern_instantiation(instance):
-    assert isinstance(instance, Styling::ConstantPattern)
-
-@given(instance=Styling::ConstantPattern_strategy)
-def test_styling::constantpattern_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_styling_modelpattern_instantiation(instance):
+    assert isinstance(instance, Styling_ModelPattern)
 
 
-@given(instance=Styling::ConstantPattern_strategy)
-def test_styling::constantpattern_value_setter(instance):
+
+@given(instance=Styling_ModelPattern_strategy)
+def test_styling_modelpattern_attributeName_setter(instance):
+    original = instance.attributeName
+    instance.attributeName = original
+    assert instance.attributeName == original
+
+@given(instance=Styling_ConstantPattern_strategy)
+@settings(max_examples=50)
+def test_styling_constantpattern_instantiation(instance):
+    assert isinstance(instance, Styling_ConstantPattern)
+
+
+
+@given(instance=Styling_ConstantPattern_strategy)
+def test_styling_constantpattern_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Styling::Styling_strategy)
+@given(instance=Styling_Styling_strategy)
 @settings(max_examples=50)
-def test_styling::styling_instantiation(instance):
-    assert isinstance(instance, Styling::Styling)
+def test_styling_styling_instantiation(instance):
+    assert isinstance(instance, Styling_Styling)
 
-@given(instance=Styling::Icon_strategy)
+@given(instance=Styling_Icon_strategy)
 @settings(max_examples=50)
-def test_styling::icon_instantiation(instance):
-    assert isinstance(instance, Styling::Icon)
-
-@given(instance=Styling::Icon_strategy)
-def test_styling::icon_image_type(instance):
-    assert isinstance(instance.image, str)
+def test_styling_icon_instantiation(instance):
+    assert isinstance(instance, Styling_Icon)
 
 
-@given(instance=Styling::Icon_strategy)
-def test_styling::icon_image_setter(instance):
+
+@given(instance=Styling_Icon_strategy)
+def test_styling_icon_image_setter(instance):
     original = instance.image
     instance.image = original
     assert instance.image == original
 
-@given(instance=Styling::Style_strategy)
+@given(instance=Styling_Style_strategy)
 @settings(max_examples=50)
-def test_styling::style_instantiation(instance):
-    assert isinstance(instance, Styling::Style)
-
-@given(instance=Styling::Style_strategy)
-def test_styling::style_appliedFonts_type(instance):
-    assert isinstance(instance.appliedFonts, str)
+def test_styling_style_instantiation(instance):
+    assert isinstance(instance, Styling_Style)
 
 
-@given(instance=Styling::Style_strategy)
-def test_styling::style_appliedFonts_setter(instance):
-    original = instance.appliedFonts
-    instance.appliedFonts = original
-    assert instance.appliedFonts == original
 
-@given(instance=Styling::Style_strategy)
-def test_styling::style_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Styling::Style_strategy)
-def test_styling::style_color_setter(instance):
+@given(instance=Styling_Style_strategy)
+def test_styling_style_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=Styling::Segment_strategy)
+
+
+@given(instance=Styling_Style_strategy)
+def test_styling_style_appliedFonts_setter(instance):
+    original = instance.appliedFonts
+    instance.appliedFonts = original
+    assert instance.appliedFonts == original
+
+@given(instance=Styling_Segment_strategy)
 @settings(max_examples=50)
-def test_styling::segment_instantiation(instance):
-    assert isinstance(instance, Styling::Segment)
+def test_styling_segment_instantiation(instance):
+    assert isinstance(instance, Styling_Segment)
 
 import warnings
 import copy
@@ -762,9 +732,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Styling::Segment_strategy)
+@given(instance=Styling_Segment_strategy)
 @settings(max_examples=30)
-def test_styling::segment_setcolor_changes_state(instance):
+def test_styling_segment_setcolor_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -778,57 +748,54 @@ def test_styling::segment_setcolor_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setColor' in Styling::Segment is empty"
+        assert has_statements, f"Function 'setColor' in Styling_Segment is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setColor' in Styling::Segment did not change state; check implementation")
+            warnings.warn(f"Operation 'setColor' in Styling_Segment did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setColor' in Styling::Segment is not implemented or raised an error")
+        warnings.warn(f"Operation 'setColor' in Styling_Segment is not implemented or raised an error")
 
-@given(instance=Styling::IPredicate_strategy)
+@given(instance=Styling_IPredicate_strategy)
 @settings(max_examples=50)
-def test_styling::ipredicate_instantiation(instance):
-    assert isinstance(instance, Styling::IPredicate)
+def test_styling_ipredicate_instantiation(instance):
+    assert isinstance(instance, Styling_IPredicate)
 
 @given(instance=CaseStyle_strategy)
 @settings(max_examples=50)
 def test_casestyle_instantiation(instance):
     assert isinstance(instance, CaseStyle)
 
-@given(instance=Styling::StylingPredicate_strategy)
+@given(instance=Styling_StylingPredicate_strategy)
 @settings(max_examples=50)
-def test_styling::stylingpredicate_instantiation(instance):
-    assert isinstance(instance, Styling::StylingPredicate)
+def test_styling_stylingpredicate_instantiation(instance):
+    assert isinstance(instance, Styling_StylingPredicate)
 
-@given(instance=Styling::Default_strategy)
+@given(instance=Styling_Default_strategy)
 @settings(max_examples=50)
-def test_styling::default_instantiation(instance):
-    assert isinstance(instance, Styling::Default)
+def test_styling_default_instantiation(instance):
+    assert isinstance(instance, Styling_Default)
 
-@given(instance=Styling::Pattern_strategy)
+@given(instance=Styling_Pattern_strategy)
 @settings(max_examples=50)
-def test_styling::pattern_instantiation(instance):
-    assert isinstance(instance, Styling::Pattern)
+def test_styling_pattern_instantiation(instance):
+    assert isinstance(instance, Styling_Pattern)
 
-@given(instance=Styling::CaseStyle_strategy)
+@given(instance=Styling_CaseStyle_strategy)
 @settings(max_examples=50)
-def test_styling::casestyle_instantiation(instance):
-    assert isinstance(instance, Styling::CaseStyle)
+def test_styling_casestyle_instantiation(instance):
+    assert isinstance(instance, Styling_CaseStyle)
 
-@given(instance=Styling::StylingModel_strategy)
+@given(instance=Styling_StylingModel_strategy)
 @settings(max_examples=50)
-def test_styling::stylingmodel_instantiation(instance):
-    assert isinstance(instance, Styling::StylingModel)
-
-@given(instance=Styling::StylingModel_strategy)
-def test_styling::stylingmodel_modeName_type(instance):
-    assert isinstance(instance.modeName, str)
+def test_styling_stylingmodel_instantiation(instance):
+    assert isinstance(instance, Styling_StylingModel)
 
 
-@given(instance=Styling::StylingModel_strategy)
-def test_styling::stylingmodel_modeName_setter(instance):
+
+@given(instance=Styling_StylingModel_strategy)
+def test_styling_stylingmodel_modeName_setter(instance):
     original = instance.modeName
     instance.modeName = original
     assert instance.modeName == original

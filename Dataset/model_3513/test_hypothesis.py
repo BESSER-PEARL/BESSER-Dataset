@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Parent,
-    testoperationbody::ChildB,
-    testoperationbody::ChildA,
-    testoperationbody::Main,
-    testoperationbody::Parent,
-    testoperationbody::ConceptA,
+    testoperationbody_ChildB,
+    testoperationbody_ChildA,
+    testoperationbody_Main,
+    testoperationbody_Parent,
+    testoperationbody_ConceptA,
     EnumA,
 )
 
@@ -35,37 +35,37 @@ def test_parent_constructor_args():
 
 
 
-def test_testoperationbody::childb_is_not_abstract():
-    assert not inspect.isabstract(testoperationbody::ChildB)
+def test_testoperationbody_childb_is_not_abstract():
+    assert not inspect.isabstract(testoperationbody_ChildB)
 
 
-def test_testoperationbody::childb_constructor_exists():
-    assert callable(testoperationbody::ChildB.__init__)
+def test_testoperationbody_childb_constructor_exists():
+    assert callable(testoperationbody_ChildB.__init__)
 
 
-def test_testoperationbody::childb_constructor_args():
-    sig = inspect.signature(testoperationbody::ChildB.__init__)
+def test_testoperationbody_childb_constructor_args():
+    sig = inspect.signature(testoperationbody_ChildB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testoperationbody::childa_is_not_abstract():
-    assert not inspect.isabstract(testoperationbody::ChildA)
+def test_testoperationbody_childa_is_not_abstract():
+    assert not inspect.isabstract(testoperationbody_ChildA)
 
 
-def test_testoperationbody::childa_constructor_exists():
-    assert callable(testoperationbody::ChildA.__init__)
+def test_testoperationbody_childa_constructor_exists():
+    assert callable(testoperationbody_ChildA.__init__)
 
 
-def test_testoperationbody::childa_constructor_args():
-    sig = inspect.signature(testoperationbody::ChildA.__init__)
+def test_testoperationbody_childa_constructor_args():
+    sig = inspect.signature(testoperationbody_ChildA.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_testoperationbody::childa_has_value():
-    assert hasattr(testoperationbody::ChildA, "value")
+def test_testoperationbody_childa_has_value():
+    assert hasattr(testoperationbody_ChildA, "value")
     descriptor = None
-    for klass in testoperationbody::ChildA.__mro__:
+    for klass in testoperationbody_ChildA.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -73,33 +73,33 @@ def test_testoperationbody::childa_has_value():
 
 
 
-def test_testoperationbody::main_is_not_abstract():
-    assert not inspect.isabstract(testoperationbody::Main)
+def test_testoperationbody_main_is_not_abstract():
+    assert not inspect.isabstract(testoperationbody_Main)
 
 
-def test_testoperationbody::main_constructor_exists():
-    assert callable(testoperationbody::Main.__init__)
+def test_testoperationbody_main_constructor_exists():
+    assert callable(testoperationbody_Main.__init__)
 
 
-def test_testoperationbody::main_constructor_args():
-    sig = inspect.signature(testoperationbody::Main.__init__)
+def test_testoperationbody_main_constructor_args():
+    sig = inspect.signature(testoperationbody_Main.__init__)
     params = list(sig.parameters.keys())
     assert "listint" in params, "Missing parameter 'listint'"
     assert "singlebool" in params, "Missing parameter 'singlebool'"
 
-def test_testoperationbody::main_has_listint():
-    assert hasattr(testoperationbody::Main, "listint")
+def test_testoperationbody_main_has_listint():
+    assert hasattr(testoperationbody_Main, "listint")
     descriptor = None
-    for klass in testoperationbody::Main.__mro__:
+    for klass in testoperationbody_Main.__mro__:
         if "listint" in klass.__dict__:
             descriptor = klass.__dict__["listint"]
             break
     assert isinstance(descriptor, property)
 
-def test_testoperationbody::main_has_singlebool():
-    assert hasattr(testoperationbody::Main, "singlebool")
+def test_testoperationbody_main_has_singlebool():
+    assert hasattr(testoperationbody_Main, "singlebool")
     descriptor = None
-    for klass in testoperationbody::Main.__mro__:
+    for klass in testoperationbody_Main.__mro__:
         if "singlebool" in klass.__dict__:
             descriptor = klass.__dict__["singlebool"]
             break
@@ -107,30 +107,30 @@ def test_testoperationbody::main_has_singlebool():
 
 
 
-def test_testoperationbody::parent_is_not_abstract():
-    assert not inspect.isabstract(testoperationbody::Parent)
+def test_testoperationbody_parent_is_not_abstract():
+    assert not inspect.isabstract(testoperationbody_Parent)
 
 
-def test_testoperationbody::parent_constructor_exists():
-    assert callable(testoperationbody::Parent.__init__)
+def test_testoperationbody_parent_constructor_exists():
+    assert callable(testoperationbody_Parent.__init__)
 
 
-def test_testoperationbody::parent_constructor_args():
-    sig = inspect.signature(testoperationbody::Parent.__init__)
+def test_testoperationbody_parent_constructor_args():
+    sig = inspect.signature(testoperationbody_Parent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testoperationbody::concepta_is_not_abstract():
-    assert not inspect.isabstract(testoperationbody::ConceptA)
+def test_testoperationbody_concepta_is_not_abstract():
+    assert not inspect.isabstract(testoperationbody_ConceptA)
 
 
-def test_testoperationbody::concepta_constructor_exists():
-    assert callable(testoperationbody::ConceptA.__init__)
+def test_testoperationbody_concepta_constructor_exists():
+    assert callable(testoperationbody_ConceptA.__init__)
 
 
-def test_testoperationbody::concepta_constructor_args():
-    sig = inspect.signature(testoperationbody::ConceptA.__init__)
+def test_testoperationbody_concepta_constructor_args():
+    sig = inspect.signature(testoperationbody_ConceptA.__init__)
     params = list(sig.parameters.keys())
 
 def test_enuma_exists():
@@ -163,26 +163,26 @@ safe_text = st.text(
 Parent_strategy = st.builds(
     Parent,
 )
-testoperationbody::ChildB_strategy = st.builds(
-    testoperationbody::ChildB,
+testoperationbody_ChildB_strategy = st.builds(
+    testoperationbody_ChildB,
 )
-testoperationbody::ChildA_strategy = st.builds(
-    testoperationbody::ChildA,
+testoperationbody_ChildA_strategy = st.builds(
+    testoperationbody_ChildA,
     value=
         safe_text
 )
-testoperationbody::Main_strategy = st.builds(
-    testoperationbody::Main,
+testoperationbody_Main_strategy = st.builds(
+    testoperationbody_Main,
     listint=
         st.integers(),
     singlebool=
         st.booleans()
 )
-testoperationbody::Parent_strategy = st.builds(
-    testoperationbody::Parent,
+testoperationbody_Parent_strategy = st.builds(
+    testoperationbody_Parent,
 )
-testoperationbody::ConceptA_strategy = st.builds(
-    testoperationbody::ConceptA,
+testoperationbody_ConceptA_strategy = st.builds(
+    testoperationbody_ConceptA,
 )
 
 @given(instance=Parent_strategy)
@@ -190,60 +190,51 @@ testoperationbody::ConceptA_strategy = st.builds(
 def test_parent_instantiation(instance):
     assert isinstance(instance, Parent)
 
-@given(instance=testoperationbody::ChildB_strategy)
+@given(instance=testoperationbody_ChildB_strategy)
 @settings(max_examples=50)
-def test_testoperationbody::childb_instantiation(instance):
-    assert isinstance(instance, testoperationbody::ChildB)
+def test_testoperationbody_childb_instantiation(instance):
+    assert isinstance(instance, testoperationbody_ChildB)
 
-@given(instance=testoperationbody::ChildA_strategy)
+@given(instance=testoperationbody_ChildA_strategy)
 @settings(max_examples=50)
-def test_testoperationbody::childa_instantiation(instance):
-    assert isinstance(instance, testoperationbody::ChildA)
-
-@given(instance=testoperationbody::ChildA_strategy)
-def test_testoperationbody::childa_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_testoperationbody_childa_instantiation(instance):
+    assert isinstance(instance, testoperationbody_ChildA)
 
 
-@given(instance=testoperationbody::ChildA_strategy)
-def test_testoperationbody::childa_value_setter(instance):
+
+@given(instance=testoperationbody_ChildA_strategy)
+def test_testoperationbody_childa_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=testoperationbody::Main_strategy)
+@given(instance=testoperationbody_Main_strategy)
 @settings(max_examples=50)
-def test_testoperationbody::main_instantiation(instance):
-    assert isinstance(instance, testoperationbody::Main)
-
-@given(instance=testoperationbody::Main_strategy)
-def test_testoperationbody::main_listint_type(instance):
-    assert isinstance(instance.listint, int)
+def test_testoperationbody_main_instantiation(instance):
+    assert isinstance(instance, testoperationbody_Main)
 
 
-@given(instance=testoperationbody::Main_strategy)
-def test_testoperationbody::main_listint_setter(instance):
+
+@given(instance=testoperationbody_Main_strategy)
+def test_testoperationbody_main_listint_setter(instance):
     original = instance.listint
     instance.listint = original
     assert instance.listint == original
 
-@given(instance=testoperationbody::Main_strategy)
-def test_testoperationbody::main_singlebool_type(instance):
-    assert isinstance(instance.singlebool, bool)
 
 
-@given(instance=testoperationbody::Main_strategy)
-def test_testoperationbody::main_singlebool_setter(instance):
+@given(instance=testoperationbody_Main_strategy)
+def test_testoperationbody_main_singlebool_setter(instance):
     original = instance.singlebool
     instance.singlebool = original
     assert instance.singlebool == original
 
-@given(instance=testoperationbody::Parent_strategy)
+@given(instance=testoperationbody_Parent_strategy)
 @settings(max_examples=50)
-def test_testoperationbody::parent_instantiation(instance):
-    assert isinstance(instance, testoperationbody::Parent)
+def test_testoperationbody_parent_instantiation(instance):
+    assert isinstance(instance, testoperationbody_Parent)
 
-@given(instance=testoperationbody::ConceptA_strategy)
+@given(instance=testoperationbody_ConceptA_strategy)
 @settings(max_examples=50)
-def test_testoperationbody::concepta_instantiation(instance):
-    assert isinstance(instance, testoperationbody::ConceptA)
+def test_testoperationbody_concepta_instantiation(instance):
+    assert isinstance(instance, testoperationbody_ConceptA)

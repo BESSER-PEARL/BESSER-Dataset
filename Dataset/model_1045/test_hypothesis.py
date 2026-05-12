@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FAbstractState,
-    FSM::FRegularState,
-    FSM::FInitialState,
-    FSM::FTransition,
-    FSM::FStateMachine,
-    FSM::FAbstractState,
+    FSM_FRegularState,
+    FSM_FInitialState,
+    FSM_FTransition,
+    FSM_FStateMachine,
+    FSM_FAbstractState,
 )
 
 # =============================================================================
@@ -34,51 +34,51 @@ def test_fabstractstate_constructor_args():
 
 
 
-def test_fsm::fregularstate_is_not_abstract():
-    assert not inspect.isabstract(FSM::FRegularState)
+def test_fsm_fregularstate_is_not_abstract():
+    assert not inspect.isabstract(FSM_FRegularState)
 
 
-def test_fsm::fregularstate_constructor_exists():
-    assert callable(FSM::FRegularState.__init__)
+def test_fsm_fregularstate_constructor_exists():
+    assert callable(FSM_FRegularState.__init__)
 
 
-def test_fsm::fregularstate_constructor_args():
-    sig = inspect.signature(FSM::FRegularState.__init__)
+def test_fsm_fregularstate_constructor_args():
+    sig = inspect.signature(FSM_FRegularState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::finitialstate_is_not_abstract():
-    assert not inspect.isabstract(FSM::FInitialState)
+def test_fsm_finitialstate_is_not_abstract():
+    assert not inspect.isabstract(FSM_FInitialState)
 
 
-def test_fsm::finitialstate_constructor_exists():
-    assert callable(FSM::FInitialState.__init__)
+def test_fsm_finitialstate_constructor_exists():
+    assert callable(FSM_FInitialState.__init__)
 
 
-def test_fsm::finitialstate_constructor_args():
-    sig = inspect.signature(FSM::FInitialState.__init__)
+def test_fsm_finitialstate_constructor_args():
+    sig = inspect.signature(FSM_FInitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::ftransition_is_not_abstract():
-    assert not inspect.isabstract(FSM::FTransition)
+def test_fsm_ftransition_is_not_abstract():
+    assert not inspect.isabstract(FSM_FTransition)
 
 
-def test_fsm::ftransition_constructor_exists():
-    assert callable(FSM::FTransition.__init__)
+def test_fsm_ftransition_constructor_exists():
+    assert callable(FSM_FTransition.__init__)
 
 
-def test_fsm::ftransition_constructor_args():
-    sig = inspect.signature(FSM::FTransition.__init__)
+def test_fsm_ftransition_constructor_args():
+    sig = inspect.signature(FSM_FTransition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_fsm::ftransition_has_label():
-    assert hasattr(FSM::FTransition, "label")
+def test_fsm_ftransition_has_label():
+    assert hasattr(FSM_FTransition, "label")
     descriptor = None
-    for klass in FSM::FTransition.__mro__:
+    for klass in FSM_FTransition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -86,23 +86,23 @@ def test_fsm::ftransition_has_label():
 
 
 
-def test_fsm::fstatemachine_is_not_abstract():
-    assert not inspect.isabstract(FSM::FStateMachine)
+def test_fsm_fstatemachine_is_not_abstract():
+    assert not inspect.isabstract(FSM_FStateMachine)
 
 
-def test_fsm::fstatemachine_constructor_exists():
-    assert callable(FSM::FStateMachine.__init__)
+def test_fsm_fstatemachine_constructor_exists():
+    assert callable(FSM_FStateMachine.__init__)
 
 
-def test_fsm::fstatemachine_constructor_args():
-    sig = inspect.signature(FSM::FStateMachine.__init__)
+def test_fsm_fstatemachine_constructor_args():
+    sig = inspect.signature(FSM_FStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::fstatemachine_has_name():
-    assert hasattr(FSM::FStateMachine, "name")
+def test_fsm_fstatemachine_has_name():
+    assert hasattr(FSM_FStateMachine, "name")
     descriptor = None
-    for klass in FSM::FStateMachine.__mro__:
+    for klass in FSM_FStateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -110,23 +110,23 @@ def test_fsm::fstatemachine_has_name():
 
 
 
-def test_fsm::fabstractstate_is_not_abstract():
-    assert not inspect.isabstract(FSM::FAbstractState)
+def test_fsm_fabstractstate_is_not_abstract():
+    assert not inspect.isabstract(FSM_FAbstractState)
 
 
-def test_fsm::fabstractstate_constructor_exists():
-    assert callable(FSM::FAbstractState.__init__)
+def test_fsm_fabstractstate_constructor_exists():
+    assert callable(FSM_FAbstractState.__init__)
 
 
-def test_fsm::fabstractstate_constructor_args():
-    sig = inspect.signature(FSM::FAbstractState.__init__)
+def test_fsm_fabstractstate_constructor_args():
+    sig = inspect.signature(FSM_FAbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::fabstractstate_has_name():
-    assert hasattr(FSM::FAbstractState, "name")
+def test_fsm_fabstractstate_has_name():
+    assert hasattr(FSM_FAbstractState, "name")
     descriptor = None
-    for klass in FSM::FAbstractState.__mro__:
+    for klass in FSM_FAbstractState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -147,24 +147,24 @@ safe_text = st.text(
 FAbstractState_strategy = st.builds(
     FAbstractState,
 )
-FSM::FRegularState_strategy = st.builds(
-    FSM::FRegularState,
+FSM_FRegularState_strategy = st.builds(
+    FSM_FRegularState,
 )
-FSM::FInitialState_strategy = st.builds(
-    FSM::FInitialState,
+FSM_FInitialState_strategy = st.builds(
+    FSM_FInitialState,
 )
-FSM::FTransition_strategy = st.builds(
-    FSM::FTransition,
+FSM_FTransition_strategy = st.builds(
+    FSM_FTransition,
     label=
         safe_text
 )
-FSM::FStateMachine_strategy = st.builds(
-    FSM::FStateMachine,
+FSM_FStateMachine_strategy = st.builds(
+    FSM_FStateMachine,
     name=
         safe_text
 )
-FSM::FAbstractState_strategy = st.builds(
-    FSM::FAbstractState,
+FSM_FAbstractState_strategy = st.builds(
+    FSM_FAbstractState,
     name=
         safe_text
 )
@@ -174,60 +174,51 @@ FSM::FAbstractState_strategy = st.builds(
 def test_fabstractstate_instantiation(instance):
     assert isinstance(instance, FAbstractState)
 
-@given(instance=FSM::FRegularState_strategy)
+@given(instance=FSM_FRegularState_strategy)
 @settings(max_examples=50)
-def test_fsm::fregularstate_instantiation(instance):
-    assert isinstance(instance, FSM::FRegularState)
+def test_fsm_fregularstate_instantiation(instance):
+    assert isinstance(instance, FSM_FRegularState)
 
-@given(instance=FSM::FInitialState_strategy)
+@given(instance=FSM_FInitialState_strategy)
 @settings(max_examples=50)
-def test_fsm::finitialstate_instantiation(instance):
-    assert isinstance(instance, FSM::FInitialState)
+def test_fsm_finitialstate_instantiation(instance):
+    assert isinstance(instance, FSM_FInitialState)
 
-@given(instance=FSM::FTransition_strategy)
+@given(instance=FSM_FTransition_strategy)
 @settings(max_examples=50)
-def test_fsm::ftransition_instantiation(instance):
-    assert isinstance(instance, FSM::FTransition)
-
-@given(instance=FSM::FTransition_strategy)
-def test_fsm::ftransition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_fsm_ftransition_instantiation(instance):
+    assert isinstance(instance, FSM_FTransition)
 
 
-@given(instance=FSM::FTransition_strategy)
-def test_fsm::ftransition_label_setter(instance):
+
+@given(instance=FSM_FTransition_strategy)
+def test_fsm_ftransition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=FSM::FStateMachine_strategy)
+@given(instance=FSM_FStateMachine_strategy)
 @settings(max_examples=50)
-def test_fsm::fstatemachine_instantiation(instance):
-    assert isinstance(instance, FSM::FStateMachine)
-
-@given(instance=FSM::FStateMachine_strategy)
-def test_fsm::fstatemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_fstatemachine_instantiation(instance):
+    assert isinstance(instance, FSM_FStateMachine)
 
 
-@given(instance=FSM::FStateMachine_strategy)
-def test_fsm::fstatemachine_name_setter(instance):
+
+@given(instance=FSM_FStateMachine_strategy)
+def test_fsm_fstatemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=FSM::FAbstractState_strategy)
+@given(instance=FSM_FAbstractState_strategy)
 @settings(max_examples=50)
-def test_fsm::fabstractstate_instantiation(instance):
-    assert isinstance(instance, FSM::FAbstractState)
-
-@given(instance=FSM::FAbstractState_strategy)
-def test_fsm::fabstractstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_fabstractstate_instantiation(instance):
+    assert isinstance(instance, FSM_FAbstractState)
 
 
-@given(instance=FSM::FAbstractState_strategy)
-def test_fsm::fabstractstate_name_setter(instance):
+
+@given(instance=FSM_FAbstractState_strategy)
+def test_fsm_fabstractstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

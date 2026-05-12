@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TreeNode,
-    tree::NonTerminal,
-    tree::Leaf,
-    tree::TreeNode,
+    tree_NonTerminal,
+    tree_Leaf,
+    tree_TreeNode,
 )
 
 # =============================================================================
@@ -32,51 +32,51 @@ def test_treenode_constructor_args():
 
 
 
-def test_tree::nonterminal_is_not_abstract():
-    assert not inspect.isabstract(tree::NonTerminal)
+def test_tree_nonterminal_is_not_abstract():
+    assert not inspect.isabstract(tree_NonTerminal)
 
 
-def test_tree::nonterminal_constructor_exists():
-    assert callable(tree::NonTerminal.__init__)
+def test_tree_nonterminal_constructor_exists():
+    assert callable(tree_NonTerminal.__init__)
 
 
-def test_tree::nonterminal_constructor_args():
-    sig = inspect.signature(tree::NonTerminal.__init__)
+def test_tree_nonterminal_constructor_args():
+    sig = inspect.signature(tree_NonTerminal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tree::leaf_is_not_abstract():
-    assert not inspect.isabstract(tree::Leaf)
+def test_tree_leaf_is_not_abstract():
+    assert not inspect.isabstract(tree_Leaf)
 
 
-def test_tree::leaf_constructor_exists():
-    assert callable(tree::Leaf.__init__)
+def test_tree_leaf_constructor_exists():
+    assert callable(tree_Leaf.__init__)
 
 
-def test_tree::leaf_constructor_args():
-    sig = inspect.signature(tree::Leaf.__init__)
+def test_tree_leaf_constructor_args():
+    sig = inspect.signature(tree_Leaf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tree::treenode_is_not_abstract():
-    assert not inspect.isabstract(tree::TreeNode)
+def test_tree_treenode_is_not_abstract():
+    assert not inspect.isabstract(tree_TreeNode)
 
 
-def test_tree::treenode_constructor_exists():
-    assert callable(tree::TreeNode.__init__)
+def test_tree_treenode_constructor_exists():
+    assert callable(tree_TreeNode.__init__)
 
 
-def test_tree::treenode_constructor_args():
-    sig = inspect.signature(tree::TreeNode.__init__)
+def test_tree_treenode_constructor_args():
+    sig = inspect.signature(tree_TreeNode.__init__)
     params = list(sig.parameters.keys())
     assert "data" in params, "Missing parameter 'data'"
 
-def test_tree::treenode_has_data():
-    assert hasattr(tree::TreeNode, "data")
+def test_tree_treenode_has_data():
+    assert hasattr(tree_TreeNode, "data")
     descriptor = None
-    for klass in tree::TreeNode.__mro__:
+    for klass in tree_TreeNode.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -97,14 +97,14 @@ safe_text = st.text(
 TreeNode_strategy = st.builds(
     TreeNode,
 )
-tree::NonTerminal_strategy = st.builds(
-    tree::NonTerminal,
+tree_NonTerminal_strategy = st.builds(
+    tree_NonTerminal,
 )
-tree::Leaf_strategy = st.builds(
-    tree::Leaf,
+tree_Leaf_strategy = st.builds(
+    tree_Leaf,
 )
-tree::TreeNode_strategy = st.builds(
-    tree::TreeNode,
+tree_TreeNode_strategy = st.builds(
+    tree_TreeNode,
     data=
         safe_text
 )
@@ -114,28 +114,25 @@ tree::TreeNode_strategy = st.builds(
 def test_treenode_instantiation(instance):
     assert isinstance(instance, TreeNode)
 
-@given(instance=tree::NonTerminal_strategy)
+@given(instance=tree_NonTerminal_strategy)
 @settings(max_examples=50)
-def test_tree::nonterminal_instantiation(instance):
-    assert isinstance(instance, tree::NonTerminal)
+def test_tree_nonterminal_instantiation(instance):
+    assert isinstance(instance, tree_NonTerminal)
 
-@given(instance=tree::Leaf_strategy)
+@given(instance=tree_Leaf_strategy)
 @settings(max_examples=50)
-def test_tree::leaf_instantiation(instance):
-    assert isinstance(instance, tree::Leaf)
+def test_tree_leaf_instantiation(instance):
+    assert isinstance(instance, tree_Leaf)
 
-@given(instance=tree::TreeNode_strategy)
+@given(instance=tree_TreeNode_strategy)
 @settings(max_examples=50)
-def test_tree::treenode_instantiation(instance):
-    assert isinstance(instance, tree::TreeNode)
-
-@given(instance=tree::TreeNode_strategy)
-def test_tree::treenode_data_type(instance):
-    assert isinstance(instance.data, str)
+def test_tree_treenode_instantiation(instance):
+    assert isinstance(instance, tree_TreeNode)
 
 
-@given(instance=tree::TreeNode_strategy)
-def test_tree::treenode_data_setter(instance):
+
+@given(instance=tree_TreeNode_strategy)
+def test_tree_treenode_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original

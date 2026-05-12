@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Uppaal::TemplateType,
-    Uppaal::TransitionType,
-    Uppaal::TargetType,
-    Uppaal::SystemType,
-    Uppaal::SourceType,
-    Uppaal::ParameterType,
-    Uppaal::NtaType,
-    Uppaal::NameType,
-    Uppaal::NailType,
-    Uppaal::LocationType,
-    Uppaal::LabelType,
-    Uppaal::InstantiationType,
-    Uppaal::InitType,
-    Uppaal::ImportsType,
-    Uppaal::EStringToStringMapEntry,
-    Uppaal::DocumentRoot,
-    Uppaal::DeclarationType,
+from python_code import (
+    Uppaal_TemplateType,
+    Uppaal_TransitionType,
+    Uppaal_TargetType,
+    Uppaal_SystemType,
+    Uppaal_SourceType,
+    Uppaal_ParameterType,
+    Uppaal_NtaType,
+    Uppaal_NameType,
+    Uppaal_NailType,
+    Uppaal_LocationType,
+    Uppaal_LabelType,
+    Uppaal_InstantiationType,
+    Uppaal_InitType,
+    Uppaal_ImportsType,
+    Uppaal_EStringToStringMapEntry,
+    Uppaal_DocumentRoot,
+    Uppaal_DeclarationType,
 )
 
 # =============================================================================
@@ -31,91 +31,91 @@ from classes import (
 
 
 
-def test_uppaal::templatetype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::TemplateType)
+def test_uppaal_templatetype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_TemplateType)
 
 
-def test_uppaal::templatetype_constructor_exists():
-    assert callable(Uppaal::TemplateType.__init__)
+def test_uppaal_templatetype_constructor_exists():
+    assert callable(Uppaal_TemplateType.__init__)
 
 
-def test_uppaal::templatetype_constructor_args():
-    sig = inspect.signature(Uppaal::TemplateType.__init__)
+def test_uppaal_templatetype_constructor_args():
+    sig = inspect.signature(Uppaal_TemplateType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uppaal::transitiontype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::TransitionType)
+def test_uppaal_transitiontype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_TransitionType)
 
 
-def test_uppaal::transitiontype_constructor_exists():
-    assert callable(Uppaal::TransitionType.__init__)
+def test_uppaal_transitiontype_constructor_exists():
+    assert callable(Uppaal_TransitionType.__init__)
 
 
-def test_uppaal::transitiontype_constructor_args():
-    sig = inspect.signature(Uppaal::TransitionType.__init__)
+def test_uppaal_transitiontype_constructor_args():
+    sig = inspect.signature(Uppaal_TransitionType.__init__)
     params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
-    assert "x" in params, "Missing parameter 'x'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_uppaal::transitiontype_has_color():
-    assert hasattr(Uppaal::TransitionType, "color")
+def test_uppaal_transitiontype_has_y():
+    assert hasattr(Uppaal_TransitionType, "y")
     descriptor = None
-    for klass in Uppaal::TransitionType.__mro__:
+    for klass in Uppaal_TransitionType.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_transitiontype_has_x():
+    assert hasattr(Uppaal_TransitionType, "x")
+    descriptor = None
+    for klass in Uppaal_TransitionType.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_transitiontype_has_color():
+    assert hasattr(Uppaal_TransitionType, "color")
+    descriptor = None
+    for klass in Uppaal_TransitionType.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::transitiontype_has_x():
-    assert hasattr(Uppaal::TransitionType, "x")
+def test_uppaal_transitiontype_has_id():
+    assert hasattr(Uppaal_TransitionType, "id")
     descriptor = None
-    for klass in Uppaal::TransitionType.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::transitiontype_has_id():
-    assert hasattr(Uppaal::TransitionType, "id")
-    descriptor = None
-    for klass in Uppaal::TransitionType.__mro__:
+    for klass in Uppaal_TransitionType.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::transitiontype_has_y():
-    assert hasattr(Uppaal::TransitionType, "y")
-    descriptor = None
-    for klass in Uppaal::TransitionType.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_uppaal::targettype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::TargetType)
-
-
-def test_uppaal::targettype_constructor_exists():
-    assert callable(Uppaal::TargetType.__init__)
+def test_uppaal_targettype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_TargetType)
 
 
-def test_uppaal::targettype_constructor_args():
-    sig = inspect.signature(Uppaal::TargetType.__init__)
+def test_uppaal_targettype_constructor_exists():
+    assert callable(Uppaal_TargetType.__init__)
+
+
+def test_uppaal_targettype_constructor_args():
+    sig = inspect.signature(Uppaal_TargetType.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
 
-def test_uppaal::targettype_has_ref():
-    assert hasattr(Uppaal::TargetType, "ref")
+def test_uppaal_targettype_has_ref():
+    assert hasattr(Uppaal_TargetType, "ref")
     descriptor = None
-    for klass in Uppaal::TargetType.__mro__:
+    for klass in Uppaal_TargetType.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
@@ -123,23 +123,23 @@ def test_uppaal::targettype_has_ref():
 
 
 
-def test_uppaal::systemtype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::SystemType)
+def test_uppaal_systemtype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_SystemType)
 
 
-def test_uppaal::systemtype_constructor_exists():
-    assert callable(Uppaal::SystemType.__init__)
+def test_uppaal_systemtype_constructor_exists():
+    assert callable(Uppaal_SystemType.__init__)
 
 
-def test_uppaal::systemtype_constructor_args():
-    sig = inspect.signature(Uppaal::SystemType.__init__)
+def test_uppaal_systemtype_constructor_args():
+    sig = inspect.signature(Uppaal_SystemType.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_uppaal::systemtype_has_mixed():
-    assert hasattr(Uppaal::SystemType, "mixed")
+def test_uppaal_systemtype_has_mixed():
+    assert hasattr(Uppaal_SystemType, "mixed")
     descriptor = None
-    for klass in Uppaal::SystemType.__mro__:
+    for klass in Uppaal_SystemType.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -147,23 +147,23 @@ def test_uppaal::systemtype_has_mixed():
 
 
 
-def test_uppaal::sourcetype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::SourceType)
+def test_uppaal_sourcetype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_SourceType)
 
 
-def test_uppaal::sourcetype_constructor_exists():
-    assert callable(Uppaal::SourceType.__init__)
+def test_uppaal_sourcetype_constructor_exists():
+    assert callable(Uppaal_SourceType.__init__)
 
 
-def test_uppaal::sourcetype_constructor_args():
-    sig = inspect.signature(Uppaal::SourceType.__init__)
+def test_uppaal_sourcetype_constructor_args():
+    sig = inspect.signature(Uppaal_SourceType.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
 
-def test_uppaal::sourcetype_has_ref():
-    assert hasattr(Uppaal::SourceType, "ref")
+def test_uppaal_sourcetype_has_ref():
+    assert hasattr(Uppaal_SourceType, "ref")
     descriptor = None
-    for klass in Uppaal::SourceType.__mro__:
+    for klass in Uppaal_SourceType.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
@@ -171,101 +171,43 @@ def test_uppaal::sourcetype_has_ref():
 
 
 
-def test_uppaal::parametertype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::ParameterType)
+def test_uppaal_parametertype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_ParameterType)
 
 
-def test_uppaal::parametertype_constructor_exists():
-    assert callable(Uppaal::ParameterType.__init__)
+def test_uppaal_parametertype_constructor_exists():
+    assert callable(Uppaal_ParameterType.__init__)
 
 
-def test_uppaal::parametertype_constructor_args():
-    sig = inspect.signature(Uppaal::ParameterType.__init__)
-    params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
-    assert "y" in params, "Missing parameter 'y'"
-    assert "mixed" in params, "Missing parameter 'mixed'"
-
-def test_uppaal::parametertype_has_x():
-    assert hasattr(Uppaal::ParameterType, "x")
-    descriptor = None
-    for klass in Uppaal::ParameterType.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::parametertype_has_y():
-    assert hasattr(Uppaal::ParameterType, "y")
-    descriptor = None
-    for klass in Uppaal::ParameterType.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::parametertype_has_mixed():
-    assert hasattr(Uppaal::ParameterType, "mixed")
-    descriptor = None
-    for klass in Uppaal::ParameterType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uppaal::ntatype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::NtaType)
-
-
-def test_uppaal::ntatype_constructor_exists():
-    assert callable(Uppaal::NtaType.__init__)
-
-
-def test_uppaal::ntatype_constructor_args():
-    sig = inspect.signature(Uppaal::NtaType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uppaal::nametype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::NameType)
-
-
-def test_uppaal::nametype_constructor_exists():
-    assert callable(Uppaal::NameType.__init__)
-
-
-def test_uppaal::nametype_constructor_args():
-    sig = inspect.signature(Uppaal::NameType.__init__)
+def test_uppaal_parametertype_constructor_args():
+    sig = inspect.signature(Uppaal_ParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "y" in params, "Missing parameter 'y'"
     assert "mixed" in params, "Missing parameter 'mixed'"
     assert "x" in params, "Missing parameter 'x'"
 
-def test_uppaal::nametype_has_y():
-    assert hasattr(Uppaal::NameType, "y")
+def test_uppaal_parametertype_has_y():
+    assert hasattr(Uppaal_ParameterType, "y")
     descriptor = None
-    for klass in Uppaal::NameType.__mro__:
+    for klass in Uppaal_ParameterType.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::nametype_has_mixed():
-    assert hasattr(Uppaal::NameType, "mixed")
+def test_uppaal_parametertype_has_mixed():
+    assert hasattr(Uppaal_ParameterType, "mixed")
     descriptor = None
-    for klass in Uppaal::NameType.__mro__:
+    for klass in Uppaal_ParameterType.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::nametype_has_x():
-    assert hasattr(Uppaal::NameType, "x")
+def test_uppaal_parametertype_has_x():
+    assert hasattr(Uppaal_ParameterType, "x")
     descriptor = None
-    for klass in Uppaal::NameType.__mro__:
+    for klass in Uppaal_ParameterType.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
@@ -273,33 +215,91 @@ def test_uppaal::nametype_has_x():
 
 
 
-def test_uppaal::nailtype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::NailType)
+def test_uppaal_ntatype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_NtaType)
 
 
-def test_uppaal::nailtype_constructor_exists():
-    assert callable(Uppaal::NailType.__init__)
+def test_uppaal_ntatype_constructor_exists():
+    assert callable(Uppaal_NtaType.__init__)
 
 
-def test_uppaal::nailtype_constructor_args():
-    sig = inspect.signature(Uppaal::NailType.__init__)
+def test_uppaal_ntatype_constructor_args():
+    sig = inspect.signature(Uppaal_NtaType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uppaal_nametype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_NameType)
+
+
+def test_uppaal_nametype_constructor_exists():
+    assert callable(Uppaal_NameType.__init__)
+
+
+def test_uppaal_nametype_constructor_args():
+    sig = inspect.signature(Uppaal_NameType.__init__)
+    params = list(sig.parameters.keys())
+    assert "y" in params, "Missing parameter 'y'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "x" in params, "Missing parameter 'x'"
+
+def test_uppaal_nametype_has_y():
+    assert hasattr(Uppaal_NameType, "y")
+    descriptor = None
+    for klass in Uppaal_NameType.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_nametype_has_mixed():
+    assert hasattr(Uppaal_NameType, "mixed")
+    descriptor = None
+    for klass in Uppaal_NameType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_nametype_has_x():
+    assert hasattr(Uppaal_NameType, "x")
+    descriptor = None
+    for klass in Uppaal_NameType.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uppaal_nailtype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_NailType)
+
+
+def test_uppaal_nailtype_constructor_exists():
+    assert callable(Uppaal_NailType.__init__)
+
+
+def test_uppaal_nailtype_constructor_args():
+    sig = inspect.signature(Uppaal_NailType.__init__)
     params = list(sig.parameters.keys())
     assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
 
-def test_uppaal::nailtype_has_x():
-    assert hasattr(Uppaal::NailType, "x")
+def test_uppaal_nailtype_has_x():
+    assert hasattr(Uppaal_NailType, "x")
     descriptor = None
-    for klass in Uppaal::NailType.__mro__:
+    for klass in Uppaal_NailType.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::nailtype_has_y():
-    assert hasattr(Uppaal::NailType, "y")
+def test_uppaal_nailtype_has_y():
+    assert hasattr(Uppaal_NailType, "y")
     descriptor = None
-    for klass in Uppaal::NailType.__mro__:
+    for klass in Uppaal_NailType.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
@@ -307,151 +307,127 @@ def test_uppaal::nailtype_has_y():
 
 
 
-def test_uppaal::locationtype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::LocationType)
+def test_uppaal_locationtype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_LocationType)
 
 
-def test_uppaal::locationtype_constructor_exists():
-    assert callable(Uppaal::LocationType.__init__)
+def test_uppaal_locationtype_constructor_exists():
+    assert callable(Uppaal_LocationType.__init__)
 
 
-def test_uppaal::locationtype_constructor_args():
-    sig = inspect.signature(Uppaal::LocationType.__init__)
+def test_uppaal_locationtype_constructor_args():
+    sig = inspect.signature(Uppaal_LocationType.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
-    assert "color" in params, "Missing parameter 'color'"
-    assert "x" in params, "Missing parameter 'x'"
-    assert "committed" in params, "Missing parameter 'committed'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "urgent" in params, "Missing parameter 'urgent'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "committed" in params, "Missing parameter 'committed'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_uppaal::locationtype_has_y():
-    assert hasattr(Uppaal::LocationType, "y")
+def test_uppaal_locationtype_has_urgent():
+    assert hasattr(Uppaal_LocationType, "urgent")
     descriptor = None
-    for klass in Uppaal::LocationType.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::locationtype_has_color():
-    assert hasattr(Uppaal::LocationType, "color")
-    descriptor = None
-    for klass in Uppaal::LocationType.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::locationtype_has_x():
-    assert hasattr(Uppaal::LocationType, "x")
-    descriptor = None
-    for klass in Uppaal::LocationType.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::locationtype_has_committed():
-    assert hasattr(Uppaal::LocationType, "committed")
-    descriptor = None
-    for klass in Uppaal::LocationType.__mro__:
-        if "committed" in klass.__dict__:
-            descriptor = klass.__dict__["committed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::locationtype_has_id():
-    assert hasattr(Uppaal::LocationType, "id")
-    descriptor = None
-    for klass in Uppaal::LocationType.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::locationtype_has_urgent():
-    assert hasattr(Uppaal::LocationType, "urgent")
-    descriptor = None
-    for klass in Uppaal::LocationType.__mro__:
+    for klass in Uppaal_LocationType.__mro__:
         if "urgent" in klass.__dict__:
             descriptor = klass.__dict__["urgent"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_uppaal::labeltype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::LabelType)
-
-
-def test_uppaal::labeltype_constructor_exists():
-    assert callable(Uppaal::LabelType.__init__)
-
-
-def test_uppaal::labeltype_constructor_args():
-    sig = inspect.signature(Uppaal::LabelType.__init__)
-    params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "kind" in params, "Missing parameter 'kind'"
-    assert "x" in params, "Missing parameter 'x'"
-
-def test_uppaal::labeltype_has_y():
-    assert hasattr(Uppaal::LabelType, "y")
+def test_uppaal_locationtype_has_color():
+    assert hasattr(Uppaal_LocationType, "color")
     descriptor = None
-    for klass in Uppaal::LabelType.__mro__:
+    for klass in Uppaal_LocationType.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_locationtype_has_committed():
+    assert hasattr(Uppaal_LocationType, "committed")
+    descriptor = None
+    for klass in Uppaal_LocationType.__mro__:
+        if "committed" in klass.__dict__:
+            descriptor = klass.__dict__["committed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_locationtype_has_y():
+    assert hasattr(Uppaal_LocationType, "y")
+    descriptor = None
+    for klass in Uppaal_LocationType.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::labeltype_has_mixed():
-    assert hasattr(Uppaal::LabelType, "mixed")
+def test_uppaal_locationtype_has_x():
+    assert hasattr(Uppaal_LocationType, "x")
     descriptor = None
-    for klass in Uppaal::LabelType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
+    for klass in Uppaal_LocationType.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::labeltype_has_kind():
-    assert hasattr(Uppaal::LabelType, "kind")
+def test_uppaal_locationtype_has_id():
+    assert hasattr(Uppaal_LocationType, "id")
     descriptor = None
-    for klass in Uppaal::LabelType.__mro__:
+    for klass in Uppaal_LocationType.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uppaal_labeltype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_LabelType)
+
+
+def test_uppaal_labeltype_constructor_exists():
+    assert callable(Uppaal_LabelType.__init__)
+
+
+def test_uppaal_labeltype_constructor_args():
+    sig = inspect.signature(Uppaal_LabelType.__init__)
+    params = list(sig.parameters.keys())
+    assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "kind" in params, "Missing parameter 'kind'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+
+def test_uppaal_labeltype_has_y():
+    assert hasattr(Uppaal_LabelType, "y")
+    descriptor = None
+    for klass in Uppaal_LabelType.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_labeltype_has_x():
+    assert hasattr(Uppaal_LabelType, "x")
+    descriptor = None
+    for klass in Uppaal_LabelType.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_labeltype_has_kind():
+    assert hasattr(Uppaal_LabelType, "kind")
+    descriptor = None
+    for klass in Uppaal_LabelType.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_uppaal::labeltype_has_x():
-    assert hasattr(Uppaal::LabelType, "x")
+def test_uppaal_labeltype_has_mixed():
+    assert hasattr(Uppaal_LabelType, "mixed")
     descriptor = None
-    for klass in Uppaal::LabelType.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uppaal::instantiationtype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::InstantiationType)
-
-
-def test_uppaal::instantiationtype_constructor_exists():
-    assert callable(Uppaal::InstantiationType.__init__)
-
-
-def test_uppaal::instantiationtype_constructor_args():
-    sig = inspect.signature(Uppaal::InstantiationType.__init__)
-    params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
-
-def test_uppaal::instantiationtype_has_mixed():
-    assert hasattr(Uppaal::InstantiationType, "mixed")
-    descriptor = None
-    for klass in Uppaal::InstantiationType.__mro__:
+    for klass in Uppaal_LabelType.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -459,23 +435,47 @@ def test_uppaal::instantiationtype_has_mixed():
 
 
 
-def test_uppaal::inittype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::InitType)
+def test_uppaal_instantiationtype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_InstantiationType)
 
 
-def test_uppaal::inittype_constructor_exists():
-    assert callable(Uppaal::InitType.__init__)
+def test_uppaal_instantiationtype_constructor_exists():
+    assert callable(Uppaal_InstantiationType.__init__)
 
 
-def test_uppaal::inittype_constructor_args():
-    sig = inspect.signature(Uppaal::InitType.__init__)
+def test_uppaal_instantiationtype_constructor_args():
+    sig = inspect.signature(Uppaal_InstantiationType.__init__)
+    params = list(sig.parameters.keys())
+    assert "mixed" in params, "Missing parameter 'mixed'"
+
+def test_uppaal_instantiationtype_has_mixed():
+    assert hasattr(Uppaal_InstantiationType, "mixed")
+    descriptor = None
+    for klass in Uppaal_InstantiationType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uppaal_inittype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_InitType)
+
+
+def test_uppaal_inittype_constructor_exists():
+    assert callable(Uppaal_InitType.__init__)
+
+
+def test_uppaal_inittype_constructor_args():
+    sig = inspect.signature(Uppaal_InitType.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
 
-def test_uppaal::inittype_has_ref():
-    assert hasattr(Uppaal::InitType, "ref")
+def test_uppaal_inittype_has_ref():
+    assert hasattr(Uppaal_InitType, "ref")
     descriptor = None
-    for klass in Uppaal::InitType.__mro__:
+    for klass in Uppaal_InitType.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
@@ -483,23 +483,23 @@ def test_uppaal::inittype_has_ref():
 
 
 
-def test_uppaal::importstype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::ImportsType)
+def test_uppaal_importstype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_ImportsType)
 
 
-def test_uppaal::importstype_constructor_exists():
-    assert callable(Uppaal::ImportsType.__init__)
+def test_uppaal_importstype_constructor_exists():
+    assert callable(Uppaal_ImportsType.__init__)
 
 
-def test_uppaal::importstype_constructor_args():
-    sig = inspect.signature(Uppaal::ImportsType.__init__)
+def test_uppaal_importstype_constructor_args():
+    sig = inspect.signature(Uppaal_ImportsType.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_uppaal::importstype_has_mixed():
-    assert hasattr(Uppaal::ImportsType, "mixed")
+def test_uppaal_importstype_has_mixed():
+    assert hasattr(Uppaal_ImportsType, "mixed")
     descriptor = None
-    for klass in Uppaal::ImportsType.__mro__:
+    for klass in Uppaal_ImportsType.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -507,81 +507,81 @@ def test_uppaal::importstype_has_mixed():
 
 
 
-def test_uppaal::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::EStringToStringMapEntry)
+def test_uppaal_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_EStringToStringMapEntry)
 
 
-def test_uppaal::estringtostringmapentry_constructor_exists():
-    assert callable(Uppaal::EStringToStringMapEntry.__init__)
+def test_uppaal_estringtostringmapentry_constructor_exists():
+    assert callable(Uppaal_EStringToStringMapEntry.__init__)
 
 
-def test_uppaal::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(Uppaal::EStringToStringMapEntry.__init__)
+def test_uppaal_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(Uppaal_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uppaal::documentroot_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::DocumentRoot)
+def test_uppaal_documentroot_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_DocumentRoot)
 
 
-def test_uppaal::documentroot_constructor_exists():
-    assert callable(Uppaal::DocumentRoot.__init__)
+def test_uppaal_documentroot_constructor_exists():
+    assert callable(Uppaal_DocumentRoot.__init__)
 
 
-def test_uppaal::documentroot_constructor_args():
-    sig = inspect.signature(Uppaal::DocumentRoot.__init__)
+def test_uppaal_documentroot_constructor_args():
+    sig = inspect.signature(Uppaal_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "urgent" in params, "Missing parameter 'urgent'"
     assert "committed" in params, "Missing parameter 'committed'"
+    assert "urgent" in params, "Missing parameter 'urgent'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_uppaal::documentroot_has_mixed():
-    assert hasattr(Uppaal::DocumentRoot, "mixed")
+def test_uppaal_documentroot_has_committed():
+    assert hasattr(Uppaal_DocumentRoot, "committed")
     descriptor = None
-    for klass in Uppaal::DocumentRoot.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::documentroot_has_urgent():
-    assert hasattr(Uppaal::DocumentRoot, "urgent")
-    descriptor = None
-    for klass in Uppaal::DocumentRoot.__mro__:
-        if "urgent" in klass.__dict__:
-            descriptor = klass.__dict__["urgent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uppaal::documentroot_has_committed():
-    assert hasattr(Uppaal::DocumentRoot, "committed")
-    descriptor = None
-    for klass in Uppaal::DocumentRoot.__mro__:
+    for klass in Uppaal_DocumentRoot.__mro__:
         if "committed" in klass.__dict__:
             descriptor = klass.__dict__["committed"]
             break
     assert isinstance(descriptor, property)
 
+def test_uppaal_documentroot_has_urgent():
+    assert hasattr(Uppaal_DocumentRoot, "urgent")
+    descriptor = None
+    for klass in Uppaal_DocumentRoot.__mro__:
+        if "urgent" in klass.__dict__:
+            descriptor = klass.__dict__["urgent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uppaal_documentroot_has_mixed():
+    assert hasattr(Uppaal_DocumentRoot, "mixed")
+    descriptor = None
+    for klass in Uppaal_DocumentRoot.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uppaal::declarationtype_is_not_abstract():
-    assert not inspect.isabstract(Uppaal::DeclarationType)
+
+def test_uppaal_declarationtype_is_not_abstract():
+    assert not inspect.isabstract(Uppaal_DeclarationType)
 
 
-def test_uppaal::declarationtype_constructor_exists():
-    assert callable(Uppaal::DeclarationType.__init__)
+def test_uppaal_declarationtype_constructor_exists():
+    assert callable(Uppaal_DeclarationType.__init__)
 
 
-def test_uppaal::declarationtype_constructor_args():
-    sig = inspect.signature(Uppaal::DeclarationType.__init__)
+def test_uppaal_declarationtype_constructor_args():
+    sig = inspect.signature(Uppaal_DeclarationType.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_uppaal::declarationtype_has_mixed():
-    assert hasattr(Uppaal::DeclarationType, "mixed")
+def test_uppaal_declarationtype_has_mixed():
+    assert hasattr(Uppaal_DeclarationType, "mixed")
     descriptor = None
-    for klass in Uppaal::DeclarationType.__mro__:
+    for klass in Uppaal_DeclarationType.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -599,49 +599,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Uppaal::TemplateType_strategy = st.builds(
-    Uppaal::TemplateType,
+Uppaal_TemplateType_strategy = st.builds(
+    Uppaal_TemplateType,
 )
-Uppaal::TransitionType_strategy = st.builds(
-    Uppaal::TransitionType,
-    color=
+Uppaal_TransitionType_strategy = st.builds(
+    Uppaal_TransitionType,
+    y=
         safe_text,
     x=
+        safe_text,
+    color=
         safe_text,
     id=
-        safe_text,
-    y=
         safe_text
 )
-Uppaal::TargetType_strategy = st.builds(
-    Uppaal::TargetType,
+Uppaal_TargetType_strategy = st.builds(
+    Uppaal_TargetType,
     ref=
         safe_text
 )
-Uppaal::SystemType_strategy = st.builds(
-    Uppaal::SystemType,
+Uppaal_SystemType_strategy = st.builds(
+    Uppaal_SystemType,
     mixed=
         safe_text
 )
-Uppaal::SourceType_strategy = st.builds(
-    Uppaal::SourceType,
+Uppaal_SourceType_strategy = st.builds(
+    Uppaal_SourceType,
     ref=
         safe_text
 )
-Uppaal::ParameterType_strategy = st.builds(
-    Uppaal::ParameterType,
-    x=
-        safe_text,
-    y=
-        safe_text,
-    mixed=
-        safe_text
-)
-Uppaal::NtaType_strategy = st.builds(
-    Uppaal::NtaType,
-)
-Uppaal::NameType_strategy = st.builds(
-    Uppaal::NameType,
+Uppaal_ParameterType_strategy = st.builds(
+    Uppaal_ParameterType,
     y=
         safe_text,
     mixed=
@@ -649,505 +637,421 @@ Uppaal::NameType_strategy = st.builds(
     x=
         safe_text
 )
-Uppaal::NailType_strategy = st.builds(
-    Uppaal::NailType,
+Uppaal_NtaType_strategy = st.builds(
+    Uppaal_NtaType,
+)
+Uppaal_NameType_strategy = st.builds(
+    Uppaal_NameType,
+    y=
+        safe_text,
+    mixed=
+        safe_text,
+    x=
+        safe_text
+)
+Uppaal_NailType_strategy = st.builds(
+    Uppaal_NailType,
     x=
         safe_text,
     y=
         safe_text
 )
-Uppaal::LocationType_strategy = st.builds(
-    Uppaal::LocationType,
-    y=
+Uppaal_LocationType_strategy = st.builds(
+    Uppaal_LocationType,
+    urgent=
         safe_text,
     color=
-        safe_text,
-    x=
         safe_text,
     committed=
         safe_text,
-    id=
-        safe_text,
-    urgent=
-        safe_text
-)
-Uppaal::LabelType_strategy = st.builds(
-    Uppaal::LabelType,
     y=
         safe_text,
-    mixed=
+    x=
+        safe_text,
+    id=
+        safe_text
+)
+Uppaal_LabelType_strategy = st.builds(
+    Uppaal_LabelType,
+    y=
+        safe_text,
+    x=
         safe_text,
     kind=
         safe_text,
-    x=
-        safe_text
-)
-Uppaal::InstantiationType_strategy = st.builds(
-    Uppaal::InstantiationType,
     mixed=
         safe_text
 )
-Uppaal::InitType_strategy = st.builds(
-    Uppaal::InitType,
+Uppaal_InstantiationType_strategy = st.builds(
+    Uppaal_InstantiationType,
+    mixed=
+        safe_text
+)
+Uppaal_InitType_strategy = st.builds(
+    Uppaal_InitType,
     ref=
         safe_text
 )
-Uppaal::ImportsType_strategy = st.builds(
-    Uppaal::ImportsType,
+Uppaal_ImportsType_strategy = st.builds(
+    Uppaal_ImportsType,
     mixed=
         safe_text
 )
-Uppaal::EStringToStringMapEntry_strategy = st.builds(
-    Uppaal::EStringToStringMapEntry,
+Uppaal_EStringToStringMapEntry_strategy = st.builds(
+    Uppaal_EStringToStringMapEntry,
 )
-Uppaal::DocumentRoot_strategy = st.builds(
-    Uppaal::DocumentRoot,
-    mixed=
+Uppaal_DocumentRoot_strategy = st.builds(
+    Uppaal_DocumentRoot,
+    committed=
         safe_text,
     urgent=
         safe_text,
-    committed=
+    mixed=
         safe_text
 )
-Uppaal::DeclarationType_strategy = st.builds(
-    Uppaal::DeclarationType,
+Uppaal_DeclarationType_strategy = st.builds(
+    Uppaal_DeclarationType,
     mixed=
         safe_text
 )
 
-@given(instance=Uppaal::TemplateType_strategy)
+@given(instance=Uppaal_TemplateType_strategy)
 @settings(max_examples=50)
-def test_uppaal::templatetype_instantiation(instance):
-    assert isinstance(instance, Uppaal::TemplateType)
+def test_uppaal_templatetype_instantiation(instance):
+    assert isinstance(instance, Uppaal_TemplateType)
 
-@given(instance=Uppaal::TransitionType_strategy)
+@given(instance=Uppaal_TransitionType_strategy)
 @settings(max_examples=50)
-def test_uppaal::transitiontype_instantiation(instance):
-    assert isinstance(instance, Uppaal::TransitionType)
-
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_uppaal_transitiontype_instantiation(instance):
+    assert isinstance(instance, Uppaal_TransitionType)
 
 
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_color_setter(instance):
+
+@given(instance=Uppaal_TransitionType_strategy)
+def test_uppaal_transitiontype_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=Uppaal_TransitionType_strategy)
+def test_uppaal_transitiontype_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=Uppaal_TransitionType_strategy)
+def test_uppaal_transitiontype_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_x_type(instance):
-    assert isinstance(instance.x, str)
 
 
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_id_setter(instance):
+@given(instance=Uppaal_TransitionType_strategy)
+def test_uppaal_transitiontype_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_y_type(instance):
-    assert isinstance(instance.y, str)
-
-
-@given(instance=Uppaal::TransitionType_strategy)
-def test_uppaal::transitiontype_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=Uppaal::TargetType_strategy)
+@given(instance=Uppaal_TargetType_strategy)
 @settings(max_examples=50)
-def test_uppaal::targettype_instantiation(instance):
-    assert isinstance(instance, Uppaal::TargetType)
-
-@given(instance=Uppaal::TargetType_strategy)
-def test_uppaal::targettype_ref_type(instance):
-    assert isinstance(instance.ref, str)
+def test_uppaal_targettype_instantiation(instance):
+    assert isinstance(instance, Uppaal_TargetType)
 
 
-@given(instance=Uppaal::TargetType_strategy)
-def test_uppaal::targettype_ref_setter(instance):
+
+@given(instance=Uppaal_TargetType_strategy)
+def test_uppaal_targettype_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=Uppaal::SystemType_strategy)
+@given(instance=Uppaal_SystemType_strategy)
 @settings(max_examples=50)
-def test_uppaal::systemtype_instantiation(instance):
-    assert isinstance(instance, Uppaal::SystemType)
-
-@given(instance=Uppaal::SystemType_strategy)
-def test_uppaal::systemtype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_uppaal_systemtype_instantiation(instance):
+    assert isinstance(instance, Uppaal_SystemType)
 
 
-@given(instance=Uppaal::SystemType_strategy)
-def test_uppaal::systemtype_mixed_setter(instance):
+
+@given(instance=Uppaal_SystemType_strategy)
+def test_uppaal_systemtype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=Uppaal::SourceType_strategy)
+@given(instance=Uppaal_SourceType_strategy)
 @settings(max_examples=50)
-def test_uppaal::sourcetype_instantiation(instance):
-    assert isinstance(instance, Uppaal::SourceType)
-
-@given(instance=Uppaal::SourceType_strategy)
-def test_uppaal::sourcetype_ref_type(instance):
-    assert isinstance(instance.ref, str)
+def test_uppaal_sourcetype_instantiation(instance):
+    assert isinstance(instance, Uppaal_SourceType)
 
 
-@given(instance=Uppaal::SourceType_strategy)
-def test_uppaal::sourcetype_ref_setter(instance):
+
+@given(instance=Uppaal_SourceType_strategy)
+def test_uppaal_sourcetype_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=Uppaal::ParameterType_strategy)
+@given(instance=Uppaal_ParameterType_strategy)
 @settings(max_examples=50)
-def test_uppaal::parametertype_instantiation(instance):
-    assert isinstance(instance, Uppaal::ParameterType)
-
-@given(instance=Uppaal::ParameterType_strategy)
-def test_uppaal::parametertype_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_uppaal_parametertype_instantiation(instance):
+    assert isinstance(instance, Uppaal_ParameterType)
 
 
-@given(instance=Uppaal::ParameterType_strategy)
-def test_uppaal::parametertype_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
-@given(instance=Uppaal::ParameterType_strategy)
-def test_uppaal::parametertype_y_type(instance):
-    assert isinstance(instance.y, str)
-
-
-@given(instance=Uppaal::ParameterType_strategy)
-def test_uppaal::parametertype_y_setter(instance):
+@given(instance=Uppaal_ParameterType_strategy)
+def test_uppaal_parametertype_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=Uppaal::ParameterType_strategy)
-def test_uppaal::parametertype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=Uppaal::ParameterType_strategy)
-def test_uppaal::parametertype_mixed_setter(instance):
+@given(instance=Uppaal_ParameterType_strategy)
+def test_uppaal_parametertype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=Uppaal::NtaType_strategy)
+
+
+@given(instance=Uppaal_ParameterType_strategy)
+def test_uppaal_parametertype_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=Uppaal_NtaType_strategy)
 @settings(max_examples=50)
-def test_uppaal::ntatype_instantiation(instance):
-    assert isinstance(instance, Uppaal::NtaType)
+def test_uppaal_ntatype_instantiation(instance):
+    assert isinstance(instance, Uppaal_NtaType)
 
-@given(instance=Uppaal::NameType_strategy)
+@given(instance=Uppaal_NameType_strategy)
 @settings(max_examples=50)
-def test_uppaal::nametype_instantiation(instance):
-    assert isinstance(instance, Uppaal::NameType)
-
-@given(instance=Uppaal::NameType_strategy)
-def test_uppaal::nametype_y_type(instance):
-    assert isinstance(instance.y, str)
+def test_uppaal_nametype_instantiation(instance):
+    assert isinstance(instance, Uppaal_NameType)
 
 
-@given(instance=Uppaal::NameType_strategy)
-def test_uppaal::nametype_y_setter(instance):
+
+@given(instance=Uppaal_NameType_strategy)
+def test_uppaal_nametype_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=Uppaal::NameType_strategy)
-def test_uppaal::nametype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=Uppaal::NameType_strategy)
-def test_uppaal::nametype_mixed_setter(instance):
+@given(instance=Uppaal_NameType_strategy)
+def test_uppaal_nametype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=Uppaal::NameType_strategy)
-def test_uppaal::nametype_x_type(instance):
-    assert isinstance(instance.x, str)
 
 
-@given(instance=Uppaal::NameType_strategy)
-def test_uppaal::nametype_x_setter(instance):
+@given(instance=Uppaal_NameType_strategy)
+def test_uppaal_nametype_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=Uppaal::NailType_strategy)
+@given(instance=Uppaal_NailType_strategy)
 @settings(max_examples=50)
-def test_uppaal::nailtype_instantiation(instance):
-    assert isinstance(instance, Uppaal::NailType)
-
-@given(instance=Uppaal::NailType_strategy)
-def test_uppaal::nailtype_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_uppaal_nailtype_instantiation(instance):
+    assert isinstance(instance, Uppaal_NailType)
 
 
-@given(instance=Uppaal::NailType_strategy)
-def test_uppaal::nailtype_x_setter(instance):
+
+@given(instance=Uppaal_NailType_strategy)
+def test_uppaal_nailtype_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=Uppaal::NailType_strategy)
-def test_uppaal::nailtype_y_type(instance):
-    assert isinstance(instance.y, str)
 
 
-@given(instance=Uppaal::NailType_strategy)
-def test_uppaal::nailtype_y_setter(instance):
+@given(instance=Uppaal_NailType_strategy)
+def test_uppaal_nailtype_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=Uppaal::LocationType_strategy)
+@given(instance=Uppaal_LocationType_strategy)
 @settings(max_examples=50)
-def test_uppaal::locationtype_instantiation(instance):
-    assert isinstance(instance, Uppaal::LocationType)
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_y_type(instance):
-    assert isinstance(instance.y, str)
+def test_uppaal_locationtype_instantiation(instance):
+    assert isinstance(instance, Uppaal_LocationType)
 
 
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
 
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_x_type(instance):
-    assert isinstance(instance.x, str)
-
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_committed_type(instance):
-    assert isinstance(instance.committed, str)
-
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_committed_setter(instance):
-    original = instance.committed
-    instance.committed = original
-    assert instance.committed == original
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_urgent_type(instance):
-    assert isinstance(instance.urgent, str)
-
-
-@given(instance=Uppaal::LocationType_strategy)
-def test_uppaal::locationtype_urgent_setter(instance):
+@given(instance=Uppaal_LocationType_strategy)
+def test_uppaal_locationtype_urgent_setter(instance):
     original = instance.urgent
     instance.urgent = original
     assert instance.urgent == original
 
-@given(instance=Uppaal::LabelType_strategy)
-@settings(max_examples=50)
-def test_uppaal::labeltype_instantiation(instance):
-    assert isinstance(instance, Uppaal::LabelType)
-
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_y_type(instance):
-    assert isinstance(instance.y, str)
 
 
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_y_setter(instance):
+@given(instance=Uppaal_LocationType_strategy)
+def test_uppaal_locationtype_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=Uppaal_LocationType_strategy)
+def test_uppaal_locationtype_committed_setter(instance):
+    original = instance.committed
+    instance.committed = original
+    assert instance.committed == original
+
+
+
+@given(instance=Uppaal_LocationType_strategy)
+def test_uppaal_locationtype_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_kind_type(instance):
-    assert isinstance(instance.kind, str)
+@given(instance=Uppaal_LocationType_strategy)
+def test_uppaal_locationtype_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
 
 
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_kind_setter(instance):
+
+@given(instance=Uppaal_LocationType_strategy)
+def test_uppaal_locationtype_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=Uppaal_LabelType_strategy)
+@settings(max_examples=50)
+def test_uppaal_labeltype_instantiation(instance):
+    assert isinstance(instance, Uppaal_LabelType)
+
+
+
+@given(instance=Uppaal_LabelType_strategy)
+def test_uppaal_labeltype_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=Uppaal_LabelType_strategy)
+def test_uppaal_labeltype_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=Uppaal_LabelType_strategy)
+def test_uppaal_labeltype_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_x_type(instance):
-    assert isinstance(instance.x, str)
 
 
-@given(instance=Uppaal::LabelType_strategy)
-def test_uppaal::labeltype_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=Uppaal::InstantiationType_strategy)
-@settings(max_examples=50)
-def test_uppaal::instantiationtype_instantiation(instance):
-    assert isinstance(instance, Uppaal::InstantiationType)
-
-@given(instance=Uppaal::InstantiationType_strategy)
-def test_uppaal::instantiationtype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
-
-
-@given(instance=Uppaal::InstantiationType_strategy)
-def test_uppaal::instantiationtype_mixed_setter(instance):
+@given(instance=Uppaal_LabelType_strategy)
+def test_uppaal_labeltype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=Uppaal::InitType_strategy)
+@given(instance=Uppaal_InstantiationType_strategy)
 @settings(max_examples=50)
-def test_uppaal::inittype_instantiation(instance):
-    assert isinstance(instance, Uppaal::InitType)
-
-@given(instance=Uppaal::InitType_strategy)
-def test_uppaal::inittype_ref_type(instance):
-    assert isinstance(instance.ref, str)
+def test_uppaal_instantiationtype_instantiation(instance):
+    assert isinstance(instance, Uppaal_InstantiationType)
 
 
-@given(instance=Uppaal::InitType_strategy)
-def test_uppaal::inittype_ref_setter(instance):
+
+@given(instance=Uppaal_InstantiationType_strategy)
+def test_uppaal_instantiationtype_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+@given(instance=Uppaal_InitType_strategy)
+@settings(max_examples=50)
+def test_uppaal_inittype_instantiation(instance):
+    assert isinstance(instance, Uppaal_InitType)
+
+
+
+@given(instance=Uppaal_InitType_strategy)
+def test_uppaal_inittype_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=Uppaal::ImportsType_strategy)
+@given(instance=Uppaal_ImportsType_strategy)
 @settings(max_examples=50)
-def test_uppaal::importstype_instantiation(instance):
-    assert isinstance(instance, Uppaal::ImportsType)
-
-@given(instance=Uppaal::ImportsType_strategy)
-def test_uppaal::importstype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_uppaal_importstype_instantiation(instance):
+    assert isinstance(instance, Uppaal_ImportsType)
 
 
-@given(instance=Uppaal::ImportsType_strategy)
-def test_uppaal::importstype_mixed_setter(instance):
+
+@given(instance=Uppaal_ImportsType_strategy)
+def test_uppaal_importstype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=Uppaal::EStringToStringMapEntry_strategy)
+@given(instance=Uppaal_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_uppaal::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, Uppaal::EStringToStringMapEntry)
+def test_uppaal_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, Uppaal_EStringToStringMapEntry)
 
-@given(instance=Uppaal::DocumentRoot_strategy)
+@given(instance=Uppaal_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_uppaal::documentroot_instantiation(instance):
-    assert isinstance(instance, Uppaal::DocumentRoot)
-
-@given(instance=Uppaal::DocumentRoot_strategy)
-def test_uppaal::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_uppaal_documentroot_instantiation(instance):
+    assert isinstance(instance, Uppaal_DocumentRoot)
 
 
-@given(instance=Uppaal::DocumentRoot_strategy)
-def test_uppaal::documentroot_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
 
-@given(instance=Uppaal::DocumentRoot_strategy)
-def test_uppaal::documentroot_urgent_type(instance):
-    assert isinstance(instance.urgent, str)
-
-
-@given(instance=Uppaal::DocumentRoot_strategy)
-def test_uppaal::documentroot_urgent_setter(instance):
-    original = instance.urgent
-    instance.urgent = original
-    assert instance.urgent == original
-
-@given(instance=Uppaal::DocumentRoot_strategy)
-def test_uppaal::documentroot_committed_type(instance):
-    assert isinstance(instance.committed, str)
-
-
-@given(instance=Uppaal::DocumentRoot_strategy)
-def test_uppaal::documentroot_committed_setter(instance):
+@given(instance=Uppaal_DocumentRoot_strategy)
+def test_uppaal_documentroot_committed_setter(instance):
     original = instance.committed
     instance.committed = original
     assert instance.committed == original
 
-@given(instance=Uppaal::DeclarationType_strategy)
+
+
+@given(instance=Uppaal_DocumentRoot_strategy)
+def test_uppaal_documentroot_urgent_setter(instance):
+    original = instance.urgent
+    instance.urgent = original
+    assert instance.urgent == original
+
+
+
+@given(instance=Uppaal_DocumentRoot_strategy)
+def test_uppaal_documentroot_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+@given(instance=Uppaal_DeclarationType_strategy)
 @settings(max_examples=50)
-def test_uppaal::declarationtype_instantiation(instance):
-    assert isinstance(instance, Uppaal::DeclarationType)
-
-@given(instance=Uppaal::DeclarationType_strategy)
-def test_uppaal::declarationtype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_uppaal_declarationtype_instantiation(instance):
+    assert isinstance(instance, Uppaal_DeclarationType)
 
 
-@given(instance=Uppaal::DeclarationType_strategy)
-def test_uppaal::declarationtype_mixed_setter(instance):
+
+@given(instance=Uppaal_DeclarationType_strategy)
+def test_uppaal_declarationtype_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original

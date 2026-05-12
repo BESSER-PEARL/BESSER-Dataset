@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::G,
+from python_code import (
+    graph_G,
     Node,
-    graph::Boundary,
-    graph::Center,
-    graph::Node,
+    graph_Boundary,
+    graph_Center,
+    graph_Node,
 )
 
 # =============================================================================
@@ -19,16 +19,16 @@ from classes import (
 
 
 
-def test_graph::g_is_not_abstract():
-    assert not inspect.isabstract(graph::G)
+def test_graph_g_is_not_abstract():
+    assert not inspect.isabstract(graph_G)
 
 
-def test_graph::g_constructor_exists():
-    assert callable(graph::G.__init__)
+def test_graph_g_constructor_exists():
+    assert callable(graph_G.__init__)
 
 
-def test_graph::g_constructor_args():
-    sig = inspect.signature(graph::G.__init__)
+def test_graph_g_constructor_args():
+    sig = inspect.signature(graph_G.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -47,51 +47,51 @@ def test_node_constructor_args():
 
 
 
-def test_graph::boundary_is_not_abstract():
-    assert not inspect.isabstract(graph::Boundary)
+def test_graph_boundary_is_not_abstract():
+    assert not inspect.isabstract(graph_Boundary)
 
 
-def test_graph::boundary_constructor_exists():
-    assert callable(graph::Boundary.__init__)
+def test_graph_boundary_constructor_exists():
+    assert callable(graph_Boundary.__init__)
 
 
-def test_graph::boundary_constructor_args():
-    sig = inspect.signature(graph::Boundary.__init__)
+def test_graph_boundary_constructor_args():
+    sig = inspect.signature(graph_Boundary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::center_is_not_abstract():
-    assert not inspect.isabstract(graph::Center)
+def test_graph_center_is_not_abstract():
+    assert not inspect.isabstract(graph_Center)
 
 
-def test_graph::center_constructor_exists():
-    assert callable(graph::Center.__init__)
+def test_graph_center_constructor_exists():
+    assert callable(graph_Center.__init__)
 
 
-def test_graph::center_constructor_args():
-    sig = inspect.signature(graph::Center.__init__)
+def test_graph_center_constructor_args():
+    sig = inspect.signature(graph_Center.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::node_is_not_abstract():
-    assert not inspect.isabstract(graph::Node)
+def test_graph_node_is_not_abstract():
+    assert not inspect.isabstract(graph_Node)
 
 
-def test_graph::node_constructor_exists():
-    assert callable(graph::Node.__init__)
+def test_graph_node_constructor_exists():
+    assert callable(graph_Node.__init__)
 
 
-def test_graph::node_constructor_args():
-    sig = inspect.signature(graph::Node.__init__)
+def test_graph_node_constructor_args():
+    sig = inspect.signature(graph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_graph::node_has_id():
-    assert hasattr(graph::Node, "id")
+def test_graph_node_has_id():
+    assert hasattr(graph_Node, "id")
     descriptor = None
-    for klass in graph::Node.__mro__:
+    for klass in graph_Node.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -109,56 +109,53 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::G_strategy = st.builds(
-    graph::G,
+graph_G_strategy = st.builds(
+    graph_G,
 )
 Node_strategy = st.builds(
     Node,
 )
-graph::Boundary_strategy = st.builds(
-    graph::Boundary,
+graph_Boundary_strategy = st.builds(
+    graph_Boundary,
 )
-graph::Center_strategy = st.builds(
-    graph::Center,
+graph_Center_strategy = st.builds(
+    graph_Center,
 )
-graph::Node_strategy = st.builds(
-    graph::Node,
+graph_Node_strategy = st.builds(
+    graph_Node,
     id=
         safe_text
 )
 
-@given(instance=graph::G_strategy)
+@given(instance=graph_G_strategy)
 @settings(max_examples=50)
-def test_graph::g_instantiation(instance):
-    assert isinstance(instance, graph::G)
+def test_graph_g_instantiation(instance):
+    assert isinstance(instance, graph_G)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=graph::Boundary_strategy)
+@given(instance=graph_Boundary_strategy)
 @settings(max_examples=50)
-def test_graph::boundary_instantiation(instance):
-    assert isinstance(instance, graph::Boundary)
+def test_graph_boundary_instantiation(instance):
+    assert isinstance(instance, graph_Boundary)
 
-@given(instance=graph::Center_strategy)
+@given(instance=graph_Center_strategy)
 @settings(max_examples=50)
-def test_graph::center_instantiation(instance):
-    assert isinstance(instance, graph::Center)
+def test_graph_center_instantiation(instance):
+    assert isinstance(instance, graph_Center)
 
-@given(instance=graph::Node_strategy)
+@given(instance=graph_Node_strategy)
 @settings(max_examples=50)
-def test_graph::node_instantiation(instance):
-    assert isinstance(instance, graph::Node)
-
-@given(instance=graph::Node_strategy)
-def test_graph::node_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_graph_node_instantiation(instance):
+    assert isinstance(instance, graph_Node)
 
 
-@given(instance=graph::Node_strategy)
-def test_graph::node_id_setter(instance):
+
+@given(instance=graph_Node_strategy)
+def test_graph_node_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

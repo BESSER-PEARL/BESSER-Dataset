@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Join,
-    apromore::XORJoin,
-    apromore::ANDJoin,
-    apromore::ORJoin,
+    apromore_XORJoin,
+    apromore_ANDJoin,
+    apromore_ORJoin,
     Split,
-    apromore::XORSplit,
-    apromore::ANDSplit,
-    apromore::ORSplit,
-    apromore::Node,
-    apromore::Net,
-    apromore::CanonicalProcess,
+    apromore_ANDSplit,
+    apromore_XORSplit,
+    apromore_ORSplit,
+    apromore_Node,
+    apromore_Net,
+    apromore_CanonicalProcess,
     Routing,
-    apromore::Join,
-    apromore::State,
-    apromore::Split,
+    apromore_State,
+    apromore_Join,
+    apromore_Split,
     Event,
-    apromore::Time,
-    apromore::Message,
+    apromore_Time,
+    apromore_Message,
     Work,
-    apromore::Task,
-    apromore::Event,
+    apromore_Task,
+    apromore_Event,
     Node,
-    apromore::Routing,
-    apromore::Work,
-    apromore::Edge,
+    apromore_Routing,
+    apromore_Work,
+    apromore_Edge,
 )
 
 # =============================================================================
@@ -53,44 +53,44 @@ def test_join_constructor_args():
 
 
 
-def test_apromore::xorjoin_is_not_abstract():
-    assert not inspect.isabstract(apromore::XORJoin)
+def test_apromore_xorjoin_is_not_abstract():
+    assert not inspect.isabstract(apromore_XORJoin)
 
 
-def test_apromore::xorjoin_constructor_exists():
-    assert callable(apromore::XORJoin.__init__)
+def test_apromore_xorjoin_constructor_exists():
+    assert callable(apromore_XORJoin.__init__)
 
 
-def test_apromore::xorjoin_constructor_args():
-    sig = inspect.signature(apromore::XORJoin.__init__)
+def test_apromore_xorjoin_constructor_args():
+    sig = inspect.signature(apromore_XORJoin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::andjoin_is_not_abstract():
-    assert not inspect.isabstract(apromore::ANDJoin)
+def test_apromore_andjoin_is_not_abstract():
+    assert not inspect.isabstract(apromore_ANDJoin)
 
 
-def test_apromore::andjoin_constructor_exists():
-    assert callable(apromore::ANDJoin.__init__)
+def test_apromore_andjoin_constructor_exists():
+    assert callable(apromore_ANDJoin.__init__)
 
 
-def test_apromore::andjoin_constructor_args():
-    sig = inspect.signature(apromore::ANDJoin.__init__)
+def test_apromore_andjoin_constructor_args():
+    sig = inspect.signature(apromore_ANDJoin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::orjoin_is_not_abstract():
-    assert not inspect.isabstract(apromore::ORJoin)
+def test_apromore_orjoin_is_not_abstract():
+    assert not inspect.isabstract(apromore_ORJoin)
 
 
-def test_apromore::orjoin_constructor_exists():
-    assert callable(apromore::ORJoin.__init__)
+def test_apromore_orjoin_constructor_exists():
+    assert callable(apromore_ORJoin.__init__)
 
 
-def test_apromore::orjoin_constructor_args():
-    sig = inspect.signature(apromore::ORJoin.__init__)
+def test_apromore_orjoin_constructor_args():
+    sig = inspect.signature(apromore_ORJoin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,109 +109,85 @@ def test_split_constructor_args():
 
 
 
-def test_apromore::xorsplit_is_not_abstract():
-    assert not inspect.isabstract(apromore::XORSplit)
+def test_apromore_andsplit_is_not_abstract():
+    assert not inspect.isabstract(apromore_ANDSplit)
 
 
-def test_apromore::xorsplit_constructor_exists():
-    assert callable(apromore::XORSplit.__init__)
+def test_apromore_andsplit_constructor_exists():
+    assert callable(apromore_ANDSplit.__init__)
 
 
-def test_apromore::xorsplit_constructor_args():
-    sig = inspect.signature(apromore::XORSplit.__init__)
+def test_apromore_andsplit_constructor_args():
+    sig = inspect.signature(apromore_ANDSplit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::andsplit_is_not_abstract():
-    assert not inspect.isabstract(apromore::ANDSplit)
+def test_apromore_xorsplit_is_not_abstract():
+    assert not inspect.isabstract(apromore_XORSplit)
 
 
-def test_apromore::andsplit_constructor_exists():
-    assert callable(apromore::ANDSplit.__init__)
+def test_apromore_xorsplit_constructor_exists():
+    assert callable(apromore_XORSplit.__init__)
 
 
-def test_apromore::andsplit_constructor_args():
-    sig = inspect.signature(apromore::ANDSplit.__init__)
+def test_apromore_xorsplit_constructor_args():
+    sig = inspect.signature(apromore_XORSplit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::orsplit_is_not_abstract():
-    assert not inspect.isabstract(apromore::ORSplit)
+def test_apromore_orsplit_is_not_abstract():
+    assert not inspect.isabstract(apromore_ORSplit)
 
 
-def test_apromore::orsplit_constructor_exists():
-    assert callable(apromore::ORSplit.__init__)
+def test_apromore_orsplit_constructor_exists():
+    assert callable(apromore_ORSplit.__init__)
 
 
-def test_apromore::orsplit_constructor_args():
-    sig = inspect.signature(apromore::ORSplit.__init__)
+def test_apromore_orsplit_constructor_args():
+    sig = inspect.signature(apromore_ORSplit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::node_is_not_abstract():
-    assert not inspect.isabstract(apromore::Node)
+def test_apromore_node_is_not_abstract():
+    assert not inspect.isabstract(apromore_Node)
 
 
-def test_apromore::node_constructor_exists():
-    assert callable(apromore::Node.__init__)
+def test_apromore_node_constructor_exists():
+    assert callable(apromore_Node.__init__)
 
 
-def test_apromore::node_constructor_args():
-    sig = inspect.signature(apromore::Node.__init__)
+def test_apromore_node_constructor_args():
+    sig = inspect.signature(apromore_Node.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "configurable" in params, "Missing parameter 'configurable'"
     assert "ident" in params, "Missing parameter 'ident'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_apromore::node_has_configurable():
-    assert hasattr(apromore::Node, "configurable")
+def test_apromore_node_has_name():
+    assert hasattr(apromore_Node, "name")
     descriptor = None
-    for klass in apromore::Node.__mro__:
-        if "configurable" in klass.__dict__:
-            descriptor = klass.__dict__["configurable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_apromore::node_has_ident():
-    assert hasattr(apromore::Node, "ident")
-    descriptor = None
-    for klass in apromore::Node.__mro__:
-        if "ident" in klass.__dict__:
-            descriptor = klass.__dict__["ident"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_apromore::node_has_name():
-    assert hasattr(apromore::Node, "name")
-    descriptor = None
-    for klass in apromore::Node.__mro__:
+    for klass in apromore_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_apromore::net_is_not_abstract():
-    assert not inspect.isabstract(apromore::Net)
-
-
-def test_apromore::net_constructor_exists():
-    assert callable(apromore::Net.__init__)
-
-
-def test_apromore::net_constructor_args():
-    sig = inspect.signature(apromore::Net.__init__)
-    params = list(sig.parameters.keys())
-    assert "ident" in params, "Missing parameter 'ident'"
-
-def test_apromore::net_has_ident():
-    assert hasattr(apromore::Net, "ident")
+def test_apromore_node_has_configurable():
+    assert hasattr(apromore_Node, "configurable")
     descriptor = None
-    for klass in apromore::Net.__mro__:
+    for klass in apromore_Node.__mro__:
+        if "configurable" in klass.__dict__:
+            descriptor = klass.__dict__["configurable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_apromore_node_has_ident():
+    assert hasattr(apromore_Node, "ident")
+    descriptor = None
+    for klass in apromore_Node.__mro__:
         if "ident" in klass.__dict__:
             descriptor = klass.__dict__["ident"]
             break
@@ -219,45 +195,69 @@ def test_apromore::net_has_ident():
 
 
 
-def test_apromore::canonicalprocess_is_not_abstract():
-    assert not inspect.isabstract(apromore::CanonicalProcess)
+def test_apromore_net_is_not_abstract():
+    assert not inspect.isabstract(apromore_Net)
 
 
-def test_apromore::canonicalprocess_constructor_exists():
-    assert callable(apromore::CanonicalProcess.__init__)
+def test_apromore_net_constructor_exists():
+    assert callable(apromore_Net.__init__)
 
 
-def test_apromore::canonicalprocess_constructor_args():
-    sig = inspect.signature(apromore::CanonicalProcess.__init__)
+def test_apromore_net_constructor_args():
+    sig = inspect.signature(apromore_Net.__init__)
     params = list(sig.parameters.keys())
+    assert "ident" in params, "Missing parameter 'ident'"
+
+def test_apromore_net_has_ident():
+    assert hasattr(apromore_Net, "ident")
+    descriptor = None
+    for klass in apromore_Net.__mro__:
+        if "ident" in klass.__dict__:
+            descriptor = klass.__dict__["ident"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_apromore_canonicalprocess_is_not_abstract():
+    assert not inspect.isabstract(apromore_CanonicalProcess)
+
+
+def test_apromore_canonicalprocess_constructor_exists():
+    assert callable(apromore_CanonicalProcess.__init__)
+
+
+def test_apromore_canonicalprocess_constructor_args():
+    sig = inspect.signature(apromore_CanonicalProcess.__init__)
+    params = list(sig.parameters.keys())
+    assert "uri" in params, "Missing parameter 'uri'"
     assert "author" in params, "Missing parameter 'author'"
     assert "version" in params, "Missing parameter 'version'"
-    assert "uri" in params, "Missing parameter 'uri'"
 
-def test_apromore::canonicalprocess_has_author():
-    assert hasattr(apromore::CanonicalProcess, "author")
+def test_apromore_canonicalprocess_has_uri():
+    assert hasattr(apromore_CanonicalProcess, "uri")
     descriptor = None
-    for klass in apromore::CanonicalProcess.__mro__:
+    for klass in apromore_CanonicalProcess.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_apromore_canonicalprocess_has_author():
+    assert hasattr(apromore_CanonicalProcess, "author")
+    descriptor = None
+    for klass in apromore_CanonicalProcess.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_apromore::canonicalprocess_has_version():
-    assert hasattr(apromore::CanonicalProcess, "version")
+def test_apromore_canonicalprocess_has_version():
+    assert hasattr(apromore_CanonicalProcess, "version")
     descriptor = None
-    for klass in apromore::CanonicalProcess.__mro__:
+    for klass in apromore_CanonicalProcess.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_apromore::canonicalprocess_has_uri():
-    assert hasattr(apromore::CanonicalProcess, "uri")
-    descriptor = None
-    for klass in apromore::CanonicalProcess.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
@@ -277,44 +277,44 @@ def test_routing_constructor_args():
 
 
 
-def test_apromore::join_is_not_abstract():
-    assert not inspect.isabstract(apromore::Join)
+def test_apromore_state_is_not_abstract():
+    assert not inspect.isabstract(apromore_State)
 
 
-def test_apromore::join_constructor_exists():
-    assert callable(apromore::Join.__init__)
+def test_apromore_state_constructor_exists():
+    assert callable(apromore_State.__init__)
 
 
-def test_apromore::join_constructor_args():
-    sig = inspect.signature(apromore::Join.__init__)
+def test_apromore_state_constructor_args():
+    sig = inspect.signature(apromore_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::state_is_not_abstract():
-    assert not inspect.isabstract(apromore::State)
+def test_apromore_join_is_not_abstract():
+    assert not inspect.isabstract(apromore_Join)
 
 
-def test_apromore::state_constructor_exists():
-    assert callable(apromore::State.__init__)
+def test_apromore_join_constructor_exists():
+    assert callable(apromore_Join.__init__)
 
 
-def test_apromore::state_constructor_args():
-    sig = inspect.signature(apromore::State.__init__)
+def test_apromore_join_constructor_args():
+    sig = inspect.signature(apromore_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::split_is_not_abstract():
-    assert not inspect.isabstract(apromore::Split)
+def test_apromore_split_is_not_abstract():
+    assert not inspect.isabstract(apromore_Split)
 
 
-def test_apromore::split_constructor_exists():
-    assert callable(apromore::Split.__init__)
+def test_apromore_split_constructor_exists():
+    assert callable(apromore_Split.__init__)
 
 
-def test_apromore::split_constructor_args():
-    sig = inspect.signature(apromore::Split.__init__)
+def test_apromore_split_constructor_args():
+    sig = inspect.signature(apromore_Split.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -333,30 +333,30 @@ def test_event_constructor_args():
 
 
 
-def test_apromore::time_is_not_abstract():
-    assert not inspect.isabstract(apromore::Time)
+def test_apromore_time_is_not_abstract():
+    assert not inspect.isabstract(apromore_Time)
 
 
-def test_apromore::time_constructor_exists():
-    assert callable(apromore::Time.__init__)
+def test_apromore_time_constructor_exists():
+    assert callable(apromore_Time.__init__)
 
 
-def test_apromore::time_constructor_args():
-    sig = inspect.signature(apromore::Time.__init__)
+def test_apromore_time_constructor_args():
+    sig = inspect.signature(apromore_Time.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::message_is_not_abstract():
-    assert not inspect.isabstract(apromore::Message)
+def test_apromore_message_is_not_abstract():
+    assert not inspect.isabstract(apromore_Message)
 
 
-def test_apromore::message_constructor_exists():
-    assert callable(apromore::Message.__init__)
+def test_apromore_message_constructor_exists():
+    assert callable(apromore_Message.__init__)
 
 
-def test_apromore::message_constructor_args():
-    sig = inspect.signature(apromore::Message.__init__)
+def test_apromore_message_constructor_args():
+    sig = inspect.signature(apromore_Message.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -375,30 +375,30 @@ def test_work_constructor_args():
 
 
 
-def test_apromore::task_is_not_abstract():
-    assert not inspect.isabstract(apromore::Task)
+def test_apromore_task_is_not_abstract():
+    assert not inspect.isabstract(apromore_Task)
 
 
-def test_apromore::task_constructor_exists():
-    assert callable(apromore::Task.__init__)
+def test_apromore_task_constructor_exists():
+    assert callable(apromore_Task.__init__)
 
 
-def test_apromore::task_constructor_args():
-    sig = inspect.signature(apromore::Task.__init__)
+def test_apromore_task_constructor_args():
+    sig = inspect.signature(apromore_Task.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::event_is_not_abstract():
-    assert not inspect.isabstract(apromore::Event)
+def test_apromore_event_is_not_abstract():
+    assert not inspect.isabstract(apromore_Event)
 
 
-def test_apromore::event_constructor_exists():
-    assert callable(apromore::Event.__init__)
+def test_apromore_event_constructor_exists():
+    assert callable(apromore_Event.__init__)
 
 
-def test_apromore::event_constructor_args():
-    sig = inspect.signature(apromore::Event.__init__)
+def test_apromore_event_constructor_args():
+    sig = inspect.signature(apromore_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -417,73 +417,73 @@ def test_node_constructor_args():
 
 
 
-def test_apromore::routing_is_not_abstract():
-    assert not inspect.isabstract(apromore::Routing)
+def test_apromore_routing_is_not_abstract():
+    assert not inspect.isabstract(apromore_Routing)
 
 
-def test_apromore::routing_constructor_exists():
-    assert callable(apromore::Routing.__init__)
+def test_apromore_routing_constructor_exists():
+    assert callable(apromore_Routing.__init__)
 
 
-def test_apromore::routing_constructor_args():
-    sig = inspect.signature(apromore::Routing.__init__)
+def test_apromore_routing_constructor_args():
+    sig = inspect.signature(apromore_Routing.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::work_is_not_abstract():
-    assert not inspect.isabstract(apromore::Work)
+def test_apromore_work_is_not_abstract():
+    assert not inspect.isabstract(apromore_Work)
 
 
-def test_apromore::work_constructor_exists():
-    assert callable(apromore::Work.__init__)
+def test_apromore_work_constructor_exists():
+    assert callable(apromore_Work.__init__)
 
 
-def test_apromore::work_constructor_args():
-    sig = inspect.signature(apromore::Work.__init__)
+def test_apromore_work_constructor_args():
+    sig = inspect.signature(apromore_Work.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_apromore::edge_is_not_abstract():
-    assert not inspect.isabstract(apromore::Edge)
+def test_apromore_edge_is_not_abstract():
+    assert not inspect.isabstract(apromore_Edge)
 
 
-def test_apromore::edge_constructor_exists():
-    assert callable(apromore::Edge.__init__)
+def test_apromore_edge_constructor_exists():
+    assert callable(apromore_Edge.__init__)
 
 
-def test_apromore::edge_constructor_args():
-    sig = inspect.signature(apromore::Edge.__init__)
+def test_apromore_edge_constructor_args():
+    sig = inspect.signature(apromore_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "ident" in params, "Missing parameter 'ident'"
-    assert "condition" in params, "Missing parameter 'condition'"
     assert "default" in params, "Missing parameter 'default'"
+    assert "condition" in params, "Missing parameter 'condition'"
 
-def test_apromore::edge_has_ident():
-    assert hasattr(apromore::Edge, "ident")
+def test_apromore_edge_has_ident():
+    assert hasattr(apromore_Edge, "ident")
     descriptor = None
-    for klass in apromore::Edge.__mro__:
+    for klass in apromore_Edge.__mro__:
         if "ident" in klass.__dict__:
             descriptor = klass.__dict__["ident"]
             break
     assert isinstance(descriptor, property)
 
-def test_apromore::edge_has_condition():
-    assert hasattr(apromore::Edge, "condition")
+def test_apromore_edge_has_default():
+    assert hasattr(apromore_Edge, "default")
     descriptor = None
-    for klass in apromore::Edge.__mro__:
-        if "condition" in klass.__dict__:
-            descriptor = klass.__dict__["condition"]
+    for klass in apromore_Edge.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_apromore::edge_has_default():
-    assert hasattr(apromore::Edge, "default")
+def test_apromore_edge_has_condition():
+    assert hasattr(apromore_Edge, "condition")
     descriptor = None
-    for klass in apromore::Edge.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
+    for klass in apromore_Edge.__mro__:
+        if "condition" in klass.__dict__:
+            descriptor = klass.__dict__["condition"]
             break
     assert isinstance(descriptor, property)
 
@@ -502,97 +502,97 @@ safe_text = st.text(
 Join_strategy = st.builds(
     Join,
 )
-apromore::XORJoin_strategy = st.builds(
-    apromore::XORJoin,
+apromore_XORJoin_strategy = st.builds(
+    apromore_XORJoin,
 )
-apromore::ANDJoin_strategy = st.builds(
-    apromore::ANDJoin,
+apromore_ANDJoin_strategy = st.builds(
+    apromore_ANDJoin,
 )
-apromore::ORJoin_strategy = st.builds(
-    apromore::ORJoin,
+apromore_ORJoin_strategy = st.builds(
+    apromore_ORJoin,
 )
 Split_strategy = st.builds(
     Split,
 )
-apromore::XORSplit_strategy = st.builds(
-    apromore::XORSplit,
+apromore_ANDSplit_strategy = st.builds(
+    apromore_ANDSplit,
 )
-apromore::ANDSplit_strategy = st.builds(
-    apromore::ANDSplit,
+apromore_XORSplit_strategy = st.builds(
+    apromore_XORSplit,
 )
-apromore::ORSplit_strategy = st.builds(
-    apromore::ORSplit,
+apromore_ORSplit_strategy = st.builds(
+    apromore_ORSplit,
 )
-apromore::Node_strategy = st.builds(
-    apromore::Node,
+apromore_Node_strategy = st.builds(
+    apromore_Node,
+    name=
+        safe_text,
     configurable=
         st.booleans(),
     ident=
-        st.integers(),
-    name=
-        safe_text
+        st.integers()
 )
-apromore::Net_strategy = st.builds(
-    apromore::Net,
+apromore_Net_strategy = st.builds(
+    apromore_Net,
     ident=
         st.integers()
 )
-apromore::CanonicalProcess_strategy = st.builds(
-    apromore::CanonicalProcess,
+apromore_CanonicalProcess_strategy = st.builds(
+    apromore_CanonicalProcess,
+    uri=
+        safe_text,
     author=
         safe_text,
     version=
-        safe_text,
-    uri=
         safe_text
 )
 Routing_strategy = st.builds(
     Routing,
 )
-apromore::Join_strategy = st.builds(
-    apromore::Join,
+apromore_State_strategy = st.builds(
+    apromore_State,
 )
-apromore::State_strategy = st.builds(
-    apromore::State,
+apromore_Join_strategy = st.builds(
+    apromore_Join,
 )
-apromore::Split_strategy = st.builds(
-    apromore::Split,
+apromore_Split_strategy = st.builds(
+    apromore_Split,
 )
 Event_strategy = st.builds(
     Event,
 )
-apromore::Time_strategy = st.builds(
-    apromore::Time,
+apromore_Time_strategy = st.builds(
+    apromore_Time,
 )
-apromore::Message_strategy = st.builds(
-    apromore::Message,
+apromore_Message_strategy = st.builds(
+    apromore_Message,
 )
 Work_strategy = st.builds(
     Work,
 )
-apromore::Task_strategy = st.builds(
-    apromore::Task,
+apromore_Task_strategy = st.builds(
+    apromore_Task,
 )
-apromore::Event_strategy = st.builds(
-    apromore::Event,
+apromore_Event_strategy = st.builds(
+    apromore_Event,
 )
 Node_strategy = st.builds(
     Node,
 )
-apromore::Routing_strategy = st.builds(
-    apromore::Routing,
+apromore_Routing_strategy = st.builds(
+    apromore_Routing,
 )
-apromore::Work_strategy = st.builds(
-    apromore::Work,
+apromore_Work_strategy = st.builds(
+    apromore_Work,
 )
-apromore::Edge_strategy = st.builds(
-    apromore::Edge,
+apromore_Edge_strategy = st.builds(
+    apromore_Edge,
     ident=
         st.integers(),
-    condition=
-        safe_text,
     default=
-        st.booleans()
+        st.booleans(),
+    condition=
+        safe_text
 )
 
 @given(instance=Join_strategy)
@@ -600,232 +600,202 @@ apromore::Edge_strategy = st.builds(
 def test_join_instantiation(instance):
     assert isinstance(instance, Join)
 
-@given(instance=apromore::XORJoin_strategy)
+@given(instance=apromore_XORJoin_strategy)
 @settings(max_examples=50)
-def test_apromore::xorjoin_instantiation(instance):
-    assert isinstance(instance, apromore::XORJoin)
+def test_apromore_xorjoin_instantiation(instance):
+    assert isinstance(instance, apromore_XORJoin)
 
-@given(instance=apromore::ANDJoin_strategy)
+@given(instance=apromore_ANDJoin_strategy)
 @settings(max_examples=50)
-def test_apromore::andjoin_instantiation(instance):
-    assert isinstance(instance, apromore::ANDJoin)
+def test_apromore_andjoin_instantiation(instance):
+    assert isinstance(instance, apromore_ANDJoin)
 
-@given(instance=apromore::ORJoin_strategy)
+@given(instance=apromore_ORJoin_strategy)
 @settings(max_examples=50)
-def test_apromore::orjoin_instantiation(instance):
-    assert isinstance(instance, apromore::ORJoin)
+def test_apromore_orjoin_instantiation(instance):
+    assert isinstance(instance, apromore_ORJoin)
 
 @given(instance=Split_strategy)
 @settings(max_examples=50)
 def test_split_instantiation(instance):
     assert isinstance(instance, Split)
 
-@given(instance=apromore::XORSplit_strategy)
+@given(instance=apromore_ANDSplit_strategy)
 @settings(max_examples=50)
-def test_apromore::xorsplit_instantiation(instance):
-    assert isinstance(instance, apromore::XORSplit)
+def test_apromore_andsplit_instantiation(instance):
+    assert isinstance(instance, apromore_ANDSplit)
 
-@given(instance=apromore::ANDSplit_strategy)
+@given(instance=apromore_XORSplit_strategy)
 @settings(max_examples=50)
-def test_apromore::andsplit_instantiation(instance):
-    assert isinstance(instance, apromore::ANDSplit)
+def test_apromore_xorsplit_instantiation(instance):
+    assert isinstance(instance, apromore_XORSplit)
 
-@given(instance=apromore::ORSplit_strategy)
+@given(instance=apromore_ORSplit_strategy)
 @settings(max_examples=50)
-def test_apromore::orsplit_instantiation(instance):
-    assert isinstance(instance, apromore::ORSplit)
+def test_apromore_orsplit_instantiation(instance):
+    assert isinstance(instance, apromore_ORSplit)
 
-@given(instance=apromore::Node_strategy)
+@given(instance=apromore_Node_strategy)
 @settings(max_examples=50)
-def test_apromore::node_instantiation(instance):
-    assert isinstance(instance, apromore::Node)
-
-@given(instance=apromore::Node_strategy)
-def test_apromore::node_configurable_type(instance):
-    assert isinstance(instance.configurable, bool)
+def test_apromore_node_instantiation(instance):
+    assert isinstance(instance, apromore_Node)
 
 
-@given(instance=apromore::Node_strategy)
-def test_apromore::node_configurable_setter(instance):
-    original = instance.configurable
-    instance.configurable = original
-    assert instance.configurable == original
 
-@given(instance=apromore::Node_strategy)
-def test_apromore::node_ident_type(instance):
-    assert isinstance(instance.ident, int)
-
-
-@given(instance=apromore::Node_strategy)
-def test_apromore::node_ident_setter(instance):
-    original = instance.ident
-    instance.ident = original
-    assert instance.ident == original
-
-@given(instance=apromore::Node_strategy)
-def test_apromore::node_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=apromore::Node_strategy)
-def test_apromore::node_name_setter(instance):
+@given(instance=apromore_Node_strategy)
+def test_apromore_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=apromore::Net_strategy)
-@settings(max_examples=50)
-def test_apromore::net_instantiation(instance):
-    assert isinstance(instance, apromore::Net)
-
-@given(instance=apromore::Net_strategy)
-def test_apromore::net_ident_type(instance):
-    assert isinstance(instance.ident, int)
 
 
-@given(instance=apromore::Net_strategy)
-def test_apromore::net_ident_setter(instance):
+@given(instance=apromore_Node_strategy)
+def test_apromore_node_configurable_setter(instance):
+    original = instance.configurable
+    instance.configurable = original
+    assert instance.configurable == original
+
+
+
+@given(instance=apromore_Node_strategy)
+def test_apromore_node_ident_setter(instance):
     original = instance.ident
     instance.ident = original
     assert instance.ident == original
 
-@given(instance=apromore::CanonicalProcess_strategy)
+@given(instance=apromore_Net_strategy)
 @settings(max_examples=50)
-def test_apromore::canonicalprocess_instantiation(instance):
-    assert isinstance(instance, apromore::CanonicalProcess)
-
-@given(instance=apromore::CanonicalProcess_strategy)
-def test_apromore::canonicalprocess_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_apromore_net_instantiation(instance):
+    assert isinstance(instance, apromore_Net)
 
 
-@given(instance=apromore::CanonicalProcess_strategy)
-def test_apromore::canonicalprocess_author_setter(instance):
+
+@given(instance=apromore_Net_strategy)
+def test_apromore_net_ident_setter(instance):
+    original = instance.ident
+    instance.ident = original
+    assert instance.ident == original
+
+@given(instance=apromore_CanonicalProcess_strategy)
+@settings(max_examples=50)
+def test_apromore_canonicalprocess_instantiation(instance):
+    assert isinstance(instance, apromore_CanonicalProcess)
+
+
+
+@given(instance=apromore_CanonicalProcess_strategy)
+def test_apromore_canonicalprocess_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
+
+
+
+@given(instance=apromore_CanonicalProcess_strategy)
+def test_apromore_canonicalprocess_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=apromore::CanonicalProcess_strategy)
-def test_apromore::canonicalprocess_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=apromore::CanonicalProcess_strategy)
-def test_apromore::canonicalprocess_version_setter(instance):
+@given(instance=apromore_CanonicalProcess_strategy)
+def test_apromore_canonicalprocess_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
-
-@given(instance=apromore::CanonicalProcess_strategy)
-def test_apromore::canonicalprocess_uri_type(instance):
-    assert isinstance(instance.uri, str)
-
-
-@given(instance=apromore::CanonicalProcess_strategy)
-def test_apromore::canonicalprocess_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
 
 @given(instance=Routing_strategy)
 @settings(max_examples=50)
 def test_routing_instantiation(instance):
     assert isinstance(instance, Routing)
 
-@given(instance=apromore::Join_strategy)
+@given(instance=apromore_State_strategy)
 @settings(max_examples=50)
-def test_apromore::join_instantiation(instance):
-    assert isinstance(instance, apromore::Join)
+def test_apromore_state_instantiation(instance):
+    assert isinstance(instance, apromore_State)
 
-@given(instance=apromore::State_strategy)
+@given(instance=apromore_Join_strategy)
 @settings(max_examples=50)
-def test_apromore::state_instantiation(instance):
-    assert isinstance(instance, apromore::State)
+def test_apromore_join_instantiation(instance):
+    assert isinstance(instance, apromore_Join)
 
-@given(instance=apromore::Split_strategy)
+@given(instance=apromore_Split_strategy)
 @settings(max_examples=50)
-def test_apromore::split_instantiation(instance):
-    assert isinstance(instance, apromore::Split)
+def test_apromore_split_instantiation(instance):
+    assert isinstance(instance, apromore_Split)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=apromore::Time_strategy)
+@given(instance=apromore_Time_strategy)
 @settings(max_examples=50)
-def test_apromore::time_instantiation(instance):
-    assert isinstance(instance, apromore::Time)
+def test_apromore_time_instantiation(instance):
+    assert isinstance(instance, apromore_Time)
 
-@given(instance=apromore::Message_strategy)
+@given(instance=apromore_Message_strategy)
 @settings(max_examples=50)
-def test_apromore::message_instantiation(instance):
-    assert isinstance(instance, apromore::Message)
+def test_apromore_message_instantiation(instance):
+    assert isinstance(instance, apromore_Message)
 
 @given(instance=Work_strategy)
 @settings(max_examples=50)
 def test_work_instantiation(instance):
     assert isinstance(instance, Work)
 
-@given(instance=apromore::Task_strategy)
+@given(instance=apromore_Task_strategy)
 @settings(max_examples=50)
-def test_apromore::task_instantiation(instance):
-    assert isinstance(instance, apromore::Task)
+def test_apromore_task_instantiation(instance):
+    assert isinstance(instance, apromore_Task)
 
-@given(instance=apromore::Event_strategy)
+@given(instance=apromore_Event_strategy)
 @settings(max_examples=50)
-def test_apromore::event_instantiation(instance):
-    assert isinstance(instance, apromore::Event)
+def test_apromore_event_instantiation(instance):
+    assert isinstance(instance, apromore_Event)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=apromore::Routing_strategy)
+@given(instance=apromore_Routing_strategy)
 @settings(max_examples=50)
-def test_apromore::routing_instantiation(instance):
-    assert isinstance(instance, apromore::Routing)
+def test_apromore_routing_instantiation(instance):
+    assert isinstance(instance, apromore_Routing)
 
-@given(instance=apromore::Work_strategy)
+@given(instance=apromore_Work_strategy)
 @settings(max_examples=50)
-def test_apromore::work_instantiation(instance):
-    assert isinstance(instance, apromore::Work)
+def test_apromore_work_instantiation(instance):
+    assert isinstance(instance, apromore_Work)
 
-@given(instance=apromore::Edge_strategy)
+@given(instance=apromore_Edge_strategy)
 @settings(max_examples=50)
-def test_apromore::edge_instantiation(instance):
-    assert isinstance(instance, apromore::Edge)
-
-@given(instance=apromore::Edge_strategy)
-def test_apromore::edge_ident_type(instance):
-    assert isinstance(instance.ident, int)
+def test_apromore_edge_instantiation(instance):
+    assert isinstance(instance, apromore_Edge)
 
 
-@given(instance=apromore::Edge_strategy)
-def test_apromore::edge_ident_setter(instance):
+
+@given(instance=apromore_Edge_strategy)
+def test_apromore_edge_ident_setter(instance):
     original = instance.ident
     instance.ident = original
     assert instance.ident == original
 
-@given(instance=apromore::Edge_strategy)
-def test_apromore::edge_condition_type(instance):
-    assert isinstance(instance.condition, str)
 
 
-@given(instance=apromore::Edge_strategy)
-def test_apromore::edge_condition_setter(instance):
-    original = instance.condition
-    instance.condition = original
-    assert instance.condition == original
-
-@given(instance=apromore::Edge_strategy)
-def test_apromore::edge_default_type(instance):
-    assert isinstance(instance.default, bool)
-
-
-@given(instance=apromore::Edge_strategy)
-def test_apromore::edge_default_setter(instance):
+@given(instance=apromore_Edge_strategy)
+def test_apromore_edge_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
+
+
+
+@given(instance=apromore_Edge_strategy)
+def test_apromore_edge_condition_setter(instance):
+    original = instance.condition
+    instance.condition = original
+    assert instance.condition == original

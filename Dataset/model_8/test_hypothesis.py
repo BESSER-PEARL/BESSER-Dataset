@@ -3,41 +3,41 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TrgNetContentElement,
-    jointPackage::PetriNet2PNML::TrgTransition,
-    jointPackage::PetriNet2PNML::TrgPlace,
-    jointPackage::PetriNet2PNML::TrgLocatedElement,
+    jointPackage_PetriNet2PNML_TrgTransition,
+    jointPackage_PetriNet2PNML_TrgPlace,
+    jointPackage_PetriNet2PNML_TrgLocatedElement,
     TrgNetContent,
     TrgLabeledElement,
-    jointPackage::PetriNet2PNML::TrgName,
+    jointPackage_PetriNet2PNML_TrgName,
     TrgIdedElement,
-    jointPackage::PetriNet2PNML::TrgNetElement,
-    jointPackage::PetriNet2PNML::TrgNetContentElement,
-    jointPackage::PetriNet2PNML::TrgArc,
+    jointPackage_PetriNet2PNML_TrgNetContentElement,
+    jointPackage_PetriNet2PNML_TrgArc,
+    jointPackage_PetriNet2PNML_TrgNetElement,
     SrcElement,
-    jointPackage::PetriNet2PNML::SrcPlace,
+    jointPackage_PetriNet2PNML_SrcPlace,
     TrgLocatedElement,
-    jointPackage::PetriNet2PNML::TrgIdedElement,
-    jointPackage::PetriNet2PNML::TrgNetContent,
-    jointPackage::PetriNet2PNML::TrgURI,
-    jointPackage::PetriNet2PNML::TrgLabeledElement,
-    jointPackage::PetriNet2PNML::TrgLabel,
+    jointPackage_PetriNet2PNML_TrgNetContent,
+    jointPackage_PetriNet2PNML_TrgLabeledElement,
+    jointPackage_PetriNet2PNML_TrgIdedElement,
+    jointPackage_PetriNet2PNML_TrgURI,
+    jointPackage_PetriNet2PNML_TrgLabel,
     SrcArc,
-    jointPackage::PetriNet2PNML::SrcPlaceToTransition,
-    jointPackage::PetriNet2PNML::SrcTransitionToPlace,
-    jointPackage::PetriNet2PNML::SrcTransition,
+    jointPackage_PetriNet2PNML_SrcPlaceToTransition,
+    jointPackage_PetriNet2PNML_SrcTransitionToPlace,
+    jointPackage_PetriNet2PNML_SrcTransition,
     SrcNamedElement,
-    jointPackage::PetriNet2PNML::SrcArc,
-    jointPackage::PetriNet2PNML::SrcElement,
+    jointPackage_PetriNet2PNML_SrcArc,
+    jointPackage_PetriNet2PNML_SrcElement,
     SrcLocatedElement,
-    jointPackage::PetriNet2PNML::SrcNamedElement,
-    jointPackage::PetriNet2PNML::SrcLocatedElement,
-    jointPackage::PetriNet2PNML::TrgPNMLDocument,
-    jointPackage::PetriNet2PNML::SrcPetriNet,
-    jointPackage::PetriNet2PNML::JointMM,
+    jointPackage_PetriNet2PNML_SrcNamedElement,
+    jointPackage_PetriNet2PNML_SrcLocatedElement,
+    jointPackage_PetriNet2PNML_TrgPNMLDocument,
+    jointPackage_PetriNet2PNML_SrcPetriNet,
+    jointPackage_PetriNet2PNML_JointMM,
 )
 
 # =============================================================================
@@ -60,51 +60,51 @@ def test_trgnetcontentelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::trgtransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgTransition)
+def test_jointpackage_petrinet2pnml_trgtransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgTransition)
 
 
-def test_jointpackage::petrinet2pnml::trgtransition_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgTransition.__init__)
+def test_jointpackage_petrinet2pnml_trgtransition_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgTransition.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgtransition_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgTransition.__init__)
+def test_jointpackage_petrinet2pnml_trgtransition_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::trgplace_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgPlace)
+def test_jointpackage_petrinet2pnml_trgplace_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgPlace)
 
 
-def test_jointpackage::petrinet2pnml::trgplace_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgPlace.__init__)
+def test_jointpackage_petrinet2pnml_trgplace_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgPlace.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgplace_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgPlace.__init__)
+def test_jointpackage_petrinet2pnml_trgplace_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::trglocatedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgLocatedElement)
+def test_jointpackage_petrinet2pnml_trglocatedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgLocatedElement)
 
 
-def test_jointpackage::petrinet2pnml::trglocatedelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgLocatedElement.__init__)
+def test_jointpackage_petrinet2pnml_trglocatedelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgLocatedElement.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trglocatedelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgLocatedElement.__init__)
+def test_jointpackage_petrinet2pnml_trglocatedelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgLocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_jointpackage::petrinet2pnml::trglocatedelement_has_location():
-    assert hasattr(jointPackage::PetriNet2PNML::TrgLocatedElement, "location")
+def test_jointpackage_petrinet2pnml_trglocatedelement_has_location():
+    assert hasattr(jointPackage_PetriNet2PNML_TrgLocatedElement, "location")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::TrgLocatedElement.__mro__:
+    for klass in jointPackage_PetriNet2PNML_TrgLocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -140,16 +140,16 @@ def test_trglabeledelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::trgname_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgName)
+def test_jointpackage_petrinet2pnml_trgname_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgName)
 
 
-def test_jointpackage::petrinet2pnml::trgname_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgName.__init__)
+def test_jointpackage_petrinet2pnml_trgname_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgName.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgname_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgName.__init__)
+def test_jointpackage_petrinet2pnml_trgname_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgName.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -168,44 +168,44 @@ def test_trgidedelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::trgnetelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgNetElement)
+def test_jointpackage_petrinet2pnml_trgnetcontentelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgNetContentElement)
 
 
-def test_jointpackage::petrinet2pnml::trgnetelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgNetElement.__init__)
+def test_jointpackage_petrinet2pnml_trgnetcontentelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgNetContentElement.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgnetelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgNetElement.__init__)
+def test_jointpackage_petrinet2pnml_trgnetcontentelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgNetContentElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::trgnetcontentelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgNetContentElement)
+def test_jointpackage_petrinet2pnml_trgarc_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgArc)
 
 
-def test_jointpackage::petrinet2pnml::trgnetcontentelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgNetContentElement.__init__)
+def test_jointpackage_petrinet2pnml_trgarc_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgArc.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgnetcontentelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgNetContentElement.__init__)
+def test_jointpackage_petrinet2pnml_trgarc_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::trgarc_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgArc)
+def test_jointpackage_petrinet2pnml_trgnetelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgNetElement)
 
 
-def test_jointpackage::petrinet2pnml::trgarc_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgArc.__init__)
+def test_jointpackage_petrinet2pnml_trgnetelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgNetElement.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgarc_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgArc.__init__)
+def test_jointpackage_petrinet2pnml_trgnetelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgNetElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,16 +224,16 @@ def test_srcelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::srcplace_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcPlace)
+def test_jointpackage_petrinet2pnml_srcplace_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcPlace)
 
 
-def test_jointpackage::petrinet2pnml::srcplace_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcPlace.__init__)
+def test_jointpackage_petrinet2pnml_srcplace_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcPlace.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srcplace_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcPlace.__init__)
+def test_jointpackage_petrinet2pnml_srcplace_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcPlace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,23 +252,51 @@ def test_trglocatedelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::trgidedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgIdedElement)
+def test_jointpackage_petrinet2pnml_trgnetcontent_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgNetContent)
 
 
-def test_jointpackage::petrinet2pnml::trgidedelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgIdedElement.__init__)
+def test_jointpackage_petrinet2pnml_trgnetcontent_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgNetContent.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgidedelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgIdedElement.__init__)
+def test_jointpackage_petrinet2pnml_trgnetcontent_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgNetContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_petrinet2pnml_trglabeledelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgLabeledElement)
+
+
+def test_jointpackage_petrinet2pnml_trglabeledelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgLabeledElement.__init__)
+
+
+def test_jointpackage_petrinet2pnml_trglabeledelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgLabeledElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_petrinet2pnml_trgidedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgIdedElement)
+
+
+def test_jointpackage_petrinet2pnml_trgidedelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgIdedElement.__init__)
+
+
+def test_jointpackage_petrinet2pnml_trgidedelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgIdedElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_jointpackage::petrinet2pnml::trgidedelement_has_id():
-    assert hasattr(jointPackage::PetriNet2PNML::TrgIdedElement, "id")
+def test_jointpackage_petrinet2pnml_trgidedelement_has_id():
+    assert hasattr(jointPackage_PetriNet2PNML_TrgIdedElement, "id")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::TrgIdedElement.__mro__:
+    for klass in jointPackage_PetriNet2PNML_TrgIdedElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -276,37 +304,23 @@ def test_jointpackage::petrinet2pnml::trgidedelement_has_id():
 
 
 
-def test_jointpackage::petrinet2pnml::trgnetcontent_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgNetContent)
+def test_jointpackage_petrinet2pnml_trguri_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgURI)
 
 
-def test_jointpackage::petrinet2pnml::trgnetcontent_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgNetContent.__init__)
+def test_jointpackage_petrinet2pnml_trguri_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgURI.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgnetcontent_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgNetContent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::petrinet2pnml::trguri_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgURI)
-
-
-def test_jointpackage::petrinet2pnml::trguri_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgURI.__init__)
-
-
-def test_jointpackage::petrinet2pnml::trguri_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgURI.__init__)
+def test_jointpackage_petrinet2pnml_trguri_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgURI.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_jointpackage::petrinet2pnml::trguri_has_value():
-    assert hasattr(jointPackage::PetriNet2PNML::TrgURI, "value")
+def test_jointpackage_petrinet2pnml_trguri_has_value():
+    assert hasattr(jointPackage_PetriNet2PNML_TrgURI, "value")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::TrgURI.__mro__:
+    for klass in jointPackage_PetriNet2PNML_TrgURI.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -314,37 +328,23 @@ def test_jointpackage::petrinet2pnml::trguri_has_value():
 
 
 
-def test_jointpackage::petrinet2pnml::trglabeledelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgLabeledElement)
+def test_jointpackage_petrinet2pnml_trglabel_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgLabel)
 
 
-def test_jointpackage::petrinet2pnml::trglabeledelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgLabeledElement.__init__)
+def test_jointpackage_petrinet2pnml_trglabel_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgLabel.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trglabeledelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgLabeledElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::petrinet2pnml::trglabel_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgLabel)
-
-
-def test_jointpackage::petrinet2pnml::trglabel_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgLabel.__init__)
-
-
-def test_jointpackage::petrinet2pnml::trglabel_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgLabel.__init__)
+def test_jointpackage_petrinet2pnml_trglabel_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgLabel.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_jointpackage::petrinet2pnml::trglabel_has_text():
-    assert hasattr(jointPackage::PetriNet2PNML::TrgLabel, "text")
+def test_jointpackage_petrinet2pnml_trglabel_has_text():
+    assert hasattr(jointPackage_PetriNet2PNML_TrgLabel, "text")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::TrgLabel.__mro__:
+    for klass in jointPackage_PetriNet2PNML_TrgLabel.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -366,44 +366,44 @@ def test_srcarc_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::srcplacetotransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcPlaceToTransition)
+def test_jointpackage_petrinet2pnml_srcplacetotransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcPlaceToTransition)
 
 
-def test_jointpackage::petrinet2pnml::srcplacetotransition_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcPlaceToTransition.__init__)
+def test_jointpackage_petrinet2pnml_srcplacetotransition_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcPlaceToTransition.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srcplacetotransition_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcPlaceToTransition.__init__)
+def test_jointpackage_petrinet2pnml_srcplacetotransition_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcPlaceToTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::srctransitiontoplace_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcTransitionToPlace)
+def test_jointpackage_petrinet2pnml_srctransitiontoplace_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcTransitionToPlace)
 
 
-def test_jointpackage::petrinet2pnml::srctransitiontoplace_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcTransitionToPlace.__init__)
+def test_jointpackage_petrinet2pnml_srctransitiontoplace_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcTransitionToPlace.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srctransitiontoplace_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcTransitionToPlace.__init__)
+def test_jointpackage_petrinet2pnml_srctransitiontoplace_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcTransitionToPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::srctransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcTransition)
+def test_jointpackage_petrinet2pnml_srctransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcTransition)
 
 
-def test_jointpackage::petrinet2pnml::srctransition_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcTransition.__init__)
+def test_jointpackage_petrinet2pnml_srctransition_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcTransition.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srctransition_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcTransition.__init__)
+def test_jointpackage_petrinet2pnml_srctransition_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -422,23 +422,23 @@ def test_srcnamedelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::srcarc_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcArc)
+def test_jointpackage_petrinet2pnml_srcarc_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcArc)
 
 
-def test_jointpackage::petrinet2pnml::srcarc_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcArc.__init__)
+def test_jointpackage_petrinet2pnml_srcarc_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcArc.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srcarc_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcArc.__init__)
+def test_jointpackage_petrinet2pnml_srcarc_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_jointpackage::petrinet2pnml::srcarc_has_weight():
-    assert hasattr(jointPackage::PetriNet2PNML::SrcArc, "weight")
+def test_jointpackage_petrinet2pnml_srcarc_has_weight():
+    assert hasattr(jointPackage_PetriNet2PNML_SrcArc, "weight")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::SrcArc.__mro__:
+    for klass in jointPackage_PetriNet2PNML_SrcArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -446,16 +446,16 @@ def test_jointpackage::petrinet2pnml::srcarc_has_weight():
 
 
 
-def test_jointpackage::petrinet2pnml::srcelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcElement)
+def test_jointpackage_petrinet2pnml_srcelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcElement)
 
 
-def test_jointpackage::petrinet2pnml::srcelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcElement.__init__)
+def test_jointpackage_petrinet2pnml_srcelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcElement.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srcelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcElement.__init__)
+def test_jointpackage_petrinet2pnml_srcelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -474,23 +474,23 @@ def test_srclocatedelement_constructor_args():
 
 
 
-def test_jointpackage::petrinet2pnml::srcnamedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcNamedElement)
+def test_jointpackage_petrinet2pnml_srcnamedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcNamedElement)
 
 
-def test_jointpackage::petrinet2pnml::srcnamedelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcNamedElement.__init__)
+def test_jointpackage_petrinet2pnml_srcnamedelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcNamedElement.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srcnamedelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcNamedElement.__init__)
+def test_jointpackage_petrinet2pnml_srcnamedelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::petrinet2pnml::srcnamedelement_has_name():
-    assert hasattr(jointPackage::PetriNet2PNML::SrcNamedElement, "name")
+def test_jointpackage_petrinet2pnml_srcnamedelement_has_name():
+    assert hasattr(jointPackage_PetriNet2PNML_SrcNamedElement, "name")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::SrcNamedElement.__mro__:
+    for klass in jointPackage_PetriNet2PNML_SrcNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -498,23 +498,23 @@ def test_jointpackage::petrinet2pnml::srcnamedelement_has_name():
 
 
 
-def test_jointpackage::petrinet2pnml::srclocatedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcLocatedElement)
+def test_jointpackage_petrinet2pnml_srclocatedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcLocatedElement)
 
 
-def test_jointpackage::petrinet2pnml::srclocatedelement_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcLocatedElement.__init__)
+def test_jointpackage_petrinet2pnml_srclocatedelement_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcLocatedElement.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srclocatedelement_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcLocatedElement.__init__)
+def test_jointpackage_petrinet2pnml_srclocatedelement_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcLocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_jointpackage::petrinet2pnml::srclocatedelement_has_location():
-    assert hasattr(jointPackage::PetriNet2PNML::SrcLocatedElement, "location")
+def test_jointpackage_petrinet2pnml_srclocatedelement_has_location():
+    assert hasattr(jointPackage_PetriNet2PNML_SrcLocatedElement, "location")
     descriptor = None
-    for klass in jointPackage::PetriNet2PNML::SrcLocatedElement.__mro__:
+    for klass in jointPackage_PetriNet2PNML_SrcLocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -522,44 +522,44 @@ def test_jointpackage::petrinet2pnml::srclocatedelement_has_location():
 
 
 
-def test_jointpackage::petrinet2pnml::trgpnmldocument_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::TrgPNMLDocument)
+def test_jointpackage_petrinet2pnml_trgpnmldocument_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_TrgPNMLDocument)
 
 
-def test_jointpackage::petrinet2pnml::trgpnmldocument_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::TrgPNMLDocument.__init__)
+def test_jointpackage_petrinet2pnml_trgpnmldocument_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_TrgPNMLDocument.__init__)
 
 
-def test_jointpackage::petrinet2pnml::trgpnmldocument_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::TrgPNMLDocument.__init__)
+def test_jointpackage_petrinet2pnml_trgpnmldocument_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_TrgPNMLDocument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::srcpetrinet_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::SrcPetriNet)
+def test_jointpackage_petrinet2pnml_srcpetrinet_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_SrcPetriNet)
 
 
-def test_jointpackage::petrinet2pnml::srcpetrinet_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::SrcPetriNet.__init__)
+def test_jointpackage_petrinet2pnml_srcpetrinet_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_SrcPetriNet.__init__)
 
 
-def test_jointpackage::petrinet2pnml::srcpetrinet_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::SrcPetriNet.__init__)
+def test_jointpackage_petrinet2pnml_srcpetrinet_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_SrcPetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::petrinet2pnml::jointmm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::PetriNet2PNML::JointMM)
+def test_jointpackage_petrinet2pnml_jointmm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_PetriNet2PNML_JointMM)
 
 
-def test_jointpackage::petrinet2pnml::jointmm_constructor_exists():
-    assert callable(jointPackage::PetriNet2PNML::JointMM.__init__)
+def test_jointpackage_petrinet2pnml_jointmm_constructor_exists():
+    assert callable(jointPackage_PetriNet2PNML_JointMM.__init__)
 
 
-def test_jointpackage::petrinet2pnml::jointmm_constructor_args():
-    sig = inspect.signature(jointPackage::PetriNet2PNML::JointMM.__init__)
+def test_jointpackage_petrinet2pnml_jointmm_constructor_args():
+    sig = inspect.signature(jointPackage_PetriNet2PNML_JointMM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -577,14 +577,14 @@ safe_text = st.text(
 TrgNetContentElement_strategy = st.builds(
     TrgNetContentElement,
 )
-jointPackage::PetriNet2PNML::TrgTransition_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgTransition,
+jointPackage_PetriNet2PNML_TrgTransition_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgTransition,
 )
-jointPackage::PetriNet2PNML::TrgPlace_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgPlace,
+jointPackage_PetriNet2PNML_TrgPlace_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgPlace,
 )
-jointPackage::PetriNet2PNML::TrgLocatedElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgLocatedElement,
+jointPackage_PetriNet2PNML_TrgLocatedElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgLocatedElement,
     location=
         safe_text
 )
@@ -594,95 +594,95 @@ TrgNetContent_strategy = st.builds(
 TrgLabeledElement_strategy = st.builds(
     TrgLabeledElement,
 )
-jointPackage::PetriNet2PNML::TrgName_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgName,
+jointPackage_PetriNet2PNML_TrgName_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgName,
 )
 TrgIdedElement_strategy = st.builds(
     TrgIdedElement,
 )
-jointPackage::PetriNet2PNML::TrgNetElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgNetElement,
+jointPackage_PetriNet2PNML_TrgNetContentElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgNetContentElement,
 )
-jointPackage::PetriNet2PNML::TrgNetContentElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgNetContentElement,
+jointPackage_PetriNet2PNML_TrgArc_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgArc,
 )
-jointPackage::PetriNet2PNML::TrgArc_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgArc,
+jointPackage_PetriNet2PNML_TrgNetElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgNetElement,
 )
 SrcElement_strategy = st.builds(
     SrcElement,
 )
-jointPackage::PetriNet2PNML::SrcPlace_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcPlace,
+jointPackage_PetriNet2PNML_SrcPlace_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcPlace,
 )
 TrgLocatedElement_strategy = st.builds(
     TrgLocatedElement,
 )
-jointPackage::PetriNet2PNML::TrgIdedElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgIdedElement,
+jointPackage_PetriNet2PNML_TrgNetContent_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgNetContent,
+)
+jointPackage_PetriNet2PNML_TrgLabeledElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgLabeledElement,
+)
+jointPackage_PetriNet2PNML_TrgIdedElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgIdedElement,
     id=
         safe_text
 )
-jointPackage::PetriNet2PNML::TrgNetContent_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgNetContent,
-)
-jointPackage::PetriNet2PNML::TrgURI_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgURI,
+jointPackage_PetriNet2PNML_TrgURI_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgURI,
     value=
         safe_text
 )
-jointPackage::PetriNet2PNML::TrgLabeledElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgLabeledElement,
-)
-jointPackage::PetriNet2PNML::TrgLabel_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgLabel,
+jointPackage_PetriNet2PNML_TrgLabel_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgLabel,
     text=
         safe_text
 )
 SrcArc_strategy = st.builds(
     SrcArc,
 )
-jointPackage::PetriNet2PNML::SrcPlaceToTransition_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcPlaceToTransition,
+jointPackage_PetriNet2PNML_SrcPlaceToTransition_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcPlaceToTransition,
 )
-jointPackage::PetriNet2PNML::SrcTransitionToPlace_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcTransitionToPlace,
+jointPackage_PetriNet2PNML_SrcTransitionToPlace_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcTransitionToPlace,
 )
-jointPackage::PetriNet2PNML::SrcTransition_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcTransition,
+jointPackage_PetriNet2PNML_SrcTransition_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcTransition,
 )
 SrcNamedElement_strategy = st.builds(
     SrcNamedElement,
 )
-jointPackage::PetriNet2PNML::SrcArc_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcArc,
+jointPackage_PetriNet2PNML_SrcArc_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcArc,
     weight=
         st.integers()
 )
-jointPackage::PetriNet2PNML::SrcElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcElement,
+jointPackage_PetriNet2PNML_SrcElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcElement,
 )
 SrcLocatedElement_strategy = st.builds(
     SrcLocatedElement,
 )
-jointPackage::PetriNet2PNML::SrcNamedElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcNamedElement,
+jointPackage_PetriNet2PNML_SrcNamedElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcNamedElement,
     name=
         safe_text
 )
-jointPackage::PetriNet2PNML::SrcLocatedElement_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcLocatedElement,
+jointPackage_PetriNet2PNML_SrcLocatedElement_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcLocatedElement,
     location=
         safe_text
 )
-jointPackage::PetriNet2PNML::TrgPNMLDocument_strategy = st.builds(
-    jointPackage::PetriNet2PNML::TrgPNMLDocument,
+jointPackage_PetriNet2PNML_TrgPNMLDocument_strategy = st.builds(
+    jointPackage_PetriNet2PNML_TrgPNMLDocument,
 )
-jointPackage::PetriNet2PNML::SrcPetriNet_strategy = st.builds(
-    jointPackage::PetriNet2PNML::SrcPetriNet,
+jointPackage_PetriNet2PNML_SrcPetriNet_strategy = st.builds(
+    jointPackage_PetriNet2PNML_SrcPetriNet,
 )
-jointPackage::PetriNet2PNML::JointMM_strategy = st.builds(
-    jointPackage::PetriNet2PNML::JointMM,
+jointPackage_PetriNet2PNML_JointMM_strategy = st.builds(
+    jointPackage_PetriNet2PNML_JointMM,
 )
 
 @given(instance=TrgNetContentElement_strategy)
@@ -690,28 +690,25 @@ jointPackage::PetriNet2PNML::JointMM_strategy = st.builds(
 def test_trgnetcontentelement_instantiation(instance):
     assert isinstance(instance, TrgNetContentElement)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgTransition_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgtransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgTransition)
+def test_jointpackage_petrinet2pnml_trgtransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgTransition)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgPlace_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgPlace_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgplace_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgPlace)
+def test_jointpackage_petrinet2pnml_trgplace_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgPlace)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgLocatedElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgLocatedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trglocatedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgLocatedElement)
-
-@given(instance=jointPackage::PetriNet2PNML::TrgLocatedElement_strategy)
-def test_jointpackage::petrinet2pnml::trglocatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_jointpackage_petrinet2pnml_trglocatedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgLocatedElement)
 
 
-@given(instance=jointPackage::PetriNet2PNML::TrgLocatedElement_strategy)
-def test_jointpackage::petrinet2pnml::trglocatedelement_location_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_TrgLocatedElement_strategy)
+def test_jointpackage_petrinet2pnml_trglocatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
@@ -726,100 +723,91 @@ def test_trgnetcontent_instantiation(instance):
 def test_trglabeledelement_instantiation(instance):
     assert isinstance(instance, TrgLabeledElement)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgName_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgName_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgname_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgName)
+def test_jointpackage_petrinet2pnml_trgname_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgName)
 
 @given(instance=TrgIdedElement_strategy)
 @settings(max_examples=50)
 def test_trgidedelement_instantiation(instance):
     assert isinstance(instance, TrgIdedElement)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgNetElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgNetContentElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgnetelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgNetElement)
+def test_jointpackage_petrinet2pnml_trgnetcontentelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgNetContentElement)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgNetContentElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgArc_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgnetcontentelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgNetContentElement)
+def test_jointpackage_petrinet2pnml_trgarc_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgArc)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgArc_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgNetElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgarc_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgArc)
+def test_jointpackage_petrinet2pnml_trgnetelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgNetElement)
 
 @given(instance=SrcElement_strategy)
 @settings(max_examples=50)
 def test_srcelement_instantiation(instance):
     assert isinstance(instance, SrcElement)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcPlace_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcPlace_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srcplace_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcPlace)
+def test_jointpackage_petrinet2pnml_srcplace_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcPlace)
 
 @given(instance=TrgLocatedElement_strategy)
 @settings(max_examples=50)
 def test_trglocatedelement_instantiation(instance):
     assert isinstance(instance, TrgLocatedElement)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgIdedElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgNetContent_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgidedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgIdedElement)
+def test_jointpackage_petrinet2pnml_trgnetcontent_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgNetContent)
 
-@given(instance=jointPackage::PetriNet2PNML::TrgIdedElement_strategy)
-def test_jointpackage::petrinet2pnml::trgidedelement_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=jointPackage_PetriNet2PNML_TrgLabeledElement_strategy)
+@settings(max_examples=50)
+def test_jointpackage_petrinet2pnml_trglabeledelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgLabeledElement)
+
+@given(instance=jointPackage_PetriNet2PNML_TrgIdedElement_strategy)
+@settings(max_examples=50)
+def test_jointpackage_petrinet2pnml_trgidedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgIdedElement)
 
 
-@given(instance=jointPackage::PetriNet2PNML::TrgIdedElement_strategy)
-def test_jointpackage::petrinet2pnml::trgidedelement_id_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_TrgIdedElement_strategy)
+def test_jointpackage_petrinet2pnml_trgidedelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=jointPackage::PetriNet2PNML::TrgNetContent_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgURI_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgnetcontent_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgNetContent)
-
-@given(instance=jointPackage::PetriNet2PNML::TrgURI_strategy)
-@settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trguri_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgURI)
-
-@given(instance=jointPackage::PetriNet2PNML::TrgURI_strategy)
-def test_jointpackage::petrinet2pnml::trguri_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_jointpackage_petrinet2pnml_trguri_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgURI)
 
 
-@given(instance=jointPackage::PetriNet2PNML::TrgURI_strategy)
-def test_jointpackage::petrinet2pnml::trguri_value_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_TrgURI_strategy)
+def test_jointpackage_petrinet2pnml_trguri_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=jointPackage::PetriNet2PNML::TrgLabeledElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgLabel_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trglabeledelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgLabeledElement)
-
-@given(instance=jointPackage::PetriNet2PNML::TrgLabel_strategy)
-@settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trglabel_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgLabel)
-
-@given(instance=jointPackage::PetriNet2PNML::TrgLabel_strategy)
-def test_jointpackage::petrinet2pnml::trglabel_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_jointpackage_petrinet2pnml_trglabel_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgLabel)
 
 
-@given(instance=jointPackage::PetriNet2PNML::TrgLabel_strategy)
-def test_jointpackage::petrinet2pnml::trglabel_text_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_TrgLabel_strategy)
+def test_jointpackage_petrinet2pnml_trglabel_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -829,95 +817,86 @@ def test_jointpackage::petrinet2pnml::trglabel_text_setter(instance):
 def test_srcarc_instantiation(instance):
     assert isinstance(instance, SrcArc)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcPlaceToTransition_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcPlaceToTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srcplacetotransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcPlaceToTransition)
+def test_jointpackage_petrinet2pnml_srcplacetotransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcPlaceToTransition)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcTransitionToPlace_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcTransitionToPlace_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srctransitiontoplace_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcTransitionToPlace)
+def test_jointpackage_petrinet2pnml_srctransitiontoplace_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcTransitionToPlace)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcTransition_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srctransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcTransition)
+def test_jointpackage_petrinet2pnml_srctransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcTransition)
 
 @given(instance=SrcNamedElement_strategy)
 @settings(max_examples=50)
 def test_srcnamedelement_instantiation(instance):
     assert isinstance(instance, SrcNamedElement)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcArc_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcArc_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srcarc_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcArc)
-
-@given(instance=jointPackage::PetriNet2PNML::SrcArc_strategy)
-def test_jointpackage::petrinet2pnml::srcarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_jointpackage_petrinet2pnml_srcarc_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcArc)
 
 
-@given(instance=jointPackage::PetriNet2PNML::SrcArc_strategy)
-def test_jointpackage::petrinet2pnml::srcarc_weight_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_SrcArc_strategy)
+def test_jointpackage_petrinet2pnml_srcarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=jointPackage::PetriNet2PNML::SrcElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srcelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcElement)
+def test_jointpackage_petrinet2pnml_srcelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcElement)
 
 @given(instance=SrcLocatedElement_strategy)
 @settings(max_examples=50)
 def test_srclocatedelement_instantiation(instance):
     assert isinstance(instance, SrcLocatedElement)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcNamedElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcNamedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srcnamedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcNamedElement)
-
-@given(instance=jointPackage::PetriNet2PNML::SrcNamedElement_strategy)
-def test_jointpackage::petrinet2pnml::srcnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_petrinet2pnml_srcnamedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcNamedElement)
 
 
-@given(instance=jointPackage::PetriNet2PNML::SrcNamedElement_strategy)
-def test_jointpackage::petrinet2pnml::srcnamedelement_name_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_SrcNamedElement_strategy)
+def test_jointpackage_petrinet2pnml_srcnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::PetriNet2PNML::SrcLocatedElement_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcLocatedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srclocatedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcLocatedElement)
-
-@given(instance=jointPackage::PetriNet2PNML::SrcLocatedElement_strategy)
-def test_jointpackage::petrinet2pnml::srclocatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_jointpackage_petrinet2pnml_srclocatedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcLocatedElement)
 
 
-@given(instance=jointPackage::PetriNet2PNML::SrcLocatedElement_strategy)
-def test_jointpackage::petrinet2pnml::srclocatedelement_location_setter(instance):
+
+@given(instance=jointPackage_PetriNet2PNML_SrcLocatedElement_strategy)
+def test_jointpackage_petrinet2pnml_srclocatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=jointPackage::PetriNet2PNML::TrgPNMLDocument_strategy)
+@given(instance=jointPackage_PetriNet2PNML_TrgPNMLDocument_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::trgpnmldocument_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::TrgPNMLDocument)
+def test_jointpackage_petrinet2pnml_trgpnmldocument_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_TrgPNMLDocument)
 
-@given(instance=jointPackage::PetriNet2PNML::SrcPetriNet_strategy)
+@given(instance=jointPackage_PetriNet2PNML_SrcPetriNet_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::srcpetrinet_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::SrcPetriNet)
+def test_jointpackage_petrinet2pnml_srcpetrinet_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_SrcPetriNet)
 
-@given(instance=jointPackage::PetriNet2PNML::JointMM_strategy)
+@given(instance=jointPackage_PetriNet2PNML_JointMM_strategy)
 @settings(max_examples=50)
-def test_jointpackage::petrinet2pnml::jointmm_instantiation(instance):
-    assert isinstance(instance, jointPackage::PetriNet2PNML::JointMM)
+def test_jointpackage_petrinet2pnml_jointmm_instantiation(instance):
+    assert isinstance(instance, jointPackage_PetriNet2PNML_JointMM)

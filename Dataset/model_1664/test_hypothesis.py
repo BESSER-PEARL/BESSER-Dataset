@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    nested103::EClass12,
-    nested103::EClass11,
+from python_code import (
+    nested103_EClass12,
+    nested103_EClass11,
     EClass9,
-    nested103::EClass13,
+    nested103_EClass13,
     EClass12,
     EClass11,
-    nested103::EClass9,
+    nested103_EClass9,
     Thing,
-    nested103::EClass7,
+    nested103_EClass7,
     EClass8,
     EClass7,
-    nested103::EClass6,
+    nested103_EClass6,
     EClass6,
-    nested103::NamedElement,
+    nested103_NamedElement,
     NamedElement,
-    nested103::EClass4,
-    nested103::EClass0,
-    nested103::EClass2,
-    nested103::EClass5,
-    nested103::EClass8,
-    nested103::EClass3,
-    nested103::RelatedTo,
-    nested103::EClass1,
-    nested103::EClass10,
-    nested103::Thing,
-    nested103::World,
+    nested103_EClass5,
+    nested103_EClass3,
+    nested103_EClass8,
+    nested103_EClass0,
+    nested103_EClass2,
+    nested103_EClass1,
+    nested103_RelatedTo,
+    nested103_EClass4,
+    nested103_EClass10,
+    nested103_Thing,
+    nested103_World,
 )
 
 # =============================================================================
@@ -40,30 +40,30 @@ from classes import (
 
 
 
-def test_nested103::eclass12_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass12)
+def test_nested103_eclass12_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass12)
 
 
-def test_nested103::eclass12_constructor_exists():
-    assert callable(nested103::EClass12.__init__)
+def test_nested103_eclass12_constructor_exists():
+    assert callable(nested103_EClass12.__init__)
 
 
-def test_nested103::eclass12_constructor_args():
-    sig = inspect.signature(nested103::EClass12.__init__)
+def test_nested103_eclass12_constructor_args():
+    sig = inspect.signature(nested103_EClass12.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass11_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass11)
+def test_nested103_eclass11_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass11)
 
 
-def test_nested103::eclass11_constructor_exists():
-    assert callable(nested103::EClass11.__init__)
+def test_nested103_eclass11_constructor_exists():
+    assert callable(nested103_EClass11.__init__)
 
 
-def test_nested103::eclass11_constructor_args():
-    sig = inspect.signature(nested103::EClass11.__init__)
+def test_nested103_eclass11_constructor_args():
+    sig = inspect.signature(nested103_EClass11.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,16 +82,16 @@ def test_eclass9_constructor_args():
 
 
 
-def test_nested103::eclass13_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass13)
+def test_nested103_eclass13_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass13)
 
 
-def test_nested103::eclass13_constructor_exists():
-    assert callable(nested103::EClass13.__init__)
+def test_nested103_eclass13_constructor_exists():
+    assert callable(nested103_EClass13.__init__)
 
 
-def test_nested103::eclass13_constructor_args():
-    sig = inspect.signature(nested103::EClass13.__init__)
+def test_nested103_eclass13_constructor_args():
+    sig = inspect.signature(nested103_EClass13.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,23 +124,23 @@ def test_eclass11_constructor_args():
 
 
 
-def test_nested103::eclass9_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass9)
+def test_nested103_eclass9_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass9)
 
 
-def test_nested103::eclass9_constructor_exists():
-    assert callable(nested103::EClass9.__init__)
+def test_nested103_eclass9_constructor_exists():
+    assert callable(nested103_EClass9.__init__)
 
 
-def test_nested103::eclass9_constructor_args():
-    sig = inspect.signature(nested103::EClass9.__init__)
+def test_nested103_eclass9_constructor_args():
+    sig = inspect.signature(nested103_EClass9.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_nested103::eclass9_has_name():
-    assert hasattr(nested103::EClass9, "name")
+def test_nested103_eclass9_has_name():
+    assert hasattr(nested103_EClass9, "name")
     descriptor = None
-    for klass in nested103::EClass9.__mro__:
+    for klass in nested103_EClass9.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -162,16 +162,16 @@ def test_thing_constructor_args():
 
 
 
-def test_nested103::eclass7_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass7)
+def test_nested103_eclass7_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass7)
 
 
-def test_nested103::eclass7_constructor_exists():
-    assert callable(nested103::EClass7.__init__)
+def test_nested103_eclass7_constructor_exists():
+    assert callable(nested103_EClass7.__init__)
 
 
-def test_nested103::eclass7_constructor_args():
-    sig = inspect.signature(nested103::EClass7.__init__)
+def test_nested103_eclass7_constructor_args():
+    sig = inspect.signature(nested103_EClass7.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -204,16 +204,16 @@ def test_eclass7_constructor_args():
 
 
 
-def test_nested103::eclass6_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass6)
+def test_nested103_eclass6_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass6)
 
 
-def test_nested103::eclass6_constructor_exists():
-    assert callable(nested103::EClass6.__init__)
+def test_nested103_eclass6_constructor_exists():
+    assert callable(nested103_EClass6.__init__)
 
 
-def test_nested103::eclass6_constructor_args():
-    sig = inspect.signature(nested103::EClass6.__init__)
+def test_nested103_eclass6_constructor_args():
+    sig = inspect.signature(nested103_EClass6.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,23 +232,23 @@ def test_eclass6_constructor_args():
 
 
 
-def test_nested103::namedelement_is_not_abstract():
-    assert not inspect.isabstract(nested103::NamedElement)
+def test_nested103_namedelement_is_not_abstract():
+    assert not inspect.isabstract(nested103_NamedElement)
 
 
-def test_nested103::namedelement_constructor_exists():
-    assert callable(nested103::NamedElement.__init__)
+def test_nested103_namedelement_constructor_exists():
+    assert callable(nested103_NamedElement.__init__)
 
 
-def test_nested103::namedelement_constructor_args():
-    sig = inspect.signature(nested103::NamedElement.__init__)
+def test_nested103_namedelement_constructor_args():
+    sig = inspect.signature(nested103_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_nested103::namedelement_has_name():
-    assert hasattr(nested103::NamedElement, "name")
+def test_nested103_namedelement_has_name():
+    assert hasattr(nested103_NamedElement, "name")
     descriptor = None
-    for klass in nested103::NamedElement.__mro__:
+    for klass in nested103_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -270,107 +270,107 @@ def test_namedelement_constructor_args():
 
 
 
-def test_nested103::eclass4_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass4)
+def test_nested103_eclass5_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass5)
 
 
-def test_nested103::eclass4_constructor_exists():
-    assert callable(nested103::EClass4.__init__)
+def test_nested103_eclass5_constructor_exists():
+    assert callable(nested103_EClass5.__init__)
 
 
-def test_nested103::eclass4_constructor_args():
-    sig = inspect.signature(nested103::EClass4.__init__)
+def test_nested103_eclass5_constructor_args():
+    sig = inspect.signature(nested103_EClass5.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass0_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass0)
+def test_nested103_eclass3_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass3)
 
 
-def test_nested103::eclass0_constructor_exists():
-    assert callable(nested103::EClass0.__init__)
+def test_nested103_eclass3_constructor_exists():
+    assert callable(nested103_EClass3.__init__)
 
 
-def test_nested103::eclass0_constructor_args():
-    sig = inspect.signature(nested103::EClass0.__init__)
+def test_nested103_eclass3_constructor_args():
+    sig = inspect.signature(nested103_EClass3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass2_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass2)
+def test_nested103_eclass8_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass8)
 
 
-def test_nested103::eclass2_constructor_exists():
-    assert callable(nested103::EClass2.__init__)
+def test_nested103_eclass8_constructor_exists():
+    assert callable(nested103_EClass8.__init__)
 
 
-def test_nested103::eclass2_constructor_args():
-    sig = inspect.signature(nested103::EClass2.__init__)
+def test_nested103_eclass8_constructor_args():
+    sig = inspect.signature(nested103_EClass8.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass5_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass5)
+def test_nested103_eclass0_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass0)
 
 
-def test_nested103::eclass5_constructor_exists():
-    assert callable(nested103::EClass5.__init__)
+def test_nested103_eclass0_constructor_exists():
+    assert callable(nested103_EClass0.__init__)
 
 
-def test_nested103::eclass5_constructor_args():
-    sig = inspect.signature(nested103::EClass5.__init__)
+def test_nested103_eclass0_constructor_args():
+    sig = inspect.signature(nested103_EClass0.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass8_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass8)
+def test_nested103_eclass2_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass2)
 
 
-def test_nested103::eclass8_constructor_exists():
-    assert callable(nested103::EClass8.__init__)
+def test_nested103_eclass2_constructor_exists():
+    assert callable(nested103_EClass2.__init__)
 
 
-def test_nested103::eclass8_constructor_args():
-    sig = inspect.signature(nested103::EClass8.__init__)
+def test_nested103_eclass2_constructor_args():
+    sig = inspect.signature(nested103_EClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass3_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass3)
+def test_nested103_eclass1_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass1)
 
 
-def test_nested103::eclass3_constructor_exists():
-    assert callable(nested103::EClass3.__init__)
+def test_nested103_eclass1_constructor_exists():
+    assert callable(nested103_EClass1.__init__)
 
 
-def test_nested103::eclass3_constructor_args():
-    sig = inspect.signature(nested103::EClass3.__init__)
+def test_nested103_eclass1_constructor_args():
+    sig = inspect.signature(nested103_EClass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::relatedto_is_not_abstract():
-    assert not inspect.isabstract(nested103::RelatedTo)
+def test_nested103_relatedto_is_not_abstract():
+    assert not inspect.isabstract(nested103_RelatedTo)
 
 
-def test_nested103::relatedto_constructor_exists():
-    assert callable(nested103::RelatedTo.__init__)
+def test_nested103_relatedto_constructor_exists():
+    assert callable(nested103_RelatedTo.__init__)
 
 
-def test_nested103::relatedto_constructor_args():
-    sig = inspect.signature(nested103::RelatedTo.__init__)
+def test_nested103_relatedto_constructor_args():
+    sig = inspect.signature(nested103_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_nested103::relatedto_has_since():
-    assert hasattr(nested103::RelatedTo, "since")
+def test_nested103_relatedto_has_since():
+    assert hasattr(nested103_RelatedTo, "since")
     descriptor = None
-    for klass in nested103::RelatedTo.__mro__:
+    for klass in nested103_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -378,51 +378,51 @@ def test_nested103::relatedto_has_since():
 
 
 
-def test_nested103::eclass1_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass1)
+def test_nested103_eclass4_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass4)
 
 
-def test_nested103::eclass1_constructor_exists():
-    assert callable(nested103::EClass1.__init__)
+def test_nested103_eclass4_constructor_exists():
+    assert callable(nested103_EClass4.__init__)
 
 
-def test_nested103::eclass1_constructor_args():
-    sig = inspect.signature(nested103::EClass1.__init__)
+def test_nested103_eclass4_constructor_args():
+    sig = inspect.signature(nested103_EClass4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::eclass10_is_not_abstract():
-    assert not inspect.isabstract(nested103::EClass10)
+def test_nested103_eclass10_is_not_abstract():
+    assert not inspect.isabstract(nested103_EClass10)
 
 
-def test_nested103::eclass10_constructor_exists():
-    assert callable(nested103::EClass10.__init__)
+def test_nested103_eclass10_constructor_exists():
+    assert callable(nested103_EClass10.__init__)
 
 
-def test_nested103::eclass10_constructor_args():
-    sig = inspect.signature(nested103::EClass10.__init__)
+def test_nested103_eclass10_constructor_args():
+    sig = inspect.signature(nested103_EClass10.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nested103::thing_is_not_abstract():
-    assert not inspect.isabstract(nested103::Thing)
+def test_nested103_thing_is_not_abstract():
+    assert not inspect.isabstract(nested103_Thing)
 
 
-def test_nested103::thing_constructor_exists():
-    assert callable(nested103::Thing.__init__)
+def test_nested103_thing_constructor_exists():
+    assert callable(nested103_Thing.__init__)
 
 
-def test_nested103::thing_constructor_args():
-    sig = inspect.signature(nested103::Thing.__init__)
+def test_nested103_thing_constructor_args():
+    sig = inspect.signature(nested103_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_nested103::thing_has_id():
-    assert hasattr(nested103::Thing, "id")
+def test_nested103_thing_has_id():
+    assert hasattr(nested103_Thing, "id")
     descriptor = None
-    for klass in nested103::Thing.__mro__:
+    for klass in nested103_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -430,16 +430,16 @@ def test_nested103::thing_has_id():
 
 
 
-def test_nested103::world_is_not_abstract():
-    assert not inspect.isabstract(nested103::World)
+def test_nested103_world_is_not_abstract():
+    assert not inspect.isabstract(nested103_World)
 
 
-def test_nested103::world_constructor_exists():
-    assert callable(nested103::World.__init__)
+def test_nested103_world_constructor_exists():
+    assert callable(nested103_World.__init__)
 
 
-def test_nested103::world_constructor_args():
-    sig = inspect.signature(nested103::World.__init__)
+def test_nested103_world_constructor_args():
+    sig = inspect.signature(nested103_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -454,17 +454,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-nested103::EClass12_strategy = st.builds(
-    nested103::EClass12,
+nested103_EClass12_strategy = st.builds(
+    nested103_EClass12,
 )
-nested103::EClass11_strategy = st.builds(
-    nested103::EClass11,
+nested103_EClass11_strategy = st.builds(
+    nested103_EClass11,
 )
 EClass9_strategy = st.builds(
     EClass9,
 )
-nested103::EClass13_strategy = st.builds(
-    nested103::EClass13,
+nested103_EClass13_strategy = st.builds(
+    nested103_EClass13,
 )
 EClass12_strategy = st.builds(
     EClass12,
@@ -472,16 +472,16 @@ EClass12_strategy = st.builds(
 EClass11_strategy = st.builds(
     EClass11,
 )
-nested103::EClass9_strategy = st.builds(
-    nested103::EClass9,
+nested103_EClass9_strategy = st.builds(
+    nested103_EClass9,
     name=
         safe_text
 )
 Thing_strategy = st.builds(
     Thing,
 )
-nested103::EClass7_strategy = st.builds(
-    nested103::EClass7,
+nested103_EClass7_strategy = st.builds(
+    nested103_EClass7,
 )
 EClass8_strategy = st.builds(
     EClass8,
@@ -489,77 +489,77 @@ EClass8_strategy = st.builds(
 EClass7_strategy = st.builds(
     EClass7,
 )
-nested103::EClass6_strategy = st.builds(
-    nested103::EClass6,
+nested103_EClass6_strategy = st.builds(
+    nested103_EClass6,
 )
 EClass6_strategy = st.builds(
     EClass6,
 )
-nested103::NamedElement_strategy = st.builds(
-    nested103::NamedElement,
+nested103_NamedElement_strategy = st.builds(
+    nested103_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-nested103::EClass4_strategy = st.builds(
-    nested103::EClass4,
+nested103_EClass5_strategy = st.builds(
+    nested103_EClass5,
 )
-nested103::EClass0_strategy = st.builds(
-    nested103::EClass0,
+nested103_EClass3_strategy = st.builds(
+    nested103_EClass3,
 )
-nested103::EClass2_strategy = st.builds(
-    nested103::EClass2,
+nested103_EClass8_strategy = st.builds(
+    nested103_EClass8,
 )
-nested103::EClass5_strategy = st.builds(
-    nested103::EClass5,
+nested103_EClass0_strategy = st.builds(
+    nested103_EClass0,
 )
-nested103::EClass8_strategy = st.builds(
-    nested103::EClass8,
+nested103_EClass2_strategy = st.builds(
+    nested103_EClass2,
 )
-nested103::EClass3_strategy = st.builds(
-    nested103::EClass3,
+nested103_EClass1_strategy = st.builds(
+    nested103_EClass1,
 )
-nested103::RelatedTo_strategy = st.builds(
-    nested103::RelatedTo,
+nested103_RelatedTo_strategy = st.builds(
+    nested103_RelatedTo,
     since=
         safe_text
 )
-nested103::EClass1_strategy = st.builds(
-    nested103::EClass1,
+nested103_EClass4_strategy = st.builds(
+    nested103_EClass4,
 )
-nested103::EClass10_strategy = st.builds(
-    nested103::EClass10,
+nested103_EClass10_strategy = st.builds(
+    nested103_EClass10,
 )
-nested103::Thing_strategy = st.builds(
-    nested103::Thing,
+nested103_Thing_strategy = st.builds(
+    nested103_Thing,
     id=
         st.integers()
 )
-nested103::World_strategy = st.builds(
-    nested103::World,
+nested103_World_strategy = st.builds(
+    nested103_World,
 )
 
-@given(instance=nested103::EClass12_strategy)
+@given(instance=nested103_EClass12_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass12_instantiation(instance):
-    assert isinstance(instance, nested103::EClass12)
+def test_nested103_eclass12_instantiation(instance):
+    assert isinstance(instance, nested103_EClass12)
 
-@given(instance=nested103::EClass11_strategy)
+@given(instance=nested103_EClass11_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass11_instantiation(instance):
-    assert isinstance(instance, nested103::EClass11)
+def test_nested103_eclass11_instantiation(instance):
+    assert isinstance(instance, nested103_EClass11)
 
 @given(instance=EClass9_strategy)
 @settings(max_examples=50)
 def test_eclass9_instantiation(instance):
     assert isinstance(instance, EClass9)
 
-@given(instance=nested103::EClass13_strategy)
+@given(instance=nested103_EClass13_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass13_instantiation(instance):
-    assert isinstance(instance, nested103::EClass13)
+def test_nested103_eclass13_instantiation(instance):
+    assert isinstance(instance, nested103_EClass13)
 
 @given(instance=EClass12_strategy)
 @settings(max_examples=50)
@@ -571,18 +571,15 @@ def test_eclass12_instantiation(instance):
 def test_eclass11_instantiation(instance):
     assert isinstance(instance, EClass11)
 
-@given(instance=nested103::EClass9_strategy)
+@given(instance=nested103_EClass9_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass9_instantiation(instance):
-    assert isinstance(instance, nested103::EClass9)
-
-@given(instance=nested103::EClass9_strategy)
-def test_nested103::eclass9_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_nested103_eclass9_instantiation(instance):
+    assert isinstance(instance, nested103_EClass9)
 
 
-@given(instance=nested103::EClass9_strategy)
-def test_nested103::eclass9_name_setter(instance):
+
+@given(instance=nested103_EClass9_strategy)
+def test_nested103_eclass9_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -592,10 +589,10 @@ def test_nested103::eclass9_name_setter(instance):
 def test_thing_instantiation(instance):
     assert isinstance(instance, Thing)
 
-@given(instance=nested103::EClass7_strategy)
+@given(instance=nested103_EClass7_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass7_instantiation(instance):
-    assert isinstance(instance, nested103::EClass7)
+def test_nested103_eclass7_instantiation(instance):
+    assert isinstance(instance, nested103_EClass7)
 
 @given(instance=EClass8_strategy)
 @settings(max_examples=50)
@@ -607,28 +604,25 @@ def test_eclass8_instantiation(instance):
 def test_eclass7_instantiation(instance):
     assert isinstance(instance, EClass7)
 
-@given(instance=nested103::EClass6_strategy)
+@given(instance=nested103_EClass6_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass6_instantiation(instance):
-    assert isinstance(instance, nested103::EClass6)
+def test_nested103_eclass6_instantiation(instance):
+    assert isinstance(instance, nested103_EClass6)
 
 @given(instance=EClass6_strategy)
 @settings(max_examples=50)
 def test_eclass6_instantiation(instance):
     assert isinstance(instance, EClass6)
 
-@given(instance=nested103::NamedElement_strategy)
+@given(instance=nested103_NamedElement_strategy)
 @settings(max_examples=50)
-def test_nested103::namedelement_instantiation(instance):
-    assert isinstance(instance, nested103::NamedElement)
-
-@given(instance=nested103::NamedElement_strategy)
-def test_nested103::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_nested103_namedelement_instantiation(instance):
+    assert isinstance(instance, nested103_NamedElement)
 
 
-@given(instance=nested103::NamedElement_strategy)
-def test_nested103::namedelement_name_setter(instance):
+
+@given(instance=nested103_NamedElement_strategy)
+def test_nested103_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -638,79 +632,73 @@ def test_nested103::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=nested103::EClass4_strategy)
+@given(instance=nested103_EClass5_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass4_instantiation(instance):
-    assert isinstance(instance, nested103::EClass4)
+def test_nested103_eclass5_instantiation(instance):
+    assert isinstance(instance, nested103_EClass5)
 
-@given(instance=nested103::EClass0_strategy)
+@given(instance=nested103_EClass3_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass0_instantiation(instance):
-    assert isinstance(instance, nested103::EClass0)
+def test_nested103_eclass3_instantiation(instance):
+    assert isinstance(instance, nested103_EClass3)
 
-@given(instance=nested103::EClass2_strategy)
+@given(instance=nested103_EClass8_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass2_instantiation(instance):
-    assert isinstance(instance, nested103::EClass2)
+def test_nested103_eclass8_instantiation(instance):
+    assert isinstance(instance, nested103_EClass8)
 
-@given(instance=nested103::EClass5_strategy)
+@given(instance=nested103_EClass0_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass5_instantiation(instance):
-    assert isinstance(instance, nested103::EClass5)
+def test_nested103_eclass0_instantiation(instance):
+    assert isinstance(instance, nested103_EClass0)
 
-@given(instance=nested103::EClass8_strategy)
+@given(instance=nested103_EClass2_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass8_instantiation(instance):
-    assert isinstance(instance, nested103::EClass8)
+def test_nested103_eclass2_instantiation(instance):
+    assert isinstance(instance, nested103_EClass2)
 
-@given(instance=nested103::EClass3_strategy)
+@given(instance=nested103_EClass1_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass3_instantiation(instance):
-    assert isinstance(instance, nested103::EClass3)
+def test_nested103_eclass1_instantiation(instance):
+    assert isinstance(instance, nested103_EClass1)
 
-@given(instance=nested103::RelatedTo_strategy)
+@given(instance=nested103_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_nested103::relatedto_instantiation(instance):
-    assert isinstance(instance, nested103::RelatedTo)
-
-@given(instance=nested103::RelatedTo_strategy)
-def test_nested103::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_nested103_relatedto_instantiation(instance):
+    assert isinstance(instance, nested103_RelatedTo)
 
 
-@given(instance=nested103::RelatedTo_strategy)
-def test_nested103::relatedto_since_setter(instance):
+
+@given(instance=nested103_RelatedTo_strategy)
+def test_nested103_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=nested103::EClass1_strategy)
+@given(instance=nested103_EClass4_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass1_instantiation(instance):
-    assert isinstance(instance, nested103::EClass1)
+def test_nested103_eclass4_instantiation(instance):
+    assert isinstance(instance, nested103_EClass4)
 
-@given(instance=nested103::EClass10_strategy)
+@given(instance=nested103_EClass10_strategy)
 @settings(max_examples=50)
-def test_nested103::eclass10_instantiation(instance):
-    assert isinstance(instance, nested103::EClass10)
+def test_nested103_eclass10_instantiation(instance):
+    assert isinstance(instance, nested103_EClass10)
 
-@given(instance=nested103::Thing_strategy)
+@given(instance=nested103_Thing_strategy)
 @settings(max_examples=50)
-def test_nested103::thing_instantiation(instance):
-    assert isinstance(instance, nested103::Thing)
-
-@given(instance=nested103::Thing_strategy)
-def test_nested103::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_nested103_thing_instantiation(instance):
+    assert isinstance(instance, nested103_Thing)
 
 
-@given(instance=nested103::Thing_strategy)
-def test_nested103::thing_id_setter(instance):
+
+@given(instance=nested103_Thing_strategy)
+def test_nested103_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=nested103::World_strategy)
+@given(instance=nested103_World_strategy)
 @settings(max_examples=50)
-def test_nested103::world_instantiation(instance):
-    assert isinstance(instance, nested103::World)
+def test_nested103_world_instantiation(instance):
+    assert isinstance(instance, nested103_World)

@@ -3,203 +3,203 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Extent,
-    FlatQVT::URIExtent,
+    FlatQVT_URIExtent,
     Transformation,
-    FlatQVT::RelationalTransformation,
+    FlatQVT_RelationalTransformation,
+    ResolveExp,
+    FlatQVT_ResolveInExp,
+    ReflectiveCollection,
+    FlatQVT_ReflectiveSequence,
+    NavigationCallExp,
+    FlatQVT_PropertyCallExp,
+    Assignment,
+    FlatQVT_VariableAssignment,
+    FlatQVT_PropertyAssignment,
+    PropertyCallExp,
+    FlatQVT_OppositePropertyCallExp,
+    MultiplicityElement,
+    InstantiationExp,
+    FlatQVT_ObjectExp,
+    FlatQVT_Object,
+    FlatQVT_Area,
+    Type,
+    FlatQVT_VoidType,
+    FlatQVT_TemplateParameterType,
+    FlatQVT_AnyType,
+    ImperativeExpression,
+    FlatQVT_UnlinkExp,
+    FlatQVT_AssignExp,
+    FlatQVT_VariableInitExp,
+    FlatQVT_ReturnExp,
+    FlatQVT_SwitchExp,
+    FlatQVT_AssertExp,
+    FlatQVT_TryExp,
+    FlatQVT_RaiseExp,
+    FlatQVT_WhileExp,
+    FlatQVT_AltExp,
+    FeatureCallExp,
+    FlatQVT_OperationCallExp,
+    FlatQVT_NavigationCallExp,
+    FlatQVT_MultiplicityElement,
+    Package,
     Class,
-    FlatQVT::Typedef,
-    FlatQVT::ModelType,
+    FlatQVT_Module,
+    FlatQVT_Transformation,
+    FlatQVT_Typedef,
+    FlatQVT_ModelType,
     VarParameter,
-    FlatQVT::ModelParameter,
-    FlatQVT::MappingParameter,
+    FlatQVT_ModelParameter,
+    FlatQVT_MappingParameter,
     ImperativeCallExp,
-    FlatQVT::MappingCallExp,
+    FlatQVT_MappingCallExp,
     Rule,
+    FlatQVT_Relation,
     Module,
-    FlatQVT::Library,
+    FlatQVT_OperationalTransformation,
+    FlatQVT_Library,
+    FlatQVT_InvalidType,
     NumericLiteralExp,
-    FlatQVT::UnlimitedNaturalExp,
-    FlatQVT::IntegerLiteralExp,
+    FlatQVT_RealLiteralExp,
+    FlatQVT_UnlimitedNaturalExp,
+    FlatQVT_IntegerLiteralExp,
+    FlatQVT_InstantiationExp,
     LoopExp,
-    FlatQVT::IterateExp,
-    FlatQVT::IteratorExp,
+    FlatQVT_IterateExp,
+    FlatQVT_IteratorExp,
+    FlatQVT_ImperativeLoopExp,
     OperationCallExp,
+    FlatQVT_LogExp,
+    FlatQVT_ImperativeCallExp,
     Parameter,
     Variable,
-    FlatQVT::VarParameter,
-    FlatQVT::FunctionParameter,
+    FlatQVT_RealizedVariable,
+    FlatQVT_VarParameter,
+    FlatQVT_FunctionParameter,
     Operation,
-    FlatQVT::ImperativeOperation,
-    FlatQVT::Function,
+    FlatQVT_ImperativeOperation,
+    FlatQVT_Function,
     ImperativeLoopExp,
-    FlatQVT::ImperativeIterateExp,
-    FlatQVT::ForExp,
+    FlatQVT_ImperativeIterateExp,
+    FlatQVT_ForExp,
     CallExp,
-    FlatQVT::FeatureCallExp,
+    FlatQVT_ResolveExp,
+    FlatQVT_FeatureCallExp,
     Object,
-    FlatQVT::Extent,
-    FlatQVT::Element,
+    FlatQVT_ReflectiveCollection,
+    FlatQVT_Extent,
+    FlatQVT_Element,
     NamedElement,
-    FlatQVT::Type,
-    FlatQVT::EnumerationLiteral,
-    FlatQVT::TypedElement,
-    FlatQVT::TypedModel,
-    FlatQVT::Domain,
+    FlatQVT_Package,
+    FlatQVT_EnumerationLiteral,
+    FlatQVT_TypedModel,
+    FlatQVT_TypedElement,
+    FlatQVT_Type,
+    FlatQVT_Rule,
+    FlatQVT_Domain,
+    FlatQVT_DataType,
     Pattern,
-    FlatQVT::DomainPattern,
-    FlatQVT::CorePattern,
+    FlatQVT_DomainPattern,
+    FlatQVT_CorePattern,
     Area,
-    FlatQVT::Mapping,
+    FlatQVT_Mapping,
     Domain,
-    FlatQVT::CoreDomain,
+    FlatQVT_RelationDomain,
+    FlatQVT_CoreDomain,
+    FlatQVT_ContinueExp,
     Property,
-    FlatQVT::ContextualProperty,
+    FlatQVT_ContextualProperty,
     OperationBody,
-    FlatQVT::MappingBody,
-    FlatQVT::ConstructorBody,
+    FlatQVT_MappingBody,
+    FlatQVT_ConstructorBody,
     ImperativeOperation,
-    FlatQVT::MappingOperation,
-    FlatQVT::EntryOperation,
-    FlatQVT::Helper,
-    FlatQVT::Constructor,
+    FlatQVT_MappingOperation,
+    FlatQVT_Helper,
+    FlatQVT_EntryOperation,
+    FlatQVT_Constructor,
+    FlatQVT_ComputeExp,
     DataType,
-    FlatQVT::TupleType,
-    FlatQVT::Enumeration,
-    FlatQVT::CollectionType,
+    FlatQVT_PrimitiveType,
+    FlatQVT_Enumeration,
+    FlatQVT_TupleType,
+    FlatQVT_CollectionType,
     TemplateExp,
-    FlatQVT::CollectionTemplateExp,
+    FlatQVT_ObjectTemplateExp,
+    FlatQVT_CollectionTemplateExp,
     TypedElement,
-    FlatQVT::ExpressionInOcl,
-    FlatQVT::Variable,
-    FlatQVT::TupleLiteralPart,
-    FlatQVT::CollectionLiteralPart,
+    FlatQVT_Parameter,
+    FlatQVT_ExpressionInOcl,
+    FlatQVT_TupleLiteralPart,
+    FlatQVT_OclExpression,
+    FlatQVT_Variable,
+    FlatQVT_Property,
+    FlatQVT_Operation,
+    FlatQVT_CollectionLiteralPart,
     LiteralExp,
-    FlatQVT::DictLiteralExp,
-    FlatQVT::InvalidLiteralExp,
-    FlatQVT::EnumLiteralExp,
-    FlatQVT::ListLiteralExp,
-    FlatQVT::TupleLiteralExp,
-    FlatQVT::TemplateExp,
-    FlatQVT::CollectionLiteralExp,
+    FlatQVT_ListLiteralExp,
+    FlatQVT_TupleLiteralExp,
+    FlatQVT_PrimitiveLiteralExp,
+    FlatQVT_NullLiteralExp,
+    FlatQVT_EnumLiteralExp,
+    FlatQVT_InvalidLiteralExp,
+    FlatQVT_DictLiteralExp,
+    FlatQVT_TemplateExp,
+    FlatQVT_CollectionLiteralExp,
     CollectionLiteralPart,
-    FlatQVT::CollectionRange,
-    FlatQVT::CollectionItem,
+    FlatQVT_CollectionRange,
+    FlatQVT_CollectionItem,
+    FlatQVT_Class,
+    FlatQVT_CatchExp,
     OclExpression,
-    FlatQVT::LetExp,
-    FlatQVT::VariableExp,
-    FlatQVT::TypeExp,
-    FlatQVT::IfExp,
-    FlatQVT::ImperativeExpression,
-    FlatQVT::LoopExp,
-    FlatQVT::LiteralExp,
-    FlatQVT::CallExp,
+    FlatQVT_ImperativeExpression,
+    FlatQVT_VariableExp,
+    FlatQVT_LiteralExp,
+    FlatQVT_LoopExp,
+    FlatQVT_LetExp,
+    FlatQVT_RelationCallExp,
+    FlatQVT_IfExp,
+    FlatQVT_TypeExp,
+    FlatQVT_CallExp,
+    FlatQVT_BreakExp,
     CorePattern,
-    FlatQVT::GuardPattern,
-    FlatQVT::BottomPattern,
+    FlatQVT_GuardPattern,
+    FlatQVT_BottomPattern,
     PrimitiveLiteralExp,
-    FlatQVT::BooleanLiteralExp,
+    FlatQVT_StringLiteralExp,
+    FlatQVT_NumericLiteralExp,
+    FlatQVT_BooleanLiteralExp,
+    FlatQVT_BlockExp,
     CollectionType,
-    FlatQVT::DictionaryType,
-    FlatQVT::ListType,
-    FlatQVT::BagType,
+    FlatQVT_DictionaryType,
+    FlatQVT_SequenceType,
+    FlatQVT_OrderedSetType,
+    FlatQVT_SetType,
+    FlatQVT_ListType,
+    FlatQVT_BagType,
     Element,
-    FlatQVT::DictLiteralPart,
-    FlatQVT::Comment,
-    FlatQVT::EnforcementOperation,
-    FlatQVT::Key,
-    FlatQVT::Factory,
-    FlatQVT::Assignment,
-    FlatQVT::Area,
-    Type,
-    FlatQVT::TemplateParameterType,
-    FlatQVT::InvalidType,
-    FlatQVT::Class,
-    FlatQVT::VoidType,
-    FlatQVT::DataType,
-    FlatQVT::AnyType,
-    ImperativeExpression,
-    FlatQVT::ImperativeCallExp,
-    FlatQVT::InstantiationExp,
-    FlatQVT::TryExp,
-    FlatQVT::BlockExp,
-    FlatQVT::ComputeExp,
-    FlatQVT::UnlinkExp,
-    FlatQVT::ContinueExp,
-    FlatQVT::LogExp,
-    FlatQVT::AssignExp,
-    FlatQVT::AssertExp,
-    FlatQVT::BreakExp,
-    FlatQVT::VariableInitExp,
-    FlatQVT::ImperativeLoopExp,
-    FlatQVT::CatchExp,
-    FlatQVT::WhileExp,
-    FlatQVT::AltExp,
-    FlatQVT::Tag,
-    FlatQVT::SwitchExp,
-    FlatQVT::StringLiteralExp,
-    FlatQVT::SetType,
-    FlatQVT::SequenceType,
-    FlatQVT::Rule,
-    FlatQVT::ReturnExp,
-    ResolveExp,
-    FlatQVT::ResolveInExp,
-    FlatQVT::ResolveExp,
-    FlatQVT::RealizedVariable,
-    FlatQVT::RelationImplementation,
-    FlatQVT::RelationDomainAssignment,
-    FlatQVT::RelationDomain,
-    FlatQVT::RelationCallExp,
-    FlatQVT::Relation,
-    ReflectiveCollection,
-    FlatQVT::ReflectiveSequence,
-    FlatQVT::ReflectiveCollection,
-    FlatQVT::OrderedSetType,
-    FlatQVT::RealLiteralExp,
-    FlatQVT::RaiseExp,
-    FlatQVT::PropertyTemplateItem,
-    NavigationCallExp,
-    FlatQVT::PropertyCallExp,
-    Assignment,
-    FlatQVT::VariableAssignment,
-    FlatQVT::PropertyAssignment,
-    FlatQVT::PrimitiveType,
-    FlatQVT::PrimitiveLiteralExp,
-    FlatQVT::Predicate,
-    FlatQVT::Pattern,
-    FlatQVT::Package,
-    PropertyCallExp,
-    FlatQVT::OppositePropertyCallExp,
-    FlatQVT::OperationalTransformation,
-    FlatQVT::OperationBody,
-    MultiplicityElement,
-    FlatQVT::Property,
-    FlatQVT::Parameter,
-    FlatQVT::Operation,
-    FlatQVT::OclExpression,
-    FlatQVT::ObjectTemplateExp,
-    InstantiationExp,
-    FlatQVT::ObjectExp,
-    FlatQVT::Object,
-    FlatQVT::NumericLiteralExp,
-    FlatQVT::NullLiteralExp,
-    FeatureCallExp,
-    FlatQVT::OperationCallExp,
-    FlatQVT::NavigationCallExp,
-    FlatQVT::NamedElement,
-    FlatQVT::MultiplicityElement,
-    FlatQVT::ModuleImport,
-    Package,
-    FlatQVT::Transformation,
-    FlatQVT::Module,
-    ImportKind,
+    FlatQVT_NamedElement,
+    FlatQVT_Predicate,
+    FlatQVT_OperationBody,
+    FlatQVT_Comment,
+    FlatQVT_Factory,
+    FlatQVT_RelationImplementation,
+    FlatQVT_DictLiteralPart,
+    FlatQVT_Pattern,
+    FlatQVT_ModuleImport,
+    FlatQVT_RelationDomainAssignment,
+    FlatQVT_PropertyTemplateItem,
+    FlatQVT_Key,
+    FlatQVT_Tag,
+    FlatQVT_EnforcementOperation,
+    FlatQVT_Assignment,
     DirectionKind,
     CollectionKind,
-    SeverityKind,
+    ImportKind,
     EnforcementMode,
+    SeverityKind,
 )
 
 # =============================================================================
@@ -222,16 +222,16 @@ def test_extent_constructor_args():
 
 
 
-def test_flatqvt::uriextent_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::URIExtent)
+def test_flatqvt_uriextent_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_URIExtent)
 
 
-def test_flatqvt::uriextent_constructor_exists():
-    assert callable(FlatQVT::URIExtent.__init__)
+def test_flatqvt_uriextent_constructor_exists():
+    assert callable(FlatQVT_URIExtent.__init__)
 
 
-def test_flatqvt::uriextent_constructor_args():
-    sig = inspect.signature(FlatQVT::URIExtent.__init__)
+def test_flatqvt_uriextent_constructor_args():
+    sig = inspect.signature(FlatQVT_URIExtent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -250,16 +250,520 @@ def test_transformation_constructor_args():
 
 
 
-def test_flatqvt::relationaltransformation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RelationalTransformation)
+def test_flatqvt_relationaltransformation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RelationalTransformation)
 
 
-def test_flatqvt::relationaltransformation_constructor_exists():
-    assert callable(FlatQVT::RelationalTransformation.__init__)
+def test_flatqvt_relationaltransformation_constructor_exists():
+    assert callable(FlatQVT_RelationalTransformation.__init__)
 
 
-def test_flatqvt::relationaltransformation_constructor_args():
-    sig = inspect.signature(FlatQVT::RelationalTransformation.__init__)
+def test_flatqvt_relationaltransformation_constructor_args():
+    sig = inspect.signature(FlatQVT_RelationalTransformation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_resolveexp_is_not_abstract():
+    assert not inspect.isabstract(ResolveExp)
+
+
+def test_resolveexp_constructor_exists():
+    assert callable(ResolveExp.__init__)
+
+
+def test_resolveexp_constructor_args():
+    sig = inspect.signature(ResolveExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_resolveinexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ResolveInExp)
+
+
+def test_flatqvt_resolveinexp_constructor_exists():
+    assert callable(FlatQVT_ResolveInExp.__init__)
+
+
+def test_flatqvt_resolveinexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ResolveInExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reflectivecollection_is_not_abstract():
+    assert not inspect.isabstract(ReflectiveCollection)
+
+
+def test_reflectivecollection_constructor_exists():
+    assert callable(ReflectiveCollection.__init__)
+
+
+def test_reflectivecollection_constructor_args():
+    sig = inspect.signature(ReflectiveCollection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_reflectivesequence_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ReflectiveSequence)
+
+
+def test_flatqvt_reflectivesequence_constructor_exists():
+    assert callable(FlatQVT_ReflectiveSequence.__init__)
+
+
+def test_flatqvt_reflectivesequence_constructor_args():
+    sig = inspect.signature(FlatQVT_ReflectiveSequence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(NavigationCallExp)
+
+
+def test_navigationcallexp_constructor_exists():
+    assert callable(NavigationCallExp.__init__)
+
+
+def test_navigationcallexp_constructor_args():
+    sig = inspect.signature(NavigationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_PropertyCallExp)
+
+
+def test_flatqvt_propertycallexp_constructor_exists():
+    assert callable(FlatQVT_PropertyCallExp.__init__)
+
+
+def test_flatqvt_propertycallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_PropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_assignment_is_not_abstract():
+    assert not inspect.isabstract(Assignment)
+
+
+def test_assignment_constructor_exists():
+    assert callable(Assignment.__init__)
+
+
+def test_assignment_constructor_args():
+    sig = inspect.signature(Assignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_VariableAssignment)
+
+
+def test_flatqvt_variableassignment_constructor_exists():
+    assert callable(FlatQVT_VariableAssignment.__init__)
+
+
+def test_flatqvt_variableassignment_constructor_args():
+    sig = inspect.signature(FlatQVT_VariableAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_propertyassignment_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_PropertyAssignment)
+
+
+def test_flatqvt_propertyassignment_constructor_exists():
+    assert callable(FlatQVT_PropertyAssignment.__init__)
+
+
+def test_flatqvt_propertyassignment_constructor_args():
+    sig = inspect.signature(FlatQVT_PropertyAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(PropertyCallExp)
+
+
+def test_propertycallexp_constructor_exists():
+    assert callable(PropertyCallExp.__init__)
+
+
+def test_propertycallexp_constructor_args():
+    sig = inspect.signature(PropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_oppositepropertycallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_OppositePropertyCallExp)
+
+
+def test_flatqvt_oppositepropertycallexp_constructor_exists():
+    assert callable(FlatQVT_OppositePropertyCallExp.__init__)
+
+
+def test_flatqvt_oppositepropertycallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_OppositePropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(MultiplicityElement)
+
+
+def test_multiplicityelement_constructor_exists():
+    assert callable(MultiplicityElement.__init__)
+
+
+def test_multiplicityelement_constructor_args():
+    sig = inspect.signature(MultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_instantiationexp_is_not_abstract():
+    assert not inspect.isabstract(InstantiationExp)
+
+
+def test_instantiationexp_constructor_exists():
+    assert callable(InstantiationExp.__init__)
+
+
+def test_instantiationexp_constructor_args():
+    sig = inspect.signature(InstantiationExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_objectexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ObjectExp)
+
+
+def test_flatqvt_objectexp_constructor_exists():
+    assert callable(FlatQVT_ObjectExp.__init__)
+
+
+def test_flatqvt_objectexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ObjectExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_object_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Object)
+
+
+def test_flatqvt_object_constructor_exists():
+    assert callable(FlatQVT_Object.__init__)
+
+
+def test_flatqvt_object_constructor_args():
+    sig = inspect.signature(FlatQVT_Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_area_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Area)
+
+
+def test_flatqvt_area_constructor_exists():
+    assert callable(FlatQVT_Area.__init__)
+
+
+def test_flatqvt_area_constructor_args():
+    sig = inspect.signature(FlatQVT_Area.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(Type)
+
+
+def test_type_constructor_exists():
+    assert callable(Type.__init__)
+
+
+def test_type_constructor_args():
+    sig = inspect.signature(Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_voidtype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_VoidType)
+
+
+def test_flatqvt_voidtype_constructor_exists():
+    assert callable(FlatQVT_VoidType.__init__)
+
+
+def test_flatqvt_voidtype_constructor_args():
+    sig = inspect.signature(FlatQVT_VoidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TemplateParameterType)
+
+
+def test_flatqvt_templateparametertype_constructor_exists():
+    assert callable(FlatQVT_TemplateParameterType.__init__)
+
+
+def test_flatqvt_templateparametertype_constructor_args():
+    sig = inspect.signature(FlatQVT_TemplateParameterType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_anytype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_AnyType)
+
+
+def test_flatqvt_anytype_constructor_exists():
+    assert callable(FlatQVT_AnyType.__init__)
+
+
+def test_flatqvt_anytype_constructor_args():
+    sig = inspect.signature(FlatQVT_AnyType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(ImperativeExpression)
+
+
+def test_imperativeexpression_constructor_exists():
+    assert callable(ImperativeExpression.__init__)
+
+
+def test_imperativeexpression_constructor_args():
+    sig = inspect.signature(ImperativeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_unlinkexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_UnlinkExp)
+
+
+def test_flatqvt_unlinkexp_constructor_exists():
+    assert callable(FlatQVT_UnlinkExp.__init__)
+
+
+def test_flatqvt_unlinkexp_constructor_args():
+    sig = inspect.signature(FlatQVT_UnlinkExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_assignexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_AssignExp)
+
+
+def test_flatqvt_assignexp_constructor_exists():
+    assert callable(FlatQVT_AssignExp.__init__)
+
+
+def test_flatqvt_assignexp_constructor_args():
+    sig = inspect.signature(FlatQVT_AssignExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_variableinitexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_VariableInitExp)
+
+
+def test_flatqvt_variableinitexp_constructor_exists():
+    assert callable(FlatQVT_VariableInitExp.__init__)
+
+
+def test_flatqvt_variableinitexp_constructor_args():
+    sig = inspect.signature(FlatQVT_VariableInitExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_returnexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ReturnExp)
+
+
+def test_flatqvt_returnexp_constructor_exists():
+    assert callable(FlatQVT_ReturnExp.__init__)
+
+
+def test_flatqvt_returnexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ReturnExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_switchexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_SwitchExp)
+
+
+def test_flatqvt_switchexp_constructor_exists():
+    assert callable(FlatQVT_SwitchExp.__init__)
+
+
+def test_flatqvt_switchexp_constructor_args():
+    sig = inspect.signature(FlatQVT_SwitchExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_assertexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_AssertExp)
+
+
+def test_flatqvt_assertexp_constructor_exists():
+    assert callable(FlatQVT_AssertExp.__init__)
+
+
+def test_flatqvt_assertexp_constructor_args():
+    sig = inspect.signature(FlatQVT_AssertExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_tryexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TryExp)
+
+
+def test_flatqvt_tryexp_constructor_exists():
+    assert callable(FlatQVT_TryExp.__init__)
+
+
+def test_flatqvt_tryexp_constructor_args():
+    sig = inspect.signature(FlatQVT_TryExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_raiseexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RaiseExp)
+
+
+def test_flatqvt_raiseexp_constructor_exists():
+    assert callable(FlatQVT_RaiseExp.__init__)
+
+
+def test_flatqvt_raiseexp_constructor_args():
+    sig = inspect.signature(FlatQVT_RaiseExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_whileexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_WhileExp)
+
+
+def test_flatqvt_whileexp_constructor_exists():
+    assert callable(FlatQVT_WhileExp.__init__)
+
+
+def test_flatqvt_whileexp_constructor_args():
+    sig = inspect.signature(FlatQVT_WhileExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_altexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_AltExp)
+
+
+def test_flatqvt_altexp_constructor_exists():
+    assert callable(FlatQVT_AltExp.__init__)
+
+
+def test_flatqvt_altexp_constructor_args():
+    sig = inspect.signature(FlatQVT_AltExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(FeatureCallExp)
+
+
+def test_featurecallexp_constructor_exists():
+    assert callable(FeatureCallExp.__init__)
+
+
+def test_featurecallexp_constructor_args():
+    sig = inspect.signature(FeatureCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_OperationCallExp)
+
+
+def test_flatqvt_operationcallexp_constructor_exists():
+    assert callable(FlatQVT_OperationCallExp.__init__)
+
+
+def test_flatqvt_operationcallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_OperationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_NavigationCallExp)
+
+
+def test_flatqvt_navigationcallexp_constructor_exists():
+    assert callable(FlatQVT_NavigationCallExp.__init__)
+
+
+def test_flatqvt_navigationcallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_NavigationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_MultiplicityElement)
+
+
+def test_flatqvt_multiplicityelement_constructor_exists():
+    assert callable(FlatQVT_MultiplicityElement.__init__)
+
+
+def test_flatqvt_multiplicityelement_constructor_args():
+    sig = inspect.signature(FlatQVT_MultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_package_is_not_abstract():
+    assert not inspect.isabstract(Package)
+
+
+def test_package_constructor_exists():
+    assert callable(Package.__init__)
+
+
+def test_package_constructor_args():
+    sig = inspect.signature(Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -278,30 +782,58 @@ def test_class_constructor_args():
 
 
 
-def test_flatqvt::typedef_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Typedef)
+def test_flatqvt_module_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Module)
 
 
-def test_flatqvt::typedef_constructor_exists():
-    assert callable(FlatQVT::Typedef.__init__)
+def test_flatqvt_module_constructor_exists():
+    assert callable(FlatQVT_Module.__init__)
 
 
-def test_flatqvt::typedef_constructor_args():
-    sig = inspect.signature(FlatQVT::Typedef.__init__)
+def test_flatqvt_module_constructor_args():
+    sig = inspect.signature(FlatQVT_Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::modeltype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ModelType)
+def test_flatqvt_transformation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Transformation)
 
 
-def test_flatqvt::modeltype_constructor_exists():
-    assert callable(FlatQVT::ModelType.__init__)
+def test_flatqvt_transformation_constructor_exists():
+    assert callable(FlatQVT_Transformation.__init__)
 
 
-def test_flatqvt::modeltype_constructor_args():
-    sig = inspect.signature(FlatQVT::ModelType.__init__)
+def test_flatqvt_transformation_constructor_args():
+    sig = inspect.signature(FlatQVT_Transformation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_typedef_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Typedef)
+
+
+def test_flatqvt_typedef_constructor_exists():
+    assert callable(FlatQVT_Typedef.__init__)
+
+
+def test_flatqvt_typedef_constructor_args():
+    sig = inspect.signature(FlatQVT_Typedef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_modeltype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ModelType)
+
+
+def test_flatqvt_modeltype_constructor_exists():
+    assert callable(FlatQVT_ModelType.__init__)
+
+
+def test_flatqvt_modeltype_constructor_args():
+    sig = inspect.signature(FlatQVT_ModelType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -320,30 +852,30 @@ def test_varparameter_constructor_args():
 
 
 
-def test_flatqvt::modelparameter_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ModelParameter)
+def test_flatqvt_modelparameter_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ModelParameter)
 
 
-def test_flatqvt::modelparameter_constructor_exists():
-    assert callable(FlatQVT::ModelParameter.__init__)
+def test_flatqvt_modelparameter_constructor_exists():
+    assert callable(FlatQVT_ModelParameter.__init__)
 
 
-def test_flatqvt::modelparameter_constructor_args():
-    sig = inspect.signature(FlatQVT::ModelParameter.__init__)
+def test_flatqvt_modelparameter_constructor_args():
+    sig = inspect.signature(FlatQVT_ModelParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::mappingparameter_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::MappingParameter)
+def test_flatqvt_mappingparameter_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_MappingParameter)
 
 
-def test_flatqvt::mappingparameter_constructor_exists():
-    assert callable(FlatQVT::MappingParameter.__init__)
+def test_flatqvt_mappingparameter_constructor_exists():
+    assert callable(FlatQVT_MappingParameter.__init__)
 
 
-def test_flatqvt::mappingparameter_constructor_args():
-    sig = inspect.signature(FlatQVT::MappingParameter.__init__)
+def test_flatqvt_mappingparameter_constructor_args():
+    sig = inspect.signature(FlatQVT_MappingParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -362,16 +894,16 @@ def test_imperativecallexp_constructor_args():
 
 
 
-def test_flatqvt::mappingcallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::MappingCallExp)
+def test_flatqvt_mappingcallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_MappingCallExp)
 
 
-def test_flatqvt::mappingcallexp_constructor_exists():
-    assert callable(FlatQVT::MappingCallExp.__init__)
+def test_flatqvt_mappingcallexp_constructor_exists():
+    assert callable(FlatQVT_MappingCallExp.__init__)
 
 
-def test_flatqvt::mappingcallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::MappingCallExp.__init__)
+def test_flatqvt_mappingcallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_MappingCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -390,6 +922,20 @@ def test_rule_constructor_args():
 
 
 
+def test_flatqvt_relation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Relation)
+
+
+def test_flatqvt_relation_constructor_exists():
+    assert callable(FlatQVT_Relation.__init__)
+
+
+def test_flatqvt_relation_constructor_args():
+    sig = inspect.signature(FlatQVT_Relation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_module_is_not_abstract():
     assert not inspect.isabstract(Module)
 
@@ -404,16 +950,44 @@ def test_module_constructor_args():
 
 
 
-def test_flatqvt::library_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Library)
+def test_flatqvt_operationaltransformation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_OperationalTransformation)
 
 
-def test_flatqvt::library_constructor_exists():
-    assert callable(FlatQVT::Library.__init__)
+def test_flatqvt_operationaltransformation_constructor_exists():
+    assert callable(FlatQVT_OperationalTransformation.__init__)
 
 
-def test_flatqvt::library_constructor_args():
-    sig = inspect.signature(FlatQVT::Library.__init__)
+def test_flatqvt_operationaltransformation_constructor_args():
+    sig = inspect.signature(FlatQVT_OperationalTransformation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_library_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Library)
+
+
+def test_flatqvt_library_constructor_exists():
+    assert callable(FlatQVT_Library.__init__)
+
+
+def test_flatqvt_library_constructor_args():
+    sig = inspect.signature(FlatQVT_Library.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_InvalidType)
+
+
+def test_flatqvt_invalidtype_constructor_exists():
+    assert callable(FlatQVT_InvalidType.__init__)
+
+
+def test_flatqvt_invalidtype_constructor_args():
+    sig = inspect.signature(FlatQVT_InvalidType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,30 +1006,58 @@ def test_numericliteralexp_constructor_args():
 
 
 
-def test_flatqvt::unlimitednaturalexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::UnlimitedNaturalExp)
+def test_flatqvt_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RealLiteralExp)
 
 
-def test_flatqvt::unlimitednaturalexp_constructor_exists():
-    assert callable(FlatQVT::UnlimitedNaturalExp.__init__)
+def test_flatqvt_realliteralexp_constructor_exists():
+    assert callable(FlatQVT_RealLiteralExp.__init__)
 
 
-def test_flatqvt::unlimitednaturalexp_constructor_args():
-    sig = inspect.signature(FlatQVT::UnlimitedNaturalExp.__init__)
+def test_flatqvt_realliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_RealLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::IntegerLiteralExp)
+def test_flatqvt_unlimitednaturalexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_UnlimitedNaturalExp)
 
 
-def test_flatqvt::integerliteralexp_constructor_exists():
-    assert callable(FlatQVT::IntegerLiteralExp.__init__)
+def test_flatqvt_unlimitednaturalexp_constructor_exists():
+    assert callable(FlatQVT_UnlimitedNaturalExp.__init__)
 
 
-def test_flatqvt::integerliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::IntegerLiteralExp.__init__)
+def test_flatqvt_unlimitednaturalexp_constructor_args():
+    sig = inspect.signature(FlatQVT_UnlimitedNaturalExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_IntegerLiteralExp)
+
+
+def test_flatqvt_integerliteralexp_constructor_exists():
+    assert callable(FlatQVT_IntegerLiteralExp.__init__)
+
+
+def test_flatqvt_integerliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_IntegerLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_instantiationexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_InstantiationExp)
+
+
+def test_flatqvt_instantiationexp_constructor_exists():
+    assert callable(FlatQVT_InstantiationExp.__init__)
+
+
+def test_flatqvt_instantiationexp_constructor_args():
+    sig = inspect.signature(FlatQVT_InstantiationExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -474,30 +1076,44 @@ def test_loopexp_constructor_args():
 
 
 
-def test_flatqvt::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::IterateExp)
+def test_flatqvt_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_IterateExp)
 
 
-def test_flatqvt::iterateexp_constructor_exists():
-    assert callable(FlatQVT::IterateExp.__init__)
+def test_flatqvt_iterateexp_constructor_exists():
+    assert callable(FlatQVT_IterateExp.__init__)
 
 
-def test_flatqvt::iterateexp_constructor_args():
-    sig = inspect.signature(FlatQVT::IterateExp.__init__)
+def test_flatqvt_iterateexp_constructor_args():
+    sig = inspect.signature(FlatQVT_IterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::IteratorExp)
+def test_flatqvt_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_IteratorExp)
 
 
-def test_flatqvt::iteratorexp_constructor_exists():
-    assert callable(FlatQVT::IteratorExp.__init__)
+def test_flatqvt_iteratorexp_constructor_exists():
+    assert callable(FlatQVT_IteratorExp.__init__)
 
 
-def test_flatqvt::iteratorexp_constructor_args():
-    sig = inspect.signature(FlatQVT::IteratorExp.__init__)
+def test_flatqvt_iteratorexp_constructor_args():
+    sig = inspect.signature(FlatQVT_IteratorExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_imperativeloopexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ImperativeLoopExp)
+
+
+def test_flatqvt_imperativeloopexp_constructor_exists():
+    assert callable(FlatQVT_ImperativeLoopExp.__init__)
+
+
+def test_flatqvt_imperativeloopexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ImperativeLoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -512,6 +1128,34 @@ def test_operationcallexp_constructor_exists():
 
 def test_operationcallexp_constructor_args():
     sig = inspect.signature(OperationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_logexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_LogExp)
+
+
+def test_flatqvt_logexp_constructor_exists():
+    assert callable(FlatQVT_LogExp.__init__)
+
+
+def test_flatqvt_logexp_constructor_args():
+    sig = inspect.signature(FlatQVT_LogExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_imperativecallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ImperativeCallExp)
+
+
+def test_flatqvt_imperativecallexp_constructor_exists():
+    assert callable(FlatQVT_ImperativeCallExp.__init__)
+
+
+def test_flatqvt_imperativecallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ImperativeCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -544,30 +1188,44 @@ def test_variable_constructor_args():
 
 
 
-def test_flatqvt::varparameter_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::VarParameter)
+def test_flatqvt_realizedvariable_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RealizedVariable)
 
 
-def test_flatqvt::varparameter_constructor_exists():
-    assert callable(FlatQVT::VarParameter.__init__)
+def test_flatqvt_realizedvariable_constructor_exists():
+    assert callable(FlatQVT_RealizedVariable.__init__)
 
 
-def test_flatqvt::varparameter_constructor_args():
-    sig = inspect.signature(FlatQVT::VarParameter.__init__)
+def test_flatqvt_realizedvariable_constructor_args():
+    sig = inspect.signature(FlatQVT_RealizedVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::functionparameter_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::FunctionParameter)
+def test_flatqvt_varparameter_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_VarParameter)
 
 
-def test_flatqvt::functionparameter_constructor_exists():
-    assert callable(FlatQVT::FunctionParameter.__init__)
+def test_flatqvt_varparameter_constructor_exists():
+    assert callable(FlatQVT_VarParameter.__init__)
 
 
-def test_flatqvt::functionparameter_constructor_args():
-    sig = inspect.signature(FlatQVT::FunctionParameter.__init__)
+def test_flatqvt_varparameter_constructor_args():
+    sig = inspect.signature(FlatQVT_VarParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_functionparameter_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_FunctionParameter)
+
+
+def test_flatqvt_functionparameter_constructor_exists():
+    assert callable(FlatQVT_FunctionParameter.__init__)
+
+
+def test_flatqvt_functionparameter_constructor_args():
+    sig = inspect.signature(FlatQVT_FunctionParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -586,30 +1244,30 @@ def test_operation_constructor_args():
 
 
 
-def test_flatqvt::imperativeoperation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ImperativeOperation)
+def test_flatqvt_imperativeoperation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ImperativeOperation)
 
 
-def test_flatqvt::imperativeoperation_constructor_exists():
-    assert callable(FlatQVT::ImperativeOperation.__init__)
+def test_flatqvt_imperativeoperation_constructor_exists():
+    assert callable(FlatQVT_ImperativeOperation.__init__)
 
 
-def test_flatqvt::imperativeoperation_constructor_args():
-    sig = inspect.signature(FlatQVT::ImperativeOperation.__init__)
+def test_flatqvt_imperativeoperation_constructor_args():
+    sig = inspect.signature(FlatQVT_ImperativeOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::function_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Function)
+def test_flatqvt_function_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Function)
 
 
-def test_flatqvt::function_constructor_exists():
-    assert callable(FlatQVT::Function.__init__)
+def test_flatqvt_function_constructor_exists():
+    assert callable(FlatQVT_Function.__init__)
 
 
-def test_flatqvt::function_constructor_args():
-    sig = inspect.signature(FlatQVT::Function.__init__)
+def test_flatqvt_function_constructor_args():
+    sig = inspect.signature(FlatQVT_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -628,30 +1286,30 @@ def test_imperativeloopexp_constructor_args():
 
 
 
-def test_flatqvt::imperativeiterateexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ImperativeIterateExp)
+def test_flatqvt_imperativeiterateexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ImperativeIterateExp)
 
 
-def test_flatqvt::imperativeiterateexp_constructor_exists():
-    assert callable(FlatQVT::ImperativeIterateExp.__init__)
+def test_flatqvt_imperativeiterateexp_constructor_exists():
+    assert callable(FlatQVT_ImperativeIterateExp.__init__)
 
 
-def test_flatqvt::imperativeiterateexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ImperativeIterateExp.__init__)
+def test_flatqvt_imperativeiterateexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ImperativeIterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::forexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ForExp)
+def test_flatqvt_forexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ForExp)
 
 
-def test_flatqvt::forexp_constructor_exists():
-    assert callable(FlatQVT::ForExp.__init__)
+def test_flatqvt_forexp_constructor_exists():
+    assert callable(FlatQVT_ForExp.__init__)
 
 
-def test_flatqvt::forexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ForExp.__init__)
+def test_flatqvt_forexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ForExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -670,16 +1328,30 @@ def test_callexp_constructor_args():
 
 
 
-def test_flatqvt::featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::FeatureCallExp)
+def test_flatqvt_resolveexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ResolveExp)
 
 
-def test_flatqvt::featurecallexp_constructor_exists():
-    assert callable(FlatQVT::FeatureCallExp.__init__)
+def test_flatqvt_resolveexp_constructor_exists():
+    assert callable(FlatQVT_ResolveExp.__init__)
 
 
-def test_flatqvt::featurecallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::FeatureCallExp.__init__)
+def test_flatqvt_resolveexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ResolveExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_FeatureCallExp)
+
+
+def test_flatqvt_featurecallexp_constructor_exists():
+    assert callable(FlatQVT_FeatureCallExp.__init__)
+
+
+def test_flatqvt_featurecallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_FeatureCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -698,30 +1370,44 @@ def test_object_constructor_args():
 
 
 
-def test_flatqvt::extent_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Extent)
+def test_flatqvt_reflectivecollection_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ReflectiveCollection)
 
 
-def test_flatqvt::extent_constructor_exists():
-    assert callable(FlatQVT::Extent.__init__)
+def test_flatqvt_reflectivecollection_constructor_exists():
+    assert callable(FlatQVT_ReflectiveCollection.__init__)
 
 
-def test_flatqvt::extent_constructor_args():
-    sig = inspect.signature(FlatQVT::Extent.__init__)
+def test_flatqvt_reflectivecollection_constructor_args():
+    sig = inspect.signature(FlatQVT_ReflectiveCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::element_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Element)
+def test_flatqvt_extent_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Extent)
 
 
-def test_flatqvt::element_constructor_exists():
-    assert callable(FlatQVT::Element.__init__)
+def test_flatqvt_extent_constructor_exists():
+    assert callable(FlatQVT_Extent.__init__)
 
 
-def test_flatqvt::element_constructor_args():
-    sig = inspect.signature(FlatQVT::Element.__init__)
+def test_flatqvt_extent_constructor_args():
+    sig = inspect.signature(FlatQVT_Extent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_element_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Element)
+
+
+def test_flatqvt_element_constructor_exists():
+    assert callable(FlatQVT_Element.__init__)
+
+
+def test_flatqvt_element_constructor_args():
+    sig = inspect.signature(FlatQVT_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -740,72 +1426,114 @@ def test_namedelement_constructor_args():
 
 
 
-def test_flatqvt::type_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Type)
+def test_flatqvt_package_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Package)
 
 
-def test_flatqvt::type_constructor_exists():
-    assert callable(FlatQVT::Type.__init__)
+def test_flatqvt_package_constructor_exists():
+    assert callable(FlatQVT_Package.__init__)
 
 
-def test_flatqvt::type_constructor_args():
-    sig = inspect.signature(FlatQVT::Type.__init__)
+def test_flatqvt_package_constructor_args():
+    sig = inspect.signature(FlatQVT_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::EnumerationLiteral)
+def test_flatqvt_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_EnumerationLiteral)
 
 
-def test_flatqvt::enumerationliteral_constructor_exists():
-    assert callable(FlatQVT::EnumerationLiteral.__init__)
+def test_flatqvt_enumerationliteral_constructor_exists():
+    assert callable(FlatQVT_EnumerationLiteral.__init__)
 
 
-def test_flatqvt::enumerationliteral_constructor_args():
-    sig = inspect.signature(FlatQVT::EnumerationLiteral.__init__)
+def test_flatqvt_enumerationliteral_constructor_args():
+    sig = inspect.signature(FlatQVT_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::typedelement_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TypedElement)
+def test_flatqvt_typedmodel_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TypedModel)
 
 
-def test_flatqvt::typedelement_constructor_exists():
-    assert callable(FlatQVT::TypedElement.__init__)
+def test_flatqvt_typedmodel_constructor_exists():
+    assert callable(FlatQVT_TypedModel.__init__)
 
 
-def test_flatqvt::typedelement_constructor_args():
-    sig = inspect.signature(FlatQVT::TypedElement.__init__)
+def test_flatqvt_typedmodel_constructor_args():
+    sig = inspect.signature(FlatQVT_TypedModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::typedmodel_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TypedModel)
+def test_flatqvt_typedelement_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TypedElement)
 
 
-def test_flatqvt::typedmodel_constructor_exists():
-    assert callable(FlatQVT::TypedModel.__init__)
+def test_flatqvt_typedelement_constructor_exists():
+    assert callable(FlatQVT_TypedElement.__init__)
 
 
-def test_flatqvt::typedmodel_constructor_args():
-    sig = inspect.signature(FlatQVT::TypedModel.__init__)
+def test_flatqvt_typedelement_constructor_args():
+    sig = inspect.signature(FlatQVT_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::domain_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Domain)
+def test_flatqvt_type_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Type)
 
 
-def test_flatqvt::domain_constructor_exists():
-    assert callable(FlatQVT::Domain.__init__)
+def test_flatqvt_type_constructor_exists():
+    assert callable(FlatQVT_Type.__init__)
 
 
-def test_flatqvt::domain_constructor_args():
-    sig = inspect.signature(FlatQVT::Domain.__init__)
+def test_flatqvt_type_constructor_args():
+    sig = inspect.signature(FlatQVT_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_rule_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Rule)
+
+
+def test_flatqvt_rule_constructor_exists():
+    assert callable(FlatQVT_Rule.__init__)
+
+
+def test_flatqvt_rule_constructor_args():
+    sig = inspect.signature(FlatQVT_Rule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_domain_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Domain)
+
+
+def test_flatqvt_domain_constructor_exists():
+    assert callable(FlatQVT_Domain.__init__)
+
+
+def test_flatqvt_domain_constructor_args():
+    sig = inspect.signature(FlatQVT_Domain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_datatype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_DataType)
+
+
+def test_flatqvt_datatype_constructor_exists():
+    assert callable(FlatQVT_DataType.__init__)
+
+
+def test_flatqvt_datatype_constructor_args():
+    sig = inspect.signature(FlatQVT_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -824,30 +1552,30 @@ def test_pattern_constructor_args():
 
 
 
-def test_flatqvt::domainpattern_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::DomainPattern)
+def test_flatqvt_domainpattern_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_DomainPattern)
 
 
-def test_flatqvt::domainpattern_constructor_exists():
-    assert callable(FlatQVT::DomainPattern.__init__)
+def test_flatqvt_domainpattern_constructor_exists():
+    assert callable(FlatQVT_DomainPattern.__init__)
 
 
-def test_flatqvt::domainpattern_constructor_args():
-    sig = inspect.signature(FlatQVT::DomainPattern.__init__)
+def test_flatqvt_domainpattern_constructor_args():
+    sig = inspect.signature(FlatQVT_DomainPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::corepattern_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CorePattern)
+def test_flatqvt_corepattern_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CorePattern)
 
 
-def test_flatqvt::corepattern_constructor_exists():
-    assert callable(FlatQVT::CorePattern.__init__)
+def test_flatqvt_corepattern_constructor_exists():
+    assert callable(FlatQVT_CorePattern.__init__)
 
 
-def test_flatqvt::corepattern_constructor_args():
-    sig = inspect.signature(FlatQVT::CorePattern.__init__)
+def test_flatqvt_corepattern_constructor_args():
+    sig = inspect.signature(FlatQVT_CorePattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -866,16 +1594,16 @@ def test_area_constructor_args():
 
 
 
-def test_flatqvt::mapping_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Mapping)
+def test_flatqvt_mapping_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Mapping)
 
 
-def test_flatqvt::mapping_constructor_exists():
-    assert callable(FlatQVT::Mapping.__init__)
+def test_flatqvt_mapping_constructor_exists():
+    assert callable(FlatQVT_Mapping.__init__)
 
 
-def test_flatqvt::mapping_constructor_args():
-    sig = inspect.signature(FlatQVT::Mapping.__init__)
+def test_flatqvt_mapping_constructor_args():
+    sig = inspect.signature(FlatQVT_Mapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -894,16 +1622,44 @@ def test_domain_constructor_args():
 
 
 
-def test_flatqvt::coredomain_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CoreDomain)
+def test_flatqvt_relationdomain_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RelationDomain)
 
 
-def test_flatqvt::coredomain_constructor_exists():
-    assert callable(FlatQVT::CoreDomain.__init__)
+def test_flatqvt_relationdomain_constructor_exists():
+    assert callable(FlatQVT_RelationDomain.__init__)
 
 
-def test_flatqvt::coredomain_constructor_args():
-    sig = inspect.signature(FlatQVT::CoreDomain.__init__)
+def test_flatqvt_relationdomain_constructor_args():
+    sig = inspect.signature(FlatQVT_RelationDomain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_coredomain_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CoreDomain)
+
+
+def test_flatqvt_coredomain_constructor_exists():
+    assert callable(FlatQVT_CoreDomain.__init__)
+
+
+def test_flatqvt_coredomain_constructor_args():
+    sig = inspect.signature(FlatQVT_CoreDomain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_continueexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ContinueExp)
+
+
+def test_flatqvt_continueexp_constructor_exists():
+    assert callable(FlatQVT_ContinueExp.__init__)
+
+
+def test_flatqvt_continueexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ContinueExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -922,16 +1678,16 @@ def test_property_constructor_args():
 
 
 
-def test_flatqvt::contextualproperty_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ContextualProperty)
+def test_flatqvt_contextualproperty_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ContextualProperty)
 
 
-def test_flatqvt::contextualproperty_constructor_exists():
-    assert callable(FlatQVT::ContextualProperty.__init__)
+def test_flatqvt_contextualproperty_constructor_exists():
+    assert callable(FlatQVT_ContextualProperty.__init__)
 
 
-def test_flatqvt::contextualproperty_constructor_args():
-    sig = inspect.signature(FlatQVT::ContextualProperty.__init__)
+def test_flatqvt_contextualproperty_constructor_args():
+    sig = inspect.signature(FlatQVT_ContextualProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -950,30 +1706,30 @@ def test_operationbody_constructor_args():
 
 
 
-def test_flatqvt::mappingbody_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::MappingBody)
+def test_flatqvt_mappingbody_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_MappingBody)
 
 
-def test_flatqvt::mappingbody_constructor_exists():
-    assert callable(FlatQVT::MappingBody.__init__)
+def test_flatqvt_mappingbody_constructor_exists():
+    assert callable(FlatQVT_MappingBody.__init__)
 
 
-def test_flatqvt::mappingbody_constructor_args():
-    sig = inspect.signature(FlatQVT::MappingBody.__init__)
+def test_flatqvt_mappingbody_constructor_args():
+    sig = inspect.signature(FlatQVT_MappingBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::constructorbody_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ConstructorBody)
+def test_flatqvt_constructorbody_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ConstructorBody)
 
 
-def test_flatqvt::constructorbody_constructor_exists():
-    assert callable(FlatQVT::ConstructorBody.__init__)
+def test_flatqvt_constructorbody_constructor_exists():
+    assert callable(FlatQVT_ConstructorBody.__init__)
 
 
-def test_flatqvt::constructorbody_constructor_args():
-    sig = inspect.signature(FlatQVT::ConstructorBody.__init__)
+def test_flatqvt_constructorbody_constructor_args():
+    sig = inspect.signature(FlatQVT_ConstructorBody.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -992,58 +1748,72 @@ def test_imperativeoperation_constructor_args():
 
 
 
-def test_flatqvt::mappingoperation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::MappingOperation)
+def test_flatqvt_mappingoperation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_MappingOperation)
 
 
-def test_flatqvt::mappingoperation_constructor_exists():
-    assert callable(FlatQVT::MappingOperation.__init__)
+def test_flatqvt_mappingoperation_constructor_exists():
+    assert callable(FlatQVT_MappingOperation.__init__)
 
 
-def test_flatqvt::mappingoperation_constructor_args():
-    sig = inspect.signature(FlatQVT::MappingOperation.__init__)
+def test_flatqvt_mappingoperation_constructor_args():
+    sig = inspect.signature(FlatQVT_MappingOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::entryoperation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::EntryOperation)
+def test_flatqvt_helper_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Helper)
 
 
-def test_flatqvt::entryoperation_constructor_exists():
-    assert callable(FlatQVT::EntryOperation.__init__)
+def test_flatqvt_helper_constructor_exists():
+    assert callable(FlatQVT_Helper.__init__)
 
 
-def test_flatqvt::entryoperation_constructor_args():
-    sig = inspect.signature(FlatQVT::EntryOperation.__init__)
+def test_flatqvt_helper_constructor_args():
+    sig = inspect.signature(FlatQVT_Helper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::helper_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Helper)
+def test_flatqvt_entryoperation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_EntryOperation)
 
 
-def test_flatqvt::helper_constructor_exists():
-    assert callable(FlatQVT::Helper.__init__)
+def test_flatqvt_entryoperation_constructor_exists():
+    assert callable(FlatQVT_EntryOperation.__init__)
 
 
-def test_flatqvt::helper_constructor_args():
-    sig = inspect.signature(FlatQVT::Helper.__init__)
+def test_flatqvt_entryoperation_constructor_args():
+    sig = inspect.signature(FlatQVT_EntryOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::constructor_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Constructor)
+def test_flatqvt_constructor_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Constructor)
 
 
-def test_flatqvt::constructor_constructor_exists():
-    assert callable(FlatQVT::Constructor.__init__)
+def test_flatqvt_constructor_constructor_exists():
+    assert callable(FlatQVT_Constructor.__init__)
 
 
-def test_flatqvt::constructor_constructor_args():
-    sig = inspect.signature(FlatQVT::Constructor.__init__)
+def test_flatqvt_constructor_constructor_args():
+    sig = inspect.signature(FlatQVT_Constructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_computeexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ComputeExp)
+
+
+def test_flatqvt_computeexp_constructor_exists():
+    assert callable(FlatQVT_ComputeExp.__init__)
+
+
+def test_flatqvt_computeexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ComputeExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1062,44 +1832,58 @@ def test_datatype_constructor_args():
 
 
 
-def test_flatqvt::tupletype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TupleType)
+def test_flatqvt_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_PrimitiveType)
 
 
-def test_flatqvt::tupletype_constructor_exists():
-    assert callable(FlatQVT::TupleType.__init__)
+def test_flatqvt_primitivetype_constructor_exists():
+    assert callable(FlatQVT_PrimitiveType.__init__)
 
 
-def test_flatqvt::tupletype_constructor_args():
-    sig = inspect.signature(FlatQVT::TupleType.__init__)
+def test_flatqvt_primitivetype_constructor_args():
+    sig = inspect.signature(FlatQVT_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::enumeration_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Enumeration)
+def test_flatqvt_enumeration_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Enumeration)
 
 
-def test_flatqvt::enumeration_constructor_exists():
-    assert callable(FlatQVT::Enumeration.__init__)
+def test_flatqvt_enumeration_constructor_exists():
+    assert callable(FlatQVT_Enumeration.__init__)
 
 
-def test_flatqvt::enumeration_constructor_args():
-    sig = inspect.signature(FlatQVT::Enumeration.__init__)
+def test_flatqvt_enumeration_constructor_args():
+    sig = inspect.signature(FlatQVT_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CollectionType)
+def test_flatqvt_tupletype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TupleType)
 
 
-def test_flatqvt::collectiontype_constructor_exists():
-    assert callable(FlatQVT::CollectionType.__init__)
+def test_flatqvt_tupletype_constructor_exists():
+    assert callable(FlatQVT_TupleType.__init__)
 
 
-def test_flatqvt::collectiontype_constructor_args():
-    sig = inspect.signature(FlatQVT::CollectionType.__init__)
+def test_flatqvt_tupletype_constructor_args():
+    sig = inspect.signature(FlatQVT_TupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CollectionType)
+
+
+def test_flatqvt_collectiontype_constructor_exists():
+    assert callable(FlatQVT_CollectionType.__init__)
+
+
+def test_flatqvt_collectiontype_constructor_args():
+    sig = inspect.signature(FlatQVT_CollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1118,16 +1902,30 @@ def test_templateexp_constructor_args():
 
 
 
-def test_flatqvt::collectiontemplateexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CollectionTemplateExp)
+def test_flatqvt_objecttemplateexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ObjectTemplateExp)
 
 
-def test_flatqvt::collectiontemplateexp_constructor_exists():
-    assert callable(FlatQVT::CollectionTemplateExp.__init__)
+def test_flatqvt_objecttemplateexp_constructor_exists():
+    assert callable(FlatQVT_ObjectTemplateExp.__init__)
 
 
-def test_flatqvt::collectiontemplateexp_constructor_args():
-    sig = inspect.signature(FlatQVT::CollectionTemplateExp.__init__)
+def test_flatqvt_objecttemplateexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ObjectTemplateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_collectiontemplateexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CollectionTemplateExp)
+
+
+def test_flatqvt_collectiontemplateexp_constructor_exists():
+    assert callable(FlatQVT_CollectionTemplateExp.__init__)
+
+
+def test_flatqvt_collectiontemplateexp_constructor_args():
+    sig = inspect.signature(FlatQVT_CollectionTemplateExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1146,58 +1944,114 @@ def test_typedelement_constructor_args():
 
 
 
-def test_flatqvt::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ExpressionInOcl)
+def test_flatqvt_parameter_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Parameter)
 
 
-def test_flatqvt::expressioninocl_constructor_exists():
-    assert callable(FlatQVT::ExpressionInOcl.__init__)
+def test_flatqvt_parameter_constructor_exists():
+    assert callable(FlatQVT_Parameter.__init__)
 
 
-def test_flatqvt::expressioninocl_constructor_args():
-    sig = inspect.signature(FlatQVT::ExpressionInOcl.__init__)
+def test_flatqvt_parameter_constructor_args():
+    sig = inspect.signature(FlatQVT_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::variable_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Variable)
+def test_flatqvt_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ExpressionInOcl)
 
 
-def test_flatqvt::variable_constructor_exists():
-    assert callable(FlatQVT::Variable.__init__)
+def test_flatqvt_expressioninocl_constructor_exists():
+    assert callable(FlatQVT_ExpressionInOcl.__init__)
 
 
-def test_flatqvt::variable_constructor_args():
-    sig = inspect.signature(FlatQVT::Variable.__init__)
+def test_flatqvt_expressioninocl_constructor_args():
+    sig = inspect.signature(FlatQVT_ExpressionInOcl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TupleLiteralPart)
+def test_flatqvt_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TupleLiteralPart)
 
 
-def test_flatqvt::tupleliteralpart_constructor_exists():
-    assert callable(FlatQVT::TupleLiteralPart.__init__)
+def test_flatqvt_tupleliteralpart_constructor_exists():
+    assert callable(FlatQVT_TupleLiteralPart.__init__)
 
 
-def test_flatqvt::tupleliteralpart_constructor_args():
-    sig = inspect.signature(FlatQVT::TupleLiteralPart.__init__)
+def test_flatqvt_tupleliteralpart_constructor_args():
+    sig = inspect.signature(FlatQVT_TupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CollectionLiteralPart)
+def test_flatqvt_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_OclExpression)
 
 
-def test_flatqvt::collectionliteralpart_constructor_exists():
-    assert callable(FlatQVT::CollectionLiteralPart.__init__)
+def test_flatqvt_oclexpression_constructor_exists():
+    assert callable(FlatQVT_OclExpression.__init__)
 
 
-def test_flatqvt::collectionliteralpart_constructor_args():
-    sig = inspect.signature(FlatQVT::CollectionLiteralPart.__init__)
+def test_flatqvt_oclexpression_constructor_args():
+    sig = inspect.signature(FlatQVT_OclExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_variable_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Variable)
+
+
+def test_flatqvt_variable_constructor_exists():
+    assert callable(FlatQVT_Variable.__init__)
+
+
+def test_flatqvt_variable_constructor_args():
+    sig = inspect.signature(FlatQVT_Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_property_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Property)
+
+
+def test_flatqvt_property_constructor_exists():
+    assert callable(FlatQVT_Property.__init__)
+
+
+def test_flatqvt_property_constructor_args():
+    sig = inspect.signature(FlatQVT_Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_operation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Operation)
+
+
+def test_flatqvt_operation_constructor_exists():
+    assert callable(FlatQVT_Operation.__init__)
+
+
+def test_flatqvt_operation_constructor_args():
+    sig = inspect.signature(FlatQVT_Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CollectionLiteralPart)
+
+
+def test_flatqvt_collectionliteralpart_constructor_exists():
+    assert callable(FlatQVT_CollectionLiteralPart.__init__)
+
+
+def test_flatqvt_collectionliteralpart_constructor_args():
+    sig = inspect.signature(FlatQVT_CollectionLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1216,100 +2070,128 @@ def test_literalexp_constructor_args():
 
 
 
-def test_flatqvt::dictliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::DictLiteralExp)
+def test_flatqvt_listliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ListLiteralExp)
 
 
-def test_flatqvt::dictliteralexp_constructor_exists():
-    assert callable(FlatQVT::DictLiteralExp.__init__)
+def test_flatqvt_listliteralexp_constructor_exists():
+    assert callable(FlatQVT_ListLiteralExp.__init__)
 
 
-def test_flatqvt::dictliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::DictLiteralExp.__init__)
+def test_flatqvt_listliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_ListLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::InvalidLiteralExp)
+def test_flatqvt_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TupleLiteralExp)
 
 
-def test_flatqvt::invalidliteralexp_constructor_exists():
-    assert callable(FlatQVT::InvalidLiteralExp.__init__)
+def test_flatqvt_tupleliteralexp_constructor_exists():
+    assert callable(FlatQVT_TupleLiteralExp.__init__)
 
 
-def test_flatqvt::invalidliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::InvalidLiteralExp.__init__)
+def test_flatqvt_tupleliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::EnumLiteralExp)
+def test_flatqvt_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_PrimitiveLiteralExp)
 
 
-def test_flatqvt::enumliteralexp_constructor_exists():
-    assert callable(FlatQVT::EnumLiteralExp.__init__)
+def test_flatqvt_primitiveliteralexp_constructor_exists():
+    assert callable(FlatQVT_PrimitiveLiteralExp.__init__)
 
 
-def test_flatqvt::enumliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::EnumLiteralExp.__init__)
+def test_flatqvt_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_PrimitiveLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::listliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ListLiteralExp)
+def test_flatqvt_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_NullLiteralExp)
 
 
-def test_flatqvt::listliteralexp_constructor_exists():
-    assert callable(FlatQVT::ListLiteralExp.__init__)
+def test_flatqvt_nullliteralexp_constructor_exists():
+    assert callable(FlatQVT_NullLiteralExp.__init__)
 
 
-def test_flatqvt::listliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ListLiteralExp.__init__)
+def test_flatqvt_nullliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_NullLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TupleLiteralExp)
+def test_flatqvt_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_EnumLiteralExp)
 
 
-def test_flatqvt::tupleliteralexp_constructor_exists():
-    assert callable(FlatQVT::TupleLiteralExp.__init__)
+def test_flatqvt_enumliteralexp_constructor_exists():
+    assert callable(FlatQVT_EnumLiteralExp.__init__)
 
 
-def test_flatqvt::tupleliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::TupleLiteralExp.__init__)
+def test_flatqvt_enumliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::templateexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TemplateExp)
+def test_flatqvt_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_InvalidLiteralExp)
 
 
-def test_flatqvt::templateexp_constructor_exists():
-    assert callable(FlatQVT::TemplateExp.__init__)
+def test_flatqvt_invalidliteralexp_constructor_exists():
+    assert callable(FlatQVT_InvalidLiteralExp.__init__)
 
 
-def test_flatqvt::templateexp_constructor_args():
-    sig = inspect.signature(FlatQVT::TemplateExp.__init__)
+def test_flatqvt_invalidliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_InvalidLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CollectionLiteralExp)
+def test_flatqvt_dictliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_DictLiteralExp)
 
 
-def test_flatqvt::collectionliteralexp_constructor_exists():
-    assert callable(FlatQVT::CollectionLiteralExp.__init__)
+def test_flatqvt_dictliteralexp_constructor_exists():
+    assert callable(FlatQVT_DictLiteralExp.__init__)
 
 
-def test_flatqvt::collectionliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::CollectionLiteralExp.__init__)
+def test_flatqvt_dictliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_DictLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_templateexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TemplateExp)
+
+
+def test_flatqvt_templateexp_constructor_exists():
+    assert callable(FlatQVT_TemplateExp.__init__)
+
+
+def test_flatqvt_templateexp_constructor_args():
+    sig = inspect.signature(FlatQVT_TemplateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CollectionLiteralExp)
+
+
+def test_flatqvt_collectionliteralexp_constructor_exists():
+    assert callable(FlatQVT_CollectionLiteralExp.__init__)
+
+
+def test_flatqvt_collectionliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_CollectionLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1328,30 +2210,58 @@ def test_collectionliteralpart_constructor_args():
 
 
 
-def test_flatqvt::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CollectionRange)
+def test_flatqvt_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CollectionRange)
 
 
-def test_flatqvt::collectionrange_constructor_exists():
-    assert callable(FlatQVT::CollectionRange.__init__)
+def test_flatqvt_collectionrange_constructor_exists():
+    assert callable(FlatQVT_CollectionRange.__init__)
 
 
-def test_flatqvt::collectionrange_constructor_args():
-    sig = inspect.signature(FlatQVT::CollectionRange.__init__)
+def test_flatqvt_collectionrange_constructor_args():
+    sig = inspect.signature(FlatQVT_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CollectionItem)
+def test_flatqvt_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CollectionItem)
 
 
-def test_flatqvt::collectionitem_constructor_exists():
-    assert callable(FlatQVT::CollectionItem.__init__)
+def test_flatqvt_collectionitem_constructor_exists():
+    assert callable(FlatQVT_CollectionItem.__init__)
 
 
-def test_flatqvt::collectionitem_constructor_args():
-    sig = inspect.signature(FlatQVT::CollectionItem.__init__)
+def test_flatqvt_collectionitem_constructor_args():
+    sig = inspect.signature(FlatQVT_CollectionItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_class_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Class)
+
+
+def test_flatqvt_class_constructor_exists():
+    assert callable(FlatQVT_Class.__init__)
+
+
+def test_flatqvt_class_constructor_args():
+    sig = inspect.signature(FlatQVT_Class.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_catchexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CatchExp)
+
+
+def test_flatqvt_catchexp_constructor_exists():
+    assert callable(FlatQVT_CatchExp.__init__)
+
+
+def test_flatqvt_catchexp_constructor_args():
+    sig = inspect.signature(FlatQVT_CatchExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1370,114 +2280,142 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_flatqvt::letexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::LetExp)
+def test_flatqvt_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ImperativeExpression)
 
 
-def test_flatqvt::letexp_constructor_exists():
-    assert callable(FlatQVT::LetExp.__init__)
+def test_flatqvt_imperativeexpression_constructor_exists():
+    assert callable(FlatQVT_ImperativeExpression.__init__)
 
 
-def test_flatqvt::letexp_constructor_args():
-    sig = inspect.signature(FlatQVT::LetExp.__init__)
+def test_flatqvt_imperativeexpression_constructor_args():
+    sig = inspect.signature(FlatQVT_ImperativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::variableexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::VariableExp)
+def test_flatqvt_variableexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_VariableExp)
 
 
-def test_flatqvt::variableexp_constructor_exists():
-    assert callable(FlatQVT::VariableExp.__init__)
+def test_flatqvt_variableexp_constructor_exists():
+    assert callable(FlatQVT_VariableExp.__init__)
 
 
-def test_flatqvt::variableexp_constructor_args():
-    sig = inspect.signature(FlatQVT::VariableExp.__init__)
+def test_flatqvt_variableexp_constructor_args():
+    sig = inspect.signature(FlatQVT_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::typeexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TypeExp)
+def test_flatqvt_literalexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_LiteralExp)
 
 
-def test_flatqvt::typeexp_constructor_exists():
-    assert callable(FlatQVT::TypeExp.__init__)
+def test_flatqvt_literalexp_constructor_exists():
+    assert callable(FlatQVT_LiteralExp.__init__)
 
 
-def test_flatqvt::typeexp_constructor_args():
-    sig = inspect.signature(FlatQVT::TypeExp.__init__)
+def test_flatqvt_literalexp_constructor_args():
+    sig = inspect.signature(FlatQVT_LiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::ifexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::IfExp)
+def test_flatqvt_loopexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_LoopExp)
 
 
-def test_flatqvt::ifexp_constructor_exists():
-    assert callable(FlatQVT::IfExp.__init__)
+def test_flatqvt_loopexp_constructor_exists():
+    assert callable(FlatQVT_LoopExp.__init__)
 
 
-def test_flatqvt::ifexp_constructor_args():
-    sig = inspect.signature(FlatQVT::IfExp.__init__)
+def test_flatqvt_loopexp_constructor_args():
+    sig = inspect.signature(FlatQVT_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ImperativeExpression)
+def test_flatqvt_letexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_LetExp)
 
 
-def test_flatqvt::imperativeexpression_constructor_exists():
-    assert callable(FlatQVT::ImperativeExpression.__init__)
+def test_flatqvt_letexp_constructor_exists():
+    assert callable(FlatQVT_LetExp.__init__)
 
 
-def test_flatqvt::imperativeexpression_constructor_args():
-    sig = inspect.signature(FlatQVT::ImperativeExpression.__init__)
+def test_flatqvt_letexp_constructor_args():
+    sig = inspect.signature(FlatQVT_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::loopexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::LoopExp)
+def test_flatqvt_relationcallexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RelationCallExp)
 
 
-def test_flatqvt::loopexp_constructor_exists():
-    assert callable(FlatQVT::LoopExp.__init__)
+def test_flatqvt_relationcallexp_constructor_exists():
+    assert callable(FlatQVT_RelationCallExp.__init__)
 
 
-def test_flatqvt::loopexp_constructor_args():
-    sig = inspect.signature(FlatQVT::LoopExp.__init__)
+def test_flatqvt_relationcallexp_constructor_args():
+    sig = inspect.signature(FlatQVT_RelationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::literalexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::LiteralExp)
+def test_flatqvt_ifexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_IfExp)
 
 
-def test_flatqvt::literalexp_constructor_exists():
-    assert callable(FlatQVT::LiteralExp.__init__)
+def test_flatqvt_ifexp_constructor_exists():
+    assert callable(FlatQVT_IfExp.__init__)
 
 
-def test_flatqvt::literalexp_constructor_args():
-    sig = inspect.signature(FlatQVT::LiteralExp.__init__)
+def test_flatqvt_ifexp_constructor_args():
+    sig = inspect.signature(FlatQVT_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::callexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CallExp)
+def test_flatqvt_typeexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_TypeExp)
 
 
-def test_flatqvt::callexp_constructor_exists():
-    assert callable(FlatQVT::CallExp.__init__)
+def test_flatqvt_typeexp_constructor_exists():
+    assert callable(FlatQVT_TypeExp.__init__)
 
 
-def test_flatqvt::callexp_constructor_args():
-    sig = inspect.signature(FlatQVT::CallExp.__init__)
+def test_flatqvt_typeexp_constructor_args():
+    sig = inspect.signature(FlatQVT_TypeExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_callexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_CallExp)
+
+
+def test_flatqvt_callexp_constructor_exists():
+    assert callable(FlatQVT_CallExp.__init__)
+
+
+def test_flatqvt_callexp_constructor_args():
+    sig = inspect.signature(FlatQVT_CallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_breakexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_BreakExp)
+
+
+def test_flatqvt_breakexp_constructor_exists():
+    assert callable(FlatQVT_BreakExp.__init__)
+
+
+def test_flatqvt_breakexp_constructor_args():
+    sig = inspect.signature(FlatQVT_BreakExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1496,30 +2434,30 @@ def test_corepattern_constructor_args():
 
 
 
-def test_flatqvt::guardpattern_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::GuardPattern)
+def test_flatqvt_guardpattern_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_GuardPattern)
 
 
-def test_flatqvt::guardpattern_constructor_exists():
-    assert callable(FlatQVT::GuardPattern.__init__)
+def test_flatqvt_guardpattern_constructor_exists():
+    assert callable(FlatQVT_GuardPattern.__init__)
 
 
-def test_flatqvt::guardpattern_constructor_args():
-    sig = inspect.signature(FlatQVT::GuardPattern.__init__)
+def test_flatqvt_guardpattern_constructor_args():
+    sig = inspect.signature(FlatQVT_GuardPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::bottompattern_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::BottomPattern)
+def test_flatqvt_bottompattern_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_BottomPattern)
 
 
-def test_flatqvt::bottompattern_constructor_exists():
-    assert callable(FlatQVT::BottomPattern.__init__)
+def test_flatqvt_bottompattern_constructor_exists():
+    assert callable(FlatQVT_BottomPattern.__init__)
 
 
-def test_flatqvt::bottompattern_constructor_args():
-    sig = inspect.signature(FlatQVT::BottomPattern.__init__)
+def test_flatqvt_bottompattern_constructor_args():
+    sig = inspect.signature(FlatQVT_BottomPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1538,16 +2476,58 @@ def test_primitiveliteralexp_constructor_args():
 
 
 
-def test_flatqvt::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::BooleanLiteralExp)
+def test_flatqvt_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_StringLiteralExp)
 
 
-def test_flatqvt::booleanliteralexp_constructor_exists():
-    assert callable(FlatQVT::BooleanLiteralExp.__init__)
+def test_flatqvt_stringliteralexp_constructor_exists():
+    assert callable(FlatQVT_StringLiteralExp.__init__)
 
 
-def test_flatqvt::booleanliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::BooleanLiteralExp.__init__)
+def test_flatqvt_stringliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_StringLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_NumericLiteralExp)
+
+
+def test_flatqvt_numericliteralexp_constructor_exists():
+    assert callable(FlatQVT_NumericLiteralExp.__init__)
+
+
+def test_flatqvt_numericliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_NumericLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_BooleanLiteralExp)
+
+
+def test_flatqvt_booleanliteralexp_constructor_exists():
+    assert callable(FlatQVT_BooleanLiteralExp.__init__)
+
+
+def test_flatqvt_booleanliteralexp_constructor_args():
+    sig = inspect.signature(FlatQVT_BooleanLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_blockexp_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_BlockExp)
+
+
+def test_flatqvt_blockexp_constructor_exists():
+    assert callable(FlatQVT_BlockExp.__init__)
+
+
+def test_flatqvt_blockexp_constructor_args():
+    sig = inspect.signature(FlatQVT_BlockExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1566,44 +2546,86 @@ def test_collectiontype_constructor_args():
 
 
 
-def test_flatqvt::dictionarytype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::DictionaryType)
+def test_flatqvt_dictionarytype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_DictionaryType)
 
 
-def test_flatqvt::dictionarytype_constructor_exists():
-    assert callable(FlatQVT::DictionaryType.__init__)
+def test_flatqvt_dictionarytype_constructor_exists():
+    assert callable(FlatQVT_DictionaryType.__init__)
 
 
-def test_flatqvt::dictionarytype_constructor_args():
-    sig = inspect.signature(FlatQVT::DictionaryType.__init__)
+def test_flatqvt_dictionarytype_constructor_args():
+    sig = inspect.signature(FlatQVT_DictionaryType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::listtype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ListType)
+def test_flatqvt_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_SequenceType)
 
 
-def test_flatqvt::listtype_constructor_exists():
-    assert callable(FlatQVT::ListType.__init__)
+def test_flatqvt_sequencetype_constructor_exists():
+    assert callable(FlatQVT_SequenceType.__init__)
 
 
-def test_flatqvt::listtype_constructor_args():
-    sig = inspect.signature(FlatQVT::ListType.__init__)
+def test_flatqvt_sequencetype_constructor_args():
+    sig = inspect.signature(FlatQVT_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::bagtype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::BagType)
+def test_flatqvt_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_OrderedSetType)
 
 
-def test_flatqvt::bagtype_constructor_exists():
-    assert callable(FlatQVT::BagType.__init__)
+def test_flatqvt_orderedsettype_constructor_exists():
+    assert callable(FlatQVT_OrderedSetType.__init__)
 
 
-def test_flatqvt::bagtype_constructor_args():
-    sig = inspect.signature(FlatQVT::BagType.__init__)
+def test_flatqvt_orderedsettype_constructor_args():
+    sig = inspect.signature(FlatQVT_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_settype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_SetType)
+
+
+def test_flatqvt_settype_constructor_exists():
+    assert callable(FlatQVT_SetType.__init__)
+
+
+def test_flatqvt_settype_constructor_args():
+    sig = inspect.signature(FlatQVT_SetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_listtype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ListType)
+
+
+def test_flatqvt_listtype_constructor_exists():
+    assert callable(FlatQVT_ListType.__init__)
+
+
+def test_flatqvt_listtype_constructor_args():
+    sig = inspect.signature(FlatQVT_ListType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flatqvt_bagtype_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_BagType)
+
+
+def test_flatqvt_bagtype_constructor_exists():
+    assert callable(FlatQVT_BagType.__init__)
+
+
+def test_flatqvt_bagtype_constructor_args():
+    sig = inspect.signature(FlatQVT_BagType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1622,1235 +2644,247 @@ def test_element_constructor_args():
 
 
 
-def test_flatqvt::dictliteralpart_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::DictLiteralPart)
+def test_flatqvt_namedelement_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_NamedElement)
 
 
-def test_flatqvt::dictliteralpart_constructor_exists():
-    assert callable(FlatQVT::DictLiteralPart.__init__)
+def test_flatqvt_namedelement_constructor_exists():
+    assert callable(FlatQVT_NamedElement.__init__)
 
 
-def test_flatqvt::dictliteralpart_constructor_args():
-    sig = inspect.signature(FlatQVT::DictLiteralPart.__init__)
+def test_flatqvt_namedelement_constructor_args():
+    sig = inspect.signature(FlatQVT_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::comment_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Comment)
+def test_flatqvt_predicate_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Predicate)
 
 
-def test_flatqvt::comment_constructor_exists():
-    assert callable(FlatQVT::Comment.__init__)
+def test_flatqvt_predicate_constructor_exists():
+    assert callable(FlatQVT_Predicate.__init__)
 
 
-def test_flatqvt::comment_constructor_args():
-    sig = inspect.signature(FlatQVT::Comment.__init__)
+def test_flatqvt_predicate_constructor_args():
+    sig = inspect.signature(FlatQVT_Predicate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::enforcementoperation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::EnforcementOperation)
+def test_flatqvt_operationbody_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_OperationBody)
 
 
-def test_flatqvt::enforcementoperation_constructor_exists():
-    assert callable(FlatQVT::EnforcementOperation.__init__)
+def test_flatqvt_operationbody_constructor_exists():
+    assert callable(FlatQVT_OperationBody.__init__)
 
 
-def test_flatqvt::enforcementoperation_constructor_args():
-    sig = inspect.signature(FlatQVT::EnforcementOperation.__init__)
+def test_flatqvt_operationbody_constructor_args():
+    sig = inspect.signature(FlatQVT_OperationBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::key_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Key)
+def test_flatqvt_comment_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Comment)
 
 
-def test_flatqvt::key_constructor_exists():
-    assert callable(FlatQVT::Key.__init__)
+def test_flatqvt_comment_constructor_exists():
+    assert callable(FlatQVT_Comment.__init__)
 
 
-def test_flatqvt::key_constructor_args():
-    sig = inspect.signature(FlatQVT::Key.__init__)
+def test_flatqvt_comment_constructor_args():
+    sig = inspect.signature(FlatQVT_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::factory_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Factory)
+def test_flatqvt_factory_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Factory)
 
 
-def test_flatqvt::factory_constructor_exists():
-    assert callable(FlatQVT::Factory.__init__)
+def test_flatqvt_factory_constructor_exists():
+    assert callable(FlatQVT_Factory.__init__)
 
 
-def test_flatqvt::factory_constructor_args():
-    sig = inspect.signature(FlatQVT::Factory.__init__)
+def test_flatqvt_factory_constructor_args():
+    sig = inspect.signature(FlatQVT_Factory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::assignment_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Assignment)
+def test_flatqvt_relationimplementation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RelationImplementation)
 
 
-def test_flatqvt::assignment_constructor_exists():
-    assert callable(FlatQVT::Assignment.__init__)
+def test_flatqvt_relationimplementation_constructor_exists():
+    assert callable(FlatQVT_RelationImplementation.__init__)
 
 
-def test_flatqvt::assignment_constructor_args():
-    sig = inspect.signature(FlatQVT::Assignment.__init__)
+def test_flatqvt_relationimplementation_constructor_args():
+    sig = inspect.signature(FlatQVT_RelationImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::area_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Area)
+def test_flatqvt_dictliteralpart_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_DictLiteralPart)
 
 
-def test_flatqvt::area_constructor_exists():
-    assert callable(FlatQVT::Area.__init__)
+def test_flatqvt_dictliteralpart_constructor_exists():
+    assert callable(FlatQVT_DictLiteralPart.__init__)
 
 
-def test_flatqvt::area_constructor_args():
-    sig = inspect.signature(FlatQVT::Area.__init__)
+def test_flatqvt_dictliteralpart_constructor_args():
+    sig = inspect.signature(FlatQVT_DictLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(Type)
+def test_flatqvt_pattern_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Pattern)
 
 
-def test_type_constructor_exists():
-    assert callable(Type.__init__)
+def test_flatqvt_pattern_constructor_exists():
+    assert callable(FlatQVT_Pattern.__init__)
 
 
-def test_type_constructor_args():
-    sig = inspect.signature(Type.__init__)
+def test_flatqvt_pattern_constructor_args():
+    sig = inspect.signature(FlatQVT_Pattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TemplateParameterType)
+def test_flatqvt_moduleimport_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_ModuleImport)
 
 
-def test_flatqvt::templateparametertype_constructor_exists():
-    assert callable(FlatQVT::TemplateParameterType.__init__)
+def test_flatqvt_moduleimport_constructor_exists():
+    assert callable(FlatQVT_ModuleImport.__init__)
 
 
-def test_flatqvt::templateparametertype_constructor_args():
-    sig = inspect.signature(FlatQVT::TemplateParameterType.__init__)
+def test_flatqvt_moduleimport_constructor_args():
+    sig = inspect.signature(FlatQVT_ModuleImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::InvalidType)
+def test_flatqvt_relationdomainassignment_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_RelationDomainAssignment)
 
 
-def test_flatqvt::invalidtype_constructor_exists():
-    assert callable(FlatQVT::InvalidType.__init__)
+def test_flatqvt_relationdomainassignment_constructor_exists():
+    assert callable(FlatQVT_RelationDomainAssignment.__init__)
 
 
-def test_flatqvt::invalidtype_constructor_args():
-    sig = inspect.signature(FlatQVT::InvalidType.__init__)
+def test_flatqvt_relationdomainassignment_constructor_args():
+    sig = inspect.signature(FlatQVT_RelationDomainAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::class_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Class)
+def test_flatqvt_propertytemplateitem_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_PropertyTemplateItem)
 
 
-def test_flatqvt::class_constructor_exists():
-    assert callable(FlatQVT::Class.__init__)
+def test_flatqvt_propertytemplateitem_constructor_exists():
+    assert callable(FlatQVT_PropertyTemplateItem.__init__)
 
 
-def test_flatqvt::class_constructor_args():
-    sig = inspect.signature(FlatQVT::Class.__init__)
+def test_flatqvt_propertytemplateitem_constructor_args():
+    sig = inspect.signature(FlatQVT_PropertyTemplateItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::voidtype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::VoidType)
+def test_flatqvt_key_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Key)
 
 
-def test_flatqvt::voidtype_constructor_exists():
-    assert callable(FlatQVT::VoidType.__init__)
+def test_flatqvt_key_constructor_exists():
+    assert callable(FlatQVT_Key.__init__)
 
 
-def test_flatqvt::voidtype_constructor_args():
-    sig = inspect.signature(FlatQVT::VoidType.__init__)
+def test_flatqvt_key_constructor_args():
+    sig = inspect.signature(FlatQVT_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::datatype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::DataType)
+def test_flatqvt_tag_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Tag)
 
 
-def test_flatqvt::datatype_constructor_exists():
-    assert callable(FlatQVT::DataType.__init__)
+def test_flatqvt_tag_constructor_exists():
+    assert callable(FlatQVT_Tag.__init__)
 
 
-def test_flatqvt::datatype_constructor_args():
-    sig = inspect.signature(FlatQVT::DataType.__init__)
+def test_flatqvt_tag_constructor_args():
+    sig = inspect.signature(FlatQVT_Tag.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flatqvt::anytype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::AnyType)
+def test_flatqvt_enforcementoperation_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_EnforcementOperation)
 
 
-def test_flatqvt::anytype_constructor_exists():
-    assert callable(FlatQVT::AnyType.__init__)
+def test_flatqvt_enforcementoperation_constructor_exists():
+    assert callable(FlatQVT_EnforcementOperation.__init__)
 
 
-def test_flatqvt::anytype_constructor_args():
-    sig = inspect.signature(FlatQVT::AnyType.__init__)
+def test_flatqvt_enforcementoperation_constructor_args():
+    sig = inspect.signature(FlatQVT_EnforcementOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(ImperativeExpression)
+def test_flatqvt_assignment_is_not_abstract():
+    assert not inspect.isabstract(FlatQVT_Assignment)
 
 
-def test_imperativeexpression_constructor_exists():
-    assert callable(ImperativeExpression.__init__)
+def test_flatqvt_assignment_constructor_exists():
+    assert callable(FlatQVT_Assignment.__init__)
 
 
-def test_imperativeexpression_constructor_args():
-    sig = inspect.signature(ImperativeExpression.__init__)
+def test_flatqvt_assignment_constructor_args():
+    sig = inspect.signature(FlatQVT_Assignment.__init__)
     params = list(sig.parameters.keys())
 
+def test_directionkind_exists():
+    # Check that the Enumeration exists
+    assert DirectionKind is not None
 
+def test_directionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DirectionKind]
+    expected_literals = [
+        "out",
+        "in_",
+        "inout",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DirectionKind"
 
-def test_flatqvt::imperativecallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ImperativeCallExp)
+def test_collectionkind_exists():
+    # Check that the Enumeration exists
+    assert CollectionKind is not None
 
-
-def test_flatqvt::imperativecallexp_constructor_exists():
-    assert callable(FlatQVT::ImperativeCallExp.__init__)
-
-
-def test_flatqvt::imperativecallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ImperativeCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::instantiationexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::InstantiationExp)
-
-
-def test_flatqvt::instantiationexp_constructor_exists():
-    assert callable(FlatQVT::InstantiationExp.__init__)
-
-
-def test_flatqvt::instantiationexp_constructor_args():
-    sig = inspect.signature(FlatQVT::InstantiationExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::tryexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::TryExp)
-
-
-def test_flatqvt::tryexp_constructor_exists():
-    assert callable(FlatQVT::TryExp.__init__)
-
-
-def test_flatqvt::tryexp_constructor_args():
-    sig = inspect.signature(FlatQVT::TryExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::blockexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::BlockExp)
-
-
-def test_flatqvt::blockexp_constructor_exists():
-    assert callable(FlatQVT::BlockExp.__init__)
-
-
-def test_flatqvt::blockexp_constructor_args():
-    sig = inspect.signature(FlatQVT::BlockExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::computeexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ComputeExp)
-
-
-def test_flatqvt::computeexp_constructor_exists():
-    assert callable(FlatQVT::ComputeExp.__init__)
-
-
-def test_flatqvt::computeexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ComputeExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::unlinkexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::UnlinkExp)
-
-
-def test_flatqvt::unlinkexp_constructor_exists():
-    assert callable(FlatQVT::UnlinkExp.__init__)
-
-
-def test_flatqvt::unlinkexp_constructor_args():
-    sig = inspect.signature(FlatQVT::UnlinkExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::continueexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ContinueExp)
-
-
-def test_flatqvt::continueexp_constructor_exists():
-    assert callable(FlatQVT::ContinueExp.__init__)
-
-
-def test_flatqvt::continueexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ContinueExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::logexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::LogExp)
-
-
-def test_flatqvt::logexp_constructor_exists():
-    assert callable(FlatQVT::LogExp.__init__)
-
-
-def test_flatqvt::logexp_constructor_args():
-    sig = inspect.signature(FlatQVT::LogExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::assignexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::AssignExp)
-
-
-def test_flatqvt::assignexp_constructor_exists():
-    assert callable(FlatQVT::AssignExp.__init__)
-
-
-def test_flatqvt::assignexp_constructor_args():
-    sig = inspect.signature(FlatQVT::AssignExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::assertexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::AssertExp)
-
-
-def test_flatqvt::assertexp_constructor_exists():
-    assert callable(FlatQVT::AssertExp.__init__)
-
-
-def test_flatqvt::assertexp_constructor_args():
-    sig = inspect.signature(FlatQVT::AssertExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::breakexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::BreakExp)
-
-
-def test_flatqvt::breakexp_constructor_exists():
-    assert callable(FlatQVT::BreakExp.__init__)
-
-
-def test_flatqvt::breakexp_constructor_args():
-    sig = inspect.signature(FlatQVT::BreakExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::variableinitexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::VariableInitExp)
-
-
-def test_flatqvt::variableinitexp_constructor_exists():
-    assert callable(FlatQVT::VariableInitExp.__init__)
-
-
-def test_flatqvt::variableinitexp_constructor_args():
-    sig = inspect.signature(FlatQVT::VariableInitExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::imperativeloopexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ImperativeLoopExp)
-
-
-def test_flatqvt::imperativeloopexp_constructor_exists():
-    assert callable(FlatQVT::ImperativeLoopExp.__init__)
-
-
-def test_flatqvt::imperativeloopexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ImperativeLoopExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::catchexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::CatchExp)
-
-
-def test_flatqvt::catchexp_constructor_exists():
-    assert callable(FlatQVT::CatchExp.__init__)
-
-
-def test_flatqvt::catchexp_constructor_args():
-    sig = inspect.signature(FlatQVT::CatchExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::whileexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::WhileExp)
-
-
-def test_flatqvt::whileexp_constructor_exists():
-    assert callable(FlatQVT::WhileExp.__init__)
-
-
-def test_flatqvt::whileexp_constructor_args():
-    sig = inspect.signature(FlatQVT::WhileExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::altexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::AltExp)
-
-
-def test_flatqvt::altexp_constructor_exists():
-    assert callable(FlatQVT::AltExp.__init__)
-
-
-def test_flatqvt::altexp_constructor_args():
-    sig = inspect.signature(FlatQVT::AltExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::tag_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Tag)
-
-
-def test_flatqvt::tag_constructor_exists():
-    assert callable(FlatQVT::Tag.__init__)
-
-
-def test_flatqvt::tag_constructor_args():
-    sig = inspect.signature(FlatQVT::Tag.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::switchexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::SwitchExp)
-
-
-def test_flatqvt::switchexp_constructor_exists():
-    assert callable(FlatQVT::SwitchExp.__init__)
-
-
-def test_flatqvt::switchexp_constructor_args():
-    sig = inspect.signature(FlatQVT::SwitchExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::StringLiteralExp)
-
-
-def test_flatqvt::stringliteralexp_constructor_exists():
-    assert callable(FlatQVT::StringLiteralExp.__init__)
-
-
-def test_flatqvt::stringliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::StringLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::settype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::SetType)
-
-
-def test_flatqvt::settype_constructor_exists():
-    assert callable(FlatQVT::SetType.__init__)
-
-
-def test_flatqvt::settype_constructor_args():
-    sig = inspect.signature(FlatQVT::SetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::SequenceType)
-
-
-def test_flatqvt::sequencetype_constructor_exists():
-    assert callable(FlatQVT::SequenceType.__init__)
-
-
-def test_flatqvt::sequencetype_constructor_args():
-    sig = inspect.signature(FlatQVT::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::rule_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Rule)
-
-
-def test_flatqvt::rule_constructor_exists():
-    assert callable(FlatQVT::Rule.__init__)
-
-
-def test_flatqvt::rule_constructor_args():
-    sig = inspect.signature(FlatQVT::Rule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::returnexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ReturnExp)
-
-
-def test_flatqvt::returnexp_constructor_exists():
-    assert callable(FlatQVT::ReturnExp.__init__)
-
-
-def test_flatqvt::returnexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ReturnExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_resolveexp_is_not_abstract():
-    assert not inspect.isabstract(ResolveExp)
-
-
-def test_resolveexp_constructor_exists():
-    assert callable(ResolveExp.__init__)
-
-
-def test_resolveexp_constructor_args():
-    sig = inspect.signature(ResolveExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::resolveinexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ResolveInExp)
-
-
-def test_flatqvt::resolveinexp_constructor_exists():
-    assert callable(FlatQVT::ResolveInExp.__init__)
-
-
-def test_flatqvt::resolveinexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ResolveInExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::resolveexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ResolveExp)
-
-
-def test_flatqvt::resolveexp_constructor_exists():
-    assert callable(FlatQVT::ResolveExp.__init__)
-
-
-def test_flatqvt::resolveexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ResolveExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::realizedvariable_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RealizedVariable)
-
-
-def test_flatqvt::realizedvariable_constructor_exists():
-    assert callable(FlatQVT::RealizedVariable.__init__)
-
-
-def test_flatqvt::realizedvariable_constructor_args():
-    sig = inspect.signature(FlatQVT::RealizedVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::relationimplementation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RelationImplementation)
-
-
-def test_flatqvt::relationimplementation_constructor_exists():
-    assert callable(FlatQVT::RelationImplementation.__init__)
-
-
-def test_flatqvt::relationimplementation_constructor_args():
-    sig = inspect.signature(FlatQVT::RelationImplementation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::relationdomainassignment_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RelationDomainAssignment)
-
-
-def test_flatqvt::relationdomainassignment_constructor_exists():
-    assert callable(FlatQVT::RelationDomainAssignment.__init__)
-
-
-def test_flatqvt::relationdomainassignment_constructor_args():
-    sig = inspect.signature(FlatQVT::RelationDomainAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::relationdomain_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RelationDomain)
-
-
-def test_flatqvt::relationdomain_constructor_exists():
-    assert callable(FlatQVT::RelationDomain.__init__)
-
-
-def test_flatqvt::relationdomain_constructor_args():
-    sig = inspect.signature(FlatQVT::RelationDomain.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::relationcallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RelationCallExp)
-
-
-def test_flatqvt::relationcallexp_constructor_exists():
-    assert callable(FlatQVT::RelationCallExp.__init__)
-
-
-def test_flatqvt::relationcallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::RelationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::relation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Relation)
-
-
-def test_flatqvt::relation_constructor_exists():
-    assert callable(FlatQVT::Relation.__init__)
-
-
-def test_flatqvt::relation_constructor_args():
-    sig = inspect.signature(FlatQVT::Relation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_reflectivecollection_is_not_abstract():
-    assert not inspect.isabstract(ReflectiveCollection)
-
-
-def test_reflectivecollection_constructor_exists():
-    assert callable(ReflectiveCollection.__init__)
-
-
-def test_reflectivecollection_constructor_args():
-    sig = inspect.signature(ReflectiveCollection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::reflectivesequence_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ReflectiveSequence)
-
-
-def test_flatqvt::reflectivesequence_constructor_exists():
-    assert callable(FlatQVT::ReflectiveSequence.__init__)
-
-
-def test_flatqvt::reflectivesequence_constructor_args():
-    sig = inspect.signature(FlatQVT::ReflectiveSequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::reflectivecollection_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ReflectiveCollection)
-
-
-def test_flatqvt::reflectivecollection_constructor_exists():
-    assert callable(FlatQVT::ReflectiveCollection.__init__)
-
-
-def test_flatqvt::reflectivecollection_constructor_args():
-    sig = inspect.signature(FlatQVT::ReflectiveCollection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::OrderedSetType)
-
-
-def test_flatqvt::orderedsettype_constructor_exists():
-    assert callable(FlatQVT::OrderedSetType.__init__)
-
-
-def test_flatqvt::orderedsettype_constructor_args():
-    sig = inspect.signature(FlatQVT::OrderedSetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RealLiteralExp)
-
-
-def test_flatqvt::realliteralexp_constructor_exists():
-    assert callable(FlatQVT::RealLiteralExp.__init__)
-
-
-def test_flatqvt::realliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::RealLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::raiseexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::RaiseExp)
-
-
-def test_flatqvt::raiseexp_constructor_exists():
-    assert callable(FlatQVT::RaiseExp.__init__)
-
-
-def test_flatqvt::raiseexp_constructor_args():
-    sig = inspect.signature(FlatQVT::RaiseExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::propertytemplateitem_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::PropertyTemplateItem)
-
-
-def test_flatqvt::propertytemplateitem_constructor_exists():
-    assert callable(FlatQVT::PropertyTemplateItem.__init__)
-
-
-def test_flatqvt::propertytemplateitem_constructor_args():
-    sig = inspect.signature(FlatQVT::PropertyTemplateItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(NavigationCallExp)
-
-
-def test_navigationcallexp_constructor_exists():
-    assert callable(NavigationCallExp.__init__)
-
-
-def test_navigationcallexp_constructor_args():
-    sig = inspect.signature(NavigationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::PropertyCallExp)
-
-
-def test_flatqvt::propertycallexp_constructor_exists():
-    assert callable(FlatQVT::PropertyCallExp.__init__)
-
-
-def test_flatqvt::propertycallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::PropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_assignment_is_not_abstract():
-    assert not inspect.isabstract(Assignment)
-
-
-def test_assignment_constructor_exists():
-    assert callable(Assignment.__init__)
-
-
-def test_assignment_constructor_args():
-    sig = inspect.signature(Assignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::VariableAssignment)
-
-
-def test_flatqvt::variableassignment_constructor_exists():
-    assert callable(FlatQVT::VariableAssignment.__init__)
-
-
-def test_flatqvt::variableassignment_constructor_args():
-    sig = inspect.signature(FlatQVT::VariableAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::propertyassignment_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::PropertyAssignment)
-
-
-def test_flatqvt::propertyassignment_constructor_exists():
-    assert callable(FlatQVT::PropertyAssignment.__init__)
-
-
-def test_flatqvt::propertyassignment_constructor_args():
-    sig = inspect.signature(FlatQVT::PropertyAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::PrimitiveType)
-
-
-def test_flatqvt::primitivetype_constructor_exists():
-    assert callable(FlatQVT::PrimitiveType.__init__)
-
-
-def test_flatqvt::primitivetype_constructor_args():
-    sig = inspect.signature(FlatQVT::PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::PrimitiveLiteralExp)
-
-
-def test_flatqvt::primitiveliteralexp_constructor_exists():
-    assert callable(FlatQVT::PrimitiveLiteralExp.__init__)
-
-
-def test_flatqvt::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::PrimitiveLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::predicate_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Predicate)
-
-
-def test_flatqvt::predicate_constructor_exists():
-    assert callable(FlatQVT::Predicate.__init__)
-
-
-def test_flatqvt::predicate_constructor_args():
-    sig = inspect.signature(FlatQVT::Predicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::pattern_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Pattern)
-
-
-def test_flatqvt::pattern_constructor_exists():
-    assert callable(FlatQVT::Pattern.__init__)
-
-
-def test_flatqvt::pattern_constructor_args():
-    sig = inspect.signature(FlatQVT::Pattern.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::package_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Package)
-
-
-def test_flatqvt::package_constructor_exists():
-    assert callable(FlatQVT::Package.__init__)
-
-
-def test_flatqvt::package_constructor_args():
-    sig = inspect.signature(FlatQVT::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(PropertyCallExp)
-
-
-def test_propertycallexp_constructor_exists():
-    assert callable(PropertyCallExp.__init__)
-
-
-def test_propertycallexp_constructor_args():
-    sig = inspect.signature(PropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::oppositepropertycallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::OppositePropertyCallExp)
-
-
-def test_flatqvt::oppositepropertycallexp_constructor_exists():
-    assert callable(FlatQVT::OppositePropertyCallExp.__init__)
-
-
-def test_flatqvt::oppositepropertycallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::OppositePropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::operationaltransformation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::OperationalTransformation)
-
-
-def test_flatqvt::operationaltransformation_constructor_exists():
-    assert callable(FlatQVT::OperationalTransformation.__init__)
-
-
-def test_flatqvt::operationaltransformation_constructor_args():
-    sig = inspect.signature(FlatQVT::OperationalTransformation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::operationbody_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::OperationBody)
-
-
-def test_flatqvt::operationbody_constructor_exists():
-    assert callable(FlatQVT::OperationBody.__init__)
-
-
-def test_flatqvt::operationbody_constructor_args():
-    sig = inspect.signature(FlatQVT::OperationBody.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(MultiplicityElement)
-
-
-def test_multiplicityelement_constructor_exists():
-    assert callable(MultiplicityElement.__init__)
-
-
-def test_multiplicityelement_constructor_args():
-    sig = inspect.signature(MultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::property_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Property)
-
-
-def test_flatqvt::property_constructor_exists():
-    assert callable(FlatQVT::Property.__init__)
-
-
-def test_flatqvt::property_constructor_args():
-    sig = inspect.signature(FlatQVT::Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::parameter_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Parameter)
-
-
-def test_flatqvt::parameter_constructor_exists():
-    assert callable(FlatQVT::Parameter.__init__)
-
-
-def test_flatqvt::parameter_constructor_args():
-    sig = inspect.signature(FlatQVT::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::operation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Operation)
-
-
-def test_flatqvt::operation_constructor_exists():
-    assert callable(FlatQVT::Operation.__init__)
-
-
-def test_flatqvt::operation_constructor_args():
-    sig = inspect.signature(FlatQVT::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::OclExpression)
-
-
-def test_flatqvt::oclexpression_constructor_exists():
-    assert callable(FlatQVT::OclExpression.__init__)
-
-
-def test_flatqvt::oclexpression_constructor_args():
-    sig = inspect.signature(FlatQVT::OclExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::objecttemplateexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ObjectTemplateExp)
-
-
-def test_flatqvt::objecttemplateexp_constructor_exists():
-    assert callable(FlatQVT::ObjectTemplateExp.__init__)
-
-
-def test_flatqvt::objecttemplateexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ObjectTemplateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_instantiationexp_is_not_abstract():
-    assert not inspect.isabstract(InstantiationExp)
-
-
-def test_instantiationexp_constructor_exists():
-    assert callable(InstantiationExp.__init__)
-
-
-def test_instantiationexp_constructor_args():
-    sig = inspect.signature(InstantiationExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::objectexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ObjectExp)
-
-
-def test_flatqvt::objectexp_constructor_exists():
-    assert callable(FlatQVT::ObjectExp.__init__)
-
-
-def test_flatqvt::objectexp_constructor_args():
-    sig = inspect.signature(FlatQVT::ObjectExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::object_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Object)
-
-
-def test_flatqvt::object_constructor_exists():
-    assert callable(FlatQVT::Object.__init__)
-
-
-def test_flatqvt::object_constructor_args():
-    sig = inspect.signature(FlatQVT::Object.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::NumericLiteralExp)
-
-
-def test_flatqvt::numericliteralexp_constructor_exists():
-    assert callable(FlatQVT::NumericLiteralExp.__init__)
-
-
-def test_flatqvt::numericliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::NumericLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::NullLiteralExp)
-
-
-def test_flatqvt::nullliteralexp_constructor_exists():
-    assert callable(FlatQVT::NullLiteralExp.__init__)
-
-
-def test_flatqvt::nullliteralexp_constructor_args():
-    sig = inspect.signature(FlatQVT::NullLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(FeatureCallExp)
-
-
-def test_featurecallexp_constructor_exists():
-    assert callable(FeatureCallExp.__init__)
-
-
-def test_featurecallexp_constructor_args():
-    sig = inspect.signature(FeatureCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::OperationCallExp)
-
-
-def test_flatqvt::operationcallexp_constructor_exists():
-    assert callable(FlatQVT::OperationCallExp.__init__)
-
-
-def test_flatqvt::operationcallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::OperationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::NavigationCallExp)
-
-
-def test_flatqvt::navigationcallexp_constructor_exists():
-    assert callable(FlatQVT::NavigationCallExp.__init__)
-
-
-def test_flatqvt::navigationcallexp_constructor_args():
-    sig = inspect.signature(FlatQVT::NavigationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::namedelement_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::NamedElement)
-
-
-def test_flatqvt::namedelement_constructor_exists():
-    assert callable(FlatQVT::NamedElement.__init__)
-
-
-def test_flatqvt::namedelement_constructor_args():
-    sig = inspect.signature(FlatQVT::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::MultiplicityElement)
-
-
-def test_flatqvt::multiplicityelement_constructor_exists():
-    assert callable(FlatQVT::MultiplicityElement.__init__)
-
-
-def test_flatqvt::multiplicityelement_constructor_args():
-    sig = inspect.signature(FlatQVT::MultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::moduleimport_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::ModuleImport)
-
-
-def test_flatqvt::moduleimport_constructor_exists():
-    assert callable(FlatQVT::ModuleImport.__init__)
-
-
-def test_flatqvt::moduleimport_constructor_args():
-    sig = inspect.signature(FlatQVT::ModuleImport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_package_is_not_abstract():
-    assert not inspect.isabstract(Package)
-
-
-def test_package_constructor_exists():
-    assert callable(Package.__init__)
-
-
-def test_package_constructor_args():
-    sig = inspect.signature(Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::transformation_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Transformation)
-
-
-def test_flatqvt::transformation_constructor_exists():
-    assert callable(FlatQVT::Transformation.__init__)
-
-
-def test_flatqvt::transformation_constructor_args():
-    sig = inspect.signature(FlatQVT::Transformation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flatqvt::module_is_not_abstract():
-    assert not inspect.isabstract(FlatQVT::Module)
-
-
-def test_flatqvt::module_constructor_exists():
-    assert callable(FlatQVT::Module.__init__)
-
-
-def test_flatqvt::module_constructor_args():
-    sig = inspect.signature(FlatQVT::Module.__init__)
-    params = list(sig.parameters.keys())
+def test_collectionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CollectionKind]
+    expected_literals = [
+        "Collection",
+        "Set",
+        "OrderedSet",
+        "Sequence",
+        "Bag",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CollectionKind"
 
 def test_importkind_exists():
     # Check that the Enumeration exists
@@ -2867,39 +2901,20 @@ def test_importkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ImportKind"
 
-def test_directionkind_exists():
+def test_enforcementmode_exists():
     # Check that the Enumeration exists
-    assert DirectionKind is not None
+    assert EnforcementMode is not None
 
-def test_directionkind_has_all_literals():
+def test_enforcementmode_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DirectionKind]
+    enum_literals = [lit.name for lit in EnforcementMode]
     expected_literals = [
-        "inout",
-        "in_",
-        "out",
+        "Deletion",
+        "Creation",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DirectionKind"
-
-def test_collectionkind_exists():
-    # Check that the Enumeration exists
-    assert CollectionKind is not None
-
-def test_collectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CollectionKind]
-    expected_literals = [
-        "Set",
-        "Collection",
-        "Sequence",
-        "OrderedSet",
-        "Bag",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CollectionKind"
+        assert lit_name in enum_literals, f"Literal '' missing in EnforcementMode"
 
 def test_severitykind_exists():
     # Check that the Enumeration exists
@@ -2909,28 +2924,13 @@ def test_severitykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SeverityKind]
     expected_literals = [
-        "warning",
         "error",
+        "warning",
         "fatal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SeverityKind"
-
-def test_enforcementmode_exists():
-    # Check that the Enumeration exists
-    assert EnforcementMode is not None
-
-def test_enforcementmode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EnforcementMode]
-    expected_literals = [
-        "Creation",
-        "Deletion",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EnforcementMode"
 
 
 # =============================================================================
@@ -2947,68 +2947,206 @@ safe_text = st.text(
 Extent_strategy = st.builds(
     Extent,
 )
-FlatQVT::URIExtent_strategy = st.builds(
-    FlatQVT::URIExtent,
+FlatQVT_URIExtent_strategy = st.builds(
+    FlatQVT_URIExtent,
 )
 Transformation_strategy = st.builds(
     Transformation,
 )
-FlatQVT::RelationalTransformation_strategy = st.builds(
-    FlatQVT::RelationalTransformation,
+FlatQVT_RelationalTransformation_strategy = st.builds(
+    FlatQVT_RelationalTransformation,
+)
+ResolveExp_strategy = st.builds(
+    ResolveExp,
+)
+FlatQVT_ResolveInExp_strategy = st.builds(
+    FlatQVT_ResolveInExp,
+)
+ReflectiveCollection_strategy = st.builds(
+    ReflectiveCollection,
+)
+FlatQVT_ReflectiveSequence_strategy = st.builds(
+    FlatQVT_ReflectiveSequence,
+)
+NavigationCallExp_strategy = st.builds(
+    NavigationCallExp,
+)
+FlatQVT_PropertyCallExp_strategy = st.builds(
+    FlatQVT_PropertyCallExp,
+)
+Assignment_strategy = st.builds(
+    Assignment,
+)
+FlatQVT_VariableAssignment_strategy = st.builds(
+    FlatQVT_VariableAssignment,
+)
+FlatQVT_PropertyAssignment_strategy = st.builds(
+    FlatQVT_PropertyAssignment,
+)
+PropertyCallExp_strategy = st.builds(
+    PropertyCallExp,
+)
+FlatQVT_OppositePropertyCallExp_strategy = st.builds(
+    FlatQVT_OppositePropertyCallExp,
+)
+MultiplicityElement_strategy = st.builds(
+    MultiplicityElement,
+)
+InstantiationExp_strategy = st.builds(
+    InstantiationExp,
+)
+FlatQVT_ObjectExp_strategy = st.builds(
+    FlatQVT_ObjectExp,
+)
+FlatQVT_Object_strategy = st.builds(
+    FlatQVT_Object,
+)
+FlatQVT_Area_strategy = st.builds(
+    FlatQVT_Area,
+)
+Type_strategy = st.builds(
+    Type,
+)
+FlatQVT_VoidType_strategy = st.builds(
+    FlatQVT_VoidType,
+)
+FlatQVT_TemplateParameterType_strategy = st.builds(
+    FlatQVT_TemplateParameterType,
+)
+FlatQVT_AnyType_strategy = st.builds(
+    FlatQVT_AnyType,
+)
+ImperativeExpression_strategy = st.builds(
+    ImperativeExpression,
+)
+FlatQVT_UnlinkExp_strategy = st.builds(
+    FlatQVT_UnlinkExp,
+)
+FlatQVT_AssignExp_strategy = st.builds(
+    FlatQVT_AssignExp,
+)
+FlatQVT_VariableInitExp_strategy = st.builds(
+    FlatQVT_VariableInitExp,
+)
+FlatQVT_ReturnExp_strategy = st.builds(
+    FlatQVT_ReturnExp,
+)
+FlatQVT_SwitchExp_strategy = st.builds(
+    FlatQVT_SwitchExp,
+)
+FlatQVT_AssertExp_strategy = st.builds(
+    FlatQVT_AssertExp,
+)
+FlatQVT_TryExp_strategy = st.builds(
+    FlatQVT_TryExp,
+)
+FlatQVT_RaiseExp_strategy = st.builds(
+    FlatQVT_RaiseExp,
+)
+FlatQVT_WhileExp_strategy = st.builds(
+    FlatQVT_WhileExp,
+)
+FlatQVT_AltExp_strategy = st.builds(
+    FlatQVT_AltExp,
+)
+FeatureCallExp_strategy = st.builds(
+    FeatureCallExp,
+)
+FlatQVT_OperationCallExp_strategy = st.builds(
+    FlatQVT_OperationCallExp,
+)
+FlatQVT_NavigationCallExp_strategy = st.builds(
+    FlatQVT_NavigationCallExp,
+)
+FlatQVT_MultiplicityElement_strategy = st.builds(
+    FlatQVT_MultiplicityElement,
+)
+Package_strategy = st.builds(
+    Package,
 )
 Class_strategy = st.builds(
     Class,
 )
-FlatQVT::Typedef_strategy = st.builds(
-    FlatQVT::Typedef,
+FlatQVT_Module_strategy = st.builds(
+    FlatQVT_Module,
 )
-FlatQVT::ModelType_strategy = st.builds(
-    FlatQVT::ModelType,
+FlatQVT_Transformation_strategy = st.builds(
+    FlatQVT_Transformation,
+)
+FlatQVT_Typedef_strategy = st.builds(
+    FlatQVT_Typedef,
+)
+FlatQVT_ModelType_strategy = st.builds(
+    FlatQVT_ModelType,
 )
 VarParameter_strategy = st.builds(
     VarParameter,
 )
-FlatQVT::ModelParameter_strategy = st.builds(
-    FlatQVT::ModelParameter,
+FlatQVT_ModelParameter_strategy = st.builds(
+    FlatQVT_ModelParameter,
 )
-FlatQVT::MappingParameter_strategy = st.builds(
-    FlatQVT::MappingParameter,
+FlatQVT_MappingParameter_strategy = st.builds(
+    FlatQVT_MappingParameter,
 )
 ImperativeCallExp_strategy = st.builds(
     ImperativeCallExp,
 )
-FlatQVT::MappingCallExp_strategy = st.builds(
-    FlatQVT::MappingCallExp,
+FlatQVT_MappingCallExp_strategy = st.builds(
+    FlatQVT_MappingCallExp,
 )
 Rule_strategy = st.builds(
     Rule,
 )
+FlatQVT_Relation_strategy = st.builds(
+    FlatQVT_Relation,
+)
 Module_strategy = st.builds(
     Module,
 )
-FlatQVT::Library_strategy = st.builds(
-    FlatQVT::Library,
+FlatQVT_OperationalTransformation_strategy = st.builds(
+    FlatQVT_OperationalTransformation,
+)
+FlatQVT_Library_strategy = st.builds(
+    FlatQVT_Library,
+)
+FlatQVT_InvalidType_strategy = st.builds(
+    FlatQVT_InvalidType,
 )
 NumericLiteralExp_strategy = st.builds(
     NumericLiteralExp,
 )
-FlatQVT::UnlimitedNaturalExp_strategy = st.builds(
-    FlatQVT::UnlimitedNaturalExp,
+FlatQVT_RealLiteralExp_strategy = st.builds(
+    FlatQVT_RealLiteralExp,
 )
-FlatQVT::IntegerLiteralExp_strategy = st.builds(
-    FlatQVT::IntegerLiteralExp,
+FlatQVT_UnlimitedNaturalExp_strategy = st.builds(
+    FlatQVT_UnlimitedNaturalExp,
+)
+FlatQVT_IntegerLiteralExp_strategy = st.builds(
+    FlatQVT_IntegerLiteralExp,
+)
+FlatQVT_InstantiationExp_strategy = st.builds(
+    FlatQVT_InstantiationExp,
 )
 LoopExp_strategy = st.builds(
     LoopExp,
 )
-FlatQVT::IterateExp_strategy = st.builds(
-    FlatQVT::IterateExp,
+FlatQVT_IterateExp_strategy = st.builds(
+    FlatQVT_IterateExp,
 )
-FlatQVT::IteratorExp_strategy = st.builds(
-    FlatQVT::IteratorExp,
+FlatQVT_IteratorExp_strategy = st.builds(
+    FlatQVT_IteratorExp,
+)
+FlatQVT_ImperativeLoopExp_strategy = st.builds(
+    FlatQVT_ImperativeLoopExp,
 )
 OperationCallExp_strategy = st.builds(
     OperationCallExp,
+)
+FlatQVT_LogExp_strategy = st.builds(
+    FlatQVT_LogExp,
+)
+FlatQVT_ImperativeCallExp_strategy = st.builds(
+    FlatQVT_ImperativeCallExp,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -3016,500 +3154,362 @@ Parameter_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-FlatQVT::VarParameter_strategy = st.builds(
-    FlatQVT::VarParameter,
+FlatQVT_RealizedVariable_strategy = st.builds(
+    FlatQVT_RealizedVariable,
 )
-FlatQVT::FunctionParameter_strategy = st.builds(
-    FlatQVT::FunctionParameter,
+FlatQVT_VarParameter_strategy = st.builds(
+    FlatQVT_VarParameter,
+)
+FlatQVT_FunctionParameter_strategy = st.builds(
+    FlatQVT_FunctionParameter,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-FlatQVT::ImperativeOperation_strategy = st.builds(
-    FlatQVT::ImperativeOperation,
+FlatQVT_ImperativeOperation_strategy = st.builds(
+    FlatQVT_ImperativeOperation,
 )
-FlatQVT::Function_strategy = st.builds(
-    FlatQVT::Function,
+FlatQVT_Function_strategy = st.builds(
+    FlatQVT_Function,
 )
 ImperativeLoopExp_strategy = st.builds(
     ImperativeLoopExp,
 )
-FlatQVT::ImperativeIterateExp_strategy = st.builds(
-    FlatQVT::ImperativeIterateExp,
+FlatQVT_ImperativeIterateExp_strategy = st.builds(
+    FlatQVT_ImperativeIterateExp,
 )
-FlatQVT::ForExp_strategy = st.builds(
-    FlatQVT::ForExp,
+FlatQVT_ForExp_strategy = st.builds(
+    FlatQVT_ForExp,
 )
 CallExp_strategy = st.builds(
     CallExp,
 )
-FlatQVT::FeatureCallExp_strategy = st.builds(
-    FlatQVT::FeatureCallExp,
+FlatQVT_ResolveExp_strategy = st.builds(
+    FlatQVT_ResolveExp,
+)
+FlatQVT_FeatureCallExp_strategy = st.builds(
+    FlatQVT_FeatureCallExp,
 )
 Object_strategy = st.builds(
     Object,
 )
-FlatQVT::Extent_strategy = st.builds(
-    FlatQVT::Extent,
+FlatQVT_ReflectiveCollection_strategy = st.builds(
+    FlatQVT_ReflectiveCollection,
 )
-FlatQVT::Element_strategy = st.builds(
-    FlatQVT::Element,
+FlatQVT_Extent_strategy = st.builds(
+    FlatQVT_Extent,
+)
+FlatQVT_Element_strategy = st.builds(
+    FlatQVT_Element,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-FlatQVT::Type_strategy = st.builds(
-    FlatQVT::Type,
+FlatQVT_Package_strategy = st.builds(
+    FlatQVT_Package,
 )
-FlatQVT::EnumerationLiteral_strategy = st.builds(
-    FlatQVT::EnumerationLiteral,
+FlatQVT_EnumerationLiteral_strategy = st.builds(
+    FlatQVT_EnumerationLiteral,
 )
-FlatQVT::TypedElement_strategy = st.builds(
-    FlatQVT::TypedElement,
+FlatQVT_TypedModel_strategy = st.builds(
+    FlatQVT_TypedModel,
 )
-FlatQVT::TypedModel_strategy = st.builds(
-    FlatQVT::TypedModel,
+FlatQVT_TypedElement_strategy = st.builds(
+    FlatQVT_TypedElement,
 )
-FlatQVT::Domain_strategy = st.builds(
-    FlatQVT::Domain,
+FlatQVT_Type_strategy = st.builds(
+    FlatQVT_Type,
+)
+FlatQVT_Rule_strategy = st.builds(
+    FlatQVT_Rule,
+)
+FlatQVT_Domain_strategy = st.builds(
+    FlatQVT_Domain,
+)
+FlatQVT_DataType_strategy = st.builds(
+    FlatQVT_DataType,
 )
 Pattern_strategy = st.builds(
     Pattern,
 )
-FlatQVT::DomainPattern_strategy = st.builds(
-    FlatQVT::DomainPattern,
+FlatQVT_DomainPattern_strategy = st.builds(
+    FlatQVT_DomainPattern,
 )
-FlatQVT::CorePattern_strategy = st.builds(
-    FlatQVT::CorePattern,
+FlatQVT_CorePattern_strategy = st.builds(
+    FlatQVT_CorePattern,
 )
 Area_strategy = st.builds(
     Area,
 )
-FlatQVT::Mapping_strategy = st.builds(
-    FlatQVT::Mapping,
+FlatQVT_Mapping_strategy = st.builds(
+    FlatQVT_Mapping,
 )
 Domain_strategy = st.builds(
     Domain,
 )
-FlatQVT::CoreDomain_strategy = st.builds(
-    FlatQVT::CoreDomain,
+FlatQVT_RelationDomain_strategy = st.builds(
+    FlatQVT_RelationDomain,
+)
+FlatQVT_CoreDomain_strategy = st.builds(
+    FlatQVT_CoreDomain,
+)
+FlatQVT_ContinueExp_strategy = st.builds(
+    FlatQVT_ContinueExp,
 )
 Property_strategy = st.builds(
     Property,
 )
-FlatQVT::ContextualProperty_strategy = st.builds(
-    FlatQVT::ContextualProperty,
+FlatQVT_ContextualProperty_strategy = st.builds(
+    FlatQVT_ContextualProperty,
 )
 OperationBody_strategy = st.builds(
     OperationBody,
 )
-FlatQVT::MappingBody_strategy = st.builds(
-    FlatQVT::MappingBody,
+FlatQVT_MappingBody_strategy = st.builds(
+    FlatQVT_MappingBody,
 )
-FlatQVT::ConstructorBody_strategy = st.builds(
-    FlatQVT::ConstructorBody,
+FlatQVT_ConstructorBody_strategy = st.builds(
+    FlatQVT_ConstructorBody,
 )
 ImperativeOperation_strategy = st.builds(
     ImperativeOperation,
 )
-FlatQVT::MappingOperation_strategy = st.builds(
-    FlatQVT::MappingOperation,
+FlatQVT_MappingOperation_strategy = st.builds(
+    FlatQVT_MappingOperation,
 )
-FlatQVT::EntryOperation_strategy = st.builds(
-    FlatQVT::EntryOperation,
+FlatQVT_Helper_strategy = st.builds(
+    FlatQVT_Helper,
 )
-FlatQVT::Helper_strategy = st.builds(
-    FlatQVT::Helper,
+FlatQVT_EntryOperation_strategy = st.builds(
+    FlatQVT_EntryOperation,
 )
-FlatQVT::Constructor_strategy = st.builds(
-    FlatQVT::Constructor,
+FlatQVT_Constructor_strategy = st.builds(
+    FlatQVT_Constructor,
+)
+FlatQVT_ComputeExp_strategy = st.builds(
+    FlatQVT_ComputeExp,
 )
 DataType_strategy = st.builds(
     DataType,
 )
-FlatQVT::TupleType_strategy = st.builds(
-    FlatQVT::TupleType,
+FlatQVT_PrimitiveType_strategy = st.builds(
+    FlatQVT_PrimitiveType,
 )
-FlatQVT::Enumeration_strategy = st.builds(
-    FlatQVT::Enumeration,
+FlatQVT_Enumeration_strategy = st.builds(
+    FlatQVT_Enumeration,
 )
-FlatQVT::CollectionType_strategy = st.builds(
-    FlatQVT::CollectionType,
+FlatQVT_TupleType_strategy = st.builds(
+    FlatQVT_TupleType,
+)
+FlatQVT_CollectionType_strategy = st.builds(
+    FlatQVT_CollectionType,
 )
 TemplateExp_strategy = st.builds(
     TemplateExp,
 )
-FlatQVT::CollectionTemplateExp_strategy = st.builds(
-    FlatQVT::CollectionTemplateExp,
+FlatQVT_ObjectTemplateExp_strategy = st.builds(
+    FlatQVT_ObjectTemplateExp,
+)
+FlatQVT_CollectionTemplateExp_strategy = st.builds(
+    FlatQVT_CollectionTemplateExp,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-FlatQVT::ExpressionInOcl_strategy = st.builds(
-    FlatQVT::ExpressionInOcl,
+FlatQVT_Parameter_strategy = st.builds(
+    FlatQVT_Parameter,
 )
-FlatQVT::Variable_strategy = st.builds(
-    FlatQVT::Variable,
+FlatQVT_ExpressionInOcl_strategy = st.builds(
+    FlatQVT_ExpressionInOcl,
 )
-FlatQVT::TupleLiteralPart_strategy = st.builds(
-    FlatQVT::TupleLiteralPart,
+FlatQVT_TupleLiteralPart_strategy = st.builds(
+    FlatQVT_TupleLiteralPart,
 )
-FlatQVT::CollectionLiteralPart_strategy = st.builds(
-    FlatQVT::CollectionLiteralPart,
+FlatQVT_OclExpression_strategy = st.builds(
+    FlatQVT_OclExpression,
+)
+FlatQVT_Variable_strategy = st.builds(
+    FlatQVT_Variable,
+)
+FlatQVT_Property_strategy = st.builds(
+    FlatQVT_Property,
+)
+FlatQVT_Operation_strategy = st.builds(
+    FlatQVT_Operation,
+)
+FlatQVT_CollectionLiteralPart_strategy = st.builds(
+    FlatQVT_CollectionLiteralPart,
 )
 LiteralExp_strategy = st.builds(
     LiteralExp,
 )
-FlatQVT::DictLiteralExp_strategy = st.builds(
-    FlatQVT::DictLiteralExp,
+FlatQVT_ListLiteralExp_strategy = st.builds(
+    FlatQVT_ListLiteralExp,
 )
-FlatQVT::InvalidLiteralExp_strategy = st.builds(
-    FlatQVT::InvalidLiteralExp,
+FlatQVT_TupleLiteralExp_strategy = st.builds(
+    FlatQVT_TupleLiteralExp,
 )
-FlatQVT::EnumLiteralExp_strategy = st.builds(
-    FlatQVT::EnumLiteralExp,
+FlatQVT_PrimitiveLiteralExp_strategy = st.builds(
+    FlatQVT_PrimitiveLiteralExp,
 )
-FlatQVT::ListLiteralExp_strategy = st.builds(
-    FlatQVT::ListLiteralExp,
+FlatQVT_NullLiteralExp_strategy = st.builds(
+    FlatQVT_NullLiteralExp,
 )
-FlatQVT::TupleLiteralExp_strategy = st.builds(
-    FlatQVT::TupleLiteralExp,
+FlatQVT_EnumLiteralExp_strategy = st.builds(
+    FlatQVT_EnumLiteralExp,
 )
-FlatQVT::TemplateExp_strategy = st.builds(
-    FlatQVT::TemplateExp,
+FlatQVT_InvalidLiteralExp_strategy = st.builds(
+    FlatQVT_InvalidLiteralExp,
 )
-FlatQVT::CollectionLiteralExp_strategy = st.builds(
-    FlatQVT::CollectionLiteralExp,
+FlatQVT_DictLiteralExp_strategy = st.builds(
+    FlatQVT_DictLiteralExp,
+)
+FlatQVT_TemplateExp_strategy = st.builds(
+    FlatQVT_TemplateExp,
+)
+FlatQVT_CollectionLiteralExp_strategy = st.builds(
+    FlatQVT_CollectionLiteralExp,
 )
 CollectionLiteralPart_strategy = st.builds(
     CollectionLiteralPart,
 )
-FlatQVT::CollectionRange_strategy = st.builds(
-    FlatQVT::CollectionRange,
+FlatQVT_CollectionRange_strategy = st.builds(
+    FlatQVT_CollectionRange,
 )
-FlatQVT::CollectionItem_strategy = st.builds(
-    FlatQVT::CollectionItem,
+FlatQVT_CollectionItem_strategy = st.builds(
+    FlatQVT_CollectionItem,
+)
+FlatQVT_Class_strategy = st.builds(
+    FlatQVT_Class,
+)
+FlatQVT_CatchExp_strategy = st.builds(
+    FlatQVT_CatchExp,
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-FlatQVT::LetExp_strategy = st.builds(
-    FlatQVT::LetExp,
+FlatQVT_ImperativeExpression_strategy = st.builds(
+    FlatQVT_ImperativeExpression,
 )
-FlatQVT::VariableExp_strategy = st.builds(
-    FlatQVT::VariableExp,
+FlatQVT_VariableExp_strategy = st.builds(
+    FlatQVT_VariableExp,
 )
-FlatQVT::TypeExp_strategy = st.builds(
-    FlatQVT::TypeExp,
+FlatQVT_LiteralExp_strategy = st.builds(
+    FlatQVT_LiteralExp,
 )
-FlatQVT::IfExp_strategy = st.builds(
-    FlatQVT::IfExp,
+FlatQVT_LoopExp_strategy = st.builds(
+    FlatQVT_LoopExp,
 )
-FlatQVT::ImperativeExpression_strategy = st.builds(
-    FlatQVT::ImperativeExpression,
+FlatQVT_LetExp_strategy = st.builds(
+    FlatQVT_LetExp,
 )
-FlatQVT::LoopExp_strategy = st.builds(
-    FlatQVT::LoopExp,
+FlatQVT_RelationCallExp_strategy = st.builds(
+    FlatQVT_RelationCallExp,
 )
-FlatQVT::LiteralExp_strategy = st.builds(
-    FlatQVT::LiteralExp,
+FlatQVT_IfExp_strategy = st.builds(
+    FlatQVT_IfExp,
 )
-FlatQVT::CallExp_strategy = st.builds(
-    FlatQVT::CallExp,
+FlatQVT_TypeExp_strategy = st.builds(
+    FlatQVT_TypeExp,
+)
+FlatQVT_CallExp_strategy = st.builds(
+    FlatQVT_CallExp,
+)
+FlatQVT_BreakExp_strategy = st.builds(
+    FlatQVT_BreakExp,
 )
 CorePattern_strategy = st.builds(
     CorePattern,
 )
-FlatQVT::GuardPattern_strategy = st.builds(
-    FlatQVT::GuardPattern,
+FlatQVT_GuardPattern_strategy = st.builds(
+    FlatQVT_GuardPattern,
 )
-FlatQVT::BottomPattern_strategy = st.builds(
-    FlatQVT::BottomPattern,
+FlatQVT_BottomPattern_strategy = st.builds(
+    FlatQVT_BottomPattern,
 )
 PrimitiveLiteralExp_strategy = st.builds(
     PrimitiveLiteralExp,
 )
-FlatQVT::BooleanLiteralExp_strategy = st.builds(
-    FlatQVT::BooleanLiteralExp,
+FlatQVT_StringLiteralExp_strategy = st.builds(
+    FlatQVT_StringLiteralExp,
+)
+FlatQVT_NumericLiteralExp_strategy = st.builds(
+    FlatQVT_NumericLiteralExp,
+)
+FlatQVT_BooleanLiteralExp_strategy = st.builds(
+    FlatQVT_BooleanLiteralExp,
+)
+FlatQVT_BlockExp_strategy = st.builds(
+    FlatQVT_BlockExp,
 )
 CollectionType_strategy = st.builds(
     CollectionType,
 )
-FlatQVT::DictionaryType_strategy = st.builds(
-    FlatQVT::DictionaryType,
+FlatQVT_DictionaryType_strategy = st.builds(
+    FlatQVT_DictionaryType,
 )
-FlatQVT::ListType_strategy = st.builds(
-    FlatQVT::ListType,
+FlatQVT_SequenceType_strategy = st.builds(
+    FlatQVT_SequenceType,
 )
-FlatQVT::BagType_strategy = st.builds(
-    FlatQVT::BagType,
+FlatQVT_OrderedSetType_strategy = st.builds(
+    FlatQVT_OrderedSetType,
+)
+FlatQVT_SetType_strategy = st.builds(
+    FlatQVT_SetType,
+)
+FlatQVT_ListType_strategy = st.builds(
+    FlatQVT_ListType,
+)
+FlatQVT_BagType_strategy = st.builds(
+    FlatQVT_BagType,
 )
 Element_strategy = st.builds(
     Element,
 )
-FlatQVT::DictLiteralPart_strategy = st.builds(
-    FlatQVT::DictLiteralPart,
+FlatQVT_NamedElement_strategy = st.builds(
+    FlatQVT_NamedElement,
 )
-FlatQVT::Comment_strategy = st.builds(
-    FlatQVT::Comment,
+FlatQVT_Predicate_strategy = st.builds(
+    FlatQVT_Predicate,
 )
-FlatQVT::EnforcementOperation_strategy = st.builds(
-    FlatQVT::EnforcementOperation,
+FlatQVT_OperationBody_strategy = st.builds(
+    FlatQVT_OperationBody,
 )
-FlatQVT::Key_strategy = st.builds(
-    FlatQVT::Key,
+FlatQVT_Comment_strategy = st.builds(
+    FlatQVT_Comment,
 )
-FlatQVT::Factory_strategy = st.builds(
-    FlatQVT::Factory,
+FlatQVT_Factory_strategy = st.builds(
+    FlatQVT_Factory,
 )
-FlatQVT::Assignment_strategy = st.builds(
-    FlatQVT::Assignment,
+FlatQVT_RelationImplementation_strategy = st.builds(
+    FlatQVT_RelationImplementation,
 )
-FlatQVT::Area_strategy = st.builds(
-    FlatQVT::Area,
+FlatQVT_DictLiteralPart_strategy = st.builds(
+    FlatQVT_DictLiteralPart,
 )
-Type_strategy = st.builds(
-    Type,
+FlatQVT_Pattern_strategy = st.builds(
+    FlatQVT_Pattern,
 )
-FlatQVT::TemplateParameterType_strategy = st.builds(
-    FlatQVT::TemplateParameterType,
+FlatQVT_ModuleImport_strategy = st.builds(
+    FlatQVT_ModuleImport,
 )
-FlatQVT::InvalidType_strategy = st.builds(
-    FlatQVT::InvalidType,
+FlatQVT_RelationDomainAssignment_strategy = st.builds(
+    FlatQVT_RelationDomainAssignment,
 )
-FlatQVT::Class_strategy = st.builds(
-    FlatQVT::Class,
+FlatQVT_PropertyTemplateItem_strategy = st.builds(
+    FlatQVT_PropertyTemplateItem,
 )
-FlatQVT::VoidType_strategy = st.builds(
-    FlatQVT::VoidType,
+FlatQVT_Key_strategy = st.builds(
+    FlatQVT_Key,
 )
-FlatQVT::DataType_strategy = st.builds(
-    FlatQVT::DataType,
+FlatQVT_Tag_strategy = st.builds(
+    FlatQVT_Tag,
 )
-FlatQVT::AnyType_strategy = st.builds(
-    FlatQVT::AnyType,
+FlatQVT_EnforcementOperation_strategy = st.builds(
+    FlatQVT_EnforcementOperation,
 )
-ImperativeExpression_strategy = st.builds(
-    ImperativeExpression,
-)
-FlatQVT::ImperativeCallExp_strategy = st.builds(
-    FlatQVT::ImperativeCallExp,
-)
-FlatQVT::InstantiationExp_strategy = st.builds(
-    FlatQVT::InstantiationExp,
-)
-FlatQVT::TryExp_strategy = st.builds(
-    FlatQVT::TryExp,
-)
-FlatQVT::BlockExp_strategy = st.builds(
-    FlatQVT::BlockExp,
-)
-FlatQVT::ComputeExp_strategy = st.builds(
-    FlatQVT::ComputeExp,
-)
-FlatQVT::UnlinkExp_strategy = st.builds(
-    FlatQVT::UnlinkExp,
-)
-FlatQVT::ContinueExp_strategy = st.builds(
-    FlatQVT::ContinueExp,
-)
-FlatQVT::LogExp_strategy = st.builds(
-    FlatQVT::LogExp,
-)
-FlatQVT::AssignExp_strategy = st.builds(
-    FlatQVT::AssignExp,
-)
-FlatQVT::AssertExp_strategy = st.builds(
-    FlatQVT::AssertExp,
-)
-FlatQVT::BreakExp_strategy = st.builds(
-    FlatQVT::BreakExp,
-)
-FlatQVT::VariableInitExp_strategy = st.builds(
-    FlatQVT::VariableInitExp,
-)
-FlatQVT::ImperativeLoopExp_strategy = st.builds(
-    FlatQVT::ImperativeLoopExp,
-)
-FlatQVT::CatchExp_strategy = st.builds(
-    FlatQVT::CatchExp,
-)
-FlatQVT::WhileExp_strategy = st.builds(
-    FlatQVT::WhileExp,
-)
-FlatQVT::AltExp_strategy = st.builds(
-    FlatQVT::AltExp,
-)
-FlatQVT::Tag_strategy = st.builds(
-    FlatQVT::Tag,
-)
-FlatQVT::SwitchExp_strategy = st.builds(
-    FlatQVT::SwitchExp,
-)
-FlatQVT::StringLiteralExp_strategy = st.builds(
-    FlatQVT::StringLiteralExp,
-)
-FlatQVT::SetType_strategy = st.builds(
-    FlatQVT::SetType,
-)
-FlatQVT::SequenceType_strategy = st.builds(
-    FlatQVT::SequenceType,
-)
-FlatQVT::Rule_strategy = st.builds(
-    FlatQVT::Rule,
-)
-FlatQVT::ReturnExp_strategy = st.builds(
-    FlatQVT::ReturnExp,
-)
-ResolveExp_strategy = st.builds(
-    ResolveExp,
-)
-FlatQVT::ResolveInExp_strategy = st.builds(
-    FlatQVT::ResolveInExp,
-)
-FlatQVT::ResolveExp_strategy = st.builds(
-    FlatQVT::ResolveExp,
-)
-FlatQVT::RealizedVariable_strategy = st.builds(
-    FlatQVT::RealizedVariable,
-)
-FlatQVT::RelationImplementation_strategy = st.builds(
-    FlatQVT::RelationImplementation,
-)
-FlatQVT::RelationDomainAssignment_strategy = st.builds(
-    FlatQVT::RelationDomainAssignment,
-)
-FlatQVT::RelationDomain_strategy = st.builds(
-    FlatQVT::RelationDomain,
-)
-FlatQVT::RelationCallExp_strategy = st.builds(
-    FlatQVT::RelationCallExp,
-)
-FlatQVT::Relation_strategy = st.builds(
-    FlatQVT::Relation,
-)
-ReflectiveCollection_strategy = st.builds(
-    ReflectiveCollection,
-)
-FlatQVT::ReflectiveSequence_strategy = st.builds(
-    FlatQVT::ReflectiveSequence,
-)
-FlatQVT::ReflectiveCollection_strategy = st.builds(
-    FlatQVT::ReflectiveCollection,
-)
-FlatQVT::OrderedSetType_strategy = st.builds(
-    FlatQVT::OrderedSetType,
-)
-FlatQVT::RealLiteralExp_strategy = st.builds(
-    FlatQVT::RealLiteralExp,
-)
-FlatQVT::RaiseExp_strategy = st.builds(
-    FlatQVT::RaiseExp,
-)
-FlatQVT::PropertyTemplateItem_strategy = st.builds(
-    FlatQVT::PropertyTemplateItem,
-)
-NavigationCallExp_strategy = st.builds(
-    NavigationCallExp,
-)
-FlatQVT::PropertyCallExp_strategy = st.builds(
-    FlatQVT::PropertyCallExp,
-)
-Assignment_strategy = st.builds(
-    Assignment,
-)
-FlatQVT::VariableAssignment_strategy = st.builds(
-    FlatQVT::VariableAssignment,
-)
-FlatQVT::PropertyAssignment_strategy = st.builds(
-    FlatQVT::PropertyAssignment,
-)
-FlatQVT::PrimitiveType_strategy = st.builds(
-    FlatQVT::PrimitiveType,
-)
-FlatQVT::PrimitiveLiteralExp_strategy = st.builds(
-    FlatQVT::PrimitiveLiteralExp,
-)
-FlatQVT::Predicate_strategy = st.builds(
-    FlatQVT::Predicate,
-)
-FlatQVT::Pattern_strategy = st.builds(
-    FlatQVT::Pattern,
-)
-FlatQVT::Package_strategy = st.builds(
-    FlatQVT::Package,
-)
-PropertyCallExp_strategy = st.builds(
-    PropertyCallExp,
-)
-FlatQVT::OppositePropertyCallExp_strategy = st.builds(
-    FlatQVT::OppositePropertyCallExp,
-)
-FlatQVT::OperationalTransformation_strategy = st.builds(
-    FlatQVT::OperationalTransformation,
-)
-FlatQVT::OperationBody_strategy = st.builds(
-    FlatQVT::OperationBody,
-)
-MultiplicityElement_strategy = st.builds(
-    MultiplicityElement,
-)
-FlatQVT::Property_strategy = st.builds(
-    FlatQVT::Property,
-)
-FlatQVT::Parameter_strategy = st.builds(
-    FlatQVT::Parameter,
-)
-FlatQVT::Operation_strategy = st.builds(
-    FlatQVT::Operation,
-)
-FlatQVT::OclExpression_strategy = st.builds(
-    FlatQVT::OclExpression,
-)
-FlatQVT::ObjectTemplateExp_strategy = st.builds(
-    FlatQVT::ObjectTemplateExp,
-)
-InstantiationExp_strategy = st.builds(
-    InstantiationExp,
-)
-FlatQVT::ObjectExp_strategy = st.builds(
-    FlatQVT::ObjectExp,
-)
-FlatQVT::Object_strategy = st.builds(
-    FlatQVT::Object,
-)
-FlatQVT::NumericLiteralExp_strategy = st.builds(
-    FlatQVT::NumericLiteralExp,
-)
-FlatQVT::NullLiteralExp_strategy = st.builds(
-    FlatQVT::NullLiteralExp,
-)
-FeatureCallExp_strategy = st.builds(
-    FeatureCallExp,
-)
-FlatQVT::OperationCallExp_strategy = st.builds(
-    FlatQVT::OperationCallExp,
-)
-FlatQVT::NavigationCallExp_strategy = st.builds(
-    FlatQVT::NavigationCallExp,
-)
-FlatQVT::NamedElement_strategy = st.builds(
-    FlatQVT::NamedElement,
-)
-FlatQVT::MultiplicityElement_strategy = st.builds(
-    FlatQVT::MultiplicityElement,
-)
-FlatQVT::ModuleImport_strategy = st.builds(
-    FlatQVT::ModuleImport,
-)
-Package_strategy = st.builds(
-    Package,
-)
-FlatQVT::Transformation_strategy = st.builds(
-    FlatQVT::Transformation,
-)
-FlatQVT::Module_strategy = st.builds(
-    FlatQVT::Module,
+FlatQVT_Assignment_strategy = st.builds(
+    FlatQVT_Assignment,
 )
 
 @given(instance=Extent_strategy)
@@ -3517,10 +3517,10 @@ FlatQVT::Module_strategy = st.builds(
 def test_extent_instantiation(instance):
     assert isinstance(instance, Extent)
 
-@given(instance=FlatQVT::URIExtent_strategy)
+@given(instance=FlatQVT_URIExtent_strategy)
 @settings(max_examples=50)
-def test_flatqvt::uriextent_instantiation(instance):
-    assert isinstance(instance, FlatQVT::URIExtent)
+def test_flatqvt_uriextent_instantiation(instance):
+    assert isinstance(instance, FlatQVT_URIExtent)
 
 import warnings
 import copy
@@ -3528,9 +3528,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::URIExtent_strategy)
+@given(instance=FlatQVT_URIExtent_strategy)
 @settings(max_examples=30)
-def test_flatqvt::uriextent_element_changes_state(instance):
+def test_flatqvt_uriextent_element_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3544,14 +3544,14 @@ def test_flatqvt::uriextent_element_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'element' in FlatQVT::URIExtent is empty"
+        assert has_statements, f"Function 'element' in FlatQVT_URIExtent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'element' in FlatQVT::URIExtent did not change state; check implementation")
+            warnings.warn(f"Operation 'element' in FlatQVT_URIExtent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'element' in FlatQVT::URIExtent is not implemented or raised an error")
+        warnings.warn(f"Operation 'element' in FlatQVT_URIExtent is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3559,9 +3559,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::URIExtent_strategy)
+@given(instance=FlatQVT_URIExtent_strategy)
 @settings(max_examples=30)
-def test_flatqvt::uriextent_contexturi_changes_state(instance):
+def test_flatqvt_uriextent_contexturi_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3573,14 +3573,14 @@ def test_flatqvt::uriextent_contexturi_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'contextURI' in FlatQVT::URIExtent is empty"
+        assert has_statements, f"Function 'contextURI' in FlatQVT_URIExtent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'contextURI' in FlatQVT::URIExtent did not change state; check implementation")
+            warnings.warn(f"Operation 'contextURI' in FlatQVT_URIExtent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'contextURI' in FlatQVT::URIExtent is not implemented or raised an error")
+        warnings.warn(f"Operation 'contextURI' in FlatQVT_URIExtent is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3588,9 +3588,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::URIExtent_strategy)
+@given(instance=FlatQVT_URIExtent_strategy)
 @settings(max_examples=30)
-def test_flatqvt::uriextent_uri_changes_state(instance):
+def test_flatqvt_uriextent_uri_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3604,184 +3604,44 @@ def test_flatqvt::uriextent_uri_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'uri' in FlatQVT::URIExtent is empty"
+        assert has_statements, f"Function 'uri' in FlatQVT_URIExtent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'uri' in FlatQVT::URIExtent did not change state; check implementation")
+            warnings.warn(f"Operation 'uri' in FlatQVT_URIExtent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'uri' in FlatQVT::URIExtent is not implemented or raised an error")
+        warnings.warn(f"Operation 'uri' in FlatQVT_URIExtent is not implemented or raised an error")
 
 @given(instance=Transformation_strategy)
 @settings(max_examples=50)
 def test_transformation_instantiation(instance):
     assert isinstance(instance, Transformation)
 
-@given(instance=FlatQVT::RelationalTransformation_strategy)
+@given(instance=FlatQVT_RelationalTransformation_strategy)
 @settings(max_examples=50)
-def test_flatqvt::relationaltransformation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RelationalTransformation)
+def test_flatqvt_relationaltransformation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RelationalTransformation)
 
-@given(instance=Class_strategy)
+@given(instance=ResolveExp_strategy)
 @settings(max_examples=50)
-def test_class_instantiation(instance):
-    assert isinstance(instance, Class)
+def test_resolveexp_instantiation(instance):
+    assert isinstance(instance, ResolveExp)
 
-@given(instance=FlatQVT::Typedef_strategy)
+@given(instance=FlatQVT_ResolveInExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::typedef_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Typedef)
+def test_flatqvt_resolveinexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ResolveInExp)
 
-@given(instance=FlatQVT::ModelType_strategy)
+@given(instance=ReflectiveCollection_strategy)
 @settings(max_examples=50)
-def test_flatqvt::modeltype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ModelType)
+def test_reflectivecollection_instantiation(instance):
+    assert isinstance(instance, ReflectiveCollection)
 
-@given(instance=VarParameter_strategy)
+@given(instance=FlatQVT_ReflectiveSequence_strategy)
 @settings(max_examples=50)
-def test_varparameter_instantiation(instance):
-    assert isinstance(instance, VarParameter)
-
-@given(instance=FlatQVT::ModelParameter_strategy)
-@settings(max_examples=50)
-def test_flatqvt::modelparameter_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ModelParameter)
-
-@given(instance=FlatQVT::MappingParameter_strategy)
-@settings(max_examples=50)
-def test_flatqvt::mappingparameter_instantiation(instance):
-    assert isinstance(instance, FlatQVT::MappingParameter)
-
-@given(instance=ImperativeCallExp_strategy)
-@settings(max_examples=50)
-def test_imperativecallexp_instantiation(instance):
-    assert isinstance(instance, ImperativeCallExp)
-
-@given(instance=FlatQVT::MappingCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::mappingcallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::MappingCallExp)
-
-@given(instance=Rule_strategy)
-@settings(max_examples=50)
-def test_rule_instantiation(instance):
-    assert isinstance(instance, Rule)
-
-@given(instance=Module_strategy)
-@settings(max_examples=50)
-def test_module_instantiation(instance):
-    assert isinstance(instance, Module)
-
-@given(instance=FlatQVT::Library_strategy)
-@settings(max_examples=50)
-def test_flatqvt::library_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Library)
-
-@given(instance=NumericLiteralExp_strategy)
-@settings(max_examples=50)
-def test_numericliteralexp_instantiation(instance):
-    assert isinstance(instance, NumericLiteralExp)
-
-@given(instance=FlatQVT::UnlimitedNaturalExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::unlimitednaturalexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::UnlimitedNaturalExp)
-
-@given(instance=FlatQVT::IntegerLiteralExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::IntegerLiteralExp)
-
-@given(instance=LoopExp_strategy)
-@settings(max_examples=50)
-def test_loopexp_instantiation(instance):
-    assert isinstance(instance, LoopExp)
-
-@given(instance=FlatQVT::IterateExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::iterateexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::IterateExp)
-
-@given(instance=FlatQVT::IteratorExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::iteratorexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::IteratorExp)
-
-@given(instance=OperationCallExp_strategy)
-@settings(max_examples=50)
-def test_operationcallexp_instantiation(instance):
-    assert isinstance(instance, OperationCallExp)
-
-@given(instance=Parameter_strategy)
-@settings(max_examples=50)
-def test_parameter_instantiation(instance):
-    assert isinstance(instance, Parameter)
-
-@given(instance=Variable_strategy)
-@settings(max_examples=50)
-def test_variable_instantiation(instance):
-    assert isinstance(instance, Variable)
-
-@given(instance=FlatQVT::VarParameter_strategy)
-@settings(max_examples=50)
-def test_flatqvt::varparameter_instantiation(instance):
-    assert isinstance(instance, FlatQVT::VarParameter)
-
-@given(instance=FlatQVT::FunctionParameter_strategy)
-@settings(max_examples=50)
-def test_flatqvt::functionparameter_instantiation(instance):
-    assert isinstance(instance, FlatQVT::FunctionParameter)
-
-@given(instance=Operation_strategy)
-@settings(max_examples=50)
-def test_operation_instantiation(instance):
-    assert isinstance(instance, Operation)
-
-@given(instance=FlatQVT::ImperativeOperation_strategy)
-@settings(max_examples=50)
-def test_flatqvt::imperativeoperation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ImperativeOperation)
-
-@given(instance=FlatQVT::Function_strategy)
-@settings(max_examples=50)
-def test_flatqvt::function_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Function)
-
-@given(instance=ImperativeLoopExp_strategy)
-@settings(max_examples=50)
-def test_imperativeloopexp_instantiation(instance):
-    assert isinstance(instance, ImperativeLoopExp)
-
-@given(instance=FlatQVT::ImperativeIterateExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::imperativeiterateexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ImperativeIterateExp)
-
-@given(instance=FlatQVT::ForExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::forexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ForExp)
-
-@given(instance=CallExp_strategy)
-@settings(max_examples=50)
-def test_callexp_instantiation(instance):
-    assert isinstance(instance, CallExp)
-
-@given(instance=FlatQVT::FeatureCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::featurecallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::FeatureCallExp)
-
-@given(instance=Object_strategy)
-@settings(max_examples=50)
-def test_object_instantiation(instance):
-    assert isinstance(instance, Object)
-
-@given(instance=FlatQVT::Extent_strategy)
-@settings(max_examples=50)
-def test_flatqvt::extent_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Extent)
+def test_flatqvt_reflectivesequence_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ReflectiveSequence)
 
 import warnings
 import copy
@@ -3789,132 +3649,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::Extent_strategy)
+@given(instance=FlatQVT_ReflectiveSequence_strategy)
 @settings(max_examples=30)
-def test_flatqvt::extent_usecontainment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.useContainment()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.useContainment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'useContainment' in FlatQVT::Extent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'useContainment' in FlatQVT::Extent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'useContainment' in FlatQVT::Extent is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::Extent_strategy)
-@settings(max_examples=30)
-def test_flatqvt::extent_elements_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.elements()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.elements).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'elements' in FlatQVT::Extent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'elements' in FlatQVT::Extent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'elements' in FlatQVT::Extent is not implemented or raised an error")
-
-@given(instance=FlatQVT::Element_strategy)
-@settings(max_examples=50)
-def test_flatqvt::element_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Element)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::Element_strategy)
-@settings(max_examples=30)
-def test_flatqvt::element_container_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.container()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.container).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'container' in FlatQVT::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'container' in FlatQVT::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'container' in FlatQVT::Element is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::Element_strategy)
-@settings(max_examples=30)
-def test_flatqvt::element_isset_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSet(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSet).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSet' in FlatQVT::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSet' in FlatQVT::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSet' in FlatQVT::Element is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::Element_strategy)
-@settings(max_examples=30)
-def test_flatqvt::element_set_changes_state(instance):
+def test_flatqvt_reflectivesequence_set_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3929,14 +3666,14 @@ def test_flatqvt::element_set_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in FlatQVT::Element is empty"
+        assert has_statements, f"Function 'set' in FlatQVT_ReflectiveSequence is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in FlatQVT::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'set' in FlatQVT_ReflectiveSequence did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in FlatQVT::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'set' in FlatQVT_ReflectiveSequence is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3944,9 +3681,671 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::Element_strategy)
+@given(instance=FlatQVT_ReflectiveSequence_strategy)
 @settings(max_examples=30)
-def test_flatqvt::element_unset_changes_state(instance):
+def test_flatqvt_reflectivesequence_remove_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.remove(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.remove).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'remove' in FlatQVT_ReflectiveSequence is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'remove' in FlatQVT_ReflectiveSequence did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'remove' in FlatQVT_ReflectiveSequence is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_ReflectiveSequence_strategy)
+@settings(max_examples=30)
+def test_flatqvt_reflectivesequence_add_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.add(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.add).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'add' in FlatQVT_ReflectiveSequence is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'add' in FlatQVT_ReflectiveSequence did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'add' in FlatQVT_ReflectiveSequence is not implemented or raised an error")
+
+@given(instance=NavigationCallExp_strategy)
+@settings(max_examples=50)
+def test_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, NavigationCallExp)
+
+@given(instance=FlatQVT_PropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_propertycallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_PropertyCallExp)
+
+@given(instance=Assignment_strategy)
+@settings(max_examples=50)
+def test_assignment_instantiation(instance):
+    assert isinstance(instance, Assignment)
+
+@given(instance=FlatQVT_VariableAssignment_strategy)
+@settings(max_examples=50)
+def test_flatqvt_variableassignment_instantiation(instance):
+    assert isinstance(instance, FlatQVT_VariableAssignment)
+
+@given(instance=FlatQVT_PropertyAssignment_strategy)
+@settings(max_examples=50)
+def test_flatqvt_propertyassignment_instantiation(instance):
+    assert isinstance(instance, FlatQVT_PropertyAssignment)
+
+@given(instance=PropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_propertycallexp_instantiation(instance):
+    assert isinstance(instance, PropertyCallExp)
+
+@given(instance=FlatQVT_OppositePropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_oppositepropertycallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_OppositePropertyCallExp)
+
+@given(instance=MultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, MultiplicityElement)
+
+@given(instance=InstantiationExp_strategy)
+@settings(max_examples=50)
+def test_instantiationexp_instantiation(instance):
+    assert isinstance(instance, InstantiationExp)
+
+@given(instance=FlatQVT_ObjectExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_objectexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ObjectExp)
+
+@given(instance=FlatQVT_Object_strategy)
+@settings(max_examples=50)
+def test_flatqvt_object_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Object)
+
+@given(instance=FlatQVT_Area_strategy)
+@settings(max_examples=50)
+def test_flatqvt_area_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Area)
+
+@given(instance=Type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
+
+@given(instance=FlatQVT_VoidType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_voidtype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_VoidType)
+
+@given(instance=FlatQVT_TemplateParameterType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_templateparametertype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TemplateParameterType)
+
+@given(instance=FlatQVT_AnyType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_anytype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_AnyType)
+
+@given(instance=ImperativeExpression_strategy)
+@settings(max_examples=50)
+def test_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, ImperativeExpression)
+
+@given(instance=FlatQVT_UnlinkExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_unlinkexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_UnlinkExp)
+
+@given(instance=FlatQVT_AssignExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_assignexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_AssignExp)
+
+@given(instance=FlatQVT_VariableInitExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_variableinitexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_VariableInitExp)
+
+@given(instance=FlatQVT_ReturnExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_returnexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ReturnExp)
+
+@given(instance=FlatQVT_SwitchExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_switchexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_SwitchExp)
+
+@given(instance=FlatQVT_AssertExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_assertexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_AssertExp)
+
+@given(instance=FlatQVT_TryExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_tryexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TryExp)
+
+@given(instance=FlatQVT_RaiseExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_raiseexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RaiseExp)
+
+@given(instance=FlatQVT_WhileExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_whileexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_WhileExp)
+
+@given(instance=FlatQVT_AltExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_altexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_AltExp)
+
+@given(instance=FeatureCallExp_strategy)
+@settings(max_examples=50)
+def test_featurecallexp_instantiation(instance):
+    assert isinstance(instance, FeatureCallExp)
+
+@given(instance=FlatQVT_OperationCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_operationcallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_OperationCallExp)
+
+@given(instance=FlatQVT_NavigationCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_NavigationCallExp)
+
+@given(instance=FlatQVT_MultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_flatqvt_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, FlatQVT_MultiplicityElement)
+
+@given(instance=Package_strategy)
+@settings(max_examples=50)
+def test_package_instantiation(instance):
+    assert isinstance(instance, Package)
+
+@given(instance=Class_strategy)
+@settings(max_examples=50)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
+
+@given(instance=FlatQVT_Module_strategy)
+@settings(max_examples=50)
+def test_flatqvt_module_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Module)
+
+@given(instance=FlatQVT_Transformation_strategy)
+@settings(max_examples=50)
+def test_flatqvt_transformation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Transformation)
+
+@given(instance=FlatQVT_Typedef_strategy)
+@settings(max_examples=50)
+def test_flatqvt_typedef_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Typedef)
+
+@given(instance=FlatQVT_ModelType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_modeltype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ModelType)
+
+@given(instance=VarParameter_strategy)
+@settings(max_examples=50)
+def test_varparameter_instantiation(instance):
+    assert isinstance(instance, VarParameter)
+
+@given(instance=FlatQVT_ModelParameter_strategy)
+@settings(max_examples=50)
+def test_flatqvt_modelparameter_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ModelParameter)
+
+@given(instance=FlatQVT_MappingParameter_strategy)
+@settings(max_examples=50)
+def test_flatqvt_mappingparameter_instantiation(instance):
+    assert isinstance(instance, FlatQVT_MappingParameter)
+
+@given(instance=ImperativeCallExp_strategy)
+@settings(max_examples=50)
+def test_imperativecallexp_instantiation(instance):
+    assert isinstance(instance, ImperativeCallExp)
+
+@given(instance=FlatQVT_MappingCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_mappingcallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_MappingCallExp)
+
+@given(instance=Rule_strategy)
+@settings(max_examples=50)
+def test_rule_instantiation(instance):
+    assert isinstance(instance, Rule)
+
+@given(instance=FlatQVT_Relation_strategy)
+@settings(max_examples=50)
+def test_flatqvt_relation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Relation)
+
+@given(instance=Module_strategy)
+@settings(max_examples=50)
+def test_module_instantiation(instance):
+    assert isinstance(instance, Module)
+
+@given(instance=FlatQVT_OperationalTransformation_strategy)
+@settings(max_examples=50)
+def test_flatqvt_operationaltransformation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_OperationalTransformation)
+
+@given(instance=FlatQVT_Library_strategy)
+@settings(max_examples=50)
+def test_flatqvt_library_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Library)
+
+@given(instance=FlatQVT_InvalidType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_invalidtype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_InvalidType)
+
+@given(instance=NumericLiteralExp_strategy)
+@settings(max_examples=50)
+def test_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, NumericLiteralExp)
+
+@given(instance=FlatQVT_RealLiteralExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_realliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RealLiteralExp)
+
+@given(instance=FlatQVT_UnlimitedNaturalExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_unlimitednaturalexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_UnlimitedNaturalExp)
+
+@given(instance=FlatQVT_IntegerLiteralExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_IntegerLiteralExp)
+
+@given(instance=FlatQVT_InstantiationExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_instantiationexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_InstantiationExp)
+
+@given(instance=LoopExp_strategy)
+@settings(max_examples=50)
+def test_loopexp_instantiation(instance):
+    assert isinstance(instance, LoopExp)
+
+@given(instance=FlatQVT_IterateExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_iterateexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_IterateExp)
+
+@given(instance=FlatQVT_IteratorExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_iteratorexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_IteratorExp)
+
+@given(instance=FlatQVT_ImperativeLoopExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_imperativeloopexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ImperativeLoopExp)
+
+@given(instance=OperationCallExp_strategy)
+@settings(max_examples=50)
+def test_operationcallexp_instantiation(instance):
+    assert isinstance(instance, OperationCallExp)
+
+@given(instance=FlatQVT_LogExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_logexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_LogExp)
+
+@given(instance=FlatQVT_ImperativeCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_imperativecallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ImperativeCallExp)
+
+@given(instance=Parameter_strategy)
+@settings(max_examples=50)
+def test_parameter_instantiation(instance):
+    assert isinstance(instance, Parameter)
+
+@given(instance=Variable_strategy)
+@settings(max_examples=50)
+def test_variable_instantiation(instance):
+    assert isinstance(instance, Variable)
+
+@given(instance=FlatQVT_RealizedVariable_strategy)
+@settings(max_examples=50)
+def test_flatqvt_realizedvariable_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RealizedVariable)
+
+@given(instance=FlatQVT_VarParameter_strategy)
+@settings(max_examples=50)
+def test_flatqvt_varparameter_instantiation(instance):
+    assert isinstance(instance, FlatQVT_VarParameter)
+
+@given(instance=FlatQVT_FunctionParameter_strategy)
+@settings(max_examples=50)
+def test_flatqvt_functionparameter_instantiation(instance):
+    assert isinstance(instance, FlatQVT_FunctionParameter)
+
+@given(instance=Operation_strategy)
+@settings(max_examples=50)
+def test_operation_instantiation(instance):
+    assert isinstance(instance, Operation)
+
+@given(instance=FlatQVT_ImperativeOperation_strategy)
+@settings(max_examples=50)
+def test_flatqvt_imperativeoperation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ImperativeOperation)
+
+@given(instance=FlatQVT_Function_strategy)
+@settings(max_examples=50)
+def test_flatqvt_function_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Function)
+
+@given(instance=ImperativeLoopExp_strategy)
+@settings(max_examples=50)
+def test_imperativeloopexp_instantiation(instance):
+    assert isinstance(instance, ImperativeLoopExp)
+
+@given(instance=FlatQVT_ImperativeIterateExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_imperativeiterateexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ImperativeIterateExp)
+
+@given(instance=FlatQVT_ForExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_forexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ForExp)
+
+@given(instance=CallExp_strategy)
+@settings(max_examples=50)
+def test_callexp_instantiation(instance):
+    assert isinstance(instance, CallExp)
+
+@given(instance=FlatQVT_ResolveExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_resolveexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ResolveExp)
+
+@given(instance=FlatQVT_FeatureCallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_featurecallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_FeatureCallExp)
+
+@given(instance=Object_strategy)
+@settings(max_examples=50)
+def test_object_instantiation(instance):
+    assert isinstance(instance, Object)
+
+@given(instance=FlatQVT_ReflectiveCollection_strategy)
+@settings(max_examples=50)
+def test_flatqvt_reflectivecollection_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ReflectiveCollection)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_flatqvt_reflectivecollection_remove_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.remove(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.remove).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'remove' in FlatQVT_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'remove' in FlatQVT_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'remove' in FlatQVT_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_flatqvt_reflectivecollection_add_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.add(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.add).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'add' in FlatQVT_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'add' in FlatQVT_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'add' in FlatQVT_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_flatqvt_reflectivecollection_addall_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addAll(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addAll).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addAll' in FlatQVT_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addAll' in FlatQVT_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addAll' in FlatQVT_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_flatqvt_reflectivecollection_size_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.size()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.size).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'size' in FlatQVT_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'size' in FlatQVT_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'size' in FlatQVT_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_flatqvt_reflectivecollection_clear_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.clear()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.clear).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'clear' in FlatQVT_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'clear' in FlatQVT_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'clear' in FlatQVT_ReflectiveCollection is not implemented or raised an error")
+
+@given(instance=FlatQVT_Extent_strategy)
+@settings(max_examples=50)
+def test_flatqvt_extent_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Extent)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Extent_strategy)
+@settings(max_examples=30)
+def test_flatqvt_extent_elements_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.elements()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.elements).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'elements' in FlatQVT_Extent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'elements' in FlatQVT_Extent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'elements' in FlatQVT_Extent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Extent_strategy)
+@settings(max_examples=30)
+def test_flatqvt_extent_usecontainment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.useContainment()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.useContainment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'useContainment' in FlatQVT_Extent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'useContainment' in FlatQVT_Extent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'useContainment' in FlatQVT_Extent is not implemented or raised an error")
+
+@given(instance=FlatQVT_Element_strategy)
+@settings(max_examples=50)
+def test_flatqvt_element_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Element)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Element_strategy)
+@settings(max_examples=30)
+def test_flatqvt_element_unset_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3960,14 +4359,14 @@ def test_flatqvt::element_unset_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unset' in FlatQVT::Element is empty"
+        assert has_statements, f"Function 'unset' in FlatQVT_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unset' in FlatQVT::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'unset' in FlatQVT_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unset' in FlatQVT::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'unset' in FlatQVT_Element is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3975,9 +4374,101 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::Element_strategy)
+@given(instance=FlatQVT_Element_strategy)
 @settings(max_examples=30)
-def test_flatqvt::element_equals_changes_state(instance):
+def test_flatqvt_element_isset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSet(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSet).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSet' in FlatQVT_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSet' in FlatQVT_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSet' in FlatQVT_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Element_strategy)
+@settings(max_examples=30)
+def test_flatqvt_element_container_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.container()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.container).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'container' in FlatQVT_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'container' in FlatQVT_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'container' in FlatQVT_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Element_strategy)
+@settings(max_examples=30)
+def test_flatqvt_element_set_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.set(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.set).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'set' in FlatQVT_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'set' in FlatQVT_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'set' in FlatQVT_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Element_strategy)
+@settings(max_examples=30)
+def test_flatqvt_element_equals_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3991,24 +4482,44 @@ def test_flatqvt::element_equals_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equals' in FlatQVT::Element is empty"
+        assert has_statements, f"Function 'equals' in FlatQVT_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equals' in FlatQVT::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'equals' in FlatQVT_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equals' in FlatQVT::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'equals' in FlatQVT_Element is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=FlatQVT::Type_strategy)
+@given(instance=FlatQVT_Package_strategy)
 @settings(max_examples=50)
-def test_flatqvt::type_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Type)
+def test_flatqvt_package_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Package)
+
+@given(instance=FlatQVT_EnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_flatqvt_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, FlatQVT_EnumerationLiteral)
+
+@given(instance=FlatQVT_TypedModel_strategy)
+@settings(max_examples=50)
+def test_flatqvt_typedmodel_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TypedModel)
+
+@given(instance=FlatQVT_TypedElement_strategy)
+@settings(max_examples=50)
+def test_flatqvt_typedelement_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TypedElement)
+
+@given(instance=FlatQVT_Type_strategy)
+@settings(max_examples=50)
+def test_flatqvt_type_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Type)
 
 import warnings
 import copy
@@ -4016,9 +4527,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::Type_strategy)
+@given(instance=FlatQVT_Type_strategy)
 @settings(max_examples=30)
-def test_flatqvt::type_isinstance_changes_state(instance):
+def test_flatqvt_type_isinstance_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4032,349 +4543,449 @@ def test_flatqvt::type_isinstance_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInstance' in FlatQVT::Type is empty"
+        assert has_statements, f"Function 'isInstance' in FlatQVT_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInstance' in FlatQVT::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'isInstance' in FlatQVT_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInstance' in FlatQVT::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'isInstance' in FlatQVT_Type is not implemented or raised an error")
 
-@given(instance=FlatQVT::EnumerationLiteral_strategy)
+@given(instance=FlatQVT_Rule_strategy)
 @settings(max_examples=50)
-def test_flatqvt::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, FlatQVT::EnumerationLiteral)
+def test_flatqvt_rule_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Rule)
 
-@given(instance=FlatQVT::TypedElement_strategy)
+@given(instance=FlatQVT_Domain_strategy)
 @settings(max_examples=50)
-def test_flatqvt::typedelement_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TypedElement)
+def test_flatqvt_domain_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Domain)
 
-@given(instance=FlatQVT::TypedModel_strategy)
+@given(instance=FlatQVT_DataType_strategy)
 @settings(max_examples=50)
-def test_flatqvt::typedmodel_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TypedModel)
-
-@given(instance=FlatQVT::Domain_strategy)
-@settings(max_examples=50)
-def test_flatqvt::domain_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Domain)
+def test_flatqvt_datatype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_DataType)
 
 @given(instance=Pattern_strategy)
 @settings(max_examples=50)
 def test_pattern_instantiation(instance):
     assert isinstance(instance, Pattern)
 
-@given(instance=FlatQVT::DomainPattern_strategy)
+@given(instance=FlatQVT_DomainPattern_strategy)
 @settings(max_examples=50)
-def test_flatqvt::domainpattern_instantiation(instance):
-    assert isinstance(instance, FlatQVT::DomainPattern)
+def test_flatqvt_domainpattern_instantiation(instance):
+    assert isinstance(instance, FlatQVT_DomainPattern)
 
-@given(instance=FlatQVT::CorePattern_strategy)
+@given(instance=FlatQVT_CorePattern_strategy)
 @settings(max_examples=50)
-def test_flatqvt::corepattern_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CorePattern)
+def test_flatqvt_corepattern_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CorePattern)
 
 @given(instance=Area_strategy)
 @settings(max_examples=50)
 def test_area_instantiation(instance):
     assert isinstance(instance, Area)
 
-@given(instance=FlatQVT::Mapping_strategy)
+@given(instance=FlatQVT_Mapping_strategy)
 @settings(max_examples=50)
-def test_flatqvt::mapping_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Mapping)
+def test_flatqvt_mapping_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Mapping)
 
 @given(instance=Domain_strategy)
 @settings(max_examples=50)
 def test_domain_instantiation(instance):
     assert isinstance(instance, Domain)
 
-@given(instance=FlatQVT::CoreDomain_strategy)
+@given(instance=FlatQVT_RelationDomain_strategy)
 @settings(max_examples=50)
-def test_flatqvt::coredomain_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CoreDomain)
+def test_flatqvt_relationdomain_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RelationDomain)
+
+@given(instance=FlatQVT_CoreDomain_strategy)
+@settings(max_examples=50)
+def test_flatqvt_coredomain_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CoreDomain)
+
+@given(instance=FlatQVT_ContinueExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_continueexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ContinueExp)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=FlatQVT::ContextualProperty_strategy)
+@given(instance=FlatQVT_ContextualProperty_strategy)
 @settings(max_examples=50)
-def test_flatqvt::contextualproperty_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ContextualProperty)
+def test_flatqvt_contextualproperty_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ContextualProperty)
 
 @given(instance=OperationBody_strategy)
 @settings(max_examples=50)
 def test_operationbody_instantiation(instance):
     assert isinstance(instance, OperationBody)
 
-@given(instance=FlatQVT::MappingBody_strategy)
+@given(instance=FlatQVT_MappingBody_strategy)
 @settings(max_examples=50)
-def test_flatqvt::mappingbody_instantiation(instance):
-    assert isinstance(instance, FlatQVT::MappingBody)
+def test_flatqvt_mappingbody_instantiation(instance):
+    assert isinstance(instance, FlatQVT_MappingBody)
 
-@given(instance=FlatQVT::ConstructorBody_strategy)
+@given(instance=FlatQVT_ConstructorBody_strategy)
 @settings(max_examples=50)
-def test_flatqvt::constructorbody_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ConstructorBody)
+def test_flatqvt_constructorbody_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ConstructorBody)
 
 @given(instance=ImperativeOperation_strategy)
 @settings(max_examples=50)
 def test_imperativeoperation_instantiation(instance):
     assert isinstance(instance, ImperativeOperation)
 
-@given(instance=FlatQVT::MappingOperation_strategy)
+@given(instance=FlatQVT_MappingOperation_strategy)
 @settings(max_examples=50)
-def test_flatqvt::mappingoperation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::MappingOperation)
+def test_flatqvt_mappingoperation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_MappingOperation)
 
-@given(instance=FlatQVT::EntryOperation_strategy)
+@given(instance=FlatQVT_Helper_strategy)
 @settings(max_examples=50)
-def test_flatqvt::entryoperation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::EntryOperation)
+def test_flatqvt_helper_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Helper)
 
-@given(instance=FlatQVT::Helper_strategy)
+@given(instance=FlatQVT_EntryOperation_strategy)
 @settings(max_examples=50)
-def test_flatqvt::helper_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Helper)
+def test_flatqvt_entryoperation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_EntryOperation)
 
-@given(instance=FlatQVT::Constructor_strategy)
+@given(instance=FlatQVT_Constructor_strategy)
 @settings(max_examples=50)
-def test_flatqvt::constructor_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Constructor)
+def test_flatqvt_constructor_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Constructor)
+
+@given(instance=FlatQVT_ComputeExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_computeexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ComputeExp)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=FlatQVT::TupleType_strategy)
+@given(instance=FlatQVT_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_flatqvt::tupletype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TupleType)
+def test_flatqvt_primitivetype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_PrimitiveType)
 
-@given(instance=FlatQVT::Enumeration_strategy)
+@given(instance=FlatQVT_Enumeration_strategy)
 @settings(max_examples=50)
-def test_flatqvt::enumeration_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Enumeration)
+def test_flatqvt_enumeration_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Enumeration)
 
-@given(instance=FlatQVT::CollectionType_strategy)
+@given(instance=FlatQVT_TupleType_strategy)
 @settings(max_examples=50)
-def test_flatqvt::collectiontype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CollectionType)
+def test_flatqvt_tupletype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TupleType)
+
+@given(instance=FlatQVT_CollectionType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_collectiontype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CollectionType)
 
 @given(instance=TemplateExp_strategy)
 @settings(max_examples=50)
 def test_templateexp_instantiation(instance):
     assert isinstance(instance, TemplateExp)
 
-@given(instance=FlatQVT::CollectionTemplateExp_strategy)
+@given(instance=FlatQVT_ObjectTemplateExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::collectiontemplateexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CollectionTemplateExp)
+def test_flatqvt_objecttemplateexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ObjectTemplateExp)
+
+@given(instance=FlatQVT_CollectionTemplateExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_collectiontemplateexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CollectionTemplateExp)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=FlatQVT::ExpressionInOcl_strategy)
+@given(instance=FlatQVT_Parameter_strategy)
 @settings(max_examples=50)
-def test_flatqvt::expressioninocl_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ExpressionInOcl)
+def test_flatqvt_parameter_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Parameter)
 
-@given(instance=FlatQVT::Variable_strategy)
+@given(instance=FlatQVT_ExpressionInOcl_strategy)
 @settings(max_examples=50)
-def test_flatqvt::variable_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Variable)
+def test_flatqvt_expressioninocl_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ExpressionInOcl)
 
-@given(instance=FlatQVT::TupleLiteralPart_strategy)
+@given(instance=FlatQVT_TupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_flatqvt::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TupleLiteralPart)
+def test_flatqvt_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TupleLiteralPart)
 
-@given(instance=FlatQVT::CollectionLiteralPart_strategy)
+@given(instance=FlatQVT_OclExpression_strategy)
 @settings(max_examples=50)
-def test_flatqvt::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CollectionLiteralPart)
+def test_flatqvt_oclexpression_instantiation(instance):
+    assert isinstance(instance, FlatQVT_OclExpression)
+
+@given(instance=FlatQVT_Variable_strategy)
+@settings(max_examples=50)
+def test_flatqvt_variable_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Variable)
+
+@given(instance=FlatQVT_Property_strategy)
+@settings(max_examples=50)
+def test_flatqvt_property_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Property)
+
+@given(instance=FlatQVT_Operation_strategy)
+@settings(max_examples=50)
+def test_flatqvt_operation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Operation)
+
+@given(instance=FlatQVT_CollectionLiteralPart_strategy)
+@settings(max_examples=50)
+def test_flatqvt_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CollectionLiteralPart)
 
 @given(instance=LiteralExp_strategy)
 @settings(max_examples=50)
 def test_literalexp_instantiation(instance):
     assert isinstance(instance, LiteralExp)
 
-@given(instance=FlatQVT::DictLiteralExp_strategy)
+@given(instance=FlatQVT_ListLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::dictliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::DictLiteralExp)
+def test_flatqvt_listliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ListLiteralExp)
 
-@given(instance=FlatQVT::InvalidLiteralExp_strategy)
+@given(instance=FlatQVT_TupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::InvalidLiteralExp)
+def test_flatqvt_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TupleLiteralExp)
 
-@given(instance=FlatQVT::EnumLiteralExp_strategy)
+@given(instance=FlatQVT_PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::EnumLiteralExp)
+def test_flatqvt_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_PrimitiveLiteralExp)
 
-@given(instance=FlatQVT::ListLiteralExp_strategy)
+@given(instance=FlatQVT_NullLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::listliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ListLiteralExp)
+def test_flatqvt_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_NullLiteralExp)
 
-@given(instance=FlatQVT::TupleLiteralExp_strategy)
+@given(instance=FlatQVT_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TupleLiteralExp)
+def test_flatqvt_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_EnumLiteralExp)
 
-@given(instance=FlatQVT::TemplateExp_strategy)
+@given(instance=FlatQVT_InvalidLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::templateexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TemplateExp)
+def test_flatqvt_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_InvalidLiteralExp)
 
-@given(instance=FlatQVT::CollectionLiteralExp_strategy)
+@given(instance=FlatQVT_DictLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CollectionLiteralExp)
+def test_flatqvt_dictliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_DictLiteralExp)
+
+@given(instance=FlatQVT_TemplateExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_templateexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TemplateExp)
+
+@given(instance=FlatQVT_CollectionLiteralExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CollectionLiteralExp)
 
 @given(instance=CollectionLiteralPart_strategy)
 @settings(max_examples=50)
 def test_collectionliteralpart_instantiation(instance):
     assert isinstance(instance, CollectionLiteralPart)
 
-@given(instance=FlatQVT::CollectionRange_strategy)
+@given(instance=FlatQVT_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_flatqvt::collectionrange_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CollectionRange)
+def test_flatqvt_collectionrange_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CollectionRange)
 
-@given(instance=FlatQVT::CollectionItem_strategy)
+@given(instance=FlatQVT_CollectionItem_strategy)
 @settings(max_examples=50)
-def test_flatqvt::collectionitem_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CollectionItem)
+def test_flatqvt_collectionitem_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CollectionItem)
+
+@given(instance=FlatQVT_Class_strategy)
+@settings(max_examples=50)
+def test_flatqvt_class_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Class)
+
+@given(instance=FlatQVT_CatchExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_catchexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CatchExp)
 
 @given(instance=OclExpression_strategy)
 @settings(max_examples=50)
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=FlatQVT::LetExp_strategy)
+@given(instance=FlatQVT_ImperativeExpression_strategy)
 @settings(max_examples=50)
-def test_flatqvt::letexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::LetExp)
+def test_flatqvt_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ImperativeExpression)
 
-@given(instance=FlatQVT::VariableExp_strategy)
+@given(instance=FlatQVT_VariableExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::variableexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::VariableExp)
+def test_flatqvt_variableexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_VariableExp)
 
-@given(instance=FlatQVT::TypeExp_strategy)
+@given(instance=FlatQVT_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::typeexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TypeExp)
+def test_flatqvt_literalexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_LiteralExp)
 
-@given(instance=FlatQVT::IfExp_strategy)
+@given(instance=FlatQVT_LoopExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::ifexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::IfExp)
+def test_flatqvt_loopexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_LoopExp)
 
-@given(instance=FlatQVT::ImperativeExpression_strategy)
+@given(instance=FlatQVT_LetExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::imperativeexpression_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ImperativeExpression)
+def test_flatqvt_letexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_LetExp)
 
-@given(instance=FlatQVT::LoopExp_strategy)
+@given(instance=FlatQVT_RelationCallExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::loopexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::LoopExp)
+def test_flatqvt_relationcallexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RelationCallExp)
 
-@given(instance=FlatQVT::LiteralExp_strategy)
+@given(instance=FlatQVT_IfExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::literalexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::LiteralExp)
+def test_flatqvt_ifexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_IfExp)
 
-@given(instance=FlatQVT::CallExp_strategy)
+@given(instance=FlatQVT_TypeExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::callexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CallExp)
+def test_flatqvt_typeexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_TypeExp)
+
+@given(instance=FlatQVT_CallExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_callexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_CallExp)
+
+@given(instance=FlatQVT_BreakExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_breakexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_BreakExp)
 
 @given(instance=CorePattern_strategy)
 @settings(max_examples=50)
 def test_corepattern_instantiation(instance):
     assert isinstance(instance, CorePattern)
 
-@given(instance=FlatQVT::GuardPattern_strategy)
+@given(instance=FlatQVT_GuardPattern_strategy)
 @settings(max_examples=50)
-def test_flatqvt::guardpattern_instantiation(instance):
-    assert isinstance(instance, FlatQVT::GuardPattern)
+def test_flatqvt_guardpattern_instantiation(instance):
+    assert isinstance(instance, FlatQVT_GuardPattern)
 
-@given(instance=FlatQVT::BottomPattern_strategy)
+@given(instance=FlatQVT_BottomPattern_strategy)
 @settings(max_examples=50)
-def test_flatqvt::bottompattern_instantiation(instance):
-    assert isinstance(instance, FlatQVT::BottomPattern)
+def test_flatqvt_bottompattern_instantiation(instance):
+    assert isinstance(instance, FlatQVT_BottomPattern)
 
 @given(instance=PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
 def test_primitiveliteralexp_instantiation(instance):
     assert isinstance(instance, PrimitiveLiteralExp)
 
-@given(instance=FlatQVT::BooleanLiteralExp_strategy)
+@given(instance=FlatQVT_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_flatqvt::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::BooleanLiteralExp)
+def test_flatqvt_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_StringLiteralExp)
+
+@given(instance=FlatQVT_NumericLiteralExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_NumericLiteralExp)
+
+@given(instance=FlatQVT_BooleanLiteralExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_BooleanLiteralExp)
+
+@given(instance=FlatQVT_BlockExp_strategy)
+@settings(max_examples=50)
+def test_flatqvt_blockexp_instantiation(instance):
+    assert isinstance(instance, FlatQVT_BlockExp)
 
 @given(instance=CollectionType_strategy)
 @settings(max_examples=50)
 def test_collectiontype_instantiation(instance):
     assert isinstance(instance, CollectionType)
 
-@given(instance=FlatQVT::DictionaryType_strategy)
+@given(instance=FlatQVT_DictionaryType_strategy)
 @settings(max_examples=50)
-def test_flatqvt::dictionarytype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::DictionaryType)
+def test_flatqvt_dictionarytype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_DictionaryType)
 
-@given(instance=FlatQVT::ListType_strategy)
+@given(instance=FlatQVT_SequenceType_strategy)
 @settings(max_examples=50)
-def test_flatqvt::listtype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ListType)
+def test_flatqvt_sequencetype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_SequenceType)
 
-@given(instance=FlatQVT::BagType_strategy)
+@given(instance=FlatQVT_OrderedSetType_strategy)
 @settings(max_examples=50)
-def test_flatqvt::bagtype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::BagType)
+def test_flatqvt_orderedsettype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_OrderedSetType)
+
+@given(instance=FlatQVT_SetType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_settype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_SetType)
+
+@given(instance=FlatQVT_ListType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_listtype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ListType)
+
+@given(instance=FlatQVT_BagType_strategy)
+@settings(max_examples=50)
+def test_flatqvt_bagtype_instantiation(instance):
+    assert isinstance(instance, FlatQVT_BagType)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=FlatQVT::DictLiteralPart_strategy)
+@given(instance=FlatQVT_NamedElement_strategy)
 @settings(max_examples=50)
-def test_flatqvt::dictliteralpart_instantiation(instance):
-    assert isinstance(instance, FlatQVT::DictLiteralPart)
+def test_flatqvt_namedelement_instantiation(instance):
+    assert isinstance(instance, FlatQVT_NamedElement)
 
-@given(instance=FlatQVT::Comment_strategy)
+@given(instance=FlatQVT_Predicate_strategy)
 @settings(max_examples=50)
-def test_flatqvt::comment_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Comment)
+def test_flatqvt_predicate_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Predicate)
 
-@given(instance=FlatQVT::EnforcementOperation_strategy)
+@given(instance=FlatQVT_OperationBody_strategy)
 @settings(max_examples=50)
-def test_flatqvt::enforcementoperation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::EnforcementOperation)
+def test_flatqvt_operationbody_instantiation(instance):
+    assert isinstance(instance, FlatQVT_OperationBody)
 
-@given(instance=FlatQVT::Key_strategy)
+@given(instance=FlatQVT_Comment_strategy)
 @settings(max_examples=50)
-def test_flatqvt::key_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Key)
+def test_flatqvt_comment_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Comment)
 
-@given(instance=FlatQVT::Factory_strategy)
+@given(instance=FlatQVT_Factory_strategy)
 @settings(max_examples=50)
-def test_flatqvt::factory_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Factory)
+def test_flatqvt_factory_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Factory)
 
 import warnings
 import copy
@@ -4382,9 +4993,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::Factory_strategy)
+@given(instance=FlatQVT_Factory_strategy)
 @settings(max_examples=30)
-def test_flatqvt::factory_createfromstring_changes_state(instance):
+def test_flatqvt_factory_create_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.create(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.create).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'create' in FlatQVT_Factory is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'create' in FlatQVT_Factory did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'create' in FlatQVT_Factory is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlatQVT_Factory_strategy)
+@settings(max_examples=30)
+def test_flatqvt_factory_createfromstring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4399,14 +5041,14 @@ def test_flatqvt::factory_createfromstring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createFromString' in FlatQVT::Factory is empty"
+        assert has_statements, f"Function 'createFromString' in FlatQVT_Factory is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createFromString' in FlatQVT::Factory did not change state; check implementation")
+            warnings.warn(f"Operation 'createFromString' in FlatQVT_Factory did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createFromString' in FlatQVT::Factory is not implemented or raised an error")
+        warnings.warn(f"Operation 'createFromString' in FlatQVT_Factory is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4414,40 +5056,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlatQVT::Factory_strategy)
+@given(instance=FlatQVT_Factory_strategy)
 @settings(max_examples=30)
-def test_flatqvt::factory_create_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.create(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.create).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'create' in FlatQVT::Factory is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'create' in FlatQVT::Factory did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'create' in FlatQVT::Factory is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::Factory_strategy)
-@settings(max_examples=30)
-def test_flatqvt::factory_converttostring_changes_state(instance):
+def test_flatqvt_factory_converttostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4462,672 +5073,61 @@ def test_flatqvt::factory_converttostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'convertToString' in FlatQVT::Factory is empty"
+        assert has_statements, f"Function 'convertToString' in FlatQVT_Factory is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'convertToString' in FlatQVT::Factory did not change state; check implementation")
+            warnings.warn(f"Operation 'convertToString' in FlatQVT_Factory did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'convertToString' in FlatQVT::Factory is not implemented or raised an error")
+        warnings.warn(f"Operation 'convertToString' in FlatQVT_Factory is not implemented or raised an error")
 
-@given(instance=FlatQVT::Assignment_strategy)
+@given(instance=FlatQVT_RelationImplementation_strategy)
 @settings(max_examples=50)
-def test_flatqvt::assignment_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Assignment)
+def test_flatqvt_relationimplementation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RelationImplementation)
 
-@given(instance=FlatQVT::Area_strategy)
+@given(instance=FlatQVT_DictLiteralPart_strategy)
 @settings(max_examples=50)
-def test_flatqvt::area_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Area)
+def test_flatqvt_dictliteralpart_instantiation(instance):
+    assert isinstance(instance, FlatQVT_DictLiteralPart)
 
-@given(instance=Type_strategy)
+@given(instance=FlatQVT_Pattern_strategy)
 @settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
+def test_flatqvt_pattern_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Pattern)
 
-@given(instance=FlatQVT::TemplateParameterType_strategy)
+@given(instance=FlatQVT_ModuleImport_strategy)
 @settings(max_examples=50)
-def test_flatqvt::templateparametertype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TemplateParameterType)
+def test_flatqvt_moduleimport_instantiation(instance):
+    assert isinstance(instance, FlatQVT_ModuleImport)
 
-@given(instance=FlatQVT::InvalidType_strategy)
+@given(instance=FlatQVT_RelationDomainAssignment_strategy)
 @settings(max_examples=50)
-def test_flatqvt::invalidtype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::InvalidType)
+def test_flatqvt_relationdomainassignment_instantiation(instance):
+    assert isinstance(instance, FlatQVT_RelationDomainAssignment)
 
-@given(instance=FlatQVT::Class_strategy)
+@given(instance=FlatQVT_PropertyTemplateItem_strategy)
 @settings(max_examples=50)
-def test_flatqvt::class_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Class)
+def test_flatqvt_propertytemplateitem_instantiation(instance):
+    assert isinstance(instance, FlatQVT_PropertyTemplateItem)
 
-@given(instance=FlatQVT::VoidType_strategy)
+@given(instance=FlatQVT_Key_strategy)
 @settings(max_examples=50)
-def test_flatqvt::voidtype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::VoidType)
+def test_flatqvt_key_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Key)
 
-@given(instance=FlatQVT::DataType_strategy)
+@given(instance=FlatQVT_Tag_strategy)
 @settings(max_examples=50)
-def test_flatqvt::datatype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::DataType)
+def test_flatqvt_tag_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Tag)
 
-@given(instance=FlatQVT::AnyType_strategy)
+@given(instance=FlatQVT_EnforcementOperation_strategy)
 @settings(max_examples=50)
-def test_flatqvt::anytype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::AnyType)
+def test_flatqvt_enforcementoperation_instantiation(instance):
+    assert isinstance(instance, FlatQVT_EnforcementOperation)
 
-@given(instance=ImperativeExpression_strategy)
+@given(instance=FlatQVT_Assignment_strategy)
 @settings(max_examples=50)
-def test_imperativeexpression_instantiation(instance):
-    assert isinstance(instance, ImperativeExpression)
-
-@given(instance=FlatQVT::ImperativeCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::imperativecallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ImperativeCallExp)
-
-@given(instance=FlatQVT::InstantiationExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::instantiationexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::InstantiationExp)
-
-@given(instance=FlatQVT::TryExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::tryexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::TryExp)
-
-@given(instance=FlatQVT::BlockExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::blockexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::BlockExp)
-
-@given(instance=FlatQVT::ComputeExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::computeexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ComputeExp)
-
-@given(instance=FlatQVT::UnlinkExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::unlinkexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::UnlinkExp)
-
-@given(instance=FlatQVT::ContinueExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::continueexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ContinueExp)
-
-@given(instance=FlatQVT::LogExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::logexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::LogExp)
-
-@given(instance=FlatQVT::AssignExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::assignexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::AssignExp)
-
-@given(instance=FlatQVT::AssertExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::assertexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::AssertExp)
-
-@given(instance=FlatQVT::BreakExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::breakexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::BreakExp)
-
-@given(instance=FlatQVT::VariableInitExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::variableinitexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::VariableInitExp)
-
-@given(instance=FlatQVT::ImperativeLoopExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::imperativeloopexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ImperativeLoopExp)
-
-@given(instance=FlatQVT::CatchExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::catchexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::CatchExp)
-
-@given(instance=FlatQVT::WhileExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::whileexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::WhileExp)
-
-@given(instance=FlatQVT::AltExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::altexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::AltExp)
-
-@given(instance=FlatQVT::Tag_strategy)
-@settings(max_examples=50)
-def test_flatqvt::tag_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Tag)
-
-@given(instance=FlatQVT::SwitchExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::switchexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::SwitchExp)
-
-@given(instance=FlatQVT::StringLiteralExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::StringLiteralExp)
-
-@given(instance=FlatQVT::SetType_strategy)
-@settings(max_examples=50)
-def test_flatqvt::settype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::SetType)
-
-@given(instance=FlatQVT::SequenceType_strategy)
-@settings(max_examples=50)
-def test_flatqvt::sequencetype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::SequenceType)
-
-@given(instance=FlatQVT::Rule_strategy)
-@settings(max_examples=50)
-def test_flatqvt::rule_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Rule)
-
-@given(instance=FlatQVT::ReturnExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::returnexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ReturnExp)
-
-@given(instance=ResolveExp_strategy)
-@settings(max_examples=50)
-def test_resolveexp_instantiation(instance):
-    assert isinstance(instance, ResolveExp)
-
-@given(instance=FlatQVT::ResolveInExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::resolveinexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ResolveInExp)
-
-@given(instance=FlatQVT::ResolveExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::resolveexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ResolveExp)
-
-@given(instance=FlatQVT::RealizedVariable_strategy)
-@settings(max_examples=50)
-def test_flatqvt::realizedvariable_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RealizedVariable)
-
-@given(instance=FlatQVT::RelationImplementation_strategy)
-@settings(max_examples=50)
-def test_flatqvt::relationimplementation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RelationImplementation)
-
-@given(instance=FlatQVT::RelationDomainAssignment_strategy)
-@settings(max_examples=50)
-def test_flatqvt::relationdomainassignment_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RelationDomainAssignment)
-
-@given(instance=FlatQVT::RelationDomain_strategy)
-@settings(max_examples=50)
-def test_flatqvt::relationdomain_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RelationDomain)
-
-@given(instance=FlatQVT::RelationCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::relationcallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RelationCallExp)
-
-@given(instance=FlatQVT::Relation_strategy)
-@settings(max_examples=50)
-def test_flatqvt::relation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Relation)
-
-@given(instance=ReflectiveCollection_strategy)
-@settings(max_examples=50)
-def test_reflectivecollection_instantiation(instance):
-    assert isinstance(instance, ReflectiveCollection)
-
-@given(instance=FlatQVT::ReflectiveSequence_strategy)
-@settings(max_examples=50)
-def test_flatqvt::reflectivesequence_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ReflectiveSequence)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveSequence_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivesequence_set_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.set(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.set).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in FlatQVT::ReflectiveSequence is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in FlatQVT::ReflectiveSequence did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in FlatQVT::ReflectiveSequence is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveSequence_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivesequence_add_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.add(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.add).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in FlatQVT::ReflectiveSequence is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in FlatQVT::ReflectiveSequence did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in FlatQVT::ReflectiveSequence is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveSequence_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivesequence_remove_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.remove(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.remove).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in FlatQVT::ReflectiveSequence is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in FlatQVT::ReflectiveSequence did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in FlatQVT::ReflectiveSequence is not implemented or raised an error")
-
-@given(instance=FlatQVT::ReflectiveCollection_strategy)
-@settings(max_examples=50)
-def test_flatqvt::reflectivecollection_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ReflectiveCollection)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivecollection_addall_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAll(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAll).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAll' in FlatQVT::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAll' in FlatQVT::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAll' in FlatQVT::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivecollection_clear_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.clear()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.clear).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clear' in FlatQVT::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clear' in FlatQVT::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clear' in FlatQVT::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivecollection_size_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.size()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.size).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'size' in FlatQVT::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'size' in FlatQVT::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'size' in FlatQVT::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivecollection_add_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.add(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.add).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in FlatQVT::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in FlatQVT::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in FlatQVT::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlatQVT::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_flatqvt::reflectivecollection_remove_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.remove(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.remove).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in FlatQVT::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in FlatQVT::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in FlatQVT::ReflectiveCollection is not implemented or raised an error")
-
-@given(instance=FlatQVT::OrderedSetType_strategy)
-@settings(max_examples=50)
-def test_flatqvt::orderedsettype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::OrderedSetType)
-
-@given(instance=FlatQVT::RealLiteralExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::realliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RealLiteralExp)
-
-@given(instance=FlatQVT::RaiseExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::raiseexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::RaiseExp)
-
-@given(instance=FlatQVT::PropertyTemplateItem_strategy)
-@settings(max_examples=50)
-def test_flatqvt::propertytemplateitem_instantiation(instance):
-    assert isinstance(instance, FlatQVT::PropertyTemplateItem)
-
-@given(instance=NavigationCallExp_strategy)
-@settings(max_examples=50)
-def test_navigationcallexp_instantiation(instance):
-    assert isinstance(instance, NavigationCallExp)
-
-@given(instance=FlatQVT::PropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::propertycallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::PropertyCallExp)
-
-@given(instance=Assignment_strategy)
-@settings(max_examples=50)
-def test_assignment_instantiation(instance):
-    assert isinstance(instance, Assignment)
-
-@given(instance=FlatQVT::VariableAssignment_strategy)
-@settings(max_examples=50)
-def test_flatqvt::variableassignment_instantiation(instance):
-    assert isinstance(instance, FlatQVT::VariableAssignment)
-
-@given(instance=FlatQVT::PropertyAssignment_strategy)
-@settings(max_examples=50)
-def test_flatqvt::propertyassignment_instantiation(instance):
-    assert isinstance(instance, FlatQVT::PropertyAssignment)
-
-@given(instance=FlatQVT::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_flatqvt::primitivetype_instantiation(instance):
-    assert isinstance(instance, FlatQVT::PrimitiveType)
-
-@given(instance=FlatQVT::PrimitiveLiteralExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::PrimitiveLiteralExp)
-
-@given(instance=FlatQVT::Predicate_strategy)
-@settings(max_examples=50)
-def test_flatqvt::predicate_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Predicate)
-
-@given(instance=FlatQVT::Pattern_strategy)
-@settings(max_examples=50)
-def test_flatqvt::pattern_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Pattern)
-
-@given(instance=FlatQVT::Package_strategy)
-@settings(max_examples=50)
-def test_flatqvt::package_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Package)
-
-@given(instance=PropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_propertycallexp_instantiation(instance):
-    assert isinstance(instance, PropertyCallExp)
-
-@given(instance=FlatQVT::OppositePropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::oppositepropertycallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::OppositePropertyCallExp)
-
-@given(instance=FlatQVT::OperationalTransformation_strategy)
-@settings(max_examples=50)
-def test_flatqvt::operationaltransformation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::OperationalTransformation)
-
-@given(instance=FlatQVT::OperationBody_strategy)
-@settings(max_examples=50)
-def test_flatqvt::operationbody_instantiation(instance):
-    assert isinstance(instance, FlatQVT::OperationBody)
-
-@given(instance=MultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_multiplicityelement_instantiation(instance):
-    assert isinstance(instance, MultiplicityElement)
-
-@given(instance=FlatQVT::Property_strategy)
-@settings(max_examples=50)
-def test_flatqvt::property_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Property)
-
-@given(instance=FlatQVT::Parameter_strategy)
-@settings(max_examples=50)
-def test_flatqvt::parameter_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Parameter)
-
-@given(instance=FlatQVT::Operation_strategy)
-@settings(max_examples=50)
-def test_flatqvt::operation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Operation)
-
-@given(instance=FlatQVT::OclExpression_strategy)
-@settings(max_examples=50)
-def test_flatqvt::oclexpression_instantiation(instance):
-    assert isinstance(instance, FlatQVT::OclExpression)
-
-@given(instance=FlatQVT::ObjectTemplateExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::objecttemplateexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ObjectTemplateExp)
-
-@given(instance=InstantiationExp_strategy)
-@settings(max_examples=50)
-def test_instantiationexp_instantiation(instance):
-    assert isinstance(instance, InstantiationExp)
-
-@given(instance=FlatQVT::ObjectExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::objectexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ObjectExp)
-
-@given(instance=FlatQVT::Object_strategy)
-@settings(max_examples=50)
-def test_flatqvt::object_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Object)
-
-@given(instance=FlatQVT::NumericLiteralExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::NumericLiteralExp)
-
-@given(instance=FlatQVT::NullLiteralExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::NullLiteralExp)
-
-@given(instance=FeatureCallExp_strategy)
-@settings(max_examples=50)
-def test_featurecallexp_instantiation(instance):
-    assert isinstance(instance, FeatureCallExp)
-
-@given(instance=FlatQVT::OperationCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::operationcallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::OperationCallExp)
-
-@given(instance=FlatQVT::NavigationCallExp_strategy)
-@settings(max_examples=50)
-def test_flatqvt::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, FlatQVT::NavigationCallExp)
-
-@given(instance=FlatQVT::NamedElement_strategy)
-@settings(max_examples=50)
-def test_flatqvt::namedelement_instantiation(instance):
-    assert isinstance(instance, FlatQVT::NamedElement)
-
-@given(instance=FlatQVT::MultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_flatqvt::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, FlatQVT::MultiplicityElement)
-
-@given(instance=FlatQVT::ModuleImport_strategy)
-@settings(max_examples=50)
-def test_flatqvt::moduleimport_instantiation(instance):
-    assert isinstance(instance, FlatQVT::ModuleImport)
-
-@given(instance=Package_strategy)
-@settings(max_examples=50)
-def test_package_instantiation(instance):
-    assert isinstance(instance, Package)
-
-@given(instance=FlatQVT::Transformation_strategy)
-@settings(max_examples=50)
-def test_flatqvt::transformation_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Transformation)
-
-@given(instance=FlatQVT::Module_strategy)
-@settings(max_examples=50)
-def test_flatqvt::module_instantiation(instance):
-    assert isinstance(instance, FlatQVT::Module)
+def test_flatqvt_assignment_instantiation(instance):
+    assert isinstance(instance, FlatQVT_Assignment)

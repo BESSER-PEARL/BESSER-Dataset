@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    root::nested::NestedTest,
+from python_code import (
+    root_nested_NestedTest,
     NestedTest,
-    root::RootTest,
+    root_RootTest,
 )
 
 # =============================================================================
@@ -17,16 +17,16 @@ from classes import (
 
 
 
-def test_root::nested::nestedtest_is_not_abstract():
-    assert not inspect.isabstract(root::nested::NestedTest)
+def test_root_nested_nestedtest_is_not_abstract():
+    assert not inspect.isabstract(root_nested_NestedTest)
 
 
-def test_root::nested::nestedtest_constructor_exists():
-    assert callable(root::nested::NestedTest.__init__)
+def test_root_nested_nestedtest_constructor_exists():
+    assert callable(root_nested_NestedTest.__init__)
 
 
-def test_root::nested::nestedtest_constructor_args():
-    sig = inspect.signature(root::nested::NestedTest.__init__)
+def test_root_nested_nestedtest_constructor_args():
+    sig = inspect.signature(root_nested_NestedTest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -45,16 +45,16 @@ def test_nestedtest_constructor_args():
 
 
 
-def test_root::roottest_is_not_abstract():
-    assert not inspect.isabstract(root::RootTest)
+def test_root_roottest_is_not_abstract():
+    assert not inspect.isabstract(root_RootTest)
 
 
-def test_root::roottest_constructor_exists():
-    assert callable(root::RootTest.__init__)
+def test_root_roottest_constructor_exists():
+    assert callable(root_RootTest.__init__)
 
 
-def test_root::roottest_constructor_args():
-    sig = inspect.signature(root::RootTest.__init__)
+def test_root_roottest_constructor_args():
+    sig = inspect.signature(root_RootTest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-root::nested::NestedTest_strategy = st.builds(
-    root::nested::NestedTest,
+root_nested_NestedTest_strategy = st.builds(
+    root_nested_NestedTest,
 )
 NestedTest_strategy = st.builds(
     NestedTest,
 )
-root::RootTest_strategy = st.builds(
-    root::RootTest,
+root_RootTest_strategy = st.builds(
+    root_RootTest,
 )
 
-@given(instance=root::nested::NestedTest_strategy)
+@given(instance=root_nested_NestedTest_strategy)
 @settings(max_examples=50)
-def test_root::nested::nestedtest_instantiation(instance):
-    assert isinstance(instance, root::nested::NestedTest)
+def test_root_nested_nestedtest_instantiation(instance):
+    assert isinstance(instance, root_nested_NestedTest)
 
 @given(instance=NestedTest_strategy)
 @settings(max_examples=50)
 def test_nestedtest_instantiation(instance):
     assert isinstance(instance, NestedTest)
 
-@given(instance=root::RootTest_strategy)
+@given(instance=root_RootTest_strategy)
 @settings(max_examples=50)
-def test_root::roottest_instantiation(instance):
-    assert isinstance(instance, root::RootTest)
+def test_root_roottest_instantiation(instance):
+    assert isinstance(instance, root_RootTest)

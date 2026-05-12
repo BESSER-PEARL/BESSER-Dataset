@@ -3,134 +3,134 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    LastStatement::Return,
-    activityecorelua::LastStatement::ReturnWithValue,
+from python_code import (
+    LastStatement_Return,
+    activityecorelua_LastStatement_ReturnWithValue,
     Field,
-    activityecorelua::Field::AppendEntryToTable,
-    activityecorelua::Field::AddEntryToTable,
-    activityecorelua::Field::AddEntryToTable::Brackets,
-    activityecorelua::Functioncall::Arguments,
-    activityecorelua::Field,
+    activityecorelua_Field_AddEntryToTable,
+    activityecorelua_Field_AppendEntryToTable,
+    activityecorelua_Field_AddEntryToTable_Brackets,
+    activityecorelua_Functioncall_Arguments,
+    activityecorelua_Field,
     Expression,
-    activityecorelua::Expression::VarArgs,
-    activityecorelua::Expression::Minus,
-    activityecorelua::Expression::Plus,
-    activityecorelua::Expression::Invert,
-    activityecorelua::Expression::Not::Equal,
-    activityecorelua::Expression::AccessArray,
-    activityecorelua::Expression::Concatenation,
-    activityecorelua::Expression::CallFunction,
-    activityecorelua::Expression::Division,
-    activityecorelua::Expression::Larger,
-    activityecorelua::Expression::AccessMember,
-    activityecorelua::Expression::Smaller::Equal,
-    activityecorelua::Expression::TableConstructor,
-    activityecorelua::Expression::Smaller,
-    activityecorelua::Expression::Length,
-    activityecorelua::Expression::Modulo,
-    activityecorelua::Expression::Negate,
-    activityecorelua::Expression::Multiplication,
-    activityecorelua::Expression::Number,
-    activityecorelua::Expression::Or,
-    activityecorelua::Expression::Function,
-    activityecorelua::Expression::Equal,
-    activityecorelua::Expression::Larger::Equal,
-    activityecorelua::Expression::And,
-    activityecorelua::Expression::CallMemberFunction,
-    activityecorelua::Expression::VariableName,
-    activityecorelua::Expression::False,
-    activityecorelua::Expression::String,
-    activityecorelua::Expression::True,
-    activityecorelua::Expression::Exponentiation,
-    activityecorelua::Expression::Nil,
-    Statement::FunctioncallOrAssignment,
-    activityecorelua::Statement::CallFunction,
-    activityecorelua::Statement::CallMemberFunction,
-    activityecorelua::Statement::Assignment,
-    activityecorelua::Statement::If::Then::Else::ElseIfPart,
-    activityecorelua::Function,
+    activityecorelua_Expression_CallFunction,
+    activityecorelua_Expression_Concatenation,
+    activityecorelua_Expression_Modulo,
+    activityecorelua_Expression_Invert,
+    activityecorelua_Expression_Function,
+    activityecorelua_Expression_Multiplication,
+    activityecorelua_Expression_CallMemberFunction,
+    activityecorelua_Expression_Exponentiation,
+    activityecorelua_Expression_Negate,
+    activityecorelua_Expression_Larger_Equal,
+    activityecorelua_Expression_True,
+    activityecorelua_Expression_AccessMember,
+    activityecorelua_Expression_And,
+    activityecorelua_Expression_Equal,
+    activityecorelua_Expression_VarArgs,
+    activityecorelua_Expression_Plus,
+    activityecorelua_Expression_VariableName,
+    activityecorelua_Expression_Number,
+    activityecorelua_Expression_Length,
+    activityecorelua_Expression_Division,
+    activityecorelua_Expression_Not_Equal,
+    activityecorelua_Expression_Minus,
+    activityecorelua_Expression_Or,
+    activityecorelua_Expression_AccessArray,
+    activityecorelua_Expression_TableConstructor,
+    activityecorelua_Expression_Larger,
+    activityecorelua_Expression_String,
+    activityecorelua_Expression_Smaller,
+    activityecorelua_Expression_Smaller_Equal,
+    activityecorelua_Expression_False,
+    activityecorelua_Expression_Nil,
+    Statement_FunctioncallOrAssignment,
+    activityecorelua_Statement_CallMemberFunction,
+    activityecorelua_Statement_CallFunction,
+    activityecorelua_Statement_Assignment,
+    activityecorelua_Statement_If_Then_Else_ElseIfPart,
+    activityecorelua_Function,
     LastStatement,
-    activityecorelua::LastStatement::Break,
-    activityecorelua::LastStatement::Return,
-    activityecorelua::LastStatement,
-    activityecorelua::Statement,
+    activityecorelua_LastStatement_Break,
+    activityecorelua_LastStatement_Return,
+    activityecorelua_LastStatement,
+    activityecorelua_Statement,
     Chunk,
-    activityecorelua::Block,
-    activityecorelua::Chunk,
+    activityecorelua_Block,
+    activityecorelua_Chunk,
     Statement,
-    activityecorelua::Statement::FunctioncallOrAssignment,
-    activityecorelua::Statement::If::Then::Else,
-    activityecorelua::Statement::For::Generic,
-    activityecorelua::Statement::While,
-    activityecorelua::Statement::LocalFunction::Declaration,
-    activityecorelua::Statement::For::Numeric,
-    activityecorelua::Statement::Repeat,
-    activityecorelua::Statement::Local::Variable::Declaration,
-    activityecorelua::Statement::GlobalFunction::Declaration,
-    activityecorelua::Statement::Block,
+    activityecorelua_Statement_LocalFunction_Declaration,
+    activityecorelua_Statement_If_Then_Else,
+    activityecorelua_Statement_FunctioncallOrAssignment,
+    activityecorelua_Statement_Repeat,
+    activityecorelua_Statement_GlobalFunction_Declaration,
+    activityecorelua_Statement_For_Generic,
+    activityecorelua_Statement_For_Numeric,
+    activityecorelua_Statement_Local_Variable_Declaration,
+    activityecorelua_Statement_While,
+    activityecorelua_Statement_Block,
     Variable,
-    activityecorelua::IntegerVariable,
-    activityecorelua::Value,
-    activityecorelua::Input,
-    activityecorelua::InputValue,
+    activityecorelua_IntegerVariable,
+    activityecorelua_Value,
+    activityecorelua_Input,
+    activityecorelua_InputValue,
     Value,
-    activityecorelua::IntegerValue,
-    activityecorelua::BooleanValue,
-    activityecorelua::Expression,
+    activityecorelua_IntegerValue,
+    activityecorelua_BooleanValue,
+    activityecorelua_Expression,
     Action,
-    activityecorelua::OpaqueAction,
+    activityecorelua_OpaqueAction,
     ExecutableNode,
-    activityecorelua::Action,
+    activityecorelua_Action,
     ActivityNode,
-    activityecorelua::ExecutableNode,
-    activityecorelua::ControlNode,
-    activityecorelua::BooleanVariable,
+    activityecorelua_ExecutableNode,
+    activityecorelua_ControlNode,
+    activityecorelua_BooleanVariable,
     ActivityEdge,
-    activityecorelua::ControlFlow,
+    activityecorelua_ControlFlow,
     FinalNode,
-    activityecorelua::ActivityFinalNode,
+    activityecorelua_ActivityFinalNode,
     ControlNode,
-    activityecorelua::JoinNode,
-    activityecorelua::DecisionNode,
-    activityecorelua::MergeNode,
-    activityecorelua::ForkNode,
-    activityecorelua::FinalNode,
-    activityecorelua::InitialNode,
-    activityecorelua::NamedElement,
-    activityecorelua::Variable,
+    activityecorelua_ForkNode,
+    activityecorelua_DecisionNode,
+    activityecorelua_MergeNode,
+    activityecorelua_FinalNode,
+    activityecorelua_JoinNode,
+    activityecorelua_InitialNode,
+    activityecorelua_NamedElement,
+    activityecorelua_Variable,
     NamedElement,
-    activityecorelua::ActivityEdge,
-    activityecorelua::ActivityNode,
+    activityecorelua_ActivityEdge,
+    activityecorelua_ActivityNode,
     ETypedElement,
-    activityecorelua::Activity,
-    activityecorelua::EParameter,
+    activityecorelua_Activity,
+    activityecorelua_EParameter,
     EDataType,
-    activityecorelua::EEnum,
+    activityecorelua_EEnum,
     ENamedElement,
-    activityecorelua::ETypeParameter,
-    activityecorelua::EEnumLiteral,
-    activityecorelua::ETypedElement,
-    activityecorelua::EPackage,
-    activityecorelua::EClassifier,
-    activityecorelua::EGenericType,
-    activityecorelua::EOperation,
-    activityecorelua::EStructuralFeature,
+    activityecorelua_EEnumLiteral,
+    activityecorelua_EPackage,
+    activityecorelua_ETypeParameter,
+    activityecorelua_ETypedElement,
+    activityecorelua_EClassifier,
+    activityecorelua_EGenericType,
+    activityecorelua_EOperation,
+    activityecorelua_EStructuralFeature,
     EClassifier,
-    activityecorelua::EClass,
-    activityecorelua::EObject,
-    activityecorelua::EModelElement,
-    activityecorelua::EStringToStringMapEntry,
+    activityecorelua_EClass,
+    activityecorelua_EObject,
+    activityecorelua_EModelElement,
+    activityecorelua_EStringToStringMapEntry,
     EModelElement,
-    activityecorelua::ENamedElement,
-    activityecorelua::EFactory,
-    activityecorelua::EAnnotation,
-    activityecorelua::EDataType,
+    activityecorelua_EFactory,
+    activityecorelua_ENamedElement,
+    activityecorelua_EAnnotation,
+    activityecorelua_EDataType,
     EStructuralFeature,
-    activityecorelua::EReference,
-    activityecorelua::EAttribute,
+    activityecorelua_EReference,
+    activityecorelua_EAttribute,
 )
 
 # =============================================================================
@@ -139,30 +139,30 @@ from classes import (
 
 
 
-def test_laststatement::return_is_not_abstract():
-    assert not inspect.isabstract(LastStatement::Return)
+def test_laststatement_return_is_not_abstract():
+    assert not inspect.isabstract(LastStatement_Return)
 
 
-def test_laststatement::return_constructor_exists():
-    assert callable(LastStatement::Return.__init__)
+def test_laststatement_return_constructor_exists():
+    assert callable(LastStatement_Return.__init__)
 
 
-def test_laststatement::return_constructor_args():
-    sig = inspect.signature(LastStatement::Return.__init__)
+def test_laststatement_return_constructor_args():
+    sig = inspect.signature(LastStatement_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::laststatement::returnwithvalue_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::LastStatement::ReturnWithValue)
+def test_activityecorelua_laststatement_returnwithvalue_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_LastStatement_ReturnWithValue)
 
 
-def test_activityecorelua::laststatement::returnwithvalue_constructor_exists():
-    assert callable(activityecorelua::LastStatement::ReturnWithValue.__init__)
+def test_activityecorelua_laststatement_returnwithvalue_constructor_exists():
+    assert callable(activityecorelua_LastStatement_ReturnWithValue.__init__)
 
 
-def test_activityecorelua::laststatement::returnwithvalue_constructor_args():
-    sig = inspect.signature(activityecorelua::LastStatement::ReturnWithValue.__init__)
+def test_activityecorelua_laststatement_returnwithvalue_constructor_args():
+    sig = inspect.signature(activityecorelua_LastStatement_ReturnWithValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -181,37 +181,23 @@ def test_field_constructor_args():
 
 
 
-def test_activityecorelua::field::appendentrytotable_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Field::AppendEntryToTable)
+def test_activityecorelua_field_addentrytotable_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Field_AddEntryToTable)
 
 
-def test_activityecorelua::field::appendentrytotable_constructor_exists():
-    assert callable(activityecorelua::Field::AppendEntryToTable.__init__)
+def test_activityecorelua_field_addentrytotable_constructor_exists():
+    assert callable(activityecorelua_Field_AddEntryToTable.__init__)
 
 
-def test_activityecorelua::field::appendentrytotable_constructor_args():
-    sig = inspect.signature(activityecorelua::Field::AppendEntryToTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::field::addentrytotable_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Field::AddEntryToTable)
-
-
-def test_activityecorelua::field::addentrytotable_constructor_exists():
-    assert callable(activityecorelua::Field::AddEntryToTable.__init__)
-
-
-def test_activityecorelua::field::addentrytotable_constructor_args():
-    sig = inspect.signature(activityecorelua::Field::AddEntryToTable.__init__)
+def test_activityecorelua_field_addentrytotable_constructor_args():
+    sig = inspect.signature(activityecorelua_Field_AddEntryToTable.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_activityecorelua::field::addentrytotable_has_key():
-    assert hasattr(activityecorelua::Field::AddEntryToTable, "key")
+def test_activityecorelua_field_addentrytotable_has_key():
+    assert hasattr(activityecorelua_Field_AddEntryToTable, "key")
     descriptor = None
-    for klass in activityecorelua::Field::AddEntryToTable.__mro__:
+    for klass in activityecorelua_Field_AddEntryToTable.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -219,44 +205,58 @@ def test_activityecorelua::field::addentrytotable_has_key():
 
 
 
-def test_activityecorelua::field::addentrytotable::brackets_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Field::AddEntryToTable::Brackets)
+def test_activityecorelua_field_appendentrytotable_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Field_AppendEntryToTable)
 
 
-def test_activityecorelua::field::addentrytotable::brackets_constructor_exists():
-    assert callable(activityecorelua::Field::AddEntryToTable::Brackets.__init__)
+def test_activityecorelua_field_appendentrytotable_constructor_exists():
+    assert callable(activityecorelua_Field_AppendEntryToTable.__init__)
 
 
-def test_activityecorelua::field::addentrytotable::brackets_constructor_args():
-    sig = inspect.signature(activityecorelua::Field::AddEntryToTable::Brackets.__init__)
+def test_activityecorelua_field_appendentrytotable_constructor_args():
+    sig = inspect.signature(activityecorelua_Field_AppendEntryToTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::functioncall::arguments_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Functioncall::Arguments)
+def test_activityecorelua_field_addentrytotable_brackets_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Field_AddEntryToTable_Brackets)
 
 
-def test_activityecorelua::functioncall::arguments_constructor_exists():
-    assert callable(activityecorelua::Functioncall::Arguments.__init__)
+def test_activityecorelua_field_addentrytotable_brackets_constructor_exists():
+    assert callable(activityecorelua_Field_AddEntryToTable_Brackets.__init__)
 
 
-def test_activityecorelua::functioncall::arguments_constructor_args():
-    sig = inspect.signature(activityecorelua::Functioncall::Arguments.__init__)
+def test_activityecorelua_field_addentrytotable_brackets_constructor_args():
+    sig = inspect.signature(activityecorelua_Field_AddEntryToTable_Brackets.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::field_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Field)
+def test_activityecorelua_functioncall_arguments_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Functioncall_Arguments)
 
 
-def test_activityecorelua::field_constructor_exists():
-    assert callable(activityecorelua::Field.__init__)
+def test_activityecorelua_functioncall_arguments_constructor_exists():
+    assert callable(activityecorelua_Functioncall_Arguments.__init__)
 
 
-def test_activityecorelua::field_constructor_args():
-    sig = inspect.signature(activityecorelua::Field.__init__)
+def test_activityecorelua_functioncall_arguments_constructor_args():
+    sig = inspect.signature(activityecorelua_Functioncall_Arguments.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_field_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Field)
+
+
+def test_activityecorelua_field_constructor_exists():
+    assert callable(activityecorelua_Field.__init__)
+
+
+def test_activityecorelua_field_constructor_args():
+    sig = inspect.signature(activityecorelua_Field.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -275,163 +275,187 @@ def test_expression_constructor_args():
 
 
 
-def test_activityecorelua::expression::varargs_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::VarArgs)
+def test_activityecorelua_expression_callfunction_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_CallFunction)
 
 
-def test_activityecorelua::expression::varargs_constructor_exists():
-    assert callable(activityecorelua::Expression::VarArgs.__init__)
+def test_activityecorelua_expression_callfunction_constructor_exists():
+    assert callable(activityecorelua_Expression_CallFunction.__init__)
 
 
-def test_activityecorelua::expression::varargs_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::VarArgs.__init__)
+def test_activityecorelua_expression_callfunction_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_CallFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::minus_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Minus)
+def test_activityecorelua_expression_concatenation_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Concatenation)
 
 
-def test_activityecorelua::expression::minus_constructor_exists():
-    assert callable(activityecorelua::Expression::Minus.__init__)
+def test_activityecorelua_expression_concatenation_constructor_exists():
+    assert callable(activityecorelua_Expression_Concatenation.__init__)
 
 
-def test_activityecorelua::expression::minus_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Minus.__init__)
+def test_activityecorelua_expression_concatenation_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Concatenation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::plus_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Plus)
+def test_activityecorelua_expression_modulo_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Modulo)
 
 
-def test_activityecorelua::expression::plus_constructor_exists():
-    assert callable(activityecorelua::Expression::Plus.__init__)
+def test_activityecorelua_expression_modulo_constructor_exists():
+    assert callable(activityecorelua_Expression_Modulo.__init__)
 
 
-def test_activityecorelua::expression::plus_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Plus.__init__)
+def test_activityecorelua_expression_modulo_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Modulo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::invert_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Invert)
+def test_activityecorelua_expression_invert_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Invert)
 
 
-def test_activityecorelua::expression::invert_constructor_exists():
-    assert callable(activityecorelua::Expression::Invert.__init__)
+def test_activityecorelua_expression_invert_constructor_exists():
+    assert callable(activityecorelua_Expression_Invert.__init__)
 
 
-def test_activityecorelua::expression::invert_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Invert.__init__)
+def test_activityecorelua_expression_invert_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Invert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::not::equal_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Not::Equal)
+def test_activityecorelua_expression_function_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Function)
 
 
-def test_activityecorelua::expression::not::equal_constructor_exists():
-    assert callable(activityecorelua::Expression::Not::Equal.__init__)
+def test_activityecorelua_expression_function_constructor_exists():
+    assert callable(activityecorelua_Expression_Function.__init__)
 
 
-def test_activityecorelua::expression::not::equal_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Not::Equal.__init__)
+def test_activityecorelua_expression_function_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::accessarray_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::AccessArray)
+def test_activityecorelua_expression_multiplication_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Multiplication)
 
 
-def test_activityecorelua::expression::accessarray_constructor_exists():
-    assert callable(activityecorelua::Expression::AccessArray.__init__)
+def test_activityecorelua_expression_multiplication_constructor_exists():
+    assert callable(activityecorelua_Expression_Multiplication.__init__)
 
 
-def test_activityecorelua::expression::accessarray_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::AccessArray.__init__)
+def test_activityecorelua_expression_multiplication_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::concatenation_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Concatenation)
+def test_activityecorelua_expression_callmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_CallMemberFunction)
 
 
-def test_activityecorelua::expression::concatenation_constructor_exists():
-    assert callable(activityecorelua::Expression::Concatenation.__init__)
+def test_activityecorelua_expression_callmemberfunction_constructor_exists():
+    assert callable(activityecorelua_Expression_CallMemberFunction.__init__)
 
 
-def test_activityecorelua::expression::concatenation_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Concatenation.__init__)
+def test_activityecorelua_expression_callmemberfunction_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_CallMemberFunction.__init__)
+    params = list(sig.parameters.keys())
+    assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
+
+def test_activityecorelua_expression_callmemberfunction_has_memberFunctionName():
+    assert hasattr(activityecorelua_Expression_CallMemberFunction, "memberFunctionName")
+    descriptor = None
+    for klass in activityecorelua_Expression_CallMemberFunction.__mro__:
+        if "memberFunctionName" in klass.__dict__:
+            descriptor = klass.__dict__["memberFunctionName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activityecorelua_expression_exponentiation_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Exponentiation)
+
+
+def test_activityecorelua_expression_exponentiation_constructor_exists():
+    assert callable(activityecorelua_Expression_Exponentiation.__init__)
+
+
+def test_activityecorelua_expression_exponentiation_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Exponentiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::callfunction_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::CallFunction)
+def test_activityecorelua_expression_negate_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Negate)
 
 
-def test_activityecorelua::expression::callfunction_constructor_exists():
-    assert callable(activityecorelua::Expression::CallFunction.__init__)
+def test_activityecorelua_expression_negate_constructor_exists():
+    assert callable(activityecorelua_Expression_Negate.__init__)
 
 
-def test_activityecorelua::expression::callfunction_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::CallFunction.__init__)
+def test_activityecorelua_expression_negate_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Negate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::division_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Division)
+def test_activityecorelua_expression_larger_equal_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Larger_Equal)
 
 
-def test_activityecorelua::expression::division_constructor_exists():
-    assert callable(activityecorelua::Expression::Division.__init__)
+def test_activityecorelua_expression_larger_equal_constructor_exists():
+    assert callable(activityecorelua_Expression_Larger_Equal.__init__)
 
 
-def test_activityecorelua::expression::division_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Division.__init__)
+def test_activityecorelua_expression_larger_equal_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Larger_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::larger_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Larger)
+def test_activityecorelua_expression_true_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_True)
 
 
-def test_activityecorelua::expression::larger_constructor_exists():
-    assert callable(activityecorelua::Expression::Larger.__init__)
+def test_activityecorelua_expression_true_constructor_exists():
+    assert callable(activityecorelua_Expression_True.__init__)
 
 
-def test_activityecorelua::expression::larger_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Larger.__init__)
+def test_activityecorelua_expression_true_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::accessmember_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::AccessMember)
+def test_activityecorelua_expression_accessmember_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_AccessMember)
 
 
-def test_activityecorelua::expression::accessmember_constructor_exists():
-    assert callable(activityecorelua::Expression::AccessMember.__init__)
+def test_activityecorelua_expression_accessmember_constructor_exists():
+    assert callable(activityecorelua_Expression_AccessMember.__init__)
 
 
-def test_activityecorelua::expression::accessmember_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::AccessMember.__init__)
+def test_activityecorelua_expression_accessmember_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_AccessMember.__init__)
     params = list(sig.parameters.keys())
     assert "memberName" in params, "Missing parameter 'memberName'"
 
-def test_activityecorelua::expression::accessmember_has_memberName():
-    assert hasattr(activityecorelua::Expression::AccessMember, "memberName")
+def test_activityecorelua_expression_accessmember_has_memberName():
+    assert hasattr(activityecorelua_Expression_AccessMember, "memberName")
     descriptor = None
-    for klass in activityecorelua::Expression::AccessMember.__mro__:
+    for klass in activityecorelua_Expression_AccessMember.__mro__:
         if "memberName" in klass.__dict__:
             descriptor = klass.__dict__["memberName"]
             break
@@ -439,239 +463,79 @@ def test_activityecorelua::expression::accessmember_has_memberName():
 
 
 
-def test_activityecorelua::expression::smaller::equal_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Smaller::Equal)
+def test_activityecorelua_expression_and_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_And)
 
 
-def test_activityecorelua::expression::smaller::equal_constructor_exists():
-    assert callable(activityecorelua::Expression::Smaller::Equal.__init__)
+def test_activityecorelua_expression_and_constructor_exists():
+    assert callable(activityecorelua_Expression_And.__init__)
 
 
-def test_activityecorelua::expression::smaller::equal_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Smaller::Equal.__init__)
+def test_activityecorelua_expression_and_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::tableconstructor_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::TableConstructor)
+def test_activityecorelua_expression_equal_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Equal)
 
 
-def test_activityecorelua::expression::tableconstructor_constructor_exists():
-    assert callable(activityecorelua::Expression::TableConstructor.__init__)
+def test_activityecorelua_expression_equal_constructor_exists():
+    assert callable(activityecorelua_Expression_Equal.__init__)
 
 
-def test_activityecorelua::expression::tableconstructor_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::TableConstructor.__init__)
+def test_activityecorelua_expression_equal_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::smaller_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Smaller)
+def test_activityecorelua_expression_varargs_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_VarArgs)
 
 
-def test_activityecorelua::expression::smaller_constructor_exists():
-    assert callable(activityecorelua::Expression::Smaller.__init__)
+def test_activityecorelua_expression_varargs_constructor_exists():
+    assert callable(activityecorelua_Expression_VarArgs.__init__)
 
 
-def test_activityecorelua::expression::smaller_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Smaller.__init__)
+def test_activityecorelua_expression_varargs_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_VarArgs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::length_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Length)
+def test_activityecorelua_expression_plus_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Plus)
 
 
-def test_activityecorelua::expression::length_constructor_exists():
-    assert callable(activityecorelua::Expression::Length.__init__)
+def test_activityecorelua_expression_plus_constructor_exists():
+    assert callable(activityecorelua_Expression_Plus.__init__)
 
 
-def test_activityecorelua::expression::length_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Length.__init__)
+def test_activityecorelua_expression_plus_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::modulo_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Modulo)
+def test_activityecorelua_expression_variablename_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_VariableName)
 
 
-def test_activityecorelua::expression::modulo_constructor_exists():
-    assert callable(activityecorelua::Expression::Modulo.__init__)
+def test_activityecorelua_expression_variablename_constructor_exists():
+    assert callable(activityecorelua_Expression_VariableName.__init__)
 
 
-def test_activityecorelua::expression::modulo_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Modulo.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::negate_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Negate)
-
-
-def test_activityecorelua::expression::negate_constructor_exists():
-    assert callable(activityecorelua::Expression::Negate.__init__)
-
-
-def test_activityecorelua::expression::negate_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Negate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::multiplication_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Multiplication)
-
-
-def test_activityecorelua::expression::multiplication_constructor_exists():
-    assert callable(activityecorelua::Expression::Multiplication.__init__)
-
-
-def test_activityecorelua::expression::multiplication_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Multiplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::number_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Number)
-
-
-def test_activityecorelua::expression::number_constructor_exists():
-    assert callable(activityecorelua::Expression::Number.__init__)
-
-
-def test_activityecorelua::expression::number_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Number.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_activityecorelua::expression::number_has_value():
-    assert hasattr(activityecorelua::Expression::Number, "value")
-    descriptor = None
-    for klass in activityecorelua::Expression::Number.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activityecorelua::expression::or_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Or)
-
-
-def test_activityecorelua::expression::or_constructor_exists():
-    assert callable(activityecorelua::Expression::Or.__init__)
-
-
-def test_activityecorelua::expression::or_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::function_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Function)
-
-
-def test_activityecorelua::expression::function_constructor_exists():
-    assert callable(activityecorelua::Expression::Function.__init__)
-
-
-def test_activityecorelua::expression::function_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::equal_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Equal)
-
-
-def test_activityecorelua::expression::equal_constructor_exists():
-    assert callable(activityecorelua::Expression::Equal.__init__)
-
-
-def test_activityecorelua::expression::equal_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Equal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::larger::equal_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Larger::Equal)
-
-
-def test_activityecorelua::expression::larger::equal_constructor_exists():
-    assert callable(activityecorelua::Expression::Larger::Equal.__init__)
-
-
-def test_activityecorelua::expression::larger::equal_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Larger::Equal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::and_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::And)
-
-
-def test_activityecorelua::expression::and_constructor_exists():
-    assert callable(activityecorelua::Expression::And.__init__)
-
-
-def test_activityecorelua::expression::and_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::callmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::CallMemberFunction)
-
-
-def test_activityecorelua::expression::callmemberfunction_constructor_exists():
-    assert callable(activityecorelua::Expression::CallMemberFunction.__init__)
-
-
-def test_activityecorelua::expression::callmemberfunction_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::CallMemberFunction.__init__)
-    params = list(sig.parameters.keys())
-    assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
-
-def test_activityecorelua::expression::callmemberfunction_has_memberFunctionName():
-    assert hasattr(activityecorelua::Expression::CallMemberFunction, "memberFunctionName")
-    descriptor = None
-    for klass in activityecorelua::Expression::CallMemberFunction.__mro__:
-        if "memberFunctionName" in klass.__dict__:
-            descriptor = klass.__dict__["memberFunctionName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activityecorelua::expression::variablename_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::VariableName)
-
-
-def test_activityecorelua::expression::variablename_constructor_exists():
-    assert callable(activityecorelua::Expression::VariableName.__init__)
-
-
-def test_activityecorelua::expression::variablename_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::VariableName.__init__)
+def test_activityecorelua_expression_variablename_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_VariableName.__init__)
     params = list(sig.parameters.keys())
     assert "variable" in params, "Missing parameter 'variable'"
 
-def test_activityecorelua::expression::variablename_has_variable():
-    assert hasattr(activityecorelua::Expression::VariableName, "variable")
+def test_activityecorelua_expression_variablename_has_variable():
+    assert hasattr(activityecorelua_Expression_VariableName, "variable")
     descriptor = None
-    for klass in activityecorelua::Expression::VariableName.__mro__:
+    for klass in activityecorelua_Expression_VariableName.__mro__:
         if "variable" in klass.__dict__:
             descriptor = klass.__dict__["variable"]
             break
@@ -679,37 +543,23 @@ def test_activityecorelua::expression::variablename_has_variable():
 
 
 
-def test_activityecorelua::expression::false_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::False)
+def test_activityecorelua_expression_number_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Number)
 
 
-def test_activityecorelua::expression::false_constructor_exists():
-    assert callable(activityecorelua::Expression::False.__init__)
+def test_activityecorelua_expression_number_constructor_exists():
+    assert callable(activityecorelua_Expression_Number.__init__)
 
 
-def test_activityecorelua::expression::false_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::False.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::expression::string_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::String)
-
-
-def test_activityecorelua::expression::string_constructor_exists():
-    assert callable(activityecorelua::Expression::String.__init__)
-
-
-def test_activityecorelua::expression::string_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::String.__init__)
+def test_activityecorelua_expression_number_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activityecorelua::expression::string_has_value():
-    assert hasattr(activityecorelua::Expression::String, "value")
+def test_activityecorelua_expression_number_has_value():
+    assert hasattr(activityecorelua_Expression_Number, "value")
     descriptor = None
-    for klass in activityecorelua::Expression::String.__mro__:
+    for klass in activityecorelua_Expression_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -717,93 +567,229 @@ def test_activityecorelua::expression::string_has_value():
 
 
 
-def test_activityecorelua::expression::true_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::True)
+def test_activityecorelua_expression_length_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Length)
 
 
-def test_activityecorelua::expression::true_constructor_exists():
-    assert callable(activityecorelua::Expression::True.__init__)
+def test_activityecorelua_expression_length_constructor_exists():
+    assert callable(activityecorelua_Expression_Length.__init__)
 
 
-def test_activityecorelua::expression::true_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::True.__init__)
+def test_activityecorelua_expression_length_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Length.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::exponentiation_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Exponentiation)
+def test_activityecorelua_expression_division_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Division)
 
 
-def test_activityecorelua::expression::exponentiation_constructor_exists():
-    assert callable(activityecorelua::Expression::Exponentiation.__init__)
+def test_activityecorelua_expression_division_constructor_exists():
+    assert callable(activityecorelua_Expression_Division.__init__)
 
 
-def test_activityecorelua::expression::exponentiation_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Exponentiation.__init__)
+def test_activityecorelua_expression_division_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::expression::nil_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression::Nil)
+def test_activityecorelua_expression_not_equal_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Not_Equal)
 
 
-def test_activityecorelua::expression::nil_constructor_exists():
-    assert callable(activityecorelua::Expression::Nil.__init__)
+def test_activityecorelua_expression_not_equal_constructor_exists():
+    assert callable(activityecorelua_Expression_Not_Equal.__init__)
 
 
-def test_activityecorelua::expression::nil_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression::Nil.__init__)
+def test_activityecorelua_expression_not_equal_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Not_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statement::functioncallorassignment_is_not_abstract():
-    assert not inspect.isabstract(Statement::FunctioncallOrAssignment)
+def test_activityecorelua_expression_minus_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Minus)
 
 
-def test_statement::functioncallorassignment_constructor_exists():
-    assert callable(Statement::FunctioncallOrAssignment.__init__)
+def test_activityecorelua_expression_minus_constructor_exists():
+    assert callable(activityecorelua_Expression_Minus.__init__)
 
 
-def test_statement::functioncallorassignment_constructor_args():
-    sig = inspect.signature(Statement::FunctioncallOrAssignment.__init__)
+def test_activityecorelua_expression_minus_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::statement::callfunction_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::CallFunction)
+def test_activityecorelua_expression_or_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Or)
 
 
-def test_activityecorelua::statement::callfunction_constructor_exists():
-    assert callable(activityecorelua::Statement::CallFunction.__init__)
+def test_activityecorelua_expression_or_constructor_exists():
+    assert callable(activityecorelua_Expression_Or.__init__)
 
 
-def test_activityecorelua::statement::callfunction_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::CallFunction.__init__)
+def test_activityecorelua_expression_or_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::statement::callmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::CallMemberFunction)
+def test_activityecorelua_expression_accessarray_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_AccessArray)
 
 
-def test_activityecorelua::statement::callmemberfunction_constructor_exists():
-    assert callable(activityecorelua::Statement::CallMemberFunction.__init__)
+def test_activityecorelua_expression_accessarray_constructor_exists():
+    assert callable(activityecorelua_Expression_AccessArray.__init__)
 
 
-def test_activityecorelua::statement::callmemberfunction_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::CallMemberFunction.__init__)
+def test_activityecorelua_expression_accessarray_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_AccessArray.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_expression_tableconstructor_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_TableConstructor)
+
+
+def test_activityecorelua_expression_tableconstructor_constructor_exists():
+    assert callable(activityecorelua_Expression_TableConstructor.__init__)
+
+
+def test_activityecorelua_expression_tableconstructor_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_TableConstructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_expression_larger_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Larger)
+
+
+def test_activityecorelua_expression_larger_constructor_exists():
+    assert callable(activityecorelua_Expression_Larger.__init__)
+
+
+def test_activityecorelua_expression_larger_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Larger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_expression_string_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_String)
+
+
+def test_activityecorelua_expression_string_constructor_exists():
+    assert callable(activityecorelua_Expression_String.__init__)
+
+
+def test_activityecorelua_expression_string_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_String.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_activityecorelua_expression_string_has_value():
+    assert hasattr(activityecorelua_Expression_String, "value")
+    descriptor = None
+    for klass in activityecorelua_Expression_String.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activityecorelua_expression_smaller_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Smaller)
+
+
+def test_activityecorelua_expression_smaller_constructor_exists():
+    assert callable(activityecorelua_Expression_Smaller.__init__)
+
+
+def test_activityecorelua_expression_smaller_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Smaller.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_expression_smaller_equal_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Smaller_Equal)
+
+
+def test_activityecorelua_expression_smaller_equal_constructor_exists():
+    assert callable(activityecorelua_Expression_Smaller_Equal.__init__)
+
+
+def test_activityecorelua_expression_smaller_equal_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Smaller_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_expression_false_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_False)
+
+
+def test_activityecorelua_expression_false_constructor_exists():
+    assert callable(activityecorelua_Expression_False.__init__)
+
+
+def test_activityecorelua_expression_false_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_False.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_expression_nil_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression_Nil)
+
+
+def test_activityecorelua_expression_nil_constructor_exists():
+    assert callable(activityecorelua_Expression_Nil.__init__)
+
+
+def test_activityecorelua_expression_nil_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression_Nil.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statement_functioncallorassignment_is_not_abstract():
+    assert not inspect.isabstract(Statement_FunctioncallOrAssignment)
+
+
+def test_statement_functioncallorassignment_constructor_exists():
+    assert callable(Statement_FunctioncallOrAssignment.__init__)
+
+
+def test_statement_functioncallorassignment_constructor_args():
+    sig = inspect.signature(Statement_FunctioncallOrAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_statement_callmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_CallMemberFunction)
+
+
+def test_activityecorelua_statement_callmemberfunction_constructor_exists():
+    assert callable(activityecorelua_Statement_CallMemberFunction.__init__)
+
+
+def test_activityecorelua_statement_callmemberfunction_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_CallMemberFunction.__init__)
     params = list(sig.parameters.keys())
     assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
 
-def test_activityecorelua::statement::callmemberfunction_has_memberFunctionName():
-    assert hasattr(activityecorelua::Statement::CallMemberFunction, "memberFunctionName")
+def test_activityecorelua_statement_callmemberfunction_has_memberFunctionName():
+    assert hasattr(activityecorelua_Statement_CallMemberFunction, "memberFunctionName")
     descriptor = None
-    for klass in activityecorelua::Statement::CallMemberFunction.__mro__:
+    for klass in activityecorelua_Statement_CallMemberFunction.__mro__:
         if "memberFunctionName" in klass.__dict__:
             descriptor = klass.__dict__["memberFunctionName"]
             break
@@ -811,61 +797,75 @@ def test_activityecorelua::statement::callmemberfunction_has_memberFunctionName(
 
 
 
-def test_activityecorelua::statement::assignment_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::Assignment)
+def test_activityecorelua_statement_callfunction_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_CallFunction)
 
 
-def test_activityecorelua::statement::assignment_constructor_exists():
-    assert callable(activityecorelua::Statement::Assignment.__init__)
+def test_activityecorelua_statement_callfunction_constructor_exists():
+    assert callable(activityecorelua_Statement_CallFunction.__init__)
 
 
-def test_activityecorelua::statement::assignment_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::Assignment.__init__)
+def test_activityecorelua_statement_callfunction_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_CallFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::statement::if::then::else::elseifpart_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::If::Then::Else::ElseIfPart)
+def test_activityecorelua_statement_assignment_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_Assignment)
 
 
-def test_activityecorelua::statement::if::then::else::elseifpart_constructor_exists():
-    assert callable(activityecorelua::Statement::If::Then::Else::ElseIfPart.__init__)
+def test_activityecorelua_statement_assignment_constructor_exists():
+    assert callable(activityecorelua_Statement_Assignment.__init__)
 
 
-def test_activityecorelua::statement::if::then::else::elseifpart_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::If::Then::Else::ElseIfPart.__init__)
+def test_activityecorelua_statement_assignment_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::function_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Function)
+def test_activityecorelua_statement_if_then_else_elseifpart_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_If_Then_Else_ElseIfPart)
 
 
-def test_activityecorelua::function_constructor_exists():
-    assert callable(activityecorelua::Function.__init__)
+def test_activityecorelua_statement_if_then_else_elseifpart_constructor_exists():
+    assert callable(activityecorelua_Statement_If_Then_Else_ElseIfPart.__init__)
 
 
-def test_activityecorelua::function_constructor_args():
-    sig = inspect.signature(activityecorelua::Function.__init__)
+def test_activityecorelua_statement_if_then_else_elseifpart_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_If_Then_Else_ElseIfPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_function_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Function)
+
+
+def test_activityecorelua_function_constructor_exists():
+    assert callable(activityecorelua_Function.__init__)
+
+
+def test_activityecorelua_function_constructor_args():
+    sig = inspect.signature(activityecorelua_Function.__init__)
     params = list(sig.parameters.keys())
     assert "varArgs" in params, "Missing parameter 'varArgs'"
     assert "parameters" in params, "Missing parameter 'parameters'"
 
-def test_activityecorelua::function_has_varArgs():
-    assert hasattr(activityecorelua::Function, "varArgs")
+def test_activityecorelua_function_has_varArgs():
+    assert hasattr(activityecorelua_Function, "varArgs")
     descriptor = None
-    for klass in activityecorelua::Function.__mro__:
+    for klass in activityecorelua_Function.__mro__:
         if "varArgs" in klass.__dict__:
             descriptor = klass.__dict__["varArgs"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::function_has_parameters():
-    assert hasattr(activityecorelua::Function, "parameters")
+def test_activityecorelua_function_has_parameters():
+    assert hasattr(activityecorelua_Function, "parameters")
     descriptor = None
-    for klass in activityecorelua::Function.__mro__:
+    for klass in activityecorelua_Function.__mro__:
         if "parameters" in klass.__dict__:
             descriptor = klass.__dict__["parameters"]
             break
@@ -887,58 +887,58 @@ def test_laststatement_constructor_args():
 
 
 
-def test_activityecorelua::laststatement::break_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::LastStatement::Break)
+def test_activityecorelua_laststatement_break_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_LastStatement_Break)
 
 
-def test_activityecorelua::laststatement::break_constructor_exists():
-    assert callable(activityecorelua::LastStatement::Break.__init__)
+def test_activityecorelua_laststatement_break_constructor_exists():
+    assert callable(activityecorelua_LastStatement_Break.__init__)
 
 
-def test_activityecorelua::laststatement::break_constructor_args():
-    sig = inspect.signature(activityecorelua::LastStatement::Break.__init__)
+def test_activityecorelua_laststatement_break_constructor_args():
+    sig = inspect.signature(activityecorelua_LastStatement_Break.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::laststatement::return_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::LastStatement::Return)
+def test_activityecorelua_laststatement_return_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_LastStatement_Return)
 
 
-def test_activityecorelua::laststatement::return_constructor_exists():
-    assert callable(activityecorelua::LastStatement::Return.__init__)
+def test_activityecorelua_laststatement_return_constructor_exists():
+    assert callable(activityecorelua_LastStatement_Return.__init__)
 
 
-def test_activityecorelua::laststatement::return_constructor_args():
-    sig = inspect.signature(activityecorelua::LastStatement::Return.__init__)
+def test_activityecorelua_laststatement_return_constructor_args():
+    sig = inspect.signature(activityecorelua_LastStatement_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::laststatement_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::LastStatement)
+def test_activityecorelua_laststatement_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_LastStatement)
 
 
-def test_activityecorelua::laststatement_constructor_exists():
-    assert callable(activityecorelua::LastStatement.__init__)
+def test_activityecorelua_laststatement_constructor_exists():
+    assert callable(activityecorelua_LastStatement.__init__)
 
 
-def test_activityecorelua::laststatement_constructor_args():
-    sig = inspect.signature(activityecorelua::LastStatement.__init__)
+def test_activityecorelua_laststatement_constructor_args():
+    sig = inspect.signature(activityecorelua_LastStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::statement_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement)
+def test_activityecorelua_statement_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement)
 
 
-def test_activityecorelua::statement_constructor_exists():
-    assert callable(activityecorelua::Statement.__init__)
+def test_activityecorelua_statement_constructor_exists():
+    assert callable(activityecorelua_Statement.__init__)
 
 
-def test_activityecorelua::statement_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement.__init__)
+def test_activityecorelua_statement_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -957,30 +957,30 @@ def test_chunk_constructor_args():
 
 
 
-def test_activityecorelua::block_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Block)
+def test_activityecorelua_block_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Block)
 
 
-def test_activityecorelua::block_constructor_exists():
-    assert callable(activityecorelua::Block.__init__)
+def test_activityecorelua_block_constructor_exists():
+    assert callable(activityecorelua_Block.__init__)
 
 
-def test_activityecorelua::block_constructor_args():
-    sig = inspect.signature(activityecorelua::Block.__init__)
+def test_activityecorelua_block_constructor_args():
+    sig = inspect.signature(activityecorelua_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::chunk_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Chunk)
+def test_activityecorelua_chunk_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Chunk)
 
 
-def test_activityecorelua::chunk_constructor_exists():
-    assert callable(activityecorelua::Chunk.__init__)
+def test_activityecorelua_chunk_constructor_exists():
+    assert callable(activityecorelua_Chunk.__init__)
 
 
-def test_activityecorelua::chunk_constructor_args():
-    sig = inspect.signature(activityecorelua::Chunk.__init__)
+def test_activityecorelua_chunk_constructor_args():
+    sig = inspect.signature(activityecorelua_Chunk.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -999,89 +999,23 @@ def test_statement_constructor_args():
 
 
 
-def test_activityecorelua::statement::functioncallorassignment_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::FunctioncallOrAssignment)
+def test_activityecorelua_statement_localfunction_declaration_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_LocalFunction_Declaration)
 
 
-def test_activityecorelua::statement::functioncallorassignment_constructor_exists():
-    assert callable(activityecorelua::Statement::FunctioncallOrAssignment.__init__)
+def test_activityecorelua_statement_localfunction_declaration_constructor_exists():
+    assert callable(activityecorelua_Statement_LocalFunction_Declaration.__init__)
 
 
-def test_activityecorelua::statement::functioncallorassignment_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::FunctioncallOrAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::statement::if::then::else_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::If::Then::Else)
-
-
-def test_activityecorelua::statement::if::then::else_constructor_exists():
-    assert callable(activityecorelua::Statement::If::Then::Else.__init__)
-
-
-def test_activityecorelua::statement::if::then::else_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::If::Then::Else.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::statement::for::generic_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::For::Generic)
-
-
-def test_activityecorelua::statement::for::generic_constructor_exists():
-    assert callable(activityecorelua::Statement::For::Generic.__init__)
-
-
-def test_activityecorelua::statement::for::generic_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::For::Generic.__init__)
-    params = list(sig.parameters.keys())
-    assert "names" in params, "Missing parameter 'names'"
-
-def test_activityecorelua::statement::for::generic_has_names():
-    assert hasattr(activityecorelua::Statement::For::Generic, "names")
-    descriptor = None
-    for klass in activityecorelua::Statement::For::Generic.__mro__:
-        if "names" in klass.__dict__:
-            descriptor = klass.__dict__["names"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activityecorelua::statement::while_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::While)
-
-
-def test_activityecorelua::statement::while_constructor_exists():
-    assert callable(activityecorelua::Statement::While.__init__)
-
-
-def test_activityecorelua::statement::while_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::While.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::statement::localfunction::declaration_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::LocalFunction::Declaration)
-
-
-def test_activityecorelua::statement::localfunction::declaration_constructor_exists():
-    assert callable(activityecorelua::Statement::LocalFunction::Declaration.__init__)
-
-
-def test_activityecorelua::statement::localfunction::declaration_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::LocalFunction::Declaration.__init__)
+def test_activityecorelua_statement_localfunction_declaration_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_LocalFunction_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_activityecorelua::statement::localfunction::declaration_has_functionName():
-    assert hasattr(activityecorelua::Statement::LocalFunction::Declaration, "functionName")
+def test_activityecorelua_statement_localfunction_declaration_has_functionName():
+    assert hasattr(activityecorelua_Statement_LocalFunction_Declaration, "functionName")
     descriptor = None
-    for klass in activityecorelua::Statement::LocalFunction::Declaration.__mro__:
+    for klass in activityecorelua_Statement_LocalFunction_Declaration.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -1089,95 +1023,75 @@ def test_activityecorelua::statement::localfunction::declaration_has_functionNam
 
 
 
-def test_activityecorelua::statement::for::numeric_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::For::Numeric)
+def test_activityecorelua_statement_if_then_else_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_If_Then_Else)
 
 
-def test_activityecorelua::statement::for::numeric_constructor_exists():
-    assert callable(activityecorelua::Statement::For::Numeric.__init__)
+def test_activityecorelua_statement_if_then_else_constructor_exists():
+    assert callable(activityecorelua_Statement_If_Then_Else.__init__)
 
 
-def test_activityecorelua::statement::for::numeric_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::For::Numeric.__init__)
-    params = list(sig.parameters.keys())
-    assert "iteratorName" in params, "Missing parameter 'iteratorName'"
-
-def test_activityecorelua::statement::for::numeric_has_iteratorName():
-    assert hasattr(activityecorelua::Statement::For::Numeric, "iteratorName")
-    descriptor = None
-    for klass in activityecorelua::Statement::For::Numeric.__mro__:
-        if "iteratorName" in klass.__dict__:
-            descriptor = klass.__dict__["iteratorName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activityecorelua::statement::repeat_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::Repeat)
-
-
-def test_activityecorelua::statement::repeat_constructor_exists():
-    assert callable(activityecorelua::Statement::Repeat.__init__)
-
-
-def test_activityecorelua::statement::repeat_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::Repeat.__init__)
+def test_activityecorelua_statement_if_then_else_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_If_Then_Else.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::statement::local::variable::declaration_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::Local::Variable::Declaration)
+def test_activityecorelua_statement_functioncallorassignment_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_FunctioncallOrAssignment)
 
 
-def test_activityecorelua::statement::local::variable::declaration_constructor_exists():
-    assert callable(activityecorelua::Statement::Local::Variable::Declaration.__init__)
+def test_activityecorelua_statement_functioncallorassignment_constructor_exists():
+    assert callable(activityecorelua_Statement_FunctioncallOrAssignment.__init__)
 
 
-def test_activityecorelua::statement::local::variable::declaration_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::Local::Variable::Declaration.__init__)
+def test_activityecorelua_statement_functioncallorassignment_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_FunctioncallOrAssignment.__init__)
     params = list(sig.parameters.keys())
-    assert "variableNames" in params, "Missing parameter 'variableNames'"
-
-def test_activityecorelua::statement::local::variable::declaration_has_variableNames():
-    assert hasattr(activityecorelua::Statement::Local::Variable::Declaration, "variableNames")
-    descriptor = None
-    for klass in activityecorelua::Statement::Local::Variable::Declaration.__mro__:
-        if "variableNames" in klass.__dict__:
-            descriptor = klass.__dict__["variableNames"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_activityecorelua::statement::globalfunction::declaration_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::GlobalFunction::Declaration)
+def test_activityecorelua_statement_repeat_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_Repeat)
 
 
-def test_activityecorelua::statement::globalfunction::declaration_constructor_exists():
-    assert callable(activityecorelua::Statement::GlobalFunction::Declaration.__init__)
+def test_activityecorelua_statement_repeat_constructor_exists():
+    assert callable(activityecorelua_Statement_Repeat.__init__)
 
 
-def test_activityecorelua::statement::globalfunction::declaration_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::GlobalFunction::Declaration.__init__)
+def test_activityecorelua_statement_repeat_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_Repeat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_statement_globalfunction_declaration_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_GlobalFunction_Declaration)
+
+
+def test_activityecorelua_statement_globalfunction_declaration_constructor_exists():
+    assert callable(activityecorelua_Statement_GlobalFunction_Declaration.__init__)
+
+
+def test_activityecorelua_statement_globalfunction_declaration_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_GlobalFunction_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
     assert "prefix" in params, "Missing parameter 'prefix'"
 
-def test_activityecorelua::statement::globalfunction::declaration_has_functionName():
-    assert hasattr(activityecorelua::Statement::GlobalFunction::Declaration, "functionName")
+def test_activityecorelua_statement_globalfunction_declaration_has_functionName():
+    assert hasattr(activityecorelua_Statement_GlobalFunction_Declaration, "functionName")
     descriptor = None
-    for klass in activityecorelua::Statement::GlobalFunction::Declaration.__mro__:
+    for klass in activityecorelua_Statement_GlobalFunction_Declaration.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::statement::globalfunction::declaration_has_prefix():
-    assert hasattr(activityecorelua::Statement::GlobalFunction::Declaration, "prefix")
+def test_activityecorelua_statement_globalfunction_declaration_has_prefix():
+    assert hasattr(activityecorelua_Statement_GlobalFunction_Declaration, "prefix")
     descriptor = None
-    for klass in activityecorelua::Statement::GlobalFunction::Declaration.__mro__:
+    for klass in activityecorelua_Statement_GlobalFunction_Declaration.__mro__:
         if "prefix" in klass.__dict__:
             descriptor = klass.__dict__["prefix"]
             break
@@ -1185,16 +1099,102 @@ def test_activityecorelua::statement::globalfunction::declaration_has_prefix():
 
 
 
-def test_activityecorelua::statement::block_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Statement::Block)
+def test_activityecorelua_statement_for_generic_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_For_Generic)
 
 
-def test_activityecorelua::statement::block_constructor_exists():
-    assert callable(activityecorelua::Statement::Block.__init__)
+def test_activityecorelua_statement_for_generic_constructor_exists():
+    assert callable(activityecorelua_Statement_For_Generic.__init__)
 
 
-def test_activityecorelua::statement::block_constructor_args():
-    sig = inspect.signature(activityecorelua::Statement::Block.__init__)
+def test_activityecorelua_statement_for_generic_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_For_Generic.__init__)
+    params = list(sig.parameters.keys())
+    assert "names" in params, "Missing parameter 'names'"
+
+def test_activityecorelua_statement_for_generic_has_names():
+    assert hasattr(activityecorelua_Statement_For_Generic, "names")
+    descriptor = None
+    for klass in activityecorelua_Statement_For_Generic.__mro__:
+        if "names" in klass.__dict__:
+            descriptor = klass.__dict__["names"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activityecorelua_statement_for_numeric_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_For_Numeric)
+
+
+def test_activityecorelua_statement_for_numeric_constructor_exists():
+    assert callable(activityecorelua_Statement_For_Numeric.__init__)
+
+
+def test_activityecorelua_statement_for_numeric_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_For_Numeric.__init__)
+    params = list(sig.parameters.keys())
+    assert "iteratorName" in params, "Missing parameter 'iteratorName'"
+
+def test_activityecorelua_statement_for_numeric_has_iteratorName():
+    assert hasattr(activityecorelua_Statement_For_Numeric, "iteratorName")
+    descriptor = None
+    for klass in activityecorelua_Statement_For_Numeric.__mro__:
+        if "iteratorName" in klass.__dict__:
+            descriptor = klass.__dict__["iteratorName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activityecorelua_statement_local_variable_declaration_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_Local_Variable_Declaration)
+
+
+def test_activityecorelua_statement_local_variable_declaration_constructor_exists():
+    assert callable(activityecorelua_Statement_Local_Variable_Declaration.__init__)
+
+
+def test_activityecorelua_statement_local_variable_declaration_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_Local_Variable_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "variableNames" in params, "Missing parameter 'variableNames'"
+
+def test_activityecorelua_statement_local_variable_declaration_has_variableNames():
+    assert hasattr(activityecorelua_Statement_Local_Variable_Declaration, "variableNames")
+    descriptor = None
+    for klass in activityecorelua_Statement_Local_Variable_Declaration.__mro__:
+        if "variableNames" in klass.__dict__:
+            descriptor = klass.__dict__["variableNames"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activityecorelua_statement_while_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_While)
+
+
+def test_activityecorelua_statement_while_constructor_exists():
+    assert callable(activityecorelua_Statement_While.__init__)
+
+
+def test_activityecorelua_statement_while_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_While.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_statement_block_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Statement_Block)
+
+
+def test_activityecorelua_statement_block_constructor_exists():
+    assert callable(activityecorelua_Statement_Block.__init__)
+
+
+def test_activityecorelua_statement_block_constructor_args():
+    sig = inspect.signature(activityecorelua_Statement_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1213,58 +1213,58 @@ def test_variable_constructor_args():
 
 
 
-def test_activityecorelua::integervariable_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::IntegerVariable)
+def test_activityecorelua_integervariable_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_IntegerVariable)
 
 
-def test_activityecorelua::integervariable_constructor_exists():
-    assert callable(activityecorelua::IntegerVariable.__init__)
+def test_activityecorelua_integervariable_constructor_exists():
+    assert callable(activityecorelua_IntegerVariable.__init__)
 
 
-def test_activityecorelua::integervariable_constructor_args():
-    sig = inspect.signature(activityecorelua::IntegerVariable.__init__)
+def test_activityecorelua_integervariable_constructor_args():
+    sig = inspect.signature(activityecorelua_IntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::value_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Value)
+def test_activityecorelua_value_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Value)
 
 
-def test_activityecorelua::value_constructor_exists():
-    assert callable(activityecorelua::Value.__init__)
+def test_activityecorelua_value_constructor_exists():
+    assert callable(activityecorelua_Value.__init__)
 
 
-def test_activityecorelua::value_constructor_args():
-    sig = inspect.signature(activityecorelua::Value.__init__)
+def test_activityecorelua_value_constructor_args():
+    sig = inspect.signature(activityecorelua_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::input_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Input)
+def test_activityecorelua_input_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Input)
 
 
-def test_activityecorelua::input_constructor_exists():
-    assert callable(activityecorelua::Input.__init__)
+def test_activityecorelua_input_constructor_exists():
+    assert callable(activityecorelua_Input.__init__)
 
 
-def test_activityecorelua::input_constructor_args():
-    sig = inspect.signature(activityecorelua::Input.__init__)
+def test_activityecorelua_input_constructor_args():
+    sig = inspect.signature(activityecorelua_Input.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::inputvalue_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::InputValue)
+def test_activityecorelua_inputvalue_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_InputValue)
 
 
-def test_activityecorelua::inputvalue_constructor_exists():
-    assert callable(activityecorelua::InputValue.__init__)
+def test_activityecorelua_inputvalue_constructor_exists():
+    assert callable(activityecorelua_InputValue.__init__)
 
 
-def test_activityecorelua::inputvalue_constructor_args():
-    sig = inspect.signature(activityecorelua::InputValue.__init__)
+def test_activityecorelua_inputvalue_constructor_args():
+    sig = inspect.signature(activityecorelua_InputValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1283,23 +1283,23 @@ def test_value_constructor_args():
 
 
 
-def test_activityecorelua::integervalue_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::IntegerValue)
+def test_activityecorelua_integervalue_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_IntegerValue)
 
 
-def test_activityecorelua::integervalue_constructor_exists():
-    assert callable(activityecorelua::IntegerValue.__init__)
+def test_activityecorelua_integervalue_constructor_exists():
+    assert callable(activityecorelua_IntegerValue.__init__)
 
 
-def test_activityecorelua::integervalue_constructor_args():
-    sig = inspect.signature(activityecorelua::IntegerValue.__init__)
+def test_activityecorelua_integervalue_constructor_args():
+    sig = inspect.signature(activityecorelua_IntegerValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activityecorelua::integervalue_has_value():
-    assert hasattr(activityecorelua::IntegerValue, "value")
+def test_activityecorelua_integervalue_has_value():
+    assert hasattr(activityecorelua_IntegerValue, "value")
     descriptor = None
-    for klass in activityecorelua::IntegerValue.__mro__:
+    for klass in activityecorelua_IntegerValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1307,23 +1307,23 @@ def test_activityecorelua::integervalue_has_value():
 
 
 
-def test_activityecorelua::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::BooleanValue)
+def test_activityecorelua_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_BooleanValue)
 
 
-def test_activityecorelua::booleanvalue_constructor_exists():
-    assert callable(activityecorelua::BooleanValue.__init__)
+def test_activityecorelua_booleanvalue_constructor_exists():
+    assert callable(activityecorelua_BooleanValue.__init__)
 
 
-def test_activityecorelua::booleanvalue_constructor_args():
-    sig = inspect.signature(activityecorelua::BooleanValue.__init__)
+def test_activityecorelua_booleanvalue_constructor_args():
+    sig = inspect.signature(activityecorelua_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activityecorelua::booleanvalue_has_value():
-    assert hasattr(activityecorelua::BooleanValue, "value")
+def test_activityecorelua_booleanvalue_has_value():
+    assert hasattr(activityecorelua_BooleanValue, "value")
     descriptor = None
-    for klass in activityecorelua::BooleanValue.__mro__:
+    for klass in activityecorelua_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1331,16 +1331,16 @@ def test_activityecorelua::booleanvalue_has_value():
 
 
 
-def test_activityecorelua::expression_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Expression)
+def test_activityecorelua_expression_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Expression)
 
 
-def test_activityecorelua::expression_constructor_exists():
-    assert callable(activityecorelua::Expression.__init__)
+def test_activityecorelua_expression_constructor_exists():
+    assert callable(activityecorelua_Expression.__init__)
 
 
-def test_activityecorelua::expression_constructor_args():
-    sig = inspect.signature(activityecorelua::Expression.__init__)
+def test_activityecorelua_expression_constructor_args():
+    sig = inspect.signature(activityecorelua_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1359,16 +1359,16 @@ def test_action_constructor_args():
 
 
 
-def test_activityecorelua::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::OpaqueAction)
+def test_activityecorelua_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_OpaqueAction)
 
 
-def test_activityecorelua::opaqueaction_constructor_exists():
-    assert callable(activityecorelua::OpaqueAction.__init__)
+def test_activityecorelua_opaqueaction_constructor_exists():
+    assert callable(activityecorelua_OpaqueAction.__init__)
 
 
-def test_activityecorelua::opaqueaction_constructor_args():
-    sig = inspect.signature(activityecorelua::OpaqueAction.__init__)
+def test_activityecorelua_opaqueaction_constructor_args():
+    sig = inspect.signature(activityecorelua_OpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1387,16 +1387,16 @@ def test_executablenode_constructor_args():
 
 
 
-def test_activityecorelua::action_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Action)
+def test_activityecorelua_action_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Action)
 
 
-def test_activityecorelua::action_constructor_exists():
-    assert callable(activityecorelua::Action.__init__)
+def test_activityecorelua_action_constructor_exists():
+    assert callable(activityecorelua_Action.__init__)
 
 
-def test_activityecorelua::action_constructor_args():
-    sig = inspect.signature(activityecorelua::Action.__init__)
+def test_activityecorelua_action_constructor_args():
+    sig = inspect.signature(activityecorelua_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1415,44 +1415,44 @@ def test_activitynode_constructor_args():
 
 
 
-def test_activityecorelua::executablenode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ExecutableNode)
+def test_activityecorelua_executablenode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ExecutableNode)
 
 
-def test_activityecorelua::executablenode_constructor_exists():
-    assert callable(activityecorelua::ExecutableNode.__init__)
+def test_activityecorelua_executablenode_constructor_exists():
+    assert callable(activityecorelua_ExecutableNode.__init__)
 
 
-def test_activityecorelua::executablenode_constructor_args():
-    sig = inspect.signature(activityecorelua::ExecutableNode.__init__)
+def test_activityecorelua_executablenode_constructor_args():
+    sig = inspect.signature(activityecorelua_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::controlnode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ControlNode)
+def test_activityecorelua_controlnode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ControlNode)
 
 
-def test_activityecorelua::controlnode_constructor_exists():
-    assert callable(activityecorelua::ControlNode.__init__)
+def test_activityecorelua_controlnode_constructor_exists():
+    assert callable(activityecorelua_ControlNode.__init__)
 
 
-def test_activityecorelua::controlnode_constructor_args():
-    sig = inspect.signature(activityecorelua::ControlNode.__init__)
+def test_activityecorelua_controlnode_constructor_args():
+    sig = inspect.signature(activityecorelua_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::BooleanVariable)
+def test_activityecorelua_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_BooleanVariable)
 
 
-def test_activityecorelua::booleanvariable_constructor_exists():
-    assert callable(activityecorelua::BooleanVariable.__init__)
+def test_activityecorelua_booleanvariable_constructor_exists():
+    assert callable(activityecorelua_BooleanVariable.__init__)
 
 
-def test_activityecorelua::booleanvariable_constructor_args():
-    sig = inspect.signature(activityecorelua::BooleanVariable.__init__)
+def test_activityecorelua_booleanvariable_constructor_args():
+    sig = inspect.signature(activityecorelua_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1471,16 +1471,16 @@ def test_activityedge_constructor_args():
 
 
 
-def test_activityecorelua::controlflow_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ControlFlow)
+def test_activityecorelua_controlflow_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ControlFlow)
 
 
-def test_activityecorelua::controlflow_constructor_exists():
-    assert callable(activityecorelua::ControlFlow.__init__)
+def test_activityecorelua_controlflow_constructor_exists():
+    assert callable(activityecorelua_ControlFlow.__init__)
 
 
-def test_activityecorelua::controlflow_constructor_args():
-    sig = inspect.signature(activityecorelua::ControlFlow.__init__)
+def test_activityecorelua_controlflow_constructor_args():
+    sig = inspect.signature(activityecorelua_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1499,16 +1499,16 @@ def test_finalnode_constructor_args():
 
 
 
-def test_activityecorelua::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ActivityFinalNode)
+def test_activityecorelua_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ActivityFinalNode)
 
 
-def test_activityecorelua::activityfinalnode_constructor_exists():
-    assert callable(activityecorelua::ActivityFinalNode.__init__)
+def test_activityecorelua_activityfinalnode_constructor_exists():
+    assert callable(activityecorelua_ActivityFinalNode.__init__)
 
 
-def test_activityecorelua::activityfinalnode_constructor_args():
-    sig = inspect.signature(activityecorelua::ActivityFinalNode.__init__)
+def test_activityecorelua_activityfinalnode_constructor_args():
+    sig = inspect.signature(activityecorelua_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1527,107 +1527,107 @@ def test_controlnode_constructor_args():
 
 
 
-def test_activityecorelua::joinnode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::JoinNode)
+def test_activityecorelua_forknode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ForkNode)
 
 
-def test_activityecorelua::joinnode_constructor_exists():
-    assert callable(activityecorelua::JoinNode.__init__)
+def test_activityecorelua_forknode_constructor_exists():
+    assert callable(activityecorelua_ForkNode.__init__)
 
 
-def test_activityecorelua::joinnode_constructor_args():
-    sig = inspect.signature(activityecorelua::JoinNode.__init__)
+def test_activityecorelua_forknode_constructor_args():
+    sig = inspect.signature(activityecorelua_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::DecisionNode)
+def test_activityecorelua_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_DecisionNode)
 
 
-def test_activityecorelua::decisionnode_constructor_exists():
-    assert callable(activityecorelua::DecisionNode.__init__)
+def test_activityecorelua_decisionnode_constructor_exists():
+    assert callable(activityecorelua_DecisionNode.__init__)
 
 
-def test_activityecorelua::decisionnode_constructor_args():
-    sig = inspect.signature(activityecorelua::DecisionNode.__init__)
+def test_activityecorelua_decisionnode_constructor_args():
+    sig = inspect.signature(activityecorelua_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::mergenode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::MergeNode)
+def test_activityecorelua_mergenode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_MergeNode)
 
 
-def test_activityecorelua::mergenode_constructor_exists():
-    assert callable(activityecorelua::MergeNode.__init__)
+def test_activityecorelua_mergenode_constructor_exists():
+    assert callable(activityecorelua_MergeNode.__init__)
 
 
-def test_activityecorelua::mergenode_constructor_args():
-    sig = inspect.signature(activityecorelua::MergeNode.__init__)
+def test_activityecorelua_mergenode_constructor_args():
+    sig = inspect.signature(activityecorelua_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::forknode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ForkNode)
+def test_activityecorelua_finalnode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_FinalNode)
 
 
-def test_activityecorelua::forknode_constructor_exists():
-    assert callable(activityecorelua::ForkNode.__init__)
+def test_activityecorelua_finalnode_constructor_exists():
+    assert callable(activityecorelua_FinalNode.__init__)
 
 
-def test_activityecorelua::forknode_constructor_args():
-    sig = inspect.signature(activityecorelua::ForkNode.__init__)
+def test_activityecorelua_finalnode_constructor_args():
+    sig = inspect.signature(activityecorelua_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::finalnode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::FinalNode)
+def test_activityecorelua_joinnode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_JoinNode)
 
 
-def test_activityecorelua::finalnode_constructor_exists():
-    assert callable(activityecorelua::FinalNode.__init__)
+def test_activityecorelua_joinnode_constructor_exists():
+    assert callable(activityecorelua_JoinNode.__init__)
 
 
-def test_activityecorelua::finalnode_constructor_args():
-    sig = inspect.signature(activityecorelua::FinalNode.__init__)
+def test_activityecorelua_joinnode_constructor_args():
+    sig = inspect.signature(activityecorelua_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::initialnode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::InitialNode)
+def test_activityecorelua_initialnode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_InitialNode)
 
 
-def test_activityecorelua::initialnode_constructor_exists():
-    assert callable(activityecorelua::InitialNode.__init__)
+def test_activityecorelua_initialnode_constructor_exists():
+    assert callable(activityecorelua_InitialNode.__init__)
 
 
-def test_activityecorelua::initialnode_constructor_args():
-    sig = inspect.signature(activityecorelua::InitialNode.__init__)
+def test_activityecorelua_initialnode_constructor_args():
+    sig = inspect.signature(activityecorelua_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::namedelement_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::NamedElement)
+def test_activityecorelua_namedelement_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_NamedElement)
 
 
-def test_activityecorelua::namedelement_constructor_exists():
-    assert callable(activityecorelua::NamedElement.__init__)
+def test_activityecorelua_namedelement_constructor_exists():
+    assert callable(activityecorelua_NamedElement.__init__)
 
 
-def test_activityecorelua::namedelement_constructor_args():
-    sig = inspect.signature(activityecorelua::NamedElement.__init__)
+def test_activityecorelua_namedelement_constructor_args():
+    sig = inspect.signature(activityecorelua_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activityecorelua::namedelement_has_name():
-    assert hasattr(activityecorelua::NamedElement, "name")
+def test_activityecorelua_namedelement_has_name():
+    assert hasattr(activityecorelua_NamedElement, "name")
     descriptor = None
-    for klass in activityecorelua::NamedElement.__mro__:
+    for klass in activityecorelua_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1635,23 +1635,23 @@ def test_activityecorelua::namedelement_has_name():
 
 
 
-def test_activityecorelua::variable_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Variable)
+def test_activityecorelua_variable_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Variable)
 
 
-def test_activityecorelua::variable_constructor_exists():
-    assert callable(activityecorelua::Variable.__init__)
+def test_activityecorelua_variable_constructor_exists():
+    assert callable(activityecorelua_Variable.__init__)
 
 
-def test_activityecorelua::variable_constructor_args():
-    sig = inspect.signature(activityecorelua::Variable.__init__)
+def test_activityecorelua_variable_constructor_args():
+    sig = inspect.signature(activityecorelua_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activityecorelua::variable_has_name():
-    assert hasattr(activityecorelua::Variable, "name")
+def test_activityecorelua_variable_has_name():
+    assert hasattr(activityecorelua_Variable, "name")
     descriptor = None
-    for klass in activityecorelua::Variable.__mro__:
+    for klass in activityecorelua_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1673,37 +1673,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_activityecorelua::activityedge_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ActivityEdge)
+def test_activityecorelua_activityedge_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ActivityEdge)
 
 
-def test_activityecorelua::activityedge_constructor_exists():
-    assert callable(activityecorelua::ActivityEdge.__init__)
+def test_activityecorelua_activityedge_constructor_exists():
+    assert callable(activityecorelua_ActivityEdge.__init__)
 
 
-def test_activityecorelua::activityedge_constructor_args():
-    sig = inspect.signature(activityecorelua::ActivityEdge.__init__)
+def test_activityecorelua_activityedge_constructor_args():
+    sig = inspect.signature(activityecorelua_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::activitynode_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ActivityNode)
+def test_activityecorelua_activitynode_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ActivityNode)
 
 
-def test_activityecorelua::activitynode_constructor_exists():
-    assert callable(activityecorelua::ActivityNode.__init__)
+def test_activityecorelua_activitynode_constructor_exists():
+    assert callable(activityecorelua_ActivityNode.__init__)
 
 
-def test_activityecorelua::activitynode_constructor_args():
-    sig = inspect.signature(activityecorelua::ActivityNode.__init__)
+def test_activityecorelua_activitynode_constructor_args():
+    sig = inspect.signature(activityecorelua_ActivityNode.__init__)
     params = list(sig.parameters.keys())
     assert "running" in params, "Missing parameter 'running'"
 
-def test_activityecorelua::activitynode_has_running():
-    assert hasattr(activityecorelua::ActivityNode, "running")
+def test_activityecorelua_activitynode_has_running():
+    assert hasattr(activityecorelua_ActivityNode, "running")
     descriptor = None
-    for klass in activityecorelua::ActivityNode.__mro__:
+    for klass in activityecorelua_ActivityNode.__mro__:
         if "running" in klass.__dict__:
             descriptor = klass.__dict__["running"]
             break
@@ -1725,30 +1725,30 @@ def test_etypedelement_constructor_args():
 
 
 
-def test_activityecorelua::activity_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::Activity)
+def test_activityecorelua_activity_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_Activity)
 
 
-def test_activityecorelua::activity_constructor_exists():
-    assert callable(activityecorelua::Activity.__init__)
+def test_activityecorelua_activity_constructor_exists():
+    assert callable(activityecorelua_Activity.__init__)
 
 
-def test_activityecorelua::activity_constructor_args():
-    sig = inspect.signature(activityecorelua::Activity.__init__)
+def test_activityecorelua_activity_constructor_args():
+    sig = inspect.signature(activityecorelua_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::eparameter_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EParameter)
+def test_activityecorelua_eparameter_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EParameter)
 
 
-def test_activityecorelua::eparameter_constructor_exists():
-    assert callable(activityecorelua::EParameter.__init__)
+def test_activityecorelua_eparameter_constructor_exists():
+    assert callable(activityecorelua_EParameter.__init__)
 
 
-def test_activityecorelua::eparameter_constructor_args():
-    sig = inspect.signature(activityecorelua::EParameter.__init__)
+def test_activityecorelua_eparameter_constructor_args():
+    sig = inspect.signature(activityecorelua_EParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1767,16 +1767,16 @@ def test_edatatype_constructor_args():
 
 
 
-def test_activityecorelua::eenum_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EEnum)
+def test_activityecorelua_eenum_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EEnum)
 
 
-def test_activityecorelua::eenum_constructor_exists():
-    assert callable(activityecorelua::EEnum.__init__)
+def test_activityecorelua_eenum_constructor_exists():
+    assert callable(activityecorelua_EEnum.__init__)
 
 
-def test_activityecorelua::eenum_constructor_args():
-    sig = inspect.signature(activityecorelua::EEnum.__init__)
+def test_activityecorelua_eenum_constructor_args():
+    sig = inspect.signature(activityecorelua_EEnum.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1795,333 +1795,333 @@ def test_enamedelement_constructor_args():
 
 
 
-def test_activityecorelua::etypeparameter_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ETypeParameter)
+def test_activityecorelua_eenumliteral_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EEnumLiteral)
 
 
-def test_activityecorelua::etypeparameter_constructor_exists():
-    assert callable(activityecorelua::ETypeParameter.__init__)
+def test_activityecorelua_eenumliteral_constructor_exists():
+    assert callable(activityecorelua_EEnumLiteral.__init__)
 
 
-def test_activityecorelua::etypeparameter_constructor_args():
-    sig = inspect.signature(activityecorelua::ETypeParameter.__init__)
+def test_activityecorelua_eenumliteral_constructor_args():
+    sig = inspect.signature(activityecorelua_EEnumLiteral.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::eenumliteral_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EEnumLiteral)
-
-
-def test_activityecorelua::eenumliteral_constructor_exists():
-    assert callable(activityecorelua::EEnumLiteral.__init__)
-
-
-def test_activityecorelua::eenumliteral_constructor_args():
-    sig = inspect.signature(activityecorelua::EEnumLiteral.__init__)
-    params = list(sig.parameters.keys())
+    assert "instance" in params, "Missing parameter 'instance'"
     assert "literal" in params, "Missing parameter 'literal'"
     assert "value" in params, "Missing parameter 'value'"
-    assert "instance" in params, "Missing parameter 'instance'"
 
-def test_activityecorelua::eenumliteral_has_literal():
-    assert hasattr(activityecorelua::EEnumLiteral, "literal")
+def test_activityecorelua_eenumliteral_has_instance():
+    assert hasattr(activityecorelua_EEnumLiteral, "instance")
     descriptor = None
-    for klass in activityecorelua::EEnumLiteral.__mro__:
-        if "literal" in klass.__dict__:
-            descriptor = klass.__dict__["literal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::eenumliteral_has_value():
-    assert hasattr(activityecorelua::EEnumLiteral, "value")
-    descriptor = None
-    for klass in activityecorelua::EEnumLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::eenumliteral_has_instance():
-    assert hasattr(activityecorelua::EEnumLiteral, "instance")
-    descriptor = None
-    for klass in activityecorelua::EEnumLiteral.__mro__:
+    for klass in activityecorelua_EEnumLiteral.__mro__:
         if "instance" in klass.__dict__:
             descriptor = klass.__dict__["instance"]
             break
     assert isinstance(descriptor, property)
 
+def test_activityecorelua_eenumliteral_has_literal():
+    assert hasattr(activityecorelua_EEnumLiteral, "literal")
+    descriptor = None
+    for klass in activityecorelua_EEnumLiteral.__mro__:
+        if "literal" in klass.__dict__:
+            descriptor = klass.__dict__["literal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_eenumliteral_has_value():
+    assert hasattr(activityecorelua_EEnumLiteral, "value")
+    descriptor = None
+    for klass in activityecorelua_EEnumLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activityecorelua::etypedelement_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ETypedElement)
+
+def test_activityecorelua_epackage_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EPackage)
 
 
-def test_activityecorelua::etypedelement_constructor_exists():
-    assert callable(activityecorelua::ETypedElement.__init__)
+def test_activityecorelua_epackage_constructor_exists():
+    assert callable(activityecorelua_EPackage.__init__)
 
 
-def test_activityecorelua::etypedelement_constructor_args():
-    sig = inspect.signature(activityecorelua::ETypedElement.__init__)
+def test_activityecorelua_epackage_constructor_args():
+    sig = inspect.signature(activityecorelua_EPackage.__init__)
     params = list(sig.parameters.keys())
-    assert "required" in params, "Missing parameter 'required'"
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "ordered" in params, "Missing parameter 'ordered'"
-    assert "many" in params, "Missing parameter 'many'"
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "unique" in params, "Missing parameter 'unique'"
-
-def test_activityecorelua::etypedelement_has_required():
-    assert hasattr(activityecorelua::ETypedElement, "required")
-    descriptor = None
-    for klass in activityecorelua::ETypedElement.__mro__:
-        if "required" in klass.__dict__:
-            descriptor = klass.__dict__["required"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::etypedelement_has_lowerBound():
-    assert hasattr(activityecorelua::ETypedElement, "lowerBound")
-    descriptor = None
-    for klass in activityecorelua::ETypedElement.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::etypedelement_has_ordered():
-    assert hasattr(activityecorelua::ETypedElement, "ordered")
-    descriptor = None
-    for klass in activityecorelua::ETypedElement.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::etypedelement_has_many():
-    assert hasattr(activityecorelua::ETypedElement, "many")
-    descriptor = None
-    for klass in activityecorelua::ETypedElement.__mro__:
-        if "many" in klass.__dict__:
-            descriptor = klass.__dict__["many"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::etypedelement_has_upperBound():
-    assert hasattr(activityecorelua::ETypedElement, "upperBound")
-    descriptor = None
-    for klass in activityecorelua::ETypedElement.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::etypedelement_has_unique():
-    assert hasattr(activityecorelua::ETypedElement, "unique")
-    descriptor = None
-    for klass in activityecorelua::ETypedElement.__mro__:
-        if "unique" in klass.__dict__:
-            descriptor = klass.__dict__["unique"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activityecorelua::epackage_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EPackage)
-
-
-def test_activityecorelua::epackage_constructor_exists():
-    assert callable(activityecorelua::EPackage.__init__)
-
-
-def test_activityecorelua::epackage_constructor_args():
-    sig = inspect.signature(activityecorelua::EPackage.__init__)
-    params = list(sig.parameters.keys())
-    assert "nsPrefix" in params, "Missing parameter 'nsPrefix'"
     assert "nsURI" in params, "Missing parameter 'nsURI'"
+    assert "nsPrefix" in params, "Missing parameter 'nsPrefix'"
 
-def test_activityecorelua::epackage_has_nsPrefix():
-    assert hasattr(activityecorelua::EPackage, "nsPrefix")
+def test_activityecorelua_epackage_has_nsURI():
+    assert hasattr(activityecorelua_EPackage, "nsURI")
     descriptor = None
-    for klass in activityecorelua::EPackage.__mro__:
-        if "nsPrefix" in klass.__dict__:
-            descriptor = klass.__dict__["nsPrefix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::epackage_has_nsURI():
-    assert hasattr(activityecorelua::EPackage, "nsURI")
-    descriptor = None
-    for klass in activityecorelua::EPackage.__mro__:
+    for klass in activityecorelua_EPackage.__mro__:
         if "nsURI" in klass.__dict__:
             descriptor = klass.__dict__["nsURI"]
             break
     assert isinstance(descriptor, property)
 
+def test_activityecorelua_epackage_has_nsPrefix():
+    assert hasattr(activityecorelua_EPackage, "nsPrefix")
+    descriptor = None
+    for klass in activityecorelua_EPackage.__mro__:
+        if "nsPrefix" in klass.__dict__:
+            descriptor = klass.__dict__["nsPrefix"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activityecorelua::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EClassifier)
+
+def test_activityecorelua_etypeparameter_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ETypeParameter)
 
 
-def test_activityecorelua::eclassifier_constructor_exists():
-    assert callable(activityecorelua::EClassifier.__init__)
+def test_activityecorelua_etypeparameter_constructor_exists():
+    assert callable(activityecorelua_ETypeParameter.__init__)
 
 
-def test_activityecorelua::eclassifier_constructor_args():
-    sig = inspect.signature(activityecorelua::EClassifier.__init__)
+def test_activityecorelua_etypeparameter_constructor_args():
+    sig = inspect.signature(activityecorelua_ETypeParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_etypedelement_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ETypedElement)
+
+
+def test_activityecorelua_etypedelement_constructor_exists():
+    assert callable(activityecorelua_ETypedElement.__init__)
+
+
+def test_activityecorelua_etypedelement_constructor_args():
+    sig = inspect.signature(activityecorelua_ETypedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "many" in params, "Missing parameter 'many'"
+    assert "required" in params, "Missing parameter 'required'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+    assert "unique" in params, "Missing parameter 'unique'"
+    assert "ordered" in params, "Missing parameter 'ordered'"
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+
+def test_activityecorelua_etypedelement_has_many():
+    assert hasattr(activityecorelua_ETypedElement, "many")
+    descriptor = None
+    for klass in activityecorelua_ETypedElement.__mro__:
+        if "many" in klass.__dict__:
+            descriptor = klass.__dict__["many"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_etypedelement_has_required():
+    assert hasattr(activityecorelua_ETypedElement, "required")
+    descriptor = None
+    for klass in activityecorelua_ETypedElement.__mro__:
+        if "required" in klass.__dict__:
+            descriptor = klass.__dict__["required"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_etypedelement_has_lowerBound():
+    assert hasattr(activityecorelua_ETypedElement, "lowerBound")
+    descriptor = None
+    for klass in activityecorelua_ETypedElement.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_etypedelement_has_unique():
+    assert hasattr(activityecorelua_ETypedElement, "unique")
+    descriptor = None
+    for klass in activityecorelua_ETypedElement.__mro__:
+        if "unique" in klass.__dict__:
+            descriptor = klass.__dict__["unique"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_etypedelement_has_ordered():
+    assert hasattr(activityecorelua_ETypedElement, "ordered")
+    descriptor = None
+    for klass in activityecorelua_ETypedElement.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_etypedelement_has_upperBound():
+    assert hasattr(activityecorelua_ETypedElement, "upperBound")
+    descriptor = None
+    for klass in activityecorelua_ETypedElement.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activityecorelua_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EClassifier)
+
+
+def test_activityecorelua_eclassifier_constructor_exists():
+    assert callable(activityecorelua_EClassifier.__init__)
+
+
+def test_activityecorelua_eclassifier_constructor_args():
+    sig = inspect.signature(activityecorelua_EClassifier.__init__)
     params = list(sig.parameters.keys())
     assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
-    assert "instanceTypeName" in params, "Missing parameter 'instanceTypeName'"
     assert "instanceClass" in params, "Missing parameter 'instanceClass'"
+    assert "instanceTypeName" in params, "Missing parameter 'instanceTypeName'"
 
-def test_activityecorelua::eclassifier_has_instanceClassName():
-    assert hasattr(activityecorelua::EClassifier, "instanceClassName")
+def test_activityecorelua_eclassifier_has_instanceClassName():
+    assert hasattr(activityecorelua_EClassifier, "instanceClassName")
     descriptor = None
-    for klass in activityecorelua::EClassifier.__mro__:
+    for klass in activityecorelua_EClassifier.__mro__:
         if "instanceClassName" in klass.__dict__:
             descriptor = klass.__dict__["instanceClassName"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::eclassifier_has_defaultValue():
-    assert hasattr(activityecorelua::EClassifier, "defaultValue")
+def test_activityecorelua_eclassifier_has_defaultValue():
+    assert hasattr(activityecorelua_EClassifier, "defaultValue")
     descriptor = None
-    for klass in activityecorelua::EClassifier.__mro__:
+    for klass in activityecorelua_EClassifier.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::eclassifier_has_instanceTypeName():
-    assert hasattr(activityecorelua::EClassifier, "instanceTypeName")
+def test_activityecorelua_eclassifier_has_instanceClass():
+    assert hasattr(activityecorelua_EClassifier, "instanceClass")
     descriptor = None
-    for klass in activityecorelua::EClassifier.__mro__:
-        if "instanceTypeName" in klass.__dict__:
-            descriptor = klass.__dict__["instanceTypeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::eclassifier_has_instanceClass():
-    assert hasattr(activityecorelua::EClassifier, "instanceClass")
-    descriptor = None
-    for klass in activityecorelua::EClassifier.__mro__:
+    for klass in activityecorelua_EClassifier.__mro__:
         if "instanceClass" in klass.__dict__:
             descriptor = klass.__dict__["instanceClass"]
             break
     assert isinstance(descriptor, property)
 
+def test_activityecorelua_eclassifier_has_instanceTypeName():
+    assert hasattr(activityecorelua_EClassifier, "instanceTypeName")
+    descriptor = None
+    for klass in activityecorelua_EClassifier.__mro__:
+        if "instanceTypeName" in klass.__dict__:
+            descriptor = klass.__dict__["instanceTypeName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activityecorelua::egenerictype_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EGenericType)
+
+def test_activityecorelua_egenerictype_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EGenericType)
 
 
-def test_activityecorelua::egenerictype_constructor_exists():
-    assert callable(activityecorelua::EGenericType.__init__)
+def test_activityecorelua_egenerictype_constructor_exists():
+    assert callable(activityecorelua_EGenericType.__init__)
 
 
-def test_activityecorelua::egenerictype_constructor_args():
-    sig = inspect.signature(activityecorelua::EGenericType.__init__)
+def test_activityecorelua_egenerictype_constructor_args():
+    sig = inspect.signature(activityecorelua_EGenericType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::eoperation_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EOperation)
+def test_activityecorelua_eoperation_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EOperation)
 
 
-def test_activityecorelua::eoperation_constructor_exists():
-    assert callable(activityecorelua::EOperation.__init__)
+def test_activityecorelua_eoperation_constructor_exists():
+    assert callable(activityecorelua_EOperation.__init__)
 
 
-def test_activityecorelua::eoperation_constructor_args():
-    sig = inspect.signature(activityecorelua::EOperation.__init__)
+def test_activityecorelua_eoperation_constructor_args():
+    sig = inspect.signature(activityecorelua_EOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityecorelua::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EStructuralFeature)
+def test_activityecorelua_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EStructuralFeature)
 
 
-def test_activityecorelua::estructuralfeature_constructor_exists():
-    assert callable(activityecorelua::EStructuralFeature.__init__)
+def test_activityecorelua_estructuralfeature_constructor_exists():
+    assert callable(activityecorelua_EStructuralFeature.__init__)
 
 
-def test_activityecorelua::estructuralfeature_constructor_args():
-    sig = inspect.signature(activityecorelua::EStructuralFeature.__init__)
+def test_activityecorelua_estructuralfeature_constructor_args():
+    sig = inspect.signature(activityecorelua_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
-    assert "volatile" in params, "Missing parameter 'volatile'"
-    assert "transient" in params, "Missing parameter 'transient'"
-    assert "defaultValueLiteral" in params, "Missing parameter 'defaultValueLiteral'"
-    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
     assert "unsettable" in params, "Missing parameter 'unsettable'"
-    assert "derived" in params, "Missing parameter 'derived'"
     assert "changeable" in params, "Missing parameter 'changeable'"
+    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "volatile" in params, "Missing parameter 'volatile'"
+    assert "defaultValueLiteral" in params, "Missing parameter 'defaultValueLiteral'"
+    assert "derived" in params, "Missing parameter 'derived'"
+    assert "transient" in params, "Missing parameter 'transient'"
 
-def test_activityecorelua::estructuralfeature_has_volatile():
-    assert hasattr(activityecorelua::EStructuralFeature, "volatile")
+def test_activityecorelua_estructuralfeature_has_unsettable():
+    assert hasattr(activityecorelua_EStructuralFeature, "unsettable")
     descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
-        if "volatile" in klass.__dict__:
-            descriptor = klass.__dict__["volatile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::estructuralfeature_has_transient():
-    assert hasattr(activityecorelua::EStructuralFeature, "transient")
-    descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
-        if "transient" in klass.__dict__:
-            descriptor = klass.__dict__["transient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::estructuralfeature_has_defaultValueLiteral():
-    assert hasattr(activityecorelua::EStructuralFeature, "defaultValueLiteral")
-    descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
-        if "defaultValueLiteral" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValueLiteral"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::estructuralfeature_has_defaultValue():
-    assert hasattr(activityecorelua::EStructuralFeature, "defaultValue")
-    descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
-        if "defaultValue" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::estructuralfeature_has_unsettable():
-    assert hasattr(activityecorelua::EStructuralFeature, "unsettable")
-    descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
+    for klass in activityecorelua_EStructuralFeature.__mro__:
         if "unsettable" in klass.__dict__:
             descriptor = klass.__dict__["unsettable"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::estructuralfeature_has_derived():
-    assert hasattr(activityecorelua::EStructuralFeature, "derived")
+def test_activityecorelua_estructuralfeature_has_changeable():
+    assert hasattr(activityecorelua_EStructuralFeature, "changeable")
     descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
+    for klass in activityecorelua_EStructuralFeature.__mro__:
+        if "changeable" in klass.__dict__:
+            descriptor = klass.__dict__["changeable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_estructuralfeature_has_defaultValue():
+    assert hasattr(activityecorelua_EStructuralFeature, "defaultValue")
+    descriptor = None
+    for klass in activityecorelua_EStructuralFeature.__mro__:
+        if "defaultValue" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_estructuralfeature_has_volatile():
+    assert hasattr(activityecorelua_EStructuralFeature, "volatile")
+    descriptor = None
+    for klass in activityecorelua_EStructuralFeature.__mro__:
+        if "volatile" in klass.__dict__:
+            descriptor = klass.__dict__["volatile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_estructuralfeature_has_defaultValueLiteral():
+    assert hasattr(activityecorelua_EStructuralFeature, "defaultValueLiteral")
+    descriptor = None
+    for klass in activityecorelua_EStructuralFeature.__mro__:
+        if "defaultValueLiteral" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValueLiteral"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_estructuralfeature_has_derived():
+    assert hasattr(activityecorelua_EStructuralFeature, "derived")
+    descriptor = None
+    for klass in activityecorelua_EStructuralFeature.__mro__:
         if "derived" in klass.__dict__:
             descriptor = klass.__dict__["derived"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::estructuralfeature_has_changeable():
-    assert hasattr(activityecorelua::EStructuralFeature, "changeable")
+def test_activityecorelua_estructuralfeature_has_transient():
+    assert hasattr(activityecorelua_EStructuralFeature, "transient")
     descriptor = None
-    for klass in activityecorelua::EStructuralFeature.__mro__:
-        if "changeable" in klass.__dict__:
-            descriptor = klass.__dict__["changeable"]
+    for klass in activityecorelua_EStructuralFeature.__mro__:
+        if "transient" in klass.__dict__:
+            descriptor = klass.__dict__["transient"]
             break
     assert isinstance(descriptor, property)
 
@@ -2141,97 +2141,97 @@ def test_eclassifier_constructor_args():
 
 
 
-def test_activityecorelua::eclass_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EClass)
+def test_activityecorelua_eclass_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EClass)
 
 
-def test_activityecorelua::eclass_constructor_exists():
-    assert callable(activityecorelua::EClass.__init__)
+def test_activityecorelua_eclass_constructor_exists():
+    assert callable(activityecorelua_EClass.__init__)
 
 
-def test_activityecorelua::eclass_constructor_args():
-    sig = inspect.signature(activityecorelua::EClass.__init__)
+def test_activityecorelua_eclass_constructor_args():
+    sig = inspect.signature(activityecorelua_EClass.__init__)
     params = list(sig.parameters.keys())
-    assert "interface" in params, "Missing parameter 'interface'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "interface" in params, "Missing parameter 'interface'"
 
-def test_activityecorelua::eclass_has_interface():
-    assert hasattr(activityecorelua::EClass, "interface")
+def test_activityecorelua_eclass_has_abstract():
+    assert hasattr(activityecorelua_EClass, "abstract")
     descriptor = None
-    for klass in activityecorelua::EClass.__mro__:
-        if "interface" in klass.__dict__:
-            descriptor = klass.__dict__["interface"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::eclass_has_abstract():
-    assert hasattr(activityecorelua::EClass, "abstract")
-    descriptor = None
-    for klass in activityecorelua::EClass.__mro__:
+    for klass in activityecorelua_EClass.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_activityecorelua::eobject_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EObject)
-
-
-def test_activityecorelua::eobject_constructor_exists():
-    assert callable(activityecorelua::EObject.__init__)
-
-
-def test_activityecorelua::eobject_constructor_args():
-    sig = inspect.signature(activityecorelua::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::emodelelement_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EModelElement)
-
-
-def test_activityecorelua::emodelelement_constructor_exists():
-    assert callable(activityecorelua::EModelElement.__init__)
-
-
-def test_activityecorelua::emodelelement_constructor_args():
-    sig = inspect.signature(activityecorelua::EModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EStringToStringMapEntry)
-
-
-def test_activityecorelua::estringtostringmapentry_constructor_exists():
-    assert callable(activityecorelua::EStringToStringMapEntry.__init__)
-
-
-def test_activityecorelua::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(activityecorelua::EStringToStringMapEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "key" in params, "Missing parameter 'key'"
-
-def test_activityecorelua::estringtostringmapentry_has_value():
-    assert hasattr(activityecorelua::EStringToStringMapEntry, "value")
+def test_activityecorelua_eclass_has_interface():
+    assert hasattr(activityecorelua_EClass, "interface")
     descriptor = None
-    for klass in activityecorelua::EStringToStringMapEntry.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in activityecorelua_EClass.__mro__:
+        if "interface" in klass.__dict__:
+            descriptor = klass.__dict__["interface"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::estringtostringmapentry_has_key():
-    assert hasattr(activityecorelua::EStringToStringMapEntry, "key")
+
+
+def test_activityecorelua_eobject_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EObject)
+
+
+def test_activityecorelua_eobject_constructor_exists():
+    assert callable(activityecorelua_EObject.__init__)
+
+
+def test_activityecorelua_eobject_constructor_args():
+    sig = inspect.signature(activityecorelua_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_emodelelement_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EModelElement)
+
+
+def test_activityecorelua_emodelelement_constructor_exists():
+    assert callable(activityecorelua_EModelElement.__init__)
+
+
+def test_activityecorelua_emodelelement_constructor_args():
+    sig = inspect.signature(activityecorelua_EModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EStringToStringMapEntry)
+
+
+def test_activityecorelua_estringtostringmapentry_constructor_exists():
+    assert callable(activityecorelua_EStringToStringMapEntry.__init__)
+
+
+def test_activityecorelua_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(activityecorelua_EStringToStringMapEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_activityecorelua_estringtostringmapentry_has_key():
+    assert hasattr(activityecorelua_EStringToStringMapEntry, "key")
     descriptor = None
-    for klass in activityecorelua::EStringToStringMapEntry.__mro__:
+    for klass in activityecorelua_EStringToStringMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activityecorelua_estringtostringmapentry_has_value():
+    assert hasattr(activityecorelua_EStringToStringMapEntry, "value")
+    descriptor = None
+    for klass in activityecorelua_EStringToStringMapEntry.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -2251,23 +2251,37 @@ def test_emodelelement_constructor_args():
 
 
 
-def test_activityecorelua::enamedelement_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::ENamedElement)
+def test_activityecorelua_efactory_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EFactory)
 
 
-def test_activityecorelua::enamedelement_constructor_exists():
-    assert callable(activityecorelua::ENamedElement.__init__)
+def test_activityecorelua_efactory_constructor_exists():
+    assert callable(activityecorelua_EFactory.__init__)
 
 
-def test_activityecorelua::enamedelement_constructor_args():
-    sig = inspect.signature(activityecorelua::ENamedElement.__init__)
+def test_activityecorelua_efactory_constructor_args():
+    sig = inspect.signature(activityecorelua_EFactory.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityecorelua_enamedelement_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_ENamedElement)
+
+
+def test_activityecorelua_enamedelement_constructor_exists():
+    assert callable(activityecorelua_ENamedElement.__init__)
+
+
+def test_activityecorelua_enamedelement_constructor_args():
+    sig = inspect.signature(activityecorelua_ENamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activityecorelua::enamedelement_has_name():
-    assert hasattr(activityecorelua::ENamedElement, "name")
+def test_activityecorelua_enamedelement_has_name():
+    assert hasattr(activityecorelua_ENamedElement, "name")
     descriptor = None
-    for klass in activityecorelua::ENamedElement.__mro__:
+    for klass in activityecorelua_ENamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2275,37 +2289,23 @@ def test_activityecorelua::enamedelement_has_name():
 
 
 
-def test_activityecorelua::efactory_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EFactory)
+def test_activityecorelua_eannotation_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EAnnotation)
 
 
-def test_activityecorelua::efactory_constructor_exists():
-    assert callable(activityecorelua::EFactory.__init__)
+def test_activityecorelua_eannotation_constructor_exists():
+    assert callable(activityecorelua_EAnnotation.__init__)
 
 
-def test_activityecorelua::efactory_constructor_args():
-    sig = inspect.signature(activityecorelua::EFactory.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityecorelua::eannotation_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EAnnotation)
-
-
-def test_activityecorelua::eannotation_constructor_exists():
-    assert callable(activityecorelua::EAnnotation.__init__)
-
-
-def test_activityecorelua::eannotation_constructor_args():
-    sig = inspect.signature(activityecorelua::EAnnotation.__init__)
+def test_activityecorelua_eannotation_constructor_args():
+    sig = inspect.signature(activityecorelua_EAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "source" in params, "Missing parameter 'source'"
 
-def test_activityecorelua::eannotation_has_source():
-    assert hasattr(activityecorelua::EAnnotation, "source")
+def test_activityecorelua_eannotation_has_source():
+    assert hasattr(activityecorelua_EAnnotation, "source")
     descriptor = None
-    for klass in activityecorelua::EAnnotation.__mro__:
+    for klass in activityecorelua_EAnnotation.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
@@ -2313,23 +2313,23 @@ def test_activityecorelua::eannotation_has_source():
 
 
 
-def test_activityecorelua::edatatype_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EDataType)
+def test_activityecorelua_edatatype_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EDataType)
 
 
-def test_activityecorelua::edatatype_constructor_exists():
-    assert callable(activityecorelua::EDataType.__init__)
+def test_activityecorelua_edatatype_constructor_exists():
+    assert callable(activityecorelua_EDataType.__init__)
 
 
-def test_activityecorelua::edatatype_constructor_args():
-    sig = inspect.signature(activityecorelua::EDataType.__init__)
+def test_activityecorelua_edatatype_constructor_args():
+    sig = inspect.signature(activityecorelua_EDataType.__init__)
     params = list(sig.parameters.keys())
     assert "serializable" in params, "Missing parameter 'serializable'"
 
-def test_activityecorelua::edatatype_has_serializable():
-    assert hasattr(activityecorelua::EDataType, "serializable")
+def test_activityecorelua_edatatype_has_serializable():
+    assert hasattr(activityecorelua_EDataType, "serializable")
     descriptor = None
-    for klass in activityecorelua::EDataType.__mro__:
+    for klass in activityecorelua_EDataType.__mro__:
         if "serializable" in klass.__dict__:
             descriptor = klass.__dict__["serializable"]
             break
@@ -2351,67 +2351,67 @@ def test_estructuralfeature_constructor_args():
 
 
 
-def test_activityecorelua::ereference_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EReference)
+def test_activityecorelua_ereference_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EReference)
 
 
-def test_activityecorelua::ereference_constructor_exists():
-    assert callable(activityecorelua::EReference.__init__)
+def test_activityecorelua_ereference_constructor_exists():
+    assert callable(activityecorelua_EReference.__init__)
 
 
-def test_activityecorelua::ereference_constructor_args():
-    sig = inspect.signature(activityecorelua::EReference.__init__)
+def test_activityecorelua_ereference_constructor_args():
+    sig = inspect.signature(activityecorelua_EReference.__init__)
     params = list(sig.parameters.keys())
     assert "containment" in params, "Missing parameter 'containment'"
-    assert "resolveProxies" in params, "Missing parameter 'resolveProxies'"
     assert "container" in params, "Missing parameter 'container'"
+    assert "resolveProxies" in params, "Missing parameter 'resolveProxies'"
 
-def test_activityecorelua::ereference_has_containment():
-    assert hasattr(activityecorelua::EReference, "containment")
+def test_activityecorelua_ereference_has_containment():
+    assert hasattr(activityecorelua_EReference, "containment")
     descriptor = None
-    for klass in activityecorelua::EReference.__mro__:
+    for klass in activityecorelua_EReference.__mro__:
         if "containment" in klass.__dict__:
             descriptor = klass.__dict__["containment"]
             break
     assert isinstance(descriptor, property)
 
-def test_activityecorelua::ereference_has_resolveProxies():
-    assert hasattr(activityecorelua::EReference, "resolveProxies")
+def test_activityecorelua_ereference_has_container():
+    assert hasattr(activityecorelua_EReference, "container")
     descriptor = None
-    for klass in activityecorelua::EReference.__mro__:
-        if "resolveProxies" in klass.__dict__:
-            descriptor = klass.__dict__["resolveProxies"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activityecorelua::ereference_has_container():
-    assert hasattr(activityecorelua::EReference, "container")
-    descriptor = None
-    for klass in activityecorelua::EReference.__mro__:
+    for klass in activityecorelua_EReference.__mro__:
         if "container" in klass.__dict__:
             descriptor = klass.__dict__["container"]
             break
     assert isinstance(descriptor, property)
 
+def test_activityecorelua_ereference_has_resolveProxies():
+    assert hasattr(activityecorelua_EReference, "resolveProxies")
+    descriptor = None
+    for klass in activityecorelua_EReference.__mro__:
+        if "resolveProxies" in klass.__dict__:
+            descriptor = klass.__dict__["resolveProxies"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activityecorelua::eattribute_is_not_abstract():
-    assert not inspect.isabstract(activityecorelua::EAttribute)
+
+def test_activityecorelua_eattribute_is_not_abstract():
+    assert not inspect.isabstract(activityecorelua_EAttribute)
 
 
-def test_activityecorelua::eattribute_constructor_exists():
-    assert callable(activityecorelua::EAttribute.__init__)
+def test_activityecorelua_eattribute_constructor_exists():
+    assert callable(activityecorelua_EAttribute.__init__)
 
 
-def test_activityecorelua::eattribute_constructor_args():
-    sig = inspect.signature(activityecorelua::EAttribute.__init__)
+def test_activityecorelua_eattribute_constructor_args():
+    sig = inspect.signature(activityecorelua_EAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "iD" in params, "Missing parameter 'iD'"
 
-def test_activityecorelua::eattribute_has_iD():
-    assert hasattr(activityecorelua::EAttribute, "iD")
+def test_activityecorelua_eattribute_has_iD():
+    assert hasattr(activityecorelua_EAttribute, "iD")
     descriptor = None
-    for klass in activityecorelua::EAttribute.__mro__:
+    for klass in activityecorelua_EAttribute.__mro__:
         if "iD" in klass.__dict__:
             descriptor = klass.__dict__["iD"]
             break
@@ -2429,157 +2429,157 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-LastStatement::Return_strategy = st.builds(
-    LastStatement::Return,
+LastStatement_Return_strategy = st.builds(
+    LastStatement_Return,
 )
-activityecorelua::LastStatement::ReturnWithValue_strategy = st.builds(
-    activityecorelua::LastStatement::ReturnWithValue,
+activityecorelua_LastStatement_ReturnWithValue_strategy = st.builds(
+    activityecorelua_LastStatement_ReturnWithValue,
 )
 Field_strategy = st.builds(
     Field,
 )
-activityecorelua::Field::AppendEntryToTable_strategy = st.builds(
-    activityecorelua::Field::AppendEntryToTable,
-)
-activityecorelua::Field::AddEntryToTable_strategy = st.builds(
-    activityecorelua::Field::AddEntryToTable,
+activityecorelua_Field_AddEntryToTable_strategy = st.builds(
+    activityecorelua_Field_AddEntryToTable,
     key=
         safe_text
 )
-activityecorelua::Field::AddEntryToTable::Brackets_strategy = st.builds(
-    activityecorelua::Field::AddEntryToTable::Brackets,
+activityecorelua_Field_AppendEntryToTable_strategy = st.builds(
+    activityecorelua_Field_AppendEntryToTable,
 )
-activityecorelua::Functioncall::Arguments_strategy = st.builds(
-    activityecorelua::Functioncall::Arguments,
+activityecorelua_Field_AddEntryToTable_Brackets_strategy = st.builds(
+    activityecorelua_Field_AddEntryToTable_Brackets,
 )
-activityecorelua::Field_strategy = st.builds(
-    activityecorelua::Field,
+activityecorelua_Functioncall_Arguments_strategy = st.builds(
+    activityecorelua_Functioncall_Arguments,
+)
+activityecorelua_Field_strategy = st.builds(
+    activityecorelua_Field,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-activityecorelua::Expression::VarArgs_strategy = st.builds(
-    activityecorelua::Expression::VarArgs,
+activityecorelua_Expression_CallFunction_strategy = st.builds(
+    activityecorelua_Expression_CallFunction,
 )
-activityecorelua::Expression::Minus_strategy = st.builds(
-    activityecorelua::Expression::Minus,
+activityecorelua_Expression_Concatenation_strategy = st.builds(
+    activityecorelua_Expression_Concatenation,
 )
-activityecorelua::Expression::Plus_strategy = st.builds(
-    activityecorelua::Expression::Plus,
+activityecorelua_Expression_Modulo_strategy = st.builds(
+    activityecorelua_Expression_Modulo,
 )
-activityecorelua::Expression::Invert_strategy = st.builds(
-    activityecorelua::Expression::Invert,
+activityecorelua_Expression_Invert_strategy = st.builds(
+    activityecorelua_Expression_Invert,
 )
-activityecorelua::Expression::Not::Equal_strategy = st.builds(
-    activityecorelua::Expression::Not::Equal,
+activityecorelua_Expression_Function_strategy = st.builds(
+    activityecorelua_Expression_Function,
 )
-activityecorelua::Expression::AccessArray_strategy = st.builds(
-    activityecorelua::Expression::AccessArray,
+activityecorelua_Expression_Multiplication_strategy = st.builds(
+    activityecorelua_Expression_Multiplication,
 )
-activityecorelua::Expression::Concatenation_strategy = st.builds(
-    activityecorelua::Expression::Concatenation,
+activityecorelua_Expression_CallMemberFunction_strategy = st.builds(
+    activityecorelua_Expression_CallMemberFunction,
+    memberFunctionName=
+        safe_text
 )
-activityecorelua::Expression::CallFunction_strategy = st.builds(
-    activityecorelua::Expression::CallFunction,
+activityecorelua_Expression_Exponentiation_strategy = st.builds(
+    activityecorelua_Expression_Exponentiation,
 )
-activityecorelua::Expression::Division_strategy = st.builds(
-    activityecorelua::Expression::Division,
+activityecorelua_Expression_Negate_strategy = st.builds(
+    activityecorelua_Expression_Negate,
 )
-activityecorelua::Expression::Larger_strategy = st.builds(
-    activityecorelua::Expression::Larger,
+activityecorelua_Expression_Larger_Equal_strategy = st.builds(
+    activityecorelua_Expression_Larger_Equal,
 )
-activityecorelua::Expression::AccessMember_strategy = st.builds(
-    activityecorelua::Expression::AccessMember,
+activityecorelua_Expression_True_strategy = st.builds(
+    activityecorelua_Expression_True,
+)
+activityecorelua_Expression_AccessMember_strategy = st.builds(
+    activityecorelua_Expression_AccessMember,
     memberName=
         safe_text
 )
-activityecorelua::Expression::Smaller::Equal_strategy = st.builds(
-    activityecorelua::Expression::Smaller::Equal,
+activityecorelua_Expression_And_strategy = st.builds(
+    activityecorelua_Expression_And,
 )
-activityecorelua::Expression::TableConstructor_strategy = st.builds(
-    activityecorelua::Expression::TableConstructor,
+activityecorelua_Expression_Equal_strategy = st.builds(
+    activityecorelua_Expression_Equal,
 )
-activityecorelua::Expression::Smaller_strategy = st.builds(
-    activityecorelua::Expression::Smaller,
+activityecorelua_Expression_VarArgs_strategy = st.builds(
+    activityecorelua_Expression_VarArgs,
 )
-activityecorelua::Expression::Length_strategy = st.builds(
-    activityecorelua::Expression::Length,
+activityecorelua_Expression_Plus_strategy = st.builds(
+    activityecorelua_Expression_Plus,
 )
-activityecorelua::Expression::Modulo_strategy = st.builds(
-    activityecorelua::Expression::Modulo,
-)
-activityecorelua::Expression::Negate_strategy = st.builds(
-    activityecorelua::Expression::Negate,
-)
-activityecorelua::Expression::Multiplication_strategy = st.builds(
-    activityecorelua::Expression::Multiplication,
-)
-activityecorelua::Expression::Number_strategy = st.builds(
-    activityecorelua::Expression::Number,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-activityecorelua::Expression::Or_strategy = st.builds(
-    activityecorelua::Expression::Or,
-)
-activityecorelua::Expression::Function_strategy = st.builds(
-    activityecorelua::Expression::Function,
-)
-activityecorelua::Expression::Equal_strategy = st.builds(
-    activityecorelua::Expression::Equal,
-)
-activityecorelua::Expression::Larger::Equal_strategy = st.builds(
-    activityecorelua::Expression::Larger::Equal,
-)
-activityecorelua::Expression::And_strategy = st.builds(
-    activityecorelua::Expression::And,
-)
-activityecorelua::Expression::CallMemberFunction_strategy = st.builds(
-    activityecorelua::Expression::CallMemberFunction,
-    memberFunctionName=
-        safe_text
-)
-activityecorelua::Expression::VariableName_strategy = st.builds(
-    activityecorelua::Expression::VariableName,
+activityecorelua_Expression_VariableName_strategy = st.builds(
+    activityecorelua_Expression_VariableName,
     variable=
         safe_text
 )
-activityecorelua::Expression::False_strategy = st.builds(
-    activityecorelua::Expression::False,
+activityecorelua_Expression_Number_strategy = st.builds(
+    activityecorelua_Expression_Number,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-activityecorelua::Expression::String_strategy = st.builds(
-    activityecorelua::Expression::String,
+activityecorelua_Expression_Length_strategy = st.builds(
+    activityecorelua_Expression_Length,
+)
+activityecorelua_Expression_Division_strategy = st.builds(
+    activityecorelua_Expression_Division,
+)
+activityecorelua_Expression_Not_Equal_strategy = st.builds(
+    activityecorelua_Expression_Not_Equal,
+)
+activityecorelua_Expression_Minus_strategy = st.builds(
+    activityecorelua_Expression_Minus,
+)
+activityecorelua_Expression_Or_strategy = st.builds(
+    activityecorelua_Expression_Or,
+)
+activityecorelua_Expression_AccessArray_strategy = st.builds(
+    activityecorelua_Expression_AccessArray,
+)
+activityecorelua_Expression_TableConstructor_strategy = st.builds(
+    activityecorelua_Expression_TableConstructor,
+)
+activityecorelua_Expression_Larger_strategy = st.builds(
+    activityecorelua_Expression_Larger,
+)
+activityecorelua_Expression_String_strategy = st.builds(
+    activityecorelua_Expression_String,
     value=
         safe_text
 )
-activityecorelua::Expression::True_strategy = st.builds(
-    activityecorelua::Expression::True,
+activityecorelua_Expression_Smaller_strategy = st.builds(
+    activityecorelua_Expression_Smaller,
 )
-activityecorelua::Expression::Exponentiation_strategy = st.builds(
-    activityecorelua::Expression::Exponentiation,
+activityecorelua_Expression_Smaller_Equal_strategy = st.builds(
+    activityecorelua_Expression_Smaller_Equal,
 )
-activityecorelua::Expression::Nil_strategy = st.builds(
-    activityecorelua::Expression::Nil,
+activityecorelua_Expression_False_strategy = st.builds(
+    activityecorelua_Expression_False,
 )
-Statement::FunctioncallOrAssignment_strategy = st.builds(
-    Statement::FunctioncallOrAssignment,
+activityecorelua_Expression_Nil_strategy = st.builds(
+    activityecorelua_Expression_Nil,
 )
-activityecorelua::Statement::CallFunction_strategy = st.builds(
-    activityecorelua::Statement::CallFunction,
+Statement_FunctioncallOrAssignment_strategy = st.builds(
+    Statement_FunctioncallOrAssignment,
 )
-activityecorelua::Statement::CallMemberFunction_strategy = st.builds(
-    activityecorelua::Statement::CallMemberFunction,
+activityecorelua_Statement_CallMemberFunction_strategy = st.builds(
+    activityecorelua_Statement_CallMemberFunction,
     memberFunctionName=
         safe_text
 )
-activityecorelua::Statement::Assignment_strategy = st.builds(
-    activityecorelua::Statement::Assignment,
+activityecorelua_Statement_CallFunction_strategy = st.builds(
+    activityecorelua_Statement_CallFunction,
 )
-activityecorelua::Statement::If::Then::Else::ElseIfPart_strategy = st.builds(
-    activityecorelua::Statement::If::Then::Else::ElseIfPart,
+activityecorelua_Statement_Assignment_strategy = st.builds(
+    activityecorelua_Statement_Assignment,
 )
-activityecorelua::Function_strategy = st.builds(
-    activityecorelua::Function,
+activityecorelua_Statement_If_Then_Else_ElseIfPart_strategy = st.builds(
+    activityecorelua_Statement_If_Then_Else_ElseIfPart,
+)
+activityecorelua_Function_strategy = st.builds(
+    activityecorelua_Function,
     varArgs=
         st.booleans(),
     parameters=
@@ -2588,654 +2588,627 @@ activityecorelua::Function_strategy = st.builds(
 LastStatement_strategy = st.builds(
     LastStatement,
 )
-activityecorelua::LastStatement::Break_strategy = st.builds(
-    activityecorelua::LastStatement::Break,
+activityecorelua_LastStatement_Break_strategy = st.builds(
+    activityecorelua_LastStatement_Break,
 )
-activityecorelua::LastStatement::Return_strategy = st.builds(
-    activityecorelua::LastStatement::Return,
+activityecorelua_LastStatement_Return_strategy = st.builds(
+    activityecorelua_LastStatement_Return,
 )
-activityecorelua::LastStatement_strategy = st.builds(
-    activityecorelua::LastStatement,
+activityecorelua_LastStatement_strategy = st.builds(
+    activityecorelua_LastStatement,
 )
-activityecorelua::Statement_strategy = st.builds(
-    activityecorelua::Statement,
+activityecorelua_Statement_strategy = st.builds(
+    activityecorelua_Statement,
 )
 Chunk_strategy = st.builds(
     Chunk,
 )
-activityecorelua::Block_strategy = st.builds(
-    activityecorelua::Block,
+activityecorelua_Block_strategy = st.builds(
+    activityecorelua_Block,
 )
-activityecorelua::Chunk_strategy = st.builds(
-    activityecorelua::Chunk,
+activityecorelua_Chunk_strategy = st.builds(
+    activityecorelua_Chunk,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-activityecorelua::Statement::FunctioncallOrAssignment_strategy = st.builds(
-    activityecorelua::Statement::FunctioncallOrAssignment,
-)
-activityecorelua::Statement::If::Then::Else_strategy = st.builds(
-    activityecorelua::Statement::If::Then::Else,
-)
-activityecorelua::Statement::For::Generic_strategy = st.builds(
-    activityecorelua::Statement::For::Generic,
-    names=
-        safe_text
-)
-activityecorelua::Statement::While_strategy = st.builds(
-    activityecorelua::Statement::While,
-)
-activityecorelua::Statement::LocalFunction::Declaration_strategy = st.builds(
-    activityecorelua::Statement::LocalFunction::Declaration,
+activityecorelua_Statement_LocalFunction_Declaration_strategy = st.builds(
+    activityecorelua_Statement_LocalFunction_Declaration,
     functionName=
         safe_text
 )
-activityecorelua::Statement::For::Numeric_strategy = st.builds(
-    activityecorelua::Statement::For::Numeric,
-    iteratorName=
-        safe_text
+activityecorelua_Statement_If_Then_Else_strategy = st.builds(
+    activityecorelua_Statement_If_Then_Else,
 )
-activityecorelua::Statement::Repeat_strategy = st.builds(
-    activityecorelua::Statement::Repeat,
+activityecorelua_Statement_FunctioncallOrAssignment_strategy = st.builds(
+    activityecorelua_Statement_FunctioncallOrAssignment,
 )
-activityecorelua::Statement::Local::Variable::Declaration_strategy = st.builds(
-    activityecorelua::Statement::Local::Variable::Declaration,
-    variableNames=
-        safe_text
+activityecorelua_Statement_Repeat_strategy = st.builds(
+    activityecorelua_Statement_Repeat,
 )
-activityecorelua::Statement::GlobalFunction::Declaration_strategy = st.builds(
-    activityecorelua::Statement::GlobalFunction::Declaration,
+activityecorelua_Statement_GlobalFunction_Declaration_strategy = st.builds(
+    activityecorelua_Statement_GlobalFunction_Declaration,
     functionName=
         safe_text,
     prefix=
         safe_text
 )
-activityecorelua::Statement::Block_strategy = st.builds(
-    activityecorelua::Statement::Block,
+activityecorelua_Statement_For_Generic_strategy = st.builds(
+    activityecorelua_Statement_For_Generic,
+    names=
+        safe_text
+)
+activityecorelua_Statement_For_Numeric_strategy = st.builds(
+    activityecorelua_Statement_For_Numeric,
+    iteratorName=
+        safe_text
+)
+activityecorelua_Statement_Local_Variable_Declaration_strategy = st.builds(
+    activityecorelua_Statement_Local_Variable_Declaration,
+    variableNames=
+        safe_text
+)
+activityecorelua_Statement_While_strategy = st.builds(
+    activityecorelua_Statement_While,
+)
+activityecorelua_Statement_Block_strategy = st.builds(
+    activityecorelua_Statement_Block,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-activityecorelua::IntegerVariable_strategy = st.builds(
-    activityecorelua::IntegerVariable,
+activityecorelua_IntegerVariable_strategy = st.builds(
+    activityecorelua_IntegerVariable,
 )
-activityecorelua::Value_strategy = st.builds(
-    activityecorelua::Value,
+activityecorelua_Value_strategy = st.builds(
+    activityecorelua_Value,
 )
-activityecorelua::Input_strategy = st.builds(
-    activityecorelua::Input,
+activityecorelua_Input_strategy = st.builds(
+    activityecorelua_Input,
 )
-activityecorelua::InputValue_strategy = st.builds(
-    activityecorelua::InputValue,
+activityecorelua_InputValue_strategy = st.builds(
+    activityecorelua_InputValue,
 )
 Value_strategy = st.builds(
     Value,
 )
-activityecorelua::IntegerValue_strategy = st.builds(
-    activityecorelua::IntegerValue,
+activityecorelua_IntegerValue_strategy = st.builds(
+    activityecorelua_IntegerValue,
     value=
         st.integers()
 )
-activityecorelua::BooleanValue_strategy = st.builds(
-    activityecorelua::BooleanValue,
+activityecorelua_BooleanValue_strategy = st.builds(
+    activityecorelua_BooleanValue,
     value=
         st.booleans()
 )
-activityecorelua::Expression_strategy = st.builds(
-    activityecorelua::Expression,
+activityecorelua_Expression_strategy = st.builds(
+    activityecorelua_Expression,
 )
 Action_strategy = st.builds(
     Action,
 )
-activityecorelua::OpaqueAction_strategy = st.builds(
-    activityecorelua::OpaqueAction,
+activityecorelua_OpaqueAction_strategy = st.builds(
+    activityecorelua_OpaqueAction,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-activityecorelua::Action_strategy = st.builds(
-    activityecorelua::Action,
+activityecorelua_Action_strategy = st.builds(
+    activityecorelua_Action,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-activityecorelua::ExecutableNode_strategy = st.builds(
-    activityecorelua::ExecutableNode,
+activityecorelua_ExecutableNode_strategy = st.builds(
+    activityecorelua_ExecutableNode,
 )
-activityecorelua::ControlNode_strategy = st.builds(
-    activityecorelua::ControlNode,
+activityecorelua_ControlNode_strategy = st.builds(
+    activityecorelua_ControlNode,
 )
-activityecorelua::BooleanVariable_strategy = st.builds(
-    activityecorelua::BooleanVariable,
+activityecorelua_BooleanVariable_strategy = st.builds(
+    activityecorelua_BooleanVariable,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-activityecorelua::ControlFlow_strategy = st.builds(
-    activityecorelua::ControlFlow,
+activityecorelua_ControlFlow_strategy = st.builds(
+    activityecorelua_ControlFlow,
 )
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-activityecorelua::ActivityFinalNode_strategy = st.builds(
-    activityecorelua::ActivityFinalNode,
+activityecorelua_ActivityFinalNode_strategy = st.builds(
+    activityecorelua_ActivityFinalNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-activityecorelua::JoinNode_strategy = st.builds(
-    activityecorelua::JoinNode,
+activityecorelua_ForkNode_strategy = st.builds(
+    activityecorelua_ForkNode,
 )
-activityecorelua::DecisionNode_strategy = st.builds(
-    activityecorelua::DecisionNode,
+activityecorelua_DecisionNode_strategy = st.builds(
+    activityecorelua_DecisionNode,
 )
-activityecorelua::MergeNode_strategy = st.builds(
-    activityecorelua::MergeNode,
+activityecorelua_MergeNode_strategy = st.builds(
+    activityecorelua_MergeNode,
 )
-activityecorelua::ForkNode_strategy = st.builds(
-    activityecorelua::ForkNode,
+activityecorelua_FinalNode_strategy = st.builds(
+    activityecorelua_FinalNode,
 )
-activityecorelua::FinalNode_strategy = st.builds(
-    activityecorelua::FinalNode,
+activityecorelua_JoinNode_strategy = st.builds(
+    activityecorelua_JoinNode,
 )
-activityecorelua::InitialNode_strategy = st.builds(
-    activityecorelua::InitialNode,
+activityecorelua_InitialNode_strategy = st.builds(
+    activityecorelua_InitialNode,
 )
-activityecorelua::NamedElement_strategy = st.builds(
-    activityecorelua::NamedElement,
+activityecorelua_NamedElement_strategy = st.builds(
+    activityecorelua_NamedElement,
     name=
         safe_text
 )
-activityecorelua::Variable_strategy = st.builds(
-    activityecorelua::Variable,
+activityecorelua_Variable_strategy = st.builds(
+    activityecorelua_Variable,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-activityecorelua::ActivityEdge_strategy = st.builds(
-    activityecorelua::ActivityEdge,
+activityecorelua_ActivityEdge_strategy = st.builds(
+    activityecorelua_ActivityEdge,
 )
-activityecorelua::ActivityNode_strategy = st.builds(
-    activityecorelua::ActivityNode,
+activityecorelua_ActivityNode_strategy = st.builds(
+    activityecorelua_ActivityNode,
     running=
         st.booleans()
 )
 ETypedElement_strategy = st.builds(
     ETypedElement,
 )
-activityecorelua::Activity_strategy = st.builds(
-    activityecorelua::Activity,
+activityecorelua_Activity_strategy = st.builds(
+    activityecorelua_Activity,
 )
-activityecorelua::EParameter_strategy = st.builds(
-    activityecorelua::EParameter,
+activityecorelua_EParameter_strategy = st.builds(
+    activityecorelua_EParameter,
 )
 EDataType_strategy = st.builds(
     EDataType,
 )
-activityecorelua::EEnum_strategy = st.builds(
-    activityecorelua::EEnum,
+activityecorelua_EEnum_strategy = st.builds(
+    activityecorelua_EEnum,
 )
 ENamedElement_strategy = st.builds(
     ENamedElement,
 )
-activityecorelua::ETypeParameter_strategy = st.builds(
-    activityecorelua::ETypeParameter,
-)
-activityecorelua::EEnumLiteral_strategy = st.builds(
-    activityecorelua::EEnumLiteral,
+activityecorelua_EEnumLiteral_strategy = st.builds(
+    activityecorelua_EEnumLiteral,
+    instance=
+        safe_text,
     literal=
         safe_text,
     value=
-        st.integers(),
-    instance=
+        st.integers()
+)
+activityecorelua_EPackage_strategy = st.builds(
+    activityecorelua_EPackage,
+    nsURI=
+        safe_text,
+    nsPrefix=
         safe_text
 )
-activityecorelua::ETypedElement_strategy = st.builds(
-    activityecorelua::ETypedElement,
+activityecorelua_ETypeParameter_strategy = st.builds(
+    activityecorelua_ETypeParameter,
+)
+activityecorelua_ETypedElement_strategy = st.builds(
+    activityecorelua_ETypedElement,
+    many=
+        st.booleans(),
     required=
         st.booleans(),
     lowerBound=
         st.integers(),
+    unique=
+        st.booleans(),
     ordered=
         st.booleans(),
-    many=
-        st.booleans(),
     upperBound=
-        st.integers(),
-    unique=
-        st.booleans()
+        st.integers()
 )
-activityecorelua::EPackage_strategy = st.builds(
-    activityecorelua::EPackage,
-    nsPrefix=
-        safe_text,
-    nsURI=
-        safe_text
-)
-activityecorelua::EClassifier_strategy = st.builds(
-    activityecorelua::EClassifier,
+activityecorelua_EClassifier_strategy = st.builds(
+    activityecorelua_EClassifier,
     instanceClassName=
         safe_text,
     defaultValue=
         safe_text,
-    instanceTypeName=
-        safe_text,
     instanceClass=
+        safe_text,
+    instanceTypeName=
         safe_text
 )
-activityecorelua::EGenericType_strategy = st.builds(
-    activityecorelua::EGenericType,
+activityecorelua_EGenericType_strategy = st.builds(
+    activityecorelua_EGenericType,
 )
-activityecorelua::EOperation_strategy = st.builds(
-    activityecorelua::EOperation,
+activityecorelua_EOperation_strategy = st.builds(
+    activityecorelua_EOperation,
 )
-activityecorelua::EStructuralFeature_strategy = st.builds(
-    activityecorelua::EStructuralFeature,
-    volatile=
+activityecorelua_EStructuralFeature_strategy = st.builds(
+    activityecorelua_EStructuralFeature,
+    unsettable=
         st.booleans(),
-    transient=
+    changeable=
+        st.booleans(),
+    defaultValue=
+        safe_text,
+    volatile=
         st.booleans(),
     defaultValueLiteral=
         safe_text,
-    defaultValue=
-        safe_text,
-    unsettable=
-        st.booleans(),
     derived=
         st.booleans(),
-    changeable=
+    transient=
         st.booleans()
 )
 EClassifier_strategy = st.builds(
     EClassifier,
 )
-activityecorelua::EClass_strategy = st.builds(
-    activityecorelua::EClass,
-    interface=
-        st.booleans(),
+activityecorelua_EClass_strategy = st.builds(
+    activityecorelua_EClass,
     abstract=
+        st.booleans(),
+    interface=
         st.booleans()
 )
-activityecorelua::EObject_strategy = st.builds(
-    activityecorelua::EObject,
+activityecorelua_EObject_strategy = st.builds(
+    activityecorelua_EObject,
 )
-activityecorelua::EModelElement_strategy = st.builds(
-    activityecorelua::EModelElement,
+activityecorelua_EModelElement_strategy = st.builds(
+    activityecorelua_EModelElement,
 )
-activityecorelua::EStringToStringMapEntry_strategy = st.builds(
-    activityecorelua::EStringToStringMapEntry,
-    value=
-        safe_text,
+activityecorelua_EStringToStringMapEntry_strategy = st.builds(
+    activityecorelua_EStringToStringMapEntry,
     key=
+        safe_text,
+    value=
         safe_text
 )
 EModelElement_strategy = st.builds(
     EModelElement,
 )
-activityecorelua::ENamedElement_strategy = st.builds(
-    activityecorelua::ENamedElement,
+activityecorelua_EFactory_strategy = st.builds(
+    activityecorelua_EFactory,
+)
+activityecorelua_ENamedElement_strategy = st.builds(
+    activityecorelua_ENamedElement,
     name=
         safe_text
 )
-activityecorelua::EFactory_strategy = st.builds(
-    activityecorelua::EFactory,
-)
-activityecorelua::EAnnotation_strategy = st.builds(
-    activityecorelua::EAnnotation,
+activityecorelua_EAnnotation_strategy = st.builds(
+    activityecorelua_EAnnotation,
     source=
         safe_text
 )
-activityecorelua::EDataType_strategy = st.builds(
-    activityecorelua::EDataType,
+activityecorelua_EDataType_strategy = st.builds(
+    activityecorelua_EDataType,
     serializable=
         st.booleans()
 )
 EStructuralFeature_strategy = st.builds(
     EStructuralFeature,
 )
-activityecorelua::EReference_strategy = st.builds(
-    activityecorelua::EReference,
+activityecorelua_EReference_strategy = st.builds(
+    activityecorelua_EReference,
     containment=
         st.booleans(),
-    resolveProxies=
-        st.booleans(),
     container=
+        st.booleans(),
+    resolveProxies=
         st.booleans()
 )
-activityecorelua::EAttribute_strategy = st.builds(
-    activityecorelua::EAttribute,
+activityecorelua_EAttribute_strategy = st.builds(
+    activityecorelua_EAttribute,
     iD=
         st.booleans()
 )
 
-@given(instance=LastStatement::Return_strategy)
+@given(instance=LastStatement_Return_strategy)
 @settings(max_examples=50)
-def test_laststatement::return_instantiation(instance):
-    assert isinstance(instance, LastStatement::Return)
+def test_laststatement_return_instantiation(instance):
+    assert isinstance(instance, LastStatement_Return)
 
-@given(instance=activityecorelua::LastStatement::ReturnWithValue_strategy)
+@given(instance=activityecorelua_LastStatement_ReturnWithValue_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::laststatement::returnwithvalue_instantiation(instance):
-    assert isinstance(instance, activityecorelua::LastStatement::ReturnWithValue)
+def test_activityecorelua_laststatement_returnwithvalue_instantiation(instance):
+    assert isinstance(instance, activityecorelua_LastStatement_ReturnWithValue)
 
 @given(instance=Field_strategy)
 @settings(max_examples=50)
 def test_field_instantiation(instance):
     assert isinstance(instance, Field)
 
-@given(instance=activityecorelua::Field::AppendEntryToTable_strategy)
+@given(instance=activityecorelua_Field_AddEntryToTable_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::field::appendentrytotable_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Field::AppendEntryToTable)
-
-@given(instance=activityecorelua::Field::AddEntryToTable_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::field::addentrytotable_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Field::AddEntryToTable)
-
-@given(instance=activityecorelua::Field::AddEntryToTable_strategy)
-def test_activityecorelua::field::addentrytotable_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_activityecorelua_field_addentrytotable_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Field_AddEntryToTable)
 
 
-@given(instance=activityecorelua::Field::AddEntryToTable_strategy)
-def test_activityecorelua::field::addentrytotable_key_setter(instance):
+
+@given(instance=activityecorelua_Field_AddEntryToTable_strategy)
+def test_activityecorelua_field_addentrytotable_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=activityecorelua::Field::AddEntryToTable::Brackets_strategy)
+@given(instance=activityecorelua_Field_AppendEntryToTable_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::field::addentrytotable::brackets_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Field::AddEntryToTable::Brackets)
+def test_activityecorelua_field_appendentrytotable_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Field_AppendEntryToTable)
 
-@given(instance=activityecorelua::Functioncall::Arguments_strategy)
+@given(instance=activityecorelua_Field_AddEntryToTable_Brackets_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::functioncall::arguments_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Functioncall::Arguments)
+def test_activityecorelua_field_addentrytotable_brackets_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Field_AddEntryToTable_Brackets)
 
-@given(instance=activityecorelua::Field_strategy)
+@given(instance=activityecorelua_Functioncall_Arguments_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::field_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Field)
+def test_activityecorelua_functioncall_arguments_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Functioncall_Arguments)
+
+@given(instance=activityecorelua_Field_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_field_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Field)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=activityecorelua::Expression::VarArgs_strategy)
+@given(instance=activityecorelua_Expression_CallFunction_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::varargs_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::VarArgs)
+def test_activityecorelua_expression_callfunction_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_CallFunction)
 
-@given(instance=activityecorelua::Expression::Minus_strategy)
+@given(instance=activityecorelua_Expression_Concatenation_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::minus_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Minus)
+def test_activityecorelua_expression_concatenation_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Concatenation)
 
-@given(instance=activityecorelua::Expression::Plus_strategy)
+@given(instance=activityecorelua_Expression_Modulo_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::plus_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Plus)
+def test_activityecorelua_expression_modulo_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Modulo)
 
-@given(instance=activityecorelua::Expression::Invert_strategy)
+@given(instance=activityecorelua_Expression_Invert_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::invert_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Invert)
+def test_activityecorelua_expression_invert_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Invert)
 
-@given(instance=activityecorelua::Expression::Not::Equal_strategy)
+@given(instance=activityecorelua_Expression_Function_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::not::equal_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Not::Equal)
+def test_activityecorelua_expression_function_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Function)
 
-@given(instance=activityecorelua::Expression::AccessArray_strategy)
+@given(instance=activityecorelua_Expression_Multiplication_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::accessarray_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::AccessArray)
+def test_activityecorelua_expression_multiplication_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Multiplication)
 
-@given(instance=activityecorelua::Expression::Concatenation_strategy)
+@given(instance=activityecorelua_Expression_CallMemberFunction_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::concatenation_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Concatenation)
+def test_activityecorelua_expression_callmemberfunction_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_CallMemberFunction)
 
-@given(instance=activityecorelua::Expression::CallFunction_strategy)
+
+
+@given(instance=activityecorelua_Expression_CallMemberFunction_strategy)
+def test_activityecorelua_expression_callmemberfunction_memberFunctionName_setter(instance):
+    original = instance.memberFunctionName
+    instance.memberFunctionName = original
+    assert instance.memberFunctionName == original
+
+@given(instance=activityecorelua_Expression_Exponentiation_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::callfunction_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::CallFunction)
+def test_activityecorelua_expression_exponentiation_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Exponentiation)
 
-@given(instance=activityecorelua::Expression::Division_strategy)
+@given(instance=activityecorelua_Expression_Negate_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::division_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Division)
+def test_activityecorelua_expression_negate_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Negate)
 
-@given(instance=activityecorelua::Expression::Larger_strategy)
+@given(instance=activityecorelua_Expression_Larger_Equal_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::larger_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Larger)
+def test_activityecorelua_expression_larger_equal_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Larger_Equal)
 
-@given(instance=activityecorelua::Expression::AccessMember_strategy)
+@given(instance=activityecorelua_Expression_True_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::accessmember_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::AccessMember)
+def test_activityecorelua_expression_true_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_True)
 
-@given(instance=activityecorelua::Expression::AccessMember_strategy)
-def test_activityecorelua::expression::accessmember_memberName_type(instance):
-    assert isinstance(instance.memberName, str)
+@given(instance=activityecorelua_Expression_AccessMember_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_accessmember_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_AccessMember)
 
 
-@given(instance=activityecorelua::Expression::AccessMember_strategy)
-def test_activityecorelua::expression::accessmember_memberName_setter(instance):
+
+@given(instance=activityecorelua_Expression_AccessMember_strategy)
+def test_activityecorelua_expression_accessmember_memberName_setter(instance):
     original = instance.memberName
     instance.memberName = original
     assert instance.memberName == original
 
-@given(instance=activityecorelua::Expression::Smaller::Equal_strategy)
+@given(instance=activityecorelua_Expression_And_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::smaller::equal_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Smaller::Equal)
+def test_activityecorelua_expression_and_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_And)
 
-@given(instance=activityecorelua::Expression::TableConstructor_strategy)
+@given(instance=activityecorelua_Expression_Equal_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::tableconstructor_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::TableConstructor)
+def test_activityecorelua_expression_equal_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Equal)
 
-@given(instance=activityecorelua::Expression::Smaller_strategy)
+@given(instance=activityecorelua_Expression_VarArgs_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::smaller_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Smaller)
+def test_activityecorelua_expression_varargs_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_VarArgs)
 
-@given(instance=activityecorelua::Expression::Length_strategy)
+@given(instance=activityecorelua_Expression_Plus_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::length_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Length)
+def test_activityecorelua_expression_plus_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Plus)
 
-@given(instance=activityecorelua::Expression::Modulo_strategy)
+@given(instance=activityecorelua_Expression_VariableName_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::modulo_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Modulo)
-
-@given(instance=activityecorelua::Expression::Negate_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::negate_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Negate)
-
-@given(instance=activityecorelua::Expression::Multiplication_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::multiplication_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Multiplication)
-
-@given(instance=activityecorelua::Expression::Number_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::number_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Number)
-
-@given(instance=activityecorelua::Expression::Number_strategy)
-def test_activityecorelua::expression::number_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_activityecorelua_expression_variablename_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_VariableName)
 
 
-@given(instance=activityecorelua::Expression::Number_strategy)
-def test_activityecorelua::expression::number_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=activityecorelua::Expression::Or_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::or_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Or)
-
-@given(instance=activityecorelua::Expression::Function_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::function_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Function)
-
-@given(instance=activityecorelua::Expression::Equal_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::equal_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Equal)
-
-@given(instance=activityecorelua::Expression::Larger::Equal_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::larger::equal_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Larger::Equal)
-
-@given(instance=activityecorelua::Expression::And_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::and_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::And)
-
-@given(instance=activityecorelua::Expression::CallMemberFunction_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::callmemberfunction_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::CallMemberFunction)
-
-@given(instance=activityecorelua::Expression::CallMemberFunction_strategy)
-def test_activityecorelua::expression::callmemberfunction_memberFunctionName_type(instance):
-    assert isinstance(instance.memberFunctionName, str)
-
-
-@given(instance=activityecorelua::Expression::CallMemberFunction_strategy)
-def test_activityecorelua::expression::callmemberfunction_memberFunctionName_setter(instance):
-    original = instance.memberFunctionName
-    instance.memberFunctionName = original
-    assert instance.memberFunctionName == original
-
-@given(instance=activityecorelua::Expression::VariableName_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::variablename_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::VariableName)
-
-@given(instance=activityecorelua::Expression::VariableName_strategy)
-def test_activityecorelua::expression::variablename_variable_type(instance):
-    assert isinstance(instance.variable, str)
-
-
-@given(instance=activityecorelua::Expression::VariableName_strategy)
-def test_activityecorelua::expression::variablename_variable_setter(instance):
+@given(instance=activityecorelua_Expression_VariableName_strategy)
+def test_activityecorelua_expression_variablename_variable_setter(instance):
     original = instance.variable
     instance.variable = original
     assert instance.variable == original
 
-@given(instance=activityecorelua::Expression::False_strategy)
+@given(instance=activityecorelua_Expression_Number_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::false_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::False)
-
-@given(instance=activityecorelua::Expression::String_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::expression::string_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::String)
-
-@given(instance=activityecorelua::Expression::String_strategy)
-def test_activityecorelua::expression::string_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_activityecorelua_expression_number_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Number)
 
 
-@given(instance=activityecorelua::Expression::String_strategy)
-def test_activityecorelua::expression::string_value_setter(instance):
+
+@given(instance=activityecorelua_Expression_Number_strategy)
+def test_activityecorelua_expression_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=activityecorelua::Expression::True_strategy)
+@given(instance=activityecorelua_Expression_Length_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::true_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::True)
+def test_activityecorelua_expression_length_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Length)
 
-@given(instance=activityecorelua::Expression::Exponentiation_strategy)
+@given(instance=activityecorelua_Expression_Division_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::exponentiation_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Exponentiation)
+def test_activityecorelua_expression_division_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Division)
 
-@given(instance=activityecorelua::Expression::Nil_strategy)
+@given(instance=activityecorelua_Expression_Not_Equal_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression::nil_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression::Nil)
+def test_activityecorelua_expression_not_equal_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Not_Equal)
 
-@given(instance=Statement::FunctioncallOrAssignment_strategy)
+@given(instance=activityecorelua_Expression_Minus_strategy)
 @settings(max_examples=50)
-def test_statement::functioncallorassignment_instantiation(instance):
-    assert isinstance(instance, Statement::FunctioncallOrAssignment)
+def test_activityecorelua_expression_minus_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Minus)
 
-@given(instance=activityecorelua::Statement::CallFunction_strategy)
+@given(instance=activityecorelua_Expression_Or_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::callfunction_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::CallFunction)
+def test_activityecorelua_expression_or_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Or)
 
-@given(instance=activityecorelua::Statement::CallMemberFunction_strategy)
+@given(instance=activityecorelua_Expression_AccessArray_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::callmemberfunction_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::CallMemberFunction)
+def test_activityecorelua_expression_accessarray_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_AccessArray)
 
-@given(instance=activityecorelua::Statement::CallMemberFunction_strategy)
-def test_activityecorelua::statement::callmemberfunction_memberFunctionName_type(instance):
-    assert isinstance(instance.memberFunctionName, str)
+@given(instance=activityecorelua_Expression_TableConstructor_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_tableconstructor_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_TableConstructor)
+
+@given(instance=activityecorelua_Expression_Larger_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_larger_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Larger)
+
+@given(instance=activityecorelua_Expression_String_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_string_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_String)
 
 
-@given(instance=activityecorelua::Statement::CallMemberFunction_strategy)
-def test_activityecorelua::statement::callmemberfunction_memberFunctionName_setter(instance):
+
+@given(instance=activityecorelua_Expression_String_strategy)
+def test_activityecorelua_expression_string_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=activityecorelua_Expression_Smaller_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_smaller_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Smaller)
+
+@given(instance=activityecorelua_Expression_Smaller_Equal_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_smaller_equal_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Smaller_Equal)
+
+@given(instance=activityecorelua_Expression_False_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_false_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_False)
+
+@given(instance=activityecorelua_Expression_Nil_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_expression_nil_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression_Nil)
+
+@given(instance=Statement_FunctioncallOrAssignment_strategy)
+@settings(max_examples=50)
+def test_statement_functioncallorassignment_instantiation(instance):
+    assert isinstance(instance, Statement_FunctioncallOrAssignment)
+
+@given(instance=activityecorelua_Statement_CallMemberFunction_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_statement_callmemberfunction_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_CallMemberFunction)
+
+
+
+@given(instance=activityecorelua_Statement_CallMemberFunction_strategy)
+def test_activityecorelua_statement_callmemberfunction_memberFunctionName_setter(instance):
     original = instance.memberFunctionName
     instance.memberFunctionName = original
     assert instance.memberFunctionName == original
 
-@given(instance=activityecorelua::Statement::Assignment_strategy)
+@given(instance=activityecorelua_Statement_CallFunction_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::assignment_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::Assignment)
+def test_activityecorelua_statement_callfunction_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_CallFunction)
 
-@given(instance=activityecorelua::Statement::If::Then::Else::ElseIfPart_strategy)
+@given(instance=activityecorelua_Statement_Assignment_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::if::then::else::elseifpart_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::If::Then::Else::ElseIfPart)
+def test_activityecorelua_statement_assignment_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_Assignment)
 
-@given(instance=activityecorelua::Function_strategy)
+@given(instance=activityecorelua_Statement_If_Then_Else_ElseIfPart_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::function_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Function)
+def test_activityecorelua_statement_if_then_else_elseifpart_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_If_Then_Else_ElseIfPart)
 
-@given(instance=activityecorelua::Function_strategy)
-def test_activityecorelua::function_varArgs_type(instance):
-    assert isinstance(instance.varArgs, bool)
+@given(instance=activityecorelua_Function_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_function_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Function)
 
 
-@given(instance=activityecorelua::Function_strategy)
-def test_activityecorelua::function_varArgs_setter(instance):
+
+@given(instance=activityecorelua_Function_strategy)
+def test_activityecorelua_function_varArgs_setter(instance):
     original = instance.varArgs
     instance.varArgs = original
     assert instance.varArgs == original
 
-@given(instance=activityecorelua::Function_strategy)
-def test_activityecorelua::function_parameters_type(instance):
-    assert isinstance(instance.parameters, str)
 
 
-@given(instance=activityecorelua::Function_strategy)
-def test_activityecorelua::function_parameters_setter(instance):
+@given(instance=activityecorelua_Function_strategy)
+def test_activityecorelua_function_parameters_setter(instance):
     original = instance.parameters
     instance.parameters = original
     assert instance.parameters == original
@@ -3245,352 +3218,322 @@ def test_activityecorelua::function_parameters_setter(instance):
 def test_laststatement_instantiation(instance):
     assert isinstance(instance, LastStatement)
 
-@given(instance=activityecorelua::LastStatement::Break_strategy)
+@given(instance=activityecorelua_LastStatement_Break_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::laststatement::break_instantiation(instance):
-    assert isinstance(instance, activityecorelua::LastStatement::Break)
+def test_activityecorelua_laststatement_break_instantiation(instance):
+    assert isinstance(instance, activityecorelua_LastStatement_Break)
 
-@given(instance=activityecorelua::LastStatement::Return_strategy)
+@given(instance=activityecorelua_LastStatement_Return_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::laststatement::return_instantiation(instance):
-    assert isinstance(instance, activityecorelua::LastStatement::Return)
+def test_activityecorelua_laststatement_return_instantiation(instance):
+    assert isinstance(instance, activityecorelua_LastStatement_Return)
 
-@given(instance=activityecorelua::LastStatement_strategy)
+@given(instance=activityecorelua_LastStatement_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::laststatement_instantiation(instance):
-    assert isinstance(instance, activityecorelua::LastStatement)
+def test_activityecorelua_laststatement_instantiation(instance):
+    assert isinstance(instance, activityecorelua_LastStatement)
 
-@given(instance=activityecorelua::Statement_strategy)
+@given(instance=activityecorelua_Statement_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement)
+def test_activityecorelua_statement_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement)
 
 @given(instance=Chunk_strategy)
 @settings(max_examples=50)
 def test_chunk_instantiation(instance):
     assert isinstance(instance, Chunk)
 
-@given(instance=activityecorelua::Block_strategy)
+@given(instance=activityecorelua_Block_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::block_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Block)
+def test_activityecorelua_block_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Block)
 
-@given(instance=activityecorelua::Chunk_strategy)
+@given(instance=activityecorelua_Chunk_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::chunk_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Chunk)
+def test_activityecorelua_chunk_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Chunk)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=activityecorelua::Statement::FunctioncallOrAssignment_strategy)
+@given(instance=activityecorelua_Statement_LocalFunction_Declaration_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::functioncallorassignment_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::FunctioncallOrAssignment)
-
-@given(instance=activityecorelua::Statement::If::Then::Else_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::statement::if::then::else_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::If::Then::Else)
-
-@given(instance=activityecorelua::Statement::For::Generic_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::statement::for::generic_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::For::Generic)
-
-@given(instance=activityecorelua::Statement::For::Generic_strategy)
-def test_activityecorelua::statement::for::generic_names_type(instance):
-    assert isinstance(instance.names, str)
+def test_activityecorelua_statement_localfunction_declaration_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_LocalFunction_Declaration)
 
 
-@given(instance=activityecorelua::Statement::For::Generic_strategy)
-def test_activityecorelua::statement::for::generic_names_setter(instance):
-    original = instance.names
-    instance.names = original
-    assert instance.names == original
 
-@given(instance=activityecorelua::Statement::While_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::statement::while_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::While)
-
-@given(instance=activityecorelua::Statement::LocalFunction::Declaration_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::statement::localfunction::declaration_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::LocalFunction::Declaration)
-
-@given(instance=activityecorelua::Statement::LocalFunction::Declaration_strategy)
-def test_activityecorelua::statement::localfunction::declaration_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
-
-
-@given(instance=activityecorelua::Statement::LocalFunction::Declaration_strategy)
-def test_activityecorelua::statement::localfunction::declaration_functionName_setter(instance):
+@given(instance=activityecorelua_Statement_LocalFunction_Declaration_strategy)
+def test_activityecorelua_statement_localfunction_declaration_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=activityecorelua::Statement::For::Numeric_strategy)
+@given(instance=activityecorelua_Statement_If_Then_Else_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::for::numeric_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::For::Numeric)
+def test_activityecorelua_statement_if_then_else_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_If_Then_Else)
 
-@given(instance=activityecorelua::Statement::For::Numeric_strategy)
-def test_activityecorelua::statement::for::numeric_iteratorName_type(instance):
-    assert isinstance(instance.iteratorName, str)
-
-
-@given(instance=activityecorelua::Statement::For::Numeric_strategy)
-def test_activityecorelua::statement::for::numeric_iteratorName_setter(instance):
-    original = instance.iteratorName
-    instance.iteratorName = original
-    assert instance.iteratorName == original
-
-@given(instance=activityecorelua::Statement::Repeat_strategy)
+@given(instance=activityecorelua_Statement_FunctioncallOrAssignment_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::repeat_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::Repeat)
+def test_activityecorelua_statement_functioncallorassignment_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_FunctioncallOrAssignment)
 
-@given(instance=activityecorelua::Statement::Local::Variable::Declaration_strategy)
+@given(instance=activityecorelua_Statement_Repeat_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::local::variable::declaration_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::Local::Variable::Declaration)
+def test_activityecorelua_statement_repeat_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_Repeat)
 
-@given(instance=activityecorelua::Statement::Local::Variable::Declaration_strategy)
-def test_activityecorelua::statement::local::variable::declaration_variableNames_type(instance):
-    assert isinstance(instance.variableNames, str)
-
-
-@given(instance=activityecorelua::Statement::Local::Variable::Declaration_strategy)
-def test_activityecorelua::statement::local::variable::declaration_variableNames_setter(instance):
-    original = instance.variableNames
-    instance.variableNames = original
-    assert instance.variableNames == original
-
-@given(instance=activityecorelua::Statement::GlobalFunction::Declaration_strategy)
+@given(instance=activityecorelua_Statement_GlobalFunction_Declaration_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::globalfunction::declaration_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::GlobalFunction::Declaration)
-
-@given(instance=activityecorelua::Statement::GlobalFunction::Declaration_strategy)
-def test_activityecorelua::statement::globalfunction::declaration_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_activityecorelua_statement_globalfunction_declaration_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_GlobalFunction_Declaration)
 
 
-@given(instance=activityecorelua::Statement::GlobalFunction::Declaration_strategy)
-def test_activityecorelua::statement::globalfunction::declaration_functionName_setter(instance):
+
+@given(instance=activityecorelua_Statement_GlobalFunction_Declaration_strategy)
+def test_activityecorelua_statement_globalfunction_declaration_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=activityecorelua::Statement::GlobalFunction::Declaration_strategy)
-def test_activityecorelua::statement::globalfunction::declaration_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
 
 
-@given(instance=activityecorelua::Statement::GlobalFunction::Declaration_strategy)
-def test_activityecorelua::statement::globalfunction::declaration_prefix_setter(instance):
+@given(instance=activityecorelua_Statement_GlobalFunction_Declaration_strategy)
+def test_activityecorelua_statement_globalfunction_declaration_prefix_setter(instance):
     original = instance.prefix
     instance.prefix = original
     assert instance.prefix == original
 
-@given(instance=activityecorelua::Statement::Block_strategy)
+@given(instance=activityecorelua_Statement_For_Generic_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::statement::block_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Statement::Block)
+def test_activityecorelua_statement_for_generic_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_For_Generic)
+
+
+
+@given(instance=activityecorelua_Statement_For_Generic_strategy)
+def test_activityecorelua_statement_for_generic_names_setter(instance):
+    original = instance.names
+    instance.names = original
+    assert instance.names == original
+
+@given(instance=activityecorelua_Statement_For_Numeric_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_statement_for_numeric_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_For_Numeric)
+
+
+
+@given(instance=activityecorelua_Statement_For_Numeric_strategy)
+def test_activityecorelua_statement_for_numeric_iteratorName_setter(instance):
+    original = instance.iteratorName
+    instance.iteratorName = original
+    assert instance.iteratorName == original
+
+@given(instance=activityecorelua_Statement_Local_Variable_Declaration_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_statement_local_variable_declaration_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_Local_Variable_Declaration)
+
+
+
+@given(instance=activityecorelua_Statement_Local_Variable_Declaration_strategy)
+def test_activityecorelua_statement_local_variable_declaration_variableNames_setter(instance):
+    original = instance.variableNames
+    instance.variableNames = original
+    assert instance.variableNames == original
+
+@given(instance=activityecorelua_Statement_While_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_statement_while_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_While)
+
+@given(instance=activityecorelua_Statement_Block_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_statement_block_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Statement_Block)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=activityecorelua::IntegerVariable_strategy)
+@given(instance=activityecorelua_IntegerVariable_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::integervariable_instantiation(instance):
-    assert isinstance(instance, activityecorelua::IntegerVariable)
+def test_activityecorelua_integervariable_instantiation(instance):
+    assert isinstance(instance, activityecorelua_IntegerVariable)
 
-@given(instance=activityecorelua::Value_strategy)
+@given(instance=activityecorelua_Value_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::value_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Value)
+def test_activityecorelua_value_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Value)
 
-@given(instance=activityecorelua::Input_strategy)
+@given(instance=activityecorelua_Input_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::input_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Input)
+def test_activityecorelua_input_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Input)
 
-@given(instance=activityecorelua::InputValue_strategy)
+@given(instance=activityecorelua_InputValue_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::inputvalue_instantiation(instance):
-    assert isinstance(instance, activityecorelua::InputValue)
+def test_activityecorelua_inputvalue_instantiation(instance):
+    assert isinstance(instance, activityecorelua_InputValue)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=activityecorelua::IntegerValue_strategy)
+@given(instance=activityecorelua_IntegerValue_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::integervalue_instantiation(instance):
-    assert isinstance(instance, activityecorelua::IntegerValue)
-
-@given(instance=activityecorelua::IntegerValue_strategy)
-def test_activityecorelua::integervalue_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_activityecorelua_integervalue_instantiation(instance):
+    assert isinstance(instance, activityecorelua_IntegerValue)
 
 
-@given(instance=activityecorelua::IntegerValue_strategy)
-def test_activityecorelua::integervalue_value_setter(instance):
+
+@given(instance=activityecorelua_IntegerValue_strategy)
+def test_activityecorelua_integervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=activityecorelua::BooleanValue_strategy)
+@given(instance=activityecorelua_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::booleanvalue_instantiation(instance):
-    assert isinstance(instance, activityecorelua::BooleanValue)
-
-@given(instance=activityecorelua::BooleanValue_strategy)
-def test_activityecorelua::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_activityecorelua_booleanvalue_instantiation(instance):
+    assert isinstance(instance, activityecorelua_BooleanValue)
 
 
-@given(instance=activityecorelua::BooleanValue_strategy)
-def test_activityecorelua::booleanvalue_value_setter(instance):
+
+@given(instance=activityecorelua_BooleanValue_strategy)
+def test_activityecorelua_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=activityecorelua::Expression_strategy)
+@given(instance=activityecorelua_Expression_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::expression_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Expression)
+def test_activityecorelua_expression_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Expression)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=activityecorelua::OpaqueAction_strategy)
+@given(instance=activityecorelua_OpaqueAction_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::opaqueaction_instantiation(instance):
-    assert isinstance(instance, activityecorelua::OpaqueAction)
+def test_activityecorelua_opaqueaction_instantiation(instance):
+    assert isinstance(instance, activityecorelua_OpaqueAction)
 
 @given(instance=ExecutableNode_strategy)
 @settings(max_examples=50)
 def test_executablenode_instantiation(instance):
     assert isinstance(instance, ExecutableNode)
 
-@given(instance=activityecorelua::Action_strategy)
+@given(instance=activityecorelua_Action_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::action_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Action)
+def test_activityecorelua_action_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Action)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=activityecorelua::ExecutableNode_strategy)
+@given(instance=activityecorelua_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::executablenode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ExecutableNode)
+def test_activityecorelua_executablenode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ExecutableNode)
 
-@given(instance=activityecorelua::ControlNode_strategy)
+@given(instance=activityecorelua_ControlNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::controlnode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ControlNode)
+def test_activityecorelua_controlnode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ControlNode)
 
-@given(instance=activityecorelua::BooleanVariable_strategy)
+@given(instance=activityecorelua_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::booleanvariable_instantiation(instance):
-    assert isinstance(instance, activityecorelua::BooleanVariable)
+def test_activityecorelua_booleanvariable_instantiation(instance):
+    assert isinstance(instance, activityecorelua_BooleanVariable)
 
 @given(instance=ActivityEdge_strategy)
 @settings(max_examples=50)
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=activityecorelua::ControlFlow_strategy)
+@given(instance=activityecorelua_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::controlflow_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ControlFlow)
+def test_activityecorelua_controlflow_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ControlFlow)
 
 @given(instance=FinalNode_strategy)
 @settings(max_examples=50)
 def test_finalnode_instantiation(instance):
     assert isinstance(instance, FinalNode)
 
-@given(instance=activityecorelua::ActivityFinalNode_strategy)
+@given(instance=activityecorelua_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ActivityFinalNode)
+def test_activityecorelua_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ActivityFinalNode)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=activityecorelua::JoinNode_strategy)
+@given(instance=activityecorelua_ForkNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::joinnode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::JoinNode)
+def test_activityecorelua_forknode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ForkNode)
 
-@given(instance=activityecorelua::DecisionNode_strategy)
+@given(instance=activityecorelua_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::decisionnode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::DecisionNode)
+def test_activityecorelua_decisionnode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_DecisionNode)
 
-@given(instance=activityecorelua::MergeNode_strategy)
+@given(instance=activityecorelua_MergeNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::mergenode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::MergeNode)
+def test_activityecorelua_mergenode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_MergeNode)
 
-@given(instance=activityecorelua::ForkNode_strategy)
+@given(instance=activityecorelua_FinalNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::forknode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ForkNode)
+def test_activityecorelua_finalnode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_FinalNode)
 
-@given(instance=activityecorelua::FinalNode_strategy)
+@given(instance=activityecorelua_JoinNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::finalnode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::FinalNode)
+def test_activityecorelua_joinnode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_JoinNode)
 
-@given(instance=activityecorelua::InitialNode_strategy)
+@given(instance=activityecorelua_InitialNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::initialnode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::InitialNode)
+def test_activityecorelua_initialnode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_InitialNode)
 
-@given(instance=activityecorelua::NamedElement_strategy)
+@given(instance=activityecorelua_NamedElement_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::namedelement_instantiation(instance):
-    assert isinstance(instance, activityecorelua::NamedElement)
-
-@given(instance=activityecorelua::NamedElement_strategy)
-def test_activityecorelua::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activityecorelua_namedelement_instantiation(instance):
+    assert isinstance(instance, activityecorelua_NamedElement)
 
 
-@given(instance=activityecorelua::NamedElement_strategy)
-def test_activityecorelua::namedelement_name_setter(instance):
+
+@given(instance=activityecorelua_NamedElement_strategy)
+def test_activityecorelua_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=activityecorelua::Variable_strategy)
+@given(instance=activityecorelua_Variable_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::variable_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Variable)
-
-@given(instance=activityecorelua::Variable_strategy)
-def test_activityecorelua::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activityecorelua_variable_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Variable)
 
 
-@given(instance=activityecorelua::Variable_strategy)
-def test_activityecorelua::variable_name_setter(instance):
+
+@given(instance=activityecorelua_Variable_strategy)
+def test_activityecorelua_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3600,23 +3543,20 @@ def test_activityecorelua::variable_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=activityecorelua::ActivityEdge_strategy)
+@given(instance=activityecorelua_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::activityedge_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ActivityEdge)
+def test_activityecorelua_activityedge_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ActivityEdge)
 
-@given(instance=activityecorelua::ActivityNode_strategy)
+@given(instance=activityecorelua_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::activitynode_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ActivityNode)
-
-@given(instance=activityecorelua::ActivityNode_strategy)
-def test_activityecorelua::activitynode_running_type(instance):
-    assert isinstance(instance.running, bool)
+def test_activityecorelua_activitynode_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ActivityNode)
 
 
-@given(instance=activityecorelua::ActivityNode_strategy)
-def test_activityecorelua::activitynode_running_setter(instance):
+
+@given(instance=activityecorelua_ActivityNode_strategy)
+def test_activityecorelua_activitynode_running_setter(instance):
     original = instance.running
     instance.running = original
     assert instance.running == original
@@ -3626,220 +3566,175 @@ def test_activityecorelua::activitynode_running_setter(instance):
 def test_etypedelement_instantiation(instance):
     assert isinstance(instance, ETypedElement)
 
-@given(instance=activityecorelua::Activity_strategy)
+@given(instance=activityecorelua_Activity_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::activity_instantiation(instance):
-    assert isinstance(instance, activityecorelua::Activity)
+def test_activityecorelua_activity_instantiation(instance):
+    assert isinstance(instance, activityecorelua_Activity)
 
-@given(instance=activityecorelua::EParameter_strategy)
+@given(instance=activityecorelua_EParameter_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eparameter_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EParameter)
+def test_activityecorelua_eparameter_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EParameter)
 
 @given(instance=EDataType_strategy)
 @settings(max_examples=50)
 def test_edatatype_instantiation(instance):
     assert isinstance(instance, EDataType)
 
-@given(instance=activityecorelua::EEnum_strategy)
+@given(instance=activityecorelua_EEnum_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eenum_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EEnum)
+def test_activityecorelua_eenum_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EEnum)
 
 @given(instance=ENamedElement_strategy)
 @settings(max_examples=50)
 def test_enamedelement_instantiation(instance):
     assert isinstance(instance, ENamedElement)
 
-@given(instance=activityecorelua::ETypeParameter_strategy)
+@given(instance=activityecorelua_EEnumLiteral_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::etypeparameter_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ETypeParameter)
-
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::eenumliteral_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EEnumLiteral)
-
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-def test_activityecorelua::eenumliteral_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_activityecorelua_eenumliteral_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EEnumLiteral)
 
 
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-def test_activityecorelua::eenumliteral_literal_setter(instance):
-    original = instance.literal
-    instance.literal = original
-    assert instance.literal == original
 
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-def test_activityecorelua::eenumliteral_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-def test_activityecorelua::eenumliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-def test_activityecorelua::eenumliteral_instance_type(instance):
-    assert isinstance(instance.instance, str)
-
-
-@given(instance=activityecorelua::EEnumLiteral_strategy)
-def test_activityecorelua::eenumliteral_instance_setter(instance):
+@given(instance=activityecorelua_EEnumLiteral_strategy)
+def test_activityecorelua_eenumliteral_instance_setter(instance):
     original = instance.instance
     instance.instance = original
     assert instance.instance == original
 
-@given(instance=activityecorelua::ETypedElement_strategy)
+
+
+@given(instance=activityecorelua_EEnumLiteral_strategy)
+def test_activityecorelua_eenumliteral_literal_setter(instance):
+    original = instance.literal
+    instance.literal = original
+    assert instance.literal == original
+
+
+
+@given(instance=activityecorelua_EEnumLiteral_strategy)
+def test_activityecorelua_eenumliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=activityecorelua_EPackage_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::etypedelement_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ETypedElement)
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_required_type(instance):
-    assert isinstance(instance.required, bool)
+def test_activityecorelua_epackage_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EPackage)
 
 
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_required_setter(instance):
-    original = instance.required
-    instance.required = original
-    assert instance.required == original
 
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
-
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_ordered_type(instance):
-    assert isinstance(instance.ordered, bool)
-
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_many_type(instance):
-    assert isinstance(instance.many, bool)
-
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_many_setter(instance):
-    original = instance.many
-    instance.many = original
-    assert instance.many == original
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
-
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_upperBound_setter(instance):
-    original = instance.upperBound
-    instance.upperBound = original
-    assert instance.upperBound == original
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_unique_type(instance):
-    assert isinstance(instance.unique, bool)
-
-
-@given(instance=activityecorelua::ETypedElement_strategy)
-def test_activityecorelua::etypedelement_unique_setter(instance):
-    original = instance.unique
-    instance.unique = original
-    assert instance.unique == original
-
-@given(instance=activityecorelua::EPackage_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::epackage_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EPackage)
-
-@given(instance=activityecorelua::EPackage_strategy)
-def test_activityecorelua::epackage_nsPrefix_type(instance):
-    assert isinstance(instance.nsPrefix, str)
-
-
-@given(instance=activityecorelua::EPackage_strategy)
-def test_activityecorelua::epackage_nsPrefix_setter(instance):
-    original = instance.nsPrefix
-    instance.nsPrefix = original
-    assert instance.nsPrefix == original
-
-@given(instance=activityecorelua::EPackage_strategy)
-def test_activityecorelua::epackage_nsURI_type(instance):
-    assert isinstance(instance.nsURI, str)
-
-
-@given(instance=activityecorelua::EPackage_strategy)
-def test_activityecorelua::epackage_nsURI_setter(instance):
+@given(instance=activityecorelua_EPackage_strategy)
+def test_activityecorelua_epackage_nsURI_setter(instance):
     original = instance.nsURI
     instance.nsURI = original
     assert instance.nsURI == original
 
-@given(instance=activityecorelua::EClassifier_strategy)
+
+
+@given(instance=activityecorelua_EPackage_strategy)
+def test_activityecorelua_epackage_nsPrefix_setter(instance):
+    original = instance.nsPrefix
+    instance.nsPrefix = original
+    assert instance.nsPrefix == original
+
+@given(instance=activityecorelua_ETypeParameter_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eclassifier_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EClassifier)
+def test_activityecorelua_etypeparameter_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ETypeParameter)
 
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_instanceClassName_type(instance):
-    assert isinstance(instance.instanceClassName, str)
+@given(instance=activityecorelua_ETypedElement_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_etypedelement_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ETypedElement)
 
 
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_instanceClassName_setter(instance):
+
+@given(instance=activityecorelua_ETypedElement_strategy)
+def test_activityecorelua_etypedelement_many_setter(instance):
+    original = instance.many
+    instance.many = original
+    assert instance.many == original
+
+
+
+@given(instance=activityecorelua_ETypedElement_strategy)
+def test_activityecorelua_etypedelement_required_setter(instance):
+    original = instance.required
+    instance.required = original
+    assert instance.required == original
+
+
+
+@given(instance=activityecorelua_ETypedElement_strategy)
+def test_activityecorelua_etypedelement_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+
+
+@given(instance=activityecorelua_ETypedElement_strategy)
+def test_activityecorelua_etypedelement_unique_setter(instance):
+    original = instance.unique
+    instance.unique = original
+    assert instance.unique == original
+
+
+
+@given(instance=activityecorelua_ETypedElement_strategy)
+def test_activityecorelua_etypedelement_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
+
+
+@given(instance=activityecorelua_ETypedElement_strategy)
+def test_activityecorelua_etypedelement_upperBound_setter(instance):
+    original = instance.upperBound
+    instance.upperBound = original
+    assert instance.upperBound == original
+
+@given(instance=activityecorelua_EClassifier_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_eclassifier_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EClassifier)
+
+
+
+@given(instance=activityecorelua_EClassifier_strategy)
+def test_activityecorelua_eclassifier_instanceClassName_setter(instance):
     original = instance.instanceClassName
     instance.instanceClassName = original
     assert instance.instanceClassName == original
 
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
 
 
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_defaultValue_setter(instance):
+@given(instance=activityecorelua_EClassifier_strategy)
+def test_activityecorelua_eclassifier_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_instanceTypeName_type(instance):
-    assert isinstance(instance.instanceTypeName, str)
 
 
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_instanceTypeName_setter(instance):
-    original = instance.instanceTypeName
-    instance.instanceTypeName = original
-    assert instance.instanceTypeName == original
-
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_instanceClass_type(instance):
-    assert isinstance(instance.instanceClass, str)
-
-
-@given(instance=activityecorelua::EClassifier_strategy)
-def test_activityecorelua::eclassifier_instanceClass_setter(instance):
+@given(instance=activityecorelua_EClassifier_strategy)
+def test_activityecorelua_eclassifier_instanceClass_setter(instance):
     original = instance.instanceClass
     instance.instanceClass = original
     assert instance.instanceClass == original
+
+
+
+@given(instance=activityecorelua_EClassifier_strategy)
+def test_activityecorelua_eclassifier_instanceTypeName_setter(instance):
+    original = instance.instanceTypeName
+    instance.instanceTypeName = original
+    assert instance.instanceTypeName == original
 
 import warnings
 import copy
@@ -3847,9 +3742,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EClassifier_strategy)
+@given(instance=activityecorelua_EClassifier_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::eclassifier_isinstance_changes_state(instance):
+def test_activityecorelua_eclassifier_isinstance_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3863,24 +3758,24 @@ def test_activityecorelua::eclassifier_isinstance_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInstance' in activityecorelua::EClassifier is empty"
+        assert has_statements, f"Function 'isInstance' in activityecorelua_EClassifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInstance' in activityecorelua::EClassifier did not change state; check implementation")
+            warnings.warn(f"Operation 'isInstance' in activityecorelua_EClassifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInstance' in activityecorelua::EClassifier is not implemented or raised an error")
+        warnings.warn(f"Operation 'isInstance' in activityecorelua_EClassifier is not implemented or raised an error")
 
-@given(instance=activityecorelua::EGenericType_strategy)
+@given(instance=activityecorelua_EGenericType_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::egenerictype_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EGenericType)
+def test_activityecorelua_egenerictype_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EGenericType)
 
-@given(instance=activityecorelua::EOperation_strategy)
+@given(instance=activityecorelua_EOperation_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eoperation_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EOperation)
+def test_activityecorelua_eoperation_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EOperation)
 
 import warnings
 import copy
@@ -3888,9 +3783,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EOperation_strategy)
+@given(instance=activityecorelua_EOperation_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::eoperation_isoverrideof_changes_state(instance):
+def test_activityecorelua_eoperation_isoverrideof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3904,128 +3799,101 @@ def test_activityecorelua::eoperation_isoverrideof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isOverrideOf' in activityecorelua::EOperation is empty"
+        assert has_statements, f"Function 'isOverrideOf' in activityecorelua_EOperation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isOverrideOf' in activityecorelua::EOperation did not change state; check implementation")
+            warnings.warn(f"Operation 'isOverrideOf' in activityecorelua_EOperation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isOverrideOf' in activityecorelua::EOperation is not implemented or raised an error")
+        warnings.warn(f"Operation 'isOverrideOf' in activityecorelua_EOperation is not implemented or raised an error")
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
+@given(instance=activityecorelua_EStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EStructuralFeature)
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_volatile_type(instance):
-    assert isinstance(instance.volatile, bool)
+def test_activityecorelua_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EStructuralFeature)
 
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_volatile_setter(instance):
-    original = instance.volatile
-    instance.volatile = original
-    assert instance.volatile == original
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_transient_type(instance):
-    assert isinstance(instance.transient, bool)
-
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_transient_setter(instance):
-    original = instance.transient
-    instance.transient = original
-    assert instance.transient == original
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_defaultValueLiteral_type(instance):
-    assert isinstance(instance.defaultValueLiteral, str)
-
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_defaultValueLiteral_setter(instance):
-    original = instance.defaultValueLiteral
-    instance.defaultValueLiteral = original
-    assert instance.defaultValueLiteral == original
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
-
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_defaultValue_setter(instance):
-    original = instance.defaultValue
-    instance.defaultValue = original
-    assert instance.defaultValue == original
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_unsettable_type(instance):
-    assert isinstance(instance.unsettable, bool)
-
-
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_unsettable_setter(instance):
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_unsettable_setter(instance):
     original = instance.unsettable
     instance.unsettable = original
     assert instance.unsettable == original
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_derived_type(instance):
-    assert isinstance(instance.derived, bool)
 
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_derived_setter(instance):
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_changeable_setter(instance):
+    original = instance.changeable
+    instance.changeable = original
+    assert instance.changeable == original
+
+
+
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_defaultValue_setter(instance):
+    original = instance.defaultValue
+    instance.defaultValue = original
+    assert instance.defaultValue == original
+
+
+
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_volatile_setter(instance):
+    original = instance.volatile
+    instance.volatile = original
+    assert instance.volatile == original
+
+
+
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_defaultValueLiteral_setter(instance):
+    original = instance.defaultValueLiteral
+    instance.defaultValueLiteral = original
+    assert instance.defaultValueLiteral == original
+
+
+
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_derived_setter(instance):
     original = instance.derived
     instance.derived = original
     assert instance.derived == original
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_changeable_type(instance):
-    assert isinstance(instance.changeable, bool)
 
 
-@given(instance=activityecorelua::EStructuralFeature_strategy)
-def test_activityecorelua::estructuralfeature_changeable_setter(instance):
-    original = instance.changeable
-    instance.changeable = original
-    assert instance.changeable == original
+@given(instance=activityecorelua_EStructuralFeature_strategy)
+def test_activityecorelua_estructuralfeature_transient_setter(instance):
+    original = instance.transient
+    instance.transient = original
+    assert instance.transient == original
 
 @given(instance=EClassifier_strategy)
 @settings(max_examples=50)
 def test_eclassifier_instantiation(instance):
     assert isinstance(instance, EClassifier)
 
-@given(instance=activityecorelua::EClass_strategy)
+@given(instance=activityecorelua_EClass_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eclass_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EClass)
-
-@given(instance=activityecorelua::EClass_strategy)
-def test_activityecorelua::eclass_interface_type(instance):
-    assert isinstance(instance.interface, bool)
+def test_activityecorelua_eclass_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EClass)
 
 
-@given(instance=activityecorelua::EClass_strategy)
-def test_activityecorelua::eclass_interface_setter(instance):
-    original = instance.interface
-    instance.interface = original
-    assert instance.interface == original
 
-@given(instance=activityecorelua::EClass_strategy)
-def test_activityecorelua::eclass_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=activityecorelua::EClass_strategy)
-def test_activityecorelua::eclass_abstract_setter(instance):
+@given(instance=activityecorelua_EClass_strategy)
+def test_activityecorelua_eclass_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
+
+
+
+@given(instance=activityecorelua_EClass_strategy)
+def test_activityecorelua_eclass_interface_setter(instance):
+    original = instance.interface
+    instance.interface = original
+    assert instance.interface == original
 
 import warnings
 import copy
@@ -4033,9 +3901,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EClass_strategy)
+@given(instance=activityecorelua_EClass_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::eclass_issupertypeof_changes_state(instance):
+def test_activityecorelua_eclass_issupertypeof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4049,19 +3917,19 @@ def test_activityecorelua::eclass_issupertypeof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperTypeOf' in activityecorelua::EClass is empty"
+        assert has_statements, f"Function 'isSuperTypeOf' in activityecorelua_EClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperTypeOf' in activityecorelua::EClass did not change state; check implementation")
+            warnings.warn(f"Operation 'isSuperTypeOf' in activityecorelua_EClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperTypeOf' in activityecorelua::EClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'isSuperTypeOf' in activityecorelua_EClass is not implemented or raised an error")
 
-@given(instance=activityecorelua::EObject_strategy)
+@given(instance=activityecorelua_EObject_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eobject_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EObject)
+def test_activityecorelua_eobject_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EObject)
 
 import warnings
 import copy
@@ -4069,9 +3937,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EObject_strategy)
+@given(instance=activityecorelua_EObject_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::eobject_eeclass_changes_state(instance):
+def test_activityecorelua_eobject_eeclass_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4083,72 +3951,50 @@ def test_activityecorelua::eobject_eeclass_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eeClass' in activityecorelua::EObject is empty"
+        assert has_statements, f"Function 'eeClass' in activityecorelua_EObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eeClass' in activityecorelua::EObject did not change state; check implementation")
+            warnings.warn(f"Operation 'eeClass' in activityecorelua_EObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eeClass' in activityecorelua::EObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'eeClass' in activityecorelua_EObject is not implemented or raised an error")
 
-@given(instance=activityecorelua::EModelElement_strategy)
+@given(instance=activityecorelua_EModelElement_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::emodelelement_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EModelElement)
+def test_activityecorelua_emodelelement_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EModelElement)
 
-@given(instance=activityecorelua::EStringToStringMapEntry_strategy)
+@given(instance=activityecorelua_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EStringToStringMapEntry)
-
-@given(instance=activityecorelua::EStringToStringMapEntry_strategy)
-def test_activityecorelua::estringtostringmapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_activityecorelua_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EStringToStringMapEntry)
 
 
-@given(instance=activityecorelua::EStringToStringMapEntry_strategy)
-def test_activityecorelua::estringtostringmapentry_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=activityecorelua::EStringToStringMapEntry_strategy)
-def test_activityecorelua::estringtostringmapentry_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=activityecorelua::EStringToStringMapEntry_strategy)
-def test_activityecorelua::estringtostringmapentry_key_setter(instance):
+@given(instance=activityecorelua_EStringToStringMapEntry_strategy)
+def test_activityecorelua_estringtostringmapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
+
+
+
+@given(instance=activityecorelua_EStringToStringMapEntry_strategy)
+def test_activityecorelua_estringtostringmapentry_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=activityecorelua::ENamedElement_strategy)
+@given(instance=activityecorelua_EFactory_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::enamedelement_instantiation(instance):
-    assert isinstance(instance, activityecorelua::ENamedElement)
-
-@given(instance=activityecorelua::ENamedElement_strategy)
-def test_activityecorelua::enamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=activityecorelua::ENamedElement_strategy)
-def test_activityecorelua::enamedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=activityecorelua::EFactory_strategy)
-@settings(max_examples=50)
-def test_activityecorelua::efactory_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EFactory)
+def test_activityecorelua_efactory_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EFactory)
 
 import warnings
 import copy
@@ -4156,9 +4002,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EFactory_strategy)
+@given(instance=activityecorelua_EFactory_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::efactory_converttostring_changes_state(instance):
+def test_activityecorelua_efactory_converttostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4173,14 +4019,14 @@ def test_activityecorelua::efactory_converttostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'convertToString' in activityecorelua::EFactory is empty"
+        assert has_statements, f"Function 'convertToString' in activityecorelua_EFactory is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'convertToString' in activityecorelua::EFactory did not change state; check implementation")
+            warnings.warn(f"Operation 'convertToString' in activityecorelua_EFactory did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'convertToString' in activityecorelua::EFactory is not implemented or raised an error")
+        warnings.warn(f"Operation 'convertToString' in activityecorelua_EFactory is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4188,9 +4034,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EFactory_strategy)
+@given(instance=activityecorelua_EFactory_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::efactory_create_changes_state(instance):
+def test_activityecorelua_efactory_create_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4204,14 +4050,14 @@ def test_activityecorelua::efactory_create_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'create' in activityecorelua::EFactory is empty"
+        assert has_statements, f"Function 'create' in activityecorelua_EFactory is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'create' in activityecorelua::EFactory did not change state; check implementation")
+            warnings.warn(f"Operation 'create' in activityecorelua_EFactory did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'create' in activityecorelua::EFactory is not implemented or raised an error")
+        warnings.warn(f"Operation 'create' in activityecorelua_EFactory is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4219,9 +4065,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activityecorelua::EFactory_strategy)
+@given(instance=activityecorelua_EFactory_strategy)
 @settings(max_examples=30)
-def test_activityecorelua::efactory_createfromstring_changes_state(instance):
+def test_activityecorelua_efactory_createfromstring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4236,43 +4082,50 @@ def test_activityecorelua::efactory_createfromstring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createFromString' in activityecorelua::EFactory is empty"
+        assert has_statements, f"Function 'createFromString' in activityecorelua_EFactory is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createFromString' in activityecorelua::EFactory did not change state; check implementation")
+            warnings.warn(f"Operation 'createFromString' in activityecorelua_EFactory did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createFromString' in activityecorelua::EFactory is not implemented or raised an error")
+        warnings.warn(f"Operation 'createFromString' in activityecorelua_EFactory is not implemented or raised an error")
 
-@given(instance=activityecorelua::EAnnotation_strategy)
+@given(instance=activityecorelua_ENamedElement_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eannotation_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EAnnotation)
-
-@given(instance=activityecorelua::EAnnotation_strategy)
-def test_activityecorelua::eannotation_source_type(instance):
-    assert isinstance(instance.source, str)
+def test_activityecorelua_enamedelement_instantiation(instance):
+    assert isinstance(instance, activityecorelua_ENamedElement)
 
 
-@given(instance=activityecorelua::EAnnotation_strategy)
-def test_activityecorelua::eannotation_source_setter(instance):
+
+@given(instance=activityecorelua_ENamedElement_strategy)
+def test_activityecorelua_enamedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=activityecorelua_EAnnotation_strategy)
+@settings(max_examples=50)
+def test_activityecorelua_eannotation_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EAnnotation)
+
+
+
+@given(instance=activityecorelua_EAnnotation_strategy)
+def test_activityecorelua_eannotation_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=activityecorelua::EDataType_strategy)
+@given(instance=activityecorelua_EDataType_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::edatatype_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EDataType)
-
-@given(instance=activityecorelua::EDataType_strategy)
-def test_activityecorelua::edatatype_serializable_type(instance):
-    assert isinstance(instance.serializable, bool)
+def test_activityecorelua_edatatype_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EDataType)
 
 
-@given(instance=activityecorelua::EDataType_strategy)
-def test_activityecorelua::edatatype_serializable_setter(instance):
+
+@given(instance=activityecorelua_EDataType_strategy)
+def test_activityecorelua_edatatype_serializable_setter(instance):
     original = instance.serializable
     instance.serializable = original
     assert instance.serializable == original
@@ -4282,56 +4135,44 @@ def test_activityecorelua::edatatype_serializable_setter(instance):
 def test_estructuralfeature_instantiation(instance):
     assert isinstance(instance, EStructuralFeature)
 
-@given(instance=activityecorelua::EReference_strategy)
+@given(instance=activityecorelua_EReference_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::ereference_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EReference)
-
-@given(instance=activityecorelua::EReference_strategy)
-def test_activityecorelua::ereference_containment_type(instance):
-    assert isinstance(instance.containment, bool)
+def test_activityecorelua_ereference_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EReference)
 
 
-@given(instance=activityecorelua::EReference_strategy)
-def test_activityecorelua::ereference_containment_setter(instance):
+
+@given(instance=activityecorelua_EReference_strategy)
+def test_activityecorelua_ereference_containment_setter(instance):
     original = instance.containment
     instance.containment = original
     assert instance.containment == original
 
-@given(instance=activityecorelua::EReference_strategy)
-def test_activityecorelua::ereference_resolveProxies_type(instance):
-    assert isinstance(instance.resolveProxies, bool)
 
 
-@given(instance=activityecorelua::EReference_strategy)
-def test_activityecorelua::ereference_resolveProxies_setter(instance):
-    original = instance.resolveProxies
-    instance.resolveProxies = original
-    assert instance.resolveProxies == original
-
-@given(instance=activityecorelua::EReference_strategy)
-def test_activityecorelua::ereference_container_type(instance):
-    assert isinstance(instance.container, bool)
-
-
-@given(instance=activityecorelua::EReference_strategy)
-def test_activityecorelua::ereference_container_setter(instance):
+@given(instance=activityecorelua_EReference_strategy)
+def test_activityecorelua_ereference_container_setter(instance):
     original = instance.container
     instance.container = original
     assert instance.container == original
 
-@given(instance=activityecorelua::EAttribute_strategy)
+
+
+@given(instance=activityecorelua_EReference_strategy)
+def test_activityecorelua_ereference_resolveProxies_setter(instance):
+    original = instance.resolveProxies
+    instance.resolveProxies = original
+    assert instance.resolveProxies == original
+
+@given(instance=activityecorelua_EAttribute_strategy)
 @settings(max_examples=50)
-def test_activityecorelua::eattribute_instantiation(instance):
-    assert isinstance(instance, activityecorelua::EAttribute)
-
-@given(instance=activityecorelua::EAttribute_strategy)
-def test_activityecorelua::eattribute_iD_type(instance):
-    assert isinstance(instance.iD, bool)
+def test_activityecorelua_eattribute_instantiation(instance):
+    assert isinstance(instance, activityecorelua_EAttribute)
 
 
-@given(instance=activityecorelua::EAttribute_strategy)
-def test_activityecorelua::eattribute_iD_setter(instance):
+
+@given(instance=activityecorelua_EAttribute_strategy)
+def test_activityecorelua_eattribute_iD_setter(instance):
     original = instance.iD
     instance.iD = original
     assert instance.iD == original

@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    classdiagram::Method,
-    classdiagram::Attribute,
-    classdiagram::Class,
-    classdiagram::NamedElement,
+    classdiagram_Method,
+    classdiagram_Attribute,
+    classdiagram_Class,
+    classdiagram_NamedElement,
 )
 
 # =============================================================================
@@ -33,65 +33,65 @@ def test_namedelement_constructor_args():
 
 
 
-def test_classdiagram::method_is_not_abstract():
-    assert not inspect.isabstract(classdiagram::Method)
+def test_classdiagram_method_is_not_abstract():
+    assert not inspect.isabstract(classdiagram_Method)
 
 
-def test_classdiagram::method_constructor_exists():
-    assert callable(classdiagram::Method.__init__)
+def test_classdiagram_method_constructor_exists():
+    assert callable(classdiagram_Method.__init__)
 
 
-def test_classdiagram::method_constructor_args():
-    sig = inspect.signature(classdiagram::Method.__init__)
+def test_classdiagram_method_constructor_args():
+    sig = inspect.signature(classdiagram_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::attribute_is_not_abstract():
-    assert not inspect.isabstract(classdiagram::Attribute)
+def test_classdiagram_attribute_is_not_abstract():
+    assert not inspect.isabstract(classdiagram_Attribute)
 
 
-def test_classdiagram::attribute_constructor_exists():
-    assert callable(classdiagram::Attribute.__init__)
+def test_classdiagram_attribute_constructor_exists():
+    assert callable(classdiagram_Attribute.__init__)
 
 
-def test_classdiagram::attribute_constructor_args():
-    sig = inspect.signature(classdiagram::Attribute.__init__)
+def test_classdiagram_attribute_constructor_args():
+    sig = inspect.signature(classdiagram_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::class_is_not_abstract():
-    assert not inspect.isabstract(classdiagram::Class)
+def test_classdiagram_class_is_not_abstract():
+    assert not inspect.isabstract(classdiagram_Class)
 
 
-def test_classdiagram::class_constructor_exists():
-    assert callable(classdiagram::Class.__init__)
+def test_classdiagram_class_constructor_exists():
+    assert callable(classdiagram_Class.__init__)
 
 
-def test_classdiagram::class_constructor_args():
-    sig = inspect.signature(classdiagram::Class.__init__)
+def test_classdiagram_class_constructor_args():
+    sig = inspect.signature(classdiagram_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::namedelement_is_not_abstract():
-    assert not inspect.isabstract(classdiagram::NamedElement)
+def test_classdiagram_namedelement_is_not_abstract():
+    assert not inspect.isabstract(classdiagram_NamedElement)
 
 
-def test_classdiagram::namedelement_constructor_exists():
-    assert callable(classdiagram::NamedElement.__init__)
+def test_classdiagram_namedelement_constructor_exists():
+    assert callable(classdiagram_NamedElement.__init__)
 
 
-def test_classdiagram::namedelement_constructor_args():
-    sig = inspect.signature(classdiagram::NamedElement.__init__)
+def test_classdiagram_namedelement_constructor_args():
+    sig = inspect.signature(classdiagram_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::namedelement_has_name():
-    assert hasattr(classdiagram::NamedElement, "name")
+def test_classdiagram_namedelement_has_name():
+    assert hasattr(classdiagram_NamedElement, "name")
     descriptor = None
-    for klass in classdiagram::NamedElement.__mro__:
+    for klass in classdiagram_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -112,17 +112,17 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-classdiagram::Method_strategy = st.builds(
-    classdiagram::Method,
+classdiagram_Method_strategy = st.builds(
+    classdiagram_Method,
 )
-classdiagram::Attribute_strategy = st.builds(
-    classdiagram::Attribute,
+classdiagram_Attribute_strategy = st.builds(
+    classdiagram_Attribute,
 )
-classdiagram::Class_strategy = st.builds(
-    classdiagram::Class,
+classdiagram_Class_strategy = st.builds(
+    classdiagram_Class,
 )
-classdiagram::NamedElement_strategy = st.builds(
-    classdiagram::NamedElement,
+classdiagram_NamedElement_strategy = st.builds(
+    classdiagram_NamedElement,
     name=
         safe_text
 )
@@ -132,33 +132,30 @@ classdiagram::NamedElement_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=classdiagram::Method_strategy)
+@given(instance=classdiagram_Method_strategy)
 @settings(max_examples=50)
-def test_classdiagram::method_instantiation(instance):
-    assert isinstance(instance, classdiagram::Method)
+def test_classdiagram_method_instantiation(instance):
+    assert isinstance(instance, classdiagram_Method)
 
-@given(instance=classdiagram::Attribute_strategy)
+@given(instance=classdiagram_Attribute_strategy)
 @settings(max_examples=50)
-def test_classdiagram::attribute_instantiation(instance):
-    assert isinstance(instance, classdiagram::Attribute)
+def test_classdiagram_attribute_instantiation(instance):
+    assert isinstance(instance, classdiagram_Attribute)
 
-@given(instance=classdiagram::Class_strategy)
+@given(instance=classdiagram_Class_strategy)
 @settings(max_examples=50)
-def test_classdiagram::class_instantiation(instance):
-    assert isinstance(instance, classdiagram::Class)
+def test_classdiagram_class_instantiation(instance):
+    assert isinstance(instance, classdiagram_Class)
 
-@given(instance=classdiagram::NamedElement_strategy)
+@given(instance=classdiagram_NamedElement_strategy)
 @settings(max_examples=50)
-def test_classdiagram::namedelement_instantiation(instance):
-    assert isinstance(instance, classdiagram::NamedElement)
-
-@given(instance=classdiagram::NamedElement_strategy)
-def test_classdiagram::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_namedelement_instantiation(instance):
+    assert isinstance(instance, classdiagram_NamedElement)
 
 
-@given(instance=classdiagram::NamedElement_strategy)
-def test_classdiagram::namedelement_name_setter(instance):
+
+@given(instance=classdiagram_NamedElement_strategy)
+def test_classdiagram_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

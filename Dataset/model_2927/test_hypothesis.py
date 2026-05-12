@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ling::Feature,
+from python_code import (
+    ling_Feature,
     Type,
-    ling::Entity,
-    ling::DataType,
+    ling_Entity,
+    ling_DataType,
     AbstractElement,
-    ling::Type,
-    ling::Import,
-    ling::PackageDeclaration,
-    ling::AbstractElement,
-    ling::Domainmodel,
+    ling_Import,
+    ling_Type,
+    ling_PackageDeclaration,
+    ling_AbstractElement,
+    ling_Domainmodel,
 )
 
 # =============================================================================
@@ -24,33 +24,33 @@ from classes import (
 
 
 
-def test_ling::feature_is_not_abstract():
-    assert not inspect.isabstract(ling::Feature)
+def test_ling_feature_is_not_abstract():
+    assert not inspect.isabstract(ling_Feature)
 
 
-def test_ling::feature_constructor_exists():
-    assert callable(ling::Feature.__init__)
+def test_ling_feature_constructor_exists():
+    assert callable(ling_Feature.__init__)
 
 
-def test_ling::feature_constructor_args():
-    sig = inspect.signature(ling::Feature.__init__)
+def test_ling_feature_constructor_args():
+    sig = inspect.signature(ling_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ling::feature_has_many():
-    assert hasattr(ling::Feature, "many")
+def test_ling_feature_has_many():
+    assert hasattr(ling_Feature, "many")
     descriptor = None
-    for klass in ling::Feature.__mro__:
+    for klass in ling_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_ling::feature_has_name():
-    assert hasattr(ling::Feature, "name")
+def test_ling_feature_has_name():
+    assert hasattr(ling_Feature, "name")
     descriptor = None
-    for klass in ling::Feature.__mro__:
+    for klass in ling_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -72,30 +72,30 @@ def test_type_constructor_args():
 
 
 
-def test_ling::entity_is_not_abstract():
-    assert not inspect.isabstract(ling::Entity)
+def test_ling_entity_is_not_abstract():
+    assert not inspect.isabstract(ling_Entity)
 
 
-def test_ling::entity_constructor_exists():
-    assert callable(ling::Entity.__init__)
+def test_ling_entity_constructor_exists():
+    assert callable(ling_Entity.__init__)
 
 
-def test_ling::entity_constructor_args():
-    sig = inspect.signature(ling::Entity.__init__)
+def test_ling_entity_constructor_args():
+    sig = inspect.signature(ling_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ling::datatype_is_not_abstract():
-    assert not inspect.isabstract(ling::DataType)
+def test_ling_datatype_is_not_abstract():
+    assert not inspect.isabstract(ling_DataType)
 
 
-def test_ling::datatype_constructor_exists():
-    assert callable(ling::DataType.__init__)
+def test_ling_datatype_constructor_exists():
+    assert callable(ling_DataType.__init__)
 
 
-def test_ling::datatype_constructor_args():
-    sig = inspect.signature(ling::DataType.__init__)
+def test_ling_datatype_constructor_args():
+    sig = inspect.signature(ling_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,47 +114,23 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_ling::type_is_not_abstract():
-    assert not inspect.isabstract(ling::Type)
+def test_ling_import_is_not_abstract():
+    assert not inspect.isabstract(ling_Import)
 
 
-def test_ling::type_constructor_exists():
-    assert callable(ling::Type.__init__)
+def test_ling_import_constructor_exists():
+    assert callable(ling_Import.__init__)
 
 
-def test_ling::type_constructor_args():
-    sig = inspect.signature(ling::Type.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_ling::type_has_name():
-    assert hasattr(ling::Type, "name")
-    descriptor = None
-    for klass in ling::Type.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ling::import_is_not_abstract():
-    assert not inspect.isabstract(ling::Import)
-
-
-def test_ling::import_constructor_exists():
-    assert callable(ling::Import.__init__)
-
-
-def test_ling::import_constructor_args():
-    sig = inspect.signature(ling::Import.__init__)
+def test_ling_import_constructor_args():
+    sig = inspect.signature(ling_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_ling::import_has_importedNamespace():
-    assert hasattr(ling::Import, "importedNamespace")
+def test_ling_import_has_importedNamespace():
+    assert hasattr(ling_Import, "importedNamespace")
     descriptor = None
-    for klass in ling::Import.__mro__:
+    for klass in ling_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -162,23 +138,23 @@ def test_ling::import_has_importedNamespace():
 
 
 
-def test_ling::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(ling::PackageDeclaration)
+def test_ling_type_is_not_abstract():
+    assert not inspect.isabstract(ling_Type)
 
 
-def test_ling::packagedeclaration_constructor_exists():
-    assert callable(ling::PackageDeclaration.__init__)
+def test_ling_type_constructor_exists():
+    assert callable(ling_Type.__init__)
 
 
-def test_ling::packagedeclaration_constructor_args():
-    sig = inspect.signature(ling::PackageDeclaration.__init__)
+def test_ling_type_constructor_args():
+    sig = inspect.signature(ling_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ling::packagedeclaration_has_name():
-    assert hasattr(ling::PackageDeclaration, "name")
+def test_ling_type_has_name():
+    assert hasattr(ling_Type, "name")
     descriptor = None
-    for klass in ling::PackageDeclaration.__mro__:
+    for klass in ling_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,30 +162,54 @@ def test_ling::packagedeclaration_has_name():
 
 
 
-def test_ling::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(ling::AbstractElement)
+def test_ling_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(ling_PackageDeclaration)
 
 
-def test_ling::abstractelement_constructor_exists():
-    assert callable(ling::AbstractElement.__init__)
+def test_ling_packagedeclaration_constructor_exists():
+    assert callable(ling_PackageDeclaration.__init__)
 
 
-def test_ling::abstractelement_constructor_args():
-    sig = inspect.signature(ling::AbstractElement.__init__)
+def test_ling_packagedeclaration_constructor_args():
+    sig = inspect.signature(ling_PackageDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_ling_packagedeclaration_has_name():
+    assert hasattr(ling_PackageDeclaration, "name")
+    descriptor = None
+    for klass in ling_PackageDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ling_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(ling_AbstractElement)
+
+
+def test_ling_abstractelement_constructor_exists():
+    assert callable(ling_AbstractElement.__init__)
+
+
+def test_ling_abstractelement_constructor_args():
+    sig = inspect.signature(ling_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ling::domainmodel_is_not_abstract():
-    assert not inspect.isabstract(ling::Domainmodel)
+def test_ling_domainmodel_is_not_abstract():
+    assert not inspect.isabstract(ling_Domainmodel)
 
 
-def test_ling::domainmodel_constructor_exists():
-    assert callable(ling::Domainmodel.__init__)
+def test_ling_domainmodel_constructor_exists():
+    assert callable(ling_Domainmodel.__init__)
 
 
-def test_ling::domainmodel_constructor_args():
-    sig = inspect.signature(ling::Domainmodel.__init__)
+def test_ling_domainmodel_constructor_args():
+    sig = inspect.signature(ling_Domainmodel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,8 +224,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ling::Feature_strategy = st.builds(
-    ling::Feature,
+ling_Feature_strategy = st.builds(
+    ling_Feature,
     many=
         st.booleans(),
     name=
@@ -234,60 +234,54 @@ ling::Feature_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-ling::Entity_strategy = st.builds(
-    ling::Entity,
+ling_Entity_strategy = st.builds(
+    ling_Entity,
 )
-ling::DataType_strategy = st.builds(
-    ling::DataType,
+ling_DataType_strategy = st.builds(
+    ling_DataType,
 )
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-ling::Type_strategy = st.builds(
-    ling::Type,
-    name=
-        safe_text
-)
-ling::Import_strategy = st.builds(
-    ling::Import,
+ling_Import_strategy = st.builds(
+    ling_Import,
     importedNamespace=
         safe_text
 )
-ling::PackageDeclaration_strategy = st.builds(
-    ling::PackageDeclaration,
+ling_Type_strategy = st.builds(
+    ling_Type,
     name=
         safe_text
 )
-ling::AbstractElement_strategy = st.builds(
-    ling::AbstractElement,
+ling_PackageDeclaration_strategy = st.builds(
+    ling_PackageDeclaration,
+    name=
+        safe_text
 )
-ling::Domainmodel_strategy = st.builds(
-    ling::Domainmodel,
+ling_AbstractElement_strategy = st.builds(
+    ling_AbstractElement,
+)
+ling_Domainmodel_strategy = st.builds(
+    ling_Domainmodel,
 )
 
-@given(instance=ling::Feature_strategy)
+@given(instance=ling_Feature_strategy)
 @settings(max_examples=50)
-def test_ling::feature_instantiation(instance):
-    assert isinstance(instance, ling::Feature)
-
-@given(instance=ling::Feature_strategy)
-def test_ling::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_ling_feature_instantiation(instance):
+    assert isinstance(instance, ling_Feature)
 
 
-@given(instance=ling::Feature_strategy)
-def test_ling::feature_many_setter(instance):
+
+@given(instance=ling_Feature_strategy)
+def test_ling_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=ling::Feature_strategy)
-def test_ling::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ling::Feature_strategy)
-def test_ling::feature_name_setter(instance):
+@given(instance=ling_Feature_strategy)
+def test_ling_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -297,75 +291,66 @@ def test_ling::feature_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=ling::Entity_strategy)
+@given(instance=ling_Entity_strategy)
 @settings(max_examples=50)
-def test_ling::entity_instantiation(instance):
-    assert isinstance(instance, ling::Entity)
+def test_ling_entity_instantiation(instance):
+    assert isinstance(instance, ling_Entity)
 
-@given(instance=ling::DataType_strategy)
+@given(instance=ling_DataType_strategy)
 @settings(max_examples=50)
-def test_ling::datatype_instantiation(instance):
-    assert isinstance(instance, ling::DataType)
+def test_ling_datatype_instantiation(instance):
+    assert isinstance(instance, ling_DataType)
 
 @given(instance=AbstractElement_strategy)
 @settings(max_examples=50)
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=ling::Type_strategy)
+@given(instance=ling_Import_strategy)
 @settings(max_examples=50)
-def test_ling::type_instantiation(instance):
-    assert isinstance(instance, ling::Type)
-
-@given(instance=ling::Type_strategy)
-def test_ling::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ling_import_instantiation(instance):
+    assert isinstance(instance, ling_Import)
 
 
-@given(instance=ling::Type_strategy)
-def test_ling::type_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ling::Import_strategy)
-@settings(max_examples=50)
-def test_ling::import_instantiation(instance):
-    assert isinstance(instance, ling::Import)
-
-@given(instance=ling::Import_strategy)
-def test_ling::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
-
-
-@given(instance=ling::Import_strategy)
-def test_ling::import_importedNamespace_setter(instance):
+@given(instance=ling_Import_strategy)
+def test_ling_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=ling::PackageDeclaration_strategy)
+@given(instance=ling_Type_strategy)
 @settings(max_examples=50)
-def test_ling::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, ling::PackageDeclaration)
-
-@given(instance=ling::PackageDeclaration_strategy)
-def test_ling::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ling_type_instantiation(instance):
+    assert isinstance(instance, ling_Type)
 
 
-@given(instance=ling::PackageDeclaration_strategy)
-def test_ling::packagedeclaration_name_setter(instance):
+
+@given(instance=ling_Type_strategy)
+def test_ling_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ling::AbstractElement_strategy)
+@given(instance=ling_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_ling::abstractelement_instantiation(instance):
-    assert isinstance(instance, ling::AbstractElement)
+def test_ling_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, ling_PackageDeclaration)
 
-@given(instance=ling::Domainmodel_strategy)
+
+
+@given(instance=ling_PackageDeclaration_strategy)
+def test_ling_packagedeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=ling_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_ling::domainmodel_instantiation(instance):
-    assert isinstance(instance, ling::Domainmodel)
+def test_ling_abstractelement_instantiation(instance):
+    assert isinstance(instance, ling_AbstractElement)
+
+@given(instance=ling_Domainmodel_strategy)
+@settings(max_examples=50)
+def test_ling_domainmodel_instantiation(instance):
+    assert isinstance(instance, ling_Domainmodel)

@@ -3,90 +3,90 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cjsidl::stateMachine,
-    cjsidl::eventDef,
-    cjsidl::transition,
-    cjsidl::exit,
-    cjsidl::entry,
-    cjsidl::defaultState,
-    cjsidl::state,
-    cjsidl::startState,
-    cjsidl::constDef,
-    cjsidl::declaredConstSetRef,
-    cjsidl::messageScopedRef,
-    cjsidl::messageRef,
-    cjsidl::messageDef,
-    cjsidl::messages,
-    cjsidl::scopedTypeId,
-    cjsidl::typeReference,
-    cjsidl::typeDef,
-    cjsidl::declaredTypeSetRef,
-    cjsidl::serviceDef,
-    cjsidl::EObject,
-    cjsidl::jaus,
-    cjsidl::refAttr,
-    cjsidl::protocolBehavior,
-    cjsidl::internalEventSet,
-    cjsidl::messageSet,
-    cjsidl::declaredTypeSet,
-    cjsidl::declaredConstSet,
-    cjsidl::references,
-    cjsidl::description,
-    cjsidl::taggedItemDef,
-    cjsidl::valueSpec,
+from python_code import (
+    cjsidl_taggedItemDef,
+    cjsidl_valueSpec,
     containerDef,
-    cjsidl::formatEnumDef,
-    cjsidl::valueRange,
-    cjsidl::scaledRangeDef,
-    cjsidl::subField,
-    cjsidl::taggedUnitsEnum,
-    cjsidl::valueSetDef,
-    cjsidl::declaredEventDef,
-    cjsidl::scopedType,
-    cjsidl::scopedConstId,
-    cjsidl::constReference,
-    cjsidl::footerScopedRef,
-    cjsidl::footerRef,
-    cjsidl::bodyScopedRef,
-    cjsidl::bodyRef,
-    cjsidl::headerScopedRef,
-    cjsidl::headerRef,
-    cjsidl::containerRef,
-    cjsidl::containerDef,
-    cjsidl::footerDef,
-    cjsidl::bodyDef,
-    cjsidl::headerDef,
-    cjsidl::varFormatField,
-    cjsidl::varLenField,
-    cjsidl::varLenString,
-    cjsidl::fixedLenString,
-    cjsidl::bitfieldDef,
-    cjsidl::action,
-    cjsidl::varField,
-    cjsidl::fixedFieldDef,
-    cjsidl::sequenceDef,
-    cjsidl::variantDef,
-    cjsidl::listDef,
-    cjsidl::recordDef,
-    cjsidl::arrayDef,
-    cjsidl::simpleNumericType,
-    cjsidl::simpleTransition,
-    cjsidl::internalTransition,
-    cjsidl::guardAction,
-    cjsidl::guardParam,
-    cjsidl::popTransition,
-    cjsidl::pushTransition,
-    cjsidl::nextState,
-    cjsidl::sendActionList,
-    cjsidl::actionList,
-    cjsidl::defaultTransition,
-    cjsidl::guard,
-    cjsidl::scopedEventType,
-    cjsidl::transParam,
-    cjsidl::transParams,
+    cjsidl_formatEnumDef,
+    cjsidl_valueRange,
+    cjsidl_scaledRangeDef,
+    cjsidl_subField,
+    cjsidl_taggedUnitsEnum,
+    cjsidl_valueSetDef,
+    cjsidl_declaredEventDef,
+    cjsidl_scopedType,
+    cjsidl_scopedConstId,
+    cjsidl_constReference,
+    cjsidl_footerScopedRef,
+    cjsidl_footerRef,
+    cjsidl_bodyScopedRef,
+    cjsidl_bodyRef,
+    cjsidl_headerScopedRef,
+    cjsidl_headerRef,
+    cjsidl_containerRef,
+    cjsidl_containerDef,
+    cjsidl_footerDef,
+    cjsidl_bodyDef,
+    cjsidl_headerDef,
+    cjsidl_varFormatField,
+    cjsidl_varLenField,
+    cjsidl_varLenString,
+    cjsidl_fixedLenString,
+    cjsidl_bitfieldDef,
+    cjsidl_action,
+    cjsidl_varField,
+    cjsidl_fixedFieldDef,
+    cjsidl_sequenceDef,
+    cjsidl_variantDef,
+    cjsidl_listDef,
+    cjsidl_recordDef,
+    cjsidl_arrayDef,
+    cjsidl_simpleNumericType,
+    cjsidl_simpleTransition,
+    cjsidl_internalTransition,
+    cjsidl_guardAction,
+    cjsidl_guardParam,
+    cjsidl_popTransition,
+    cjsidl_pushTransition,
+    cjsidl_nextState,
+    cjsidl_sendActionList,
+    cjsidl_actionList,
+    cjsidl_defaultTransition,
+    cjsidl_guard,
+    cjsidl_scopedEventType,
+    cjsidl_transParam,
+    cjsidl_transParams,
+    cjsidl_stateMachine,
+    cjsidl_eventDef,
+    cjsidl_transition,
+    cjsidl_exit,
+    cjsidl_entry,
+    cjsidl_defaultState,
+    cjsidl_state,
+    cjsidl_startState,
+    cjsidl_constDef,
+    cjsidl_declaredConstSetRef,
+    cjsidl_messageScopedRef,
+    cjsidl_messageRef,
+    cjsidl_messageDef,
+    cjsidl_messages,
+    cjsidl_scopedTypeId,
+    cjsidl_typeReference,
+    cjsidl_typeDef,
+    cjsidl_declaredTypeSetRef,
+    cjsidl_serviceDef,
+    cjsidl_EObject,
+    cjsidl_jaus,
+    cjsidl_refAttr,
+    cjsidl_protocolBehavior,
+    cjsidl_internalEventSet,
+    cjsidl_messageSet,
+    cjsidl_declaredTypeSet,
+    cjsidl_declaredConstSet,
+    cjsidl_references,
+    cjsidl_description,
     FIELD_FORMAT,
     UNIT,
 )
@@ -97,993 +97,57 @@ from classes import (
 
 
 
-def test_cjsidl::statemachine_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::stateMachine)
+def test_cjsidl_taggeditemdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_taggedItemDef)
 
 
-def test_cjsidl::statemachine_constructor_exists():
-    assert callable(cjsidl::stateMachine.__init__)
+def test_cjsidl_taggeditemdef_constructor_exists():
+    assert callable(cjsidl_taggedItemDef.__init__)
 
 
-def test_cjsidl::statemachine_constructor_args():
-    sig = inspect.signature(cjsidl::stateMachine.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::statemachine_has_name():
-    assert hasattr(cjsidl::stateMachine, "name")
-    descriptor = None
-    for klass in cjsidl::stateMachine.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::statemachine_has_comment():
-    assert hasattr(cjsidl::stateMachine, "comment")
-    descriptor = None
-    for klass in cjsidl::stateMachine.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::eventdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::eventDef)
-
-
-def test_cjsidl::eventdef_constructor_exists():
-    assert callable(cjsidl::eventDef.__init__)
-
-
-def test_cjsidl::eventdef_constructor_args():
-    sig = inspect.signature(cjsidl::eventDef.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::eventdef_has_name():
-    assert hasattr(cjsidl::eventDef, "name")
-    descriptor = None
-    for klass in cjsidl::eventDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::transition_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::transition)
-
-
-def test_cjsidl::transition_constructor_exists():
-    assert callable(cjsidl::transition.__init__)
-
-
-def test_cjsidl::transition_constructor_args():
-    sig = inspect.signature(cjsidl::transition.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_cjsidl::transition_has_comment():
-    assert hasattr(cjsidl::transition, "comment")
-    descriptor = None
-    for klass in cjsidl::transition.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::transition_has_name():
-    assert hasattr(cjsidl::transition, "name")
-    descriptor = None
-    for klass in cjsidl::transition.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::transition_has_type():
-    assert hasattr(cjsidl::transition, "type")
-    descriptor = None
-    for klass in cjsidl::transition.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::exit_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::exit)
-
-
-def test_cjsidl::exit_constructor_exists():
-    assert callable(cjsidl::exit.__init__)
-
-
-def test_cjsidl::exit_constructor_args():
-    sig = inspect.signature(cjsidl::exit.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::exit_has_comment():
-    assert hasattr(cjsidl::exit, "comment")
-    descriptor = None
-    for klass in cjsidl::exit.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::entry_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::entry)
-
-
-def test_cjsidl::entry_constructor_exists():
-    assert callable(cjsidl::entry.__init__)
-
-
-def test_cjsidl::entry_constructor_args():
-    sig = inspect.signature(cjsidl::entry.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::entry_has_comment():
-    assert hasattr(cjsidl::entry, "comment")
-    descriptor = None
-    for klass in cjsidl::entry.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::defaultstate_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::defaultState)
-
-
-def test_cjsidl::defaultstate_constructor_exists():
-    assert callable(cjsidl::defaultState.__init__)
-
-
-def test_cjsidl::defaultstate_constructor_args():
-    sig = inspect.signature(cjsidl::defaultState.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::defaultstate_has_comment():
-    assert hasattr(cjsidl::defaultState, "comment")
-    descriptor = None
-    for klass in cjsidl::defaultState.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::state_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::state)
-
-
-def test_cjsidl::state_constructor_exists():
-    assert callable(cjsidl::state.__init__)
-
-
-def test_cjsidl::state_constructor_args():
-    sig = inspect.signature(cjsidl::state.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "initial" in params, "Missing parameter 'initial'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::state_has_name():
-    assert hasattr(cjsidl::state, "name")
-    descriptor = None
-    for klass in cjsidl::state.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::state_has_initial():
-    assert hasattr(cjsidl::state, "initial")
-    descriptor = None
-    for klass in cjsidl::state.__mro__:
-        if "initial" in klass.__dict__:
-            descriptor = klass.__dict__["initial"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::state_has_comment():
-    assert hasattr(cjsidl::state, "comment")
-    descriptor = None
-    for klass in cjsidl::state.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::startstate_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::startState)
-
-
-def test_cjsidl::startstate_constructor_exists():
-    assert callable(cjsidl::startState.__init__)
-
-
-def test_cjsidl::startstate_constructor_args():
-    sig = inspect.signature(cjsidl::startState.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::startstate_has_comment():
-    assert hasattr(cjsidl::startState, "comment")
-    descriptor = None
-    for klass in cjsidl::startState.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::constdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::constDef)
-
-
-def test_cjsidl::constdef_constructor_exists():
-    assert callable(cjsidl::constDef.__init__)
-
-
-def test_cjsidl::constdef_constructor_args():
-    sig = inspect.signature(cjsidl::constDef.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "constValue" in params, "Missing parameter 'constValue'"
-    assert "fieldUnits" in params, "Missing parameter 'fieldUnits'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::constdef_has_comment():
-    assert hasattr(cjsidl::constDef, "comment")
-    descriptor = None
-    for klass in cjsidl::constDef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::constdef_has_constValue():
-    assert hasattr(cjsidl::constDef, "constValue")
-    descriptor = None
-    for klass in cjsidl::constDef.__mro__:
-        if "constValue" in klass.__dict__:
-            descriptor = klass.__dict__["constValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::constdef_has_fieldUnits():
-    assert hasattr(cjsidl::constDef, "fieldUnits")
-    descriptor = None
-    for klass in cjsidl::constDef.__mro__:
-        if "fieldUnits" in klass.__dict__:
-            descriptor = klass.__dict__["fieldUnits"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::constdef_has_name():
-    assert hasattr(cjsidl::constDef, "name")
-    descriptor = None
-    for klass in cjsidl::constDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::declaredconstsetref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::declaredConstSetRef)
-
-
-def test_cjsidl::declaredconstsetref_constructor_exists():
-    assert callable(cjsidl::declaredConstSetRef.__init__)
-
-
-def test_cjsidl::declaredconstsetref_constructor_args():
-    sig = inspect.signature(cjsidl::declaredConstSetRef.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::declaredconstsetref_has_comment():
-    assert hasattr(cjsidl::declaredConstSetRef, "comment")
-    descriptor = None
-    for klass in cjsidl::declaredConstSetRef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredconstsetref_has_name():
-    assert hasattr(cjsidl::declaredConstSetRef, "name")
-    descriptor = None
-    for klass in cjsidl::declaredConstSetRef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::messagescopedref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::messageScopedRef)
-
-
-def test_cjsidl::messagescopedref_constructor_exists():
-    assert callable(cjsidl::messageScopedRef.__init__)
-
-
-def test_cjsidl::messagescopedref_constructor_args():
-    sig = inspect.signature(cjsidl::messageScopedRef.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::messagescopedref_has_name():
-    assert hasattr(cjsidl::messageScopedRef, "name")
-    descriptor = None
-    for klass in cjsidl::messageScopedRef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::messagescopedref_has_comment():
-    assert hasattr(cjsidl::messageScopedRef, "comment")
-    descriptor = None
-    for klass in cjsidl::messageScopedRef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::messageref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::messageRef)
-
-
-def test_cjsidl::messageref_constructor_exists():
-    assert callable(cjsidl::messageRef.__init__)
-
-
-def test_cjsidl::messageref_constructor_args():
-    sig = inspect.signature(cjsidl::messageRef.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::messageref_has_name():
-    assert hasattr(cjsidl::messageRef, "name")
-    descriptor = None
-    for klass in cjsidl::messageRef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::messageref_has_comment():
-    assert hasattr(cjsidl::messageRef, "comment")
-    descriptor = None
-    for klass in cjsidl::messageRef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::messagedef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::messageDef)
-
-
-def test_cjsidl::messagedef_constructor_exists():
-    assert callable(cjsidl::messageDef.__init__)
-
-
-def test_cjsidl::messagedef_constructor_args():
-    sig = inspect.signature(cjsidl::messageDef.__init__)
-    params = list(sig.parameters.keys())
-    assert "messageID" in params, "Missing parameter 'messageID'"
-    assert "command" in params, "Missing parameter 'command'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::messagedef_has_messageID():
-    assert hasattr(cjsidl::messageDef, "messageID")
-    descriptor = None
-    for klass in cjsidl::messageDef.__mro__:
-        if "messageID" in klass.__dict__:
-            descriptor = klass.__dict__["messageID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::messagedef_has_command():
-    assert hasattr(cjsidl::messageDef, "command")
-    descriptor = None
-    for klass in cjsidl::messageDef.__mro__:
-        if "command" in klass.__dict__:
-            descriptor = klass.__dict__["command"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::messagedef_has_name():
-    assert hasattr(cjsidl::messageDef, "name")
-    descriptor = None
-    for klass in cjsidl::messageDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::messages_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::messages)
-
-
-def test_cjsidl::messages_constructor_exists():
-    assert callable(cjsidl::messages.__init__)
-
-
-def test_cjsidl::messages_constructor_args():
-    sig = inspect.signature(cjsidl::messages.__init__)
+def test_cjsidl_taggeditemdef_constructor_args():
+    sig = inspect.signature(cjsidl_taggedItemDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::scopedtypeid_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::scopedTypeId)
+def test_cjsidl_valuespec_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_valueSpec)
 
 
-def test_cjsidl::scopedtypeid_constructor_exists():
-    assert callable(cjsidl::scopedTypeId.__init__)
+def test_cjsidl_valuespec_constructor_exists():
+    assert callable(cjsidl_valueSpec.__init__)
 
 
-def test_cjsidl::scopedtypeid_constructor_args():
-    sig = inspect.signature(cjsidl::scopedTypeId.__init__)
+def test_cjsidl_valuespec_constructor_args():
+    sig = inspect.signature(cjsidl_valueSpec.__init__)
     params = list(sig.parameters.keys())
-    assert "optional" in params, "Missing parameter 'optional'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "scopedName" in params, "Missing parameter 'scopedName'"
-
-def test_cjsidl::scopedtypeid_has_optional():
-    assert hasattr(cjsidl::scopedTypeId, "optional")
-    descriptor = None
-    for klass in cjsidl::scopedTypeId.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::scopedtypeid_has_comment():
-    assert hasattr(cjsidl::scopedTypeId, "comment")
-    descriptor = None
-    for klass in cjsidl::scopedTypeId.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::scopedtypeid_has_scopedName():
-    assert hasattr(cjsidl::scopedTypeId, "scopedName")
-    descriptor = None
-    for klass in cjsidl::scopedTypeId.__mro__:
-        if "scopedName" in klass.__dict__:
-            descriptor = klass.__dict__["scopedName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::typereference_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::typeReference)
-
-
-def test_cjsidl::typereference_constructor_exists():
-    assert callable(cjsidl::typeReference.__init__)
-
-
-def test_cjsidl::typereference_constructor_args():
-    sig = inspect.signature(cjsidl::typeReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "optional" in params, "Missing parameter 'optional'"
-
-def test_cjsidl::typereference_has_comment():
-    assert hasattr(cjsidl::typeReference, "comment")
-    descriptor = None
-    for klass in cjsidl::typeReference.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::typereference_has_name():
-    assert hasattr(cjsidl::typeReference, "name")
-    descriptor = None
-    for klass in cjsidl::typeReference.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::typereference_has_optional():
-    assert hasattr(cjsidl::typeReference, "optional")
-    descriptor = None
-    for klass in cjsidl::typeReference.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::typedef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::typeDef)
-
-
-def test_cjsidl::typedef_constructor_exists():
-    assert callable(cjsidl::typeDef.__init__)
-
-
-def test_cjsidl::typedef_constructor_args():
-    sig = inspect.signature(cjsidl::typeDef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::declaredtypesetref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::declaredTypeSetRef)
-
-
-def test_cjsidl::declaredtypesetref_constructor_exists():
-    assert callable(cjsidl::declaredTypeSetRef.__init__)
-
-
-def test_cjsidl::declaredtypesetref_constructor_args():
-    sig = inspect.signature(cjsidl::declaredTypeSetRef.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::declaredtypesetref_has_comment():
-    assert hasattr(cjsidl::declaredTypeSetRef, "comment")
-    descriptor = None
-    for klass in cjsidl::declaredTypeSetRef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredtypesetref_has_name():
-    assert hasattr(cjsidl::declaredTypeSetRef, "name")
-    descriptor = None
-    for klass in cjsidl::declaredTypeSetRef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::servicedef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::serviceDef)
-
-
-def test_cjsidl::servicedef_constructor_exists():
-    assert callable(cjsidl::serviceDef.__init__)
-
-
-def test_cjsidl::servicedef_constructor_args():
-    sig = inspect.signature(cjsidl::serviceDef.__init__)
-    params = list(sig.parameters.keys())
-    assert "serviceName" in params, "Missing parameter 'serviceName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "serviceVersion" in params, "Missing parameter 'serviceVersion'"
-    assert "assumpt" in params, "Missing parameter 'assumpt'"
-
-def test_cjsidl::servicedef_has_serviceName():
-    assert hasattr(cjsidl::serviceDef, "serviceName")
-    descriptor = None
-    for klass in cjsidl::serviceDef.__mro__:
-        if "serviceName" in klass.__dict__:
-            descriptor = klass.__dict__["serviceName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::servicedef_has_name():
-    assert hasattr(cjsidl::serviceDef, "name")
-    descriptor = None
-    for klass in cjsidl::serviceDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::servicedef_has_serviceVersion():
-    assert hasattr(cjsidl::serviceDef, "serviceVersion")
-    descriptor = None
-    for klass in cjsidl::serviceDef.__mro__:
-        if "serviceVersion" in klass.__dict__:
-            descriptor = klass.__dict__["serviceVersion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::servicedef_has_assumpt():
-    assert hasattr(cjsidl::serviceDef, "assumpt")
-    descriptor = None
-    for klass in cjsidl::serviceDef.__mro__:
-        if "assumpt" in klass.__dict__:
-            descriptor = klass.__dict__["assumpt"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::eobject_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::EObject)
-
-
-def test_cjsidl::eobject_constructor_exists():
-    assert callable(cjsidl::EObject.__init__)
-
-
-def test_cjsidl::eobject_constructor_args():
-    sig = inspect.signature(cjsidl::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::jaus_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::jaus)
-
-
-def test_cjsidl::jaus_constructor_exists():
-    assert callable(cjsidl::jaus.__init__)
-
-
-def test_cjsidl::jaus_constructor_args():
-    sig = inspect.signature(cjsidl::jaus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::refattr_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::refAttr)
-
-
-def test_cjsidl::refattr_constructor_exists():
-    assert callable(cjsidl::refAttr.__init__)
-
-
-def test_cjsidl::refattr_constructor_args():
-    sig = inspect.signature(cjsidl::refAttr.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::refattr_has_comment():
-    assert hasattr(cjsidl::refAttr, "comment")
-    descriptor = None
-    for klass in cjsidl::refAttr.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::refattr_has_name():
-    assert hasattr(cjsidl::refAttr, "name")
-    descriptor = None
-    for klass in cjsidl::refAttr.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::protocolbehavior_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::protocolBehavior)
-
-
-def test_cjsidl::protocolbehavior_constructor_exists():
-    assert callable(cjsidl::protocolBehavior.__init__)
-
-
-def test_cjsidl::protocolbehavior_constructor_args():
-    sig = inspect.signature(cjsidl::protocolBehavior.__init__)
-    params = list(sig.parameters.keys())
-    assert "stateless" in params, "Missing parameter 'stateless'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::protocolbehavior_has_stateless():
-    assert hasattr(cjsidl::protocolBehavior, "stateless")
-    descriptor = None
-    for klass in cjsidl::protocolBehavior.__mro__:
-        if "stateless" in klass.__dict__:
-            descriptor = klass.__dict__["stateless"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::protocolbehavior_has_comment():
-    assert hasattr(cjsidl::protocolBehavior, "comment")
-    descriptor = None
-    for klass in cjsidl::protocolBehavior.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::internaleventset_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::internalEventSet)
-
-
-def test_cjsidl::internaleventset_constructor_exists():
-    assert callable(cjsidl::internalEventSet.__init__)
-
-
-def test_cjsidl::internaleventset_constructor_args():
-    sig = inspect.signature(cjsidl::internalEventSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::internaleventset_has_comment():
-    assert hasattr(cjsidl::internalEventSet, "comment")
-    descriptor = None
-    for klass in cjsidl::internalEventSet.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::messageset_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::messageSet)
-
-
-def test_cjsidl::messageset_constructor_exists():
-    assert callable(cjsidl::messageSet.__init__)
-
-
-def test_cjsidl::messageset_constructor_args():
-    sig = inspect.signature(cjsidl::messageSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "outputComment" in params, "Missing parameter 'outputComment'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "inputComment" in params, "Missing parameter 'inputComment'"
-
-def test_cjsidl::messageset_has_outputComment():
-    assert hasattr(cjsidl::messageSet, "outputComment")
-    descriptor = None
-    for klass in cjsidl::messageSet.__mro__:
-        if "outputComment" in klass.__dict__:
-            descriptor = klass.__dict__["outputComment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::messageset_has_comment():
-    assert hasattr(cjsidl::messageSet, "comment")
-    descriptor = None
-    for klass in cjsidl::messageSet.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::messageset_has_inputComment():
-    assert hasattr(cjsidl::messageSet, "inputComment")
-    descriptor = None
-    for klass in cjsidl::messageSet.__mro__:
-        if "inputComment" in klass.__dict__:
-            descriptor = klass.__dict__["inputComment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::declaredtypeset_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::declaredTypeSet)
-
-
-def test_cjsidl::declaredtypeset_constructor_exists():
-    assert callable(cjsidl::declaredTypeSet.__init__)
-
-
-def test_cjsidl::declaredtypeset_constructor_args():
-    sig = inspect.signature(cjsidl::declaredTypeSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "typeName" in params, "Missing parameter 'typeName'"
-    assert "version" in params, "Missing parameter 'version'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::declaredtypeset_has_typeName():
-    assert hasattr(cjsidl::declaredTypeSet, "typeName")
-    descriptor = None
-    for klass in cjsidl::declaredTypeSet.__mro__:
-        if "typeName" in klass.__dict__:
-            descriptor = klass.__dict__["typeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredtypeset_has_version():
-    assert hasattr(cjsidl::declaredTypeSet, "version")
-    descriptor = None
-    for klass in cjsidl::declaredTypeSet.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredtypeset_has_name():
-    assert hasattr(cjsidl::declaredTypeSet, "name")
-    descriptor = None
-    for klass in cjsidl::declaredTypeSet.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::declaredconstset_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::declaredConstSet)
-
-
-def test_cjsidl::declaredconstset_constructor_exists():
-    assert callable(cjsidl::declaredConstSet.__init__)
-
-
-def test_cjsidl::declaredconstset_constructor_args():
-    sig = inspect.signature(cjsidl::declaredConstSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "constName" in params, "Missing parameter 'constName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "constSetVersion" in params, "Missing parameter 'constSetVersion'"
-
-def test_cjsidl::declaredconstset_has_constName():
-    assert hasattr(cjsidl::declaredConstSet, "constName")
-    descriptor = None
-    for klass in cjsidl::declaredConstSet.__mro__:
-        if "constName" in klass.__dict__:
-            descriptor = klass.__dict__["constName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredconstset_has_name():
-    assert hasattr(cjsidl::declaredConstSet, "name")
-    descriptor = None
-    for klass in cjsidl::declaredConstSet.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredconstset_has_constSetVersion():
-    assert hasattr(cjsidl::declaredConstSet, "constSetVersion")
-    descriptor = None
-    for klass in cjsidl::declaredConstSet.__mro__:
-        if "constSetVersion" in klass.__dict__:
-            descriptor = klass.__dict__["constSetVersion"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::references_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::references)
-
-
-def test_cjsidl::references_constructor_exists():
-    assert callable(cjsidl::references.__init__)
-
-
-def test_cjsidl::references_constructor_args():
-    sig = inspect.signature(cjsidl::references.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::description_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::description)
-
-
-def test_cjsidl::description_constructor_exists():
-    assert callable(cjsidl::description.__init__)
-
-
-def test_cjsidl::description_constructor_args():
-    sig = inspect.signature(cjsidl::description.__init__)
-    params = list(sig.parameters.keys())
-    assert "content" in params, "Missing parameter 'content'"
-
-def test_cjsidl::description_has_content():
-    assert hasattr(cjsidl::description, "content")
-    descriptor = None
-    for klass in cjsidl::description.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::taggeditemdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::taggedItemDef)
-
-
-def test_cjsidl::taggeditemdef_constructor_exists():
-    assert callable(cjsidl::taggedItemDef.__init__)
-
-
-def test_cjsidl::taggeditemdef_constructor_args():
-    sig = inspect.signature(cjsidl::taggedItemDef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::valuespec_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::valueSpec)
-
-
-def test_cjsidl::valuespec_constructor_exists():
-    assert callable(cjsidl::valueSpec.__init__)
-
-
-def test_cjsidl::valuespec_constructor_args():
-    sig = inspect.signature(cjsidl::valueSpec.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::valuespec_has_comment():
-    assert hasattr(cjsidl::valueSpec, "comment")
+def test_cjsidl_valuespec_has_value():
+    assert hasattr(cjsidl_valueSpec, "value")
     descriptor = None
-    for klass in cjsidl::valueSpec.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::valuespec_has_value():
-    assert hasattr(cjsidl::valueSpec, "value")
-    descriptor = None
-    for klass in cjsidl::valueSpec.__mro__:
+    for klass in cjsidl_valueSpec.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::valuespec_has_name():
-    assert hasattr(cjsidl::valueSpec, "name")
+def test_cjsidl_valuespec_has_comment():
+    assert hasattr(cjsidl_valueSpec, "comment")
     descriptor = None
-    for klass in cjsidl::valueSpec.__mro__:
+    for klass in cjsidl_valueSpec.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_valuespec_has_name():
+    assert hasattr(cjsidl_valueSpec, "name")
+    descriptor = None
+    for klass in cjsidl_valueSpec.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1105,43 +169,43 @@ def test_containerdef_constructor_args():
 
 
 
-def test_cjsidl::formatenumdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::formatEnumDef)
+def test_cjsidl_formatenumdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_formatEnumDef)
 
 
-def test_cjsidl::formatenumdef_constructor_exists():
-    assert callable(cjsidl::formatEnumDef.__init__)
+def test_cjsidl_formatenumdef_constructor_exists():
+    assert callable(cjsidl_formatEnumDef.__init__)
 
 
-def test_cjsidl::formatenumdef_constructor_args():
-    sig = inspect.signature(cjsidl::formatEnumDef.__init__)
+def test_cjsidl_formatenumdef_constructor_args():
+    sig = inspect.signature(cjsidl_formatEnumDef.__init__)
     params = list(sig.parameters.keys())
     assert "fieldFormat" in params, "Missing parameter 'fieldFormat'"
     assert "index" in params, "Missing parameter 'index'"
     assert "fieldFormatStr" in params, "Missing parameter 'fieldFormatStr'"
 
-def test_cjsidl::formatenumdef_has_fieldFormat():
-    assert hasattr(cjsidl::formatEnumDef, "fieldFormat")
+def test_cjsidl_formatenumdef_has_fieldFormat():
+    assert hasattr(cjsidl_formatEnumDef, "fieldFormat")
     descriptor = None
-    for klass in cjsidl::formatEnumDef.__mro__:
+    for klass in cjsidl_formatEnumDef.__mro__:
         if "fieldFormat" in klass.__dict__:
             descriptor = klass.__dict__["fieldFormat"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::formatenumdef_has_index():
-    assert hasattr(cjsidl::formatEnumDef, "index")
+def test_cjsidl_formatenumdef_has_index():
+    assert hasattr(cjsidl_formatEnumDef, "index")
     descriptor = None
-    for klass in cjsidl::formatEnumDef.__mro__:
+    for klass in cjsidl_formatEnumDef.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::formatenumdef_has_fieldFormatStr():
-    assert hasattr(cjsidl::formatEnumDef, "fieldFormatStr")
+def test_cjsidl_formatenumdef_has_fieldFormatStr():
+    assert hasattr(cjsidl_formatEnumDef, "fieldFormatStr")
     descriptor = None
-    for klass in cjsidl::formatEnumDef.__mro__:
+    for klass in cjsidl_formatEnumDef.__mro__:
         if "fieldFormatStr" in klass.__dict__:
             descriptor = klass.__dict__["fieldFormatStr"]
             break
@@ -1149,63 +213,63 @@ def test_cjsidl::formatenumdef_has_fieldFormatStr():
 
 
 
-def test_cjsidl::valuerange_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::valueRange)
+def test_cjsidl_valuerange_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_valueRange)
 
 
-def test_cjsidl::valuerange_constructor_exists():
-    assert callable(cjsidl::valueRange.__init__)
+def test_cjsidl_valuerange_constructor_exists():
+    assert callable(cjsidl_valueRange.__init__)
 
 
-def test_cjsidl::valuerange_constructor_args():
-    sig = inspect.signature(cjsidl::valueRange.__init__)
+def test_cjsidl_valuerange_constructor_args():
+    sig = inspect.signature(cjsidl_valueRange.__init__)
     params = list(sig.parameters.keys())
     assert "upperLimit_type" in params, "Missing parameter 'upperLimit_type'"
     assert "comment" in params, "Missing parameter 'comment'"
-    assert "lowerLim" in params, "Missing parameter 'lowerLim'"
     assert "upperLim" in params, "Missing parameter 'upperLim'"
+    assert "lowerLim" in params, "Missing parameter 'lowerLim'"
     assert "lowerLimit_type" in params, "Missing parameter 'lowerLimit_type'"
 
-def test_cjsidl::valuerange_has_upperLimit_type():
-    assert hasattr(cjsidl::valueRange, "upperLimit_type")
+def test_cjsidl_valuerange_has_upperLimit_type():
+    assert hasattr(cjsidl_valueRange, "upperLimit_type")
     descriptor = None
-    for klass in cjsidl::valueRange.__mro__:
+    for klass in cjsidl_valueRange.__mro__:
         if "upperLimit_type" in klass.__dict__:
             descriptor = klass.__dict__["upperLimit_type"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::valuerange_has_comment():
-    assert hasattr(cjsidl::valueRange, "comment")
+def test_cjsidl_valuerange_has_comment():
+    assert hasattr(cjsidl_valueRange, "comment")
     descriptor = None
-    for klass in cjsidl::valueRange.__mro__:
+    for klass in cjsidl_valueRange.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::valuerange_has_lowerLim():
-    assert hasattr(cjsidl::valueRange, "lowerLim")
+def test_cjsidl_valuerange_has_upperLim():
+    assert hasattr(cjsidl_valueRange, "upperLim")
     descriptor = None
-    for klass in cjsidl::valueRange.__mro__:
-        if "lowerLim" in klass.__dict__:
-            descriptor = klass.__dict__["lowerLim"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::valuerange_has_upperLim():
-    assert hasattr(cjsidl::valueRange, "upperLim")
-    descriptor = None
-    for klass in cjsidl::valueRange.__mro__:
+    for klass in cjsidl_valueRange.__mro__:
         if "upperLim" in klass.__dict__:
             descriptor = klass.__dict__["upperLim"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::valuerange_has_lowerLimit_type():
-    assert hasattr(cjsidl::valueRange, "lowerLimit_type")
+def test_cjsidl_valuerange_has_lowerLim():
+    assert hasattr(cjsidl_valueRange, "lowerLim")
     descriptor = None
-    for klass in cjsidl::valueRange.__mro__:
+    for klass in cjsidl_valueRange.__mro__:
+        if "lowerLim" in klass.__dict__:
+            descriptor = klass.__dict__["lowerLim"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_valuerange_has_lowerLimit_type():
+    assert hasattr(cjsidl_valueRange, "lowerLimit_type")
+    descriptor = None
+    for klass in cjsidl_valueRange.__mro__:
         if "lowerLimit_type" in klass.__dict__:
             descriptor = klass.__dict__["lowerLimit_type"]
             break
@@ -1213,175 +277,175 @@ def test_cjsidl::valuerange_has_lowerLimit_type():
 
 
 
-def test_cjsidl::scaledrangedef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::scaledRangeDef)
+def test_cjsidl_scaledrangedef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_scaledRangeDef)
 
 
-def test_cjsidl::scaledrangedef_constructor_exists():
-    assert callable(cjsidl::scaledRangeDef.__init__)
+def test_cjsidl_scaledrangedef_constructor_exists():
+    assert callable(cjsidl_scaledRangeDef.__init__)
 
 
-def test_cjsidl::scaledrangedef_constructor_args():
-    sig = inspect.signature(cjsidl::scaledRangeDef.__init__)
+def test_cjsidl_scaledrangedef_constructor_args():
+    sig = inspect.signature(cjsidl_scaledRangeDef.__init__)
     params = list(sig.parameters.keys())
-    assert "function" in params, "Missing parameter 'function'"
     assert "upperLim" in params, "Missing parameter 'upperLim'"
-    assert "interp" in params, "Missing parameter 'interp'"
+    assert "function" in params, "Missing parameter 'function'"
     assert "lowerLim" in params, "Missing parameter 'lowerLim'"
+    assert "interp" in params, "Missing parameter 'interp'"
 
-def test_cjsidl::scaledrangedef_has_function():
-    assert hasattr(cjsidl::scaledRangeDef, "function")
+def test_cjsidl_scaledrangedef_has_upperLim():
+    assert hasattr(cjsidl_scaledRangeDef, "upperLim")
     descriptor = None
-    for klass in cjsidl::scaledRangeDef.__mro__:
-        if "function" in klass.__dict__:
-            descriptor = klass.__dict__["function"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::scaledrangedef_has_upperLim():
-    assert hasattr(cjsidl::scaledRangeDef, "upperLim")
-    descriptor = None
-    for klass in cjsidl::scaledRangeDef.__mro__:
+    for klass in cjsidl_scaledRangeDef.__mro__:
         if "upperLim" in klass.__dict__:
             descriptor = klass.__dict__["upperLim"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::scaledrangedef_has_interp():
-    assert hasattr(cjsidl::scaledRangeDef, "interp")
+def test_cjsidl_scaledrangedef_has_function():
+    assert hasattr(cjsidl_scaledRangeDef, "function")
     descriptor = None
-    for klass in cjsidl::scaledRangeDef.__mro__:
-        if "interp" in klass.__dict__:
-            descriptor = klass.__dict__["interp"]
+    for klass in cjsidl_scaledRangeDef.__mro__:
+        if "function" in klass.__dict__:
+            descriptor = klass.__dict__["function"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::scaledrangedef_has_lowerLim():
-    assert hasattr(cjsidl::scaledRangeDef, "lowerLim")
+def test_cjsidl_scaledrangedef_has_lowerLim():
+    assert hasattr(cjsidl_scaledRangeDef, "lowerLim")
     descriptor = None
-    for klass in cjsidl::scaledRangeDef.__mro__:
+    for klass in cjsidl_scaledRangeDef.__mro__:
         if "lowerLim" in klass.__dict__:
             descriptor = klass.__dict__["lowerLim"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_scaledrangedef_has_interp():
+    assert hasattr(cjsidl_scaledRangeDef, "interp")
+    descriptor = None
+    for klass in cjsidl_scaledRangeDef.__mro__:
+        if "interp" in klass.__dict__:
+            descriptor = klass.__dict__["interp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::subfield_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::subField)
+
+def test_cjsidl_subfield_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_subField)
 
 
-def test_cjsidl::subfield_constructor_exists():
-    assert callable(cjsidl::subField.__init__)
+def test_cjsidl_subfield_constructor_exists():
+    assert callable(cjsidl_subField.__init__)
 
 
-def test_cjsidl::subfield_constructor_args():
-    sig = inspect.signature(cjsidl::subField.__init__)
+def test_cjsidl_subfield_constructor_args():
+    sig = inspect.signature(cjsidl_subField.__init__)
     params = list(sig.parameters.keys())
     assert "toIndex" in params, "Missing parameter 'toIndex'"
+    assert "fromIndex" in params, "Missing parameter 'fromIndex'"
     assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "fromIndex" in params, "Missing parameter 'fromIndex'"
 
-def test_cjsidl::subfield_has_toIndex():
-    assert hasattr(cjsidl::subField, "toIndex")
+def test_cjsidl_subfield_has_toIndex():
+    assert hasattr(cjsidl_subField, "toIndex")
     descriptor = None
-    for klass in cjsidl::subField.__mro__:
+    for klass in cjsidl_subField.__mro__:
         if "toIndex" in klass.__dict__:
             descriptor = klass.__dict__["toIndex"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::subfield_has_comment():
-    assert hasattr(cjsidl::subField, "comment")
+def test_cjsidl_subfield_has_fromIndex():
+    assert hasattr(cjsidl_subField, "fromIndex")
     descriptor = None
-    for klass in cjsidl::subField.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::subfield_has_name():
-    assert hasattr(cjsidl::subField, "name")
-    descriptor = None
-    for klass in cjsidl::subField.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::subfield_has_fromIndex():
-    assert hasattr(cjsidl::subField, "fromIndex")
-    descriptor = None
-    for klass in cjsidl::subField.__mro__:
+    for klass in cjsidl_subField.__mro__:
         if "fromIndex" in klass.__dict__:
             descriptor = klass.__dict__["fromIndex"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_cjsidl::taggedunitsenum_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::taggedUnitsEnum)
-
-
-def test_cjsidl::taggedunitsenum_constructor_exists():
-    assert callable(cjsidl::taggedUnitsEnum.__init__)
-
-
-def test_cjsidl::taggedunitsenum_constructor_args():
-    sig = inspect.signature(cjsidl::taggedUnitsEnum.__init__)
-    params = list(sig.parameters.keys())
-    assert "fieldUnit" in params, "Missing parameter 'fieldUnit'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "const_tag" in params, "Missing parameter 'const_tag'"
-
-def test_cjsidl::taggedunitsenum_has_fieldUnit():
-    assert hasattr(cjsidl::taggedUnitsEnum, "fieldUnit")
+def test_cjsidl_subfield_has_comment():
+    assert hasattr(cjsidl_subField, "comment")
     descriptor = None
-    for klass in cjsidl::taggedUnitsEnum.__mro__:
-        if "fieldUnit" in klass.__dict__:
-            descriptor = klass.__dict__["fieldUnit"]
+    for klass in cjsidl_subField.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::taggedunitsenum_has_name():
-    assert hasattr(cjsidl::taggedUnitsEnum, "name")
+def test_cjsidl_subfield_has_name():
+    assert hasattr(cjsidl_subField, "name")
     descriptor = None
-    for klass in cjsidl::taggedUnitsEnum.__mro__:
+    for klass in cjsidl_subField.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::taggedunitsenum_has_const_tag():
-    assert hasattr(cjsidl::taggedUnitsEnum, "const_tag")
+
+
+def test_cjsidl_taggedunitsenum_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_taggedUnitsEnum)
+
+
+def test_cjsidl_taggedunitsenum_constructor_exists():
+    assert callable(cjsidl_taggedUnitsEnum.__init__)
+
+
+def test_cjsidl_taggedunitsenum_constructor_args():
+    sig = inspect.signature(cjsidl_taggedUnitsEnum.__init__)
+    params = list(sig.parameters.keys())
+    assert "fieldUnit" in params, "Missing parameter 'fieldUnit'"
+    assert "const_tag" in params, "Missing parameter 'const_tag'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_taggedunitsenum_has_fieldUnit():
+    assert hasattr(cjsidl_taggedUnitsEnum, "fieldUnit")
     descriptor = None
-    for klass in cjsidl::taggedUnitsEnum.__mro__:
+    for klass in cjsidl_taggedUnitsEnum.__mro__:
+        if "fieldUnit" in klass.__dict__:
+            descriptor = klass.__dict__["fieldUnit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_taggedunitsenum_has_const_tag():
+    assert hasattr(cjsidl_taggedUnitsEnum, "const_tag")
+    descriptor = None
+    for klass in cjsidl_taggedUnitsEnum.__mro__:
         if "const_tag" in klass.__dict__:
             descriptor = klass.__dict__["const_tag"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_taggedunitsenum_has_name():
+    assert hasattr(cjsidl_taggedUnitsEnum, "name")
+    descriptor = None
+    for klass in cjsidl_taggedUnitsEnum.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::valuesetdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::valueSetDef)
+
+def test_cjsidl_valuesetdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_valueSetDef)
 
 
-def test_cjsidl::valuesetdef_constructor_exists():
-    assert callable(cjsidl::valueSetDef.__init__)
+def test_cjsidl_valuesetdef_constructor_exists():
+    assert callable(cjsidl_valueSetDef.__init__)
 
 
-def test_cjsidl::valuesetdef_constructor_args():
-    sig = inspect.signature(cjsidl::valueSetDef.__init__)
+def test_cjsidl_valuesetdef_constructor_args():
+    sig = inspect.signature(cjsidl_valueSetDef.__init__)
     params = list(sig.parameters.keys())
     assert "offset" in params, "Missing parameter 'offset'"
 
-def test_cjsidl::valuesetdef_has_offset():
-    assert hasattr(cjsidl::valueSetDef, "offset")
+def test_cjsidl_valuesetdef_has_offset():
+    assert hasattr(cjsidl_valueSetDef, "offset")
     descriptor = None
-    for klass in cjsidl::valueSetDef.__mro__:
+    for klass in cjsidl_valueSetDef.__mro__:
         if "offset" in klass.__dict__:
             descriptor = klass.__dict__["offset"]
             break
@@ -1389,133 +453,33 @@ def test_cjsidl::valuesetdef_has_offset():
 
 
 
-def test_cjsidl::declaredeventdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::declaredEventDef)
+def test_cjsidl_declaredeventdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_declaredEventDef)
 
 
-def test_cjsidl::declaredeventdef_constructor_exists():
-    assert callable(cjsidl::declaredEventDef.__init__)
+def test_cjsidl_declaredeventdef_constructor_exists():
+    assert callable(cjsidl_declaredEventDef.__init__)
 
 
-def test_cjsidl::declaredeventdef_constructor_args():
-    sig = inspect.signature(cjsidl::declaredEventDef.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::declaredeventdef_has_name():
-    assert hasattr(cjsidl::declaredEventDef, "name")
-    descriptor = None
-    for klass in cjsidl::declaredEventDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::declaredeventdef_has_comment():
-    assert hasattr(cjsidl::declaredEventDef, "comment")
-    descriptor = None
-    for klass in cjsidl::declaredEventDef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::scopedtype_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::scopedType)
-
-
-def test_cjsidl::scopedtype_constructor_exists():
-    assert callable(cjsidl::scopedType.__init__)
-
-
-def test_cjsidl::scopedtype_constructor_args():
-    sig = inspect.signature(cjsidl::scopedType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::scopedconstid_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::scopedConstId)
-
-
-def test_cjsidl::scopedconstid_constructor_exists():
-    assert callable(cjsidl::scopedConstId.__init__)
-
-
-def test_cjsidl::scopedconstid_constructor_args():
-    sig = inspect.signature(cjsidl::scopedConstId.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::constreference_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::constReference)
-
-
-def test_cjsidl::constreference_constructor_exists():
-    assert callable(cjsidl::constReference.__init__)
-
-
-def test_cjsidl::constreference_constructor_args():
-    sig = inspect.signature(cjsidl::constReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::constreference_has_comment():
-    assert hasattr(cjsidl::constReference, "comment")
-    descriptor = None
-    for klass in cjsidl::constReference.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cjsidl::footerscopedref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::footerScopedRef)
-
-
-def test_cjsidl::footerscopedref_constructor_exists():
-    assert callable(cjsidl::footerScopedRef.__init__)
-
-
-def test_cjsidl::footerscopedref_constructor_args():
-    sig = inspect.signature(cjsidl::footerScopedRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cjsidl::footerref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::footerRef)
-
-
-def test_cjsidl::footerref_constructor_exists():
-    assert callable(cjsidl::footerRef.__init__)
-
-
-def test_cjsidl::footerref_constructor_args():
-    sig = inspect.signature(cjsidl::footerRef.__init__)
+def test_cjsidl_declaredeventdef_constructor_args():
+    sig = inspect.signature(cjsidl_declaredEventDef.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::footerref_has_comment():
-    assert hasattr(cjsidl::footerRef, "comment")
+def test_cjsidl_declaredeventdef_has_comment():
+    assert hasattr(cjsidl_declaredEventDef, "comment")
     descriptor = None
-    for klass in cjsidl::footerRef.__mro__:
+    for klass in cjsidl_declaredEventDef.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::footerref_has_name():
-    assert hasattr(cjsidl::footerRef, "name")
+def test_cjsidl_declaredeventdef_has_name():
+    assert hasattr(cjsidl_declaredEventDef, "name")
     descriptor = None
-    for klass in cjsidl::footerRef.__mro__:
+    for klass in cjsidl_declaredEventDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1523,47 +487,147 @@ def test_cjsidl::footerref_has_name():
 
 
 
-def test_cjsidl::bodyscopedref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::bodyScopedRef)
+def test_cjsidl_scopedtype_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_scopedType)
 
 
-def test_cjsidl::bodyscopedref_constructor_exists():
-    assert callable(cjsidl::bodyScopedRef.__init__)
+def test_cjsidl_scopedtype_constructor_exists():
+    assert callable(cjsidl_scopedType.__init__)
 
 
-def test_cjsidl::bodyscopedref_constructor_args():
-    sig = inspect.signature(cjsidl::bodyScopedRef.__init__)
+def test_cjsidl_scopedtype_constructor_args():
+    sig = inspect.signature(cjsidl_scopedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::bodyref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::bodyRef)
+def test_cjsidl_scopedconstid_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_scopedConstId)
 
 
-def test_cjsidl::bodyref_constructor_exists():
-    assert callable(cjsidl::bodyRef.__init__)
+def test_cjsidl_scopedconstid_constructor_exists():
+    assert callable(cjsidl_scopedConstId.__init__)
 
 
-def test_cjsidl::bodyref_constructor_args():
-    sig = inspect.signature(cjsidl::bodyRef.__init__)
+def test_cjsidl_scopedconstid_constructor_args():
+    sig = inspect.signature(cjsidl_scopedConstId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_constreference_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_constReference)
+
+
+def test_cjsidl_constreference_constructor_exists():
+    assert callable(cjsidl_constReference.__init__)
+
+
+def test_cjsidl_constreference_constructor_args():
+    sig = inspect.signature(cjsidl_constReference.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::bodyref_has_comment():
-    assert hasattr(cjsidl::bodyRef, "comment")
+def test_cjsidl_constreference_has_comment():
+    assert hasattr(cjsidl_constReference, "comment")
     descriptor = None
-    for klass in cjsidl::bodyRef.__mro__:
+    for klass in cjsidl_constReference.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::bodyref_has_name():
-    assert hasattr(cjsidl::bodyRef, "name")
+
+
+def test_cjsidl_footerscopedref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_footerScopedRef)
+
+
+def test_cjsidl_footerscopedref_constructor_exists():
+    assert callable(cjsidl_footerScopedRef.__init__)
+
+
+def test_cjsidl_footerscopedref_constructor_args():
+    sig = inspect.signature(cjsidl_footerScopedRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_footerref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_footerRef)
+
+
+def test_cjsidl_footerref_constructor_exists():
+    assert callable(cjsidl_footerRef.__init__)
+
+
+def test_cjsidl_footerref_constructor_args():
+    sig = inspect.signature(cjsidl_footerRef.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_footerref_has_name():
+    assert hasattr(cjsidl_footerRef, "name")
     descriptor = None
-    for klass in cjsidl::bodyRef.__mro__:
+    for klass in cjsidl_footerRef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_footerref_has_comment():
+    assert hasattr(cjsidl_footerRef, "comment")
+    descriptor = None
+    for klass in cjsidl_footerRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_bodyscopedref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_bodyScopedRef)
+
+
+def test_cjsidl_bodyscopedref_constructor_exists():
+    assert callable(cjsidl_bodyScopedRef.__init__)
+
+
+def test_cjsidl_bodyscopedref_constructor_args():
+    sig = inspect.signature(cjsidl_bodyScopedRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_bodyref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_bodyRef)
+
+
+def test_cjsidl_bodyref_constructor_exists():
+    assert callable(cjsidl_bodyRef.__init__)
+
+
+def test_cjsidl_bodyref_constructor_args():
+    sig = inspect.signature(cjsidl_bodyRef.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_bodyref_has_comment():
+    assert hasattr(cjsidl_bodyRef, "comment")
+    descriptor = None
+    for klass in cjsidl_bodyRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_bodyref_has_name():
+    assert hasattr(cjsidl_bodyRef, "name")
+    descriptor = None
+    for klass in cjsidl_bodyRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1571,203 +635,169 @@ def test_cjsidl::bodyref_has_name():
 
 
 
-def test_cjsidl::headerscopedref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::headerScopedRef)
+def test_cjsidl_headerscopedref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_headerScopedRef)
 
 
-def test_cjsidl::headerscopedref_constructor_exists():
-    assert callable(cjsidl::headerScopedRef.__init__)
+def test_cjsidl_headerscopedref_constructor_exists():
+    assert callable(cjsidl_headerScopedRef.__init__)
 
 
-def test_cjsidl::headerscopedref_constructor_args():
-    sig = inspect.signature(cjsidl::headerScopedRef.__init__)
+def test_cjsidl_headerscopedref_constructor_args():
+    sig = inspect.signature(cjsidl_headerScopedRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::headerref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::headerRef)
+def test_cjsidl_headerref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_headerRef)
 
 
-def test_cjsidl::headerref_constructor_exists():
-    assert callable(cjsidl::headerRef.__init__)
+def test_cjsidl_headerref_constructor_exists():
+    assert callable(cjsidl_headerRef.__init__)
 
 
-def test_cjsidl::headerref_constructor_args():
-    sig = inspect.signature(cjsidl::headerRef.__init__)
+def test_cjsidl_headerref_constructor_args():
+    sig = inspect.signature(cjsidl_headerRef.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::headerref_has_comment():
-    assert hasattr(cjsidl::headerRef, "comment")
+def test_cjsidl_headerref_has_name():
+    assert hasattr(cjsidl_headerRef, "name")
     descriptor = None
-    for klass in cjsidl::headerRef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::headerref_has_name():
-    assert hasattr(cjsidl::headerRef, "name")
-    descriptor = None
-    for klass in cjsidl::headerRef.__mro__:
+    for klass in cjsidl_headerRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_headerref_has_comment():
+    assert hasattr(cjsidl_headerRef, "comment")
+    descriptor = None
+    for klass in cjsidl_headerRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::containerref_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::containerRef)
+
+def test_cjsidl_containerref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_containerRef)
 
 
-def test_cjsidl::containerref_constructor_exists():
-    assert callable(cjsidl::containerRef.__init__)
+def test_cjsidl_containerref_constructor_exists():
+    assert callable(cjsidl_containerRef.__init__)
 
 
-def test_cjsidl::containerref_constructor_args():
-    sig = inspect.signature(cjsidl::containerRef.__init__)
+def test_cjsidl_containerref_constructor_args():
+    sig = inspect.signature(cjsidl_containerRef.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "optional" in params, "Missing parameter 'optional'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::containerref_has_optional():
-    assert hasattr(cjsidl::containerRef, "optional")
+def test_cjsidl_containerref_has_name():
+    assert hasattr(cjsidl_containerRef, "name")
     descriptor = None
-    for klass in cjsidl::containerRef.__mro__:
+    for klass in cjsidl_containerRef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_containerref_has_comment():
+    assert hasattr(cjsidl_containerRef, "comment")
+    descriptor = None
+    for klass in cjsidl_containerRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_containerref_has_optional():
+    assert hasattr(cjsidl_containerRef, "optional")
+    descriptor = None
+    for klass in cjsidl_containerRef.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::containerref_has_name():
-    assert hasattr(cjsidl::containerRef, "name")
-    descriptor = None
-    for klass in cjsidl::containerRef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::containerref_has_comment():
-    assert hasattr(cjsidl::containerRef, "comment")
-    descriptor = None
-    for klass in cjsidl::containerRef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cjsidl::containerdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::containerDef)
-
-
-def test_cjsidl::containerdef_constructor_exists():
-    assert callable(cjsidl::containerDef.__init__)
+def test_cjsidl_containerdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_containerDef)
 
 
-def test_cjsidl::containerdef_constructor_args():
-    sig = inspect.signature(cjsidl::containerDef.__init__)
+def test_cjsidl_containerdef_constructor_exists():
+    assert callable(cjsidl_containerDef.__init__)
+
+
+def test_cjsidl_containerdef_constructor_args():
+    sig = inspect.signature(cjsidl_containerDef.__init__)
     params = list(sig.parameters.keys())
     assert "optional" in params, "Missing parameter 'optional'"
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::containerdef_has_optional():
-    assert hasattr(cjsidl::containerDef, "optional")
+def test_cjsidl_containerdef_has_optional():
+    assert hasattr(cjsidl_containerDef, "optional")
     descriptor = None
-    for klass in cjsidl::containerDef.__mro__:
+    for klass in cjsidl_containerDef.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::containerdef_has_comment():
-    assert hasattr(cjsidl::containerDef, "comment")
+def test_cjsidl_containerdef_has_name():
+    assert hasattr(cjsidl_containerDef, "name")
     descriptor = None
-    for klass in cjsidl::containerDef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::containerdef_has_name():
-    assert hasattr(cjsidl::containerDef, "name")
-    descriptor = None
-    for klass in cjsidl::containerDef.__mro__:
+    for klass in cjsidl_containerDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_cjsidl::footerdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::footerDef)
-
-
-def test_cjsidl::footerdef_constructor_exists():
-    assert callable(cjsidl::footerDef.__init__)
-
-
-def test_cjsidl::footerdef_constructor_args():
-    sig = inspect.signature(cjsidl::footerDef.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cjsidl::footerdef_has_comment():
-    assert hasattr(cjsidl::footerDef, "comment")
+def test_cjsidl_containerdef_has_comment():
+    assert hasattr(cjsidl_containerDef, "comment")
     descriptor = None
-    for klass in cjsidl::footerDef.__mro__:
+    for klass in cjsidl_containerDef.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::footerdef_has_name():
-    assert hasattr(cjsidl::footerDef, "name")
-    descriptor = None
-    for klass in cjsidl::footerDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cjsidl::bodydef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::bodyDef)
-
-
-def test_cjsidl::bodydef_constructor_exists():
-    assert callable(cjsidl::bodyDef.__init__)
+def test_cjsidl_footerdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_footerDef)
 
 
-def test_cjsidl::bodydef_constructor_args():
-    sig = inspect.signature(cjsidl::bodyDef.__init__)
+def test_cjsidl_footerdef_constructor_exists():
+    assert callable(cjsidl_footerDef.__init__)
+
+
+def test_cjsidl_footerdef_constructor_args():
+    sig = inspect.signature(cjsidl_footerDef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::bodydef_has_name():
-    assert hasattr(cjsidl::bodyDef, "name")
+def test_cjsidl_footerdef_has_name():
+    assert hasattr(cjsidl_footerDef, "name")
     descriptor = None
-    for klass in cjsidl::bodyDef.__mro__:
+    for klass in cjsidl_footerDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::bodydef_has_comment():
-    assert hasattr(cjsidl::bodyDef, "comment")
+def test_cjsidl_footerdef_has_comment():
+    assert hasattr(cjsidl_footerDef, "comment")
     descriptor = None
-    for klass in cjsidl::bodyDef.__mro__:
+    for klass in cjsidl_footerDef.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -1775,543 +805,577 @@ def test_cjsidl::bodydef_has_comment():
 
 
 
-def test_cjsidl::headerdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::headerDef)
+def test_cjsidl_bodydef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_bodyDef)
 
 
-def test_cjsidl::headerdef_constructor_exists():
-    assert callable(cjsidl::headerDef.__init__)
+def test_cjsidl_bodydef_constructor_exists():
+    assert callable(cjsidl_bodyDef.__init__)
 
 
-def test_cjsidl::headerdef_constructor_args():
-    sig = inspect.signature(cjsidl::headerDef.__init__)
+def test_cjsidl_bodydef_constructor_args():
+    sig = inspect.signature(cjsidl_bodyDef.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::headerdef_has_comment():
-    assert hasattr(cjsidl::headerDef, "comment")
+def test_cjsidl_bodydef_has_name():
+    assert hasattr(cjsidl_bodyDef, "name")
     descriptor = None
-    for klass in cjsidl::headerDef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::headerdef_has_name():
-    assert hasattr(cjsidl::headerDef, "name")
-    descriptor = None
-    for klass in cjsidl::headerDef.__mro__:
+    for klass in cjsidl_bodyDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_bodydef_has_comment():
+    assert hasattr(cjsidl_bodyDef, "comment")
+    descriptor = None
+    for klass in cjsidl_bodyDef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::varformatfield_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::varFormatField)
+
+def test_cjsidl_headerdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_headerDef)
 
 
-def test_cjsidl::varformatfield_constructor_exists():
-    assert callable(cjsidl::varFormatField.__init__)
+def test_cjsidl_headerdef_constructor_exists():
+    assert callable(cjsidl_headerDef.__init__)
 
 
-def test_cjsidl::varformatfield_constructor_args():
-    sig = inspect.signature(cjsidl::varFormatField.__init__)
+def test_cjsidl_headerdef_constructor_args():
+    sig = inspect.signature(cjsidl_headerDef.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_headerdef_has_name():
+    assert hasattr(cjsidl_headerDef, "name")
+    descriptor = None
+    for klass in cjsidl_headerDef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_headerdef_has_comment():
+    assert hasattr(cjsidl_headerDef, "comment")
+    descriptor = None
+    for klass in cjsidl_headerDef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_varformatfield_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_varFormatField)
+
+
+def test_cjsidl_varformatfield_constructor_exists():
+    assert callable(cjsidl_varFormatField.__init__)
+
+
+def test_cjsidl_varformatfield_constructor_args():
+    sig = inspect.signature(cjsidl_varFormatField.__init__)
+    params = list(sig.parameters.keys())
+    assert "optional" in params, "Missing parameter 'optional'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
     assert "units" in params, "Missing parameter 'units'"
-    assert "optional" in params, "Missing parameter 'optional'"
     assert "countComment" in params, "Missing parameter 'countComment'"
-    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::varformatfield_has_name():
-    assert hasattr(cjsidl::varFormatField, "name")
+def test_cjsidl_varformatfield_has_optional():
+    assert hasattr(cjsidl_varFormatField, "optional")
     descriptor = None
-    for klass in cjsidl::varFormatField.__mro__:
+    for klass in cjsidl_varFormatField.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_varformatfield_has_comment():
+    assert hasattr(cjsidl_varFormatField, "comment")
+    descriptor = None
+    for klass in cjsidl_varFormatField.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_varformatfield_has_name():
+    assert hasattr(cjsidl_varFormatField, "name")
+    descriptor = None
+    for klass in cjsidl_varFormatField.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varformatfield_has_units():
-    assert hasattr(cjsidl::varFormatField, "units")
+def test_cjsidl_varformatfield_has_units():
+    assert hasattr(cjsidl_varFormatField, "units")
     descriptor = None
-    for klass in cjsidl::varFormatField.__mro__:
+    for klass in cjsidl_varFormatField.__mro__:
         if "units" in klass.__dict__:
             descriptor = klass.__dict__["units"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varformatfield_has_optional():
-    assert hasattr(cjsidl::varFormatField, "optional")
+def test_cjsidl_varformatfield_has_countComment():
+    assert hasattr(cjsidl_varFormatField, "countComment")
     descriptor = None
-    for klass in cjsidl::varFormatField.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varformatfield_has_countComment():
-    assert hasattr(cjsidl::varFormatField, "countComment")
-    descriptor = None
-    for klass in cjsidl::varFormatField.__mro__:
+    for klass in cjsidl_varFormatField.__mro__:
         if "countComment" in klass.__dict__:
             descriptor = klass.__dict__["countComment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varformatfield_has_comment():
-    assert hasattr(cjsidl::varFormatField, "comment")
-    descriptor = None
-    for klass in cjsidl::varFormatField.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cjsidl::varlenfield_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::varLenField)
-
-
-def test_cjsidl::varlenfield_constructor_exists():
-    assert callable(cjsidl::varLenField.__init__)
+def test_cjsidl_varlenfield_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_varLenField)
 
 
-def test_cjsidl::varlenfield_constructor_args():
-    sig = inspect.signature(cjsidl::varLenField.__init__)
+def test_cjsidl_varlenfield_constructor_exists():
+    assert callable(cjsidl_varLenField.__init__)
+
+
+def test_cjsidl_varlenfield_constructor_args():
+    sig = inspect.signature(cjsidl_varLenField.__init__)
     params = list(sig.parameters.keys())
-    assert "countComment" in params, "Missing parameter 'countComment'"
     assert "upperLim" in params, "Missing parameter 'upperLim'"
+    assert "countComment" in params, "Missing parameter 'countComment'"
     assert "comment" in params, "Missing parameter 'comment'"
+    assert "optional" in params, "Missing parameter 'optional'"
     assert "name" in params, "Missing parameter 'name'"
     assert "fieldFormat" in params, "Missing parameter 'fieldFormat'"
     assert "lowerLim" in params, "Missing parameter 'lowerLim'"
-    assert "optional" in params, "Missing parameter 'optional'"
 
-def test_cjsidl::varlenfield_has_countComment():
-    assert hasattr(cjsidl::varLenField, "countComment")
+def test_cjsidl_varlenfield_has_upperLim():
+    assert hasattr(cjsidl_varLenField, "upperLim")
     descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
-        if "countComment" in klass.__dict__:
-            descriptor = klass.__dict__["countComment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varlenfield_has_upperLim():
-    assert hasattr(cjsidl::varLenField, "upperLim")
-    descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
+    for klass in cjsidl_varLenField.__mro__:
         if "upperLim" in klass.__dict__:
             descriptor = klass.__dict__["upperLim"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varlenfield_has_comment():
-    assert hasattr(cjsidl::varLenField, "comment")
+def test_cjsidl_varlenfield_has_countComment():
+    assert hasattr(cjsidl_varLenField, "countComment")
     descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
+    for klass in cjsidl_varLenField.__mro__:
+        if "countComment" in klass.__dict__:
+            descriptor = klass.__dict__["countComment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_varlenfield_has_comment():
+    assert hasattr(cjsidl_varLenField, "comment")
+    descriptor = None
+    for klass in cjsidl_varLenField.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varlenfield_has_name():
-    assert hasattr(cjsidl::varLenField, "name")
+def test_cjsidl_varlenfield_has_optional():
+    assert hasattr(cjsidl_varLenField, "optional")
     descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
+    for klass in cjsidl_varLenField.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_varlenfield_has_name():
+    assert hasattr(cjsidl_varLenField, "name")
+    descriptor = None
+    for klass in cjsidl_varLenField.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varlenfield_has_fieldFormat():
-    assert hasattr(cjsidl::varLenField, "fieldFormat")
+def test_cjsidl_varlenfield_has_fieldFormat():
+    assert hasattr(cjsidl_varLenField, "fieldFormat")
     descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
+    for klass in cjsidl_varLenField.__mro__:
         if "fieldFormat" in klass.__dict__:
             descriptor = klass.__dict__["fieldFormat"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varlenfield_has_lowerLim():
-    assert hasattr(cjsidl::varLenField, "lowerLim")
+def test_cjsidl_varlenfield_has_lowerLim():
+    assert hasattr(cjsidl_varLenField, "lowerLim")
     descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
+    for klass in cjsidl_varLenField.__mro__:
         if "lowerLim" in klass.__dict__:
             descriptor = klass.__dict__["lowerLim"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varlenfield_has_optional():
-    assert hasattr(cjsidl::varLenField, "optional")
-    descriptor = None
-    for klass in cjsidl::varLenField.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cjsidl::varlenstring_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::varLenString)
-
-
-def test_cjsidl::varlenstring_constructor_exists():
-    assert callable(cjsidl::varLenString.__init__)
+def test_cjsidl_varlenstring_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_varLenString)
 
 
-def test_cjsidl::varlenstring_constructor_args():
-    sig = inspect.signature(cjsidl::varLenString.__init__)
+def test_cjsidl_varlenstring_constructor_exists():
+    assert callable(cjsidl_varLenString.__init__)
+
+
+def test_cjsidl_varlenstring_constructor_args():
+    sig = inspect.signature(cjsidl_varLenString.__init__)
     params = list(sig.parameters.keys())
-    assert "optional" in params, "Missing parameter 'optional'"
-    assert "upperLim" in params, "Missing parameter 'upperLim'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "lowerLim" in params, "Missing parameter 'lowerLim'"
+    assert "optional" in params, "Missing parameter 'optional'"
+    assert "upperLim" in params, "Missing parameter 'upperLim'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::varlenstring_has_optional():
-    assert hasattr(cjsidl::varLenString, "optional")
+def test_cjsidl_varlenstring_has_lowerLim():
+    assert hasattr(cjsidl_varLenString, "lowerLim")
     descriptor = None
-    for klass in cjsidl::varLenString.__mro__:
-        if "optional" in klass.__dict__:
-            descriptor = klass.__dict__["optional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varlenstring_has_upperLim():
-    assert hasattr(cjsidl::varLenString, "upperLim")
-    descriptor = None
-    for klass in cjsidl::varLenString.__mro__:
-        if "upperLim" in klass.__dict__:
-            descriptor = klass.__dict__["upperLim"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varlenstring_has_comment():
-    assert hasattr(cjsidl::varLenString, "comment")
-    descriptor = None
-    for klass in cjsidl::varLenString.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varlenstring_has_name():
-    assert hasattr(cjsidl::varLenString, "name")
-    descriptor = None
-    for klass in cjsidl::varLenString.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varlenstring_has_lowerLim():
-    assert hasattr(cjsidl::varLenString, "lowerLim")
-    descriptor = None
-    for klass in cjsidl::varLenString.__mro__:
+    for klass in cjsidl_varLenString.__mro__:
         if "lowerLim" in klass.__dict__:
             descriptor = klass.__dict__["lowerLim"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_cjsidl::fixedlenstring_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::fixedLenString)
-
-
-def test_cjsidl::fixedlenstring_constructor_exists():
-    assert callable(cjsidl::fixedLenString.__init__)
-
-
-def test_cjsidl::fixedlenstring_constructor_args():
-    sig = inspect.signature(cjsidl::fixedLenString.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "optional" in params, "Missing parameter 'optional'"
-    assert "upperLim" in params, "Missing parameter 'upperLim'"
-
-def test_cjsidl::fixedlenstring_has_name():
-    assert hasattr(cjsidl::fixedLenString, "name")
+def test_cjsidl_varlenstring_has_optional():
+    assert hasattr(cjsidl_varLenString, "optional")
     descriptor = None
-    for klass in cjsidl::fixedLenString.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::fixedlenstring_has_comment():
-    assert hasattr(cjsidl::fixedLenString, "comment")
-    descriptor = None
-    for klass in cjsidl::fixedLenString.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::fixedlenstring_has_optional():
-    assert hasattr(cjsidl::fixedLenString, "optional")
-    descriptor = None
-    for klass in cjsidl::fixedLenString.__mro__:
+    for klass in cjsidl_varLenString.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::fixedlenstring_has_upperLim():
-    assert hasattr(cjsidl::fixedLenString, "upperLim")
+def test_cjsidl_varlenstring_has_upperLim():
+    assert hasattr(cjsidl_varLenString, "upperLim")
     descriptor = None
-    for klass in cjsidl::fixedLenString.__mro__:
+    for klass in cjsidl_varLenString.__mro__:
         if "upperLim" in klass.__dict__:
             descriptor = klass.__dict__["upperLim"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_varlenstring_has_comment():
+    assert hasattr(cjsidl_varLenString, "comment")
+    descriptor = None
+    for klass in cjsidl_varLenString.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_varlenstring_has_name():
+    assert hasattr(cjsidl_varLenString, "name")
+    descriptor = None
+    for klass in cjsidl_varLenString.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::bitfielddef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::bitfieldDef)
+
+def test_cjsidl_fixedlenstring_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_fixedLenString)
 
 
-def test_cjsidl::bitfielddef_constructor_exists():
-    assert callable(cjsidl::bitfieldDef.__init__)
+def test_cjsidl_fixedlenstring_constructor_exists():
+    assert callable(cjsidl_fixedLenString.__init__)
 
 
-def test_cjsidl::bitfielddef_constructor_args():
-    sig = inspect.signature(cjsidl::bitfieldDef.__init__)
+def test_cjsidl_fixedlenstring_constructor_args():
+    sig = inspect.signature(cjsidl_fixedLenString.__init__)
+    params = list(sig.parameters.keys())
+    assert "optional" in params, "Missing parameter 'optional'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "upperLim" in params, "Missing parameter 'upperLim'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_fixedlenstring_has_optional():
+    assert hasattr(cjsidl_fixedLenString, "optional")
+    descriptor = None
+    for klass in cjsidl_fixedLenString.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_fixedlenstring_has_comment():
+    assert hasattr(cjsidl_fixedLenString, "comment")
+    descriptor = None
+    for klass in cjsidl_fixedLenString.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_fixedlenstring_has_upperLim():
+    assert hasattr(cjsidl_fixedLenString, "upperLim")
+    descriptor = None
+    for klass in cjsidl_fixedLenString.__mro__:
+        if "upperLim" in klass.__dict__:
+            descriptor = klass.__dict__["upperLim"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_fixedlenstring_has_name():
+    assert hasattr(cjsidl_fixedLenString, "name")
+    descriptor = None
+    for klass in cjsidl_fixedLenString.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_bitfielddef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_bitfieldDef)
+
+
+def test_cjsidl_bitfielddef_constructor_exists():
+    assert callable(cjsidl_bitfieldDef.__init__)
+
+
+def test_cjsidl_bitfielddef_constructor_args():
+    sig = inspect.signature(cjsidl_bitfieldDef.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "optional" in params, "Missing parameter 'optional'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::bitfielddef_has_type():
-    assert hasattr(cjsidl::bitfieldDef, "type")
+def test_cjsidl_bitfielddef_has_type():
+    assert hasattr(cjsidl_bitfieldDef, "type")
     descriptor = None
-    for klass in cjsidl::bitfieldDef.__mro__:
+    for klass in cjsidl_bitfieldDef.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::bitfielddef_has_comment():
-    assert hasattr(cjsidl::bitfieldDef, "comment")
+def test_cjsidl_bitfielddef_has_comment():
+    assert hasattr(cjsidl_bitfieldDef, "comment")
     descriptor = None
-    for klass in cjsidl::bitfieldDef.__mro__:
+    for klass in cjsidl_bitfieldDef.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::bitfielddef_has_name():
-    assert hasattr(cjsidl::bitfieldDef, "name")
+def test_cjsidl_bitfielddef_has_optional():
+    assert hasattr(cjsidl_bitfieldDef, "optional")
     descriptor = None
-    for klass in cjsidl::bitfieldDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::bitfielddef_has_optional():
-    assert hasattr(cjsidl::bitfieldDef, "optional")
-    descriptor = None
-    for klass in cjsidl::bitfieldDef.__mro__:
+    for klass in cjsidl_bitfieldDef.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_cjsidl::action_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::action)
-
-
-def test_cjsidl::action_constructor_exists():
-    assert callable(cjsidl::action.__init__)
-
-
-def test_cjsidl::action_constructor_args():
-    sig = inspect.signature(cjsidl::action.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-
-def test_cjsidl::action_has_name():
-    assert hasattr(cjsidl::action, "name")
+def test_cjsidl_bitfielddef_has_name():
+    assert hasattr(cjsidl_bitfieldDef, "name")
     descriptor = None
-    for klass in cjsidl::action.__mro__:
+    for klass in cjsidl_bitfieldDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::action_has_comment():
-    assert hasattr(cjsidl::action, "comment")
+
+
+def test_cjsidl_action_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_action)
+
+
+def test_cjsidl_action_constructor_exists():
+    assert callable(cjsidl_action.__init__)
+
+
+def test_cjsidl_action_constructor_args():
+    sig = inspect.signature(cjsidl_action.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_action_has_comment():
+    assert hasattr(cjsidl_action, "comment")
     descriptor = None
-    for klass in cjsidl::action.__mro__:
+    for klass in cjsidl_action.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_action_has_name():
+    assert hasattr(cjsidl_action, "name")
+    descriptor = None
+    for klass in cjsidl_action.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::varfield_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::varField)
+
+def test_cjsidl_varfield_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_varField)
 
 
-def test_cjsidl::varfield_constructor_exists():
-    assert callable(cjsidl::varField.__init__)
+def test_cjsidl_varfield_constructor_exists():
+    assert callable(cjsidl_varField.__init__)
 
 
-def test_cjsidl::varfield_constructor_args():
-    sig = inspect.signature(cjsidl::varField.__init__)
+def test_cjsidl_varfield_constructor_args():
+    sig = inspect.signature(cjsidl_varField.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "comment" in params, "Missing parameter 'comment'"
     assert "optional" in params, "Missing parameter 'optional'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::varfield_has_name():
-    assert hasattr(cjsidl::varField, "name")
+def test_cjsidl_varfield_has_comment():
+    assert hasattr(cjsidl_varField, "comment")
     descriptor = None
-    for klass in cjsidl::varField.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::varfield_has_comment():
-    assert hasattr(cjsidl::varField, "comment")
-    descriptor = None
-    for klass in cjsidl::varField.__mro__:
+    for klass in cjsidl_varField.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::varfield_has_optional():
-    assert hasattr(cjsidl::varField, "optional")
+def test_cjsidl_varfield_has_optional():
+    assert hasattr(cjsidl_varField, "optional")
     descriptor = None
-    for klass in cjsidl::varField.__mro__:
+    for klass in cjsidl_varField.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_varfield_has_name():
+    assert hasattr(cjsidl_varField, "name")
+    descriptor = None
+    for klass in cjsidl_varField.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::fixedfielddef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::fixedFieldDef)
+
+def test_cjsidl_fixedfielddef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_fixedFieldDef)
 
 
-def test_cjsidl::fixedfielddef_constructor_exists():
-    assert callable(cjsidl::fixedFieldDef.__init__)
+def test_cjsidl_fixedfielddef_constructor_exists():
+    assert callable(cjsidl_fixedFieldDef.__init__)
 
 
-def test_cjsidl::fixedfielddef_constructor_args():
-    sig = inspect.signature(cjsidl::fixedFieldDef.__init__)
+def test_cjsidl_fixedfielddef_constructor_args():
+    sig = inspect.signature(cjsidl_fixedFieldDef.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "fieldUnit" in params, "Missing parameter 'fieldUnit'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "optional" in params, "Missing parameter 'optional'"
-    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::fixedfielddef_has_name():
-    assert hasattr(cjsidl::fixedFieldDef, "name")
+def test_cjsidl_fixedfielddef_has_comment():
+    assert hasattr(cjsidl_fixedFieldDef, "comment")
     descriptor = None
-    for klass in cjsidl::fixedFieldDef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in cjsidl_fixedFieldDef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::fixedfielddef_has_fieldUnit():
-    assert hasattr(cjsidl::fixedFieldDef, "fieldUnit")
+def test_cjsidl_fixedfielddef_has_fieldUnit():
+    assert hasattr(cjsidl_fixedFieldDef, "fieldUnit")
     descriptor = None
-    for klass in cjsidl::fixedFieldDef.__mro__:
+    for klass in cjsidl_fixedFieldDef.__mro__:
         if "fieldUnit" in klass.__dict__:
             descriptor = klass.__dict__["fieldUnit"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::fixedfielddef_has_optional():
-    assert hasattr(cjsidl::fixedFieldDef, "optional")
+def test_cjsidl_fixedfielddef_has_name():
+    assert hasattr(cjsidl_fixedFieldDef, "name")
     descriptor = None
-    for klass in cjsidl::fixedFieldDef.__mro__:
+    for klass in cjsidl_fixedFieldDef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_fixedfielddef_has_optional():
+    assert hasattr(cjsidl_fixedFieldDef, "optional")
+    descriptor = None
+    for klass in cjsidl_fixedFieldDef.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::fixedfielddef_has_comment():
-    assert hasattr(cjsidl::fixedFieldDef, "comment")
-    descriptor = None
-    for klass in cjsidl::fixedFieldDef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cjsidl::sequencedef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::sequenceDef)
-
-
-def test_cjsidl::sequencedef_constructor_exists():
-    assert callable(cjsidl::sequenceDef.__init__)
+def test_cjsidl_sequencedef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_sequenceDef)
 
 
-def test_cjsidl::sequencedef_constructor_args():
-    sig = inspect.signature(cjsidl::sequenceDef.__init__)
+def test_cjsidl_sequencedef_constructor_exists():
+    assert callable(cjsidl_sequenceDef.__init__)
+
+
+def test_cjsidl_sequencedef_constructor_args():
+    sig = inspect.signature(cjsidl_sequenceDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::variantdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::variantDef)
+def test_cjsidl_variantdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_variantDef)
 
 
-def test_cjsidl::variantdef_constructor_exists():
-    assert callable(cjsidl::variantDef.__init__)
+def test_cjsidl_variantdef_constructor_exists():
+    assert callable(cjsidl_variantDef.__init__)
 
 
-def test_cjsidl::variantdef_constructor_args():
-    sig = inspect.signature(cjsidl::variantDef.__init__)
+def test_cjsidl_variantdef_constructor_args():
+    sig = inspect.signature(cjsidl_variantDef.__init__)
     params = list(sig.parameters.keys())
     assert "minCount" in params, "Missing parameter 'minCount'"
     assert "maxCount" in params, "Missing parameter 'maxCount'"
     assert "vtagComment" in params, "Missing parameter 'vtagComment'"
 
-def test_cjsidl::variantdef_has_minCount():
-    assert hasattr(cjsidl::variantDef, "minCount")
+def test_cjsidl_variantdef_has_minCount():
+    assert hasattr(cjsidl_variantDef, "minCount")
     descriptor = None
-    for klass in cjsidl::variantDef.__mro__:
+    for klass in cjsidl_variantDef.__mro__:
         if "minCount" in klass.__dict__:
             descriptor = klass.__dict__["minCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::variantdef_has_maxCount():
-    assert hasattr(cjsidl::variantDef, "maxCount")
+def test_cjsidl_variantdef_has_maxCount():
+    assert hasattr(cjsidl_variantDef, "maxCount")
     descriptor = None
-    for klass in cjsidl::variantDef.__mro__:
+    for klass in cjsidl_variantDef.__mro__:
         if "maxCount" in klass.__dict__:
             descriptor = klass.__dict__["maxCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::variantdef_has_vtagComment():
-    assert hasattr(cjsidl::variantDef, "vtagComment")
+def test_cjsidl_variantdef_has_vtagComment():
+    assert hasattr(cjsidl_variantDef, "vtagComment")
     descriptor = None
-    for klass in cjsidl::variantDef.__mro__:
+    for klass in cjsidl_variantDef.__mro__:
         if "vtagComment" in klass.__dict__:
             descriptor = klass.__dict__["vtagComment"]
             break
@@ -2319,111 +1383,111 @@ def test_cjsidl::variantdef_has_vtagComment():
 
 
 
-def test_cjsidl::listdef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::listDef)
+def test_cjsidl_listdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_listDef)
 
 
-def test_cjsidl::listdef_constructor_exists():
-    assert callable(cjsidl::listDef.__init__)
+def test_cjsidl_listdef_constructor_exists():
+    assert callable(cjsidl_listDef.__init__)
 
 
-def test_cjsidl::listdef_constructor_args():
-    sig = inspect.signature(cjsidl::listDef.__init__)
+def test_cjsidl_listdef_constructor_args():
+    sig = inspect.signature(cjsidl_listDef.__init__)
     params = list(sig.parameters.keys())
-    assert "minCount" in params, "Missing parameter 'minCount'"
-    assert "countComment" in params, "Missing parameter 'countComment'"
     assert "maxCount" in params, "Missing parameter 'maxCount'"
+    assert "countComment" in params, "Missing parameter 'countComment'"
+    assert "minCount" in params, "Missing parameter 'minCount'"
 
-def test_cjsidl::listdef_has_minCount():
-    assert hasattr(cjsidl::listDef, "minCount")
+def test_cjsidl_listdef_has_maxCount():
+    assert hasattr(cjsidl_listDef, "maxCount")
     descriptor = None
-    for klass in cjsidl::listDef.__mro__:
-        if "minCount" in klass.__dict__:
-            descriptor = klass.__dict__["minCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::listdef_has_countComment():
-    assert hasattr(cjsidl::listDef, "countComment")
-    descriptor = None
-    for klass in cjsidl::listDef.__mro__:
-        if "countComment" in klass.__dict__:
-            descriptor = klass.__dict__["countComment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::listdef_has_maxCount():
-    assert hasattr(cjsidl::listDef, "maxCount")
-    descriptor = None
-    for klass in cjsidl::listDef.__mro__:
+    for klass in cjsidl_listDef.__mro__:
         if "maxCount" in klass.__dict__:
             descriptor = klass.__dict__["maxCount"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_listdef_has_countComment():
+    assert hasattr(cjsidl_listDef, "countComment")
+    descriptor = None
+    for klass in cjsidl_listDef.__mro__:
+        if "countComment" in klass.__dict__:
+            descriptor = klass.__dict__["countComment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_listdef_has_minCount():
+    assert hasattr(cjsidl_listDef, "minCount")
+    descriptor = None
+    for klass in cjsidl_listDef.__mro__:
+        if "minCount" in klass.__dict__:
+            descriptor = klass.__dict__["minCount"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::recorddef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::recordDef)
+
+def test_cjsidl_recorddef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_recordDef)
 
 
-def test_cjsidl::recorddef_constructor_exists():
-    assert callable(cjsidl::recordDef.__init__)
+def test_cjsidl_recorddef_constructor_exists():
+    assert callable(cjsidl_recordDef.__init__)
 
 
-def test_cjsidl::recorddef_constructor_args():
-    sig = inspect.signature(cjsidl::recordDef.__init__)
+def test_cjsidl_recorddef_constructor_args():
+    sig = inspect.signature(cjsidl_recordDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::arraydef_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::arrayDef)
+def test_cjsidl_arraydef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_arrayDef)
 
 
-def test_cjsidl::arraydef_constructor_exists():
-    assert callable(cjsidl::arrayDef.__init__)
+def test_cjsidl_arraydef_constructor_exists():
+    assert callable(cjsidl_arrayDef.__init__)
 
 
-def test_cjsidl::arraydef_constructor_args():
-    sig = inspect.signature(cjsidl::arrayDef.__init__)
+def test_cjsidl_arraydef_constructor_args():
+    sig = inspect.signature(cjsidl_arrayDef.__init__)
     params = list(sig.parameters.keys())
+    assert "optional" in params, "Missing parameter 'optional'"
     assert "arraySize" in params, "Missing parameter 'arraySize'"
     assert "comment" in params, "Missing parameter 'comment'"
-    assert "optional" in params, "Missing parameter 'optional'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cjsidl::arraydef_has_arraySize():
-    assert hasattr(cjsidl::arrayDef, "arraySize")
+def test_cjsidl_arraydef_has_optional():
+    assert hasattr(cjsidl_arrayDef, "optional")
     descriptor = None
-    for klass in cjsidl::arrayDef.__mro__:
-        if "arraySize" in klass.__dict__:
-            descriptor = klass.__dict__["arraySize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::arraydef_has_comment():
-    assert hasattr(cjsidl::arrayDef, "comment")
-    descriptor = None
-    for klass in cjsidl::arrayDef.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::arraydef_has_optional():
-    assert hasattr(cjsidl::arrayDef, "optional")
-    descriptor = None
-    for klass in cjsidl::arrayDef.__mro__:
+    for klass in cjsidl_arrayDef.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::arraydef_has_name():
-    assert hasattr(cjsidl::arrayDef, "name")
+def test_cjsidl_arraydef_has_arraySize():
+    assert hasattr(cjsidl_arrayDef, "arraySize")
     descriptor = None
-    for klass in cjsidl::arrayDef.__mro__:
+    for klass in cjsidl_arrayDef.__mro__:
+        if "arraySize" in klass.__dict__:
+            descriptor = klass.__dict__["arraySize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_arraydef_has_comment():
+    assert hasattr(cjsidl_arrayDef, "comment")
+    descriptor = None
+    for klass in cjsidl_arrayDef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_arraydef_has_name():
+    assert hasattr(cjsidl_arrayDef, "name")
+    descriptor = None
+    for klass in cjsidl_arrayDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2431,23 +1495,23 @@ def test_cjsidl::arraydef_has_name():
 
 
 
-def test_cjsidl::simplenumerictype_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::simpleNumericType)
+def test_cjsidl_simplenumerictype_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_simpleNumericType)
 
 
-def test_cjsidl::simplenumerictype_constructor_exists():
-    assert callable(cjsidl::simpleNumericType.__init__)
+def test_cjsidl_simplenumerictype_constructor_exists():
+    assert callable(cjsidl_simpleNumericType.__init__)
 
 
-def test_cjsidl::simplenumerictype_constructor_args():
-    sig = inspect.signature(cjsidl::simpleNumericType.__init__)
+def test_cjsidl_simplenumerictype_constructor_args():
+    sig = inspect.signature(cjsidl_simpleNumericType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_cjsidl::simplenumerictype_has_type():
-    assert hasattr(cjsidl::simpleNumericType, "type")
+def test_cjsidl_simplenumerictype_has_type():
+    assert hasattr(cjsidl_simpleNumericType, "type")
     descriptor = None
-    for klass in cjsidl::simpleNumericType.__mro__:
+    for klass in cjsidl_simpleNumericType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -2455,23 +1519,23 @@ def test_cjsidl::simplenumerictype_has_type():
 
 
 
-def test_cjsidl::simpletransition_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::simpleTransition)
+def test_cjsidl_simpletransition_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_simpleTransition)
 
 
-def test_cjsidl::simpletransition_constructor_exists():
-    assert callable(cjsidl::simpleTransition.__init__)
+def test_cjsidl_simpletransition_constructor_exists():
+    assert callable(cjsidl_simpleTransition.__init__)
 
 
-def test_cjsidl::simpletransition_constructor_args():
-    sig = inspect.signature(cjsidl::simpleTransition.__init__)
+def test_cjsidl_simpletransition_constructor_args():
+    sig = inspect.signature(cjsidl_simpleTransition.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::simpletransition_has_comment():
-    assert hasattr(cjsidl::simpleTransition, "comment")
+def test_cjsidl_simpletransition_has_comment():
+    assert hasattr(cjsidl_simpleTransition, "comment")
     descriptor = None
-    for klass in cjsidl::simpleTransition.__mro__:
+    for klass in cjsidl_simpleTransition.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -2479,23 +1543,23 @@ def test_cjsidl::simpletransition_has_comment():
 
 
 
-def test_cjsidl::internaltransition_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::internalTransition)
+def test_cjsidl_internaltransition_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_internalTransition)
 
 
-def test_cjsidl::internaltransition_constructor_exists():
-    assert callable(cjsidl::internalTransition.__init__)
+def test_cjsidl_internaltransition_constructor_exists():
+    assert callable(cjsidl_internalTransition.__init__)
 
 
-def test_cjsidl::internaltransition_constructor_args():
-    sig = inspect.signature(cjsidl::internalTransition.__init__)
+def test_cjsidl_internaltransition_constructor_args():
+    sig = inspect.signature(cjsidl_internalTransition.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::internaltransition_has_comment():
-    assert hasattr(cjsidl::internalTransition, "comment")
+def test_cjsidl_internaltransition_has_comment():
+    assert hasattr(cjsidl_internalTransition, "comment")
     descriptor = None
-    for klass in cjsidl::internalTransition.__mro__:
+    for klass in cjsidl_internalTransition.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -2503,57 +1567,57 @@ def test_cjsidl::internaltransition_has_comment():
 
 
 
-def test_cjsidl::guardaction_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::guardAction)
+def test_cjsidl_guardaction_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_guardAction)
 
 
-def test_cjsidl::guardaction_constructor_exists():
-    assert callable(cjsidl::guardAction.__init__)
+def test_cjsidl_guardaction_constructor_exists():
+    assert callable(cjsidl_guardAction.__init__)
 
 
-def test_cjsidl::guardaction_constructor_args():
-    sig = inspect.signature(cjsidl::guardAction.__init__)
+def test_cjsidl_guardaction_constructor_args():
+    sig = inspect.signature(cjsidl_guardAction.__init__)
     params = list(sig.parameters.keys())
-    assert "not_" in params, "Missing parameter 'not_'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "not_" in params, "Missing parameter 'not_'"
 
-def test_cjsidl::guardaction_has_not_():
-    assert hasattr(cjsidl::guardAction, "not_")
+def test_cjsidl_guardaction_has_name():
+    assert hasattr(cjsidl_guardAction, "name")
     descriptor = None
-    for klass in cjsidl::guardAction.__mro__:
-        if "not_" in klass.__dict__:
-            descriptor = klass.__dict__["not_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::guardaction_has_name():
-    assert hasattr(cjsidl::guardAction, "name")
-    descriptor = None
-    for klass in cjsidl::guardAction.__mro__:
+    for klass in cjsidl_guardAction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_guardaction_has_not_():
+    assert hasattr(cjsidl_guardAction, "not_")
+    descriptor = None
+    for klass in cjsidl_guardAction.__mro__:
+        if "not_" in klass.__dict__:
+            descriptor = klass.__dict__["not_"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::guardparam_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::guardParam)
+
+def test_cjsidl_guardparam_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_guardParam)
 
 
-def test_cjsidl::guardparam_constructor_exists():
-    assert callable(cjsidl::guardParam.__init__)
+def test_cjsidl_guardparam_constructor_exists():
+    assert callable(cjsidl_guardParam.__init__)
 
 
-def test_cjsidl::guardparam_constructor_args():
-    sig = inspect.signature(cjsidl::guardParam.__init__)
+def test_cjsidl_guardparam_constructor_args():
+    sig = inspect.signature(cjsidl_guardParam.__init__)
     params = list(sig.parameters.keys())
     assert "guardConst" in params, "Missing parameter 'guardConst'"
 
-def test_cjsidl::guardparam_has_guardConst():
-    assert hasattr(cjsidl::guardParam, "guardConst")
+def test_cjsidl_guardparam_has_guardConst():
+    assert hasattr(cjsidl_guardParam, "guardConst")
     descriptor = None
-    for klass in cjsidl::guardParam.__mro__:
+    for klass in cjsidl_guardParam.__mro__:
         if "guardConst" in klass.__dict__:
             descriptor = klass.__dict__["guardConst"]
             break
@@ -2561,23 +1625,23 @@ def test_cjsidl::guardparam_has_guardConst():
 
 
 
-def test_cjsidl::poptransition_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::popTransition)
+def test_cjsidl_poptransition_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_popTransition)
 
 
-def test_cjsidl::poptransition_constructor_exists():
-    assert callable(cjsidl::popTransition.__init__)
+def test_cjsidl_poptransition_constructor_exists():
+    assert callable(cjsidl_popTransition.__init__)
 
 
-def test_cjsidl::poptransition_constructor_args():
-    sig = inspect.signature(cjsidl::popTransition.__init__)
+def test_cjsidl_poptransition_constructor_args():
+    sig = inspect.signature(cjsidl_popTransition.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::poptransition_has_comment():
-    assert hasattr(cjsidl::popTransition, "comment")
+def test_cjsidl_poptransition_has_comment():
+    assert hasattr(cjsidl_popTransition, "comment")
     descriptor = None
-    for klass in cjsidl::popTransition.__mro__:
+    for klass in cjsidl_popTransition.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -2585,23 +1649,23 @@ def test_cjsidl::poptransition_has_comment():
 
 
 
-def test_cjsidl::pushtransition_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::pushTransition)
+def test_cjsidl_pushtransition_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_pushTransition)
 
 
-def test_cjsidl::pushtransition_constructor_exists():
-    assert callable(cjsidl::pushTransition.__init__)
+def test_cjsidl_pushtransition_constructor_exists():
+    assert callable(cjsidl_pushTransition.__init__)
 
 
-def test_cjsidl::pushtransition_constructor_args():
-    sig = inspect.signature(cjsidl::pushTransition.__init__)
+def test_cjsidl_pushtransition_constructor_args():
+    sig = inspect.signature(cjsidl_pushTransition.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::pushtransition_has_comment():
-    assert hasattr(cjsidl::pushTransition, "comment")
+def test_cjsidl_pushtransition_has_comment():
+    assert hasattr(cjsidl_pushTransition, "comment")
     descriptor = None
-    for klass in cjsidl::pushTransition.__mro__:
+    for klass in cjsidl_pushTransition.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -2609,23 +1673,23 @@ def test_cjsidl::pushtransition_has_comment():
 
 
 
-def test_cjsidl::nextstate_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::nextState)
+def test_cjsidl_nextstate_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_nextState)
 
 
-def test_cjsidl::nextstate_constructor_exists():
-    assert callable(cjsidl::nextState.__init__)
+def test_cjsidl_nextstate_constructor_exists():
+    assert callable(cjsidl_nextState.__init__)
 
 
-def test_cjsidl::nextstate_constructor_args():
-    sig = inspect.signature(cjsidl::nextState.__init__)
+def test_cjsidl_nextstate_constructor_args():
+    sig = inspect.signature(cjsidl_nextState.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::nextstate_has_comment():
-    assert hasattr(cjsidl::nextState, "comment")
+def test_cjsidl_nextstate_has_comment():
+    assert hasattr(cjsidl_nextState, "comment")
     descriptor = None
-    for klass in cjsidl::nextState.__mro__:
+    for klass in cjsidl_nextState.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -2633,163 +1697,303 @@ def test_cjsidl::nextstate_has_comment():
 
 
 
-def test_cjsidl::sendactionlist_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::sendActionList)
+def test_cjsidl_sendactionlist_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_sendActionList)
 
 
-def test_cjsidl::sendactionlist_constructor_exists():
-    assert callable(cjsidl::sendActionList.__init__)
+def test_cjsidl_sendactionlist_constructor_exists():
+    assert callable(cjsidl_sendActionList.__init__)
 
 
-def test_cjsidl::sendactionlist_constructor_args():
-    sig = inspect.signature(cjsidl::sendActionList.__init__)
+def test_cjsidl_sendactionlist_constructor_args():
+    sig = inspect.signature(cjsidl_sendActionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::actionlist_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::actionList)
+def test_cjsidl_actionlist_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_actionList)
 
 
-def test_cjsidl::actionlist_constructor_exists():
-    assert callable(cjsidl::actionList.__init__)
+def test_cjsidl_actionlist_constructor_exists():
+    assert callable(cjsidl_actionList.__init__)
 
 
-def test_cjsidl::actionlist_constructor_args():
-    sig = inspect.signature(cjsidl::actionList.__init__)
+def test_cjsidl_actionlist_constructor_args():
+    sig = inspect.signature(cjsidl_actionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::defaulttransition_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::defaultTransition)
+def test_cjsidl_defaulttransition_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_defaultTransition)
 
 
-def test_cjsidl::defaulttransition_constructor_exists():
-    assert callable(cjsidl::defaultTransition.__init__)
+def test_cjsidl_defaulttransition_constructor_exists():
+    assert callable(cjsidl_defaultTransition.__init__)
 
 
-def test_cjsidl::defaulttransition_constructor_args():
-    sig = inspect.signature(cjsidl::defaultTransition.__init__)
+def test_cjsidl_defaulttransition_constructor_args():
+    sig = inspect.signature(cjsidl_defaultTransition.__init__)
     params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cjsidl::defaulttransition_has_type():
-    assert hasattr(cjsidl::defaultTransition, "type")
+def test_cjsidl_defaulttransition_has_comment():
+    assert hasattr(cjsidl_defaultTransition, "comment")
     descriptor = None
-    for klass in cjsidl::defaultTransition.__mro__:
+    for klass in cjsidl_defaultTransition.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_defaulttransition_has_type():
+    assert hasattr(cjsidl_defaultTransition, "type")
+    descriptor = None
+    for klass in cjsidl_defaultTransition.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::defaulttransition_has_comment():
-    assert hasattr(cjsidl::defaultTransition, "comment")
-    descriptor = None
-    for klass in cjsidl::defaultTransition.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cjsidl::guard_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::guard)
-
-
-def test_cjsidl::guard_constructor_exists():
-    assert callable(cjsidl::guard.__init__)
+def test_cjsidl_guard_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_guard)
 
 
-def test_cjsidl::guard_constructor_args():
-    sig = inspect.signature(cjsidl::guard.__init__)
+def test_cjsidl_guard_constructor_exists():
+    assert callable(cjsidl_guard.__init__)
+
+
+def test_cjsidl_guard_constructor_args():
+    sig = inspect.signature(cjsidl_guard.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
-    assert "logicalOperator" in params, "Missing parameter 'logicalOperator'"
     assert "equiv" in params, "Missing parameter 'equiv'"
+    assert "logicalOperator" in params, "Missing parameter 'logicalOperator'"
 
-def test_cjsidl::guard_has_comment():
-    assert hasattr(cjsidl::guard, "comment")
+def test_cjsidl_guard_has_comment():
+    assert hasattr(cjsidl_guard, "comment")
     descriptor = None
-    for klass in cjsidl::guard.__mro__:
+    for klass in cjsidl_guard.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::guard_has_logicalOperator():
-    assert hasattr(cjsidl::guard, "logicalOperator")
+def test_cjsidl_guard_has_equiv():
+    assert hasattr(cjsidl_guard, "equiv")
     descriptor = None
-    for klass in cjsidl::guard.__mro__:
-        if "logicalOperator" in klass.__dict__:
-            descriptor = klass.__dict__["logicalOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cjsidl::guard_has_equiv():
-    assert hasattr(cjsidl::guard, "equiv")
-    descriptor = None
-    for klass in cjsidl::guard.__mro__:
+    for klass in cjsidl_guard.__mro__:
         if "equiv" in klass.__dict__:
             descriptor = klass.__dict__["equiv"]
             break
     assert isinstance(descriptor, property)
 
+def test_cjsidl_guard_has_logicalOperator():
+    assert hasattr(cjsidl_guard, "logicalOperator")
+    descriptor = None
+    for klass in cjsidl_guard.__mro__:
+        if "logicalOperator" in klass.__dict__:
+            descriptor = klass.__dict__["logicalOperator"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cjsidl::scopedeventtype_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::scopedEventType)
+
+def test_cjsidl_scopedeventtype_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_scopedEventType)
 
 
-def test_cjsidl::scopedeventtype_constructor_exists():
-    assert callable(cjsidl::scopedEventType.__init__)
+def test_cjsidl_scopedeventtype_constructor_exists():
+    assert callable(cjsidl_scopedEventType.__init__)
 
 
-def test_cjsidl::scopedeventtype_constructor_args():
-    sig = inspect.signature(cjsidl::scopedEventType.__init__)
+def test_cjsidl_scopedeventtype_constructor_args():
+    sig = inspect.signature(cjsidl_scopedEventType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cjsidl::transparam_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::transParam)
+def test_cjsidl_transparam_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_transParam)
 
 
-def test_cjsidl::transparam_constructor_exists():
-    assert callable(cjsidl::transParam.__init__)
+def test_cjsidl_transparam_constructor_exists():
+    assert callable(cjsidl_transParam.__init__)
 
 
-def test_cjsidl::transparam_constructor_args():
-    sig = inspect.signature(cjsidl::transParam.__init__)
+def test_cjsidl_transparam_constructor_args():
+    sig = inspect.signature(cjsidl_transParam.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "unsignedType" in params, "Missing parameter 'unsignedType'"
     assert "comment" in params, "Missing parameter 'comment'"
+    assert "unsignedType" in params, "Missing parameter 'unsignedType'"
 
-def test_cjsidl::transparam_has_name():
-    assert hasattr(cjsidl::transParam, "name")
+def test_cjsidl_transparam_has_name():
+    assert hasattr(cjsidl_transParam, "name")
     descriptor = None
-    for klass in cjsidl::transParam.__mro__:
+    for klass in cjsidl_transParam.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::transparam_has_unsignedType():
-    assert hasattr(cjsidl::transParam, "unsignedType")
+def test_cjsidl_transparam_has_comment():
+    assert hasattr(cjsidl_transParam, "comment")
     descriptor = None
-    for klass in cjsidl::transParam.__mro__:
+    for klass in cjsidl_transParam.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_transparam_has_unsignedType():
+    assert hasattr(cjsidl_transParam, "unsignedType")
+    descriptor = None
+    for klass in cjsidl_transParam.__mro__:
         if "unsignedType" in klass.__dict__:
             descriptor = klass.__dict__["unsignedType"]
             break
     assert isinstance(descriptor, property)
 
-def test_cjsidl::transparam_has_comment():
-    assert hasattr(cjsidl::transParam, "comment")
+
+
+def test_cjsidl_transparams_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_transParams)
+
+
+def test_cjsidl_transparams_constructor_exists():
+    assert callable(cjsidl_transParams.__init__)
+
+
+def test_cjsidl_transparams_constructor_args():
+    sig = inspect.signature(cjsidl_transParams.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_statemachine_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_stateMachine)
+
+
+def test_cjsidl_statemachine_constructor_exists():
+    assert callable(cjsidl_stateMachine.__init__)
+
+
+def test_cjsidl_statemachine_constructor_args():
+    sig = inspect.signature(cjsidl_stateMachine.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_statemachine_has_comment():
+    assert hasattr(cjsidl_stateMachine, "comment")
     descriptor = None
-    for klass in cjsidl::transParam.__mro__:
+    for klass in cjsidl_stateMachine.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_statemachine_has_name():
+    assert hasattr(cjsidl_stateMachine, "name")
+    descriptor = None
+    for klass in cjsidl_stateMachine.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_eventdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_eventDef)
+
+
+def test_cjsidl_eventdef_constructor_exists():
+    assert callable(cjsidl_eventDef.__init__)
+
+
+def test_cjsidl_eventdef_constructor_args():
+    sig = inspect.signature(cjsidl_eventDef.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_eventdef_has_name():
+    assert hasattr(cjsidl_eventDef, "name")
+    descriptor = None
+    for klass in cjsidl_eventDef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_transition_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_transition)
+
+
+def test_cjsidl_transition_constructor_exists():
+    assert callable(cjsidl_transition.__init__)
+
+
+def test_cjsidl_transition_constructor_args():
+    sig = inspect.signature(cjsidl_transition.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_cjsidl_transition_has_comment():
+    assert hasattr(cjsidl_transition, "comment")
+    descriptor = None
+    for klass in cjsidl_transition.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_transition_has_name():
+    assert hasattr(cjsidl_transition, "name")
+    descriptor = None
+    for klass in cjsidl_transition.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_transition_has_type():
+    assert hasattr(cjsidl_transition, "type")
+    descriptor = None
+    for klass in cjsidl_transition.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_exit_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_exit)
+
+
+def test_cjsidl_exit_constructor_exists():
+    assert callable(cjsidl_exit.__init__)
+
+
+def test_cjsidl_exit_constructor_args():
+    sig = inspect.signature(cjsidl_exit.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_exit_has_comment():
+    assert hasattr(cjsidl_exit, "comment")
+    descriptor = None
+    for klass in cjsidl_exit.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -2797,17 +2001,813 @@ def test_cjsidl::transparam_has_comment():
 
 
 
-def test_cjsidl::transparams_is_not_abstract():
-    assert not inspect.isabstract(cjsidl::transParams)
+def test_cjsidl_entry_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_entry)
 
 
-def test_cjsidl::transparams_constructor_exists():
-    assert callable(cjsidl::transParams.__init__)
+def test_cjsidl_entry_constructor_exists():
+    assert callable(cjsidl_entry.__init__)
 
 
-def test_cjsidl::transparams_constructor_args():
-    sig = inspect.signature(cjsidl::transParams.__init__)
+def test_cjsidl_entry_constructor_args():
+    sig = inspect.signature(cjsidl_entry.__init__)
     params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_entry_has_comment():
+    assert hasattr(cjsidl_entry, "comment")
+    descriptor = None
+    for klass in cjsidl_entry.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_defaultstate_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_defaultState)
+
+
+def test_cjsidl_defaultstate_constructor_exists():
+    assert callable(cjsidl_defaultState.__init__)
+
+
+def test_cjsidl_defaultstate_constructor_args():
+    sig = inspect.signature(cjsidl_defaultState.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_defaultstate_has_comment():
+    assert hasattr(cjsidl_defaultState, "comment")
+    descriptor = None
+    for klass in cjsidl_defaultState.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_state_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_state)
+
+
+def test_cjsidl_state_constructor_exists():
+    assert callable(cjsidl_state.__init__)
+
+
+def test_cjsidl_state_constructor_args():
+    sig = inspect.signature(cjsidl_state.__init__)
+    params = list(sig.parameters.keys())
+    assert "initial" in params, "Missing parameter 'initial'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_state_has_initial():
+    assert hasattr(cjsidl_state, "initial")
+    descriptor = None
+    for klass in cjsidl_state.__mro__:
+        if "initial" in klass.__dict__:
+            descriptor = klass.__dict__["initial"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_state_has_comment():
+    assert hasattr(cjsidl_state, "comment")
+    descriptor = None
+    for klass in cjsidl_state.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_state_has_name():
+    assert hasattr(cjsidl_state, "name")
+    descriptor = None
+    for klass in cjsidl_state.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_startstate_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_startState)
+
+
+def test_cjsidl_startstate_constructor_exists():
+    assert callable(cjsidl_startState.__init__)
+
+
+def test_cjsidl_startstate_constructor_args():
+    sig = inspect.signature(cjsidl_startState.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_startstate_has_comment():
+    assert hasattr(cjsidl_startState, "comment")
+    descriptor = None
+    for klass in cjsidl_startState.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_constdef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_constDef)
+
+
+def test_cjsidl_constdef_constructor_exists():
+    assert callable(cjsidl_constDef.__init__)
+
+
+def test_cjsidl_constdef_constructor_args():
+    sig = inspect.signature(cjsidl_constDef.__init__)
+    params = list(sig.parameters.keys())
+    assert "constValue" in params, "Missing parameter 'constValue'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "fieldUnits" in params, "Missing parameter 'fieldUnits'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_constdef_has_constValue():
+    assert hasattr(cjsidl_constDef, "constValue")
+    descriptor = None
+    for klass in cjsidl_constDef.__mro__:
+        if "constValue" in klass.__dict__:
+            descriptor = klass.__dict__["constValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_constdef_has_comment():
+    assert hasattr(cjsidl_constDef, "comment")
+    descriptor = None
+    for klass in cjsidl_constDef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_constdef_has_fieldUnits():
+    assert hasattr(cjsidl_constDef, "fieldUnits")
+    descriptor = None
+    for klass in cjsidl_constDef.__mro__:
+        if "fieldUnits" in klass.__dict__:
+            descriptor = klass.__dict__["fieldUnits"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_constdef_has_name():
+    assert hasattr(cjsidl_constDef, "name")
+    descriptor = None
+    for klass in cjsidl_constDef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_declaredconstsetref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_declaredConstSetRef)
+
+
+def test_cjsidl_declaredconstsetref_constructor_exists():
+    assert callable(cjsidl_declaredConstSetRef.__init__)
+
+
+def test_cjsidl_declaredconstsetref_constructor_args():
+    sig = inspect.signature(cjsidl_declaredConstSetRef.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_declaredconstsetref_has_comment():
+    assert hasattr(cjsidl_declaredConstSetRef, "comment")
+    descriptor = None
+    for klass in cjsidl_declaredConstSetRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_declaredconstsetref_has_name():
+    assert hasattr(cjsidl_declaredConstSetRef, "name")
+    descriptor = None
+    for klass in cjsidl_declaredConstSetRef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_messagescopedref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_messageScopedRef)
+
+
+def test_cjsidl_messagescopedref_constructor_exists():
+    assert callable(cjsidl_messageScopedRef.__init__)
+
+
+def test_cjsidl_messagescopedref_constructor_args():
+    sig = inspect.signature(cjsidl_messageScopedRef.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_messagescopedref_has_comment():
+    assert hasattr(cjsidl_messageScopedRef, "comment")
+    descriptor = None
+    for klass in cjsidl_messageScopedRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_messagescopedref_has_name():
+    assert hasattr(cjsidl_messageScopedRef, "name")
+    descriptor = None
+    for klass in cjsidl_messageScopedRef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_messageref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_messageRef)
+
+
+def test_cjsidl_messageref_constructor_exists():
+    assert callable(cjsidl_messageRef.__init__)
+
+
+def test_cjsidl_messageref_constructor_args():
+    sig = inspect.signature(cjsidl_messageRef.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_messageref_has_name():
+    assert hasattr(cjsidl_messageRef, "name")
+    descriptor = None
+    for klass in cjsidl_messageRef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_messageref_has_comment():
+    assert hasattr(cjsidl_messageRef, "comment")
+    descriptor = None
+    for klass in cjsidl_messageRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_messagedef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_messageDef)
+
+
+def test_cjsidl_messagedef_constructor_exists():
+    assert callable(cjsidl_messageDef.__init__)
+
+
+def test_cjsidl_messagedef_constructor_args():
+    sig = inspect.signature(cjsidl_messageDef.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "command" in params, "Missing parameter 'command'"
+    assert "messageID" in params, "Missing parameter 'messageID'"
+
+def test_cjsidl_messagedef_has_name():
+    assert hasattr(cjsidl_messageDef, "name")
+    descriptor = None
+    for klass in cjsidl_messageDef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_messagedef_has_command():
+    assert hasattr(cjsidl_messageDef, "command")
+    descriptor = None
+    for klass in cjsidl_messageDef.__mro__:
+        if "command" in klass.__dict__:
+            descriptor = klass.__dict__["command"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_messagedef_has_messageID():
+    assert hasattr(cjsidl_messageDef, "messageID")
+    descriptor = None
+    for klass in cjsidl_messageDef.__mro__:
+        if "messageID" in klass.__dict__:
+            descriptor = klass.__dict__["messageID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_messages_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_messages)
+
+
+def test_cjsidl_messages_constructor_exists():
+    assert callable(cjsidl_messages.__init__)
+
+
+def test_cjsidl_messages_constructor_args():
+    sig = inspect.signature(cjsidl_messages.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_scopedtypeid_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_scopedTypeId)
+
+
+def test_cjsidl_scopedtypeid_constructor_exists():
+    assert callable(cjsidl_scopedTypeId.__init__)
+
+
+def test_cjsidl_scopedtypeid_constructor_args():
+    sig = inspect.signature(cjsidl_scopedTypeId.__init__)
+    params = list(sig.parameters.keys())
+    assert "optional" in params, "Missing parameter 'optional'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "scopedName" in params, "Missing parameter 'scopedName'"
+
+def test_cjsidl_scopedtypeid_has_optional():
+    assert hasattr(cjsidl_scopedTypeId, "optional")
+    descriptor = None
+    for klass in cjsidl_scopedTypeId.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_scopedtypeid_has_comment():
+    assert hasattr(cjsidl_scopedTypeId, "comment")
+    descriptor = None
+    for klass in cjsidl_scopedTypeId.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_scopedtypeid_has_scopedName():
+    assert hasattr(cjsidl_scopedTypeId, "scopedName")
+    descriptor = None
+    for klass in cjsidl_scopedTypeId.__mro__:
+        if "scopedName" in klass.__dict__:
+            descriptor = klass.__dict__["scopedName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_typereference_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_typeReference)
+
+
+def test_cjsidl_typereference_constructor_exists():
+    assert callable(cjsidl_typeReference.__init__)
+
+
+def test_cjsidl_typereference_constructor_args():
+    sig = inspect.signature(cjsidl_typeReference.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "optional" in params, "Missing parameter 'optional'"
+
+def test_cjsidl_typereference_has_name():
+    assert hasattr(cjsidl_typeReference, "name")
+    descriptor = None
+    for klass in cjsidl_typeReference.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_typereference_has_comment():
+    assert hasattr(cjsidl_typeReference, "comment")
+    descriptor = None
+    for klass in cjsidl_typeReference.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_typereference_has_optional():
+    assert hasattr(cjsidl_typeReference, "optional")
+    descriptor = None
+    for klass in cjsidl_typeReference.__mro__:
+        if "optional" in klass.__dict__:
+            descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_typedef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_typeDef)
+
+
+def test_cjsidl_typedef_constructor_exists():
+    assert callable(cjsidl_typeDef.__init__)
+
+
+def test_cjsidl_typedef_constructor_args():
+    sig = inspect.signature(cjsidl_typeDef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_declaredtypesetref_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_declaredTypeSetRef)
+
+
+def test_cjsidl_declaredtypesetref_constructor_exists():
+    assert callable(cjsidl_declaredTypeSetRef.__init__)
+
+
+def test_cjsidl_declaredtypesetref_constructor_args():
+    sig = inspect.signature(cjsidl_declaredTypeSetRef.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_declaredtypesetref_has_name():
+    assert hasattr(cjsidl_declaredTypeSetRef, "name")
+    descriptor = None
+    for klass in cjsidl_declaredTypeSetRef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_declaredtypesetref_has_comment():
+    assert hasattr(cjsidl_declaredTypeSetRef, "comment")
+    descriptor = None
+    for klass in cjsidl_declaredTypeSetRef.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_servicedef_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_serviceDef)
+
+
+def test_cjsidl_servicedef_constructor_exists():
+    assert callable(cjsidl_serviceDef.__init__)
+
+
+def test_cjsidl_servicedef_constructor_args():
+    sig = inspect.signature(cjsidl_serviceDef.__init__)
+    params = list(sig.parameters.keys())
+    assert "assumpt" in params, "Missing parameter 'assumpt'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "serviceVersion" in params, "Missing parameter 'serviceVersion'"
+    assert "serviceName" in params, "Missing parameter 'serviceName'"
+
+def test_cjsidl_servicedef_has_assumpt():
+    assert hasattr(cjsidl_serviceDef, "assumpt")
+    descriptor = None
+    for klass in cjsidl_serviceDef.__mro__:
+        if "assumpt" in klass.__dict__:
+            descriptor = klass.__dict__["assumpt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_servicedef_has_name():
+    assert hasattr(cjsidl_serviceDef, "name")
+    descriptor = None
+    for klass in cjsidl_serviceDef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_servicedef_has_serviceVersion():
+    assert hasattr(cjsidl_serviceDef, "serviceVersion")
+    descriptor = None
+    for klass in cjsidl_serviceDef.__mro__:
+        if "serviceVersion" in klass.__dict__:
+            descriptor = klass.__dict__["serviceVersion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_servicedef_has_serviceName():
+    assert hasattr(cjsidl_serviceDef, "serviceName")
+    descriptor = None
+    for klass in cjsidl_serviceDef.__mro__:
+        if "serviceName" in klass.__dict__:
+            descriptor = klass.__dict__["serviceName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_eobject_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_EObject)
+
+
+def test_cjsidl_eobject_constructor_exists():
+    assert callable(cjsidl_EObject.__init__)
+
+
+def test_cjsidl_eobject_constructor_args():
+    sig = inspect.signature(cjsidl_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_jaus_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_jaus)
+
+
+def test_cjsidl_jaus_constructor_exists():
+    assert callable(cjsidl_jaus.__init__)
+
+
+def test_cjsidl_jaus_constructor_args():
+    sig = inspect.signature(cjsidl_jaus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_refattr_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_refAttr)
+
+
+def test_cjsidl_refattr_constructor_exists():
+    assert callable(cjsidl_refAttr.__init__)
+
+
+def test_cjsidl_refattr_constructor_args():
+    sig = inspect.signature(cjsidl_refAttr.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cjsidl_refattr_has_comment():
+    assert hasattr(cjsidl_refAttr, "comment")
+    descriptor = None
+    for klass in cjsidl_refAttr.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_refattr_has_name():
+    assert hasattr(cjsidl_refAttr, "name")
+    descriptor = None
+    for klass in cjsidl_refAttr.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_protocolbehavior_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_protocolBehavior)
+
+
+def test_cjsidl_protocolbehavior_constructor_exists():
+    assert callable(cjsidl_protocolBehavior.__init__)
+
+
+def test_cjsidl_protocolbehavior_constructor_args():
+    sig = inspect.signature(cjsidl_protocolBehavior.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "stateless" in params, "Missing parameter 'stateless'"
+
+def test_cjsidl_protocolbehavior_has_comment():
+    assert hasattr(cjsidl_protocolBehavior, "comment")
+    descriptor = None
+    for klass in cjsidl_protocolBehavior.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_protocolbehavior_has_stateless():
+    assert hasattr(cjsidl_protocolBehavior, "stateless")
+    descriptor = None
+    for klass in cjsidl_protocolBehavior.__mro__:
+        if "stateless" in klass.__dict__:
+            descriptor = klass.__dict__["stateless"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_internaleventset_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_internalEventSet)
+
+
+def test_cjsidl_internaleventset_constructor_exists():
+    assert callable(cjsidl_internalEventSet.__init__)
+
+
+def test_cjsidl_internaleventset_constructor_args():
+    sig = inspect.signature(cjsidl_internalEventSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_cjsidl_internaleventset_has_comment():
+    assert hasattr(cjsidl_internalEventSet, "comment")
+    descriptor = None
+    for klass in cjsidl_internalEventSet.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_messageset_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_messageSet)
+
+
+def test_cjsidl_messageset_constructor_exists():
+    assert callable(cjsidl_messageSet.__init__)
+
+
+def test_cjsidl_messageset_constructor_args():
+    sig = inspect.signature(cjsidl_messageSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "inputComment" in params, "Missing parameter 'inputComment'"
+    assert "outputComment" in params, "Missing parameter 'outputComment'"
+
+def test_cjsidl_messageset_has_comment():
+    assert hasattr(cjsidl_messageSet, "comment")
+    descriptor = None
+    for klass in cjsidl_messageSet.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_messageset_has_inputComment():
+    assert hasattr(cjsidl_messageSet, "inputComment")
+    descriptor = None
+    for klass in cjsidl_messageSet.__mro__:
+        if "inputComment" in klass.__dict__:
+            descriptor = klass.__dict__["inputComment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_messageset_has_outputComment():
+    assert hasattr(cjsidl_messageSet, "outputComment")
+    descriptor = None
+    for klass in cjsidl_messageSet.__mro__:
+        if "outputComment" in klass.__dict__:
+            descriptor = klass.__dict__["outputComment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_declaredtypeset_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_declaredTypeSet)
+
+
+def test_cjsidl_declaredtypeset_constructor_exists():
+    assert callable(cjsidl_declaredTypeSet.__init__)
+
+
+def test_cjsidl_declaredtypeset_constructor_args():
+    sig = inspect.signature(cjsidl_declaredTypeSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "typeName" in params, "Missing parameter 'typeName'"
+    assert "version" in params, "Missing parameter 'version'"
+
+def test_cjsidl_declaredtypeset_has_name():
+    assert hasattr(cjsidl_declaredTypeSet, "name")
+    descriptor = None
+    for klass in cjsidl_declaredTypeSet.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_declaredtypeset_has_typeName():
+    assert hasattr(cjsidl_declaredTypeSet, "typeName")
+    descriptor = None
+    for klass in cjsidl_declaredTypeSet.__mro__:
+        if "typeName" in klass.__dict__:
+            descriptor = klass.__dict__["typeName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_declaredtypeset_has_version():
+    assert hasattr(cjsidl_declaredTypeSet, "version")
+    descriptor = None
+    for klass in cjsidl_declaredTypeSet.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_declaredconstset_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_declaredConstSet)
+
+
+def test_cjsidl_declaredconstset_constructor_exists():
+    assert callable(cjsidl_declaredConstSet.__init__)
+
+
+def test_cjsidl_declaredconstset_constructor_args():
+    sig = inspect.signature(cjsidl_declaredConstSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "constName" in params, "Missing parameter 'constName'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "constSetVersion" in params, "Missing parameter 'constSetVersion'"
+
+def test_cjsidl_declaredconstset_has_constName():
+    assert hasattr(cjsidl_declaredConstSet, "constName")
+    descriptor = None
+    for klass in cjsidl_declaredConstSet.__mro__:
+        if "constName" in klass.__dict__:
+            descriptor = klass.__dict__["constName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_declaredconstset_has_name():
+    assert hasattr(cjsidl_declaredConstSet, "name")
+    descriptor = None
+    for klass in cjsidl_declaredConstSet.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cjsidl_declaredconstset_has_constSetVersion():
+    assert hasattr(cjsidl_declaredConstSet, "constSetVersion")
+    descriptor = None
+    for klass in cjsidl_declaredConstSet.__mro__:
+        if "constSetVersion" in klass.__dict__:
+            descriptor = klass.__dict__["constSetVersion"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cjsidl_references_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_references)
+
+
+def test_cjsidl_references_constructor_exists():
+    assert callable(cjsidl_references.__init__)
+
+
+def test_cjsidl_references_constructor_args():
+    sig = inspect.signature(cjsidl_references.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cjsidl_description_is_not_abstract():
+    assert not inspect.isabstract(cjsidl_description)
+
+
+def test_cjsidl_description_constructor_exists():
+    assert callable(cjsidl_description.__init__)
+
+
+def test_cjsidl_description_constructor_args():
+    sig = inspect.signature(cjsidl_description.__init__)
+    params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
+
+def test_cjsidl_description_has_content():
+    assert hasattr(cjsidl_description, "content")
+    descriptor = None
+    for klass in cjsidl_description.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_field_format_exists():
     # Check that the Enumeration exists
@@ -2817,23 +2817,23 @@ def test_field_format_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FIELD_FORMAT]
     expected_literals = [
-        "JPEG",
-        "USER_DEFINED",
-        "BMP",
-        "WAV",
-        "AU",
-        "MPEG2",
-        "MP4",
-        "JAUS_MESSAGE",
-        "RNC",
-        "MP2",
-        "XML",
-        "XSD",
-        "MJPEG",
-        "MPEG1",
-        "RNG",
         "MP3",
+        "RNC",
+        "MPEG1",
+        "AU",
+        "XSD",
+        "MPEG2",
+        "WAV",
+        "RNG",
+        "MJPEG",
+        "MP4",
+        "USER_DEFINED",
+        "MP2",
         "RAW",
+        "XML",
+        "JAUS_MESSAGE",
+        "JPEG",
+        "BMP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2847,86 +2847,86 @@ def test_unit_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in UNIT]
     expected_literals = [
-        "AMPPERSQRMETER",
+        "LUX",
         "AMP_PER_METER",
-        "CELSIUS",
-        "RADIAN",
+        "AMPPERSQRMETER",
+        "SQR_METER",
+        "DEGREE",
+        "JOULE_PER_MOLE",
+        "WATT_PER_METER_KELVIN",
+        "PASCAL",
         "KELVIN",
-        "VOLT_PER_METER",
-        "BEL",
-        "HRZ",
-        "RAD_PER_SEC",
-        "RECIPROCAL_METER",
-        "PASCAL_SEC",
-        "TESLA",
-        "NEWTON_METER",
-        "HECTARE",
-        "ROENTGEN",
-        "METER_PER_SEC",
-        "BARN",
-        "LUMEN",
-        "GRAY_PER_SEC",
-        "SIEMENS",
-        "COULOMB_PER_KG",
-        "HENRY",
-        "RAD_PER_SEC_SQR",
-        "WATT",
-        "ANGSROM",
-        "JOULE",
-        "ONE",
-        "WEBER",
-        "NMILE",
-        "OHM",
-        "STE_RAD",
-        "FARAD_PER_METER",
-        "LTR",
-        "JOULE_PER_KELVIN",
         "CANDELA_PER_SQUARE_METER",
-        "WATT_PER_SQR_METER_STERAD",
-        "BAR",
+        "KNOT",
         "NEWTON",
-        "SEC",
-        "JOULE_PER_MOLE_KELVIN",
+        "KATAL",
+        "RAD_PER_SEC_SQR",
+        "BAR",
+        "RAD",
+        "ARE",
+        "MTON",
+        "SIEVERT",
+        "CUBIC_METER",
+        "NEWTON_PER_METER",
+        "RAD_PER_SEC",
+        "PASCAL_SEC",
+        "RADIAN",
+        "COULOMB_PER_SQR_METER",
+        "METER_PER_SEC_SQR",
+        "ONE",
+        "KG_PER_CUBIC_METER",
+        "DAY",
+        "AMP",
+        "VOLT_PER_METER",
+        "BECQUEREL",
+        "NEPER",
+        "NMILE",
+        "ROENTGEN",
+        "MIN",
+        "WATT_PER_SQR_METER",
+        "MOLE_PER_CUBIC_METER",
+        "METER_PER_SEC",
+        "JOULE",
+        "SIEMENS",
+        "FARAD_PER_METER",
+        "KG",
+        "HRZ",
+        "CUBICMETERPERKG",
+        "JOULE_PER_KELVIN",
+        "STE_RAD",
+        "RECIPROCAL_METER",
+        "VOLT",
+        "HENRY",
         "CURIE",
         "COULOMB",
-        "COULOMB_PER_SQR_METER",
-        "CUBIC_METER",
-        "METER",
-        "DAY",
-        "VOLT",
-        "CANDELA",
-        "RAD",
-        "WATT_PER_SQR_METER",
-        "BECQUEREL",
-        "HENRY_PER_METER",
-        "CUBICMETERPERKG",
-        "MOLE_PER_CUBIC_METER",
-        "LUX",
-        "KG_PER_CUBIC_METER",
-        "MOLE",
-        "JOULES_PER_CUBIC_METER",
-        "NEWTON_PER_METER",
-        "SQR_METER",
-        "COULOMB_PER_CUBIC_METER",
-        "FARAD",
-        "HOUR",
+        "WEBER",
         "KATAL_PER_CUBIC_METER",
-        "KATAL",
-        "DEGREE",
-        "MTON",
-        "KNOT",
-        "KG",
-        "PASCAL",
-        "NEPER",
-        "SIEVERT",
-        "MIN",
+        "WATT",
+        "HECTARE",
+        "LTR",
+        "CANDELA",
+        "COULOMB_PER_KG",
+        "CELSIUS",
         "JOULE_PER_KG",
+        "BARN",
+        "HOUR",
+        "COULOMB_PER_CUBIC_METER",
+        "SEC",
+        "METER",
+        "FARAD",
         "REM",
-        "JOULE_PER_MOLE",
-        "AMP",
-        "ARE",
-        "METER_PER_SEC_SQR",
-        "WATT_PER_METER_KELVIN",
+        "NEWTON_METER",
+        "MOLE",
+        "OHM",
+        "JOULE_PER_MOLE_KELVIN",
+        "WATT_PER_SQR_METER_STERAD",
+        "LUMEN",
+        "JOULES_PER_CUBIC_METER",
+        "BEL",
+        "HENRY_PER_METER",
+        "ANGSROM",
+        "TESLA",
+        "GRAY_PER_SEC",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2944,207 +2944,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cjsidl::stateMachine_strategy = st.builds(
-    cjsidl::stateMachine,
-    name=
-        safe_text,
-    comment=
-        safe_text
+cjsidl_taggedItemDef_strategy = st.builds(
+    cjsidl_taggedItemDef,
 )
-cjsidl::eventDef_strategy = st.builds(
-    cjsidl::eventDef,
-    name=
-        safe_text
-)
-cjsidl::transition_strategy = st.builds(
-    cjsidl::transition,
-    comment=
-        safe_text,
-    name=
-        safe_text,
-    type=
-        safe_text
-)
-cjsidl::exit_strategy = st.builds(
-    cjsidl::exit,
-    comment=
-        safe_text
-)
-cjsidl::entry_strategy = st.builds(
-    cjsidl::entry,
-    comment=
-        safe_text
-)
-cjsidl::defaultState_strategy = st.builds(
-    cjsidl::defaultState,
-    comment=
-        safe_text
-)
-cjsidl::state_strategy = st.builds(
-    cjsidl::state,
-    name=
-        safe_text,
-    initial=
-        safe_text,
-    comment=
-        safe_text
-)
-cjsidl::startState_strategy = st.builds(
-    cjsidl::startState,
-    comment=
-        safe_text
-)
-cjsidl::constDef_strategy = st.builds(
-    cjsidl::constDef,
-    comment=
-        safe_text,
-    constValue=
-        safe_text,
-    fieldUnits=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::declaredConstSetRef_strategy = st.builds(
-    cjsidl::declaredConstSetRef,
-    comment=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::messageScopedRef_strategy = st.builds(
-    cjsidl::messageScopedRef,
-    name=
-        safe_text,
-    comment=
-        safe_text
-)
-cjsidl::messageRef_strategy = st.builds(
-    cjsidl::messageRef,
-    name=
-        safe_text,
-    comment=
-        safe_text
-)
-cjsidl::messageDef_strategy = st.builds(
-    cjsidl::messageDef,
-    messageID=
-        safe_text,
-    command=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::messages_strategy = st.builds(
-    cjsidl::messages,
-)
-cjsidl::scopedTypeId_strategy = st.builds(
-    cjsidl::scopedTypeId,
-    optional=
-        safe_text,
-    comment=
-        safe_text,
-    scopedName=
-        safe_text
-)
-cjsidl::typeReference_strategy = st.builds(
-    cjsidl::typeReference,
-    comment=
-        safe_text,
-    name=
-        safe_text,
-    optional=
-        safe_text
-)
-cjsidl::typeDef_strategy = st.builds(
-    cjsidl::typeDef,
-)
-cjsidl::declaredTypeSetRef_strategy = st.builds(
-    cjsidl::declaredTypeSetRef,
-    comment=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::serviceDef_strategy = st.builds(
-    cjsidl::serviceDef,
-    serviceName=
-        safe_text,
-    name=
-        safe_text,
-    serviceVersion=
-        safe_text,
-    assumpt=
-        safe_text
-)
-cjsidl::EObject_strategy = st.builds(
-    cjsidl::EObject,
-)
-cjsidl::jaus_strategy = st.builds(
-    cjsidl::jaus,
-)
-cjsidl::refAttr_strategy = st.builds(
-    cjsidl::refAttr,
-    comment=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::protocolBehavior_strategy = st.builds(
-    cjsidl::protocolBehavior,
-    stateless=
-        safe_text,
-    comment=
-        safe_text
-)
-cjsidl::internalEventSet_strategy = st.builds(
-    cjsidl::internalEventSet,
-    comment=
-        safe_text
-)
-cjsidl::messageSet_strategy = st.builds(
-    cjsidl::messageSet,
-    outputComment=
-        safe_text,
-    comment=
-        safe_text,
-    inputComment=
-        safe_text
-)
-cjsidl::declaredTypeSet_strategy = st.builds(
-    cjsidl::declaredTypeSet,
-    typeName=
-        safe_text,
-    version=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::declaredConstSet_strategy = st.builds(
-    cjsidl::declaredConstSet,
-    constName=
-        safe_text,
-    name=
-        safe_text,
-    constSetVersion=
-        safe_text
-)
-cjsidl::references_strategy = st.builds(
-    cjsidl::references,
-)
-cjsidl::description_strategy = st.builds(
-    cjsidl::description,
-    content=
-        safe_text
-)
-cjsidl::taggedItemDef_strategy = st.builds(
-    cjsidl::taggedItemDef,
-)
-cjsidl::valueSpec_strategy = st.builds(
-    cjsidl::valueSpec,
-    comment=
-        safe_text,
+cjsidl_valueSpec_strategy = st.builds(
+    cjsidl_valueSpec,
     value=
+        safe_text,
+    comment=
         safe_text,
     name=
         safe_text
@@ -3152,8 +2959,8 @@ cjsidl::valueSpec_strategy = st.builds(
 containerDef_strategy = st.builds(
     containerDef,
 )
-cjsidl::formatEnumDef_strategy = st.builds(
-    cjsidl::formatEnumDef,
+cjsidl_formatEnumDef_strategy = st.builds(
+    cjsidl_formatEnumDef,
     fieldFormat=
         safe_text,
     index=
@@ -3161,105 +2968,114 @@ cjsidl::formatEnumDef_strategy = st.builds(
     fieldFormatStr=
         safe_text
 )
-cjsidl::valueRange_strategy = st.builds(
-    cjsidl::valueRange,
+cjsidl_valueRange_strategy = st.builds(
+    cjsidl_valueRange,
     upperLimit_type=
         safe_text,
     comment=
         safe_text,
-    lowerLim=
-        safe_text,
     upperLim=
+        safe_text,
+    lowerLim=
         safe_text,
     lowerLimit_type=
         safe_text
 )
-cjsidl::scaledRangeDef_strategy = st.builds(
-    cjsidl::scaledRangeDef,
-    function=
-        safe_text,
+cjsidl_scaledRangeDef_strategy = st.builds(
+    cjsidl_scaledRangeDef,
     upperLim=
         safe_text,
-    interp=
+    function=
         safe_text,
     lowerLim=
+        safe_text,
+    interp=
         safe_text
 )
-cjsidl::subField_strategy = st.builds(
-    cjsidl::subField,
+cjsidl_subField_strategy = st.builds(
+    cjsidl_subField,
     toIndex=
+        safe_text,
+    fromIndex=
         safe_text,
     comment=
         safe_text,
     name=
-        safe_text,
-    fromIndex=
         safe_text
 )
-cjsidl::taggedUnitsEnum_strategy = st.builds(
-    cjsidl::taggedUnitsEnum,
+cjsidl_taggedUnitsEnum_strategy = st.builds(
+    cjsidl_taggedUnitsEnum,
     fieldUnit=
         safe_text,
-    name=
-        safe_text,
     const_tag=
+        safe_text,
+    name=
         safe_text
 )
-cjsidl::valueSetDef_strategy = st.builds(
-    cjsidl::valueSetDef,
+cjsidl_valueSetDef_strategy = st.builds(
+    cjsidl_valueSetDef,
     offset=
         safe_text
 )
-cjsidl::declaredEventDef_strategy = st.builds(
-    cjsidl::declaredEventDef,
-    name=
-        safe_text,
-    comment=
-        safe_text
-)
-cjsidl::scopedType_strategy = st.builds(
-    cjsidl::scopedType,
-)
-cjsidl::scopedConstId_strategy = st.builds(
-    cjsidl::scopedConstId,
-)
-cjsidl::constReference_strategy = st.builds(
-    cjsidl::constReference,
-    comment=
-        safe_text
-)
-cjsidl::footerScopedRef_strategy = st.builds(
-    cjsidl::footerScopedRef,
-)
-cjsidl::footerRef_strategy = st.builds(
-    cjsidl::footerRef,
+cjsidl_declaredEventDef_strategy = st.builds(
+    cjsidl_declaredEventDef,
     comment=
         safe_text,
     name=
         safe_text
 )
-cjsidl::bodyScopedRef_strategy = st.builds(
-    cjsidl::bodyScopedRef,
+cjsidl_scopedType_strategy = st.builds(
+    cjsidl_scopedType,
 )
-cjsidl::bodyRef_strategy = st.builds(
-    cjsidl::bodyRef,
+cjsidl_scopedConstId_strategy = st.builds(
+    cjsidl_scopedConstId,
+)
+cjsidl_constReference_strategy = st.builds(
+    cjsidl_constReference,
+    comment=
+        safe_text
+)
+cjsidl_footerScopedRef_strategy = st.builds(
+    cjsidl_footerScopedRef,
+)
+cjsidl_footerRef_strategy = st.builds(
+    cjsidl_footerRef,
+    name=
+        safe_text,
+    comment=
+        safe_text
+)
+cjsidl_bodyScopedRef_strategy = st.builds(
+    cjsidl_bodyScopedRef,
+)
+cjsidl_bodyRef_strategy = st.builds(
+    cjsidl_bodyRef,
     comment=
         safe_text,
     name=
         safe_text
 )
-cjsidl::headerScopedRef_strategy = st.builds(
-    cjsidl::headerScopedRef,
+cjsidl_headerScopedRef_strategy = st.builds(
+    cjsidl_headerScopedRef,
 )
-cjsidl::headerRef_strategy = st.builds(
-    cjsidl::headerRef,
-    comment=
-        safe_text,
+cjsidl_headerRef_strategy = st.builds(
+    cjsidl_headerRef,
     name=
+        safe_text,
+    comment=
         safe_text
 )
-cjsidl::containerRef_strategy = st.builds(
-    cjsidl::containerRef,
+cjsidl_containerRef_strategy = st.builds(
+    cjsidl_containerRef,
+    name=
+        safe_text,
+    comment=
+        safe_text,
+    optional=
+        safe_text
+)
+cjsidl_containerDef_strategy = st.builds(
+    cjsidl_containerDef,
     optional=
         safe_text,
     name=
@@ -3267,133 +3083,124 @@ cjsidl::containerRef_strategy = st.builds(
     comment=
         safe_text
 )
-cjsidl::containerDef_strategy = st.builds(
-    cjsidl::containerDef,
+cjsidl_footerDef_strategy = st.builds(
+    cjsidl_footerDef,
+    name=
+        safe_text,
+    comment=
+        safe_text
+)
+cjsidl_bodyDef_strategy = st.builds(
+    cjsidl_bodyDef,
+    name=
+        safe_text,
+    comment=
+        safe_text
+)
+cjsidl_headerDef_strategy = st.builds(
+    cjsidl_headerDef,
+    name=
+        safe_text,
+    comment=
+        safe_text
+)
+cjsidl_varFormatField_strategy = st.builds(
+    cjsidl_varFormatField,
     optional=
         safe_text,
     comment=
         safe_text,
-    name=
-        safe_text
-)
-cjsidl::footerDef_strategy = st.builds(
-    cjsidl::footerDef,
-    comment=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::bodyDef_strategy = st.builds(
-    cjsidl::bodyDef,
-    name=
-        safe_text,
-    comment=
-        safe_text
-)
-cjsidl::headerDef_strategy = st.builds(
-    cjsidl::headerDef,
-    comment=
-        safe_text,
-    name=
-        safe_text
-)
-cjsidl::varFormatField_strategy = st.builds(
-    cjsidl::varFormatField,
     name=
         safe_text,
     units=
         safe_text,
-    optional=
-        safe_text,
     countComment=
-        safe_text,
-    comment=
         safe_text
 )
-cjsidl::varLenField_strategy = st.builds(
-    cjsidl::varLenField,
-    countComment=
-        safe_text,
+cjsidl_varLenField_strategy = st.builds(
+    cjsidl_varLenField,
     upperLim=
         safe_text,
+    countComment=
+        safe_text,
     comment=
+        safe_text,
+    optional=
         safe_text,
     name=
         safe_text,
     fieldFormat=
         safe_text,
     lowerLim=
-        safe_text,
-    optional=
         safe_text
 )
-cjsidl::varLenString_strategy = st.builds(
-    cjsidl::varLenString,
-    optional=
-        safe_text,
-    upperLim=
-        safe_text,
-    comment=
-        safe_text,
-    name=
-        safe_text,
+cjsidl_varLenString_strategy = st.builds(
+    cjsidl_varLenString,
     lowerLim=
-        safe_text
-)
-cjsidl::fixedLenString_strategy = st.builds(
-    cjsidl::fixedLenString,
-    name=
-        safe_text,
-    comment=
         safe_text,
     optional=
         safe_text,
     upperLim=
+        safe_text,
+    comment=
+        safe_text,
+    name=
         safe_text
 )
-cjsidl::bitfieldDef_strategy = st.builds(
-    cjsidl::bitfieldDef,
+cjsidl_fixedLenString_strategy = st.builds(
+    cjsidl_fixedLenString,
+    optional=
+        safe_text,
+    comment=
+        safe_text,
+    upperLim=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_bitfieldDef_strategy = st.builds(
+    cjsidl_bitfieldDef,
     type=
         safe_text,
     comment=
         safe_text,
-    name=
-        safe_text,
     optional=
+        safe_text,
+    name=
         safe_text
 )
-cjsidl::action_strategy = st.builds(
-    cjsidl::action,
-    name=
-        safe_text,
+cjsidl_action_strategy = st.builds(
+    cjsidl_action,
     comment=
+        safe_text,
+    name=
         safe_text
 )
-cjsidl::varField_strategy = st.builds(
-    cjsidl::varField,
-    name=
-        safe_text,
+cjsidl_varField_strategy = st.builds(
+    cjsidl_varField,
     comment=
         safe_text,
     optional=
+        safe_text,
+    name=
         safe_text
 )
-cjsidl::fixedFieldDef_strategy = st.builds(
-    cjsidl::fixedFieldDef,
-    name=
+cjsidl_fixedFieldDef_strategy = st.builds(
+    cjsidl_fixedFieldDef,
+    comment=
         safe_text,
     fieldUnit=
         safe_text,
-    optional=
+    name=
         safe_text,
-    comment=
+    optional=
         safe_text
 )
-cjsidl::sequenceDef_strategy = st.builds(
-    cjsidl::sequenceDef,
+cjsidl_sequenceDef_strategy = st.builds(
+    cjsidl_sequenceDef,
 )
-cjsidl::variantDef_strategy = st.builds(
-    cjsidl::variantDef,
+cjsidl_variantDef_strategy = st.builds(
+    cjsidl_variantDef,
     minCount=
         safe_text,
     maxCount=
@@ -3401,876 +3208,332 @@ cjsidl::variantDef_strategy = st.builds(
     vtagComment=
         safe_text
 )
-cjsidl::listDef_strategy = st.builds(
-    cjsidl::listDef,
-    minCount=
+cjsidl_listDef_strategy = st.builds(
+    cjsidl_listDef,
+    maxCount=
         safe_text,
     countComment=
         safe_text,
-    maxCount=
+    minCount=
         safe_text
 )
-cjsidl::recordDef_strategy = st.builds(
-    cjsidl::recordDef,
+cjsidl_recordDef_strategy = st.builds(
+    cjsidl_recordDef,
 )
-cjsidl::arrayDef_strategy = st.builds(
-    cjsidl::arrayDef,
+cjsidl_arrayDef_strategy = st.builds(
+    cjsidl_arrayDef,
+    optional=
+        safe_text,
     arraySize=
         safe_text,
     comment=
         safe_text,
-    optional=
-        safe_text,
     name=
         safe_text
 )
-cjsidl::simpleNumericType_strategy = st.builds(
-    cjsidl::simpleNumericType,
+cjsidl_simpleNumericType_strategy = st.builds(
+    cjsidl_simpleNumericType,
     type=
         safe_text
 )
-cjsidl::simpleTransition_strategy = st.builds(
-    cjsidl::simpleTransition,
+cjsidl_simpleTransition_strategy = st.builds(
+    cjsidl_simpleTransition,
     comment=
         safe_text
 )
-cjsidl::internalTransition_strategy = st.builds(
-    cjsidl::internalTransition,
+cjsidl_internalTransition_strategy = st.builds(
+    cjsidl_internalTransition,
     comment=
         safe_text
 )
-cjsidl::guardAction_strategy = st.builds(
-    cjsidl::guardAction,
-    not_=
-        safe_text,
+cjsidl_guardAction_strategy = st.builds(
+    cjsidl_guardAction,
     name=
+        safe_text,
+    not_=
         safe_text
 )
-cjsidl::guardParam_strategy = st.builds(
-    cjsidl::guardParam,
+cjsidl_guardParam_strategy = st.builds(
+    cjsidl_guardParam,
     guardConst=
         safe_text
 )
-cjsidl::popTransition_strategy = st.builds(
-    cjsidl::popTransition,
+cjsidl_popTransition_strategy = st.builds(
+    cjsidl_popTransition,
     comment=
         safe_text
 )
-cjsidl::pushTransition_strategy = st.builds(
-    cjsidl::pushTransition,
+cjsidl_pushTransition_strategy = st.builds(
+    cjsidl_pushTransition,
     comment=
         safe_text
 )
-cjsidl::nextState_strategy = st.builds(
-    cjsidl::nextState,
+cjsidl_nextState_strategy = st.builds(
+    cjsidl_nextState,
     comment=
         safe_text
 )
-cjsidl::sendActionList_strategy = st.builds(
-    cjsidl::sendActionList,
+cjsidl_sendActionList_strategy = st.builds(
+    cjsidl_sendActionList,
 )
-cjsidl::actionList_strategy = st.builds(
-    cjsidl::actionList,
+cjsidl_actionList_strategy = st.builds(
+    cjsidl_actionList,
 )
-cjsidl::defaultTransition_strategy = st.builds(
-    cjsidl::defaultTransition,
+cjsidl_defaultTransition_strategy = st.builds(
+    cjsidl_defaultTransition,
+    comment=
+        safe_text,
     type=
-        safe_text,
-    comment=
         safe_text
 )
-cjsidl::guard_strategy = st.builds(
-    cjsidl::guard,
+cjsidl_guard_strategy = st.builds(
+    cjsidl_guard,
     comment=
-        safe_text,
-    logicalOperator=
         safe_text,
     equiv=
+        safe_text,
+    logicalOperator=
         safe_text
 )
-cjsidl::scopedEventType_strategy = st.builds(
-    cjsidl::scopedEventType,
+cjsidl_scopedEventType_strategy = st.builds(
+    cjsidl_scopedEventType,
 )
-cjsidl::transParam_strategy = st.builds(
-    cjsidl::transParam,
+cjsidl_transParam_strategy = st.builds(
+    cjsidl_transParam,
     name=
         safe_text,
+    comment=
+        safe_text,
     unsignedType=
+        safe_text
+)
+cjsidl_transParams_strategy = st.builds(
+    cjsidl_transParams,
+)
+cjsidl_stateMachine_strategy = st.builds(
+    cjsidl_stateMachine,
+    comment=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_eventDef_strategy = st.builds(
+    cjsidl_eventDef,
+    name=
+        safe_text
+)
+cjsidl_transition_strategy = st.builds(
+    cjsidl_transition,
+    comment=
+        safe_text,
+    name=
+        safe_text,
+    type=
+        safe_text
+)
+cjsidl_exit_strategy = st.builds(
+    cjsidl_exit,
+    comment=
+        safe_text
+)
+cjsidl_entry_strategy = st.builds(
+    cjsidl_entry,
+    comment=
+        safe_text
+)
+cjsidl_defaultState_strategy = st.builds(
+    cjsidl_defaultState,
+    comment=
+        safe_text
+)
+cjsidl_state_strategy = st.builds(
+    cjsidl_state,
+    initial=
+        safe_text,
+    comment=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_startState_strategy = st.builds(
+    cjsidl_startState,
+    comment=
+        safe_text
+)
+cjsidl_constDef_strategy = st.builds(
+    cjsidl_constDef,
+    constValue=
+        safe_text,
+    comment=
+        safe_text,
+    fieldUnits=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_declaredConstSetRef_strategy = st.builds(
+    cjsidl_declaredConstSetRef,
+    comment=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_messageScopedRef_strategy = st.builds(
+    cjsidl_messageScopedRef,
+    comment=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_messageRef_strategy = st.builds(
+    cjsidl_messageRef,
+    name=
         safe_text,
     comment=
         safe_text
 )
-cjsidl::transParams_strategy = st.builds(
-    cjsidl::transParams,
+cjsidl_messageDef_strategy = st.builds(
+    cjsidl_messageDef,
+    name=
+        safe_text,
+    command=
+        safe_text,
+    messageID=
+        safe_text
+)
+cjsidl_messages_strategy = st.builds(
+    cjsidl_messages,
+)
+cjsidl_scopedTypeId_strategy = st.builds(
+    cjsidl_scopedTypeId,
+    optional=
+        safe_text,
+    comment=
+        safe_text,
+    scopedName=
+        safe_text
+)
+cjsidl_typeReference_strategy = st.builds(
+    cjsidl_typeReference,
+    name=
+        safe_text,
+    comment=
+        safe_text,
+    optional=
+        safe_text
+)
+cjsidl_typeDef_strategy = st.builds(
+    cjsidl_typeDef,
+)
+cjsidl_declaredTypeSetRef_strategy = st.builds(
+    cjsidl_declaredTypeSetRef,
+    name=
+        safe_text,
+    comment=
+        safe_text
+)
+cjsidl_serviceDef_strategy = st.builds(
+    cjsidl_serviceDef,
+    assumpt=
+        safe_text,
+    name=
+        safe_text,
+    serviceVersion=
+        safe_text,
+    serviceName=
+        safe_text
+)
+cjsidl_EObject_strategy = st.builds(
+    cjsidl_EObject,
+)
+cjsidl_jaus_strategy = st.builds(
+    cjsidl_jaus,
+)
+cjsidl_refAttr_strategy = st.builds(
+    cjsidl_refAttr,
+    comment=
+        safe_text,
+    name=
+        safe_text
+)
+cjsidl_protocolBehavior_strategy = st.builds(
+    cjsidl_protocolBehavior,
+    comment=
+        safe_text,
+    stateless=
+        safe_text
+)
+cjsidl_internalEventSet_strategy = st.builds(
+    cjsidl_internalEventSet,
+    comment=
+        safe_text
+)
+cjsidl_messageSet_strategy = st.builds(
+    cjsidl_messageSet,
+    comment=
+        safe_text,
+    inputComment=
+        safe_text,
+    outputComment=
+        safe_text
+)
+cjsidl_declaredTypeSet_strategy = st.builds(
+    cjsidl_declaredTypeSet,
+    name=
+        safe_text,
+    typeName=
+        safe_text,
+    version=
+        safe_text
+)
+cjsidl_declaredConstSet_strategy = st.builds(
+    cjsidl_declaredConstSet,
+    constName=
+        safe_text,
+    name=
+        safe_text,
+    constSetVersion=
+        safe_text
+)
+cjsidl_references_strategy = st.builds(
+    cjsidl_references,
+)
+cjsidl_description_strategy = st.builds(
+    cjsidl_description,
+    content=
+        safe_text
 )
 
-@given(instance=cjsidl::stateMachine_strategy)
+@given(instance=cjsidl_taggedItemDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::statemachine_instantiation(instance):
-    assert isinstance(instance, cjsidl::stateMachine)
+def test_cjsidl_taggeditemdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_taggedItemDef)
 
-@given(instance=cjsidl::stateMachine_strategy)
-def test_cjsidl::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::stateMachine_strategy)
-def test_cjsidl::statemachine_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::stateMachine_strategy)
-def test_cjsidl::statemachine_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::stateMachine_strategy)
-def test_cjsidl::statemachine_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::eventDef_strategy)
+@given(instance=cjsidl_valueSpec_strategy)
 @settings(max_examples=50)
-def test_cjsidl::eventdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::eventDef)
+def test_cjsidl_valuespec_instantiation(instance):
+    assert isinstance(instance, cjsidl_valueSpec)
 
-@given(instance=cjsidl::eventDef_strategy)
-def test_cjsidl::eventdef_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::eventDef_strategy)
-def test_cjsidl::eventdef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::transition_strategy)
-@settings(max_examples=50)
-def test_cjsidl::transition_instantiation(instance):
-    assert isinstance(instance, cjsidl::transition)
-
-@given(instance=cjsidl::transition_strategy)
-def test_cjsidl::transition_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::transition_strategy)
-def test_cjsidl::transition_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::transition_strategy)
-def test_cjsidl::transition_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::transition_strategy)
-def test_cjsidl::transition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::transition_strategy)
-def test_cjsidl::transition_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=cjsidl::transition_strategy)
-def test_cjsidl::transition_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=cjsidl::exit_strategy)
-@settings(max_examples=50)
-def test_cjsidl::exit_instantiation(instance):
-    assert isinstance(instance, cjsidl::exit)
-
-@given(instance=cjsidl::exit_strategy)
-def test_cjsidl::exit_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::exit_strategy)
-def test_cjsidl::exit_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::entry_strategy)
-@settings(max_examples=50)
-def test_cjsidl::entry_instantiation(instance):
-    assert isinstance(instance, cjsidl::entry)
-
-@given(instance=cjsidl::entry_strategy)
-def test_cjsidl::entry_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::entry_strategy)
-def test_cjsidl::entry_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::defaultState_strategy)
-@settings(max_examples=50)
-def test_cjsidl::defaultstate_instantiation(instance):
-    assert isinstance(instance, cjsidl::defaultState)
-
-@given(instance=cjsidl::defaultState_strategy)
-def test_cjsidl::defaultstate_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::defaultState_strategy)
-def test_cjsidl::defaultstate_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::state_strategy)
-@settings(max_examples=50)
-def test_cjsidl::state_instantiation(instance):
-    assert isinstance(instance, cjsidl::state)
-
-@given(instance=cjsidl::state_strategy)
-def test_cjsidl::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::state_strategy)
-def test_cjsidl::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::state_strategy)
-def test_cjsidl::state_initial_type(instance):
-    assert isinstance(instance.initial, str)
-
-
-@given(instance=cjsidl::state_strategy)
-def test_cjsidl::state_initial_setter(instance):
-    original = instance.initial
-    instance.initial = original
-    assert instance.initial == original
-
-@given(instance=cjsidl::state_strategy)
-def test_cjsidl::state_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::state_strategy)
-def test_cjsidl::state_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::startState_strategy)
-@settings(max_examples=50)
-def test_cjsidl::startstate_instantiation(instance):
-    assert isinstance(instance, cjsidl::startState)
-
-@given(instance=cjsidl::startState_strategy)
-def test_cjsidl::startstate_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::startState_strategy)
-def test_cjsidl::startstate_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::constDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::constdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::constDef)
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_constValue_type(instance):
-    assert isinstance(instance.constValue, str)
-
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_constValue_setter(instance):
-    original = instance.constValue
-    instance.constValue = original
-    assert instance.constValue == original
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_fieldUnits_type(instance):
-    assert isinstance(instance.fieldUnits, str)
-
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_fieldUnits_setter(instance):
-    original = instance.fieldUnits
-    instance.fieldUnits = original
-    assert instance.fieldUnits == original
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::constDef_strategy)
-def test_cjsidl::constdef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::declaredConstSetRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::declaredconstsetref_instantiation(instance):
-    assert isinstance(instance, cjsidl::declaredConstSetRef)
-
-@given(instance=cjsidl::declaredConstSetRef_strategy)
-def test_cjsidl::declaredconstsetref_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::declaredConstSetRef_strategy)
-def test_cjsidl::declaredconstsetref_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::declaredConstSetRef_strategy)
-def test_cjsidl::declaredconstsetref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::declaredConstSetRef_strategy)
-def test_cjsidl::declaredconstsetref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::messageScopedRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::messagescopedref_instantiation(instance):
-    assert isinstance(instance, cjsidl::messageScopedRef)
-
-@given(instance=cjsidl::messageScopedRef_strategy)
-def test_cjsidl::messagescopedref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::messageScopedRef_strategy)
-def test_cjsidl::messagescopedref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::messageScopedRef_strategy)
-def test_cjsidl::messagescopedref_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::messageScopedRef_strategy)
-def test_cjsidl::messagescopedref_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::messageRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::messageref_instantiation(instance):
-    assert isinstance(instance, cjsidl::messageRef)
-
-@given(instance=cjsidl::messageRef_strategy)
-def test_cjsidl::messageref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::messageRef_strategy)
-def test_cjsidl::messageref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::messageRef_strategy)
-def test_cjsidl::messageref_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::messageRef_strategy)
-def test_cjsidl::messageref_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::messageDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::messagedef_instantiation(instance):
-    assert isinstance(instance, cjsidl::messageDef)
-
-@given(instance=cjsidl::messageDef_strategy)
-def test_cjsidl::messagedef_messageID_type(instance):
-    assert isinstance(instance.messageID, str)
-
-
-@given(instance=cjsidl::messageDef_strategy)
-def test_cjsidl::messagedef_messageID_setter(instance):
-    original = instance.messageID
-    instance.messageID = original
-    assert instance.messageID == original
-
-@given(instance=cjsidl::messageDef_strategy)
-def test_cjsidl::messagedef_command_type(instance):
-    assert isinstance(instance.command, str)
-
-
-@given(instance=cjsidl::messageDef_strategy)
-def test_cjsidl::messagedef_command_setter(instance):
-    original = instance.command
-    instance.command = original
-    assert instance.command == original
-
-@given(instance=cjsidl::messageDef_strategy)
-def test_cjsidl::messagedef_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::messageDef_strategy)
-def test_cjsidl::messagedef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::messages_strategy)
-@settings(max_examples=50)
-def test_cjsidl::messages_instantiation(instance):
-    assert isinstance(instance, cjsidl::messages)
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-@settings(max_examples=50)
-def test_cjsidl::scopedtypeid_instantiation(instance):
-    assert isinstance(instance, cjsidl::scopedTypeId)
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-def test_cjsidl::scopedtypeid_optional_type(instance):
-    assert isinstance(instance.optional, str)
-
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-def test_cjsidl::scopedtypeid_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-def test_cjsidl::scopedtypeid_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-def test_cjsidl::scopedtypeid_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-def test_cjsidl::scopedtypeid_scopedName_type(instance):
-    assert isinstance(instance.scopedName, str)
-
-
-@given(instance=cjsidl::scopedTypeId_strategy)
-def test_cjsidl::scopedtypeid_scopedName_setter(instance):
-    original = instance.scopedName
-    instance.scopedName = original
-    assert instance.scopedName == original
-
-@given(instance=cjsidl::typeReference_strategy)
-@settings(max_examples=50)
-def test_cjsidl::typereference_instantiation(instance):
-    assert isinstance(instance, cjsidl::typeReference)
-
-@given(instance=cjsidl::typeReference_strategy)
-def test_cjsidl::typereference_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::typeReference_strategy)
-def test_cjsidl::typereference_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::typeReference_strategy)
-def test_cjsidl::typereference_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::typeReference_strategy)
-def test_cjsidl::typereference_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::typeReference_strategy)
-def test_cjsidl::typereference_optional_type(instance):
-    assert isinstance(instance.optional, str)
-
-
-@given(instance=cjsidl::typeReference_strategy)
-def test_cjsidl::typereference_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
-
-@given(instance=cjsidl::typeDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::typedef_instantiation(instance):
-    assert isinstance(instance, cjsidl::typeDef)
-
-@given(instance=cjsidl::declaredTypeSetRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::declaredtypesetref_instantiation(instance):
-    assert isinstance(instance, cjsidl::declaredTypeSetRef)
-
-@given(instance=cjsidl::declaredTypeSetRef_strategy)
-def test_cjsidl::declaredtypesetref_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::declaredTypeSetRef_strategy)
-def test_cjsidl::declaredtypesetref_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::declaredTypeSetRef_strategy)
-def test_cjsidl::declaredtypesetref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::declaredTypeSetRef_strategy)
-def test_cjsidl::declaredtypesetref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::serviceDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::servicedef_instantiation(instance):
-    assert isinstance(instance, cjsidl::serviceDef)
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_serviceName_type(instance):
-    assert isinstance(instance.serviceName, str)
-
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_serviceName_setter(instance):
-    original = instance.serviceName
-    instance.serviceName = original
-    assert instance.serviceName == original
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_serviceVersion_type(instance):
-    assert isinstance(instance.serviceVersion, str)
-
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_serviceVersion_setter(instance):
-    original = instance.serviceVersion
-    instance.serviceVersion = original
-    assert instance.serviceVersion == original
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_assumpt_type(instance):
-    assert isinstance(instance.assumpt, str)
-
-
-@given(instance=cjsidl::serviceDef_strategy)
-def test_cjsidl::servicedef_assumpt_setter(instance):
-    original = instance.assumpt
-    instance.assumpt = original
-    assert instance.assumpt == original
-
-@given(instance=cjsidl::EObject_strategy)
-@settings(max_examples=50)
-def test_cjsidl::eobject_instantiation(instance):
-    assert isinstance(instance, cjsidl::EObject)
-
-@given(instance=cjsidl::jaus_strategy)
-@settings(max_examples=50)
-def test_cjsidl::jaus_instantiation(instance):
-    assert isinstance(instance, cjsidl::jaus)
-
-@given(instance=cjsidl::refAttr_strategy)
-@settings(max_examples=50)
-def test_cjsidl::refattr_instantiation(instance):
-    assert isinstance(instance, cjsidl::refAttr)
-
-@given(instance=cjsidl::refAttr_strategy)
-def test_cjsidl::refattr_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::refAttr_strategy)
-def test_cjsidl::refattr_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::refAttr_strategy)
-def test_cjsidl::refattr_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::refAttr_strategy)
-def test_cjsidl::refattr_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::protocolBehavior_strategy)
-@settings(max_examples=50)
-def test_cjsidl::protocolbehavior_instantiation(instance):
-    assert isinstance(instance, cjsidl::protocolBehavior)
-
-@given(instance=cjsidl::protocolBehavior_strategy)
-def test_cjsidl::protocolbehavior_stateless_type(instance):
-    assert isinstance(instance.stateless, str)
-
-
-@given(instance=cjsidl::protocolBehavior_strategy)
-def test_cjsidl::protocolbehavior_stateless_setter(instance):
-    original = instance.stateless
-    instance.stateless = original
-    assert instance.stateless == original
-
-@given(instance=cjsidl::protocolBehavior_strategy)
-def test_cjsidl::protocolbehavior_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::protocolBehavior_strategy)
-def test_cjsidl::protocolbehavior_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::internalEventSet_strategy)
-@settings(max_examples=50)
-def test_cjsidl::internaleventset_instantiation(instance):
-    assert isinstance(instance, cjsidl::internalEventSet)
-
-@given(instance=cjsidl::internalEventSet_strategy)
-def test_cjsidl::internaleventset_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::internalEventSet_strategy)
-def test_cjsidl::internaleventset_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::messageSet_strategy)
-@settings(max_examples=50)
-def test_cjsidl::messageset_instantiation(instance):
-    assert isinstance(instance, cjsidl::messageSet)
-
-@given(instance=cjsidl::messageSet_strategy)
-def test_cjsidl::messageset_outputComment_type(instance):
-    assert isinstance(instance.outputComment, str)
-
-
-@given(instance=cjsidl::messageSet_strategy)
-def test_cjsidl::messageset_outputComment_setter(instance):
-    original = instance.outputComment
-    instance.outputComment = original
-    assert instance.outputComment == original
-
-@given(instance=cjsidl::messageSet_strategy)
-def test_cjsidl::messageset_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::messageSet_strategy)
-def test_cjsidl::messageset_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::messageSet_strategy)
-def test_cjsidl::messageset_inputComment_type(instance):
-    assert isinstance(instance.inputComment, str)
-
-
-@given(instance=cjsidl::messageSet_strategy)
-def test_cjsidl::messageset_inputComment_setter(instance):
-    original = instance.inputComment
-    instance.inputComment = original
-    assert instance.inputComment == original
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-@settings(max_examples=50)
-def test_cjsidl::declaredtypeset_instantiation(instance):
-    assert isinstance(instance, cjsidl::declaredTypeSet)
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-def test_cjsidl::declaredtypeset_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
-
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-def test_cjsidl::declaredtypeset_typeName_setter(instance):
-    original = instance.typeName
-    instance.typeName = original
-    assert instance.typeName == original
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-def test_cjsidl::declaredtypeset_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-def test_cjsidl::declaredtypeset_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-def test_cjsidl::declaredtypeset_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::declaredTypeSet_strategy)
-def test_cjsidl::declaredtypeset_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-@settings(max_examples=50)
-def test_cjsidl::declaredconstset_instantiation(instance):
-    assert isinstance(instance, cjsidl::declaredConstSet)
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-def test_cjsidl::declaredconstset_constName_type(instance):
-    assert isinstance(instance.constName, str)
-
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-def test_cjsidl::declaredconstset_constName_setter(instance):
-    original = instance.constName
-    instance.constName = original
-    assert instance.constName == original
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-def test_cjsidl::declaredconstset_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-def test_cjsidl::declaredconstset_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-def test_cjsidl::declaredconstset_constSetVersion_type(instance):
-    assert isinstance(instance.constSetVersion, str)
-
-
-@given(instance=cjsidl::declaredConstSet_strategy)
-def test_cjsidl::declaredconstset_constSetVersion_setter(instance):
-    original = instance.constSetVersion
-    instance.constSetVersion = original
-    assert instance.constSetVersion == original
-
-@given(instance=cjsidl::references_strategy)
-@settings(max_examples=50)
-def test_cjsidl::references_instantiation(instance):
-    assert isinstance(instance, cjsidl::references)
-
-@given(instance=cjsidl::description_strategy)
-@settings(max_examples=50)
-def test_cjsidl::description_instantiation(instance):
-    assert isinstance(instance, cjsidl::description)
-
-@given(instance=cjsidl::description_strategy)
-def test_cjsidl::description_content_type(instance):
-    assert isinstance(instance.content, str)
-
-
-@given(instance=cjsidl::description_strategy)
-def test_cjsidl::description_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
-
-@given(instance=cjsidl::taggedItemDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::taggeditemdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::taggedItemDef)
-
-@given(instance=cjsidl::valueSpec_strategy)
-@settings(max_examples=50)
-def test_cjsidl::valuespec_instantiation(instance):
-    assert isinstance(instance, cjsidl::valueSpec)
-
-@given(instance=cjsidl::valueSpec_strategy)
-def test_cjsidl::valuespec_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::valueSpec_strategy)
-def test_cjsidl::valuespec_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::valueSpec_strategy)
-def test_cjsidl::valuespec_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=cjsidl::valueSpec_strategy)
-def test_cjsidl::valuespec_value_setter(instance):
+@given(instance=cjsidl_valueSpec_strategy)
+def test_cjsidl_valuespec_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cjsidl::valueSpec_strategy)
-def test_cjsidl::valuespec_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::valueSpec_strategy)
-def test_cjsidl::valuespec_name_setter(instance):
+@given(instance=cjsidl_valueSpec_strategy)
+def test_cjsidl_valuespec_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_valueSpec_strategy)
+def test_cjsidl_valuespec_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4280,1369 +3543,1632 @@ def test_cjsidl::valuespec_name_setter(instance):
 def test_containerdef_instantiation(instance):
     assert isinstance(instance, containerDef)
 
-@given(instance=cjsidl::formatEnumDef_strategy)
+@given(instance=cjsidl_formatEnumDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::formatenumdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::formatEnumDef)
-
-@given(instance=cjsidl::formatEnumDef_strategy)
-def test_cjsidl::formatenumdef_fieldFormat_type(instance):
-    assert isinstance(instance.fieldFormat, str)
+def test_cjsidl_formatenumdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_formatEnumDef)
 
 
-@given(instance=cjsidl::formatEnumDef_strategy)
-def test_cjsidl::formatenumdef_fieldFormat_setter(instance):
+
+@given(instance=cjsidl_formatEnumDef_strategy)
+def test_cjsidl_formatenumdef_fieldFormat_setter(instance):
     original = instance.fieldFormat
     instance.fieldFormat = original
     assert instance.fieldFormat == original
 
-@given(instance=cjsidl::formatEnumDef_strategy)
-def test_cjsidl::formatenumdef_index_type(instance):
-    assert isinstance(instance.index, str)
 
 
-@given(instance=cjsidl::formatEnumDef_strategy)
-def test_cjsidl::formatenumdef_index_setter(instance):
+@given(instance=cjsidl_formatEnumDef_strategy)
+def test_cjsidl_formatenumdef_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
 
-@given(instance=cjsidl::formatEnumDef_strategy)
-def test_cjsidl::formatenumdef_fieldFormatStr_type(instance):
-    assert isinstance(instance.fieldFormatStr, str)
 
 
-@given(instance=cjsidl::formatEnumDef_strategy)
-def test_cjsidl::formatenumdef_fieldFormatStr_setter(instance):
+@given(instance=cjsidl_formatEnumDef_strategy)
+def test_cjsidl_formatenumdef_fieldFormatStr_setter(instance):
     original = instance.fieldFormatStr
     instance.fieldFormatStr = original
     assert instance.fieldFormatStr == original
 
-@given(instance=cjsidl::valueRange_strategy)
+@given(instance=cjsidl_valueRange_strategy)
 @settings(max_examples=50)
-def test_cjsidl::valuerange_instantiation(instance):
-    assert isinstance(instance, cjsidl::valueRange)
-
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_upperLimit_type_type(instance):
-    assert isinstance(instance.upperLimit_type, str)
+def test_cjsidl_valuerange_instantiation(instance):
+    assert isinstance(instance, cjsidl_valueRange)
 
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_upperLimit_type_setter(instance):
+
+@given(instance=cjsidl_valueRange_strategy)
+def test_cjsidl_valuerange_upperLimit_type_setter(instance):
     original = instance.upperLimit_type
     instance.upperLimit_type = original
     assert instance.upperLimit_type == original
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_comment_setter(instance):
+@given(instance=cjsidl_valueRange_strategy)
+def test_cjsidl_valuerange_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_lowerLim_type(instance):
-    assert isinstance(instance.lowerLim, str)
 
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_lowerLim_setter(instance):
-    original = instance.lowerLim
-    instance.lowerLim = original
-    assert instance.lowerLim == original
-
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_upperLim_type(instance):
-    assert isinstance(instance.upperLim, str)
-
-
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_upperLim_setter(instance):
+@given(instance=cjsidl_valueRange_strategy)
+def test_cjsidl_valuerange_upperLim_setter(instance):
     original = instance.upperLim
     instance.upperLim = original
     assert instance.upperLim == original
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_lowerLimit_type_type(instance):
-    assert isinstance(instance.lowerLimit_type, str)
 
 
-@given(instance=cjsidl::valueRange_strategy)
-def test_cjsidl::valuerange_lowerLimit_type_setter(instance):
+@given(instance=cjsidl_valueRange_strategy)
+def test_cjsidl_valuerange_lowerLim_setter(instance):
+    original = instance.lowerLim
+    instance.lowerLim = original
+    assert instance.lowerLim == original
+
+
+
+@given(instance=cjsidl_valueRange_strategy)
+def test_cjsidl_valuerange_lowerLimit_type_setter(instance):
     original = instance.lowerLimit_type
     instance.lowerLimit_type = original
     assert instance.lowerLimit_type == original
 
-@given(instance=cjsidl::scaledRangeDef_strategy)
+@given(instance=cjsidl_scaledRangeDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::scaledrangedef_instantiation(instance):
-    assert isinstance(instance, cjsidl::scaledRangeDef)
-
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_function_type(instance):
-    assert isinstance(instance.function, str)
+def test_cjsidl_scaledrangedef_instantiation(instance):
+    assert isinstance(instance, cjsidl_scaledRangeDef)
 
 
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_function_setter(instance):
+
+@given(instance=cjsidl_scaledRangeDef_strategy)
+def test_cjsidl_scaledrangedef_upperLim_setter(instance):
+    original = instance.upperLim
+    instance.upperLim = original
+    assert instance.upperLim == original
+
+
+
+@given(instance=cjsidl_scaledRangeDef_strategy)
+def test_cjsidl_scaledrangedef_function_setter(instance):
     original = instance.function
     instance.function = original
     assert instance.function == original
 
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_upperLim_type(instance):
-    assert isinstance(instance.upperLim, str)
 
 
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_upperLim_setter(instance):
-    original = instance.upperLim
-    instance.upperLim = original
-    assert instance.upperLim == original
-
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_interp_type(instance):
-    assert isinstance(instance.interp, str)
+@given(instance=cjsidl_scaledRangeDef_strategy)
+def test_cjsidl_scaledrangedef_lowerLim_setter(instance):
+    original = instance.lowerLim
+    instance.lowerLim = original
+    assert instance.lowerLim == original
 
 
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_interp_setter(instance):
+
+@given(instance=cjsidl_scaledRangeDef_strategy)
+def test_cjsidl_scaledrangedef_interp_setter(instance):
     original = instance.interp
     instance.interp = original
     assert instance.interp == original
 
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_lowerLim_type(instance):
-    assert isinstance(instance.lowerLim, str)
-
-
-@given(instance=cjsidl::scaledRangeDef_strategy)
-def test_cjsidl::scaledrangedef_lowerLim_setter(instance):
-    original = instance.lowerLim
-    instance.lowerLim = original
-    assert instance.lowerLim == original
-
-@given(instance=cjsidl::subField_strategy)
+@given(instance=cjsidl_subField_strategy)
 @settings(max_examples=50)
-def test_cjsidl::subfield_instantiation(instance):
-    assert isinstance(instance, cjsidl::subField)
-
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_toIndex_type(instance):
-    assert isinstance(instance.toIndex, str)
+def test_cjsidl_subfield_instantiation(instance):
+    assert isinstance(instance, cjsidl_subField)
 
 
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_toIndex_setter(instance):
+
+@given(instance=cjsidl_subField_strategy)
+def test_cjsidl_subfield_toIndex_setter(instance):
     original = instance.toIndex
     instance.toIndex = original
     assert instance.toIndex == original
 
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_fromIndex_type(instance):
-    assert isinstance(instance.fromIndex, str)
-
-
-@given(instance=cjsidl::subField_strategy)
-def test_cjsidl::subfield_fromIndex_setter(instance):
+@given(instance=cjsidl_subField_strategy)
+def test_cjsidl_subfield_fromIndex_setter(instance):
     original = instance.fromIndex
     instance.fromIndex = original
     assert instance.fromIndex == original
 
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-@settings(max_examples=50)
-def test_cjsidl::taggedunitsenum_instantiation(instance):
-    assert isinstance(instance, cjsidl::taggedUnitsEnum)
-
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-def test_cjsidl::taggedunitsenum_fieldUnit_type(instance):
-    assert isinstance(instance.fieldUnit, str)
 
 
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-def test_cjsidl::taggedunitsenum_fieldUnit_setter(instance):
-    original = instance.fieldUnit
-    instance.fieldUnit = original
-    assert instance.fieldUnit == original
-
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-def test_cjsidl::taggedunitsenum_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=cjsidl_subField_strategy)
+def test_cjsidl_subfield_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
 
 
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-def test_cjsidl::taggedunitsenum_name_setter(instance):
+
+@given(instance=cjsidl_subField_strategy)
+def test_cjsidl_subfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-def test_cjsidl::taggedunitsenum_const_tag_type(instance):
-    assert isinstance(instance.const_tag, str)
+@given(instance=cjsidl_taggedUnitsEnum_strategy)
+@settings(max_examples=50)
+def test_cjsidl_taggedunitsenum_instantiation(instance):
+    assert isinstance(instance, cjsidl_taggedUnitsEnum)
 
 
-@given(instance=cjsidl::taggedUnitsEnum_strategy)
-def test_cjsidl::taggedunitsenum_const_tag_setter(instance):
+
+@given(instance=cjsidl_taggedUnitsEnum_strategy)
+def test_cjsidl_taggedunitsenum_fieldUnit_setter(instance):
+    original = instance.fieldUnit
+    instance.fieldUnit = original
+    assert instance.fieldUnit == original
+
+
+
+@given(instance=cjsidl_taggedUnitsEnum_strategy)
+def test_cjsidl_taggedunitsenum_const_tag_setter(instance):
     original = instance.const_tag
     instance.const_tag = original
     assert instance.const_tag == original
 
-@given(instance=cjsidl::valueSetDef_strategy)
+
+
+@given(instance=cjsidl_taggedUnitsEnum_strategy)
+def test_cjsidl_taggedunitsenum_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_valueSetDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::valuesetdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::valueSetDef)
-
-@given(instance=cjsidl::valueSetDef_strategy)
-def test_cjsidl::valuesetdef_offset_type(instance):
-    assert isinstance(instance.offset, str)
+def test_cjsidl_valuesetdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_valueSetDef)
 
 
-@given(instance=cjsidl::valueSetDef_strategy)
-def test_cjsidl::valuesetdef_offset_setter(instance):
+
+@given(instance=cjsidl_valueSetDef_strategy)
+def test_cjsidl_valuesetdef_offset_setter(instance):
     original = instance.offset
     instance.offset = original
     assert instance.offset == original
 
-@given(instance=cjsidl::declaredEventDef_strategy)
+@given(instance=cjsidl_declaredEventDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::declaredeventdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::declaredEventDef)
-
-@given(instance=cjsidl::declaredEventDef_strategy)
-def test_cjsidl::declaredeventdef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cjsidl_declaredeventdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_declaredEventDef)
 
 
-@given(instance=cjsidl::declaredEventDef_strategy)
-def test_cjsidl::declaredeventdef_name_setter(instance):
+
+@given(instance=cjsidl_declaredEventDef_strategy)
+def test_cjsidl_declaredeventdef_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_declaredEventDef_strategy)
+def test_cjsidl_declaredeventdef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::declaredEventDef_strategy)
-def test_cjsidl::declaredeventdef_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=cjsidl_scopedType_strategy)
+@settings(max_examples=50)
+def test_cjsidl_scopedtype_instantiation(instance):
+    assert isinstance(instance, cjsidl_scopedType)
+
+@given(instance=cjsidl_scopedConstId_strategy)
+@settings(max_examples=50)
+def test_cjsidl_scopedconstid_instantiation(instance):
+    assert isinstance(instance, cjsidl_scopedConstId)
+
+@given(instance=cjsidl_constReference_strategy)
+@settings(max_examples=50)
+def test_cjsidl_constreference_instantiation(instance):
+    assert isinstance(instance, cjsidl_constReference)
 
 
-@given(instance=cjsidl::declaredEventDef_strategy)
-def test_cjsidl::declaredeventdef_comment_setter(instance):
+
+@given(instance=cjsidl_constReference_strategy)
+def test_cjsidl_constreference_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::scopedType_strategy)
+@given(instance=cjsidl_footerScopedRef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::scopedtype_instantiation(instance):
-    assert isinstance(instance, cjsidl::scopedType)
+def test_cjsidl_footerscopedref_instantiation(instance):
+    assert isinstance(instance, cjsidl_footerScopedRef)
 
-@given(instance=cjsidl::scopedConstId_strategy)
+@given(instance=cjsidl_footerRef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::scopedconstid_instantiation(instance):
-    assert isinstance(instance, cjsidl::scopedConstId)
-
-@given(instance=cjsidl::constReference_strategy)
-@settings(max_examples=50)
-def test_cjsidl::constreference_instantiation(instance):
-    assert isinstance(instance, cjsidl::constReference)
-
-@given(instance=cjsidl::constReference_strategy)
-def test_cjsidl::constreference_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_footerref_instantiation(instance):
+    assert isinstance(instance, cjsidl_footerRef)
 
 
-@given(instance=cjsidl::constReference_strategy)
-def test_cjsidl::constreference_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
 
-@given(instance=cjsidl::footerScopedRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::footerscopedref_instantiation(instance):
-    assert isinstance(instance, cjsidl::footerScopedRef)
-
-@given(instance=cjsidl::footerRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::footerref_instantiation(instance):
-    assert isinstance(instance, cjsidl::footerRef)
-
-@given(instance=cjsidl::footerRef_strategy)
-def test_cjsidl::footerref_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::footerRef_strategy)
-def test_cjsidl::footerref_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::footerRef_strategy)
-def test_cjsidl::footerref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::footerRef_strategy)
-def test_cjsidl::footerref_name_setter(instance):
+@given(instance=cjsidl_footerRef_strategy)
+def test_cjsidl_footerref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::bodyScopedRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::bodyscopedref_instantiation(instance):
-    assert isinstance(instance, cjsidl::bodyScopedRef)
-
-@given(instance=cjsidl::bodyRef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::bodyref_instantiation(instance):
-    assert isinstance(instance, cjsidl::bodyRef)
-
-@given(instance=cjsidl::bodyRef_strategy)
-def test_cjsidl::bodyref_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::bodyRef_strategy)
-def test_cjsidl::bodyref_comment_setter(instance):
+@given(instance=cjsidl_footerRef_strategy)
+def test_cjsidl_footerref_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::bodyRef_strategy)
-def test_cjsidl::bodyref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::bodyRef_strategy)
-def test_cjsidl::bodyref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::headerScopedRef_strategy)
+@given(instance=cjsidl_bodyScopedRef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::headerscopedref_instantiation(instance):
-    assert isinstance(instance, cjsidl::headerScopedRef)
+def test_cjsidl_bodyscopedref_instantiation(instance):
+    assert isinstance(instance, cjsidl_bodyScopedRef)
 
-@given(instance=cjsidl::headerRef_strategy)
+@given(instance=cjsidl_bodyRef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::headerref_instantiation(instance):
-    assert isinstance(instance, cjsidl::headerRef)
-
-@given(instance=cjsidl::headerRef_strategy)
-def test_cjsidl::headerref_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_bodyref_instantiation(instance):
+    assert isinstance(instance, cjsidl_bodyRef)
 
 
-@given(instance=cjsidl::headerRef_strategy)
-def test_cjsidl::headerref_comment_setter(instance):
+
+@given(instance=cjsidl_bodyRef_strategy)
+def test_cjsidl_bodyref_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::headerRef_strategy)
-def test_cjsidl::headerref_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::headerRef_strategy)
-def test_cjsidl::headerref_name_setter(instance):
+@given(instance=cjsidl_bodyRef_strategy)
+def test_cjsidl_bodyref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::containerRef_strategy)
+@given(instance=cjsidl_headerScopedRef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::containerref_instantiation(instance):
-    assert isinstance(instance, cjsidl::containerRef)
+def test_cjsidl_headerscopedref_instantiation(instance):
+    assert isinstance(instance, cjsidl_headerScopedRef)
 
-@given(instance=cjsidl::containerRef_strategy)
-def test_cjsidl::containerref_optional_type(instance):
-    assert isinstance(instance.optional, str)
+@given(instance=cjsidl_headerRef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_headerref_instantiation(instance):
+    assert isinstance(instance, cjsidl_headerRef)
 
 
-@given(instance=cjsidl::containerRef_strategy)
-def test_cjsidl::containerref_optional_setter(instance):
+
+@given(instance=cjsidl_headerRef_strategy)
+def test_cjsidl_headerref_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_headerRef_strategy)
+def test_cjsidl_headerref_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_containerRef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_containerref_instantiation(instance):
+    assert isinstance(instance, cjsidl_containerRef)
+
+
+
+@given(instance=cjsidl_containerRef_strategy)
+def test_cjsidl_containerref_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_containerRef_strategy)
+def test_cjsidl_containerref_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_containerRef_strategy)
+def test_cjsidl_containerref_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::containerRef_strategy)
-def test_cjsidl::containerref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::containerRef_strategy)
-def test_cjsidl::containerref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::containerRef_strategy)
-def test_cjsidl::containerref_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::containerRef_strategy)
-def test_cjsidl::containerref_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::containerDef_strategy)
+@given(instance=cjsidl_containerDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::containerdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::containerDef)
-
-@given(instance=cjsidl::containerDef_strategy)
-def test_cjsidl::containerdef_optional_type(instance):
-    assert isinstance(instance.optional, str)
+def test_cjsidl_containerdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_containerDef)
 
 
-@given(instance=cjsidl::containerDef_strategy)
-def test_cjsidl::containerdef_optional_setter(instance):
+
+@given(instance=cjsidl_containerDef_strategy)
+def test_cjsidl_containerdef_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::containerDef_strategy)
-def test_cjsidl::containerdef_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::containerDef_strategy)
-def test_cjsidl::containerdef_comment_setter(instance):
+@given(instance=cjsidl_containerDef_strategy)
+def test_cjsidl_containerdef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_containerDef_strategy)
+def test_cjsidl_containerdef_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::containerDef_strategy)
-def test_cjsidl::containerdef_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=cjsidl_footerDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_footerdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_footerDef)
 
 
-@given(instance=cjsidl::containerDef_strategy)
-def test_cjsidl::containerdef_name_setter(instance):
+
+@given(instance=cjsidl_footerDef_strategy)
+def test_cjsidl_footerdef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::footerDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::footerdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::footerDef)
-
-@given(instance=cjsidl::footerDef_strategy)
-def test_cjsidl::footerdef_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::footerDef_strategy)
-def test_cjsidl::footerdef_comment_setter(instance):
+@given(instance=cjsidl_footerDef_strategy)
+def test_cjsidl_footerdef_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::footerDef_strategy)
-def test_cjsidl::footerdef_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::footerDef_strategy)
-def test_cjsidl::footerdef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::bodyDef_strategy)
+@given(instance=cjsidl_bodyDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::bodydef_instantiation(instance):
-    assert isinstance(instance, cjsidl::bodyDef)
-
-@given(instance=cjsidl::bodyDef_strategy)
-def test_cjsidl::bodydef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cjsidl_bodydef_instantiation(instance):
+    assert isinstance(instance, cjsidl_bodyDef)
 
 
-@given(instance=cjsidl::bodyDef_strategy)
-def test_cjsidl::bodydef_name_setter(instance):
+
+@given(instance=cjsidl_bodyDef_strategy)
+def test_cjsidl_bodydef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::bodyDef_strategy)
-def test_cjsidl::bodydef_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::bodyDef_strategy)
-def test_cjsidl::bodydef_comment_setter(instance):
+@given(instance=cjsidl_bodyDef_strategy)
+def test_cjsidl_bodydef_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::headerDef_strategy)
+@given(instance=cjsidl_headerDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::headerdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::headerDef)
-
-@given(instance=cjsidl::headerDef_strategy)
-def test_cjsidl::headerdef_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_headerdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_headerDef)
 
 
-@given(instance=cjsidl::headerDef_strategy)
-def test_cjsidl::headerdef_comment_setter(instance):
+
+@given(instance=cjsidl_headerDef_strategy)
+def test_cjsidl_headerdef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_headerDef_strategy)
+def test_cjsidl_headerdef_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::headerDef_strategy)
-def test_cjsidl::headerdef_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::headerDef_strategy)
-def test_cjsidl::headerdef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::varFormatField_strategy)
+@given(instance=cjsidl_varFormatField_strategy)
 @settings(max_examples=50)
-def test_cjsidl::varformatfield_instantiation(instance):
-    assert isinstance(instance, cjsidl::varFormatField)
-
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cjsidl_varformatfield_instantiation(instance):
+    assert isinstance(instance, cjsidl_varFormatField)
 
 
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_name_setter(instance):
+
+@given(instance=cjsidl_varFormatField_strategy)
+def test_cjsidl_varformatfield_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+
+
+@given(instance=cjsidl_varFormatField_strategy)
+def test_cjsidl_varformatfield_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_varFormatField_strategy)
+def test_cjsidl_varformatfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_units_type(instance):
-    assert isinstance(instance.units, str)
 
 
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_units_setter(instance):
+@given(instance=cjsidl_varFormatField_strategy)
+def test_cjsidl_varformatfield_units_setter(instance):
     original = instance.units
     instance.units = original
     assert instance.units == original
 
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_optional_type(instance):
-    assert isinstance(instance.optional, str)
 
 
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
-
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_countComment_type(instance):
-    assert isinstance(instance.countComment, str)
-
-
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_countComment_setter(instance):
+@given(instance=cjsidl_varFormatField_strategy)
+def test_cjsidl_varformatfield_countComment_setter(instance):
     original = instance.countComment
     instance.countComment = original
     assert instance.countComment == original
 
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::varFormatField_strategy)
-def test_cjsidl::varformatfield_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::varLenField_strategy)
+@given(instance=cjsidl_varLenField_strategy)
 @settings(max_examples=50)
-def test_cjsidl::varlenfield_instantiation(instance):
-    assert isinstance(instance, cjsidl::varLenField)
-
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_countComment_type(instance):
-    assert isinstance(instance.countComment, str)
+def test_cjsidl_varlenfield_instantiation(instance):
+    assert isinstance(instance, cjsidl_varLenField)
 
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_countComment_setter(instance):
-    original = instance.countComment
-    instance.countComment = original
-    assert instance.countComment == original
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_upperLim_type(instance):
-    assert isinstance(instance.upperLim, str)
-
-
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_upperLim_setter(instance):
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_upperLim_setter(instance):
     original = instance.upperLim
     instance.upperLim = original
     assert instance.upperLim == original
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_comment_setter(instance):
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_countComment_setter(instance):
+    original = instance.countComment
+    instance.countComment = original
+    assert instance.countComment == original
+
+
+
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_name_setter(instance):
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+
+
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_fieldFormat_type(instance):
-    assert isinstance(instance.fieldFormat, str)
 
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_fieldFormat_setter(instance):
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_fieldFormat_setter(instance):
     original = instance.fieldFormat
     instance.fieldFormat = original
     assert instance.fieldFormat == original
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_lowerLim_type(instance):
-    assert isinstance(instance.lowerLim, str)
 
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_lowerLim_setter(instance):
+@given(instance=cjsidl_varLenField_strategy)
+def test_cjsidl_varlenfield_lowerLim_setter(instance):
     original = instance.lowerLim
     instance.lowerLim = original
     assert instance.lowerLim == original
 
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_optional_type(instance):
-    assert isinstance(instance.optional, str)
-
-
-@given(instance=cjsidl::varLenField_strategy)
-def test_cjsidl::varlenfield_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
-
-@given(instance=cjsidl::varLenString_strategy)
+@given(instance=cjsidl_varLenString_strategy)
 @settings(max_examples=50)
-def test_cjsidl::varlenstring_instantiation(instance):
-    assert isinstance(instance, cjsidl::varLenString)
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_optional_type(instance):
-    assert isinstance(instance.optional, str)
+def test_cjsidl_varlenstring_instantiation(instance):
+    assert isinstance(instance, cjsidl_varLenString)
 
 
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_optional_setter(instance):
-    original = instance.optional
-    instance.optional = original
-    assert instance.optional == original
 
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_upperLim_type(instance):
-    assert isinstance(instance.upperLim, str)
-
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_upperLim_setter(instance):
-    original = instance.upperLim
-    instance.upperLim = original
-    assert instance.upperLim == original
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_lowerLim_type(instance):
-    assert isinstance(instance.lowerLim, str)
-
-
-@given(instance=cjsidl::varLenString_strategy)
-def test_cjsidl::varlenstring_lowerLim_setter(instance):
+@given(instance=cjsidl_varLenString_strategy)
+def test_cjsidl_varlenstring_lowerLim_setter(instance):
     original = instance.lowerLim
     instance.lowerLim = original
     assert instance.lowerLim == original
 
-@given(instance=cjsidl::fixedLenString_strategy)
-@settings(max_examples=50)
-def test_cjsidl::fixedlenstring_instantiation(instance):
-    assert isinstance(instance, cjsidl::fixedLenString)
-
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_optional_type(instance):
-    assert isinstance(instance.optional, str)
-
-
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_optional_setter(instance):
+@given(instance=cjsidl_varLenString_strategy)
+def test_cjsidl_varlenstring_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_upperLim_type(instance):
-    assert isinstance(instance.upperLim, str)
 
 
-@given(instance=cjsidl::fixedLenString_strategy)
-def test_cjsidl::fixedlenstring_upperLim_setter(instance):
+@given(instance=cjsidl_varLenString_strategy)
+def test_cjsidl_varlenstring_upperLim_setter(instance):
     original = instance.upperLim
     instance.upperLim = original
     assert instance.upperLim == original
 
-@given(instance=cjsidl::bitfieldDef_strategy)
+
+
+@given(instance=cjsidl_varLenString_strategy)
+def test_cjsidl_varlenstring_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_varLenString_strategy)
+def test_cjsidl_varlenstring_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_fixedLenString_strategy)
 @settings(max_examples=50)
-def test_cjsidl::bitfielddef_instantiation(instance):
-    assert isinstance(instance, cjsidl::bitfieldDef)
-
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_cjsidl_fixedlenstring_instantiation(instance):
+    assert isinstance(instance, cjsidl_fixedLenString)
 
 
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_type_setter(instance):
+
+@given(instance=cjsidl_fixedLenString_strategy)
+def test_cjsidl_fixedlenstring_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+
+
+@given(instance=cjsidl_fixedLenString_strategy)
+def test_cjsidl_fixedlenstring_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_fixedLenString_strategy)
+def test_cjsidl_fixedlenstring_upperLim_setter(instance):
+    original = instance.upperLim
+    instance.upperLim = original
+    assert instance.upperLim == original
+
+
+
+@given(instance=cjsidl_fixedLenString_strategy)
+def test_cjsidl_fixedlenstring_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_bitfieldDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_bitfielddef_instantiation(instance):
+    assert isinstance(instance, cjsidl_bitfieldDef)
+
+
+
+@given(instance=cjsidl_bitfieldDef_strategy)
+def test_cjsidl_bitfielddef_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_comment_setter(instance):
+@given(instance=cjsidl_bitfieldDef_strategy)
+def test_cjsidl_bitfielddef_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_optional_type(instance):
-    assert isinstance(instance.optional, str)
-
-
-@given(instance=cjsidl::bitfieldDef_strategy)
-def test_cjsidl::bitfielddef_optional_setter(instance):
+@given(instance=cjsidl_bitfieldDef_strategy)
+def test_cjsidl_bitfielddef_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::action_strategy)
-@settings(max_examples=50)
-def test_cjsidl::action_instantiation(instance):
-    assert isinstance(instance, cjsidl::action)
-
-@given(instance=cjsidl::action_strategy)
-def test_cjsidl::action_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::action_strategy)
-def test_cjsidl::action_name_setter(instance):
+@given(instance=cjsidl_bitfieldDef_strategy)
+def test_cjsidl_bitfielddef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::action_strategy)
-def test_cjsidl::action_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=cjsidl_action_strategy)
+@settings(max_examples=50)
+def test_cjsidl_action_instantiation(instance):
+    assert isinstance(instance, cjsidl_action)
 
 
-@given(instance=cjsidl::action_strategy)
-def test_cjsidl::action_comment_setter(instance):
+
+@given(instance=cjsidl_action_strategy)
+def test_cjsidl_action_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::varField_strategy)
-@settings(max_examples=50)
-def test_cjsidl::varfield_instantiation(instance):
-    assert isinstance(instance, cjsidl::varField)
-
-@given(instance=cjsidl::varField_strategy)
-def test_cjsidl::varfield_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::varField_strategy)
-def test_cjsidl::varfield_name_setter(instance):
+@given(instance=cjsidl_action_strategy)
+def test_cjsidl_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::varField_strategy)
-def test_cjsidl::varfield_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=cjsidl_varField_strategy)
+@settings(max_examples=50)
+def test_cjsidl_varfield_instantiation(instance):
+    assert isinstance(instance, cjsidl_varField)
 
 
-@given(instance=cjsidl::varField_strategy)
-def test_cjsidl::varfield_comment_setter(instance):
+
+@given(instance=cjsidl_varField_strategy)
+def test_cjsidl_varfield_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::varField_strategy)
-def test_cjsidl::varfield_optional_type(instance):
-    assert isinstance(instance.optional, str)
 
 
-@given(instance=cjsidl::varField_strategy)
-def test_cjsidl::varfield_optional_setter(instance):
+@given(instance=cjsidl_varField_strategy)
+def test_cjsidl_varfield_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-@settings(max_examples=50)
-def test_cjsidl::fixedfielddef_instantiation(instance):
-    assert isinstance(instance, cjsidl::fixedFieldDef)
-
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_name_setter(instance):
+@given(instance=cjsidl_varField_strategy)
+def test_cjsidl_varfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_fieldUnit_type(instance):
-    assert isinstance(instance.fieldUnit, str)
+@given(instance=cjsidl_fixedFieldDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_fixedfielddef_instantiation(instance):
+    assert isinstance(instance, cjsidl_fixedFieldDef)
 
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_fieldUnit_setter(instance):
+
+@given(instance=cjsidl_fixedFieldDef_strategy)
+def test_cjsidl_fixedfielddef_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_fixedFieldDef_strategy)
+def test_cjsidl_fixedfielddef_fieldUnit_setter(instance):
     original = instance.fieldUnit
     instance.fieldUnit = original
     assert instance.fieldUnit == original
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_optional_type(instance):
-    assert isinstance(instance.optional, str)
 
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_optional_setter(instance):
+@given(instance=cjsidl_fixedFieldDef_strategy)
+def test_cjsidl_fixedfielddef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_fixedFieldDef_strategy)
+def test_cjsidl_fixedfielddef_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::fixedFieldDef_strategy)
-def test_cjsidl::fixedfielddef_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::sequenceDef_strategy)
+@given(instance=cjsidl_sequenceDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::sequencedef_instantiation(instance):
-    assert isinstance(instance, cjsidl::sequenceDef)
+def test_cjsidl_sequencedef_instantiation(instance):
+    assert isinstance(instance, cjsidl_sequenceDef)
 
-@given(instance=cjsidl::variantDef_strategy)
+@given(instance=cjsidl_variantDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::variantdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::variantDef)
-
-@given(instance=cjsidl::variantDef_strategy)
-def test_cjsidl::variantdef_minCount_type(instance):
-    assert isinstance(instance.minCount, str)
+def test_cjsidl_variantdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_variantDef)
 
 
-@given(instance=cjsidl::variantDef_strategy)
-def test_cjsidl::variantdef_minCount_setter(instance):
+
+@given(instance=cjsidl_variantDef_strategy)
+def test_cjsidl_variantdef_minCount_setter(instance):
     original = instance.minCount
     instance.minCount = original
     assert instance.minCount == original
 
-@given(instance=cjsidl::variantDef_strategy)
-def test_cjsidl::variantdef_maxCount_type(instance):
-    assert isinstance(instance.maxCount, str)
 
 
-@given(instance=cjsidl::variantDef_strategy)
-def test_cjsidl::variantdef_maxCount_setter(instance):
+@given(instance=cjsidl_variantDef_strategy)
+def test_cjsidl_variantdef_maxCount_setter(instance):
     original = instance.maxCount
     instance.maxCount = original
     assert instance.maxCount == original
 
-@given(instance=cjsidl::variantDef_strategy)
-def test_cjsidl::variantdef_vtagComment_type(instance):
-    assert isinstance(instance.vtagComment, str)
 
 
-@given(instance=cjsidl::variantDef_strategy)
-def test_cjsidl::variantdef_vtagComment_setter(instance):
+@given(instance=cjsidl_variantDef_strategy)
+def test_cjsidl_variantdef_vtagComment_setter(instance):
     original = instance.vtagComment
     instance.vtagComment = original
     assert instance.vtagComment == original
 
-@given(instance=cjsidl::listDef_strategy)
+@given(instance=cjsidl_listDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::listdef_instantiation(instance):
-    assert isinstance(instance, cjsidl::listDef)
-
-@given(instance=cjsidl::listDef_strategy)
-def test_cjsidl::listdef_minCount_type(instance):
-    assert isinstance(instance.minCount, str)
+def test_cjsidl_listdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_listDef)
 
 
-@given(instance=cjsidl::listDef_strategy)
-def test_cjsidl::listdef_minCount_setter(instance):
-    original = instance.minCount
-    instance.minCount = original
-    assert instance.minCount == original
 
-@given(instance=cjsidl::listDef_strategy)
-def test_cjsidl::listdef_countComment_type(instance):
-    assert isinstance(instance.countComment, str)
-
-
-@given(instance=cjsidl::listDef_strategy)
-def test_cjsidl::listdef_countComment_setter(instance):
-    original = instance.countComment
-    instance.countComment = original
-    assert instance.countComment == original
-
-@given(instance=cjsidl::listDef_strategy)
-def test_cjsidl::listdef_maxCount_type(instance):
-    assert isinstance(instance.maxCount, str)
-
-
-@given(instance=cjsidl::listDef_strategy)
-def test_cjsidl::listdef_maxCount_setter(instance):
+@given(instance=cjsidl_listDef_strategy)
+def test_cjsidl_listdef_maxCount_setter(instance):
     original = instance.maxCount
     instance.maxCount = original
     assert instance.maxCount == original
 
-@given(instance=cjsidl::recordDef_strategy)
+
+
+@given(instance=cjsidl_listDef_strategy)
+def test_cjsidl_listdef_countComment_setter(instance):
+    original = instance.countComment
+    instance.countComment = original
+    assert instance.countComment == original
+
+
+
+@given(instance=cjsidl_listDef_strategy)
+def test_cjsidl_listdef_minCount_setter(instance):
+    original = instance.minCount
+    instance.minCount = original
+    assert instance.minCount == original
+
+@given(instance=cjsidl_recordDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::recorddef_instantiation(instance):
-    assert isinstance(instance, cjsidl::recordDef)
+def test_cjsidl_recorddef_instantiation(instance):
+    assert isinstance(instance, cjsidl_recordDef)
 
-@given(instance=cjsidl::arrayDef_strategy)
+@given(instance=cjsidl_arrayDef_strategy)
 @settings(max_examples=50)
-def test_cjsidl::arraydef_instantiation(instance):
-    assert isinstance(instance, cjsidl::arrayDef)
-
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_arraySize_type(instance):
-    assert isinstance(instance.arraySize, str)
+def test_cjsidl_arraydef_instantiation(instance):
+    assert isinstance(instance, cjsidl_arrayDef)
 
 
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_arraySize_setter(instance):
-    original = instance.arraySize
-    instance.arraySize = original
-    assert instance.arraySize == original
 
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_optional_type(instance):
-    assert isinstance(instance.optional, str)
-
-
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_optional_setter(instance):
+@given(instance=cjsidl_arrayDef_strategy)
+def test_cjsidl_arraydef_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cjsidl::arrayDef_strategy)
-def test_cjsidl::arraydef_name_setter(instance):
+@given(instance=cjsidl_arrayDef_strategy)
+def test_cjsidl_arraydef_arraySize_setter(instance):
+    original = instance.arraySize
+    instance.arraySize = original
+    assert instance.arraySize == original
+
+
+
+@given(instance=cjsidl_arrayDef_strategy)
+def test_cjsidl_arraydef_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_arrayDef_strategy)
+def test_cjsidl_arraydef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::simpleNumericType_strategy)
+@given(instance=cjsidl_simpleNumericType_strategy)
 @settings(max_examples=50)
-def test_cjsidl::simplenumerictype_instantiation(instance):
-    assert isinstance(instance, cjsidl::simpleNumericType)
-
-@given(instance=cjsidl::simpleNumericType_strategy)
-def test_cjsidl::simplenumerictype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_cjsidl_simplenumerictype_instantiation(instance):
+    assert isinstance(instance, cjsidl_simpleNumericType)
 
 
-@given(instance=cjsidl::simpleNumericType_strategy)
-def test_cjsidl::simplenumerictype_type_setter(instance):
+
+@given(instance=cjsidl_simpleNumericType_strategy)
+def test_cjsidl_simplenumerictype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=cjsidl::simpleTransition_strategy)
+@given(instance=cjsidl_simpleTransition_strategy)
 @settings(max_examples=50)
-def test_cjsidl::simpletransition_instantiation(instance):
-    assert isinstance(instance, cjsidl::simpleTransition)
-
-@given(instance=cjsidl::simpleTransition_strategy)
-def test_cjsidl::simpletransition_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_simpletransition_instantiation(instance):
+    assert isinstance(instance, cjsidl_simpleTransition)
 
 
-@given(instance=cjsidl::simpleTransition_strategy)
-def test_cjsidl::simpletransition_comment_setter(instance):
+
+@given(instance=cjsidl_simpleTransition_strategy)
+def test_cjsidl_simpletransition_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::internalTransition_strategy)
+@given(instance=cjsidl_internalTransition_strategy)
 @settings(max_examples=50)
-def test_cjsidl::internaltransition_instantiation(instance):
-    assert isinstance(instance, cjsidl::internalTransition)
-
-@given(instance=cjsidl::internalTransition_strategy)
-def test_cjsidl::internaltransition_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_internaltransition_instantiation(instance):
+    assert isinstance(instance, cjsidl_internalTransition)
 
 
-@given(instance=cjsidl::internalTransition_strategy)
-def test_cjsidl::internaltransition_comment_setter(instance):
+
+@given(instance=cjsidl_internalTransition_strategy)
+def test_cjsidl_internaltransition_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::guardAction_strategy)
+@given(instance=cjsidl_guardAction_strategy)
 @settings(max_examples=50)
-def test_cjsidl::guardaction_instantiation(instance):
-    assert isinstance(instance, cjsidl::guardAction)
-
-@given(instance=cjsidl::guardAction_strategy)
-def test_cjsidl::guardaction_not__type(instance):
-    assert isinstance(instance.not_, str)
+def test_cjsidl_guardaction_instantiation(instance):
+    assert isinstance(instance, cjsidl_guardAction)
 
 
-@given(instance=cjsidl::guardAction_strategy)
-def test_cjsidl::guardaction_not__setter(instance):
+
+@given(instance=cjsidl_guardAction_strategy)
+def test_cjsidl_guardaction_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_guardAction_strategy)
+def test_cjsidl_guardaction_not__setter(instance):
     original = instance.not_
     instance.not_ = original
     assert instance.not_ == original
 
-@given(instance=cjsidl::guardAction_strategy)
-def test_cjsidl::guardaction_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cjsidl::guardAction_strategy)
-def test_cjsidl::guardaction_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=cjsidl::guardParam_strategy)
+@given(instance=cjsidl_guardParam_strategy)
 @settings(max_examples=50)
-def test_cjsidl::guardparam_instantiation(instance):
-    assert isinstance(instance, cjsidl::guardParam)
-
-@given(instance=cjsidl::guardParam_strategy)
-def test_cjsidl::guardparam_guardConst_type(instance):
-    assert isinstance(instance.guardConst, str)
+def test_cjsidl_guardparam_instantiation(instance):
+    assert isinstance(instance, cjsidl_guardParam)
 
 
-@given(instance=cjsidl::guardParam_strategy)
-def test_cjsidl::guardparam_guardConst_setter(instance):
+
+@given(instance=cjsidl_guardParam_strategy)
+def test_cjsidl_guardparam_guardConst_setter(instance):
     original = instance.guardConst
     instance.guardConst = original
     assert instance.guardConst == original
 
-@given(instance=cjsidl::popTransition_strategy)
+@given(instance=cjsidl_popTransition_strategy)
 @settings(max_examples=50)
-def test_cjsidl::poptransition_instantiation(instance):
-    assert isinstance(instance, cjsidl::popTransition)
-
-@given(instance=cjsidl::popTransition_strategy)
-def test_cjsidl::poptransition_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_poptransition_instantiation(instance):
+    assert isinstance(instance, cjsidl_popTransition)
 
 
-@given(instance=cjsidl::popTransition_strategy)
-def test_cjsidl::poptransition_comment_setter(instance):
+
+@given(instance=cjsidl_popTransition_strategy)
+def test_cjsidl_poptransition_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::pushTransition_strategy)
+@given(instance=cjsidl_pushTransition_strategy)
 @settings(max_examples=50)
-def test_cjsidl::pushtransition_instantiation(instance):
-    assert isinstance(instance, cjsidl::pushTransition)
-
-@given(instance=cjsidl::pushTransition_strategy)
-def test_cjsidl::pushtransition_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_pushtransition_instantiation(instance):
+    assert isinstance(instance, cjsidl_pushTransition)
 
 
-@given(instance=cjsidl::pushTransition_strategy)
-def test_cjsidl::pushtransition_comment_setter(instance):
+
+@given(instance=cjsidl_pushTransition_strategy)
+def test_cjsidl_pushtransition_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::nextState_strategy)
+@given(instance=cjsidl_nextState_strategy)
 @settings(max_examples=50)
-def test_cjsidl::nextstate_instantiation(instance):
-    assert isinstance(instance, cjsidl::nextState)
-
-@given(instance=cjsidl::nextState_strategy)
-def test_cjsidl::nextstate_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_nextstate_instantiation(instance):
+    assert isinstance(instance, cjsidl_nextState)
 
 
-@given(instance=cjsidl::nextState_strategy)
-def test_cjsidl::nextstate_comment_setter(instance):
+
+@given(instance=cjsidl_nextState_strategy)
+def test_cjsidl_nextstate_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::sendActionList_strategy)
+@given(instance=cjsidl_sendActionList_strategy)
 @settings(max_examples=50)
-def test_cjsidl::sendactionlist_instantiation(instance):
-    assert isinstance(instance, cjsidl::sendActionList)
+def test_cjsidl_sendactionlist_instantiation(instance):
+    assert isinstance(instance, cjsidl_sendActionList)
 
-@given(instance=cjsidl::actionList_strategy)
+@given(instance=cjsidl_actionList_strategy)
 @settings(max_examples=50)
-def test_cjsidl::actionlist_instantiation(instance):
-    assert isinstance(instance, cjsidl::actionList)
+def test_cjsidl_actionlist_instantiation(instance):
+    assert isinstance(instance, cjsidl_actionList)
 
-@given(instance=cjsidl::defaultTransition_strategy)
+@given(instance=cjsidl_defaultTransition_strategy)
 @settings(max_examples=50)
-def test_cjsidl::defaulttransition_instantiation(instance):
-    assert isinstance(instance, cjsidl::defaultTransition)
-
-@given(instance=cjsidl::defaultTransition_strategy)
-def test_cjsidl::defaulttransition_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_cjsidl_defaulttransition_instantiation(instance):
+    assert isinstance(instance, cjsidl_defaultTransition)
 
 
-@given(instance=cjsidl::defaultTransition_strategy)
-def test_cjsidl::defaulttransition_type_setter(instance):
+
+@given(instance=cjsidl_defaultTransition_strategy)
+def test_cjsidl_defaulttransition_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_defaultTransition_strategy)
+def test_cjsidl_defaulttransition_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=cjsidl::defaultTransition_strategy)
-def test_cjsidl::defaulttransition_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::defaultTransition_strategy)
-def test_cjsidl::defaulttransition_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=cjsidl::guard_strategy)
+@given(instance=cjsidl_guard_strategy)
 @settings(max_examples=50)
-def test_cjsidl::guard_instantiation(instance):
-    assert isinstance(instance, cjsidl::guard)
-
-@given(instance=cjsidl::guard_strategy)
-def test_cjsidl::guard_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cjsidl_guard_instantiation(instance):
+    assert isinstance(instance, cjsidl_guard)
 
 
-@given(instance=cjsidl::guard_strategy)
-def test_cjsidl::guard_comment_setter(instance):
+
+@given(instance=cjsidl_guard_strategy)
+def test_cjsidl_guard_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::guard_strategy)
-def test_cjsidl::guard_logicalOperator_type(instance):
-    assert isinstance(instance.logicalOperator, str)
 
 
-@given(instance=cjsidl::guard_strategy)
-def test_cjsidl::guard_logicalOperator_setter(instance):
-    original = instance.logicalOperator
-    instance.logicalOperator = original
-    assert instance.logicalOperator == original
-
-@given(instance=cjsidl::guard_strategy)
-def test_cjsidl::guard_equiv_type(instance):
-    assert isinstance(instance.equiv, str)
-
-
-@given(instance=cjsidl::guard_strategy)
-def test_cjsidl::guard_equiv_setter(instance):
+@given(instance=cjsidl_guard_strategy)
+def test_cjsidl_guard_equiv_setter(instance):
     original = instance.equiv
     instance.equiv = original
     assert instance.equiv == original
 
-@given(instance=cjsidl::scopedEventType_strategy)
+
+
+@given(instance=cjsidl_guard_strategy)
+def test_cjsidl_guard_logicalOperator_setter(instance):
+    original = instance.logicalOperator
+    instance.logicalOperator = original
+    assert instance.logicalOperator == original
+
+@given(instance=cjsidl_scopedEventType_strategy)
 @settings(max_examples=50)
-def test_cjsidl::scopedeventtype_instantiation(instance):
-    assert isinstance(instance, cjsidl::scopedEventType)
+def test_cjsidl_scopedeventtype_instantiation(instance):
+    assert isinstance(instance, cjsidl_scopedEventType)
 
-@given(instance=cjsidl::transParam_strategy)
+@given(instance=cjsidl_transParam_strategy)
 @settings(max_examples=50)
-def test_cjsidl::transparam_instantiation(instance):
-    assert isinstance(instance, cjsidl::transParam)
-
-@given(instance=cjsidl::transParam_strategy)
-def test_cjsidl::transparam_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cjsidl_transparam_instantiation(instance):
+    assert isinstance(instance, cjsidl_transParam)
 
 
-@given(instance=cjsidl::transParam_strategy)
-def test_cjsidl::transparam_name_setter(instance):
+
+@given(instance=cjsidl_transParam_strategy)
+def test_cjsidl_transparam_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cjsidl::transParam_strategy)
-def test_cjsidl::transparam_unsignedType_type(instance):
-    assert isinstance(instance.unsignedType, str)
 
 
-@given(instance=cjsidl::transParam_strategy)
-def test_cjsidl::transparam_unsignedType_setter(instance):
-    original = instance.unsignedType
-    instance.unsignedType = original
-    assert instance.unsignedType == original
-
-@given(instance=cjsidl::transParam_strategy)
-def test_cjsidl::transparam_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=cjsidl::transParam_strategy)
-def test_cjsidl::transparam_comment_setter(instance):
+@given(instance=cjsidl_transParam_strategy)
+def test_cjsidl_transparam_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cjsidl::transParams_strategy)
+
+
+@given(instance=cjsidl_transParam_strategy)
+def test_cjsidl_transparam_unsignedType_setter(instance):
+    original = instance.unsignedType
+    instance.unsignedType = original
+    assert instance.unsignedType == original
+
+@given(instance=cjsidl_transParams_strategy)
 @settings(max_examples=50)
-def test_cjsidl::transparams_instantiation(instance):
-    assert isinstance(instance, cjsidl::transParams)
+def test_cjsidl_transparams_instantiation(instance):
+    assert isinstance(instance, cjsidl_transParams)
+
+@given(instance=cjsidl_stateMachine_strategy)
+@settings(max_examples=50)
+def test_cjsidl_statemachine_instantiation(instance):
+    assert isinstance(instance, cjsidl_stateMachine)
+
+
+
+@given(instance=cjsidl_stateMachine_strategy)
+def test_cjsidl_statemachine_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_stateMachine_strategy)
+def test_cjsidl_statemachine_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_eventDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_eventdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_eventDef)
+
+
+
+@given(instance=cjsidl_eventDef_strategy)
+def test_cjsidl_eventdef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_transition_strategy)
+@settings(max_examples=50)
+def test_cjsidl_transition_instantiation(instance):
+    assert isinstance(instance, cjsidl_transition)
+
+
+
+@given(instance=cjsidl_transition_strategy)
+def test_cjsidl_transition_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_transition_strategy)
+def test_cjsidl_transition_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_transition_strategy)
+def test_cjsidl_transition_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=cjsidl_exit_strategy)
+@settings(max_examples=50)
+def test_cjsidl_exit_instantiation(instance):
+    assert isinstance(instance, cjsidl_exit)
+
+
+
+@given(instance=cjsidl_exit_strategy)
+def test_cjsidl_exit_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_entry_strategy)
+@settings(max_examples=50)
+def test_cjsidl_entry_instantiation(instance):
+    assert isinstance(instance, cjsidl_entry)
+
+
+
+@given(instance=cjsidl_entry_strategy)
+def test_cjsidl_entry_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_defaultState_strategy)
+@settings(max_examples=50)
+def test_cjsidl_defaultstate_instantiation(instance):
+    assert isinstance(instance, cjsidl_defaultState)
+
+
+
+@given(instance=cjsidl_defaultState_strategy)
+def test_cjsidl_defaultstate_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_state_strategy)
+@settings(max_examples=50)
+def test_cjsidl_state_instantiation(instance):
+    assert isinstance(instance, cjsidl_state)
+
+
+
+@given(instance=cjsidl_state_strategy)
+def test_cjsidl_state_initial_setter(instance):
+    original = instance.initial
+    instance.initial = original
+    assert instance.initial == original
+
+
+
+@given(instance=cjsidl_state_strategy)
+def test_cjsidl_state_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_state_strategy)
+def test_cjsidl_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_startState_strategy)
+@settings(max_examples=50)
+def test_cjsidl_startstate_instantiation(instance):
+    assert isinstance(instance, cjsidl_startState)
+
+
+
+@given(instance=cjsidl_startState_strategy)
+def test_cjsidl_startstate_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_constDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_constdef_instantiation(instance):
+    assert isinstance(instance, cjsidl_constDef)
+
+
+
+@given(instance=cjsidl_constDef_strategy)
+def test_cjsidl_constdef_constValue_setter(instance):
+    original = instance.constValue
+    instance.constValue = original
+    assert instance.constValue == original
+
+
+
+@given(instance=cjsidl_constDef_strategy)
+def test_cjsidl_constdef_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_constDef_strategy)
+def test_cjsidl_constdef_fieldUnits_setter(instance):
+    original = instance.fieldUnits
+    instance.fieldUnits = original
+    assert instance.fieldUnits == original
+
+
+
+@given(instance=cjsidl_constDef_strategy)
+def test_cjsidl_constdef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_declaredConstSetRef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_declaredconstsetref_instantiation(instance):
+    assert isinstance(instance, cjsidl_declaredConstSetRef)
+
+
+
+@given(instance=cjsidl_declaredConstSetRef_strategy)
+def test_cjsidl_declaredconstsetref_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_declaredConstSetRef_strategy)
+def test_cjsidl_declaredconstsetref_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_messageScopedRef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_messagescopedref_instantiation(instance):
+    assert isinstance(instance, cjsidl_messageScopedRef)
+
+
+
+@given(instance=cjsidl_messageScopedRef_strategy)
+def test_cjsidl_messagescopedref_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_messageScopedRef_strategy)
+def test_cjsidl_messagescopedref_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_messageRef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_messageref_instantiation(instance):
+    assert isinstance(instance, cjsidl_messageRef)
+
+
+
+@given(instance=cjsidl_messageRef_strategy)
+def test_cjsidl_messageref_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_messageRef_strategy)
+def test_cjsidl_messageref_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_messageDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_messagedef_instantiation(instance):
+    assert isinstance(instance, cjsidl_messageDef)
+
+
+
+@given(instance=cjsidl_messageDef_strategy)
+def test_cjsidl_messagedef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_messageDef_strategy)
+def test_cjsidl_messagedef_command_setter(instance):
+    original = instance.command
+    instance.command = original
+    assert instance.command == original
+
+
+
+@given(instance=cjsidl_messageDef_strategy)
+def test_cjsidl_messagedef_messageID_setter(instance):
+    original = instance.messageID
+    instance.messageID = original
+    assert instance.messageID == original
+
+@given(instance=cjsidl_messages_strategy)
+@settings(max_examples=50)
+def test_cjsidl_messages_instantiation(instance):
+    assert isinstance(instance, cjsidl_messages)
+
+@given(instance=cjsidl_scopedTypeId_strategy)
+@settings(max_examples=50)
+def test_cjsidl_scopedtypeid_instantiation(instance):
+    assert isinstance(instance, cjsidl_scopedTypeId)
+
+
+
+@given(instance=cjsidl_scopedTypeId_strategy)
+def test_cjsidl_scopedtypeid_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+
+
+@given(instance=cjsidl_scopedTypeId_strategy)
+def test_cjsidl_scopedtypeid_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_scopedTypeId_strategy)
+def test_cjsidl_scopedtypeid_scopedName_setter(instance):
+    original = instance.scopedName
+    instance.scopedName = original
+    assert instance.scopedName == original
+
+@given(instance=cjsidl_typeReference_strategy)
+@settings(max_examples=50)
+def test_cjsidl_typereference_instantiation(instance):
+    assert isinstance(instance, cjsidl_typeReference)
+
+
+
+@given(instance=cjsidl_typeReference_strategy)
+def test_cjsidl_typereference_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_typeReference_strategy)
+def test_cjsidl_typereference_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_typeReference_strategy)
+def test_cjsidl_typereference_optional_setter(instance):
+    original = instance.optional
+    instance.optional = original
+    assert instance.optional == original
+
+@given(instance=cjsidl_typeDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_typedef_instantiation(instance):
+    assert isinstance(instance, cjsidl_typeDef)
+
+@given(instance=cjsidl_declaredTypeSetRef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_declaredtypesetref_instantiation(instance):
+    assert isinstance(instance, cjsidl_declaredTypeSetRef)
+
+
+
+@given(instance=cjsidl_declaredTypeSetRef_strategy)
+def test_cjsidl_declaredtypesetref_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_declaredTypeSetRef_strategy)
+def test_cjsidl_declaredtypesetref_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_serviceDef_strategy)
+@settings(max_examples=50)
+def test_cjsidl_servicedef_instantiation(instance):
+    assert isinstance(instance, cjsidl_serviceDef)
+
+
+
+@given(instance=cjsidl_serviceDef_strategy)
+def test_cjsidl_servicedef_assumpt_setter(instance):
+    original = instance.assumpt
+    instance.assumpt = original
+    assert instance.assumpt == original
+
+
+
+@given(instance=cjsidl_serviceDef_strategy)
+def test_cjsidl_servicedef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_serviceDef_strategy)
+def test_cjsidl_servicedef_serviceVersion_setter(instance):
+    original = instance.serviceVersion
+    instance.serviceVersion = original
+    assert instance.serviceVersion == original
+
+
+
+@given(instance=cjsidl_serviceDef_strategy)
+def test_cjsidl_servicedef_serviceName_setter(instance):
+    original = instance.serviceName
+    instance.serviceName = original
+    assert instance.serviceName == original
+
+@given(instance=cjsidl_EObject_strategy)
+@settings(max_examples=50)
+def test_cjsidl_eobject_instantiation(instance):
+    assert isinstance(instance, cjsidl_EObject)
+
+@given(instance=cjsidl_jaus_strategy)
+@settings(max_examples=50)
+def test_cjsidl_jaus_instantiation(instance):
+    assert isinstance(instance, cjsidl_jaus)
+
+@given(instance=cjsidl_refAttr_strategy)
+@settings(max_examples=50)
+def test_cjsidl_refattr_instantiation(instance):
+    assert isinstance(instance, cjsidl_refAttr)
+
+
+
+@given(instance=cjsidl_refAttr_strategy)
+def test_cjsidl_refattr_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_refAttr_strategy)
+def test_cjsidl_refattr_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cjsidl_protocolBehavior_strategy)
+@settings(max_examples=50)
+def test_cjsidl_protocolbehavior_instantiation(instance):
+    assert isinstance(instance, cjsidl_protocolBehavior)
+
+
+
+@given(instance=cjsidl_protocolBehavior_strategy)
+def test_cjsidl_protocolbehavior_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_protocolBehavior_strategy)
+def test_cjsidl_protocolbehavior_stateless_setter(instance):
+    original = instance.stateless
+    instance.stateless = original
+    assert instance.stateless == original
+
+@given(instance=cjsidl_internalEventSet_strategy)
+@settings(max_examples=50)
+def test_cjsidl_internaleventset_instantiation(instance):
+    assert isinstance(instance, cjsidl_internalEventSet)
+
+
+
+@given(instance=cjsidl_internalEventSet_strategy)
+def test_cjsidl_internaleventset_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=cjsidl_messageSet_strategy)
+@settings(max_examples=50)
+def test_cjsidl_messageset_instantiation(instance):
+    assert isinstance(instance, cjsidl_messageSet)
+
+
+
+@given(instance=cjsidl_messageSet_strategy)
+def test_cjsidl_messageset_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=cjsidl_messageSet_strategy)
+def test_cjsidl_messageset_inputComment_setter(instance):
+    original = instance.inputComment
+    instance.inputComment = original
+    assert instance.inputComment == original
+
+
+
+@given(instance=cjsidl_messageSet_strategy)
+def test_cjsidl_messageset_outputComment_setter(instance):
+    original = instance.outputComment
+    instance.outputComment = original
+    assert instance.outputComment == original
+
+@given(instance=cjsidl_declaredTypeSet_strategy)
+@settings(max_examples=50)
+def test_cjsidl_declaredtypeset_instantiation(instance):
+    assert isinstance(instance, cjsidl_declaredTypeSet)
+
+
+
+@given(instance=cjsidl_declaredTypeSet_strategy)
+def test_cjsidl_declaredtypeset_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_declaredTypeSet_strategy)
+def test_cjsidl_declaredtypeset_typeName_setter(instance):
+    original = instance.typeName
+    instance.typeName = original
+    assert instance.typeName == original
+
+
+
+@given(instance=cjsidl_declaredTypeSet_strategy)
+def test_cjsidl_declaredtypeset_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=cjsidl_declaredConstSet_strategy)
+@settings(max_examples=50)
+def test_cjsidl_declaredconstset_instantiation(instance):
+    assert isinstance(instance, cjsidl_declaredConstSet)
+
+
+
+@given(instance=cjsidl_declaredConstSet_strategy)
+def test_cjsidl_declaredconstset_constName_setter(instance):
+    original = instance.constName
+    instance.constName = original
+    assert instance.constName == original
+
+
+
+@given(instance=cjsidl_declaredConstSet_strategy)
+def test_cjsidl_declaredconstset_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=cjsidl_declaredConstSet_strategy)
+def test_cjsidl_declaredconstset_constSetVersion_setter(instance):
+    original = instance.constSetVersion
+    instance.constSetVersion = original
+    assert instance.constSetVersion == original
+
+@given(instance=cjsidl_references_strategy)
+@settings(max_examples=50)
+def test_cjsidl_references_instantiation(instance):
+    assert isinstance(instance, cjsidl_references)
+
+@given(instance=cjsidl_description_strategy)
+@settings(max_examples=50)
+def test_cjsidl_description_instantiation(instance):
+    assert isinstance(instance, cjsidl_description)
+
+
+
+@given(instance=cjsidl_description_strategy)
+def test_cjsidl_description_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original

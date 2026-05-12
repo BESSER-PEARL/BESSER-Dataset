@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Named,
-    relationalmm::Column,
-    relationalmm::Type,
-    relationalmm::Table,
-    relationalmm::Named,
+    relationalmm_Column,
+    relationalmm_Type,
+    relationalmm_Table,
+    relationalmm_Named,
 )
 
 # =============================================================================
@@ -33,65 +33,65 @@ def test_named_constructor_args():
 
 
 
-def test_relationalmm::column_is_not_abstract():
-    assert not inspect.isabstract(relationalmm::Column)
+def test_relationalmm_column_is_not_abstract():
+    assert not inspect.isabstract(relationalmm_Column)
 
 
-def test_relationalmm::column_constructor_exists():
-    assert callable(relationalmm::Column.__init__)
+def test_relationalmm_column_constructor_exists():
+    assert callable(relationalmm_Column.__init__)
 
 
-def test_relationalmm::column_constructor_args():
-    sig = inspect.signature(relationalmm::Column.__init__)
+def test_relationalmm_column_constructor_args():
+    sig = inspect.signature(relationalmm_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationalmm::type_is_not_abstract():
-    assert not inspect.isabstract(relationalmm::Type)
+def test_relationalmm_type_is_not_abstract():
+    assert not inspect.isabstract(relationalmm_Type)
 
 
-def test_relationalmm::type_constructor_exists():
-    assert callable(relationalmm::Type.__init__)
+def test_relationalmm_type_constructor_exists():
+    assert callable(relationalmm_Type.__init__)
 
 
-def test_relationalmm::type_constructor_args():
-    sig = inspect.signature(relationalmm::Type.__init__)
+def test_relationalmm_type_constructor_args():
+    sig = inspect.signature(relationalmm_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationalmm::table_is_not_abstract():
-    assert not inspect.isabstract(relationalmm::Table)
+def test_relationalmm_table_is_not_abstract():
+    assert not inspect.isabstract(relationalmm_Table)
 
 
-def test_relationalmm::table_constructor_exists():
-    assert callable(relationalmm::Table.__init__)
+def test_relationalmm_table_constructor_exists():
+    assert callable(relationalmm_Table.__init__)
 
 
-def test_relationalmm::table_constructor_args():
-    sig = inspect.signature(relationalmm::Table.__init__)
+def test_relationalmm_table_constructor_args():
+    sig = inspect.signature(relationalmm_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationalmm::named_is_not_abstract():
-    assert not inspect.isabstract(relationalmm::Named)
+def test_relationalmm_named_is_not_abstract():
+    assert not inspect.isabstract(relationalmm_Named)
 
 
-def test_relationalmm::named_constructor_exists():
-    assert callable(relationalmm::Named.__init__)
+def test_relationalmm_named_constructor_exists():
+    assert callable(relationalmm_Named.__init__)
 
 
-def test_relationalmm::named_constructor_args():
-    sig = inspect.signature(relationalmm::Named.__init__)
+def test_relationalmm_named_constructor_args():
+    sig = inspect.signature(relationalmm_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relationalmm::named_has_name():
-    assert hasattr(relationalmm::Named, "name")
+def test_relationalmm_named_has_name():
+    assert hasattr(relationalmm_Named, "name")
     descriptor = None
-    for klass in relationalmm::Named.__mro__:
+    for klass in relationalmm_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -112,17 +112,17 @@ safe_text = st.text(
 Named_strategy = st.builds(
     Named,
 )
-relationalmm::Column_strategy = st.builds(
-    relationalmm::Column,
+relationalmm_Column_strategy = st.builds(
+    relationalmm_Column,
 )
-relationalmm::Type_strategy = st.builds(
-    relationalmm::Type,
+relationalmm_Type_strategy = st.builds(
+    relationalmm_Type,
 )
-relationalmm::Table_strategy = st.builds(
-    relationalmm::Table,
+relationalmm_Table_strategy = st.builds(
+    relationalmm_Table,
 )
-relationalmm::Named_strategy = st.builds(
-    relationalmm::Named,
+relationalmm_Named_strategy = st.builds(
+    relationalmm_Named,
     name=
         safe_text
 )
@@ -132,33 +132,30 @@ relationalmm::Named_strategy = st.builds(
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=relationalmm::Column_strategy)
+@given(instance=relationalmm_Column_strategy)
 @settings(max_examples=50)
-def test_relationalmm::column_instantiation(instance):
-    assert isinstance(instance, relationalmm::Column)
+def test_relationalmm_column_instantiation(instance):
+    assert isinstance(instance, relationalmm_Column)
 
-@given(instance=relationalmm::Type_strategy)
+@given(instance=relationalmm_Type_strategy)
 @settings(max_examples=50)
-def test_relationalmm::type_instantiation(instance):
-    assert isinstance(instance, relationalmm::Type)
+def test_relationalmm_type_instantiation(instance):
+    assert isinstance(instance, relationalmm_Type)
 
-@given(instance=relationalmm::Table_strategy)
+@given(instance=relationalmm_Table_strategy)
 @settings(max_examples=50)
-def test_relationalmm::table_instantiation(instance):
-    assert isinstance(instance, relationalmm::Table)
+def test_relationalmm_table_instantiation(instance):
+    assert isinstance(instance, relationalmm_Table)
 
-@given(instance=relationalmm::Named_strategy)
+@given(instance=relationalmm_Named_strategy)
 @settings(max_examples=50)
-def test_relationalmm::named_instantiation(instance):
-    assert isinstance(instance, relationalmm::Named)
-
-@given(instance=relationalmm::Named_strategy)
-def test_relationalmm::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relationalmm_named_instantiation(instance):
+    assert isinstance(instance, relationalmm_Named)
 
 
-@given(instance=relationalmm::Named_strategy)
-def test_relationalmm::named_name_setter(instance):
+
+@given(instance=relationalmm_Named_strategy)
+def test_relationalmm_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

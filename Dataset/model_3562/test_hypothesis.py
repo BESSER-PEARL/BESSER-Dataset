@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BinExp,
-    boolexp::Or,
-    boolexp::And,
+    boolexp_Or,
+    boolexp_And,
     Lit,
-    boolexp::Fals,
-    boolexp::Tru,
+    boolexp_Fals,
+    boolexp_Tru,
     Exp,
-    boolexp::Not,
-    boolexp::VarRef,
-    boolexp::BinExp,
-    boolexp::Exp,
-    boolexp::Lit,
+    boolexp_VarRef,
+    boolexp_Not,
+    boolexp_BinExp,
+    boolexp_Exp,
+    boolexp_Lit,
 )
 
 # =============================================================================
@@ -40,30 +40,30 @@ def test_binexp_constructor_args():
 
 
 
-def test_boolexp::or_is_not_abstract():
-    assert not inspect.isabstract(boolexp::Or)
+def test_boolexp_or_is_not_abstract():
+    assert not inspect.isabstract(boolexp_Or)
 
 
-def test_boolexp::or_constructor_exists():
-    assert callable(boolexp::Or.__init__)
+def test_boolexp_or_constructor_exists():
+    assert callable(boolexp_Or.__init__)
 
 
-def test_boolexp::or_constructor_args():
-    sig = inspect.signature(boolexp::Or.__init__)
+def test_boolexp_or_constructor_args():
+    sig = inspect.signature(boolexp_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexp::and_is_not_abstract():
-    assert not inspect.isabstract(boolexp::And)
+def test_boolexp_and_is_not_abstract():
+    assert not inspect.isabstract(boolexp_And)
 
 
-def test_boolexp::and_constructor_exists():
-    assert callable(boolexp::And.__init__)
+def test_boolexp_and_constructor_exists():
+    assert callable(boolexp_And.__init__)
 
 
-def test_boolexp::and_constructor_args():
-    sig = inspect.signature(boolexp::And.__init__)
+def test_boolexp_and_constructor_args():
+    sig = inspect.signature(boolexp_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,30 +82,30 @@ def test_lit_constructor_args():
 
 
 
-def test_boolexp::fals_is_not_abstract():
-    assert not inspect.isabstract(boolexp::Fals)
+def test_boolexp_fals_is_not_abstract():
+    assert not inspect.isabstract(boolexp_Fals)
 
 
-def test_boolexp::fals_constructor_exists():
-    assert callable(boolexp::Fals.__init__)
+def test_boolexp_fals_constructor_exists():
+    assert callable(boolexp_Fals.__init__)
 
 
-def test_boolexp::fals_constructor_args():
-    sig = inspect.signature(boolexp::Fals.__init__)
+def test_boolexp_fals_constructor_args():
+    sig = inspect.signature(boolexp_Fals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexp::tru_is_not_abstract():
-    assert not inspect.isabstract(boolexp::Tru)
+def test_boolexp_tru_is_not_abstract():
+    assert not inspect.isabstract(boolexp_Tru)
 
 
-def test_boolexp::tru_constructor_exists():
-    assert callable(boolexp::Tru.__init__)
+def test_boolexp_tru_constructor_exists():
+    assert callable(boolexp_Tru.__init__)
 
 
-def test_boolexp::tru_constructor_args():
-    sig = inspect.signature(boolexp::Tru.__init__)
+def test_boolexp_tru_constructor_args():
+    sig = inspect.signature(boolexp_Tru.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,37 +124,23 @@ def test_exp_constructor_args():
 
 
 
-def test_boolexp::not_is_not_abstract():
-    assert not inspect.isabstract(boolexp::Not)
+def test_boolexp_varref_is_not_abstract():
+    assert not inspect.isabstract(boolexp_VarRef)
 
 
-def test_boolexp::not_constructor_exists():
-    assert callable(boolexp::Not.__init__)
+def test_boolexp_varref_constructor_exists():
+    assert callable(boolexp_VarRef.__init__)
 
 
-def test_boolexp::not_constructor_args():
-    sig = inspect.signature(boolexp::Not.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_boolexp::varref_is_not_abstract():
-    assert not inspect.isabstract(boolexp::VarRef)
-
-
-def test_boolexp::varref_constructor_exists():
-    assert callable(boolexp::VarRef.__init__)
-
-
-def test_boolexp::varref_constructor_args():
-    sig = inspect.signature(boolexp::VarRef.__init__)
+def test_boolexp_varref_constructor_args():
+    sig = inspect.signature(boolexp_VarRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_boolexp::varref_has_name():
-    assert hasattr(boolexp::VarRef, "name")
+def test_boolexp_varref_has_name():
+    assert hasattr(boolexp_VarRef, "name")
     descriptor = None
-    for klass in boolexp::VarRef.__mro__:
+    for klass in boolexp_VarRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -162,44 +148,58 @@ def test_boolexp::varref_has_name():
 
 
 
-def test_boolexp::binexp_is_not_abstract():
-    assert not inspect.isabstract(boolexp::BinExp)
+def test_boolexp_not_is_not_abstract():
+    assert not inspect.isabstract(boolexp_Not)
 
 
-def test_boolexp::binexp_constructor_exists():
-    assert callable(boolexp::BinExp.__init__)
+def test_boolexp_not_constructor_exists():
+    assert callable(boolexp_Not.__init__)
 
 
-def test_boolexp::binexp_constructor_args():
-    sig = inspect.signature(boolexp::BinExp.__init__)
+def test_boolexp_not_constructor_args():
+    sig = inspect.signature(boolexp_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexp::exp_is_not_abstract():
-    assert not inspect.isabstract(boolexp::Exp)
+def test_boolexp_binexp_is_not_abstract():
+    assert not inspect.isabstract(boolexp_BinExp)
 
 
-def test_boolexp::exp_constructor_exists():
-    assert callable(boolexp::Exp.__init__)
+def test_boolexp_binexp_constructor_exists():
+    assert callable(boolexp_BinExp.__init__)
 
 
-def test_boolexp::exp_constructor_args():
-    sig = inspect.signature(boolexp::Exp.__init__)
+def test_boolexp_binexp_constructor_args():
+    sig = inspect.signature(boolexp_BinExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexp::lit_is_not_abstract():
-    assert not inspect.isabstract(boolexp::Lit)
+def test_boolexp_exp_is_not_abstract():
+    assert not inspect.isabstract(boolexp_Exp)
 
 
-def test_boolexp::lit_constructor_exists():
-    assert callable(boolexp::Lit.__init__)
+def test_boolexp_exp_constructor_exists():
+    assert callable(boolexp_Exp.__init__)
 
 
-def test_boolexp::lit_constructor_args():
-    sig = inspect.signature(boolexp::Lit.__init__)
+def test_boolexp_exp_constructor_args():
+    sig = inspect.signature(boolexp_Exp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_boolexp_lit_is_not_abstract():
+    assert not inspect.isabstract(boolexp_Lit)
+
+
+def test_boolexp_lit_constructor_exists():
+    assert callable(boolexp_Lit.__init__)
+
+
+def test_boolexp_lit_constructor_args():
+    sig = inspect.signature(boolexp_Lit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,40 +217,40 @@ safe_text = st.text(
 BinExp_strategy = st.builds(
     BinExp,
 )
-boolexp::Or_strategy = st.builds(
-    boolexp::Or,
+boolexp_Or_strategy = st.builds(
+    boolexp_Or,
 )
-boolexp::And_strategy = st.builds(
-    boolexp::And,
+boolexp_And_strategy = st.builds(
+    boolexp_And,
 )
 Lit_strategy = st.builds(
     Lit,
 )
-boolexp::Fals_strategy = st.builds(
-    boolexp::Fals,
+boolexp_Fals_strategy = st.builds(
+    boolexp_Fals,
 )
-boolexp::Tru_strategy = st.builds(
-    boolexp::Tru,
+boolexp_Tru_strategy = st.builds(
+    boolexp_Tru,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-boolexp::Not_strategy = st.builds(
-    boolexp::Not,
-)
-boolexp::VarRef_strategy = st.builds(
-    boolexp::VarRef,
+boolexp_VarRef_strategy = st.builds(
+    boolexp_VarRef,
     name=
         safe_text
 )
-boolexp::BinExp_strategy = st.builds(
-    boolexp::BinExp,
+boolexp_Not_strategy = st.builds(
+    boolexp_Not,
 )
-boolexp::Exp_strategy = st.builds(
-    boolexp::Exp,
+boolexp_BinExp_strategy = st.builds(
+    boolexp_BinExp,
 )
-boolexp::Lit_strategy = st.builds(
-    boolexp::Lit,
+boolexp_Exp_strategy = st.builds(
+    boolexp_Exp,
+)
+boolexp_Lit_strategy = st.builds(
+    boolexp_Lit,
 )
 
 @given(instance=BinExp_strategy)
@@ -258,68 +258,65 @@ boolexp::Lit_strategy = st.builds(
 def test_binexp_instantiation(instance):
     assert isinstance(instance, BinExp)
 
-@given(instance=boolexp::Or_strategy)
+@given(instance=boolexp_Or_strategy)
 @settings(max_examples=50)
-def test_boolexp::or_instantiation(instance):
-    assert isinstance(instance, boolexp::Or)
+def test_boolexp_or_instantiation(instance):
+    assert isinstance(instance, boolexp_Or)
 
-@given(instance=boolexp::And_strategy)
+@given(instance=boolexp_And_strategy)
 @settings(max_examples=50)
-def test_boolexp::and_instantiation(instance):
-    assert isinstance(instance, boolexp::And)
+def test_boolexp_and_instantiation(instance):
+    assert isinstance(instance, boolexp_And)
 
 @given(instance=Lit_strategy)
 @settings(max_examples=50)
 def test_lit_instantiation(instance):
     assert isinstance(instance, Lit)
 
-@given(instance=boolexp::Fals_strategy)
+@given(instance=boolexp_Fals_strategy)
 @settings(max_examples=50)
-def test_boolexp::fals_instantiation(instance):
-    assert isinstance(instance, boolexp::Fals)
+def test_boolexp_fals_instantiation(instance):
+    assert isinstance(instance, boolexp_Fals)
 
-@given(instance=boolexp::Tru_strategy)
+@given(instance=boolexp_Tru_strategy)
 @settings(max_examples=50)
-def test_boolexp::tru_instantiation(instance):
-    assert isinstance(instance, boolexp::Tru)
+def test_boolexp_tru_instantiation(instance):
+    assert isinstance(instance, boolexp_Tru)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=boolexp::Not_strategy)
+@given(instance=boolexp_VarRef_strategy)
 @settings(max_examples=50)
-def test_boolexp::not_instantiation(instance):
-    assert isinstance(instance, boolexp::Not)
-
-@given(instance=boolexp::VarRef_strategy)
-@settings(max_examples=50)
-def test_boolexp::varref_instantiation(instance):
-    assert isinstance(instance, boolexp::VarRef)
-
-@given(instance=boolexp::VarRef_strategy)
-def test_boolexp::varref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_boolexp_varref_instantiation(instance):
+    assert isinstance(instance, boolexp_VarRef)
 
 
-@given(instance=boolexp::VarRef_strategy)
-def test_boolexp::varref_name_setter(instance):
+
+@given(instance=boolexp_VarRef_strategy)
+def test_boolexp_varref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=boolexp::BinExp_strategy)
+@given(instance=boolexp_Not_strategy)
 @settings(max_examples=50)
-def test_boolexp::binexp_instantiation(instance):
-    assert isinstance(instance, boolexp::BinExp)
+def test_boolexp_not_instantiation(instance):
+    assert isinstance(instance, boolexp_Not)
 
-@given(instance=boolexp::Exp_strategy)
+@given(instance=boolexp_BinExp_strategy)
 @settings(max_examples=50)
-def test_boolexp::exp_instantiation(instance):
-    assert isinstance(instance, boolexp::Exp)
+def test_boolexp_binexp_instantiation(instance):
+    assert isinstance(instance, boolexp_BinExp)
 
-@given(instance=boolexp::Lit_strategy)
+@given(instance=boolexp_Exp_strategy)
 @settings(max_examples=50)
-def test_boolexp::lit_instantiation(instance):
-    assert isinstance(instance, boolexp::Lit)
+def test_boolexp_exp_instantiation(instance):
+    assert isinstance(instance, boolexp_Exp)
+
+@given(instance=boolexp_Lit_strategy)
+@settings(max_examples=50)
+def test_boolexp_lit_instantiation(instance):
+    assert isinstance(instance, boolexp_Lit)

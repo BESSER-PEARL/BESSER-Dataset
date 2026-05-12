@@ -3,114 +3,114 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mitra::AnnotationProperty,
-    mitra::AnnotationPropertyDecl,
-    mitra::AnnotationDecl,
-    mitra::MetamodelFeature,
+from python_code import (
+    mitra_AnnotationProperty,
+    mitra_AnnotationPropertyDecl,
+    mitra_AnnotationDecl,
+    mitra_MetamodelFeature,
     MetamodelFeature,
     MethodInvocation,
-    mitra::NativeOperationInvocation,
-    mitra::FeatureMethodInvocation,
+    mitra_NativeOperationInvocation,
+    mitra_FeatureMethodInvocation,
     Feature,
-    mitra::FeatureField,
-    mitra::MethodInvocation,
-    mitra::Feature,
+    mitra_FeatureField,
+    mitra_MethodInvocation,
+    mitra_Feature,
     StatementExpression,
-    mitra::Assignment,
+    mitra_Assignment,
     Literal,
-    mitra::RealLiteral,
-    mitra::BooleanLiteral,
-    mitra::NullLiteral,
-    mitra::IntLiteral,
-    mitra::StringLiteral,
+    mitra_BooleanLiteral,
+    mitra_RealLiteral,
+    mitra_IntLiteral,
+    mitra_NullLiteral,
+    mitra_StringLiteral,
     TerminalExpression,
-    mitra::RuleInvocationSuper,
-    mitra::VariableAccess,
-    mitra::StaticAccess,
-    mitra::ClassInstanceCreationExpression,
-    mitra::RuleInvocation,
-    mitra::Literal,
+    mitra_VariableAccess,
+    mitra_RuleInvocation,
+    mitra_RuleInvocationSuper,
+    mitra_ClassInstanceCreationExpression,
+    mitra_StaticAccess,
+    mitra_Literal,
     Expression,
-    mitra::UnaryMathExpression,
-    mitra::BooleanExpression,
-    mitra::MathExpression,
-    mitra::InstanceOfExpression,
-    mitra::UnaryBooleanExpression,
-    mitra::EqualityExpression,
-    mitra::IteratorExpression,
-    mitra::UnaryCastExpression,
-    mitra::RelationalExpression,
-    mitra::TerminalExpression,
-    mitra::Catch,
-    mitra::LoopVariable,
-    mitra::ForUpdate,
-    mitra::ForInit,
+    mitra_IteratorExpression,
+    mitra_BooleanExpression,
+    mitra_UnaryBooleanExpression,
+    mitra_RelationalExpression,
+    mitra_UnaryMathExpression,
+    mitra_MathExpression,
+    mitra_UnaryCastExpression,
+    mitra_EqualityExpression,
+    mitra_InstanceOfExpression,
+    mitra_TerminalExpression,
+    mitra_Catch,
+    mitra_LoopVariable,
+    mitra_ForUpdate,
+    mitra_ForInit,
     VarDeclaration,
-    mitra::InferredVarDeclaration,
-    mitra::VarDeclaration,
-    mitra::LocalVariableDeclaration,
+    mitra_InferredVarDeclaration,
+    mitra_VarDeclaration,
+    mitra_LocalVariableDeclaration,
     BlockStatement,
-    mitra::LocalVariableDeclarationStatement,
-    mitra::Statement,
-    mitra::BlockStatement,
+    mitra_LocalVariableDeclarationStatement,
+    mitra_Statement,
+    mitra_BlockStatement,
     Statement,
-    mitra::TryStatement,
-    mitra::ForStatement,
-    mitra::EmptyStatement,
-    mitra::IfStatement,
-    mitra::WhileStatement,
-    mitra::BreakStatement,
-    mitra::ThrowStatement,
-    mitra::DoStatement,
-    mitra::ReturnStatement,
-    mitra::StatementExpression,
-    mitra::ExpressionStatement,
-    mitra::EClassifier,
+    mitra_WhileStatement,
+    mitra_TryStatement,
+    mitra_ThrowStatement,
+    mitra_DoStatement,
+    mitra_IfStatement,
+    mitra_ForStatement,
+    mitra_ReturnStatement,
+    mitra_EmptyStatement,
+    mitra_BreakStatement,
+    mitra_StatementExpression,
+    mitra_ExpressionStatement,
+    mitra_EClassifier,
     Type,
-    mitra::CollectionType,
-    mitra::ReferenceType,
+    mitra_CollectionType,
+    mitra_ReferenceType,
     Parameter,
-    mitra::Parameter,
-    mitra::Expression,
-    mitra::TypedVarDeclaration,
-    mitra::PrimitiveType,
+    mitra_Parameter,
+    mitra_Expression,
+    mitra_TypedVarDeclaration,
+    mitra_PrimitiveType,
     ParameterReference,
-    mitra::ParameterReference,
-    mitra::QualifiedParameterReference,
-    mitra::SimpleParameterReference,
+    mitra_ParameterReference,
+    mitra_QualifiedParameterReference,
+    mitra_SimpleParameterReference,
     RuleReference,
-    mitra::QualifiedRuleReference,
-    mitra::RuleReference,
-    mitra::Block,
-    mitra::JavaSpec,
-    mitra::Trigger,
-    mitra::SimpleRuleReference,
-    mitra::ReturnParameter,
-    mitra::FormalParameter,
-    mitra::Annotation,
-    mitra::Type,
-    mitra::Property,
-    mitra::RuleDeclaration,
-    mitra::AnnotationsDefinition,
-    mitra::MetamodelDeclaration,
-    mitra::ModuleReference,
-    mitra::Module,
-    BooleanOperator,
-    CollectionTypeSpec,
+    mitra_QualifiedRuleReference,
+    mitra_RuleReference,
+    mitra_Block,
+    mitra_JavaSpec,
+    mitra_Trigger,
+    mitra_SimpleRuleReference,
+    mitra_ReturnParameter,
+    mitra_FormalParameter,
+    mitra_Annotation,
+    mitra_Type,
+    mitra_Property,
+    mitra_RuleDeclaration,
+    mitra_AnnotationsDefinition,
+    mitra_MetamodelDeclaration,
+    mitra_ModuleReference,
+    mitra_Module,
     VisibilityModifier,
-    RelationalOperator,
-    MathOperator,
-    AssignmentOperator,
     AnnotationTargetSpec,
-    ParameterModifier,
+    BooleanOperator,
     UnaryMathOperator,
-    ExecutionModifier,
-    EqualityOperator,
-    PrimitiveTypeSpec,
+    CollectionTypeSpec,
     PPOperator,
+    MathOperator,
+    RelationalOperator,
+    EqualityOperator,
+    ParameterModifier,
+    PrimitiveTypeSpec,
+    AssignmentOperator,
+    ExecutionModifier,
 )
 
 # =============================================================================
@@ -119,118 +119,118 @@ from classes import (
 
 
 
-def test_mitra::annotationproperty_is_not_abstract():
-    assert not inspect.isabstract(mitra::AnnotationProperty)
+def test_mitra_annotationproperty_is_not_abstract():
+    assert not inspect.isabstract(mitra_AnnotationProperty)
 
 
-def test_mitra::annotationproperty_constructor_exists():
-    assert callable(mitra::AnnotationProperty.__init__)
+def test_mitra_annotationproperty_constructor_exists():
+    assert callable(mitra_AnnotationProperty.__init__)
 
 
-def test_mitra::annotationproperty_constructor_args():
-    sig = inspect.signature(mitra::AnnotationProperty.__init__)
+def test_mitra_annotationproperty_constructor_args():
+    sig = inspect.signature(mitra_AnnotationProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::annotationpropertydecl_is_not_abstract():
-    assert not inspect.isabstract(mitra::AnnotationPropertyDecl)
+def test_mitra_annotationpropertydecl_is_not_abstract():
+    assert not inspect.isabstract(mitra_AnnotationPropertyDecl)
 
 
-def test_mitra::annotationpropertydecl_constructor_exists():
-    assert callable(mitra::AnnotationPropertyDecl.__init__)
+def test_mitra_annotationpropertydecl_constructor_exists():
+    assert callable(mitra_AnnotationPropertyDecl.__init__)
 
 
-def test_mitra::annotationpropertydecl_constructor_args():
-    sig = inspect.signature(mitra::AnnotationPropertyDecl.__init__)
+def test_mitra_annotationpropertydecl_constructor_args():
+    sig = inspect.signature(mitra_AnnotationPropertyDecl.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "required" in params, "Missing parameter 'required'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_mitra::annotationpropertydecl_has_name():
-    assert hasattr(mitra::AnnotationPropertyDecl, "name")
+def test_mitra_annotationpropertydecl_has_required():
+    assert hasattr(mitra_AnnotationPropertyDecl, "required")
     descriptor = None
-    for klass in mitra::AnnotationPropertyDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mitra::annotationpropertydecl_has_required():
-    assert hasattr(mitra::AnnotationPropertyDecl, "required")
-    descriptor = None
-    for klass in mitra::AnnotationPropertyDecl.__mro__:
+    for klass in mitra_AnnotationPropertyDecl.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mitra::annotationdecl_is_not_abstract():
-    assert not inspect.isabstract(mitra::AnnotationDecl)
-
-
-def test_mitra::annotationdecl_constructor_exists():
-    assert callable(mitra::AnnotationDecl.__init__)
-
-
-def test_mitra::annotationdecl_constructor_args():
-    sig = inspect.signature(mitra::AnnotationDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "targets" in params, "Missing parameter 'targets'"
-    assert "many" in params, "Missing parameter 'many'"
-    assert "required" in params, "Missing parameter 'required'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mitra::annotationdecl_has_targets():
-    assert hasattr(mitra::AnnotationDecl, "targets")
+def test_mitra_annotationpropertydecl_has_name():
+    assert hasattr(mitra_AnnotationPropertyDecl, "name")
     descriptor = None
-    for klass in mitra::AnnotationDecl.__mro__:
-        if "targets" in klass.__dict__:
-            descriptor = klass.__dict__["targets"]
+    for klass in mitra_AnnotationPropertyDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::annotationdecl_has_many():
-    assert hasattr(mitra::AnnotationDecl, "many")
+
+
+def test_mitra_annotationdecl_is_not_abstract():
+    assert not inspect.isabstract(mitra_AnnotationDecl)
+
+
+def test_mitra_annotationdecl_constructor_exists():
+    assert callable(mitra_AnnotationDecl.__init__)
+
+
+def test_mitra_annotationdecl_constructor_args():
+    sig = inspect.signature(mitra_AnnotationDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "many" in params, "Missing parameter 'many'"
+    assert "required" in params, "Missing parameter 'required'"
+    assert "targets" in params, "Missing parameter 'targets'"
+
+def test_mitra_annotationdecl_has_name():
+    assert hasattr(mitra_AnnotationDecl, "name")
     descriptor = None
-    for klass in mitra::AnnotationDecl.__mro__:
+    for klass in mitra_AnnotationDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mitra_annotationdecl_has_many():
+    assert hasattr(mitra_AnnotationDecl, "many")
+    descriptor = None
+    for klass in mitra_AnnotationDecl.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::annotationdecl_has_required():
-    assert hasattr(mitra::AnnotationDecl, "required")
+def test_mitra_annotationdecl_has_required():
+    assert hasattr(mitra_AnnotationDecl, "required")
     descriptor = None
-    for klass in mitra::AnnotationDecl.__mro__:
+    for klass in mitra_AnnotationDecl.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::annotationdecl_has_name():
-    assert hasattr(mitra::AnnotationDecl, "name")
+def test_mitra_annotationdecl_has_targets():
+    assert hasattr(mitra_AnnotationDecl, "targets")
     descriptor = None
-    for klass in mitra::AnnotationDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in mitra_AnnotationDecl.__mro__:
+        if "targets" in klass.__dict__:
+            descriptor = klass.__dict__["targets"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_mitra::metamodelfeature_is_not_abstract():
-    assert not inspect.isabstract(mitra::MetamodelFeature)
+def test_mitra_metamodelfeature_is_not_abstract():
+    assert not inspect.isabstract(mitra_MetamodelFeature)
 
 
-def test_mitra::metamodelfeature_constructor_exists():
-    assert callable(mitra::MetamodelFeature.__init__)
+def test_mitra_metamodelfeature_constructor_exists():
+    assert callable(mitra_MetamodelFeature.__init__)
 
 
-def test_mitra::metamodelfeature_constructor_args():
-    sig = inspect.signature(mitra::MetamodelFeature.__init__)
+def test_mitra_metamodelfeature_constructor_args():
+    sig = inspect.signature(mitra_MetamodelFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -263,30 +263,30 @@ def test_methodinvocation_constructor_args():
 
 
 
-def test_mitra::nativeoperationinvocation_is_not_abstract():
-    assert not inspect.isabstract(mitra::NativeOperationInvocation)
+def test_mitra_nativeoperationinvocation_is_not_abstract():
+    assert not inspect.isabstract(mitra_NativeOperationInvocation)
 
 
-def test_mitra::nativeoperationinvocation_constructor_exists():
-    assert callable(mitra::NativeOperationInvocation.__init__)
+def test_mitra_nativeoperationinvocation_constructor_exists():
+    assert callable(mitra_NativeOperationInvocation.__init__)
 
 
-def test_mitra::nativeoperationinvocation_constructor_args():
-    sig = inspect.signature(mitra::NativeOperationInvocation.__init__)
+def test_mitra_nativeoperationinvocation_constructor_args():
+    sig = inspect.signature(mitra_NativeOperationInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::featuremethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(mitra::FeatureMethodInvocation)
+def test_mitra_featuremethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(mitra_FeatureMethodInvocation)
 
 
-def test_mitra::featuremethodinvocation_constructor_exists():
-    assert callable(mitra::FeatureMethodInvocation.__init__)
+def test_mitra_featuremethodinvocation_constructor_exists():
+    assert callable(mitra_FeatureMethodInvocation.__init__)
 
 
-def test_mitra::featuremethodinvocation_constructor_args():
-    sig = inspect.signature(mitra::FeatureMethodInvocation.__init__)
+def test_mitra_featuremethodinvocation_constructor_args():
+    sig = inspect.signature(mitra_FeatureMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -305,51 +305,51 @@ def test_feature_constructor_args():
 
 
 
-def test_mitra::featurefield_is_not_abstract():
-    assert not inspect.isabstract(mitra::FeatureField)
+def test_mitra_featurefield_is_not_abstract():
+    assert not inspect.isabstract(mitra_FeatureField)
 
 
-def test_mitra::featurefield_constructor_exists():
-    assert callable(mitra::FeatureField.__init__)
+def test_mitra_featurefield_constructor_exists():
+    assert callable(mitra_FeatureField.__init__)
 
 
-def test_mitra::featurefield_constructor_args():
-    sig = inspect.signature(mitra::FeatureField.__init__)
+def test_mitra_featurefield_constructor_args():
+    sig = inspect.signature(mitra_FeatureField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(mitra::MethodInvocation)
+def test_mitra_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(mitra_MethodInvocation)
 
 
-def test_mitra::methodinvocation_constructor_exists():
-    assert callable(mitra::MethodInvocation.__init__)
+def test_mitra_methodinvocation_constructor_exists():
+    assert callable(mitra_MethodInvocation.__init__)
 
 
-def test_mitra::methodinvocation_constructor_args():
-    sig = inspect.signature(mitra::MethodInvocation.__init__)
+def test_mitra_methodinvocation_constructor_args():
+    sig = inspect.signature(mitra_MethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::feature_is_not_abstract():
-    assert not inspect.isabstract(mitra::Feature)
+def test_mitra_feature_is_not_abstract():
+    assert not inspect.isabstract(mitra_Feature)
 
 
-def test_mitra::feature_constructor_exists():
-    assert callable(mitra::Feature.__init__)
+def test_mitra_feature_constructor_exists():
+    assert callable(mitra_Feature.__init__)
 
 
-def test_mitra::feature_constructor_args():
-    sig = inspect.signature(mitra::Feature.__init__)
+def test_mitra_feature_constructor_args():
+    sig = inspect.signature(mitra_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mitra::feature_has_name():
-    assert hasattr(mitra::Feature, "name")
+def test_mitra_feature_has_name():
+    assert hasattr(mitra_Feature, "name")
     descriptor = None
-    for klass in mitra::Feature.__mro__:
+    for klass in mitra_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -371,23 +371,23 @@ def test_statementexpression_constructor_args():
 
 
 
-def test_mitra::assignment_is_not_abstract():
-    assert not inspect.isabstract(mitra::Assignment)
+def test_mitra_assignment_is_not_abstract():
+    assert not inspect.isabstract(mitra_Assignment)
 
 
-def test_mitra::assignment_constructor_exists():
-    assert callable(mitra::Assignment.__init__)
+def test_mitra_assignment_constructor_exists():
+    assert callable(mitra_Assignment.__init__)
 
 
-def test_mitra::assignment_constructor_args():
-    sig = inspect.signature(mitra::Assignment.__init__)
+def test_mitra_assignment_constructor_args():
+    sig = inspect.signature(mitra_Assignment.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_mitra::assignment_has_operator():
-    assert hasattr(mitra::Assignment, "operator")
+def test_mitra_assignment_has_operator():
+    assert hasattr(mitra_Assignment, "operator")
     descriptor = None
-    for klass in mitra::Assignment.__mro__:
+    for klass in mitra_Assignment.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -409,47 +409,23 @@ def test_literal_constructor_args():
 
 
 
-def test_mitra::realliteral_is_not_abstract():
-    assert not inspect.isabstract(mitra::RealLiteral)
+def test_mitra_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(mitra_BooleanLiteral)
 
 
-def test_mitra::realliteral_constructor_exists():
-    assert callable(mitra::RealLiteral.__init__)
+def test_mitra_booleanliteral_constructor_exists():
+    assert callable(mitra_BooleanLiteral.__init__)
 
 
-def test_mitra::realliteral_constructor_args():
-    sig = inspect.signature(mitra::RealLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "floatValue" in params, "Missing parameter 'floatValue'"
-
-def test_mitra::realliteral_has_floatValue():
-    assert hasattr(mitra::RealLiteral, "floatValue")
-    descriptor = None
-    for klass in mitra::RealLiteral.__mro__:
-        if "floatValue" in klass.__dict__:
-            descriptor = klass.__dict__["floatValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mitra::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(mitra::BooleanLiteral)
-
-
-def test_mitra::booleanliteral_constructor_exists():
-    assert callable(mitra::BooleanLiteral.__init__)
-
-
-def test_mitra::booleanliteral_constructor_args():
-    sig = inspect.signature(mitra::BooleanLiteral.__init__)
+def test_mitra_booleanliteral_constructor_args():
+    sig = inspect.signature(mitra_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "booleanValue" in params, "Missing parameter 'booleanValue'"
 
-def test_mitra::booleanliteral_has_booleanValue():
-    assert hasattr(mitra::BooleanLiteral, "booleanValue")
+def test_mitra_booleanliteral_has_booleanValue():
+    assert hasattr(mitra_BooleanLiteral, "booleanValue")
     descriptor = None
-    for klass in mitra::BooleanLiteral.__mro__:
+    for klass in mitra_BooleanLiteral.__mro__:
         if "booleanValue" in klass.__dict__:
             descriptor = klass.__dict__["booleanValue"]
             break
@@ -457,37 +433,47 @@ def test_mitra::booleanliteral_has_booleanValue():
 
 
 
-def test_mitra::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(mitra::NullLiteral)
+def test_mitra_realliteral_is_not_abstract():
+    assert not inspect.isabstract(mitra_RealLiteral)
 
 
-def test_mitra::nullliteral_constructor_exists():
-    assert callable(mitra::NullLiteral.__init__)
+def test_mitra_realliteral_constructor_exists():
+    assert callable(mitra_RealLiteral.__init__)
 
 
-def test_mitra::nullliteral_constructor_args():
-    sig = inspect.signature(mitra::NullLiteral.__init__)
+def test_mitra_realliteral_constructor_args():
+    sig = inspect.signature(mitra_RealLiteral.__init__)
     params = list(sig.parameters.keys())
+    assert "floatValue" in params, "Missing parameter 'floatValue'"
+
+def test_mitra_realliteral_has_floatValue():
+    assert hasattr(mitra_RealLiteral, "floatValue")
+    descriptor = None
+    for klass in mitra_RealLiteral.__mro__:
+        if "floatValue" in klass.__dict__:
+            descriptor = klass.__dict__["floatValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_mitra::intliteral_is_not_abstract():
-    assert not inspect.isabstract(mitra::IntLiteral)
+def test_mitra_intliteral_is_not_abstract():
+    assert not inspect.isabstract(mitra_IntLiteral)
 
 
-def test_mitra::intliteral_constructor_exists():
-    assert callable(mitra::IntLiteral.__init__)
+def test_mitra_intliteral_constructor_exists():
+    assert callable(mitra_IntLiteral.__init__)
 
 
-def test_mitra::intliteral_constructor_args():
-    sig = inspect.signature(mitra::IntLiteral.__init__)
+def test_mitra_intliteral_constructor_args():
+    sig = inspect.signature(mitra_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "intValue" in params, "Missing parameter 'intValue'"
 
-def test_mitra::intliteral_has_intValue():
-    assert hasattr(mitra::IntLiteral, "intValue")
+def test_mitra_intliteral_has_intValue():
+    assert hasattr(mitra_IntLiteral, "intValue")
     descriptor = None
-    for klass in mitra::IntLiteral.__mro__:
+    for klass in mitra_IntLiteral.__mro__:
         if "intValue" in klass.__dict__:
             descriptor = klass.__dict__["intValue"]
             break
@@ -495,23 +481,37 @@ def test_mitra::intliteral_has_intValue():
 
 
 
-def test_mitra::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(mitra::StringLiteral)
+def test_mitra_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(mitra_NullLiteral)
 
 
-def test_mitra::stringliteral_constructor_exists():
-    assert callable(mitra::StringLiteral.__init__)
+def test_mitra_nullliteral_constructor_exists():
+    assert callable(mitra_NullLiteral.__init__)
 
 
-def test_mitra::stringliteral_constructor_args():
-    sig = inspect.signature(mitra::StringLiteral.__init__)
+def test_mitra_nullliteral_constructor_args():
+    sig = inspect.signature(mitra_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(mitra_StringLiteral)
+
+
+def test_mitra_stringliteral_constructor_exists():
+    assert callable(mitra_StringLiteral.__init__)
+
+
+def test_mitra_stringliteral_constructor_args():
+    sig = inspect.signature(mitra_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "stringValue" in params, "Missing parameter 'stringValue'"
 
-def test_mitra::stringliteral_has_stringValue():
-    assert hasattr(mitra::StringLiteral, "stringValue")
+def test_mitra_stringliteral_has_stringValue():
+    assert hasattr(mitra_StringLiteral, "stringValue")
     descriptor = None
-    for klass in mitra::StringLiteral.__mro__:
+    for klass in mitra_StringLiteral.__mro__:
         if "stringValue" in klass.__dict__:
             descriptor = klass.__dict__["stringValue"]
             break
@@ -533,106 +533,106 @@ def test_terminalexpression_constructor_args():
 
 
 
-def test_mitra::ruleinvocationsuper_is_not_abstract():
-    assert not inspect.isabstract(mitra::RuleInvocationSuper)
+def test_mitra_variableaccess_is_not_abstract():
+    assert not inspect.isabstract(mitra_VariableAccess)
 
 
-def test_mitra::ruleinvocationsuper_constructor_exists():
-    assert callable(mitra::RuleInvocationSuper.__init__)
+def test_mitra_variableaccess_constructor_exists():
+    assert callable(mitra_VariableAccess.__init__)
 
 
-def test_mitra::ruleinvocationsuper_constructor_args():
-    sig = inspect.signature(mitra::RuleInvocationSuper.__init__)
+def test_mitra_variableaccess_constructor_args():
+    sig = inspect.signature(mitra_VariableAccess.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_mitra::variableaccess_is_not_abstract():
-    assert not inspect.isabstract(mitra::VariableAccess)
-
-
-def test_mitra::variableaccess_constructor_exists():
-    assert callable(mitra::VariableAccess.__init__)
-
-
-def test_mitra::variableaccess_constructor_args():
-    sig = inspect.signature(mitra::VariableAccess.__init__)
-    params = list(sig.parameters.keys())
-    assert "postfixOperator" in params, "Missing parameter 'postfixOperator'"
     assert "prefixOperator" in params, "Missing parameter 'prefixOperator'"
+    assert "postfixOperator" in params, "Missing parameter 'postfixOperator'"
 
-def test_mitra::variableaccess_has_postfixOperator():
-    assert hasattr(mitra::VariableAccess, "postfixOperator")
+def test_mitra_variableaccess_has_prefixOperator():
+    assert hasattr(mitra_VariableAccess, "prefixOperator")
     descriptor = None
-    for klass in mitra::VariableAccess.__mro__:
-        if "postfixOperator" in klass.__dict__:
-            descriptor = klass.__dict__["postfixOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mitra::variableaccess_has_prefixOperator():
-    assert hasattr(mitra::VariableAccess, "prefixOperator")
-    descriptor = None
-    for klass in mitra::VariableAccess.__mro__:
+    for klass in mitra_VariableAccess.__mro__:
         if "prefixOperator" in klass.__dict__:
             descriptor = klass.__dict__["prefixOperator"]
             break
     assert isinstance(descriptor, property)
 
+def test_mitra_variableaccess_has_postfixOperator():
+    assert hasattr(mitra_VariableAccess, "postfixOperator")
+    descriptor = None
+    for klass in mitra_VariableAccess.__mro__:
+        if "postfixOperator" in klass.__dict__:
+            descriptor = klass.__dict__["postfixOperator"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mitra::staticaccess_is_not_abstract():
-    assert not inspect.isabstract(mitra::StaticAccess)
+
+def test_mitra_ruleinvocation_is_not_abstract():
+    assert not inspect.isabstract(mitra_RuleInvocation)
 
 
-def test_mitra::staticaccess_constructor_exists():
-    assert callable(mitra::StaticAccess.__init__)
+def test_mitra_ruleinvocation_constructor_exists():
+    assert callable(mitra_RuleInvocation.__init__)
 
 
-def test_mitra::staticaccess_constructor_args():
-    sig = inspect.signature(mitra::StaticAccess.__init__)
+def test_mitra_ruleinvocation_constructor_args():
+    sig = inspect.signature(mitra_RuleInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::classinstancecreationexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::ClassInstanceCreationExpression)
+def test_mitra_ruleinvocationsuper_is_not_abstract():
+    assert not inspect.isabstract(mitra_RuleInvocationSuper)
 
 
-def test_mitra::classinstancecreationexpression_constructor_exists():
-    assert callable(mitra::ClassInstanceCreationExpression.__init__)
+def test_mitra_ruleinvocationsuper_constructor_exists():
+    assert callable(mitra_RuleInvocationSuper.__init__)
 
 
-def test_mitra::classinstancecreationexpression_constructor_args():
-    sig = inspect.signature(mitra::ClassInstanceCreationExpression.__init__)
+def test_mitra_ruleinvocationsuper_constructor_args():
+    sig = inspect.signature(mitra_RuleInvocationSuper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::ruleinvocation_is_not_abstract():
-    assert not inspect.isabstract(mitra::RuleInvocation)
+def test_mitra_classinstancecreationexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_ClassInstanceCreationExpression)
 
 
-def test_mitra::ruleinvocation_constructor_exists():
-    assert callable(mitra::RuleInvocation.__init__)
+def test_mitra_classinstancecreationexpression_constructor_exists():
+    assert callable(mitra_ClassInstanceCreationExpression.__init__)
 
 
-def test_mitra::ruleinvocation_constructor_args():
-    sig = inspect.signature(mitra::RuleInvocation.__init__)
+def test_mitra_classinstancecreationexpression_constructor_args():
+    sig = inspect.signature(mitra_ClassInstanceCreationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::literal_is_not_abstract():
-    assert not inspect.isabstract(mitra::Literal)
+def test_mitra_staticaccess_is_not_abstract():
+    assert not inspect.isabstract(mitra_StaticAccess)
 
 
-def test_mitra::literal_constructor_exists():
-    assert callable(mitra::Literal.__init__)
+def test_mitra_staticaccess_constructor_exists():
+    assert callable(mitra_StaticAccess.__init__)
 
 
-def test_mitra::literal_constructor_args():
-    sig = inspect.signature(mitra::Literal.__init__)
+def test_mitra_staticaccess_constructor_args():
+    sig = inspect.signature(mitra_StaticAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_literal_is_not_abstract():
+    assert not inspect.isabstract(mitra_Literal)
+
+
+def test_mitra_literal_constructor_exists():
+    assert callable(mitra_Literal.__init__)
+
+
+def test_mitra_literal_constructor_args():
+    sig = inspect.signature(mitra_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -651,23 +651,37 @@ def test_expression_constructor_args():
 
 
 
-def test_mitra::unarymathexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::UnaryMathExpression)
+def test_mitra_iteratorexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_IteratorExpression)
 
 
-def test_mitra::unarymathexpression_constructor_exists():
-    assert callable(mitra::UnaryMathExpression.__init__)
+def test_mitra_iteratorexpression_constructor_exists():
+    assert callable(mitra_IteratorExpression.__init__)
 
 
-def test_mitra::unarymathexpression_constructor_args():
-    sig = inspect.signature(mitra::UnaryMathExpression.__init__)
+def test_mitra_iteratorexpression_constructor_args():
+    sig = inspect.signature(mitra_IteratorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_BooleanExpression)
+
+
+def test_mitra_booleanexpression_constructor_exists():
+    assert callable(mitra_BooleanExpression.__init__)
+
+
+def test_mitra_booleanexpression_constructor_args():
+    sig = inspect.signature(mitra_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_mitra::unarymathexpression_has_op():
-    assert hasattr(mitra::UnaryMathExpression, "op")
+def test_mitra_booleanexpression_has_op():
+    assert hasattr(mitra_BooleanExpression, "op")
     descriptor = None
-    for klass in mitra::UnaryMathExpression.__mro__:
+    for klass in mitra_BooleanExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -675,23 +689,37 @@ def test_mitra::unarymathexpression_has_op():
 
 
 
-def test_mitra::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::BooleanExpression)
+def test_mitra_unarybooleanexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_UnaryBooleanExpression)
 
 
-def test_mitra::booleanexpression_constructor_exists():
-    assert callable(mitra::BooleanExpression.__init__)
+def test_mitra_unarybooleanexpression_constructor_exists():
+    assert callable(mitra_UnaryBooleanExpression.__init__)
 
 
-def test_mitra::booleanexpression_constructor_args():
-    sig = inspect.signature(mitra::BooleanExpression.__init__)
+def test_mitra_unarybooleanexpression_constructor_args():
+    sig = inspect.signature(mitra_UnaryBooleanExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_RelationalExpression)
+
+
+def test_mitra_relationalexpression_constructor_exists():
+    assert callable(mitra_RelationalExpression.__init__)
+
+
+def test_mitra_relationalexpression_constructor_args():
+    sig = inspect.signature(mitra_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_mitra::booleanexpression_has_op():
-    assert hasattr(mitra::BooleanExpression, "op")
+def test_mitra_relationalexpression_has_op():
+    assert hasattr(mitra_RelationalExpression, "op")
     descriptor = None
-    for klass in mitra::BooleanExpression.__mro__:
+    for klass in mitra_RelationalExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -699,23 +727,23 @@ def test_mitra::booleanexpression_has_op():
 
 
 
-def test_mitra::mathexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::MathExpression)
+def test_mitra_unarymathexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_UnaryMathExpression)
 
 
-def test_mitra::mathexpression_constructor_exists():
-    assert callable(mitra::MathExpression.__init__)
+def test_mitra_unarymathexpression_constructor_exists():
+    assert callable(mitra_UnaryMathExpression.__init__)
 
 
-def test_mitra::mathexpression_constructor_args():
-    sig = inspect.signature(mitra::MathExpression.__init__)
+def test_mitra_unarymathexpression_constructor_args():
+    sig = inspect.signature(mitra_UnaryMathExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_mitra::mathexpression_has_op():
-    assert hasattr(mitra::MathExpression, "op")
+def test_mitra_unarymathexpression_has_op():
+    assert hasattr(mitra_UnaryMathExpression, "op")
     descriptor = None
-    for klass in mitra::MathExpression.__mro__:
+    for klass in mitra_UnaryMathExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -723,51 +751,23 @@ def test_mitra::mathexpression_has_op():
 
 
 
-def test_mitra::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::InstanceOfExpression)
+def test_mitra_mathexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_MathExpression)
 
 
-def test_mitra::instanceofexpression_constructor_exists():
-    assert callable(mitra::InstanceOfExpression.__init__)
+def test_mitra_mathexpression_constructor_exists():
+    assert callable(mitra_MathExpression.__init__)
 
 
-def test_mitra::instanceofexpression_constructor_args():
-    sig = inspect.signature(mitra::InstanceOfExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mitra::unarybooleanexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::UnaryBooleanExpression)
-
-
-def test_mitra::unarybooleanexpression_constructor_exists():
-    assert callable(mitra::UnaryBooleanExpression.__init__)
-
-
-def test_mitra::unarybooleanexpression_constructor_args():
-    sig = inspect.signature(mitra::UnaryBooleanExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mitra::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::EqualityExpression)
-
-
-def test_mitra::equalityexpression_constructor_exists():
-    assert callable(mitra::EqualityExpression.__init__)
-
-
-def test_mitra::equalityexpression_constructor_args():
-    sig = inspect.signature(mitra::EqualityExpression.__init__)
+def test_mitra_mathexpression_constructor_args():
+    sig = inspect.signature(mitra_MathExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_mitra::equalityexpression_has_op():
-    assert hasattr(mitra::EqualityExpression, "op")
+def test_mitra_mathexpression_has_op():
+    assert hasattr(mitra_MathExpression, "op")
     descriptor = None
-    for klass in mitra::EqualityExpression.__mro__:
+    for klass in mitra_MathExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -775,51 +775,37 @@ def test_mitra::equalityexpression_has_op():
 
 
 
-def test_mitra::iteratorexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::IteratorExpression)
+def test_mitra_unarycastexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_UnaryCastExpression)
 
 
-def test_mitra::iteratorexpression_constructor_exists():
-    assert callable(mitra::IteratorExpression.__init__)
+def test_mitra_unarycastexpression_constructor_exists():
+    assert callable(mitra_UnaryCastExpression.__init__)
 
 
-def test_mitra::iteratorexpression_constructor_args():
-    sig = inspect.signature(mitra::IteratorExpression.__init__)
+def test_mitra_unarycastexpression_constructor_args():
+    sig = inspect.signature(mitra_UnaryCastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::unarycastexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::UnaryCastExpression)
+def test_mitra_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_EqualityExpression)
 
 
-def test_mitra::unarycastexpression_constructor_exists():
-    assert callable(mitra::UnaryCastExpression.__init__)
+def test_mitra_equalityexpression_constructor_exists():
+    assert callable(mitra_EqualityExpression.__init__)
 
 
-def test_mitra::unarycastexpression_constructor_args():
-    sig = inspect.signature(mitra::UnaryCastExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mitra::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::RelationalExpression)
-
-
-def test_mitra::relationalexpression_constructor_exists():
-    assert callable(mitra::RelationalExpression.__init__)
-
-
-def test_mitra::relationalexpression_constructor_args():
-    sig = inspect.signature(mitra::RelationalExpression.__init__)
+def test_mitra_equalityexpression_constructor_args():
+    sig = inspect.signature(mitra_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_mitra::relationalexpression_has_op():
-    assert hasattr(mitra::RelationalExpression, "op")
+def test_mitra_equalityexpression_has_op():
+    assert hasattr(mitra_EqualityExpression, "op")
     descriptor = None
-    for klass in mitra::RelationalExpression.__mro__:
+    for klass in mitra_EqualityExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -827,72 +813,86 @@ def test_mitra::relationalexpression_has_op():
 
 
 
-def test_mitra::terminalexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::TerminalExpression)
+def test_mitra_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_InstanceOfExpression)
 
 
-def test_mitra::terminalexpression_constructor_exists():
-    assert callable(mitra::TerminalExpression.__init__)
+def test_mitra_instanceofexpression_constructor_exists():
+    assert callable(mitra_InstanceOfExpression.__init__)
 
 
-def test_mitra::terminalexpression_constructor_args():
-    sig = inspect.signature(mitra::TerminalExpression.__init__)
+def test_mitra_instanceofexpression_constructor_args():
+    sig = inspect.signature(mitra_InstanceOfExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::catch_is_not_abstract():
-    assert not inspect.isabstract(mitra::Catch)
+def test_mitra_terminalexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_TerminalExpression)
 
 
-def test_mitra::catch_constructor_exists():
-    assert callable(mitra::Catch.__init__)
+def test_mitra_terminalexpression_constructor_exists():
+    assert callable(mitra_TerminalExpression.__init__)
 
 
-def test_mitra::catch_constructor_args():
-    sig = inspect.signature(mitra::Catch.__init__)
+def test_mitra_terminalexpression_constructor_args():
+    sig = inspect.signature(mitra_TerminalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::loopvariable_is_not_abstract():
-    assert not inspect.isabstract(mitra::LoopVariable)
+def test_mitra_catch_is_not_abstract():
+    assert not inspect.isabstract(mitra_Catch)
 
 
-def test_mitra::loopvariable_constructor_exists():
-    assert callable(mitra::LoopVariable.__init__)
+def test_mitra_catch_constructor_exists():
+    assert callable(mitra_Catch.__init__)
 
 
-def test_mitra::loopvariable_constructor_args():
-    sig = inspect.signature(mitra::LoopVariable.__init__)
+def test_mitra_catch_constructor_args():
+    sig = inspect.signature(mitra_Catch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::forupdate_is_not_abstract():
-    assert not inspect.isabstract(mitra::ForUpdate)
+def test_mitra_loopvariable_is_not_abstract():
+    assert not inspect.isabstract(mitra_LoopVariable)
 
 
-def test_mitra::forupdate_constructor_exists():
-    assert callable(mitra::ForUpdate.__init__)
+def test_mitra_loopvariable_constructor_exists():
+    assert callable(mitra_LoopVariable.__init__)
 
 
-def test_mitra::forupdate_constructor_args():
-    sig = inspect.signature(mitra::ForUpdate.__init__)
+def test_mitra_loopvariable_constructor_args():
+    sig = inspect.signature(mitra_LoopVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::forinit_is_not_abstract():
-    assert not inspect.isabstract(mitra::ForInit)
+def test_mitra_forupdate_is_not_abstract():
+    assert not inspect.isabstract(mitra_ForUpdate)
 
 
-def test_mitra::forinit_constructor_exists():
-    assert callable(mitra::ForInit.__init__)
+def test_mitra_forupdate_constructor_exists():
+    assert callable(mitra_ForUpdate.__init__)
 
 
-def test_mitra::forinit_constructor_args():
-    sig = inspect.signature(mitra::ForInit.__init__)
+def test_mitra_forupdate_constructor_args():
+    sig = inspect.signature(mitra_ForUpdate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_forinit_is_not_abstract():
+    assert not inspect.isabstract(mitra_ForInit)
+
+
+def test_mitra_forinit_constructor_exists():
+    assert callable(mitra_ForInit.__init__)
+
+
+def test_mitra_forinit_constructor_args():
+    sig = inspect.signature(mitra_ForInit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -911,37 +911,37 @@ def test_vardeclaration_constructor_args():
 
 
 
-def test_mitra::inferredvardeclaration_is_not_abstract():
-    assert not inspect.isabstract(mitra::InferredVarDeclaration)
+def test_mitra_inferredvardeclaration_is_not_abstract():
+    assert not inspect.isabstract(mitra_InferredVarDeclaration)
 
 
-def test_mitra::inferredvardeclaration_constructor_exists():
-    assert callable(mitra::InferredVarDeclaration.__init__)
+def test_mitra_inferredvardeclaration_constructor_exists():
+    assert callable(mitra_InferredVarDeclaration.__init__)
 
 
-def test_mitra::inferredvardeclaration_constructor_args():
-    sig = inspect.signature(mitra::InferredVarDeclaration.__init__)
+def test_mitra_inferredvardeclaration_constructor_args():
+    sig = inspect.signature(mitra_InferredVarDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::vardeclaration_is_not_abstract():
-    assert not inspect.isabstract(mitra::VarDeclaration)
+def test_mitra_vardeclaration_is_not_abstract():
+    assert not inspect.isabstract(mitra_VarDeclaration)
 
 
-def test_mitra::vardeclaration_constructor_exists():
-    assert callable(mitra::VarDeclaration.__init__)
+def test_mitra_vardeclaration_constructor_exists():
+    assert callable(mitra_VarDeclaration.__init__)
 
 
-def test_mitra::vardeclaration_constructor_args():
-    sig = inspect.signature(mitra::VarDeclaration.__init__)
+def test_mitra_vardeclaration_constructor_args():
+    sig = inspect.signature(mitra_VarDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mitra::vardeclaration_has_name():
-    assert hasattr(mitra::VarDeclaration, "name")
+def test_mitra_vardeclaration_has_name():
+    assert hasattr(mitra_VarDeclaration, "name")
     descriptor = None
-    for klass in mitra::VarDeclaration.__mro__:
+    for klass in mitra_VarDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -949,16 +949,16 @@ def test_mitra::vardeclaration_has_name():
 
 
 
-def test_mitra::localvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(mitra::LocalVariableDeclaration)
+def test_mitra_localvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(mitra_LocalVariableDeclaration)
 
 
-def test_mitra::localvariabledeclaration_constructor_exists():
-    assert callable(mitra::LocalVariableDeclaration.__init__)
+def test_mitra_localvariabledeclaration_constructor_exists():
+    assert callable(mitra_LocalVariableDeclaration.__init__)
 
 
-def test_mitra::localvariabledeclaration_constructor_args():
-    sig = inspect.signature(mitra::LocalVariableDeclaration.__init__)
+def test_mitra_localvariabledeclaration_constructor_args():
+    sig = inspect.signature(mitra_LocalVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -977,44 +977,44 @@ def test_blockstatement_constructor_args():
 
 
 
-def test_mitra::localvariabledeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::LocalVariableDeclarationStatement)
+def test_mitra_localvariabledeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_LocalVariableDeclarationStatement)
 
 
-def test_mitra::localvariabledeclarationstatement_constructor_exists():
-    assert callable(mitra::LocalVariableDeclarationStatement.__init__)
+def test_mitra_localvariabledeclarationstatement_constructor_exists():
+    assert callable(mitra_LocalVariableDeclarationStatement.__init__)
 
 
-def test_mitra::localvariabledeclarationstatement_constructor_args():
-    sig = inspect.signature(mitra::LocalVariableDeclarationStatement.__init__)
+def test_mitra_localvariabledeclarationstatement_constructor_args():
+    sig = inspect.signature(mitra_LocalVariableDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::statement_is_not_abstract():
-    assert not inspect.isabstract(mitra::Statement)
+def test_mitra_statement_is_not_abstract():
+    assert not inspect.isabstract(mitra_Statement)
 
 
-def test_mitra::statement_constructor_exists():
-    assert callable(mitra::Statement.__init__)
+def test_mitra_statement_constructor_exists():
+    assert callable(mitra_Statement.__init__)
 
 
-def test_mitra::statement_constructor_args():
-    sig = inspect.signature(mitra::Statement.__init__)
+def test_mitra_statement_constructor_args():
+    sig = inspect.signature(mitra_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::BlockStatement)
+def test_mitra_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_BlockStatement)
 
 
-def test_mitra::blockstatement_constructor_exists():
-    assert callable(mitra::BlockStatement.__init__)
+def test_mitra_blockstatement_constructor_exists():
+    assert callable(mitra_BlockStatement.__init__)
 
 
-def test_mitra::blockstatement_constructor_args():
-    sig = inspect.signature(mitra::BlockStatement.__init__)
+def test_mitra_blockstatement_constructor_args():
+    sig = inspect.signature(mitra_BlockStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1033,170 +1033,170 @@ def test_statement_constructor_args():
 
 
 
-def test_mitra::trystatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::TryStatement)
+def test_mitra_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_WhileStatement)
 
 
-def test_mitra::trystatement_constructor_exists():
-    assert callable(mitra::TryStatement.__init__)
+def test_mitra_whilestatement_constructor_exists():
+    assert callable(mitra_WhileStatement.__init__)
 
 
-def test_mitra::trystatement_constructor_args():
-    sig = inspect.signature(mitra::TryStatement.__init__)
+def test_mitra_whilestatement_constructor_args():
+    sig = inspect.signature(mitra_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::forstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::ForStatement)
+def test_mitra_trystatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_TryStatement)
 
 
-def test_mitra::forstatement_constructor_exists():
-    assert callable(mitra::ForStatement.__init__)
+def test_mitra_trystatement_constructor_exists():
+    assert callable(mitra_TryStatement.__init__)
 
 
-def test_mitra::forstatement_constructor_args():
-    sig = inspect.signature(mitra::ForStatement.__init__)
+def test_mitra_trystatement_constructor_args():
+    sig = inspect.signature(mitra_TryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::EmptyStatement)
+def test_mitra_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_ThrowStatement)
 
 
-def test_mitra::emptystatement_constructor_exists():
-    assert callable(mitra::EmptyStatement.__init__)
+def test_mitra_throwstatement_constructor_exists():
+    assert callable(mitra_ThrowStatement.__init__)
 
 
-def test_mitra::emptystatement_constructor_args():
-    sig = inspect.signature(mitra::EmptyStatement.__init__)
+def test_mitra_throwstatement_constructor_args():
+    sig = inspect.signature(mitra_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::IfStatement)
+def test_mitra_dostatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_DoStatement)
 
 
-def test_mitra::ifstatement_constructor_exists():
-    assert callable(mitra::IfStatement.__init__)
+def test_mitra_dostatement_constructor_exists():
+    assert callable(mitra_DoStatement.__init__)
 
 
-def test_mitra::ifstatement_constructor_args():
-    sig = inspect.signature(mitra::IfStatement.__init__)
+def test_mitra_dostatement_constructor_args():
+    sig = inspect.signature(mitra_DoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::WhileStatement)
+def test_mitra_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_IfStatement)
 
 
-def test_mitra::whilestatement_constructor_exists():
-    assert callable(mitra::WhileStatement.__init__)
+def test_mitra_ifstatement_constructor_exists():
+    assert callable(mitra_IfStatement.__init__)
 
 
-def test_mitra::whilestatement_constructor_args():
-    sig = inspect.signature(mitra::WhileStatement.__init__)
+def test_mitra_ifstatement_constructor_args():
+    sig = inspect.signature(mitra_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::BreakStatement)
+def test_mitra_forstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_ForStatement)
 
 
-def test_mitra::breakstatement_constructor_exists():
-    assert callable(mitra::BreakStatement.__init__)
+def test_mitra_forstatement_constructor_exists():
+    assert callable(mitra_ForStatement.__init__)
 
 
-def test_mitra::breakstatement_constructor_args():
-    sig = inspect.signature(mitra::BreakStatement.__init__)
+def test_mitra_forstatement_constructor_args():
+    sig = inspect.signature(mitra_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::ThrowStatement)
+def test_mitra_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_ReturnStatement)
 
 
-def test_mitra::throwstatement_constructor_exists():
-    assert callable(mitra::ThrowStatement.__init__)
+def test_mitra_returnstatement_constructor_exists():
+    assert callable(mitra_ReturnStatement.__init__)
 
 
-def test_mitra::throwstatement_constructor_args():
-    sig = inspect.signature(mitra::ThrowStatement.__init__)
+def test_mitra_returnstatement_constructor_args():
+    sig = inspect.signature(mitra_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::dostatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::DoStatement)
+def test_mitra_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_EmptyStatement)
 
 
-def test_mitra::dostatement_constructor_exists():
-    assert callable(mitra::DoStatement.__init__)
+def test_mitra_emptystatement_constructor_exists():
+    assert callable(mitra_EmptyStatement.__init__)
 
 
-def test_mitra::dostatement_constructor_args():
-    sig = inspect.signature(mitra::DoStatement.__init__)
+def test_mitra_emptystatement_constructor_args():
+    sig = inspect.signature(mitra_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::ReturnStatement)
+def test_mitra_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_BreakStatement)
 
 
-def test_mitra::returnstatement_constructor_exists():
-    assert callable(mitra::ReturnStatement.__init__)
+def test_mitra_breakstatement_constructor_exists():
+    assert callable(mitra_BreakStatement.__init__)
 
 
-def test_mitra::returnstatement_constructor_args():
-    sig = inspect.signature(mitra::ReturnStatement.__init__)
+def test_mitra_breakstatement_constructor_args():
+    sig = inspect.signature(mitra_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::statementexpression_is_not_abstract():
-    assert not inspect.isabstract(mitra::StatementExpression)
+def test_mitra_statementexpression_is_not_abstract():
+    assert not inspect.isabstract(mitra_StatementExpression)
 
 
-def test_mitra::statementexpression_constructor_exists():
-    assert callable(mitra::StatementExpression.__init__)
+def test_mitra_statementexpression_constructor_exists():
+    assert callable(mitra_StatementExpression.__init__)
 
 
-def test_mitra::statementexpression_constructor_args():
-    sig = inspect.signature(mitra::StatementExpression.__init__)
+def test_mitra_statementexpression_constructor_args():
+    sig = inspect.signature(mitra_StatementExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(mitra::ExpressionStatement)
+def test_mitra_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(mitra_ExpressionStatement)
 
 
-def test_mitra::expressionstatement_constructor_exists():
-    assert callable(mitra::ExpressionStatement.__init__)
+def test_mitra_expressionstatement_constructor_exists():
+    assert callable(mitra_ExpressionStatement.__init__)
 
 
-def test_mitra::expressionstatement_constructor_args():
-    sig = inspect.signature(mitra::ExpressionStatement.__init__)
+def test_mitra_expressionstatement_constructor_args():
+    sig = inspect.signature(mitra_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(mitra::EClassifier)
+def test_mitra_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(mitra_EClassifier)
 
 
-def test_mitra::eclassifier_constructor_exists():
-    assert callable(mitra::EClassifier.__init__)
+def test_mitra_eclassifier_constructor_exists():
+    assert callable(mitra_EClassifier.__init__)
 
 
-def test_mitra::eclassifier_constructor_args():
-    sig = inspect.signature(mitra::EClassifier.__init__)
+def test_mitra_eclassifier_constructor_args():
+    sig = inspect.signature(mitra_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1215,23 +1215,23 @@ def test_type_constructor_args():
 
 
 
-def test_mitra::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(mitra::CollectionType)
+def test_mitra_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(mitra_CollectionType)
 
 
-def test_mitra::collectiontype_constructor_exists():
-    assert callable(mitra::CollectionType.__init__)
+def test_mitra_collectiontype_constructor_exists():
+    assert callable(mitra_CollectionType.__init__)
 
 
-def test_mitra::collectiontype_constructor_args():
-    sig = inspect.signature(mitra::CollectionType.__init__)
+def test_mitra_collectiontype_constructor_args():
+    sig = inspect.signature(mitra_CollectionType.__init__)
     params = list(sig.parameters.keys())
     assert "collectionType" in params, "Missing parameter 'collectionType'"
 
-def test_mitra::collectiontype_has_collectionType():
-    assert hasattr(mitra::CollectionType, "collectionType")
+def test_mitra_collectiontype_has_collectionType():
+    assert hasattr(mitra_CollectionType, "collectionType")
     descriptor = None
-    for klass in mitra::CollectionType.__mro__:
+    for klass in mitra_CollectionType.__mro__:
         if "collectionType" in klass.__dict__:
             descriptor = klass.__dict__["collectionType"]
             break
@@ -1239,16 +1239,16 @@ def test_mitra::collectiontype_has_collectionType():
 
 
 
-def test_mitra::referencetype_is_not_abstract():
-    assert not inspect.isabstract(mitra::ReferenceType)
+def test_mitra_referencetype_is_not_abstract():
+    assert not inspect.isabstract(mitra_ReferenceType)
 
 
-def test_mitra::referencetype_constructor_exists():
-    assert callable(mitra::ReferenceType.__init__)
+def test_mitra_referencetype_constructor_exists():
+    assert callable(mitra_ReferenceType.__init__)
 
 
-def test_mitra::referencetype_constructor_args():
-    sig = inspect.signature(mitra::ReferenceType.__init__)
+def test_mitra_referencetype_constructor_args():
+    sig = inspect.signature(mitra_ReferenceType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1267,23 +1267,23 @@ def test_parameter_constructor_args():
 
 
 
-def test_mitra::parameter_is_not_abstract():
-    assert not inspect.isabstract(mitra::Parameter)
+def test_mitra_parameter_is_not_abstract():
+    assert not inspect.isabstract(mitra_Parameter)
 
 
-def test_mitra::parameter_constructor_exists():
-    assert callable(mitra::Parameter.__init__)
+def test_mitra_parameter_constructor_exists():
+    assert callable(mitra_Parameter.__init__)
 
 
-def test_mitra::parameter_constructor_args():
-    sig = inspect.signature(mitra::Parameter.__init__)
+def test_mitra_parameter_constructor_args():
+    sig = inspect.signature(mitra_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "modifier" in params, "Missing parameter 'modifier'"
 
-def test_mitra::parameter_has_modifier():
-    assert hasattr(mitra::Parameter, "modifier")
+def test_mitra_parameter_has_modifier():
+    assert hasattr(mitra_Parameter, "modifier")
     descriptor = None
-    for klass in mitra::Parameter.__mro__:
+    for klass in mitra_Parameter.__mro__:
         if "modifier" in klass.__dict__:
             descriptor = klass.__dict__["modifier"]
             break
@@ -1291,51 +1291,51 @@ def test_mitra::parameter_has_modifier():
 
 
 
-def test_mitra::expression_is_not_abstract():
-    assert not inspect.isabstract(mitra::Expression)
+def test_mitra_expression_is_not_abstract():
+    assert not inspect.isabstract(mitra_Expression)
 
 
-def test_mitra::expression_constructor_exists():
-    assert callable(mitra::Expression.__init__)
+def test_mitra_expression_constructor_exists():
+    assert callable(mitra_Expression.__init__)
 
 
-def test_mitra::expression_constructor_args():
-    sig = inspect.signature(mitra::Expression.__init__)
+def test_mitra_expression_constructor_args():
+    sig = inspect.signature(mitra_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::typedvardeclaration_is_not_abstract():
-    assert not inspect.isabstract(mitra::TypedVarDeclaration)
+def test_mitra_typedvardeclaration_is_not_abstract():
+    assert not inspect.isabstract(mitra_TypedVarDeclaration)
 
 
-def test_mitra::typedvardeclaration_constructor_exists():
-    assert callable(mitra::TypedVarDeclaration.__init__)
+def test_mitra_typedvardeclaration_constructor_exists():
+    assert callable(mitra_TypedVarDeclaration.__init__)
 
 
-def test_mitra::typedvardeclaration_constructor_args():
-    sig = inspect.signature(mitra::TypedVarDeclaration.__init__)
+def test_mitra_typedvardeclaration_constructor_args():
+    sig = inspect.signature(mitra_TypedVarDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(mitra::PrimitiveType)
+def test_mitra_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(mitra_PrimitiveType)
 
 
-def test_mitra::primitivetype_constructor_exists():
-    assert callable(mitra::PrimitiveType.__init__)
+def test_mitra_primitivetype_constructor_exists():
+    assert callable(mitra_PrimitiveType.__init__)
 
 
-def test_mitra::primitivetype_constructor_args():
-    sig = inspect.signature(mitra::PrimitiveType.__init__)
+def test_mitra_primitivetype_constructor_args():
+    sig = inspect.signature(mitra_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_mitra::primitivetype_has_primitiveType():
-    assert hasattr(mitra::PrimitiveType, "primitiveType")
+def test_mitra_primitivetype_has_primitiveType():
+    assert hasattr(mitra_PrimitiveType, "primitiveType")
     descriptor = None
-    for klass in mitra::PrimitiveType.__mro__:
+    for klass in mitra_PrimitiveType.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -1357,51 +1357,51 @@ def test_parameterreference_constructor_args():
 
 
 
-def test_mitra::parameterreference_is_not_abstract():
-    assert not inspect.isabstract(mitra::ParameterReference)
+def test_mitra_parameterreference_is_not_abstract():
+    assert not inspect.isabstract(mitra_ParameterReference)
 
 
-def test_mitra::parameterreference_constructor_exists():
-    assert callable(mitra::ParameterReference.__init__)
+def test_mitra_parameterreference_constructor_exists():
+    assert callable(mitra_ParameterReference.__init__)
 
 
-def test_mitra::parameterreference_constructor_args():
-    sig = inspect.signature(mitra::ParameterReference.__init__)
+def test_mitra_parameterreference_constructor_args():
+    sig = inspect.signature(mitra_ParameterReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::qualifiedparameterreference_is_not_abstract():
-    assert not inspect.isabstract(mitra::QualifiedParameterReference)
+def test_mitra_qualifiedparameterreference_is_not_abstract():
+    assert not inspect.isabstract(mitra_QualifiedParameterReference)
 
 
-def test_mitra::qualifiedparameterreference_constructor_exists():
-    assert callable(mitra::QualifiedParameterReference.__init__)
+def test_mitra_qualifiedparameterreference_constructor_exists():
+    assert callable(mitra_QualifiedParameterReference.__init__)
 
 
-def test_mitra::qualifiedparameterreference_constructor_args():
-    sig = inspect.signature(mitra::QualifiedParameterReference.__init__)
+def test_mitra_qualifiedparameterreference_constructor_args():
+    sig = inspect.signature(mitra_QualifiedParameterReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::simpleparameterreference_is_not_abstract():
-    assert not inspect.isabstract(mitra::SimpleParameterReference)
+def test_mitra_simpleparameterreference_is_not_abstract():
+    assert not inspect.isabstract(mitra_SimpleParameterReference)
 
 
-def test_mitra::simpleparameterreference_constructor_exists():
-    assert callable(mitra::SimpleParameterReference.__init__)
+def test_mitra_simpleparameterreference_constructor_exists():
+    assert callable(mitra_SimpleParameterReference.__init__)
 
 
-def test_mitra::simpleparameterreference_constructor_args():
-    sig = inspect.signature(mitra::SimpleParameterReference.__init__)
+def test_mitra_simpleparameterreference_constructor_args():
+    sig = inspect.signature(mitra_SimpleParameterReference.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mitra::simpleparameterreference_has_name():
-    assert hasattr(mitra::SimpleParameterReference, "name")
+def test_mitra_simpleparameterreference_has_name():
+    assert hasattr(mitra_SimpleParameterReference, "name")
     descriptor = None
-    for klass in mitra::SimpleParameterReference.__mro__:
+    for klass in mitra_SimpleParameterReference.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1423,173 +1423,173 @@ def test_rulereference_constructor_args():
 
 
 
-def test_mitra::qualifiedrulereference_is_not_abstract():
-    assert not inspect.isabstract(mitra::QualifiedRuleReference)
+def test_mitra_qualifiedrulereference_is_not_abstract():
+    assert not inspect.isabstract(mitra_QualifiedRuleReference)
 
 
-def test_mitra::qualifiedrulereference_constructor_exists():
-    assert callable(mitra::QualifiedRuleReference.__init__)
+def test_mitra_qualifiedrulereference_constructor_exists():
+    assert callable(mitra_QualifiedRuleReference.__init__)
 
 
-def test_mitra::qualifiedrulereference_constructor_args():
-    sig = inspect.signature(mitra::QualifiedRuleReference.__init__)
+def test_mitra_qualifiedrulereference_constructor_args():
+    sig = inspect.signature(mitra_QualifiedRuleReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::rulereference_is_not_abstract():
-    assert not inspect.isabstract(mitra::RuleReference)
+def test_mitra_rulereference_is_not_abstract():
+    assert not inspect.isabstract(mitra_RuleReference)
 
 
-def test_mitra::rulereference_constructor_exists():
-    assert callable(mitra::RuleReference.__init__)
+def test_mitra_rulereference_constructor_exists():
+    assert callable(mitra_RuleReference.__init__)
 
 
-def test_mitra::rulereference_constructor_args():
-    sig = inspect.signature(mitra::RuleReference.__init__)
+def test_mitra_rulereference_constructor_args():
+    sig = inspect.signature(mitra_RuleReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::block_is_not_abstract():
-    assert not inspect.isabstract(mitra::Block)
+def test_mitra_block_is_not_abstract():
+    assert not inspect.isabstract(mitra_Block)
 
 
-def test_mitra::block_constructor_exists():
-    assert callable(mitra::Block.__init__)
+def test_mitra_block_constructor_exists():
+    assert callable(mitra_Block.__init__)
 
 
-def test_mitra::block_constructor_args():
-    sig = inspect.signature(mitra::Block.__init__)
+def test_mitra_block_constructor_args():
+    sig = inspect.signature(mitra_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::javaspec_is_not_abstract():
-    assert not inspect.isabstract(mitra::JavaSpec)
+def test_mitra_javaspec_is_not_abstract():
+    assert not inspect.isabstract(mitra_JavaSpec)
 
 
-def test_mitra::javaspec_constructor_exists():
-    assert callable(mitra::JavaSpec.__init__)
+def test_mitra_javaspec_constructor_exists():
+    assert callable(mitra_JavaSpec.__init__)
 
 
-def test_mitra::javaspec_constructor_args():
-    sig = inspect.signature(mitra::JavaSpec.__init__)
+def test_mitra_javaspec_constructor_args():
+    sig = inspect.signature(mitra_JavaSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::trigger_is_not_abstract():
-    assert not inspect.isabstract(mitra::Trigger)
+def test_mitra_trigger_is_not_abstract():
+    assert not inspect.isabstract(mitra_Trigger)
 
 
-def test_mitra::trigger_constructor_exists():
-    assert callable(mitra::Trigger.__init__)
+def test_mitra_trigger_constructor_exists():
+    assert callable(mitra_Trigger.__init__)
 
 
-def test_mitra::trigger_constructor_args():
-    sig = inspect.signature(mitra::Trigger.__init__)
+def test_mitra_trigger_constructor_args():
+    sig = inspect.signature(mitra_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::simplerulereference_is_not_abstract():
-    assert not inspect.isabstract(mitra::SimpleRuleReference)
+def test_mitra_simplerulereference_is_not_abstract():
+    assert not inspect.isabstract(mitra_SimpleRuleReference)
 
 
-def test_mitra::simplerulereference_constructor_exists():
-    assert callable(mitra::SimpleRuleReference.__init__)
+def test_mitra_simplerulereference_constructor_exists():
+    assert callable(mitra_SimpleRuleReference.__init__)
 
 
-def test_mitra::simplerulereference_constructor_args():
-    sig = inspect.signature(mitra::SimpleRuleReference.__init__)
+def test_mitra_simplerulereference_constructor_args():
+    sig = inspect.signature(mitra_SimpleRuleReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::returnparameter_is_not_abstract():
-    assert not inspect.isabstract(mitra::ReturnParameter)
+def test_mitra_returnparameter_is_not_abstract():
+    assert not inspect.isabstract(mitra_ReturnParameter)
 
 
-def test_mitra::returnparameter_constructor_exists():
-    assert callable(mitra::ReturnParameter.__init__)
+def test_mitra_returnparameter_constructor_exists():
+    assert callable(mitra_ReturnParameter.__init__)
 
 
-def test_mitra::returnparameter_constructor_args():
-    sig = inspect.signature(mitra::ReturnParameter.__init__)
+def test_mitra_returnparameter_constructor_args():
+    sig = inspect.signature(mitra_ReturnParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::formalparameter_is_not_abstract():
-    assert not inspect.isabstract(mitra::FormalParameter)
+def test_mitra_formalparameter_is_not_abstract():
+    assert not inspect.isabstract(mitra_FormalParameter)
 
 
-def test_mitra::formalparameter_constructor_exists():
-    assert callable(mitra::FormalParameter.__init__)
+def test_mitra_formalparameter_constructor_exists():
+    assert callable(mitra_FormalParameter.__init__)
 
 
-def test_mitra::formalparameter_constructor_args():
-    sig = inspect.signature(mitra::FormalParameter.__init__)
+def test_mitra_formalparameter_constructor_args():
+    sig = inspect.signature(mitra_FormalParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::annotation_is_not_abstract():
-    assert not inspect.isabstract(mitra::Annotation)
+def test_mitra_annotation_is_not_abstract():
+    assert not inspect.isabstract(mitra_Annotation)
 
 
-def test_mitra::annotation_constructor_exists():
-    assert callable(mitra::Annotation.__init__)
+def test_mitra_annotation_constructor_exists():
+    assert callable(mitra_Annotation.__init__)
 
 
-def test_mitra::annotation_constructor_args():
-    sig = inspect.signature(mitra::Annotation.__init__)
+def test_mitra_annotation_constructor_args():
+    sig = inspect.signature(mitra_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::type_is_not_abstract():
-    assert not inspect.isabstract(mitra::Type)
+def test_mitra_type_is_not_abstract():
+    assert not inspect.isabstract(mitra_Type)
 
 
-def test_mitra::type_constructor_exists():
-    assert callable(mitra::Type.__init__)
+def test_mitra_type_constructor_exists():
+    assert callable(mitra_Type.__init__)
 
 
-def test_mitra::type_constructor_args():
-    sig = inspect.signature(mitra::Type.__init__)
+def test_mitra_type_constructor_args():
+    sig = inspect.signature(mitra_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mitra::property_is_not_abstract():
-    assert not inspect.isabstract(mitra::Property)
+def test_mitra_property_is_not_abstract():
+    assert not inspect.isabstract(mitra_Property)
 
 
-def test_mitra::property_constructor_exists():
-    assert callable(mitra::Property.__init__)
+def test_mitra_property_constructor_exists():
+    assert callable(mitra_Property.__init__)
 
 
-def test_mitra::property_constructor_args():
-    sig = inspect.signature(mitra::Property.__init__)
+def test_mitra_property_constructor_args():
+    sig = inspect.signature(mitra_Property.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mitra::property_has_value():
-    assert hasattr(mitra::Property, "value")
+def test_mitra_property_has_value():
+    assert hasattr(mitra_Property, "value")
     descriptor = None
-    for klass in mitra::Property.__mro__:
+    for klass in mitra_Property.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::property_has_name():
-    assert hasattr(mitra::Property, "name")
+def test_mitra_property_has_name():
+    assert hasattr(mitra_Property, "name")
     descriptor = None
-    for klass in mitra::Property.__mro__:
+    for klass in mitra_Property.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1597,228 +1597,193 @@ def test_mitra::property_has_name():
 
 
 
-def test_mitra::ruledeclaration_is_not_abstract():
-    assert not inspect.isabstract(mitra::RuleDeclaration)
+def test_mitra_ruledeclaration_is_not_abstract():
+    assert not inspect.isabstract(mitra_RuleDeclaration)
 
 
-def test_mitra::ruledeclaration_constructor_exists():
-    assert callable(mitra::RuleDeclaration.__init__)
+def test_mitra_ruledeclaration_constructor_exists():
+    assert callable(mitra_RuleDeclaration.__init__)
 
 
-def test_mitra::ruledeclaration_constructor_args():
-    sig = inspect.signature(mitra::RuleDeclaration.__init__)
+def test_mitra_ruledeclaration_constructor_args():
+    sig = inspect.signature(mitra_RuleDeclaration.__init__)
     params = list(sig.parameters.keys())
-    assert "traced" in params, "Missing parameter 'traced'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "multi" in params, "Missing parameter 'multi'"
+    assert "traced" in params, "Missing parameter 'traced'"
     assert "stealth" in params, "Missing parameter 'stealth'"
     assert "virtual" in params, "Missing parameter 'virtual'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "exec" in params, "Missing parameter 'exec'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_mitra::ruledeclaration_has_traced():
-    assert hasattr(mitra::RuleDeclaration, "traced")
+def test_mitra_ruledeclaration_has_multi():
+    assert hasattr(mitra_RuleDeclaration, "multi")
     descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
-        if "traced" in klass.__dict__:
-            descriptor = klass.__dict__["traced"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mitra::ruledeclaration_has_visibility():
-    assert hasattr(mitra::RuleDeclaration, "visibility")
-    descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mitra::ruledeclaration_has_multi():
-    assert hasattr(mitra::RuleDeclaration, "multi")
-    descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
+    for klass in mitra_RuleDeclaration.__mro__:
         if "multi" in klass.__dict__:
             descriptor = klass.__dict__["multi"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::ruledeclaration_has_stealth():
-    assert hasattr(mitra::RuleDeclaration, "stealth")
+def test_mitra_ruledeclaration_has_traced():
+    assert hasattr(mitra_RuleDeclaration, "traced")
     descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
+    for klass in mitra_RuleDeclaration.__mro__:
+        if "traced" in klass.__dict__:
+            descriptor = klass.__dict__["traced"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mitra_ruledeclaration_has_stealth():
+    assert hasattr(mitra_RuleDeclaration, "stealth")
+    descriptor = None
+    for klass in mitra_RuleDeclaration.__mro__:
         if "stealth" in klass.__dict__:
             descriptor = klass.__dict__["stealth"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::ruledeclaration_has_virtual():
-    assert hasattr(mitra::RuleDeclaration, "virtual")
+def test_mitra_ruledeclaration_has_virtual():
+    assert hasattr(mitra_RuleDeclaration, "virtual")
     descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
+    for klass in mitra_RuleDeclaration.__mro__:
         if "virtual" in klass.__dict__:
             descriptor = klass.__dict__["virtual"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::ruledeclaration_has_name():
-    assert hasattr(mitra::RuleDeclaration, "name")
+def test_mitra_ruledeclaration_has_exec():
+    assert hasattr(mitra_RuleDeclaration, "exec")
     descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mitra::ruledeclaration_has_exec():
-    assert hasattr(mitra::RuleDeclaration, "exec")
-    descriptor = None
-    for klass in mitra::RuleDeclaration.__mro__:
+    for klass in mitra_RuleDeclaration.__mro__:
         if "exec" in klass.__dict__:
             descriptor = klass.__dict__["exec"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mitra::annotationsdefinition_is_not_abstract():
-    assert not inspect.isabstract(mitra::AnnotationsDefinition)
-
-
-def test_mitra::annotationsdefinition_constructor_exists():
-    assert callable(mitra::AnnotationsDefinition.__init__)
-
-
-def test_mitra::annotationsdefinition_constructor_args():
-    sig = inspect.signature(mitra::AnnotationsDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mitra::metamodeldeclaration_is_not_abstract():
-    assert not inspect.isabstract(mitra::MetamodelDeclaration)
-
-
-def test_mitra::metamodeldeclaration_constructor_exists():
-    assert callable(mitra::MetamodelDeclaration.__init__)
-
-
-def test_mitra::metamodeldeclaration_constructor_args():
-    sig = inspect.signature(mitra::MetamodelDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "replaces" in params, "Missing parameter 'replaces'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_mitra::metamodeldeclaration_has_replaces():
-    assert hasattr(mitra::MetamodelDeclaration, "replaces")
+def test_mitra_ruledeclaration_has_visibility():
+    assert hasattr(mitra_RuleDeclaration, "visibility")
     descriptor = None
-    for klass in mitra::MetamodelDeclaration.__mro__:
-        if "replaces" in klass.__dict__:
-            descriptor = klass.__dict__["replaces"]
+    for klass in mitra_RuleDeclaration.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::metamodeldeclaration_has_name():
-    assert hasattr(mitra::MetamodelDeclaration, "name")
+def test_mitra_ruledeclaration_has_name():
+    assert hasattr(mitra_RuleDeclaration, "name")
     descriptor = None
-    for klass in mitra::MetamodelDeclaration.__mro__:
+    for klass in mitra_RuleDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::metamodeldeclaration_has_type():
-    assert hasattr(mitra::MetamodelDeclaration, "type")
+
+
+def test_mitra_annotationsdefinition_is_not_abstract():
+    assert not inspect.isabstract(mitra_AnnotationsDefinition)
+
+
+def test_mitra_annotationsdefinition_constructor_exists():
+    assert callable(mitra_AnnotationsDefinition.__init__)
+
+
+def test_mitra_annotationsdefinition_constructor_args():
+    sig = inspect.signature(mitra_AnnotationsDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_metamodeldeclaration_is_not_abstract():
+    assert not inspect.isabstract(mitra_MetamodelDeclaration)
+
+
+def test_mitra_metamodeldeclaration_constructor_exists():
+    assert callable(mitra_MetamodelDeclaration.__init__)
+
+
+def test_mitra_metamodeldeclaration_constructor_args():
+    sig = inspect.signature(mitra_MetamodelDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "replaces" in params, "Missing parameter 'replaces'"
+
+def test_mitra_metamodeldeclaration_has_name():
+    assert hasattr(mitra_MetamodelDeclaration, "name")
     descriptor = None
-    for klass in mitra::MetamodelDeclaration.__mro__:
+    for klass in mitra_MetamodelDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mitra_metamodeldeclaration_has_type():
+    assert hasattr(mitra_MetamodelDeclaration, "type")
+    descriptor = None
+    for klass in mitra_MetamodelDeclaration.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mitra::modulereference_is_not_abstract():
-    assert not inspect.isabstract(mitra::ModuleReference)
-
-
-def test_mitra::modulereference_constructor_exists():
-    assert callable(mitra::ModuleReference.__init__)
-
-
-def test_mitra::modulereference_constructor_args():
-    sig = inspect.signature(mitra::ModuleReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mitra::module_is_not_abstract():
-    assert not inspect.isabstract(mitra::Module)
-
-
-def test_mitra::module_constructor_exists():
-    assert callable(mitra::Module.__init__)
-
-
-def test_mitra::module_constructor_args():
-    sig = inspect.signature(mitra::Module.__init__)
-    params = list(sig.parameters.keys())
-    assert "packageName" in params, "Missing parameter 'packageName'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mitra::module_has_packageName():
-    assert hasattr(mitra::Module, "packageName")
+def test_mitra_metamodeldeclaration_has_replaces():
+    assert hasattr(mitra_MetamodelDeclaration, "replaces")
     descriptor = None
-    for klass in mitra::Module.__mro__:
-        if "packageName" in klass.__dict__:
-            descriptor = klass.__dict__["packageName"]
+    for klass in mitra_MetamodelDeclaration.__mro__:
+        if "replaces" in klass.__dict__:
+            descriptor = klass.__dict__["replaces"]
             break
     assert isinstance(descriptor, property)
 
-def test_mitra::module_has_name():
-    assert hasattr(mitra::Module, "name")
+
+
+def test_mitra_modulereference_is_not_abstract():
+    assert not inspect.isabstract(mitra_ModuleReference)
+
+
+def test_mitra_modulereference_constructor_exists():
+    assert callable(mitra_ModuleReference.__init__)
+
+
+def test_mitra_modulereference_constructor_args():
+    sig = inspect.signature(mitra_ModuleReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mitra_module_is_not_abstract():
+    assert not inspect.isabstract(mitra_Module)
+
+
+def test_mitra_module_constructor_exists():
+    assert callable(mitra_Module.__init__)
+
+
+def test_mitra_module_constructor_args():
+    sig = inspect.signature(mitra_Module.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "packageName" in params, "Missing parameter 'packageName'"
+
+def test_mitra_module_has_name():
+    assert hasattr(mitra_Module, "name")
     descriptor = None
-    for klass in mitra::Module.__mro__:
+    for klass in mitra_Module.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_booleanoperator_exists():
-    # Check that the Enumeration exists
-    assert BooleanOperator is not None
-
-def test_booleanoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanOperator]
-    expected_literals = [
-        "and_",
-        "or_",
-        "orsc",
-        "andsc",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
-
-def test_collectiontypespec_exists():
-    # Check that the Enumeration exists
-    assert CollectionTypeSpec is not None
-
-def test_collectiontypespec_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CollectionTypeSpec]
-    expected_literals = [
-        "Collection",
-        "Bag",
-        "Set",
-        "Sequence",
-        "OrderedSet",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CollectionTypeSpec"
+def test_mitra_module_has_packageName():
+    assert hasattr(mitra_Module, "packageName")
+    descriptor = None
+    for klass in mitra_Module.__mro__:
+        if "packageName" in klass.__dict__:
+            descriptor = klass.__dict__["packageName"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_visibilitymodifier_exists():
     # Check that the Enumeration exists
@@ -1835,56 +1800,6 @@ def test_visibilitymodifier_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VisibilityModifier"
 
-def test_relationaloperator_exists():
-    # Check that the Enumeration exists
-    assert RelationalOperator is not None
-
-def test_relationaloperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationalOperator]
-    expected_literals = [
-        "leq",
-        "lt",
-        "gt",
-        "geq",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
-
-def test_mathoperator_exists():
-    # Check that the Enumeration exists
-    assert MathOperator is not None
-
-def test_mathoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MathOperator]
-    expected_literals = [
-        "add",
-        "sub",
-        "div",
-        "mul",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MathOperator"
-
-def test_assignmentoperator_exists():
-    # Check that the Enumeration exists
-    assert AssignmentOperator is not None
-
-def test_assignmentoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssignmentOperator]
-    expected_literals = [
-        "set",
-        "add",
-        "sub",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
-
 def test_annotationtargetspec_exists():
     # Check that the Enumeration exists
     assert AnnotationTargetSpec is not None
@@ -1893,31 +1808,30 @@ def test_annotationtargetspec_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AnnotationTargetSpec]
     expected_literals = [
-        "rule",
         "module",
+        "rule",
         "parameter",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AnnotationTargetSpec"
 
-def test_parametermodifier_exists():
+def test_booleanoperator_exists():
     # Check that the Enumeration exists
-    assert ParameterModifier is not None
+    assert BooleanOperator is not None
 
-def test_parametermodifier_has_all_literals():
+def test_booleanoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterModifier]
+    enum_literals = [lit.name for lit in BooleanOperator]
     expected_literals = [
-        "from_",
-        "return_",
-        "use",
-        "into",
-        "create",
+        "orsc",
+        "andsc",
+        "and_",
+        "or_",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterModifier"
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
 
 def test_unarymathoperator_exists():
     # Check that the Enumeration exists
@@ -1934,58 +1848,23 @@ def test_unarymathoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in UnaryMathOperator"
 
-def test_executionmodifier_exists():
+def test_collectiontypespec_exists():
     # Check that the Enumeration exists
-    assert ExecutionModifier is not None
+    assert CollectionTypeSpec is not None
 
-def test_executionmodifier_has_all_literals():
+def test_collectiontypespec_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExecutionModifier]
+    enum_literals = [lit.name for lit in CollectionTypeSpec]
     expected_literals = [
-        "called",
-        "auto",
-        "confirm",
-        "abstract",
-        "manual",
+        "Bag",
+        "Sequence",
+        "Set",
+        "OrderedSet",
+        "Collection",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExecutionModifier"
-
-def test_equalityoperator_exists():
-    # Check that the Enumeration exists
-    assert EqualityOperator is not None
-
-def test_equalityoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EqualityOperator]
-    expected_literals = [
-        "eq",
-        "neq",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EqualityOperator"
-
-def test_primitivetypespec_exists():
-    # Check that the Enumeration exists
-    assert PrimitiveTypeSpec is not None
-
-def test_primitivetypespec_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrimitiveTypeSpec]
-    expected_literals = [
-        "int",
-        "real",
-        "type",
-        "string",
-        "boolean",
-        "void",
-        "any",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveTypeSpec"
+        assert lit_name in enum_literals, f"Literal '' missing in CollectionTypeSpec"
 
 def test_ppoperator_exists():
     # Check that the Enumeration exists
@@ -2003,6 +1882,127 @@ def test_ppoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PPOperator"
 
+def test_mathoperator_exists():
+    # Check that the Enumeration exists
+    assert MathOperator is not None
+
+def test_mathoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MathOperator]
+    expected_literals = [
+        "div",
+        "add",
+        "sub",
+        "mul",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MathOperator"
+
+def test_relationaloperator_exists():
+    # Check that the Enumeration exists
+    assert RelationalOperator is not None
+
+def test_relationaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RelationalOperator]
+    expected_literals = [
+        "lt",
+        "gt",
+        "geq",
+        "leq",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+
+def test_equalityoperator_exists():
+    # Check that the Enumeration exists
+    assert EqualityOperator is not None
+
+def test_equalityoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EqualityOperator]
+    expected_literals = [
+        "eq",
+        "neq",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EqualityOperator"
+
+def test_parametermodifier_exists():
+    # Check that the Enumeration exists
+    assert ParameterModifier is not None
+
+def test_parametermodifier_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ParameterModifier]
+    expected_literals = [
+        "return_",
+        "into",
+        "from_",
+        "use",
+        "create",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterModifier"
+
+def test_primitivetypespec_exists():
+    # Check that the Enumeration exists
+    assert PrimitiveTypeSpec is not None
+
+def test_primitivetypespec_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PrimitiveTypeSpec]
+    expected_literals = [
+        "int",
+        "type",
+        "any",
+        "real",
+        "void",
+        "boolean",
+        "string",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveTypeSpec"
+
+def test_assignmentoperator_exists():
+    # Check that the Enumeration exists
+    assert AssignmentOperator is not None
+
+def test_assignmentoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssignmentOperator]
+    expected_literals = [
+        "add",
+        "set",
+        "sub",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
+
+def test_executionmodifier_exists():
+    # Check that the Enumeration exists
+    assert ExecutionModifier is not None
+
+def test_executionmodifier_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ExecutionModifier]
+    expected_literals = [
+        "called",
+        "manual",
+        "auto",
+        "abstract",
+        "confirm",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ExecutionModifier"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -2015,29 +2015,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mitra::AnnotationProperty_strategy = st.builds(
-    mitra::AnnotationProperty,
+mitra_AnnotationProperty_strategy = st.builds(
+    mitra_AnnotationProperty,
 )
-mitra::AnnotationPropertyDecl_strategy = st.builds(
-    mitra::AnnotationPropertyDecl,
-    name=
-        safe_text,
-    required=
-        st.booleans()
-)
-mitra::AnnotationDecl_strategy = st.builds(
-    mitra::AnnotationDecl,
-    targets=
-        safe_text,
-    many=
-        st.booleans(),
+mitra_AnnotationPropertyDecl_strategy = st.builds(
+    mitra_AnnotationPropertyDecl,
     required=
         st.booleans(),
     name=
         safe_text
 )
-mitra::MetamodelFeature_strategy = st.builds(
-    mitra::MetamodelFeature,
+mitra_AnnotationDecl_strategy = st.builds(
+    mitra_AnnotationDecl,
+    name=
+        safe_text,
+    many=
+        st.booleans(),
+    required=
+        st.booleans(),
+    targets=
+        safe_text
+)
+mitra_MetamodelFeature_strategy = st.builds(
+    mitra_MetamodelFeature,
 )
 MetamodelFeature_strategy = st.builds(
     MetamodelFeature,
@@ -2045,414 +2045,396 @@ MetamodelFeature_strategy = st.builds(
 MethodInvocation_strategy = st.builds(
     MethodInvocation,
 )
-mitra::NativeOperationInvocation_strategy = st.builds(
-    mitra::NativeOperationInvocation,
+mitra_NativeOperationInvocation_strategy = st.builds(
+    mitra_NativeOperationInvocation,
 )
-mitra::FeatureMethodInvocation_strategy = st.builds(
-    mitra::FeatureMethodInvocation,
+mitra_FeatureMethodInvocation_strategy = st.builds(
+    mitra_FeatureMethodInvocation,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-mitra::FeatureField_strategy = st.builds(
-    mitra::FeatureField,
+mitra_FeatureField_strategy = st.builds(
+    mitra_FeatureField,
 )
-mitra::MethodInvocation_strategy = st.builds(
-    mitra::MethodInvocation,
+mitra_MethodInvocation_strategy = st.builds(
+    mitra_MethodInvocation,
 )
-mitra::Feature_strategy = st.builds(
-    mitra::Feature,
+mitra_Feature_strategy = st.builds(
+    mitra_Feature,
     name=
         safe_text
 )
 StatementExpression_strategy = st.builds(
     StatementExpression,
 )
-mitra::Assignment_strategy = st.builds(
-    mitra::Assignment,
+mitra_Assignment_strategy = st.builds(
+    mitra_Assignment,
     operator=
         safe_text
 )
 Literal_strategy = st.builds(
     Literal,
 )
-mitra::RealLiteral_strategy = st.builds(
-    mitra::RealLiteral,
-    floatValue=
-        safe_text
-)
-mitra::BooleanLiteral_strategy = st.builds(
-    mitra::BooleanLiteral,
+mitra_BooleanLiteral_strategy = st.builds(
+    mitra_BooleanLiteral,
     booleanValue=
         st.booleans()
 )
-mitra::NullLiteral_strategy = st.builds(
-    mitra::NullLiteral,
+mitra_RealLiteral_strategy = st.builds(
+    mitra_RealLiteral,
+    floatValue=
+        safe_text
 )
-mitra::IntLiteral_strategy = st.builds(
-    mitra::IntLiteral,
+mitra_IntLiteral_strategy = st.builds(
+    mitra_IntLiteral,
     intValue=
         st.integers()
 )
-mitra::StringLiteral_strategy = st.builds(
-    mitra::StringLiteral,
+mitra_NullLiteral_strategy = st.builds(
+    mitra_NullLiteral,
+)
+mitra_StringLiteral_strategy = st.builds(
+    mitra_StringLiteral,
     stringValue=
         safe_text
 )
 TerminalExpression_strategy = st.builds(
     TerminalExpression,
 )
-mitra::RuleInvocationSuper_strategy = st.builds(
-    mitra::RuleInvocationSuper,
-)
-mitra::VariableAccess_strategy = st.builds(
-    mitra::VariableAccess,
-    postfixOperator=
-        safe_text,
+mitra_VariableAccess_strategy = st.builds(
+    mitra_VariableAccess,
     prefixOperator=
+        safe_text,
+    postfixOperator=
         safe_text
 )
-mitra::StaticAccess_strategy = st.builds(
-    mitra::StaticAccess,
+mitra_RuleInvocation_strategy = st.builds(
+    mitra_RuleInvocation,
 )
-mitra::ClassInstanceCreationExpression_strategy = st.builds(
-    mitra::ClassInstanceCreationExpression,
+mitra_RuleInvocationSuper_strategy = st.builds(
+    mitra_RuleInvocationSuper,
 )
-mitra::RuleInvocation_strategy = st.builds(
-    mitra::RuleInvocation,
+mitra_ClassInstanceCreationExpression_strategy = st.builds(
+    mitra_ClassInstanceCreationExpression,
 )
-mitra::Literal_strategy = st.builds(
-    mitra::Literal,
+mitra_StaticAccess_strategy = st.builds(
+    mitra_StaticAccess,
+)
+mitra_Literal_strategy = st.builds(
+    mitra_Literal,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-mitra::UnaryMathExpression_strategy = st.builds(
-    mitra::UnaryMathExpression,
+mitra_IteratorExpression_strategy = st.builds(
+    mitra_IteratorExpression,
+)
+mitra_BooleanExpression_strategy = st.builds(
+    mitra_BooleanExpression,
     op=
         safe_text
 )
-mitra::BooleanExpression_strategy = st.builds(
-    mitra::BooleanExpression,
+mitra_UnaryBooleanExpression_strategy = st.builds(
+    mitra_UnaryBooleanExpression,
+)
+mitra_RelationalExpression_strategy = st.builds(
+    mitra_RelationalExpression,
     op=
         safe_text
 )
-mitra::MathExpression_strategy = st.builds(
-    mitra::MathExpression,
+mitra_UnaryMathExpression_strategy = st.builds(
+    mitra_UnaryMathExpression,
     op=
         safe_text
 )
-mitra::InstanceOfExpression_strategy = st.builds(
-    mitra::InstanceOfExpression,
-)
-mitra::UnaryBooleanExpression_strategy = st.builds(
-    mitra::UnaryBooleanExpression,
-)
-mitra::EqualityExpression_strategy = st.builds(
-    mitra::EqualityExpression,
+mitra_MathExpression_strategy = st.builds(
+    mitra_MathExpression,
     op=
         safe_text
 )
-mitra::IteratorExpression_strategy = st.builds(
-    mitra::IteratorExpression,
+mitra_UnaryCastExpression_strategy = st.builds(
+    mitra_UnaryCastExpression,
 )
-mitra::UnaryCastExpression_strategy = st.builds(
-    mitra::UnaryCastExpression,
-)
-mitra::RelationalExpression_strategy = st.builds(
-    mitra::RelationalExpression,
+mitra_EqualityExpression_strategy = st.builds(
+    mitra_EqualityExpression,
     op=
         safe_text
 )
-mitra::TerminalExpression_strategy = st.builds(
-    mitra::TerminalExpression,
+mitra_InstanceOfExpression_strategy = st.builds(
+    mitra_InstanceOfExpression,
 )
-mitra::Catch_strategy = st.builds(
-    mitra::Catch,
+mitra_TerminalExpression_strategy = st.builds(
+    mitra_TerminalExpression,
 )
-mitra::LoopVariable_strategy = st.builds(
-    mitra::LoopVariable,
+mitra_Catch_strategy = st.builds(
+    mitra_Catch,
 )
-mitra::ForUpdate_strategy = st.builds(
-    mitra::ForUpdate,
+mitra_LoopVariable_strategy = st.builds(
+    mitra_LoopVariable,
 )
-mitra::ForInit_strategy = st.builds(
-    mitra::ForInit,
+mitra_ForUpdate_strategy = st.builds(
+    mitra_ForUpdate,
+)
+mitra_ForInit_strategy = st.builds(
+    mitra_ForInit,
 )
 VarDeclaration_strategy = st.builds(
     VarDeclaration,
 )
-mitra::InferredVarDeclaration_strategy = st.builds(
-    mitra::InferredVarDeclaration,
+mitra_InferredVarDeclaration_strategy = st.builds(
+    mitra_InferredVarDeclaration,
 )
-mitra::VarDeclaration_strategy = st.builds(
-    mitra::VarDeclaration,
+mitra_VarDeclaration_strategy = st.builds(
+    mitra_VarDeclaration,
     name=
         safe_text
 )
-mitra::LocalVariableDeclaration_strategy = st.builds(
-    mitra::LocalVariableDeclaration,
+mitra_LocalVariableDeclaration_strategy = st.builds(
+    mitra_LocalVariableDeclaration,
 )
 BlockStatement_strategy = st.builds(
     BlockStatement,
 )
-mitra::LocalVariableDeclarationStatement_strategy = st.builds(
-    mitra::LocalVariableDeclarationStatement,
+mitra_LocalVariableDeclarationStatement_strategy = st.builds(
+    mitra_LocalVariableDeclarationStatement,
 )
-mitra::Statement_strategy = st.builds(
-    mitra::Statement,
+mitra_Statement_strategy = st.builds(
+    mitra_Statement,
 )
-mitra::BlockStatement_strategy = st.builds(
-    mitra::BlockStatement,
+mitra_BlockStatement_strategy = st.builds(
+    mitra_BlockStatement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-mitra::TryStatement_strategy = st.builds(
-    mitra::TryStatement,
+mitra_WhileStatement_strategy = st.builds(
+    mitra_WhileStatement,
 )
-mitra::ForStatement_strategy = st.builds(
-    mitra::ForStatement,
+mitra_TryStatement_strategy = st.builds(
+    mitra_TryStatement,
 )
-mitra::EmptyStatement_strategy = st.builds(
-    mitra::EmptyStatement,
+mitra_ThrowStatement_strategy = st.builds(
+    mitra_ThrowStatement,
 )
-mitra::IfStatement_strategy = st.builds(
-    mitra::IfStatement,
+mitra_DoStatement_strategy = st.builds(
+    mitra_DoStatement,
 )
-mitra::WhileStatement_strategy = st.builds(
-    mitra::WhileStatement,
+mitra_IfStatement_strategy = st.builds(
+    mitra_IfStatement,
 )
-mitra::BreakStatement_strategy = st.builds(
-    mitra::BreakStatement,
+mitra_ForStatement_strategy = st.builds(
+    mitra_ForStatement,
 )
-mitra::ThrowStatement_strategy = st.builds(
-    mitra::ThrowStatement,
+mitra_ReturnStatement_strategy = st.builds(
+    mitra_ReturnStatement,
 )
-mitra::DoStatement_strategy = st.builds(
-    mitra::DoStatement,
+mitra_EmptyStatement_strategy = st.builds(
+    mitra_EmptyStatement,
 )
-mitra::ReturnStatement_strategy = st.builds(
-    mitra::ReturnStatement,
+mitra_BreakStatement_strategy = st.builds(
+    mitra_BreakStatement,
 )
-mitra::StatementExpression_strategy = st.builds(
-    mitra::StatementExpression,
+mitra_StatementExpression_strategy = st.builds(
+    mitra_StatementExpression,
 )
-mitra::ExpressionStatement_strategy = st.builds(
-    mitra::ExpressionStatement,
+mitra_ExpressionStatement_strategy = st.builds(
+    mitra_ExpressionStatement,
 )
-mitra::EClassifier_strategy = st.builds(
-    mitra::EClassifier,
+mitra_EClassifier_strategy = st.builds(
+    mitra_EClassifier,
 )
 Type_strategy = st.builds(
     Type,
 )
-mitra::CollectionType_strategy = st.builds(
-    mitra::CollectionType,
+mitra_CollectionType_strategy = st.builds(
+    mitra_CollectionType,
     collectionType=
         safe_text
 )
-mitra::ReferenceType_strategy = st.builds(
-    mitra::ReferenceType,
+mitra_ReferenceType_strategy = st.builds(
+    mitra_ReferenceType,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-mitra::Parameter_strategy = st.builds(
-    mitra::Parameter,
+mitra_Parameter_strategy = st.builds(
+    mitra_Parameter,
     modifier=
         safe_text
 )
-mitra::Expression_strategy = st.builds(
-    mitra::Expression,
+mitra_Expression_strategy = st.builds(
+    mitra_Expression,
 )
-mitra::TypedVarDeclaration_strategy = st.builds(
-    mitra::TypedVarDeclaration,
+mitra_TypedVarDeclaration_strategy = st.builds(
+    mitra_TypedVarDeclaration,
 )
-mitra::PrimitiveType_strategy = st.builds(
-    mitra::PrimitiveType,
+mitra_PrimitiveType_strategy = st.builds(
+    mitra_PrimitiveType,
     primitiveType=
         safe_text
 )
 ParameterReference_strategy = st.builds(
     ParameterReference,
 )
-mitra::ParameterReference_strategy = st.builds(
-    mitra::ParameterReference,
+mitra_ParameterReference_strategy = st.builds(
+    mitra_ParameterReference,
 )
-mitra::QualifiedParameterReference_strategy = st.builds(
-    mitra::QualifiedParameterReference,
+mitra_QualifiedParameterReference_strategy = st.builds(
+    mitra_QualifiedParameterReference,
 )
-mitra::SimpleParameterReference_strategy = st.builds(
-    mitra::SimpleParameterReference,
+mitra_SimpleParameterReference_strategy = st.builds(
+    mitra_SimpleParameterReference,
     name=
         safe_text
 )
 RuleReference_strategy = st.builds(
     RuleReference,
 )
-mitra::QualifiedRuleReference_strategy = st.builds(
-    mitra::QualifiedRuleReference,
+mitra_QualifiedRuleReference_strategy = st.builds(
+    mitra_QualifiedRuleReference,
 )
-mitra::RuleReference_strategy = st.builds(
-    mitra::RuleReference,
+mitra_RuleReference_strategy = st.builds(
+    mitra_RuleReference,
 )
-mitra::Block_strategy = st.builds(
-    mitra::Block,
+mitra_Block_strategy = st.builds(
+    mitra_Block,
 )
-mitra::JavaSpec_strategy = st.builds(
-    mitra::JavaSpec,
+mitra_JavaSpec_strategy = st.builds(
+    mitra_JavaSpec,
 )
-mitra::Trigger_strategy = st.builds(
-    mitra::Trigger,
+mitra_Trigger_strategy = st.builds(
+    mitra_Trigger,
 )
-mitra::SimpleRuleReference_strategy = st.builds(
-    mitra::SimpleRuleReference,
+mitra_SimpleRuleReference_strategy = st.builds(
+    mitra_SimpleRuleReference,
 )
-mitra::ReturnParameter_strategy = st.builds(
-    mitra::ReturnParameter,
+mitra_ReturnParameter_strategy = st.builds(
+    mitra_ReturnParameter,
 )
-mitra::FormalParameter_strategy = st.builds(
-    mitra::FormalParameter,
+mitra_FormalParameter_strategy = st.builds(
+    mitra_FormalParameter,
 )
-mitra::Annotation_strategy = st.builds(
-    mitra::Annotation,
+mitra_Annotation_strategy = st.builds(
+    mitra_Annotation,
 )
-mitra::Type_strategy = st.builds(
-    mitra::Type,
+mitra_Type_strategy = st.builds(
+    mitra_Type,
 )
-mitra::Property_strategy = st.builds(
-    mitra::Property,
+mitra_Property_strategy = st.builds(
+    mitra_Property,
     value=
         safe_text,
     name=
         safe_text
 )
-mitra::RuleDeclaration_strategy = st.builds(
-    mitra::RuleDeclaration,
-    traced=
-        st.booleans(),
-    visibility=
-        safe_text,
+mitra_RuleDeclaration_strategy = st.builds(
+    mitra_RuleDeclaration,
     multi=
+        st.booleans(),
+    traced=
         st.booleans(),
     stealth=
         st.booleans(),
     virtual=
         st.booleans(),
-    name=
-        safe_text,
     exec=
+        safe_text,
+    visibility=
+        safe_text,
+    name=
         safe_text
 )
-mitra::AnnotationsDefinition_strategy = st.builds(
-    mitra::AnnotationsDefinition,
+mitra_AnnotationsDefinition_strategy = st.builds(
+    mitra_AnnotationsDefinition,
 )
-mitra::MetamodelDeclaration_strategy = st.builds(
-    mitra::MetamodelDeclaration,
-    replaces=
-        safe_text,
+mitra_MetamodelDeclaration_strategy = st.builds(
+    mitra_MetamodelDeclaration,
     name=
         safe_text,
     type=
-        safe_text
-)
-mitra::ModuleReference_strategy = st.builds(
-    mitra::ModuleReference,
-)
-mitra::Module_strategy = st.builds(
-    mitra::Module,
-    packageName=
         safe_text,
+    replaces=
+        safe_text
+)
+mitra_ModuleReference_strategy = st.builds(
+    mitra_ModuleReference,
+)
+mitra_Module_strategy = st.builds(
+    mitra_Module,
     name=
+        safe_text,
+    packageName=
         safe_text
 )
 
-@given(instance=mitra::AnnotationProperty_strategy)
+@given(instance=mitra_AnnotationProperty_strategy)
 @settings(max_examples=50)
-def test_mitra::annotationproperty_instantiation(instance):
-    assert isinstance(instance, mitra::AnnotationProperty)
+def test_mitra_annotationproperty_instantiation(instance):
+    assert isinstance(instance, mitra_AnnotationProperty)
 
-@given(instance=mitra::AnnotationPropertyDecl_strategy)
+@given(instance=mitra_AnnotationPropertyDecl_strategy)
 @settings(max_examples=50)
-def test_mitra::annotationpropertydecl_instantiation(instance):
-    assert isinstance(instance, mitra::AnnotationPropertyDecl)
-
-@given(instance=mitra::AnnotationPropertyDecl_strategy)
-def test_mitra::annotationpropertydecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mitra_annotationpropertydecl_instantiation(instance):
+    assert isinstance(instance, mitra_AnnotationPropertyDecl)
 
 
-@given(instance=mitra::AnnotationPropertyDecl_strategy)
-def test_mitra::annotationpropertydecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=mitra::AnnotationPropertyDecl_strategy)
-def test_mitra::annotationpropertydecl_required_type(instance):
-    assert isinstance(instance.required, bool)
-
-
-@given(instance=mitra::AnnotationPropertyDecl_strategy)
-def test_mitra::annotationpropertydecl_required_setter(instance):
+@given(instance=mitra_AnnotationPropertyDecl_strategy)
+def test_mitra_annotationpropertydecl_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=mitra::AnnotationDecl_strategy)
+
+
+@given(instance=mitra_AnnotationPropertyDecl_strategy)
+def test_mitra_annotationpropertydecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mitra_AnnotationDecl_strategy)
 @settings(max_examples=50)
-def test_mitra::annotationdecl_instantiation(instance):
-    assert isinstance(instance, mitra::AnnotationDecl)
-
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_targets_type(instance):
-    assert isinstance(instance.targets, str)
+def test_mitra_annotationdecl_instantiation(instance):
+    assert isinstance(instance, mitra_AnnotationDecl)
 
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_targets_setter(instance):
-    original = instance.targets
-    instance.targets = original
-    assert instance.targets == original
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_many_type(instance):
-    assert isinstance(instance.many, bool)
+@given(instance=mitra_AnnotationDecl_strategy)
+def test_mitra_annotationdecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_many_setter(instance):
+
+@given(instance=mitra_AnnotationDecl_strategy)
+def test_mitra_annotationdecl_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_required_type(instance):
-    assert isinstance(instance.required, bool)
 
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_required_setter(instance):
+@given(instance=mitra_AnnotationDecl_strategy)
+def test_mitra_annotationdecl_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mitra::AnnotationDecl_strategy)
-def test_mitra::annotationdecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=mitra_AnnotationDecl_strategy)
+def test_mitra_annotationdecl_targets_setter(instance):
+    original = instance.targets
+    instance.targets = original
+    assert instance.targets == original
 
-@given(instance=mitra::MetamodelFeature_strategy)
+@given(instance=mitra_MetamodelFeature_strategy)
 @settings(max_examples=50)
-def test_mitra::metamodelfeature_instantiation(instance):
-    assert isinstance(instance, mitra::MetamodelFeature)
+def test_mitra_metamodelfeature_instantiation(instance):
+    assert isinstance(instance, mitra_MetamodelFeature)
 
 @given(instance=MetamodelFeature_strategy)
 @settings(max_examples=50)
@@ -2464,43 +2446,40 @@ def test_metamodelfeature_instantiation(instance):
 def test_methodinvocation_instantiation(instance):
     assert isinstance(instance, MethodInvocation)
 
-@given(instance=mitra::NativeOperationInvocation_strategy)
+@given(instance=mitra_NativeOperationInvocation_strategy)
 @settings(max_examples=50)
-def test_mitra::nativeoperationinvocation_instantiation(instance):
-    assert isinstance(instance, mitra::NativeOperationInvocation)
+def test_mitra_nativeoperationinvocation_instantiation(instance):
+    assert isinstance(instance, mitra_NativeOperationInvocation)
 
-@given(instance=mitra::FeatureMethodInvocation_strategy)
+@given(instance=mitra_FeatureMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_mitra::featuremethodinvocation_instantiation(instance):
-    assert isinstance(instance, mitra::FeatureMethodInvocation)
+def test_mitra_featuremethodinvocation_instantiation(instance):
+    assert isinstance(instance, mitra_FeatureMethodInvocation)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=mitra::FeatureField_strategy)
+@given(instance=mitra_FeatureField_strategy)
 @settings(max_examples=50)
-def test_mitra::featurefield_instantiation(instance):
-    assert isinstance(instance, mitra::FeatureField)
+def test_mitra_featurefield_instantiation(instance):
+    assert isinstance(instance, mitra_FeatureField)
 
-@given(instance=mitra::MethodInvocation_strategy)
+@given(instance=mitra_MethodInvocation_strategy)
 @settings(max_examples=50)
-def test_mitra::methodinvocation_instantiation(instance):
-    assert isinstance(instance, mitra::MethodInvocation)
+def test_mitra_methodinvocation_instantiation(instance):
+    assert isinstance(instance, mitra_MethodInvocation)
 
-@given(instance=mitra::Feature_strategy)
+@given(instance=mitra_Feature_strategy)
 @settings(max_examples=50)
-def test_mitra::feature_instantiation(instance):
-    assert isinstance(instance, mitra::Feature)
-
-@given(instance=mitra::Feature_strategy)
-def test_mitra::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mitra_feature_instantiation(instance):
+    assert isinstance(instance, mitra_Feature)
 
 
-@given(instance=mitra::Feature_strategy)
-def test_mitra::feature_name_setter(instance):
+
+@given(instance=mitra_Feature_strategy)
+def test_mitra_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2511,9 +2490,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::Feature_strategy)
+@given(instance=mitra_Feature_strategy)
 @settings(max_examples=30)
-def test_mitra::feature_tostring_changes_state(instance):
+def test_mitra_feature_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2525,32 +2504,29 @@ def test_mitra::feature_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::Feature is empty"
+        assert has_statements, f"Function 'toString' in mitra_Feature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::Feature did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_Feature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::Feature is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_Feature is not implemented or raised an error")
 
 @given(instance=StatementExpression_strategy)
 @settings(max_examples=50)
 def test_statementexpression_instantiation(instance):
     assert isinstance(instance, StatementExpression)
 
-@given(instance=mitra::Assignment_strategy)
+@given(instance=mitra_Assignment_strategy)
 @settings(max_examples=50)
-def test_mitra::assignment_instantiation(instance):
-    assert isinstance(instance, mitra::Assignment)
-
-@given(instance=mitra::Assignment_strategy)
-def test_mitra::assignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_mitra_assignment_instantiation(instance):
+    assert isinstance(instance, mitra_Assignment)
 
 
-@given(instance=mitra::Assignment_strategy)
-def test_mitra::assignment_operator_setter(instance):
+
+@given(instance=mitra_Assignment_strategy)
+def test_mitra_assignment_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -2560,63 +2536,15 @@ def test_mitra::assignment_operator_setter(instance):
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=mitra::RealLiteral_strategy)
+@given(instance=mitra_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_mitra::realliteral_instantiation(instance):
-    assert isinstance(instance, mitra::RealLiteral)
-
-@given(instance=mitra::RealLiteral_strategy)
-def test_mitra::realliteral_floatValue_type(instance):
-    assert isinstance(instance.floatValue, str)
+def test_mitra_booleanliteral_instantiation(instance):
+    assert isinstance(instance, mitra_BooleanLiteral)
 
 
-@given(instance=mitra::RealLiteral_strategy)
-def test_mitra::realliteral_floatValue_setter(instance):
-    original = instance.floatValue
-    instance.floatValue = original
-    assert instance.floatValue == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=mitra::RealLiteral_strategy)
-@settings(max_examples=30)
-def test_mitra::realliteral_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::RealLiteral is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::RealLiteral did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::RealLiteral is not implemented or raised an error")
-
-@given(instance=mitra::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_mitra::booleanliteral_instantiation(instance):
-    assert isinstance(instance, mitra::BooleanLiteral)
-
-@given(instance=mitra::BooleanLiteral_strategy)
-def test_mitra::booleanliteral_booleanValue_type(instance):
-    assert isinstance(instance.booleanValue, bool)
-
-
-@given(instance=mitra::BooleanLiteral_strategy)
-def test_mitra::booleanliteral_booleanValue_setter(instance):
+@given(instance=mitra_BooleanLiteral_strategy)
+def test_mitra_booleanliteral_booleanValue_setter(instance):
     original = instance.booleanValue
     instance.booleanValue = original
     assert instance.booleanValue == original
@@ -2627,9 +2555,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::BooleanLiteral_strategy)
+@given(instance=mitra_BooleanLiteral_strategy)
 @settings(max_examples=30)
-def test_mitra::booleanliteral_tostring_changes_state(instance):
+def test_mitra_booleanliteral_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2641,32 +2569,66 @@ def test_mitra::booleanliteral_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::BooleanLiteral is empty"
+        assert has_statements, f"Function 'toString' in mitra_BooleanLiteral is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::BooleanLiteral did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_BooleanLiteral did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::BooleanLiteral is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_BooleanLiteral is not implemented or raised an error")
 
-@given(instance=mitra::NullLiteral_strategy)
+@given(instance=mitra_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_mitra::nullliteral_instantiation(instance):
-    assert isinstance(instance, mitra::NullLiteral)
+def test_mitra_realliteral_instantiation(instance):
+    assert isinstance(instance, mitra_RealLiteral)
 
-@given(instance=mitra::IntLiteral_strategy)
+
+
+@given(instance=mitra_RealLiteral_strategy)
+def test_mitra_realliteral_floatValue_setter(instance):
+    original = instance.floatValue
+    instance.floatValue = original
+    assert instance.floatValue == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=mitra_RealLiteral_strategy)
+@settings(max_examples=30)
+def test_mitra_realliteral_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in mitra_RealLiteral is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in mitra_RealLiteral did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in mitra_RealLiteral is not implemented or raised an error")
+
+@given(instance=mitra_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_mitra::intliteral_instantiation(instance):
-    assert isinstance(instance, mitra::IntLiteral)
-
-@given(instance=mitra::IntLiteral_strategy)
-def test_mitra::intliteral_intValue_type(instance):
-    assert isinstance(instance.intValue, int)
+def test_mitra_intliteral_instantiation(instance):
+    assert isinstance(instance, mitra_IntLiteral)
 
 
-@given(instance=mitra::IntLiteral_strategy)
-def test_mitra::intliteral_intValue_setter(instance):
+
+@given(instance=mitra_IntLiteral_strategy)
+def test_mitra_intliteral_intValue_setter(instance):
     original = instance.intValue
     instance.intValue = original
     assert instance.intValue == original
@@ -2677,9 +2639,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::IntLiteral_strategy)
+@given(instance=mitra_IntLiteral_strategy)
 @settings(max_examples=30)
-def test_mitra::intliteral_tostring_changes_state(instance):
+def test_mitra_intliteral_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2691,27 +2653,29 @@ def test_mitra::intliteral_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::IntLiteral is empty"
+        assert has_statements, f"Function 'toString' in mitra_IntLiteral is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::IntLiteral did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_IntLiteral did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::IntLiteral is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_IntLiteral is not implemented or raised an error")
 
-@given(instance=mitra::StringLiteral_strategy)
+@given(instance=mitra_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_mitra::stringliteral_instantiation(instance):
-    assert isinstance(instance, mitra::StringLiteral)
+def test_mitra_nullliteral_instantiation(instance):
+    assert isinstance(instance, mitra_NullLiteral)
 
-@given(instance=mitra::StringLiteral_strategy)
-def test_mitra::stringliteral_stringValue_type(instance):
-    assert isinstance(instance.stringValue, str)
+@given(instance=mitra_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_mitra_stringliteral_instantiation(instance):
+    assert isinstance(instance, mitra_StringLiteral)
 
 
-@given(instance=mitra::StringLiteral_strategy)
-def test_mitra::stringliteral_stringValue_setter(instance):
+
+@given(instance=mitra_StringLiteral_strategy)
+def test_mitra_stringliteral_stringValue_setter(instance):
     original = instance.stringValue
     instance.stringValue = original
     assert instance.stringValue == original
@@ -2722,9 +2686,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::StringLiteral_strategy)
+@given(instance=mitra_StringLiteral_strategy)
 @settings(max_examples=30)
-def test_mitra::stringliteral_tostring_changes_state(instance):
+def test_mitra_stringliteral_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2736,90 +2700,50 @@ def test_mitra::stringliteral_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::StringLiteral is empty"
+        assert has_statements, f"Function 'toString' in mitra_StringLiteral is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::StringLiteral did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_StringLiteral did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::StringLiteral is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_StringLiteral is not implemented or raised an error")
 
 @given(instance=TerminalExpression_strategy)
 @settings(max_examples=50)
 def test_terminalexpression_instantiation(instance):
     assert isinstance(instance, TerminalExpression)
 
-@given(instance=mitra::RuleInvocationSuper_strategy)
+@given(instance=mitra_VariableAccess_strategy)
 @settings(max_examples=50)
-def test_mitra::ruleinvocationsuper_instantiation(instance):
-    assert isinstance(instance, mitra::RuleInvocationSuper)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=mitra::RuleInvocationSuper_strategy)
-@settings(max_examples=30)
-def test_mitra::ruleinvocationsuper_tostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toString()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::RuleInvocationSuper is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::RuleInvocationSuper did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::RuleInvocationSuper is not implemented or raised an error")
-
-@given(instance=mitra::VariableAccess_strategy)
-@settings(max_examples=50)
-def test_mitra::variableaccess_instantiation(instance):
-    assert isinstance(instance, mitra::VariableAccess)
-
-@given(instance=mitra::VariableAccess_strategy)
-def test_mitra::variableaccess_postfixOperator_type(instance):
-    assert isinstance(instance.postfixOperator, str)
+def test_mitra_variableaccess_instantiation(instance):
+    assert isinstance(instance, mitra_VariableAccess)
 
 
-@given(instance=mitra::VariableAccess_strategy)
-def test_mitra::variableaccess_postfixOperator_setter(instance):
-    original = instance.postfixOperator
-    instance.postfixOperator = original
-    assert instance.postfixOperator == original
 
-@given(instance=mitra::VariableAccess_strategy)
-def test_mitra::variableaccess_prefixOperator_type(instance):
-    assert isinstance(instance.prefixOperator, str)
-
-
-@given(instance=mitra::VariableAccess_strategy)
-def test_mitra::variableaccess_prefixOperator_setter(instance):
+@given(instance=mitra_VariableAccess_strategy)
+def test_mitra_variableaccess_prefixOperator_setter(instance):
     original = instance.prefixOperator
     instance.prefixOperator = original
     assert instance.prefixOperator == original
 
+
+
+@given(instance=mitra_VariableAccess_strategy)
+def test_mitra_variableaccess_postfixOperator_setter(instance):
+    original = instance.postfixOperator
+    instance.postfixOperator = original
+    assert instance.postfixOperator == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::VariableAccess_strategy)
+@given(instance=mitra_VariableAccess_strategy)
 @settings(max_examples=30)
-def test_mitra::variableaccess_tostring_changes_state(instance):
+def test_mitra_variableaccess_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2831,29 +2755,19 @@ def test_mitra::variableaccess_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::VariableAccess is empty"
+        assert has_statements, f"Function 'toString' in mitra_VariableAccess is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::VariableAccess did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_VariableAccess did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::VariableAccess is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_VariableAccess is not implemented or raised an error")
 
-@given(instance=mitra::StaticAccess_strategy)
+@given(instance=mitra_RuleInvocation_strategy)
 @settings(max_examples=50)
-def test_mitra::staticaccess_instantiation(instance):
-    assert isinstance(instance, mitra::StaticAccess)
-
-@given(instance=mitra::ClassInstanceCreationExpression_strategy)
-@settings(max_examples=50)
-def test_mitra::classinstancecreationexpression_instantiation(instance):
-    assert isinstance(instance, mitra::ClassInstanceCreationExpression)
-
-@given(instance=mitra::RuleInvocation_strategy)
-@settings(max_examples=50)
-def test_mitra::ruleinvocation_instantiation(instance):
-    assert isinstance(instance, mitra::RuleInvocation)
+def test_mitra_ruleinvocation_instantiation(instance):
+    assert isinstance(instance, mitra_RuleInvocation)
 
 import warnings
 import copy
@@ -2861,9 +2775,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::RuleInvocation_strategy)
+@given(instance=mitra_RuleInvocation_strategy)
 @settings(max_examples=30)
-def test_mitra::ruleinvocation_tostring_changes_state(instance):
+def test_mitra_ruleinvocation_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2875,283 +2789,306 @@ def test_mitra::ruleinvocation_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::RuleInvocation is empty"
+        assert has_statements, f"Function 'toString' in mitra_RuleInvocation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::RuleInvocation did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_RuleInvocation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::RuleInvocation is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_RuleInvocation is not implemented or raised an error")
 
-@given(instance=mitra::Literal_strategy)
+@given(instance=mitra_RuleInvocationSuper_strategy)
 @settings(max_examples=50)
-def test_mitra::literal_instantiation(instance):
-    assert isinstance(instance, mitra::Literal)
+def test_mitra_ruleinvocationsuper_instantiation(instance):
+    assert isinstance(instance, mitra_RuleInvocationSuper)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=mitra_RuleInvocationSuper_strategy)
+@settings(max_examples=30)
+def test_mitra_ruleinvocationsuper_tostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toString()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toString' in mitra_RuleInvocationSuper is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toString' in mitra_RuleInvocationSuper did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toString' in mitra_RuleInvocationSuper is not implemented or raised an error")
+
+@given(instance=mitra_ClassInstanceCreationExpression_strategy)
+@settings(max_examples=50)
+def test_mitra_classinstancecreationexpression_instantiation(instance):
+    assert isinstance(instance, mitra_ClassInstanceCreationExpression)
+
+@given(instance=mitra_StaticAccess_strategy)
+@settings(max_examples=50)
+def test_mitra_staticaccess_instantiation(instance):
+    assert isinstance(instance, mitra_StaticAccess)
+
+@given(instance=mitra_Literal_strategy)
+@settings(max_examples=50)
+def test_mitra_literal_instantiation(instance):
+    assert isinstance(instance, mitra_Literal)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=mitra::UnaryMathExpression_strategy)
+@given(instance=mitra_IteratorExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::unarymathexpression_instantiation(instance):
-    assert isinstance(instance, mitra::UnaryMathExpression)
+def test_mitra_iteratorexpression_instantiation(instance):
+    assert isinstance(instance, mitra_IteratorExpression)
 
-@given(instance=mitra::UnaryMathExpression_strategy)
-def test_mitra::unarymathexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=mitra_BooleanExpression_strategy)
+@settings(max_examples=50)
+def test_mitra_booleanexpression_instantiation(instance):
+    assert isinstance(instance, mitra_BooleanExpression)
 
 
-@given(instance=mitra::UnaryMathExpression_strategy)
-def test_mitra::unarymathexpression_op_setter(instance):
+
+@given(instance=mitra_BooleanExpression_strategy)
+def test_mitra_booleanexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=mitra::BooleanExpression_strategy)
+@given(instance=mitra_UnaryBooleanExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::booleanexpression_instantiation(instance):
-    assert isinstance(instance, mitra::BooleanExpression)
+def test_mitra_unarybooleanexpression_instantiation(instance):
+    assert isinstance(instance, mitra_UnaryBooleanExpression)
 
-@given(instance=mitra::BooleanExpression_strategy)
-def test_mitra::booleanexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=mitra_RelationalExpression_strategy)
+@settings(max_examples=50)
+def test_mitra_relationalexpression_instantiation(instance):
+    assert isinstance(instance, mitra_RelationalExpression)
 
 
-@given(instance=mitra::BooleanExpression_strategy)
-def test_mitra::booleanexpression_op_setter(instance):
+
+@given(instance=mitra_RelationalExpression_strategy)
+def test_mitra_relationalexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=mitra::MathExpression_strategy)
+@given(instance=mitra_UnaryMathExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::mathexpression_instantiation(instance):
-    assert isinstance(instance, mitra::MathExpression)
-
-@given(instance=mitra::MathExpression_strategy)
-def test_mitra::mathexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_mitra_unarymathexpression_instantiation(instance):
+    assert isinstance(instance, mitra_UnaryMathExpression)
 
 
-@given(instance=mitra::MathExpression_strategy)
-def test_mitra::mathexpression_op_setter(instance):
+
+@given(instance=mitra_UnaryMathExpression_strategy)
+def test_mitra_unarymathexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=mitra::InstanceOfExpression_strategy)
+@given(instance=mitra_MathExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, mitra::InstanceOfExpression)
-
-@given(instance=mitra::UnaryBooleanExpression_strategy)
-@settings(max_examples=50)
-def test_mitra::unarybooleanexpression_instantiation(instance):
-    assert isinstance(instance, mitra::UnaryBooleanExpression)
-
-@given(instance=mitra::EqualityExpression_strategy)
-@settings(max_examples=50)
-def test_mitra::equalityexpression_instantiation(instance):
-    assert isinstance(instance, mitra::EqualityExpression)
-
-@given(instance=mitra::EqualityExpression_strategy)
-def test_mitra::equalityexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_mitra_mathexpression_instantiation(instance):
+    assert isinstance(instance, mitra_MathExpression)
 
 
-@given(instance=mitra::EqualityExpression_strategy)
-def test_mitra::equalityexpression_op_setter(instance):
+
+@given(instance=mitra_MathExpression_strategy)
+def test_mitra_mathexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=mitra::IteratorExpression_strategy)
+@given(instance=mitra_UnaryCastExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::iteratorexpression_instantiation(instance):
-    assert isinstance(instance, mitra::IteratorExpression)
+def test_mitra_unarycastexpression_instantiation(instance):
+    assert isinstance(instance, mitra_UnaryCastExpression)
 
-@given(instance=mitra::UnaryCastExpression_strategy)
+@given(instance=mitra_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::unarycastexpression_instantiation(instance):
-    assert isinstance(instance, mitra::UnaryCastExpression)
-
-@given(instance=mitra::RelationalExpression_strategy)
-@settings(max_examples=50)
-def test_mitra::relationalexpression_instantiation(instance):
-    assert isinstance(instance, mitra::RelationalExpression)
-
-@given(instance=mitra::RelationalExpression_strategy)
-def test_mitra::relationalexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_mitra_equalityexpression_instantiation(instance):
+    assert isinstance(instance, mitra_EqualityExpression)
 
 
-@given(instance=mitra::RelationalExpression_strategy)
-def test_mitra::relationalexpression_op_setter(instance):
+
+@given(instance=mitra_EqualityExpression_strategy)
+def test_mitra_equalityexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=mitra::TerminalExpression_strategy)
+@given(instance=mitra_InstanceOfExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::terminalexpression_instantiation(instance):
-    assert isinstance(instance, mitra::TerminalExpression)
+def test_mitra_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, mitra_InstanceOfExpression)
 
-@given(instance=mitra::Catch_strategy)
+@given(instance=mitra_TerminalExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::catch_instantiation(instance):
-    assert isinstance(instance, mitra::Catch)
+def test_mitra_terminalexpression_instantiation(instance):
+    assert isinstance(instance, mitra_TerminalExpression)
 
-@given(instance=mitra::LoopVariable_strategy)
+@given(instance=mitra_Catch_strategy)
 @settings(max_examples=50)
-def test_mitra::loopvariable_instantiation(instance):
-    assert isinstance(instance, mitra::LoopVariable)
+def test_mitra_catch_instantiation(instance):
+    assert isinstance(instance, mitra_Catch)
 
-@given(instance=mitra::ForUpdate_strategy)
+@given(instance=mitra_LoopVariable_strategy)
 @settings(max_examples=50)
-def test_mitra::forupdate_instantiation(instance):
-    assert isinstance(instance, mitra::ForUpdate)
+def test_mitra_loopvariable_instantiation(instance):
+    assert isinstance(instance, mitra_LoopVariable)
 
-@given(instance=mitra::ForInit_strategy)
+@given(instance=mitra_ForUpdate_strategy)
 @settings(max_examples=50)
-def test_mitra::forinit_instantiation(instance):
-    assert isinstance(instance, mitra::ForInit)
+def test_mitra_forupdate_instantiation(instance):
+    assert isinstance(instance, mitra_ForUpdate)
+
+@given(instance=mitra_ForInit_strategy)
+@settings(max_examples=50)
+def test_mitra_forinit_instantiation(instance):
+    assert isinstance(instance, mitra_ForInit)
 
 @given(instance=VarDeclaration_strategy)
 @settings(max_examples=50)
 def test_vardeclaration_instantiation(instance):
     assert isinstance(instance, VarDeclaration)
 
-@given(instance=mitra::InferredVarDeclaration_strategy)
+@given(instance=mitra_InferredVarDeclaration_strategy)
 @settings(max_examples=50)
-def test_mitra::inferredvardeclaration_instantiation(instance):
-    assert isinstance(instance, mitra::InferredVarDeclaration)
+def test_mitra_inferredvardeclaration_instantiation(instance):
+    assert isinstance(instance, mitra_InferredVarDeclaration)
 
-@given(instance=mitra::VarDeclaration_strategy)
+@given(instance=mitra_VarDeclaration_strategy)
 @settings(max_examples=50)
-def test_mitra::vardeclaration_instantiation(instance):
-    assert isinstance(instance, mitra::VarDeclaration)
-
-@given(instance=mitra::VarDeclaration_strategy)
-def test_mitra::vardeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mitra_vardeclaration_instantiation(instance):
+    assert isinstance(instance, mitra_VarDeclaration)
 
 
-@given(instance=mitra::VarDeclaration_strategy)
-def test_mitra::vardeclaration_name_setter(instance):
+
+@given(instance=mitra_VarDeclaration_strategy)
+def test_mitra_vardeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mitra::LocalVariableDeclaration_strategy)
+@given(instance=mitra_LocalVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_mitra::localvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, mitra::LocalVariableDeclaration)
+def test_mitra_localvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, mitra_LocalVariableDeclaration)
 
 @given(instance=BlockStatement_strategy)
 @settings(max_examples=50)
 def test_blockstatement_instantiation(instance):
     assert isinstance(instance, BlockStatement)
 
-@given(instance=mitra::LocalVariableDeclarationStatement_strategy)
+@given(instance=mitra_LocalVariableDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::localvariabledeclarationstatement_instantiation(instance):
-    assert isinstance(instance, mitra::LocalVariableDeclarationStatement)
+def test_mitra_localvariabledeclarationstatement_instantiation(instance):
+    assert isinstance(instance, mitra_LocalVariableDeclarationStatement)
 
-@given(instance=mitra::Statement_strategy)
+@given(instance=mitra_Statement_strategy)
 @settings(max_examples=50)
-def test_mitra::statement_instantiation(instance):
-    assert isinstance(instance, mitra::Statement)
+def test_mitra_statement_instantiation(instance):
+    assert isinstance(instance, mitra_Statement)
 
-@given(instance=mitra::BlockStatement_strategy)
+@given(instance=mitra_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::blockstatement_instantiation(instance):
-    assert isinstance(instance, mitra::BlockStatement)
+def test_mitra_blockstatement_instantiation(instance):
+    assert isinstance(instance, mitra_BlockStatement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=mitra::TryStatement_strategy)
+@given(instance=mitra_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::trystatement_instantiation(instance):
-    assert isinstance(instance, mitra::TryStatement)
+def test_mitra_whilestatement_instantiation(instance):
+    assert isinstance(instance, mitra_WhileStatement)
 
-@given(instance=mitra::ForStatement_strategy)
+@given(instance=mitra_TryStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::forstatement_instantiation(instance):
-    assert isinstance(instance, mitra::ForStatement)
+def test_mitra_trystatement_instantiation(instance):
+    assert isinstance(instance, mitra_TryStatement)
 
-@given(instance=mitra::EmptyStatement_strategy)
+@given(instance=mitra_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::emptystatement_instantiation(instance):
-    assert isinstance(instance, mitra::EmptyStatement)
+def test_mitra_throwstatement_instantiation(instance):
+    assert isinstance(instance, mitra_ThrowStatement)
 
-@given(instance=mitra::IfStatement_strategy)
+@given(instance=mitra_DoStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::ifstatement_instantiation(instance):
-    assert isinstance(instance, mitra::IfStatement)
+def test_mitra_dostatement_instantiation(instance):
+    assert isinstance(instance, mitra_DoStatement)
 
-@given(instance=mitra::WhileStatement_strategy)
+@given(instance=mitra_IfStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::whilestatement_instantiation(instance):
-    assert isinstance(instance, mitra::WhileStatement)
+def test_mitra_ifstatement_instantiation(instance):
+    assert isinstance(instance, mitra_IfStatement)
 
-@given(instance=mitra::BreakStatement_strategy)
+@given(instance=mitra_ForStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::breakstatement_instantiation(instance):
-    assert isinstance(instance, mitra::BreakStatement)
+def test_mitra_forstatement_instantiation(instance):
+    assert isinstance(instance, mitra_ForStatement)
 
-@given(instance=mitra::ThrowStatement_strategy)
+@given(instance=mitra_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::throwstatement_instantiation(instance):
-    assert isinstance(instance, mitra::ThrowStatement)
+def test_mitra_returnstatement_instantiation(instance):
+    assert isinstance(instance, mitra_ReturnStatement)
 
-@given(instance=mitra::DoStatement_strategy)
+@given(instance=mitra_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::dostatement_instantiation(instance):
-    assert isinstance(instance, mitra::DoStatement)
+def test_mitra_emptystatement_instantiation(instance):
+    assert isinstance(instance, mitra_EmptyStatement)
 
-@given(instance=mitra::ReturnStatement_strategy)
+@given(instance=mitra_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::returnstatement_instantiation(instance):
-    assert isinstance(instance, mitra::ReturnStatement)
+def test_mitra_breakstatement_instantiation(instance):
+    assert isinstance(instance, mitra_BreakStatement)
 
-@given(instance=mitra::StatementExpression_strategy)
+@given(instance=mitra_StatementExpression_strategy)
 @settings(max_examples=50)
-def test_mitra::statementexpression_instantiation(instance):
-    assert isinstance(instance, mitra::StatementExpression)
+def test_mitra_statementexpression_instantiation(instance):
+    assert isinstance(instance, mitra_StatementExpression)
 
-@given(instance=mitra::ExpressionStatement_strategy)
+@given(instance=mitra_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_mitra::expressionstatement_instantiation(instance):
-    assert isinstance(instance, mitra::ExpressionStatement)
+def test_mitra_expressionstatement_instantiation(instance):
+    assert isinstance(instance, mitra_ExpressionStatement)
 
-@given(instance=mitra::EClassifier_strategy)
+@given(instance=mitra_EClassifier_strategy)
 @settings(max_examples=50)
-def test_mitra::eclassifier_instantiation(instance):
-    assert isinstance(instance, mitra::EClassifier)
+def test_mitra_eclassifier_instantiation(instance):
+    assert isinstance(instance, mitra_EClassifier)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=mitra::CollectionType_strategy)
+@given(instance=mitra_CollectionType_strategy)
 @settings(max_examples=50)
-def test_mitra::collectiontype_instantiation(instance):
-    assert isinstance(instance, mitra::CollectionType)
-
-@given(instance=mitra::CollectionType_strategy)
-def test_mitra::collectiontype_collectionType_type(instance):
-    assert isinstance(instance.collectionType, str)
+def test_mitra_collectiontype_instantiation(instance):
+    assert isinstance(instance, mitra_CollectionType)
 
 
-@given(instance=mitra::CollectionType_strategy)
-def test_mitra::collectiontype_collectionType_setter(instance):
+
+@given(instance=mitra_CollectionType_strategy)
+def test_mitra_collectiontype_collectionType_setter(instance):
     original = instance.collectionType
     instance.collectionType = original
     assert instance.collectionType == original
@@ -3162,9 +3099,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::CollectionType_strategy)
+@given(instance=mitra_CollectionType_strategy)
 @settings(max_examples=30)
-def test_mitra::collectiontype_tostring_changes_state(instance):
+def test_mitra_collectiontype_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3176,19 +3113,19 @@ def test_mitra::collectiontype_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::CollectionType is empty"
+        assert has_statements, f"Function 'toString' in mitra_CollectionType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::CollectionType did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_CollectionType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::CollectionType is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_CollectionType is not implemented or raised an error")
 
-@given(instance=mitra::ReferenceType_strategy)
+@given(instance=mitra_ReferenceType_strategy)
 @settings(max_examples=50)
-def test_mitra::referencetype_instantiation(instance):
-    assert isinstance(instance, mitra::ReferenceType)
+def test_mitra_referencetype_instantiation(instance):
+    assert isinstance(instance, mitra_ReferenceType)
 
 import warnings
 import copy
@@ -3196,9 +3133,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::ReferenceType_strategy)
+@given(instance=mitra_ReferenceType_strategy)
 @settings(max_examples=30)
-def test_mitra::referencetype_tostring_changes_state(instance):
+def test_mitra_referencetype_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3210,58 +3147,52 @@ def test_mitra::referencetype_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::ReferenceType is empty"
+        assert has_statements, f"Function 'toString' in mitra_ReferenceType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::ReferenceType did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_ReferenceType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::ReferenceType is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_ReferenceType is not implemented or raised an error")
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=mitra::Parameter_strategy)
+@given(instance=mitra_Parameter_strategy)
 @settings(max_examples=50)
-def test_mitra::parameter_instantiation(instance):
-    assert isinstance(instance, mitra::Parameter)
-
-@given(instance=mitra::Parameter_strategy)
-def test_mitra::parameter_modifier_type(instance):
-    assert isinstance(instance.modifier, str)
+def test_mitra_parameter_instantiation(instance):
+    assert isinstance(instance, mitra_Parameter)
 
 
-@given(instance=mitra::Parameter_strategy)
-def test_mitra::parameter_modifier_setter(instance):
+
+@given(instance=mitra_Parameter_strategy)
+def test_mitra_parameter_modifier_setter(instance):
     original = instance.modifier
     instance.modifier = original
     assert instance.modifier == original
 
-@given(instance=mitra::Expression_strategy)
+@given(instance=mitra_Expression_strategy)
 @settings(max_examples=50)
-def test_mitra::expression_instantiation(instance):
-    assert isinstance(instance, mitra::Expression)
+def test_mitra_expression_instantiation(instance):
+    assert isinstance(instance, mitra_Expression)
 
-@given(instance=mitra::TypedVarDeclaration_strategy)
+@given(instance=mitra_TypedVarDeclaration_strategy)
 @settings(max_examples=50)
-def test_mitra::typedvardeclaration_instantiation(instance):
-    assert isinstance(instance, mitra::TypedVarDeclaration)
+def test_mitra_typedvardeclaration_instantiation(instance):
+    assert isinstance(instance, mitra_TypedVarDeclaration)
 
-@given(instance=mitra::PrimitiveType_strategy)
+@given(instance=mitra_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_mitra::primitivetype_instantiation(instance):
-    assert isinstance(instance, mitra::PrimitiveType)
-
-@given(instance=mitra::PrimitiveType_strategy)
-def test_mitra::primitivetype_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
+def test_mitra_primitivetype_instantiation(instance):
+    assert isinstance(instance, mitra_PrimitiveType)
 
 
-@given(instance=mitra::PrimitiveType_strategy)
-def test_mitra::primitivetype_primitiveType_setter(instance):
+
+@given(instance=mitra_PrimitiveType_strategy)
+def test_mitra_primitivetype_primitiveType_setter(instance):
     original = instance.primitiveType
     instance.primitiveType = original
     assert instance.primitiveType == original
@@ -3272,9 +3203,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::PrimitiveType_strategy)
+@given(instance=mitra_PrimitiveType_strategy)
 @settings(max_examples=30)
-def test_mitra::primitivetype_tostring_changes_state(instance):
+def test_mitra_primitivetype_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3286,29 +3217,29 @@ def test_mitra::primitivetype_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::PrimitiveType is empty"
+        assert has_statements, f"Function 'toString' in mitra_PrimitiveType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::PrimitiveType did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_PrimitiveType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::PrimitiveType is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_PrimitiveType is not implemented or raised an error")
 
 @given(instance=ParameterReference_strategy)
 @settings(max_examples=50)
 def test_parameterreference_instantiation(instance):
     assert isinstance(instance, ParameterReference)
 
-@given(instance=mitra::ParameterReference_strategy)
+@given(instance=mitra_ParameterReference_strategy)
 @settings(max_examples=50)
-def test_mitra::parameterreference_instantiation(instance):
-    assert isinstance(instance, mitra::ParameterReference)
+def test_mitra_parameterreference_instantiation(instance):
+    assert isinstance(instance, mitra_ParameterReference)
 
-@given(instance=mitra::QualifiedParameterReference_strategy)
+@given(instance=mitra_QualifiedParameterReference_strategy)
 @settings(max_examples=50)
-def test_mitra::qualifiedparameterreference_instantiation(instance):
-    assert isinstance(instance, mitra::QualifiedParameterReference)
+def test_mitra_qualifiedparameterreference_instantiation(instance):
+    assert isinstance(instance, mitra_QualifiedParameterReference)
 
 import warnings
 import copy
@@ -3316,9 +3247,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::QualifiedParameterReference_strategy)
+@given(instance=mitra_QualifiedParameterReference_strategy)
 @settings(max_examples=30)
-def test_mitra::qualifiedparameterreference_tostring_changes_state(instance):
+def test_mitra_qualifiedparameterreference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3330,27 +3261,24 @@ def test_mitra::qualifiedparameterreference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::QualifiedParameterReference is empty"
+        assert has_statements, f"Function 'toString' in mitra_QualifiedParameterReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::QualifiedParameterReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_QualifiedParameterReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::QualifiedParameterReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_QualifiedParameterReference is not implemented or raised an error")
 
-@given(instance=mitra::SimpleParameterReference_strategy)
+@given(instance=mitra_SimpleParameterReference_strategy)
 @settings(max_examples=50)
-def test_mitra::simpleparameterreference_instantiation(instance):
-    assert isinstance(instance, mitra::SimpleParameterReference)
-
-@given(instance=mitra::SimpleParameterReference_strategy)
-def test_mitra::simpleparameterreference_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mitra_simpleparameterreference_instantiation(instance):
+    assert isinstance(instance, mitra_SimpleParameterReference)
 
 
-@given(instance=mitra::SimpleParameterReference_strategy)
-def test_mitra::simpleparameterreference_name_setter(instance):
+
+@given(instance=mitra_SimpleParameterReference_strategy)
+def test_mitra_simpleparameterreference_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3361,9 +3289,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::SimpleParameterReference_strategy)
+@given(instance=mitra_SimpleParameterReference_strategy)
 @settings(max_examples=30)
-def test_mitra::simpleparameterreference_tostring_changes_state(instance):
+def test_mitra_simpleparameterreference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3375,24 +3303,24 @@ def test_mitra::simpleparameterreference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::SimpleParameterReference is empty"
+        assert has_statements, f"Function 'toString' in mitra_SimpleParameterReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::SimpleParameterReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_SimpleParameterReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::SimpleParameterReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_SimpleParameterReference is not implemented or raised an error")
 
 @given(instance=RuleReference_strategy)
 @settings(max_examples=50)
 def test_rulereference_instantiation(instance):
     assert isinstance(instance, RuleReference)
 
-@given(instance=mitra::QualifiedRuleReference_strategy)
+@given(instance=mitra_QualifiedRuleReference_strategy)
 @settings(max_examples=50)
-def test_mitra::qualifiedrulereference_instantiation(instance):
-    assert isinstance(instance, mitra::QualifiedRuleReference)
+def test_mitra_qualifiedrulereference_instantiation(instance):
+    assert isinstance(instance, mitra_QualifiedRuleReference)
 
 import warnings
 import copy
@@ -3400,9 +3328,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::QualifiedRuleReference_strategy)
+@given(instance=mitra_QualifiedRuleReference_strategy)
 @settings(max_examples=30)
-def test_mitra::qualifiedrulereference_tostring_changes_state(instance):
+def test_mitra_qualifiedrulereference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3414,39 +3342,39 @@ def test_mitra::qualifiedrulereference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::QualifiedRuleReference is empty"
+        assert has_statements, f"Function 'toString' in mitra_QualifiedRuleReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::QualifiedRuleReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_QualifiedRuleReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::QualifiedRuleReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_QualifiedRuleReference is not implemented or raised an error")
 
-@given(instance=mitra::RuleReference_strategy)
+@given(instance=mitra_RuleReference_strategy)
 @settings(max_examples=50)
-def test_mitra::rulereference_instantiation(instance):
-    assert isinstance(instance, mitra::RuleReference)
+def test_mitra_rulereference_instantiation(instance):
+    assert isinstance(instance, mitra_RuleReference)
 
-@given(instance=mitra::Block_strategy)
+@given(instance=mitra_Block_strategy)
 @settings(max_examples=50)
-def test_mitra::block_instantiation(instance):
-    assert isinstance(instance, mitra::Block)
+def test_mitra_block_instantiation(instance):
+    assert isinstance(instance, mitra_Block)
 
-@given(instance=mitra::JavaSpec_strategy)
+@given(instance=mitra_JavaSpec_strategy)
 @settings(max_examples=50)
-def test_mitra::javaspec_instantiation(instance):
-    assert isinstance(instance, mitra::JavaSpec)
+def test_mitra_javaspec_instantiation(instance):
+    assert isinstance(instance, mitra_JavaSpec)
 
-@given(instance=mitra::Trigger_strategy)
+@given(instance=mitra_Trigger_strategy)
 @settings(max_examples=50)
-def test_mitra::trigger_instantiation(instance):
-    assert isinstance(instance, mitra::Trigger)
+def test_mitra_trigger_instantiation(instance):
+    assert isinstance(instance, mitra_Trigger)
 
-@given(instance=mitra::SimpleRuleReference_strategy)
+@given(instance=mitra_SimpleRuleReference_strategy)
 @settings(max_examples=50)
-def test_mitra::simplerulereference_instantiation(instance):
-    assert isinstance(instance, mitra::SimpleRuleReference)
+def test_mitra_simplerulereference_instantiation(instance):
+    assert isinstance(instance, mitra_SimpleRuleReference)
 
 import warnings
 import copy
@@ -3454,9 +3382,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::SimpleRuleReference_strategy)
+@given(instance=mitra_SimpleRuleReference_strategy)
 @settings(max_examples=30)
-def test_mitra::simplerulereference_tostring_changes_state(instance):
+def test_mitra_simplerulereference_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3468,19 +3396,19 @@ def test_mitra::simplerulereference_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::SimpleRuleReference is empty"
+        assert has_statements, f"Function 'toString' in mitra_SimpleRuleReference is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::SimpleRuleReference did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_SimpleRuleReference did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::SimpleRuleReference is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_SimpleRuleReference is not implemented or raised an error")
 
-@given(instance=mitra::ReturnParameter_strategy)
+@given(instance=mitra_ReturnParameter_strategy)
 @settings(max_examples=50)
-def test_mitra::returnparameter_instantiation(instance):
-    assert isinstance(instance, mitra::ReturnParameter)
+def test_mitra_returnparameter_instantiation(instance):
+    assert isinstance(instance, mitra_ReturnParameter)
 
 import warnings
 import copy
@@ -3488,9 +3416,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::ReturnParameter_strategy)
+@given(instance=mitra_ReturnParameter_strategy)
 @settings(max_examples=30)
-def test_mitra::returnparameter_tostring_changes_state(instance):
+def test_mitra_returnparameter_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3502,19 +3430,19 @@ def test_mitra::returnparameter_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::ReturnParameter is empty"
+        assert has_statements, f"Function 'toString' in mitra_ReturnParameter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::ReturnParameter did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_ReturnParameter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::ReturnParameter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_ReturnParameter is not implemented or raised an error")
 
-@given(instance=mitra::FormalParameter_strategy)
+@given(instance=mitra_FormalParameter_strategy)
 @settings(max_examples=50)
-def test_mitra::formalparameter_instantiation(instance):
-    assert isinstance(instance, mitra::FormalParameter)
+def test_mitra_formalparameter_instantiation(instance):
+    assert isinstance(instance, mitra_FormalParameter)
 
 import warnings
 import copy
@@ -3522,9 +3450,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::FormalParameter_strategy)
+@given(instance=mitra_FormalParameter_strategy)
 @settings(max_examples=30)
-def test_mitra::formalparameter_tostring_changes_state(instance):
+def test_mitra_formalparameter_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3536,48 +3464,42 @@ def test_mitra::formalparameter_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::FormalParameter is empty"
+        assert has_statements, f"Function 'toString' in mitra_FormalParameter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::FormalParameter did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_FormalParameter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::FormalParameter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_FormalParameter is not implemented or raised an error")
 
-@given(instance=mitra::Annotation_strategy)
+@given(instance=mitra_Annotation_strategy)
 @settings(max_examples=50)
-def test_mitra::annotation_instantiation(instance):
-    assert isinstance(instance, mitra::Annotation)
+def test_mitra_annotation_instantiation(instance):
+    assert isinstance(instance, mitra_Annotation)
 
-@given(instance=mitra::Type_strategy)
+@given(instance=mitra_Type_strategy)
 @settings(max_examples=50)
-def test_mitra::type_instantiation(instance):
-    assert isinstance(instance, mitra::Type)
+def test_mitra_type_instantiation(instance):
+    assert isinstance(instance, mitra_Type)
 
-@given(instance=mitra::Property_strategy)
+@given(instance=mitra_Property_strategy)
 @settings(max_examples=50)
-def test_mitra::property_instantiation(instance):
-    assert isinstance(instance, mitra::Property)
-
-@given(instance=mitra::Property_strategy)
-def test_mitra::property_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mitra_property_instantiation(instance):
+    assert isinstance(instance, mitra_Property)
 
 
-@given(instance=mitra::Property_strategy)
-def test_mitra::property_value_setter(instance):
+
+@given(instance=mitra_Property_strategy)
+def test_mitra_property_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mitra::Property_strategy)
-def test_mitra::property_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mitra::Property_strategy)
-def test_mitra::property_name_setter(instance):
+@given(instance=mitra_Property_strategy)
+def test_mitra_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3588,9 +3510,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::Property_strategy)
+@given(instance=mitra_Property_strategy)
 @settings(max_examples=30)
-def test_mitra::property_tostring_changes_state(instance):
+def test_mitra_property_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3602,106 +3524,85 @@ def test_mitra::property_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::Property is empty"
+        assert has_statements, f"Function 'toString' in mitra_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_Property is not implemented or raised an error")
 
-@given(instance=mitra::RuleDeclaration_strategy)
+@given(instance=mitra_RuleDeclaration_strategy)
 @settings(max_examples=50)
-def test_mitra::ruledeclaration_instantiation(instance):
-    assert isinstance(instance, mitra::RuleDeclaration)
-
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_traced_type(instance):
-    assert isinstance(instance.traced, bool)
+def test_mitra_ruledeclaration_instantiation(instance):
+    assert isinstance(instance, mitra_RuleDeclaration)
 
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_traced_setter(instance):
-    original = instance.traced
-    instance.traced = original
-    assert instance.traced == original
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_multi_type(instance):
-    assert isinstance(instance.multi, bool)
-
-
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_multi_setter(instance):
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_multi_setter(instance):
     original = instance.multi
     instance.multi = original
     assert instance.multi == original
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_stealth_type(instance):
-    assert isinstance(instance.stealth, bool)
 
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_stealth_setter(instance):
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_traced_setter(instance):
+    original = instance.traced
+    instance.traced = original
+    assert instance.traced == original
+
+
+
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_stealth_setter(instance):
     original = instance.stealth
     instance.stealth = original
     assert instance.stealth == original
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_virtual_type(instance):
-    assert isinstance(instance.virtual, bool)
 
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_virtual_setter(instance):
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_virtual_setter(instance):
     original = instance.virtual
     instance.virtual = original
     assert instance.virtual == original
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_exec_type(instance):
-    assert isinstance(instance.exec, str)
-
-
-@given(instance=mitra::RuleDeclaration_strategy)
-def test_mitra::ruledeclaration_exec_setter(instance):
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_exec_setter(instance):
     original = instance.exec
     instance.exec = original
     assert instance.exec == original
 
+
+
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+
+
+@given(instance=mitra_RuleDeclaration_strategy)
+def test_mitra_ruledeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::RuleDeclaration_strategy)
+@given(instance=mitra_RuleDeclaration_strategy)
 @settings(max_examples=30)
-def test_mitra::ruledeclaration_tostring_changes_state(instance):
+def test_mitra_ruledeclaration_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3713,67 +3614,58 @@ def test_mitra::ruledeclaration_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::RuleDeclaration is empty"
+        assert has_statements, f"Function 'toString' in mitra_RuleDeclaration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::RuleDeclaration did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_RuleDeclaration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::RuleDeclaration is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_RuleDeclaration is not implemented or raised an error")
 
-@given(instance=mitra::AnnotationsDefinition_strategy)
+@given(instance=mitra_AnnotationsDefinition_strategy)
 @settings(max_examples=50)
-def test_mitra::annotationsdefinition_instantiation(instance):
-    assert isinstance(instance, mitra::AnnotationsDefinition)
+def test_mitra_annotationsdefinition_instantiation(instance):
+    assert isinstance(instance, mitra_AnnotationsDefinition)
 
-@given(instance=mitra::MetamodelDeclaration_strategy)
+@given(instance=mitra_MetamodelDeclaration_strategy)
 @settings(max_examples=50)
-def test_mitra::metamodeldeclaration_instantiation(instance):
-    assert isinstance(instance, mitra::MetamodelDeclaration)
-
-@given(instance=mitra::MetamodelDeclaration_strategy)
-def test_mitra::metamodeldeclaration_replaces_type(instance):
-    assert isinstance(instance.replaces, str)
+def test_mitra_metamodeldeclaration_instantiation(instance):
+    assert isinstance(instance, mitra_MetamodelDeclaration)
 
 
-@given(instance=mitra::MetamodelDeclaration_strategy)
-def test_mitra::metamodeldeclaration_replaces_setter(instance):
-    original = instance.replaces
-    instance.replaces = original
-    assert instance.replaces == original
 
-@given(instance=mitra::MetamodelDeclaration_strategy)
-def test_mitra::metamodeldeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mitra::MetamodelDeclaration_strategy)
-def test_mitra::metamodeldeclaration_name_setter(instance):
+@given(instance=mitra_MetamodelDeclaration_strategy)
+def test_mitra_metamodeldeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mitra::MetamodelDeclaration_strategy)
-def test_mitra::metamodeldeclaration_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=mitra::MetamodelDeclaration_strategy)
-def test_mitra::metamodeldeclaration_type_setter(instance):
+@given(instance=mitra_MetamodelDeclaration_strategy)
+def test_mitra_metamodeldeclaration_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
+
+
+@given(instance=mitra_MetamodelDeclaration_strategy)
+def test_mitra_metamodeldeclaration_replaces_setter(instance):
+    original = instance.replaces
+    instance.replaces = original
+    assert instance.replaces == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::MetamodelDeclaration_strategy)
+@given(instance=mitra_MetamodelDeclaration_strategy)
 @settings(max_examples=30)
-def test_mitra::metamodeldeclaration_tostring_changes_state(instance):
+def test_mitra_metamodeldeclaration_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3785,56 +3677,50 @@ def test_mitra::metamodeldeclaration_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::MetamodelDeclaration is empty"
+        assert has_statements, f"Function 'toString' in mitra_MetamodelDeclaration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::MetamodelDeclaration did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_MetamodelDeclaration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::MetamodelDeclaration is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_MetamodelDeclaration is not implemented or raised an error")
 
-@given(instance=mitra::ModuleReference_strategy)
+@given(instance=mitra_ModuleReference_strategy)
 @settings(max_examples=50)
-def test_mitra::modulereference_instantiation(instance):
-    assert isinstance(instance, mitra::ModuleReference)
+def test_mitra_modulereference_instantiation(instance):
+    assert isinstance(instance, mitra_ModuleReference)
 
-@given(instance=mitra::Module_strategy)
+@given(instance=mitra_Module_strategy)
 @settings(max_examples=50)
-def test_mitra::module_instantiation(instance):
-    assert isinstance(instance, mitra::Module)
-
-@given(instance=mitra::Module_strategy)
-def test_mitra::module_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_mitra_module_instantiation(instance):
+    assert isinstance(instance, mitra_Module)
 
 
-@given(instance=mitra::Module_strategy)
-def test_mitra::module_packageName_setter(instance):
-    original = instance.packageName
-    instance.packageName = original
-    assert instance.packageName == original
 
-@given(instance=mitra::Module_strategy)
-def test_mitra::module_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mitra::Module_strategy)
-def test_mitra::module_name_setter(instance):
+@given(instance=mitra_Module_strategy)
+def test_mitra_module_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=mitra_Module_strategy)
+def test_mitra_module_packageName_setter(instance):
+    original = instance.packageName
+    instance.packageName = original
+    assert instance.packageName == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=mitra::Module_strategy)
+@given(instance=mitra_Module_strategy)
 @settings(max_examples=30)
-def test_mitra::module_tostring_changes_state(instance):
+def test_mitra_module_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3846,11 +3732,11 @@ def test_mitra::module_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in mitra::Module is empty"
+        assert has_statements, f"Function 'toString' in mitra_Module is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in mitra::Module did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in mitra_Module did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in mitra::Module is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in mitra_Module is not implemented or raised an error")

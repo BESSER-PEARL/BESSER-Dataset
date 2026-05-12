@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ic::sub2::B3,
-    ic::sub2::B2,
-    ic::sub2::B1,
-    ic::sub1::A3,
-    ic::sub1::A2,
-    ic::sub1::A1,
-    ic::TopLevelClass,
+from python_code import (
+    ic_sub2_B3,
+    ic_sub2_B2,
+    ic_sub2_B1,
+    ic_sub1_A3,
+    ic_sub1_A2,
+    ic_sub1_A1,
+    ic_TopLevelClass,
 )
 
 # =============================================================================
@@ -21,100 +21,100 @@ from classes import (
 
 
 
-def test_ic::sub2::b3_is_not_abstract():
-    assert not inspect.isabstract(ic::sub2::B3)
+def test_ic_sub2_b3_is_not_abstract():
+    assert not inspect.isabstract(ic_sub2_B3)
 
 
-def test_ic::sub2::b3_constructor_exists():
-    assert callable(ic::sub2::B3.__init__)
+def test_ic_sub2_b3_constructor_exists():
+    assert callable(ic_sub2_B3.__init__)
 
 
-def test_ic::sub2::b3_constructor_args():
-    sig = inspect.signature(ic::sub2::B3.__init__)
+def test_ic_sub2_b3_constructor_args():
+    sig = inspect.signature(ic_sub2_B3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ic::sub2::b2_is_not_abstract():
-    assert not inspect.isabstract(ic::sub2::B2)
+def test_ic_sub2_b2_is_not_abstract():
+    assert not inspect.isabstract(ic_sub2_B2)
 
 
-def test_ic::sub2::b2_constructor_exists():
-    assert callable(ic::sub2::B2.__init__)
+def test_ic_sub2_b2_constructor_exists():
+    assert callable(ic_sub2_B2.__init__)
 
 
-def test_ic::sub2::b2_constructor_args():
-    sig = inspect.signature(ic::sub2::B2.__init__)
+def test_ic_sub2_b2_constructor_args():
+    sig = inspect.signature(ic_sub2_B2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ic::sub2::b1_is_not_abstract():
-    assert not inspect.isabstract(ic::sub2::B1)
+def test_ic_sub2_b1_is_not_abstract():
+    assert not inspect.isabstract(ic_sub2_B1)
 
 
-def test_ic::sub2::b1_constructor_exists():
-    assert callable(ic::sub2::B1.__init__)
+def test_ic_sub2_b1_constructor_exists():
+    assert callable(ic_sub2_B1.__init__)
 
 
-def test_ic::sub2::b1_constructor_args():
-    sig = inspect.signature(ic::sub2::B1.__init__)
+def test_ic_sub2_b1_constructor_args():
+    sig = inspect.signature(ic_sub2_B1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ic::sub1::a3_is_not_abstract():
-    assert not inspect.isabstract(ic::sub1::A3)
+def test_ic_sub1_a3_is_not_abstract():
+    assert not inspect.isabstract(ic_sub1_A3)
 
 
-def test_ic::sub1::a3_constructor_exists():
-    assert callable(ic::sub1::A3.__init__)
+def test_ic_sub1_a3_constructor_exists():
+    assert callable(ic_sub1_A3.__init__)
 
 
-def test_ic::sub1::a3_constructor_args():
-    sig = inspect.signature(ic::sub1::A3.__init__)
+def test_ic_sub1_a3_constructor_args():
+    sig = inspect.signature(ic_sub1_A3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ic::sub1::a2_is_not_abstract():
-    assert not inspect.isabstract(ic::sub1::A2)
+def test_ic_sub1_a2_is_not_abstract():
+    assert not inspect.isabstract(ic_sub1_A2)
 
 
-def test_ic::sub1::a2_constructor_exists():
-    assert callable(ic::sub1::A2.__init__)
+def test_ic_sub1_a2_constructor_exists():
+    assert callable(ic_sub1_A2.__init__)
 
 
-def test_ic::sub1::a2_constructor_args():
-    sig = inspect.signature(ic::sub1::A2.__init__)
+def test_ic_sub1_a2_constructor_args():
+    sig = inspect.signature(ic_sub1_A2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ic::sub1::a1_is_not_abstract():
-    assert not inspect.isabstract(ic::sub1::A1)
+def test_ic_sub1_a1_is_not_abstract():
+    assert not inspect.isabstract(ic_sub1_A1)
 
 
-def test_ic::sub1::a1_constructor_exists():
-    assert callable(ic::sub1::A1.__init__)
+def test_ic_sub1_a1_constructor_exists():
+    assert callable(ic_sub1_A1.__init__)
 
 
-def test_ic::sub1::a1_constructor_args():
-    sig = inspect.signature(ic::sub1::A1.__init__)
+def test_ic_sub1_a1_constructor_args():
+    sig = inspect.signature(ic_sub1_A1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ic::toplevelclass_is_not_abstract():
-    assert not inspect.isabstract(ic::TopLevelClass)
+def test_ic_toplevelclass_is_not_abstract():
+    assert not inspect.isabstract(ic_TopLevelClass)
 
 
-def test_ic::toplevelclass_constructor_exists():
-    assert callable(ic::TopLevelClass.__init__)
+def test_ic_toplevelclass_constructor_exists():
+    assert callable(ic_TopLevelClass.__init__)
 
 
-def test_ic::toplevelclass_constructor_args():
-    sig = inspect.signature(ic::TopLevelClass.__init__)
+def test_ic_toplevelclass_constructor_args():
+    sig = inspect.signature(ic_TopLevelClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,59 +129,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ic::sub2::B3_strategy = st.builds(
-    ic::sub2::B3,
+ic_sub2_B3_strategy = st.builds(
+    ic_sub2_B3,
 )
-ic::sub2::B2_strategy = st.builds(
-    ic::sub2::B2,
+ic_sub2_B2_strategy = st.builds(
+    ic_sub2_B2,
 )
-ic::sub2::B1_strategy = st.builds(
-    ic::sub2::B1,
+ic_sub2_B1_strategy = st.builds(
+    ic_sub2_B1,
 )
-ic::sub1::A3_strategy = st.builds(
-    ic::sub1::A3,
+ic_sub1_A3_strategy = st.builds(
+    ic_sub1_A3,
 )
-ic::sub1::A2_strategy = st.builds(
-    ic::sub1::A2,
+ic_sub1_A2_strategy = st.builds(
+    ic_sub1_A2,
 )
-ic::sub1::A1_strategy = st.builds(
-    ic::sub1::A1,
+ic_sub1_A1_strategy = st.builds(
+    ic_sub1_A1,
 )
-ic::TopLevelClass_strategy = st.builds(
-    ic::TopLevelClass,
+ic_TopLevelClass_strategy = st.builds(
+    ic_TopLevelClass,
 )
 
-@given(instance=ic::sub2::B3_strategy)
+@given(instance=ic_sub2_B3_strategy)
 @settings(max_examples=50)
-def test_ic::sub2::b3_instantiation(instance):
-    assert isinstance(instance, ic::sub2::B3)
+def test_ic_sub2_b3_instantiation(instance):
+    assert isinstance(instance, ic_sub2_B3)
 
-@given(instance=ic::sub2::B2_strategy)
+@given(instance=ic_sub2_B2_strategy)
 @settings(max_examples=50)
-def test_ic::sub2::b2_instantiation(instance):
-    assert isinstance(instance, ic::sub2::B2)
+def test_ic_sub2_b2_instantiation(instance):
+    assert isinstance(instance, ic_sub2_B2)
 
-@given(instance=ic::sub2::B1_strategy)
+@given(instance=ic_sub2_B1_strategy)
 @settings(max_examples=50)
-def test_ic::sub2::b1_instantiation(instance):
-    assert isinstance(instance, ic::sub2::B1)
+def test_ic_sub2_b1_instantiation(instance):
+    assert isinstance(instance, ic_sub2_B1)
 
-@given(instance=ic::sub1::A3_strategy)
+@given(instance=ic_sub1_A3_strategy)
 @settings(max_examples=50)
-def test_ic::sub1::a3_instantiation(instance):
-    assert isinstance(instance, ic::sub1::A3)
+def test_ic_sub1_a3_instantiation(instance):
+    assert isinstance(instance, ic_sub1_A3)
 
-@given(instance=ic::sub1::A2_strategy)
+@given(instance=ic_sub1_A2_strategy)
 @settings(max_examples=50)
-def test_ic::sub1::a2_instantiation(instance):
-    assert isinstance(instance, ic::sub1::A2)
+def test_ic_sub1_a2_instantiation(instance):
+    assert isinstance(instance, ic_sub1_A2)
 
-@given(instance=ic::sub1::A1_strategy)
+@given(instance=ic_sub1_A1_strategy)
 @settings(max_examples=50)
-def test_ic::sub1::a1_instantiation(instance):
-    assert isinstance(instance, ic::sub1::A1)
+def test_ic_sub1_a1_instantiation(instance):
+    assert isinstance(instance, ic_sub1_A1)
 
-@given(instance=ic::TopLevelClass_strategy)
+@given(instance=ic_TopLevelClass_strategy)
 @settings(max_examples=50)
-def test_ic::toplevelclass_instantiation(instance):
-    assert isinstance(instance, ic::TopLevelClass)
+def test_ic_toplevelclass_instantiation(instance):
+    assert isinstance(instance, ic_TopLevelClass)

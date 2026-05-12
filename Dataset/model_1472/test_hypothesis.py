@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Node,
+from python_code import (
+    graph_Node,
     one,
-    graph::Graph,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -17,16 +17,16 @@ from classes import (
 
 
 
-def test_graph::node_is_not_abstract():
-    assert not inspect.isabstract(graph::Node)
+def test_graph_node_is_not_abstract():
+    assert not inspect.isabstract(graph_Node)
 
 
-def test_graph::node_constructor_exists():
-    assert callable(graph::Node.__init__)
+def test_graph_node_constructor_exists():
+    assert callable(graph_Node.__init__)
 
 
-def test_graph::node_constructor_args():
-    sig = inspect.signature(graph::Node.__init__)
+def test_graph_node_constructor_args():
+    sig = inspect.signature(graph_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -45,16 +45,16 @@ def test_one_constructor_args():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Node_strategy = st.builds(
-    graph::Node,
+graph_Node_strategy = st.builds(
+    graph_Node,
 )
 one_strategy = st.builds(
     one,
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
 )
 
-@given(instance=graph::Node_strategy)
+@given(instance=graph_Node_strategy)
 @settings(max_examples=50)
-def test_graph::node_instantiation(instance):
-    assert isinstance(instance, graph::Node)
+def test_graph_node_instantiation(instance):
+    assert isinstance(instance, graph_Node)
 
 @given(instance=one_strategy)
 @settings(max_examples=50)
 def test_one_instantiation(instance):
     assert isinstance(instance, one)
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)

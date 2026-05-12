@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    database::DatabaseElement,
+from python_code import (
+    database_DatabaseElement,
     AbstractTable,
-    database::View,
-    database::Table,
-    database::Type,
+    database_View,
+    database_Table,
+    database_Type,
     NamedElement,
-    database::Column,
-    database::Constraint,
-    database::TableContainer,
-    database::Sequence,
-    database::Index,
-    database::AbstractTable,
-    database::UserDefinedTypesLibrary,
+    database_Sequence,
+    database_Index,
+    database_TableContainer,
+    database_Column,
+    database_Constraint,
+    database_AbstractTable,
+    database_UserDefinedTypesLibrary,
     TypesLibraryUser,
     TableContainer,
-    database::Schema,
-    database::DataBase,
+    database_Schema,
+    database_DataBase,
     DatabaseElement,
-    database::IndexElement,
-    database::ForeignKeyElement,
-    database::ForeignKey,
-    database::PrimaryKey,
-    database::NamedElement,
+    database_ForeignKeyElement,
+    database_IndexElement,
+    database_ForeignKey,
+    database_PrimaryKey,
+    database_NamedElement,
 )
 
 # =============================================================================
@@ -37,45 +37,45 @@ from classes import (
 
 
 
-def test_database::databaseelement_is_not_abstract():
-    assert not inspect.isabstract(database::DatabaseElement)
+def test_database_databaseelement_is_not_abstract():
+    assert not inspect.isabstract(database_DatabaseElement)
 
 
-def test_database::databaseelement_constructor_exists():
-    assert callable(database::DatabaseElement.__init__)
+def test_database_databaseelement_constructor_exists():
+    assert callable(database_DatabaseElement.__init__)
 
 
-def test_database::databaseelement_constructor_args():
-    sig = inspect.signature(database::DatabaseElement.__init__)
+def test_database_databaseelement_constructor_args():
+    sig = inspect.signature(database_DatabaseElement.__init__)
     params = list(sig.parameters.keys())
     assert "comments" in params, "Missing parameter 'comments'"
-    assert "techID" in params, "Missing parameter 'techID'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "techID" in params, "Missing parameter 'techID'"
 
-def test_database::databaseelement_has_comments():
-    assert hasattr(database::DatabaseElement, "comments")
+def test_database_databaseelement_has_comments():
+    assert hasattr(database_DatabaseElement, "comments")
     descriptor = None
-    for klass in database::DatabaseElement.__mro__:
+    for klass in database_DatabaseElement.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::databaseelement_has_techID():
-    assert hasattr(database::DatabaseElement, "techID")
+def test_database_databaseelement_has_ID():
+    assert hasattr(database_DatabaseElement, "ID")
     descriptor = None
-    for klass in database::DatabaseElement.__mro__:
-        if "techID" in klass.__dict__:
-            descriptor = klass.__dict__["techID"]
+    for klass in database_DatabaseElement.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::databaseelement_has_ID():
-    assert hasattr(database::DatabaseElement, "ID")
+def test_database_databaseelement_has_techID():
+    assert hasattr(database_DatabaseElement, "techID")
     descriptor = None
-    for klass in database::DatabaseElement.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+    for klass in database_DatabaseElement.__mro__:
+        if "techID" in klass.__dict__:
+            descriptor = klass.__dict__["techID"]
             break
     assert isinstance(descriptor, property)
 
@@ -95,23 +95,23 @@ def test_abstracttable_constructor_args():
 
 
 
-def test_database::view_is_not_abstract():
-    assert not inspect.isabstract(database::View)
+def test_database_view_is_not_abstract():
+    assert not inspect.isabstract(database_View)
 
 
-def test_database::view_constructor_exists():
-    assert callable(database::View.__init__)
+def test_database_view_constructor_exists():
+    assert callable(database_View.__init__)
 
 
-def test_database::view_constructor_args():
-    sig = inspect.signature(database::View.__init__)
+def test_database_view_constructor_args():
+    sig = inspect.signature(database_View.__init__)
     params = list(sig.parameters.keys())
     assert "query" in params, "Missing parameter 'query'"
 
-def test_database::view_has_query():
-    assert hasattr(database::View, "query")
+def test_database_view_has_query():
+    assert hasattr(database_View, "query")
     descriptor = None
-    for klass in database::View.__mro__:
+    for klass in database_View.__mro__:
         if "query" in klass.__dict__:
             descriptor = klass.__dict__["query"]
             break
@@ -119,30 +119,30 @@ def test_database::view_has_query():
 
 
 
-def test_database::table_is_not_abstract():
-    assert not inspect.isabstract(database::Table)
+def test_database_table_is_not_abstract():
+    assert not inspect.isabstract(database_Table)
 
 
-def test_database::table_constructor_exists():
-    assert callable(database::Table.__init__)
+def test_database_table_constructor_exists():
+    assert callable(database_Table.__init__)
 
 
-def test_database::table_constructor_args():
-    sig = inspect.signature(database::Table.__init__)
+def test_database_table_constructor_args():
+    sig = inspect.signature(database_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_database::type_is_not_abstract():
-    assert not inspect.isabstract(database::Type)
+def test_database_type_is_not_abstract():
+    assert not inspect.isabstract(database_Type)
 
 
-def test_database::type_constructor_exists():
-    assert callable(database::Type.__init__)
+def test_database_type_constructor_exists():
+    assert callable(database_Type.__init__)
 
 
-def test_database::type_constructor_args():
-    sig = inspect.signature(database::Type.__init__)
+def test_database_type_constructor_args():
+    sig = inspect.signature(database_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -161,73 +161,215 @@ def test_namedelement_constructor_args():
 
 
 
-def test_database::column_is_not_abstract():
-    assert not inspect.isabstract(database::Column)
+def test_database_sequence_is_not_abstract():
+    assert not inspect.isabstract(database_Sequence)
 
 
-def test_database::column_constructor_exists():
-    assert callable(database::Column.__init__)
+def test_database_sequence_constructor_exists():
+    assert callable(database_Sequence.__init__)
 
 
-def test_database::column_constructor_args():
-    sig = inspect.signature(database::Column.__init__)
+def test_database_sequence_constructor_args():
+    sig = inspect.signature(database_Sequence.__init__)
     params = list(sig.parameters.keys())
-    assert "inForeignKey" in params, "Missing parameter 'inForeignKey'"
-    assert "inPrimaryKey" in params, "Missing parameter 'inPrimaryKey'"
-    assert "autoincrement" in params, "Missing parameter 'autoincrement'"
-    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "maxValue" in params, "Missing parameter 'maxValue'"
+    assert "cycle" in params, "Missing parameter 'cycle'"
+    assert "minValue" in params, "Missing parameter 'minValue'"
+    assert "increment" in params, "Missing parameter 'increment'"
+    assert "cacheSize" in params, "Missing parameter 'cacheSize'"
+    assert "start" in params, "Missing parameter 'start'"
+
+def test_database_sequence_has_maxValue():
+    assert hasattr(database_Sequence, "maxValue")
+    descriptor = None
+    for klass in database_Sequence.__mro__:
+        if "maxValue" in klass.__dict__:
+            descriptor = klass.__dict__["maxValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_sequence_has_cycle():
+    assert hasattr(database_Sequence, "cycle")
+    descriptor = None
+    for klass in database_Sequence.__mro__:
+        if "cycle" in klass.__dict__:
+            descriptor = klass.__dict__["cycle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_sequence_has_minValue():
+    assert hasattr(database_Sequence, "minValue")
+    descriptor = None
+    for klass in database_Sequence.__mro__:
+        if "minValue" in klass.__dict__:
+            descriptor = klass.__dict__["minValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_sequence_has_increment():
+    assert hasattr(database_Sequence, "increment")
+    descriptor = None
+    for klass in database_Sequence.__mro__:
+        if "increment" in klass.__dict__:
+            descriptor = klass.__dict__["increment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_sequence_has_cacheSize():
+    assert hasattr(database_Sequence, "cacheSize")
+    descriptor = None
+    for klass in database_Sequence.__mro__:
+        if "cacheSize" in klass.__dict__:
+            descriptor = klass.__dict__["cacheSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_sequence_has_start():
+    assert hasattr(database_Sequence, "start")
+    descriptor = None
+    for klass in database_Sequence.__mro__:
+        if "start" in klass.__dict__:
+            descriptor = klass.__dict__["start"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_database_index_is_not_abstract():
+    assert not inspect.isabstract(database_Index)
+
+
+def test_database_index_constructor_exists():
+    assert callable(database_Index.__init__)
+
+
+def test_database_index_constructor_args():
+    sig = inspect.signature(database_Index.__init__)
+    params = list(sig.parameters.keys())
+    assert "cardinality" in params, "Missing parameter 'cardinality'"
+    assert "indexType" in params, "Missing parameter 'indexType'"
+    assert "qualifier" in params, "Missing parameter 'qualifier'"
     assert "unique" in params, "Missing parameter 'unique'"
-    assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_database::column_has_inForeignKey():
-    assert hasattr(database::Column, "inForeignKey")
+def test_database_index_has_cardinality():
+    assert hasattr(database_Index, "cardinality")
     descriptor = None
-    for klass in database::Column.__mro__:
-        if "inForeignKey" in klass.__dict__:
-            descriptor = klass.__dict__["inForeignKey"]
+    for klass in database_Index.__mro__:
+        if "cardinality" in klass.__dict__:
+            descriptor = klass.__dict__["cardinality"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_inPrimaryKey():
-    assert hasattr(database::Column, "inPrimaryKey")
+def test_database_index_has_indexType():
+    assert hasattr(database_Index, "indexType")
     descriptor = None
-    for klass in database::Column.__mro__:
-        if "inPrimaryKey" in klass.__dict__:
-            descriptor = klass.__dict__["inPrimaryKey"]
+    for klass in database_Index.__mro__:
+        if "indexType" in klass.__dict__:
+            descriptor = klass.__dict__["indexType"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_autoincrement():
-    assert hasattr(database::Column, "autoincrement")
+def test_database_index_has_qualifier():
+    assert hasattr(database_Index, "qualifier")
     descriptor = None
-    for klass in database::Column.__mro__:
-        if "autoincrement" in klass.__dict__:
-            descriptor = klass.__dict__["autoincrement"]
+    for klass in database_Index.__mro__:
+        if "qualifier" in klass.__dict__:
+            descriptor = klass.__dict__["qualifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_defaultValue():
-    assert hasattr(database::Column, "defaultValue")
+def test_database_index_has_unique():
+    assert hasattr(database_Index, "unique")
     descriptor = None
-    for klass in database::Column.__mro__:
-        if "defaultValue" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::column_has_unique():
-    assert hasattr(database::Column, "unique")
-    descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Index.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_nullable():
-    assert hasattr(database::Column, "nullable")
+
+
+def test_database_tablecontainer_is_not_abstract():
+    assert not inspect.isabstract(database_TableContainer)
+
+
+def test_database_tablecontainer_constructor_exists():
+    assert callable(database_TableContainer.__init__)
+
+
+def test_database_tablecontainer_constructor_args():
+    sig = inspect.signature(database_TableContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_database_column_is_not_abstract():
+    assert not inspect.isabstract(database_Column)
+
+
+def test_database_column_constructor_exists():
+    assert callable(database_Column.__init__)
+
+
+def test_database_column_constructor_args():
+    sig = inspect.signature(database_Column.__init__)
+    params = list(sig.parameters.keys())
+    assert "unique" in params, "Missing parameter 'unique'"
+    assert "inPrimaryKey" in params, "Missing parameter 'inPrimaryKey'"
+    assert "inForeignKey" in params, "Missing parameter 'inForeignKey'"
+    assert "autoincrement" in params, "Missing parameter 'autoincrement'"
+    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
+    assert "nullable" in params, "Missing parameter 'nullable'"
+
+def test_database_column_has_unique():
+    assert hasattr(database_Column, "unique")
     descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Column.__mro__:
+        if "unique" in klass.__dict__:
+            descriptor = klass.__dict__["unique"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_inPrimaryKey():
+    assert hasattr(database_Column, "inPrimaryKey")
+    descriptor = None
+    for klass in database_Column.__mro__:
+        if "inPrimaryKey" in klass.__dict__:
+            descriptor = klass.__dict__["inPrimaryKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_inForeignKey():
+    assert hasattr(database_Column, "inForeignKey")
+    descriptor = None
+    for klass in database_Column.__mro__:
+        if "inForeignKey" in klass.__dict__:
+            descriptor = klass.__dict__["inForeignKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_autoincrement():
+    assert hasattr(database_Column, "autoincrement")
+    descriptor = None
+    for klass in database_Column.__mro__:
+        if "autoincrement" in klass.__dict__:
+            descriptor = klass.__dict__["autoincrement"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_defaultValue():
+    assert hasattr(database_Column, "defaultValue")
+    descriptor = None
+    for klass in database_Column.__mro__:
+        if "defaultValue" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_nullable():
+    assert hasattr(database_Column, "nullable")
+    descriptor = None
+    for klass in database_Column.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -235,23 +377,23 @@ def test_database::column_has_nullable():
 
 
 
-def test_database::constraint_is_not_abstract():
-    assert not inspect.isabstract(database::Constraint)
+def test_database_constraint_is_not_abstract():
+    assert not inspect.isabstract(database_Constraint)
 
 
-def test_database::constraint_constructor_exists():
-    assert callable(database::Constraint.__init__)
+def test_database_constraint_constructor_exists():
+    assert callable(database_Constraint.__init__)
 
 
-def test_database::constraint_constructor_args():
-    sig = inspect.signature(database::Constraint.__init__)
+def test_database_constraint_constructor_args():
+    sig = inspect.signature(database_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_database::constraint_has_expression():
-    assert hasattr(database::Constraint, "expression")
+def test_database_constraint_has_expression():
+    assert hasattr(database_Constraint, "expression")
     descriptor = None
-    for klass in database::Constraint.__mro__:
+    for klass in database_Constraint.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -259,172 +401,30 @@ def test_database::constraint_has_expression():
 
 
 
-def test_database::tablecontainer_is_not_abstract():
-    assert not inspect.isabstract(database::TableContainer)
+def test_database_abstracttable_is_not_abstract():
+    assert not inspect.isabstract(database_AbstractTable)
 
 
-def test_database::tablecontainer_constructor_exists():
-    assert callable(database::TableContainer.__init__)
+def test_database_abstracttable_constructor_exists():
+    assert callable(database_AbstractTable.__init__)
 
 
-def test_database::tablecontainer_constructor_args():
-    sig = inspect.signature(database::TableContainer.__init__)
+def test_database_abstracttable_constructor_args():
+    sig = inspect.signature(database_AbstractTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_database::sequence_is_not_abstract():
-    assert not inspect.isabstract(database::Sequence)
+def test_database_userdefinedtypeslibrary_is_not_abstract():
+    assert not inspect.isabstract(database_UserDefinedTypesLibrary)
 
 
-def test_database::sequence_constructor_exists():
-    assert callable(database::Sequence.__init__)
+def test_database_userdefinedtypeslibrary_constructor_exists():
+    assert callable(database_UserDefinedTypesLibrary.__init__)
 
 
-def test_database::sequence_constructor_args():
-    sig = inspect.signature(database::Sequence.__init__)
-    params = list(sig.parameters.keys())
-    assert "maxValue" in params, "Missing parameter 'maxValue'"
-    assert "cacheSize" in params, "Missing parameter 'cacheSize'"
-    assert "increment" in params, "Missing parameter 'increment'"
-    assert "start" in params, "Missing parameter 'start'"
-    assert "cycle" in params, "Missing parameter 'cycle'"
-    assert "minValue" in params, "Missing parameter 'minValue'"
-
-def test_database::sequence_has_maxValue():
-    assert hasattr(database::Sequence, "maxValue")
-    descriptor = None
-    for klass in database::Sequence.__mro__:
-        if "maxValue" in klass.__dict__:
-            descriptor = klass.__dict__["maxValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::sequence_has_cacheSize():
-    assert hasattr(database::Sequence, "cacheSize")
-    descriptor = None
-    for klass in database::Sequence.__mro__:
-        if "cacheSize" in klass.__dict__:
-            descriptor = klass.__dict__["cacheSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::sequence_has_increment():
-    assert hasattr(database::Sequence, "increment")
-    descriptor = None
-    for klass in database::Sequence.__mro__:
-        if "increment" in klass.__dict__:
-            descriptor = klass.__dict__["increment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::sequence_has_start():
-    assert hasattr(database::Sequence, "start")
-    descriptor = None
-    for klass in database::Sequence.__mro__:
-        if "start" in klass.__dict__:
-            descriptor = klass.__dict__["start"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::sequence_has_cycle():
-    assert hasattr(database::Sequence, "cycle")
-    descriptor = None
-    for klass in database::Sequence.__mro__:
-        if "cycle" in klass.__dict__:
-            descriptor = klass.__dict__["cycle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::sequence_has_minValue():
-    assert hasattr(database::Sequence, "minValue")
-    descriptor = None
-    for klass in database::Sequence.__mro__:
-        if "minValue" in klass.__dict__:
-            descriptor = klass.__dict__["minValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_database::index_is_not_abstract():
-    assert not inspect.isabstract(database::Index)
-
-
-def test_database::index_constructor_exists():
-    assert callable(database::Index.__init__)
-
-
-def test_database::index_constructor_args():
-    sig = inspect.signature(database::Index.__init__)
-    params = list(sig.parameters.keys())
-    assert "indexType" in params, "Missing parameter 'indexType'"
-    assert "unique" in params, "Missing parameter 'unique'"
-    assert "cardinality" in params, "Missing parameter 'cardinality'"
-    assert "qualifier" in params, "Missing parameter 'qualifier'"
-
-def test_database::index_has_indexType():
-    assert hasattr(database::Index, "indexType")
-    descriptor = None
-    for klass in database::Index.__mro__:
-        if "indexType" in klass.__dict__:
-            descriptor = klass.__dict__["indexType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::index_has_unique():
-    assert hasattr(database::Index, "unique")
-    descriptor = None
-    for klass in database::Index.__mro__:
-        if "unique" in klass.__dict__:
-            descriptor = klass.__dict__["unique"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::index_has_cardinality():
-    assert hasattr(database::Index, "cardinality")
-    descriptor = None
-    for klass in database::Index.__mro__:
-        if "cardinality" in klass.__dict__:
-            descriptor = klass.__dict__["cardinality"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database::index_has_qualifier():
-    assert hasattr(database::Index, "qualifier")
-    descriptor = None
-    for klass in database::Index.__mro__:
-        if "qualifier" in klass.__dict__:
-            descriptor = klass.__dict__["qualifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_database::abstracttable_is_not_abstract():
-    assert not inspect.isabstract(database::AbstractTable)
-
-
-def test_database::abstracttable_constructor_exists():
-    assert callable(database::AbstractTable.__init__)
-
-
-def test_database::abstracttable_constructor_args():
-    sig = inspect.signature(database::AbstractTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_database::userdefinedtypeslibrary_is_not_abstract():
-    assert not inspect.isabstract(database::UserDefinedTypesLibrary)
-
-
-def test_database::userdefinedtypeslibrary_constructor_exists():
-    assert callable(database::UserDefinedTypesLibrary.__init__)
-
-
-def test_database::userdefinedtypeslibrary_constructor_args():
-    sig = inspect.signature(database::UserDefinedTypesLibrary.__init__)
+def test_database_userdefinedtypeslibrary_constructor_args():
+    sig = inspect.signature(database_UserDefinedTypesLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -457,37 +457,37 @@ def test_tablecontainer_constructor_args():
 
 
 
-def test_database::schema_is_not_abstract():
-    assert not inspect.isabstract(database::Schema)
+def test_database_schema_is_not_abstract():
+    assert not inspect.isabstract(database_Schema)
 
 
-def test_database::schema_constructor_exists():
-    assert callable(database::Schema.__init__)
+def test_database_schema_constructor_exists():
+    assert callable(database_Schema.__init__)
 
 
-def test_database::schema_constructor_args():
-    sig = inspect.signature(database::Schema.__init__)
+def test_database_schema_constructor_args():
+    sig = inspect.signature(database_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_database::database_is_not_abstract():
-    assert not inspect.isabstract(database::DataBase)
+def test_database_database_is_not_abstract():
+    assert not inspect.isabstract(database_DataBase)
 
 
-def test_database::database_constructor_exists():
-    assert callable(database::DataBase.__init__)
+def test_database_database_constructor_exists():
+    assert callable(database_DataBase.__init__)
 
 
-def test_database::database_constructor_args():
-    sig = inspect.signature(database::DataBase.__init__)
+def test_database_database_constructor_args():
+    sig = inspect.signature(database_DataBase.__init__)
     params = list(sig.parameters.keys())
     assert "url" in params, "Missing parameter 'url'"
 
-def test_database::database_has_url():
-    assert hasattr(database::DataBase, "url")
+def test_database_database_has_url():
+    assert hasattr(database_DataBase, "url")
     descriptor = None
-    for klass in database::DataBase.__mro__:
+    for klass in database_DataBase.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -509,23 +509,37 @@ def test_databaseelement_constructor_args():
 
 
 
-def test_database::indexelement_is_not_abstract():
-    assert not inspect.isabstract(database::IndexElement)
+def test_database_foreignkeyelement_is_not_abstract():
+    assert not inspect.isabstract(database_ForeignKeyElement)
 
 
-def test_database::indexelement_constructor_exists():
-    assert callable(database::IndexElement.__init__)
+def test_database_foreignkeyelement_constructor_exists():
+    assert callable(database_ForeignKeyElement.__init__)
 
 
-def test_database::indexelement_constructor_args():
-    sig = inspect.signature(database::IndexElement.__init__)
+def test_database_foreignkeyelement_constructor_args():
+    sig = inspect.signature(database_ForeignKeyElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_database_indexelement_is_not_abstract():
+    assert not inspect.isabstract(database_IndexElement)
+
+
+def test_database_indexelement_constructor_exists():
+    assert callable(database_IndexElement.__init__)
+
+
+def test_database_indexelement_constructor_args():
+    sig = inspect.signature(database_IndexElement.__init__)
     params = list(sig.parameters.keys())
     assert "asc" in params, "Missing parameter 'asc'"
 
-def test_database::indexelement_has_asc():
-    assert hasattr(database::IndexElement, "asc")
+def test_database_indexelement_has_asc():
+    assert hasattr(database_IndexElement, "asc")
     descriptor = None
-    for klass in database::IndexElement.__mro__:
+    for klass in database_IndexElement.__mro__:
         if "asc" in klass.__dict__:
             descriptor = klass.__dict__["asc"]
             break
@@ -533,65 +547,51 @@ def test_database::indexelement_has_asc():
 
 
 
-def test_database::foreignkeyelement_is_not_abstract():
-    assert not inspect.isabstract(database::ForeignKeyElement)
+def test_database_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(database_ForeignKey)
 
 
-def test_database::foreignkeyelement_constructor_exists():
-    assert callable(database::ForeignKeyElement.__init__)
+def test_database_foreignkey_constructor_exists():
+    assert callable(database_ForeignKey.__init__)
 
 
-def test_database::foreignkeyelement_constructor_args():
-    sig = inspect.signature(database::ForeignKeyElement.__init__)
+def test_database_foreignkey_constructor_args():
+    sig = inspect.signature(database_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_database::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(database::ForeignKey)
+def test_database_primarykey_is_not_abstract():
+    assert not inspect.isabstract(database_PrimaryKey)
 
 
-def test_database::foreignkey_constructor_exists():
-    assert callable(database::ForeignKey.__init__)
+def test_database_primarykey_constructor_exists():
+    assert callable(database_PrimaryKey.__init__)
 
 
-def test_database::foreignkey_constructor_args():
-    sig = inspect.signature(database::ForeignKey.__init__)
+def test_database_primarykey_constructor_args():
+    sig = inspect.signature(database_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_database::primarykey_is_not_abstract():
-    assert not inspect.isabstract(database::PrimaryKey)
+def test_database_namedelement_is_not_abstract():
+    assert not inspect.isabstract(database_NamedElement)
 
 
-def test_database::primarykey_constructor_exists():
-    assert callable(database::PrimaryKey.__init__)
+def test_database_namedelement_constructor_exists():
+    assert callable(database_NamedElement.__init__)
 
 
-def test_database::primarykey_constructor_args():
-    sig = inspect.signature(database::PrimaryKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_database::namedelement_is_not_abstract():
-    assert not inspect.isabstract(database::NamedElement)
-
-
-def test_database::namedelement_constructor_exists():
-    assert callable(database::NamedElement.__init__)
-
-
-def test_database::namedelement_constructor_args():
-    sig = inspect.signature(database::NamedElement.__init__)
+def test_database_namedelement_constructor_args():
+    sig = inspect.signature(database_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_database::namedelement_has_name():
-    assert hasattr(database::NamedElement, "name")
+def test_database_namedelement_has_name():
+    assert hasattr(database_NamedElement, "name")
     descriptor = None
-    for klass in database::NamedElement.__mro__:
+    for klass in database_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -609,86 +609,86 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-database::DatabaseElement_strategy = st.builds(
-    database::DatabaseElement,
+database_DatabaseElement_strategy = st.builds(
+    database_DatabaseElement,
     comments=
         safe_text,
-    techID=
-        safe_text,
     ID=
+        safe_text,
+    techID=
         safe_text
 )
 AbstractTable_strategy = st.builds(
     AbstractTable,
 )
-database::View_strategy = st.builds(
-    database::View,
+database_View_strategy = st.builds(
+    database_View,
     query=
         safe_text
 )
-database::Table_strategy = st.builds(
-    database::Table,
+database_Table_strategy = st.builds(
+    database_Table,
 )
-database::Type_strategy = st.builds(
-    database::Type,
+database_Type_strategy = st.builds(
+    database_Type,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-database::Column_strategy = st.builds(
-    database::Column,
-    inForeignKey=
+database_Sequence_strategy = st.builds(
+    database_Sequence,
+    maxValue=
+        safe_text,
+    cycle=
+        st.booleans(),
+    minValue=
+        safe_text,
+    increment=
+        safe_text,
+    cacheSize=
+        safe_text,
+    start=
+        safe_text
+)
+database_Index_strategy = st.builds(
+    database_Index,
+    cardinality=
+        st.integers(),
+    indexType=
+        safe_text,
+    qualifier=
+        safe_text,
+    unique=
+        st.booleans()
+)
+database_TableContainer_strategy = st.builds(
+    database_TableContainer,
+)
+database_Column_strategy = st.builds(
+    database_Column,
+    unique=
         st.booleans(),
     inPrimaryKey=
+        st.booleans(),
+    inForeignKey=
         st.booleans(),
     autoincrement=
         st.booleans(),
     defaultValue=
         safe_text,
-    unique=
-        st.booleans(),
     nullable=
         st.booleans()
 )
-database::Constraint_strategy = st.builds(
-    database::Constraint,
+database_Constraint_strategy = st.builds(
+    database_Constraint,
     expression=
         safe_text
 )
-database::TableContainer_strategy = st.builds(
-    database::TableContainer,
+database_AbstractTable_strategy = st.builds(
+    database_AbstractTable,
 )
-database::Sequence_strategy = st.builds(
-    database::Sequence,
-    maxValue=
-        safe_text,
-    cacheSize=
-        safe_text,
-    increment=
-        safe_text,
-    start=
-        safe_text,
-    cycle=
-        st.booleans(),
-    minValue=
-        safe_text
-)
-database::Index_strategy = st.builds(
-    database::Index,
-    indexType=
-        safe_text,
-    unique=
-        st.booleans(),
-    cardinality=
-        st.integers(),
-    qualifier=
-        safe_text
-)
-database::AbstractTable_strategy = st.builds(
-    database::AbstractTable,
-)
-database::UserDefinedTypesLibrary_strategy = st.builds(
-    database::UserDefinedTypesLibrary,
+database_UserDefinedTypesLibrary_strategy = st.builds(
+    database_UserDefinedTypesLibrary,
 )
 TypesLibraryUser_strategy = st.builds(
     TypesLibraryUser,
@@ -696,178 +696,243 @@ TypesLibraryUser_strategy = st.builds(
 TableContainer_strategy = st.builds(
     TableContainer,
 )
-database::Schema_strategy = st.builds(
-    database::Schema,
+database_Schema_strategy = st.builds(
+    database_Schema,
 )
-database::DataBase_strategy = st.builds(
-    database::DataBase,
+database_DataBase_strategy = st.builds(
+    database_DataBase,
     url=
         safe_text
 )
 DatabaseElement_strategy = st.builds(
     DatabaseElement,
 )
-database::IndexElement_strategy = st.builds(
-    database::IndexElement,
+database_ForeignKeyElement_strategy = st.builds(
+    database_ForeignKeyElement,
+)
+database_IndexElement_strategy = st.builds(
+    database_IndexElement,
     asc=
         st.booleans()
 )
-database::ForeignKeyElement_strategy = st.builds(
-    database::ForeignKeyElement,
+database_ForeignKey_strategy = st.builds(
+    database_ForeignKey,
 )
-database::ForeignKey_strategy = st.builds(
-    database::ForeignKey,
+database_PrimaryKey_strategy = st.builds(
+    database_PrimaryKey,
 )
-database::PrimaryKey_strategy = st.builds(
-    database::PrimaryKey,
-)
-database::NamedElement_strategy = st.builds(
-    database::NamedElement,
+database_NamedElement_strategy = st.builds(
+    database_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=database::DatabaseElement_strategy)
+@given(instance=database_DatabaseElement_strategy)
 @settings(max_examples=50)
-def test_database::databaseelement_instantiation(instance):
-    assert isinstance(instance, database::DatabaseElement)
-
-@given(instance=database::DatabaseElement_strategy)
-def test_database::databaseelement_comments_type(instance):
-    assert isinstance(instance.comments, str)
+def test_database_databaseelement_instantiation(instance):
+    assert isinstance(instance, database_DatabaseElement)
 
 
-@given(instance=database::DatabaseElement_strategy)
-def test_database::databaseelement_comments_setter(instance):
+
+@given(instance=database_DatabaseElement_strategy)
+def test_database_databaseelement_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
 
-@given(instance=database::DatabaseElement_strategy)
-def test_database::databaseelement_techID_type(instance):
-    assert isinstance(instance.techID, str)
 
 
-@given(instance=database::DatabaseElement_strategy)
-def test_database::databaseelement_techID_setter(instance):
-    original = instance.techID
-    instance.techID = original
-    assert instance.techID == original
-
-@given(instance=database::DatabaseElement_strategy)
-def test_database::databaseelement_ID_type(instance):
-    assert isinstance(instance.ID, str)
-
-
-@given(instance=database::DatabaseElement_strategy)
-def test_database::databaseelement_ID_setter(instance):
+@given(instance=database_DatabaseElement_strategy)
+def test_database_databaseelement_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
+
+
+
+@given(instance=database_DatabaseElement_strategy)
+def test_database_databaseelement_techID_setter(instance):
+    original = instance.techID
+    instance.techID = original
+    assert instance.techID == original
 
 @given(instance=AbstractTable_strategy)
 @settings(max_examples=50)
 def test_abstracttable_instantiation(instance):
     assert isinstance(instance, AbstractTable)
 
-@given(instance=database::View_strategy)
+@given(instance=database_View_strategy)
 @settings(max_examples=50)
-def test_database::view_instantiation(instance):
-    assert isinstance(instance, database::View)
-
-@given(instance=database::View_strategy)
-def test_database::view_query_type(instance):
-    assert isinstance(instance.query, str)
+def test_database_view_instantiation(instance):
+    assert isinstance(instance, database_View)
 
 
-@given(instance=database::View_strategy)
-def test_database::view_query_setter(instance):
+
+@given(instance=database_View_strategy)
+def test_database_view_query_setter(instance):
     original = instance.query
     instance.query = original
     assert instance.query == original
 
-@given(instance=database::Table_strategy)
+@given(instance=database_Table_strategy)
 @settings(max_examples=50)
-def test_database::table_instantiation(instance):
-    assert isinstance(instance, database::Table)
+def test_database_table_instantiation(instance):
+    assert isinstance(instance, database_Table)
 
-@given(instance=database::Type_strategy)
+@given(instance=database_Type_strategy)
 @settings(max_examples=50)
-def test_database::type_instantiation(instance):
-    assert isinstance(instance, database::Type)
+def test_database_type_instantiation(instance):
+    assert isinstance(instance, database_Type)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Sequence_strategy)
 @settings(max_examples=50)
-def test_database::column_instantiation(instance):
-    assert isinstance(instance, database::Column)
-
-@given(instance=database::Column_strategy)
-def test_database::column_inForeignKey_type(instance):
-    assert isinstance(instance.inForeignKey, bool)
+def test_database_sequence_instantiation(instance):
+    assert isinstance(instance, database_Sequence)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_inForeignKey_setter(instance):
-    original = instance.inForeignKey
-    instance.inForeignKey = original
-    assert instance.inForeignKey == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_inPrimaryKey_type(instance):
-    assert isinstance(instance.inPrimaryKey, bool)
+@given(instance=database_Sequence_strategy)
+def test_database_sequence_maxValue_setter(instance):
+    original = instance.maxValue
+    instance.maxValue = original
+    assert instance.maxValue == original
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_inPrimaryKey_setter(instance):
-    original = instance.inPrimaryKey
-    instance.inPrimaryKey = original
-    assert instance.inPrimaryKey == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_autoincrement_type(instance):
-    assert isinstance(instance.autoincrement, bool)
+@given(instance=database_Sequence_strategy)
+def test_database_sequence_cycle_setter(instance):
+    original = instance.cycle
+    instance.cycle = original
+    assert instance.cycle == original
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_autoincrement_setter(instance):
-    original = instance.autoincrement
-    instance.autoincrement = original
-    assert instance.autoincrement == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
+@given(instance=database_Sequence_strategy)
+def test_database_sequence_minValue_setter(instance):
+    original = instance.minValue
+    instance.minValue = original
+    assert instance.minValue == original
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_defaultValue_setter(instance):
-    original = instance.defaultValue
-    instance.defaultValue = original
-    assert instance.defaultValue == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_unique_type(instance):
-    assert isinstance(instance.unique, bool)
+@given(instance=database_Sequence_strategy)
+def test_database_sequence_increment_setter(instance):
+    original = instance.increment
+    instance.increment = original
+    assert instance.increment == original
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_unique_setter(instance):
+
+@given(instance=database_Sequence_strategy)
+def test_database_sequence_cacheSize_setter(instance):
+    original = instance.cacheSize
+    instance.cacheSize = original
+    assert instance.cacheSize == original
+
+
+
+@given(instance=database_Sequence_strategy)
+def test_database_sequence_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+@given(instance=database_Index_strategy)
+@settings(max_examples=50)
+def test_database_index_instantiation(instance):
+    assert isinstance(instance, database_Index)
+
+
+
+@given(instance=database_Index_strategy)
+def test_database_index_cardinality_setter(instance):
+    original = instance.cardinality
+    instance.cardinality = original
+    assert instance.cardinality == original
+
+
+
+@given(instance=database_Index_strategy)
+def test_database_index_indexType_setter(instance):
+    original = instance.indexType
+    instance.indexType = original
+    assert instance.indexType == original
+
+
+
+@given(instance=database_Index_strategy)
+def test_database_index_qualifier_setter(instance):
+    original = instance.qualifier
+    instance.qualifier = original
+    assert instance.qualifier == original
+
+
+
+@given(instance=database_Index_strategy)
+def test_database_index_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+@given(instance=database_TableContainer_strategy)
+@settings(max_examples=50)
+def test_database_tablecontainer_instantiation(instance):
+    assert isinstance(instance, database_TableContainer)
+
+@given(instance=database_Column_strategy)
+@settings(max_examples=50)
+def test_database_column_instantiation(instance):
+    assert isinstance(instance, database_Column)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_nullable_setter(instance):
+
+@given(instance=database_Column_strategy)
+def test_database_column_unique_setter(instance):
+    original = instance.unique
+    instance.unique = original
+    assert instance.unique == original
+
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_inPrimaryKey_setter(instance):
+    original = instance.inPrimaryKey
+    instance.inPrimaryKey = original
+    assert instance.inPrimaryKey == original
+
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_inForeignKey_setter(instance):
+    original = instance.inForeignKey
+    instance.inForeignKey = original
+    assert instance.inForeignKey == original
+
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_autoincrement_setter(instance):
+    original = instance.autoincrement
+    instance.autoincrement = original
+    assert instance.autoincrement == original
+
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_defaultValue_setter(instance):
+    original = instance.defaultValue
+    instance.defaultValue = original
+    assert instance.defaultValue == original
+
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
@@ -878,9 +943,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=30)
-def test_database::column_addtouniqueindex_changes_state(instance):
+def test_database_column_addtouniqueindex_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -892,14 +957,14 @@ def test_database::column_addtouniqueindex_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addToUniqueIndex' in database::Column is empty"
+        assert has_statements, f"Function 'addToUniqueIndex' in database_Column is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addToUniqueIndex' in database::Column did not change state; check implementation")
+            warnings.warn(f"Operation 'addToUniqueIndex' in database_Column did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addToUniqueIndex' in database::Column is not implemented or raised an error")
+        warnings.warn(f"Operation 'addToUniqueIndex' in database_Column is not implemented or raised an error")
 
 import warnings
 import copy
@@ -907,9 +972,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=30)
-def test_database::column_removefromuniqueindex_changes_state(instance):
+def test_database_column_removefromuniqueindex_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -921,14 +986,14 @@ def test_database::column_removefromuniqueindex_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeFromUniqueIndex' in database::Column is empty"
+        assert has_statements, f"Function 'removeFromUniqueIndex' in database_Column is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeFromUniqueIndex' in database::Column did not change state; check implementation")
+            warnings.warn(f"Operation 'removeFromUniqueIndex' in database_Column did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeFromUniqueIndex' in database::Column is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeFromUniqueIndex' in database_Column is not implemented or raised an error")
 
 import warnings
 import copy
@@ -936,9 +1001,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=30)
-def test_database::column_addtoprimarykey_changes_state(instance):
+def test_database_column_addtoprimarykey_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -950,14 +1015,14 @@ def test_database::column_addtoprimarykey_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addToPrimaryKey' in database::Column is empty"
+        assert has_statements, f"Function 'addToPrimaryKey' in database_Column is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addToPrimaryKey' in database::Column did not change state; check implementation")
+            warnings.warn(f"Operation 'addToPrimaryKey' in database_Column did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addToPrimaryKey' in database::Column is not implemented or raised an error")
+        warnings.warn(f"Operation 'addToPrimaryKey' in database_Column is not implemented or raised an error")
 
 import warnings
 import copy
@@ -965,9 +1030,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=30)
-def test_database::column_removefromprimarykey_changes_state(instance):
+def test_database_column_removefromprimarykey_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -979,165 +1044,37 @@ def test_database::column_removefromprimarykey_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeFromPrimaryKey' in database::Column is empty"
+        assert has_statements, f"Function 'removeFromPrimaryKey' in database_Column is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeFromPrimaryKey' in database::Column did not change state; check implementation")
+            warnings.warn(f"Operation 'removeFromPrimaryKey' in database_Column did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeFromPrimaryKey' in database::Column is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeFromPrimaryKey' in database_Column is not implemented or raised an error")
 
-@given(instance=database::Constraint_strategy)
+@given(instance=database_Constraint_strategy)
 @settings(max_examples=50)
-def test_database::constraint_instantiation(instance):
-    assert isinstance(instance, database::Constraint)
-
-@given(instance=database::Constraint_strategy)
-def test_database::constraint_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_database_constraint_instantiation(instance):
+    assert isinstance(instance, database_Constraint)
 
 
-@given(instance=database::Constraint_strategy)
-def test_database::constraint_expression_setter(instance):
+
+@given(instance=database_Constraint_strategy)
+def test_database_constraint_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=database::TableContainer_strategy)
+@given(instance=database_AbstractTable_strategy)
 @settings(max_examples=50)
-def test_database::tablecontainer_instantiation(instance):
-    assert isinstance(instance, database::TableContainer)
+def test_database_abstracttable_instantiation(instance):
+    assert isinstance(instance, database_AbstractTable)
 
-@given(instance=database::Sequence_strategy)
+@given(instance=database_UserDefinedTypesLibrary_strategy)
 @settings(max_examples=50)
-def test_database::sequence_instantiation(instance):
-    assert isinstance(instance, database::Sequence)
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_maxValue_type(instance):
-    assert isinstance(instance.maxValue, str)
-
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_maxValue_setter(instance):
-    original = instance.maxValue
-    instance.maxValue = original
-    assert instance.maxValue == original
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_cacheSize_type(instance):
-    assert isinstance(instance.cacheSize, str)
-
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_cacheSize_setter(instance):
-    original = instance.cacheSize
-    instance.cacheSize = original
-    assert instance.cacheSize == original
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_increment_type(instance):
-    assert isinstance(instance.increment, str)
-
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_increment_setter(instance):
-    original = instance.increment
-    instance.increment = original
-    assert instance.increment == original
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_cycle_type(instance):
-    assert isinstance(instance.cycle, bool)
-
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_cycle_setter(instance):
-    original = instance.cycle
-    instance.cycle = original
-    assert instance.cycle == original
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_minValue_type(instance):
-    assert isinstance(instance.minValue, str)
-
-
-@given(instance=database::Sequence_strategy)
-def test_database::sequence_minValue_setter(instance):
-    original = instance.minValue
-    instance.minValue = original
-    assert instance.minValue == original
-
-@given(instance=database::Index_strategy)
-@settings(max_examples=50)
-def test_database::index_instantiation(instance):
-    assert isinstance(instance, database::Index)
-
-@given(instance=database::Index_strategy)
-def test_database::index_indexType_type(instance):
-    assert isinstance(instance.indexType, str)
-
-
-@given(instance=database::Index_strategy)
-def test_database::index_indexType_setter(instance):
-    original = instance.indexType
-    instance.indexType = original
-    assert instance.indexType == original
-
-@given(instance=database::Index_strategy)
-def test_database::index_unique_type(instance):
-    assert isinstance(instance.unique, bool)
-
-
-@given(instance=database::Index_strategy)
-def test_database::index_unique_setter(instance):
-    original = instance.unique
-    instance.unique = original
-    assert instance.unique == original
-
-@given(instance=database::Index_strategy)
-def test_database::index_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
-
-
-@given(instance=database::Index_strategy)
-def test_database::index_cardinality_setter(instance):
-    original = instance.cardinality
-    instance.cardinality = original
-    assert instance.cardinality == original
-
-@given(instance=database::Index_strategy)
-def test_database::index_qualifier_type(instance):
-    assert isinstance(instance.qualifier, str)
-
-
-@given(instance=database::Index_strategy)
-def test_database::index_qualifier_setter(instance):
-    original = instance.qualifier
-    instance.qualifier = original
-    assert instance.qualifier == original
-
-@given(instance=database::AbstractTable_strategy)
-@settings(max_examples=50)
-def test_database::abstracttable_instantiation(instance):
-    assert isinstance(instance, database::AbstractTable)
-
-@given(instance=database::UserDefinedTypesLibrary_strategy)
-@settings(max_examples=50)
-def test_database::userdefinedtypeslibrary_instantiation(instance):
-    assert isinstance(instance, database::UserDefinedTypesLibrary)
+def test_database_userdefinedtypeslibrary_instantiation(instance):
+    assert isinstance(instance, database_UserDefinedTypesLibrary)
 
 @given(instance=TypesLibraryUser_strategy)
 @settings(max_examples=50)
@@ -1149,23 +1086,20 @@ def test_typeslibraryuser_instantiation(instance):
 def test_tablecontainer_instantiation(instance):
     assert isinstance(instance, TableContainer)
 
-@given(instance=database::Schema_strategy)
+@given(instance=database_Schema_strategy)
 @settings(max_examples=50)
-def test_database::schema_instantiation(instance):
-    assert isinstance(instance, database::Schema)
+def test_database_schema_instantiation(instance):
+    assert isinstance(instance, database_Schema)
 
-@given(instance=database::DataBase_strategy)
+@given(instance=database_DataBase_strategy)
 @settings(max_examples=50)
-def test_database::database_instantiation(instance):
-    assert isinstance(instance, database::DataBase)
-
-@given(instance=database::DataBase_strategy)
-def test_database::database_url_type(instance):
-    assert isinstance(instance.url, str)
+def test_database_database_instantiation(instance):
+    assert isinstance(instance, database_DataBase)
 
 
-@given(instance=database::DataBase_strategy)
-def test_database::database_url_setter(instance):
+
+@given(instance=database_DataBase_strategy)
+def test_database_database_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
@@ -1175,49 +1109,43 @@ def test_database::database_url_setter(instance):
 def test_databaseelement_instantiation(instance):
     assert isinstance(instance, DatabaseElement)
 
-@given(instance=database::IndexElement_strategy)
+@given(instance=database_ForeignKeyElement_strategy)
 @settings(max_examples=50)
-def test_database::indexelement_instantiation(instance):
-    assert isinstance(instance, database::IndexElement)
+def test_database_foreignkeyelement_instantiation(instance):
+    assert isinstance(instance, database_ForeignKeyElement)
 
-@given(instance=database::IndexElement_strategy)
-def test_database::indexelement_asc_type(instance):
-    assert isinstance(instance.asc, bool)
+@given(instance=database_IndexElement_strategy)
+@settings(max_examples=50)
+def test_database_indexelement_instantiation(instance):
+    assert isinstance(instance, database_IndexElement)
 
 
-@given(instance=database::IndexElement_strategy)
-def test_database::indexelement_asc_setter(instance):
+
+@given(instance=database_IndexElement_strategy)
+def test_database_indexelement_asc_setter(instance):
     original = instance.asc
     instance.asc = original
     assert instance.asc == original
 
-@given(instance=database::ForeignKeyElement_strategy)
+@given(instance=database_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_database::foreignkeyelement_instantiation(instance):
-    assert isinstance(instance, database::ForeignKeyElement)
+def test_database_foreignkey_instantiation(instance):
+    assert isinstance(instance, database_ForeignKey)
 
-@given(instance=database::ForeignKey_strategy)
+@given(instance=database_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_database::foreignkey_instantiation(instance):
-    assert isinstance(instance, database::ForeignKey)
+def test_database_primarykey_instantiation(instance):
+    assert isinstance(instance, database_PrimaryKey)
 
-@given(instance=database::PrimaryKey_strategy)
+@given(instance=database_NamedElement_strategy)
 @settings(max_examples=50)
-def test_database::primarykey_instantiation(instance):
-    assert isinstance(instance, database::PrimaryKey)
-
-@given(instance=database::NamedElement_strategy)
-@settings(max_examples=50)
-def test_database::namedelement_instantiation(instance):
-    assert isinstance(instance, database::NamedElement)
-
-@given(instance=database::NamedElement_strategy)
-def test_database::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_database_namedelement_instantiation(instance):
+    assert isinstance(instance, database_NamedElement)
 
 
-@given(instance=database::NamedElement_strategy)
-def test_database::namedelement_name_setter(instance):
+
+@given(instance=database_NamedElement_strategy)
+def test_database_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

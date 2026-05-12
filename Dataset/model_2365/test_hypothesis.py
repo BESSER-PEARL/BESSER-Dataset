@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     RelationalEntity,
-    relational::Column,
-    relational::Table,
+    relational_Column,
+    relational_Table,
     Table,
-    relational::View,
-    relational::Key,
-    relational::RelationalEntity,
+    relational_View,
+    relational_Key,
+    relational_RelationalEntity,
     Key,
-    relational::ForeignKey,
-    relational::PrimaryKey,
-    relational::Schema,
+    relational_ForeignKey,
+    relational_PrimaryKey,
+    relational_Schema,
     SqlDataType,
 )
 
@@ -40,30 +40,30 @@ def test_relationalentity_constructor_args():
 
 
 
-def test_relational::column_is_not_abstract():
-    assert not inspect.isabstract(relational::Column)
+def test_relational_column_is_not_abstract():
+    assert not inspect.isabstract(relational_Column)
 
 
-def test_relational::column_constructor_exists():
-    assert callable(relational::Column.__init__)
+def test_relational_column_constructor_exists():
+    assert callable(relational_Column.__init__)
 
 
-def test_relational::column_constructor_args():
-    sig = inspect.signature(relational::Column.__init__)
+def test_relational_column_constructor_args():
+    sig = inspect.signature(relational_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::table_is_not_abstract():
-    assert not inspect.isabstract(relational::Table)
+def test_relational_table_is_not_abstract():
+    assert not inspect.isabstract(relational_Table)
 
 
-def test_relational::table_constructor_exists():
-    assert callable(relational::Table.__init__)
+def test_relational_table_constructor_exists():
+    assert callable(relational_Table.__init__)
 
 
-def test_relational::table_constructor_args():
-    sig = inspect.signature(relational::Table.__init__)
+def test_relational_table_constructor_args():
+    sig = inspect.signature(relational_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,44 +82,44 @@ def test_table_constructor_args():
 
 
 
-def test_relational::view_is_not_abstract():
-    assert not inspect.isabstract(relational::View)
+def test_relational_view_is_not_abstract():
+    assert not inspect.isabstract(relational_View)
 
 
-def test_relational::view_constructor_exists():
-    assert callable(relational::View.__init__)
+def test_relational_view_constructor_exists():
+    assert callable(relational_View.__init__)
 
 
-def test_relational::view_constructor_args():
-    sig = inspect.signature(relational::View.__init__)
+def test_relational_view_constructor_args():
+    sig = inspect.signature(relational_View.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::key_is_not_abstract():
-    assert not inspect.isabstract(relational::Key)
+def test_relational_key_is_not_abstract():
+    assert not inspect.isabstract(relational_Key)
 
 
-def test_relational::key_constructor_exists():
-    assert callable(relational::Key.__init__)
+def test_relational_key_constructor_exists():
+    assert callable(relational_Key.__init__)
 
 
-def test_relational::key_constructor_args():
-    sig = inspect.signature(relational::Key.__init__)
+def test_relational_key_constructor_args():
+    sig = inspect.signature(relational_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::relationalentity_is_not_abstract():
-    assert not inspect.isabstract(relational::RelationalEntity)
+def test_relational_relationalentity_is_not_abstract():
+    assert not inspect.isabstract(relational_RelationalEntity)
 
 
-def test_relational::relationalentity_constructor_exists():
-    assert callable(relational::RelationalEntity.__init__)
+def test_relational_relationalentity_constructor_exists():
+    assert callable(relational_RelationalEntity.__init__)
 
 
-def test_relational::relationalentity_constructor_args():
-    sig = inspect.signature(relational::RelationalEntity.__init__)
+def test_relational_relationalentity_constructor_args():
+    sig = inspect.signature(relational_RelationalEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -138,44 +138,44 @@ def test_key_constructor_args():
 
 
 
-def test_relational::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(relational::ForeignKey)
+def test_relational_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(relational_ForeignKey)
 
 
-def test_relational::foreignkey_constructor_exists():
-    assert callable(relational::ForeignKey.__init__)
+def test_relational_foreignkey_constructor_exists():
+    assert callable(relational_ForeignKey.__init__)
 
 
-def test_relational::foreignkey_constructor_args():
-    sig = inspect.signature(relational::ForeignKey.__init__)
+def test_relational_foreignkey_constructor_args():
+    sig = inspect.signature(relational_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::primarykey_is_not_abstract():
-    assert not inspect.isabstract(relational::PrimaryKey)
+def test_relational_primarykey_is_not_abstract():
+    assert not inspect.isabstract(relational_PrimaryKey)
 
 
-def test_relational::primarykey_constructor_exists():
-    assert callable(relational::PrimaryKey.__init__)
+def test_relational_primarykey_constructor_exists():
+    assert callable(relational_PrimaryKey.__init__)
 
 
-def test_relational::primarykey_constructor_args():
-    sig = inspect.signature(relational::PrimaryKey.__init__)
+def test_relational_primarykey_constructor_args():
+    sig = inspect.signature(relational_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relational::schema_is_not_abstract():
-    assert not inspect.isabstract(relational::Schema)
+def test_relational_schema_is_not_abstract():
+    assert not inspect.isabstract(relational_Schema)
 
 
-def test_relational::schema_constructor_exists():
-    assert callable(relational::Schema.__init__)
+def test_relational_schema_constructor_exists():
+    assert callable(relational_Schema.__init__)
 
 
-def test_relational::schema_constructor_args():
-    sig = inspect.signature(relational::Schema.__init__)
+def test_relational_schema_constructor_args():
+    sig = inspect.signature(relational_Schema.__init__)
     params = list(sig.parameters.keys())
 
 def test_sqldatatype_exists():
@@ -186,8 +186,8 @@ def test_sqldatatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SqlDataType]
     expected_literals = [
-        "CHAR",
         "DATE",
+        "CHAR",
         "VARCHAR",
         "INTEGER",
     ]
@@ -210,35 +210,35 @@ safe_text = st.text(
 RelationalEntity_strategy = st.builds(
     RelationalEntity,
 )
-relational::Column_strategy = st.builds(
-    relational::Column,
+relational_Column_strategy = st.builds(
+    relational_Column,
 )
-relational::Table_strategy = st.builds(
-    relational::Table,
+relational_Table_strategy = st.builds(
+    relational_Table,
 )
 Table_strategy = st.builds(
     Table,
 )
-relational::View_strategy = st.builds(
-    relational::View,
+relational_View_strategy = st.builds(
+    relational_View,
 )
-relational::Key_strategy = st.builds(
-    relational::Key,
+relational_Key_strategy = st.builds(
+    relational_Key,
 )
-relational::RelationalEntity_strategy = st.builds(
-    relational::RelationalEntity,
+relational_RelationalEntity_strategy = st.builds(
+    relational_RelationalEntity,
 )
 Key_strategy = st.builds(
     Key,
 )
-relational::ForeignKey_strategy = st.builds(
-    relational::ForeignKey,
+relational_ForeignKey_strategy = st.builds(
+    relational_ForeignKey,
 )
-relational::PrimaryKey_strategy = st.builds(
-    relational::PrimaryKey,
+relational_PrimaryKey_strategy = st.builds(
+    relational_PrimaryKey,
 )
-relational::Schema_strategy = st.builds(
-    relational::Schema,
+relational_Schema_strategy = st.builds(
+    relational_Schema,
 )
 
 @given(instance=RelationalEntity_strategy)
@@ -246,52 +246,52 @@ relational::Schema_strategy = st.builds(
 def test_relationalentity_instantiation(instance):
     assert isinstance(instance, RelationalEntity)
 
-@given(instance=relational::Column_strategy)
+@given(instance=relational_Column_strategy)
 @settings(max_examples=50)
-def test_relational::column_instantiation(instance):
-    assert isinstance(instance, relational::Column)
+def test_relational_column_instantiation(instance):
+    assert isinstance(instance, relational_Column)
 
-@given(instance=relational::Table_strategy)
+@given(instance=relational_Table_strategy)
 @settings(max_examples=50)
-def test_relational::table_instantiation(instance):
-    assert isinstance(instance, relational::Table)
+def test_relational_table_instantiation(instance):
+    assert isinstance(instance, relational_Table)
 
 @given(instance=Table_strategy)
 @settings(max_examples=50)
 def test_table_instantiation(instance):
     assert isinstance(instance, Table)
 
-@given(instance=relational::View_strategy)
+@given(instance=relational_View_strategy)
 @settings(max_examples=50)
-def test_relational::view_instantiation(instance):
-    assert isinstance(instance, relational::View)
+def test_relational_view_instantiation(instance):
+    assert isinstance(instance, relational_View)
 
-@given(instance=relational::Key_strategy)
+@given(instance=relational_Key_strategy)
 @settings(max_examples=50)
-def test_relational::key_instantiation(instance):
-    assert isinstance(instance, relational::Key)
+def test_relational_key_instantiation(instance):
+    assert isinstance(instance, relational_Key)
 
-@given(instance=relational::RelationalEntity_strategy)
+@given(instance=relational_RelationalEntity_strategy)
 @settings(max_examples=50)
-def test_relational::relationalentity_instantiation(instance):
-    assert isinstance(instance, relational::RelationalEntity)
+def test_relational_relationalentity_instantiation(instance):
+    assert isinstance(instance, relational_RelationalEntity)
 
 @given(instance=Key_strategy)
 @settings(max_examples=50)
 def test_key_instantiation(instance):
     assert isinstance(instance, Key)
 
-@given(instance=relational::ForeignKey_strategy)
+@given(instance=relational_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_relational::foreignkey_instantiation(instance):
-    assert isinstance(instance, relational::ForeignKey)
+def test_relational_foreignkey_instantiation(instance):
+    assert isinstance(instance, relational_ForeignKey)
 
-@given(instance=relational::PrimaryKey_strategy)
+@given(instance=relational_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_relational::primarykey_instantiation(instance):
-    assert isinstance(instance, relational::PrimaryKey)
+def test_relational_primarykey_instantiation(instance):
+    assert isinstance(instance, relational_PrimaryKey)
 
-@given(instance=relational::Schema_strategy)
+@given(instance=relational_Schema_strategy)
 @settings(max_examples=50)
-def test_relational::schema_instantiation(instance):
-    assert isinstance(instance, relational::Schema)
+def test_relational_schema_instantiation(instance):
+    assert isinstance(instance, relational_Schema)

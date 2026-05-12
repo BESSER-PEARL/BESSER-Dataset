@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ancestor::D,
-    ancestor::C,
-    ancestor::B,
-    ancestor::A,
+from python_code import (
+    ancestor_D,
+    ancestor_C,
+    ancestor_B,
+    ancestor_A,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_ancestor::d_is_not_abstract():
-    assert not inspect.isabstract(ancestor::D)
+def test_ancestor_d_is_not_abstract():
+    assert not inspect.isabstract(ancestor_D)
 
 
-def test_ancestor::d_constructor_exists():
-    assert callable(ancestor::D.__init__)
+def test_ancestor_d_constructor_exists():
+    assert callable(ancestor_D.__init__)
 
 
-def test_ancestor::d_constructor_args():
-    sig = inspect.signature(ancestor::D.__init__)
+def test_ancestor_d_constructor_args():
+    sig = inspect.signature(ancestor_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ancestor::c_is_not_abstract():
-    assert not inspect.isabstract(ancestor::C)
+def test_ancestor_c_is_not_abstract():
+    assert not inspect.isabstract(ancestor_C)
 
 
-def test_ancestor::c_constructor_exists():
-    assert callable(ancestor::C.__init__)
+def test_ancestor_c_constructor_exists():
+    assert callable(ancestor_C.__init__)
 
 
-def test_ancestor::c_constructor_args():
-    sig = inspect.signature(ancestor::C.__init__)
+def test_ancestor_c_constructor_args():
+    sig = inspect.signature(ancestor_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ancestor::b_is_not_abstract():
-    assert not inspect.isabstract(ancestor::B)
+def test_ancestor_b_is_not_abstract():
+    assert not inspect.isabstract(ancestor_B)
 
 
-def test_ancestor::b_constructor_exists():
-    assert callable(ancestor::B.__init__)
+def test_ancestor_b_constructor_exists():
+    assert callable(ancestor_B.__init__)
 
 
-def test_ancestor::b_constructor_args():
-    sig = inspect.signature(ancestor::B.__init__)
+def test_ancestor_b_constructor_args():
+    sig = inspect.signature(ancestor_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ancestor::a_is_not_abstract():
-    assert not inspect.isabstract(ancestor::A)
+def test_ancestor_a_is_not_abstract():
+    assert not inspect.isabstract(ancestor_A)
 
 
-def test_ancestor::a_constructor_exists():
-    assert callable(ancestor::A.__init__)
+def test_ancestor_a_constructor_exists():
+    assert callable(ancestor_A.__init__)
 
 
-def test_ancestor::a_constructor_args():
-    sig = inspect.signature(ancestor::A.__init__)
+def test_ancestor_a_constructor_args():
+    sig = inspect.signature(ancestor_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,23 +84,23 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ancestor::D_strategy = st.builds(
-    ancestor::D,
+ancestor_D_strategy = st.builds(
+    ancestor_D,
 )
-ancestor::C_strategy = st.builds(
-    ancestor::C,
+ancestor_C_strategy = st.builds(
+    ancestor_C,
 )
-ancestor::B_strategy = st.builds(
-    ancestor::B,
+ancestor_B_strategy = st.builds(
+    ancestor_B,
 )
-ancestor::A_strategy = st.builds(
-    ancestor::A,
+ancestor_A_strategy = st.builds(
+    ancestor_A,
 )
 
-@given(instance=ancestor::D_strategy)
+@given(instance=ancestor_D_strategy)
 @settings(max_examples=50)
-def test_ancestor::d_instantiation(instance):
-    assert isinstance(instance, ancestor::D)
+def test_ancestor_d_instantiation(instance):
+    assert isinstance(instance, ancestor_D)
 
 import warnings
 import copy
@@ -108,38 +108,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ancestor::D_strategy)
+@given(instance=ancestor_D_strategy)
 @settings(max_examples=30)
-def test_ancestor::d_op1_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.op1()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.op1).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op1' in ancestor::D is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op1' in ancestor::D did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op1' in ancestor::D is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ancestor::D_strategy)
-@settings(max_examples=30)
-def test_ancestor::d_op2_changes_state(instance):
+def test_ancestor_d_op2_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -151,19 +122,14 @@ def test_ancestor::d_op2_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op2' in ancestor::D is empty"
+        assert has_statements, f"Function 'op2' in ancestor_D is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op2' in ancestor::D did not change state; check implementation")
+            warnings.warn(f"Operation 'op2' in ancestor_D did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op2' in ancestor::D is not implemented or raised an error")
-
-@given(instance=ancestor::C_strategy)
-@settings(max_examples=50)
-def test_ancestor::c_instantiation(instance):
-    assert isinstance(instance, ancestor::C)
+        warnings.warn(f"Operation 'op2' in ancestor_D is not implemented or raised an error")
 
 import warnings
 import copy
@@ -171,9 +137,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ancestor::C_strategy)
+@given(instance=ancestor_D_strategy)
 @settings(max_examples=30)
-def test_ancestor::c_op1_changes_state(instance):
+def test_ancestor_d_op1_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -185,48 +151,19 @@ def test_ancestor::c_op1_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op1' in ancestor::C is empty"
+        assert has_statements, f"Function 'op1' in ancestor_D is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op1' in ancestor::C did not change state; check implementation")
+            warnings.warn(f"Operation 'op1' in ancestor_D did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op1' in ancestor::C is not implemented or raised an error")
+        warnings.warn(f"Operation 'op1' in ancestor_D is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ancestor::C_strategy)
-@settings(max_examples=30)
-def test_ancestor::c_op2_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.op2()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.op2).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op2' in ancestor::C is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op2' in ancestor::C did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op2' in ancestor::C is not implemented or raised an error")
-
-@given(instance=ancestor::B_strategy)
+@given(instance=ancestor_C_strategy)
 @settings(max_examples=50)
-def test_ancestor::b_instantiation(instance):
-    assert isinstance(instance, ancestor::B)
+def test_ancestor_c_instantiation(instance):
+    assert isinstance(instance, ancestor_C)
 
 import warnings
 import copy
@@ -234,38 +171,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ancestor::B_strategy)
+@given(instance=ancestor_C_strategy)
 @settings(max_examples=30)
-def test_ancestor::b_op2_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.op2()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.op2).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op2' in ancestor::B is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op2' in ancestor::B did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op2' in ancestor::B is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ancestor::B_strategy)
-@settings(max_examples=30)
-def test_ancestor::b_op1_changes_state(instance):
+def test_ancestor_c_op1_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -277,19 +185,14 @@ def test_ancestor::b_op1_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op1' in ancestor::B is empty"
+        assert has_statements, f"Function 'op1' in ancestor_C is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op1' in ancestor::B did not change state; check implementation")
+            warnings.warn(f"Operation 'op1' in ancestor_C did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op1' in ancestor::B is not implemented or raised an error")
-
-@given(instance=ancestor::A_strategy)
-@settings(max_examples=50)
-def test_ancestor::a_instantiation(instance):
-    assert isinstance(instance, ancestor::A)
+        warnings.warn(f"Operation 'op1' in ancestor_C is not implemented or raised an error")
 
 import warnings
 import copy
@@ -297,38 +200,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ancestor::A_strategy)
+@given(instance=ancestor_C_strategy)
 @settings(max_examples=30)
-def test_ancestor::a_op1_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.op1()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.op1).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op1' in ancestor::A is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op1' in ancestor::A did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op1' in ancestor::A is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ancestor::A_strategy)
-@settings(max_examples=30)
-def test_ancestor::a_op2_changes_state(instance):
+def test_ancestor_c_op2_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -340,11 +214,137 @@ def test_ancestor::a_op2_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'op2' in ancestor::A is empty"
+        assert has_statements, f"Function 'op2' in ancestor_C is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'op2' in ancestor::A did not change state; check implementation")
+            warnings.warn(f"Operation 'op2' in ancestor_C did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'op2' in ancestor::A is not implemented or raised an error")
+        warnings.warn(f"Operation 'op2' in ancestor_C is not implemented or raised an error")
+
+@given(instance=ancestor_B_strategy)
+@settings(max_examples=50)
+def test_ancestor_b_instantiation(instance):
+    assert isinstance(instance, ancestor_B)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ancestor_B_strategy)
+@settings(max_examples=30)
+def test_ancestor_b_op1_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.op1()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.op1).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'op1' in ancestor_B is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'op1' in ancestor_B did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'op1' in ancestor_B is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ancestor_B_strategy)
+@settings(max_examples=30)
+def test_ancestor_b_op2_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.op2()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.op2).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'op2' in ancestor_B is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'op2' in ancestor_B did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'op2' in ancestor_B is not implemented or raised an error")
+
+@given(instance=ancestor_A_strategy)
+@settings(max_examples=50)
+def test_ancestor_a_instantiation(instance):
+    assert isinstance(instance, ancestor_A)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ancestor_A_strategy)
+@settings(max_examples=30)
+def test_ancestor_a_op2_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.op2()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.op2).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'op2' in ancestor_A is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'op2' in ancestor_A did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'op2' in ancestor_A is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ancestor_A_strategy)
+@settings(max_examples=30)
+def test_ancestor_a_op1_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.op1()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.op1).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'op1' in ancestor_A is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'op1' in ancestor_A did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'op1' in ancestor_A is not implemented or raised an error")

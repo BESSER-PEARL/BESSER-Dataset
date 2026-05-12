@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    lSGL::GeneratorConfig,
-    lSGL::Annotation,
-    lSGL::Config,
-    lSGL::ConfigProperty,
-    lSGL::Projection,
-    lSGL::Type,
-    lSGL::Generator,
-    lSGL::Model,
-    lSGL::AttributeType,
-    lSGL::Attribute,
-    lSGL::GeneratorAnnotation,
-    lSGL::EnumItem,
+from python_code import (
+    lSGL_GeneratorConfig,
+    lSGL_Annotation,
+    lSGL_Config,
+    lSGL_ConfigProperty,
+    lSGL_Projection,
+    lSGL_Type,
+    lSGL_Generator,
+    lSGL_Model,
+    lSGL_AttributeType,
+    lSGL_Attribute,
+    lSGL_GeneratorAnnotation,
+    lSGL_EnumItem,
     Type,
-    lSGL::Entity,
-    lSGL::Enum,
+    lSGL_Entity,
+    lSGL_Enum,
 )
 
 # =============================================================================
@@ -29,33 +29,33 @@ from classes import (
 
 
 
-def test_lsgl::generatorconfig_is_not_abstract():
-    assert not inspect.isabstract(lSGL::GeneratorConfig)
+def test_lsgl_generatorconfig_is_not_abstract():
+    assert not inspect.isabstract(lSGL_GeneratorConfig)
 
 
-def test_lsgl::generatorconfig_constructor_exists():
-    assert callable(lSGL::GeneratorConfig.__init__)
+def test_lsgl_generatorconfig_constructor_exists():
+    assert callable(lSGL_GeneratorConfig.__init__)
 
 
-def test_lsgl::generatorconfig_constructor_args():
-    sig = inspect.signature(lSGL::GeneratorConfig.__init__)
+def test_lsgl_generatorconfig_constructor_args():
+    sig = inspect.signature(lSGL_GeneratorConfig.__init__)
     params = list(sig.parameters.keys())
     assert "cfgName" in params, "Missing parameter 'cfgName'"
     assert "values" in params, "Missing parameter 'values'"
 
-def test_lsgl::generatorconfig_has_cfgName():
-    assert hasattr(lSGL::GeneratorConfig, "cfgName")
+def test_lsgl_generatorconfig_has_cfgName():
+    assert hasattr(lSGL_GeneratorConfig, "cfgName")
     descriptor = None
-    for klass in lSGL::GeneratorConfig.__mro__:
+    for klass in lSGL_GeneratorConfig.__mro__:
         if "cfgName" in klass.__dict__:
             descriptor = klass.__dict__["cfgName"]
             break
     assert isinstance(descriptor, property)
 
-def test_lsgl::generatorconfig_has_values():
-    assert hasattr(lSGL::GeneratorConfig, "values")
+def test_lsgl_generatorconfig_has_values():
+    assert hasattr(lSGL_GeneratorConfig, "values")
     descriptor = None
-    for klass in lSGL::GeneratorConfig.__mro__:
+    for klass in lSGL_GeneratorConfig.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -63,91 +63,33 @@ def test_lsgl::generatorconfig_has_values():
 
 
 
-def test_lsgl::annotation_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Annotation)
+def test_lsgl_annotation_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Annotation)
 
 
-def test_lsgl::annotation_constructor_exists():
-    assert callable(lSGL::Annotation.__init__)
+def test_lsgl_annotation_constructor_exists():
+    assert callable(lSGL_Annotation.__init__)
 
 
-def test_lsgl::annotation_constructor_args():
-    sig = inspect.signature(lSGL::Annotation.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_lsgl::annotation_has_value():
-    assert hasattr(lSGL::Annotation, "value")
-    descriptor = None
-    for klass in lSGL::Annotation.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lsgl::annotation_has_name():
-    assert hasattr(lSGL::Annotation, "name")
-    descriptor = None
-    for klass in lSGL::Annotation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lsgl::config_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Config)
-
-
-def test_lsgl::config_constructor_exists():
-    assert callable(lSGL::Config.__init__)
-
-
-def test_lsgl::config_constructor_args():
-    sig = inspect.signature(lSGL::Config.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_lsgl::config_has_name():
-    assert hasattr(lSGL::Config, "name")
-    descriptor = None
-    for klass in lSGL::Config.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lsgl::configproperty_is_not_abstract():
-    assert not inspect.isabstract(lSGL::ConfigProperty)
-
-
-def test_lsgl::configproperty_constructor_exists():
-    assert callable(lSGL::ConfigProperty.__init__)
-
-
-def test_lsgl::configproperty_constructor_args():
-    sig = inspect.signature(lSGL::ConfigProperty.__init__)
+def test_lsgl_annotation_constructor_args():
+    sig = inspect.signature(lSGL_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_lsgl::configproperty_has_name():
-    assert hasattr(lSGL::ConfigProperty, "name")
+def test_lsgl_annotation_has_name():
+    assert hasattr(lSGL_Annotation, "name")
     descriptor = None
-    for klass in lSGL::ConfigProperty.__mro__:
+    for klass in lSGL_Annotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_lsgl::configproperty_has_value():
-    assert hasattr(lSGL::ConfigProperty, "value")
+def test_lsgl_annotation_has_value():
+    assert hasattr(lSGL_Annotation, "value")
     descriptor = None
-    for klass in lSGL::ConfigProperty.__mro__:
+    for klass in lSGL_Annotation.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -155,57 +97,91 @@ def test_lsgl::configproperty_has_value():
 
 
 
-def test_lsgl::projection_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Projection)
+def test_lsgl_config_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Config)
 
 
-def test_lsgl::projection_constructor_exists():
-    assert callable(lSGL::Projection.__init__)
+def test_lsgl_config_constructor_exists():
+    assert callable(lSGL_Config.__init__)
 
 
-def test_lsgl::projection_constructor_args():
-    sig = inspect.signature(lSGL::Projection.__init__)
+def test_lsgl_config_constructor_args():
+    sig = inspect.signature(lSGL_Config.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+
+def test_lsgl_config_has_name():
+    assert hasattr(lSGL_Config, "name")
+    descriptor = None
+    for klass in lSGL_Config.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lsgl_configproperty_is_not_abstract():
+    assert not inspect.isabstract(lSGL_ConfigProperty)
+
+
+def test_lsgl_configproperty_constructor_exists():
+    assert callable(lSGL_ConfigProperty.__init__)
+
+
+def test_lsgl_configproperty_constructor_args():
+    sig = inspect.signature(lSGL_ConfigProperty.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_lsgl_configproperty_has_name():
+    assert hasattr(lSGL_ConfigProperty, "name")
+    descriptor = None
+    for klass in lSGL_ConfigProperty.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lsgl_configproperty_has_value():
+    assert hasattr(lSGL_ConfigProperty, "value")
+    descriptor = None
+    for klass in lSGL_ConfigProperty.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lsgl_projection_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Projection)
+
+
+def test_lsgl_projection_constructor_exists():
+    assert callable(lSGL_Projection.__init__)
+
+
+def test_lsgl_projection_constructor_args():
+    sig = inspect.signature(lSGL_Projection.__init__)
+    params = list(sig.parameters.keys())
     assert "excluding" in params, "Missing parameter 'excluding'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_lsgl::projection_has_name():
-    assert hasattr(lSGL::Projection, "name")
+def test_lsgl_projection_has_excluding():
+    assert hasattr(lSGL_Projection, "excluding")
     descriptor = None
-    for klass in lSGL::Projection.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lsgl::projection_has_excluding():
-    assert hasattr(lSGL::Projection, "excluding")
-    descriptor = None
-    for klass in lSGL::Projection.__mro__:
+    for klass in lSGL_Projection.__mro__:
         if "excluding" in klass.__dict__:
             descriptor = klass.__dict__["excluding"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_lsgl::type_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Type)
-
-
-def test_lsgl::type_constructor_exists():
-    assert callable(lSGL::Type.__init__)
-
-
-def test_lsgl::type_constructor_args():
-    sig = inspect.signature(lSGL::Type.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_lsgl::type_has_name():
-    assert hasattr(lSGL::Type, "name")
+def test_lsgl_projection_has_name():
+    assert hasattr(lSGL_Projection, "name")
     descriptor = None
-    for klass in lSGL::Type.__mro__:
+    for klass in lSGL_Projection.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -213,23 +189,23 @@ def test_lsgl::type_has_name():
 
 
 
-def test_lsgl::generator_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Generator)
+def test_lsgl_type_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Type)
 
 
-def test_lsgl::generator_constructor_exists():
-    assert callable(lSGL::Generator.__init__)
+def test_lsgl_type_constructor_exists():
+    assert callable(lSGL_Type.__init__)
 
 
-def test_lsgl::generator_constructor_args():
-    sig = inspect.signature(lSGL::Generator.__init__)
+def test_lsgl_type_constructor_args():
+    sig = inspect.signature(lSGL_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lsgl::generator_has_name():
-    assert hasattr(lSGL::Generator, "name")
+def test_lsgl_type_has_name():
+    assert hasattr(lSGL_Type, "name")
     descriptor = None
-    for klass in lSGL::Generator.__mro__:
+    for klass in lSGL_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -237,149 +213,173 @@ def test_lsgl::generator_has_name():
 
 
 
-def test_lsgl::model_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Model)
+def test_lsgl_generator_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Generator)
 
 
-def test_lsgl::model_constructor_exists():
-    assert callable(lSGL::Model.__init__)
+def test_lsgl_generator_constructor_exists():
+    assert callable(lSGL_Generator.__init__)
 
 
-def test_lsgl::model_constructor_args():
-    sig = inspect.signature(lSGL::Model.__init__)
+def test_lsgl_generator_constructor_args():
+    sig = inspect.signature(lSGL_Generator.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_lsgl_generator_has_name():
+    assert hasattr(lSGL_Generator, "name")
+    descriptor = None
+    for klass in lSGL_Generator.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lsgl_model_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Model)
+
+
+def test_lsgl_model_constructor_exists():
+    assert callable(lSGL_Model.__init__)
+
+
+def test_lsgl_model_constructor_args():
+    sig = inspect.signature(lSGL_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lsgl::attributetype_is_not_abstract():
-    assert not inspect.isabstract(lSGL::AttributeType)
+def test_lsgl_attributetype_is_not_abstract():
+    assert not inspect.isabstract(lSGL_AttributeType)
 
 
-def test_lsgl::attributetype_constructor_exists():
-    assert callable(lSGL::AttributeType.__init__)
+def test_lsgl_attributetype_constructor_exists():
+    assert callable(lSGL_AttributeType.__init__)
 
 
-def test_lsgl::attributetype_constructor_args():
-    sig = inspect.signature(lSGL::AttributeType.__init__)
+def test_lsgl_attributetype_constructor_args():
+    sig = inspect.signature(lSGL_AttributeType.__init__)
     params = list(sig.parameters.keys())
-    assert "typeName" in params, "Missing parameter 'typeName'"
     assert "nullable" in params, "Missing parameter 'nullable'"
+    assert "typeName" in params, "Missing parameter 'typeName'"
 
-def test_lsgl::attributetype_has_typeName():
-    assert hasattr(lSGL::AttributeType, "typeName")
+def test_lsgl_attributetype_has_nullable():
+    assert hasattr(lSGL_AttributeType, "nullable")
     descriptor = None
-    for klass in lSGL::AttributeType.__mro__:
-        if "typeName" in klass.__dict__:
-            descriptor = klass.__dict__["typeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lsgl::attributetype_has_nullable():
-    assert hasattr(lSGL::AttributeType, "nullable")
-    descriptor = None
-    for klass in lSGL::AttributeType.__mro__:
+    for klass in lSGL_AttributeType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
     assert isinstance(descriptor, property)
 
+def test_lsgl_attributetype_has_typeName():
+    assert hasattr(lSGL_AttributeType, "typeName")
+    descriptor = None
+    for klass in lSGL_AttributeType.__mro__:
+        if "typeName" in klass.__dict__:
+            descriptor = klass.__dict__["typeName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_lsgl::attribute_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Attribute)
+
+def test_lsgl_attribute_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Attribute)
 
 
-def test_lsgl::attribute_constructor_exists():
-    assert callable(lSGL::Attribute.__init__)
+def test_lsgl_attribute_constructor_exists():
+    assert callable(lSGL_Attribute.__init__)
 
 
-def test_lsgl::attribute_constructor_args():
-    sig = inspect.signature(lSGL::Attribute.__init__)
+def test_lsgl_attribute_constructor_args():
+    sig = inspect.signature(lSGL_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "isMap" in params, "Missing parameter 'isMap'"
     assert "isList" in params, "Missing parameter 'isList'"
+    assert "isMap" in params, "Missing parameter 'isMap'"
     assert "isArray" in params, "Missing parameter 'isArray'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_lsgl::attribute_has_name():
-    assert hasattr(lSGL::Attribute, "name")
+def test_lsgl_attribute_has_isList():
+    assert hasattr(lSGL_Attribute, "isList")
     descriptor = None
-    for klass in lSGL::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lsgl::attribute_has_isMap():
-    assert hasattr(lSGL::Attribute, "isMap")
-    descriptor = None
-    for klass in lSGL::Attribute.__mro__:
-        if "isMap" in klass.__dict__:
-            descriptor = klass.__dict__["isMap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lsgl::attribute_has_isList():
-    assert hasattr(lSGL::Attribute, "isList")
-    descriptor = None
-    for klass in lSGL::Attribute.__mro__:
+    for klass in lSGL_Attribute.__mro__:
         if "isList" in klass.__dict__:
             descriptor = klass.__dict__["isList"]
             break
     assert isinstance(descriptor, property)
 
-def test_lsgl::attribute_has_isArray():
-    assert hasattr(lSGL::Attribute, "isArray")
+def test_lsgl_attribute_has_isMap():
+    assert hasattr(lSGL_Attribute, "isMap")
     descriptor = None
-    for klass in lSGL::Attribute.__mro__:
+    for klass in lSGL_Attribute.__mro__:
+        if "isMap" in klass.__dict__:
+            descriptor = klass.__dict__["isMap"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lsgl_attribute_has_isArray():
+    assert hasattr(lSGL_Attribute, "isArray")
+    descriptor = None
+    for klass in lSGL_Attribute.__mro__:
         if "isArray" in klass.__dict__:
             descriptor = klass.__dict__["isArray"]
             break
     assert isinstance(descriptor, property)
 
+def test_lsgl_attribute_has_name():
+    assert hasattr(lSGL_Attribute, "name")
+    descriptor = None
+    for klass in lSGL_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_lsgl::generatorannotation_is_not_abstract():
-    assert not inspect.isabstract(lSGL::GeneratorAnnotation)
+
+def test_lsgl_generatorannotation_is_not_abstract():
+    assert not inspect.isabstract(lSGL_GeneratorAnnotation)
 
 
-def test_lsgl::generatorannotation_constructor_exists():
-    assert callable(lSGL::GeneratorAnnotation.__init__)
+def test_lsgl_generatorannotation_constructor_exists():
+    assert callable(lSGL_GeneratorAnnotation.__init__)
 
 
-def test_lsgl::generatorannotation_constructor_args():
-    sig = inspect.signature(lSGL::GeneratorAnnotation.__init__)
+def test_lsgl_generatorannotation_constructor_args():
+    sig = inspect.signature(lSGL_GeneratorAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lsgl::enumitem_is_not_abstract():
-    assert not inspect.isabstract(lSGL::EnumItem)
+def test_lsgl_enumitem_is_not_abstract():
+    assert not inspect.isabstract(lSGL_EnumItem)
 
 
-def test_lsgl::enumitem_constructor_exists():
-    assert callable(lSGL::EnumItem.__init__)
+def test_lsgl_enumitem_constructor_exists():
+    assert callable(lSGL_EnumItem.__init__)
 
 
-def test_lsgl::enumitem_constructor_args():
-    sig = inspect.signature(lSGL::EnumItem.__init__)
+def test_lsgl_enumitem_constructor_args():
+    sig = inspect.signature(lSGL_EnumItem.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lsgl::enumitem_has_value():
-    assert hasattr(lSGL::EnumItem, "value")
+def test_lsgl_enumitem_has_value():
+    assert hasattr(lSGL_EnumItem, "value")
     descriptor = None
-    for klass in lSGL::EnumItem.__mro__:
+    for klass in lSGL_EnumItem.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_lsgl::enumitem_has_name():
-    assert hasattr(lSGL::EnumItem, "name")
+def test_lsgl_enumitem_has_name():
+    assert hasattr(lSGL_EnumItem, "name")
     descriptor = None
-    for klass in lSGL::EnumItem.__mro__:
+    for klass in lSGL_EnumItem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -401,30 +401,30 @@ def test_type_constructor_args():
 
 
 
-def test_lsgl::entity_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Entity)
+def test_lsgl_entity_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Entity)
 
 
-def test_lsgl::entity_constructor_exists():
-    assert callable(lSGL::Entity.__init__)
+def test_lsgl_entity_constructor_exists():
+    assert callable(lSGL_Entity.__init__)
 
 
-def test_lsgl::entity_constructor_args():
-    sig = inspect.signature(lSGL::Entity.__init__)
+def test_lsgl_entity_constructor_args():
+    sig = inspect.signature(lSGL_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lsgl::enum_is_not_abstract():
-    assert not inspect.isabstract(lSGL::Enum)
+def test_lsgl_enum_is_not_abstract():
+    assert not inspect.isabstract(lSGL_Enum)
 
 
-def test_lsgl::enum_constructor_exists():
-    assert callable(lSGL::Enum.__init__)
+def test_lsgl_enum_constructor_exists():
+    assert callable(lSGL_Enum.__init__)
 
 
-def test_lsgl::enum_constructor_args():
-    sig = inspect.signature(lSGL::Enum.__init__)
+def test_lsgl_enum_constructor_args():
+    sig = inspect.signature(lSGL_Enum.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -439,75 +439,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-lSGL::GeneratorConfig_strategy = st.builds(
-    lSGL::GeneratorConfig,
+lSGL_GeneratorConfig_strategy = st.builds(
+    lSGL_GeneratorConfig,
     cfgName=
         safe_text,
     values=
         safe_text
 )
-lSGL::Annotation_strategy = st.builds(
-    lSGL::Annotation,
-    value=
-        safe_text,
-    name=
-        safe_text
-)
-lSGL::Config_strategy = st.builds(
-    lSGL::Config,
-    name=
-        safe_text
-)
-lSGL::ConfigProperty_strategy = st.builds(
-    lSGL::ConfigProperty,
+lSGL_Annotation_strategy = st.builds(
+    lSGL_Annotation,
     name=
         safe_text,
     value=
         safe_text
 )
-lSGL::Projection_strategy = st.builds(
-    lSGL::Projection,
+lSGL_Config_strategy = st.builds(
+    lSGL_Config,
+    name=
+        safe_text
+)
+lSGL_ConfigProperty_strategy = st.builds(
+    lSGL_ConfigProperty,
     name=
         safe_text,
+    value=
+        safe_text
+)
+lSGL_Projection_strategy = st.builds(
+    lSGL_Projection,
     excluding=
-        st.booleans()
-)
-lSGL::Type_strategy = st.builds(
-    lSGL::Type,
-    name=
-        safe_text
-)
-lSGL::Generator_strategy = st.builds(
-    lSGL::Generator,
-    name=
-        safe_text
-)
-lSGL::Model_strategy = st.builds(
-    lSGL::Model,
-)
-lSGL::AttributeType_strategy = st.builds(
-    lSGL::AttributeType,
-    typeName=
-        safe_text,
-    nullable=
-        st.booleans()
-)
-lSGL::Attribute_strategy = st.builds(
-    lSGL::Attribute,
-    name=
-        safe_text,
-    isMap=
         st.booleans(),
+    name=
+        safe_text
+)
+lSGL_Type_strategy = st.builds(
+    lSGL_Type,
+    name=
+        safe_text
+)
+lSGL_Generator_strategy = st.builds(
+    lSGL_Generator,
+    name=
+        safe_text
+)
+lSGL_Model_strategy = st.builds(
+    lSGL_Model,
+)
+lSGL_AttributeType_strategy = st.builds(
+    lSGL_AttributeType,
+    nullable=
+        st.booleans(),
+    typeName=
+        safe_text
+)
+lSGL_Attribute_strategy = st.builds(
+    lSGL_Attribute,
     isList=
         st.booleans(),
+    isMap=
+        st.booleans(),
     isArray=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
-lSGL::GeneratorAnnotation_strategy = st.builds(
-    lSGL::GeneratorAnnotation,
+lSGL_GeneratorAnnotation_strategy = st.builds(
+    lSGL_GeneratorAnnotation,
 )
-lSGL::EnumItem_strategy = st.builds(
-    lSGL::EnumItem,
+lSGL_EnumItem_strategy = st.builds(
+    lSGL_EnumItem,
     value=
         safe_text,
     name=
@@ -516,278 +516,221 @@ lSGL::EnumItem_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-lSGL::Entity_strategy = st.builds(
-    lSGL::Entity,
+lSGL_Entity_strategy = st.builds(
+    lSGL_Entity,
 )
-lSGL::Enum_strategy = st.builds(
-    lSGL::Enum,
+lSGL_Enum_strategy = st.builds(
+    lSGL_Enum,
 )
 
-@given(instance=lSGL::GeneratorConfig_strategy)
+@given(instance=lSGL_GeneratorConfig_strategy)
 @settings(max_examples=50)
-def test_lsgl::generatorconfig_instantiation(instance):
-    assert isinstance(instance, lSGL::GeneratorConfig)
-
-@given(instance=lSGL::GeneratorConfig_strategy)
-def test_lsgl::generatorconfig_cfgName_type(instance):
-    assert isinstance(instance.cfgName, str)
+def test_lsgl_generatorconfig_instantiation(instance):
+    assert isinstance(instance, lSGL_GeneratorConfig)
 
 
-@given(instance=lSGL::GeneratorConfig_strategy)
-def test_lsgl::generatorconfig_cfgName_setter(instance):
+
+@given(instance=lSGL_GeneratorConfig_strategy)
+def test_lsgl_generatorconfig_cfgName_setter(instance):
     original = instance.cfgName
     instance.cfgName = original
     assert instance.cfgName == original
 
-@given(instance=lSGL::GeneratorConfig_strategy)
-def test_lsgl::generatorconfig_values_type(instance):
-    assert isinstance(instance.values, str)
 
 
-@given(instance=lSGL::GeneratorConfig_strategy)
-def test_lsgl::generatorconfig_values_setter(instance):
+@given(instance=lSGL_GeneratorConfig_strategy)
+def test_lsgl_generatorconfig_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=lSGL::Annotation_strategy)
+@given(instance=lSGL_Annotation_strategy)
 @settings(max_examples=50)
-def test_lsgl::annotation_instantiation(instance):
-    assert isinstance(instance, lSGL::Annotation)
-
-@given(instance=lSGL::Annotation_strategy)
-def test_lsgl::annotation_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_lsgl_annotation_instantiation(instance):
+    assert isinstance(instance, lSGL_Annotation)
 
 
-@given(instance=lSGL::Annotation_strategy)
-def test_lsgl::annotation_value_setter(instance):
+
+@given(instance=lSGL_Annotation_strategy)
+def test_lsgl_annotation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=lSGL_Annotation_strategy)
+def test_lsgl_annotation_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=lSGL::Annotation_strategy)
-def test_lsgl::annotation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=lSGL::Annotation_strategy)
-def test_lsgl::annotation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=lSGL::Config_strategy)
+@given(instance=lSGL_Config_strategy)
 @settings(max_examples=50)
-def test_lsgl::config_instantiation(instance):
-    assert isinstance(instance, lSGL::Config)
-
-@given(instance=lSGL::Config_strategy)
-def test_lsgl::config_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lsgl_config_instantiation(instance):
+    assert isinstance(instance, lSGL_Config)
 
 
-@given(instance=lSGL::Config_strategy)
-def test_lsgl::config_name_setter(instance):
+
+@given(instance=lSGL_Config_strategy)
+def test_lsgl_config_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lSGL::ConfigProperty_strategy)
+@given(instance=lSGL_ConfigProperty_strategy)
 @settings(max_examples=50)
-def test_lsgl::configproperty_instantiation(instance):
-    assert isinstance(instance, lSGL::ConfigProperty)
-
-@given(instance=lSGL::ConfigProperty_strategy)
-def test_lsgl::configproperty_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lsgl_configproperty_instantiation(instance):
+    assert isinstance(instance, lSGL_ConfigProperty)
 
 
-@given(instance=lSGL::ConfigProperty_strategy)
-def test_lsgl::configproperty_name_setter(instance):
+
+@given(instance=lSGL_ConfigProperty_strategy)
+def test_lsgl_configproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lSGL::ConfigProperty_strategy)
-def test_lsgl::configproperty_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=lSGL::ConfigProperty_strategy)
-def test_lsgl::configproperty_value_setter(instance):
+@given(instance=lSGL_ConfigProperty_strategy)
+def test_lsgl_configproperty_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=lSGL::Projection_strategy)
+@given(instance=lSGL_Projection_strategy)
 @settings(max_examples=50)
-def test_lsgl::projection_instantiation(instance):
-    assert isinstance(instance, lSGL::Projection)
-
-@given(instance=lSGL::Projection_strategy)
-def test_lsgl::projection_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lsgl_projection_instantiation(instance):
+    assert isinstance(instance, lSGL_Projection)
 
 
-@given(instance=lSGL::Projection_strategy)
-def test_lsgl::projection_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=lSGL::Projection_strategy)
-def test_lsgl::projection_excluding_type(instance):
-    assert isinstance(instance.excluding, bool)
-
-
-@given(instance=lSGL::Projection_strategy)
-def test_lsgl::projection_excluding_setter(instance):
+@given(instance=lSGL_Projection_strategy)
+def test_lsgl_projection_excluding_setter(instance):
     original = instance.excluding
     instance.excluding = original
     assert instance.excluding == original
 
-@given(instance=lSGL::Type_strategy)
-@settings(max_examples=50)
-def test_lsgl::type_instantiation(instance):
-    assert isinstance(instance, lSGL::Type)
-
-@given(instance=lSGL::Type_strategy)
-def test_lsgl::type_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=lSGL::Type_strategy)
-def test_lsgl::type_name_setter(instance):
+@given(instance=lSGL_Projection_strategy)
+def test_lsgl_projection_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lSGL::Generator_strategy)
+@given(instance=lSGL_Type_strategy)
 @settings(max_examples=50)
-def test_lsgl::generator_instantiation(instance):
-    assert isinstance(instance, lSGL::Generator)
-
-@given(instance=lSGL::Generator_strategy)
-def test_lsgl::generator_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lsgl_type_instantiation(instance):
+    assert isinstance(instance, lSGL_Type)
 
 
-@given(instance=lSGL::Generator_strategy)
-def test_lsgl::generator_name_setter(instance):
+
+@given(instance=lSGL_Type_strategy)
+def test_lsgl_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lSGL::Model_strategy)
+@given(instance=lSGL_Generator_strategy)
 @settings(max_examples=50)
-def test_lsgl::model_instantiation(instance):
-    assert isinstance(instance, lSGL::Model)
+def test_lsgl_generator_instantiation(instance):
+    assert isinstance(instance, lSGL_Generator)
 
-@given(instance=lSGL::AttributeType_strategy)
+
+
+@given(instance=lSGL_Generator_strategy)
+def test_lsgl_generator_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=lSGL_Model_strategy)
 @settings(max_examples=50)
-def test_lsgl::attributetype_instantiation(instance):
-    assert isinstance(instance, lSGL::AttributeType)
+def test_lsgl_model_instantiation(instance):
+    assert isinstance(instance, lSGL_Model)
 
-@given(instance=lSGL::AttributeType_strategy)
-def test_lsgl::attributetype_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
-
-
-@given(instance=lSGL::AttributeType_strategy)
-def test_lsgl::attributetype_typeName_setter(instance):
-    original = instance.typeName
-    instance.typeName = original
-    assert instance.typeName == original
-
-@given(instance=lSGL::AttributeType_strategy)
-def test_lsgl::attributetype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+@given(instance=lSGL_AttributeType_strategy)
+@settings(max_examples=50)
+def test_lsgl_attributetype_instantiation(instance):
+    assert isinstance(instance, lSGL_AttributeType)
 
 
-@given(instance=lSGL::AttributeType_strategy)
-def test_lsgl::attributetype_nullable_setter(instance):
+
+@given(instance=lSGL_AttributeType_strategy)
+def test_lsgl_attributetype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=lSGL::Attribute_strategy)
+
+
+@given(instance=lSGL_AttributeType_strategy)
+def test_lsgl_attributetype_typeName_setter(instance):
+    original = instance.typeName
+    instance.typeName = original
+    assert instance.typeName == original
+
+@given(instance=lSGL_Attribute_strategy)
 @settings(max_examples=50)
-def test_lsgl::attribute_instantiation(instance):
-    assert isinstance(instance, lSGL::Attribute)
-
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lsgl_attribute_instantiation(instance):
+    assert isinstance(instance, lSGL_Attribute)
 
 
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_isMap_type(instance):
-    assert isinstance(instance.isMap, bool)
-
-
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_isMap_setter(instance):
-    original = instance.isMap
-    instance.isMap = original
-    assert instance.isMap == original
-
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_isList_type(instance):
-    assert isinstance(instance.isList, bool)
-
-
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_isList_setter(instance):
+@given(instance=lSGL_Attribute_strategy)
+def test_lsgl_attribute_isList_setter(instance):
     original = instance.isList
     instance.isList = original
     assert instance.isList == original
 
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_isArray_type(instance):
-    assert isinstance(instance.isArray, bool)
 
 
-@given(instance=lSGL::Attribute_strategy)
-def test_lsgl::attribute_isArray_setter(instance):
+@given(instance=lSGL_Attribute_strategy)
+def test_lsgl_attribute_isMap_setter(instance):
+    original = instance.isMap
+    instance.isMap = original
+    assert instance.isMap == original
+
+
+
+@given(instance=lSGL_Attribute_strategy)
+def test_lsgl_attribute_isArray_setter(instance):
     original = instance.isArray
     instance.isArray = original
     assert instance.isArray == original
 
-@given(instance=lSGL::GeneratorAnnotation_strategy)
+
+
+@given(instance=lSGL_Attribute_strategy)
+def test_lsgl_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=lSGL_GeneratorAnnotation_strategy)
 @settings(max_examples=50)
-def test_lsgl::generatorannotation_instantiation(instance):
-    assert isinstance(instance, lSGL::GeneratorAnnotation)
+def test_lsgl_generatorannotation_instantiation(instance):
+    assert isinstance(instance, lSGL_GeneratorAnnotation)
 
-@given(instance=lSGL::EnumItem_strategy)
+@given(instance=lSGL_EnumItem_strategy)
 @settings(max_examples=50)
-def test_lsgl::enumitem_instantiation(instance):
-    assert isinstance(instance, lSGL::EnumItem)
-
-@given(instance=lSGL::EnumItem_strategy)
-def test_lsgl::enumitem_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_lsgl_enumitem_instantiation(instance):
+    assert isinstance(instance, lSGL_EnumItem)
 
 
-@given(instance=lSGL::EnumItem_strategy)
-def test_lsgl::enumitem_value_setter(instance):
+
+@given(instance=lSGL_EnumItem_strategy)
+def test_lsgl_enumitem_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=lSGL::EnumItem_strategy)
-def test_lsgl::enumitem_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=lSGL::EnumItem_strategy)
-def test_lsgl::enumitem_name_setter(instance):
+@given(instance=lSGL_EnumItem_strategy)
+def test_lsgl_enumitem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -797,12 +740,12 @@ def test_lsgl::enumitem_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=lSGL::Entity_strategy)
+@given(instance=lSGL_Entity_strategy)
 @settings(max_examples=50)
-def test_lsgl::entity_instantiation(instance):
-    assert isinstance(instance, lSGL::Entity)
+def test_lsgl_entity_instantiation(instance):
+    assert isinstance(instance, lSGL_Entity)
 
-@given(instance=lSGL::Enum_strategy)
+@given(instance=lSGL_Enum_strategy)
 @settings(max_examples=50)
-def test_lsgl::enum_instantiation(instance):
-    assert isinstance(instance, lSGL::Enum)
+def test_lsgl_enum_instantiation(instance):
+    assert isinstance(instance, lSGL_Enum)

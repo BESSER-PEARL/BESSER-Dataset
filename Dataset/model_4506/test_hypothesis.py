@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    xDrone::UpWall,
-    xDrone::LeftWall,
-    xDrone::Position,
-    xDrone::BackWall,
-    xDrone::RightWall,
-    xDrone::FrontWall,
-    xDrone::Vector,
-    xDrone::Color,
-    xDrone::Size,
-    xDrone::Origin,
-    xDrone::SuperCommand,
-    xDrone::Environment,
-    xDrone::Fly,
+from python_code import (
+    xDrone_UpWall,
+    xDrone_LeftWall,
+    xDrone_Position,
+    xDrone_BackWall,
+    xDrone_RightWall,
+    xDrone_FrontWall,
+    xDrone_Vector,
+    xDrone_Color,
+    xDrone_Size,
+    xDrone_Origin,
+    xDrone_SuperCommand,
+    xDrone_Environment,
+    xDrone_Fly,
     Command,
-    xDrone::Right,
-    xDrone::Wait,
-    xDrone::Backward,
-    xDrone::Up,
-    xDrone::Forward,
-    xDrone::RotateL,
-    xDrone::RotateR,
-    xDrone::Down,
-    xDrone::Left,
-    xDrone::GoTo,
+    xDrone_Up,
+    xDrone_Forward,
+    xDrone_Left,
+    xDrone_Down,
+    xDrone_Backward,
+    xDrone_Right,
+    xDrone_Wait,
+    xDrone_RotateR,
+    xDrone_RotateL,
+    xDrone_GoTo,
     SuperCommand,
-    xDrone::Command,
-    xDrone::Object,
-    xDrone::Walls,
-    xDrone::Drone,
-    xDrone::Main,
-    xDrone::Program,
+    xDrone_Command,
+    xDrone_Object,
+    xDrone_Walls,
+    xDrone_Drone,
+    xDrone_Main,
+    xDrone_Program,
 )
 
 # =============================================================================
@@ -45,23 +45,23 @@ from classes import (
 
 
 
-def test_xdrone::upwall_is_not_abstract():
-    assert not inspect.isabstract(xDrone::UpWall)
+def test_xdrone_upwall_is_not_abstract():
+    assert not inspect.isabstract(xDrone_UpWall)
 
 
-def test_xdrone::upwall_constructor_exists():
-    assert callable(xDrone::UpWall.__init__)
+def test_xdrone_upwall_constructor_exists():
+    assert callable(xDrone_UpWall.__init__)
 
 
-def test_xdrone::upwall_constructor_args():
-    sig = inspect.signature(xDrone::UpWall.__init__)
+def test_xdrone_upwall_constructor_args():
+    sig = inspect.signature(xDrone_UpWall.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xdrone::upwall_has_value():
-    assert hasattr(xDrone::UpWall, "value")
+def test_xdrone_upwall_has_value():
+    assert hasattr(xDrone_UpWall, "value")
     descriptor = None
-    for klass in xDrone::UpWall.__mro__:
+    for klass in xDrone_UpWall.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -69,23 +69,23 @@ def test_xdrone::upwall_has_value():
 
 
 
-def test_xdrone::leftwall_is_not_abstract():
-    assert not inspect.isabstract(xDrone::LeftWall)
+def test_xdrone_leftwall_is_not_abstract():
+    assert not inspect.isabstract(xDrone_LeftWall)
 
 
-def test_xdrone::leftwall_constructor_exists():
-    assert callable(xDrone::LeftWall.__init__)
+def test_xdrone_leftwall_constructor_exists():
+    assert callable(xDrone_LeftWall.__init__)
 
 
-def test_xdrone::leftwall_constructor_args():
-    sig = inspect.signature(xDrone::LeftWall.__init__)
+def test_xdrone_leftwall_constructor_args():
+    sig = inspect.signature(xDrone_LeftWall.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xdrone::leftwall_has_value():
-    assert hasattr(xDrone::LeftWall, "value")
+def test_xdrone_leftwall_has_value():
+    assert hasattr(xDrone_LeftWall, "value")
     descriptor = None
-    for klass in xDrone::LeftWall.__mro__:
+    for klass in xDrone_LeftWall.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -93,37 +93,37 @@ def test_xdrone::leftwall_has_value():
 
 
 
-def test_xdrone::position_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Position)
+def test_xdrone_position_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Position)
 
 
-def test_xdrone::position_constructor_exists():
-    assert callable(xDrone::Position.__init__)
+def test_xdrone_position_constructor_exists():
+    assert callable(xDrone_Position.__init__)
 
 
-def test_xdrone::position_constructor_args():
-    sig = inspect.signature(xDrone::Position.__init__)
+def test_xdrone_position_constructor_args():
+    sig = inspect.signature(xDrone_Position.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::backwall_is_not_abstract():
-    assert not inspect.isabstract(xDrone::BackWall)
+def test_xdrone_backwall_is_not_abstract():
+    assert not inspect.isabstract(xDrone_BackWall)
 
 
-def test_xdrone::backwall_constructor_exists():
-    assert callable(xDrone::BackWall.__init__)
+def test_xdrone_backwall_constructor_exists():
+    assert callable(xDrone_BackWall.__init__)
 
 
-def test_xdrone::backwall_constructor_args():
-    sig = inspect.signature(xDrone::BackWall.__init__)
+def test_xdrone_backwall_constructor_args():
+    sig = inspect.signature(xDrone_BackWall.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xdrone::backwall_has_value():
-    assert hasattr(xDrone::BackWall, "value")
+def test_xdrone_backwall_has_value():
+    assert hasattr(xDrone_BackWall, "value")
     descriptor = None
-    for klass in xDrone::BackWall.__mro__:
+    for klass in xDrone_BackWall.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -131,23 +131,23 @@ def test_xdrone::backwall_has_value():
 
 
 
-def test_xdrone::rightwall_is_not_abstract():
-    assert not inspect.isabstract(xDrone::RightWall)
+def test_xdrone_rightwall_is_not_abstract():
+    assert not inspect.isabstract(xDrone_RightWall)
 
 
-def test_xdrone::rightwall_constructor_exists():
-    assert callable(xDrone::RightWall.__init__)
+def test_xdrone_rightwall_constructor_exists():
+    assert callable(xDrone_RightWall.__init__)
 
 
-def test_xdrone::rightwall_constructor_args():
-    sig = inspect.signature(xDrone::RightWall.__init__)
+def test_xdrone_rightwall_constructor_args():
+    sig = inspect.signature(xDrone_RightWall.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xdrone::rightwall_has_value():
-    assert hasattr(xDrone::RightWall, "value")
+def test_xdrone_rightwall_has_value():
+    assert hasattr(xDrone_RightWall, "value")
     descriptor = None
-    for klass in xDrone::RightWall.__mro__:
+    for klass in xDrone_RightWall.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -155,23 +155,23 @@ def test_xdrone::rightwall_has_value():
 
 
 
-def test_xdrone::frontwall_is_not_abstract():
-    assert not inspect.isabstract(xDrone::FrontWall)
+def test_xdrone_frontwall_is_not_abstract():
+    assert not inspect.isabstract(xDrone_FrontWall)
 
 
-def test_xdrone::frontwall_constructor_exists():
-    assert callable(xDrone::FrontWall.__init__)
+def test_xdrone_frontwall_constructor_exists():
+    assert callable(xDrone_FrontWall.__init__)
 
 
-def test_xdrone::frontwall_constructor_args():
-    sig = inspect.signature(xDrone::FrontWall.__init__)
+def test_xdrone_frontwall_constructor_args():
+    sig = inspect.signature(xDrone_FrontWall.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xdrone::frontwall_has_value():
-    assert hasattr(xDrone::FrontWall, "value")
+def test_xdrone_frontwall_has_value():
+    assert hasattr(xDrone_FrontWall, "value")
     descriptor = None
-    for klass in xDrone::FrontWall.__mro__:
+    for klass in xDrone_FrontWall.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -179,67 +179,67 @@ def test_xdrone::frontwall_has_value():
 
 
 
-def test_xdrone::vector_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Vector)
+def test_xdrone_vector_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Vector)
 
 
-def test_xdrone::vector_constructor_exists():
-    assert callable(xDrone::Vector.__init__)
+def test_xdrone_vector_constructor_exists():
+    assert callable(xDrone_Vector.__init__)
 
 
-def test_xdrone::vector_constructor_args():
-    sig = inspect.signature(xDrone::Vector.__init__)
+def test_xdrone_vector_constructor_args():
+    sig = inspect.signature(xDrone_Vector.__init__)
     params = list(sig.parameters.keys())
+    assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
     assert "z" in params, "Missing parameter 'z'"
-    assert "y" in params, "Missing parameter 'y'"
 
-def test_xdrone::vector_has_x():
-    assert hasattr(xDrone::Vector, "x")
+def test_xdrone_vector_has_y():
+    assert hasattr(xDrone_Vector, "y")
     descriptor = None
-    for klass in xDrone::Vector.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xdrone::vector_has_z():
-    assert hasattr(xDrone::Vector, "z")
-    descriptor = None
-    for klass in xDrone::Vector.__mro__:
-        if "z" in klass.__dict__:
-            descriptor = klass.__dict__["z"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xdrone::vector_has_y():
-    assert hasattr(xDrone::Vector, "y")
-    descriptor = None
-    for klass in xDrone::Vector.__mro__:
+    for klass in xDrone_Vector.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
+def test_xdrone_vector_has_x():
+    assert hasattr(xDrone_Vector, "x")
+    descriptor = None
+    for klass in xDrone_Vector.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xdrone_vector_has_z():
+    assert hasattr(xDrone_Vector, "z")
+    descriptor = None
+    for klass in xDrone_Vector.__mro__:
+        if "z" in klass.__dict__:
+            descriptor = klass.__dict__["z"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_xdrone::color_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Color)
+
+def test_xdrone_color_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Color)
 
 
-def test_xdrone::color_constructor_exists():
-    assert callable(xDrone::Color.__init__)
+def test_xdrone_color_constructor_exists():
+    assert callable(xDrone_Color.__init__)
 
 
-def test_xdrone::color_constructor_args():
-    sig = inspect.signature(xDrone::Color.__init__)
+def test_xdrone_color_constructor_args():
+    sig = inspect.signature(xDrone_Color.__init__)
     params = list(sig.parameters.keys())
     assert "color_value" in params, "Missing parameter 'color_value'"
 
-def test_xdrone::color_has_color_value():
-    assert hasattr(xDrone::Color, "color_value")
+def test_xdrone_color_has_color_value():
+    assert hasattr(xDrone_Color, "color_value")
     descriptor = None
-    for klass in xDrone::Color.__mro__:
+    for klass in xDrone_Color.__mro__:
         if "color_value" in klass.__dict__:
             descriptor = klass.__dict__["color_value"]
             break
@@ -247,91 +247,91 @@ def test_xdrone::color_has_color_value():
 
 
 
-def test_xdrone::size_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Size)
+def test_xdrone_size_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Size)
 
 
-def test_xdrone::size_constructor_exists():
-    assert callable(xDrone::Size.__init__)
+def test_xdrone_size_constructor_exists():
+    assert callable(xDrone_Size.__init__)
 
 
-def test_xdrone::size_constructor_args():
-    sig = inspect.signature(xDrone::Size.__init__)
+def test_xdrone_size_constructor_args():
+    sig = inspect.signature(xDrone_Size.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::origin_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Origin)
+def test_xdrone_origin_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Origin)
 
 
-def test_xdrone::origin_constructor_exists():
-    assert callable(xDrone::Origin.__init__)
+def test_xdrone_origin_constructor_exists():
+    assert callable(xDrone_Origin.__init__)
 
 
-def test_xdrone::origin_constructor_args():
-    sig = inspect.signature(xDrone::Origin.__init__)
+def test_xdrone_origin_constructor_args():
+    sig = inspect.signature(xDrone_Origin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::supercommand_is_not_abstract():
-    assert not inspect.isabstract(xDrone::SuperCommand)
+def test_xdrone_supercommand_is_not_abstract():
+    assert not inspect.isabstract(xDrone_SuperCommand)
 
 
-def test_xdrone::supercommand_constructor_exists():
-    assert callable(xDrone::SuperCommand.__init__)
+def test_xdrone_supercommand_constructor_exists():
+    assert callable(xDrone_SuperCommand.__init__)
 
 
-def test_xdrone::supercommand_constructor_args():
-    sig = inspect.signature(xDrone::SuperCommand.__init__)
+def test_xdrone_supercommand_constructor_args():
+    sig = inspect.signature(xDrone_SuperCommand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::environment_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Environment)
+def test_xdrone_environment_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Environment)
 
 
-def test_xdrone::environment_constructor_exists():
-    assert callable(xDrone::Environment.__init__)
+def test_xdrone_environment_constructor_exists():
+    assert callable(xDrone_Environment.__init__)
 
 
-def test_xdrone::environment_constructor_args():
-    sig = inspect.signature(xDrone::Environment.__init__)
+def test_xdrone_environment_constructor_args():
+    sig = inspect.signature(xDrone_Environment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::fly_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Fly)
+def test_xdrone_fly_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Fly)
 
 
-def test_xdrone::fly_constructor_exists():
-    assert callable(xDrone::Fly.__init__)
+def test_xdrone_fly_constructor_exists():
+    assert callable(xDrone_Fly.__init__)
 
 
-def test_xdrone::fly_constructor_args():
-    sig = inspect.signature(xDrone::Fly.__init__)
+def test_xdrone_fly_constructor_args():
+    sig = inspect.signature(xDrone_Fly.__init__)
     params = list(sig.parameters.keys())
-    assert "takeoff" in params, "Missing parameter 'takeoff'"
     assert "land" in params, "Missing parameter 'land'"
+    assert "takeoff" in params, "Missing parameter 'takeoff'"
 
-def test_xdrone::fly_has_takeoff():
-    assert hasattr(xDrone::Fly, "takeoff")
+def test_xdrone_fly_has_land():
+    assert hasattr(xDrone_Fly, "land")
     descriptor = None
-    for klass in xDrone::Fly.__mro__:
-        if "takeoff" in klass.__dict__:
-            descriptor = klass.__dict__["takeoff"]
+    for klass in xDrone_Fly.__mro__:
+        if "land" in klass.__dict__:
+            descriptor = klass.__dict__["land"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdrone::fly_has_land():
-    assert hasattr(xDrone::Fly, "land")
+def test_xdrone_fly_has_takeoff():
+    assert hasattr(xDrone_Fly, "takeoff")
     descriptor = None
-    for klass in xDrone::Fly.__mro__:
-        if "land" in klass.__dict__:
-            descriptor = klass.__dict__["land"]
+    for klass in xDrone_Fly.__mro__:
+        if "takeoff" in klass.__dict__:
+            descriptor = klass.__dict__["takeoff"]
             break
     assert isinstance(descriptor, property)
 
@@ -351,23 +351,23 @@ def test_command_constructor_args():
 
 
 
-def test_xdrone::right_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Right)
+def test_xdrone_up_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Up)
 
 
-def test_xdrone::right_constructor_exists():
-    assert callable(xDrone::Right.__init__)
+def test_xdrone_up_constructor_exists():
+    assert callable(xDrone_Up.__init__)
 
 
-def test_xdrone::right_constructor_args():
-    sig = inspect.signature(xDrone::Right.__init__)
+def test_xdrone_up_constructor_args():
+    sig = inspect.signature(xDrone_Up.__init__)
     params = list(sig.parameters.keys())
     assert "distance" in params, "Missing parameter 'distance'"
 
-def test_xdrone::right_has_distance():
-    assert hasattr(xDrone::Right, "distance")
+def test_xdrone_up_has_distance():
+    assert hasattr(xDrone_Up, "distance")
     descriptor = None
-    for klass in xDrone::Right.__mro__:
+    for klass in xDrone_Up.__mro__:
         if "distance" in klass.__dict__:
             descriptor = klass.__dict__["distance"]
             break
@@ -375,23 +375,143 @@ def test_xdrone::right_has_distance():
 
 
 
-def test_xdrone::wait_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Wait)
+def test_xdrone_forward_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Forward)
 
 
-def test_xdrone::wait_constructor_exists():
-    assert callable(xDrone::Wait.__init__)
+def test_xdrone_forward_constructor_exists():
+    assert callable(xDrone_Forward.__init__)
 
 
-def test_xdrone::wait_constructor_args():
-    sig = inspect.signature(xDrone::Wait.__init__)
+def test_xdrone_forward_constructor_args():
+    sig = inspect.signature(xDrone_Forward.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_xdrone_forward_has_distance():
+    assert hasattr(xDrone_Forward, "distance")
+    descriptor = None
+    for klass in xDrone_Forward.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xdrone_left_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Left)
+
+
+def test_xdrone_left_constructor_exists():
+    assert callable(xDrone_Left.__init__)
+
+
+def test_xdrone_left_constructor_args():
+    sig = inspect.signature(xDrone_Left.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_xdrone_left_has_distance():
+    assert hasattr(xDrone_Left, "distance")
+    descriptor = None
+    for klass in xDrone_Left.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xdrone_down_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Down)
+
+
+def test_xdrone_down_constructor_exists():
+    assert callable(xDrone_Down.__init__)
+
+
+def test_xdrone_down_constructor_args():
+    sig = inspect.signature(xDrone_Down.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_xdrone_down_has_distance():
+    assert hasattr(xDrone_Down, "distance")
+    descriptor = None
+    for klass in xDrone_Down.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xdrone_backward_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Backward)
+
+
+def test_xdrone_backward_constructor_exists():
+    assert callable(xDrone_Backward.__init__)
+
+
+def test_xdrone_backward_constructor_args():
+    sig = inspect.signature(xDrone_Backward.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_xdrone_backward_has_distance():
+    assert hasattr(xDrone_Backward, "distance")
+    descriptor = None
+    for klass in xDrone_Backward.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xdrone_right_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Right)
+
+
+def test_xdrone_right_constructor_exists():
+    assert callable(xDrone_Right.__init__)
+
+
+def test_xdrone_right_constructor_args():
+    sig = inspect.signature(xDrone_Right.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_xdrone_right_has_distance():
+    assert hasattr(xDrone_Right, "distance")
+    descriptor = None
+    for klass in xDrone_Right.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xdrone_wait_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Wait)
+
+
+def test_xdrone_wait_constructor_exists():
+    assert callable(xDrone_Wait.__init__)
+
+
+def test_xdrone_wait_constructor_args():
+    sig = inspect.signature(xDrone_Wait.__init__)
     params = list(sig.parameters.keys())
     assert "seconds" in params, "Missing parameter 'seconds'"
 
-def test_xdrone::wait_has_seconds():
-    assert hasattr(xDrone::Wait, "seconds")
+def test_xdrone_wait_has_seconds():
+    assert hasattr(xDrone_Wait, "seconds")
     descriptor = None
-    for klass in xDrone::Wait.__mro__:
+    for klass in xDrone_Wait.__mro__:
         if "seconds" in klass.__dict__:
             descriptor = klass.__dict__["seconds"]
             break
@@ -399,95 +519,23 @@ def test_xdrone::wait_has_seconds():
 
 
 
-def test_xdrone::backward_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Backward)
+def test_xdrone_rotater_is_not_abstract():
+    assert not inspect.isabstract(xDrone_RotateR)
 
 
-def test_xdrone::backward_constructor_exists():
-    assert callable(xDrone::Backward.__init__)
+def test_xdrone_rotater_constructor_exists():
+    assert callable(xDrone_RotateR.__init__)
 
 
-def test_xdrone::backward_constructor_args():
-    sig = inspect.signature(xDrone::Backward.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_xdrone::backward_has_distance():
-    assert hasattr(xDrone::Backward, "distance")
-    descriptor = None
-    for klass in xDrone::Backward.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xdrone::up_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Up)
-
-
-def test_xdrone::up_constructor_exists():
-    assert callable(xDrone::Up.__init__)
-
-
-def test_xdrone::up_constructor_args():
-    sig = inspect.signature(xDrone::Up.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_xdrone::up_has_distance():
-    assert hasattr(xDrone::Up, "distance")
-    descriptor = None
-    for klass in xDrone::Up.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xdrone::forward_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Forward)
-
-
-def test_xdrone::forward_constructor_exists():
-    assert callable(xDrone::Forward.__init__)
-
-
-def test_xdrone::forward_constructor_args():
-    sig = inspect.signature(xDrone::Forward.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_xdrone::forward_has_distance():
-    assert hasattr(xDrone::Forward, "distance")
-    descriptor = None
-    for klass in xDrone::Forward.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xdrone::rotatel_is_not_abstract():
-    assert not inspect.isabstract(xDrone::RotateL)
-
-
-def test_xdrone::rotatel_constructor_exists():
-    assert callable(xDrone::RotateL.__init__)
-
-
-def test_xdrone::rotatel_constructor_args():
-    sig = inspect.signature(xDrone::RotateL.__init__)
+def test_xdrone_rotater_constructor_args():
+    sig = inspect.signature(xDrone_RotateR.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_xdrone::rotatel_has_angle():
-    assert hasattr(xDrone::RotateL, "angle")
+def test_xdrone_rotater_has_angle():
+    assert hasattr(xDrone_RotateR, "angle")
     descriptor = None
-    for klass in xDrone::RotateL.__mro__:
+    for klass in xDrone_RotateR.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -495,23 +543,23 @@ def test_xdrone::rotatel_has_angle():
 
 
 
-def test_xdrone::rotater_is_not_abstract():
-    assert not inspect.isabstract(xDrone::RotateR)
+def test_xdrone_rotatel_is_not_abstract():
+    assert not inspect.isabstract(xDrone_RotateL)
 
 
-def test_xdrone::rotater_constructor_exists():
-    assert callable(xDrone::RotateR.__init__)
+def test_xdrone_rotatel_constructor_exists():
+    assert callable(xDrone_RotateL.__init__)
 
 
-def test_xdrone::rotater_constructor_args():
-    sig = inspect.signature(xDrone::RotateR.__init__)
+def test_xdrone_rotatel_constructor_args():
+    sig = inspect.signature(xDrone_RotateL.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_xdrone::rotater_has_angle():
-    assert hasattr(xDrone::RotateR, "angle")
+def test_xdrone_rotatel_has_angle():
+    assert hasattr(xDrone_RotateL, "angle")
     descriptor = None
-    for klass in xDrone::RotateR.__mro__:
+    for klass in xDrone_RotateL.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -519,71 +567,23 @@ def test_xdrone::rotater_has_angle():
 
 
 
-def test_xdrone::down_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Down)
+def test_xdrone_goto_is_not_abstract():
+    assert not inspect.isabstract(xDrone_GoTo)
 
 
-def test_xdrone::down_constructor_exists():
-    assert callable(xDrone::Down.__init__)
+def test_xdrone_goto_constructor_exists():
+    assert callable(xDrone_GoTo.__init__)
 
 
-def test_xdrone::down_constructor_args():
-    sig = inspect.signature(xDrone::Down.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_xdrone::down_has_distance():
-    assert hasattr(xDrone::Down, "distance")
-    descriptor = None
-    for klass in xDrone::Down.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xdrone::left_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Left)
-
-
-def test_xdrone::left_constructor_exists():
-    assert callable(xDrone::Left.__init__)
-
-
-def test_xdrone::left_constructor_args():
-    sig = inspect.signature(xDrone::Left.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_xdrone::left_has_distance():
-    assert hasattr(xDrone::Left, "distance")
-    descriptor = None
-    for klass in xDrone::Left.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xdrone::goto_is_not_abstract():
-    assert not inspect.isabstract(xDrone::GoTo)
-
-
-def test_xdrone::goto_constructor_exists():
-    assert callable(xDrone::GoTo.__init__)
-
-
-def test_xdrone::goto_constructor_args():
-    sig = inspect.signature(xDrone::GoTo.__init__)
+def test_xdrone_goto_constructor_args():
+    sig = inspect.signature(xDrone_GoTo.__init__)
     params = list(sig.parameters.keys())
     assert "object_name" in params, "Missing parameter 'object_name'"
 
-def test_xdrone::goto_has_object_name():
-    assert hasattr(xDrone::GoTo, "object_name")
+def test_xdrone_goto_has_object_name():
+    assert hasattr(xDrone_GoTo, "object_name")
     descriptor = None
-    for klass in xDrone::GoTo.__mro__:
+    for klass in xDrone_GoTo.__mro__:
         if "object_name" in klass.__dict__:
             descriptor = klass.__dict__["object_name"]
             break
@@ -605,37 +605,37 @@ def test_supercommand_constructor_args():
 
 
 
-def test_xdrone::command_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Command)
+def test_xdrone_command_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Command)
 
 
-def test_xdrone::command_constructor_exists():
-    assert callable(xDrone::Command.__init__)
+def test_xdrone_command_constructor_exists():
+    assert callable(xDrone_Command.__init__)
 
 
-def test_xdrone::command_constructor_args():
-    sig = inspect.signature(xDrone::Command.__init__)
+def test_xdrone_command_constructor_args():
+    sig = inspect.signature(xDrone_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::object_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Object)
+def test_xdrone_object_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Object)
 
 
-def test_xdrone::object_constructor_exists():
-    assert callable(xDrone::Object.__init__)
+def test_xdrone_object_constructor_exists():
+    assert callable(xDrone_Object.__init__)
 
 
-def test_xdrone::object_constructor_args():
-    sig = inspect.signature(xDrone::Object.__init__)
+def test_xdrone_object_constructor_args():
+    sig = inspect.signature(xDrone_Object.__init__)
     params = list(sig.parameters.keys())
     assert "object_name" in params, "Missing parameter 'object_name'"
 
-def test_xdrone::object_has_object_name():
-    assert hasattr(xDrone::Object, "object_name")
+def test_xdrone_object_has_object_name():
+    assert hasattr(xDrone_Object, "object_name")
     descriptor = None
-    for klass in xDrone::Object.__mro__:
+    for klass in xDrone_Object.__mro__:
         if "object_name" in klass.__dict__:
             descriptor = klass.__dict__["object_name"]
             break
@@ -643,37 +643,37 @@ def test_xdrone::object_has_object_name():
 
 
 
-def test_xdrone::walls_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Walls)
+def test_xdrone_walls_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Walls)
 
 
-def test_xdrone::walls_constructor_exists():
-    assert callable(xDrone::Walls.__init__)
+def test_xdrone_walls_constructor_exists():
+    assert callable(xDrone_Walls.__init__)
 
 
-def test_xdrone::walls_constructor_args():
-    sig = inspect.signature(xDrone::Walls.__init__)
+def test_xdrone_walls_constructor_args():
+    sig = inspect.signature(xDrone_Walls.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::drone_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Drone)
+def test_xdrone_drone_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Drone)
 
 
-def test_xdrone::drone_constructor_exists():
-    assert callable(xDrone::Drone.__init__)
+def test_xdrone_drone_constructor_exists():
+    assert callable(xDrone_Drone.__init__)
 
 
-def test_xdrone::drone_constructor_args():
-    sig = inspect.signature(xDrone::Drone.__init__)
+def test_xdrone_drone_constructor_args():
+    sig = inspect.signature(xDrone_Drone.__init__)
     params = list(sig.parameters.keys())
     assert "rotation" in params, "Missing parameter 'rotation'"
 
-def test_xdrone::drone_has_rotation():
-    assert hasattr(xDrone::Drone, "rotation")
+def test_xdrone_drone_has_rotation():
+    assert hasattr(xDrone_Drone, "rotation")
     descriptor = None
-    for klass in xDrone::Drone.__mro__:
+    for klass in xDrone_Drone.__mro__:
         if "rotation" in klass.__dict__:
             descriptor = klass.__dict__["rotation"]
             break
@@ -681,30 +681,30 @@ def test_xdrone::drone_has_rotation():
 
 
 
-def test_xdrone::main_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Main)
+def test_xdrone_main_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Main)
 
 
-def test_xdrone::main_constructor_exists():
-    assert callable(xDrone::Main.__init__)
+def test_xdrone_main_constructor_exists():
+    assert callable(xDrone_Main.__init__)
 
 
-def test_xdrone::main_constructor_args():
-    sig = inspect.signature(xDrone::Main.__init__)
+def test_xdrone_main_constructor_args():
+    sig = inspect.signature(xDrone_Main.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xdrone::program_is_not_abstract():
-    assert not inspect.isabstract(xDrone::Program)
+def test_xdrone_program_is_not_abstract():
+    assert not inspect.isabstract(xDrone_Program)
 
 
-def test_xdrone::program_constructor_exists():
-    assert callable(xDrone::Program.__init__)
+def test_xdrone_program_constructor_exists():
+    assert callable(xDrone_Program.__init__)
 
 
-def test_xdrone::program_constructor_args():
-    sig = inspect.signature(xDrone::Program.__init__)
+def test_xdrone_program_constructor_args():
+    sig = inspect.signature(xDrone_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -719,493 +719,430 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-xDrone::UpWall_strategy = st.builds(
-    xDrone::UpWall,
+xDrone_UpWall_strategy = st.builds(
+    xDrone_UpWall,
     value=
         safe_text
 )
-xDrone::LeftWall_strategy = st.builds(
-    xDrone::LeftWall,
+xDrone_LeftWall_strategy = st.builds(
+    xDrone_LeftWall,
     value=
         safe_text
 )
-xDrone::Position_strategy = st.builds(
-    xDrone::Position,
+xDrone_Position_strategy = st.builds(
+    xDrone_Position,
 )
-xDrone::BackWall_strategy = st.builds(
-    xDrone::BackWall,
+xDrone_BackWall_strategy = st.builds(
+    xDrone_BackWall,
     value=
         safe_text
 )
-xDrone::RightWall_strategy = st.builds(
-    xDrone::RightWall,
+xDrone_RightWall_strategy = st.builds(
+    xDrone_RightWall,
     value=
         safe_text
 )
-xDrone::FrontWall_strategy = st.builds(
-    xDrone::FrontWall,
+xDrone_FrontWall_strategy = st.builds(
+    xDrone_FrontWall,
     value=
         safe_text
 )
-xDrone::Vector_strategy = st.builds(
-    xDrone::Vector,
+xDrone_Vector_strategy = st.builds(
+    xDrone_Vector,
+    y=
+        safe_text,
     x=
         safe_text,
     z=
-        safe_text,
-    y=
         safe_text
 )
-xDrone::Color_strategy = st.builds(
-    xDrone::Color,
+xDrone_Color_strategy = st.builds(
+    xDrone_Color,
     color_value=
         safe_text
 )
-xDrone::Size_strategy = st.builds(
-    xDrone::Size,
+xDrone_Size_strategy = st.builds(
+    xDrone_Size,
 )
-xDrone::Origin_strategy = st.builds(
-    xDrone::Origin,
+xDrone_Origin_strategy = st.builds(
+    xDrone_Origin,
 )
-xDrone::SuperCommand_strategy = st.builds(
-    xDrone::SuperCommand,
+xDrone_SuperCommand_strategy = st.builds(
+    xDrone_SuperCommand,
 )
-xDrone::Environment_strategy = st.builds(
-    xDrone::Environment,
+xDrone_Environment_strategy = st.builds(
+    xDrone_Environment,
 )
-xDrone::Fly_strategy = st.builds(
-    xDrone::Fly,
-    takeoff=
-        safe_text,
+xDrone_Fly_strategy = st.builds(
+    xDrone_Fly,
     land=
+        safe_text,
+    takeoff=
         safe_text
 )
 Command_strategy = st.builds(
     Command,
 )
-xDrone::Right_strategy = st.builds(
-    xDrone::Right,
+xDrone_Up_strategy = st.builds(
+    xDrone_Up,
     distance=
         safe_text
 )
-xDrone::Wait_strategy = st.builds(
-    xDrone::Wait,
+xDrone_Forward_strategy = st.builds(
+    xDrone_Forward,
+    distance=
+        safe_text
+)
+xDrone_Left_strategy = st.builds(
+    xDrone_Left,
+    distance=
+        safe_text
+)
+xDrone_Down_strategy = st.builds(
+    xDrone_Down,
+    distance=
+        safe_text
+)
+xDrone_Backward_strategy = st.builds(
+    xDrone_Backward,
+    distance=
+        safe_text
+)
+xDrone_Right_strategy = st.builds(
+    xDrone_Right,
+    distance=
+        safe_text
+)
+xDrone_Wait_strategy = st.builds(
+    xDrone_Wait,
     seconds=
         safe_text
 )
-xDrone::Backward_strategy = st.builds(
-    xDrone::Backward,
-    distance=
-        safe_text
-)
-xDrone::Up_strategy = st.builds(
-    xDrone::Up,
-    distance=
-        safe_text
-)
-xDrone::Forward_strategy = st.builds(
-    xDrone::Forward,
-    distance=
-        safe_text
-)
-xDrone::RotateL_strategy = st.builds(
-    xDrone::RotateL,
+xDrone_RotateR_strategy = st.builds(
+    xDrone_RotateR,
     angle=
         safe_text
 )
-xDrone::RotateR_strategy = st.builds(
-    xDrone::RotateR,
+xDrone_RotateL_strategy = st.builds(
+    xDrone_RotateL,
     angle=
         safe_text
 )
-xDrone::Down_strategy = st.builds(
-    xDrone::Down,
-    distance=
-        safe_text
-)
-xDrone::Left_strategy = st.builds(
-    xDrone::Left,
-    distance=
-        safe_text
-)
-xDrone::GoTo_strategy = st.builds(
-    xDrone::GoTo,
+xDrone_GoTo_strategy = st.builds(
+    xDrone_GoTo,
     object_name=
         safe_text
 )
 SuperCommand_strategy = st.builds(
     SuperCommand,
 )
-xDrone::Command_strategy = st.builds(
-    xDrone::Command,
+xDrone_Command_strategy = st.builds(
+    xDrone_Command,
 )
-xDrone::Object_strategy = st.builds(
-    xDrone::Object,
+xDrone_Object_strategy = st.builds(
+    xDrone_Object,
     object_name=
         safe_text
 )
-xDrone::Walls_strategy = st.builds(
-    xDrone::Walls,
+xDrone_Walls_strategy = st.builds(
+    xDrone_Walls,
 )
-xDrone::Drone_strategy = st.builds(
-    xDrone::Drone,
+xDrone_Drone_strategy = st.builds(
+    xDrone_Drone,
     rotation=
         safe_text
 )
-xDrone::Main_strategy = st.builds(
-    xDrone::Main,
+xDrone_Main_strategy = st.builds(
+    xDrone_Main,
 )
-xDrone::Program_strategy = st.builds(
-    xDrone::Program,
+xDrone_Program_strategy = st.builds(
+    xDrone_Program,
 )
 
-@given(instance=xDrone::UpWall_strategy)
+@given(instance=xDrone_UpWall_strategy)
 @settings(max_examples=50)
-def test_xdrone::upwall_instantiation(instance):
-    assert isinstance(instance, xDrone::UpWall)
-
-@given(instance=xDrone::UpWall_strategy)
-def test_xdrone::upwall_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_xdrone_upwall_instantiation(instance):
+    assert isinstance(instance, xDrone_UpWall)
 
 
-@given(instance=xDrone::UpWall_strategy)
-def test_xdrone::upwall_value_setter(instance):
+
+@given(instance=xDrone_UpWall_strategy)
+def test_xdrone_upwall_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xDrone::LeftWall_strategy)
+@given(instance=xDrone_LeftWall_strategy)
 @settings(max_examples=50)
-def test_xdrone::leftwall_instantiation(instance):
-    assert isinstance(instance, xDrone::LeftWall)
-
-@given(instance=xDrone::LeftWall_strategy)
-def test_xdrone::leftwall_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_xdrone_leftwall_instantiation(instance):
+    assert isinstance(instance, xDrone_LeftWall)
 
 
-@given(instance=xDrone::LeftWall_strategy)
-def test_xdrone::leftwall_value_setter(instance):
+
+@given(instance=xDrone_LeftWall_strategy)
+def test_xdrone_leftwall_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xDrone::Position_strategy)
+@given(instance=xDrone_Position_strategy)
 @settings(max_examples=50)
-def test_xdrone::position_instantiation(instance):
-    assert isinstance(instance, xDrone::Position)
+def test_xdrone_position_instantiation(instance):
+    assert isinstance(instance, xDrone_Position)
 
-@given(instance=xDrone::BackWall_strategy)
+@given(instance=xDrone_BackWall_strategy)
 @settings(max_examples=50)
-def test_xdrone::backwall_instantiation(instance):
-    assert isinstance(instance, xDrone::BackWall)
-
-@given(instance=xDrone::BackWall_strategy)
-def test_xdrone::backwall_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_xdrone_backwall_instantiation(instance):
+    assert isinstance(instance, xDrone_BackWall)
 
 
-@given(instance=xDrone::BackWall_strategy)
-def test_xdrone::backwall_value_setter(instance):
+
+@given(instance=xDrone_BackWall_strategy)
+def test_xdrone_backwall_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xDrone::RightWall_strategy)
+@given(instance=xDrone_RightWall_strategy)
 @settings(max_examples=50)
-def test_xdrone::rightwall_instantiation(instance):
-    assert isinstance(instance, xDrone::RightWall)
-
-@given(instance=xDrone::RightWall_strategy)
-def test_xdrone::rightwall_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_xdrone_rightwall_instantiation(instance):
+    assert isinstance(instance, xDrone_RightWall)
 
 
-@given(instance=xDrone::RightWall_strategy)
-def test_xdrone::rightwall_value_setter(instance):
+
+@given(instance=xDrone_RightWall_strategy)
+def test_xdrone_rightwall_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xDrone::FrontWall_strategy)
+@given(instance=xDrone_FrontWall_strategy)
 @settings(max_examples=50)
-def test_xdrone::frontwall_instantiation(instance):
-    assert isinstance(instance, xDrone::FrontWall)
-
-@given(instance=xDrone::FrontWall_strategy)
-def test_xdrone::frontwall_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_xdrone_frontwall_instantiation(instance):
+    assert isinstance(instance, xDrone_FrontWall)
 
 
-@given(instance=xDrone::FrontWall_strategy)
-def test_xdrone::frontwall_value_setter(instance):
+
+@given(instance=xDrone_FrontWall_strategy)
+def test_xdrone_frontwall_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xDrone::Vector_strategy)
+@given(instance=xDrone_Vector_strategy)
 @settings(max_examples=50)
-def test_xdrone::vector_instantiation(instance):
-    assert isinstance(instance, xDrone::Vector)
-
-@given(instance=xDrone::Vector_strategy)
-def test_xdrone::vector_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_xdrone_vector_instantiation(instance):
+    assert isinstance(instance, xDrone_Vector)
 
 
-@given(instance=xDrone::Vector_strategy)
-def test_xdrone::vector_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
-@given(instance=xDrone::Vector_strategy)
-def test_xdrone::vector_z_type(instance):
-    assert isinstance(instance.z, str)
-
-
-@given(instance=xDrone::Vector_strategy)
-def test_xdrone::vector_z_setter(instance):
-    original = instance.z
-    instance.z = original
-    assert instance.z == original
-
-@given(instance=xDrone::Vector_strategy)
-def test_xdrone::vector_y_type(instance):
-    assert isinstance(instance.y, str)
-
-
-@given(instance=xDrone::Vector_strategy)
-def test_xdrone::vector_y_setter(instance):
+@given(instance=xDrone_Vector_strategy)
+def test_xdrone_vector_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=xDrone::Color_strategy)
+
+
+@given(instance=xDrone_Vector_strategy)
+def test_xdrone_vector_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=xDrone_Vector_strategy)
+def test_xdrone_vector_z_setter(instance):
+    original = instance.z
+    instance.z = original
+    assert instance.z == original
+
+@given(instance=xDrone_Color_strategy)
 @settings(max_examples=50)
-def test_xdrone::color_instantiation(instance):
-    assert isinstance(instance, xDrone::Color)
-
-@given(instance=xDrone::Color_strategy)
-def test_xdrone::color_color_value_type(instance):
-    assert isinstance(instance.color_value, str)
+def test_xdrone_color_instantiation(instance):
+    assert isinstance(instance, xDrone_Color)
 
 
-@given(instance=xDrone::Color_strategy)
-def test_xdrone::color_color_value_setter(instance):
+
+@given(instance=xDrone_Color_strategy)
+def test_xdrone_color_color_value_setter(instance):
     original = instance.color_value
     instance.color_value = original
     assert instance.color_value == original
 
-@given(instance=xDrone::Size_strategy)
+@given(instance=xDrone_Size_strategy)
 @settings(max_examples=50)
-def test_xdrone::size_instantiation(instance):
-    assert isinstance(instance, xDrone::Size)
+def test_xdrone_size_instantiation(instance):
+    assert isinstance(instance, xDrone_Size)
 
-@given(instance=xDrone::Origin_strategy)
+@given(instance=xDrone_Origin_strategy)
 @settings(max_examples=50)
-def test_xdrone::origin_instantiation(instance):
-    assert isinstance(instance, xDrone::Origin)
+def test_xdrone_origin_instantiation(instance):
+    assert isinstance(instance, xDrone_Origin)
 
-@given(instance=xDrone::SuperCommand_strategy)
+@given(instance=xDrone_SuperCommand_strategy)
 @settings(max_examples=50)
-def test_xdrone::supercommand_instantiation(instance):
-    assert isinstance(instance, xDrone::SuperCommand)
+def test_xdrone_supercommand_instantiation(instance):
+    assert isinstance(instance, xDrone_SuperCommand)
 
-@given(instance=xDrone::Environment_strategy)
+@given(instance=xDrone_Environment_strategy)
 @settings(max_examples=50)
-def test_xdrone::environment_instantiation(instance):
-    assert isinstance(instance, xDrone::Environment)
+def test_xdrone_environment_instantiation(instance):
+    assert isinstance(instance, xDrone_Environment)
 
-@given(instance=xDrone::Fly_strategy)
+@given(instance=xDrone_Fly_strategy)
 @settings(max_examples=50)
-def test_xdrone::fly_instantiation(instance):
-    assert isinstance(instance, xDrone::Fly)
-
-@given(instance=xDrone::Fly_strategy)
-def test_xdrone::fly_takeoff_type(instance):
-    assert isinstance(instance.takeoff, str)
+def test_xdrone_fly_instantiation(instance):
+    assert isinstance(instance, xDrone_Fly)
 
 
-@given(instance=xDrone::Fly_strategy)
-def test_xdrone::fly_takeoff_setter(instance):
-    original = instance.takeoff
-    instance.takeoff = original
-    assert instance.takeoff == original
 
-@given(instance=xDrone::Fly_strategy)
-def test_xdrone::fly_land_type(instance):
-    assert isinstance(instance.land, str)
-
-
-@given(instance=xDrone::Fly_strategy)
-def test_xdrone::fly_land_setter(instance):
+@given(instance=xDrone_Fly_strategy)
+def test_xdrone_fly_land_setter(instance):
     original = instance.land
     instance.land = original
     assert instance.land == original
+
+
+
+@given(instance=xDrone_Fly_strategy)
+def test_xdrone_fly_takeoff_setter(instance):
+    original = instance.takeoff
+    instance.takeoff = original
+    assert instance.takeoff == original
 
 @given(instance=Command_strategy)
 @settings(max_examples=50)
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=xDrone::Right_strategy)
+@given(instance=xDrone_Up_strategy)
 @settings(max_examples=50)
-def test_xdrone::right_instantiation(instance):
-    assert isinstance(instance, xDrone::Right)
-
-@given(instance=xDrone::Right_strategy)
-def test_xdrone::right_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_xdrone_up_instantiation(instance):
+    assert isinstance(instance, xDrone_Up)
 
 
-@given(instance=xDrone::Right_strategy)
-def test_xdrone::right_distance_setter(instance):
+
+@given(instance=xDrone_Up_strategy)
+def test_xdrone_up_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
 
-@given(instance=xDrone::Wait_strategy)
+@given(instance=xDrone_Forward_strategy)
 @settings(max_examples=50)
-def test_xdrone::wait_instantiation(instance):
-    assert isinstance(instance, xDrone::Wait)
-
-@given(instance=xDrone::Wait_strategy)
-def test_xdrone::wait_seconds_type(instance):
-    assert isinstance(instance.seconds, str)
+def test_xdrone_forward_instantiation(instance):
+    assert isinstance(instance, xDrone_Forward)
 
 
-@given(instance=xDrone::Wait_strategy)
-def test_xdrone::wait_seconds_setter(instance):
+
+@given(instance=xDrone_Forward_strategy)
+def test_xdrone_forward_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=xDrone_Left_strategy)
+@settings(max_examples=50)
+def test_xdrone_left_instantiation(instance):
+    assert isinstance(instance, xDrone_Left)
+
+
+
+@given(instance=xDrone_Left_strategy)
+def test_xdrone_left_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=xDrone_Down_strategy)
+@settings(max_examples=50)
+def test_xdrone_down_instantiation(instance):
+    assert isinstance(instance, xDrone_Down)
+
+
+
+@given(instance=xDrone_Down_strategy)
+def test_xdrone_down_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=xDrone_Backward_strategy)
+@settings(max_examples=50)
+def test_xdrone_backward_instantiation(instance):
+    assert isinstance(instance, xDrone_Backward)
+
+
+
+@given(instance=xDrone_Backward_strategy)
+def test_xdrone_backward_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=xDrone_Right_strategy)
+@settings(max_examples=50)
+def test_xdrone_right_instantiation(instance):
+    assert isinstance(instance, xDrone_Right)
+
+
+
+@given(instance=xDrone_Right_strategy)
+def test_xdrone_right_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=xDrone_Wait_strategy)
+@settings(max_examples=50)
+def test_xdrone_wait_instantiation(instance):
+    assert isinstance(instance, xDrone_Wait)
+
+
+
+@given(instance=xDrone_Wait_strategy)
+def test_xdrone_wait_seconds_setter(instance):
     original = instance.seconds
     instance.seconds = original
     assert instance.seconds == original
 
-@given(instance=xDrone::Backward_strategy)
+@given(instance=xDrone_RotateR_strategy)
 @settings(max_examples=50)
-def test_xdrone::backward_instantiation(instance):
-    assert isinstance(instance, xDrone::Backward)
-
-@given(instance=xDrone::Backward_strategy)
-def test_xdrone::backward_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_xdrone_rotater_instantiation(instance):
+    assert isinstance(instance, xDrone_RotateR)
 
 
-@given(instance=xDrone::Backward_strategy)
-def test_xdrone::backward_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
 
-@given(instance=xDrone::Up_strategy)
-@settings(max_examples=50)
-def test_xdrone::up_instantiation(instance):
-    assert isinstance(instance, xDrone::Up)
-
-@given(instance=xDrone::Up_strategy)
-def test_xdrone::up_distance_type(instance):
-    assert isinstance(instance.distance, str)
-
-
-@given(instance=xDrone::Up_strategy)
-def test_xdrone::up_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
-
-@given(instance=xDrone::Forward_strategy)
-@settings(max_examples=50)
-def test_xdrone::forward_instantiation(instance):
-    assert isinstance(instance, xDrone::Forward)
-
-@given(instance=xDrone::Forward_strategy)
-def test_xdrone::forward_distance_type(instance):
-    assert isinstance(instance.distance, str)
-
-
-@given(instance=xDrone::Forward_strategy)
-def test_xdrone::forward_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
-
-@given(instance=xDrone::RotateL_strategy)
-@settings(max_examples=50)
-def test_xdrone::rotatel_instantiation(instance):
-    assert isinstance(instance, xDrone::RotateL)
-
-@given(instance=xDrone::RotateL_strategy)
-def test_xdrone::rotatel_angle_type(instance):
-    assert isinstance(instance.angle, str)
-
-
-@given(instance=xDrone::RotateL_strategy)
-def test_xdrone::rotatel_angle_setter(instance):
+@given(instance=xDrone_RotateR_strategy)
+def test_xdrone_rotater_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=xDrone::RotateR_strategy)
+@given(instance=xDrone_RotateL_strategy)
 @settings(max_examples=50)
-def test_xdrone::rotater_instantiation(instance):
-    assert isinstance(instance, xDrone::RotateR)
-
-@given(instance=xDrone::RotateR_strategy)
-def test_xdrone::rotater_angle_type(instance):
-    assert isinstance(instance.angle, str)
+def test_xdrone_rotatel_instantiation(instance):
+    assert isinstance(instance, xDrone_RotateL)
 
 
-@given(instance=xDrone::RotateR_strategy)
-def test_xdrone::rotater_angle_setter(instance):
+
+@given(instance=xDrone_RotateL_strategy)
+def test_xdrone_rotatel_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=xDrone::Down_strategy)
+@given(instance=xDrone_GoTo_strategy)
 @settings(max_examples=50)
-def test_xdrone::down_instantiation(instance):
-    assert isinstance(instance, xDrone::Down)
-
-@given(instance=xDrone::Down_strategy)
-def test_xdrone::down_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_xdrone_goto_instantiation(instance):
+    assert isinstance(instance, xDrone_GoTo)
 
 
-@given(instance=xDrone::Down_strategy)
-def test_xdrone::down_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
 
-@given(instance=xDrone::Left_strategy)
-@settings(max_examples=50)
-def test_xdrone::left_instantiation(instance):
-    assert isinstance(instance, xDrone::Left)
-
-@given(instance=xDrone::Left_strategy)
-def test_xdrone::left_distance_type(instance):
-    assert isinstance(instance.distance, str)
-
-
-@given(instance=xDrone::Left_strategy)
-def test_xdrone::left_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
-
-@given(instance=xDrone::GoTo_strategy)
-@settings(max_examples=50)
-def test_xdrone::goto_instantiation(instance):
-    assert isinstance(instance, xDrone::GoTo)
-
-@given(instance=xDrone::GoTo_strategy)
-def test_xdrone::goto_object_name_type(instance):
-    assert isinstance(instance.object_name, str)
-
-
-@given(instance=xDrone::GoTo_strategy)
-def test_xdrone::goto_object_name_setter(instance):
+@given(instance=xDrone_GoTo_strategy)
+def test_xdrone_goto_object_name_setter(instance):
     original = instance.object_name
     instance.object_name = original
     assert instance.object_name == original
@@ -1215,54 +1152,48 @@ def test_xdrone::goto_object_name_setter(instance):
 def test_supercommand_instantiation(instance):
     assert isinstance(instance, SuperCommand)
 
-@given(instance=xDrone::Command_strategy)
+@given(instance=xDrone_Command_strategy)
 @settings(max_examples=50)
-def test_xdrone::command_instantiation(instance):
-    assert isinstance(instance, xDrone::Command)
+def test_xdrone_command_instantiation(instance):
+    assert isinstance(instance, xDrone_Command)
 
-@given(instance=xDrone::Object_strategy)
+@given(instance=xDrone_Object_strategy)
 @settings(max_examples=50)
-def test_xdrone::object_instantiation(instance):
-    assert isinstance(instance, xDrone::Object)
-
-@given(instance=xDrone::Object_strategy)
-def test_xdrone::object_object_name_type(instance):
-    assert isinstance(instance.object_name, str)
+def test_xdrone_object_instantiation(instance):
+    assert isinstance(instance, xDrone_Object)
 
 
-@given(instance=xDrone::Object_strategy)
-def test_xdrone::object_object_name_setter(instance):
+
+@given(instance=xDrone_Object_strategy)
+def test_xdrone_object_object_name_setter(instance):
     original = instance.object_name
     instance.object_name = original
     assert instance.object_name == original
 
-@given(instance=xDrone::Walls_strategy)
+@given(instance=xDrone_Walls_strategy)
 @settings(max_examples=50)
-def test_xdrone::walls_instantiation(instance):
-    assert isinstance(instance, xDrone::Walls)
+def test_xdrone_walls_instantiation(instance):
+    assert isinstance(instance, xDrone_Walls)
 
-@given(instance=xDrone::Drone_strategy)
+@given(instance=xDrone_Drone_strategy)
 @settings(max_examples=50)
-def test_xdrone::drone_instantiation(instance):
-    assert isinstance(instance, xDrone::Drone)
-
-@given(instance=xDrone::Drone_strategy)
-def test_xdrone::drone_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
+def test_xdrone_drone_instantiation(instance):
+    assert isinstance(instance, xDrone_Drone)
 
 
-@given(instance=xDrone::Drone_strategy)
-def test_xdrone::drone_rotation_setter(instance):
+
+@given(instance=xDrone_Drone_strategy)
+def test_xdrone_drone_rotation_setter(instance):
     original = instance.rotation
     instance.rotation = original
     assert instance.rotation == original
 
-@given(instance=xDrone::Main_strategy)
+@given(instance=xDrone_Main_strategy)
 @settings(max_examples=50)
-def test_xdrone::main_instantiation(instance):
-    assert isinstance(instance, xDrone::Main)
+def test_xdrone_main_instantiation(instance):
+    assert isinstance(instance, xDrone_Main)
 
-@given(instance=xDrone::Program_strategy)
+@given(instance=xDrone_Program_strategy)
 @settings(max_examples=50)
-def test_xdrone::program_instantiation(instance):
-    assert isinstance(instance, xDrone::Program)
+def test_xdrone_program_instantiation(instance):
+    assert isinstance(instance, xDrone_Program)

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    p::ThisClassWasLast,
-    p::ThisClassWasMiddle,
-    p::ThisClassWasFirst,
-    p::append,
+from python_code import (
+    p_ThisClassWasLast,
+    p_ThisClassWasMiddle,
+    p_ThisClassWasFirst,
+    p_append,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_p::thisclasswaslast_is_not_abstract():
-    assert not inspect.isabstract(p::ThisClassWasLast)
+def test_p_thisclasswaslast_is_not_abstract():
+    assert not inspect.isabstract(p_ThisClassWasLast)
 
 
-def test_p::thisclasswaslast_constructor_exists():
-    assert callable(p::ThisClassWasLast.__init__)
+def test_p_thisclasswaslast_constructor_exists():
+    assert callable(p_ThisClassWasLast.__init__)
 
 
-def test_p::thisclasswaslast_constructor_args():
-    sig = inspect.signature(p::ThisClassWasLast.__init__)
+def test_p_thisclasswaslast_constructor_args():
+    sig = inspect.signature(p_ThisClassWasLast.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p::thisclasswasmiddle_is_not_abstract():
-    assert not inspect.isabstract(p::ThisClassWasMiddle)
+def test_p_thisclasswasmiddle_is_not_abstract():
+    assert not inspect.isabstract(p_ThisClassWasMiddle)
 
 
-def test_p::thisclasswasmiddle_constructor_exists():
-    assert callable(p::ThisClassWasMiddle.__init__)
+def test_p_thisclasswasmiddle_constructor_exists():
+    assert callable(p_ThisClassWasMiddle.__init__)
 
 
-def test_p::thisclasswasmiddle_constructor_args():
-    sig = inspect.signature(p::ThisClassWasMiddle.__init__)
+def test_p_thisclasswasmiddle_constructor_args():
+    sig = inspect.signature(p_ThisClassWasMiddle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p::thisclasswasfirst_is_not_abstract():
-    assert not inspect.isabstract(p::ThisClassWasFirst)
+def test_p_thisclasswasfirst_is_not_abstract():
+    assert not inspect.isabstract(p_ThisClassWasFirst)
 
 
-def test_p::thisclasswasfirst_constructor_exists():
-    assert callable(p::ThisClassWasFirst.__init__)
+def test_p_thisclasswasfirst_constructor_exists():
+    assert callable(p_ThisClassWasFirst.__init__)
 
 
-def test_p::thisclasswasfirst_constructor_args():
-    sig = inspect.signature(p::ThisClassWasFirst.__init__)
+def test_p_thisclasswasfirst_constructor_args():
+    sig = inspect.signature(p_ThisClassWasFirst.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p::append_is_not_abstract():
-    assert not inspect.isabstract(p::append)
+def test_p_append_is_not_abstract():
+    assert not inspect.isabstract(p_append)
 
 
-def test_p::append_constructor_exists():
-    assert callable(p::append.__init__)
+def test_p_append_constructor_exists():
+    assert callable(p_append.__init__)
 
 
-def test_p::append_constructor_args():
-    sig = inspect.signature(p::append.__init__)
+def test_p_append_constructor_args():
+    sig = inspect.signature(p_append.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-p::ThisClassWasLast_strategy = st.builds(
-    p::ThisClassWasLast,
+p_ThisClassWasLast_strategy = st.builds(
+    p_ThisClassWasLast,
 )
-p::ThisClassWasMiddle_strategy = st.builds(
-    p::ThisClassWasMiddle,
+p_ThisClassWasMiddle_strategy = st.builds(
+    p_ThisClassWasMiddle,
 )
-p::ThisClassWasFirst_strategy = st.builds(
-    p::ThisClassWasFirst,
+p_ThisClassWasFirst_strategy = st.builds(
+    p_ThisClassWasFirst,
 )
-p::append_strategy = st.builds(
-    p::append,
+p_append_strategy = st.builds(
+    p_append,
 )
 
-@given(instance=p::ThisClassWasLast_strategy)
+@given(instance=p_ThisClassWasLast_strategy)
 @settings(max_examples=50)
-def test_p::thisclasswaslast_instantiation(instance):
-    assert isinstance(instance, p::ThisClassWasLast)
+def test_p_thisclasswaslast_instantiation(instance):
+    assert isinstance(instance, p_ThisClassWasLast)
 
-@given(instance=p::ThisClassWasMiddle_strategy)
+@given(instance=p_ThisClassWasMiddle_strategy)
 @settings(max_examples=50)
-def test_p::thisclasswasmiddle_instantiation(instance):
-    assert isinstance(instance, p::ThisClassWasMiddle)
+def test_p_thisclasswasmiddle_instantiation(instance):
+    assert isinstance(instance, p_ThisClassWasMiddle)
 
-@given(instance=p::ThisClassWasFirst_strategy)
+@given(instance=p_ThisClassWasFirst_strategy)
 @settings(max_examples=50)
-def test_p::thisclasswasfirst_instantiation(instance):
-    assert isinstance(instance, p::ThisClassWasFirst)
+def test_p_thisclasswasfirst_instantiation(instance):
+    assert isinstance(instance, p_ThisClassWasFirst)
 
-@given(instance=p::append_strategy)
+@given(instance=p_append_strategy)
 @settings(max_examples=50)
-def test_p::append_instantiation(instance):
-    assert isinstance(instance, p::append)
+def test_p_append_instantiation(instance):
+    assert isinstance(instance, p_append)

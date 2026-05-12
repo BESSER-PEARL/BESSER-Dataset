@@ -3,39 +3,39 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    syswbeff1065ok::Workbench,
-    syswbeff1065ok::PatternCatalog,
-    syswbeff1065ok::System,
-    syswbeff1065ok::Thoughts,
-    syswbeff1065ok::Thing,
-    syswbeff1065ok::AssociatedTo,
-    syswbeff1065ok::ProcessNode,
-    syswbeff1065ok::Item,
-    syswbeff1065ok::Port,
+from python_code import (
+    syswbeff1065ok_Workbench,
+    syswbeff1065ok_PatternCatalog,
+    syswbeff1065ok_System,
+    syswbeff1065ok_Thoughts,
+    syswbeff1065ok_Thing,
+    syswbeff1065ok_AssociatedTo,
+    syswbeff1065ok_ProcessNode,
+    syswbeff1065ok_Item,
+    syswbeff1065ok_Port,
     Port,
     Sequence,
-    syswbeff1065ok::Iteration,
-    syswbeff1065ok::Or,
-    syswbeff1065ok::Start,
-    syswbeff1065ok::LoopExit,
-    syswbeff1065ok::And,
-    syswbeff1065ok::SequenceNode,
-    syswbeff1065ok::Component,
-    syswbeff1065ok::FunctionProperty,
-    syswbeff1065ok::Loop,
-    syswbeff1065ok::Final,
-    syswbeff1065ok::OutputPort,
+    syswbeff1065ok_Start,
+    syswbeff1065ok_Or,
+    syswbeff1065ok_LoopExit,
+    syswbeff1065ok_Iteration,
+    syswbeff1065ok_And,
+    syswbeff1065ok_SequenceNode,
+    syswbeff1065ok_Component,
+    syswbeff1065ok_FunctionProperty,
+    syswbeff1065ok_Loop,
+    syswbeff1065ok_Final,
+    syswbeff1065ok_OutputPort,
     ProcessNode,
-    syswbeff1065ok::Flow,
+    syswbeff1065ok_Flow,
     SequenceNode,
-    syswbeff1065ok::Sequence,
-    syswbeff1065ok::Function,
-    syswbeff1065ok::Token,
-    syswbeff1065ok::Description,
-    syswbeff1065ok::InputPort,
+    syswbeff1065ok_Sequence,
+    syswbeff1065ok_Function,
+    syswbeff1065ok_Token,
+    syswbeff1065ok_Description,
+    syswbeff1065ok_InputPort,
     FunctionDomain,
 )
 
@@ -45,37 +45,37 @@ from classes import (
 
 
 
-def test_syswbeff1065ok::workbench_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Workbench)
+def test_syswbeff1065ok_workbench_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Workbench)
 
 
-def test_syswbeff1065ok::workbench_constructor_exists():
-    assert callable(syswbeff1065ok::Workbench.__init__)
+def test_syswbeff1065ok_workbench_constructor_exists():
+    assert callable(syswbeff1065ok_Workbench.__init__)
 
 
-def test_syswbeff1065ok::workbench_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Workbench.__init__)
+def test_syswbeff1065ok_workbench_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Workbench.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::patterncatalog_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::PatternCatalog)
+def test_syswbeff1065ok_patterncatalog_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_PatternCatalog)
 
 
-def test_syswbeff1065ok::patterncatalog_constructor_exists():
-    assert callable(syswbeff1065ok::PatternCatalog.__init__)
+def test_syswbeff1065ok_patterncatalog_constructor_exists():
+    assert callable(syswbeff1065ok_PatternCatalog.__init__)
 
 
-def test_syswbeff1065ok::patterncatalog_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::PatternCatalog.__init__)
+def test_syswbeff1065ok_patterncatalog_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_PatternCatalog.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff1065ok::patterncatalog_has_id():
-    assert hasattr(syswbeff1065ok::PatternCatalog, "id")
+def test_syswbeff1065ok_patterncatalog_has_id():
+    assert hasattr(syswbeff1065ok_PatternCatalog, "id")
     descriptor = None
-    for klass in syswbeff1065ok::PatternCatalog.__mro__:
+    for klass in syswbeff1065ok_PatternCatalog.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -83,23 +83,23 @@ def test_syswbeff1065ok::patterncatalog_has_id():
 
 
 
-def test_syswbeff1065ok::system_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::System)
+def test_syswbeff1065ok_system_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_System)
 
 
-def test_syswbeff1065ok::system_constructor_exists():
-    assert callable(syswbeff1065ok::System.__init__)
+def test_syswbeff1065ok_system_constructor_exists():
+    assert callable(syswbeff1065ok_System.__init__)
 
 
-def test_syswbeff1065ok::system_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::System.__init__)
+def test_syswbeff1065ok_system_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_System.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff1065ok::system_has_id():
-    assert hasattr(syswbeff1065ok::System, "id")
+def test_syswbeff1065ok_system_has_id():
+    assert hasattr(syswbeff1065ok_System, "id")
     descriptor = None
-    for klass in syswbeff1065ok::System.__mro__:
+    for klass in syswbeff1065ok_System.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -107,23 +107,23 @@ def test_syswbeff1065ok::system_has_id():
 
 
 
-def test_syswbeff1065ok::thoughts_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Thoughts)
+def test_syswbeff1065ok_thoughts_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Thoughts)
 
 
-def test_syswbeff1065ok::thoughts_constructor_exists():
-    assert callable(syswbeff1065ok::Thoughts.__init__)
+def test_syswbeff1065ok_thoughts_constructor_exists():
+    assert callable(syswbeff1065ok_Thoughts.__init__)
 
 
-def test_syswbeff1065ok::thoughts_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Thoughts.__init__)
+def test_syswbeff1065ok_thoughts_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Thoughts.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff1065ok::thoughts_has_id():
-    assert hasattr(syswbeff1065ok::Thoughts, "id")
+def test_syswbeff1065ok_thoughts_has_id():
+    assert hasattr(syswbeff1065ok_Thoughts, "id")
     descriptor = None
-    for klass in syswbeff1065ok::Thoughts.__mro__:
+    for klass in syswbeff1065ok_Thoughts.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -131,23 +131,23 @@ def test_syswbeff1065ok::thoughts_has_id():
 
 
 
-def test_syswbeff1065ok::thing_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Thing)
+def test_syswbeff1065ok_thing_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Thing)
 
 
-def test_syswbeff1065ok::thing_constructor_exists():
-    assert callable(syswbeff1065ok::Thing.__init__)
+def test_syswbeff1065ok_thing_constructor_exists():
+    assert callable(syswbeff1065ok_Thing.__init__)
 
 
-def test_syswbeff1065ok::thing_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Thing.__init__)
+def test_syswbeff1065ok_thing_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff1065ok::thing_has_id():
-    assert hasattr(syswbeff1065ok::Thing, "id")
+def test_syswbeff1065ok_thing_has_id():
+    assert hasattr(syswbeff1065ok_Thing, "id")
     descriptor = None
-    for klass in syswbeff1065ok::Thing.__mro__:
+    for klass in syswbeff1065ok_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -155,23 +155,23 @@ def test_syswbeff1065ok::thing_has_id():
 
 
 
-def test_syswbeff1065ok::associatedto_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::AssociatedTo)
+def test_syswbeff1065ok_associatedto_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_AssociatedTo)
 
 
-def test_syswbeff1065ok::associatedto_constructor_exists():
-    assert callable(syswbeff1065ok::AssociatedTo.__init__)
+def test_syswbeff1065ok_associatedto_constructor_exists():
+    assert callable(syswbeff1065ok_AssociatedTo.__init__)
 
 
-def test_syswbeff1065ok::associatedto_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::AssociatedTo.__init__)
+def test_syswbeff1065ok_associatedto_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_AssociatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_syswbeff1065ok::associatedto_has_since():
-    assert hasattr(syswbeff1065ok::AssociatedTo, "since")
+def test_syswbeff1065ok_associatedto_has_since():
+    assert hasattr(syswbeff1065ok_AssociatedTo, "since")
     descriptor = None
-    for klass in syswbeff1065ok::AssociatedTo.__mro__:
+    for klass in syswbeff1065ok_AssociatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -179,23 +179,23 @@ def test_syswbeff1065ok::associatedto_has_since():
 
 
 
-def test_syswbeff1065ok::processnode_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::ProcessNode)
+def test_syswbeff1065ok_processnode_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_ProcessNode)
 
 
-def test_syswbeff1065ok::processnode_constructor_exists():
-    assert callable(syswbeff1065ok::ProcessNode.__init__)
+def test_syswbeff1065ok_processnode_constructor_exists():
+    assert callable(syswbeff1065ok_ProcessNode.__init__)
 
 
-def test_syswbeff1065ok::processnode_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::ProcessNode.__init__)
+def test_syswbeff1065ok_processnode_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_ProcessNode.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_syswbeff1065ok::processnode_has_label():
-    assert hasattr(syswbeff1065ok::ProcessNode, "label")
+def test_syswbeff1065ok_processnode_has_label():
+    assert hasattr(syswbeff1065ok_ProcessNode, "label")
     descriptor = None
-    for klass in syswbeff1065ok::ProcessNode.__mro__:
+    for klass in syswbeff1065ok_ProcessNode.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -203,23 +203,23 @@ def test_syswbeff1065ok::processnode_has_label():
 
 
 
-def test_syswbeff1065ok::item_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Item)
+def test_syswbeff1065ok_item_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Item)
 
 
-def test_syswbeff1065ok::item_constructor_exists():
-    assert callable(syswbeff1065ok::Item.__init__)
+def test_syswbeff1065ok_item_constructor_exists():
+    assert callable(syswbeff1065ok_Item.__init__)
 
 
-def test_syswbeff1065ok::item_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Item.__init__)
+def test_syswbeff1065ok_item_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Item.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_syswbeff1065ok::item_has_name():
-    assert hasattr(syswbeff1065ok::Item, "name")
+def test_syswbeff1065ok_item_has_name():
+    assert hasattr(syswbeff1065ok_Item, "name")
     descriptor = None
-    for klass in syswbeff1065ok::Item.__mro__:
+    for klass in syswbeff1065ok_Item.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -227,23 +227,23 @@ def test_syswbeff1065ok::item_has_name():
 
 
 
-def test_syswbeff1065ok::port_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Port)
+def test_syswbeff1065ok_port_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Port)
 
 
-def test_syswbeff1065ok::port_constructor_exists():
-    assert callable(syswbeff1065ok::Port.__init__)
+def test_syswbeff1065ok_port_constructor_exists():
+    assert callable(syswbeff1065ok_Port.__init__)
 
 
-def test_syswbeff1065ok::port_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Port.__init__)
+def test_syswbeff1065ok_port_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Port.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff1065ok::port_has_id():
-    assert hasattr(syswbeff1065ok::Port, "id")
+def test_syswbeff1065ok_port_has_id():
+    assert hasattr(syswbeff1065ok_Port, "id")
     descriptor = None
-    for klass in syswbeff1065ok::Port.__mro__:
+    for klass in syswbeff1065ok_Port.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -279,137 +279,137 @@ def test_sequence_constructor_args():
 
 
 
-def test_syswbeff1065ok::iteration_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Iteration)
+def test_syswbeff1065ok_start_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Start)
 
 
-def test_syswbeff1065ok::iteration_constructor_exists():
-    assert callable(syswbeff1065ok::Iteration.__init__)
+def test_syswbeff1065ok_start_constructor_exists():
+    assert callable(syswbeff1065ok_Start.__init__)
 
 
-def test_syswbeff1065ok::iteration_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Iteration.__init__)
+def test_syswbeff1065ok_start_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::or_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Or)
+def test_syswbeff1065ok_or_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Or)
 
 
-def test_syswbeff1065ok::or_constructor_exists():
-    assert callable(syswbeff1065ok::Or.__init__)
+def test_syswbeff1065ok_or_constructor_exists():
+    assert callable(syswbeff1065ok_Or.__init__)
 
 
-def test_syswbeff1065ok::or_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Or.__init__)
+def test_syswbeff1065ok_or_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::start_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Start)
+def test_syswbeff1065ok_loopexit_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_LoopExit)
 
 
-def test_syswbeff1065ok::start_constructor_exists():
-    assert callable(syswbeff1065ok::Start.__init__)
+def test_syswbeff1065ok_loopexit_constructor_exists():
+    assert callable(syswbeff1065ok_LoopExit.__init__)
 
 
-def test_syswbeff1065ok::start_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Start.__init__)
+def test_syswbeff1065ok_loopexit_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_LoopExit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::loopexit_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::LoopExit)
+def test_syswbeff1065ok_iteration_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Iteration)
 
 
-def test_syswbeff1065ok::loopexit_constructor_exists():
-    assert callable(syswbeff1065ok::LoopExit.__init__)
+def test_syswbeff1065ok_iteration_constructor_exists():
+    assert callable(syswbeff1065ok_Iteration.__init__)
 
 
-def test_syswbeff1065ok::loopexit_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::LoopExit.__init__)
+def test_syswbeff1065ok_iteration_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Iteration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::and_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::And)
+def test_syswbeff1065ok_and_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_And)
 
 
-def test_syswbeff1065ok::and_constructor_exists():
-    assert callable(syswbeff1065ok::And.__init__)
+def test_syswbeff1065ok_and_constructor_exists():
+    assert callable(syswbeff1065ok_And.__init__)
 
 
-def test_syswbeff1065ok::and_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::And.__init__)
+def test_syswbeff1065ok_and_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::sequencenode_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::SequenceNode)
+def test_syswbeff1065ok_sequencenode_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_SequenceNode)
 
 
-def test_syswbeff1065ok::sequencenode_constructor_exists():
-    assert callable(syswbeff1065ok::SequenceNode.__init__)
+def test_syswbeff1065ok_sequencenode_constructor_exists():
+    assert callable(syswbeff1065ok_SequenceNode.__init__)
 
 
-def test_syswbeff1065ok::sequencenode_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::SequenceNode.__init__)
+def test_syswbeff1065ok_sequencenode_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_SequenceNode.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "tMin" in params, "Missing parameter 'tMin'"
     assert "tMax" in params, "Missing parameter 'tMax'"
+    assert "tMin" in params, "Missing parameter 'tMin'"
 
-def test_syswbeff1065ok::sequencenode_has_name():
-    assert hasattr(syswbeff1065ok::SequenceNode, "name")
+def test_syswbeff1065ok_sequencenode_has_name():
+    assert hasattr(syswbeff1065ok_SequenceNode, "name")
     descriptor = None
-    for klass in syswbeff1065ok::SequenceNode.__mro__:
+    for klass in syswbeff1065ok_SequenceNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_syswbeff1065ok::sequencenode_has_tMin():
-    assert hasattr(syswbeff1065ok::SequenceNode, "tMin")
+def test_syswbeff1065ok_sequencenode_has_tMax():
+    assert hasattr(syswbeff1065ok_SequenceNode, "tMax")
     descriptor = None
-    for klass in syswbeff1065ok::SequenceNode.__mro__:
-        if "tMin" in klass.__dict__:
-            descriptor = klass.__dict__["tMin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_syswbeff1065ok::sequencenode_has_tMax():
-    assert hasattr(syswbeff1065ok::SequenceNode, "tMax")
-    descriptor = None
-    for klass in syswbeff1065ok::SequenceNode.__mro__:
+    for klass in syswbeff1065ok_SequenceNode.__mro__:
         if "tMax" in klass.__dict__:
             descriptor = klass.__dict__["tMax"]
             break
     assert isinstance(descriptor, property)
 
+def test_syswbeff1065ok_sequencenode_has_tMin():
+    assert hasattr(syswbeff1065ok_SequenceNode, "tMin")
+    descriptor = None
+    for klass in syswbeff1065ok_SequenceNode.__mro__:
+        if "tMin" in klass.__dict__:
+            descriptor = klass.__dict__["tMin"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_syswbeff1065ok::component_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Component)
+
+def test_syswbeff1065ok_component_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Component)
 
 
-def test_syswbeff1065ok::component_constructor_exists():
-    assert callable(syswbeff1065ok::Component.__init__)
+def test_syswbeff1065ok_component_constructor_exists():
+    assert callable(syswbeff1065ok_Component.__init__)
 
 
-def test_syswbeff1065ok::component_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Component.__init__)
+def test_syswbeff1065ok_component_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_syswbeff1065ok::component_has_name():
-    assert hasattr(syswbeff1065ok::Component, "name")
+def test_syswbeff1065ok_component_has_name():
+    assert hasattr(syswbeff1065ok_Component, "name")
     descriptor = None
-    for klass in syswbeff1065ok::Component.__mro__:
+    for klass in syswbeff1065ok_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -417,23 +417,23 @@ def test_syswbeff1065ok::component_has_name():
 
 
 
-def test_syswbeff1065ok::functionproperty_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::FunctionProperty)
+def test_syswbeff1065ok_functionproperty_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_FunctionProperty)
 
 
-def test_syswbeff1065ok::functionproperty_constructor_exists():
-    assert callable(syswbeff1065ok::FunctionProperty.__init__)
+def test_syswbeff1065ok_functionproperty_constructor_exists():
+    assert callable(syswbeff1065ok_FunctionProperty.__init__)
 
 
-def test_syswbeff1065ok::functionproperty_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::FunctionProperty.__init__)
+def test_syswbeff1065ok_functionproperty_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_FunctionProperty.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_syswbeff1065ok::functionproperty_has_description():
-    assert hasattr(syswbeff1065ok::FunctionProperty, "description")
+def test_syswbeff1065ok_functionproperty_has_description():
+    assert hasattr(syswbeff1065ok_FunctionProperty, "description")
     descriptor = None
-    for klass in syswbeff1065ok::FunctionProperty.__mro__:
+    for klass in syswbeff1065ok_FunctionProperty.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -441,44 +441,44 @@ def test_syswbeff1065ok::functionproperty_has_description():
 
 
 
-def test_syswbeff1065ok::loop_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Loop)
+def test_syswbeff1065ok_loop_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Loop)
 
 
-def test_syswbeff1065ok::loop_constructor_exists():
-    assert callable(syswbeff1065ok::Loop.__init__)
+def test_syswbeff1065ok_loop_constructor_exists():
+    assert callable(syswbeff1065ok_Loop.__init__)
 
 
-def test_syswbeff1065ok::loop_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Loop.__init__)
+def test_syswbeff1065ok_loop_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::final_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Final)
+def test_syswbeff1065ok_final_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Final)
 
 
-def test_syswbeff1065ok::final_constructor_exists():
-    assert callable(syswbeff1065ok::Final.__init__)
+def test_syswbeff1065ok_final_constructor_exists():
+    assert callable(syswbeff1065ok_Final.__init__)
 
 
-def test_syswbeff1065ok::final_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Final.__init__)
+def test_syswbeff1065ok_final_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::outputport_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::OutputPort)
+def test_syswbeff1065ok_outputport_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_OutputPort)
 
 
-def test_syswbeff1065ok::outputport_constructor_exists():
-    assert callable(syswbeff1065ok::OutputPort.__init__)
+def test_syswbeff1065ok_outputport_constructor_exists():
+    assert callable(syswbeff1065ok_OutputPort.__init__)
 
 
-def test_syswbeff1065ok::outputport_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::OutputPort.__init__)
+def test_syswbeff1065ok_outputport_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -497,16 +497,16 @@ def test_processnode_constructor_args():
 
 
 
-def test_syswbeff1065ok::flow_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Flow)
+def test_syswbeff1065ok_flow_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Flow)
 
 
-def test_syswbeff1065ok::flow_constructor_exists():
-    assert callable(syswbeff1065ok::Flow.__init__)
+def test_syswbeff1065ok_flow_constructor_exists():
+    assert callable(syswbeff1065ok_Flow.__init__)
 
 
-def test_syswbeff1065ok::flow_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Flow.__init__)
+def test_syswbeff1065ok_flow_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -525,37 +525,37 @@ def test_sequencenode_constructor_args():
 
 
 
-def test_syswbeff1065ok::sequence_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Sequence)
+def test_syswbeff1065ok_sequence_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Sequence)
 
 
-def test_syswbeff1065ok::sequence_constructor_exists():
-    assert callable(syswbeff1065ok::Sequence.__init__)
+def test_syswbeff1065ok_sequence_constructor_exists():
+    assert callable(syswbeff1065ok_Sequence.__init__)
 
 
-def test_syswbeff1065ok::sequence_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Sequence.__init__)
+def test_syswbeff1065ok_sequence_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::function_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Function)
+def test_syswbeff1065ok_function_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Function)
 
 
-def test_syswbeff1065ok::function_constructor_exists():
-    assert callable(syswbeff1065ok::Function.__init__)
+def test_syswbeff1065ok_function_constructor_exists():
+    assert callable(syswbeff1065ok_Function.__init__)
 
 
-def test_syswbeff1065ok::function_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Function.__init__)
+def test_syswbeff1065ok_function_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Function.__init__)
     params = list(sig.parameters.keys())
     assert "domain" in params, "Missing parameter 'domain'"
 
-def test_syswbeff1065ok::function_has_domain():
-    assert hasattr(syswbeff1065ok::Function, "domain")
+def test_syswbeff1065ok_function_has_domain():
+    assert hasattr(syswbeff1065ok_Function, "domain")
     descriptor = None
-    for klass in syswbeff1065ok::Function.__mro__:
+    for klass in syswbeff1065ok_Function.__mro__:
         if "domain" in klass.__dict__:
             descriptor = klass.__dict__["domain"]
             break
@@ -563,37 +563,37 @@ def test_syswbeff1065ok::function_has_domain():
 
 
 
-def test_syswbeff1065ok::token_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Token)
+def test_syswbeff1065ok_token_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Token)
 
 
-def test_syswbeff1065ok::token_constructor_exists():
-    assert callable(syswbeff1065ok::Token.__init__)
+def test_syswbeff1065ok_token_constructor_exists():
+    assert callable(syswbeff1065ok_Token.__init__)
 
 
-def test_syswbeff1065ok::token_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Token.__init__)
+def test_syswbeff1065ok_token_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff1065ok::description_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::Description)
+def test_syswbeff1065ok_description_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_Description)
 
 
-def test_syswbeff1065ok::description_constructor_exists():
-    assert callable(syswbeff1065ok::Description.__init__)
+def test_syswbeff1065ok_description_constructor_exists():
+    assert callable(syswbeff1065ok_Description.__init__)
 
 
-def test_syswbeff1065ok::description_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::Description.__init__)
+def test_syswbeff1065ok_description_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_Description.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_syswbeff1065ok::description_has_content():
-    assert hasattr(syswbeff1065ok::Description, "content")
+def test_syswbeff1065ok_description_has_content():
+    assert hasattr(syswbeff1065ok_Description, "content")
     descriptor = None
-    for klass in syswbeff1065ok::Description.__mro__:
+    for klass in syswbeff1065ok_Description.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -601,16 +601,16 @@ def test_syswbeff1065ok::description_has_content():
 
 
 
-def test_syswbeff1065ok::inputport_is_not_abstract():
-    assert not inspect.isabstract(syswbeff1065ok::InputPort)
+def test_syswbeff1065ok_inputport_is_not_abstract():
+    assert not inspect.isabstract(syswbeff1065ok_InputPort)
 
 
-def test_syswbeff1065ok::inputport_constructor_exists():
-    assert callable(syswbeff1065ok::InputPort.__init__)
+def test_syswbeff1065ok_inputport_constructor_exists():
+    assert callable(syswbeff1065ok_InputPort.__init__)
 
 
-def test_syswbeff1065ok::inputport_constructor_args():
-    sig = inspect.signature(syswbeff1065ok::InputPort.__init__)
+def test_syswbeff1065ok_inputport_constructor_args():
+    sig = inspect.signature(syswbeff1065ok_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 def test_functiondomain_exists():
@@ -621,8 +621,8 @@ def test_functiondomain_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FunctionDomain]
     expected_literals = [
-        "space",
         "time",
+        "space",
         "form",
     ]
     # Check that all expected literals exist
@@ -641,46 +641,46 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-syswbeff1065ok::Workbench_strategy = st.builds(
-    syswbeff1065ok::Workbench,
+syswbeff1065ok_Workbench_strategy = st.builds(
+    syswbeff1065ok_Workbench,
 )
-syswbeff1065ok::PatternCatalog_strategy = st.builds(
-    syswbeff1065ok::PatternCatalog,
+syswbeff1065ok_PatternCatalog_strategy = st.builds(
+    syswbeff1065ok_PatternCatalog,
     id=
         safe_text
 )
-syswbeff1065ok::System_strategy = st.builds(
-    syswbeff1065ok::System,
+syswbeff1065ok_System_strategy = st.builds(
+    syswbeff1065ok_System,
     id=
         safe_text
 )
-syswbeff1065ok::Thoughts_strategy = st.builds(
-    syswbeff1065ok::Thoughts,
+syswbeff1065ok_Thoughts_strategy = st.builds(
+    syswbeff1065ok_Thoughts,
     id=
         safe_text
 )
-syswbeff1065ok::Thing_strategy = st.builds(
-    syswbeff1065ok::Thing,
+syswbeff1065ok_Thing_strategy = st.builds(
+    syswbeff1065ok_Thing,
     id=
         st.integers()
 )
-syswbeff1065ok::AssociatedTo_strategy = st.builds(
-    syswbeff1065ok::AssociatedTo,
+syswbeff1065ok_AssociatedTo_strategy = st.builds(
+    syswbeff1065ok_AssociatedTo,
     since=
         safe_text
 )
-syswbeff1065ok::ProcessNode_strategy = st.builds(
-    syswbeff1065ok::ProcessNode,
+syswbeff1065ok_ProcessNode_strategy = st.builds(
+    syswbeff1065ok_ProcessNode,
     label=
         safe_text
 )
-syswbeff1065ok::Item_strategy = st.builds(
-    syswbeff1065ok::Item,
+syswbeff1065ok_Item_strategy = st.builds(
+    syswbeff1065ok_Item,
     name=
         safe_text
 )
-syswbeff1065ok::Port_strategy = st.builds(
-    syswbeff1065ok::Port,
+syswbeff1065ok_Port_strategy = st.builds(
+    syswbeff1065ok_Port,
     id=
         safe_text
 )
@@ -690,207 +690,183 @@ Port_strategy = st.builds(
 Sequence_strategy = st.builds(
     Sequence,
 )
-syswbeff1065ok::Iteration_strategy = st.builds(
-    syswbeff1065ok::Iteration,
+syswbeff1065ok_Start_strategy = st.builds(
+    syswbeff1065ok_Start,
 )
-syswbeff1065ok::Or_strategy = st.builds(
-    syswbeff1065ok::Or,
+syswbeff1065ok_Or_strategy = st.builds(
+    syswbeff1065ok_Or,
 )
-syswbeff1065ok::Start_strategy = st.builds(
-    syswbeff1065ok::Start,
+syswbeff1065ok_LoopExit_strategy = st.builds(
+    syswbeff1065ok_LoopExit,
 )
-syswbeff1065ok::LoopExit_strategy = st.builds(
-    syswbeff1065ok::LoopExit,
+syswbeff1065ok_Iteration_strategy = st.builds(
+    syswbeff1065ok_Iteration,
 )
-syswbeff1065ok::And_strategy = st.builds(
-    syswbeff1065ok::And,
+syswbeff1065ok_And_strategy = st.builds(
+    syswbeff1065ok_And,
 )
-syswbeff1065ok::SequenceNode_strategy = st.builds(
-    syswbeff1065ok::SequenceNode,
+syswbeff1065ok_SequenceNode_strategy = st.builds(
+    syswbeff1065ok_SequenceNode,
     name=
         safe_text,
-    tMin=
-        st.integers(),
     tMax=
+        st.integers(),
+    tMin=
         st.integers()
 )
-syswbeff1065ok::Component_strategy = st.builds(
-    syswbeff1065ok::Component,
+syswbeff1065ok_Component_strategy = st.builds(
+    syswbeff1065ok_Component,
     name=
         safe_text
 )
-syswbeff1065ok::FunctionProperty_strategy = st.builds(
-    syswbeff1065ok::FunctionProperty,
+syswbeff1065ok_FunctionProperty_strategy = st.builds(
+    syswbeff1065ok_FunctionProperty,
     description=
         safe_text
 )
-syswbeff1065ok::Loop_strategy = st.builds(
-    syswbeff1065ok::Loop,
+syswbeff1065ok_Loop_strategy = st.builds(
+    syswbeff1065ok_Loop,
 )
-syswbeff1065ok::Final_strategy = st.builds(
-    syswbeff1065ok::Final,
+syswbeff1065ok_Final_strategy = st.builds(
+    syswbeff1065ok_Final,
 )
-syswbeff1065ok::OutputPort_strategy = st.builds(
-    syswbeff1065ok::OutputPort,
+syswbeff1065ok_OutputPort_strategy = st.builds(
+    syswbeff1065ok_OutputPort,
 )
 ProcessNode_strategy = st.builds(
     ProcessNode,
 )
-syswbeff1065ok::Flow_strategy = st.builds(
-    syswbeff1065ok::Flow,
+syswbeff1065ok_Flow_strategy = st.builds(
+    syswbeff1065ok_Flow,
 )
 SequenceNode_strategy = st.builds(
     SequenceNode,
 )
-syswbeff1065ok::Sequence_strategy = st.builds(
-    syswbeff1065ok::Sequence,
+syswbeff1065ok_Sequence_strategy = st.builds(
+    syswbeff1065ok_Sequence,
 )
-syswbeff1065ok::Function_strategy = st.builds(
-    syswbeff1065ok::Function,
+syswbeff1065ok_Function_strategy = st.builds(
+    syswbeff1065ok_Function,
     domain=
         safe_text
 )
-syswbeff1065ok::Token_strategy = st.builds(
-    syswbeff1065ok::Token,
+syswbeff1065ok_Token_strategy = st.builds(
+    syswbeff1065ok_Token,
 )
-syswbeff1065ok::Description_strategy = st.builds(
-    syswbeff1065ok::Description,
+syswbeff1065ok_Description_strategy = st.builds(
+    syswbeff1065ok_Description,
     content=
         safe_text
 )
-syswbeff1065ok::InputPort_strategy = st.builds(
-    syswbeff1065ok::InputPort,
+syswbeff1065ok_InputPort_strategy = st.builds(
+    syswbeff1065ok_InputPort,
 )
 
-@given(instance=syswbeff1065ok::Workbench_strategy)
+@given(instance=syswbeff1065ok_Workbench_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::workbench_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Workbench)
+def test_syswbeff1065ok_workbench_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Workbench)
 
-@given(instance=syswbeff1065ok::PatternCatalog_strategy)
+@given(instance=syswbeff1065ok_PatternCatalog_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::patterncatalog_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::PatternCatalog)
-
-@given(instance=syswbeff1065ok::PatternCatalog_strategy)
-def test_syswbeff1065ok::patterncatalog_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswbeff1065ok_patterncatalog_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_PatternCatalog)
 
 
-@given(instance=syswbeff1065ok::PatternCatalog_strategy)
-def test_syswbeff1065ok::patterncatalog_id_setter(instance):
+
+@given(instance=syswbeff1065ok_PatternCatalog_strategy)
+def test_syswbeff1065ok_patterncatalog_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswbeff1065ok::System_strategy)
+@given(instance=syswbeff1065ok_System_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::system_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::System)
-
-@given(instance=syswbeff1065ok::System_strategy)
-def test_syswbeff1065ok::system_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswbeff1065ok_system_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_System)
 
 
-@given(instance=syswbeff1065ok::System_strategy)
-def test_syswbeff1065ok::system_id_setter(instance):
+
+@given(instance=syswbeff1065ok_System_strategy)
+def test_syswbeff1065ok_system_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswbeff1065ok::Thoughts_strategy)
+@given(instance=syswbeff1065ok_Thoughts_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::thoughts_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Thoughts)
-
-@given(instance=syswbeff1065ok::Thoughts_strategy)
-def test_syswbeff1065ok::thoughts_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswbeff1065ok_thoughts_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Thoughts)
 
 
-@given(instance=syswbeff1065ok::Thoughts_strategy)
-def test_syswbeff1065ok::thoughts_id_setter(instance):
+
+@given(instance=syswbeff1065ok_Thoughts_strategy)
+def test_syswbeff1065ok_thoughts_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswbeff1065ok::Thing_strategy)
+@given(instance=syswbeff1065ok_Thing_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::thing_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Thing)
-
-@given(instance=syswbeff1065ok::Thing_strategy)
-def test_syswbeff1065ok::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_syswbeff1065ok_thing_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Thing)
 
 
-@given(instance=syswbeff1065ok::Thing_strategy)
-def test_syswbeff1065ok::thing_id_setter(instance):
+
+@given(instance=syswbeff1065ok_Thing_strategy)
+def test_syswbeff1065ok_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswbeff1065ok::AssociatedTo_strategy)
+@given(instance=syswbeff1065ok_AssociatedTo_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::associatedto_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::AssociatedTo)
-
-@given(instance=syswbeff1065ok::AssociatedTo_strategy)
-def test_syswbeff1065ok::associatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_syswbeff1065ok_associatedto_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_AssociatedTo)
 
 
-@given(instance=syswbeff1065ok::AssociatedTo_strategy)
-def test_syswbeff1065ok::associatedto_since_setter(instance):
+
+@given(instance=syswbeff1065ok_AssociatedTo_strategy)
+def test_syswbeff1065ok_associatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=syswbeff1065ok::ProcessNode_strategy)
+@given(instance=syswbeff1065ok_ProcessNode_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::processnode_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::ProcessNode)
-
-@given(instance=syswbeff1065ok::ProcessNode_strategy)
-def test_syswbeff1065ok::processnode_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_syswbeff1065ok_processnode_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_ProcessNode)
 
 
-@given(instance=syswbeff1065ok::ProcessNode_strategy)
-def test_syswbeff1065ok::processnode_label_setter(instance):
+
+@given(instance=syswbeff1065ok_ProcessNode_strategy)
+def test_syswbeff1065ok_processnode_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=syswbeff1065ok::Item_strategy)
+@given(instance=syswbeff1065ok_Item_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::item_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Item)
-
-@given(instance=syswbeff1065ok::Item_strategy)
-def test_syswbeff1065ok::item_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_syswbeff1065ok_item_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Item)
 
 
-@given(instance=syswbeff1065ok::Item_strategy)
-def test_syswbeff1065ok::item_name_setter(instance):
+
+@given(instance=syswbeff1065ok_Item_strategy)
+def test_syswbeff1065ok_item_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=syswbeff1065ok::Port_strategy)
+@given(instance=syswbeff1065ok_Port_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::port_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Port)
-
-@given(instance=syswbeff1065ok::Port_strategy)
-def test_syswbeff1065ok::port_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswbeff1065ok_port_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Port)
 
 
-@given(instance=syswbeff1065ok::Port_strategy)
-def test_syswbeff1065ok::port_id_setter(instance):
+
+@given(instance=syswbeff1065ok_Port_strategy)
+def test_syswbeff1065ok_port_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -905,174 +881,153 @@ def test_port_instantiation(instance):
 def test_sequence_instantiation(instance):
     assert isinstance(instance, Sequence)
 
-@given(instance=syswbeff1065ok::Iteration_strategy)
+@given(instance=syswbeff1065ok_Start_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::iteration_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Iteration)
+def test_syswbeff1065ok_start_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Start)
 
-@given(instance=syswbeff1065ok::Or_strategy)
+@given(instance=syswbeff1065ok_Or_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::or_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Or)
+def test_syswbeff1065ok_or_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Or)
 
-@given(instance=syswbeff1065ok::Start_strategy)
+@given(instance=syswbeff1065ok_LoopExit_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::start_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Start)
+def test_syswbeff1065ok_loopexit_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_LoopExit)
 
-@given(instance=syswbeff1065ok::LoopExit_strategy)
+@given(instance=syswbeff1065ok_Iteration_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::loopexit_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::LoopExit)
+def test_syswbeff1065ok_iteration_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Iteration)
 
-@given(instance=syswbeff1065ok::And_strategy)
+@given(instance=syswbeff1065ok_And_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::and_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::And)
+def test_syswbeff1065ok_and_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_And)
 
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
+@given(instance=syswbeff1065ok_SequenceNode_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::sequencenode_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::SequenceNode)
-
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
-def test_syswbeff1065ok::sequencenode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_syswbeff1065ok_sequencenode_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_SequenceNode)
 
 
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
-def test_syswbeff1065ok::sequencenode_name_setter(instance):
+
+@given(instance=syswbeff1065ok_SequenceNode_strategy)
+def test_syswbeff1065ok_sequencenode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
-def test_syswbeff1065ok::sequencenode_tMin_type(instance):
-    assert isinstance(instance.tMin, int)
 
 
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
-def test_syswbeff1065ok::sequencenode_tMin_setter(instance):
-    original = instance.tMin
-    instance.tMin = original
-    assert instance.tMin == original
-
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
-def test_syswbeff1065ok::sequencenode_tMax_type(instance):
-    assert isinstance(instance.tMax, int)
-
-
-@given(instance=syswbeff1065ok::SequenceNode_strategy)
-def test_syswbeff1065ok::sequencenode_tMax_setter(instance):
+@given(instance=syswbeff1065ok_SequenceNode_strategy)
+def test_syswbeff1065ok_sequencenode_tMax_setter(instance):
     original = instance.tMax
     instance.tMax = original
     assert instance.tMax == original
 
-@given(instance=syswbeff1065ok::Component_strategy)
+
+
+@given(instance=syswbeff1065ok_SequenceNode_strategy)
+def test_syswbeff1065ok_sequencenode_tMin_setter(instance):
+    original = instance.tMin
+    instance.tMin = original
+    assert instance.tMin == original
+
+@given(instance=syswbeff1065ok_Component_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::component_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Component)
-
-@given(instance=syswbeff1065ok::Component_strategy)
-def test_syswbeff1065ok::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_syswbeff1065ok_component_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Component)
 
 
-@given(instance=syswbeff1065ok::Component_strategy)
-def test_syswbeff1065ok::component_name_setter(instance):
+
+@given(instance=syswbeff1065ok_Component_strategy)
+def test_syswbeff1065ok_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=syswbeff1065ok::FunctionProperty_strategy)
+@given(instance=syswbeff1065ok_FunctionProperty_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::functionproperty_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::FunctionProperty)
-
-@given(instance=syswbeff1065ok::FunctionProperty_strategy)
-def test_syswbeff1065ok::functionproperty_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_syswbeff1065ok_functionproperty_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_FunctionProperty)
 
 
-@given(instance=syswbeff1065ok::FunctionProperty_strategy)
-def test_syswbeff1065ok::functionproperty_description_setter(instance):
+
+@given(instance=syswbeff1065ok_FunctionProperty_strategy)
+def test_syswbeff1065ok_functionproperty_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=syswbeff1065ok::Loop_strategy)
+@given(instance=syswbeff1065ok_Loop_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::loop_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Loop)
+def test_syswbeff1065ok_loop_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Loop)
 
-@given(instance=syswbeff1065ok::Final_strategy)
+@given(instance=syswbeff1065ok_Final_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::final_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Final)
+def test_syswbeff1065ok_final_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Final)
 
-@given(instance=syswbeff1065ok::OutputPort_strategy)
+@given(instance=syswbeff1065ok_OutputPort_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::outputport_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::OutputPort)
+def test_syswbeff1065ok_outputport_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_OutputPort)
 
 @given(instance=ProcessNode_strategy)
 @settings(max_examples=50)
 def test_processnode_instantiation(instance):
     assert isinstance(instance, ProcessNode)
 
-@given(instance=syswbeff1065ok::Flow_strategy)
+@given(instance=syswbeff1065ok_Flow_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::flow_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Flow)
+def test_syswbeff1065ok_flow_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Flow)
 
 @given(instance=SequenceNode_strategy)
 @settings(max_examples=50)
 def test_sequencenode_instantiation(instance):
     assert isinstance(instance, SequenceNode)
 
-@given(instance=syswbeff1065ok::Sequence_strategy)
+@given(instance=syswbeff1065ok_Sequence_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::sequence_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Sequence)
+def test_syswbeff1065ok_sequence_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Sequence)
 
-@given(instance=syswbeff1065ok::Function_strategy)
+@given(instance=syswbeff1065ok_Function_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::function_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Function)
-
-@given(instance=syswbeff1065ok::Function_strategy)
-def test_syswbeff1065ok::function_domain_type(instance):
-    assert isinstance(instance.domain, str)
+def test_syswbeff1065ok_function_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Function)
 
 
-@given(instance=syswbeff1065ok::Function_strategy)
-def test_syswbeff1065ok::function_domain_setter(instance):
+
+@given(instance=syswbeff1065ok_Function_strategy)
+def test_syswbeff1065ok_function_domain_setter(instance):
     original = instance.domain
     instance.domain = original
     assert instance.domain == original
 
-@given(instance=syswbeff1065ok::Token_strategy)
+@given(instance=syswbeff1065ok_Token_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::token_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Token)
+def test_syswbeff1065ok_token_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Token)
 
-@given(instance=syswbeff1065ok::Description_strategy)
+@given(instance=syswbeff1065ok_Description_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::description_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::Description)
-
-@given(instance=syswbeff1065ok::Description_strategy)
-def test_syswbeff1065ok::description_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_syswbeff1065ok_description_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_Description)
 
 
-@given(instance=syswbeff1065ok::Description_strategy)
-def test_syswbeff1065ok::description_content_setter(instance):
+
+@given(instance=syswbeff1065ok_Description_strategy)
+def test_syswbeff1065ok_description_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=syswbeff1065ok::InputPort_strategy)
+@given(instance=syswbeff1065ok_InputPort_strategy)
 @settings(max_examples=50)
-def test_syswbeff1065ok::inputport_instantiation(instance):
-    assert isinstance(instance, syswbeff1065ok::InputPort)
+def test_syswbeff1065ok_inputport_instantiation(instance):
+    assert isinstance(instance, syswbeff1065ok_InputPort)

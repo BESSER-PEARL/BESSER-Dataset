@@ -3,262 +3,262 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ActualParameterExpression,
-    astm::ByReferenceActualParameterExpression,
-    astm::ByValueActualParameterExpression,
+    astm_ByReferenceActualParameterExpression,
+    astm_ByValueActualParameterExpression,
     UnaryOperator,
-    astm::Negate,
-    astm::Deref,
-    astm::PostIncrement,
-    astm::AddressOf,
-    astm::Increment,
-    astm::BitNot,
-    astm::PostDecrement,
-    astm::Decrement,
-    astm::Not,
-    astm::UnaryPlus,
-    DerivesFrom,
+    astm_PostDecrement,
+    astm_Deref,
+    astm_PostIncrement,
+    astm_Not,
+    astm_Decrement,
+    astm_Negate,
+    astm_BitNot,
+    astm_Increment,
+    astm_AddressOf,
+    astm_UnaryPlus,
     Literal,
-    astm::BitLiteral,
-    astm::BooleanLiteral,
-    astm::CharLiteral,
-    astm::RealLiteral,
-    astm::StringLiteral,
+    astm_RealLiteral,
+    astm_BooleanLiteral,
+    astm_BitLiteral,
+    astm_StringLiteral,
+    astm_CharLiteral,
+    PrimitiveType,
+    astm_LongInteger,
+    astm_Double,
+    astm_Float,
+    astm_Integer,
+    astm_String,
+    astm_Character,
+    astm_Byte,
+    astm_ShortInteger,
+    astm_LongDouble,
+    astm_WideCharacter,
+    astm_Boolean,
+    astm_Void,
+    StorageSpecification,
+    astm_NoDef,
+    astm_FunctionPersistent,
+    astm_PerClassMember,
+    astm_FileLocal,
+    astm_External,
+    astm_IntegerlLiteral,
+    QualifiedIdentifierReference,
+    astm_QualifiedOverData,
+    astm_QualifiedOverPointer,
+    ForStatement,
+    astm_ForCheckAfterStatement,
+    astm_ForCheckBeforeStatement,
+    AccessKind,
+    astm_Protected,
+    astm_Private,
+    astm_Public,
+    BinaryOperator,
+    astm_BitOr,
+    astm_Divide,
+    astm_Equal,
+    astm_BitLeftShift,
+    astm_BitXor,
+    astm_NotEqual,
+    astm_SpecificLike,
+    astm_And,
+    astm_Greater,
+    astm_BitAnd,
+    astm_SpecificLessEqual,
+    astm_SpecificGreaterEqual,
+    astm_NotLess,
+    astm_Less,
+    astm_Subtract,
+    astm_SpecificConcatString,
+    astm_Modulus,
+    astm_Exponent,
+    astm_Or,
+    astm_SpecificIn,
+    astm_Multiply,
+    astm_Add,
+    astm_BitRightShift,
+    astm_NotGreater,
+    astm_Assign,
+    astm_OperatorAssign,
+    ActualParameter,
+    astm_MissingActualParameter,
+    astm_ActualParameterExpression,
+    IdentifierReference,
+    NameReference,
+    astm_IdentifierReference,
+    astm_TypeQualifiedIdentifierReference,
+    astm_QualifiedIdentifierReference,
+    CatchBlock,
+    LoopStatement,
+    astm_DoWhileStatement,
+    astm_WhileStatement,
+    astm_ForStatement,
+    SwitchCase,
+    astm_DefaultBlock,
+    astm_CaseBlock,
+    astm_VariableCatchBlock,
+    astm_TypesCatchBlock,
+    BlockScope,
+    DerivesFrom,
     LabelDefinition,
     LabelAccess,
     Dimension,
     ConstructedType,
-    astm::ArrayType,
+    astm_RangeType,
+    astm_PointerType,
+    astm_ReferenceType,
+    astm_CollectionType,
+    astm_ArrayType,
     AggregateScope,
     EnumLiteralDefinition,
     DataType,
-    astm::EnumType,
-    astm::NamedType,
-    astm::AggregateType,
-    astm::FormalParameterType,
-    astm::ConstructedType,
-    astm::PrimitiveType,
+    astm_NamedType,
+    astm_ExceptionType,
+    astm_AggregateType,
+    astm_ConstructedType,
+    astm_EnumType,
+    astm_FormalParameterType,
+    astm_PrimitiveType,
     FormalParameterType,
-    astm::ByReferenceFormalParameterType,
-    astm::ByValueFormalParameterType,
+    astm_ByReferenceFormalParameterType,
+    astm_ByValueFormalParameterType,
     Type,
-    astm::FunctionType,
+    astm_LabelType,
+    astm_NameSpaceType,
+    astm_TypeReference,
+    astm_FunctionType,
     MacroDefinition,
     LabelType,
     NameSpaceType,
     AggregateType,
-    astm::ClassType,
-    astm::AnnotationType,
+    astm_AnnotationType,
+    astm_StructureType,
+    astm_ClassType,
+    astm_UnionType,
     NamedType,
     TypeDefinition,
-    astm::AggregateTypeDefinition,
-    astm::NamedTypeDefinition,
+    astm_AggregateTypeDefinition,
+    astm_NamedTypeDefinition,
     DataDefinition,
-    astm::BitFieldDefinition,
+    astm_VariableDefinition,
+    astm_FormalParameterDefinition,
+    astm_BitFieldDefinition,
     Expression,
+    astm_NameReference,
+    astm_ConditionalExpression,
+    astm_BinaryExpression,
+    astm_RangeExpression,
+    astm_AggregateExpression,
+    astm_Literal,
+    astm_CastExpression,
+    astm_UnaryExpression,
+    astm_NewExpression,
+    astm_AnnotationExpression,
+    astm_ArrayAccess,
+    astm_LabelAccess,
+    astm_FunctionCallExpression,
     GASTMSyntaxObject,
-    astm::Type,
+    astm_PreprocessorElement,
+    astm_DefinitionObject,
+    astm_Expression,
+    astm_Statement,
+    astm_Type,
     Statement,
-    astm::SpecificSelectStatement,
-    astm::LabeledStatement,
-    astm::ContinueStatement,
+    astm_BreakStatement,
+    astm_LabeledStatement,
+    astm_DeclarationOrDefinitionStatement,
+    astm_SpecificSelectStatement,
+    astm_ReturnStatement,
+    astm_ExpressionStatement,
+    astm_TerminateStatement,
+    astm_ContinueStatement,
+    astm_BlockStatement,
+    astm_LoopStatement,
+    astm_ThrowStatement,
+    astm_DeleteStatement,
+    astm_IfStatement,
+    astm_TryStatement,
+    astm_EmptyStatement,
+    astm_JumpStatement,
+    astm_SwitchStatement,
     FormalParameterDefinition,
     FunctionMemberAttributes,
     FormalParameterDeclaration,
     Declaration,
-    astm::VariableDeclaration,
-    astm::FunctionDeclaration,
+    astm_VariableDeclaration,
+    astm_FormalParameterDeclaration,
+    astm_FunctionDeclaration,
     Definition,
-    astm::EnumLiteralDefinition,
-    astm::DataDefinition,
-    astm::SpecificTriggerDefinition,
-    astm::FunctionDefinition,
+    astm_FunctionDefinition,
+    astm_SpecificTriggerDefinition,
+    astm_DataDefinition,
+    astm_EnumLiteralDefinition,
     TypeReference,
+    astm_NamedTypeReference,
+    astm_UnnamedTypeReference,
     Name,
     DeclarationOrDefinition,
-    astm::Declaration,
-    astm::Definition,
+    astm_Declaration,
+    astm_Definition,
     ProgramScope,
     OtherSyntaxObject,
-    astm::Dimension,
-    astm::Name,
-    astm::DerivesFrom,
-    astm::CompilationUnit,
-    astm::EntryDefinition,
+    astm_Dimension,
+    astm_Name,
+    astm_FunctionMemberAttribute,
+    astm_DerivesFrom,
+    astm_VirtualSpecification,
+    astm_SwitchCase,
+    astm_CatchBlock,
+    astm_CompilationUnit,
+    astm_EntryDefinition,
     VirtualSpecification,
-    astm::FunctionMemberAttributes,
+    astm_NonVirtual,
+    astm_Virtual,
+    astm_PureVirtual,
+    astm_FunctionMemberAttributes,
     FunctionScope,
     Scope,
+    astm_ProgramScope,
+    astm_GlobalScope,
+    astm_FunctionScope,
+    astm_AggregateScope,
+    astm_BlockScope,
     DefinitionObject,
-    astm::DeclarationOrDefinition,
-    astm::LabelDefinition,
-    astm::NameSpaceDefinition,
-    astm::TypeDefinition,
+    astm_LabelDefinition,
+    astm_TypeDefinition,
+    astm_DeclarationOrDefinition,
+    astm_NameSpaceDefinition,
     GlobalScope,
     CompilationUnit,
     GASTMSemanticObject,
-    astm::Scope,
-    astm::Project,
+    astm_Scope,
+    astm_Project,
     SourceFile,
     GASTMSourceObject,
-    astm::SourceLocation,
-    astm::SourceFile,
-    astm::ActualParameter,
-    astm::BinaryOperator,
-    astm::UnaryOperator,
-    astm::AccessKind,
-    astm::DataType,
-    astm::StorageSpecification,
-    astm::OtherSyntaxObject,
-    astm::GASTMSemanticObject,
-    astm::GASTMSourceObject,
-    astm::GASTMObject,
+    astm_SourceLocation,
+    astm_SourceFile,
+    astm_ActualParameter,
+    astm_BinaryOperator,
+    astm_UnaryOperator,
+    astm_AccessKind,
+    astm_DataType,
+    astm_StorageSpecification,
+    astm_OtherSyntaxObject,
+    astm_GASTMSemanticObject,
+    astm_GASTMSourceObject,
+    astm_GASTMObject,
     AnnotationExpression,
     PreprocessorElement,
-    astm::Comment,
-    astm::MacroCall,
-    astm::MacroDefinition,
-    astm::IncludeUnit,
+    astm_IncludeUnit,
+    astm_MacroCall,
+    astm_Comment,
+    astm_MacroDefinition,
     SourceLocation,
     GASTMObject,
-    astm::GASTMSyntaxObject,
-    astm::UnionType,
-    astm::StructureType,
-    astm::RangeType,
-    astm::ReferenceType,
-    astm::PointerType,
-    astm::CollectionType,
-    PrimitiveType,
-    astm::Byte,
-    astm::Double,
-    astm::Integer,
-    astm::Character,
-    astm::Boolean,
-    astm::String,
-    astm::Float,
-    astm::LongDouble,
-    astm::LongInteger,
-    astm::ShortInteger,
-    astm::WideCharacter,
-    astm::Void,
-    astm::ExceptionType,
-    astm::NonVirtual,
-    astm::PureVirtual,
-    astm::Virtual,
-    StorageSpecification,
-    astm::NoDef,
-    astm::FunctionPersistent,
-    astm::FileLocal,
-    astm::PerClassMember,
-    astm::External,
-    astm::IntegerlLiteral,
-    QualifiedIdentifierReference,
-    astm::QualifiedOverData,
-    astm::QualifiedOverPointer,
-    astm::AggregateExpression,
-    ForStatement,
-    astm::ForCheckAfterStatement,
-    astm::ForCheckBeforeStatement,
-    astm::TerminateStatement,
-    AccessKind,
-    astm::Private,
-    astm::Protected,
-    astm::Public,
-    astm::ProgramScope,
-    astm::DefinitionObject,
-    astm::PreprocessorElement,
-    astm::GlobalScope,
-    astm::AnnotationExpression,
-    astm::LabelAccess,
-    astm::NewExpression,
-    astm::FunctionMemberAttribute,
-    astm::VariableDefinition,
-    astm::FormalParameterDeclaration,
-    astm::VirtualSpecification,
-    astm::FormalParameterDefinition,
-    astm::BlockScope,
-    astm::AggregateScope,
-    astm::LabelType,
-    astm::NameSpaceType,
-    astm::FunctionScope,
-    astm::Statement,
-    astm::TypeReference,
-    astm::RangeExpression,
-    astm::ConditionalExpression,
-    BinaryOperator,
-    astm::Or,
-    astm::SpecificIn,
-    astm::Modulus,
-    astm::BitXor,
-    astm::And,
-    astm::Exponent,
-    astm::NotLess,
-    astm::SpecificConcatString,
-    astm::SpecificGreaterEqual,
-    astm::Greater,
-    astm::Multiply,
-    astm::BitAnd,
-    astm::BitOr,
-    astm::BitRightShift,
-    astm::Equal,
-    astm::SpecificLessEqual,
-    astm::SpecificLike,
-    astm::NotEqual,
-    astm::Add,
-    astm::Divide,
-    astm::BitLeftShift,
-    astm::Subtract,
-    astm::Assign,
-    astm::NotGreater,
-    astm::Less,
-    astm::OperatorAssign,
-    astm::BinaryExpression,
-    ActualParameter,
-    astm::ActualParameterExpression,
-    astm::MissingActualParameter,
-    astm::FunctionCallExpression,
-    IdentifierReference,
-    NameReference,
-    astm::IdentifierReference,
-    astm::TypeQualifiedIdentifierReference,
-    astm::QualifiedIdentifierReference,
-    astm::ArrayAccess,
-    astm::NameReference,
-    astm::Expression,
-    astm::ThrowStatement,
-    astm::UnaryExpression,
-    astm::CastExpression,
-    astm::Literal,
-    CatchBlock,
-    astm::TryStatement,
-    LoopStatement,
-    astm::WhileStatement,
-    astm::DoWhileStatement,
-    astm::ForStatement,
-    astm::LoopStatement,
-    astm::ReturnStatement,
-    astm::SwitchCase,
-    SwitchCase,
-    astm::CaseBlock,
-    astm::DefaultBlock,
-    astm::VariableCatchBlock,
-    astm::TypesCatchBlock,
-    astm::CatchBlock,
-    astm::IfStatement,
-    astm::EmptyStatement,
-    BlockScope,
-    astm::BlockStatement,
-    astm::SwitchStatement,
-    astm::BreakStatement,
-    astm::JumpStatement,
-    astm::ExpressionStatement,
-    astm::DeclarationOrDefinitionStatement,
-    astm::DeleteStatement,
-    astm::NamedTypeReference,
-    astm::UnnamedTypeReference,
+    astm_GASTMSyntaxObject,
 )
 
 # =============================================================================
@@ -281,30 +281,30 @@ def test_actualparameterexpression_constructor_args():
 
 
 
-def test_astm::byreferenceactualparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::ByReferenceActualParameterExpression)
+def test_astm_byreferenceactualparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_ByReferenceActualParameterExpression)
 
 
-def test_astm::byreferenceactualparameterexpression_constructor_exists():
-    assert callable(astm::ByReferenceActualParameterExpression.__init__)
+def test_astm_byreferenceactualparameterexpression_constructor_exists():
+    assert callable(astm_ByReferenceActualParameterExpression.__init__)
 
 
-def test_astm::byreferenceactualparameterexpression_constructor_args():
-    sig = inspect.signature(astm::ByReferenceActualParameterExpression.__init__)
+def test_astm_byreferenceactualparameterexpression_constructor_args():
+    sig = inspect.signature(astm_ByReferenceActualParameterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::byvalueactualparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::ByValueActualParameterExpression)
+def test_astm_byvalueactualparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_ByValueActualParameterExpression)
 
 
-def test_astm::byvalueactualparameterexpression_constructor_exists():
-    assert callable(astm::ByValueActualParameterExpression.__init__)
+def test_astm_byvalueactualparameterexpression_constructor_exists():
+    assert callable(astm_ByValueActualParameterExpression.__init__)
 
 
-def test_astm::byvalueactualparameterexpression_constructor_args():
-    sig = inspect.signature(astm::ByValueActualParameterExpression.__init__)
+def test_astm_byvalueactualparameterexpression_constructor_args():
+    sig = inspect.signature(astm_ByValueActualParameterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -323,156 +323,142 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_astm::negate_is_not_abstract():
-    assert not inspect.isabstract(astm::Negate)
+def test_astm_postdecrement_is_not_abstract():
+    assert not inspect.isabstract(astm_PostDecrement)
 
 
-def test_astm::negate_constructor_exists():
-    assert callable(astm::Negate.__init__)
+def test_astm_postdecrement_constructor_exists():
+    assert callable(astm_PostDecrement.__init__)
 
 
-def test_astm::negate_constructor_args():
-    sig = inspect.signature(astm::Negate.__init__)
+def test_astm_postdecrement_constructor_args():
+    sig = inspect.signature(astm_PostDecrement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::deref_is_not_abstract():
-    assert not inspect.isabstract(astm::Deref)
+def test_astm_deref_is_not_abstract():
+    assert not inspect.isabstract(astm_Deref)
 
 
-def test_astm::deref_constructor_exists():
-    assert callable(astm::Deref.__init__)
+def test_astm_deref_constructor_exists():
+    assert callable(astm_Deref.__init__)
 
 
-def test_astm::deref_constructor_args():
-    sig = inspect.signature(astm::Deref.__init__)
+def test_astm_deref_constructor_args():
+    sig = inspect.signature(astm_Deref.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::postincrement_is_not_abstract():
-    assert not inspect.isabstract(astm::PostIncrement)
+def test_astm_postincrement_is_not_abstract():
+    assert not inspect.isabstract(astm_PostIncrement)
 
 
-def test_astm::postincrement_constructor_exists():
-    assert callable(astm::PostIncrement.__init__)
+def test_astm_postincrement_constructor_exists():
+    assert callable(astm_PostIncrement.__init__)
 
 
-def test_astm::postincrement_constructor_args():
-    sig = inspect.signature(astm::PostIncrement.__init__)
+def test_astm_postincrement_constructor_args():
+    sig = inspect.signature(astm_PostIncrement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::addressof_is_not_abstract():
-    assert not inspect.isabstract(astm::AddressOf)
+def test_astm_not_is_not_abstract():
+    assert not inspect.isabstract(astm_Not)
 
 
-def test_astm::addressof_constructor_exists():
-    assert callable(astm::AddressOf.__init__)
+def test_astm_not_constructor_exists():
+    assert callable(astm_Not.__init__)
 
 
-def test_astm::addressof_constructor_args():
-    sig = inspect.signature(astm::AddressOf.__init__)
+def test_astm_not_constructor_args():
+    sig = inspect.signature(astm_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::increment_is_not_abstract():
-    assert not inspect.isabstract(astm::Increment)
+def test_astm_decrement_is_not_abstract():
+    assert not inspect.isabstract(astm_Decrement)
 
 
-def test_astm::increment_constructor_exists():
-    assert callable(astm::Increment.__init__)
+def test_astm_decrement_constructor_exists():
+    assert callable(astm_Decrement.__init__)
 
 
-def test_astm::increment_constructor_args():
-    sig = inspect.signature(astm::Increment.__init__)
+def test_astm_decrement_constructor_args():
+    sig = inspect.signature(astm_Decrement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::bitnot_is_not_abstract():
-    assert not inspect.isabstract(astm::BitNot)
+def test_astm_negate_is_not_abstract():
+    assert not inspect.isabstract(astm_Negate)
 
 
-def test_astm::bitnot_constructor_exists():
-    assert callable(astm::BitNot.__init__)
+def test_astm_negate_constructor_exists():
+    assert callable(astm_Negate.__init__)
 
 
-def test_astm::bitnot_constructor_args():
-    sig = inspect.signature(astm::BitNot.__init__)
+def test_astm_negate_constructor_args():
+    sig = inspect.signature(astm_Negate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::postdecrement_is_not_abstract():
-    assert not inspect.isabstract(astm::PostDecrement)
+def test_astm_bitnot_is_not_abstract():
+    assert not inspect.isabstract(astm_BitNot)
 
 
-def test_astm::postdecrement_constructor_exists():
-    assert callable(astm::PostDecrement.__init__)
+def test_astm_bitnot_constructor_exists():
+    assert callable(astm_BitNot.__init__)
 
 
-def test_astm::postdecrement_constructor_args():
-    sig = inspect.signature(astm::PostDecrement.__init__)
+def test_astm_bitnot_constructor_args():
+    sig = inspect.signature(astm_BitNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::decrement_is_not_abstract():
-    assert not inspect.isabstract(astm::Decrement)
+def test_astm_increment_is_not_abstract():
+    assert not inspect.isabstract(astm_Increment)
 
 
-def test_astm::decrement_constructor_exists():
-    assert callable(astm::Decrement.__init__)
+def test_astm_increment_constructor_exists():
+    assert callable(astm_Increment.__init__)
 
 
-def test_astm::decrement_constructor_args():
-    sig = inspect.signature(astm::Decrement.__init__)
+def test_astm_increment_constructor_args():
+    sig = inspect.signature(astm_Increment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::not_is_not_abstract():
-    assert not inspect.isabstract(astm::Not)
+def test_astm_addressof_is_not_abstract():
+    assert not inspect.isabstract(astm_AddressOf)
 
 
-def test_astm::not_constructor_exists():
-    assert callable(astm::Not.__init__)
+def test_astm_addressof_constructor_exists():
+    assert callable(astm_AddressOf.__init__)
 
 
-def test_astm::not_constructor_args():
-    sig = inspect.signature(astm::Not.__init__)
+def test_astm_addressof_constructor_args():
+    sig = inspect.signature(astm_AddressOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::unaryplus_is_not_abstract():
-    assert not inspect.isabstract(astm::UnaryPlus)
+def test_astm_unaryplus_is_not_abstract():
+    assert not inspect.isabstract(astm_UnaryPlus)
 
 
-def test_astm::unaryplus_constructor_exists():
-    assert callable(astm::UnaryPlus.__init__)
+def test_astm_unaryplus_constructor_exists():
+    assert callable(astm_UnaryPlus.__init__)
 
 
-def test_astm::unaryplus_constructor_args():
-    sig = inspect.signature(astm::UnaryPlus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_derivesfrom_is_not_abstract():
-    assert not inspect.isabstract(DerivesFrom)
-
-
-def test_derivesfrom_constructor_exists():
-    assert callable(DerivesFrom.__init__)
-
-
-def test_derivesfrom_constructor_args():
-    sig = inspect.signature(DerivesFrom.__init__)
+def test_astm_unaryplus_constructor_args():
+    sig = inspect.signature(astm_UnaryPlus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -491,72 +477,1150 @@ def test_literal_constructor_args():
 
 
 
-def test_astm::bitliteral_is_not_abstract():
-    assert not inspect.isabstract(astm::BitLiteral)
+def test_astm_realliteral_is_not_abstract():
+    assert not inspect.isabstract(astm_RealLiteral)
 
 
-def test_astm::bitliteral_constructor_exists():
-    assert callable(astm::BitLiteral.__init__)
+def test_astm_realliteral_constructor_exists():
+    assert callable(astm_RealLiteral.__init__)
 
 
-def test_astm::bitliteral_constructor_args():
-    sig = inspect.signature(astm::BitLiteral.__init__)
+def test_astm_realliteral_constructor_args():
+    sig = inspect.signature(astm_RealLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(astm::BooleanLiteral)
+def test_astm_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(astm_BooleanLiteral)
 
 
-def test_astm::booleanliteral_constructor_exists():
-    assert callable(astm::BooleanLiteral.__init__)
+def test_astm_booleanliteral_constructor_exists():
+    assert callable(astm_BooleanLiteral.__init__)
 
 
-def test_astm::booleanliteral_constructor_args():
-    sig = inspect.signature(astm::BooleanLiteral.__init__)
+def test_astm_booleanliteral_constructor_args():
+    sig = inspect.signature(astm_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::charliteral_is_not_abstract():
-    assert not inspect.isabstract(astm::CharLiteral)
+def test_astm_bitliteral_is_not_abstract():
+    assert not inspect.isabstract(astm_BitLiteral)
 
 
-def test_astm::charliteral_constructor_exists():
-    assert callable(astm::CharLiteral.__init__)
+def test_astm_bitliteral_constructor_exists():
+    assert callable(astm_BitLiteral.__init__)
 
 
-def test_astm::charliteral_constructor_args():
-    sig = inspect.signature(astm::CharLiteral.__init__)
+def test_astm_bitliteral_constructor_args():
+    sig = inspect.signature(astm_BitLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::realliteral_is_not_abstract():
-    assert not inspect.isabstract(astm::RealLiteral)
+def test_astm_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(astm_StringLiteral)
 
 
-def test_astm::realliteral_constructor_exists():
-    assert callable(astm::RealLiteral.__init__)
+def test_astm_stringliteral_constructor_exists():
+    assert callable(astm_StringLiteral.__init__)
 
 
-def test_astm::realliteral_constructor_args():
-    sig = inspect.signature(astm::RealLiteral.__init__)
+def test_astm_stringliteral_constructor_args():
+    sig = inspect.signature(astm_StringLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(astm::StringLiteral)
+def test_astm_charliteral_is_not_abstract():
+    assert not inspect.isabstract(astm_CharLiteral)
 
 
-def test_astm::stringliteral_constructor_exists():
-    assert callable(astm::StringLiteral.__init__)
+def test_astm_charliteral_constructor_exists():
+    assert callable(astm_CharLiteral.__init__)
 
 
-def test_astm::stringliteral_constructor_args():
-    sig = inspect.signature(astm::StringLiteral.__init__)
+def test_astm_charliteral_constructor_args():
+    sig = inspect.signature(astm_CharLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(PrimitiveType)
+
+
+def test_primitivetype_constructor_exists():
+    assert callable(PrimitiveType.__init__)
+
+
+def test_primitivetype_constructor_args():
+    sig = inspect.signature(PrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_longinteger_is_not_abstract():
+    assert not inspect.isabstract(astm_LongInteger)
+
+
+def test_astm_longinteger_constructor_exists():
+    assert callable(astm_LongInteger.__init__)
+
+
+def test_astm_longinteger_constructor_args():
+    sig = inspect.signature(astm_LongInteger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_double_is_not_abstract():
+    assert not inspect.isabstract(astm_Double)
+
+
+def test_astm_double_constructor_exists():
+    assert callable(astm_Double.__init__)
+
+
+def test_astm_double_constructor_args():
+    sig = inspect.signature(astm_Double.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_float_is_not_abstract():
+    assert not inspect.isabstract(astm_Float)
+
+
+def test_astm_float_constructor_exists():
+    assert callable(astm_Float.__init__)
+
+
+def test_astm_float_constructor_args():
+    sig = inspect.signature(astm_Float.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_integer_is_not_abstract():
+    assert not inspect.isabstract(astm_Integer)
+
+
+def test_astm_integer_constructor_exists():
+    assert callable(astm_Integer.__init__)
+
+
+def test_astm_integer_constructor_args():
+    sig = inspect.signature(astm_Integer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_string_is_not_abstract():
+    assert not inspect.isabstract(astm_String)
+
+
+def test_astm_string_constructor_exists():
+    assert callable(astm_String.__init__)
+
+
+def test_astm_string_constructor_args():
+    sig = inspect.signature(astm_String.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_character_is_not_abstract():
+    assert not inspect.isabstract(astm_Character)
+
+
+def test_astm_character_constructor_exists():
+    assert callable(astm_Character.__init__)
+
+
+def test_astm_character_constructor_args():
+    sig = inspect.signature(astm_Character.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_byte_is_not_abstract():
+    assert not inspect.isabstract(astm_Byte)
+
+
+def test_astm_byte_constructor_exists():
+    assert callable(astm_Byte.__init__)
+
+
+def test_astm_byte_constructor_args():
+    sig = inspect.signature(astm_Byte.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_shortinteger_is_not_abstract():
+    assert not inspect.isabstract(astm_ShortInteger)
+
+
+def test_astm_shortinteger_constructor_exists():
+    assert callable(astm_ShortInteger.__init__)
+
+
+def test_astm_shortinteger_constructor_args():
+    sig = inspect.signature(astm_ShortInteger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_longdouble_is_not_abstract():
+    assert not inspect.isabstract(astm_LongDouble)
+
+
+def test_astm_longdouble_constructor_exists():
+    assert callable(astm_LongDouble.__init__)
+
+
+def test_astm_longdouble_constructor_args():
+    sig = inspect.signature(astm_LongDouble.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_widecharacter_is_not_abstract():
+    assert not inspect.isabstract(astm_WideCharacter)
+
+
+def test_astm_widecharacter_constructor_exists():
+    assert callable(astm_WideCharacter.__init__)
+
+
+def test_astm_widecharacter_constructor_args():
+    sig = inspect.signature(astm_WideCharacter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_boolean_is_not_abstract():
+    assert not inspect.isabstract(astm_Boolean)
+
+
+def test_astm_boolean_constructor_exists():
+    assert callable(astm_Boolean.__init__)
+
+
+def test_astm_boolean_constructor_args():
+    sig = inspect.signature(astm_Boolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_void_is_not_abstract():
+    assert not inspect.isabstract(astm_Void)
+
+
+def test_astm_void_constructor_exists():
+    assert callable(astm_Void.__init__)
+
+
+def test_astm_void_constructor_args():
+    sig = inspect.signature(astm_Void.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_storagespecification_is_not_abstract():
+    assert not inspect.isabstract(StorageSpecification)
+
+
+def test_storagespecification_constructor_exists():
+    assert callable(StorageSpecification.__init__)
+
+
+def test_storagespecification_constructor_args():
+    sig = inspect.signature(StorageSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_nodef_is_not_abstract():
+    assert not inspect.isabstract(astm_NoDef)
+
+
+def test_astm_nodef_constructor_exists():
+    assert callable(astm_NoDef.__init__)
+
+
+def test_astm_nodef_constructor_args():
+    sig = inspect.signature(astm_NoDef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_functionpersistent_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionPersistent)
+
+
+def test_astm_functionpersistent_constructor_exists():
+    assert callable(astm_FunctionPersistent.__init__)
+
+
+def test_astm_functionpersistent_constructor_args():
+    sig = inspect.signature(astm_FunctionPersistent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_perclassmember_is_not_abstract():
+    assert not inspect.isabstract(astm_PerClassMember)
+
+
+def test_astm_perclassmember_constructor_exists():
+    assert callable(astm_PerClassMember.__init__)
+
+
+def test_astm_perclassmember_constructor_args():
+    sig = inspect.signature(astm_PerClassMember.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_filelocal_is_not_abstract():
+    assert not inspect.isabstract(astm_FileLocal)
+
+
+def test_astm_filelocal_constructor_exists():
+    assert callable(astm_FileLocal.__init__)
+
+
+def test_astm_filelocal_constructor_args():
+    sig = inspect.signature(astm_FileLocal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_external_is_not_abstract():
+    assert not inspect.isabstract(astm_External)
+
+
+def test_astm_external_constructor_exists():
+    assert callable(astm_External.__init__)
+
+
+def test_astm_external_constructor_args():
+    sig = inspect.signature(astm_External.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_integerlliteral_is_not_abstract():
+    assert not inspect.isabstract(astm_IntegerlLiteral)
+
+
+def test_astm_integerlliteral_constructor_exists():
+    assert callable(astm_IntegerlLiteral.__init__)
+
+
+def test_astm_integerlliteral_constructor_args():
+    sig = inspect.signature(astm_IntegerlLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualifiedidentifierreference_is_not_abstract():
+    assert not inspect.isabstract(QualifiedIdentifierReference)
+
+
+def test_qualifiedidentifierreference_constructor_exists():
+    assert callable(QualifiedIdentifierReference.__init__)
+
+
+def test_qualifiedidentifierreference_constructor_args():
+    sig = inspect.signature(QualifiedIdentifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_qualifiedoverdata_is_not_abstract():
+    assert not inspect.isabstract(astm_QualifiedOverData)
+
+
+def test_astm_qualifiedoverdata_constructor_exists():
+    assert callable(astm_QualifiedOverData.__init__)
+
+
+def test_astm_qualifiedoverdata_constructor_args():
+    sig = inspect.signature(astm_QualifiedOverData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_qualifiedoverpointer_is_not_abstract():
+    assert not inspect.isabstract(astm_QualifiedOverPointer)
+
+
+def test_astm_qualifiedoverpointer_constructor_exists():
+    assert callable(astm_QualifiedOverPointer.__init__)
+
+
+def test_astm_qualifiedoverpointer_constructor_args():
+    sig = inspect.signature(astm_QualifiedOverPointer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_forstatement_is_not_abstract():
+    assert not inspect.isabstract(ForStatement)
+
+
+def test_forstatement_constructor_exists():
+    assert callable(ForStatement.__init__)
+
+
+def test_forstatement_constructor_args():
+    sig = inspect.signature(ForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_forcheckafterstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ForCheckAfterStatement)
+
+
+def test_astm_forcheckafterstatement_constructor_exists():
+    assert callable(astm_ForCheckAfterStatement.__init__)
+
+
+def test_astm_forcheckafterstatement_constructor_args():
+    sig = inspect.signature(astm_ForCheckAfterStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_forcheckbeforestatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ForCheckBeforeStatement)
+
+
+def test_astm_forcheckbeforestatement_constructor_exists():
+    assert callable(astm_ForCheckBeforeStatement.__init__)
+
+
+def test_astm_forcheckbeforestatement_constructor_args():
+    sig = inspect.signature(astm_ForCheckBeforeStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_accesskind_is_not_abstract():
+    assert not inspect.isabstract(AccessKind)
+
+
+def test_accesskind_constructor_exists():
+    assert callable(AccessKind.__init__)
+
+
+def test_accesskind_constructor_args():
+    sig = inspect.signature(AccessKind.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_protected_is_not_abstract():
+    assert not inspect.isabstract(astm_Protected)
+
+
+def test_astm_protected_constructor_exists():
+    assert callable(astm_Protected.__init__)
+
+
+def test_astm_protected_constructor_args():
+    sig = inspect.signature(astm_Protected.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_private_is_not_abstract():
+    assert not inspect.isabstract(astm_Private)
+
+
+def test_astm_private_constructor_exists():
+    assert callable(astm_Private.__init__)
+
+
+def test_astm_private_constructor_args():
+    sig = inspect.signature(astm_Private.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_public_is_not_abstract():
+    assert not inspect.isabstract(astm_Public)
+
+
+def test_astm_public_constructor_exists():
+    assert callable(astm_Public.__init__)
+
+
+def test_astm_public_constructor_args():
+    sig = inspect.signature(astm_Public.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(BinaryOperator)
+
+
+def test_binaryoperator_constructor_exists():
+    assert callable(BinaryOperator.__init__)
+
+
+def test_binaryoperator_constructor_args():
+    sig = inspect.signature(BinaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_bitor_is_not_abstract():
+    assert not inspect.isabstract(astm_BitOr)
+
+
+def test_astm_bitor_constructor_exists():
+    assert callable(astm_BitOr.__init__)
+
+
+def test_astm_bitor_constructor_args():
+    sig = inspect.signature(astm_BitOr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_divide_is_not_abstract():
+    assert not inspect.isabstract(astm_Divide)
+
+
+def test_astm_divide_constructor_exists():
+    assert callable(astm_Divide.__init__)
+
+
+def test_astm_divide_constructor_args():
+    sig = inspect.signature(astm_Divide.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_equal_is_not_abstract():
+    assert not inspect.isabstract(astm_Equal)
+
+
+def test_astm_equal_constructor_exists():
+    assert callable(astm_Equal.__init__)
+
+
+def test_astm_equal_constructor_args():
+    sig = inspect.signature(astm_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_bitleftshift_is_not_abstract():
+    assert not inspect.isabstract(astm_BitLeftShift)
+
+
+def test_astm_bitleftshift_constructor_exists():
+    assert callable(astm_BitLeftShift.__init__)
+
+
+def test_astm_bitleftshift_constructor_args():
+    sig = inspect.signature(astm_BitLeftShift.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_bitxor_is_not_abstract():
+    assert not inspect.isabstract(astm_BitXor)
+
+
+def test_astm_bitxor_constructor_exists():
+    assert callable(astm_BitXor.__init__)
+
+
+def test_astm_bitxor_constructor_args():
+    sig = inspect.signature(astm_BitXor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_notequal_is_not_abstract():
+    assert not inspect.isabstract(astm_NotEqual)
+
+
+def test_astm_notequal_constructor_exists():
+    assert callable(astm_NotEqual.__init__)
+
+
+def test_astm_notequal_constructor_args():
+    sig = inspect.signature(astm_NotEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_specificlike_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificLike)
+
+
+def test_astm_specificlike_constructor_exists():
+    assert callable(astm_SpecificLike.__init__)
+
+
+def test_astm_specificlike_constructor_args():
+    sig = inspect.signature(astm_SpecificLike.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_and_is_not_abstract():
+    assert not inspect.isabstract(astm_And)
+
+
+def test_astm_and_constructor_exists():
+    assert callable(astm_And.__init__)
+
+
+def test_astm_and_constructor_args():
+    sig = inspect.signature(astm_And.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_greater_is_not_abstract():
+    assert not inspect.isabstract(astm_Greater)
+
+
+def test_astm_greater_constructor_exists():
+    assert callable(astm_Greater.__init__)
+
+
+def test_astm_greater_constructor_args():
+    sig = inspect.signature(astm_Greater.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_bitand_is_not_abstract():
+    assert not inspect.isabstract(astm_BitAnd)
+
+
+def test_astm_bitand_constructor_exists():
+    assert callable(astm_BitAnd.__init__)
+
+
+def test_astm_bitand_constructor_args():
+    sig = inspect.signature(astm_BitAnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_specificlessequal_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificLessEqual)
+
+
+def test_astm_specificlessequal_constructor_exists():
+    assert callable(astm_SpecificLessEqual.__init__)
+
+
+def test_astm_specificlessequal_constructor_args():
+    sig = inspect.signature(astm_SpecificLessEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_specificgreaterequal_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificGreaterEqual)
+
+
+def test_astm_specificgreaterequal_constructor_exists():
+    assert callable(astm_SpecificGreaterEqual.__init__)
+
+
+def test_astm_specificgreaterequal_constructor_args():
+    sig = inspect.signature(astm_SpecificGreaterEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_notless_is_not_abstract():
+    assert not inspect.isabstract(astm_NotLess)
+
+
+def test_astm_notless_constructor_exists():
+    assert callable(astm_NotLess.__init__)
+
+
+def test_astm_notless_constructor_args():
+    sig = inspect.signature(astm_NotLess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_less_is_not_abstract():
+    assert not inspect.isabstract(astm_Less)
+
+
+def test_astm_less_constructor_exists():
+    assert callable(astm_Less.__init__)
+
+
+def test_astm_less_constructor_args():
+    sig = inspect.signature(astm_Less.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_subtract_is_not_abstract():
+    assert not inspect.isabstract(astm_Subtract)
+
+
+def test_astm_subtract_constructor_exists():
+    assert callable(astm_Subtract.__init__)
+
+
+def test_astm_subtract_constructor_args():
+    sig = inspect.signature(astm_Subtract.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_specificconcatstring_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificConcatString)
+
+
+def test_astm_specificconcatstring_constructor_exists():
+    assert callable(astm_SpecificConcatString.__init__)
+
+
+def test_astm_specificconcatstring_constructor_args():
+    sig = inspect.signature(astm_SpecificConcatString.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_modulus_is_not_abstract():
+    assert not inspect.isabstract(astm_Modulus)
+
+
+def test_astm_modulus_constructor_exists():
+    assert callable(astm_Modulus.__init__)
+
+
+def test_astm_modulus_constructor_args():
+    sig = inspect.signature(astm_Modulus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_exponent_is_not_abstract():
+    assert not inspect.isabstract(astm_Exponent)
+
+
+def test_astm_exponent_constructor_exists():
+    assert callable(astm_Exponent.__init__)
+
+
+def test_astm_exponent_constructor_args():
+    sig = inspect.signature(astm_Exponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_or_is_not_abstract():
+    assert not inspect.isabstract(astm_Or)
+
+
+def test_astm_or_constructor_exists():
+    assert callable(astm_Or.__init__)
+
+
+def test_astm_or_constructor_args():
+    sig = inspect.signature(astm_Or.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_specificin_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificIn)
+
+
+def test_astm_specificin_constructor_exists():
+    assert callable(astm_SpecificIn.__init__)
+
+
+def test_astm_specificin_constructor_args():
+    sig = inspect.signature(astm_SpecificIn.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_multiply_is_not_abstract():
+    assert not inspect.isabstract(astm_Multiply)
+
+
+def test_astm_multiply_constructor_exists():
+    assert callable(astm_Multiply.__init__)
+
+
+def test_astm_multiply_constructor_args():
+    sig = inspect.signature(astm_Multiply.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_add_is_not_abstract():
+    assert not inspect.isabstract(astm_Add)
+
+
+def test_astm_add_constructor_exists():
+    assert callable(astm_Add.__init__)
+
+
+def test_astm_add_constructor_args():
+    sig = inspect.signature(astm_Add.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_bitrightshift_is_not_abstract():
+    assert not inspect.isabstract(astm_BitRightShift)
+
+
+def test_astm_bitrightshift_constructor_exists():
+    assert callable(astm_BitRightShift.__init__)
+
+
+def test_astm_bitrightshift_constructor_args():
+    sig = inspect.signature(astm_BitRightShift.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_notgreater_is_not_abstract():
+    assert not inspect.isabstract(astm_NotGreater)
+
+
+def test_astm_notgreater_constructor_exists():
+    assert callable(astm_NotGreater.__init__)
+
+
+def test_astm_notgreater_constructor_args():
+    sig = inspect.signature(astm_NotGreater.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_assign_is_not_abstract():
+    assert not inspect.isabstract(astm_Assign)
+
+
+def test_astm_assign_constructor_exists():
+    assert callable(astm_Assign.__init__)
+
+
+def test_astm_assign_constructor_args():
+    sig = inspect.signature(astm_Assign.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_operatorassign_is_not_abstract():
+    assert not inspect.isabstract(astm_OperatorAssign)
+
+
+def test_astm_operatorassign_constructor_exists():
+    assert callable(astm_OperatorAssign.__init__)
+
+
+def test_astm_operatorassign_constructor_args():
+    sig = inspect.signature(astm_OperatorAssign.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actualparameter_is_not_abstract():
+    assert not inspect.isabstract(ActualParameter)
+
+
+def test_actualparameter_constructor_exists():
+    assert callable(ActualParameter.__init__)
+
+
+def test_actualparameter_constructor_args():
+    sig = inspect.signature(ActualParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_missingactualparameter_is_not_abstract():
+    assert not inspect.isabstract(astm_MissingActualParameter)
+
+
+def test_astm_missingactualparameter_constructor_exists():
+    assert callable(astm_MissingActualParameter.__init__)
+
+
+def test_astm_missingactualparameter_constructor_args():
+    sig = inspect.signature(astm_MissingActualParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_actualparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_ActualParameterExpression)
+
+
+def test_astm_actualparameterexpression_constructor_exists():
+    assert callable(astm_ActualParameterExpression.__init__)
+
+
+def test_astm_actualparameterexpression_constructor_args():
+    sig = inspect.signature(astm_ActualParameterExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_identifierreference_is_not_abstract():
+    assert not inspect.isabstract(IdentifierReference)
+
+
+def test_identifierreference_constructor_exists():
+    assert callable(IdentifierReference.__init__)
+
+
+def test_identifierreference_constructor_args():
+    sig = inspect.signature(IdentifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_namereference_is_not_abstract():
+    assert not inspect.isabstract(NameReference)
+
+
+def test_namereference_constructor_exists():
+    assert callable(NameReference.__init__)
+
+
+def test_namereference_constructor_args():
+    sig = inspect.signature(NameReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_identifierreference_is_not_abstract():
+    assert not inspect.isabstract(astm_IdentifierReference)
+
+
+def test_astm_identifierreference_constructor_exists():
+    assert callable(astm_IdentifierReference.__init__)
+
+
+def test_astm_identifierreference_constructor_args():
+    sig = inspect.signature(astm_IdentifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_typequalifiedidentifierreference_is_not_abstract():
+    assert not inspect.isabstract(astm_TypeQualifiedIdentifierReference)
+
+
+def test_astm_typequalifiedidentifierreference_constructor_exists():
+    assert callable(astm_TypeQualifiedIdentifierReference.__init__)
+
+
+def test_astm_typequalifiedidentifierreference_constructor_args():
+    sig = inspect.signature(astm_TypeQualifiedIdentifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_qualifiedidentifierreference_is_not_abstract():
+    assert not inspect.isabstract(astm_QualifiedIdentifierReference)
+
+
+def test_astm_qualifiedidentifierreference_constructor_exists():
+    assert callable(astm_QualifiedIdentifierReference.__init__)
+
+
+def test_astm_qualifiedidentifierreference_constructor_args():
+    sig = inspect.signature(astm_QualifiedIdentifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_catchblock_is_not_abstract():
+    assert not inspect.isabstract(CatchBlock)
+
+
+def test_catchblock_constructor_exists():
+    assert callable(CatchBlock.__init__)
+
+
+def test_catchblock_constructor_args():
+    sig = inspect.signature(CatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(LoopStatement)
+
+
+def test_loopstatement_constructor_exists():
+    assert callable(LoopStatement.__init__)
+
+
+def test_loopstatement_constructor_args():
+    sig = inspect.signature(LoopStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_dowhilestatement_is_not_abstract():
+    assert not inspect.isabstract(astm_DoWhileStatement)
+
+
+def test_astm_dowhilestatement_constructor_exists():
+    assert callable(astm_DoWhileStatement.__init__)
+
+
+def test_astm_dowhilestatement_constructor_args():
+    sig = inspect.signature(astm_DoWhileStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(astm_WhileStatement)
+
+
+def test_astm_whilestatement_constructor_exists():
+    assert callable(astm_WhileStatement.__init__)
+
+
+def test_astm_whilestatement_constructor_args():
+    sig = inspect.signature(astm_WhileStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_forstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ForStatement)
+
+
+def test_astm_forstatement_constructor_exists():
+    assert callable(astm_ForStatement.__init__)
+
+
+def test_astm_forstatement_constructor_args():
+    sig = inspect.signature(astm_ForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_switchcase_is_not_abstract():
+    assert not inspect.isabstract(SwitchCase)
+
+
+def test_switchcase_constructor_exists():
+    assert callable(SwitchCase.__init__)
+
+
+def test_switchcase_constructor_args():
+    sig = inspect.signature(SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_defaultblock_is_not_abstract():
+    assert not inspect.isabstract(astm_DefaultBlock)
+
+
+def test_astm_defaultblock_constructor_exists():
+    assert callable(astm_DefaultBlock.__init__)
+
+
+def test_astm_defaultblock_constructor_args():
+    sig = inspect.signature(astm_DefaultBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_caseblock_is_not_abstract():
+    assert not inspect.isabstract(astm_CaseBlock)
+
+
+def test_astm_caseblock_constructor_exists():
+    assert callable(astm_CaseBlock.__init__)
+
+
+def test_astm_caseblock_constructor_args():
+    sig = inspect.signature(astm_CaseBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_variablecatchblock_is_not_abstract():
+    assert not inspect.isabstract(astm_VariableCatchBlock)
+
+
+def test_astm_variablecatchblock_constructor_exists():
+    assert callable(astm_VariableCatchBlock.__init__)
+
+
+def test_astm_variablecatchblock_constructor_args():
+    sig = inspect.signature(astm_VariableCatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_typescatchblock_is_not_abstract():
+    assert not inspect.isabstract(astm_TypesCatchBlock)
+
+
+def test_astm_typescatchblock_constructor_exists():
+    assert callable(astm_TypesCatchBlock.__init__)
+
+
+def test_astm_typescatchblock_constructor_args():
+    sig = inspect.signature(astm_TypesCatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_blockscope_is_not_abstract():
+    assert not inspect.isabstract(BlockScope)
+
+
+def test_blockscope_constructor_exists():
+    assert callable(BlockScope.__init__)
+
+
+def test_blockscope_constructor_args():
+    sig = inspect.signature(BlockScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_derivesfrom_is_not_abstract():
+    assert not inspect.isabstract(DerivesFrom)
+
+
+def test_derivesfrom_constructor_exists():
+    assert callable(DerivesFrom.__init__)
+
+
+def test_derivesfrom_constructor_args():
+    sig = inspect.signature(DerivesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -617,16 +1681,72 @@ def test_constructedtype_constructor_args():
 
 
 
-def test_astm::arraytype_is_not_abstract():
-    assert not inspect.isabstract(astm::ArrayType)
+def test_astm_rangetype_is_not_abstract():
+    assert not inspect.isabstract(astm_RangeType)
 
 
-def test_astm::arraytype_constructor_exists():
-    assert callable(astm::ArrayType.__init__)
+def test_astm_rangetype_constructor_exists():
+    assert callable(astm_RangeType.__init__)
 
 
-def test_astm::arraytype_constructor_args():
-    sig = inspect.signature(astm::ArrayType.__init__)
+def test_astm_rangetype_constructor_args():
+    sig = inspect.signature(astm_RangeType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_pointertype_is_not_abstract():
+    assert not inspect.isabstract(astm_PointerType)
+
+
+def test_astm_pointertype_constructor_exists():
+    assert callable(astm_PointerType.__init__)
+
+
+def test_astm_pointertype_constructor_args():
+    sig = inspect.signature(astm_PointerType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_referencetype_is_not_abstract():
+    assert not inspect.isabstract(astm_ReferenceType)
+
+
+def test_astm_referencetype_constructor_exists():
+    assert callable(astm_ReferenceType.__init__)
+
+
+def test_astm_referencetype_constructor_args():
+    sig = inspect.signature(astm_ReferenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(astm_CollectionType)
+
+
+def test_astm_collectiontype_constructor_exists():
+    assert callable(astm_CollectionType.__init__)
+
+
+def test_astm_collectiontype_constructor_args():
+    sig = inspect.signature(astm_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_arraytype_is_not_abstract():
+    assert not inspect.isabstract(astm_ArrayType)
+
+
+def test_astm_arraytype_constructor_exists():
+    assert callable(astm_ArrayType.__init__)
+
+
+def test_astm_arraytype_constructor_args():
+    sig = inspect.signature(astm_ArrayType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -673,93 +1793,107 @@ def test_datatype_constructor_args():
 
 
 
-def test_astm::enumtype_is_not_abstract():
-    assert not inspect.isabstract(astm::EnumType)
+def test_astm_namedtype_is_not_abstract():
+    assert not inspect.isabstract(astm_NamedType)
 
 
-def test_astm::enumtype_constructor_exists():
-    assert callable(astm::EnumType.__init__)
+def test_astm_namedtype_constructor_exists():
+    assert callable(astm_NamedType.__init__)
 
 
-def test_astm::enumtype_constructor_args():
-    sig = inspect.signature(astm::EnumType.__init__)
+def test_astm_namedtype_constructor_args():
+    sig = inspect.signature(astm_NamedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::namedtype_is_not_abstract():
-    assert not inspect.isabstract(astm::NamedType)
+def test_astm_exceptiontype_is_not_abstract():
+    assert not inspect.isabstract(astm_ExceptionType)
 
 
-def test_astm::namedtype_constructor_exists():
-    assert callable(astm::NamedType.__init__)
+def test_astm_exceptiontype_constructor_exists():
+    assert callable(astm_ExceptionType.__init__)
 
 
-def test_astm::namedtype_constructor_args():
-    sig = inspect.signature(astm::NamedType.__init__)
+def test_astm_exceptiontype_constructor_args():
+    sig = inspect.signature(astm_ExceptionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::aggregatetype_is_not_abstract():
-    assert not inspect.isabstract(astm::AggregateType)
+def test_astm_aggregatetype_is_not_abstract():
+    assert not inspect.isabstract(astm_AggregateType)
 
 
-def test_astm::aggregatetype_constructor_exists():
-    assert callable(astm::AggregateType.__init__)
+def test_astm_aggregatetype_constructor_exists():
+    assert callable(astm_AggregateType.__init__)
 
 
-def test_astm::aggregatetype_constructor_args():
-    sig = inspect.signature(astm::AggregateType.__init__)
+def test_astm_aggregatetype_constructor_args():
+    sig = inspect.signature(astm_AggregateType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::formalparametertype_is_not_abstract():
-    assert not inspect.isabstract(astm::FormalParameterType)
+def test_astm_constructedtype_is_not_abstract():
+    assert not inspect.isabstract(astm_ConstructedType)
 
 
-def test_astm::formalparametertype_constructor_exists():
-    assert callable(astm::FormalParameterType.__init__)
+def test_astm_constructedtype_constructor_exists():
+    assert callable(astm_ConstructedType.__init__)
 
 
-def test_astm::formalparametertype_constructor_args():
-    sig = inspect.signature(astm::FormalParameterType.__init__)
+def test_astm_constructedtype_constructor_args():
+    sig = inspect.signature(astm_ConstructedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::constructedtype_is_not_abstract():
-    assert not inspect.isabstract(astm::ConstructedType)
+def test_astm_enumtype_is_not_abstract():
+    assert not inspect.isabstract(astm_EnumType)
 
 
-def test_astm::constructedtype_constructor_exists():
-    assert callable(astm::ConstructedType.__init__)
+def test_astm_enumtype_constructor_exists():
+    assert callable(astm_EnumType.__init__)
 
 
-def test_astm::constructedtype_constructor_args():
-    sig = inspect.signature(astm::ConstructedType.__init__)
+def test_astm_enumtype_constructor_args():
+    sig = inspect.signature(astm_EnumType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(astm::PrimitiveType)
+def test_astm_formalparametertype_is_not_abstract():
+    assert not inspect.isabstract(astm_FormalParameterType)
 
 
-def test_astm::primitivetype_constructor_exists():
-    assert callable(astm::PrimitiveType.__init__)
+def test_astm_formalparametertype_constructor_exists():
+    assert callable(astm_FormalParameterType.__init__)
 
 
-def test_astm::primitivetype_constructor_args():
-    sig = inspect.signature(astm::PrimitiveType.__init__)
+def test_astm_formalparametertype_constructor_args():
+    sig = inspect.signature(astm_FormalParameterType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(astm_PrimitiveType)
+
+
+def test_astm_primitivetype_constructor_exists():
+    assert callable(astm_PrimitiveType.__init__)
+
+
+def test_astm_primitivetype_constructor_args():
+    sig = inspect.signature(astm_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "isSigned" in params, "Missing parameter 'isSigned'"
 
-def test_astm::primitivetype_has_isSigned():
-    assert hasattr(astm::PrimitiveType, "isSigned")
+def test_astm_primitivetype_has_isSigned():
+    assert hasattr(astm_PrimitiveType, "isSigned")
     descriptor = None
-    for klass in astm::PrimitiveType.__mro__:
+    for klass in astm_PrimitiveType.__mro__:
         if "isSigned" in klass.__dict__:
             descriptor = klass.__dict__["isSigned"]
             break
@@ -781,30 +1915,30 @@ def test_formalparametertype_constructor_args():
 
 
 
-def test_astm::byreferenceformalparametertype_is_not_abstract():
-    assert not inspect.isabstract(astm::ByReferenceFormalParameterType)
+def test_astm_byreferenceformalparametertype_is_not_abstract():
+    assert not inspect.isabstract(astm_ByReferenceFormalParameterType)
 
 
-def test_astm::byreferenceformalparametertype_constructor_exists():
-    assert callable(astm::ByReferenceFormalParameterType.__init__)
+def test_astm_byreferenceformalparametertype_constructor_exists():
+    assert callable(astm_ByReferenceFormalParameterType.__init__)
 
 
-def test_astm::byreferenceformalparametertype_constructor_args():
-    sig = inspect.signature(astm::ByReferenceFormalParameterType.__init__)
+def test_astm_byreferenceformalparametertype_constructor_args():
+    sig = inspect.signature(astm_ByReferenceFormalParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::byvalueformalparametertype_is_not_abstract():
-    assert not inspect.isabstract(astm::ByValueFormalParameterType)
+def test_astm_byvalueformalparametertype_is_not_abstract():
+    assert not inspect.isabstract(astm_ByValueFormalParameterType)
 
 
-def test_astm::byvalueformalparametertype_constructor_exists():
-    assert callable(astm::ByValueFormalParameterType.__init__)
+def test_astm_byvalueformalparametertype_constructor_exists():
+    assert callable(astm_ByValueFormalParameterType.__init__)
 
 
-def test_astm::byvalueformalparametertype_constructor_args():
-    sig = inspect.signature(astm::ByValueFormalParameterType.__init__)
+def test_astm_byvalueformalparametertype_constructor_args():
+    sig = inspect.signature(astm_ByValueFormalParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -823,16 +1957,58 @@ def test_type_constructor_args():
 
 
 
-def test_astm::functiontype_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionType)
+def test_astm_labeltype_is_not_abstract():
+    assert not inspect.isabstract(astm_LabelType)
 
 
-def test_astm::functiontype_constructor_exists():
-    assert callable(astm::FunctionType.__init__)
+def test_astm_labeltype_constructor_exists():
+    assert callable(astm_LabelType.__init__)
 
 
-def test_astm::functiontype_constructor_args():
-    sig = inspect.signature(astm::FunctionType.__init__)
+def test_astm_labeltype_constructor_args():
+    sig = inspect.signature(astm_LabelType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_namespacetype_is_not_abstract():
+    assert not inspect.isabstract(astm_NameSpaceType)
+
+
+def test_astm_namespacetype_constructor_exists():
+    assert callable(astm_NameSpaceType.__init__)
+
+
+def test_astm_namespacetype_constructor_args():
+    sig = inspect.signature(astm_NameSpaceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_typereference_is_not_abstract():
+    assert not inspect.isabstract(astm_TypeReference)
+
+
+def test_astm_typereference_constructor_exists():
+    assert callable(astm_TypeReference.__init__)
+
+
+def test_astm_typereference_constructor_args():
+    sig = inspect.signature(astm_TypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_functiontype_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionType)
+
+
+def test_astm_functiontype_constructor_exists():
+    assert callable(astm_FunctionType.__init__)
+
+
+def test_astm_functiontype_constructor_args():
+    sig = inspect.signature(astm_FunctionType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -893,30 +2069,58 @@ def test_aggregatetype_constructor_args():
 
 
 
-def test_astm::classtype_is_not_abstract():
-    assert not inspect.isabstract(astm::ClassType)
+def test_astm_annotationtype_is_not_abstract():
+    assert not inspect.isabstract(astm_AnnotationType)
 
 
-def test_astm::classtype_constructor_exists():
-    assert callable(astm::ClassType.__init__)
+def test_astm_annotationtype_constructor_exists():
+    assert callable(astm_AnnotationType.__init__)
 
 
-def test_astm::classtype_constructor_args():
-    sig = inspect.signature(astm::ClassType.__init__)
+def test_astm_annotationtype_constructor_args():
+    sig = inspect.signature(astm_AnnotationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::annotationtype_is_not_abstract():
-    assert not inspect.isabstract(astm::AnnotationType)
+def test_astm_structuretype_is_not_abstract():
+    assert not inspect.isabstract(astm_StructureType)
 
 
-def test_astm::annotationtype_constructor_exists():
-    assert callable(astm::AnnotationType.__init__)
+def test_astm_structuretype_constructor_exists():
+    assert callable(astm_StructureType.__init__)
 
 
-def test_astm::annotationtype_constructor_args():
-    sig = inspect.signature(astm::AnnotationType.__init__)
+def test_astm_structuretype_constructor_args():
+    sig = inspect.signature(astm_StructureType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_classtype_is_not_abstract():
+    assert not inspect.isabstract(astm_ClassType)
+
+
+def test_astm_classtype_constructor_exists():
+    assert callable(astm_ClassType.__init__)
+
+
+def test_astm_classtype_constructor_args():
+    sig = inspect.signature(astm_ClassType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_uniontype_is_not_abstract():
+    assert not inspect.isabstract(astm_UnionType)
+
+
+def test_astm_uniontype_constructor_exists():
+    assert callable(astm_UnionType.__init__)
+
+
+def test_astm_uniontype_constructor_args():
+    sig = inspect.signature(astm_UnionType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -949,30 +2153,30 @@ def test_typedefinition_constructor_args():
 
 
 
-def test_astm::aggregatetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::AggregateTypeDefinition)
+def test_astm_aggregatetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_AggregateTypeDefinition)
 
 
-def test_astm::aggregatetypedefinition_constructor_exists():
-    assert callable(astm::AggregateTypeDefinition.__init__)
+def test_astm_aggregatetypedefinition_constructor_exists():
+    assert callable(astm_AggregateTypeDefinition.__init__)
 
 
-def test_astm::aggregatetypedefinition_constructor_args():
-    sig = inspect.signature(astm::AggregateTypeDefinition.__init__)
+def test_astm_aggregatetypedefinition_constructor_args():
+    sig = inspect.signature(astm_AggregateTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::namedtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::NamedTypeDefinition)
+def test_astm_namedtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_NamedTypeDefinition)
 
 
-def test_astm::namedtypedefinition_constructor_exists():
-    assert callable(astm::NamedTypeDefinition.__init__)
+def test_astm_namedtypedefinition_constructor_exists():
+    assert callable(astm_NamedTypeDefinition.__init__)
 
 
-def test_astm::namedtypedefinition_constructor_args():
-    sig = inspect.signature(astm::NamedTypeDefinition.__init__)
+def test_astm_namedtypedefinition_constructor_args():
+    sig = inspect.signature(astm_NamedTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -991,16 +2195,44 @@ def test_datadefinition_constructor_args():
 
 
 
-def test_astm::bitfielddefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::BitFieldDefinition)
+def test_astm_variabledefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_VariableDefinition)
 
 
-def test_astm::bitfielddefinition_constructor_exists():
-    assert callable(astm::BitFieldDefinition.__init__)
+def test_astm_variabledefinition_constructor_exists():
+    assert callable(astm_VariableDefinition.__init__)
 
 
-def test_astm::bitfielddefinition_constructor_args():
-    sig = inspect.signature(astm::BitFieldDefinition.__init__)
+def test_astm_variabledefinition_constructor_args():
+    sig = inspect.signature(astm_VariableDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_formalparameterdefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_FormalParameterDefinition)
+
+
+def test_astm_formalparameterdefinition_constructor_exists():
+    assert callable(astm_FormalParameterDefinition.__init__)
+
+
+def test_astm_formalparameterdefinition_constructor_args():
+    sig = inspect.signature(astm_FormalParameterDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_bitfielddefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_BitFieldDefinition)
+
+
+def test_astm_bitfielddefinition_constructor_exists():
+    assert callable(astm_BitFieldDefinition.__init__)
+
+
+def test_astm_bitfielddefinition_constructor_args():
+    sig = inspect.signature(astm_BitFieldDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1019,6 +2251,198 @@ def test_expression_constructor_args():
 
 
 
+def test_astm_namereference_is_not_abstract():
+    assert not inspect.isabstract(astm_NameReference)
+
+
+def test_astm_namereference_constructor_exists():
+    assert callable(astm_NameReference.__init__)
+
+
+def test_astm_namereference_constructor_args():
+    sig = inspect.signature(astm_NameReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_ConditionalExpression)
+
+
+def test_astm_conditionalexpression_constructor_exists():
+    assert callable(astm_ConditionalExpression.__init__)
+
+
+def test_astm_conditionalexpression_constructor_args():
+    sig = inspect.signature(astm_ConditionalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_BinaryExpression)
+
+
+def test_astm_binaryexpression_constructor_exists():
+    assert callable(astm_BinaryExpression.__init__)
+
+
+def test_astm_binaryexpression_constructor_args():
+    sig = inspect.signature(astm_BinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_rangeexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_RangeExpression)
+
+
+def test_astm_rangeexpression_constructor_exists():
+    assert callable(astm_RangeExpression.__init__)
+
+
+def test_astm_rangeexpression_constructor_args():
+    sig = inspect.signature(astm_RangeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_aggregateexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_AggregateExpression)
+
+
+def test_astm_aggregateexpression_constructor_exists():
+    assert callable(astm_AggregateExpression.__init__)
+
+
+def test_astm_aggregateexpression_constructor_args():
+    sig = inspect.signature(astm_AggregateExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_literal_is_not_abstract():
+    assert not inspect.isabstract(astm_Literal)
+
+
+def test_astm_literal_constructor_exists():
+    assert callable(astm_Literal.__init__)
+
+
+def test_astm_literal_constructor_args():
+    sig = inspect.signature(astm_Literal.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_astm_literal_has_value():
+    assert hasattr(astm_Literal, "value")
+    descriptor = None
+    for klass in astm_Literal.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_astm_castexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_CastExpression)
+
+
+def test_astm_castexpression_constructor_exists():
+    assert callable(astm_CastExpression.__init__)
+
+
+def test_astm_castexpression_constructor_args():
+    sig = inspect.signature(astm_CastExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_UnaryExpression)
+
+
+def test_astm_unaryexpression_constructor_exists():
+    assert callable(astm_UnaryExpression.__init__)
+
+
+def test_astm_unaryexpression_constructor_args():
+    sig = inspect.signature(astm_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_newexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_NewExpression)
+
+
+def test_astm_newexpression_constructor_exists():
+    assert callable(astm_NewExpression.__init__)
+
+
+def test_astm_newexpression_constructor_args():
+    sig = inspect.signature(astm_NewExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_annotationexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_AnnotationExpression)
+
+
+def test_astm_annotationexpression_constructor_exists():
+    assert callable(astm_AnnotationExpression.__init__)
+
+
+def test_astm_annotationexpression_constructor_args():
+    sig = inspect.signature(astm_AnnotationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_arrayaccess_is_not_abstract():
+    assert not inspect.isabstract(astm_ArrayAccess)
+
+
+def test_astm_arrayaccess_constructor_exists():
+    assert callable(astm_ArrayAccess.__init__)
+
+
+def test_astm_arrayaccess_constructor_args():
+    sig = inspect.signature(astm_ArrayAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_labelaccess_is_not_abstract():
+    assert not inspect.isabstract(astm_LabelAccess)
+
+
+def test_astm_labelaccess_constructor_exists():
+    assert callable(astm_LabelAccess.__init__)
+
+
+def test_astm_labelaccess_constructor_args():
+    sig = inspect.signature(astm_LabelAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_functioncallexpression_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionCallExpression)
+
+
+def test_astm_functioncallexpression_constructor_exists():
+    assert callable(astm_FunctionCallExpression.__init__)
+
+
+def test_astm_functioncallexpression_constructor_args():
+    sig = inspect.signature(astm_FunctionCallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_gastmsyntaxobject_is_not_abstract():
     assert not inspect.isabstract(GASTMSyntaxObject)
 
@@ -1033,35 +2457,91 @@ def test_gastmsyntaxobject_constructor_args():
 
 
 
-def test_astm::type_is_not_abstract():
-    assert not inspect.isabstract(astm::Type)
+def test_astm_preprocessorelement_is_not_abstract():
+    assert not inspect.isabstract(astm_PreprocessorElement)
 
 
-def test_astm::type_constructor_exists():
-    assert callable(astm::Type.__init__)
+def test_astm_preprocessorelement_constructor_exists():
+    assert callable(astm_PreprocessorElement.__init__)
 
 
-def test_astm::type_constructor_args():
-    sig = inspect.signature(astm::Type.__init__)
+def test_astm_preprocessorelement_constructor_args():
+    sig = inspect.signature(astm_PreprocessorElement.__init__)
     params = list(sig.parameters.keys())
-    assert "isConst" in params, "Missing parameter 'isConst'"
-    assert "isVolatile" in params, "Missing parameter 'isVolatile'"
 
-def test_astm::type_has_isConst():
-    assert hasattr(astm::Type, "isConst")
+
+
+def test_astm_definitionobject_is_not_abstract():
+    assert not inspect.isabstract(astm_DefinitionObject)
+
+
+def test_astm_definitionobject_constructor_exists():
+    assert callable(astm_DefinitionObject.__init__)
+
+
+def test_astm_definitionobject_constructor_args():
+    sig = inspect.signature(astm_DefinitionObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_expression_is_not_abstract():
+    assert not inspect.isabstract(astm_Expression)
+
+
+def test_astm_expression_constructor_exists():
+    assert callable(astm_Expression.__init__)
+
+
+def test_astm_expression_constructor_args():
+    sig = inspect.signature(astm_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_statement_is_not_abstract():
+    assert not inspect.isabstract(astm_Statement)
+
+
+def test_astm_statement_constructor_exists():
+    assert callable(astm_Statement.__init__)
+
+
+def test_astm_statement_constructor_args():
+    sig = inspect.signature(astm_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_type_is_not_abstract():
+    assert not inspect.isabstract(astm_Type)
+
+
+def test_astm_type_constructor_exists():
+    assert callable(astm_Type.__init__)
+
+
+def test_astm_type_constructor_args():
+    sig = inspect.signature(astm_Type.__init__)
+    params = list(sig.parameters.keys())
+    assert "isVolatile" in params, "Missing parameter 'isVolatile'"
+    assert "isConst" in params, "Missing parameter 'isConst'"
+
+def test_astm_type_has_isVolatile():
+    assert hasattr(astm_Type, "isVolatile")
     descriptor = None
-    for klass in astm::Type.__mro__:
-        if "isConst" in klass.__dict__:
-            descriptor = klass.__dict__["isConst"]
+    for klass in astm_Type.__mro__:
+        if "isVolatile" in klass.__dict__:
+            descriptor = klass.__dict__["isVolatile"]
             break
     assert isinstance(descriptor, property)
 
-def test_astm::type_has_isVolatile():
-    assert hasattr(astm::Type, "isVolatile")
+def test_astm_type_has_isConst():
+    assert hasattr(astm_Type, "isConst")
     descriptor = None
-    for klass in astm::Type.__mro__:
-        if "isVolatile" in klass.__dict__:
-            descriptor = klass.__dict__["isVolatile"]
+    for klass in astm_Type.__mro__:
+        if "isConst" in klass.__dict__:
+            descriptor = klass.__dict__["isConst"]
             break
     assert isinstance(descriptor, property)
 
@@ -1081,44 +2561,240 @@ def test_statement_constructor_args():
 
 
 
-def test_astm::specificselectstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificSelectStatement)
+def test_astm_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_BreakStatement)
 
 
-def test_astm::specificselectstatement_constructor_exists():
-    assert callable(astm::SpecificSelectStatement.__init__)
+def test_astm_breakstatement_constructor_exists():
+    assert callable(astm_BreakStatement.__init__)
 
 
-def test_astm::specificselectstatement_constructor_args():
-    sig = inspect.signature(astm::SpecificSelectStatement.__init__)
+def test_astm_breakstatement_constructor_args():
+    sig = inspect.signature(astm_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::LabeledStatement)
+def test_astm_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_LabeledStatement)
 
 
-def test_astm::labeledstatement_constructor_exists():
-    assert callable(astm::LabeledStatement.__init__)
+def test_astm_labeledstatement_constructor_exists():
+    assert callable(astm_LabeledStatement.__init__)
 
 
-def test_astm::labeledstatement_constructor_args():
-    sig = inspect.signature(astm::LabeledStatement.__init__)
+def test_astm_labeledstatement_constructor_args():
+    sig = inspect.signature(astm_LabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ContinueStatement)
+def test_astm_declarationordefinitionstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_DeclarationOrDefinitionStatement)
 
 
-def test_astm::continuestatement_constructor_exists():
-    assert callable(astm::ContinueStatement.__init__)
+def test_astm_declarationordefinitionstatement_constructor_exists():
+    assert callable(astm_DeclarationOrDefinitionStatement.__init__)
 
 
-def test_astm::continuestatement_constructor_args():
-    sig = inspect.signature(astm::ContinueStatement.__init__)
+def test_astm_declarationordefinitionstatement_constructor_args():
+    sig = inspect.signature(astm_DeclarationOrDefinitionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_specificselectstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificSelectStatement)
+
+
+def test_astm_specificselectstatement_constructor_exists():
+    assert callable(astm_SpecificSelectStatement.__init__)
+
+
+def test_astm_specificselectstatement_constructor_args():
+    sig = inspect.signature(astm_SpecificSelectStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ReturnStatement)
+
+
+def test_astm_returnstatement_constructor_exists():
+    assert callable(astm_ReturnStatement.__init__)
+
+
+def test_astm_returnstatement_constructor_args():
+    sig = inspect.signature(astm_ReturnStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ExpressionStatement)
+
+
+def test_astm_expressionstatement_constructor_exists():
+    assert callable(astm_ExpressionStatement.__init__)
+
+
+def test_astm_expressionstatement_constructor_args():
+    sig = inspect.signature(astm_ExpressionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_terminatestatement_is_not_abstract():
+    assert not inspect.isabstract(astm_TerminateStatement)
+
+
+def test_astm_terminatestatement_constructor_exists():
+    assert callable(astm_TerminateStatement.__init__)
+
+
+def test_astm_terminatestatement_constructor_args():
+    sig = inspect.signature(astm_TerminateStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ContinueStatement)
+
+
+def test_astm_continuestatement_constructor_exists():
+    assert callable(astm_ContinueStatement.__init__)
+
+
+def test_astm_continuestatement_constructor_args():
+    sig = inspect.signature(astm_ContinueStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_BlockStatement)
+
+
+def test_astm_blockstatement_constructor_exists():
+    assert callable(astm_BlockStatement.__init__)
+
+
+def test_astm_blockstatement_constructor_args():
+    sig = inspect.signature(astm_BlockStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_LoopStatement)
+
+
+def test_astm_loopstatement_constructor_exists():
+    assert callable(astm_LoopStatement.__init__)
+
+
+def test_astm_loopstatement_constructor_args():
+    sig = inspect.signature(astm_LoopStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_ThrowStatement)
+
+
+def test_astm_throwstatement_constructor_exists():
+    assert callable(astm_ThrowStatement.__init__)
+
+
+def test_astm_throwstatement_constructor_args():
+    sig = inspect.signature(astm_ThrowStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_deletestatement_is_not_abstract():
+    assert not inspect.isabstract(astm_DeleteStatement)
+
+
+def test_astm_deletestatement_constructor_exists():
+    assert callable(astm_DeleteStatement.__init__)
+
+
+def test_astm_deletestatement_constructor_args():
+    sig = inspect.signature(astm_DeleteStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_IfStatement)
+
+
+def test_astm_ifstatement_constructor_exists():
+    assert callable(astm_IfStatement.__init__)
+
+
+def test_astm_ifstatement_constructor_args():
+    sig = inspect.signature(astm_IfStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_trystatement_is_not_abstract():
+    assert not inspect.isabstract(astm_TryStatement)
+
+
+def test_astm_trystatement_constructor_exists():
+    assert callable(astm_TryStatement.__init__)
+
+
+def test_astm_trystatement_constructor_args():
+    sig = inspect.signature(astm_TryStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(astm_EmptyStatement)
+
+
+def test_astm_emptystatement_constructor_exists():
+    assert callable(astm_EmptyStatement.__init__)
+
+
+def test_astm_emptystatement_constructor_args():
+    sig = inspect.signature(astm_EmptyStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_jumpstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_JumpStatement)
+
+
+def test_astm_jumpstatement_constructor_exists():
+    assert callable(astm_JumpStatement.__init__)
+
+
+def test_astm_jumpstatement_constructor_args():
+    sig = inspect.signature(astm_JumpStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(astm_SwitchStatement)
+
+
+def test_astm_switchstatement_constructor_exists():
+    assert callable(astm_SwitchStatement.__init__)
+
+
+def test_astm_switchstatement_constructor_args():
+    sig = inspect.signature(astm_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1179,23 +2855,23 @@ def test_declaration_constructor_args():
 
 
 
-def test_astm::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(astm::VariableDeclaration)
+def test_astm_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(astm_VariableDeclaration)
 
 
-def test_astm::variabledeclaration_constructor_exists():
-    assert callable(astm::VariableDeclaration.__init__)
+def test_astm_variabledeclaration_constructor_exists():
+    assert callable(astm_VariableDeclaration.__init__)
 
 
-def test_astm::variabledeclaration_constructor_args():
-    sig = inspect.signature(astm::VariableDeclaration.__init__)
+def test_astm_variabledeclaration_constructor_args():
+    sig = inspect.signature(astm_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "isMutable" in params, "Missing parameter 'isMutable'"
 
-def test_astm::variabledeclaration_has_isMutable():
-    assert hasattr(astm::VariableDeclaration, "isMutable")
+def test_astm_variabledeclaration_has_isMutable():
+    assert hasattr(astm_VariableDeclaration, "isMutable")
     descriptor = None
-    for klass in astm::VariableDeclaration.__mro__:
+    for klass in astm_VariableDeclaration.__mro__:
         if "isMutable" in klass.__dict__:
             descriptor = klass.__dict__["isMutable"]
             break
@@ -1203,16 +2879,30 @@ def test_astm::variabledeclaration_has_isMutable():
 
 
 
-def test_astm::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionDeclaration)
+def test_astm_formalparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(astm_FormalParameterDeclaration)
 
 
-def test_astm::functiondeclaration_constructor_exists():
-    assert callable(astm::FunctionDeclaration.__init__)
+def test_astm_formalparameterdeclaration_constructor_exists():
+    assert callable(astm_FormalParameterDeclaration.__init__)
 
 
-def test_astm::functiondeclaration_constructor_args():
-    sig = inspect.signature(astm::FunctionDeclaration.__init__)
+def test_astm_formalparameterdeclaration_constructor_args():
+    sig = inspect.signature(astm_FormalParameterDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionDeclaration)
+
+
+def test_astm_functiondeclaration_constructor_exists():
+    assert callable(astm_FunctionDeclaration.__init__)
+
+
+def test_astm_functiondeclaration_constructor_args():
+    sig = inspect.signature(astm_FunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1231,37 +2921,51 @@ def test_definition_constructor_args():
 
 
 
-def test_astm::enumliteraldefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::EnumLiteralDefinition)
+def test_astm_functiondefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionDefinition)
 
 
-def test_astm::enumliteraldefinition_constructor_exists():
-    assert callable(astm::EnumLiteralDefinition.__init__)
+def test_astm_functiondefinition_constructor_exists():
+    assert callable(astm_FunctionDefinition.__init__)
 
 
-def test_astm::enumliteraldefinition_constructor_args():
-    sig = inspect.signature(astm::EnumLiteralDefinition.__init__)
+def test_astm_functiondefinition_constructor_args():
+    sig = inspect.signature(astm_FunctionDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::datadefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::DataDefinition)
+def test_astm_specifictriggerdefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_SpecificTriggerDefinition)
 
 
-def test_astm::datadefinition_constructor_exists():
-    assert callable(astm::DataDefinition.__init__)
+def test_astm_specifictriggerdefinition_constructor_exists():
+    assert callable(astm_SpecificTriggerDefinition.__init__)
 
 
-def test_astm::datadefinition_constructor_args():
-    sig = inspect.signature(astm::DataDefinition.__init__)
+def test_astm_specifictriggerdefinition_constructor_args():
+    sig = inspect.signature(astm_SpecificTriggerDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_datadefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_DataDefinition)
+
+
+def test_astm_datadefinition_constructor_exists():
+    assert callable(astm_DataDefinition.__init__)
+
+
+def test_astm_datadefinition_constructor_args():
+    sig = inspect.signature(astm_DataDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "isMutable" in params, "Missing parameter 'isMutable'"
 
-def test_astm::datadefinition_has_isMutable():
-    assert hasattr(astm::DataDefinition, "isMutable")
+def test_astm_datadefinition_has_isMutable():
+    assert hasattr(astm_DataDefinition, "isMutable")
     descriptor = None
-    for klass in astm::DataDefinition.__mro__:
+    for klass in astm_DataDefinition.__mro__:
         if "isMutable" in klass.__dict__:
             descriptor = klass.__dict__["isMutable"]
             break
@@ -1269,30 +2973,16 @@ def test_astm::datadefinition_has_isMutable():
 
 
 
-def test_astm::specifictriggerdefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificTriggerDefinition)
+def test_astm_enumliteraldefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_EnumLiteralDefinition)
 
 
-def test_astm::specifictriggerdefinition_constructor_exists():
-    assert callable(astm::SpecificTriggerDefinition.__init__)
+def test_astm_enumliteraldefinition_constructor_exists():
+    assert callable(astm_EnumLiteralDefinition.__init__)
 
 
-def test_astm::specifictriggerdefinition_constructor_args():
-    sig = inspect.signature(astm::SpecificTriggerDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::functiondefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionDefinition)
-
-
-def test_astm::functiondefinition_constructor_exists():
-    assert callable(astm::FunctionDefinition.__init__)
-
-
-def test_astm::functiondefinition_constructor_args():
-    sig = inspect.signature(astm::FunctionDefinition.__init__)
+def test_astm_enumliteraldefinition_constructor_args():
+    sig = inspect.signature(astm_EnumLiteralDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1307,6 +2997,34 @@ def test_typereference_constructor_exists():
 
 def test_typereference_constructor_args():
     sig = inspect.signature(TypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_namedtypereference_is_not_abstract():
+    assert not inspect.isabstract(astm_NamedTypeReference)
+
+
+def test_astm_namedtypereference_constructor_exists():
+    assert callable(astm_NamedTypeReference.__init__)
+
+
+def test_astm_namedtypereference_constructor_args():
+    sig = inspect.signature(astm_NamedTypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_unnamedtypereference_is_not_abstract():
+    assert not inspect.isabstract(astm_UnnamedTypeReference)
+
+
+def test_astm_unnamedtypereference_constructor_exists():
+    assert callable(astm_UnnamedTypeReference.__init__)
+
+
+def test_astm_unnamedtypereference_constructor_args():
+    sig = inspect.signature(astm_UnnamedTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1339,30 +3057,30 @@ def test_declarationordefinition_constructor_args():
 
 
 
-def test_astm::declaration_is_not_abstract():
-    assert not inspect.isabstract(astm::Declaration)
+def test_astm_declaration_is_not_abstract():
+    assert not inspect.isabstract(astm_Declaration)
 
 
-def test_astm::declaration_constructor_exists():
-    assert callable(astm::Declaration.__init__)
+def test_astm_declaration_constructor_exists():
+    assert callable(astm_Declaration.__init__)
 
 
-def test_astm::declaration_constructor_args():
-    sig = inspect.signature(astm::Declaration.__init__)
+def test_astm_declaration_constructor_args():
+    sig = inspect.signature(astm_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::definition_is_not_abstract():
-    assert not inspect.isabstract(astm::Definition)
+def test_astm_definition_is_not_abstract():
+    assert not inspect.isabstract(astm_Definition)
 
 
-def test_astm::definition_constructor_exists():
-    assert callable(astm::Definition.__init__)
+def test_astm_definition_constructor_exists():
+    assert callable(astm_Definition.__init__)
 
 
-def test_astm::definition_constructor_args():
-    sig = inspect.signature(astm::Definition.__init__)
+def test_astm_definition_constructor_args():
+    sig = inspect.signature(astm_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1395,37 +3113,37 @@ def test_othersyntaxobject_constructor_args():
 
 
 
-def test_astm::dimension_is_not_abstract():
-    assert not inspect.isabstract(astm::Dimension)
+def test_astm_dimension_is_not_abstract():
+    assert not inspect.isabstract(astm_Dimension)
 
 
-def test_astm::dimension_constructor_exists():
-    assert callable(astm::Dimension.__init__)
+def test_astm_dimension_constructor_exists():
+    assert callable(astm_Dimension.__init__)
 
 
-def test_astm::dimension_constructor_args():
-    sig = inspect.signature(astm::Dimension.__init__)
+def test_astm_dimension_constructor_args():
+    sig = inspect.signature(astm_Dimension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::name_is_not_abstract():
-    assert not inspect.isabstract(astm::Name)
+def test_astm_name_is_not_abstract():
+    assert not inspect.isabstract(astm_Name)
 
 
-def test_astm::name_constructor_exists():
-    assert callable(astm::Name.__init__)
+def test_astm_name_constructor_exists():
+    assert callable(astm_Name.__init__)
 
 
-def test_astm::name_constructor_args():
-    sig = inspect.signature(astm::Name.__init__)
+def test_astm_name_constructor_args():
+    sig = inspect.signature(astm_Name.__init__)
     params = list(sig.parameters.keys())
     assert "nameString" in params, "Missing parameter 'nameString'"
 
-def test_astm::name_has_nameString():
-    assert hasattr(astm::Name, "nameString")
+def test_astm_name_has_nameString():
+    assert hasattr(astm_Name, "nameString")
     descriptor = None
-    for klass in astm::Name.__mro__:
+    for klass in astm_Name.__mro__:
         if "nameString" in klass.__dict__:
             descriptor = klass.__dict__["nameString"]
             break
@@ -1433,23 +3151,37 @@ def test_astm::name_has_nameString():
 
 
 
-def test_astm::derivesfrom_is_not_abstract():
-    assert not inspect.isabstract(astm::DerivesFrom)
+def test_astm_functionmemberattribute_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionMemberAttribute)
 
 
-def test_astm::derivesfrom_constructor_exists():
-    assert callable(astm::DerivesFrom.__init__)
+def test_astm_functionmemberattribute_constructor_exists():
+    assert callable(astm_FunctionMemberAttribute.__init__)
 
 
-def test_astm::derivesfrom_constructor_args():
-    sig = inspect.signature(astm::DerivesFrom.__init__)
+def test_astm_functionmemberattribute_constructor_args():
+    sig = inspect.signature(astm_FunctionMemberAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_derivesfrom_is_not_abstract():
+    assert not inspect.isabstract(astm_DerivesFrom)
+
+
+def test_astm_derivesfrom_constructor_exists():
+    assert callable(astm_DerivesFrom.__init__)
+
+
+def test_astm_derivesfrom_constructor_args():
+    sig = inspect.signature(astm_DerivesFrom.__init__)
     params = list(sig.parameters.keys())
     assert "isVirtual" in params, "Missing parameter 'isVirtual'"
 
-def test_astm::derivesfrom_has_isVirtual():
-    assert hasattr(astm::DerivesFrom, "isVirtual")
+def test_astm_derivesfrom_has_isVirtual():
+    assert hasattr(astm_DerivesFrom, "isVirtual")
     descriptor = None
-    for klass in astm::DerivesFrom.__mro__:
+    for klass in astm_DerivesFrom.__mro__:
         if "isVirtual" in klass.__dict__:
             descriptor = klass.__dict__["isVirtual"]
             break
@@ -1457,23 +3189,65 @@ def test_astm::derivesfrom_has_isVirtual():
 
 
 
-def test_astm::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(astm::CompilationUnit)
+def test_astm_virtualspecification_is_not_abstract():
+    assert not inspect.isabstract(astm_VirtualSpecification)
 
 
-def test_astm::compilationunit_constructor_exists():
-    assert callable(astm::CompilationUnit.__init__)
+def test_astm_virtualspecification_constructor_exists():
+    assert callable(astm_VirtualSpecification.__init__)
 
 
-def test_astm::compilationunit_constructor_args():
-    sig = inspect.signature(astm::CompilationUnit.__init__)
+def test_astm_virtualspecification_constructor_args():
+    sig = inspect.signature(astm_VirtualSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_switchcase_is_not_abstract():
+    assert not inspect.isabstract(astm_SwitchCase)
+
+
+def test_astm_switchcase_constructor_exists():
+    assert callable(astm_SwitchCase.__init__)
+
+
+def test_astm_switchcase_constructor_args():
+    sig = inspect.signature(astm_SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_catchblock_is_not_abstract():
+    assert not inspect.isabstract(astm_CatchBlock)
+
+
+def test_astm_catchblock_constructor_exists():
+    assert callable(astm_CatchBlock.__init__)
+
+
+def test_astm_catchblock_constructor_args():
+    sig = inspect.signature(astm_CatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(astm_CompilationUnit)
+
+
+def test_astm_compilationunit_constructor_exists():
+    assert callable(astm_CompilationUnit.__init__)
+
+
+def test_astm_compilationunit_constructor_args():
+    sig = inspect.signature(astm_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
 
-def test_astm::compilationunit_has_language():
-    assert hasattr(astm::CompilationUnit, "language")
+def test_astm_compilationunit_has_language():
+    assert hasattr(astm_CompilationUnit, "language")
     descriptor = None
-    for klass in astm::CompilationUnit.__mro__:
+    for klass in astm_CompilationUnit.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
@@ -1481,16 +3255,16 @@ def test_astm::compilationunit_has_language():
 
 
 
-def test_astm::entrydefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::EntryDefinition)
+def test_astm_entrydefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_EntryDefinition)
 
 
-def test_astm::entrydefinition_constructor_exists():
-    assert callable(astm::EntryDefinition.__init__)
+def test_astm_entrydefinition_constructor_exists():
+    assert callable(astm_EntryDefinition.__init__)
 
 
-def test_astm::entrydefinition_constructor_args():
-    sig = inspect.signature(astm::EntryDefinition.__init__)
+def test_astm_entrydefinition_constructor_args():
+    sig = inspect.signature(astm_EntryDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1509,45 +3283,87 @@ def test_virtualspecification_constructor_args():
 
 
 
-def test_astm::functionmemberattributes_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionMemberAttributes)
+def test_astm_nonvirtual_is_not_abstract():
+    assert not inspect.isabstract(astm_NonVirtual)
 
 
-def test_astm::functionmemberattributes_constructor_exists():
-    assert callable(astm::FunctionMemberAttributes.__init__)
+def test_astm_nonvirtual_constructor_exists():
+    assert callable(astm_NonVirtual.__init__)
 
 
-def test_astm::functionmemberattributes_constructor_args():
-    sig = inspect.signature(astm::FunctionMemberAttributes.__init__)
+def test_astm_nonvirtual_constructor_args():
+    sig = inspect.signature(astm_NonVirtual.__init__)
     params = list(sig.parameters.keys())
-    assert "isFriend" in params, "Missing parameter 'isFriend'"
-    assert "isThisConst" in params, "Missing parameter 'isThisConst'"
-    assert "isInline" in params, "Missing parameter 'isInline'"
 
-def test_astm::functionmemberattributes_has_isFriend():
-    assert hasattr(astm::FunctionMemberAttributes, "isFriend")
+
+
+def test_astm_virtual_is_not_abstract():
+    assert not inspect.isabstract(astm_Virtual)
+
+
+def test_astm_virtual_constructor_exists():
+    assert callable(astm_Virtual.__init__)
+
+
+def test_astm_virtual_constructor_args():
+    sig = inspect.signature(astm_Virtual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_purevirtual_is_not_abstract():
+    assert not inspect.isabstract(astm_PureVirtual)
+
+
+def test_astm_purevirtual_constructor_exists():
+    assert callable(astm_PureVirtual.__init__)
+
+
+def test_astm_purevirtual_constructor_args():
+    sig = inspect.signature(astm_PureVirtual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_functionmemberattributes_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionMemberAttributes)
+
+
+def test_astm_functionmemberattributes_constructor_exists():
+    assert callable(astm_FunctionMemberAttributes.__init__)
+
+
+def test_astm_functionmemberattributes_constructor_args():
+    sig = inspect.signature(astm_FunctionMemberAttributes.__init__)
+    params = list(sig.parameters.keys())
+    assert "isInline" in params, "Missing parameter 'isInline'"
+    assert "isThisConst" in params, "Missing parameter 'isThisConst'"
+    assert "isFriend" in params, "Missing parameter 'isFriend'"
+
+def test_astm_functionmemberattributes_has_isInline():
+    assert hasattr(astm_FunctionMemberAttributes, "isInline")
     descriptor = None
-    for klass in astm::FunctionMemberAttributes.__mro__:
-        if "isFriend" in klass.__dict__:
-            descriptor = klass.__dict__["isFriend"]
+    for klass in astm_FunctionMemberAttributes.__mro__:
+        if "isInline" in klass.__dict__:
+            descriptor = klass.__dict__["isInline"]
             break
     assert isinstance(descriptor, property)
 
-def test_astm::functionmemberattributes_has_isThisConst():
-    assert hasattr(astm::FunctionMemberAttributes, "isThisConst")
+def test_astm_functionmemberattributes_has_isThisConst():
+    assert hasattr(astm_FunctionMemberAttributes, "isThisConst")
     descriptor = None
-    for klass in astm::FunctionMemberAttributes.__mro__:
+    for klass in astm_FunctionMemberAttributes.__mro__:
         if "isThisConst" in klass.__dict__:
             descriptor = klass.__dict__["isThisConst"]
             break
     assert isinstance(descriptor, property)
 
-def test_astm::functionmemberattributes_has_isInline():
-    assert hasattr(astm::FunctionMemberAttributes, "isInline")
+def test_astm_functionmemberattributes_has_isFriend():
+    assert hasattr(astm_FunctionMemberAttributes, "isFriend")
     descriptor = None
-    for klass in astm::FunctionMemberAttributes.__mro__:
-        if "isInline" in klass.__dict__:
-            descriptor = klass.__dict__["isInline"]
+    for klass in astm_FunctionMemberAttributes.__mro__:
+        if "isFriend" in klass.__dict__:
+            descriptor = klass.__dict__["isFriend"]
             break
     assert isinstance(descriptor, property)
 
@@ -1581,6 +3397,76 @@ def test_scope_constructor_args():
 
 
 
+def test_astm_programscope_is_not_abstract():
+    assert not inspect.isabstract(astm_ProgramScope)
+
+
+def test_astm_programscope_constructor_exists():
+    assert callable(astm_ProgramScope.__init__)
+
+
+def test_astm_programscope_constructor_args():
+    sig = inspect.signature(astm_ProgramScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_globalscope_is_not_abstract():
+    assert not inspect.isabstract(astm_GlobalScope)
+
+
+def test_astm_globalscope_constructor_exists():
+    assert callable(astm_GlobalScope.__init__)
+
+
+def test_astm_globalscope_constructor_args():
+    sig = inspect.signature(astm_GlobalScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_functionscope_is_not_abstract():
+    assert not inspect.isabstract(astm_FunctionScope)
+
+
+def test_astm_functionscope_constructor_exists():
+    assert callable(astm_FunctionScope.__init__)
+
+
+def test_astm_functionscope_constructor_args():
+    sig = inspect.signature(astm_FunctionScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_aggregatescope_is_not_abstract():
+    assert not inspect.isabstract(astm_AggregateScope)
+
+
+def test_astm_aggregatescope_constructor_exists():
+    assert callable(astm_AggregateScope.__init__)
+
+
+def test_astm_aggregatescope_constructor_args():
+    sig = inspect.signature(astm_AggregateScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_blockscope_is_not_abstract():
+    assert not inspect.isabstract(astm_BlockScope)
+
+
+def test_astm_blockscope_constructor_exists():
+    assert callable(astm_BlockScope.__init__)
+
+
+def test_astm_blockscope_constructor_args():
+    sig = inspect.signature(astm_BlockScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_definitionobject_is_not_abstract():
     assert not inspect.isabstract(DefinitionObject)
 
@@ -1595,78 +3481,78 @@ def test_definitionobject_constructor_args():
 
 
 
-def test_astm::declarationordefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::DeclarationOrDefinition)
+def test_astm_labeldefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_LabelDefinition)
 
 
-def test_astm::declarationordefinition_constructor_exists():
-    assert callable(astm::DeclarationOrDefinition.__init__)
+def test_astm_labeldefinition_constructor_exists():
+    assert callable(astm_LabelDefinition.__init__)
 
 
-def test_astm::declarationordefinition_constructor_args():
-    sig = inspect.signature(astm::DeclarationOrDefinition.__init__)
+def test_astm_labeldefinition_constructor_args():
+    sig = inspect.signature(astm_LabelDefinition.__init__)
     params = list(sig.parameters.keys())
-    assert "linkageSpecifier" in params, "Missing parameter 'linkageSpecifier'"
+
+
+
+def test_astm_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_TypeDefinition)
+
+
+def test_astm_typedefinition_constructor_exists():
+    assert callable(astm_TypeDefinition.__init__)
+
+
+def test_astm_typedefinition_constructor_args():
+    sig = inspect.signature(astm_TypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_declarationordefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_DeclarationOrDefinition)
+
+
+def test_astm_declarationordefinition_constructor_exists():
+    assert callable(astm_DeclarationOrDefinition.__init__)
+
+
+def test_astm_declarationordefinition_constructor_args():
+    sig = inspect.signature(astm_DeclarationOrDefinition.__init__)
+    params = list(sig.parameters.keys())
     assert "isRegister" in params, "Missing parameter 'isRegister'"
+    assert "linkageSpecifier" in params, "Missing parameter 'linkageSpecifier'"
 
-def test_astm::declarationordefinition_has_linkageSpecifier():
-    assert hasattr(astm::DeclarationOrDefinition, "linkageSpecifier")
+def test_astm_declarationordefinition_has_isRegister():
+    assert hasattr(astm_DeclarationOrDefinition, "isRegister")
     descriptor = None
-    for klass in astm::DeclarationOrDefinition.__mro__:
-        if "linkageSpecifier" in klass.__dict__:
-            descriptor = klass.__dict__["linkageSpecifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_astm::declarationordefinition_has_isRegister():
-    assert hasattr(astm::DeclarationOrDefinition, "isRegister")
-    descriptor = None
-    for klass in astm::DeclarationOrDefinition.__mro__:
+    for klass in astm_DeclarationOrDefinition.__mro__:
         if "isRegister" in klass.__dict__:
             descriptor = klass.__dict__["isRegister"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_astm::labeldefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::LabelDefinition)
-
-
-def test_astm::labeldefinition_constructor_exists():
-    assert callable(astm::LabelDefinition.__init__)
-
-
-def test_astm::labeldefinition_constructor_args():
-    sig = inspect.signature(astm::LabelDefinition.__init__)
-    params = list(sig.parameters.keys())
+def test_astm_declarationordefinition_has_linkageSpecifier():
+    assert hasattr(astm_DeclarationOrDefinition, "linkageSpecifier")
+    descriptor = None
+    for klass in astm_DeclarationOrDefinition.__mro__:
+        if "linkageSpecifier" in klass.__dict__:
+            descriptor = klass.__dict__["linkageSpecifier"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_astm::namespacedefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::NameSpaceDefinition)
+def test_astm_namespacedefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_NameSpaceDefinition)
 
 
-def test_astm::namespacedefinition_constructor_exists():
-    assert callable(astm::NameSpaceDefinition.__init__)
+def test_astm_namespacedefinition_constructor_exists():
+    assert callable(astm_NameSpaceDefinition.__init__)
 
 
-def test_astm::namespacedefinition_constructor_args():
-    sig = inspect.signature(astm::NameSpaceDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::TypeDefinition)
-
-
-def test_astm::typedefinition_constructor_exists():
-    assert callable(astm::TypeDefinition.__init__)
-
-
-def test_astm::typedefinition_constructor_args():
-    sig = inspect.signature(astm::TypeDefinition.__init__)
+def test_astm_namespacedefinition_constructor_args():
+    sig = inspect.signature(astm_NameSpaceDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1713,30 +3599,30 @@ def test_gastmsemanticobject_constructor_args():
 
 
 
-def test_astm::scope_is_not_abstract():
-    assert not inspect.isabstract(astm::Scope)
+def test_astm_scope_is_not_abstract():
+    assert not inspect.isabstract(astm_Scope)
 
 
-def test_astm::scope_constructor_exists():
-    assert callable(astm::Scope.__init__)
+def test_astm_scope_constructor_exists():
+    assert callable(astm_Scope.__init__)
 
 
-def test_astm::scope_constructor_args():
-    sig = inspect.signature(astm::Scope.__init__)
+def test_astm_scope_constructor_args():
+    sig = inspect.signature(astm_Scope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::project_is_not_abstract():
-    assert not inspect.isabstract(astm::Project)
+def test_astm_project_is_not_abstract():
+    assert not inspect.isabstract(astm_Project)
 
 
-def test_astm::project_constructor_exists():
-    assert callable(astm::Project.__init__)
+def test_astm_project_constructor_exists():
+    assert callable(astm_Project.__init__)
 
 
-def test_astm::project_constructor_args():
-    sig = inspect.signature(astm::Project.__init__)
+def test_astm_project_constructor_args():
+    sig = inspect.signature(astm_Project.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1769,77 +3655,77 @@ def test_gastmsourceobject_constructor_args():
 
 
 
-def test_astm::sourcelocation_is_not_abstract():
-    assert not inspect.isabstract(astm::SourceLocation)
+def test_astm_sourcelocation_is_not_abstract():
+    assert not inspect.isabstract(astm_SourceLocation)
 
 
-def test_astm::sourcelocation_constructor_exists():
-    assert callable(astm::SourceLocation.__init__)
+def test_astm_sourcelocation_constructor_exists():
+    assert callable(astm_SourceLocation.__init__)
 
 
-def test_astm::sourcelocation_constructor_args():
-    sig = inspect.signature(astm::SourceLocation.__init__)
+def test_astm_sourcelocation_constructor_args():
+    sig = inspect.signature(astm_SourceLocation.__init__)
     params = list(sig.parameters.keys())
-    assert "endColumn" in params, "Missing parameter 'endColumn'"
-    assert "endLine" in params, "Missing parameter 'endLine'"
     assert "startLine" in params, "Missing parameter 'startLine'"
     assert "startColumn" in params, "Missing parameter 'startColumn'"
+    assert "endLine" in params, "Missing parameter 'endLine'"
+    assert "endColumn" in params, "Missing parameter 'endColumn'"
 
-def test_astm::sourcelocation_has_endColumn():
-    assert hasattr(astm::SourceLocation, "endColumn")
+def test_astm_sourcelocation_has_startLine():
+    assert hasattr(astm_SourceLocation, "startLine")
     descriptor = None
-    for klass in astm::SourceLocation.__mro__:
-        if "endColumn" in klass.__dict__:
-            descriptor = klass.__dict__["endColumn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_astm::sourcelocation_has_endLine():
-    assert hasattr(astm::SourceLocation, "endLine")
-    descriptor = None
-    for klass in astm::SourceLocation.__mro__:
-        if "endLine" in klass.__dict__:
-            descriptor = klass.__dict__["endLine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_astm::sourcelocation_has_startLine():
-    assert hasattr(astm::SourceLocation, "startLine")
-    descriptor = None
-    for klass in astm::SourceLocation.__mro__:
+    for klass in astm_SourceLocation.__mro__:
         if "startLine" in klass.__dict__:
             descriptor = klass.__dict__["startLine"]
             break
     assert isinstance(descriptor, property)
 
-def test_astm::sourcelocation_has_startColumn():
-    assert hasattr(astm::SourceLocation, "startColumn")
+def test_astm_sourcelocation_has_startColumn():
+    assert hasattr(astm_SourceLocation, "startColumn")
     descriptor = None
-    for klass in astm::SourceLocation.__mro__:
+    for klass in astm_SourceLocation.__mro__:
         if "startColumn" in klass.__dict__:
             descriptor = klass.__dict__["startColumn"]
             break
     assert isinstance(descriptor, property)
 
+def test_astm_sourcelocation_has_endLine():
+    assert hasattr(astm_SourceLocation, "endLine")
+    descriptor = None
+    for klass in astm_SourceLocation.__mro__:
+        if "endLine" in klass.__dict__:
+            descriptor = klass.__dict__["endLine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_astm_sourcelocation_has_endColumn():
+    assert hasattr(astm_SourceLocation, "endColumn")
+    descriptor = None
+    for klass in astm_SourceLocation.__mro__:
+        if "endColumn" in klass.__dict__:
+            descriptor = klass.__dict__["endColumn"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_astm::sourcefile_is_not_abstract():
-    assert not inspect.isabstract(astm::SourceFile)
+
+def test_astm_sourcefile_is_not_abstract():
+    assert not inspect.isabstract(astm_SourceFile)
 
 
-def test_astm::sourcefile_constructor_exists():
-    assert callable(astm::SourceFile.__init__)
+def test_astm_sourcefile_constructor_exists():
+    assert callable(astm_SourceFile.__init__)
 
 
-def test_astm::sourcefile_constructor_args():
-    sig = inspect.signature(astm::SourceFile.__init__)
+def test_astm_sourcefile_constructor_args():
+    sig = inspect.signature(astm_SourceFile.__init__)
     params = list(sig.parameters.keys())
     assert "pathName" in params, "Missing parameter 'pathName'"
 
-def test_astm::sourcefile_has_pathName():
-    assert hasattr(astm::SourceFile, "pathName")
+def test_astm_sourcefile_has_pathName():
+    assert hasattr(astm_SourceFile, "pathName")
     descriptor = None
-    for klass in astm::SourceFile.__mro__:
+    for klass in astm_SourceFile.__mro__:
         if "pathName" in klass.__dict__:
             descriptor = klass.__dict__["pathName"]
             break
@@ -1847,142 +3733,142 @@ def test_astm::sourcefile_has_pathName():
 
 
 
-def test_astm::actualparameter_is_not_abstract():
-    assert not inspect.isabstract(astm::ActualParameter)
+def test_astm_actualparameter_is_not_abstract():
+    assert not inspect.isabstract(astm_ActualParameter)
 
 
-def test_astm::actualparameter_constructor_exists():
-    assert callable(astm::ActualParameter.__init__)
+def test_astm_actualparameter_constructor_exists():
+    assert callable(astm_ActualParameter.__init__)
 
 
-def test_astm::actualparameter_constructor_args():
-    sig = inspect.signature(astm::ActualParameter.__init__)
+def test_astm_actualparameter_constructor_args():
+    sig = inspect.signature(astm_ActualParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(astm::BinaryOperator)
+def test_astm_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(astm_BinaryOperator)
 
 
-def test_astm::binaryoperator_constructor_exists():
-    assert callable(astm::BinaryOperator.__init__)
+def test_astm_binaryoperator_constructor_exists():
+    assert callable(astm_BinaryOperator.__init__)
 
 
-def test_astm::binaryoperator_constructor_args():
-    sig = inspect.signature(astm::BinaryOperator.__init__)
+def test_astm_binaryoperator_constructor_args():
+    sig = inspect.signature(astm_BinaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(astm::UnaryOperator)
+def test_astm_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(astm_UnaryOperator)
 
 
-def test_astm::unaryoperator_constructor_exists():
-    assert callable(astm::UnaryOperator.__init__)
+def test_astm_unaryoperator_constructor_exists():
+    assert callable(astm_UnaryOperator.__init__)
 
 
-def test_astm::unaryoperator_constructor_args():
-    sig = inspect.signature(astm::UnaryOperator.__init__)
+def test_astm_unaryoperator_constructor_args():
+    sig = inspect.signature(astm_UnaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::accesskind_is_not_abstract():
-    assert not inspect.isabstract(astm::AccessKind)
+def test_astm_accesskind_is_not_abstract():
+    assert not inspect.isabstract(astm_AccessKind)
 
 
-def test_astm::accesskind_constructor_exists():
-    assert callable(astm::AccessKind.__init__)
+def test_astm_accesskind_constructor_exists():
+    assert callable(astm_AccessKind.__init__)
 
 
-def test_astm::accesskind_constructor_args():
-    sig = inspect.signature(astm::AccessKind.__init__)
+def test_astm_accesskind_constructor_args():
+    sig = inspect.signature(astm_AccessKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::datatype_is_not_abstract():
-    assert not inspect.isabstract(astm::DataType)
+def test_astm_datatype_is_not_abstract():
+    assert not inspect.isabstract(astm_DataType)
 
 
-def test_astm::datatype_constructor_exists():
-    assert callable(astm::DataType.__init__)
+def test_astm_datatype_constructor_exists():
+    assert callable(astm_DataType.__init__)
 
 
-def test_astm::datatype_constructor_args():
-    sig = inspect.signature(astm::DataType.__init__)
+def test_astm_datatype_constructor_args():
+    sig = inspect.signature(astm_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::storagespecification_is_not_abstract():
-    assert not inspect.isabstract(astm::StorageSpecification)
+def test_astm_storagespecification_is_not_abstract():
+    assert not inspect.isabstract(astm_StorageSpecification)
 
 
-def test_astm::storagespecification_constructor_exists():
-    assert callable(astm::StorageSpecification.__init__)
+def test_astm_storagespecification_constructor_exists():
+    assert callable(astm_StorageSpecification.__init__)
 
 
-def test_astm::storagespecification_constructor_args():
-    sig = inspect.signature(astm::StorageSpecification.__init__)
+def test_astm_storagespecification_constructor_args():
+    sig = inspect.signature(astm_StorageSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::othersyntaxobject_is_not_abstract():
-    assert not inspect.isabstract(astm::OtherSyntaxObject)
+def test_astm_othersyntaxobject_is_not_abstract():
+    assert not inspect.isabstract(astm_OtherSyntaxObject)
 
 
-def test_astm::othersyntaxobject_constructor_exists():
-    assert callable(astm::OtherSyntaxObject.__init__)
+def test_astm_othersyntaxobject_constructor_exists():
+    assert callable(astm_OtherSyntaxObject.__init__)
 
 
-def test_astm::othersyntaxobject_constructor_args():
-    sig = inspect.signature(astm::OtherSyntaxObject.__init__)
+def test_astm_othersyntaxobject_constructor_args():
+    sig = inspect.signature(astm_OtherSyntaxObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::gastmsemanticobject_is_not_abstract():
-    assert not inspect.isabstract(astm::GASTMSemanticObject)
+def test_astm_gastmsemanticobject_is_not_abstract():
+    assert not inspect.isabstract(astm_GASTMSemanticObject)
 
 
-def test_astm::gastmsemanticobject_constructor_exists():
-    assert callable(astm::GASTMSemanticObject.__init__)
+def test_astm_gastmsemanticobject_constructor_exists():
+    assert callable(astm_GASTMSemanticObject.__init__)
 
 
-def test_astm::gastmsemanticobject_constructor_args():
-    sig = inspect.signature(astm::GASTMSemanticObject.__init__)
+def test_astm_gastmsemanticobject_constructor_args():
+    sig = inspect.signature(astm_GASTMSemanticObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::gastmsourceobject_is_not_abstract():
-    assert not inspect.isabstract(astm::GASTMSourceObject)
+def test_astm_gastmsourceobject_is_not_abstract():
+    assert not inspect.isabstract(astm_GASTMSourceObject)
 
 
-def test_astm::gastmsourceobject_constructor_exists():
-    assert callable(astm::GASTMSourceObject.__init__)
+def test_astm_gastmsourceobject_constructor_exists():
+    assert callable(astm_GASTMSourceObject.__init__)
 
 
-def test_astm::gastmsourceobject_constructor_args():
-    sig = inspect.signature(astm::GASTMSourceObject.__init__)
+def test_astm_gastmsourceobject_constructor_args():
+    sig = inspect.signature(astm_GASTMSourceObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astm::gastmobject_is_not_abstract():
-    assert not inspect.isabstract(astm::GASTMObject)
+def test_astm_gastmobject_is_not_abstract():
+    assert not inspect.isabstract(astm_GASTMObject)
 
 
-def test_astm::gastmobject_constructor_exists():
-    assert callable(astm::GASTMObject.__init__)
+def test_astm_gastmobject_constructor_exists():
+    assert callable(astm_GASTMObject.__init__)
 
 
-def test_astm::gastmobject_constructor_args():
-    sig = inspect.signature(astm::GASTMObject.__init__)
+def test_astm_gastmobject_constructor_args():
+    sig = inspect.signature(astm_GASTMObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2015,23 +3901,51 @@ def test_preprocessorelement_constructor_args():
 
 
 
-def test_astm::comment_is_not_abstract():
-    assert not inspect.isabstract(astm::Comment)
+def test_astm_includeunit_is_not_abstract():
+    assert not inspect.isabstract(astm_IncludeUnit)
 
 
-def test_astm::comment_constructor_exists():
-    assert callable(astm::Comment.__init__)
+def test_astm_includeunit_constructor_exists():
+    assert callable(astm_IncludeUnit.__init__)
 
 
-def test_astm::comment_constructor_args():
-    sig = inspect.signature(astm::Comment.__init__)
+def test_astm_includeunit_constructor_args():
+    sig = inspect.signature(astm_IncludeUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_macrocall_is_not_abstract():
+    assert not inspect.isabstract(astm_MacroCall)
+
+
+def test_astm_macrocall_constructor_exists():
+    assert callable(astm_MacroCall.__init__)
+
+
+def test_astm_macrocall_constructor_args():
+    sig = inspect.signature(astm_MacroCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_astm_comment_is_not_abstract():
+    assert not inspect.isabstract(astm_Comment)
+
+
+def test_astm_comment_constructor_exists():
+    assert callable(astm_Comment.__init__)
+
+
+def test_astm_comment_constructor_args():
+    sig = inspect.signature(astm_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_astm::comment_has_text():
-    assert hasattr(astm::Comment, "text")
+def test_astm_comment_has_text():
+    assert hasattr(astm_Comment, "text")
     descriptor = None
-    for klass in astm::Comment.__mro__:
+    for klass in astm_Comment.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -2039,65 +3953,37 @@ def test_astm::comment_has_text():
 
 
 
-def test_astm::macrocall_is_not_abstract():
-    assert not inspect.isabstract(astm::MacroCall)
+def test_astm_macrodefinition_is_not_abstract():
+    assert not inspect.isabstract(astm_MacroDefinition)
 
 
-def test_astm::macrocall_constructor_exists():
-    assert callable(astm::MacroCall.__init__)
+def test_astm_macrodefinition_constructor_exists():
+    assert callable(astm_MacroDefinition.__init__)
 
 
-def test_astm::macrocall_constructor_args():
-    sig = inspect.signature(astm::MacroCall.__init__)
+def test_astm_macrodefinition_constructor_args():
+    sig = inspect.signature(astm_MacroDefinition.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_astm::macrodefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::MacroDefinition)
-
-
-def test_astm::macrodefinition_constructor_exists():
-    assert callable(astm::MacroDefinition.__init__)
-
-
-def test_astm::macrodefinition_constructor_args():
-    sig = inspect.signature(astm::MacroDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "macroName" in params, "Missing parameter 'macroName'"
     assert "body" in params, "Missing parameter 'body'"
+    assert "macroName" in params, "Missing parameter 'macroName'"
 
-def test_astm::macrodefinition_has_macroName():
-    assert hasattr(astm::MacroDefinition, "macroName")
+def test_astm_macrodefinition_has_body():
+    assert hasattr(astm_MacroDefinition, "body")
     descriptor = None
-    for klass in astm::MacroDefinition.__mro__:
-        if "macroName" in klass.__dict__:
-            descriptor = klass.__dict__["macroName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_astm::macrodefinition_has_body():
-    assert hasattr(astm::MacroDefinition, "body")
-    descriptor = None
-    for klass in astm::MacroDefinition.__mro__:
+    for klass in astm_MacroDefinition.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_astm::includeunit_is_not_abstract():
-    assert not inspect.isabstract(astm::IncludeUnit)
-
-
-def test_astm::includeunit_constructor_exists():
-    assert callable(astm::IncludeUnit.__init__)
-
-
-def test_astm::includeunit_constructor_args():
-    sig = inspect.signature(astm::IncludeUnit.__init__)
-    params = list(sig.parameters.keys())
+def test_astm_macrodefinition_has_macroName():
+    assert hasattr(astm_MacroDefinition, "macroName")
+    descriptor = None
+    for klass in astm_MacroDefinition.__mro__:
+        if "macroName" in klass.__dict__:
+            descriptor = klass.__dict__["macroName"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -2129,1902 +4015,16 @@ def test_gastmobject_constructor_args():
 
 
 
-def test_astm::gastmsyntaxobject_is_not_abstract():
-    assert not inspect.isabstract(astm::GASTMSyntaxObject)
+def test_astm_gastmsyntaxobject_is_not_abstract():
+    assert not inspect.isabstract(astm_GASTMSyntaxObject)
 
 
-def test_astm::gastmsyntaxobject_constructor_exists():
-    assert callable(astm::GASTMSyntaxObject.__init__)
+def test_astm_gastmsyntaxobject_constructor_exists():
+    assert callable(astm_GASTMSyntaxObject.__init__)
 
 
-def test_astm::gastmsyntaxobject_constructor_args():
-    sig = inspect.signature(astm::GASTMSyntaxObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::uniontype_is_not_abstract():
-    assert not inspect.isabstract(astm::UnionType)
-
-
-def test_astm::uniontype_constructor_exists():
-    assert callable(astm::UnionType.__init__)
-
-
-def test_astm::uniontype_constructor_args():
-    sig = inspect.signature(astm::UnionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::structuretype_is_not_abstract():
-    assert not inspect.isabstract(astm::StructureType)
-
-
-def test_astm::structuretype_constructor_exists():
-    assert callable(astm::StructureType.__init__)
-
-
-def test_astm::structuretype_constructor_args():
-    sig = inspect.signature(astm::StructureType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::rangetype_is_not_abstract():
-    assert not inspect.isabstract(astm::RangeType)
-
-
-def test_astm::rangetype_constructor_exists():
-    assert callable(astm::RangeType.__init__)
-
-
-def test_astm::rangetype_constructor_args():
-    sig = inspect.signature(astm::RangeType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::referencetype_is_not_abstract():
-    assert not inspect.isabstract(astm::ReferenceType)
-
-
-def test_astm::referencetype_constructor_exists():
-    assert callable(astm::ReferenceType.__init__)
-
-
-def test_astm::referencetype_constructor_args():
-    sig = inspect.signature(astm::ReferenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::pointertype_is_not_abstract():
-    assert not inspect.isabstract(astm::PointerType)
-
-
-def test_astm::pointertype_constructor_exists():
-    assert callable(astm::PointerType.__init__)
-
-
-def test_astm::pointertype_constructor_args():
-    sig = inspect.signature(astm::PointerType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(astm::CollectionType)
-
-
-def test_astm::collectiontype_constructor_exists():
-    assert callable(astm::CollectionType.__init__)
-
-
-def test_astm::collectiontype_constructor_args():
-    sig = inspect.signature(astm::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitivetype_is_not_abstract():
-    assert not inspect.isabstract(PrimitiveType)
-
-
-def test_primitivetype_constructor_exists():
-    assert callable(PrimitiveType.__init__)
-
-
-def test_primitivetype_constructor_args():
-    sig = inspect.signature(PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::byte_is_not_abstract():
-    assert not inspect.isabstract(astm::Byte)
-
-
-def test_astm::byte_constructor_exists():
-    assert callable(astm::Byte.__init__)
-
-
-def test_astm::byte_constructor_args():
-    sig = inspect.signature(astm::Byte.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::double_is_not_abstract():
-    assert not inspect.isabstract(astm::Double)
-
-
-def test_astm::double_constructor_exists():
-    assert callable(astm::Double.__init__)
-
-
-def test_astm::double_constructor_args():
-    sig = inspect.signature(astm::Double.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::integer_is_not_abstract():
-    assert not inspect.isabstract(astm::Integer)
-
-
-def test_astm::integer_constructor_exists():
-    assert callable(astm::Integer.__init__)
-
-
-def test_astm::integer_constructor_args():
-    sig = inspect.signature(astm::Integer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::character_is_not_abstract():
-    assert not inspect.isabstract(astm::Character)
-
-
-def test_astm::character_constructor_exists():
-    assert callable(astm::Character.__init__)
-
-
-def test_astm::character_constructor_args():
-    sig = inspect.signature(astm::Character.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::boolean_is_not_abstract():
-    assert not inspect.isabstract(astm::Boolean)
-
-
-def test_astm::boolean_constructor_exists():
-    assert callable(astm::Boolean.__init__)
-
-
-def test_astm::boolean_constructor_args():
-    sig = inspect.signature(astm::Boolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::string_is_not_abstract():
-    assert not inspect.isabstract(astm::String)
-
-
-def test_astm::string_constructor_exists():
-    assert callable(astm::String.__init__)
-
-
-def test_astm::string_constructor_args():
-    sig = inspect.signature(astm::String.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::float_is_not_abstract():
-    assert not inspect.isabstract(astm::Float)
-
-
-def test_astm::float_constructor_exists():
-    assert callable(astm::Float.__init__)
-
-
-def test_astm::float_constructor_args():
-    sig = inspect.signature(astm::Float.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::longdouble_is_not_abstract():
-    assert not inspect.isabstract(astm::LongDouble)
-
-
-def test_astm::longdouble_constructor_exists():
-    assert callable(astm::LongDouble.__init__)
-
-
-def test_astm::longdouble_constructor_args():
-    sig = inspect.signature(astm::LongDouble.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::longinteger_is_not_abstract():
-    assert not inspect.isabstract(astm::LongInteger)
-
-
-def test_astm::longinteger_constructor_exists():
-    assert callable(astm::LongInteger.__init__)
-
-
-def test_astm::longinteger_constructor_args():
-    sig = inspect.signature(astm::LongInteger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::shortinteger_is_not_abstract():
-    assert not inspect.isabstract(astm::ShortInteger)
-
-
-def test_astm::shortinteger_constructor_exists():
-    assert callable(astm::ShortInteger.__init__)
-
-
-def test_astm::shortinteger_constructor_args():
-    sig = inspect.signature(astm::ShortInteger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::widecharacter_is_not_abstract():
-    assert not inspect.isabstract(astm::WideCharacter)
-
-
-def test_astm::widecharacter_constructor_exists():
-    assert callable(astm::WideCharacter.__init__)
-
-
-def test_astm::widecharacter_constructor_args():
-    sig = inspect.signature(astm::WideCharacter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::void_is_not_abstract():
-    assert not inspect.isabstract(astm::Void)
-
-
-def test_astm::void_constructor_exists():
-    assert callable(astm::Void.__init__)
-
-
-def test_astm::void_constructor_args():
-    sig = inspect.signature(astm::Void.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::exceptiontype_is_not_abstract():
-    assert not inspect.isabstract(astm::ExceptionType)
-
-
-def test_astm::exceptiontype_constructor_exists():
-    assert callable(astm::ExceptionType.__init__)
-
-
-def test_astm::exceptiontype_constructor_args():
-    sig = inspect.signature(astm::ExceptionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::nonvirtual_is_not_abstract():
-    assert not inspect.isabstract(astm::NonVirtual)
-
-
-def test_astm::nonvirtual_constructor_exists():
-    assert callable(astm::NonVirtual.__init__)
-
-
-def test_astm::nonvirtual_constructor_args():
-    sig = inspect.signature(astm::NonVirtual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::purevirtual_is_not_abstract():
-    assert not inspect.isabstract(astm::PureVirtual)
-
-
-def test_astm::purevirtual_constructor_exists():
-    assert callable(astm::PureVirtual.__init__)
-
-
-def test_astm::purevirtual_constructor_args():
-    sig = inspect.signature(astm::PureVirtual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::virtual_is_not_abstract():
-    assert not inspect.isabstract(astm::Virtual)
-
-
-def test_astm::virtual_constructor_exists():
-    assert callable(astm::Virtual.__init__)
-
-
-def test_astm::virtual_constructor_args():
-    sig = inspect.signature(astm::Virtual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_storagespecification_is_not_abstract():
-    assert not inspect.isabstract(StorageSpecification)
-
-
-def test_storagespecification_constructor_exists():
-    assert callable(StorageSpecification.__init__)
-
-
-def test_storagespecification_constructor_args():
-    sig = inspect.signature(StorageSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::nodef_is_not_abstract():
-    assert not inspect.isabstract(astm::NoDef)
-
-
-def test_astm::nodef_constructor_exists():
-    assert callable(astm::NoDef.__init__)
-
-
-def test_astm::nodef_constructor_args():
-    sig = inspect.signature(astm::NoDef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::functionpersistent_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionPersistent)
-
-
-def test_astm::functionpersistent_constructor_exists():
-    assert callable(astm::FunctionPersistent.__init__)
-
-
-def test_astm::functionpersistent_constructor_args():
-    sig = inspect.signature(astm::FunctionPersistent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::filelocal_is_not_abstract():
-    assert not inspect.isabstract(astm::FileLocal)
-
-
-def test_astm::filelocal_constructor_exists():
-    assert callable(astm::FileLocal.__init__)
-
-
-def test_astm::filelocal_constructor_args():
-    sig = inspect.signature(astm::FileLocal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::perclassmember_is_not_abstract():
-    assert not inspect.isabstract(astm::PerClassMember)
-
-
-def test_astm::perclassmember_constructor_exists():
-    assert callable(astm::PerClassMember.__init__)
-
-
-def test_astm::perclassmember_constructor_args():
-    sig = inspect.signature(astm::PerClassMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::external_is_not_abstract():
-    assert not inspect.isabstract(astm::External)
-
-
-def test_astm::external_constructor_exists():
-    assert callable(astm::External.__init__)
-
-
-def test_astm::external_constructor_args():
-    sig = inspect.signature(astm::External.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::integerlliteral_is_not_abstract():
-    assert not inspect.isabstract(astm::IntegerlLiteral)
-
-
-def test_astm::integerlliteral_constructor_exists():
-    assert callable(astm::IntegerlLiteral.__init__)
-
-
-def test_astm::integerlliteral_constructor_args():
-    sig = inspect.signature(astm::IntegerlLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualifiedidentifierreference_is_not_abstract():
-    assert not inspect.isabstract(QualifiedIdentifierReference)
-
-
-def test_qualifiedidentifierreference_constructor_exists():
-    assert callable(QualifiedIdentifierReference.__init__)
-
-
-def test_qualifiedidentifierreference_constructor_args():
-    sig = inspect.signature(QualifiedIdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::qualifiedoverdata_is_not_abstract():
-    assert not inspect.isabstract(astm::QualifiedOverData)
-
-
-def test_astm::qualifiedoverdata_constructor_exists():
-    assert callable(astm::QualifiedOverData.__init__)
-
-
-def test_astm::qualifiedoverdata_constructor_args():
-    sig = inspect.signature(astm::QualifiedOverData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::qualifiedoverpointer_is_not_abstract():
-    assert not inspect.isabstract(astm::QualifiedOverPointer)
-
-
-def test_astm::qualifiedoverpointer_constructor_exists():
-    assert callable(astm::QualifiedOverPointer.__init__)
-
-
-def test_astm::qualifiedoverpointer_constructor_args():
-    sig = inspect.signature(astm::QualifiedOverPointer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::aggregateexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::AggregateExpression)
-
-
-def test_astm::aggregateexpression_constructor_exists():
-    assert callable(astm::AggregateExpression.__init__)
-
-
-def test_astm::aggregateexpression_constructor_args():
-    sig = inspect.signature(astm::AggregateExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_forstatement_is_not_abstract():
-    assert not inspect.isabstract(ForStatement)
-
-
-def test_forstatement_constructor_exists():
-    assert callable(ForStatement.__init__)
-
-
-def test_forstatement_constructor_args():
-    sig = inspect.signature(ForStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::forcheckafterstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ForCheckAfterStatement)
-
-
-def test_astm::forcheckafterstatement_constructor_exists():
-    assert callable(astm::ForCheckAfterStatement.__init__)
-
-
-def test_astm::forcheckafterstatement_constructor_args():
-    sig = inspect.signature(astm::ForCheckAfterStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::forcheckbeforestatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ForCheckBeforeStatement)
-
-
-def test_astm::forcheckbeforestatement_constructor_exists():
-    assert callable(astm::ForCheckBeforeStatement.__init__)
-
-
-def test_astm::forcheckbeforestatement_constructor_args():
-    sig = inspect.signature(astm::ForCheckBeforeStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::terminatestatement_is_not_abstract():
-    assert not inspect.isabstract(astm::TerminateStatement)
-
-
-def test_astm::terminatestatement_constructor_exists():
-    assert callable(astm::TerminateStatement.__init__)
-
-
-def test_astm::terminatestatement_constructor_args():
-    sig = inspect.signature(astm::TerminateStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_accesskind_is_not_abstract():
-    assert not inspect.isabstract(AccessKind)
-
-
-def test_accesskind_constructor_exists():
-    assert callable(AccessKind.__init__)
-
-
-def test_accesskind_constructor_args():
-    sig = inspect.signature(AccessKind.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::private_is_not_abstract():
-    assert not inspect.isabstract(astm::Private)
-
-
-def test_astm::private_constructor_exists():
-    assert callable(astm::Private.__init__)
-
-
-def test_astm::private_constructor_args():
-    sig = inspect.signature(astm::Private.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::protected_is_not_abstract():
-    assert not inspect.isabstract(astm::Protected)
-
-
-def test_astm::protected_constructor_exists():
-    assert callable(astm::Protected.__init__)
-
-
-def test_astm::protected_constructor_args():
-    sig = inspect.signature(astm::Protected.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::public_is_not_abstract():
-    assert not inspect.isabstract(astm::Public)
-
-
-def test_astm::public_constructor_exists():
-    assert callable(astm::Public.__init__)
-
-
-def test_astm::public_constructor_args():
-    sig = inspect.signature(astm::Public.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::programscope_is_not_abstract():
-    assert not inspect.isabstract(astm::ProgramScope)
-
-
-def test_astm::programscope_constructor_exists():
-    assert callable(astm::ProgramScope.__init__)
-
-
-def test_astm::programscope_constructor_args():
-    sig = inspect.signature(astm::ProgramScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::definitionobject_is_not_abstract():
-    assert not inspect.isabstract(astm::DefinitionObject)
-
-
-def test_astm::definitionobject_constructor_exists():
-    assert callable(astm::DefinitionObject.__init__)
-
-
-def test_astm::definitionobject_constructor_args():
-    sig = inspect.signature(astm::DefinitionObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::preprocessorelement_is_not_abstract():
-    assert not inspect.isabstract(astm::PreprocessorElement)
-
-
-def test_astm::preprocessorelement_constructor_exists():
-    assert callable(astm::PreprocessorElement.__init__)
-
-
-def test_astm::preprocessorelement_constructor_args():
-    sig = inspect.signature(astm::PreprocessorElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::globalscope_is_not_abstract():
-    assert not inspect.isabstract(astm::GlobalScope)
-
-
-def test_astm::globalscope_constructor_exists():
-    assert callable(astm::GlobalScope.__init__)
-
-
-def test_astm::globalscope_constructor_args():
-    sig = inspect.signature(astm::GlobalScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::annotationexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::AnnotationExpression)
-
-
-def test_astm::annotationexpression_constructor_exists():
-    assert callable(astm::AnnotationExpression.__init__)
-
-
-def test_astm::annotationexpression_constructor_args():
-    sig = inspect.signature(astm::AnnotationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::labelaccess_is_not_abstract():
-    assert not inspect.isabstract(astm::LabelAccess)
-
-
-def test_astm::labelaccess_constructor_exists():
-    assert callable(astm::LabelAccess.__init__)
-
-
-def test_astm::labelaccess_constructor_args():
-    sig = inspect.signature(astm::LabelAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::newexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::NewExpression)
-
-
-def test_astm::newexpression_constructor_exists():
-    assert callable(astm::NewExpression.__init__)
-
-
-def test_astm::newexpression_constructor_args():
-    sig = inspect.signature(astm::NewExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::functionmemberattribute_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionMemberAttribute)
-
-
-def test_astm::functionmemberattribute_constructor_exists():
-    assert callable(astm::FunctionMemberAttribute.__init__)
-
-
-def test_astm::functionmemberattribute_constructor_args():
-    sig = inspect.signature(astm::FunctionMemberAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::variabledefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::VariableDefinition)
-
-
-def test_astm::variabledefinition_constructor_exists():
-    assert callable(astm::VariableDefinition.__init__)
-
-
-def test_astm::variabledefinition_constructor_args():
-    sig = inspect.signature(astm::VariableDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::formalparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(astm::FormalParameterDeclaration)
-
-
-def test_astm::formalparameterdeclaration_constructor_exists():
-    assert callable(astm::FormalParameterDeclaration.__init__)
-
-
-def test_astm::formalparameterdeclaration_constructor_args():
-    sig = inspect.signature(astm::FormalParameterDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::virtualspecification_is_not_abstract():
-    assert not inspect.isabstract(astm::VirtualSpecification)
-
-
-def test_astm::virtualspecification_constructor_exists():
-    assert callable(astm::VirtualSpecification.__init__)
-
-
-def test_astm::virtualspecification_constructor_args():
-    sig = inspect.signature(astm::VirtualSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::formalparameterdefinition_is_not_abstract():
-    assert not inspect.isabstract(astm::FormalParameterDefinition)
-
-
-def test_astm::formalparameterdefinition_constructor_exists():
-    assert callable(astm::FormalParameterDefinition.__init__)
-
-
-def test_astm::formalparameterdefinition_constructor_args():
-    sig = inspect.signature(astm::FormalParameterDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::blockscope_is_not_abstract():
-    assert not inspect.isabstract(astm::BlockScope)
-
-
-def test_astm::blockscope_constructor_exists():
-    assert callable(astm::BlockScope.__init__)
-
-
-def test_astm::blockscope_constructor_args():
-    sig = inspect.signature(astm::BlockScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::aggregatescope_is_not_abstract():
-    assert not inspect.isabstract(astm::AggregateScope)
-
-
-def test_astm::aggregatescope_constructor_exists():
-    assert callable(astm::AggregateScope.__init__)
-
-
-def test_astm::aggregatescope_constructor_args():
-    sig = inspect.signature(astm::AggregateScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::labeltype_is_not_abstract():
-    assert not inspect.isabstract(astm::LabelType)
-
-
-def test_astm::labeltype_constructor_exists():
-    assert callable(astm::LabelType.__init__)
-
-
-def test_astm::labeltype_constructor_args():
-    sig = inspect.signature(astm::LabelType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::namespacetype_is_not_abstract():
-    assert not inspect.isabstract(astm::NameSpaceType)
-
-
-def test_astm::namespacetype_constructor_exists():
-    assert callable(astm::NameSpaceType.__init__)
-
-
-def test_astm::namespacetype_constructor_args():
-    sig = inspect.signature(astm::NameSpaceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::functionscope_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionScope)
-
-
-def test_astm::functionscope_constructor_exists():
-    assert callable(astm::FunctionScope.__init__)
-
-
-def test_astm::functionscope_constructor_args():
-    sig = inspect.signature(astm::FunctionScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::statement_is_not_abstract():
-    assert not inspect.isabstract(astm::Statement)
-
-
-def test_astm::statement_constructor_exists():
-    assert callable(astm::Statement.__init__)
-
-
-def test_astm::statement_constructor_args():
-    sig = inspect.signature(astm::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::typereference_is_not_abstract():
-    assert not inspect.isabstract(astm::TypeReference)
-
-
-def test_astm::typereference_constructor_exists():
-    assert callable(astm::TypeReference.__init__)
-
-
-def test_astm::typereference_constructor_args():
-    sig = inspect.signature(astm::TypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::rangeexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::RangeExpression)
-
-
-def test_astm::rangeexpression_constructor_exists():
-    assert callable(astm::RangeExpression.__init__)
-
-
-def test_astm::rangeexpression_constructor_args():
-    sig = inspect.signature(astm::RangeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::ConditionalExpression)
-
-
-def test_astm::conditionalexpression_constructor_exists():
-    assert callable(astm::ConditionalExpression.__init__)
-
-
-def test_astm::conditionalexpression_constructor_args():
-    sig = inspect.signature(astm::ConditionalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(BinaryOperator)
-
-
-def test_binaryoperator_constructor_exists():
-    assert callable(BinaryOperator.__init__)
-
-
-def test_binaryoperator_constructor_args():
-    sig = inspect.signature(BinaryOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::or_is_not_abstract():
-    assert not inspect.isabstract(astm::Or)
-
-
-def test_astm::or_constructor_exists():
-    assert callable(astm::Or.__init__)
-
-
-def test_astm::or_constructor_args():
-    sig = inspect.signature(astm::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::specificin_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificIn)
-
-
-def test_astm::specificin_constructor_exists():
-    assert callable(astm::SpecificIn.__init__)
-
-
-def test_astm::specificin_constructor_args():
-    sig = inspect.signature(astm::SpecificIn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::modulus_is_not_abstract():
-    assert not inspect.isabstract(astm::Modulus)
-
-
-def test_astm::modulus_constructor_exists():
-    assert callable(astm::Modulus.__init__)
-
-
-def test_astm::modulus_constructor_args():
-    sig = inspect.signature(astm::Modulus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::bitxor_is_not_abstract():
-    assert not inspect.isabstract(astm::BitXor)
-
-
-def test_astm::bitxor_constructor_exists():
-    assert callable(astm::BitXor.__init__)
-
-
-def test_astm::bitxor_constructor_args():
-    sig = inspect.signature(astm::BitXor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::and_is_not_abstract():
-    assert not inspect.isabstract(astm::And)
-
-
-def test_astm::and_constructor_exists():
-    assert callable(astm::And.__init__)
-
-
-def test_astm::and_constructor_args():
-    sig = inspect.signature(astm::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::exponent_is_not_abstract():
-    assert not inspect.isabstract(astm::Exponent)
-
-
-def test_astm::exponent_constructor_exists():
-    assert callable(astm::Exponent.__init__)
-
-
-def test_astm::exponent_constructor_args():
-    sig = inspect.signature(astm::Exponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::notless_is_not_abstract():
-    assert not inspect.isabstract(astm::NotLess)
-
-
-def test_astm::notless_constructor_exists():
-    assert callable(astm::NotLess.__init__)
-
-
-def test_astm::notless_constructor_args():
-    sig = inspect.signature(astm::NotLess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::specificconcatstring_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificConcatString)
-
-
-def test_astm::specificconcatstring_constructor_exists():
-    assert callable(astm::SpecificConcatString.__init__)
-
-
-def test_astm::specificconcatstring_constructor_args():
-    sig = inspect.signature(astm::SpecificConcatString.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::specificgreaterequal_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificGreaterEqual)
-
-
-def test_astm::specificgreaterequal_constructor_exists():
-    assert callable(astm::SpecificGreaterEqual.__init__)
-
-
-def test_astm::specificgreaterequal_constructor_args():
-    sig = inspect.signature(astm::SpecificGreaterEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::greater_is_not_abstract():
-    assert not inspect.isabstract(astm::Greater)
-
-
-def test_astm::greater_constructor_exists():
-    assert callable(astm::Greater.__init__)
-
-
-def test_astm::greater_constructor_args():
-    sig = inspect.signature(astm::Greater.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::multiply_is_not_abstract():
-    assert not inspect.isabstract(astm::Multiply)
-
-
-def test_astm::multiply_constructor_exists():
-    assert callable(astm::Multiply.__init__)
-
-
-def test_astm::multiply_constructor_args():
-    sig = inspect.signature(astm::Multiply.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::bitand_is_not_abstract():
-    assert not inspect.isabstract(astm::BitAnd)
-
-
-def test_astm::bitand_constructor_exists():
-    assert callable(astm::BitAnd.__init__)
-
-
-def test_astm::bitand_constructor_args():
-    sig = inspect.signature(astm::BitAnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::bitor_is_not_abstract():
-    assert not inspect.isabstract(astm::BitOr)
-
-
-def test_astm::bitor_constructor_exists():
-    assert callable(astm::BitOr.__init__)
-
-
-def test_astm::bitor_constructor_args():
-    sig = inspect.signature(astm::BitOr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::bitrightshift_is_not_abstract():
-    assert not inspect.isabstract(astm::BitRightShift)
-
-
-def test_astm::bitrightshift_constructor_exists():
-    assert callable(astm::BitRightShift.__init__)
-
-
-def test_astm::bitrightshift_constructor_args():
-    sig = inspect.signature(astm::BitRightShift.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::equal_is_not_abstract():
-    assert not inspect.isabstract(astm::Equal)
-
-
-def test_astm::equal_constructor_exists():
-    assert callable(astm::Equal.__init__)
-
-
-def test_astm::equal_constructor_args():
-    sig = inspect.signature(astm::Equal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::specificlessequal_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificLessEqual)
-
-
-def test_astm::specificlessequal_constructor_exists():
-    assert callable(astm::SpecificLessEqual.__init__)
-
-
-def test_astm::specificlessequal_constructor_args():
-    sig = inspect.signature(astm::SpecificLessEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::specificlike_is_not_abstract():
-    assert not inspect.isabstract(astm::SpecificLike)
-
-
-def test_astm::specificlike_constructor_exists():
-    assert callable(astm::SpecificLike.__init__)
-
-
-def test_astm::specificlike_constructor_args():
-    sig = inspect.signature(astm::SpecificLike.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::notequal_is_not_abstract():
-    assert not inspect.isabstract(astm::NotEqual)
-
-
-def test_astm::notequal_constructor_exists():
-    assert callable(astm::NotEqual.__init__)
-
-
-def test_astm::notequal_constructor_args():
-    sig = inspect.signature(astm::NotEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::add_is_not_abstract():
-    assert not inspect.isabstract(astm::Add)
-
-
-def test_astm::add_constructor_exists():
-    assert callable(astm::Add.__init__)
-
-
-def test_astm::add_constructor_args():
-    sig = inspect.signature(astm::Add.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::divide_is_not_abstract():
-    assert not inspect.isabstract(astm::Divide)
-
-
-def test_astm::divide_constructor_exists():
-    assert callable(astm::Divide.__init__)
-
-
-def test_astm::divide_constructor_args():
-    sig = inspect.signature(astm::Divide.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::bitleftshift_is_not_abstract():
-    assert not inspect.isabstract(astm::BitLeftShift)
-
-
-def test_astm::bitleftshift_constructor_exists():
-    assert callable(astm::BitLeftShift.__init__)
-
-
-def test_astm::bitleftshift_constructor_args():
-    sig = inspect.signature(astm::BitLeftShift.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::subtract_is_not_abstract():
-    assert not inspect.isabstract(astm::Subtract)
-
-
-def test_astm::subtract_constructor_exists():
-    assert callable(astm::Subtract.__init__)
-
-
-def test_astm::subtract_constructor_args():
-    sig = inspect.signature(astm::Subtract.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::assign_is_not_abstract():
-    assert not inspect.isabstract(astm::Assign)
-
-
-def test_astm::assign_constructor_exists():
-    assert callable(astm::Assign.__init__)
-
-
-def test_astm::assign_constructor_args():
-    sig = inspect.signature(astm::Assign.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::notgreater_is_not_abstract():
-    assert not inspect.isabstract(astm::NotGreater)
-
-
-def test_astm::notgreater_constructor_exists():
-    assert callable(astm::NotGreater.__init__)
-
-
-def test_astm::notgreater_constructor_args():
-    sig = inspect.signature(astm::NotGreater.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::less_is_not_abstract():
-    assert not inspect.isabstract(astm::Less)
-
-
-def test_astm::less_constructor_exists():
-    assert callable(astm::Less.__init__)
-
-
-def test_astm::less_constructor_args():
-    sig = inspect.signature(astm::Less.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::operatorassign_is_not_abstract():
-    assert not inspect.isabstract(astm::OperatorAssign)
-
-
-def test_astm::operatorassign_constructor_exists():
-    assert callable(astm::OperatorAssign.__init__)
-
-
-def test_astm::operatorassign_constructor_args():
-    sig = inspect.signature(astm::OperatorAssign.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::BinaryExpression)
-
-
-def test_astm::binaryexpression_constructor_exists():
-    assert callable(astm::BinaryExpression.__init__)
-
-
-def test_astm::binaryexpression_constructor_args():
-    sig = inspect.signature(astm::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actualparameter_is_not_abstract():
-    assert not inspect.isabstract(ActualParameter)
-
-
-def test_actualparameter_constructor_exists():
-    assert callable(ActualParameter.__init__)
-
-
-def test_actualparameter_constructor_args():
-    sig = inspect.signature(ActualParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::actualparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::ActualParameterExpression)
-
-
-def test_astm::actualparameterexpression_constructor_exists():
-    assert callable(astm::ActualParameterExpression.__init__)
-
-
-def test_astm::actualparameterexpression_constructor_args():
-    sig = inspect.signature(astm::ActualParameterExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::missingactualparameter_is_not_abstract():
-    assert not inspect.isabstract(astm::MissingActualParameter)
-
-
-def test_astm::missingactualparameter_constructor_exists():
-    assert callable(astm::MissingActualParameter.__init__)
-
-
-def test_astm::missingactualparameter_constructor_args():
-    sig = inspect.signature(astm::MissingActualParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::functioncallexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::FunctionCallExpression)
-
-
-def test_astm::functioncallexpression_constructor_exists():
-    assert callable(astm::FunctionCallExpression.__init__)
-
-
-def test_astm::functioncallexpression_constructor_args():
-    sig = inspect.signature(astm::FunctionCallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_identifierreference_is_not_abstract():
-    assert not inspect.isabstract(IdentifierReference)
-
-
-def test_identifierreference_constructor_exists():
-    assert callable(IdentifierReference.__init__)
-
-
-def test_identifierreference_constructor_args():
-    sig = inspect.signature(IdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namereference_is_not_abstract():
-    assert not inspect.isabstract(NameReference)
-
-
-def test_namereference_constructor_exists():
-    assert callable(NameReference.__init__)
-
-
-def test_namereference_constructor_args():
-    sig = inspect.signature(NameReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::identifierreference_is_not_abstract():
-    assert not inspect.isabstract(astm::IdentifierReference)
-
-
-def test_astm::identifierreference_constructor_exists():
-    assert callable(astm::IdentifierReference.__init__)
-
-
-def test_astm::identifierreference_constructor_args():
-    sig = inspect.signature(astm::IdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::typequalifiedidentifierreference_is_not_abstract():
-    assert not inspect.isabstract(astm::TypeQualifiedIdentifierReference)
-
-
-def test_astm::typequalifiedidentifierreference_constructor_exists():
-    assert callable(astm::TypeQualifiedIdentifierReference.__init__)
-
-
-def test_astm::typequalifiedidentifierreference_constructor_args():
-    sig = inspect.signature(astm::TypeQualifiedIdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::qualifiedidentifierreference_is_not_abstract():
-    assert not inspect.isabstract(astm::QualifiedIdentifierReference)
-
-
-def test_astm::qualifiedidentifierreference_constructor_exists():
-    assert callable(astm::QualifiedIdentifierReference.__init__)
-
-
-def test_astm::qualifiedidentifierreference_constructor_args():
-    sig = inspect.signature(astm::QualifiedIdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::arrayaccess_is_not_abstract():
-    assert not inspect.isabstract(astm::ArrayAccess)
-
-
-def test_astm::arrayaccess_constructor_exists():
-    assert callable(astm::ArrayAccess.__init__)
-
-
-def test_astm::arrayaccess_constructor_args():
-    sig = inspect.signature(astm::ArrayAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::namereference_is_not_abstract():
-    assert not inspect.isabstract(astm::NameReference)
-
-
-def test_astm::namereference_constructor_exists():
-    assert callable(astm::NameReference.__init__)
-
-
-def test_astm::namereference_constructor_args():
-    sig = inspect.signature(astm::NameReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::expression_is_not_abstract():
-    assert not inspect.isabstract(astm::Expression)
-
-
-def test_astm::expression_constructor_exists():
-    assert callable(astm::Expression.__init__)
-
-
-def test_astm::expression_constructor_args():
-    sig = inspect.signature(astm::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ThrowStatement)
-
-
-def test_astm::throwstatement_constructor_exists():
-    assert callable(astm::ThrowStatement.__init__)
-
-
-def test_astm::throwstatement_constructor_args():
-    sig = inspect.signature(astm::ThrowStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::UnaryExpression)
-
-
-def test_astm::unaryexpression_constructor_exists():
-    assert callable(astm::UnaryExpression.__init__)
-
-
-def test_astm::unaryexpression_constructor_args():
-    sig = inspect.signature(astm::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::castexpression_is_not_abstract():
-    assert not inspect.isabstract(astm::CastExpression)
-
-
-def test_astm::castexpression_constructor_exists():
-    assert callable(astm::CastExpression.__init__)
-
-
-def test_astm::castexpression_constructor_args():
-    sig = inspect.signature(astm::CastExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::literal_is_not_abstract():
-    assert not inspect.isabstract(astm::Literal)
-
-
-def test_astm::literal_constructor_exists():
-    assert callable(astm::Literal.__init__)
-
-
-def test_astm::literal_constructor_args():
-    sig = inspect.signature(astm::Literal.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_astm::literal_has_value():
-    assert hasattr(astm::Literal, "value")
-    descriptor = None
-    for klass in astm::Literal.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_catchblock_is_not_abstract():
-    assert not inspect.isabstract(CatchBlock)
-
-
-def test_catchblock_constructor_exists():
-    assert callable(CatchBlock.__init__)
-
-
-def test_catchblock_constructor_args():
-    sig = inspect.signature(CatchBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::trystatement_is_not_abstract():
-    assert not inspect.isabstract(astm::TryStatement)
-
-
-def test_astm::trystatement_constructor_exists():
-    assert callable(astm::TryStatement.__init__)
-
-
-def test_astm::trystatement_constructor_args():
-    sig = inspect.signature(astm::TryStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_loopstatement_is_not_abstract():
-    assert not inspect.isabstract(LoopStatement)
-
-
-def test_loopstatement_constructor_exists():
-    assert callable(LoopStatement.__init__)
-
-
-def test_loopstatement_constructor_args():
-    sig = inspect.signature(LoopStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(astm::WhileStatement)
-
-
-def test_astm::whilestatement_constructor_exists():
-    assert callable(astm::WhileStatement.__init__)
-
-
-def test_astm::whilestatement_constructor_args():
-    sig = inspect.signature(astm::WhileStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::dowhilestatement_is_not_abstract():
-    assert not inspect.isabstract(astm::DoWhileStatement)
-
-
-def test_astm::dowhilestatement_constructor_exists():
-    assert callable(astm::DoWhileStatement.__init__)
-
-
-def test_astm::dowhilestatement_constructor_args():
-    sig = inspect.signature(astm::DoWhileStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::forstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ForStatement)
-
-
-def test_astm::forstatement_constructor_exists():
-    assert callable(astm::ForStatement.__init__)
-
-
-def test_astm::forstatement_constructor_args():
-    sig = inspect.signature(astm::ForStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::LoopStatement)
-
-
-def test_astm::loopstatement_constructor_exists():
-    assert callable(astm::LoopStatement.__init__)
-
-
-def test_astm::loopstatement_constructor_args():
-    sig = inspect.signature(astm::LoopStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ReturnStatement)
-
-
-def test_astm::returnstatement_constructor_exists():
-    assert callable(astm::ReturnStatement.__init__)
-
-
-def test_astm::returnstatement_constructor_args():
-    sig = inspect.signature(astm::ReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::switchcase_is_not_abstract():
-    assert not inspect.isabstract(astm::SwitchCase)
-
-
-def test_astm::switchcase_constructor_exists():
-    assert callable(astm::SwitchCase.__init__)
-
-
-def test_astm::switchcase_constructor_args():
-    sig = inspect.signature(astm::SwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_switchcase_is_not_abstract():
-    assert not inspect.isabstract(SwitchCase)
-
-
-def test_switchcase_constructor_exists():
-    assert callable(SwitchCase.__init__)
-
-
-def test_switchcase_constructor_args():
-    sig = inspect.signature(SwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::caseblock_is_not_abstract():
-    assert not inspect.isabstract(astm::CaseBlock)
-
-
-def test_astm::caseblock_constructor_exists():
-    assert callable(astm::CaseBlock.__init__)
-
-
-def test_astm::caseblock_constructor_args():
-    sig = inspect.signature(astm::CaseBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::defaultblock_is_not_abstract():
-    assert not inspect.isabstract(astm::DefaultBlock)
-
-
-def test_astm::defaultblock_constructor_exists():
-    assert callable(astm::DefaultBlock.__init__)
-
-
-def test_astm::defaultblock_constructor_args():
-    sig = inspect.signature(astm::DefaultBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::variablecatchblock_is_not_abstract():
-    assert not inspect.isabstract(astm::VariableCatchBlock)
-
-
-def test_astm::variablecatchblock_constructor_exists():
-    assert callable(astm::VariableCatchBlock.__init__)
-
-
-def test_astm::variablecatchblock_constructor_args():
-    sig = inspect.signature(astm::VariableCatchBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::typescatchblock_is_not_abstract():
-    assert not inspect.isabstract(astm::TypesCatchBlock)
-
-
-def test_astm::typescatchblock_constructor_exists():
-    assert callable(astm::TypesCatchBlock.__init__)
-
-
-def test_astm::typescatchblock_constructor_args():
-    sig = inspect.signature(astm::TypesCatchBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::catchblock_is_not_abstract():
-    assert not inspect.isabstract(astm::CatchBlock)
-
-
-def test_astm::catchblock_constructor_exists():
-    assert callable(astm::CatchBlock.__init__)
-
-
-def test_astm::catchblock_constructor_args():
-    sig = inspect.signature(astm::CatchBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::IfStatement)
-
-
-def test_astm::ifstatement_constructor_exists():
-    assert callable(astm::IfStatement.__init__)
-
-
-def test_astm::ifstatement_constructor_args():
-    sig = inspect.signature(astm::IfStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(astm::EmptyStatement)
-
-
-def test_astm::emptystatement_constructor_exists():
-    assert callable(astm::EmptyStatement.__init__)
-
-
-def test_astm::emptystatement_constructor_args():
-    sig = inspect.signature(astm::EmptyStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_blockscope_is_not_abstract():
-    assert not inspect.isabstract(BlockScope)
-
-
-def test_blockscope_constructor_exists():
-    assert callable(BlockScope.__init__)
-
-
-def test_blockscope_constructor_args():
-    sig = inspect.signature(BlockScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::BlockStatement)
-
-
-def test_astm::blockstatement_constructor_exists():
-    assert callable(astm::BlockStatement.__init__)
-
-
-def test_astm::blockstatement_constructor_args():
-    sig = inspect.signature(astm::BlockStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::SwitchStatement)
-
-
-def test_astm::switchstatement_constructor_exists():
-    assert callable(astm::SwitchStatement.__init__)
-
-
-def test_astm::switchstatement_constructor_args():
-    sig = inspect.signature(astm::SwitchStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::BreakStatement)
-
-
-def test_astm::breakstatement_constructor_exists():
-    assert callable(astm::BreakStatement.__init__)
-
-
-def test_astm::breakstatement_constructor_args():
-    sig = inspect.signature(astm::BreakStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::jumpstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::JumpStatement)
-
-
-def test_astm::jumpstatement_constructor_exists():
-    assert callable(astm::JumpStatement.__init__)
-
-
-def test_astm::jumpstatement_constructor_args():
-    sig = inspect.signature(astm::JumpStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::ExpressionStatement)
-
-
-def test_astm::expressionstatement_constructor_exists():
-    assert callable(astm::ExpressionStatement.__init__)
-
-
-def test_astm::expressionstatement_constructor_args():
-    sig = inspect.signature(astm::ExpressionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::declarationordefinitionstatement_is_not_abstract():
-    assert not inspect.isabstract(astm::DeclarationOrDefinitionStatement)
-
-
-def test_astm::declarationordefinitionstatement_constructor_exists():
-    assert callable(astm::DeclarationOrDefinitionStatement.__init__)
-
-
-def test_astm::declarationordefinitionstatement_constructor_args():
-    sig = inspect.signature(astm::DeclarationOrDefinitionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::deletestatement_is_not_abstract():
-    assert not inspect.isabstract(astm::DeleteStatement)
-
-
-def test_astm::deletestatement_constructor_exists():
-    assert callable(astm::DeleteStatement.__init__)
-
-
-def test_astm::deletestatement_constructor_args():
-    sig = inspect.signature(astm::DeleteStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::namedtypereference_is_not_abstract():
-    assert not inspect.isabstract(astm::NamedTypeReference)
-
-
-def test_astm::namedtypereference_constructor_exists():
-    assert callable(astm::NamedTypeReference.__init__)
-
-
-def test_astm::namedtypereference_constructor_args():
-    sig = inspect.signature(astm::NamedTypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_astm::unnamedtypereference_is_not_abstract():
-    assert not inspect.isabstract(astm::UnnamedTypeReference)
-
-
-def test_astm::unnamedtypereference_constructor_exists():
-    assert callable(astm::UnnamedTypeReference.__init__)
-
-
-def test_astm::unnamedtypereference_constructor_args():
-    sig = inspect.signature(astm::UnnamedTypeReference.__init__)
+def test_astm_gastmsyntaxobject_constructor_args():
+    sig = inspect.signature(astm_GASTMSyntaxObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4042,65 +4042,293 @@ safe_text = st.text(
 ActualParameterExpression_strategy = st.builds(
     ActualParameterExpression,
 )
-astm::ByReferenceActualParameterExpression_strategy = st.builds(
-    astm::ByReferenceActualParameterExpression,
+astm_ByReferenceActualParameterExpression_strategy = st.builds(
+    astm_ByReferenceActualParameterExpression,
 )
-astm::ByValueActualParameterExpression_strategy = st.builds(
-    astm::ByValueActualParameterExpression,
+astm_ByValueActualParameterExpression_strategy = st.builds(
+    astm_ByValueActualParameterExpression,
 )
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-astm::Negate_strategy = st.builds(
-    astm::Negate,
+astm_PostDecrement_strategy = st.builds(
+    astm_PostDecrement,
 )
-astm::Deref_strategy = st.builds(
-    astm::Deref,
+astm_Deref_strategy = st.builds(
+    astm_Deref,
 )
-astm::PostIncrement_strategy = st.builds(
-    astm::PostIncrement,
+astm_PostIncrement_strategy = st.builds(
+    astm_PostIncrement,
 )
-astm::AddressOf_strategy = st.builds(
-    astm::AddressOf,
+astm_Not_strategy = st.builds(
+    astm_Not,
 )
-astm::Increment_strategy = st.builds(
-    astm::Increment,
+astm_Decrement_strategy = st.builds(
+    astm_Decrement,
 )
-astm::BitNot_strategy = st.builds(
-    astm::BitNot,
+astm_Negate_strategy = st.builds(
+    astm_Negate,
 )
-astm::PostDecrement_strategy = st.builds(
-    astm::PostDecrement,
+astm_BitNot_strategy = st.builds(
+    astm_BitNot,
 )
-astm::Decrement_strategy = st.builds(
-    astm::Decrement,
+astm_Increment_strategy = st.builds(
+    astm_Increment,
 )
-astm::Not_strategy = st.builds(
-    astm::Not,
+astm_AddressOf_strategy = st.builds(
+    astm_AddressOf,
 )
-astm::UnaryPlus_strategy = st.builds(
-    astm::UnaryPlus,
-)
-DerivesFrom_strategy = st.builds(
-    DerivesFrom,
+astm_UnaryPlus_strategy = st.builds(
+    astm_UnaryPlus,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-astm::BitLiteral_strategy = st.builds(
-    astm::BitLiteral,
+astm_RealLiteral_strategy = st.builds(
+    astm_RealLiteral,
 )
-astm::BooleanLiteral_strategy = st.builds(
-    astm::BooleanLiteral,
+astm_BooleanLiteral_strategy = st.builds(
+    astm_BooleanLiteral,
 )
-astm::CharLiteral_strategy = st.builds(
-    astm::CharLiteral,
+astm_BitLiteral_strategy = st.builds(
+    astm_BitLiteral,
 )
-astm::RealLiteral_strategy = st.builds(
-    astm::RealLiteral,
+astm_StringLiteral_strategy = st.builds(
+    astm_StringLiteral,
 )
-astm::StringLiteral_strategy = st.builds(
-    astm::StringLiteral,
+astm_CharLiteral_strategy = st.builds(
+    astm_CharLiteral,
+)
+PrimitiveType_strategy = st.builds(
+    PrimitiveType,
+)
+astm_LongInteger_strategy = st.builds(
+    astm_LongInteger,
+)
+astm_Double_strategy = st.builds(
+    astm_Double,
+)
+astm_Float_strategy = st.builds(
+    astm_Float,
+)
+astm_Integer_strategy = st.builds(
+    astm_Integer,
+)
+astm_String_strategy = st.builds(
+    astm_String,
+)
+astm_Character_strategy = st.builds(
+    astm_Character,
+)
+astm_Byte_strategy = st.builds(
+    astm_Byte,
+)
+astm_ShortInteger_strategy = st.builds(
+    astm_ShortInteger,
+)
+astm_LongDouble_strategy = st.builds(
+    astm_LongDouble,
+)
+astm_WideCharacter_strategy = st.builds(
+    astm_WideCharacter,
+)
+astm_Boolean_strategy = st.builds(
+    astm_Boolean,
+)
+astm_Void_strategy = st.builds(
+    astm_Void,
+)
+StorageSpecification_strategy = st.builds(
+    StorageSpecification,
+)
+astm_NoDef_strategy = st.builds(
+    astm_NoDef,
+)
+astm_FunctionPersistent_strategy = st.builds(
+    astm_FunctionPersistent,
+)
+astm_PerClassMember_strategy = st.builds(
+    astm_PerClassMember,
+)
+astm_FileLocal_strategy = st.builds(
+    astm_FileLocal,
+)
+astm_External_strategy = st.builds(
+    astm_External,
+)
+astm_IntegerlLiteral_strategy = st.builds(
+    astm_IntegerlLiteral,
+)
+QualifiedIdentifierReference_strategy = st.builds(
+    QualifiedIdentifierReference,
+)
+astm_QualifiedOverData_strategy = st.builds(
+    astm_QualifiedOverData,
+)
+astm_QualifiedOverPointer_strategy = st.builds(
+    astm_QualifiedOverPointer,
+)
+ForStatement_strategy = st.builds(
+    ForStatement,
+)
+astm_ForCheckAfterStatement_strategy = st.builds(
+    astm_ForCheckAfterStatement,
+)
+astm_ForCheckBeforeStatement_strategy = st.builds(
+    astm_ForCheckBeforeStatement,
+)
+AccessKind_strategy = st.builds(
+    AccessKind,
+)
+astm_Protected_strategy = st.builds(
+    astm_Protected,
+)
+astm_Private_strategy = st.builds(
+    astm_Private,
+)
+astm_Public_strategy = st.builds(
+    astm_Public,
+)
+BinaryOperator_strategy = st.builds(
+    BinaryOperator,
+)
+astm_BitOr_strategy = st.builds(
+    astm_BitOr,
+)
+astm_Divide_strategy = st.builds(
+    astm_Divide,
+)
+astm_Equal_strategy = st.builds(
+    astm_Equal,
+)
+astm_BitLeftShift_strategy = st.builds(
+    astm_BitLeftShift,
+)
+astm_BitXor_strategy = st.builds(
+    astm_BitXor,
+)
+astm_NotEqual_strategy = st.builds(
+    astm_NotEqual,
+)
+astm_SpecificLike_strategy = st.builds(
+    astm_SpecificLike,
+)
+astm_And_strategy = st.builds(
+    astm_And,
+)
+astm_Greater_strategy = st.builds(
+    astm_Greater,
+)
+astm_BitAnd_strategy = st.builds(
+    astm_BitAnd,
+)
+astm_SpecificLessEqual_strategy = st.builds(
+    astm_SpecificLessEqual,
+)
+astm_SpecificGreaterEqual_strategy = st.builds(
+    astm_SpecificGreaterEqual,
+)
+astm_NotLess_strategy = st.builds(
+    astm_NotLess,
+)
+astm_Less_strategy = st.builds(
+    astm_Less,
+)
+astm_Subtract_strategy = st.builds(
+    astm_Subtract,
+)
+astm_SpecificConcatString_strategy = st.builds(
+    astm_SpecificConcatString,
+)
+astm_Modulus_strategy = st.builds(
+    astm_Modulus,
+)
+astm_Exponent_strategy = st.builds(
+    astm_Exponent,
+)
+astm_Or_strategy = st.builds(
+    astm_Or,
+)
+astm_SpecificIn_strategy = st.builds(
+    astm_SpecificIn,
+)
+astm_Multiply_strategy = st.builds(
+    astm_Multiply,
+)
+astm_Add_strategy = st.builds(
+    astm_Add,
+)
+astm_BitRightShift_strategy = st.builds(
+    astm_BitRightShift,
+)
+astm_NotGreater_strategy = st.builds(
+    astm_NotGreater,
+)
+astm_Assign_strategy = st.builds(
+    astm_Assign,
+)
+astm_OperatorAssign_strategy = st.builds(
+    astm_OperatorAssign,
+)
+ActualParameter_strategy = st.builds(
+    ActualParameter,
+)
+astm_MissingActualParameter_strategy = st.builds(
+    astm_MissingActualParameter,
+)
+astm_ActualParameterExpression_strategy = st.builds(
+    astm_ActualParameterExpression,
+)
+IdentifierReference_strategy = st.builds(
+    IdentifierReference,
+)
+NameReference_strategy = st.builds(
+    NameReference,
+)
+astm_IdentifierReference_strategy = st.builds(
+    astm_IdentifierReference,
+)
+astm_TypeQualifiedIdentifierReference_strategy = st.builds(
+    astm_TypeQualifiedIdentifierReference,
+)
+astm_QualifiedIdentifierReference_strategy = st.builds(
+    astm_QualifiedIdentifierReference,
+)
+CatchBlock_strategy = st.builds(
+    CatchBlock,
+)
+LoopStatement_strategy = st.builds(
+    LoopStatement,
+)
+astm_DoWhileStatement_strategy = st.builds(
+    astm_DoWhileStatement,
+)
+astm_WhileStatement_strategy = st.builds(
+    astm_WhileStatement,
+)
+astm_ForStatement_strategy = st.builds(
+    astm_ForStatement,
+)
+SwitchCase_strategy = st.builds(
+    SwitchCase,
+)
+astm_DefaultBlock_strategy = st.builds(
+    astm_DefaultBlock,
+)
+astm_CaseBlock_strategy = st.builds(
+    astm_CaseBlock,
+)
+astm_VariableCatchBlock_strategy = st.builds(
+    astm_VariableCatchBlock,
+)
+astm_TypesCatchBlock_strategy = st.builds(
+    astm_TypesCatchBlock,
+)
+BlockScope_strategy = st.builds(
+    BlockScope,
+)
+DerivesFrom_strategy = st.builds(
+    DerivesFrom,
 )
 LabelDefinition_strategy = st.builds(
     LabelDefinition,
@@ -4114,8 +4342,20 @@ Dimension_strategy = st.builds(
 ConstructedType_strategy = st.builds(
     ConstructedType,
 )
-astm::ArrayType_strategy = st.builds(
-    astm::ArrayType,
+astm_RangeType_strategy = st.builds(
+    astm_RangeType,
+)
+astm_PointerType_strategy = st.builds(
+    astm_PointerType,
+)
+astm_ReferenceType_strategy = st.builds(
+    astm_ReferenceType,
+)
+astm_CollectionType_strategy = st.builds(
+    astm_CollectionType,
+)
+astm_ArrayType_strategy = st.builds(
+    astm_ArrayType,
 )
 AggregateScope_strategy = st.builds(
     AggregateScope,
@@ -4126,40 +4366,52 @@ EnumLiteralDefinition_strategy = st.builds(
 DataType_strategy = st.builds(
     DataType,
 )
-astm::EnumType_strategy = st.builds(
-    astm::EnumType,
+astm_NamedType_strategy = st.builds(
+    astm_NamedType,
 )
-astm::NamedType_strategy = st.builds(
-    astm::NamedType,
+astm_ExceptionType_strategy = st.builds(
+    astm_ExceptionType,
 )
-astm::AggregateType_strategy = st.builds(
-    astm::AggregateType,
+astm_AggregateType_strategy = st.builds(
+    astm_AggregateType,
 )
-astm::FormalParameterType_strategy = st.builds(
-    astm::FormalParameterType,
+astm_ConstructedType_strategy = st.builds(
+    astm_ConstructedType,
 )
-astm::ConstructedType_strategy = st.builds(
-    astm::ConstructedType,
+astm_EnumType_strategy = st.builds(
+    astm_EnumType,
 )
-astm::PrimitiveType_strategy = st.builds(
-    astm::PrimitiveType,
+astm_FormalParameterType_strategy = st.builds(
+    astm_FormalParameterType,
+)
+astm_PrimitiveType_strategy = st.builds(
+    astm_PrimitiveType,
     isSigned=
         st.booleans()
 )
 FormalParameterType_strategy = st.builds(
     FormalParameterType,
 )
-astm::ByReferenceFormalParameterType_strategy = st.builds(
-    astm::ByReferenceFormalParameterType,
+astm_ByReferenceFormalParameterType_strategy = st.builds(
+    astm_ByReferenceFormalParameterType,
 )
-astm::ByValueFormalParameterType_strategy = st.builds(
-    astm::ByValueFormalParameterType,
+astm_ByValueFormalParameterType_strategy = st.builds(
+    astm_ByValueFormalParameterType,
 )
 Type_strategy = st.builds(
     Type,
 )
-astm::FunctionType_strategy = st.builds(
-    astm::FunctionType,
+astm_LabelType_strategy = st.builds(
+    astm_LabelType,
+)
+astm_NameSpaceType_strategy = st.builds(
+    astm_NameSpaceType,
+)
+astm_TypeReference_strategy = st.builds(
+    astm_TypeReference,
+)
+astm_FunctionType_strategy = st.builds(
+    astm_FunctionType,
 )
 MacroDefinition_strategy = st.builds(
     MacroDefinition,
@@ -4173,11 +4425,17 @@ NameSpaceType_strategy = st.builds(
 AggregateType_strategy = st.builds(
     AggregateType,
 )
-astm::ClassType_strategy = st.builds(
-    astm::ClassType,
+astm_AnnotationType_strategy = st.builds(
+    astm_AnnotationType,
 )
-astm::AnnotationType_strategy = st.builds(
-    astm::AnnotationType,
+astm_StructureType_strategy = st.builds(
+    astm_StructureType,
+)
+astm_ClassType_strategy = st.builds(
+    astm_ClassType,
+)
+astm_UnionType_strategy = st.builds(
+    astm_UnionType,
 )
 NamedType_strategy = st.builds(
     NamedType,
@@ -4185,42 +4443,143 @@ NamedType_strategy = st.builds(
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-astm::AggregateTypeDefinition_strategy = st.builds(
-    astm::AggregateTypeDefinition,
+astm_AggregateTypeDefinition_strategy = st.builds(
+    astm_AggregateTypeDefinition,
 )
-astm::NamedTypeDefinition_strategy = st.builds(
-    astm::NamedTypeDefinition,
+astm_NamedTypeDefinition_strategy = st.builds(
+    astm_NamedTypeDefinition,
 )
 DataDefinition_strategy = st.builds(
     DataDefinition,
 )
-astm::BitFieldDefinition_strategy = st.builds(
-    astm::BitFieldDefinition,
+astm_VariableDefinition_strategy = st.builds(
+    astm_VariableDefinition,
+)
+astm_FormalParameterDefinition_strategy = st.builds(
+    astm_FormalParameterDefinition,
+)
+astm_BitFieldDefinition_strategy = st.builds(
+    astm_BitFieldDefinition,
 )
 Expression_strategy = st.builds(
     Expression,
 )
+astm_NameReference_strategy = st.builds(
+    astm_NameReference,
+)
+astm_ConditionalExpression_strategy = st.builds(
+    astm_ConditionalExpression,
+)
+astm_BinaryExpression_strategy = st.builds(
+    astm_BinaryExpression,
+)
+astm_RangeExpression_strategy = st.builds(
+    astm_RangeExpression,
+)
+astm_AggregateExpression_strategy = st.builds(
+    astm_AggregateExpression,
+)
+astm_Literal_strategy = st.builds(
+    astm_Literal,
+    value=
+        safe_text
+)
+astm_CastExpression_strategy = st.builds(
+    astm_CastExpression,
+)
+astm_UnaryExpression_strategy = st.builds(
+    astm_UnaryExpression,
+)
+astm_NewExpression_strategy = st.builds(
+    astm_NewExpression,
+)
+astm_AnnotationExpression_strategy = st.builds(
+    astm_AnnotationExpression,
+)
+astm_ArrayAccess_strategy = st.builds(
+    astm_ArrayAccess,
+)
+astm_LabelAccess_strategy = st.builds(
+    astm_LabelAccess,
+)
+astm_FunctionCallExpression_strategy = st.builds(
+    astm_FunctionCallExpression,
+)
 GASTMSyntaxObject_strategy = st.builds(
     GASTMSyntaxObject,
 )
-astm::Type_strategy = st.builds(
-    astm::Type,
-    isConst=
-        st.booleans(),
+astm_PreprocessorElement_strategy = st.builds(
+    astm_PreprocessorElement,
+)
+astm_DefinitionObject_strategy = st.builds(
+    astm_DefinitionObject,
+)
+astm_Expression_strategy = st.builds(
+    astm_Expression,
+)
+astm_Statement_strategy = st.builds(
+    astm_Statement,
+)
+astm_Type_strategy = st.builds(
+    astm_Type,
     isVolatile=
+        st.booleans(),
+    isConst=
         st.booleans()
 )
 Statement_strategy = st.builds(
     Statement,
 )
-astm::SpecificSelectStatement_strategy = st.builds(
-    astm::SpecificSelectStatement,
+astm_BreakStatement_strategy = st.builds(
+    astm_BreakStatement,
 )
-astm::LabeledStatement_strategy = st.builds(
-    astm::LabeledStatement,
+astm_LabeledStatement_strategy = st.builds(
+    astm_LabeledStatement,
 )
-astm::ContinueStatement_strategy = st.builds(
-    astm::ContinueStatement,
+astm_DeclarationOrDefinitionStatement_strategy = st.builds(
+    astm_DeclarationOrDefinitionStatement,
+)
+astm_SpecificSelectStatement_strategy = st.builds(
+    astm_SpecificSelectStatement,
+)
+astm_ReturnStatement_strategy = st.builds(
+    astm_ReturnStatement,
+)
+astm_ExpressionStatement_strategy = st.builds(
+    astm_ExpressionStatement,
+)
+astm_TerminateStatement_strategy = st.builds(
+    astm_TerminateStatement,
+)
+astm_ContinueStatement_strategy = st.builds(
+    astm_ContinueStatement,
+)
+astm_BlockStatement_strategy = st.builds(
+    astm_BlockStatement,
+)
+astm_LoopStatement_strategy = st.builds(
+    astm_LoopStatement,
+)
+astm_ThrowStatement_strategy = st.builds(
+    astm_ThrowStatement,
+)
+astm_DeleteStatement_strategy = st.builds(
+    astm_DeleteStatement,
+)
+astm_IfStatement_strategy = st.builds(
+    astm_IfStatement,
+)
+astm_TryStatement_strategy = st.builds(
+    astm_TryStatement,
+)
+astm_EmptyStatement_strategy = st.builds(
+    astm_EmptyStatement,
+)
+astm_JumpStatement_strategy = st.builds(
+    astm_JumpStatement,
+)
+astm_SwitchStatement_strategy = st.builds(
+    astm_SwitchStatement,
 )
 FormalParameterDefinition_strategy = st.builds(
     FormalParameterDefinition,
@@ -4234,33 +4593,42 @@ FormalParameterDeclaration_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-astm::VariableDeclaration_strategy = st.builds(
-    astm::VariableDeclaration,
+astm_VariableDeclaration_strategy = st.builds(
+    astm_VariableDeclaration,
     isMutable=
         st.booleans()
 )
-astm::FunctionDeclaration_strategy = st.builds(
-    astm::FunctionDeclaration,
+astm_FormalParameterDeclaration_strategy = st.builds(
+    astm_FormalParameterDeclaration,
+)
+astm_FunctionDeclaration_strategy = st.builds(
+    astm_FunctionDeclaration,
 )
 Definition_strategy = st.builds(
     Definition,
 )
-astm::EnumLiteralDefinition_strategy = st.builds(
-    astm::EnumLiteralDefinition,
+astm_FunctionDefinition_strategy = st.builds(
+    astm_FunctionDefinition,
 )
-astm::DataDefinition_strategy = st.builds(
-    astm::DataDefinition,
+astm_SpecificTriggerDefinition_strategy = st.builds(
+    astm_SpecificTriggerDefinition,
+)
+astm_DataDefinition_strategy = st.builds(
+    astm_DataDefinition,
     isMutable=
         st.booleans()
 )
-astm::SpecificTriggerDefinition_strategy = st.builds(
-    astm::SpecificTriggerDefinition,
-)
-astm::FunctionDefinition_strategy = st.builds(
-    astm::FunctionDefinition,
+astm_EnumLiteralDefinition_strategy = st.builds(
+    astm_EnumLiteralDefinition,
 )
 TypeReference_strategy = st.builds(
     TypeReference,
+)
+astm_NamedTypeReference_strategy = st.builds(
+    astm_NamedTypeReference,
+)
+astm_UnnamedTypeReference_strategy = st.builds(
+    astm_UnnamedTypeReference,
 )
 Name_strategy = st.builds(
     Name,
@@ -4268,11 +4636,11 @@ Name_strategy = st.builds(
 DeclarationOrDefinition_strategy = st.builds(
     DeclarationOrDefinition,
 )
-astm::Declaration_strategy = st.builds(
-    astm::Declaration,
+astm_Declaration_strategy = st.builds(
+    astm_Declaration,
 )
-astm::Definition_strategy = st.builds(
-    astm::Definition,
+astm_Definition_strategy = st.builds(
+    astm_Definition,
 )
 ProgramScope_strategy = st.builds(
     ProgramScope,
@@ -4280,37 +4648,58 @@ ProgramScope_strategy = st.builds(
 OtherSyntaxObject_strategy = st.builds(
     OtherSyntaxObject,
 )
-astm::Dimension_strategy = st.builds(
-    astm::Dimension,
+astm_Dimension_strategy = st.builds(
+    astm_Dimension,
 )
-astm::Name_strategy = st.builds(
-    astm::Name,
+astm_Name_strategy = st.builds(
+    astm_Name,
     nameString=
         safe_text
 )
-astm::DerivesFrom_strategy = st.builds(
-    astm::DerivesFrom,
+astm_FunctionMemberAttribute_strategy = st.builds(
+    astm_FunctionMemberAttribute,
+)
+astm_DerivesFrom_strategy = st.builds(
+    astm_DerivesFrom,
     isVirtual=
         st.booleans()
 )
-astm::CompilationUnit_strategy = st.builds(
-    astm::CompilationUnit,
+astm_VirtualSpecification_strategy = st.builds(
+    astm_VirtualSpecification,
+)
+astm_SwitchCase_strategy = st.builds(
+    astm_SwitchCase,
+)
+astm_CatchBlock_strategy = st.builds(
+    astm_CatchBlock,
+)
+astm_CompilationUnit_strategy = st.builds(
+    astm_CompilationUnit,
     language=
         safe_text
 )
-astm::EntryDefinition_strategy = st.builds(
-    astm::EntryDefinition,
+astm_EntryDefinition_strategy = st.builds(
+    astm_EntryDefinition,
 )
 VirtualSpecification_strategy = st.builds(
     VirtualSpecification,
 )
-astm::FunctionMemberAttributes_strategy = st.builds(
-    astm::FunctionMemberAttributes,
-    isFriend=
+astm_NonVirtual_strategy = st.builds(
+    astm_NonVirtual,
+)
+astm_Virtual_strategy = st.builds(
+    astm_Virtual,
+)
+astm_PureVirtual_strategy = st.builds(
+    astm_PureVirtual,
+)
+astm_FunctionMemberAttributes_strategy = st.builds(
+    astm_FunctionMemberAttributes,
+    isInline=
         st.booleans(),
     isThisConst=
         st.booleans(),
-    isInline=
+    isFriend=
         st.booleans()
 )
 FunctionScope_strategy = st.builds(
@@ -4319,24 +4708,39 @@ FunctionScope_strategy = st.builds(
 Scope_strategy = st.builds(
     Scope,
 )
+astm_ProgramScope_strategy = st.builds(
+    astm_ProgramScope,
+)
+astm_GlobalScope_strategy = st.builds(
+    astm_GlobalScope,
+)
+astm_FunctionScope_strategy = st.builds(
+    astm_FunctionScope,
+)
+astm_AggregateScope_strategy = st.builds(
+    astm_AggregateScope,
+)
+astm_BlockScope_strategy = st.builds(
+    astm_BlockScope,
+)
 DefinitionObject_strategy = st.builds(
     DefinitionObject,
 )
-astm::DeclarationOrDefinition_strategy = st.builds(
-    astm::DeclarationOrDefinition,
-    linkageSpecifier=
-        safe_text,
+astm_LabelDefinition_strategy = st.builds(
+    astm_LabelDefinition,
+)
+astm_TypeDefinition_strategy = st.builds(
+    astm_TypeDefinition,
+)
+astm_DeclarationOrDefinition_strategy = st.builds(
+    astm_DeclarationOrDefinition,
     isRegister=
-        st.booleans()
+        st.booleans(),
+    linkageSpecifier=
+        safe_text
 )
-astm::LabelDefinition_strategy = st.builds(
-    astm::LabelDefinition,
-)
-astm::NameSpaceDefinition_strategy = st.builds(
-    astm::NameSpaceDefinition,
-)
-astm::TypeDefinition_strategy = st.builds(
-    astm::TypeDefinition,
+astm_NameSpaceDefinition_strategy = st.builds(
+    astm_NameSpaceDefinition,
 )
 GlobalScope_strategy = st.builds(
     GlobalScope,
@@ -4347,11 +4751,11 @@ CompilationUnit_strategy = st.builds(
 GASTMSemanticObject_strategy = st.builds(
     GASTMSemanticObject,
 )
-astm::Scope_strategy = st.builds(
-    astm::Scope,
+astm_Scope_strategy = st.builds(
+    astm_Scope,
 )
-astm::Project_strategy = st.builds(
-    astm::Project,
+astm_Project_strategy = st.builds(
+    astm_Project,
 )
 SourceFile_strategy = st.builds(
     SourceFile,
@@ -4359,51 +4763,51 @@ SourceFile_strategy = st.builds(
 GASTMSourceObject_strategy = st.builds(
     GASTMSourceObject,
 )
-astm::SourceLocation_strategy = st.builds(
-    astm::SourceLocation,
-    endColumn=
-        st.integers(),
-    endLine=
-        st.integers(),
+astm_SourceLocation_strategy = st.builds(
+    astm_SourceLocation,
     startLine=
         st.integers(),
     startColumn=
+        st.integers(),
+    endLine=
+        st.integers(),
+    endColumn=
         st.integers()
 )
-astm::SourceFile_strategy = st.builds(
-    astm::SourceFile,
+astm_SourceFile_strategy = st.builds(
+    astm_SourceFile,
     pathName=
         safe_text
 )
-astm::ActualParameter_strategy = st.builds(
-    astm::ActualParameter,
+astm_ActualParameter_strategy = st.builds(
+    astm_ActualParameter,
 )
-astm::BinaryOperator_strategy = st.builds(
-    astm::BinaryOperator,
+astm_BinaryOperator_strategy = st.builds(
+    astm_BinaryOperator,
 )
-astm::UnaryOperator_strategy = st.builds(
-    astm::UnaryOperator,
+astm_UnaryOperator_strategy = st.builds(
+    astm_UnaryOperator,
 )
-astm::AccessKind_strategy = st.builds(
-    astm::AccessKind,
+astm_AccessKind_strategy = st.builds(
+    astm_AccessKind,
 )
-astm::DataType_strategy = st.builds(
-    astm::DataType,
+astm_DataType_strategy = st.builds(
+    astm_DataType,
 )
-astm::StorageSpecification_strategy = st.builds(
-    astm::StorageSpecification,
+astm_StorageSpecification_strategy = st.builds(
+    astm_StorageSpecification,
 )
-astm::OtherSyntaxObject_strategy = st.builds(
-    astm::OtherSyntaxObject,
+astm_OtherSyntaxObject_strategy = st.builds(
+    astm_OtherSyntaxObject,
 )
-astm::GASTMSemanticObject_strategy = st.builds(
-    astm::GASTMSemanticObject,
+astm_GASTMSemanticObject_strategy = st.builds(
+    astm_GASTMSemanticObject,
 )
-astm::GASTMSourceObject_strategy = st.builds(
-    astm::GASTMSourceObject,
+astm_GASTMSourceObject_strategy = st.builds(
+    astm_GASTMSourceObject,
 )
-astm::GASTMObject_strategy = st.builds(
-    astm::GASTMObject,
+astm_GASTMObject_strategy = st.builds(
+    astm_GASTMObject,
 )
 AnnotationExpression_strategy = st.builds(
     AnnotationExpression,
@@ -4411,23 +4815,23 @@ AnnotationExpression_strategy = st.builds(
 PreprocessorElement_strategy = st.builds(
     PreprocessorElement,
 )
-astm::Comment_strategy = st.builds(
-    astm::Comment,
+astm_IncludeUnit_strategy = st.builds(
+    astm_IncludeUnit,
+)
+astm_MacroCall_strategy = st.builds(
+    astm_MacroCall,
+)
+astm_Comment_strategy = st.builds(
+    astm_Comment,
     text=
         safe_text
 )
-astm::MacroCall_strategy = st.builds(
-    astm::MacroCall,
-)
-astm::MacroDefinition_strategy = st.builds(
-    astm::MacroDefinition,
-    macroName=
-        safe_text,
+astm_MacroDefinition_strategy = st.builds(
+    astm_MacroDefinition,
     body=
+        safe_text,
+    macroName=
         safe_text
-)
-astm::IncludeUnit_strategy = st.builds(
-    astm::IncludeUnit,
 )
 SourceLocation_strategy = st.builds(
     SourceLocation,
@@ -4435,412 +4839,8 @@ SourceLocation_strategy = st.builds(
 GASTMObject_strategy = st.builds(
     GASTMObject,
 )
-astm::GASTMSyntaxObject_strategy = st.builds(
-    astm::GASTMSyntaxObject,
-)
-astm::UnionType_strategy = st.builds(
-    astm::UnionType,
-)
-astm::StructureType_strategy = st.builds(
-    astm::StructureType,
-)
-astm::RangeType_strategy = st.builds(
-    astm::RangeType,
-)
-astm::ReferenceType_strategy = st.builds(
-    astm::ReferenceType,
-)
-astm::PointerType_strategy = st.builds(
-    astm::PointerType,
-)
-astm::CollectionType_strategy = st.builds(
-    astm::CollectionType,
-)
-PrimitiveType_strategy = st.builds(
-    PrimitiveType,
-)
-astm::Byte_strategy = st.builds(
-    astm::Byte,
-)
-astm::Double_strategy = st.builds(
-    astm::Double,
-)
-astm::Integer_strategy = st.builds(
-    astm::Integer,
-)
-astm::Character_strategy = st.builds(
-    astm::Character,
-)
-astm::Boolean_strategy = st.builds(
-    astm::Boolean,
-)
-astm::String_strategy = st.builds(
-    astm::String,
-)
-astm::Float_strategy = st.builds(
-    astm::Float,
-)
-astm::LongDouble_strategy = st.builds(
-    astm::LongDouble,
-)
-astm::LongInteger_strategy = st.builds(
-    astm::LongInteger,
-)
-astm::ShortInteger_strategy = st.builds(
-    astm::ShortInteger,
-)
-astm::WideCharacter_strategy = st.builds(
-    astm::WideCharacter,
-)
-astm::Void_strategy = st.builds(
-    astm::Void,
-)
-astm::ExceptionType_strategy = st.builds(
-    astm::ExceptionType,
-)
-astm::NonVirtual_strategy = st.builds(
-    astm::NonVirtual,
-)
-astm::PureVirtual_strategy = st.builds(
-    astm::PureVirtual,
-)
-astm::Virtual_strategy = st.builds(
-    astm::Virtual,
-)
-StorageSpecification_strategy = st.builds(
-    StorageSpecification,
-)
-astm::NoDef_strategy = st.builds(
-    astm::NoDef,
-)
-astm::FunctionPersistent_strategy = st.builds(
-    astm::FunctionPersistent,
-)
-astm::FileLocal_strategy = st.builds(
-    astm::FileLocal,
-)
-astm::PerClassMember_strategy = st.builds(
-    astm::PerClassMember,
-)
-astm::External_strategy = st.builds(
-    astm::External,
-)
-astm::IntegerlLiteral_strategy = st.builds(
-    astm::IntegerlLiteral,
-)
-QualifiedIdentifierReference_strategy = st.builds(
-    QualifiedIdentifierReference,
-)
-astm::QualifiedOverData_strategy = st.builds(
-    astm::QualifiedOverData,
-)
-astm::QualifiedOverPointer_strategy = st.builds(
-    astm::QualifiedOverPointer,
-)
-astm::AggregateExpression_strategy = st.builds(
-    astm::AggregateExpression,
-)
-ForStatement_strategy = st.builds(
-    ForStatement,
-)
-astm::ForCheckAfterStatement_strategy = st.builds(
-    astm::ForCheckAfterStatement,
-)
-astm::ForCheckBeforeStatement_strategy = st.builds(
-    astm::ForCheckBeforeStatement,
-)
-astm::TerminateStatement_strategy = st.builds(
-    astm::TerminateStatement,
-)
-AccessKind_strategy = st.builds(
-    AccessKind,
-)
-astm::Private_strategy = st.builds(
-    astm::Private,
-)
-astm::Protected_strategy = st.builds(
-    astm::Protected,
-)
-astm::Public_strategy = st.builds(
-    astm::Public,
-)
-astm::ProgramScope_strategy = st.builds(
-    astm::ProgramScope,
-)
-astm::DefinitionObject_strategy = st.builds(
-    astm::DefinitionObject,
-)
-astm::PreprocessorElement_strategy = st.builds(
-    astm::PreprocessorElement,
-)
-astm::GlobalScope_strategy = st.builds(
-    astm::GlobalScope,
-)
-astm::AnnotationExpression_strategy = st.builds(
-    astm::AnnotationExpression,
-)
-astm::LabelAccess_strategy = st.builds(
-    astm::LabelAccess,
-)
-astm::NewExpression_strategy = st.builds(
-    astm::NewExpression,
-)
-astm::FunctionMemberAttribute_strategy = st.builds(
-    astm::FunctionMemberAttribute,
-)
-astm::VariableDefinition_strategy = st.builds(
-    astm::VariableDefinition,
-)
-astm::FormalParameterDeclaration_strategy = st.builds(
-    astm::FormalParameterDeclaration,
-)
-astm::VirtualSpecification_strategy = st.builds(
-    astm::VirtualSpecification,
-)
-astm::FormalParameterDefinition_strategy = st.builds(
-    astm::FormalParameterDefinition,
-)
-astm::BlockScope_strategy = st.builds(
-    astm::BlockScope,
-)
-astm::AggregateScope_strategy = st.builds(
-    astm::AggregateScope,
-)
-astm::LabelType_strategy = st.builds(
-    astm::LabelType,
-)
-astm::NameSpaceType_strategy = st.builds(
-    astm::NameSpaceType,
-)
-astm::FunctionScope_strategy = st.builds(
-    astm::FunctionScope,
-)
-astm::Statement_strategy = st.builds(
-    astm::Statement,
-)
-astm::TypeReference_strategy = st.builds(
-    astm::TypeReference,
-)
-astm::RangeExpression_strategy = st.builds(
-    astm::RangeExpression,
-)
-astm::ConditionalExpression_strategy = st.builds(
-    astm::ConditionalExpression,
-)
-BinaryOperator_strategy = st.builds(
-    BinaryOperator,
-)
-astm::Or_strategy = st.builds(
-    astm::Or,
-)
-astm::SpecificIn_strategy = st.builds(
-    astm::SpecificIn,
-)
-astm::Modulus_strategy = st.builds(
-    astm::Modulus,
-)
-astm::BitXor_strategy = st.builds(
-    astm::BitXor,
-)
-astm::And_strategy = st.builds(
-    astm::And,
-)
-astm::Exponent_strategy = st.builds(
-    astm::Exponent,
-)
-astm::NotLess_strategy = st.builds(
-    astm::NotLess,
-)
-astm::SpecificConcatString_strategy = st.builds(
-    astm::SpecificConcatString,
-)
-astm::SpecificGreaterEqual_strategy = st.builds(
-    astm::SpecificGreaterEqual,
-)
-astm::Greater_strategy = st.builds(
-    astm::Greater,
-)
-astm::Multiply_strategy = st.builds(
-    astm::Multiply,
-)
-astm::BitAnd_strategy = st.builds(
-    astm::BitAnd,
-)
-astm::BitOr_strategy = st.builds(
-    astm::BitOr,
-)
-astm::BitRightShift_strategy = st.builds(
-    astm::BitRightShift,
-)
-astm::Equal_strategy = st.builds(
-    astm::Equal,
-)
-astm::SpecificLessEqual_strategy = st.builds(
-    astm::SpecificLessEqual,
-)
-astm::SpecificLike_strategy = st.builds(
-    astm::SpecificLike,
-)
-astm::NotEqual_strategy = st.builds(
-    astm::NotEqual,
-)
-astm::Add_strategy = st.builds(
-    astm::Add,
-)
-astm::Divide_strategy = st.builds(
-    astm::Divide,
-)
-astm::BitLeftShift_strategy = st.builds(
-    astm::BitLeftShift,
-)
-astm::Subtract_strategy = st.builds(
-    astm::Subtract,
-)
-astm::Assign_strategy = st.builds(
-    astm::Assign,
-)
-astm::NotGreater_strategy = st.builds(
-    astm::NotGreater,
-)
-astm::Less_strategy = st.builds(
-    astm::Less,
-)
-astm::OperatorAssign_strategy = st.builds(
-    astm::OperatorAssign,
-)
-astm::BinaryExpression_strategy = st.builds(
-    astm::BinaryExpression,
-)
-ActualParameter_strategy = st.builds(
-    ActualParameter,
-)
-astm::ActualParameterExpression_strategy = st.builds(
-    astm::ActualParameterExpression,
-)
-astm::MissingActualParameter_strategy = st.builds(
-    astm::MissingActualParameter,
-)
-astm::FunctionCallExpression_strategy = st.builds(
-    astm::FunctionCallExpression,
-)
-IdentifierReference_strategy = st.builds(
-    IdentifierReference,
-)
-NameReference_strategy = st.builds(
-    NameReference,
-)
-astm::IdentifierReference_strategy = st.builds(
-    astm::IdentifierReference,
-)
-astm::TypeQualifiedIdentifierReference_strategy = st.builds(
-    astm::TypeQualifiedIdentifierReference,
-)
-astm::QualifiedIdentifierReference_strategy = st.builds(
-    astm::QualifiedIdentifierReference,
-)
-astm::ArrayAccess_strategy = st.builds(
-    astm::ArrayAccess,
-)
-astm::NameReference_strategy = st.builds(
-    astm::NameReference,
-)
-astm::Expression_strategy = st.builds(
-    astm::Expression,
-)
-astm::ThrowStatement_strategy = st.builds(
-    astm::ThrowStatement,
-)
-astm::UnaryExpression_strategy = st.builds(
-    astm::UnaryExpression,
-)
-astm::CastExpression_strategy = st.builds(
-    astm::CastExpression,
-)
-astm::Literal_strategy = st.builds(
-    astm::Literal,
-    value=
-        safe_text
-)
-CatchBlock_strategy = st.builds(
-    CatchBlock,
-)
-astm::TryStatement_strategy = st.builds(
-    astm::TryStatement,
-)
-LoopStatement_strategy = st.builds(
-    LoopStatement,
-)
-astm::WhileStatement_strategy = st.builds(
-    astm::WhileStatement,
-)
-astm::DoWhileStatement_strategy = st.builds(
-    astm::DoWhileStatement,
-)
-astm::ForStatement_strategy = st.builds(
-    astm::ForStatement,
-)
-astm::LoopStatement_strategy = st.builds(
-    astm::LoopStatement,
-)
-astm::ReturnStatement_strategy = st.builds(
-    astm::ReturnStatement,
-)
-astm::SwitchCase_strategy = st.builds(
-    astm::SwitchCase,
-)
-SwitchCase_strategy = st.builds(
-    SwitchCase,
-)
-astm::CaseBlock_strategy = st.builds(
-    astm::CaseBlock,
-)
-astm::DefaultBlock_strategy = st.builds(
-    astm::DefaultBlock,
-)
-astm::VariableCatchBlock_strategy = st.builds(
-    astm::VariableCatchBlock,
-)
-astm::TypesCatchBlock_strategy = st.builds(
-    astm::TypesCatchBlock,
-)
-astm::CatchBlock_strategy = st.builds(
-    astm::CatchBlock,
-)
-astm::IfStatement_strategy = st.builds(
-    astm::IfStatement,
-)
-astm::EmptyStatement_strategy = st.builds(
-    astm::EmptyStatement,
-)
-BlockScope_strategy = st.builds(
-    BlockScope,
-)
-astm::BlockStatement_strategy = st.builds(
-    astm::BlockStatement,
-)
-astm::SwitchStatement_strategy = st.builds(
-    astm::SwitchStatement,
-)
-astm::BreakStatement_strategy = st.builds(
-    astm::BreakStatement,
-)
-astm::JumpStatement_strategy = st.builds(
-    astm::JumpStatement,
-)
-astm::ExpressionStatement_strategy = st.builds(
-    astm::ExpressionStatement,
-)
-astm::DeclarationOrDefinitionStatement_strategy = st.builds(
-    astm::DeclarationOrDefinitionStatement,
-)
-astm::DeleteStatement_strategy = st.builds(
-    astm::DeleteStatement,
-)
-astm::NamedTypeReference_strategy = st.builds(
-    astm::NamedTypeReference,
-)
-astm::UnnamedTypeReference_strategy = st.builds(
-    astm::UnnamedTypeReference,
+astm_GASTMSyntaxObject_strategy = st.builds(
+    astm_GASTMSyntaxObject,
 )
 
 @given(instance=ActualParameterExpression_strategy)
@@ -4848,105 +4848,485 @@ astm::UnnamedTypeReference_strategy = st.builds(
 def test_actualparameterexpression_instantiation(instance):
     assert isinstance(instance, ActualParameterExpression)
 
-@given(instance=astm::ByReferenceActualParameterExpression_strategy)
+@given(instance=astm_ByReferenceActualParameterExpression_strategy)
 @settings(max_examples=50)
-def test_astm::byreferenceactualparameterexpression_instantiation(instance):
-    assert isinstance(instance, astm::ByReferenceActualParameterExpression)
+def test_astm_byreferenceactualparameterexpression_instantiation(instance):
+    assert isinstance(instance, astm_ByReferenceActualParameterExpression)
 
-@given(instance=astm::ByValueActualParameterExpression_strategy)
+@given(instance=astm_ByValueActualParameterExpression_strategy)
 @settings(max_examples=50)
-def test_astm::byvalueactualparameterexpression_instantiation(instance):
-    assert isinstance(instance, astm::ByValueActualParameterExpression)
+def test_astm_byvalueactualparameterexpression_instantiation(instance):
+    assert isinstance(instance, astm_ByValueActualParameterExpression)
 
 @given(instance=UnaryOperator_strategy)
 @settings(max_examples=50)
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=astm::Negate_strategy)
+@given(instance=astm_PostDecrement_strategy)
 @settings(max_examples=50)
-def test_astm::negate_instantiation(instance):
-    assert isinstance(instance, astm::Negate)
+def test_astm_postdecrement_instantiation(instance):
+    assert isinstance(instance, astm_PostDecrement)
 
-@given(instance=astm::Deref_strategy)
+@given(instance=astm_Deref_strategy)
 @settings(max_examples=50)
-def test_astm::deref_instantiation(instance):
-    assert isinstance(instance, astm::Deref)
+def test_astm_deref_instantiation(instance):
+    assert isinstance(instance, astm_Deref)
 
-@given(instance=astm::PostIncrement_strategy)
+@given(instance=astm_PostIncrement_strategy)
 @settings(max_examples=50)
-def test_astm::postincrement_instantiation(instance):
-    assert isinstance(instance, astm::PostIncrement)
+def test_astm_postincrement_instantiation(instance):
+    assert isinstance(instance, astm_PostIncrement)
 
-@given(instance=astm::AddressOf_strategy)
+@given(instance=astm_Not_strategy)
 @settings(max_examples=50)
-def test_astm::addressof_instantiation(instance):
-    assert isinstance(instance, astm::AddressOf)
+def test_astm_not_instantiation(instance):
+    assert isinstance(instance, astm_Not)
 
-@given(instance=astm::Increment_strategy)
+@given(instance=astm_Decrement_strategy)
 @settings(max_examples=50)
-def test_astm::increment_instantiation(instance):
-    assert isinstance(instance, astm::Increment)
+def test_astm_decrement_instantiation(instance):
+    assert isinstance(instance, astm_Decrement)
 
-@given(instance=astm::BitNot_strategy)
+@given(instance=astm_Negate_strategy)
 @settings(max_examples=50)
-def test_astm::bitnot_instantiation(instance):
-    assert isinstance(instance, astm::BitNot)
+def test_astm_negate_instantiation(instance):
+    assert isinstance(instance, astm_Negate)
 
-@given(instance=astm::PostDecrement_strategy)
+@given(instance=astm_BitNot_strategy)
 @settings(max_examples=50)
-def test_astm::postdecrement_instantiation(instance):
-    assert isinstance(instance, astm::PostDecrement)
+def test_astm_bitnot_instantiation(instance):
+    assert isinstance(instance, astm_BitNot)
 
-@given(instance=astm::Decrement_strategy)
+@given(instance=astm_Increment_strategy)
 @settings(max_examples=50)
-def test_astm::decrement_instantiation(instance):
-    assert isinstance(instance, astm::Decrement)
+def test_astm_increment_instantiation(instance):
+    assert isinstance(instance, astm_Increment)
 
-@given(instance=astm::Not_strategy)
+@given(instance=astm_AddressOf_strategy)
 @settings(max_examples=50)
-def test_astm::not_instantiation(instance):
-    assert isinstance(instance, astm::Not)
+def test_astm_addressof_instantiation(instance):
+    assert isinstance(instance, astm_AddressOf)
 
-@given(instance=astm::UnaryPlus_strategy)
+@given(instance=astm_UnaryPlus_strategy)
 @settings(max_examples=50)
-def test_astm::unaryplus_instantiation(instance):
-    assert isinstance(instance, astm::UnaryPlus)
-
-@given(instance=DerivesFrom_strategy)
-@settings(max_examples=50)
-def test_derivesfrom_instantiation(instance):
-    assert isinstance(instance, DerivesFrom)
+def test_astm_unaryplus_instantiation(instance):
+    assert isinstance(instance, astm_UnaryPlus)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=astm::BitLiteral_strategy)
+@given(instance=astm_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_astm::bitliteral_instantiation(instance):
-    assert isinstance(instance, astm::BitLiteral)
+def test_astm_realliteral_instantiation(instance):
+    assert isinstance(instance, astm_RealLiteral)
 
-@given(instance=astm::BooleanLiteral_strategy)
+@given(instance=astm_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_astm::booleanliteral_instantiation(instance):
-    assert isinstance(instance, astm::BooleanLiteral)
+def test_astm_booleanliteral_instantiation(instance):
+    assert isinstance(instance, astm_BooleanLiteral)
 
-@given(instance=astm::CharLiteral_strategy)
+@given(instance=astm_BitLiteral_strategy)
 @settings(max_examples=50)
-def test_astm::charliteral_instantiation(instance):
-    assert isinstance(instance, astm::CharLiteral)
+def test_astm_bitliteral_instantiation(instance):
+    assert isinstance(instance, astm_BitLiteral)
 
-@given(instance=astm::RealLiteral_strategy)
+@given(instance=astm_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_astm::realliteral_instantiation(instance):
-    assert isinstance(instance, astm::RealLiteral)
+def test_astm_stringliteral_instantiation(instance):
+    assert isinstance(instance, astm_StringLiteral)
 
-@given(instance=astm::StringLiteral_strategy)
+@given(instance=astm_CharLiteral_strategy)
 @settings(max_examples=50)
-def test_astm::stringliteral_instantiation(instance):
-    assert isinstance(instance, astm::StringLiteral)
+def test_astm_charliteral_instantiation(instance):
+    assert isinstance(instance, astm_CharLiteral)
+
+@given(instance=PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_primitivetype_instantiation(instance):
+    assert isinstance(instance, PrimitiveType)
+
+@given(instance=astm_LongInteger_strategy)
+@settings(max_examples=50)
+def test_astm_longinteger_instantiation(instance):
+    assert isinstance(instance, astm_LongInteger)
+
+@given(instance=astm_Double_strategy)
+@settings(max_examples=50)
+def test_astm_double_instantiation(instance):
+    assert isinstance(instance, astm_Double)
+
+@given(instance=astm_Float_strategy)
+@settings(max_examples=50)
+def test_astm_float_instantiation(instance):
+    assert isinstance(instance, astm_Float)
+
+@given(instance=astm_Integer_strategy)
+@settings(max_examples=50)
+def test_astm_integer_instantiation(instance):
+    assert isinstance(instance, astm_Integer)
+
+@given(instance=astm_String_strategy)
+@settings(max_examples=50)
+def test_astm_string_instantiation(instance):
+    assert isinstance(instance, astm_String)
+
+@given(instance=astm_Character_strategy)
+@settings(max_examples=50)
+def test_astm_character_instantiation(instance):
+    assert isinstance(instance, astm_Character)
+
+@given(instance=astm_Byte_strategy)
+@settings(max_examples=50)
+def test_astm_byte_instantiation(instance):
+    assert isinstance(instance, astm_Byte)
+
+@given(instance=astm_ShortInteger_strategy)
+@settings(max_examples=50)
+def test_astm_shortinteger_instantiation(instance):
+    assert isinstance(instance, astm_ShortInteger)
+
+@given(instance=astm_LongDouble_strategy)
+@settings(max_examples=50)
+def test_astm_longdouble_instantiation(instance):
+    assert isinstance(instance, astm_LongDouble)
+
+@given(instance=astm_WideCharacter_strategy)
+@settings(max_examples=50)
+def test_astm_widecharacter_instantiation(instance):
+    assert isinstance(instance, astm_WideCharacter)
+
+@given(instance=astm_Boolean_strategy)
+@settings(max_examples=50)
+def test_astm_boolean_instantiation(instance):
+    assert isinstance(instance, astm_Boolean)
+
+@given(instance=astm_Void_strategy)
+@settings(max_examples=50)
+def test_astm_void_instantiation(instance):
+    assert isinstance(instance, astm_Void)
+
+@given(instance=StorageSpecification_strategy)
+@settings(max_examples=50)
+def test_storagespecification_instantiation(instance):
+    assert isinstance(instance, StorageSpecification)
+
+@given(instance=astm_NoDef_strategy)
+@settings(max_examples=50)
+def test_astm_nodef_instantiation(instance):
+    assert isinstance(instance, astm_NoDef)
+
+@given(instance=astm_FunctionPersistent_strategy)
+@settings(max_examples=50)
+def test_astm_functionpersistent_instantiation(instance):
+    assert isinstance(instance, astm_FunctionPersistent)
+
+@given(instance=astm_PerClassMember_strategy)
+@settings(max_examples=50)
+def test_astm_perclassmember_instantiation(instance):
+    assert isinstance(instance, astm_PerClassMember)
+
+@given(instance=astm_FileLocal_strategy)
+@settings(max_examples=50)
+def test_astm_filelocal_instantiation(instance):
+    assert isinstance(instance, astm_FileLocal)
+
+@given(instance=astm_External_strategy)
+@settings(max_examples=50)
+def test_astm_external_instantiation(instance):
+    assert isinstance(instance, astm_External)
+
+@given(instance=astm_IntegerlLiteral_strategy)
+@settings(max_examples=50)
+def test_astm_integerlliteral_instantiation(instance):
+    assert isinstance(instance, astm_IntegerlLiteral)
+
+@given(instance=QualifiedIdentifierReference_strategy)
+@settings(max_examples=50)
+def test_qualifiedidentifierreference_instantiation(instance):
+    assert isinstance(instance, QualifiedIdentifierReference)
+
+@given(instance=astm_QualifiedOverData_strategy)
+@settings(max_examples=50)
+def test_astm_qualifiedoverdata_instantiation(instance):
+    assert isinstance(instance, astm_QualifiedOverData)
+
+@given(instance=astm_QualifiedOverPointer_strategy)
+@settings(max_examples=50)
+def test_astm_qualifiedoverpointer_instantiation(instance):
+    assert isinstance(instance, astm_QualifiedOverPointer)
+
+@given(instance=ForStatement_strategy)
+@settings(max_examples=50)
+def test_forstatement_instantiation(instance):
+    assert isinstance(instance, ForStatement)
+
+@given(instance=astm_ForCheckAfterStatement_strategy)
+@settings(max_examples=50)
+def test_astm_forcheckafterstatement_instantiation(instance):
+    assert isinstance(instance, astm_ForCheckAfterStatement)
+
+@given(instance=astm_ForCheckBeforeStatement_strategy)
+@settings(max_examples=50)
+def test_astm_forcheckbeforestatement_instantiation(instance):
+    assert isinstance(instance, astm_ForCheckBeforeStatement)
+
+@given(instance=AccessKind_strategy)
+@settings(max_examples=50)
+def test_accesskind_instantiation(instance):
+    assert isinstance(instance, AccessKind)
+
+@given(instance=astm_Protected_strategy)
+@settings(max_examples=50)
+def test_astm_protected_instantiation(instance):
+    assert isinstance(instance, astm_Protected)
+
+@given(instance=astm_Private_strategy)
+@settings(max_examples=50)
+def test_astm_private_instantiation(instance):
+    assert isinstance(instance, astm_Private)
+
+@given(instance=astm_Public_strategy)
+@settings(max_examples=50)
+def test_astm_public_instantiation(instance):
+    assert isinstance(instance, astm_Public)
+
+@given(instance=BinaryOperator_strategy)
+@settings(max_examples=50)
+def test_binaryoperator_instantiation(instance):
+    assert isinstance(instance, BinaryOperator)
+
+@given(instance=astm_BitOr_strategy)
+@settings(max_examples=50)
+def test_astm_bitor_instantiation(instance):
+    assert isinstance(instance, astm_BitOr)
+
+@given(instance=astm_Divide_strategy)
+@settings(max_examples=50)
+def test_astm_divide_instantiation(instance):
+    assert isinstance(instance, astm_Divide)
+
+@given(instance=astm_Equal_strategy)
+@settings(max_examples=50)
+def test_astm_equal_instantiation(instance):
+    assert isinstance(instance, astm_Equal)
+
+@given(instance=astm_BitLeftShift_strategy)
+@settings(max_examples=50)
+def test_astm_bitleftshift_instantiation(instance):
+    assert isinstance(instance, astm_BitLeftShift)
+
+@given(instance=astm_BitXor_strategy)
+@settings(max_examples=50)
+def test_astm_bitxor_instantiation(instance):
+    assert isinstance(instance, astm_BitXor)
+
+@given(instance=astm_NotEqual_strategy)
+@settings(max_examples=50)
+def test_astm_notequal_instantiation(instance):
+    assert isinstance(instance, astm_NotEqual)
+
+@given(instance=astm_SpecificLike_strategy)
+@settings(max_examples=50)
+def test_astm_specificlike_instantiation(instance):
+    assert isinstance(instance, astm_SpecificLike)
+
+@given(instance=astm_And_strategy)
+@settings(max_examples=50)
+def test_astm_and_instantiation(instance):
+    assert isinstance(instance, astm_And)
+
+@given(instance=astm_Greater_strategy)
+@settings(max_examples=50)
+def test_astm_greater_instantiation(instance):
+    assert isinstance(instance, astm_Greater)
+
+@given(instance=astm_BitAnd_strategy)
+@settings(max_examples=50)
+def test_astm_bitand_instantiation(instance):
+    assert isinstance(instance, astm_BitAnd)
+
+@given(instance=astm_SpecificLessEqual_strategy)
+@settings(max_examples=50)
+def test_astm_specificlessequal_instantiation(instance):
+    assert isinstance(instance, astm_SpecificLessEqual)
+
+@given(instance=astm_SpecificGreaterEqual_strategy)
+@settings(max_examples=50)
+def test_astm_specificgreaterequal_instantiation(instance):
+    assert isinstance(instance, astm_SpecificGreaterEqual)
+
+@given(instance=astm_NotLess_strategy)
+@settings(max_examples=50)
+def test_astm_notless_instantiation(instance):
+    assert isinstance(instance, astm_NotLess)
+
+@given(instance=astm_Less_strategy)
+@settings(max_examples=50)
+def test_astm_less_instantiation(instance):
+    assert isinstance(instance, astm_Less)
+
+@given(instance=astm_Subtract_strategy)
+@settings(max_examples=50)
+def test_astm_subtract_instantiation(instance):
+    assert isinstance(instance, astm_Subtract)
+
+@given(instance=astm_SpecificConcatString_strategy)
+@settings(max_examples=50)
+def test_astm_specificconcatstring_instantiation(instance):
+    assert isinstance(instance, astm_SpecificConcatString)
+
+@given(instance=astm_Modulus_strategy)
+@settings(max_examples=50)
+def test_astm_modulus_instantiation(instance):
+    assert isinstance(instance, astm_Modulus)
+
+@given(instance=astm_Exponent_strategy)
+@settings(max_examples=50)
+def test_astm_exponent_instantiation(instance):
+    assert isinstance(instance, astm_Exponent)
+
+@given(instance=astm_Or_strategy)
+@settings(max_examples=50)
+def test_astm_or_instantiation(instance):
+    assert isinstance(instance, astm_Or)
+
+@given(instance=astm_SpecificIn_strategy)
+@settings(max_examples=50)
+def test_astm_specificin_instantiation(instance):
+    assert isinstance(instance, astm_SpecificIn)
+
+@given(instance=astm_Multiply_strategy)
+@settings(max_examples=50)
+def test_astm_multiply_instantiation(instance):
+    assert isinstance(instance, astm_Multiply)
+
+@given(instance=astm_Add_strategy)
+@settings(max_examples=50)
+def test_astm_add_instantiation(instance):
+    assert isinstance(instance, astm_Add)
+
+@given(instance=astm_BitRightShift_strategy)
+@settings(max_examples=50)
+def test_astm_bitrightshift_instantiation(instance):
+    assert isinstance(instance, astm_BitRightShift)
+
+@given(instance=astm_NotGreater_strategy)
+@settings(max_examples=50)
+def test_astm_notgreater_instantiation(instance):
+    assert isinstance(instance, astm_NotGreater)
+
+@given(instance=astm_Assign_strategy)
+@settings(max_examples=50)
+def test_astm_assign_instantiation(instance):
+    assert isinstance(instance, astm_Assign)
+
+@given(instance=astm_OperatorAssign_strategy)
+@settings(max_examples=50)
+def test_astm_operatorassign_instantiation(instance):
+    assert isinstance(instance, astm_OperatorAssign)
+
+@given(instance=ActualParameter_strategy)
+@settings(max_examples=50)
+def test_actualparameter_instantiation(instance):
+    assert isinstance(instance, ActualParameter)
+
+@given(instance=astm_MissingActualParameter_strategy)
+@settings(max_examples=50)
+def test_astm_missingactualparameter_instantiation(instance):
+    assert isinstance(instance, astm_MissingActualParameter)
+
+@given(instance=astm_ActualParameterExpression_strategy)
+@settings(max_examples=50)
+def test_astm_actualparameterexpression_instantiation(instance):
+    assert isinstance(instance, astm_ActualParameterExpression)
+
+@given(instance=IdentifierReference_strategy)
+@settings(max_examples=50)
+def test_identifierreference_instantiation(instance):
+    assert isinstance(instance, IdentifierReference)
+
+@given(instance=NameReference_strategy)
+@settings(max_examples=50)
+def test_namereference_instantiation(instance):
+    assert isinstance(instance, NameReference)
+
+@given(instance=astm_IdentifierReference_strategy)
+@settings(max_examples=50)
+def test_astm_identifierreference_instantiation(instance):
+    assert isinstance(instance, astm_IdentifierReference)
+
+@given(instance=astm_TypeQualifiedIdentifierReference_strategy)
+@settings(max_examples=50)
+def test_astm_typequalifiedidentifierreference_instantiation(instance):
+    assert isinstance(instance, astm_TypeQualifiedIdentifierReference)
+
+@given(instance=astm_QualifiedIdentifierReference_strategy)
+@settings(max_examples=50)
+def test_astm_qualifiedidentifierreference_instantiation(instance):
+    assert isinstance(instance, astm_QualifiedIdentifierReference)
+
+@given(instance=CatchBlock_strategy)
+@settings(max_examples=50)
+def test_catchblock_instantiation(instance):
+    assert isinstance(instance, CatchBlock)
+
+@given(instance=LoopStatement_strategy)
+@settings(max_examples=50)
+def test_loopstatement_instantiation(instance):
+    assert isinstance(instance, LoopStatement)
+
+@given(instance=astm_DoWhileStatement_strategy)
+@settings(max_examples=50)
+def test_astm_dowhilestatement_instantiation(instance):
+    assert isinstance(instance, astm_DoWhileStatement)
+
+@given(instance=astm_WhileStatement_strategy)
+@settings(max_examples=50)
+def test_astm_whilestatement_instantiation(instance):
+    assert isinstance(instance, astm_WhileStatement)
+
+@given(instance=astm_ForStatement_strategy)
+@settings(max_examples=50)
+def test_astm_forstatement_instantiation(instance):
+    assert isinstance(instance, astm_ForStatement)
+
+@given(instance=SwitchCase_strategy)
+@settings(max_examples=50)
+def test_switchcase_instantiation(instance):
+    assert isinstance(instance, SwitchCase)
+
+@given(instance=astm_DefaultBlock_strategy)
+@settings(max_examples=50)
+def test_astm_defaultblock_instantiation(instance):
+    assert isinstance(instance, astm_DefaultBlock)
+
+@given(instance=astm_CaseBlock_strategy)
+@settings(max_examples=50)
+def test_astm_caseblock_instantiation(instance):
+    assert isinstance(instance, astm_CaseBlock)
+
+@given(instance=astm_VariableCatchBlock_strategy)
+@settings(max_examples=50)
+def test_astm_variablecatchblock_instantiation(instance):
+    assert isinstance(instance, astm_VariableCatchBlock)
+
+@given(instance=astm_TypesCatchBlock_strategy)
+@settings(max_examples=50)
+def test_astm_typescatchblock_instantiation(instance):
+    assert isinstance(instance, astm_TypesCatchBlock)
+
+@given(instance=BlockScope_strategy)
+@settings(max_examples=50)
+def test_blockscope_instantiation(instance):
+    assert isinstance(instance, BlockScope)
+
+@given(instance=DerivesFrom_strategy)
+@settings(max_examples=50)
+def test_derivesfrom_instantiation(instance):
+    assert isinstance(instance, DerivesFrom)
 
 @given(instance=LabelDefinition_strategy)
 @settings(max_examples=50)
@@ -4968,10 +5348,30 @@ def test_dimension_instantiation(instance):
 def test_constructedtype_instantiation(instance):
     assert isinstance(instance, ConstructedType)
 
-@given(instance=astm::ArrayType_strategy)
+@given(instance=astm_RangeType_strategy)
 @settings(max_examples=50)
-def test_astm::arraytype_instantiation(instance):
-    assert isinstance(instance, astm::ArrayType)
+def test_astm_rangetype_instantiation(instance):
+    assert isinstance(instance, astm_RangeType)
+
+@given(instance=astm_PointerType_strategy)
+@settings(max_examples=50)
+def test_astm_pointertype_instantiation(instance):
+    assert isinstance(instance, astm_PointerType)
+
+@given(instance=astm_ReferenceType_strategy)
+@settings(max_examples=50)
+def test_astm_referencetype_instantiation(instance):
+    assert isinstance(instance, astm_ReferenceType)
+
+@given(instance=astm_CollectionType_strategy)
+@settings(max_examples=50)
+def test_astm_collectiontype_instantiation(instance):
+    assert isinstance(instance, astm_CollectionType)
+
+@given(instance=astm_ArrayType_strategy)
+@settings(max_examples=50)
+def test_astm_arraytype_instantiation(instance):
+    assert isinstance(instance, astm_ArrayType)
 
 @given(instance=AggregateScope_strategy)
 @settings(max_examples=50)
@@ -4988,43 +5388,45 @@ def test_enumliteraldefinition_instantiation(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=astm::EnumType_strategy)
+@given(instance=astm_NamedType_strategy)
 @settings(max_examples=50)
-def test_astm::enumtype_instantiation(instance):
-    assert isinstance(instance, astm::EnumType)
+def test_astm_namedtype_instantiation(instance):
+    assert isinstance(instance, astm_NamedType)
 
-@given(instance=astm::NamedType_strategy)
+@given(instance=astm_ExceptionType_strategy)
 @settings(max_examples=50)
-def test_astm::namedtype_instantiation(instance):
-    assert isinstance(instance, astm::NamedType)
+def test_astm_exceptiontype_instantiation(instance):
+    assert isinstance(instance, astm_ExceptionType)
 
-@given(instance=astm::AggregateType_strategy)
+@given(instance=astm_AggregateType_strategy)
 @settings(max_examples=50)
-def test_astm::aggregatetype_instantiation(instance):
-    assert isinstance(instance, astm::AggregateType)
+def test_astm_aggregatetype_instantiation(instance):
+    assert isinstance(instance, astm_AggregateType)
 
-@given(instance=astm::FormalParameterType_strategy)
+@given(instance=astm_ConstructedType_strategy)
 @settings(max_examples=50)
-def test_astm::formalparametertype_instantiation(instance):
-    assert isinstance(instance, astm::FormalParameterType)
+def test_astm_constructedtype_instantiation(instance):
+    assert isinstance(instance, astm_ConstructedType)
 
-@given(instance=astm::ConstructedType_strategy)
+@given(instance=astm_EnumType_strategy)
 @settings(max_examples=50)
-def test_astm::constructedtype_instantiation(instance):
-    assert isinstance(instance, astm::ConstructedType)
+def test_astm_enumtype_instantiation(instance):
+    assert isinstance(instance, astm_EnumType)
 
-@given(instance=astm::PrimitiveType_strategy)
+@given(instance=astm_FormalParameterType_strategy)
 @settings(max_examples=50)
-def test_astm::primitivetype_instantiation(instance):
-    assert isinstance(instance, astm::PrimitiveType)
+def test_astm_formalparametertype_instantiation(instance):
+    assert isinstance(instance, astm_FormalParameterType)
 
-@given(instance=astm::PrimitiveType_strategy)
-def test_astm::primitivetype_isSigned_type(instance):
-    assert isinstance(instance.isSigned, bool)
+@given(instance=astm_PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_astm_primitivetype_instantiation(instance):
+    assert isinstance(instance, astm_PrimitiveType)
 
 
-@given(instance=astm::PrimitiveType_strategy)
-def test_astm::primitivetype_isSigned_setter(instance):
+
+@given(instance=astm_PrimitiveType_strategy)
+def test_astm_primitivetype_isSigned_setter(instance):
     original = instance.isSigned
     instance.isSigned = original
     assert instance.isSigned == original
@@ -5034,25 +5436,40 @@ def test_astm::primitivetype_isSigned_setter(instance):
 def test_formalparametertype_instantiation(instance):
     assert isinstance(instance, FormalParameterType)
 
-@given(instance=astm::ByReferenceFormalParameterType_strategy)
+@given(instance=astm_ByReferenceFormalParameterType_strategy)
 @settings(max_examples=50)
-def test_astm::byreferenceformalparametertype_instantiation(instance):
-    assert isinstance(instance, astm::ByReferenceFormalParameterType)
+def test_astm_byreferenceformalparametertype_instantiation(instance):
+    assert isinstance(instance, astm_ByReferenceFormalParameterType)
 
-@given(instance=astm::ByValueFormalParameterType_strategy)
+@given(instance=astm_ByValueFormalParameterType_strategy)
 @settings(max_examples=50)
-def test_astm::byvalueformalparametertype_instantiation(instance):
-    assert isinstance(instance, astm::ByValueFormalParameterType)
+def test_astm_byvalueformalparametertype_instantiation(instance):
+    assert isinstance(instance, astm_ByValueFormalParameterType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=astm::FunctionType_strategy)
+@given(instance=astm_LabelType_strategy)
 @settings(max_examples=50)
-def test_astm::functiontype_instantiation(instance):
-    assert isinstance(instance, astm::FunctionType)
+def test_astm_labeltype_instantiation(instance):
+    assert isinstance(instance, astm_LabelType)
+
+@given(instance=astm_NameSpaceType_strategy)
+@settings(max_examples=50)
+def test_astm_namespacetype_instantiation(instance):
+    assert isinstance(instance, astm_NameSpaceType)
+
+@given(instance=astm_TypeReference_strategy)
+@settings(max_examples=50)
+def test_astm_typereference_instantiation(instance):
+    assert isinstance(instance, astm_TypeReference)
+
+@given(instance=astm_FunctionType_strategy)
+@settings(max_examples=50)
+def test_astm_functiontype_instantiation(instance):
+    assert isinstance(instance, astm_FunctionType)
 
 @given(instance=MacroDefinition_strategy)
 @settings(max_examples=50)
@@ -5074,15 +5491,25 @@ def test_namespacetype_instantiation(instance):
 def test_aggregatetype_instantiation(instance):
     assert isinstance(instance, AggregateType)
 
-@given(instance=astm::ClassType_strategy)
+@given(instance=astm_AnnotationType_strategy)
 @settings(max_examples=50)
-def test_astm::classtype_instantiation(instance):
-    assert isinstance(instance, astm::ClassType)
+def test_astm_annotationtype_instantiation(instance):
+    assert isinstance(instance, astm_AnnotationType)
 
-@given(instance=astm::AnnotationType_strategy)
+@given(instance=astm_StructureType_strategy)
 @settings(max_examples=50)
-def test_astm::annotationtype_instantiation(instance):
-    assert isinstance(instance, astm::AnnotationType)
+def test_astm_structuretype_instantiation(instance):
+    assert isinstance(instance, astm_StructureType)
+
+@given(instance=astm_ClassType_strategy)
+@settings(max_examples=50)
+def test_astm_classtype_instantiation(instance):
+    assert isinstance(instance, astm_ClassType)
+
+@given(instance=astm_UnionType_strategy)
+@settings(max_examples=50)
+def test_astm_uniontype_instantiation(instance):
+    assert isinstance(instance, astm_UnionType)
 
 @given(instance=NamedType_strategy)
 @settings(max_examples=50)
@@ -5094,82 +5521,249 @@ def test_namedtype_instantiation(instance):
 def test_typedefinition_instantiation(instance):
     assert isinstance(instance, TypeDefinition)
 
-@given(instance=astm::AggregateTypeDefinition_strategy)
+@given(instance=astm_AggregateTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::aggregatetypedefinition_instantiation(instance):
-    assert isinstance(instance, astm::AggregateTypeDefinition)
+def test_astm_aggregatetypedefinition_instantiation(instance):
+    assert isinstance(instance, astm_AggregateTypeDefinition)
 
-@given(instance=astm::NamedTypeDefinition_strategy)
+@given(instance=astm_NamedTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::namedtypedefinition_instantiation(instance):
-    assert isinstance(instance, astm::NamedTypeDefinition)
+def test_astm_namedtypedefinition_instantiation(instance):
+    assert isinstance(instance, astm_NamedTypeDefinition)
 
 @given(instance=DataDefinition_strategy)
 @settings(max_examples=50)
 def test_datadefinition_instantiation(instance):
     assert isinstance(instance, DataDefinition)
 
-@given(instance=astm::BitFieldDefinition_strategy)
+@given(instance=astm_VariableDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::bitfielddefinition_instantiation(instance):
-    assert isinstance(instance, astm::BitFieldDefinition)
+def test_astm_variabledefinition_instantiation(instance):
+    assert isinstance(instance, astm_VariableDefinition)
+
+@given(instance=astm_FormalParameterDefinition_strategy)
+@settings(max_examples=50)
+def test_astm_formalparameterdefinition_instantiation(instance):
+    assert isinstance(instance, astm_FormalParameterDefinition)
+
+@given(instance=astm_BitFieldDefinition_strategy)
+@settings(max_examples=50)
+def test_astm_bitfielddefinition_instantiation(instance):
+    assert isinstance(instance, astm_BitFieldDefinition)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
+@given(instance=astm_NameReference_strategy)
+@settings(max_examples=50)
+def test_astm_namereference_instantiation(instance):
+    assert isinstance(instance, astm_NameReference)
+
+@given(instance=astm_ConditionalExpression_strategy)
+@settings(max_examples=50)
+def test_astm_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, astm_ConditionalExpression)
+
+@given(instance=astm_BinaryExpression_strategy)
+@settings(max_examples=50)
+def test_astm_binaryexpression_instantiation(instance):
+    assert isinstance(instance, astm_BinaryExpression)
+
+@given(instance=astm_RangeExpression_strategy)
+@settings(max_examples=50)
+def test_astm_rangeexpression_instantiation(instance):
+    assert isinstance(instance, astm_RangeExpression)
+
+@given(instance=astm_AggregateExpression_strategy)
+@settings(max_examples=50)
+def test_astm_aggregateexpression_instantiation(instance):
+    assert isinstance(instance, astm_AggregateExpression)
+
+@given(instance=astm_Literal_strategy)
+@settings(max_examples=50)
+def test_astm_literal_instantiation(instance):
+    assert isinstance(instance, astm_Literal)
+
+
+
+@given(instance=astm_Literal_strategy)
+def test_astm_literal_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=astm_CastExpression_strategy)
+@settings(max_examples=50)
+def test_astm_castexpression_instantiation(instance):
+    assert isinstance(instance, astm_CastExpression)
+
+@given(instance=astm_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_astm_unaryexpression_instantiation(instance):
+    assert isinstance(instance, astm_UnaryExpression)
+
+@given(instance=astm_NewExpression_strategy)
+@settings(max_examples=50)
+def test_astm_newexpression_instantiation(instance):
+    assert isinstance(instance, astm_NewExpression)
+
+@given(instance=astm_AnnotationExpression_strategy)
+@settings(max_examples=50)
+def test_astm_annotationexpression_instantiation(instance):
+    assert isinstance(instance, astm_AnnotationExpression)
+
+@given(instance=astm_ArrayAccess_strategy)
+@settings(max_examples=50)
+def test_astm_arrayaccess_instantiation(instance):
+    assert isinstance(instance, astm_ArrayAccess)
+
+@given(instance=astm_LabelAccess_strategy)
+@settings(max_examples=50)
+def test_astm_labelaccess_instantiation(instance):
+    assert isinstance(instance, astm_LabelAccess)
+
+@given(instance=astm_FunctionCallExpression_strategy)
+@settings(max_examples=50)
+def test_astm_functioncallexpression_instantiation(instance):
+    assert isinstance(instance, astm_FunctionCallExpression)
+
 @given(instance=GASTMSyntaxObject_strategy)
 @settings(max_examples=50)
 def test_gastmsyntaxobject_instantiation(instance):
     assert isinstance(instance, GASTMSyntaxObject)
 
-@given(instance=astm::Type_strategy)
+@given(instance=astm_PreprocessorElement_strategy)
 @settings(max_examples=50)
-def test_astm::type_instantiation(instance):
-    assert isinstance(instance, astm::Type)
+def test_astm_preprocessorelement_instantiation(instance):
+    assert isinstance(instance, astm_PreprocessorElement)
 
-@given(instance=astm::Type_strategy)
-def test_astm::type_isConst_type(instance):
-    assert isinstance(instance.isConst, bool)
+@given(instance=astm_DefinitionObject_strategy)
+@settings(max_examples=50)
+def test_astm_definitionobject_instantiation(instance):
+    assert isinstance(instance, astm_DefinitionObject)
+
+@given(instance=astm_Expression_strategy)
+@settings(max_examples=50)
+def test_astm_expression_instantiation(instance):
+    assert isinstance(instance, astm_Expression)
+
+@given(instance=astm_Statement_strategy)
+@settings(max_examples=50)
+def test_astm_statement_instantiation(instance):
+    assert isinstance(instance, astm_Statement)
+
+@given(instance=astm_Type_strategy)
+@settings(max_examples=50)
+def test_astm_type_instantiation(instance):
+    assert isinstance(instance, astm_Type)
 
 
-@given(instance=astm::Type_strategy)
-def test_astm::type_isConst_setter(instance):
-    original = instance.isConst
-    instance.isConst = original
-    assert instance.isConst == original
 
-@given(instance=astm::Type_strategy)
-def test_astm::type_isVolatile_type(instance):
-    assert isinstance(instance.isVolatile, bool)
-
-
-@given(instance=astm::Type_strategy)
-def test_astm::type_isVolatile_setter(instance):
+@given(instance=astm_Type_strategy)
+def test_astm_type_isVolatile_setter(instance):
     original = instance.isVolatile
     instance.isVolatile = original
     assert instance.isVolatile == original
+
+
+
+@given(instance=astm_Type_strategy)
+def test_astm_type_isConst_setter(instance):
+    original = instance.isConst
+    instance.isConst = original
+    assert instance.isConst == original
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=astm::SpecificSelectStatement_strategy)
+@given(instance=astm_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_astm::specificselectstatement_instantiation(instance):
-    assert isinstance(instance, astm::SpecificSelectStatement)
+def test_astm_breakstatement_instantiation(instance):
+    assert isinstance(instance, astm_BreakStatement)
 
-@given(instance=astm::LabeledStatement_strategy)
+@given(instance=astm_LabeledStatement_strategy)
 @settings(max_examples=50)
-def test_astm::labeledstatement_instantiation(instance):
-    assert isinstance(instance, astm::LabeledStatement)
+def test_astm_labeledstatement_instantiation(instance):
+    assert isinstance(instance, astm_LabeledStatement)
 
-@given(instance=astm::ContinueStatement_strategy)
+@given(instance=astm_DeclarationOrDefinitionStatement_strategy)
 @settings(max_examples=50)
-def test_astm::continuestatement_instantiation(instance):
-    assert isinstance(instance, astm::ContinueStatement)
+def test_astm_declarationordefinitionstatement_instantiation(instance):
+    assert isinstance(instance, astm_DeclarationOrDefinitionStatement)
+
+@given(instance=astm_SpecificSelectStatement_strategy)
+@settings(max_examples=50)
+def test_astm_specificselectstatement_instantiation(instance):
+    assert isinstance(instance, astm_SpecificSelectStatement)
+
+@given(instance=astm_ReturnStatement_strategy)
+@settings(max_examples=50)
+def test_astm_returnstatement_instantiation(instance):
+    assert isinstance(instance, astm_ReturnStatement)
+
+@given(instance=astm_ExpressionStatement_strategy)
+@settings(max_examples=50)
+def test_astm_expressionstatement_instantiation(instance):
+    assert isinstance(instance, astm_ExpressionStatement)
+
+@given(instance=astm_TerminateStatement_strategy)
+@settings(max_examples=50)
+def test_astm_terminatestatement_instantiation(instance):
+    assert isinstance(instance, astm_TerminateStatement)
+
+@given(instance=astm_ContinueStatement_strategy)
+@settings(max_examples=50)
+def test_astm_continuestatement_instantiation(instance):
+    assert isinstance(instance, astm_ContinueStatement)
+
+@given(instance=astm_BlockStatement_strategy)
+@settings(max_examples=50)
+def test_astm_blockstatement_instantiation(instance):
+    assert isinstance(instance, astm_BlockStatement)
+
+@given(instance=astm_LoopStatement_strategy)
+@settings(max_examples=50)
+def test_astm_loopstatement_instantiation(instance):
+    assert isinstance(instance, astm_LoopStatement)
+
+@given(instance=astm_ThrowStatement_strategy)
+@settings(max_examples=50)
+def test_astm_throwstatement_instantiation(instance):
+    assert isinstance(instance, astm_ThrowStatement)
+
+@given(instance=astm_DeleteStatement_strategy)
+@settings(max_examples=50)
+def test_astm_deletestatement_instantiation(instance):
+    assert isinstance(instance, astm_DeleteStatement)
+
+@given(instance=astm_IfStatement_strategy)
+@settings(max_examples=50)
+def test_astm_ifstatement_instantiation(instance):
+    assert isinstance(instance, astm_IfStatement)
+
+@given(instance=astm_TryStatement_strategy)
+@settings(max_examples=50)
+def test_astm_trystatement_instantiation(instance):
+    assert isinstance(instance, astm_TryStatement)
+
+@given(instance=astm_EmptyStatement_strategy)
+@settings(max_examples=50)
+def test_astm_emptystatement_instantiation(instance):
+    assert isinstance(instance, astm_EmptyStatement)
+
+@given(instance=astm_JumpStatement_strategy)
+@settings(max_examples=50)
+def test_astm_jumpstatement_instantiation(instance):
+    assert isinstance(instance, astm_JumpStatement)
+
+@given(instance=astm_SwitchStatement_strategy)
+@settings(max_examples=50)
+def test_astm_switchstatement_instantiation(instance):
+    assert isinstance(instance, astm_SwitchStatement)
 
 @given(instance=FormalParameterDefinition_strategy)
 @settings(max_examples=50)
@@ -5191,67 +5785,76 @@ def test_formalparameterdeclaration_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=astm::VariableDeclaration_strategy)
+@given(instance=astm_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_astm::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, astm::VariableDeclaration)
-
-@given(instance=astm::VariableDeclaration_strategy)
-def test_astm::variabledeclaration_isMutable_type(instance):
-    assert isinstance(instance.isMutable, bool)
+def test_astm_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, astm_VariableDeclaration)
 
 
-@given(instance=astm::VariableDeclaration_strategy)
-def test_astm::variabledeclaration_isMutable_setter(instance):
+
+@given(instance=astm_VariableDeclaration_strategy)
+def test_astm_variabledeclaration_isMutable_setter(instance):
     original = instance.isMutable
     instance.isMutable = original
     assert instance.isMutable == original
 
-@given(instance=astm::FunctionDeclaration_strategy)
+@given(instance=astm_FormalParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_astm::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, astm::FunctionDeclaration)
+def test_astm_formalparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, astm_FormalParameterDeclaration)
+
+@given(instance=astm_FunctionDeclaration_strategy)
+@settings(max_examples=50)
+def test_astm_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, astm_FunctionDeclaration)
 
 @given(instance=Definition_strategy)
 @settings(max_examples=50)
 def test_definition_instantiation(instance):
     assert isinstance(instance, Definition)
 
-@given(instance=astm::EnumLiteralDefinition_strategy)
+@given(instance=astm_FunctionDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::enumliteraldefinition_instantiation(instance):
-    assert isinstance(instance, astm::EnumLiteralDefinition)
+def test_astm_functiondefinition_instantiation(instance):
+    assert isinstance(instance, astm_FunctionDefinition)
 
-@given(instance=astm::DataDefinition_strategy)
+@given(instance=astm_SpecificTriggerDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::datadefinition_instantiation(instance):
-    assert isinstance(instance, astm::DataDefinition)
+def test_astm_specifictriggerdefinition_instantiation(instance):
+    assert isinstance(instance, astm_SpecificTriggerDefinition)
 
-@given(instance=astm::DataDefinition_strategy)
-def test_astm::datadefinition_isMutable_type(instance):
-    assert isinstance(instance.isMutable, bool)
+@given(instance=astm_DataDefinition_strategy)
+@settings(max_examples=50)
+def test_astm_datadefinition_instantiation(instance):
+    assert isinstance(instance, astm_DataDefinition)
 
 
-@given(instance=astm::DataDefinition_strategy)
-def test_astm::datadefinition_isMutable_setter(instance):
+
+@given(instance=astm_DataDefinition_strategy)
+def test_astm_datadefinition_isMutable_setter(instance):
     original = instance.isMutable
     instance.isMutable = original
     assert instance.isMutable == original
 
-@given(instance=astm::SpecificTriggerDefinition_strategy)
+@given(instance=astm_EnumLiteralDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::specifictriggerdefinition_instantiation(instance):
-    assert isinstance(instance, astm::SpecificTriggerDefinition)
-
-@given(instance=astm::FunctionDefinition_strategy)
-@settings(max_examples=50)
-def test_astm::functiondefinition_instantiation(instance):
-    assert isinstance(instance, astm::FunctionDefinition)
+def test_astm_enumliteraldefinition_instantiation(instance):
+    assert isinstance(instance, astm_EnumLiteralDefinition)
 
 @given(instance=TypeReference_strategy)
 @settings(max_examples=50)
 def test_typereference_instantiation(instance):
     assert isinstance(instance, TypeReference)
+
+@given(instance=astm_NamedTypeReference_strategy)
+@settings(max_examples=50)
+def test_astm_namedtypereference_instantiation(instance):
+    assert isinstance(instance, astm_NamedTypeReference)
+
+@given(instance=astm_UnnamedTypeReference_strategy)
+@settings(max_examples=50)
+def test_astm_unnamedtypereference_instantiation(instance):
+    assert isinstance(instance, astm_UnnamedTypeReference)
 
 @given(instance=Name_strategy)
 @settings(max_examples=50)
@@ -5263,15 +5866,15 @@ def test_name_instantiation(instance):
 def test_declarationordefinition_instantiation(instance):
     assert isinstance(instance, DeclarationOrDefinition)
 
-@given(instance=astm::Declaration_strategy)
+@given(instance=astm_Declaration_strategy)
 @settings(max_examples=50)
-def test_astm::declaration_instantiation(instance):
-    assert isinstance(instance, astm::Declaration)
+def test_astm_declaration_instantiation(instance):
+    assert isinstance(instance, astm_Declaration)
 
-@given(instance=astm::Definition_strategy)
+@given(instance=astm_Definition_strategy)
 @settings(max_examples=50)
-def test_astm::definition_instantiation(instance):
-    assert isinstance(instance, astm::Definition)
+def test_astm_definition_instantiation(instance):
+    assert isinstance(instance, astm_Definition)
 
 @given(instance=ProgramScope_strategy)
 @settings(max_examples=50)
@@ -5283,106 +5886,123 @@ def test_programscope_instantiation(instance):
 def test_othersyntaxobject_instantiation(instance):
     assert isinstance(instance, OtherSyntaxObject)
 
-@given(instance=astm::Dimension_strategy)
+@given(instance=astm_Dimension_strategy)
 @settings(max_examples=50)
-def test_astm::dimension_instantiation(instance):
-    assert isinstance(instance, astm::Dimension)
+def test_astm_dimension_instantiation(instance):
+    assert isinstance(instance, astm_Dimension)
 
-@given(instance=astm::Name_strategy)
+@given(instance=astm_Name_strategy)
 @settings(max_examples=50)
-def test_astm::name_instantiation(instance):
-    assert isinstance(instance, astm::Name)
-
-@given(instance=astm::Name_strategy)
-def test_astm::name_nameString_type(instance):
-    assert isinstance(instance.nameString, str)
+def test_astm_name_instantiation(instance):
+    assert isinstance(instance, astm_Name)
 
 
-@given(instance=astm::Name_strategy)
-def test_astm::name_nameString_setter(instance):
+
+@given(instance=astm_Name_strategy)
+def test_astm_name_nameString_setter(instance):
     original = instance.nameString
     instance.nameString = original
     assert instance.nameString == original
 
-@given(instance=astm::DerivesFrom_strategy)
+@given(instance=astm_FunctionMemberAttribute_strategy)
 @settings(max_examples=50)
-def test_astm::derivesfrom_instantiation(instance):
-    assert isinstance(instance, astm::DerivesFrom)
+def test_astm_functionmemberattribute_instantiation(instance):
+    assert isinstance(instance, astm_FunctionMemberAttribute)
 
-@given(instance=astm::DerivesFrom_strategy)
-def test_astm::derivesfrom_isVirtual_type(instance):
-    assert isinstance(instance.isVirtual, bool)
+@given(instance=astm_DerivesFrom_strategy)
+@settings(max_examples=50)
+def test_astm_derivesfrom_instantiation(instance):
+    assert isinstance(instance, astm_DerivesFrom)
 
 
-@given(instance=astm::DerivesFrom_strategy)
-def test_astm::derivesfrom_isVirtual_setter(instance):
+
+@given(instance=astm_DerivesFrom_strategy)
+def test_astm_derivesfrom_isVirtual_setter(instance):
     original = instance.isVirtual
     instance.isVirtual = original
     assert instance.isVirtual == original
 
-@given(instance=astm::CompilationUnit_strategy)
+@given(instance=astm_VirtualSpecification_strategy)
 @settings(max_examples=50)
-def test_astm::compilationunit_instantiation(instance):
-    assert isinstance(instance, astm::CompilationUnit)
+def test_astm_virtualspecification_instantiation(instance):
+    assert isinstance(instance, astm_VirtualSpecification)
 
-@given(instance=astm::CompilationUnit_strategy)
-def test_astm::compilationunit_language_type(instance):
-    assert isinstance(instance.language, str)
+@given(instance=astm_SwitchCase_strategy)
+@settings(max_examples=50)
+def test_astm_switchcase_instantiation(instance):
+    assert isinstance(instance, astm_SwitchCase)
+
+@given(instance=astm_CatchBlock_strategy)
+@settings(max_examples=50)
+def test_astm_catchblock_instantiation(instance):
+    assert isinstance(instance, astm_CatchBlock)
+
+@given(instance=astm_CompilationUnit_strategy)
+@settings(max_examples=50)
+def test_astm_compilationunit_instantiation(instance):
+    assert isinstance(instance, astm_CompilationUnit)
 
 
-@given(instance=astm::CompilationUnit_strategy)
-def test_astm::compilationunit_language_setter(instance):
+
+@given(instance=astm_CompilationUnit_strategy)
+def test_astm_compilationunit_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=astm::EntryDefinition_strategy)
+@given(instance=astm_EntryDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::entrydefinition_instantiation(instance):
-    assert isinstance(instance, astm::EntryDefinition)
+def test_astm_entrydefinition_instantiation(instance):
+    assert isinstance(instance, astm_EntryDefinition)
 
 @given(instance=VirtualSpecification_strategy)
 @settings(max_examples=50)
 def test_virtualspecification_instantiation(instance):
     assert isinstance(instance, VirtualSpecification)
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
+@given(instance=astm_NonVirtual_strategy)
 @settings(max_examples=50)
-def test_astm::functionmemberattributes_instantiation(instance):
-    assert isinstance(instance, astm::FunctionMemberAttributes)
+def test_astm_nonvirtual_instantiation(instance):
+    assert isinstance(instance, astm_NonVirtual)
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
-def test_astm::functionmemberattributes_isFriend_type(instance):
-    assert isinstance(instance.isFriend, bool)
+@given(instance=astm_Virtual_strategy)
+@settings(max_examples=50)
+def test_astm_virtual_instantiation(instance):
+    assert isinstance(instance, astm_Virtual)
+
+@given(instance=astm_PureVirtual_strategy)
+@settings(max_examples=50)
+def test_astm_purevirtual_instantiation(instance):
+    assert isinstance(instance, astm_PureVirtual)
+
+@given(instance=astm_FunctionMemberAttributes_strategy)
+@settings(max_examples=50)
+def test_astm_functionmemberattributes_instantiation(instance):
+    assert isinstance(instance, astm_FunctionMemberAttributes)
 
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
-def test_astm::functionmemberattributes_isFriend_setter(instance):
-    original = instance.isFriend
-    instance.isFriend = original
-    assert instance.isFriend == original
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
-def test_astm::functionmemberattributes_isThisConst_type(instance):
-    assert isinstance(instance.isThisConst, bool)
+@given(instance=astm_FunctionMemberAttributes_strategy)
+def test_astm_functionmemberattributes_isInline_setter(instance):
+    original = instance.isInline
+    instance.isInline = original
+    assert instance.isInline == original
 
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
-def test_astm::functionmemberattributes_isThisConst_setter(instance):
+
+@given(instance=astm_FunctionMemberAttributes_strategy)
+def test_astm_functionmemberattributes_isThisConst_setter(instance):
     original = instance.isThisConst
     instance.isThisConst = original
     assert instance.isThisConst == original
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
-def test_astm::functionmemberattributes_isInline_type(instance):
-    assert isinstance(instance.isInline, bool)
 
 
-@given(instance=astm::FunctionMemberAttributes_strategy)
-def test_astm::functionmemberattributes_isInline_setter(instance):
-    original = instance.isInline
-    instance.isInline = original
-    assert instance.isInline == original
+@given(instance=astm_FunctionMemberAttributes_strategy)
+def test_astm_functionmemberattributes_isFriend_setter(instance):
+    original = instance.isFriend
+    instance.isFriend = original
+    assert instance.isFriend == original
 
 @given(instance=FunctionScope_strategy)
 @settings(max_examples=50)
@@ -5394,52 +6014,71 @@ def test_functionscope_instantiation(instance):
 def test_scope_instantiation(instance):
     assert isinstance(instance, Scope)
 
+@given(instance=astm_ProgramScope_strategy)
+@settings(max_examples=50)
+def test_astm_programscope_instantiation(instance):
+    assert isinstance(instance, astm_ProgramScope)
+
+@given(instance=astm_GlobalScope_strategy)
+@settings(max_examples=50)
+def test_astm_globalscope_instantiation(instance):
+    assert isinstance(instance, astm_GlobalScope)
+
+@given(instance=astm_FunctionScope_strategy)
+@settings(max_examples=50)
+def test_astm_functionscope_instantiation(instance):
+    assert isinstance(instance, astm_FunctionScope)
+
+@given(instance=astm_AggregateScope_strategy)
+@settings(max_examples=50)
+def test_astm_aggregatescope_instantiation(instance):
+    assert isinstance(instance, astm_AggregateScope)
+
+@given(instance=astm_BlockScope_strategy)
+@settings(max_examples=50)
+def test_astm_blockscope_instantiation(instance):
+    assert isinstance(instance, astm_BlockScope)
+
 @given(instance=DefinitionObject_strategy)
 @settings(max_examples=50)
 def test_definitionobject_instantiation(instance):
     assert isinstance(instance, DefinitionObject)
 
-@given(instance=astm::DeclarationOrDefinition_strategy)
+@given(instance=astm_LabelDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::declarationordefinition_instantiation(instance):
-    assert isinstance(instance, astm::DeclarationOrDefinition)
+def test_astm_labeldefinition_instantiation(instance):
+    assert isinstance(instance, astm_LabelDefinition)
 
-@given(instance=astm::DeclarationOrDefinition_strategy)
-def test_astm::declarationordefinition_linkageSpecifier_type(instance):
-    assert isinstance(instance.linkageSpecifier, str)
+@given(instance=astm_TypeDefinition_strategy)
+@settings(max_examples=50)
+def test_astm_typedefinition_instantiation(instance):
+    assert isinstance(instance, astm_TypeDefinition)
 
-
-@given(instance=astm::DeclarationOrDefinition_strategy)
-def test_astm::declarationordefinition_linkageSpecifier_setter(instance):
-    original = instance.linkageSpecifier
-    instance.linkageSpecifier = original
-    assert instance.linkageSpecifier == original
-
-@given(instance=astm::DeclarationOrDefinition_strategy)
-def test_astm::declarationordefinition_isRegister_type(instance):
-    assert isinstance(instance.isRegister, bool)
+@given(instance=astm_DeclarationOrDefinition_strategy)
+@settings(max_examples=50)
+def test_astm_declarationordefinition_instantiation(instance):
+    assert isinstance(instance, astm_DeclarationOrDefinition)
 
 
-@given(instance=astm::DeclarationOrDefinition_strategy)
-def test_astm::declarationordefinition_isRegister_setter(instance):
+
+@given(instance=astm_DeclarationOrDefinition_strategy)
+def test_astm_declarationordefinition_isRegister_setter(instance):
     original = instance.isRegister
     instance.isRegister = original
     assert instance.isRegister == original
 
-@given(instance=astm::LabelDefinition_strategy)
-@settings(max_examples=50)
-def test_astm::labeldefinition_instantiation(instance):
-    assert isinstance(instance, astm::LabelDefinition)
 
-@given(instance=astm::NameSpaceDefinition_strategy)
-@settings(max_examples=50)
-def test_astm::namespacedefinition_instantiation(instance):
-    assert isinstance(instance, astm::NameSpaceDefinition)
 
-@given(instance=astm::TypeDefinition_strategy)
+@given(instance=astm_DeclarationOrDefinition_strategy)
+def test_astm_declarationordefinition_linkageSpecifier_setter(instance):
+    original = instance.linkageSpecifier
+    instance.linkageSpecifier = original
+    assert instance.linkageSpecifier == original
+
+@given(instance=astm_NameSpaceDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::typedefinition_instantiation(instance):
-    assert isinstance(instance, astm::TypeDefinition)
+def test_astm_namespacedefinition_instantiation(instance):
+    assert isinstance(instance, astm_NameSpaceDefinition)
 
 @given(instance=GlobalScope_strategy)
 @settings(max_examples=50)
@@ -5456,15 +6095,15 @@ def test_compilationunit_instantiation(instance):
 def test_gastmsemanticobject_instantiation(instance):
     assert isinstance(instance, GASTMSemanticObject)
 
-@given(instance=astm::Scope_strategy)
+@given(instance=astm_Scope_strategy)
 @settings(max_examples=50)
-def test_astm::scope_instantiation(instance):
-    assert isinstance(instance, astm::Scope)
+def test_astm_scope_instantiation(instance):
+    assert isinstance(instance, astm_Scope)
 
-@given(instance=astm::Project_strategy)
+@given(instance=astm_Project_strategy)
 @settings(max_examples=50)
-def test_astm::project_instantiation(instance):
-    assert isinstance(instance, astm::Project)
+def test_astm_project_instantiation(instance):
+    assert isinstance(instance, astm_Project)
 
 @given(instance=SourceFile_strategy)
 @settings(max_examples=50)
@@ -5476,120 +6115,105 @@ def test_sourcefile_instantiation(instance):
 def test_gastmsourceobject_instantiation(instance):
     assert isinstance(instance, GASTMSourceObject)
 
-@given(instance=astm::SourceLocation_strategy)
+@given(instance=astm_SourceLocation_strategy)
 @settings(max_examples=50)
-def test_astm::sourcelocation_instantiation(instance):
-    assert isinstance(instance, astm::SourceLocation)
-
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_endColumn_type(instance):
-    assert isinstance(instance.endColumn, int)
+def test_astm_sourcelocation_instantiation(instance):
+    assert isinstance(instance, astm_SourceLocation)
 
 
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_endColumn_setter(instance):
-    original = instance.endColumn
-    instance.endColumn = original
-    assert instance.endColumn == original
 
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_endLine_type(instance):
-    assert isinstance(instance.endLine, int)
-
-
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_endLine_setter(instance):
-    original = instance.endLine
-    instance.endLine = original
-    assert instance.endLine == original
-
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_startLine_type(instance):
-    assert isinstance(instance.startLine, int)
-
-
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_startLine_setter(instance):
+@given(instance=astm_SourceLocation_strategy)
+def test_astm_sourcelocation_startLine_setter(instance):
     original = instance.startLine
     instance.startLine = original
     assert instance.startLine == original
 
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_startColumn_type(instance):
-    assert isinstance(instance.startColumn, int)
 
 
-@given(instance=astm::SourceLocation_strategy)
-def test_astm::sourcelocation_startColumn_setter(instance):
+@given(instance=astm_SourceLocation_strategy)
+def test_astm_sourcelocation_startColumn_setter(instance):
     original = instance.startColumn
     instance.startColumn = original
     assert instance.startColumn == original
 
-@given(instance=astm::SourceFile_strategy)
+
+
+@given(instance=astm_SourceLocation_strategy)
+def test_astm_sourcelocation_endLine_setter(instance):
+    original = instance.endLine
+    instance.endLine = original
+    assert instance.endLine == original
+
+
+
+@given(instance=astm_SourceLocation_strategy)
+def test_astm_sourcelocation_endColumn_setter(instance):
+    original = instance.endColumn
+    instance.endColumn = original
+    assert instance.endColumn == original
+
+@given(instance=astm_SourceFile_strategy)
 @settings(max_examples=50)
-def test_astm::sourcefile_instantiation(instance):
-    assert isinstance(instance, astm::SourceFile)
-
-@given(instance=astm::SourceFile_strategy)
-def test_astm::sourcefile_pathName_type(instance):
-    assert isinstance(instance.pathName, str)
+def test_astm_sourcefile_instantiation(instance):
+    assert isinstance(instance, astm_SourceFile)
 
 
-@given(instance=astm::SourceFile_strategy)
-def test_astm::sourcefile_pathName_setter(instance):
+
+@given(instance=astm_SourceFile_strategy)
+def test_astm_sourcefile_pathName_setter(instance):
     original = instance.pathName
     instance.pathName = original
     assert instance.pathName == original
 
-@given(instance=astm::ActualParameter_strategy)
+@given(instance=astm_ActualParameter_strategy)
 @settings(max_examples=50)
-def test_astm::actualparameter_instantiation(instance):
-    assert isinstance(instance, astm::ActualParameter)
+def test_astm_actualparameter_instantiation(instance):
+    assert isinstance(instance, astm_ActualParameter)
 
-@given(instance=astm::BinaryOperator_strategy)
+@given(instance=astm_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_astm::binaryoperator_instantiation(instance):
-    assert isinstance(instance, astm::BinaryOperator)
+def test_astm_binaryoperator_instantiation(instance):
+    assert isinstance(instance, astm_BinaryOperator)
 
-@given(instance=astm::UnaryOperator_strategy)
+@given(instance=astm_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_astm::unaryoperator_instantiation(instance):
-    assert isinstance(instance, astm::UnaryOperator)
+def test_astm_unaryoperator_instantiation(instance):
+    assert isinstance(instance, astm_UnaryOperator)
 
-@given(instance=astm::AccessKind_strategy)
+@given(instance=astm_AccessKind_strategy)
 @settings(max_examples=50)
-def test_astm::accesskind_instantiation(instance):
-    assert isinstance(instance, astm::AccessKind)
+def test_astm_accesskind_instantiation(instance):
+    assert isinstance(instance, astm_AccessKind)
 
-@given(instance=astm::DataType_strategy)
+@given(instance=astm_DataType_strategy)
 @settings(max_examples=50)
-def test_astm::datatype_instantiation(instance):
-    assert isinstance(instance, astm::DataType)
+def test_astm_datatype_instantiation(instance):
+    assert isinstance(instance, astm_DataType)
 
-@given(instance=astm::StorageSpecification_strategy)
+@given(instance=astm_StorageSpecification_strategy)
 @settings(max_examples=50)
-def test_astm::storagespecification_instantiation(instance):
-    assert isinstance(instance, astm::StorageSpecification)
+def test_astm_storagespecification_instantiation(instance):
+    assert isinstance(instance, astm_StorageSpecification)
 
-@given(instance=astm::OtherSyntaxObject_strategy)
+@given(instance=astm_OtherSyntaxObject_strategy)
 @settings(max_examples=50)
-def test_astm::othersyntaxobject_instantiation(instance):
-    assert isinstance(instance, astm::OtherSyntaxObject)
+def test_astm_othersyntaxobject_instantiation(instance):
+    assert isinstance(instance, astm_OtherSyntaxObject)
 
-@given(instance=astm::GASTMSemanticObject_strategy)
+@given(instance=astm_GASTMSemanticObject_strategy)
 @settings(max_examples=50)
-def test_astm::gastmsemanticobject_instantiation(instance):
-    assert isinstance(instance, astm::GASTMSemanticObject)
+def test_astm_gastmsemanticobject_instantiation(instance):
+    assert isinstance(instance, astm_GASTMSemanticObject)
 
-@given(instance=astm::GASTMSourceObject_strategy)
+@given(instance=astm_GASTMSourceObject_strategy)
 @settings(max_examples=50)
-def test_astm::gastmsourceobject_instantiation(instance):
-    assert isinstance(instance, astm::GASTMSourceObject)
+def test_astm_gastmsourceobject_instantiation(instance):
+    assert isinstance(instance, astm_GASTMSourceObject)
 
-@given(instance=astm::GASTMObject_strategy)
+@given(instance=astm_GASTMObject_strategy)
 @settings(max_examples=50)
-def test_astm::gastmobject_instantiation(instance):
-    assert isinstance(instance, astm::GASTMObject)
+def test_astm_gastmobject_instantiation(instance):
+    assert isinstance(instance, astm_GASTMObject)
 
 @given(instance=AnnotationExpression_strategy)
 @settings(max_examples=50)
@@ -5601,58 +6225,49 @@ def test_annotationexpression_instantiation(instance):
 def test_preprocessorelement_instantiation(instance):
     assert isinstance(instance, PreprocessorElement)
 
-@given(instance=astm::Comment_strategy)
+@given(instance=astm_IncludeUnit_strategy)
 @settings(max_examples=50)
-def test_astm::comment_instantiation(instance):
-    assert isinstance(instance, astm::Comment)
+def test_astm_includeunit_instantiation(instance):
+    assert isinstance(instance, astm_IncludeUnit)
 
-@given(instance=astm::Comment_strategy)
-def test_astm::comment_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=astm_MacroCall_strategy)
+@settings(max_examples=50)
+def test_astm_macrocall_instantiation(instance):
+    assert isinstance(instance, astm_MacroCall)
+
+@given(instance=astm_Comment_strategy)
+@settings(max_examples=50)
+def test_astm_comment_instantiation(instance):
+    assert isinstance(instance, astm_Comment)
 
 
-@given(instance=astm::Comment_strategy)
-def test_astm::comment_text_setter(instance):
+
+@given(instance=astm_Comment_strategy)
+def test_astm_comment_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=astm::MacroCall_strategy)
+@given(instance=astm_MacroDefinition_strategy)
 @settings(max_examples=50)
-def test_astm::macrocall_instantiation(instance):
-    assert isinstance(instance, astm::MacroCall)
-
-@given(instance=astm::MacroDefinition_strategy)
-@settings(max_examples=50)
-def test_astm::macrodefinition_instantiation(instance):
-    assert isinstance(instance, astm::MacroDefinition)
-
-@given(instance=astm::MacroDefinition_strategy)
-def test_astm::macrodefinition_macroName_type(instance):
-    assert isinstance(instance.macroName, str)
+def test_astm_macrodefinition_instantiation(instance):
+    assert isinstance(instance, astm_MacroDefinition)
 
 
-@given(instance=astm::MacroDefinition_strategy)
-def test_astm::macrodefinition_macroName_setter(instance):
-    original = instance.macroName
-    instance.macroName = original
-    assert instance.macroName == original
 
-@given(instance=astm::MacroDefinition_strategy)
-def test_astm::macrodefinition_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=astm::MacroDefinition_strategy)
-def test_astm::macrodefinition_body_setter(instance):
+@given(instance=astm_MacroDefinition_strategy)
+def test_astm_macrodefinition_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=astm::IncludeUnit_strategy)
-@settings(max_examples=50)
-def test_astm::includeunit_instantiation(instance):
-    assert isinstance(instance, astm::IncludeUnit)
+
+
+@given(instance=astm_MacroDefinition_strategy)
+def test_astm_macrodefinition_macroName_setter(instance):
+    original = instance.macroName
+    instance.macroName = original
+    assert instance.macroName == original
 
 @given(instance=SourceLocation_strategy)
 @settings(max_examples=50)
@@ -5664,688 +6279,7 @@ def test_sourcelocation_instantiation(instance):
 def test_gastmobject_instantiation(instance):
     assert isinstance(instance, GASTMObject)
 
-@given(instance=astm::GASTMSyntaxObject_strategy)
+@given(instance=astm_GASTMSyntaxObject_strategy)
 @settings(max_examples=50)
-def test_astm::gastmsyntaxobject_instantiation(instance):
-    assert isinstance(instance, astm::GASTMSyntaxObject)
-
-@given(instance=astm::UnionType_strategy)
-@settings(max_examples=50)
-def test_astm::uniontype_instantiation(instance):
-    assert isinstance(instance, astm::UnionType)
-
-@given(instance=astm::StructureType_strategy)
-@settings(max_examples=50)
-def test_astm::structuretype_instantiation(instance):
-    assert isinstance(instance, astm::StructureType)
-
-@given(instance=astm::RangeType_strategy)
-@settings(max_examples=50)
-def test_astm::rangetype_instantiation(instance):
-    assert isinstance(instance, astm::RangeType)
-
-@given(instance=astm::ReferenceType_strategy)
-@settings(max_examples=50)
-def test_astm::referencetype_instantiation(instance):
-    assert isinstance(instance, astm::ReferenceType)
-
-@given(instance=astm::PointerType_strategy)
-@settings(max_examples=50)
-def test_astm::pointertype_instantiation(instance):
-    assert isinstance(instance, astm::PointerType)
-
-@given(instance=astm::CollectionType_strategy)
-@settings(max_examples=50)
-def test_astm::collectiontype_instantiation(instance):
-    assert isinstance(instance, astm::CollectionType)
-
-@given(instance=PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_primitivetype_instantiation(instance):
-    assert isinstance(instance, PrimitiveType)
-
-@given(instance=astm::Byte_strategy)
-@settings(max_examples=50)
-def test_astm::byte_instantiation(instance):
-    assert isinstance(instance, astm::Byte)
-
-@given(instance=astm::Double_strategy)
-@settings(max_examples=50)
-def test_astm::double_instantiation(instance):
-    assert isinstance(instance, astm::Double)
-
-@given(instance=astm::Integer_strategy)
-@settings(max_examples=50)
-def test_astm::integer_instantiation(instance):
-    assert isinstance(instance, astm::Integer)
-
-@given(instance=astm::Character_strategy)
-@settings(max_examples=50)
-def test_astm::character_instantiation(instance):
-    assert isinstance(instance, astm::Character)
-
-@given(instance=astm::Boolean_strategy)
-@settings(max_examples=50)
-def test_astm::boolean_instantiation(instance):
-    assert isinstance(instance, astm::Boolean)
-
-@given(instance=astm::String_strategy)
-@settings(max_examples=50)
-def test_astm::string_instantiation(instance):
-    assert isinstance(instance, astm::String)
-
-@given(instance=astm::Float_strategy)
-@settings(max_examples=50)
-def test_astm::float_instantiation(instance):
-    assert isinstance(instance, astm::Float)
-
-@given(instance=astm::LongDouble_strategy)
-@settings(max_examples=50)
-def test_astm::longdouble_instantiation(instance):
-    assert isinstance(instance, astm::LongDouble)
-
-@given(instance=astm::LongInteger_strategy)
-@settings(max_examples=50)
-def test_astm::longinteger_instantiation(instance):
-    assert isinstance(instance, astm::LongInteger)
-
-@given(instance=astm::ShortInteger_strategy)
-@settings(max_examples=50)
-def test_astm::shortinteger_instantiation(instance):
-    assert isinstance(instance, astm::ShortInteger)
-
-@given(instance=astm::WideCharacter_strategy)
-@settings(max_examples=50)
-def test_astm::widecharacter_instantiation(instance):
-    assert isinstance(instance, astm::WideCharacter)
-
-@given(instance=astm::Void_strategy)
-@settings(max_examples=50)
-def test_astm::void_instantiation(instance):
-    assert isinstance(instance, astm::Void)
-
-@given(instance=astm::ExceptionType_strategy)
-@settings(max_examples=50)
-def test_astm::exceptiontype_instantiation(instance):
-    assert isinstance(instance, astm::ExceptionType)
-
-@given(instance=astm::NonVirtual_strategy)
-@settings(max_examples=50)
-def test_astm::nonvirtual_instantiation(instance):
-    assert isinstance(instance, astm::NonVirtual)
-
-@given(instance=astm::PureVirtual_strategy)
-@settings(max_examples=50)
-def test_astm::purevirtual_instantiation(instance):
-    assert isinstance(instance, astm::PureVirtual)
-
-@given(instance=astm::Virtual_strategy)
-@settings(max_examples=50)
-def test_astm::virtual_instantiation(instance):
-    assert isinstance(instance, astm::Virtual)
-
-@given(instance=StorageSpecification_strategy)
-@settings(max_examples=50)
-def test_storagespecification_instantiation(instance):
-    assert isinstance(instance, StorageSpecification)
-
-@given(instance=astm::NoDef_strategy)
-@settings(max_examples=50)
-def test_astm::nodef_instantiation(instance):
-    assert isinstance(instance, astm::NoDef)
-
-@given(instance=astm::FunctionPersistent_strategy)
-@settings(max_examples=50)
-def test_astm::functionpersistent_instantiation(instance):
-    assert isinstance(instance, astm::FunctionPersistent)
-
-@given(instance=astm::FileLocal_strategy)
-@settings(max_examples=50)
-def test_astm::filelocal_instantiation(instance):
-    assert isinstance(instance, astm::FileLocal)
-
-@given(instance=astm::PerClassMember_strategy)
-@settings(max_examples=50)
-def test_astm::perclassmember_instantiation(instance):
-    assert isinstance(instance, astm::PerClassMember)
-
-@given(instance=astm::External_strategy)
-@settings(max_examples=50)
-def test_astm::external_instantiation(instance):
-    assert isinstance(instance, astm::External)
-
-@given(instance=astm::IntegerlLiteral_strategy)
-@settings(max_examples=50)
-def test_astm::integerlliteral_instantiation(instance):
-    assert isinstance(instance, astm::IntegerlLiteral)
-
-@given(instance=QualifiedIdentifierReference_strategy)
-@settings(max_examples=50)
-def test_qualifiedidentifierreference_instantiation(instance):
-    assert isinstance(instance, QualifiedIdentifierReference)
-
-@given(instance=astm::QualifiedOverData_strategy)
-@settings(max_examples=50)
-def test_astm::qualifiedoverdata_instantiation(instance):
-    assert isinstance(instance, astm::QualifiedOverData)
-
-@given(instance=astm::QualifiedOverPointer_strategy)
-@settings(max_examples=50)
-def test_astm::qualifiedoverpointer_instantiation(instance):
-    assert isinstance(instance, astm::QualifiedOverPointer)
-
-@given(instance=astm::AggregateExpression_strategy)
-@settings(max_examples=50)
-def test_astm::aggregateexpression_instantiation(instance):
-    assert isinstance(instance, astm::AggregateExpression)
-
-@given(instance=ForStatement_strategy)
-@settings(max_examples=50)
-def test_forstatement_instantiation(instance):
-    assert isinstance(instance, ForStatement)
-
-@given(instance=astm::ForCheckAfterStatement_strategy)
-@settings(max_examples=50)
-def test_astm::forcheckafterstatement_instantiation(instance):
-    assert isinstance(instance, astm::ForCheckAfterStatement)
-
-@given(instance=astm::ForCheckBeforeStatement_strategy)
-@settings(max_examples=50)
-def test_astm::forcheckbeforestatement_instantiation(instance):
-    assert isinstance(instance, astm::ForCheckBeforeStatement)
-
-@given(instance=astm::TerminateStatement_strategy)
-@settings(max_examples=50)
-def test_astm::terminatestatement_instantiation(instance):
-    assert isinstance(instance, astm::TerminateStatement)
-
-@given(instance=AccessKind_strategy)
-@settings(max_examples=50)
-def test_accesskind_instantiation(instance):
-    assert isinstance(instance, AccessKind)
-
-@given(instance=astm::Private_strategy)
-@settings(max_examples=50)
-def test_astm::private_instantiation(instance):
-    assert isinstance(instance, astm::Private)
-
-@given(instance=astm::Protected_strategy)
-@settings(max_examples=50)
-def test_astm::protected_instantiation(instance):
-    assert isinstance(instance, astm::Protected)
-
-@given(instance=astm::Public_strategy)
-@settings(max_examples=50)
-def test_astm::public_instantiation(instance):
-    assert isinstance(instance, astm::Public)
-
-@given(instance=astm::ProgramScope_strategy)
-@settings(max_examples=50)
-def test_astm::programscope_instantiation(instance):
-    assert isinstance(instance, astm::ProgramScope)
-
-@given(instance=astm::DefinitionObject_strategy)
-@settings(max_examples=50)
-def test_astm::definitionobject_instantiation(instance):
-    assert isinstance(instance, astm::DefinitionObject)
-
-@given(instance=astm::PreprocessorElement_strategy)
-@settings(max_examples=50)
-def test_astm::preprocessorelement_instantiation(instance):
-    assert isinstance(instance, astm::PreprocessorElement)
-
-@given(instance=astm::GlobalScope_strategy)
-@settings(max_examples=50)
-def test_astm::globalscope_instantiation(instance):
-    assert isinstance(instance, astm::GlobalScope)
-
-@given(instance=astm::AnnotationExpression_strategy)
-@settings(max_examples=50)
-def test_astm::annotationexpression_instantiation(instance):
-    assert isinstance(instance, astm::AnnotationExpression)
-
-@given(instance=astm::LabelAccess_strategy)
-@settings(max_examples=50)
-def test_astm::labelaccess_instantiation(instance):
-    assert isinstance(instance, astm::LabelAccess)
-
-@given(instance=astm::NewExpression_strategy)
-@settings(max_examples=50)
-def test_astm::newexpression_instantiation(instance):
-    assert isinstance(instance, astm::NewExpression)
-
-@given(instance=astm::FunctionMemberAttribute_strategy)
-@settings(max_examples=50)
-def test_astm::functionmemberattribute_instantiation(instance):
-    assert isinstance(instance, astm::FunctionMemberAttribute)
-
-@given(instance=astm::VariableDefinition_strategy)
-@settings(max_examples=50)
-def test_astm::variabledefinition_instantiation(instance):
-    assert isinstance(instance, astm::VariableDefinition)
-
-@given(instance=astm::FormalParameterDeclaration_strategy)
-@settings(max_examples=50)
-def test_astm::formalparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, astm::FormalParameterDeclaration)
-
-@given(instance=astm::VirtualSpecification_strategy)
-@settings(max_examples=50)
-def test_astm::virtualspecification_instantiation(instance):
-    assert isinstance(instance, astm::VirtualSpecification)
-
-@given(instance=astm::FormalParameterDefinition_strategy)
-@settings(max_examples=50)
-def test_astm::formalparameterdefinition_instantiation(instance):
-    assert isinstance(instance, astm::FormalParameterDefinition)
-
-@given(instance=astm::BlockScope_strategy)
-@settings(max_examples=50)
-def test_astm::blockscope_instantiation(instance):
-    assert isinstance(instance, astm::BlockScope)
-
-@given(instance=astm::AggregateScope_strategy)
-@settings(max_examples=50)
-def test_astm::aggregatescope_instantiation(instance):
-    assert isinstance(instance, astm::AggregateScope)
-
-@given(instance=astm::LabelType_strategy)
-@settings(max_examples=50)
-def test_astm::labeltype_instantiation(instance):
-    assert isinstance(instance, astm::LabelType)
-
-@given(instance=astm::NameSpaceType_strategy)
-@settings(max_examples=50)
-def test_astm::namespacetype_instantiation(instance):
-    assert isinstance(instance, astm::NameSpaceType)
-
-@given(instance=astm::FunctionScope_strategy)
-@settings(max_examples=50)
-def test_astm::functionscope_instantiation(instance):
-    assert isinstance(instance, astm::FunctionScope)
-
-@given(instance=astm::Statement_strategy)
-@settings(max_examples=50)
-def test_astm::statement_instantiation(instance):
-    assert isinstance(instance, astm::Statement)
-
-@given(instance=astm::TypeReference_strategy)
-@settings(max_examples=50)
-def test_astm::typereference_instantiation(instance):
-    assert isinstance(instance, astm::TypeReference)
-
-@given(instance=astm::RangeExpression_strategy)
-@settings(max_examples=50)
-def test_astm::rangeexpression_instantiation(instance):
-    assert isinstance(instance, astm::RangeExpression)
-
-@given(instance=astm::ConditionalExpression_strategy)
-@settings(max_examples=50)
-def test_astm::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, astm::ConditionalExpression)
-
-@given(instance=BinaryOperator_strategy)
-@settings(max_examples=50)
-def test_binaryoperator_instantiation(instance):
-    assert isinstance(instance, BinaryOperator)
-
-@given(instance=astm::Or_strategy)
-@settings(max_examples=50)
-def test_astm::or_instantiation(instance):
-    assert isinstance(instance, astm::Or)
-
-@given(instance=astm::SpecificIn_strategy)
-@settings(max_examples=50)
-def test_astm::specificin_instantiation(instance):
-    assert isinstance(instance, astm::SpecificIn)
-
-@given(instance=astm::Modulus_strategy)
-@settings(max_examples=50)
-def test_astm::modulus_instantiation(instance):
-    assert isinstance(instance, astm::Modulus)
-
-@given(instance=astm::BitXor_strategy)
-@settings(max_examples=50)
-def test_astm::bitxor_instantiation(instance):
-    assert isinstance(instance, astm::BitXor)
-
-@given(instance=astm::And_strategy)
-@settings(max_examples=50)
-def test_astm::and_instantiation(instance):
-    assert isinstance(instance, astm::And)
-
-@given(instance=astm::Exponent_strategy)
-@settings(max_examples=50)
-def test_astm::exponent_instantiation(instance):
-    assert isinstance(instance, astm::Exponent)
-
-@given(instance=astm::NotLess_strategy)
-@settings(max_examples=50)
-def test_astm::notless_instantiation(instance):
-    assert isinstance(instance, astm::NotLess)
-
-@given(instance=astm::SpecificConcatString_strategy)
-@settings(max_examples=50)
-def test_astm::specificconcatstring_instantiation(instance):
-    assert isinstance(instance, astm::SpecificConcatString)
-
-@given(instance=astm::SpecificGreaterEqual_strategy)
-@settings(max_examples=50)
-def test_astm::specificgreaterequal_instantiation(instance):
-    assert isinstance(instance, astm::SpecificGreaterEqual)
-
-@given(instance=astm::Greater_strategy)
-@settings(max_examples=50)
-def test_astm::greater_instantiation(instance):
-    assert isinstance(instance, astm::Greater)
-
-@given(instance=astm::Multiply_strategy)
-@settings(max_examples=50)
-def test_astm::multiply_instantiation(instance):
-    assert isinstance(instance, astm::Multiply)
-
-@given(instance=astm::BitAnd_strategy)
-@settings(max_examples=50)
-def test_astm::bitand_instantiation(instance):
-    assert isinstance(instance, astm::BitAnd)
-
-@given(instance=astm::BitOr_strategy)
-@settings(max_examples=50)
-def test_astm::bitor_instantiation(instance):
-    assert isinstance(instance, astm::BitOr)
-
-@given(instance=astm::BitRightShift_strategy)
-@settings(max_examples=50)
-def test_astm::bitrightshift_instantiation(instance):
-    assert isinstance(instance, astm::BitRightShift)
-
-@given(instance=astm::Equal_strategy)
-@settings(max_examples=50)
-def test_astm::equal_instantiation(instance):
-    assert isinstance(instance, astm::Equal)
-
-@given(instance=astm::SpecificLessEqual_strategy)
-@settings(max_examples=50)
-def test_astm::specificlessequal_instantiation(instance):
-    assert isinstance(instance, astm::SpecificLessEqual)
-
-@given(instance=astm::SpecificLike_strategy)
-@settings(max_examples=50)
-def test_astm::specificlike_instantiation(instance):
-    assert isinstance(instance, astm::SpecificLike)
-
-@given(instance=astm::NotEqual_strategy)
-@settings(max_examples=50)
-def test_astm::notequal_instantiation(instance):
-    assert isinstance(instance, astm::NotEqual)
-
-@given(instance=astm::Add_strategy)
-@settings(max_examples=50)
-def test_astm::add_instantiation(instance):
-    assert isinstance(instance, astm::Add)
-
-@given(instance=astm::Divide_strategy)
-@settings(max_examples=50)
-def test_astm::divide_instantiation(instance):
-    assert isinstance(instance, astm::Divide)
-
-@given(instance=astm::BitLeftShift_strategy)
-@settings(max_examples=50)
-def test_astm::bitleftshift_instantiation(instance):
-    assert isinstance(instance, astm::BitLeftShift)
-
-@given(instance=astm::Subtract_strategy)
-@settings(max_examples=50)
-def test_astm::subtract_instantiation(instance):
-    assert isinstance(instance, astm::Subtract)
-
-@given(instance=astm::Assign_strategy)
-@settings(max_examples=50)
-def test_astm::assign_instantiation(instance):
-    assert isinstance(instance, astm::Assign)
-
-@given(instance=astm::NotGreater_strategy)
-@settings(max_examples=50)
-def test_astm::notgreater_instantiation(instance):
-    assert isinstance(instance, astm::NotGreater)
-
-@given(instance=astm::Less_strategy)
-@settings(max_examples=50)
-def test_astm::less_instantiation(instance):
-    assert isinstance(instance, astm::Less)
-
-@given(instance=astm::OperatorAssign_strategy)
-@settings(max_examples=50)
-def test_astm::operatorassign_instantiation(instance):
-    assert isinstance(instance, astm::OperatorAssign)
-
-@given(instance=astm::BinaryExpression_strategy)
-@settings(max_examples=50)
-def test_astm::binaryexpression_instantiation(instance):
-    assert isinstance(instance, astm::BinaryExpression)
-
-@given(instance=ActualParameter_strategy)
-@settings(max_examples=50)
-def test_actualparameter_instantiation(instance):
-    assert isinstance(instance, ActualParameter)
-
-@given(instance=astm::ActualParameterExpression_strategy)
-@settings(max_examples=50)
-def test_astm::actualparameterexpression_instantiation(instance):
-    assert isinstance(instance, astm::ActualParameterExpression)
-
-@given(instance=astm::MissingActualParameter_strategy)
-@settings(max_examples=50)
-def test_astm::missingactualparameter_instantiation(instance):
-    assert isinstance(instance, astm::MissingActualParameter)
-
-@given(instance=astm::FunctionCallExpression_strategy)
-@settings(max_examples=50)
-def test_astm::functioncallexpression_instantiation(instance):
-    assert isinstance(instance, astm::FunctionCallExpression)
-
-@given(instance=IdentifierReference_strategy)
-@settings(max_examples=50)
-def test_identifierreference_instantiation(instance):
-    assert isinstance(instance, IdentifierReference)
-
-@given(instance=NameReference_strategy)
-@settings(max_examples=50)
-def test_namereference_instantiation(instance):
-    assert isinstance(instance, NameReference)
-
-@given(instance=astm::IdentifierReference_strategy)
-@settings(max_examples=50)
-def test_astm::identifierreference_instantiation(instance):
-    assert isinstance(instance, astm::IdentifierReference)
-
-@given(instance=astm::TypeQualifiedIdentifierReference_strategy)
-@settings(max_examples=50)
-def test_astm::typequalifiedidentifierreference_instantiation(instance):
-    assert isinstance(instance, astm::TypeQualifiedIdentifierReference)
-
-@given(instance=astm::QualifiedIdentifierReference_strategy)
-@settings(max_examples=50)
-def test_astm::qualifiedidentifierreference_instantiation(instance):
-    assert isinstance(instance, astm::QualifiedIdentifierReference)
-
-@given(instance=astm::ArrayAccess_strategy)
-@settings(max_examples=50)
-def test_astm::arrayaccess_instantiation(instance):
-    assert isinstance(instance, astm::ArrayAccess)
-
-@given(instance=astm::NameReference_strategy)
-@settings(max_examples=50)
-def test_astm::namereference_instantiation(instance):
-    assert isinstance(instance, astm::NameReference)
-
-@given(instance=astm::Expression_strategy)
-@settings(max_examples=50)
-def test_astm::expression_instantiation(instance):
-    assert isinstance(instance, astm::Expression)
-
-@given(instance=astm::ThrowStatement_strategy)
-@settings(max_examples=50)
-def test_astm::throwstatement_instantiation(instance):
-    assert isinstance(instance, astm::ThrowStatement)
-
-@given(instance=astm::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_astm::unaryexpression_instantiation(instance):
-    assert isinstance(instance, astm::UnaryExpression)
-
-@given(instance=astm::CastExpression_strategy)
-@settings(max_examples=50)
-def test_astm::castexpression_instantiation(instance):
-    assert isinstance(instance, astm::CastExpression)
-
-@given(instance=astm::Literal_strategy)
-@settings(max_examples=50)
-def test_astm::literal_instantiation(instance):
-    assert isinstance(instance, astm::Literal)
-
-@given(instance=astm::Literal_strategy)
-def test_astm::literal_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=astm::Literal_strategy)
-def test_astm::literal_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=CatchBlock_strategy)
-@settings(max_examples=50)
-def test_catchblock_instantiation(instance):
-    assert isinstance(instance, CatchBlock)
-
-@given(instance=astm::TryStatement_strategy)
-@settings(max_examples=50)
-def test_astm::trystatement_instantiation(instance):
-    assert isinstance(instance, astm::TryStatement)
-
-@given(instance=LoopStatement_strategy)
-@settings(max_examples=50)
-def test_loopstatement_instantiation(instance):
-    assert isinstance(instance, LoopStatement)
-
-@given(instance=astm::WhileStatement_strategy)
-@settings(max_examples=50)
-def test_astm::whilestatement_instantiation(instance):
-    assert isinstance(instance, astm::WhileStatement)
-
-@given(instance=astm::DoWhileStatement_strategy)
-@settings(max_examples=50)
-def test_astm::dowhilestatement_instantiation(instance):
-    assert isinstance(instance, astm::DoWhileStatement)
-
-@given(instance=astm::ForStatement_strategy)
-@settings(max_examples=50)
-def test_astm::forstatement_instantiation(instance):
-    assert isinstance(instance, astm::ForStatement)
-
-@given(instance=astm::LoopStatement_strategy)
-@settings(max_examples=50)
-def test_astm::loopstatement_instantiation(instance):
-    assert isinstance(instance, astm::LoopStatement)
-
-@given(instance=astm::ReturnStatement_strategy)
-@settings(max_examples=50)
-def test_astm::returnstatement_instantiation(instance):
-    assert isinstance(instance, astm::ReturnStatement)
-
-@given(instance=astm::SwitchCase_strategy)
-@settings(max_examples=50)
-def test_astm::switchcase_instantiation(instance):
-    assert isinstance(instance, astm::SwitchCase)
-
-@given(instance=SwitchCase_strategy)
-@settings(max_examples=50)
-def test_switchcase_instantiation(instance):
-    assert isinstance(instance, SwitchCase)
-
-@given(instance=astm::CaseBlock_strategy)
-@settings(max_examples=50)
-def test_astm::caseblock_instantiation(instance):
-    assert isinstance(instance, astm::CaseBlock)
-
-@given(instance=astm::DefaultBlock_strategy)
-@settings(max_examples=50)
-def test_astm::defaultblock_instantiation(instance):
-    assert isinstance(instance, astm::DefaultBlock)
-
-@given(instance=astm::VariableCatchBlock_strategy)
-@settings(max_examples=50)
-def test_astm::variablecatchblock_instantiation(instance):
-    assert isinstance(instance, astm::VariableCatchBlock)
-
-@given(instance=astm::TypesCatchBlock_strategy)
-@settings(max_examples=50)
-def test_astm::typescatchblock_instantiation(instance):
-    assert isinstance(instance, astm::TypesCatchBlock)
-
-@given(instance=astm::CatchBlock_strategy)
-@settings(max_examples=50)
-def test_astm::catchblock_instantiation(instance):
-    assert isinstance(instance, astm::CatchBlock)
-
-@given(instance=astm::IfStatement_strategy)
-@settings(max_examples=50)
-def test_astm::ifstatement_instantiation(instance):
-    assert isinstance(instance, astm::IfStatement)
-
-@given(instance=astm::EmptyStatement_strategy)
-@settings(max_examples=50)
-def test_astm::emptystatement_instantiation(instance):
-    assert isinstance(instance, astm::EmptyStatement)
-
-@given(instance=BlockScope_strategy)
-@settings(max_examples=50)
-def test_blockscope_instantiation(instance):
-    assert isinstance(instance, BlockScope)
-
-@given(instance=astm::BlockStatement_strategy)
-@settings(max_examples=50)
-def test_astm::blockstatement_instantiation(instance):
-    assert isinstance(instance, astm::BlockStatement)
-
-@given(instance=astm::SwitchStatement_strategy)
-@settings(max_examples=50)
-def test_astm::switchstatement_instantiation(instance):
-    assert isinstance(instance, astm::SwitchStatement)
-
-@given(instance=astm::BreakStatement_strategy)
-@settings(max_examples=50)
-def test_astm::breakstatement_instantiation(instance):
-    assert isinstance(instance, astm::BreakStatement)
-
-@given(instance=astm::JumpStatement_strategy)
-@settings(max_examples=50)
-def test_astm::jumpstatement_instantiation(instance):
-    assert isinstance(instance, astm::JumpStatement)
-
-@given(instance=astm::ExpressionStatement_strategy)
-@settings(max_examples=50)
-def test_astm::expressionstatement_instantiation(instance):
-    assert isinstance(instance, astm::ExpressionStatement)
-
-@given(instance=astm::DeclarationOrDefinitionStatement_strategy)
-@settings(max_examples=50)
-def test_astm::declarationordefinitionstatement_instantiation(instance):
-    assert isinstance(instance, astm::DeclarationOrDefinitionStatement)
-
-@given(instance=astm::DeleteStatement_strategy)
-@settings(max_examples=50)
-def test_astm::deletestatement_instantiation(instance):
-    assert isinstance(instance, astm::DeleteStatement)
-
-@given(instance=astm::NamedTypeReference_strategy)
-@settings(max_examples=50)
-def test_astm::namedtypereference_instantiation(instance):
-    assert isinstance(instance, astm::NamedTypeReference)
-
-@given(instance=astm::UnnamedTypeReference_strategy)
-@settings(max_examples=50)
-def test_astm::unnamedtypereference_instantiation(instance):
-    assert isinstance(instance, astm::UnnamedTypeReference)
+def test_astm_gastmsyntaxobject_instantiation(instance):
+    assert isinstance(instance, astm_GASTMSyntaxObject)

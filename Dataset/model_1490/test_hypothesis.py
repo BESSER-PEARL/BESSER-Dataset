@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    extendedPetriNets::OutputArc,
-    extendedPetriNets::InputArc,
-    extendedPetriNets::Transition,
+from python_code import (
+    extendedPetriNets_OutputArc,
+    extendedPetriNets_InputArc,
+    extendedPetriNets_Transition,
     GenericPlace,
-    extendedPetriNets::Place,
-    extendedPetriNets::InputPort,
-    extendedPetriNets::OutputPort,
-    extendedPetriNets::GenericPlace,
-    extendedPetriNets::PetriNet,
+    extendedPetriNets_InputPort,
+    extendedPetriNets_Place,
+    extendedPetriNets_OutputPort,
+    extendedPetriNets_GenericPlace,
+    extendedPetriNets_PetriNet,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_extendedpetrinets::outputarc_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::OutputArc)
+def test_extendedpetrinets_outputarc_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_OutputArc)
 
 
-def test_extendedpetrinets::outputarc_constructor_exists():
-    assert callable(extendedPetriNets::OutputArc.__init__)
+def test_extendedpetrinets_outputarc_constructor_exists():
+    assert callable(extendedPetriNets_OutputArc.__init__)
 
 
-def test_extendedpetrinets::outputarc_constructor_args():
-    sig = inspect.signature(extendedPetriNets::OutputArc.__init__)
+def test_extendedpetrinets_outputarc_constructor_args():
+    sig = inspect.signature(extendedPetriNets_OutputArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_extendedpetrinets::outputarc_has_weight():
-    assert hasattr(extendedPetriNets::OutputArc, "weight")
+def test_extendedpetrinets_outputarc_has_weight():
+    assert hasattr(extendedPetriNets_OutputArc, "weight")
     descriptor = None
-    for klass in extendedPetriNets::OutputArc.__mro__:
+    for klass in extendedPetriNets_OutputArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -47,23 +47,23 @@ def test_extendedpetrinets::outputarc_has_weight():
 
 
 
-def test_extendedpetrinets::inputarc_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::InputArc)
+def test_extendedpetrinets_inputarc_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_InputArc)
 
 
-def test_extendedpetrinets::inputarc_constructor_exists():
-    assert callable(extendedPetriNets::InputArc.__init__)
+def test_extendedpetrinets_inputarc_constructor_exists():
+    assert callable(extendedPetriNets_InputArc.__init__)
 
 
-def test_extendedpetrinets::inputarc_constructor_args():
-    sig = inspect.signature(extendedPetriNets::InputArc.__init__)
+def test_extendedpetrinets_inputarc_constructor_args():
+    sig = inspect.signature(extendedPetriNets_InputArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_extendedpetrinets::inputarc_has_weight():
-    assert hasattr(extendedPetriNets::InputArc, "weight")
+def test_extendedpetrinets_inputarc_has_weight():
+    assert hasattr(extendedPetriNets_InputArc, "weight")
     descriptor = None
-    for klass in extendedPetriNets::InputArc.__mro__:
+    for klass in extendedPetriNets_InputArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -71,33 +71,33 @@ def test_extendedpetrinets::inputarc_has_weight():
 
 
 
-def test_extendedpetrinets::transition_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::Transition)
+def test_extendedpetrinets_transition_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_Transition)
 
 
-def test_extendedpetrinets::transition_constructor_exists():
-    assert callable(extendedPetriNets::Transition.__init__)
+def test_extendedpetrinets_transition_constructor_exists():
+    assert callable(extendedPetriNets_Transition.__init__)
 
 
-def test_extendedpetrinets::transition_constructor_args():
-    sig = inspect.signature(extendedPetriNets::Transition.__init__)
+def test_extendedpetrinets_transition_constructor_args():
+    sig = inspect.signature(extendedPetriNets_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "label" in params, "Missing parameter 'label'"
 
-def test_extendedpetrinets::transition_has_name():
-    assert hasattr(extendedPetriNets::Transition, "name")
+def test_extendedpetrinets_transition_has_name():
+    assert hasattr(extendedPetriNets_Transition, "name")
     descriptor = None
-    for klass in extendedPetriNets::Transition.__mro__:
+    for klass in extendedPetriNets_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_extendedpetrinets::transition_has_label():
-    assert hasattr(extendedPetriNets::Transition, "label")
+def test_extendedpetrinets_transition_has_label():
+    assert hasattr(extendedPetriNets_Transition, "label")
     descriptor = None
-    for klass in extendedPetriNets::Transition.__mro__:
+    for klass in extendedPetriNets_Transition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -119,109 +119,109 @@ def test_genericplace_constructor_args():
 
 
 
-def test_extendedpetrinets::place_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::Place)
+def test_extendedpetrinets_inputport_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_InputPort)
 
 
-def test_extendedpetrinets::place_constructor_exists():
-    assert callable(extendedPetriNets::Place.__init__)
+def test_extendedpetrinets_inputport_constructor_exists():
+    assert callable(extendedPetriNets_InputPort.__init__)
 
 
-def test_extendedpetrinets::place_constructor_args():
-    sig = inspect.signature(extendedPetriNets::Place.__init__)
+def test_extendedpetrinets_inputport_constructor_args():
+    sig = inspect.signature(extendedPetriNets_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extendedpetrinets::inputport_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::InputPort)
+def test_extendedpetrinets_place_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_Place)
 
 
-def test_extendedpetrinets::inputport_constructor_exists():
-    assert callable(extendedPetriNets::InputPort.__init__)
+def test_extendedpetrinets_place_constructor_exists():
+    assert callable(extendedPetriNets_Place.__init__)
 
 
-def test_extendedpetrinets::inputport_constructor_args():
-    sig = inspect.signature(extendedPetriNets::InputPort.__init__)
+def test_extendedpetrinets_place_constructor_args():
+    sig = inspect.signature(extendedPetriNets_Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extendedpetrinets::outputport_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::OutputPort)
+def test_extendedpetrinets_outputport_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_OutputPort)
 
 
-def test_extendedpetrinets::outputport_constructor_exists():
-    assert callable(extendedPetriNets::OutputPort.__init__)
+def test_extendedpetrinets_outputport_constructor_exists():
+    assert callable(extendedPetriNets_OutputPort.__init__)
 
 
-def test_extendedpetrinets::outputport_constructor_args():
-    sig = inspect.signature(extendedPetriNets::OutputPort.__init__)
+def test_extendedpetrinets_outputport_constructor_args():
+    sig = inspect.signature(extendedPetriNets_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extendedpetrinets::genericplace_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::GenericPlace)
+def test_extendedpetrinets_genericplace_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_GenericPlace)
 
 
-def test_extendedpetrinets::genericplace_constructor_exists():
-    assert callable(extendedPetriNets::GenericPlace.__init__)
+def test_extendedpetrinets_genericplace_constructor_exists():
+    assert callable(extendedPetriNets_GenericPlace.__init__)
 
 
-def test_extendedpetrinets::genericplace_constructor_args():
-    sig = inspect.signature(extendedPetriNets::GenericPlace.__init__)
+def test_extendedpetrinets_genericplace_constructor_args():
+    sig = inspect.signature(extendedPetriNets_GenericPlace.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfTokens" in params, "Missing parameter 'numberOfTokens'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "capacity" in params, "Missing parameter 'capacity'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_extendedpetrinets::genericplace_has_numberOfTokens():
-    assert hasattr(extendedPetriNets::GenericPlace, "numberOfTokens")
+def test_extendedpetrinets_genericplace_has_numberOfTokens():
+    assert hasattr(extendedPetriNets_GenericPlace, "numberOfTokens")
     descriptor = None
-    for klass in extendedPetriNets::GenericPlace.__mro__:
+    for klass in extendedPetriNets_GenericPlace.__mro__:
         if "numberOfTokens" in klass.__dict__:
             descriptor = klass.__dict__["numberOfTokens"]
             break
     assert isinstance(descriptor, property)
 
-def test_extendedpetrinets::genericplace_has_name():
-    assert hasattr(extendedPetriNets::GenericPlace, "name")
+def test_extendedpetrinets_genericplace_has_capacity():
+    assert hasattr(extendedPetriNets_GenericPlace, "capacity")
     descriptor = None
-    for klass in extendedPetriNets::GenericPlace.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extendedpetrinets::genericplace_has_capacity():
-    assert hasattr(extendedPetriNets::GenericPlace, "capacity")
-    descriptor = None
-    for klass in extendedPetriNets::GenericPlace.__mro__:
+    for klass in extendedPetriNets_GenericPlace.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
     assert isinstance(descriptor, property)
 
+def test_extendedpetrinets_genericplace_has_name():
+    assert hasattr(extendedPetriNets_GenericPlace, "name")
+    descriptor = None
+    for klass in extendedPetriNets_GenericPlace.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extendedpetrinets::petrinet_is_not_abstract():
-    assert not inspect.isabstract(extendedPetriNets::PetriNet)
+
+def test_extendedpetrinets_petrinet_is_not_abstract():
+    assert not inspect.isabstract(extendedPetriNets_PetriNet)
 
 
-def test_extendedpetrinets::petrinet_constructor_exists():
-    assert callable(extendedPetriNets::PetriNet.__init__)
+def test_extendedpetrinets_petrinet_constructor_exists():
+    assert callable(extendedPetriNets_PetriNet.__init__)
 
 
-def test_extendedpetrinets::petrinet_constructor_args():
-    sig = inspect.signature(extendedPetriNets::PetriNet.__init__)
+def test_extendedpetrinets_petrinet_constructor_args():
+    sig = inspect.signature(extendedPetriNets_PetriNet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extendedpetrinets::petrinet_has_name():
-    assert hasattr(extendedPetriNets::PetriNet, "name")
+def test_extendedpetrinets_petrinet_has_name():
+    assert hasattr(extendedPetriNets_PetriNet, "name")
     descriptor = None
-    for klass in extendedPetriNets::PetriNet.__mro__:
+    for klass in extendedPetriNets_PetriNet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -239,18 +239,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-extendedPetriNets::OutputArc_strategy = st.builds(
-    extendedPetriNets::OutputArc,
+extendedPetriNets_OutputArc_strategy = st.builds(
+    extendedPetriNets_OutputArc,
     weight=
         st.integers()
 )
-extendedPetriNets::InputArc_strategy = st.builds(
-    extendedPetriNets::InputArc,
+extendedPetriNets_InputArc_strategy = st.builds(
+    extendedPetriNets_InputArc,
     weight=
         st.integers()
 )
-extendedPetriNets::Transition_strategy = st.builds(
-    extendedPetriNets::Transition,
+extendedPetriNets_Transition_strategy = st.builds(
+    extendedPetriNets_Transition,
     name=
         safe_text,
     label=
@@ -259,85 +259,73 @@ extendedPetriNets::Transition_strategy = st.builds(
 GenericPlace_strategy = st.builds(
     GenericPlace,
 )
-extendedPetriNets::Place_strategy = st.builds(
-    extendedPetriNets::Place,
+extendedPetriNets_InputPort_strategy = st.builds(
+    extendedPetriNets_InputPort,
 )
-extendedPetriNets::InputPort_strategy = st.builds(
-    extendedPetriNets::InputPort,
+extendedPetriNets_Place_strategy = st.builds(
+    extendedPetriNets_Place,
 )
-extendedPetriNets::OutputPort_strategy = st.builds(
-    extendedPetriNets::OutputPort,
+extendedPetriNets_OutputPort_strategy = st.builds(
+    extendedPetriNets_OutputPort,
 )
-extendedPetriNets::GenericPlace_strategy = st.builds(
-    extendedPetriNets::GenericPlace,
+extendedPetriNets_GenericPlace_strategy = st.builds(
+    extendedPetriNets_GenericPlace,
     numberOfTokens=
         st.integers(),
-    name=
-        safe_text,
     capacity=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
-extendedPetriNets::PetriNet_strategy = st.builds(
-    extendedPetriNets::PetriNet,
+extendedPetriNets_PetriNet_strategy = st.builds(
+    extendedPetriNets_PetriNet,
     name=
         safe_text
 )
 
-@given(instance=extendedPetriNets::OutputArc_strategy)
+@given(instance=extendedPetriNets_OutputArc_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::outputarc_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::OutputArc)
-
-@given(instance=extendedPetriNets::OutputArc_strategy)
-def test_extendedpetrinets::outputarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_extendedpetrinets_outputarc_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_OutputArc)
 
 
-@given(instance=extendedPetriNets::OutputArc_strategy)
-def test_extendedpetrinets::outputarc_weight_setter(instance):
+
+@given(instance=extendedPetriNets_OutputArc_strategy)
+def test_extendedpetrinets_outputarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=extendedPetriNets::InputArc_strategy)
+@given(instance=extendedPetriNets_InputArc_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::inputarc_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::InputArc)
-
-@given(instance=extendedPetriNets::InputArc_strategy)
-def test_extendedpetrinets::inputarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_extendedpetrinets_inputarc_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_InputArc)
 
 
-@given(instance=extendedPetriNets::InputArc_strategy)
-def test_extendedpetrinets::inputarc_weight_setter(instance):
+
+@given(instance=extendedPetriNets_InputArc_strategy)
+def test_extendedpetrinets_inputarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=extendedPetriNets::Transition_strategy)
+@given(instance=extendedPetriNets_Transition_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::transition_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::Transition)
-
-@given(instance=extendedPetriNets::Transition_strategy)
-def test_extendedpetrinets::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extendedpetrinets_transition_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_Transition)
 
 
-@given(instance=extendedPetriNets::Transition_strategy)
-def test_extendedpetrinets::transition_name_setter(instance):
+
+@given(instance=extendedPetriNets_Transition_strategy)
+def test_extendedpetrinets_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extendedPetriNets::Transition_strategy)
-def test_extendedpetrinets::transition_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
-@given(instance=extendedPetriNets::Transition_strategy)
-def test_extendedpetrinets::transition_label_setter(instance):
+@given(instance=extendedPetriNets_Transition_strategy)
+def test_extendedpetrinets_transition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -347,71 +335,59 @@ def test_extendedpetrinets::transition_label_setter(instance):
 def test_genericplace_instantiation(instance):
     assert isinstance(instance, GenericPlace)
 
-@given(instance=extendedPetriNets::Place_strategy)
+@given(instance=extendedPetriNets_InputPort_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::place_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::Place)
+def test_extendedpetrinets_inputport_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_InputPort)
 
-@given(instance=extendedPetriNets::InputPort_strategy)
+@given(instance=extendedPetriNets_Place_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::inputport_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::InputPort)
+def test_extendedpetrinets_place_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_Place)
 
-@given(instance=extendedPetriNets::OutputPort_strategy)
+@given(instance=extendedPetriNets_OutputPort_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::outputport_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::OutputPort)
+def test_extendedpetrinets_outputport_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_OutputPort)
 
-@given(instance=extendedPetriNets::GenericPlace_strategy)
+@given(instance=extendedPetriNets_GenericPlace_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::genericplace_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::GenericPlace)
-
-@given(instance=extendedPetriNets::GenericPlace_strategy)
-def test_extendedpetrinets::genericplace_numberOfTokens_type(instance):
-    assert isinstance(instance.numberOfTokens, int)
+def test_extendedpetrinets_genericplace_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_GenericPlace)
 
 
-@given(instance=extendedPetriNets::GenericPlace_strategy)
-def test_extendedpetrinets::genericplace_numberOfTokens_setter(instance):
+
+@given(instance=extendedPetriNets_GenericPlace_strategy)
+def test_extendedpetrinets_genericplace_numberOfTokens_setter(instance):
     original = instance.numberOfTokens
     instance.numberOfTokens = original
     assert instance.numberOfTokens == original
 
-@given(instance=extendedPetriNets::GenericPlace_strategy)
-def test_extendedpetrinets::genericplace_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=extendedPetriNets::GenericPlace_strategy)
-def test_extendedpetrinets::genericplace_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=extendedPetriNets::GenericPlace_strategy)
-def test_extendedpetrinets::genericplace_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
-
-
-@given(instance=extendedPetriNets::GenericPlace_strategy)
-def test_extendedpetrinets::genericplace_capacity_setter(instance):
+@given(instance=extendedPetriNets_GenericPlace_strategy)
+def test_extendedpetrinets_genericplace_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original
 
-@given(instance=extendedPetriNets::PetriNet_strategy)
+
+
+@given(instance=extendedPetriNets_GenericPlace_strategy)
+def test_extendedpetrinets_genericplace_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=extendedPetriNets_PetriNet_strategy)
 @settings(max_examples=50)
-def test_extendedpetrinets::petrinet_instantiation(instance):
-    assert isinstance(instance, extendedPetriNets::PetriNet)
-
-@given(instance=extendedPetriNets::PetriNet_strategy)
-def test_extendedpetrinets::petrinet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extendedpetrinets_petrinet_instantiation(instance):
+    assert isinstance(instance, extendedPetriNets_PetriNet)
 
 
-@given(instance=extendedPetriNets::PetriNet_strategy)
-def test_extendedpetrinets::petrinet_name_setter(instance):
+
+@given(instance=extendedPetriNets_PetriNet_strategy)
+def test_extendedpetrinets_petrinet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

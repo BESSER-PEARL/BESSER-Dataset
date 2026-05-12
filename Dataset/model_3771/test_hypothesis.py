@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rootpkg2::Token,
+from python_code import (
+    rootpkg2_Token,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_rootpkg2::token_is_not_abstract():
-    assert not inspect.isabstract(rootpkg2::Token)
+def test_rootpkg2_token_is_not_abstract():
+    assert not inspect.isabstract(rootpkg2_Token)
 
 
-def test_rootpkg2::token_constructor_exists():
-    assert callable(rootpkg2::Token.__init__)
+def test_rootpkg2_token_constructor_exists():
+    assert callable(rootpkg2_Token.__init__)
 
 
-def test_rootpkg2::token_constructor_args():
-    sig = inspect.signature(rootpkg2::Token.__init__)
+def test_rootpkg2_token_constructor_args():
+    sig = inspect.signature(rootpkg2_Token.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rootpkg2::Token_strategy = st.builds(
-    rootpkg2::Token,
+rootpkg2_Token_strategy = st.builds(
+    rootpkg2_Token,
 )
 
-@given(instance=rootpkg2::Token_strategy)
+@given(instance=rootpkg2_Token_strategy)
 @settings(max_examples=50)
-def test_rootpkg2::token_instantiation(instance):
-    assert isinstance(instance, rootpkg2::Token)
+def test_rootpkg2_token_instantiation(instance):
+    assert isinstance(instance, rootpkg2_Token)

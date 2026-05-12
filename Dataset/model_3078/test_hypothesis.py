@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    esm::DStateEvent,
-    esm::IEsmLayout,
-    esm::DEntityType,
+from python_code import (
+    esm_DStateEvent,
+    esm_IEsmLayout,
+    esm_DEntityType,
     IDiagramRoot,
     IStaticReferenceTarget,
     INavigableMemberContainer,
     IEsmStateModel,
-    esm::EsmSubStateModel,
-    esm::DExpression,
+    esm_EsmSubStateModel,
+    esm_DExpression,
     EsmState,
-    esm::EsmDerivedState,
+    esm_EsmDerivedState,
     IEsmState,
-    esm::EsmConcurrentState,
-    esm::EsmCompositeState,
-    esm::EsmState,
-    esm::DRichText,
-    esm::DState,
-    esm::IEsmState,
+    esm_EsmConcurrentState,
+    esm_EsmCompositeState,
+    esm_EsmState,
+    esm_DRichText,
+    esm_DState,
+    esm_IEsmState,
     IEsmLayout,
-    esm::EsmTransition,
-    esm::IEsmStateModel,
+    esm_EsmTransition,
+    esm_IEsmStateModel,
     DModel,
-    esm::EsmEntityStateModel,
+    esm_EsmEntityStateModel,
     EsmStateKind,
     EsmLayoutDirection,
 )
@@ -39,37 +39,37 @@ from classes import (
 
 
 
-def test_esm::dstateevent_is_not_abstract():
-    assert not inspect.isabstract(esm::DStateEvent)
+def test_esm_dstateevent_is_not_abstract():
+    assert not inspect.isabstract(esm_DStateEvent)
 
 
-def test_esm::dstateevent_constructor_exists():
-    assert callable(esm::DStateEvent.__init__)
+def test_esm_dstateevent_constructor_exists():
+    assert callable(esm_DStateEvent.__init__)
 
 
-def test_esm::dstateevent_constructor_args():
-    sig = inspect.signature(esm::DStateEvent.__init__)
+def test_esm_dstateevent_constructor_args():
+    sig = inspect.signature(esm_DStateEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::iesmlayout_is_not_abstract():
-    assert not inspect.isabstract(esm::IEsmLayout)
+def test_esm_iesmlayout_is_not_abstract():
+    assert not inspect.isabstract(esm_IEsmLayout)
 
 
-def test_esm::iesmlayout_constructor_exists():
-    assert callable(esm::IEsmLayout.__init__)
+def test_esm_iesmlayout_constructor_exists():
+    assert callable(esm_IEsmLayout.__init__)
 
 
-def test_esm::iesmlayout_constructor_args():
-    sig = inspect.signature(esm::IEsmLayout.__init__)
+def test_esm_iesmlayout_constructor_args():
+    sig = inspect.signature(esm_IEsmLayout.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_esm::iesmlayout_has_direction():
-    assert hasattr(esm::IEsmLayout, "direction")
+def test_esm_iesmlayout_has_direction():
+    assert hasattr(esm_IEsmLayout, "direction")
     descriptor = None
-    for klass in esm::IEsmLayout.__mro__:
+    for klass in esm_IEsmLayout.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -77,16 +77,16 @@ def test_esm::iesmlayout_has_direction():
 
 
 
-def test_esm::dentitytype_is_not_abstract():
-    assert not inspect.isabstract(esm::DEntityType)
+def test_esm_dentitytype_is_not_abstract():
+    assert not inspect.isabstract(esm_DEntityType)
 
 
-def test_esm::dentitytype_constructor_exists():
-    assert callable(esm::DEntityType.__init__)
+def test_esm_dentitytype_constructor_exists():
+    assert callable(esm_DEntityType.__init__)
 
 
-def test_esm::dentitytype_constructor_args():
-    sig = inspect.signature(esm::DEntityType.__init__)
+def test_esm_dentitytype_constructor_args():
+    sig = inspect.signature(esm_DEntityType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,30 +147,30 @@ def test_iesmstatemodel_constructor_args():
 
 
 
-def test_esm::esmsubstatemodel_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmSubStateModel)
+def test_esm_esmsubstatemodel_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmSubStateModel)
 
 
-def test_esm::esmsubstatemodel_constructor_exists():
-    assert callable(esm::EsmSubStateModel.__init__)
+def test_esm_esmsubstatemodel_constructor_exists():
+    assert callable(esm_EsmSubStateModel.__init__)
 
 
-def test_esm::esmsubstatemodel_constructor_args():
-    sig = inspect.signature(esm::EsmSubStateModel.__init__)
+def test_esm_esmsubstatemodel_constructor_args():
+    sig = inspect.signature(esm_EsmSubStateModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::dexpression_is_not_abstract():
-    assert not inspect.isabstract(esm::DExpression)
+def test_esm_dexpression_is_not_abstract():
+    assert not inspect.isabstract(esm_DExpression)
 
 
-def test_esm::dexpression_constructor_exists():
-    assert callable(esm::DExpression.__init__)
+def test_esm_dexpression_constructor_exists():
+    assert callable(esm_DExpression.__init__)
 
 
-def test_esm::dexpression_constructor_args():
-    sig = inspect.signature(esm::DExpression.__init__)
+def test_esm_dexpression_constructor_args():
+    sig = inspect.signature(esm_DExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,16 +189,16 @@ def test_esmstate_constructor_args():
 
 
 
-def test_esm::esmderivedstate_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmDerivedState)
+def test_esm_esmderivedstate_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmDerivedState)
 
 
-def test_esm::esmderivedstate_constructor_exists():
-    assert callable(esm::EsmDerivedState.__init__)
+def test_esm_esmderivedstate_constructor_exists():
+    assert callable(esm_EsmDerivedState.__init__)
 
 
-def test_esm::esmderivedstate_constructor_args():
-    sig = inspect.signature(esm::EsmDerivedState.__init__)
+def test_esm_esmderivedstate_constructor_args():
+    sig = inspect.signature(esm_EsmDerivedState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,93 +217,93 @@ def test_iesmstate_constructor_args():
 
 
 
-def test_esm::esmconcurrentstate_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmConcurrentState)
+def test_esm_esmconcurrentstate_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmConcurrentState)
 
 
-def test_esm::esmconcurrentstate_constructor_exists():
-    assert callable(esm::EsmConcurrentState.__init__)
+def test_esm_esmconcurrentstate_constructor_exists():
+    assert callable(esm_EsmConcurrentState.__init__)
 
 
-def test_esm::esmconcurrentstate_constructor_args():
-    sig = inspect.signature(esm::EsmConcurrentState.__init__)
+def test_esm_esmconcurrentstate_constructor_args():
+    sig = inspect.signature(esm_EsmConcurrentState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::esmcompositestate_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmCompositeState)
+def test_esm_esmcompositestate_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmCompositeState)
 
 
-def test_esm::esmcompositestate_constructor_exists():
-    assert callable(esm::EsmCompositeState.__init__)
+def test_esm_esmcompositestate_constructor_exists():
+    assert callable(esm_EsmCompositeState.__init__)
 
 
-def test_esm::esmcompositestate_constructor_args():
-    sig = inspect.signature(esm::EsmCompositeState.__init__)
+def test_esm_esmcompositestate_constructor_args():
+    sig = inspect.signature(esm_EsmCompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::esmstate_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmState)
+def test_esm_esmstate_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmState)
 
 
-def test_esm::esmstate_constructor_exists():
-    assert callable(esm::EsmState.__init__)
+def test_esm_esmstate_constructor_exists():
+    assert callable(esm_EsmState.__init__)
 
 
-def test_esm::esmstate_constructor_args():
-    sig = inspect.signature(esm::EsmState.__init__)
+def test_esm_esmstate_constructor_args():
+    sig = inspect.signature(esm_EsmState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::drichtext_is_not_abstract():
-    assert not inspect.isabstract(esm::DRichText)
+def test_esm_drichtext_is_not_abstract():
+    assert not inspect.isabstract(esm_DRichText)
 
 
-def test_esm::drichtext_constructor_exists():
-    assert callable(esm::DRichText.__init__)
+def test_esm_drichtext_constructor_exists():
+    assert callable(esm_DRichText.__init__)
 
 
-def test_esm::drichtext_constructor_args():
-    sig = inspect.signature(esm::DRichText.__init__)
+def test_esm_drichtext_constructor_args():
+    sig = inspect.signature(esm_DRichText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::dstate_is_not_abstract():
-    assert not inspect.isabstract(esm::DState)
+def test_esm_dstate_is_not_abstract():
+    assert not inspect.isabstract(esm_DState)
 
 
-def test_esm::dstate_constructor_exists():
-    assert callable(esm::DState.__init__)
+def test_esm_dstate_constructor_exists():
+    assert callable(esm_DState.__init__)
 
 
-def test_esm::dstate_constructor_args():
-    sig = inspect.signature(esm::DState.__init__)
+def test_esm_dstate_constructor_args():
+    sig = inspect.signature(esm_DState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::iesmstate_is_not_abstract():
-    assert not inspect.isabstract(esm::IEsmState)
+def test_esm_iesmstate_is_not_abstract():
+    assert not inspect.isabstract(esm_IEsmState)
 
 
-def test_esm::iesmstate_constructor_exists():
-    assert callable(esm::IEsmState.__init__)
+def test_esm_iesmstate_constructor_exists():
+    assert callable(esm_IEsmState.__init__)
 
 
-def test_esm::iesmstate_constructor_args():
-    sig = inspect.signature(esm::IEsmState.__init__)
+def test_esm_iesmstate_constructor_args():
+    sig = inspect.signature(esm_IEsmState.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_esm::iesmstate_has_kind():
-    assert hasattr(esm::IEsmState, "kind")
+def test_esm_iesmstate_has_kind():
+    assert hasattr(esm_IEsmState, "kind")
     descriptor = None
-    for klass in esm::IEsmState.__mro__:
+    for klass in esm_IEsmState.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -325,30 +325,30 @@ def test_iesmlayout_constructor_args():
 
 
 
-def test_esm::esmtransition_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmTransition)
+def test_esm_esmtransition_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmTransition)
 
 
-def test_esm::esmtransition_constructor_exists():
-    assert callable(esm::EsmTransition.__init__)
+def test_esm_esmtransition_constructor_exists():
+    assert callable(esm_EsmTransition.__init__)
 
 
-def test_esm::esmtransition_constructor_args():
-    sig = inspect.signature(esm::EsmTransition.__init__)
+def test_esm_esmtransition_constructor_args():
+    sig = inspect.signature(esm_EsmTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_esm::iesmstatemodel_is_not_abstract():
-    assert not inspect.isabstract(esm::IEsmStateModel)
+def test_esm_iesmstatemodel_is_not_abstract():
+    assert not inspect.isabstract(esm_IEsmStateModel)
 
 
-def test_esm::iesmstatemodel_constructor_exists():
-    assert callable(esm::IEsmStateModel.__init__)
+def test_esm_iesmstatemodel_constructor_exists():
+    assert callable(esm_IEsmStateModel.__init__)
 
 
-def test_esm::iesmstatemodel_constructor_args():
-    sig = inspect.signature(esm::IEsmStateModel.__init__)
+def test_esm_iesmstatemodel_constructor_args():
+    sig = inspect.signature(esm_IEsmStateModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -367,16 +367,16 @@ def test_dmodel_constructor_args():
 
 
 
-def test_esm::esmentitystatemodel_is_not_abstract():
-    assert not inspect.isabstract(esm::EsmEntityStateModel)
+def test_esm_esmentitystatemodel_is_not_abstract():
+    assert not inspect.isabstract(esm_EsmEntityStateModel)
 
 
-def test_esm::esmentitystatemodel_constructor_exists():
-    assert callable(esm::EsmEntityStateModel.__init__)
+def test_esm_esmentitystatemodel_constructor_exists():
+    assert callable(esm_EsmEntityStateModel.__init__)
 
 
-def test_esm::esmentitystatemodel_constructor_args():
-    sig = inspect.signature(esm::EsmEntityStateModel.__init__)
+def test_esm_esmentitystatemodel_constructor_args():
+    sig = inspect.signature(esm_EsmEntityStateModel.__init__)
     params = list(sig.parameters.keys())
 
 def test_esmstatekind_exists():
@@ -387,9 +387,9 @@ def test_esmstatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EsmStateKind]
     expected_literals = [
-        "INITIAL",
-        "FINAL",
         "NORMAL",
+        "FINAL",
+        "INITIAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -403,11 +403,11 @@ def test_esmlayoutdirection_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EsmLayoutDirection]
     expected_literals = [
+        "DOWN",
         "DEFAULT",
         "UP",
         "LEFT",
         "RIGHT",
-        "DOWN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -425,16 +425,16 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-esm::DStateEvent_strategy = st.builds(
-    esm::DStateEvent,
+esm_DStateEvent_strategy = st.builds(
+    esm_DStateEvent,
 )
-esm::IEsmLayout_strategy = st.builds(
-    esm::IEsmLayout,
+esm_IEsmLayout_strategy = st.builds(
+    esm_IEsmLayout,
     direction=
         safe_text
 )
-esm::DEntityType_strategy = st.builds(
-    esm::DEntityType,
+esm_DEntityType_strategy = st.builds(
+    esm_DEntityType,
 )
 IDiagramRoot_strategy = st.builds(
     IDiagramRoot,
@@ -448,82 +448,79 @@ INavigableMemberContainer_strategy = st.builds(
 IEsmStateModel_strategy = st.builds(
     IEsmStateModel,
 )
-esm::EsmSubStateModel_strategy = st.builds(
-    esm::EsmSubStateModel,
+esm_EsmSubStateModel_strategy = st.builds(
+    esm_EsmSubStateModel,
 )
-esm::DExpression_strategy = st.builds(
-    esm::DExpression,
+esm_DExpression_strategy = st.builds(
+    esm_DExpression,
 )
 EsmState_strategy = st.builds(
     EsmState,
 )
-esm::EsmDerivedState_strategy = st.builds(
-    esm::EsmDerivedState,
+esm_EsmDerivedState_strategy = st.builds(
+    esm_EsmDerivedState,
 )
 IEsmState_strategy = st.builds(
     IEsmState,
 )
-esm::EsmConcurrentState_strategy = st.builds(
-    esm::EsmConcurrentState,
+esm_EsmConcurrentState_strategy = st.builds(
+    esm_EsmConcurrentState,
 )
-esm::EsmCompositeState_strategy = st.builds(
-    esm::EsmCompositeState,
+esm_EsmCompositeState_strategy = st.builds(
+    esm_EsmCompositeState,
 )
-esm::EsmState_strategy = st.builds(
-    esm::EsmState,
+esm_EsmState_strategy = st.builds(
+    esm_EsmState,
 )
-esm::DRichText_strategy = st.builds(
-    esm::DRichText,
+esm_DRichText_strategy = st.builds(
+    esm_DRichText,
 )
-esm::DState_strategy = st.builds(
-    esm::DState,
+esm_DState_strategy = st.builds(
+    esm_DState,
 )
-esm::IEsmState_strategy = st.builds(
-    esm::IEsmState,
+esm_IEsmState_strategy = st.builds(
+    esm_IEsmState,
     kind=
         safe_text
 )
 IEsmLayout_strategy = st.builds(
     IEsmLayout,
 )
-esm::EsmTransition_strategy = st.builds(
-    esm::EsmTransition,
+esm_EsmTransition_strategy = st.builds(
+    esm_EsmTransition,
 )
-esm::IEsmStateModel_strategy = st.builds(
-    esm::IEsmStateModel,
+esm_IEsmStateModel_strategy = st.builds(
+    esm_IEsmStateModel,
 )
 DModel_strategy = st.builds(
     DModel,
 )
-esm::EsmEntityStateModel_strategy = st.builds(
-    esm::EsmEntityStateModel,
+esm_EsmEntityStateModel_strategy = st.builds(
+    esm_EsmEntityStateModel,
 )
 
-@given(instance=esm::DStateEvent_strategy)
+@given(instance=esm_DStateEvent_strategy)
 @settings(max_examples=50)
-def test_esm::dstateevent_instantiation(instance):
-    assert isinstance(instance, esm::DStateEvent)
+def test_esm_dstateevent_instantiation(instance):
+    assert isinstance(instance, esm_DStateEvent)
 
-@given(instance=esm::IEsmLayout_strategy)
+@given(instance=esm_IEsmLayout_strategy)
 @settings(max_examples=50)
-def test_esm::iesmlayout_instantiation(instance):
-    assert isinstance(instance, esm::IEsmLayout)
-
-@given(instance=esm::IEsmLayout_strategy)
-def test_esm::iesmlayout_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_esm_iesmlayout_instantiation(instance):
+    assert isinstance(instance, esm_IEsmLayout)
 
 
-@given(instance=esm::IEsmLayout_strategy)
-def test_esm::iesmlayout_direction_setter(instance):
+
+@given(instance=esm_IEsmLayout_strategy)
+def test_esm_iesmlayout_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=esm::DEntityType_strategy)
+@given(instance=esm_DEntityType_strategy)
 @settings(max_examples=50)
-def test_esm::dentitytype_instantiation(instance):
-    assert isinstance(instance, esm::DEntityType)
+def test_esm_dentitytype_instantiation(instance):
+    assert isinstance(instance, esm_DEntityType)
 
 @given(instance=IDiagramRoot_strategy)
 @settings(max_examples=50)
@@ -545,68 +542,65 @@ def test_inavigablemembercontainer_instantiation(instance):
 def test_iesmstatemodel_instantiation(instance):
     assert isinstance(instance, IEsmStateModel)
 
-@given(instance=esm::EsmSubStateModel_strategy)
+@given(instance=esm_EsmSubStateModel_strategy)
 @settings(max_examples=50)
-def test_esm::esmsubstatemodel_instantiation(instance):
-    assert isinstance(instance, esm::EsmSubStateModel)
+def test_esm_esmsubstatemodel_instantiation(instance):
+    assert isinstance(instance, esm_EsmSubStateModel)
 
-@given(instance=esm::DExpression_strategy)
+@given(instance=esm_DExpression_strategy)
 @settings(max_examples=50)
-def test_esm::dexpression_instantiation(instance):
-    assert isinstance(instance, esm::DExpression)
+def test_esm_dexpression_instantiation(instance):
+    assert isinstance(instance, esm_DExpression)
 
 @given(instance=EsmState_strategy)
 @settings(max_examples=50)
 def test_esmstate_instantiation(instance):
     assert isinstance(instance, EsmState)
 
-@given(instance=esm::EsmDerivedState_strategy)
+@given(instance=esm_EsmDerivedState_strategy)
 @settings(max_examples=50)
-def test_esm::esmderivedstate_instantiation(instance):
-    assert isinstance(instance, esm::EsmDerivedState)
+def test_esm_esmderivedstate_instantiation(instance):
+    assert isinstance(instance, esm_EsmDerivedState)
 
 @given(instance=IEsmState_strategy)
 @settings(max_examples=50)
 def test_iesmstate_instantiation(instance):
     assert isinstance(instance, IEsmState)
 
-@given(instance=esm::EsmConcurrentState_strategy)
+@given(instance=esm_EsmConcurrentState_strategy)
 @settings(max_examples=50)
-def test_esm::esmconcurrentstate_instantiation(instance):
-    assert isinstance(instance, esm::EsmConcurrentState)
+def test_esm_esmconcurrentstate_instantiation(instance):
+    assert isinstance(instance, esm_EsmConcurrentState)
 
-@given(instance=esm::EsmCompositeState_strategy)
+@given(instance=esm_EsmCompositeState_strategy)
 @settings(max_examples=50)
-def test_esm::esmcompositestate_instantiation(instance):
-    assert isinstance(instance, esm::EsmCompositeState)
+def test_esm_esmcompositestate_instantiation(instance):
+    assert isinstance(instance, esm_EsmCompositeState)
 
-@given(instance=esm::EsmState_strategy)
+@given(instance=esm_EsmState_strategy)
 @settings(max_examples=50)
-def test_esm::esmstate_instantiation(instance):
-    assert isinstance(instance, esm::EsmState)
+def test_esm_esmstate_instantiation(instance):
+    assert isinstance(instance, esm_EsmState)
 
-@given(instance=esm::DRichText_strategy)
+@given(instance=esm_DRichText_strategy)
 @settings(max_examples=50)
-def test_esm::drichtext_instantiation(instance):
-    assert isinstance(instance, esm::DRichText)
+def test_esm_drichtext_instantiation(instance):
+    assert isinstance(instance, esm_DRichText)
 
-@given(instance=esm::DState_strategy)
+@given(instance=esm_DState_strategy)
 @settings(max_examples=50)
-def test_esm::dstate_instantiation(instance):
-    assert isinstance(instance, esm::DState)
+def test_esm_dstate_instantiation(instance):
+    assert isinstance(instance, esm_DState)
 
-@given(instance=esm::IEsmState_strategy)
+@given(instance=esm_IEsmState_strategy)
 @settings(max_examples=50)
-def test_esm::iesmstate_instantiation(instance):
-    assert isinstance(instance, esm::IEsmState)
-
-@given(instance=esm::IEsmState_strategy)
-def test_esm::iesmstate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_esm_iesmstate_instantiation(instance):
+    assert isinstance(instance, esm_IEsmState)
 
 
-@given(instance=esm::IEsmState_strategy)
-def test_esm::iesmstate_kind_setter(instance):
+
+@given(instance=esm_IEsmState_strategy)
+def test_esm_iesmstate_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -616,22 +610,22 @@ def test_esm::iesmstate_kind_setter(instance):
 def test_iesmlayout_instantiation(instance):
     assert isinstance(instance, IEsmLayout)
 
-@given(instance=esm::EsmTransition_strategy)
+@given(instance=esm_EsmTransition_strategy)
 @settings(max_examples=50)
-def test_esm::esmtransition_instantiation(instance):
-    assert isinstance(instance, esm::EsmTransition)
+def test_esm_esmtransition_instantiation(instance):
+    assert isinstance(instance, esm_EsmTransition)
 
-@given(instance=esm::IEsmStateModel_strategy)
+@given(instance=esm_IEsmStateModel_strategy)
 @settings(max_examples=50)
-def test_esm::iesmstatemodel_instantiation(instance):
-    assert isinstance(instance, esm::IEsmStateModel)
+def test_esm_iesmstatemodel_instantiation(instance):
+    assert isinstance(instance, esm_IEsmStateModel)
 
 @given(instance=DModel_strategy)
 @settings(max_examples=50)
 def test_dmodel_instantiation(instance):
     assert isinstance(instance, DModel)
 
-@given(instance=esm::EsmEntityStateModel_strategy)
+@given(instance=esm_EsmEntityStateModel_strategy)
 @settings(max_examples=50)
-def test_esm::esmentitystatemodel_instantiation(instance):
-    assert isinstance(instance, esm::EsmEntityStateModel)
+def test_esm_esmentitystatemodel_instantiation(instance):
+    assert isinstance(instance, esm_EsmEntityStateModel)

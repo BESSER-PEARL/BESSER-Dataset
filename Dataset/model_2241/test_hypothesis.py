@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    coursePages::Reduction,
-    coursePages::Precondition,
-    coursePages::CourseWorker,
-    coursePages::CourseInstance,
-    coursePages::CourseWork,
-    coursePages::CourseWorkObject,
-    coursePages::Department,
-    coursePages::Course,
-    coursePages::StudyPrograms,
+from python_code import (
+    coursePages_Reduction,
+    coursePages_Precondition,
+    coursePages_CourseWorker,
+    coursePages_CourseInstance,
+    coursePages_CourseWork,
+    coursePages_CourseWorkObject,
+    coursePages_Department,
+    coursePages_Course,
+    coursePages_StudyPrograms,
     Person,
-    coursePages::Employee,
-    coursePages::Student,
-    coursePages::Evaluations,
-    coursePages::EvaluationObject,
-    coursePages::Person,
-    TermType,
-    EvaluationType,
+    coursePages_Employee,
+    coursePages_Student,
+    coursePages_Evaluations,
+    coursePages_EvaluationObject,
+    coursePages_Person,
+    PrecondistionType,
     personRoleType,
     CourseWorkType,
-    PrecondistionType,
+    EvaluationType,
+    TermType,
 )
 
 # =============================================================================
@@ -34,23 +34,23 @@ from classes import (
 
 
 
-def test_coursepages::reduction_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Reduction)
+def test_coursepages_reduction_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Reduction)
 
 
-def test_coursepages::reduction_constructor_exists():
-    assert callable(coursePages::Reduction.__init__)
+def test_coursepages_reduction_constructor_exists():
+    assert callable(coursePages_Reduction.__init__)
 
 
-def test_coursepages::reduction_constructor_args():
-    sig = inspect.signature(coursePages::Reduction.__init__)
+def test_coursepages_reduction_constructor_args():
+    sig = inspect.signature(coursePages_Reduction.__init__)
     params = list(sig.parameters.keys())
     assert "creditReduction" in params, "Missing parameter 'creditReduction'"
 
-def test_coursepages::reduction_has_creditReduction():
-    assert hasattr(coursePages::Reduction, "creditReduction")
+def test_coursepages_reduction_has_creditReduction():
+    assert hasattr(coursePages_Reduction, "creditReduction")
     descriptor = None
-    for klass in coursePages::Reduction.__mro__:
+    for klass in coursePages_Reduction.__mro__:
         if "creditReduction" in klass.__dict__:
             descriptor = klass.__dict__["creditReduction"]
             break
@@ -58,23 +58,23 @@ def test_coursepages::reduction_has_creditReduction():
 
 
 
-def test_coursepages::precondition_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Precondition)
+def test_coursepages_precondition_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Precondition)
 
 
-def test_coursepages::precondition_constructor_exists():
-    assert callable(coursePages::Precondition.__init__)
+def test_coursepages_precondition_constructor_exists():
+    assert callable(coursePages_Precondition.__init__)
 
 
-def test_coursepages::precondition_constructor_args():
-    sig = inspect.signature(coursePages::Precondition.__init__)
+def test_coursepages_precondition_constructor_args():
+    sig = inspect.signature(coursePages_Precondition.__init__)
     params = list(sig.parameters.keys())
     assert "preconditionStatus" in params, "Missing parameter 'preconditionStatus'"
 
-def test_coursepages::precondition_has_preconditionStatus():
-    assert hasattr(coursePages::Precondition, "preconditionStatus")
+def test_coursepages_precondition_has_preconditionStatus():
+    assert hasattr(coursePages_Precondition, "preconditionStatus")
     descriptor = None
-    for klass in coursePages::Precondition.__mro__:
+    for klass in coursePages_Precondition.__mro__:
         if "preconditionStatus" in klass.__dict__:
             descriptor = klass.__dict__["preconditionStatus"]
             break
@@ -82,23 +82,23 @@ def test_coursepages::precondition_has_preconditionStatus():
 
 
 
-def test_coursepages::courseworker_is_not_abstract():
-    assert not inspect.isabstract(coursePages::CourseWorker)
+def test_coursepages_courseworker_is_not_abstract():
+    assert not inspect.isabstract(coursePages_CourseWorker)
 
 
-def test_coursepages::courseworker_constructor_exists():
-    assert callable(coursePages::CourseWorker.__init__)
+def test_coursepages_courseworker_constructor_exists():
+    assert callable(coursePages_CourseWorker.__init__)
 
 
-def test_coursepages::courseworker_constructor_args():
-    sig = inspect.signature(coursePages::CourseWorker.__init__)
+def test_coursepages_courseworker_constructor_args():
+    sig = inspect.signature(coursePages_CourseWorker.__init__)
     params = list(sig.parameters.keys())
     assert "courseRole" in params, "Missing parameter 'courseRole'"
 
-def test_coursepages::courseworker_has_courseRole():
-    assert hasattr(coursePages::CourseWorker, "courseRole")
+def test_coursepages_courseworker_has_courseRole():
+    assert hasattr(coursePages_CourseWorker, "courseRole")
     descriptor = None
-    for klass in coursePages::CourseWorker.__mro__:
+    for klass in coursePages_CourseWorker.__mro__:
         if "courseRole" in klass.__dict__:
             descriptor = klass.__dict__["courseRole"]
             break
@@ -106,245 +106,245 @@ def test_coursepages::courseworker_has_courseRole():
 
 
 
-def test_coursepages::courseinstance_is_not_abstract():
-    assert not inspect.isabstract(coursePages::CourseInstance)
+def test_coursepages_courseinstance_is_not_abstract():
+    assert not inspect.isabstract(coursePages_CourseInstance)
 
 
-def test_coursepages::courseinstance_constructor_exists():
-    assert callable(coursePages::CourseInstance.__init__)
+def test_coursepages_courseinstance_constructor_exists():
+    assert callable(coursePages_CourseInstance.__init__)
 
 
-def test_coursepages::courseinstance_constructor_args():
-    sig = inspect.signature(coursePages::CourseInstance.__init__)
+def test_coursepages_courseinstance_constructor_args():
+    sig = inspect.signature(coursePages_CourseInstance.__init__)
     params = list(sig.parameters.keys())
-    assert "term" in params, "Missing parameter 'term'"
     assert "courseYear" in params, "Missing parameter 'courseYear'"
+    assert "term" in params, "Missing parameter 'term'"
 
-def test_coursepages::courseinstance_has_term():
-    assert hasattr(coursePages::CourseInstance, "term")
+def test_coursepages_courseinstance_has_courseYear():
+    assert hasattr(coursePages_CourseInstance, "courseYear")
     descriptor = None
-    for klass in coursePages::CourseInstance.__mro__:
-        if "term" in klass.__dict__:
-            descriptor = klass.__dict__["term"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::courseinstance_has_courseYear():
-    assert hasattr(coursePages::CourseInstance, "courseYear")
-    descriptor = None
-    for klass in coursePages::CourseInstance.__mro__:
+    for klass in coursePages_CourseInstance.__mro__:
         if "courseYear" in klass.__dict__:
             descriptor = klass.__dict__["courseYear"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_coursepages::coursework_is_not_abstract():
-    assert not inspect.isabstract(coursePages::CourseWork)
-
-
-def test_coursepages::coursework_constructor_exists():
-    assert callable(coursePages::CourseWork.__init__)
-
-
-def test_coursepages::coursework_constructor_args():
-    sig = inspect.signature(coursePages::CourseWork.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_coursepages::courseworkobject_is_not_abstract():
-    assert not inspect.isabstract(coursePages::CourseWorkObject)
-
-
-def test_coursepages::courseworkobject_constructor_exists():
-    assert callable(coursePages::CourseWorkObject.__init__)
-
-
-def test_coursepages::courseworkobject_constructor_args():
-    sig = inspect.signature(coursePages::CourseWorkObject.__init__)
-    params = list(sig.parameters.keys())
-    assert "courseWorkType" in params, "Missing parameter 'courseWorkType'"
-    assert "end" in params, "Missing parameter 'end'"
-    assert "start" in params, "Missing parameter 'start'"
-    assert "room" in params, "Missing parameter 'room'"
-    assert "day" in params, "Missing parameter 'day'"
-
-def test_coursepages::courseworkobject_has_courseWorkType():
-    assert hasattr(coursePages::CourseWorkObject, "courseWorkType")
+def test_coursepages_courseinstance_has_term():
+    assert hasattr(coursePages_CourseInstance, "term")
     descriptor = None
-    for klass in coursePages::CourseWorkObject.__mro__:
-        if "courseWorkType" in klass.__dict__:
-            descriptor = klass.__dict__["courseWorkType"]
+    for klass in coursePages_CourseInstance.__mro__:
+        if "term" in klass.__dict__:
+            descriptor = klass.__dict__["term"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::courseworkobject_has_end():
-    assert hasattr(coursePages::CourseWorkObject, "end")
+
+
+def test_coursepages_coursework_is_not_abstract():
+    assert not inspect.isabstract(coursePages_CourseWork)
+
+
+def test_coursepages_coursework_constructor_exists():
+    assert callable(coursePages_CourseWork.__init__)
+
+
+def test_coursepages_coursework_constructor_args():
+    sig = inspect.signature(coursePages_CourseWork.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_coursepages_courseworkobject_is_not_abstract():
+    assert not inspect.isabstract(coursePages_CourseWorkObject)
+
+
+def test_coursepages_courseworkobject_constructor_exists():
+    assert callable(coursePages_CourseWorkObject.__init__)
+
+
+def test_coursepages_courseworkobject_constructor_args():
+    sig = inspect.signature(coursePages_CourseWorkObject.__init__)
+    params = list(sig.parameters.keys())
+    assert "end" in params, "Missing parameter 'end'"
+    assert "start" in params, "Missing parameter 'start'"
+    assert "day" in params, "Missing parameter 'day'"
+    assert "courseWorkType" in params, "Missing parameter 'courseWorkType'"
+    assert "room" in params, "Missing parameter 'room'"
+
+def test_coursepages_courseworkobject_has_end():
+    assert hasattr(coursePages_CourseWorkObject, "end")
     descriptor = None
-    for klass in coursePages::CourseWorkObject.__mro__:
+    for klass in coursePages_CourseWorkObject.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::courseworkobject_has_start():
-    assert hasattr(coursePages::CourseWorkObject, "start")
+def test_coursepages_courseworkobject_has_start():
+    assert hasattr(coursePages_CourseWorkObject, "start")
     descriptor = None
-    for klass in coursePages::CourseWorkObject.__mro__:
+    for klass in coursePages_CourseWorkObject.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::courseworkobject_has_room():
-    assert hasattr(coursePages::CourseWorkObject, "room")
+def test_coursepages_courseworkobject_has_day():
+    assert hasattr(coursePages_CourseWorkObject, "day")
     descriptor = None
-    for klass in coursePages::CourseWorkObject.__mro__:
-        if "room" in klass.__dict__:
-            descriptor = klass.__dict__["room"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::courseworkobject_has_day():
-    assert hasattr(coursePages::CourseWorkObject, "day")
-    descriptor = None
-    for klass in coursePages::CourseWorkObject.__mro__:
+    for klass in coursePages_CourseWorkObject.__mro__:
         if "day" in klass.__dict__:
             descriptor = klass.__dict__["day"]
             break
     assert isinstance(descriptor, property)
 
+def test_coursepages_courseworkobject_has_courseWorkType():
+    assert hasattr(coursePages_CourseWorkObject, "courseWorkType")
+    descriptor = None
+    for klass in coursePages_CourseWorkObject.__mro__:
+        if "courseWorkType" in klass.__dict__:
+            descriptor = klass.__dict__["courseWorkType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_coursepages_courseworkobject_has_room():
+    assert hasattr(coursePages_CourseWorkObject, "room")
+    descriptor = None
+    for klass in coursePages_CourseWorkObject.__mro__:
+        if "room" in klass.__dict__:
+            descriptor = klass.__dict__["room"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_coursepages::department_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Department)
+
+def test_coursepages_department_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Department)
 
 
-def test_coursepages::department_constructor_exists():
-    assert callable(coursePages::Department.__init__)
+def test_coursepages_department_constructor_exists():
+    assert callable(coursePages_Department.__init__)
 
 
-def test_coursepages::department_constructor_args():
-    sig = inspect.signature(coursePages::Department.__init__)
+def test_coursepages_department_constructor_args():
+    sig = inspect.signature(coursePages_Department.__init__)
     params = list(sig.parameters.keys())
     assert "phoneNummber" in params, "Missing parameter 'phoneNummber'"
-    assert "departmentName" in params, "Missing parameter 'departmentName'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "departmentName" in params, "Missing parameter 'departmentName'"
 
-def test_coursepages::department_has_phoneNummber():
-    assert hasattr(coursePages::Department, "phoneNummber")
+def test_coursepages_department_has_phoneNummber():
+    assert hasattr(coursePages_Department, "phoneNummber")
     descriptor = None
-    for klass in coursePages::Department.__mro__:
+    for klass in coursePages_Department.__mro__:
         if "phoneNummber" in klass.__dict__:
             descriptor = klass.__dict__["phoneNummber"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::department_has_departmentName():
-    assert hasattr(coursePages::Department, "departmentName")
+def test_coursepages_department_has_email():
+    assert hasattr(coursePages_Department, "email")
     descriptor = None
-    for klass in coursePages::Department.__mro__:
-        if "departmentName" in klass.__dict__:
-            descriptor = klass.__dict__["departmentName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::department_has_email():
-    assert hasattr(coursePages::Department, "email")
-    descriptor = None
-    for klass in coursePages::Department.__mro__:
+    for klass in coursePages_Department.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
+def test_coursepages_department_has_departmentName():
+    assert hasattr(coursePages_Department, "departmentName")
+    descriptor = None
+    for klass in coursePages_Department.__mro__:
+        if "departmentName" in klass.__dict__:
+            descriptor = klass.__dict__["departmentName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_coursepages::course_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Course)
+
+def test_coursepages_course_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Course)
 
 
-def test_coursepages::course_constructor_exists():
-    assert callable(coursePages::Course.__init__)
+def test_coursepages_course_constructor_exists():
+    assert callable(coursePages_Course.__init__)
 
 
-def test_coursepages::course_constructor_args():
-    sig = inspect.signature(coursePages::Course.__init__)
+def test_coursepages_course_constructor_args():
+    sig = inspect.signature(coursePages_Course.__init__)
     params = list(sig.parameters.keys())
     assert "courseCredits" in params, "Missing parameter 'courseCredits'"
     assert "courseContent" in params, "Missing parameter 'courseContent'"
-    assert "courseName" in params, "Missing parameter 'courseName'"
     assert "courseCode" in params, "Missing parameter 'courseCode'"
+    assert "courseName" in params, "Missing parameter 'courseName'"
 
-def test_coursepages::course_has_courseCredits():
-    assert hasattr(coursePages::Course, "courseCredits")
+def test_coursepages_course_has_courseCredits():
+    assert hasattr(coursePages_Course, "courseCredits")
     descriptor = None
-    for klass in coursePages::Course.__mro__:
+    for klass in coursePages_Course.__mro__:
         if "courseCredits" in klass.__dict__:
             descriptor = klass.__dict__["courseCredits"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::course_has_courseContent():
-    assert hasattr(coursePages::Course, "courseContent")
+def test_coursepages_course_has_courseContent():
+    assert hasattr(coursePages_Course, "courseContent")
     descriptor = None
-    for klass in coursePages::Course.__mro__:
+    for klass in coursePages_Course.__mro__:
         if "courseContent" in klass.__dict__:
             descriptor = klass.__dict__["courseContent"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::course_has_courseName():
-    assert hasattr(coursePages::Course, "courseName")
+def test_coursepages_course_has_courseCode():
+    assert hasattr(coursePages_Course, "courseCode")
     descriptor = None
-    for klass in coursePages::Course.__mro__:
-        if "courseName" in klass.__dict__:
-            descriptor = klass.__dict__["courseName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::course_has_courseCode():
-    assert hasattr(coursePages::Course, "courseCode")
-    descriptor = None
-    for klass in coursePages::Course.__mro__:
+    for klass in coursePages_Course.__mro__:
         if "courseCode" in klass.__dict__:
             descriptor = klass.__dict__["courseCode"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_coursepages::studyprograms_is_not_abstract():
-    assert not inspect.isabstract(coursePages::StudyPrograms)
-
-
-def test_coursepages::studyprograms_constructor_exists():
-    assert callable(coursePages::StudyPrograms.__init__)
-
-
-def test_coursepages::studyprograms_constructor_args():
-    sig = inspect.signature(coursePages::StudyPrograms.__init__)
-    params = list(sig.parameters.keys())
-    assert "studyProgramName" in params, "Missing parameter 'studyProgramName'"
-    assert "studyProgramCode" in params, "Missing parameter 'studyProgramCode'"
-
-def test_coursepages::studyprograms_has_studyProgramName():
-    assert hasattr(coursePages::StudyPrograms, "studyProgramName")
+def test_coursepages_course_has_courseName():
+    assert hasattr(coursePages_Course, "courseName")
     descriptor = None
-    for klass in coursePages::StudyPrograms.__mro__:
-        if "studyProgramName" in klass.__dict__:
-            descriptor = klass.__dict__["studyProgramName"]
+    for klass in coursePages_Course.__mro__:
+        if "courseName" in klass.__dict__:
+            descriptor = klass.__dict__["courseName"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::studyprograms_has_studyProgramCode():
-    assert hasattr(coursePages::StudyPrograms, "studyProgramCode")
+
+
+def test_coursepages_studyprograms_is_not_abstract():
+    assert not inspect.isabstract(coursePages_StudyPrograms)
+
+
+def test_coursepages_studyprograms_constructor_exists():
+    assert callable(coursePages_StudyPrograms.__init__)
+
+
+def test_coursepages_studyprograms_constructor_args():
+    sig = inspect.signature(coursePages_StudyPrograms.__init__)
+    params = list(sig.parameters.keys())
+    assert "studyProgramCode" in params, "Missing parameter 'studyProgramCode'"
+    assert "studyProgramName" in params, "Missing parameter 'studyProgramName'"
+
+def test_coursepages_studyprograms_has_studyProgramCode():
+    assert hasattr(coursePages_StudyPrograms, "studyProgramCode")
     descriptor = None
-    for klass in coursePages::StudyPrograms.__mro__:
+    for klass in coursePages_StudyPrograms.__mro__:
         if "studyProgramCode" in klass.__dict__:
             descriptor = klass.__dict__["studyProgramCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_coursepages_studyprograms_has_studyProgramName():
+    assert hasattr(coursePages_StudyPrograms, "studyProgramName")
+    descriptor = None
+    for klass in coursePages_StudyPrograms.__mro__:
+        if "studyProgramName" in klass.__dict__:
+            descriptor = klass.__dict__["studyProgramName"]
             break
     assert isinstance(descriptor, property)
 
@@ -364,23 +364,23 @@ def test_person_constructor_args():
 
 
 
-def test_coursepages::employee_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Employee)
+def test_coursepages_employee_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Employee)
 
 
-def test_coursepages::employee_constructor_exists():
-    assert callable(coursePages::Employee.__init__)
+def test_coursepages_employee_constructor_exists():
+    assert callable(coursePages_Employee.__init__)
 
 
-def test_coursepages::employee_constructor_args():
-    sig = inspect.signature(coursePages::Employee.__init__)
+def test_coursepages_employee_constructor_args():
+    sig = inspect.signature(coursePages_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_coursepages::employee_has_position():
-    assert hasattr(coursePages::Employee, "position")
+def test_coursepages_employee_has_position():
+    assert hasattr(coursePages_Employee, "position")
     descriptor = None
-    for klass in coursePages::Employee.__mro__:
+    for klass in coursePages_Employee.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -388,23 +388,23 @@ def test_coursepages::employee_has_position():
 
 
 
-def test_coursepages::student_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Student)
+def test_coursepages_student_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Student)
 
 
-def test_coursepages::student_constructor_exists():
-    assert callable(coursePages::Student.__init__)
+def test_coursepages_student_constructor_exists():
+    assert callable(coursePages_Student.__init__)
 
 
-def test_coursepages::student_constructor_args():
-    sig = inspect.signature(coursePages::Student.__init__)
+def test_coursepages_student_constructor_args():
+    sig = inspect.signature(coursePages_Student.__init__)
     params = list(sig.parameters.keys())
     assert "studentID" in params, "Missing parameter 'studentID'"
 
-def test_coursepages::student_has_studentID():
-    assert hasattr(coursePages::Student, "studentID")
+def test_coursepages_student_has_studentID():
+    assert hasattr(coursePages_Student, "studentID")
     descriptor = None
-    for klass in coursePages::Student.__mro__:
+    for klass in coursePages_Student.__mro__:
         if "studentID" in klass.__dict__:
             descriptor = klass.__dict__["studentID"]
             break
@@ -412,125 +412,189 @@ def test_coursepages::student_has_studentID():
 
 
 
-def test_coursepages::evaluations_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Evaluations)
+def test_coursepages_evaluations_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Evaluations)
 
 
-def test_coursepages::evaluations_constructor_exists():
-    assert callable(coursePages::Evaluations.__init__)
+def test_coursepages_evaluations_constructor_exists():
+    assert callable(coursePages_Evaluations.__init__)
 
 
-def test_coursepages::evaluations_constructor_args():
-    sig = inspect.signature(coursePages::Evaluations.__init__)
+def test_coursepages_evaluations_constructor_args():
+    sig = inspect.signature(coursePages_Evaluations.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_coursepages::evaluationobject_is_not_abstract():
-    assert not inspect.isabstract(coursePages::EvaluationObject)
+def test_coursepages_evaluationobject_is_not_abstract():
+    assert not inspect.isabstract(coursePages_EvaluationObject)
 
 
-def test_coursepages::evaluationobject_constructor_exists():
-    assert callable(coursePages::EvaluationObject.__init__)
+def test_coursepages_evaluationobject_constructor_exists():
+    assert callable(coursePages_EvaluationObject.__init__)
 
 
-def test_coursepages::evaluationobject_constructor_args():
-    sig = inspect.signature(coursePages::EvaluationObject.__init__)
+def test_coursepages_evaluationobject_constructor_args():
+    sig = inspect.signature(coursePages_EvaluationObject.__init__)
     params = list(sig.parameters.keys())
-    assert "evaluationsForm" in params, "Missing parameter 'evaluationsForm'"
-    assert "term" in params, "Missing parameter 'term'"
-    assert "credits" in params, "Missing parameter 'credits'"
     assert "date" in params, "Missing parameter 'date'"
+    assert "credits" in params, "Missing parameter 'credits'"
+    assert "term" in params, "Missing parameter 'term'"
+    assert "evaluationsForm" in params, "Missing parameter 'evaluationsForm'"
 
-def test_coursepages::evaluationobject_has_evaluationsForm():
-    assert hasattr(coursePages::EvaluationObject, "evaluationsForm")
+def test_coursepages_evaluationobject_has_date():
+    assert hasattr(coursePages_EvaluationObject, "date")
     descriptor = None
-    for klass in coursePages::EvaluationObject.__mro__:
-        if "evaluationsForm" in klass.__dict__:
-            descriptor = klass.__dict__["evaluationsForm"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::evaluationobject_has_term():
-    assert hasattr(coursePages::EvaluationObject, "term")
-    descriptor = None
-    for klass in coursePages::EvaluationObject.__mro__:
-        if "term" in klass.__dict__:
-            descriptor = klass.__dict__["term"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::evaluationobject_has_credits():
-    assert hasattr(coursePages::EvaluationObject, "credits")
-    descriptor = None
-    for klass in coursePages::EvaluationObject.__mro__:
-        if "credits" in klass.__dict__:
-            descriptor = klass.__dict__["credits"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::evaluationobject_has_date():
-    assert hasattr(coursePages::EvaluationObject, "date")
-    descriptor = None
-    for klass in coursePages::EvaluationObject.__mro__:
+    for klass in coursePages_EvaluationObject.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
+def test_coursepages_evaluationobject_has_credits():
+    assert hasattr(coursePages_EvaluationObject, "credits")
+    descriptor = None
+    for klass in coursePages_EvaluationObject.__mro__:
+        if "credits" in klass.__dict__:
+            descriptor = klass.__dict__["credits"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_coursepages_evaluationobject_has_term():
+    assert hasattr(coursePages_EvaluationObject, "term")
+    descriptor = None
+    for klass in coursePages_EvaluationObject.__mro__:
+        if "term" in klass.__dict__:
+            descriptor = klass.__dict__["term"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_coursepages_evaluationobject_has_evaluationsForm():
+    assert hasattr(coursePages_EvaluationObject, "evaluationsForm")
+    descriptor = None
+    for klass in coursePages_EvaluationObject.__mro__:
+        if "evaluationsForm" in klass.__dict__:
+            descriptor = klass.__dict__["evaluationsForm"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_coursepages::person_is_not_abstract():
-    assert not inspect.isabstract(coursePages::Person)
+
+def test_coursepages_person_is_not_abstract():
+    assert not inspect.isabstract(coursePages_Person)
 
 
-def test_coursepages::person_constructor_exists():
-    assert callable(coursePages::Person.__init__)
+def test_coursepages_person_constructor_exists():
+    assert callable(coursePages_Person.__init__)
 
 
-def test_coursepages::person_constructor_args():
-    sig = inspect.signature(coursePages::Person.__init__)
+def test_coursepages_person_constructor_args():
+    sig = inspect.signature(coursePages_Person.__init__)
     params = list(sig.parameters.keys())
     assert "surName" in params, "Missing parameter 'surName'"
-    assert "phoneNummber" in params, "Missing parameter 'phoneNummber'"
     assert "email" in params, "Missing parameter 'email'"
     assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "phoneNummber" in params, "Missing parameter 'phoneNummber'"
 
-def test_coursepages::person_has_surName():
-    assert hasattr(coursePages::Person, "surName")
+def test_coursepages_person_has_surName():
+    assert hasattr(coursePages_Person, "surName")
     descriptor = None
-    for klass in coursePages::Person.__mro__:
+    for klass in coursePages_Person.__mro__:
         if "surName" in klass.__dict__:
             descriptor = klass.__dict__["surName"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::person_has_phoneNummber():
-    assert hasattr(coursePages::Person, "phoneNummber")
+def test_coursepages_person_has_email():
+    assert hasattr(coursePages_Person, "email")
     descriptor = None
-    for klass in coursePages::Person.__mro__:
-        if "phoneNummber" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNummber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coursepages::person_has_email():
-    assert hasattr(coursePages::Person, "email")
-    descriptor = None
-    for klass in coursePages::Person.__mro__:
+    for klass in coursePages_Person.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
-def test_coursepages::person_has_firstName():
-    assert hasattr(coursePages::Person, "firstName")
+def test_coursepages_person_has_firstName():
+    assert hasattr(coursePages_Person, "firstName")
     descriptor = None
-    for klass in coursePages::Person.__mro__:
+    for klass in coursePages_Person.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
+
+def test_coursepages_person_has_phoneNummber():
+    assert hasattr(coursePages_Person, "phoneNummber")
+    descriptor = None
+    for klass in coursePages_Person.__mro__:
+        if "phoneNummber" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNummber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_precondistiontype_exists():
+    # Check that the Enumeration exists
+    assert PrecondistionType is not None
+
+def test_precondistiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PrecondistionType]
+    expected_literals = [
+        "Required",
+        "Recommended",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PrecondistionType"
+
+def test_personroletype_exists():
+    # Check that the Enumeration exists
+    assert personRoleType is not None
+
+def test_personroletype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in personRoleType]
+    expected_literals = [
+        "Lecture",
+        "CourseCordinator",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in personRoleType"
+
+def test_courseworktype_exists():
+    # Check that the Enumeration exists
+    assert CourseWorkType is not None
+
+def test_courseworktype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CourseWorkType]
+    expected_literals = [
+        "Lab",
+        "Lecture",
+        "Exercise",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CourseWorkType"
+
+def test_evaluationtype_exists():
+    # Check that the Enumeration exists
+    assert EvaluationType is not None
+
+def test_evaluationtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EvaluationType]
+    expected_literals = [
+        "WrittenExam",
+        "Assignments",
+        "PracticalExam",
+        "OralExam",
+        "Participated",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EvaluationType"
 
 def test_termtype_exists():
     # Check that the Enumeration exists
@@ -548,70 +612,6 @@ def test_termtype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TermType"
 
-def test_evaluationtype_exists():
-    # Check that the Enumeration exists
-    assert EvaluationType is not None
-
-def test_evaluationtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EvaluationType]
-    expected_literals = [
-        "Participated",
-        "Assignments",
-        "OralExam",
-        "WrittenExam",
-        "PracticalExam",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EvaluationType"
-
-def test_personroletype_exists():
-    # Check that the Enumeration exists
-    assert personRoleType is not None
-
-def test_personroletype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in personRoleType]
-    expected_literals = [
-        "CourseCordinator",
-        "Lecture",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in personRoleType"
-
-def test_courseworktype_exists():
-    # Check that the Enumeration exists
-    assert CourseWorkType is not None
-
-def test_courseworktype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CourseWorkType]
-    expected_literals = [
-        "Exercise",
-        "Lecture",
-        "Lab",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CourseWorkType"
-
-def test_precondistiontype_exists():
-    # Check that the Enumeration exists
-    assert PrecondistionType is not None
-
-def test_precondistiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrecondistionType]
-    expected_literals = [
-        "Recommended",
-        "Required",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrecondistionType"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -624,500 +624,413 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-coursePages::Reduction_strategy = st.builds(
-    coursePages::Reduction,
+coursePages_Reduction_strategy = st.builds(
+    coursePages_Reduction,
     creditReduction=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-coursePages::Precondition_strategy = st.builds(
-    coursePages::Precondition,
+coursePages_Precondition_strategy = st.builds(
+    coursePages_Precondition,
     preconditionStatus=
         safe_text
 )
-coursePages::CourseWorker_strategy = st.builds(
-    coursePages::CourseWorker,
+coursePages_CourseWorker_strategy = st.builds(
+    coursePages_CourseWorker,
     courseRole=
         safe_text
 )
-coursePages::CourseInstance_strategy = st.builds(
-    coursePages::CourseInstance,
-    term=
-        safe_text,
+coursePages_CourseInstance_strategy = st.builds(
+    coursePages_CourseInstance,
     courseYear=
+        safe_text,
+    term=
         safe_text
 )
-coursePages::CourseWork_strategy = st.builds(
-    coursePages::CourseWork,
+coursePages_CourseWork_strategy = st.builds(
+    coursePages_CourseWork,
 )
-coursePages::CourseWorkObject_strategy = st.builds(
-    coursePages::CourseWorkObject,
-    courseWorkType=
-        safe_text,
+coursePages_CourseWorkObject_strategy = st.builds(
+    coursePages_CourseWorkObject,
     end=
         st.dates(),
     start=
         st.dates(),
-    room=
-        safe_text,
     day=
+        safe_text,
+    courseWorkType=
+        safe_text,
+    room=
         safe_text
 )
-coursePages::Department_strategy = st.builds(
-    coursePages::Department,
+coursePages_Department_strategy = st.builds(
+    coursePages_Department,
     phoneNummber=
         safe_text,
-    departmentName=
-        safe_text,
     email=
+        safe_text,
+    departmentName=
         safe_text
 )
-coursePages::Course_strategy = st.builds(
-    coursePages::Course,
+coursePages_Course_strategy = st.builds(
+    coursePages_Course,
     courseCredits=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     courseContent=
         safe_text,
-    courseName=
-        safe_text,
     courseCode=
+        safe_text,
+    courseName=
         safe_text
 )
-coursePages::StudyPrograms_strategy = st.builds(
-    coursePages::StudyPrograms,
-    studyProgramName=
-        safe_text,
+coursePages_StudyPrograms_strategy = st.builds(
+    coursePages_StudyPrograms,
     studyProgramCode=
+        safe_text,
+    studyProgramName=
         safe_text
 )
 Person_strategy = st.builds(
     Person,
 )
-coursePages::Employee_strategy = st.builds(
-    coursePages::Employee,
+coursePages_Employee_strategy = st.builds(
+    coursePages_Employee,
     position=
         safe_text
 )
-coursePages::Student_strategy = st.builds(
-    coursePages::Student,
+coursePages_Student_strategy = st.builds(
+    coursePages_Student,
     studentID=
         safe_text
 )
-coursePages::Evaluations_strategy = st.builds(
-    coursePages::Evaluations,
+coursePages_Evaluations_strategy = st.builds(
+    coursePages_Evaluations,
 )
-coursePages::EvaluationObject_strategy = st.builds(
-    coursePages::EvaluationObject,
-    evaluationsForm=
-        safe_text,
-    term=
-        safe_text,
+coursePages_EvaluationObject_strategy = st.builds(
+    coursePages_EvaluationObject,
+    date=
+        st.dates(),
     credits=
         st.integers(),
-    date=
-        st.dates()
-)
-coursePages::Person_strategy = st.builds(
-    coursePages::Person,
-    surName=
+    term=
         safe_text,
-    phoneNummber=
+    evaluationsForm=
+        safe_text
+)
+coursePages_Person_strategy = st.builds(
+    coursePages_Person,
+    surName=
         safe_text,
     email=
         safe_text,
     firstName=
+        safe_text,
+    phoneNummber=
         safe_text
 )
 
-@given(instance=coursePages::Reduction_strategy)
+@given(instance=coursePages_Reduction_strategy)
 @settings(max_examples=50)
-def test_coursepages::reduction_instantiation(instance):
-    assert isinstance(instance, coursePages::Reduction)
-
-@given(instance=coursePages::Reduction_strategy)
-def test_coursepages::reduction_creditReduction_type(instance):
-    assert isinstance(instance.creditReduction, float)
+def test_coursepages_reduction_instantiation(instance):
+    assert isinstance(instance, coursePages_Reduction)
 
 
-@given(instance=coursePages::Reduction_strategy)
-def test_coursepages::reduction_creditReduction_setter(instance):
+
+@given(instance=coursePages_Reduction_strategy)
+def test_coursepages_reduction_creditReduction_setter(instance):
     original = instance.creditReduction
     instance.creditReduction = original
     assert instance.creditReduction == original
 
-@given(instance=coursePages::Precondition_strategy)
+@given(instance=coursePages_Precondition_strategy)
 @settings(max_examples=50)
-def test_coursepages::precondition_instantiation(instance):
-    assert isinstance(instance, coursePages::Precondition)
-
-@given(instance=coursePages::Precondition_strategy)
-def test_coursepages::precondition_preconditionStatus_type(instance):
-    assert isinstance(instance.preconditionStatus, str)
+def test_coursepages_precondition_instantiation(instance):
+    assert isinstance(instance, coursePages_Precondition)
 
 
-@given(instance=coursePages::Precondition_strategy)
-def test_coursepages::precondition_preconditionStatus_setter(instance):
+
+@given(instance=coursePages_Precondition_strategy)
+def test_coursepages_precondition_preconditionStatus_setter(instance):
     original = instance.preconditionStatus
     instance.preconditionStatus = original
     assert instance.preconditionStatus == original
 
-@given(instance=coursePages::CourseWorker_strategy)
+@given(instance=coursePages_CourseWorker_strategy)
 @settings(max_examples=50)
-def test_coursepages::courseworker_instantiation(instance):
-    assert isinstance(instance, coursePages::CourseWorker)
-
-@given(instance=coursePages::CourseWorker_strategy)
-def test_coursepages::courseworker_courseRole_type(instance):
-    assert isinstance(instance.courseRole, str)
+def test_coursepages_courseworker_instantiation(instance):
+    assert isinstance(instance, coursePages_CourseWorker)
 
 
-@given(instance=coursePages::CourseWorker_strategy)
-def test_coursepages::courseworker_courseRole_setter(instance):
+
+@given(instance=coursePages_CourseWorker_strategy)
+def test_coursepages_courseworker_courseRole_setter(instance):
     original = instance.courseRole
     instance.courseRole = original
     assert instance.courseRole == original
 
-@given(instance=coursePages::CourseInstance_strategy)
+@given(instance=coursePages_CourseInstance_strategy)
 @settings(max_examples=50)
-def test_coursepages::courseinstance_instantiation(instance):
-    assert isinstance(instance, coursePages::CourseInstance)
-
-@given(instance=coursePages::CourseInstance_strategy)
-def test_coursepages::courseinstance_term_type(instance):
-    assert isinstance(instance.term, str)
+def test_coursepages_courseinstance_instantiation(instance):
+    assert isinstance(instance, coursePages_CourseInstance)
 
 
-@given(instance=coursePages::CourseInstance_strategy)
-def test_coursepages::courseinstance_term_setter(instance):
-    original = instance.term
-    instance.term = original
-    assert instance.term == original
 
-@given(instance=coursePages::CourseInstance_strategy)
-def test_coursepages::courseinstance_courseYear_type(instance):
-    assert isinstance(instance.courseYear, str)
-
-
-@given(instance=coursePages::CourseInstance_strategy)
-def test_coursepages::courseinstance_courseYear_setter(instance):
+@given(instance=coursePages_CourseInstance_strategy)
+def test_coursepages_courseinstance_courseYear_setter(instance):
     original = instance.courseYear
     instance.courseYear = original
     assert instance.courseYear == original
 
-@given(instance=coursePages::CourseWork_strategy)
+
+
+@given(instance=coursePages_CourseInstance_strategy)
+def test_coursepages_courseinstance_term_setter(instance):
+    original = instance.term
+    instance.term = original
+    assert instance.term == original
+
+@given(instance=coursePages_CourseWork_strategy)
 @settings(max_examples=50)
-def test_coursepages::coursework_instantiation(instance):
-    assert isinstance(instance, coursePages::CourseWork)
+def test_coursepages_coursework_instantiation(instance):
+    assert isinstance(instance, coursePages_CourseWork)
 
-@given(instance=coursePages::CourseWorkObject_strategy)
+@given(instance=coursePages_CourseWorkObject_strategy)
 @settings(max_examples=50)
-def test_coursepages::courseworkobject_instantiation(instance):
-    assert isinstance(instance, coursePages::CourseWorkObject)
-
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_courseWorkType_type(instance):
-    assert isinstance(instance.courseWorkType, str)
+def test_coursepages_courseworkobject_instantiation(instance):
+    assert isinstance(instance, coursePages_CourseWorkObject)
 
 
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_courseWorkType_setter(instance):
-    original = instance.courseWorkType
-    instance.courseWorkType = original
-    assert instance.courseWorkType == original
 
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_end_type(instance):
-    assert isinstance(instance.end, date)
-
-
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_end_setter(instance):
+@given(instance=coursePages_CourseWorkObject_strategy)
+def test_coursepages_courseworkobject_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_start_type(instance):
-    assert isinstance(instance.start, date)
 
 
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_start_setter(instance):
+@given(instance=coursePages_CourseWorkObject_strategy)
+def test_coursepages_courseworkobject_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_room_type(instance):
-    assert isinstance(instance.room, str)
 
 
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_room_setter(instance):
-    original = instance.room
-    instance.room = original
-    assert instance.room == original
-
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_day_type(instance):
-    assert isinstance(instance.day, str)
-
-
-@given(instance=coursePages::CourseWorkObject_strategy)
-def test_coursepages::courseworkobject_day_setter(instance):
+@given(instance=coursePages_CourseWorkObject_strategy)
+def test_coursepages_courseworkobject_day_setter(instance):
     original = instance.day
     instance.day = original
     assert instance.day == original
 
-@given(instance=coursePages::Department_strategy)
+
+
+@given(instance=coursePages_CourseWorkObject_strategy)
+def test_coursepages_courseworkobject_courseWorkType_setter(instance):
+    original = instance.courseWorkType
+    instance.courseWorkType = original
+    assert instance.courseWorkType == original
+
+
+
+@given(instance=coursePages_CourseWorkObject_strategy)
+def test_coursepages_courseworkobject_room_setter(instance):
+    original = instance.room
+    instance.room = original
+    assert instance.room == original
+
+@given(instance=coursePages_Department_strategy)
 @settings(max_examples=50)
-def test_coursepages::department_instantiation(instance):
-    assert isinstance(instance, coursePages::Department)
-
-@given(instance=coursePages::Department_strategy)
-def test_coursepages::department_phoneNummber_type(instance):
-    assert isinstance(instance.phoneNummber, str)
+def test_coursepages_department_instantiation(instance):
+    assert isinstance(instance, coursePages_Department)
 
 
-@given(instance=coursePages::Department_strategy)
-def test_coursepages::department_phoneNummber_setter(instance):
+
+@given(instance=coursePages_Department_strategy)
+def test_coursepages_department_phoneNummber_setter(instance):
     original = instance.phoneNummber
     instance.phoneNummber = original
     assert instance.phoneNummber == original
 
-@given(instance=coursePages::Department_strategy)
-def test_coursepages::department_departmentName_type(instance):
-    assert isinstance(instance.departmentName, str)
 
 
-@given(instance=coursePages::Department_strategy)
-def test_coursepages::department_departmentName_setter(instance):
-    original = instance.departmentName
-    instance.departmentName = original
-    assert instance.departmentName == original
-
-@given(instance=coursePages::Department_strategy)
-def test_coursepages::department_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=coursePages::Department_strategy)
-def test_coursepages::department_email_setter(instance):
+@given(instance=coursePages_Department_strategy)
+def test_coursepages_department_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
 
-@given(instance=coursePages::Course_strategy)
+
+
+@given(instance=coursePages_Department_strategy)
+def test_coursepages_department_departmentName_setter(instance):
+    original = instance.departmentName
+    instance.departmentName = original
+    assert instance.departmentName == original
+
+@given(instance=coursePages_Course_strategy)
 @settings(max_examples=50)
-def test_coursepages::course_instantiation(instance):
-    assert isinstance(instance, coursePages::Course)
-
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseCredits_type(instance):
-    assert isinstance(instance.courseCredits, float)
+def test_coursepages_course_instantiation(instance):
+    assert isinstance(instance, coursePages_Course)
 
 
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseCredits_setter(instance):
+
+@given(instance=coursePages_Course_strategy)
+def test_coursepages_course_courseCredits_setter(instance):
     original = instance.courseCredits
     instance.courseCredits = original
     assert instance.courseCredits == original
 
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseContent_type(instance):
-    assert isinstance(instance.courseContent, str)
 
 
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseContent_setter(instance):
+@given(instance=coursePages_Course_strategy)
+def test_coursepages_course_courseContent_setter(instance):
     original = instance.courseContent
     instance.courseContent = original
     assert instance.courseContent == original
 
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseName_type(instance):
-    assert isinstance(instance.courseName, str)
 
 
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseName_setter(instance):
-    original = instance.courseName
-    instance.courseName = original
-    assert instance.courseName == original
-
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseCode_type(instance):
-    assert isinstance(instance.courseCode, str)
-
-
-@given(instance=coursePages::Course_strategy)
-def test_coursepages::course_courseCode_setter(instance):
+@given(instance=coursePages_Course_strategy)
+def test_coursepages_course_courseCode_setter(instance):
     original = instance.courseCode
     instance.courseCode = original
     assert instance.courseCode == original
 
-@given(instance=coursePages::StudyPrograms_strategy)
+
+
+@given(instance=coursePages_Course_strategy)
+def test_coursepages_course_courseName_setter(instance):
+    original = instance.courseName
+    instance.courseName = original
+    assert instance.courseName == original
+
+@given(instance=coursePages_StudyPrograms_strategy)
 @settings(max_examples=50)
-def test_coursepages::studyprograms_instantiation(instance):
-    assert isinstance(instance, coursePages::StudyPrograms)
-
-@given(instance=coursePages::StudyPrograms_strategy)
-def test_coursepages::studyprograms_studyProgramName_type(instance):
-    assert isinstance(instance.studyProgramName, str)
+def test_coursepages_studyprograms_instantiation(instance):
+    assert isinstance(instance, coursePages_StudyPrograms)
 
 
-@given(instance=coursePages::StudyPrograms_strategy)
-def test_coursepages::studyprograms_studyProgramName_setter(instance):
-    original = instance.studyProgramName
-    instance.studyProgramName = original
-    assert instance.studyProgramName == original
 
-@given(instance=coursePages::StudyPrograms_strategy)
-def test_coursepages::studyprograms_studyProgramCode_type(instance):
-    assert isinstance(instance.studyProgramCode, str)
-
-
-@given(instance=coursePages::StudyPrograms_strategy)
-def test_coursepages::studyprograms_studyProgramCode_setter(instance):
+@given(instance=coursePages_StudyPrograms_strategy)
+def test_coursepages_studyprograms_studyProgramCode_setter(instance):
     original = instance.studyProgramCode
     instance.studyProgramCode = original
     assert instance.studyProgramCode == original
+
+
+
+@given(instance=coursePages_StudyPrograms_strategy)
+def test_coursepages_studyprograms_studyProgramName_setter(instance):
+    original = instance.studyProgramName
+    instance.studyProgramName = original
+    assert instance.studyProgramName == original
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=coursePages::Employee_strategy)
+@given(instance=coursePages_Employee_strategy)
 @settings(max_examples=50)
-def test_coursepages::employee_instantiation(instance):
-    assert isinstance(instance, coursePages::Employee)
-
-@given(instance=coursePages::Employee_strategy)
-def test_coursepages::employee_position_type(instance):
-    assert isinstance(instance.position, str)
+def test_coursepages_employee_instantiation(instance):
+    assert isinstance(instance, coursePages_Employee)
 
 
-@given(instance=coursePages::Employee_strategy)
-def test_coursepages::employee_position_setter(instance):
+
+@given(instance=coursePages_Employee_strategy)
+def test_coursepages_employee_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=coursePages::Student_strategy)
+@given(instance=coursePages_Student_strategy)
 @settings(max_examples=50)
-def test_coursepages::student_instantiation(instance):
-    assert isinstance(instance, coursePages::Student)
-
-@given(instance=coursePages::Student_strategy)
-def test_coursepages::student_studentID_type(instance):
-    assert isinstance(instance.studentID, str)
+def test_coursepages_student_instantiation(instance):
+    assert isinstance(instance, coursePages_Student)
 
 
-@given(instance=coursePages::Student_strategy)
-def test_coursepages::student_studentID_setter(instance):
+
+@given(instance=coursePages_Student_strategy)
+def test_coursepages_student_studentID_setter(instance):
     original = instance.studentID
     instance.studentID = original
     assert instance.studentID == original
 
-@given(instance=coursePages::Evaluations_strategy)
+@given(instance=coursePages_Evaluations_strategy)
 @settings(max_examples=50)
-def test_coursepages::evaluations_instantiation(instance):
-    assert isinstance(instance, coursePages::Evaluations)
+def test_coursepages_evaluations_instantiation(instance):
+    assert isinstance(instance, coursePages_Evaluations)
 
-@given(instance=coursePages::EvaluationObject_strategy)
+@given(instance=coursePages_EvaluationObject_strategy)
 @settings(max_examples=50)
-def test_coursepages::evaluationobject_instantiation(instance):
-    assert isinstance(instance, coursePages::EvaluationObject)
-
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_evaluationsForm_type(instance):
-    assert isinstance(instance.evaluationsForm, str)
+def test_coursepages_evaluationobject_instantiation(instance):
+    assert isinstance(instance, coursePages_EvaluationObject)
 
 
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_evaluationsForm_setter(instance):
-    original = instance.evaluationsForm
-    instance.evaluationsForm = original
-    assert instance.evaluationsForm == original
 
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_term_type(instance):
-    assert isinstance(instance.term, str)
-
-
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_term_setter(instance):
-    original = instance.term
-    instance.term = original
-    assert instance.term == original
-
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_credits_type(instance):
-    assert isinstance(instance.credits, int)
-
-
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_credits_setter(instance):
-    original = instance.credits
-    instance.credits = original
-    assert instance.credits == original
-
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=coursePages::EvaluationObject_strategy)
-def test_coursepages::evaluationobject_date_setter(instance):
+@given(instance=coursePages_EvaluationObject_strategy)
+def test_coursepages_evaluationobject_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=coursePages::Person_strategy)
+
+
+@given(instance=coursePages_EvaluationObject_strategy)
+def test_coursepages_evaluationobject_credits_setter(instance):
+    original = instance.credits
+    instance.credits = original
+    assert instance.credits == original
+
+
+
+@given(instance=coursePages_EvaluationObject_strategy)
+def test_coursepages_evaluationobject_term_setter(instance):
+    original = instance.term
+    instance.term = original
+    assert instance.term == original
+
+
+
+@given(instance=coursePages_EvaluationObject_strategy)
+def test_coursepages_evaluationobject_evaluationsForm_setter(instance):
+    original = instance.evaluationsForm
+    instance.evaluationsForm = original
+    assert instance.evaluationsForm == original
+
+@given(instance=coursePages_Person_strategy)
 @settings(max_examples=50)
-def test_coursepages::person_instantiation(instance):
-    assert isinstance(instance, coursePages::Person)
-
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_surName_type(instance):
-    assert isinstance(instance.surName, str)
+def test_coursepages_person_instantiation(instance):
+    assert isinstance(instance, coursePages_Person)
 
 
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_surName_setter(instance):
+
+@given(instance=coursePages_Person_strategy)
+def test_coursepages_person_surName_setter(instance):
     original = instance.surName
     instance.surName = original
     assert instance.surName == original
 
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_phoneNummber_type(instance):
-    assert isinstance(instance.phoneNummber, str)
 
 
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_phoneNummber_setter(instance):
-    original = instance.phoneNummber
-    instance.phoneNummber = original
-    assert instance.phoneNummber == original
-
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_email_setter(instance):
+@given(instance=coursePages_Person_strategy)
+def test_coursepages_person_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
 
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
 
 
-@given(instance=coursePages::Person_strategy)
-def test_coursepages::person_firstName_setter(instance):
+@given(instance=coursePages_Person_strategy)
+def test_coursepages_person_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
+
+
+
+@given(instance=coursePages_Person_strategy)
+def test_coursepages_person_phoneNummber_setter(instance):
+    original = instance.phoneNummber
+    instance.phoneNummber = original
+    assert instance.phoneNummber == original

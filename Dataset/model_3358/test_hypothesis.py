@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    db2EntityDsl::Attribute,
+from python_code import (
+    db2EntityDsl_Attribute,
     AbstractColumnMapper,
-    db2EntityDsl::EntityColumnMapper,
+    db2EntityDsl_EntityColumnMapper,
 )
 
 # =============================================================================
@@ -17,16 +17,16 @@ from classes import (
 
 
 
-def test_db2entitydsl::attribute_is_not_abstract():
-    assert not inspect.isabstract(db2EntityDsl::Attribute)
+def test_db2entitydsl_attribute_is_not_abstract():
+    assert not inspect.isabstract(db2EntityDsl_Attribute)
 
 
-def test_db2entitydsl::attribute_constructor_exists():
-    assert callable(db2EntityDsl::Attribute.__init__)
+def test_db2entitydsl_attribute_constructor_exists():
+    assert callable(db2EntityDsl_Attribute.__init__)
 
 
-def test_db2entitydsl::attribute_constructor_args():
-    sig = inspect.signature(db2EntityDsl::Attribute.__init__)
+def test_db2entitydsl_attribute_constructor_args():
+    sig = inspect.signature(db2EntityDsl_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -45,16 +45,16 @@ def test_abstractcolumnmapper_constructor_args():
 
 
 
-def test_db2entitydsl::entitycolumnmapper_is_not_abstract():
-    assert not inspect.isabstract(db2EntityDsl::EntityColumnMapper)
+def test_db2entitydsl_entitycolumnmapper_is_not_abstract():
+    assert not inspect.isabstract(db2EntityDsl_EntityColumnMapper)
 
 
-def test_db2entitydsl::entitycolumnmapper_constructor_exists():
-    assert callable(db2EntityDsl::EntityColumnMapper.__init__)
+def test_db2entitydsl_entitycolumnmapper_constructor_exists():
+    assert callable(db2EntityDsl_EntityColumnMapper.__init__)
 
 
-def test_db2entitydsl::entitycolumnmapper_constructor_args():
-    sig = inspect.signature(db2EntityDsl::EntityColumnMapper.__init__)
+def test_db2entitydsl_entitycolumnmapper_constructor_args():
+    sig = inspect.signature(db2EntityDsl_EntityColumnMapper.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-db2EntityDsl::Attribute_strategy = st.builds(
-    db2EntityDsl::Attribute,
+db2EntityDsl_Attribute_strategy = st.builds(
+    db2EntityDsl_Attribute,
 )
 AbstractColumnMapper_strategy = st.builds(
     AbstractColumnMapper,
 )
-db2EntityDsl::EntityColumnMapper_strategy = st.builds(
-    db2EntityDsl::EntityColumnMapper,
+db2EntityDsl_EntityColumnMapper_strategy = st.builds(
+    db2EntityDsl_EntityColumnMapper,
 )
 
-@given(instance=db2EntityDsl::Attribute_strategy)
+@given(instance=db2EntityDsl_Attribute_strategy)
 @settings(max_examples=50)
-def test_db2entitydsl::attribute_instantiation(instance):
-    assert isinstance(instance, db2EntityDsl::Attribute)
+def test_db2entitydsl_attribute_instantiation(instance):
+    assert isinstance(instance, db2EntityDsl_Attribute)
 
 @given(instance=AbstractColumnMapper_strategy)
 @settings(max_examples=50)
 def test_abstractcolumnmapper_instantiation(instance):
     assert isinstance(instance, AbstractColumnMapper)
 
-@given(instance=db2EntityDsl::EntityColumnMapper_strategy)
+@given(instance=db2EntityDsl_EntityColumnMapper_strategy)
 @settings(max_examples=50)
-def test_db2entitydsl::entitycolumnmapper_instantiation(instance):
-    assert isinstance(instance, db2EntityDsl::EntityColumnMapper)
+def test_db2entitydsl_entitycolumnmapper_instantiation(instance):
+    assert isinstance(instance, db2EntityDsl_EntityColumnMapper)

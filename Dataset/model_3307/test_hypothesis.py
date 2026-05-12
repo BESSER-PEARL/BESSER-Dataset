@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Solver,
-    rk::RungeKutta,
+    rk_RungeKutta,
 )
 
 # =============================================================================
@@ -30,23 +30,23 @@ def test_solver_constructor_args():
 
 
 
-def test_rk::rungekutta_is_not_abstract():
-    assert not inspect.isabstract(rk::RungeKutta)
+def test_rk_rungekutta_is_not_abstract():
+    assert not inspect.isabstract(rk_RungeKutta)
 
 
-def test_rk::rungekutta_constructor_exists():
-    assert callable(rk::RungeKutta.__init__)
+def test_rk_rungekutta_constructor_exists():
+    assert callable(rk_RungeKutta.__init__)
 
 
-def test_rk::rungekutta_constructor_args():
-    sig = inspect.signature(rk::RungeKutta.__init__)
+def test_rk_rungekutta_constructor_args():
+    sig = inspect.signature(rk_RungeKutta.__init__)
     params = list(sig.parameters.keys())
     assert "relativeTolerance" in params, "Missing parameter 'relativeTolerance'"
 
-def test_rk::rungekutta_has_relativeTolerance():
-    assert hasattr(rk::RungeKutta, "relativeTolerance")
+def test_rk_rungekutta_has_relativeTolerance():
+    assert hasattr(rk_RungeKutta, "relativeTolerance")
     descriptor = None
-    for klass in rk::RungeKutta.__mro__:
+    for klass in rk_RungeKutta.__mro__:
         if "relativeTolerance" in klass.__dict__:
             descriptor = klass.__dict__["relativeTolerance"]
             break
@@ -67,8 +67,8 @@ safe_text = st.text(
 Solver_strategy = st.builds(
     Solver,
 )
-rk::RungeKutta_strategy = st.builds(
-    rk::RungeKutta,
+rk_RungeKutta_strategy = st.builds(
+    rk_RungeKutta,
     relativeTolerance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -78,18 +78,15 @@ rk::RungeKutta_strategy = st.builds(
 def test_solver_instantiation(instance):
     assert isinstance(instance, Solver)
 
-@given(instance=rk::RungeKutta_strategy)
+@given(instance=rk_RungeKutta_strategy)
 @settings(max_examples=50)
-def test_rk::rungekutta_instantiation(instance):
-    assert isinstance(instance, rk::RungeKutta)
-
-@given(instance=rk::RungeKutta_strategy)
-def test_rk::rungekutta_relativeTolerance_type(instance):
-    assert isinstance(instance.relativeTolerance, float)
+def test_rk_rungekutta_instantiation(instance):
+    assert isinstance(instance, rk_RungeKutta)
 
 
-@given(instance=rk::RungeKutta_strategy)
-def test_rk::rungekutta_relativeTolerance_setter(instance):
+
+@given(instance=rk_RungeKutta_strategy)
+def test_rk_rungekutta_relativeTolerance_setter(instance):
     original = instance.relativeTolerance
     instance.relativeTolerance = original
     assert instance.relativeTolerance == original

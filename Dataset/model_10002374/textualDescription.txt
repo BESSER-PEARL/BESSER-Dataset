@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'Electronic' has the following attributes: 'brand' of type str.
+The class 'Shopping_Interface' has no attributes.
+The class 'RetailStore' has no attributes.
+The class 'OnlineShopping' has no attributes.
+The class 'Order' has the following attributes: 'customername' of type str; 'shippingid' of type int; 'Orderid' of type int; 'datecreated' of type int; 'shippinddate' of type int; 'customerid' of type int; 'statues' of type str.
+The class 'Address' has the following attributes: 'country' of type str; 'city' of type str; 'state' of type str; 'street' of type str; 'postalcode' of type str.
+The class 'CustomerInfo' has the following attributes: 'Cid' of type int; 'password' of type str; 'shippingaddress' of type str; 'billingaddress' of type str; 'Cname' of type str.
+The class 'ShippingCart' has the following attributes: 'dateAdded' of type int; 'productID' of type int; 'quantity' of type int; 'cartID' of type int.
+The class 'payment' has the following attributes: 'cardID' of type int; 'amount' of type int.
+The class 'Clothes' has the following attributes: 'color' of type str; 'typeofclothe' of type str.
+The class 'Items' has the following attributes: 'itemid' of type int.
+'Order' (role 'payment8', cardinality 0..*) is associated with 'payment' (role 'order9', cardinality 0..*).
+'CustomerInfo' (role 'shippingCart6', cardinality 0..*) is associated with 'ShippingCart' (role 'customerInfo7', cardinality 0..*).
+'Items' (role 'onlineShopping1', cardinality 0..*) is associated with 'OnlineShopping' (role 'items0', cardinality 0..*).
+'CustomerInfo' (role 'onlineShopping5', cardinality 0..*) is associated with 'OnlineShopping' (role 'customerInfo4', cardinality 0..*).
+'Address' (role 'customerInfo11', cardinality 0..*) is associated with 'CustomerInfo' (role 'address10', cardinality 0..*).
+'Order' (role 'onlineShopping3', cardinality 0..*) is associated with 'OnlineShopping' (role 'order2', cardinality 0..*).

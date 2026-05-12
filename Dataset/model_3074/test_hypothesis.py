@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StructuralFeature,
-    oml::Attribute,
-    oml::Reference,
+    oml_Attribute,
+    oml_Reference,
     AnnotatedElement,
-    oml::NamedElement,
-    oml::Annotation,
-    oml::AnnotatedElement,
+    oml_NamedElement,
+    oml_Annotation,
+    oml_AnnotatedElement,
     Feature,
-    oml::Operation,
-    oml::StructuralFeature,
+    oml_Operation,
+    oml_StructuralFeature,
     Classifier,
-    oml::Datatype,
-    oml::Class,
+    oml_Datatype,
+    oml_Class,
     Class,
-    oml::ExternalClass,
+    oml_ExternalClass,
     PackageableElement,
-    oml::Classifier,
-    oml::Package,
+    oml_Classifier,
+    oml_Package,
     NamedElement,
-    oml::Feature,
-    oml::Parameter,
-    oml::PackageableElement,
+    oml_Parameter,
+    oml_Feature,
+    oml_PackageableElement,
     Package,
-    oml::Model,
+    oml_Model,
     VisibilityEnum,
 )
 
@@ -53,30 +53,30 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_oml::attribute_is_not_abstract():
-    assert not inspect.isabstract(oml::Attribute)
+def test_oml_attribute_is_not_abstract():
+    assert not inspect.isabstract(oml_Attribute)
 
 
-def test_oml::attribute_constructor_exists():
-    assert callable(oml::Attribute.__init__)
+def test_oml_attribute_constructor_exists():
+    assert callable(oml_Attribute.__init__)
 
 
-def test_oml::attribute_constructor_args():
-    sig = inspect.signature(oml::Attribute.__init__)
+def test_oml_attribute_constructor_args():
+    sig = inspect.signature(oml_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oml::reference_is_not_abstract():
-    assert not inspect.isabstract(oml::Reference)
+def test_oml_reference_is_not_abstract():
+    assert not inspect.isabstract(oml_Reference)
 
 
-def test_oml::reference_constructor_exists():
-    assert callable(oml::Reference.__init__)
+def test_oml_reference_constructor_exists():
+    assert callable(oml_Reference.__init__)
 
 
-def test_oml::reference_constructor_args():
-    sig = inspect.signature(oml::Reference.__init__)
+def test_oml_reference_constructor_args():
+    sig = inspect.signature(oml_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -95,23 +95,23 @@ def test_annotatedelement_constructor_args():
 
 
 
-def test_oml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(oml::NamedElement)
+def test_oml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(oml_NamedElement)
 
 
-def test_oml::namedelement_constructor_exists():
-    assert callable(oml::NamedElement.__init__)
+def test_oml_namedelement_constructor_exists():
+    assert callable(oml_NamedElement.__init__)
 
 
-def test_oml::namedelement_constructor_args():
-    sig = inspect.signature(oml::NamedElement.__init__)
+def test_oml_namedelement_constructor_args():
+    sig = inspect.signature(oml_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_oml::namedelement_has_name():
-    assert hasattr(oml::NamedElement, "name")
+def test_oml_namedelement_has_name():
+    assert hasattr(oml_NamedElement, "name")
     descriptor = None
-    for klass in oml::NamedElement.__mro__:
+    for klass in oml_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -119,33 +119,33 @@ def test_oml::namedelement_has_name():
 
 
 
-def test_oml::annotation_is_not_abstract():
-    assert not inspect.isabstract(oml::Annotation)
+def test_oml_annotation_is_not_abstract():
+    assert not inspect.isabstract(oml_Annotation)
 
 
-def test_oml::annotation_constructor_exists():
-    assert callable(oml::Annotation.__init__)
+def test_oml_annotation_constructor_exists():
+    assert callable(oml_Annotation.__init__)
 
 
-def test_oml::annotation_constructor_args():
-    sig = inspect.signature(oml::Annotation.__init__)
+def test_oml_annotation_constructor_args():
+    sig = inspect.signature(oml_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_oml::annotation_has_key():
-    assert hasattr(oml::Annotation, "key")
+def test_oml_annotation_has_key():
+    assert hasattr(oml_Annotation, "key")
     descriptor = None
-    for klass in oml::Annotation.__mro__:
+    for klass in oml_Annotation.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_oml::annotation_has_value():
-    assert hasattr(oml::Annotation, "value")
+def test_oml_annotation_has_value():
+    assert hasattr(oml_Annotation, "value")
     descriptor = None
-    for klass in oml::Annotation.__mro__:
+    for klass in oml_Annotation.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -153,16 +153,16 @@ def test_oml::annotation_has_value():
 
 
 
-def test_oml::annotatedelement_is_not_abstract():
-    assert not inspect.isabstract(oml::AnnotatedElement)
+def test_oml_annotatedelement_is_not_abstract():
+    assert not inspect.isabstract(oml_AnnotatedElement)
 
 
-def test_oml::annotatedelement_constructor_exists():
-    assert callable(oml::AnnotatedElement.__init__)
+def test_oml_annotatedelement_constructor_exists():
+    assert callable(oml_AnnotatedElement.__init__)
 
 
-def test_oml::annotatedelement_constructor_args():
-    sig = inspect.signature(oml::AnnotatedElement.__init__)
+def test_oml_annotatedelement_constructor_args():
+    sig = inspect.signature(oml_AnnotatedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -181,37 +181,37 @@ def test_feature_constructor_args():
 
 
 
-def test_oml::operation_is_not_abstract():
-    assert not inspect.isabstract(oml::Operation)
+def test_oml_operation_is_not_abstract():
+    assert not inspect.isabstract(oml_Operation)
 
 
-def test_oml::operation_constructor_exists():
-    assert callable(oml::Operation.__init__)
+def test_oml_operation_constructor_exists():
+    assert callable(oml_Operation.__init__)
 
 
-def test_oml::operation_constructor_args():
-    sig = inspect.signature(oml::Operation.__init__)
+def test_oml_operation_constructor_args():
+    sig = inspect.signature(oml_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oml::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(oml::StructuralFeature)
+def test_oml_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(oml_StructuralFeature)
 
 
-def test_oml::structuralfeature_constructor_exists():
-    assert callable(oml::StructuralFeature.__init__)
+def test_oml_structuralfeature_constructor_exists():
+    assert callable(oml_StructuralFeature.__init__)
 
 
-def test_oml::structuralfeature_constructor_args():
-    sig = inspect.signature(oml::StructuralFeature.__init__)
+def test_oml_structuralfeature_constructor_args():
+    sig = inspect.signature(oml_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "isMany" in params, "Missing parameter 'isMany'"
 
-def test_oml::structuralfeature_has_isMany():
-    assert hasattr(oml::StructuralFeature, "isMany")
+def test_oml_structuralfeature_has_isMany():
+    assert hasattr(oml_StructuralFeature, "isMany")
     descriptor = None
-    for klass in oml::StructuralFeature.__mro__:
+    for klass in oml_StructuralFeature.__mro__:
         if "isMany" in klass.__dict__:
             descriptor = klass.__dict__["isMany"]
             break
@@ -233,37 +233,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_oml::datatype_is_not_abstract():
-    assert not inspect.isabstract(oml::Datatype)
+def test_oml_datatype_is_not_abstract():
+    assert not inspect.isabstract(oml_Datatype)
 
 
-def test_oml::datatype_constructor_exists():
-    assert callable(oml::Datatype.__init__)
+def test_oml_datatype_constructor_exists():
+    assert callable(oml_Datatype.__init__)
 
 
-def test_oml::datatype_constructor_args():
-    sig = inspect.signature(oml::Datatype.__init__)
+def test_oml_datatype_constructor_args():
+    sig = inspect.signature(oml_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oml::class_is_not_abstract():
-    assert not inspect.isabstract(oml::Class)
+def test_oml_class_is_not_abstract():
+    assert not inspect.isabstract(oml_Class)
 
 
-def test_oml::class_constructor_exists():
-    assert callable(oml::Class.__init__)
+def test_oml_class_constructor_exists():
+    assert callable(oml_Class.__init__)
 
 
-def test_oml::class_constructor_args():
-    sig = inspect.signature(oml::Class.__init__)
+def test_oml_class_constructor_args():
+    sig = inspect.signature(oml_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_oml::class_has_isAbstract():
-    assert hasattr(oml::Class, "isAbstract")
+def test_oml_class_has_isAbstract():
+    assert hasattr(oml_Class, "isAbstract")
     descriptor = None
-    for klass in oml::Class.__mro__:
+    for klass in oml_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -285,16 +285,16 @@ def test_class_constructor_args():
 
 
 
-def test_oml::externalclass_is_not_abstract():
-    assert not inspect.isabstract(oml::ExternalClass)
+def test_oml_externalclass_is_not_abstract():
+    assert not inspect.isabstract(oml_ExternalClass)
 
 
-def test_oml::externalclass_constructor_exists():
-    assert callable(oml::ExternalClass.__init__)
+def test_oml_externalclass_constructor_exists():
+    assert callable(oml_ExternalClass.__init__)
 
 
-def test_oml::externalclass_constructor_args():
-    sig = inspect.signature(oml::ExternalClass.__init__)
+def test_oml_externalclass_constructor_args():
+    sig = inspect.signature(oml_ExternalClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -313,30 +313,30 @@ def test_packageableelement_constructor_args():
 
 
 
-def test_oml::classifier_is_not_abstract():
-    assert not inspect.isabstract(oml::Classifier)
+def test_oml_classifier_is_not_abstract():
+    assert not inspect.isabstract(oml_Classifier)
 
 
-def test_oml::classifier_constructor_exists():
-    assert callable(oml::Classifier.__init__)
+def test_oml_classifier_constructor_exists():
+    assert callable(oml_Classifier.__init__)
 
 
-def test_oml::classifier_constructor_args():
-    sig = inspect.signature(oml::Classifier.__init__)
+def test_oml_classifier_constructor_args():
+    sig = inspect.signature(oml_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oml::package_is_not_abstract():
-    assert not inspect.isabstract(oml::Package)
+def test_oml_package_is_not_abstract():
+    assert not inspect.isabstract(oml_Package)
 
 
-def test_oml::package_constructor_exists():
-    assert callable(oml::Package.__init__)
+def test_oml_package_constructor_exists():
+    assert callable(oml_Package.__init__)
 
 
-def test_oml::package_constructor_args():
-    sig = inspect.signature(oml::Package.__init__)
+def test_oml_package_constructor_args():
+    sig = inspect.signature(oml_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -355,23 +355,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_oml::feature_is_not_abstract():
-    assert not inspect.isabstract(oml::Feature)
+def test_oml_parameter_is_not_abstract():
+    assert not inspect.isabstract(oml_Parameter)
 
 
-def test_oml::feature_constructor_exists():
-    assert callable(oml::Feature.__init__)
+def test_oml_parameter_constructor_exists():
+    assert callable(oml_Parameter.__init__)
 
 
-def test_oml::feature_constructor_args():
-    sig = inspect.signature(oml::Feature.__init__)
+def test_oml_parameter_constructor_args():
+    sig = inspect.signature(oml_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oml_feature_is_not_abstract():
+    assert not inspect.isabstract(oml_Feature)
+
+
+def test_oml_feature_constructor_exists():
+    assert callable(oml_Feature.__init__)
+
+
+def test_oml_feature_constructor_args():
+    sig = inspect.signature(oml_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_oml::feature_has_visibility():
-    assert hasattr(oml::Feature, "visibility")
+def test_oml_feature_has_visibility():
+    assert hasattr(oml_Feature, "visibility")
     descriptor = None
-    for klass in oml::Feature.__mro__:
+    for klass in oml_Feature.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -379,30 +393,16 @@ def test_oml::feature_has_visibility():
 
 
 
-def test_oml::parameter_is_not_abstract():
-    assert not inspect.isabstract(oml::Parameter)
+def test_oml_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(oml_PackageableElement)
 
 
-def test_oml::parameter_constructor_exists():
-    assert callable(oml::Parameter.__init__)
+def test_oml_packageableelement_constructor_exists():
+    assert callable(oml_PackageableElement.__init__)
 
 
-def test_oml::parameter_constructor_args():
-    sig = inspect.signature(oml::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oml::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(oml::PackageableElement)
-
-
-def test_oml::packageableelement_constructor_exists():
-    assert callable(oml::PackageableElement.__init__)
-
-
-def test_oml::packageableelement_constructor_args():
-    sig = inspect.signature(oml::PackageableElement.__init__)
+def test_oml_packageableelement_constructor_args():
+    sig = inspect.signature(oml_PackageableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -421,16 +421,16 @@ def test_package_constructor_args():
 
 
 
-def test_oml::model_is_not_abstract():
-    assert not inspect.isabstract(oml::Model)
+def test_oml_model_is_not_abstract():
+    assert not inspect.isabstract(oml_Model)
 
 
-def test_oml::model_constructor_exists():
-    assert callable(oml::Model.__init__)
+def test_oml_model_constructor_exists():
+    assert callable(oml_Model.__init__)
 
 
-def test_oml::model_constructor_args():
-    sig = inspect.signature(oml::Model.__init__)
+def test_oml_model_constructor_args():
+    sig = inspect.signature(oml_Model.__init__)
     params = list(sig.parameters.keys())
 
 def test_visibilityenum_exists():
@@ -441,8 +441,8 @@ def test_visibilityenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VisibilityEnum]
     expected_literals = [
-        "private",
         "public",
+        "private",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -463,86 +463,86 @@ safe_text = st.text(
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-oml::Attribute_strategy = st.builds(
-    oml::Attribute,
+oml_Attribute_strategy = st.builds(
+    oml_Attribute,
 )
-oml::Reference_strategy = st.builds(
-    oml::Reference,
+oml_Reference_strategy = st.builds(
+    oml_Reference,
 )
 AnnotatedElement_strategy = st.builds(
     AnnotatedElement,
 )
-oml::NamedElement_strategy = st.builds(
-    oml::NamedElement,
+oml_NamedElement_strategy = st.builds(
+    oml_NamedElement,
     name=
         safe_text
 )
-oml::Annotation_strategy = st.builds(
-    oml::Annotation,
+oml_Annotation_strategy = st.builds(
+    oml_Annotation,
     key=
         safe_text,
     value=
         safe_text
 )
-oml::AnnotatedElement_strategy = st.builds(
-    oml::AnnotatedElement,
+oml_AnnotatedElement_strategy = st.builds(
+    oml_AnnotatedElement,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-oml::Operation_strategy = st.builds(
-    oml::Operation,
+oml_Operation_strategy = st.builds(
+    oml_Operation,
 )
-oml::StructuralFeature_strategy = st.builds(
-    oml::StructuralFeature,
+oml_StructuralFeature_strategy = st.builds(
+    oml_StructuralFeature,
     isMany=
         safe_text
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-oml::Datatype_strategy = st.builds(
-    oml::Datatype,
+oml_Datatype_strategy = st.builds(
+    oml_Datatype,
 )
-oml::Class_strategy = st.builds(
-    oml::Class,
+oml_Class_strategy = st.builds(
+    oml_Class,
     isAbstract=
         safe_text
 )
 Class_strategy = st.builds(
     Class,
 )
-oml::ExternalClass_strategy = st.builds(
-    oml::ExternalClass,
+oml_ExternalClass_strategy = st.builds(
+    oml_ExternalClass,
 )
 PackageableElement_strategy = st.builds(
     PackageableElement,
 )
-oml::Classifier_strategy = st.builds(
-    oml::Classifier,
+oml_Classifier_strategy = st.builds(
+    oml_Classifier,
 )
-oml::Package_strategy = st.builds(
-    oml::Package,
+oml_Package_strategy = st.builds(
+    oml_Package,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-oml::Feature_strategy = st.builds(
-    oml::Feature,
+oml_Parameter_strategy = st.builds(
+    oml_Parameter,
+)
+oml_Feature_strategy = st.builds(
+    oml_Feature,
     visibility=
         safe_text
 )
-oml::Parameter_strategy = st.builds(
-    oml::Parameter,
-)
-oml::PackageableElement_strategy = st.builds(
-    oml::PackageableElement,
+oml_PackageableElement_strategy = st.builds(
+    oml_PackageableElement,
 )
 Package_strategy = st.builds(
     Package,
 )
-oml::Model_strategy = st.builds(
-    oml::Model,
+oml_Model_strategy = st.builds(
+    oml_Model,
 )
 
 @given(instance=StructuralFeature_strategy)
@@ -550,91 +550,79 @@ oml::Model_strategy = st.builds(
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=oml::Attribute_strategy)
+@given(instance=oml_Attribute_strategy)
 @settings(max_examples=50)
-def test_oml::attribute_instantiation(instance):
-    assert isinstance(instance, oml::Attribute)
+def test_oml_attribute_instantiation(instance):
+    assert isinstance(instance, oml_Attribute)
 
-@given(instance=oml::Reference_strategy)
+@given(instance=oml_Reference_strategy)
 @settings(max_examples=50)
-def test_oml::reference_instantiation(instance):
-    assert isinstance(instance, oml::Reference)
+def test_oml_reference_instantiation(instance):
+    assert isinstance(instance, oml_Reference)
 
 @given(instance=AnnotatedElement_strategy)
 @settings(max_examples=50)
 def test_annotatedelement_instantiation(instance):
     assert isinstance(instance, AnnotatedElement)
 
-@given(instance=oml::NamedElement_strategy)
+@given(instance=oml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_oml::namedelement_instantiation(instance):
-    assert isinstance(instance, oml::NamedElement)
-
-@given(instance=oml::NamedElement_strategy)
-def test_oml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_oml_namedelement_instantiation(instance):
+    assert isinstance(instance, oml_NamedElement)
 
 
-@given(instance=oml::NamedElement_strategy)
-def test_oml::namedelement_name_setter(instance):
+
+@given(instance=oml_NamedElement_strategy)
+def test_oml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=oml::Annotation_strategy)
+@given(instance=oml_Annotation_strategy)
 @settings(max_examples=50)
-def test_oml::annotation_instantiation(instance):
-    assert isinstance(instance, oml::Annotation)
-
-@given(instance=oml::Annotation_strategy)
-def test_oml::annotation_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_oml_annotation_instantiation(instance):
+    assert isinstance(instance, oml_Annotation)
 
 
-@given(instance=oml::Annotation_strategy)
-def test_oml::annotation_key_setter(instance):
+
+@given(instance=oml_Annotation_strategy)
+def test_oml_annotation_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=oml::Annotation_strategy)
-def test_oml::annotation_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=oml::Annotation_strategy)
-def test_oml::annotation_value_setter(instance):
+@given(instance=oml_Annotation_strategy)
+def test_oml_annotation_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=oml::AnnotatedElement_strategy)
+@given(instance=oml_AnnotatedElement_strategy)
 @settings(max_examples=50)
-def test_oml::annotatedelement_instantiation(instance):
-    assert isinstance(instance, oml::AnnotatedElement)
+def test_oml_annotatedelement_instantiation(instance):
+    assert isinstance(instance, oml_AnnotatedElement)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=oml::Operation_strategy)
+@given(instance=oml_Operation_strategy)
 @settings(max_examples=50)
-def test_oml::operation_instantiation(instance):
-    assert isinstance(instance, oml::Operation)
+def test_oml_operation_instantiation(instance):
+    assert isinstance(instance, oml_Operation)
 
-@given(instance=oml::StructuralFeature_strategy)
+@given(instance=oml_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_oml::structuralfeature_instantiation(instance):
-    assert isinstance(instance, oml::StructuralFeature)
-
-@given(instance=oml::StructuralFeature_strategy)
-def test_oml::structuralfeature_isMany_type(instance):
-    assert isinstance(instance.isMany, str)
+def test_oml_structuralfeature_instantiation(instance):
+    assert isinstance(instance, oml_StructuralFeature)
 
 
-@given(instance=oml::StructuralFeature_strategy)
-def test_oml::structuralfeature_isMany_setter(instance):
+
+@given(instance=oml_StructuralFeature_strategy)
+def test_oml_structuralfeature_isMany_setter(instance):
     original = instance.isMany
     instance.isMany = original
     assert instance.isMany == original
@@ -644,23 +632,20 @@ def test_oml::structuralfeature_isMany_setter(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=oml::Datatype_strategy)
+@given(instance=oml_Datatype_strategy)
 @settings(max_examples=50)
-def test_oml::datatype_instantiation(instance):
-    assert isinstance(instance, oml::Datatype)
+def test_oml_datatype_instantiation(instance):
+    assert isinstance(instance, oml_Datatype)
 
-@given(instance=oml::Class_strategy)
+@given(instance=oml_Class_strategy)
 @settings(max_examples=50)
-def test_oml::class_instantiation(instance):
-    assert isinstance(instance, oml::Class)
-
-@given(instance=oml::Class_strategy)
-def test_oml::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_oml_class_instantiation(instance):
+    assert isinstance(instance, oml_Class)
 
 
-@given(instance=oml::Class_strategy)
-def test_oml::class_isAbstract_setter(instance):
+
+@given(instance=oml_Class_strategy)
+def test_oml_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -670,63 +655,60 @@ def test_oml::class_isAbstract_setter(instance):
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=oml::ExternalClass_strategy)
+@given(instance=oml_ExternalClass_strategy)
 @settings(max_examples=50)
-def test_oml::externalclass_instantiation(instance):
-    assert isinstance(instance, oml::ExternalClass)
+def test_oml_externalclass_instantiation(instance):
+    assert isinstance(instance, oml_ExternalClass)
 
 @given(instance=PackageableElement_strategy)
 @settings(max_examples=50)
 def test_packageableelement_instantiation(instance):
     assert isinstance(instance, PackageableElement)
 
-@given(instance=oml::Classifier_strategy)
+@given(instance=oml_Classifier_strategy)
 @settings(max_examples=50)
-def test_oml::classifier_instantiation(instance):
-    assert isinstance(instance, oml::Classifier)
+def test_oml_classifier_instantiation(instance):
+    assert isinstance(instance, oml_Classifier)
 
-@given(instance=oml::Package_strategy)
+@given(instance=oml_Package_strategy)
 @settings(max_examples=50)
-def test_oml::package_instantiation(instance):
-    assert isinstance(instance, oml::Package)
+def test_oml_package_instantiation(instance):
+    assert isinstance(instance, oml_Package)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=oml::Feature_strategy)
+@given(instance=oml_Parameter_strategy)
 @settings(max_examples=50)
-def test_oml::feature_instantiation(instance):
-    assert isinstance(instance, oml::Feature)
+def test_oml_parameter_instantiation(instance):
+    assert isinstance(instance, oml_Parameter)
 
-@given(instance=oml::Feature_strategy)
-def test_oml::feature_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+@given(instance=oml_Feature_strategy)
+@settings(max_examples=50)
+def test_oml_feature_instantiation(instance):
+    assert isinstance(instance, oml_Feature)
 
 
-@given(instance=oml::Feature_strategy)
-def test_oml::feature_visibility_setter(instance):
+
+@given(instance=oml_Feature_strategy)
+def test_oml_feature_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=oml::Parameter_strategy)
+@given(instance=oml_PackageableElement_strategy)
 @settings(max_examples=50)
-def test_oml::parameter_instantiation(instance):
-    assert isinstance(instance, oml::Parameter)
-
-@given(instance=oml::PackageableElement_strategy)
-@settings(max_examples=50)
-def test_oml::packageableelement_instantiation(instance):
-    assert isinstance(instance, oml::PackageableElement)
+def test_oml_packageableelement_instantiation(instance):
+    assert isinstance(instance, oml_PackageableElement)
 
 @given(instance=Package_strategy)
 @settings(max_examples=50)
 def test_package_instantiation(instance):
     assert isinstance(instance, Package)
 
-@given(instance=oml::Model_strategy)
+@given(instance=oml_Model_strategy)
 @settings(max_examples=50)
-def test_oml::model_instantiation(instance):
-    assert isinstance(instance, oml::Model)
+def test_oml_model_instantiation(instance):
+    assert isinstance(instance, oml_Model)

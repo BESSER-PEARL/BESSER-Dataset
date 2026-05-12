@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    university::Address,
-    university::Person,
-    university::Staff,
-    university::Course,
-    university::CourseCatalog,
+from python_code import (
+    university_Address,
+    university_Person,
+    university_Staff,
+    university_Course,
+    university_CourseCatalog,
     Person,
-    university::Professor,
-    university::Assistant,
+    university_Professor,
+    university_Assistant,
 )
 
 # =============================================================================
@@ -22,37 +22,37 @@ from classes import (
 
 
 
-def test_university::address_is_not_abstract():
-    assert not inspect.isabstract(university::Address)
+def test_university_address_is_not_abstract():
+    assert not inspect.isabstract(university_Address)
 
 
-def test_university::address_constructor_exists():
-    assert callable(university::Address.__init__)
+def test_university_address_constructor_exists():
+    assert callable(university_Address.__init__)
 
 
-def test_university::address_constructor_args():
-    sig = inspect.signature(university::Address.__init__)
+def test_university_address_constructor_args():
+    sig = inspect.signature(university_Address.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_university::person_is_not_abstract():
-    assert not inspect.isabstract(university::Person)
+def test_university_person_is_not_abstract():
+    assert not inspect.isabstract(university_Person)
 
 
-def test_university::person_constructor_exists():
-    assert callable(university::Person.__init__)
+def test_university_person_constructor_exists():
+    assert callable(university_Person.__init__)
 
 
-def test_university::person_constructor_args():
-    sig = inspect.signature(university::Person.__init__)
+def test_university_person_constructor_args():
+    sig = inspect.signature(university_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_university::person_has_name():
-    assert hasattr(university::Person, "name")
+def test_university_person_has_name():
+    assert hasattr(university_Person, "name")
     descriptor = None
-    for klass in university::Person.__mro__:
+    for klass in university_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,23 +60,23 @@ def test_university::person_has_name():
 
 
 
-def test_university::staff_is_not_abstract():
-    assert not inspect.isabstract(university::Staff)
+def test_university_staff_is_not_abstract():
+    assert not inspect.isabstract(university_Staff)
 
 
-def test_university::staff_constructor_exists():
-    assert callable(university::Staff.__init__)
+def test_university_staff_constructor_exists():
+    assert callable(university_Staff.__init__)
 
 
-def test_university::staff_constructor_args():
-    sig = inspect.signature(university::Staff.__init__)
+def test_university_staff_constructor_args():
+    sig = inspect.signature(university_Staff.__init__)
     params = list(sig.parameters.keys())
     assert "staff" in params, "Missing parameter 'staff'"
 
-def test_university::staff_has_staff():
-    assert hasattr(university::Staff, "staff")
+def test_university_staff_has_staff():
+    assert hasattr(university_Staff, "staff")
     descriptor = None
-    for klass in university::Staff.__mro__:
+    for klass in university_Staff.__mro__:
         if "staff" in klass.__dict__:
             descriptor = klass.__dict__["staff"]
             break
@@ -84,60 +84,60 @@ def test_university::staff_has_staff():
 
 
 
-def test_university::course_is_not_abstract():
-    assert not inspect.isabstract(university::Course)
+def test_university_course_is_not_abstract():
+    assert not inspect.isabstract(university_Course)
 
 
-def test_university::course_constructor_exists():
-    assert callable(university::Course.__init__)
+def test_university_course_constructor_exists():
+    assert callable(university_Course.__init__)
 
 
-def test_university::course_constructor_args():
-    sig = inspect.signature(university::Course.__init__)
+def test_university_course_constructor_args():
+    sig = inspect.signature(university_Course.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "etcs" in params, "Missing parameter 'etcs'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_university::course_has_etcs():
-    assert hasattr(university::Course, "etcs")
+def test_university_course_has_name():
+    assert hasattr(university_Course, "name")
     descriptor = None
-    for klass in university::Course.__mro__:
-        if "etcs" in klass.__dict__:
-            descriptor = klass.__dict__["etcs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_university::course_has_id():
-    assert hasattr(university::Course, "id")
-    descriptor = None
-    for klass in university::Course.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_university::course_has_name():
-    assert hasattr(university::Course, "name")
-    descriptor = None
-    for klass in university::Course.__mro__:
+    for klass in university_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_university_course_has_etcs():
+    assert hasattr(university_Course, "etcs")
+    descriptor = None
+    for klass in university_Course.__mro__:
+        if "etcs" in klass.__dict__:
+            descriptor = klass.__dict__["etcs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_university_course_has_id():
+    assert hasattr(university_Course, "id")
+    descriptor = None
+    for klass in university_Course.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_university::coursecatalog_is_not_abstract():
-    assert not inspect.isabstract(university::CourseCatalog)
+
+def test_university_coursecatalog_is_not_abstract():
+    assert not inspect.isabstract(university_CourseCatalog)
 
 
-def test_university::coursecatalog_constructor_exists():
-    assert callable(university::CourseCatalog.__init__)
+def test_university_coursecatalog_constructor_exists():
+    assert callable(university_CourseCatalog.__init__)
 
 
-def test_university::coursecatalog_constructor_args():
-    sig = inspect.signature(university::CourseCatalog.__init__)
+def test_university_coursecatalog_constructor_args():
+    sig = inspect.signature(university_CourseCatalog.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -156,30 +156,30 @@ def test_person_constructor_args():
 
 
 
-def test_university::professor_is_not_abstract():
-    assert not inspect.isabstract(university::Professor)
+def test_university_professor_is_not_abstract():
+    assert not inspect.isabstract(university_Professor)
 
 
-def test_university::professor_constructor_exists():
-    assert callable(university::Professor.__init__)
+def test_university_professor_constructor_exists():
+    assert callable(university_Professor.__init__)
 
 
-def test_university::professor_constructor_args():
-    sig = inspect.signature(university::Professor.__init__)
+def test_university_professor_constructor_args():
+    sig = inspect.signature(university_Professor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_university::assistant_is_not_abstract():
-    assert not inspect.isabstract(university::Assistant)
+def test_university_assistant_is_not_abstract():
+    assert not inspect.isabstract(university_Assistant)
 
 
-def test_university::assistant_constructor_exists():
-    assert callable(university::Assistant.__init__)
+def test_university_assistant_constructor_exists():
+    assert callable(university_Assistant.__init__)
 
 
-def test_university::assistant_constructor_args():
-    sig = inspect.signature(university::Assistant.__init__)
+def test_university_assistant_constructor_args():
+    sig = inspect.signature(university_Assistant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,132 +194,117 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-university::Address_strategy = st.builds(
-    university::Address,
+university_Address_strategy = st.builds(
+    university_Address,
 )
-university::Person_strategy = st.builds(
-    university::Person,
+university_Person_strategy = st.builds(
+    university_Person,
     name=
         safe_text
 )
-university::Staff_strategy = st.builds(
-    university::Staff,
+university_Staff_strategy = st.builds(
+    university_Staff,
     staff=
         safe_text
 )
-university::Course_strategy = st.builds(
-    university::Course,
+university_Course_strategy = st.builds(
+    university_Course,
+    name=
+        safe_text,
     etcs=
         st.integers(),
     id=
-        safe_text,
-    name=
         safe_text
 )
-university::CourseCatalog_strategy = st.builds(
-    university::CourseCatalog,
+university_CourseCatalog_strategy = st.builds(
+    university_CourseCatalog,
 )
 Person_strategy = st.builds(
     Person,
 )
-university::Professor_strategy = st.builds(
-    university::Professor,
+university_Professor_strategy = st.builds(
+    university_Professor,
 )
-university::Assistant_strategy = st.builds(
-    university::Assistant,
+university_Assistant_strategy = st.builds(
+    university_Assistant,
 )
 
-@given(instance=university::Address_strategy)
+@given(instance=university_Address_strategy)
 @settings(max_examples=50)
-def test_university::address_instantiation(instance):
-    assert isinstance(instance, university::Address)
+def test_university_address_instantiation(instance):
+    assert isinstance(instance, university_Address)
 
-@given(instance=university::Person_strategy)
+@given(instance=university_Person_strategy)
 @settings(max_examples=50)
-def test_university::person_instantiation(instance):
-    assert isinstance(instance, university::Person)
-
-@given(instance=university::Person_strategy)
-def test_university::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_university_person_instantiation(instance):
+    assert isinstance(instance, university_Person)
 
 
-@given(instance=university::Person_strategy)
-def test_university::person_name_setter(instance):
+
+@given(instance=university_Person_strategy)
+def test_university_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=university::Staff_strategy)
+@given(instance=university_Staff_strategy)
 @settings(max_examples=50)
-def test_university::staff_instantiation(instance):
-    assert isinstance(instance, university::Staff)
-
-@given(instance=university::Staff_strategy)
-def test_university::staff_staff_type(instance):
-    assert isinstance(instance.staff, str)
+def test_university_staff_instantiation(instance):
+    assert isinstance(instance, university_Staff)
 
 
-@given(instance=university::Staff_strategy)
-def test_university::staff_staff_setter(instance):
+
+@given(instance=university_Staff_strategy)
+def test_university_staff_staff_setter(instance):
     original = instance.staff
     instance.staff = original
     assert instance.staff == original
 
-@given(instance=university::Course_strategy)
+@given(instance=university_Course_strategy)
 @settings(max_examples=50)
-def test_university::course_instantiation(instance):
-    assert isinstance(instance, university::Course)
-
-@given(instance=university::Course_strategy)
-def test_university::course_etcs_type(instance):
-    assert isinstance(instance.etcs, int)
+def test_university_course_instantiation(instance):
+    assert isinstance(instance, university_Course)
 
 
-@given(instance=university::Course_strategy)
-def test_university::course_etcs_setter(instance):
-    original = instance.etcs
-    instance.etcs = original
-    assert instance.etcs == original
 
-@given(instance=university::Course_strategy)
-def test_university::course_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=university::Course_strategy)
-def test_university::course_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=university::Course_strategy)
-def test_university::course_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=university::Course_strategy)
-def test_university::course_name_setter(instance):
+@given(instance=university_Course_strategy)
+def test_university_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=university::CourseCatalog_strategy)
+
+
+@given(instance=university_Course_strategy)
+def test_university_course_etcs_setter(instance):
+    original = instance.etcs
+    instance.etcs = original
+    assert instance.etcs == original
+
+
+
+@given(instance=university_Course_strategy)
+def test_university_course_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=university_CourseCatalog_strategy)
 @settings(max_examples=50)
-def test_university::coursecatalog_instantiation(instance):
-    assert isinstance(instance, university::CourseCatalog)
+def test_university_coursecatalog_instantiation(instance):
+    assert isinstance(instance, university_CourseCatalog)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=university::Professor_strategy)
+@given(instance=university_Professor_strategy)
 @settings(max_examples=50)
-def test_university::professor_instantiation(instance):
-    assert isinstance(instance, university::Professor)
+def test_university_professor_instantiation(instance):
+    assert isinstance(instance, university_Professor)
 
-@given(instance=university::Assistant_strategy)
+@given(instance=university_Assistant_strategy)
 @settings(max_examples=50)
-def test_university::assistant_instantiation(instance):
-    assert isinstance(instance, university::Assistant)
+def test_university_assistant_instantiation(instance):
+    assert isinstance(instance, university_Assistant)

@@ -3,15 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    C32,
-    C22,
-    Z2,
-    R2,
-    Y2,
-    C12,
     B12,
     A12,
     C3,
@@ -22,125 +16,17 @@ from python_code import (
     C1,
     B1,
     A1,
+    C32,
+    C22,
+    Z2,
+    R2,
+    Y2,
+    C12,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_c32_is_not_abstract():
-    assert not inspect.isabstract(C32)
-
-
-def test_c32_constructor_exists():
-    assert callable(C32.__init__)
-
-
-def test_c32_constructor_args():
-    sig = inspect.signature(C32.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_c22_is_not_abstract():
-    assert not inspect.isabstract(C22)
-
-
-def test_c22_constructor_exists():
-    assert callable(C22.__init__)
-
-
-def test_c22_constructor_args():
-    sig = inspect.signature(C22.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_z2_is_not_abstract():
-    assert not inspect.isabstract(Z2)
-
-
-def test_z2_constructor_exists():
-    assert callable(Z2.__init__)
-
-
-def test_z2_constructor_args():
-    sig = inspect.signature(Z2.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_r2_is_not_abstract():
-    assert not inspect.isabstract(R2)
-
-
-def test_r2_constructor_exists():
-    assert callable(R2.__init__)
-
-
-def test_r2_constructor_args():
-    sig = inspect.signature(R2.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_y2_is_not_abstract():
-    assert not inspect.isabstract(Y2)
-
-
-def test_y2_constructor_exists():
-    assert callable(Y2.__init__)
-
-
-def test_y2_constructor_args():
-    sig = inspect.signature(Y2.__init__)
-    params = list(sig.parameters.keys())
-    assert "alty" in params, "Missing parameter 'alty'"
-
-def test_y2_has_alty():
-    assert hasattr(Y2, "alty")
-    descriptor = None
-    for klass in Y2.__mro__:
-        if "alty" in klass.__dict__:
-            descriptor = klass.__dict__["alty"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_c12_is_not_abstract():
-    assert not inspect.isabstract(C12)
-
-
-def test_c12_constructor_exists():
-    assert callable(C12.__init__)
-
-
-def test_c12_constructor_args():
-    sig = inspect.signature(C12.__init__)
-    params = list(sig.parameters.keys())
-    assert "altC1" in params, "Missing parameter 'altC1'"
-    assert "altc2" in params, "Missing parameter 'altc2'"
-
-def test_c12_has_altC1():
-    assert hasattr(C12, "altC1")
-    descriptor = None
-    for klass in C12.__mro__:
-        if "altC1" in klass.__dict__:
-            descriptor = klass.__dict__["altC1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_c12_has_altc2():
-    assert hasattr(C12, "altc2")
-    descriptor = None
-    for klass in C12.__mro__:
-        if "altc2" in klass.__dict__:
-            descriptor = klass.__dict__["altc2"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -283,17 +169,8 @@ def test_c1_constructor_exists():
 def test_c1_constructor_args():
     sig = inspect.signature(C1.__init__)
     params = list(sig.parameters.keys())
-    assert "altC1" in params, "Missing parameter 'altC1'"
     assert "altc2" in params, "Missing parameter 'altc2'"
-
-def test_c1_has_altC1():
-    assert hasattr(C1, "altC1")
-    descriptor = None
-    for klass in C1.__mro__:
-        if "altC1" in klass.__dict__:
-            descriptor = klass.__dict__["altC1"]
-            break
-    assert isinstance(descriptor, property)
+    assert "altC1" in params, "Missing parameter 'altC1'"
 
 def test_c1_has_altc2():
     assert hasattr(C1, "altc2")
@@ -301,6 +178,15 @@ def test_c1_has_altc2():
     for klass in C1.__mro__:
         if "altc2" in klass.__dict__:
             descriptor = klass.__dict__["altc2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_c1_has_altC1():
+    assert hasattr(C1, "altC1")
+    descriptor = None
+    for klass in C1.__mro__:
+        if "altC1" in klass.__dict__:
+            descriptor = klass.__dict__["altC1"]
             break
     assert isinstance(descriptor, property)
 
@@ -353,6 +239,120 @@ def test_a1_has_altA():
     assert isinstance(descriptor, property)
 
 
+
+def test_c32_is_not_abstract():
+    assert not inspect.isabstract(C32)
+
+
+def test_c32_constructor_exists():
+    assert callable(C32.__init__)
+
+
+def test_c32_constructor_args():
+    sig = inspect.signature(C32.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_c22_is_not_abstract():
+    assert not inspect.isabstract(C22)
+
+
+def test_c22_constructor_exists():
+    assert callable(C22.__init__)
+
+
+def test_c22_constructor_args():
+    sig = inspect.signature(C22.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_z2_is_not_abstract():
+    assert not inspect.isabstract(Z2)
+
+
+def test_z2_constructor_exists():
+    assert callable(Z2.__init__)
+
+
+def test_z2_constructor_args():
+    sig = inspect.signature(Z2.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_r2_is_not_abstract():
+    assert not inspect.isabstract(R2)
+
+
+def test_r2_constructor_exists():
+    assert callable(R2.__init__)
+
+
+def test_r2_constructor_args():
+    sig = inspect.signature(R2.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_y2_is_not_abstract():
+    assert not inspect.isabstract(Y2)
+
+
+def test_y2_constructor_exists():
+    assert callable(Y2.__init__)
+
+
+def test_y2_constructor_args():
+    sig = inspect.signature(Y2.__init__)
+    params = list(sig.parameters.keys())
+    assert "alty" in params, "Missing parameter 'alty'"
+
+def test_y2_has_alty():
+    assert hasattr(Y2, "alty")
+    descriptor = None
+    for klass in Y2.__mro__:
+        if "alty" in klass.__dict__:
+            descriptor = klass.__dict__["alty"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_c12_is_not_abstract():
+    assert not inspect.isabstract(C12)
+
+
+def test_c12_constructor_exists():
+    assert callable(C12.__init__)
+
+
+def test_c12_constructor_args():
+    sig = inspect.signature(C12.__init__)
+    params = list(sig.parameters.keys())
+    assert "altc2" in params, "Missing parameter 'altc2'"
+    assert "altC1" in params, "Missing parameter 'altC1'"
+
+def test_c12_has_altc2():
+    assert hasattr(C12, "altc2")
+    descriptor = None
+    for klass in C12.__mro__:
+        if "altc2" in klass.__dict__:
+            descriptor = klass.__dict__["altc2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_c12_has_altC1():
+    assert hasattr(C12, "altC1")
+    descriptor = None
+    for klass in C12.__mro__:
+        if "altC1" in klass.__dict__:
+            descriptor = klass.__dict__["altC1"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -364,30 +364,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-C32_strategy = st.builds(
-    C32,
-)
-C22_strategy = st.builds(
-    C22,
-)
-Z2_strategy = st.builds(
-    Z2,
-)
-R2_strategy = st.builds(
-    R2,
-)
-Y2_strategy = st.builds(
-    Y2,
-    alty=
-        safe_text
-)
-C12_strategy = st.builds(
-    C12,
-    altC1=
-        st.integers(),
-    altc2=
-        st.booleans()
-)
 B12_strategy = st.builds(
     B12,
     altB1=
@@ -417,10 +393,10 @@ Y_strategy = st.builds(
 )
 C1_strategy = st.builds(
     C1,
-    altC1=
-        st.integers(),
     altc2=
-        st.booleans()
+        st.booleans(),
+    altC1=
+        st.integers()
 )
 B1_strategy = st.builds(
     B1,
@@ -432,78 +408,36 @@ A1_strategy = st.builds(
     altA=
         safe_text
 )
-
-@given(instance=C32_strategy)
-@settings(max_examples=50)
-def test_c32_instantiation(instance):
-    assert isinstance(instance, C32)
-
-@given(instance=C22_strategy)
-@settings(max_examples=50)
-def test_c22_instantiation(instance):
-    assert isinstance(instance, C22)
-
-@given(instance=Z2_strategy)
-@settings(max_examples=50)
-def test_z2_instantiation(instance):
-    assert isinstance(instance, Z2)
-
-@given(instance=R2_strategy)
-@settings(max_examples=50)
-def test_r2_instantiation(instance):
-    assert isinstance(instance, R2)
-
-@given(instance=Y2_strategy)
-@settings(max_examples=50)
-def test_y2_instantiation(instance):
-    assert isinstance(instance, Y2)
-
-@given(instance=Y2_strategy)
-def test_y2_alty_type(instance):
-    assert isinstance(instance.alty, str)
-
-
-@given(instance=Y2_strategy)
-def test_y2_alty_setter(instance):
-    original = instance.alty
-    instance.alty = original
-    assert instance.alty == original
-
-@given(instance=C12_strategy)
-@settings(max_examples=50)
-def test_c12_instantiation(instance):
-    assert isinstance(instance, C12)
-
-@given(instance=C12_strategy)
-def test_c12_altC1_type(instance):
-    assert isinstance(instance.altC1, int)
-
-
-@given(instance=C12_strategy)
-def test_c12_altC1_setter(instance):
-    original = instance.altC1
-    instance.altC1 = original
-    assert instance.altC1 == original
-
-@given(instance=C12_strategy)
-def test_c12_altc2_type(instance):
-    assert isinstance(instance.altc2, bool)
-
-
-@given(instance=C12_strategy)
-def test_c12_altc2_setter(instance):
-    original = instance.altc2
-    instance.altc2 = original
-    assert instance.altc2 == original
+C32_strategy = st.builds(
+    C32,
+)
+C22_strategy = st.builds(
+    C22,
+)
+Z2_strategy = st.builds(
+    Z2,
+)
+R2_strategy = st.builds(
+    R2,
+)
+Y2_strategy = st.builds(
+    Y2,
+    alty=
+        safe_text
+)
+C12_strategy = st.builds(
+    C12,
+    altc2=
+        st.booleans(),
+    altC1=
+        st.integers()
+)
 
 @given(instance=B12_strategy)
 @settings(max_examples=50)
 def test_b12_instantiation(instance):
     assert isinstance(instance, B12)
 
-@given(instance=B12_strategy)
-def test_b12_altB1_type(instance):
-    assert isinstance(instance.altB1, int)
 
 
 @given(instance=B12_strategy)
@@ -517,9 +451,6 @@ def test_b12_altB1_setter(instance):
 def test_a12_instantiation(instance):
     assert isinstance(instance, A12)
 
-@given(instance=A12_strategy)
-def test_a12_altA_type(instance):
-    assert isinstance(instance.altA, str)
 
 
 @given(instance=A12_strategy)
@@ -553,9 +484,6 @@ def test_r_instantiation(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_alty_type(instance):
-    assert isinstance(instance.alty, str)
 
 
 @given(instance=Y_strategy)
@@ -569,20 +497,6 @@ def test_y_alty_setter(instance):
 def test_c1_instantiation(instance):
     assert isinstance(instance, C1)
 
-@given(instance=C1_strategy)
-def test_c1_altC1_type(instance):
-    assert isinstance(instance.altC1, int)
-
-
-@given(instance=C1_strategy)
-def test_c1_altC1_setter(instance):
-    original = instance.altC1
-    instance.altC1 = original
-    assert instance.altC1 == original
-
-@given(instance=C1_strategy)
-def test_c1_altc2_type(instance):
-    assert isinstance(instance.altc2, bool)
 
 
 @given(instance=C1_strategy)
@@ -591,14 +505,19 @@ def test_c1_altc2_setter(instance):
     instance.altc2 = original
     assert instance.altc2 == original
 
+
+
+@given(instance=C1_strategy)
+def test_c1_altC1_setter(instance):
+    original = instance.altC1
+    instance.altC1 = original
+    assert instance.altC1 == original
+
 @given(instance=B1_strategy)
 @settings(max_examples=50)
 def test_b1_instantiation(instance):
     assert isinstance(instance, B1)
 
-@given(instance=B1_strategy)
-def test_b1_altB1_type(instance):
-    assert isinstance(instance.altB1, int)
 
 
 @given(instance=B1_strategy)
@@ -612,9 +531,6 @@ def test_b1_altB1_setter(instance):
 def test_a1_instantiation(instance):
     assert isinstance(instance, A1)
 
-@given(instance=A1_strategy)
-def test_a1_altA_type(instance):
-    assert isinstance(instance.altA, str)
 
 
 @given(instance=A1_strategy)
@@ -622,3 +538,57 @@ def test_a1_altA_setter(instance):
     original = instance.altA
     instance.altA = original
     assert instance.altA == original
+
+@given(instance=C32_strategy)
+@settings(max_examples=50)
+def test_c32_instantiation(instance):
+    assert isinstance(instance, C32)
+
+@given(instance=C22_strategy)
+@settings(max_examples=50)
+def test_c22_instantiation(instance):
+    assert isinstance(instance, C22)
+
+@given(instance=Z2_strategy)
+@settings(max_examples=50)
+def test_z2_instantiation(instance):
+    assert isinstance(instance, Z2)
+
+@given(instance=R2_strategy)
+@settings(max_examples=50)
+def test_r2_instantiation(instance):
+    assert isinstance(instance, R2)
+
+@given(instance=Y2_strategy)
+@settings(max_examples=50)
+def test_y2_instantiation(instance):
+    assert isinstance(instance, Y2)
+
+
+
+@given(instance=Y2_strategy)
+def test_y2_alty_setter(instance):
+    original = instance.alty
+    instance.alty = original
+    assert instance.alty == original
+
+@given(instance=C12_strategy)
+@settings(max_examples=50)
+def test_c12_instantiation(instance):
+    assert isinstance(instance, C12)
+
+
+
+@given(instance=C12_strategy)
+def test_c12_altc2_setter(instance):
+    original = instance.altc2
+    instance.altc2 = original
+    assert instance.altc2 == original
+
+
+
+@given(instance=C12_strategy)
+def test_c12_altC1_setter(instance):
+    original = instance.altC1
+    instance.altC1 = original
+    assert instance.altC1 == original

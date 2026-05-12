@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    TypeA::C,
-    TypeA::ObjectR,
-    TypeA::ObjectX,
-    TypeA::AA,
+    TypeA_C,
+    TypeA_ObjectR,
+    TypeA_ObjectX,
+    TypeA_AA,
     ObjectR,
-    TypeA::ObjectS,
+    TypeA_ObjectS,
     ObjectX,
-    TypeA::ObjectY,
+    TypeA_ObjectY,
     AA,
-    TypeA::D,
-    TypeA::B,
-    TypeA::ListElement,
+    TypeA_B,
+    TypeA_D,
+    TypeA_ListElement,
 )
 
 # =============================================================================
@@ -41,23 +41,23 @@ def test_b_constructor_args():
 
 
 
-def test_typea::c_is_not_abstract():
-    assert not inspect.isabstract(TypeA::C)
+def test_typea_c_is_not_abstract():
+    assert not inspect.isabstract(TypeA_C)
 
 
-def test_typea::c_constructor_exists():
-    assert callable(TypeA::C.__init__)
+def test_typea_c_constructor_exists():
+    assert callable(TypeA_C.__init__)
 
 
-def test_typea::c_constructor_args():
-    sig = inspect.signature(TypeA::C.__init__)
+def test_typea_c_constructor_args():
+    sig = inspect.signature(TypeA_C.__init__)
     params = list(sig.parameters.keys())
     assert "nameC" in params, "Missing parameter 'nameC'"
 
-def test_typea::c_has_nameC():
-    assert hasattr(TypeA::C, "nameC")
+def test_typea_c_has_nameC():
+    assert hasattr(TypeA_C, "nameC")
     descriptor = None
-    for klass in TypeA::C.__mro__:
+    for klass in TypeA_C.__mro__:
         if "nameC" in klass.__dict__:
             descriptor = klass.__dict__["nameC"]
             break
@@ -65,23 +65,23 @@ def test_typea::c_has_nameC():
 
 
 
-def test_typea::objectr_is_not_abstract():
-    assert not inspect.isabstract(TypeA::ObjectR)
+def test_typea_objectr_is_not_abstract():
+    assert not inspect.isabstract(TypeA_ObjectR)
 
 
-def test_typea::objectr_constructor_exists():
-    assert callable(TypeA::ObjectR.__init__)
+def test_typea_objectr_constructor_exists():
+    assert callable(TypeA_ObjectR.__init__)
 
 
-def test_typea::objectr_constructor_args():
-    sig = inspect.signature(TypeA::ObjectR.__init__)
+def test_typea_objectr_constructor_args():
+    sig = inspect.signature(TypeA_ObjectR.__init__)
     params = list(sig.parameters.keys())
     assert "nameR" in params, "Missing parameter 'nameR'"
 
-def test_typea::objectr_has_nameR():
-    assert hasattr(TypeA::ObjectR, "nameR")
+def test_typea_objectr_has_nameR():
+    assert hasattr(TypeA_ObjectR, "nameR")
     descriptor = None
-    for klass in TypeA::ObjectR.__mro__:
+    for klass in TypeA_ObjectR.__mro__:
         if "nameR" in klass.__dict__:
             descriptor = klass.__dict__["nameR"]
             break
@@ -89,23 +89,23 @@ def test_typea::objectr_has_nameR():
 
 
 
-def test_typea::objectx_is_not_abstract():
-    assert not inspect.isabstract(TypeA::ObjectX)
+def test_typea_objectx_is_not_abstract():
+    assert not inspect.isabstract(TypeA_ObjectX)
 
 
-def test_typea::objectx_constructor_exists():
-    assert callable(TypeA::ObjectX.__init__)
+def test_typea_objectx_constructor_exists():
+    assert callable(TypeA_ObjectX.__init__)
 
 
-def test_typea::objectx_constructor_args():
-    sig = inspect.signature(TypeA::ObjectX.__init__)
+def test_typea_objectx_constructor_args():
+    sig = inspect.signature(TypeA_ObjectX.__init__)
     params = list(sig.parameters.keys())
     assert "nameX" in params, "Missing parameter 'nameX'"
 
-def test_typea::objectx_has_nameX():
-    assert hasattr(TypeA::ObjectX, "nameX")
+def test_typea_objectx_has_nameX():
+    assert hasattr(TypeA_ObjectX, "nameX")
     descriptor = None
-    for klass in TypeA::ObjectX.__mro__:
+    for klass in TypeA_ObjectX.__mro__:
         if "nameX" in klass.__dict__:
             descriptor = klass.__dict__["nameX"]
             break
@@ -113,23 +113,23 @@ def test_typea::objectx_has_nameX():
 
 
 
-def test_typea::aa_is_not_abstract():
-    assert not inspect.isabstract(TypeA::AA)
+def test_typea_aa_is_not_abstract():
+    assert not inspect.isabstract(TypeA_AA)
 
 
-def test_typea::aa_constructor_exists():
-    assert callable(TypeA::AA.__init__)
+def test_typea_aa_constructor_exists():
+    assert callable(TypeA_AA.__init__)
 
 
-def test_typea::aa_constructor_args():
-    sig = inspect.signature(TypeA::AA.__init__)
+def test_typea_aa_constructor_args():
+    sig = inspect.signature(TypeA_AA.__init__)
     params = list(sig.parameters.keys())
     assert "nameA" in params, "Missing parameter 'nameA'"
 
-def test_typea::aa_has_nameA():
-    assert hasattr(TypeA::AA, "nameA")
+def test_typea_aa_has_nameA():
+    assert hasattr(TypeA_AA, "nameA")
     descriptor = None
-    for klass in TypeA::AA.__mro__:
+    for klass in TypeA_AA.__mro__:
         if "nameA" in klass.__dict__:
             descriptor = klass.__dict__["nameA"]
             break
@@ -151,23 +151,23 @@ def test_objectr_constructor_args():
 
 
 
-def test_typea::objects_is_not_abstract():
-    assert not inspect.isabstract(TypeA::ObjectS)
+def test_typea_objects_is_not_abstract():
+    assert not inspect.isabstract(TypeA_ObjectS)
 
 
-def test_typea::objects_constructor_exists():
-    assert callable(TypeA::ObjectS.__init__)
+def test_typea_objects_constructor_exists():
+    assert callable(TypeA_ObjectS.__init__)
 
 
-def test_typea::objects_constructor_args():
-    sig = inspect.signature(TypeA::ObjectS.__init__)
+def test_typea_objects_constructor_args():
+    sig = inspect.signature(TypeA_ObjectS.__init__)
     params = list(sig.parameters.keys())
     assert "nameS" in params, "Missing parameter 'nameS'"
 
-def test_typea::objects_has_nameS():
-    assert hasattr(TypeA::ObjectS, "nameS")
+def test_typea_objects_has_nameS():
+    assert hasattr(TypeA_ObjectS, "nameS")
     descriptor = None
-    for klass in TypeA::ObjectS.__mro__:
+    for klass in TypeA_ObjectS.__mro__:
         if "nameS" in klass.__dict__:
             descriptor = klass.__dict__["nameS"]
             break
@@ -189,23 +189,23 @@ def test_objectx_constructor_args():
 
 
 
-def test_typea::objecty_is_not_abstract():
-    assert not inspect.isabstract(TypeA::ObjectY)
+def test_typea_objecty_is_not_abstract():
+    assert not inspect.isabstract(TypeA_ObjectY)
 
 
-def test_typea::objecty_constructor_exists():
-    assert callable(TypeA::ObjectY.__init__)
+def test_typea_objecty_constructor_exists():
+    assert callable(TypeA_ObjectY.__init__)
 
 
-def test_typea::objecty_constructor_args():
-    sig = inspect.signature(TypeA::ObjectY.__init__)
+def test_typea_objecty_constructor_args():
+    sig = inspect.signature(TypeA_ObjectY.__init__)
     params = list(sig.parameters.keys())
     assert "nameY" in params, "Missing parameter 'nameY'"
 
-def test_typea::objecty_has_nameY():
-    assert hasattr(TypeA::ObjectY, "nameY")
+def test_typea_objecty_has_nameY():
+    assert hasattr(TypeA_ObjectY, "nameY")
     descriptor = None
-    for klass in TypeA::ObjectY.__mro__:
+    for klass in TypeA_ObjectY.__mro__:
         if "nameY" in klass.__dict__:
             descriptor = klass.__dict__["nameY"]
             break
@@ -227,47 +227,23 @@ def test_aa_constructor_args():
 
 
 
-def test_typea::d_is_not_abstract():
-    assert not inspect.isabstract(TypeA::D)
+def test_typea_b_is_not_abstract():
+    assert not inspect.isabstract(TypeA_B)
 
 
-def test_typea::d_constructor_exists():
-    assert callable(TypeA::D.__init__)
+def test_typea_b_constructor_exists():
+    assert callable(TypeA_B.__init__)
 
 
-def test_typea::d_constructor_args():
-    sig = inspect.signature(TypeA::D.__init__)
-    params = list(sig.parameters.keys())
-    assert "nameD" in params, "Missing parameter 'nameD'"
-
-def test_typea::d_has_nameD():
-    assert hasattr(TypeA::D, "nameD")
-    descriptor = None
-    for klass in TypeA::D.__mro__:
-        if "nameD" in klass.__dict__:
-            descriptor = klass.__dict__["nameD"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_typea::b_is_not_abstract():
-    assert not inspect.isabstract(TypeA::B)
-
-
-def test_typea::b_constructor_exists():
-    assert callable(TypeA::B.__init__)
-
-
-def test_typea::b_constructor_args():
-    sig = inspect.signature(TypeA::B.__init__)
+def test_typea_b_constructor_args():
+    sig = inspect.signature(TypeA_B.__init__)
     params = list(sig.parameters.keys())
     assert "nameB" in params, "Missing parameter 'nameB'"
 
-def test_typea::b_has_nameB():
-    assert hasattr(TypeA::B, "nameB")
+def test_typea_b_has_nameB():
+    assert hasattr(TypeA_B, "nameB")
     descriptor = None
-    for klass in TypeA::B.__mro__:
+    for klass in TypeA_B.__mro__:
         if "nameB" in klass.__dict__:
             descriptor = klass.__dict__["nameB"]
             break
@@ -275,23 +251,47 @@ def test_typea::b_has_nameB():
 
 
 
-def test_typea::listelement_is_not_abstract():
-    assert not inspect.isabstract(TypeA::ListElement)
+def test_typea_d_is_not_abstract():
+    assert not inspect.isabstract(TypeA_D)
 
 
-def test_typea::listelement_constructor_exists():
-    assert callable(TypeA::ListElement.__init__)
+def test_typea_d_constructor_exists():
+    assert callable(TypeA_D.__init__)
 
 
-def test_typea::listelement_constructor_args():
-    sig = inspect.signature(TypeA::ListElement.__init__)
+def test_typea_d_constructor_args():
+    sig = inspect.signature(TypeA_D.__init__)
+    params = list(sig.parameters.keys())
+    assert "nameD" in params, "Missing parameter 'nameD'"
+
+def test_typea_d_has_nameD():
+    assert hasattr(TypeA_D, "nameD")
+    descriptor = None
+    for klass in TypeA_D.__mro__:
+        if "nameD" in klass.__dict__:
+            descriptor = klass.__dict__["nameD"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_typea_listelement_is_not_abstract():
+    assert not inspect.isabstract(TypeA_ListElement)
+
+
+def test_typea_listelement_constructor_exists():
+    assert callable(TypeA_ListElement.__init__)
+
+
+def test_typea_listelement_constructor_args():
+    sig = inspect.signature(TypeA_ListElement.__init__)
     params = list(sig.parameters.keys())
     assert "nameListElement" in params, "Missing parameter 'nameListElement'"
 
-def test_typea::listelement_has_nameListElement():
-    assert hasattr(TypeA::ListElement, "nameListElement")
+def test_typea_listelement_has_nameListElement():
+    assert hasattr(TypeA_ListElement, "nameListElement")
     descriptor = None
-    for klass in TypeA::ListElement.__mro__:
+    for klass in TypeA_ListElement.__mro__:
         if "nameListElement" in klass.__dict__:
             descriptor = klass.__dict__["nameListElement"]
             break
@@ -312,57 +312,57 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-TypeA::C_strategy = st.builds(
-    TypeA::C,
+TypeA_C_strategy = st.builds(
+    TypeA_C,
     nameC=
         safe_text
 )
-TypeA::ObjectR_strategy = st.builds(
-    TypeA::ObjectR,
+TypeA_ObjectR_strategy = st.builds(
+    TypeA_ObjectR,
     nameR=
         safe_text
 )
-TypeA::ObjectX_strategy = st.builds(
-    TypeA::ObjectX,
+TypeA_ObjectX_strategy = st.builds(
+    TypeA_ObjectX,
     nameX=
         safe_text
 )
-TypeA::AA_strategy = st.builds(
-    TypeA::AA,
+TypeA_AA_strategy = st.builds(
+    TypeA_AA,
     nameA=
         safe_text
 )
 ObjectR_strategy = st.builds(
     ObjectR,
 )
-TypeA::ObjectS_strategy = st.builds(
-    TypeA::ObjectS,
+TypeA_ObjectS_strategy = st.builds(
+    TypeA_ObjectS,
     nameS=
         safe_text
 )
 ObjectX_strategy = st.builds(
     ObjectX,
 )
-TypeA::ObjectY_strategy = st.builds(
-    TypeA::ObjectY,
+TypeA_ObjectY_strategy = st.builds(
+    TypeA_ObjectY,
     nameY=
         safe_text
 )
 AA_strategy = st.builds(
     AA,
 )
-TypeA::D_strategy = st.builds(
-    TypeA::D,
-    nameD=
-        safe_text
-)
-TypeA::B_strategy = st.builds(
-    TypeA::B,
+TypeA_B_strategy = st.builds(
+    TypeA_B,
     nameB=
         safe_text
 )
-TypeA::ListElement_strategy = st.builds(
-    TypeA::ListElement,
+TypeA_D_strategy = st.builds(
+    TypeA_D,
+    nameD=
+        safe_text
+)
+TypeA_ListElement_strategy = st.builds(
+    TypeA_ListElement,
     nameListElement=
         safe_text
 )
@@ -372,66 +372,54 @@ TypeA::ListElement_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=TypeA::C_strategy)
+@given(instance=TypeA_C_strategy)
 @settings(max_examples=50)
-def test_typea::c_instantiation(instance):
-    assert isinstance(instance, TypeA::C)
-
-@given(instance=TypeA::C_strategy)
-def test_typea::c_nameC_type(instance):
-    assert isinstance(instance.nameC, str)
+def test_typea_c_instantiation(instance):
+    assert isinstance(instance, TypeA_C)
 
 
-@given(instance=TypeA::C_strategy)
-def test_typea::c_nameC_setter(instance):
+
+@given(instance=TypeA_C_strategy)
+def test_typea_c_nameC_setter(instance):
     original = instance.nameC
     instance.nameC = original
     assert instance.nameC == original
 
-@given(instance=TypeA::ObjectR_strategy)
+@given(instance=TypeA_ObjectR_strategy)
 @settings(max_examples=50)
-def test_typea::objectr_instantiation(instance):
-    assert isinstance(instance, TypeA::ObjectR)
-
-@given(instance=TypeA::ObjectR_strategy)
-def test_typea::objectr_nameR_type(instance):
-    assert isinstance(instance.nameR, str)
+def test_typea_objectr_instantiation(instance):
+    assert isinstance(instance, TypeA_ObjectR)
 
 
-@given(instance=TypeA::ObjectR_strategy)
-def test_typea::objectr_nameR_setter(instance):
+
+@given(instance=TypeA_ObjectR_strategy)
+def test_typea_objectr_nameR_setter(instance):
     original = instance.nameR
     instance.nameR = original
     assert instance.nameR == original
 
-@given(instance=TypeA::ObjectX_strategy)
+@given(instance=TypeA_ObjectX_strategy)
 @settings(max_examples=50)
-def test_typea::objectx_instantiation(instance):
-    assert isinstance(instance, TypeA::ObjectX)
-
-@given(instance=TypeA::ObjectX_strategy)
-def test_typea::objectx_nameX_type(instance):
-    assert isinstance(instance.nameX, str)
+def test_typea_objectx_instantiation(instance):
+    assert isinstance(instance, TypeA_ObjectX)
 
 
-@given(instance=TypeA::ObjectX_strategy)
-def test_typea::objectx_nameX_setter(instance):
+
+@given(instance=TypeA_ObjectX_strategy)
+def test_typea_objectx_nameX_setter(instance):
     original = instance.nameX
     instance.nameX = original
     assert instance.nameX == original
 
-@given(instance=TypeA::AA_strategy)
+@given(instance=TypeA_AA_strategy)
 @settings(max_examples=50)
-def test_typea::aa_instantiation(instance):
-    assert isinstance(instance, TypeA::AA)
-
-@given(instance=TypeA::AA_strategy)
-def test_typea::aa_nameA_type(instance):
-    assert isinstance(instance.nameA, str)
+def test_typea_aa_instantiation(instance):
+    assert isinstance(instance, TypeA_AA)
 
 
-@given(instance=TypeA::AA_strategy)
-def test_typea::aa_nameA_setter(instance):
+
+@given(instance=TypeA_AA_strategy)
+def test_typea_aa_nameA_setter(instance):
     original = instance.nameA
     instance.nameA = original
     assert instance.nameA == original
@@ -441,18 +429,15 @@ def test_typea::aa_nameA_setter(instance):
 def test_objectr_instantiation(instance):
     assert isinstance(instance, ObjectR)
 
-@given(instance=TypeA::ObjectS_strategy)
+@given(instance=TypeA_ObjectS_strategy)
 @settings(max_examples=50)
-def test_typea::objects_instantiation(instance):
-    assert isinstance(instance, TypeA::ObjectS)
-
-@given(instance=TypeA::ObjectS_strategy)
-def test_typea::objects_nameS_type(instance):
-    assert isinstance(instance.nameS, str)
+def test_typea_objects_instantiation(instance):
+    assert isinstance(instance, TypeA_ObjectS)
 
 
-@given(instance=TypeA::ObjectS_strategy)
-def test_typea::objects_nameS_setter(instance):
+
+@given(instance=TypeA_ObjectS_strategy)
+def test_typea_objects_nameS_setter(instance):
     original = instance.nameS
     instance.nameS = original
     assert instance.nameS == original
@@ -462,18 +447,15 @@ def test_typea::objects_nameS_setter(instance):
 def test_objectx_instantiation(instance):
     assert isinstance(instance, ObjectX)
 
-@given(instance=TypeA::ObjectY_strategy)
+@given(instance=TypeA_ObjectY_strategy)
 @settings(max_examples=50)
-def test_typea::objecty_instantiation(instance):
-    assert isinstance(instance, TypeA::ObjectY)
-
-@given(instance=TypeA::ObjectY_strategy)
-def test_typea::objecty_nameY_type(instance):
-    assert isinstance(instance.nameY, str)
+def test_typea_objecty_instantiation(instance):
+    assert isinstance(instance, TypeA_ObjectY)
 
 
-@given(instance=TypeA::ObjectY_strategy)
-def test_typea::objecty_nameY_setter(instance):
+
+@given(instance=TypeA_ObjectY_strategy)
+def test_typea_objecty_nameY_setter(instance):
     original = instance.nameY
     instance.nameY = original
     assert instance.nameY == original
@@ -483,50 +465,41 @@ def test_typea::objecty_nameY_setter(instance):
 def test_aa_instantiation(instance):
     assert isinstance(instance, AA)
 
-@given(instance=TypeA::D_strategy)
+@given(instance=TypeA_B_strategy)
 @settings(max_examples=50)
-def test_typea::d_instantiation(instance):
-    assert isinstance(instance, TypeA::D)
-
-@given(instance=TypeA::D_strategy)
-def test_typea::d_nameD_type(instance):
-    assert isinstance(instance.nameD, str)
+def test_typea_b_instantiation(instance):
+    assert isinstance(instance, TypeA_B)
 
 
-@given(instance=TypeA::D_strategy)
-def test_typea::d_nameD_setter(instance):
-    original = instance.nameD
-    instance.nameD = original
-    assert instance.nameD == original
 
-@given(instance=TypeA::B_strategy)
-@settings(max_examples=50)
-def test_typea::b_instantiation(instance):
-    assert isinstance(instance, TypeA::B)
-
-@given(instance=TypeA::B_strategy)
-def test_typea::b_nameB_type(instance):
-    assert isinstance(instance.nameB, str)
-
-
-@given(instance=TypeA::B_strategy)
-def test_typea::b_nameB_setter(instance):
+@given(instance=TypeA_B_strategy)
+def test_typea_b_nameB_setter(instance):
     original = instance.nameB
     instance.nameB = original
     assert instance.nameB == original
 
-@given(instance=TypeA::ListElement_strategy)
+@given(instance=TypeA_D_strategy)
 @settings(max_examples=50)
-def test_typea::listelement_instantiation(instance):
-    assert isinstance(instance, TypeA::ListElement)
-
-@given(instance=TypeA::ListElement_strategy)
-def test_typea::listelement_nameListElement_type(instance):
-    assert isinstance(instance.nameListElement, str)
+def test_typea_d_instantiation(instance):
+    assert isinstance(instance, TypeA_D)
 
 
-@given(instance=TypeA::ListElement_strategy)
-def test_typea::listelement_nameListElement_setter(instance):
+
+@given(instance=TypeA_D_strategy)
+def test_typea_d_nameD_setter(instance):
+    original = instance.nameD
+    instance.nameD = original
+    assert instance.nameD == original
+
+@given(instance=TypeA_ListElement_strategy)
+@settings(max_examples=50)
+def test_typea_listelement_instantiation(instance):
+    assert isinstance(instance, TypeA_ListElement)
+
+
+
+@given(instance=TypeA_ListElement_strategy)
+def test_typea_listelement_nameListElement_setter(instance):
     original = instance.nameListElement
     instance.nameListElement = original
     assert instance.nameListElement == original

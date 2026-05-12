@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    abc::C,
+from python_code import (
+    abc_C,
     A,
-    abc::B,
-    abc::A,
+    abc_B,
+    abc_A,
 )
 
 # =============================================================================
@@ -18,16 +18,16 @@ from classes import (
 
 
 
-def test_abc::c_is_not_abstract():
-    assert not inspect.isabstract(abc::C)
+def test_abc_c_is_not_abstract():
+    assert not inspect.isabstract(abc_C)
 
 
-def test_abc::c_constructor_exists():
-    assert callable(abc::C.__init__)
+def test_abc_c_constructor_exists():
+    assert callable(abc_C.__init__)
 
 
-def test_abc::c_constructor_args():
-    sig = inspect.signature(abc::C.__init__)
+def test_abc_c_constructor_args():
+    sig = inspect.signature(abc_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -46,30 +46,30 @@ def test_a_constructor_args():
 
 
 
-def test_abc::b_is_not_abstract():
-    assert not inspect.isabstract(abc::B)
+def test_abc_b_is_not_abstract():
+    assert not inspect.isabstract(abc_B)
 
 
-def test_abc::b_constructor_exists():
-    assert callable(abc::B.__init__)
+def test_abc_b_constructor_exists():
+    assert callable(abc_B.__init__)
 
 
-def test_abc::b_constructor_args():
-    sig = inspect.signature(abc::B.__init__)
+def test_abc_b_constructor_args():
+    sig = inspect.signature(abc_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_abc::a_is_not_abstract():
-    assert not inspect.isabstract(abc::A)
+def test_abc_a_is_not_abstract():
+    assert not inspect.isabstract(abc_A)
 
 
-def test_abc::a_constructor_exists():
-    assert callable(abc::A.__init__)
+def test_abc_a_constructor_exists():
+    assert callable(abc_A.__init__)
 
 
-def test_abc::a_constructor_args():
-    sig = inspect.signature(abc::A.__init__)
+def test_abc_a_constructor_args():
+    sig = inspect.signature(abc_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-abc::C_strategy = st.builds(
-    abc::C,
+abc_C_strategy = st.builds(
+    abc_C,
 )
 A_strategy = st.builds(
     A,
 )
-abc::B_strategy = st.builds(
-    abc::B,
+abc_B_strategy = st.builds(
+    abc_B,
 )
-abc::A_strategy = st.builds(
-    abc::A,
+abc_A_strategy = st.builds(
+    abc_A,
 )
 
-@given(instance=abc::C_strategy)
+@given(instance=abc_C_strategy)
 @settings(max_examples=50)
-def test_abc::c_instantiation(instance):
-    assert isinstance(instance, abc::C)
+def test_abc_c_instantiation(instance):
+    assert isinstance(instance, abc_C)
 
 @given(instance=A_strategy)
 @settings(max_examples=50)
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=abc::B_strategy)
+@given(instance=abc_B_strategy)
 @settings(max_examples=50)
-def test_abc::b_instantiation(instance):
-    assert isinstance(instance, abc::B)
+def test_abc_b_instantiation(instance):
+    assert isinstance(instance, abc_B)
 
-@given(instance=abc::A_strategy)
+@given(instance=abc_A_strategy)
 @settings(max_examples=50)
-def test_abc::a_instantiation(instance):
-    assert isinstance(instance, abc::A)
+def test_abc_a_instantiation(instance):
+    assert isinstance(instance, abc_A)

@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    data_manager,
     faculty_manager,
     class_manager,
     room_manager,
@@ -15,25 +14,12 @@ from python_code import (
     activity_manager,
     time_manager,
     subject_manager,
+    data_manager,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_data_manager_is_not_abstract():
-    assert not inspect.isabstract(data_manager)
-
-
-def test_data_manager_constructor_exists():
-    assert callable(data_manager.__init__)
-
-
-def test_data_manager_constructor_args():
-    sig = inspect.signature(data_manager.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -148,6 +134,20 @@ def test_subject_manager_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_data_manager_is_not_abstract():
+    assert not inspect.isabstract(data_manager)
+
+
+def test_data_manager_constructor_exists():
+    assert callable(data_manager.__init__)
+
+
+def test_data_manager_constructor_args():
+    sig = inspect.signature(data_manager.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -159,9 +159,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-data_manager_strategy = st.builds(
-    data_manager,
-)
 faculty_manager_strategy = st.builds(
     faculty_manager,
 )
@@ -186,11 +183,9 @@ time_manager_strategy = st.builds(
 subject_manager_strategy = st.builds(
     subject_manager,
 )
-
-@given(instance=data_manager_strategy)
-@settings(max_examples=50)
-def test_data_manager_instantiation(instance):
-    assert isinstance(instance, data_manager)
+data_manager_strategy = st.builds(
+    data_manager,
+)
 
 @given(instance=faculty_manager_strategy)
 @settings(max_examples=50)
@@ -231,3 +226,8 @@ def test_time_manager_instantiation(instance):
 @settings(max_examples=50)
 def test_subject_manager_instantiation(instance):
     assert isinstance(instance, subject_manager)
+
+@given(instance=data_manager_strategy)
+@settings(max_examples=50)
+def test_data_manager_instantiation(instance):
+    assert isinstance(instance, data_manager)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    MetaModelGraph::EReference,
+from python_code import (
+    MetaModelGraph_EReference,
     Relation,
-    MetaModelGraph::EAttribute,
-    MetaModelGraph::Relation,
-    MetaModelGraph::Node,
-    MetaModelGraph::EClass,
-    MetaModelGraph::SubGraph,
-    MetaModelGraph::Graph,
-    MetaModelGraph::SubClass,
-    MetaModelGraph::Reference,
-    MetaModelGraph::Composition,
+    MetaModelGraph_EAttribute,
+    MetaModelGraph_Relation,
+    MetaModelGraph_Node,
+    MetaModelGraph_EClass,
+    MetaModelGraph_SubGraph,
+    MetaModelGraph_Graph,
+    MetaModelGraph_SubClass,
+    MetaModelGraph_Reference,
+    MetaModelGraph_Composition,
     EnumModular,
 )
 
@@ -26,16 +26,16 @@ from classes import (
 
 
 
-def test_metamodelgraph::ereference_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::EReference)
+def test_metamodelgraph_ereference_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_EReference)
 
 
-def test_metamodelgraph::ereference_constructor_exists():
-    assert callable(MetaModelGraph::EReference.__init__)
+def test_metamodelgraph_ereference_constructor_exists():
+    assert callable(MetaModelGraph_EReference.__init__)
 
 
-def test_metamodelgraph::ereference_constructor_args():
-    sig = inspect.signature(MetaModelGraph::EReference.__init__)
+def test_metamodelgraph_ereference_constructor_args():
+    sig = inspect.signature(MetaModelGraph_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,81 +54,81 @@ def test_relation_constructor_args():
 
 
 
-def test_metamodelgraph::eattribute_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::EAttribute)
+def test_metamodelgraph_eattribute_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_EAttribute)
 
 
-def test_metamodelgraph::eattribute_constructor_exists():
-    assert callable(MetaModelGraph::EAttribute.__init__)
+def test_metamodelgraph_eattribute_constructor_exists():
+    assert callable(MetaModelGraph_EAttribute.__init__)
 
 
-def test_metamodelgraph::eattribute_constructor_args():
-    sig = inspect.signature(MetaModelGraph::EAttribute.__init__)
+def test_metamodelgraph_eattribute_constructor_args():
+    sig = inspect.signature(MetaModelGraph_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelgraph::relation_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::Relation)
+def test_metamodelgraph_relation_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_Relation)
 
 
-def test_metamodelgraph::relation_constructor_exists():
-    assert callable(MetaModelGraph::Relation.__init__)
+def test_metamodelgraph_relation_constructor_exists():
+    assert callable(MetaModelGraph_Relation.__init__)
 
 
-def test_metamodelgraph::relation_constructor_args():
-    sig = inspect.signature(MetaModelGraph::Relation.__init__)
+def test_metamodelgraph_relation_constructor_args():
+    sig = inspect.signature(MetaModelGraph_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelgraph::node_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::Node)
+def test_metamodelgraph_node_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_Node)
 
 
-def test_metamodelgraph::node_constructor_exists():
-    assert callable(MetaModelGraph::Node.__init__)
+def test_metamodelgraph_node_constructor_exists():
+    assert callable(MetaModelGraph_Node.__init__)
 
 
-def test_metamodelgraph::node_constructor_args():
-    sig = inspect.signature(MetaModelGraph::Node.__init__)
+def test_metamodelgraph_node_constructor_args():
+    sig = inspect.signature(MetaModelGraph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "extension" in params, "Missing parameter 'extension'"
-    assert "icon" in params, "Missing parameter 'icon'"
     assert "insideRecursion" in params, "Missing parameter 'insideRecursion'"
+    assert "icon" in params, "Missing parameter 'icon'"
     assert "enumModularNotation" in params, "Missing parameter 'enumModularNotation'"
 
-def test_metamodelgraph::node_has_extension():
-    assert hasattr(MetaModelGraph::Node, "extension")
+def test_metamodelgraph_node_has_extension():
+    assert hasattr(MetaModelGraph_Node, "extension")
     descriptor = None
-    for klass in MetaModelGraph::Node.__mro__:
+    for klass in MetaModelGraph_Node.__mro__:
         if "extension" in klass.__dict__:
             descriptor = klass.__dict__["extension"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelgraph::node_has_icon():
-    assert hasattr(MetaModelGraph::Node, "icon")
+def test_metamodelgraph_node_has_insideRecursion():
+    assert hasattr(MetaModelGraph_Node, "insideRecursion")
     descriptor = None
-    for klass in MetaModelGraph::Node.__mro__:
-        if "icon" in klass.__dict__:
-            descriptor = klass.__dict__["icon"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::node_has_insideRecursion():
-    assert hasattr(MetaModelGraph::Node, "insideRecursion")
-    descriptor = None
-    for klass in MetaModelGraph::Node.__mro__:
+    for klass in MetaModelGraph_Node.__mro__:
         if "insideRecursion" in klass.__dict__:
             descriptor = klass.__dict__["insideRecursion"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelgraph::node_has_enumModularNotation():
-    assert hasattr(MetaModelGraph::Node, "enumModularNotation")
+def test_metamodelgraph_node_has_icon():
+    assert hasattr(MetaModelGraph_Node, "icon")
     descriptor = None
-    for klass in MetaModelGraph::Node.__mro__:
+    for klass in MetaModelGraph_Node.__mro__:
+        if "icon" in klass.__dict__:
+            descriptor = klass.__dict__["icon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_node_has_enumModularNotation():
+    assert hasattr(MetaModelGraph_Node, "enumModularNotation")
+    descriptor = None
+    for klass in MetaModelGraph_Node.__mro__:
         if "enumModularNotation" in klass.__dict__:
             descriptor = klass.__dict__["enumModularNotation"]
             break
@@ -136,216 +136,216 @@ def test_metamodelgraph::node_has_enumModularNotation():
 
 
 
-def test_metamodelgraph::eclass_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::EClass)
+def test_metamodelgraph_eclass_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_EClass)
 
 
-def test_metamodelgraph::eclass_constructor_exists():
-    assert callable(MetaModelGraph::EClass.__init__)
+def test_metamodelgraph_eclass_constructor_exists():
+    assert callable(MetaModelGraph_EClass.__init__)
 
 
-def test_metamodelgraph::eclass_constructor_args():
-    sig = inspect.signature(MetaModelGraph::EClass.__init__)
+def test_metamodelgraph_eclass_constructor_args():
+    sig = inspect.signature(MetaModelGraph_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelgraph::subgraph_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::SubGraph)
+def test_metamodelgraph_subgraph_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_SubGraph)
 
 
-def test_metamodelgraph::subgraph_constructor_exists():
-    assert callable(MetaModelGraph::SubGraph.__init__)
+def test_metamodelgraph_subgraph_constructor_exists():
+    assert callable(MetaModelGraph_SubGraph.__init__)
 
 
-def test_metamodelgraph::subgraph_constructor_args():
-    sig = inspect.signature(MetaModelGraph::SubGraph.__init__)
+def test_metamodelgraph_subgraph_constructor_args():
+    sig = inspect.signature(MetaModelGraph_SubGraph.__init__)
     params = list(sig.parameters.keys())
+    assert "amountRecursionUnits" in params, "Missing parameter 'amountRecursionUnits'"
+    assert "amountEClassesOut" in params, "Missing parameter 'amountEClassesOut'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "amountOfConcreteEClass" in params, "Missing parameter 'amountOfConcreteEClass'"
+    assert "amountOfAbstractEClass" in params, "Missing parameter 'amountOfAbstractEClass'"
     assert "amountOfParentEClass" in params, "Missing parameter 'amountOfParentEClass'"
     assert "amountOfRecursionPackages" in params, "Missing parameter 'amountOfRecursionPackages'"
-    assert "amountUnits" in params, "Missing parameter 'amountUnits'"
-    assert "amountEClassesOut" in params, "Missing parameter 'amountEClassesOut'"
-    assert "amountOfConcreteEClass" in params, "Missing parameter 'amountOfConcreteEClass'"
-    assert "amountOfParentAbstractEClass" in params, "Missing parameter 'amountOfParentAbstractEClass'"
-    assert "amountOfAbstractEClass" in params, "Missing parameter 'amountOfAbstractEClass'"
     assert "amountPackages" in params, "Missing parameter 'amountPackages'"
-    assert "amountRecursionUnits" in params, "Missing parameter 'amountRecursionUnits'"
-    assert "height" in params, "Missing parameter 'height'"
+    assert "amountUnits" in params, "Missing parameter 'amountUnits'"
+    assert "amountOfParentAbstractEClass" in params, "Missing parameter 'amountOfParentAbstractEClass'"
 
-def test_metamodelgraph::subgraph_has_amountOfParentEClass():
-    assert hasattr(MetaModelGraph::SubGraph, "amountOfParentEClass")
+def test_metamodelgraph_subgraph_has_amountRecursionUnits():
+    assert hasattr(MetaModelGraph_SubGraph, "amountRecursionUnits")
     descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountOfParentEClass" in klass.__dict__:
-            descriptor = klass.__dict__["amountOfParentEClass"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountOfRecursionPackages():
-    assert hasattr(MetaModelGraph::SubGraph, "amountOfRecursionPackages")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountOfRecursionPackages" in klass.__dict__:
-            descriptor = klass.__dict__["amountOfRecursionPackages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountUnits():
-    assert hasattr(MetaModelGraph::SubGraph, "amountUnits")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountUnits" in klass.__dict__:
-            descriptor = klass.__dict__["amountUnits"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountEClassesOut():
-    assert hasattr(MetaModelGraph::SubGraph, "amountEClassesOut")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountEClassesOut" in klass.__dict__:
-            descriptor = klass.__dict__["amountEClassesOut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountOfConcreteEClass():
-    assert hasattr(MetaModelGraph::SubGraph, "amountOfConcreteEClass")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountOfConcreteEClass" in klass.__dict__:
-            descriptor = klass.__dict__["amountOfConcreteEClass"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountOfParentAbstractEClass():
-    assert hasattr(MetaModelGraph::SubGraph, "amountOfParentAbstractEClass")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountOfParentAbstractEClass" in klass.__dict__:
-            descriptor = klass.__dict__["amountOfParentAbstractEClass"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountOfAbstractEClass():
-    assert hasattr(MetaModelGraph::SubGraph, "amountOfAbstractEClass")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountOfAbstractEClass" in klass.__dict__:
-            descriptor = klass.__dict__["amountOfAbstractEClass"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountPackages():
-    assert hasattr(MetaModelGraph::SubGraph, "amountPackages")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
-        if "amountPackages" in klass.__dict__:
-            descriptor = klass.__dict__["amountPackages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelgraph::subgraph_has_amountRecursionUnits():
-    assert hasattr(MetaModelGraph::SubGraph, "amountRecursionUnits")
-    descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
+    for klass in MetaModelGraph_SubGraph.__mro__:
         if "amountRecursionUnits" in klass.__dict__:
             descriptor = klass.__dict__["amountRecursionUnits"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelgraph::subgraph_has_height():
-    assert hasattr(MetaModelGraph::SubGraph, "height")
+def test_metamodelgraph_subgraph_has_amountEClassesOut():
+    assert hasattr(MetaModelGraph_SubGraph, "amountEClassesOut")
     descriptor = None
-    for klass in MetaModelGraph::SubGraph.__mro__:
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountEClassesOut" in klass.__dict__:
+            descriptor = klass.__dict__["amountEClassesOut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_subgraph_has_height():
+    assert hasattr(MetaModelGraph_SubGraph, "height")
+    descriptor = None
+    for klass in MetaModelGraph_SubGraph.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_metamodelgraph::graph_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::Graph)
-
-
-def test_metamodelgraph::graph_constructor_exists():
-    assert callable(MetaModelGraph::Graph.__init__)
-
-
-def test_metamodelgraph::graph_constructor_args():
-    sig = inspect.signature(MetaModelGraph::Graph.__init__)
-    params = list(sig.parameters.keys())
-    assert "amountAbstractEClasses" in params, "Missing parameter 'amountAbstractEClasses'"
-    assert "amountConcreteEClass" in params, "Missing parameter 'amountConcreteEClass'"
-    assert "amountEClasses" in params, "Missing parameter 'amountEClasses'"
-
-def test_metamodelgraph::graph_has_amountAbstractEClasses():
-    assert hasattr(MetaModelGraph::Graph, "amountAbstractEClasses")
+def test_metamodelgraph_subgraph_has_amountOfConcreteEClass():
+    assert hasattr(MetaModelGraph_SubGraph, "amountOfConcreteEClass")
     descriptor = None
-    for klass in MetaModelGraph::Graph.__mro__:
-        if "amountAbstractEClasses" in klass.__dict__:
-            descriptor = klass.__dict__["amountAbstractEClasses"]
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountOfConcreteEClass" in klass.__dict__:
+            descriptor = klass.__dict__["amountOfConcreteEClass"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelgraph::graph_has_amountConcreteEClass():
-    assert hasattr(MetaModelGraph::Graph, "amountConcreteEClass")
+def test_metamodelgraph_subgraph_has_amountOfAbstractEClass():
+    assert hasattr(MetaModelGraph_SubGraph, "amountOfAbstractEClass")
     descriptor = None
-    for klass in MetaModelGraph::Graph.__mro__:
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountOfAbstractEClass" in klass.__dict__:
+            descriptor = klass.__dict__["amountOfAbstractEClass"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_subgraph_has_amountOfParentEClass():
+    assert hasattr(MetaModelGraph_SubGraph, "amountOfParentEClass")
+    descriptor = None
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountOfParentEClass" in klass.__dict__:
+            descriptor = klass.__dict__["amountOfParentEClass"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_subgraph_has_amountOfRecursionPackages():
+    assert hasattr(MetaModelGraph_SubGraph, "amountOfRecursionPackages")
+    descriptor = None
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountOfRecursionPackages" in klass.__dict__:
+            descriptor = klass.__dict__["amountOfRecursionPackages"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_subgraph_has_amountPackages():
+    assert hasattr(MetaModelGraph_SubGraph, "amountPackages")
+    descriptor = None
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountPackages" in klass.__dict__:
+            descriptor = klass.__dict__["amountPackages"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_subgraph_has_amountUnits():
+    assert hasattr(MetaModelGraph_SubGraph, "amountUnits")
+    descriptor = None
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountUnits" in klass.__dict__:
+            descriptor = klass.__dict__["amountUnits"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelgraph_subgraph_has_amountOfParentAbstractEClass():
+    assert hasattr(MetaModelGraph_SubGraph, "amountOfParentAbstractEClass")
+    descriptor = None
+    for klass in MetaModelGraph_SubGraph.__mro__:
+        if "amountOfParentAbstractEClass" in klass.__dict__:
+            descriptor = klass.__dict__["amountOfParentAbstractEClass"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_metamodelgraph_graph_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_Graph)
+
+
+def test_metamodelgraph_graph_constructor_exists():
+    assert callable(MetaModelGraph_Graph.__init__)
+
+
+def test_metamodelgraph_graph_constructor_args():
+    sig = inspect.signature(MetaModelGraph_Graph.__init__)
+    params = list(sig.parameters.keys())
+    assert "amountConcreteEClass" in params, "Missing parameter 'amountConcreteEClass'"
+    assert "amountEClasses" in params, "Missing parameter 'amountEClasses'"
+    assert "amountAbstractEClasses" in params, "Missing parameter 'amountAbstractEClasses'"
+
+def test_metamodelgraph_graph_has_amountConcreteEClass():
+    assert hasattr(MetaModelGraph_Graph, "amountConcreteEClass")
+    descriptor = None
+    for klass in MetaModelGraph_Graph.__mro__:
         if "amountConcreteEClass" in klass.__dict__:
             descriptor = klass.__dict__["amountConcreteEClass"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelgraph::graph_has_amountEClasses():
-    assert hasattr(MetaModelGraph::Graph, "amountEClasses")
+def test_metamodelgraph_graph_has_amountEClasses():
+    assert hasattr(MetaModelGraph_Graph, "amountEClasses")
     descriptor = None
-    for klass in MetaModelGraph::Graph.__mro__:
+    for klass in MetaModelGraph_Graph.__mro__:
         if "amountEClasses" in klass.__dict__:
             descriptor = klass.__dict__["amountEClasses"]
             break
     assert isinstance(descriptor, property)
 
+def test_metamodelgraph_graph_has_amountAbstractEClasses():
+    assert hasattr(MetaModelGraph_Graph, "amountAbstractEClasses")
+    descriptor = None
+    for klass in MetaModelGraph_Graph.__mro__:
+        if "amountAbstractEClasses" in klass.__dict__:
+            descriptor = klass.__dict__["amountAbstractEClasses"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metamodelgraph::subclass_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::SubClass)
+
+def test_metamodelgraph_subclass_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_SubClass)
 
 
-def test_metamodelgraph::subclass_constructor_exists():
-    assert callable(MetaModelGraph::SubClass.__init__)
+def test_metamodelgraph_subclass_constructor_exists():
+    assert callable(MetaModelGraph_SubClass.__init__)
 
 
-def test_metamodelgraph::subclass_constructor_args():
-    sig = inspect.signature(MetaModelGraph::SubClass.__init__)
+def test_metamodelgraph_subclass_constructor_args():
+    sig = inspect.signature(MetaModelGraph_SubClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelgraph::reference_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::Reference)
+def test_metamodelgraph_reference_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_Reference)
 
 
-def test_metamodelgraph::reference_constructor_exists():
-    assert callable(MetaModelGraph::Reference.__init__)
+def test_metamodelgraph_reference_constructor_exists():
+    assert callable(MetaModelGraph_Reference.__init__)
 
 
-def test_metamodelgraph::reference_constructor_args():
-    sig = inspect.signature(MetaModelGraph::Reference.__init__)
+def test_metamodelgraph_reference_constructor_args():
+    sig = inspect.signature(MetaModelGraph_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelgraph::composition_is_not_abstract():
-    assert not inspect.isabstract(MetaModelGraph::Composition)
+def test_metamodelgraph_composition_is_not_abstract():
+    assert not inspect.isabstract(MetaModelGraph_Composition)
 
 
-def test_metamodelgraph::composition_constructor_exists():
-    assert callable(MetaModelGraph::Composition.__init__)
+def test_metamodelgraph_composition_constructor_exists():
+    assert callable(MetaModelGraph_Composition.__init__)
 
 
-def test_metamodelgraph::composition_constructor_args():
-    sig = inspect.signature(MetaModelGraph::Composition.__init__)
+def test_metamodelgraph_composition_constructor_args():
+    sig = inspect.signature(MetaModelGraph_Composition.__init__)
     params = list(sig.parameters.keys())
 
 def test_enummodular_exists():
@@ -356,20 +356,20 @@ def test_enummodular_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EnumModular]
     expected_literals = [
-        "Default",
-        "RecursionAbstractPackage",
-        "InsideUnit",
-        "RecursionAbstractUnit",
-        "Unit",
-        "AbstractPackageUnit",
-        "AbstractPackage",
-        "AbstractUnit",
-        "Project",
-        "RecursionPackage",
-        "InsidePackage",
-        "RecursionUnit",
         "Package",
+        "AbstractUnit",
+        "Unit",
         "InsideProject",
+        "RecursionPackage",
+        "InsideUnit",
+        "AbstractPackage",
+        "RecursionAbstractPackage",
+        "Project",
+        "AbstractPackageUnit",
+        "InsidePackage",
+        "RecursionAbstractUnit",
+        "RecursionUnit",
+        "Default",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -387,312 +387,261 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-MetaModelGraph::EReference_strategy = st.builds(
-    MetaModelGraph::EReference,
+MetaModelGraph_EReference_strategy = st.builds(
+    MetaModelGraph_EReference,
 )
 Relation_strategy = st.builds(
     Relation,
 )
-MetaModelGraph::EAttribute_strategy = st.builds(
-    MetaModelGraph::EAttribute,
+MetaModelGraph_EAttribute_strategy = st.builds(
+    MetaModelGraph_EAttribute,
 )
-MetaModelGraph::Relation_strategy = st.builds(
-    MetaModelGraph::Relation,
+MetaModelGraph_Relation_strategy = st.builds(
+    MetaModelGraph_Relation,
 )
-MetaModelGraph::Node_strategy = st.builds(
-    MetaModelGraph::Node,
+MetaModelGraph_Node_strategy = st.builds(
+    MetaModelGraph_Node,
     extension=
-        safe_text,
-    icon=
         safe_text,
     insideRecursion=
         st.booleans(),
+    icon=
+        safe_text,
     enumModularNotation=
         safe_text
 )
-MetaModelGraph::EClass_strategy = st.builds(
-    MetaModelGraph::EClass,
+MetaModelGraph_EClass_strategy = st.builds(
+    MetaModelGraph_EClass,
 )
-MetaModelGraph::SubGraph_strategy = st.builds(
-    MetaModelGraph::SubGraph,
+MetaModelGraph_SubGraph_strategy = st.builds(
+    MetaModelGraph_SubGraph,
+    amountRecursionUnits=
+        st.integers(),
+    amountEClassesOut=
+        st.integers(),
+    height=
+        st.integers(),
+    amountOfConcreteEClass=
+        st.integers(),
+    amountOfAbstractEClass=
+        st.integers(),
     amountOfParentEClass=
         st.integers(),
     amountOfRecursionPackages=
         st.integers(),
-    amountUnits=
-        st.integers(),
-    amountEClassesOut=
-        st.integers(),
-    amountOfConcreteEClass=
-        st.integers(),
-    amountOfParentAbstractEClass=
-        st.integers(),
-    amountOfAbstractEClass=
-        st.integers(),
     amountPackages=
         st.integers(),
-    amountRecursionUnits=
+    amountUnits=
         st.integers(),
-    height=
+    amountOfParentAbstractEClass=
         st.integers()
 )
-MetaModelGraph::Graph_strategy = st.builds(
-    MetaModelGraph::Graph,
-    amountAbstractEClasses=
-        st.integers(),
+MetaModelGraph_Graph_strategy = st.builds(
+    MetaModelGraph_Graph,
     amountConcreteEClass=
         st.integers(),
     amountEClasses=
+        st.integers(),
+    amountAbstractEClasses=
         st.integers()
 )
-MetaModelGraph::SubClass_strategy = st.builds(
-    MetaModelGraph::SubClass,
+MetaModelGraph_SubClass_strategy = st.builds(
+    MetaModelGraph_SubClass,
 )
-MetaModelGraph::Reference_strategy = st.builds(
-    MetaModelGraph::Reference,
+MetaModelGraph_Reference_strategy = st.builds(
+    MetaModelGraph_Reference,
 )
-MetaModelGraph::Composition_strategy = st.builds(
-    MetaModelGraph::Composition,
+MetaModelGraph_Composition_strategy = st.builds(
+    MetaModelGraph_Composition,
 )
 
-@given(instance=MetaModelGraph::EReference_strategy)
+@given(instance=MetaModelGraph_EReference_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::ereference_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::EReference)
+def test_metamodelgraph_ereference_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_EReference)
 
 @given(instance=Relation_strategy)
 @settings(max_examples=50)
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=MetaModelGraph::EAttribute_strategy)
+@given(instance=MetaModelGraph_EAttribute_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::eattribute_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::EAttribute)
+def test_metamodelgraph_eattribute_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_EAttribute)
 
-@given(instance=MetaModelGraph::Relation_strategy)
+@given(instance=MetaModelGraph_Relation_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::relation_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::Relation)
+def test_metamodelgraph_relation_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_Relation)
 
-@given(instance=MetaModelGraph::Node_strategy)
+@given(instance=MetaModelGraph_Node_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::node_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::Node)
-
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_extension_type(instance):
-    assert isinstance(instance.extension, str)
+def test_metamodelgraph_node_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_Node)
 
 
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_extension_setter(instance):
+
+@given(instance=MetaModelGraph_Node_strategy)
+def test_metamodelgraph_node_extension_setter(instance):
     original = instance.extension
     instance.extension = original
     assert instance.extension == original
 
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_icon_type(instance):
-    assert isinstance(instance.icon, str)
 
 
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_icon_setter(instance):
-    original = instance.icon
-    instance.icon = original
-    assert instance.icon == original
-
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_insideRecursion_type(instance):
-    assert isinstance(instance.insideRecursion, bool)
-
-
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_insideRecursion_setter(instance):
+@given(instance=MetaModelGraph_Node_strategy)
+def test_metamodelgraph_node_insideRecursion_setter(instance):
     original = instance.insideRecursion
     instance.insideRecursion = original
     assert instance.insideRecursion == original
 
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_enumModularNotation_type(instance):
-    assert isinstance(instance.enumModularNotation, str)
 
 
-@given(instance=MetaModelGraph::Node_strategy)
-def test_metamodelgraph::node_enumModularNotation_setter(instance):
+@given(instance=MetaModelGraph_Node_strategy)
+def test_metamodelgraph_node_icon_setter(instance):
+    original = instance.icon
+    instance.icon = original
+    assert instance.icon == original
+
+
+
+@given(instance=MetaModelGraph_Node_strategy)
+def test_metamodelgraph_node_enumModularNotation_setter(instance):
     original = instance.enumModularNotation
     instance.enumModularNotation = original
     assert instance.enumModularNotation == original
 
-@given(instance=MetaModelGraph::EClass_strategy)
+@given(instance=MetaModelGraph_EClass_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::eclass_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::EClass)
+def test_metamodelgraph_eclass_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_EClass)
 
-@given(instance=MetaModelGraph::SubGraph_strategy)
+@given(instance=MetaModelGraph_SubGraph_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::subgraph_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::SubGraph)
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfParentEClass_type(instance):
-    assert isinstance(instance.amountOfParentEClass, int)
+def test_metamodelgraph_subgraph_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_SubGraph)
 
 
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfParentEClass_setter(instance):
-    original = instance.amountOfParentEClass
-    instance.amountOfParentEClass = original
-    assert instance.amountOfParentEClass == original
 
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfRecursionPackages_type(instance):
-    assert isinstance(instance.amountOfRecursionPackages, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfRecursionPackages_setter(instance):
-    original = instance.amountOfRecursionPackages
-    instance.amountOfRecursionPackages = original
-    assert instance.amountOfRecursionPackages == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountUnits_type(instance):
-    assert isinstance(instance.amountUnits, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountUnits_setter(instance):
-    original = instance.amountUnits
-    instance.amountUnits = original
-    assert instance.amountUnits == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountEClassesOut_type(instance):
-    assert isinstance(instance.amountEClassesOut, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountEClassesOut_setter(instance):
-    original = instance.amountEClassesOut
-    instance.amountEClassesOut = original
-    assert instance.amountEClassesOut == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfConcreteEClass_type(instance):
-    assert isinstance(instance.amountOfConcreteEClass, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfConcreteEClass_setter(instance):
-    original = instance.amountOfConcreteEClass
-    instance.amountOfConcreteEClass = original
-    assert instance.amountOfConcreteEClass == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfParentAbstractEClass_type(instance):
-    assert isinstance(instance.amountOfParentAbstractEClass, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfParentAbstractEClass_setter(instance):
-    original = instance.amountOfParentAbstractEClass
-    instance.amountOfParentAbstractEClass = original
-    assert instance.amountOfParentAbstractEClass == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfAbstractEClass_type(instance):
-    assert isinstance(instance.amountOfAbstractEClass, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountOfAbstractEClass_setter(instance):
-    original = instance.amountOfAbstractEClass
-    instance.amountOfAbstractEClass = original
-    assert instance.amountOfAbstractEClass == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountPackages_type(instance):
-    assert isinstance(instance.amountPackages, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountPackages_setter(instance):
-    original = instance.amountPackages
-    instance.amountPackages = original
-    assert instance.amountPackages == original
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountRecursionUnits_type(instance):
-    assert isinstance(instance.amountRecursionUnits, int)
-
-
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_amountRecursionUnits_setter(instance):
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountRecursionUnits_setter(instance):
     original = instance.amountRecursionUnits
     instance.amountRecursionUnits = original
     assert instance.amountRecursionUnits == original
 
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=MetaModelGraph::SubGraph_strategy)
-def test_metamodelgraph::subgraph_height_setter(instance):
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountEClassesOut_setter(instance):
+    original = instance.amountEClassesOut
+    instance.amountEClassesOut = original
+    assert instance.amountEClassesOut == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=MetaModelGraph::Graph_strategy)
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountOfConcreteEClass_setter(instance):
+    original = instance.amountOfConcreteEClass
+    instance.amountOfConcreteEClass = original
+    assert instance.amountOfConcreteEClass == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountOfAbstractEClass_setter(instance):
+    original = instance.amountOfAbstractEClass
+    instance.amountOfAbstractEClass = original
+    assert instance.amountOfAbstractEClass == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountOfParentEClass_setter(instance):
+    original = instance.amountOfParentEClass
+    instance.amountOfParentEClass = original
+    assert instance.amountOfParentEClass == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountOfRecursionPackages_setter(instance):
+    original = instance.amountOfRecursionPackages
+    instance.amountOfRecursionPackages = original
+    assert instance.amountOfRecursionPackages == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountPackages_setter(instance):
+    original = instance.amountPackages
+    instance.amountPackages = original
+    assert instance.amountPackages == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountUnits_setter(instance):
+    original = instance.amountUnits
+    instance.amountUnits = original
+    assert instance.amountUnits == original
+
+
+
+@given(instance=MetaModelGraph_SubGraph_strategy)
+def test_metamodelgraph_subgraph_amountOfParentAbstractEClass_setter(instance):
+    original = instance.amountOfParentAbstractEClass
+    instance.amountOfParentAbstractEClass = original
+    assert instance.amountOfParentAbstractEClass == original
+
+@given(instance=MetaModelGraph_Graph_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::graph_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::Graph)
-
-@given(instance=MetaModelGraph::Graph_strategy)
-def test_metamodelgraph::graph_amountAbstractEClasses_type(instance):
-    assert isinstance(instance.amountAbstractEClasses, int)
+def test_metamodelgraph_graph_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_Graph)
 
 
-@given(instance=MetaModelGraph::Graph_strategy)
-def test_metamodelgraph::graph_amountAbstractEClasses_setter(instance):
-    original = instance.amountAbstractEClasses
-    instance.amountAbstractEClasses = original
-    assert instance.amountAbstractEClasses == original
 
-@given(instance=MetaModelGraph::Graph_strategy)
-def test_metamodelgraph::graph_amountConcreteEClass_type(instance):
-    assert isinstance(instance.amountConcreteEClass, int)
-
-
-@given(instance=MetaModelGraph::Graph_strategy)
-def test_metamodelgraph::graph_amountConcreteEClass_setter(instance):
+@given(instance=MetaModelGraph_Graph_strategy)
+def test_metamodelgraph_graph_amountConcreteEClass_setter(instance):
     original = instance.amountConcreteEClass
     instance.amountConcreteEClass = original
     assert instance.amountConcreteEClass == original
 
-@given(instance=MetaModelGraph::Graph_strategy)
-def test_metamodelgraph::graph_amountEClasses_type(instance):
-    assert isinstance(instance.amountEClasses, int)
 
 
-@given(instance=MetaModelGraph::Graph_strategy)
-def test_metamodelgraph::graph_amountEClasses_setter(instance):
+@given(instance=MetaModelGraph_Graph_strategy)
+def test_metamodelgraph_graph_amountEClasses_setter(instance):
     original = instance.amountEClasses
     instance.amountEClasses = original
     assert instance.amountEClasses == original
 
-@given(instance=MetaModelGraph::SubClass_strategy)
-@settings(max_examples=50)
-def test_metamodelgraph::subclass_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::SubClass)
 
-@given(instance=MetaModelGraph::Reference_strategy)
-@settings(max_examples=50)
-def test_metamodelgraph::reference_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::Reference)
 
-@given(instance=MetaModelGraph::Composition_strategy)
+@given(instance=MetaModelGraph_Graph_strategy)
+def test_metamodelgraph_graph_amountAbstractEClasses_setter(instance):
+    original = instance.amountAbstractEClasses
+    instance.amountAbstractEClasses = original
+    assert instance.amountAbstractEClasses == original
+
+@given(instance=MetaModelGraph_SubClass_strategy)
 @settings(max_examples=50)
-def test_metamodelgraph::composition_instantiation(instance):
-    assert isinstance(instance, MetaModelGraph::Composition)
+def test_metamodelgraph_subclass_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_SubClass)
+
+@given(instance=MetaModelGraph_Reference_strategy)
+@settings(max_examples=50)
+def test_metamodelgraph_reference_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_Reference)
+
+@given(instance=MetaModelGraph_Composition_strategy)
+@settings(max_examples=50)
+def test_metamodelgraph_composition_instantiation(instance):
+    assert isinstance(instance, MetaModelGraph_Composition)

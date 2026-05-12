@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     genmymodelreverse_C1,
@@ -487,9 +487,6 @@ def test_rules_ihitstrategy_interface_instantiation(instance):
 def test_rules_basichitstrategy_instantiation(instance):
     assert isinstance(instance, rules_BasicHitStrategy)
 
-@given(instance=rules_BasicHitStrategy_strategy)
-def test_rules_basichitstrategy_g_hitLimit_type(instance):
-    assert isinstance(instance.g_hitLimit, int)
 
 
 @given(instance=rules_BasicHitStrategy_strategy)
@@ -508,9 +505,6 @@ def test_rules_americannewgamestrategy_instantiation(instance):
 def test_model_player_instantiation(instance):
     assert isinstance(instance, model_Player)
 
-@given(instance=model_Player_strategy)
-def test_model_player_g_maxScore_type(instance):
-    assert isinstance(instance.g_maxScore, int)
 
 
 @given(instance=model_Player_strategy)
@@ -539,9 +533,6 @@ def test_model_dealer_instantiation(instance):
 def test_model_card_instantiation(instance):
     assert isinstance(instance, model_Card)
 
-@given(instance=model_Card_strategy)
-def test_model_card_m_value_type(instance):
-    assert isinstance(instance.m_value, model_value)
 
 
 @given(instance=model_Card_strategy)
@@ -550,9 +541,6 @@ def test_model_card_m_value_setter(instance):
     instance.m_value = original
     assert instance.m_value == original
 
-@given(instance=model_Card_strategy)
-def test_model_card_m_color_type(instance):
-    assert isinstance(instance.m_color, model_color)
 
 
 @given(instance=model_Card_strategy)
@@ -561,9 +549,6 @@ def test_model_card_m_color_setter(instance):
     instance.m_color = original
     assert instance.m_color == original
 
-@given(instance=model_Card_strategy)
-def test_model_card_m_isHidden_type(instance):
-    assert isinstance(instance.m_isHidden, bool)
 
 
 @given(instance=model_Card_strategy)

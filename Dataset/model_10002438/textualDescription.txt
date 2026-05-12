@@ -1,0 +1,23 @@
+The model has 15 class(es).
+The class 'Modele_Cellule' has the following attributes: 'modele' of type Modele_CModele; 'etat' of type bool; 'prochaineEtat' of type bool; 'y' of type int; 'x' of type int.
+The class 'Observer_Interface' has no attributes.
+The class 'Observable' has no attributes.
+The class 'Class' has no attributes.
+The class 'JPanel' has no attributes.
+The class 'Controleur_Controleur' has the following attributes: 'modele' of type Modele_CModele.
+The class 'ActionListener_Interface' has no attributes.
+The class 'Vue_VueGrille' has the following attributes: 'TAILLE' of type int; 'modele' of type Modele_CModele; 'update' of type str.
+The class 'Vue_CVue' has the following attributes: 'frame' of type str; 'commande' of type Vue_VueCommande; 'grille' of type Vue_VueGrille.
+The class 'Modele_Participants' has the following attributes: 'NOMBRE' of type int; 'attribute' of type str.
+The class 'ActionEvent2_Interface' has no attributes.
+The class 'Vue_VueCommande' has the following attributes: 'modele' of type Modele_CModele.
+The class 'Modele_Joueur' has the following attributes: 'y' of type int; 'cles' of type int; 'artefacts' of type str; 'x' of type int; 'vivant' of type bool.
+The class 'Modele_CModele' has the following attributes: 'largeur' of type int; 'attribute' of type Modele_Cellule; 'hauteur' of type int.
+The class 'Graphics_Interface' has no attributes.
+'Vue_VueCommande' (role 'VueCommande_CModele_06', cardinality 0..*) is associated with 'Modele_CModele' (role 'VueCommande_CModele_17', cardinality 0..*).
+'Vue_VueGrille' (role 'VueGrille_CVue_00', cardinality 0..*) is associated with 'Vue_CVue' (role 'VueGrille_CVue_11', cardinality 0..*).
+'Modele_CModele' (role 'Cellule8', cardinality 0..*) is associated with 'Modele_Cellule' (role 'CModele9', cardinality 0..*).
+'Vue_CVue' (role 'CVue_VueCommande_04', cardinality 0..*) is associated with 'Vue_VueCommande' (role 'CVue_VueCommande_15', cardinality 0..*).
+'Controleur_Controleur' (role 'Controleur11', cardinality 0..*) is associated with 'Modele_CModele' (role 'CModele_Controleur_010', cardinality 0..*).
+'Modele_CModele' (role 'VueGrille_CModele_13', cardinality 0..*) is associated with 'Vue_VueGrille' (role 'VueGrille_CModele_02', cardinality 0..*).
+'Modele_Participants' (role 'Joueur12', cardinality 0..*) is associated with 'Modele_Joueur' (role 'Participants13', cardinality 0..*).

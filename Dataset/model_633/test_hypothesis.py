@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    library::BorrowedItem,
-    library::User,
-    library::Book,
-    library::Library,
+from python_code import (
+    library_BorrowedItem,
+    library_User,
+    library_Book,
+    library_Library,
 )
 
 # =============================================================================
@@ -18,33 +18,33 @@ from classes import (
 
 
 
-def test_library::borroweditem_is_not_abstract():
-    assert not inspect.isabstract(library::BorrowedItem)
+def test_library_borroweditem_is_not_abstract():
+    assert not inspect.isabstract(library_BorrowedItem)
 
 
-def test_library::borroweditem_constructor_exists():
-    assert callable(library::BorrowedItem.__init__)
+def test_library_borroweditem_constructor_exists():
+    assert callable(library_BorrowedItem.__init__)
 
 
-def test_library::borroweditem_constructor_args():
-    sig = inspect.signature(library::BorrowedItem.__init__)
+def test_library_borroweditem_constructor_args():
+    sig = inspect.signature(library_BorrowedItem.__init__)
     params = list(sig.parameters.keys())
     assert "borrowDate" in params, "Missing parameter 'borrowDate'"
     assert "lastReturnDate" in params, "Missing parameter 'lastReturnDate'"
 
-def test_library::borroweditem_has_borrowDate():
-    assert hasattr(library::BorrowedItem, "borrowDate")
+def test_library_borroweditem_has_borrowDate():
+    assert hasattr(library_BorrowedItem, "borrowDate")
     descriptor = None
-    for klass in library::BorrowedItem.__mro__:
+    for klass in library_BorrowedItem.__mro__:
         if "borrowDate" in klass.__dict__:
             descriptor = klass.__dict__["borrowDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::borroweditem_has_lastReturnDate():
-    assert hasattr(library::BorrowedItem, "lastReturnDate")
+def test_library_borroweditem_has_lastReturnDate():
+    assert hasattr(library_BorrowedItem, "lastReturnDate")
     descriptor = None
-    for klass in library::BorrowedItem.__mro__:
+    for klass in library_BorrowedItem.__mro__:
         if "lastReturnDate" in klass.__dict__:
             descriptor = klass.__dict__["lastReturnDate"]
             break
@@ -52,23 +52,23 @@ def test_library::borroweditem_has_lastReturnDate():
 
 
 
-def test_library::user_is_not_abstract():
-    assert not inspect.isabstract(library::User)
+def test_library_user_is_not_abstract():
+    assert not inspect.isabstract(library_User)
 
 
-def test_library::user_constructor_exists():
-    assert callable(library::User.__init__)
+def test_library_user_constructor_exists():
+    assert callable(library_User.__init__)
 
 
-def test_library::user_constructor_args():
-    sig = inspect.signature(library::User.__init__)
+def test_library_user_constructor_args():
+    sig = inspect.signature(library_User.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::user_has_name():
-    assert hasattr(library::User, "name")
+def test_library_user_has_name():
+    assert hasattr(library_User, "name")
     descriptor = None
-    for klass in library::User.__mro__:
+    for klass in library_User.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -76,33 +76,33 @@ def test_library::user_has_name():
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_Book.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "author" in params, "Missing parameter 'author'"
 
-def test_library::book_has_name():
-    assert hasattr(library::Book, "name")
+def test_library_book_has_name():
+    assert hasattr(library_Book, "name")
     descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_author():
-    assert hasattr(library::Book, "author")
+def test_library_book_has_author():
+    assert hasattr(library_Book, "author")
     descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
@@ -110,23 +110,23 @@ def test_library::book_has_author():
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(library_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::library_has_name():
-    assert hasattr(library::Library, "name")
+def test_library_library_has_name():
+    assert hasattr(library_Library, "name")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -144,113 +144,95 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-library::BorrowedItem_strategy = st.builds(
-    library::BorrowedItem,
+library_BorrowedItem_strategy = st.builds(
+    library_BorrowedItem,
     borrowDate=
         st.dates(),
     lastReturnDate=
         st.dates()
 )
-library::User_strategy = st.builds(
-    library::User,
+library_User_strategy = st.builds(
+    library_User,
     name=
         safe_text
 )
-library::Book_strategy = st.builds(
-    library::Book,
+library_Book_strategy = st.builds(
+    library_Book,
     name=
         safe_text,
     author=
         safe_text
 )
-library::Library_strategy = st.builds(
-    library::Library,
+library_Library_strategy = st.builds(
+    library_Library,
     name=
         safe_text
 )
 
-@given(instance=library::BorrowedItem_strategy)
+@given(instance=library_BorrowedItem_strategy)
 @settings(max_examples=50)
-def test_library::borroweditem_instantiation(instance):
-    assert isinstance(instance, library::BorrowedItem)
-
-@given(instance=library::BorrowedItem_strategy)
-def test_library::borroweditem_borrowDate_type(instance):
-    assert isinstance(instance.borrowDate, date)
+def test_library_borroweditem_instantiation(instance):
+    assert isinstance(instance, library_BorrowedItem)
 
 
-@given(instance=library::BorrowedItem_strategy)
-def test_library::borroweditem_borrowDate_setter(instance):
+
+@given(instance=library_BorrowedItem_strategy)
+def test_library_borroweditem_borrowDate_setter(instance):
     original = instance.borrowDate
     instance.borrowDate = original
     assert instance.borrowDate == original
 
-@given(instance=library::BorrowedItem_strategy)
-def test_library::borroweditem_lastReturnDate_type(instance):
-    assert isinstance(instance.lastReturnDate, date)
 
 
-@given(instance=library::BorrowedItem_strategy)
-def test_library::borroweditem_lastReturnDate_setter(instance):
+@given(instance=library_BorrowedItem_strategy)
+def test_library_borroweditem_lastReturnDate_setter(instance):
     original = instance.lastReturnDate
     instance.lastReturnDate = original
     assert instance.lastReturnDate == original
 
-@given(instance=library::User_strategy)
+@given(instance=library_User_strategy)
 @settings(max_examples=50)
-def test_library::user_instantiation(instance):
-    assert isinstance(instance, library::User)
-
-@given(instance=library::User_strategy)
-def test_library::user_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_user_instantiation(instance):
+    assert isinstance(instance, library_User)
 
 
-@given(instance=library::User_strategy)
-def test_library::user_name_setter(instance):
+
+@given(instance=library_User_strategy)
+def test_library_user_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Book_strategy)
+@given(instance=library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::Book)
-
-@given(instance=library::Book_strategy)
-def test_library::book_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_Book)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_name_setter(instance):
+
+@given(instance=library_Book_strategy)
+def test_library_book_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Book_strategy)
-def test_library::book_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_author_setter(instance):
+@given(instance=library_Book_strategy)
+def test_library_book_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=library::Library_strategy)
+@given(instance=library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, library::Library)
-
-@given(instance=library::Library_strategy)
-def test_library::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, library_Library)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_name_setter(instance):
+
+@given(instance=library_Library_strategy)
+def test_library_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

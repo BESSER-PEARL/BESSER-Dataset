@@ -3,58 +3,184 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    sexec_StateCase,
+    Trace,
+    sexec_TraceStateEntered,
+    sexec_ReactionFired,
+    sexec_TraceStateExited,
+    sexec_TraceBeginRunCycle,
+    sexec_TraceReactionWillFire,
+    sexec_TraceEndRunCycle,
+    sexec_TraceNodeExecuted,
     Check,
-    sexec::CheckRef,
-    sexec::Expression,
+    sexec_CheckRef,
+    sexec_Expression,
     Step,
-    sexec::Execution,
-    sexec::Call,
-    sexec::EnterState,
-    sexec::ExitState,
-    sexec::Check,
+    sexec_UnscheduleTimeEvent,
+    sexec_HistoryEntry,
+    sexec_StateSwitch,
+    sexec_ExitState,
+    sexec_Call,
+    sexec_Execution,
+    sexec_ScheduleTimeEvent,
+    sexec_EnterState,
+    sexec_SaveHistory,
+    sexec_Trace,
+    sexec_Check,
     Event,
-    sexec::TimeEvent,
+    sexec_TimeEvent,
     ExecutionNode,
-    sexec::ExecutionSynchronization,
+    sexec_ExecutionExit,
+    sexec_ExecutionEntry,
+    sexec_ExecutionChoice,
+    sexec_ExecutionSynchronization,
     ExecutionScope,
     ScopedElement,
-    sexec::ExecutionFlow,
+    sexec_ExecutionFlow,
     NamedElement,
     MappedElement,
-    sexec::ExecutionScope,
-    sexec::Step,
-    sexec::StateVector,
-    sexec::ExecutionRegion,
-    sexec::ExecutionNode,
-    sexec::ExecutionState,
-    sexec::EObject,
-    sexec::MappedElement,
-    sexec::StateCase,
-    sexec::StateSwitch,
-    Trace,
-    sexec::TraceReactionWillFire,
-    sexec::ReactionFired,
-    sexec::TraceStateEntered,
-    sexec::TraceStateExited,
-    sexec::TraceEndRunCycle,
-    sexec::TraceBeginRunCycle,
-    sexec::TraceNodeExecuted,
-    sexec::Trace,
-    sexec::HistoryEntry,
-    sexec::SaveHistory,
-    sexec::ExecutionChoice,
-    sexec::ExecutionExit,
-    sexec::ExecutionEntry,
-    sexec::UnscheduleTimeEvent,
-    sexec::ScheduleTimeEvent,
+    sexec_ExecutionScope,
+    sexec_Step,
+    sexec_StateVector,
+    sexec_ExecutionRegion,
+    sexec_ExecutionNode,
+    sexec_ExecutionState,
+    sexec_EObject,
+    sexec_MappedElement,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_sexec_statecase_is_not_abstract():
+    assert not inspect.isabstract(sexec_StateCase)
+
+
+def test_sexec_statecase_constructor_exists():
+    assert callable(sexec_StateCase.__init__)
+
+
+def test_sexec_statecase_constructor_args():
+    sig = inspect.signature(sexec_StateCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_is_not_abstract():
+    assert not inspect.isabstract(Trace)
+
+
+def test_trace_constructor_exists():
+    assert callable(Trace.__init__)
+
+
+def test_trace_constructor_args():
+    sig = inspect.signature(Trace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_tracestateentered_is_not_abstract():
+    assert not inspect.isabstract(sexec_TraceStateEntered)
+
+
+def test_sexec_tracestateentered_constructor_exists():
+    assert callable(sexec_TraceStateEntered.__init__)
+
+
+def test_sexec_tracestateentered_constructor_args():
+    sig = inspect.signature(sexec_TraceStateEntered.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_reactionfired_is_not_abstract():
+    assert not inspect.isabstract(sexec_ReactionFired)
+
+
+def test_sexec_reactionfired_constructor_exists():
+    assert callable(sexec_ReactionFired.__init__)
+
+
+def test_sexec_reactionfired_constructor_args():
+    sig = inspect.signature(sexec_ReactionFired.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_tracestateexited_is_not_abstract():
+    assert not inspect.isabstract(sexec_TraceStateExited)
+
+
+def test_sexec_tracestateexited_constructor_exists():
+    assert callable(sexec_TraceStateExited.__init__)
+
+
+def test_sexec_tracestateexited_constructor_args():
+    sig = inspect.signature(sexec_TraceStateExited.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_tracebeginruncycle_is_not_abstract():
+    assert not inspect.isabstract(sexec_TraceBeginRunCycle)
+
+
+def test_sexec_tracebeginruncycle_constructor_exists():
+    assert callable(sexec_TraceBeginRunCycle.__init__)
+
+
+def test_sexec_tracebeginruncycle_constructor_args():
+    sig = inspect.signature(sexec_TraceBeginRunCycle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_tracereactionwillfire_is_not_abstract():
+    assert not inspect.isabstract(sexec_TraceReactionWillFire)
+
+
+def test_sexec_tracereactionwillfire_constructor_exists():
+    assert callable(sexec_TraceReactionWillFire.__init__)
+
+
+def test_sexec_tracereactionwillfire_constructor_args():
+    sig = inspect.signature(sexec_TraceReactionWillFire.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_traceendruncycle_is_not_abstract():
+    assert not inspect.isabstract(sexec_TraceEndRunCycle)
+
+
+def test_sexec_traceendruncycle_constructor_exists():
+    assert callable(sexec_TraceEndRunCycle.__init__)
+
+
+def test_sexec_traceendruncycle_constructor_args():
+    sig = inspect.signature(sexec_TraceEndRunCycle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_tracenodeexecuted_is_not_abstract():
+    assert not inspect.isabstract(sexec_TraceNodeExecuted)
+
+
+def test_sexec_tracenodeexecuted_constructor_exists():
+    assert callable(sexec_TraceNodeExecuted.__init__)
+
+
+def test_sexec_tracenodeexecuted_constructor_args():
+    sig = inspect.signature(sexec_TraceNodeExecuted.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -72,30 +198,30 @@ def test_check_constructor_args():
 
 
 
-def test_sexec::checkref_is_not_abstract():
-    assert not inspect.isabstract(sexec::CheckRef)
+def test_sexec_checkref_is_not_abstract():
+    assert not inspect.isabstract(sexec_CheckRef)
 
 
-def test_sexec::checkref_constructor_exists():
-    assert callable(sexec::CheckRef.__init__)
+def test_sexec_checkref_constructor_exists():
+    assert callable(sexec_CheckRef.__init__)
 
 
-def test_sexec::checkref_constructor_args():
-    sig = inspect.signature(sexec::CheckRef.__init__)
+def test_sexec_checkref_constructor_args():
+    sig = inspect.signature(sexec_CheckRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::expression_is_not_abstract():
-    assert not inspect.isabstract(sexec::Expression)
+def test_sexec_expression_is_not_abstract():
+    assert not inspect.isabstract(sexec_Expression)
 
 
-def test_sexec::expression_constructor_exists():
-    assert callable(sexec::Expression.__init__)
+def test_sexec_expression_constructor_exists():
+    assert callable(sexec_Expression.__init__)
 
 
-def test_sexec::expression_constructor_args():
-    sig = inspect.signature(sexec::Expression.__init__)
+def test_sexec_expression_constructor_args():
+    sig = inspect.signature(sexec_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,72 +240,186 @@ def test_step_constructor_args():
 
 
 
-def test_sexec::execution_is_not_abstract():
-    assert not inspect.isabstract(sexec::Execution)
+def test_sexec_unscheduletimeevent_is_not_abstract():
+    assert not inspect.isabstract(sexec_UnscheduleTimeEvent)
 
 
-def test_sexec::execution_constructor_exists():
-    assert callable(sexec::Execution.__init__)
+def test_sexec_unscheduletimeevent_constructor_exists():
+    assert callable(sexec_UnscheduleTimeEvent.__init__)
 
 
-def test_sexec::execution_constructor_args():
-    sig = inspect.signature(sexec::Execution.__init__)
+def test_sexec_unscheduletimeevent_constructor_args():
+    sig = inspect.signature(sexec_UnscheduleTimeEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::call_is_not_abstract():
-    assert not inspect.isabstract(sexec::Call)
+def test_sexec_historyentry_is_not_abstract():
+    assert not inspect.isabstract(sexec_HistoryEntry)
 
 
-def test_sexec::call_constructor_exists():
-    assert callable(sexec::Call.__init__)
+def test_sexec_historyentry_constructor_exists():
+    assert callable(sexec_HistoryEntry.__init__)
 
 
-def test_sexec::call_constructor_args():
-    sig = inspect.signature(sexec::Call.__init__)
+def test_sexec_historyentry_constructor_args():
+    sig = inspect.signature(sexec_HistoryEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "deep" in params, "Missing parameter 'deep'"
+
+def test_sexec_historyentry_has_deep():
+    assert hasattr(sexec_HistoryEntry, "deep")
+    descriptor = None
+    for klass in sexec_HistoryEntry.__mro__:
+        if "deep" in klass.__dict__:
+            descriptor = klass.__dict__["deep"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sexec_stateswitch_is_not_abstract():
+    assert not inspect.isabstract(sexec_StateSwitch)
+
+
+def test_sexec_stateswitch_constructor_exists():
+    assert callable(sexec_StateSwitch.__init__)
+
+
+def test_sexec_stateswitch_constructor_args():
+    sig = inspect.signature(sexec_StateSwitch.__init__)
+    params = list(sig.parameters.keys())
+    assert "stateConfigurationIdx" in params, "Missing parameter 'stateConfigurationIdx'"
+
+def test_sexec_stateswitch_has_stateConfigurationIdx():
+    assert hasattr(sexec_StateSwitch, "stateConfigurationIdx")
+    descriptor = None
+    for klass in sexec_StateSwitch.__mro__:
+        if "stateConfigurationIdx" in klass.__dict__:
+            descriptor = klass.__dict__["stateConfigurationIdx"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sexec_exitstate_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExitState)
+
+
+def test_sexec_exitstate_constructor_exists():
+    assert callable(sexec_ExitState.__init__)
+
+
+def test_sexec_exitstate_constructor_args():
+    sig = inspect.signature(sexec_ExitState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::enterstate_is_not_abstract():
-    assert not inspect.isabstract(sexec::EnterState)
+def test_sexec_call_is_not_abstract():
+    assert not inspect.isabstract(sexec_Call)
 
 
-def test_sexec::enterstate_constructor_exists():
-    assert callable(sexec::EnterState.__init__)
+def test_sexec_call_constructor_exists():
+    assert callable(sexec_Call.__init__)
 
 
-def test_sexec::enterstate_constructor_args():
-    sig = inspect.signature(sexec::EnterState.__init__)
+def test_sexec_call_constructor_args():
+    sig = inspect.signature(sexec_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::exitstate_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExitState)
+def test_sexec_execution_is_not_abstract():
+    assert not inspect.isabstract(sexec_Execution)
 
 
-def test_sexec::exitstate_constructor_exists():
-    assert callable(sexec::ExitState.__init__)
+def test_sexec_execution_constructor_exists():
+    assert callable(sexec_Execution.__init__)
 
 
-def test_sexec::exitstate_constructor_args():
-    sig = inspect.signature(sexec::ExitState.__init__)
+def test_sexec_execution_constructor_args():
+    sig = inspect.signature(sexec_Execution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::check_is_not_abstract():
-    assert not inspect.isabstract(sexec::Check)
+def test_sexec_scheduletimeevent_is_not_abstract():
+    assert not inspect.isabstract(sexec_ScheduleTimeEvent)
 
 
-def test_sexec::check_constructor_exists():
-    assert callable(sexec::Check.__init__)
+def test_sexec_scheduletimeevent_constructor_exists():
+    assert callable(sexec_ScheduleTimeEvent.__init__)
 
 
-def test_sexec::check_constructor_args():
-    sig = inspect.signature(sexec::Check.__init__)
+def test_sexec_scheduletimeevent_constructor_args():
+    sig = inspect.signature(sexec_ScheduleTimeEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_enterstate_is_not_abstract():
+    assert not inspect.isabstract(sexec_EnterState)
+
+
+def test_sexec_enterstate_constructor_exists():
+    assert callable(sexec_EnterState.__init__)
+
+
+def test_sexec_enterstate_constructor_args():
+    sig = inspect.signature(sexec_EnterState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_savehistory_is_not_abstract():
+    assert not inspect.isabstract(sexec_SaveHistory)
+
+
+def test_sexec_savehistory_constructor_exists():
+    assert callable(sexec_SaveHistory.__init__)
+
+
+def test_sexec_savehistory_constructor_args():
+    sig = inspect.signature(sexec_SaveHistory.__init__)
+    params = list(sig.parameters.keys())
+    assert "deep" in params, "Missing parameter 'deep'"
+
+def test_sexec_savehistory_has_deep():
+    assert hasattr(sexec_SaveHistory, "deep")
+    descriptor = None
+    for klass in sexec_SaveHistory.__mro__:
+        if "deep" in klass.__dict__:
+            descriptor = klass.__dict__["deep"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sexec_trace_is_not_abstract():
+    assert not inspect.isabstract(sexec_Trace)
+
+
+def test_sexec_trace_constructor_exists():
+    assert callable(sexec_Trace.__init__)
+
+
+def test_sexec_trace_constructor_args():
+    sig = inspect.signature(sexec_Trace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_check_is_not_abstract():
+    assert not inspect.isabstract(sexec_Check)
+
+
+def test_sexec_check_constructor_exists():
+    assert callable(sexec_Check.__init__)
+
+
+def test_sexec_check_constructor_args():
+    sig = inspect.signature(sexec_Check.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -198,23 +438,23 @@ def test_event_constructor_args():
 
 
 
-def test_sexec::timeevent_is_not_abstract():
-    assert not inspect.isabstract(sexec::TimeEvent)
+def test_sexec_timeevent_is_not_abstract():
+    assert not inspect.isabstract(sexec_TimeEvent)
 
 
-def test_sexec::timeevent_constructor_exists():
-    assert callable(sexec::TimeEvent.__init__)
+def test_sexec_timeevent_constructor_exists():
+    assert callable(sexec_TimeEvent.__init__)
 
 
-def test_sexec::timeevent_constructor_args():
-    sig = inspect.signature(sexec::TimeEvent.__init__)
+def test_sexec_timeevent_constructor_args():
+    sig = inspect.signature(sexec_TimeEvent.__init__)
     params = list(sig.parameters.keys())
     assert "periodic" in params, "Missing parameter 'periodic'"
 
-def test_sexec::timeevent_has_periodic():
-    assert hasattr(sexec::TimeEvent, "periodic")
+def test_sexec_timeevent_has_periodic():
+    assert hasattr(sexec_TimeEvent, "periodic")
     descriptor = None
-    for klass in sexec::TimeEvent.__mro__:
+    for klass in sexec_TimeEvent.__mro__:
         if "periodic" in klass.__dict__:
             descriptor = klass.__dict__["periodic"]
             break
@@ -236,16 +476,58 @@ def test_executionnode_constructor_args():
 
 
 
-def test_sexec::executionsynchronization_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionSynchronization)
+def test_sexec_executionexit_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionExit)
 
 
-def test_sexec::executionsynchronization_constructor_exists():
-    assert callable(sexec::ExecutionSynchronization.__init__)
+def test_sexec_executionexit_constructor_exists():
+    assert callable(sexec_ExecutionExit.__init__)
 
 
-def test_sexec::executionsynchronization_constructor_args():
-    sig = inspect.signature(sexec::ExecutionSynchronization.__init__)
+def test_sexec_executionexit_constructor_args():
+    sig = inspect.signature(sexec_ExecutionExit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_executionentry_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionEntry)
+
+
+def test_sexec_executionentry_constructor_exists():
+    assert callable(sexec_ExecutionEntry.__init__)
+
+
+def test_sexec_executionentry_constructor_args():
+    sig = inspect.signature(sexec_ExecutionEntry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_executionchoice_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionChoice)
+
+
+def test_sexec_executionchoice_constructor_exists():
+    assert callable(sexec_ExecutionChoice.__init__)
+
+
+def test_sexec_executionchoice_constructor_args():
+    sig = inspect.signature(sexec_ExecutionChoice.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sexec_executionsynchronization_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionSynchronization)
+
+
+def test_sexec_executionsynchronization_constructor_exists():
+    assert callable(sexec_ExecutionSynchronization.__init__)
+
+
+def test_sexec_executionsynchronization_constructor_args():
+    sig = inspect.signature(sexec_ExecutionSynchronization.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -278,16 +560,16 @@ def test_scopedelement_constructor_args():
 
 
 
-def test_sexec::executionflow_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionFlow)
+def test_sexec_executionflow_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionFlow)
 
 
-def test_sexec::executionflow_constructor_exists():
-    assert callable(sexec::ExecutionFlow.__init__)
+def test_sexec_executionflow_constructor_exists():
+    assert callable(sexec_ExecutionFlow.__init__)
 
 
-def test_sexec::executionflow_constructor_args():
-    sig = inspect.signature(sexec::ExecutionFlow.__init__)
+def test_sexec_executionflow_constructor_args():
+    sig = inspect.signature(sexec_ExecutionFlow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -320,37 +602,37 @@ def test_mappedelement_constructor_args():
 
 
 
-def test_sexec::executionscope_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionScope)
+def test_sexec_executionscope_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionScope)
 
 
-def test_sexec::executionscope_constructor_exists():
-    assert callable(sexec::ExecutionScope.__init__)
+def test_sexec_executionscope_constructor_exists():
+    assert callable(sexec_ExecutionScope.__init__)
 
 
-def test_sexec::executionscope_constructor_args():
-    sig = inspect.signature(sexec::ExecutionScope.__init__)
+def test_sexec_executionscope_constructor_args():
+    sig = inspect.signature(sexec_ExecutionScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::step_is_not_abstract():
-    assert not inspect.isabstract(sexec::Step)
+def test_sexec_step_is_not_abstract():
+    assert not inspect.isabstract(sexec_Step)
 
 
-def test_sexec::step_constructor_exists():
-    assert callable(sexec::Step.__init__)
+def test_sexec_step_constructor_exists():
+    assert callable(sexec_Step.__init__)
 
 
-def test_sexec::step_constructor_args():
-    sig = inspect.signature(sexec::Step.__init__)
+def test_sexec_step_constructor_args():
+    sig = inspect.signature(sexec_Step.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_sexec::step_has_comment():
-    assert hasattr(sexec::Step, "comment")
+def test_sexec_step_has_comment():
+    assert hasattr(sexec_Step, "comment")
     descriptor = None
-    for klass in sexec::Step.__mro__:
+    for klass in sexec_Step.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -358,71 +640,71 @@ def test_sexec::step_has_comment():
 
 
 
-def test_sexec::statevector_is_not_abstract():
-    assert not inspect.isabstract(sexec::StateVector)
+def test_sexec_statevector_is_not_abstract():
+    assert not inspect.isabstract(sexec_StateVector)
 
 
-def test_sexec::statevector_constructor_exists():
-    assert callable(sexec::StateVector.__init__)
+def test_sexec_statevector_constructor_exists():
+    assert callable(sexec_StateVector.__init__)
 
 
-def test_sexec::statevector_constructor_args():
-    sig = inspect.signature(sexec::StateVector.__init__)
+def test_sexec_statevector_constructor_args():
+    sig = inspect.signature(sexec_StateVector.__init__)
     params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
     assert "offset" in params, "Missing parameter 'offset'"
+    assert "size" in params, "Missing parameter 'size'"
 
-def test_sexec::statevector_has_size():
-    assert hasattr(sexec::StateVector, "size")
+def test_sexec_statevector_has_offset():
+    assert hasattr(sexec_StateVector, "offset")
     descriptor = None
-    for klass in sexec::StateVector.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sexec::statevector_has_offset():
-    assert hasattr(sexec::StateVector, "offset")
-    descriptor = None
-    for klass in sexec::StateVector.__mro__:
+    for klass in sexec_StateVector.__mro__:
         if "offset" in klass.__dict__:
             descriptor = klass.__dict__["offset"]
             break
     assert isinstance(descriptor, property)
 
+def test_sexec_statevector_has_size():
+    assert hasattr(sexec_StateVector, "size")
+    descriptor = None
+    for klass in sexec_StateVector.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sexec::executionregion_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionRegion)
+
+def test_sexec_executionregion_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionRegion)
 
 
-def test_sexec::executionregion_constructor_exists():
-    assert callable(sexec::ExecutionRegion.__init__)
+def test_sexec_executionregion_constructor_exists():
+    assert callable(sexec_ExecutionRegion.__init__)
 
 
-def test_sexec::executionregion_constructor_args():
-    sig = inspect.signature(sexec::ExecutionRegion.__init__)
+def test_sexec_executionregion_constructor_args():
+    sig = inspect.signature(sexec_ExecutionRegion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::executionnode_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionNode)
+def test_sexec_executionnode_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionNode)
 
 
-def test_sexec::executionnode_constructor_exists():
-    assert callable(sexec::ExecutionNode.__init__)
+def test_sexec_executionnode_constructor_exists():
+    assert callable(sexec_ExecutionNode.__init__)
 
 
-def test_sexec::executionnode_constructor_args():
-    sig = inspect.signature(sexec::ExecutionNode.__init__)
+def test_sexec_executionnode_constructor_args():
+    sig = inspect.signature(sexec_ExecutionNode.__init__)
     params = list(sig.parameters.keys())
     assert "simpleName" in params, "Missing parameter 'simpleName'"
 
-def test_sexec::executionnode_has_simpleName():
-    assert hasattr(sexec::ExecutionNode, "simpleName")
+def test_sexec_executionnode_has_simpleName():
+    assert hasattr(sexec_ExecutionNode, "simpleName")
     descriptor = None
-    for klass in sexec::ExecutionNode.__mro__:
+    for klass in sexec_ExecutionNode.__mro__:
         if "simpleName" in klass.__dict__:
             descriptor = klass.__dict__["simpleName"]
             break
@@ -430,23 +712,23 @@ def test_sexec::executionnode_has_simpleName():
 
 
 
-def test_sexec::executionstate_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionState)
+def test_sexec_executionstate_is_not_abstract():
+    assert not inspect.isabstract(sexec_ExecutionState)
 
 
-def test_sexec::executionstate_constructor_exists():
-    assert callable(sexec::ExecutionState.__init__)
+def test_sexec_executionstate_constructor_exists():
+    assert callable(sexec_ExecutionState.__init__)
 
 
-def test_sexec::executionstate_constructor_args():
-    sig = inspect.signature(sexec::ExecutionState.__init__)
+def test_sexec_executionstate_constructor_args():
+    sig = inspect.signature(sexec_ExecutionState.__init__)
     params = list(sig.parameters.keys())
     assert "leaf" in params, "Missing parameter 'leaf'"
 
-def test_sexec::executionstate_has_leaf():
-    assert hasattr(sexec::ExecutionState, "leaf")
+def test_sexec_executionstate_has_leaf():
+    assert hasattr(sexec_ExecutionState, "leaf")
     descriptor = None
-    for klass in sexec::ExecutionState.__mro__:
+    for klass in sexec_ExecutionState.__mro__:
         if "leaf" in klass.__dict__:
             descriptor = klass.__dict__["leaf"]
             break
@@ -454,312 +736,30 @@ def test_sexec::executionstate_has_leaf():
 
 
 
-def test_sexec::eobject_is_not_abstract():
-    assert not inspect.isabstract(sexec::EObject)
+def test_sexec_eobject_is_not_abstract():
+    assert not inspect.isabstract(sexec_EObject)
 
 
-def test_sexec::eobject_constructor_exists():
-    assert callable(sexec::EObject.__init__)
+def test_sexec_eobject_constructor_exists():
+    assert callable(sexec_EObject.__init__)
 
 
-def test_sexec::eobject_constructor_args():
-    sig = inspect.signature(sexec::EObject.__init__)
+def test_sexec_eobject_constructor_args():
+    sig = inspect.signature(sexec_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sexec::mappedelement_is_not_abstract():
-    assert not inspect.isabstract(sexec::MappedElement)
+def test_sexec_mappedelement_is_not_abstract():
+    assert not inspect.isabstract(sexec_MappedElement)
 
 
-def test_sexec::mappedelement_constructor_exists():
-    assert callable(sexec::MappedElement.__init__)
+def test_sexec_mappedelement_constructor_exists():
+    assert callable(sexec_MappedElement.__init__)
 
 
-def test_sexec::mappedelement_constructor_args():
-    sig = inspect.signature(sexec::MappedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::statecase_is_not_abstract():
-    assert not inspect.isabstract(sexec::StateCase)
-
-
-def test_sexec::statecase_constructor_exists():
-    assert callable(sexec::StateCase.__init__)
-
-
-def test_sexec::statecase_constructor_args():
-    sig = inspect.signature(sexec::StateCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::stateswitch_is_not_abstract():
-    assert not inspect.isabstract(sexec::StateSwitch)
-
-
-def test_sexec::stateswitch_constructor_exists():
-    assert callable(sexec::StateSwitch.__init__)
-
-
-def test_sexec::stateswitch_constructor_args():
-    sig = inspect.signature(sexec::StateSwitch.__init__)
-    params = list(sig.parameters.keys())
-    assert "stateConfigurationIdx" in params, "Missing parameter 'stateConfigurationIdx'"
-
-def test_sexec::stateswitch_has_stateConfigurationIdx():
-    assert hasattr(sexec::StateSwitch, "stateConfigurationIdx")
-    descriptor = None
-    for klass in sexec::StateSwitch.__mro__:
-        if "stateConfigurationIdx" in klass.__dict__:
-            descriptor = klass.__dict__["stateConfigurationIdx"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_trace_is_not_abstract():
-    assert not inspect.isabstract(Trace)
-
-
-def test_trace_constructor_exists():
-    assert callable(Trace.__init__)
-
-
-def test_trace_constructor_args():
-    sig = inspect.signature(Trace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::tracereactionwillfire_is_not_abstract():
-    assert not inspect.isabstract(sexec::TraceReactionWillFire)
-
-
-def test_sexec::tracereactionwillfire_constructor_exists():
-    assert callable(sexec::TraceReactionWillFire.__init__)
-
-
-def test_sexec::tracereactionwillfire_constructor_args():
-    sig = inspect.signature(sexec::TraceReactionWillFire.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::reactionfired_is_not_abstract():
-    assert not inspect.isabstract(sexec::ReactionFired)
-
-
-def test_sexec::reactionfired_constructor_exists():
-    assert callable(sexec::ReactionFired.__init__)
-
-
-def test_sexec::reactionfired_constructor_args():
-    sig = inspect.signature(sexec::ReactionFired.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::tracestateentered_is_not_abstract():
-    assert not inspect.isabstract(sexec::TraceStateEntered)
-
-
-def test_sexec::tracestateentered_constructor_exists():
-    assert callable(sexec::TraceStateEntered.__init__)
-
-
-def test_sexec::tracestateentered_constructor_args():
-    sig = inspect.signature(sexec::TraceStateEntered.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::tracestateexited_is_not_abstract():
-    assert not inspect.isabstract(sexec::TraceStateExited)
-
-
-def test_sexec::tracestateexited_constructor_exists():
-    assert callable(sexec::TraceStateExited.__init__)
-
-
-def test_sexec::tracestateexited_constructor_args():
-    sig = inspect.signature(sexec::TraceStateExited.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::traceendruncycle_is_not_abstract():
-    assert not inspect.isabstract(sexec::TraceEndRunCycle)
-
-
-def test_sexec::traceendruncycle_constructor_exists():
-    assert callable(sexec::TraceEndRunCycle.__init__)
-
-
-def test_sexec::traceendruncycle_constructor_args():
-    sig = inspect.signature(sexec::TraceEndRunCycle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::tracebeginruncycle_is_not_abstract():
-    assert not inspect.isabstract(sexec::TraceBeginRunCycle)
-
-
-def test_sexec::tracebeginruncycle_constructor_exists():
-    assert callable(sexec::TraceBeginRunCycle.__init__)
-
-
-def test_sexec::tracebeginruncycle_constructor_args():
-    sig = inspect.signature(sexec::TraceBeginRunCycle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::tracenodeexecuted_is_not_abstract():
-    assert not inspect.isabstract(sexec::TraceNodeExecuted)
-
-
-def test_sexec::tracenodeexecuted_constructor_exists():
-    assert callable(sexec::TraceNodeExecuted.__init__)
-
-
-def test_sexec::tracenodeexecuted_constructor_args():
-    sig = inspect.signature(sexec::TraceNodeExecuted.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::trace_is_not_abstract():
-    assert not inspect.isabstract(sexec::Trace)
-
-
-def test_sexec::trace_constructor_exists():
-    assert callable(sexec::Trace.__init__)
-
-
-def test_sexec::trace_constructor_args():
-    sig = inspect.signature(sexec::Trace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::historyentry_is_not_abstract():
-    assert not inspect.isabstract(sexec::HistoryEntry)
-
-
-def test_sexec::historyentry_constructor_exists():
-    assert callable(sexec::HistoryEntry.__init__)
-
-
-def test_sexec::historyentry_constructor_args():
-    sig = inspect.signature(sexec::HistoryEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "deep" in params, "Missing parameter 'deep'"
-
-def test_sexec::historyentry_has_deep():
-    assert hasattr(sexec::HistoryEntry, "deep")
-    descriptor = None
-    for klass in sexec::HistoryEntry.__mro__:
-        if "deep" in klass.__dict__:
-            descriptor = klass.__dict__["deep"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sexec::savehistory_is_not_abstract():
-    assert not inspect.isabstract(sexec::SaveHistory)
-
-
-def test_sexec::savehistory_constructor_exists():
-    assert callable(sexec::SaveHistory.__init__)
-
-
-def test_sexec::savehistory_constructor_args():
-    sig = inspect.signature(sexec::SaveHistory.__init__)
-    params = list(sig.parameters.keys())
-    assert "deep" in params, "Missing parameter 'deep'"
-
-def test_sexec::savehistory_has_deep():
-    assert hasattr(sexec::SaveHistory, "deep")
-    descriptor = None
-    for klass in sexec::SaveHistory.__mro__:
-        if "deep" in klass.__dict__:
-            descriptor = klass.__dict__["deep"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sexec::executionchoice_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionChoice)
-
-
-def test_sexec::executionchoice_constructor_exists():
-    assert callable(sexec::ExecutionChoice.__init__)
-
-
-def test_sexec::executionchoice_constructor_args():
-    sig = inspect.signature(sexec::ExecutionChoice.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::executionexit_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionExit)
-
-
-def test_sexec::executionexit_constructor_exists():
-    assert callable(sexec::ExecutionExit.__init__)
-
-
-def test_sexec::executionexit_constructor_args():
-    sig = inspect.signature(sexec::ExecutionExit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::executionentry_is_not_abstract():
-    assert not inspect.isabstract(sexec::ExecutionEntry)
-
-
-def test_sexec::executionentry_constructor_exists():
-    assert callable(sexec::ExecutionEntry.__init__)
-
-
-def test_sexec::executionentry_constructor_args():
-    sig = inspect.signature(sexec::ExecutionEntry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::unscheduletimeevent_is_not_abstract():
-    assert not inspect.isabstract(sexec::UnscheduleTimeEvent)
-
-
-def test_sexec::unscheduletimeevent_constructor_exists():
-    assert callable(sexec::UnscheduleTimeEvent.__init__)
-
-
-def test_sexec::unscheduletimeevent_constructor_args():
-    sig = inspect.signature(sexec::UnscheduleTimeEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sexec::scheduletimeevent_is_not_abstract():
-    assert not inspect.isabstract(sexec::ScheduleTimeEvent)
-
-
-def test_sexec::scheduletimeevent_constructor_exists():
-    assert callable(sexec::ScheduleTimeEvent.__init__)
-
-
-def test_sexec::scheduletimeevent_constructor_args():
-    sig = inspect.signature(sexec::ScheduleTimeEvent.__init__)
+def test_sexec_mappedelement_constructor_args():
+    sig = inspect.signature(sexec_MappedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -774,46 +774,106 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+sexec_StateCase_strategy = st.builds(
+    sexec_StateCase,
+)
+Trace_strategy = st.builds(
+    Trace,
+)
+sexec_TraceStateEntered_strategy = st.builds(
+    sexec_TraceStateEntered,
+)
+sexec_ReactionFired_strategy = st.builds(
+    sexec_ReactionFired,
+)
+sexec_TraceStateExited_strategy = st.builds(
+    sexec_TraceStateExited,
+)
+sexec_TraceBeginRunCycle_strategy = st.builds(
+    sexec_TraceBeginRunCycle,
+)
+sexec_TraceReactionWillFire_strategy = st.builds(
+    sexec_TraceReactionWillFire,
+)
+sexec_TraceEndRunCycle_strategy = st.builds(
+    sexec_TraceEndRunCycle,
+)
+sexec_TraceNodeExecuted_strategy = st.builds(
+    sexec_TraceNodeExecuted,
+)
 Check_strategy = st.builds(
     Check,
 )
-sexec::CheckRef_strategy = st.builds(
-    sexec::CheckRef,
+sexec_CheckRef_strategy = st.builds(
+    sexec_CheckRef,
 )
-sexec::Expression_strategy = st.builds(
-    sexec::Expression,
+sexec_Expression_strategy = st.builds(
+    sexec_Expression,
 )
 Step_strategy = st.builds(
     Step,
 )
-sexec::Execution_strategy = st.builds(
-    sexec::Execution,
+sexec_UnscheduleTimeEvent_strategy = st.builds(
+    sexec_UnscheduleTimeEvent,
 )
-sexec::Call_strategy = st.builds(
-    sexec::Call,
+sexec_HistoryEntry_strategy = st.builds(
+    sexec_HistoryEntry,
+    deep=
+        st.booleans()
 )
-sexec::EnterState_strategy = st.builds(
-    sexec::EnterState,
+sexec_StateSwitch_strategy = st.builds(
+    sexec_StateSwitch,
+    stateConfigurationIdx=
+        st.integers()
 )
-sexec::ExitState_strategy = st.builds(
-    sexec::ExitState,
+sexec_ExitState_strategy = st.builds(
+    sexec_ExitState,
 )
-sexec::Check_strategy = st.builds(
-    sexec::Check,
+sexec_Call_strategy = st.builds(
+    sexec_Call,
+)
+sexec_Execution_strategy = st.builds(
+    sexec_Execution,
+)
+sexec_ScheduleTimeEvent_strategy = st.builds(
+    sexec_ScheduleTimeEvent,
+)
+sexec_EnterState_strategy = st.builds(
+    sexec_EnterState,
+)
+sexec_SaveHistory_strategy = st.builds(
+    sexec_SaveHistory,
+    deep=
+        st.booleans()
+)
+sexec_Trace_strategy = st.builds(
+    sexec_Trace,
+)
+sexec_Check_strategy = st.builds(
+    sexec_Check,
 )
 Event_strategy = st.builds(
     Event,
 )
-sexec::TimeEvent_strategy = st.builds(
-    sexec::TimeEvent,
+sexec_TimeEvent_strategy = st.builds(
+    sexec_TimeEvent,
     periodic=
         st.booleans()
 )
 ExecutionNode_strategy = st.builds(
     ExecutionNode,
 )
-sexec::ExecutionSynchronization_strategy = st.builds(
-    sexec::ExecutionSynchronization,
+sexec_ExecutionExit_strategy = st.builds(
+    sexec_ExecutionExit,
+)
+sexec_ExecutionEntry_strategy = st.builds(
+    sexec_ExecutionEntry,
+)
+sexec_ExecutionChoice_strategy = st.builds(
+    sexec_ExecutionChoice,
+)
+sexec_ExecutionSynchronization_strategy = st.builds(
+    sexec_ExecutionSynchronization,
 )
 ExecutionScope_strategy = st.builds(
     ExecutionScope,
@@ -821,8 +881,8 @@ ExecutionScope_strategy = st.builds(
 ScopedElement_strategy = st.builds(
     ScopedElement,
 )
-sexec::ExecutionFlow_strategy = st.builds(
-    sexec::ExecutionFlow,
+sexec_ExecutionFlow_strategy = st.builds(
+    sexec_ExecutionFlow,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
@@ -830,163 +890,199 @@ NamedElement_strategy = st.builds(
 MappedElement_strategy = st.builds(
     MappedElement,
 )
-sexec::ExecutionScope_strategy = st.builds(
-    sexec::ExecutionScope,
+sexec_ExecutionScope_strategy = st.builds(
+    sexec_ExecutionScope,
 )
-sexec::Step_strategy = st.builds(
-    sexec::Step,
+sexec_Step_strategy = st.builds(
+    sexec_Step,
     comment=
         safe_text
 )
-sexec::StateVector_strategy = st.builds(
-    sexec::StateVector,
-    size=
-        st.integers(),
+sexec_StateVector_strategy = st.builds(
+    sexec_StateVector,
     offset=
+        st.integers(),
+    size=
         st.integers()
 )
-sexec::ExecutionRegion_strategy = st.builds(
-    sexec::ExecutionRegion,
+sexec_ExecutionRegion_strategy = st.builds(
+    sexec_ExecutionRegion,
 )
-sexec::ExecutionNode_strategy = st.builds(
-    sexec::ExecutionNode,
+sexec_ExecutionNode_strategy = st.builds(
+    sexec_ExecutionNode,
     simpleName=
         safe_text
 )
-sexec::ExecutionState_strategy = st.builds(
-    sexec::ExecutionState,
+sexec_ExecutionState_strategy = st.builds(
+    sexec_ExecutionState,
     leaf=
         st.booleans()
 )
-sexec::EObject_strategy = st.builds(
-    sexec::EObject,
+sexec_EObject_strategy = st.builds(
+    sexec_EObject,
 )
-sexec::MappedElement_strategy = st.builds(
-    sexec::MappedElement,
+sexec_MappedElement_strategy = st.builds(
+    sexec_MappedElement,
 )
-sexec::StateCase_strategy = st.builds(
-    sexec::StateCase,
-)
-sexec::StateSwitch_strategy = st.builds(
-    sexec::StateSwitch,
-    stateConfigurationIdx=
-        st.integers()
-)
-Trace_strategy = st.builds(
-    Trace,
-)
-sexec::TraceReactionWillFire_strategy = st.builds(
-    sexec::TraceReactionWillFire,
-)
-sexec::ReactionFired_strategy = st.builds(
-    sexec::ReactionFired,
-)
-sexec::TraceStateEntered_strategy = st.builds(
-    sexec::TraceStateEntered,
-)
-sexec::TraceStateExited_strategy = st.builds(
-    sexec::TraceStateExited,
-)
-sexec::TraceEndRunCycle_strategy = st.builds(
-    sexec::TraceEndRunCycle,
-)
-sexec::TraceBeginRunCycle_strategy = st.builds(
-    sexec::TraceBeginRunCycle,
-)
-sexec::TraceNodeExecuted_strategy = st.builds(
-    sexec::TraceNodeExecuted,
-)
-sexec::Trace_strategy = st.builds(
-    sexec::Trace,
-)
-sexec::HistoryEntry_strategy = st.builds(
-    sexec::HistoryEntry,
-    deep=
-        st.booleans()
-)
-sexec::SaveHistory_strategy = st.builds(
-    sexec::SaveHistory,
-    deep=
-        st.booleans()
-)
-sexec::ExecutionChoice_strategy = st.builds(
-    sexec::ExecutionChoice,
-)
-sexec::ExecutionExit_strategy = st.builds(
-    sexec::ExecutionExit,
-)
-sexec::ExecutionEntry_strategy = st.builds(
-    sexec::ExecutionEntry,
-)
-sexec::UnscheduleTimeEvent_strategy = st.builds(
-    sexec::UnscheduleTimeEvent,
-)
-sexec::ScheduleTimeEvent_strategy = st.builds(
-    sexec::ScheduleTimeEvent,
-)
+
+@given(instance=sexec_StateCase_strategy)
+@settings(max_examples=50)
+def test_sexec_statecase_instantiation(instance):
+    assert isinstance(instance, sexec_StateCase)
+
+@given(instance=Trace_strategy)
+@settings(max_examples=50)
+def test_trace_instantiation(instance):
+    assert isinstance(instance, Trace)
+
+@given(instance=sexec_TraceStateEntered_strategy)
+@settings(max_examples=50)
+def test_sexec_tracestateentered_instantiation(instance):
+    assert isinstance(instance, sexec_TraceStateEntered)
+
+@given(instance=sexec_ReactionFired_strategy)
+@settings(max_examples=50)
+def test_sexec_reactionfired_instantiation(instance):
+    assert isinstance(instance, sexec_ReactionFired)
+
+@given(instance=sexec_TraceStateExited_strategy)
+@settings(max_examples=50)
+def test_sexec_tracestateexited_instantiation(instance):
+    assert isinstance(instance, sexec_TraceStateExited)
+
+@given(instance=sexec_TraceBeginRunCycle_strategy)
+@settings(max_examples=50)
+def test_sexec_tracebeginruncycle_instantiation(instance):
+    assert isinstance(instance, sexec_TraceBeginRunCycle)
+
+@given(instance=sexec_TraceReactionWillFire_strategy)
+@settings(max_examples=50)
+def test_sexec_tracereactionwillfire_instantiation(instance):
+    assert isinstance(instance, sexec_TraceReactionWillFire)
+
+@given(instance=sexec_TraceEndRunCycle_strategy)
+@settings(max_examples=50)
+def test_sexec_traceendruncycle_instantiation(instance):
+    assert isinstance(instance, sexec_TraceEndRunCycle)
+
+@given(instance=sexec_TraceNodeExecuted_strategy)
+@settings(max_examples=50)
+def test_sexec_tracenodeexecuted_instantiation(instance):
+    assert isinstance(instance, sexec_TraceNodeExecuted)
 
 @given(instance=Check_strategy)
 @settings(max_examples=50)
 def test_check_instantiation(instance):
     assert isinstance(instance, Check)
 
-@given(instance=sexec::CheckRef_strategy)
+@given(instance=sexec_CheckRef_strategy)
 @settings(max_examples=50)
-def test_sexec::checkref_instantiation(instance):
-    assert isinstance(instance, sexec::CheckRef)
+def test_sexec_checkref_instantiation(instance):
+    assert isinstance(instance, sexec_CheckRef)
 
-@given(instance=sexec::Expression_strategy)
+@given(instance=sexec_Expression_strategy)
 @settings(max_examples=50)
-def test_sexec::expression_instantiation(instance):
-    assert isinstance(instance, sexec::Expression)
+def test_sexec_expression_instantiation(instance):
+    assert isinstance(instance, sexec_Expression)
 
 @given(instance=Step_strategy)
 @settings(max_examples=50)
 def test_step_instantiation(instance):
     assert isinstance(instance, Step)
 
-@given(instance=sexec::Execution_strategy)
+@given(instance=sexec_UnscheduleTimeEvent_strategy)
 @settings(max_examples=50)
-def test_sexec::execution_instantiation(instance):
-    assert isinstance(instance, sexec::Execution)
+def test_sexec_unscheduletimeevent_instantiation(instance):
+    assert isinstance(instance, sexec_UnscheduleTimeEvent)
 
-@given(instance=sexec::Call_strategy)
+@given(instance=sexec_HistoryEntry_strategy)
 @settings(max_examples=50)
-def test_sexec::call_instantiation(instance):
-    assert isinstance(instance, sexec::Call)
+def test_sexec_historyentry_instantiation(instance):
+    assert isinstance(instance, sexec_HistoryEntry)
 
-@given(instance=sexec::EnterState_strategy)
-@settings(max_examples=50)
-def test_sexec::enterstate_instantiation(instance):
-    assert isinstance(instance, sexec::EnterState)
 
-@given(instance=sexec::ExitState_strategy)
-@settings(max_examples=50)
-def test_sexec::exitstate_instantiation(instance):
-    assert isinstance(instance, sexec::ExitState)
 
-@given(instance=sexec::Check_strategy)
+@given(instance=sexec_HistoryEntry_strategy)
+def test_sexec_historyentry_deep_setter(instance):
+    original = instance.deep
+    instance.deep = original
+    assert instance.deep == original
+
+@given(instance=sexec_StateSwitch_strategy)
 @settings(max_examples=50)
-def test_sexec::check_instantiation(instance):
-    assert isinstance(instance, sexec::Check)
+def test_sexec_stateswitch_instantiation(instance):
+    assert isinstance(instance, sexec_StateSwitch)
+
+
+
+@given(instance=sexec_StateSwitch_strategy)
+def test_sexec_stateswitch_stateConfigurationIdx_setter(instance):
+    original = instance.stateConfigurationIdx
+    instance.stateConfigurationIdx = original
+    assert instance.stateConfigurationIdx == original
+
+@given(instance=sexec_ExitState_strategy)
+@settings(max_examples=50)
+def test_sexec_exitstate_instantiation(instance):
+    assert isinstance(instance, sexec_ExitState)
+
+@given(instance=sexec_Call_strategy)
+@settings(max_examples=50)
+def test_sexec_call_instantiation(instance):
+    assert isinstance(instance, sexec_Call)
+
+@given(instance=sexec_Execution_strategy)
+@settings(max_examples=50)
+def test_sexec_execution_instantiation(instance):
+    assert isinstance(instance, sexec_Execution)
+
+@given(instance=sexec_ScheduleTimeEvent_strategy)
+@settings(max_examples=50)
+def test_sexec_scheduletimeevent_instantiation(instance):
+    assert isinstance(instance, sexec_ScheduleTimeEvent)
+
+@given(instance=sexec_EnterState_strategy)
+@settings(max_examples=50)
+def test_sexec_enterstate_instantiation(instance):
+    assert isinstance(instance, sexec_EnterState)
+
+@given(instance=sexec_SaveHistory_strategy)
+@settings(max_examples=50)
+def test_sexec_savehistory_instantiation(instance):
+    assert isinstance(instance, sexec_SaveHistory)
+
+
+
+@given(instance=sexec_SaveHistory_strategy)
+def test_sexec_savehistory_deep_setter(instance):
+    original = instance.deep
+    instance.deep = original
+    assert instance.deep == original
+
+@given(instance=sexec_Trace_strategy)
+@settings(max_examples=50)
+def test_sexec_trace_instantiation(instance):
+    assert isinstance(instance, sexec_Trace)
+
+@given(instance=sexec_Check_strategy)
+@settings(max_examples=50)
+def test_sexec_check_instantiation(instance):
+    assert isinstance(instance, sexec_Check)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=sexec::TimeEvent_strategy)
+@given(instance=sexec_TimeEvent_strategy)
 @settings(max_examples=50)
-def test_sexec::timeevent_instantiation(instance):
-    assert isinstance(instance, sexec::TimeEvent)
-
-@given(instance=sexec::TimeEvent_strategy)
-def test_sexec::timeevent_periodic_type(instance):
-    assert isinstance(instance.periodic, bool)
+def test_sexec_timeevent_instantiation(instance):
+    assert isinstance(instance, sexec_TimeEvent)
 
 
-@given(instance=sexec::TimeEvent_strategy)
-def test_sexec::timeevent_periodic_setter(instance):
+
+@given(instance=sexec_TimeEvent_strategy)
+def test_sexec_timeevent_periodic_setter(instance):
     original = instance.periodic
     instance.periodic = original
     assert instance.periodic == original
@@ -996,10 +1092,25 @@ def test_sexec::timeevent_periodic_setter(instance):
 def test_executionnode_instantiation(instance):
     assert isinstance(instance, ExecutionNode)
 
-@given(instance=sexec::ExecutionSynchronization_strategy)
+@given(instance=sexec_ExecutionExit_strategy)
 @settings(max_examples=50)
-def test_sexec::executionsynchronization_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionSynchronization)
+def test_sexec_executionexit_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionExit)
+
+@given(instance=sexec_ExecutionEntry_strategy)
+@settings(max_examples=50)
+def test_sexec_executionentry_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionEntry)
+
+@given(instance=sexec_ExecutionChoice_strategy)
+@settings(max_examples=50)
+def test_sexec_executionchoice_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionChoice)
+
+@given(instance=sexec_ExecutionSynchronization_strategy)
+@settings(max_examples=50)
+def test_sexec_executionsynchronization_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionSynchronization)
 
 @given(instance=ExecutionScope_strategy)
 @settings(max_examples=50)
@@ -1011,10 +1122,10 @@ def test_executionscope_instantiation(instance):
 def test_scopedelement_instantiation(instance):
     assert isinstance(instance, ScopedElement)
 
-@given(instance=sexec::ExecutionFlow_strategy)
+@given(instance=sexec_ExecutionFlow_strategy)
 @settings(max_examples=50)
-def test_sexec::executionflow_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionFlow)
+def test_sexec_executionflow_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionFlow)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
@@ -1026,220 +1137,82 @@ def test_namedelement_instantiation(instance):
 def test_mappedelement_instantiation(instance):
     assert isinstance(instance, MappedElement)
 
-@given(instance=sexec::ExecutionScope_strategy)
+@given(instance=sexec_ExecutionScope_strategy)
 @settings(max_examples=50)
-def test_sexec::executionscope_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionScope)
+def test_sexec_executionscope_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionScope)
 
-@given(instance=sexec::Step_strategy)
+@given(instance=sexec_Step_strategy)
 @settings(max_examples=50)
-def test_sexec::step_instantiation(instance):
-    assert isinstance(instance, sexec::Step)
-
-@given(instance=sexec::Step_strategy)
-def test_sexec::step_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_sexec_step_instantiation(instance):
+    assert isinstance(instance, sexec_Step)
 
 
-@given(instance=sexec::Step_strategy)
-def test_sexec::step_comment_setter(instance):
+
+@given(instance=sexec_Step_strategy)
+def test_sexec_step_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=sexec::StateVector_strategy)
+@given(instance=sexec_StateVector_strategy)
 @settings(max_examples=50)
-def test_sexec::statevector_instantiation(instance):
-    assert isinstance(instance, sexec::StateVector)
-
-@given(instance=sexec::StateVector_strategy)
-def test_sexec::statevector_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_sexec_statevector_instantiation(instance):
+    assert isinstance(instance, sexec_StateVector)
 
 
-@given(instance=sexec::StateVector_strategy)
-def test_sexec::statevector_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
 
-@given(instance=sexec::StateVector_strategy)
-def test_sexec::statevector_offset_type(instance):
-    assert isinstance(instance.offset, int)
-
-
-@given(instance=sexec::StateVector_strategy)
-def test_sexec::statevector_offset_setter(instance):
+@given(instance=sexec_StateVector_strategy)
+def test_sexec_statevector_offset_setter(instance):
     original = instance.offset
     instance.offset = original
     assert instance.offset == original
 
-@given(instance=sexec::ExecutionRegion_strategy)
+
+
+@given(instance=sexec_StateVector_strategy)
+def test_sexec_statevector_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=sexec_ExecutionRegion_strategy)
 @settings(max_examples=50)
-def test_sexec::executionregion_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionRegion)
+def test_sexec_executionregion_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionRegion)
 
-@given(instance=sexec::ExecutionNode_strategy)
+@given(instance=sexec_ExecutionNode_strategy)
 @settings(max_examples=50)
-def test_sexec::executionnode_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionNode)
-
-@given(instance=sexec::ExecutionNode_strategy)
-def test_sexec::executionnode_simpleName_type(instance):
-    assert isinstance(instance.simpleName, str)
+def test_sexec_executionnode_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionNode)
 
 
-@given(instance=sexec::ExecutionNode_strategy)
-def test_sexec::executionnode_simpleName_setter(instance):
+
+@given(instance=sexec_ExecutionNode_strategy)
+def test_sexec_executionnode_simpleName_setter(instance):
     original = instance.simpleName
     instance.simpleName = original
     assert instance.simpleName == original
 
-@given(instance=sexec::ExecutionState_strategy)
+@given(instance=sexec_ExecutionState_strategy)
 @settings(max_examples=50)
-def test_sexec::executionstate_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionState)
-
-@given(instance=sexec::ExecutionState_strategy)
-def test_sexec::executionstate_leaf_type(instance):
-    assert isinstance(instance.leaf, bool)
+def test_sexec_executionstate_instantiation(instance):
+    assert isinstance(instance, sexec_ExecutionState)
 
 
-@given(instance=sexec::ExecutionState_strategy)
-def test_sexec::executionstate_leaf_setter(instance):
+
+@given(instance=sexec_ExecutionState_strategy)
+def test_sexec_executionstate_leaf_setter(instance):
     original = instance.leaf
     instance.leaf = original
     assert instance.leaf == original
 
-@given(instance=sexec::EObject_strategy)
+@given(instance=sexec_EObject_strategy)
 @settings(max_examples=50)
-def test_sexec::eobject_instantiation(instance):
-    assert isinstance(instance, sexec::EObject)
+def test_sexec_eobject_instantiation(instance):
+    assert isinstance(instance, sexec_EObject)
 
-@given(instance=sexec::MappedElement_strategy)
+@given(instance=sexec_MappedElement_strategy)
 @settings(max_examples=50)
-def test_sexec::mappedelement_instantiation(instance):
-    assert isinstance(instance, sexec::MappedElement)
-
-@given(instance=sexec::StateCase_strategy)
-@settings(max_examples=50)
-def test_sexec::statecase_instantiation(instance):
-    assert isinstance(instance, sexec::StateCase)
-
-@given(instance=sexec::StateSwitch_strategy)
-@settings(max_examples=50)
-def test_sexec::stateswitch_instantiation(instance):
-    assert isinstance(instance, sexec::StateSwitch)
-
-@given(instance=sexec::StateSwitch_strategy)
-def test_sexec::stateswitch_stateConfigurationIdx_type(instance):
-    assert isinstance(instance.stateConfigurationIdx, int)
-
-
-@given(instance=sexec::StateSwitch_strategy)
-def test_sexec::stateswitch_stateConfigurationIdx_setter(instance):
-    original = instance.stateConfigurationIdx
-    instance.stateConfigurationIdx = original
-    assert instance.stateConfigurationIdx == original
-
-@given(instance=Trace_strategy)
-@settings(max_examples=50)
-def test_trace_instantiation(instance):
-    assert isinstance(instance, Trace)
-
-@given(instance=sexec::TraceReactionWillFire_strategy)
-@settings(max_examples=50)
-def test_sexec::tracereactionwillfire_instantiation(instance):
-    assert isinstance(instance, sexec::TraceReactionWillFire)
-
-@given(instance=sexec::ReactionFired_strategy)
-@settings(max_examples=50)
-def test_sexec::reactionfired_instantiation(instance):
-    assert isinstance(instance, sexec::ReactionFired)
-
-@given(instance=sexec::TraceStateEntered_strategy)
-@settings(max_examples=50)
-def test_sexec::tracestateentered_instantiation(instance):
-    assert isinstance(instance, sexec::TraceStateEntered)
-
-@given(instance=sexec::TraceStateExited_strategy)
-@settings(max_examples=50)
-def test_sexec::tracestateexited_instantiation(instance):
-    assert isinstance(instance, sexec::TraceStateExited)
-
-@given(instance=sexec::TraceEndRunCycle_strategy)
-@settings(max_examples=50)
-def test_sexec::traceendruncycle_instantiation(instance):
-    assert isinstance(instance, sexec::TraceEndRunCycle)
-
-@given(instance=sexec::TraceBeginRunCycle_strategy)
-@settings(max_examples=50)
-def test_sexec::tracebeginruncycle_instantiation(instance):
-    assert isinstance(instance, sexec::TraceBeginRunCycle)
-
-@given(instance=sexec::TraceNodeExecuted_strategy)
-@settings(max_examples=50)
-def test_sexec::tracenodeexecuted_instantiation(instance):
-    assert isinstance(instance, sexec::TraceNodeExecuted)
-
-@given(instance=sexec::Trace_strategy)
-@settings(max_examples=50)
-def test_sexec::trace_instantiation(instance):
-    assert isinstance(instance, sexec::Trace)
-
-@given(instance=sexec::HistoryEntry_strategy)
-@settings(max_examples=50)
-def test_sexec::historyentry_instantiation(instance):
-    assert isinstance(instance, sexec::HistoryEntry)
-
-@given(instance=sexec::HistoryEntry_strategy)
-def test_sexec::historyentry_deep_type(instance):
-    assert isinstance(instance.deep, bool)
-
-
-@given(instance=sexec::HistoryEntry_strategy)
-def test_sexec::historyentry_deep_setter(instance):
-    original = instance.deep
-    instance.deep = original
-    assert instance.deep == original
-
-@given(instance=sexec::SaveHistory_strategy)
-@settings(max_examples=50)
-def test_sexec::savehistory_instantiation(instance):
-    assert isinstance(instance, sexec::SaveHistory)
-
-@given(instance=sexec::SaveHistory_strategy)
-def test_sexec::savehistory_deep_type(instance):
-    assert isinstance(instance.deep, bool)
-
-
-@given(instance=sexec::SaveHistory_strategy)
-def test_sexec::savehistory_deep_setter(instance):
-    original = instance.deep
-    instance.deep = original
-    assert instance.deep == original
-
-@given(instance=sexec::ExecutionChoice_strategy)
-@settings(max_examples=50)
-def test_sexec::executionchoice_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionChoice)
-
-@given(instance=sexec::ExecutionExit_strategy)
-@settings(max_examples=50)
-def test_sexec::executionexit_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionExit)
-
-@given(instance=sexec::ExecutionEntry_strategy)
-@settings(max_examples=50)
-def test_sexec::executionentry_instantiation(instance):
-    assert isinstance(instance, sexec::ExecutionEntry)
-
-@given(instance=sexec::UnscheduleTimeEvent_strategy)
-@settings(max_examples=50)
-def test_sexec::unscheduletimeevent_instantiation(instance):
-    assert isinstance(instance, sexec::UnscheduleTimeEvent)
-
-@given(instance=sexec::ScheduleTimeEvent_strategy)
-@settings(max_examples=50)
-def test_sexec::scheduletimeevent_instantiation(instance):
-    assert isinstance(instance, sexec::ScheduleTimeEvent)
+def test_sexec_mappedelement_instantiation(instance):
+    assert isinstance(instance, sexec_MappedElement)

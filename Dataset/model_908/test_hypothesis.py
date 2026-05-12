@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ProcessElement,
-    pDL1::Guidance,
-    pDL1::WorkSequence,
-    pDL1::WorkDefinition,
-    pDL1::ProcessElement,
-    pDL1::Process,
+    pDL1_WorkSequence,
+    pDL1_Guidance,
+    pDL1_WorkDefinition,
+    pDL1_ProcessElement,
+    pDL1_Process,
     WorkSequenceType,
 )
 
@@ -35,47 +35,23 @@ def test_processelement_constructor_args():
 
 
 
-def test_pdl1::guidance_is_not_abstract():
-    assert not inspect.isabstract(pDL1::Guidance)
+def test_pdl1_worksequence_is_not_abstract():
+    assert not inspect.isabstract(pDL1_WorkSequence)
 
 
-def test_pdl1::guidance_constructor_exists():
-    assert callable(pDL1::Guidance.__init__)
+def test_pdl1_worksequence_constructor_exists():
+    assert callable(pDL1_WorkSequence.__init__)
 
 
-def test_pdl1::guidance_constructor_args():
-    sig = inspect.signature(pDL1::Guidance.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_pdl1::guidance_has_text():
-    assert hasattr(pDL1::Guidance, "text")
-    descriptor = None
-    for klass in pDL1::Guidance.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pdl1::worksequence_is_not_abstract():
-    assert not inspect.isabstract(pDL1::WorkSequence)
-
-
-def test_pdl1::worksequence_constructor_exists():
-    assert callable(pDL1::WorkSequence.__init__)
-
-
-def test_pdl1::worksequence_constructor_args():
-    sig = inspect.signature(pDL1::WorkSequence.__init__)
+def test_pdl1_worksequence_constructor_args():
+    sig = inspect.signature(pDL1_WorkSequence.__init__)
     params = list(sig.parameters.keys())
     assert "linkType" in params, "Missing parameter 'linkType'"
 
-def test_pdl1::worksequence_has_linkType():
-    assert hasattr(pDL1::WorkSequence, "linkType")
+def test_pdl1_worksequence_has_linkType():
+    assert hasattr(pDL1_WorkSequence, "linkType")
     descriptor = None
-    for klass in pDL1::WorkSequence.__mro__:
+    for klass in pDL1_WorkSequence.__mro__:
         if "linkType" in klass.__dict__:
             descriptor = klass.__dict__["linkType"]
             break
@@ -83,23 +59,47 @@ def test_pdl1::worksequence_has_linkType():
 
 
 
-def test_pdl1::workdefinition_is_not_abstract():
-    assert not inspect.isabstract(pDL1::WorkDefinition)
+def test_pdl1_guidance_is_not_abstract():
+    assert not inspect.isabstract(pDL1_Guidance)
 
 
-def test_pdl1::workdefinition_constructor_exists():
-    assert callable(pDL1::WorkDefinition.__init__)
+def test_pdl1_guidance_constructor_exists():
+    assert callable(pDL1_Guidance.__init__)
 
 
-def test_pdl1::workdefinition_constructor_args():
-    sig = inspect.signature(pDL1::WorkDefinition.__init__)
+def test_pdl1_guidance_constructor_args():
+    sig = inspect.signature(pDL1_Guidance.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_pdl1_guidance_has_text():
+    assert hasattr(pDL1_Guidance, "text")
+    descriptor = None
+    for klass in pDL1_Guidance.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pdl1_workdefinition_is_not_abstract():
+    assert not inspect.isabstract(pDL1_WorkDefinition)
+
+
+def test_pdl1_workdefinition_constructor_exists():
+    assert callable(pDL1_WorkDefinition.__init__)
+
+
+def test_pdl1_workdefinition_constructor_args():
+    sig = inspect.signature(pDL1_WorkDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pdl1::workdefinition_has_name():
-    assert hasattr(pDL1::WorkDefinition, "name")
+def test_pdl1_workdefinition_has_name():
+    assert hasattr(pDL1_WorkDefinition, "name")
     descriptor = None
-    for klass in pDL1::WorkDefinition.__mro__:
+    for klass in pDL1_WorkDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,37 +107,37 @@ def test_pdl1::workdefinition_has_name():
 
 
 
-def test_pdl1::processelement_is_not_abstract():
-    assert not inspect.isabstract(pDL1::ProcessElement)
+def test_pdl1_processelement_is_not_abstract():
+    assert not inspect.isabstract(pDL1_ProcessElement)
 
 
-def test_pdl1::processelement_constructor_exists():
-    assert callable(pDL1::ProcessElement.__init__)
+def test_pdl1_processelement_constructor_exists():
+    assert callable(pDL1_ProcessElement.__init__)
 
 
-def test_pdl1::processelement_constructor_args():
-    sig = inspect.signature(pDL1::ProcessElement.__init__)
+def test_pdl1_processelement_constructor_args():
+    sig = inspect.signature(pDL1_ProcessElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pdl1::process_is_not_abstract():
-    assert not inspect.isabstract(pDL1::Process)
+def test_pdl1_process_is_not_abstract():
+    assert not inspect.isabstract(pDL1_Process)
 
 
-def test_pdl1::process_constructor_exists():
-    assert callable(pDL1::Process.__init__)
+def test_pdl1_process_constructor_exists():
+    assert callable(pDL1_Process.__init__)
 
 
-def test_pdl1::process_constructor_args():
-    sig = inspect.signature(pDL1::Process.__init__)
+def test_pdl1_process_constructor_args():
+    sig = inspect.signature(pDL1_Process.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pdl1::process_has_name():
-    assert hasattr(pDL1::Process, "name")
+def test_pdl1_process_has_name():
+    assert hasattr(pDL1_Process, "name")
     descriptor = None
-    for klass in pDL1::Process.__mro__:
+    for klass in pDL1_Process.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -151,10 +151,10 @@ def test_worksequencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in WorkSequenceType]
     expected_literals = [
-        "finish2start",
         "start2finish",
-        "start2start",
         "finish2finish",
+        "finish2start",
+        "start2start",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -175,26 +175,26 @@ safe_text = st.text(
 ProcessElement_strategy = st.builds(
     ProcessElement,
 )
-pDL1::Guidance_strategy = st.builds(
-    pDL1::Guidance,
-    text=
-        safe_text
-)
-pDL1::WorkSequence_strategy = st.builds(
-    pDL1::WorkSequence,
+pDL1_WorkSequence_strategy = st.builds(
+    pDL1_WorkSequence,
     linkType=
         safe_text
 )
-pDL1::WorkDefinition_strategy = st.builds(
-    pDL1::WorkDefinition,
+pDL1_Guidance_strategy = st.builds(
+    pDL1_Guidance,
+    text=
+        safe_text
+)
+pDL1_WorkDefinition_strategy = st.builds(
+    pDL1_WorkDefinition,
     name=
         safe_text
 )
-pDL1::ProcessElement_strategy = st.builds(
-    pDL1::ProcessElement,
+pDL1_ProcessElement_strategy = st.builds(
+    pDL1_ProcessElement,
 )
-pDL1::Process_strategy = st.builds(
-    pDL1::Process,
+pDL1_Process_strategy = st.builds(
+    pDL1_Process,
     name=
         safe_text
 )
@@ -204,71 +204,59 @@ pDL1::Process_strategy = st.builds(
 def test_processelement_instantiation(instance):
     assert isinstance(instance, ProcessElement)
 
-@given(instance=pDL1::Guidance_strategy)
+@given(instance=pDL1_WorkSequence_strategy)
 @settings(max_examples=50)
-def test_pdl1::guidance_instantiation(instance):
-    assert isinstance(instance, pDL1::Guidance)
-
-@given(instance=pDL1::Guidance_strategy)
-def test_pdl1::guidance_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_pdl1_worksequence_instantiation(instance):
+    assert isinstance(instance, pDL1_WorkSequence)
 
 
-@given(instance=pDL1::Guidance_strategy)
-def test_pdl1::guidance_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=pDL1::WorkSequence_strategy)
-@settings(max_examples=50)
-def test_pdl1::worksequence_instantiation(instance):
-    assert isinstance(instance, pDL1::WorkSequence)
-
-@given(instance=pDL1::WorkSequence_strategy)
-def test_pdl1::worksequence_linkType_type(instance):
-    assert isinstance(instance.linkType, str)
-
-
-@given(instance=pDL1::WorkSequence_strategy)
-def test_pdl1::worksequence_linkType_setter(instance):
+@given(instance=pDL1_WorkSequence_strategy)
+def test_pdl1_worksequence_linkType_setter(instance):
     original = instance.linkType
     instance.linkType = original
     assert instance.linkType == original
 
-@given(instance=pDL1::WorkDefinition_strategy)
+@given(instance=pDL1_Guidance_strategy)
 @settings(max_examples=50)
-def test_pdl1::workdefinition_instantiation(instance):
-    assert isinstance(instance, pDL1::WorkDefinition)
-
-@given(instance=pDL1::WorkDefinition_strategy)
-def test_pdl1::workdefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pdl1_guidance_instantiation(instance):
+    assert isinstance(instance, pDL1_Guidance)
 
 
-@given(instance=pDL1::WorkDefinition_strategy)
-def test_pdl1::workdefinition_name_setter(instance):
+
+@given(instance=pDL1_Guidance_strategy)
+def test_pdl1_guidance_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=pDL1_WorkDefinition_strategy)
+@settings(max_examples=50)
+def test_pdl1_workdefinition_instantiation(instance):
+    assert isinstance(instance, pDL1_WorkDefinition)
+
+
+
+@given(instance=pDL1_WorkDefinition_strategy)
+def test_pdl1_workdefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pDL1::ProcessElement_strategy)
+@given(instance=pDL1_ProcessElement_strategy)
 @settings(max_examples=50)
-def test_pdl1::processelement_instantiation(instance):
-    assert isinstance(instance, pDL1::ProcessElement)
+def test_pdl1_processelement_instantiation(instance):
+    assert isinstance(instance, pDL1_ProcessElement)
 
-@given(instance=pDL1::Process_strategy)
+@given(instance=pDL1_Process_strategy)
 @settings(max_examples=50)
-def test_pdl1::process_instantiation(instance):
-    assert isinstance(instance, pDL1::Process)
-
-@given(instance=pDL1::Process_strategy)
-def test_pdl1::process_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pdl1_process_instantiation(instance):
+    assert isinstance(instance, pDL1_Process)
 
 
-@given(instance=pDL1::Process_strategy)
-def test_pdl1::process_name_setter(instance):
+
+@given(instance=pDL1_Process_strategy)
+def test_pdl1_process_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

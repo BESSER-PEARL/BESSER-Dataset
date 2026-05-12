@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    graphEditor::Variablenode,
-    graphEditor::Factornode,
+    graphEditor_Variablenode,
+    graphEditor_Factornode,
     GraphElement,
-    graphEditor::GraphElement,
-    graphEditor::Message,
-    graphEditor::Edge,
-    graphEditor::Node,
-    graphEditor::Graph,
+    graphEditor_GraphElement,
+    graphEditor_Message,
+    graphEditor_Edge,
+    graphEditor_Node,
+    graphEditor_Graph,
     FunctionType,
     MessageType,
     VariableType,
@@ -40,79 +40,79 @@ def test_node_constructor_args():
 
 
 
-def test_grapheditor::variablenode_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::Variablenode)
+def test_grapheditor_variablenode_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_Variablenode)
 
 
-def test_grapheditor::variablenode_constructor_exists():
-    assert callable(graphEditor::Variablenode.__init__)
+def test_grapheditor_variablenode_constructor_exists():
+    assert callable(graphEditor_Variablenode.__init__)
 
 
-def test_grapheditor::variablenode_constructor_args():
-    sig = inspect.signature(graphEditor::Variablenode.__init__)
+def test_grapheditor_variablenode_constructor_args():
+    sig = inspect.signature(graphEditor_Variablenode.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "values" in params, "Missing parameter 'values'"
     assert "isKnown" in params, "Missing parameter 'isKnown'"
+    assert "values" in params, "Missing parameter 'values'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_grapheditor::variablenode_has_type():
-    assert hasattr(graphEditor::Variablenode, "type")
+def test_grapheditor_variablenode_has_isKnown():
+    assert hasattr(graphEditor_Variablenode, "isKnown")
     descriptor = None
-    for klass in graphEditor::Variablenode.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_grapheditor::variablenode_has_values():
-    assert hasattr(graphEditor::Variablenode, "values")
-    descriptor = None
-    for klass in graphEditor::Variablenode.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_grapheditor::variablenode_has_isKnown():
-    assert hasattr(graphEditor::Variablenode, "isKnown")
-    descriptor = None
-    for klass in graphEditor::Variablenode.__mro__:
+    for klass in graphEditor_Variablenode.__mro__:
         if "isKnown" in klass.__dict__:
             descriptor = klass.__dict__["isKnown"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_grapheditor::factornode_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::Factornode)
-
-
-def test_grapheditor::factornode_constructor_exists():
-    assert callable(graphEditor::Factornode.__init__)
-
-
-def test_grapheditor::factornode_constructor_args():
-    sig = inspect.signature(graphEditor::Factornode.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "values" in params, "Missing parameter 'values'"
-
-def test_grapheditor::factornode_has_type():
-    assert hasattr(graphEditor::Factornode, "type")
+def test_grapheditor_variablenode_has_values():
+    assert hasattr(graphEditor_Variablenode, "values")
     descriptor = None
-    for klass in graphEditor::Factornode.__mro__:
+    for klass in graphEditor_Variablenode.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_grapheditor_variablenode_has_type():
+    assert hasattr(graphEditor_Variablenode, "type")
+    descriptor = None
+    for klass in graphEditor_Variablenode.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_grapheditor::factornode_has_values():
-    assert hasattr(graphEditor::Factornode, "values")
+
+
+def test_grapheditor_factornode_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_Factornode)
+
+
+def test_grapheditor_factornode_constructor_exists():
+    assert callable(graphEditor_Factornode.__init__)
+
+
+def test_grapheditor_factornode_constructor_args():
+    sig = inspect.signature(graphEditor_Factornode.__init__)
+    params = list(sig.parameters.keys())
+    assert "values" in params, "Missing parameter 'values'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_grapheditor_factornode_has_values():
+    assert hasattr(graphEditor_Factornode, "values")
     descriptor = None
-    for klass in graphEditor::Factornode.__mro__:
+    for klass in graphEditor_Factornode.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_grapheditor_factornode_has_type():
+    assert hasattr(graphEditor_Factornode, "type")
+    descriptor = None
+    for klass in graphEditor_Factornode.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -132,23 +132,23 @@ def test_graphelement_constructor_args():
 
 
 
-def test_grapheditor::graphelement_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::GraphElement)
+def test_grapheditor_graphelement_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_GraphElement)
 
 
-def test_grapheditor::graphelement_constructor_exists():
-    assert callable(graphEditor::GraphElement.__init__)
+def test_grapheditor_graphelement_constructor_exists():
+    assert callable(graphEditor_GraphElement.__init__)
 
 
-def test_grapheditor::graphelement_constructor_args():
-    sig = inspect.signature(graphEditor::GraphElement.__init__)
+def test_grapheditor_graphelement_constructor_args():
+    sig = inspect.signature(graphEditor_GraphElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_grapheditor::graphelement_has_id():
-    assert hasattr(graphEditor::GraphElement, "id")
+def test_grapheditor_graphelement_has_id():
+    assert hasattr(graphEditor_GraphElement, "id")
     descriptor = None
-    for klass in graphEditor::GraphElement.__mro__:
+    for klass in graphEditor_GraphElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -156,71 +156,71 @@ def test_grapheditor::graphelement_has_id():
 
 
 
-def test_grapheditor::message_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::Message)
+def test_grapheditor_message_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_Message)
 
 
-def test_grapheditor::message_constructor_exists():
-    assert callable(graphEditor::Message.__init__)
+def test_grapheditor_message_constructor_exists():
+    assert callable(graphEditor_Message.__init__)
 
 
-def test_grapheditor::message_constructor_args():
-    sig = inspect.signature(graphEditor::Message.__init__)
+def test_grapheditor_message_constructor_args():
+    sig = inspect.signature(graphEditor_Message.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "count" in params, "Missing parameter 'count'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_grapheditor::message_has_type():
-    assert hasattr(graphEditor::Message, "type")
+def test_grapheditor_message_has_count():
+    assert hasattr(graphEditor_Message, "count")
     descriptor = None
-    for klass in graphEditor::Message.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_grapheditor::message_has_count():
-    assert hasattr(graphEditor::Message, "count")
-    descriptor = None
-    for klass in graphEditor::Message.__mro__:
+    for klass in graphEditor_Message.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
     assert isinstance(descriptor, property)
 
+def test_grapheditor_message_has_type():
+    assert hasattr(graphEditor_Message, "type")
+    descriptor = None
+    for klass in graphEditor_Message.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_grapheditor::edge_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::Edge)
+
+def test_grapheditor_edge_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_Edge)
 
 
-def test_grapheditor::edge_constructor_exists():
-    assert callable(graphEditor::Edge.__init__)
+def test_grapheditor_edge_constructor_exists():
+    assert callable(graphEditor_Edge.__init__)
 
 
-def test_grapheditor::edge_constructor_args():
-    sig = inspect.signature(graphEditor::Edge.__init__)
+def test_grapheditor_edge_constructor_args():
+    sig = inspect.signature(graphEditor_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grapheditor::node_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::Node)
+def test_grapheditor_node_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_Node)
 
 
-def test_grapheditor::node_constructor_exists():
-    assert callable(graphEditor::Node.__init__)
+def test_grapheditor_node_constructor_exists():
+    assert callable(graphEditor_Node.__init__)
 
 
-def test_grapheditor::node_constructor_args():
-    sig = inspect.signature(graphEditor::Node.__init__)
+def test_grapheditor_node_constructor_args():
+    sig = inspect.signature(graphEditor_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_grapheditor::node_has_name():
-    assert hasattr(graphEditor::Node, "name")
+def test_grapheditor_node_has_name():
+    assert hasattr(graphEditor_Node, "name")
     descriptor = None
-    for klass in graphEditor::Node.__mro__:
+    for klass in graphEditor_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -228,33 +228,33 @@ def test_grapheditor::node_has_name():
 
 
 
-def test_grapheditor::graph_is_not_abstract():
-    assert not inspect.isabstract(graphEditor::Graph)
+def test_grapheditor_graph_is_not_abstract():
+    assert not inspect.isabstract(graphEditor_Graph)
 
 
-def test_grapheditor::graph_constructor_exists():
-    assert callable(graphEditor::Graph.__init__)
+def test_grapheditor_graph_constructor_exists():
+    assert callable(graphEditor_Graph.__init__)
 
 
-def test_grapheditor::graph_constructor_args():
-    sig = inspect.signature(graphEditor::Graph.__init__)
+def test_grapheditor_graph_constructor_args():
+    sig = inspect.signature(graphEditor_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "result" in params, "Missing parameter 'result'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_grapheditor::graph_has_result():
-    assert hasattr(graphEditor::Graph, "result")
+def test_grapheditor_graph_has_result():
+    assert hasattr(graphEditor_Graph, "result")
     descriptor = None
-    for klass in graphEditor::Graph.__mro__:
+    for klass in graphEditor_Graph.__mro__:
         if "result" in klass.__dict__:
             descriptor = klass.__dict__["result"]
             break
     assert isinstance(descriptor, property)
 
-def test_grapheditor::graph_has_name():
-    assert hasattr(graphEditor::Graph, "name")
+def test_grapheditor_graph_has_name():
+    assert hasattr(graphEditor_Graph, "name")
     descriptor = None
-    for klass in graphEditor::Graph.__mro__:
+    for klass in graphEditor_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -283,8 +283,8 @@ def test_messagetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MessageType]
     expected_literals = [
-        "VariableToFactor",
         "MarginalEdge",
+        "VariableToFactor",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -298,9 +298,9 @@ def test_variabletype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VariableType]
     expected_literals = [
-        "Real",
         "Boolean",
         "Categorial",
+        "Real",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -321,47 +321,47 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-graphEditor::Variablenode_strategy = st.builds(
-    graphEditor::Variablenode,
-    type=
-        safe_text,
+graphEditor_Variablenode_strategy = st.builds(
+    graphEditor_Variablenode,
+    isKnown=
+        st.booleans(),
     values=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    isKnown=
-        st.booleans()
-)
-graphEditor::Factornode_strategy = st.builds(
-    graphEditor::Factornode,
     type=
-        safe_text,
+        safe_text
+)
+graphEditor_Factornode_strategy = st.builds(
+    graphEditor_Factornode,
     values=
+        safe_text,
+    type=
         safe_text
 )
 GraphElement_strategy = st.builds(
     GraphElement,
 )
-graphEditor::GraphElement_strategy = st.builds(
-    graphEditor::GraphElement,
+graphEditor_GraphElement_strategy = st.builds(
+    graphEditor_GraphElement,
     id=
         safe_text
 )
-graphEditor::Message_strategy = st.builds(
-    graphEditor::Message,
-    type=
-        safe_text,
+graphEditor_Message_strategy = st.builds(
+    graphEditor_Message,
     count=
-        st.integers()
+        st.integers(),
+    type=
+        safe_text
 )
-graphEditor::Edge_strategy = st.builds(
-    graphEditor::Edge,
+graphEditor_Edge_strategy = st.builds(
+    graphEditor_Edge,
 )
-graphEditor::Node_strategy = st.builds(
-    graphEditor::Node,
+graphEditor_Node_strategy = st.builds(
+    graphEditor_Node,
     name=
         safe_text
 )
-graphEditor::Graph_strategy = st.builds(
-    graphEditor::Graph,
+graphEditor_Graph_strategy = st.builds(
+    graphEditor_Graph,
     result=
         safe_text,
     name=
@@ -373,163 +373,130 @@ graphEditor::Graph_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=graphEditor::Variablenode_strategy)
+@given(instance=graphEditor_Variablenode_strategy)
 @settings(max_examples=50)
-def test_grapheditor::variablenode_instantiation(instance):
-    assert isinstance(instance, graphEditor::Variablenode)
-
-@given(instance=graphEditor::Variablenode_strategy)
-def test_grapheditor::variablenode_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_grapheditor_variablenode_instantiation(instance):
+    assert isinstance(instance, graphEditor_Variablenode)
 
 
-@given(instance=graphEditor::Variablenode_strategy)
-def test_grapheditor::variablenode_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=graphEditor::Variablenode_strategy)
-def test_grapheditor::variablenode_values_type(instance):
-    assert isinstance(instance.values, float)
-
-
-@given(instance=graphEditor::Variablenode_strategy)
-def test_grapheditor::variablenode_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=graphEditor::Variablenode_strategy)
-def test_grapheditor::variablenode_isKnown_type(instance):
-    assert isinstance(instance.isKnown, bool)
-
-
-@given(instance=graphEditor::Variablenode_strategy)
-def test_grapheditor::variablenode_isKnown_setter(instance):
+@given(instance=graphEditor_Variablenode_strategy)
+def test_grapheditor_variablenode_isKnown_setter(instance):
     original = instance.isKnown
     instance.isKnown = original
     assert instance.isKnown == original
 
-@given(instance=graphEditor::Factornode_strategy)
-@settings(max_examples=50)
-def test_grapheditor::factornode_instantiation(instance):
-    assert isinstance(instance, graphEditor::Factornode)
-
-@given(instance=graphEditor::Factornode_strategy)
-def test_grapheditor::factornode_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=graphEditor::Factornode_strategy)
-def test_grapheditor::factornode_type_setter(instance):
+@given(instance=graphEditor_Variablenode_strategy)
+def test_grapheditor_variablenode_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+
+
+@given(instance=graphEditor_Variablenode_strategy)
+def test_grapheditor_variablenode_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=graphEditor::Factornode_strategy)
-def test_grapheditor::factornode_values_type(instance):
-    assert isinstance(instance.values, str)
+@given(instance=graphEditor_Factornode_strategy)
+@settings(max_examples=50)
+def test_grapheditor_factornode_instantiation(instance):
+    assert isinstance(instance, graphEditor_Factornode)
 
 
-@given(instance=graphEditor::Factornode_strategy)
-def test_grapheditor::factornode_values_setter(instance):
+
+@given(instance=graphEditor_Factornode_strategy)
+def test_grapheditor_factornode_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
+
+
+
+@given(instance=graphEditor_Factornode_strategy)
+def test_grapheditor_factornode_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 @given(instance=GraphElement_strategy)
 @settings(max_examples=50)
 def test_graphelement_instantiation(instance):
     assert isinstance(instance, GraphElement)
 
-@given(instance=graphEditor::GraphElement_strategy)
+@given(instance=graphEditor_GraphElement_strategy)
 @settings(max_examples=50)
-def test_grapheditor::graphelement_instantiation(instance):
-    assert isinstance(instance, graphEditor::GraphElement)
-
-@given(instance=graphEditor::GraphElement_strategy)
-def test_grapheditor::graphelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_grapheditor_graphelement_instantiation(instance):
+    assert isinstance(instance, graphEditor_GraphElement)
 
 
-@given(instance=graphEditor::GraphElement_strategy)
-def test_grapheditor::graphelement_id_setter(instance):
+
+@given(instance=graphEditor_GraphElement_strategy)
+def test_grapheditor_graphelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=graphEditor::Message_strategy)
+@given(instance=graphEditor_Message_strategy)
 @settings(max_examples=50)
-def test_grapheditor::message_instantiation(instance):
-    assert isinstance(instance, graphEditor::Message)
-
-@given(instance=graphEditor::Message_strategy)
-def test_grapheditor::message_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_grapheditor_message_instantiation(instance):
+    assert isinstance(instance, graphEditor_Message)
 
 
-@given(instance=graphEditor::Message_strategy)
-def test_grapheditor::message_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=graphEditor::Message_strategy)
-def test_grapheditor::message_count_type(instance):
-    assert isinstance(instance.count, int)
-
-
-@given(instance=graphEditor::Message_strategy)
-def test_grapheditor::message_count_setter(instance):
+@given(instance=graphEditor_Message_strategy)
+def test_grapheditor_message_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
 
-@given(instance=graphEditor::Edge_strategy)
+
+
+@given(instance=graphEditor_Message_strategy)
+def test_grapheditor_message_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=graphEditor_Edge_strategy)
 @settings(max_examples=50)
-def test_grapheditor::edge_instantiation(instance):
-    assert isinstance(instance, graphEditor::Edge)
+def test_grapheditor_edge_instantiation(instance):
+    assert isinstance(instance, graphEditor_Edge)
 
-@given(instance=graphEditor::Node_strategy)
+@given(instance=graphEditor_Node_strategy)
 @settings(max_examples=50)
-def test_grapheditor::node_instantiation(instance):
-    assert isinstance(instance, graphEditor::Node)
-
-@given(instance=graphEditor::Node_strategy)
-def test_grapheditor::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_grapheditor_node_instantiation(instance):
+    assert isinstance(instance, graphEditor_Node)
 
 
-@given(instance=graphEditor::Node_strategy)
-def test_grapheditor::node_name_setter(instance):
+
+@given(instance=graphEditor_Node_strategy)
+def test_grapheditor_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphEditor::Graph_strategy)
+@given(instance=graphEditor_Graph_strategy)
 @settings(max_examples=50)
-def test_grapheditor::graph_instantiation(instance):
-    assert isinstance(instance, graphEditor::Graph)
-
-@given(instance=graphEditor::Graph_strategy)
-def test_grapheditor::graph_result_type(instance):
-    assert isinstance(instance.result, str)
+def test_grapheditor_graph_instantiation(instance):
+    assert isinstance(instance, graphEditor_Graph)
 
 
-@given(instance=graphEditor::Graph_strategy)
-def test_grapheditor::graph_result_setter(instance):
+
+@given(instance=graphEditor_Graph_strategy)
+def test_grapheditor_graph_result_setter(instance):
     original = instance.result
     instance.result = original
     assert instance.result == original
 
-@given(instance=graphEditor::Graph_strategy)
-def test_grapheditor::graph_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=graphEditor::Graph_strategy)
-def test_grapheditor::graph_name_setter(instance):
+@given(instance=graphEditor_Graph_strategy)
+def test_grapheditor_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

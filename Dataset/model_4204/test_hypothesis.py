@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloScoping::FieldReference,
-    helloScoping::Field,
-    helloScoping::Greeting,
-    helloScoping::Model,
+from python_code import (
+    helloScoping_FieldReference,
+    helloScoping_Field,
+    helloScoping_Greeting,
+    helloScoping_Model,
 )
 
 # =============================================================================
@@ -18,37 +18,37 @@ from classes import (
 
 
 
-def test_helloscoping::fieldreference_is_not_abstract():
-    assert not inspect.isabstract(helloScoping::FieldReference)
+def test_helloscoping_fieldreference_is_not_abstract():
+    assert not inspect.isabstract(helloScoping_FieldReference)
 
 
-def test_helloscoping::fieldreference_constructor_exists():
-    assert callable(helloScoping::FieldReference.__init__)
+def test_helloscoping_fieldreference_constructor_exists():
+    assert callable(helloScoping_FieldReference.__init__)
 
 
-def test_helloscoping::fieldreference_constructor_args():
-    sig = inspect.signature(helloScoping::FieldReference.__init__)
+def test_helloscoping_fieldreference_constructor_args():
+    sig = inspect.signature(helloScoping_FieldReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_helloscoping::field_is_not_abstract():
-    assert not inspect.isabstract(helloScoping::Field)
+def test_helloscoping_field_is_not_abstract():
+    assert not inspect.isabstract(helloScoping_Field)
 
 
-def test_helloscoping::field_constructor_exists():
-    assert callable(helloScoping::Field.__init__)
+def test_helloscoping_field_constructor_exists():
+    assert callable(helloScoping_Field.__init__)
 
 
-def test_helloscoping::field_constructor_args():
-    sig = inspect.signature(helloScoping::Field.__init__)
+def test_helloscoping_field_constructor_args():
+    sig = inspect.signature(helloScoping_Field.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloscoping::field_has_name():
-    assert hasattr(helloScoping::Field, "name")
+def test_helloscoping_field_has_name():
+    assert hasattr(helloScoping_Field, "name")
     descriptor = None
-    for klass in helloScoping::Field.__mro__:
+    for klass in helloScoping_Field.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -56,23 +56,23 @@ def test_helloscoping::field_has_name():
 
 
 
-def test_helloscoping::greeting_is_not_abstract():
-    assert not inspect.isabstract(helloScoping::Greeting)
+def test_helloscoping_greeting_is_not_abstract():
+    assert not inspect.isabstract(helloScoping_Greeting)
 
 
-def test_helloscoping::greeting_constructor_exists():
-    assert callable(helloScoping::Greeting.__init__)
+def test_helloscoping_greeting_constructor_exists():
+    assert callable(helloScoping_Greeting.__init__)
 
 
-def test_helloscoping::greeting_constructor_args():
-    sig = inspect.signature(helloScoping::Greeting.__init__)
+def test_helloscoping_greeting_constructor_args():
+    sig = inspect.signature(helloScoping_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloscoping::greeting_has_name():
-    assert hasattr(helloScoping::Greeting, "name")
+def test_helloscoping_greeting_has_name():
+    assert hasattr(helloScoping_Greeting, "name")
     descriptor = None
-    for klass in helloScoping::Greeting.__mro__:
+    for klass in helloScoping_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,16 +80,16 @@ def test_helloscoping::greeting_has_name():
 
 
 
-def test_helloscoping::model_is_not_abstract():
-    assert not inspect.isabstract(helloScoping::Model)
+def test_helloscoping_model_is_not_abstract():
+    assert not inspect.isabstract(helloScoping_Model)
 
 
-def test_helloscoping::model_constructor_exists():
-    assert callable(helloScoping::Model.__init__)
+def test_helloscoping_model_constructor_exists():
+    assert callable(helloScoping_Model.__init__)
 
 
-def test_helloscoping::model_constructor_args():
-    sig = inspect.signature(helloScoping::Model.__init__)
+def test_helloscoping_model_constructor_args():
+    sig = inspect.signature(helloScoping_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -104,61 +104,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloScoping::FieldReference_strategy = st.builds(
-    helloScoping::FieldReference,
+helloScoping_FieldReference_strategy = st.builds(
+    helloScoping_FieldReference,
 )
-helloScoping::Field_strategy = st.builds(
-    helloScoping::Field,
+helloScoping_Field_strategy = st.builds(
+    helloScoping_Field,
     name=
         safe_text
 )
-helloScoping::Greeting_strategy = st.builds(
-    helloScoping::Greeting,
+helloScoping_Greeting_strategy = st.builds(
+    helloScoping_Greeting,
     name=
         safe_text
 )
-helloScoping::Model_strategy = st.builds(
-    helloScoping::Model,
+helloScoping_Model_strategy = st.builds(
+    helloScoping_Model,
 )
 
-@given(instance=helloScoping::FieldReference_strategy)
+@given(instance=helloScoping_FieldReference_strategy)
 @settings(max_examples=50)
-def test_helloscoping::fieldreference_instantiation(instance):
-    assert isinstance(instance, helloScoping::FieldReference)
+def test_helloscoping_fieldreference_instantiation(instance):
+    assert isinstance(instance, helloScoping_FieldReference)
 
-@given(instance=helloScoping::Field_strategy)
+@given(instance=helloScoping_Field_strategy)
 @settings(max_examples=50)
-def test_helloscoping::field_instantiation(instance):
-    assert isinstance(instance, helloScoping::Field)
-
-@given(instance=helloScoping::Field_strategy)
-def test_helloscoping::field_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloscoping_field_instantiation(instance):
+    assert isinstance(instance, helloScoping_Field)
 
 
-@given(instance=helloScoping::Field_strategy)
-def test_helloscoping::field_name_setter(instance):
+
+@given(instance=helloScoping_Field_strategy)
+def test_helloscoping_field_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloScoping::Greeting_strategy)
+@given(instance=helloScoping_Greeting_strategy)
 @settings(max_examples=50)
-def test_helloscoping::greeting_instantiation(instance):
-    assert isinstance(instance, helloScoping::Greeting)
-
-@given(instance=helloScoping::Greeting_strategy)
-def test_helloscoping::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloscoping_greeting_instantiation(instance):
+    assert isinstance(instance, helloScoping_Greeting)
 
 
-@given(instance=helloScoping::Greeting_strategy)
-def test_helloscoping::greeting_name_setter(instance):
+
+@given(instance=helloScoping_Greeting_strategy)
+def test_helloscoping_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloScoping::Model_strategy)
+@given(instance=helloScoping_Model_strategy)
 @settings(max_examples=50)
-def test_helloscoping::model_instantiation(instance):
-    assert isinstance(instance, helloScoping::Model)
+def test_helloscoping_model_instantiation(instance):
+    assert isinstance(instance, helloScoping_Model)

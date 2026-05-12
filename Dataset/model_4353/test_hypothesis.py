@@ -3,86 +3,86 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TrgViewMapping,
-    jointPackage::Ecore2Maude::TrgViewMapping,
+    jointPackage_Ecore2Maude_TrgViewMapping,
+    jointPackage_Ecore2Maude_SrcEStringToStringMapEntry,
+    jointPackage_Ecore2Maude_JointMM,
     TrgTerm,
-    jointPackage::Ecore2Maude::TrgVariable,
-    jointPackage::Ecore2Maude::TrgRecTerm,
-    jointPackage::Ecore2Maude::TrgConstant,
+    jointPackage_Ecore2Maude_TrgVariable,
+    jointPackage_Ecore2Maude_TrgRecTerm,
+    jointPackage_Ecore2Maude_TrgConstant,
     TrgRenMapping,
-    jointPackage::Ecore2Maude::TrgOpTypedMapping,
-    jointPackage::Ecore2Maude::TrgOpMapping,
-    jointPackage::Ecore2Maude::TrgLabelMapping,
-    jointPackage::Ecore2Maude::TrgSortMapping,
-    jointPackage::Ecore2Maude::TrgTermMapping,
+    jointPackage_Ecore2Maude_TrgOpMapping,
+    jointPackage_Ecore2Maude_TrgOpTypedMapping,
+    jointPackage_Ecore2Maude_TrgLabelMapping,
+    jointPackage_Ecore2Maude_TrgSortMapping,
+    jointPackage_Ecore2Maude_TrgTermMapping,
     TrgCondition,
-    jointPackage::Ecore2Maude::TrgRewriteCond,
-    jointPackage::Ecore2Maude::TrgEquationalCond,
-    jointPackage::Ecore2Maude::TrgType,
-    jointPackage::Ecore2Maude::TrgCondition,
+    jointPackage_Ecore2Maude_TrgRewriteCond,
+    jointPackage_Ecore2Maude_TrgEquationalCond,
+    jointPackage_Ecore2Maude_TrgType,
+    jointPackage_Ecore2Maude_TrgCondition,
     TrgModElement,
-    jointPackage::Ecore2Maude::TrgStatement,
-    jointPackage::Ecore2Maude::TrgOperation,
-    jointPackage::Ecore2Maude::TrgModImportation,
+    jointPackage_Ecore2Maude_TrgOperation,
+    jointPackage_Ecore2Maude_TrgStatement,
+    jointPackage_Ecore2Maude_TrgModImportation,
     TrgModule,
-    jointPackage::Ecore2Maude::TrgSModule,
-    jointPackage::Ecore2Maude::TrgFModule,
+    jointPackage_Ecore2Maude_TrgSModule,
+    jointPackage_Ecore2Maude_TrgFModule,
     TrgTheory,
-    jointPackage::Ecore2Maude::TrgSTheory,
-    jointPackage::Ecore2Maude::TrgFTheory,
-    jointPackage::Ecore2Maude::TrgModElement,
-    jointPackage::Ecore2Maude::TrgSubsortRel,
+    jointPackage_Ecore2Maude_TrgSTheory,
+    jointPackage_Ecore2Maude_TrgFTheory,
+    jointPackage_Ecore2Maude_TrgModElement,
+    jointPackage_Ecore2Maude_TrgSubsortRel,
     TrgType,
-    jointPackage::Ecore2Maude::TrgKind,
-    jointPackage::Ecore2Maude::TrgRenMapping,
+    jointPackage_Ecore2Maude_TrgKind,
+    jointPackage_Ecore2Maude_TrgRenMapping,
     TrgModExpression,
-    jointPackage::Ecore2Maude::TrgCompModExp,
-    jointPackage::Ecore2Maude::TrgRenModExp,
-    jointPackage::Ecore2Maude::TrgInstModExp,
-    jointPackage::Ecore2Maude::TrgModExpression,
+    jointPackage_Ecore2Maude_TrgCompModExp,
+    jointPackage_Ecore2Maude_TrgRenModExp,
+    jointPackage_Ecore2Maude_TrgInstModExp,
+    jointPackage_Ecore2Maude_TrgModExpression,
     TrgMaudeTopEl,
-    jointPackage::Ecore2Maude::TrgView,
-    jointPackage::Ecore2Maude::TrgParameter,
-    jointPackage::Ecore2Maude::TrgTheory,
-    jointPackage::Ecore2Maude::TrgTheoryIdModExp,
-    jointPackage::Ecore2Maude::TrgModule,
-    jointPackage::Ecore2Maude::TrgModuleIdModExp,
-    jointPackage::Ecore2Maude::TrgSort,
-    jointPackage::Ecore2Maude::TrgTerm,
+    jointPackage_Ecore2Maude_TrgView,
+    jointPackage_Ecore2Maude_TrgParameter,
+    jointPackage_Ecore2Maude_TrgTheory,
+    jointPackage_Ecore2Maude_TrgTheoryIdModExp,
+    jointPackage_Ecore2Maude_TrgModule,
+    jointPackage_Ecore2Maude_TrgModuleIdModExp,
+    jointPackage_Ecore2Maude_TrgSort,
+    jointPackage_Ecore2Maude_TrgTerm,
     TrgStatement,
-    jointPackage::Ecore2Maude::TrgMembership,
-    jointPackage::Ecore2Maude::TrgMaudeTopEl,
-    jointPackage::Ecore2Maude::TrgMaudeSpec,
+    jointPackage_Ecore2Maude_TrgMembership,
+    jointPackage_Ecore2Maude_TrgMaudeTopEl,
+    jointPackage_Ecore2Maude_TrgMaudeSpec,
     TrgEquationalCond,
-    jointPackage::Ecore2Maude::TrgMatchingCond,
-    jointPackage::Ecore2Maude::TrgBooleanCond,
-    jointPackage::Ecore2Maude::TrgMembershipCond,
-    jointPackage::Ecore2Maude::TrgRule,
-    jointPackage::Ecore2Maude::TrgEquation,
+    jointPackage_Ecore2Maude_TrgMatchingCond,
+    jointPackage_Ecore2Maude_TrgBooleanCond,
+    jointPackage_Ecore2Maude_TrgEqualCond,
+    jointPackage_Ecore2Maude_TrgMembershipCond,
+    jointPackage_Ecore2Maude_TrgRule,
+    jointPackage_Ecore2Maude_TrgEquation,
     SrcETypedElement,
-    jointPackage::Ecore2Maude::SrcEParameter,
+    jointPackage_Ecore2Maude_SrcEOperation,
+    jointPackage_Ecore2Maude_SrcEParameter,
     SrcEDataType,
-    jointPackage::Ecore2Maude::SrcEEnum,
+    jointPackage_Ecore2Maude_SrcEEnum,
     SrcENamedElement,
-    jointPackage::Ecore2Maude::SrcETypedElement,
-    jointPackage::Ecore2Maude::SrcEPackage,
-    jointPackage::Ecore2Maude::SrcEClassifier,
-    jointPackage::Ecore2Maude::SrcEStructuralFeature,
-    jointPackage::Ecore2Maude::SrcENamedElement,
-    jointPackage::Ecore2Maude::SrcEEnumLiteral,
+    jointPackage_Ecore2Maude_SrcETypedElement,
+    jointPackage_Ecore2Maude_SrcEPackage,
+    jointPackage_Ecore2Maude_SrcEClassifier,
+    jointPackage_Ecore2Maude_SrcEStructuralFeature,
+    jointPackage_Ecore2Maude_SrcENamedElement,
+    jointPackage_Ecore2Maude_SrcEEnumLiteral,
     SrcEClassifier,
-    jointPackage::Ecore2Maude::SrcEClass,
-    jointPackage::Ecore2Maude::SrcEDataType,
+    jointPackage_Ecore2Maude_SrcEClass,
+    jointPackage_Ecore2Maude_SrcEDataType,
     SrcEStructuralFeature,
-    jointPackage::Ecore2Maude::SrcEAttribute,
-    jointPackage::Ecore2Maude::TrgEqualCond,
-    jointPackage::Ecore2Maude::SrcEStringToStringMapEntry,
-    jointPackage::Ecore2Maude::JointMM,
-    jointPackage::Ecore2Maude::SrcEReference,
-    jointPackage::Ecore2Maude::SrcEOperation,
+    jointPackage_Ecore2Maude_SrcEReference,
+    jointPackage_Ecore2Maude_SrcEAttribute,
 )
 
 # =============================================================================
@@ -105,16 +105,64 @@ def test_trgviewmapping_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgviewmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgViewMapping)
+def test_jointpackage_ecore2maude_trgviewmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgViewMapping)
 
 
-def test_jointpackage::ecore2maude::trgviewmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgViewMapping.__init__)
+def test_jointpackage_ecore2maude_trgviewmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgViewMapping.__init__)
 
 
-def test_jointpackage::ecore2maude::trgviewmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgViewMapping.__init__)
+def test_jointpackage_ecore2maude_trgviewmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgViewMapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEStringToStringMapEntry)
+
+
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEStringToStringMapEntry.__init__)
+
+
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEStringToStringMapEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_has_key():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStringToStringMapEntry, "key")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEStringToStringMapEntry.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_has_value():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStringToStringMapEntry, "value")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEStringToStringMapEntry.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_ecore2maude_jointmm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_JointMM)
+
+
+def test_jointpackage_ecore2maude_jointmm_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_JointMM.__init__)
+
+
+def test_jointpackage_ecore2maude_jointmm_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_JointMM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -133,23 +181,23 @@ def test_trgterm_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgvariable_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgVariable)
+def test_jointpackage_ecore2maude_trgvariable_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgVariable)
 
 
-def test_jointpackage::ecore2maude::trgvariable_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgVariable.__init__)
+def test_jointpackage_ecore2maude_trgvariable_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgVariable.__init__)
 
 
-def test_jointpackage::ecore2maude::trgvariable_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgVariable.__init__)
+def test_jointpackage_ecore2maude_trgvariable_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgVariable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::ecore2maude::trgvariable_has_name():
-    assert hasattr(jointPackage::Ecore2Maude::TrgVariable, "name")
+def test_jointpackage_ecore2maude_trgvariable_has_name():
+    assert hasattr(jointPackage_Ecore2Maude_TrgVariable, "name")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgVariable.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgVariable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -157,23 +205,23 @@ def test_jointpackage::ecore2maude::trgvariable_has_name():
 
 
 
-def test_jointpackage::ecore2maude::trgrecterm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgRecTerm)
+def test_jointpackage_ecore2maude_trgrecterm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgRecTerm)
 
 
-def test_jointpackage::ecore2maude::trgrecterm_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgRecTerm.__init__)
+def test_jointpackage_ecore2maude_trgrecterm_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgRecTerm.__init__)
 
 
-def test_jointpackage::ecore2maude::trgrecterm_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgRecTerm.__init__)
+def test_jointpackage_ecore2maude_trgrecterm_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgRecTerm.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_jointpackage::ecore2maude::trgrecterm_has_op():
-    assert hasattr(jointPackage::Ecore2Maude::TrgRecTerm, "op")
+def test_jointpackage_ecore2maude_trgrecterm_has_op():
+    assert hasattr(jointPackage_Ecore2Maude_TrgRecTerm, "op")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgRecTerm.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgRecTerm.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -181,23 +229,23 @@ def test_jointpackage::ecore2maude::trgrecterm_has_op():
 
 
 
-def test_jointpackage::ecore2maude::trgconstant_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgConstant)
+def test_jointpackage_ecore2maude_trgconstant_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgConstant)
 
 
-def test_jointpackage::ecore2maude::trgconstant_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgConstant.__init__)
+def test_jointpackage_ecore2maude_trgconstant_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgConstant.__init__)
 
 
-def test_jointpackage::ecore2maude::trgconstant_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgConstant.__init__)
+def test_jointpackage_ecore2maude_trgconstant_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgConstant.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_jointpackage::ecore2maude::trgconstant_has_op():
-    assert hasattr(jointPackage::Ecore2Maude::TrgConstant, "op")
+def test_jointpackage_ecore2maude_trgconstant_has_op():
+    assert hasattr(jointPackage_Ecore2Maude_TrgConstant, "op")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgConstant.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgConstant.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -219,33 +267,57 @@ def test_trgrenmapping_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgoptypedmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgOpTypedMapping)
+def test_jointpackage_ecore2maude_trgopmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgOpMapping)
 
 
-def test_jointpackage::ecore2maude::trgoptypedmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgOpTypedMapping.__init__)
+def test_jointpackage_ecore2maude_trgopmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgOpMapping.__init__)
 
 
-def test_jointpackage::ecore2maude::trgoptypedmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgOpTypedMapping.__init__)
+def test_jointpackage_ecore2maude_trgopmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgOpMapping.__init__)
     params = list(sig.parameters.keys())
     assert "to" in params, "Missing parameter 'to'"
-    assert "atts" in params, "Missing parameter 'atts'"
 
-def test_jointpackage::ecore2maude::trgoptypedmapping_has_to():
-    assert hasattr(jointPackage::Ecore2Maude::TrgOpTypedMapping, "to")
+def test_jointpackage_ecore2maude_trgopmapping_has_to():
+    assert hasattr(jointPackage_Ecore2Maude_TrgOpMapping, "to")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgOpTypedMapping.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgOpMapping.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::trgoptypedmapping_has_atts():
-    assert hasattr(jointPackage::Ecore2Maude::TrgOpTypedMapping, "atts")
+
+
+def test_jointpackage_ecore2maude_trgoptypedmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgOpTypedMapping)
+
+
+def test_jointpackage_ecore2maude_trgoptypedmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgOpTypedMapping.__init__)
+
+
+def test_jointpackage_ecore2maude_trgoptypedmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgOpTypedMapping.__init__)
+    params = list(sig.parameters.keys())
+    assert "to" in params, "Missing parameter 'to'"
+    assert "atts" in params, "Missing parameter 'atts'"
+
+def test_jointpackage_ecore2maude_trgoptypedmapping_has_to():
+    assert hasattr(jointPackage_Ecore2Maude_TrgOpTypedMapping, "to")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgOpTypedMapping.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgOpTypedMapping.__mro__:
+        if "to" in klass.__dict__:
+            descriptor = klass.__dict__["to"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_trgoptypedmapping_has_atts():
+    assert hasattr(jointPackage_Ecore2Maude_TrgOpTypedMapping, "atts")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_TrgOpTypedMapping.__mro__:
         if "atts" in klass.__dict__:
             descriptor = klass.__dict__["atts"]
             break
@@ -253,81 +325,33 @@ def test_jointpackage::ecore2maude::trgoptypedmapping_has_atts():
 
 
 
-def test_jointpackage::ecore2maude::trgopmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgOpMapping)
+def test_jointpackage_ecore2maude_trglabelmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgLabelMapping)
 
 
-def test_jointpackage::ecore2maude::trgopmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgOpMapping.__init__)
+def test_jointpackage_ecore2maude_trglabelmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgLabelMapping.__init__)
 
 
-def test_jointpackage::ecore2maude::trgopmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgOpMapping.__init__)
+def test_jointpackage_ecore2maude_trglabelmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgLabelMapping.__init__)
     params = list(sig.parameters.keys())
-    assert "to" in params, "Missing parameter 'to'"
-
-def test_jointpackage::ecore2maude::trgopmapping_has_to():
-    assert hasattr(jointPackage::Ecore2Maude::TrgOpMapping, "to")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgOpMapping.__mro__:
-        if "to" in klass.__dict__:
-            descriptor = klass.__dict__["to"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::ecore2maude::trglabelmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgLabelMapping)
-
-
-def test_jointpackage::ecore2maude::trglabelmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgLabelMapping.__init__)
-
-
-def test_jointpackage::ecore2maude::trglabelmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgLabelMapping.__init__)
-    params = list(sig.parameters.keys())
-    assert "to" in params, "Missing parameter 'to'"
     assert "from_" in params, "Missing parameter 'from_'"
+    assert "to" in params, "Missing parameter 'to'"
 
-def test_jointpackage::ecore2maude::trglabelmapping_has_to():
-    assert hasattr(jointPackage::Ecore2Maude::TrgLabelMapping, "to")
+def test_jointpackage_ecore2maude_trglabelmapping_has_from_():
+    assert hasattr(jointPackage_Ecore2Maude_TrgLabelMapping, "from_")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgLabelMapping.__mro__:
-        if "to" in klass.__dict__:
-            descriptor = klass.__dict__["to"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::trglabelmapping_has_from_():
-    assert hasattr(jointPackage::Ecore2Maude::TrgLabelMapping, "from_")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgLabelMapping.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgLabelMapping.__mro__:
         if "from_" in klass.__dict__:
             descriptor = klass.__dict__["from_"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jointpackage::ecore2maude::trgsortmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgSortMapping)
-
-
-def test_jointpackage::ecore2maude::trgsortmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgSortMapping.__init__)
-
-
-def test_jointpackage::ecore2maude::trgsortmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgSortMapping.__init__)
-    params = list(sig.parameters.keys())
-    assert "to" in params, "Missing parameter 'to'"
-
-def test_jointpackage::ecore2maude::trgsortmapping_has_to():
-    assert hasattr(jointPackage::Ecore2Maude::TrgSortMapping, "to")
+def test_jointpackage_ecore2maude_trglabelmapping_has_to():
+    assert hasattr(jointPackage_Ecore2Maude_TrgLabelMapping, "to")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgSortMapping.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgLabelMapping.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
@@ -335,16 +359,40 @@ def test_jointpackage::ecore2maude::trgsortmapping_has_to():
 
 
 
-def test_jointpackage::ecore2maude::trgtermmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgTermMapping)
+def test_jointpackage_ecore2maude_trgsortmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgSortMapping)
 
 
-def test_jointpackage::ecore2maude::trgtermmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgTermMapping.__init__)
+def test_jointpackage_ecore2maude_trgsortmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgSortMapping.__init__)
 
 
-def test_jointpackage::ecore2maude::trgtermmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgTermMapping.__init__)
+def test_jointpackage_ecore2maude_trgsortmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgSortMapping.__init__)
+    params = list(sig.parameters.keys())
+    assert "to" in params, "Missing parameter 'to'"
+
+def test_jointpackage_ecore2maude_trgsortmapping_has_to():
+    assert hasattr(jointPackage_Ecore2Maude_TrgSortMapping, "to")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_TrgSortMapping.__mro__:
+        if "to" in klass.__dict__:
+            descriptor = klass.__dict__["to"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_ecore2maude_trgtermmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgTermMapping)
+
+
+def test_jointpackage_ecore2maude_trgtermmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgTermMapping.__init__)
+
+
+def test_jointpackage_ecore2maude_trgtermmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgTermMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -363,51 +411,51 @@ def test_trgcondition_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgrewritecond_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgRewriteCond)
+def test_jointpackage_ecore2maude_trgrewritecond_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgRewriteCond)
 
 
-def test_jointpackage::ecore2maude::trgrewritecond_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgRewriteCond.__init__)
+def test_jointpackage_ecore2maude_trgrewritecond_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgRewriteCond.__init__)
 
 
-def test_jointpackage::ecore2maude::trgrewritecond_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgRewriteCond.__init__)
+def test_jointpackage_ecore2maude_trgrewritecond_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgRewriteCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgequationalcond_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgEquationalCond)
+def test_jointpackage_ecore2maude_trgequationalcond_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgEquationalCond)
 
 
-def test_jointpackage::ecore2maude::trgequationalcond_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgEquationalCond.__init__)
+def test_jointpackage_ecore2maude_trgequationalcond_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgEquationalCond.__init__)
 
 
-def test_jointpackage::ecore2maude::trgequationalcond_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgEquationalCond.__init__)
+def test_jointpackage_ecore2maude_trgequationalcond_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgEquationalCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgtype_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgType)
+def test_jointpackage_ecore2maude_trgtype_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgType)
 
 
-def test_jointpackage::ecore2maude::trgtype_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgType.__init__)
+def test_jointpackage_ecore2maude_trgtype_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgType.__init__)
 
 
-def test_jointpackage::ecore2maude::trgtype_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgType.__init__)
+def test_jointpackage_ecore2maude_trgtype_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::ecore2maude::trgtype_has_name():
-    assert hasattr(jointPackage::Ecore2Maude::TrgType, "name")
+def test_jointpackage_ecore2maude_trgtype_has_name():
+    assert hasattr(jointPackage_Ecore2Maude_TrgType, "name")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgType.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -415,16 +463,16 @@ def test_jointpackage::ecore2maude::trgtype_has_name():
 
 
 
-def test_jointpackage::ecore2maude::trgcondition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgCondition)
+def test_jointpackage_ecore2maude_trgcondition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgCondition)
 
 
-def test_jointpackage::ecore2maude::trgcondition_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgCondition.__init__)
+def test_jointpackage_ecore2maude_trgcondition_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgCondition.__init__)
 
 
-def test_jointpackage::ecore2maude::trgcondition_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgCondition.__init__)
+def test_jointpackage_ecore2maude_trgcondition_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgCondition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -443,67 +491,33 @@ def test_trgmodelement_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgstatement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgStatement)
+def test_jointpackage_ecore2maude_trgoperation_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgOperation)
 
 
-def test_jointpackage::ecore2maude::trgstatement_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgStatement.__init__)
+def test_jointpackage_ecore2maude_trgoperation_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgOperation.__init__)
 
 
-def test_jointpackage::ecore2maude::trgstatement_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
-    assert "atts" in params, "Missing parameter 'atts'"
-
-def test_jointpackage::ecore2maude::trgstatement_has_label():
-    assert hasattr(jointPackage::Ecore2Maude::TrgStatement, "label")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgStatement.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::trgstatement_has_atts():
-    assert hasattr(jointPackage::Ecore2Maude::TrgStatement, "atts")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgStatement.__mro__:
-        if "atts" in klass.__dict__:
-            descriptor = klass.__dict__["atts"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::ecore2maude::trgoperation_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgOperation)
-
-
-def test_jointpackage::ecore2maude::trgoperation_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgOperation.__init__)
-
-
-def test_jointpackage::ecore2maude::trgoperation_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgOperation.__init__)
+def test_jointpackage_ecore2maude_trgoperation_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgOperation.__init__)
     params = list(sig.parameters.keys())
     assert "atts" in params, "Missing parameter 'atts'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::ecore2maude::trgoperation_has_atts():
-    assert hasattr(jointPackage::Ecore2Maude::TrgOperation, "atts")
+def test_jointpackage_ecore2maude_trgoperation_has_atts():
+    assert hasattr(jointPackage_Ecore2Maude_TrgOperation, "atts")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgOperation.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgOperation.__mro__:
         if "atts" in klass.__dict__:
             descriptor = klass.__dict__["atts"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::trgoperation_has_name():
-    assert hasattr(jointPackage::Ecore2Maude::TrgOperation, "name")
+def test_jointpackage_ecore2maude_trgoperation_has_name():
+    assert hasattr(jointPackage_Ecore2Maude_TrgOperation, "name")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgOperation.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgOperation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -511,16 +525,50 @@ def test_jointpackage::ecore2maude::trgoperation_has_name():
 
 
 
-def test_jointpackage::ecore2maude::trgmodimportation_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgModImportation)
+def test_jointpackage_ecore2maude_trgstatement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgStatement)
 
 
-def test_jointpackage::ecore2maude::trgmodimportation_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgModImportation.__init__)
+def test_jointpackage_ecore2maude_trgstatement_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgStatement.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmodimportation_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgModImportation.__init__)
+def test_jointpackage_ecore2maude_trgstatement_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+    assert "atts" in params, "Missing parameter 'atts'"
+
+def test_jointpackage_ecore2maude_trgstatement_has_label():
+    assert hasattr(jointPackage_Ecore2Maude_TrgStatement, "label")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_TrgStatement.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_trgstatement_has_atts():
+    assert hasattr(jointPackage_Ecore2Maude_TrgStatement, "atts")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_TrgStatement.__mro__:
+        if "atts" in klass.__dict__:
+            descriptor = klass.__dict__["atts"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_ecore2maude_trgmodimportation_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgModImportation)
+
+
+def test_jointpackage_ecore2maude_trgmodimportation_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgModImportation.__init__)
+
+
+def test_jointpackage_ecore2maude_trgmodimportation_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgModImportation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -539,30 +587,30 @@ def test_trgmodule_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgsmodule_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgSModule)
+def test_jointpackage_ecore2maude_trgsmodule_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgSModule)
 
 
-def test_jointpackage::ecore2maude::trgsmodule_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgSModule.__init__)
+def test_jointpackage_ecore2maude_trgsmodule_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgSModule.__init__)
 
 
-def test_jointpackage::ecore2maude::trgsmodule_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgSModule.__init__)
+def test_jointpackage_ecore2maude_trgsmodule_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgSModule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgfmodule_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgFModule)
+def test_jointpackage_ecore2maude_trgfmodule_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgFModule)
 
 
-def test_jointpackage::ecore2maude::trgfmodule_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgFModule.__init__)
+def test_jointpackage_ecore2maude_trgfmodule_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgFModule.__init__)
 
 
-def test_jointpackage::ecore2maude::trgfmodule_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgFModule.__init__)
+def test_jointpackage_ecore2maude_trgfmodule_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgFModule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -581,58 +629,58 @@ def test_trgtheory_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgstheory_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgSTheory)
+def test_jointpackage_ecore2maude_trgstheory_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgSTheory)
 
 
-def test_jointpackage::ecore2maude::trgstheory_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgSTheory.__init__)
+def test_jointpackage_ecore2maude_trgstheory_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgSTheory.__init__)
 
 
-def test_jointpackage::ecore2maude::trgstheory_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgSTheory.__init__)
+def test_jointpackage_ecore2maude_trgstheory_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgSTheory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgftheory_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgFTheory)
+def test_jointpackage_ecore2maude_trgftheory_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgFTheory)
 
 
-def test_jointpackage::ecore2maude::trgftheory_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgFTheory.__init__)
+def test_jointpackage_ecore2maude_trgftheory_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgFTheory.__init__)
 
 
-def test_jointpackage::ecore2maude::trgftheory_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgFTheory.__init__)
+def test_jointpackage_ecore2maude_trgftheory_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgFTheory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgmodelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgModElement)
+def test_jointpackage_ecore2maude_trgmodelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgModElement)
 
 
-def test_jointpackage::ecore2maude::trgmodelement_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgModElement.__init__)
+def test_jointpackage_ecore2maude_trgmodelement_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgModElement.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmodelement_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgModElement.__init__)
+def test_jointpackage_ecore2maude_trgmodelement_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgModElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgsubsortrel_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgSubsortRel)
+def test_jointpackage_ecore2maude_trgsubsortrel_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgSubsortRel)
 
 
-def test_jointpackage::ecore2maude::trgsubsortrel_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgSubsortRel.__init__)
+def test_jointpackage_ecore2maude_trgsubsortrel_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgSubsortRel.__init__)
 
 
-def test_jointpackage::ecore2maude::trgsubsortrel_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgSubsortRel.__init__)
+def test_jointpackage_ecore2maude_trgsubsortrel_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgSubsortRel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -651,30 +699,30 @@ def test_trgtype_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgkind_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgKind)
+def test_jointpackage_ecore2maude_trgkind_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgKind)
 
 
-def test_jointpackage::ecore2maude::trgkind_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgKind.__init__)
+def test_jointpackage_ecore2maude_trgkind_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgKind.__init__)
 
 
-def test_jointpackage::ecore2maude::trgkind_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgKind.__init__)
+def test_jointpackage_ecore2maude_trgkind_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgrenmapping_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgRenMapping)
+def test_jointpackage_ecore2maude_trgrenmapping_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgRenMapping)
 
 
-def test_jointpackage::ecore2maude::trgrenmapping_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgRenMapping.__init__)
+def test_jointpackage_ecore2maude_trgrenmapping_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgRenMapping.__init__)
 
 
-def test_jointpackage::ecore2maude::trgrenmapping_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgRenMapping.__init__)
+def test_jointpackage_ecore2maude_trgrenmapping_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgRenMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -693,58 +741,58 @@ def test_trgmodexpression_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgcompmodexp_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgCompModExp)
+def test_jointpackage_ecore2maude_trgcompmodexp_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgCompModExp)
 
 
-def test_jointpackage::ecore2maude::trgcompmodexp_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgCompModExp.__init__)
+def test_jointpackage_ecore2maude_trgcompmodexp_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgCompModExp.__init__)
 
 
-def test_jointpackage::ecore2maude::trgcompmodexp_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgCompModExp.__init__)
+def test_jointpackage_ecore2maude_trgcompmodexp_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgCompModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgrenmodexp_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgRenModExp)
+def test_jointpackage_ecore2maude_trgrenmodexp_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgRenModExp)
 
 
-def test_jointpackage::ecore2maude::trgrenmodexp_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgRenModExp.__init__)
+def test_jointpackage_ecore2maude_trgrenmodexp_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgRenModExp.__init__)
 
 
-def test_jointpackage::ecore2maude::trgrenmodexp_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgRenModExp.__init__)
+def test_jointpackage_ecore2maude_trgrenmodexp_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgRenModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trginstmodexp_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgInstModExp)
+def test_jointpackage_ecore2maude_trginstmodexp_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgInstModExp)
 
 
-def test_jointpackage::ecore2maude::trginstmodexp_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgInstModExp.__init__)
+def test_jointpackage_ecore2maude_trginstmodexp_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgInstModExp.__init__)
 
 
-def test_jointpackage::ecore2maude::trginstmodexp_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgInstModExp.__init__)
+def test_jointpackage_ecore2maude_trginstmodexp_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgInstModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgmodexpression_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgModExpression)
+def test_jointpackage_ecore2maude_trgmodexpression_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgModExpression)
 
 
-def test_jointpackage::ecore2maude::trgmodexpression_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgModExpression.__init__)
+def test_jointpackage_ecore2maude_trgmodexpression_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgModExpression.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmodexpression_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgModExpression.__init__)
+def test_jointpackage_ecore2maude_trgmodexpression_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgModExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -763,37 +811,37 @@ def test_trgmaudetopel_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgview_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgView)
+def test_jointpackage_ecore2maude_trgview_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgView)
 
 
-def test_jointpackage::ecore2maude::trgview_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgView.__init__)
+def test_jointpackage_ecore2maude_trgview_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgView.__init__)
 
 
-def test_jointpackage::ecore2maude::trgview_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgView.__init__)
+def test_jointpackage_ecore2maude_trgview_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgparameter_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgParameter)
+def test_jointpackage_ecore2maude_trgparameter_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgParameter)
 
 
-def test_jointpackage::ecore2maude::trgparameter_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgParameter.__init__)
+def test_jointpackage_ecore2maude_trgparameter_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgParameter.__init__)
 
 
-def test_jointpackage::ecore2maude::trgparameter_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgParameter.__init__)
+def test_jointpackage_ecore2maude_trgparameter_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgParameter.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_jointpackage::ecore2maude::trgparameter_has_label():
-    assert hasattr(jointPackage::Ecore2Maude::TrgParameter, "label")
+def test_jointpackage_ecore2maude_trgparameter_has_label():
+    assert hasattr(jointPackage_Ecore2Maude_TrgParameter, "label")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgParameter.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgParameter.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -801,86 +849,86 @@ def test_jointpackage::ecore2maude::trgparameter_has_label():
 
 
 
-def test_jointpackage::ecore2maude::trgtheory_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgTheory)
+def test_jointpackage_ecore2maude_trgtheory_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgTheory)
 
 
-def test_jointpackage::ecore2maude::trgtheory_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgTheory.__init__)
+def test_jointpackage_ecore2maude_trgtheory_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgTheory.__init__)
 
 
-def test_jointpackage::ecore2maude::trgtheory_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgTheory.__init__)
+def test_jointpackage_ecore2maude_trgtheory_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgTheory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgtheoryidmodexp_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgTheoryIdModExp)
+def test_jointpackage_ecore2maude_trgtheoryidmodexp_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgTheoryIdModExp)
 
 
-def test_jointpackage::ecore2maude::trgtheoryidmodexp_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgTheoryIdModExp.__init__)
+def test_jointpackage_ecore2maude_trgtheoryidmodexp_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgTheoryIdModExp.__init__)
 
 
-def test_jointpackage::ecore2maude::trgtheoryidmodexp_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgTheoryIdModExp.__init__)
+def test_jointpackage_ecore2maude_trgtheoryidmodexp_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgTheoryIdModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgmodule_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgModule)
+def test_jointpackage_ecore2maude_trgmodule_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgModule)
 
 
-def test_jointpackage::ecore2maude::trgmodule_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgModule.__init__)
+def test_jointpackage_ecore2maude_trgmodule_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgModule.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmodule_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgModule.__init__)
+def test_jointpackage_ecore2maude_trgmodule_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgModule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgmoduleidmodexp_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgModuleIdModExp)
+def test_jointpackage_ecore2maude_trgmoduleidmodexp_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgModuleIdModExp)
 
 
-def test_jointpackage::ecore2maude::trgmoduleidmodexp_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgModuleIdModExp.__init__)
+def test_jointpackage_ecore2maude_trgmoduleidmodexp_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgModuleIdModExp.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmoduleidmodexp_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgModuleIdModExp.__init__)
+def test_jointpackage_ecore2maude_trgmoduleidmodexp_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgModuleIdModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgsort_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgSort)
+def test_jointpackage_ecore2maude_trgsort_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgSort)
 
 
-def test_jointpackage::ecore2maude::trgsort_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgSort.__init__)
+def test_jointpackage_ecore2maude_trgsort_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgSort.__init__)
 
 
-def test_jointpackage::ecore2maude::trgsort_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgSort.__init__)
+def test_jointpackage_ecore2maude_trgsort_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgSort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgterm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgTerm)
+def test_jointpackage_ecore2maude_trgterm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgTerm)
 
 
-def test_jointpackage::ecore2maude::trgterm_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgTerm.__init__)
+def test_jointpackage_ecore2maude_trgterm_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgTerm.__init__)
 
 
-def test_jointpackage::ecore2maude::trgterm_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgTerm.__init__)
+def test_jointpackage_ecore2maude_trgterm_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -899,37 +947,37 @@ def test_trgstatement_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgmembership_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgMembership)
+def test_jointpackage_ecore2maude_trgmembership_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgMembership)
 
 
-def test_jointpackage::ecore2maude::trgmembership_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgMembership.__init__)
+def test_jointpackage_ecore2maude_trgmembership_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgMembership.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmembership_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgMembership.__init__)
+def test_jointpackage_ecore2maude_trgmembership_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgMembership.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgmaudetopel_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgMaudeTopEl)
+def test_jointpackage_ecore2maude_trgmaudetopel_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgMaudeTopEl)
 
 
-def test_jointpackage::ecore2maude::trgmaudetopel_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgMaudeTopEl.__init__)
+def test_jointpackage_ecore2maude_trgmaudetopel_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgMaudeTopEl.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmaudetopel_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgMaudeTopEl.__init__)
+def test_jointpackage_ecore2maude_trgmaudetopel_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgMaudeTopEl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::ecore2maude::trgmaudetopel_has_name():
-    assert hasattr(jointPackage::Ecore2Maude::TrgMaudeTopEl, "name")
+def test_jointpackage_ecore2maude_trgmaudetopel_has_name():
+    assert hasattr(jointPackage_Ecore2Maude_TrgMaudeTopEl, "name")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::TrgMaudeTopEl.__mro__:
+    for klass in jointPackage_Ecore2Maude_TrgMaudeTopEl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -937,16 +985,16 @@ def test_jointpackage::ecore2maude::trgmaudetopel_has_name():
 
 
 
-def test_jointpackage::ecore2maude::trgmaudespec_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgMaudeSpec)
+def test_jointpackage_ecore2maude_trgmaudespec_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgMaudeSpec)
 
 
-def test_jointpackage::ecore2maude::trgmaudespec_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgMaudeSpec.__init__)
+def test_jointpackage_ecore2maude_trgmaudespec_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgMaudeSpec.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmaudespec_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgMaudeSpec.__init__)
+def test_jointpackage_ecore2maude_trgmaudespec_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgMaudeSpec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -965,72 +1013,86 @@ def test_trgequationalcond_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::trgmatchingcond_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgMatchingCond)
+def test_jointpackage_ecore2maude_trgmatchingcond_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgMatchingCond)
 
 
-def test_jointpackage::ecore2maude::trgmatchingcond_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgMatchingCond.__init__)
+def test_jointpackage_ecore2maude_trgmatchingcond_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgMatchingCond.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmatchingcond_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgMatchingCond.__init__)
+def test_jointpackage_ecore2maude_trgmatchingcond_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgMatchingCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgbooleancond_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgBooleanCond)
+def test_jointpackage_ecore2maude_trgbooleancond_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgBooleanCond)
 
 
-def test_jointpackage::ecore2maude::trgbooleancond_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgBooleanCond.__init__)
+def test_jointpackage_ecore2maude_trgbooleancond_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgBooleanCond.__init__)
 
 
-def test_jointpackage::ecore2maude::trgbooleancond_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgBooleanCond.__init__)
+def test_jointpackage_ecore2maude_trgbooleancond_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgBooleanCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgmembershipcond_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgMembershipCond)
+def test_jointpackage_ecore2maude_trgequalcond_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgEqualCond)
 
 
-def test_jointpackage::ecore2maude::trgmembershipcond_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgMembershipCond.__init__)
+def test_jointpackage_ecore2maude_trgequalcond_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgEqualCond.__init__)
 
 
-def test_jointpackage::ecore2maude::trgmembershipcond_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgMembershipCond.__init__)
+def test_jointpackage_ecore2maude_trgequalcond_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgEqualCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgrule_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgRule)
+def test_jointpackage_ecore2maude_trgmembershipcond_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgMembershipCond)
 
 
-def test_jointpackage::ecore2maude::trgrule_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgRule.__init__)
+def test_jointpackage_ecore2maude_trgmembershipcond_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgMembershipCond.__init__)
 
 
-def test_jointpackage::ecore2maude::trgrule_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgRule.__init__)
+def test_jointpackage_ecore2maude_trgmembershipcond_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgMembershipCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::ecore2maude::trgequation_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgEquation)
+def test_jointpackage_ecore2maude_trgrule_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgRule)
 
 
-def test_jointpackage::ecore2maude::trgequation_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgEquation.__init__)
+def test_jointpackage_ecore2maude_trgrule_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgRule.__init__)
 
 
-def test_jointpackage::ecore2maude::trgequation_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgEquation.__init__)
+def test_jointpackage_ecore2maude_trgrule_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgRule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_ecore2maude_trgequation_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_TrgEquation)
+
+
+def test_jointpackage_ecore2maude_trgequation_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_TrgEquation.__init__)
+
+
+def test_jointpackage_ecore2maude_trgequation_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_TrgEquation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1049,16 +1111,30 @@ def test_srcetypedelement_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::srceparameter_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEParameter)
+def test_jointpackage_ecore2maude_srceoperation_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEOperation)
 
 
-def test_jointpackage::ecore2maude::srceparameter_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEParameter.__init__)
+def test_jointpackage_ecore2maude_srceoperation_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEOperation.__init__)
 
 
-def test_jointpackage::ecore2maude::srceparameter_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEParameter.__init__)
+def test_jointpackage_ecore2maude_srceoperation_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_ecore2maude_srceparameter_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEParameter)
+
+
+def test_jointpackage_ecore2maude_srceparameter_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEParameter.__init__)
+
+
+def test_jointpackage_ecore2maude_srceparameter_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1077,16 +1153,16 @@ def test_srcedatatype_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::srceenum_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEEnum)
+def test_jointpackage_ecore2maude_srceenum_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEEnum)
 
 
-def test_jointpackage::ecore2maude::srceenum_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEEnum.__init__)
+def test_jointpackage_ecore2maude_srceenum_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEEnum.__init__)
 
 
-def test_jointpackage::ecore2maude::srceenum_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEEnum.__init__)
+def test_jointpackage_ecore2maude_srceenum_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEEnum.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1105,107 +1181,107 @@ def test_srcenamedelement_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::srcetypedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcETypedElement)
+def test_jointpackage_ecore2maude_srcetypedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcETypedElement)
 
 
-def test_jointpackage::ecore2maude::srcetypedelement_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcETypedElement.__init__)
+def test_jointpackage_ecore2maude_srcetypedelement_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcETypedElement.__init__)
 
 
-def test_jointpackage::ecore2maude::srcetypedelement_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcETypedElement.__init__)
+def test_jointpackage_ecore2maude_srcetypedelement_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcETypedElement.__init__)
     params = list(sig.parameters.keys())
+    assert "ordered" in params, "Missing parameter 'ordered'"
     assert "many" in params, "Missing parameter 'many'"
     assert "required" in params, "Missing parameter 'required'"
-    assert "ordered" in params, "Missing parameter 'ordered'"
     assert "unique" in params, "Missing parameter 'unique'"
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
     assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
 
-def test_jointpackage::ecore2maude::srcetypedelement_has_many():
-    assert hasattr(jointPackage::Ecore2Maude::SrcETypedElement, "many")
+def test_jointpackage_ecore2maude_srcetypedelement_has_ordered():
+    assert hasattr(jointPackage_Ecore2Maude_SrcETypedElement, "ordered")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcETypedElement.__mro__:
-        if "many" in klass.__dict__:
-            descriptor = klass.__dict__["many"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcetypedelement_has_required():
-    assert hasattr(jointPackage::Ecore2Maude::SrcETypedElement, "required")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcETypedElement.__mro__:
-        if "required" in klass.__dict__:
-            descriptor = klass.__dict__["required"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcetypedelement_has_ordered():
-    assert hasattr(jointPackage::Ecore2Maude::SrcETypedElement, "ordered")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcETypedElement.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcETypedElement.__mro__:
         if "ordered" in klass.__dict__:
             descriptor = klass.__dict__["ordered"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcetypedelement_has_unique():
-    assert hasattr(jointPackage::Ecore2Maude::SrcETypedElement, "unique")
+def test_jointpackage_ecore2maude_srcetypedelement_has_many():
+    assert hasattr(jointPackage_Ecore2Maude_SrcETypedElement, "many")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcETypedElement.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcETypedElement.__mro__:
+        if "many" in klass.__dict__:
+            descriptor = klass.__dict__["many"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_srcetypedelement_has_required():
+    assert hasattr(jointPackage_Ecore2Maude_SrcETypedElement, "required")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcETypedElement.__mro__:
+        if "required" in klass.__dict__:
+            descriptor = klass.__dict__["required"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_srcetypedelement_has_unique():
+    assert hasattr(jointPackage_Ecore2Maude_SrcETypedElement, "unique")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcETypedElement.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcetypedelement_has_lowerBound():
-    assert hasattr(jointPackage::Ecore2Maude::SrcETypedElement, "lowerBound")
+def test_jointpackage_ecore2maude_srcetypedelement_has_upperBound():
+    assert hasattr(jointPackage_Ecore2Maude_SrcETypedElement, "upperBound")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcETypedElement.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcetypedelement_has_upperBound():
-    assert hasattr(jointPackage::Ecore2Maude::SrcETypedElement, "upperBound")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcETypedElement.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcETypedElement.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
+def test_jointpackage_ecore2maude_srcetypedelement_has_lowerBound():
+    assert hasattr(jointPackage_Ecore2Maude_SrcETypedElement, "lowerBound")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcETypedElement.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_jointpackage::ecore2maude::srcepackage_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEPackage)
+
+def test_jointpackage_ecore2maude_srcepackage_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEPackage)
 
 
-def test_jointpackage::ecore2maude::srcepackage_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEPackage.__init__)
+def test_jointpackage_ecore2maude_srcepackage_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEPackage.__init__)
 
 
-def test_jointpackage::ecore2maude::srcepackage_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEPackage.__init__)
+def test_jointpackage_ecore2maude_srcepackage_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEPackage.__init__)
     params = list(sig.parameters.keys())
     assert "nsPrefix" in params, "Missing parameter 'nsPrefix'"
     assert "nsURI" in params, "Missing parameter 'nsURI'"
 
-def test_jointpackage::ecore2maude::srcepackage_has_nsPrefix():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEPackage, "nsPrefix")
+def test_jointpackage_ecore2maude_srcepackage_has_nsPrefix():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEPackage, "nsPrefix")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEPackage.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEPackage.__mro__:
         if "nsPrefix" in klass.__dict__:
             descriptor = klass.__dict__["nsPrefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcepackage_has_nsURI():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEPackage, "nsURI")
+def test_jointpackage_ecore2maude_srcepackage_has_nsURI():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEPackage, "nsURI")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEPackage.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEPackage.__mro__:
         if "nsURI" in klass.__dict__:
             descriptor = klass.__dict__["nsURI"]
             break
@@ -1213,107 +1289,107 @@ def test_jointpackage::ecore2maude::srcepackage_has_nsURI():
 
 
 
-def test_jointpackage::ecore2maude::srceclassifier_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEClassifier)
+def test_jointpackage_ecore2maude_srceclassifier_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEClassifier)
 
 
-def test_jointpackage::ecore2maude::srceclassifier_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEClassifier.__init__)
+def test_jointpackage_ecore2maude_srceclassifier_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEClassifier.__init__)
 
 
-def test_jointpackage::ecore2maude::srceclassifier_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEClassifier.__init__)
+def test_jointpackage_ecore2maude_srceclassifier_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEClassifier.__init__)
     params = list(sig.parameters.keys())
-    assert "instanceTypeName" in params, "Missing parameter 'instanceTypeName'"
     assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
+    assert "instanceTypeName" in params, "Missing parameter 'instanceTypeName'"
 
-def test_jointpackage::ecore2maude::srceclassifier_has_instanceTypeName():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEClassifier, "instanceTypeName")
+def test_jointpackage_ecore2maude_srceclassifier_has_instanceClassName():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEClassifier, "instanceClassName")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEClassifier.__mro__:
-        if "instanceTypeName" in klass.__dict__:
-            descriptor = klass.__dict__["instanceTypeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srceclassifier_has_instanceClassName():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEClassifier, "instanceClassName")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEClassifier.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEClassifier.__mro__:
         if "instanceClassName" in klass.__dict__:
             descriptor = klass.__dict__["instanceClassName"]
             break
     assert isinstance(descriptor, property)
 
+def test_jointpackage_ecore2maude_srceclassifier_has_instanceTypeName():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEClassifier, "instanceTypeName")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEClassifier.__mro__:
+        if "instanceTypeName" in klass.__dict__:
+            descriptor = klass.__dict__["instanceTypeName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEStructuralFeature)
+
+def test_jointpackage_ecore2maude_srcestructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEStructuralFeature)
 
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEStructuralFeature.__init__)
+def test_jointpackage_ecore2maude_srcestructuralfeature_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEStructuralFeature.__init__)
 
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEStructuralFeature.__init__)
+def test_jointpackage_ecore2maude_srcestructuralfeature_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEStructuralFeature.__init__)
     params = list(sig.parameters.keys())
+    assert "derived" in params, "Missing parameter 'derived'"
     assert "transient" in params, "Missing parameter 'transient'"
     assert "unsettable" in params, "Missing parameter 'unsettable'"
-    assert "derived" in params, "Missing parameter 'derived'"
     assert "defaultValueLiteral" in params, "Missing parameter 'defaultValueLiteral'"
     assert "volatile" in params, "Missing parameter 'volatile'"
     assert "changeable" in params, "Missing parameter 'changeable'"
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_has_transient():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStructuralFeature, "transient")
+def test_jointpackage_ecore2maude_srcestructuralfeature_has_derived():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStructuralFeature, "derived")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStructuralFeature.__mro__:
-        if "transient" in klass.__dict__:
-            descriptor = klass.__dict__["transient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcestructuralfeature_has_unsettable():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStructuralFeature, "unsettable")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStructuralFeature.__mro__:
-        if "unsettable" in klass.__dict__:
-            descriptor = klass.__dict__["unsettable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcestructuralfeature_has_derived():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStructuralFeature, "derived")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStructuralFeature.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEStructuralFeature.__mro__:
         if "derived" in klass.__dict__:
             descriptor = klass.__dict__["derived"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_has_defaultValueLiteral():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStructuralFeature, "defaultValueLiteral")
+def test_jointpackage_ecore2maude_srcestructuralfeature_has_transient():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStructuralFeature, "transient")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStructuralFeature.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEStructuralFeature.__mro__:
+        if "transient" in klass.__dict__:
+            descriptor = klass.__dict__["transient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_srcestructuralfeature_has_unsettable():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStructuralFeature, "unsettable")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEStructuralFeature.__mro__:
+        if "unsettable" in klass.__dict__:
+            descriptor = klass.__dict__["unsettable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_srcestructuralfeature_has_defaultValueLiteral():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStructuralFeature, "defaultValueLiteral")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEStructuralFeature.__mro__:
         if "defaultValueLiteral" in klass.__dict__:
             descriptor = klass.__dict__["defaultValueLiteral"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_has_volatile():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStructuralFeature, "volatile")
+def test_jointpackage_ecore2maude_srcestructuralfeature_has_volatile():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStructuralFeature, "volatile")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStructuralFeature.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEStructuralFeature.__mro__:
         if "volatile" in klass.__dict__:
             descriptor = klass.__dict__["volatile"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcestructuralfeature_has_changeable():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStructuralFeature, "changeable")
+def test_jointpackage_ecore2maude_srcestructuralfeature_has_changeable():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEStructuralFeature, "changeable")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStructuralFeature.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEStructuralFeature.__mro__:
         if "changeable" in klass.__dict__:
             descriptor = klass.__dict__["changeable"]
             break
@@ -1321,23 +1397,23 @@ def test_jointpackage::ecore2maude::srcestructuralfeature_has_changeable():
 
 
 
-def test_jointpackage::ecore2maude::srcenamedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcENamedElement)
+def test_jointpackage_ecore2maude_srcenamedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcENamedElement)
 
 
-def test_jointpackage::ecore2maude::srcenamedelement_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcENamedElement.__init__)
+def test_jointpackage_ecore2maude_srcenamedelement_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcENamedElement.__init__)
 
 
-def test_jointpackage::ecore2maude::srcenamedelement_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcENamedElement.__init__)
+def test_jointpackage_ecore2maude_srcenamedelement_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcENamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::ecore2maude::srcenamedelement_has_name():
-    assert hasattr(jointPackage::Ecore2Maude::SrcENamedElement, "name")
+def test_jointpackage_ecore2maude_srcenamedelement_has_name():
+    assert hasattr(jointPackage_Ecore2Maude_SrcENamedElement, "name")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcENamedElement.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcENamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1345,33 +1421,33 @@ def test_jointpackage::ecore2maude::srcenamedelement_has_name():
 
 
 
-def test_jointpackage::ecore2maude::srceenumliteral_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEEnumLiteral)
+def test_jointpackage_ecore2maude_srceenumliteral_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEEnumLiteral)
 
 
-def test_jointpackage::ecore2maude::srceenumliteral_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEEnumLiteral.__init__)
+def test_jointpackage_ecore2maude_srceenumliteral_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEEnumLiteral.__init__)
 
 
-def test_jointpackage::ecore2maude::srceenumliteral_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEEnumLiteral.__init__)
+def test_jointpackage_ecore2maude_srceenumliteral_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEEnumLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "literal" in params, "Missing parameter 'literal'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_jointpackage::ecore2maude::srceenumliteral_has_literal():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEEnumLiteral, "literal")
+def test_jointpackage_ecore2maude_srceenumliteral_has_literal():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEEnumLiteral, "literal")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEEnumLiteral.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEEnumLiteral.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srceenumliteral_has_value():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEEnumLiteral, "value")
+def test_jointpackage_ecore2maude_srceenumliteral_has_value():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEEnumLiteral, "value")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEEnumLiteral.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEEnumLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1393,57 +1469,57 @@ def test_srceclassifier_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::srceclass_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEClass)
+def test_jointpackage_ecore2maude_srceclass_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEClass)
 
 
-def test_jointpackage::ecore2maude::srceclass_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEClass.__init__)
+def test_jointpackage_ecore2maude_srceclass_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEClass.__init__)
 
 
-def test_jointpackage::ecore2maude::srceclass_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEClass.__init__)
+def test_jointpackage_ecore2maude_srceclass_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEClass.__init__)
     params = list(sig.parameters.keys())
-    assert "interface" in params, "Missing parameter 'interface'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "interface" in params, "Missing parameter 'interface'"
 
-def test_jointpackage::ecore2maude::srceclass_has_interface():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEClass, "interface")
+def test_jointpackage_ecore2maude_srceclass_has_abstract():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEClass, "abstract")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEClass.__mro__:
-        if "interface" in klass.__dict__:
-            descriptor = klass.__dict__["interface"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srceclass_has_abstract():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEClass, "abstract")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEClass.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEClass.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
+def test_jointpackage_ecore2maude_srceclass_has_interface():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEClass, "interface")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEClass.__mro__:
+        if "interface" in klass.__dict__:
+            descriptor = klass.__dict__["interface"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_jointpackage::ecore2maude::srcedatatype_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEDataType)
+
+def test_jointpackage_ecore2maude_srcedatatype_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEDataType)
 
 
-def test_jointpackage::ecore2maude::srcedatatype_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEDataType.__init__)
+def test_jointpackage_ecore2maude_srcedatatype_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEDataType.__init__)
 
 
-def test_jointpackage::ecore2maude::srcedatatype_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEDataType.__init__)
+def test_jointpackage_ecore2maude_srcedatatype_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEDataType.__init__)
     params = list(sig.parameters.keys())
     assert "serializable" in params, "Missing parameter 'serializable'"
 
-def test_jointpackage::ecore2maude::srcedatatype_has_serializable():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEDataType, "serializable")
+def test_jointpackage_ecore2maude_srcedatatype_has_serializable():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEDataType, "serializable")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEDataType.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEDataType.__mro__:
         if "serializable" in klass.__dict__:
             descriptor = klass.__dict__["serializable"]
             break
@@ -1465,129 +1541,43 @@ def test_srcestructuralfeature_constructor_args():
 
 
 
-def test_jointpackage::ecore2maude::srceattribute_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEAttribute)
+def test_jointpackage_ecore2maude_srcereference_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEReference)
 
 
-def test_jointpackage::ecore2maude::srceattribute_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEAttribute.__init__)
+def test_jointpackage_ecore2maude_srcereference_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEReference.__init__)
 
 
-def test_jointpackage::ecore2maude::srceattribute_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEAttribute.__init__)
+def test_jointpackage_ecore2maude_srcereference_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEReference.__init__)
     params = list(sig.parameters.keys())
-    assert "iD" in params, "Missing parameter 'iD'"
-
-def test_jointpackage::ecore2maude::srceattribute_has_iD():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEAttribute, "iD")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEAttribute.__mro__:
-        if "iD" in klass.__dict__:
-            descriptor = klass.__dict__["iD"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::ecore2maude::trgequalcond_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::TrgEqualCond)
-
-
-def test_jointpackage::ecore2maude::trgequalcond_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::TrgEqualCond.__init__)
-
-
-def test_jointpackage::ecore2maude::trgequalcond_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::TrgEqualCond.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEStringToStringMapEntry)
-
-
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEStringToStringMapEntry.__init__)
-
-
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEStringToStringMapEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_has_key():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStringToStringMapEntry, "key")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStringToStringMapEntry.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_has_value():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEStringToStringMapEntry, "value")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEStringToStringMapEntry.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::ecore2maude::jointmm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::JointMM)
-
-
-def test_jointpackage::ecore2maude::jointmm_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::JointMM.__init__)
-
-
-def test_jointpackage::ecore2maude::jointmm_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::JointMM.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::ecore2maude::srcereference_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEReference)
-
-
-def test_jointpackage::ecore2maude::srcereference_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEReference.__init__)
-
-
-def test_jointpackage::ecore2maude::srcereference_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "container" in params, "Missing parameter 'container'"
     assert "containment" in params, "Missing parameter 'containment'"
+    assert "container" in params, "Missing parameter 'container'"
     assert "resolveProxies" in params, "Missing parameter 'resolveProxies'"
 
-def test_jointpackage::ecore2maude::srcereference_has_container():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEReference, "container")
+def test_jointpackage_ecore2maude_srcereference_has_containment():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEReference, "containment")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEReference.__mro__:
-        if "container" in klass.__dict__:
-            descriptor = klass.__dict__["container"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jointpackage::ecore2maude::srcereference_has_containment():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEReference, "containment")
-    descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEReference.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEReference.__mro__:
         if "containment" in klass.__dict__:
             descriptor = klass.__dict__["containment"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::ecore2maude::srcereference_has_resolveProxies():
-    assert hasattr(jointPackage::Ecore2Maude::SrcEReference, "resolveProxies")
+def test_jointpackage_ecore2maude_srcereference_has_container():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEReference, "container")
     descriptor = None
-    for klass in jointPackage::Ecore2Maude::SrcEReference.__mro__:
+    for klass in jointPackage_Ecore2Maude_SrcEReference.__mro__:
+        if "container" in klass.__dict__:
+            descriptor = klass.__dict__["container"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jointpackage_ecore2maude_srcereference_has_resolveProxies():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEReference, "resolveProxies")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEReference.__mro__:
         if "resolveProxies" in klass.__dict__:
             descriptor = klass.__dict__["resolveProxies"]
             break
@@ -1595,17 +1585,27 @@ def test_jointpackage::ecore2maude::srcereference_has_resolveProxies():
 
 
 
-def test_jointpackage::ecore2maude::srceoperation_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Ecore2Maude::SrcEOperation)
+def test_jointpackage_ecore2maude_srceattribute_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Ecore2Maude_SrcEAttribute)
 
 
-def test_jointpackage::ecore2maude::srceoperation_constructor_exists():
-    assert callable(jointPackage::Ecore2Maude::SrcEOperation.__init__)
+def test_jointpackage_ecore2maude_srceattribute_constructor_exists():
+    assert callable(jointPackage_Ecore2Maude_SrcEAttribute.__init__)
 
 
-def test_jointpackage::ecore2maude::srceoperation_constructor_args():
-    sig = inspect.signature(jointPackage::Ecore2Maude::SrcEOperation.__init__)
+def test_jointpackage_ecore2maude_srceattribute_constructor_args():
+    sig = inspect.signature(jointPackage_Ecore2Maude_SrcEAttribute.__init__)
     params = list(sig.parameters.keys())
+    assert "iD" in params, "Missing parameter 'iD'"
+
+def test_jointpackage_ecore2maude_srceattribute_has_iD():
+    assert hasattr(jointPackage_Ecore2Maude_SrcEAttribute, "iD")
+    descriptor = None
+    for klass in jointPackage_Ecore2Maude_SrcEAttribute.__mro__:
+        if "iD" in klass.__dict__:
+            descriptor = klass.__dict__["iD"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -1622,254 +1622,270 @@ safe_text = st.text(
 TrgViewMapping_strategy = st.builds(
     TrgViewMapping,
 )
-jointPackage::Ecore2Maude::TrgViewMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgViewMapping,
+jointPackage_Ecore2Maude_TrgViewMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgViewMapping,
+)
+jointPackage_Ecore2Maude_SrcEStringToStringMapEntry_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEStringToStringMapEntry,
+    key=
+        safe_text,
+    value=
+        safe_text
+)
+jointPackage_Ecore2Maude_JointMM_strategy = st.builds(
+    jointPackage_Ecore2Maude_JointMM,
 )
 TrgTerm_strategy = st.builds(
     TrgTerm,
 )
-jointPackage::Ecore2Maude::TrgVariable_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgVariable,
+jointPackage_Ecore2Maude_TrgVariable_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgVariable,
     name=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgRecTerm_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgRecTerm,
+jointPackage_Ecore2Maude_TrgRecTerm_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgRecTerm,
     op=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgConstant_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgConstant,
+jointPackage_Ecore2Maude_TrgConstant_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgConstant,
     op=
         safe_text
 )
 TrgRenMapping_strategy = st.builds(
     TrgRenMapping,
 )
-jointPackage::Ecore2Maude::TrgOpTypedMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgOpTypedMapping,
+jointPackage_Ecore2Maude_TrgOpMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgOpMapping,
+    to=
+        safe_text
+)
+jointPackage_Ecore2Maude_TrgOpTypedMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgOpTypedMapping,
     to=
         safe_text,
     atts=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgOpMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgOpMapping,
-    to=
-        safe_text
-)
-jointPackage::Ecore2Maude::TrgLabelMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgLabelMapping,
-    to=
-        safe_text,
+jointPackage_Ecore2Maude_TrgLabelMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgLabelMapping,
     from_=
-        safe_text
-)
-jointPackage::Ecore2Maude::TrgSortMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgSortMapping,
+        safe_text,
     to=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgTermMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgTermMapping,
+jointPackage_Ecore2Maude_TrgSortMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgSortMapping,
+    to=
+        safe_text
+)
+jointPackage_Ecore2Maude_TrgTermMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgTermMapping,
 )
 TrgCondition_strategy = st.builds(
     TrgCondition,
 )
-jointPackage::Ecore2Maude::TrgRewriteCond_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgRewriteCond,
+jointPackage_Ecore2Maude_TrgRewriteCond_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgRewriteCond,
 )
-jointPackage::Ecore2Maude::TrgEquationalCond_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgEquationalCond,
+jointPackage_Ecore2Maude_TrgEquationalCond_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgEquationalCond,
 )
-jointPackage::Ecore2Maude::TrgType_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgType,
+jointPackage_Ecore2Maude_TrgType_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgType,
     name=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgCondition_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgCondition,
+jointPackage_Ecore2Maude_TrgCondition_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgCondition,
 )
 TrgModElement_strategy = st.builds(
     TrgModElement,
 )
-jointPackage::Ecore2Maude::TrgStatement_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgStatement,
-    label=
-        safe_text,
-    atts=
-        safe_text
-)
-jointPackage::Ecore2Maude::TrgOperation_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgOperation,
+jointPackage_Ecore2Maude_TrgOperation_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgOperation,
     atts=
         safe_text,
     name=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgModImportation_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgModImportation,
+jointPackage_Ecore2Maude_TrgStatement_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgStatement,
+    label=
+        safe_text,
+    atts=
+        safe_text
+)
+jointPackage_Ecore2Maude_TrgModImportation_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgModImportation,
 )
 TrgModule_strategy = st.builds(
     TrgModule,
 )
-jointPackage::Ecore2Maude::TrgSModule_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgSModule,
+jointPackage_Ecore2Maude_TrgSModule_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgSModule,
 )
-jointPackage::Ecore2Maude::TrgFModule_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgFModule,
+jointPackage_Ecore2Maude_TrgFModule_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgFModule,
 )
 TrgTheory_strategy = st.builds(
     TrgTheory,
 )
-jointPackage::Ecore2Maude::TrgSTheory_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgSTheory,
+jointPackage_Ecore2Maude_TrgSTheory_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgSTheory,
 )
-jointPackage::Ecore2Maude::TrgFTheory_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgFTheory,
+jointPackage_Ecore2Maude_TrgFTheory_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgFTheory,
 )
-jointPackage::Ecore2Maude::TrgModElement_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgModElement,
+jointPackage_Ecore2Maude_TrgModElement_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgModElement,
 )
-jointPackage::Ecore2Maude::TrgSubsortRel_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgSubsortRel,
+jointPackage_Ecore2Maude_TrgSubsortRel_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgSubsortRel,
 )
 TrgType_strategy = st.builds(
     TrgType,
 )
-jointPackage::Ecore2Maude::TrgKind_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgKind,
+jointPackage_Ecore2Maude_TrgKind_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgKind,
 )
-jointPackage::Ecore2Maude::TrgRenMapping_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgRenMapping,
+jointPackage_Ecore2Maude_TrgRenMapping_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgRenMapping,
 )
 TrgModExpression_strategy = st.builds(
     TrgModExpression,
 )
-jointPackage::Ecore2Maude::TrgCompModExp_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgCompModExp,
+jointPackage_Ecore2Maude_TrgCompModExp_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgCompModExp,
 )
-jointPackage::Ecore2Maude::TrgRenModExp_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgRenModExp,
+jointPackage_Ecore2Maude_TrgRenModExp_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgRenModExp,
 )
-jointPackage::Ecore2Maude::TrgInstModExp_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgInstModExp,
+jointPackage_Ecore2Maude_TrgInstModExp_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgInstModExp,
 )
-jointPackage::Ecore2Maude::TrgModExpression_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgModExpression,
+jointPackage_Ecore2Maude_TrgModExpression_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgModExpression,
 )
 TrgMaudeTopEl_strategy = st.builds(
     TrgMaudeTopEl,
 )
-jointPackage::Ecore2Maude::TrgView_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgView,
+jointPackage_Ecore2Maude_TrgView_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgView,
 )
-jointPackage::Ecore2Maude::TrgParameter_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgParameter,
+jointPackage_Ecore2Maude_TrgParameter_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgParameter,
     label=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgTheory_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgTheory,
+jointPackage_Ecore2Maude_TrgTheory_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgTheory,
 )
-jointPackage::Ecore2Maude::TrgTheoryIdModExp_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgTheoryIdModExp,
+jointPackage_Ecore2Maude_TrgTheoryIdModExp_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgTheoryIdModExp,
 )
-jointPackage::Ecore2Maude::TrgModule_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgModule,
+jointPackage_Ecore2Maude_TrgModule_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgModule,
 )
-jointPackage::Ecore2Maude::TrgModuleIdModExp_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgModuleIdModExp,
+jointPackage_Ecore2Maude_TrgModuleIdModExp_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgModuleIdModExp,
 )
-jointPackage::Ecore2Maude::TrgSort_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgSort,
+jointPackage_Ecore2Maude_TrgSort_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgSort,
 )
-jointPackage::Ecore2Maude::TrgTerm_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgTerm,
+jointPackage_Ecore2Maude_TrgTerm_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgTerm,
 )
 TrgStatement_strategy = st.builds(
     TrgStatement,
 )
-jointPackage::Ecore2Maude::TrgMembership_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgMembership,
+jointPackage_Ecore2Maude_TrgMembership_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgMembership,
 )
-jointPackage::Ecore2Maude::TrgMaudeTopEl_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgMaudeTopEl,
+jointPackage_Ecore2Maude_TrgMaudeTopEl_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgMaudeTopEl,
     name=
         safe_text
 )
-jointPackage::Ecore2Maude::TrgMaudeSpec_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgMaudeSpec,
+jointPackage_Ecore2Maude_TrgMaudeSpec_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgMaudeSpec,
 )
 TrgEquationalCond_strategy = st.builds(
     TrgEquationalCond,
 )
-jointPackage::Ecore2Maude::TrgMatchingCond_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgMatchingCond,
+jointPackage_Ecore2Maude_TrgMatchingCond_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgMatchingCond,
 )
-jointPackage::Ecore2Maude::TrgBooleanCond_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgBooleanCond,
+jointPackage_Ecore2Maude_TrgBooleanCond_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgBooleanCond,
 )
-jointPackage::Ecore2Maude::TrgMembershipCond_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgMembershipCond,
+jointPackage_Ecore2Maude_TrgEqualCond_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgEqualCond,
 )
-jointPackage::Ecore2Maude::TrgRule_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgRule,
+jointPackage_Ecore2Maude_TrgMembershipCond_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgMembershipCond,
 )
-jointPackage::Ecore2Maude::TrgEquation_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgEquation,
+jointPackage_Ecore2Maude_TrgRule_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgRule,
+)
+jointPackage_Ecore2Maude_TrgEquation_strategy = st.builds(
+    jointPackage_Ecore2Maude_TrgEquation,
 )
 SrcETypedElement_strategy = st.builds(
     SrcETypedElement,
 )
-jointPackage::Ecore2Maude::SrcEParameter_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEParameter,
+jointPackage_Ecore2Maude_SrcEOperation_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEOperation,
+)
+jointPackage_Ecore2Maude_SrcEParameter_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEParameter,
 )
 SrcEDataType_strategy = st.builds(
     SrcEDataType,
 )
-jointPackage::Ecore2Maude::SrcEEnum_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEEnum,
+jointPackage_Ecore2Maude_SrcEEnum_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEEnum,
 )
 SrcENamedElement_strategy = st.builds(
     SrcENamedElement,
 )
-jointPackage::Ecore2Maude::SrcETypedElement_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcETypedElement,
+jointPackage_Ecore2Maude_SrcETypedElement_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcETypedElement,
+    ordered=
+        st.booleans(),
     many=
         st.booleans(),
     required=
         st.booleans(),
-    ordered=
-        st.booleans(),
     unique=
         st.booleans(),
-    lowerBound=
-        st.integers(),
     upperBound=
+        st.integers(),
+    lowerBound=
         st.integers()
 )
-jointPackage::Ecore2Maude::SrcEPackage_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEPackage,
+jointPackage_Ecore2Maude_SrcEPackage_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEPackage,
     nsPrefix=
         safe_text,
     nsURI=
         safe_text
 )
-jointPackage::Ecore2Maude::SrcEClassifier_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEClassifier,
-    instanceTypeName=
-        safe_text,
+jointPackage_Ecore2Maude_SrcEClassifier_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEClassifier,
     instanceClassName=
+        safe_text,
+    instanceTypeName=
         safe_text
 )
-jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEStructuralFeature,
+jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEStructuralFeature,
+    derived=
+        st.booleans(),
     transient=
         st.booleans(),
     unsettable=
-        st.booleans(),
-    derived=
         st.booleans(),
     defaultValueLiteral=
         safe_text,
@@ -1878,13 +1894,13 @@ jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy = st.builds(
     changeable=
         st.booleans()
 )
-jointPackage::Ecore2Maude::SrcENamedElement_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcENamedElement,
+jointPackage_Ecore2Maude_SrcENamedElement_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcENamedElement,
     name=
         safe_text
 )
-jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEEnumLiteral,
+jointPackage_Ecore2Maude_SrcEEnumLiteral_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEEnumLiteral,
     literal=
         safe_text,
     value=
@@ -1893,50 +1909,34 @@ jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy = st.builds(
 SrcEClassifier_strategy = st.builds(
     SrcEClassifier,
 )
-jointPackage::Ecore2Maude::SrcEClass_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEClass,
-    interface=
-        st.booleans(),
+jointPackage_Ecore2Maude_SrcEClass_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEClass,
     abstract=
+        st.booleans(),
+    interface=
         st.booleans()
 )
-jointPackage::Ecore2Maude::SrcEDataType_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEDataType,
+jointPackage_Ecore2Maude_SrcEDataType_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEDataType,
     serializable=
         st.booleans()
 )
 SrcEStructuralFeature_strategy = st.builds(
     SrcEStructuralFeature,
 )
-jointPackage::Ecore2Maude::SrcEAttribute_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEAttribute,
-    iD=
-        st.booleans()
-)
-jointPackage::Ecore2Maude::TrgEqualCond_strategy = st.builds(
-    jointPackage::Ecore2Maude::TrgEqualCond,
-)
-jointPackage::Ecore2Maude::SrcEStringToStringMapEntry_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEStringToStringMapEntry,
-    key=
-        safe_text,
-    value=
-        safe_text
-)
-jointPackage::Ecore2Maude::JointMM_strategy = st.builds(
-    jointPackage::Ecore2Maude::JointMM,
-)
-jointPackage::Ecore2Maude::SrcEReference_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEReference,
-    container=
-        st.booleans(),
+jointPackage_Ecore2Maude_SrcEReference_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEReference,
     containment=
+        st.booleans(),
+    container=
         st.booleans(),
     resolveProxies=
         st.booleans()
 )
-jointPackage::Ecore2Maude::SrcEOperation_strategy = st.builds(
-    jointPackage::Ecore2Maude::SrcEOperation,
+jointPackage_Ecore2Maude_SrcEAttribute_strategy = st.builds(
+    jointPackage_Ecore2Maude_SrcEAttribute,
+    iD=
+        st.booleans()
 )
 
 @given(instance=TrgViewMapping_strategy)
@@ -1944,60 +1944,77 @@ jointPackage::Ecore2Maude::SrcEOperation_strategy = st.builds(
 def test_trgviewmapping_instantiation(instance):
     assert isinstance(instance, TrgViewMapping)
 
-@given(instance=jointPackage::Ecore2Maude::TrgViewMapping_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgViewMapping_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgviewmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgViewMapping)
+def test_jointpackage_ecore2maude_trgviewmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgViewMapping)
+
+@given(instance=jointPackage_Ecore2Maude_SrcEStringToStringMapEntry_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEStringToStringMapEntry)
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEStringToStringMapEntry_strategy)
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEStringToStringMapEntry_strategy)
+def test_jointpackage_ecore2maude_srcestringtostringmapentry_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=jointPackage_Ecore2Maude_JointMM_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_jointmm_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_JointMM)
 
 @given(instance=TrgTerm_strategy)
 @settings(max_examples=50)
 def test_trgterm_instantiation(instance):
     assert isinstance(instance, TrgTerm)
 
-@given(instance=jointPackage::Ecore2Maude::TrgVariable_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgVariable_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgvariable_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgVariable)
-
-@given(instance=jointPackage::Ecore2Maude::TrgVariable_strategy)
-def test_jointpackage::ecore2maude::trgvariable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_ecore2maude_trgvariable_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgVariable)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgVariable_strategy)
-def test_jointpackage::ecore2maude::trgvariable_name_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgVariable_strategy)
+def test_jointpackage_ecore2maude_trgvariable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgRecTerm_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgRecTerm_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgrecterm_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgRecTerm)
-
-@given(instance=jointPackage::Ecore2Maude::TrgRecTerm_strategy)
-def test_jointpackage::ecore2maude::trgrecterm_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_jointpackage_ecore2maude_trgrecterm_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgRecTerm)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgRecTerm_strategy)
-def test_jointpackage::ecore2maude::trgrecterm_op_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgRecTerm_strategy)
+def test_jointpackage_ecore2maude_trgrecterm_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgConstant_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgConstant_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgconstant_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgConstant)
-
-@given(instance=jointPackage::Ecore2Maude::TrgConstant_strategy)
-def test_jointpackage::ecore2maude::trgconstant_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_jointpackage_ecore2maude_trgconstant_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgConstant)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgConstant_strategy)
-def test_jointpackage::ecore2maude::trgconstant_op_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgConstant_strategy)
+def test_jointpackage_ecore2maude_trgconstant_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -2007,654 +2024,568 @@ def test_jointpackage::ecore2maude::trgconstant_op_setter(instance):
 def test_trgrenmapping_instantiation(instance):
     assert isinstance(instance, TrgRenMapping)
 
-@given(instance=jointPackage::Ecore2Maude::TrgOpTypedMapping_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgOpMapping_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgoptypedmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgOpTypedMapping)
-
-@given(instance=jointPackage::Ecore2Maude::TrgOpTypedMapping_strategy)
-def test_jointpackage::ecore2maude::trgoptypedmapping_to_type(instance):
-    assert isinstance(instance.to, str)
+def test_jointpackage_ecore2maude_trgopmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgOpMapping)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgOpTypedMapping_strategy)
-def test_jointpackage::ecore2maude::trgoptypedmapping_to_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgOpMapping_strategy)
+def test_jointpackage_ecore2maude_trgopmapping_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgOpTypedMapping_strategy)
-def test_jointpackage::ecore2maude::trgoptypedmapping_atts_type(instance):
-    assert isinstance(instance.atts, str)
+@given(instance=jointPackage_Ecore2Maude_TrgOpTypedMapping_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_trgoptypedmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgOpTypedMapping)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgOpTypedMapping_strategy)
-def test_jointpackage::ecore2maude::trgoptypedmapping_atts_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgOpTypedMapping_strategy)
+def test_jointpackage_ecore2maude_trgoptypedmapping_to_setter(instance):
+    original = instance.to
+    instance.to = original
+    assert instance.to == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_TrgOpTypedMapping_strategy)
+def test_jointpackage_ecore2maude_trgoptypedmapping_atts_setter(instance):
     original = instance.atts
     instance.atts = original
     assert instance.atts == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgOpMapping_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgLabelMapping_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgopmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgOpMapping)
-
-@given(instance=jointPackage::Ecore2Maude::TrgOpMapping_strategy)
-def test_jointpackage::ecore2maude::trgopmapping_to_type(instance):
-    assert isinstance(instance.to, str)
+def test_jointpackage_ecore2maude_trglabelmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgLabelMapping)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgOpMapping_strategy)
-def test_jointpackage::ecore2maude::trgopmapping_to_setter(instance):
-    original = instance.to
-    instance.to = original
-    assert instance.to == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgLabelMapping_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::trglabelmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgLabelMapping)
-
-@given(instance=jointPackage::Ecore2Maude::TrgLabelMapping_strategy)
-def test_jointpackage::ecore2maude::trglabelmapping_to_type(instance):
-    assert isinstance(instance.to, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::TrgLabelMapping_strategy)
-def test_jointpackage::ecore2maude::trglabelmapping_to_setter(instance):
-    original = instance.to
-    instance.to = original
-    assert instance.to == original
-
-@given(instance=jointPackage::Ecore2Maude::TrgLabelMapping_strategy)
-def test_jointpackage::ecore2maude::trglabelmapping_from__type(instance):
-    assert isinstance(instance.from_, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::TrgLabelMapping_strategy)
-def test_jointpackage::ecore2maude::trglabelmapping_from__setter(instance):
+@given(instance=jointPackage_Ecore2Maude_TrgLabelMapping_strategy)
+def test_jointpackage_ecore2maude_trglabelmapping_from__setter(instance):
     original = instance.from_
     instance.from_ = original
     assert instance.from_ == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgSortMapping_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgsortmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgSortMapping)
-
-@given(instance=jointPackage::Ecore2Maude::TrgSortMapping_strategy)
-def test_jointpackage::ecore2maude::trgsortmapping_to_type(instance):
-    assert isinstance(instance.to, str)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgSortMapping_strategy)
-def test_jointpackage::ecore2maude::trgsortmapping_to_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_TrgLabelMapping_strategy)
+def test_jointpackage_ecore2maude_trglabelmapping_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgTermMapping_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgSortMapping_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgtermmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgTermMapping)
+def test_jointpackage_ecore2maude_trgsortmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgSortMapping)
+
+
+
+@given(instance=jointPackage_Ecore2Maude_TrgSortMapping_strategy)
+def test_jointpackage_ecore2maude_trgsortmapping_to_setter(instance):
+    original = instance.to
+    instance.to = original
+    assert instance.to == original
+
+@given(instance=jointPackage_Ecore2Maude_TrgTermMapping_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_trgtermmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgTermMapping)
 
 @given(instance=TrgCondition_strategy)
 @settings(max_examples=50)
 def test_trgcondition_instantiation(instance):
     assert isinstance(instance, TrgCondition)
 
-@given(instance=jointPackage::Ecore2Maude::TrgRewriteCond_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgRewriteCond_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgrewritecond_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgRewriteCond)
+def test_jointpackage_ecore2maude_trgrewritecond_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgRewriteCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgEquationalCond_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgEquationalCond_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgequationalcond_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgEquationalCond)
+def test_jointpackage_ecore2maude_trgequationalcond_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgEquationalCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgType_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgType_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgtype_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgType)
-
-@given(instance=jointPackage::Ecore2Maude::TrgType_strategy)
-def test_jointpackage::ecore2maude::trgtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_ecore2maude_trgtype_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgType)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgType_strategy)
-def test_jointpackage::ecore2maude::trgtype_name_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgType_strategy)
+def test_jointpackage_ecore2maude_trgtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgCondition_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgCondition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgcondition_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgCondition)
+def test_jointpackage_ecore2maude_trgcondition_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgCondition)
 
 @given(instance=TrgModElement_strategy)
 @settings(max_examples=50)
 def test_trgmodelement_instantiation(instance):
     assert isinstance(instance, TrgModElement)
 
-@given(instance=jointPackage::Ecore2Maude::TrgStatement_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgOperation_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgstatement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgStatement)
-
-@given(instance=jointPackage::Ecore2Maude::TrgStatement_strategy)
-def test_jointpackage::ecore2maude::trgstatement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_jointpackage_ecore2maude_trgoperation_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgOperation)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgStatement_strategy)
-def test_jointpackage::ecore2maude::trgstatement_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgStatement_strategy)
-def test_jointpackage::ecore2maude::trgstatement_atts_type(instance):
-    assert isinstance(instance.atts, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::TrgStatement_strategy)
-def test_jointpackage::ecore2maude::trgstatement_atts_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_TrgOperation_strategy)
+def test_jointpackage_ecore2maude_trgoperation_atts_setter(instance):
     original = instance.atts
     instance.atts = original
     assert instance.atts == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgOperation_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgoperation_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgOperation)
-
-@given(instance=jointPackage::Ecore2Maude::TrgOperation_strategy)
-def test_jointpackage::ecore2maude::trgoperation_atts_type(instance):
-    assert isinstance(instance.atts, str)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgOperation_strategy)
-def test_jointpackage::ecore2maude::trgoperation_atts_setter(instance):
-    original = instance.atts
-    instance.atts = original
-    assert instance.atts == original
-
-@given(instance=jointPackage::Ecore2Maude::TrgOperation_strategy)
-def test_jointpackage::ecore2maude::trgoperation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::TrgOperation_strategy)
-def test_jointpackage::ecore2maude::trgoperation_name_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_TrgOperation_strategy)
+def test_jointpackage_ecore2maude_trgoperation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgModImportation_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgStatement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmodimportation_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgModImportation)
+def test_jointpackage_ecore2maude_trgstatement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgStatement)
+
+
+
+@given(instance=jointPackage_Ecore2Maude_TrgStatement_strategy)
+def test_jointpackage_ecore2maude_trgstatement_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_TrgStatement_strategy)
+def test_jointpackage_ecore2maude_trgstatement_atts_setter(instance):
+    original = instance.atts
+    instance.atts = original
+    assert instance.atts == original
+
+@given(instance=jointPackage_Ecore2Maude_TrgModImportation_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_trgmodimportation_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgModImportation)
 
 @given(instance=TrgModule_strategy)
 @settings(max_examples=50)
 def test_trgmodule_instantiation(instance):
     assert isinstance(instance, TrgModule)
 
-@given(instance=jointPackage::Ecore2Maude::TrgSModule_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgSModule_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgsmodule_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgSModule)
+def test_jointpackage_ecore2maude_trgsmodule_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgSModule)
 
-@given(instance=jointPackage::Ecore2Maude::TrgFModule_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgFModule_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgfmodule_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgFModule)
+def test_jointpackage_ecore2maude_trgfmodule_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgFModule)
 
 @given(instance=TrgTheory_strategy)
 @settings(max_examples=50)
 def test_trgtheory_instantiation(instance):
     assert isinstance(instance, TrgTheory)
 
-@given(instance=jointPackage::Ecore2Maude::TrgSTheory_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgSTheory_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgstheory_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgSTheory)
+def test_jointpackage_ecore2maude_trgstheory_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgSTheory)
 
-@given(instance=jointPackage::Ecore2Maude::TrgFTheory_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgFTheory_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgftheory_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgFTheory)
+def test_jointpackage_ecore2maude_trgftheory_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgFTheory)
 
-@given(instance=jointPackage::Ecore2Maude::TrgModElement_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgModElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmodelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgModElement)
+def test_jointpackage_ecore2maude_trgmodelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgModElement)
 
-@given(instance=jointPackage::Ecore2Maude::TrgSubsortRel_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgSubsortRel_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgsubsortrel_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgSubsortRel)
+def test_jointpackage_ecore2maude_trgsubsortrel_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgSubsortRel)
 
 @given(instance=TrgType_strategy)
 @settings(max_examples=50)
 def test_trgtype_instantiation(instance):
     assert isinstance(instance, TrgType)
 
-@given(instance=jointPackage::Ecore2Maude::TrgKind_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgKind_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgkind_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgKind)
+def test_jointpackage_ecore2maude_trgkind_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgKind)
 
-@given(instance=jointPackage::Ecore2Maude::TrgRenMapping_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgRenMapping_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgrenmapping_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgRenMapping)
+def test_jointpackage_ecore2maude_trgrenmapping_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgRenMapping)
 
 @given(instance=TrgModExpression_strategy)
 @settings(max_examples=50)
 def test_trgmodexpression_instantiation(instance):
     assert isinstance(instance, TrgModExpression)
 
-@given(instance=jointPackage::Ecore2Maude::TrgCompModExp_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgCompModExp_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgcompmodexp_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgCompModExp)
+def test_jointpackage_ecore2maude_trgcompmodexp_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgCompModExp)
 
-@given(instance=jointPackage::Ecore2Maude::TrgRenModExp_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgRenModExp_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgrenmodexp_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgRenModExp)
+def test_jointpackage_ecore2maude_trgrenmodexp_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgRenModExp)
 
-@given(instance=jointPackage::Ecore2Maude::TrgInstModExp_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgInstModExp_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trginstmodexp_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgInstModExp)
+def test_jointpackage_ecore2maude_trginstmodexp_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgInstModExp)
 
-@given(instance=jointPackage::Ecore2Maude::TrgModExpression_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgModExpression_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmodexpression_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgModExpression)
+def test_jointpackage_ecore2maude_trgmodexpression_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgModExpression)
 
 @given(instance=TrgMaudeTopEl_strategy)
 @settings(max_examples=50)
 def test_trgmaudetopel_instantiation(instance):
     assert isinstance(instance, TrgMaudeTopEl)
 
-@given(instance=jointPackage::Ecore2Maude::TrgView_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgView_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgview_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgView)
+def test_jointpackage_ecore2maude_trgview_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgView)
 
-@given(instance=jointPackage::Ecore2Maude::TrgParameter_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgParameter_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgparameter_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgParameter)
-
-@given(instance=jointPackage::Ecore2Maude::TrgParameter_strategy)
-def test_jointpackage::ecore2maude::trgparameter_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_jointpackage_ecore2maude_trgparameter_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgParameter)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgParameter_strategy)
-def test_jointpackage::ecore2maude::trgparameter_label_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgParameter_strategy)
+def test_jointpackage_ecore2maude_trgparameter_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgTheory_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgTheory_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgtheory_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgTheory)
+def test_jointpackage_ecore2maude_trgtheory_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgTheory)
 
-@given(instance=jointPackage::Ecore2Maude::TrgTheoryIdModExp_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgTheoryIdModExp_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgtheoryidmodexp_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgTheoryIdModExp)
+def test_jointpackage_ecore2maude_trgtheoryidmodexp_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgTheoryIdModExp)
 
-@given(instance=jointPackage::Ecore2Maude::TrgModule_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgModule_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmodule_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgModule)
+def test_jointpackage_ecore2maude_trgmodule_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgModule)
 
-@given(instance=jointPackage::Ecore2Maude::TrgModuleIdModExp_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgModuleIdModExp_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmoduleidmodexp_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgModuleIdModExp)
+def test_jointpackage_ecore2maude_trgmoduleidmodexp_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgModuleIdModExp)
 
-@given(instance=jointPackage::Ecore2Maude::TrgSort_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgSort_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgsort_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgSort)
+def test_jointpackage_ecore2maude_trgsort_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgSort)
 
-@given(instance=jointPackage::Ecore2Maude::TrgTerm_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgTerm_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgterm_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgTerm)
+def test_jointpackage_ecore2maude_trgterm_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgTerm)
 
 @given(instance=TrgStatement_strategy)
 @settings(max_examples=50)
 def test_trgstatement_instantiation(instance):
     assert isinstance(instance, TrgStatement)
 
-@given(instance=jointPackage::Ecore2Maude::TrgMembership_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgMembership_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmembership_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgMembership)
+def test_jointpackage_ecore2maude_trgmembership_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgMembership)
 
-@given(instance=jointPackage::Ecore2Maude::TrgMaudeTopEl_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgMaudeTopEl_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmaudetopel_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgMaudeTopEl)
-
-@given(instance=jointPackage::Ecore2Maude::TrgMaudeTopEl_strategy)
-def test_jointpackage::ecore2maude::trgmaudetopel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_ecore2maude_trgmaudetopel_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgMaudeTopEl)
 
 
-@given(instance=jointPackage::Ecore2Maude::TrgMaudeTopEl_strategy)
-def test_jointpackage::ecore2maude::trgmaudetopel_name_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_TrgMaudeTopEl_strategy)
+def test_jointpackage_ecore2maude_trgmaudetopel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgMaudeSpec_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgMaudeSpec_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmaudespec_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgMaudeSpec)
+def test_jointpackage_ecore2maude_trgmaudespec_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgMaudeSpec)
 
 @given(instance=TrgEquationalCond_strategy)
 @settings(max_examples=50)
 def test_trgequationalcond_instantiation(instance):
     assert isinstance(instance, TrgEquationalCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgMatchingCond_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgMatchingCond_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmatchingcond_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgMatchingCond)
+def test_jointpackage_ecore2maude_trgmatchingcond_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgMatchingCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgBooleanCond_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgBooleanCond_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgbooleancond_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgBooleanCond)
+def test_jointpackage_ecore2maude_trgbooleancond_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgBooleanCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgMembershipCond_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgEqualCond_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgmembershipcond_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgMembershipCond)
+def test_jointpackage_ecore2maude_trgequalcond_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgEqualCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgRule_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgMembershipCond_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgrule_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgRule)
+def test_jointpackage_ecore2maude_trgmembershipcond_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgMembershipCond)
 
-@given(instance=jointPackage::Ecore2Maude::TrgEquation_strategy)
+@given(instance=jointPackage_Ecore2Maude_TrgRule_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgequation_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgEquation)
+def test_jointpackage_ecore2maude_trgrule_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgRule)
+
+@given(instance=jointPackage_Ecore2Maude_TrgEquation_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_trgequation_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_TrgEquation)
 
 @given(instance=SrcETypedElement_strategy)
 @settings(max_examples=50)
 def test_srcetypedelement_instantiation(instance):
     assert isinstance(instance, SrcETypedElement)
 
-@given(instance=jointPackage::Ecore2Maude::SrcEParameter_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEOperation_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceparameter_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEParameter)
+def test_jointpackage_ecore2maude_srceoperation_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEOperation)
+
+@given(instance=jointPackage_Ecore2Maude_SrcEParameter_strategy)
+@settings(max_examples=50)
+def test_jointpackage_ecore2maude_srceparameter_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEParameter)
 
 @given(instance=SrcEDataType_strategy)
 @settings(max_examples=50)
 def test_srcedatatype_instantiation(instance):
     assert isinstance(instance, SrcEDataType)
 
-@given(instance=jointPackage::Ecore2Maude::SrcEEnum_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEEnum_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceenum_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEEnum)
+def test_jointpackage_ecore2maude_srceenum_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEEnum)
 
 @given(instance=SrcENamedElement_strategy)
 @settings(max_examples=50)
 def test_srcenamedelement_instantiation(instance):
     assert isinstance(instance, SrcENamedElement)
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcetypedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcETypedElement)
-
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_jointpackage_ecore2maude_srcetypedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcETypedElement)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_many_setter(instance):
-    original = instance.many
-    instance.many = original
-    assert instance.many == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_required_type(instance):
-    assert isinstance(instance.required, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_required_setter(instance):
-    original = instance.required
-    instance.required = original
-    assert instance.required == original
-
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_ordered_type(instance):
-    assert isinstance(instance.ordered, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_ordered_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
+def test_jointpackage_ecore2maude_srcetypedelement_ordered_setter(instance):
     original = instance.ordered
     instance.ordered = original
     assert instance.ordered == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_unique_type(instance):
-    assert isinstance(instance.unique, bool)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_unique_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
+def test_jointpackage_ecore2maude_srcetypedelement_many_setter(instance):
+    original = instance.many
+    instance.many = original
+    assert instance.many == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
+def test_jointpackage_ecore2maude_srcetypedelement_required_setter(instance):
+    original = instance.required
+    instance.required = original
+    assert instance.required == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
+def test_jointpackage_ecore2maude_srcetypedelement_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcETypedElement_strategy)
-def test_jointpackage::ecore2maude::srcetypedelement_upperBound_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
+def test_jointpackage_ecore2maude_srcetypedelement_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEPackage_strategy)
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcETypedElement_strategy)
+def test_jointpackage_ecore2maude_srcetypedelement_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+@given(instance=jointPackage_Ecore2Maude_SrcEPackage_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcepackage_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEPackage)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEPackage_strategy)
-def test_jointpackage::ecore2maude::srcepackage_nsPrefix_type(instance):
-    assert isinstance(instance.nsPrefix, str)
+def test_jointpackage_ecore2maude_srcepackage_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEPackage)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEPackage_strategy)
-def test_jointpackage::ecore2maude::srcepackage_nsPrefix_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_SrcEPackage_strategy)
+def test_jointpackage_ecore2maude_srcepackage_nsPrefix_setter(instance):
     original = instance.nsPrefix
     instance.nsPrefix = original
     assert instance.nsPrefix == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEPackage_strategy)
-def test_jointpackage::ecore2maude::srcepackage_nsURI_type(instance):
-    assert isinstance(instance.nsURI, str)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEPackage_strategy)
-def test_jointpackage::ecore2maude::srcepackage_nsURI_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEPackage_strategy)
+def test_jointpackage_ecore2maude_srcepackage_nsURI_setter(instance):
     original = instance.nsURI
     instance.nsURI = original
     assert instance.nsURI == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClassifier_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEClassifier_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceclassifier_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEClassifier)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEClassifier_strategy)
-def test_jointpackage::ecore2maude::srceclassifier_instanceTypeName_type(instance):
-    assert isinstance(instance.instanceTypeName, str)
+def test_jointpackage_ecore2maude_srceclassifier_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEClassifier)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClassifier_strategy)
-def test_jointpackage::ecore2maude::srceclassifier_instanceTypeName_setter(instance):
-    original = instance.instanceTypeName
-    instance.instanceTypeName = original
-    assert instance.instanceTypeName == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClassifier_strategy)
-def test_jointpackage::ecore2maude::srceclassifier_instanceClassName_type(instance):
-    assert isinstance(instance.instanceClassName, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEClassifier_strategy)
-def test_jointpackage::ecore2maude::srceclassifier_instanceClassName_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEClassifier_strategy)
+def test_jointpackage_ecore2maude_srceclassifier_instanceClassName_setter(instance):
     original = instance.instanceClassName
     instance.instanceClassName = original
     assert instance.instanceClassName == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEClassifier_strategy)
+def test_jointpackage_ecore2maude_srceclassifier_instanceTypeName_setter(instance):
+    original = instance.instanceTypeName
+    instance.instanceTypeName = original
+    assert instance.instanceTypeName == original
+
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcestructuralfeature_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEStructuralFeature)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_transient_type(instance):
-    assert isinstance(instance.transient, bool)
+def test_jointpackage_ecore2maude_srcestructuralfeature_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEStructuralFeature)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_transient_setter(instance):
-    original = instance.transient
-    instance.transient = original
-    assert instance.transient == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_unsettable_type(instance):
-    assert isinstance(instance.unsettable, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_unsettable_setter(instance):
-    original = instance.unsettable
-    instance.unsettable = original
-    assert instance.unsettable == original
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_derived_type(instance):
-    assert isinstance(instance.derived, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_derived_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
+def test_jointpackage_ecore2maude_srcestructuralfeature_derived_setter(instance):
     original = instance.derived
     instance.derived = original
     assert instance.derived == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_defaultValueLiteral_type(instance):
-    assert isinstance(instance.defaultValueLiteral, str)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_defaultValueLiteral_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
+def test_jointpackage_ecore2maude_srcestructuralfeature_transient_setter(instance):
+    original = instance.transient
+    instance.transient = original
+    assert instance.transient == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
+def test_jointpackage_ecore2maude_srcestructuralfeature_unsettable_setter(instance):
+    original = instance.unsettable
+    instance.unsettable = original
+    assert instance.unsettable == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
+def test_jointpackage_ecore2maude_srcestructuralfeature_defaultValueLiteral_setter(instance):
     original = instance.defaultValueLiteral
     instance.defaultValueLiteral = original
     assert instance.defaultValueLiteral == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_volatile_type(instance):
-    assert isinstance(instance.volatile, bool)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_volatile_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
+def test_jointpackage_ecore2maude_srcestructuralfeature_volatile_setter(instance):
     original = instance.volatile
     instance.volatile = original
     assert instance.volatile == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_changeable_type(instance):
-    assert isinstance(instance.changeable, bool)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEStructuralFeature_strategy)
-def test_jointpackage::ecore2maude::srcestructuralfeature_changeable_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEStructuralFeature_strategy)
+def test_jointpackage_ecore2maude_srcestructuralfeature_changeable_setter(instance):
     original = instance.changeable
     instance.changeable = original
     assert instance.changeable == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcENamedElement_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcENamedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcenamedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcENamedElement)
-
-@given(instance=jointPackage::Ecore2Maude::SrcENamedElement_strategy)
-def test_jointpackage::ecore2maude::srcenamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_ecore2maude_srcenamedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcENamedElement)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcENamedElement_strategy)
-def test_jointpackage::ecore2maude::srcenamedelement_name_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_SrcENamedElement_strategy)
+def test_jointpackage_ecore2maude_srcenamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEEnumLiteral_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceenumliteral_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEEnumLiteral)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy)
-def test_jointpackage::ecore2maude::srceenumliteral_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_jointpackage_ecore2maude_srceenumliteral_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEEnumLiteral)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy)
-def test_jointpackage::ecore2maude::srceenumliteral_literal_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_SrcEEnumLiteral_strategy)
+def test_jointpackage_ecore2maude_srceenumliteral_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy)
-def test_jointpackage::ecore2maude::srceenumliteral_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEEnumLiteral_strategy)
-def test_jointpackage::ecore2maude::srceenumliteral_value_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEEnumLiteral_strategy)
+def test_jointpackage_ecore2maude_srceenumliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2664,32 +2595,26 @@ def test_jointpackage::ecore2maude::srceenumliteral_value_setter(instance):
 def test_srceclassifier_instantiation(instance):
     assert isinstance(instance, SrcEClassifier)
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClass_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEClass_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceclass_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEClass)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEClass_strategy)
-def test_jointpackage::ecore2maude::srceclass_interface_type(instance):
-    assert isinstance(instance.interface, bool)
+def test_jointpackage_ecore2maude_srceclass_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEClass)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClass_strategy)
-def test_jointpackage::ecore2maude::srceclass_interface_setter(instance):
-    original = instance.interface
-    instance.interface = original
-    assert instance.interface == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClass_strategy)
-def test_jointpackage::ecore2maude::srceclass_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEClass_strategy)
-def test_jointpackage::ecore2maude::srceclass_abstract_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEClass_strategy)
+def test_jointpackage_ecore2maude_srceclass_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEClass_strategy)
+def test_jointpackage_ecore2maude_srceclass_interface_setter(instance):
+    original = instance.interface
+    instance.interface = original
+    assert instance.interface == original
 
 import warnings
 import copy
@@ -2697,9 +2622,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=jointPackage::Ecore2Maude::SrcEClass_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEClass_strategy)
 @settings(max_examples=30)
-def test_jointpackage::ecore2maude::srceclass_issupertypeof_changes_state(instance):
+def test_jointpackage_ecore2maude_srceclass_issupertypeof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2713,27 +2638,24 @@ def test_jointpackage::ecore2maude::srceclass_issupertypeof_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperTypeOf' in jointPackage::Ecore2Maude::SrcEClass is empty"
+        assert has_statements, f"Function 'isSuperTypeOf' in jointPackage_Ecore2Maude_SrcEClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperTypeOf' in jointPackage::Ecore2Maude::SrcEClass did not change state; check implementation")
+            warnings.warn(f"Operation 'isSuperTypeOf' in jointPackage_Ecore2Maude_SrcEClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperTypeOf' in jointPackage::Ecore2Maude::SrcEClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'isSuperTypeOf' in jointPackage_Ecore2Maude_SrcEClass is not implemented or raised an error")
 
-@given(instance=jointPackage::Ecore2Maude::SrcEDataType_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEDataType_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcedatatype_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEDataType)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEDataType_strategy)
-def test_jointpackage::ecore2maude::srcedatatype_serializable_type(instance):
-    assert isinstance(instance.serializable, bool)
+def test_jointpackage_ecore2maude_srcedatatype_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEDataType)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEDataType_strategy)
-def test_jointpackage::ecore2maude::srcedatatype_serializable_setter(instance):
+
+@given(instance=jointPackage_Ecore2Maude_SrcEDataType_strategy)
+def test_jointpackage_ecore2maude_srcedatatype_serializable_setter(instance):
     original = instance.serializable
     instance.serializable = original
     assert instance.serializable == original
@@ -2743,98 +2665,44 @@ def test_jointpackage::ecore2maude::srcedatatype_serializable_setter(instance):
 def test_srcestructuralfeature_instantiation(instance):
     assert isinstance(instance, SrcEStructuralFeature)
 
-@given(instance=jointPackage::Ecore2Maude::SrcEAttribute_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEReference_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceattribute_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEAttribute)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEAttribute_strategy)
-def test_jointpackage::ecore2maude::srceattribute_iD_type(instance):
-    assert isinstance(instance.iD, bool)
+def test_jointpackage_ecore2maude_srcereference_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEReference)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEAttribute_strategy)
-def test_jointpackage::ecore2maude::srceattribute_iD_setter(instance):
-    original = instance.iD
-    instance.iD = original
-    assert instance.iD == original
 
-@given(instance=jointPackage::Ecore2Maude::TrgEqualCond_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::trgequalcond_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::TrgEqualCond)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStringToStringMapEntry_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEStringToStringMapEntry)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStringToStringMapEntry_strategy)
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStringToStringMapEntry_strategy)
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStringToStringMapEntry_strategy)
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEStringToStringMapEntry_strategy)
-def test_jointpackage::ecore2maude::srcestringtostringmapentry_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=jointPackage::Ecore2Maude::JointMM_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::jointmm_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::JointMM)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-@settings(max_examples=50)
-def test_jointpackage::ecore2maude::srcereference_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEReference)
-
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-def test_jointpackage::ecore2maude::srcereference_container_type(instance):
-    assert isinstance(instance.container, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-def test_jointpackage::ecore2maude::srcereference_container_setter(instance):
-    original = instance.container
-    instance.container = original
-    assert instance.container == original
-
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-def test_jointpackage::ecore2maude::srcereference_containment_type(instance):
-    assert isinstance(instance.containment, bool)
-
-
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-def test_jointpackage::ecore2maude::srcereference_containment_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEReference_strategy)
+def test_jointpackage_ecore2maude_srcereference_containment_setter(instance):
     original = instance.containment
     instance.containment = original
     assert instance.containment == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-def test_jointpackage::ecore2maude::srcereference_resolveProxies_type(instance):
-    assert isinstance(instance.resolveProxies, bool)
 
 
-@given(instance=jointPackage::Ecore2Maude::SrcEReference_strategy)
-def test_jointpackage::ecore2maude::srcereference_resolveProxies_setter(instance):
+@given(instance=jointPackage_Ecore2Maude_SrcEReference_strategy)
+def test_jointpackage_ecore2maude_srcereference_container_setter(instance):
+    original = instance.container
+    instance.container = original
+    assert instance.container == original
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEReference_strategy)
+def test_jointpackage_ecore2maude_srcereference_resolveProxies_setter(instance):
     original = instance.resolveProxies
     instance.resolveProxies = original
     assert instance.resolveProxies == original
 
-@given(instance=jointPackage::Ecore2Maude::SrcEOperation_strategy)
+@given(instance=jointPackage_Ecore2Maude_SrcEAttribute_strategy)
 @settings(max_examples=50)
-def test_jointpackage::ecore2maude::srceoperation_instantiation(instance):
-    assert isinstance(instance, jointPackage::Ecore2Maude::SrcEOperation)
+def test_jointpackage_ecore2maude_srceattribute_instantiation(instance):
+    assert isinstance(instance, jointPackage_Ecore2Maude_SrcEAttribute)
+
+
+
+@given(instance=jointPackage_Ecore2Maude_SrcEAttribute_strategy)
+def test_jointpackage_ecore2maude_srceattribute_iD_setter(instance):
+    original = instance.iD
+    instance.iD = original
+    assert instance.iD == original

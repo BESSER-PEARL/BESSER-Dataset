@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Ref,
-    myDot::EntityRef,
-    myDot::DotExpression,
+    myDot_EntityRef,
+    myDot_DotExpression,
     Feature,
-    myDot::Reference,
-    myDot::Attribute,
-    myDot::Feature,
-    myDot::Usage,
-    myDot::Entity,
-    myDot::Model,
-    myDot::Ref,
+    myDot_Reference,
+    myDot_Attribute,
+    myDot_Feature,
+    myDot_Usage,
+    myDot_Entity,
+    myDot_Model,
+    myDot_Ref,
     DataType,
 )
 
@@ -40,30 +40,30 @@ def test_ref_constructor_args():
 
 
 
-def test_mydot::entityref_is_not_abstract():
-    assert not inspect.isabstract(myDot::EntityRef)
+def test_mydot_entityref_is_not_abstract():
+    assert not inspect.isabstract(myDot_EntityRef)
 
 
-def test_mydot::entityref_constructor_exists():
-    assert callable(myDot::EntityRef.__init__)
+def test_mydot_entityref_constructor_exists():
+    assert callable(myDot_EntityRef.__init__)
 
 
-def test_mydot::entityref_constructor_args():
-    sig = inspect.signature(myDot::EntityRef.__init__)
+def test_mydot_entityref_constructor_args():
+    sig = inspect.signature(myDot_EntityRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydot::dotexpression_is_not_abstract():
-    assert not inspect.isabstract(myDot::DotExpression)
+def test_mydot_dotexpression_is_not_abstract():
+    assert not inspect.isabstract(myDot_DotExpression)
 
 
-def test_mydot::dotexpression_constructor_exists():
-    assert callable(myDot::DotExpression.__init__)
+def test_mydot_dotexpression_constructor_exists():
+    assert callable(myDot_DotExpression.__init__)
 
 
-def test_mydot::dotexpression_constructor_args():
-    sig = inspect.signature(myDot::DotExpression.__init__)
+def test_mydot_dotexpression_constructor_args():
+    sig = inspect.signature(myDot_DotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,37 +82,37 @@ def test_feature_constructor_args():
 
 
 
-def test_mydot::reference_is_not_abstract():
-    assert not inspect.isabstract(myDot::Reference)
+def test_mydot_reference_is_not_abstract():
+    assert not inspect.isabstract(myDot_Reference)
 
 
-def test_mydot::reference_constructor_exists():
-    assert callable(myDot::Reference.__init__)
+def test_mydot_reference_constructor_exists():
+    assert callable(myDot_Reference.__init__)
 
 
-def test_mydot::reference_constructor_args():
-    sig = inspect.signature(myDot::Reference.__init__)
+def test_mydot_reference_constructor_args():
+    sig = inspect.signature(myDot_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydot::attribute_is_not_abstract():
-    assert not inspect.isabstract(myDot::Attribute)
+def test_mydot_attribute_is_not_abstract():
+    assert not inspect.isabstract(myDot_Attribute)
 
 
-def test_mydot::attribute_constructor_exists():
-    assert callable(myDot::Attribute.__init__)
+def test_mydot_attribute_constructor_exists():
+    assert callable(myDot_Attribute.__init__)
 
 
-def test_mydot::attribute_constructor_args():
-    sig = inspect.signature(myDot::Attribute.__init__)
+def test_mydot_attribute_constructor_args():
+    sig = inspect.signature(myDot_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_mydot::attribute_has_type():
-    assert hasattr(myDot::Attribute, "type")
+def test_mydot_attribute_has_type():
+    assert hasattr(myDot_Attribute, "type")
     descriptor = None
-    for klass in myDot::Attribute.__mro__:
+    for klass in myDot_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -120,23 +120,23 @@ def test_mydot::attribute_has_type():
 
 
 
-def test_mydot::feature_is_not_abstract():
-    assert not inspect.isabstract(myDot::Feature)
+def test_mydot_feature_is_not_abstract():
+    assert not inspect.isabstract(myDot_Feature)
 
 
-def test_mydot::feature_constructor_exists():
-    assert callable(myDot::Feature.__init__)
+def test_mydot_feature_constructor_exists():
+    assert callable(myDot_Feature.__init__)
 
 
-def test_mydot::feature_constructor_args():
-    sig = inspect.signature(myDot::Feature.__init__)
+def test_mydot_feature_constructor_args():
+    sig = inspect.signature(myDot_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydot::feature_has_name():
-    assert hasattr(myDot::Feature, "name")
+def test_mydot_feature_has_name():
+    assert hasattr(myDot_Feature, "name")
     descriptor = None
-    for klass in myDot::Feature.__mro__:
+    for klass in myDot_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -144,37 +144,37 @@ def test_mydot::feature_has_name():
 
 
 
-def test_mydot::usage_is_not_abstract():
-    assert not inspect.isabstract(myDot::Usage)
+def test_mydot_usage_is_not_abstract():
+    assert not inspect.isabstract(myDot_Usage)
 
 
-def test_mydot::usage_constructor_exists():
-    assert callable(myDot::Usage.__init__)
+def test_mydot_usage_constructor_exists():
+    assert callable(myDot_Usage.__init__)
 
 
-def test_mydot::usage_constructor_args():
-    sig = inspect.signature(myDot::Usage.__init__)
+def test_mydot_usage_constructor_args():
+    sig = inspect.signature(myDot_Usage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydot::entity_is_not_abstract():
-    assert not inspect.isabstract(myDot::Entity)
+def test_mydot_entity_is_not_abstract():
+    assert not inspect.isabstract(myDot_Entity)
 
 
-def test_mydot::entity_constructor_exists():
-    assert callable(myDot::Entity.__init__)
+def test_mydot_entity_constructor_exists():
+    assert callable(myDot_Entity.__init__)
 
 
-def test_mydot::entity_constructor_args():
-    sig = inspect.signature(myDot::Entity.__init__)
+def test_mydot_entity_constructor_args():
+    sig = inspect.signature(myDot_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydot::entity_has_name():
-    assert hasattr(myDot::Entity, "name")
+def test_mydot_entity_has_name():
+    assert hasattr(myDot_Entity, "name")
     descriptor = None
-    for klass in myDot::Entity.__mro__:
+    for klass in myDot_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -182,30 +182,30 @@ def test_mydot::entity_has_name():
 
 
 
-def test_mydot::model_is_not_abstract():
-    assert not inspect.isabstract(myDot::Model)
+def test_mydot_model_is_not_abstract():
+    assert not inspect.isabstract(myDot_Model)
 
 
-def test_mydot::model_constructor_exists():
-    assert callable(myDot::Model.__init__)
+def test_mydot_model_constructor_exists():
+    assert callable(myDot_Model.__init__)
 
 
-def test_mydot::model_constructor_args():
-    sig = inspect.signature(myDot::Model.__init__)
+def test_mydot_model_constructor_args():
+    sig = inspect.signature(myDot_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydot::ref_is_not_abstract():
-    assert not inspect.isabstract(myDot::Ref)
+def test_mydot_ref_is_not_abstract():
+    assert not inspect.isabstract(myDot_Ref)
 
 
-def test_mydot::ref_constructor_exists():
-    assert callable(myDot::Ref.__init__)
+def test_mydot_ref_constructor_exists():
+    assert callable(myDot_Ref.__init__)
 
 
-def test_mydot::ref_constructor_args():
-    sig = inspect.signature(myDot::Ref.__init__)
+def test_mydot_ref_constructor_args():
+    sig = inspect.signature(myDot_Ref.__init__)
     params = list(sig.parameters.keys())
 
 def test_datatype_exists():
@@ -238,41 +238,41 @@ safe_text = st.text(
 Ref_strategy = st.builds(
     Ref,
 )
-myDot::EntityRef_strategy = st.builds(
-    myDot::EntityRef,
+myDot_EntityRef_strategy = st.builds(
+    myDot_EntityRef,
 )
-myDot::DotExpression_strategy = st.builds(
-    myDot::DotExpression,
+myDot_DotExpression_strategy = st.builds(
+    myDot_DotExpression,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-myDot::Reference_strategy = st.builds(
-    myDot::Reference,
+myDot_Reference_strategy = st.builds(
+    myDot_Reference,
 )
-myDot::Attribute_strategy = st.builds(
-    myDot::Attribute,
+myDot_Attribute_strategy = st.builds(
+    myDot_Attribute,
     type=
         safe_text
 )
-myDot::Feature_strategy = st.builds(
-    myDot::Feature,
+myDot_Feature_strategy = st.builds(
+    myDot_Feature,
     name=
         safe_text
 )
-myDot::Usage_strategy = st.builds(
-    myDot::Usage,
+myDot_Usage_strategy = st.builds(
+    myDot_Usage,
 )
-myDot::Entity_strategy = st.builds(
-    myDot::Entity,
+myDot_Entity_strategy = st.builds(
+    myDot_Entity,
     name=
         safe_text
 )
-myDot::Model_strategy = st.builds(
-    myDot::Model,
+myDot_Model_strategy = st.builds(
+    myDot_Model,
 )
-myDot::Ref_strategy = st.builds(
-    myDot::Ref,
+myDot_Ref_strategy = st.builds(
+    myDot_Ref,
 )
 
 @given(instance=Ref_strategy)
@@ -280,85 +280,76 @@ myDot::Ref_strategy = st.builds(
 def test_ref_instantiation(instance):
     assert isinstance(instance, Ref)
 
-@given(instance=myDot::EntityRef_strategy)
+@given(instance=myDot_EntityRef_strategy)
 @settings(max_examples=50)
-def test_mydot::entityref_instantiation(instance):
-    assert isinstance(instance, myDot::EntityRef)
+def test_mydot_entityref_instantiation(instance):
+    assert isinstance(instance, myDot_EntityRef)
 
-@given(instance=myDot::DotExpression_strategy)
+@given(instance=myDot_DotExpression_strategy)
 @settings(max_examples=50)
-def test_mydot::dotexpression_instantiation(instance):
-    assert isinstance(instance, myDot::DotExpression)
+def test_mydot_dotexpression_instantiation(instance):
+    assert isinstance(instance, myDot_DotExpression)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=myDot::Reference_strategy)
+@given(instance=myDot_Reference_strategy)
 @settings(max_examples=50)
-def test_mydot::reference_instantiation(instance):
-    assert isinstance(instance, myDot::Reference)
+def test_mydot_reference_instantiation(instance):
+    assert isinstance(instance, myDot_Reference)
 
-@given(instance=myDot::Attribute_strategy)
+@given(instance=myDot_Attribute_strategy)
 @settings(max_examples=50)
-def test_mydot::attribute_instantiation(instance):
-    assert isinstance(instance, myDot::Attribute)
-
-@given(instance=myDot::Attribute_strategy)
-def test_mydot::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_mydot_attribute_instantiation(instance):
+    assert isinstance(instance, myDot_Attribute)
 
 
-@given(instance=myDot::Attribute_strategy)
-def test_mydot::attribute_type_setter(instance):
+
+@given(instance=myDot_Attribute_strategy)
+def test_mydot_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=myDot::Feature_strategy)
+@given(instance=myDot_Feature_strategy)
 @settings(max_examples=50)
-def test_mydot::feature_instantiation(instance):
-    assert isinstance(instance, myDot::Feature)
-
-@given(instance=myDot::Feature_strategy)
-def test_mydot::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydot_feature_instantiation(instance):
+    assert isinstance(instance, myDot_Feature)
 
 
-@given(instance=myDot::Feature_strategy)
-def test_mydot::feature_name_setter(instance):
+
+@given(instance=myDot_Feature_strategy)
+def test_mydot_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDot::Usage_strategy)
+@given(instance=myDot_Usage_strategy)
 @settings(max_examples=50)
-def test_mydot::usage_instantiation(instance):
-    assert isinstance(instance, myDot::Usage)
+def test_mydot_usage_instantiation(instance):
+    assert isinstance(instance, myDot_Usage)
 
-@given(instance=myDot::Entity_strategy)
+@given(instance=myDot_Entity_strategy)
 @settings(max_examples=50)
-def test_mydot::entity_instantiation(instance):
-    assert isinstance(instance, myDot::Entity)
-
-@given(instance=myDot::Entity_strategy)
-def test_mydot::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydot_entity_instantiation(instance):
+    assert isinstance(instance, myDot_Entity)
 
 
-@given(instance=myDot::Entity_strategy)
-def test_mydot::entity_name_setter(instance):
+
+@given(instance=myDot_Entity_strategy)
+def test_mydot_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDot::Model_strategy)
+@given(instance=myDot_Model_strategy)
 @settings(max_examples=50)
-def test_mydot::model_instantiation(instance):
-    assert isinstance(instance, myDot::Model)
+def test_mydot_model_instantiation(instance):
+    assert isinstance(instance, myDot_Model)
 
-@given(instance=myDot::Ref_strategy)
+@given(instance=myDot_Ref_strategy)
 @settings(max_examples=50)
-def test_mydot::ref_instantiation(instance):
-    assert isinstance(instance, myDot::Ref)
+def test_mydot_ref_instantiation(instance):
+    assert isinstance(instance, myDot_Ref)

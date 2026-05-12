@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'User' has the following attributes: 'User_Id' of type int; 'Password' of type int; 'Login_Status' of type str.
+The class 'Orders' has the following attributes: 'Customer_Id' of type str; 'Date_Created' of type str; 'Order_id' of type int; 'Date_Shipped' of type str; 'Status' of type str.
+The class 'Order_Details' has the following attributes: 'Product_Id' of type int; 'Order_Id' of type int; 'Sub_Total' of type str; 'Product_Name' of type str; 'Quantity' of type int; 'Unicast' of type str.
+The class 'Shopping_Cart' has the following attributes: 'Cart_id' of type int; 'Quantity' of type int; 'Product_id' of type int.
+The class 'Shipping_Info' has the following attributes: 'Shipping_Type' of type str; 'Shipping_Id' of type int.
+The class 'Customer' has the following attributes: 'Credit_Card_Info' of type int; 'Address' of type str; 'Customer_Name' of type str; 'email' of type str.
+The class 'Admin' has the following attributes: 'email' of type str; 'AdminName' of type str.
+'Customer' (role 'shopping_Cart6', cardinality 0..*) is associated with 'Shopping_Cart' (role 'customer7', cardinality 0..*).
+'Orders' (role 'shipping_Info2', cardinality 0..*) is associated with 'Shipping_Info' (role 'orders3', cardinality 0..*).
+'Customer' (role 'orders0', cardinality 0..*) is associated with 'Orders' (role 'customer1', cardinality 0..*).
+'Orders' (role 'order_Details4', cardinality 0..*) is associated with 'Order_Details' (role 'orders5', cardinality 0..*).

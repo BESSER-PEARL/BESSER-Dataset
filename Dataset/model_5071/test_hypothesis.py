@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    accounting::JournalStatement,
-    accounting::ReportGroup,
+from python_code import (
+    accounting_JournalStatement,
+    accounting_ReportGroup,
     Account,
-    accounting::PLAccount,
-    accounting::JournalGroup,
-    accounting::BalanceAccount,
-    accounting::Vat,
-    accounting::Accounting,
-    accounting::AccountGroup,
-    accounting::Account,
-    accounting::Report,
+    accounting_PLAccount,
+    accounting_JournalGroup,
+    accounting_BalanceAccount,
+    accounting_Vat,
+    accounting_Accounting,
+    accounting_AccountGroup,
+    accounting_Account,
+    accounting_Report,
 )
 
 # =============================================================================
@@ -25,43 +25,43 @@ from classes import (
 
 
 
-def test_accounting::journalstatement_is_not_abstract():
-    assert not inspect.isabstract(accounting::JournalStatement)
+def test_accounting_journalstatement_is_not_abstract():
+    assert not inspect.isabstract(accounting_JournalStatement)
 
 
-def test_accounting::journalstatement_constructor_exists():
-    assert callable(accounting::JournalStatement.__init__)
+def test_accounting_journalstatement_constructor_exists():
+    assert callable(accounting_JournalStatement.__init__)
 
 
-def test_accounting::journalstatement_constructor_args():
-    sig = inspect.signature(accounting::JournalStatement.__init__)
+def test_accounting_journalstatement_constructor_args():
+    sig = inspect.signature(accounting_JournalStatement.__init__)
     params = list(sig.parameters.keys())
     assert "amount" in params, "Missing parameter 'amount'"
     assert "date" in params, "Missing parameter 'date'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_accounting::journalstatement_has_amount():
-    assert hasattr(accounting::JournalStatement, "amount")
+def test_accounting_journalstatement_has_amount():
+    assert hasattr(accounting_JournalStatement, "amount")
     descriptor = None
-    for klass in accounting::JournalStatement.__mro__:
+    for klass in accounting_JournalStatement.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::journalstatement_has_date():
-    assert hasattr(accounting::JournalStatement, "date")
+def test_accounting_journalstatement_has_date():
+    assert hasattr(accounting_JournalStatement, "date")
     descriptor = None
-    for klass in accounting::JournalStatement.__mro__:
+    for klass in accounting_JournalStatement.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::journalstatement_has_description():
-    assert hasattr(accounting::JournalStatement, "description")
+def test_accounting_journalstatement_has_description():
+    assert hasattr(accounting_JournalStatement, "description")
     descriptor = None
-    for klass in accounting::JournalStatement.__mro__:
+    for klass in accounting_JournalStatement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -69,23 +69,23 @@ def test_accounting::journalstatement_has_description():
 
 
 
-def test_accounting::reportgroup_is_not_abstract():
-    assert not inspect.isabstract(accounting::ReportGroup)
+def test_accounting_reportgroup_is_not_abstract():
+    assert not inspect.isabstract(accounting_ReportGroup)
 
 
-def test_accounting::reportgroup_constructor_exists():
-    assert callable(accounting::ReportGroup.__init__)
+def test_accounting_reportgroup_constructor_exists():
+    assert callable(accounting_ReportGroup.__init__)
 
 
-def test_accounting::reportgroup_constructor_args():
-    sig = inspect.signature(accounting::ReportGroup.__init__)
+def test_accounting_reportgroup_constructor_args():
+    sig = inspect.signature(accounting_ReportGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::reportgroup_has_name():
-    assert hasattr(accounting::ReportGroup, "name")
+def test_accounting_reportgroup_has_name():
+    assert hasattr(accounting_ReportGroup, "name")
     descriptor = None
-    for klass in accounting::ReportGroup.__mro__:
+    for klass in accounting_ReportGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,37 +107,37 @@ def test_account_constructor_args():
 
 
 
-def test_accounting::placcount_is_not_abstract():
-    assert not inspect.isabstract(accounting::PLAccount)
+def test_accounting_placcount_is_not_abstract():
+    assert not inspect.isabstract(accounting_PLAccount)
 
 
-def test_accounting::placcount_constructor_exists():
-    assert callable(accounting::PLAccount.__init__)
+def test_accounting_placcount_constructor_exists():
+    assert callable(accounting_PLAccount.__init__)
 
 
-def test_accounting::placcount_constructor_args():
-    sig = inspect.signature(accounting::PLAccount.__init__)
+def test_accounting_placcount_constructor_args():
+    sig = inspect.signature(accounting_PLAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_accounting::journalgroup_is_not_abstract():
-    assert not inspect.isabstract(accounting::JournalGroup)
+def test_accounting_journalgroup_is_not_abstract():
+    assert not inspect.isabstract(accounting_JournalGroup)
 
 
-def test_accounting::journalgroup_constructor_exists():
-    assert callable(accounting::JournalGroup.__init__)
+def test_accounting_journalgroup_constructor_exists():
+    assert callable(accounting_JournalGroup.__init__)
 
 
-def test_accounting::journalgroup_constructor_args():
-    sig = inspect.signature(accounting::JournalGroup.__init__)
+def test_accounting_journalgroup_constructor_args():
+    sig = inspect.signature(accounting_JournalGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::journalgroup_has_name():
-    assert hasattr(accounting::JournalGroup, "name")
+def test_accounting_journalgroup_has_name():
+    assert hasattr(accounting_JournalGroup, "name")
     descriptor = None
-    for klass in accounting::JournalGroup.__mro__:
+    for klass in accounting_JournalGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -145,47 +145,47 @@ def test_accounting::journalgroup_has_name():
 
 
 
-def test_accounting::balanceaccount_is_not_abstract():
-    assert not inspect.isabstract(accounting::BalanceAccount)
+def test_accounting_balanceaccount_is_not_abstract():
+    assert not inspect.isabstract(accounting_BalanceAccount)
 
 
-def test_accounting::balanceaccount_constructor_exists():
-    assert callable(accounting::BalanceAccount.__init__)
+def test_accounting_balanceaccount_constructor_exists():
+    assert callable(accounting_BalanceAccount.__init__)
 
 
-def test_accounting::balanceaccount_constructor_args():
-    sig = inspect.signature(accounting::BalanceAccount.__init__)
+def test_accounting_balanceaccount_constructor_args():
+    sig = inspect.signature(accounting_BalanceAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_accounting::vat_is_not_abstract():
-    assert not inspect.isabstract(accounting::Vat)
+def test_accounting_vat_is_not_abstract():
+    assert not inspect.isabstract(accounting_Vat)
 
 
-def test_accounting::vat_constructor_exists():
-    assert callable(accounting::Vat.__init__)
+def test_accounting_vat_constructor_exists():
+    assert callable(accounting_Vat.__init__)
 
 
-def test_accounting::vat_constructor_args():
-    sig = inspect.signature(accounting::Vat.__init__)
+def test_accounting_vat_constructor_args():
+    sig = inspect.signature(accounting_Vat.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "rate" in params, "Missing parameter 'rate'"
 
-def test_accounting::vat_has_name():
-    assert hasattr(accounting::Vat, "name")
+def test_accounting_vat_has_name():
+    assert hasattr(accounting_Vat, "name")
     descriptor = None
-    for klass in accounting::Vat.__mro__:
+    for klass in accounting_Vat.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::vat_has_rate():
-    assert hasattr(accounting::Vat, "rate")
+def test_accounting_vat_has_rate():
+    assert hasattr(accounting_Vat, "rate")
     descriptor = None
-    for klass in accounting::Vat.__mro__:
+    for klass in accounting_Vat.__mro__:
         if "rate" in klass.__dict__:
             descriptor = klass.__dict__["rate"]
             break
@@ -193,23 +193,23 @@ def test_accounting::vat_has_rate():
 
 
 
-def test_accounting::accounting_is_not_abstract():
-    assert not inspect.isabstract(accounting::Accounting)
+def test_accounting_accounting_is_not_abstract():
+    assert not inspect.isabstract(accounting_Accounting)
 
 
-def test_accounting::accounting_constructor_exists():
-    assert callable(accounting::Accounting.__init__)
+def test_accounting_accounting_constructor_exists():
+    assert callable(accounting_Accounting.__init__)
 
 
-def test_accounting::accounting_constructor_args():
-    sig = inspect.signature(accounting::Accounting.__init__)
+def test_accounting_accounting_constructor_args():
+    sig = inspect.signature(accounting_Accounting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::accounting_has_name():
-    assert hasattr(accounting::Accounting, "name")
+def test_accounting_accounting_has_name():
+    assert hasattr(accounting_Accounting, "name")
     descriptor = None
-    for klass in accounting::Accounting.__mro__:
+    for klass in accounting_Accounting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -217,23 +217,23 @@ def test_accounting::accounting_has_name():
 
 
 
-def test_accounting::accountgroup_is_not_abstract():
-    assert not inspect.isabstract(accounting::AccountGroup)
+def test_accounting_accountgroup_is_not_abstract():
+    assert not inspect.isabstract(accounting_AccountGroup)
 
 
-def test_accounting::accountgroup_constructor_exists():
-    assert callable(accounting::AccountGroup.__init__)
+def test_accounting_accountgroup_constructor_exists():
+    assert callable(accounting_AccountGroup.__init__)
 
 
-def test_accounting::accountgroup_constructor_args():
-    sig = inspect.signature(accounting::AccountGroup.__init__)
+def test_accounting_accountgroup_constructor_args():
+    sig = inspect.signature(accounting_AccountGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::accountgroup_has_name():
-    assert hasattr(accounting::AccountGroup, "name")
+def test_accounting_accountgroup_has_name():
+    assert hasattr(accounting_AccountGroup, "name")
     descriptor = None
-    for klass in accounting::AccountGroup.__mro__:
+    for klass in accounting_AccountGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -241,23 +241,23 @@ def test_accounting::accountgroup_has_name():
 
 
 
-def test_accounting::account_is_not_abstract():
-    assert not inspect.isabstract(accounting::Account)
+def test_accounting_account_is_not_abstract():
+    assert not inspect.isabstract(accounting_Account)
 
 
-def test_accounting::account_constructor_exists():
-    assert callable(accounting::Account.__init__)
+def test_accounting_account_constructor_exists():
+    assert callable(accounting_Account.__init__)
 
 
-def test_accounting::account_constructor_args():
-    sig = inspect.signature(accounting::Account.__init__)
+def test_accounting_account_constructor_args():
+    sig = inspect.signature(accounting_Account.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::account_has_name():
-    assert hasattr(accounting::Account, "name")
+def test_accounting_account_has_name():
+    assert hasattr(accounting_Account, "name")
     descriptor = None
-    for klass in accounting::Account.__mro__:
+    for klass in accounting_Account.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -265,23 +265,23 @@ def test_accounting::account_has_name():
 
 
 
-def test_accounting::report_is_not_abstract():
-    assert not inspect.isabstract(accounting::Report)
+def test_accounting_report_is_not_abstract():
+    assert not inspect.isabstract(accounting_Report)
 
 
-def test_accounting::report_constructor_exists():
-    assert callable(accounting::Report.__init__)
+def test_accounting_report_constructor_exists():
+    assert callable(accounting_Report.__init__)
 
 
-def test_accounting::report_constructor_args():
-    sig = inspect.signature(accounting::Report.__init__)
+def test_accounting_report_constructor_args():
+    sig = inspect.signature(accounting_Report.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::report_has_name():
-    assert hasattr(accounting::Report, "name")
+def test_accounting_report_has_name():
+    assert hasattr(accounting_Report, "name")
     descriptor = None
-    for klass in accounting::Report.__mro__:
+    for klass in accounting_Report.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -299,8 +299,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-accounting::JournalStatement_strategy = st.builds(
-    accounting::JournalStatement,
+accounting_JournalStatement_strategy = st.builds(
+    accounting_JournalStatement,
     amount=
         safe_text,
     date=
@@ -308,103 +308,91 @@ accounting::JournalStatement_strategy = st.builds(
     description=
         safe_text
 )
-accounting::ReportGroup_strategy = st.builds(
-    accounting::ReportGroup,
+accounting_ReportGroup_strategy = st.builds(
+    accounting_ReportGroup,
     name=
         safe_text
 )
 Account_strategy = st.builds(
     Account,
 )
-accounting::PLAccount_strategy = st.builds(
-    accounting::PLAccount,
+accounting_PLAccount_strategy = st.builds(
+    accounting_PLAccount,
 )
-accounting::JournalGroup_strategy = st.builds(
-    accounting::JournalGroup,
+accounting_JournalGroup_strategy = st.builds(
+    accounting_JournalGroup,
     name=
         safe_text
 )
-accounting::BalanceAccount_strategy = st.builds(
-    accounting::BalanceAccount,
+accounting_BalanceAccount_strategy = st.builds(
+    accounting_BalanceAccount,
 )
-accounting::Vat_strategy = st.builds(
-    accounting::Vat,
+accounting_Vat_strategy = st.builds(
+    accounting_Vat,
     name=
         safe_text,
     rate=
         safe_text
 )
-accounting::Accounting_strategy = st.builds(
-    accounting::Accounting,
+accounting_Accounting_strategy = st.builds(
+    accounting_Accounting,
     name=
         safe_text
 )
-accounting::AccountGroup_strategy = st.builds(
-    accounting::AccountGroup,
+accounting_AccountGroup_strategy = st.builds(
+    accounting_AccountGroup,
     name=
         safe_text
 )
-accounting::Account_strategy = st.builds(
-    accounting::Account,
+accounting_Account_strategy = st.builds(
+    accounting_Account,
     name=
         safe_text
 )
-accounting::Report_strategy = st.builds(
-    accounting::Report,
+accounting_Report_strategy = st.builds(
+    accounting_Report,
     name=
         safe_text
 )
 
-@given(instance=accounting::JournalStatement_strategy)
+@given(instance=accounting_JournalStatement_strategy)
 @settings(max_examples=50)
-def test_accounting::journalstatement_instantiation(instance):
-    assert isinstance(instance, accounting::JournalStatement)
-
-@given(instance=accounting::JournalStatement_strategy)
-def test_accounting::journalstatement_amount_type(instance):
-    assert isinstance(instance.amount, str)
+def test_accounting_journalstatement_instantiation(instance):
+    assert isinstance(instance, accounting_JournalStatement)
 
 
-@given(instance=accounting::JournalStatement_strategy)
-def test_accounting::journalstatement_amount_setter(instance):
+
+@given(instance=accounting_JournalStatement_strategy)
+def test_accounting_journalstatement_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
 
-@given(instance=accounting::JournalStatement_strategy)
-def test_accounting::journalstatement_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
-@given(instance=accounting::JournalStatement_strategy)
-def test_accounting::journalstatement_date_setter(instance):
+@given(instance=accounting_JournalStatement_strategy)
+def test_accounting_journalstatement_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=accounting::JournalStatement_strategy)
-def test_accounting::journalstatement_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=accounting::JournalStatement_strategy)
-def test_accounting::journalstatement_description_setter(instance):
+@given(instance=accounting_JournalStatement_strategy)
+def test_accounting_journalstatement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=accounting::ReportGroup_strategy)
+@given(instance=accounting_ReportGroup_strategy)
 @settings(max_examples=50)
-def test_accounting::reportgroup_instantiation(instance):
-    assert isinstance(instance, accounting::ReportGroup)
-
-@given(instance=accounting::ReportGroup_strategy)
-def test_accounting::reportgroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_reportgroup_instantiation(instance):
+    assert isinstance(instance, accounting_ReportGroup)
 
 
-@given(instance=accounting::ReportGroup_strategy)
-def test_accounting::reportgroup_name_setter(instance):
+
+@given(instance=accounting_ReportGroup_strategy)
+def test_accounting_reportgroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -414,119 +402,98 @@ def test_accounting::reportgroup_name_setter(instance):
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=accounting::PLAccount_strategy)
+@given(instance=accounting_PLAccount_strategy)
 @settings(max_examples=50)
-def test_accounting::placcount_instantiation(instance):
-    assert isinstance(instance, accounting::PLAccount)
+def test_accounting_placcount_instantiation(instance):
+    assert isinstance(instance, accounting_PLAccount)
 
-@given(instance=accounting::JournalGroup_strategy)
+@given(instance=accounting_JournalGroup_strategy)
 @settings(max_examples=50)
-def test_accounting::journalgroup_instantiation(instance):
-    assert isinstance(instance, accounting::JournalGroup)
-
-@given(instance=accounting::JournalGroup_strategy)
-def test_accounting::journalgroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_journalgroup_instantiation(instance):
+    assert isinstance(instance, accounting_JournalGroup)
 
 
-@given(instance=accounting::JournalGroup_strategy)
-def test_accounting::journalgroup_name_setter(instance):
+
+@given(instance=accounting_JournalGroup_strategy)
+def test_accounting_journalgroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=accounting::BalanceAccount_strategy)
+@given(instance=accounting_BalanceAccount_strategy)
 @settings(max_examples=50)
-def test_accounting::balanceaccount_instantiation(instance):
-    assert isinstance(instance, accounting::BalanceAccount)
+def test_accounting_balanceaccount_instantiation(instance):
+    assert isinstance(instance, accounting_BalanceAccount)
 
-@given(instance=accounting::Vat_strategy)
+@given(instance=accounting_Vat_strategy)
 @settings(max_examples=50)
-def test_accounting::vat_instantiation(instance):
-    assert isinstance(instance, accounting::Vat)
-
-@given(instance=accounting::Vat_strategy)
-def test_accounting::vat_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_vat_instantiation(instance):
+    assert isinstance(instance, accounting_Vat)
 
 
-@given(instance=accounting::Vat_strategy)
-def test_accounting::vat_name_setter(instance):
+
+@given(instance=accounting_Vat_strategy)
+def test_accounting_vat_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=accounting::Vat_strategy)
-def test_accounting::vat_rate_type(instance):
-    assert isinstance(instance.rate, str)
 
 
-@given(instance=accounting::Vat_strategy)
-def test_accounting::vat_rate_setter(instance):
+@given(instance=accounting_Vat_strategy)
+def test_accounting_vat_rate_setter(instance):
     original = instance.rate
     instance.rate = original
     assert instance.rate == original
 
-@given(instance=accounting::Accounting_strategy)
+@given(instance=accounting_Accounting_strategy)
 @settings(max_examples=50)
-def test_accounting::accounting_instantiation(instance):
-    assert isinstance(instance, accounting::Accounting)
-
-@given(instance=accounting::Accounting_strategy)
-def test_accounting::accounting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_accounting_instantiation(instance):
+    assert isinstance(instance, accounting_Accounting)
 
 
-@given(instance=accounting::Accounting_strategy)
-def test_accounting::accounting_name_setter(instance):
+
+@given(instance=accounting_Accounting_strategy)
+def test_accounting_accounting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=accounting::AccountGroup_strategy)
+@given(instance=accounting_AccountGroup_strategy)
 @settings(max_examples=50)
-def test_accounting::accountgroup_instantiation(instance):
-    assert isinstance(instance, accounting::AccountGroup)
-
-@given(instance=accounting::AccountGroup_strategy)
-def test_accounting::accountgroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_accountgroup_instantiation(instance):
+    assert isinstance(instance, accounting_AccountGroup)
 
 
-@given(instance=accounting::AccountGroup_strategy)
-def test_accounting::accountgroup_name_setter(instance):
+
+@given(instance=accounting_AccountGroup_strategy)
+def test_accounting_accountgroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=accounting::Account_strategy)
+@given(instance=accounting_Account_strategy)
 @settings(max_examples=50)
-def test_accounting::account_instantiation(instance):
-    assert isinstance(instance, accounting::Account)
-
-@given(instance=accounting::Account_strategy)
-def test_accounting::account_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_account_instantiation(instance):
+    assert isinstance(instance, accounting_Account)
 
 
-@given(instance=accounting::Account_strategy)
-def test_accounting::account_name_setter(instance):
+
+@given(instance=accounting_Account_strategy)
+def test_accounting_account_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=accounting::Report_strategy)
+@given(instance=accounting_Report_strategy)
 @settings(max_examples=50)
-def test_accounting::report_instantiation(instance):
-    assert isinstance(instance, accounting::Report)
-
-@given(instance=accounting::Report_strategy)
-def test_accounting::report_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_report_instantiation(instance):
+    assert isinstance(instance, accounting_Report)
 
 
-@given(instance=accounting::Report_strategy)
-def test_accounting::report_name_setter(instance):
+
+@given(instance=accounting_Report_strategy)
+def test_accounting_report_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

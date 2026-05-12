@@ -3,340 +3,86 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mql::UpdateItem,
-    mql::SetClause,
-    mql::UpdateClause,
-    mql::FromEntry,
-    mql::OrderItem,
-    mql::SelectFromClause,
-    ExpressionTerm,
-    MQuery,
-    mql::DeleteStatement,
-    mql::UpdateStatement,
-    mql::SelectStatement,
-    mql::WhereClause,
-    mql::NamedQuery,
-    mql::MQuery,
-    mql::Import,
-    mql::QueryModule,
+from python_code import (
     Value,
-    mql::StringExpression,
-    mql::DateTimeExpression,
-    mql::NullExpression,
-    mql::BooleanExpression,
-    mql::IntegerExpression,
-    mql::Function,
+    mql_NullExpression,
+    mql_BooleanExpression,
+    mql_DateTimeExpression,
+    mql_StringExpression,
+    mql_IntegerExpression,
+    mql_Function,
     Variable,
-    mql::Value,
-    mql::ParameterExpression,
+    mql_ParameterExpression,
     InExpression,
-    mql::InQueryExpression,
-    mql::InSeqExpression,
-    mql::Variable,
+    mql_InQueryExpression,
+    mql_InSeqExpression,
     Expression,
-    mql::ExistsExpression,
-    mql::NullComparisonExpression,
-    mql::OrExpression,
-    mql::EmptyComparisonExpression,
-    mql::AndExpression,
-    mql::SomeExpression,
-    mql::BetweenExpression,
-    mql::InExpression,
-    mql::AllExpression,
-    mql::AnyExpression,
-    mql::CollectionExpression,
-    mql::ExpressionTerm,
-    mql::LikeExpression,
-    mql::OperatorExpression,
+    mql_NullComparisonExpression,
+    mql_AllExpression,
+    mql_AnyExpression,
+    mql_ExpressionTerm,
+    mql_OrExpression,
+    mql_EmptyComparisonExpression,
+    mql_BetweenExpression,
+    mql_ExistsExpression,
+    mql_AndExpression,
+    mql_SomeExpression,
+    mql_InExpression,
+    mql_CollectionExpression,
+    mql_LikeExpression,
+    mql_OperatorExpression,
     FromJoin,
-    mql::LeftJoin,
-    mql::InnerJoin,
-    mql::Join,
-    mql::SelectClause,
-    mql::FromJoin,
+    mql_LeftJoin,
+    mql_InnerJoin,
+    mql_Join,
+    mql_SelectClause,
+    mql_FromJoin,
     FromEntry,
-    mql::FromCollection,
-    mql::FromClass,
-    mql::VariableDeclaration,
+    mql_FromCollection,
+    mql_FromClass,
+    mql_VariableDeclaration,
     SelectAggregateExpression,
-    mql::CountAggregate,
-    mql::MaxAggregate,
-    mql::SumAggregate,
-    mql::MinAggregate,
-    mql::AvgAggregate,
+    mql_MinAggregate,
+    mql_SumAggregate,
+    mql_MaxAggregate,
+    mql_CountAggregate,
+    mql_AvgAggregate,
     SelectExpression,
-    mql::AliasAttributeExpression,
-    mql::SelectConstructorExpression,
-    mql::SelectAggregateExpression,
-    mql::SelectExpression,
-    mql::Expression,
-    mql::OrderClause,
-    mql::HavingClause,
-    mql::FromClause,
-    mql::DeleteClause,
+    mql_SelectConstructorExpression,
+    mql_SelectAggregateExpression,
+    mql_SelectExpression,
+    mql_Expression,
+    mql_OrderClause,
+    mql_HavingClause,
+    mql_FromClause,
+    mql_DeleteClause,
+    mql_Value,
+    mql_AliasAttributeExpression,
+    mql_UpdateItem,
+    mql_SetClause,
+    mql_UpdateClause,
+    mql_FromEntry,
+    mql_OrderItem,
+    mql_SelectFromClause,
+    ExpressionTerm,
+    mql_Variable,
+    MQuery,
+    mql_DeleteStatement,
+    mql_UpdateStatement,
+    mql_SelectStatement,
+    mql_WhereClause,
+    mql_NamedQuery,
+    mql_MQuery,
+    mql_Import,
+    mql_QueryModule,
     Operator,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_mql::updateitem_is_not_abstract():
-    assert not inspect.isabstract(mql::UpdateItem)
-
-
-def test_mql::updateitem_constructor_exists():
-    assert callable(mql::UpdateItem.__init__)
-
-
-def test_mql::updateitem_constructor_args():
-    sig = inspect.signature(mql::UpdateItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::setclause_is_not_abstract():
-    assert not inspect.isabstract(mql::SetClause)
-
-
-def test_mql::setclause_constructor_exists():
-    assert callable(mql::SetClause.__init__)
-
-
-def test_mql::setclause_constructor_args():
-    sig = inspect.signature(mql::SetClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::updateclause_is_not_abstract():
-    assert not inspect.isabstract(mql::UpdateClause)
-
-
-def test_mql::updateclause_constructor_exists():
-    assert callable(mql::UpdateClause.__init__)
-
-
-def test_mql::updateclause_constructor_args():
-    sig = inspect.signature(mql::UpdateClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::fromentry_is_not_abstract():
-    assert not inspect.isabstract(mql::FromEntry)
-
-
-def test_mql::fromentry_constructor_exists():
-    assert callable(mql::FromEntry.__init__)
-
-
-def test_mql::fromentry_constructor_args():
-    sig = inspect.signature(mql::FromEntry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::orderitem_is_not_abstract():
-    assert not inspect.isabstract(mql::OrderItem)
-
-
-def test_mql::orderitem_constructor_exists():
-    assert callable(mql::OrderItem.__init__)
-
-
-def test_mql::orderitem_constructor_args():
-    sig = inspect.signature(mql::OrderItem.__init__)
-    params = list(sig.parameters.keys())
-    assert "feature" in params, "Missing parameter 'feature'"
-
-def test_mql::orderitem_has_feature():
-    assert hasattr(mql::OrderItem, "feature")
-    descriptor = None
-    for klass in mql::OrderItem.__mro__:
-        if "feature" in klass.__dict__:
-            descriptor = klass.__dict__["feature"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mql::selectfromclause_is_not_abstract():
-    assert not inspect.isabstract(mql::SelectFromClause)
-
-
-def test_mql::selectfromclause_constructor_exists():
-    assert callable(mql::SelectFromClause.__init__)
-
-
-def test_mql::selectfromclause_constructor_args():
-    sig = inspect.signature(mql::SelectFromClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressionterm_is_not_abstract():
-    assert not inspect.isabstract(ExpressionTerm)
-
-
-def test_expressionterm_constructor_exists():
-    assert callable(ExpressionTerm.__init__)
-
-
-def test_expressionterm_constructor_args():
-    sig = inspect.signature(ExpressionTerm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mquery_is_not_abstract():
-    assert not inspect.isabstract(MQuery)
-
-
-def test_mquery_constructor_exists():
-    assert callable(MQuery.__init__)
-
-
-def test_mquery_constructor_args():
-    sig = inspect.signature(MQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::deletestatement_is_not_abstract():
-    assert not inspect.isabstract(mql::DeleteStatement)
-
-
-def test_mql::deletestatement_constructor_exists():
-    assert callable(mql::DeleteStatement.__init__)
-
-
-def test_mql::deletestatement_constructor_args():
-    sig = inspect.signature(mql::DeleteStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::updatestatement_is_not_abstract():
-    assert not inspect.isabstract(mql::UpdateStatement)
-
-
-def test_mql::updatestatement_constructor_exists():
-    assert callable(mql::UpdateStatement.__init__)
-
-
-def test_mql::updatestatement_constructor_args():
-    sig = inspect.signature(mql::UpdateStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::selectstatement_is_not_abstract():
-    assert not inspect.isabstract(mql::SelectStatement)
-
-
-def test_mql::selectstatement_constructor_exists():
-    assert callable(mql::SelectStatement.__init__)
-
-
-def test_mql::selectstatement_constructor_args():
-    sig = inspect.signature(mql::SelectStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::whereclause_is_not_abstract():
-    assert not inspect.isabstract(mql::WhereClause)
-
-
-def test_mql::whereclause_constructor_exists():
-    assert callable(mql::WhereClause.__init__)
-
-
-def test_mql::whereclause_constructor_args():
-    sig = inspect.signature(mql::WhereClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::namedquery_is_not_abstract():
-    assert not inspect.isabstract(mql::NamedQuery)
-
-
-def test_mql::namedquery_constructor_exists():
-    assert callable(mql::NamedQuery.__init__)
-
-
-def test_mql::namedquery_constructor_args():
-    sig = inspect.signature(mql::NamedQuery.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mql::namedquery_has_name():
-    assert hasattr(mql::NamedQuery, "name")
-    descriptor = None
-    for klass in mql::NamedQuery.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mql::mquery_is_not_abstract():
-    assert not inspect.isabstract(mql::MQuery)
-
-
-def test_mql::mquery_constructor_exists():
-    assert callable(mql::MQuery.__init__)
-
-
-def test_mql::mquery_constructor_args():
-    sig = inspect.signature(mql::MQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::import_is_not_abstract():
-    assert not inspect.isabstract(mql::Import)
-
-
-def test_mql::import_constructor_exists():
-    assert callable(mql::Import.__init__)
-
-
-def test_mql::import_constructor_args():
-    sig = inspect.signature(mql::Import.__init__)
-    params = list(sig.parameters.keys())
-    assert "importURI" in params, "Missing parameter 'importURI'"
-
-def test_mql::import_has_importURI():
-    assert hasattr(mql::Import, "importURI")
-    descriptor = None
-    for klass in mql::Import.__mro__:
-        if "importURI" in klass.__dict__:
-            descriptor = klass.__dict__["importURI"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mql::querymodule_is_not_abstract():
-    assert not inspect.isabstract(mql::QueryModule)
-
-
-def test_mql::querymodule_constructor_exists():
-    assert callable(mql::QueryModule.__init__)
-
-
-def test_mql::querymodule_constructor_args():
-    sig = inspect.signature(mql::QueryModule.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -354,23 +100,23 @@ def test_value_constructor_args():
 
 
 
-def test_mql::stringexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::StringExpression)
+def test_mql_nullexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_NullExpression)
 
 
-def test_mql::stringexpression_constructor_exists():
-    assert callable(mql::StringExpression.__init__)
+def test_mql_nullexpression_constructor_exists():
+    assert callable(mql_NullExpression.__init__)
 
 
-def test_mql::stringexpression_constructor_args():
-    sig = inspect.signature(mql::StringExpression.__init__)
+def test_mql_nullexpression_constructor_args():
+    sig = inspect.signature(mql_NullExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mql::stringexpression_has_value():
-    assert hasattr(mql::StringExpression, "value")
+def test_mql_nullexpression_has_value():
+    assert hasattr(mql_NullExpression, "value")
     descriptor = None
-    for klass in mql::StringExpression.__mro__:
+    for klass in mql_NullExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -378,23 +124,23 @@ def test_mql::stringexpression_has_value():
 
 
 
-def test_mql::datetimeexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::DateTimeExpression)
+def test_mql_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_BooleanExpression)
 
 
-def test_mql::datetimeexpression_constructor_exists():
-    assert callable(mql::DateTimeExpression.__init__)
+def test_mql_booleanexpression_constructor_exists():
+    assert callable(mql_BooleanExpression.__init__)
 
 
-def test_mql::datetimeexpression_constructor_args():
-    sig = inspect.signature(mql::DateTimeExpression.__init__)
+def test_mql_booleanexpression_constructor_args():
+    sig = inspect.signature(mql_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mql::datetimeexpression_has_value():
-    assert hasattr(mql::DateTimeExpression, "value")
+def test_mql_booleanexpression_has_value():
+    assert hasattr(mql_BooleanExpression, "value")
     descriptor = None
-    for klass in mql::DateTimeExpression.__mro__:
+    for klass in mql_BooleanExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -402,23 +148,23 @@ def test_mql::datetimeexpression_has_value():
 
 
 
-def test_mql::nullexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::NullExpression)
+def test_mql_datetimeexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_DateTimeExpression)
 
 
-def test_mql::nullexpression_constructor_exists():
-    assert callable(mql::NullExpression.__init__)
+def test_mql_datetimeexpression_constructor_exists():
+    assert callable(mql_DateTimeExpression.__init__)
 
 
-def test_mql::nullexpression_constructor_args():
-    sig = inspect.signature(mql::NullExpression.__init__)
+def test_mql_datetimeexpression_constructor_args():
+    sig = inspect.signature(mql_DateTimeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mql::nullexpression_has_value():
-    assert hasattr(mql::NullExpression, "value")
+def test_mql_datetimeexpression_has_value():
+    assert hasattr(mql_DateTimeExpression, "value")
     descriptor = None
-    for klass in mql::NullExpression.__mro__:
+    for klass in mql_DateTimeExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -426,23 +172,23 @@ def test_mql::nullexpression_has_value():
 
 
 
-def test_mql::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::BooleanExpression)
+def test_mql_stringexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_StringExpression)
 
 
-def test_mql::booleanexpression_constructor_exists():
-    assert callable(mql::BooleanExpression.__init__)
+def test_mql_stringexpression_constructor_exists():
+    assert callable(mql_StringExpression.__init__)
 
 
-def test_mql::booleanexpression_constructor_args():
-    sig = inspect.signature(mql::BooleanExpression.__init__)
+def test_mql_stringexpression_constructor_args():
+    sig = inspect.signature(mql_StringExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mql::booleanexpression_has_value():
-    assert hasattr(mql::BooleanExpression, "value")
+def test_mql_stringexpression_has_value():
+    assert hasattr(mql_StringExpression, "value")
     descriptor = None
-    for klass in mql::BooleanExpression.__mro__:
+    for klass in mql_StringExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -450,23 +196,23 @@ def test_mql::booleanexpression_has_value():
 
 
 
-def test_mql::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::IntegerExpression)
+def test_mql_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_IntegerExpression)
 
 
-def test_mql::integerexpression_constructor_exists():
-    assert callable(mql::IntegerExpression.__init__)
+def test_mql_integerexpression_constructor_exists():
+    assert callable(mql_IntegerExpression.__init__)
 
 
-def test_mql::integerexpression_constructor_args():
-    sig = inspect.signature(mql::IntegerExpression.__init__)
+def test_mql_integerexpression_constructor_args():
+    sig = inspect.signature(mql_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mql::integerexpression_has_value():
-    assert hasattr(mql::IntegerExpression, "value")
+def test_mql_integerexpression_has_value():
+    assert hasattr(mql_IntegerExpression, "value")
     descriptor = None
-    for klass in mql::IntegerExpression.__mro__:
+    for klass in mql_IntegerExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -474,23 +220,23 @@ def test_mql::integerexpression_has_value():
 
 
 
-def test_mql::function_is_not_abstract():
-    assert not inspect.isabstract(mql::Function)
+def test_mql_function_is_not_abstract():
+    assert not inspect.isabstract(mql_Function)
 
 
-def test_mql::function_constructor_exists():
-    assert callable(mql::Function.__init__)
+def test_mql_function_constructor_exists():
+    assert callable(mql_Function.__init__)
 
 
-def test_mql::function_constructor_args():
-    sig = inspect.signature(mql::Function.__init__)
+def test_mql_function_constructor_args():
+    sig = inspect.signature(mql_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mql::function_has_name():
-    assert hasattr(mql::Function, "name")
+def test_mql_function_has_name():
+    assert hasattr(mql_Function, "name")
     descriptor = None
-    for klass in mql::Function.__mro__:
+    for klass in mql_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -512,37 +258,23 @@ def test_variable_constructor_args():
 
 
 
-def test_mql::value_is_not_abstract():
-    assert not inspect.isabstract(mql::Value)
+def test_mql_parameterexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_ParameterExpression)
 
 
-def test_mql::value_constructor_exists():
-    assert callable(mql::Value.__init__)
+def test_mql_parameterexpression_constructor_exists():
+    assert callable(mql_ParameterExpression.__init__)
 
 
-def test_mql::value_constructor_args():
-    sig = inspect.signature(mql::Value.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::parameterexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::ParameterExpression)
-
-
-def test_mql::parameterexpression_constructor_exists():
-    assert callable(mql::ParameterExpression.__init__)
-
-
-def test_mql::parameterexpression_constructor_args():
-    sig = inspect.signature(mql::ParameterExpression.__init__)
+def test_mql_parameterexpression_constructor_args():
+    sig = inspect.signature(mql_ParameterExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mql::parameterexpression_has_name():
-    assert hasattr(mql::ParameterExpression, "name")
+def test_mql_parameterexpression_has_name():
+    assert hasattr(mql_ParameterExpression, "name")
     descriptor = None
-    for klass in mql::ParameterExpression.__mro__:
+    for klass in mql_ParameterExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -564,44 +296,30 @@ def test_inexpression_constructor_args():
 
 
 
-def test_mql::inqueryexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::InQueryExpression)
+def test_mql_inqueryexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_InQueryExpression)
 
 
-def test_mql::inqueryexpression_constructor_exists():
-    assert callable(mql::InQueryExpression.__init__)
+def test_mql_inqueryexpression_constructor_exists():
+    assert callable(mql_InQueryExpression.__init__)
 
 
-def test_mql::inqueryexpression_constructor_args():
-    sig = inspect.signature(mql::InQueryExpression.__init__)
+def test_mql_inqueryexpression_constructor_args():
+    sig = inspect.signature(mql_InQueryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::inseqexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::InSeqExpression)
+def test_mql_inseqexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_InSeqExpression)
 
 
-def test_mql::inseqexpression_constructor_exists():
-    assert callable(mql::InSeqExpression.__init__)
+def test_mql_inseqexpression_constructor_exists():
+    assert callable(mql_InSeqExpression.__init__)
 
 
-def test_mql::inseqexpression_constructor_args():
-    sig = inspect.signature(mql::InSeqExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::variable_is_not_abstract():
-    assert not inspect.isabstract(mql::Variable)
-
-
-def test_mql::variable_constructor_exists():
-    assert callable(mql::Variable.__init__)
-
-
-def test_mql::variable_constructor_args():
-    sig = inspect.signature(mql::Variable.__init__)
+def test_mql_inseqexpression_constructor_args():
+    sig = inspect.signature(mql_InSeqExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -620,23 +338,23 @@ def test_expression_constructor_args():
 
 
 
-def test_mql::existsexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::ExistsExpression)
+def test_mql_nullcomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_NullComparisonExpression)
 
 
-def test_mql::existsexpression_constructor_exists():
-    assert callable(mql::ExistsExpression.__init__)
+def test_mql_nullcomparisonexpression_constructor_exists():
+    assert callable(mql_NullComparisonExpression.__init__)
 
 
-def test_mql::existsexpression_constructor_args():
-    sig = inspect.signature(mql::ExistsExpression.__init__)
+def test_mql_nullcomparisonexpression_constructor_args():
+    sig = inspect.signature(mql_NullComparisonExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::existsexpression_has_isNot():
-    assert hasattr(mql::ExistsExpression, "isNot")
+def test_mql_nullcomparisonexpression_has_isNot():
+    assert hasattr(mql_NullComparisonExpression, "isNot")
     descriptor = None
-    for klass in mql::ExistsExpression.__mro__:
+    for klass in mql_NullComparisonExpression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -644,23 +362,79 @@ def test_mql::existsexpression_has_isNot():
 
 
 
-def test_mql::nullcomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::NullComparisonExpression)
+def test_mql_allexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_AllExpression)
 
 
-def test_mql::nullcomparisonexpression_constructor_exists():
-    assert callable(mql::NullComparisonExpression.__init__)
+def test_mql_allexpression_constructor_exists():
+    assert callable(mql_AllExpression.__init__)
 
 
-def test_mql::nullcomparisonexpression_constructor_args():
-    sig = inspect.signature(mql::NullComparisonExpression.__init__)
+def test_mql_allexpression_constructor_args():
+    sig = inspect.signature(mql_AllExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_anyexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_AnyExpression)
+
+
+def test_mql_anyexpression_constructor_exists():
+    assert callable(mql_AnyExpression.__init__)
+
+
+def test_mql_anyexpression_constructor_args():
+    sig = inspect.signature(mql_AnyExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_expressionterm_is_not_abstract():
+    assert not inspect.isabstract(mql_ExpressionTerm)
+
+
+def test_mql_expressionterm_constructor_exists():
+    assert callable(mql_ExpressionTerm.__init__)
+
+
+def test_mql_expressionterm_constructor_args():
+    sig = inspect.signature(mql_ExpressionTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_orexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_OrExpression)
+
+
+def test_mql_orexpression_constructor_exists():
+    assert callable(mql_OrExpression.__init__)
+
+
+def test_mql_orexpression_constructor_args():
+    sig = inspect.signature(mql_OrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_emptycomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_EmptyComparisonExpression)
+
+
+def test_mql_emptycomparisonexpression_constructor_exists():
+    assert callable(mql_EmptyComparisonExpression.__init__)
+
+
+def test_mql_emptycomparisonexpression_constructor_args():
+    sig = inspect.signature(mql_EmptyComparisonExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::nullcomparisonexpression_has_isNot():
-    assert hasattr(mql::NullComparisonExpression, "isNot")
+def test_mql_emptycomparisonexpression_has_isNot():
+    assert hasattr(mql_EmptyComparisonExpression, "isNot")
     descriptor = None
-    for klass in mql::NullComparisonExpression.__mro__:
+    for klass in mql_EmptyComparisonExpression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -668,37 +442,23 @@ def test_mql::nullcomparisonexpression_has_isNot():
 
 
 
-def test_mql::orexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::OrExpression)
+def test_mql_betweenexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_BetweenExpression)
 
 
-def test_mql::orexpression_constructor_exists():
-    assert callable(mql::OrExpression.__init__)
+def test_mql_betweenexpression_constructor_exists():
+    assert callable(mql_BetweenExpression.__init__)
 
 
-def test_mql::orexpression_constructor_args():
-    sig = inspect.signature(mql::OrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::emptycomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::EmptyComparisonExpression)
-
-
-def test_mql::emptycomparisonexpression_constructor_exists():
-    assert callable(mql::EmptyComparisonExpression.__init__)
-
-
-def test_mql::emptycomparisonexpression_constructor_args():
-    sig = inspect.signature(mql::EmptyComparisonExpression.__init__)
+def test_mql_betweenexpression_constructor_args():
+    sig = inspect.signature(mql_BetweenExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::emptycomparisonexpression_has_isNot():
-    assert hasattr(mql::EmptyComparisonExpression, "isNot")
+def test_mql_betweenexpression_has_isNot():
+    assert hasattr(mql_BetweenExpression, "isNot")
     descriptor = None
-    for klass in mql::EmptyComparisonExpression.__mro__:
+    for klass in mql_BetweenExpression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -706,51 +466,23 @@ def test_mql::emptycomparisonexpression_has_isNot():
 
 
 
-def test_mql::andexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::AndExpression)
+def test_mql_existsexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_ExistsExpression)
 
 
-def test_mql::andexpression_constructor_exists():
-    assert callable(mql::AndExpression.__init__)
+def test_mql_existsexpression_constructor_exists():
+    assert callable(mql_ExistsExpression.__init__)
 
 
-def test_mql::andexpression_constructor_args():
-    sig = inspect.signature(mql::AndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::someexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::SomeExpression)
-
-
-def test_mql::someexpression_constructor_exists():
-    assert callable(mql::SomeExpression.__init__)
-
-
-def test_mql::someexpression_constructor_args():
-    sig = inspect.signature(mql::SomeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::betweenexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::BetweenExpression)
-
-
-def test_mql::betweenexpression_constructor_exists():
-    assert callable(mql::BetweenExpression.__init__)
-
-
-def test_mql::betweenexpression_constructor_args():
-    sig = inspect.signature(mql::BetweenExpression.__init__)
+def test_mql_existsexpression_constructor_args():
+    sig = inspect.signature(mql_ExistsExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::betweenexpression_has_isNot():
-    assert hasattr(mql::BetweenExpression, "isNot")
+def test_mql_existsexpression_has_isNot():
+    assert hasattr(mql_ExistsExpression, "isNot")
     descriptor = None
-    for klass in mql::BetweenExpression.__mro__:
+    for klass in mql_ExistsExpression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -758,23 +490,51 @@ def test_mql::betweenexpression_has_isNot():
 
 
 
-def test_mql::inexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::InExpression)
+def test_mql_andexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_AndExpression)
 
 
-def test_mql::inexpression_constructor_exists():
-    assert callable(mql::InExpression.__init__)
+def test_mql_andexpression_constructor_exists():
+    assert callable(mql_AndExpression.__init__)
 
 
-def test_mql::inexpression_constructor_args():
-    sig = inspect.signature(mql::InExpression.__init__)
+def test_mql_andexpression_constructor_args():
+    sig = inspect.signature(mql_AndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_someexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_SomeExpression)
+
+
+def test_mql_someexpression_constructor_exists():
+    assert callable(mql_SomeExpression.__init__)
+
+
+def test_mql_someexpression_constructor_args():
+    sig = inspect.signature(mql_SomeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_inexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_InExpression)
+
+
+def test_mql_inexpression_constructor_exists():
+    assert callable(mql_InExpression.__init__)
+
+
+def test_mql_inexpression_constructor_args():
+    sig = inspect.signature(mql_InExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::inexpression_has_isNot():
-    assert hasattr(mql::InExpression, "isNot")
+def test_mql_inexpression_has_isNot():
+    assert hasattr(mql_InExpression, "isNot")
     descriptor = None
-    for klass in mql::InExpression.__mro__:
+    for klass in mql_InExpression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -782,51 +542,23 @@ def test_mql::inexpression_has_isNot():
 
 
 
-def test_mql::allexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::AllExpression)
+def test_mql_collectionexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_CollectionExpression)
 
 
-def test_mql::allexpression_constructor_exists():
-    assert callable(mql::AllExpression.__init__)
+def test_mql_collectionexpression_constructor_exists():
+    assert callable(mql_CollectionExpression.__init__)
 
 
-def test_mql::allexpression_constructor_args():
-    sig = inspect.signature(mql::AllExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::anyexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::AnyExpression)
-
-
-def test_mql::anyexpression_constructor_exists():
-    assert callable(mql::AnyExpression.__init__)
-
-
-def test_mql::anyexpression_constructor_args():
-    sig = inspect.signature(mql::AnyExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mql::collectionexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::CollectionExpression)
-
-
-def test_mql::collectionexpression_constructor_exists():
-    assert callable(mql::CollectionExpression.__init__)
-
-
-def test_mql::collectionexpression_constructor_args():
-    sig = inspect.signature(mql::CollectionExpression.__init__)
+def test_mql_collectionexpression_constructor_args():
+    sig = inspect.signature(mql_CollectionExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::collectionexpression_has_isNot():
-    assert hasattr(mql::CollectionExpression, "isNot")
+def test_mql_collectionexpression_has_isNot():
+    assert hasattr(mql_CollectionExpression, "isNot")
     descriptor = None
-    for klass in mql::CollectionExpression.__mro__:
+    for klass in mql_CollectionExpression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -834,71 +566,57 @@ def test_mql::collectionexpression_has_isNot():
 
 
 
-def test_mql::expressionterm_is_not_abstract():
-    assert not inspect.isabstract(mql::ExpressionTerm)
+def test_mql_likeexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_LikeExpression)
 
 
-def test_mql::expressionterm_constructor_exists():
-    assert callable(mql::ExpressionTerm.__init__)
+def test_mql_likeexpression_constructor_exists():
+    assert callable(mql_LikeExpression.__init__)
 
 
-def test_mql::expressionterm_constructor_args():
-    sig = inspect.signature(mql::ExpressionTerm.__init__)
+def test_mql_likeexpression_constructor_args():
+    sig = inspect.signature(mql_LikeExpression.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_mql::likeexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::LikeExpression)
-
-
-def test_mql::likeexpression_constructor_exists():
-    assert callable(mql::LikeExpression.__init__)
-
-
-def test_mql::likeexpression_constructor_args():
-    sig = inspect.signature(mql::LikeExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "isNot" in params, "Missing parameter 'isNot'"
     assert "pattern" in params, "Missing parameter 'pattern'"
+    assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_mql::likeexpression_has_isNot():
-    assert hasattr(mql::LikeExpression, "isNot")
+def test_mql_likeexpression_has_pattern():
+    assert hasattr(mql_LikeExpression, "pattern")
     descriptor = None
-    for klass in mql::LikeExpression.__mro__:
-        if "isNot" in klass.__dict__:
-            descriptor = klass.__dict__["isNot"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mql::likeexpression_has_pattern():
-    assert hasattr(mql::LikeExpression, "pattern")
-    descriptor = None
-    for klass in mql::LikeExpression.__mro__:
+    for klass in mql_LikeExpression.__mro__:
         if "pattern" in klass.__dict__:
             descriptor = klass.__dict__["pattern"]
             break
     assert isinstance(descriptor, property)
 
+def test_mql_likeexpression_has_isNot():
+    assert hasattr(mql_LikeExpression, "isNot")
+    descriptor = None
+    for klass in mql_LikeExpression.__mro__:
+        if "isNot" in klass.__dict__:
+            descriptor = klass.__dict__["isNot"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mql::operatorexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::OperatorExpression)
+
+def test_mql_operatorexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_OperatorExpression)
 
 
-def test_mql::operatorexpression_constructor_exists():
-    assert callable(mql::OperatorExpression.__init__)
+def test_mql_operatorexpression_constructor_exists():
+    assert callable(mql_OperatorExpression.__init__)
 
 
-def test_mql::operatorexpression_constructor_args():
-    sig = inspect.signature(mql::OperatorExpression.__init__)
+def test_mql_operatorexpression_constructor_args():
+    sig = inspect.signature(mql_OperatorExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_mql::operatorexpression_has_operator():
-    assert hasattr(mql::OperatorExpression, "operator")
+def test_mql_operatorexpression_has_operator():
+    assert hasattr(mql_OperatorExpression, "operator")
     descriptor = None
-    for klass in mql::OperatorExpression.__mro__:
+    for klass in mql_OperatorExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -920,23 +638,23 @@ def test_fromjoin_constructor_args():
 
 
 
-def test_mql::leftjoin_is_not_abstract():
-    assert not inspect.isabstract(mql::LeftJoin)
+def test_mql_leftjoin_is_not_abstract():
+    assert not inspect.isabstract(mql_LeftJoin)
 
 
-def test_mql::leftjoin_constructor_exists():
-    assert callable(mql::LeftJoin.__init__)
+def test_mql_leftjoin_constructor_exists():
+    assert callable(mql_LeftJoin.__init__)
 
 
-def test_mql::leftjoin_constructor_args():
-    sig = inspect.signature(mql::LeftJoin.__init__)
+def test_mql_leftjoin_constructor_args():
+    sig = inspect.signature(mql_LeftJoin.__init__)
     params = list(sig.parameters.keys())
     assert "isOuter" in params, "Missing parameter 'isOuter'"
 
-def test_mql::leftjoin_has_isOuter():
-    assert hasattr(mql::LeftJoin, "isOuter")
+def test_mql_leftjoin_has_isOuter():
+    assert hasattr(mql_LeftJoin, "isOuter")
     descriptor = None
-    for klass in mql::LeftJoin.__mro__:
+    for klass in mql_LeftJoin.__mro__:
         if "isOuter" in klass.__dict__:
             descriptor = klass.__dict__["isOuter"]
             break
@@ -944,51 +662,51 @@ def test_mql::leftjoin_has_isOuter():
 
 
 
-def test_mql::innerjoin_is_not_abstract():
-    assert not inspect.isabstract(mql::InnerJoin)
+def test_mql_innerjoin_is_not_abstract():
+    assert not inspect.isabstract(mql_InnerJoin)
 
 
-def test_mql::innerjoin_constructor_exists():
-    assert callable(mql::InnerJoin.__init__)
+def test_mql_innerjoin_constructor_exists():
+    assert callable(mql_InnerJoin.__init__)
 
 
-def test_mql::innerjoin_constructor_args():
-    sig = inspect.signature(mql::InnerJoin.__init__)
+def test_mql_innerjoin_constructor_args():
+    sig = inspect.signature(mql_InnerJoin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::join_is_not_abstract():
-    assert not inspect.isabstract(mql::Join)
+def test_mql_join_is_not_abstract():
+    assert not inspect.isabstract(mql_Join)
 
 
-def test_mql::join_constructor_exists():
-    assert callable(mql::Join.__init__)
+def test_mql_join_constructor_exists():
+    assert callable(mql_Join.__init__)
 
 
-def test_mql::join_constructor_args():
-    sig = inspect.signature(mql::Join.__init__)
+def test_mql_join_constructor_args():
+    sig = inspect.signature(mql_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::selectclause_is_not_abstract():
-    assert not inspect.isabstract(mql::SelectClause)
+def test_mql_selectclause_is_not_abstract():
+    assert not inspect.isabstract(mql_SelectClause)
 
 
-def test_mql::selectclause_constructor_exists():
-    assert callable(mql::SelectClause.__init__)
+def test_mql_selectclause_constructor_exists():
+    assert callable(mql_SelectClause.__init__)
 
 
-def test_mql::selectclause_constructor_args():
-    sig = inspect.signature(mql::SelectClause.__init__)
+def test_mql_selectclause_constructor_args():
+    sig = inspect.signature(mql_SelectClause.__init__)
     params = list(sig.parameters.keys())
     assert "isDistinct" in params, "Missing parameter 'isDistinct'"
 
-def test_mql::selectclause_has_isDistinct():
-    assert hasattr(mql::SelectClause, "isDistinct")
+def test_mql_selectclause_has_isDistinct():
+    assert hasattr(mql_SelectClause, "isDistinct")
     descriptor = None
-    for klass in mql::SelectClause.__mro__:
+    for klass in mql_SelectClause.__mro__:
         if "isDistinct" in klass.__dict__:
             descriptor = klass.__dict__["isDistinct"]
             break
@@ -996,23 +714,23 @@ def test_mql::selectclause_has_isDistinct():
 
 
 
-def test_mql::fromjoin_is_not_abstract():
-    assert not inspect.isabstract(mql::FromJoin)
+def test_mql_fromjoin_is_not_abstract():
+    assert not inspect.isabstract(mql_FromJoin)
 
 
-def test_mql::fromjoin_constructor_exists():
-    assert callable(mql::FromJoin.__init__)
+def test_mql_fromjoin_constructor_exists():
+    assert callable(mql_FromJoin.__init__)
 
 
-def test_mql::fromjoin_constructor_args():
-    sig = inspect.signature(mql::FromJoin.__init__)
+def test_mql_fromjoin_constructor_args():
+    sig = inspect.signature(mql_FromJoin.__init__)
     params = list(sig.parameters.keys())
     assert "isFetch" in params, "Missing parameter 'isFetch'"
 
-def test_mql::fromjoin_has_isFetch():
-    assert hasattr(mql::FromJoin, "isFetch")
+def test_mql_fromjoin_has_isFetch():
+    assert hasattr(mql_FromJoin, "isFetch")
     descriptor = None
-    for klass in mql::FromJoin.__mro__:
+    for klass in mql_FromJoin.__mro__:
         if "isFetch" in klass.__dict__:
             descriptor = klass.__dict__["isFetch"]
             break
@@ -1034,37 +752,37 @@ def test_fromentry_constructor_args():
 
 
 
-def test_mql::fromcollection_is_not_abstract():
-    assert not inspect.isabstract(mql::FromCollection)
+def test_mql_fromcollection_is_not_abstract():
+    assert not inspect.isabstract(mql_FromCollection)
 
 
-def test_mql::fromcollection_constructor_exists():
-    assert callable(mql::FromCollection.__init__)
+def test_mql_fromcollection_constructor_exists():
+    assert callable(mql_FromCollection.__init__)
 
 
-def test_mql::fromcollection_constructor_args():
-    sig = inspect.signature(mql::FromCollection.__init__)
+def test_mql_fromcollection_constructor_args():
+    sig = inspect.signature(mql_FromCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::fromclass_is_not_abstract():
-    assert not inspect.isabstract(mql::FromClass)
+def test_mql_fromclass_is_not_abstract():
+    assert not inspect.isabstract(mql_FromClass)
 
 
-def test_mql::fromclass_constructor_exists():
-    assert callable(mql::FromClass.__init__)
+def test_mql_fromclass_constructor_exists():
+    assert callable(mql_FromClass.__init__)
 
 
-def test_mql::fromclass_constructor_args():
-    sig = inspect.signature(mql::FromClass.__init__)
+def test_mql_fromclass_constructor_args():
+    sig = inspect.signature(mql_FromClass.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_mql::fromclass_has_type():
-    assert hasattr(mql::FromClass, "type")
+def test_mql_fromclass_has_type():
+    assert hasattr(mql_FromClass, "type")
     descriptor = None
-    for klass in mql::FromClass.__mro__:
+    for klass in mql_FromClass.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1072,23 +790,23 @@ def test_mql::fromclass_has_type():
 
 
 
-def test_mql::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(mql::VariableDeclaration)
+def test_mql_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(mql_VariableDeclaration)
 
 
-def test_mql::variabledeclaration_constructor_exists():
-    assert callable(mql::VariableDeclaration.__init__)
+def test_mql_variabledeclaration_constructor_exists():
+    assert callable(mql_VariableDeclaration.__init__)
 
 
-def test_mql::variabledeclaration_constructor_args():
-    sig = inspect.signature(mql::VariableDeclaration.__init__)
+def test_mql_variabledeclaration_constructor_args():
+    sig = inspect.signature(mql_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mql::variabledeclaration_has_name():
-    assert hasattr(mql::VariableDeclaration, "name")
+def test_mql_variabledeclaration_has_name():
+    assert hasattr(mql_VariableDeclaration, "name")
     descriptor = None
-    for klass in mql::VariableDeclaration.__mro__:
+    for klass in mql_VariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1110,72 +828,72 @@ def test_selectaggregateexpression_constructor_args():
 
 
 
-def test_mql::countaggregate_is_not_abstract():
-    assert not inspect.isabstract(mql::CountAggregate)
+def test_mql_minaggregate_is_not_abstract():
+    assert not inspect.isabstract(mql_MinAggregate)
 
 
-def test_mql::countaggregate_constructor_exists():
-    assert callable(mql::CountAggregate.__init__)
+def test_mql_minaggregate_constructor_exists():
+    assert callable(mql_MinAggregate.__init__)
 
 
-def test_mql::countaggregate_constructor_args():
-    sig = inspect.signature(mql::CountAggregate.__init__)
+def test_mql_minaggregate_constructor_args():
+    sig = inspect.signature(mql_MinAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::maxaggregate_is_not_abstract():
-    assert not inspect.isabstract(mql::MaxAggregate)
+def test_mql_sumaggregate_is_not_abstract():
+    assert not inspect.isabstract(mql_SumAggregate)
 
 
-def test_mql::maxaggregate_constructor_exists():
-    assert callable(mql::MaxAggregate.__init__)
+def test_mql_sumaggregate_constructor_exists():
+    assert callable(mql_SumAggregate.__init__)
 
 
-def test_mql::maxaggregate_constructor_args():
-    sig = inspect.signature(mql::MaxAggregate.__init__)
+def test_mql_sumaggregate_constructor_args():
+    sig = inspect.signature(mql_SumAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::sumaggregate_is_not_abstract():
-    assert not inspect.isabstract(mql::SumAggregate)
+def test_mql_maxaggregate_is_not_abstract():
+    assert not inspect.isabstract(mql_MaxAggregate)
 
 
-def test_mql::sumaggregate_constructor_exists():
-    assert callable(mql::SumAggregate.__init__)
+def test_mql_maxaggregate_constructor_exists():
+    assert callable(mql_MaxAggregate.__init__)
 
 
-def test_mql::sumaggregate_constructor_args():
-    sig = inspect.signature(mql::SumAggregate.__init__)
+def test_mql_maxaggregate_constructor_args():
+    sig = inspect.signature(mql_MaxAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::minaggregate_is_not_abstract():
-    assert not inspect.isabstract(mql::MinAggregate)
+def test_mql_countaggregate_is_not_abstract():
+    assert not inspect.isabstract(mql_CountAggregate)
 
 
-def test_mql::minaggregate_constructor_exists():
-    assert callable(mql::MinAggregate.__init__)
+def test_mql_countaggregate_constructor_exists():
+    assert callable(mql_CountAggregate.__init__)
 
 
-def test_mql::minaggregate_constructor_args():
-    sig = inspect.signature(mql::MinAggregate.__init__)
+def test_mql_countaggregate_constructor_args():
+    sig = inspect.signature(mql_CountAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::avgaggregate_is_not_abstract():
-    assert not inspect.isabstract(mql::AvgAggregate)
+def test_mql_avgaggregate_is_not_abstract():
+    assert not inspect.isabstract(mql_AvgAggregate)
 
 
-def test_mql::avgaggregate_constructor_exists():
-    assert callable(mql::AvgAggregate.__init__)
+def test_mql_avgaggregate_constructor_exists():
+    assert callable(mql_AvgAggregate.__init__)
 
 
-def test_mql::avgaggregate_constructor_args():
-    sig = inspect.signature(mql::AvgAggregate.__init__)
+def test_mql_avgaggregate_constructor_args():
+    sig = inspect.signature(mql_AvgAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1194,47 +912,23 @@ def test_selectexpression_constructor_args():
 
 
 
-def test_mql::aliasattributeexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::AliasAttributeExpression)
+def test_mql_selectconstructorexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_SelectConstructorExpression)
 
 
-def test_mql::aliasattributeexpression_constructor_exists():
-    assert callable(mql::AliasAttributeExpression.__init__)
+def test_mql_selectconstructorexpression_constructor_exists():
+    assert callable(mql_SelectConstructorExpression.__init__)
 
 
-def test_mql::aliasattributeexpression_constructor_args():
-    sig = inspect.signature(mql::AliasAttributeExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "attributes" in params, "Missing parameter 'attributes'"
-
-def test_mql::aliasattributeexpression_has_attributes():
-    assert hasattr(mql::AliasAttributeExpression, "attributes")
-    descriptor = None
-    for klass in mql::AliasAttributeExpression.__mro__:
-        if "attributes" in klass.__dict__:
-            descriptor = klass.__dict__["attributes"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mql::selectconstructorexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::SelectConstructorExpression)
-
-
-def test_mql::selectconstructorexpression_constructor_exists():
-    assert callable(mql::SelectConstructorExpression.__init__)
-
-
-def test_mql::selectconstructorexpression_constructor_args():
-    sig = inspect.signature(mql::SelectConstructorExpression.__init__)
+def test_mql_selectconstructorexpression_constructor_args():
+    sig = inspect.signature(mql_SelectConstructorExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mql::selectconstructorexpression_has_name():
-    assert hasattr(mql::SelectConstructorExpression, "name")
+def test_mql_selectconstructorexpression_has_name():
+    assert hasattr(mql_SelectConstructorExpression, "name")
     descriptor = None
-    for klass in mql::SelectConstructorExpression.__mro__:
+    for klass in mql_SelectConstructorExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1242,23 +936,23 @@ def test_mql::selectconstructorexpression_has_name():
 
 
 
-def test_mql::selectaggregateexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::SelectAggregateExpression)
+def test_mql_selectaggregateexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_SelectAggregateExpression)
 
 
-def test_mql::selectaggregateexpression_constructor_exists():
-    assert callable(mql::SelectAggregateExpression.__init__)
+def test_mql_selectaggregateexpression_constructor_exists():
+    assert callable(mql_SelectAggregateExpression.__init__)
 
 
-def test_mql::selectaggregateexpression_constructor_args():
-    sig = inspect.signature(mql::SelectAggregateExpression.__init__)
+def test_mql_selectaggregateexpression_constructor_args():
+    sig = inspect.signature(mql_SelectAggregateExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isDistinct" in params, "Missing parameter 'isDistinct'"
 
-def test_mql::selectaggregateexpression_has_isDistinct():
-    assert hasattr(mql::SelectAggregateExpression, "isDistinct")
+def test_mql_selectaggregateexpression_has_isDistinct():
+    assert hasattr(mql_SelectAggregateExpression, "isDistinct")
     descriptor = None
-    for klass in mql::SelectAggregateExpression.__mro__:
+    for klass in mql_SelectAggregateExpression.__mro__:
         if "isDistinct" in klass.__dict__:
             descriptor = klass.__dict__["isDistinct"]
             break
@@ -1266,61 +960,61 @@ def test_mql::selectaggregateexpression_has_isDistinct():
 
 
 
-def test_mql::selectexpression_is_not_abstract():
-    assert not inspect.isabstract(mql::SelectExpression)
+def test_mql_selectexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_SelectExpression)
 
 
-def test_mql::selectexpression_constructor_exists():
-    assert callable(mql::SelectExpression.__init__)
+def test_mql_selectexpression_constructor_exists():
+    assert callable(mql_SelectExpression.__init__)
 
 
-def test_mql::selectexpression_constructor_args():
-    sig = inspect.signature(mql::SelectExpression.__init__)
+def test_mql_selectexpression_constructor_args():
+    sig = inspect.signature(mql_SelectExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::expression_is_not_abstract():
-    assert not inspect.isabstract(mql::Expression)
+def test_mql_expression_is_not_abstract():
+    assert not inspect.isabstract(mql_Expression)
 
 
-def test_mql::expression_constructor_exists():
-    assert callable(mql::Expression.__init__)
+def test_mql_expression_constructor_exists():
+    assert callable(mql_Expression.__init__)
 
 
-def test_mql::expression_constructor_args():
-    sig = inspect.signature(mql::Expression.__init__)
+def test_mql_expression_constructor_args():
+    sig = inspect.signature(mql_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::orderclause_is_not_abstract():
-    assert not inspect.isabstract(mql::OrderClause)
+def test_mql_orderclause_is_not_abstract():
+    assert not inspect.isabstract(mql_OrderClause)
 
 
-def test_mql::orderclause_constructor_exists():
-    assert callable(mql::OrderClause.__init__)
+def test_mql_orderclause_constructor_exists():
+    assert callable(mql_OrderClause.__init__)
 
 
-def test_mql::orderclause_constructor_args():
-    sig = inspect.signature(mql::OrderClause.__init__)
+def test_mql_orderclause_constructor_args():
+    sig = inspect.signature(mql_OrderClause.__init__)
     params = list(sig.parameters.keys())
     assert "isDesc" in params, "Missing parameter 'isDesc'"
     assert "isAsc" in params, "Missing parameter 'isAsc'"
 
-def test_mql::orderclause_has_isDesc():
-    assert hasattr(mql::OrderClause, "isDesc")
+def test_mql_orderclause_has_isDesc():
+    assert hasattr(mql_OrderClause, "isDesc")
     descriptor = None
-    for klass in mql::OrderClause.__mro__:
+    for klass in mql_OrderClause.__mro__:
         if "isDesc" in klass.__dict__:
             descriptor = klass.__dict__["isDesc"]
             break
     assert isinstance(descriptor, property)
 
-def test_mql::orderclause_has_isAsc():
-    assert hasattr(mql::OrderClause, "isAsc")
+def test_mql_orderclause_has_isAsc():
+    assert hasattr(mql_OrderClause, "isAsc")
     descriptor = None
-    for klass in mql::OrderClause.__mro__:
+    for klass in mql_OrderClause.__mro__:
         if "isAsc" in klass.__dict__:
             descriptor = klass.__dict__["isAsc"]
             break
@@ -1328,44 +1022,350 @@ def test_mql::orderclause_has_isAsc():
 
 
 
-def test_mql::havingclause_is_not_abstract():
-    assert not inspect.isabstract(mql::HavingClause)
+def test_mql_havingclause_is_not_abstract():
+    assert not inspect.isabstract(mql_HavingClause)
 
 
-def test_mql::havingclause_constructor_exists():
-    assert callable(mql::HavingClause.__init__)
+def test_mql_havingclause_constructor_exists():
+    assert callable(mql_HavingClause.__init__)
 
 
-def test_mql::havingclause_constructor_args():
-    sig = inspect.signature(mql::HavingClause.__init__)
+def test_mql_havingclause_constructor_args():
+    sig = inspect.signature(mql_HavingClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::fromclause_is_not_abstract():
-    assert not inspect.isabstract(mql::FromClause)
+def test_mql_fromclause_is_not_abstract():
+    assert not inspect.isabstract(mql_FromClause)
 
 
-def test_mql::fromclause_constructor_exists():
-    assert callable(mql::FromClause.__init__)
+def test_mql_fromclause_constructor_exists():
+    assert callable(mql_FromClause.__init__)
 
 
-def test_mql::fromclause_constructor_args():
-    sig = inspect.signature(mql::FromClause.__init__)
+def test_mql_fromclause_constructor_args():
+    sig = inspect.signature(mql_FromClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mql::deleteclause_is_not_abstract():
-    assert not inspect.isabstract(mql::DeleteClause)
+def test_mql_deleteclause_is_not_abstract():
+    assert not inspect.isabstract(mql_DeleteClause)
 
 
-def test_mql::deleteclause_constructor_exists():
-    assert callable(mql::DeleteClause.__init__)
+def test_mql_deleteclause_constructor_exists():
+    assert callable(mql_DeleteClause.__init__)
 
 
-def test_mql::deleteclause_constructor_args():
-    sig = inspect.signature(mql::DeleteClause.__init__)
+def test_mql_deleteclause_constructor_args():
+    sig = inspect.signature(mql_DeleteClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_value_is_not_abstract():
+    assert not inspect.isabstract(mql_Value)
+
+
+def test_mql_value_constructor_exists():
+    assert callable(mql_Value.__init__)
+
+
+def test_mql_value_constructor_args():
+    sig = inspect.signature(mql_Value.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_aliasattributeexpression_is_not_abstract():
+    assert not inspect.isabstract(mql_AliasAttributeExpression)
+
+
+def test_mql_aliasattributeexpression_constructor_exists():
+    assert callable(mql_AliasAttributeExpression.__init__)
+
+
+def test_mql_aliasattributeexpression_constructor_args():
+    sig = inspect.signature(mql_AliasAttributeExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "attributes" in params, "Missing parameter 'attributes'"
+
+def test_mql_aliasattributeexpression_has_attributes():
+    assert hasattr(mql_AliasAttributeExpression, "attributes")
+    descriptor = None
+    for klass in mql_AliasAttributeExpression.__mro__:
+        if "attributes" in klass.__dict__:
+            descriptor = klass.__dict__["attributes"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mql_updateitem_is_not_abstract():
+    assert not inspect.isabstract(mql_UpdateItem)
+
+
+def test_mql_updateitem_constructor_exists():
+    assert callable(mql_UpdateItem.__init__)
+
+
+def test_mql_updateitem_constructor_args():
+    sig = inspect.signature(mql_UpdateItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_setclause_is_not_abstract():
+    assert not inspect.isabstract(mql_SetClause)
+
+
+def test_mql_setclause_constructor_exists():
+    assert callable(mql_SetClause.__init__)
+
+
+def test_mql_setclause_constructor_args():
+    sig = inspect.signature(mql_SetClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_updateclause_is_not_abstract():
+    assert not inspect.isabstract(mql_UpdateClause)
+
+
+def test_mql_updateclause_constructor_exists():
+    assert callable(mql_UpdateClause.__init__)
+
+
+def test_mql_updateclause_constructor_args():
+    sig = inspect.signature(mql_UpdateClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_fromentry_is_not_abstract():
+    assert not inspect.isabstract(mql_FromEntry)
+
+
+def test_mql_fromentry_constructor_exists():
+    assert callable(mql_FromEntry.__init__)
+
+
+def test_mql_fromentry_constructor_args():
+    sig = inspect.signature(mql_FromEntry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_orderitem_is_not_abstract():
+    assert not inspect.isabstract(mql_OrderItem)
+
+
+def test_mql_orderitem_constructor_exists():
+    assert callable(mql_OrderItem.__init__)
+
+
+def test_mql_orderitem_constructor_args():
+    sig = inspect.signature(mql_OrderItem.__init__)
+    params = list(sig.parameters.keys())
+    assert "feature" in params, "Missing parameter 'feature'"
+
+def test_mql_orderitem_has_feature():
+    assert hasattr(mql_OrderItem, "feature")
+    descriptor = None
+    for klass in mql_OrderItem.__mro__:
+        if "feature" in klass.__dict__:
+            descriptor = klass.__dict__["feature"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mql_selectfromclause_is_not_abstract():
+    assert not inspect.isabstract(mql_SelectFromClause)
+
+
+def test_mql_selectfromclause_constructor_exists():
+    assert callable(mql_SelectFromClause.__init__)
+
+
+def test_mql_selectfromclause_constructor_args():
+    sig = inspect.signature(mql_SelectFromClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressionterm_is_not_abstract():
+    assert not inspect.isabstract(ExpressionTerm)
+
+
+def test_expressionterm_constructor_exists():
+    assert callable(ExpressionTerm.__init__)
+
+
+def test_expressionterm_constructor_args():
+    sig = inspect.signature(ExpressionTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_variable_is_not_abstract():
+    assert not inspect.isabstract(mql_Variable)
+
+
+def test_mql_variable_constructor_exists():
+    assert callable(mql_Variable.__init__)
+
+
+def test_mql_variable_constructor_args():
+    sig = inspect.signature(mql_Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mquery_is_not_abstract():
+    assert not inspect.isabstract(MQuery)
+
+
+def test_mquery_constructor_exists():
+    assert callable(MQuery.__init__)
+
+
+def test_mquery_constructor_args():
+    sig = inspect.signature(MQuery.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_deletestatement_is_not_abstract():
+    assert not inspect.isabstract(mql_DeleteStatement)
+
+
+def test_mql_deletestatement_constructor_exists():
+    assert callable(mql_DeleteStatement.__init__)
+
+
+def test_mql_deletestatement_constructor_args():
+    sig = inspect.signature(mql_DeleteStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_updatestatement_is_not_abstract():
+    assert not inspect.isabstract(mql_UpdateStatement)
+
+
+def test_mql_updatestatement_constructor_exists():
+    assert callable(mql_UpdateStatement.__init__)
+
+
+def test_mql_updatestatement_constructor_args():
+    sig = inspect.signature(mql_UpdateStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_selectstatement_is_not_abstract():
+    assert not inspect.isabstract(mql_SelectStatement)
+
+
+def test_mql_selectstatement_constructor_exists():
+    assert callable(mql_SelectStatement.__init__)
+
+
+def test_mql_selectstatement_constructor_args():
+    sig = inspect.signature(mql_SelectStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_whereclause_is_not_abstract():
+    assert not inspect.isabstract(mql_WhereClause)
+
+
+def test_mql_whereclause_constructor_exists():
+    assert callable(mql_WhereClause.__init__)
+
+
+def test_mql_whereclause_constructor_args():
+    sig = inspect.signature(mql_WhereClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_namedquery_is_not_abstract():
+    assert not inspect.isabstract(mql_NamedQuery)
+
+
+def test_mql_namedquery_constructor_exists():
+    assert callable(mql_NamedQuery.__init__)
+
+
+def test_mql_namedquery_constructor_args():
+    sig = inspect.signature(mql_NamedQuery.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mql_namedquery_has_name():
+    assert hasattr(mql_NamedQuery, "name")
+    descriptor = None
+    for klass in mql_NamedQuery.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mql_mquery_is_not_abstract():
+    assert not inspect.isabstract(mql_MQuery)
+
+
+def test_mql_mquery_constructor_exists():
+    assert callable(mql_MQuery.__init__)
+
+
+def test_mql_mquery_constructor_args():
+    sig = inspect.signature(mql_MQuery.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mql_import_is_not_abstract():
+    assert not inspect.isabstract(mql_Import)
+
+
+def test_mql_import_constructor_exists():
+    assert callable(mql_Import.__init__)
+
+
+def test_mql_import_constructor_args():
+    sig = inspect.signature(mql_Import.__init__)
+    params = list(sig.parameters.keys())
+    assert "importURI" in params, "Missing parameter 'importURI'"
+
+def test_mql_import_has_importURI():
+    assert hasattr(mql_Import, "importURI")
+    descriptor = None
+    for klass in mql_Import.__mro__:
+        if "importURI" in klass.__dict__:
+            descriptor = klass.__dict__["importURI"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mql_querymodule_is_not_abstract():
+    assert not inspect.isabstract(mql_QueryModule)
+
+
+def test_mql_querymodule_constructor_exists():
+    assert callable(mql_QueryModule.__init__)
+
+
+def test_mql_querymodule_constructor_args():
+    sig = inspect.signature(mql_QueryModule.__init__)
     params = list(sig.parameters.keys())
 
 def test_operator_exists():
@@ -1376,12 +1376,12 @@ def test_operator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Operator]
     expected_literals = [
-        "lessEqual",
-        "lessThen",
         "greaterThen",
+        "lessThen",
         "greaterEqual",
-        "equal",
         "notEqual",
+        "equal",
+        "lessEqual",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1399,488 +1399,357 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mql::UpdateItem_strategy = st.builds(
-    mql::UpdateItem,
-)
-mql::SetClause_strategy = st.builds(
-    mql::SetClause,
-)
-mql::UpdateClause_strategy = st.builds(
-    mql::UpdateClause,
-)
-mql::FromEntry_strategy = st.builds(
-    mql::FromEntry,
-)
-mql::OrderItem_strategy = st.builds(
-    mql::OrderItem,
-    feature=
-        safe_text
-)
-mql::SelectFromClause_strategy = st.builds(
-    mql::SelectFromClause,
-)
-ExpressionTerm_strategy = st.builds(
-    ExpressionTerm,
-)
-MQuery_strategy = st.builds(
-    MQuery,
-)
-mql::DeleteStatement_strategy = st.builds(
-    mql::DeleteStatement,
-)
-mql::UpdateStatement_strategy = st.builds(
-    mql::UpdateStatement,
-)
-mql::SelectStatement_strategy = st.builds(
-    mql::SelectStatement,
-)
-mql::WhereClause_strategy = st.builds(
-    mql::WhereClause,
-)
-mql::NamedQuery_strategy = st.builds(
-    mql::NamedQuery,
-    name=
-        safe_text
-)
-mql::MQuery_strategy = st.builds(
-    mql::MQuery,
-)
-mql::Import_strategy = st.builds(
-    mql::Import,
-    importURI=
-        safe_text
-)
-mql::QueryModule_strategy = st.builds(
-    mql::QueryModule,
-)
 Value_strategy = st.builds(
     Value,
 )
-mql::StringExpression_strategy = st.builds(
-    mql::StringExpression,
+mql_NullExpression_strategy = st.builds(
+    mql_NullExpression,
     value=
         safe_text
 )
-mql::DateTimeExpression_strategy = st.builds(
-    mql::DateTimeExpression,
-    value=
-        safe_text
-)
-mql::NullExpression_strategy = st.builds(
-    mql::NullExpression,
-    value=
-        safe_text
-)
-mql::BooleanExpression_strategy = st.builds(
-    mql::BooleanExpression,
+mql_BooleanExpression_strategy = st.builds(
+    mql_BooleanExpression,
     value=
         st.booleans()
 )
-mql::IntegerExpression_strategy = st.builds(
-    mql::IntegerExpression,
+mql_DateTimeExpression_strategy = st.builds(
+    mql_DateTimeExpression,
+    value=
+        safe_text
+)
+mql_StringExpression_strategy = st.builds(
+    mql_StringExpression,
+    value=
+        safe_text
+)
+mql_IntegerExpression_strategy = st.builds(
+    mql_IntegerExpression,
     value=
         st.integers()
 )
-mql::Function_strategy = st.builds(
-    mql::Function,
+mql_Function_strategy = st.builds(
+    mql_Function,
     name=
         safe_text
 )
 Variable_strategy = st.builds(
     Variable,
 )
-mql::Value_strategy = st.builds(
-    mql::Value,
-)
-mql::ParameterExpression_strategy = st.builds(
-    mql::ParameterExpression,
+mql_ParameterExpression_strategy = st.builds(
+    mql_ParameterExpression,
     name=
         safe_text
 )
 InExpression_strategy = st.builds(
     InExpression,
 )
-mql::InQueryExpression_strategy = st.builds(
-    mql::InQueryExpression,
+mql_InQueryExpression_strategy = st.builds(
+    mql_InQueryExpression,
 )
-mql::InSeqExpression_strategy = st.builds(
-    mql::InSeqExpression,
-)
-mql::Variable_strategy = st.builds(
-    mql::Variable,
+mql_InSeqExpression_strategy = st.builds(
+    mql_InSeqExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-mql::ExistsExpression_strategy = st.builds(
-    mql::ExistsExpression,
+mql_NullComparisonExpression_strategy = st.builds(
+    mql_NullComparisonExpression,
     isNot=
         st.booleans()
 )
-mql::NullComparisonExpression_strategy = st.builds(
-    mql::NullComparisonExpression,
+mql_AllExpression_strategy = st.builds(
+    mql_AllExpression,
+)
+mql_AnyExpression_strategy = st.builds(
+    mql_AnyExpression,
+)
+mql_ExpressionTerm_strategy = st.builds(
+    mql_ExpressionTerm,
+)
+mql_OrExpression_strategy = st.builds(
+    mql_OrExpression,
+)
+mql_EmptyComparisonExpression_strategy = st.builds(
+    mql_EmptyComparisonExpression,
     isNot=
         st.booleans()
 )
-mql::OrExpression_strategy = st.builds(
-    mql::OrExpression,
-)
-mql::EmptyComparisonExpression_strategy = st.builds(
-    mql::EmptyComparisonExpression,
+mql_BetweenExpression_strategy = st.builds(
+    mql_BetweenExpression,
     isNot=
         st.booleans()
 )
-mql::AndExpression_strategy = st.builds(
-    mql::AndExpression,
-)
-mql::SomeExpression_strategy = st.builds(
-    mql::SomeExpression,
-)
-mql::BetweenExpression_strategy = st.builds(
-    mql::BetweenExpression,
+mql_ExistsExpression_strategy = st.builds(
+    mql_ExistsExpression,
     isNot=
         st.booleans()
 )
-mql::InExpression_strategy = st.builds(
-    mql::InExpression,
+mql_AndExpression_strategy = st.builds(
+    mql_AndExpression,
+)
+mql_SomeExpression_strategy = st.builds(
+    mql_SomeExpression,
+)
+mql_InExpression_strategy = st.builds(
+    mql_InExpression,
     isNot=
         st.booleans()
 )
-mql::AllExpression_strategy = st.builds(
-    mql::AllExpression,
-)
-mql::AnyExpression_strategy = st.builds(
-    mql::AnyExpression,
-)
-mql::CollectionExpression_strategy = st.builds(
-    mql::CollectionExpression,
+mql_CollectionExpression_strategy = st.builds(
+    mql_CollectionExpression,
     isNot=
         st.booleans()
 )
-mql::ExpressionTerm_strategy = st.builds(
-    mql::ExpressionTerm,
-)
-mql::LikeExpression_strategy = st.builds(
-    mql::LikeExpression,
-    isNot=
-        st.booleans(),
+mql_LikeExpression_strategy = st.builds(
+    mql_LikeExpression,
     pattern=
-        safe_text
+        safe_text,
+    isNot=
+        st.booleans()
 )
-mql::OperatorExpression_strategy = st.builds(
-    mql::OperatorExpression,
+mql_OperatorExpression_strategy = st.builds(
+    mql_OperatorExpression,
     operator=
         safe_text
 )
 FromJoin_strategy = st.builds(
     FromJoin,
 )
-mql::LeftJoin_strategy = st.builds(
-    mql::LeftJoin,
+mql_LeftJoin_strategy = st.builds(
+    mql_LeftJoin,
     isOuter=
         st.booleans()
 )
-mql::InnerJoin_strategy = st.builds(
-    mql::InnerJoin,
+mql_InnerJoin_strategy = st.builds(
+    mql_InnerJoin,
 )
-mql::Join_strategy = st.builds(
-    mql::Join,
+mql_Join_strategy = st.builds(
+    mql_Join,
 )
-mql::SelectClause_strategy = st.builds(
-    mql::SelectClause,
+mql_SelectClause_strategy = st.builds(
+    mql_SelectClause,
     isDistinct=
         st.booleans()
 )
-mql::FromJoin_strategy = st.builds(
-    mql::FromJoin,
+mql_FromJoin_strategy = st.builds(
+    mql_FromJoin,
     isFetch=
         st.booleans()
 )
 FromEntry_strategy = st.builds(
     FromEntry,
 )
-mql::FromCollection_strategy = st.builds(
-    mql::FromCollection,
+mql_FromCollection_strategy = st.builds(
+    mql_FromCollection,
 )
-mql::FromClass_strategy = st.builds(
-    mql::FromClass,
+mql_FromClass_strategy = st.builds(
+    mql_FromClass,
     type=
         safe_text
 )
-mql::VariableDeclaration_strategy = st.builds(
-    mql::VariableDeclaration,
+mql_VariableDeclaration_strategy = st.builds(
+    mql_VariableDeclaration,
     name=
         safe_text
 )
 SelectAggregateExpression_strategy = st.builds(
     SelectAggregateExpression,
 )
-mql::CountAggregate_strategy = st.builds(
-    mql::CountAggregate,
+mql_MinAggregate_strategy = st.builds(
+    mql_MinAggregate,
 )
-mql::MaxAggregate_strategy = st.builds(
-    mql::MaxAggregate,
+mql_SumAggregate_strategy = st.builds(
+    mql_SumAggregate,
 )
-mql::SumAggregate_strategy = st.builds(
-    mql::SumAggregate,
+mql_MaxAggregate_strategy = st.builds(
+    mql_MaxAggregate,
 )
-mql::MinAggregate_strategy = st.builds(
-    mql::MinAggregate,
+mql_CountAggregate_strategy = st.builds(
+    mql_CountAggregate,
 )
-mql::AvgAggregate_strategy = st.builds(
-    mql::AvgAggregate,
+mql_AvgAggregate_strategy = st.builds(
+    mql_AvgAggregate,
 )
 SelectExpression_strategy = st.builds(
     SelectExpression,
 )
-mql::AliasAttributeExpression_strategy = st.builds(
-    mql::AliasAttributeExpression,
-    attributes=
-        safe_text
-)
-mql::SelectConstructorExpression_strategy = st.builds(
-    mql::SelectConstructorExpression,
+mql_SelectConstructorExpression_strategy = st.builds(
+    mql_SelectConstructorExpression,
     name=
         safe_text
 )
-mql::SelectAggregateExpression_strategy = st.builds(
-    mql::SelectAggregateExpression,
+mql_SelectAggregateExpression_strategy = st.builds(
+    mql_SelectAggregateExpression,
     isDistinct=
         st.booleans()
 )
-mql::SelectExpression_strategy = st.builds(
-    mql::SelectExpression,
+mql_SelectExpression_strategy = st.builds(
+    mql_SelectExpression,
 )
-mql::Expression_strategy = st.builds(
-    mql::Expression,
+mql_Expression_strategy = st.builds(
+    mql_Expression,
 )
-mql::OrderClause_strategy = st.builds(
-    mql::OrderClause,
+mql_OrderClause_strategy = st.builds(
+    mql_OrderClause,
     isDesc=
         st.booleans(),
     isAsc=
         st.booleans()
 )
-mql::HavingClause_strategy = st.builds(
-    mql::HavingClause,
+mql_HavingClause_strategy = st.builds(
+    mql_HavingClause,
 )
-mql::FromClause_strategy = st.builds(
-    mql::FromClause,
+mql_FromClause_strategy = st.builds(
+    mql_FromClause,
 )
-mql::DeleteClause_strategy = st.builds(
-    mql::DeleteClause,
+mql_DeleteClause_strategy = st.builds(
+    mql_DeleteClause,
 )
-
-@given(instance=mql::UpdateItem_strategy)
-@settings(max_examples=50)
-def test_mql::updateitem_instantiation(instance):
-    assert isinstance(instance, mql::UpdateItem)
-
-@given(instance=mql::SetClause_strategy)
-@settings(max_examples=50)
-def test_mql::setclause_instantiation(instance):
-    assert isinstance(instance, mql::SetClause)
-
-@given(instance=mql::UpdateClause_strategy)
-@settings(max_examples=50)
-def test_mql::updateclause_instantiation(instance):
-    assert isinstance(instance, mql::UpdateClause)
-
-@given(instance=mql::FromEntry_strategy)
-@settings(max_examples=50)
-def test_mql::fromentry_instantiation(instance):
-    assert isinstance(instance, mql::FromEntry)
-
-@given(instance=mql::OrderItem_strategy)
-@settings(max_examples=50)
-def test_mql::orderitem_instantiation(instance):
-    assert isinstance(instance, mql::OrderItem)
-
-@given(instance=mql::OrderItem_strategy)
-def test_mql::orderitem_feature_type(instance):
-    assert isinstance(instance.feature, str)
-
-
-@given(instance=mql::OrderItem_strategy)
-def test_mql::orderitem_feature_setter(instance):
-    original = instance.feature
-    instance.feature = original
-    assert instance.feature == original
-
-@given(instance=mql::SelectFromClause_strategy)
-@settings(max_examples=50)
-def test_mql::selectfromclause_instantiation(instance):
-    assert isinstance(instance, mql::SelectFromClause)
-
-@given(instance=ExpressionTerm_strategy)
-@settings(max_examples=50)
-def test_expressionterm_instantiation(instance):
-    assert isinstance(instance, ExpressionTerm)
-
-@given(instance=MQuery_strategy)
-@settings(max_examples=50)
-def test_mquery_instantiation(instance):
-    assert isinstance(instance, MQuery)
-
-@given(instance=mql::DeleteStatement_strategy)
-@settings(max_examples=50)
-def test_mql::deletestatement_instantiation(instance):
-    assert isinstance(instance, mql::DeleteStatement)
-
-@given(instance=mql::UpdateStatement_strategy)
-@settings(max_examples=50)
-def test_mql::updatestatement_instantiation(instance):
-    assert isinstance(instance, mql::UpdateStatement)
-
-@given(instance=mql::SelectStatement_strategy)
-@settings(max_examples=50)
-def test_mql::selectstatement_instantiation(instance):
-    assert isinstance(instance, mql::SelectStatement)
-
-@given(instance=mql::WhereClause_strategy)
-@settings(max_examples=50)
-def test_mql::whereclause_instantiation(instance):
-    assert isinstance(instance, mql::WhereClause)
-
-@given(instance=mql::NamedQuery_strategy)
-@settings(max_examples=50)
-def test_mql::namedquery_instantiation(instance):
-    assert isinstance(instance, mql::NamedQuery)
-
-@given(instance=mql::NamedQuery_strategy)
-def test_mql::namedquery_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mql::NamedQuery_strategy)
-def test_mql::namedquery_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=mql::MQuery_strategy)
-@settings(max_examples=50)
-def test_mql::mquery_instantiation(instance):
-    assert isinstance(instance, mql::MQuery)
-
-@given(instance=mql::Import_strategy)
-@settings(max_examples=50)
-def test_mql::import_instantiation(instance):
-    assert isinstance(instance, mql::Import)
-
-@given(instance=mql::Import_strategy)
-def test_mql::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
-
-
-@given(instance=mql::Import_strategy)
-def test_mql::import_importURI_setter(instance):
-    original = instance.importURI
-    instance.importURI = original
-    assert instance.importURI == original
-
-@given(instance=mql::QueryModule_strategy)
-@settings(max_examples=50)
-def test_mql::querymodule_instantiation(instance):
-    assert isinstance(instance, mql::QueryModule)
+mql_Value_strategy = st.builds(
+    mql_Value,
+)
+mql_AliasAttributeExpression_strategy = st.builds(
+    mql_AliasAttributeExpression,
+    attributes=
+        safe_text
+)
+mql_UpdateItem_strategy = st.builds(
+    mql_UpdateItem,
+)
+mql_SetClause_strategy = st.builds(
+    mql_SetClause,
+)
+mql_UpdateClause_strategy = st.builds(
+    mql_UpdateClause,
+)
+mql_FromEntry_strategy = st.builds(
+    mql_FromEntry,
+)
+mql_OrderItem_strategy = st.builds(
+    mql_OrderItem,
+    feature=
+        safe_text
+)
+mql_SelectFromClause_strategy = st.builds(
+    mql_SelectFromClause,
+)
+ExpressionTerm_strategy = st.builds(
+    ExpressionTerm,
+)
+mql_Variable_strategy = st.builds(
+    mql_Variable,
+)
+MQuery_strategy = st.builds(
+    MQuery,
+)
+mql_DeleteStatement_strategy = st.builds(
+    mql_DeleteStatement,
+)
+mql_UpdateStatement_strategy = st.builds(
+    mql_UpdateStatement,
+)
+mql_SelectStatement_strategy = st.builds(
+    mql_SelectStatement,
+)
+mql_WhereClause_strategy = st.builds(
+    mql_WhereClause,
+)
+mql_NamedQuery_strategy = st.builds(
+    mql_NamedQuery,
+    name=
+        safe_text
+)
+mql_MQuery_strategy = st.builds(
+    mql_MQuery,
+)
+mql_Import_strategy = st.builds(
+    mql_Import,
+    importURI=
+        safe_text
+)
+mql_QueryModule_strategy = st.builds(
+    mql_QueryModule,
+)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=mql::StringExpression_strategy)
+@given(instance=mql_NullExpression_strategy)
 @settings(max_examples=50)
-def test_mql::stringexpression_instantiation(instance):
-    assert isinstance(instance, mql::StringExpression)
-
-@given(instance=mql::StringExpression_strategy)
-def test_mql::stringexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mql_nullexpression_instantiation(instance):
+    assert isinstance(instance, mql_NullExpression)
 
 
-@given(instance=mql::StringExpression_strategy)
-def test_mql::stringexpression_value_setter(instance):
+
+@given(instance=mql_NullExpression_strategy)
+def test_mql_nullexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mql::DateTimeExpression_strategy)
+@given(instance=mql_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_mql::datetimeexpression_instantiation(instance):
-    assert isinstance(instance, mql::DateTimeExpression)
-
-@given(instance=mql::DateTimeExpression_strategy)
-def test_mql::datetimeexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mql_booleanexpression_instantiation(instance):
+    assert isinstance(instance, mql_BooleanExpression)
 
 
-@given(instance=mql::DateTimeExpression_strategy)
-def test_mql::datetimeexpression_value_setter(instance):
+
+@given(instance=mql_BooleanExpression_strategy)
+def test_mql_booleanexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mql::NullExpression_strategy)
+@given(instance=mql_DateTimeExpression_strategy)
 @settings(max_examples=50)
-def test_mql::nullexpression_instantiation(instance):
-    assert isinstance(instance, mql::NullExpression)
-
-@given(instance=mql::NullExpression_strategy)
-def test_mql::nullexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mql_datetimeexpression_instantiation(instance):
+    assert isinstance(instance, mql_DateTimeExpression)
 
 
-@given(instance=mql::NullExpression_strategy)
-def test_mql::nullexpression_value_setter(instance):
+
+@given(instance=mql_DateTimeExpression_strategy)
+def test_mql_datetimeexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mql::BooleanExpression_strategy)
+@given(instance=mql_StringExpression_strategy)
 @settings(max_examples=50)
-def test_mql::booleanexpression_instantiation(instance):
-    assert isinstance(instance, mql::BooleanExpression)
-
-@given(instance=mql::BooleanExpression_strategy)
-def test_mql::booleanexpression_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_mql_stringexpression_instantiation(instance):
+    assert isinstance(instance, mql_StringExpression)
 
 
-@given(instance=mql::BooleanExpression_strategy)
-def test_mql::booleanexpression_value_setter(instance):
+
+@given(instance=mql_StringExpression_strategy)
+def test_mql_stringexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mql::IntegerExpression_strategy)
+@given(instance=mql_IntegerExpression_strategy)
 @settings(max_examples=50)
-def test_mql::integerexpression_instantiation(instance):
-    assert isinstance(instance, mql::IntegerExpression)
-
-@given(instance=mql::IntegerExpression_strategy)
-def test_mql::integerexpression_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_mql_integerexpression_instantiation(instance):
+    assert isinstance(instance, mql_IntegerExpression)
 
 
-@given(instance=mql::IntegerExpression_strategy)
-def test_mql::integerexpression_value_setter(instance):
+
+@given(instance=mql_IntegerExpression_strategy)
+def test_mql_integerexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mql::Function_strategy)
+@given(instance=mql_Function_strategy)
 @settings(max_examples=50)
-def test_mql::function_instantiation(instance):
-    assert isinstance(instance, mql::Function)
-
-@given(instance=mql::Function_strategy)
-def test_mql::function_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mql_function_instantiation(instance):
+    assert isinstance(instance, mql_Function)
 
 
-@given(instance=mql::Function_strategy)
-def test_mql::function_name_setter(instance):
+
+@given(instance=mql_Function_strategy)
+def test_mql_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1890,23 +1759,15 @@ def test_mql::function_name_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=mql::Value_strategy)
+@given(instance=mql_ParameterExpression_strategy)
 @settings(max_examples=50)
-def test_mql::value_instantiation(instance):
-    assert isinstance(instance, mql::Value)
-
-@given(instance=mql::ParameterExpression_strategy)
-@settings(max_examples=50)
-def test_mql::parameterexpression_instantiation(instance):
-    assert isinstance(instance, mql::ParameterExpression)
-
-@given(instance=mql::ParameterExpression_strategy)
-def test_mql::parameterexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mql_parameterexpression_instantiation(instance):
+    assert isinstance(instance, mql_ParameterExpression)
 
 
-@given(instance=mql::ParameterExpression_strategy)
-def test_mql::parameterexpression_name_setter(instance):
+
+@given(instance=mql_ParameterExpression_strategy)
+def test_mql_parameterexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1916,191 +1777,159 @@ def test_mql::parameterexpression_name_setter(instance):
 def test_inexpression_instantiation(instance):
     assert isinstance(instance, InExpression)
 
-@given(instance=mql::InQueryExpression_strategy)
+@given(instance=mql_InQueryExpression_strategy)
 @settings(max_examples=50)
-def test_mql::inqueryexpression_instantiation(instance):
-    assert isinstance(instance, mql::InQueryExpression)
+def test_mql_inqueryexpression_instantiation(instance):
+    assert isinstance(instance, mql_InQueryExpression)
 
-@given(instance=mql::InSeqExpression_strategy)
+@given(instance=mql_InSeqExpression_strategy)
 @settings(max_examples=50)
-def test_mql::inseqexpression_instantiation(instance):
-    assert isinstance(instance, mql::InSeqExpression)
-
-@given(instance=mql::Variable_strategy)
-@settings(max_examples=50)
-def test_mql::variable_instantiation(instance):
-    assert isinstance(instance, mql::Variable)
+def test_mql_inseqexpression_instantiation(instance):
+    assert isinstance(instance, mql_InSeqExpression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=mql::ExistsExpression_strategy)
+@given(instance=mql_NullComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_mql::existsexpression_instantiation(instance):
-    assert isinstance(instance, mql::ExistsExpression)
-
-@given(instance=mql::ExistsExpression_strategy)
-def test_mql::existsexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+def test_mql_nullcomparisonexpression_instantiation(instance):
+    assert isinstance(instance, mql_NullComparisonExpression)
 
 
-@given(instance=mql::ExistsExpression_strategy)
-def test_mql::existsexpression_isNot_setter(instance):
+
+@given(instance=mql_NullComparisonExpression_strategy)
+def test_mql_nullcomparisonexpression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=mql::NullComparisonExpression_strategy)
+@given(instance=mql_AllExpression_strategy)
 @settings(max_examples=50)
-def test_mql::nullcomparisonexpression_instantiation(instance):
-    assert isinstance(instance, mql::NullComparisonExpression)
+def test_mql_allexpression_instantiation(instance):
+    assert isinstance(instance, mql_AllExpression)
 
-@given(instance=mql::NullComparisonExpression_strategy)
-def test_mql::nullcomparisonexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+@given(instance=mql_AnyExpression_strategy)
+@settings(max_examples=50)
+def test_mql_anyexpression_instantiation(instance):
+    assert isinstance(instance, mql_AnyExpression)
+
+@given(instance=mql_ExpressionTerm_strategy)
+@settings(max_examples=50)
+def test_mql_expressionterm_instantiation(instance):
+    assert isinstance(instance, mql_ExpressionTerm)
+
+@given(instance=mql_OrExpression_strategy)
+@settings(max_examples=50)
+def test_mql_orexpression_instantiation(instance):
+    assert isinstance(instance, mql_OrExpression)
+
+@given(instance=mql_EmptyComparisonExpression_strategy)
+@settings(max_examples=50)
+def test_mql_emptycomparisonexpression_instantiation(instance):
+    assert isinstance(instance, mql_EmptyComparisonExpression)
 
 
-@given(instance=mql::NullComparisonExpression_strategy)
-def test_mql::nullcomparisonexpression_isNot_setter(instance):
+
+@given(instance=mql_EmptyComparisonExpression_strategy)
+def test_mql_emptycomparisonexpression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=mql::OrExpression_strategy)
+@given(instance=mql_BetweenExpression_strategy)
 @settings(max_examples=50)
-def test_mql::orexpression_instantiation(instance):
-    assert isinstance(instance, mql::OrExpression)
-
-@given(instance=mql::EmptyComparisonExpression_strategy)
-@settings(max_examples=50)
-def test_mql::emptycomparisonexpression_instantiation(instance):
-    assert isinstance(instance, mql::EmptyComparisonExpression)
-
-@given(instance=mql::EmptyComparisonExpression_strategy)
-def test_mql::emptycomparisonexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+def test_mql_betweenexpression_instantiation(instance):
+    assert isinstance(instance, mql_BetweenExpression)
 
 
-@given(instance=mql::EmptyComparisonExpression_strategy)
-def test_mql::emptycomparisonexpression_isNot_setter(instance):
+
+@given(instance=mql_BetweenExpression_strategy)
+def test_mql_betweenexpression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=mql::AndExpression_strategy)
+@given(instance=mql_ExistsExpression_strategy)
 @settings(max_examples=50)
-def test_mql::andexpression_instantiation(instance):
-    assert isinstance(instance, mql::AndExpression)
-
-@given(instance=mql::SomeExpression_strategy)
-@settings(max_examples=50)
-def test_mql::someexpression_instantiation(instance):
-    assert isinstance(instance, mql::SomeExpression)
-
-@given(instance=mql::BetweenExpression_strategy)
-@settings(max_examples=50)
-def test_mql::betweenexpression_instantiation(instance):
-    assert isinstance(instance, mql::BetweenExpression)
-
-@given(instance=mql::BetweenExpression_strategy)
-def test_mql::betweenexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+def test_mql_existsexpression_instantiation(instance):
+    assert isinstance(instance, mql_ExistsExpression)
 
 
-@given(instance=mql::BetweenExpression_strategy)
-def test_mql::betweenexpression_isNot_setter(instance):
+
+@given(instance=mql_ExistsExpression_strategy)
+def test_mql_existsexpression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=mql::InExpression_strategy)
+@given(instance=mql_AndExpression_strategy)
 @settings(max_examples=50)
-def test_mql::inexpression_instantiation(instance):
-    assert isinstance(instance, mql::InExpression)
+def test_mql_andexpression_instantiation(instance):
+    assert isinstance(instance, mql_AndExpression)
 
-@given(instance=mql::InExpression_strategy)
-def test_mql::inexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+@given(instance=mql_SomeExpression_strategy)
+@settings(max_examples=50)
+def test_mql_someexpression_instantiation(instance):
+    assert isinstance(instance, mql_SomeExpression)
+
+@given(instance=mql_InExpression_strategy)
+@settings(max_examples=50)
+def test_mql_inexpression_instantiation(instance):
+    assert isinstance(instance, mql_InExpression)
 
 
-@given(instance=mql::InExpression_strategy)
-def test_mql::inexpression_isNot_setter(instance):
+
+@given(instance=mql_InExpression_strategy)
+def test_mql_inexpression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=mql::AllExpression_strategy)
+@given(instance=mql_CollectionExpression_strategy)
 @settings(max_examples=50)
-def test_mql::allexpression_instantiation(instance):
-    assert isinstance(instance, mql::AllExpression)
-
-@given(instance=mql::AnyExpression_strategy)
-@settings(max_examples=50)
-def test_mql::anyexpression_instantiation(instance):
-    assert isinstance(instance, mql::AnyExpression)
-
-@given(instance=mql::CollectionExpression_strategy)
-@settings(max_examples=50)
-def test_mql::collectionexpression_instantiation(instance):
-    assert isinstance(instance, mql::CollectionExpression)
-
-@given(instance=mql::CollectionExpression_strategy)
-def test_mql::collectionexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+def test_mql_collectionexpression_instantiation(instance):
+    assert isinstance(instance, mql_CollectionExpression)
 
 
-@given(instance=mql::CollectionExpression_strategy)
-def test_mql::collectionexpression_isNot_setter(instance):
+
+@given(instance=mql_CollectionExpression_strategy)
+def test_mql_collectionexpression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=mql::ExpressionTerm_strategy)
+@given(instance=mql_LikeExpression_strategy)
 @settings(max_examples=50)
-def test_mql::expressionterm_instantiation(instance):
-    assert isinstance(instance, mql::ExpressionTerm)
-
-@given(instance=mql::LikeExpression_strategy)
-@settings(max_examples=50)
-def test_mql::likeexpression_instantiation(instance):
-    assert isinstance(instance, mql::LikeExpression)
-
-@given(instance=mql::LikeExpression_strategy)
-def test_mql::likeexpression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
+def test_mql_likeexpression_instantiation(instance):
+    assert isinstance(instance, mql_LikeExpression)
 
 
-@given(instance=mql::LikeExpression_strategy)
-def test_mql::likeexpression_isNot_setter(instance):
-    original = instance.isNot
-    instance.isNot = original
-    assert instance.isNot == original
 
-@given(instance=mql::LikeExpression_strategy)
-def test_mql::likeexpression_pattern_type(instance):
-    assert isinstance(instance.pattern, str)
-
-
-@given(instance=mql::LikeExpression_strategy)
-def test_mql::likeexpression_pattern_setter(instance):
+@given(instance=mql_LikeExpression_strategy)
+def test_mql_likeexpression_pattern_setter(instance):
     original = instance.pattern
     instance.pattern = original
     assert instance.pattern == original
 
-@given(instance=mql::OperatorExpression_strategy)
+
+
+@given(instance=mql_LikeExpression_strategy)
+def test_mql_likeexpression_isNot_setter(instance):
+    original = instance.isNot
+    instance.isNot = original
+    assert instance.isNot == original
+
+@given(instance=mql_OperatorExpression_strategy)
 @settings(max_examples=50)
-def test_mql::operatorexpression_instantiation(instance):
-    assert isinstance(instance, mql::OperatorExpression)
-
-@given(instance=mql::OperatorExpression_strategy)
-def test_mql::operatorexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_mql_operatorexpression_instantiation(instance):
+    assert isinstance(instance, mql_OperatorExpression)
 
 
-@given(instance=mql::OperatorExpression_strategy)
-def test_mql::operatorexpression_operator_setter(instance):
+
+@given(instance=mql_OperatorExpression_strategy)
+def test_mql_operatorexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -2110,60 +1939,51 @@ def test_mql::operatorexpression_operator_setter(instance):
 def test_fromjoin_instantiation(instance):
     assert isinstance(instance, FromJoin)
 
-@given(instance=mql::LeftJoin_strategy)
+@given(instance=mql_LeftJoin_strategy)
 @settings(max_examples=50)
-def test_mql::leftjoin_instantiation(instance):
-    assert isinstance(instance, mql::LeftJoin)
-
-@given(instance=mql::LeftJoin_strategy)
-def test_mql::leftjoin_isOuter_type(instance):
-    assert isinstance(instance.isOuter, bool)
+def test_mql_leftjoin_instantiation(instance):
+    assert isinstance(instance, mql_LeftJoin)
 
 
-@given(instance=mql::LeftJoin_strategy)
-def test_mql::leftjoin_isOuter_setter(instance):
+
+@given(instance=mql_LeftJoin_strategy)
+def test_mql_leftjoin_isOuter_setter(instance):
     original = instance.isOuter
     instance.isOuter = original
     assert instance.isOuter == original
 
-@given(instance=mql::InnerJoin_strategy)
+@given(instance=mql_InnerJoin_strategy)
 @settings(max_examples=50)
-def test_mql::innerjoin_instantiation(instance):
-    assert isinstance(instance, mql::InnerJoin)
+def test_mql_innerjoin_instantiation(instance):
+    assert isinstance(instance, mql_InnerJoin)
 
-@given(instance=mql::Join_strategy)
+@given(instance=mql_Join_strategy)
 @settings(max_examples=50)
-def test_mql::join_instantiation(instance):
-    assert isinstance(instance, mql::Join)
+def test_mql_join_instantiation(instance):
+    assert isinstance(instance, mql_Join)
 
-@given(instance=mql::SelectClause_strategy)
+@given(instance=mql_SelectClause_strategy)
 @settings(max_examples=50)
-def test_mql::selectclause_instantiation(instance):
-    assert isinstance(instance, mql::SelectClause)
-
-@given(instance=mql::SelectClause_strategy)
-def test_mql::selectclause_isDistinct_type(instance):
-    assert isinstance(instance.isDistinct, bool)
+def test_mql_selectclause_instantiation(instance):
+    assert isinstance(instance, mql_SelectClause)
 
 
-@given(instance=mql::SelectClause_strategy)
-def test_mql::selectclause_isDistinct_setter(instance):
+
+@given(instance=mql_SelectClause_strategy)
+def test_mql_selectclause_isDistinct_setter(instance):
     original = instance.isDistinct
     instance.isDistinct = original
     assert instance.isDistinct == original
 
-@given(instance=mql::FromJoin_strategy)
+@given(instance=mql_FromJoin_strategy)
 @settings(max_examples=50)
-def test_mql::fromjoin_instantiation(instance):
-    assert isinstance(instance, mql::FromJoin)
-
-@given(instance=mql::FromJoin_strategy)
-def test_mql::fromjoin_isFetch_type(instance):
-    assert isinstance(instance.isFetch, bool)
+def test_mql_fromjoin_instantiation(instance):
+    assert isinstance(instance, mql_FromJoin)
 
 
-@given(instance=mql::FromJoin_strategy)
-def test_mql::fromjoin_isFetch_setter(instance):
+
+@given(instance=mql_FromJoin_strategy)
+def test_mql_fromjoin_isFetch_setter(instance):
     original = instance.isFetch
     instance.isFetch = original
     assert instance.isFetch == original
@@ -2173,39 +1993,33 @@ def test_mql::fromjoin_isFetch_setter(instance):
 def test_fromentry_instantiation(instance):
     assert isinstance(instance, FromEntry)
 
-@given(instance=mql::FromCollection_strategy)
+@given(instance=mql_FromCollection_strategy)
 @settings(max_examples=50)
-def test_mql::fromcollection_instantiation(instance):
-    assert isinstance(instance, mql::FromCollection)
+def test_mql_fromcollection_instantiation(instance):
+    assert isinstance(instance, mql_FromCollection)
 
-@given(instance=mql::FromClass_strategy)
+@given(instance=mql_FromClass_strategy)
 @settings(max_examples=50)
-def test_mql::fromclass_instantiation(instance):
-    assert isinstance(instance, mql::FromClass)
-
-@given(instance=mql::FromClass_strategy)
-def test_mql::fromclass_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_mql_fromclass_instantiation(instance):
+    assert isinstance(instance, mql_FromClass)
 
 
-@given(instance=mql::FromClass_strategy)
-def test_mql::fromclass_type_setter(instance):
+
+@given(instance=mql_FromClass_strategy)
+def test_mql_fromclass_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mql::VariableDeclaration_strategy)
+@given(instance=mql_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_mql::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, mql::VariableDeclaration)
-
-@given(instance=mql::VariableDeclaration_strategy)
-def test_mql::variabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mql_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, mql_VariableDeclaration)
 
 
-@given(instance=mql::VariableDeclaration_strategy)
-def test_mql::variabledeclaration_name_setter(instance):
+
+@given(instance=mql_VariableDeclaration_strategy)
+def test_mql_variabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2215,132 +2029,231 @@ def test_mql::variabledeclaration_name_setter(instance):
 def test_selectaggregateexpression_instantiation(instance):
     assert isinstance(instance, SelectAggregateExpression)
 
-@given(instance=mql::CountAggregate_strategy)
+@given(instance=mql_MinAggregate_strategy)
 @settings(max_examples=50)
-def test_mql::countaggregate_instantiation(instance):
-    assert isinstance(instance, mql::CountAggregate)
+def test_mql_minaggregate_instantiation(instance):
+    assert isinstance(instance, mql_MinAggregate)
 
-@given(instance=mql::MaxAggregate_strategy)
+@given(instance=mql_SumAggregate_strategy)
 @settings(max_examples=50)
-def test_mql::maxaggregate_instantiation(instance):
-    assert isinstance(instance, mql::MaxAggregate)
+def test_mql_sumaggregate_instantiation(instance):
+    assert isinstance(instance, mql_SumAggregate)
 
-@given(instance=mql::SumAggregate_strategy)
+@given(instance=mql_MaxAggregate_strategy)
 @settings(max_examples=50)
-def test_mql::sumaggregate_instantiation(instance):
-    assert isinstance(instance, mql::SumAggregate)
+def test_mql_maxaggregate_instantiation(instance):
+    assert isinstance(instance, mql_MaxAggregate)
 
-@given(instance=mql::MinAggregate_strategy)
+@given(instance=mql_CountAggregate_strategy)
 @settings(max_examples=50)
-def test_mql::minaggregate_instantiation(instance):
-    assert isinstance(instance, mql::MinAggregate)
+def test_mql_countaggregate_instantiation(instance):
+    assert isinstance(instance, mql_CountAggregate)
 
-@given(instance=mql::AvgAggregate_strategy)
+@given(instance=mql_AvgAggregate_strategy)
 @settings(max_examples=50)
-def test_mql::avgaggregate_instantiation(instance):
-    assert isinstance(instance, mql::AvgAggregate)
+def test_mql_avgaggregate_instantiation(instance):
+    assert isinstance(instance, mql_AvgAggregate)
 
 @given(instance=SelectExpression_strategy)
 @settings(max_examples=50)
 def test_selectexpression_instantiation(instance):
     assert isinstance(instance, SelectExpression)
 
-@given(instance=mql::AliasAttributeExpression_strategy)
+@given(instance=mql_SelectConstructorExpression_strategy)
 @settings(max_examples=50)
-def test_mql::aliasattributeexpression_instantiation(instance):
-    assert isinstance(instance, mql::AliasAttributeExpression)
-
-@given(instance=mql::AliasAttributeExpression_strategy)
-def test_mql::aliasattributeexpression_attributes_type(instance):
-    assert isinstance(instance.attributes, str)
+def test_mql_selectconstructorexpression_instantiation(instance):
+    assert isinstance(instance, mql_SelectConstructorExpression)
 
 
-@given(instance=mql::AliasAttributeExpression_strategy)
-def test_mql::aliasattributeexpression_attributes_setter(instance):
-    original = instance.attributes
-    instance.attributes = original
-    assert instance.attributes == original
 
-@given(instance=mql::SelectConstructorExpression_strategy)
-@settings(max_examples=50)
-def test_mql::selectconstructorexpression_instantiation(instance):
-    assert isinstance(instance, mql::SelectConstructorExpression)
-
-@given(instance=mql::SelectConstructorExpression_strategy)
-def test_mql::selectconstructorexpression_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mql::SelectConstructorExpression_strategy)
-def test_mql::selectconstructorexpression_name_setter(instance):
+@given(instance=mql_SelectConstructorExpression_strategy)
+def test_mql_selectconstructorexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mql::SelectAggregateExpression_strategy)
+@given(instance=mql_SelectAggregateExpression_strategy)
 @settings(max_examples=50)
-def test_mql::selectaggregateexpression_instantiation(instance):
-    assert isinstance(instance, mql::SelectAggregateExpression)
-
-@given(instance=mql::SelectAggregateExpression_strategy)
-def test_mql::selectaggregateexpression_isDistinct_type(instance):
-    assert isinstance(instance.isDistinct, bool)
+def test_mql_selectaggregateexpression_instantiation(instance):
+    assert isinstance(instance, mql_SelectAggregateExpression)
 
 
-@given(instance=mql::SelectAggregateExpression_strategy)
-def test_mql::selectaggregateexpression_isDistinct_setter(instance):
+
+@given(instance=mql_SelectAggregateExpression_strategy)
+def test_mql_selectaggregateexpression_isDistinct_setter(instance):
     original = instance.isDistinct
     instance.isDistinct = original
     assert instance.isDistinct == original
 
-@given(instance=mql::SelectExpression_strategy)
+@given(instance=mql_SelectExpression_strategy)
 @settings(max_examples=50)
-def test_mql::selectexpression_instantiation(instance):
-    assert isinstance(instance, mql::SelectExpression)
+def test_mql_selectexpression_instantiation(instance):
+    assert isinstance(instance, mql_SelectExpression)
 
-@given(instance=mql::Expression_strategy)
+@given(instance=mql_Expression_strategy)
 @settings(max_examples=50)
-def test_mql::expression_instantiation(instance):
-    assert isinstance(instance, mql::Expression)
+def test_mql_expression_instantiation(instance):
+    assert isinstance(instance, mql_Expression)
 
-@given(instance=mql::OrderClause_strategy)
+@given(instance=mql_OrderClause_strategy)
 @settings(max_examples=50)
-def test_mql::orderclause_instantiation(instance):
-    assert isinstance(instance, mql::OrderClause)
-
-@given(instance=mql::OrderClause_strategy)
-def test_mql::orderclause_isDesc_type(instance):
-    assert isinstance(instance.isDesc, bool)
+def test_mql_orderclause_instantiation(instance):
+    assert isinstance(instance, mql_OrderClause)
 
 
-@given(instance=mql::OrderClause_strategy)
-def test_mql::orderclause_isDesc_setter(instance):
+
+@given(instance=mql_OrderClause_strategy)
+def test_mql_orderclause_isDesc_setter(instance):
     original = instance.isDesc
     instance.isDesc = original
     assert instance.isDesc == original
 
-@given(instance=mql::OrderClause_strategy)
-def test_mql::orderclause_isAsc_type(instance):
-    assert isinstance(instance.isAsc, bool)
 
 
-@given(instance=mql::OrderClause_strategy)
-def test_mql::orderclause_isAsc_setter(instance):
+@given(instance=mql_OrderClause_strategy)
+def test_mql_orderclause_isAsc_setter(instance):
     original = instance.isAsc
     instance.isAsc = original
     assert instance.isAsc == original
 
-@given(instance=mql::HavingClause_strategy)
+@given(instance=mql_HavingClause_strategy)
 @settings(max_examples=50)
-def test_mql::havingclause_instantiation(instance):
-    assert isinstance(instance, mql::HavingClause)
+def test_mql_havingclause_instantiation(instance):
+    assert isinstance(instance, mql_HavingClause)
 
-@given(instance=mql::FromClause_strategy)
+@given(instance=mql_FromClause_strategy)
 @settings(max_examples=50)
-def test_mql::fromclause_instantiation(instance):
-    assert isinstance(instance, mql::FromClause)
+def test_mql_fromclause_instantiation(instance):
+    assert isinstance(instance, mql_FromClause)
 
-@given(instance=mql::DeleteClause_strategy)
+@given(instance=mql_DeleteClause_strategy)
 @settings(max_examples=50)
-def test_mql::deleteclause_instantiation(instance):
-    assert isinstance(instance, mql::DeleteClause)
+def test_mql_deleteclause_instantiation(instance):
+    assert isinstance(instance, mql_DeleteClause)
+
+@given(instance=mql_Value_strategy)
+@settings(max_examples=50)
+def test_mql_value_instantiation(instance):
+    assert isinstance(instance, mql_Value)
+
+@given(instance=mql_AliasAttributeExpression_strategy)
+@settings(max_examples=50)
+def test_mql_aliasattributeexpression_instantiation(instance):
+    assert isinstance(instance, mql_AliasAttributeExpression)
+
+
+
+@given(instance=mql_AliasAttributeExpression_strategy)
+def test_mql_aliasattributeexpression_attributes_setter(instance):
+    original = instance.attributes
+    instance.attributes = original
+    assert instance.attributes == original
+
+@given(instance=mql_UpdateItem_strategy)
+@settings(max_examples=50)
+def test_mql_updateitem_instantiation(instance):
+    assert isinstance(instance, mql_UpdateItem)
+
+@given(instance=mql_SetClause_strategy)
+@settings(max_examples=50)
+def test_mql_setclause_instantiation(instance):
+    assert isinstance(instance, mql_SetClause)
+
+@given(instance=mql_UpdateClause_strategy)
+@settings(max_examples=50)
+def test_mql_updateclause_instantiation(instance):
+    assert isinstance(instance, mql_UpdateClause)
+
+@given(instance=mql_FromEntry_strategy)
+@settings(max_examples=50)
+def test_mql_fromentry_instantiation(instance):
+    assert isinstance(instance, mql_FromEntry)
+
+@given(instance=mql_OrderItem_strategy)
+@settings(max_examples=50)
+def test_mql_orderitem_instantiation(instance):
+    assert isinstance(instance, mql_OrderItem)
+
+
+
+@given(instance=mql_OrderItem_strategy)
+def test_mql_orderitem_feature_setter(instance):
+    original = instance.feature
+    instance.feature = original
+    assert instance.feature == original
+
+@given(instance=mql_SelectFromClause_strategy)
+@settings(max_examples=50)
+def test_mql_selectfromclause_instantiation(instance):
+    assert isinstance(instance, mql_SelectFromClause)
+
+@given(instance=ExpressionTerm_strategy)
+@settings(max_examples=50)
+def test_expressionterm_instantiation(instance):
+    assert isinstance(instance, ExpressionTerm)
+
+@given(instance=mql_Variable_strategy)
+@settings(max_examples=50)
+def test_mql_variable_instantiation(instance):
+    assert isinstance(instance, mql_Variable)
+
+@given(instance=MQuery_strategy)
+@settings(max_examples=50)
+def test_mquery_instantiation(instance):
+    assert isinstance(instance, MQuery)
+
+@given(instance=mql_DeleteStatement_strategy)
+@settings(max_examples=50)
+def test_mql_deletestatement_instantiation(instance):
+    assert isinstance(instance, mql_DeleteStatement)
+
+@given(instance=mql_UpdateStatement_strategy)
+@settings(max_examples=50)
+def test_mql_updatestatement_instantiation(instance):
+    assert isinstance(instance, mql_UpdateStatement)
+
+@given(instance=mql_SelectStatement_strategy)
+@settings(max_examples=50)
+def test_mql_selectstatement_instantiation(instance):
+    assert isinstance(instance, mql_SelectStatement)
+
+@given(instance=mql_WhereClause_strategy)
+@settings(max_examples=50)
+def test_mql_whereclause_instantiation(instance):
+    assert isinstance(instance, mql_WhereClause)
+
+@given(instance=mql_NamedQuery_strategy)
+@settings(max_examples=50)
+def test_mql_namedquery_instantiation(instance):
+    assert isinstance(instance, mql_NamedQuery)
+
+
+
+@given(instance=mql_NamedQuery_strategy)
+def test_mql_namedquery_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mql_MQuery_strategy)
+@settings(max_examples=50)
+def test_mql_mquery_instantiation(instance):
+    assert isinstance(instance, mql_MQuery)
+
+@given(instance=mql_Import_strategy)
+@settings(max_examples=50)
+def test_mql_import_instantiation(instance):
+    assert isinstance(instance, mql_Import)
+
+
+
+@given(instance=mql_Import_strategy)
+def test_mql_import_importURI_setter(instance):
+    original = instance.importURI
+    instance.importURI = original
+    assert instance.importURI == original
+
+@given(instance=mql_QueryModule_strategy)
+@settings(max_examples=50)
+def test_mql_querymodule_instantiation(instance):
+    assert isinstance(instance, mql_QueryModule)

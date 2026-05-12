@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Project::Project,
-    Project::Department,
-    Project::Employee,
+from python_code import (
+    Project_Project,
+    Project_Department,
+    Project_Employee,
 )
 
 # =============================================================================
@@ -17,33 +17,33 @@ from classes import (
 
 
 
-def test_project::project_is_not_abstract():
-    assert not inspect.isabstract(Project::Project)
+def test_project_project_is_not_abstract():
+    assert not inspect.isabstract(Project_Project)
 
 
-def test_project::project_constructor_exists():
-    assert callable(Project::Project.__init__)
+def test_project_project_constructor_exists():
+    assert callable(Project_Project.__init__)
 
 
-def test_project::project_constructor_args():
-    sig = inspect.signature(Project::Project.__init__)
+def test_project_project_constructor_args():
+    sig = inspect.signature(Project_Project.__init__)
     params = list(sig.parameters.keys())
     assert "budget" in params, "Missing parameter 'budget'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_project::project_has_budget():
-    assert hasattr(Project::Project, "budget")
+def test_project_project_has_budget():
+    assert hasattr(Project_Project, "budget")
     descriptor = None
-    for klass in Project::Project.__mro__:
+    for klass in Project_Project.__mro__:
         if "budget" in klass.__dict__:
             descriptor = klass.__dict__["budget"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::project_has_name():
-    assert hasattr(Project::Project, "name")
+def test_project_project_has_name():
+    assert hasattr(Project_Project, "name")
     descriptor = None
-    for klass in Project::Project.__mro__:
+    for klass in Project_Project.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -51,43 +51,43 @@ def test_project::project_has_name():
 
 
 
-def test_project::department_is_not_abstract():
-    assert not inspect.isabstract(Project::Department)
+def test_project_department_is_not_abstract():
+    assert not inspect.isabstract(Project_Department)
 
 
-def test_project::department_constructor_exists():
-    assert callable(Project::Department.__init__)
+def test_project_department_constructor_exists():
+    assert callable(Project_Department.__init__)
 
 
-def test_project::department_constructor_args():
-    sig = inspect.signature(Project::Department.__init__)
+def test_project_department_constructor_args():
+    sig = inspect.signature(Project_Department.__init__)
     params = list(sig.parameters.keys())
     assert "budget" in params, "Missing parameter 'budget'"
     assert "name" in params, "Missing parameter 'name'"
     assert "location" in params, "Missing parameter 'location'"
 
-def test_project::department_has_budget():
-    assert hasattr(Project::Department, "budget")
+def test_project_department_has_budget():
+    assert hasattr(Project_Department, "budget")
     descriptor = None
-    for klass in Project::Department.__mro__:
+    for klass in Project_Department.__mro__:
         if "budget" in klass.__dict__:
             descriptor = klass.__dict__["budget"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::department_has_name():
-    assert hasattr(Project::Department, "name")
+def test_project_department_has_name():
+    assert hasattr(Project_Department, "name")
     descriptor = None
-    for klass in Project::Department.__mro__:
+    for klass in Project_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::department_has_location():
-    assert hasattr(Project::Department, "location")
+def test_project_department_has_location():
+    assert hasattr(Project_Department, "location")
     descriptor = None
-    for klass in Project::Department.__mro__:
+    for klass in Project_Department.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -95,33 +95,33 @@ def test_project::department_has_location():
 
 
 
-def test_project::employee_is_not_abstract():
-    assert not inspect.isabstract(Project::Employee)
+def test_project_employee_is_not_abstract():
+    assert not inspect.isabstract(Project_Employee)
 
 
-def test_project::employee_constructor_exists():
-    assert callable(Project::Employee.__init__)
+def test_project_employee_constructor_exists():
+    assert callable(Project_Employee.__init__)
 
 
-def test_project::employee_constructor_args():
-    sig = inspect.signature(Project::Employee.__init__)
+def test_project_employee_constructor_args():
+    sig = inspect.signature(Project_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "salary" in params, "Missing parameter 'salary'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_project::employee_has_salary():
-    assert hasattr(Project::Employee, "salary")
+def test_project_employee_has_salary():
+    assert hasattr(Project_Employee, "salary")
     descriptor = None
-    for klass in Project::Employee.__mro__:
+    for klass in Project_Employee.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::employee_has_name():
-    assert hasattr(Project::Employee, "name")
+def test_project_employee_has_name():
+    assert hasattr(Project_Employee, "name")
     descriptor = None
-    for klass in Project::Employee.__mro__:
+    for klass in Project_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -139,15 +139,15 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Project::Project_strategy = st.builds(
-    Project::Project,
+Project_Project_strategy = st.builds(
+    Project_Project,
     budget=
         st.integers(),
     name=
         safe_text
 )
-Project::Department_strategy = st.builds(
-    Project::Department,
+Project_Department_strategy = st.builds(
+    Project_Department,
     budget=
         st.integers(),
     name=
@@ -155,102 +155,81 @@ Project::Department_strategy = st.builds(
     location=
         safe_text
 )
-Project::Employee_strategy = st.builds(
-    Project::Employee,
+Project_Employee_strategy = st.builds(
+    Project_Employee,
     salary=
         st.integers(),
     name=
         safe_text
 )
 
-@given(instance=Project::Project_strategy)
+@given(instance=Project_Project_strategy)
 @settings(max_examples=50)
-def test_project::project_instantiation(instance):
-    assert isinstance(instance, Project::Project)
-
-@given(instance=Project::Project_strategy)
-def test_project::project_budget_type(instance):
-    assert isinstance(instance.budget, int)
+def test_project_project_instantiation(instance):
+    assert isinstance(instance, Project_Project)
 
 
-@given(instance=Project::Project_strategy)
-def test_project::project_budget_setter(instance):
+
+@given(instance=Project_Project_strategy)
+def test_project_project_budget_setter(instance):
     original = instance.budget
     instance.budget = original
     assert instance.budget == original
 
-@given(instance=Project::Project_strategy)
-def test_project::project_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Project::Project_strategy)
-def test_project::project_name_setter(instance):
+@given(instance=Project_Project_strategy)
+def test_project_project_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Project::Department_strategy)
+@given(instance=Project_Department_strategy)
 @settings(max_examples=50)
-def test_project::department_instantiation(instance):
-    assert isinstance(instance, Project::Department)
-
-@given(instance=Project::Department_strategy)
-def test_project::department_budget_type(instance):
-    assert isinstance(instance.budget, int)
+def test_project_department_instantiation(instance):
+    assert isinstance(instance, Project_Department)
 
 
-@given(instance=Project::Department_strategy)
-def test_project::department_budget_setter(instance):
+
+@given(instance=Project_Department_strategy)
+def test_project_department_budget_setter(instance):
     original = instance.budget
     instance.budget = original
     assert instance.budget == original
 
-@given(instance=Project::Department_strategy)
-def test_project::department_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Project::Department_strategy)
-def test_project::department_name_setter(instance):
+@given(instance=Project_Department_strategy)
+def test_project_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Project::Department_strategy)
-def test_project::department_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=Project::Department_strategy)
-def test_project::department_location_setter(instance):
+@given(instance=Project_Department_strategy)
+def test_project_department_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=Project::Employee_strategy)
+@given(instance=Project_Employee_strategy)
 @settings(max_examples=50)
-def test_project::employee_instantiation(instance):
-    assert isinstance(instance, Project::Employee)
-
-@given(instance=Project::Employee_strategy)
-def test_project::employee_salary_type(instance):
-    assert isinstance(instance.salary, int)
+def test_project_employee_instantiation(instance):
+    assert isinstance(instance, Project_Employee)
 
 
-@given(instance=Project::Employee_strategy)
-def test_project::employee_salary_setter(instance):
+
+@given(instance=Project_Employee_strategy)
+def test_project_employee_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
 
-@given(instance=Project::Employee_strategy)
-def test_project::employee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Project::Employee_strategy)
-def test_project::employee_name_setter(instance):
+@given(instance=Project_Employee_strategy)
+def test_project_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

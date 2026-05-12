@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    story::Parameter,
-    story::ConditionalProtagonist,
-    story::Goal,
+from python_code import (
+    story_Parameter,
+    story_ConditionalProtagonist,
+    story_Goal,
     StoryBase,
-    story::Story,
+    story_Story,
     User,
-    story::Persona,
+    story_Persona,
     Actor,
-    story::System,
-    story::User,
+    story_System,
+    story_User,
     Protagonist,
-    story::Actor,
-    story::Role,
-    story::EClass,
+    story_Actor,
+    story_Role,
+    story_EClass,
     StoryContainer,
-    story::Epic,
-    story::Protagonist,
-    story::CatalogElement,
+    story_Epic,
+    story_Protagonist,
+    story_CatalogElement,
     CatalogElement,
-    story::StoryContainer,
-    story::Scenario,
-    story::Theme,
-    story::StoryBase,
-    story::Catalog,
+    story_StoryBase,
+    story_Theme,
+    story_Scenario,
+    story_StoryContainer,
+    story_Catalog,
 )
 
 # =============================================================================
@@ -38,67 +38,67 @@ from classes import (
 
 
 
-def test_story::parameter_is_not_abstract():
-    assert not inspect.isabstract(story::Parameter)
+def test_story_parameter_is_not_abstract():
+    assert not inspect.isabstract(story_Parameter)
 
 
-def test_story::parameter_constructor_exists():
-    assert callable(story::Parameter.__init__)
+def test_story_parameter_constructor_exists():
+    assert callable(story_Parameter.__init__)
 
 
-def test_story::parameter_constructor_args():
-    sig = inspect.signature(story::Parameter.__init__)
+def test_story_parameter_constructor_args():
+    sig = inspect.signature(story_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_story::parameter_has_type():
-    assert hasattr(story::Parameter, "type")
+def test_story_parameter_has_description():
+    assert hasattr(story_Parameter, "description")
     descriptor = None
-    for klass in story::Parameter.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_story::parameter_has_description():
-    assert hasattr(story::Parameter, "description")
-    descriptor = None
-    for klass in story::Parameter.__mro__:
+    for klass in story_Parameter.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_story::parameter_has_name():
-    assert hasattr(story::Parameter, "name")
+def test_story_parameter_has_name():
+    assert hasattr(story_Parameter, "name")
     descriptor = None
-    for klass in story::Parameter.__mro__:
+    for klass in story_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_story_parameter_has_type():
+    assert hasattr(story_Parameter, "type")
+    descriptor = None
+    for klass in story_Parameter.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_story::conditionalprotagonist_is_not_abstract():
-    assert not inspect.isabstract(story::ConditionalProtagonist)
+
+def test_story_conditionalprotagonist_is_not_abstract():
+    assert not inspect.isabstract(story_ConditionalProtagonist)
 
 
-def test_story::conditionalprotagonist_constructor_exists():
-    assert callable(story::ConditionalProtagonist.__init__)
+def test_story_conditionalprotagonist_constructor_exists():
+    assert callable(story_ConditionalProtagonist.__init__)
 
 
-def test_story::conditionalprotagonist_constructor_args():
-    sig = inspect.signature(story::ConditionalProtagonist.__init__)
+def test_story_conditionalprotagonist_constructor_args():
+    sig = inspect.signature(story_ConditionalProtagonist.__init__)
     params = list(sig.parameters.keys())
     assert "condition" in params, "Missing parameter 'condition'"
 
-def test_story::conditionalprotagonist_has_condition():
-    assert hasattr(story::ConditionalProtagonist, "condition")
+def test_story_conditionalprotagonist_has_condition():
+    assert hasattr(story_ConditionalProtagonist, "condition")
     descriptor = None
-    for klass in story::ConditionalProtagonist.__mro__:
+    for klass in story_ConditionalProtagonist.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
@@ -106,35 +106,35 @@ def test_story::conditionalprotagonist_has_condition():
 
 
 
-def test_story::goal_is_not_abstract():
-    assert not inspect.isabstract(story::Goal)
+def test_story_goal_is_not_abstract():
+    assert not inspect.isabstract(story_Goal)
 
 
-def test_story::goal_constructor_exists():
-    assert callable(story::Goal.__init__)
+def test_story_goal_constructor_exists():
+    assert callable(story_Goal.__init__)
 
 
-def test_story::goal_constructor_args():
-    sig = inspect.signature(story::Goal.__init__)
+def test_story_goal_constructor_args():
+    sig = inspect.signature(story_Goal.__init__)
     params = list(sig.parameters.keys())
-    assert "details" in params, "Missing parameter 'details'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "details" in params, "Missing parameter 'details'"
 
-def test_story::goal_has_details():
-    assert hasattr(story::Goal, "details")
+def test_story_goal_has_name():
+    assert hasattr(story_Goal, "name")
     descriptor = None
-    for klass in story::Goal.__mro__:
-        if "details" in klass.__dict__:
-            descriptor = klass.__dict__["details"]
+    for klass in story_Goal.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_story::goal_has_name():
-    assert hasattr(story::Goal, "name")
+def test_story_goal_has_details():
+    assert hasattr(story_Goal, "details")
     descriptor = None
-    for klass in story::Goal.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in story_Goal.__mro__:
+        if "details" in klass.__dict__:
+            descriptor = klass.__dict__["details"]
             break
     assert isinstance(descriptor, property)
 
@@ -154,43 +154,43 @@ def test_storybase_constructor_args():
 
 
 
-def test_story::story_is_not_abstract():
-    assert not inspect.isabstract(story::Story)
+def test_story_story_is_not_abstract():
+    assert not inspect.isabstract(story_Story)
 
 
-def test_story::story_constructor_exists():
-    assert callable(story::Story.__init__)
+def test_story_story_constructor_exists():
+    assert callable(story_Story.__init__)
 
 
-def test_story::story_constructor_args():
-    sig = inspect.signature(story::Story.__init__)
+def test_story_story_constructor_args():
+    sig = inspect.signature(story_Story.__init__)
     params = list(sig.parameters.keys())
-    assert "completed" in params, "Missing parameter 'completed'"
     assert "benefit" in params, "Missing parameter 'benefit'"
+    assert "completed" in params, "Missing parameter 'completed'"
     assert "goal" in params, "Missing parameter 'goal'"
 
-def test_story::story_has_completed():
-    assert hasattr(story::Story, "completed")
+def test_story_story_has_benefit():
+    assert hasattr(story_Story, "benefit")
     descriptor = None
-    for klass in story::Story.__mro__:
-        if "completed" in klass.__dict__:
-            descriptor = klass.__dict__["completed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_story::story_has_benefit():
-    assert hasattr(story::Story, "benefit")
-    descriptor = None
-    for klass in story::Story.__mro__:
+    for klass in story_Story.__mro__:
         if "benefit" in klass.__dict__:
             descriptor = klass.__dict__["benefit"]
             break
     assert isinstance(descriptor, property)
 
-def test_story::story_has_goal():
-    assert hasattr(story::Story, "goal")
+def test_story_story_has_completed():
+    assert hasattr(story_Story, "completed")
     descriptor = None
-    for klass in story::Story.__mro__:
+    for klass in story_Story.__mro__:
+        if "completed" in klass.__dict__:
+            descriptor = klass.__dict__["completed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_story_story_has_goal():
+    assert hasattr(story_Story, "goal")
+    descriptor = None
+    for klass in story_Story.__mro__:
         if "goal" in klass.__dict__:
             descriptor = klass.__dict__["goal"]
             break
@@ -212,23 +212,23 @@ def test_user_constructor_args():
 
 
 
-def test_story::persona_is_not_abstract():
-    assert not inspect.isabstract(story::Persona)
+def test_story_persona_is_not_abstract():
+    assert not inspect.isabstract(story_Persona)
 
 
-def test_story::persona_constructor_exists():
-    assert callable(story::Persona.__init__)
+def test_story_persona_constructor_exists():
+    assert callable(story_Persona.__init__)
 
 
-def test_story::persona_constructor_args():
-    sig = inspect.signature(story::Persona.__init__)
+def test_story_persona_constructor_args():
+    sig = inspect.signature(story_Persona.__init__)
     params = list(sig.parameters.keys())
     assert "picture" in params, "Missing parameter 'picture'"
 
-def test_story::persona_has_picture():
-    assert hasattr(story::Persona, "picture")
+def test_story_persona_has_picture():
+    assert hasattr(story_Persona, "picture")
     descriptor = None
-    for klass in story::Persona.__mro__:
+    for klass in story_Persona.__mro__:
         if "picture" in klass.__dict__:
             descriptor = klass.__dict__["picture"]
             break
@@ -250,30 +250,30 @@ def test_actor_constructor_args():
 
 
 
-def test_story::system_is_not_abstract():
-    assert not inspect.isabstract(story::System)
+def test_story_system_is_not_abstract():
+    assert not inspect.isabstract(story_System)
 
 
-def test_story::system_constructor_exists():
-    assert callable(story::System.__init__)
+def test_story_system_constructor_exists():
+    assert callable(story_System.__init__)
 
 
-def test_story::system_constructor_args():
-    sig = inspect.signature(story::System.__init__)
+def test_story_system_constructor_args():
+    sig = inspect.signature(story_System.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::user_is_not_abstract():
-    assert not inspect.isabstract(story::User)
+def test_story_user_is_not_abstract():
+    assert not inspect.isabstract(story_User)
 
 
-def test_story::user_constructor_exists():
-    assert callable(story::User.__init__)
+def test_story_user_constructor_exists():
+    assert callable(story_User.__init__)
 
 
-def test_story::user_constructor_args():
-    sig = inspect.signature(story::User.__init__)
+def test_story_user_constructor_args():
+    sig = inspect.signature(story_User.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,44 +292,44 @@ def test_protagonist_constructor_args():
 
 
 
-def test_story::actor_is_not_abstract():
-    assert not inspect.isabstract(story::Actor)
+def test_story_actor_is_not_abstract():
+    assert not inspect.isabstract(story_Actor)
 
 
-def test_story::actor_constructor_exists():
-    assert callable(story::Actor.__init__)
+def test_story_actor_constructor_exists():
+    assert callable(story_Actor.__init__)
 
 
-def test_story::actor_constructor_args():
-    sig = inspect.signature(story::Actor.__init__)
+def test_story_actor_constructor_args():
+    sig = inspect.signature(story_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::role_is_not_abstract():
-    assert not inspect.isabstract(story::Role)
+def test_story_role_is_not_abstract():
+    assert not inspect.isabstract(story_Role)
 
 
-def test_story::role_constructor_exists():
-    assert callable(story::Role.__init__)
+def test_story_role_constructor_exists():
+    assert callable(story_Role.__init__)
 
 
-def test_story::role_constructor_args():
-    sig = inspect.signature(story::Role.__init__)
+def test_story_role_constructor_args():
+    sig = inspect.signature(story_Role.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::eclass_is_not_abstract():
-    assert not inspect.isabstract(story::EClass)
+def test_story_eclass_is_not_abstract():
+    assert not inspect.isabstract(story_EClass)
 
 
-def test_story::eclass_constructor_exists():
-    assert callable(story::EClass.__init__)
+def test_story_eclass_constructor_exists():
+    assert callable(story_EClass.__init__)
 
 
-def test_story::eclass_constructor_args():
-    sig = inspect.signature(story::EClass.__init__)
+def test_story_eclass_constructor_args():
+    sig = inspect.signature(story_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -348,73 +348,73 @@ def test_storycontainer_constructor_args():
 
 
 
-def test_story::epic_is_not_abstract():
-    assert not inspect.isabstract(story::Epic)
+def test_story_epic_is_not_abstract():
+    assert not inspect.isabstract(story_Epic)
 
 
-def test_story::epic_constructor_exists():
-    assert callable(story::Epic.__init__)
+def test_story_epic_constructor_exists():
+    assert callable(story_Epic.__init__)
 
 
-def test_story::epic_constructor_args():
-    sig = inspect.signature(story::Epic.__init__)
+def test_story_epic_constructor_args():
+    sig = inspect.signature(story_Epic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::protagonist_is_not_abstract():
-    assert not inspect.isabstract(story::Protagonist)
+def test_story_protagonist_is_not_abstract():
+    assert not inspect.isabstract(story_Protagonist)
 
 
-def test_story::protagonist_constructor_exists():
-    assert callable(story::Protagonist.__init__)
+def test_story_protagonist_constructor_exists():
+    assert callable(story_Protagonist.__init__)
 
 
-def test_story::protagonist_constructor_args():
-    sig = inspect.signature(story::Protagonist.__init__)
+def test_story_protagonist_constructor_args():
+    sig = inspect.signature(story_Protagonist.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::catalogelement_is_not_abstract():
-    assert not inspect.isabstract(story::CatalogElement)
+def test_story_catalogelement_is_not_abstract():
+    assert not inspect.isabstract(story_CatalogElement)
 
 
-def test_story::catalogelement_constructor_exists():
-    assert callable(story::CatalogElement.__init__)
+def test_story_catalogelement_constructor_exists():
+    assert callable(story_CatalogElement.__init__)
 
 
-def test_story::catalogelement_constructor_args():
-    sig = inspect.signature(story::CatalogElement.__init__)
+def test_story_catalogelement_constructor_args():
+    sig = inspect.signature(story_CatalogElement.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_story::catalogelement_has_id():
-    assert hasattr(story::CatalogElement, "id")
+def test_story_catalogelement_has_name():
+    assert hasattr(story_CatalogElement, "name")
     descriptor = None
-    for klass in story::CatalogElement.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in story_CatalogElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_story::catalogelement_has_description():
-    assert hasattr(story::CatalogElement, "description")
+def test_story_catalogelement_has_description():
+    assert hasattr(story_CatalogElement, "description")
     descriptor = None
-    for klass in story::CatalogElement.__mro__:
+    for klass in story_CatalogElement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_story::catalogelement_has_name():
-    assert hasattr(story::CatalogElement, "name")
+def test_story_catalogelement_has_id():
+    assert hasattr(story_CatalogElement, "id")
     descriptor = None
-    for klass in story::CatalogElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in story_CatalogElement.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -434,57 +434,71 @@ def test_catalogelement_constructor_args():
 
 
 
-def test_story::storycontainer_is_not_abstract():
-    assert not inspect.isabstract(story::StoryContainer)
+def test_story_storybase_is_not_abstract():
+    assert not inspect.isabstract(story_StoryBase)
 
 
-def test_story::storycontainer_constructor_exists():
-    assert callable(story::StoryContainer.__init__)
+def test_story_storybase_constructor_exists():
+    assert callable(story_StoryBase.__init__)
 
 
-def test_story::storycontainer_constructor_args():
-    sig = inspect.signature(story::StoryContainer.__init__)
+def test_story_storybase_constructor_args():
+    sig = inspect.signature(story_StoryBase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::scenario_is_not_abstract():
-    assert not inspect.isabstract(story::Scenario)
+def test_story_theme_is_not_abstract():
+    assert not inspect.isabstract(story_Theme)
 
 
-def test_story::scenario_constructor_exists():
-    assert callable(story::Scenario.__init__)
+def test_story_theme_constructor_exists():
+    assert callable(story_Theme.__init__)
 
 
-def test_story::scenario_constructor_args():
-    sig = inspect.signature(story::Scenario.__init__)
+def test_story_theme_constructor_args():
+    sig = inspect.signature(story_Theme.__init__)
     params = list(sig.parameters.keys())
-    assert "action" in params, "Missing parameter 'action'"
+
+
+
+def test_story_scenario_is_not_abstract():
+    assert not inspect.isabstract(story_Scenario)
+
+
+def test_story_scenario_constructor_exists():
+    assert callable(story_Scenario.__init__)
+
+
+def test_story_scenario_constructor_args():
+    sig = inspect.signature(story_Scenario.__init__)
+    params = list(sig.parameters.keys())
     assert "outcome" in params, "Missing parameter 'outcome'"
+    assert "action" in params, "Missing parameter 'action'"
     assert "context" in params, "Missing parameter 'context'"
 
-def test_story::scenario_has_action():
-    assert hasattr(story::Scenario, "action")
+def test_story_scenario_has_outcome():
+    assert hasattr(story_Scenario, "outcome")
     descriptor = None
-    for klass in story::Scenario.__mro__:
-        if "action" in klass.__dict__:
-            descriptor = klass.__dict__["action"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_story::scenario_has_outcome():
-    assert hasattr(story::Scenario, "outcome")
-    descriptor = None
-    for klass in story::Scenario.__mro__:
+    for klass in story_Scenario.__mro__:
         if "outcome" in klass.__dict__:
             descriptor = klass.__dict__["outcome"]
             break
     assert isinstance(descriptor, property)
 
-def test_story::scenario_has_context():
-    assert hasattr(story::Scenario, "context")
+def test_story_scenario_has_action():
+    assert hasattr(story_Scenario, "action")
     descriptor = None
-    for klass in story::Scenario.__mro__:
+    for klass in story_Scenario.__mro__:
+        if "action" in klass.__dict__:
+            descriptor = klass.__dict__["action"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_story_scenario_has_context():
+    assert hasattr(story_Scenario, "context")
+    descriptor = None
+    for klass in story_Scenario.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
@@ -492,44 +506,30 @@ def test_story::scenario_has_context():
 
 
 
-def test_story::theme_is_not_abstract():
-    assert not inspect.isabstract(story::Theme)
+def test_story_storycontainer_is_not_abstract():
+    assert not inspect.isabstract(story_StoryContainer)
 
 
-def test_story::theme_constructor_exists():
-    assert callable(story::Theme.__init__)
+def test_story_storycontainer_constructor_exists():
+    assert callable(story_StoryContainer.__init__)
 
 
-def test_story::theme_constructor_args():
-    sig = inspect.signature(story::Theme.__init__)
+def test_story_storycontainer_constructor_args():
+    sig = inspect.signature(story_StoryContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_story::storybase_is_not_abstract():
-    assert not inspect.isabstract(story::StoryBase)
+def test_story_catalog_is_not_abstract():
+    assert not inspect.isabstract(story_Catalog)
 
 
-def test_story::storybase_constructor_exists():
-    assert callable(story::StoryBase.__init__)
+def test_story_catalog_constructor_exists():
+    assert callable(story_Catalog.__init__)
 
 
-def test_story::storybase_constructor_args():
-    sig = inspect.signature(story::StoryBase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_story::catalog_is_not_abstract():
-    assert not inspect.isabstract(story::Catalog)
-
-
-def test_story::catalog_constructor_exists():
-    assert callable(story::Catalog.__init__)
-
-
-def test_story::catalog_constructor_args():
-    sig = inspect.signature(story::Catalog.__init__)
+def test_story_catalog_constructor_args():
+    sig = inspect.signature(story_Catalog.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -544,231 +544,204 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-story::Parameter_strategy = st.builds(
-    story::Parameter,
-    type=
-        safe_text,
+story_Parameter_strategy = st.builds(
+    story_Parameter,
     description=
         safe_text,
     name=
+        safe_text,
+    type=
         safe_text
 )
-story::ConditionalProtagonist_strategy = st.builds(
-    story::ConditionalProtagonist,
+story_ConditionalProtagonist_strategy = st.builds(
+    story_ConditionalProtagonist,
     condition=
         safe_text
 )
-story::Goal_strategy = st.builds(
-    story::Goal,
-    details=
-        safe_text,
+story_Goal_strategy = st.builds(
+    story_Goal,
     name=
+        safe_text,
+    details=
         safe_text
 )
 StoryBase_strategy = st.builds(
     StoryBase,
 )
-story::Story_strategy = st.builds(
-    story::Story,
-    completed=
-        st.booleans(),
+story_Story_strategy = st.builds(
+    story_Story,
     benefit=
         safe_text,
+    completed=
+        st.booleans(),
     goal=
         safe_text
 )
 User_strategy = st.builds(
     User,
 )
-story::Persona_strategy = st.builds(
-    story::Persona,
+story_Persona_strategy = st.builds(
+    story_Persona,
     picture=
         safe_text
 )
 Actor_strategy = st.builds(
     Actor,
 )
-story::System_strategy = st.builds(
-    story::System,
+story_System_strategy = st.builds(
+    story_System,
 )
-story::User_strategy = st.builds(
-    story::User,
+story_User_strategy = st.builds(
+    story_User,
 )
 Protagonist_strategy = st.builds(
     Protagonist,
 )
-story::Actor_strategy = st.builds(
-    story::Actor,
+story_Actor_strategy = st.builds(
+    story_Actor,
 )
-story::Role_strategy = st.builds(
-    story::Role,
+story_Role_strategy = st.builds(
+    story_Role,
 )
-story::EClass_strategy = st.builds(
-    story::EClass,
+story_EClass_strategy = st.builds(
+    story_EClass,
 )
 StoryContainer_strategy = st.builds(
     StoryContainer,
 )
-story::Epic_strategy = st.builds(
-    story::Epic,
+story_Epic_strategy = st.builds(
+    story_Epic,
 )
-story::Protagonist_strategy = st.builds(
-    story::Protagonist,
+story_Protagonist_strategy = st.builds(
+    story_Protagonist,
 )
-story::CatalogElement_strategy = st.builds(
-    story::CatalogElement,
-    id=
+story_CatalogElement_strategy = st.builds(
+    story_CatalogElement,
+    name=
         safe_text,
     description=
         safe_text,
-    name=
+    id=
         safe_text
 )
 CatalogElement_strategy = st.builds(
     CatalogElement,
 )
-story::StoryContainer_strategy = st.builds(
-    story::StoryContainer,
+story_StoryBase_strategy = st.builds(
+    story_StoryBase,
 )
-story::Scenario_strategy = st.builds(
-    story::Scenario,
-    action=
-        safe_text,
+story_Theme_strategy = st.builds(
+    story_Theme,
+)
+story_Scenario_strategy = st.builds(
+    story_Scenario,
     outcome=
+        safe_text,
+    action=
         safe_text,
     context=
         safe_text
 )
-story::Theme_strategy = st.builds(
-    story::Theme,
+story_StoryContainer_strategy = st.builds(
+    story_StoryContainer,
 )
-story::StoryBase_strategy = st.builds(
-    story::StoryBase,
-)
-story::Catalog_strategy = st.builds(
-    story::Catalog,
+story_Catalog_strategy = st.builds(
+    story_Catalog,
 )
 
-@given(instance=story::Parameter_strategy)
+@given(instance=story_Parameter_strategy)
 @settings(max_examples=50)
-def test_story::parameter_instantiation(instance):
-    assert isinstance(instance, story::Parameter)
-
-@given(instance=story::Parameter_strategy)
-def test_story::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_story_parameter_instantiation(instance):
+    assert isinstance(instance, story_Parameter)
 
 
-@given(instance=story::Parameter_strategy)
-def test_story::parameter_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=story::Parameter_strategy)
-def test_story::parameter_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=story::Parameter_strategy)
-def test_story::parameter_description_setter(instance):
+@given(instance=story_Parameter_strategy)
+def test_story_parameter_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=story::Parameter_strategy)
-def test_story::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=story::Parameter_strategy)
-def test_story::parameter_name_setter(instance):
+@given(instance=story_Parameter_strategy)
+def test_story_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=story::ConditionalProtagonist_strategy)
+
+
+@given(instance=story_Parameter_strategy)
+def test_story_parameter_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=story_ConditionalProtagonist_strategy)
 @settings(max_examples=50)
-def test_story::conditionalprotagonist_instantiation(instance):
-    assert isinstance(instance, story::ConditionalProtagonist)
-
-@given(instance=story::ConditionalProtagonist_strategy)
-def test_story::conditionalprotagonist_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_story_conditionalprotagonist_instantiation(instance):
+    assert isinstance(instance, story_ConditionalProtagonist)
 
 
-@given(instance=story::ConditionalProtagonist_strategy)
-def test_story::conditionalprotagonist_condition_setter(instance):
+
+@given(instance=story_ConditionalProtagonist_strategy)
+def test_story_conditionalprotagonist_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=story::Goal_strategy)
+@given(instance=story_Goal_strategy)
 @settings(max_examples=50)
-def test_story::goal_instantiation(instance):
-    assert isinstance(instance, story::Goal)
-
-@given(instance=story::Goal_strategy)
-def test_story::goal_details_type(instance):
-    assert isinstance(instance.details, str)
+def test_story_goal_instantiation(instance):
+    assert isinstance(instance, story_Goal)
 
 
-@given(instance=story::Goal_strategy)
-def test_story::goal_details_setter(instance):
-    original = instance.details
-    instance.details = original
-    assert instance.details == original
 
-@given(instance=story::Goal_strategy)
-def test_story::goal_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=story::Goal_strategy)
-def test_story::goal_name_setter(instance):
+@given(instance=story_Goal_strategy)
+def test_story_goal_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=story_Goal_strategy)
+def test_story_goal_details_setter(instance):
+    original = instance.details
+    instance.details = original
+    assert instance.details == original
 
 @given(instance=StoryBase_strategy)
 @settings(max_examples=50)
 def test_storybase_instantiation(instance):
     assert isinstance(instance, StoryBase)
 
-@given(instance=story::Story_strategy)
+@given(instance=story_Story_strategy)
 @settings(max_examples=50)
-def test_story::story_instantiation(instance):
-    assert isinstance(instance, story::Story)
-
-@given(instance=story::Story_strategy)
-def test_story::story_completed_type(instance):
-    assert isinstance(instance.completed, bool)
+def test_story_story_instantiation(instance):
+    assert isinstance(instance, story_Story)
 
 
-@given(instance=story::Story_strategy)
-def test_story::story_completed_setter(instance):
-    original = instance.completed
-    instance.completed = original
-    assert instance.completed == original
 
-@given(instance=story::Story_strategy)
-def test_story::story_benefit_type(instance):
-    assert isinstance(instance.benefit, str)
-
-
-@given(instance=story::Story_strategy)
-def test_story::story_benefit_setter(instance):
+@given(instance=story_Story_strategy)
+def test_story_story_benefit_setter(instance):
     original = instance.benefit
     instance.benefit = original
     assert instance.benefit == original
 
-@given(instance=story::Story_strategy)
-def test_story::story_goal_type(instance):
-    assert isinstance(instance.goal, str)
 
 
-@given(instance=story::Story_strategy)
-def test_story::story_goal_setter(instance):
+@given(instance=story_Story_strategy)
+def test_story_story_completed_setter(instance):
+    original = instance.completed
+    instance.completed = original
+    assert instance.completed == original
+
+
+
+@given(instance=story_Story_strategy)
+def test_story_story_goal_setter(instance):
     original = instance.goal
     instance.goal = original
     assert instance.goal == original
@@ -778,18 +751,15 @@ def test_story::story_goal_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=story::Persona_strategy)
+@given(instance=story_Persona_strategy)
 @settings(max_examples=50)
-def test_story::persona_instantiation(instance):
-    assert isinstance(instance, story::Persona)
-
-@given(instance=story::Persona_strategy)
-def test_story::persona_picture_type(instance):
-    assert isinstance(instance.picture, str)
+def test_story_persona_instantiation(instance):
+    assert isinstance(instance, story_Persona)
 
 
-@given(instance=story::Persona_strategy)
-def test_story::persona_picture_setter(instance):
+
+@given(instance=story_Persona_strategy)
+def test_story_persona_picture_setter(instance):
     original = instance.picture
     instance.picture = original
     assert instance.picture == original
@@ -799,148 +769,130 @@ def test_story::persona_picture_setter(instance):
 def test_actor_instantiation(instance):
     assert isinstance(instance, Actor)
 
-@given(instance=story::System_strategy)
+@given(instance=story_System_strategy)
 @settings(max_examples=50)
-def test_story::system_instantiation(instance):
-    assert isinstance(instance, story::System)
+def test_story_system_instantiation(instance):
+    assert isinstance(instance, story_System)
 
-@given(instance=story::User_strategy)
+@given(instance=story_User_strategy)
 @settings(max_examples=50)
-def test_story::user_instantiation(instance):
-    assert isinstance(instance, story::User)
+def test_story_user_instantiation(instance):
+    assert isinstance(instance, story_User)
 
 @given(instance=Protagonist_strategy)
 @settings(max_examples=50)
 def test_protagonist_instantiation(instance):
     assert isinstance(instance, Protagonist)
 
-@given(instance=story::Actor_strategy)
+@given(instance=story_Actor_strategy)
 @settings(max_examples=50)
-def test_story::actor_instantiation(instance):
-    assert isinstance(instance, story::Actor)
+def test_story_actor_instantiation(instance):
+    assert isinstance(instance, story_Actor)
 
-@given(instance=story::Role_strategy)
+@given(instance=story_Role_strategy)
 @settings(max_examples=50)
-def test_story::role_instantiation(instance):
-    assert isinstance(instance, story::Role)
+def test_story_role_instantiation(instance):
+    assert isinstance(instance, story_Role)
 
-@given(instance=story::EClass_strategy)
+@given(instance=story_EClass_strategy)
 @settings(max_examples=50)
-def test_story::eclass_instantiation(instance):
-    assert isinstance(instance, story::EClass)
+def test_story_eclass_instantiation(instance):
+    assert isinstance(instance, story_EClass)
 
 @given(instance=StoryContainer_strategy)
 @settings(max_examples=50)
 def test_storycontainer_instantiation(instance):
     assert isinstance(instance, StoryContainer)
 
-@given(instance=story::Epic_strategy)
+@given(instance=story_Epic_strategy)
 @settings(max_examples=50)
-def test_story::epic_instantiation(instance):
-    assert isinstance(instance, story::Epic)
+def test_story_epic_instantiation(instance):
+    assert isinstance(instance, story_Epic)
 
-@given(instance=story::Protagonist_strategy)
+@given(instance=story_Protagonist_strategy)
 @settings(max_examples=50)
-def test_story::protagonist_instantiation(instance):
-    assert isinstance(instance, story::Protagonist)
+def test_story_protagonist_instantiation(instance):
+    assert isinstance(instance, story_Protagonist)
 
-@given(instance=story::CatalogElement_strategy)
+@given(instance=story_CatalogElement_strategy)
 @settings(max_examples=50)
-def test_story::catalogelement_instantiation(instance):
-    assert isinstance(instance, story::CatalogElement)
-
-@given(instance=story::CatalogElement_strategy)
-def test_story::catalogelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_story_catalogelement_instantiation(instance):
+    assert isinstance(instance, story_CatalogElement)
 
 
-@given(instance=story::CatalogElement_strategy)
-def test_story::catalogelement_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=story::CatalogElement_strategy)
-def test_story::catalogelement_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=story_CatalogElement_strategy)
+def test_story_catalogelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=story::CatalogElement_strategy)
-def test_story::catalogelement_description_setter(instance):
+
+@given(instance=story_CatalogElement_strategy)
+def test_story_catalogelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=story::CatalogElement_strategy)
-def test_story::catalogelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=story::CatalogElement_strategy)
-def test_story::catalogelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=story_CatalogElement_strategy)
+def test_story_catalogelement_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 @given(instance=CatalogElement_strategy)
 @settings(max_examples=50)
 def test_catalogelement_instantiation(instance):
     assert isinstance(instance, CatalogElement)
 
-@given(instance=story::StoryContainer_strategy)
+@given(instance=story_StoryBase_strategy)
 @settings(max_examples=50)
-def test_story::storycontainer_instantiation(instance):
-    assert isinstance(instance, story::StoryContainer)
+def test_story_storybase_instantiation(instance):
+    assert isinstance(instance, story_StoryBase)
 
-@given(instance=story::Scenario_strategy)
+@given(instance=story_Theme_strategy)
 @settings(max_examples=50)
-def test_story::scenario_instantiation(instance):
-    assert isinstance(instance, story::Scenario)
+def test_story_theme_instantiation(instance):
+    assert isinstance(instance, story_Theme)
 
-@given(instance=story::Scenario_strategy)
-def test_story::scenario_action_type(instance):
-    assert isinstance(instance.action, str)
-
-
-@given(instance=story::Scenario_strategy)
-def test_story::scenario_action_setter(instance):
-    original = instance.action
-    instance.action = original
-    assert instance.action == original
-
-@given(instance=story::Scenario_strategy)
-def test_story::scenario_outcome_type(instance):
-    assert isinstance(instance.outcome, str)
+@given(instance=story_Scenario_strategy)
+@settings(max_examples=50)
+def test_story_scenario_instantiation(instance):
+    assert isinstance(instance, story_Scenario)
 
 
-@given(instance=story::Scenario_strategy)
-def test_story::scenario_outcome_setter(instance):
+
+@given(instance=story_Scenario_strategy)
+def test_story_scenario_outcome_setter(instance):
     original = instance.outcome
     instance.outcome = original
     assert instance.outcome == original
 
-@given(instance=story::Scenario_strategy)
-def test_story::scenario_context_type(instance):
-    assert isinstance(instance.context, str)
 
 
-@given(instance=story::Scenario_strategy)
-def test_story::scenario_context_setter(instance):
+@given(instance=story_Scenario_strategy)
+def test_story_scenario_action_setter(instance):
+    original = instance.action
+    instance.action = original
+    assert instance.action == original
+
+
+
+@given(instance=story_Scenario_strategy)
+def test_story_scenario_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
 
-@given(instance=story::Theme_strategy)
+@given(instance=story_StoryContainer_strategy)
 @settings(max_examples=50)
-def test_story::theme_instantiation(instance):
-    assert isinstance(instance, story::Theme)
+def test_story_storycontainer_instantiation(instance):
+    assert isinstance(instance, story_StoryContainer)
 
-@given(instance=story::StoryBase_strategy)
+@given(instance=story_Catalog_strategy)
 @settings(max_examples=50)
-def test_story::storybase_instantiation(instance):
-    assert isinstance(instance, story::StoryBase)
-
-@given(instance=story::Catalog_strategy)
-@settings(max_examples=50)
-def test_story::catalog_instantiation(instance):
-    assert isinstance(instance, story::Catalog)
+def test_story_catalog_instantiation(instance):
+    assert isinstance(instance, story_Catalog)

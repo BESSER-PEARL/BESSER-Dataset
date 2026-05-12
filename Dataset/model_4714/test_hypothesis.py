@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Var,
-    flowgraph::Param,
+    flowgraph_Param,
     Conditional,
-    flowgraph::Loop,
-    flowgraph::If,
+    flowgraph_If,
     FlowInstr,
     Stmt,
-    flowgraph::Conditional,
-    flowgraph::Label,
-    flowgraph::Block,
-    flowgraph::JumpStmt,
-    flowgraph::SimpleStmt,
-    flowgraph::Exit,
+    flowgraph_Block,
+    flowgraph_SimpleStmt,
+    flowgraph_Exit,
     Block,
-    flowgraph::Method,
-    flowgraph::Return,
-    flowgraph::Item,
-    flowgraph::Expr,
+    flowgraph_Method,
+    flowgraph_Return,
+    flowgraph_Item,
+    flowgraph_Expr,
     Item,
-    flowgraph::Var,
-    flowgraph::Stmt,
-    flowgraph::FlowInstr,
+    flowgraph_Var,
+    flowgraph_Stmt,
+    flowgraph_FlowInstr,
     JumpStmt,
-    flowgraph::Break,
-    flowgraph::Continue,
+    flowgraph_Continue,
+    flowgraph_Break,
+    flowgraph_Label,
+    flowgraph_JumpStmt,
+    flowgraph_Conditional,
+    flowgraph_Loop,
 )
 
 # =============================================================================
@@ -53,16 +53,16 @@ def test_var_constructor_args():
 
 
 
-def test_flowgraph::param_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Param)
+def test_flowgraph_param_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Param)
 
 
-def test_flowgraph::param_constructor_exists():
-    assert callable(flowgraph::Param.__init__)
+def test_flowgraph_param_constructor_exists():
+    assert callable(flowgraph_Param.__init__)
 
 
-def test_flowgraph::param_constructor_args():
-    sig = inspect.signature(flowgraph::Param.__init__)
+def test_flowgraph_param_constructor_args():
+    sig = inspect.signature(flowgraph_Param.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,30 +81,16 @@ def test_conditional_constructor_args():
 
 
 
-def test_flowgraph::loop_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Loop)
+def test_flowgraph_if_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_If)
 
 
-def test_flowgraph::loop_constructor_exists():
-    assert callable(flowgraph::Loop.__init__)
+def test_flowgraph_if_constructor_exists():
+    assert callable(flowgraph_If.__init__)
 
 
-def test_flowgraph::loop_constructor_args():
-    sig = inspect.signature(flowgraph::Loop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flowgraph::if_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::If)
-
-
-def test_flowgraph::if_constructor_exists():
-    assert callable(flowgraph::If.__init__)
-
-
-def test_flowgraph::if_constructor_args():
-    sig = inspect.signature(flowgraph::If.__init__)
+def test_flowgraph_if_constructor_args():
+    sig = inspect.signature(flowgraph_If.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,99 +123,57 @@ def test_stmt_constructor_args():
 
 
 
-def test_flowgraph::conditional_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Conditional)
+def test_flowgraph_block_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Block)
 
 
-def test_flowgraph::conditional_constructor_exists():
-    assert callable(flowgraph::Conditional.__init__)
+def test_flowgraph_block_constructor_exists():
+    assert callable(flowgraph_Block.__init__)
 
 
-def test_flowgraph::conditional_constructor_args():
-    sig = inspect.signature(flowgraph::Conditional.__init__)
+def test_flowgraph_block_constructor_args():
+    sig = inspect.signature(flowgraph_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowgraph::label_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Label)
+def test_flowgraph_simplestmt_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_SimpleStmt)
 
 
-def test_flowgraph::label_constructor_exists():
-    assert callable(flowgraph::Label.__init__)
+def test_flowgraph_simplestmt_constructor_exists():
+    assert callable(flowgraph_SimpleStmt.__init__)
 
 
-def test_flowgraph::label_constructor_args():
-    sig = inspect.signature(flowgraph::Label.__init__)
+def test_flowgraph_simplestmt_constructor_args():
+    sig = inspect.signature(flowgraph_SimpleStmt.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_flowgraph::block_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Block)
-
-
-def test_flowgraph::block_constructor_exists():
-    assert callable(flowgraph::Block.__init__)
-
-
-def test_flowgraph::block_constructor_args():
-    sig = inspect.signature(flowgraph::Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flowgraph::jumpstmt_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::JumpStmt)
-
-
-def test_flowgraph::jumpstmt_constructor_exists():
-    assert callable(flowgraph::JumpStmt.__init__)
-
-
-def test_flowgraph::jumpstmt_constructor_args():
-    sig = inspect.signature(flowgraph::JumpStmt.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flowgraph::simplestmt_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::SimpleStmt)
-
-
-def test_flowgraph::simplestmt_constructor_exists():
-    assert callable(flowgraph::SimpleStmt.__init__)
-
-
-def test_flowgraph::simplestmt_constructor_args():
-    sig = inspect.signature(flowgraph::SimpleStmt.__init__)
-    params = list(sig.parameters.keys())
-    assert "valiableAccess" in params, "Missing parameter 'valiableAccess'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "valiableAccess" in params, "Missing parameter 'valiableAccess'"
     assert "functionAccess" in params, "Missing parameter 'functionAccess'"
 
-def test_flowgraph::simplestmt_has_valiableAccess():
-    assert hasattr(flowgraph::SimpleStmt, "valiableAccess")
+def test_flowgraph_simplestmt_has_type():
+    assert hasattr(flowgraph_SimpleStmt, "type")
     descriptor = None
-    for klass in flowgraph::SimpleStmt.__mro__:
-        if "valiableAccess" in klass.__dict__:
-            descriptor = klass.__dict__["valiableAccess"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flowgraph::simplestmt_has_type():
-    assert hasattr(flowgraph::SimpleStmt, "type")
-    descriptor = None
-    for klass in flowgraph::SimpleStmt.__mro__:
+    for klass in flowgraph_SimpleStmt.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_flowgraph::simplestmt_has_functionAccess():
-    assert hasattr(flowgraph::SimpleStmt, "functionAccess")
+def test_flowgraph_simplestmt_has_valiableAccess():
+    assert hasattr(flowgraph_SimpleStmt, "valiableAccess")
     descriptor = None
-    for klass in flowgraph::SimpleStmt.__mro__:
+    for klass in flowgraph_SimpleStmt.__mro__:
+        if "valiableAccess" in klass.__dict__:
+            descriptor = klass.__dict__["valiableAccess"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flowgraph_simplestmt_has_functionAccess():
+    assert hasattr(flowgraph_SimpleStmt, "functionAccess")
+    descriptor = None
+    for klass in flowgraph_SimpleStmt.__mro__:
         if "functionAccess" in klass.__dict__:
             descriptor = klass.__dict__["functionAccess"]
             break
@@ -237,16 +181,16 @@ def test_flowgraph::simplestmt_has_functionAccess():
 
 
 
-def test_flowgraph::exit_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Exit)
+def test_flowgraph_exit_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Exit)
 
 
-def test_flowgraph::exit_constructor_exists():
-    assert callable(flowgraph::Exit.__init__)
+def test_flowgraph_exit_constructor_exists():
+    assert callable(flowgraph_Exit.__init__)
 
 
-def test_flowgraph::exit_constructor_args():
-    sig = inspect.signature(flowgraph::Exit.__init__)
+def test_flowgraph_exit_constructor_args():
+    sig = inspect.signature(flowgraph_Exit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -265,78 +209,78 @@ def test_block_constructor_args():
 
 
 
-def test_flowgraph::method_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Method)
+def test_flowgraph_method_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Method)
 
 
-def test_flowgraph::method_constructor_exists():
-    assert callable(flowgraph::Method.__init__)
+def test_flowgraph_method_constructor_exists():
+    assert callable(flowgraph_Method.__init__)
 
 
-def test_flowgraph::method_constructor_args():
-    sig = inspect.signature(flowgraph::Method.__init__)
+def test_flowgraph_method_constructor_args():
+    sig = inspect.signature(flowgraph_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowgraph::return_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Return)
+def test_flowgraph_return_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Return)
 
 
-def test_flowgraph::return_constructor_exists():
-    assert callable(flowgraph::Return.__init__)
+def test_flowgraph_return_constructor_exists():
+    assert callable(flowgraph_Return.__init__)
 
 
-def test_flowgraph::return_constructor_args():
-    sig = inspect.signature(flowgraph::Return.__init__)
+def test_flowgraph_return_constructor_args():
+    sig = inspect.signature(flowgraph_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowgraph::item_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Item)
+def test_flowgraph_item_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Item)
 
 
-def test_flowgraph::item_constructor_exists():
-    assert callable(flowgraph::Item.__init__)
+def test_flowgraph_item_constructor_exists():
+    assert callable(flowgraph_Item.__init__)
 
 
-def test_flowgraph::item_constructor_args():
-    sig = inspect.signature(flowgraph::Item.__init__)
+def test_flowgraph_item_constructor_args():
+    sig = inspect.signature(flowgraph_Item.__init__)
     params = list(sig.parameters.keys())
-    assert "line" in params, "Missing parameter 'line'"
     assert "txt" in params, "Missing parameter 'txt'"
+    assert "line" in params, "Missing parameter 'line'"
 
-def test_flowgraph::item_has_line():
-    assert hasattr(flowgraph::Item, "line")
+def test_flowgraph_item_has_txt():
+    assert hasattr(flowgraph_Item, "txt")
     descriptor = None
-    for klass in flowgraph::Item.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flowgraph::item_has_txt():
-    assert hasattr(flowgraph::Item, "txt")
-    descriptor = None
-    for klass in flowgraph::Item.__mro__:
+    for klass in flowgraph_Item.__mro__:
         if "txt" in klass.__dict__:
             descriptor = klass.__dict__["txt"]
             break
     assert isinstance(descriptor, property)
 
+def test_flowgraph_item_has_line():
+    assert hasattr(flowgraph_Item, "line")
+    descriptor = None
+    for klass in flowgraph_Item.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_flowgraph::expr_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Expr)
+
+def test_flowgraph_expr_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Expr)
 
 
-def test_flowgraph::expr_constructor_exists():
-    assert callable(flowgraph::Expr.__init__)
+def test_flowgraph_expr_constructor_exists():
+    assert callable(flowgraph_Expr.__init__)
 
 
-def test_flowgraph::expr_constructor_args():
-    sig = inspect.signature(flowgraph::Expr.__init__)
+def test_flowgraph_expr_constructor_args():
+    sig = inspect.signature(flowgraph_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -355,44 +299,44 @@ def test_item_constructor_args():
 
 
 
-def test_flowgraph::var_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Var)
+def test_flowgraph_var_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Var)
 
 
-def test_flowgraph::var_constructor_exists():
-    assert callable(flowgraph::Var.__init__)
+def test_flowgraph_var_constructor_exists():
+    assert callable(flowgraph_Var.__init__)
 
 
-def test_flowgraph::var_constructor_args():
-    sig = inspect.signature(flowgraph::Var.__init__)
+def test_flowgraph_var_constructor_args():
+    sig = inspect.signature(flowgraph_Var.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowgraph::stmt_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Stmt)
+def test_flowgraph_stmt_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Stmt)
 
 
-def test_flowgraph::stmt_constructor_exists():
-    assert callable(flowgraph::Stmt.__init__)
+def test_flowgraph_stmt_constructor_exists():
+    assert callable(flowgraph_Stmt.__init__)
 
 
-def test_flowgraph::stmt_constructor_args():
-    sig = inspect.signature(flowgraph::Stmt.__init__)
+def test_flowgraph_stmt_constructor_args():
+    sig = inspect.signature(flowgraph_Stmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowgraph::flowinstr_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::FlowInstr)
+def test_flowgraph_flowinstr_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_FlowInstr)
 
 
-def test_flowgraph::flowinstr_constructor_exists():
-    assert callable(flowgraph::FlowInstr.__init__)
+def test_flowgraph_flowinstr_constructor_exists():
+    assert callable(flowgraph_FlowInstr.__init__)
 
 
-def test_flowgraph::flowinstr_constructor_args():
-    sig = inspect.signature(flowgraph::FlowInstr.__init__)
+def test_flowgraph_flowinstr_constructor_args():
+    sig = inspect.signature(flowgraph_FlowInstr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -411,30 +355,86 @@ def test_jumpstmt_constructor_args():
 
 
 
-def test_flowgraph::break_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Break)
+def test_flowgraph_continue_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Continue)
 
 
-def test_flowgraph::break_constructor_exists():
-    assert callable(flowgraph::Break.__init__)
+def test_flowgraph_continue_constructor_exists():
+    assert callable(flowgraph_Continue.__init__)
 
 
-def test_flowgraph::break_constructor_args():
-    sig = inspect.signature(flowgraph::Break.__init__)
+def test_flowgraph_continue_constructor_args():
+    sig = inspect.signature(flowgraph_Continue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowgraph::continue_is_not_abstract():
-    assert not inspect.isabstract(flowgraph::Continue)
+def test_flowgraph_break_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Break)
 
 
-def test_flowgraph::continue_constructor_exists():
-    assert callable(flowgraph::Continue.__init__)
+def test_flowgraph_break_constructor_exists():
+    assert callable(flowgraph_Break.__init__)
 
 
-def test_flowgraph::continue_constructor_args():
-    sig = inspect.signature(flowgraph::Continue.__init__)
+def test_flowgraph_break_constructor_args():
+    sig = inspect.signature(flowgraph_Break.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flowgraph_label_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Label)
+
+
+def test_flowgraph_label_constructor_exists():
+    assert callable(flowgraph_Label.__init__)
+
+
+def test_flowgraph_label_constructor_args():
+    sig = inspect.signature(flowgraph_Label.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flowgraph_jumpstmt_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_JumpStmt)
+
+
+def test_flowgraph_jumpstmt_constructor_exists():
+    assert callable(flowgraph_JumpStmt.__init__)
+
+
+def test_flowgraph_jumpstmt_constructor_args():
+    sig = inspect.signature(flowgraph_JumpStmt.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flowgraph_conditional_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Conditional)
+
+
+def test_flowgraph_conditional_constructor_exists():
+    assert callable(flowgraph_Conditional.__init__)
+
+
+def test_flowgraph_conditional_constructor_args():
+    sig = inspect.signature(flowgraph_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flowgraph_loop_is_not_abstract():
+    assert not inspect.isabstract(flowgraph_Loop)
+
+
+def test_flowgraph_loop_constructor_exists():
+    assert callable(flowgraph_Loop.__init__)
+
+
+def test_flowgraph_loop_constructor_args():
+    sig = inspect.signature(flowgraph_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -452,17 +452,14 @@ safe_text = st.text(
 Var_strategy = st.builds(
     Var,
 )
-flowgraph::Param_strategy = st.builds(
-    flowgraph::Param,
+flowgraph_Param_strategy = st.builds(
+    flowgraph_Param,
 )
 Conditional_strategy = st.builds(
     Conditional,
 )
-flowgraph::Loop_strategy = st.builds(
-    flowgraph::Loop,
-)
-flowgraph::If_strategy = st.builds(
-    flowgraph::If,
+flowgraph_If_strategy = st.builds(
+    flowgraph_If,
 )
 FlowInstr_strategy = st.builds(
     FlowInstr,
@@ -470,69 +467,72 @@ FlowInstr_strategy = st.builds(
 Stmt_strategy = st.builds(
     Stmt,
 )
-flowgraph::Conditional_strategy = st.builds(
-    flowgraph::Conditional,
+flowgraph_Block_strategy = st.builds(
+    flowgraph_Block,
 )
-flowgraph::Label_strategy = st.builds(
-    flowgraph::Label,
-)
-flowgraph::Block_strategy = st.builds(
-    flowgraph::Block,
-)
-flowgraph::JumpStmt_strategy = st.builds(
-    flowgraph::JumpStmt,
-)
-flowgraph::SimpleStmt_strategy = st.builds(
-    flowgraph::SimpleStmt,
-    valiableAccess=
-        safe_text,
+flowgraph_SimpleStmt_strategy = st.builds(
+    flowgraph_SimpleStmt,
     type=
+        safe_text,
+    valiableAccess=
         safe_text,
     functionAccess=
         safe_text
 )
-flowgraph::Exit_strategy = st.builds(
-    flowgraph::Exit,
+flowgraph_Exit_strategy = st.builds(
+    flowgraph_Exit,
 )
 Block_strategy = st.builds(
     Block,
 )
-flowgraph::Method_strategy = st.builds(
-    flowgraph::Method,
+flowgraph_Method_strategy = st.builds(
+    flowgraph_Method,
 )
-flowgraph::Return_strategy = st.builds(
-    flowgraph::Return,
+flowgraph_Return_strategy = st.builds(
+    flowgraph_Return,
 )
-flowgraph::Item_strategy = st.builds(
-    flowgraph::Item,
-    line=
-        st.integers(),
+flowgraph_Item_strategy = st.builds(
+    flowgraph_Item,
     txt=
-        safe_text
+        safe_text,
+    line=
+        st.integers()
 )
-flowgraph::Expr_strategy = st.builds(
-    flowgraph::Expr,
+flowgraph_Expr_strategy = st.builds(
+    flowgraph_Expr,
 )
 Item_strategy = st.builds(
     Item,
 )
-flowgraph::Var_strategy = st.builds(
-    flowgraph::Var,
+flowgraph_Var_strategy = st.builds(
+    flowgraph_Var,
 )
-flowgraph::Stmt_strategy = st.builds(
-    flowgraph::Stmt,
+flowgraph_Stmt_strategy = st.builds(
+    flowgraph_Stmt,
 )
-flowgraph::FlowInstr_strategy = st.builds(
-    flowgraph::FlowInstr,
+flowgraph_FlowInstr_strategy = st.builds(
+    flowgraph_FlowInstr,
 )
 JumpStmt_strategy = st.builds(
     JumpStmt,
 )
-flowgraph::Break_strategy = st.builds(
-    flowgraph::Break,
+flowgraph_Continue_strategy = st.builds(
+    flowgraph_Continue,
 )
-flowgraph::Continue_strategy = st.builds(
-    flowgraph::Continue,
+flowgraph_Break_strategy = st.builds(
+    flowgraph_Break,
+)
+flowgraph_Label_strategy = st.builds(
+    flowgraph_Label,
+)
+flowgraph_JumpStmt_strategy = st.builds(
+    flowgraph_JumpStmt,
+)
+flowgraph_Conditional_strategy = st.builds(
+    flowgraph_Conditional,
+)
+flowgraph_Loop_strategy = st.builds(
+    flowgraph_Loop,
 )
 
 @given(instance=Var_strategy)
@@ -540,25 +540,20 @@ flowgraph::Continue_strategy = st.builds(
 def test_var_instantiation(instance):
     assert isinstance(instance, Var)
 
-@given(instance=flowgraph::Param_strategy)
+@given(instance=flowgraph_Param_strategy)
 @settings(max_examples=50)
-def test_flowgraph::param_instantiation(instance):
-    assert isinstance(instance, flowgraph::Param)
+def test_flowgraph_param_instantiation(instance):
+    assert isinstance(instance, flowgraph_Param)
 
 @given(instance=Conditional_strategy)
 @settings(max_examples=50)
 def test_conditional_instantiation(instance):
     assert isinstance(instance, Conditional)
 
-@given(instance=flowgraph::Loop_strategy)
+@given(instance=flowgraph_If_strategy)
 @settings(max_examples=50)
-def test_flowgraph::loop_instantiation(instance):
-    assert isinstance(instance, flowgraph::Loop)
-
-@given(instance=flowgraph::If_strategy)
-@settings(max_examples=50)
-def test_flowgraph::if_instantiation(instance):
-    assert isinstance(instance, flowgraph::If)
+def test_flowgraph_if_instantiation(instance):
+    assert isinstance(instance, flowgraph_If)
 
 @given(instance=FlowInstr_strategy)
 @settings(max_examples=50)
@@ -570,147 +565,137 @@ def test_flowinstr_instantiation(instance):
 def test_stmt_instantiation(instance):
     assert isinstance(instance, Stmt)
 
-@given(instance=flowgraph::Conditional_strategy)
+@given(instance=flowgraph_Block_strategy)
 @settings(max_examples=50)
-def test_flowgraph::conditional_instantiation(instance):
-    assert isinstance(instance, flowgraph::Conditional)
+def test_flowgraph_block_instantiation(instance):
+    assert isinstance(instance, flowgraph_Block)
 
-@given(instance=flowgraph::Label_strategy)
+@given(instance=flowgraph_SimpleStmt_strategy)
 @settings(max_examples=50)
-def test_flowgraph::label_instantiation(instance):
-    assert isinstance(instance, flowgraph::Label)
-
-@given(instance=flowgraph::Block_strategy)
-@settings(max_examples=50)
-def test_flowgraph::block_instantiation(instance):
-    assert isinstance(instance, flowgraph::Block)
-
-@given(instance=flowgraph::JumpStmt_strategy)
-@settings(max_examples=50)
-def test_flowgraph::jumpstmt_instantiation(instance):
-    assert isinstance(instance, flowgraph::JumpStmt)
-
-@given(instance=flowgraph::SimpleStmt_strategy)
-@settings(max_examples=50)
-def test_flowgraph::simplestmt_instantiation(instance):
-    assert isinstance(instance, flowgraph::SimpleStmt)
-
-@given(instance=flowgraph::SimpleStmt_strategy)
-def test_flowgraph::simplestmt_valiableAccess_type(instance):
-    assert isinstance(instance.valiableAccess, str)
+def test_flowgraph_simplestmt_instantiation(instance):
+    assert isinstance(instance, flowgraph_SimpleStmt)
 
 
-@given(instance=flowgraph::SimpleStmt_strategy)
-def test_flowgraph::simplestmt_valiableAccess_setter(instance):
-    original = instance.valiableAccess
-    instance.valiableAccess = original
-    assert instance.valiableAccess == original
 
-@given(instance=flowgraph::SimpleStmt_strategy)
-def test_flowgraph::simplestmt_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=flowgraph::SimpleStmt_strategy)
-def test_flowgraph::simplestmt_type_setter(instance):
+@given(instance=flowgraph_SimpleStmt_strategy)
+def test_flowgraph_simplestmt_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=flowgraph::SimpleStmt_strategy)
-def test_flowgraph::simplestmt_functionAccess_type(instance):
-    assert isinstance(instance.functionAccess, str)
 
 
-@given(instance=flowgraph::SimpleStmt_strategy)
-def test_flowgraph::simplestmt_functionAccess_setter(instance):
+@given(instance=flowgraph_SimpleStmt_strategy)
+def test_flowgraph_simplestmt_valiableAccess_setter(instance):
+    original = instance.valiableAccess
+    instance.valiableAccess = original
+    assert instance.valiableAccess == original
+
+
+
+@given(instance=flowgraph_SimpleStmt_strategy)
+def test_flowgraph_simplestmt_functionAccess_setter(instance):
     original = instance.functionAccess
     instance.functionAccess = original
     assert instance.functionAccess == original
 
-@given(instance=flowgraph::Exit_strategy)
+@given(instance=flowgraph_Exit_strategy)
 @settings(max_examples=50)
-def test_flowgraph::exit_instantiation(instance):
-    assert isinstance(instance, flowgraph::Exit)
+def test_flowgraph_exit_instantiation(instance):
+    assert isinstance(instance, flowgraph_Exit)
 
 @given(instance=Block_strategy)
 @settings(max_examples=50)
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=flowgraph::Method_strategy)
+@given(instance=flowgraph_Method_strategy)
 @settings(max_examples=50)
-def test_flowgraph::method_instantiation(instance):
-    assert isinstance(instance, flowgraph::Method)
+def test_flowgraph_method_instantiation(instance):
+    assert isinstance(instance, flowgraph_Method)
 
-@given(instance=flowgraph::Return_strategy)
+@given(instance=flowgraph_Return_strategy)
 @settings(max_examples=50)
-def test_flowgraph::return_instantiation(instance):
-    assert isinstance(instance, flowgraph::Return)
+def test_flowgraph_return_instantiation(instance):
+    assert isinstance(instance, flowgraph_Return)
 
-@given(instance=flowgraph::Item_strategy)
+@given(instance=flowgraph_Item_strategy)
 @settings(max_examples=50)
-def test_flowgraph::item_instantiation(instance):
-    assert isinstance(instance, flowgraph::Item)
-
-@given(instance=flowgraph::Item_strategy)
-def test_flowgraph::item_line_type(instance):
-    assert isinstance(instance.line, int)
+def test_flowgraph_item_instantiation(instance):
+    assert isinstance(instance, flowgraph_Item)
 
 
-@given(instance=flowgraph::Item_strategy)
-def test_flowgraph::item_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
 
-@given(instance=flowgraph::Item_strategy)
-def test_flowgraph::item_txt_type(instance):
-    assert isinstance(instance.txt, str)
-
-
-@given(instance=flowgraph::Item_strategy)
-def test_flowgraph::item_txt_setter(instance):
+@given(instance=flowgraph_Item_strategy)
+def test_flowgraph_item_txt_setter(instance):
     original = instance.txt
     instance.txt = original
     assert instance.txt == original
 
-@given(instance=flowgraph::Expr_strategy)
+
+
+@given(instance=flowgraph_Item_strategy)
+def test_flowgraph_item_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original
+
+@given(instance=flowgraph_Expr_strategy)
 @settings(max_examples=50)
-def test_flowgraph::expr_instantiation(instance):
-    assert isinstance(instance, flowgraph::Expr)
+def test_flowgraph_expr_instantiation(instance):
+    assert isinstance(instance, flowgraph_Expr)
 
 @given(instance=Item_strategy)
 @settings(max_examples=50)
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=flowgraph::Var_strategy)
+@given(instance=flowgraph_Var_strategy)
 @settings(max_examples=50)
-def test_flowgraph::var_instantiation(instance):
-    assert isinstance(instance, flowgraph::Var)
+def test_flowgraph_var_instantiation(instance):
+    assert isinstance(instance, flowgraph_Var)
 
-@given(instance=flowgraph::Stmt_strategy)
+@given(instance=flowgraph_Stmt_strategy)
 @settings(max_examples=50)
-def test_flowgraph::stmt_instantiation(instance):
-    assert isinstance(instance, flowgraph::Stmt)
+def test_flowgraph_stmt_instantiation(instance):
+    assert isinstance(instance, flowgraph_Stmt)
 
-@given(instance=flowgraph::FlowInstr_strategy)
+@given(instance=flowgraph_FlowInstr_strategy)
 @settings(max_examples=50)
-def test_flowgraph::flowinstr_instantiation(instance):
-    assert isinstance(instance, flowgraph::FlowInstr)
+def test_flowgraph_flowinstr_instantiation(instance):
+    assert isinstance(instance, flowgraph_FlowInstr)
 
 @given(instance=JumpStmt_strategy)
 @settings(max_examples=50)
 def test_jumpstmt_instantiation(instance):
     assert isinstance(instance, JumpStmt)
 
-@given(instance=flowgraph::Break_strategy)
+@given(instance=flowgraph_Continue_strategy)
 @settings(max_examples=50)
-def test_flowgraph::break_instantiation(instance):
-    assert isinstance(instance, flowgraph::Break)
+def test_flowgraph_continue_instantiation(instance):
+    assert isinstance(instance, flowgraph_Continue)
 
-@given(instance=flowgraph::Continue_strategy)
+@given(instance=flowgraph_Break_strategy)
 @settings(max_examples=50)
-def test_flowgraph::continue_instantiation(instance):
-    assert isinstance(instance, flowgraph::Continue)
+def test_flowgraph_break_instantiation(instance):
+    assert isinstance(instance, flowgraph_Break)
+
+@given(instance=flowgraph_Label_strategy)
+@settings(max_examples=50)
+def test_flowgraph_label_instantiation(instance):
+    assert isinstance(instance, flowgraph_Label)
+
+@given(instance=flowgraph_JumpStmt_strategy)
+@settings(max_examples=50)
+def test_flowgraph_jumpstmt_instantiation(instance):
+    assert isinstance(instance, flowgraph_JumpStmt)
+
+@given(instance=flowgraph_Conditional_strategy)
+@settings(max_examples=50)
+def test_flowgraph_conditional_instantiation(instance):
+    assert isinstance(instance, flowgraph_Conditional)
+
+@given(instance=flowgraph_Loop_strategy)
+@settings(max_examples=50)
+def test_flowgraph_loop_instantiation(instance):
+    assert isinstance(instance, flowgraph_Loop)

@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     OpenDDSLib,
-    types::DataLib,
+    types_DataLib,
     UnsignedInt,
-    types::ULongLong,
-    types::UShort,
-    types::ULong,
+    types_ULongLong,
+    types_UShort,
+    types_ULong,
     Int,
-    types::SignedInt,
+    types_SignedInt,
     SignedInt,
-    types::LongLong,
-    types::Short,
-    types::Long,
-    types::UnsignedInt,
+    types_LongLong,
+    types_Short,
+    types_Long,
+    types_UnsignedInt,
     FloatingPoint,
-    types::LongDouble,
-    types::Float,
-    types::Double,
+    types_Float,
+    types_LongDouble,
+    types_Double,
     Type,
-    types::Simple,
-    types::Typedef,
-    types::Union,
-    types::Struct,
-    types::Collection,
+    types_Union,
+    types_Struct,
+    types_Simple,
+    types_Typedef,
+    types_Collection,
     Element,
-    types::Case,
-    types::Field,
-    types::Key,
-    types::Branch,
+    types_Field,
+    types_Case,
+    types_Key,
+    types_Branch,
     Simple,
-    types::Enum,
-    types::Int,
-    types::FloatingPoint,
-    types::WChar,
-    types::Char,
-    types::Octet,
-    types::Boolean,
-    types::Type,
+    types_Int,
+    types_FloatingPoint,
+    types_WChar,
+    types_Enum,
+    types_Char,
+    types_Octet,
+    types_Boolean,
+    types_Type,
     Collection,
-    types::String,
-    types::WString,
-    types::Sequence,
-    types::Array,
+    types_Sequence,
+    types_WString,
+    types_String,
+    types_Array,
 )
 
 # =============================================================================
@@ -70,16 +70,16 @@ def test_openddslib_constructor_args():
 
 
 
-def test_types::datalib_is_not_abstract():
-    assert not inspect.isabstract(types::DataLib)
+def test_types_datalib_is_not_abstract():
+    assert not inspect.isabstract(types_DataLib)
 
 
-def test_types::datalib_constructor_exists():
-    assert callable(types::DataLib.__init__)
+def test_types_datalib_constructor_exists():
+    assert callable(types_DataLib.__init__)
 
 
-def test_types::datalib_constructor_args():
-    sig = inspect.signature(types::DataLib.__init__)
+def test_types_datalib_constructor_args():
+    sig = inspect.signature(types_DataLib.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -98,44 +98,44 @@ def test_unsignedint_constructor_args():
 
 
 
-def test_types::ulonglong_is_not_abstract():
-    assert not inspect.isabstract(types::ULongLong)
+def test_types_ulonglong_is_not_abstract():
+    assert not inspect.isabstract(types_ULongLong)
 
 
-def test_types::ulonglong_constructor_exists():
-    assert callable(types::ULongLong.__init__)
+def test_types_ulonglong_constructor_exists():
+    assert callable(types_ULongLong.__init__)
 
 
-def test_types::ulonglong_constructor_args():
-    sig = inspect.signature(types::ULongLong.__init__)
+def test_types_ulonglong_constructor_args():
+    sig = inspect.signature(types_ULongLong.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::ushort_is_not_abstract():
-    assert not inspect.isabstract(types::UShort)
+def test_types_ushort_is_not_abstract():
+    assert not inspect.isabstract(types_UShort)
 
 
-def test_types::ushort_constructor_exists():
-    assert callable(types::UShort.__init__)
+def test_types_ushort_constructor_exists():
+    assert callable(types_UShort.__init__)
 
 
-def test_types::ushort_constructor_args():
-    sig = inspect.signature(types::UShort.__init__)
+def test_types_ushort_constructor_args():
+    sig = inspect.signature(types_UShort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::ulong_is_not_abstract():
-    assert not inspect.isabstract(types::ULong)
+def test_types_ulong_is_not_abstract():
+    assert not inspect.isabstract(types_ULong)
 
 
-def test_types::ulong_constructor_exists():
-    assert callable(types::ULong.__init__)
+def test_types_ulong_constructor_exists():
+    assert callable(types_ULong.__init__)
 
 
-def test_types::ulong_constructor_args():
-    sig = inspect.signature(types::ULong.__init__)
+def test_types_ulong_constructor_args():
+    sig = inspect.signature(types_ULong.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,16 +154,16 @@ def test_int_constructor_args():
 
 
 
-def test_types::signedint_is_not_abstract():
-    assert not inspect.isabstract(types::SignedInt)
+def test_types_signedint_is_not_abstract():
+    assert not inspect.isabstract(types_SignedInt)
 
 
-def test_types::signedint_constructor_exists():
-    assert callable(types::SignedInt.__init__)
+def test_types_signedint_constructor_exists():
+    assert callable(types_SignedInt.__init__)
 
 
-def test_types::signedint_constructor_args():
-    sig = inspect.signature(types::SignedInt.__init__)
+def test_types_signedint_constructor_args():
+    sig = inspect.signature(types_SignedInt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,58 +182,58 @@ def test_signedint_constructor_args():
 
 
 
-def test_types::longlong_is_not_abstract():
-    assert not inspect.isabstract(types::LongLong)
+def test_types_longlong_is_not_abstract():
+    assert not inspect.isabstract(types_LongLong)
 
 
-def test_types::longlong_constructor_exists():
-    assert callable(types::LongLong.__init__)
+def test_types_longlong_constructor_exists():
+    assert callable(types_LongLong.__init__)
 
 
-def test_types::longlong_constructor_args():
-    sig = inspect.signature(types::LongLong.__init__)
+def test_types_longlong_constructor_args():
+    sig = inspect.signature(types_LongLong.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::short_is_not_abstract():
-    assert not inspect.isabstract(types::Short)
+def test_types_short_is_not_abstract():
+    assert not inspect.isabstract(types_Short)
 
 
-def test_types::short_constructor_exists():
-    assert callable(types::Short.__init__)
+def test_types_short_constructor_exists():
+    assert callable(types_Short.__init__)
 
 
-def test_types::short_constructor_args():
-    sig = inspect.signature(types::Short.__init__)
+def test_types_short_constructor_args():
+    sig = inspect.signature(types_Short.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::long_is_not_abstract():
-    assert not inspect.isabstract(types::Long)
+def test_types_long_is_not_abstract():
+    assert not inspect.isabstract(types_Long)
 
 
-def test_types::long_constructor_exists():
-    assert callable(types::Long.__init__)
+def test_types_long_constructor_exists():
+    assert callable(types_Long.__init__)
 
 
-def test_types::long_constructor_args():
-    sig = inspect.signature(types::Long.__init__)
+def test_types_long_constructor_args():
+    sig = inspect.signature(types_Long.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::unsignedint_is_not_abstract():
-    assert not inspect.isabstract(types::UnsignedInt)
+def test_types_unsignedint_is_not_abstract():
+    assert not inspect.isabstract(types_UnsignedInt)
 
 
-def test_types::unsignedint_constructor_exists():
-    assert callable(types::UnsignedInt.__init__)
+def test_types_unsignedint_constructor_exists():
+    assert callable(types_UnsignedInt.__init__)
 
 
-def test_types::unsignedint_constructor_args():
-    sig = inspect.signature(types::UnsignedInt.__init__)
+def test_types_unsignedint_constructor_args():
+    sig = inspect.signature(types_UnsignedInt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,44 +252,44 @@ def test_floatingpoint_constructor_args():
 
 
 
-def test_types::longdouble_is_not_abstract():
-    assert not inspect.isabstract(types::LongDouble)
+def test_types_float_is_not_abstract():
+    assert not inspect.isabstract(types_Float)
 
 
-def test_types::longdouble_constructor_exists():
-    assert callable(types::LongDouble.__init__)
+def test_types_float_constructor_exists():
+    assert callable(types_Float.__init__)
 
 
-def test_types::longdouble_constructor_args():
-    sig = inspect.signature(types::LongDouble.__init__)
+def test_types_float_constructor_args():
+    sig = inspect.signature(types_Float.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::float_is_not_abstract():
-    assert not inspect.isabstract(types::Float)
+def test_types_longdouble_is_not_abstract():
+    assert not inspect.isabstract(types_LongDouble)
 
 
-def test_types::float_constructor_exists():
-    assert callable(types::Float.__init__)
+def test_types_longdouble_constructor_exists():
+    assert callable(types_LongDouble.__init__)
 
 
-def test_types::float_constructor_args():
-    sig = inspect.signature(types::Float.__init__)
+def test_types_longdouble_constructor_args():
+    sig = inspect.signature(types_LongDouble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::double_is_not_abstract():
-    assert not inspect.isabstract(types::Double)
+def test_types_double_is_not_abstract():
+    assert not inspect.isabstract(types_Double)
 
 
-def test_types::double_constructor_exists():
-    assert callable(types::Double.__init__)
+def test_types_double_constructor_exists():
+    assert callable(types_Double.__init__)
 
 
-def test_types::double_constructor_args():
-    sig = inspect.signature(types::Double.__init__)
+def test_types_double_constructor_args():
+    sig = inspect.signature(types_Double.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -308,37 +308,23 @@ def test_type_constructor_args():
 
 
 
-def test_types::simple_is_not_abstract():
-    assert not inspect.isabstract(types::Simple)
+def test_types_union_is_not_abstract():
+    assert not inspect.isabstract(types_Union)
 
 
-def test_types::simple_constructor_exists():
-    assert callable(types::Simple.__init__)
+def test_types_union_constructor_exists():
+    assert callable(types_Union.__init__)
 
 
-def test_types::simple_constructor_args():
-    sig = inspect.signature(types::Simple.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::typedef_is_not_abstract():
-    assert not inspect.isabstract(types::Typedef)
-
-
-def test_types::typedef_constructor_exists():
-    assert callable(types::Typedef.__init__)
-
-
-def test_types::typedef_constructor_args():
-    sig = inspect.signature(types::Typedef.__init__)
+def test_types_union_constructor_args():
+    sig = inspect.signature(types_Union.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_types::typedef_has_name():
-    assert hasattr(types::Typedef, "name")
+def test_types_union_has_name():
+    assert hasattr(types_Union, "name")
     descriptor = None
-    for klass in types::Typedef.__mro__:
+    for klass in types_Union.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -346,57 +332,33 @@ def test_types::typedef_has_name():
 
 
 
-def test_types::union_is_not_abstract():
-    assert not inspect.isabstract(types::Union)
+def test_types_struct_is_not_abstract():
+    assert not inspect.isabstract(types_Struct)
 
 
-def test_types::union_constructor_exists():
-    assert callable(types::Union.__init__)
+def test_types_struct_constructor_exists():
+    assert callable(types_Struct.__init__)
 
 
-def test_types::union_constructor_args():
-    sig = inspect.signature(types::Union.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_types::union_has_name():
-    assert hasattr(types::Union, "name")
-    descriptor = None
-    for klass in types::Union.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_types::struct_is_not_abstract():
-    assert not inspect.isabstract(types::Struct)
-
-
-def test_types::struct_constructor_exists():
-    assert callable(types::Struct.__init__)
-
-
-def test_types::struct_constructor_args():
-    sig = inspect.signature(types::Struct.__init__)
+def test_types_struct_constructor_args():
+    sig = inspect.signature(types_Struct.__init__)
     params = list(sig.parameters.keys())
     assert "isDcpsDataType" in params, "Missing parameter 'isDcpsDataType'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_types::struct_has_isDcpsDataType():
-    assert hasattr(types::Struct, "isDcpsDataType")
+def test_types_struct_has_isDcpsDataType():
+    assert hasattr(types_Struct, "isDcpsDataType")
     descriptor = None
-    for klass in types::Struct.__mro__:
+    for klass in types_Struct.__mro__:
         if "isDcpsDataType" in klass.__dict__:
             descriptor = klass.__dict__["isDcpsDataType"]
             break
     assert isinstance(descriptor, property)
 
-def test_types::struct_has_name():
-    assert hasattr(types::Struct, "name")
+def test_types_struct_has_name():
+    assert hasattr(types_Struct, "name")
     descriptor = None
-    for klass in types::Struct.__mro__:
+    for klass in types_Struct.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -404,23 +366,61 @@ def test_types::struct_has_name():
 
 
 
-def test_types::collection_is_not_abstract():
-    assert not inspect.isabstract(types::Collection)
+def test_types_simple_is_not_abstract():
+    assert not inspect.isabstract(types_Simple)
 
 
-def test_types::collection_constructor_exists():
-    assert callable(types::Collection.__init__)
+def test_types_simple_constructor_exists():
+    assert callable(types_Simple.__init__)
 
 
-def test_types::collection_constructor_args():
-    sig = inspect.signature(types::Collection.__init__)
+def test_types_simple_constructor_args():
+    sig = inspect.signature(types_Simple.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_typedef_is_not_abstract():
+    assert not inspect.isabstract(types_Typedef)
+
+
+def test_types_typedef_constructor_exists():
+    assert callable(types_Typedef.__init__)
+
+
+def test_types_typedef_constructor_args():
+    sig = inspect.signature(types_Typedef.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_types_typedef_has_name():
+    assert hasattr(types_Typedef, "name")
+    descriptor = None
+    for klass in types_Typedef.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_types_collection_is_not_abstract():
+    assert not inspect.isabstract(types_Collection)
+
+
+def test_types_collection_constructor_exists():
+    assert callable(types_Collection.__init__)
+
+
+def test_types_collection_constructor_args():
+    sig = inspect.signature(types_Collection.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_types::collection_has_length():
-    assert hasattr(types::Collection, "length")
+def test_types_collection_has_length():
+    assert hasattr(types_Collection, "length")
     descriptor = None
-    for klass in types::Collection.__mro__:
+    for klass in types_Collection.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -442,47 +442,23 @@ def test_element_constructor_args():
 
 
 
-def test_types::case_is_not_abstract():
-    assert not inspect.isabstract(types::Case)
+def test_types_field_is_not_abstract():
+    assert not inspect.isabstract(types_Field)
 
 
-def test_types::case_constructor_exists():
-    assert callable(types::Case.__init__)
+def test_types_field_constructor_exists():
+    assert callable(types_Field.__init__)
 
 
-def test_types::case_constructor_args():
-    sig = inspect.signature(types::Case.__init__)
-    params = list(sig.parameters.keys())
-    assert "literal" in params, "Missing parameter 'literal'"
-
-def test_types::case_has_literal():
-    assert hasattr(types::Case, "literal")
-    descriptor = None
-    for klass in types::Case.__mro__:
-        if "literal" in klass.__dict__:
-            descriptor = klass.__dict__["literal"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_types::field_is_not_abstract():
-    assert not inspect.isabstract(types::Field)
-
-
-def test_types::field_constructor_exists():
-    assert callable(types::Field.__init__)
-
-
-def test_types::field_constructor_args():
-    sig = inspect.signature(types::Field.__init__)
+def test_types_field_constructor_args():
+    sig = inspect.signature(types_Field.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_types::field_has_name():
-    assert hasattr(types::Field, "name")
+def test_types_field_has_name():
+    assert hasattr(types_Field, "name")
     descriptor = None
-    for klass in types::Field.__mro__:
+    for klass in types_Field.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -490,30 +466,54 @@ def test_types::field_has_name():
 
 
 
-def test_types::key_is_not_abstract():
-    assert not inspect.isabstract(types::Key)
+def test_types_case_is_not_abstract():
+    assert not inspect.isabstract(types_Case)
 
 
-def test_types::key_constructor_exists():
-    assert callable(types::Key.__init__)
+def test_types_case_constructor_exists():
+    assert callable(types_Case.__init__)
 
 
-def test_types::key_constructor_args():
-    sig = inspect.signature(types::Key.__init__)
+def test_types_case_constructor_args():
+    sig = inspect.signature(types_Case.__init__)
+    params = list(sig.parameters.keys())
+    assert "literal" in params, "Missing parameter 'literal'"
+
+def test_types_case_has_literal():
+    assert hasattr(types_Case, "literal")
+    descriptor = None
+    for klass in types_Case.__mro__:
+        if "literal" in klass.__dict__:
+            descriptor = klass.__dict__["literal"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_types_key_is_not_abstract():
+    assert not inspect.isabstract(types_Key)
+
+
+def test_types_key_constructor_exists():
+    assert callable(types_Key.__init__)
+
+
+def test_types_key_constructor_args():
+    sig = inspect.signature(types_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::branch_is_not_abstract():
-    assert not inspect.isabstract(types::Branch)
+def test_types_branch_is_not_abstract():
+    assert not inspect.isabstract(types_Branch)
 
 
-def test_types::branch_constructor_exists():
-    assert callable(types::Branch.__init__)
+def test_types_branch_constructor_exists():
+    assert callable(types_Branch.__init__)
 
 
-def test_types::branch_constructor_args():
-    sig = inspect.signature(types::Branch.__init__)
+def test_types_branch_constructor_args():
+    sig = inspect.signature(types_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -532,134 +532,134 @@ def test_simple_constructor_args():
 
 
 
-def test_types::enum_is_not_abstract():
-    assert not inspect.isabstract(types::Enum)
+def test_types_int_is_not_abstract():
+    assert not inspect.isabstract(types_Int)
 
 
-def test_types::enum_constructor_exists():
-    assert callable(types::Enum.__init__)
+def test_types_int_constructor_exists():
+    assert callable(types_Int.__init__)
 
 
-def test_types::enum_constructor_args():
-    sig = inspect.signature(types::Enum.__init__)
+def test_types_int_constructor_args():
+    sig = inspect.signature(types_Int.__init__)
     params = list(sig.parameters.keys())
-    assert "literals" in params, "Missing parameter 'literals'"
+
+
+
+def test_types_floatingpoint_is_not_abstract():
+    assert not inspect.isabstract(types_FloatingPoint)
+
+
+def test_types_floatingpoint_constructor_exists():
+    assert callable(types_FloatingPoint.__init__)
+
+
+def test_types_floatingpoint_constructor_args():
+    sig = inspect.signature(types_FloatingPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_wchar_is_not_abstract():
+    assert not inspect.isabstract(types_WChar)
+
+
+def test_types_wchar_constructor_exists():
+    assert callable(types_WChar.__init__)
+
+
+def test_types_wchar_constructor_args():
+    sig = inspect.signature(types_WChar.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_enum_is_not_abstract():
+    assert not inspect.isabstract(types_Enum)
+
+
+def test_types_enum_constructor_exists():
+    assert callable(types_Enum.__init__)
+
+
+def test_types_enum_constructor_args():
+    sig = inspect.signature(types_Enum.__init__)
+    params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+    assert "literals" in params, "Missing parameter 'literals'"
 
-def test_types::enum_has_literals():
-    assert hasattr(types::Enum, "literals")
+def test_types_enum_has_name():
+    assert hasattr(types_Enum, "name")
     descriptor = None
-    for klass in types::Enum.__mro__:
-        if "literals" in klass.__dict__:
-            descriptor = klass.__dict__["literals"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_types::enum_has_name():
-    assert hasattr(types::Enum, "name")
-    descriptor = None
-    for klass in types::Enum.__mro__:
+    for klass in types_Enum.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_types_enum_has_literals():
+    assert hasattr(types_Enum, "literals")
+    descriptor = None
+    for klass in types_Enum.__mro__:
+        if "literals" in klass.__dict__:
+            descriptor = klass.__dict__["literals"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_types::int_is_not_abstract():
-    assert not inspect.isabstract(types::Int)
+
+def test_types_char_is_not_abstract():
+    assert not inspect.isabstract(types_Char)
 
 
-def test_types::int_constructor_exists():
-    assert callable(types::Int.__init__)
+def test_types_char_constructor_exists():
+    assert callable(types_Char.__init__)
 
 
-def test_types::int_constructor_args():
-    sig = inspect.signature(types::Int.__init__)
+def test_types_char_constructor_args():
+    sig = inspect.signature(types_Char.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::floatingpoint_is_not_abstract():
-    assert not inspect.isabstract(types::FloatingPoint)
+def test_types_octet_is_not_abstract():
+    assert not inspect.isabstract(types_Octet)
 
 
-def test_types::floatingpoint_constructor_exists():
-    assert callable(types::FloatingPoint.__init__)
+def test_types_octet_constructor_exists():
+    assert callable(types_Octet.__init__)
 
 
-def test_types::floatingpoint_constructor_args():
-    sig = inspect.signature(types::FloatingPoint.__init__)
+def test_types_octet_constructor_args():
+    sig = inspect.signature(types_Octet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::wchar_is_not_abstract():
-    assert not inspect.isabstract(types::WChar)
+def test_types_boolean_is_not_abstract():
+    assert not inspect.isabstract(types_Boolean)
 
 
-def test_types::wchar_constructor_exists():
-    assert callable(types::WChar.__init__)
+def test_types_boolean_constructor_exists():
+    assert callable(types_Boolean.__init__)
 
 
-def test_types::wchar_constructor_args():
-    sig = inspect.signature(types::WChar.__init__)
+def test_types_boolean_constructor_args():
+    sig = inspect.signature(types_Boolean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::char_is_not_abstract():
-    assert not inspect.isabstract(types::Char)
+def test_types_type_is_not_abstract():
+    assert not inspect.isabstract(types_Type)
 
 
-def test_types::char_constructor_exists():
-    assert callable(types::Char.__init__)
+def test_types_type_constructor_exists():
+    assert callable(types_Type.__init__)
 
 
-def test_types::char_constructor_args():
-    sig = inspect.signature(types::Char.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::octet_is_not_abstract():
-    assert not inspect.isabstract(types::Octet)
-
-
-def test_types::octet_constructor_exists():
-    assert callable(types::Octet.__init__)
-
-
-def test_types::octet_constructor_args():
-    sig = inspect.signature(types::Octet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::boolean_is_not_abstract():
-    assert not inspect.isabstract(types::Boolean)
-
-
-def test_types::boolean_constructor_exists():
-    assert callable(types::Boolean.__init__)
-
-
-def test_types::boolean_constructor_args():
-    sig = inspect.signature(types::Boolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::type_is_not_abstract():
-    assert not inspect.isabstract(types::Type)
-
-
-def test_types::type_constructor_exists():
-    assert callable(types::Type.__init__)
-
-
-def test_types::type_constructor_args():
-    sig = inspect.signature(types::Type.__init__)
+def test_types_type_constructor_args():
+    sig = inspect.signature(types_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -678,58 +678,58 @@ def test_collection_constructor_args():
 
 
 
-def test_types::string_is_not_abstract():
-    assert not inspect.isabstract(types::String)
+def test_types_sequence_is_not_abstract():
+    assert not inspect.isabstract(types_Sequence)
 
 
-def test_types::string_constructor_exists():
-    assert callable(types::String.__init__)
+def test_types_sequence_constructor_exists():
+    assert callable(types_Sequence.__init__)
 
 
-def test_types::string_constructor_args():
-    sig = inspect.signature(types::String.__init__)
+def test_types_sequence_constructor_args():
+    sig = inspect.signature(types_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::wstring_is_not_abstract():
-    assert not inspect.isabstract(types::WString)
+def test_types_wstring_is_not_abstract():
+    assert not inspect.isabstract(types_WString)
 
 
-def test_types::wstring_constructor_exists():
-    assert callable(types::WString.__init__)
+def test_types_wstring_constructor_exists():
+    assert callable(types_WString.__init__)
 
 
-def test_types::wstring_constructor_args():
-    sig = inspect.signature(types::WString.__init__)
+def test_types_wstring_constructor_args():
+    sig = inspect.signature(types_WString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::sequence_is_not_abstract():
-    assert not inspect.isabstract(types::Sequence)
+def test_types_string_is_not_abstract():
+    assert not inspect.isabstract(types_String)
 
 
-def test_types::sequence_constructor_exists():
-    assert callable(types::Sequence.__init__)
+def test_types_string_constructor_exists():
+    assert callable(types_String.__init__)
 
 
-def test_types::sequence_constructor_args():
-    sig = inspect.signature(types::Sequence.__init__)
+def test_types_string_constructor_args():
+    sig = inspect.signature(types_String.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::array_is_not_abstract():
-    assert not inspect.isabstract(types::Array)
+def test_types_array_is_not_abstract():
+    assert not inspect.isabstract(types_Array)
 
 
-def test_types::array_constructor_exists():
-    assert callable(types::Array.__init__)
+def test_types_array_constructor_exists():
+    assert callable(types_Array.__init__)
 
 
-def test_types::array_constructor_args():
-    sig = inspect.signature(types::Array.__init__)
+def test_types_array_constructor_args():
+    sig = inspect.signature(types_Array.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -747,146 +747,146 @@ safe_text = st.text(
 OpenDDSLib_strategy = st.builds(
     OpenDDSLib,
 )
-types::DataLib_strategy = st.builds(
-    types::DataLib,
+types_DataLib_strategy = st.builds(
+    types_DataLib,
 )
 UnsignedInt_strategy = st.builds(
     UnsignedInt,
 )
-types::ULongLong_strategy = st.builds(
-    types::ULongLong,
+types_ULongLong_strategy = st.builds(
+    types_ULongLong,
 )
-types::UShort_strategy = st.builds(
-    types::UShort,
+types_UShort_strategy = st.builds(
+    types_UShort,
 )
-types::ULong_strategy = st.builds(
-    types::ULong,
+types_ULong_strategy = st.builds(
+    types_ULong,
 )
 Int_strategy = st.builds(
     Int,
 )
-types::SignedInt_strategy = st.builds(
-    types::SignedInt,
+types_SignedInt_strategy = st.builds(
+    types_SignedInt,
 )
 SignedInt_strategy = st.builds(
     SignedInt,
 )
-types::LongLong_strategy = st.builds(
-    types::LongLong,
+types_LongLong_strategy = st.builds(
+    types_LongLong,
 )
-types::Short_strategy = st.builds(
-    types::Short,
+types_Short_strategy = st.builds(
+    types_Short,
 )
-types::Long_strategy = st.builds(
-    types::Long,
+types_Long_strategy = st.builds(
+    types_Long,
 )
-types::UnsignedInt_strategy = st.builds(
-    types::UnsignedInt,
+types_UnsignedInt_strategy = st.builds(
+    types_UnsignedInt,
 )
 FloatingPoint_strategy = st.builds(
     FloatingPoint,
 )
-types::LongDouble_strategy = st.builds(
-    types::LongDouble,
+types_Float_strategy = st.builds(
+    types_Float,
 )
-types::Float_strategy = st.builds(
-    types::Float,
+types_LongDouble_strategy = st.builds(
+    types_LongDouble,
 )
-types::Double_strategy = st.builds(
-    types::Double,
+types_Double_strategy = st.builds(
+    types_Double,
 )
 Type_strategy = st.builds(
     Type,
 )
-types::Simple_strategy = st.builds(
-    types::Simple,
-)
-types::Typedef_strategy = st.builds(
-    types::Typedef,
+types_Union_strategy = st.builds(
+    types_Union,
     name=
         safe_text
 )
-types::Union_strategy = st.builds(
-    types::Union,
-    name=
-        safe_text
-)
-types::Struct_strategy = st.builds(
-    types::Struct,
+types_Struct_strategy = st.builds(
+    types_Struct,
     isDcpsDataType=
         st.booleans(),
     name=
         safe_text
 )
-types::Collection_strategy = st.builds(
-    types::Collection,
+types_Simple_strategy = st.builds(
+    types_Simple,
+)
+types_Typedef_strategy = st.builds(
+    types_Typedef,
+    name=
+        safe_text
+)
+types_Collection_strategy = st.builds(
+    types_Collection,
     length=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-types::Case_strategy = st.builds(
-    types::Case,
-    literal=
-        safe_text
-)
-types::Field_strategy = st.builds(
-    types::Field,
+types_Field_strategy = st.builds(
+    types_Field,
     name=
         safe_text
 )
-types::Key_strategy = st.builds(
-    types::Key,
+types_Case_strategy = st.builds(
+    types_Case,
+    literal=
+        safe_text
 )
-types::Branch_strategy = st.builds(
-    types::Branch,
+types_Key_strategy = st.builds(
+    types_Key,
+)
+types_Branch_strategy = st.builds(
+    types_Branch,
 )
 Simple_strategy = st.builds(
     Simple,
 )
-types::Enum_strategy = st.builds(
-    types::Enum,
-    literals=
-        safe_text,
+types_Int_strategy = st.builds(
+    types_Int,
+)
+types_FloatingPoint_strategy = st.builds(
+    types_FloatingPoint,
+)
+types_WChar_strategy = st.builds(
+    types_WChar,
+)
+types_Enum_strategy = st.builds(
+    types_Enum,
     name=
+        safe_text,
+    literals=
         safe_text
 )
-types::Int_strategy = st.builds(
-    types::Int,
+types_Char_strategy = st.builds(
+    types_Char,
 )
-types::FloatingPoint_strategy = st.builds(
-    types::FloatingPoint,
+types_Octet_strategy = st.builds(
+    types_Octet,
 )
-types::WChar_strategy = st.builds(
-    types::WChar,
+types_Boolean_strategy = st.builds(
+    types_Boolean,
 )
-types::Char_strategy = st.builds(
-    types::Char,
-)
-types::Octet_strategy = st.builds(
-    types::Octet,
-)
-types::Boolean_strategy = st.builds(
-    types::Boolean,
-)
-types::Type_strategy = st.builds(
-    types::Type,
+types_Type_strategy = st.builds(
+    types_Type,
 )
 Collection_strategy = st.builds(
     Collection,
 )
-types::String_strategy = st.builds(
-    types::String,
+types_Sequence_strategy = st.builds(
+    types_Sequence,
 )
-types::WString_strategy = st.builds(
-    types::WString,
+types_WString_strategy = st.builds(
+    types_WString,
 )
-types::Sequence_strategy = st.builds(
-    types::Sequence,
+types_String_strategy = st.builds(
+    types_String,
 )
-types::Array_strategy = st.builds(
-    types::Array,
+types_Array_strategy = st.builds(
+    types_Array,
 )
 
 @given(instance=OpenDDSLib_strategy)
@@ -894,167 +894,152 @@ types::Array_strategy = st.builds(
 def test_openddslib_instantiation(instance):
     assert isinstance(instance, OpenDDSLib)
 
-@given(instance=types::DataLib_strategy)
+@given(instance=types_DataLib_strategy)
 @settings(max_examples=50)
-def test_types::datalib_instantiation(instance):
-    assert isinstance(instance, types::DataLib)
+def test_types_datalib_instantiation(instance):
+    assert isinstance(instance, types_DataLib)
 
 @given(instance=UnsignedInt_strategy)
 @settings(max_examples=50)
 def test_unsignedint_instantiation(instance):
     assert isinstance(instance, UnsignedInt)
 
-@given(instance=types::ULongLong_strategy)
+@given(instance=types_ULongLong_strategy)
 @settings(max_examples=50)
-def test_types::ulonglong_instantiation(instance):
-    assert isinstance(instance, types::ULongLong)
+def test_types_ulonglong_instantiation(instance):
+    assert isinstance(instance, types_ULongLong)
 
-@given(instance=types::UShort_strategy)
+@given(instance=types_UShort_strategy)
 @settings(max_examples=50)
-def test_types::ushort_instantiation(instance):
-    assert isinstance(instance, types::UShort)
+def test_types_ushort_instantiation(instance):
+    assert isinstance(instance, types_UShort)
 
-@given(instance=types::ULong_strategy)
+@given(instance=types_ULong_strategy)
 @settings(max_examples=50)
-def test_types::ulong_instantiation(instance):
-    assert isinstance(instance, types::ULong)
+def test_types_ulong_instantiation(instance):
+    assert isinstance(instance, types_ULong)
 
 @given(instance=Int_strategy)
 @settings(max_examples=50)
 def test_int_instantiation(instance):
     assert isinstance(instance, Int)
 
-@given(instance=types::SignedInt_strategy)
+@given(instance=types_SignedInt_strategy)
 @settings(max_examples=50)
-def test_types::signedint_instantiation(instance):
-    assert isinstance(instance, types::SignedInt)
+def test_types_signedint_instantiation(instance):
+    assert isinstance(instance, types_SignedInt)
 
 @given(instance=SignedInt_strategy)
 @settings(max_examples=50)
 def test_signedint_instantiation(instance):
     assert isinstance(instance, SignedInt)
 
-@given(instance=types::LongLong_strategy)
+@given(instance=types_LongLong_strategy)
 @settings(max_examples=50)
-def test_types::longlong_instantiation(instance):
-    assert isinstance(instance, types::LongLong)
+def test_types_longlong_instantiation(instance):
+    assert isinstance(instance, types_LongLong)
 
-@given(instance=types::Short_strategy)
+@given(instance=types_Short_strategy)
 @settings(max_examples=50)
-def test_types::short_instantiation(instance):
-    assert isinstance(instance, types::Short)
+def test_types_short_instantiation(instance):
+    assert isinstance(instance, types_Short)
 
-@given(instance=types::Long_strategy)
+@given(instance=types_Long_strategy)
 @settings(max_examples=50)
-def test_types::long_instantiation(instance):
-    assert isinstance(instance, types::Long)
+def test_types_long_instantiation(instance):
+    assert isinstance(instance, types_Long)
 
-@given(instance=types::UnsignedInt_strategy)
+@given(instance=types_UnsignedInt_strategy)
 @settings(max_examples=50)
-def test_types::unsignedint_instantiation(instance):
-    assert isinstance(instance, types::UnsignedInt)
+def test_types_unsignedint_instantiation(instance):
+    assert isinstance(instance, types_UnsignedInt)
 
 @given(instance=FloatingPoint_strategy)
 @settings(max_examples=50)
 def test_floatingpoint_instantiation(instance):
     assert isinstance(instance, FloatingPoint)
 
-@given(instance=types::LongDouble_strategy)
+@given(instance=types_Float_strategy)
 @settings(max_examples=50)
-def test_types::longdouble_instantiation(instance):
-    assert isinstance(instance, types::LongDouble)
+def test_types_float_instantiation(instance):
+    assert isinstance(instance, types_Float)
 
-@given(instance=types::Float_strategy)
+@given(instance=types_LongDouble_strategy)
 @settings(max_examples=50)
-def test_types::float_instantiation(instance):
-    assert isinstance(instance, types::Float)
+def test_types_longdouble_instantiation(instance):
+    assert isinstance(instance, types_LongDouble)
 
-@given(instance=types::Double_strategy)
+@given(instance=types_Double_strategy)
 @settings(max_examples=50)
-def test_types::double_instantiation(instance):
-    assert isinstance(instance, types::Double)
+def test_types_double_instantiation(instance):
+    assert isinstance(instance, types_Double)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=types::Simple_strategy)
+@given(instance=types_Union_strategy)
 @settings(max_examples=50)
-def test_types::simple_instantiation(instance):
-    assert isinstance(instance, types::Simple)
-
-@given(instance=types::Typedef_strategy)
-@settings(max_examples=50)
-def test_types::typedef_instantiation(instance):
-    assert isinstance(instance, types::Typedef)
-
-@given(instance=types::Typedef_strategy)
-def test_types::typedef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_types_union_instantiation(instance):
+    assert isinstance(instance, types_Union)
 
 
-@given(instance=types::Typedef_strategy)
-def test_types::typedef_name_setter(instance):
+
+@given(instance=types_Union_strategy)
+def test_types_union_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=types::Union_strategy)
+@given(instance=types_Struct_strategy)
 @settings(max_examples=50)
-def test_types::union_instantiation(instance):
-    assert isinstance(instance, types::Union)
-
-@given(instance=types::Union_strategy)
-def test_types::union_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_types_struct_instantiation(instance):
+    assert isinstance(instance, types_Struct)
 
 
-@given(instance=types::Union_strategy)
-def test_types::union_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=types::Struct_strategy)
-@settings(max_examples=50)
-def test_types::struct_instantiation(instance):
-    assert isinstance(instance, types::Struct)
-
-@given(instance=types::Struct_strategy)
-def test_types::struct_isDcpsDataType_type(instance):
-    assert isinstance(instance.isDcpsDataType, bool)
-
-
-@given(instance=types::Struct_strategy)
-def test_types::struct_isDcpsDataType_setter(instance):
+@given(instance=types_Struct_strategy)
+def test_types_struct_isDcpsDataType_setter(instance):
     original = instance.isDcpsDataType
     instance.isDcpsDataType = original
     assert instance.isDcpsDataType == original
 
-@given(instance=types::Struct_strategy)
-def test_types::struct_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=types::Struct_strategy)
-def test_types::struct_name_setter(instance):
+@given(instance=types_Struct_strategy)
+def test_types_struct_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=types::Collection_strategy)
+@given(instance=types_Simple_strategy)
 @settings(max_examples=50)
-def test_types::collection_instantiation(instance):
-    assert isinstance(instance, types::Collection)
+def test_types_simple_instantiation(instance):
+    assert isinstance(instance, types_Simple)
 
-@given(instance=types::Collection_strategy)
-def test_types::collection_length_type(instance):
-    assert isinstance(instance.length, str)
+@given(instance=types_Typedef_strategy)
+@settings(max_examples=50)
+def test_types_typedef_instantiation(instance):
+    assert isinstance(instance, types_Typedef)
 
 
-@given(instance=types::Collection_strategy)
-def test_types::collection_length_setter(instance):
+
+@given(instance=types_Typedef_strategy)
+def test_types_typedef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=types_Collection_strategy)
+@settings(max_examples=50)
+def test_types_collection_instantiation(instance):
+    assert isinstance(instance, types_Collection)
+
+
+
+@given(instance=types_Collection_strategy)
+def test_types_collection_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
@@ -1064,136 +1049,124 @@ def test_types::collection_length_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=types::Case_strategy)
+@given(instance=types_Field_strategy)
 @settings(max_examples=50)
-def test_types::case_instantiation(instance):
-    assert isinstance(instance, types::Case)
-
-@given(instance=types::Case_strategy)
-def test_types::case_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_types_field_instantiation(instance):
+    assert isinstance(instance, types_Field)
 
 
-@given(instance=types::Case_strategy)
-def test_types::case_literal_setter(instance):
-    original = instance.literal
-    instance.literal = original
-    assert instance.literal == original
 
-@given(instance=types::Field_strategy)
-@settings(max_examples=50)
-def test_types::field_instantiation(instance):
-    assert isinstance(instance, types::Field)
-
-@given(instance=types::Field_strategy)
-def test_types::field_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=types::Field_strategy)
-def test_types::field_name_setter(instance):
+@given(instance=types_Field_strategy)
+def test_types_field_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=types::Key_strategy)
+@given(instance=types_Case_strategy)
 @settings(max_examples=50)
-def test_types::key_instantiation(instance):
-    assert isinstance(instance, types::Key)
+def test_types_case_instantiation(instance):
+    assert isinstance(instance, types_Case)
 
-@given(instance=types::Branch_strategy)
+
+
+@given(instance=types_Case_strategy)
+def test_types_case_literal_setter(instance):
+    original = instance.literal
+    instance.literal = original
+    assert instance.literal == original
+
+@given(instance=types_Key_strategy)
 @settings(max_examples=50)
-def test_types::branch_instantiation(instance):
-    assert isinstance(instance, types::Branch)
+def test_types_key_instantiation(instance):
+    assert isinstance(instance, types_Key)
+
+@given(instance=types_Branch_strategy)
+@settings(max_examples=50)
+def test_types_branch_instantiation(instance):
+    assert isinstance(instance, types_Branch)
 
 @given(instance=Simple_strategy)
 @settings(max_examples=50)
 def test_simple_instantiation(instance):
     assert isinstance(instance, Simple)
 
-@given(instance=types::Enum_strategy)
+@given(instance=types_Int_strategy)
 @settings(max_examples=50)
-def test_types::enum_instantiation(instance):
-    assert isinstance(instance, types::Enum)
+def test_types_int_instantiation(instance):
+    assert isinstance(instance, types_Int)
 
-@given(instance=types::Enum_strategy)
-def test_types::enum_literals_type(instance):
-    assert isinstance(instance.literals, str)
+@given(instance=types_FloatingPoint_strategy)
+@settings(max_examples=50)
+def test_types_floatingpoint_instantiation(instance):
+    assert isinstance(instance, types_FloatingPoint)
+
+@given(instance=types_WChar_strategy)
+@settings(max_examples=50)
+def test_types_wchar_instantiation(instance):
+    assert isinstance(instance, types_WChar)
+
+@given(instance=types_Enum_strategy)
+@settings(max_examples=50)
+def test_types_enum_instantiation(instance):
+    assert isinstance(instance, types_Enum)
 
 
-@given(instance=types::Enum_strategy)
-def test_types::enum_literals_setter(instance):
-    original = instance.literals
-    instance.literals = original
-    assert instance.literals == original
 
-@given(instance=types::Enum_strategy)
-def test_types::enum_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=types::Enum_strategy)
-def test_types::enum_name_setter(instance):
+@given(instance=types_Enum_strategy)
+def test_types_enum_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=types::Int_strategy)
-@settings(max_examples=50)
-def test_types::int_instantiation(instance):
-    assert isinstance(instance, types::Int)
 
-@given(instance=types::FloatingPoint_strategy)
-@settings(max_examples=50)
-def test_types::floatingpoint_instantiation(instance):
-    assert isinstance(instance, types::FloatingPoint)
 
-@given(instance=types::WChar_strategy)
-@settings(max_examples=50)
-def test_types::wchar_instantiation(instance):
-    assert isinstance(instance, types::WChar)
+@given(instance=types_Enum_strategy)
+def test_types_enum_literals_setter(instance):
+    original = instance.literals
+    instance.literals = original
+    assert instance.literals == original
 
-@given(instance=types::Char_strategy)
+@given(instance=types_Char_strategy)
 @settings(max_examples=50)
-def test_types::char_instantiation(instance):
-    assert isinstance(instance, types::Char)
+def test_types_char_instantiation(instance):
+    assert isinstance(instance, types_Char)
 
-@given(instance=types::Octet_strategy)
+@given(instance=types_Octet_strategy)
 @settings(max_examples=50)
-def test_types::octet_instantiation(instance):
-    assert isinstance(instance, types::Octet)
+def test_types_octet_instantiation(instance):
+    assert isinstance(instance, types_Octet)
 
-@given(instance=types::Boolean_strategy)
+@given(instance=types_Boolean_strategy)
 @settings(max_examples=50)
-def test_types::boolean_instantiation(instance):
-    assert isinstance(instance, types::Boolean)
+def test_types_boolean_instantiation(instance):
+    assert isinstance(instance, types_Boolean)
 
-@given(instance=types::Type_strategy)
+@given(instance=types_Type_strategy)
 @settings(max_examples=50)
-def test_types::type_instantiation(instance):
-    assert isinstance(instance, types::Type)
+def test_types_type_instantiation(instance):
+    assert isinstance(instance, types_Type)
 
 @given(instance=Collection_strategy)
 @settings(max_examples=50)
 def test_collection_instantiation(instance):
     assert isinstance(instance, Collection)
 
-@given(instance=types::String_strategy)
+@given(instance=types_Sequence_strategy)
 @settings(max_examples=50)
-def test_types::string_instantiation(instance):
-    assert isinstance(instance, types::String)
+def test_types_sequence_instantiation(instance):
+    assert isinstance(instance, types_Sequence)
 
-@given(instance=types::WString_strategy)
+@given(instance=types_WString_strategy)
 @settings(max_examples=50)
-def test_types::wstring_instantiation(instance):
-    assert isinstance(instance, types::WString)
+def test_types_wstring_instantiation(instance):
+    assert isinstance(instance, types_WString)
 
-@given(instance=types::Sequence_strategy)
+@given(instance=types_String_strategy)
 @settings(max_examples=50)
-def test_types::sequence_instantiation(instance):
-    assert isinstance(instance, types::Sequence)
+def test_types_string_instantiation(instance):
+    assert isinstance(instance, types_String)
 
-@given(instance=types::Array_strategy)
+@given(instance=types_Array_strategy)
 @settings(max_examples=50)
-def test_types::array_instantiation(instance):
-    assert isinstance(instance, types::Array)
+def test_types_array_instantiation(instance):
+    assert isinstance(instance, types_Array)

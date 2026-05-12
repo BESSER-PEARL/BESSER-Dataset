@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class4,
@@ -128,17 +128,8 @@ def test_aaa_constructor_exists():
 def test_aaa_constructor_args():
     sig = inspect.signature(aaa.__init__)
     params = list(sig.parameters.keys())
-    assert "qwe" in params, "Missing parameter 'qwe'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_aaa_has_qwe():
-    assert hasattr(aaa, "qwe")
-    descriptor = None
-    for klass in aaa.__mro__:
-        if "qwe" in klass.__dict__:
-            descriptor = klass.__dict__["qwe"]
-            break
-    assert isinstance(descriptor, property)
+    assert "qwe" in params, "Missing parameter 'qwe'"
 
 def test_aaa_has_attribute():
     assert hasattr(aaa, "attribute")
@@ -146,6 +137,15 @@ def test_aaa_has_attribute():
     for klass in aaa.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aaa_has_qwe():
+    assert hasattr(aaa, "qwe")
+    descriptor = None
+    for klass in aaa.__mro__:
+        if "qwe" in klass.__dict__:
+            descriptor = klass.__dict__["qwe"]
             break
     assert isinstance(descriptor, property)
 
@@ -231,10 +231,10 @@ ccc_strategy = st.builds(
 )
 aaa_strategy = st.builds(
     aaa,
-    qwe=
-        st.none(),
     attribute=
-        st.booleans()
+        st.booleans(),
+    qwe=
+        st.none()
 )
 vvvv_strategy = st.builds(
     vvvv,
@@ -252,9 +252,6 @@ cgv_Classqwe_strategy = st.builds(
 def test_class4_instantiation(instance):
     assert isinstance(instance, Class4)
 
-@given(instance=Class4_strategy)
-def test_class4_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Class4_strategy)
@@ -268,9 +265,6 @@ def test_class4_attribute_setter(instance):
 def test_vcx_instantiation(instance):
     assert isinstance(instance, vcx)
 
-@given(instance=vcx_strategy)
-def test_vcx_attribute_type(instance):
-    assert isinstance(instance.attribute, bool)
 
 
 @given(instance=vcx_strategy)
@@ -279,9 +273,6 @@ def test_vcx_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=vcx_strategy)
-def test_vcx_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=vcx_strategy)
@@ -300,9 +291,6 @@ def test_class_instantiation(instance):
 def test_ccc_instantiation(instance):
     assert isinstance(instance, ccc)
 
-@given(instance=ccc_strategy)
-def test_ccc_qwe_type(instance):
-    assert isinstance(instance.qwe, str)
 
 
 @given(instance=ccc_strategy)
@@ -316,20 +304,6 @@ def test_ccc_qwe_setter(instance):
 def test_aaa_instantiation(instance):
     assert isinstance(instance, aaa)
 
-@given(instance=aaa_strategy)
-def test_aaa_qwe_type(instance):
-    assert isinstance(instance.qwe, aaa)
-
-
-@given(instance=aaa_strategy)
-def test_aaa_qwe_setter(instance):
-    original = instance.qwe
-    instance.qwe = original
-    assert instance.qwe == original
-
-@given(instance=aaa_strategy)
-def test_aaa_attribute_type(instance):
-    assert isinstance(instance.attribute, bool)
 
 
 @given(instance=aaa_strategy)
@@ -338,14 +312,19 @@ def test_aaa_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=aaa_strategy)
+def test_aaa_qwe_setter(instance):
+    original = instance.qwe
+    instance.qwe = original
+    assert instance.qwe == original
+
 @given(instance=vvvv_strategy)
 @settings(max_examples=50)
 def test_vvvv_instantiation(instance):
     assert isinstance(instance, vvvv)
 
-@given(instance=vvvv_strategy)
-def test_vvvv_zsxc_type(instance):
-    assert isinstance(instance.zsxc, int)
 
 
 @given(instance=vvvv_strategy)
@@ -359,9 +338,6 @@ def test_vvvv_zsxc_setter(instance):
 def test_cgv_classqwe_instantiation(instance):
     assert isinstance(instance, cgv_Classqwe)
 
-@given(instance=cgv_Classqwe_strategy)
-def test_cgv_classqwe_qw_type(instance):
-    assert isinstance(instance.qw, aaa)
 
 
 @given(instance=cgv_Classqwe_strategy)

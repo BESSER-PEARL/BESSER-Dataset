@@ -3,113 +3,113 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Else,
-    limp::NoElse,
-    limp::ElseIf,
-    limp::ElseBlock,
+    limp_ElseIf,
+    limp_NoElse,
+    limp_ElseBlock,
     AttributeBlock,
-    limp::NoAttributeBlock,
-    limp::SomeAttributeBlock,
+    limp_NoAttributeBlock,
+    limp_SomeAttributeBlock,
     Type,
-    limp::RecordType,
-    limp::ArrayType,
-    limp::RealType,
-    limp::StringType,
-    limp::EnumType,
-    limp::BoolType,
-    limp::TupleType,
-    limp::IntegerType,
-    limp::VoidType,
+    limp_BoolType,
+    limp_RecordType,
+    limp_IntegerType,
+    limp_TupleType,
+    limp_StringType,
+    limp_ArrayType,
+    limp_RealType,
+    limp_EnumType,
+    limp_VoidType,
     VarBlock,
-    limp::NoVarBlock,
-    limp::SomeVarBlock,
-    limp::ExprList,
-    limp::NamedType,
-    limp::AbstractType,
+    limp_NoVarBlock,
+    limp_SomeVarBlock,
+    limp_ExprList,
+    limp_NamedType,
+    limp_AbstractType,
     Expr,
-    limp::IfThenElseExpr,
-    limp::InitExpr,
-    limp::BinaryExpr,
-    limp::FreshVariable,
-    limp::RecordUpdateExpr,
-    limp::FcnCallExpr,
-    limp::UnaryNegationExpr,
-    limp::ChoiceExpr,
-    limp::IntegerLiteralExpr,
-    limp::ArrayUpdateExpr,
-    limp::RecordAccessExpr,
-    limp::UnaryMinusExpr,
-    limp::BooleanLiteralExpr,
-    limp::IdExpr,
-    limp::SecondInit,
-    limp::ArrayAccessExpr,
-    limp::RealLiteralExpr,
-    limp::StringLiteralExpr,
-    limp::IntegerWildCardExpr,
-    limp::ArrayExpr,
-    limp::FunctionRef,
-    limp::Equation,
-    limp::RecordFieldExpr,
-    limp::RecordExpr,
-    limp::IdList,
+    limp_ArrayUpdateExpr,
+    limp_RecordUpdateExpr,
+    limp_SecondInit,
+    limp_IntegerLiteralExpr,
+    limp_ChoiceExpr,
+    limp_ArrayAccessExpr,
+    limp_UnaryNegationExpr,
+    limp_StringLiteralExpr,
+    limp_RecordAccessExpr,
+    limp_IfThenElseExpr,
+    limp_BinaryExpr,
+    limp_RealLiteralExpr,
+    limp_UnaryMinusExpr,
+    limp_IntegerWildCardExpr,
+    limp_FreshVariable,
+    limp_InitExpr,
+    limp_FcnCallExpr,
+    limp_BooleanLiteralExpr,
+    limp_IdExpr,
+    limp_ArrayExpr,
+    limp_FunctionRef,
+    limp_Equation,
+    limp_RecordFieldExpr,
+    limp_RecordExpr,
+    limp_IdList,
     Equation,
     Statement,
-    limp::ReturnStatement,
-    limp::GotoStatement,
-    limp::AssignmentStatement,
-    limp::IfThenElseStatement,
-    limp::LabelStatement,
-    limp::ForStatement,
-    limp::ContinueStatement,
-    limp::BreakStatement,
-    limp::VoidStatement,
-    limp::Statement,
-    limp::DefineUseRef,
-    limp::WhileStatement,
-    limp::Else,
-    limp::VariableRef,
-    limp::Expr,
+    limp_LabelStatement,
+    limp_ReturnStatement,
+    limp_ContinueStatement,
+    limp_IfThenElseStatement,
+    limp_ForStatement,
+    limp_BreakStatement,
+    limp_AssignmentStatement,
+    limp_GotoStatement,
+    limp_VoidStatement,
+    limp_Statement,
+    limp_DefineUseRef,
+    limp_WhileStatement,
+    limp_Else,
+    limp_VariableRef,
+    limp_Expr,
     Attribute,
-    limp::Uses,
-    limp::Define,
-    limp::Postcondition,
-    limp::Precondition,
-    limp::Attribute,
-    limp::RecordFieldType,
+    limp_Uses,
+    limp_Define,
+    limp_Postcondition,
+    limp_Precondition,
+    limp_Attribute,
+    limp_RecordFieldType,
     VariableRef,
-    limp::LocalArg,
-    limp::InputArg,
-    limp::EnumValue,
+    limp_LocalArg,
+    limp_InputArg,
+    limp_EnumValue,
     TypeDeclaration,
-    limp::TypeAlias,
-    limp::RecordTypeDef,
-    limp::EnumTypeDef,
-    limp::StatementBlock,
-    limp::EquationBlock,
-    limp::AbstractTypeDef,
-    limp::Type,
-    limp::ArrayTypeDef,
-    limp::AttributeBlock,
-    limp::OutputArgList,
-    limp::OutputArg,
-    limp::InputArgList,
+    limp_TypeAlias,
+    limp_RecordTypeDef,
+    limp_EnumTypeDef,
+    limp_StatementBlock,
+    limp_EquationBlock,
+    limp_AbstractTypeDef,
+    limp_Type,
+    limp_ArrayTypeDef,
+    limp_AttributeBlock,
+    limp_OutputArgList,
+    limp_OutputArg,
+    limp_InputArgList,
     FunctionRef,
     Declaration,
-    limp::ExternalProcedure,
-    limp::LocalProcedure,
-    limp::TypeDeclaration,
-    limp::Import,
-    limp::ExternalFunction,
-    limp::ConstantDeclaration,
-    limp::GlobalDeclaration,
-    limp::Comment,
-    limp::Declaration,
-    limp::Specification,
-    limp::VarBlock,
-    limp::LocalFunction,
+    limp_LocalProcedure,
+    limp_ConstantDeclaration,
+    limp_ExternalFunction,
+    limp_GlobalDeclaration,
+    limp_ExternalProcedure,
+    limp_TypeDeclaration,
+    limp_Import,
+    limp_Comment,
+    limp_Declaration,
+    limp_Specification,
+    limp_VarBlock,
+    limp_LocalFunction,
 )
 
 # =============================================================================
@@ -132,44 +132,44 @@ def test_else_constructor_args():
 
 
 
-def test_limp::noelse_is_not_abstract():
-    assert not inspect.isabstract(limp::NoElse)
+def test_limp_elseif_is_not_abstract():
+    assert not inspect.isabstract(limp_ElseIf)
 
 
-def test_limp::noelse_constructor_exists():
-    assert callable(limp::NoElse.__init__)
+def test_limp_elseif_constructor_exists():
+    assert callable(limp_ElseIf.__init__)
 
 
-def test_limp::noelse_constructor_args():
-    sig = inspect.signature(limp::NoElse.__init__)
+def test_limp_elseif_constructor_args():
+    sig = inspect.signature(limp_ElseIf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::elseif_is_not_abstract():
-    assert not inspect.isabstract(limp::ElseIf)
+def test_limp_noelse_is_not_abstract():
+    assert not inspect.isabstract(limp_NoElse)
 
 
-def test_limp::elseif_constructor_exists():
-    assert callable(limp::ElseIf.__init__)
+def test_limp_noelse_constructor_exists():
+    assert callable(limp_NoElse.__init__)
 
 
-def test_limp::elseif_constructor_args():
-    sig = inspect.signature(limp::ElseIf.__init__)
+def test_limp_noelse_constructor_args():
+    sig = inspect.signature(limp_NoElse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::elseblock_is_not_abstract():
-    assert not inspect.isabstract(limp::ElseBlock)
+def test_limp_elseblock_is_not_abstract():
+    assert not inspect.isabstract(limp_ElseBlock)
 
 
-def test_limp::elseblock_constructor_exists():
-    assert callable(limp::ElseBlock.__init__)
+def test_limp_elseblock_constructor_exists():
+    assert callable(limp_ElseBlock.__init__)
 
 
-def test_limp::elseblock_constructor_args():
-    sig = inspect.signature(limp::ElseBlock.__init__)
+def test_limp_elseblock_constructor_args():
+    sig = inspect.signature(limp_ElseBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -188,30 +188,30 @@ def test_attributeblock_constructor_args():
 
 
 
-def test_limp::noattributeblock_is_not_abstract():
-    assert not inspect.isabstract(limp::NoAttributeBlock)
+def test_limp_noattributeblock_is_not_abstract():
+    assert not inspect.isabstract(limp_NoAttributeBlock)
 
 
-def test_limp::noattributeblock_constructor_exists():
-    assert callable(limp::NoAttributeBlock.__init__)
+def test_limp_noattributeblock_constructor_exists():
+    assert callable(limp_NoAttributeBlock.__init__)
 
 
-def test_limp::noattributeblock_constructor_args():
-    sig = inspect.signature(limp::NoAttributeBlock.__init__)
+def test_limp_noattributeblock_constructor_args():
+    sig = inspect.signature(limp_NoAttributeBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::someattributeblock_is_not_abstract():
-    assert not inspect.isabstract(limp::SomeAttributeBlock)
+def test_limp_someattributeblock_is_not_abstract():
+    assert not inspect.isabstract(limp_SomeAttributeBlock)
 
 
-def test_limp::someattributeblock_constructor_exists():
-    assert callable(limp::SomeAttributeBlock.__init__)
+def test_limp_someattributeblock_constructor_exists():
+    assert callable(limp_SomeAttributeBlock.__init__)
 
 
-def test_limp::someattributeblock_constructor_args():
-    sig = inspect.signature(limp::SomeAttributeBlock.__init__)
+def test_limp_someattributeblock_constructor_args():
+    sig = inspect.signature(limp_SomeAttributeBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -230,128 +230,128 @@ def test_type_constructor_args():
 
 
 
-def test_limp::recordtype_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordType)
+def test_limp_booltype_is_not_abstract():
+    assert not inspect.isabstract(limp_BoolType)
 
 
-def test_limp::recordtype_constructor_exists():
-    assert callable(limp::RecordType.__init__)
+def test_limp_booltype_constructor_exists():
+    assert callable(limp_BoolType.__init__)
 
 
-def test_limp::recordtype_constructor_args():
-    sig = inspect.signature(limp::RecordType.__init__)
+def test_limp_booltype_constructor_args():
+    sig = inspect.signature(limp_BoolType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::arraytype_is_not_abstract():
-    assert not inspect.isabstract(limp::ArrayType)
+def test_limp_recordtype_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordType)
 
 
-def test_limp::arraytype_constructor_exists():
-    assert callable(limp::ArrayType.__init__)
+def test_limp_recordtype_constructor_exists():
+    assert callable(limp_RecordType.__init__)
 
 
-def test_limp::arraytype_constructor_args():
-    sig = inspect.signature(limp::ArrayType.__init__)
+def test_limp_recordtype_constructor_args():
+    sig = inspect.signature(limp_RecordType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::realtype_is_not_abstract():
-    assert not inspect.isabstract(limp::RealType)
+def test_limp_integertype_is_not_abstract():
+    assert not inspect.isabstract(limp_IntegerType)
 
 
-def test_limp::realtype_constructor_exists():
-    assert callable(limp::RealType.__init__)
+def test_limp_integertype_constructor_exists():
+    assert callable(limp_IntegerType.__init__)
 
 
-def test_limp::realtype_constructor_args():
-    sig = inspect.signature(limp::RealType.__init__)
+def test_limp_integertype_constructor_args():
+    sig = inspect.signature(limp_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::stringtype_is_not_abstract():
-    assert not inspect.isabstract(limp::StringType)
+def test_limp_tupletype_is_not_abstract():
+    assert not inspect.isabstract(limp_TupleType)
 
 
-def test_limp::stringtype_constructor_exists():
-    assert callable(limp::StringType.__init__)
+def test_limp_tupletype_constructor_exists():
+    assert callable(limp_TupleType.__init__)
 
 
-def test_limp::stringtype_constructor_args():
-    sig = inspect.signature(limp::StringType.__init__)
+def test_limp_tupletype_constructor_args():
+    sig = inspect.signature(limp_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::enumtype_is_not_abstract():
-    assert not inspect.isabstract(limp::EnumType)
+def test_limp_stringtype_is_not_abstract():
+    assert not inspect.isabstract(limp_StringType)
 
 
-def test_limp::enumtype_constructor_exists():
-    assert callable(limp::EnumType.__init__)
+def test_limp_stringtype_constructor_exists():
+    assert callable(limp_StringType.__init__)
 
 
-def test_limp::enumtype_constructor_args():
-    sig = inspect.signature(limp::EnumType.__init__)
+def test_limp_stringtype_constructor_args():
+    sig = inspect.signature(limp_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::booltype_is_not_abstract():
-    assert not inspect.isabstract(limp::BoolType)
+def test_limp_arraytype_is_not_abstract():
+    assert not inspect.isabstract(limp_ArrayType)
 
 
-def test_limp::booltype_constructor_exists():
-    assert callable(limp::BoolType.__init__)
+def test_limp_arraytype_constructor_exists():
+    assert callable(limp_ArrayType.__init__)
 
 
-def test_limp::booltype_constructor_args():
-    sig = inspect.signature(limp::BoolType.__init__)
+def test_limp_arraytype_constructor_args():
+    sig = inspect.signature(limp_ArrayType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::tupletype_is_not_abstract():
-    assert not inspect.isabstract(limp::TupleType)
+def test_limp_realtype_is_not_abstract():
+    assert not inspect.isabstract(limp_RealType)
 
 
-def test_limp::tupletype_constructor_exists():
-    assert callable(limp::TupleType.__init__)
+def test_limp_realtype_constructor_exists():
+    assert callable(limp_RealType.__init__)
 
 
-def test_limp::tupletype_constructor_args():
-    sig = inspect.signature(limp::TupleType.__init__)
+def test_limp_realtype_constructor_args():
+    sig = inspect.signature(limp_RealType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::integertype_is_not_abstract():
-    assert not inspect.isabstract(limp::IntegerType)
+def test_limp_enumtype_is_not_abstract():
+    assert not inspect.isabstract(limp_EnumType)
 
 
-def test_limp::integertype_constructor_exists():
-    assert callable(limp::IntegerType.__init__)
+def test_limp_enumtype_constructor_exists():
+    assert callable(limp_EnumType.__init__)
 
 
-def test_limp::integertype_constructor_args():
-    sig = inspect.signature(limp::IntegerType.__init__)
+def test_limp_enumtype_constructor_args():
+    sig = inspect.signature(limp_EnumType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::voidtype_is_not_abstract():
-    assert not inspect.isabstract(limp::VoidType)
+def test_limp_voidtype_is_not_abstract():
+    assert not inspect.isabstract(limp_VoidType)
 
 
-def test_limp::voidtype_constructor_exists():
-    assert callable(limp::VoidType.__init__)
+def test_limp_voidtype_constructor_exists():
+    assert callable(limp_VoidType.__init__)
 
 
-def test_limp::voidtype_constructor_args():
-    sig = inspect.signature(limp::VoidType.__init__)
+def test_limp_voidtype_constructor_args():
+    sig = inspect.signature(limp_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -370,72 +370,72 @@ def test_varblock_constructor_args():
 
 
 
-def test_limp::novarblock_is_not_abstract():
-    assert not inspect.isabstract(limp::NoVarBlock)
+def test_limp_novarblock_is_not_abstract():
+    assert not inspect.isabstract(limp_NoVarBlock)
 
 
-def test_limp::novarblock_constructor_exists():
-    assert callable(limp::NoVarBlock.__init__)
+def test_limp_novarblock_constructor_exists():
+    assert callable(limp_NoVarBlock.__init__)
 
 
-def test_limp::novarblock_constructor_args():
-    sig = inspect.signature(limp::NoVarBlock.__init__)
+def test_limp_novarblock_constructor_args():
+    sig = inspect.signature(limp_NoVarBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::somevarblock_is_not_abstract():
-    assert not inspect.isabstract(limp::SomeVarBlock)
+def test_limp_somevarblock_is_not_abstract():
+    assert not inspect.isabstract(limp_SomeVarBlock)
 
 
-def test_limp::somevarblock_constructor_exists():
-    assert callable(limp::SomeVarBlock.__init__)
+def test_limp_somevarblock_constructor_exists():
+    assert callable(limp_SomeVarBlock.__init__)
 
 
-def test_limp::somevarblock_constructor_args():
-    sig = inspect.signature(limp::SomeVarBlock.__init__)
+def test_limp_somevarblock_constructor_args():
+    sig = inspect.signature(limp_SomeVarBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::exprlist_is_not_abstract():
-    assert not inspect.isabstract(limp::ExprList)
+def test_limp_exprlist_is_not_abstract():
+    assert not inspect.isabstract(limp_ExprList)
 
 
-def test_limp::exprlist_constructor_exists():
-    assert callable(limp::ExprList.__init__)
+def test_limp_exprlist_constructor_exists():
+    assert callable(limp_ExprList.__init__)
 
 
-def test_limp::exprlist_constructor_args():
-    sig = inspect.signature(limp::ExprList.__init__)
+def test_limp_exprlist_constructor_args():
+    sig = inspect.signature(limp_ExprList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::namedtype_is_not_abstract():
-    assert not inspect.isabstract(limp::NamedType)
+def test_limp_namedtype_is_not_abstract():
+    assert not inspect.isabstract(limp_NamedType)
 
 
-def test_limp::namedtype_constructor_exists():
-    assert callable(limp::NamedType.__init__)
+def test_limp_namedtype_constructor_exists():
+    assert callable(limp_NamedType.__init__)
 
 
-def test_limp::namedtype_constructor_args():
-    sig = inspect.signature(limp::NamedType.__init__)
+def test_limp_namedtype_constructor_args():
+    sig = inspect.signature(limp_NamedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::abstracttype_is_not_abstract():
-    assert not inspect.isabstract(limp::AbstractType)
+def test_limp_abstracttype_is_not_abstract():
+    assert not inspect.isabstract(limp_AbstractType)
 
 
-def test_limp::abstracttype_constructor_exists():
-    assert callable(limp::AbstractType.__init__)
+def test_limp_abstracttype_constructor_exists():
+    assert callable(limp_AbstractType.__init__)
 
 
-def test_limp::abstracttype_constructor_args():
-    sig = inspect.signature(limp::AbstractType.__init__)
+def test_limp_abstracttype_constructor_args():
+    sig = inspect.signature(limp_AbstractType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -454,99 +454,37 @@ def test_expr_constructor_args():
 
 
 
-def test_limp::ifthenelseexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::IfThenElseExpr)
+def test_limp_arrayupdateexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_ArrayUpdateExpr)
 
 
-def test_limp::ifthenelseexpr_constructor_exists():
-    assert callable(limp::IfThenElseExpr.__init__)
+def test_limp_arrayupdateexpr_constructor_exists():
+    assert callable(limp_ArrayUpdateExpr.__init__)
 
 
-def test_limp::ifthenelseexpr_constructor_args():
-    sig = inspect.signature(limp::IfThenElseExpr.__init__)
+def test_limp_arrayupdateexpr_constructor_args():
+    sig = inspect.signature(limp_ArrayUpdateExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::initexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::InitExpr)
+def test_limp_recordupdateexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordUpdateExpr)
 
 
-def test_limp::initexpr_constructor_exists():
-    assert callable(limp::InitExpr.__init__)
+def test_limp_recordupdateexpr_constructor_exists():
+    assert callable(limp_RecordUpdateExpr.__init__)
 
 
-def test_limp::initexpr_constructor_args():
-    sig = inspect.signature(limp::InitExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::binaryexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::BinaryExpr)
-
-
-def test_limp::binaryexpr_constructor_exists():
-    assert callable(limp::BinaryExpr.__init__)
-
-
-def test_limp::binaryexpr_constructor_args():
-    sig = inspect.signature(limp::BinaryExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_limp::binaryexpr_has_op():
-    assert hasattr(limp::BinaryExpr, "op")
-    descriptor = None
-    for klass in limp::BinaryExpr.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_limp::freshvariable_is_not_abstract():
-    assert not inspect.isabstract(limp::FreshVariable)
-
-
-def test_limp::freshvariable_constructor_exists():
-    assert callable(limp::FreshVariable.__init__)
-
-
-def test_limp::freshvariable_constructor_args():
-    sig = inspect.signature(limp::FreshVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_limp::freshvariable_has_value():
-    assert hasattr(limp::FreshVariable, "value")
-    descriptor = None
-    for klass in limp::FreshVariable.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_limp::recordupdateexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordUpdateExpr)
-
-
-def test_limp::recordupdateexpr_constructor_exists():
-    assert callable(limp::RecordUpdateExpr.__init__)
-
-
-def test_limp::recordupdateexpr_constructor_args():
-    sig = inspect.signature(limp::RecordUpdateExpr.__init__)
+def test_limp_recordupdateexpr_constructor_args():
+    sig = inspect.signature(limp_RecordUpdateExpr.__init__)
     params = list(sig.parameters.keys())
     assert "field" in params, "Missing parameter 'field'"
 
-def test_limp::recordupdateexpr_has_field():
-    assert hasattr(limp::RecordUpdateExpr, "field")
+def test_limp_recordupdateexpr_has_field():
+    assert hasattr(limp_RecordUpdateExpr, "field")
     descriptor = None
-    for klass in limp::RecordUpdateExpr.__mro__:
+    for klass in limp_RecordUpdateExpr.__mro__:
         if "field" in klass.__dict__:
             descriptor = klass.__dict__["field"]
             break
@@ -554,65 +492,37 @@ def test_limp::recordupdateexpr_has_field():
 
 
 
-def test_limp::fcncallexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::FcnCallExpr)
+def test_limp_secondinit_is_not_abstract():
+    assert not inspect.isabstract(limp_SecondInit)
 
 
-def test_limp::fcncallexpr_constructor_exists():
-    assert callable(limp::FcnCallExpr.__init__)
+def test_limp_secondinit_constructor_exists():
+    assert callable(limp_SecondInit.__init__)
 
 
-def test_limp::fcncallexpr_constructor_args():
-    sig = inspect.signature(limp::FcnCallExpr.__init__)
+def test_limp_secondinit_constructor_args():
+    sig = inspect.signature(limp_SecondInit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::unarynegationexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::UnaryNegationExpr)
+def test_limp_integerliteralexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_IntegerLiteralExpr)
 
 
-def test_limp::unarynegationexpr_constructor_exists():
-    assert callable(limp::UnaryNegationExpr.__init__)
+def test_limp_integerliteralexpr_constructor_exists():
+    assert callable(limp_IntegerLiteralExpr.__init__)
 
 
-def test_limp::unarynegationexpr_constructor_args():
-    sig = inspect.signature(limp::UnaryNegationExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::choiceexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::ChoiceExpr)
-
-
-def test_limp::choiceexpr_constructor_exists():
-    assert callable(limp::ChoiceExpr.__init__)
-
-
-def test_limp::choiceexpr_constructor_args():
-    sig = inspect.signature(limp::ChoiceExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::integerliteralexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::IntegerLiteralExpr)
-
-
-def test_limp::integerliteralexpr_constructor_exists():
-    assert callable(limp::IntegerLiteralExpr.__init__)
-
-
-def test_limp::integerliteralexpr_constructor_args():
-    sig = inspect.signature(limp::IntegerLiteralExpr.__init__)
+def test_limp_integerliteralexpr_constructor_args():
+    sig = inspect.signature(limp_IntegerLiteralExpr.__init__)
     params = list(sig.parameters.keys())
     assert "intVal" in params, "Missing parameter 'intVal'"
 
-def test_limp::integerliteralexpr_has_intVal():
-    assert hasattr(limp::IntegerLiteralExpr, "intVal")
+def test_limp_integerliteralexpr_has_intVal():
+    assert hasattr(limp_IntegerLiteralExpr, "intVal")
     descriptor = None
-    for klass in limp::IntegerLiteralExpr.__mro__:
+    for klass in limp_IntegerLiteralExpr.__mro__:
         if "intVal" in klass.__dict__:
             descriptor = klass.__dict__["intVal"]
             break
@@ -620,165 +530,65 @@ def test_limp::integerliteralexpr_has_intVal():
 
 
 
-def test_limp::arrayupdateexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::ArrayUpdateExpr)
+def test_limp_choiceexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_ChoiceExpr)
 
 
-def test_limp::arrayupdateexpr_constructor_exists():
-    assert callable(limp::ArrayUpdateExpr.__init__)
+def test_limp_choiceexpr_constructor_exists():
+    assert callable(limp_ChoiceExpr.__init__)
 
 
-def test_limp::arrayupdateexpr_constructor_args():
-    sig = inspect.signature(limp::ArrayUpdateExpr.__init__)
+def test_limp_choiceexpr_constructor_args():
+    sig = inspect.signature(limp_ChoiceExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::recordaccessexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordAccessExpr)
+def test_limp_arrayaccessexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_ArrayAccessExpr)
 
 
-def test_limp::recordaccessexpr_constructor_exists():
-    assert callable(limp::RecordAccessExpr.__init__)
+def test_limp_arrayaccessexpr_constructor_exists():
+    assert callable(limp_ArrayAccessExpr.__init__)
 
 
-def test_limp::recordaccessexpr_constructor_args():
-    sig = inspect.signature(limp::RecordAccessExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "field" in params, "Missing parameter 'field'"
-
-def test_limp::recordaccessexpr_has_field():
-    assert hasattr(limp::RecordAccessExpr, "field")
-    descriptor = None
-    for klass in limp::RecordAccessExpr.__mro__:
-        if "field" in klass.__dict__:
-            descriptor = klass.__dict__["field"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_limp::unaryminusexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::UnaryMinusExpr)
-
-
-def test_limp::unaryminusexpr_constructor_exists():
-    assert callable(limp::UnaryMinusExpr.__init__)
-
-
-def test_limp::unaryminusexpr_constructor_args():
-    sig = inspect.signature(limp::UnaryMinusExpr.__init__)
+def test_limp_arrayaccessexpr_constructor_args():
+    sig = inspect.signature(limp_ArrayAccessExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::booleanliteralexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::BooleanLiteralExpr)
+def test_limp_unarynegationexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_UnaryNegationExpr)
 
 
-def test_limp::booleanliteralexpr_constructor_exists():
-    assert callable(limp::BooleanLiteralExpr.__init__)
+def test_limp_unarynegationexpr_constructor_exists():
+    assert callable(limp_UnaryNegationExpr.__init__)
 
 
-def test_limp::booleanliteralexpr_constructor_args():
-    sig = inspect.signature(limp::BooleanLiteralExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "boolVal" in params, "Missing parameter 'boolVal'"
-
-def test_limp::booleanliteralexpr_has_boolVal():
-    assert hasattr(limp::BooleanLiteralExpr, "boolVal")
-    descriptor = None
-    for klass in limp::BooleanLiteralExpr.__mro__:
-        if "boolVal" in klass.__dict__:
-            descriptor = klass.__dict__["boolVal"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_limp::idexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::IdExpr)
-
-
-def test_limp::idexpr_constructor_exists():
-    assert callable(limp::IdExpr.__init__)
-
-
-def test_limp::idexpr_constructor_args():
-    sig = inspect.signature(limp::IdExpr.__init__)
+def test_limp_unarynegationexpr_constructor_args():
+    sig = inspect.signature(limp_UnaryNegationExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::secondinit_is_not_abstract():
-    assert not inspect.isabstract(limp::SecondInit)
+def test_limp_stringliteralexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_StringLiteralExpr)
 
 
-def test_limp::secondinit_constructor_exists():
-    assert callable(limp::SecondInit.__init__)
+def test_limp_stringliteralexpr_constructor_exists():
+    assert callable(limp_StringLiteralExpr.__init__)
 
 
-def test_limp::secondinit_constructor_args():
-    sig = inspect.signature(limp::SecondInit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::arrayaccessexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::ArrayAccessExpr)
-
-
-def test_limp::arrayaccessexpr_constructor_exists():
-    assert callable(limp::ArrayAccessExpr.__init__)
-
-
-def test_limp::arrayaccessexpr_constructor_args():
-    sig = inspect.signature(limp::ArrayAccessExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::realliteralexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::RealLiteralExpr)
-
-
-def test_limp::realliteralexpr_constructor_exists():
-    assert callable(limp::RealLiteralExpr.__init__)
-
-
-def test_limp::realliteralexpr_constructor_args():
-    sig = inspect.signature(limp::RealLiteralExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "realVal" in params, "Missing parameter 'realVal'"
-
-def test_limp::realliteralexpr_has_realVal():
-    assert hasattr(limp::RealLiteralExpr, "realVal")
-    descriptor = None
-    for klass in limp::RealLiteralExpr.__mro__:
-        if "realVal" in klass.__dict__:
-            descriptor = klass.__dict__["realVal"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_limp::stringliteralexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::StringLiteralExpr)
-
-
-def test_limp::stringliteralexpr_constructor_exists():
-    assert callable(limp::StringLiteralExpr.__init__)
-
-
-def test_limp::stringliteralexpr_constructor_args():
-    sig = inspect.signature(limp::StringLiteralExpr.__init__)
+def test_limp_stringliteralexpr_constructor_args():
+    sig = inspect.signature(limp_StringLiteralExpr.__init__)
     params = list(sig.parameters.keys())
     assert "stringVal" in params, "Missing parameter 'stringVal'"
 
-def test_limp::stringliteralexpr_has_stringVal():
-    assert hasattr(limp::StringLiteralExpr, "stringVal")
+def test_limp_stringliteralexpr_has_stringVal():
+    assert hasattr(limp_StringLiteralExpr, "stringVal")
     descriptor = None
-    for klass in limp::StringLiteralExpr.__mro__:
+    for klass in limp_StringLiteralExpr.__mro__:
         if "stringVal" in klass.__dict__:
             descriptor = klass.__dict__["stringVal"]
             break
@@ -786,79 +596,269 @@ def test_limp::stringliteralexpr_has_stringVal():
 
 
 
-def test_limp::integerwildcardexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::IntegerWildCardExpr)
+def test_limp_recordaccessexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordAccessExpr)
 
 
-def test_limp::integerwildcardexpr_constructor_exists():
-    assert callable(limp::IntegerWildCardExpr.__init__)
+def test_limp_recordaccessexpr_constructor_exists():
+    assert callable(limp_RecordAccessExpr.__init__)
 
 
-def test_limp::integerwildcardexpr_constructor_args():
-    sig = inspect.signature(limp::IntegerWildCardExpr.__init__)
+def test_limp_recordaccessexpr_constructor_args():
+    sig = inspect.signature(limp_RecordAccessExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "field" in params, "Missing parameter 'field'"
+
+def test_limp_recordaccessexpr_has_field():
+    assert hasattr(limp_RecordAccessExpr, "field")
+    descriptor = None
+    for klass in limp_RecordAccessExpr.__mro__:
+        if "field" in klass.__dict__:
+            descriptor = klass.__dict__["field"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_limp_ifthenelseexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_IfThenElseExpr)
+
+
+def test_limp_ifthenelseexpr_constructor_exists():
+    assert callable(limp_IfThenElseExpr.__init__)
+
+
+def test_limp_ifthenelseexpr_constructor_args():
+    sig = inspect.signature(limp_IfThenElseExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::arrayexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::ArrayExpr)
+def test_limp_binaryexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_BinaryExpr)
 
 
-def test_limp::arrayexpr_constructor_exists():
-    assert callable(limp::ArrayExpr.__init__)
+def test_limp_binaryexpr_constructor_exists():
+    assert callable(limp_BinaryExpr.__init__)
 
 
-def test_limp::arrayexpr_constructor_args():
-    sig = inspect.signature(limp::ArrayExpr.__init__)
+def test_limp_binaryexpr_constructor_args():
+    sig = inspect.signature(limp_BinaryExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_limp_binaryexpr_has_op():
+    assert hasattr(limp_BinaryExpr, "op")
+    descriptor = None
+    for klass in limp_BinaryExpr.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_limp_realliteralexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_RealLiteralExpr)
+
+
+def test_limp_realliteralexpr_constructor_exists():
+    assert callable(limp_RealLiteralExpr.__init__)
+
+
+def test_limp_realliteralexpr_constructor_args():
+    sig = inspect.signature(limp_RealLiteralExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "realVal" in params, "Missing parameter 'realVal'"
+
+def test_limp_realliteralexpr_has_realVal():
+    assert hasattr(limp_RealLiteralExpr, "realVal")
+    descriptor = None
+    for klass in limp_RealLiteralExpr.__mro__:
+        if "realVal" in klass.__dict__:
+            descriptor = klass.__dict__["realVal"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_limp_unaryminusexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_UnaryMinusExpr)
+
+
+def test_limp_unaryminusexpr_constructor_exists():
+    assert callable(limp_UnaryMinusExpr.__init__)
+
+
+def test_limp_unaryminusexpr_constructor_args():
+    sig = inspect.signature(limp_UnaryMinusExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::functionref_is_not_abstract():
-    assert not inspect.isabstract(limp::FunctionRef)
+def test_limp_integerwildcardexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_IntegerWildCardExpr)
 
 
-def test_limp::functionref_constructor_exists():
-    assert callable(limp::FunctionRef.__init__)
+def test_limp_integerwildcardexpr_constructor_exists():
+    assert callable(limp_IntegerWildCardExpr.__init__)
 
 
-def test_limp::functionref_constructor_args():
-    sig = inspect.signature(limp::FunctionRef.__init__)
+def test_limp_integerwildcardexpr_constructor_args():
+    sig = inspect.signature(limp_IntegerWildCardExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::equation_is_not_abstract():
-    assert not inspect.isabstract(limp::Equation)
+def test_limp_freshvariable_is_not_abstract():
+    assert not inspect.isabstract(limp_FreshVariable)
 
 
-def test_limp::equation_constructor_exists():
-    assert callable(limp::Equation.__init__)
+def test_limp_freshvariable_constructor_exists():
+    assert callable(limp_FreshVariable.__init__)
 
 
-def test_limp::equation_constructor_args():
-    sig = inspect.signature(limp::Equation.__init__)
+def test_limp_freshvariable_constructor_args():
+    sig = inspect.signature(limp_FreshVariable.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_limp_freshvariable_has_value():
+    assert hasattr(limp_FreshVariable, "value")
+    descriptor = None
+    for klass in limp_FreshVariable.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_limp_initexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_InitExpr)
+
+
+def test_limp_initexpr_constructor_exists():
+    assert callable(limp_InitExpr.__init__)
+
+
+def test_limp_initexpr_constructor_args():
+    sig = inspect.signature(limp_InitExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::recordfieldexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordFieldExpr)
+def test_limp_fcncallexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_FcnCallExpr)
 
 
-def test_limp::recordfieldexpr_constructor_exists():
-    assert callable(limp::RecordFieldExpr.__init__)
+def test_limp_fcncallexpr_constructor_exists():
+    assert callable(limp_FcnCallExpr.__init__)
 
 
-def test_limp::recordfieldexpr_constructor_args():
-    sig = inspect.signature(limp::RecordFieldExpr.__init__)
+def test_limp_fcncallexpr_constructor_args():
+    sig = inspect.signature(limp_FcnCallExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_booleanliteralexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_BooleanLiteralExpr)
+
+
+def test_limp_booleanliteralexpr_constructor_exists():
+    assert callable(limp_BooleanLiteralExpr.__init__)
+
+
+def test_limp_booleanliteralexpr_constructor_args():
+    sig = inspect.signature(limp_BooleanLiteralExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "boolVal" in params, "Missing parameter 'boolVal'"
+
+def test_limp_booleanliteralexpr_has_boolVal():
+    assert hasattr(limp_BooleanLiteralExpr, "boolVal")
+    descriptor = None
+    for klass in limp_BooleanLiteralExpr.__mro__:
+        if "boolVal" in klass.__dict__:
+            descriptor = klass.__dict__["boolVal"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_limp_idexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_IdExpr)
+
+
+def test_limp_idexpr_constructor_exists():
+    assert callable(limp_IdExpr.__init__)
+
+
+def test_limp_idexpr_constructor_args():
+    sig = inspect.signature(limp_IdExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_arrayexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_ArrayExpr)
+
+
+def test_limp_arrayexpr_constructor_exists():
+    assert callable(limp_ArrayExpr.__init__)
+
+
+def test_limp_arrayexpr_constructor_args():
+    sig = inspect.signature(limp_ArrayExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_functionref_is_not_abstract():
+    assert not inspect.isabstract(limp_FunctionRef)
+
+
+def test_limp_functionref_constructor_exists():
+    assert callable(limp_FunctionRef.__init__)
+
+
+def test_limp_functionref_constructor_args():
+    sig = inspect.signature(limp_FunctionRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_equation_is_not_abstract():
+    assert not inspect.isabstract(limp_Equation)
+
+
+def test_limp_equation_constructor_exists():
+    assert callable(limp_Equation.__init__)
+
+
+def test_limp_equation_constructor_args():
+    sig = inspect.signature(limp_Equation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_recordfieldexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordFieldExpr)
+
+
+def test_limp_recordfieldexpr_constructor_exists():
+    assert callable(limp_RecordFieldExpr.__init__)
+
+
+def test_limp_recordfieldexpr_constructor_args():
+    sig = inspect.signature(limp_RecordFieldExpr.__init__)
     params = list(sig.parameters.keys())
     assert "fieldName" in params, "Missing parameter 'fieldName'"
 
-def test_limp::recordfieldexpr_has_fieldName():
-    assert hasattr(limp::RecordFieldExpr, "fieldName")
+def test_limp_recordfieldexpr_has_fieldName():
+    assert hasattr(limp_RecordFieldExpr, "fieldName")
     descriptor = None
-    for klass in limp::RecordFieldExpr.__mro__:
+    for klass in limp_RecordFieldExpr.__mro__:
         if "fieldName" in klass.__dict__:
             descriptor = klass.__dict__["fieldName"]
             break
@@ -866,30 +866,30 @@ def test_limp::recordfieldexpr_has_fieldName():
 
 
 
-def test_limp::recordexpr_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordExpr)
+def test_limp_recordexpr_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordExpr)
 
 
-def test_limp::recordexpr_constructor_exists():
-    assert callable(limp::RecordExpr.__init__)
+def test_limp_recordexpr_constructor_exists():
+    assert callable(limp_RecordExpr.__init__)
 
 
-def test_limp::recordexpr_constructor_args():
-    sig = inspect.signature(limp::RecordExpr.__init__)
+def test_limp_recordexpr_constructor_args():
+    sig = inspect.signature(limp_RecordExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::idlist_is_not_abstract():
-    assert not inspect.isabstract(limp::IdList)
+def test_limp_idlist_is_not_abstract():
+    assert not inspect.isabstract(limp_IdList)
 
 
-def test_limp::idlist_constructor_exists():
-    assert callable(limp::IdList.__init__)
+def test_limp_idlist_constructor_exists():
+    assert callable(limp_IdList.__init__)
 
 
-def test_limp::idlist_constructor_args():
-    sig = inspect.signature(limp::IdList.__init__)
+def test_limp_idlist_constructor_args():
+    sig = inspect.signature(limp_IdList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -922,79 +922,23 @@ def test_statement_constructor_args():
 
 
 
-def test_limp::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(limp::ReturnStatement)
+def test_limp_labelstatement_is_not_abstract():
+    assert not inspect.isabstract(limp_LabelStatement)
 
 
-def test_limp::returnstatement_constructor_exists():
-    assert callable(limp::ReturnStatement.__init__)
+def test_limp_labelstatement_constructor_exists():
+    assert callable(limp_LabelStatement.__init__)
 
 
-def test_limp::returnstatement_constructor_args():
-    sig = inspect.signature(limp::ReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::gotostatement_is_not_abstract():
-    assert not inspect.isabstract(limp::GotoStatement)
-
-
-def test_limp::gotostatement_constructor_exists():
-    assert callable(limp::GotoStatement.__init__)
-
-
-def test_limp::gotostatement_constructor_args():
-    sig = inspect.signature(limp::GotoStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(limp::AssignmentStatement)
-
-
-def test_limp::assignmentstatement_constructor_exists():
-    assert callable(limp::AssignmentStatement.__init__)
-
-
-def test_limp::assignmentstatement_constructor_args():
-    sig = inspect.signature(limp::AssignmentStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::ifthenelsestatement_is_not_abstract():
-    assert not inspect.isabstract(limp::IfThenElseStatement)
-
-
-def test_limp::ifthenelsestatement_constructor_exists():
-    assert callable(limp::IfThenElseStatement.__init__)
-
-
-def test_limp::ifthenelsestatement_constructor_args():
-    sig = inspect.signature(limp::IfThenElseStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::labelstatement_is_not_abstract():
-    assert not inspect.isabstract(limp::LabelStatement)
-
-
-def test_limp::labelstatement_constructor_exists():
-    assert callable(limp::LabelStatement.__init__)
-
-
-def test_limp::labelstatement_constructor_args():
-    sig = inspect.signature(limp::LabelStatement.__init__)
+def test_limp_labelstatement_constructor_args():
+    sig = inspect.signature(limp_LabelStatement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::labelstatement_has_name():
-    assert hasattr(limp::LabelStatement, "name")
+def test_limp_labelstatement_has_name():
+    assert hasattr(limp_LabelStatement, "name")
     descriptor = None
-    for klass in limp::LabelStatement.__mro__:
+    for klass in limp_LabelStatement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1002,135 +946,191 @@ def test_limp::labelstatement_has_name():
 
 
 
-def test_limp::forstatement_is_not_abstract():
-    assert not inspect.isabstract(limp::ForStatement)
+def test_limp_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(limp_ReturnStatement)
 
 
-def test_limp::forstatement_constructor_exists():
-    assert callable(limp::ForStatement.__init__)
+def test_limp_returnstatement_constructor_exists():
+    assert callable(limp_ReturnStatement.__init__)
 
 
-def test_limp::forstatement_constructor_args():
-    sig = inspect.signature(limp::ForStatement.__init__)
+def test_limp_returnstatement_constructor_args():
+    sig = inspect.signature(limp_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(limp::ContinueStatement)
+def test_limp_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(limp_ContinueStatement)
 
 
-def test_limp::continuestatement_constructor_exists():
-    assert callable(limp::ContinueStatement.__init__)
+def test_limp_continuestatement_constructor_exists():
+    assert callable(limp_ContinueStatement.__init__)
 
 
-def test_limp::continuestatement_constructor_args():
-    sig = inspect.signature(limp::ContinueStatement.__init__)
+def test_limp_continuestatement_constructor_args():
+    sig = inspect.signature(limp_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(limp::BreakStatement)
+def test_limp_ifthenelsestatement_is_not_abstract():
+    assert not inspect.isabstract(limp_IfThenElseStatement)
 
 
-def test_limp::breakstatement_constructor_exists():
-    assert callable(limp::BreakStatement.__init__)
+def test_limp_ifthenelsestatement_constructor_exists():
+    assert callable(limp_IfThenElseStatement.__init__)
 
 
-def test_limp::breakstatement_constructor_args():
-    sig = inspect.signature(limp::BreakStatement.__init__)
+def test_limp_ifthenelsestatement_constructor_args():
+    sig = inspect.signature(limp_IfThenElseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::voidstatement_is_not_abstract():
-    assert not inspect.isabstract(limp::VoidStatement)
+def test_limp_forstatement_is_not_abstract():
+    assert not inspect.isabstract(limp_ForStatement)
 
 
-def test_limp::voidstatement_constructor_exists():
-    assert callable(limp::VoidStatement.__init__)
+def test_limp_forstatement_constructor_exists():
+    assert callable(limp_ForStatement.__init__)
 
 
-def test_limp::voidstatement_constructor_args():
-    sig = inspect.signature(limp::VoidStatement.__init__)
+def test_limp_forstatement_constructor_args():
+    sig = inspect.signature(limp_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::statement_is_not_abstract():
-    assert not inspect.isabstract(limp::Statement)
+def test_limp_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(limp_BreakStatement)
 
 
-def test_limp::statement_constructor_exists():
-    assert callable(limp::Statement.__init__)
+def test_limp_breakstatement_constructor_exists():
+    assert callable(limp_BreakStatement.__init__)
 
 
-def test_limp::statement_constructor_args():
-    sig = inspect.signature(limp::Statement.__init__)
+def test_limp_breakstatement_constructor_args():
+    sig = inspect.signature(limp_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::defineuseref_is_not_abstract():
-    assert not inspect.isabstract(limp::DefineUseRef)
+def test_limp_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(limp_AssignmentStatement)
 
 
-def test_limp::defineuseref_constructor_exists():
-    assert callable(limp::DefineUseRef.__init__)
+def test_limp_assignmentstatement_constructor_exists():
+    assert callable(limp_AssignmentStatement.__init__)
 
 
-def test_limp::defineuseref_constructor_args():
-    sig = inspect.signature(limp::DefineUseRef.__init__)
+def test_limp_assignmentstatement_constructor_args():
+    sig = inspect.signature(limp_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(limp::WhileStatement)
+def test_limp_gotostatement_is_not_abstract():
+    assert not inspect.isabstract(limp_GotoStatement)
 
 
-def test_limp::whilestatement_constructor_exists():
-    assert callable(limp::WhileStatement.__init__)
+def test_limp_gotostatement_constructor_exists():
+    assert callable(limp_GotoStatement.__init__)
 
 
-def test_limp::whilestatement_constructor_args():
-    sig = inspect.signature(limp::WhileStatement.__init__)
+def test_limp_gotostatement_constructor_args():
+    sig = inspect.signature(limp_GotoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::else_is_not_abstract():
-    assert not inspect.isabstract(limp::Else)
+def test_limp_voidstatement_is_not_abstract():
+    assert not inspect.isabstract(limp_VoidStatement)
 
 
-def test_limp::else_constructor_exists():
-    assert callable(limp::Else.__init__)
+def test_limp_voidstatement_constructor_exists():
+    assert callable(limp_VoidStatement.__init__)
 
 
-def test_limp::else_constructor_args():
-    sig = inspect.signature(limp::Else.__init__)
+def test_limp_voidstatement_constructor_args():
+    sig = inspect.signature(limp_VoidStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::variableref_is_not_abstract():
-    assert not inspect.isabstract(limp::VariableRef)
+def test_limp_statement_is_not_abstract():
+    assert not inspect.isabstract(limp_Statement)
 
 
-def test_limp::variableref_constructor_exists():
-    assert callable(limp::VariableRef.__init__)
+def test_limp_statement_constructor_exists():
+    assert callable(limp_Statement.__init__)
 
 
-def test_limp::variableref_constructor_args():
-    sig = inspect.signature(limp::VariableRef.__init__)
+def test_limp_statement_constructor_args():
+    sig = inspect.signature(limp_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_defineuseref_is_not_abstract():
+    assert not inspect.isabstract(limp_DefineUseRef)
+
+
+def test_limp_defineuseref_constructor_exists():
+    assert callable(limp_DefineUseRef.__init__)
+
+
+def test_limp_defineuseref_constructor_args():
+    sig = inspect.signature(limp_DefineUseRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(limp_WhileStatement)
+
+
+def test_limp_whilestatement_constructor_exists():
+    assert callable(limp_WhileStatement.__init__)
+
+
+def test_limp_whilestatement_constructor_args():
+    sig = inspect.signature(limp_WhileStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_else_is_not_abstract():
+    assert not inspect.isabstract(limp_Else)
+
+
+def test_limp_else_constructor_exists():
+    assert callable(limp_Else.__init__)
+
+
+def test_limp_else_constructor_args():
+    sig = inspect.signature(limp_Else.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_variableref_is_not_abstract():
+    assert not inspect.isabstract(limp_VariableRef)
+
+
+def test_limp_variableref_constructor_exists():
+    assert callable(limp_VariableRef.__init__)
+
+
+def test_limp_variableref_constructor_args():
+    sig = inspect.signature(limp_VariableRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::variableref_has_name():
-    assert hasattr(limp::VariableRef, "name")
+def test_limp_variableref_has_name():
+    assert hasattr(limp_VariableRef, "name")
     descriptor = None
-    for klass in limp::VariableRef.__mro__:
+    for klass in limp_VariableRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1138,16 +1138,16 @@ def test_limp::variableref_has_name():
 
 
 
-def test_limp::expr_is_not_abstract():
-    assert not inspect.isabstract(limp::Expr)
+def test_limp_expr_is_not_abstract():
+    assert not inspect.isabstract(limp_Expr)
 
 
-def test_limp::expr_constructor_exists():
-    assert callable(limp::Expr.__init__)
+def test_limp_expr_constructor_exists():
+    assert callable(limp_Expr.__init__)
 
 
-def test_limp::expr_constructor_args():
-    sig = inspect.signature(limp::Expr.__init__)
+def test_limp_expr_constructor_args():
+    sig = inspect.signature(limp_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1166,51 +1166,51 @@ def test_attribute_constructor_args():
 
 
 
-def test_limp::uses_is_not_abstract():
-    assert not inspect.isabstract(limp::Uses)
+def test_limp_uses_is_not_abstract():
+    assert not inspect.isabstract(limp_Uses)
 
 
-def test_limp::uses_constructor_exists():
-    assert callable(limp::Uses.__init__)
+def test_limp_uses_constructor_exists():
+    assert callable(limp_Uses.__init__)
 
 
-def test_limp::uses_constructor_args():
-    sig = inspect.signature(limp::Uses.__init__)
+def test_limp_uses_constructor_args():
+    sig = inspect.signature(limp_Uses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::define_is_not_abstract():
-    assert not inspect.isabstract(limp::Define)
+def test_limp_define_is_not_abstract():
+    assert not inspect.isabstract(limp_Define)
 
 
-def test_limp::define_constructor_exists():
-    assert callable(limp::Define.__init__)
+def test_limp_define_constructor_exists():
+    assert callable(limp_Define.__init__)
 
 
-def test_limp::define_constructor_args():
-    sig = inspect.signature(limp::Define.__init__)
+def test_limp_define_constructor_args():
+    sig = inspect.signature(limp_Define.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::postcondition_is_not_abstract():
-    assert not inspect.isabstract(limp::Postcondition)
+def test_limp_postcondition_is_not_abstract():
+    assert not inspect.isabstract(limp_Postcondition)
 
 
-def test_limp::postcondition_constructor_exists():
-    assert callable(limp::Postcondition.__init__)
+def test_limp_postcondition_constructor_exists():
+    assert callable(limp_Postcondition.__init__)
 
 
-def test_limp::postcondition_constructor_args():
-    sig = inspect.signature(limp::Postcondition.__init__)
+def test_limp_postcondition_constructor_args():
+    sig = inspect.signature(limp_Postcondition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::postcondition_has_name():
-    assert hasattr(limp::Postcondition, "name")
+def test_limp_postcondition_has_name():
+    assert hasattr(limp_Postcondition, "name")
     descriptor = None
-    for klass in limp::Postcondition.__mro__:
+    for klass in limp_Postcondition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1218,23 +1218,23 @@ def test_limp::postcondition_has_name():
 
 
 
-def test_limp::precondition_is_not_abstract():
-    assert not inspect.isabstract(limp::Precondition)
+def test_limp_precondition_is_not_abstract():
+    assert not inspect.isabstract(limp_Precondition)
 
 
-def test_limp::precondition_constructor_exists():
-    assert callable(limp::Precondition.__init__)
+def test_limp_precondition_constructor_exists():
+    assert callable(limp_Precondition.__init__)
 
 
-def test_limp::precondition_constructor_args():
-    sig = inspect.signature(limp::Precondition.__init__)
+def test_limp_precondition_constructor_args():
+    sig = inspect.signature(limp_Precondition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::precondition_has_name():
-    assert hasattr(limp::Precondition, "name")
+def test_limp_precondition_has_name():
+    assert hasattr(limp_Precondition, "name")
     descriptor = None
-    for klass in limp::Precondition.__mro__:
+    for klass in limp_Precondition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1242,37 +1242,37 @@ def test_limp::precondition_has_name():
 
 
 
-def test_limp::attribute_is_not_abstract():
-    assert not inspect.isabstract(limp::Attribute)
+def test_limp_attribute_is_not_abstract():
+    assert not inspect.isabstract(limp_Attribute)
 
 
-def test_limp::attribute_constructor_exists():
-    assert callable(limp::Attribute.__init__)
+def test_limp_attribute_constructor_exists():
+    assert callable(limp_Attribute.__init__)
 
 
-def test_limp::attribute_constructor_args():
-    sig = inspect.signature(limp::Attribute.__init__)
+def test_limp_attribute_constructor_args():
+    sig = inspect.signature(limp_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::recordfieldtype_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordFieldType)
+def test_limp_recordfieldtype_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordFieldType)
 
 
-def test_limp::recordfieldtype_constructor_exists():
-    assert callable(limp::RecordFieldType.__init__)
+def test_limp_recordfieldtype_constructor_exists():
+    assert callable(limp_RecordFieldType.__init__)
 
 
-def test_limp::recordfieldtype_constructor_args():
-    sig = inspect.signature(limp::RecordFieldType.__init__)
+def test_limp_recordfieldtype_constructor_args():
+    sig = inspect.signature(limp_RecordFieldType.__init__)
     params = list(sig.parameters.keys())
     assert "fieldName" in params, "Missing parameter 'fieldName'"
 
-def test_limp::recordfieldtype_has_fieldName():
-    assert hasattr(limp::RecordFieldType, "fieldName")
+def test_limp_recordfieldtype_has_fieldName():
+    assert hasattr(limp_RecordFieldType, "fieldName")
     descriptor = None
-    for klass in limp::RecordFieldType.__mro__:
+    for klass in limp_RecordFieldType.__mro__:
         if "fieldName" in klass.__dict__:
             descriptor = klass.__dict__["fieldName"]
             break
@@ -1294,44 +1294,44 @@ def test_variableref_constructor_args():
 
 
 
-def test_limp::localarg_is_not_abstract():
-    assert not inspect.isabstract(limp::LocalArg)
+def test_limp_localarg_is_not_abstract():
+    assert not inspect.isabstract(limp_LocalArg)
 
 
-def test_limp::localarg_constructor_exists():
-    assert callable(limp::LocalArg.__init__)
+def test_limp_localarg_constructor_exists():
+    assert callable(limp_LocalArg.__init__)
 
 
-def test_limp::localarg_constructor_args():
-    sig = inspect.signature(limp::LocalArg.__init__)
+def test_limp_localarg_constructor_args():
+    sig = inspect.signature(limp_LocalArg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::inputarg_is_not_abstract():
-    assert not inspect.isabstract(limp::InputArg)
+def test_limp_inputarg_is_not_abstract():
+    assert not inspect.isabstract(limp_InputArg)
 
 
-def test_limp::inputarg_constructor_exists():
-    assert callable(limp::InputArg.__init__)
+def test_limp_inputarg_constructor_exists():
+    assert callable(limp_InputArg.__init__)
 
 
-def test_limp::inputarg_constructor_args():
-    sig = inspect.signature(limp::InputArg.__init__)
+def test_limp_inputarg_constructor_args():
+    sig = inspect.signature(limp_InputArg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::enumvalue_is_not_abstract():
-    assert not inspect.isabstract(limp::EnumValue)
+def test_limp_enumvalue_is_not_abstract():
+    assert not inspect.isabstract(limp_EnumValue)
 
 
-def test_limp::enumvalue_constructor_exists():
-    assert callable(limp::EnumValue.__init__)
+def test_limp_enumvalue_constructor_exists():
+    assert callable(limp_EnumValue.__init__)
 
 
-def test_limp::enumvalue_constructor_args():
-    sig = inspect.signature(limp::EnumValue.__init__)
+def test_limp_enumvalue_constructor_args():
+    sig = inspect.signature(limp_EnumValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1350,121 +1350,121 @@ def test_typedeclaration_constructor_args():
 
 
 
-def test_limp::typealias_is_not_abstract():
-    assert not inspect.isabstract(limp::TypeAlias)
+def test_limp_typealias_is_not_abstract():
+    assert not inspect.isabstract(limp_TypeAlias)
 
 
-def test_limp::typealias_constructor_exists():
-    assert callable(limp::TypeAlias.__init__)
+def test_limp_typealias_constructor_exists():
+    assert callable(limp_TypeAlias.__init__)
 
 
-def test_limp::typealias_constructor_args():
-    sig = inspect.signature(limp::TypeAlias.__init__)
+def test_limp_typealias_constructor_args():
+    sig = inspect.signature(limp_TypeAlias.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::recordtypedef_is_not_abstract():
-    assert not inspect.isabstract(limp::RecordTypeDef)
+def test_limp_recordtypedef_is_not_abstract():
+    assert not inspect.isabstract(limp_RecordTypeDef)
 
 
-def test_limp::recordtypedef_constructor_exists():
-    assert callable(limp::RecordTypeDef.__init__)
+def test_limp_recordtypedef_constructor_exists():
+    assert callable(limp_RecordTypeDef.__init__)
 
 
-def test_limp::recordtypedef_constructor_args():
-    sig = inspect.signature(limp::RecordTypeDef.__init__)
+def test_limp_recordtypedef_constructor_args():
+    sig = inspect.signature(limp_RecordTypeDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::enumtypedef_is_not_abstract():
-    assert not inspect.isabstract(limp::EnumTypeDef)
+def test_limp_enumtypedef_is_not_abstract():
+    assert not inspect.isabstract(limp_EnumTypeDef)
 
 
-def test_limp::enumtypedef_constructor_exists():
-    assert callable(limp::EnumTypeDef.__init__)
+def test_limp_enumtypedef_constructor_exists():
+    assert callable(limp_EnumTypeDef.__init__)
 
 
-def test_limp::enumtypedef_constructor_args():
-    sig = inspect.signature(limp::EnumTypeDef.__init__)
+def test_limp_enumtypedef_constructor_args():
+    sig = inspect.signature(limp_EnumTypeDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::statementblock_is_not_abstract():
-    assert not inspect.isabstract(limp::StatementBlock)
+def test_limp_statementblock_is_not_abstract():
+    assert not inspect.isabstract(limp_StatementBlock)
 
 
-def test_limp::statementblock_constructor_exists():
-    assert callable(limp::StatementBlock.__init__)
+def test_limp_statementblock_constructor_exists():
+    assert callable(limp_StatementBlock.__init__)
 
 
-def test_limp::statementblock_constructor_args():
-    sig = inspect.signature(limp::StatementBlock.__init__)
+def test_limp_statementblock_constructor_args():
+    sig = inspect.signature(limp_StatementBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::equationblock_is_not_abstract():
-    assert not inspect.isabstract(limp::EquationBlock)
+def test_limp_equationblock_is_not_abstract():
+    assert not inspect.isabstract(limp_EquationBlock)
 
 
-def test_limp::equationblock_constructor_exists():
-    assert callable(limp::EquationBlock.__init__)
+def test_limp_equationblock_constructor_exists():
+    assert callable(limp_EquationBlock.__init__)
 
 
-def test_limp::equationblock_constructor_args():
-    sig = inspect.signature(limp::EquationBlock.__init__)
+def test_limp_equationblock_constructor_args():
+    sig = inspect.signature(limp_EquationBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::abstracttypedef_is_not_abstract():
-    assert not inspect.isabstract(limp::AbstractTypeDef)
+def test_limp_abstracttypedef_is_not_abstract():
+    assert not inspect.isabstract(limp_AbstractTypeDef)
 
 
-def test_limp::abstracttypedef_constructor_exists():
-    assert callable(limp::AbstractTypeDef.__init__)
+def test_limp_abstracttypedef_constructor_exists():
+    assert callable(limp_AbstractTypeDef.__init__)
 
 
-def test_limp::abstracttypedef_constructor_args():
-    sig = inspect.signature(limp::AbstractTypeDef.__init__)
+def test_limp_abstracttypedef_constructor_args():
+    sig = inspect.signature(limp_AbstractTypeDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::type_is_not_abstract():
-    assert not inspect.isabstract(limp::Type)
+def test_limp_type_is_not_abstract():
+    assert not inspect.isabstract(limp_Type)
 
 
-def test_limp::type_constructor_exists():
-    assert callable(limp::Type.__init__)
+def test_limp_type_constructor_exists():
+    assert callable(limp_Type.__init__)
 
 
-def test_limp::type_constructor_args():
-    sig = inspect.signature(limp::Type.__init__)
+def test_limp_type_constructor_args():
+    sig = inspect.signature(limp_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::arraytypedef_is_not_abstract():
-    assert not inspect.isabstract(limp::ArrayTypeDef)
+def test_limp_arraytypedef_is_not_abstract():
+    assert not inspect.isabstract(limp_ArrayTypeDef)
 
 
-def test_limp::arraytypedef_constructor_exists():
-    assert callable(limp::ArrayTypeDef.__init__)
+def test_limp_arraytypedef_constructor_exists():
+    assert callable(limp_ArrayTypeDef.__init__)
 
 
-def test_limp::arraytypedef_constructor_args():
-    sig = inspect.signature(limp::ArrayTypeDef.__init__)
+def test_limp_arraytypedef_constructor_args():
+    sig = inspect.signature(limp_ArrayTypeDef.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_limp::arraytypedef_has_size():
-    assert hasattr(limp::ArrayTypeDef, "size")
+def test_limp_arraytypedef_has_size():
+    assert hasattr(limp_ArrayTypeDef, "size")
     descriptor = None
-    for klass in limp::ArrayTypeDef.__mro__:
+    for klass in limp_ArrayTypeDef.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -1472,58 +1472,58 @@ def test_limp::arraytypedef_has_size():
 
 
 
-def test_limp::attributeblock_is_not_abstract():
-    assert not inspect.isabstract(limp::AttributeBlock)
+def test_limp_attributeblock_is_not_abstract():
+    assert not inspect.isabstract(limp_AttributeBlock)
 
 
-def test_limp::attributeblock_constructor_exists():
-    assert callable(limp::AttributeBlock.__init__)
+def test_limp_attributeblock_constructor_exists():
+    assert callable(limp_AttributeBlock.__init__)
 
 
-def test_limp::attributeblock_constructor_args():
-    sig = inspect.signature(limp::AttributeBlock.__init__)
+def test_limp_attributeblock_constructor_args():
+    sig = inspect.signature(limp_AttributeBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::outputarglist_is_not_abstract():
-    assert not inspect.isabstract(limp::OutputArgList)
+def test_limp_outputarglist_is_not_abstract():
+    assert not inspect.isabstract(limp_OutputArgList)
 
 
-def test_limp::outputarglist_constructor_exists():
-    assert callable(limp::OutputArgList.__init__)
+def test_limp_outputarglist_constructor_exists():
+    assert callable(limp_OutputArgList.__init__)
 
 
-def test_limp::outputarglist_constructor_args():
-    sig = inspect.signature(limp::OutputArgList.__init__)
+def test_limp_outputarglist_constructor_args():
+    sig = inspect.signature(limp_OutputArgList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::outputarg_is_not_abstract():
-    assert not inspect.isabstract(limp::OutputArg)
+def test_limp_outputarg_is_not_abstract():
+    assert not inspect.isabstract(limp_OutputArg)
 
 
-def test_limp::outputarg_constructor_exists():
-    assert callable(limp::OutputArg.__init__)
+def test_limp_outputarg_constructor_exists():
+    assert callable(limp_OutputArg.__init__)
 
 
-def test_limp::outputarg_constructor_args():
-    sig = inspect.signature(limp::OutputArg.__init__)
+def test_limp_outputarg_constructor_args():
+    sig = inspect.signature(limp_OutputArg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::inputarglist_is_not_abstract():
-    assert not inspect.isabstract(limp::InputArgList)
+def test_limp_inputarglist_is_not_abstract():
+    assert not inspect.isabstract(limp_InputArgList)
 
 
-def test_limp::inputarglist_constructor_exists():
-    assert callable(limp::InputArgList.__init__)
+def test_limp_inputarglist_constructor_exists():
+    assert callable(limp_InputArgList.__init__)
 
 
-def test_limp::inputarglist_constructor_args():
-    sig = inspect.signature(limp::InputArgList.__init__)
+def test_limp_inputarglist_constructor_args():
+    sig = inspect.signature(limp_InputArgList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1556,23 +1556,23 @@ def test_declaration_constructor_args():
 
 
 
-def test_limp::externalprocedure_is_not_abstract():
-    assert not inspect.isabstract(limp::ExternalProcedure)
+def test_limp_localprocedure_is_not_abstract():
+    assert not inspect.isabstract(limp_LocalProcedure)
 
 
-def test_limp::externalprocedure_constructor_exists():
-    assert callable(limp::ExternalProcedure.__init__)
+def test_limp_localprocedure_constructor_exists():
+    assert callable(limp_LocalProcedure.__init__)
 
 
-def test_limp::externalprocedure_constructor_args():
-    sig = inspect.signature(limp::ExternalProcedure.__init__)
+def test_limp_localprocedure_constructor_args():
+    sig = inspect.signature(limp_LocalProcedure.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::externalprocedure_has_name():
-    assert hasattr(limp::ExternalProcedure, "name")
+def test_limp_localprocedure_has_name():
+    assert hasattr(limp_LocalProcedure, "name")
     descriptor = None
-    for klass in limp::ExternalProcedure.__mro__:
+    for klass in limp_LocalProcedure.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1580,23 +1580,37 @@ def test_limp::externalprocedure_has_name():
 
 
 
-def test_limp::localprocedure_is_not_abstract():
-    assert not inspect.isabstract(limp::LocalProcedure)
+def test_limp_constantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(limp_ConstantDeclaration)
 
 
-def test_limp::localprocedure_constructor_exists():
-    assert callable(limp::LocalProcedure.__init__)
+def test_limp_constantdeclaration_constructor_exists():
+    assert callable(limp_ConstantDeclaration.__init__)
 
 
-def test_limp::localprocedure_constructor_args():
-    sig = inspect.signature(limp::LocalProcedure.__init__)
+def test_limp_constantdeclaration_constructor_args():
+    sig = inspect.signature(limp_ConstantDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_externalfunction_is_not_abstract():
+    assert not inspect.isabstract(limp_ExternalFunction)
+
+
+def test_limp_externalfunction_constructor_exists():
+    assert callable(limp_ExternalFunction.__init__)
+
+
+def test_limp_externalfunction_constructor_args():
+    sig = inspect.signature(limp_ExternalFunction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::localprocedure_has_name():
-    assert hasattr(limp::LocalProcedure, "name")
+def test_limp_externalfunction_has_name():
+    assert hasattr(limp_ExternalFunction, "name")
     descriptor = None
-    for klass in limp::LocalProcedure.__mro__:
+    for klass in limp_ExternalFunction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1604,23 +1618,37 @@ def test_limp::localprocedure_has_name():
 
 
 
-def test_limp::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(limp::TypeDeclaration)
+def test_limp_globaldeclaration_is_not_abstract():
+    assert not inspect.isabstract(limp_GlobalDeclaration)
 
 
-def test_limp::typedeclaration_constructor_exists():
-    assert callable(limp::TypeDeclaration.__init__)
+def test_limp_globaldeclaration_constructor_exists():
+    assert callable(limp_GlobalDeclaration.__init__)
 
 
-def test_limp::typedeclaration_constructor_args():
-    sig = inspect.signature(limp::TypeDeclaration.__init__)
+def test_limp_globaldeclaration_constructor_args():
+    sig = inspect.signature(limp_GlobalDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_limp_externalprocedure_is_not_abstract():
+    assert not inspect.isabstract(limp_ExternalProcedure)
+
+
+def test_limp_externalprocedure_constructor_exists():
+    assert callable(limp_ExternalProcedure.__init__)
+
+
+def test_limp_externalprocedure_constructor_args():
+    sig = inspect.signature(limp_ExternalProcedure.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::typedeclaration_has_name():
-    assert hasattr(limp::TypeDeclaration, "name")
+def test_limp_externalprocedure_has_name():
+    assert hasattr(limp_ExternalProcedure, "name")
     descriptor = None
-    for klass in limp::TypeDeclaration.__mro__:
+    for klass in limp_ExternalProcedure.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1628,23 +1656,47 @@ def test_limp::typedeclaration_has_name():
 
 
 
-def test_limp::import_is_not_abstract():
-    assert not inspect.isabstract(limp::Import)
+def test_limp_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(limp_TypeDeclaration)
 
 
-def test_limp::import_constructor_exists():
-    assert callable(limp::Import.__init__)
+def test_limp_typedeclaration_constructor_exists():
+    assert callable(limp_TypeDeclaration.__init__)
 
 
-def test_limp::import_constructor_args():
-    sig = inspect.signature(limp::Import.__init__)
+def test_limp_typedeclaration_constructor_args():
+    sig = inspect.signature(limp_TypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_limp_typedeclaration_has_name():
+    assert hasattr(limp_TypeDeclaration, "name")
+    descriptor = None
+    for klass in limp_TypeDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_limp_import_is_not_abstract():
+    assert not inspect.isabstract(limp_Import)
+
+
+def test_limp_import_constructor_exists():
+    assert callable(limp_Import.__init__)
+
+
+def test_limp_import_constructor_args():
+    sig = inspect.signature(limp_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_limp::import_has_importURI():
-    assert hasattr(limp::Import, "importURI")
+def test_limp_import_has_importURI():
+    assert hasattr(limp_Import, "importURI")
     descriptor = None
-    for klass in limp::Import.__mro__:
+    for klass in limp_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -1652,75 +1704,23 @@ def test_limp::import_has_importURI():
 
 
 
-def test_limp::externalfunction_is_not_abstract():
-    assert not inspect.isabstract(limp::ExternalFunction)
+def test_limp_comment_is_not_abstract():
+    assert not inspect.isabstract(limp_Comment)
 
 
-def test_limp::externalfunction_constructor_exists():
-    assert callable(limp::ExternalFunction.__init__)
+def test_limp_comment_constructor_exists():
+    assert callable(limp_Comment.__init__)
 
 
-def test_limp::externalfunction_constructor_args():
-    sig = inspect.signature(limp::ExternalFunction.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_limp::externalfunction_has_name():
-    assert hasattr(limp::ExternalFunction, "name")
-    descriptor = None
-    for klass in limp::ExternalFunction.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_limp::constantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(limp::ConstantDeclaration)
-
-
-def test_limp::constantdeclaration_constructor_exists():
-    assert callable(limp::ConstantDeclaration.__init__)
-
-
-def test_limp::constantdeclaration_constructor_args():
-    sig = inspect.signature(limp::ConstantDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::globaldeclaration_is_not_abstract():
-    assert not inspect.isabstract(limp::GlobalDeclaration)
-
-
-def test_limp::globaldeclaration_constructor_exists():
-    assert callable(limp::GlobalDeclaration.__init__)
-
-
-def test_limp::globaldeclaration_constructor_args():
-    sig = inspect.signature(limp::GlobalDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_limp::comment_is_not_abstract():
-    assert not inspect.isabstract(limp::Comment)
-
-
-def test_limp::comment_constructor_exists():
-    assert callable(limp::Comment.__init__)
-
-
-def test_limp::comment_constructor_args():
-    sig = inspect.signature(limp::Comment.__init__)
+def test_limp_comment_constructor_args():
+    sig = inspect.signature(limp_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_limp::comment_has_comment():
-    assert hasattr(limp::Comment, "comment")
+def test_limp_comment_has_comment():
+    assert hasattr(limp_Comment, "comment")
     descriptor = None
-    for klass in limp::Comment.__mro__:
+    for klass in limp_Comment.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -1728,65 +1728,65 @@ def test_limp::comment_has_comment():
 
 
 
-def test_limp::declaration_is_not_abstract():
-    assert not inspect.isabstract(limp::Declaration)
+def test_limp_declaration_is_not_abstract():
+    assert not inspect.isabstract(limp_Declaration)
 
 
-def test_limp::declaration_constructor_exists():
-    assert callable(limp::Declaration.__init__)
+def test_limp_declaration_constructor_exists():
+    assert callable(limp_Declaration.__init__)
 
 
-def test_limp::declaration_constructor_args():
-    sig = inspect.signature(limp::Declaration.__init__)
+def test_limp_declaration_constructor_args():
+    sig = inspect.signature(limp_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::specification_is_not_abstract():
-    assert not inspect.isabstract(limp::Specification)
+def test_limp_specification_is_not_abstract():
+    assert not inspect.isabstract(limp_Specification)
 
 
-def test_limp::specification_constructor_exists():
-    assert callable(limp::Specification.__init__)
+def test_limp_specification_constructor_exists():
+    assert callable(limp_Specification.__init__)
 
 
-def test_limp::specification_constructor_args():
-    sig = inspect.signature(limp::Specification.__init__)
+def test_limp_specification_constructor_args():
+    sig = inspect.signature(limp_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::varblock_is_not_abstract():
-    assert not inspect.isabstract(limp::VarBlock)
+def test_limp_varblock_is_not_abstract():
+    assert not inspect.isabstract(limp_VarBlock)
 
 
-def test_limp::varblock_constructor_exists():
-    assert callable(limp::VarBlock.__init__)
+def test_limp_varblock_constructor_exists():
+    assert callable(limp_VarBlock.__init__)
 
 
-def test_limp::varblock_constructor_args():
-    sig = inspect.signature(limp::VarBlock.__init__)
+def test_limp_varblock_constructor_args():
+    sig = inspect.signature(limp_VarBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limp::localfunction_is_not_abstract():
-    assert not inspect.isabstract(limp::LocalFunction)
+def test_limp_localfunction_is_not_abstract():
+    assert not inspect.isabstract(limp_LocalFunction)
 
 
-def test_limp::localfunction_constructor_exists():
-    assert callable(limp::LocalFunction.__init__)
+def test_limp_localfunction_constructor_exists():
+    assert callable(limp_LocalFunction.__init__)
 
 
-def test_limp::localfunction_constructor_args():
-    sig = inspect.signature(limp::LocalFunction.__init__)
+def test_limp_localfunction_constructor_args():
+    sig = inspect.signature(limp_LocalFunction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_limp::localfunction_has_name():
-    assert hasattr(limp::LocalFunction, "name")
+def test_limp_localfunction_has_name():
+    assert hasattr(limp_LocalFunction, "name")
     descriptor = None
-    for klass in limp::LocalFunction.__mro__:
+    for klass in limp_LocalFunction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1807,167 +1807,167 @@ safe_text = st.text(
 Else_strategy = st.builds(
     Else,
 )
-limp::NoElse_strategy = st.builds(
-    limp::NoElse,
+limp_ElseIf_strategy = st.builds(
+    limp_ElseIf,
 )
-limp::ElseIf_strategy = st.builds(
-    limp::ElseIf,
+limp_NoElse_strategy = st.builds(
+    limp_NoElse,
 )
-limp::ElseBlock_strategy = st.builds(
-    limp::ElseBlock,
+limp_ElseBlock_strategy = st.builds(
+    limp_ElseBlock,
 )
 AttributeBlock_strategy = st.builds(
     AttributeBlock,
 )
-limp::NoAttributeBlock_strategy = st.builds(
-    limp::NoAttributeBlock,
+limp_NoAttributeBlock_strategy = st.builds(
+    limp_NoAttributeBlock,
 )
-limp::SomeAttributeBlock_strategy = st.builds(
-    limp::SomeAttributeBlock,
+limp_SomeAttributeBlock_strategy = st.builds(
+    limp_SomeAttributeBlock,
 )
 Type_strategy = st.builds(
     Type,
 )
-limp::RecordType_strategy = st.builds(
-    limp::RecordType,
+limp_BoolType_strategy = st.builds(
+    limp_BoolType,
 )
-limp::ArrayType_strategy = st.builds(
-    limp::ArrayType,
+limp_RecordType_strategy = st.builds(
+    limp_RecordType,
 )
-limp::RealType_strategy = st.builds(
-    limp::RealType,
+limp_IntegerType_strategy = st.builds(
+    limp_IntegerType,
 )
-limp::StringType_strategy = st.builds(
-    limp::StringType,
+limp_TupleType_strategy = st.builds(
+    limp_TupleType,
 )
-limp::EnumType_strategy = st.builds(
-    limp::EnumType,
+limp_StringType_strategy = st.builds(
+    limp_StringType,
 )
-limp::BoolType_strategy = st.builds(
-    limp::BoolType,
+limp_ArrayType_strategy = st.builds(
+    limp_ArrayType,
 )
-limp::TupleType_strategy = st.builds(
-    limp::TupleType,
+limp_RealType_strategy = st.builds(
+    limp_RealType,
 )
-limp::IntegerType_strategy = st.builds(
-    limp::IntegerType,
+limp_EnumType_strategy = st.builds(
+    limp_EnumType,
 )
-limp::VoidType_strategy = st.builds(
-    limp::VoidType,
+limp_VoidType_strategy = st.builds(
+    limp_VoidType,
 )
 VarBlock_strategy = st.builds(
     VarBlock,
 )
-limp::NoVarBlock_strategy = st.builds(
-    limp::NoVarBlock,
+limp_NoVarBlock_strategy = st.builds(
+    limp_NoVarBlock,
 )
-limp::SomeVarBlock_strategy = st.builds(
-    limp::SomeVarBlock,
+limp_SomeVarBlock_strategy = st.builds(
+    limp_SomeVarBlock,
 )
-limp::ExprList_strategy = st.builds(
-    limp::ExprList,
+limp_ExprList_strategy = st.builds(
+    limp_ExprList,
 )
-limp::NamedType_strategy = st.builds(
-    limp::NamedType,
+limp_NamedType_strategy = st.builds(
+    limp_NamedType,
 )
-limp::AbstractType_strategy = st.builds(
-    limp::AbstractType,
+limp_AbstractType_strategy = st.builds(
+    limp_AbstractType,
 )
 Expr_strategy = st.builds(
     Expr,
 )
-limp::IfThenElseExpr_strategy = st.builds(
-    limp::IfThenElseExpr,
+limp_ArrayUpdateExpr_strategy = st.builds(
+    limp_ArrayUpdateExpr,
 )
-limp::InitExpr_strategy = st.builds(
-    limp::InitExpr,
-)
-limp::BinaryExpr_strategy = st.builds(
-    limp::BinaryExpr,
-    op=
-        safe_text
-)
-limp::FreshVariable_strategy = st.builds(
-    limp::FreshVariable,
-    value=
-        safe_text
-)
-limp::RecordUpdateExpr_strategy = st.builds(
-    limp::RecordUpdateExpr,
+limp_RecordUpdateExpr_strategy = st.builds(
+    limp_RecordUpdateExpr,
     field=
         safe_text
 )
-limp::FcnCallExpr_strategy = st.builds(
-    limp::FcnCallExpr,
+limp_SecondInit_strategy = st.builds(
+    limp_SecondInit,
 )
-limp::UnaryNegationExpr_strategy = st.builds(
-    limp::UnaryNegationExpr,
-)
-limp::ChoiceExpr_strategy = st.builds(
-    limp::ChoiceExpr,
-)
-limp::IntegerLiteralExpr_strategy = st.builds(
-    limp::IntegerLiteralExpr,
+limp_IntegerLiteralExpr_strategy = st.builds(
+    limp_IntegerLiteralExpr,
     intVal=
         safe_text
 )
-limp::ArrayUpdateExpr_strategy = st.builds(
-    limp::ArrayUpdateExpr,
+limp_ChoiceExpr_strategy = st.builds(
+    limp_ChoiceExpr,
 )
-limp::RecordAccessExpr_strategy = st.builds(
-    limp::RecordAccessExpr,
-    field=
-        safe_text
+limp_ArrayAccessExpr_strategy = st.builds(
+    limp_ArrayAccessExpr,
 )
-limp::UnaryMinusExpr_strategy = st.builds(
-    limp::UnaryMinusExpr,
+limp_UnaryNegationExpr_strategy = st.builds(
+    limp_UnaryNegationExpr,
 )
-limp::BooleanLiteralExpr_strategy = st.builds(
-    limp::BooleanLiteralExpr,
-    boolVal=
-        safe_text
-)
-limp::IdExpr_strategy = st.builds(
-    limp::IdExpr,
-)
-limp::SecondInit_strategy = st.builds(
-    limp::SecondInit,
-)
-limp::ArrayAccessExpr_strategy = st.builds(
-    limp::ArrayAccessExpr,
-)
-limp::RealLiteralExpr_strategy = st.builds(
-    limp::RealLiteralExpr,
-    realVal=
-        safe_text
-)
-limp::StringLiteralExpr_strategy = st.builds(
-    limp::StringLiteralExpr,
+limp_StringLiteralExpr_strategy = st.builds(
+    limp_StringLiteralExpr,
     stringVal=
         safe_text
 )
-limp::IntegerWildCardExpr_strategy = st.builds(
-    limp::IntegerWildCardExpr,
+limp_RecordAccessExpr_strategy = st.builds(
+    limp_RecordAccessExpr,
+    field=
+        safe_text
 )
-limp::ArrayExpr_strategy = st.builds(
-    limp::ArrayExpr,
+limp_IfThenElseExpr_strategy = st.builds(
+    limp_IfThenElseExpr,
 )
-limp::FunctionRef_strategy = st.builds(
-    limp::FunctionRef,
+limp_BinaryExpr_strategy = st.builds(
+    limp_BinaryExpr,
+    op=
+        safe_text
 )
-limp::Equation_strategy = st.builds(
-    limp::Equation,
+limp_RealLiteralExpr_strategy = st.builds(
+    limp_RealLiteralExpr,
+    realVal=
+        safe_text
 )
-limp::RecordFieldExpr_strategy = st.builds(
-    limp::RecordFieldExpr,
+limp_UnaryMinusExpr_strategy = st.builds(
+    limp_UnaryMinusExpr,
+)
+limp_IntegerWildCardExpr_strategy = st.builds(
+    limp_IntegerWildCardExpr,
+)
+limp_FreshVariable_strategy = st.builds(
+    limp_FreshVariable,
+    value=
+        safe_text
+)
+limp_InitExpr_strategy = st.builds(
+    limp_InitExpr,
+)
+limp_FcnCallExpr_strategy = st.builds(
+    limp_FcnCallExpr,
+)
+limp_BooleanLiteralExpr_strategy = st.builds(
+    limp_BooleanLiteralExpr,
+    boolVal=
+        safe_text
+)
+limp_IdExpr_strategy = st.builds(
+    limp_IdExpr,
+)
+limp_ArrayExpr_strategy = st.builds(
+    limp_ArrayExpr,
+)
+limp_FunctionRef_strategy = st.builds(
+    limp_FunctionRef,
+)
+limp_Equation_strategy = st.builds(
+    limp_Equation,
+)
+limp_RecordFieldExpr_strategy = st.builds(
+    limp_RecordFieldExpr,
     fieldName=
         safe_text
 )
-limp::RecordExpr_strategy = st.builds(
-    limp::RecordExpr,
+limp_RecordExpr_strategy = st.builds(
+    limp_RecordExpr,
 )
-limp::IdList_strategy = st.builds(
-    limp::IdList,
+limp_IdList_strategy = st.builds(
+    limp_IdList,
 )
 Equation_strategy = st.builds(
     Equation,
@@ -1975,134 +1975,134 @@ Equation_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-limp::ReturnStatement_strategy = st.builds(
-    limp::ReturnStatement,
-)
-limp::GotoStatement_strategy = st.builds(
-    limp::GotoStatement,
-)
-limp::AssignmentStatement_strategy = st.builds(
-    limp::AssignmentStatement,
-)
-limp::IfThenElseStatement_strategy = st.builds(
-    limp::IfThenElseStatement,
-)
-limp::LabelStatement_strategy = st.builds(
-    limp::LabelStatement,
+limp_LabelStatement_strategy = st.builds(
+    limp_LabelStatement,
     name=
         safe_text
 )
-limp::ForStatement_strategy = st.builds(
-    limp::ForStatement,
+limp_ReturnStatement_strategy = st.builds(
+    limp_ReturnStatement,
 )
-limp::ContinueStatement_strategy = st.builds(
-    limp::ContinueStatement,
+limp_ContinueStatement_strategy = st.builds(
+    limp_ContinueStatement,
 )
-limp::BreakStatement_strategy = st.builds(
-    limp::BreakStatement,
+limp_IfThenElseStatement_strategy = st.builds(
+    limp_IfThenElseStatement,
 )
-limp::VoidStatement_strategy = st.builds(
-    limp::VoidStatement,
+limp_ForStatement_strategy = st.builds(
+    limp_ForStatement,
 )
-limp::Statement_strategy = st.builds(
-    limp::Statement,
+limp_BreakStatement_strategy = st.builds(
+    limp_BreakStatement,
 )
-limp::DefineUseRef_strategy = st.builds(
-    limp::DefineUseRef,
+limp_AssignmentStatement_strategy = st.builds(
+    limp_AssignmentStatement,
 )
-limp::WhileStatement_strategy = st.builds(
-    limp::WhileStatement,
+limp_GotoStatement_strategy = st.builds(
+    limp_GotoStatement,
 )
-limp::Else_strategy = st.builds(
-    limp::Else,
+limp_VoidStatement_strategy = st.builds(
+    limp_VoidStatement,
 )
-limp::VariableRef_strategy = st.builds(
-    limp::VariableRef,
+limp_Statement_strategy = st.builds(
+    limp_Statement,
+)
+limp_DefineUseRef_strategy = st.builds(
+    limp_DefineUseRef,
+)
+limp_WhileStatement_strategy = st.builds(
+    limp_WhileStatement,
+)
+limp_Else_strategy = st.builds(
+    limp_Else,
+)
+limp_VariableRef_strategy = st.builds(
+    limp_VariableRef,
     name=
         safe_text
 )
-limp::Expr_strategy = st.builds(
-    limp::Expr,
+limp_Expr_strategy = st.builds(
+    limp_Expr,
 )
 Attribute_strategy = st.builds(
     Attribute,
 )
-limp::Uses_strategy = st.builds(
-    limp::Uses,
+limp_Uses_strategy = st.builds(
+    limp_Uses,
 )
-limp::Define_strategy = st.builds(
-    limp::Define,
+limp_Define_strategy = st.builds(
+    limp_Define,
 )
-limp::Postcondition_strategy = st.builds(
-    limp::Postcondition,
+limp_Postcondition_strategy = st.builds(
+    limp_Postcondition,
     name=
         safe_text
 )
-limp::Precondition_strategy = st.builds(
-    limp::Precondition,
+limp_Precondition_strategy = st.builds(
+    limp_Precondition,
     name=
         safe_text
 )
-limp::Attribute_strategy = st.builds(
-    limp::Attribute,
+limp_Attribute_strategy = st.builds(
+    limp_Attribute,
 )
-limp::RecordFieldType_strategy = st.builds(
-    limp::RecordFieldType,
+limp_RecordFieldType_strategy = st.builds(
+    limp_RecordFieldType,
     fieldName=
         safe_text
 )
 VariableRef_strategy = st.builds(
     VariableRef,
 )
-limp::LocalArg_strategy = st.builds(
-    limp::LocalArg,
+limp_LocalArg_strategy = st.builds(
+    limp_LocalArg,
 )
-limp::InputArg_strategy = st.builds(
-    limp::InputArg,
+limp_InputArg_strategy = st.builds(
+    limp_InputArg,
 )
-limp::EnumValue_strategy = st.builds(
-    limp::EnumValue,
+limp_EnumValue_strategy = st.builds(
+    limp_EnumValue,
 )
 TypeDeclaration_strategy = st.builds(
     TypeDeclaration,
 )
-limp::TypeAlias_strategy = st.builds(
-    limp::TypeAlias,
+limp_TypeAlias_strategy = st.builds(
+    limp_TypeAlias,
 )
-limp::RecordTypeDef_strategy = st.builds(
-    limp::RecordTypeDef,
+limp_RecordTypeDef_strategy = st.builds(
+    limp_RecordTypeDef,
 )
-limp::EnumTypeDef_strategy = st.builds(
-    limp::EnumTypeDef,
+limp_EnumTypeDef_strategy = st.builds(
+    limp_EnumTypeDef,
 )
-limp::StatementBlock_strategy = st.builds(
-    limp::StatementBlock,
+limp_StatementBlock_strategy = st.builds(
+    limp_StatementBlock,
 )
-limp::EquationBlock_strategy = st.builds(
-    limp::EquationBlock,
+limp_EquationBlock_strategy = st.builds(
+    limp_EquationBlock,
 )
-limp::AbstractTypeDef_strategy = st.builds(
-    limp::AbstractTypeDef,
+limp_AbstractTypeDef_strategy = st.builds(
+    limp_AbstractTypeDef,
 )
-limp::Type_strategy = st.builds(
-    limp::Type,
+limp_Type_strategy = st.builds(
+    limp_Type,
 )
-limp::ArrayTypeDef_strategy = st.builds(
-    limp::ArrayTypeDef,
+limp_ArrayTypeDef_strategy = st.builds(
+    limp_ArrayTypeDef,
     size=
         safe_text
 )
-limp::AttributeBlock_strategy = st.builds(
-    limp::AttributeBlock,
+limp_AttributeBlock_strategy = st.builds(
+    limp_AttributeBlock,
 )
-limp::OutputArgList_strategy = st.builds(
-    limp::OutputArgList,
+limp_OutputArgList_strategy = st.builds(
+    limp_OutputArgList,
 )
-limp::OutputArg_strategy = st.builds(
-    limp::OutputArg,
+limp_OutputArg_strategy = st.builds(
+    limp_OutputArg,
 )
-limp::InputArgList_strategy = st.builds(
-    limp::InputArgList,
+limp_InputArgList_strategy = st.builds(
+    limp_InputArgList,
 )
 FunctionRef_strategy = st.builds(
     FunctionRef,
@@ -2110,53 +2110,53 @@ FunctionRef_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-limp::ExternalProcedure_strategy = st.builds(
-    limp::ExternalProcedure,
+limp_LocalProcedure_strategy = st.builds(
+    limp_LocalProcedure,
     name=
         safe_text
 )
-limp::LocalProcedure_strategy = st.builds(
-    limp::LocalProcedure,
+limp_ConstantDeclaration_strategy = st.builds(
+    limp_ConstantDeclaration,
+)
+limp_ExternalFunction_strategy = st.builds(
+    limp_ExternalFunction,
     name=
         safe_text
 )
-limp::TypeDeclaration_strategy = st.builds(
-    limp::TypeDeclaration,
+limp_GlobalDeclaration_strategy = st.builds(
+    limp_GlobalDeclaration,
+)
+limp_ExternalProcedure_strategy = st.builds(
+    limp_ExternalProcedure,
     name=
         safe_text
 )
-limp::Import_strategy = st.builds(
-    limp::Import,
+limp_TypeDeclaration_strategy = st.builds(
+    limp_TypeDeclaration,
+    name=
+        safe_text
+)
+limp_Import_strategy = st.builds(
+    limp_Import,
     importURI=
         safe_text
 )
-limp::ExternalFunction_strategy = st.builds(
-    limp::ExternalFunction,
-    name=
-        safe_text
-)
-limp::ConstantDeclaration_strategy = st.builds(
-    limp::ConstantDeclaration,
-)
-limp::GlobalDeclaration_strategy = st.builds(
-    limp::GlobalDeclaration,
-)
-limp::Comment_strategy = st.builds(
-    limp::Comment,
+limp_Comment_strategy = st.builds(
+    limp_Comment,
     comment=
         safe_text
 )
-limp::Declaration_strategy = st.builds(
-    limp::Declaration,
+limp_Declaration_strategy = st.builds(
+    limp_Declaration,
 )
-limp::Specification_strategy = st.builds(
-    limp::Specification,
+limp_Specification_strategy = st.builds(
+    limp_Specification,
 )
-limp::VarBlock_strategy = st.builds(
-    limp::VarBlock,
+limp_VarBlock_strategy = st.builds(
+    limp_VarBlock,
 )
-limp::LocalFunction_strategy = st.builds(
-    limp::LocalFunction,
+limp_LocalFunction_strategy = st.builds(
+    limp_LocalFunction,
     name=
         safe_text
 )
@@ -2166,344 +2166,317 @@ limp::LocalFunction_strategy = st.builds(
 def test_else_instantiation(instance):
     assert isinstance(instance, Else)
 
-@given(instance=limp::NoElse_strategy)
+@given(instance=limp_ElseIf_strategy)
 @settings(max_examples=50)
-def test_limp::noelse_instantiation(instance):
-    assert isinstance(instance, limp::NoElse)
+def test_limp_elseif_instantiation(instance):
+    assert isinstance(instance, limp_ElseIf)
 
-@given(instance=limp::ElseIf_strategy)
+@given(instance=limp_NoElse_strategy)
 @settings(max_examples=50)
-def test_limp::elseif_instantiation(instance):
-    assert isinstance(instance, limp::ElseIf)
+def test_limp_noelse_instantiation(instance):
+    assert isinstance(instance, limp_NoElse)
 
-@given(instance=limp::ElseBlock_strategy)
+@given(instance=limp_ElseBlock_strategy)
 @settings(max_examples=50)
-def test_limp::elseblock_instantiation(instance):
-    assert isinstance(instance, limp::ElseBlock)
+def test_limp_elseblock_instantiation(instance):
+    assert isinstance(instance, limp_ElseBlock)
 
 @given(instance=AttributeBlock_strategy)
 @settings(max_examples=50)
 def test_attributeblock_instantiation(instance):
     assert isinstance(instance, AttributeBlock)
 
-@given(instance=limp::NoAttributeBlock_strategy)
+@given(instance=limp_NoAttributeBlock_strategy)
 @settings(max_examples=50)
-def test_limp::noattributeblock_instantiation(instance):
-    assert isinstance(instance, limp::NoAttributeBlock)
+def test_limp_noattributeblock_instantiation(instance):
+    assert isinstance(instance, limp_NoAttributeBlock)
 
-@given(instance=limp::SomeAttributeBlock_strategy)
+@given(instance=limp_SomeAttributeBlock_strategy)
 @settings(max_examples=50)
-def test_limp::someattributeblock_instantiation(instance):
-    assert isinstance(instance, limp::SomeAttributeBlock)
+def test_limp_someattributeblock_instantiation(instance):
+    assert isinstance(instance, limp_SomeAttributeBlock)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=limp::RecordType_strategy)
+@given(instance=limp_BoolType_strategy)
 @settings(max_examples=50)
-def test_limp::recordtype_instantiation(instance):
-    assert isinstance(instance, limp::RecordType)
+def test_limp_booltype_instantiation(instance):
+    assert isinstance(instance, limp_BoolType)
 
-@given(instance=limp::ArrayType_strategy)
+@given(instance=limp_RecordType_strategy)
 @settings(max_examples=50)
-def test_limp::arraytype_instantiation(instance):
-    assert isinstance(instance, limp::ArrayType)
+def test_limp_recordtype_instantiation(instance):
+    assert isinstance(instance, limp_RecordType)
 
-@given(instance=limp::RealType_strategy)
+@given(instance=limp_IntegerType_strategy)
 @settings(max_examples=50)
-def test_limp::realtype_instantiation(instance):
-    assert isinstance(instance, limp::RealType)
+def test_limp_integertype_instantiation(instance):
+    assert isinstance(instance, limp_IntegerType)
 
-@given(instance=limp::StringType_strategy)
+@given(instance=limp_TupleType_strategy)
 @settings(max_examples=50)
-def test_limp::stringtype_instantiation(instance):
-    assert isinstance(instance, limp::StringType)
+def test_limp_tupletype_instantiation(instance):
+    assert isinstance(instance, limp_TupleType)
 
-@given(instance=limp::EnumType_strategy)
+@given(instance=limp_StringType_strategy)
 @settings(max_examples=50)
-def test_limp::enumtype_instantiation(instance):
-    assert isinstance(instance, limp::EnumType)
+def test_limp_stringtype_instantiation(instance):
+    assert isinstance(instance, limp_StringType)
 
-@given(instance=limp::BoolType_strategy)
+@given(instance=limp_ArrayType_strategy)
 @settings(max_examples=50)
-def test_limp::booltype_instantiation(instance):
-    assert isinstance(instance, limp::BoolType)
+def test_limp_arraytype_instantiation(instance):
+    assert isinstance(instance, limp_ArrayType)
 
-@given(instance=limp::TupleType_strategy)
+@given(instance=limp_RealType_strategy)
 @settings(max_examples=50)
-def test_limp::tupletype_instantiation(instance):
-    assert isinstance(instance, limp::TupleType)
+def test_limp_realtype_instantiation(instance):
+    assert isinstance(instance, limp_RealType)
 
-@given(instance=limp::IntegerType_strategy)
+@given(instance=limp_EnumType_strategy)
 @settings(max_examples=50)
-def test_limp::integertype_instantiation(instance):
-    assert isinstance(instance, limp::IntegerType)
+def test_limp_enumtype_instantiation(instance):
+    assert isinstance(instance, limp_EnumType)
 
-@given(instance=limp::VoidType_strategy)
+@given(instance=limp_VoidType_strategy)
 @settings(max_examples=50)
-def test_limp::voidtype_instantiation(instance):
-    assert isinstance(instance, limp::VoidType)
+def test_limp_voidtype_instantiation(instance):
+    assert isinstance(instance, limp_VoidType)
 
 @given(instance=VarBlock_strategy)
 @settings(max_examples=50)
 def test_varblock_instantiation(instance):
     assert isinstance(instance, VarBlock)
 
-@given(instance=limp::NoVarBlock_strategy)
+@given(instance=limp_NoVarBlock_strategy)
 @settings(max_examples=50)
-def test_limp::novarblock_instantiation(instance):
-    assert isinstance(instance, limp::NoVarBlock)
+def test_limp_novarblock_instantiation(instance):
+    assert isinstance(instance, limp_NoVarBlock)
 
-@given(instance=limp::SomeVarBlock_strategy)
+@given(instance=limp_SomeVarBlock_strategy)
 @settings(max_examples=50)
-def test_limp::somevarblock_instantiation(instance):
-    assert isinstance(instance, limp::SomeVarBlock)
+def test_limp_somevarblock_instantiation(instance):
+    assert isinstance(instance, limp_SomeVarBlock)
 
-@given(instance=limp::ExprList_strategy)
+@given(instance=limp_ExprList_strategy)
 @settings(max_examples=50)
-def test_limp::exprlist_instantiation(instance):
-    assert isinstance(instance, limp::ExprList)
+def test_limp_exprlist_instantiation(instance):
+    assert isinstance(instance, limp_ExprList)
 
-@given(instance=limp::NamedType_strategy)
+@given(instance=limp_NamedType_strategy)
 @settings(max_examples=50)
-def test_limp::namedtype_instantiation(instance):
-    assert isinstance(instance, limp::NamedType)
+def test_limp_namedtype_instantiation(instance):
+    assert isinstance(instance, limp_NamedType)
 
-@given(instance=limp::AbstractType_strategy)
+@given(instance=limp_AbstractType_strategy)
 @settings(max_examples=50)
-def test_limp::abstracttype_instantiation(instance):
-    assert isinstance(instance, limp::AbstractType)
+def test_limp_abstracttype_instantiation(instance):
+    assert isinstance(instance, limp_AbstractType)
 
 @given(instance=Expr_strategy)
 @settings(max_examples=50)
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=limp::IfThenElseExpr_strategy)
+@given(instance=limp_ArrayUpdateExpr_strategy)
 @settings(max_examples=50)
-def test_limp::ifthenelseexpr_instantiation(instance):
-    assert isinstance(instance, limp::IfThenElseExpr)
+def test_limp_arrayupdateexpr_instantiation(instance):
+    assert isinstance(instance, limp_ArrayUpdateExpr)
 
-@given(instance=limp::InitExpr_strategy)
+@given(instance=limp_RecordUpdateExpr_strategy)
 @settings(max_examples=50)
-def test_limp::initexpr_instantiation(instance):
-    assert isinstance(instance, limp::InitExpr)
-
-@given(instance=limp::BinaryExpr_strategy)
-@settings(max_examples=50)
-def test_limp::binaryexpr_instantiation(instance):
-    assert isinstance(instance, limp::BinaryExpr)
-
-@given(instance=limp::BinaryExpr_strategy)
-def test_limp::binaryexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_limp_recordupdateexpr_instantiation(instance):
+    assert isinstance(instance, limp_RecordUpdateExpr)
 
 
-@given(instance=limp::BinaryExpr_strategy)
-def test_limp::binaryexpr_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
 
-@given(instance=limp::FreshVariable_strategy)
-@settings(max_examples=50)
-def test_limp::freshvariable_instantiation(instance):
-    assert isinstance(instance, limp::FreshVariable)
-
-@given(instance=limp::FreshVariable_strategy)
-def test_limp::freshvariable_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=limp::FreshVariable_strategy)
-def test_limp::freshvariable_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=limp::RecordUpdateExpr_strategy)
-@settings(max_examples=50)
-def test_limp::recordupdateexpr_instantiation(instance):
-    assert isinstance(instance, limp::RecordUpdateExpr)
-
-@given(instance=limp::RecordUpdateExpr_strategy)
-def test_limp::recordupdateexpr_field_type(instance):
-    assert isinstance(instance.field, str)
-
-
-@given(instance=limp::RecordUpdateExpr_strategy)
-def test_limp::recordupdateexpr_field_setter(instance):
+@given(instance=limp_RecordUpdateExpr_strategy)
+def test_limp_recordupdateexpr_field_setter(instance):
     original = instance.field
     instance.field = original
     assert instance.field == original
 
-@given(instance=limp::FcnCallExpr_strategy)
+@given(instance=limp_SecondInit_strategy)
 @settings(max_examples=50)
-def test_limp::fcncallexpr_instantiation(instance):
-    assert isinstance(instance, limp::FcnCallExpr)
+def test_limp_secondinit_instantiation(instance):
+    assert isinstance(instance, limp_SecondInit)
 
-@given(instance=limp::UnaryNegationExpr_strategy)
+@given(instance=limp_IntegerLiteralExpr_strategy)
 @settings(max_examples=50)
-def test_limp::unarynegationexpr_instantiation(instance):
-    assert isinstance(instance, limp::UnaryNegationExpr)
-
-@given(instance=limp::ChoiceExpr_strategy)
-@settings(max_examples=50)
-def test_limp::choiceexpr_instantiation(instance):
-    assert isinstance(instance, limp::ChoiceExpr)
-
-@given(instance=limp::IntegerLiteralExpr_strategy)
-@settings(max_examples=50)
-def test_limp::integerliteralexpr_instantiation(instance):
-    assert isinstance(instance, limp::IntegerLiteralExpr)
-
-@given(instance=limp::IntegerLiteralExpr_strategy)
-def test_limp::integerliteralexpr_intVal_type(instance):
-    assert isinstance(instance.intVal, str)
+def test_limp_integerliteralexpr_instantiation(instance):
+    assert isinstance(instance, limp_IntegerLiteralExpr)
 
 
-@given(instance=limp::IntegerLiteralExpr_strategy)
-def test_limp::integerliteralexpr_intVal_setter(instance):
+
+@given(instance=limp_IntegerLiteralExpr_strategy)
+def test_limp_integerliteralexpr_intVal_setter(instance):
     original = instance.intVal
     instance.intVal = original
     assert instance.intVal == original
 
-@given(instance=limp::ArrayUpdateExpr_strategy)
+@given(instance=limp_ChoiceExpr_strategy)
 @settings(max_examples=50)
-def test_limp::arrayupdateexpr_instantiation(instance):
-    assert isinstance(instance, limp::ArrayUpdateExpr)
+def test_limp_choiceexpr_instantiation(instance):
+    assert isinstance(instance, limp_ChoiceExpr)
 
-@given(instance=limp::RecordAccessExpr_strategy)
+@given(instance=limp_ArrayAccessExpr_strategy)
 @settings(max_examples=50)
-def test_limp::recordaccessexpr_instantiation(instance):
-    assert isinstance(instance, limp::RecordAccessExpr)
+def test_limp_arrayaccessexpr_instantiation(instance):
+    assert isinstance(instance, limp_ArrayAccessExpr)
 
-@given(instance=limp::RecordAccessExpr_strategy)
-def test_limp::recordaccessexpr_field_type(instance):
-    assert isinstance(instance.field, str)
-
-
-@given(instance=limp::RecordAccessExpr_strategy)
-def test_limp::recordaccessexpr_field_setter(instance):
-    original = instance.field
-    instance.field = original
-    assert instance.field == original
-
-@given(instance=limp::UnaryMinusExpr_strategy)
+@given(instance=limp_UnaryNegationExpr_strategy)
 @settings(max_examples=50)
-def test_limp::unaryminusexpr_instantiation(instance):
-    assert isinstance(instance, limp::UnaryMinusExpr)
+def test_limp_unarynegationexpr_instantiation(instance):
+    assert isinstance(instance, limp_UnaryNegationExpr)
 
-@given(instance=limp::BooleanLiteralExpr_strategy)
+@given(instance=limp_StringLiteralExpr_strategy)
 @settings(max_examples=50)
-def test_limp::booleanliteralexpr_instantiation(instance):
-    assert isinstance(instance, limp::BooleanLiteralExpr)
-
-@given(instance=limp::BooleanLiteralExpr_strategy)
-def test_limp::booleanliteralexpr_boolVal_type(instance):
-    assert isinstance(instance.boolVal, str)
+def test_limp_stringliteralexpr_instantiation(instance):
+    assert isinstance(instance, limp_StringLiteralExpr)
 
 
-@given(instance=limp::BooleanLiteralExpr_strategy)
-def test_limp::booleanliteralexpr_boolVal_setter(instance):
-    original = instance.boolVal
-    instance.boolVal = original
-    assert instance.boolVal == original
 
-@given(instance=limp::IdExpr_strategy)
-@settings(max_examples=50)
-def test_limp::idexpr_instantiation(instance):
-    assert isinstance(instance, limp::IdExpr)
-
-@given(instance=limp::SecondInit_strategy)
-@settings(max_examples=50)
-def test_limp::secondinit_instantiation(instance):
-    assert isinstance(instance, limp::SecondInit)
-
-@given(instance=limp::ArrayAccessExpr_strategy)
-@settings(max_examples=50)
-def test_limp::arrayaccessexpr_instantiation(instance):
-    assert isinstance(instance, limp::ArrayAccessExpr)
-
-@given(instance=limp::RealLiteralExpr_strategy)
-@settings(max_examples=50)
-def test_limp::realliteralexpr_instantiation(instance):
-    assert isinstance(instance, limp::RealLiteralExpr)
-
-@given(instance=limp::RealLiteralExpr_strategy)
-def test_limp::realliteralexpr_realVal_type(instance):
-    assert isinstance(instance.realVal, str)
-
-
-@given(instance=limp::RealLiteralExpr_strategy)
-def test_limp::realliteralexpr_realVal_setter(instance):
-    original = instance.realVal
-    instance.realVal = original
-    assert instance.realVal == original
-
-@given(instance=limp::StringLiteralExpr_strategy)
-@settings(max_examples=50)
-def test_limp::stringliteralexpr_instantiation(instance):
-    assert isinstance(instance, limp::StringLiteralExpr)
-
-@given(instance=limp::StringLiteralExpr_strategy)
-def test_limp::stringliteralexpr_stringVal_type(instance):
-    assert isinstance(instance.stringVal, str)
-
-
-@given(instance=limp::StringLiteralExpr_strategy)
-def test_limp::stringliteralexpr_stringVal_setter(instance):
+@given(instance=limp_StringLiteralExpr_strategy)
+def test_limp_stringliteralexpr_stringVal_setter(instance):
     original = instance.stringVal
     instance.stringVal = original
     assert instance.stringVal == original
 
-@given(instance=limp::IntegerWildCardExpr_strategy)
+@given(instance=limp_RecordAccessExpr_strategy)
 @settings(max_examples=50)
-def test_limp::integerwildcardexpr_instantiation(instance):
-    assert isinstance(instance, limp::IntegerWildCardExpr)
+def test_limp_recordaccessexpr_instantiation(instance):
+    assert isinstance(instance, limp_RecordAccessExpr)
 
-@given(instance=limp::ArrayExpr_strategy)
+
+
+@given(instance=limp_RecordAccessExpr_strategy)
+def test_limp_recordaccessexpr_field_setter(instance):
+    original = instance.field
+    instance.field = original
+    assert instance.field == original
+
+@given(instance=limp_IfThenElseExpr_strategy)
 @settings(max_examples=50)
-def test_limp::arrayexpr_instantiation(instance):
-    assert isinstance(instance, limp::ArrayExpr)
+def test_limp_ifthenelseexpr_instantiation(instance):
+    assert isinstance(instance, limp_IfThenElseExpr)
 
-@given(instance=limp::FunctionRef_strategy)
+@given(instance=limp_BinaryExpr_strategy)
 @settings(max_examples=50)
-def test_limp::functionref_instantiation(instance):
-    assert isinstance(instance, limp::FunctionRef)
+def test_limp_binaryexpr_instantiation(instance):
+    assert isinstance(instance, limp_BinaryExpr)
 
-@given(instance=limp::Equation_strategy)
+
+
+@given(instance=limp_BinaryExpr_strategy)
+def test_limp_binaryexpr_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=limp_RealLiteralExpr_strategy)
 @settings(max_examples=50)
-def test_limp::equation_instantiation(instance):
-    assert isinstance(instance, limp::Equation)
+def test_limp_realliteralexpr_instantiation(instance):
+    assert isinstance(instance, limp_RealLiteralExpr)
 
-@given(instance=limp::RecordFieldExpr_strategy)
+
+
+@given(instance=limp_RealLiteralExpr_strategy)
+def test_limp_realliteralexpr_realVal_setter(instance):
+    original = instance.realVal
+    instance.realVal = original
+    assert instance.realVal == original
+
+@given(instance=limp_UnaryMinusExpr_strategy)
 @settings(max_examples=50)
-def test_limp::recordfieldexpr_instantiation(instance):
-    assert isinstance(instance, limp::RecordFieldExpr)
+def test_limp_unaryminusexpr_instantiation(instance):
+    assert isinstance(instance, limp_UnaryMinusExpr)
 
-@given(instance=limp::RecordFieldExpr_strategy)
-def test_limp::recordfieldexpr_fieldName_type(instance):
-    assert isinstance(instance.fieldName, str)
+@given(instance=limp_IntegerWildCardExpr_strategy)
+@settings(max_examples=50)
+def test_limp_integerwildcardexpr_instantiation(instance):
+    assert isinstance(instance, limp_IntegerWildCardExpr)
+
+@given(instance=limp_FreshVariable_strategy)
+@settings(max_examples=50)
+def test_limp_freshvariable_instantiation(instance):
+    assert isinstance(instance, limp_FreshVariable)
 
 
-@given(instance=limp::RecordFieldExpr_strategy)
-def test_limp::recordfieldexpr_fieldName_setter(instance):
+
+@given(instance=limp_FreshVariable_strategy)
+def test_limp_freshvariable_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=limp_InitExpr_strategy)
+@settings(max_examples=50)
+def test_limp_initexpr_instantiation(instance):
+    assert isinstance(instance, limp_InitExpr)
+
+@given(instance=limp_FcnCallExpr_strategy)
+@settings(max_examples=50)
+def test_limp_fcncallexpr_instantiation(instance):
+    assert isinstance(instance, limp_FcnCallExpr)
+
+@given(instance=limp_BooleanLiteralExpr_strategy)
+@settings(max_examples=50)
+def test_limp_booleanliteralexpr_instantiation(instance):
+    assert isinstance(instance, limp_BooleanLiteralExpr)
+
+
+
+@given(instance=limp_BooleanLiteralExpr_strategy)
+def test_limp_booleanliteralexpr_boolVal_setter(instance):
+    original = instance.boolVal
+    instance.boolVal = original
+    assert instance.boolVal == original
+
+@given(instance=limp_IdExpr_strategy)
+@settings(max_examples=50)
+def test_limp_idexpr_instantiation(instance):
+    assert isinstance(instance, limp_IdExpr)
+
+@given(instance=limp_ArrayExpr_strategy)
+@settings(max_examples=50)
+def test_limp_arrayexpr_instantiation(instance):
+    assert isinstance(instance, limp_ArrayExpr)
+
+@given(instance=limp_FunctionRef_strategy)
+@settings(max_examples=50)
+def test_limp_functionref_instantiation(instance):
+    assert isinstance(instance, limp_FunctionRef)
+
+@given(instance=limp_Equation_strategy)
+@settings(max_examples=50)
+def test_limp_equation_instantiation(instance):
+    assert isinstance(instance, limp_Equation)
+
+@given(instance=limp_RecordFieldExpr_strategy)
+@settings(max_examples=50)
+def test_limp_recordfieldexpr_instantiation(instance):
+    assert isinstance(instance, limp_RecordFieldExpr)
+
+
+
+@given(instance=limp_RecordFieldExpr_strategy)
+def test_limp_recordfieldexpr_fieldName_setter(instance):
     original = instance.fieldName
     instance.fieldName = original
     assert instance.fieldName == original
 
-@given(instance=limp::RecordExpr_strategy)
+@given(instance=limp_RecordExpr_strategy)
 @settings(max_examples=50)
-def test_limp::recordexpr_instantiation(instance):
-    assert isinstance(instance, limp::RecordExpr)
+def test_limp_recordexpr_instantiation(instance):
+    assert isinstance(instance, limp_RecordExpr)
 
-@given(instance=limp::IdList_strategy)
+@given(instance=limp_IdList_strategy)
 @settings(max_examples=50)
-def test_limp::idlist_instantiation(instance):
-    assert isinstance(instance, limp::IdList)
+def test_limp_idlist_instantiation(instance):
+    assert isinstance(instance, limp_IdList)
 
 @given(instance=Equation_strategy)
 @settings(max_examples=50)
@@ -2515,167 +2488,152 @@ def test_equation_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=limp::ReturnStatement_strategy)
+@given(instance=limp_LabelStatement_strategy)
 @settings(max_examples=50)
-def test_limp::returnstatement_instantiation(instance):
-    assert isinstance(instance, limp::ReturnStatement)
-
-@given(instance=limp::GotoStatement_strategy)
-@settings(max_examples=50)
-def test_limp::gotostatement_instantiation(instance):
-    assert isinstance(instance, limp::GotoStatement)
-
-@given(instance=limp::AssignmentStatement_strategy)
-@settings(max_examples=50)
-def test_limp::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, limp::AssignmentStatement)
-
-@given(instance=limp::IfThenElseStatement_strategy)
-@settings(max_examples=50)
-def test_limp::ifthenelsestatement_instantiation(instance):
-    assert isinstance(instance, limp::IfThenElseStatement)
-
-@given(instance=limp::LabelStatement_strategy)
-@settings(max_examples=50)
-def test_limp::labelstatement_instantiation(instance):
-    assert isinstance(instance, limp::LabelStatement)
-
-@given(instance=limp::LabelStatement_strategy)
-def test_limp::labelstatement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_limp_labelstatement_instantiation(instance):
+    assert isinstance(instance, limp_LabelStatement)
 
 
-@given(instance=limp::LabelStatement_strategy)
-def test_limp::labelstatement_name_setter(instance):
+
+@given(instance=limp_LabelStatement_strategy)
+def test_limp_labelstatement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::ForStatement_strategy)
+@given(instance=limp_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_limp::forstatement_instantiation(instance):
-    assert isinstance(instance, limp::ForStatement)
+def test_limp_returnstatement_instantiation(instance):
+    assert isinstance(instance, limp_ReturnStatement)
 
-@given(instance=limp::ContinueStatement_strategy)
+@given(instance=limp_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_limp::continuestatement_instantiation(instance):
-    assert isinstance(instance, limp::ContinueStatement)
+def test_limp_continuestatement_instantiation(instance):
+    assert isinstance(instance, limp_ContinueStatement)
 
-@given(instance=limp::BreakStatement_strategy)
+@given(instance=limp_IfThenElseStatement_strategy)
 @settings(max_examples=50)
-def test_limp::breakstatement_instantiation(instance):
-    assert isinstance(instance, limp::BreakStatement)
+def test_limp_ifthenelsestatement_instantiation(instance):
+    assert isinstance(instance, limp_IfThenElseStatement)
 
-@given(instance=limp::VoidStatement_strategy)
+@given(instance=limp_ForStatement_strategy)
 @settings(max_examples=50)
-def test_limp::voidstatement_instantiation(instance):
-    assert isinstance(instance, limp::VoidStatement)
+def test_limp_forstatement_instantiation(instance):
+    assert isinstance(instance, limp_ForStatement)
 
-@given(instance=limp::Statement_strategy)
+@given(instance=limp_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_limp::statement_instantiation(instance):
-    assert isinstance(instance, limp::Statement)
+def test_limp_breakstatement_instantiation(instance):
+    assert isinstance(instance, limp_BreakStatement)
 
-@given(instance=limp::DefineUseRef_strategy)
+@given(instance=limp_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_limp::defineuseref_instantiation(instance):
-    assert isinstance(instance, limp::DefineUseRef)
+def test_limp_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, limp_AssignmentStatement)
 
-@given(instance=limp::WhileStatement_strategy)
+@given(instance=limp_GotoStatement_strategy)
 @settings(max_examples=50)
-def test_limp::whilestatement_instantiation(instance):
-    assert isinstance(instance, limp::WhileStatement)
+def test_limp_gotostatement_instantiation(instance):
+    assert isinstance(instance, limp_GotoStatement)
 
-@given(instance=limp::Else_strategy)
+@given(instance=limp_VoidStatement_strategy)
 @settings(max_examples=50)
-def test_limp::else_instantiation(instance):
-    assert isinstance(instance, limp::Else)
+def test_limp_voidstatement_instantiation(instance):
+    assert isinstance(instance, limp_VoidStatement)
 
-@given(instance=limp::VariableRef_strategy)
+@given(instance=limp_Statement_strategy)
 @settings(max_examples=50)
-def test_limp::variableref_instantiation(instance):
-    assert isinstance(instance, limp::VariableRef)
+def test_limp_statement_instantiation(instance):
+    assert isinstance(instance, limp_Statement)
 
-@given(instance=limp::VariableRef_strategy)
-def test_limp::variableref_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=limp_DefineUseRef_strategy)
+@settings(max_examples=50)
+def test_limp_defineuseref_instantiation(instance):
+    assert isinstance(instance, limp_DefineUseRef)
+
+@given(instance=limp_WhileStatement_strategy)
+@settings(max_examples=50)
+def test_limp_whilestatement_instantiation(instance):
+    assert isinstance(instance, limp_WhileStatement)
+
+@given(instance=limp_Else_strategy)
+@settings(max_examples=50)
+def test_limp_else_instantiation(instance):
+    assert isinstance(instance, limp_Else)
+
+@given(instance=limp_VariableRef_strategy)
+@settings(max_examples=50)
+def test_limp_variableref_instantiation(instance):
+    assert isinstance(instance, limp_VariableRef)
 
 
-@given(instance=limp::VariableRef_strategy)
-def test_limp::variableref_name_setter(instance):
+
+@given(instance=limp_VariableRef_strategy)
+def test_limp_variableref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::Expr_strategy)
+@given(instance=limp_Expr_strategy)
 @settings(max_examples=50)
-def test_limp::expr_instantiation(instance):
-    assert isinstance(instance, limp::Expr)
+def test_limp_expr_instantiation(instance):
+    assert isinstance(instance, limp_Expr)
 
 @given(instance=Attribute_strategy)
 @settings(max_examples=50)
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=limp::Uses_strategy)
+@given(instance=limp_Uses_strategy)
 @settings(max_examples=50)
-def test_limp::uses_instantiation(instance):
-    assert isinstance(instance, limp::Uses)
+def test_limp_uses_instantiation(instance):
+    assert isinstance(instance, limp_Uses)
 
-@given(instance=limp::Define_strategy)
+@given(instance=limp_Define_strategy)
 @settings(max_examples=50)
-def test_limp::define_instantiation(instance):
-    assert isinstance(instance, limp::Define)
+def test_limp_define_instantiation(instance):
+    assert isinstance(instance, limp_Define)
 
-@given(instance=limp::Postcondition_strategy)
+@given(instance=limp_Postcondition_strategy)
 @settings(max_examples=50)
-def test_limp::postcondition_instantiation(instance):
-    assert isinstance(instance, limp::Postcondition)
-
-@given(instance=limp::Postcondition_strategy)
-def test_limp::postcondition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_limp_postcondition_instantiation(instance):
+    assert isinstance(instance, limp_Postcondition)
 
 
-@given(instance=limp::Postcondition_strategy)
-def test_limp::postcondition_name_setter(instance):
+
+@given(instance=limp_Postcondition_strategy)
+def test_limp_postcondition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::Precondition_strategy)
+@given(instance=limp_Precondition_strategy)
 @settings(max_examples=50)
-def test_limp::precondition_instantiation(instance):
-    assert isinstance(instance, limp::Precondition)
-
-@given(instance=limp::Precondition_strategy)
-def test_limp::precondition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_limp_precondition_instantiation(instance):
+    assert isinstance(instance, limp_Precondition)
 
 
-@given(instance=limp::Precondition_strategy)
-def test_limp::precondition_name_setter(instance):
+
+@given(instance=limp_Precondition_strategy)
+def test_limp_precondition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::Attribute_strategy)
+@given(instance=limp_Attribute_strategy)
 @settings(max_examples=50)
-def test_limp::attribute_instantiation(instance):
-    assert isinstance(instance, limp::Attribute)
+def test_limp_attribute_instantiation(instance):
+    assert isinstance(instance, limp_Attribute)
 
-@given(instance=limp::RecordFieldType_strategy)
+@given(instance=limp_RecordFieldType_strategy)
 @settings(max_examples=50)
-def test_limp::recordfieldtype_instantiation(instance):
-    assert isinstance(instance, limp::RecordFieldType)
-
-@given(instance=limp::RecordFieldType_strategy)
-def test_limp::recordfieldtype_fieldName_type(instance):
-    assert isinstance(instance.fieldName, str)
+def test_limp_recordfieldtype_instantiation(instance):
+    assert isinstance(instance, limp_RecordFieldType)
 
 
-@given(instance=limp::RecordFieldType_strategy)
-def test_limp::recordfieldtype_fieldName_setter(instance):
+
+@given(instance=limp_RecordFieldType_strategy)
+def test_limp_recordfieldtype_fieldName_setter(instance):
     original = instance.fieldName
     instance.fieldName = original
     assert instance.fieldName == original
@@ -2685,96 +2643,93 @@ def test_limp::recordfieldtype_fieldName_setter(instance):
 def test_variableref_instantiation(instance):
     assert isinstance(instance, VariableRef)
 
-@given(instance=limp::LocalArg_strategy)
+@given(instance=limp_LocalArg_strategy)
 @settings(max_examples=50)
-def test_limp::localarg_instantiation(instance):
-    assert isinstance(instance, limp::LocalArg)
+def test_limp_localarg_instantiation(instance):
+    assert isinstance(instance, limp_LocalArg)
 
-@given(instance=limp::InputArg_strategy)
+@given(instance=limp_InputArg_strategy)
 @settings(max_examples=50)
-def test_limp::inputarg_instantiation(instance):
-    assert isinstance(instance, limp::InputArg)
+def test_limp_inputarg_instantiation(instance):
+    assert isinstance(instance, limp_InputArg)
 
-@given(instance=limp::EnumValue_strategy)
+@given(instance=limp_EnumValue_strategy)
 @settings(max_examples=50)
-def test_limp::enumvalue_instantiation(instance):
-    assert isinstance(instance, limp::EnumValue)
+def test_limp_enumvalue_instantiation(instance):
+    assert isinstance(instance, limp_EnumValue)
 
 @given(instance=TypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_typedeclaration_instantiation(instance):
     assert isinstance(instance, TypeDeclaration)
 
-@given(instance=limp::TypeAlias_strategy)
+@given(instance=limp_TypeAlias_strategy)
 @settings(max_examples=50)
-def test_limp::typealias_instantiation(instance):
-    assert isinstance(instance, limp::TypeAlias)
+def test_limp_typealias_instantiation(instance):
+    assert isinstance(instance, limp_TypeAlias)
 
-@given(instance=limp::RecordTypeDef_strategy)
+@given(instance=limp_RecordTypeDef_strategy)
 @settings(max_examples=50)
-def test_limp::recordtypedef_instantiation(instance):
-    assert isinstance(instance, limp::RecordTypeDef)
+def test_limp_recordtypedef_instantiation(instance):
+    assert isinstance(instance, limp_RecordTypeDef)
 
-@given(instance=limp::EnumTypeDef_strategy)
+@given(instance=limp_EnumTypeDef_strategy)
 @settings(max_examples=50)
-def test_limp::enumtypedef_instantiation(instance):
-    assert isinstance(instance, limp::EnumTypeDef)
+def test_limp_enumtypedef_instantiation(instance):
+    assert isinstance(instance, limp_EnumTypeDef)
 
-@given(instance=limp::StatementBlock_strategy)
+@given(instance=limp_StatementBlock_strategy)
 @settings(max_examples=50)
-def test_limp::statementblock_instantiation(instance):
-    assert isinstance(instance, limp::StatementBlock)
+def test_limp_statementblock_instantiation(instance):
+    assert isinstance(instance, limp_StatementBlock)
 
-@given(instance=limp::EquationBlock_strategy)
+@given(instance=limp_EquationBlock_strategy)
 @settings(max_examples=50)
-def test_limp::equationblock_instantiation(instance):
-    assert isinstance(instance, limp::EquationBlock)
+def test_limp_equationblock_instantiation(instance):
+    assert isinstance(instance, limp_EquationBlock)
 
-@given(instance=limp::AbstractTypeDef_strategy)
+@given(instance=limp_AbstractTypeDef_strategy)
 @settings(max_examples=50)
-def test_limp::abstracttypedef_instantiation(instance):
-    assert isinstance(instance, limp::AbstractTypeDef)
+def test_limp_abstracttypedef_instantiation(instance):
+    assert isinstance(instance, limp_AbstractTypeDef)
 
-@given(instance=limp::Type_strategy)
+@given(instance=limp_Type_strategy)
 @settings(max_examples=50)
-def test_limp::type_instantiation(instance):
-    assert isinstance(instance, limp::Type)
+def test_limp_type_instantiation(instance):
+    assert isinstance(instance, limp_Type)
 
-@given(instance=limp::ArrayTypeDef_strategy)
+@given(instance=limp_ArrayTypeDef_strategy)
 @settings(max_examples=50)
-def test_limp::arraytypedef_instantiation(instance):
-    assert isinstance(instance, limp::ArrayTypeDef)
-
-@given(instance=limp::ArrayTypeDef_strategy)
-def test_limp::arraytypedef_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_limp_arraytypedef_instantiation(instance):
+    assert isinstance(instance, limp_ArrayTypeDef)
 
 
-@given(instance=limp::ArrayTypeDef_strategy)
-def test_limp::arraytypedef_size_setter(instance):
+
+@given(instance=limp_ArrayTypeDef_strategy)
+def test_limp_arraytypedef_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=limp::AttributeBlock_strategy)
+@given(instance=limp_AttributeBlock_strategy)
 @settings(max_examples=50)
-def test_limp::attributeblock_instantiation(instance):
-    assert isinstance(instance, limp::AttributeBlock)
+def test_limp_attributeblock_instantiation(instance):
+    assert isinstance(instance, limp_AttributeBlock)
 
-@given(instance=limp::OutputArgList_strategy)
+@given(instance=limp_OutputArgList_strategy)
 @settings(max_examples=50)
-def test_limp::outputarglist_instantiation(instance):
-    assert isinstance(instance, limp::OutputArgList)
+def test_limp_outputarglist_instantiation(instance):
+    assert isinstance(instance, limp_OutputArgList)
 
-@given(instance=limp::OutputArg_strategy)
+@given(instance=limp_OutputArg_strategy)
 @settings(max_examples=50)
-def test_limp::outputarg_instantiation(instance):
-    assert isinstance(instance, limp::OutputArg)
+def test_limp_outputarg_instantiation(instance):
+    assert isinstance(instance, limp_OutputArg)
 
-@given(instance=limp::InputArgList_strategy)
+@given(instance=limp_InputArgList_strategy)
 @settings(max_examples=50)
-def test_limp::inputarglist_instantiation(instance):
-    assert isinstance(instance, limp::InputArgList)
+def test_limp_inputarglist_instantiation(instance):
+    assert isinstance(instance, limp_InputArgList)
 
 @given(instance=FunctionRef_strategy)
 @settings(max_examples=50)
@@ -2786,139 +2741,118 @@ def test_functionref_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=limp::ExternalProcedure_strategy)
+@given(instance=limp_LocalProcedure_strategy)
 @settings(max_examples=50)
-def test_limp::externalprocedure_instantiation(instance):
-    assert isinstance(instance, limp::ExternalProcedure)
-
-@given(instance=limp::ExternalProcedure_strategy)
-def test_limp::externalprocedure_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_limp_localprocedure_instantiation(instance):
+    assert isinstance(instance, limp_LocalProcedure)
 
 
-@given(instance=limp::ExternalProcedure_strategy)
-def test_limp::externalprocedure_name_setter(instance):
+
+@given(instance=limp_LocalProcedure_strategy)
+def test_limp_localprocedure_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::LocalProcedure_strategy)
+@given(instance=limp_ConstantDeclaration_strategy)
 @settings(max_examples=50)
-def test_limp::localprocedure_instantiation(instance):
-    assert isinstance(instance, limp::LocalProcedure)
+def test_limp_constantdeclaration_instantiation(instance):
+    assert isinstance(instance, limp_ConstantDeclaration)
 
-@given(instance=limp::LocalProcedure_strategy)
-def test_limp::localprocedure_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=limp_ExternalFunction_strategy)
+@settings(max_examples=50)
+def test_limp_externalfunction_instantiation(instance):
+    assert isinstance(instance, limp_ExternalFunction)
 
 
-@given(instance=limp::LocalProcedure_strategy)
-def test_limp::localprocedure_name_setter(instance):
+
+@given(instance=limp_ExternalFunction_strategy)
+def test_limp_externalfunction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::TypeDeclaration_strategy)
+@given(instance=limp_GlobalDeclaration_strategy)
 @settings(max_examples=50)
-def test_limp::typedeclaration_instantiation(instance):
-    assert isinstance(instance, limp::TypeDeclaration)
+def test_limp_globaldeclaration_instantiation(instance):
+    assert isinstance(instance, limp_GlobalDeclaration)
 
-@given(instance=limp::TypeDeclaration_strategy)
-def test_limp::typedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=limp_ExternalProcedure_strategy)
+@settings(max_examples=50)
+def test_limp_externalprocedure_instantiation(instance):
+    assert isinstance(instance, limp_ExternalProcedure)
 
 
-@given(instance=limp::TypeDeclaration_strategy)
-def test_limp::typedeclaration_name_setter(instance):
+
+@given(instance=limp_ExternalProcedure_strategy)
+def test_limp_externalprocedure_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=limp::Import_strategy)
+@given(instance=limp_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_limp::import_instantiation(instance):
-    assert isinstance(instance, limp::Import)
-
-@given(instance=limp::Import_strategy)
-def test_limp::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_limp_typedeclaration_instantiation(instance):
+    assert isinstance(instance, limp_TypeDeclaration)
 
 
-@given(instance=limp::Import_strategy)
-def test_limp::import_importURI_setter(instance):
+
+@given(instance=limp_TypeDeclaration_strategy)
+def test_limp_typedeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=limp_Import_strategy)
+@settings(max_examples=50)
+def test_limp_import_instantiation(instance):
+    assert isinstance(instance, limp_Import)
+
+
+
+@given(instance=limp_Import_strategy)
+def test_limp_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=limp::ExternalFunction_strategy)
+@given(instance=limp_Comment_strategy)
 @settings(max_examples=50)
-def test_limp::externalfunction_instantiation(instance):
-    assert isinstance(instance, limp::ExternalFunction)
-
-@given(instance=limp::ExternalFunction_strategy)
-def test_limp::externalfunction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_limp_comment_instantiation(instance):
+    assert isinstance(instance, limp_Comment)
 
 
-@given(instance=limp::ExternalFunction_strategy)
-def test_limp::externalfunction_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=limp::ConstantDeclaration_strategy)
-@settings(max_examples=50)
-def test_limp::constantdeclaration_instantiation(instance):
-    assert isinstance(instance, limp::ConstantDeclaration)
-
-@given(instance=limp::GlobalDeclaration_strategy)
-@settings(max_examples=50)
-def test_limp::globaldeclaration_instantiation(instance):
-    assert isinstance(instance, limp::GlobalDeclaration)
-
-@given(instance=limp::Comment_strategy)
-@settings(max_examples=50)
-def test_limp::comment_instantiation(instance):
-    assert isinstance(instance, limp::Comment)
-
-@given(instance=limp::Comment_strategy)
-def test_limp::comment_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=limp::Comment_strategy)
-def test_limp::comment_comment_setter(instance):
+@given(instance=limp_Comment_strategy)
+def test_limp_comment_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=limp::Declaration_strategy)
+@given(instance=limp_Declaration_strategy)
 @settings(max_examples=50)
-def test_limp::declaration_instantiation(instance):
-    assert isinstance(instance, limp::Declaration)
+def test_limp_declaration_instantiation(instance):
+    assert isinstance(instance, limp_Declaration)
 
-@given(instance=limp::Specification_strategy)
+@given(instance=limp_Specification_strategy)
 @settings(max_examples=50)
-def test_limp::specification_instantiation(instance):
-    assert isinstance(instance, limp::Specification)
+def test_limp_specification_instantiation(instance):
+    assert isinstance(instance, limp_Specification)
 
-@given(instance=limp::VarBlock_strategy)
+@given(instance=limp_VarBlock_strategy)
 @settings(max_examples=50)
-def test_limp::varblock_instantiation(instance):
-    assert isinstance(instance, limp::VarBlock)
+def test_limp_varblock_instantiation(instance):
+    assert isinstance(instance, limp_VarBlock)
 
-@given(instance=limp::LocalFunction_strategy)
+@given(instance=limp_LocalFunction_strategy)
 @settings(max_examples=50)
-def test_limp::localfunction_instantiation(instance):
-    assert isinstance(instance, limp::LocalFunction)
-
-@given(instance=limp::LocalFunction_strategy)
-def test_limp::localfunction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_limp_localfunction_instantiation(instance):
+    assert isinstance(instance, limp_LocalFunction)
 
 
-@given(instance=limp::LocalFunction_strategy)
-def test_limp::localfunction_name_setter(instance):
+
+@given(instance=limp_LocalFunction_strategy)
+def test_limp_localfunction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

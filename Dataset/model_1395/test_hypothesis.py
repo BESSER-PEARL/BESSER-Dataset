@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractState,
-    model::State,
-    model::Transition,
-    model::FiniteStateMachine,
-    model::AbstractState,
+    model_State,
+    model_Transition,
+    model_FiniteStateMachine,
+    model_AbstractState,
 )
 
 # =============================================================================
@@ -33,85 +33,85 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_model::state_is_not_abstract():
-    assert not inspect.isabstract(model::State)
+def test_model_state_is_not_abstract():
+    assert not inspect.isabstract(model_State)
 
 
-def test_model::state_constructor_exists():
-    assert callable(model::State.__init__)
+def test_model_state_constructor_exists():
+    assert callable(model_State.__init__)
 
 
-def test_model::state_constructor_args():
-    sig = inspect.signature(model::State.__init__)
+def test_model_state_constructor_args():
+    sig = inspect.signature(model_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::transition_is_not_abstract():
-    assert not inspect.isabstract(model::Transition)
+def test_model_transition_is_not_abstract():
+    assert not inspect.isabstract(model_Transition)
 
 
-def test_model::transition_constructor_exists():
-    assert callable(model::Transition.__init__)
+def test_model_transition_constructor_exists():
+    assert callable(model_Transition.__init__)
 
 
-def test_model::transition_constructor_args():
-    sig = inspect.signature(model::Transition.__init__)
+def test_model_transition_constructor_args():
+    sig = inspect.signature(model_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "trigger" in params, "Missing parameter 'trigger'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "trigger" in params, "Missing parameter 'trigger'"
 
-def test_model::transition_has_trigger():
-    assert hasattr(model::Transition, "trigger")
+def test_model_transition_has_name():
+    assert hasattr(model_Transition, "name")
     descriptor = None
-    for klass in model::Transition.__mro__:
-        if "trigger" in klass.__dict__:
-            descriptor = klass.__dict__["trigger"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::transition_has_name():
-    assert hasattr(model::Transition, "name")
-    descriptor = None
-    for klass in model::Transition.__mro__:
+    for klass in model_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_transition_has_trigger():
+    assert hasattr(model_Transition, "trigger")
+    descriptor = None
+    for klass in model_Transition.__mro__:
+        if "trigger" in klass.__dict__:
+            descriptor = klass.__dict__["trigger"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::finitestatemachine_is_not_abstract():
-    assert not inspect.isabstract(model::FiniteStateMachine)
+
+def test_model_finitestatemachine_is_not_abstract():
+    assert not inspect.isabstract(model_FiniteStateMachine)
 
 
-def test_model::finitestatemachine_constructor_exists():
-    assert callable(model::FiniteStateMachine.__init__)
+def test_model_finitestatemachine_constructor_exists():
+    assert callable(model_FiniteStateMachine.__init__)
 
 
-def test_model::finitestatemachine_constructor_args():
-    sig = inspect.signature(model::FiniteStateMachine.__init__)
+def test_model_finitestatemachine_constructor_args():
+    sig = inspect.signature(model_FiniteStateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractState)
+def test_model_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractState)
 
 
-def test_model::abstractstate_constructor_exists():
-    assert callable(model::AbstractState.__init__)
+def test_model_abstractstate_constructor_exists():
+    assert callable(model_AbstractState.__init__)
 
 
-def test_model::abstractstate_constructor_args():
-    sig = inspect.signature(model::AbstractState.__init__)
+def test_model_abstractstate_constructor_args():
+    sig = inspect.signature(model_AbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::abstractstate_has_name():
-    assert hasattr(model::AbstractState, "name")
+def test_model_abstractstate_has_name():
+    assert hasattr(model_AbstractState, "name")
     descriptor = None
-    for klass in model::AbstractState.__mro__:
+    for klass in model_AbstractState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,21 +132,21 @@ safe_text = st.text(
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-model::State_strategy = st.builds(
-    model::State,
+model_State_strategy = st.builds(
+    model_State,
 )
-model::Transition_strategy = st.builds(
-    model::Transition,
-    trigger=
-        safe_text,
+model_Transition_strategy = st.builds(
+    model_Transition,
     name=
+        safe_text,
+    trigger=
         safe_text
 )
-model::FiniteStateMachine_strategy = st.builds(
-    model::FiniteStateMachine,
+model_FiniteStateMachine_strategy = st.builds(
+    model_FiniteStateMachine,
 )
-model::AbstractState_strategy = st.builds(
-    model::AbstractState,
+model_AbstractState_strategy = st.builds(
+    model_AbstractState,
     name=
         safe_text
 )
@@ -156,55 +156,46 @@ model::AbstractState_strategy = st.builds(
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=model::State_strategy)
+@given(instance=model_State_strategy)
 @settings(max_examples=50)
-def test_model::state_instantiation(instance):
-    assert isinstance(instance, model::State)
+def test_model_state_instantiation(instance):
+    assert isinstance(instance, model_State)
 
-@given(instance=model::Transition_strategy)
+@given(instance=model_Transition_strategy)
 @settings(max_examples=50)
-def test_model::transition_instantiation(instance):
-    assert isinstance(instance, model::Transition)
-
-@given(instance=model::Transition_strategy)
-def test_model::transition_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
+def test_model_transition_instantiation(instance):
+    assert isinstance(instance, model_Transition)
 
 
-@given(instance=model::Transition_strategy)
-def test_model::transition_trigger_setter(instance):
-    original = instance.trigger
-    instance.trigger = original
-    assert instance.trigger == original
 
-@given(instance=model::Transition_strategy)
-def test_model::transition_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::Transition_strategy)
-def test_model::transition_name_setter(instance):
+@given(instance=model_Transition_strategy)
+def test_model_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::FiniteStateMachine_strategy)
+
+
+@given(instance=model_Transition_strategy)
+def test_model_transition_trigger_setter(instance):
+    original = instance.trigger
+    instance.trigger = original
+    assert instance.trigger == original
+
+@given(instance=model_FiniteStateMachine_strategy)
 @settings(max_examples=50)
-def test_model::finitestatemachine_instantiation(instance):
-    assert isinstance(instance, model::FiniteStateMachine)
+def test_model_finitestatemachine_instantiation(instance):
+    assert isinstance(instance, model_FiniteStateMachine)
 
-@given(instance=model::AbstractState_strategy)
+@given(instance=model_AbstractState_strategy)
 @settings(max_examples=50)
-def test_model::abstractstate_instantiation(instance):
-    assert isinstance(instance, model::AbstractState)
-
-@given(instance=model::AbstractState_strategy)
-def test_model::abstractstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_abstractstate_instantiation(instance):
+    assert isinstance(instance, model_AbstractState)
 
 
-@given(instance=model::AbstractState_strategy)
-def test_model::abstractstate_name_setter(instance):
+
+@given(instance=model_AbstractState_strategy)
+def test_model_abstractstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

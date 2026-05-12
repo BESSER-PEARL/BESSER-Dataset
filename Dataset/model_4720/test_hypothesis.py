@@ -3,39 +3,39 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rule::CellularAutomata,
+from python_code import (
+    rule_CellularAutomata,
     UnaryExpression,
-    rule::UMinus,
-    rule::Not,
+    rule_UMinus,
+    rule_Not,
     IntegerExpression,
-    rule::CurrentCellPopulation,
-    rule::NeighborsExpression,
-    rule::IntegerLiteral,
-    rule::Conditional,
-    rule::BinaryExpression,
-    rule::UnaryExpression,
+    rule_NeighborsExpression,
+    rule_CurrentCellPopulation,
+    rule_Conditional,
+    rule_BinaryExpression,
+    rule_IntegerLiteral,
+    rule_UnaryExpression,
     BinaryExpression,
-    rule::Div,
-    rule::Lower,
-    rule::Equal,
-    rule::Mult,
-    rule::And,
-    rule::Greater,
-    rule::Or,
-    rule::Mod,
-    rule::Minus,
-    rule::Add,
+    rule_Minus,
+    rule_Lower,
+    rule_Div,
+    rule_Or,
+    rule_And,
+    rule_Mult,
+    rule_Greater,
+    rule_Equal,
+    rule_Mod,
+    rule_Add,
     NeighborsExpression,
-    rule::Min,
-    rule::Size,
-    rule::Sum,
-    rule::Max,
-    rule::PopulationRange,
-    rule::IntegerExpression,
-    rule::Rule,
+    rule_Sum,
+    rule_Size,
+    rule_Min,
+    rule_Max,
+    rule_PopulationRange,
+    rule_IntegerExpression,
+    rule_Rule,
 )
 
 # =============================================================================
@@ -44,16 +44,16 @@ from classes import (
 
 
 
-def test_rule::cellularautomata_is_not_abstract():
-    assert not inspect.isabstract(rule::CellularAutomata)
+def test_rule_cellularautomata_is_not_abstract():
+    assert not inspect.isabstract(rule_CellularAutomata)
 
 
-def test_rule::cellularautomata_constructor_exists():
-    assert callable(rule::CellularAutomata.__init__)
+def test_rule_cellularautomata_constructor_exists():
+    assert callable(rule_CellularAutomata.__init__)
 
 
-def test_rule::cellularautomata_constructor_args():
-    sig = inspect.signature(rule::CellularAutomata.__init__)
+def test_rule_cellularautomata_constructor_args():
+    sig = inspect.signature(rule_CellularAutomata.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -72,30 +72,30 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_rule::uminus_is_not_abstract():
-    assert not inspect.isabstract(rule::UMinus)
+def test_rule_uminus_is_not_abstract():
+    assert not inspect.isabstract(rule_UMinus)
 
 
-def test_rule::uminus_constructor_exists():
-    assert callable(rule::UMinus.__init__)
+def test_rule_uminus_constructor_exists():
+    assert callable(rule_UMinus.__init__)
 
 
-def test_rule::uminus_constructor_args():
-    sig = inspect.signature(rule::UMinus.__init__)
+def test_rule_uminus_constructor_args():
+    sig = inspect.signature(rule_UMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::not_is_not_abstract():
-    assert not inspect.isabstract(rule::Not)
+def test_rule_not_is_not_abstract():
+    assert not inspect.isabstract(rule_Not)
 
 
-def test_rule::not_constructor_exists():
-    assert callable(rule::Not.__init__)
+def test_rule_not_constructor_exists():
+    assert callable(rule_Not.__init__)
 
 
-def test_rule::not_constructor_args():
-    sig = inspect.signature(rule::Not.__init__)
+def test_rule_not_constructor_args():
+    sig = inspect.signature(rule_Not.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,51 +114,79 @@ def test_integerexpression_constructor_args():
 
 
 
-def test_rule::currentcellpopulation_is_not_abstract():
-    assert not inspect.isabstract(rule::CurrentCellPopulation)
+def test_rule_neighborsexpression_is_not_abstract():
+    assert not inspect.isabstract(rule_NeighborsExpression)
 
 
-def test_rule::currentcellpopulation_constructor_exists():
-    assert callable(rule::CurrentCellPopulation.__init__)
+def test_rule_neighborsexpression_constructor_exists():
+    assert callable(rule_NeighborsExpression.__init__)
 
 
-def test_rule::currentcellpopulation_constructor_args():
-    sig = inspect.signature(rule::CurrentCellPopulation.__init__)
+def test_rule_neighborsexpression_constructor_args():
+    sig = inspect.signature(rule_NeighborsExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::neighborsexpression_is_not_abstract():
-    assert not inspect.isabstract(rule::NeighborsExpression)
+def test_rule_currentcellpopulation_is_not_abstract():
+    assert not inspect.isabstract(rule_CurrentCellPopulation)
 
 
-def test_rule::neighborsexpression_constructor_exists():
-    assert callable(rule::NeighborsExpression.__init__)
+def test_rule_currentcellpopulation_constructor_exists():
+    assert callable(rule_CurrentCellPopulation.__init__)
 
 
-def test_rule::neighborsexpression_constructor_args():
-    sig = inspect.signature(rule::NeighborsExpression.__init__)
+def test_rule_currentcellpopulation_constructor_args():
+    sig = inspect.signature(rule_CurrentCellPopulation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(rule::IntegerLiteral)
+def test_rule_conditional_is_not_abstract():
+    assert not inspect.isabstract(rule_Conditional)
 
 
-def test_rule::integerliteral_constructor_exists():
-    assert callable(rule::IntegerLiteral.__init__)
+def test_rule_conditional_constructor_exists():
+    assert callable(rule_Conditional.__init__)
 
 
-def test_rule::integerliteral_constructor_args():
-    sig = inspect.signature(rule::IntegerLiteral.__init__)
+def test_rule_conditional_constructor_args():
+    sig = inspect.signature(rule_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rule_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(rule_BinaryExpression)
+
+
+def test_rule_binaryexpression_constructor_exists():
+    assert callable(rule_BinaryExpression.__init__)
+
+
+def test_rule_binaryexpression_constructor_args():
+    sig = inspect.signature(rule_BinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rule_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(rule_IntegerLiteral)
+
+
+def test_rule_integerliteral_constructor_exists():
+    assert callable(rule_IntegerLiteral.__init__)
+
+
+def test_rule_integerliteral_constructor_args():
+    sig = inspect.signature(rule_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_rule::integerliteral_has_val():
-    assert hasattr(rule::IntegerLiteral, "val")
+def test_rule_integerliteral_has_val():
+    assert hasattr(rule_IntegerLiteral, "val")
     descriptor = None
-    for klass in rule::IntegerLiteral.__mro__:
+    for klass in rule_IntegerLiteral.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -166,44 +194,16 @@ def test_rule::integerliteral_has_val():
 
 
 
-def test_rule::conditional_is_not_abstract():
-    assert not inspect.isabstract(rule::Conditional)
+def test_rule_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(rule_UnaryExpression)
 
 
-def test_rule::conditional_constructor_exists():
-    assert callable(rule::Conditional.__init__)
+def test_rule_unaryexpression_constructor_exists():
+    assert callable(rule_UnaryExpression.__init__)
 
 
-def test_rule::conditional_constructor_args():
-    sig = inspect.signature(rule::Conditional.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rule::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(rule::BinaryExpression)
-
-
-def test_rule::binaryexpression_constructor_exists():
-    assert callable(rule::BinaryExpression.__init__)
-
-
-def test_rule::binaryexpression_constructor_args():
-    sig = inspect.signature(rule::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rule::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(rule::UnaryExpression)
-
-
-def test_rule::unaryexpression_constructor_exists():
-    assert callable(rule::UnaryExpression.__init__)
-
-
-def test_rule::unaryexpression_constructor_args():
-    sig = inspect.signature(rule::UnaryExpression.__init__)
+def test_rule_unaryexpression_constructor_args():
+    sig = inspect.signature(rule_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -222,142 +222,142 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_rule::div_is_not_abstract():
-    assert not inspect.isabstract(rule::Div)
+def test_rule_minus_is_not_abstract():
+    assert not inspect.isabstract(rule_Minus)
 
 
-def test_rule::div_constructor_exists():
-    assert callable(rule::Div.__init__)
+def test_rule_minus_constructor_exists():
+    assert callable(rule_Minus.__init__)
 
 
-def test_rule::div_constructor_args():
-    sig = inspect.signature(rule::Div.__init__)
+def test_rule_minus_constructor_args():
+    sig = inspect.signature(rule_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::lower_is_not_abstract():
-    assert not inspect.isabstract(rule::Lower)
+def test_rule_lower_is_not_abstract():
+    assert not inspect.isabstract(rule_Lower)
 
 
-def test_rule::lower_constructor_exists():
-    assert callable(rule::Lower.__init__)
+def test_rule_lower_constructor_exists():
+    assert callable(rule_Lower.__init__)
 
 
-def test_rule::lower_constructor_args():
-    sig = inspect.signature(rule::Lower.__init__)
+def test_rule_lower_constructor_args():
+    sig = inspect.signature(rule_Lower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::equal_is_not_abstract():
-    assert not inspect.isabstract(rule::Equal)
+def test_rule_div_is_not_abstract():
+    assert not inspect.isabstract(rule_Div)
 
 
-def test_rule::equal_constructor_exists():
-    assert callable(rule::Equal.__init__)
+def test_rule_div_constructor_exists():
+    assert callable(rule_Div.__init__)
 
 
-def test_rule::equal_constructor_args():
-    sig = inspect.signature(rule::Equal.__init__)
+def test_rule_div_constructor_args():
+    sig = inspect.signature(rule_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::mult_is_not_abstract():
-    assert not inspect.isabstract(rule::Mult)
+def test_rule_or_is_not_abstract():
+    assert not inspect.isabstract(rule_Or)
 
 
-def test_rule::mult_constructor_exists():
-    assert callable(rule::Mult.__init__)
+def test_rule_or_constructor_exists():
+    assert callable(rule_Or.__init__)
 
 
-def test_rule::mult_constructor_args():
-    sig = inspect.signature(rule::Mult.__init__)
+def test_rule_or_constructor_args():
+    sig = inspect.signature(rule_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::and_is_not_abstract():
-    assert not inspect.isabstract(rule::And)
+def test_rule_and_is_not_abstract():
+    assert not inspect.isabstract(rule_And)
 
 
-def test_rule::and_constructor_exists():
-    assert callable(rule::And.__init__)
+def test_rule_and_constructor_exists():
+    assert callable(rule_And.__init__)
 
 
-def test_rule::and_constructor_args():
-    sig = inspect.signature(rule::And.__init__)
+def test_rule_and_constructor_args():
+    sig = inspect.signature(rule_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::greater_is_not_abstract():
-    assert not inspect.isabstract(rule::Greater)
+def test_rule_mult_is_not_abstract():
+    assert not inspect.isabstract(rule_Mult)
 
 
-def test_rule::greater_constructor_exists():
-    assert callable(rule::Greater.__init__)
+def test_rule_mult_constructor_exists():
+    assert callable(rule_Mult.__init__)
 
 
-def test_rule::greater_constructor_args():
-    sig = inspect.signature(rule::Greater.__init__)
+def test_rule_mult_constructor_args():
+    sig = inspect.signature(rule_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::or_is_not_abstract():
-    assert not inspect.isabstract(rule::Or)
+def test_rule_greater_is_not_abstract():
+    assert not inspect.isabstract(rule_Greater)
 
 
-def test_rule::or_constructor_exists():
-    assert callable(rule::Or.__init__)
+def test_rule_greater_constructor_exists():
+    assert callable(rule_Greater.__init__)
 
 
-def test_rule::or_constructor_args():
-    sig = inspect.signature(rule::Or.__init__)
+def test_rule_greater_constructor_args():
+    sig = inspect.signature(rule_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::mod_is_not_abstract():
-    assert not inspect.isabstract(rule::Mod)
+def test_rule_equal_is_not_abstract():
+    assert not inspect.isabstract(rule_Equal)
 
 
-def test_rule::mod_constructor_exists():
-    assert callable(rule::Mod.__init__)
+def test_rule_equal_constructor_exists():
+    assert callable(rule_Equal.__init__)
 
 
-def test_rule::mod_constructor_args():
-    sig = inspect.signature(rule::Mod.__init__)
+def test_rule_equal_constructor_args():
+    sig = inspect.signature(rule_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::minus_is_not_abstract():
-    assert not inspect.isabstract(rule::Minus)
+def test_rule_mod_is_not_abstract():
+    assert not inspect.isabstract(rule_Mod)
 
 
-def test_rule::minus_constructor_exists():
-    assert callable(rule::Minus.__init__)
+def test_rule_mod_constructor_exists():
+    assert callable(rule_Mod.__init__)
 
 
-def test_rule::minus_constructor_args():
-    sig = inspect.signature(rule::Minus.__init__)
+def test_rule_mod_constructor_args():
+    sig = inspect.signature(rule_Mod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::add_is_not_abstract():
-    assert not inspect.isabstract(rule::Add)
+def test_rule_add_is_not_abstract():
+    assert not inspect.isabstract(rule_Add)
 
 
-def test_rule::add_constructor_exists():
-    assert callable(rule::Add.__init__)
+def test_rule_add_constructor_exists():
+    assert callable(rule_Add.__init__)
 
 
-def test_rule::add_constructor_args():
-    sig = inspect.signature(rule::Add.__init__)
+def test_rule_add_constructor_args():
+    sig = inspect.signature(rule_Add.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -376,120 +376,120 @@ def test_neighborsexpression_constructor_args():
 
 
 
-def test_rule::min_is_not_abstract():
-    assert not inspect.isabstract(rule::Min)
+def test_rule_sum_is_not_abstract():
+    assert not inspect.isabstract(rule_Sum)
 
 
-def test_rule::min_constructor_exists():
-    assert callable(rule::Min.__init__)
+def test_rule_sum_constructor_exists():
+    assert callable(rule_Sum.__init__)
 
 
-def test_rule::min_constructor_args():
-    sig = inspect.signature(rule::Min.__init__)
+def test_rule_sum_constructor_args():
+    sig = inspect.signature(rule_Sum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::size_is_not_abstract():
-    assert not inspect.isabstract(rule::Size)
+def test_rule_size_is_not_abstract():
+    assert not inspect.isabstract(rule_Size)
 
 
-def test_rule::size_constructor_exists():
-    assert callable(rule::Size.__init__)
+def test_rule_size_constructor_exists():
+    assert callable(rule_Size.__init__)
 
 
-def test_rule::size_constructor_args():
-    sig = inspect.signature(rule::Size.__init__)
+def test_rule_size_constructor_args():
+    sig = inspect.signature(rule_Size.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::sum_is_not_abstract():
-    assert not inspect.isabstract(rule::Sum)
+def test_rule_min_is_not_abstract():
+    assert not inspect.isabstract(rule_Min)
 
 
-def test_rule::sum_constructor_exists():
-    assert callable(rule::Sum.__init__)
+def test_rule_min_constructor_exists():
+    assert callable(rule_Min.__init__)
 
 
-def test_rule::sum_constructor_args():
-    sig = inspect.signature(rule::Sum.__init__)
+def test_rule_min_constructor_args():
+    sig = inspect.signature(rule_Min.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::max_is_not_abstract():
-    assert not inspect.isabstract(rule::Max)
+def test_rule_max_is_not_abstract():
+    assert not inspect.isabstract(rule_Max)
 
 
-def test_rule::max_constructor_exists():
-    assert callable(rule::Max.__init__)
+def test_rule_max_constructor_exists():
+    assert callable(rule_Max.__init__)
 
 
-def test_rule::max_constructor_args():
-    sig = inspect.signature(rule::Max.__init__)
+def test_rule_max_constructor_args():
+    sig = inspect.signature(rule_Max.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::populationrange_is_not_abstract():
-    assert not inspect.isabstract(rule::PopulationRange)
+def test_rule_populationrange_is_not_abstract():
+    assert not inspect.isabstract(rule_PopulationRange)
 
 
-def test_rule::populationrange_constructor_exists():
-    assert callable(rule::PopulationRange.__init__)
+def test_rule_populationrange_constructor_exists():
+    assert callable(rule_PopulationRange.__init__)
 
 
-def test_rule::populationrange_constructor_args():
-    sig = inspect.signature(rule::PopulationRange.__init__)
+def test_rule_populationrange_constructor_args():
+    sig = inspect.signature(rule_PopulationRange.__init__)
     params = list(sig.parameters.keys())
-    assert "upperRange" in params, "Missing parameter 'upperRange'"
     assert "lowerRange" in params, "Missing parameter 'lowerRange'"
+    assert "upperRange" in params, "Missing parameter 'upperRange'"
 
-def test_rule::populationrange_has_upperRange():
-    assert hasattr(rule::PopulationRange, "upperRange")
+def test_rule_populationrange_has_lowerRange():
+    assert hasattr(rule_PopulationRange, "lowerRange")
     descriptor = None
-    for klass in rule::PopulationRange.__mro__:
-        if "upperRange" in klass.__dict__:
-            descriptor = klass.__dict__["upperRange"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rule::populationrange_has_lowerRange():
-    assert hasattr(rule::PopulationRange, "lowerRange")
-    descriptor = None
-    for klass in rule::PopulationRange.__mro__:
+    for klass in rule_PopulationRange.__mro__:
         if "lowerRange" in klass.__dict__:
             descriptor = klass.__dict__["lowerRange"]
             break
     assert isinstance(descriptor, property)
 
+def test_rule_populationrange_has_upperRange():
+    assert hasattr(rule_PopulationRange, "upperRange")
+    descriptor = None
+    for klass in rule_PopulationRange.__mro__:
+        if "upperRange" in klass.__dict__:
+            descriptor = klass.__dict__["upperRange"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rule::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(rule::IntegerExpression)
+
+def test_rule_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(rule_IntegerExpression)
 
 
-def test_rule::integerexpression_constructor_exists():
-    assert callable(rule::IntegerExpression.__init__)
+def test_rule_integerexpression_constructor_exists():
+    assert callable(rule_IntegerExpression.__init__)
 
 
-def test_rule::integerexpression_constructor_args():
-    sig = inspect.signature(rule::IntegerExpression.__init__)
+def test_rule_integerexpression_constructor_args():
+    sig = inspect.signature(rule_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rule::rule_is_not_abstract():
-    assert not inspect.isabstract(rule::Rule)
+def test_rule_rule_is_not_abstract():
+    assert not inspect.isabstract(rule_Rule)
 
 
-def test_rule::rule_constructor_exists():
-    assert callable(rule::Rule.__init__)
+def test_rule_rule_constructor_exists():
+    assert callable(rule_Rule.__init__)
 
 
-def test_rule::rule_constructor_args():
-    sig = inspect.signature(rule::Rule.__init__)
+def test_rule_rule_constructor_args():
+    sig = inspect.signature(rule_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -504,282 +504,273 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rule::CellularAutomata_strategy = st.builds(
-    rule::CellularAutomata,
+rule_CellularAutomata_strategy = st.builds(
+    rule_CellularAutomata,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-rule::UMinus_strategy = st.builds(
-    rule::UMinus,
+rule_UMinus_strategy = st.builds(
+    rule_UMinus,
 )
-rule::Not_strategy = st.builds(
-    rule::Not,
+rule_Not_strategy = st.builds(
+    rule_Not,
 )
 IntegerExpression_strategy = st.builds(
     IntegerExpression,
 )
-rule::CurrentCellPopulation_strategy = st.builds(
-    rule::CurrentCellPopulation,
+rule_NeighborsExpression_strategy = st.builds(
+    rule_NeighborsExpression,
 )
-rule::NeighborsExpression_strategy = st.builds(
-    rule::NeighborsExpression,
+rule_CurrentCellPopulation_strategy = st.builds(
+    rule_CurrentCellPopulation,
 )
-rule::IntegerLiteral_strategy = st.builds(
-    rule::IntegerLiteral,
+rule_Conditional_strategy = st.builds(
+    rule_Conditional,
+)
+rule_BinaryExpression_strategy = st.builds(
+    rule_BinaryExpression,
+)
+rule_IntegerLiteral_strategy = st.builds(
+    rule_IntegerLiteral,
     val=
         st.integers()
 )
-rule::Conditional_strategy = st.builds(
-    rule::Conditional,
-)
-rule::BinaryExpression_strategy = st.builds(
-    rule::BinaryExpression,
-)
-rule::UnaryExpression_strategy = st.builds(
-    rule::UnaryExpression,
+rule_UnaryExpression_strategy = st.builds(
+    rule_UnaryExpression,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-rule::Div_strategy = st.builds(
-    rule::Div,
+rule_Minus_strategy = st.builds(
+    rule_Minus,
 )
-rule::Lower_strategy = st.builds(
-    rule::Lower,
+rule_Lower_strategy = st.builds(
+    rule_Lower,
 )
-rule::Equal_strategy = st.builds(
-    rule::Equal,
+rule_Div_strategy = st.builds(
+    rule_Div,
 )
-rule::Mult_strategy = st.builds(
-    rule::Mult,
+rule_Or_strategy = st.builds(
+    rule_Or,
 )
-rule::And_strategy = st.builds(
-    rule::And,
+rule_And_strategy = st.builds(
+    rule_And,
 )
-rule::Greater_strategy = st.builds(
-    rule::Greater,
+rule_Mult_strategy = st.builds(
+    rule_Mult,
 )
-rule::Or_strategy = st.builds(
-    rule::Or,
+rule_Greater_strategy = st.builds(
+    rule_Greater,
 )
-rule::Mod_strategy = st.builds(
-    rule::Mod,
+rule_Equal_strategy = st.builds(
+    rule_Equal,
 )
-rule::Minus_strategy = st.builds(
-    rule::Minus,
+rule_Mod_strategy = st.builds(
+    rule_Mod,
 )
-rule::Add_strategy = st.builds(
-    rule::Add,
+rule_Add_strategy = st.builds(
+    rule_Add,
 )
 NeighborsExpression_strategy = st.builds(
     NeighborsExpression,
 )
-rule::Min_strategy = st.builds(
-    rule::Min,
+rule_Sum_strategy = st.builds(
+    rule_Sum,
 )
-rule::Size_strategy = st.builds(
-    rule::Size,
+rule_Size_strategy = st.builds(
+    rule_Size,
 )
-rule::Sum_strategy = st.builds(
-    rule::Sum,
+rule_Min_strategy = st.builds(
+    rule_Min,
 )
-rule::Max_strategy = st.builds(
-    rule::Max,
+rule_Max_strategy = st.builds(
+    rule_Max,
 )
-rule::PopulationRange_strategy = st.builds(
-    rule::PopulationRange,
-    upperRange=
-        st.integers(),
+rule_PopulationRange_strategy = st.builds(
+    rule_PopulationRange,
     lowerRange=
+        st.integers(),
+    upperRange=
         st.integers()
 )
-rule::IntegerExpression_strategy = st.builds(
-    rule::IntegerExpression,
+rule_IntegerExpression_strategy = st.builds(
+    rule_IntegerExpression,
 )
-rule::Rule_strategy = st.builds(
-    rule::Rule,
+rule_Rule_strategy = st.builds(
+    rule_Rule,
 )
 
-@given(instance=rule::CellularAutomata_strategy)
+@given(instance=rule_CellularAutomata_strategy)
 @settings(max_examples=50)
-def test_rule::cellularautomata_instantiation(instance):
-    assert isinstance(instance, rule::CellularAutomata)
+def test_rule_cellularautomata_instantiation(instance):
+    assert isinstance(instance, rule_CellularAutomata)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=rule::UMinus_strategy)
+@given(instance=rule_UMinus_strategy)
 @settings(max_examples=50)
-def test_rule::uminus_instantiation(instance):
-    assert isinstance(instance, rule::UMinus)
+def test_rule_uminus_instantiation(instance):
+    assert isinstance(instance, rule_UMinus)
 
-@given(instance=rule::Not_strategy)
+@given(instance=rule_Not_strategy)
 @settings(max_examples=50)
-def test_rule::not_instantiation(instance):
-    assert isinstance(instance, rule::Not)
+def test_rule_not_instantiation(instance):
+    assert isinstance(instance, rule_Not)
 
 @given(instance=IntegerExpression_strategy)
 @settings(max_examples=50)
 def test_integerexpression_instantiation(instance):
     assert isinstance(instance, IntegerExpression)
 
-@given(instance=rule::CurrentCellPopulation_strategy)
+@given(instance=rule_NeighborsExpression_strategy)
 @settings(max_examples=50)
-def test_rule::currentcellpopulation_instantiation(instance):
-    assert isinstance(instance, rule::CurrentCellPopulation)
+def test_rule_neighborsexpression_instantiation(instance):
+    assert isinstance(instance, rule_NeighborsExpression)
 
-@given(instance=rule::NeighborsExpression_strategy)
+@given(instance=rule_CurrentCellPopulation_strategy)
 @settings(max_examples=50)
-def test_rule::neighborsexpression_instantiation(instance):
-    assert isinstance(instance, rule::NeighborsExpression)
+def test_rule_currentcellpopulation_instantiation(instance):
+    assert isinstance(instance, rule_CurrentCellPopulation)
 
-@given(instance=rule::IntegerLiteral_strategy)
+@given(instance=rule_Conditional_strategy)
 @settings(max_examples=50)
-def test_rule::integerliteral_instantiation(instance):
-    assert isinstance(instance, rule::IntegerLiteral)
+def test_rule_conditional_instantiation(instance):
+    assert isinstance(instance, rule_Conditional)
 
-@given(instance=rule::IntegerLiteral_strategy)
-def test_rule::integerliteral_val_type(instance):
-    assert isinstance(instance.val, int)
+@given(instance=rule_BinaryExpression_strategy)
+@settings(max_examples=50)
+def test_rule_binaryexpression_instantiation(instance):
+    assert isinstance(instance, rule_BinaryExpression)
+
+@given(instance=rule_IntegerLiteral_strategy)
+@settings(max_examples=50)
+def test_rule_integerliteral_instantiation(instance):
+    assert isinstance(instance, rule_IntegerLiteral)
 
 
-@given(instance=rule::IntegerLiteral_strategy)
-def test_rule::integerliteral_val_setter(instance):
+
+@given(instance=rule_IntegerLiteral_strategy)
+def test_rule_integerliteral_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=rule::Conditional_strategy)
+@given(instance=rule_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_rule::conditional_instantiation(instance):
-    assert isinstance(instance, rule::Conditional)
-
-@given(instance=rule::BinaryExpression_strategy)
-@settings(max_examples=50)
-def test_rule::binaryexpression_instantiation(instance):
-    assert isinstance(instance, rule::BinaryExpression)
-
-@given(instance=rule::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_rule::unaryexpression_instantiation(instance):
-    assert isinstance(instance, rule::UnaryExpression)
+def test_rule_unaryexpression_instantiation(instance):
+    assert isinstance(instance, rule_UnaryExpression)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=rule::Div_strategy)
+@given(instance=rule_Minus_strategy)
 @settings(max_examples=50)
-def test_rule::div_instantiation(instance):
-    assert isinstance(instance, rule::Div)
+def test_rule_minus_instantiation(instance):
+    assert isinstance(instance, rule_Minus)
 
-@given(instance=rule::Lower_strategy)
+@given(instance=rule_Lower_strategy)
 @settings(max_examples=50)
-def test_rule::lower_instantiation(instance):
-    assert isinstance(instance, rule::Lower)
+def test_rule_lower_instantiation(instance):
+    assert isinstance(instance, rule_Lower)
 
-@given(instance=rule::Equal_strategy)
+@given(instance=rule_Div_strategy)
 @settings(max_examples=50)
-def test_rule::equal_instantiation(instance):
-    assert isinstance(instance, rule::Equal)
+def test_rule_div_instantiation(instance):
+    assert isinstance(instance, rule_Div)
 
-@given(instance=rule::Mult_strategy)
+@given(instance=rule_Or_strategy)
 @settings(max_examples=50)
-def test_rule::mult_instantiation(instance):
-    assert isinstance(instance, rule::Mult)
+def test_rule_or_instantiation(instance):
+    assert isinstance(instance, rule_Or)
 
-@given(instance=rule::And_strategy)
+@given(instance=rule_And_strategy)
 @settings(max_examples=50)
-def test_rule::and_instantiation(instance):
-    assert isinstance(instance, rule::And)
+def test_rule_and_instantiation(instance):
+    assert isinstance(instance, rule_And)
 
-@given(instance=rule::Greater_strategy)
+@given(instance=rule_Mult_strategy)
 @settings(max_examples=50)
-def test_rule::greater_instantiation(instance):
-    assert isinstance(instance, rule::Greater)
+def test_rule_mult_instantiation(instance):
+    assert isinstance(instance, rule_Mult)
 
-@given(instance=rule::Or_strategy)
+@given(instance=rule_Greater_strategy)
 @settings(max_examples=50)
-def test_rule::or_instantiation(instance):
-    assert isinstance(instance, rule::Or)
+def test_rule_greater_instantiation(instance):
+    assert isinstance(instance, rule_Greater)
 
-@given(instance=rule::Mod_strategy)
+@given(instance=rule_Equal_strategy)
 @settings(max_examples=50)
-def test_rule::mod_instantiation(instance):
-    assert isinstance(instance, rule::Mod)
+def test_rule_equal_instantiation(instance):
+    assert isinstance(instance, rule_Equal)
 
-@given(instance=rule::Minus_strategy)
+@given(instance=rule_Mod_strategy)
 @settings(max_examples=50)
-def test_rule::minus_instantiation(instance):
-    assert isinstance(instance, rule::Minus)
+def test_rule_mod_instantiation(instance):
+    assert isinstance(instance, rule_Mod)
 
-@given(instance=rule::Add_strategy)
+@given(instance=rule_Add_strategy)
 @settings(max_examples=50)
-def test_rule::add_instantiation(instance):
-    assert isinstance(instance, rule::Add)
+def test_rule_add_instantiation(instance):
+    assert isinstance(instance, rule_Add)
 
 @given(instance=NeighborsExpression_strategy)
 @settings(max_examples=50)
 def test_neighborsexpression_instantiation(instance):
     assert isinstance(instance, NeighborsExpression)
 
-@given(instance=rule::Min_strategy)
+@given(instance=rule_Sum_strategy)
 @settings(max_examples=50)
-def test_rule::min_instantiation(instance):
-    assert isinstance(instance, rule::Min)
+def test_rule_sum_instantiation(instance):
+    assert isinstance(instance, rule_Sum)
 
-@given(instance=rule::Size_strategy)
+@given(instance=rule_Size_strategy)
 @settings(max_examples=50)
-def test_rule::size_instantiation(instance):
-    assert isinstance(instance, rule::Size)
+def test_rule_size_instantiation(instance):
+    assert isinstance(instance, rule_Size)
 
-@given(instance=rule::Sum_strategy)
+@given(instance=rule_Min_strategy)
 @settings(max_examples=50)
-def test_rule::sum_instantiation(instance):
-    assert isinstance(instance, rule::Sum)
+def test_rule_min_instantiation(instance):
+    assert isinstance(instance, rule_Min)
 
-@given(instance=rule::Max_strategy)
+@given(instance=rule_Max_strategy)
 @settings(max_examples=50)
-def test_rule::max_instantiation(instance):
-    assert isinstance(instance, rule::Max)
+def test_rule_max_instantiation(instance):
+    assert isinstance(instance, rule_Max)
 
-@given(instance=rule::PopulationRange_strategy)
+@given(instance=rule_PopulationRange_strategy)
 @settings(max_examples=50)
-def test_rule::populationrange_instantiation(instance):
-    assert isinstance(instance, rule::PopulationRange)
-
-@given(instance=rule::PopulationRange_strategy)
-def test_rule::populationrange_upperRange_type(instance):
-    assert isinstance(instance.upperRange, int)
+def test_rule_populationrange_instantiation(instance):
+    assert isinstance(instance, rule_PopulationRange)
 
 
-@given(instance=rule::PopulationRange_strategy)
-def test_rule::populationrange_upperRange_setter(instance):
-    original = instance.upperRange
-    instance.upperRange = original
-    assert instance.upperRange == original
 
-@given(instance=rule::PopulationRange_strategy)
-def test_rule::populationrange_lowerRange_type(instance):
-    assert isinstance(instance.lowerRange, int)
-
-
-@given(instance=rule::PopulationRange_strategy)
-def test_rule::populationrange_lowerRange_setter(instance):
+@given(instance=rule_PopulationRange_strategy)
+def test_rule_populationrange_lowerRange_setter(instance):
     original = instance.lowerRange
     instance.lowerRange = original
     assert instance.lowerRange == original
 
-@given(instance=rule::IntegerExpression_strategy)
-@settings(max_examples=50)
-def test_rule::integerexpression_instantiation(instance):
-    assert isinstance(instance, rule::IntegerExpression)
 
-@given(instance=rule::Rule_strategy)
+
+@given(instance=rule_PopulationRange_strategy)
+def test_rule_populationrange_upperRange_setter(instance):
+    original = instance.upperRange
+    instance.upperRange = original
+    assert instance.upperRange == original
+
+@given(instance=rule_IntegerExpression_strategy)
 @settings(max_examples=50)
-def test_rule::rule_instantiation(instance):
-    assert isinstance(instance, rule::Rule)
+def test_rule_integerexpression_instantiation(instance):
+    assert isinstance(instance, rule_IntegerExpression)
+
+@given(instance=rule_Rule_strategy)
+@settings(max_examples=50)
+def test_rule_rule_instantiation(instance):
+    assert isinstance(instance, rule_Rule)

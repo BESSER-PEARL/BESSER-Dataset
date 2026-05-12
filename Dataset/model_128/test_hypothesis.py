@@ -3,328 +3,328 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sastm::RDBHostVariableReference,
+from python_code import (
+    StorageSpecification,
+    gastm_PerClassMember,
+    gastm_FunctionPersistent,
+    gastm_FileLocal,
+    gastm_External,
+    ForStatement,
+    gastm_ForCheckBeforeStatement,
+    AccessKind,
+    gastm_Protected,
+    gastm_Private,
+    gastm_Public,
+    sastm_RDBHostVariableReference,
     RDBHostVariableReference,
     RDBCursorStatement,
-    sastm::RDBFetchCursorStatement,
-    sastm::RDBOpenCursorStatement,
+    sastm_RDBCloseCursorStatement,
+    sastm_RDBFetchCursorStatement,
+    sastm_RDBOpenCursorStatement,
     RDBModifyStatement,
-    sastm::RDBUpdateStatement,
+    sastm_RDBDeleteStatement,
+    sastm_RDBUpdateStatement,
     AggregateTypeDefinition,
     Project,
     NamedTypeDefinition,
     RDBConstraint,
-    sastm::RDBRefIntegrity,
-    sastm::RDBUniqueKey,
-    sastm::RDBCheckConstraint,
+    sastm_RDBUniqueKey,
+    sastm_RDBRefIntegrity,
+    sastm_RDBCheckConstraint,
     ActualParameterExpression,
-    gastm::ByReferenceActualParameterExpression,
-    gastm::ByValueActualParameterExpression,
+    gastm_ByReferenceActualParameterExpression,
+    gastm_ByValueActualParameterExpression,
     IncludeUnit,
     NameSpaceDefinition,
-    sastm::RDBTableSpaceReference,
+    sastm_RDBTableSpaceReference,
     RDBTableSpaceReference,
     UnaryOperator,
-    gastm::AddressOf,
-    gastm::Increment,
-    gastm::BitNot,
-    gastm::Negate,
-    gastm::Decrement,
-    gastm::Deref,
-    gastm::Not,
-    gastm::UnaryPlus,
+    gastm_Deref,
+    gastm_Increment,
+    gastm_Decrement,
+    gastm_AddressOf,
+    gastm_Not,
+    gastm_BitNot,
+    gastm_Negate,
+    gastm_UnaryPlus,
     Literal,
-    gastm::CharLiteral,
-    gastm::RealLiteral,
-    gastm::StringLiteral,
-    gastm::BooleanLiteral,
-    gastm::BitLiteral,
-    gastm::IntegerlLiteral,
+    gastm_BitLiteral,
+    gastm_CharLiteral,
+    gastm_StringLiteral,
+    gastm_RealLiteral,
+    gastm_BooleanLiteral,
+    gastm_IntegerlLiteral,
     QualifiedIdentifierReference,
-    gastm::QualifiedOverData,
-    gastm::QualifiedOverPointer,
-    gastm::PostDecrement,
-    gastm::PostIncrement,
+    gastm_QualifiedOverData,
+    gastm_QualifiedOverPointer,
+    gastm_ForCheckAfterStatement,
+    gastm_PostDecrement,
+    gastm_PostIncrement,
     PrimitiveType,
-    gastm::Byte,
-    gastm::LongInteger,
-    gastm::Integer,
-    gastm::Boolean,
-    gastm::LongDouble,
-    gastm::ShortInteger,
-    gastm::Float,
-    gastm::WideCharacter,
-    gastm::Double,
-    gastm::Character,
-    gastm::String,
-    gastm::Void,
-    StorageSpecification,
-    gastm::PerClassMember,
-    gastm::FunctionPersistent,
-    gastm::FileLocal,
-    gastm::NoDef,
-    gastm::External,
-    ForStatement,
-    gastm::ForCheckAfterStatement,
-    gastm::ForCheckBeforeStatement,
-    AccessKind,
-    gastm::Private,
-    gastm::Protected,
-    gastm::Public,
-    sastm::RDBCloseCursorStatement,
-    sastm::RDBDeleteStatement,
-    gastm::AccessKind,
-    gastm::DataType,
-    gastm::StorageSpecification,
-    gastm::OtherSyntaxObject,
-    gastm::GASTMSemanticObject,
-    gastm::GASTMSourceObject,
-    gastm::GASTMObject,
-    ProgramScope,
-    OtherSyntaxObject,
-    sastm::RDBIndexColumn,
-    gastm::VirtualSpecification,
-    gastm::Name,
-    sastm::RDBIndex,
-    gastm::FunctionMemberAttribute,
-    sastm::RDBTrigger,
-    sastm::RDBConstraint,
-    gastm::CompilationUnit,
-    AnnotationExpression,
-    PreprocessorElement,
-    SourceLocation,
-    GASTMObject,
-    gastm::GASTMSyntaxObject,
-    Scope,
-    gastm::FunctionScope,
-    gastm::BlockScope,
-    gastm::AggregateScope,
-    gastm::ProgramScope,
-    DefinitionObject,
-    GlobalScope,
-    gastm::GlobalScope,
+    gastm_Integer,
+    gastm_String,
+    gastm_LongDouble,
+    gastm_Character,
+    gastm_Boolean,
+    gastm_Double,
+    gastm_Byte,
+    gastm_Float,
+    gastm_LongInteger,
+    gastm_WideCharacter,
+    gastm_ShortInteger,
+    gastm_Void,
+    gastm_NoDef,
     BinaryOperator,
-    gastm::SpecificIn,
-    gastm::SpecificLike,
-    gastm::NotGreater,
-    gastm::Assign,
-    gastm::Divide,
-    gastm::BitXor,
-    gastm::Exponent,
-    gastm::Less,
-    gastm::Or,
-    gastm::Equal,
-    gastm::BitRightShift,
-    gastm::Subtract,
-    gastm::Add,
-    gastm::Greater,
-    gastm::SpecificGreaterEqual,
-    gastm::Multiply,
-    gastm::SpecificConcatString,
-    gastm::BitLeftShift,
-    gastm::SpecificLessEqual,
-    gastm::BitOr,
-    gastm::NotLess,
-    gastm::BitAnd,
-    gastm::And,
-    gastm::NotEqual,
-    gastm::Modulus,
-    gastm::OperatorAssign,
+    gastm_BitOr,
+    gastm_BitAnd,
+    gastm_NotLess,
+    gastm_SpecificLessEqual,
+    gastm_Greater,
+    gastm_SpecificConcatString,
+    gastm_SpecificIn,
+    gastm_Equal,
+    gastm_Less,
+    gastm_NotGreater,
+    gastm_SpecificGreaterEqual,
+    gastm_Assign,
+    gastm_Divide,
+    gastm_Multiply,
+    gastm_BitXor,
+    gastm_Subtract,
+    gastm_BitRightShift,
+    gastm_Or,
+    gastm_NotEqual,
+    gastm_Exponent,
+    gastm_Add,
+    gastm_SpecificLike,
+    gastm_And,
+    gastm_Modulus,
+    gastm_BitLeftShift,
+    gastm_OperatorAssign,
     ActualParameter,
-    gastm::MissingActualParameter,
-    gastm::ActualParameterExpression,
+    gastm_MissingActualParameter,
+    gastm_ActualParameterExpression,
     IdentifierReference,
-    sastm::RDBTableAlias,
-    sastm::RDBTableReference,
-    sastm::RDBColumnReference,
+    sastm_RDBColumnReference,
+    sastm_RDBTableReference,
+    sastm_RDBTableAlias,
     NameReference,
-    gastm::IdentifierReference,
-    gastm::TypeQualifiedIdentifierReference,
-    gastm::QualifiedIdentifierReference,
-    gastm::CatchBlock,
+    gastm_TypeQualifiedIdentifierReference,
+    gastm_IdentifierReference,
+    gastm_QualifiedIdentifierReference,
     CatchBlock,
-    gastm::TypesCatchBlock,
+    gastm_TypesCatchBlock,
     LoopStatement,
-    gastm::DoWhileStatement,
-    gastm::WhileStatement,
-    gastm::ForStatement,
-    gastm::VariableCatchBlock,
+    gastm_WhileStatement,
+    gastm_DoWhileStatement,
+    gastm_ForStatement,
+    gastm_VariableCatchBlock,
     BlockScope,
     LabelDefinition,
-    gastm::SwitchCase,
     SwitchCase,
-    gastm::DefaultBlock,
-    gastm::CaseBlock,
+    gastm_DefaultBlock,
+    gastm_CaseBlock,
     LabelAccess,
-    gastm::Dimension,
     Dimension,
     ConstructedType,
-    gastm::PointerType,
-    gastm::CollectionType,
-    gastm::RangeType,
-    gastm::ReferenceType,
-    gastm::ArrayType,
+    gastm_RangeType,
+    gastm_ReferenceType,
+    gastm_CollectionType,
+    gastm_PointerType,
+    gastm_ArrayType,
     AggregateScope,
     EnumLiteralDefinition,
     DataType,
-    sastm::RDBRaw,
-    sastm::RDBBoolean,
-    sastm::RDBClob,
-    sastm::RDBRowid,
-    sastm::RDBTableType,
-    sastm::RDBDataBaseType,
-    sastm::RDBTimestamp,
-    sastm::RDBChar,
-    sastm::RDBVarchar,
-    gastm::AggregateType,
-    sastm::RDBNumber,
-    sastm::RDBLong,
-    gastm::EnumType,
-    sastm::RDBString,
-    sastm::RDBReal,
-    sastm::RDBBlob,
-    gastm::ExceptionType,
-    sastm::RDBDecimal,
-    sastm::RDBNClob,
-    sastm::RDBInteger,
-    sastm::RDBInt,
-    sastm::RDBUserType,
-    sastm::RDBViewType,
-    sastm::RDBBFile,
-    sastm::RDBFloat,
-    gastm::ConstructedType,
-    sastm::RDBDate,
-    sastm::RDBCursorType,
-    sastm::RDBTableSpaceType,
-    gastm::PrimitiveType,
-    gastm::DerivesFrom,
+    sastm_RDBBlob,
+    sastm_RDBChar,
+    sastm_RDBFloat,
+    sastm_RDBRowid,
+    gastm_EnumType,
+    sastm_RDBUserType,
+    sastm_RDBBFile,
+    sastm_RDBNClob,
+    sastm_RDBDataBaseType,
+    sastm_RDBRaw,
+    sastm_RDBString,
+    sastm_RDBCursorType,
+    sastm_RDBDate,
+    sastm_RDBClob,
+    sastm_RDBTableType,
+    sastm_RDBReal,
+    gastm_ExceptionType,
+    gastm_AggregateType,
+    sastm_RDBVarchar,
+    sastm_RDBTableSpaceType,
+    sastm_RDBNumber,
+    gastm_ConstructedType,
+    sastm_RDBDecimal,
+    sastm_RDBViewType,
+    sastm_RDBInteger,
+    sastm_RDBInt,
+    sastm_RDBTimestamp,
+    sastm_RDBBoolean,
+    sastm_RDBLong,
+    gastm_PrimitiveType,
     DerivesFrom,
-    gastm::NamedType,
-    gastm::FormalParameterType,
+    gastm_NamedType,
+    gastm_FormalParameterType,
     FormalParameterType,
-    gastm::ByValueFormalParameterType,
-    gastm::ByReferenceFormalParameterType,
+    gastm_ByValueFormalParameterType,
+    gastm_ByReferenceFormalParameterType,
     Type,
-    gastm::LabelType,
-    gastm::FunctionType,
-    gastm::NameSpaceType,
-    gastm::TypeReference,
-    gastm::NameSpaceDefinition,
+    gastm_LabelType,
+    gastm_NameSpaceType,
+    gastm_FunctionType,
+    gastm_TypeReference,
     AggregateType,
-    gastm::UnionType,
-    gastm::StructureType,
-    gastm::ClassType,
-    gastm::AnnotationType,
+    gastm_ClassType,
+    gastm_AnnotationType,
+    gastm_UnionType,
+    gastm_StructureType,
     NamedType,
     TypeDefinition,
-    gastm::AggregateTypeDefinition,
-    gastm::NamedTypeDefinition,
-    gastm::TypeDefinition,
+    gastm_AggregateTypeDefinition,
+    gastm_NamedTypeDefinition,
     DataDefinition,
-    gastm::VariableDefinition,
-    gastm::FormalParameterDefinition,
-    gastm::BitFieldDefinition,
+    gastm_VariableDefinition,
+    gastm_FormalParameterDefinition,
+    gastm_BitFieldDefinition,
     Expression,
-    gastm::NameReference,
-    sastm::RDBHostVariableExpression,
-    gastm::UnaryExpression,
-    gastm::BinaryExpression,
-    gastm::FunctionCallExpression,
-    gastm::ArrayAccess,
-    gastm::Literal,
-    gastm::ConditionalExpression,
-    gastm::LabelAccess,
-    gastm::AggregateExpression,
-    gastm::AnnotationExpression,
-    gastm::RangeExpression,
-    sastm::RDBSelectExpression,
-    gastm::NewExpression,
-    gastm::CastExpression,
+    gastm_Literal,
+    gastm_ArrayAccess,
+    gastm_FunctionCallExpression,
+    gastm_AggregateExpression,
+    gastm_NameReference,
+    gastm_NewExpression,
+    gastm_CastExpression,
+    gastm_LabelAccess,
+    gastm_ConditionalExpression,
+    sastm_RDBHostVariableExpression,
+    gastm_UnaryExpression,
+    sastm_RDBSelectExpression,
+    gastm_AnnotationExpression,
+    gastm_BinaryExpression,
+    gastm_RangeExpression,
     GASTMSyntaxObject,
-    gastm::Expression,
-    gastm::PreprocessorElement,
-    gastm::Statement,
-    gastm::DefinitionObject,
-    gastm::Type,
-    gastm::Comment,
-    gastm::MacroDefinition,
+    gastm_Expression,
+    gastm_DefinitionObject,
+    gastm_Statement,
+    gastm_PreprocessorElement,
+    gastm_Type,
     MacroDefinition,
-    gastm::MacroCall,
-    gastm::IncludeUnit,
     LabelType,
-    gastm::LabelDefinition,
     NameSpaceType,
     FunctionMemberAttributes,
     FormalParameterDeclaration,
     Declaration,
-    gastm::FormalParameterDeclaration,
-    gastm::FunctionDeclaration,
+    gastm_FormalParameterDeclaration,
+    gastm_FunctionDeclaration,
     Definition,
-    gastm::EnumLiteralDefinition,
-    sastm::RDBTableDefinition,
-    sastm::RDBCursorDefinition,
-    sastm::RDBColumnDefinition,
-    sastm::RDBUserDefinition,
-    gastm::DataDefinition,
-    sastm::RDBViewDefinition,
-    sastm::RDBTableSpaceDefinition,
-    gastm::SpecificTriggerDefinition,
-    sastm::RDBDatabaseDefinition,
+    gastm_DataDefinition,
+    sastm_RDBViewDefinition,
+    sastm_RDBColumnDefinition,
+    sastm_RDBUserDefinition,
+    sastm_RDBCursorDefinition,
+    sastm_RDBTableSpaceDefinition,
+    sastm_RDBDatabaseDefinition,
+    sastm_RDBTableDefinition,
+    gastm_EnumLiteralDefinition,
+    gastm_SpecificTriggerDefinition,
     TypeReference,
-    gastm::NamedTypeReference,
-    gastm::UnnamedTypeReference,
+    gastm_UnnamedTypeReference,
+    gastm_NamedTypeReference,
     Name,
     DeclarationOrDefinition,
-    gastm::Declaration,
-    gastm::Definition,
-    gastm::DeclarationOrDefinition,
-    gastm::EntryDefinition,
+    gastm_Declaration,
+    gastm_Definition,
+    gastm_EntryDefinition,
     VirtualSpecification,
-    gastm::Virtual,
-    gastm::NonVirtual,
-    gastm::PureVirtual,
-    gastm::FunctionMemberAttributes,
+    gastm_Virtual,
+    gastm_PureVirtual,
+    gastm_NonVirtual,
+    gastm_FunctionMemberAttributes,
     FunctionScope,
     Statement,
-    gastm::JumpStatement,
-    sastm::RDBConnectStatement,
-    gastm::LoopStatement,
-    gastm::DeleteStatement,
-    gastm::LabeledStatement,
-    gastm::IfStatement,
-    gastm::TerminateStatement,
-    gastm::ContinueStatement,
-    gastm::SwitchStatement,
-    sastm::RDBCursorStatement,
-    gastm::DeclarationOrDefinitionStatement,
-    sastm::RDBSelectStatement,
-    gastm::ReturnStatement,
-    sastm::RDBModifyStatement,
-    gastm::BlockStatement,
-    gastm::TryStatement,
-    sastm::RDBInsertStatement,
-    gastm::ExpressionStatement,
-    gastm::ThrowStatement,
-    gastm::SpecificSelectStatement,
-    gastm::BreakStatement,
-    gastm::EmptyStatement,
+    gastm_ThrowStatement,
+    gastm_SwitchStatement,
+    gastm_LoopStatement,
+    gastm_BlockStatement,
+    gastm_ReturnStatement,
+    sastm_RDBConnectStatement,
+    gastm_TerminateStatement,
+    gastm_SpecificSelectStatement,
+    gastm_TryStatement,
+    gastm_EmptyStatement,
+    gastm_DeleteStatement,
+    gastm_BreakStatement,
+    gastm_LabeledStatement,
+    gastm_IfStatement,
+    gastm_ExpressionStatement,
+    gastm_ContinueStatement,
+    sastm_RDBCursorStatement,
+    gastm_JumpStatement,
+    sastm_RDBInsertStatement,
+    sastm_RDBSelectStatement,
+    gastm_DeclarationOrDefinitionStatement,
+    sastm_RDBModifyStatement,
     FormalParameterDefinition,
-    gastm::FunctionDefinition,
-    gastm::VariableDeclaration,
+    gastm_FunctionDefinition,
+    gastm_VariableDeclaration,
     CompilationUnit,
     GASTMSemanticObject,
-    gastm::Scope,
-    gastm::Project,
+    gastm_Project,
     SourceFile,
     GASTMSourceObject,
-    gastm::SourceLocation,
-    gastm::SourceFile,
-    gastm::ActualParameter,
-    gastm::BinaryOperator,
-    gastm::UnaryOperator,
+    gastm_SourceLocation,
+    gastm_SourceFile,
+    gastm_ActualParameter,
+    gastm_BinaryOperator,
+    gastm_UnaryOperator,
+    gastm_AccessKind,
+    gastm_DataType,
+    gastm_StorageSpecification,
+    gastm_OtherSyntaxObject,
+    gastm_GASTMSemanticObject,
+    gastm_GASTMSourceObject,
+    gastm_GASTMObject,
+    ProgramScope,
+    OtherSyntaxObject,
+    gastm_CatchBlock,
+    gastm_Name,
+    sastm_RDBConstraint,
+    gastm_SwitchCase,
+    gastm_FunctionMemberAttribute,
+    sastm_RDBTrigger,
+    sastm_RDBIndexColumn,
+    gastm_DerivesFrom,
+    gastm_Dimension,
+    sastm_RDBIndex,
+    gastm_VirtualSpecification,
+    gastm_CompilationUnit,
+    AnnotationExpression,
+    PreprocessorElement,
+    gastm_IncludeUnit,
+    gastm_MacroCall,
+    gastm_MacroDefinition,
+    gastm_Comment,
+    SourceLocation,
+    GASTMObject,
+    gastm_GASTMSyntaxObject,
+    Scope,
+    gastm_FunctionScope,
+    gastm_ProgramScope,
+    gastm_AggregateScope,
+    gastm_GlobalScope,
+    gastm_BlockScope,
+    DefinitionObject,
+    gastm_NameSpaceDefinition,
+    gastm_LabelDefinition,
+    gastm_TypeDefinition,
+    gastm_DeclarationOrDefinition,
+    gastm_Scope,
+    GlobalScope,
 )
 
 # =============================================================================
@@ -333,16 +333,170 @@ from classes import (
 
 
 
-def test_sastm::rdbhostvariablereference_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBHostVariableReference)
+def test_storagespecification_is_not_abstract():
+    assert not inspect.isabstract(StorageSpecification)
 
 
-def test_sastm::rdbhostvariablereference_constructor_exists():
-    assert callable(sastm::RDBHostVariableReference.__init__)
+def test_storagespecification_constructor_exists():
+    assert callable(StorageSpecification.__init__)
 
 
-def test_sastm::rdbhostvariablereference_constructor_args():
-    sig = inspect.signature(sastm::RDBHostVariableReference.__init__)
+def test_storagespecification_constructor_args():
+    sig = inspect.signature(StorageSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_perclassmember_is_not_abstract():
+    assert not inspect.isabstract(gastm_PerClassMember)
+
+
+def test_gastm_perclassmember_constructor_exists():
+    assert callable(gastm_PerClassMember.__init__)
+
+
+def test_gastm_perclassmember_constructor_args():
+    sig = inspect.signature(gastm_PerClassMember.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_functionpersistent_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionPersistent)
+
+
+def test_gastm_functionpersistent_constructor_exists():
+    assert callable(gastm_FunctionPersistent.__init__)
+
+
+def test_gastm_functionpersistent_constructor_args():
+    sig = inspect.signature(gastm_FunctionPersistent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_filelocal_is_not_abstract():
+    assert not inspect.isabstract(gastm_FileLocal)
+
+
+def test_gastm_filelocal_constructor_exists():
+    assert callable(gastm_FileLocal.__init__)
+
+
+def test_gastm_filelocal_constructor_args():
+    sig = inspect.signature(gastm_FileLocal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_external_is_not_abstract():
+    assert not inspect.isabstract(gastm_External)
+
+
+def test_gastm_external_constructor_exists():
+    assert callable(gastm_External.__init__)
+
+
+def test_gastm_external_constructor_args():
+    sig = inspect.signature(gastm_External.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_forstatement_is_not_abstract():
+    assert not inspect.isabstract(ForStatement)
+
+
+def test_forstatement_constructor_exists():
+    assert callable(ForStatement.__init__)
+
+
+def test_forstatement_constructor_args():
+    sig = inspect.signature(ForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_forcheckbeforestatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ForCheckBeforeStatement)
+
+
+def test_gastm_forcheckbeforestatement_constructor_exists():
+    assert callable(gastm_ForCheckBeforeStatement.__init__)
+
+
+def test_gastm_forcheckbeforestatement_constructor_args():
+    sig = inspect.signature(gastm_ForCheckBeforeStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_accesskind_is_not_abstract():
+    assert not inspect.isabstract(AccessKind)
+
+
+def test_accesskind_constructor_exists():
+    assert callable(AccessKind.__init__)
+
+
+def test_accesskind_constructor_args():
+    sig = inspect.signature(AccessKind.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_protected_is_not_abstract():
+    assert not inspect.isabstract(gastm_Protected)
+
+
+def test_gastm_protected_constructor_exists():
+    assert callable(gastm_Protected.__init__)
+
+
+def test_gastm_protected_constructor_args():
+    sig = inspect.signature(gastm_Protected.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_private_is_not_abstract():
+    assert not inspect.isabstract(gastm_Private)
+
+
+def test_gastm_private_constructor_exists():
+    assert callable(gastm_Private.__init__)
+
+
+def test_gastm_private_constructor_args():
+    sig = inspect.signature(gastm_Private.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_public_is_not_abstract():
+    assert not inspect.isabstract(gastm_Public)
+
+
+def test_gastm_public_constructor_exists():
+    assert callable(gastm_Public.__init__)
+
+
+def test_gastm_public_constructor_args():
+    sig = inspect.signature(gastm_Public.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbhostvariablereference_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBHostVariableReference)
+
+
+def test_sastm_rdbhostvariablereference_constructor_exists():
+    assert callable(sastm_RDBHostVariableReference.__init__)
+
+
+def test_sastm_rdbhostvariablereference_constructor_args():
+    sig = inspect.signature(sastm_RDBHostVariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -375,30 +529,44 @@ def test_rdbcursorstatement_constructor_args():
 
 
 
-def test_sastm::rdbfetchcursorstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBFetchCursorStatement)
+def test_sastm_rdbclosecursorstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBCloseCursorStatement)
 
 
-def test_sastm::rdbfetchcursorstatement_constructor_exists():
-    assert callable(sastm::RDBFetchCursorStatement.__init__)
+def test_sastm_rdbclosecursorstatement_constructor_exists():
+    assert callable(sastm_RDBCloseCursorStatement.__init__)
 
 
-def test_sastm::rdbfetchcursorstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBFetchCursorStatement.__init__)
+def test_sastm_rdbclosecursorstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBCloseCursorStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbopencursorstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBOpenCursorStatement)
+def test_sastm_rdbfetchcursorstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBFetchCursorStatement)
 
 
-def test_sastm::rdbopencursorstatement_constructor_exists():
-    assert callable(sastm::RDBOpenCursorStatement.__init__)
+def test_sastm_rdbfetchcursorstatement_constructor_exists():
+    assert callable(sastm_RDBFetchCursorStatement.__init__)
 
 
-def test_sastm::rdbopencursorstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBOpenCursorStatement.__init__)
+def test_sastm_rdbfetchcursorstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBFetchCursorStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbopencursorstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBOpenCursorStatement)
+
+
+def test_sastm_rdbopencursorstatement_constructor_exists():
+    assert callable(sastm_RDBOpenCursorStatement.__init__)
+
+
+def test_sastm_rdbopencursorstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBOpenCursorStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -417,16 +585,30 @@ def test_rdbmodifystatement_constructor_args():
 
 
 
-def test_sastm::rdbupdatestatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBUpdateStatement)
+def test_sastm_rdbdeletestatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBDeleteStatement)
 
 
-def test_sastm::rdbupdatestatement_constructor_exists():
-    assert callable(sastm::RDBUpdateStatement.__init__)
+def test_sastm_rdbdeletestatement_constructor_exists():
+    assert callable(sastm_RDBDeleteStatement.__init__)
 
 
-def test_sastm::rdbupdatestatement_constructor_args():
-    sig = inspect.signature(sastm::RDBUpdateStatement.__init__)
+def test_sastm_rdbdeletestatement_constructor_args():
+    sig = inspect.signature(sastm_RDBDeleteStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbupdatestatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBUpdateStatement)
+
+
+def test_sastm_rdbupdatestatement_constructor_exists():
+    assert callable(sastm_RDBUpdateStatement.__init__)
+
+
+def test_sastm_rdbupdatestatement_constructor_args():
+    sig = inspect.signature(sastm_RDBUpdateStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -487,61 +669,61 @@ def test_rdbconstraint_constructor_args():
 
 
 
-def test_sastm::rdbrefintegrity_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBRefIntegrity)
+def test_sastm_rdbuniquekey_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBUniqueKey)
 
 
-def test_sastm::rdbrefintegrity_constructor_exists():
-    assert callable(sastm::RDBRefIntegrity.__init__)
+def test_sastm_rdbuniquekey_constructor_exists():
+    assert callable(sastm_RDBUniqueKey.__init__)
 
 
-def test_sastm::rdbrefintegrity_constructor_args():
-    sig = inspect.signature(sastm::RDBRefIntegrity.__init__)
+def test_sastm_rdbuniquekey_constructor_args():
+    sig = inspect.signature(sastm_RDBUniqueKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbuniquekey_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBUniqueKey)
+def test_sastm_rdbrefintegrity_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBRefIntegrity)
 
 
-def test_sastm::rdbuniquekey_constructor_exists():
-    assert callable(sastm::RDBUniqueKey.__init__)
+def test_sastm_rdbrefintegrity_constructor_exists():
+    assert callable(sastm_RDBRefIntegrity.__init__)
 
 
-def test_sastm::rdbuniquekey_constructor_args():
-    sig = inspect.signature(sastm::RDBUniqueKey.__init__)
+def test_sastm_rdbrefintegrity_constructor_args():
+    sig = inspect.signature(sastm_RDBRefIntegrity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbcheckconstraint_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBCheckConstraint)
+def test_sastm_rdbcheckconstraint_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBCheckConstraint)
 
 
-def test_sastm::rdbcheckconstraint_constructor_exists():
-    assert callable(sastm::RDBCheckConstraint.__init__)
+def test_sastm_rdbcheckconstraint_constructor_exists():
+    assert callable(sastm_RDBCheckConstraint.__init__)
 
 
-def test_sastm::rdbcheckconstraint_constructor_args():
-    sig = inspect.signature(sastm::RDBCheckConstraint.__init__)
+def test_sastm_rdbcheckconstraint_constructor_args():
+    sig = inspect.signature(sastm_RDBCheckConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "RDBConstraintText" in params, "Missing parameter 'RDBConstraintText'"
     assert "RDBConstraintType" in params, "Missing parameter 'RDBConstraintType'"
 
-def test_sastm::rdbcheckconstraint_has_RDBConstraintText():
-    assert hasattr(sastm::RDBCheckConstraint, "RDBConstraintText")
+def test_sastm_rdbcheckconstraint_has_RDBConstraintText():
+    assert hasattr(sastm_RDBCheckConstraint, "RDBConstraintText")
     descriptor = None
-    for klass in sastm::RDBCheckConstraint.__mro__:
+    for klass in sastm_RDBCheckConstraint.__mro__:
         if "RDBConstraintText" in klass.__dict__:
             descriptor = klass.__dict__["RDBConstraintText"]
             break
     assert isinstance(descriptor, property)
 
-def test_sastm::rdbcheckconstraint_has_RDBConstraintType():
-    assert hasattr(sastm::RDBCheckConstraint, "RDBConstraintType")
+def test_sastm_rdbcheckconstraint_has_RDBConstraintType():
+    assert hasattr(sastm_RDBCheckConstraint, "RDBConstraintType")
     descriptor = None
-    for klass in sastm::RDBCheckConstraint.__mro__:
+    for klass in sastm_RDBCheckConstraint.__mro__:
         if "RDBConstraintType" in klass.__dict__:
             descriptor = klass.__dict__["RDBConstraintType"]
             break
@@ -563,30 +745,30 @@ def test_actualparameterexpression_constructor_args():
 
 
 
-def test_gastm::byreferenceactualparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::ByReferenceActualParameterExpression)
+def test_gastm_byreferenceactualparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_ByReferenceActualParameterExpression)
 
 
-def test_gastm::byreferenceactualparameterexpression_constructor_exists():
-    assert callable(gastm::ByReferenceActualParameterExpression.__init__)
+def test_gastm_byreferenceactualparameterexpression_constructor_exists():
+    assert callable(gastm_ByReferenceActualParameterExpression.__init__)
 
 
-def test_gastm::byreferenceactualparameterexpression_constructor_args():
-    sig = inspect.signature(gastm::ByReferenceActualParameterExpression.__init__)
+def test_gastm_byreferenceactualparameterexpression_constructor_args():
+    sig = inspect.signature(gastm_ByReferenceActualParameterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::byvalueactualparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::ByValueActualParameterExpression)
+def test_gastm_byvalueactualparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_ByValueActualParameterExpression)
 
 
-def test_gastm::byvalueactualparameterexpression_constructor_exists():
-    assert callable(gastm::ByValueActualParameterExpression.__init__)
+def test_gastm_byvalueactualparameterexpression_constructor_exists():
+    assert callable(gastm_ByValueActualParameterExpression.__init__)
 
 
-def test_gastm::byvalueactualparameterexpression_constructor_args():
-    sig = inspect.signature(gastm::ByValueActualParameterExpression.__init__)
+def test_gastm_byvalueactualparameterexpression_constructor_args():
+    sig = inspect.signature(gastm_ByValueActualParameterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -619,16 +801,16 @@ def test_namespacedefinition_constructor_args():
 
 
 
-def test_sastm::rdbtablespacereference_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableSpaceReference)
+def test_sastm_rdbtablespacereference_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableSpaceReference)
 
 
-def test_sastm::rdbtablespacereference_constructor_exists():
-    assert callable(sastm::RDBTableSpaceReference.__init__)
+def test_sastm_rdbtablespacereference_constructor_exists():
+    assert callable(sastm_RDBTableSpaceReference.__init__)
 
 
-def test_sastm::rdbtablespacereference_constructor_args():
-    sig = inspect.signature(sastm::RDBTableSpaceReference.__init__)
+def test_sastm_rdbtablespacereference_constructor_args():
+    sig = inspect.signature(sastm_RDBTableSpaceReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -661,114 +843,114 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_gastm::addressof_is_not_abstract():
-    assert not inspect.isabstract(gastm::AddressOf)
+def test_gastm_deref_is_not_abstract():
+    assert not inspect.isabstract(gastm_Deref)
 
 
-def test_gastm::addressof_constructor_exists():
-    assert callable(gastm::AddressOf.__init__)
+def test_gastm_deref_constructor_exists():
+    assert callable(gastm_Deref.__init__)
 
 
-def test_gastm::addressof_constructor_args():
-    sig = inspect.signature(gastm::AddressOf.__init__)
+def test_gastm_deref_constructor_args():
+    sig = inspect.signature(gastm_Deref.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::increment_is_not_abstract():
-    assert not inspect.isabstract(gastm::Increment)
+def test_gastm_increment_is_not_abstract():
+    assert not inspect.isabstract(gastm_Increment)
 
 
-def test_gastm::increment_constructor_exists():
-    assert callable(gastm::Increment.__init__)
+def test_gastm_increment_constructor_exists():
+    assert callable(gastm_Increment.__init__)
 
 
-def test_gastm::increment_constructor_args():
-    sig = inspect.signature(gastm::Increment.__init__)
+def test_gastm_increment_constructor_args():
+    sig = inspect.signature(gastm_Increment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitnot_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitNot)
+def test_gastm_decrement_is_not_abstract():
+    assert not inspect.isabstract(gastm_Decrement)
 
 
-def test_gastm::bitnot_constructor_exists():
-    assert callable(gastm::BitNot.__init__)
+def test_gastm_decrement_constructor_exists():
+    assert callable(gastm_Decrement.__init__)
 
 
-def test_gastm::bitnot_constructor_args():
-    sig = inspect.signature(gastm::BitNot.__init__)
+def test_gastm_decrement_constructor_args():
+    sig = inspect.signature(gastm_Decrement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::negate_is_not_abstract():
-    assert not inspect.isabstract(gastm::Negate)
+def test_gastm_addressof_is_not_abstract():
+    assert not inspect.isabstract(gastm_AddressOf)
 
 
-def test_gastm::negate_constructor_exists():
-    assert callable(gastm::Negate.__init__)
+def test_gastm_addressof_constructor_exists():
+    assert callable(gastm_AddressOf.__init__)
 
 
-def test_gastm::negate_constructor_args():
-    sig = inspect.signature(gastm::Negate.__init__)
+def test_gastm_addressof_constructor_args():
+    sig = inspect.signature(gastm_AddressOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::decrement_is_not_abstract():
-    assert not inspect.isabstract(gastm::Decrement)
+def test_gastm_not_is_not_abstract():
+    assert not inspect.isabstract(gastm_Not)
 
 
-def test_gastm::decrement_constructor_exists():
-    assert callable(gastm::Decrement.__init__)
+def test_gastm_not_constructor_exists():
+    assert callable(gastm_Not.__init__)
 
 
-def test_gastm::decrement_constructor_args():
-    sig = inspect.signature(gastm::Decrement.__init__)
+def test_gastm_not_constructor_args():
+    sig = inspect.signature(gastm_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::deref_is_not_abstract():
-    assert not inspect.isabstract(gastm::Deref)
+def test_gastm_bitnot_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitNot)
 
 
-def test_gastm::deref_constructor_exists():
-    assert callable(gastm::Deref.__init__)
+def test_gastm_bitnot_constructor_exists():
+    assert callable(gastm_BitNot.__init__)
 
 
-def test_gastm::deref_constructor_args():
-    sig = inspect.signature(gastm::Deref.__init__)
+def test_gastm_bitnot_constructor_args():
+    sig = inspect.signature(gastm_BitNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::not_is_not_abstract():
-    assert not inspect.isabstract(gastm::Not)
+def test_gastm_negate_is_not_abstract():
+    assert not inspect.isabstract(gastm_Negate)
 
 
-def test_gastm::not_constructor_exists():
-    assert callable(gastm::Not.__init__)
+def test_gastm_negate_constructor_exists():
+    assert callable(gastm_Negate.__init__)
 
 
-def test_gastm::not_constructor_args():
-    sig = inspect.signature(gastm::Not.__init__)
+def test_gastm_negate_constructor_args():
+    sig = inspect.signature(gastm_Negate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::unaryplus_is_not_abstract():
-    assert not inspect.isabstract(gastm::UnaryPlus)
+def test_gastm_unaryplus_is_not_abstract():
+    assert not inspect.isabstract(gastm_UnaryPlus)
 
 
-def test_gastm::unaryplus_constructor_exists():
-    assert callable(gastm::UnaryPlus.__init__)
+def test_gastm_unaryplus_constructor_exists():
+    assert callable(gastm_UnaryPlus.__init__)
 
 
-def test_gastm::unaryplus_constructor_args():
-    sig = inspect.signature(gastm::UnaryPlus.__init__)
+def test_gastm_unaryplus_constructor_args():
+    sig = inspect.signature(gastm_UnaryPlus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -787,86 +969,86 @@ def test_literal_constructor_args():
 
 
 
-def test_gastm::charliteral_is_not_abstract():
-    assert not inspect.isabstract(gastm::CharLiteral)
+def test_gastm_bitliteral_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitLiteral)
 
 
-def test_gastm::charliteral_constructor_exists():
-    assert callable(gastm::CharLiteral.__init__)
+def test_gastm_bitliteral_constructor_exists():
+    assert callable(gastm_BitLiteral.__init__)
 
 
-def test_gastm::charliteral_constructor_args():
-    sig = inspect.signature(gastm::CharLiteral.__init__)
+def test_gastm_bitliteral_constructor_args():
+    sig = inspect.signature(gastm_BitLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::realliteral_is_not_abstract():
-    assert not inspect.isabstract(gastm::RealLiteral)
+def test_gastm_charliteral_is_not_abstract():
+    assert not inspect.isabstract(gastm_CharLiteral)
 
 
-def test_gastm::realliteral_constructor_exists():
-    assert callable(gastm::RealLiteral.__init__)
+def test_gastm_charliteral_constructor_exists():
+    assert callable(gastm_CharLiteral.__init__)
 
 
-def test_gastm::realliteral_constructor_args():
-    sig = inspect.signature(gastm::RealLiteral.__init__)
+def test_gastm_charliteral_constructor_args():
+    sig = inspect.signature(gastm_CharLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(gastm::StringLiteral)
+def test_gastm_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(gastm_StringLiteral)
 
 
-def test_gastm::stringliteral_constructor_exists():
-    assert callable(gastm::StringLiteral.__init__)
+def test_gastm_stringliteral_constructor_exists():
+    assert callable(gastm_StringLiteral.__init__)
 
 
-def test_gastm::stringliteral_constructor_args():
-    sig = inspect.signature(gastm::StringLiteral.__init__)
+def test_gastm_stringliteral_constructor_args():
+    sig = inspect.signature(gastm_StringLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(gastm::BooleanLiteral)
+def test_gastm_realliteral_is_not_abstract():
+    assert not inspect.isabstract(gastm_RealLiteral)
 
 
-def test_gastm::booleanliteral_constructor_exists():
-    assert callable(gastm::BooleanLiteral.__init__)
+def test_gastm_realliteral_constructor_exists():
+    assert callable(gastm_RealLiteral.__init__)
 
 
-def test_gastm::booleanliteral_constructor_args():
-    sig = inspect.signature(gastm::BooleanLiteral.__init__)
+def test_gastm_realliteral_constructor_args():
+    sig = inspect.signature(gastm_RealLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitliteral_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitLiteral)
+def test_gastm_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(gastm_BooleanLiteral)
 
 
-def test_gastm::bitliteral_constructor_exists():
-    assert callable(gastm::BitLiteral.__init__)
+def test_gastm_booleanliteral_constructor_exists():
+    assert callable(gastm_BooleanLiteral.__init__)
 
 
-def test_gastm::bitliteral_constructor_args():
-    sig = inspect.signature(gastm::BitLiteral.__init__)
+def test_gastm_booleanliteral_constructor_args():
+    sig = inspect.signature(gastm_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::integerlliteral_is_not_abstract():
-    assert not inspect.isabstract(gastm::IntegerlLiteral)
+def test_gastm_integerlliteral_is_not_abstract():
+    assert not inspect.isabstract(gastm_IntegerlLiteral)
 
 
-def test_gastm::integerlliteral_constructor_exists():
-    assert callable(gastm::IntegerlLiteral.__init__)
+def test_gastm_integerlliteral_constructor_exists():
+    assert callable(gastm_IntegerlLiteral.__init__)
 
 
-def test_gastm::integerlliteral_constructor_args():
-    sig = inspect.signature(gastm::IntegerlLiteral.__init__)
+def test_gastm_integerlliteral_constructor_args():
+    sig = inspect.signature(gastm_IntegerlLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -885,58 +1067,72 @@ def test_qualifiedidentifierreference_constructor_args():
 
 
 
-def test_gastm::qualifiedoverdata_is_not_abstract():
-    assert not inspect.isabstract(gastm::QualifiedOverData)
+def test_gastm_qualifiedoverdata_is_not_abstract():
+    assert not inspect.isabstract(gastm_QualifiedOverData)
 
 
-def test_gastm::qualifiedoverdata_constructor_exists():
-    assert callable(gastm::QualifiedOverData.__init__)
+def test_gastm_qualifiedoverdata_constructor_exists():
+    assert callable(gastm_QualifiedOverData.__init__)
 
 
-def test_gastm::qualifiedoverdata_constructor_args():
-    sig = inspect.signature(gastm::QualifiedOverData.__init__)
+def test_gastm_qualifiedoverdata_constructor_args():
+    sig = inspect.signature(gastm_QualifiedOverData.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::qualifiedoverpointer_is_not_abstract():
-    assert not inspect.isabstract(gastm::QualifiedOverPointer)
+def test_gastm_qualifiedoverpointer_is_not_abstract():
+    assert not inspect.isabstract(gastm_QualifiedOverPointer)
 
 
-def test_gastm::qualifiedoverpointer_constructor_exists():
-    assert callable(gastm::QualifiedOverPointer.__init__)
+def test_gastm_qualifiedoverpointer_constructor_exists():
+    assert callable(gastm_QualifiedOverPointer.__init__)
 
 
-def test_gastm::qualifiedoverpointer_constructor_args():
-    sig = inspect.signature(gastm::QualifiedOverPointer.__init__)
+def test_gastm_qualifiedoverpointer_constructor_args():
+    sig = inspect.signature(gastm_QualifiedOverPointer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::postdecrement_is_not_abstract():
-    assert not inspect.isabstract(gastm::PostDecrement)
+def test_gastm_forcheckafterstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ForCheckAfterStatement)
 
 
-def test_gastm::postdecrement_constructor_exists():
-    assert callable(gastm::PostDecrement.__init__)
+def test_gastm_forcheckafterstatement_constructor_exists():
+    assert callable(gastm_ForCheckAfterStatement.__init__)
 
 
-def test_gastm::postdecrement_constructor_args():
-    sig = inspect.signature(gastm::PostDecrement.__init__)
+def test_gastm_forcheckafterstatement_constructor_args():
+    sig = inspect.signature(gastm_ForCheckAfterStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::postincrement_is_not_abstract():
-    assert not inspect.isabstract(gastm::PostIncrement)
+def test_gastm_postdecrement_is_not_abstract():
+    assert not inspect.isabstract(gastm_PostDecrement)
 
 
-def test_gastm::postincrement_constructor_exists():
-    assert callable(gastm::PostIncrement.__init__)
+def test_gastm_postdecrement_constructor_exists():
+    assert callable(gastm_PostDecrement.__init__)
 
 
-def test_gastm::postincrement_constructor_args():
-    sig = inspect.signature(gastm::PostIncrement.__init__)
+def test_gastm_postdecrement_constructor_args():
+    sig = inspect.signature(gastm_PostDecrement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_postincrement_is_not_abstract():
+    assert not inspect.isabstract(gastm_PostIncrement)
+
+
+def test_gastm_postincrement_constructor_exists():
+    assert callable(gastm_PostIncrement.__init__)
+
+
+def test_gastm_postincrement_constructor_args():
+    sig = inspect.signature(gastm_PostIncrement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -955,850 +1151,184 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_gastm::byte_is_not_abstract():
-    assert not inspect.isabstract(gastm::Byte)
+def test_gastm_integer_is_not_abstract():
+    assert not inspect.isabstract(gastm_Integer)
 
 
-def test_gastm::byte_constructor_exists():
-    assert callable(gastm::Byte.__init__)
+def test_gastm_integer_constructor_exists():
+    assert callable(gastm_Integer.__init__)
 
 
-def test_gastm::byte_constructor_args():
-    sig = inspect.signature(gastm::Byte.__init__)
+def test_gastm_integer_constructor_args():
+    sig = inspect.signature(gastm_Integer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::longinteger_is_not_abstract():
-    assert not inspect.isabstract(gastm::LongInteger)
+def test_gastm_string_is_not_abstract():
+    assert not inspect.isabstract(gastm_String)
 
 
-def test_gastm::longinteger_constructor_exists():
-    assert callable(gastm::LongInteger.__init__)
+def test_gastm_string_constructor_exists():
+    assert callable(gastm_String.__init__)
 
 
-def test_gastm::longinteger_constructor_args():
-    sig = inspect.signature(gastm::LongInteger.__init__)
+def test_gastm_string_constructor_args():
+    sig = inspect.signature(gastm_String.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::integer_is_not_abstract():
-    assert not inspect.isabstract(gastm::Integer)
+def test_gastm_longdouble_is_not_abstract():
+    assert not inspect.isabstract(gastm_LongDouble)
 
 
-def test_gastm::integer_constructor_exists():
-    assert callable(gastm::Integer.__init__)
+def test_gastm_longdouble_constructor_exists():
+    assert callable(gastm_LongDouble.__init__)
 
 
-def test_gastm::integer_constructor_args():
-    sig = inspect.signature(gastm::Integer.__init__)
+def test_gastm_longdouble_constructor_args():
+    sig = inspect.signature(gastm_LongDouble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::boolean_is_not_abstract():
-    assert not inspect.isabstract(gastm::Boolean)
+def test_gastm_character_is_not_abstract():
+    assert not inspect.isabstract(gastm_Character)
 
 
-def test_gastm::boolean_constructor_exists():
-    assert callable(gastm::Boolean.__init__)
+def test_gastm_character_constructor_exists():
+    assert callable(gastm_Character.__init__)
 
 
-def test_gastm::boolean_constructor_args():
-    sig = inspect.signature(gastm::Boolean.__init__)
+def test_gastm_character_constructor_args():
+    sig = inspect.signature(gastm_Character.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::longdouble_is_not_abstract():
-    assert not inspect.isabstract(gastm::LongDouble)
+def test_gastm_boolean_is_not_abstract():
+    assert not inspect.isabstract(gastm_Boolean)
 
 
-def test_gastm::longdouble_constructor_exists():
-    assert callable(gastm::LongDouble.__init__)
+def test_gastm_boolean_constructor_exists():
+    assert callable(gastm_Boolean.__init__)
 
 
-def test_gastm::longdouble_constructor_args():
-    sig = inspect.signature(gastm::LongDouble.__init__)
+def test_gastm_boolean_constructor_args():
+    sig = inspect.signature(gastm_Boolean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::shortinteger_is_not_abstract():
-    assert not inspect.isabstract(gastm::ShortInteger)
+def test_gastm_double_is_not_abstract():
+    assert not inspect.isabstract(gastm_Double)
 
 
-def test_gastm::shortinteger_constructor_exists():
-    assert callable(gastm::ShortInteger.__init__)
+def test_gastm_double_constructor_exists():
+    assert callable(gastm_Double.__init__)
 
 
-def test_gastm::shortinteger_constructor_args():
-    sig = inspect.signature(gastm::ShortInteger.__init__)
+def test_gastm_double_constructor_args():
+    sig = inspect.signature(gastm_Double.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::float_is_not_abstract():
-    assert not inspect.isabstract(gastm::Float)
+def test_gastm_byte_is_not_abstract():
+    assert not inspect.isabstract(gastm_Byte)
 
 
-def test_gastm::float_constructor_exists():
-    assert callable(gastm::Float.__init__)
+def test_gastm_byte_constructor_exists():
+    assert callable(gastm_Byte.__init__)
 
 
-def test_gastm::float_constructor_args():
-    sig = inspect.signature(gastm::Float.__init__)
+def test_gastm_byte_constructor_args():
+    sig = inspect.signature(gastm_Byte.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::widecharacter_is_not_abstract():
-    assert not inspect.isabstract(gastm::WideCharacter)
+def test_gastm_float_is_not_abstract():
+    assert not inspect.isabstract(gastm_Float)
 
 
-def test_gastm::widecharacter_constructor_exists():
-    assert callable(gastm::WideCharacter.__init__)
+def test_gastm_float_constructor_exists():
+    assert callable(gastm_Float.__init__)
 
 
-def test_gastm::widecharacter_constructor_args():
-    sig = inspect.signature(gastm::WideCharacter.__init__)
+def test_gastm_float_constructor_args():
+    sig = inspect.signature(gastm_Float.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::double_is_not_abstract():
-    assert not inspect.isabstract(gastm::Double)
+def test_gastm_longinteger_is_not_abstract():
+    assert not inspect.isabstract(gastm_LongInteger)
 
 
-def test_gastm::double_constructor_exists():
-    assert callable(gastm::Double.__init__)
+def test_gastm_longinteger_constructor_exists():
+    assert callable(gastm_LongInteger.__init__)
 
 
-def test_gastm::double_constructor_args():
-    sig = inspect.signature(gastm::Double.__init__)
+def test_gastm_longinteger_constructor_args():
+    sig = inspect.signature(gastm_LongInteger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::character_is_not_abstract():
-    assert not inspect.isabstract(gastm::Character)
+def test_gastm_widecharacter_is_not_abstract():
+    assert not inspect.isabstract(gastm_WideCharacter)
 
 
-def test_gastm::character_constructor_exists():
-    assert callable(gastm::Character.__init__)
+def test_gastm_widecharacter_constructor_exists():
+    assert callable(gastm_WideCharacter.__init__)
 
 
-def test_gastm::character_constructor_args():
-    sig = inspect.signature(gastm::Character.__init__)
+def test_gastm_widecharacter_constructor_args():
+    sig = inspect.signature(gastm_WideCharacter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::string_is_not_abstract():
-    assert not inspect.isabstract(gastm::String)
+def test_gastm_shortinteger_is_not_abstract():
+    assert not inspect.isabstract(gastm_ShortInteger)
 
 
-def test_gastm::string_constructor_exists():
-    assert callable(gastm::String.__init__)
+def test_gastm_shortinteger_constructor_exists():
+    assert callable(gastm_ShortInteger.__init__)
 
 
-def test_gastm::string_constructor_args():
-    sig = inspect.signature(gastm::String.__init__)
+def test_gastm_shortinteger_constructor_args():
+    sig = inspect.signature(gastm_ShortInteger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::void_is_not_abstract():
-    assert not inspect.isabstract(gastm::Void)
+def test_gastm_void_is_not_abstract():
+    assert not inspect.isabstract(gastm_Void)
 
 
-def test_gastm::void_constructor_exists():
-    assert callable(gastm::Void.__init__)
+def test_gastm_void_constructor_exists():
+    assert callable(gastm_Void.__init__)
 
 
-def test_gastm::void_constructor_args():
-    sig = inspect.signature(gastm::Void.__init__)
+def test_gastm_void_constructor_args():
+    sig = inspect.signature(gastm_Void.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_storagespecification_is_not_abstract():
-    assert not inspect.isabstract(StorageSpecification)
+def test_gastm_nodef_is_not_abstract():
+    assert not inspect.isabstract(gastm_NoDef)
 
 
-def test_storagespecification_constructor_exists():
-    assert callable(StorageSpecification.__init__)
+def test_gastm_nodef_constructor_exists():
+    assert callable(gastm_NoDef.__init__)
 
 
-def test_storagespecification_constructor_args():
-    sig = inspect.signature(StorageSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::perclassmember_is_not_abstract():
-    assert not inspect.isabstract(gastm::PerClassMember)
-
-
-def test_gastm::perclassmember_constructor_exists():
-    assert callable(gastm::PerClassMember.__init__)
-
-
-def test_gastm::perclassmember_constructor_args():
-    sig = inspect.signature(gastm::PerClassMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::functionpersistent_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionPersistent)
-
-
-def test_gastm::functionpersistent_constructor_exists():
-    assert callable(gastm::FunctionPersistent.__init__)
-
-
-def test_gastm::functionpersistent_constructor_args():
-    sig = inspect.signature(gastm::FunctionPersistent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::filelocal_is_not_abstract():
-    assert not inspect.isabstract(gastm::FileLocal)
-
-
-def test_gastm::filelocal_constructor_exists():
-    assert callable(gastm::FileLocal.__init__)
-
-
-def test_gastm::filelocal_constructor_args():
-    sig = inspect.signature(gastm::FileLocal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::nodef_is_not_abstract():
-    assert not inspect.isabstract(gastm::NoDef)
-
-
-def test_gastm::nodef_constructor_exists():
-    assert callable(gastm::NoDef.__init__)
-
-
-def test_gastm::nodef_constructor_args():
-    sig = inspect.signature(gastm::NoDef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::external_is_not_abstract():
-    assert not inspect.isabstract(gastm::External)
-
-
-def test_gastm::external_constructor_exists():
-    assert callable(gastm::External.__init__)
-
-
-def test_gastm::external_constructor_args():
-    sig = inspect.signature(gastm::External.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_forstatement_is_not_abstract():
-    assert not inspect.isabstract(ForStatement)
-
-
-def test_forstatement_constructor_exists():
-    assert callable(ForStatement.__init__)
-
-
-def test_forstatement_constructor_args():
-    sig = inspect.signature(ForStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::forcheckafterstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ForCheckAfterStatement)
-
-
-def test_gastm::forcheckafterstatement_constructor_exists():
-    assert callable(gastm::ForCheckAfterStatement.__init__)
-
-
-def test_gastm::forcheckafterstatement_constructor_args():
-    sig = inspect.signature(gastm::ForCheckAfterStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::forcheckbeforestatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ForCheckBeforeStatement)
-
-
-def test_gastm::forcheckbeforestatement_constructor_exists():
-    assert callable(gastm::ForCheckBeforeStatement.__init__)
-
-
-def test_gastm::forcheckbeforestatement_constructor_args():
-    sig = inspect.signature(gastm::ForCheckBeforeStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_accesskind_is_not_abstract():
-    assert not inspect.isabstract(AccessKind)
-
-
-def test_accesskind_constructor_exists():
-    assert callable(AccessKind.__init__)
-
-
-def test_accesskind_constructor_args():
-    sig = inspect.signature(AccessKind.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::private_is_not_abstract():
-    assert not inspect.isabstract(gastm::Private)
-
-
-def test_gastm::private_constructor_exists():
-    assert callable(gastm::Private.__init__)
-
-
-def test_gastm::private_constructor_args():
-    sig = inspect.signature(gastm::Private.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::protected_is_not_abstract():
-    assert not inspect.isabstract(gastm::Protected)
-
-
-def test_gastm::protected_constructor_exists():
-    assert callable(gastm::Protected.__init__)
-
-
-def test_gastm::protected_constructor_args():
-    sig = inspect.signature(gastm::Protected.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::public_is_not_abstract():
-    assert not inspect.isabstract(gastm::Public)
-
-
-def test_gastm::public_constructor_exists():
-    assert callable(gastm::Public.__init__)
-
-
-def test_gastm::public_constructor_args():
-    sig = inspect.signature(gastm::Public.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbclosecursorstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBCloseCursorStatement)
-
-
-def test_sastm::rdbclosecursorstatement_constructor_exists():
-    assert callable(sastm::RDBCloseCursorStatement.__init__)
-
-
-def test_sastm::rdbclosecursorstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBCloseCursorStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbdeletestatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBDeleteStatement)
-
-
-def test_sastm::rdbdeletestatement_constructor_exists():
-    assert callable(sastm::RDBDeleteStatement.__init__)
-
-
-def test_sastm::rdbdeletestatement_constructor_args():
-    sig = inspect.signature(sastm::RDBDeleteStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::accesskind_is_not_abstract():
-    assert not inspect.isabstract(gastm::AccessKind)
-
-
-def test_gastm::accesskind_constructor_exists():
-    assert callable(gastm::AccessKind.__init__)
-
-
-def test_gastm::accesskind_constructor_args():
-    sig = inspect.signature(gastm::AccessKind.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::datatype_is_not_abstract():
-    assert not inspect.isabstract(gastm::DataType)
-
-
-def test_gastm::datatype_constructor_exists():
-    assert callable(gastm::DataType.__init__)
-
-
-def test_gastm::datatype_constructor_args():
-    sig = inspect.signature(gastm::DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::storagespecification_is_not_abstract():
-    assert not inspect.isabstract(gastm::StorageSpecification)
-
-
-def test_gastm::storagespecification_constructor_exists():
-    assert callable(gastm::StorageSpecification.__init__)
-
-
-def test_gastm::storagespecification_constructor_args():
-    sig = inspect.signature(gastm::StorageSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::othersyntaxobject_is_not_abstract():
-    assert not inspect.isabstract(gastm::OtherSyntaxObject)
-
-
-def test_gastm::othersyntaxobject_constructor_exists():
-    assert callable(gastm::OtherSyntaxObject.__init__)
-
-
-def test_gastm::othersyntaxobject_constructor_args():
-    sig = inspect.signature(gastm::OtherSyntaxObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::gastmsemanticobject_is_not_abstract():
-    assert not inspect.isabstract(gastm::GASTMSemanticObject)
-
-
-def test_gastm::gastmsemanticobject_constructor_exists():
-    assert callable(gastm::GASTMSemanticObject.__init__)
-
-
-def test_gastm::gastmsemanticobject_constructor_args():
-    sig = inspect.signature(gastm::GASTMSemanticObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::gastmsourceobject_is_not_abstract():
-    assert not inspect.isabstract(gastm::GASTMSourceObject)
-
-
-def test_gastm::gastmsourceobject_constructor_exists():
-    assert callable(gastm::GASTMSourceObject.__init__)
-
-
-def test_gastm::gastmsourceobject_constructor_args():
-    sig = inspect.signature(gastm::GASTMSourceObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::gastmobject_is_not_abstract():
-    assert not inspect.isabstract(gastm::GASTMObject)
-
-
-def test_gastm::gastmobject_constructor_exists():
-    assert callable(gastm::GASTMObject.__init__)
-
-
-def test_gastm::gastmobject_constructor_args():
-    sig = inspect.signature(gastm::GASTMObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_programscope_is_not_abstract():
-    assert not inspect.isabstract(ProgramScope)
-
-
-def test_programscope_constructor_exists():
-    assert callable(ProgramScope.__init__)
-
-
-def test_programscope_constructor_args():
-    sig = inspect.signature(ProgramScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_othersyntaxobject_is_not_abstract():
-    assert not inspect.isabstract(OtherSyntaxObject)
-
-
-def test_othersyntaxobject_constructor_exists():
-    assert callable(OtherSyntaxObject.__init__)
-
-
-def test_othersyntaxobject_constructor_args():
-    sig = inspect.signature(OtherSyntaxObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbindexcolumn_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBIndexColumn)
-
-
-def test_sastm::rdbindexcolumn_constructor_exists():
-    assert callable(sastm::RDBIndexColumn.__init__)
-
-
-def test_sastm::rdbindexcolumn_constructor_args():
-    sig = inspect.signature(sastm::RDBIndexColumn.__init__)
-    params = list(sig.parameters.keys())
-    assert "AscendingOrDescending" in params, "Missing parameter 'AscendingOrDescending'"
-
-def test_sastm::rdbindexcolumn_has_AscendingOrDescending():
-    assert hasattr(sastm::RDBIndexColumn, "AscendingOrDescending")
-    descriptor = None
-    for klass in sastm::RDBIndexColumn.__mro__:
-        if "AscendingOrDescending" in klass.__dict__:
-            descriptor = klass.__dict__["AscendingOrDescending"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gastm::virtualspecification_is_not_abstract():
-    assert not inspect.isabstract(gastm::VirtualSpecification)
-
-
-def test_gastm::virtualspecification_constructor_exists():
-    assert callable(gastm::VirtualSpecification.__init__)
-
-
-def test_gastm::virtualspecification_constructor_args():
-    sig = inspect.signature(gastm::VirtualSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::name_is_not_abstract():
-    assert not inspect.isabstract(gastm::Name)
-
-
-def test_gastm::name_constructor_exists():
-    assert callable(gastm::Name.__init__)
-
-
-def test_gastm::name_constructor_args():
-    sig = inspect.signature(gastm::Name.__init__)
-    params = list(sig.parameters.keys())
-    assert "nameString" in params, "Missing parameter 'nameString'"
-
-def test_gastm::name_has_nameString():
-    assert hasattr(gastm::Name, "nameString")
-    descriptor = None
-    for klass in gastm::Name.__mro__:
-        if "nameString" in klass.__dict__:
-            descriptor = klass.__dict__["nameString"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sastm::rdbindex_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBIndex)
-
-
-def test_sastm::rdbindex_constructor_exists():
-    assert callable(sastm::RDBIndex.__init__)
-
-
-def test_sastm::rdbindex_constructor_args():
-    sig = inspect.signature(sastm::RDBIndex.__init__)
-    params = list(sig.parameters.keys())
-    assert "NotNull" in params, "Missing parameter 'NotNull'"
-    assert "IsUnique" in params, "Missing parameter 'IsUnique'"
-
-def test_sastm::rdbindex_has_NotNull():
-    assert hasattr(sastm::RDBIndex, "NotNull")
-    descriptor = None
-    for klass in sastm::RDBIndex.__mro__:
-        if "NotNull" in klass.__dict__:
-            descriptor = klass.__dict__["NotNull"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sastm::rdbindex_has_IsUnique():
-    assert hasattr(sastm::RDBIndex, "IsUnique")
-    descriptor = None
-    for klass in sastm::RDBIndex.__mro__:
-        if "IsUnique" in klass.__dict__:
-            descriptor = klass.__dict__["IsUnique"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gastm::functionmemberattribute_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionMemberAttribute)
-
-
-def test_gastm::functionmemberattribute_constructor_exists():
-    assert callable(gastm::FunctionMemberAttribute.__init__)
-
-
-def test_gastm::functionmemberattribute_constructor_args():
-    sig = inspect.signature(gastm::FunctionMemberAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbtrigger_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTrigger)
-
-
-def test_sastm::rdbtrigger_constructor_exists():
-    assert callable(sastm::RDBTrigger.__init__)
-
-
-def test_sastm::rdbtrigger_constructor_args():
-    sig = inspect.signature(sastm::RDBTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbconstraint_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBConstraint)
-
-
-def test_sastm::rdbconstraint_constructor_exists():
-    assert callable(sastm::RDBConstraint.__init__)
-
-
-def test_sastm::rdbconstraint_constructor_args():
-    sig = inspect.signature(sastm::RDBConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(gastm::CompilationUnit)
-
-
-def test_gastm::compilationunit_constructor_exists():
-    assert callable(gastm::CompilationUnit.__init__)
-
-
-def test_gastm::compilationunit_constructor_args():
-    sig = inspect.signature(gastm::CompilationUnit.__init__)
-    params = list(sig.parameters.keys())
-    assert "language" in params, "Missing parameter 'language'"
-
-def test_gastm::compilationunit_has_language():
-    assert hasattr(gastm::CompilationUnit, "language")
-    descriptor = None
-    for klass in gastm::CompilationUnit.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_annotationexpression_is_not_abstract():
-    assert not inspect.isabstract(AnnotationExpression)
-
-
-def test_annotationexpression_constructor_exists():
-    assert callable(AnnotationExpression.__init__)
-
-
-def test_annotationexpression_constructor_args():
-    sig = inspect.signature(AnnotationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_preprocessorelement_is_not_abstract():
-    assert not inspect.isabstract(PreprocessorElement)
-
-
-def test_preprocessorelement_constructor_exists():
-    assert callable(PreprocessorElement.__init__)
-
-
-def test_preprocessorelement_constructor_args():
-    sig = inspect.signature(PreprocessorElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sourcelocation_is_not_abstract():
-    assert not inspect.isabstract(SourceLocation)
-
-
-def test_sourcelocation_constructor_exists():
-    assert callable(SourceLocation.__init__)
-
-
-def test_sourcelocation_constructor_args():
-    sig = inspect.signature(SourceLocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastmobject_is_not_abstract():
-    assert not inspect.isabstract(GASTMObject)
-
-
-def test_gastmobject_constructor_exists():
-    assert callable(GASTMObject.__init__)
-
-
-def test_gastmobject_constructor_args():
-    sig = inspect.signature(GASTMObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::gastmsyntaxobject_is_not_abstract():
-    assert not inspect.isabstract(gastm::GASTMSyntaxObject)
-
-
-def test_gastm::gastmsyntaxobject_constructor_exists():
-    assert callable(gastm::GASTMSyntaxObject.__init__)
-
-
-def test_gastm::gastmsyntaxobject_constructor_args():
-    sig = inspect.signature(gastm::GASTMSyntaxObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scope_is_not_abstract():
-    assert not inspect.isabstract(Scope)
-
-
-def test_scope_constructor_exists():
-    assert callable(Scope.__init__)
-
-
-def test_scope_constructor_args():
-    sig = inspect.signature(Scope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::functionscope_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionScope)
-
-
-def test_gastm::functionscope_constructor_exists():
-    assert callable(gastm::FunctionScope.__init__)
-
-
-def test_gastm::functionscope_constructor_args():
-    sig = inspect.signature(gastm::FunctionScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::blockscope_is_not_abstract():
-    assert not inspect.isabstract(gastm::BlockScope)
-
-
-def test_gastm::blockscope_constructor_exists():
-    assert callable(gastm::BlockScope.__init__)
-
-
-def test_gastm::blockscope_constructor_args():
-    sig = inspect.signature(gastm::BlockScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::aggregatescope_is_not_abstract():
-    assert not inspect.isabstract(gastm::AggregateScope)
-
-
-def test_gastm::aggregatescope_constructor_exists():
-    assert callable(gastm::AggregateScope.__init__)
-
-
-def test_gastm::aggregatescope_constructor_args():
-    sig = inspect.signature(gastm::AggregateScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::programscope_is_not_abstract():
-    assert not inspect.isabstract(gastm::ProgramScope)
-
-
-def test_gastm::programscope_constructor_exists():
-    assert callable(gastm::ProgramScope.__init__)
-
-
-def test_gastm::programscope_constructor_args():
-    sig = inspect.signature(gastm::ProgramScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_definitionobject_is_not_abstract():
-    assert not inspect.isabstract(DefinitionObject)
-
-
-def test_definitionobject_constructor_exists():
-    assert callable(DefinitionObject.__init__)
-
-
-def test_definitionobject_constructor_args():
-    sig = inspect.signature(DefinitionObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_globalscope_is_not_abstract():
-    assert not inspect.isabstract(GlobalScope)
-
-
-def test_globalscope_constructor_exists():
-    assert callable(GlobalScope.__init__)
-
-
-def test_globalscope_constructor_args():
-    sig = inspect.signature(GlobalScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::globalscope_is_not_abstract():
-    assert not inspect.isabstract(gastm::GlobalScope)
-
-
-def test_gastm::globalscope_constructor_exists():
-    assert callable(gastm::GlobalScope.__init__)
-
-
-def test_gastm::globalscope_constructor_args():
-    sig = inspect.signature(gastm::GlobalScope.__init__)
+def test_gastm_nodef_constructor_args():
+    sig = inspect.signature(gastm_NoDef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1817,366 +1347,366 @@ def test_binaryoperator_constructor_args():
 
 
 
-def test_gastm::specificin_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificIn)
+def test_gastm_bitor_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitOr)
 
 
-def test_gastm::specificin_constructor_exists():
-    assert callable(gastm::SpecificIn.__init__)
+def test_gastm_bitor_constructor_exists():
+    assert callable(gastm_BitOr.__init__)
 
 
-def test_gastm::specificin_constructor_args():
-    sig = inspect.signature(gastm::SpecificIn.__init__)
+def test_gastm_bitor_constructor_args():
+    sig = inspect.signature(gastm_BitOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::specificlike_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificLike)
+def test_gastm_bitand_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitAnd)
 
 
-def test_gastm::specificlike_constructor_exists():
-    assert callable(gastm::SpecificLike.__init__)
+def test_gastm_bitand_constructor_exists():
+    assert callable(gastm_BitAnd.__init__)
 
 
-def test_gastm::specificlike_constructor_args():
-    sig = inspect.signature(gastm::SpecificLike.__init__)
+def test_gastm_bitand_constructor_args():
+    sig = inspect.signature(gastm_BitAnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::notgreater_is_not_abstract():
-    assert not inspect.isabstract(gastm::NotGreater)
+def test_gastm_notless_is_not_abstract():
+    assert not inspect.isabstract(gastm_NotLess)
 
 
-def test_gastm::notgreater_constructor_exists():
-    assert callable(gastm::NotGreater.__init__)
+def test_gastm_notless_constructor_exists():
+    assert callable(gastm_NotLess.__init__)
 
 
-def test_gastm::notgreater_constructor_args():
-    sig = inspect.signature(gastm::NotGreater.__init__)
+def test_gastm_notless_constructor_args():
+    sig = inspect.signature(gastm_NotLess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::assign_is_not_abstract():
-    assert not inspect.isabstract(gastm::Assign)
+def test_gastm_specificlessequal_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificLessEqual)
 
 
-def test_gastm::assign_constructor_exists():
-    assert callable(gastm::Assign.__init__)
+def test_gastm_specificlessequal_constructor_exists():
+    assert callable(gastm_SpecificLessEqual.__init__)
 
 
-def test_gastm::assign_constructor_args():
-    sig = inspect.signature(gastm::Assign.__init__)
+def test_gastm_specificlessequal_constructor_args():
+    sig = inspect.signature(gastm_SpecificLessEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::divide_is_not_abstract():
-    assert not inspect.isabstract(gastm::Divide)
+def test_gastm_greater_is_not_abstract():
+    assert not inspect.isabstract(gastm_Greater)
 
 
-def test_gastm::divide_constructor_exists():
-    assert callable(gastm::Divide.__init__)
+def test_gastm_greater_constructor_exists():
+    assert callable(gastm_Greater.__init__)
 
 
-def test_gastm::divide_constructor_args():
-    sig = inspect.signature(gastm::Divide.__init__)
+def test_gastm_greater_constructor_args():
+    sig = inspect.signature(gastm_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitxor_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitXor)
+def test_gastm_specificconcatstring_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificConcatString)
 
 
-def test_gastm::bitxor_constructor_exists():
-    assert callable(gastm::BitXor.__init__)
+def test_gastm_specificconcatstring_constructor_exists():
+    assert callable(gastm_SpecificConcatString.__init__)
 
 
-def test_gastm::bitxor_constructor_args():
-    sig = inspect.signature(gastm::BitXor.__init__)
+def test_gastm_specificconcatstring_constructor_args():
+    sig = inspect.signature(gastm_SpecificConcatString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::exponent_is_not_abstract():
-    assert not inspect.isabstract(gastm::Exponent)
+def test_gastm_specificin_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificIn)
 
 
-def test_gastm::exponent_constructor_exists():
-    assert callable(gastm::Exponent.__init__)
+def test_gastm_specificin_constructor_exists():
+    assert callable(gastm_SpecificIn.__init__)
 
 
-def test_gastm::exponent_constructor_args():
-    sig = inspect.signature(gastm::Exponent.__init__)
+def test_gastm_specificin_constructor_args():
+    sig = inspect.signature(gastm_SpecificIn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::less_is_not_abstract():
-    assert not inspect.isabstract(gastm::Less)
+def test_gastm_equal_is_not_abstract():
+    assert not inspect.isabstract(gastm_Equal)
 
 
-def test_gastm::less_constructor_exists():
-    assert callable(gastm::Less.__init__)
+def test_gastm_equal_constructor_exists():
+    assert callable(gastm_Equal.__init__)
 
 
-def test_gastm::less_constructor_args():
-    sig = inspect.signature(gastm::Less.__init__)
+def test_gastm_equal_constructor_args():
+    sig = inspect.signature(gastm_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::or_is_not_abstract():
-    assert not inspect.isabstract(gastm::Or)
+def test_gastm_less_is_not_abstract():
+    assert not inspect.isabstract(gastm_Less)
 
 
-def test_gastm::or_constructor_exists():
-    assert callable(gastm::Or.__init__)
+def test_gastm_less_constructor_exists():
+    assert callable(gastm_Less.__init__)
 
 
-def test_gastm::or_constructor_args():
-    sig = inspect.signature(gastm::Or.__init__)
+def test_gastm_less_constructor_args():
+    sig = inspect.signature(gastm_Less.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::equal_is_not_abstract():
-    assert not inspect.isabstract(gastm::Equal)
+def test_gastm_notgreater_is_not_abstract():
+    assert not inspect.isabstract(gastm_NotGreater)
 
 
-def test_gastm::equal_constructor_exists():
-    assert callable(gastm::Equal.__init__)
+def test_gastm_notgreater_constructor_exists():
+    assert callable(gastm_NotGreater.__init__)
 
 
-def test_gastm::equal_constructor_args():
-    sig = inspect.signature(gastm::Equal.__init__)
+def test_gastm_notgreater_constructor_args():
+    sig = inspect.signature(gastm_NotGreater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitrightshift_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitRightShift)
+def test_gastm_specificgreaterequal_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificGreaterEqual)
 
 
-def test_gastm::bitrightshift_constructor_exists():
-    assert callable(gastm::BitRightShift.__init__)
+def test_gastm_specificgreaterequal_constructor_exists():
+    assert callable(gastm_SpecificGreaterEqual.__init__)
 
 
-def test_gastm::bitrightshift_constructor_args():
-    sig = inspect.signature(gastm::BitRightShift.__init__)
+def test_gastm_specificgreaterequal_constructor_args():
+    sig = inspect.signature(gastm_SpecificGreaterEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::subtract_is_not_abstract():
-    assert not inspect.isabstract(gastm::Subtract)
+def test_gastm_assign_is_not_abstract():
+    assert not inspect.isabstract(gastm_Assign)
 
 
-def test_gastm::subtract_constructor_exists():
-    assert callable(gastm::Subtract.__init__)
+def test_gastm_assign_constructor_exists():
+    assert callable(gastm_Assign.__init__)
 
 
-def test_gastm::subtract_constructor_args():
-    sig = inspect.signature(gastm::Subtract.__init__)
+def test_gastm_assign_constructor_args():
+    sig = inspect.signature(gastm_Assign.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::add_is_not_abstract():
-    assert not inspect.isabstract(gastm::Add)
+def test_gastm_divide_is_not_abstract():
+    assert not inspect.isabstract(gastm_Divide)
 
 
-def test_gastm::add_constructor_exists():
-    assert callable(gastm::Add.__init__)
+def test_gastm_divide_constructor_exists():
+    assert callable(gastm_Divide.__init__)
 
 
-def test_gastm::add_constructor_args():
-    sig = inspect.signature(gastm::Add.__init__)
+def test_gastm_divide_constructor_args():
+    sig = inspect.signature(gastm_Divide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::greater_is_not_abstract():
-    assert not inspect.isabstract(gastm::Greater)
+def test_gastm_multiply_is_not_abstract():
+    assert not inspect.isabstract(gastm_Multiply)
 
 
-def test_gastm::greater_constructor_exists():
-    assert callable(gastm::Greater.__init__)
+def test_gastm_multiply_constructor_exists():
+    assert callable(gastm_Multiply.__init__)
 
 
-def test_gastm::greater_constructor_args():
-    sig = inspect.signature(gastm::Greater.__init__)
+def test_gastm_multiply_constructor_args():
+    sig = inspect.signature(gastm_Multiply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::specificgreaterequal_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificGreaterEqual)
+def test_gastm_bitxor_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitXor)
 
 
-def test_gastm::specificgreaterequal_constructor_exists():
-    assert callable(gastm::SpecificGreaterEqual.__init__)
+def test_gastm_bitxor_constructor_exists():
+    assert callable(gastm_BitXor.__init__)
 
 
-def test_gastm::specificgreaterequal_constructor_args():
-    sig = inspect.signature(gastm::SpecificGreaterEqual.__init__)
+def test_gastm_bitxor_constructor_args():
+    sig = inspect.signature(gastm_BitXor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::multiply_is_not_abstract():
-    assert not inspect.isabstract(gastm::Multiply)
+def test_gastm_subtract_is_not_abstract():
+    assert not inspect.isabstract(gastm_Subtract)
 
 
-def test_gastm::multiply_constructor_exists():
-    assert callable(gastm::Multiply.__init__)
+def test_gastm_subtract_constructor_exists():
+    assert callable(gastm_Subtract.__init__)
 
 
-def test_gastm::multiply_constructor_args():
-    sig = inspect.signature(gastm::Multiply.__init__)
+def test_gastm_subtract_constructor_args():
+    sig = inspect.signature(gastm_Subtract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::specificconcatstring_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificConcatString)
+def test_gastm_bitrightshift_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitRightShift)
 
 
-def test_gastm::specificconcatstring_constructor_exists():
-    assert callable(gastm::SpecificConcatString.__init__)
+def test_gastm_bitrightshift_constructor_exists():
+    assert callable(gastm_BitRightShift.__init__)
 
 
-def test_gastm::specificconcatstring_constructor_args():
-    sig = inspect.signature(gastm::SpecificConcatString.__init__)
+def test_gastm_bitrightshift_constructor_args():
+    sig = inspect.signature(gastm_BitRightShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitleftshift_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitLeftShift)
+def test_gastm_or_is_not_abstract():
+    assert not inspect.isabstract(gastm_Or)
 
 
-def test_gastm::bitleftshift_constructor_exists():
-    assert callable(gastm::BitLeftShift.__init__)
+def test_gastm_or_constructor_exists():
+    assert callable(gastm_Or.__init__)
 
 
-def test_gastm::bitleftshift_constructor_args():
-    sig = inspect.signature(gastm::BitLeftShift.__init__)
+def test_gastm_or_constructor_args():
+    sig = inspect.signature(gastm_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::specificlessequal_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificLessEqual)
+def test_gastm_notequal_is_not_abstract():
+    assert not inspect.isabstract(gastm_NotEqual)
 
 
-def test_gastm::specificlessequal_constructor_exists():
-    assert callable(gastm::SpecificLessEqual.__init__)
+def test_gastm_notequal_constructor_exists():
+    assert callable(gastm_NotEqual.__init__)
 
 
-def test_gastm::specificlessequal_constructor_args():
-    sig = inspect.signature(gastm::SpecificLessEqual.__init__)
+def test_gastm_notequal_constructor_args():
+    sig = inspect.signature(gastm_NotEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitor_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitOr)
+def test_gastm_exponent_is_not_abstract():
+    assert not inspect.isabstract(gastm_Exponent)
 
 
-def test_gastm::bitor_constructor_exists():
-    assert callable(gastm::BitOr.__init__)
+def test_gastm_exponent_constructor_exists():
+    assert callable(gastm_Exponent.__init__)
 
 
-def test_gastm::bitor_constructor_args():
-    sig = inspect.signature(gastm::BitOr.__init__)
+def test_gastm_exponent_constructor_args():
+    sig = inspect.signature(gastm_Exponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::notless_is_not_abstract():
-    assert not inspect.isabstract(gastm::NotLess)
+def test_gastm_add_is_not_abstract():
+    assert not inspect.isabstract(gastm_Add)
 
 
-def test_gastm::notless_constructor_exists():
-    assert callable(gastm::NotLess.__init__)
+def test_gastm_add_constructor_exists():
+    assert callable(gastm_Add.__init__)
 
 
-def test_gastm::notless_constructor_args():
-    sig = inspect.signature(gastm::NotLess.__init__)
+def test_gastm_add_constructor_args():
+    sig = inspect.signature(gastm_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitand_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitAnd)
+def test_gastm_specificlike_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificLike)
 
 
-def test_gastm::bitand_constructor_exists():
-    assert callable(gastm::BitAnd.__init__)
+def test_gastm_specificlike_constructor_exists():
+    assert callable(gastm_SpecificLike.__init__)
 
 
-def test_gastm::bitand_constructor_args():
-    sig = inspect.signature(gastm::BitAnd.__init__)
+def test_gastm_specificlike_constructor_args():
+    sig = inspect.signature(gastm_SpecificLike.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::and_is_not_abstract():
-    assert not inspect.isabstract(gastm::And)
+def test_gastm_and_is_not_abstract():
+    assert not inspect.isabstract(gastm_And)
 
 
-def test_gastm::and_constructor_exists():
-    assert callable(gastm::And.__init__)
+def test_gastm_and_constructor_exists():
+    assert callable(gastm_And.__init__)
 
 
-def test_gastm::and_constructor_args():
-    sig = inspect.signature(gastm::And.__init__)
+def test_gastm_and_constructor_args():
+    sig = inspect.signature(gastm_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::notequal_is_not_abstract():
-    assert not inspect.isabstract(gastm::NotEqual)
+def test_gastm_modulus_is_not_abstract():
+    assert not inspect.isabstract(gastm_Modulus)
 
 
-def test_gastm::notequal_constructor_exists():
-    assert callable(gastm::NotEqual.__init__)
+def test_gastm_modulus_constructor_exists():
+    assert callable(gastm_Modulus.__init__)
 
 
-def test_gastm::notequal_constructor_args():
-    sig = inspect.signature(gastm::NotEqual.__init__)
+def test_gastm_modulus_constructor_args():
+    sig = inspect.signature(gastm_Modulus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::modulus_is_not_abstract():
-    assert not inspect.isabstract(gastm::Modulus)
+def test_gastm_bitleftshift_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitLeftShift)
 
 
-def test_gastm::modulus_constructor_exists():
-    assert callable(gastm::Modulus.__init__)
+def test_gastm_bitleftshift_constructor_exists():
+    assert callable(gastm_BitLeftShift.__init__)
 
 
-def test_gastm::modulus_constructor_args():
-    sig = inspect.signature(gastm::Modulus.__init__)
+def test_gastm_bitleftshift_constructor_args():
+    sig = inspect.signature(gastm_BitLeftShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::operatorassign_is_not_abstract():
-    assert not inspect.isabstract(gastm::OperatorAssign)
+def test_gastm_operatorassign_is_not_abstract():
+    assert not inspect.isabstract(gastm_OperatorAssign)
 
 
-def test_gastm::operatorassign_constructor_exists():
-    assert callable(gastm::OperatorAssign.__init__)
+def test_gastm_operatorassign_constructor_exists():
+    assert callable(gastm_OperatorAssign.__init__)
 
 
-def test_gastm::operatorassign_constructor_args():
-    sig = inspect.signature(gastm::OperatorAssign.__init__)
+def test_gastm_operatorassign_constructor_args():
+    sig = inspect.signature(gastm_OperatorAssign.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2195,30 +1725,30 @@ def test_actualparameter_constructor_args():
 
 
 
-def test_gastm::missingactualparameter_is_not_abstract():
-    assert not inspect.isabstract(gastm::MissingActualParameter)
+def test_gastm_missingactualparameter_is_not_abstract():
+    assert not inspect.isabstract(gastm_MissingActualParameter)
 
 
-def test_gastm::missingactualparameter_constructor_exists():
-    assert callable(gastm::MissingActualParameter.__init__)
+def test_gastm_missingactualparameter_constructor_exists():
+    assert callable(gastm_MissingActualParameter.__init__)
 
 
-def test_gastm::missingactualparameter_constructor_args():
-    sig = inspect.signature(gastm::MissingActualParameter.__init__)
+def test_gastm_missingactualparameter_constructor_args():
+    sig = inspect.signature(gastm_MissingActualParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::actualparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::ActualParameterExpression)
+def test_gastm_actualparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_ActualParameterExpression)
 
 
-def test_gastm::actualparameterexpression_constructor_exists():
-    assert callable(gastm::ActualParameterExpression.__init__)
+def test_gastm_actualparameterexpression_constructor_exists():
+    assert callable(gastm_ActualParameterExpression.__init__)
 
 
-def test_gastm::actualparameterexpression_constructor_args():
-    sig = inspect.signature(gastm::ActualParameterExpression.__init__)
+def test_gastm_actualparameterexpression_constructor_args():
+    sig = inspect.signature(gastm_ActualParameterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2237,44 +1767,44 @@ def test_identifierreference_constructor_args():
 
 
 
-def test_sastm::rdbtablealias_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableAlias)
+def test_sastm_rdbcolumnreference_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBColumnReference)
 
 
-def test_sastm::rdbtablealias_constructor_exists():
-    assert callable(sastm::RDBTableAlias.__init__)
+def test_sastm_rdbcolumnreference_constructor_exists():
+    assert callable(sastm_RDBColumnReference.__init__)
 
 
-def test_sastm::rdbtablealias_constructor_args():
-    sig = inspect.signature(sastm::RDBTableAlias.__init__)
+def test_sastm_rdbcolumnreference_constructor_args():
+    sig = inspect.signature(sastm_RDBColumnReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbtablereference_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableReference)
+def test_sastm_rdbtablereference_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableReference)
 
 
-def test_sastm::rdbtablereference_constructor_exists():
-    assert callable(sastm::RDBTableReference.__init__)
+def test_sastm_rdbtablereference_constructor_exists():
+    assert callable(sastm_RDBTableReference.__init__)
 
 
-def test_sastm::rdbtablereference_constructor_args():
-    sig = inspect.signature(sastm::RDBTableReference.__init__)
+def test_sastm_rdbtablereference_constructor_args():
+    sig = inspect.signature(sastm_RDBTableReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbcolumnreference_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBColumnReference)
+def test_sastm_rdbtablealias_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableAlias)
 
 
-def test_sastm::rdbcolumnreference_constructor_exists():
-    assert callable(sastm::RDBColumnReference.__init__)
+def test_sastm_rdbtablealias_constructor_exists():
+    assert callable(sastm_RDBTableAlias.__init__)
 
 
-def test_sastm::rdbcolumnreference_constructor_args():
-    sig = inspect.signature(sastm::RDBColumnReference.__init__)
+def test_sastm_rdbtablealias_constructor_args():
+    sig = inspect.signature(sastm_RDBTableAlias.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2293,58 +1823,44 @@ def test_namereference_constructor_args():
 
 
 
-def test_gastm::identifierreference_is_not_abstract():
-    assert not inspect.isabstract(gastm::IdentifierReference)
+def test_gastm_typequalifiedidentifierreference_is_not_abstract():
+    assert not inspect.isabstract(gastm_TypeQualifiedIdentifierReference)
 
 
-def test_gastm::identifierreference_constructor_exists():
-    assert callable(gastm::IdentifierReference.__init__)
+def test_gastm_typequalifiedidentifierreference_constructor_exists():
+    assert callable(gastm_TypeQualifiedIdentifierReference.__init__)
 
 
-def test_gastm::identifierreference_constructor_args():
-    sig = inspect.signature(gastm::IdentifierReference.__init__)
+def test_gastm_typequalifiedidentifierreference_constructor_args():
+    sig = inspect.signature(gastm_TypeQualifiedIdentifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::typequalifiedidentifierreference_is_not_abstract():
-    assert not inspect.isabstract(gastm::TypeQualifiedIdentifierReference)
+def test_gastm_identifierreference_is_not_abstract():
+    assert not inspect.isabstract(gastm_IdentifierReference)
 
 
-def test_gastm::typequalifiedidentifierreference_constructor_exists():
-    assert callable(gastm::TypeQualifiedIdentifierReference.__init__)
+def test_gastm_identifierreference_constructor_exists():
+    assert callable(gastm_IdentifierReference.__init__)
 
 
-def test_gastm::typequalifiedidentifierreference_constructor_args():
-    sig = inspect.signature(gastm::TypeQualifiedIdentifierReference.__init__)
+def test_gastm_identifierreference_constructor_args():
+    sig = inspect.signature(gastm_IdentifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::qualifiedidentifierreference_is_not_abstract():
-    assert not inspect.isabstract(gastm::QualifiedIdentifierReference)
+def test_gastm_qualifiedidentifierreference_is_not_abstract():
+    assert not inspect.isabstract(gastm_QualifiedIdentifierReference)
 
 
-def test_gastm::qualifiedidentifierreference_constructor_exists():
-    assert callable(gastm::QualifiedIdentifierReference.__init__)
+def test_gastm_qualifiedidentifierreference_constructor_exists():
+    assert callable(gastm_QualifiedIdentifierReference.__init__)
 
 
-def test_gastm::qualifiedidentifierreference_constructor_args():
-    sig = inspect.signature(gastm::QualifiedIdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::catchblock_is_not_abstract():
-    assert not inspect.isabstract(gastm::CatchBlock)
-
-
-def test_gastm::catchblock_constructor_exists():
-    assert callable(gastm::CatchBlock.__init__)
-
-
-def test_gastm::catchblock_constructor_args():
-    sig = inspect.signature(gastm::CatchBlock.__init__)
+def test_gastm_qualifiedidentifierreference_constructor_args():
+    sig = inspect.signature(gastm_QualifiedIdentifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2363,16 +1879,16 @@ def test_catchblock_constructor_args():
 
 
 
-def test_gastm::typescatchblock_is_not_abstract():
-    assert not inspect.isabstract(gastm::TypesCatchBlock)
+def test_gastm_typescatchblock_is_not_abstract():
+    assert not inspect.isabstract(gastm_TypesCatchBlock)
 
 
-def test_gastm::typescatchblock_constructor_exists():
-    assert callable(gastm::TypesCatchBlock.__init__)
+def test_gastm_typescatchblock_constructor_exists():
+    assert callable(gastm_TypesCatchBlock.__init__)
 
 
-def test_gastm::typescatchblock_constructor_args():
-    sig = inspect.signature(gastm::TypesCatchBlock.__init__)
+def test_gastm_typescatchblock_constructor_args():
+    sig = inspect.signature(gastm_TypesCatchBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2391,58 +1907,58 @@ def test_loopstatement_constructor_args():
 
 
 
-def test_gastm::dowhilestatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::DoWhileStatement)
+def test_gastm_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_WhileStatement)
 
 
-def test_gastm::dowhilestatement_constructor_exists():
-    assert callable(gastm::DoWhileStatement.__init__)
+def test_gastm_whilestatement_constructor_exists():
+    assert callable(gastm_WhileStatement.__init__)
 
 
-def test_gastm::dowhilestatement_constructor_args():
-    sig = inspect.signature(gastm::DoWhileStatement.__init__)
+def test_gastm_whilestatement_constructor_args():
+    sig = inspect.signature(gastm_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::WhileStatement)
+def test_gastm_dowhilestatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_DoWhileStatement)
 
 
-def test_gastm::whilestatement_constructor_exists():
-    assert callable(gastm::WhileStatement.__init__)
+def test_gastm_dowhilestatement_constructor_exists():
+    assert callable(gastm_DoWhileStatement.__init__)
 
 
-def test_gastm::whilestatement_constructor_args():
-    sig = inspect.signature(gastm::WhileStatement.__init__)
+def test_gastm_dowhilestatement_constructor_args():
+    sig = inspect.signature(gastm_DoWhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::forstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ForStatement)
+def test_gastm_forstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ForStatement)
 
 
-def test_gastm::forstatement_constructor_exists():
-    assert callable(gastm::ForStatement.__init__)
+def test_gastm_forstatement_constructor_exists():
+    assert callable(gastm_ForStatement.__init__)
 
 
-def test_gastm::forstatement_constructor_args():
-    sig = inspect.signature(gastm::ForStatement.__init__)
+def test_gastm_forstatement_constructor_args():
+    sig = inspect.signature(gastm_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::variablecatchblock_is_not_abstract():
-    assert not inspect.isabstract(gastm::VariableCatchBlock)
+def test_gastm_variablecatchblock_is_not_abstract():
+    assert not inspect.isabstract(gastm_VariableCatchBlock)
 
 
-def test_gastm::variablecatchblock_constructor_exists():
-    assert callable(gastm::VariableCatchBlock.__init__)
+def test_gastm_variablecatchblock_constructor_exists():
+    assert callable(gastm_VariableCatchBlock.__init__)
 
 
-def test_gastm::variablecatchblock_constructor_args():
-    sig = inspect.signature(gastm::VariableCatchBlock.__init__)
+def test_gastm_variablecatchblock_constructor_args():
+    sig = inspect.signature(gastm_VariableCatchBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2475,20 +1991,6 @@ def test_labeldefinition_constructor_args():
 
 
 
-def test_gastm::switchcase_is_not_abstract():
-    assert not inspect.isabstract(gastm::SwitchCase)
-
-
-def test_gastm::switchcase_constructor_exists():
-    assert callable(gastm::SwitchCase.__init__)
-
-
-def test_gastm::switchcase_constructor_args():
-    sig = inspect.signature(gastm::SwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_switchcase_is_not_abstract():
     assert not inspect.isabstract(SwitchCase)
 
@@ -2503,30 +2005,30 @@ def test_switchcase_constructor_args():
 
 
 
-def test_gastm::defaultblock_is_not_abstract():
-    assert not inspect.isabstract(gastm::DefaultBlock)
+def test_gastm_defaultblock_is_not_abstract():
+    assert not inspect.isabstract(gastm_DefaultBlock)
 
 
-def test_gastm::defaultblock_constructor_exists():
-    assert callable(gastm::DefaultBlock.__init__)
+def test_gastm_defaultblock_constructor_exists():
+    assert callable(gastm_DefaultBlock.__init__)
 
 
-def test_gastm::defaultblock_constructor_args():
-    sig = inspect.signature(gastm::DefaultBlock.__init__)
+def test_gastm_defaultblock_constructor_args():
+    sig = inspect.signature(gastm_DefaultBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::caseblock_is_not_abstract():
-    assert not inspect.isabstract(gastm::CaseBlock)
+def test_gastm_caseblock_is_not_abstract():
+    assert not inspect.isabstract(gastm_CaseBlock)
 
 
-def test_gastm::caseblock_constructor_exists():
-    assert callable(gastm::CaseBlock.__init__)
+def test_gastm_caseblock_constructor_exists():
+    assert callable(gastm_CaseBlock.__init__)
 
 
-def test_gastm::caseblock_constructor_args():
-    sig = inspect.signature(gastm::CaseBlock.__init__)
+def test_gastm_caseblock_constructor_args():
+    sig = inspect.signature(gastm_CaseBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2541,20 +2043,6 @@ def test_labelaccess_constructor_exists():
 
 def test_labelaccess_constructor_args():
     sig = inspect.signature(LabelAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::dimension_is_not_abstract():
-    assert not inspect.isabstract(gastm::Dimension)
-
-
-def test_gastm::dimension_constructor_exists():
-    assert callable(gastm::Dimension.__init__)
-
-
-def test_gastm::dimension_constructor_args():
-    sig = inspect.signature(gastm::Dimension.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2587,72 +2075,72 @@ def test_constructedtype_constructor_args():
 
 
 
-def test_gastm::pointertype_is_not_abstract():
-    assert not inspect.isabstract(gastm::PointerType)
+def test_gastm_rangetype_is_not_abstract():
+    assert not inspect.isabstract(gastm_RangeType)
 
 
-def test_gastm::pointertype_constructor_exists():
-    assert callable(gastm::PointerType.__init__)
+def test_gastm_rangetype_constructor_exists():
+    assert callable(gastm_RangeType.__init__)
 
 
-def test_gastm::pointertype_constructor_args():
-    sig = inspect.signature(gastm::PointerType.__init__)
+def test_gastm_rangetype_constructor_args():
+    sig = inspect.signature(gastm_RangeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(gastm::CollectionType)
+def test_gastm_referencetype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ReferenceType)
 
 
-def test_gastm::collectiontype_constructor_exists():
-    assert callable(gastm::CollectionType.__init__)
+def test_gastm_referencetype_constructor_exists():
+    assert callable(gastm_ReferenceType.__init__)
 
 
-def test_gastm::collectiontype_constructor_args():
-    sig = inspect.signature(gastm::CollectionType.__init__)
+def test_gastm_referencetype_constructor_args():
+    sig = inspect.signature(gastm_ReferenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::rangetype_is_not_abstract():
-    assert not inspect.isabstract(gastm::RangeType)
+def test_gastm_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(gastm_CollectionType)
 
 
-def test_gastm::rangetype_constructor_exists():
-    assert callable(gastm::RangeType.__init__)
+def test_gastm_collectiontype_constructor_exists():
+    assert callable(gastm_CollectionType.__init__)
 
 
-def test_gastm::rangetype_constructor_args():
-    sig = inspect.signature(gastm::RangeType.__init__)
+def test_gastm_collectiontype_constructor_args():
+    sig = inspect.signature(gastm_CollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::referencetype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ReferenceType)
+def test_gastm_pointertype_is_not_abstract():
+    assert not inspect.isabstract(gastm_PointerType)
 
 
-def test_gastm::referencetype_constructor_exists():
-    assert callable(gastm::ReferenceType.__init__)
+def test_gastm_pointertype_constructor_exists():
+    assert callable(gastm_PointerType.__init__)
 
 
-def test_gastm::referencetype_constructor_args():
-    sig = inspect.signature(gastm::ReferenceType.__init__)
+def test_gastm_pointertype_constructor_args():
+    sig = inspect.signature(gastm_PointerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::arraytype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ArrayType)
+def test_gastm_arraytype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ArrayType)
 
 
-def test_gastm::arraytype_constructor_exists():
-    assert callable(gastm::ArrayType.__init__)
+def test_gastm_arraytype_constructor_exists():
+    assert callable(gastm_ArrayType.__init__)
 
 
-def test_gastm::arraytype_constructor_args():
-    sig = inspect.signature(gastm::ArrayType.__init__)
+def test_gastm_arraytype_constructor_args():
+    sig = inspect.signature(gastm_ArrayType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2699,455 +2187,431 @@ def test_datatype_constructor_args():
 
 
 
-def test_sastm::rdbraw_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBRaw)
+def test_sastm_rdbblob_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBBlob)
 
 
-def test_sastm::rdbraw_constructor_exists():
-    assert callable(sastm::RDBRaw.__init__)
+def test_sastm_rdbblob_constructor_exists():
+    assert callable(sastm_RDBBlob.__init__)
 
 
-def test_sastm::rdbraw_constructor_args():
-    sig = inspect.signature(sastm::RDBRaw.__init__)
+def test_sastm_rdbblob_constructor_args():
+    sig = inspect.signature(sastm_RDBBlob.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbboolean_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBBoolean)
+def test_sastm_rdbchar_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBChar)
 
 
-def test_sastm::rdbboolean_constructor_exists():
-    assert callable(sastm::RDBBoolean.__init__)
+def test_sastm_rdbchar_constructor_exists():
+    assert callable(sastm_RDBChar.__init__)
 
 
-def test_sastm::rdbboolean_constructor_args():
-    sig = inspect.signature(sastm::RDBBoolean.__init__)
+def test_sastm_rdbchar_constructor_args():
+    sig = inspect.signature(sastm_RDBChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbclob_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBClob)
+def test_sastm_rdbfloat_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBFloat)
 
 
-def test_sastm::rdbclob_constructor_exists():
-    assert callable(sastm::RDBClob.__init__)
+def test_sastm_rdbfloat_constructor_exists():
+    assert callable(sastm_RDBFloat.__init__)
 
 
-def test_sastm::rdbclob_constructor_args():
-    sig = inspect.signature(sastm::RDBClob.__init__)
+def test_sastm_rdbfloat_constructor_args():
+    sig = inspect.signature(sastm_RDBFloat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbrowid_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBRowid)
+def test_sastm_rdbrowid_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBRowid)
 
 
-def test_sastm::rdbrowid_constructor_exists():
-    assert callable(sastm::RDBRowid.__init__)
+def test_sastm_rdbrowid_constructor_exists():
+    assert callable(sastm_RDBRowid.__init__)
 
 
-def test_sastm::rdbrowid_constructor_args():
-    sig = inspect.signature(sastm::RDBRowid.__init__)
+def test_sastm_rdbrowid_constructor_args():
+    sig = inspect.signature(sastm_RDBRowid.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbtabletype_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableType)
+def test_gastm_enumtype_is_not_abstract():
+    assert not inspect.isabstract(gastm_EnumType)
 
 
-def test_sastm::rdbtabletype_constructor_exists():
-    assert callable(sastm::RDBTableType.__init__)
+def test_gastm_enumtype_constructor_exists():
+    assert callable(gastm_EnumType.__init__)
 
 
-def test_sastm::rdbtabletype_constructor_args():
-    sig = inspect.signature(sastm::RDBTableType.__init__)
+def test_gastm_enumtype_constructor_args():
+    sig = inspect.signature(gastm_EnumType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbdatabasetype_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBDataBaseType)
+def test_sastm_rdbusertype_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBUserType)
 
 
-def test_sastm::rdbdatabasetype_constructor_exists():
-    assert callable(sastm::RDBDataBaseType.__init__)
+def test_sastm_rdbusertype_constructor_exists():
+    assert callable(sastm_RDBUserType.__init__)
 
 
-def test_sastm::rdbdatabasetype_constructor_args():
-    sig = inspect.signature(sastm::RDBDataBaseType.__init__)
+def test_sastm_rdbusertype_constructor_args():
+    sig = inspect.signature(sastm_RDBUserType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbtimestamp_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTimestamp)
+def test_sastm_rdbbfile_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBBFile)
 
 
-def test_sastm::rdbtimestamp_constructor_exists():
-    assert callable(sastm::RDBTimestamp.__init__)
+def test_sastm_rdbbfile_constructor_exists():
+    assert callable(sastm_RDBBFile.__init__)
 
 
-def test_sastm::rdbtimestamp_constructor_args():
-    sig = inspect.signature(sastm::RDBTimestamp.__init__)
+def test_sastm_rdbbfile_constructor_args():
+    sig = inspect.signature(sastm_RDBBFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbchar_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBChar)
+def test_sastm_rdbnclob_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBNClob)
 
 
-def test_sastm::rdbchar_constructor_exists():
-    assert callable(sastm::RDBChar.__init__)
+def test_sastm_rdbnclob_constructor_exists():
+    assert callable(sastm_RDBNClob.__init__)
 
 
-def test_sastm::rdbchar_constructor_args():
-    sig = inspect.signature(sastm::RDBChar.__init__)
+def test_sastm_rdbnclob_constructor_args():
+    sig = inspect.signature(sastm_RDBNClob.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbvarchar_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBVarchar)
+def test_sastm_rdbdatabasetype_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBDataBaseType)
 
 
-def test_sastm::rdbvarchar_constructor_exists():
-    assert callable(sastm::RDBVarchar.__init__)
+def test_sastm_rdbdatabasetype_constructor_exists():
+    assert callable(sastm_RDBDataBaseType.__init__)
 
 
-def test_sastm::rdbvarchar_constructor_args():
-    sig = inspect.signature(sastm::RDBVarchar.__init__)
+def test_sastm_rdbdatabasetype_constructor_args():
+    sig = inspect.signature(sastm_RDBDataBaseType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::aggregatetype_is_not_abstract():
-    assert not inspect.isabstract(gastm::AggregateType)
+def test_sastm_rdbraw_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBRaw)
 
 
-def test_gastm::aggregatetype_constructor_exists():
-    assert callable(gastm::AggregateType.__init__)
+def test_sastm_rdbraw_constructor_exists():
+    assert callable(sastm_RDBRaw.__init__)
 
 
-def test_gastm::aggregatetype_constructor_args():
-    sig = inspect.signature(gastm::AggregateType.__init__)
+def test_sastm_rdbraw_constructor_args():
+    sig = inspect.signature(sastm_RDBRaw.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbnumber_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBNumber)
+def test_sastm_rdbstring_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBString)
 
 
-def test_sastm::rdbnumber_constructor_exists():
-    assert callable(sastm::RDBNumber.__init__)
+def test_sastm_rdbstring_constructor_exists():
+    assert callable(sastm_RDBString.__init__)
 
 
-def test_sastm::rdbnumber_constructor_args():
-    sig = inspect.signature(sastm::RDBNumber.__init__)
+def test_sastm_rdbstring_constructor_args():
+    sig = inspect.signature(sastm_RDBString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdblong_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBLong)
+def test_sastm_rdbcursortype_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBCursorType)
 
 
-def test_sastm::rdblong_constructor_exists():
-    assert callable(sastm::RDBLong.__init__)
+def test_sastm_rdbcursortype_constructor_exists():
+    assert callable(sastm_RDBCursorType.__init__)
 
 
-def test_sastm::rdblong_constructor_args():
-    sig = inspect.signature(sastm::RDBLong.__init__)
+def test_sastm_rdbcursortype_constructor_args():
+    sig = inspect.signature(sastm_RDBCursorType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::enumtype_is_not_abstract():
-    assert not inspect.isabstract(gastm::EnumType)
+def test_sastm_rdbdate_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBDate)
 
 
-def test_gastm::enumtype_constructor_exists():
-    assert callable(gastm::EnumType.__init__)
+def test_sastm_rdbdate_constructor_exists():
+    assert callable(sastm_RDBDate.__init__)
 
 
-def test_gastm::enumtype_constructor_args():
-    sig = inspect.signature(gastm::EnumType.__init__)
+def test_sastm_rdbdate_constructor_args():
+    sig = inspect.signature(sastm_RDBDate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbstring_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBString)
+def test_sastm_rdbclob_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBClob)
 
 
-def test_sastm::rdbstring_constructor_exists():
-    assert callable(sastm::RDBString.__init__)
+def test_sastm_rdbclob_constructor_exists():
+    assert callable(sastm_RDBClob.__init__)
 
 
-def test_sastm::rdbstring_constructor_args():
-    sig = inspect.signature(sastm::RDBString.__init__)
+def test_sastm_rdbclob_constructor_args():
+    sig = inspect.signature(sastm_RDBClob.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbreal_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBReal)
+def test_sastm_rdbtabletype_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableType)
 
 
-def test_sastm::rdbreal_constructor_exists():
-    assert callable(sastm::RDBReal.__init__)
+def test_sastm_rdbtabletype_constructor_exists():
+    assert callable(sastm_RDBTableType.__init__)
 
 
-def test_sastm::rdbreal_constructor_args():
-    sig = inspect.signature(sastm::RDBReal.__init__)
+def test_sastm_rdbtabletype_constructor_args():
+    sig = inspect.signature(sastm_RDBTableType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbblob_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBBlob)
+def test_sastm_rdbreal_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBReal)
 
 
-def test_sastm::rdbblob_constructor_exists():
-    assert callable(sastm::RDBBlob.__init__)
+def test_sastm_rdbreal_constructor_exists():
+    assert callable(sastm_RDBReal.__init__)
 
 
-def test_sastm::rdbblob_constructor_args():
-    sig = inspect.signature(sastm::RDBBlob.__init__)
+def test_sastm_rdbreal_constructor_args():
+    sig = inspect.signature(sastm_RDBReal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::exceptiontype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ExceptionType)
+def test_gastm_exceptiontype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ExceptionType)
 
 
-def test_gastm::exceptiontype_constructor_exists():
-    assert callable(gastm::ExceptionType.__init__)
+def test_gastm_exceptiontype_constructor_exists():
+    assert callable(gastm_ExceptionType.__init__)
 
 
-def test_gastm::exceptiontype_constructor_args():
-    sig = inspect.signature(gastm::ExceptionType.__init__)
+def test_gastm_exceptiontype_constructor_args():
+    sig = inspect.signature(gastm_ExceptionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbdecimal_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBDecimal)
+def test_gastm_aggregatetype_is_not_abstract():
+    assert not inspect.isabstract(gastm_AggregateType)
 
 
-def test_sastm::rdbdecimal_constructor_exists():
-    assert callable(sastm::RDBDecimal.__init__)
+def test_gastm_aggregatetype_constructor_exists():
+    assert callable(gastm_AggregateType.__init__)
 
 
-def test_sastm::rdbdecimal_constructor_args():
-    sig = inspect.signature(sastm::RDBDecimal.__init__)
+def test_gastm_aggregatetype_constructor_args():
+    sig = inspect.signature(gastm_AggregateType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbnclob_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBNClob)
+def test_sastm_rdbvarchar_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBVarchar)
 
 
-def test_sastm::rdbnclob_constructor_exists():
-    assert callable(sastm::RDBNClob.__init__)
+def test_sastm_rdbvarchar_constructor_exists():
+    assert callable(sastm_RDBVarchar.__init__)
 
 
-def test_sastm::rdbnclob_constructor_args():
-    sig = inspect.signature(sastm::RDBNClob.__init__)
+def test_sastm_rdbvarchar_constructor_args():
+    sig = inspect.signature(sastm_RDBVarchar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbinteger_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBInteger)
+def test_sastm_rdbtablespacetype_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableSpaceType)
 
 
-def test_sastm::rdbinteger_constructor_exists():
-    assert callable(sastm::RDBInteger.__init__)
+def test_sastm_rdbtablespacetype_constructor_exists():
+    assert callable(sastm_RDBTableSpaceType.__init__)
 
 
-def test_sastm::rdbinteger_constructor_args():
-    sig = inspect.signature(sastm::RDBInteger.__init__)
+def test_sastm_rdbtablespacetype_constructor_args():
+    sig = inspect.signature(sastm_RDBTableSpaceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbint_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBInt)
+def test_sastm_rdbnumber_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBNumber)
 
 
-def test_sastm::rdbint_constructor_exists():
-    assert callable(sastm::RDBInt.__init__)
+def test_sastm_rdbnumber_constructor_exists():
+    assert callable(sastm_RDBNumber.__init__)
 
 
-def test_sastm::rdbint_constructor_args():
-    sig = inspect.signature(sastm::RDBInt.__init__)
+def test_sastm_rdbnumber_constructor_args():
+    sig = inspect.signature(sastm_RDBNumber.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbusertype_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBUserType)
+def test_gastm_constructedtype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ConstructedType)
 
 
-def test_sastm::rdbusertype_constructor_exists():
-    assert callable(sastm::RDBUserType.__init__)
+def test_gastm_constructedtype_constructor_exists():
+    assert callable(gastm_ConstructedType.__init__)
 
 
-def test_sastm::rdbusertype_constructor_args():
-    sig = inspect.signature(sastm::RDBUserType.__init__)
+def test_gastm_constructedtype_constructor_args():
+    sig = inspect.signature(gastm_ConstructedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbviewtype_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBViewType)
+def test_sastm_rdbdecimal_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBDecimal)
 
 
-def test_sastm::rdbviewtype_constructor_exists():
-    assert callable(sastm::RDBViewType.__init__)
+def test_sastm_rdbdecimal_constructor_exists():
+    assert callable(sastm_RDBDecimal.__init__)
 
 
-def test_sastm::rdbviewtype_constructor_args():
-    sig = inspect.signature(sastm::RDBViewType.__init__)
+def test_sastm_rdbdecimal_constructor_args():
+    sig = inspect.signature(sastm_RDBDecimal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbbfile_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBBFile)
+def test_sastm_rdbviewtype_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBViewType)
 
 
-def test_sastm::rdbbfile_constructor_exists():
-    assert callable(sastm::RDBBFile.__init__)
+def test_sastm_rdbviewtype_constructor_exists():
+    assert callable(sastm_RDBViewType.__init__)
 
 
-def test_sastm::rdbbfile_constructor_args():
-    sig = inspect.signature(sastm::RDBBFile.__init__)
+def test_sastm_rdbviewtype_constructor_args():
+    sig = inspect.signature(sastm_RDBViewType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbfloat_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBFloat)
+def test_sastm_rdbinteger_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBInteger)
 
 
-def test_sastm::rdbfloat_constructor_exists():
-    assert callable(sastm::RDBFloat.__init__)
+def test_sastm_rdbinteger_constructor_exists():
+    assert callable(sastm_RDBInteger.__init__)
 
 
-def test_sastm::rdbfloat_constructor_args():
-    sig = inspect.signature(sastm::RDBFloat.__init__)
+def test_sastm_rdbinteger_constructor_args():
+    sig = inspect.signature(sastm_RDBInteger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::constructedtype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ConstructedType)
+def test_sastm_rdbint_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBInt)
 
 
-def test_gastm::constructedtype_constructor_exists():
-    assert callable(gastm::ConstructedType.__init__)
+def test_sastm_rdbint_constructor_exists():
+    assert callable(sastm_RDBInt.__init__)
 
 
-def test_gastm::constructedtype_constructor_args():
-    sig = inspect.signature(gastm::ConstructedType.__init__)
+def test_sastm_rdbint_constructor_args():
+    sig = inspect.signature(sastm_RDBInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbdate_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBDate)
+def test_sastm_rdbtimestamp_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTimestamp)
 
 
-def test_sastm::rdbdate_constructor_exists():
-    assert callable(sastm::RDBDate.__init__)
+def test_sastm_rdbtimestamp_constructor_exists():
+    assert callable(sastm_RDBTimestamp.__init__)
 
 
-def test_sastm::rdbdate_constructor_args():
-    sig = inspect.signature(sastm::RDBDate.__init__)
+def test_sastm_rdbtimestamp_constructor_args():
+    sig = inspect.signature(sastm_RDBTimestamp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbcursortype_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBCursorType)
+def test_sastm_rdbboolean_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBBoolean)
 
 
-def test_sastm::rdbcursortype_constructor_exists():
-    assert callable(sastm::RDBCursorType.__init__)
+def test_sastm_rdbboolean_constructor_exists():
+    assert callable(sastm_RDBBoolean.__init__)
 
 
-def test_sastm::rdbcursortype_constructor_args():
-    sig = inspect.signature(sastm::RDBCursorType.__init__)
+def test_sastm_rdbboolean_constructor_args():
+    sig = inspect.signature(sastm_RDBBoolean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbtablespacetype_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableSpaceType)
+def test_sastm_rdblong_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBLong)
 
 
-def test_sastm::rdbtablespacetype_constructor_exists():
-    assert callable(sastm::RDBTableSpaceType.__init__)
+def test_sastm_rdblong_constructor_exists():
+    assert callable(sastm_RDBLong.__init__)
 
 
-def test_sastm::rdbtablespacetype_constructor_args():
-    sig = inspect.signature(sastm::RDBTableSpaceType.__init__)
+def test_sastm_rdblong_constructor_args():
+    sig = inspect.signature(sastm_RDBLong.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(gastm::PrimitiveType)
+def test_gastm_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(gastm_PrimitiveType)
 
 
-def test_gastm::primitivetype_constructor_exists():
-    assert callable(gastm::PrimitiveType.__init__)
+def test_gastm_primitivetype_constructor_exists():
+    assert callable(gastm_PrimitiveType.__init__)
 
 
-def test_gastm::primitivetype_constructor_args():
-    sig = inspect.signature(gastm::PrimitiveType.__init__)
+def test_gastm_primitivetype_constructor_args():
+    sig = inspect.signature(gastm_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "isSigned" in params, "Missing parameter 'isSigned'"
 
-def test_gastm::primitivetype_has_isSigned():
-    assert hasattr(gastm::PrimitiveType, "isSigned")
+def test_gastm_primitivetype_has_isSigned():
+    assert hasattr(gastm_PrimitiveType, "isSigned")
     descriptor = None
-    for klass in gastm::PrimitiveType.__mro__:
+    for klass in gastm_PrimitiveType.__mro__:
         if "isSigned" in klass.__dict__:
             descriptor = klass.__dict__["isSigned"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gastm::derivesfrom_is_not_abstract():
-    assert not inspect.isabstract(gastm::DerivesFrom)
-
-
-def test_gastm::derivesfrom_constructor_exists():
-    assert callable(gastm::DerivesFrom.__init__)
-
-
-def test_gastm::derivesfrom_constructor_args():
-    sig = inspect.signature(gastm::DerivesFrom.__init__)
-    params = list(sig.parameters.keys())
-    assert "isVirtual" in params, "Missing parameter 'isVirtual'"
-
-def test_gastm::derivesfrom_has_isVirtual():
-    assert hasattr(gastm::DerivesFrom, "isVirtual")
-    descriptor = None
-    for klass in gastm::DerivesFrom.__mro__:
-        if "isVirtual" in klass.__dict__:
-            descriptor = klass.__dict__["isVirtual"]
             break
     assert isinstance(descriptor, property)
 
@@ -3167,30 +2631,30 @@ def test_derivesfrom_constructor_args():
 
 
 
-def test_gastm::namedtype_is_not_abstract():
-    assert not inspect.isabstract(gastm::NamedType)
+def test_gastm_namedtype_is_not_abstract():
+    assert not inspect.isabstract(gastm_NamedType)
 
 
-def test_gastm::namedtype_constructor_exists():
-    assert callable(gastm::NamedType.__init__)
+def test_gastm_namedtype_constructor_exists():
+    assert callable(gastm_NamedType.__init__)
 
 
-def test_gastm::namedtype_constructor_args():
-    sig = inspect.signature(gastm::NamedType.__init__)
+def test_gastm_namedtype_constructor_args():
+    sig = inspect.signature(gastm_NamedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::formalparametertype_is_not_abstract():
-    assert not inspect.isabstract(gastm::FormalParameterType)
+def test_gastm_formalparametertype_is_not_abstract():
+    assert not inspect.isabstract(gastm_FormalParameterType)
 
 
-def test_gastm::formalparametertype_constructor_exists():
-    assert callable(gastm::FormalParameterType.__init__)
+def test_gastm_formalparametertype_constructor_exists():
+    assert callable(gastm_FormalParameterType.__init__)
 
 
-def test_gastm::formalparametertype_constructor_args():
-    sig = inspect.signature(gastm::FormalParameterType.__init__)
+def test_gastm_formalparametertype_constructor_args():
+    sig = inspect.signature(gastm_FormalParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3209,30 +2673,30 @@ def test_formalparametertype_constructor_args():
 
 
 
-def test_gastm::byvalueformalparametertype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ByValueFormalParameterType)
+def test_gastm_byvalueformalparametertype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ByValueFormalParameterType)
 
 
-def test_gastm::byvalueformalparametertype_constructor_exists():
-    assert callable(gastm::ByValueFormalParameterType.__init__)
+def test_gastm_byvalueformalparametertype_constructor_exists():
+    assert callable(gastm_ByValueFormalParameterType.__init__)
 
 
-def test_gastm::byvalueformalparametertype_constructor_args():
-    sig = inspect.signature(gastm::ByValueFormalParameterType.__init__)
+def test_gastm_byvalueformalparametertype_constructor_args():
+    sig = inspect.signature(gastm_ByValueFormalParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::byreferenceformalparametertype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ByReferenceFormalParameterType)
+def test_gastm_byreferenceformalparametertype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ByReferenceFormalParameterType)
 
 
-def test_gastm::byreferenceformalparametertype_constructor_exists():
-    assert callable(gastm::ByReferenceFormalParameterType.__init__)
+def test_gastm_byreferenceformalparametertype_constructor_exists():
+    assert callable(gastm_ByReferenceFormalParameterType.__init__)
 
 
-def test_gastm::byreferenceformalparametertype_constructor_args():
-    sig = inspect.signature(gastm::ByReferenceFormalParameterType.__init__)
+def test_gastm_byreferenceformalparametertype_constructor_args():
+    sig = inspect.signature(gastm_ByReferenceFormalParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3251,72 +2715,58 @@ def test_type_constructor_args():
 
 
 
-def test_gastm::labeltype_is_not_abstract():
-    assert not inspect.isabstract(gastm::LabelType)
+def test_gastm_labeltype_is_not_abstract():
+    assert not inspect.isabstract(gastm_LabelType)
 
 
-def test_gastm::labeltype_constructor_exists():
-    assert callable(gastm::LabelType.__init__)
+def test_gastm_labeltype_constructor_exists():
+    assert callable(gastm_LabelType.__init__)
 
 
-def test_gastm::labeltype_constructor_args():
-    sig = inspect.signature(gastm::LabelType.__init__)
+def test_gastm_labeltype_constructor_args():
+    sig = inspect.signature(gastm_LabelType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::functiontype_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionType)
+def test_gastm_namespacetype_is_not_abstract():
+    assert not inspect.isabstract(gastm_NameSpaceType)
 
 
-def test_gastm::functiontype_constructor_exists():
-    assert callable(gastm::FunctionType.__init__)
+def test_gastm_namespacetype_constructor_exists():
+    assert callable(gastm_NameSpaceType.__init__)
 
 
-def test_gastm::functiontype_constructor_args():
-    sig = inspect.signature(gastm::FunctionType.__init__)
+def test_gastm_namespacetype_constructor_args():
+    sig = inspect.signature(gastm_NameSpaceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::namespacetype_is_not_abstract():
-    assert not inspect.isabstract(gastm::NameSpaceType)
+def test_gastm_functiontype_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionType)
 
 
-def test_gastm::namespacetype_constructor_exists():
-    assert callable(gastm::NameSpaceType.__init__)
+def test_gastm_functiontype_constructor_exists():
+    assert callable(gastm_FunctionType.__init__)
 
 
-def test_gastm::namespacetype_constructor_args():
-    sig = inspect.signature(gastm::NameSpaceType.__init__)
+def test_gastm_functiontype_constructor_args():
+    sig = inspect.signature(gastm_FunctionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::typereference_is_not_abstract():
-    assert not inspect.isabstract(gastm::TypeReference)
+def test_gastm_typereference_is_not_abstract():
+    assert not inspect.isabstract(gastm_TypeReference)
 
 
-def test_gastm::typereference_constructor_exists():
-    assert callable(gastm::TypeReference.__init__)
+def test_gastm_typereference_constructor_exists():
+    assert callable(gastm_TypeReference.__init__)
 
 
-def test_gastm::typereference_constructor_args():
-    sig = inspect.signature(gastm::TypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::namespacedefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::NameSpaceDefinition)
-
-
-def test_gastm::namespacedefinition_constructor_exists():
-    assert callable(gastm::NameSpaceDefinition.__init__)
-
-
-def test_gastm::namespacedefinition_constructor_args():
-    sig = inspect.signature(gastm::NameSpaceDefinition.__init__)
+def test_gastm_typereference_constructor_args():
+    sig = inspect.signature(gastm_TypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3335,58 +2785,58 @@ def test_aggregatetype_constructor_args():
 
 
 
-def test_gastm::uniontype_is_not_abstract():
-    assert not inspect.isabstract(gastm::UnionType)
+def test_gastm_classtype_is_not_abstract():
+    assert not inspect.isabstract(gastm_ClassType)
 
 
-def test_gastm::uniontype_constructor_exists():
-    assert callable(gastm::UnionType.__init__)
+def test_gastm_classtype_constructor_exists():
+    assert callable(gastm_ClassType.__init__)
 
 
-def test_gastm::uniontype_constructor_args():
-    sig = inspect.signature(gastm::UnionType.__init__)
+def test_gastm_classtype_constructor_args():
+    sig = inspect.signature(gastm_ClassType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::structuretype_is_not_abstract():
-    assert not inspect.isabstract(gastm::StructureType)
+def test_gastm_annotationtype_is_not_abstract():
+    assert not inspect.isabstract(gastm_AnnotationType)
 
 
-def test_gastm::structuretype_constructor_exists():
-    assert callable(gastm::StructureType.__init__)
+def test_gastm_annotationtype_constructor_exists():
+    assert callable(gastm_AnnotationType.__init__)
 
 
-def test_gastm::structuretype_constructor_args():
-    sig = inspect.signature(gastm::StructureType.__init__)
+def test_gastm_annotationtype_constructor_args():
+    sig = inspect.signature(gastm_AnnotationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::classtype_is_not_abstract():
-    assert not inspect.isabstract(gastm::ClassType)
+def test_gastm_uniontype_is_not_abstract():
+    assert not inspect.isabstract(gastm_UnionType)
 
 
-def test_gastm::classtype_constructor_exists():
-    assert callable(gastm::ClassType.__init__)
+def test_gastm_uniontype_constructor_exists():
+    assert callable(gastm_UnionType.__init__)
 
 
-def test_gastm::classtype_constructor_args():
-    sig = inspect.signature(gastm::ClassType.__init__)
+def test_gastm_uniontype_constructor_args():
+    sig = inspect.signature(gastm_UnionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::annotationtype_is_not_abstract():
-    assert not inspect.isabstract(gastm::AnnotationType)
+def test_gastm_structuretype_is_not_abstract():
+    assert not inspect.isabstract(gastm_StructureType)
 
 
-def test_gastm::annotationtype_constructor_exists():
-    assert callable(gastm::AnnotationType.__init__)
+def test_gastm_structuretype_constructor_exists():
+    assert callable(gastm_StructureType.__init__)
 
 
-def test_gastm::annotationtype_constructor_args():
-    sig = inspect.signature(gastm::AnnotationType.__init__)
+def test_gastm_structuretype_constructor_args():
+    sig = inspect.signature(gastm_StructureType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3419,44 +2869,30 @@ def test_typedefinition_constructor_args():
 
 
 
-def test_gastm::aggregatetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::AggregateTypeDefinition)
+def test_gastm_aggregatetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_AggregateTypeDefinition)
 
 
-def test_gastm::aggregatetypedefinition_constructor_exists():
-    assert callable(gastm::AggregateTypeDefinition.__init__)
+def test_gastm_aggregatetypedefinition_constructor_exists():
+    assert callable(gastm_AggregateTypeDefinition.__init__)
 
 
-def test_gastm::aggregatetypedefinition_constructor_args():
-    sig = inspect.signature(gastm::AggregateTypeDefinition.__init__)
+def test_gastm_aggregatetypedefinition_constructor_args():
+    sig = inspect.signature(gastm_AggregateTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::namedtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::NamedTypeDefinition)
+def test_gastm_namedtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_NamedTypeDefinition)
 
 
-def test_gastm::namedtypedefinition_constructor_exists():
-    assert callable(gastm::NamedTypeDefinition.__init__)
+def test_gastm_namedtypedefinition_constructor_exists():
+    assert callable(gastm_NamedTypeDefinition.__init__)
 
 
-def test_gastm::namedtypedefinition_constructor_args():
-    sig = inspect.signature(gastm::NamedTypeDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::TypeDefinition)
-
-
-def test_gastm::typedefinition_constructor_exists():
-    assert callable(gastm::TypeDefinition.__init__)
-
-
-def test_gastm::typedefinition_constructor_args():
-    sig = inspect.signature(gastm::TypeDefinition.__init__)
+def test_gastm_namedtypedefinition_constructor_args():
+    sig = inspect.signature(gastm_NamedTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3475,44 +2911,44 @@ def test_datadefinition_constructor_args():
 
 
 
-def test_gastm::variabledefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::VariableDefinition)
+def test_gastm_variabledefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_VariableDefinition)
 
 
-def test_gastm::variabledefinition_constructor_exists():
-    assert callable(gastm::VariableDefinition.__init__)
+def test_gastm_variabledefinition_constructor_exists():
+    assert callable(gastm_VariableDefinition.__init__)
 
 
-def test_gastm::variabledefinition_constructor_args():
-    sig = inspect.signature(gastm::VariableDefinition.__init__)
+def test_gastm_variabledefinition_constructor_args():
+    sig = inspect.signature(gastm_VariableDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::formalparameterdefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::FormalParameterDefinition)
+def test_gastm_formalparameterdefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_FormalParameterDefinition)
 
 
-def test_gastm::formalparameterdefinition_constructor_exists():
-    assert callable(gastm::FormalParameterDefinition.__init__)
+def test_gastm_formalparameterdefinition_constructor_exists():
+    assert callable(gastm_FormalParameterDefinition.__init__)
 
 
-def test_gastm::formalparameterdefinition_constructor_args():
-    sig = inspect.signature(gastm::FormalParameterDefinition.__init__)
+def test_gastm_formalparameterdefinition_constructor_args():
+    sig = inspect.signature(gastm_FormalParameterDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::bitfielddefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::BitFieldDefinition)
+def test_gastm_bitfielddefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_BitFieldDefinition)
 
 
-def test_gastm::bitfielddefinition_constructor_exists():
-    assert callable(gastm::BitFieldDefinition.__init__)
+def test_gastm_bitfielddefinition_constructor_exists():
+    assert callable(gastm_BitFieldDefinition.__init__)
 
 
-def test_gastm::bitfielddefinition_constructor_args():
-    sig = inspect.signature(gastm::BitFieldDefinition.__init__)
+def test_gastm_bitfielddefinition_constructor_args():
+    sig = inspect.signature(gastm_BitFieldDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3531,107 +2967,23 @@ def test_expression_constructor_args():
 
 
 
-def test_gastm::namereference_is_not_abstract():
-    assert not inspect.isabstract(gastm::NameReference)
+def test_gastm_literal_is_not_abstract():
+    assert not inspect.isabstract(gastm_Literal)
 
 
-def test_gastm::namereference_constructor_exists():
-    assert callable(gastm::NameReference.__init__)
+def test_gastm_literal_constructor_exists():
+    assert callable(gastm_Literal.__init__)
 
 
-def test_gastm::namereference_constructor_args():
-    sig = inspect.signature(gastm::NameReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbhostvariableexpression_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBHostVariableExpression)
-
-
-def test_sastm::rdbhostvariableexpression_constructor_exists():
-    assert callable(sastm::RDBHostVariableExpression.__init__)
-
-
-def test_sastm::rdbhostvariableexpression_constructor_args():
-    sig = inspect.signature(sastm::RDBHostVariableExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::UnaryExpression)
-
-
-def test_gastm::unaryexpression_constructor_exists():
-    assert callable(gastm::UnaryExpression.__init__)
-
-
-def test_gastm::unaryexpression_constructor_args():
-    sig = inspect.signature(gastm::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::BinaryExpression)
-
-
-def test_gastm::binaryexpression_constructor_exists():
-    assert callable(gastm::BinaryExpression.__init__)
-
-
-def test_gastm::binaryexpression_constructor_args():
-    sig = inspect.signature(gastm::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::functioncallexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionCallExpression)
-
-
-def test_gastm::functioncallexpression_constructor_exists():
-    assert callable(gastm::FunctionCallExpression.__init__)
-
-
-def test_gastm::functioncallexpression_constructor_args():
-    sig = inspect.signature(gastm::FunctionCallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::arrayaccess_is_not_abstract():
-    assert not inspect.isabstract(gastm::ArrayAccess)
-
-
-def test_gastm::arrayaccess_constructor_exists():
-    assert callable(gastm::ArrayAccess.__init__)
-
-
-def test_gastm::arrayaccess_constructor_args():
-    sig = inspect.signature(gastm::ArrayAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::literal_is_not_abstract():
-    assert not inspect.isabstract(gastm::Literal)
-
-
-def test_gastm::literal_constructor_exists():
-    assert callable(gastm::Literal.__init__)
-
-
-def test_gastm::literal_constructor_args():
-    sig = inspect.signature(gastm::Literal.__init__)
+def test_gastm_literal_constructor_args():
+    sig = inspect.signature(gastm_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_gastm::literal_has_value():
-    assert hasattr(gastm::Literal, "value")
+def test_gastm_literal_has_value():
+    assert hasattr(gastm_Literal, "value")
     descriptor = None
-    for klass in gastm::Literal.__mro__:
+    for klass in gastm_Literal.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3639,114 +2991,198 @@ def test_gastm::literal_has_value():
 
 
 
-def test_gastm::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::ConditionalExpression)
+def test_gastm_arrayaccess_is_not_abstract():
+    assert not inspect.isabstract(gastm_ArrayAccess)
 
 
-def test_gastm::conditionalexpression_constructor_exists():
-    assert callable(gastm::ConditionalExpression.__init__)
+def test_gastm_arrayaccess_constructor_exists():
+    assert callable(gastm_ArrayAccess.__init__)
 
 
-def test_gastm::conditionalexpression_constructor_args():
-    sig = inspect.signature(gastm::ConditionalExpression.__init__)
+def test_gastm_arrayaccess_constructor_args():
+    sig = inspect.signature(gastm_ArrayAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::labelaccess_is_not_abstract():
-    assert not inspect.isabstract(gastm::LabelAccess)
+def test_gastm_functioncallexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionCallExpression)
 
 
-def test_gastm::labelaccess_constructor_exists():
-    assert callable(gastm::LabelAccess.__init__)
+def test_gastm_functioncallexpression_constructor_exists():
+    assert callable(gastm_FunctionCallExpression.__init__)
 
 
-def test_gastm::labelaccess_constructor_args():
-    sig = inspect.signature(gastm::LabelAccess.__init__)
+def test_gastm_functioncallexpression_constructor_args():
+    sig = inspect.signature(gastm_FunctionCallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::aggregateexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::AggregateExpression)
+def test_gastm_aggregateexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_AggregateExpression)
 
 
-def test_gastm::aggregateexpression_constructor_exists():
-    assert callable(gastm::AggregateExpression.__init__)
+def test_gastm_aggregateexpression_constructor_exists():
+    assert callable(gastm_AggregateExpression.__init__)
 
 
-def test_gastm::aggregateexpression_constructor_args():
-    sig = inspect.signature(gastm::AggregateExpression.__init__)
+def test_gastm_aggregateexpression_constructor_args():
+    sig = inspect.signature(gastm_AggregateExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::annotationexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::AnnotationExpression)
+def test_gastm_namereference_is_not_abstract():
+    assert not inspect.isabstract(gastm_NameReference)
 
 
-def test_gastm::annotationexpression_constructor_exists():
-    assert callable(gastm::AnnotationExpression.__init__)
+def test_gastm_namereference_constructor_exists():
+    assert callable(gastm_NameReference.__init__)
 
 
-def test_gastm::annotationexpression_constructor_args():
-    sig = inspect.signature(gastm::AnnotationExpression.__init__)
+def test_gastm_namereference_constructor_args():
+    sig = inspect.signature(gastm_NameReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::rangeexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::RangeExpression)
+def test_gastm_newexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_NewExpression)
 
 
-def test_gastm::rangeexpression_constructor_exists():
-    assert callable(gastm::RangeExpression.__init__)
+def test_gastm_newexpression_constructor_exists():
+    assert callable(gastm_NewExpression.__init__)
 
 
-def test_gastm::rangeexpression_constructor_args():
-    sig = inspect.signature(gastm::RangeExpression.__init__)
+def test_gastm_newexpression_constructor_args():
+    sig = inspect.signature(gastm_NewExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbselectexpression_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBSelectExpression)
+def test_gastm_castexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_CastExpression)
 
 
-def test_sastm::rdbselectexpression_constructor_exists():
-    assert callable(sastm::RDBSelectExpression.__init__)
+def test_gastm_castexpression_constructor_exists():
+    assert callable(gastm_CastExpression.__init__)
 
 
-def test_sastm::rdbselectexpression_constructor_args():
-    sig = inspect.signature(sastm::RDBSelectExpression.__init__)
+def test_gastm_castexpression_constructor_args():
+    sig = inspect.signature(gastm_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::newexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::NewExpression)
+def test_gastm_labelaccess_is_not_abstract():
+    assert not inspect.isabstract(gastm_LabelAccess)
 
 
-def test_gastm::newexpression_constructor_exists():
-    assert callable(gastm::NewExpression.__init__)
+def test_gastm_labelaccess_constructor_exists():
+    assert callable(gastm_LabelAccess.__init__)
 
 
-def test_gastm::newexpression_constructor_args():
-    sig = inspect.signature(gastm::NewExpression.__init__)
+def test_gastm_labelaccess_constructor_args():
+    sig = inspect.signature(gastm_LabelAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::castexpression_is_not_abstract():
-    assert not inspect.isabstract(gastm::CastExpression)
+def test_gastm_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_ConditionalExpression)
 
 
-def test_gastm::castexpression_constructor_exists():
-    assert callable(gastm::CastExpression.__init__)
+def test_gastm_conditionalexpression_constructor_exists():
+    assert callable(gastm_ConditionalExpression.__init__)
 
 
-def test_gastm::castexpression_constructor_args():
-    sig = inspect.signature(gastm::CastExpression.__init__)
+def test_gastm_conditionalexpression_constructor_args():
+    sig = inspect.signature(gastm_ConditionalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbhostvariableexpression_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBHostVariableExpression)
+
+
+def test_sastm_rdbhostvariableexpression_constructor_exists():
+    assert callable(sastm_RDBHostVariableExpression.__init__)
+
+
+def test_sastm_rdbhostvariableexpression_constructor_args():
+    sig = inspect.signature(sastm_RDBHostVariableExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_UnaryExpression)
+
+
+def test_gastm_unaryexpression_constructor_exists():
+    assert callable(gastm_UnaryExpression.__init__)
+
+
+def test_gastm_unaryexpression_constructor_args():
+    sig = inspect.signature(gastm_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbselectexpression_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBSelectExpression)
+
+
+def test_sastm_rdbselectexpression_constructor_exists():
+    assert callable(sastm_RDBSelectExpression.__init__)
+
+
+def test_sastm_rdbselectexpression_constructor_args():
+    sig = inspect.signature(sastm_RDBSelectExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_annotationexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_AnnotationExpression)
+
+
+def test_gastm_annotationexpression_constructor_exists():
+    assert callable(gastm_AnnotationExpression.__init__)
+
+
+def test_gastm_annotationexpression_constructor_args():
+    sig = inspect.signature(gastm_AnnotationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_BinaryExpression)
+
+
+def test_gastm_binaryexpression_constructor_exists():
+    assert callable(gastm_BinaryExpression.__init__)
+
+
+def test_gastm_binaryexpression_constructor_args():
+    sig = inspect.signature(gastm_BinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_rangeexpression_is_not_abstract():
+    assert not inspect.isabstract(gastm_RangeExpression)
+
+
+def test_gastm_rangeexpression_constructor_exists():
+    assert callable(gastm_RangeExpression.__init__)
+
+
+def test_gastm_rangeexpression_constructor_args():
+    sig = inspect.signature(gastm_RangeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3765,149 +3201,91 @@ def test_gastmsyntaxobject_constructor_args():
 
 
 
-def test_gastm::expression_is_not_abstract():
-    assert not inspect.isabstract(gastm::Expression)
+def test_gastm_expression_is_not_abstract():
+    assert not inspect.isabstract(gastm_Expression)
 
 
-def test_gastm::expression_constructor_exists():
-    assert callable(gastm::Expression.__init__)
+def test_gastm_expression_constructor_exists():
+    assert callable(gastm_Expression.__init__)
 
 
-def test_gastm::expression_constructor_args():
-    sig = inspect.signature(gastm::Expression.__init__)
+def test_gastm_expression_constructor_args():
+    sig = inspect.signature(gastm_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::preprocessorelement_is_not_abstract():
-    assert not inspect.isabstract(gastm::PreprocessorElement)
+def test_gastm_definitionobject_is_not_abstract():
+    assert not inspect.isabstract(gastm_DefinitionObject)
 
 
-def test_gastm::preprocessorelement_constructor_exists():
-    assert callable(gastm::PreprocessorElement.__init__)
+def test_gastm_definitionobject_constructor_exists():
+    assert callable(gastm_DefinitionObject.__init__)
 
 
-def test_gastm::preprocessorelement_constructor_args():
-    sig = inspect.signature(gastm::PreprocessorElement.__init__)
+def test_gastm_definitionobject_constructor_args():
+    sig = inspect.signature(gastm_DefinitionObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::statement_is_not_abstract():
-    assert not inspect.isabstract(gastm::Statement)
+def test_gastm_statement_is_not_abstract():
+    assert not inspect.isabstract(gastm_Statement)
 
 
-def test_gastm::statement_constructor_exists():
-    assert callable(gastm::Statement.__init__)
+def test_gastm_statement_constructor_exists():
+    assert callable(gastm_Statement.__init__)
 
 
-def test_gastm::statement_constructor_args():
-    sig = inspect.signature(gastm::Statement.__init__)
+def test_gastm_statement_constructor_args():
+    sig = inspect.signature(gastm_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::definitionobject_is_not_abstract():
-    assert not inspect.isabstract(gastm::DefinitionObject)
+def test_gastm_preprocessorelement_is_not_abstract():
+    assert not inspect.isabstract(gastm_PreprocessorElement)
 
 
-def test_gastm::definitionobject_constructor_exists():
-    assert callable(gastm::DefinitionObject.__init__)
+def test_gastm_preprocessorelement_constructor_exists():
+    assert callable(gastm_PreprocessorElement.__init__)
 
 
-def test_gastm::definitionobject_constructor_args():
-    sig = inspect.signature(gastm::DefinitionObject.__init__)
+def test_gastm_preprocessorelement_constructor_args():
+    sig = inspect.signature(gastm_PreprocessorElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::type_is_not_abstract():
-    assert not inspect.isabstract(gastm::Type)
+def test_gastm_type_is_not_abstract():
+    assert not inspect.isabstract(gastm_Type)
 
 
-def test_gastm::type_constructor_exists():
-    assert callable(gastm::Type.__init__)
+def test_gastm_type_constructor_exists():
+    assert callable(gastm_Type.__init__)
 
 
-def test_gastm::type_constructor_args():
-    sig = inspect.signature(gastm::Type.__init__)
+def test_gastm_type_constructor_args():
+    sig = inspect.signature(gastm_Type.__init__)
     params = list(sig.parameters.keys())
-    assert "isConst" in params, "Missing parameter 'isConst'"
     assert "isVolatile" in params, "Missing parameter 'isVolatile'"
+    assert "isConst" in params, "Missing parameter 'isConst'"
 
-def test_gastm::type_has_isConst():
-    assert hasattr(gastm::Type, "isConst")
+def test_gastm_type_has_isVolatile():
+    assert hasattr(gastm_Type, "isVolatile")
     descriptor = None
-    for klass in gastm::Type.__mro__:
-        if "isConst" in klass.__dict__:
-            descriptor = klass.__dict__["isConst"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gastm::type_has_isVolatile():
-    assert hasattr(gastm::Type, "isVolatile")
-    descriptor = None
-    for klass in gastm::Type.__mro__:
+    for klass in gastm_Type.__mro__:
         if "isVolatile" in klass.__dict__:
             descriptor = klass.__dict__["isVolatile"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_gastm::comment_is_not_abstract():
-    assert not inspect.isabstract(gastm::Comment)
-
-
-def test_gastm::comment_constructor_exists():
-    assert callable(gastm::Comment.__init__)
-
-
-def test_gastm::comment_constructor_args():
-    sig = inspect.signature(gastm::Comment.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_gastm::comment_has_text():
-    assert hasattr(gastm::Comment, "text")
+def test_gastm_type_has_isConst():
+    assert hasattr(gastm_Type, "isConst")
     descriptor = None
-    for klass in gastm::Comment.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gastm::macrodefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::MacroDefinition)
-
-
-def test_gastm::macrodefinition_constructor_exists():
-    assert callable(gastm::MacroDefinition.__init__)
-
-
-def test_gastm::macrodefinition_constructor_args():
-    sig = inspect.signature(gastm::MacroDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "body" in params, "Missing parameter 'body'"
-    assert "macroName" in params, "Missing parameter 'macroName'"
-
-def test_gastm::macrodefinition_has_body():
-    assert hasattr(gastm::MacroDefinition, "body")
-    descriptor = None
-    for klass in gastm::MacroDefinition.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gastm::macrodefinition_has_macroName():
-    assert hasattr(gastm::MacroDefinition, "macroName")
-    descriptor = None
-    for klass in gastm::MacroDefinition.__mro__:
-        if "macroName" in klass.__dict__:
-            descriptor = klass.__dict__["macroName"]
+    for klass in gastm_Type.__mro__:
+        if "isConst" in klass.__dict__:
+            descriptor = klass.__dict__["isConst"]
             break
     assert isinstance(descriptor, property)
 
@@ -3927,34 +3305,6 @@ def test_macrodefinition_constructor_args():
 
 
 
-def test_gastm::macrocall_is_not_abstract():
-    assert not inspect.isabstract(gastm::MacroCall)
-
-
-def test_gastm::macrocall_constructor_exists():
-    assert callable(gastm::MacroCall.__init__)
-
-
-def test_gastm::macrocall_constructor_args():
-    sig = inspect.signature(gastm::MacroCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::includeunit_is_not_abstract():
-    assert not inspect.isabstract(gastm::IncludeUnit)
-
-
-def test_gastm::includeunit_constructor_exists():
-    assert callable(gastm::IncludeUnit.__init__)
-
-
-def test_gastm::includeunit_constructor_args():
-    sig = inspect.signature(gastm::IncludeUnit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_labeltype_is_not_abstract():
     assert not inspect.isabstract(LabelType)
 
@@ -3965,20 +3315,6 @@ def test_labeltype_constructor_exists():
 
 def test_labeltype_constructor_args():
     sig = inspect.signature(LabelType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::labeldefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::LabelDefinition)
-
-
-def test_gastm::labeldefinition_constructor_exists():
-    assert callable(gastm::LabelDefinition.__init__)
-
-
-def test_gastm::labeldefinition_constructor_args():
-    sig = inspect.signature(gastm::LabelDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4039,30 +3375,30 @@ def test_declaration_constructor_args():
 
 
 
-def test_gastm::formalparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(gastm::FormalParameterDeclaration)
+def test_gastm_formalparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(gastm_FormalParameterDeclaration)
 
 
-def test_gastm::formalparameterdeclaration_constructor_exists():
-    assert callable(gastm::FormalParameterDeclaration.__init__)
+def test_gastm_formalparameterdeclaration_constructor_exists():
+    assert callable(gastm_FormalParameterDeclaration.__init__)
 
 
-def test_gastm::formalparameterdeclaration_constructor_args():
-    sig = inspect.signature(gastm::FormalParameterDeclaration.__init__)
+def test_gastm_formalparameterdeclaration_constructor_args():
+    sig = inspect.signature(gastm_FormalParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionDeclaration)
+def test_gastm_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionDeclaration)
 
 
-def test_gastm::functiondeclaration_constructor_exists():
-    assert callable(gastm::FunctionDeclaration.__init__)
+def test_gastm_functiondeclaration_constructor_exists():
+    assert callable(gastm_FunctionDeclaration.__init__)
 
 
-def test_gastm::functiondeclaration_constructor_args():
-    sig = inspect.signature(gastm::FunctionDeclaration.__init__)
+def test_gastm_functiondeclaration_constructor_args():
+    sig = inspect.signature(gastm_FunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4081,103 +3417,23 @@ def test_definition_constructor_args():
 
 
 
-def test_gastm::enumliteraldefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::EnumLiteralDefinition)
+def test_gastm_datadefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_DataDefinition)
 
 
-def test_gastm::enumliteraldefinition_constructor_exists():
-    assert callable(gastm::EnumLiteralDefinition.__init__)
+def test_gastm_datadefinition_constructor_exists():
+    assert callable(gastm_DataDefinition.__init__)
 
 
-def test_gastm::enumliteraldefinition_constructor_args():
-    sig = inspect.signature(gastm::EnumLiteralDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbtabledefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableDefinition)
-
-
-def test_sastm::rdbtabledefinition_constructor_exists():
-    assert callable(sastm::RDBTableDefinition.__init__)
-
-
-def test_sastm::rdbtabledefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBTableDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbcursordefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBCursorDefinition)
-
-
-def test_sastm::rdbcursordefinition_constructor_exists():
-    assert callable(sastm::RDBCursorDefinition.__init__)
-
-
-def test_sastm::rdbcursordefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBCursorDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sastm::rdbcolumndefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBColumnDefinition)
-
-
-def test_sastm::rdbcolumndefinition_constructor_exists():
-    assert callable(sastm::RDBColumnDefinition.__init__)
-
-
-def test_sastm::rdbcolumndefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBColumnDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "NotNull" in params, "Missing parameter 'NotNull'"
-
-def test_sastm::rdbcolumndefinition_has_NotNull():
-    assert hasattr(sastm::RDBColumnDefinition, "NotNull")
-    descriptor = None
-    for klass in sastm::RDBColumnDefinition.__mro__:
-        if "NotNull" in klass.__dict__:
-            descriptor = klass.__dict__["NotNull"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sastm::rdbuserdefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBUserDefinition)
-
-
-def test_sastm::rdbuserdefinition_constructor_exists():
-    assert callable(sastm::RDBUserDefinition.__init__)
-
-
-def test_sastm::rdbuserdefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBUserDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::datadefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::DataDefinition)
-
-
-def test_gastm::datadefinition_constructor_exists():
-    assert callable(gastm::DataDefinition.__init__)
-
-
-def test_gastm::datadefinition_constructor_args():
-    sig = inspect.signature(gastm::DataDefinition.__init__)
+def test_gastm_datadefinition_constructor_args():
+    sig = inspect.signature(gastm_DataDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "isMutable" in params, "Missing parameter 'isMutable'"
 
-def test_gastm::datadefinition_has_isMutable():
-    assert hasattr(gastm::DataDefinition, "isMutable")
+def test_gastm_datadefinition_has_isMutable():
+    assert hasattr(gastm_DataDefinition, "isMutable")
     descriptor = None
-    for klass in gastm::DataDefinition.__mro__:
+    for klass in gastm_DataDefinition.__mro__:
         if "isMutable" in klass.__dict__:
             descriptor = klass.__dict__["isMutable"]
             break
@@ -4185,58 +3441,138 @@ def test_gastm::datadefinition_has_isMutable():
 
 
 
-def test_sastm::rdbviewdefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBViewDefinition)
+def test_sastm_rdbviewdefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBViewDefinition)
 
 
-def test_sastm::rdbviewdefinition_constructor_exists():
-    assert callable(sastm::RDBViewDefinition.__init__)
+def test_sastm_rdbviewdefinition_constructor_exists():
+    assert callable(sastm_RDBViewDefinition.__init__)
 
 
-def test_sastm::rdbviewdefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBViewDefinition.__init__)
+def test_sastm_rdbviewdefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBViewDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbtablespacedefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBTableSpaceDefinition)
+def test_sastm_rdbcolumndefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBColumnDefinition)
 
 
-def test_sastm::rdbtablespacedefinition_constructor_exists():
-    assert callable(sastm::RDBTableSpaceDefinition.__init__)
+def test_sastm_rdbcolumndefinition_constructor_exists():
+    assert callable(sastm_RDBColumnDefinition.__init__)
 
 
-def test_sastm::rdbtablespacedefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBTableSpaceDefinition.__init__)
+def test_sastm_rdbcolumndefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBColumnDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "NotNull" in params, "Missing parameter 'NotNull'"
+
+def test_sastm_rdbcolumndefinition_has_NotNull():
+    assert hasattr(sastm_RDBColumnDefinition, "NotNull")
+    descriptor = None
+    for klass in sastm_RDBColumnDefinition.__mro__:
+        if "NotNull" in klass.__dict__:
+            descriptor = klass.__dict__["NotNull"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sastm_rdbuserdefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBUserDefinition)
+
+
+def test_sastm_rdbuserdefinition_constructor_exists():
+    assert callable(sastm_RDBUserDefinition.__init__)
+
+
+def test_sastm_rdbuserdefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBUserDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::specifictriggerdefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificTriggerDefinition)
+def test_sastm_rdbcursordefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBCursorDefinition)
 
 
-def test_gastm::specifictriggerdefinition_constructor_exists():
-    assert callable(gastm::SpecificTriggerDefinition.__init__)
+def test_sastm_rdbcursordefinition_constructor_exists():
+    assert callable(sastm_RDBCursorDefinition.__init__)
 
 
-def test_gastm::specifictriggerdefinition_constructor_args():
-    sig = inspect.signature(gastm::SpecificTriggerDefinition.__init__)
+def test_sastm_rdbcursordefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBCursorDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbdatabasedefinition_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBDatabaseDefinition)
+def test_sastm_rdbtablespacedefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableSpaceDefinition)
 
 
-def test_sastm::rdbdatabasedefinition_constructor_exists():
-    assert callable(sastm::RDBDatabaseDefinition.__init__)
+def test_sastm_rdbtablespacedefinition_constructor_exists():
+    assert callable(sastm_RDBTableSpaceDefinition.__init__)
 
 
-def test_sastm::rdbdatabasedefinition_constructor_args():
-    sig = inspect.signature(sastm::RDBDatabaseDefinition.__init__)
+def test_sastm_rdbtablespacedefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBTableSpaceDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbdatabasedefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBDatabaseDefinition)
+
+
+def test_sastm_rdbdatabasedefinition_constructor_exists():
+    assert callable(sastm_RDBDatabaseDefinition.__init__)
+
+
+def test_sastm_rdbdatabasedefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBDatabaseDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbtabledefinition_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTableDefinition)
+
+
+def test_sastm_rdbtabledefinition_constructor_exists():
+    assert callable(sastm_RDBTableDefinition.__init__)
+
+
+def test_sastm_rdbtabledefinition_constructor_args():
+    sig = inspect.signature(sastm_RDBTableDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_enumliteraldefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_EnumLiteralDefinition)
+
+
+def test_gastm_enumliteraldefinition_constructor_exists():
+    assert callable(gastm_EnumLiteralDefinition.__init__)
+
+
+def test_gastm_enumliteraldefinition_constructor_args():
+    sig = inspect.signature(gastm_EnumLiteralDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_specifictriggerdefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificTriggerDefinition)
+
+
+def test_gastm_specifictriggerdefinition_constructor_exists():
+    assert callable(gastm_SpecificTriggerDefinition.__init__)
+
+
+def test_gastm_specifictriggerdefinition_constructor_args():
+    sig = inspect.signature(gastm_SpecificTriggerDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4255,30 +3591,30 @@ def test_typereference_constructor_args():
 
 
 
-def test_gastm::namedtypereference_is_not_abstract():
-    assert not inspect.isabstract(gastm::NamedTypeReference)
+def test_gastm_unnamedtypereference_is_not_abstract():
+    assert not inspect.isabstract(gastm_UnnamedTypeReference)
 
 
-def test_gastm::namedtypereference_constructor_exists():
-    assert callable(gastm::NamedTypeReference.__init__)
+def test_gastm_unnamedtypereference_constructor_exists():
+    assert callable(gastm_UnnamedTypeReference.__init__)
 
 
-def test_gastm::namedtypereference_constructor_args():
-    sig = inspect.signature(gastm::NamedTypeReference.__init__)
+def test_gastm_unnamedtypereference_constructor_args():
+    sig = inspect.signature(gastm_UnnamedTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::unnamedtypereference_is_not_abstract():
-    assert not inspect.isabstract(gastm::UnnamedTypeReference)
+def test_gastm_namedtypereference_is_not_abstract():
+    assert not inspect.isabstract(gastm_NamedTypeReference)
 
 
-def test_gastm::unnamedtypereference_constructor_exists():
-    assert callable(gastm::UnnamedTypeReference.__init__)
+def test_gastm_namedtypereference_constructor_exists():
+    assert callable(gastm_NamedTypeReference.__init__)
 
 
-def test_gastm::unnamedtypereference_constructor_args():
-    sig = inspect.signature(gastm::UnnamedTypeReference.__init__)
+def test_gastm_namedtypereference_constructor_args():
+    sig = inspect.signature(gastm_NamedTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4311,78 +3647,44 @@ def test_declarationordefinition_constructor_args():
 
 
 
-def test_gastm::declaration_is_not_abstract():
-    assert not inspect.isabstract(gastm::Declaration)
+def test_gastm_declaration_is_not_abstract():
+    assert not inspect.isabstract(gastm_Declaration)
 
 
-def test_gastm::declaration_constructor_exists():
-    assert callable(gastm::Declaration.__init__)
+def test_gastm_declaration_constructor_exists():
+    assert callable(gastm_Declaration.__init__)
 
 
-def test_gastm::declaration_constructor_args():
-    sig = inspect.signature(gastm::Declaration.__init__)
+def test_gastm_declaration_constructor_args():
+    sig = inspect.signature(gastm_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::definition_is_not_abstract():
-    assert not inspect.isabstract(gastm::Definition)
+def test_gastm_definition_is_not_abstract():
+    assert not inspect.isabstract(gastm_Definition)
 
 
-def test_gastm::definition_constructor_exists():
-    assert callable(gastm::Definition.__init__)
+def test_gastm_definition_constructor_exists():
+    assert callable(gastm_Definition.__init__)
 
 
-def test_gastm::definition_constructor_args():
-    sig = inspect.signature(gastm::Definition.__init__)
+def test_gastm_definition_constructor_args():
+    sig = inspect.signature(gastm_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::declarationordefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::DeclarationOrDefinition)
+def test_gastm_entrydefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_EntryDefinition)
 
 
-def test_gastm::declarationordefinition_constructor_exists():
-    assert callable(gastm::DeclarationOrDefinition.__init__)
+def test_gastm_entrydefinition_constructor_exists():
+    assert callable(gastm_EntryDefinition.__init__)
 
 
-def test_gastm::declarationordefinition_constructor_args():
-    sig = inspect.signature(gastm::DeclarationOrDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "isRegister" in params, "Missing parameter 'isRegister'"
-    assert "linkageSpecifier" in params, "Missing parameter 'linkageSpecifier'"
-
-def test_gastm::declarationordefinition_has_isRegister():
-    assert hasattr(gastm::DeclarationOrDefinition, "isRegister")
-    descriptor = None
-    for klass in gastm::DeclarationOrDefinition.__mro__:
-        if "isRegister" in klass.__dict__:
-            descriptor = klass.__dict__["isRegister"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gastm::declarationordefinition_has_linkageSpecifier():
-    assert hasattr(gastm::DeclarationOrDefinition, "linkageSpecifier")
-    descriptor = None
-    for klass in gastm::DeclarationOrDefinition.__mro__:
-        if "linkageSpecifier" in klass.__dict__:
-            descriptor = klass.__dict__["linkageSpecifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gastm::entrydefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::EntryDefinition)
-
-
-def test_gastm::entrydefinition_constructor_exists():
-    assert callable(gastm::EntryDefinition.__init__)
-
-
-def test_gastm::entrydefinition_constructor_args():
-    sig = inspect.signature(gastm::EntryDefinition.__init__)
+def test_gastm_entrydefinition_constructor_args():
+    sig = inspect.signature(gastm_EntryDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4401,87 +3703,87 @@ def test_virtualspecification_constructor_args():
 
 
 
-def test_gastm::virtual_is_not_abstract():
-    assert not inspect.isabstract(gastm::Virtual)
+def test_gastm_virtual_is_not_abstract():
+    assert not inspect.isabstract(gastm_Virtual)
 
 
-def test_gastm::virtual_constructor_exists():
-    assert callable(gastm::Virtual.__init__)
+def test_gastm_virtual_constructor_exists():
+    assert callable(gastm_Virtual.__init__)
 
 
-def test_gastm::virtual_constructor_args():
-    sig = inspect.signature(gastm::Virtual.__init__)
+def test_gastm_virtual_constructor_args():
+    sig = inspect.signature(gastm_Virtual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::nonvirtual_is_not_abstract():
-    assert not inspect.isabstract(gastm::NonVirtual)
+def test_gastm_purevirtual_is_not_abstract():
+    assert not inspect.isabstract(gastm_PureVirtual)
 
 
-def test_gastm::nonvirtual_constructor_exists():
-    assert callable(gastm::NonVirtual.__init__)
+def test_gastm_purevirtual_constructor_exists():
+    assert callable(gastm_PureVirtual.__init__)
 
 
-def test_gastm::nonvirtual_constructor_args():
-    sig = inspect.signature(gastm::NonVirtual.__init__)
+def test_gastm_purevirtual_constructor_args():
+    sig = inspect.signature(gastm_PureVirtual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::purevirtual_is_not_abstract():
-    assert not inspect.isabstract(gastm::PureVirtual)
+def test_gastm_nonvirtual_is_not_abstract():
+    assert not inspect.isabstract(gastm_NonVirtual)
 
 
-def test_gastm::purevirtual_constructor_exists():
-    assert callable(gastm::PureVirtual.__init__)
+def test_gastm_nonvirtual_constructor_exists():
+    assert callable(gastm_NonVirtual.__init__)
 
 
-def test_gastm::purevirtual_constructor_args():
-    sig = inspect.signature(gastm::PureVirtual.__init__)
+def test_gastm_nonvirtual_constructor_args():
+    sig = inspect.signature(gastm_NonVirtual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::functionmemberattributes_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionMemberAttributes)
+def test_gastm_functionmemberattributes_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionMemberAttributes)
 
 
-def test_gastm::functionmemberattributes_constructor_exists():
-    assert callable(gastm::FunctionMemberAttributes.__init__)
+def test_gastm_functionmemberattributes_constructor_exists():
+    assert callable(gastm_FunctionMemberAttributes.__init__)
 
 
-def test_gastm::functionmemberattributes_constructor_args():
-    sig = inspect.signature(gastm::FunctionMemberAttributes.__init__)
+def test_gastm_functionmemberattributes_constructor_args():
+    sig = inspect.signature(gastm_FunctionMemberAttributes.__init__)
     params = list(sig.parameters.keys())
-    assert "isInline" in params, "Missing parameter 'isInline'"
-    assert "isFriend" in params, "Missing parameter 'isFriend'"
     assert "isThisConst" in params, "Missing parameter 'isThisConst'"
+    assert "isFriend" in params, "Missing parameter 'isFriend'"
+    assert "isInline" in params, "Missing parameter 'isInline'"
 
-def test_gastm::functionmemberattributes_has_isInline():
-    assert hasattr(gastm::FunctionMemberAttributes, "isInline")
+def test_gastm_functionmemberattributes_has_isThisConst():
+    assert hasattr(gastm_FunctionMemberAttributes, "isThisConst")
     descriptor = None
-    for klass in gastm::FunctionMemberAttributes.__mro__:
-        if "isInline" in klass.__dict__:
-            descriptor = klass.__dict__["isInline"]
+    for klass in gastm_FunctionMemberAttributes.__mro__:
+        if "isThisConst" in klass.__dict__:
+            descriptor = klass.__dict__["isThisConst"]
             break
     assert isinstance(descriptor, property)
 
-def test_gastm::functionmemberattributes_has_isFriend():
-    assert hasattr(gastm::FunctionMemberAttributes, "isFriend")
+def test_gastm_functionmemberattributes_has_isFriend():
+    assert hasattr(gastm_FunctionMemberAttributes, "isFriend")
     descriptor = None
-    for klass in gastm::FunctionMemberAttributes.__mro__:
+    for klass in gastm_FunctionMemberAttributes.__mro__:
         if "isFriend" in klass.__dict__:
             descriptor = klass.__dict__["isFriend"]
             break
     assert isinstance(descriptor, property)
 
-def test_gastm::functionmemberattributes_has_isThisConst():
-    assert hasattr(gastm::FunctionMemberAttributes, "isThisConst")
+def test_gastm_functionmemberattributes_has_isInline():
+    assert hasattr(gastm_FunctionMemberAttributes, "isInline")
     descriptor = None
-    for klass in gastm::FunctionMemberAttributes.__mro__:
-        if "isThisConst" in klass.__dict__:
-            descriptor = klass.__dict__["isThisConst"]
+    for klass in gastm_FunctionMemberAttributes.__mro__:
+        if "isInline" in klass.__dict__:
+            descriptor = klass.__dict__["isInline"]
             break
     assert isinstance(descriptor, property)
 
@@ -4515,310 +3817,310 @@ def test_statement_constructor_args():
 
 
 
-def test_gastm::jumpstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::JumpStatement)
+def test_gastm_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ThrowStatement)
 
 
-def test_gastm::jumpstatement_constructor_exists():
-    assert callable(gastm::JumpStatement.__init__)
+def test_gastm_throwstatement_constructor_exists():
+    assert callable(gastm_ThrowStatement.__init__)
 
 
-def test_gastm::jumpstatement_constructor_args():
-    sig = inspect.signature(gastm::JumpStatement.__init__)
+def test_gastm_throwstatement_constructor_args():
+    sig = inspect.signature(gastm_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbconnectstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBConnectStatement)
+def test_gastm_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_SwitchStatement)
 
 
-def test_sastm::rdbconnectstatement_constructor_exists():
-    assert callable(sastm::RDBConnectStatement.__init__)
+def test_gastm_switchstatement_constructor_exists():
+    assert callable(gastm_SwitchStatement.__init__)
 
 
-def test_sastm::rdbconnectstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBConnectStatement.__init__)
+def test_gastm_switchstatement_constructor_args():
+    sig = inspect.signature(gastm_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::LoopStatement)
+def test_gastm_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_LoopStatement)
 
 
-def test_gastm::loopstatement_constructor_exists():
-    assert callable(gastm::LoopStatement.__init__)
+def test_gastm_loopstatement_constructor_exists():
+    assert callable(gastm_LoopStatement.__init__)
 
 
-def test_gastm::loopstatement_constructor_args():
-    sig = inspect.signature(gastm::LoopStatement.__init__)
+def test_gastm_loopstatement_constructor_args():
+    sig = inspect.signature(gastm_LoopStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::deletestatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::DeleteStatement)
+def test_gastm_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_BlockStatement)
 
 
-def test_gastm::deletestatement_constructor_exists():
-    assert callable(gastm::DeleteStatement.__init__)
+def test_gastm_blockstatement_constructor_exists():
+    assert callable(gastm_BlockStatement.__init__)
 
 
-def test_gastm::deletestatement_constructor_args():
-    sig = inspect.signature(gastm::DeleteStatement.__init__)
+def test_gastm_blockstatement_constructor_args():
+    sig = inspect.signature(gastm_BlockStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::LabeledStatement)
+def test_gastm_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ReturnStatement)
 
 
-def test_gastm::labeledstatement_constructor_exists():
-    assert callable(gastm::LabeledStatement.__init__)
+def test_gastm_returnstatement_constructor_exists():
+    assert callable(gastm_ReturnStatement.__init__)
 
 
-def test_gastm::labeledstatement_constructor_args():
-    sig = inspect.signature(gastm::LabeledStatement.__init__)
+def test_gastm_returnstatement_constructor_args():
+    sig = inspect.signature(gastm_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::IfStatement)
+def test_sastm_rdbconnectstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBConnectStatement)
 
 
-def test_gastm::ifstatement_constructor_exists():
-    assert callable(gastm::IfStatement.__init__)
+def test_sastm_rdbconnectstatement_constructor_exists():
+    assert callable(sastm_RDBConnectStatement.__init__)
 
 
-def test_gastm::ifstatement_constructor_args():
-    sig = inspect.signature(gastm::IfStatement.__init__)
+def test_sastm_rdbconnectstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBConnectStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::terminatestatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::TerminateStatement)
+def test_gastm_terminatestatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_TerminateStatement)
 
 
-def test_gastm::terminatestatement_constructor_exists():
-    assert callable(gastm::TerminateStatement.__init__)
+def test_gastm_terminatestatement_constructor_exists():
+    assert callable(gastm_TerminateStatement.__init__)
 
 
-def test_gastm::terminatestatement_constructor_args():
-    sig = inspect.signature(gastm::TerminateStatement.__init__)
+def test_gastm_terminatestatement_constructor_args():
+    sig = inspect.signature(gastm_TerminateStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ContinueStatement)
+def test_gastm_specificselectstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_SpecificSelectStatement)
 
 
-def test_gastm::continuestatement_constructor_exists():
-    assert callable(gastm::ContinueStatement.__init__)
+def test_gastm_specificselectstatement_constructor_exists():
+    assert callable(gastm_SpecificSelectStatement.__init__)
 
 
-def test_gastm::continuestatement_constructor_args():
-    sig = inspect.signature(gastm::ContinueStatement.__init__)
+def test_gastm_specificselectstatement_constructor_args():
+    sig = inspect.signature(gastm_SpecificSelectStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::SwitchStatement)
+def test_gastm_trystatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_TryStatement)
 
 
-def test_gastm::switchstatement_constructor_exists():
-    assert callable(gastm::SwitchStatement.__init__)
+def test_gastm_trystatement_constructor_exists():
+    assert callable(gastm_TryStatement.__init__)
 
 
-def test_gastm::switchstatement_constructor_args():
-    sig = inspect.signature(gastm::SwitchStatement.__init__)
+def test_gastm_trystatement_constructor_args():
+    sig = inspect.signature(gastm_TryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbcursorstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBCursorStatement)
+def test_gastm_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_EmptyStatement)
 
 
-def test_sastm::rdbcursorstatement_constructor_exists():
-    assert callable(sastm::RDBCursorStatement.__init__)
+def test_gastm_emptystatement_constructor_exists():
+    assert callable(gastm_EmptyStatement.__init__)
 
 
-def test_sastm::rdbcursorstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBCursorStatement.__init__)
+def test_gastm_emptystatement_constructor_args():
+    sig = inspect.signature(gastm_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::declarationordefinitionstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::DeclarationOrDefinitionStatement)
+def test_gastm_deletestatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_DeleteStatement)
 
 
-def test_gastm::declarationordefinitionstatement_constructor_exists():
-    assert callable(gastm::DeclarationOrDefinitionStatement.__init__)
+def test_gastm_deletestatement_constructor_exists():
+    assert callable(gastm_DeleteStatement.__init__)
 
 
-def test_gastm::declarationordefinitionstatement_constructor_args():
-    sig = inspect.signature(gastm::DeclarationOrDefinitionStatement.__init__)
+def test_gastm_deletestatement_constructor_args():
+    sig = inspect.signature(gastm_DeleteStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbselectstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBSelectStatement)
+def test_gastm_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_BreakStatement)
 
 
-def test_sastm::rdbselectstatement_constructor_exists():
-    assert callable(sastm::RDBSelectStatement.__init__)
+def test_gastm_breakstatement_constructor_exists():
+    assert callable(gastm_BreakStatement.__init__)
 
 
-def test_sastm::rdbselectstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBSelectStatement.__init__)
+def test_gastm_breakstatement_constructor_args():
+    sig = inspect.signature(gastm_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ReturnStatement)
+def test_gastm_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_LabeledStatement)
 
 
-def test_gastm::returnstatement_constructor_exists():
-    assert callable(gastm::ReturnStatement.__init__)
+def test_gastm_labeledstatement_constructor_exists():
+    assert callable(gastm_LabeledStatement.__init__)
 
 
-def test_gastm::returnstatement_constructor_args():
-    sig = inspect.signature(gastm::ReturnStatement.__init__)
+def test_gastm_labeledstatement_constructor_args():
+    sig = inspect.signature(gastm_LabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbmodifystatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBModifyStatement)
+def test_gastm_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_IfStatement)
 
 
-def test_sastm::rdbmodifystatement_constructor_exists():
-    assert callable(sastm::RDBModifyStatement.__init__)
+def test_gastm_ifstatement_constructor_exists():
+    assert callable(gastm_IfStatement.__init__)
 
 
-def test_sastm::rdbmodifystatement_constructor_args():
-    sig = inspect.signature(sastm::RDBModifyStatement.__init__)
+def test_gastm_ifstatement_constructor_args():
+    sig = inspect.signature(gastm_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::BlockStatement)
+def test_gastm_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ExpressionStatement)
 
 
-def test_gastm::blockstatement_constructor_exists():
-    assert callable(gastm::BlockStatement.__init__)
+def test_gastm_expressionstatement_constructor_exists():
+    assert callable(gastm_ExpressionStatement.__init__)
 
 
-def test_gastm::blockstatement_constructor_args():
-    sig = inspect.signature(gastm::BlockStatement.__init__)
+def test_gastm_expressionstatement_constructor_args():
+    sig = inspect.signature(gastm_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::trystatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::TryStatement)
+def test_gastm_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_ContinueStatement)
 
 
-def test_gastm::trystatement_constructor_exists():
-    assert callable(gastm::TryStatement.__init__)
+def test_gastm_continuestatement_constructor_exists():
+    assert callable(gastm_ContinueStatement.__init__)
 
 
-def test_gastm::trystatement_constructor_args():
-    sig = inspect.signature(gastm::TryStatement.__init__)
+def test_gastm_continuestatement_constructor_args():
+    sig = inspect.signature(gastm_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sastm::rdbinsertstatement_is_not_abstract():
-    assert not inspect.isabstract(sastm::RDBInsertStatement)
+def test_sastm_rdbcursorstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBCursorStatement)
 
 
-def test_sastm::rdbinsertstatement_constructor_exists():
-    assert callable(sastm::RDBInsertStatement.__init__)
+def test_sastm_rdbcursorstatement_constructor_exists():
+    assert callable(sastm_RDBCursorStatement.__init__)
 
 
-def test_sastm::rdbinsertstatement_constructor_args():
-    sig = inspect.signature(sastm::RDBInsertStatement.__init__)
+def test_sastm_rdbcursorstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBCursorStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ExpressionStatement)
+def test_gastm_jumpstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_JumpStatement)
 
 
-def test_gastm::expressionstatement_constructor_exists():
-    assert callable(gastm::ExpressionStatement.__init__)
+def test_gastm_jumpstatement_constructor_exists():
+    assert callable(gastm_JumpStatement.__init__)
 
 
-def test_gastm::expressionstatement_constructor_args():
-    sig = inspect.signature(gastm::ExpressionStatement.__init__)
+def test_gastm_jumpstatement_constructor_args():
+    sig = inspect.signature(gastm_JumpStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::ThrowStatement)
+def test_sastm_rdbinsertstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBInsertStatement)
 
 
-def test_gastm::throwstatement_constructor_exists():
-    assert callable(gastm::ThrowStatement.__init__)
+def test_sastm_rdbinsertstatement_constructor_exists():
+    assert callable(sastm_RDBInsertStatement.__init__)
 
 
-def test_gastm::throwstatement_constructor_args():
-    sig = inspect.signature(gastm::ThrowStatement.__init__)
+def test_sastm_rdbinsertstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBInsertStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::specificselectstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::SpecificSelectStatement)
+def test_sastm_rdbselectstatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBSelectStatement)
 
 
-def test_gastm::specificselectstatement_constructor_exists():
-    assert callable(gastm::SpecificSelectStatement.__init__)
+def test_sastm_rdbselectstatement_constructor_exists():
+    assert callable(sastm_RDBSelectStatement.__init__)
 
 
-def test_gastm::specificselectstatement_constructor_args():
-    sig = inspect.signature(gastm::SpecificSelectStatement.__init__)
+def test_sastm_rdbselectstatement_constructor_args():
+    sig = inspect.signature(sastm_RDBSelectStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::BreakStatement)
+def test_gastm_declarationordefinitionstatement_is_not_abstract():
+    assert not inspect.isabstract(gastm_DeclarationOrDefinitionStatement)
 
 
-def test_gastm::breakstatement_constructor_exists():
-    assert callable(gastm::BreakStatement.__init__)
+def test_gastm_declarationordefinitionstatement_constructor_exists():
+    assert callable(gastm_DeclarationOrDefinitionStatement.__init__)
 
 
-def test_gastm::breakstatement_constructor_args():
-    sig = inspect.signature(gastm::BreakStatement.__init__)
+def test_gastm_declarationordefinitionstatement_constructor_args():
+    sig = inspect.signature(gastm_DeclarationOrDefinitionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(gastm::EmptyStatement)
+def test_sastm_rdbmodifystatement_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBModifyStatement)
 
 
-def test_gastm::emptystatement_constructor_exists():
-    assert callable(gastm::EmptyStatement.__init__)
+def test_sastm_rdbmodifystatement_constructor_exists():
+    assert callable(sastm_RDBModifyStatement.__init__)
 
 
-def test_gastm::emptystatement_constructor_args():
-    sig = inspect.signature(gastm::EmptyStatement.__init__)
+def test_sastm_rdbmodifystatement_constructor_args():
+    sig = inspect.signature(sastm_RDBModifyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4837,37 +4139,37 @@ def test_formalparameterdefinition_constructor_args():
 
 
 
-def test_gastm::functiondefinition_is_not_abstract():
-    assert not inspect.isabstract(gastm::FunctionDefinition)
+def test_gastm_functiondefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionDefinition)
 
 
-def test_gastm::functiondefinition_constructor_exists():
-    assert callable(gastm::FunctionDefinition.__init__)
+def test_gastm_functiondefinition_constructor_exists():
+    assert callable(gastm_FunctionDefinition.__init__)
 
 
-def test_gastm::functiondefinition_constructor_args():
-    sig = inspect.signature(gastm::FunctionDefinition.__init__)
+def test_gastm_functiondefinition_constructor_args():
+    sig = inspect.signature(gastm_FunctionDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(gastm::VariableDeclaration)
+def test_gastm_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(gastm_VariableDeclaration)
 
 
-def test_gastm::variabledeclaration_constructor_exists():
-    assert callable(gastm::VariableDeclaration.__init__)
+def test_gastm_variabledeclaration_constructor_exists():
+    assert callable(gastm_VariableDeclaration.__init__)
 
 
-def test_gastm::variabledeclaration_constructor_args():
-    sig = inspect.signature(gastm::VariableDeclaration.__init__)
+def test_gastm_variabledeclaration_constructor_args():
+    sig = inspect.signature(gastm_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "isMutable" in params, "Missing parameter 'isMutable'"
 
-def test_gastm::variabledeclaration_has_isMutable():
-    assert hasattr(gastm::VariableDeclaration, "isMutable")
+def test_gastm_variabledeclaration_has_isMutable():
+    assert hasattr(gastm_VariableDeclaration, "isMutable")
     descriptor = None
-    for klass in gastm::VariableDeclaration.__mro__:
+    for klass in gastm_VariableDeclaration.__mro__:
         if "isMutable" in klass.__dict__:
             descriptor = klass.__dict__["isMutable"]
             break
@@ -4903,30 +4205,16 @@ def test_gastmsemanticobject_constructor_args():
 
 
 
-def test_gastm::scope_is_not_abstract():
-    assert not inspect.isabstract(gastm::Scope)
+def test_gastm_project_is_not_abstract():
+    assert not inspect.isabstract(gastm_Project)
 
 
-def test_gastm::scope_constructor_exists():
-    assert callable(gastm::Scope.__init__)
+def test_gastm_project_constructor_exists():
+    assert callable(gastm_Project.__init__)
 
 
-def test_gastm::scope_constructor_args():
-    sig = inspect.signature(gastm::Scope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gastm::project_is_not_abstract():
-    assert not inspect.isabstract(gastm::Project)
-
-
-def test_gastm::project_constructor_exists():
-    assert callable(gastm::Project.__init__)
-
-
-def test_gastm::project_constructor_args():
-    sig = inspect.signature(gastm::Project.__init__)
+def test_gastm_project_constructor_args():
+    sig = inspect.signature(gastm_Project.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4959,53 +4247,53 @@ def test_gastmsourceobject_constructor_args():
 
 
 
-def test_gastm::sourcelocation_is_not_abstract():
-    assert not inspect.isabstract(gastm::SourceLocation)
+def test_gastm_sourcelocation_is_not_abstract():
+    assert not inspect.isabstract(gastm_SourceLocation)
 
 
-def test_gastm::sourcelocation_constructor_exists():
-    assert callable(gastm::SourceLocation.__init__)
+def test_gastm_sourcelocation_constructor_exists():
+    assert callable(gastm_SourceLocation.__init__)
 
 
-def test_gastm::sourcelocation_constructor_args():
-    sig = inspect.signature(gastm::SourceLocation.__init__)
+def test_gastm_sourcelocation_constructor_args():
+    sig = inspect.signature(gastm_SourceLocation.__init__)
     params = list(sig.parameters.keys())
-    assert "startLine" in params, "Missing parameter 'startLine'"
-    assert "endLine" in params, "Missing parameter 'endLine'"
     assert "startColumn" in params, "Missing parameter 'startColumn'"
+    assert "endLine" in params, "Missing parameter 'endLine'"
+    assert "startLine" in params, "Missing parameter 'startLine'"
     assert "endColumn" in params, "Missing parameter 'endColumn'"
 
-def test_gastm::sourcelocation_has_startLine():
-    assert hasattr(gastm::SourceLocation, "startLine")
+def test_gastm_sourcelocation_has_startColumn():
+    assert hasattr(gastm_SourceLocation, "startColumn")
     descriptor = None
-    for klass in gastm::SourceLocation.__mro__:
-        if "startLine" in klass.__dict__:
-            descriptor = klass.__dict__["startLine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gastm::sourcelocation_has_endLine():
-    assert hasattr(gastm::SourceLocation, "endLine")
-    descriptor = None
-    for klass in gastm::SourceLocation.__mro__:
-        if "endLine" in klass.__dict__:
-            descriptor = klass.__dict__["endLine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gastm::sourcelocation_has_startColumn():
-    assert hasattr(gastm::SourceLocation, "startColumn")
-    descriptor = None
-    for klass in gastm::SourceLocation.__mro__:
+    for klass in gastm_SourceLocation.__mro__:
         if "startColumn" in klass.__dict__:
             descriptor = klass.__dict__["startColumn"]
             break
     assert isinstance(descriptor, property)
 
-def test_gastm::sourcelocation_has_endColumn():
-    assert hasattr(gastm::SourceLocation, "endColumn")
+def test_gastm_sourcelocation_has_endLine():
+    assert hasattr(gastm_SourceLocation, "endLine")
     descriptor = None
-    for klass in gastm::SourceLocation.__mro__:
+    for klass in gastm_SourceLocation.__mro__:
+        if "endLine" in klass.__dict__:
+            descriptor = klass.__dict__["endLine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gastm_sourcelocation_has_startLine():
+    assert hasattr(gastm_SourceLocation, "startLine")
+    descriptor = None
+    for klass in gastm_SourceLocation.__mro__:
+        if "startLine" in klass.__dict__:
+            descriptor = klass.__dict__["startLine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gastm_sourcelocation_has_endColumn():
+    assert hasattr(gastm_SourceLocation, "endColumn")
+    descriptor = None
+    for klass in gastm_SourceLocation.__mro__:
         if "endColumn" in klass.__dict__:
             descriptor = klass.__dict__["endColumn"]
             break
@@ -5013,23 +4301,23 @@ def test_gastm::sourcelocation_has_endColumn():
 
 
 
-def test_gastm::sourcefile_is_not_abstract():
-    assert not inspect.isabstract(gastm::SourceFile)
+def test_gastm_sourcefile_is_not_abstract():
+    assert not inspect.isabstract(gastm_SourceFile)
 
 
-def test_gastm::sourcefile_constructor_exists():
-    assert callable(gastm::SourceFile.__init__)
+def test_gastm_sourcefile_constructor_exists():
+    assert callable(gastm_SourceFile.__init__)
 
 
-def test_gastm::sourcefile_constructor_args():
-    sig = inspect.signature(gastm::SourceFile.__init__)
+def test_gastm_sourcefile_constructor_args():
+    sig = inspect.signature(gastm_SourceFile.__init__)
     params = list(sig.parameters.keys())
     assert "pathName" in params, "Missing parameter 'pathName'"
 
-def test_gastm::sourcefile_has_pathName():
-    assert hasattr(gastm::SourceFile, "pathName")
+def test_gastm_sourcefile_has_pathName():
+    assert hasattr(gastm_SourceFile, "pathName")
     descriptor = None
-    for klass in gastm::SourceFile.__mro__:
+    for klass in gastm_SourceFile.__mro__:
         if "pathName" in klass.__dict__:
             descriptor = klass.__dict__["pathName"]
             break
@@ -5037,44 +4325,756 @@ def test_gastm::sourcefile_has_pathName():
 
 
 
-def test_gastm::actualparameter_is_not_abstract():
-    assert not inspect.isabstract(gastm::ActualParameter)
+def test_gastm_actualparameter_is_not_abstract():
+    assert not inspect.isabstract(gastm_ActualParameter)
 
 
-def test_gastm::actualparameter_constructor_exists():
-    assert callable(gastm::ActualParameter.__init__)
+def test_gastm_actualparameter_constructor_exists():
+    assert callable(gastm_ActualParameter.__init__)
 
 
-def test_gastm::actualparameter_constructor_args():
-    sig = inspect.signature(gastm::ActualParameter.__init__)
+def test_gastm_actualparameter_constructor_args():
+    sig = inspect.signature(gastm_ActualParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(gastm::BinaryOperator)
+def test_gastm_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(gastm_BinaryOperator)
 
 
-def test_gastm::binaryoperator_constructor_exists():
-    assert callable(gastm::BinaryOperator.__init__)
+def test_gastm_binaryoperator_constructor_exists():
+    assert callable(gastm_BinaryOperator.__init__)
 
 
-def test_gastm::binaryoperator_constructor_args():
-    sig = inspect.signature(gastm::BinaryOperator.__init__)
+def test_gastm_binaryoperator_constructor_args():
+    sig = inspect.signature(gastm_BinaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gastm::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(gastm::UnaryOperator)
+def test_gastm_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(gastm_UnaryOperator)
 
 
-def test_gastm::unaryoperator_constructor_exists():
-    assert callable(gastm::UnaryOperator.__init__)
+def test_gastm_unaryoperator_constructor_exists():
+    assert callable(gastm_UnaryOperator.__init__)
 
 
-def test_gastm::unaryoperator_constructor_args():
-    sig = inspect.signature(gastm::UnaryOperator.__init__)
+def test_gastm_unaryoperator_constructor_args():
+    sig = inspect.signature(gastm_UnaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_accesskind_is_not_abstract():
+    assert not inspect.isabstract(gastm_AccessKind)
+
+
+def test_gastm_accesskind_constructor_exists():
+    assert callable(gastm_AccessKind.__init__)
+
+
+def test_gastm_accesskind_constructor_args():
+    sig = inspect.signature(gastm_AccessKind.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_datatype_is_not_abstract():
+    assert not inspect.isabstract(gastm_DataType)
+
+
+def test_gastm_datatype_constructor_exists():
+    assert callable(gastm_DataType.__init__)
+
+
+def test_gastm_datatype_constructor_args():
+    sig = inspect.signature(gastm_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_storagespecification_is_not_abstract():
+    assert not inspect.isabstract(gastm_StorageSpecification)
+
+
+def test_gastm_storagespecification_constructor_exists():
+    assert callable(gastm_StorageSpecification.__init__)
+
+
+def test_gastm_storagespecification_constructor_args():
+    sig = inspect.signature(gastm_StorageSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_othersyntaxobject_is_not_abstract():
+    assert not inspect.isabstract(gastm_OtherSyntaxObject)
+
+
+def test_gastm_othersyntaxobject_constructor_exists():
+    assert callable(gastm_OtherSyntaxObject.__init__)
+
+
+def test_gastm_othersyntaxobject_constructor_args():
+    sig = inspect.signature(gastm_OtherSyntaxObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_gastmsemanticobject_is_not_abstract():
+    assert not inspect.isabstract(gastm_GASTMSemanticObject)
+
+
+def test_gastm_gastmsemanticobject_constructor_exists():
+    assert callable(gastm_GASTMSemanticObject.__init__)
+
+
+def test_gastm_gastmsemanticobject_constructor_args():
+    sig = inspect.signature(gastm_GASTMSemanticObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_gastmsourceobject_is_not_abstract():
+    assert not inspect.isabstract(gastm_GASTMSourceObject)
+
+
+def test_gastm_gastmsourceobject_constructor_exists():
+    assert callable(gastm_GASTMSourceObject.__init__)
+
+
+def test_gastm_gastmsourceobject_constructor_args():
+    sig = inspect.signature(gastm_GASTMSourceObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_gastmobject_is_not_abstract():
+    assert not inspect.isabstract(gastm_GASTMObject)
+
+
+def test_gastm_gastmobject_constructor_exists():
+    assert callable(gastm_GASTMObject.__init__)
+
+
+def test_gastm_gastmobject_constructor_args():
+    sig = inspect.signature(gastm_GASTMObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_programscope_is_not_abstract():
+    assert not inspect.isabstract(ProgramScope)
+
+
+def test_programscope_constructor_exists():
+    assert callable(ProgramScope.__init__)
+
+
+def test_programscope_constructor_args():
+    sig = inspect.signature(ProgramScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_othersyntaxobject_is_not_abstract():
+    assert not inspect.isabstract(OtherSyntaxObject)
+
+
+def test_othersyntaxobject_constructor_exists():
+    assert callable(OtherSyntaxObject.__init__)
+
+
+def test_othersyntaxobject_constructor_args():
+    sig = inspect.signature(OtherSyntaxObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_catchblock_is_not_abstract():
+    assert not inspect.isabstract(gastm_CatchBlock)
+
+
+def test_gastm_catchblock_constructor_exists():
+    assert callable(gastm_CatchBlock.__init__)
+
+
+def test_gastm_catchblock_constructor_args():
+    sig = inspect.signature(gastm_CatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_name_is_not_abstract():
+    assert not inspect.isabstract(gastm_Name)
+
+
+def test_gastm_name_constructor_exists():
+    assert callable(gastm_Name.__init__)
+
+
+def test_gastm_name_constructor_args():
+    sig = inspect.signature(gastm_Name.__init__)
+    params = list(sig.parameters.keys())
+    assert "nameString" in params, "Missing parameter 'nameString'"
+
+def test_gastm_name_has_nameString():
+    assert hasattr(gastm_Name, "nameString")
+    descriptor = None
+    for klass in gastm_Name.__mro__:
+        if "nameString" in klass.__dict__:
+            descriptor = klass.__dict__["nameString"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sastm_rdbconstraint_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBConstraint)
+
+
+def test_sastm_rdbconstraint_constructor_exists():
+    assert callable(sastm_RDBConstraint.__init__)
+
+
+def test_sastm_rdbconstraint_constructor_args():
+    sig = inspect.signature(sastm_RDBConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_switchcase_is_not_abstract():
+    assert not inspect.isabstract(gastm_SwitchCase)
+
+
+def test_gastm_switchcase_constructor_exists():
+    assert callable(gastm_SwitchCase.__init__)
+
+
+def test_gastm_switchcase_constructor_args():
+    sig = inspect.signature(gastm_SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_functionmemberattribute_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionMemberAttribute)
+
+
+def test_gastm_functionmemberattribute_constructor_exists():
+    assert callable(gastm_FunctionMemberAttribute.__init__)
+
+
+def test_gastm_functionmemberattribute_constructor_args():
+    sig = inspect.signature(gastm_FunctionMemberAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbtrigger_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBTrigger)
+
+
+def test_sastm_rdbtrigger_constructor_exists():
+    assert callable(sastm_RDBTrigger.__init__)
+
+
+def test_sastm_rdbtrigger_constructor_args():
+    sig = inspect.signature(sastm_RDBTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbindexcolumn_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBIndexColumn)
+
+
+def test_sastm_rdbindexcolumn_constructor_exists():
+    assert callable(sastm_RDBIndexColumn.__init__)
+
+
+def test_sastm_rdbindexcolumn_constructor_args():
+    sig = inspect.signature(sastm_RDBIndexColumn.__init__)
+    params = list(sig.parameters.keys())
+    assert "AscendingOrDescending" in params, "Missing parameter 'AscendingOrDescending'"
+
+def test_sastm_rdbindexcolumn_has_AscendingOrDescending():
+    assert hasattr(sastm_RDBIndexColumn, "AscendingOrDescending")
+    descriptor = None
+    for klass in sastm_RDBIndexColumn.__mro__:
+        if "AscendingOrDescending" in klass.__dict__:
+            descriptor = klass.__dict__["AscendingOrDescending"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gastm_derivesfrom_is_not_abstract():
+    assert not inspect.isabstract(gastm_DerivesFrom)
+
+
+def test_gastm_derivesfrom_constructor_exists():
+    assert callable(gastm_DerivesFrom.__init__)
+
+
+def test_gastm_derivesfrom_constructor_args():
+    sig = inspect.signature(gastm_DerivesFrom.__init__)
+    params = list(sig.parameters.keys())
+    assert "isVirtual" in params, "Missing parameter 'isVirtual'"
+
+def test_gastm_derivesfrom_has_isVirtual():
+    assert hasattr(gastm_DerivesFrom, "isVirtual")
+    descriptor = None
+    for klass in gastm_DerivesFrom.__mro__:
+        if "isVirtual" in klass.__dict__:
+            descriptor = klass.__dict__["isVirtual"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gastm_dimension_is_not_abstract():
+    assert not inspect.isabstract(gastm_Dimension)
+
+
+def test_gastm_dimension_constructor_exists():
+    assert callable(gastm_Dimension.__init__)
+
+
+def test_gastm_dimension_constructor_args():
+    sig = inspect.signature(gastm_Dimension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sastm_rdbindex_is_not_abstract():
+    assert not inspect.isabstract(sastm_RDBIndex)
+
+
+def test_sastm_rdbindex_constructor_exists():
+    assert callable(sastm_RDBIndex.__init__)
+
+
+def test_sastm_rdbindex_constructor_args():
+    sig = inspect.signature(sastm_RDBIndex.__init__)
+    params = list(sig.parameters.keys())
+    assert "NotNull" in params, "Missing parameter 'NotNull'"
+    assert "IsUnique" in params, "Missing parameter 'IsUnique'"
+
+def test_sastm_rdbindex_has_NotNull():
+    assert hasattr(sastm_RDBIndex, "NotNull")
+    descriptor = None
+    for klass in sastm_RDBIndex.__mro__:
+        if "NotNull" in klass.__dict__:
+            descriptor = klass.__dict__["NotNull"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sastm_rdbindex_has_IsUnique():
+    assert hasattr(sastm_RDBIndex, "IsUnique")
+    descriptor = None
+    for klass in sastm_RDBIndex.__mro__:
+        if "IsUnique" in klass.__dict__:
+            descriptor = klass.__dict__["IsUnique"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gastm_virtualspecification_is_not_abstract():
+    assert not inspect.isabstract(gastm_VirtualSpecification)
+
+
+def test_gastm_virtualspecification_constructor_exists():
+    assert callable(gastm_VirtualSpecification.__init__)
+
+
+def test_gastm_virtualspecification_constructor_args():
+    sig = inspect.signature(gastm_VirtualSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(gastm_CompilationUnit)
+
+
+def test_gastm_compilationunit_constructor_exists():
+    assert callable(gastm_CompilationUnit.__init__)
+
+
+def test_gastm_compilationunit_constructor_args():
+    sig = inspect.signature(gastm_CompilationUnit.__init__)
+    params = list(sig.parameters.keys())
+    assert "language" in params, "Missing parameter 'language'"
+
+def test_gastm_compilationunit_has_language():
+    assert hasattr(gastm_CompilationUnit, "language")
+    descriptor = None
+    for klass in gastm_CompilationUnit.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_annotationexpression_is_not_abstract():
+    assert not inspect.isabstract(AnnotationExpression)
+
+
+def test_annotationexpression_constructor_exists():
+    assert callable(AnnotationExpression.__init__)
+
+
+def test_annotationexpression_constructor_args():
+    sig = inspect.signature(AnnotationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_preprocessorelement_is_not_abstract():
+    assert not inspect.isabstract(PreprocessorElement)
+
+
+def test_preprocessorelement_constructor_exists():
+    assert callable(PreprocessorElement.__init__)
+
+
+def test_preprocessorelement_constructor_args():
+    sig = inspect.signature(PreprocessorElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_includeunit_is_not_abstract():
+    assert not inspect.isabstract(gastm_IncludeUnit)
+
+
+def test_gastm_includeunit_constructor_exists():
+    assert callable(gastm_IncludeUnit.__init__)
+
+
+def test_gastm_includeunit_constructor_args():
+    sig = inspect.signature(gastm_IncludeUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_macrocall_is_not_abstract():
+    assert not inspect.isabstract(gastm_MacroCall)
+
+
+def test_gastm_macrocall_constructor_exists():
+    assert callable(gastm_MacroCall.__init__)
+
+
+def test_gastm_macrocall_constructor_args():
+    sig = inspect.signature(gastm_MacroCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_macrodefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_MacroDefinition)
+
+
+def test_gastm_macrodefinition_constructor_exists():
+    assert callable(gastm_MacroDefinition.__init__)
+
+
+def test_gastm_macrodefinition_constructor_args():
+    sig = inspect.signature(gastm_MacroDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "body" in params, "Missing parameter 'body'"
+    assert "macroName" in params, "Missing parameter 'macroName'"
+
+def test_gastm_macrodefinition_has_body():
+    assert hasattr(gastm_MacroDefinition, "body")
+    descriptor = None
+    for klass in gastm_MacroDefinition.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gastm_macrodefinition_has_macroName():
+    assert hasattr(gastm_MacroDefinition, "macroName")
+    descriptor = None
+    for klass in gastm_MacroDefinition.__mro__:
+        if "macroName" in klass.__dict__:
+            descriptor = klass.__dict__["macroName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gastm_comment_is_not_abstract():
+    assert not inspect.isabstract(gastm_Comment)
+
+
+def test_gastm_comment_constructor_exists():
+    assert callable(gastm_Comment.__init__)
+
+
+def test_gastm_comment_constructor_args():
+    sig = inspect.signature(gastm_Comment.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_gastm_comment_has_text():
+    assert hasattr(gastm_Comment, "text")
+    descriptor = None
+    for klass in gastm_Comment.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sourcelocation_is_not_abstract():
+    assert not inspect.isabstract(SourceLocation)
+
+
+def test_sourcelocation_constructor_exists():
+    assert callable(SourceLocation.__init__)
+
+
+def test_sourcelocation_constructor_args():
+    sig = inspect.signature(SourceLocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastmobject_is_not_abstract():
+    assert not inspect.isabstract(GASTMObject)
+
+
+def test_gastmobject_constructor_exists():
+    assert callable(GASTMObject.__init__)
+
+
+def test_gastmobject_constructor_args():
+    sig = inspect.signature(GASTMObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_gastmsyntaxobject_is_not_abstract():
+    assert not inspect.isabstract(gastm_GASTMSyntaxObject)
+
+
+def test_gastm_gastmsyntaxobject_constructor_exists():
+    assert callable(gastm_GASTMSyntaxObject.__init__)
+
+
+def test_gastm_gastmsyntaxobject_constructor_args():
+    sig = inspect.signature(gastm_GASTMSyntaxObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scope_is_not_abstract():
+    assert not inspect.isabstract(Scope)
+
+
+def test_scope_constructor_exists():
+    assert callable(Scope.__init__)
+
+
+def test_scope_constructor_args():
+    sig = inspect.signature(Scope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_functionscope_is_not_abstract():
+    assert not inspect.isabstract(gastm_FunctionScope)
+
+
+def test_gastm_functionscope_constructor_exists():
+    assert callable(gastm_FunctionScope.__init__)
+
+
+def test_gastm_functionscope_constructor_args():
+    sig = inspect.signature(gastm_FunctionScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_programscope_is_not_abstract():
+    assert not inspect.isabstract(gastm_ProgramScope)
+
+
+def test_gastm_programscope_constructor_exists():
+    assert callable(gastm_ProgramScope.__init__)
+
+
+def test_gastm_programscope_constructor_args():
+    sig = inspect.signature(gastm_ProgramScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_aggregatescope_is_not_abstract():
+    assert not inspect.isabstract(gastm_AggregateScope)
+
+
+def test_gastm_aggregatescope_constructor_exists():
+    assert callable(gastm_AggregateScope.__init__)
+
+
+def test_gastm_aggregatescope_constructor_args():
+    sig = inspect.signature(gastm_AggregateScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_globalscope_is_not_abstract():
+    assert not inspect.isabstract(gastm_GlobalScope)
+
+
+def test_gastm_globalscope_constructor_exists():
+    assert callable(gastm_GlobalScope.__init__)
+
+
+def test_gastm_globalscope_constructor_args():
+    sig = inspect.signature(gastm_GlobalScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_blockscope_is_not_abstract():
+    assert not inspect.isabstract(gastm_BlockScope)
+
+
+def test_gastm_blockscope_constructor_exists():
+    assert callable(gastm_BlockScope.__init__)
+
+
+def test_gastm_blockscope_constructor_args():
+    sig = inspect.signature(gastm_BlockScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_definitionobject_is_not_abstract():
+    assert not inspect.isabstract(DefinitionObject)
+
+
+def test_definitionobject_constructor_exists():
+    assert callable(DefinitionObject.__init__)
+
+
+def test_definitionobject_constructor_args():
+    sig = inspect.signature(DefinitionObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_namespacedefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_NameSpaceDefinition)
+
+
+def test_gastm_namespacedefinition_constructor_exists():
+    assert callable(gastm_NameSpaceDefinition.__init__)
+
+
+def test_gastm_namespacedefinition_constructor_args():
+    sig = inspect.signature(gastm_NameSpaceDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_labeldefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_LabelDefinition)
+
+
+def test_gastm_labeldefinition_constructor_exists():
+    assert callable(gastm_LabelDefinition.__init__)
+
+
+def test_gastm_labeldefinition_constructor_args():
+    sig = inspect.signature(gastm_LabelDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_TypeDefinition)
+
+
+def test_gastm_typedefinition_constructor_exists():
+    assert callable(gastm_TypeDefinition.__init__)
+
+
+def test_gastm_typedefinition_constructor_args():
+    sig = inspect.signature(gastm_TypeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gastm_declarationordefinition_is_not_abstract():
+    assert not inspect.isabstract(gastm_DeclarationOrDefinition)
+
+
+def test_gastm_declarationordefinition_constructor_exists():
+    assert callable(gastm_DeclarationOrDefinition.__init__)
+
+
+def test_gastm_declarationordefinition_constructor_args():
+    sig = inspect.signature(gastm_DeclarationOrDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "linkageSpecifier" in params, "Missing parameter 'linkageSpecifier'"
+    assert "isRegister" in params, "Missing parameter 'isRegister'"
+
+def test_gastm_declarationordefinition_has_linkageSpecifier():
+    assert hasattr(gastm_DeclarationOrDefinition, "linkageSpecifier")
+    descriptor = None
+    for klass in gastm_DeclarationOrDefinition.__mro__:
+        if "linkageSpecifier" in klass.__dict__:
+            descriptor = klass.__dict__["linkageSpecifier"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gastm_declarationordefinition_has_isRegister():
+    assert hasattr(gastm_DeclarationOrDefinition, "isRegister")
+    descriptor = None
+    for klass in gastm_DeclarationOrDefinition.__mro__:
+        if "isRegister" in klass.__dict__:
+            descriptor = klass.__dict__["isRegister"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gastm_scope_is_not_abstract():
+    assert not inspect.isabstract(gastm_Scope)
+
+
+def test_gastm_scope_constructor_exists():
+    assert callable(gastm_Scope.__init__)
+
+
+def test_gastm_scope_constructor_args():
+    sig = inspect.signature(gastm_Scope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_globalscope_is_not_abstract():
+    assert not inspect.isabstract(GlobalScope)
+
+
+def test_globalscope_constructor_exists():
+    assert callable(GlobalScope.__init__)
+
+
+def test_globalscope_constructor_args():
+    sig = inspect.signature(GlobalScope.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5089,8 +5089,41 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sastm::RDBHostVariableReference_strategy = st.builds(
-    sastm::RDBHostVariableReference,
+StorageSpecification_strategy = st.builds(
+    StorageSpecification,
+)
+gastm_PerClassMember_strategy = st.builds(
+    gastm_PerClassMember,
+)
+gastm_FunctionPersistent_strategy = st.builds(
+    gastm_FunctionPersistent,
+)
+gastm_FileLocal_strategy = st.builds(
+    gastm_FileLocal,
+)
+gastm_External_strategy = st.builds(
+    gastm_External,
+)
+ForStatement_strategy = st.builds(
+    ForStatement,
+)
+gastm_ForCheckBeforeStatement_strategy = st.builds(
+    gastm_ForCheckBeforeStatement,
+)
+AccessKind_strategy = st.builds(
+    AccessKind,
+)
+gastm_Protected_strategy = st.builds(
+    gastm_Protected,
+)
+gastm_Private_strategy = st.builds(
+    gastm_Private,
+)
+gastm_Public_strategy = st.builds(
+    gastm_Public,
+)
+sastm_RDBHostVariableReference_strategy = st.builds(
+    sastm_RDBHostVariableReference,
 )
 RDBHostVariableReference_strategy = st.builds(
     RDBHostVariableReference,
@@ -5098,17 +5131,23 @@ RDBHostVariableReference_strategy = st.builds(
 RDBCursorStatement_strategy = st.builds(
     RDBCursorStatement,
 )
-sastm::RDBFetchCursorStatement_strategy = st.builds(
-    sastm::RDBFetchCursorStatement,
+sastm_RDBCloseCursorStatement_strategy = st.builds(
+    sastm_RDBCloseCursorStatement,
 )
-sastm::RDBOpenCursorStatement_strategy = st.builds(
-    sastm::RDBOpenCursorStatement,
+sastm_RDBFetchCursorStatement_strategy = st.builds(
+    sastm_RDBFetchCursorStatement,
+)
+sastm_RDBOpenCursorStatement_strategy = st.builds(
+    sastm_RDBOpenCursorStatement,
 )
 RDBModifyStatement_strategy = st.builds(
     RDBModifyStatement,
 )
-sastm::RDBUpdateStatement_strategy = st.builds(
-    sastm::RDBUpdateStatement,
+sastm_RDBDeleteStatement_strategy = st.builds(
+    sastm_RDBDeleteStatement,
+)
+sastm_RDBUpdateStatement_strategy = st.builds(
+    sastm_RDBUpdateStatement,
 )
 AggregateTypeDefinition_strategy = st.builds(
     AggregateTypeDefinition,
@@ -5122,14 +5161,14 @@ NamedTypeDefinition_strategy = st.builds(
 RDBConstraint_strategy = st.builds(
     RDBConstraint,
 )
-sastm::RDBRefIntegrity_strategy = st.builds(
-    sastm::RDBRefIntegrity,
+sastm_RDBUniqueKey_strategy = st.builds(
+    sastm_RDBUniqueKey,
 )
-sastm::RDBUniqueKey_strategy = st.builds(
-    sastm::RDBUniqueKey,
+sastm_RDBRefIntegrity_strategy = st.builds(
+    sastm_RDBRefIntegrity,
 )
-sastm::RDBCheckConstraint_strategy = st.builds(
-    sastm::RDBCheckConstraint,
+sastm_RDBCheckConstraint_strategy = st.builds(
+    sastm_RDBCheckConstraint,
     RDBConstraintText=
         safe_text,
     RDBConstraintType=
@@ -5138,11 +5177,11 @@ sastm::RDBCheckConstraint_strategy = st.builds(
 ActualParameterExpression_strategy = st.builds(
     ActualParameterExpression,
 )
-gastm::ByReferenceActualParameterExpression_strategy = st.builds(
-    gastm::ByReferenceActualParameterExpression,
+gastm_ByReferenceActualParameterExpression_strategy = st.builds(
+    gastm_ByReferenceActualParameterExpression,
 )
-gastm::ByValueActualParameterExpression_strategy = st.builds(
-    gastm::ByValueActualParameterExpression,
+gastm_ByValueActualParameterExpression_strategy = st.builds(
+    gastm_ByValueActualParameterExpression,
 )
 IncludeUnit_strategy = st.builds(
     IncludeUnit,
@@ -5150,8 +5189,8 @@ IncludeUnit_strategy = st.builds(
 NameSpaceDefinition_strategy = st.builds(
     NameSpaceDefinition,
 )
-sastm::RDBTableSpaceReference_strategy = st.builds(
-    sastm::RDBTableSpaceReference,
+sastm_RDBTableSpaceReference_strategy = st.builds(
+    sastm_RDBTableSpaceReference,
 )
 RDBTableSpaceReference_strategy = st.builds(
     RDBTableSpaceReference,
@@ -5159,387 +5198,245 @@ RDBTableSpaceReference_strategy = st.builds(
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-gastm::AddressOf_strategy = st.builds(
-    gastm::AddressOf,
+gastm_Deref_strategy = st.builds(
+    gastm_Deref,
 )
-gastm::Increment_strategy = st.builds(
-    gastm::Increment,
+gastm_Increment_strategy = st.builds(
+    gastm_Increment,
 )
-gastm::BitNot_strategy = st.builds(
-    gastm::BitNot,
+gastm_Decrement_strategy = st.builds(
+    gastm_Decrement,
 )
-gastm::Negate_strategy = st.builds(
-    gastm::Negate,
+gastm_AddressOf_strategy = st.builds(
+    gastm_AddressOf,
 )
-gastm::Decrement_strategy = st.builds(
-    gastm::Decrement,
+gastm_Not_strategy = st.builds(
+    gastm_Not,
 )
-gastm::Deref_strategy = st.builds(
-    gastm::Deref,
+gastm_BitNot_strategy = st.builds(
+    gastm_BitNot,
 )
-gastm::Not_strategy = st.builds(
-    gastm::Not,
+gastm_Negate_strategy = st.builds(
+    gastm_Negate,
 )
-gastm::UnaryPlus_strategy = st.builds(
-    gastm::UnaryPlus,
+gastm_UnaryPlus_strategy = st.builds(
+    gastm_UnaryPlus,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-gastm::CharLiteral_strategy = st.builds(
-    gastm::CharLiteral,
+gastm_BitLiteral_strategy = st.builds(
+    gastm_BitLiteral,
 )
-gastm::RealLiteral_strategy = st.builds(
-    gastm::RealLiteral,
+gastm_CharLiteral_strategy = st.builds(
+    gastm_CharLiteral,
 )
-gastm::StringLiteral_strategy = st.builds(
-    gastm::StringLiteral,
+gastm_StringLiteral_strategy = st.builds(
+    gastm_StringLiteral,
 )
-gastm::BooleanLiteral_strategy = st.builds(
-    gastm::BooleanLiteral,
+gastm_RealLiteral_strategy = st.builds(
+    gastm_RealLiteral,
 )
-gastm::BitLiteral_strategy = st.builds(
-    gastm::BitLiteral,
+gastm_BooleanLiteral_strategy = st.builds(
+    gastm_BooleanLiteral,
 )
-gastm::IntegerlLiteral_strategy = st.builds(
-    gastm::IntegerlLiteral,
+gastm_IntegerlLiteral_strategy = st.builds(
+    gastm_IntegerlLiteral,
 )
 QualifiedIdentifierReference_strategy = st.builds(
     QualifiedIdentifierReference,
 )
-gastm::QualifiedOverData_strategy = st.builds(
-    gastm::QualifiedOverData,
+gastm_QualifiedOverData_strategy = st.builds(
+    gastm_QualifiedOverData,
 )
-gastm::QualifiedOverPointer_strategy = st.builds(
-    gastm::QualifiedOverPointer,
+gastm_QualifiedOverPointer_strategy = st.builds(
+    gastm_QualifiedOverPointer,
 )
-gastm::PostDecrement_strategy = st.builds(
-    gastm::PostDecrement,
+gastm_ForCheckAfterStatement_strategy = st.builds(
+    gastm_ForCheckAfterStatement,
 )
-gastm::PostIncrement_strategy = st.builds(
-    gastm::PostIncrement,
+gastm_PostDecrement_strategy = st.builds(
+    gastm_PostDecrement,
+)
+gastm_PostIncrement_strategy = st.builds(
+    gastm_PostIncrement,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-gastm::Byte_strategy = st.builds(
-    gastm::Byte,
+gastm_Integer_strategy = st.builds(
+    gastm_Integer,
 )
-gastm::LongInteger_strategy = st.builds(
-    gastm::LongInteger,
+gastm_String_strategy = st.builds(
+    gastm_String,
 )
-gastm::Integer_strategy = st.builds(
-    gastm::Integer,
+gastm_LongDouble_strategy = st.builds(
+    gastm_LongDouble,
 )
-gastm::Boolean_strategy = st.builds(
-    gastm::Boolean,
+gastm_Character_strategy = st.builds(
+    gastm_Character,
 )
-gastm::LongDouble_strategy = st.builds(
-    gastm::LongDouble,
+gastm_Boolean_strategy = st.builds(
+    gastm_Boolean,
 )
-gastm::ShortInteger_strategy = st.builds(
-    gastm::ShortInteger,
+gastm_Double_strategy = st.builds(
+    gastm_Double,
 )
-gastm::Float_strategy = st.builds(
-    gastm::Float,
+gastm_Byte_strategy = st.builds(
+    gastm_Byte,
 )
-gastm::WideCharacter_strategy = st.builds(
-    gastm::WideCharacter,
+gastm_Float_strategy = st.builds(
+    gastm_Float,
 )
-gastm::Double_strategy = st.builds(
-    gastm::Double,
+gastm_LongInteger_strategy = st.builds(
+    gastm_LongInteger,
 )
-gastm::Character_strategy = st.builds(
-    gastm::Character,
+gastm_WideCharacter_strategy = st.builds(
+    gastm_WideCharacter,
 )
-gastm::String_strategy = st.builds(
-    gastm::String,
+gastm_ShortInteger_strategy = st.builds(
+    gastm_ShortInteger,
 )
-gastm::Void_strategy = st.builds(
-    gastm::Void,
+gastm_Void_strategy = st.builds(
+    gastm_Void,
 )
-StorageSpecification_strategy = st.builds(
-    StorageSpecification,
-)
-gastm::PerClassMember_strategy = st.builds(
-    gastm::PerClassMember,
-)
-gastm::FunctionPersistent_strategy = st.builds(
-    gastm::FunctionPersistent,
-)
-gastm::FileLocal_strategy = st.builds(
-    gastm::FileLocal,
-)
-gastm::NoDef_strategy = st.builds(
-    gastm::NoDef,
-)
-gastm::External_strategy = st.builds(
-    gastm::External,
-)
-ForStatement_strategy = st.builds(
-    ForStatement,
-)
-gastm::ForCheckAfterStatement_strategy = st.builds(
-    gastm::ForCheckAfterStatement,
-)
-gastm::ForCheckBeforeStatement_strategy = st.builds(
-    gastm::ForCheckBeforeStatement,
-)
-AccessKind_strategy = st.builds(
-    AccessKind,
-)
-gastm::Private_strategy = st.builds(
-    gastm::Private,
-)
-gastm::Protected_strategy = st.builds(
-    gastm::Protected,
-)
-gastm::Public_strategy = st.builds(
-    gastm::Public,
-)
-sastm::RDBCloseCursorStatement_strategy = st.builds(
-    sastm::RDBCloseCursorStatement,
-)
-sastm::RDBDeleteStatement_strategy = st.builds(
-    sastm::RDBDeleteStatement,
-)
-gastm::AccessKind_strategy = st.builds(
-    gastm::AccessKind,
-)
-gastm::DataType_strategy = st.builds(
-    gastm::DataType,
-)
-gastm::StorageSpecification_strategy = st.builds(
-    gastm::StorageSpecification,
-)
-gastm::OtherSyntaxObject_strategy = st.builds(
-    gastm::OtherSyntaxObject,
-)
-gastm::GASTMSemanticObject_strategy = st.builds(
-    gastm::GASTMSemanticObject,
-)
-gastm::GASTMSourceObject_strategy = st.builds(
-    gastm::GASTMSourceObject,
-)
-gastm::GASTMObject_strategy = st.builds(
-    gastm::GASTMObject,
-)
-ProgramScope_strategy = st.builds(
-    ProgramScope,
-)
-OtherSyntaxObject_strategy = st.builds(
-    OtherSyntaxObject,
-)
-sastm::RDBIndexColumn_strategy = st.builds(
-    sastm::RDBIndexColumn,
-    AscendingOrDescending=
-        safe_text
-)
-gastm::VirtualSpecification_strategy = st.builds(
-    gastm::VirtualSpecification,
-)
-gastm::Name_strategy = st.builds(
-    gastm::Name,
-    nameString=
-        safe_text
-)
-sastm::RDBIndex_strategy = st.builds(
-    sastm::RDBIndex,
-    NotNull=
-        st.booleans(),
-    IsUnique=
-        st.booleans()
-)
-gastm::FunctionMemberAttribute_strategy = st.builds(
-    gastm::FunctionMemberAttribute,
-)
-sastm::RDBTrigger_strategy = st.builds(
-    sastm::RDBTrigger,
-)
-sastm::RDBConstraint_strategy = st.builds(
-    sastm::RDBConstraint,
-)
-gastm::CompilationUnit_strategy = st.builds(
-    gastm::CompilationUnit,
-    language=
-        safe_text
-)
-AnnotationExpression_strategy = st.builds(
-    AnnotationExpression,
-)
-PreprocessorElement_strategy = st.builds(
-    PreprocessorElement,
-)
-SourceLocation_strategy = st.builds(
-    SourceLocation,
-)
-GASTMObject_strategy = st.builds(
-    GASTMObject,
-)
-gastm::GASTMSyntaxObject_strategy = st.builds(
-    gastm::GASTMSyntaxObject,
-)
-Scope_strategy = st.builds(
-    Scope,
-)
-gastm::FunctionScope_strategy = st.builds(
-    gastm::FunctionScope,
-)
-gastm::BlockScope_strategy = st.builds(
-    gastm::BlockScope,
-)
-gastm::AggregateScope_strategy = st.builds(
-    gastm::AggregateScope,
-)
-gastm::ProgramScope_strategy = st.builds(
-    gastm::ProgramScope,
-)
-DefinitionObject_strategy = st.builds(
-    DefinitionObject,
-)
-GlobalScope_strategy = st.builds(
-    GlobalScope,
-)
-gastm::GlobalScope_strategy = st.builds(
-    gastm::GlobalScope,
+gastm_NoDef_strategy = st.builds(
+    gastm_NoDef,
 )
 BinaryOperator_strategy = st.builds(
     BinaryOperator,
 )
-gastm::SpecificIn_strategy = st.builds(
-    gastm::SpecificIn,
+gastm_BitOr_strategy = st.builds(
+    gastm_BitOr,
 )
-gastm::SpecificLike_strategy = st.builds(
-    gastm::SpecificLike,
+gastm_BitAnd_strategy = st.builds(
+    gastm_BitAnd,
 )
-gastm::NotGreater_strategy = st.builds(
-    gastm::NotGreater,
+gastm_NotLess_strategy = st.builds(
+    gastm_NotLess,
 )
-gastm::Assign_strategy = st.builds(
-    gastm::Assign,
+gastm_SpecificLessEqual_strategy = st.builds(
+    gastm_SpecificLessEqual,
 )
-gastm::Divide_strategy = st.builds(
-    gastm::Divide,
+gastm_Greater_strategy = st.builds(
+    gastm_Greater,
 )
-gastm::BitXor_strategy = st.builds(
-    gastm::BitXor,
+gastm_SpecificConcatString_strategy = st.builds(
+    gastm_SpecificConcatString,
 )
-gastm::Exponent_strategy = st.builds(
-    gastm::Exponent,
+gastm_SpecificIn_strategy = st.builds(
+    gastm_SpecificIn,
 )
-gastm::Less_strategy = st.builds(
-    gastm::Less,
+gastm_Equal_strategy = st.builds(
+    gastm_Equal,
 )
-gastm::Or_strategy = st.builds(
-    gastm::Or,
+gastm_Less_strategy = st.builds(
+    gastm_Less,
 )
-gastm::Equal_strategy = st.builds(
-    gastm::Equal,
+gastm_NotGreater_strategy = st.builds(
+    gastm_NotGreater,
 )
-gastm::BitRightShift_strategy = st.builds(
-    gastm::BitRightShift,
+gastm_SpecificGreaterEqual_strategy = st.builds(
+    gastm_SpecificGreaterEqual,
 )
-gastm::Subtract_strategy = st.builds(
-    gastm::Subtract,
+gastm_Assign_strategy = st.builds(
+    gastm_Assign,
 )
-gastm::Add_strategy = st.builds(
-    gastm::Add,
+gastm_Divide_strategy = st.builds(
+    gastm_Divide,
 )
-gastm::Greater_strategy = st.builds(
-    gastm::Greater,
+gastm_Multiply_strategy = st.builds(
+    gastm_Multiply,
 )
-gastm::SpecificGreaterEqual_strategy = st.builds(
-    gastm::SpecificGreaterEqual,
+gastm_BitXor_strategy = st.builds(
+    gastm_BitXor,
 )
-gastm::Multiply_strategy = st.builds(
-    gastm::Multiply,
+gastm_Subtract_strategy = st.builds(
+    gastm_Subtract,
 )
-gastm::SpecificConcatString_strategy = st.builds(
-    gastm::SpecificConcatString,
+gastm_BitRightShift_strategy = st.builds(
+    gastm_BitRightShift,
 )
-gastm::BitLeftShift_strategy = st.builds(
-    gastm::BitLeftShift,
+gastm_Or_strategy = st.builds(
+    gastm_Or,
 )
-gastm::SpecificLessEqual_strategy = st.builds(
-    gastm::SpecificLessEqual,
+gastm_NotEqual_strategy = st.builds(
+    gastm_NotEqual,
 )
-gastm::BitOr_strategy = st.builds(
-    gastm::BitOr,
+gastm_Exponent_strategy = st.builds(
+    gastm_Exponent,
 )
-gastm::NotLess_strategy = st.builds(
-    gastm::NotLess,
+gastm_Add_strategy = st.builds(
+    gastm_Add,
 )
-gastm::BitAnd_strategy = st.builds(
-    gastm::BitAnd,
+gastm_SpecificLike_strategy = st.builds(
+    gastm_SpecificLike,
 )
-gastm::And_strategy = st.builds(
-    gastm::And,
+gastm_And_strategy = st.builds(
+    gastm_And,
 )
-gastm::NotEqual_strategy = st.builds(
-    gastm::NotEqual,
+gastm_Modulus_strategy = st.builds(
+    gastm_Modulus,
 )
-gastm::Modulus_strategy = st.builds(
-    gastm::Modulus,
+gastm_BitLeftShift_strategy = st.builds(
+    gastm_BitLeftShift,
 )
-gastm::OperatorAssign_strategy = st.builds(
-    gastm::OperatorAssign,
+gastm_OperatorAssign_strategy = st.builds(
+    gastm_OperatorAssign,
 )
 ActualParameter_strategy = st.builds(
     ActualParameter,
 )
-gastm::MissingActualParameter_strategy = st.builds(
-    gastm::MissingActualParameter,
+gastm_MissingActualParameter_strategy = st.builds(
+    gastm_MissingActualParameter,
 )
-gastm::ActualParameterExpression_strategy = st.builds(
-    gastm::ActualParameterExpression,
+gastm_ActualParameterExpression_strategy = st.builds(
+    gastm_ActualParameterExpression,
 )
 IdentifierReference_strategy = st.builds(
     IdentifierReference,
 )
-sastm::RDBTableAlias_strategy = st.builds(
-    sastm::RDBTableAlias,
+sastm_RDBColumnReference_strategy = st.builds(
+    sastm_RDBColumnReference,
 )
-sastm::RDBTableReference_strategy = st.builds(
-    sastm::RDBTableReference,
+sastm_RDBTableReference_strategy = st.builds(
+    sastm_RDBTableReference,
 )
-sastm::RDBColumnReference_strategy = st.builds(
-    sastm::RDBColumnReference,
+sastm_RDBTableAlias_strategy = st.builds(
+    sastm_RDBTableAlias,
 )
 NameReference_strategy = st.builds(
     NameReference,
 )
-gastm::IdentifierReference_strategy = st.builds(
-    gastm::IdentifierReference,
+gastm_TypeQualifiedIdentifierReference_strategy = st.builds(
+    gastm_TypeQualifiedIdentifierReference,
 )
-gastm::TypeQualifiedIdentifierReference_strategy = st.builds(
-    gastm::TypeQualifiedIdentifierReference,
+gastm_IdentifierReference_strategy = st.builds(
+    gastm_IdentifierReference,
 )
-gastm::QualifiedIdentifierReference_strategy = st.builds(
-    gastm::QualifiedIdentifierReference,
-)
-gastm::CatchBlock_strategy = st.builds(
-    gastm::CatchBlock,
+gastm_QualifiedIdentifierReference_strategy = st.builds(
+    gastm_QualifiedIdentifierReference,
 )
 CatchBlock_strategy = st.builds(
     CatchBlock,
 )
-gastm::TypesCatchBlock_strategy = st.builds(
-    gastm::TypesCatchBlock,
+gastm_TypesCatchBlock_strategy = st.builds(
+    gastm_TypesCatchBlock,
 )
 LoopStatement_strategy = st.builds(
     LoopStatement,
 )
-gastm::DoWhileStatement_strategy = st.builds(
-    gastm::DoWhileStatement,
+gastm_WhileStatement_strategy = st.builds(
+    gastm_WhileStatement,
 )
-gastm::WhileStatement_strategy = st.builds(
-    gastm::WhileStatement,
+gastm_DoWhileStatement_strategy = st.builds(
+    gastm_DoWhileStatement,
 )
-gastm::ForStatement_strategy = st.builds(
-    gastm::ForStatement,
+gastm_ForStatement_strategy = st.builds(
+    gastm_ForStatement,
 )
-gastm::VariableCatchBlock_strategy = st.builds(
-    gastm::VariableCatchBlock,
+gastm_VariableCatchBlock_strategy = st.builds(
+    gastm_VariableCatchBlock,
 )
 BlockScope_strategy = st.builds(
     BlockScope,
@@ -5547,23 +5444,17 @@ BlockScope_strategy = st.builds(
 LabelDefinition_strategy = st.builds(
     LabelDefinition,
 )
-gastm::SwitchCase_strategy = st.builds(
-    gastm::SwitchCase,
-)
 SwitchCase_strategy = st.builds(
     SwitchCase,
 )
-gastm::DefaultBlock_strategy = st.builds(
-    gastm::DefaultBlock,
+gastm_DefaultBlock_strategy = st.builds(
+    gastm_DefaultBlock,
 )
-gastm::CaseBlock_strategy = st.builds(
-    gastm::CaseBlock,
+gastm_CaseBlock_strategy = st.builds(
+    gastm_CaseBlock,
 )
 LabelAccess_strategy = st.builds(
     LabelAccess,
-)
-gastm::Dimension_strategy = st.builds(
-    gastm::Dimension,
 )
 Dimension_strategy = st.builds(
     Dimension,
@@ -5571,20 +5462,20 @@ Dimension_strategy = st.builds(
 ConstructedType_strategy = st.builds(
     ConstructedType,
 )
-gastm::PointerType_strategy = st.builds(
-    gastm::PointerType,
+gastm_RangeType_strategy = st.builds(
+    gastm_RangeType,
 )
-gastm::CollectionType_strategy = st.builds(
-    gastm::CollectionType,
+gastm_ReferenceType_strategy = st.builds(
+    gastm_ReferenceType,
 )
-gastm::RangeType_strategy = st.builds(
-    gastm::RangeType,
+gastm_CollectionType_strategy = st.builds(
+    gastm_CollectionType,
 )
-gastm::ReferenceType_strategy = st.builds(
-    gastm::ReferenceType,
+gastm_PointerType_strategy = st.builds(
+    gastm_PointerType,
 )
-gastm::ArrayType_strategy = st.builds(
-    gastm::ArrayType,
+gastm_ArrayType_strategy = st.builds(
+    gastm_ArrayType,
 )
 AggregateScope_strategy = st.builds(
     AggregateScope,
@@ -5595,153 +5486,145 @@ EnumLiteralDefinition_strategy = st.builds(
 DataType_strategy = st.builds(
     DataType,
 )
-sastm::RDBRaw_strategy = st.builds(
-    sastm::RDBRaw,
+sastm_RDBBlob_strategy = st.builds(
+    sastm_RDBBlob,
 )
-sastm::RDBBoolean_strategy = st.builds(
-    sastm::RDBBoolean,
+sastm_RDBChar_strategy = st.builds(
+    sastm_RDBChar,
 )
-sastm::RDBClob_strategy = st.builds(
-    sastm::RDBClob,
+sastm_RDBFloat_strategy = st.builds(
+    sastm_RDBFloat,
 )
-sastm::RDBRowid_strategy = st.builds(
-    sastm::RDBRowid,
+sastm_RDBRowid_strategy = st.builds(
+    sastm_RDBRowid,
 )
-sastm::RDBTableType_strategy = st.builds(
-    sastm::RDBTableType,
+gastm_EnumType_strategy = st.builds(
+    gastm_EnumType,
 )
-sastm::RDBDataBaseType_strategy = st.builds(
-    sastm::RDBDataBaseType,
+sastm_RDBUserType_strategy = st.builds(
+    sastm_RDBUserType,
 )
-sastm::RDBTimestamp_strategy = st.builds(
-    sastm::RDBTimestamp,
+sastm_RDBBFile_strategy = st.builds(
+    sastm_RDBBFile,
 )
-sastm::RDBChar_strategy = st.builds(
-    sastm::RDBChar,
+sastm_RDBNClob_strategy = st.builds(
+    sastm_RDBNClob,
 )
-sastm::RDBVarchar_strategy = st.builds(
-    sastm::RDBVarchar,
+sastm_RDBDataBaseType_strategy = st.builds(
+    sastm_RDBDataBaseType,
 )
-gastm::AggregateType_strategy = st.builds(
-    gastm::AggregateType,
+sastm_RDBRaw_strategy = st.builds(
+    sastm_RDBRaw,
 )
-sastm::RDBNumber_strategy = st.builds(
-    sastm::RDBNumber,
+sastm_RDBString_strategy = st.builds(
+    sastm_RDBString,
 )
-sastm::RDBLong_strategy = st.builds(
-    sastm::RDBLong,
+sastm_RDBCursorType_strategy = st.builds(
+    sastm_RDBCursorType,
 )
-gastm::EnumType_strategy = st.builds(
-    gastm::EnumType,
+sastm_RDBDate_strategy = st.builds(
+    sastm_RDBDate,
 )
-sastm::RDBString_strategy = st.builds(
-    sastm::RDBString,
+sastm_RDBClob_strategy = st.builds(
+    sastm_RDBClob,
 )
-sastm::RDBReal_strategy = st.builds(
-    sastm::RDBReal,
+sastm_RDBTableType_strategy = st.builds(
+    sastm_RDBTableType,
 )
-sastm::RDBBlob_strategy = st.builds(
-    sastm::RDBBlob,
+sastm_RDBReal_strategy = st.builds(
+    sastm_RDBReal,
 )
-gastm::ExceptionType_strategy = st.builds(
-    gastm::ExceptionType,
+gastm_ExceptionType_strategy = st.builds(
+    gastm_ExceptionType,
 )
-sastm::RDBDecimal_strategy = st.builds(
-    sastm::RDBDecimal,
+gastm_AggregateType_strategy = st.builds(
+    gastm_AggregateType,
 )
-sastm::RDBNClob_strategy = st.builds(
-    sastm::RDBNClob,
+sastm_RDBVarchar_strategy = st.builds(
+    sastm_RDBVarchar,
 )
-sastm::RDBInteger_strategy = st.builds(
-    sastm::RDBInteger,
+sastm_RDBTableSpaceType_strategy = st.builds(
+    sastm_RDBTableSpaceType,
 )
-sastm::RDBInt_strategy = st.builds(
-    sastm::RDBInt,
+sastm_RDBNumber_strategy = st.builds(
+    sastm_RDBNumber,
 )
-sastm::RDBUserType_strategy = st.builds(
-    sastm::RDBUserType,
+gastm_ConstructedType_strategy = st.builds(
+    gastm_ConstructedType,
 )
-sastm::RDBViewType_strategy = st.builds(
-    sastm::RDBViewType,
+sastm_RDBDecimal_strategy = st.builds(
+    sastm_RDBDecimal,
 )
-sastm::RDBBFile_strategy = st.builds(
-    sastm::RDBBFile,
+sastm_RDBViewType_strategy = st.builds(
+    sastm_RDBViewType,
 )
-sastm::RDBFloat_strategy = st.builds(
-    sastm::RDBFloat,
+sastm_RDBInteger_strategy = st.builds(
+    sastm_RDBInteger,
 )
-gastm::ConstructedType_strategy = st.builds(
-    gastm::ConstructedType,
+sastm_RDBInt_strategy = st.builds(
+    sastm_RDBInt,
 )
-sastm::RDBDate_strategy = st.builds(
-    sastm::RDBDate,
+sastm_RDBTimestamp_strategy = st.builds(
+    sastm_RDBTimestamp,
 )
-sastm::RDBCursorType_strategy = st.builds(
-    sastm::RDBCursorType,
+sastm_RDBBoolean_strategy = st.builds(
+    sastm_RDBBoolean,
 )
-sastm::RDBTableSpaceType_strategy = st.builds(
-    sastm::RDBTableSpaceType,
+sastm_RDBLong_strategy = st.builds(
+    sastm_RDBLong,
 )
-gastm::PrimitiveType_strategy = st.builds(
-    gastm::PrimitiveType,
+gastm_PrimitiveType_strategy = st.builds(
+    gastm_PrimitiveType,
     isSigned=
-        st.booleans()
-)
-gastm::DerivesFrom_strategy = st.builds(
-    gastm::DerivesFrom,
-    isVirtual=
         st.booleans()
 )
 DerivesFrom_strategy = st.builds(
     DerivesFrom,
 )
-gastm::NamedType_strategy = st.builds(
-    gastm::NamedType,
+gastm_NamedType_strategy = st.builds(
+    gastm_NamedType,
 )
-gastm::FormalParameterType_strategy = st.builds(
-    gastm::FormalParameterType,
+gastm_FormalParameterType_strategy = st.builds(
+    gastm_FormalParameterType,
 )
 FormalParameterType_strategy = st.builds(
     FormalParameterType,
 )
-gastm::ByValueFormalParameterType_strategy = st.builds(
-    gastm::ByValueFormalParameterType,
+gastm_ByValueFormalParameterType_strategy = st.builds(
+    gastm_ByValueFormalParameterType,
 )
-gastm::ByReferenceFormalParameterType_strategy = st.builds(
-    gastm::ByReferenceFormalParameterType,
+gastm_ByReferenceFormalParameterType_strategy = st.builds(
+    gastm_ByReferenceFormalParameterType,
 )
 Type_strategy = st.builds(
     Type,
 )
-gastm::LabelType_strategy = st.builds(
-    gastm::LabelType,
+gastm_LabelType_strategy = st.builds(
+    gastm_LabelType,
 )
-gastm::FunctionType_strategy = st.builds(
-    gastm::FunctionType,
+gastm_NameSpaceType_strategy = st.builds(
+    gastm_NameSpaceType,
 )
-gastm::NameSpaceType_strategy = st.builds(
-    gastm::NameSpaceType,
+gastm_FunctionType_strategy = st.builds(
+    gastm_FunctionType,
 )
-gastm::TypeReference_strategy = st.builds(
-    gastm::TypeReference,
-)
-gastm::NameSpaceDefinition_strategy = st.builds(
-    gastm::NameSpaceDefinition,
+gastm_TypeReference_strategy = st.builds(
+    gastm_TypeReference,
 )
 AggregateType_strategy = st.builds(
     AggregateType,
 )
-gastm::UnionType_strategy = st.builds(
-    gastm::UnionType,
+gastm_ClassType_strategy = st.builds(
+    gastm_ClassType,
 )
-gastm::StructureType_strategy = st.builds(
-    gastm::StructureType,
+gastm_AnnotationType_strategy = st.builds(
+    gastm_AnnotationType,
 )
-gastm::ClassType_strategy = st.builds(
-    gastm::ClassType,
+gastm_UnionType_strategy = st.builds(
+    gastm_UnionType,
 )
-gastm::AnnotationType_strategy = st.builds(
-    gastm::AnnotationType,
+gastm_StructureType_strategy = st.builds(
+    gastm_StructureType,
 )
 NamedType_strategy = st.builds(
     NamedType,
@@ -5749,125 +5632,101 @@ NamedType_strategy = st.builds(
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-gastm::AggregateTypeDefinition_strategy = st.builds(
-    gastm::AggregateTypeDefinition,
+gastm_AggregateTypeDefinition_strategy = st.builds(
+    gastm_AggregateTypeDefinition,
 )
-gastm::NamedTypeDefinition_strategy = st.builds(
-    gastm::NamedTypeDefinition,
-)
-gastm::TypeDefinition_strategy = st.builds(
-    gastm::TypeDefinition,
+gastm_NamedTypeDefinition_strategy = st.builds(
+    gastm_NamedTypeDefinition,
 )
 DataDefinition_strategy = st.builds(
     DataDefinition,
 )
-gastm::VariableDefinition_strategy = st.builds(
-    gastm::VariableDefinition,
+gastm_VariableDefinition_strategy = st.builds(
+    gastm_VariableDefinition,
 )
-gastm::FormalParameterDefinition_strategy = st.builds(
-    gastm::FormalParameterDefinition,
+gastm_FormalParameterDefinition_strategy = st.builds(
+    gastm_FormalParameterDefinition,
 )
-gastm::BitFieldDefinition_strategy = st.builds(
-    gastm::BitFieldDefinition,
+gastm_BitFieldDefinition_strategy = st.builds(
+    gastm_BitFieldDefinition,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-gastm::NameReference_strategy = st.builds(
-    gastm::NameReference,
-)
-sastm::RDBHostVariableExpression_strategy = st.builds(
-    sastm::RDBHostVariableExpression,
-)
-gastm::UnaryExpression_strategy = st.builds(
-    gastm::UnaryExpression,
-)
-gastm::BinaryExpression_strategy = st.builds(
-    gastm::BinaryExpression,
-)
-gastm::FunctionCallExpression_strategy = st.builds(
-    gastm::FunctionCallExpression,
-)
-gastm::ArrayAccess_strategy = st.builds(
-    gastm::ArrayAccess,
-)
-gastm::Literal_strategy = st.builds(
-    gastm::Literal,
+gastm_Literal_strategy = st.builds(
+    gastm_Literal,
     value=
         safe_text
 )
-gastm::ConditionalExpression_strategy = st.builds(
-    gastm::ConditionalExpression,
+gastm_ArrayAccess_strategy = st.builds(
+    gastm_ArrayAccess,
 )
-gastm::LabelAccess_strategy = st.builds(
-    gastm::LabelAccess,
+gastm_FunctionCallExpression_strategy = st.builds(
+    gastm_FunctionCallExpression,
 )
-gastm::AggregateExpression_strategy = st.builds(
-    gastm::AggregateExpression,
+gastm_AggregateExpression_strategy = st.builds(
+    gastm_AggregateExpression,
 )
-gastm::AnnotationExpression_strategy = st.builds(
-    gastm::AnnotationExpression,
+gastm_NameReference_strategy = st.builds(
+    gastm_NameReference,
 )
-gastm::RangeExpression_strategy = st.builds(
-    gastm::RangeExpression,
+gastm_NewExpression_strategy = st.builds(
+    gastm_NewExpression,
 )
-sastm::RDBSelectExpression_strategy = st.builds(
-    sastm::RDBSelectExpression,
+gastm_CastExpression_strategy = st.builds(
+    gastm_CastExpression,
 )
-gastm::NewExpression_strategy = st.builds(
-    gastm::NewExpression,
+gastm_LabelAccess_strategy = st.builds(
+    gastm_LabelAccess,
 )
-gastm::CastExpression_strategy = st.builds(
-    gastm::CastExpression,
+gastm_ConditionalExpression_strategy = st.builds(
+    gastm_ConditionalExpression,
+)
+sastm_RDBHostVariableExpression_strategy = st.builds(
+    sastm_RDBHostVariableExpression,
+)
+gastm_UnaryExpression_strategy = st.builds(
+    gastm_UnaryExpression,
+)
+sastm_RDBSelectExpression_strategy = st.builds(
+    sastm_RDBSelectExpression,
+)
+gastm_AnnotationExpression_strategy = st.builds(
+    gastm_AnnotationExpression,
+)
+gastm_BinaryExpression_strategy = st.builds(
+    gastm_BinaryExpression,
+)
+gastm_RangeExpression_strategy = st.builds(
+    gastm_RangeExpression,
 )
 GASTMSyntaxObject_strategy = st.builds(
     GASTMSyntaxObject,
 )
-gastm::Expression_strategy = st.builds(
-    gastm::Expression,
+gastm_Expression_strategy = st.builds(
+    gastm_Expression,
 )
-gastm::PreprocessorElement_strategy = st.builds(
-    gastm::PreprocessorElement,
+gastm_DefinitionObject_strategy = st.builds(
+    gastm_DefinitionObject,
 )
-gastm::Statement_strategy = st.builds(
-    gastm::Statement,
+gastm_Statement_strategy = st.builds(
+    gastm_Statement,
 )
-gastm::DefinitionObject_strategy = st.builds(
-    gastm::DefinitionObject,
+gastm_PreprocessorElement_strategy = st.builds(
+    gastm_PreprocessorElement,
 )
-gastm::Type_strategy = st.builds(
-    gastm::Type,
-    isConst=
-        st.booleans(),
+gastm_Type_strategy = st.builds(
+    gastm_Type,
     isVolatile=
+        st.booleans(),
+    isConst=
         st.booleans()
-)
-gastm::Comment_strategy = st.builds(
-    gastm::Comment,
-    text=
-        safe_text
-)
-gastm::MacroDefinition_strategy = st.builds(
-    gastm::MacroDefinition,
-    body=
-        safe_text,
-    macroName=
-        safe_text
 )
 MacroDefinition_strategy = st.builds(
     MacroDefinition,
 )
-gastm::MacroCall_strategy = st.builds(
-    gastm::MacroCall,
-)
-gastm::IncludeUnit_strategy = st.builds(
-    gastm::IncludeUnit,
-)
 LabelType_strategy = st.builds(
     LabelType,
-)
-gastm::LabelDefinition_strategy = st.builds(
-    gastm::LabelDefinition,
 )
 NameSpaceType_strategy = st.builds(
     NameSpaceType,
@@ -5881,57 +5740,57 @@ FormalParameterDeclaration_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-gastm::FormalParameterDeclaration_strategy = st.builds(
-    gastm::FormalParameterDeclaration,
+gastm_FormalParameterDeclaration_strategy = st.builds(
+    gastm_FormalParameterDeclaration,
 )
-gastm::FunctionDeclaration_strategy = st.builds(
-    gastm::FunctionDeclaration,
+gastm_FunctionDeclaration_strategy = st.builds(
+    gastm_FunctionDeclaration,
 )
 Definition_strategy = st.builds(
     Definition,
 )
-gastm::EnumLiteralDefinition_strategy = st.builds(
-    gastm::EnumLiteralDefinition,
-)
-sastm::RDBTableDefinition_strategy = st.builds(
-    sastm::RDBTableDefinition,
-)
-sastm::RDBCursorDefinition_strategy = st.builds(
-    sastm::RDBCursorDefinition,
-)
-sastm::RDBColumnDefinition_strategy = st.builds(
-    sastm::RDBColumnDefinition,
-    NotNull=
-        st.booleans()
-)
-sastm::RDBUserDefinition_strategy = st.builds(
-    sastm::RDBUserDefinition,
-)
-gastm::DataDefinition_strategy = st.builds(
-    gastm::DataDefinition,
+gastm_DataDefinition_strategy = st.builds(
+    gastm_DataDefinition,
     isMutable=
         st.booleans()
 )
-sastm::RDBViewDefinition_strategy = st.builds(
-    sastm::RDBViewDefinition,
+sastm_RDBViewDefinition_strategy = st.builds(
+    sastm_RDBViewDefinition,
 )
-sastm::RDBTableSpaceDefinition_strategy = st.builds(
-    sastm::RDBTableSpaceDefinition,
+sastm_RDBColumnDefinition_strategy = st.builds(
+    sastm_RDBColumnDefinition,
+    NotNull=
+        st.booleans()
 )
-gastm::SpecificTriggerDefinition_strategy = st.builds(
-    gastm::SpecificTriggerDefinition,
+sastm_RDBUserDefinition_strategy = st.builds(
+    sastm_RDBUserDefinition,
 )
-sastm::RDBDatabaseDefinition_strategy = st.builds(
-    sastm::RDBDatabaseDefinition,
+sastm_RDBCursorDefinition_strategy = st.builds(
+    sastm_RDBCursorDefinition,
+)
+sastm_RDBTableSpaceDefinition_strategy = st.builds(
+    sastm_RDBTableSpaceDefinition,
+)
+sastm_RDBDatabaseDefinition_strategy = st.builds(
+    sastm_RDBDatabaseDefinition,
+)
+sastm_RDBTableDefinition_strategy = st.builds(
+    sastm_RDBTableDefinition,
+)
+gastm_EnumLiteralDefinition_strategy = st.builds(
+    gastm_EnumLiteralDefinition,
+)
+gastm_SpecificTriggerDefinition_strategy = st.builds(
+    gastm_SpecificTriggerDefinition,
 )
 TypeReference_strategy = st.builds(
     TypeReference,
 )
-gastm::NamedTypeReference_strategy = st.builds(
-    gastm::NamedTypeReference,
+gastm_UnnamedTypeReference_strategy = st.builds(
+    gastm_UnnamedTypeReference,
 )
-gastm::UnnamedTypeReference_strategy = st.builds(
-    gastm::UnnamedTypeReference,
+gastm_NamedTypeReference_strategy = st.builds(
+    gastm_NamedTypeReference,
 )
 Name_strategy = st.builds(
     Name,
@@ -5939,41 +5798,34 @@ Name_strategy = st.builds(
 DeclarationOrDefinition_strategy = st.builds(
     DeclarationOrDefinition,
 )
-gastm::Declaration_strategy = st.builds(
-    gastm::Declaration,
+gastm_Declaration_strategy = st.builds(
+    gastm_Declaration,
 )
-gastm::Definition_strategy = st.builds(
-    gastm::Definition,
+gastm_Definition_strategy = st.builds(
+    gastm_Definition,
 )
-gastm::DeclarationOrDefinition_strategy = st.builds(
-    gastm::DeclarationOrDefinition,
-    isRegister=
-        st.booleans(),
-    linkageSpecifier=
-        safe_text
-)
-gastm::EntryDefinition_strategy = st.builds(
-    gastm::EntryDefinition,
+gastm_EntryDefinition_strategy = st.builds(
+    gastm_EntryDefinition,
 )
 VirtualSpecification_strategy = st.builds(
     VirtualSpecification,
 )
-gastm::Virtual_strategy = st.builds(
-    gastm::Virtual,
+gastm_Virtual_strategy = st.builds(
+    gastm_Virtual,
 )
-gastm::NonVirtual_strategy = st.builds(
-    gastm::NonVirtual,
+gastm_PureVirtual_strategy = st.builds(
+    gastm_PureVirtual,
 )
-gastm::PureVirtual_strategy = st.builds(
-    gastm::PureVirtual,
+gastm_NonVirtual_strategy = st.builds(
+    gastm_NonVirtual,
 )
-gastm::FunctionMemberAttributes_strategy = st.builds(
-    gastm::FunctionMemberAttributes,
-    isInline=
+gastm_FunctionMemberAttributes_strategy = st.builds(
+    gastm_FunctionMemberAttributes,
+    isThisConst=
         st.booleans(),
     isFriend=
         st.booleans(),
-    isThisConst=
+    isInline=
         st.booleans()
 )
 FunctionScope_strategy = st.builds(
@@ -5982,80 +5834,80 @@ FunctionScope_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-gastm::JumpStatement_strategy = st.builds(
-    gastm::JumpStatement,
+gastm_ThrowStatement_strategy = st.builds(
+    gastm_ThrowStatement,
 )
-sastm::RDBConnectStatement_strategy = st.builds(
-    sastm::RDBConnectStatement,
+gastm_SwitchStatement_strategy = st.builds(
+    gastm_SwitchStatement,
 )
-gastm::LoopStatement_strategy = st.builds(
-    gastm::LoopStatement,
+gastm_LoopStatement_strategy = st.builds(
+    gastm_LoopStatement,
 )
-gastm::DeleteStatement_strategy = st.builds(
-    gastm::DeleteStatement,
+gastm_BlockStatement_strategy = st.builds(
+    gastm_BlockStatement,
 )
-gastm::LabeledStatement_strategy = st.builds(
-    gastm::LabeledStatement,
+gastm_ReturnStatement_strategy = st.builds(
+    gastm_ReturnStatement,
 )
-gastm::IfStatement_strategy = st.builds(
-    gastm::IfStatement,
+sastm_RDBConnectStatement_strategy = st.builds(
+    sastm_RDBConnectStatement,
 )
-gastm::TerminateStatement_strategy = st.builds(
-    gastm::TerminateStatement,
+gastm_TerminateStatement_strategy = st.builds(
+    gastm_TerminateStatement,
 )
-gastm::ContinueStatement_strategy = st.builds(
-    gastm::ContinueStatement,
+gastm_SpecificSelectStatement_strategy = st.builds(
+    gastm_SpecificSelectStatement,
 )
-gastm::SwitchStatement_strategy = st.builds(
-    gastm::SwitchStatement,
+gastm_TryStatement_strategy = st.builds(
+    gastm_TryStatement,
 )
-sastm::RDBCursorStatement_strategy = st.builds(
-    sastm::RDBCursorStatement,
+gastm_EmptyStatement_strategy = st.builds(
+    gastm_EmptyStatement,
 )
-gastm::DeclarationOrDefinitionStatement_strategy = st.builds(
-    gastm::DeclarationOrDefinitionStatement,
+gastm_DeleteStatement_strategy = st.builds(
+    gastm_DeleteStatement,
 )
-sastm::RDBSelectStatement_strategy = st.builds(
-    sastm::RDBSelectStatement,
+gastm_BreakStatement_strategy = st.builds(
+    gastm_BreakStatement,
 )
-gastm::ReturnStatement_strategy = st.builds(
-    gastm::ReturnStatement,
+gastm_LabeledStatement_strategy = st.builds(
+    gastm_LabeledStatement,
 )
-sastm::RDBModifyStatement_strategy = st.builds(
-    sastm::RDBModifyStatement,
+gastm_IfStatement_strategy = st.builds(
+    gastm_IfStatement,
 )
-gastm::BlockStatement_strategy = st.builds(
-    gastm::BlockStatement,
+gastm_ExpressionStatement_strategy = st.builds(
+    gastm_ExpressionStatement,
 )
-gastm::TryStatement_strategy = st.builds(
-    gastm::TryStatement,
+gastm_ContinueStatement_strategy = st.builds(
+    gastm_ContinueStatement,
 )
-sastm::RDBInsertStatement_strategy = st.builds(
-    sastm::RDBInsertStatement,
+sastm_RDBCursorStatement_strategy = st.builds(
+    sastm_RDBCursorStatement,
 )
-gastm::ExpressionStatement_strategy = st.builds(
-    gastm::ExpressionStatement,
+gastm_JumpStatement_strategy = st.builds(
+    gastm_JumpStatement,
 )
-gastm::ThrowStatement_strategy = st.builds(
-    gastm::ThrowStatement,
+sastm_RDBInsertStatement_strategy = st.builds(
+    sastm_RDBInsertStatement,
 )
-gastm::SpecificSelectStatement_strategy = st.builds(
-    gastm::SpecificSelectStatement,
+sastm_RDBSelectStatement_strategy = st.builds(
+    sastm_RDBSelectStatement,
 )
-gastm::BreakStatement_strategy = st.builds(
-    gastm::BreakStatement,
+gastm_DeclarationOrDefinitionStatement_strategy = st.builds(
+    gastm_DeclarationOrDefinitionStatement,
 )
-gastm::EmptyStatement_strategy = st.builds(
-    gastm::EmptyStatement,
+sastm_RDBModifyStatement_strategy = st.builds(
+    sastm_RDBModifyStatement,
 )
 FormalParameterDefinition_strategy = st.builds(
     FormalParameterDefinition,
 )
-gastm::FunctionDefinition_strategy = st.builds(
-    gastm::FunctionDefinition,
+gastm_FunctionDefinition_strategy = st.builds(
+    gastm_FunctionDefinition,
 )
-gastm::VariableDeclaration_strategy = st.builds(
-    gastm::VariableDeclaration,
+gastm_VariableDeclaration_strategy = st.builds(
+    gastm_VariableDeclaration,
     isMutable=
         st.booleans()
 )
@@ -6065,11 +5917,8 @@ CompilationUnit_strategy = st.builds(
 GASTMSemanticObject_strategy = st.builds(
     GASTMSemanticObject,
 )
-gastm::Scope_strategy = st.builds(
-    gastm::Scope,
-)
-gastm::Project_strategy = st.builds(
-    gastm::Project,
+gastm_Project_strategy = st.builds(
+    gastm_Project,
 )
 SourceFile_strategy = st.builds(
     SourceFile,
@@ -6077,36 +5926,242 @@ SourceFile_strategy = st.builds(
 GASTMSourceObject_strategy = st.builds(
     GASTMSourceObject,
 )
-gastm::SourceLocation_strategy = st.builds(
-    gastm::SourceLocation,
-    startLine=
+gastm_SourceLocation_strategy = st.builds(
+    gastm_SourceLocation,
+    startColumn=
         st.integers(),
     endLine=
         st.integers(),
-    startColumn=
+    startLine=
         st.integers(),
     endColumn=
         st.integers()
 )
-gastm::SourceFile_strategy = st.builds(
-    gastm::SourceFile,
+gastm_SourceFile_strategy = st.builds(
+    gastm_SourceFile,
     pathName=
         safe_text
 )
-gastm::ActualParameter_strategy = st.builds(
-    gastm::ActualParameter,
+gastm_ActualParameter_strategy = st.builds(
+    gastm_ActualParameter,
 )
-gastm::BinaryOperator_strategy = st.builds(
-    gastm::BinaryOperator,
+gastm_BinaryOperator_strategy = st.builds(
+    gastm_BinaryOperator,
 )
-gastm::UnaryOperator_strategy = st.builds(
-    gastm::UnaryOperator,
+gastm_UnaryOperator_strategy = st.builds(
+    gastm_UnaryOperator,
+)
+gastm_AccessKind_strategy = st.builds(
+    gastm_AccessKind,
+)
+gastm_DataType_strategy = st.builds(
+    gastm_DataType,
+)
+gastm_StorageSpecification_strategy = st.builds(
+    gastm_StorageSpecification,
+)
+gastm_OtherSyntaxObject_strategy = st.builds(
+    gastm_OtherSyntaxObject,
+)
+gastm_GASTMSemanticObject_strategy = st.builds(
+    gastm_GASTMSemanticObject,
+)
+gastm_GASTMSourceObject_strategy = st.builds(
+    gastm_GASTMSourceObject,
+)
+gastm_GASTMObject_strategy = st.builds(
+    gastm_GASTMObject,
+)
+ProgramScope_strategy = st.builds(
+    ProgramScope,
+)
+OtherSyntaxObject_strategy = st.builds(
+    OtherSyntaxObject,
+)
+gastm_CatchBlock_strategy = st.builds(
+    gastm_CatchBlock,
+)
+gastm_Name_strategy = st.builds(
+    gastm_Name,
+    nameString=
+        safe_text
+)
+sastm_RDBConstraint_strategy = st.builds(
+    sastm_RDBConstraint,
+)
+gastm_SwitchCase_strategy = st.builds(
+    gastm_SwitchCase,
+)
+gastm_FunctionMemberAttribute_strategy = st.builds(
+    gastm_FunctionMemberAttribute,
+)
+sastm_RDBTrigger_strategy = st.builds(
+    sastm_RDBTrigger,
+)
+sastm_RDBIndexColumn_strategy = st.builds(
+    sastm_RDBIndexColumn,
+    AscendingOrDescending=
+        safe_text
+)
+gastm_DerivesFrom_strategy = st.builds(
+    gastm_DerivesFrom,
+    isVirtual=
+        st.booleans()
+)
+gastm_Dimension_strategy = st.builds(
+    gastm_Dimension,
+)
+sastm_RDBIndex_strategy = st.builds(
+    sastm_RDBIndex,
+    NotNull=
+        st.booleans(),
+    IsUnique=
+        st.booleans()
+)
+gastm_VirtualSpecification_strategy = st.builds(
+    gastm_VirtualSpecification,
+)
+gastm_CompilationUnit_strategy = st.builds(
+    gastm_CompilationUnit,
+    language=
+        safe_text
+)
+AnnotationExpression_strategy = st.builds(
+    AnnotationExpression,
+)
+PreprocessorElement_strategy = st.builds(
+    PreprocessorElement,
+)
+gastm_IncludeUnit_strategy = st.builds(
+    gastm_IncludeUnit,
+)
+gastm_MacroCall_strategy = st.builds(
+    gastm_MacroCall,
+)
+gastm_MacroDefinition_strategy = st.builds(
+    gastm_MacroDefinition,
+    body=
+        safe_text,
+    macroName=
+        safe_text
+)
+gastm_Comment_strategy = st.builds(
+    gastm_Comment,
+    text=
+        safe_text
+)
+SourceLocation_strategy = st.builds(
+    SourceLocation,
+)
+GASTMObject_strategy = st.builds(
+    GASTMObject,
+)
+gastm_GASTMSyntaxObject_strategy = st.builds(
+    gastm_GASTMSyntaxObject,
+)
+Scope_strategy = st.builds(
+    Scope,
+)
+gastm_FunctionScope_strategy = st.builds(
+    gastm_FunctionScope,
+)
+gastm_ProgramScope_strategy = st.builds(
+    gastm_ProgramScope,
+)
+gastm_AggregateScope_strategy = st.builds(
+    gastm_AggregateScope,
+)
+gastm_GlobalScope_strategy = st.builds(
+    gastm_GlobalScope,
+)
+gastm_BlockScope_strategy = st.builds(
+    gastm_BlockScope,
+)
+DefinitionObject_strategy = st.builds(
+    DefinitionObject,
+)
+gastm_NameSpaceDefinition_strategy = st.builds(
+    gastm_NameSpaceDefinition,
+)
+gastm_LabelDefinition_strategy = st.builds(
+    gastm_LabelDefinition,
+)
+gastm_TypeDefinition_strategy = st.builds(
+    gastm_TypeDefinition,
+)
+gastm_DeclarationOrDefinition_strategy = st.builds(
+    gastm_DeclarationOrDefinition,
+    linkageSpecifier=
+        safe_text,
+    isRegister=
+        st.booleans()
+)
+gastm_Scope_strategy = st.builds(
+    gastm_Scope,
+)
+GlobalScope_strategy = st.builds(
+    GlobalScope,
 )
 
-@given(instance=sastm::RDBHostVariableReference_strategy)
+@given(instance=StorageSpecification_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbhostvariablereference_instantiation(instance):
-    assert isinstance(instance, sastm::RDBHostVariableReference)
+def test_storagespecification_instantiation(instance):
+    assert isinstance(instance, StorageSpecification)
+
+@given(instance=gastm_PerClassMember_strategy)
+@settings(max_examples=50)
+def test_gastm_perclassmember_instantiation(instance):
+    assert isinstance(instance, gastm_PerClassMember)
+
+@given(instance=gastm_FunctionPersistent_strategy)
+@settings(max_examples=50)
+def test_gastm_functionpersistent_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionPersistent)
+
+@given(instance=gastm_FileLocal_strategy)
+@settings(max_examples=50)
+def test_gastm_filelocal_instantiation(instance):
+    assert isinstance(instance, gastm_FileLocal)
+
+@given(instance=gastm_External_strategy)
+@settings(max_examples=50)
+def test_gastm_external_instantiation(instance):
+    assert isinstance(instance, gastm_External)
+
+@given(instance=ForStatement_strategy)
+@settings(max_examples=50)
+def test_forstatement_instantiation(instance):
+    assert isinstance(instance, ForStatement)
+
+@given(instance=gastm_ForCheckBeforeStatement_strategy)
+@settings(max_examples=50)
+def test_gastm_forcheckbeforestatement_instantiation(instance):
+    assert isinstance(instance, gastm_ForCheckBeforeStatement)
+
+@given(instance=AccessKind_strategy)
+@settings(max_examples=50)
+def test_accesskind_instantiation(instance):
+    assert isinstance(instance, AccessKind)
+
+@given(instance=gastm_Protected_strategy)
+@settings(max_examples=50)
+def test_gastm_protected_instantiation(instance):
+    assert isinstance(instance, gastm_Protected)
+
+@given(instance=gastm_Private_strategy)
+@settings(max_examples=50)
+def test_gastm_private_instantiation(instance):
+    assert isinstance(instance, gastm_Private)
+
+@given(instance=gastm_Public_strategy)
+@settings(max_examples=50)
+def test_gastm_public_instantiation(instance):
+    assert isinstance(instance, gastm_Public)
+
+@given(instance=sastm_RDBHostVariableReference_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbhostvariablereference_instantiation(instance):
+    assert isinstance(instance, sastm_RDBHostVariableReference)
 
 @given(instance=RDBHostVariableReference_strategy)
 @settings(max_examples=50)
@@ -6118,25 +6173,35 @@ def test_rdbhostvariablereference_instantiation(instance):
 def test_rdbcursorstatement_instantiation(instance):
     assert isinstance(instance, RDBCursorStatement)
 
-@given(instance=sastm::RDBFetchCursorStatement_strategy)
+@given(instance=sastm_RDBCloseCursorStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbfetchcursorstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBFetchCursorStatement)
+def test_sastm_rdbclosecursorstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBCloseCursorStatement)
 
-@given(instance=sastm::RDBOpenCursorStatement_strategy)
+@given(instance=sastm_RDBFetchCursorStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbopencursorstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBOpenCursorStatement)
+def test_sastm_rdbfetchcursorstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBFetchCursorStatement)
+
+@given(instance=sastm_RDBOpenCursorStatement_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbopencursorstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBOpenCursorStatement)
 
 @given(instance=RDBModifyStatement_strategy)
 @settings(max_examples=50)
 def test_rdbmodifystatement_instantiation(instance):
     assert isinstance(instance, RDBModifyStatement)
 
-@given(instance=sastm::RDBUpdateStatement_strategy)
+@given(instance=sastm_RDBDeleteStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbupdatestatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBUpdateStatement)
+def test_sastm_rdbdeletestatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBDeleteStatement)
+
+@given(instance=sastm_RDBUpdateStatement_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbupdatestatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBUpdateStatement)
 
 @given(instance=AggregateTypeDefinition_strategy)
 @settings(max_examples=50)
@@ -6158,39 +6223,33 @@ def test_namedtypedefinition_instantiation(instance):
 def test_rdbconstraint_instantiation(instance):
     assert isinstance(instance, RDBConstraint)
 
-@given(instance=sastm::RDBRefIntegrity_strategy)
+@given(instance=sastm_RDBUniqueKey_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbrefintegrity_instantiation(instance):
-    assert isinstance(instance, sastm::RDBRefIntegrity)
+def test_sastm_rdbuniquekey_instantiation(instance):
+    assert isinstance(instance, sastm_RDBUniqueKey)
 
-@given(instance=sastm::RDBUniqueKey_strategy)
+@given(instance=sastm_RDBRefIntegrity_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbuniquekey_instantiation(instance):
-    assert isinstance(instance, sastm::RDBUniqueKey)
+def test_sastm_rdbrefintegrity_instantiation(instance):
+    assert isinstance(instance, sastm_RDBRefIntegrity)
 
-@given(instance=sastm::RDBCheckConstraint_strategy)
+@given(instance=sastm_RDBCheckConstraint_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbcheckconstraint_instantiation(instance):
-    assert isinstance(instance, sastm::RDBCheckConstraint)
-
-@given(instance=sastm::RDBCheckConstraint_strategy)
-def test_sastm::rdbcheckconstraint_RDBConstraintText_type(instance):
-    assert isinstance(instance.RDBConstraintText, str)
+def test_sastm_rdbcheckconstraint_instantiation(instance):
+    assert isinstance(instance, sastm_RDBCheckConstraint)
 
 
-@given(instance=sastm::RDBCheckConstraint_strategy)
-def test_sastm::rdbcheckconstraint_RDBConstraintText_setter(instance):
+
+@given(instance=sastm_RDBCheckConstraint_strategy)
+def test_sastm_rdbcheckconstraint_RDBConstraintText_setter(instance):
     original = instance.RDBConstraintText
     instance.RDBConstraintText = original
     assert instance.RDBConstraintText == original
 
-@given(instance=sastm::RDBCheckConstraint_strategy)
-def test_sastm::rdbcheckconstraint_RDBConstraintType_type(instance):
-    assert isinstance(instance.RDBConstraintType, str)
 
 
-@given(instance=sastm::RDBCheckConstraint_strategy)
-def test_sastm::rdbcheckconstraint_RDBConstraintType_setter(instance):
+@given(instance=sastm_RDBCheckConstraint_strategy)
+def test_sastm_rdbcheckconstraint_RDBConstraintType_setter(instance):
     original = instance.RDBConstraintType
     instance.RDBConstraintType = original
     assert instance.RDBConstraintType == original
@@ -6200,15 +6259,15 @@ def test_sastm::rdbcheckconstraint_RDBConstraintType_setter(instance):
 def test_actualparameterexpression_instantiation(instance):
     assert isinstance(instance, ActualParameterExpression)
 
-@given(instance=gastm::ByReferenceActualParameterExpression_strategy)
+@given(instance=gastm_ByReferenceActualParameterExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::byreferenceactualparameterexpression_instantiation(instance):
-    assert isinstance(instance, gastm::ByReferenceActualParameterExpression)
+def test_gastm_byreferenceactualparameterexpression_instantiation(instance):
+    assert isinstance(instance, gastm_ByReferenceActualParameterExpression)
 
-@given(instance=gastm::ByValueActualParameterExpression_strategy)
+@given(instance=gastm_ByValueActualParameterExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::byvalueactualparameterexpression_instantiation(instance):
-    assert isinstance(instance, gastm::ByValueActualParameterExpression)
+def test_gastm_byvalueactualparameterexpression_instantiation(instance):
+    assert isinstance(instance, gastm_ByValueActualParameterExpression)
 
 @given(instance=IncludeUnit_strategy)
 @settings(max_examples=50)
@@ -6220,10 +6279,10 @@ def test_includeunit_instantiation(instance):
 def test_namespacedefinition_instantiation(instance):
     assert isinstance(instance, NameSpaceDefinition)
 
-@given(instance=sastm::RDBTableSpaceReference_strategy)
+@given(instance=sastm_RDBTableSpaceReference_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtablespacereference_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableSpaceReference)
+def test_sastm_rdbtablespacereference_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableSpaceReference)
 
 @given(instance=RDBTableSpaceReference_strategy)
 @settings(max_examples=50)
@@ -6235,680 +6294,405 @@ def test_rdbtablespacereference_instantiation(instance):
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=gastm::AddressOf_strategy)
+@given(instance=gastm_Deref_strategy)
 @settings(max_examples=50)
-def test_gastm::addressof_instantiation(instance):
-    assert isinstance(instance, gastm::AddressOf)
+def test_gastm_deref_instantiation(instance):
+    assert isinstance(instance, gastm_Deref)
 
-@given(instance=gastm::Increment_strategy)
+@given(instance=gastm_Increment_strategy)
 @settings(max_examples=50)
-def test_gastm::increment_instantiation(instance):
-    assert isinstance(instance, gastm::Increment)
+def test_gastm_increment_instantiation(instance):
+    assert isinstance(instance, gastm_Increment)
 
-@given(instance=gastm::BitNot_strategy)
+@given(instance=gastm_Decrement_strategy)
 @settings(max_examples=50)
-def test_gastm::bitnot_instantiation(instance):
-    assert isinstance(instance, gastm::BitNot)
+def test_gastm_decrement_instantiation(instance):
+    assert isinstance(instance, gastm_Decrement)
 
-@given(instance=gastm::Negate_strategy)
+@given(instance=gastm_AddressOf_strategy)
 @settings(max_examples=50)
-def test_gastm::negate_instantiation(instance):
-    assert isinstance(instance, gastm::Negate)
+def test_gastm_addressof_instantiation(instance):
+    assert isinstance(instance, gastm_AddressOf)
 
-@given(instance=gastm::Decrement_strategy)
+@given(instance=gastm_Not_strategy)
 @settings(max_examples=50)
-def test_gastm::decrement_instantiation(instance):
-    assert isinstance(instance, gastm::Decrement)
+def test_gastm_not_instantiation(instance):
+    assert isinstance(instance, gastm_Not)
 
-@given(instance=gastm::Deref_strategy)
+@given(instance=gastm_BitNot_strategy)
 @settings(max_examples=50)
-def test_gastm::deref_instantiation(instance):
-    assert isinstance(instance, gastm::Deref)
+def test_gastm_bitnot_instantiation(instance):
+    assert isinstance(instance, gastm_BitNot)
 
-@given(instance=gastm::Not_strategy)
+@given(instance=gastm_Negate_strategy)
 @settings(max_examples=50)
-def test_gastm::not_instantiation(instance):
-    assert isinstance(instance, gastm::Not)
+def test_gastm_negate_instantiation(instance):
+    assert isinstance(instance, gastm_Negate)
 
-@given(instance=gastm::UnaryPlus_strategy)
+@given(instance=gastm_UnaryPlus_strategy)
 @settings(max_examples=50)
-def test_gastm::unaryplus_instantiation(instance):
-    assert isinstance(instance, gastm::UnaryPlus)
+def test_gastm_unaryplus_instantiation(instance):
+    assert isinstance(instance, gastm_UnaryPlus)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=gastm::CharLiteral_strategy)
+@given(instance=gastm_BitLiteral_strategy)
 @settings(max_examples=50)
-def test_gastm::charliteral_instantiation(instance):
-    assert isinstance(instance, gastm::CharLiteral)
+def test_gastm_bitliteral_instantiation(instance):
+    assert isinstance(instance, gastm_BitLiteral)
 
-@given(instance=gastm::RealLiteral_strategy)
+@given(instance=gastm_CharLiteral_strategy)
 @settings(max_examples=50)
-def test_gastm::realliteral_instantiation(instance):
-    assert isinstance(instance, gastm::RealLiteral)
+def test_gastm_charliteral_instantiation(instance):
+    assert isinstance(instance, gastm_CharLiteral)
 
-@given(instance=gastm::StringLiteral_strategy)
+@given(instance=gastm_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_gastm::stringliteral_instantiation(instance):
-    assert isinstance(instance, gastm::StringLiteral)
+def test_gastm_stringliteral_instantiation(instance):
+    assert isinstance(instance, gastm_StringLiteral)
 
-@given(instance=gastm::BooleanLiteral_strategy)
+@given(instance=gastm_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_gastm::booleanliteral_instantiation(instance):
-    assert isinstance(instance, gastm::BooleanLiteral)
+def test_gastm_realliteral_instantiation(instance):
+    assert isinstance(instance, gastm_RealLiteral)
 
-@given(instance=gastm::BitLiteral_strategy)
+@given(instance=gastm_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_gastm::bitliteral_instantiation(instance):
-    assert isinstance(instance, gastm::BitLiteral)
+def test_gastm_booleanliteral_instantiation(instance):
+    assert isinstance(instance, gastm_BooleanLiteral)
 
-@given(instance=gastm::IntegerlLiteral_strategy)
+@given(instance=gastm_IntegerlLiteral_strategy)
 @settings(max_examples=50)
-def test_gastm::integerlliteral_instantiation(instance):
-    assert isinstance(instance, gastm::IntegerlLiteral)
+def test_gastm_integerlliteral_instantiation(instance):
+    assert isinstance(instance, gastm_IntegerlLiteral)
 
 @given(instance=QualifiedIdentifierReference_strategy)
 @settings(max_examples=50)
 def test_qualifiedidentifierreference_instantiation(instance):
     assert isinstance(instance, QualifiedIdentifierReference)
 
-@given(instance=gastm::QualifiedOverData_strategy)
+@given(instance=gastm_QualifiedOverData_strategy)
 @settings(max_examples=50)
-def test_gastm::qualifiedoverdata_instantiation(instance):
-    assert isinstance(instance, gastm::QualifiedOverData)
+def test_gastm_qualifiedoverdata_instantiation(instance):
+    assert isinstance(instance, gastm_QualifiedOverData)
 
-@given(instance=gastm::QualifiedOverPointer_strategy)
+@given(instance=gastm_QualifiedOverPointer_strategy)
 @settings(max_examples=50)
-def test_gastm::qualifiedoverpointer_instantiation(instance):
-    assert isinstance(instance, gastm::QualifiedOverPointer)
+def test_gastm_qualifiedoverpointer_instantiation(instance):
+    assert isinstance(instance, gastm_QualifiedOverPointer)
 
-@given(instance=gastm::PostDecrement_strategy)
+@given(instance=gastm_ForCheckAfterStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::postdecrement_instantiation(instance):
-    assert isinstance(instance, gastm::PostDecrement)
+def test_gastm_forcheckafterstatement_instantiation(instance):
+    assert isinstance(instance, gastm_ForCheckAfterStatement)
 
-@given(instance=gastm::PostIncrement_strategy)
+@given(instance=gastm_PostDecrement_strategy)
 @settings(max_examples=50)
-def test_gastm::postincrement_instantiation(instance):
-    assert isinstance(instance, gastm::PostIncrement)
+def test_gastm_postdecrement_instantiation(instance):
+    assert isinstance(instance, gastm_PostDecrement)
+
+@given(instance=gastm_PostIncrement_strategy)
+@settings(max_examples=50)
+def test_gastm_postincrement_instantiation(instance):
+    assert isinstance(instance, gastm_PostIncrement)
 
 @given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=gastm::Byte_strategy)
+@given(instance=gastm_Integer_strategy)
 @settings(max_examples=50)
-def test_gastm::byte_instantiation(instance):
-    assert isinstance(instance, gastm::Byte)
+def test_gastm_integer_instantiation(instance):
+    assert isinstance(instance, gastm_Integer)
 
-@given(instance=gastm::LongInteger_strategy)
+@given(instance=gastm_String_strategy)
 @settings(max_examples=50)
-def test_gastm::longinteger_instantiation(instance):
-    assert isinstance(instance, gastm::LongInteger)
+def test_gastm_string_instantiation(instance):
+    assert isinstance(instance, gastm_String)
 
-@given(instance=gastm::Integer_strategy)
+@given(instance=gastm_LongDouble_strategy)
 @settings(max_examples=50)
-def test_gastm::integer_instantiation(instance):
-    assert isinstance(instance, gastm::Integer)
+def test_gastm_longdouble_instantiation(instance):
+    assert isinstance(instance, gastm_LongDouble)
 
-@given(instance=gastm::Boolean_strategy)
+@given(instance=gastm_Character_strategy)
 @settings(max_examples=50)
-def test_gastm::boolean_instantiation(instance):
-    assert isinstance(instance, gastm::Boolean)
+def test_gastm_character_instantiation(instance):
+    assert isinstance(instance, gastm_Character)
 
-@given(instance=gastm::LongDouble_strategy)
+@given(instance=gastm_Boolean_strategy)
 @settings(max_examples=50)
-def test_gastm::longdouble_instantiation(instance):
-    assert isinstance(instance, gastm::LongDouble)
+def test_gastm_boolean_instantiation(instance):
+    assert isinstance(instance, gastm_Boolean)
 
-@given(instance=gastm::ShortInteger_strategy)
+@given(instance=gastm_Double_strategy)
 @settings(max_examples=50)
-def test_gastm::shortinteger_instantiation(instance):
-    assert isinstance(instance, gastm::ShortInteger)
+def test_gastm_double_instantiation(instance):
+    assert isinstance(instance, gastm_Double)
 
-@given(instance=gastm::Float_strategy)
+@given(instance=gastm_Byte_strategy)
 @settings(max_examples=50)
-def test_gastm::float_instantiation(instance):
-    assert isinstance(instance, gastm::Float)
+def test_gastm_byte_instantiation(instance):
+    assert isinstance(instance, gastm_Byte)
 
-@given(instance=gastm::WideCharacter_strategy)
+@given(instance=gastm_Float_strategy)
 @settings(max_examples=50)
-def test_gastm::widecharacter_instantiation(instance):
-    assert isinstance(instance, gastm::WideCharacter)
+def test_gastm_float_instantiation(instance):
+    assert isinstance(instance, gastm_Float)
 
-@given(instance=gastm::Double_strategy)
+@given(instance=gastm_LongInteger_strategy)
 @settings(max_examples=50)
-def test_gastm::double_instantiation(instance):
-    assert isinstance(instance, gastm::Double)
+def test_gastm_longinteger_instantiation(instance):
+    assert isinstance(instance, gastm_LongInteger)
 
-@given(instance=gastm::Character_strategy)
+@given(instance=gastm_WideCharacter_strategy)
 @settings(max_examples=50)
-def test_gastm::character_instantiation(instance):
-    assert isinstance(instance, gastm::Character)
+def test_gastm_widecharacter_instantiation(instance):
+    assert isinstance(instance, gastm_WideCharacter)
 
-@given(instance=gastm::String_strategy)
+@given(instance=gastm_ShortInteger_strategy)
 @settings(max_examples=50)
-def test_gastm::string_instantiation(instance):
-    assert isinstance(instance, gastm::String)
+def test_gastm_shortinteger_instantiation(instance):
+    assert isinstance(instance, gastm_ShortInteger)
 
-@given(instance=gastm::Void_strategy)
+@given(instance=gastm_Void_strategy)
 @settings(max_examples=50)
-def test_gastm::void_instantiation(instance):
-    assert isinstance(instance, gastm::Void)
+def test_gastm_void_instantiation(instance):
+    assert isinstance(instance, gastm_Void)
 
-@given(instance=StorageSpecification_strategy)
+@given(instance=gastm_NoDef_strategy)
 @settings(max_examples=50)
-def test_storagespecification_instantiation(instance):
-    assert isinstance(instance, StorageSpecification)
-
-@given(instance=gastm::PerClassMember_strategy)
-@settings(max_examples=50)
-def test_gastm::perclassmember_instantiation(instance):
-    assert isinstance(instance, gastm::PerClassMember)
-
-@given(instance=gastm::FunctionPersistent_strategy)
-@settings(max_examples=50)
-def test_gastm::functionpersistent_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionPersistent)
-
-@given(instance=gastm::FileLocal_strategy)
-@settings(max_examples=50)
-def test_gastm::filelocal_instantiation(instance):
-    assert isinstance(instance, gastm::FileLocal)
-
-@given(instance=gastm::NoDef_strategy)
-@settings(max_examples=50)
-def test_gastm::nodef_instantiation(instance):
-    assert isinstance(instance, gastm::NoDef)
-
-@given(instance=gastm::External_strategy)
-@settings(max_examples=50)
-def test_gastm::external_instantiation(instance):
-    assert isinstance(instance, gastm::External)
-
-@given(instance=ForStatement_strategy)
-@settings(max_examples=50)
-def test_forstatement_instantiation(instance):
-    assert isinstance(instance, ForStatement)
-
-@given(instance=gastm::ForCheckAfterStatement_strategy)
-@settings(max_examples=50)
-def test_gastm::forcheckafterstatement_instantiation(instance):
-    assert isinstance(instance, gastm::ForCheckAfterStatement)
-
-@given(instance=gastm::ForCheckBeforeStatement_strategy)
-@settings(max_examples=50)
-def test_gastm::forcheckbeforestatement_instantiation(instance):
-    assert isinstance(instance, gastm::ForCheckBeforeStatement)
-
-@given(instance=AccessKind_strategy)
-@settings(max_examples=50)
-def test_accesskind_instantiation(instance):
-    assert isinstance(instance, AccessKind)
-
-@given(instance=gastm::Private_strategy)
-@settings(max_examples=50)
-def test_gastm::private_instantiation(instance):
-    assert isinstance(instance, gastm::Private)
-
-@given(instance=gastm::Protected_strategy)
-@settings(max_examples=50)
-def test_gastm::protected_instantiation(instance):
-    assert isinstance(instance, gastm::Protected)
-
-@given(instance=gastm::Public_strategy)
-@settings(max_examples=50)
-def test_gastm::public_instantiation(instance):
-    assert isinstance(instance, gastm::Public)
-
-@given(instance=sastm::RDBCloseCursorStatement_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbclosecursorstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBCloseCursorStatement)
-
-@given(instance=sastm::RDBDeleteStatement_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbdeletestatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBDeleteStatement)
-
-@given(instance=gastm::AccessKind_strategy)
-@settings(max_examples=50)
-def test_gastm::accesskind_instantiation(instance):
-    assert isinstance(instance, gastm::AccessKind)
-
-@given(instance=gastm::DataType_strategy)
-@settings(max_examples=50)
-def test_gastm::datatype_instantiation(instance):
-    assert isinstance(instance, gastm::DataType)
-
-@given(instance=gastm::StorageSpecification_strategy)
-@settings(max_examples=50)
-def test_gastm::storagespecification_instantiation(instance):
-    assert isinstance(instance, gastm::StorageSpecification)
-
-@given(instance=gastm::OtherSyntaxObject_strategy)
-@settings(max_examples=50)
-def test_gastm::othersyntaxobject_instantiation(instance):
-    assert isinstance(instance, gastm::OtherSyntaxObject)
-
-@given(instance=gastm::GASTMSemanticObject_strategy)
-@settings(max_examples=50)
-def test_gastm::gastmsemanticobject_instantiation(instance):
-    assert isinstance(instance, gastm::GASTMSemanticObject)
-
-@given(instance=gastm::GASTMSourceObject_strategy)
-@settings(max_examples=50)
-def test_gastm::gastmsourceobject_instantiation(instance):
-    assert isinstance(instance, gastm::GASTMSourceObject)
-
-@given(instance=gastm::GASTMObject_strategy)
-@settings(max_examples=50)
-def test_gastm::gastmobject_instantiation(instance):
-    assert isinstance(instance, gastm::GASTMObject)
-
-@given(instance=ProgramScope_strategy)
-@settings(max_examples=50)
-def test_programscope_instantiation(instance):
-    assert isinstance(instance, ProgramScope)
-
-@given(instance=OtherSyntaxObject_strategy)
-@settings(max_examples=50)
-def test_othersyntaxobject_instantiation(instance):
-    assert isinstance(instance, OtherSyntaxObject)
-
-@given(instance=sastm::RDBIndexColumn_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbindexcolumn_instantiation(instance):
-    assert isinstance(instance, sastm::RDBIndexColumn)
-
-@given(instance=sastm::RDBIndexColumn_strategy)
-def test_sastm::rdbindexcolumn_AscendingOrDescending_type(instance):
-    assert isinstance(instance.AscendingOrDescending, str)
-
-
-@given(instance=sastm::RDBIndexColumn_strategy)
-def test_sastm::rdbindexcolumn_AscendingOrDescending_setter(instance):
-    original = instance.AscendingOrDescending
-    instance.AscendingOrDescending = original
-    assert instance.AscendingOrDescending == original
-
-@given(instance=gastm::VirtualSpecification_strategy)
-@settings(max_examples=50)
-def test_gastm::virtualspecification_instantiation(instance):
-    assert isinstance(instance, gastm::VirtualSpecification)
-
-@given(instance=gastm::Name_strategy)
-@settings(max_examples=50)
-def test_gastm::name_instantiation(instance):
-    assert isinstance(instance, gastm::Name)
-
-@given(instance=gastm::Name_strategy)
-def test_gastm::name_nameString_type(instance):
-    assert isinstance(instance.nameString, str)
-
-
-@given(instance=gastm::Name_strategy)
-def test_gastm::name_nameString_setter(instance):
-    original = instance.nameString
-    instance.nameString = original
-    assert instance.nameString == original
-
-@given(instance=sastm::RDBIndex_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbindex_instantiation(instance):
-    assert isinstance(instance, sastm::RDBIndex)
-
-@given(instance=sastm::RDBIndex_strategy)
-def test_sastm::rdbindex_NotNull_type(instance):
-    assert isinstance(instance.NotNull, bool)
-
-
-@given(instance=sastm::RDBIndex_strategy)
-def test_sastm::rdbindex_NotNull_setter(instance):
-    original = instance.NotNull
-    instance.NotNull = original
-    assert instance.NotNull == original
-
-@given(instance=sastm::RDBIndex_strategy)
-def test_sastm::rdbindex_IsUnique_type(instance):
-    assert isinstance(instance.IsUnique, bool)
-
-
-@given(instance=sastm::RDBIndex_strategy)
-def test_sastm::rdbindex_IsUnique_setter(instance):
-    original = instance.IsUnique
-    instance.IsUnique = original
-    assert instance.IsUnique == original
-
-@given(instance=gastm::FunctionMemberAttribute_strategy)
-@settings(max_examples=50)
-def test_gastm::functionmemberattribute_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionMemberAttribute)
-
-@given(instance=sastm::RDBTrigger_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbtrigger_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTrigger)
-
-@given(instance=sastm::RDBConstraint_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbconstraint_instantiation(instance):
-    assert isinstance(instance, sastm::RDBConstraint)
-
-@given(instance=gastm::CompilationUnit_strategy)
-@settings(max_examples=50)
-def test_gastm::compilationunit_instantiation(instance):
-    assert isinstance(instance, gastm::CompilationUnit)
-
-@given(instance=gastm::CompilationUnit_strategy)
-def test_gastm::compilationunit_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=gastm::CompilationUnit_strategy)
-def test_gastm::compilationunit_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=AnnotationExpression_strategy)
-@settings(max_examples=50)
-def test_annotationexpression_instantiation(instance):
-    assert isinstance(instance, AnnotationExpression)
-
-@given(instance=PreprocessorElement_strategy)
-@settings(max_examples=50)
-def test_preprocessorelement_instantiation(instance):
-    assert isinstance(instance, PreprocessorElement)
-
-@given(instance=SourceLocation_strategy)
-@settings(max_examples=50)
-def test_sourcelocation_instantiation(instance):
-    assert isinstance(instance, SourceLocation)
-
-@given(instance=GASTMObject_strategy)
-@settings(max_examples=50)
-def test_gastmobject_instantiation(instance):
-    assert isinstance(instance, GASTMObject)
-
-@given(instance=gastm::GASTMSyntaxObject_strategy)
-@settings(max_examples=50)
-def test_gastm::gastmsyntaxobject_instantiation(instance):
-    assert isinstance(instance, gastm::GASTMSyntaxObject)
-
-@given(instance=Scope_strategy)
-@settings(max_examples=50)
-def test_scope_instantiation(instance):
-    assert isinstance(instance, Scope)
-
-@given(instance=gastm::FunctionScope_strategy)
-@settings(max_examples=50)
-def test_gastm::functionscope_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionScope)
-
-@given(instance=gastm::BlockScope_strategy)
-@settings(max_examples=50)
-def test_gastm::blockscope_instantiation(instance):
-    assert isinstance(instance, gastm::BlockScope)
-
-@given(instance=gastm::AggregateScope_strategy)
-@settings(max_examples=50)
-def test_gastm::aggregatescope_instantiation(instance):
-    assert isinstance(instance, gastm::AggregateScope)
-
-@given(instance=gastm::ProgramScope_strategy)
-@settings(max_examples=50)
-def test_gastm::programscope_instantiation(instance):
-    assert isinstance(instance, gastm::ProgramScope)
-
-@given(instance=DefinitionObject_strategy)
-@settings(max_examples=50)
-def test_definitionobject_instantiation(instance):
-    assert isinstance(instance, DefinitionObject)
-
-@given(instance=GlobalScope_strategy)
-@settings(max_examples=50)
-def test_globalscope_instantiation(instance):
-    assert isinstance(instance, GlobalScope)
-
-@given(instance=gastm::GlobalScope_strategy)
-@settings(max_examples=50)
-def test_gastm::globalscope_instantiation(instance):
-    assert isinstance(instance, gastm::GlobalScope)
+def test_gastm_nodef_instantiation(instance):
+    assert isinstance(instance, gastm_NoDef)
 
 @given(instance=BinaryOperator_strategy)
 @settings(max_examples=50)
 def test_binaryoperator_instantiation(instance):
     assert isinstance(instance, BinaryOperator)
 
-@given(instance=gastm::SpecificIn_strategy)
+@given(instance=gastm_BitOr_strategy)
 @settings(max_examples=50)
-def test_gastm::specificin_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificIn)
+def test_gastm_bitor_instantiation(instance):
+    assert isinstance(instance, gastm_BitOr)
 
-@given(instance=gastm::SpecificLike_strategy)
+@given(instance=gastm_BitAnd_strategy)
 @settings(max_examples=50)
-def test_gastm::specificlike_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificLike)
+def test_gastm_bitand_instantiation(instance):
+    assert isinstance(instance, gastm_BitAnd)
 
-@given(instance=gastm::NotGreater_strategy)
+@given(instance=gastm_NotLess_strategy)
 @settings(max_examples=50)
-def test_gastm::notgreater_instantiation(instance):
-    assert isinstance(instance, gastm::NotGreater)
+def test_gastm_notless_instantiation(instance):
+    assert isinstance(instance, gastm_NotLess)
 
-@given(instance=gastm::Assign_strategy)
+@given(instance=gastm_SpecificLessEqual_strategy)
 @settings(max_examples=50)
-def test_gastm::assign_instantiation(instance):
-    assert isinstance(instance, gastm::Assign)
+def test_gastm_specificlessequal_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificLessEqual)
 
-@given(instance=gastm::Divide_strategy)
+@given(instance=gastm_Greater_strategy)
 @settings(max_examples=50)
-def test_gastm::divide_instantiation(instance):
-    assert isinstance(instance, gastm::Divide)
+def test_gastm_greater_instantiation(instance):
+    assert isinstance(instance, gastm_Greater)
 
-@given(instance=gastm::BitXor_strategy)
+@given(instance=gastm_SpecificConcatString_strategy)
 @settings(max_examples=50)
-def test_gastm::bitxor_instantiation(instance):
-    assert isinstance(instance, gastm::BitXor)
+def test_gastm_specificconcatstring_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificConcatString)
 
-@given(instance=gastm::Exponent_strategy)
+@given(instance=gastm_SpecificIn_strategy)
 @settings(max_examples=50)
-def test_gastm::exponent_instantiation(instance):
-    assert isinstance(instance, gastm::Exponent)
+def test_gastm_specificin_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificIn)
 
-@given(instance=gastm::Less_strategy)
+@given(instance=gastm_Equal_strategy)
 @settings(max_examples=50)
-def test_gastm::less_instantiation(instance):
-    assert isinstance(instance, gastm::Less)
+def test_gastm_equal_instantiation(instance):
+    assert isinstance(instance, gastm_Equal)
 
-@given(instance=gastm::Or_strategy)
+@given(instance=gastm_Less_strategy)
 @settings(max_examples=50)
-def test_gastm::or_instantiation(instance):
-    assert isinstance(instance, gastm::Or)
+def test_gastm_less_instantiation(instance):
+    assert isinstance(instance, gastm_Less)
 
-@given(instance=gastm::Equal_strategy)
+@given(instance=gastm_NotGreater_strategy)
 @settings(max_examples=50)
-def test_gastm::equal_instantiation(instance):
-    assert isinstance(instance, gastm::Equal)
+def test_gastm_notgreater_instantiation(instance):
+    assert isinstance(instance, gastm_NotGreater)
 
-@given(instance=gastm::BitRightShift_strategy)
+@given(instance=gastm_SpecificGreaterEqual_strategy)
 @settings(max_examples=50)
-def test_gastm::bitrightshift_instantiation(instance):
-    assert isinstance(instance, gastm::BitRightShift)
+def test_gastm_specificgreaterequal_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificGreaterEqual)
 
-@given(instance=gastm::Subtract_strategy)
+@given(instance=gastm_Assign_strategy)
 @settings(max_examples=50)
-def test_gastm::subtract_instantiation(instance):
-    assert isinstance(instance, gastm::Subtract)
+def test_gastm_assign_instantiation(instance):
+    assert isinstance(instance, gastm_Assign)
 
-@given(instance=gastm::Add_strategy)
+@given(instance=gastm_Divide_strategy)
 @settings(max_examples=50)
-def test_gastm::add_instantiation(instance):
-    assert isinstance(instance, gastm::Add)
+def test_gastm_divide_instantiation(instance):
+    assert isinstance(instance, gastm_Divide)
 
-@given(instance=gastm::Greater_strategy)
+@given(instance=gastm_Multiply_strategy)
 @settings(max_examples=50)
-def test_gastm::greater_instantiation(instance):
-    assert isinstance(instance, gastm::Greater)
+def test_gastm_multiply_instantiation(instance):
+    assert isinstance(instance, gastm_Multiply)
 
-@given(instance=gastm::SpecificGreaterEqual_strategy)
+@given(instance=gastm_BitXor_strategy)
 @settings(max_examples=50)
-def test_gastm::specificgreaterequal_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificGreaterEqual)
+def test_gastm_bitxor_instantiation(instance):
+    assert isinstance(instance, gastm_BitXor)
 
-@given(instance=gastm::Multiply_strategy)
+@given(instance=gastm_Subtract_strategy)
 @settings(max_examples=50)
-def test_gastm::multiply_instantiation(instance):
-    assert isinstance(instance, gastm::Multiply)
+def test_gastm_subtract_instantiation(instance):
+    assert isinstance(instance, gastm_Subtract)
 
-@given(instance=gastm::SpecificConcatString_strategy)
+@given(instance=gastm_BitRightShift_strategy)
 @settings(max_examples=50)
-def test_gastm::specificconcatstring_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificConcatString)
+def test_gastm_bitrightshift_instantiation(instance):
+    assert isinstance(instance, gastm_BitRightShift)
 
-@given(instance=gastm::BitLeftShift_strategy)
+@given(instance=gastm_Or_strategy)
 @settings(max_examples=50)
-def test_gastm::bitleftshift_instantiation(instance):
-    assert isinstance(instance, gastm::BitLeftShift)
+def test_gastm_or_instantiation(instance):
+    assert isinstance(instance, gastm_Or)
 
-@given(instance=gastm::SpecificLessEqual_strategy)
+@given(instance=gastm_NotEqual_strategy)
 @settings(max_examples=50)
-def test_gastm::specificlessequal_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificLessEqual)
+def test_gastm_notequal_instantiation(instance):
+    assert isinstance(instance, gastm_NotEqual)
 
-@given(instance=gastm::BitOr_strategy)
+@given(instance=gastm_Exponent_strategy)
 @settings(max_examples=50)
-def test_gastm::bitor_instantiation(instance):
-    assert isinstance(instance, gastm::BitOr)
+def test_gastm_exponent_instantiation(instance):
+    assert isinstance(instance, gastm_Exponent)
 
-@given(instance=gastm::NotLess_strategy)
+@given(instance=gastm_Add_strategy)
 @settings(max_examples=50)
-def test_gastm::notless_instantiation(instance):
-    assert isinstance(instance, gastm::NotLess)
+def test_gastm_add_instantiation(instance):
+    assert isinstance(instance, gastm_Add)
 
-@given(instance=gastm::BitAnd_strategy)
+@given(instance=gastm_SpecificLike_strategy)
 @settings(max_examples=50)
-def test_gastm::bitand_instantiation(instance):
-    assert isinstance(instance, gastm::BitAnd)
+def test_gastm_specificlike_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificLike)
 
-@given(instance=gastm::And_strategy)
+@given(instance=gastm_And_strategy)
 @settings(max_examples=50)
-def test_gastm::and_instantiation(instance):
-    assert isinstance(instance, gastm::And)
+def test_gastm_and_instantiation(instance):
+    assert isinstance(instance, gastm_And)
 
-@given(instance=gastm::NotEqual_strategy)
+@given(instance=gastm_Modulus_strategy)
 @settings(max_examples=50)
-def test_gastm::notequal_instantiation(instance):
-    assert isinstance(instance, gastm::NotEqual)
+def test_gastm_modulus_instantiation(instance):
+    assert isinstance(instance, gastm_Modulus)
 
-@given(instance=gastm::Modulus_strategy)
+@given(instance=gastm_BitLeftShift_strategy)
 @settings(max_examples=50)
-def test_gastm::modulus_instantiation(instance):
-    assert isinstance(instance, gastm::Modulus)
+def test_gastm_bitleftshift_instantiation(instance):
+    assert isinstance(instance, gastm_BitLeftShift)
 
-@given(instance=gastm::OperatorAssign_strategy)
+@given(instance=gastm_OperatorAssign_strategy)
 @settings(max_examples=50)
-def test_gastm::operatorassign_instantiation(instance):
-    assert isinstance(instance, gastm::OperatorAssign)
+def test_gastm_operatorassign_instantiation(instance):
+    assert isinstance(instance, gastm_OperatorAssign)
 
 @given(instance=ActualParameter_strategy)
 @settings(max_examples=50)
 def test_actualparameter_instantiation(instance):
     assert isinstance(instance, ActualParameter)
 
-@given(instance=gastm::MissingActualParameter_strategy)
+@given(instance=gastm_MissingActualParameter_strategy)
 @settings(max_examples=50)
-def test_gastm::missingactualparameter_instantiation(instance):
-    assert isinstance(instance, gastm::MissingActualParameter)
+def test_gastm_missingactualparameter_instantiation(instance):
+    assert isinstance(instance, gastm_MissingActualParameter)
 
-@given(instance=gastm::ActualParameterExpression_strategy)
+@given(instance=gastm_ActualParameterExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::actualparameterexpression_instantiation(instance):
-    assert isinstance(instance, gastm::ActualParameterExpression)
+def test_gastm_actualparameterexpression_instantiation(instance):
+    assert isinstance(instance, gastm_ActualParameterExpression)
 
 @given(instance=IdentifierReference_strategy)
 @settings(max_examples=50)
 def test_identifierreference_instantiation(instance):
     assert isinstance(instance, IdentifierReference)
 
-@given(instance=sastm::RDBTableAlias_strategy)
+@given(instance=sastm_RDBColumnReference_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtablealias_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableAlias)
+def test_sastm_rdbcolumnreference_instantiation(instance):
+    assert isinstance(instance, sastm_RDBColumnReference)
 
-@given(instance=sastm::RDBTableReference_strategy)
+@given(instance=sastm_RDBTableReference_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtablereference_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableReference)
+def test_sastm_rdbtablereference_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableReference)
 
-@given(instance=sastm::RDBColumnReference_strategy)
+@given(instance=sastm_RDBTableAlias_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbcolumnreference_instantiation(instance):
-    assert isinstance(instance, sastm::RDBColumnReference)
+def test_sastm_rdbtablealias_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableAlias)
 
 @given(instance=NameReference_strategy)
 @settings(max_examples=50)
 def test_namereference_instantiation(instance):
     assert isinstance(instance, NameReference)
 
-@given(instance=gastm::IdentifierReference_strategy)
+@given(instance=gastm_TypeQualifiedIdentifierReference_strategy)
 @settings(max_examples=50)
-def test_gastm::identifierreference_instantiation(instance):
-    assert isinstance(instance, gastm::IdentifierReference)
+def test_gastm_typequalifiedidentifierreference_instantiation(instance):
+    assert isinstance(instance, gastm_TypeQualifiedIdentifierReference)
 
-@given(instance=gastm::TypeQualifiedIdentifierReference_strategy)
+@given(instance=gastm_IdentifierReference_strategy)
 @settings(max_examples=50)
-def test_gastm::typequalifiedidentifierreference_instantiation(instance):
-    assert isinstance(instance, gastm::TypeQualifiedIdentifierReference)
+def test_gastm_identifierreference_instantiation(instance):
+    assert isinstance(instance, gastm_IdentifierReference)
 
-@given(instance=gastm::QualifiedIdentifierReference_strategy)
+@given(instance=gastm_QualifiedIdentifierReference_strategy)
 @settings(max_examples=50)
-def test_gastm::qualifiedidentifierreference_instantiation(instance):
-    assert isinstance(instance, gastm::QualifiedIdentifierReference)
-
-@given(instance=gastm::CatchBlock_strategy)
-@settings(max_examples=50)
-def test_gastm::catchblock_instantiation(instance):
-    assert isinstance(instance, gastm::CatchBlock)
+def test_gastm_qualifiedidentifierreference_instantiation(instance):
+    assert isinstance(instance, gastm_QualifiedIdentifierReference)
 
 @given(instance=CatchBlock_strategy)
 @settings(max_examples=50)
 def test_catchblock_instantiation(instance):
     assert isinstance(instance, CatchBlock)
 
-@given(instance=gastm::TypesCatchBlock_strategy)
+@given(instance=gastm_TypesCatchBlock_strategy)
 @settings(max_examples=50)
-def test_gastm::typescatchblock_instantiation(instance):
-    assert isinstance(instance, gastm::TypesCatchBlock)
+def test_gastm_typescatchblock_instantiation(instance):
+    assert isinstance(instance, gastm_TypesCatchBlock)
 
 @given(instance=LoopStatement_strategy)
 @settings(max_examples=50)
 def test_loopstatement_instantiation(instance):
     assert isinstance(instance, LoopStatement)
 
-@given(instance=gastm::DoWhileStatement_strategy)
+@given(instance=gastm_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::dowhilestatement_instantiation(instance):
-    assert isinstance(instance, gastm::DoWhileStatement)
+def test_gastm_whilestatement_instantiation(instance):
+    assert isinstance(instance, gastm_WhileStatement)
 
-@given(instance=gastm::WhileStatement_strategy)
+@given(instance=gastm_DoWhileStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::whilestatement_instantiation(instance):
-    assert isinstance(instance, gastm::WhileStatement)
+def test_gastm_dowhilestatement_instantiation(instance):
+    assert isinstance(instance, gastm_DoWhileStatement)
 
-@given(instance=gastm::ForStatement_strategy)
+@given(instance=gastm_ForStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::forstatement_instantiation(instance):
-    assert isinstance(instance, gastm::ForStatement)
+def test_gastm_forstatement_instantiation(instance):
+    assert isinstance(instance, gastm_ForStatement)
 
-@given(instance=gastm::VariableCatchBlock_strategy)
+@given(instance=gastm_VariableCatchBlock_strategy)
 @settings(max_examples=50)
-def test_gastm::variablecatchblock_instantiation(instance):
-    assert isinstance(instance, gastm::VariableCatchBlock)
+def test_gastm_variablecatchblock_instantiation(instance):
+    assert isinstance(instance, gastm_VariableCatchBlock)
 
 @given(instance=BlockScope_strategy)
 @settings(max_examples=50)
@@ -6920,35 +6704,25 @@ def test_blockscope_instantiation(instance):
 def test_labeldefinition_instantiation(instance):
     assert isinstance(instance, LabelDefinition)
 
-@given(instance=gastm::SwitchCase_strategy)
-@settings(max_examples=50)
-def test_gastm::switchcase_instantiation(instance):
-    assert isinstance(instance, gastm::SwitchCase)
-
 @given(instance=SwitchCase_strategy)
 @settings(max_examples=50)
 def test_switchcase_instantiation(instance):
     assert isinstance(instance, SwitchCase)
 
-@given(instance=gastm::DefaultBlock_strategy)
+@given(instance=gastm_DefaultBlock_strategy)
 @settings(max_examples=50)
-def test_gastm::defaultblock_instantiation(instance):
-    assert isinstance(instance, gastm::DefaultBlock)
+def test_gastm_defaultblock_instantiation(instance):
+    assert isinstance(instance, gastm_DefaultBlock)
 
-@given(instance=gastm::CaseBlock_strategy)
+@given(instance=gastm_CaseBlock_strategy)
 @settings(max_examples=50)
-def test_gastm::caseblock_instantiation(instance):
-    assert isinstance(instance, gastm::CaseBlock)
+def test_gastm_caseblock_instantiation(instance):
+    assert isinstance(instance, gastm_CaseBlock)
 
 @given(instance=LabelAccess_strategy)
 @settings(max_examples=50)
 def test_labelaccess_instantiation(instance):
     assert isinstance(instance, LabelAccess)
-
-@given(instance=gastm::Dimension_strategy)
-@settings(max_examples=50)
-def test_gastm::dimension_instantiation(instance):
-    assert isinstance(instance, gastm::Dimension)
 
 @given(instance=Dimension_strategy)
 @settings(max_examples=50)
@@ -6960,30 +6734,30 @@ def test_dimension_instantiation(instance):
 def test_constructedtype_instantiation(instance):
     assert isinstance(instance, ConstructedType)
 
-@given(instance=gastm::PointerType_strategy)
+@given(instance=gastm_RangeType_strategy)
 @settings(max_examples=50)
-def test_gastm::pointertype_instantiation(instance):
-    assert isinstance(instance, gastm::PointerType)
+def test_gastm_rangetype_instantiation(instance):
+    assert isinstance(instance, gastm_RangeType)
 
-@given(instance=gastm::CollectionType_strategy)
+@given(instance=gastm_ReferenceType_strategy)
 @settings(max_examples=50)
-def test_gastm::collectiontype_instantiation(instance):
-    assert isinstance(instance, gastm::CollectionType)
+def test_gastm_referencetype_instantiation(instance):
+    assert isinstance(instance, gastm_ReferenceType)
 
-@given(instance=gastm::RangeType_strategy)
+@given(instance=gastm_CollectionType_strategy)
 @settings(max_examples=50)
-def test_gastm::rangetype_instantiation(instance):
-    assert isinstance(instance, gastm::RangeType)
+def test_gastm_collectiontype_instantiation(instance):
+    assert isinstance(instance, gastm_CollectionType)
 
-@given(instance=gastm::ReferenceType_strategy)
+@given(instance=gastm_PointerType_strategy)
 @settings(max_examples=50)
-def test_gastm::referencetype_instantiation(instance):
-    assert isinstance(instance, gastm::ReferenceType)
+def test_gastm_pointertype_instantiation(instance):
+    assert isinstance(instance, gastm_PointerType)
 
-@given(instance=gastm::ArrayType_strategy)
+@given(instance=gastm_ArrayType_strategy)
 @settings(max_examples=50)
-def test_gastm::arraytype_instantiation(instance):
-    assert isinstance(instance, gastm::ArrayType)
+def test_gastm_arraytype_instantiation(instance):
+    assert isinstance(instance, gastm_ArrayType)
 
 @given(instance=AggregateScope_strategy)
 @settings(max_examples=50)
@@ -7000,267 +6774,243 @@ def test_enumliteraldefinition_instantiation(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=sastm::RDBRaw_strategy)
+@given(instance=sastm_RDBBlob_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbraw_instantiation(instance):
-    assert isinstance(instance, sastm::RDBRaw)
+def test_sastm_rdbblob_instantiation(instance):
+    assert isinstance(instance, sastm_RDBBlob)
 
-@given(instance=sastm::RDBBoolean_strategy)
+@given(instance=sastm_RDBChar_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbboolean_instantiation(instance):
-    assert isinstance(instance, sastm::RDBBoolean)
+def test_sastm_rdbchar_instantiation(instance):
+    assert isinstance(instance, sastm_RDBChar)
 
-@given(instance=sastm::RDBClob_strategy)
+@given(instance=sastm_RDBFloat_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbclob_instantiation(instance):
-    assert isinstance(instance, sastm::RDBClob)
+def test_sastm_rdbfloat_instantiation(instance):
+    assert isinstance(instance, sastm_RDBFloat)
 
-@given(instance=sastm::RDBRowid_strategy)
+@given(instance=sastm_RDBRowid_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbrowid_instantiation(instance):
-    assert isinstance(instance, sastm::RDBRowid)
+def test_sastm_rdbrowid_instantiation(instance):
+    assert isinstance(instance, sastm_RDBRowid)
 
-@given(instance=sastm::RDBTableType_strategy)
+@given(instance=gastm_EnumType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtabletype_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableType)
+def test_gastm_enumtype_instantiation(instance):
+    assert isinstance(instance, gastm_EnumType)
 
-@given(instance=sastm::RDBDataBaseType_strategy)
+@given(instance=sastm_RDBUserType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbdatabasetype_instantiation(instance):
-    assert isinstance(instance, sastm::RDBDataBaseType)
+def test_sastm_rdbusertype_instantiation(instance):
+    assert isinstance(instance, sastm_RDBUserType)
 
-@given(instance=sastm::RDBTimestamp_strategy)
+@given(instance=sastm_RDBBFile_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtimestamp_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTimestamp)
+def test_sastm_rdbbfile_instantiation(instance):
+    assert isinstance(instance, sastm_RDBBFile)
 
-@given(instance=sastm::RDBChar_strategy)
+@given(instance=sastm_RDBNClob_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbchar_instantiation(instance):
-    assert isinstance(instance, sastm::RDBChar)
+def test_sastm_rdbnclob_instantiation(instance):
+    assert isinstance(instance, sastm_RDBNClob)
 
-@given(instance=sastm::RDBVarchar_strategy)
+@given(instance=sastm_RDBDataBaseType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbvarchar_instantiation(instance):
-    assert isinstance(instance, sastm::RDBVarchar)
+def test_sastm_rdbdatabasetype_instantiation(instance):
+    assert isinstance(instance, sastm_RDBDataBaseType)
 
-@given(instance=gastm::AggregateType_strategy)
+@given(instance=sastm_RDBRaw_strategy)
 @settings(max_examples=50)
-def test_gastm::aggregatetype_instantiation(instance):
-    assert isinstance(instance, gastm::AggregateType)
+def test_sastm_rdbraw_instantiation(instance):
+    assert isinstance(instance, sastm_RDBRaw)
 
-@given(instance=sastm::RDBNumber_strategy)
+@given(instance=sastm_RDBString_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbnumber_instantiation(instance):
-    assert isinstance(instance, sastm::RDBNumber)
+def test_sastm_rdbstring_instantiation(instance):
+    assert isinstance(instance, sastm_RDBString)
 
-@given(instance=sastm::RDBLong_strategy)
+@given(instance=sastm_RDBCursorType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdblong_instantiation(instance):
-    assert isinstance(instance, sastm::RDBLong)
+def test_sastm_rdbcursortype_instantiation(instance):
+    assert isinstance(instance, sastm_RDBCursorType)
 
-@given(instance=gastm::EnumType_strategy)
+@given(instance=sastm_RDBDate_strategy)
 @settings(max_examples=50)
-def test_gastm::enumtype_instantiation(instance):
-    assert isinstance(instance, gastm::EnumType)
+def test_sastm_rdbdate_instantiation(instance):
+    assert isinstance(instance, sastm_RDBDate)
 
-@given(instance=sastm::RDBString_strategy)
+@given(instance=sastm_RDBClob_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbstring_instantiation(instance):
-    assert isinstance(instance, sastm::RDBString)
+def test_sastm_rdbclob_instantiation(instance):
+    assert isinstance(instance, sastm_RDBClob)
 
-@given(instance=sastm::RDBReal_strategy)
+@given(instance=sastm_RDBTableType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbreal_instantiation(instance):
-    assert isinstance(instance, sastm::RDBReal)
+def test_sastm_rdbtabletype_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableType)
 
-@given(instance=sastm::RDBBlob_strategy)
+@given(instance=sastm_RDBReal_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbblob_instantiation(instance):
-    assert isinstance(instance, sastm::RDBBlob)
+def test_sastm_rdbreal_instantiation(instance):
+    assert isinstance(instance, sastm_RDBReal)
 
-@given(instance=gastm::ExceptionType_strategy)
+@given(instance=gastm_ExceptionType_strategy)
 @settings(max_examples=50)
-def test_gastm::exceptiontype_instantiation(instance):
-    assert isinstance(instance, gastm::ExceptionType)
+def test_gastm_exceptiontype_instantiation(instance):
+    assert isinstance(instance, gastm_ExceptionType)
 
-@given(instance=sastm::RDBDecimal_strategy)
+@given(instance=gastm_AggregateType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbdecimal_instantiation(instance):
-    assert isinstance(instance, sastm::RDBDecimal)
+def test_gastm_aggregatetype_instantiation(instance):
+    assert isinstance(instance, gastm_AggregateType)
 
-@given(instance=sastm::RDBNClob_strategy)
+@given(instance=sastm_RDBVarchar_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbnclob_instantiation(instance):
-    assert isinstance(instance, sastm::RDBNClob)
+def test_sastm_rdbvarchar_instantiation(instance):
+    assert isinstance(instance, sastm_RDBVarchar)
 
-@given(instance=sastm::RDBInteger_strategy)
+@given(instance=sastm_RDBTableSpaceType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbinteger_instantiation(instance):
-    assert isinstance(instance, sastm::RDBInteger)
+def test_sastm_rdbtablespacetype_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableSpaceType)
 
-@given(instance=sastm::RDBInt_strategy)
+@given(instance=sastm_RDBNumber_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbint_instantiation(instance):
-    assert isinstance(instance, sastm::RDBInt)
+def test_sastm_rdbnumber_instantiation(instance):
+    assert isinstance(instance, sastm_RDBNumber)
 
-@given(instance=sastm::RDBUserType_strategy)
+@given(instance=gastm_ConstructedType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbusertype_instantiation(instance):
-    assert isinstance(instance, sastm::RDBUserType)
+def test_gastm_constructedtype_instantiation(instance):
+    assert isinstance(instance, gastm_ConstructedType)
 
-@given(instance=sastm::RDBViewType_strategy)
+@given(instance=sastm_RDBDecimal_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbviewtype_instantiation(instance):
-    assert isinstance(instance, sastm::RDBViewType)
+def test_sastm_rdbdecimal_instantiation(instance):
+    assert isinstance(instance, sastm_RDBDecimal)
 
-@given(instance=sastm::RDBBFile_strategy)
+@given(instance=sastm_RDBViewType_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbbfile_instantiation(instance):
-    assert isinstance(instance, sastm::RDBBFile)
+def test_sastm_rdbviewtype_instantiation(instance):
+    assert isinstance(instance, sastm_RDBViewType)
 
-@given(instance=sastm::RDBFloat_strategy)
+@given(instance=sastm_RDBInteger_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbfloat_instantiation(instance):
-    assert isinstance(instance, sastm::RDBFloat)
+def test_sastm_rdbinteger_instantiation(instance):
+    assert isinstance(instance, sastm_RDBInteger)
 
-@given(instance=gastm::ConstructedType_strategy)
+@given(instance=sastm_RDBInt_strategy)
 @settings(max_examples=50)
-def test_gastm::constructedtype_instantiation(instance):
-    assert isinstance(instance, gastm::ConstructedType)
+def test_sastm_rdbint_instantiation(instance):
+    assert isinstance(instance, sastm_RDBInt)
 
-@given(instance=sastm::RDBDate_strategy)
+@given(instance=sastm_RDBTimestamp_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbdate_instantiation(instance):
-    assert isinstance(instance, sastm::RDBDate)
+def test_sastm_rdbtimestamp_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTimestamp)
 
-@given(instance=sastm::RDBCursorType_strategy)
+@given(instance=sastm_RDBBoolean_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbcursortype_instantiation(instance):
-    assert isinstance(instance, sastm::RDBCursorType)
+def test_sastm_rdbboolean_instantiation(instance):
+    assert isinstance(instance, sastm_RDBBoolean)
 
-@given(instance=sastm::RDBTableSpaceType_strategy)
+@given(instance=sastm_RDBLong_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtablespacetype_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableSpaceType)
+def test_sastm_rdblong_instantiation(instance):
+    assert isinstance(instance, sastm_RDBLong)
 
-@given(instance=gastm::PrimitiveType_strategy)
+@given(instance=gastm_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_gastm::primitivetype_instantiation(instance):
-    assert isinstance(instance, gastm::PrimitiveType)
-
-@given(instance=gastm::PrimitiveType_strategy)
-def test_gastm::primitivetype_isSigned_type(instance):
-    assert isinstance(instance.isSigned, bool)
+def test_gastm_primitivetype_instantiation(instance):
+    assert isinstance(instance, gastm_PrimitiveType)
 
 
-@given(instance=gastm::PrimitiveType_strategy)
-def test_gastm::primitivetype_isSigned_setter(instance):
+
+@given(instance=gastm_PrimitiveType_strategy)
+def test_gastm_primitivetype_isSigned_setter(instance):
     original = instance.isSigned
     instance.isSigned = original
     assert instance.isSigned == original
-
-@given(instance=gastm::DerivesFrom_strategy)
-@settings(max_examples=50)
-def test_gastm::derivesfrom_instantiation(instance):
-    assert isinstance(instance, gastm::DerivesFrom)
-
-@given(instance=gastm::DerivesFrom_strategy)
-def test_gastm::derivesfrom_isVirtual_type(instance):
-    assert isinstance(instance.isVirtual, bool)
-
-
-@given(instance=gastm::DerivesFrom_strategy)
-def test_gastm::derivesfrom_isVirtual_setter(instance):
-    original = instance.isVirtual
-    instance.isVirtual = original
-    assert instance.isVirtual == original
 
 @given(instance=DerivesFrom_strategy)
 @settings(max_examples=50)
 def test_derivesfrom_instantiation(instance):
     assert isinstance(instance, DerivesFrom)
 
-@given(instance=gastm::NamedType_strategy)
+@given(instance=gastm_NamedType_strategy)
 @settings(max_examples=50)
-def test_gastm::namedtype_instantiation(instance):
-    assert isinstance(instance, gastm::NamedType)
+def test_gastm_namedtype_instantiation(instance):
+    assert isinstance(instance, gastm_NamedType)
 
-@given(instance=gastm::FormalParameterType_strategy)
+@given(instance=gastm_FormalParameterType_strategy)
 @settings(max_examples=50)
-def test_gastm::formalparametertype_instantiation(instance):
-    assert isinstance(instance, gastm::FormalParameterType)
+def test_gastm_formalparametertype_instantiation(instance):
+    assert isinstance(instance, gastm_FormalParameterType)
 
 @given(instance=FormalParameterType_strategy)
 @settings(max_examples=50)
 def test_formalparametertype_instantiation(instance):
     assert isinstance(instance, FormalParameterType)
 
-@given(instance=gastm::ByValueFormalParameterType_strategy)
+@given(instance=gastm_ByValueFormalParameterType_strategy)
 @settings(max_examples=50)
-def test_gastm::byvalueformalparametertype_instantiation(instance):
-    assert isinstance(instance, gastm::ByValueFormalParameterType)
+def test_gastm_byvalueformalparametertype_instantiation(instance):
+    assert isinstance(instance, gastm_ByValueFormalParameterType)
 
-@given(instance=gastm::ByReferenceFormalParameterType_strategy)
+@given(instance=gastm_ByReferenceFormalParameterType_strategy)
 @settings(max_examples=50)
-def test_gastm::byreferenceformalparametertype_instantiation(instance):
-    assert isinstance(instance, gastm::ByReferenceFormalParameterType)
+def test_gastm_byreferenceformalparametertype_instantiation(instance):
+    assert isinstance(instance, gastm_ByReferenceFormalParameterType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=gastm::LabelType_strategy)
+@given(instance=gastm_LabelType_strategy)
 @settings(max_examples=50)
-def test_gastm::labeltype_instantiation(instance):
-    assert isinstance(instance, gastm::LabelType)
+def test_gastm_labeltype_instantiation(instance):
+    assert isinstance(instance, gastm_LabelType)
 
-@given(instance=gastm::FunctionType_strategy)
+@given(instance=gastm_NameSpaceType_strategy)
 @settings(max_examples=50)
-def test_gastm::functiontype_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionType)
+def test_gastm_namespacetype_instantiation(instance):
+    assert isinstance(instance, gastm_NameSpaceType)
 
-@given(instance=gastm::NameSpaceType_strategy)
+@given(instance=gastm_FunctionType_strategy)
 @settings(max_examples=50)
-def test_gastm::namespacetype_instantiation(instance):
-    assert isinstance(instance, gastm::NameSpaceType)
+def test_gastm_functiontype_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionType)
 
-@given(instance=gastm::TypeReference_strategy)
+@given(instance=gastm_TypeReference_strategy)
 @settings(max_examples=50)
-def test_gastm::typereference_instantiation(instance):
-    assert isinstance(instance, gastm::TypeReference)
-
-@given(instance=gastm::NameSpaceDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::namespacedefinition_instantiation(instance):
-    assert isinstance(instance, gastm::NameSpaceDefinition)
+def test_gastm_typereference_instantiation(instance):
+    assert isinstance(instance, gastm_TypeReference)
 
 @given(instance=AggregateType_strategy)
 @settings(max_examples=50)
 def test_aggregatetype_instantiation(instance):
     assert isinstance(instance, AggregateType)
 
-@given(instance=gastm::UnionType_strategy)
+@given(instance=gastm_ClassType_strategy)
 @settings(max_examples=50)
-def test_gastm::uniontype_instantiation(instance):
-    assert isinstance(instance, gastm::UnionType)
+def test_gastm_classtype_instantiation(instance):
+    assert isinstance(instance, gastm_ClassType)
 
-@given(instance=gastm::StructureType_strategy)
+@given(instance=gastm_AnnotationType_strategy)
 @settings(max_examples=50)
-def test_gastm::structuretype_instantiation(instance):
-    assert isinstance(instance, gastm::StructureType)
+def test_gastm_annotationtype_instantiation(instance):
+    assert isinstance(instance, gastm_AnnotationType)
 
-@given(instance=gastm::ClassType_strategy)
+@given(instance=gastm_UnionType_strategy)
 @settings(max_examples=50)
-def test_gastm::classtype_instantiation(instance):
-    assert isinstance(instance, gastm::ClassType)
+def test_gastm_uniontype_instantiation(instance):
+    assert isinstance(instance, gastm_UnionType)
 
-@given(instance=gastm::AnnotationType_strategy)
+@given(instance=gastm_StructureType_strategy)
 @settings(max_examples=50)
-def test_gastm::annotationtype_instantiation(instance):
-    assert isinstance(instance, gastm::AnnotationType)
+def test_gastm_structuretype_instantiation(instance):
+    assert isinstance(instance, gastm_StructureType)
 
 @given(instance=NamedType_strategy)
 @settings(max_examples=50)
@@ -7272,251 +7022,179 @@ def test_namedtype_instantiation(instance):
 def test_typedefinition_instantiation(instance):
     assert isinstance(instance, TypeDefinition)
 
-@given(instance=gastm::AggregateTypeDefinition_strategy)
+@given(instance=gastm_AggregateTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::aggregatetypedefinition_instantiation(instance):
-    assert isinstance(instance, gastm::AggregateTypeDefinition)
+def test_gastm_aggregatetypedefinition_instantiation(instance):
+    assert isinstance(instance, gastm_AggregateTypeDefinition)
 
-@given(instance=gastm::NamedTypeDefinition_strategy)
+@given(instance=gastm_NamedTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::namedtypedefinition_instantiation(instance):
-    assert isinstance(instance, gastm::NamedTypeDefinition)
-
-@given(instance=gastm::TypeDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::typedefinition_instantiation(instance):
-    assert isinstance(instance, gastm::TypeDefinition)
+def test_gastm_namedtypedefinition_instantiation(instance):
+    assert isinstance(instance, gastm_NamedTypeDefinition)
 
 @given(instance=DataDefinition_strategy)
 @settings(max_examples=50)
 def test_datadefinition_instantiation(instance):
     assert isinstance(instance, DataDefinition)
 
-@given(instance=gastm::VariableDefinition_strategy)
+@given(instance=gastm_VariableDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::variabledefinition_instantiation(instance):
-    assert isinstance(instance, gastm::VariableDefinition)
+def test_gastm_variabledefinition_instantiation(instance):
+    assert isinstance(instance, gastm_VariableDefinition)
 
-@given(instance=gastm::FormalParameterDefinition_strategy)
+@given(instance=gastm_FormalParameterDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::formalparameterdefinition_instantiation(instance):
-    assert isinstance(instance, gastm::FormalParameterDefinition)
+def test_gastm_formalparameterdefinition_instantiation(instance):
+    assert isinstance(instance, gastm_FormalParameterDefinition)
 
-@given(instance=gastm::BitFieldDefinition_strategy)
+@given(instance=gastm_BitFieldDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::bitfielddefinition_instantiation(instance):
-    assert isinstance(instance, gastm::BitFieldDefinition)
+def test_gastm_bitfielddefinition_instantiation(instance):
+    assert isinstance(instance, gastm_BitFieldDefinition)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=gastm::NameReference_strategy)
+@given(instance=gastm_Literal_strategy)
 @settings(max_examples=50)
-def test_gastm::namereference_instantiation(instance):
-    assert isinstance(instance, gastm::NameReference)
-
-@given(instance=sastm::RDBHostVariableExpression_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbhostvariableexpression_instantiation(instance):
-    assert isinstance(instance, sastm::RDBHostVariableExpression)
-
-@given(instance=gastm::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_gastm::unaryexpression_instantiation(instance):
-    assert isinstance(instance, gastm::UnaryExpression)
-
-@given(instance=gastm::BinaryExpression_strategy)
-@settings(max_examples=50)
-def test_gastm::binaryexpression_instantiation(instance):
-    assert isinstance(instance, gastm::BinaryExpression)
-
-@given(instance=gastm::FunctionCallExpression_strategy)
-@settings(max_examples=50)
-def test_gastm::functioncallexpression_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionCallExpression)
-
-@given(instance=gastm::ArrayAccess_strategy)
-@settings(max_examples=50)
-def test_gastm::arrayaccess_instantiation(instance):
-    assert isinstance(instance, gastm::ArrayAccess)
-
-@given(instance=gastm::Literal_strategy)
-@settings(max_examples=50)
-def test_gastm::literal_instantiation(instance):
-    assert isinstance(instance, gastm::Literal)
-
-@given(instance=gastm::Literal_strategy)
-def test_gastm::literal_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_gastm_literal_instantiation(instance):
+    assert isinstance(instance, gastm_Literal)
 
 
-@given(instance=gastm::Literal_strategy)
-def test_gastm::literal_value_setter(instance):
+
+@given(instance=gastm_Literal_strategy)
+def test_gastm_literal_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=gastm::ConditionalExpression_strategy)
+@given(instance=gastm_ArrayAccess_strategy)
 @settings(max_examples=50)
-def test_gastm::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, gastm::ConditionalExpression)
+def test_gastm_arrayaccess_instantiation(instance):
+    assert isinstance(instance, gastm_ArrayAccess)
 
-@given(instance=gastm::LabelAccess_strategy)
+@given(instance=gastm_FunctionCallExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::labelaccess_instantiation(instance):
-    assert isinstance(instance, gastm::LabelAccess)
+def test_gastm_functioncallexpression_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionCallExpression)
 
-@given(instance=gastm::AggregateExpression_strategy)
+@given(instance=gastm_AggregateExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::aggregateexpression_instantiation(instance):
-    assert isinstance(instance, gastm::AggregateExpression)
+def test_gastm_aggregateexpression_instantiation(instance):
+    assert isinstance(instance, gastm_AggregateExpression)
 
-@given(instance=gastm::AnnotationExpression_strategy)
+@given(instance=gastm_NameReference_strategy)
 @settings(max_examples=50)
-def test_gastm::annotationexpression_instantiation(instance):
-    assert isinstance(instance, gastm::AnnotationExpression)
+def test_gastm_namereference_instantiation(instance):
+    assert isinstance(instance, gastm_NameReference)
 
-@given(instance=gastm::RangeExpression_strategy)
+@given(instance=gastm_NewExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::rangeexpression_instantiation(instance):
-    assert isinstance(instance, gastm::RangeExpression)
+def test_gastm_newexpression_instantiation(instance):
+    assert isinstance(instance, gastm_NewExpression)
 
-@given(instance=sastm::RDBSelectExpression_strategy)
+@given(instance=gastm_CastExpression_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbselectexpression_instantiation(instance):
-    assert isinstance(instance, sastm::RDBSelectExpression)
+def test_gastm_castexpression_instantiation(instance):
+    assert isinstance(instance, gastm_CastExpression)
 
-@given(instance=gastm::NewExpression_strategy)
+@given(instance=gastm_LabelAccess_strategy)
 @settings(max_examples=50)
-def test_gastm::newexpression_instantiation(instance):
-    assert isinstance(instance, gastm::NewExpression)
+def test_gastm_labelaccess_instantiation(instance):
+    assert isinstance(instance, gastm_LabelAccess)
 
-@given(instance=gastm::CastExpression_strategy)
+@given(instance=gastm_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_gastm::castexpression_instantiation(instance):
-    assert isinstance(instance, gastm::CastExpression)
+def test_gastm_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, gastm_ConditionalExpression)
+
+@given(instance=sastm_RDBHostVariableExpression_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbhostvariableexpression_instantiation(instance):
+    assert isinstance(instance, sastm_RDBHostVariableExpression)
+
+@given(instance=gastm_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_gastm_unaryexpression_instantiation(instance):
+    assert isinstance(instance, gastm_UnaryExpression)
+
+@given(instance=sastm_RDBSelectExpression_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbselectexpression_instantiation(instance):
+    assert isinstance(instance, sastm_RDBSelectExpression)
+
+@given(instance=gastm_AnnotationExpression_strategy)
+@settings(max_examples=50)
+def test_gastm_annotationexpression_instantiation(instance):
+    assert isinstance(instance, gastm_AnnotationExpression)
+
+@given(instance=gastm_BinaryExpression_strategy)
+@settings(max_examples=50)
+def test_gastm_binaryexpression_instantiation(instance):
+    assert isinstance(instance, gastm_BinaryExpression)
+
+@given(instance=gastm_RangeExpression_strategy)
+@settings(max_examples=50)
+def test_gastm_rangeexpression_instantiation(instance):
+    assert isinstance(instance, gastm_RangeExpression)
 
 @given(instance=GASTMSyntaxObject_strategy)
 @settings(max_examples=50)
 def test_gastmsyntaxobject_instantiation(instance):
     assert isinstance(instance, GASTMSyntaxObject)
 
-@given(instance=gastm::Expression_strategy)
+@given(instance=gastm_Expression_strategy)
 @settings(max_examples=50)
-def test_gastm::expression_instantiation(instance):
-    assert isinstance(instance, gastm::Expression)
+def test_gastm_expression_instantiation(instance):
+    assert isinstance(instance, gastm_Expression)
 
-@given(instance=gastm::PreprocessorElement_strategy)
+@given(instance=gastm_DefinitionObject_strategy)
 @settings(max_examples=50)
-def test_gastm::preprocessorelement_instantiation(instance):
-    assert isinstance(instance, gastm::PreprocessorElement)
+def test_gastm_definitionobject_instantiation(instance):
+    assert isinstance(instance, gastm_DefinitionObject)
 
-@given(instance=gastm::Statement_strategy)
+@given(instance=gastm_Statement_strategy)
 @settings(max_examples=50)
-def test_gastm::statement_instantiation(instance):
-    assert isinstance(instance, gastm::Statement)
+def test_gastm_statement_instantiation(instance):
+    assert isinstance(instance, gastm_Statement)
 
-@given(instance=gastm::DefinitionObject_strategy)
+@given(instance=gastm_PreprocessorElement_strategy)
 @settings(max_examples=50)
-def test_gastm::definitionobject_instantiation(instance):
-    assert isinstance(instance, gastm::DefinitionObject)
+def test_gastm_preprocessorelement_instantiation(instance):
+    assert isinstance(instance, gastm_PreprocessorElement)
 
-@given(instance=gastm::Type_strategy)
+@given(instance=gastm_Type_strategy)
 @settings(max_examples=50)
-def test_gastm::type_instantiation(instance):
-    assert isinstance(instance, gastm::Type)
-
-@given(instance=gastm::Type_strategy)
-def test_gastm::type_isConst_type(instance):
-    assert isinstance(instance.isConst, bool)
+def test_gastm_type_instantiation(instance):
+    assert isinstance(instance, gastm_Type)
 
 
-@given(instance=gastm::Type_strategy)
-def test_gastm::type_isConst_setter(instance):
-    original = instance.isConst
-    instance.isConst = original
-    assert instance.isConst == original
 
-@given(instance=gastm::Type_strategy)
-def test_gastm::type_isVolatile_type(instance):
-    assert isinstance(instance.isVolatile, bool)
-
-
-@given(instance=gastm::Type_strategy)
-def test_gastm::type_isVolatile_setter(instance):
+@given(instance=gastm_Type_strategy)
+def test_gastm_type_isVolatile_setter(instance):
     original = instance.isVolatile
     instance.isVolatile = original
     assert instance.isVolatile == original
 
-@given(instance=gastm::Comment_strategy)
-@settings(max_examples=50)
-def test_gastm::comment_instantiation(instance):
-    assert isinstance(instance, gastm::Comment)
-
-@given(instance=gastm::Comment_strategy)
-def test_gastm::comment_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=gastm::Comment_strategy)
-def test_gastm::comment_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=gastm::MacroDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::macrodefinition_instantiation(instance):
-    assert isinstance(instance, gastm::MacroDefinition)
-
-@given(instance=gastm::MacroDefinition_strategy)
-def test_gastm::macrodefinition_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=gastm::MacroDefinition_strategy)
-def test_gastm::macrodefinition_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=gastm::MacroDefinition_strategy)
-def test_gastm::macrodefinition_macroName_type(instance):
-    assert isinstance(instance.macroName, str)
-
-
-@given(instance=gastm::MacroDefinition_strategy)
-def test_gastm::macrodefinition_macroName_setter(instance):
-    original = instance.macroName
-    instance.macroName = original
-    assert instance.macroName == original
+@given(instance=gastm_Type_strategy)
+def test_gastm_type_isConst_setter(instance):
+    original = instance.isConst
+    instance.isConst = original
+    assert instance.isConst == original
 
 @given(instance=MacroDefinition_strategy)
 @settings(max_examples=50)
 def test_macrodefinition_instantiation(instance):
     assert isinstance(instance, MacroDefinition)
 
-@given(instance=gastm::MacroCall_strategy)
-@settings(max_examples=50)
-def test_gastm::macrocall_instantiation(instance):
-    assert isinstance(instance, gastm::MacroCall)
-
-@given(instance=gastm::IncludeUnit_strategy)
-@settings(max_examples=50)
-def test_gastm::includeunit_instantiation(instance):
-    assert isinstance(instance, gastm::IncludeUnit)
-
 @given(instance=LabelType_strategy)
 @settings(max_examples=50)
 def test_labeltype_instantiation(instance):
     assert isinstance(instance, LabelType)
-
-@given(instance=gastm::LabelDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::labeldefinition_instantiation(instance):
-    assert isinstance(instance, gastm::LabelDefinition)
 
 @given(instance=NameSpaceType_strategy)
 @settings(max_examples=50)
@@ -7538,107 +7216,101 @@ def test_formalparameterdeclaration_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=gastm::FormalParameterDeclaration_strategy)
+@given(instance=gastm_FormalParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_gastm::formalparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, gastm::FormalParameterDeclaration)
+def test_gastm_formalparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, gastm_FormalParameterDeclaration)
 
-@given(instance=gastm::FunctionDeclaration_strategy)
+@given(instance=gastm_FunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_gastm::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionDeclaration)
+def test_gastm_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionDeclaration)
 
 @given(instance=Definition_strategy)
 @settings(max_examples=50)
 def test_definition_instantiation(instance):
     assert isinstance(instance, Definition)
 
-@given(instance=gastm::EnumLiteralDefinition_strategy)
+@given(instance=gastm_DataDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::enumliteraldefinition_instantiation(instance):
-    assert isinstance(instance, gastm::EnumLiteralDefinition)
-
-@given(instance=sastm::RDBTableDefinition_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbtabledefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableDefinition)
-
-@given(instance=sastm::RDBCursorDefinition_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbcursordefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBCursorDefinition)
-
-@given(instance=sastm::RDBColumnDefinition_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbcolumndefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBColumnDefinition)
-
-@given(instance=sastm::RDBColumnDefinition_strategy)
-def test_sastm::rdbcolumndefinition_NotNull_type(instance):
-    assert isinstance(instance.NotNull, bool)
+def test_gastm_datadefinition_instantiation(instance):
+    assert isinstance(instance, gastm_DataDefinition)
 
 
-@given(instance=sastm::RDBColumnDefinition_strategy)
-def test_sastm::rdbcolumndefinition_NotNull_setter(instance):
-    original = instance.NotNull
-    instance.NotNull = original
-    assert instance.NotNull == original
 
-@given(instance=sastm::RDBUserDefinition_strategy)
-@settings(max_examples=50)
-def test_sastm::rdbuserdefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBUserDefinition)
-
-@given(instance=gastm::DataDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::datadefinition_instantiation(instance):
-    assert isinstance(instance, gastm::DataDefinition)
-
-@given(instance=gastm::DataDefinition_strategy)
-def test_gastm::datadefinition_isMutable_type(instance):
-    assert isinstance(instance.isMutable, bool)
-
-
-@given(instance=gastm::DataDefinition_strategy)
-def test_gastm::datadefinition_isMutable_setter(instance):
+@given(instance=gastm_DataDefinition_strategy)
+def test_gastm_datadefinition_isMutable_setter(instance):
     original = instance.isMutable
     instance.isMutable = original
     assert instance.isMutable == original
 
-@given(instance=sastm::RDBViewDefinition_strategy)
+@given(instance=sastm_RDBViewDefinition_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbviewdefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBViewDefinition)
+def test_sastm_rdbviewdefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBViewDefinition)
 
-@given(instance=sastm::RDBTableSpaceDefinition_strategy)
+@given(instance=sastm_RDBColumnDefinition_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbtablespacedefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBTableSpaceDefinition)
+def test_sastm_rdbcolumndefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBColumnDefinition)
 
-@given(instance=gastm::SpecificTriggerDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::specifictriggerdefinition_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificTriggerDefinition)
 
-@given(instance=sastm::RDBDatabaseDefinition_strategy)
+
+@given(instance=sastm_RDBColumnDefinition_strategy)
+def test_sastm_rdbcolumndefinition_NotNull_setter(instance):
+    original = instance.NotNull
+    instance.NotNull = original
+    assert instance.NotNull == original
+
+@given(instance=sastm_RDBUserDefinition_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbdatabasedefinition_instantiation(instance):
-    assert isinstance(instance, sastm::RDBDatabaseDefinition)
+def test_sastm_rdbuserdefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBUserDefinition)
+
+@given(instance=sastm_RDBCursorDefinition_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbcursordefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBCursorDefinition)
+
+@given(instance=sastm_RDBTableSpaceDefinition_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbtablespacedefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableSpaceDefinition)
+
+@given(instance=sastm_RDBDatabaseDefinition_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbdatabasedefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBDatabaseDefinition)
+
+@given(instance=sastm_RDBTableDefinition_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbtabledefinition_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTableDefinition)
+
+@given(instance=gastm_EnumLiteralDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_enumliteraldefinition_instantiation(instance):
+    assert isinstance(instance, gastm_EnumLiteralDefinition)
+
+@given(instance=gastm_SpecificTriggerDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_specifictriggerdefinition_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificTriggerDefinition)
 
 @given(instance=TypeReference_strategy)
 @settings(max_examples=50)
 def test_typereference_instantiation(instance):
     assert isinstance(instance, TypeReference)
 
-@given(instance=gastm::NamedTypeReference_strategy)
+@given(instance=gastm_UnnamedTypeReference_strategy)
 @settings(max_examples=50)
-def test_gastm::namedtypereference_instantiation(instance):
-    assert isinstance(instance, gastm::NamedTypeReference)
+def test_gastm_unnamedtypereference_instantiation(instance):
+    assert isinstance(instance, gastm_UnnamedTypeReference)
 
-@given(instance=gastm::UnnamedTypeReference_strategy)
+@given(instance=gastm_NamedTypeReference_strategy)
 @settings(max_examples=50)
-def test_gastm::unnamedtypereference_instantiation(instance):
-    assert isinstance(instance, gastm::UnnamedTypeReference)
+def test_gastm_namedtypereference_instantiation(instance):
+    assert isinstance(instance, gastm_NamedTypeReference)
 
 @given(instance=Name_strategy)
 @settings(max_examples=50)
@@ -7650,105 +7322,69 @@ def test_name_instantiation(instance):
 def test_declarationordefinition_instantiation(instance):
     assert isinstance(instance, DeclarationOrDefinition)
 
-@given(instance=gastm::Declaration_strategy)
+@given(instance=gastm_Declaration_strategy)
 @settings(max_examples=50)
-def test_gastm::declaration_instantiation(instance):
-    assert isinstance(instance, gastm::Declaration)
+def test_gastm_declaration_instantiation(instance):
+    assert isinstance(instance, gastm_Declaration)
 
-@given(instance=gastm::Definition_strategy)
+@given(instance=gastm_Definition_strategy)
 @settings(max_examples=50)
-def test_gastm::definition_instantiation(instance):
-    assert isinstance(instance, gastm::Definition)
+def test_gastm_definition_instantiation(instance):
+    assert isinstance(instance, gastm_Definition)
 
-@given(instance=gastm::DeclarationOrDefinition_strategy)
+@given(instance=gastm_EntryDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::declarationordefinition_instantiation(instance):
-    assert isinstance(instance, gastm::DeclarationOrDefinition)
-
-@given(instance=gastm::DeclarationOrDefinition_strategy)
-def test_gastm::declarationordefinition_isRegister_type(instance):
-    assert isinstance(instance.isRegister, bool)
-
-
-@given(instance=gastm::DeclarationOrDefinition_strategy)
-def test_gastm::declarationordefinition_isRegister_setter(instance):
-    original = instance.isRegister
-    instance.isRegister = original
-    assert instance.isRegister == original
-
-@given(instance=gastm::DeclarationOrDefinition_strategy)
-def test_gastm::declarationordefinition_linkageSpecifier_type(instance):
-    assert isinstance(instance.linkageSpecifier, str)
-
-
-@given(instance=gastm::DeclarationOrDefinition_strategy)
-def test_gastm::declarationordefinition_linkageSpecifier_setter(instance):
-    original = instance.linkageSpecifier
-    instance.linkageSpecifier = original
-    assert instance.linkageSpecifier == original
-
-@given(instance=gastm::EntryDefinition_strategy)
-@settings(max_examples=50)
-def test_gastm::entrydefinition_instantiation(instance):
-    assert isinstance(instance, gastm::EntryDefinition)
+def test_gastm_entrydefinition_instantiation(instance):
+    assert isinstance(instance, gastm_EntryDefinition)
 
 @given(instance=VirtualSpecification_strategy)
 @settings(max_examples=50)
 def test_virtualspecification_instantiation(instance):
     assert isinstance(instance, VirtualSpecification)
 
-@given(instance=gastm::Virtual_strategy)
+@given(instance=gastm_Virtual_strategy)
 @settings(max_examples=50)
-def test_gastm::virtual_instantiation(instance):
-    assert isinstance(instance, gastm::Virtual)
+def test_gastm_virtual_instantiation(instance):
+    assert isinstance(instance, gastm_Virtual)
 
-@given(instance=gastm::NonVirtual_strategy)
+@given(instance=gastm_PureVirtual_strategy)
 @settings(max_examples=50)
-def test_gastm::nonvirtual_instantiation(instance):
-    assert isinstance(instance, gastm::NonVirtual)
+def test_gastm_purevirtual_instantiation(instance):
+    assert isinstance(instance, gastm_PureVirtual)
 
-@given(instance=gastm::PureVirtual_strategy)
+@given(instance=gastm_NonVirtual_strategy)
 @settings(max_examples=50)
-def test_gastm::purevirtual_instantiation(instance):
-    assert isinstance(instance, gastm::PureVirtual)
+def test_gastm_nonvirtual_instantiation(instance):
+    assert isinstance(instance, gastm_NonVirtual)
 
-@given(instance=gastm::FunctionMemberAttributes_strategy)
+@given(instance=gastm_FunctionMemberAttributes_strategy)
 @settings(max_examples=50)
-def test_gastm::functionmemberattributes_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionMemberAttributes)
-
-@given(instance=gastm::FunctionMemberAttributes_strategy)
-def test_gastm::functionmemberattributes_isInline_type(instance):
-    assert isinstance(instance.isInline, bool)
+def test_gastm_functionmemberattributes_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionMemberAttributes)
 
 
-@given(instance=gastm::FunctionMemberAttributes_strategy)
-def test_gastm::functionmemberattributes_isInline_setter(instance):
-    original = instance.isInline
-    instance.isInline = original
-    assert instance.isInline == original
 
-@given(instance=gastm::FunctionMemberAttributes_strategy)
-def test_gastm::functionmemberattributes_isFriend_type(instance):
-    assert isinstance(instance.isFriend, bool)
+@given(instance=gastm_FunctionMemberAttributes_strategy)
+def test_gastm_functionmemberattributes_isThisConst_setter(instance):
+    original = instance.isThisConst
+    instance.isThisConst = original
+    assert instance.isThisConst == original
 
 
-@given(instance=gastm::FunctionMemberAttributes_strategy)
-def test_gastm::functionmemberattributes_isFriend_setter(instance):
+
+@given(instance=gastm_FunctionMemberAttributes_strategy)
+def test_gastm_functionmemberattributes_isFriend_setter(instance):
     original = instance.isFriend
     instance.isFriend = original
     assert instance.isFriend == original
 
-@given(instance=gastm::FunctionMemberAttributes_strategy)
-def test_gastm::functionmemberattributes_isThisConst_type(instance):
-    assert isinstance(instance.isThisConst, bool)
 
 
-@given(instance=gastm::FunctionMemberAttributes_strategy)
-def test_gastm::functionmemberattributes_isThisConst_setter(instance):
-    original = instance.isThisConst
-    instance.isThisConst = original
-    assert instance.isThisConst == original
+@given(instance=gastm_FunctionMemberAttributes_strategy)
+def test_gastm_functionmemberattributes_isInline_setter(instance):
+    original = instance.isInline
+    instance.isInline = original
+    assert instance.isInline == original
 
 @given(instance=FunctionScope_strategy)
 @settings(max_examples=50)
@@ -7760,138 +7396,135 @@ def test_functionscope_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=gastm::JumpStatement_strategy)
+@given(instance=gastm_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::jumpstatement_instantiation(instance):
-    assert isinstance(instance, gastm::JumpStatement)
+def test_gastm_throwstatement_instantiation(instance):
+    assert isinstance(instance, gastm_ThrowStatement)
 
-@given(instance=sastm::RDBConnectStatement_strategy)
+@given(instance=gastm_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbconnectstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBConnectStatement)
+def test_gastm_switchstatement_instantiation(instance):
+    assert isinstance(instance, gastm_SwitchStatement)
 
-@given(instance=gastm::LoopStatement_strategy)
+@given(instance=gastm_LoopStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::loopstatement_instantiation(instance):
-    assert isinstance(instance, gastm::LoopStatement)
+def test_gastm_loopstatement_instantiation(instance):
+    assert isinstance(instance, gastm_LoopStatement)
 
-@given(instance=gastm::DeleteStatement_strategy)
+@given(instance=gastm_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::deletestatement_instantiation(instance):
-    assert isinstance(instance, gastm::DeleteStatement)
+def test_gastm_blockstatement_instantiation(instance):
+    assert isinstance(instance, gastm_BlockStatement)
 
-@given(instance=gastm::LabeledStatement_strategy)
+@given(instance=gastm_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::labeledstatement_instantiation(instance):
-    assert isinstance(instance, gastm::LabeledStatement)
+def test_gastm_returnstatement_instantiation(instance):
+    assert isinstance(instance, gastm_ReturnStatement)
 
-@given(instance=gastm::IfStatement_strategy)
+@given(instance=sastm_RDBConnectStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::ifstatement_instantiation(instance):
-    assert isinstance(instance, gastm::IfStatement)
+def test_sastm_rdbconnectstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBConnectStatement)
 
-@given(instance=gastm::TerminateStatement_strategy)
+@given(instance=gastm_TerminateStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::terminatestatement_instantiation(instance):
-    assert isinstance(instance, gastm::TerminateStatement)
+def test_gastm_terminatestatement_instantiation(instance):
+    assert isinstance(instance, gastm_TerminateStatement)
 
-@given(instance=gastm::ContinueStatement_strategy)
+@given(instance=gastm_SpecificSelectStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::continuestatement_instantiation(instance):
-    assert isinstance(instance, gastm::ContinueStatement)
+def test_gastm_specificselectstatement_instantiation(instance):
+    assert isinstance(instance, gastm_SpecificSelectStatement)
 
-@given(instance=gastm::SwitchStatement_strategy)
+@given(instance=gastm_TryStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::switchstatement_instantiation(instance):
-    assert isinstance(instance, gastm::SwitchStatement)
+def test_gastm_trystatement_instantiation(instance):
+    assert isinstance(instance, gastm_TryStatement)
 
-@given(instance=sastm::RDBCursorStatement_strategy)
+@given(instance=gastm_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbcursorstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBCursorStatement)
+def test_gastm_emptystatement_instantiation(instance):
+    assert isinstance(instance, gastm_EmptyStatement)
 
-@given(instance=gastm::DeclarationOrDefinitionStatement_strategy)
+@given(instance=gastm_DeleteStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::declarationordefinitionstatement_instantiation(instance):
-    assert isinstance(instance, gastm::DeclarationOrDefinitionStatement)
+def test_gastm_deletestatement_instantiation(instance):
+    assert isinstance(instance, gastm_DeleteStatement)
 
-@given(instance=sastm::RDBSelectStatement_strategy)
+@given(instance=gastm_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbselectstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBSelectStatement)
+def test_gastm_breakstatement_instantiation(instance):
+    assert isinstance(instance, gastm_BreakStatement)
 
-@given(instance=gastm::ReturnStatement_strategy)
+@given(instance=gastm_LabeledStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::returnstatement_instantiation(instance):
-    assert isinstance(instance, gastm::ReturnStatement)
+def test_gastm_labeledstatement_instantiation(instance):
+    assert isinstance(instance, gastm_LabeledStatement)
 
-@given(instance=sastm::RDBModifyStatement_strategy)
+@given(instance=gastm_IfStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbmodifystatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBModifyStatement)
+def test_gastm_ifstatement_instantiation(instance):
+    assert isinstance(instance, gastm_IfStatement)
 
-@given(instance=gastm::BlockStatement_strategy)
+@given(instance=gastm_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::blockstatement_instantiation(instance):
-    assert isinstance(instance, gastm::BlockStatement)
+def test_gastm_expressionstatement_instantiation(instance):
+    assert isinstance(instance, gastm_ExpressionStatement)
 
-@given(instance=gastm::TryStatement_strategy)
+@given(instance=gastm_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::trystatement_instantiation(instance):
-    assert isinstance(instance, gastm::TryStatement)
+def test_gastm_continuestatement_instantiation(instance):
+    assert isinstance(instance, gastm_ContinueStatement)
 
-@given(instance=sastm::RDBInsertStatement_strategy)
+@given(instance=sastm_RDBCursorStatement_strategy)
 @settings(max_examples=50)
-def test_sastm::rdbinsertstatement_instantiation(instance):
-    assert isinstance(instance, sastm::RDBInsertStatement)
+def test_sastm_rdbcursorstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBCursorStatement)
 
-@given(instance=gastm::ExpressionStatement_strategy)
+@given(instance=gastm_JumpStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::expressionstatement_instantiation(instance):
-    assert isinstance(instance, gastm::ExpressionStatement)
+def test_gastm_jumpstatement_instantiation(instance):
+    assert isinstance(instance, gastm_JumpStatement)
 
-@given(instance=gastm::ThrowStatement_strategy)
+@given(instance=sastm_RDBInsertStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::throwstatement_instantiation(instance):
-    assert isinstance(instance, gastm::ThrowStatement)
+def test_sastm_rdbinsertstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBInsertStatement)
 
-@given(instance=gastm::SpecificSelectStatement_strategy)
+@given(instance=sastm_RDBSelectStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::specificselectstatement_instantiation(instance):
-    assert isinstance(instance, gastm::SpecificSelectStatement)
+def test_sastm_rdbselectstatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBSelectStatement)
 
-@given(instance=gastm::BreakStatement_strategy)
+@given(instance=gastm_DeclarationOrDefinitionStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::breakstatement_instantiation(instance):
-    assert isinstance(instance, gastm::BreakStatement)
+def test_gastm_declarationordefinitionstatement_instantiation(instance):
+    assert isinstance(instance, gastm_DeclarationOrDefinitionStatement)
 
-@given(instance=gastm::EmptyStatement_strategy)
+@given(instance=sastm_RDBModifyStatement_strategy)
 @settings(max_examples=50)
-def test_gastm::emptystatement_instantiation(instance):
-    assert isinstance(instance, gastm::EmptyStatement)
+def test_sastm_rdbmodifystatement_instantiation(instance):
+    assert isinstance(instance, sastm_RDBModifyStatement)
 
 @given(instance=FormalParameterDefinition_strategy)
 @settings(max_examples=50)
 def test_formalparameterdefinition_instantiation(instance):
     assert isinstance(instance, FormalParameterDefinition)
 
-@given(instance=gastm::FunctionDefinition_strategy)
+@given(instance=gastm_FunctionDefinition_strategy)
 @settings(max_examples=50)
-def test_gastm::functiondefinition_instantiation(instance):
-    assert isinstance(instance, gastm::FunctionDefinition)
+def test_gastm_functiondefinition_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionDefinition)
 
-@given(instance=gastm::VariableDeclaration_strategy)
+@given(instance=gastm_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_gastm::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, gastm::VariableDeclaration)
-
-@given(instance=gastm::VariableDeclaration_strategy)
-def test_gastm::variabledeclaration_isMutable_type(instance):
-    assert isinstance(instance.isMutable, bool)
+def test_gastm_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, gastm_VariableDeclaration)
 
 
-@given(instance=gastm::VariableDeclaration_strategy)
-def test_gastm::variabledeclaration_isMutable_setter(instance):
+
+@given(instance=gastm_VariableDeclaration_strategy)
+def test_gastm_variabledeclaration_isMutable_setter(instance):
     original = instance.isMutable
     instance.isMutable = original
     assert instance.isMutable == original
@@ -7906,15 +7539,10 @@ def test_compilationunit_instantiation(instance):
 def test_gastmsemanticobject_instantiation(instance):
     assert isinstance(instance, GASTMSemanticObject)
 
-@given(instance=gastm::Scope_strategy)
+@given(instance=gastm_Project_strategy)
 @settings(max_examples=50)
-def test_gastm::scope_instantiation(instance):
-    assert isinstance(instance, gastm::Scope)
-
-@given(instance=gastm::Project_strategy)
-@settings(max_examples=50)
-def test_gastm::project_instantiation(instance):
-    assert isinstance(instance, gastm::Project)
+def test_gastm_project_instantiation(instance):
+    assert isinstance(instance, gastm_Project)
 
 @given(instance=SourceFile_strategy)
 @settings(max_examples=50)
@@ -7926,82 +7554,370 @@ def test_sourcefile_instantiation(instance):
 def test_gastmsourceobject_instantiation(instance):
     assert isinstance(instance, GASTMSourceObject)
 
-@given(instance=gastm::SourceLocation_strategy)
+@given(instance=gastm_SourceLocation_strategy)
 @settings(max_examples=50)
-def test_gastm::sourcelocation_instantiation(instance):
-    assert isinstance(instance, gastm::SourceLocation)
-
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_startLine_type(instance):
-    assert isinstance(instance.startLine, int)
+def test_gastm_sourcelocation_instantiation(instance):
+    assert isinstance(instance, gastm_SourceLocation)
 
 
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_startLine_setter(instance):
-    original = instance.startLine
-    instance.startLine = original
-    assert instance.startLine == original
 
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_endLine_type(instance):
-    assert isinstance(instance.endLine, int)
-
-
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_endLine_setter(instance):
-    original = instance.endLine
-    instance.endLine = original
-    assert instance.endLine == original
-
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_startColumn_type(instance):
-    assert isinstance(instance.startColumn, int)
-
-
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_startColumn_setter(instance):
+@given(instance=gastm_SourceLocation_strategy)
+def test_gastm_sourcelocation_startColumn_setter(instance):
     original = instance.startColumn
     instance.startColumn = original
     assert instance.startColumn == original
 
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_endColumn_type(instance):
-    assert isinstance(instance.endColumn, int)
 
 
-@given(instance=gastm::SourceLocation_strategy)
-def test_gastm::sourcelocation_endColumn_setter(instance):
+@given(instance=gastm_SourceLocation_strategy)
+def test_gastm_sourcelocation_endLine_setter(instance):
+    original = instance.endLine
+    instance.endLine = original
+    assert instance.endLine == original
+
+
+
+@given(instance=gastm_SourceLocation_strategy)
+def test_gastm_sourcelocation_startLine_setter(instance):
+    original = instance.startLine
+    instance.startLine = original
+    assert instance.startLine == original
+
+
+
+@given(instance=gastm_SourceLocation_strategy)
+def test_gastm_sourcelocation_endColumn_setter(instance):
     original = instance.endColumn
     instance.endColumn = original
     assert instance.endColumn == original
 
-@given(instance=gastm::SourceFile_strategy)
+@given(instance=gastm_SourceFile_strategy)
 @settings(max_examples=50)
-def test_gastm::sourcefile_instantiation(instance):
-    assert isinstance(instance, gastm::SourceFile)
-
-@given(instance=gastm::SourceFile_strategy)
-def test_gastm::sourcefile_pathName_type(instance):
-    assert isinstance(instance.pathName, str)
+def test_gastm_sourcefile_instantiation(instance):
+    assert isinstance(instance, gastm_SourceFile)
 
 
-@given(instance=gastm::SourceFile_strategy)
-def test_gastm::sourcefile_pathName_setter(instance):
+
+@given(instance=gastm_SourceFile_strategy)
+def test_gastm_sourcefile_pathName_setter(instance):
     original = instance.pathName
     instance.pathName = original
     assert instance.pathName == original
 
-@given(instance=gastm::ActualParameter_strategy)
+@given(instance=gastm_ActualParameter_strategy)
 @settings(max_examples=50)
-def test_gastm::actualparameter_instantiation(instance):
-    assert isinstance(instance, gastm::ActualParameter)
+def test_gastm_actualparameter_instantiation(instance):
+    assert isinstance(instance, gastm_ActualParameter)
 
-@given(instance=gastm::BinaryOperator_strategy)
+@given(instance=gastm_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_gastm::binaryoperator_instantiation(instance):
-    assert isinstance(instance, gastm::BinaryOperator)
+def test_gastm_binaryoperator_instantiation(instance):
+    assert isinstance(instance, gastm_BinaryOperator)
 
-@given(instance=gastm::UnaryOperator_strategy)
+@given(instance=gastm_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_gastm::unaryoperator_instantiation(instance):
-    assert isinstance(instance, gastm::UnaryOperator)
+def test_gastm_unaryoperator_instantiation(instance):
+    assert isinstance(instance, gastm_UnaryOperator)
+
+@given(instance=gastm_AccessKind_strategy)
+@settings(max_examples=50)
+def test_gastm_accesskind_instantiation(instance):
+    assert isinstance(instance, gastm_AccessKind)
+
+@given(instance=gastm_DataType_strategy)
+@settings(max_examples=50)
+def test_gastm_datatype_instantiation(instance):
+    assert isinstance(instance, gastm_DataType)
+
+@given(instance=gastm_StorageSpecification_strategy)
+@settings(max_examples=50)
+def test_gastm_storagespecification_instantiation(instance):
+    assert isinstance(instance, gastm_StorageSpecification)
+
+@given(instance=gastm_OtherSyntaxObject_strategy)
+@settings(max_examples=50)
+def test_gastm_othersyntaxobject_instantiation(instance):
+    assert isinstance(instance, gastm_OtherSyntaxObject)
+
+@given(instance=gastm_GASTMSemanticObject_strategy)
+@settings(max_examples=50)
+def test_gastm_gastmsemanticobject_instantiation(instance):
+    assert isinstance(instance, gastm_GASTMSemanticObject)
+
+@given(instance=gastm_GASTMSourceObject_strategy)
+@settings(max_examples=50)
+def test_gastm_gastmsourceobject_instantiation(instance):
+    assert isinstance(instance, gastm_GASTMSourceObject)
+
+@given(instance=gastm_GASTMObject_strategy)
+@settings(max_examples=50)
+def test_gastm_gastmobject_instantiation(instance):
+    assert isinstance(instance, gastm_GASTMObject)
+
+@given(instance=ProgramScope_strategy)
+@settings(max_examples=50)
+def test_programscope_instantiation(instance):
+    assert isinstance(instance, ProgramScope)
+
+@given(instance=OtherSyntaxObject_strategy)
+@settings(max_examples=50)
+def test_othersyntaxobject_instantiation(instance):
+    assert isinstance(instance, OtherSyntaxObject)
+
+@given(instance=gastm_CatchBlock_strategy)
+@settings(max_examples=50)
+def test_gastm_catchblock_instantiation(instance):
+    assert isinstance(instance, gastm_CatchBlock)
+
+@given(instance=gastm_Name_strategy)
+@settings(max_examples=50)
+def test_gastm_name_instantiation(instance):
+    assert isinstance(instance, gastm_Name)
+
+
+
+@given(instance=gastm_Name_strategy)
+def test_gastm_name_nameString_setter(instance):
+    original = instance.nameString
+    instance.nameString = original
+    assert instance.nameString == original
+
+@given(instance=sastm_RDBConstraint_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbconstraint_instantiation(instance):
+    assert isinstance(instance, sastm_RDBConstraint)
+
+@given(instance=gastm_SwitchCase_strategy)
+@settings(max_examples=50)
+def test_gastm_switchcase_instantiation(instance):
+    assert isinstance(instance, gastm_SwitchCase)
+
+@given(instance=gastm_FunctionMemberAttribute_strategy)
+@settings(max_examples=50)
+def test_gastm_functionmemberattribute_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionMemberAttribute)
+
+@given(instance=sastm_RDBTrigger_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbtrigger_instantiation(instance):
+    assert isinstance(instance, sastm_RDBTrigger)
+
+@given(instance=sastm_RDBIndexColumn_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbindexcolumn_instantiation(instance):
+    assert isinstance(instance, sastm_RDBIndexColumn)
+
+
+
+@given(instance=sastm_RDBIndexColumn_strategy)
+def test_sastm_rdbindexcolumn_AscendingOrDescending_setter(instance):
+    original = instance.AscendingOrDescending
+    instance.AscendingOrDescending = original
+    assert instance.AscendingOrDescending == original
+
+@given(instance=gastm_DerivesFrom_strategy)
+@settings(max_examples=50)
+def test_gastm_derivesfrom_instantiation(instance):
+    assert isinstance(instance, gastm_DerivesFrom)
+
+
+
+@given(instance=gastm_DerivesFrom_strategy)
+def test_gastm_derivesfrom_isVirtual_setter(instance):
+    original = instance.isVirtual
+    instance.isVirtual = original
+    assert instance.isVirtual == original
+
+@given(instance=gastm_Dimension_strategy)
+@settings(max_examples=50)
+def test_gastm_dimension_instantiation(instance):
+    assert isinstance(instance, gastm_Dimension)
+
+@given(instance=sastm_RDBIndex_strategy)
+@settings(max_examples=50)
+def test_sastm_rdbindex_instantiation(instance):
+    assert isinstance(instance, sastm_RDBIndex)
+
+
+
+@given(instance=sastm_RDBIndex_strategy)
+def test_sastm_rdbindex_NotNull_setter(instance):
+    original = instance.NotNull
+    instance.NotNull = original
+    assert instance.NotNull == original
+
+
+
+@given(instance=sastm_RDBIndex_strategy)
+def test_sastm_rdbindex_IsUnique_setter(instance):
+    original = instance.IsUnique
+    instance.IsUnique = original
+    assert instance.IsUnique == original
+
+@given(instance=gastm_VirtualSpecification_strategy)
+@settings(max_examples=50)
+def test_gastm_virtualspecification_instantiation(instance):
+    assert isinstance(instance, gastm_VirtualSpecification)
+
+@given(instance=gastm_CompilationUnit_strategy)
+@settings(max_examples=50)
+def test_gastm_compilationunit_instantiation(instance):
+    assert isinstance(instance, gastm_CompilationUnit)
+
+
+
+@given(instance=gastm_CompilationUnit_strategy)
+def test_gastm_compilationunit_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+@given(instance=AnnotationExpression_strategy)
+@settings(max_examples=50)
+def test_annotationexpression_instantiation(instance):
+    assert isinstance(instance, AnnotationExpression)
+
+@given(instance=PreprocessorElement_strategy)
+@settings(max_examples=50)
+def test_preprocessorelement_instantiation(instance):
+    assert isinstance(instance, PreprocessorElement)
+
+@given(instance=gastm_IncludeUnit_strategy)
+@settings(max_examples=50)
+def test_gastm_includeunit_instantiation(instance):
+    assert isinstance(instance, gastm_IncludeUnit)
+
+@given(instance=gastm_MacroCall_strategy)
+@settings(max_examples=50)
+def test_gastm_macrocall_instantiation(instance):
+    assert isinstance(instance, gastm_MacroCall)
+
+@given(instance=gastm_MacroDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_macrodefinition_instantiation(instance):
+    assert isinstance(instance, gastm_MacroDefinition)
+
+
+
+@given(instance=gastm_MacroDefinition_strategy)
+def test_gastm_macrodefinition_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+
+
+@given(instance=gastm_MacroDefinition_strategy)
+def test_gastm_macrodefinition_macroName_setter(instance):
+    original = instance.macroName
+    instance.macroName = original
+    assert instance.macroName == original
+
+@given(instance=gastm_Comment_strategy)
+@settings(max_examples=50)
+def test_gastm_comment_instantiation(instance):
+    assert isinstance(instance, gastm_Comment)
+
+
+
+@given(instance=gastm_Comment_strategy)
+def test_gastm_comment_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=SourceLocation_strategy)
+@settings(max_examples=50)
+def test_sourcelocation_instantiation(instance):
+    assert isinstance(instance, SourceLocation)
+
+@given(instance=GASTMObject_strategy)
+@settings(max_examples=50)
+def test_gastmobject_instantiation(instance):
+    assert isinstance(instance, GASTMObject)
+
+@given(instance=gastm_GASTMSyntaxObject_strategy)
+@settings(max_examples=50)
+def test_gastm_gastmsyntaxobject_instantiation(instance):
+    assert isinstance(instance, gastm_GASTMSyntaxObject)
+
+@given(instance=Scope_strategy)
+@settings(max_examples=50)
+def test_scope_instantiation(instance):
+    assert isinstance(instance, Scope)
+
+@given(instance=gastm_FunctionScope_strategy)
+@settings(max_examples=50)
+def test_gastm_functionscope_instantiation(instance):
+    assert isinstance(instance, gastm_FunctionScope)
+
+@given(instance=gastm_ProgramScope_strategy)
+@settings(max_examples=50)
+def test_gastm_programscope_instantiation(instance):
+    assert isinstance(instance, gastm_ProgramScope)
+
+@given(instance=gastm_AggregateScope_strategy)
+@settings(max_examples=50)
+def test_gastm_aggregatescope_instantiation(instance):
+    assert isinstance(instance, gastm_AggregateScope)
+
+@given(instance=gastm_GlobalScope_strategy)
+@settings(max_examples=50)
+def test_gastm_globalscope_instantiation(instance):
+    assert isinstance(instance, gastm_GlobalScope)
+
+@given(instance=gastm_BlockScope_strategy)
+@settings(max_examples=50)
+def test_gastm_blockscope_instantiation(instance):
+    assert isinstance(instance, gastm_BlockScope)
+
+@given(instance=DefinitionObject_strategy)
+@settings(max_examples=50)
+def test_definitionobject_instantiation(instance):
+    assert isinstance(instance, DefinitionObject)
+
+@given(instance=gastm_NameSpaceDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_namespacedefinition_instantiation(instance):
+    assert isinstance(instance, gastm_NameSpaceDefinition)
+
+@given(instance=gastm_LabelDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_labeldefinition_instantiation(instance):
+    assert isinstance(instance, gastm_LabelDefinition)
+
+@given(instance=gastm_TypeDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_typedefinition_instantiation(instance):
+    assert isinstance(instance, gastm_TypeDefinition)
+
+@given(instance=gastm_DeclarationOrDefinition_strategy)
+@settings(max_examples=50)
+def test_gastm_declarationordefinition_instantiation(instance):
+    assert isinstance(instance, gastm_DeclarationOrDefinition)
+
+
+
+@given(instance=gastm_DeclarationOrDefinition_strategy)
+def test_gastm_declarationordefinition_linkageSpecifier_setter(instance):
+    original = instance.linkageSpecifier
+    instance.linkageSpecifier = original
+    assert instance.linkageSpecifier == original
+
+
+
+@given(instance=gastm_DeclarationOrDefinition_strategy)
+def test_gastm_declarationordefinition_isRegister_setter(instance):
+    original = instance.isRegister
+    instance.isRegister = original
+    assert instance.isRegister == original
+
+@given(instance=gastm_Scope_strategy)
+@settings(max_examples=50)
+def test_gastm_scope_instantiation(instance):
+    assert isinstance(instance, gastm_Scope)
+
+@given(instance=GlobalScope_strategy)
+@settings(max_examples=50)
+def test_globalscope_instantiation(instance):
+    assert isinstance(instance, GlobalScope)

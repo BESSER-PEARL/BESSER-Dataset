@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    relational::obeo::ModelElement,
+from python_code import (
+    relational_obeo_ModelElement,
     ModelElement,
-    relational::obeo::Column,
-    relational::obeo::Table,
-    relational::obeo::ForeignKey,
-    relational::obeo::Schema,
-    relational::obeo::Database,
+    relational_obeo_Table,
+    relational_obeo_Column,
+    relational_obeo_Schema,
+    relational_obeo_ForeignKey,
+    relational_obeo_Database,
     Type,
 )
 
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_relational::obeo::modelelement_is_not_abstract():
-    assert not inspect.isabstract(relational::obeo::ModelElement)
+def test_relational_obeo_modelelement_is_not_abstract():
+    assert not inspect.isabstract(relational_obeo_ModelElement)
 
 
-def test_relational::obeo::modelelement_constructor_exists():
-    assert callable(relational::obeo::ModelElement.__init__)
+def test_relational_obeo_modelelement_constructor_exists():
+    assert callable(relational_obeo_ModelElement.__init__)
 
 
-def test_relational::obeo::modelelement_constructor_args():
-    sig = inspect.signature(relational::obeo::ModelElement.__init__)
+def test_relational_obeo_modelelement_constructor_args():
+    sig = inspect.signature(relational_obeo_ModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_relational::obeo::modelelement_has_comment():
-    assert hasattr(relational::obeo::ModelElement, "comment")
+def test_relational_obeo_modelelement_has_comment():
+    assert hasattr(relational_obeo_ModelElement, "comment")
     descriptor = None
-    for klass in relational::obeo::ModelElement.__mro__:
+    for klass in relational_obeo_ModelElement.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -60,53 +60,101 @@ def test_modelelement_constructor_args():
 
 
 
-def test_relational::obeo::column_is_not_abstract():
-    assert not inspect.isabstract(relational::obeo::Column)
+def test_relational_obeo_table_is_not_abstract():
+    assert not inspect.isabstract(relational_obeo_Table)
 
 
-def test_relational::obeo::column_constructor_exists():
-    assert callable(relational::obeo::Column.__init__)
+def test_relational_obeo_table_constructor_exists():
+    assert callable(relational_obeo_Table.__init__)
 
 
-def test_relational::obeo::column_constructor_args():
-    sig = inspect.signature(relational::obeo::Column.__init__)
+def test_relational_obeo_table_constructor_args():
+    sig = inspect.signature(relational_obeo_Table.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "isPrimaryKey" in params, "Missing parameter 'isPrimaryKey'"
-    assert "isUnique" in params, "Missing parameter 'isUnique'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::obeo::column_has_type():
-    assert hasattr(relational::obeo::Column, "type")
+def test_relational_obeo_table_has_name():
+    assert hasattr(relational_obeo_Table, "name")
     descriptor = None
-    for klass in relational::obeo::Column.__mro__:
+    for klass in relational_obeo_Table.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_relational_obeo_column_is_not_abstract():
+    assert not inspect.isabstract(relational_obeo_Column)
+
+
+def test_relational_obeo_column_constructor_exists():
+    assert callable(relational_obeo_Column.__init__)
+
+
+def test_relational_obeo_column_constructor_args():
+    sig = inspect.signature(relational_obeo_Column.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isUnique" in params, "Missing parameter 'isUnique'"
+    assert "isPrimaryKey" in params, "Missing parameter 'isPrimaryKey'"
+
+def test_relational_obeo_column_has_type():
+    assert hasattr(relational_obeo_Column, "type")
+    descriptor = None
+    for klass in relational_obeo_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_relational::obeo::column_has_isPrimaryKey():
-    assert hasattr(relational::obeo::Column, "isPrimaryKey")
+def test_relational_obeo_column_has_name():
+    assert hasattr(relational_obeo_Column, "name")
     descriptor = None
-    for klass in relational::obeo::Column.__mro__:
-        if "isPrimaryKey" in klass.__dict__:
-            descriptor = klass.__dict__["isPrimaryKey"]
+    for klass in relational_obeo_Column.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_relational::obeo::column_has_isUnique():
-    assert hasattr(relational::obeo::Column, "isUnique")
+def test_relational_obeo_column_has_isUnique():
+    assert hasattr(relational_obeo_Column, "isUnique")
     descriptor = None
-    for klass in relational::obeo::Column.__mro__:
+    for klass in relational_obeo_Column.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
     assert isinstance(descriptor, property)
 
-def test_relational::obeo::column_has_name():
-    assert hasattr(relational::obeo::Column, "name")
+def test_relational_obeo_column_has_isPrimaryKey():
+    assert hasattr(relational_obeo_Column, "isPrimaryKey")
     descriptor = None
-    for klass in relational::obeo::Column.__mro__:
+    for klass in relational_obeo_Column.__mro__:
+        if "isPrimaryKey" in klass.__dict__:
+            descriptor = klass.__dict__["isPrimaryKey"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_relational_obeo_schema_is_not_abstract():
+    assert not inspect.isabstract(relational_obeo_Schema)
+
+
+def test_relational_obeo_schema_constructor_exists():
+    assert callable(relational_obeo_Schema.__init__)
+
+
+def test_relational_obeo_schema_constructor_args():
+    sig = inspect.signature(relational_obeo_Schema.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_relational_obeo_schema_has_name():
+    assert hasattr(relational_obeo_Schema, "name")
+    descriptor = None
+    for klass in relational_obeo_Schema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,23 +162,23 @@ def test_relational::obeo::column_has_name():
 
 
 
-def test_relational::obeo::table_is_not_abstract():
-    assert not inspect.isabstract(relational::obeo::Table)
+def test_relational_obeo_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(relational_obeo_ForeignKey)
 
 
-def test_relational::obeo::table_constructor_exists():
-    assert callable(relational::obeo::Table.__init__)
+def test_relational_obeo_foreignkey_constructor_exists():
+    assert callable(relational_obeo_ForeignKey.__init__)
 
 
-def test_relational::obeo::table_constructor_args():
-    sig = inspect.signature(relational::obeo::Table.__init__)
+def test_relational_obeo_foreignkey_constructor_args():
+    sig = inspect.signature(relational_obeo_ForeignKey.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::obeo::table_has_name():
-    assert hasattr(relational::obeo::Table, "name")
+def test_relational_obeo_foreignkey_has_name():
+    assert hasattr(relational_obeo_ForeignKey, "name")
     descriptor = None
-    for klass in relational::obeo::Table.__mro__:
+    for klass in relational_obeo_ForeignKey.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -138,83 +186,35 @@ def test_relational::obeo::table_has_name():
 
 
 
-def test_relational::obeo::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(relational::obeo::ForeignKey)
+def test_relational_obeo_database_is_not_abstract():
+    assert not inspect.isabstract(relational_obeo_Database)
 
 
-def test_relational::obeo::foreignkey_constructor_exists():
-    assert callable(relational::obeo::ForeignKey.__init__)
+def test_relational_obeo_database_constructor_exists():
+    assert callable(relational_obeo_Database.__init__)
 
 
-def test_relational::obeo::foreignkey_constructor_args():
-    sig = inspect.signature(relational::obeo::ForeignKey.__init__)
+def test_relational_obeo_database_constructor_args():
+    sig = inspect.signature(relational_obeo_Database.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_relational::obeo::foreignkey_has_name():
-    assert hasattr(relational::obeo::ForeignKey, "name")
-    descriptor = None
-    for klass in relational::obeo::ForeignKey.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_relational::obeo::schema_is_not_abstract():
-    assert not inspect.isabstract(relational::obeo::Schema)
-
-
-def test_relational::obeo::schema_constructor_exists():
-    assert callable(relational::obeo::Schema.__init__)
-
-
-def test_relational::obeo::schema_constructor_args():
-    sig = inspect.signature(relational::obeo::Schema.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_relational::obeo::schema_has_name():
-    assert hasattr(relational::obeo::Schema, "name")
-    descriptor = None
-    for klass in relational::obeo::Schema.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_relational::obeo::database_is_not_abstract():
-    assert not inspect.isabstract(relational::obeo::Database)
-
-
-def test_relational::obeo::database_constructor_exists():
-    assert callable(relational::obeo::Database.__init__)
-
-
-def test_relational::obeo::database_constructor_args():
-    sig = inspect.signature(relational::obeo::Database.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "url" in params, "Missing parameter 'url'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_relational::obeo::database_has_name():
-    assert hasattr(relational::obeo::Database, "name")
+def test_relational_obeo_database_has_url():
+    assert hasattr(relational_obeo_Database, "url")
     descriptor = None
-    for klass in relational::obeo::Database.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_relational::obeo::database_has_url():
-    assert hasattr(relational::obeo::Database, "url")
-    descriptor = None
-    for klass in relational::obeo::Database.__mro__:
+    for klass in relational_obeo_Database.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_relational_obeo_database_has_name():
+    assert hasattr(relational_obeo_Database, "name")
+    descriptor = None
+    for klass in relational_obeo_Database.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -226,12 +226,12 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
-        "TIME",
+        "CHAR",
         "FLOAT",
         "DATE",
         "NUMERIC",
         "VARCHAR",
-        "CHAR",
+        "TIME",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -249,60 +249,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-relational::obeo::ModelElement_strategy = st.builds(
-    relational::obeo::ModelElement,
+relational_obeo_ModelElement_strategy = st.builds(
+    relational_obeo_ModelElement,
     comment=
         safe_text
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-relational::obeo::Column_strategy = st.builds(
-    relational::obeo::Column,
+relational_obeo_Table_strategy = st.builds(
+    relational_obeo_Table,
+    name=
+        safe_text
+)
+relational_obeo_Column_strategy = st.builds(
+    relational_obeo_Column,
     type=
         safe_text,
-    isPrimaryKey=
-        st.booleans(),
-    isUnique=
-        st.booleans(),
-    name=
-        safe_text
-)
-relational::obeo::Table_strategy = st.builds(
-    relational::obeo::Table,
-    name=
-        safe_text
-)
-relational::obeo::ForeignKey_strategy = st.builds(
-    relational::obeo::ForeignKey,
-    name=
-        safe_text
-)
-relational::obeo::Schema_strategy = st.builds(
-    relational::obeo::Schema,
-    name=
-        safe_text
-)
-relational::obeo::Database_strategy = st.builds(
-    relational::obeo::Database,
     name=
         safe_text,
+    isUnique=
+        st.booleans(),
+    isPrimaryKey=
+        st.booleans()
+)
+relational_obeo_Schema_strategy = st.builds(
+    relational_obeo_Schema,
+    name=
+        safe_text
+)
+relational_obeo_ForeignKey_strategy = st.builds(
+    relational_obeo_ForeignKey,
+    name=
+        safe_text
+)
+relational_obeo_Database_strategy = st.builds(
+    relational_obeo_Database,
     url=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=relational::obeo::ModelElement_strategy)
+@given(instance=relational_obeo_ModelElement_strategy)
 @settings(max_examples=50)
-def test_relational::obeo::modelelement_instantiation(instance):
-    assert isinstance(instance, relational::obeo::ModelElement)
-
-@given(instance=relational::obeo::ModelElement_strategy)
-def test_relational::obeo::modelelement_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_relational_obeo_modelelement_instantiation(instance):
+    assert isinstance(instance, relational_obeo_ModelElement)
 
 
-@given(instance=relational::obeo::ModelElement_strategy)
-def test_relational::obeo::modelelement_comment_setter(instance):
+
+@given(instance=relational_obeo_ModelElement_strategy)
+def test_relational_obeo_modelelement_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
@@ -312,126 +309,99 @@ def test_relational::obeo::modelelement_comment_setter(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=relational::obeo::Column_strategy)
+@given(instance=relational_obeo_Table_strategy)
 @settings(max_examples=50)
-def test_relational::obeo::column_instantiation(instance):
-    assert isinstance(instance, relational::obeo::Column)
-
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_relational_obeo_table_instantiation(instance):
+    assert isinstance(instance, relational_obeo_Table)
 
 
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_type_setter(instance):
+
+@given(instance=relational_obeo_Table_strategy)
+def test_relational_obeo_table_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=relational_obeo_Column_strategy)
+@settings(max_examples=50)
+def test_relational_obeo_column_instantiation(instance):
+    assert isinstance(instance, relational_obeo_Column)
+
+
+
+@given(instance=relational_obeo_Column_strategy)
+def test_relational_obeo_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_isPrimaryKey_type(instance):
-    assert isinstance(instance.isPrimaryKey, bool)
 
 
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_isPrimaryKey_setter(instance):
-    original = instance.isPrimaryKey
-    instance.isPrimaryKey = original
-    assert instance.isPrimaryKey == original
-
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_isUnique_type(instance):
-    assert isinstance(instance.isUnique, bool)
+@given(instance=relational_obeo_Column_strategy)
+def test_relational_obeo_column_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_isUnique_setter(instance):
+
+@given(instance=relational_obeo_Column_strategy)
+def test_relational_obeo_column_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
 
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=relational::obeo::Column_strategy)
-def test_relational::obeo::column_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=relational_obeo_Column_strategy)
+def test_relational_obeo_column_isPrimaryKey_setter(instance):
+    original = instance.isPrimaryKey
+    instance.isPrimaryKey = original
+    assert instance.isPrimaryKey == original
 
-@given(instance=relational::obeo::Table_strategy)
+@given(instance=relational_obeo_Schema_strategy)
 @settings(max_examples=50)
-def test_relational::obeo::table_instantiation(instance):
-    assert isinstance(instance, relational::obeo::Table)
-
-@given(instance=relational::obeo::Table_strategy)
-def test_relational::obeo::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_obeo_schema_instantiation(instance):
+    assert isinstance(instance, relational_obeo_Schema)
 
 
-@given(instance=relational::obeo::Table_strategy)
-def test_relational::obeo::table_name_setter(instance):
+
+@given(instance=relational_obeo_Schema_strategy)
+def test_relational_obeo_schema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=relational::obeo::ForeignKey_strategy)
+@given(instance=relational_obeo_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_relational::obeo::foreignkey_instantiation(instance):
-    assert isinstance(instance, relational::obeo::ForeignKey)
-
-@given(instance=relational::obeo::ForeignKey_strategy)
-def test_relational::obeo::foreignkey_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_obeo_foreignkey_instantiation(instance):
+    assert isinstance(instance, relational_obeo_ForeignKey)
 
 
-@given(instance=relational::obeo::ForeignKey_strategy)
-def test_relational::obeo::foreignkey_name_setter(instance):
+
+@given(instance=relational_obeo_ForeignKey_strategy)
+def test_relational_obeo_foreignkey_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=relational::obeo::Schema_strategy)
+@given(instance=relational_obeo_Database_strategy)
 @settings(max_examples=50)
-def test_relational::obeo::schema_instantiation(instance):
-    assert isinstance(instance, relational::obeo::Schema)
-
-@given(instance=relational::obeo::Schema_strategy)
-def test_relational::obeo::schema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relational_obeo_database_instantiation(instance):
+    assert isinstance(instance, relational_obeo_Database)
 
 
-@given(instance=relational::obeo::Schema_strategy)
-def test_relational::obeo::schema_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=relational::obeo::Database_strategy)
-@settings(max_examples=50)
-def test_relational::obeo::database_instantiation(instance):
-    assert isinstance(instance, relational::obeo::Database)
-
-@given(instance=relational::obeo::Database_strategy)
-def test_relational::obeo::database_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=relational::obeo::Database_strategy)
-def test_relational::obeo::database_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=relational::obeo::Database_strategy)
-def test_relational::obeo::database_url_type(instance):
-    assert isinstance(instance.url, str)
-
-
-@given(instance=relational::obeo::Database_strategy)
-def test_relational::obeo::database_url_setter(instance):
+@given(instance=relational_obeo_Database_strategy)
+def test_relational_obeo_database_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
+
+
+
+@given(instance=relational_obeo_Database_strategy)
+def test_relational_obeo_database_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

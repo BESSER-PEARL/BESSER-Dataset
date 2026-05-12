@@ -3,57 +3,57 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TrgSect1,
     TrgTitledElement,
-    jointPackage::TrgArticle,
-    jointPackage::TrgTitledElement,
+    jointPackage_TrgArticle,
+    jointPackage_TrgTitledElement,
     TrgArticle,
-    jointPackage::TrgBook,
+    jointPackage_TrgBook,
     TrgBook,
-    jointPackage::TrgDocBook,
-    jointPackage::TrgPara,
+    jointPackage_TrgDocBook,
+    jointPackage_TrgPara,
     TrgSect2,
     TrgSection,
-    jointPackage::TrgSect2,
-    jointPackage::TrgSect1,
+    jointPackage_TrgSect2,
+    jointPackage_TrgSect1,
     TrgPara,
-    jointPackage::TrgSection,
+    jointPackage_TrgSection,
     SrcBookTitledEntry,
     SrcProceedings,
     SrcAuthor,
-    jointPackage::SrcBibTeXEntry,
-    jointPackage::SrcAuthor,
+    jointPackage_SrcBibTeXEntry,
+    jointPackage_SrcAuthor,
     SrcThesisEntry,
-    jointPackage::SrcMasterThesis,
-    jointPackage::SrcPhDThesis,
+    jointPackage_SrcMasterThesis,
+    jointPackage_SrcPhDThesis,
     SrcBook,
-    jointPackage::SrcInBook,
-    jointPackage::SrcInCollection,
+    jointPackage_SrcInBook,
+    jointPackage_SrcInCollection,
     SrcTitledEntry,
-    jointPackage::SrcManual,
+    jointPackage_SrcManual,
     SrcDatedEntry,
-    jointPackage::SrcProceedings,
-    jointPackage::SrcBooklet,
+    jointPackage_SrcBooklet,
+    jointPackage_SrcProceedings,
     SrcAuthoredEntry,
-    jointPackage::SrcTechReport,
-    jointPackage::SrcBook,
-    jointPackage::SrcInProceedings,
-    jointPackage::SrcUnpublished,
-    jointPackage::SrcThesisEntry,
-    jointPackage::SrcArticle,
+    jointPackage_SrcThesisEntry,
+    jointPackage_SrcInProceedings,
+    jointPackage_SrcUnpublished,
+    jointPackage_SrcBook,
+    jointPackage_SrcTechReport,
+    jointPackage_SrcArticle,
     SrcBibTeXEntry,
-    jointPackage::SrcTitledEntry,
-    jointPackage::SrcAuthoredEntry,
-    jointPackage::SrcBookTitledEntry,
-    jointPackage::SrcMisc,
-    jointPackage::SrcDatedEntry,
-    jointPackage::SrcBibTeXFile,
+    jointPackage_SrcMisc,
+    jointPackage_SrcDatedEntry,
+    jointPackage_SrcTitledEntry,
+    jointPackage_SrcBookTitledEntry,
+    jointPackage_SrcAuthoredEntry,
+    jointPackage_SrcBibTeXFile,
     TrgDocBook,
     SrcMasterThesis,
-    jointPackage::JointMM,
+    jointPackage_JointMM,
 )
 
 # =============================================================================
@@ -90,37 +90,37 @@ def test_trgtitledelement_constructor_args():
 
 
 
-def test_jointpackage::trgarticle_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgArticle)
+def test_jointpackage_trgarticle_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgArticle)
 
 
-def test_jointpackage::trgarticle_constructor_exists():
-    assert callable(jointPackage::TrgArticle.__init__)
+def test_jointpackage_trgarticle_constructor_exists():
+    assert callable(jointPackage_TrgArticle.__init__)
 
 
-def test_jointpackage::trgarticle_constructor_args():
-    sig = inspect.signature(jointPackage::TrgArticle.__init__)
+def test_jointpackage_trgarticle_constructor_args():
+    sig = inspect.signature(jointPackage_TrgArticle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::trgtitledelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgTitledElement)
+def test_jointpackage_trgtitledelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgTitledElement)
 
 
-def test_jointpackage::trgtitledelement_constructor_exists():
-    assert callable(jointPackage::TrgTitledElement.__init__)
+def test_jointpackage_trgtitledelement_constructor_exists():
+    assert callable(jointPackage_TrgTitledElement.__init__)
 
 
-def test_jointpackage::trgtitledelement_constructor_args():
-    sig = inspect.signature(jointPackage::TrgTitledElement.__init__)
+def test_jointpackage_trgtitledelement_constructor_args():
+    sig = inspect.signature(jointPackage_TrgTitledElement.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_jointpackage::trgtitledelement_has_title():
-    assert hasattr(jointPackage::TrgTitledElement, "title")
+def test_jointpackage_trgtitledelement_has_title():
+    assert hasattr(jointPackage_TrgTitledElement, "title")
     descriptor = None
-    for klass in jointPackage::TrgTitledElement.__mro__:
+    for klass in jointPackage_TrgTitledElement.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -142,16 +142,16 @@ def test_trgarticle_constructor_args():
 
 
 
-def test_jointpackage::trgbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgBook)
+def test_jointpackage_trgbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgBook)
 
 
-def test_jointpackage::trgbook_constructor_exists():
-    assert callable(jointPackage::TrgBook.__init__)
+def test_jointpackage_trgbook_constructor_exists():
+    assert callable(jointPackage_TrgBook.__init__)
 
 
-def test_jointpackage::trgbook_constructor_args():
-    sig = inspect.signature(jointPackage::TrgBook.__init__)
+def test_jointpackage_trgbook_constructor_args():
+    sig = inspect.signature(jointPackage_TrgBook.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -170,37 +170,37 @@ def test_trgbook_constructor_args():
 
 
 
-def test_jointpackage::trgdocbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgDocBook)
+def test_jointpackage_trgdocbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgDocBook)
 
 
-def test_jointpackage::trgdocbook_constructor_exists():
-    assert callable(jointPackage::TrgDocBook.__init__)
+def test_jointpackage_trgdocbook_constructor_exists():
+    assert callable(jointPackage_TrgDocBook.__init__)
 
 
-def test_jointpackage::trgdocbook_constructor_args():
-    sig = inspect.signature(jointPackage::TrgDocBook.__init__)
+def test_jointpackage_trgdocbook_constructor_args():
+    sig = inspect.signature(jointPackage_TrgDocBook.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::trgpara_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgPara)
+def test_jointpackage_trgpara_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgPara)
 
 
-def test_jointpackage::trgpara_constructor_exists():
-    assert callable(jointPackage::TrgPara.__init__)
+def test_jointpackage_trgpara_constructor_exists():
+    assert callable(jointPackage_TrgPara.__init__)
 
 
-def test_jointpackage::trgpara_constructor_args():
-    sig = inspect.signature(jointPackage::TrgPara.__init__)
+def test_jointpackage_trgpara_constructor_args():
+    sig = inspect.signature(jointPackage_TrgPara.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_jointpackage::trgpara_has_content():
-    assert hasattr(jointPackage::TrgPara, "content")
+def test_jointpackage_trgpara_has_content():
+    assert hasattr(jointPackage_TrgPara, "content")
     descriptor = None
-    for klass in jointPackage::TrgPara.__mro__:
+    for klass in jointPackage_TrgPara.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -236,30 +236,30 @@ def test_trgsection_constructor_args():
 
 
 
-def test_jointpackage::trgsect2_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgSect2)
+def test_jointpackage_trgsect2_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgSect2)
 
 
-def test_jointpackage::trgsect2_constructor_exists():
-    assert callable(jointPackage::TrgSect2.__init__)
+def test_jointpackage_trgsect2_constructor_exists():
+    assert callable(jointPackage_TrgSect2.__init__)
 
 
-def test_jointpackage::trgsect2_constructor_args():
-    sig = inspect.signature(jointPackage::TrgSect2.__init__)
+def test_jointpackage_trgsect2_constructor_args():
+    sig = inspect.signature(jointPackage_TrgSect2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::trgsect1_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgSect1)
+def test_jointpackage_trgsect1_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgSect1)
 
 
-def test_jointpackage::trgsect1_constructor_exists():
-    assert callable(jointPackage::TrgSect1.__init__)
+def test_jointpackage_trgsect1_constructor_exists():
+    assert callable(jointPackage_TrgSect1.__init__)
 
 
-def test_jointpackage::trgsect1_constructor_args():
-    sig = inspect.signature(jointPackage::TrgSect1.__init__)
+def test_jointpackage_trgsect1_constructor_args():
+    sig = inspect.signature(jointPackage_TrgSect1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -278,16 +278,16 @@ def test_trgpara_constructor_args():
 
 
 
-def test_jointpackage::trgsection_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::TrgSection)
+def test_jointpackage_trgsection_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_TrgSection)
 
 
-def test_jointpackage::trgsection_constructor_exists():
-    assert callable(jointPackage::TrgSection.__init__)
+def test_jointpackage_trgsection_constructor_exists():
+    assert callable(jointPackage_TrgSection.__init__)
 
 
-def test_jointpackage::trgsection_constructor_args():
-    sig = inspect.signature(jointPackage::TrgSection.__init__)
+def test_jointpackage_trgsection_constructor_args():
+    sig = inspect.signature(jointPackage_TrgSection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -334,23 +334,23 @@ def test_srcauthor_constructor_args():
 
 
 
-def test_jointpackage::srcbibtexentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcBibTeXEntry)
+def test_jointpackage_srcbibtexentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcBibTeXEntry)
 
 
-def test_jointpackage::srcbibtexentry_constructor_exists():
-    assert callable(jointPackage::SrcBibTeXEntry.__init__)
+def test_jointpackage_srcbibtexentry_constructor_exists():
+    assert callable(jointPackage_SrcBibTeXEntry.__init__)
 
 
-def test_jointpackage::srcbibtexentry_constructor_args():
-    sig = inspect.signature(jointPackage::SrcBibTeXEntry.__init__)
+def test_jointpackage_srcbibtexentry_constructor_args():
+    sig = inspect.signature(jointPackage_SrcBibTeXEntry.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_jointpackage::srcbibtexentry_has_id():
-    assert hasattr(jointPackage::SrcBibTeXEntry, "id")
+def test_jointpackage_srcbibtexentry_has_id():
+    assert hasattr(jointPackage_SrcBibTeXEntry, "id")
     descriptor = None
-    for klass in jointPackage::SrcBibTeXEntry.__mro__:
+    for klass in jointPackage_SrcBibTeXEntry.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -358,23 +358,23 @@ def test_jointpackage::srcbibtexentry_has_id():
 
 
 
-def test_jointpackage::srcauthor_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcAuthor)
+def test_jointpackage_srcauthor_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcAuthor)
 
 
-def test_jointpackage::srcauthor_constructor_exists():
-    assert callable(jointPackage::SrcAuthor.__init__)
+def test_jointpackage_srcauthor_constructor_exists():
+    assert callable(jointPackage_SrcAuthor.__init__)
 
 
-def test_jointpackage::srcauthor_constructor_args():
-    sig = inspect.signature(jointPackage::SrcAuthor.__init__)
+def test_jointpackage_srcauthor_constructor_args():
+    sig = inspect.signature(jointPackage_SrcAuthor.__init__)
     params = list(sig.parameters.keys())
     assert "author" in params, "Missing parameter 'author'"
 
-def test_jointpackage::srcauthor_has_author():
-    assert hasattr(jointPackage::SrcAuthor, "author")
+def test_jointpackage_srcauthor_has_author():
+    assert hasattr(jointPackage_SrcAuthor, "author")
     descriptor = None
-    for klass in jointPackage::SrcAuthor.__mro__:
+    for klass in jointPackage_SrcAuthor.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
@@ -396,30 +396,30 @@ def test_srcthesisentry_constructor_args():
 
 
 
-def test_jointpackage::srcmasterthesis_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcMasterThesis)
+def test_jointpackage_srcmasterthesis_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcMasterThesis)
 
 
-def test_jointpackage::srcmasterthesis_constructor_exists():
-    assert callable(jointPackage::SrcMasterThesis.__init__)
+def test_jointpackage_srcmasterthesis_constructor_exists():
+    assert callable(jointPackage_SrcMasterThesis.__init__)
 
 
-def test_jointpackage::srcmasterthesis_constructor_args():
-    sig = inspect.signature(jointPackage::SrcMasterThesis.__init__)
+def test_jointpackage_srcmasterthesis_constructor_args():
+    sig = inspect.signature(jointPackage_SrcMasterThesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::srcphdthesis_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcPhDThesis)
+def test_jointpackage_srcphdthesis_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcPhDThesis)
 
 
-def test_jointpackage::srcphdthesis_constructor_exists():
-    assert callable(jointPackage::SrcPhDThesis.__init__)
+def test_jointpackage_srcphdthesis_constructor_exists():
+    assert callable(jointPackage_SrcPhDThesis.__init__)
 
 
-def test_jointpackage::srcphdthesis_constructor_args():
-    sig = inspect.signature(jointPackage::SrcPhDThesis.__init__)
+def test_jointpackage_srcphdthesis_constructor_args():
+    sig = inspect.signature(jointPackage_SrcPhDThesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -438,23 +438,23 @@ def test_srcbook_constructor_args():
 
 
 
-def test_jointpackage::srcinbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcInBook)
+def test_jointpackage_srcinbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcInBook)
 
 
-def test_jointpackage::srcinbook_constructor_exists():
-    assert callable(jointPackage::SrcInBook.__init__)
+def test_jointpackage_srcinbook_constructor_exists():
+    assert callable(jointPackage_SrcInBook.__init__)
 
 
-def test_jointpackage::srcinbook_constructor_args():
-    sig = inspect.signature(jointPackage::SrcInBook.__init__)
+def test_jointpackage_srcinbook_constructor_args():
+    sig = inspect.signature(jointPackage_SrcInBook.__init__)
     params = list(sig.parameters.keys())
     assert "chapter" in params, "Missing parameter 'chapter'"
 
-def test_jointpackage::srcinbook_has_chapter():
-    assert hasattr(jointPackage::SrcInBook, "chapter")
+def test_jointpackage_srcinbook_has_chapter():
+    assert hasattr(jointPackage_SrcInBook, "chapter")
     descriptor = None
-    for klass in jointPackage::SrcInBook.__mro__:
+    for klass in jointPackage_SrcInBook.__mro__:
         if "chapter" in klass.__dict__:
             descriptor = klass.__dict__["chapter"]
             break
@@ -462,16 +462,16 @@ def test_jointpackage::srcinbook_has_chapter():
 
 
 
-def test_jointpackage::srcincollection_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcInCollection)
+def test_jointpackage_srcincollection_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcInCollection)
 
 
-def test_jointpackage::srcincollection_constructor_exists():
-    assert callable(jointPackage::SrcInCollection.__init__)
+def test_jointpackage_srcincollection_constructor_exists():
+    assert callable(jointPackage_SrcInCollection.__init__)
 
 
-def test_jointpackage::srcincollection_constructor_args():
-    sig = inspect.signature(jointPackage::SrcInCollection.__init__)
+def test_jointpackage_srcincollection_constructor_args():
+    sig = inspect.signature(jointPackage_SrcInCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -490,16 +490,16 @@ def test_srctitledentry_constructor_args():
 
 
 
-def test_jointpackage::srcmanual_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcManual)
+def test_jointpackage_srcmanual_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcManual)
 
 
-def test_jointpackage::srcmanual_constructor_exists():
-    assert callable(jointPackage::SrcManual.__init__)
+def test_jointpackage_srcmanual_constructor_exists():
+    assert callable(jointPackage_SrcManual.__init__)
 
 
-def test_jointpackage::srcmanual_constructor_args():
-    sig = inspect.signature(jointPackage::SrcManual.__init__)
+def test_jointpackage_srcmanual_constructor_args():
+    sig = inspect.signature(jointPackage_SrcManual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -518,30 +518,30 @@ def test_srcdatedentry_constructor_args():
 
 
 
-def test_jointpackage::srcproceedings_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcProceedings)
+def test_jointpackage_srcbooklet_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcBooklet)
 
 
-def test_jointpackage::srcproceedings_constructor_exists():
-    assert callable(jointPackage::SrcProceedings.__init__)
+def test_jointpackage_srcbooklet_constructor_exists():
+    assert callable(jointPackage_SrcBooklet.__init__)
 
 
-def test_jointpackage::srcproceedings_constructor_args():
-    sig = inspect.signature(jointPackage::SrcProceedings.__init__)
+def test_jointpackage_srcbooklet_constructor_args():
+    sig = inspect.signature(jointPackage_SrcBooklet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::srcbooklet_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcBooklet)
+def test_jointpackage_srcproceedings_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcProceedings)
 
 
-def test_jointpackage::srcbooklet_constructor_exists():
-    assert callable(jointPackage::SrcBooklet.__init__)
+def test_jointpackage_srcproceedings_constructor_exists():
+    assert callable(jointPackage_SrcProceedings.__init__)
 
 
-def test_jointpackage::srcbooklet_constructor_args():
-    sig = inspect.signature(jointPackage::SrcBooklet.__init__)
+def test_jointpackage_srcproceedings_constructor_args():
+    sig = inspect.signature(jointPackage_SrcProceedings.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -560,99 +560,23 @@ def test_srcauthoredentry_constructor_args():
 
 
 
-def test_jointpackage::srctechreport_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcTechReport)
+def test_jointpackage_srcthesisentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcThesisEntry)
 
 
-def test_jointpackage::srctechreport_constructor_exists():
-    assert callable(jointPackage::SrcTechReport.__init__)
+def test_jointpackage_srcthesisentry_constructor_exists():
+    assert callable(jointPackage_SrcThesisEntry.__init__)
 
 
-def test_jointpackage::srctechreport_constructor_args():
-    sig = inspect.signature(jointPackage::SrcTechReport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::srcbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcBook)
-
-
-def test_jointpackage::srcbook_constructor_exists():
-    assert callable(jointPackage::SrcBook.__init__)
-
-
-def test_jointpackage::srcbook_constructor_args():
-    sig = inspect.signature(jointPackage::SrcBook.__init__)
-    params = list(sig.parameters.keys())
-    assert "publisher" in params, "Missing parameter 'publisher'"
-
-def test_jointpackage::srcbook_has_publisher():
-    assert hasattr(jointPackage::SrcBook, "publisher")
-    descriptor = None
-    for klass in jointPackage::SrcBook.__mro__:
-        if "publisher" in klass.__dict__:
-            descriptor = klass.__dict__["publisher"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::srcinproceedings_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcInProceedings)
-
-
-def test_jointpackage::srcinproceedings_constructor_exists():
-    assert callable(jointPackage::SrcInProceedings.__init__)
-
-
-def test_jointpackage::srcinproceedings_constructor_args():
-    sig = inspect.signature(jointPackage::SrcInProceedings.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::srcunpublished_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcUnpublished)
-
-
-def test_jointpackage::srcunpublished_constructor_exists():
-    assert callable(jointPackage::SrcUnpublished.__init__)
-
-
-def test_jointpackage::srcunpublished_constructor_args():
-    sig = inspect.signature(jointPackage::SrcUnpublished.__init__)
-    params = list(sig.parameters.keys())
-    assert "note" in params, "Missing parameter 'note'"
-
-def test_jointpackage::srcunpublished_has_note():
-    assert hasattr(jointPackage::SrcUnpublished, "note")
-    descriptor = None
-    for klass in jointPackage::SrcUnpublished.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::srcthesisentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcThesisEntry)
-
-
-def test_jointpackage::srcthesisentry_constructor_exists():
-    assert callable(jointPackage::SrcThesisEntry.__init__)
-
-
-def test_jointpackage::srcthesisentry_constructor_args():
-    sig = inspect.signature(jointPackage::SrcThesisEntry.__init__)
+def test_jointpackage_srcthesisentry_constructor_args():
+    sig = inspect.signature(jointPackage_SrcThesisEntry.__init__)
     params = list(sig.parameters.keys())
     assert "school" in params, "Missing parameter 'school'"
 
-def test_jointpackage::srcthesisentry_has_school():
-    assert hasattr(jointPackage::SrcThesisEntry, "school")
+def test_jointpackage_srcthesisentry_has_school():
+    assert hasattr(jointPackage_SrcThesisEntry, "school")
     descriptor = None
-    for klass in jointPackage::SrcThesisEntry.__mro__:
+    for klass in jointPackage_SrcThesisEntry.__mro__:
         if "school" in klass.__dict__:
             descriptor = klass.__dict__["school"]
             break
@@ -660,23 +584,99 @@ def test_jointpackage::srcthesisentry_has_school():
 
 
 
-def test_jointpackage::srcarticle_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcArticle)
+def test_jointpackage_srcinproceedings_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcInProceedings)
 
 
-def test_jointpackage::srcarticle_constructor_exists():
-    assert callable(jointPackage::SrcArticle.__init__)
+def test_jointpackage_srcinproceedings_constructor_exists():
+    assert callable(jointPackage_SrcInProceedings.__init__)
 
 
-def test_jointpackage::srcarticle_constructor_args():
-    sig = inspect.signature(jointPackage::SrcArticle.__init__)
+def test_jointpackage_srcinproceedings_constructor_args():
+    sig = inspect.signature(jointPackage_SrcInProceedings.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_srcunpublished_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcUnpublished)
+
+
+def test_jointpackage_srcunpublished_constructor_exists():
+    assert callable(jointPackage_SrcUnpublished.__init__)
+
+
+def test_jointpackage_srcunpublished_constructor_args():
+    sig = inspect.signature(jointPackage_SrcUnpublished.__init__)
+    params = list(sig.parameters.keys())
+    assert "note" in params, "Missing parameter 'note'"
+
+def test_jointpackage_srcunpublished_has_note():
+    assert hasattr(jointPackage_SrcUnpublished, "note")
+    descriptor = None
+    for klass in jointPackage_SrcUnpublished.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_srcbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcBook)
+
+
+def test_jointpackage_srcbook_constructor_exists():
+    assert callable(jointPackage_SrcBook.__init__)
+
+
+def test_jointpackage_srcbook_constructor_args():
+    sig = inspect.signature(jointPackage_SrcBook.__init__)
+    params = list(sig.parameters.keys())
+    assert "publisher" in params, "Missing parameter 'publisher'"
+
+def test_jointpackage_srcbook_has_publisher():
+    assert hasattr(jointPackage_SrcBook, "publisher")
+    descriptor = None
+    for klass in jointPackage_SrcBook.__mro__:
+        if "publisher" in klass.__dict__:
+            descriptor = klass.__dict__["publisher"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_srctechreport_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcTechReport)
+
+
+def test_jointpackage_srctechreport_constructor_exists():
+    assert callable(jointPackage_SrcTechReport.__init__)
+
+
+def test_jointpackage_srctechreport_constructor_args():
+    sig = inspect.signature(jointPackage_SrcTechReport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_srcarticle_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcArticle)
+
+
+def test_jointpackage_srcarticle_constructor_exists():
+    assert callable(jointPackage_SrcArticle.__init__)
+
+
+def test_jointpackage_srcarticle_constructor_args():
+    sig = inspect.signature(jointPackage_SrcArticle.__init__)
     params = list(sig.parameters.keys())
     assert "journal" in params, "Missing parameter 'journal'"
 
-def test_jointpackage::srcarticle_has_journal():
-    assert hasattr(jointPackage::SrcArticle, "journal")
+def test_jointpackage_srcarticle_has_journal():
+    assert hasattr(jointPackage_SrcArticle, "journal")
     descriptor = None
-    for klass in jointPackage::SrcArticle.__mro__:
+    for klass in jointPackage_SrcArticle.__mro__:
         if "journal" in klass.__dict__:
             descriptor = klass.__dict__["journal"]
             break
@@ -698,99 +698,37 @@ def test_srcbibtexentry_constructor_args():
 
 
 
-def test_jointpackage::srctitledentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcTitledEntry)
+def test_jointpackage_srcmisc_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcMisc)
 
 
-def test_jointpackage::srctitledentry_constructor_exists():
-    assert callable(jointPackage::SrcTitledEntry.__init__)
+def test_jointpackage_srcmisc_constructor_exists():
+    assert callable(jointPackage_SrcMisc.__init__)
 
 
-def test_jointpackage::srctitledentry_constructor_args():
-    sig = inspect.signature(jointPackage::SrcTitledEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-
-def test_jointpackage::srctitledentry_has_title():
-    assert hasattr(jointPackage::SrcTitledEntry, "title")
-    descriptor = None
-    for klass in jointPackage::SrcTitledEntry.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::srcauthoredentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcAuthoredEntry)
-
-
-def test_jointpackage::srcauthoredentry_constructor_exists():
-    assert callable(jointPackage::SrcAuthoredEntry.__init__)
-
-
-def test_jointpackage::srcauthoredentry_constructor_args():
-    sig = inspect.signature(jointPackage::SrcAuthoredEntry.__init__)
+def test_jointpackage_srcmisc_constructor_args():
+    sig = inspect.signature(jointPackage_SrcMisc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::srcbooktitledentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcBookTitledEntry)
+def test_jointpackage_srcdatedentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcDatedEntry)
 
 
-def test_jointpackage::srcbooktitledentry_constructor_exists():
-    assert callable(jointPackage::SrcBookTitledEntry.__init__)
+def test_jointpackage_srcdatedentry_constructor_exists():
+    assert callable(jointPackage_SrcDatedEntry.__init__)
 
 
-def test_jointpackage::srcbooktitledentry_constructor_args():
-    sig = inspect.signature(jointPackage::SrcBookTitledEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "booktitle" in params, "Missing parameter 'booktitle'"
-
-def test_jointpackage::srcbooktitledentry_has_booktitle():
-    assert hasattr(jointPackage::SrcBookTitledEntry, "booktitle")
-    descriptor = None
-    for klass in jointPackage::SrcBookTitledEntry.__mro__:
-        if "booktitle" in klass.__dict__:
-            descriptor = klass.__dict__["booktitle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jointpackage::srcmisc_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcMisc)
-
-
-def test_jointpackage::srcmisc_constructor_exists():
-    assert callable(jointPackage::SrcMisc.__init__)
-
-
-def test_jointpackage::srcmisc_constructor_args():
-    sig = inspect.signature(jointPackage::SrcMisc.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jointpackage::srcdatedentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcDatedEntry)
-
-
-def test_jointpackage::srcdatedentry_constructor_exists():
-    assert callable(jointPackage::SrcDatedEntry.__init__)
-
-
-def test_jointpackage::srcdatedentry_constructor_args():
-    sig = inspect.signature(jointPackage::SrcDatedEntry.__init__)
+def test_jointpackage_srcdatedentry_constructor_args():
+    sig = inspect.signature(jointPackage_SrcDatedEntry.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
 
-def test_jointpackage::srcdatedentry_has_year():
-    assert hasattr(jointPackage::SrcDatedEntry, "year")
+def test_jointpackage_srcdatedentry_has_year():
+    assert hasattr(jointPackage_SrcDatedEntry, "year")
     descriptor = None
-    for klass in jointPackage::SrcDatedEntry.__mro__:
+    for klass in jointPackage_SrcDatedEntry.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
@@ -798,16 +736,78 @@ def test_jointpackage::srcdatedentry_has_year():
 
 
 
-def test_jointpackage::srcbibtexfile_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::SrcBibTeXFile)
+def test_jointpackage_srctitledentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcTitledEntry)
 
 
-def test_jointpackage::srcbibtexfile_constructor_exists():
-    assert callable(jointPackage::SrcBibTeXFile.__init__)
+def test_jointpackage_srctitledentry_constructor_exists():
+    assert callable(jointPackage_SrcTitledEntry.__init__)
 
 
-def test_jointpackage::srcbibtexfile_constructor_args():
-    sig = inspect.signature(jointPackage::SrcBibTeXFile.__init__)
+def test_jointpackage_srctitledentry_constructor_args():
+    sig = inspect.signature(jointPackage_SrcTitledEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_jointpackage_srctitledentry_has_title():
+    assert hasattr(jointPackage_SrcTitledEntry, "title")
+    descriptor = None
+    for klass in jointPackage_SrcTitledEntry.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_srcbooktitledentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcBookTitledEntry)
+
+
+def test_jointpackage_srcbooktitledentry_constructor_exists():
+    assert callable(jointPackage_SrcBookTitledEntry.__init__)
+
+
+def test_jointpackage_srcbooktitledentry_constructor_args():
+    sig = inspect.signature(jointPackage_SrcBookTitledEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "booktitle" in params, "Missing parameter 'booktitle'"
+
+def test_jointpackage_srcbooktitledentry_has_booktitle():
+    assert hasattr(jointPackage_SrcBookTitledEntry, "booktitle")
+    descriptor = None
+    for klass in jointPackage_SrcBookTitledEntry.__mro__:
+        if "booktitle" in klass.__dict__:
+            descriptor = klass.__dict__["booktitle"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jointpackage_srcauthoredentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcAuthoredEntry)
+
+
+def test_jointpackage_srcauthoredentry_constructor_exists():
+    assert callable(jointPackage_SrcAuthoredEntry.__init__)
+
+
+def test_jointpackage_srcauthoredentry_constructor_args():
+    sig = inspect.signature(jointPackage_SrcAuthoredEntry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jointpackage_srcbibtexfile_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_SrcBibTeXFile)
+
+
+def test_jointpackage_srcbibtexfile_constructor_exists():
+    assert callable(jointPackage_SrcBibTeXFile.__init__)
+
+
+def test_jointpackage_srcbibtexfile_constructor_args():
+    sig = inspect.signature(jointPackage_SrcBibTeXFile.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -840,16 +840,16 @@ def test_srcmasterthesis_constructor_args():
 
 
 
-def test_jointpackage::jointmm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::JointMM)
+def test_jointpackage_jointmm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_JointMM)
 
 
-def test_jointpackage::jointmm_constructor_exists():
-    assert callable(jointPackage::JointMM.__init__)
+def test_jointpackage_jointmm_constructor_exists():
+    assert callable(jointPackage_JointMM.__init__)
 
 
-def test_jointpackage::jointmm_constructor_args():
-    sig = inspect.signature(jointPackage::JointMM.__init__)
+def test_jointpackage_jointmm_constructor_args():
+    sig = inspect.signature(jointPackage_JointMM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -870,28 +870,28 @@ TrgSect1_strategy = st.builds(
 TrgTitledElement_strategy = st.builds(
     TrgTitledElement,
 )
-jointPackage::TrgArticle_strategy = st.builds(
-    jointPackage::TrgArticle,
+jointPackage_TrgArticle_strategy = st.builds(
+    jointPackage_TrgArticle,
 )
-jointPackage::TrgTitledElement_strategy = st.builds(
-    jointPackage::TrgTitledElement,
+jointPackage_TrgTitledElement_strategy = st.builds(
+    jointPackage_TrgTitledElement,
     title=
         safe_text
 )
 TrgArticle_strategy = st.builds(
     TrgArticle,
 )
-jointPackage::TrgBook_strategy = st.builds(
-    jointPackage::TrgBook,
+jointPackage_TrgBook_strategy = st.builds(
+    jointPackage_TrgBook,
 )
 TrgBook_strategy = st.builds(
     TrgBook,
 )
-jointPackage::TrgDocBook_strategy = st.builds(
-    jointPackage::TrgDocBook,
+jointPackage_TrgDocBook_strategy = st.builds(
+    jointPackage_TrgDocBook,
 )
-jointPackage::TrgPara_strategy = st.builds(
-    jointPackage::TrgPara,
+jointPackage_TrgPara_strategy = st.builds(
+    jointPackage_TrgPara,
     content=
         safe_text
 )
@@ -901,17 +901,17 @@ TrgSect2_strategy = st.builds(
 TrgSection_strategy = st.builds(
     TrgSection,
 )
-jointPackage::TrgSect2_strategy = st.builds(
-    jointPackage::TrgSect2,
+jointPackage_TrgSect2_strategy = st.builds(
+    jointPackage_TrgSect2,
 )
-jointPackage::TrgSect1_strategy = st.builds(
-    jointPackage::TrgSect1,
+jointPackage_TrgSect1_strategy = st.builds(
+    jointPackage_TrgSect1,
 )
 TrgPara_strategy = st.builds(
     TrgPara,
 )
-jointPackage::TrgSection_strategy = st.builds(
-    jointPackage::TrgSection,
+jointPackage_TrgSection_strategy = st.builds(
+    jointPackage_TrgSection,
 )
 SrcBookTitledEntry_strategy = st.builds(
     SrcBookTitledEntry,
@@ -922,106 +922,106 @@ SrcProceedings_strategy = st.builds(
 SrcAuthor_strategy = st.builds(
     SrcAuthor,
 )
-jointPackage::SrcBibTeXEntry_strategy = st.builds(
-    jointPackage::SrcBibTeXEntry,
+jointPackage_SrcBibTeXEntry_strategy = st.builds(
+    jointPackage_SrcBibTeXEntry,
     id=
         safe_text
 )
-jointPackage::SrcAuthor_strategy = st.builds(
-    jointPackage::SrcAuthor,
+jointPackage_SrcAuthor_strategy = st.builds(
+    jointPackage_SrcAuthor,
     author=
         safe_text
 )
 SrcThesisEntry_strategy = st.builds(
     SrcThesisEntry,
 )
-jointPackage::SrcMasterThesis_strategy = st.builds(
-    jointPackage::SrcMasterThesis,
+jointPackage_SrcMasterThesis_strategy = st.builds(
+    jointPackage_SrcMasterThesis,
 )
-jointPackage::SrcPhDThesis_strategy = st.builds(
-    jointPackage::SrcPhDThesis,
+jointPackage_SrcPhDThesis_strategy = st.builds(
+    jointPackage_SrcPhDThesis,
 )
 SrcBook_strategy = st.builds(
     SrcBook,
 )
-jointPackage::SrcInBook_strategy = st.builds(
-    jointPackage::SrcInBook,
+jointPackage_SrcInBook_strategy = st.builds(
+    jointPackage_SrcInBook,
     chapter=
         st.integers()
 )
-jointPackage::SrcInCollection_strategy = st.builds(
-    jointPackage::SrcInCollection,
+jointPackage_SrcInCollection_strategy = st.builds(
+    jointPackage_SrcInCollection,
 )
 SrcTitledEntry_strategy = st.builds(
     SrcTitledEntry,
 )
-jointPackage::SrcManual_strategy = st.builds(
-    jointPackage::SrcManual,
+jointPackage_SrcManual_strategy = st.builds(
+    jointPackage_SrcManual,
 )
 SrcDatedEntry_strategy = st.builds(
     SrcDatedEntry,
 )
-jointPackage::SrcProceedings_strategy = st.builds(
-    jointPackage::SrcProceedings,
+jointPackage_SrcBooklet_strategy = st.builds(
+    jointPackage_SrcBooklet,
 )
-jointPackage::SrcBooklet_strategy = st.builds(
-    jointPackage::SrcBooklet,
+jointPackage_SrcProceedings_strategy = st.builds(
+    jointPackage_SrcProceedings,
 )
 SrcAuthoredEntry_strategy = st.builds(
     SrcAuthoredEntry,
 )
-jointPackage::SrcTechReport_strategy = st.builds(
-    jointPackage::SrcTechReport,
-)
-jointPackage::SrcBook_strategy = st.builds(
-    jointPackage::SrcBook,
-    publisher=
-        safe_text
-)
-jointPackage::SrcInProceedings_strategy = st.builds(
-    jointPackage::SrcInProceedings,
-)
-jointPackage::SrcUnpublished_strategy = st.builds(
-    jointPackage::SrcUnpublished,
-    note=
-        safe_text
-)
-jointPackage::SrcThesisEntry_strategy = st.builds(
-    jointPackage::SrcThesisEntry,
+jointPackage_SrcThesisEntry_strategy = st.builds(
+    jointPackage_SrcThesisEntry,
     school=
         safe_text
 )
-jointPackage::SrcArticle_strategy = st.builds(
-    jointPackage::SrcArticle,
+jointPackage_SrcInProceedings_strategy = st.builds(
+    jointPackage_SrcInProceedings,
+)
+jointPackage_SrcUnpublished_strategy = st.builds(
+    jointPackage_SrcUnpublished,
+    note=
+        safe_text
+)
+jointPackage_SrcBook_strategy = st.builds(
+    jointPackage_SrcBook,
+    publisher=
+        safe_text
+)
+jointPackage_SrcTechReport_strategy = st.builds(
+    jointPackage_SrcTechReport,
+)
+jointPackage_SrcArticle_strategy = st.builds(
+    jointPackage_SrcArticle,
     journal=
         safe_text
 )
 SrcBibTeXEntry_strategy = st.builds(
     SrcBibTeXEntry,
 )
-jointPackage::SrcTitledEntry_strategy = st.builds(
-    jointPackage::SrcTitledEntry,
-    title=
-        safe_text
+jointPackage_SrcMisc_strategy = st.builds(
+    jointPackage_SrcMisc,
 )
-jointPackage::SrcAuthoredEntry_strategy = st.builds(
-    jointPackage::SrcAuthoredEntry,
-)
-jointPackage::SrcBookTitledEntry_strategy = st.builds(
-    jointPackage::SrcBookTitledEntry,
-    booktitle=
-        safe_text
-)
-jointPackage::SrcMisc_strategy = st.builds(
-    jointPackage::SrcMisc,
-)
-jointPackage::SrcDatedEntry_strategy = st.builds(
-    jointPackage::SrcDatedEntry,
+jointPackage_SrcDatedEntry_strategy = st.builds(
+    jointPackage_SrcDatedEntry,
     year=
         safe_text
 )
-jointPackage::SrcBibTeXFile_strategy = st.builds(
-    jointPackage::SrcBibTeXFile,
+jointPackage_SrcTitledEntry_strategy = st.builds(
+    jointPackage_SrcTitledEntry,
+    title=
+        safe_text
+)
+jointPackage_SrcBookTitledEntry_strategy = st.builds(
+    jointPackage_SrcBookTitledEntry,
+    booktitle=
+        safe_text
+)
+jointPackage_SrcAuthoredEntry_strategy = st.builds(
+    jointPackage_SrcAuthoredEntry,
+)
+jointPackage_SrcBibTeXFile_strategy = st.builds(
+    jointPackage_SrcBibTeXFile,
 )
 TrgDocBook_strategy = st.builds(
     TrgDocBook,
@@ -1029,8 +1029,8 @@ TrgDocBook_strategy = st.builds(
 SrcMasterThesis_strategy = st.builds(
     SrcMasterThesis,
 )
-jointPackage::JointMM_strategy = st.builds(
-    jointPackage::JointMM,
+jointPackage_JointMM_strategy = st.builds(
+    jointPackage_JointMM,
 )
 
 @given(instance=TrgSect1_strategy)
@@ -1043,23 +1043,20 @@ def test_trgsect1_instantiation(instance):
 def test_trgtitledelement_instantiation(instance):
     assert isinstance(instance, TrgTitledElement)
 
-@given(instance=jointPackage::TrgArticle_strategy)
+@given(instance=jointPackage_TrgArticle_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgarticle_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgArticle)
+def test_jointpackage_trgarticle_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgArticle)
 
-@given(instance=jointPackage::TrgTitledElement_strategy)
+@given(instance=jointPackage_TrgTitledElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgtitledelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgTitledElement)
-
-@given(instance=jointPackage::TrgTitledElement_strategy)
-def test_jointpackage::trgtitledelement_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_jointpackage_trgtitledelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgTitledElement)
 
 
-@given(instance=jointPackage::TrgTitledElement_strategy)
-def test_jointpackage::trgtitledelement_title_setter(instance):
+
+@given(instance=jointPackage_TrgTitledElement_strategy)
+def test_jointpackage_trgtitledelement_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
@@ -1069,33 +1066,30 @@ def test_jointpackage::trgtitledelement_title_setter(instance):
 def test_trgarticle_instantiation(instance):
     assert isinstance(instance, TrgArticle)
 
-@given(instance=jointPackage::TrgBook_strategy)
+@given(instance=jointPackage_TrgBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgBook)
+def test_jointpackage_trgbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgBook)
 
 @given(instance=TrgBook_strategy)
 @settings(max_examples=50)
 def test_trgbook_instantiation(instance):
     assert isinstance(instance, TrgBook)
 
-@given(instance=jointPackage::TrgDocBook_strategy)
+@given(instance=jointPackage_TrgDocBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgdocbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgDocBook)
+def test_jointpackage_trgdocbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgDocBook)
 
-@given(instance=jointPackage::TrgPara_strategy)
+@given(instance=jointPackage_TrgPara_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgpara_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgPara)
-
-@given(instance=jointPackage::TrgPara_strategy)
-def test_jointpackage::trgpara_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_jointpackage_trgpara_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgPara)
 
 
-@given(instance=jointPackage::TrgPara_strategy)
-def test_jointpackage::trgpara_content_setter(instance):
+
+@given(instance=jointPackage_TrgPara_strategy)
+def test_jointpackage_trgpara_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
@@ -1110,25 +1104,25 @@ def test_trgsect2_instantiation(instance):
 def test_trgsection_instantiation(instance):
     assert isinstance(instance, TrgSection)
 
-@given(instance=jointPackage::TrgSect2_strategy)
+@given(instance=jointPackage_TrgSect2_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgsect2_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgSect2)
+def test_jointpackage_trgsect2_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgSect2)
 
-@given(instance=jointPackage::TrgSect1_strategy)
+@given(instance=jointPackage_TrgSect1_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgsect1_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgSect1)
+def test_jointpackage_trgsect1_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgSect1)
 
 @given(instance=TrgPara_strategy)
 @settings(max_examples=50)
 def test_trgpara_instantiation(instance):
     assert isinstance(instance, TrgPara)
 
-@given(instance=jointPackage::TrgSection_strategy)
+@given(instance=jointPackage_TrgSection_strategy)
 @settings(max_examples=50)
-def test_jointpackage::trgsection_instantiation(instance):
-    assert isinstance(instance, jointPackage::TrgSection)
+def test_jointpackage_trgsection_instantiation(instance):
+    assert isinstance(instance, jointPackage_TrgSection)
 
 @given(instance=SrcBookTitledEntry_strategy)
 @settings(max_examples=50)
@@ -1145,34 +1139,28 @@ def test_srcproceedings_instantiation(instance):
 def test_srcauthor_instantiation(instance):
     assert isinstance(instance, SrcAuthor)
 
-@given(instance=jointPackage::SrcBibTeXEntry_strategy)
+@given(instance=jointPackage_SrcBibTeXEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcbibtexentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcBibTeXEntry)
-
-@given(instance=jointPackage::SrcBibTeXEntry_strategy)
-def test_jointpackage::srcbibtexentry_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_jointpackage_srcbibtexentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcBibTeXEntry)
 
 
-@given(instance=jointPackage::SrcBibTeXEntry_strategy)
-def test_jointpackage::srcbibtexentry_id_setter(instance):
+
+@given(instance=jointPackage_SrcBibTeXEntry_strategy)
+def test_jointpackage_srcbibtexentry_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=jointPackage::SrcAuthor_strategy)
+@given(instance=jointPackage_SrcAuthor_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcauthor_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcAuthor)
-
-@given(instance=jointPackage::SrcAuthor_strategy)
-def test_jointpackage::srcauthor_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_jointpackage_srcauthor_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcAuthor)
 
 
-@given(instance=jointPackage::SrcAuthor_strategy)
-def test_jointpackage::srcauthor_author_setter(instance):
+
+@given(instance=jointPackage_SrcAuthor_strategy)
+def test_jointpackage_srcauthor_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
@@ -1182,142 +1170,127 @@ def test_jointpackage::srcauthor_author_setter(instance):
 def test_srcthesisentry_instantiation(instance):
     assert isinstance(instance, SrcThesisEntry)
 
-@given(instance=jointPackage::SrcMasterThesis_strategy)
+@given(instance=jointPackage_SrcMasterThesis_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcmasterthesis_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcMasterThesis)
+def test_jointpackage_srcmasterthesis_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcMasterThesis)
 
-@given(instance=jointPackage::SrcPhDThesis_strategy)
+@given(instance=jointPackage_SrcPhDThesis_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcphdthesis_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcPhDThesis)
+def test_jointpackage_srcphdthesis_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcPhDThesis)
 
 @given(instance=SrcBook_strategy)
 @settings(max_examples=50)
 def test_srcbook_instantiation(instance):
     assert isinstance(instance, SrcBook)
 
-@given(instance=jointPackage::SrcInBook_strategy)
+@given(instance=jointPackage_SrcInBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcinbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcInBook)
-
-@given(instance=jointPackage::SrcInBook_strategy)
-def test_jointpackage::srcinbook_chapter_type(instance):
-    assert isinstance(instance.chapter, int)
+def test_jointpackage_srcinbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcInBook)
 
 
-@given(instance=jointPackage::SrcInBook_strategy)
-def test_jointpackage::srcinbook_chapter_setter(instance):
+
+@given(instance=jointPackage_SrcInBook_strategy)
+def test_jointpackage_srcinbook_chapter_setter(instance):
     original = instance.chapter
     instance.chapter = original
     assert instance.chapter == original
 
-@given(instance=jointPackage::SrcInCollection_strategy)
+@given(instance=jointPackage_SrcInCollection_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcincollection_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcInCollection)
+def test_jointpackage_srcincollection_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcInCollection)
 
 @given(instance=SrcTitledEntry_strategy)
 @settings(max_examples=50)
 def test_srctitledentry_instantiation(instance):
     assert isinstance(instance, SrcTitledEntry)
 
-@given(instance=jointPackage::SrcManual_strategy)
+@given(instance=jointPackage_SrcManual_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcmanual_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcManual)
+def test_jointpackage_srcmanual_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcManual)
 
 @given(instance=SrcDatedEntry_strategy)
 @settings(max_examples=50)
 def test_srcdatedentry_instantiation(instance):
     assert isinstance(instance, SrcDatedEntry)
 
-@given(instance=jointPackage::SrcProceedings_strategy)
+@given(instance=jointPackage_SrcBooklet_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcproceedings_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcProceedings)
+def test_jointpackage_srcbooklet_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcBooklet)
 
-@given(instance=jointPackage::SrcBooklet_strategy)
+@given(instance=jointPackage_SrcProceedings_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcbooklet_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcBooklet)
+def test_jointpackage_srcproceedings_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcProceedings)
 
 @given(instance=SrcAuthoredEntry_strategy)
 @settings(max_examples=50)
 def test_srcauthoredentry_instantiation(instance):
     assert isinstance(instance, SrcAuthoredEntry)
 
-@given(instance=jointPackage::SrcTechReport_strategy)
+@given(instance=jointPackage_SrcThesisEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srctechreport_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcTechReport)
-
-@given(instance=jointPackage::SrcBook_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcBook)
-
-@given(instance=jointPackage::SrcBook_strategy)
-def test_jointpackage::srcbook_publisher_type(instance):
-    assert isinstance(instance.publisher, str)
+def test_jointpackage_srcthesisentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcThesisEntry)
 
 
-@given(instance=jointPackage::SrcBook_strategy)
-def test_jointpackage::srcbook_publisher_setter(instance):
-    original = instance.publisher
-    instance.publisher = original
-    assert instance.publisher == original
 
-@given(instance=jointPackage::SrcInProceedings_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcinproceedings_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcInProceedings)
-
-@given(instance=jointPackage::SrcUnpublished_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcunpublished_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcUnpublished)
-
-@given(instance=jointPackage::SrcUnpublished_strategy)
-def test_jointpackage::srcunpublished_note_type(instance):
-    assert isinstance(instance.note, str)
-
-
-@given(instance=jointPackage::SrcUnpublished_strategy)
-def test_jointpackage::srcunpublished_note_setter(instance):
-    original = instance.note
-    instance.note = original
-    assert instance.note == original
-
-@given(instance=jointPackage::SrcThesisEntry_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcthesisentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcThesisEntry)
-
-@given(instance=jointPackage::SrcThesisEntry_strategy)
-def test_jointpackage::srcthesisentry_school_type(instance):
-    assert isinstance(instance.school, str)
-
-
-@given(instance=jointPackage::SrcThesisEntry_strategy)
-def test_jointpackage::srcthesisentry_school_setter(instance):
+@given(instance=jointPackage_SrcThesisEntry_strategy)
+def test_jointpackage_srcthesisentry_school_setter(instance):
     original = instance.school
     instance.school = original
     assert instance.school == original
 
-@given(instance=jointPackage::SrcArticle_strategy)
+@given(instance=jointPackage_SrcInProceedings_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcarticle_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcArticle)
+def test_jointpackage_srcinproceedings_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcInProceedings)
 
-@given(instance=jointPackage::SrcArticle_strategy)
-def test_jointpackage::srcarticle_journal_type(instance):
-    assert isinstance(instance.journal, str)
+@given(instance=jointPackage_SrcUnpublished_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srcunpublished_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcUnpublished)
 
 
-@given(instance=jointPackage::SrcArticle_strategy)
-def test_jointpackage::srcarticle_journal_setter(instance):
+
+@given(instance=jointPackage_SrcUnpublished_strategy)
+def test_jointpackage_srcunpublished_note_setter(instance):
+    original = instance.note
+    instance.note = original
+    assert instance.note == original
+
+@given(instance=jointPackage_SrcBook_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srcbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcBook)
+
+
+
+@given(instance=jointPackage_SrcBook_strategy)
+def test_jointpackage_srcbook_publisher_setter(instance):
+    original = instance.publisher
+    instance.publisher = original
+    assert instance.publisher == original
+
+@given(instance=jointPackage_SrcTechReport_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srctechreport_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcTechReport)
+
+@given(instance=jointPackage_SrcArticle_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srcarticle_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcArticle)
+
+
+
+@given(instance=jointPackage_SrcArticle_strategy)
+def test_jointpackage_srcarticle_journal_setter(instance):
     original = instance.journal
     instance.journal = original
     assert instance.journal == original
@@ -1327,68 +1300,59 @@ def test_jointpackage::srcarticle_journal_setter(instance):
 def test_srcbibtexentry_instantiation(instance):
     assert isinstance(instance, SrcBibTeXEntry)
 
-@given(instance=jointPackage::SrcTitledEntry_strategy)
+@given(instance=jointPackage_SrcMisc_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srctitledentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcTitledEntry)
+def test_jointpackage_srcmisc_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcMisc)
 
-@given(instance=jointPackage::SrcTitledEntry_strategy)
-def test_jointpackage::srctitledentry_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=jointPackage::SrcTitledEntry_strategy)
-def test_jointpackage::srctitledentry_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=jointPackage::SrcAuthoredEntry_strategy)
+@given(instance=jointPackage_SrcDatedEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcauthoredentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcAuthoredEntry)
-
-@given(instance=jointPackage::SrcBookTitledEntry_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcbooktitledentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcBookTitledEntry)
-
-@given(instance=jointPackage::SrcBookTitledEntry_strategy)
-def test_jointpackage::srcbooktitledentry_booktitle_type(instance):
-    assert isinstance(instance.booktitle, str)
+def test_jointpackage_srcdatedentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcDatedEntry)
 
 
-@given(instance=jointPackage::SrcBookTitledEntry_strategy)
-def test_jointpackage::srcbooktitledentry_booktitle_setter(instance):
-    original = instance.booktitle
-    instance.booktitle = original
-    assert instance.booktitle == original
 
-@given(instance=jointPackage::SrcMisc_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcmisc_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcMisc)
-
-@given(instance=jointPackage::SrcDatedEntry_strategy)
-@settings(max_examples=50)
-def test_jointpackage::srcdatedentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcDatedEntry)
-
-@given(instance=jointPackage::SrcDatedEntry_strategy)
-def test_jointpackage::srcdatedentry_year_type(instance):
-    assert isinstance(instance.year, str)
-
-
-@given(instance=jointPackage::SrcDatedEntry_strategy)
-def test_jointpackage::srcdatedentry_year_setter(instance):
+@given(instance=jointPackage_SrcDatedEntry_strategy)
+def test_jointpackage_srcdatedentry_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
 
-@given(instance=jointPackage::SrcBibTeXFile_strategy)
+@given(instance=jointPackage_SrcTitledEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::srcbibtexfile_instantiation(instance):
-    assert isinstance(instance, jointPackage::SrcBibTeXFile)
+def test_jointpackage_srctitledentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcTitledEntry)
+
+
+
+@given(instance=jointPackage_SrcTitledEntry_strategy)
+def test_jointpackage_srctitledentry_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=jointPackage_SrcBookTitledEntry_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srcbooktitledentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcBookTitledEntry)
+
+
+
+@given(instance=jointPackage_SrcBookTitledEntry_strategy)
+def test_jointpackage_srcbooktitledentry_booktitle_setter(instance):
+    original = instance.booktitle
+    instance.booktitle = original
+    assert instance.booktitle == original
+
+@given(instance=jointPackage_SrcAuthoredEntry_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srcauthoredentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcAuthoredEntry)
+
+@given(instance=jointPackage_SrcBibTeXFile_strategy)
+@settings(max_examples=50)
+def test_jointpackage_srcbibtexfile_instantiation(instance):
+    assert isinstance(instance, jointPackage_SrcBibTeXFile)
 
 @given(instance=TrgDocBook_strategy)
 @settings(max_examples=50)
@@ -1400,7 +1364,7 @@ def test_trgdocbook_instantiation(instance):
 def test_srcmasterthesis_instantiation(instance):
     assert isinstance(instance, SrcMasterThesis)
 
-@given(instance=jointPackage::JointMM_strategy)
+@given(instance=jointPackage_JointMM_strategy)
 @settings(max_examples=50)
-def test_jointpackage::jointmm_instantiation(instance):
-    assert isinstance(instance, jointPackage::JointMM)
+def test_jointpackage_jointmm_instantiation(instance):
+    assert isinstance(instance, jointPackage_JointMM)

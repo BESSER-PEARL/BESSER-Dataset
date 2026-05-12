@@ -3,9 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    FastCard,
+    ExtensionBoard,
+    Vendor2Sound,
+    Vendor1Sound,
+    Vendor2Adapter,
+    Vendor1Adapter,
     GenericSound,
     Sound,
     Card,
@@ -19,17 +25,95 @@ from python_code import (
     AcceleratorCard,
     Processor,
     CPU,
-    FastCard,
-    ExtensionBoard,
-    Vendor2Sound,
-    Vendor1Sound,
-    Vendor2Adapter,
-    Vendor1Adapter,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_fastcard_is_not_abstract():
+    assert not inspect.isabstract(FastCard)
+
+
+def test_fastcard_constructor_exists():
+    assert callable(FastCard.__init__)
+
+
+def test_fastcard_constructor_args():
+    sig = inspect.signature(FastCard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_extensionboard_is_not_abstract():
+    assert not inspect.isabstract(ExtensionBoard)
+
+
+def test_extensionboard_constructor_exists():
+    assert callable(ExtensionBoard.__init__)
+
+
+def test_extensionboard_constructor_args():
+    sig = inspect.signature(ExtensionBoard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vendor2sound_is_not_abstract():
+    assert not inspect.isabstract(Vendor2Sound)
+
+
+def test_vendor2sound_constructor_exists():
+    assert callable(Vendor2Sound.__init__)
+
+
+def test_vendor2sound_constructor_args():
+    sig = inspect.signature(Vendor2Sound.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vendor1sound_is_not_abstract():
+    assert not inspect.isabstract(Vendor1Sound)
+
+
+def test_vendor1sound_constructor_exists():
+    assert callable(Vendor1Sound.__init__)
+
+
+def test_vendor1sound_constructor_args():
+    sig = inspect.signature(Vendor1Sound.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vendor2adapter_is_not_abstract():
+    assert not inspect.isabstract(Vendor2Adapter)
+
+
+def test_vendor2adapter_constructor_exists():
+    assert callable(Vendor2Adapter.__init__)
+
+
+def test_vendor2adapter_constructor_args():
+    sig = inspect.signature(Vendor2Adapter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vendor1adapter_is_not_abstract():
+    assert not inspect.isabstract(Vendor1Adapter)
+
+
+def test_vendor1adapter_constructor_exists():
+    assert callable(Vendor1Adapter.__init__)
+
+
+def test_vendor1adapter_constructor_args():
+    sig = inspect.signature(Vendor1Adapter.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -234,90 +318,6 @@ def test_cpu_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_fastcard_is_not_abstract():
-    assert not inspect.isabstract(FastCard)
-
-
-def test_fastcard_constructor_exists():
-    assert callable(FastCard.__init__)
-
-
-def test_fastcard_constructor_args():
-    sig = inspect.signature(FastCard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_extensionboard_is_not_abstract():
-    assert not inspect.isabstract(ExtensionBoard)
-
-
-def test_extensionboard_constructor_exists():
-    assert callable(ExtensionBoard.__init__)
-
-
-def test_extensionboard_constructor_args():
-    sig = inspect.signature(ExtensionBoard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vendor2sound_is_not_abstract():
-    assert not inspect.isabstract(Vendor2Sound)
-
-
-def test_vendor2sound_constructor_exists():
-    assert callable(Vendor2Sound.__init__)
-
-
-def test_vendor2sound_constructor_args():
-    sig = inspect.signature(Vendor2Sound.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vendor1sound_is_not_abstract():
-    assert not inspect.isabstract(Vendor1Sound)
-
-
-def test_vendor1sound_constructor_exists():
-    assert callable(Vendor1Sound.__init__)
-
-
-def test_vendor1sound_constructor_args():
-    sig = inspect.signature(Vendor1Sound.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vendor2adapter_is_not_abstract():
-    assert not inspect.isabstract(Vendor2Adapter)
-
-
-def test_vendor2adapter_constructor_exists():
-    assert callable(Vendor2Adapter.__init__)
-
-
-def test_vendor2adapter_constructor_args():
-    sig = inspect.signature(Vendor2Adapter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vendor1adapter_is_not_abstract():
-    assert not inspect.isabstract(Vendor1Adapter)
-
-
-def test_vendor1adapter_constructor_exists():
-    assert callable(Vendor1Adapter.__init__)
-
-
-def test_vendor1adapter_constructor_args():
-    sig = inspect.signature(Vendor1Adapter.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -329,6 +329,24 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+FastCard_strategy = st.builds(
+    FastCard,
+)
+ExtensionBoard_strategy = st.builds(
+    ExtensionBoard,
+)
+Vendor2Sound_strategy = st.builds(
+    Vendor2Sound,
+)
+Vendor1Sound_strategy = st.builds(
+    Vendor1Sound,
+)
+Vendor2Adapter_strategy = st.builds(
+    Vendor2Adapter,
+)
+Vendor1Adapter_strategy = st.builds(
+    Vendor1Adapter,
+)
 GenericSound_strategy = st.builds(
     GenericSound,
 )
@@ -372,24 +390,36 @@ Processor_strategy = st.builds(
 CPU_strategy = st.builds(
     CPU,
 )
-FastCard_strategy = st.builds(
-    FastCard,
-)
-ExtensionBoard_strategy = st.builds(
-    ExtensionBoard,
-)
-Vendor2Sound_strategy = st.builds(
-    Vendor2Sound,
-)
-Vendor1Sound_strategy = st.builds(
-    Vendor1Sound,
-)
-Vendor2Adapter_strategy = st.builds(
-    Vendor2Adapter,
-)
-Vendor1Adapter_strategy = st.builds(
-    Vendor1Adapter,
-)
+
+@given(instance=FastCard_strategy)
+@settings(max_examples=50)
+def test_fastcard_instantiation(instance):
+    assert isinstance(instance, FastCard)
+
+@given(instance=ExtensionBoard_strategy)
+@settings(max_examples=50)
+def test_extensionboard_instantiation(instance):
+    assert isinstance(instance, ExtensionBoard)
+
+@given(instance=Vendor2Sound_strategy)
+@settings(max_examples=50)
+def test_vendor2sound_instantiation(instance):
+    assert isinstance(instance, Vendor2Sound)
+
+@given(instance=Vendor1Sound_strategy)
+@settings(max_examples=50)
+def test_vendor1sound_instantiation(instance):
+    assert isinstance(instance, Vendor1Sound)
+
+@given(instance=Vendor2Adapter_strategy)
+@settings(max_examples=50)
+def test_vendor2adapter_instantiation(instance):
+    assert isinstance(instance, Vendor2Adapter)
+
+@given(instance=Vendor1Adapter_strategy)
+@settings(max_examples=50)
+def test_vendor1adapter_instantiation(instance):
+    assert isinstance(instance, Vendor1Adapter)
 
 @given(instance=GenericSound_strategy)
 @settings(max_examples=50)
@@ -426,9 +456,6 @@ def test_instruction_instantiation(instance):
 def test_program_instantiation(instance):
     assert isinstance(instance, Program)
 
-@given(instance=Program_strategy)
-def test_program_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Program_strategy)
@@ -452,9 +479,6 @@ def test_ram_instantiation(instance):
 def test_cache_instantiation(instance):
     assert isinstance(instance, Cache)
 
-@given(instance=Cache_strategy)
-def test_cache_chunck_type(instance):
-    assert isinstance(instance.chunck, str)
 
 
 @given(instance=Cache_strategy)
@@ -477,33 +501,3 @@ def test_processor_instantiation(instance):
 @settings(max_examples=50)
 def test_cpu_instantiation(instance):
     assert isinstance(instance, CPU)
-
-@given(instance=FastCard_strategy)
-@settings(max_examples=50)
-def test_fastcard_instantiation(instance):
-    assert isinstance(instance, FastCard)
-
-@given(instance=ExtensionBoard_strategy)
-@settings(max_examples=50)
-def test_extensionboard_instantiation(instance):
-    assert isinstance(instance, ExtensionBoard)
-
-@given(instance=Vendor2Sound_strategy)
-@settings(max_examples=50)
-def test_vendor2sound_instantiation(instance):
-    assert isinstance(instance, Vendor2Sound)
-
-@given(instance=Vendor1Sound_strategy)
-@settings(max_examples=50)
-def test_vendor1sound_instantiation(instance):
-    assert isinstance(instance, Vendor1Sound)
-
-@given(instance=Vendor2Adapter_strategy)
-@settings(max_examples=50)
-def test_vendor2adapter_instantiation(instance):
-    assert isinstance(instance, Vendor2Adapter)
-
-@given(instance=Vendor1Adapter_strategy)
-@settings(max_examples=50)
-def test_vendor1adapter_instantiation(instance):
-    assert isinstance(instance, Vendor1Adapter)

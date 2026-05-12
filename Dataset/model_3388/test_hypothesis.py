@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    fds::Table,
-    fds::Database,
-    fds::NamedElement,
+    fds_Table,
+    fds_Database,
+    fds_NamedElement,
     CandidateKey,
-    fds::PrimaryKey,
+    fds_PrimaryKey,
     Restriction,
-    fds::CandidateKey,
-    fds::ForeignKey,
-    fds::RestrictionColumn,
-    fds::Restriction,
-    fds::FunctionalDependency,
-    fds::Column,
+    fds_CandidateKey,
+    fds_ForeignKey,
+    fds_RestrictionColumn,
+    fds_Restriction,
+    fds_FunctionalDependency,
+    fds_Column,
 )
 
 # =============================================================================
@@ -41,51 +41,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fds::table_is_not_abstract():
-    assert not inspect.isabstract(fds::Table)
+def test_fds_table_is_not_abstract():
+    assert not inspect.isabstract(fds_Table)
 
 
-def test_fds::table_constructor_exists():
-    assert callable(fds::Table.__init__)
+def test_fds_table_constructor_exists():
+    assert callable(fds_Table.__init__)
 
 
-def test_fds::table_constructor_args():
-    sig = inspect.signature(fds::Table.__init__)
+def test_fds_table_constructor_args():
+    sig = inspect.signature(fds_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::database_is_not_abstract():
-    assert not inspect.isabstract(fds::Database)
+def test_fds_database_is_not_abstract():
+    assert not inspect.isabstract(fds_Database)
 
 
-def test_fds::database_constructor_exists():
-    assert callable(fds::Database.__init__)
+def test_fds_database_constructor_exists():
+    assert callable(fds_Database.__init__)
 
 
-def test_fds::database_constructor_args():
-    sig = inspect.signature(fds::Database.__init__)
+def test_fds_database_constructor_args():
+    sig = inspect.signature(fds_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::namedelement_is_not_abstract():
-    assert not inspect.isabstract(fds::NamedElement)
+def test_fds_namedelement_is_not_abstract():
+    assert not inspect.isabstract(fds_NamedElement)
 
 
-def test_fds::namedelement_constructor_exists():
-    assert callable(fds::NamedElement.__init__)
+def test_fds_namedelement_constructor_exists():
+    assert callable(fds_NamedElement.__init__)
 
 
-def test_fds::namedelement_constructor_args():
-    sig = inspect.signature(fds::NamedElement.__init__)
+def test_fds_namedelement_constructor_args():
+    sig = inspect.signature(fds_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fds::namedelement_has_name():
-    assert hasattr(fds::NamedElement, "name")
+def test_fds_namedelement_has_name():
+    assert hasattr(fds_NamedElement, "name")
     descriptor = None
-    for klass in fds::NamedElement.__mro__:
+    for klass in fds_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,16 +107,16 @@ def test_candidatekey_constructor_args():
 
 
 
-def test_fds::primarykey_is_not_abstract():
-    assert not inspect.isabstract(fds::PrimaryKey)
+def test_fds_primarykey_is_not_abstract():
+    assert not inspect.isabstract(fds_PrimaryKey)
 
 
-def test_fds::primarykey_constructor_exists():
-    assert callable(fds::PrimaryKey.__init__)
+def test_fds_primarykey_constructor_exists():
+    assert callable(fds_PrimaryKey.__init__)
 
 
-def test_fds::primarykey_constructor_args():
-    sig = inspect.signature(fds::PrimaryKey.__init__)
+def test_fds_primarykey_constructor_args():
+    sig = inspect.signature(fds_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -135,86 +135,86 @@ def test_restriction_constructor_args():
 
 
 
-def test_fds::candidatekey_is_not_abstract():
-    assert not inspect.isabstract(fds::CandidateKey)
+def test_fds_candidatekey_is_not_abstract():
+    assert not inspect.isabstract(fds_CandidateKey)
 
 
-def test_fds::candidatekey_constructor_exists():
-    assert callable(fds::CandidateKey.__init__)
+def test_fds_candidatekey_constructor_exists():
+    assert callable(fds_CandidateKey.__init__)
 
 
-def test_fds::candidatekey_constructor_args():
-    sig = inspect.signature(fds::CandidateKey.__init__)
+def test_fds_candidatekey_constructor_args():
+    sig = inspect.signature(fds_CandidateKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(fds::ForeignKey)
+def test_fds_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(fds_ForeignKey)
 
 
-def test_fds::foreignkey_constructor_exists():
-    assert callable(fds::ForeignKey.__init__)
+def test_fds_foreignkey_constructor_exists():
+    assert callable(fds_ForeignKey.__init__)
 
 
-def test_fds::foreignkey_constructor_args():
-    sig = inspect.signature(fds::ForeignKey.__init__)
+def test_fds_foreignkey_constructor_args():
+    sig = inspect.signature(fds_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::restrictioncolumn_is_not_abstract():
-    assert not inspect.isabstract(fds::RestrictionColumn)
+def test_fds_restrictioncolumn_is_not_abstract():
+    assert not inspect.isabstract(fds_RestrictionColumn)
 
 
-def test_fds::restrictioncolumn_constructor_exists():
-    assert callable(fds::RestrictionColumn.__init__)
+def test_fds_restrictioncolumn_constructor_exists():
+    assert callable(fds_RestrictionColumn.__init__)
 
 
-def test_fds::restrictioncolumn_constructor_args():
-    sig = inspect.signature(fds::RestrictionColumn.__init__)
+def test_fds_restrictioncolumn_constructor_args():
+    sig = inspect.signature(fds_RestrictionColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::restriction_is_not_abstract():
-    assert not inspect.isabstract(fds::Restriction)
+def test_fds_restriction_is_not_abstract():
+    assert not inspect.isabstract(fds_Restriction)
 
 
-def test_fds::restriction_constructor_exists():
-    assert callable(fds::Restriction.__init__)
+def test_fds_restriction_constructor_exists():
+    assert callable(fds_Restriction.__init__)
 
 
-def test_fds::restriction_constructor_args():
-    sig = inspect.signature(fds::Restriction.__init__)
+def test_fds_restriction_constructor_args():
+    sig = inspect.signature(fds_Restriction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::functionaldependency_is_not_abstract():
-    assert not inspect.isabstract(fds::FunctionalDependency)
+def test_fds_functionaldependency_is_not_abstract():
+    assert not inspect.isabstract(fds_FunctionalDependency)
 
 
-def test_fds::functionaldependency_constructor_exists():
-    assert callable(fds::FunctionalDependency.__init__)
+def test_fds_functionaldependency_constructor_exists():
+    assert callable(fds_FunctionalDependency.__init__)
 
 
-def test_fds::functionaldependency_constructor_args():
-    sig = inspect.signature(fds::FunctionalDependency.__init__)
+def test_fds_functionaldependency_constructor_args():
+    sig = inspect.signature(fds_FunctionalDependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fds::column_is_not_abstract():
-    assert not inspect.isabstract(fds::Column)
+def test_fds_column_is_not_abstract():
+    assert not inspect.isabstract(fds_Column)
 
 
-def test_fds::column_constructor_exists():
-    assert callable(fds::Column.__init__)
+def test_fds_column_constructor_exists():
+    assert callable(fds_Column.__init__)
 
 
-def test_fds::column_constructor_args():
-    sig = inspect.signature(fds::Column.__init__)
+def test_fds_column_constructor_args():
+    sig = inspect.signature(fds_Column.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,43 +232,43 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-fds::Table_strategy = st.builds(
-    fds::Table,
+fds_Table_strategy = st.builds(
+    fds_Table,
 )
-fds::Database_strategy = st.builds(
-    fds::Database,
+fds_Database_strategy = st.builds(
+    fds_Database,
 )
-fds::NamedElement_strategy = st.builds(
-    fds::NamedElement,
+fds_NamedElement_strategy = st.builds(
+    fds_NamedElement,
     name=
         safe_text
 )
 CandidateKey_strategy = st.builds(
     CandidateKey,
 )
-fds::PrimaryKey_strategy = st.builds(
-    fds::PrimaryKey,
+fds_PrimaryKey_strategy = st.builds(
+    fds_PrimaryKey,
 )
 Restriction_strategy = st.builds(
     Restriction,
 )
-fds::CandidateKey_strategy = st.builds(
-    fds::CandidateKey,
+fds_CandidateKey_strategy = st.builds(
+    fds_CandidateKey,
 )
-fds::ForeignKey_strategy = st.builds(
-    fds::ForeignKey,
+fds_ForeignKey_strategy = st.builds(
+    fds_ForeignKey,
 )
-fds::RestrictionColumn_strategy = st.builds(
-    fds::RestrictionColumn,
+fds_RestrictionColumn_strategy = st.builds(
+    fds_RestrictionColumn,
 )
-fds::Restriction_strategy = st.builds(
-    fds::Restriction,
+fds_Restriction_strategy = st.builds(
+    fds_Restriction,
 )
-fds::FunctionalDependency_strategy = st.builds(
-    fds::FunctionalDependency,
+fds_FunctionalDependency_strategy = st.builds(
+    fds_FunctionalDependency,
 )
-fds::Column_strategy = st.builds(
-    fds::Column,
+fds_Column_strategy = st.builds(
+    fds_Column,
 )
 
 @given(instance=NamedElement_strategy)
@@ -276,28 +276,25 @@ fds::Column_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=fds::Table_strategy)
+@given(instance=fds_Table_strategy)
 @settings(max_examples=50)
-def test_fds::table_instantiation(instance):
-    assert isinstance(instance, fds::Table)
+def test_fds_table_instantiation(instance):
+    assert isinstance(instance, fds_Table)
 
-@given(instance=fds::Database_strategy)
+@given(instance=fds_Database_strategy)
 @settings(max_examples=50)
-def test_fds::database_instantiation(instance):
-    assert isinstance(instance, fds::Database)
+def test_fds_database_instantiation(instance):
+    assert isinstance(instance, fds_Database)
 
-@given(instance=fds::NamedElement_strategy)
+@given(instance=fds_NamedElement_strategy)
 @settings(max_examples=50)
-def test_fds::namedelement_instantiation(instance):
-    assert isinstance(instance, fds::NamedElement)
-
-@given(instance=fds::NamedElement_strategy)
-def test_fds::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fds_namedelement_instantiation(instance):
+    assert isinstance(instance, fds_NamedElement)
 
 
-@given(instance=fds::NamedElement_strategy)
-def test_fds::namedelement_name_setter(instance):
+
+@given(instance=fds_NamedElement_strategy)
+def test_fds_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -307,42 +304,42 @@ def test_fds::namedelement_name_setter(instance):
 def test_candidatekey_instantiation(instance):
     assert isinstance(instance, CandidateKey)
 
-@given(instance=fds::PrimaryKey_strategy)
+@given(instance=fds_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_fds::primarykey_instantiation(instance):
-    assert isinstance(instance, fds::PrimaryKey)
+def test_fds_primarykey_instantiation(instance):
+    assert isinstance(instance, fds_PrimaryKey)
 
 @given(instance=Restriction_strategy)
 @settings(max_examples=50)
 def test_restriction_instantiation(instance):
     assert isinstance(instance, Restriction)
 
-@given(instance=fds::CandidateKey_strategy)
+@given(instance=fds_CandidateKey_strategy)
 @settings(max_examples=50)
-def test_fds::candidatekey_instantiation(instance):
-    assert isinstance(instance, fds::CandidateKey)
+def test_fds_candidatekey_instantiation(instance):
+    assert isinstance(instance, fds_CandidateKey)
 
-@given(instance=fds::ForeignKey_strategy)
+@given(instance=fds_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_fds::foreignkey_instantiation(instance):
-    assert isinstance(instance, fds::ForeignKey)
+def test_fds_foreignkey_instantiation(instance):
+    assert isinstance(instance, fds_ForeignKey)
 
-@given(instance=fds::RestrictionColumn_strategy)
+@given(instance=fds_RestrictionColumn_strategy)
 @settings(max_examples=50)
-def test_fds::restrictioncolumn_instantiation(instance):
-    assert isinstance(instance, fds::RestrictionColumn)
+def test_fds_restrictioncolumn_instantiation(instance):
+    assert isinstance(instance, fds_RestrictionColumn)
 
-@given(instance=fds::Restriction_strategy)
+@given(instance=fds_Restriction_strategy)
 @settings(max_examples=50)
-def test_fds::restriction_instantiation(instance):
-    assert isinstance(instance, fds::Restriction)
+def test_fds_restriction_instantiation(instance):
+    assert isinstance(instance, fds_Restriction)
 
-@given(instance=fds::FunctionalDependency_strategy)
+@given(instance=fds_FunctionalDependency_strategy)
 @settings(max_examples=50)
-def test_fds::functionaldependency_instantiation(instance):
-    assert isinstance(instance, fds::FunctionalDependency)
+def test_fds_functionaldependency_instantiation(instance):
+    assert isinstance(instance, fds_FunctionalDependency)
 
-@given(instance=fds::Column_strategy)
+@given(instance=fds_Column_strategy)
 @settings(max_examples=50)
-def test_fds::column_instantiation(instance):
-    assert isinstance(instance, fds::Column)
+def test_fds_column_instantiation(instance):
+    assert isinstance(instance, fds_Column)

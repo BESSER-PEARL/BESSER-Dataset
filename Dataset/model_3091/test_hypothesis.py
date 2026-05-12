@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleClass::Association,
+from python_code import (
+    SimpleClass_Association,
     Attribute,
     Class,
     Classifier,
-    SimpleClass::PrimitiveDataType,
-    SimpleClass::Class,
-    SimpleClass::Classifier,
-    SimpleClass::Attribute,
+    SimpleClass_PrimitiveDataType,
+    SimpleClass_Class,
+    SimpleClass_Classifier,
+    SimpleClass_Attribute,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_simpleclass::association_is_not_abstract():
-    assert not inspect.isabstract(SimpleClass::Association)
+def test_simpleclass_association_is_not_abstract():
+    assert not inspect.isabstract(SimpleClass_Association)
 
 
-def test_simpleclass::association_constructor_exists():
-    assert callable(SimpleClass::Association.__init__)
+def test_simpleclass_association_constructor_exists():
+    assert callable(SimpleClass_Association.__init__)
 
 
-def test_simpleclass::association_constructor_args():
-    sig = inspect.signature(SimpleClass::Association.__init__)
+def test_simpleclass_association_constructor_args():
+    sig = inspect.signature(SimpleClass_Association.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleclass::association_has_name():
-    assert hasattr(SimpleClass::Association, "name")
+def test_simpleclass_association_has_name():
+    assert hasattr(SimpleClass_Association, "name")
     descriptor = None
-    for klass in SimpleClass::Association.__mro__:
+    for klass in SimpleClass_Association.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -88,37 +88,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_simpleclass::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(SimpleClass::PrimitiveDataType)
+def test_simpleclass_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(SimpleClass_PrimitiveDataType)
 
 
-def test_simpleclass::primitivedatatype_constructor_exists():
-    assert callable(SimpleClass::PrimitiveDataType.__init__)
+def test_simpleclass_primitivedatatype_constructor_exists():
+    assert callable(SimpleClass_PrimitiveDataType.__init__)
 
 
-def test_simpleclass::primitivedatatype_constructor_args():
-    sig = inspect.signature(SimpleClass::PrimitiveDataType.__init__)
+def test_simpleclass_primitivedatatype_constructor_args():
+    sig = inspect.signature(SimpleClass_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleclass::class_is_not_abstract():
-    assert not inspect.isabstract(SimpleClass::Class)
+def test_simpleclass_class_is_not_abstract():
+    assert not inspect.isabstract(SimpleClass_Class)
 
 
-def test_simpleclass::class_constructor_exists():
-    assert callable(SimpleClass::Class.__init__)
+def test_simpleclass_class_constructor_exists():
+    assert callable(SimpleClass_Class.__init__)
 
 
-def test_simpleclass::class_constructor_args():
-    sig = inspect.signature(SimpleClass::Class.__init__)
+def test_simpleclass_class_constructor_args():
+    sig = inspect.signature(SimpleClass_Class.__init__)
     params = list(sig.parameters.keys())
     assert "is_persistent" in params, "Missing parameter 'is_persistent'"
 
-def test_simpleclass::class_has_is_persistent():
-    assert hasattr(SimpleClass::Class, "is_persistent")
+def test_simpleclass_class_has_is_persistent():
+    assert hasattr(SimpleClass_Class, "is_persistent")
     descriptor = None
-    for klass in SimpleClass::Class.__mro__:
+    for klass in SimpleClass_Class.__mro__:
         if "is_persistent" in klass.__dict__:
             descriptor = klass.__dict__["is_persistent"]
             break
@@ -126,23 +126,23 @@ def test_simpleclass::class_has_is_persistent():
 
 
 
-def test_simpleclass::classifier_is_not_abstract():
-    assert not inspect.isabstract(SimpleClass::Classifier)
+def test_simpleclass_classifier_is_not_abstract():
+    assert not inspect.isabstract(SimpleClass_Classifier)
 
 
-def test_simpleclass::classifier_constructor_exists():
-    assert callable(SimpleClass::Classifier.__init__)
+def test_simpleclass_classifier_constructor_exists():
+    assert callable(SimpleClass_Classifier.__init__)
 
 
-def test_simpleclass::classifier_constructor_args():
-    sig = inspect.signature(SimpleClass::Classifier.__init__)
+def test_simpleclass_classifier_constructor_args():
+    sig = inspect.signature(SimpleClass_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleclass::classifier_has_name():
-    assert hasattr(SimpleClass::Classifier, "name")
+def test_simpleclass_classifier_has_name():
+    assert hasattr(SimpleClass_Classifier, "name")
     descriptor = None
-    for klass in SimpleClass::Classifier.__mro__:
+    for klass in SimpleClass_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -150,33 +150,33 @@ def test_simpleclass::classifier_has_name():
 
 
 
-def test_simpleclass::attribute_is_not_abstract():
-    assert not inspect.isabstract(SimpleClass::Attribute)
+def test_simpleclass_attribute_is_not_abstract():
+    assert not inspect.isabstract(SimpleClass_Attribute)
 
 
-def test_simpleclass::attribute_constructor_exists():
-    assert callable(SimpleClass::Attribute.__init__)
+def test_simpleclass_attribute_constructor_exists():
+    assert callable(SimpleClass_Attribute.__init__)
 
 
-def test_simpleclass::attribute_constructor_args():
-    sig = inspect.signature(SimpleClass::Attribute.__init__)
+def test_simpleclass_attribute_constructor_args():
+    sig = inspect.signature(SimpleClass_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "is_primary" in params, "Missing parameter 'is_primary'"
 
-def test_simpleclass::attribute_has_name():
-    assert hasattr(SimpleClass::Attribute, "name")
+def test_simpleclass_attribute_has_name():
+    assert hasattr(SimpleClass_Attribute, "name")
     descriptor = None
-    for klass in SimpleClass::Attribute.__mro__:
+    for klass in SimpleClass_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleclass::attribute_has_is_primary():
-    assert hasattr(SimpleClass::Attribute, "is_primary")
+def test_simpleclass_attribute_has_is_primary():
+    assert hasattr(SimpleClass_Attribute, "is_primary")
     descriptor = None
-    for klass in SimpleClass::Attribute.__mro__:
+    for klass in SimpleClass_Attribute.__mro__:
         if "is_primary" in klass.__dict__:
             descriptor = klass.__dict__["is_primary"]
             break
@@ -194,8 +194,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleClass::Association_strategy = st.builds(
-    SimpleClass::Association,
+SimpleClass_Association_strategy = st.builds(
+    SimpleClass_Association,
     name=
         safe_text
 )
@@ -208,39 +208,36 @@ Class_strategy = st.builds(
 Classifier_strategy = st.builds(
     Classifier,
 )
-SimpleClass::PrimitiveDataType_strategy = st.builds(
-    SimpleClass::PrimitiveDataType,
+SimpleClass_PrimitiveDataType_strategy = st.builds(
+    SimpleClass_PrimitiveDataType,
 )
-SimpleClass::Class_strategy = st.builds(
-    SimpleClass::Class,
+SimpleClass_Class_strategy = st.builds(
+    SimpleClass_Class,
     is_persistent=
         safe_text
 )
-SimpleClass::Classifier_strategy = st.builds(
-    SimpleClass::Classifier,
+SimpleClass_Classifier_strategy = st.builds(
+    SimpleClass_Classifier,
     name=
         safe_text
 )
-SimpleClass::Attribute_strategy = st.builds(
-    SimpleClass::Attribute,
+SimpleClass_Attribute_strategy = st.builds(
+    SimpleClass_Attribute,
     name=
         safe_text,
     is_primary=
         safe_text
 )
 
-@given(instance=SimpleClass::Association_strategy)
+@given(instance=SimpleClass_Association_strategy)
 @settings(max_examples=50)
-def test_simpleclass::association_instantiation(instance):
-    assert isinstance(instance, SimpleClass::Association)
-
-@given(instance=SimpleClass::Association_strategy)
-def test_simpleclass::association_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleclass_association_instantiation(instance):
+    assert isinstance(instance, SimpleClass_Association)
 
 
-@given(instance=SimpleClass::Association_strategy)
-def test_simpleclass::association_name_setter(instance):
+
+@given(instance=SimpleClass_Association_strategy)
+def test_simpleclass_association_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -260,66 +257,54 @@ def test_class_instantiation(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=SimpleClass::PrimitiveDataType_strategy)
+@given(instance=SimpleClass_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_simpleclass::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, SimpleClass::PrimitiveDataType)
+def test_simpleclass_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, SimpleClass_PrimitiveDataType)
 
-@given(instance=SimpleClass::Class_strategy)
+@given(instance=SimpleClass_Class_strategy)
 @settings(max_examples=50)
-def test_simpleclass::class_instantiation(instance):
-    assert isinstance(instance, SimpleClass::Class)
-
-@given(instance=SimpleClass::Class_strategy)
-def test_simpleclass::class_is_persistent_type(instance):
-    assert isinstance(instance.is_persistent, str)
+def test_simpleclass_class_instantiation(instance):
+    assert isinstance(instance, SimpleClass_Class)
 
 
-@given(instance=SimpleClass::Class_strategy)
-def test_simpleclass::class_is_persistent_setter(instance):
+
+@given(instance=SimpleClass_Class_strategy)
+def test_simpleclass_class_is_persistent_setter(instance):
     original = instance.is_persistent
     instance.is_persistent = original
     assert instance.is_persistent == original
 
-@given(instance=SimpleClass::Classifier_strategy)
+@given(instance=SimpleClass_Classifier_strategy)
 @settings(max_examples=50)
-def test_simpleclass::classifier_instantiation(instance):
-    assert isinstance(instance, SimpleClass::Classifier)
-
-@given(instance=SimpleClass::Classifier_strategy)
-def test_simpleclass::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleclass_classifier_instantiation(instance):
+    assert isinstance(instance, SimpleClass_Classifier)
 
 
-@given(instance=SimpleClass::Classifier_strategy)
-def test_simpleclass::classifier_name_setter(instance):
+
+@given(instance=SimpleClass_Classifier_strategy)
+def test_simpleclass_classifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SimpleClass::Attribute_strategy)
+@given(instance=SimpleClass_Attribute_strategy)
 @settings(max_examples=50)
-def test_simpleclass::attribute_instantiation(instance):
-    assert isinstance(instance, SimpleClass::Attribute)
-
-@given(instance=SimpleClass::Attribute_strategy)
-def test_simpleclass::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleclass_attribute_instantiation(instance):
+    assert isinstance(instance, SimpleClass_Attribute)
 
 
-@given(instance=SimpleClass::Attribute_strategy)
-def test_simpleclass::attribute_name_setter(instance):
+
+@given(instance=SimpleClass_Attribute_strategy)
+def test_simpleclass_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SimpleClass::Attribute_strategy)
-def test_simpleclass::attribute_is_primary_type(instance):
-    assert isinstance(instance.is_primary, str)
 
 
-@given(instance=SimpleClass::Attribute_strategy)
-def test_simpleclass::attribute_is_primary_setter(instance):
+@given(instance=SimpleClass_Attribute_strategy)
+def test_simpleclass_attribute_is_primary_setter(instance):
     original = instance.is_primary
     instance.is_primary = original
     assert instance.is_primary == original

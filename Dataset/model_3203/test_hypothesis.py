@@ -3,199 +3,199 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    idl::FormalParameterType,
-    idl::TemplateDefinition,
-    idl::FormalParameter,
-    idl::ActualParameter,
-    idl::FixedDefinition,
-    idl::StateMember,
+from python_code import (
+    idl_FormalParameterType,
+    idl_TemplateDefinition,
+    idl_FormalParameter,
+    idl_ActualParameter,
+    idl_FixedDefinition,
+    idl_StateMember,
     Event,
-    idl::EventDcl,
-    idl::ConnectorExport,
-    idl::ConnectorHeader,
-    idl::PortExport,
-    idl::EventForwardDcl,
-    idl::HomeExport,
-    idl::PrimaryKeySpec,
-    idl::ComponentExport,
-    idl::PrimaryExpr,
+    idl_EventDcl,
+    idl_ConnectorExport,
+    idl_ConnectorHeader,
+    idl_PortExport,
+    idl_EventForwardDcl,
+    idl_HomeExport,
+    idl_PrimaryKeySpec,
+    idl_ComponentExport,
+    idl_PrimaryExpr,
     ConstParamType,
-    idl::ConstType,
-    idl::UnaryExpr,
-    idl::MultExpr,
-    idl::AddExpr,
-    idl::ShiftExpr,
-    idl::AndExpr,
-    idl::XOrExpr,
+    idl_ConstType,
+    idl_UnaryExpr,
+    idl_MultExpr,
+    idl_AddExpr,
+    idl_ShiftExpr,
+    idl_AndExpr,
+    idl_XOrExpr,
     ConstExp,
-    idl::OrExpr,
-    idl::ElementSpec,
-    idl::CaseLabel,
-    idl::Case,
-    idl::SwitchBody,
-    idl::SwitchTypeSpec,
+    idl_OrExpr,
+    idl_ElementSpec,
+    idl_CaseLabel,
+    idl_Case,
+    idl_SwitchBody,
+    idl_SwitchTypeSpec,
     ConstrForwardDecl,
-    idl::UnionForwardDecl,
-    idl::StructForwardDecl,
+    idl_UnionForwardDecl,
+    idl_StructForwardDecl,
     FormalParameterType,
-    idl::ExceptionParamType,
-    idl::EventParamType,
-    idl::ValuetypeParamType,
-    idl::InterfaceParamType,
-    idl::EnumParamType,
-    idl::ConstParamType,
-    idl::SequenceParamType,
-    idl::TypenameParamType,
-    idl::UnionParamType,
-    idl::StructParamType,
-    idl::Declarator,
-    idl::Member,
+    idl_TypenameParamType,
+    idl_ConstParamType,
+    idl_SequenceParamType,
+    idl_EventParamType,
+    idl_UnionParamType,
+    idl_StructParamType,
+    idl_InterfaceParamType,
+    idl_EnumParamType,
+    idl_ExceptionParamType,
+    idl_ValuetypeParamType,
+    idl_Declarator,
+    idl_Member,
     TypeSpec,
-    idl::ConstrTypeSpec,
-    idl::SimpleTypeSpec,
+    idl_ConstrTypeSpec,
+    idl_SimpleTypeSpec,
     ActualParameter,
-    idl::TypeSpec,
+    idl_TypeSpec,
     ConstrTypeSpec,
     TypeDecl,
-    idl::ConstrForwardDecl,
-    idl::UnionType,
-    idl::TypeDeclarator,
+    idl_TypeDeclarator,
+    idl_UnionType,
+    idl_ConstrForwardDecl,
+    ComplexDeclarator,
+    idl_ComplexDeclarator,
+    Declarator,
+    idl_ArrayDeclarator,
+    idl_SimpleDeclarator,
+    PrimaryExpr,
+    idl_Literal,
+    ConstType,
+    idl_FixedPtConstType,
+    SwitchTypeSpec,
+    idl_EnumType,
+    SimpleTypeSpec,
+    idl_TemplateTypeSpec,
+    ParamTypeSpec,
+    idl_BaseTypeSpec,
+    OpTypeDecl,
+    idl_ParamDcl,
+    idl_PositiveIntConst,
+    TemplateTypeSpec,
+    idl_FixedPtType,
+    idl_WideStringType,
+    idl_SequenceType,
+    idl_StringType,
     Preproc,
-    idl::Preproc::Include,
+    idl_Preproc_Include,
     ComponentExport,
-    idl::ConsumesDcl,
-    idl::EmitDcl,
-    idl::PublishesDcl,
+    idl_PublishesDcl,
+    idl_EmitDcl,
+    idl_ConsumesDcl,
     Export,
     Definition,
-    idl::ComponentForwardDecl,
-    idl::TemplateModuleInst,
-    idl::TemplateModule,
-    idl::StructType,
-    idl::Preproc,
-    idl::Definition,
-    idl::Import::decl,
-    idl::Specification,
-    Preproc::Pragma,
-    idl::Preproc::Pragma::Conn::Type,
-    idl::Preproc::Pragma::Prefix,
-    idl::Preproc::Pragma,
-    idl::Preproc::Endif,
-    idl::Preproc::Define,
-    idl::Preproc::Error,
-    idl::Preproc::Else,
-    idl::Preproc::If::Val,
-    idl::Preproc::If::Compare,
-    idl::Preproc::If,
-    idl::Preproc::Undef,
-    ComplexDeclarator,
-    idl::ComplexDeclarator,
-    Declarator,
-    idl::ArrayDeclarator,
-    idl::SimpleDeclarator,
-    PrimaryExpr,
-    idl::ConstExp,
-    idl::Literal,
-    ConstType,
-    idl::FixedPtConstType,
-    SwitchTypeSpec,
-    idl::EnumType,
-    SimpleTypeSpec,
-    idl::TemplateTypeSpec,
-    ParamTypeSpec,
-    idl::BaseTypeSpec,
-    OpTypeDecl,
-    idl::ParamDcl,
-    idl::PositiveIntConst,
-    TemplateTypeSpec,
-    idl::FixedPtType,
-    idl::SequenceType,
-    idl::WideStringType,
-    idl::StringType,
+    idl_StructType,
+    idl_TemplateModuleInst,
+    idl_TemplateModule,
+    idl_ComponentForwardDecl,
+    idl_Preproc,
+    idl_Definition,
+    idl_Import_decl,
+    idl_Specification,
+    Preproc_Pragma,
+    idl_Preproc_Pragma_Conn_Type,
+    idl_Preproc_Pragma_Prefix,
+    idl_Preproc_Pragma,
+    idl_Preproc_Endif,
+    idl_Preproc_Define,
+    idl_Preproc_Error,
+    idl_Preproc_Else,
+    idl_ConstExp,
+    idl_Preproc_If_Val,
+    idl_Preproc_If_Compare,
+    idl_Preproc_If,
+    idl_Preproc_Undef,
     UnsignedInt,
-    idl::UnsignedLongLongInt,
-    idl::UnsignedLongInt,
-    idl::UnsignedShortInt,
+    idl_UnsignedLongLongInt,
+    idl_UnsignedLongInt,
+    idl_UnsignedShortInt,
     SignedInt,
-    idl::SignedLongLongInt,
-    idl::SignedLongInt,
-    idl::SignedShortInt,
+    idl_SignedLongLongInt,
+    idl_SignedLongInt,
+    idl_SignedShortInt,
     IntegerType,
-    idl::UnsignedInt,
-    idl::SignedInt,
+    idl_UnsignedInt,
+    idl_SignedInt,
     FloatingPtType,
-    idl::LongDoubleType,
-    idl::DoubleType,
-    idl::FloatType,
+    idl_LongDoubleType,
+    idl_DoubleType,
+    idl_FloatType,
     BaseTypeSpec,
-    idl::OctetType,
-    idl::AnyType,
-    idl::IntegerType,
-    idl::ValueBaseType,
-    idl::WideCharType,
-    idl::CharType,
-    idl::ObjectType,
-    idl::BooleanType,
-    idl::FloatingPtType,
-    idl::ParamTypeSpec,
+    idl_OctetType,
+    idl_IntegerType,
+    idl_AnyType,
+    idl_BooleanType,
+    idl_WideCharType,
+    idl_CharType,
+    idl_ObjectType,
+    idl_ValueBaseType,
+    idl_FloatingPtType,
+    idl_ParamTypeSpec,
     ConnectorExport,
-    idl::PortDecl,
+    idl_PortDecl,
     PortExport,
-    idl::UsesDcl,
-    idl::ProvidesDcl,
-    idl::AttrDecl,
+    idl_ProvidesDcl,
+    idl_UsesDcl,
+    idl_AttrDecl,
     HomeExport,
-    idl::FactoryDcl,
-    idl::FinderDcl,
-    idl::Export,
-    idl::ScopedName,
-    idl::ContextExpr,
-    idl::ParameterDecls,
-    idl::OpTypeDecl,
-    idl::OpDecl,
-    idl::ExceptionList,
-    idl::AttrRaisesExpr,
+    idl_FinderDcl,
+    idl_FactoryDcl,
+    idl_Export,
+    idl_ScopedName,
+    idl_ContextExpr,
+    idl_ParameterDecls,
+    idl_OpTypeDecl,
+    idl_OpDecl,
+    idl_ExceptionList,
+    idl_AttrRaisesExpr,
     AttrDecl,
-    idl::ReadOnlyAttrSpec,
-    idl::AttrSpec,
-    idl::Preproc::Pragma::Component,
-    idl::Preproc::Pragma::Ndds,
-    idl::Preproc::Pragma::Ciao::Ami4ccm::Idl,
-    idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle,
-    idl::Preproc::Pragma::Ciao::Ami4ccm::Interface,
-    idl::Preproc::Pragma::Ciao::Lem,
-    idl::InterfaceBody,
-    idl::Interface::header,
+    idl_ReadOnlyAttrSpec,
+    idl_AttrSpec,
+    idl_Preproc_Pragma_Component,
+    idl_Preproc_Pragma_Ndds,
+    idl_Preproc_Pragma_Ciao_Ami4ccm_Idl,
+    idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle,
+    idl_Preproc_Pragma_Ciao_Ami4ccm_Interface,
+    idl_Preproc_Pragma_Ciao_Lem,
+    idl_InterfaceBody,
+    idl_Interface_header,
     FixedDefinition,
     TemplateDefinition,
-    idl::PortTypeDecl,
-    idl::TypeDecl,
-    idl::ExceptDecl,
-    idl::Event,
-    idl::HomeDecl,
-    idl::FixedModule,
-    idl::NativeType,
-    idl::ComponentDecl,
-    idl::ConstDecl,
-    idl::Connector,
-    idl::TemplateModuleRef,
-    Interface::or::Forward::Decl,
-    idl::Forward::decl,
-    idl::Interface::decl,
-    idl::Interface::or::Forward::Decl,
-    idl::IDLComment,
-    idl::Module,
-    idl::Excluded::File::Marker,
-    idl::File::Marker,
-    idl::Preproc::Pragma::Misc,
-    idl::Preproc::Pragma::DDS4CCM::Impl,
-    idl::Preproc::Pragma::Home,
-    idl::Preproc::Ifndef,
-    idl::Preproc::Ifdef,
-    idl::FileName,
+    idl_ConstDecl,
+    idl_NativeType,
+    idl_ComponentDecl,
+    idl_Connector,
+    idl_FixedModule,
+    idl_TypeDecl,
+    idl_TemplateModuleRef,
+    idl_PortTypeDecl,
+    idl_HomeDecl,
+    idl_ExceptDecl,
+    idl_Event,
+    Interface_or_Forward_Decl,
+    idl_Forward_decl,
+    idl_Interface_decl,
+    idl_Interface_or_Forward_Decl,
+    idl_IDLComment,
+    idl_Module,
+    idl_Excluded_File_Marker,
+    idl_File_Marker,
+    idl_Preproc_Pragma_Misc,
+    idl_Preproc_Pragma_DDS4CCM_Impl,
+    idl_Preproc_Pragma_Home,
+    idl_Preproc_Ifndef,
+    idl_Preproc_Ifdef,
+    idl_FileName,
     ParamDirection,
 )
 
@@ -205,51 +205,51 @@ from classes import (
 
 
 
-def test_idl::formalparametertype_is_not_abstract():
-    assert not inspect.isabstract(idl::FormalParameterType)
+def test_idl_formalparametertype_is_not_abstract():
+    assert not inspect.isabstract(idl_FormalParameterType)
 
 
-def test_idl::formalparametertype_constructor_exists():
-    assert callable(idl::FormalParameterType.__init__)
+def test_idl_formalparametertype_constructor_exists():
+    assert callable(idl_FormalParameterType.__init__)
 
 
-def test_idl::formalparametertype_constructor_args():
-    sig = inspect.signature(idl::FormalParameterType.__init__)
+def test_idl_formalparametertype_constructor_args():
+    sig = inspect.signature(idl_FormalParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::templatedefinition_is_not_abstract():
-    assert not inspect.isabstract(idl::TemplateDefinition)
+def test_idl_templatedefinition_is_not_abstract():
+    assert not inspect.isabstract(idl_TemplateDefinition)
 
 
-def test_idl::templatedefinition_constructor_exists():
-    assert callable(idl::TemplateDefinition.__init__)
+def test_idl_templatedefinition_constructor_exists():
+    assert callable(idl_TemplateDefinition.__init__)
 
 
-def test_idl::templatedefinition_constructor_args():
-    sig = inspect.signature(idl::TemplateDefinition.__init__)
+def test_idl_templatedefinition_constructor_args():
+    sig = inspect.signature(idl_TemplateDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::formalparameter_is_not_abstract():
-    assert not inspect.isabstract(idl::FormalParameter)
+def test_idl_formalparameter_is_not_abstract():
+    assert not inspect.isabstract(idl_FormalParameter)
 
 
-def test_idl::formalparameter_constructor_exists():
-    assert callable(idl::FormalParameter.__init__)
+def test_idl_formalparameter_constructor_exists():
+    assert callable(idl_FormalParameter.__init__)
 
 
-def test_idl::formalparameter_constructor_args():
-    sig = inspect.signature(idl::FormalParameter.__init__)
+def test_idl_formalparameter_constructor_args():
+    sig = inspect.signature(idl_FormalParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::formalparameter_has_name():
-    assert hasattr(idl::FormalParameter, "name")
+def test_idl_formalparameter_has_name():
+    assert hasattr(idl_FormalParameter, "name")
     descriptor = None
-    for klass in idl::FormalParameter.__mro__:
+    for klass in idl_FormalParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -257,61 +257,61 @@ def test_idl::formalparameter_has_name():
 
 
 
-def test_idl::actualparameter_is_not_abstract():
-    assert not inspect.isabstract(idl::ActualParameter)
+def test_idl_actualparameter_is_not_abstract():
+    assert not inspect.isabstract(idl_ActualParameter)
 
 
-def test_idl::actualparameter_constructor_exists():
-    assert callable(idl::ActualParameter.__init__)
+def test_idl_actualparameter_constructor_exists():
+    assert callable(idl_ActualParameter.__init__)
 
 
-def test_idl::actualparameter_constructor_args():
-    sig = inspect.signature(idl::ActualParameter.__init__)
+def test_idl_actualparameter_constructor_args():
+    sig = inspect.signature(idl_ActualParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::fixeddefinition_is_not_abstract():
-    assert not inspect.isabstract(idl::FixedDefinition)
+def test_idl_fixeddefinition_is_not_abstract():
+    assert not inspect.isabstract(idl_FixedDefinition)
 
 
-def test_idl::fixeddefinition_constructor_exists():
-    assert callable(idl::FixedDefinition.__init__)
+def test_idl_fixeddefinition_constructor_exists():
+    assert callable(idl_FixedDefinition.__init__)
 
 
-def test_idl::fixeddefinition_constructor_args():
-    sig = inspect.signature(idl::FixedDefinition.__init__)
+def test_idl_fixeddefinition_constructor_args():
+    sig = inspect.signature(idl_FixedDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::statemember_is_not_abstract():
-    assert not inspect.isabstract(idl::StateMember)
+def test_idl_statemember_is_not_abstract():
+    assert not inspect.isabstract(idl_StateMember)
 
 
-def test_idl::statemember_constructor_exists():
-    assert callable(idl::StateMember.__init__)
+def test_idl_statemember_constructor_exists():
+    assert callable(idl_StateMember.__init__)
 
 
-def test_idl::statemember_constructor_args():
-    sig = inspect.signature(idl::StateMember.__init__)
+def test_idl_statemember_constructor_args():
+    sig = inspect.signature(idl_StateMember.__init__)
     params = list(sig.parameters.keys())
     assert "isPublic" in params, "Missing parameter 'isPublic'"
     assert "names" in params, "Missing parameter 'names'"
 
-def test_idl::statemember_has_isPublic():
-    assert hasattr(idl::StateMember, "isPublic")
+def test_idl_statemember_has_isPublic():
+    assert hasattr(idl_StateMember, "isPublic")
     descriptor = None
-    for klass in idl::StateMember.__mro__:
+    for klass in idl_StateMember.__mro__:
         if "isPublic" in klass.__dict__:
             descriptor = klass.__dict__["isPublic"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::statemember_has_names():
-    assert hasattr(idl::StateMember, "names")
+def test_idl_statemember_has_names():
+    assert hasattr(idl_StateMember, "names")
     descriptor = None
-    for klass in idl::StateMember.__mro__:
+    for klass in idl_StateMember.__mro__:
         if "names" in klass.__dict__:
             descriptor = klass.__dict__["names"]
             break
@@ -333,71 +333,71 @@ def test_event_constructor_args():
 
 
 
-def test_idl::eventdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::EventDcl)
+def test_idl_eventdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_EventDcl)
 
 
-def test_idl::eventdcl_constructor_exists():
-    assert callable(idl::EventDcl.__init__)
+def test_idl_eventdcl_constructor_exists():
+    assert callable(idl_EventDcl.__init__)
 
 
-def test_idl::eventdcl_constructor_args():
-    sig = inspect.signature(idl::EventDcl.__init__)
+def test_idl_eventdcl_constructor_args():
+    sig = inspect.signature(idl_EventDcl.__init__)
     params = list(sig.parameters.keys())
-    assert "isTruncatable" in params, "Missing parameter 'isTruncatable'"
     assert "isCustom" in params, "Missing parameter 'isCustom'"
+    assert "isTruncatable" in params, "Missing parameter 'isTruncatable'"
 
-def test_idl::eventdcl_has_isTruncatable():
-    assert hasattr(idl::EventDcl, "isTruncatable")
+def test_idl_eventdcl_has_isCustom():
+    assert hasattr(idl_EventDcl, "isCustom")
     descriptor = None
-    for klass in idl::EventDcl.__mro__:
-        if "isTruncatable" in klass.__dict__:
-            descriptor = klass.__dict__["isTruncatable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_idl::eventdcl_has_isCustom():
-    assert hasattr(idl::EventDcl, "isCustom")
-    descriptor = None
-    for klass in idl::EventDcl.__mro__:
+    for klass in idl_EventDcl.__mro__:
         if "isCustom" in klass.__dict__:
             descriptor = klass.__dict__["isCustom"]
             break
     assert isinstance(descriptor, property)
 
+def test_idl_eventdcl_has_isTruncatable():
+    assert hasattr(idl_EventDcl, "isTruncatable")
+    descriptor = None
+    for klass in idl_EventDcl.__mro__:
+        if "isTruncatable" in klass.__dict__:
+            descriptor = klass.__dict__["isTruncatable"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_idl::connectorexport_is_not_abstract():
-    assert not inspect.isabstract(idl::ConnectorExport)
+
+def test_idl_connectorexport_is_not_abstract():
+    assert not inspect.isabstract(idl_ConnectorExport)
 
 
-def test_idl::connectorexport_constructor_exists():
-    assert callable(idl::ConnectorExport.__init__)
+def test_idl_connectorexport_constructor_exists():
+    assert callable(idl_ConnectorExport.__init__)
 
 
-def test_idl::connectorexport_constructor_args():
-    sig = inspect.signature(idl::ConnectorExport.__init__)
+def test_idl_connectorexport_constructor_args():
+    sig = inspect.signature(idl_ConnectorExport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::connectorheader_is_not_abstract():
-    assert not inspect.isabstract(idl::ConnectorHeader)
+def test_idl_connectorheader_is_not_abstract():
+    assert not inspect.isabstract(idl_ConnectorHeader)
 
 
-def test_idl::connectorheader_constructor_exists():
-    assert callable(idl::ConnectorHeader.__init__)
+def test_idl_connectorheader_constructor_exists():
+    assert callable(idl_ConnectorHeader.__init__)
 
 
-def test_idl::connectorheader_constructor_args():
-    sig = inspect.signature(idl::ConnectorHeader.__init__)
+def test_idl_connectorheader_constructor_args():
+    sig = inspect.signature(idl_ConnectorHeader.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::connectorheader_has_name():
-    assert hasattr(idl::ConnectorHeader, "name")
+def test_idl_connectorheader_has_name():
+    assert hasattr(idl_ConnectorHeader, "name")
     descriptor = None
-    for klass in idl::ConnectorHeader.__mro__:
+    for klass in idl_ConnectorHeader.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -405,86 +405,86 @@ def test_idl::connectorheader_has_name():
 
 
 
-def test_idl::portexport_is_not_abstract():
-    assert not inspect.isabstract(idl::PortExport)
+def test_idl_portexport_is_not_abstract():
+    assert not inspect.isabstract(idl_PortExport)
 
 
-def test_idl::portexport_constructor_exists():
-    assert callable(idl::PortExport.__init__)
+def test_idl_portexport_constructor_exists():
+    assert callable(idl_PortExport.__init__)
 
 
-def test_idl::portexport_constructor_args():
-    sig = inspect.signature(idl::PortExport.__init__)
+def test_idl_portexport_constructor_args():
+    sig = inspect.signature(idl_PortExport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::eventforwarddcl_is_not_abstract():
-    assert not inspect.isabstract(idl::EventForwardDcl)
+def test_idl_eventforwarddcl_is_not_abstract():
+    assert not inspect.isabstract(idl_EventForwardDcl)
 
 
-def test_idl::eventforwarddcl_constructor_exists():
-    assert callable(idl::EventForwardDcl.__init__)
+def test_idl_eventforwarddcl_constructor_exists():
+    assert callable(idl_EventForwardDcl.__init__)
 
 
-def test_idl::eventforwarddcl_constructor_args():
-    sig = inspect.signature(idl::EventForwardDcl.__init__)
+def test_idl_eventforwarddcl_constructor_args():
+    sig = inspect.signature(idl_EventForwardDcl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::homeexport_is_not_abstract():
-    assert not inspect.isabstract(idl::HomeExport)
+def test_idl_homeexport_is_not_abstract():
+    assert not inspect.isabstract(idl_HomeExport)
 
 
-def test_idl::homeexport_constructor_exists():
-    assert callable(idl::HomeExport.__init__)
+def test_idl_homeexport_constructor_exists():
+    assert callable(idl_HomeExport.__init__)
 
 
-def test_idl::homeexport_constructor_args():
-    sig = inspect.signature(idl::HomeExport.__init__)
+def test_idl_homeexport_constructor_args():
+    sig = inspect.signature(idl_HomeExport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::primarykeyspec_is_not_abstract():
-    assert not inspect.isabstract(idl::PrimaryKeySpec)
+def test_idl_primarykeyspec_is_not_abstract():
+    assert not inspect.isabstract(idl_PrimaryKeySpec)
 
 
-def test_idl::primarykeyspec_constructor_exists():
-    assert callable(idl::PrimaryKeySpec.__init__)
+def test_idl_primarykeyspec_constructor_exists():
+    assert callable(idl_PrimaryKeySpec.__init__)
 
 
-def test_idl::primarykeyspec_constructor_args():
-    sig = inspect.signature(idl::PrimaryKeySpec.__init__)
+def test_idl_primarykeyspec_constructor_args():
+    sig = inspect.signature(idl_PrimaryKeySpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::componentexport_is_not_abstract():
-    assert not inspect.isabstract(idl::ComponentExport)
+def test_idl_componentexport_is_not_abstract():
+    assert not inspect.isabstract(idl_ComponentExport)
 
 
-def test_idl::componentexport_constructor_exists():
-    assert callable(idl::ComponentExport.__init__)
+def test_idl_componentexport_constructor_exists():
+    assert callable(idl_ComponentExport.__init__)
 
 
-def test_idl::componentexport_constructor_args():
-    sig = inspect.signature(idl::ComponentExport.__init__)
+def test_idl_componentexport_constructor_args():
+    sig = inspect.signature(idl_ComponentExport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::primaryexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::PrimaryExpr)
+def test_idl_primaryexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_PrimaryExpr)
 
 
-def test_idl::primaryexpr_constructor_exists():
-    assert callable(idl::PrimaryExpr.__init__)
+def test_idl_primaryexpr_constructor_exists():
+    assert callable(idl_PrimaryExpr.__init__)
 
 
-def test_idl::primaryexpr_constructor_args():
-    sig = inspect.signature(idl::PrimaryExpr.__init__)
+def test_idl_primaryexpr_constructor_args():
+    sig = inspect.signature(idl_PrimaryExpr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -503,37 +503,37 @@ def test_constparamtype_constructor_args():
 
 
 
-def test_idl::consttype_is_not_abstract():
-    assert not inspect.isabstract(idl::ConstType)
+def test_idl_consttype_is_not_abstract():
+    assert not inspect.isabstract(idl_ConstType)
 
 
-def test_idl::consttype_constructor_exists():
-    assert callable(idl::ConstType.__init__)
+def test_idl_consttype_constructor_exists():
+    assert callable(idl_ConstType.__init__)
 
 
-def test_idl::consttype_constructor_args():
-    sig = inspect.signature(idl::ConstType.__init__)
+def test_idl_consttype_constructor_args():
+    sig = inspect.signature(idl_ConstType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::unaryexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::UnaryExpr)
+def test_idl_unaryexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_UnaryExpr)
 
 
-def test_idl::unaryexpr_constructor_exists():
-    assert callable(idl::UnaryExpr.__init__)
+def test_idl_unaryexpr_constructor_exists():
+    assert callable(idl_UnaryExpr.__init__)
 
 
-def test_idl::unaryexpr_constructor_args():
-    sig = inspect.signature(idl::UnaryExpr.__init__)
+def test_idl_unaryexpr_constructor_args():
+    sig = inspect.signature(idl_UnaryExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::unaryexpr_has_op():
-    assert hasattr(idl::UnaryExpr, "op")
+def test_idl_unaryexpr_has_op():
+    assert hasattr(idl_UnaryExpr, "op")
     descriptor = None
-    for klass in idl::UnaryExpr.__mro__:
+    for klass in idl_UnaryExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -541,23 +541,23 @@ def test_idl::unaryexpr_has_op():
 
 
 
-def test_idl::multexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::MultExpr)
+def test_idl_multexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_MultExpr)
 
 
-def test_idl::multexpr_constructor_exists():
-    assert callable(idl::MultExpr.__init__)
+def test_idl_multexpr_constructor_exists():
+    assert callable(idl_MultExpr.__init__)
 
 
-def test_idl::multexpr_constructor_args():
-    sig = inspect.signature(idl::MultExpr.__init__)
+def test_idl_multexpr_constructor_args():
+    sig = inspect.signature(idl_MultExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::multexpr_has_op():
-    assert hasattr(idl::MultExpr, "op")
+def test_idl_multexpr_has_op():
+    assert hasattr(idl_MultExpr, "op")
     descriptor = None
-    for klass in idl::MultExpr.__mro__:
+    for klass in idl_MultExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -565,23 +565,23 @@ def test_idl::multexpr_has_op():
 
 
 
-def test_idl::addexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::AddExpr)
+def test_idl_addexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_AddExpr)
 
 
-def test_idl::addexpr_constructor_exists():
-    assert callable(idl::AddExpr.__init__)
+def test_idl_addexpr_constructor_exists():
+    assert callable(idl_AddExpr.__init__)
 
 
-def test_idl::addexpr_constructor_args():
-    sig = inspect.signature(idl::AddExpr.__init__)
+def test_idl_addexpr_constructor_args():
+    sig = inspect.signature(idl_AddExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::addexpr_has_op():
-    assert hasattr(idl::AddExpr, "op")
+def test_idl_addexpr_has_op():
+    assert hasattr(idl_AddExpr, "op")
     descriptor = None
-    for klass in idl::AddExpr.__mro__:
+    for klass in idl_AddExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -589,23 +589,23 @@ def test_idl::addexpr_has_op():
 
 
 
-def test_idl::shiftexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::ShiftExpr)
+def test_idl_shiftexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_ShiftExpr)
 
 
-def test_idl::shiftexpr_constructor_exists():
-    assert callable(idl::ShiftExpr.__init__)
+def test_idl_shiftexpr_constructor_exists():
+    assert callable(idl_ShiftExpr.__init__)
 
 
-def test_idl::shiftexpr_constructor_args():
-    sig = inspect.signature(idl::ShiftExpr.__init__)
+def test_idl_shiftexpr_constructor_args():
+    sig = inspect.signature(idl_ShiftExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::shiftexpr_has_op():
-    assert hasattr(idl::ShiftExpr, "op")
+def test_idl_shiftexpr_has_op():
+    assert hasattr(idl_ShiftExpr, "op")
     descriptor = None
-    for klass in idl::ShiftExpr.__mro__:
+    for klass in idl_ShiftExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -613,23 +613,23 @@ def test_idl::shiftexpr_has_op():
 
 
 
-def test_idl::andexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::AndExpr)
+def test_idl_andexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_AndExpr)
 
 
-def test_idl::andexpr_constructor_exists():
-    assert callable(idl::AndExpr.__init__)
+def test_idl_andexpr_constructor_exists():
+    assert callable(idl_AndExpr.__init__)
 
 
-def test_idl::andexpr_constructor_args():
-    sig = inspect.signature(idl::AndExpr.__init__)
+def test_idl_andexpr_constructor_args():
+    sig = inspect.signature(idl_AndExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::andexpr_has_op():
-    assert hasattr(idl::AndExpr, "op")
+def test_idl_andexpr_has_op():
+    assert hasattr(idl_AndExpr, "op")
     descriptor = None
-    for klass in idl::AndExpr.__mro__:
+    for klass in idl_AndExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -637,23 +637,23 @@ def test_idl::andexpr_has_op():
 
 
 
-def test_idl::xorexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::XOrExpr)
+def test_idl_xorexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_XOrExpr)
 
 
-def test_idl::xorexpr_constructor_exists():
-    assert callable(idl::XOrExpr.__init__)
+def test_idl_xorexpr_constructor_exists():
+    assert callable(idl_XOrExpr.__init__)
 
 
-def test_idl::xorexpr_constructor_args():
-    sig = inspect.signature(idl::XOrExpr.__init__)
+def test_idl_xorexpr_constructor_args():
+    sig = inspect.signature(idl_XOrExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::xorexpr_has_op():
-    assert hasattr(idl::XOrExpr, "op")
+def test_idl_xorexpr_has_op():
+    assert hasattr(idl_XOrExpr, "op")
     descriptor = None
-    for klass in idl::XOrExpr.__mro__:
+    for klass in idl_XOrExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -675,23 +675,23 @@ def test_constexp_constructor_args():
 
 
 
-def test_idl::orexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::OrExpr)
+def test_idl_orexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_OrExpr)
 
 
-def test_idl::orexpr_constructor_exists():
-    assert callable(idl::OrExpr.__init__)
+def test_idl_orexpr_constructor_exists():
+    assert callable(idl_OrExpr.__init__)
 
 
-def test_idl::orexpr_constructor_args():
-    sig = inspect.signature(idl::OrExpr.__init__)
+def test_idl_orexpr_constructor_args():
+    sig = inspect.signature(idl_OrExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::orexpr_has_op():
-    assert hasattr(idl::OrExpr, "op")
+def test_idl_orexpr_has_op():
+    assert hasattr(idl_OrExpr, "op")
     descriptor = None
-    for klass in idl::OrExpr.__mro__:
+    for klass in idl_OrExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -699,92 +699,92 @@ def test_idl::orexpr_has_op():
 
 
 
-def test_idl::elementspec_is_not_abstract():
-    assert not inspect.isabstract(idl::ElementSpec)
+def test_idl_elementspec_is_not_abstract():
+    assert not inspect.isabstract(idl_ElementSpec)
 
 
-def test_idl::elementspec_constructor_exists():
-    assert callable(idl::ElementSpec.__init__)
+def test_idl_elementspec_constructor_exists():
+    assert callable(idl_ElementSpec.__init__)
 
 
-def test_idl::elementspec_constructor_args():
-    sig = inspect.signature(idl::ElementSpec.__init__)
+def test_idl_elementspec_constructor_args():
+    sig = inspect.signature(idl_ElementSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::caselabel_is_not_abstract():
-    assert not inspect.isabstract(idl::CaseLabel)
+def test_idl_caselabel_is_not_abstract():
+    assert not inspect.isabstract(idl_CaseLabel)
 
 
-def test_idl::caselabel_constructor_exists():
-    assert callable(idl::CaseLabel.__init__)
+def test_idl_caselabel_constructor_exists():
+    assert callable(idl_CaseLabel.__init__)
 
 
-def test_idl::caselabel_constructor_args():
-    sig = inspect.signature(idl::CaseLabel.__init__)
+def test_idl_caselabel_constructor_args():
+    sig = inspect.signature(idl_CaseLabel.__init__)
     params = list(sig.parameters.keys())
-    assert "isCase" in params, "Missing parameter 'isCase'"
     assert "isDefault" in params, "Missing parameter 'isDefault'"
+    assert "isCase" in params, "Missing parameter 'isCase'"
 
-def test_idl::caselabel_has_isCase():
-    assert hasattr(idl::CaseLabel, "isCase")
+def test_idl_caselabel_has_isDefault():
+    assert hasattr(idl_CaseLabel, "isDefault")
     descriptor = None
-    for klass in idl::CaseLabel.__mro__:
-        if "isCase" in klass.__dict__:
-            descriptor = klass.__dict__["isCase"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_idl::caselabel_has_isDefault():
-    assert hasattr(idl::CaseLabel, "isDefault")
-    descriptor = None
-    for klass in idl::CaseLabel.__mro__:
+    for klass in idl_CaseLabel.__mro__:
         if "isDefault" in klass.__dict__:
             descriptor = klass.__dict__["isDefault"]
             break
     assert isinstance(descriptor, property)
 
+def test_idl_caselabel_has_isCase():
+    assert hasattr(idl_CaseLabel, "isCase")
+    descriptor = None
+    for klass in idl_CaseLabel.__mro__:
+        if "isCase" in klass.__dict__:
+            descriptor = klass.__dict__["isCase"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_idl::case_is_not_abstract():
-    assert not inspect.isabstract(idl::Case)
+
+def test_idl_case_is_not_abstract():
+    assert not inspect.isabstract(idl_Case)
 
 
-def test_idl::case_constructor_exists():
-    assert callable(idl::Case.__init__)
+def test_idl_case_constructor_exists():
+    assert callable(idl_Case.__init__)
 
 
-def test_idl::case_constructor_args():
-    sig = inspect.signature(idl::Case.__init__)
+def test_idl_case_constructor_args():
+    sig = inspect.signature(idl_Case.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::switchbody_is_not_abstract():
-    assert not inspect.isabstract(idl::SwitchBody)
+def test_idl_switchbody_is_not_abstract():
+    assert not inspect.isabstract(idl_SwitchBody)
 
 
-def test_idl::switchbody_constructor_exists():
-    assert callable(idl::SwitchBody.__init__)
+def test_idl_switchbody_constructor_exists():
+    assert callable(idl_SwitchBody.__init__)
 
 
-def test_idl::switchbody_constructor_args():
-    sig = inspect.signature(idl::SwitchBody.__init__)
+def test_idl_switchbody_constructor_args():
+    sig = inspect.signature(idl_SwitchBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::switchtypespec_is_not_abstract():
-    assert not inspect.isabstract(idl::SwitchTypeSpec)
+def test_idl_switchtypespec_is_not_abstract():
+    assert not inspect.isabstract(idl_SwitchTypeSpec)
 
 
-def test_idl::switchtypespec_constructor_exists():
-    assert callable(idl::SwitchTypeSpec.__init__)
+def test_idl_switchtypespec_constructor_exists():
+    assert callable(idl_SwitchTypeSpec.__init__)
 
 
-def test_idl::switchtypespec_constructor_args():
-    sig = inspect.signature(idl::SwitchTypeSpec.__init__)
+def test_idl_switchtypespec_constructor_args():
+    sig = inspect.signature(idl_SwitchTypeSpec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -803,30 +803,30 @@ def test_constrforwarddecl_constructor_args():
 
 
 
-def test_idl::unionforwarddecl_is_not_abstract():
-    assert not inspect.isabstract(idl::UnionForwardDecl)
+def test_idl_unionforwarddecl_is_not_abstract():
+    assert not inspect.isabstract(idl_UnionForwardDecl)
 
 
-def test_idl::unionforwarddecl_constructor_exists():
-    assert callable(idl::UnionForwardDecl.__init__)
+def test_idl_unionforwarddecl_constructor_exists():
+    assert callable(idl_UnionForwardDecl.__init__)
 
 
-def test_idl::unionforwarddecl_constructor_args():
-    sig = inspect.signature(idl::UnionForwardDecl.__init__)
+def test_idl_unionforwarddecl_constructor_args():
+    sig = inspect.signature(idl_UnionForwardDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::structforwarddecl_is_not_abstract():
-    assert not inspect.isabstract(idl::StructForwardDecl)
+def test_idl_structforwarddecl_is_not_abstract():
+    assert not inspect.isabstract(idl_StructForwardDecl)
 
 
-def test_idl::structforwarddecl_constructor_exists():
-    assert callable(idl::StructForwardDecl.__init__)
+def test_idl_structforwarddecl_constructor_exists():
+    assert callable(idl_StructForwardDecl.__init__)
 
 
-def test_idl::structforwarddecl_constructor_args():
-    sig = inspect.signature(idl::StructForwardDecl.__init__)
+def test_idl_structforwarddecl_constructor_args():
+    sig = inspect.signature(idl_StructForwardDecl.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -845,163 +845,163 @@ def test_formalparametertype_constructor_args():
 
 
 
-def test_idl::exceptionparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::ExceptionParamType)
+def test_idl_typenameparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_TypenameParamType)
 
 
-def test_idl::exceptionparamtype_constructor_exists():
-    assert callable(idl::ExceptionParamType.__init__)
+def test_idl_typenameparamtype_constructor_exists():
+    assert callable(idl_TypenameParamType.__init__)
 
 
-def test_idl::exceptionparamtype_constructor_args():
-    sig = inspect.signature(idl::ExceptionParamType.__init__)
+def test_idl_typenameparamtype_constructor_args():
+    sig = inspect.signature(idl_TypenameParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::eventparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::EventParamType)
+def test_idl_constparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_ConstParamType)
 
 
-def test_idl::eventparamtype_constructor_exists():
-    assert callable(idl::EventParamType.__init__)
+def test_idl_constparamtype_constructor_exists():
+    assert callable(idl_ConstParamType.__init__)
 
 
-def test_idl::eventparamtype_constructor_args():
-    sig = inspect.signature(idl::EventParamType.__init__)
+def test_idl_constparamtype_constructor_args():
+    sig = inspect.signature(idl_ConstParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::valuetypeparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::ValuetypeParamType)
+def test_idl_sequenceparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_SequenceParamType)
 
 
-def test_idl::valuetypeparamtype_constructor_exists():
-    assert callable(idl::ValuetypeParamType.__init__)
+def test_idl_sequenceparamtype_constructor_exists():
+    assert callable(idl_SequenceParamType.__init__)
 
 
-def test_idl::valuetypeparamtype_constructor_args():
-    sig = inspect.signature(idl::ValuetypeParamType.__init__)
+def test_idl_sequenceparamtype_constructor_args():
+    sig = inspect.signature(idl_SequenceParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::interfaceparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::InterfaceParamType)
+def test_idl_eventparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_EventParamType)
 
 
-def test_idl::interfaceparamtype_constructor_exists():
-    assert callable(idl::InterfaceParamType.__init__)
+def test_idl_eventparamtype_constructor_exists():
+    assert callable(idl_EventParamType.__init__)
 
 
-def test_idl::interfaceparamtype_constructor_args():
-    sig = inspect.signature(idl::InterfaceParamType.__init__)
+def test_idl_eventparamtype_constructor_args():
+    sig = inspect.signature(idl_EventParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::enumparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::EnumParamType)
+def test_idl_unionparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_UnionParamType)
 
 
-def test_idl::enumparamtype_constructor_exists():
-    assert callable(idl::EnumParamType.__init__)
+def test_idl_unionparamtype_constructor_exists():
+    assert callable(idl_UnionParamType.__init__)
 
 
-def test_idl::enumparamtype_constructor_args():
-    sig = inspect.signature(idl::EnumParamType.__init__)
+def test_idl_unionparamtype_constructor_args():
+    sig = inspect.signature(idl_UnionParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::constparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::ConstParamType)
+def test_idl_structparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_StructParamType)
 
 
-def test_idl::constparamtype_constructor_exists():
-    assert callable(idl::ConstParamType.__init__)
+def test_idl_structparamtype_constructor_exists():
+    assert callable(idl_StructParamType.__init__)
 
 
-def test_idl::constparamtype_constructor_args():
-    sig = inspect.signature(idl::ConstParamType.__init__)
+def test_idl_structparamtype_constructor_args():
+    sig = inspect.signature(idl_StructParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::sequenceparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::SequenceParamType)
+def test_idl_interfaceparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_InterfaceParamType)
 
 
-def test_idl::sequenceparamtype_constructor_exists():
-    assert callable(idl::SequenceParamType.__init__)
+def test_idl_interfaceparamtype_constructor_exists():
+    assert callable(idl_InterfaceParamType.__init__)
 
 
-def test_idl::sequenceparamtype_constructor_args():
-    sig = inspect.signature(idl::SequenceParamType.__init__)
+def test_idl_interfaceparamtype_constructor_args():
+    sig = inspect.signature(idl_InterfaceParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::typenameparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::TypenameParamType)
+def test_idl_enumparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_EnumParamType)
 
 
-def test_idl::typenameparamtype_constructor_exists():
-    assert callable(idl::TypenameParamType.__init__)
+def test_idl_enumparamtype_constructor_exists():
+    assert callable(idl_EnumParamType.__init__)
 
 
-def test_idl::typenameparamtype_constructor_args():
-    sig = inspect.signature(idl::TypenameParamType.__init__)
+def test_idl_enumparamtype_constructor_args():
+    sig = inspect.signature(idl_EnumParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::unionparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::UnionParamType)
+def test_idl_exceptionparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_ExceptionParamType)
 
 
-def test_idl::unionparamtype_constructor_exists():
-    assert callable(idl::UnionParamType.__init__)
+def test_idl_exceptionparamtype_constructor_exists():
+    assert callable(idl_ExceptionParamType.__init__)
 
 
-def test_idl::unionparamtype_constructor_args():
-    sig = inspect.signature(idl::UnionParamType.__init__)
+def test_idl_exceptionparamtype_constructor_args():
+    sig = inspect.signature(idl_ExceptionParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::structparamtype_is_not_abstract():
-    assert not inspect.isabstract(idl::StructParamType)
+def test_idl_valuetypeparamtype_is_not_abstract():
+    assert not inspect.isabstract(idl_ValuetypeParamType)
 
 
-def test_idl::structparamtype_constructor_exists():
-    assert callable(idl::StructParamType.__init__)
+def test_idl_valuetypeparamtype_constructor_exists():
+    assert callable(idl_ValuetypeParamType.__init__)
 
 
-def test_idl::structparamtype_constructor_args():
-    sig = inspect.signature(idl::StructParamType.__init__)
+def test_idl_valuetypeparamtype_constructor_args():
+    sig = inspect.signature(idl_ValuetypeParamType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::declarator_is_not_abstract():
-    assert not inspect.isabstract(idl::Declarator)
+def test_idl_declarator_is_not_abstract():
+    assert not inspect.isabstract(idl_Declarator)
 
 
-def test_idl::declarator_constructor_exists():
-    assert callable(idl::Declarator.__init__)
+def test_idl_declarator_constructor_exists():
+    assert callable(idl_Declarator.__init__)
 
 
-def test_idl::declarator_constructor_args():
-    sig = inspect.signature(idl::Declarator.__init__)
+def test_idl_declarator_constructor_args():
+    sig = inspect.signature(idl_Declarator.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_idl::declarator_has_id():
-    assert hasattr(idl::Declarator, "id")
+def test_idl_declarator_has_id():
+    assert hasattr(idl_Declarator, "id")
     descriptor = None
-    for klass in idl::Declarator.__mro__:
+    for klass in idl_Declarator.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1009,16 +1009,16 @@ def test_idl::declarator_has_id():
 
 
 
-def test_idl::member_is_not_abstract():
-    assert not inspect.isabstract(idl::Member)
+def test_idl_member_is_not_abstract():
+    assert not inspect.isabstract(idl_Member)
 
 
-def test_idl::member_constructor_exists():
-    assert callable(idl::Member.__init__)
+def test_idl_member_constructor_exists():
+    assert callable(idl_Member.__init__)
 
 
-def test_idl::member_constructor_args():
-    sig = inspect.signature(idl::Member.__init__)
+def test_idl_member_constructor_args():
+    sig = inspect.signature(idl_Member.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1037,30 +1037,30 @@ def test_typespec_constructor_args():
 
 
 
-def test_idl::constrtypespec_is_not_abstract():
-    assert not inspect.isabstract(idl::ConstrTypeSpec)
+def test_idl_constrtypespec_is_not_abstract():
+    assert not inspect.isabstract(idl_ConstrTypeSpec)
 
 
-def test_idl::constrtypespec_constructor_exists():
-    assert callable(idl::ConstrTypeSpec.__init__)
+def test_idl_constrtypespec_constructor_exists():
+    assert callable(idl_ConstrTypeSpec.__init__)
 
 
-def test_idl::constrtypespec_constructor_args():
-    sig = inspect.signature(idl::ConstrTypeSpec.__init__)
+def test_idl_constrtypespec_constructor_args():
+    sig = inspect.signature(idl_ConstrTypeSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::simpletypespec_is_not_abstract():
-    assert not inspect.isabstract(idl::SimpleTypeSpec)
+def test_idl_simpletypespec_is_not_abstract():
+    assert not inspect.isabstract(idl_SimpleTypeSpec)
 
 
-def test_idl::simpletypespec_constructor_exists():
-    assert callable(idl::SimpleTypeSpec.__init__)
+def test_idl_simpletypespec_constructor_exists():
+    assert callable(idl_SimpleTypeSpec.__init__)
 
 
-def test_idl::simpletypespec_constructor_args():
-    sig = inspect.signature(idl::SimpleTypeSpec.__init__)
+def test_idl_simpletypespec_constructor_args():
+    sig = inspect.signature(idl_SimpleTypeSpec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1079,16 +1079,16 @@ def test_actualparameter_constructor_args():
 
 
 
-def test_idl::typespec_is_not_abstract():
-    assert not inspect.isabstract(idl::TypeSpec)
+def test_idl_typespec_is_not_abstract():
+    assert not inspect.isabstract(idl_TypeSpec)
 
 
-def test_idl::typespec_constructor_exists():
-    assert callable(idl::TypeSpec.__init__)
+def test_idl_typespec_constructor_exists():
+    assert callable(idl_TypeSpec.__init__)
 
 
-def test_idl::typespec_constructor_args():
-    sig = inspect.signature(idl::TypeSpec.__init__)
+def test_idl_typespec_constructor_args():
+    sig = inspect.signature(idl_TypeSpec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1121,23 +1121,37 @@ def test_typedecl_constructor_args():
 
 
 
-def test_idl::constrforwarddecl_is_not_abstract():
-    assert not inspect.isabstract(idl::ConstrForwardDecl)
+def test_idl_typedeclarator_is_not_abstract():
+    assert not inspect.isabstract(idl_TypeDeclarator)
 
 
-def test_idl::constrforwarddecl_constructor_exists():
-    assert callable(idl::ConstrForwardDecl.__init__)
+def test_idl_typedeclarator_constructor_exists():
+    assert callable(idl_TypeDeclarator.__init__)
 
 
-def test_idl::constrforwarddecl_constructor_args():
-    sig = inspect.signature(idl::ConstrForwardDecl.__init__)
+def test_idl_typedeclarator_constructor_args():
+    sig = inspect.signature(idl_TypeDeclarator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_uniontype_is_not_abstract():
+    assert not inspect.isabstract(idl_UnionType)
+
+
+def test_idl_uniontype_constructor_exists():
+    assert callable(idl_UnionType.__init__)
+
+
+def test_idl_uniontype_constructor_args():
+    sig = inspect.signature(idl_UnionType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::constrforwarddecl_has_name():
-    assert hasattr(idl::ConstrForwardDecl, "name")
+def test_idl_uniontype_has_name():
+    assert hasattr(idl_UnionType, "name")
     descriptor = None
-    for klass in idl::ConstrForwardDecl.__mro__:
+    for klass in idl_UnionType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1145,23 +1159,23 @@ def test_idl::constrforwarddecl_has_name():
 
 
 
-def test_idl::uniontype_is_not_abstract():
-    assert not inspect.isabstract(idl::UnionType)
+def test_idl_constrforwarddecl_is_not_abstract():
+    assert not inspect.isabstract(idl_ConstrForwardDecl)
 
 
-def test_idl::uniontype_constructor_exists():
-    assert callable(idl::UnionType.__init__)
+def test_idl_constrforwarddecl_constructor_exists():
+    assert callable(idl_ConstrForwardDecl.__init__)
 
 
-def test_idl::uniontype_constructor_args():
-    sig = inspect.signature(idl::UnionType.__init__)
+def test_idl_constrforwarddecl_constructor_args():
+    sig = inspect.signature(idl_ConstrForwardDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::uniontype_has_name():
-    assert hasattr(idl::UnionType, "name")
+def test_idl_constrforwarddecl_has_name():
+    assert hasattr(idl_ConstrForwardDecl, "name")
     descriptor = None
-    for klass in idl::UnionType.__mro__:
+    for klass in idl_ConstrForwardDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1169,16 +1183,374 @@ def test_idl::uniontype_has_name():
 
 
 
-def test_idl::typedeclarator_is_not_abstract():
-    assert not inspect.isabstract(idl::TypeDeclarator)
+def test_complexdeclarator_is_not_abstract():
+    assert not inspect.isabstract(ComplexDeclarator)
 
 
-def test_idl::typedeclarator_constructor_exists():
-    assert callable(idl::TypeDeclarator.__init__)
+def test_complexdeclarator_constructor_exists():
+    assert callable(ComplexDeclarator.__init__)
 
 
-def test_idl::typedeclarator_constructor_args():
-    sig = inspect.signature(idl::TypeDeclarator.__init__)
+def test_complexdeclarator_constructor_args():
+    sig = inspect.signature(ComplexDeclarator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_complexdeclarator_is_not_abstract():
+    assert not inspect.isabstract(idl_ComplexDeclarator)
+
+
+def test_idl_complexdeclarator_constructor_exists():
+    assert callable(idl_ComplexDeclarator.__init__)
+
+
+def test_idl_complexdeclarator_constructor_args():
+    sig = inspect.signature(idl_ComplexDeclarator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_declarator_is_not_abstract():
+    assert not inspect.isabstract(Declarator)
+
+
+def test_declarator_constructor_exists():
+    assert callable(Declarator.__init__)
+
+
+def test_declarator_constructor_args():
+    sig = inspect.signature(Declarator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_arraydeclarator_is_not_abstract():
+    assert not inspect.isabstract(idl_ArrayDeclarator)
+
+
+def test_idl_arraydeclarator_constructor_exists():
+    assert callable(idl_ArrayDeclarator.__init__)
+
+
+def test_idl_arraydeclarator_constructor_args():
+    sig = inspect.signature(idl_ArrayDeclarator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_simpledeclarator_is_not_abstract():
+    assert not inspect.isabstract(idl_SimpleDeclarator)
+
+
+def test_idl_simpledeclarator_constructor_exists():
+    assert callable(idl_SimpleDeclarator.__init__)
+
+
+def test_idl_simpledeclarator_constructor_args():
+    sig = inspect.signature(idl_SimpleDeclarator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primaryexpr_is_not_abstract():
+    assert not inspect.isabstract(PrimaryExpr)
+
+
+def test_primaryexpr_constructor_exists():
+    assert callable(PrimaryExpr.__init__)
+
+
+def test_primaryexpr_constructor_args():
+    sig = inspect.signature(PrimaryExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_literal_is_not_abstract():
+    assert not inspect.isabstract(idl_Literal)
+
+
+def test_idl_literal_constructor_exists():
+    assert callable(idl_Literal.__init__)
+
+
+def test_idl_literal_constructor_args():
+    sig = inspect.signature(idl_Literal.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_idl_literal_has_value():
+    assert hasattr(idl_Literal, "value")
+    descriptor = None
+    for klass in idl_Literal.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_consttype_is_not_abstract():
+    assert not inspect.isabstract(ConstType)
+
+
+def test_consttype_constructor_exists():
+    assert callable(ConstType.__init__)
+
+
+def test_consttype_constructor_args():
+    sig = inspect.signature(ConstType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_fixedptconsttype_is_not_abstract():
+    assert not inspect.isabstract(idl_FixedPtConstType)
+
+
+def test_idl_fixedptconsttype_constructor_exists():
+    assert callable(idl_FixedPtConstType.__init__)
+
+
+def test_idl_fixedptconsttype_constructor_args():
+    sig = inspect.signature(idl_FixedPtConstType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_switchtypespec_is_not_abstract():
+    assert not inspect.isabstract(SwitchTypeSpec)
+
+
+def test_switchtypespec_constructor_exists():
+    assert callable(SwitchTypeSpec.__init__)
+
+
+def test_switchtypespec_constructor_args():
+    sig = inspect.signature(SwitchTypeSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_enumtype_is_not_abstract():
+    assert not inspect.isabstract(idl_EnumType)
+
+
+def test_idl_enumtype_constructor_exists():
+    assert callable(idl_EnumType.__init__)
+
+
+def test_idl_enumtype_constructor_args():
+    sig = inspect.signature(idl_EnumType.__init__)
+    params = list(sig.parameters.keys())
+    assert "literal" in params, "Missing parameter 'literal'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_idl_enumtype_has_literal():
+    assert hasattr(idl_EnumType, "literal")
+    descriptor = None
+    for klass in idl_EnumType.__mro__:
+        if "literal" in klass.__dict__:
+            descriptor = klass.__dict__["literal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_idl_enumtype_has_name():
+    assert hasattr(idl_EnumType, "name")
+    descriptor = None
+    for klass in idl_EnumType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simpletypespec_is_not_abstract():
+    assert not inspect.isabstract(SimpleTypeSpec)
+
+
+def test_simpletypespec_constructor_exists():
+    assert callable(SimpleTypeSpec.__init__)
+
+
+def test_simpletypespec_constructor_args():
+    sig = inspect.signature(SimpleTypeSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_templatetypespec_is_not_abstract():
+    assert not inspect.isabstract(idl_TemplateTypeSpec)
+
+
+def test_idl_templatetypespec_constructor_exists():
+    assert callable(idl_TemplateTypeSpec.__init__)
+
+
+def test_idl_templatetypespec_constructor_args():
+    sig = inspect.signature(idl_TemplateTypeSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_paramtypespec_is_not_abstract():
+    assert not inspect.isabstract(ParamTypeSpec)
+
+
+def test_paramtypespec_constructor_exists():
+    assert callable(ParamTypeSpec.__init__)
+
+
+def test_paramtypespec_constructor_args():
+    sig = inspect.signature(ParamTypeSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_basetypespec_is_not_abstract():
+    assert not inspect.isabstract(idl_BaseTypeSpec)
+
+
+def test_idl_basetypespec_constructor_exists():
+    assert callable(idl_BaseTypeSpec.__init__)
+
+
+def test_idl_basetypespec_constructor_args():
+    sig = inspect.signature(idl_BaseTypeSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_optypedecl_is_not_abstract():
+    assert not inspect.isabstract(OpTypeDecl)
+
+
+def test_optypedecl_constructor_exists():
+    assert callable(OpTypeDecl.__init__)
+
+
+def test_optypedecl_constructor_args():
+    sig = inspect.signature(OpTypeDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_paramdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_ParamDcl)
+
+
+def test_idl_paramdcl_constructor_exists():
+    assert callable(idl_ParamDcl.__init__)
+
+
+def test_idl_paramdcl_constructor_args():
+    sig = inspect.signature(idl_ParamDcl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_idl_paramdcl_has_name():
+    assert hasattr(idl_ParamDcl, "name")
+    descriptor = None
+    for klass in idl_ParamDcl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_idl_paramdcl_has_direction():
+    assert hasattr(idl_ParamDcl, "direction")
+    descriptor = None
+    for klass in idl_ParamDcl.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_idl_positiveintconst_is_not_abstract():
+    assert not inspect.isabstract(idl_PositiveIntConst)
+
+
+def test_idl_positiveintconst_constructor_exists():
+    assert callable(idl_PositiveIntConst.__init__)
+
+
+def test_idl_positiveintconst_constructor_args():
+    sig = inspect.signature(idl_PositiveIntConst.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_templatetypespec_is_not_abstract():
+    assert not inspect.isabstract(TemplateTypeSpec)
+
+
+def test_templatetypespec_constructor_exists():
+    assert callable(TemplateTypeSpec.__init__)
+
+
+def test_templatetypespec_constructor_args():
+    sig = inspect.signature(TemplateTypeSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_fixedpttype_is_not_abstract():
+    assert not inspect.isabstract(idl_FixedPtType)
+
+
+def test_idl_fixedpttype_constructor_exists():
+    assert callable(idl_FixedPtType.__init__)
+
+
+def test_idl_fixedpttype_constructor_args():
+    sig = inspect.signature(idl_FixedPtType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_widestringtype_is_not_abstract():
+    assert not inspect.isabstract(idl_WideStringType)
+
+
+def test_idl_widestringtype_constructor_exists():
+    assert callable(idl_WideStringType.__init__)
+
+
+def test_idl_widestringtype_constructor_args():
+    sig = inspect.signature(idl_WideStringType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(idl_SequenceType)
+
+
+def test_idl_sequencetype_constructor_exists():
+    assert callable(idl_SequenceType.__init__)
+
+
+def test_idl_sequencetype_constructor_args():
+    sig = inspect.signature(idl_SequenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(idl_StringType)
+
+
+def test_idl_stringtype_constructor_exists():
+    assert callable(idl_StringType.__init__)
+
+
+def test_idl_stringtype_constructor_args():
+    sig = inspect.signature(idl_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1197,23 +1569,23 @@ def test_preproc_constructor_args():
 
 
 
-def test_idl::preproc::include_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Include)
+def test_idl_preproc_include_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Include)
 
 
-def test_idl::preproc::include_constructor_exists():
-    assert callable(idl::Preproc::Include.__init__)
+def test_idl_preproc_include_constructor_exists():
+    assert callable(idl_Preproc_Include.__init__)
 
 
-def test_idl::preproc::include_constructor_args():
-    sig = inspect.signature(idl::Preproc::Include.__init__)
+def test_idl_preproc_include_constructor_args():
+    sig = inspect.signature(idl_Preproc_Include.__init__)
     params = list(sig.parameters.keys())
     assert "strValue" in params, "Missing parameter 'strValue'"
 
-def test_idl::preproc::include_has_strValue():
-    assert hasattr(idl::Preproc::Include, "strValue")
+def test_idl_preproc_include_has_strValue():
+    assert hasattr(idl_Preproc_Include, "strValue")
     descriptor = None
-    for klass in idl::Preproc::Include.__mro__:
+    for klass in idl_Preproc_Include.__mro__:
         if "strValue" in klass.__dict__:
             descriptor = klass.__dict__["strValue"]
             break
@@ -1235,23 +1607,23 @@ def test_componentexport_constructor_args():
 
 
 
-def test_idl::consumesdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::ConsumesDcl)
+def test_idl_publishesdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_PublishesDcl)
 
 
-def test_idl::consumesdcl_constructor_exists():
-    assert callable(idl::ConsumesDcl.__init__)
+def test_idl_publishesdcl_constructor_exists():
+    assert callable(idl_PublishesDcl.__init__)
 
 
-def test_idl::consumesdcl_constructor_args():
-    sig = inspect.signature(idl::ConsumesDcl.__init__)
+def test_idl_publishesdcl_constructor_args():
+    sig = inspect.signature(idl_PublishesDcl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::consumesdcl_has_name():
-    assert hasattr(idl::ConsumesDcl, "name")
+def test_idl_publishesdcl_has_name():
+    assert hasattr(idl_PublishesDcl, "name")
     descriptor = None
-    for klass in idl::ConsumesDcl.__mro__:
+    for klass in idl_PublishesDcl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1259,23 +1631,23 @@ def test_idl::consumesdcl_has_name():
 
 
 
-def test_idl::emitdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::EmitDcl)
+def test_idl_emitdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_EmitDcl)
 
 
-def test_idl::emitdcl_constructor_exists():
-    assert callable(idl::EmitDcl.__init__)
+def test_idl_emitdcl_constructor_exists():
+    assert callable(idl_EmitDcl.__init__)
 
 
-def test_idl::emitdcl_constructor_args():
-    sig = inspect.signature(idl::EmitDcl.__init__)
+def test_idl_emitdcl_constructor_args():
+    sig = inspect.signature(idl_EmitDcl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::emitdcl_has_name():
-    assert hasattr(idl::EmitDcl, "name")
+def test_idl_emitdcl_has_name():
+    assert hasattr(idl_EmitDcl, "name")
     descriptor = None
-    for klass in idl::EmitDcl.__mro__:
+    for klass in idl_EmitDcl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1283,23 +1655,23 @@ def test_idl::emitdcl_has_name():
 
 
 
-def test_idl::publishesdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::PublishesDcl)
+def test_idl_consumesdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_ConsumesDcl)
 
 
-def test_idl::publishesdcl_constructor_exists():
-    assert callable(idl::PublishesDcl.__init__)
+def test_idl_consumesdcl_constructor_exists():
+    assert callable(idl_ConsumesDcl.__init__)
 
 
-def test_idl::publishesdcl_constructor_args():
-    sig = inspect.signature(idl::PublishesDcl.__init__)
+def test_idl_consumesdcl_constructor_args():
+    sig = inspect.signature(idl_ConsumesDcl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::publishesdcl_has_name():
-    assert hasattr(idl::PublishesDcl, "name")
+def test_idl_consumesdcl_has_name():
+    assert hasattr(idl_ConsumesDcl, "name")
     descriptor = None
-    for klass in idl::PublishesDcl.__mro__:
+    for klass in idl_ConsumesDcl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1335,23 +1707,23 @@ def test_definition_constructor_args():
 
 
 
-def test_idl::componentforwarddecl_is_not_abstract():
-    assert not inspect.isabstract(idl::ComponentForwardDecl)
+def test_idl_structtype_is_not_abstract():
+    assert not inspect.isabstract(idl_StructType)
 
 
-def test_idl::componentforwarddecl_constructor_exists():
-    assert callable(idl::ComponentForwardDecl.__init__)
+def test_idl_structtype_constructor_exists():
+    assert callable(idl_StructType.__init__)
 
 
-def test_idl::componentforwarddecl_constructor_args():
-    sig = inspect.signature(idl::ComponentForwardDecl.__init__)
+def test_idl_structtype_constructor_args():
+    sig = inspect.signature(idl_StructType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::componentforwarddecl_has_name():
-    assert hasattr(idl::ComponentForwardDecl, "name")
+def test_idl_structtype_has_name():
+    assert hasattr(idl_StructType, "name")
     descriptor = None
-    for klass in idl::ComponentForwardDecl.__mro__:
+    for klass in idl_StructType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1359,23 +1731,23 @@ def test_idl::componentforwarddecl_has_name():
 
 
 
-def test_idl::templatemoduleinst_is_not_abstract():
-    assert not inspect.isabstract(idl::TemplateModuleInst)
+def test_idl_templatemoduleinst_is_not_abstract():
+    assert not inspect.isabstract(idl_TemplateModuleInst)
 
 
-def test_idl::templatemoduleinst_constructor_exists():
-    assert callable(idl::TemplateModuleInst.__init__)
+def test_idl_templatemoduleinst_constructor_exists():
+    assert callable(idl_TemplateModuleInst.__init__)
 
 
-def test_idl::templatemoduleinst_constructor_args():
-    sig = inspect.signature(idl::TemplateModuleInst.__init__)
+def test_idl_templatemoduleinst_constructor_args():
+    sig = inspect.signature(idl_TemplateModuleInst.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::templatemoduleinst_has_name():
-    assert hasattr(idl::TemplateModuleInst, "name")
+def test_idl_templatemoduleinst_has_name():
+    assert hasattr(idl_TemplateModuleInst, "name")
     descriptor = None
-    for klass in idl::TemplateModuleInst.__mro__:
+    for klass in idl_TemplateModuleInst.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1383,23 +1755,23 @@ def test_idl::templatemoduleinst_has_name():
 
 
 
-def test_idl::templatemodule_is_not_abstract():
-    assert not inspect.isabstract(idl::TemplateModule)
+def test_idl_templatemodule_is_not_abstract():
+    assert not inspect.isabstract(idl_TemplateModule)
 
 
-def test_idl::templatemodule_constructor_exists():
-    assert callable(idl::TemplateModule.__init__)
+def test_idl_templatemodule_constructor_exists():
+    assert callable(idl_TemplateModule.__init__)
 
 
-def test_idl::templatemodule_constructor_args():
-    sig = inspect.signature(idl::TemplateModule.__init__)
+def test_idl_templatemodule_constructor_args():
+    sig = inspect.signature(idl_TemplateModule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::templatemodule_has_name():
-    assert hasattr(idl::TemplateModule, "name")
+def test_idl_templatemodule_has_name():
+    assert hasattr(idl_TemplateModule, "name")
     descriptor = None
-    for klass in idl::TemplateModule.__mro__:
+    for klass in idl_TemplateModule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1407,23 +1779,23 @@ def test_idl::templatemodule_has_name():
 
 
 
-def test_idl::structtype_is_not_abstract():
-    assert not inspect.isabstract(idl::StructType)
+def test_idl_componentforwarddecl_is_not_abstract():
+    assert not inspect.isabstract(idl_ComponentForwardDecl)
 
 
-def test_idl::structtype_constructor_exists():
-    assert callable(idl::StructType.__init__)
+def test_idl_componentforwarddecl_constructor_exists():
+    assert callable(idl_ComponentForwardDecl.__init__)
 
 
-def test_idl::structtype_constructor_args():
-    sig = inspect.signature(idl::StructType.__init__)
+def test_idl_componentforwarddecl_constructor_args():
+    sig = inspect.signature(idl_ComponentForwardDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::structtype_has_name():
-    assert hasattr(idl::StructType, "name")
+def test_idl_componentforwarddecl_has_name():
+    assert hasattr(idl_ComponentForwardDecl, "name")
     descriptor = None
-    for klass in idl::StructType.__mro__:
+    for klass in idl_ComponentForwardDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1431,51 +1803,51 @@ def test_idl::structtype_has_name():
 
 
 
-def test_idl::preproc_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc)
+def test_idl_preproc_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc)
 
 
-def test_idl::preproc_constructor_exists():
-    assert callable(idl::Preproc.__init__)
+def test_idl_preproc_constructor_exists():
+    assert callable(idl_Preproc.__init__)
 
 
-def test_idl::preproc_constructor_args():
-    sig = inspect.signature(idl::Preproc.__init__)
+def test_idl_preproc_constructor_args():
+    sig = inspect.signature(idl_Preproc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::definition_is_not_abstract():
-    assert not inspect.isabstract(idl::Definition)
+def test_idl_definition_is_not_abstract():
+    assert not inspect.isabstract(idl_Definition)
 
 
-def test_idl::definition_constructor_exists():
-    assert callable(idl::Definition.__init__)
+def test_idl_definition_constructor_exists():
+    assert callable(idl_Definition.__init__)
 
 
-def test_idl::definition_constructor_args():
-    sig = inspect.signature(idl::Definition.__init__)
+def test_idl_definition_constructor_args():
+    sig = inspect.signature(idl_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::import::decl_is_not_abstract():
-    assert not inspect.isabstract(idl::Import::decl)
+def test_idl_import_decl_is_not_abstract():
+    assert not inspect.isabstract(idl_Import_decl)
 
 
-def test_idl::import::decl_constructor_exists():
-    assert callable(idl::Import::decl.__init__)
+def test_idl_import_decl_constructor_exists():
+    assert callable(idl_Import_decl.__init__)
 
 
-def test_idl::import::decl_constructor_args():
-    sig = inspect.signature(idl::Import::decl.__init__)
+def test_idl_import_decl_constructor_args():
+    sig = inspect.signature(idl_Import_decl.__init__)
     params = list(sig.parameters.keys())
     assert "imported_scope" in params, "Missing parameter 'imported_scope'"
 
-def test_idl::import::decl_has_imported_scope():
-    assert hasattr(idl::Import::decl, "imported_scope")
+def test_idl_import_decl_has_imported_scope():
+    assert hasattr(idl_Import_decl, "imported_scope")
     descriptor = None
-    for klass in idl::Import::decl.__mro__:
+    for klass in idl_Import_decl.__mro__:
         if "imported_scope" in klass.__dict__:
             descriptor = klass.__dict__["imported_scope"]
             break
@@ -1483,61 +1855,61 @@ def test_idl::import::decl_has_imported_scope():
 
 
 
-def test_idl::specification_is_not_abstract():
-    assert not inspect.isabstract(idl::Specification)
+def test_idl_specification_is_not_abstract():
+    assert not inspect.isabstract(idl_Specification)
 
 
-def test_idl::specification_constructor_exists():
-    assert callable(idl::Specification.__init__)
+def test_idl_specification_constructor_exists():
+    assert callable(idl_Specification.__init__)
 
 
-def test_idl::specification_constructor_args():
-    sig = inspect.signature(idl::Specification.__init__)
+def test_idl_specification_constructor_args():
+    sig = inspect.signature(idl_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_preproc::pragma_is_not_abstract():
-    assert not inspect.isabstract(Preproc::Pragma)
+def test_preproc_pragma_is_not_abstract():
+    assert not inspect.isabstract(Preproc_Pragma)
 
 
-def test_preproc::pragma_constructor_exists():
-    assert callable(Preproc::Pragma.__init__)
+def test_preproc_pragma_constructor_exists():
+    assert callable(Preproc_Pragma.__init__)
 
 
-def test_preproc::pragma_constructor_args():
-    sig = inspect.signature(Preproc::Pragma.__init__)
+def test_preproc_pragma_constructor_args():
+    sig = inspect.signature(Preproc_Pragma.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::pragma::conn::type_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Conn::Type)
+def test_idl_preproc_pragma_conn_type_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Conn_Type)
 
 
-def test_idl::preproc::pragma::conn::type_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Conn::Type.__init__)
+def test_idl_preproc_pragma_conn_type_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Conn_Type.__init__)
 
 
-def test_idl::preproc::pragma::conn::type_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Conn::Type.__init__)
+def test_idl_preproc_pragma_conn_type_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Conn_Type.__init__)
     params = list(sig.parameters.keys())
     assert "valuePort" in params, "Missing parameter 'valuePort'"
     assert "valueConnType" in params, "Missing parameter 'valueConnType'"
 
-def test_idl::preproc::pragma::conn::type_has_valuePort():
-    assert hasattr(idl::Preproc::Pragma::Conn::Type, "valuePort")
+def test_idl_preproc_pragma_conn_type_has_valuePort():
+    assert hasattr(idl_Preproc_Pragma_Conn_Type, "valuePort")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Conn::Type.__mro__:
+    for klass in idl_Preproc_Pragma_Conn_Type.__mro__:
         if "valuePort" in klass.__dict__:
             descriptor = klass.__dict__["valuePort"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::preproc::pragma::conn::type_has_valueConnType():
-    assert hasattr(idl::Preproc::Pragma::Conn::Type, "valueConnType")
+def test_idl_preproc_pragma_conn_type_has_valueConnType():
+    assert hasattr(idl_Preproc_Pragma_Conn_Type, "valueConnType")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Conn::Type.__mro__:
+    for klass in idl_Preproc_Pragma_Conn_Type.__mro__:
         if "valueConnType" in klass.__dict__:
             descriptor = klass.__dict__["valueConnType"]
             break
@@ -1545,23 +1917,23 @@ def test_idl::preproc::pragma::conn::type_has_valueConnType():
 
 
 
-def test_idl::preproc::pragma::prefix_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Prefix)
+def test_idl_preproc_pragma_prefix_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Prefix)
 
 
-def test_idl::preproc::pragma::prefix_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Prefix.__init__)
+def test_idl_preproc_pragma_prefix_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Prefix.__init__)
 
 
-def test_idl::preproc::pragma::prefix_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Prefix.__init__)
+def test_idl_preproc_pragma_prefix_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Prefix.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::prefix_has_value():
-    assert hasattr(idl::Preproc::Pragma::Prefix, "value")
+def test_idl_preproc_pragma_prefix_has_value():
+    assert hasattr(idl_Preproc_Pragma_Prefix, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Prefix.__mro__:
+    for klass in idl_Preproc_Pragma_Prefix.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1569,51 +1941,51 @@ def test_idl::preproc::pragma::prefix_has_value():
 
 
 
-def test_idl::preproc::pragma_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma)
+def test_idl_preproc_pragma_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma)
 
 
-def test_idl::preproc::pragma_constructor_exists():
-    assert callable(idl::Preproc::Pragma.__init__)
+def test_idl_preproc_pragma_constructor_exists():
+    assert callable(idl_Preproc_Pragma.__init__)
 
 
-def test_idl::preproc::pragma_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma.__init__)
+def test_idl_preproc_pragma_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::endif_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Endif)
+def test_idl_preproc_endif_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Endif)
 
 
-def test_idl::preproc::endif_constructor_exists():
-    assert callable(idl::Preproc::Endif.__init__)
+def test_idl_preproc_endif_constructor_exists():
+    assert callable(idl_Preproc_Endif.__init__)
 
 
-def test_idl::preproc::endif_constructor_args():
-    sig = inspect.signature(idl::Preproc::Endif.__init__)
+def test_idl_preproc_endif_constructor_args():
+    sig = inspect.signature(idl_Preproc_Endif.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::define_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Define)
+def test_idl_preproc_define_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Define)
 
 
-def test_idl::preproc::define_constructor_exists():
-    assert callable(idl::Preproc::Define.__init__)
+def test_idl_preproc_define_constructor_exists():
+    assert callable(idl_Preproc_Define.__init__)
 
 
-def test_idl::preproc::define_constructor_args():
-    sig = inspect.signature(idl::Preproc::Define.__init__)
+def test_idl_preproc_define_constructor_args():
+    sig = inspect.signature(idl_Preproc_Define.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::define_has_value():
-    assert hasattr(idl::Preproc::Define, "value")
+def test_idl_preproc_define_has_value():
+    assert hasattr(idl_Preproc_Define, "value")
     descriptor = None
-    for klass in idl::Preproc::Define.__mro__:
+    for klass in idl_Preproc_Define.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1621,23 +1993,23 @@ def test_idl::preproc::define_has_value():
 
 
 
-def test_idl::preproc::error_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Error)
+def test_idl_preproc_error_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Error)
 
 
-def test_idl::preproc::error_constructor_exists():
-    assert callable(idl::Preproc::Error.__init__)
+def test_idl_preproc_error_constructor_exists():
+    assert callable(idl_Preproc_Error.__init__)
 
 
-def test_idl::preproc::error_constructor_args():
-    sig = inspect.signature(idl::Preproc::Error.__init__)
+def test_idl_preproc_error_constructor_args():
+    sig = inspect.signature(idl_Preproc_Error.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::error_has_value():
-    assert hasattr(idl::Preproc::Error, "value")
+def test_idl_preproc_error_has_value():
+    assert hasattr(idl_Preproc_Error, "value")
     descriptor = None
-    for klass in idl::Preproc::Error.__mro__:
+    for klass in idl_Preproc_Error.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1645,51 +2017,65 @@ def test_idl::preproc::error_has_value():
 
 
 
-def test_idl::preproc::else_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Else)
+def test_idl_preproc_else_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Else)
 
 
-def test_idl::preproc::else_constructor_exists():
-    assert callable(idl::Preproc::Else.__init__)
+def test_idl_preproc_else_constructor_exists():
+    assert callable(idl_Preproc_Else.__init__)
 
 
-def test_idl::preproc::else_constructor_args():
-    sig = inspect.signature(idl::Preproc::Else.__init__)
+def test_idl_preproc_else_constructor_args():
+    sig = inspect.signature(idl_Preproc_Else.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::if::val_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::If::Val)
+def test_idl_constexp_is_not_abstract():
+    assert not inspect.isabstract(idl_ConstExp)
 
 
-def test_idl::preproc::if::val_constructor_exists():
-    assert callable(idl::Preproc::If::Val.__init__)
+def test_idl_constexp_constructor_exists():
+    assert callable(idl_ConstExp.__init__)
 
 
-def test_idl::preproc::if::val_constructor_args():
-    sig = inspect.signature(idl::Preproc::If::Val.__init__)
+def test_idl_constexp_constructor_args():
+    sig = inspect.signature(idl_ConstExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::if::compare_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::If::Compare)
+def test_idl_preproc_if_val_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_If_Val)
 
 
-def test_idl::preproc::if::compare_constructor_exists():
-    assert callable(idl::Preproc::If::Compare.__init__)
+def test_idl_preproc_if_val_constructor_exists():
+    assert callable(idl_Preproc_If_Val.__init__)
 
 
-def test_idl::preproc::if::compare_constructor_args():
-    sig = inspect.signature(idl::Preproc::If::Compare.__init__)
+def test_idl_preproc_if_val_constructor_args():
+    sig = inspect.signature(idl_Preproc_If_Val.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_preproc_if_compare_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_If_Compare)
+
+
+def test_idl_preproc_if_compare_constructor_exists():
+    assert callable(idl_Preproc_If_Compare.__init__)
+
+
+def test_idl_preproc_if_compare_constructor_args():
+    sig = inspect.signature(idl_Preproc_If_Compare.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_idl::preproc::if::compare_has_op():
-    assert hasattr(idl::Preproc::If::Compare, "op")
+def test_idl_preproc_if_compare_has_op():
+    assert hasattr(idl_Preproc_If_Compare, "op")
     descriptor = None
-    for klass in idl::Preproc::If::Compare.__mro__:
+    for klass in idl_Preproc_If_Compare.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1697,23 +2083,23 @@ def test_idl::preproc::if::compare_has_op():
 
 
 
-def test_idl::preproc::if_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::If)
+def test_idl_preproc_if_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_If)
 
 
-def test_idl::preproc::if_constructor_exists():
-    assert callable(idl::Preproc::If.__init__)
+def test_idl_preproc_if_constructor_exists():
+    assert callable(idl_Preproc_If.__init__)
 
 
-def test_idl::preproc::if_constructor_args():
-    sig = inspect.signature(idl::Preproc::If.__init__)
+def test_idl_preproc_if_constructor_args():
+    sig = inspect.signature(idl_Preproc_If.__init__)
     params = list(sig.parameters.keys())
     assert "negation" in params, "Missing parameter 'negation'"
 
-def test_idl::preproc::if_has_negation():
-    assert hasattr(idl::Preproc::If, "negation")
+def test_idl_preproc_if_has_negation():
+    assert hasattr(idl_Preproc_If, "negation")
     descriptor = None
-    for klass in idl::Preproc::If.__mro__:
+    for klass in idl_Preproc_If.__mro__:
         if "negation" in klass.__dict__:
             descriptor = klass.__dict__["negation"]
             break
@@ -1721,413 +2107,27 @@ def test_idl::preproc::if_has_negation():
 
 
 
-def test_idl::preproc::undef_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Undef)
+def test_idl_preproc_undef_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Undef)
 
 
-def test_idl::preproc::undef_constructor_exists():
-    assert callable(idl::Preproc::Undef.__init__)
+def test_idl_preproc_undef_constructor_exists():
+    assert callable(idl_Preproc_Undef.__init__)
 
 
-def test_idl::preproc::undef_constructor_args():
-    sig = inspect.signature(idl::Preproc::Undef.__init__)
+def test_idl_preproc_undef_constructor_args():
+    sig = inspect.signature(idl_Preproc_Undef.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::undef_has_value():
-    assert hasattr(idl::Preproc::Undef, "value")
+def test_idl_preproc_undef_has_value():
+    assert hasattr(idl_Preproc_Undef, "value")
     descriptor = None
-    for klass in idl::Preproc::Undef.__mro__:
+    for klass in idl_Preproc_Undef.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_complexdeclarator_is_not_abstract():
-    assert not inspect.isabstract(ComplexDeclarator)
-
-
-def test_complexdeclarator_constructor_exists():
-    assert callable(ComplexDeclarator.__init__)
-
-
-def test_complexdeclarator_constructor_args():
-    sig = inspect.signature(ComplexDeclarator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::complexdeclarator_is_not_abstract():
-    assert not inspect.isabstract(idl::ComplexDeclarator)
-
-
-def test_idl::complexdeclarator_constructor_exists():
-    assert callable(idl::ComplexDeclarator.__init__)
-
-
-def test_idl::complexdeclarator_constructor_args():
-    sig = inspect.signature(idl::ComplexDeclarator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_declarator_is_not_abstract():
-    assert not inspect.isabstract(Declarator)
-
-
-def test_declarator_constructor_exists():
-    assert callable(Declarator.__init__)
-
-
-def test_declarator_constructor_args():
-    sig = inspect.signature(Declarator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::arraydeclarator_is_not_abstract():
-    assert not inspect.isabstract(idl::ArrayDeclarator)
-
-
-def test_idl::arraydeclarator_constructor_exists():
-    assert callable(idl::ArrayDeclarator.__init__)
-
-
-def test_idl::arraydeclarator_constructor_args():
-    sig = inspect.signature(idl::ArrayDeclarator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::simpledeclarator_is_not_abstract():
-    assert not inspect.isabstract(idl::SimpleDeclarator)
-
-
-def test_idl::simpledeclarator_constructor_exists():
-    assert callable(idl::SimpleDeclarator.__init__)
-
-
-def test_idl::simpledeclarator_constructor_args():
-    sig = inspect.signature(idl::SimpleDeclarator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primaryexpr_is_not_abstract():
-    assert not inspect.isabstract(PrimaryExpr)
-
-
-def test_primaryexpr_constructor_exists():
-    assert callable(PrimaryExpr.__init__)
-
-
-def test_primaryexpr_constructor_args():
-    sig = inspect.signature(PrimaryExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::constexp_is_not_abstract():
-    assert not inspect.isabstract(idl::ConstExp)
-
-
-def test_idl::constexp_constructor_exists():
-    assert callable(idl::ConstExp.__init__)
-
-
-def test_idl::constexp_constructor_args():
-    sig = inspect.signature(idl::ConstExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::literal_is_not_abstract():
-    assert not inspect.isabstract(idl::Literal)
-
-
-def test_idl::literal_constructor_exists():
-    assert callable(idl::Literal.__init__)
-
-
-def test_idl::literal_constructor_args():
-    sig = inspect.signature(idl::Literal.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_idl::literal_has_value():
-    assert hasattr(idl::Literal, "value")
-    descriptor = None
-    for klass in idl::Literal.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_consttype_is_not_abstract():
-    assert not inspect.isabstract(ConstType)
-
-
-def test_consttype_constructor_exists():
-    assert callable(ConstType.__init__)
-
-
-def test_consttype_constructor_args():
-    sig = inspect.signature(ConstType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::fixedptconsttype_is_not_abstract():
-    assert not inspect.isabstract(idl::FixedPtConstType)
-
-
-def test_idl::fixedptconsttype_constructor_exists():
-    assert callable(idl::FixedPtConstType.__init__)
-
-
-def test_idl::fixedptconsttype_constructor_args():
-    sig = inspect.signature(idl::FixedPtConstType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_switchtypespec_is_not_abstract():
-    assert not inspect.isabstract(SwitchTypeSpec)
-
-
-def test_switchtypespec_constructor_exists():
-    assert callable(SwitchTypeSpec.__init__)
-
-
-def test_switchtypespec_constructor_args():
-    sig = inspect.signature(SwitchTypeSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::enumtype_is_not_abstract():
-    assert not inspect.isabstract(idl::EnumType)
-
-
-def test_idl::enumtype_constructor_exists():
-    assert callable(idl::EnumType.__init__)
-
-
-def test_idl::enumtype_constructor_args():
-    sig = inspect.signature(idl::EnumType.__init__)
-    params = list(sig.parameters.keys())
-    assert "literal" in params, "Missing parameter 'literal'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::enumtype_has_literal():
-    assert hasattr(idl::EnumType, "literal")
-    descriptor = None
-    for klass in idl::EnumType.__mro__:
-        if "literal" in klass.__dict__:
-            descriptor = klass.__dict__["literal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_idl::enumtype_has_name():
-    assert hasattr(idl::EnumType, "name")
-    descriptor = None
-    for klass in idl::EnumType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simpletypespec_is_not_abstract():
-    assert not inspect.isabstract(SimpleTypeSpec)
-
-
-def test_simpletypespec_constructor_exists():
-    assert callable(SimpleTypeSpec.__init__)
-
-
-def test_simpletypespec_constructor_args():
-    sig = inspect.signature(SimpleTypeSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::templatetypespec_is_not_abstract():
-    assert not inspect.isabstract(idl::TemplateTypeSpec)
-
-
-def test_idl::templatetypespec_constructor_exists():
-    assert callable(idl::TemplateTypeSpec.__init__)
-
-
-def test_idl::templatetypespec_constructor_args():
-    sig = inspect.signature(idl::TemplateTypeSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_paramtypespec_is_not_abstract():
-    assert not inspect.isabstract(ParamTypeSpec)
-
-
-def test_paramtypespec_constructor_exists():
-    assert callable(ParamTypeSpec.__init__)
-
-
-def test_paramtypespec_constructor_args():
-    sig = inspect.signature(ParamTypeSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::basetypespec_is_not_abstract():
-    assert not inspect.isabstract(idl::BaseTypeSpec)
-
-
-def test_idl::basetypespec_constructor_exists():
-    assert callable(idl::BaseTypeSpec.__init__)
-
-
-def test_idl::basetypespec_constructor_args():
-    sig = inspect.signature(idl::BaseTypeSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_optypedecl_is_not_abstract():
-    assert not inspect.isabstract(OpTypeDecl)
-
-
-def test_optypedecl_constructor_exists():
-    assert callable(OpTypeDecl.__init__)
-
-
-def test_optypedecl_constructor_args():
-    sig = inspect.signature(OpTypeDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::paramdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::ParamDcl)
-
-
-def test_idl::paramdcl_constructor_exists():
-    assert callable(idl::ParamDcl.__init__)
-
-
-def test_idl::paramdcl_constructor_args():
-    sig = inspect.signature(idl::ParamDcl.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::paramdcl_has_direction():
-    assert hasattr(idl::ParamDcl, "direction")
-    descriptor = None
-    for klass in idl::ParamDcl.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_idl::paramdcl_has_name():
-    assert hasattr(idl::ParamDcl, "name")
-    descriptor = None
-    for klass in idl::ParamDcl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_idl::positiveintconst_is_not_abstract():
-    assert not inspect.isabstract(idl::PositiveIntConst)
-
-
-def test_idl::positiveintconst_constructor_exists():
-    assert callable(idl::PositiveIntConst.__init__)
-
-
-def test_idl::positiveintconst_constructor_args():
-    sig = inspect.signature(idl::PositiveIntConst.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_templatetypespec_is_not_abstract():
-    assert not inspect.isabstract(TemplateTypeSpec)
-
-
-def test_templatetypespec_constructor_exists():
-    assert callable(TemplateTypeSpec.__init__)
-
-
-def test_templatetypespec_constructor_args():
-    sig = inspect.signature(TemplateTypeSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::fixedpttype_is_not_abstract():
-    assert not inspect.isabstract(idl::FixedPtType)
-
-
-def test_idl::fixedpttype_constructor_exists():
-    assert callable(idl::FixedPtType.__init__)
-
-
-def test_idl::fixedpttype_constructor_args():
-    sig = inspect.signature(idl::FixedPtType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(idl::SequenceType)
-
-
-def test_idl::sequencetype_constructor_exists():
-    assert callable(idl::SequenceType.__init__)
-
-
-def test_idl::sequencetype_constructor_args():
-    sig = inspect.signature(idl::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::widestringtype_is_not_abstract():
-    assert not inspect.isabstract(idl::WideStringType)
-
-
-def test_idl::widestringtype_constructor_exists():
-    assert callable(idl::WideStringType.__init__)
-
-
-def test_idl::widestringtype_constructor_args():
-    sig = inspect.signature(idl::WideStringType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(idl::StringType)
-
-
-def test_idl::stringtype_constructor_exists():
-    assert callable(idl::StringType.__init__)
-
-
-def test_idl::stringtype_constructor_args():
-    sig = inspect.signature(idl::StringType.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2145,44 +2145,44 @@ def test_unsignedint_constructor_args():
 
 
 
-def test_idl::unsignedlonglongint_is_not_abstract():
-    assert not inspect.isabstract(idl::UnsignedLongLongInt)
+def test_idl_unsignedlonglongint_is_not_abstract():
+    assert not inspect.isabstract(idl_UnsignedLongLongInt)
 
 
-def test_idl::unsignedlonglongint_constructor_exists():
-    assert callable(idl::UnsignedLongLongInt.__init__)
+def test_idl_unsignedlonglongint_constructor_exists():
+    assert callable(idl_UnsignedLongLongInt.__init__)
 
 
-def test_idl::unsignedlonglongint_constructor_args():
-    sig = inspect.signature(idl::UnsignedLongLongInt.__init__)
+def test_idl_unsignedlonglongint_constructor_args():
+    sig = inspect.signature(idl_UnsignedLongLongInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::unsignedlongint_is_not_abstract():
-    assert not inspect.isabstract(idl::UnsignedLongInt)
+def test_idl_unsignedlongint_is_not_abstract():
+    assert not inspect.isabstract(idl_UnsignedLongInt)
 
 
-def test_idl::unsignedlongint_constructor_exists():
-    assert callable(idl::UnsignedLongInt.__init__)
+def test_idl_unsignedlongint_constructor_exists():
+    assert callable(idl_UnsignedLongInt.__init__)
 
 
-def test_idl::unsignedlongint_constructor_args():
-    sig = inspect.signature(idl::UnsignedLongInt.__init__)
+def test_idl_unsignedlongint_constructor_args():
+    sig = inspect.signature(idl_UnsignedLongInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::unsignedshortint_is_not_abstract():
-    assert not inspect.isabstract(idl::UnsignedShortInt)
+def test_idl_unsignedshortint_is_not_abstract():
+    assert not inspect.isabstract(idl_UnsignedShortInt)
 
 
-def test_idl::unsignedshortint_constructor_exists():
-    assert callable(idl::UnsignedShortInt.__init__)
+def test_idl_unsignedshortint_constructor_exists():
+    assert callable(idl_UnsignedShortInt.__init__)
 
 
-def test_idl::unsignedshortint_constructor_args():
-    sig = inspect.signature(idl::UnsignedShortInt.__init__)
+def test_idl_unsignedshortint_constructor_args():
+    sig = inspect.signature(idl_UnsignedShortInt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2201,44 +2201,44 @@ def test_signedint_constructor_args():
 
 
 
-def test_idl::signedlonglongint_is_not_abstract():
-    assert not inspect.isabstract(idl::SignedLongLongInt)
+def test_idl_signedlonglongint_is_not_abstract():
+    assert not inspect.isabstract(idl_SignedLongLongInt)
 
 
-def test_idl::signedlonglongint_constructor_exists():
-    assert callable(idl::SignedLongLongInt.__init__)
+def test_idl_signedlonglongint_constructor_exists():
+    assert callable(idl_SignedLongLongInt.__init__)
 
 
-def test_idl::signedlonglongint_constructor_args():
-    sig = inspect.signature(idl::SignedLongLongInt.__init__)
+def test_idl_signedlonglongint_constructor_args():
+    sig = inspect.signature(idl_SignedLongLongInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::signedlongint_is_not_abstract():
-    assert not inspect.isabstract(idl::SignedLongInt)
+def test_idl_signedlongint_is_not_abstract():
+    assert not inspect.isabstract(idl_SignedLongInt)
 
 
-def test_idl::signedlongint_constructor_exists():
-    assert callable(idl::SignedLongInt.__init__)
+def test_idl_signedlongint_constructor_exists():
+    assert callable(idl_SignedLongInt.__init__)
 
 
-def test_idl::signedlongint_constructor_args():
-    sig = inspect.signature(idl::SignedLongInt.__init__)
+def test_idl_signedlongint_constructor_args():
+    sig = inspect.signature(idl_SignedLongInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::signedshortint_is_not_abstract():
-    assert not inspect.isabstract(idl::SignedShortInt)
+def test_idl_signedshortint_is_not_abstract():
+    assert not inspect.isabstract(idl_SignedShortInt)
 
 
-def test_idl::signedshortint_constructor_exists():
-    assert callable(idl::SignedShortInt.__init__)
+def test_idl_signedshortint_constructor_exists():
+    assert callable(idl_SignedShortInt.__init__)
 
 
-def test_idl::signedshortint_constructor_args():
-    sig = inspect.signature(idl::SignedShortInt.__init__)
+def test_idl_signedshortint_constructor_args():
+    sig = inspect.signature(idl_SignedShortInt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2257,30 +2257,30 @@ def test_integertype_constructor_args():
 
 
 
-def test_idl::unsignedint_is_not_abstract():
-    assert not inspect.isabstract(idl::UnsignedInt)
+def test_idl_unsignedint_is_not_abstract():
+    assert not inspect.isabstract(idl_UnsignedInt)
 
 
-def test_idl::unsignedint_constructor_exists():
-    assert callable(idl::UnsignedInt.__init__)
+def test_idl_unsignedint_constructor_exists():
+    assert callable(idl_UnsignedInt.__init__)
 
 
-def test_idl::unsignedint_constructor_args():
-    sig = inspect.signature(idl::UnsignedInt.__init__)
+def test_idl_unsignedint_constructor_args():
+    sig = inspect.signature(idl_UnsignedInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::signedint_is_not_abstract():
-    assert not inspect.isabstract(idl::SignedInt)
+def test_idl_signedint_is_not_abstract():
+    assert not inspect.isabstract(idl_SignedInt)
 
 
-def test_idl::signedint_constructor_exists():
-    assert callable(idl::SignedInt.__init__)
+def test_idl_signedint_constructor_exists():
+    assert callable(idl_SignedInt.__init__)
 
 
-def test_idl::signedint_constructor_args():
-    sig = inspect.signature(idl::SignedInt.__init__)
+def test_idl_signedint_constructor_args():
+    sig = inspect.signature(idl_SignedInt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2299,44 +2299,44 @@ def test_floatingpttype_constructor_args():
 
 
 
-def test_idl::longdoubletype_is_not_abstract():
-    assert not inspect.isabstract(idl::LongDoubleType)
+def test_idl_longdoubletype_is_not_abstract():
+    assert not inspect.isabstract(idl_LongDoubleType)
 
 
-def test_idl::longdoubletype_constructor_exists():
-    assert callable(idl::LongDoubleType.__init__)
+def test_idl_longdoubletype_constructor_exists():
+    assert callable(idl_LongDoubleType.__init__)
 
 
-def test_idl::longdoubletype_constructor_args():
-    sig = inspect.signature(idl::LongDoubleType.__init__)
+def test_idl_longdoubletype_constructor_args():
+    sig = inspect.signature(idl_LongDoubleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::doubletype_is_not_abstract():
-    assert not inspect.isabstract(idl::DoubleType)
+def test_idl_doubletype_is_not_abstract():
+    assert not inspect.isabstract(idl_DoubleType)
 
 
-def test_idl::doubletype_constructor_exists():
-    assert callable(idl::DoubleType.__init__)
+def test_idl_doubletype_constructor_exists():
+    assert callable(idl_DoubleType.__init__)
 
 
-def test_idl::doubletype_constructor_args():
-    sig = inspect.signature(idl::DoubleType.__init__)
+def test_idl_doubletype_constructor_args():
+    sig = inspect.signature(idl_DoubleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::floattype_is_not_abstract():
-    assert not inspect.isabstract(idl::FloatType)
+def test_idl_floattype_is_not_abstract():
+    assert not inspect.isabstract(idl_FloatType)
 
 
-def test_idl::floattype_constructor_exists():
-    assert callable(idl::FloatType.__init__)
+def test_idl_floattype_constructor_exists():
+    assert callable(idl_FloatType.__init__)
 
 
-def test_idl::floattype_constructor_args():
-    sig = inspect.signature(idl::FloatType.__init__)
+def test_idl_floattype_constructor_args():
+    sig = inspect.signature(idl_FloatType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2355,142 +2355,142 @@ def test_basetypespec_constructor_args():
 
 
 
-def test_idl::octettype_is_not_abstract():
-    assert not inspect.isabstract(idl::OctetType)
+def test_idl_octettype_is_not_abstract():
+    assert not inspect.isabstract(idl_OctetType)
 
 
-def test_idl::octettype_constructor_exists():
-    assert callable(idl::OctetType.__init__)
+def test_idl_octettype_constructor_exists():
+    assert callable(idl_OctetType.__init__)
 
 
-def test_idl::octettype_constructor_args():
-    sig = inspect.signature(idl::OctetType.__init__)
+def test_idl_octettype_constructor_args():
+    sig = inspect.signature(idl_OctetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::anytype_is_not_abstract():
-    assert not inspect.isabstract(idl::AnyType)
+def test_idl_integertype_is_not_abstract():
+    assert not inspect.isabstract(idl_IntegerType)
 
 
-def test_idl::anytype_constructor_exists():
-    assert callable(idl::AnyType.__init__)
+def test_idl_integertype_constructor_exists():
+    assert callable(idl_IntegerType.__init__)
 
 
-def test_idl::anytype_constructor_args():
-    sig = inspect.signature(idl::AnyType.__init__)
+def test_idl_integertype_constructor_args():
+    sig = inspect.signature(idl_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::integertype_is_not_abstract():
-    assert not inspect.isabstract(idl::IntegerType)
+def test_idl_anytype_is_not_abstract():
+    assert not inspect.isabstract(idl_AnyType)
 
 
-def test_idl::integertype_constructor_exists():
-    assert callable(idl::IntegerType.__init__)
+def test_idl_anytype_constructor_exists():
+    assert callable(idl_AnyType.__init__)
 
 
-def test_idl::integertype_constructor_args():
-    sig = inspect.signature(idl::IntegerType.__init__)
+def test_idl_anytype_constructor_args():
+    sig = inspect.signature(idl_AnyType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::valuebasetype_is_not_abstract():
-    assert not inspect.isabstract(idl::ValueBaseType)
+def test_idl_booleantype_is_not_abstract():
+    assert not inspect.isabstract(idl_BooleanType)
 
 
-def test_idl::valuebasetype_constructor_exists():
-    assert callable(idl::ValueBaseType.__init__)
+def test_idl_booleantype_constructor_exists():
+    assert callable(idl_BooleanType.__init__)
 
 
-def test_idl::valuebasetype_constructor_args():
-    sig = inspect.signature(idl::ValueBaseType.__init__)
+def test_idl_booleantype_constructor_args():
+    sig = inspect.signature(idl_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::widechartype_is_not_abstract():
-    assert not inspect.isabstract(idl::WideCharType)
+def test_idl_widechartype_is_not_abstract():
+    assert not inspect.isabstract(idl_WideCharType)
 
 
-def test_idl::widechartype_constructor_exists():
-    assert callable(idl::WideCharType.__init__)
+def test_idl_widechartype_constructor_exists():
+    assert callable(idl_WideCharType.__init__)
 
 
-def test_idl::widechartype_constructor_args():
-    sig = inspect.signature(idl::WideCharType.__init__)
+def test_idl_widechartype_constructor_args():
+    sig = inspect.signature(idl_WideCharType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::chartype_is_not_abstract():
-    assert not inspect.isabstract(idl::CharType)
+def test_idl_chartype_is_not_abstract():
+    assert not inspect.isabstract(idl_CharType)
 
 
-def test_idl::chartype_constructor_exists():
-    assert callable(idl::CharType.__init__)
+def test_idl_chartype_constructor_exists():
+    assert callable(idl_CharType.__init__)
 
 
-def test_idl::chartype_constructor_args():
-    sig = inspect.signature(idl::CharType.__init__)
+def test_idl_chartype_constructor_args():
+    sig = inspect.signature(idl_CharType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::objecttype_is_not_abstract():
-    assert not inspect.isabstract(idl::ObjectType)
+def test_idl_objecttype_is_not_abstract():
+    assert not inspect.isabstract(idl_ObjectType)
 
 
-def test_idl::objecttype_constructor_exists():
-    assert callable(idl::ObjectType.__init__)
+def test_idl_objecttype_constructor_exists():
+    assert callable(idl_ObjectType.__init__)
 
 
-def test_idl::objecttype_constructor_args():
-    sig = inspect.signature(idl::ObjectType.__init__)
+def test_idl_objecttype_constructor_args():
+    sig = inspect.signature(idl_ObjectType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::booleantype_is_not_abstract():
-    assert not inspect.isabstract(idl::BooleanType)
+def test_idl_valuebasetype_is_not_abstract():
+    assert not inspect.isabstract(idl_ValueBaseType)
 
 
-def test_idl::booleantype_constructor_exists():
-    assert callable(idl::BooleanType.__init__)
+def test_idl_valuebasetype_constructor_exists():
+    assert callable(idl_ValueBaseType.__init__)
 
 
-def test_idl::booleantype_constructor_args():
-    sig = inspect.signature(idl::BooleanType.__init__)
+def test_idl_valuebasetype_constructor_args():
+    sig = inspect.signature(idl_ValueBaseType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::floatingpttype_is_not_abstract():
-    assert not inspect.isabstract(idl::FloatingPtType)
+def test_idl_floatingpttype_is_not_abstract():
+    assert not inspect.isabstract(idl_FloatingPtType)
 
 
-def test_idl::floatingpttype_constructor_exists():
-    assert callable(idl::FloatingPtType.__init__)
+def test_idl_floatingpttype_constructor_exists():
+    assert callable(idl_FloatingPtType.__init__)
 
 
-def test_idl::floatingpttype_constructor_args():
-    sig = inspect.signature(idl::FloatingPtType.__init__)
+def test_idl_floatingpttype_constructor_args():
+    sig = inspect.signature(idl_FloatingPtType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::paramtypespec_is_not_abstract():
-    assert not inspect.isabstract(idl::ParamTypeSpec)
+def test_idl_paramtypespec_is_not_abstract():
+    assert not inspect.isabstract(idl_ParamTypeSpec)
 
 
-def test_idl::paramtypespec_constructor_exists():
-    assert callable(idl::ParamTypeSpec.__init__)
+def test_idl_paramtypespec_constructor_exists():
+    assert callable(idl_ParamTypeSpec.__init__)
 
 
-def test_idl::paramtypespec_constructor_args():
-    sig = inspect.signature(idl::ParamTypeSpec.__init__)
+def test_idl_paramtypespec_constructor_args():
+    sig = inspect.signature(idl_ParamTypeSpec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2509,35 +2509,35 @@ def test_connectorexport_constructor_args():
 
 
 
-def test_idl::portdecl_is_not_abstract():
-    assert not inspect.isabstract(idl::PortDecl)
+def test_idl_portdecl_is_not_abstract():
+    assert not inspect.isabstract(idl_PortDecl)
 
 
-def test_idl::portdecl_constructor_exists():
-    assert callable(idl::PortDecl.__init__)
+def test_idl_portdecl_constructor_exists():
+    assert callable(idl_PortDecl.__init__)
 
 
-def test_idl::portdecl_constructor_args():
-    sig = inspect.signature(idl::PortDecl.__init__)
+def test_idl_portdecl_constructor_args():
+    sig = inspect.signature(idl_PortDecl.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "isMirror" in params, "Missing parameter 'isMirror'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::portdecl_has_name():
-    assert hasattr(idl::PortDecl, "name")
+def test_idl_portdecl_has_isMirror():
+    assert hasattr(idl_PortDecl, "isMirror")
     descriptor = None
-    for klass in idl::PortDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in idl_PortDecl.__mro__:
+        if "isMirror" in klass.__dict__:
+            descriptor = klass.__dict__["isMirror"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::portdecl_has_isMirror():
-    assert hasattr(idl::PortDecl, "isMirror")
+def test_idl_portdecl_has_name():
+    assert hasattr(idl_PortDecl, "name")
     descriptor = None
-    for klass in idl::PortDecl.__mro__:
-        if "isMirror" in klass.__dict__:
-            descriptor = klass.__dict__["isMirror"]
+    for klass in idl_PortDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -2557,81 +2557,81 @@ def test_portexport_constructor_args():
 
 
 
-def test_idl::usesdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::UsesDcl)
+def test_idl_providesdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_ProvidesDcl)
 
 
-def test_idl::usesdcl_constructor_exists():
-    assert callable(idl::UsesDcl.__init__)
+def test_idl_providesdcl_constructor_exists():
+    assert callable(idl_ProvidesDcl.__init__)
 
 
-def test_idl::usesdcl_constructor_args():
-    sig = inspect.signature(idl::UsesDcl.__init__)
+def test_idl_providesdcl_constructor_args():
+    sig = inspect.signature(idl_ProvidesDcl.__init__)
     params = list(sig.parameters.keys())
-    assert "isMultiple" in params, "Missing parameter 'isMultiple'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::usesdcl_has_isMultiple():
-    assert hasattr(idl::UsesDcl, "isMultiple")
+def test_idl_providesdcl_has_name():
+    assert hasattr(idl_ProvidesDcl, "name")
     descriptor = None
-    for klass in idl::UsesDcl.__mro__:
+    for klass in idl_ProvidesDcl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_idl_usesdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_UsesDcl)
+
+
+def test_idl_usesdcl_constructor_exists():
+    assert callable(idl_UsesDcl.__init__)
+
+
+def test_idl_usesdcl_constructor_args():
+    sig = inspect.signature(idl_UsesDcl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isMultiple" in params, "Missing parameter 'isMultiple'"
+
+def test_idl_usesdcl_has_name():
+    assert hasattr(idl_UsesDcl, "name")
+    descriptor = None
+    for klass in idl_UsesDcl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_idl_usesdcl_has_isMultiple():
+    assert hasattr(idl_UsesDcl, "isMultiple")
+    descriptor = None
+    for klass in idl_UsesDcl.__mro__:
         if "isMultiple" in klass.__dict__:
             descriptor = klass.__dict__["isMultiple"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::usesdcl_has_name():
-    assert hasattr(idl::UsesDcl, "name")
-    descriptor = None
-    for klass in idl::UsesDcl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_idl::providesdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::ProvidesDcl)
-
-
-def test_idl::providesdcl_constructor_exists():
-    assert callable(idl::ProvidesDcl.__init__)
+def test_idl_attrdecl_is_not_abstract():
+    assert not inspect.isabstract(idl_AttrDecl)
 
 
-def test_idl::providesdcl_constructor_args():
-    sig = inspect.signature(idl::ProvidesDcl.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::providesdcl_has_name():
-    assert hasattr(idl::ProvidesDcl, "name")
-    descriptor = None
-    for klass in idl::ProvidesDcl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+def test_idl_attrdecl_constructor_exists():
+    assert callable(idl_AttrDecl.__init__)
 
 
-
-def test_idl::attrdecl_is_not_abstract():
-    assert not inspect.isabstract(idl::AttrDecl)
-
-
-def test_idl::attrdecl_constructor_exists():
-    assert callable(idl::AttrDecl.__init__)
-
-
-def test_idl::attrdecl_constructor_args():
-    sig = inspect.signature(idl::AttrDecl.__init__)
+def test_idl_attrdecl_constructor_args():
+    sig = inspect.signature(idl_AttrDecl.__init__)
     params = list(sig.parameters.keys())
     assert "names" in params, "Missing parameter 'names'"
 
-def test_idl::attrdecl_has_names():
-    assert hasattr(idl::AttrDecl, "names")
+def test_idl_attrdecl_has_names():
+    assert hasattr(idl_AttrDecl, "names")
     descriptor = None
-    for klass in idl::AttrDecl.__mro__:
+    for klass in idl_AttrDecl.__mro__:
         if "names" in klass.__dict__:
             descriptor = klass.__dict__["names"]
             break
@@ -2653,23 +2653,23 @@ def test_homeexport_constructor_args():
 
 
 
-def test_idl::factorydcl_is_not_abstract():
-    assert not inspect.isabstract(idl::FactoryDcl)
+def test_idl_finderdcl_is_not_abstract():
+    assert not inspect.isabstract(idl_FinderDcl)
 
 
-def test_idl::factorydcl_constructor_exists():
-    assert callable(idl::FactoryDcl.__init__)
+def test_idl_finderdcl_constructor_exists():
+    assert callable(idl_FinderDcl.__init__)
 
 
-def test_idl::factorydcl_constructor_args():
-    sig = inspect.signature(idl::FactoryDcl.__init__)
+def test_idl_finderdcl_constructor_args():
+    sig = inspect.signature(idl_FinderDcl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::factorydcl_has_name():
-    assert hasattr(idl::FactoryDcl, "name")
+def test_idl_finderdcl_has_name():
+    assert hasattr(idl_FinderDcl, "name")
     descriptor = None
-    for klass in idl::FactoryDcl.__mro__:
+    for klass in idl_FinderDcl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2677,23 +2677,23 @@ def test_idl::factorydcl_has_name():
 
 
 
-def test_idl::finderdcl_is_not_abstract():
-    assert not inspect.isabstract(idl::FinderDcl)
+def test_idl_factorydcl_is_not_abstract():
+    assert not inspect.isabstract(idl_FactoryDcl)
 
 
-def test_idl::finderdcl_constructor_exists():
-    assert callable(idl::FinderDcl.__init__)
+def test_idl_factorydcl_constructor_exists():
+    assert callable(idl_FactoryDcl.__init__)
 
 
-def test_idl::finderdcl_constructor_args():
-    sig = inspect.signature(idl::FinderDcl.__init__)
+def test_idl_factorydcl_constructor_args():
+    sig = inspect.signature(idl_FactoryDcl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::finderdcl_has_name():
-    assert hasattr(idl::FinderDcl, "name")
+def test_idl_factorydcl_has_name():
+    assert hasattr(idl_FactoryDcl, "name")
     descriptor = None
-    for klass in idl::FinderDcl.__mro__:
+    for klass in idl_FactoryDcl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2701,37 +2701,37 @@ def test_idl::finderdcl_has_name():
 
 
 
-def test_idl::export_is_not_abstract():
-    assert not inspect.isabstract(idl::Export)
+def test_idl_export_is_not_abstract():
+    assert not inspect.isabstract(idl_Export)
 
 
-def test_idl::export_constructor_exists():
-    assert callable(idl::Export.__init__)
+def test_idl_export_constructor_exists():
+    assert callable(idl_Export.__init__)
 
 
-def test_idl::export_constructor_args():
-    sig = inspect.signature(idl::Export.__init__)
+def test_idl_export_constructor_args():
+    sig = inspect.signature(idl_Export.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::scopedname_is_not_abstract():
-    assert not inspect.isabstract(idl::ScopedName)
+def test_idl_scopedname_is_not_abstract():
+    assert not inspect.isabstract(idl_ScopedName)
 
 
-def test_idl::scopedname_constructor_exists():
-    assert callable(idl::ScopedName.__init__)
+def test_idl_scopedname_constructor_exists():
+    assert callable(idl_ScopedName.__init__)
 
 
-def test_idl::scopedname_constructor_args():
-    sig = inspect.signature(idl::ScopedName.__init__)
+def test_idl_scopedname_constructor_args():
+    sig = inspect.signature(idl_ScopedName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::scopedname_has_name():
-    assert hasattr(idl::ScopedName, "name")
+def test_idl_scopedname_has_name():
+    assert hasattr(idl_ScopedName, "name")
     descriptor = None
-    for klass in idl::ScopedName.__mro__:
+    for klass in idl_ScopedName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2739,23 +2739,23 @@ def test_idl::scopedname_has_name():
 
 
 
-def test_idl::contextexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::ContextExpr)
+def test_idl_contextexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_ContextExpr)
 
 
-def test_idl::contextexpr_constructor_exists():
-    assert callable(idl::ContextExpr.__init__)
+def test_idl_contextexpr_constructor_exists():
+    assert callable(idl_ContextExpr.__init__)
 
 
-def test_idl::contextexpr_constructor_args():
-    sig = inspect.signature(idl::ContextExpr.__init__)
+def test_idl_contextexpr_constructor_args():
+    sig = inspect.signature(idl_ContextExpr.__init__)
     params = list(sig.parameters.keys())
     assert "literal" in params, "Missing parameter 'literal'"
 
-def test_idl::contextexpr_has_literal():
-    assert hasattr(idl::ContextExpr, "literal")
+def test_idl_contextexpr_has_literal():
+    assert hasattr(idl_ContextExpr, "literal")
     descriptor = None
-    for klass in idl::ContextExpr.__mro__:
+    for klass in idl_ContextExpr.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
@@ -2763,61 +2763,61 @@ def test_idl::contextexpr_has_literal():
 
 
 
-def test_idl::parameterdecls_is_not_abstract():
-    assert not inspect.isabstract(idl::ParameterDecls)
+def test_idl_parameterdecls_is_not_abstract():
+    assert not inspect.isabstract(idl_ParameterDecls)
 
 
-def test_idl::parameterdecls_constructor_exists():
-    assert callable(idl::ParameterDecls.__init__)
+def test_idl_parameterdecls_constructor_exists():
+    assert callable(idl_ParameterDecls.__init__)
 
 
-def test_idl::parameterdecls_constructor_args():
-    sig = inspect.signature(idl::ParameterDecls.__init__)
+def test_idl_parameterdecls_constructor_args():
+    sig = inspect.signature(idl_ParameterDecls.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::optypedecl_is_not_abstract():
-    assert not inspect.isabstract(idl::OpTypeDecl)
+def test_idl_optypedecl_is_not_abstract():
+    assert not inspect.isabstract(idl_OpTypeDecl)
 
 
-def test_idl::optypedecl_constructor_exists():
-    assert callable(idl::OpTypeDecl.__init__)
+def test_idl_optypedecl_constructor_exists():
+    assert callable(idl_OpTypeDecl.__init__)
 
 
-def test_idl::optypedecl_constructor_args():
-    sig = inspect.signature(idl::OpTypeDecl.__init__)
+def test_idl_optypedecl_constructor_args():
+    sig = inspect.signature(idl_OpTypeDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::opdecl_is_not_abstract():
-    assert not inspect.isabstract(idl::OpDecl)
+def test_idl_opdecl_is_not_abstract():
+    assert not inspect.isabstract(idl_OpDecl)
 
 
-def test_idl::opdecl_constructor_exists():
-    assert callable(idl::OpDecl.__init__)
+def test_idl_opdecl_constructor_exists():
+    assert callable(idl_OpDecl.__init__)
 
 
-def test_idl::opdecl_constructor_args():
-    sig = inspect.signature(idl::OpDecl.__init__)
+def test_idl_opdecl_constructor_args():
+    sig = inspect.signature(idl_OpDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "isOneway" in params, "Missing parameter 'isOneway'"
 
-def test_idl::opdecl_has_name():
-    assert hasattr(idl::OpDecl, "name")
+def test_idl_opdecl_has_name():
+    assert hasattr(idl_OpDecl, "name")
     descriptor = None
-    for klass in idl::OpDecl.__mro__:
+    for klass in idl_OpDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::opdecl_has_isOneway():
-    assert hasattr(idl::OpDecl, "isOneway")
+def test_idl_opdecl_has_isOneway():
+    assert hasattr(idl_OpDecl, "isOneway")
     descriptor = None
-    for klass in idl::OpDecl.__mro__:
+    for klass in idl_OpDecl.__mro__:
         if "isOneway" in klass.__dict__:
             descriptor = klass.__dict__["isOneway"]
             break
@@ -2825,30 +2825,30 @@ def test_idl::opdecl_has_isOneway():
 
 
 
-def test_idl::exceptionlist_is_not_abstract():
-    assert not inspect.isabstract(idl::ExceptionList)
+def test_idl_exceptionlist_is_not_abstract():
+    assert not inspect.isabstract(idl_ExceptionList)
 
 
-def test_idl::exceptionlist_constructor_exists():
-    assert callable(idl::ExceptionList.__init__)
+def test_idl_exceptionlist_constructor_exists():
+    assert callable(idl_ExceptionList.__init__)
 
 
-def test_idl::exceptionlist_constructor_args():
-    sig = inspect.signature(idl::ExceptionList.__init__)
+def test_idl_exceptionlist_constructor_args():
+    sig = inspect.signature(idl_ExceptionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::attrraisesexpr_is_not_abstract():
-    assert not inspect.isabstract(idl::AttrRaisesExpr)
+def test_idl_attrraisesexpr_is_not_abstract():
+    assert not inspect.isabstract(idl_AttrRaisesExpr)
 
 
-def test_idl::attrraisesexpr_constructor_exists():
-    assert callable(idl::AttrRaisesExpr.__init__)
+def test_idl_attrraisesexpr_constructor_exists():
+    assert callable(idl_AttrRaisesExpr.__init__)
 
 
-def test_idl::attrraisesexpr_constructor_args():
-    sig = inspect.signature(idl::AttrRaisesExpr.__init__)
+def test_idl_attrraisesexpr_constructor_args():
+    sig = inspect.signature(idl_AttrRaisesExpr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2867,51 +2867,51 @@ def test_attrdecl_constructor_args():
 
 
 
-def test_idl::readonlyattrspec_is_not_abstract():
-    assert not inspect.isabstract(idl::ReadOnlyAttrSpec)
+def test_idl_readonlyattrspec_is_not_abstract():
+    assert not inspect.isabstract(idl_ReadOnlyAttrSpec)
 
 
-def test_idl::readonlyattrspec_constructor_exists():
-    assert callable(idl::ReadOnlyAttrSpec.__init__)
+def test_idl_readonlyattrspec_constructor_exists():
+    assert callable(idl_ReadOnlyAttrSpec.__init__)
 
 
-def test_idl::readonlyattrspec_constructor_args():
-    sig = inspect.signature(idl::ReadOnlyAttrSpec.__init__)
+def test_idl_readonlyattrspec_constructor_args():
+    sig = inspect.signature(idl_ReadOnlyAttrSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::attrspec_is_not_abstract():
-    assert not inspect.isabstract(idl::AttrSpec)
+def test_idl_attrspec_is_not_abstract():
+    assert not inspect.isabstract(idl_AttrSpec)
 
 
-def test_idl::attrspec_constructor_exists():
-    assert callable(idl::AttrSpec.__init__)
+def test_idl_attrspec_constructor_exists():
+    assert callable(idl_AttrSpec.__init__)
 
 
-def test_idl::attrspec_constructor_args():
-    sig = inspect.signature(idl::AttrSpec.__init__)
+def test_idl_attrspec_constructor_args():
+    sig = inspect.signature(idl_AttrSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::pragma::component_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Component)
+def test_idl_preproc_pragma_component_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Component)
 
 
-def test_idl::preproc::pragma::component_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Component.__init__)
+def test_idl_preproc_pragma_component_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Component.__init__)
 
 
-def test_idl::preproc::pragma::component_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Component.__init__)
+def test_idl_preproc_pragma_component_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Component.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::component_has_value():
-    assert hasattr(idl::Preproc::Pragma::Component, "value")
+def test_idl_preproc_pragma_component_has_value():
+    assert hasattr(idl_Preproc_Pragma_Component, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Component.__mro__:
+    for klass in idl_Preproc_Pragma_Component.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2919,23 +2919,23 @@ def test_idl::preproc::pragma::component_has_value():
 
 
 
-def test_idl::preproc::pragma::ndds_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Ndds)
+def test_idl_preproc_pragma_ndds_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Ndds)
 
 
-def test_idl::preproc::pragma::ndds_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Ndds.__init__)
+def test_idl_preproc_pragma_ndds_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Ndds.__init__)
 
 
-def test_idl::preproc::pragma::ndds_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Ndds.__init__)
+def test_idl_preproc_pragma_ndds_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Ndds.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::ndds_has_value():
-    assert hasattr(idl::Preproc::Pragma::Ndds, "value")
+def test_idl_preproc_pragma_ndds_has_value():
+    assert hasattr(idl_Preproc_Pragma_Ndds, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Ndds.__mro__:
+    for klass in idl_Preproc_Pragma_Ndds.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2943,23 +2943,23 @@ def test_idl::preproc::pragma::ndds_has_value():
 
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Ciao::Ami4ccm::Idl)
+def test_idl_preproc_pragma_ciao_ami4ccm_idl_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Ciao_Ami4ccm_Idl)
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Ciao::Ami4ccm::Idl.__init__)
+def test_idl_preproc_pragma_ciao_ami4ccm_idl_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Ciao_Ami4ccm_Idl.__init__)
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Ciao::Ami4ccm::Idl.__init__)
+def test_idl_preproc_pragma_ciao_ami4ccm_idl_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Ciao_Ami4ccm_Idl.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_has_value():
-    assert hasattr(idl::Preproc::Pragma::Ciao::Ami4ccm::Idl, "value")
+def test_idl_preproc_pragma_ciao_ami4ccm_idl_has_value():
+    assert hasattr(idl_Preproc_Pragma_Ciao_Ami4ccm_Idl, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Ciao::Ami4ccm::Idl.__mro__:
+    for klass in idl_Preproc_Pragma_Ciao_Ami4ccm_Idl.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2967,23 +2967,23 @@ def test_idl::preproc::pragma::ciao::ami4ccm::idl_has_value():
 
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle)
+def test_idl_preproc_pragma_ciao_ami4ccm_receptacle_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle)
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle.__init__)
+def test_idl_preproc_pragma_ciao_ami4ccm_receptacle_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle.__init__)
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle.__init__)
+def test_idl_preproc_pragma_ciao_ami4ccm_receptacle_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_has_value():
-    assert hasattr(idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle, "value")
+def test_idl_preproc_pragma_ciao_ami4ccm_receptacle_has_value():
+    assert hasattr(idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle.__mro__:
+    for klass in idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2991,23 +2991,23 @@ def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_has_value():
 
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Ciao::Ami4ccm::Interface)
+def test_idl_preproc_pragma_ciao_ami4ccm_interface_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Ciao_Ami4ccm_Interface)
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Ciao::Ami4ccm::Interface.__init__)
+def test_idl_preproc_pragma_ciao_ami4ccm_interface_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Ciao_Ami4ccm_Interface.__init__)
 
 
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Ciao::Ami4ccm::Interface.__init__)
+def test_idl_preproc_pragma_ciao_ami4ccm_interface_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Ciao_Ami4ccm_Interface.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_has_value():
-    assert hasattr(idl::Preproc::Pragma::Ciao::Ami4ccm::Interface, "value")
+def test_idl_preproc_pragma_ciao_ami4ccm_interface_has_value():
+    assert hasattr(idl_Preproc_Pragma_Ciao_Ami4ccm_Interface, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Ciao::Ami4ccm::Interface.__mro__:
+    for klass in idl_Preproc_Pragma_Ciao_Ami4ccm_Interface.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3015,23 +3015,23 @@ def test_idl::preproc::pragma::ciao::ami4ccm::interface_has_value():
 
 
 
-def test_idl::preproc::pragma::ciao::lem_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Ciao::Lem)
+def test_idl_preproc_pragma_ciao_lem_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Ciao_Lem)
 
 
-def test_idl::preproc::pragma::ciao::lem_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Ciao::Lem.__init__)
+def test_idl_preproc_pragma_ciao_lem_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Ciao_Lem.__init__)
 
 
-def test_idl::preproc::pragma::ciao::lem_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Ciao::Lem.__init__)
+def test_idl_preproc_pragma_ciao_lem_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Ciao_Lem.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::ciao::lem_has_value():
-    assert hasattr(idl::Preproc::Pragma::Ciao::Lem, "value")
+def test_idl_preproc_pragma_ciao_lem_has_value():
+    assert hasattr(idl_Preproc_Pragma_Ciao_Lem, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Ciao::Lem.__mro__:
+    for klass in idl_Preproc_Pragma_Ciao_Lem.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3039,59 +3039,59 @@ def test_idl::preproc::pragma::ciao::lem_has_value():
 
 
 
-def test_idl::interfacebody_is_not_abstract():
-    assert not inspect.isabstract(idl::InterfaceBody)
+def test_idl_interfacebody_is_not_abstract():
+    assert not inspect.isabstract(idl_InterfaceBody)
 
 
-def test_idl::interfacebody_constructor_exists():
-    assert callable(idl::InterfaceBody.__init__)
+def test_idl_interfacebody_constructor_exists():
+    assert callable(idl_InterfaceBody.__init__)
 
 
-def test_idl::interfacebody_constructor_args():
-    sig = inspect.signature(idl::InterfaceBody.__init__)
+def test_idl_interfacebody_constructor_args():
+    sig = inspect.signature(idl_InterfaceBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::interface::header_is_not_abstract():
-    assert not inspect.isabstract(idl::Interface::header)
+def test_idl_interface_header_is_not_abstract():
+    assert not inspect.isabstract(idl_Interface_header)
 
 
-def test_idl::interface::header_constructor_exists():
-    assert callable(idl::Interface::header.__init__)
+def test_idl_interface_header_constructor_exists():
+    assert callable(idl_Interface_header.__init__)
 
 
-def test_idl::interface::header_constructor_args():
-    sig = inspect.signature(idl::Interface::header.__init__)
+def test_idl_interface_header_constructor_args():
+    sig = inspect.signature(idl_Interface_header.__init__)
     params = list(sig.parameters.keys())
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "isLocal" in params, "Missing parameter 'isLocal'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_idl::interface::header_has_isAbstract():
-    assert hasattr(idl::Interface::header, "isAbstract")
+def test_idl_interface_header_has_isLocal():
+    assert hasattr(idl_Interface_header, "isLocal")
     descriptor = None
-    for klass in idl::Interface::header.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
+    for klass in idl_Interface_header.__mro__:
+        if "isLocal" in klass.__dict__:
+            descriptor = klass.__dict__["isLocal"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::interface::header_has_name():
-    assert hasattr(idl::Interface::header, "name")
+def test_idl_interface_header_has_name():
+    assert hasattr(idl_Interface_header, "name")
     descriptor = None
-    for klass in idl::Interface::header.__mro__:
+    for klass in idl_Interface_header.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_idl::interface::header_has_isLocal():
-    assert hasattr(idl::Interface::header, "isLocal")
+def test_idl_interface_header_has_isAbstract():
+    assert hasattr(idl_Interface_header, "isAbstract")
     descriptor = None
-    for klass in idl::Interface::header.__mro__:
-        if "isLocal" in klass.__dict__:
-            descriptor = klass.__dict__["isLocal"]
+    for klass in idl_Interface_header.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
 
@@ -3125,23 +3125,23 @@ def test_templatedefinition_constructor_args():
 
 
 
-def test_idl::porttypedecl_is_not_abstract():
-    assert not inspect.isabstract(idl::PortTypeDecl)
+def test_idl_constdecl_is_not_abstract():
+    assert not inspect.isabstract(idl_ConstDecl)
 
 
-def test_idl::porttypedecl_constructor_exists():
-    assert callable(idl::PortTypeDecl.__init__)
+def test_idl_constdecl_constructor_exists():
+    assert callable(idl_ConstDecl.__init__)
 
 
-def test_idl::porttypedecl_constructor_args():
-    sig = inspect.signature(idl::PortTypeDecl.__init__)
+def test_idl_constdecl_constructor_args():
+    sig = inspect.signature(idl_ConstDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::porttypedecl_has_name():
-    assert hasattr(idl::PortTypeDecl, "name")
+def test_idl_constdecl_has_name():
+    assert hasattr(idl_ConstDecl, "name")
     descriptor = None
-    for klass in idl::PortTypeDecl.__mro__:
+    for klass in idl_ConstDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3149,37 +3149,23 @@ def test_idl::porttypedecl_has_name():
 
 
 
-def test_idl::typedecl_is_not_abstract():
-    assert not inspect.isabstract(idl::TypeDecl)
+def test_idl_nativetype_is_not_abstract():
+    assert not inspect.isabstract(idl_NativeType)
 
 
-def test_idl::typedecl_constructor_exists():
-    assert callable(idl::TypeDecl.__init__)
+def test_idl_nativetype_constructor_exists():
+    assert callable(idl_NativeType.__init__)
 
 
-def test_idl::typedecl_constructor_args():
-    sig = inspect.signature(idl::TypeDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::exceptdecl_is_not_abstract():
-    assert not inspect.isabstract(idl::ExceptDecl)
-
-
-def test_idl::exceptdecl_constructor_exists():
-    assert callable(idl::ExceptDecl.__init__)
-
-
-def test_idl::exceptdecl_constructor_args():
-    sig = inspect.signature(idl::ExceptDecl.__init__)
+def test_idl_nativetype_constructor_args():
+    sig = inspect.signature(idl_NativeType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::exceptdecl_has_name():
-    assert hasattr(idl::ExceptDecl, "name")
+def test_idl_nativetype_has_name():
+    assert hasattr(idl_NativeType, "name")
     descriptor = None
-    for klass in idl::ExceptDecl.__mro__:
+    for klass in idl_NativeType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3187,57 +3173,23 @@ def test_idl::exceptdecl_has_name():
 
 
 
-def test_idl::event_is_not_abstract():
-    assert not inspect.isabstract(idl::Event)
+def test_idl_componentdecl_is_not_abstract():
+    assert not inspect.isabstract(idl_ComponentDecl)
 
 
-def test_idl::event_constructor_exists():
-    assert callable(idl::Event.__init__)
+def test_idl_componentdecl_constructor_exists():
+    assert callable(idl_ComponentDecl.__init__)
 
 
-def test_idl::event_constructor_args():
-    sig = inspect.signature(idl::Event.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-
-def test_idl::event_has_name():
-    assert hasattr(idl::Event, "name")
-    descriptor = None
-    for klass in idl::Event.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_idl::event_has_isAbstract():
-    assert hasattr(idl::Event, "isAbstract")
-    descriptor = None
-    for klass in idl::Event.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_idl::homedecl_is_not_abstract():
-    assert not inspect.isabstract(idl::HomeDecl)
-
-
-def test_idl::homedecl_constructor_exists():
-    assert callable(idl::HomeDecl.__init__)
-
-
-def test_idl::homedecl_constructor_args():
-    sig = inspect.signature(idl::HomeDecl.__init__)
+def test_idl_componentdecl_constructor_args():
+    sig = inspect.signature(idl_ComponentDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::homedecl_has_name():
-    assert hasattr(idl::HomeDecl, "name")
+def test_idl_componentdecl_has_name():
+    assert hasattr(idl_ComponentDecl, "name")
     descriptor = None
-    for klass in idl::HomeDecl.__mro__:
+    for klass in idl_ComponentDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3245,23 +3197,37 @@ def test_idl::homedecl_has_name():
 
 
 
-def test_idl::fixedmodule_is_not_abstract():
-    assert not inspect.isabstract(idl::FixedModule)
+def test_idl_connector_is_not_abstract():
+    assert not inspect.isabstract(idl_Connector)
 
 
-def test_idl::fixedmodule_constructor_exists():
-    assert callable(idl::FixedModule.__init__)
+def test_idl_connector_constructor_exists():
+    assert callable(idl_Connector.__init__)
 
 
-def test_idl::fixedmodule_constructor_args():
-    sig = inspect.signature(idl::FixedModule.__init__)
+def test_idl_connector_constructor_args():
+    sig = inspect.signature(idl_Connector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_fixedmodule_is_not_abstract():
+    assert not inspect.isabstract(idl_FixedModule)
+
+
+def test_idl_fixedmodule_constructor_exists():
+    assert callable(idl_FixedModule.__init__)
+
+
+def test_idl_fixedmodule_constructor_args():
+    sig = inspect.signature(idl_FixedModule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::fixedmodule_has_name():
-    assert hasattr(idl::FixedModule, "name")
+def test_idl_fixedmodule_has_name():
+    assert hasattr(idl_FixedModule, "name")
     descriptor = None
-    for klass in idl::FixedModule.__mro__:
+    for klass in idl_FixedModule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3269,157 +3235,47 @@ def test_idl::fixedmodule_has_name():
 
 
 
-def test_idl::nativetype_is_not_abstract():
-    assert not inspect.isabstract(idl::NativeType)
+def test_idl_typedecl_is_not_abstract():
+    assert not inspect.isabstract(idl_TypeDecl)
 
 
-def test_idl::nativetype_constructor_exists():
-    assert callable(idl::NativeType.__init__)
+def test_idl_typedecl_constructor_exists():
+    assert callable(idl_TypeDecl.__init__)
 
 
-def test_idl::nativetype_constructor_args():
-    sig = inspect.signature(idl::NativeType.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::nativetype_has_name():
-    assert hasattr(idl::NativeType, "name")
-    descriptor = None
-    for klass in idl::NativeType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_idl::componentdecl_is_not_abstract():
-    assert not inspect.isabstract(idl::ComponentDecl)
-
-
-def test_idl::componentdecl_constructor_exists():
-    assert callable(idl::ComponentDecl.__init__)
-
-
-def test_idl::componentdecl_constructor_args():
-    sig = inspect.signature(idl::ComponentDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::componentdecl_has_name():
-    assert hasattr(idl::ComponentDecl, "name")
-    descriptor = None
-    for klass in idl::ComponentDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_idl::constdecl_is_not_abstract():
-    assert not inspect.isabstract(idl::ConstDecl)
-
-
-def test_idl::constdecl_constructor_exists():
-    assert callable(idl::ConstDecl.__init__)
-
-
-def test_idl::constdecl_constructor_args():
-    sig = inspect.signature(idl::ConstDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::constdecl_has_name():
-    assert hasattr(idl::ConstDecl, "name")
-    descriptor = None
-    for klass in idl::ConstDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_idl::connector_is_not_abstract():
-    assert not inspect.isabstract(idl::Connector)
-
-
-def test_idl::connector_constructor_exists():
-    assert callable(idl::Connector.__init__)
-
-
-def test_idl::connector_constructor_args():
-    sig = inspect.signature(idl::Connector.__init__)
+def test_idl_typedecl_constructor_args():
+    sig = inspect.signature(idl_TypeDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::templatemoduleref_is_not_abstract():
-    assert not inspect.isabstract(idl::TemplateModuleRef)
+def test_idl_templatemoduleref_is_not_abstract():
+    assert not inspect.isabstract(idl_TemplateModuleRef)
 
 
-def test_idl::templatemoduleref_constructor_exists():
-    assert callable(idl::TemplateModuleRef.__init__)
+def test_idl_templatemoduleref_constructor_exists():
+    assert callable(idl_TemplateModuleRef.__init__)
 
 
-def test_idl::templatemoduleref_constructor_args():
-    sig = inspect.signature(idl::TemplateModuleRef.__init__)
+def test_idl_templatemoduleref_constructor_args():
+    sig = inspect.signature(idl_TemplateModuleRef.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::templatemoduleref_has_name():
-    assert hasattr(idl::TemplateModuleRef, "name")
+def test_idl_templatemoduleref_has_id():
+    assert hasattr(idl_TemplateModuleRef, "id")
     descriptor = None
-    for klass in idl::TemplateModuleRef.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_idl::templatemoduleref_has_id():
-    assert hasattr(idl::TemplateModuleRef, "id")
-    descriptor = None
-    for klass in idl::TemplateModuleRef.__mro__:
+    for klass in idl_TemplateModuleRef.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_interface::or::forward::decl_is_not_abstract():
-    assert not inspect.isabstract(Interface::or::Forward::Decl)
-
-
-def test_interface::or::forward::decl_constructor_exists():
-    assert callable(Interface::or::Forward::Decl.__init__)
-
-
-def test_interface::or::forward::decl_constructor_args():
-    sig = inspect.signature(Interface::or::Forward::Decl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_idl::forward::decl_is_not_abstract():
-    assert not inspect.isabstract(idl::Forward::decl)
-
-
-def test_idl::forward::decl_constructor_exists():
-    assert callable(idl::Forward::decl.__init__)
-
-
-def test_idl::forward::decl_constructor_args():
-    sig = inspect.signature(idl::Forward::decl.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_idl::forward::decl_has_name():
-    assert hasattr(idl::Forward::decl, "name")
+def test_idl_templatemoduleref_has_name():
+    assert hasattr(idl_TemplateModuleRef, "name")
     descriptor = None
-    for klass in idl::Forward::decl.__mro__:
+    for klass in idl_TemplateModuleRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3427,51 +3283,195 @@ def test_idl::forward::decl_has_name():
 
 
 
-def test_idl::interface::decl_is_not_abstract():
-    assert not inspect.isabstract(idl::Interface::decl)
+def test_idl_porttypedecl_is_not_abstract():
+    assert not inspect.isabstract(idl_PortTypeDecl)
 
 
-def test_idl::interface::decl_constructor_exists():
-    assert callable(idl::Interface::decl.__init__)
+def test_idl_porttypedecl_constructor_exists():
+    assert callable(idl_PortTypeDecl.__init__)
 
 
-def test_idl::interface::decl_constructor_args():
-    sig = inspect.signature(idl::Interface::decl.__init__)
+def test_idl_porttypedecl_constructor_args():
+    sig = inspect.signature(idl_PortTypeDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_idl_porttypedecl_has_name():
+    assert hasattr(idl_PortTypeDecl, "name")
+    descriptor = None
+    for klass in idl_PortTypeDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_idl_homedecl_is_not_abstract():
+    assert not inspect.isabstract(idl_HomeDecl)
+
+
+def test_idl_homedecl_constructor_exists():
+    assert callable(idl_HomeDecl.__init__)
+
+
+def test_idl_homedecl_constructor_args():
+    sig = inspect.signature(idl_HomeDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_idl_homedecl_has_name():
+    assert hasattr(idl_HomeDecl, "name")
+    descriptor = None
+    for klass in idl_HomeDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_idl_exceptdecl_is_not_abstract():
+    assert not inspect.isabstract(idl_ExceptDecl)
+
+
+def test_idl_exceptdecl_constructor_exists():
+    assert callable(idl_ExceptDecl.__init__)
+
+
+def test_idl_exceptdecl_constructor_args():
+    sig = inspect.signature(idl_ExceptDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_idl_exceptdecl_has_name():
+    assert hasattr(idl_ExceptDecl, "name")
+    descriptor = None
+    for klass in idl_ExceptDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_idl_event_is_not_abstract():
+    assert not inspect.isabstract(idl_Event)
+
+
+def test_idl_event_constructor_exists():
+    assert callable(idl_Event.__init__)
+
+
+def test_idl_event_constructor_args():
+    sig = inspect.signature(idl_Event.__init__)
+    params = list(sig.parameters.keys())
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_idl_event_has_isAbstract():
+    assert hasattr(idl_Event, "isAbstract")
+    descriptor = None
+    for klass in idl_Event.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_idl_event_has_name():
+    assert hasattr(idl_Event, "name")
+    descriptor = None
+    for klass in idl_Event.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_interface_or_forward_decl_is_not_abstract():
+    assert not inspect.isabstract(Interface_or_Forward_Decl)
+
+
+def test_interface_or_forward_decl_constructor_exists():
+    assert callable(Interface_or_Forward_Decl.__init__)
+
+
+def test_interface_or_forward_decl_constructor_args():
+    sig = inspect.signature(Interface_or_Forward_Decl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::interface::or::forward::decl_is_not_abstract():
-    assert not inspect.isabstract(idl::Interface::or::Forward::Decl)
+def test_idl_forward_decl_is_not_abstract():
+    assert not inspect.isabstract(idl_Forward_decl)
 
 
-def test_idl::interface::or::forward::decl_constructor_exists():
-    assert callable(idl::Interface::or::Forward::Decl.__init__)
+def test_idl_forward_decl_constructor_exists():
+    assert callable(idl_Forward_decl.__init__)
 
 
-def test_idl::interface::or::forward::decl_constructor_args():
-    sig = inspect.signature(idl::Interface::or::Forward::Decl.__init__)
+def test_idl_forward_decl_constructor_args():
+    sig = inspect.signature(idl_Forward_decl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_idl_forward_decl_has_name():
+    assert hasattr(idl_Forward_decl, "name")
+    descriptor = None
+    for klass in idl_Forward_decl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_idl_interface_decl_is_not_abstract():
+    assert not inspect.isabstract(idl_Interface_decl)
+
+
+def test_idl_interface_decl_constructor_exists():
+    assert callable(idl_Interface_decl.__init__)
+
+
+def test_idl_interface_decl_constructor_args():
+    sig = inspect.signature(idl_Interface_decl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::idlcomment_is_not_abstract():
-    assert not inspect.isabstract(idl::IDLComment)
+def test_idl_interface_or_forward_decl_is_not_abstract():
+    assert not inspect.isabstract(idl_Interface_or_Forward_Decl)
 
 
-def test_idl::idlcomment_constructor_exists():
-    assert callable(idl::IDLComment.__init__)
+def test_idl_interface_or_forward_decl_constructor_exists():
+    assert callable(idl_Interface_or_Forward_Decl.__init__)
 
 
-def test_idl::idlcomment_constructor_args():
-    sig = inspect.signature(idl::IDLComment.__init__)
+def test_idl_interface_or_forward_decl_constructor_args():
+    sig = inspect.signature(idl_Interface_or_Forward_Decl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_idl_idlcomment_is_not_abstract():
+    assert not inspect.isabstract(idl_IDLComment)
+
+
+def test_idl_idlcomment_constructor_exists():
+    assert callable(idl_IDLComment.__init__)
+
+
+def test_idl_idlcomment_constructor_args():
+    sig = inspect.signature(idl_IDLComment.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_idl::idlcomment_has_body():
-    assert hasattr(idl::IDLComment, "body")
+def test_idl_idlcomment_has_body():
+    assert hasattr(idl_IDLComment, "body")
     descriptor = None
-    for klass in idl::IDLComment.__mro__:
+    for klass in idl_IDLComment.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -3479,23 +3479,23 @@ def test_idl::idlcomment_has_body():
 
 
 
-def test_idl::module_is_not_abstract():
-    assert not inspect.isabstract(idl::Module)
+def test_idl_module_is_not_abstract():
+    assert not inspect.isabstract(idl_Module)
 
 
-def test_idl::module_constructor_exists():
-    assert callable(idl::Module.__init__)
+def test_idl_module_constructor_exists():
+    assert callable(idl_Module.__init__)
 
 
-def test_idl::module_constructor_args():
-    sig = inspect.signature(idl::Module.__init__)
+def test_idl_module_constructor_args():
+    sig = inspect.signature(idl_Module.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::module_has_name():
-    assert hasattr(idl::Module, "name")
+def test_idl_module_has_name():
+    assert hasattr(idl_Module, "name")
     descriptor = None
-    for klass in idl::Module.__mro__:
+    for klass in idl_Module.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3503,23 +3503,23 @@ def test_idl::module_has_name():
 
 
 
-def test_idl::excluded::file::marker_is_not_abstract():
-    assert not inspect.isabstract(idl::Excluded::File::Marker)
+def test_idl_excluded_file_marker_is_not_abstract():
+    assert not inspect.isabstract(idl_Excluded_File_Marker)
 
 
-def test_idl::excluded::file::marker_constructor_exists():
-    assert callable(idl::Excluded::File::Marker.__init__)
+def test_idl_excluded_file_marker_constructor_exists():
+    assert callable(idl_Excluded_File_Marker.__init__)
 
 
-def test_idl::excluded::file::marker_constructor_args():
-    sig = inspect.signature(idl::Excluded::File::Marker.__init__)
+def test_idl_excluded_file_marker_constructor_args():
+    sig = inspect.signature(idl_Excluded_File_Marker.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_idl::excluded::file::marker_has_file():
-    assert hasattr(idl::Excluded::File::Marker, "file")
+def test_idl_excluded_file_marker_has_file():
+    assert hasattr(idl_Excluded_File_Marker, "file")
     descriptor = None
-    for klass in idl::Excluded::File::Marker.__mro__:
+    for klass in idl_Excluded_File_Marker.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -3527,23 +3527,23 @@ def test_idl::excluded::file::marker_has_file():
 
 
 
-def test_idl::file::marker_is_not_abstract():
-    assert not inspect.isabstract(idl::File::Marker)
+def test_idl_file_marker_is_not_abstract():
+    assert not inspect.isabstract(idl_File_Marker)
 
 
-def test_idl::file::marker_constructor_exists():
-    assert callable(idl::File::Marker.__init__)
+def test_idl_file_marker_constructor_exists():
+    assert callable(idl_File_Marker.__init__)
 
 
-def test_idl::file::marker_constructor_args():
-    sig = inspect.signature(idl::File::Marker.__init__)
+def test_idl_file_marker_constructor_args():
+    sig = inspect.signature(idl_File_Marker.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_idl::file::marker_has_file():
-    assert hasattr(idl::File::Marker, "file")
+def test_idl_file_marker_has_file():
+    assert hasattr(idl_File_Marker, "file")
     descriptor = None
-    for klass in idl::File::Marker.__mro__:
+    for klass in idl_File_Marker.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -3551,37 +3551,37 @@ def test_idl::file::marker_has_file():
 
 
 
-def test_idl::preproc::pragma::misc_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Misc)
+def test_idl_preproc_pragma_misc_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Misc)
 
 
-def test_idl::preproc::pragma::misc_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Misc.__init__)
+def test_idl_preproc_pragma_misc_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Misc.__init__)
 
 
-def test_idl::preproc::pragma::misc_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Misc.__init__)
+def test_idl_preproc_pragma_misc_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Misc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_idl::preproc::pragma::dds4ccm::impl_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::DDS4CCM::Impl)
+def test_idl_preproc_pragma_dds4ccm_impl_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_DDS4CCM_Impl)
 
 
-def test_idl::preproc::pragma::dds4ccm::impl_constructor_exists():
-    assert callable(idl::Preproc::Pragma::DDS4CCM::Impl.__init__)
+def test_idl_preproc_pragma_dds4ccm_impl_constructor_exists():
+    assert callable(idl_Preproc_Pragma_DDS4CCM_Impl.__init__)
 
 
-def test_idl::preproc::pragma::dds4ccm::impl_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::DDS4CCM::Impl.__init__)
+def test_idl_preproc_pragma_dds4ccm_impl_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_DDS4CCM_Impl.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::dds4ccm::impl_has_value():
-    assert hasattr(idl::Preproc::Pragma::DDS4CCM::Impl, "value")
+def test_idl_preproc_pragma_dds4ccm_impl_has_value():
+    assert hasattr(idl_Preproc_Pragma_DDS4CCM_Impl, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::DDS4CCM::Impl.__mro__:
+    for klass in idl_Preproc_Pragma_DDS4CCM_Impl.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3589,23 +3589,23 @@ def test_idl::preproc::pragma::dds4ccm::impl_has_value():
 
 
 
-def test_idl::preproc::pragma::home_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Pragma::Home)
+def test_idl_preproc_pragma_home_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Pragma_Home)
 
 
-def test_idl::preproc::pragma::home_constructor_exists():
-    assert callable(idl::Preproc::Pragma::Home.__init__)
+def test_idl_preproc_pragma_home_constructor_exists():
+    assert callable(idl_Preproc_Pragma_Home.__init__)
 
 
-def test_idl::preproc::pragma::home_constructor_args():
-    sig = inspect.signature(idl::Preproc::Pragma::Home.__init__)
+def test_idl_preproc_pragma_home_constructor_args():
+    sig = inspect.signature(idl_Preproc_Pragma_Home.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::pragma::home_has_value():
-    assert hasattr(idl::Preproc::Pragma::Home, "value")
+def test_idl_preproc_pragma_home_has_value():
+    assert hasattr(idl_Preproc_Pragma_Home, "value")
     descriptor = None
-    for klass in idl::Preproc::Pragma::Home.__mro__:
+    for klass in idl_Preproc_Pragma_Home.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3613,23 +3613,23 @@ def test_idl::preproc::pragma::home_has_value():
 
 
 
-def test_idl::preproc::ifndef_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Ifndef)
+def test_idl_preproc_ifndef_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Ifndef)
 
 
-def test_idl::preproc::ifndef_constructor_exists():
-    assert callable(idl::Preproc::Ifndef.__init__)
+def test_idl_preproc_ifndef_constructor_exists():
+    assert callable(idl_Preproc_Ifndef.__init__)
 
 
-def test_idl::preproc::ifndef_constructor_args():
-    sig = inspect.signature(idl::Preproc::Ifndef.__init__)
+def test_idl_preproc_ifndef_constructor_args():
+    sig = inspect.signature(idl_Preproc_Ifndef.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::ifndef_has_value():
-    assert hasattr(idl::Preproc::Ifndef, "value")
+def test_idl_preproc_ifndef_has_value():
+    assert hasattr(idl_Preproc_Ifndef, "value")
     descriptor = None
-    for klass in idl::Preproc::Ifndef.__mro__:
+    for klass in idl_Preproc_Ifndef.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3637,23 +3637,23 @@ def test_idl::preproc::ifndef_has_value():
 
 
 
-def test_idl::preproc::ifdef_is_not_abstract():
-    assert not inspect.isabstract(idl::Preproc::Ifdef)
+def test_idl_preproc_ifdef_is_not_abstract():
+    assert not inspect.isabstract(idl_Preproc_Ifdef)
 
 
-def test_idl::preproc::ifdef_constructor_exists():
-    assert callable(idl::Preproc::Ifdef.__init__)
+def test_idl_preproc_ifdef_constructor_exists():
+    assert callable(idl_Preproc_Ifdef.__init__)
 
 
-def test_idl::preproc::ifdef_constructor_args():
-    sig = inspect.signature(idl::Preproc::Ifdef.__init__)
+def test_idl_preproc_ifdef_constructor_args():
+    sig = inspect.signature(idl_Preproc_Ifdef.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_idl::preproc::ifdef_has_value():
-    assert hasattr(idl::Preproc::Ifdef, "value")
+def test_idl_preproc_ifdef_has_value():
+    assert hasattr(idl_Preproc_Ifdef, "value")
     descriptor = None
-    for klass in idl::Preproc::Ifdef.__mro__:
+    for klass in idl_Preproc_Ifdef.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3661,23 +3661,23 @@ def test_idl::preproc::ifdef_has_value():
 
 
 
-def test_idl::filename_is_not_abstract():
-    assert not inspect.isabstract(idl::FileName)
+def test_idl_filename_is_not_abstract():
+    assert not inspect.isabstract(idl_FileName)
 
 
-def test_idl::filename_constructor_exists():
-    assert callable(idl::FileName.__init__)
+def test_idl_filename_constructor_exists():
+    assert callable(idl_FileName.__init__)
 
 
-def test_idl::filename_constructor_args():
-    sig = inspect.signature(idl::FileName.__init__)
+def test_idl_filename_constructor_args():
+    sig = inspect.signature(idl_FileName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idl::filename_has_name():
-    assert hasattr(idl::FileName, "name")
+def test_idl_filename_has_name():
+    assert hasattr(idl_FileName, "name")
     descriptor = None
-    for klass in idl::FileName.__mro__:
+    for klass in idl_FileName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3691,9 +3691,9 @@ def test_paramdirection_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParamDirection]
     expected_literals = [
-        "In",
         "InOut",
         "Out",
+        "In",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -3711,25 +3711,25 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-idl::FormalParameterType_strategy = st.builds(
-    idl::FormalParameterType,
+idl_FormalParameterType_strategy = st.builds(
+    idl_FormalParameterType,
 )
-idl::TemplateDefinition_strategy = st.builds(
-    idl::TemplateDefinition,
+idl_TemplateDefinition_strategy = st.builds(
+    idl_TemplateDefinition,
 )
-idl::FormalParameter_strategy = st.builds(
-    idl::FormalParameter,
+idl_FormalParameter_strategy = st.builds(
+    idl_FormalParameter,
     name=
         safe_text
 )
-idl::ActualParameter_strategy = st.builds(
-    idl::ActualParameter,
+idl_ActualParameter_strategy = st.builds(
+    idl_ActualParameter,
 )
-idl::FixedDefinition_strategy = st.builds(
-    idl::FixedDefinition,
+idl_FixedDefinition_strategy = st.builds(
+    idl_FixedDefinition,
 )
-idl::StateMember_strategy = st.builds(
-    idl::StateMember,
+idl_StateMember_strategy = st.builds(
+    idl_StateMember,
     isPublic=
         st.booleans(),
     names=
@@ -3738,166 +3738,166 @@ idl::StateMember_strategy = st.builds(
 Event_strategy = st.builds(
     Event,
 )
-idl::EventDcl_strategy = st.builds(
-    idl::EventDcl,
-    isTruncatable=
-        st.booleans(),
+idl_EventDcl_strategy = st.builds(
+    idl_EventDcl,
     isCustom=
+        st.booleans(),
+    isTruncatable=
         st.booleans()
 )
-idl::ConnectorExport_strategy = st.builds(
-    idl::ConnectorExport,
+idl_ConnectorExport_strategy = st.builds(
+    idl_ConnectorExport,
 )
-idl::ConnectorHeader_strategy = st.builds(
-    idl::ConnectorHeader,
+idl_ConnectorHeader_strategy = st.builds(
+    idl_ConnectorHeader,
     name=
         safe_text
 )
-idl::PortExport_strategy = st.builds(
-    idl::PortExport,
+idl_PortExport_strategy = st.builds(
+    idl_PortExport,
 )
-idl::EventForwardDcl_strategy = st.builds(
-    idl::EventForwardDcl,
+idl_EventForwardDcl_strategy = st.builds(
+    idl_EventForwardDcl,
 )
-idl::HomeExport_strategy = st.builds(
-    idl::HomeExport,
+idl_HomeExport_strategy = st.builds(
+    idl_HomeExport,
 )
-idl::PrimaryKeySpec_strategy = st.builds(
-    idl::PrimaryKeySpec,
+idl_PrimaryKeySpec_strategy = st.builds(
+    idl_PrimaryKeySpec,
 )
-idl::ComponentExport_strategy = st.builds(
-    idl::ComponentExport,
+idl_ComponentExport_strategy = st.builds(
+    idl_ComponentExport,
 )
-idl::PrimaryExpr_strategy = st.builds(
-    idl::PrimaryExpr,
+idl_PrimaryExpr_strategy = st.builds(
+    idl_PrimaryExpr,
 )
 ConstParamType_strategy = st.builds(
     ConstParamType,
 )
-idl::ConstType_strategy = st.builds(
-    idl::ConstType,
+idl_ConstType_strategy = st.builds(
+    idl_ConstType,
 )
-idl::UnaryExpr_strategy = st.builds(
-    idl::UnaryExpr,
+idl_UnaryExpr_strategy = st.builds(
+    idl_UnaryExpr,
     op=
         safe_text
 )
-idl::MultExpr_strategy = st.builds(
-    idl::MultExpr,
+idl_MultExpr_strategy = st.builds(
+    idl_MultExpr,
     op=
         safe_text
 )
-idl::AddExpr_strategy = st.builds(
-    idl::AddExpr,
+idl_AddExpr_strategy = st.builds(
+    idl_AddExpr,
     op=
         safe_text
 )
-idl::ShiftExpr_strategy = st.builds(
-    idl::ShiftExpr,
+idl_ShiftExpr_strategy = st.builds(
+    idl_ShiftExpr,
     op=
         safe_text
 )
-idl::AndExpr_strategy = st.builds(
-    idl::AndExpr,
+idl_AndExpr_strategy = st.builds(
+    idl_AndExpr,
     op=
         safe_text
 )
-idl::XOrExpr_strategy = st.builds(
-    idl::XOrExpr,
+idl_XOrExpr_strategy = st.builds(
+    idl_XOrExpr,
     op=
         safe_text
 )
 ConstExp_strategy = st.builds(
     ConstExp,
 )
-idl::OrExpr_strategy = st.builds(
-    idl::OrExpr,
+idl_OrExpr_strategy = st.builds(
+    idl_OrExpr,
     op=
         safe_text
 )
-idl::ElementSpec_strategy = st.builds(
-    idl::ElementSpec,
+idl_ElementSpec_strategy = st.builds(
+    idl_ElementSpec,
 )
-idl::CaseLabel_strategy = st.builds(
-    idl::CaseLabel,
-    isCase=
-        st.booleans(),
+idl_CaseLabel_strategy = st.builds(
+    idl_CaseLabel,
     isDefault=
+        st.booleans(),
+    isCase=
         st.booleans()
 )
-idl::Case_strategy = st.builds(
-    idl::Case,
+idl_Case_strategy = st.builds(
+    idl_Case,
 )
-idl::SwitchBody_strategy = st.builds(
-    idl::SwitchBody,
+idl_SwitchBody_strategy = st.builds(
+    idl_SwitchBody,
 )
-idl::SwitchTypeSpec_strategy = st.builds(
-    idl::SwitchTypeSpec,
+idl_SwitchTypeSpec_strategy = st.builds(
+    idl_SwitchTypeSpec,
 )
 ConstrForwardDecl_strategy = st.builds(
     ConstrForwardDecl,
 )
-idl::UnionForwardDecl_strategy = st.builds(
-    idl::UnionForwardDecl,
+idl_UnionForwardDecl_strategy = st.builds(
+    idl_UnionForwardDecl,
 )
-idl::StructForwardDecl_strategy = st.builds(
-    idl::StructForwardDecl,
+idl_StructForwardDecl_strategy = st.builds(
+    idl_StructForwardDecl,
 )
 FormalParameterType_strategy = st.builds(
     FormalParameterType,
 )
-idl::ExceptionParamType_strategy = st.builds(
-    idl::ExceptionParamType,
+idl_TypenameParamType_strategy = st.builds(
+    idl_TypenameParamType,
 )
-idl::EventParamType_strategy = st.builds(
-    idl::EventParamType,
+idl_ConstParamType_strategy = st.builds(
+    idl_ConstParamType,
 )
-idl::ValuetypeParamType_strategy = st.builds(
-    idl::ValuetypeParamType,
+idl_SequenceParamType_strategy = st.builds(
+    idl_SequenceParamType,
 )
-idl::InterfaceParamType_strategy = st.builds(
-    idl::InterfaceParamType,
+idl_EventParamType_strategy = st.builds(
+    idl_EventParamType,
 )
-idl::EnumParamType_strategy = st.builds(
-    idl::EnumParamType,
+idl_UnionParamType_strategy = st.builds(
+    idl_UnionParamType,
 )
-idl::ConstParamType_strategy = st.builds(
-    idl::ConstParamType,
+idl_StructParamType_strategy = st.builds(
+    idl_StructParamType,
 )
-idl::SequenceParamType_strategy = st.builds(
-    idl::SequenceParamType,
+idl_InterfaceParamType_strategy = st.builds(
+    idl_InterfaceParamType,
 )
-idl::TypenameParamType_strategy = st.builds(
-    idl::TypenameParamType,
+idl_EnumParamType_strategy = st.builds(
+    idl_EnumParamType,
 )
-idl::UnionParamType_strategy = st.builds(
-    idl::UnionParamType,
+idl_ExceptionParamType_strategy = st.builds(
+    idl_ExceptionParamType,
 )
-idl::StructParamType_strategy = st.builds(
-    idl::StructParamType,
+idl_ValuetypeParamType_strategy = st.builds(
+    idl_ValuetypeParamType,
 )
-idl::Declarator_strategy = st.builds(
-    idl::Declarator,
+idl_Declarator_strategy = st.builds(
+    idl_Declarator,
     id=
         safe_text
 )
-idl::Member_strategy = st.builds(
-    idl::Member,
+idl_Member_strategy = st.builds(
+    idl_Member,
 )
 TypeSpec_strategy = st.builds(
     TypeSpec,
 )
-idl::ConstrTypeSpec_strategy = st.builds(
-    idl::ConstrTypeSpec,
+idl_ConstrTypeSpec_strategy = st.builds(
+    idl_ConstrTypeSpec,
 )
-idl::SimpleTypeSpec_strategy = st.builds(
-    idl::SimpleTypeSpec,
+idl_SimpleTypeSpec_strategy = st.builds(
+    idl_SimpleTypeSpec,
 )
 ActualParameter_strategy = st.builds(
     ActualParameter,
 )
-idl::TypeSpec_strategy = st.builds(
-    idl::TypeSpec,
+idl_TypeSpec_strategy = st.builds(
+    idl_TypeSpec,
 )
 ConstrTypeSpec_strategy = st.builds(
     ConstrTypeSpec,
@@ -3905,42 +3905,121 @@ ConstrTypeSpec_strategy = st.builds(
 TypeDecl_strategy = st.builds(
     TypeDecl,
 )
-idl::ConstrForwardDecl_strategy = st.builds(
-    idl::ConstrForwardDecl,
+idl_TypeDeclarator_strategy = st.builds(
+    idl_TypeDeclarator,
+)
+idl_UnionType_strategy = st.builds(
+    idl_UnionType,
     name=
         safe_text
 )
-idl::UnionType_strategy = st.builds(
-    idl::UnionType,
+idl_ConstrForwardDecl_strategy = st.builds(
+    idl_ConstrForwardDecl,
     name=
         safe_text
 )
-idl::TypeDeclarator_strategy = st.builds(
-    idl::TypeDeclarator,
+ComplexDeclarator_strategy = st.builds(
+    ComplexDeclarator,
+)
+idl_ComplexDeclarator_strategy = st.builds(
+    idl_ComplexDeclarator,
+)
+Declarator_strategy = st.builds(
+    Declarator,
+)
+idl_ArrayDeclarator_strategy = st.builds(
+    idl_ArrayDeclarator,
+)
+idl_SimpleDeclarator_strategy = st.builds(
+    idl_SimpleDeclarator,
+)
+PrimaryExpr_strategy = st.builds(
+    PrimaryExpr,
+)
+idl_Literal_strategy = st.builds(
+    idl_Literal,
+    value=
+        safe_text
+)
+ConstType_strategy = st.builds(
+    ConstType,
+)
+idl_FixedPtConstType_strategy = st.builds(
+    idl_FixedPtConstType,
+)
+SwitchTypeSpec_strategy = st.builds(
+    SwitchTypeSpec,
+)
+idl_EnumType_strategy = st.builds(
+    idl_EnumType,
+    literal=
+        safe_text,
+    name=
+        safe_text
+)
+SimpleTypeSpec_strategy = st.builds(
+    SimpleTypeSpec,
+)
+idl_TemplateTypeSpec_strategy = st.builds(
+    idl_TemplateTypeSpec,
+)
+ParamTypeSpec_strategy = st.builds(
+    ParamTypeSpec,
+)
+idl_BaseTypeSpec_strategy = st.builds(
+    idl_BaseTypeSpec,
+)
+OpTypeDecl_strategy = st.builds(
+    OpTypeDecl,
+)
+idl_ParamDcl_strategy = st.builds(
+    idl_ParamDcl,
+    name=
+        safe_text,
+    direction=
+        safe_text
+)
+idl_PositiveIntConst_strategy = st.builds(
+    idl_PositiveIntConst,
+)
+TemplateTypeSpec_strategy = st.builds(
+    TemplateTypeSpec,
+)
+idl_FixedPtType_strategy = st.builds(
+    idl_FixedPtType,
+)
+idl_WideStringType_strategy = st.builds(
+    idl_WideStringType,
+)
+idl_SequenceType_strategy = st.builds(
+    idl_SequenceType,
+)
+idl_StringType_strategy = st.builds(
+    idl_StringType,
 )
 Preproc_strategy = st.builds(
     Preproc,
 )
-idl::Preproc::Include_strategy = st.builds(
-    idl::Preproc::Include,
+idl_Preproc_Include_strategy = st.builds(
+    idl_Preproc_Include,
     strValue=
         safe_text
 )
 ComponentExport_strategy = st.builds(
     ComponentExport,
 )
-idl::ConsumesDcl_strategy = st.builds(
-    idl::ConsumesDcl,
+idl_PublishesDcl_strategy = st.builds(
+    idl_PublishesDcl,
     name=
         safe_text
 )
-idl::EmitDcl_strategy = st.builds(
-    idl::EmitDcl,
+idl_EmitDcl_strategy = st.builds(
+    idl_EmitDcl,
     name=
         safe_text
 )
-idl::PublishesDcl_strategy = st.builds(
-    idl::PublishesDcl,
+idl_ConsumesDcl_strategy = st.builds(
+    idl_ConsumesDcl,
     name=
         safe_text
 )
@@ -3950,376 +4029,297 @@ Export_strategy = st.builds(
 Definition_strategy = st.builds(
     Definition,
 )
-idl::ComponentForwardDecl_strategy = st.builds(
-    idl::ComponentForwardDecl,
+idl_StructType_strategy = st.builds(
+    idl_StructType,
     name=
         safe_text
 )
-idl::TemplateModuleInst_strategy = st.builds(
-    idl::TemplateModuleInst,
+idl_TemplateModuleInst_strategy = st.builds(
+    idl_TemplateModuleInst,
     name=
         safe_text
 )
-idl::TemplateModule_strategy = st.builds(
-    idl::TemplateModule,
+idl_TemplateModule_strategy = st.builds(
+    idl_TemplateModule,
     name=
         safe_text
 )
-idl::StructType_strategy = st.builds(
-    idl::StructType,
+idl_ComponentForwardDecl_strategy = st.builds(
+    idl_ComponentForwardDecl,
     name=
         safe_text
 )
-idl::Preproc_strategy = st.builds(
-    idl::Preproc,
+idl_Preproc_strategy = st.builds(
+    idl_Preproc,
 )
-idl::Definition_strategy = st.builds(
-    idl::Definition,
+idl_Definition_strategy = st.builds(
+    idl_Definition,
 )
-idl::Import::decl_strategy = st.builds(
-    idl::Import::decl,
+idl_Import_decl_strategy = st.builds(
+    idl_Import_decl,
     imported_scope=
         safe_text
 )
-idl::Specification_strategy = st.builds(
-    idl::Specification,
+idl_Specification_strategy = st.builds(
+    idl_Specification,
 )
-Preproc::Pragma_strategy = st.builds(
-    Preproc::Pragma,
+Preproc_Pragma_strategy = st.builds(
+    Preproc_Pragma,
 )
-idl::Preproc::Pragma::Conn::Type_strategy = st.builds(
-    idl::Preproc::Pragma::Conn::Type,
+idl_Preproc_Pragma_Conn_Type_strategy = st.builds(
+    idl_Preproc_Pragma_Conn_Type,
     valuePort=
         safe_text,
     valueConnType=
         safe_text
 )
-idl::Preproc::Pragma::Prefix_strategy = st.builds(
-    idl::Preproc::Pragma::Prefix,
+idl_Preproc_Pragma_Prefix_strategy = st.builds(
+    idl_Preproc_Pragma_Prefix,
     value=
         safe_text
 )
-idl::Preproc::Pragma_strategy = st.builds(
-    idl::Preproc::Pragma,
+idl_Preproc_Pragma_strategy = st.builds(
+    idl_Preproc_Pragma,
 )
-idl::Preproc::Endif_strategy = st.builds(
-    idl::Preproc::Endif,
+idl_Preproc_Endif_strategy = st.builds(
+    idl_Preproc_Endif,
 )
-idl::Preproc::Define_strategy = st.builds(
-    idl::Preproc::Define,
+idl_Preproc_Define_strategy = st.builds(
+    idl_Preproc_Define,
     value=
         safe_text
 )
-idl::Preproc::Error_strategy = st.builds(
-    idl::Preproc::Error,
+idl_Preproc_Error_strategy = st.builds(
+    idl_Preproc_Error,
     value=
         safe_text
 )
-idl::Preproc::Else_strategy = st.builds(
-    idl::Preproc::Else,
+idl_Preproc_Else_strategy = st.builds(
+    idl_Preproc_Else,
 )
-idl::Preproc::If::Val_strategy = st.builds(
-    idl::Preproc::If::Val,
+idl_ConstExp_strategy = st.builds(
+    idl_ConstExp,
 )
-idl::Preproc::If::Compare_strategy = st.builds(
-    idl::Preproc::If::Compare,
+idl_Preproc_If_Val_strategy = st.builds(
+    idl_Preproc_If_Val,
+)
+idl_Preproc_If_Compare_strategy = st.builds(
+    idl_Preproc_If_Compare,
     op=
         safe_text
 )
-idl::Preproc::If_strategy = st.builds(
-    idl::Preproc::If,
+idl_Preproc_If_strategy = st.builds(
+    idl_Preproc_If,
     negation=
         st.booleans()
 )
-idl::Preproc::Undef_strategy = st.builds(
-    idl::Preproc::Undef,
+idl_Preproc_Undef_strategy = st.builds(
+    idl_Preproc_Undef,
     value=
         safe_text
-)
-ComplexDeclarator_strategy = st.builds(
-    ComplexDeclarator,
-)
-idl::ComplexDeclarator_strategy = st.builds(
-    idl::ComplexDeclarator,
-)
-Declarator_strategy = st.builds(
-    Declarator,
-)
-idl::ArrayDeclarator_strategy = st.builds(
-    idl::ArrayDeclarator,
-)
-idl::SimpleDeclarator_strategy = st.builds(
-    idl::SimpleDeclarator,
-)
-PrimaryExpr_strategy = st.builds(
-    PrimaryExpr,
-)
-idl::ConstExp_strategy = st.builds(
-    idl::ConstExp,
-)
-idl::Literal_strategy = st.builds(
-    idl::Literal,
-    value=
-        safe_text
-)
-ConstType_strategy = st.builds(
-    ConstType,
-)
-idl::FixedPtConstType_strategy = st.builds(
-    idl::FixedPtConstType,
-)
-SwitchTypeSpec_strategy = st.builds(
-    SwitchTypeSpec,
-)
-idl::EnumType_strategy = st.builds(
-    idl::EnumType,
-    literal=
-        safe_text,
-    name=
-        safe_text
-)
-SimpleTypeSpec_strategy = st.builds(
-    SimpleTypeSpec,
-)
-idl::TemplateTypeSpec_strategy = st.builds(
-    idl::TemplateTypeSpec,
-)
-ParamTypeSpec_strategy = st.builds(
-    ParamTypeSpec,
-)
-idl::BaseTypeSpec_strategy = st.builds(
-    idl::BaseTypeSpec,
-)
-OpTypeDecl_strategy = st.builds(
-    OpTypeDecl,
-)
-idl::ParamDcl_strategy = st.builds(
-    idl::ParamDcl,
-    direction=
-        safe_text,
-    name=
-        safe_text
-)
-idl::PositiveIntConst_strategy = st.builds(
-    idl::PositiveIntConst,
-)
-TemplateTypeSpec_strategy = st.builds(
-    TemplateTypeSpec,
-)
-idl::FixedPtType_strategy = st.builds(
-    idl::FixedPtType,
-)
-idl::SequenceType_strategy = st.builds(
-    idl::SequenceType,
-)
-idl::WideStringType_strategy = st.builds(
-    idl::WideStringType,
-)
-idl::StringType_strategy = st.builds(
-    idl::StringType,
 )
 UnsignedInt_strategy = st.builds(
     UnsignedInt,
 )
-idl::UnsignedLongLongInt_strategy = st.builds(
-    idl::UnsignedLongLongInt,
+idl_UnsignedLongLongInt_strategy = st.builds(
+    idl_UnsignedLongLongInt,
 )
-idl::UnsignedLongInt_strategy = st.builds(
-    idl::UnsignedLongInt,
+idl_UnsignedLongInt_strategy = st.builds(
+    idl_UnsignedLongInt,
 )
-idl::UnsignedShortInt_strategy = st.builds(
-    idl::UnsignedShortInt,
+idl_UnsignedShortInt_strategy = st.builds(
+    idl_UnsignedShortInt,
 )
 SignedInt_strategy = st.builds(
     SignedInt,
 )
-idl::SignedLongLongInt_strategy = st.builds(
-    idl::SignedLongLongInt,
+idl_SignedLongLongInt_strategy = st.builds(
+    idl_SignedLongLongInt,
 )
-idl::SignedLongInt_strategy = st.builds(
-    idl::SignedLongInt,
+idl_SignedLongInt_strategy = st.builds(
+    idl_SignedLongInt,
 )
-idl::SignedShortInt_strategy = st.builds(
-    idl::SignedShortInt,
+idl_SignedShortInt_strategy = st.builds(
+    idl_SignedShortInt,
 )
 IntegerType_strategy = st.builds(
     IntegerType,
 )
-idl::UnsignedInt_strategy = st.builds(
-    idl::UnsignedInt,
+idl_UnsignedInt_strategy = st.builds(
+    idl_UnsignedInt,
 )
-idl::SignedInt_strategy = st.builds(
-    idl::SignedInt,
+idl_SignedInt_strategy = st.builds(
+    idl_SignedInt,
 )
 FloatingPtType_strategy = st.builds(
     FloatingPtType,
 )
-idl::LongDoubleType_strategy = st.builds(
-    idl::LongDoubleType,
+idl_LongDoubleType_strategy = st.builds(
+    idl_LongDoubleType,
 )
-idl::DoubleType_strategy = st.builds(
-    idl::DoubleType,
+idl_DoubleType_strategy = st.builds(
+    idl_DoubleType,
 )
-idl::FloatType_strategy = st.builds(
-    idl::FloatType,
+idl_FloatType_strategy = st.builds(
+    idl_FloatType,
 )
 BaseTypeSpec_strategy = st.builds(
     BaseTypeSpec,
 )
-idl::OctetType_strategy = st.builds(
-    idl::OctetType,
+idl_OctetType_strategy = st.builds(
+    idl_OctetType,
 )
-idl::AnyType_strategy = st.builds(
-    idl::AnyType,
+idl_IntegerType_strategy = st.builds(
+    idl_IntegerType,
 )
-idl::IntegerType_strategy = st.builds(
-    idl::IntegerType,
+idl_AnyType_strategy = st.builds(
+    idl_AnyType,
 )
-idl::ValueBaseType_strategy = st.builds(
-    idl::ValueBaseType,
+idl_BooleanType_strategy = st.builds(
+    idl_BooleanType,
 )
-idl::WideCharType_strategy = st.builds(
-    idl::WideCharType,
+idl_WideCharType_strategy = st.builds(
+    idl_WideCharType,
 )
-idl::CharType_strategy = st.builds(
-    idl::CharType,
+idl_CharType_strategy = st.builds(
+    idl_CharType,
 )
-idl::ObjectType_strategy = st.builds(
-    idl::ObjectType,
+idl_ObjectType_strategy = st.builds(
+    idl_ObjectType,
 )
-idl::BooleanType_strategy = st.builds(
-    idl::BooleanType,
+idl_ValueBaseType_strategy = st.builds(
+    idl_ValueBaseType,
 )
-idl::FloatingPtType_strategy = st.builds(
-    idl::FloatingPtType,
+idl_FloatingPtType_strategy = st.builds(
+    idl_FloatingPtType,
 )
-idl::ParamTypeSpec_strategy = st.builds(
-    idl::ParamTypeSpec,
+idl_ParamTypeSpec_strategy = st.builds(
+    idl_ParamTypeSpec,
 )
 ConnectorExport_strategy = st.builds(
     ConnectorExport,
 )
-idl::PortDecl_strategy = st.builds(
-    idl::PortDecl,
-    name=
-        safe_text,
+idl_PortDecl_strategy = st.builds(
+    idl_PortDecl,
     isMirror=
-        st.booleans()
-)
-PortExport_strategy = st.builds(
-    PortExport,
-)
-idl::UsesDcl_strategy = st.builds(
-    idl::UsesDcl,
-    isMultiple=
         st.booleans(),
     name=
         safe_text
 )
-idl::ProvidesDcl_strategy = st.builds(
-    idl::ProvidesDcl,
+PortExport_strategy = st.builds(
+    PortExport,
+)
+idl_ProvidesDcl_strategy = st.builds(
+    idl_ProvidesDcl,
     name=
         safe_text
 )
-idl::AttrDecl_strategy = st.builds(
-    idl::AttrDecl,
+idl_UsesDcl_strategy = st.builds(
+    idl_UsesDcl,
+    name=
+        safe_text,
+    isMultiple=
+        st.booleans()
+)
+idl_AttrDecl_strategy = st.builds(
+    idl_AttrDecl,
     names=
         safe_text
 )
 HomeExport_strategy = st.builds(
     HomeExport,
 )
-idl::FactoryDcl_strategy = st.builds(
-    idl::FactoryDcl,
+idl_FinderDcl_strategy = st.builds(
+    idl_FinderDcl,
     name=
         safe_text
 )
-idl::FinderDcl_strategy = st.builds(
-    idl::FinderDcl,
+idl_FactoryDcl_strategy = st.builds(
+    idl_FactoryDcl,
     name=
         safe_text
 )
-idl::Export_strategy = st.builds(
-    idl::Export,
+idl_Export_strategy = st.builds(
+    idl_Export,
 )
-idl::ScopedName_strategy = st.builds(
-    idl::ScopedName,
+idl_ScopedName_strategy = st.builds(
+    idl_ScopedName,
     name=
         safe_text
 )
-idl::ContextExpr_strategy = st.builds(
-    idl::ContextExpr,
+idl_ContextExpr_strategy = st.builds(
+    idl_ContextExpr,
     literal=
         safe_text
 )
-idl::ParameterDecls_strategy = st.builds(
-    idl::ParameterDecls,
+idl_ParameterDecls_strategy = st.builds(
+    idl_ParameterDecls,
 )
-idl::OpTypeDecl_strategy = st.builds(
-    idl::OpTypeDecl,
+idl_OpTypeDecl_strategy = st.builds(
+    idl_OpTypeDecl,
 )
-idl::OpDecl_strategy = st.builds(
-    idl::OpDecl,
+idl_OpDecl_strategy = st.builds(
+    idl_OpDecl,
     name=
         safe_text,
     isOneway=
         st.booleans()
 )
-idl::ExceptionList_strategy = st.builds(
-    idl::ExceptionList,
+idl_ExceptionList_strategy = st.builds(
+    idl_ExceptionList,
 )
-idl::AttrRaisesExpr_strategy = st.builds(
-    idl::AttrRaisesExpr,
+idl_AttrRaisesExpr_strategy = st.builds(
+    idl_AttrRaisesExpr,
 )
 AttrDecl_strategy = st.builds(
     AttrDecl,
 )
-idl::ReadOnlyAttrSpec_strategy = st.builds(
-    idl::ReadOnlyAttrSpec,
+idl_ReadOnlyAttrSpec_strategy = st.builds(
+    idl_ReadOnlyAttrSpec,
 )
-idl::AttrSpec_strategy = st.builds(
-    idl::AttrSpec,
+idl_AttrSpec_strategy = st.builds(
+    idl_AttrSpec,
 )
-idl::Preproc::Pragma::Component_strategy = st.builds(
-    idl::Preproc::Pragma::Component,
+idl_Preproc_Pragma_Component_strategy = st.builds(
+    idl_Preproc_Pragma_Component,
     value=
         safe_text
 )
-idl::Preproc::Pragma::Ndds_strategy = st.builds(
-    idl::Preproc::Pragma::Ndds,
+idl_Preproc_Pragma_Ndds_strategy = st.builds(
+    idl_Preproc_Pragma_Ndds,
     value=
         safe_text
 )
-idl::Preproc::Pragma::Ciao::Ami4ccm::Idl_strategy = st.builds(
-    idl::Preproc::Pragma::Ciao::Ami4ccm::Idl,
+idl_Preproc_Pragma_Ciao_Ami4ccm_Idl_strategy = st.builds(
+    idl_Preproc_Pragma_Ciao_Ami4ccm_Idl,
     value=
         safe_text
 )
-idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle_strategy = st.builds(
-    idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle,
+idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle_strategy = st.builds(
+    idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle,
     value=
         safe_text
 )
-idl::Preproc::Pragma::Ciao::Ami4ccm::Interface_strategy = st.builds(
-    idl::Preproc::Pragma::Ciao::Ami4ccm::Interface,
+idl_Preproc_Pragma_Ciao_Ami4ccm_Interface_strategy = st.builds(
+    idl_Preproc_Pragma_Ciao_Ami4ccm_Interface,
     value=
         safe_text
 )
-idl::Preproc::Pragma::Ciao::Lem_strategy = st.builds(
-    idl::Preproc::Pragma::Ciao::Lem,
+idl_Preproc_Pragma_Ciao_Lem_strategy = st.builds(
+    idl_Preproc_Pragma_Ciao_Lem,
     value=
         safe_text
 )
-idl::InterfaceBody_strategy = st.builds(
-    idl::InterfaceBody,
+idl_InterfaceBody_strategy = st.builds(
+    idl_InterfaceBody,
 )
-idl::Interface::header_strategy = st.builds(
-    idl::Interface::header,
-    isAbstract=
+idl_Interface_header_strategy = st.builds(
+    idl_Interface_header,
+    isLocal=
         st.booleans(),
     name=
         safe_text,
-    isLocal=
+    isAbstract=
         st.booleans()
 )
 FixedDefinition_strategy = st.builds(
@@ -4328,183 +4328,174 @@ FixedDefinition_strategy = st.builds(
 TemplateDefinition_strategy = st.builds(
     TemplateDefinition,
 )
-idl::PortTypeDecl_strategy = st.builds(
-    idl::PortTypeDecl,
+idl_ConstDecl_strategy = st.builds(
+    idl_ConstDecl,
     name=
         safe_text
 )
-idl::TypeDecl_strategy = st.builds(
-    idl::TypeDecl,
-)
-idl::ExceptDecl_strategy = st.builds(
-    idl::ExceptDecl,
+idl_NativeType_strategy = st.builds(
+    idl_NativeType,
     name=
         safe_text
 )
-idl::Event_strategy = st.builds(
-    idl::Event,
-    name=
-        safe_text,
-    isAbstract=
-        st.booleans()
-)
-idl::HomeDecl_strategy = st.builds(
-    idl::HomeDecl,
+idl_ComponentDecl_strategy = st.builds(
+    idl_ComponentDecl,
     name=
         safe_text
 )
-idl::FixedModule_strategy = st.builds(
-    idl::FixedModule,
+idl_Connector_strategy = st.builds(
+    idl_Connector,
+)
+idl_FixedModule_strategy = st.builds(
+    idl_FixedModule,
     name=
         safe_text
 )
-idl::NativeType_strategy = st.builds(
-    idl::NativeType,
-    name=
-        safe_text
+idl_TypeDecl_strategy = st.builds(
+    idl_TypeDecl,
 )
-idl::ComponentDecl_strategy = st.builds(
-    idl::ComponentDecl,
-    name=
-        safe_text
-)
-idl::ConstDecl_strategy = st.builds(
-    idl::ConstDecl,
-    name=
-        safe_text
-)
-idl::Connector_strategy = st.builds(
-    idl::Connector,
-)
-idl::TemplateModuleRef_strategy = st.builds(
-    idl::TemplateModuleRef,
-    name=
-        safe_text,
+idl_TemplateModuleRef_strategy = st.builds(
+    idl_TemplateModuleRef,
     id=
-        safe_text
-)
-Interface::or::Forward::Decl_strategy = st.builds(
-    Interface::or::Forward::Decl,
-)
-idl::Forward::decl_strategy = st.builds(
-    idl::Forward::decl,
+        safe_text,
     name=
         safe_text
 )
-idl::Interface::decl_strategy = st.builds(
-    idl::Interface::decl,
+idl_PortTypeDecl_strategy = st.builds(
+    idl_PortTypeDecl,
+    name=
+        safe_text
 )
-idl::Interface::or::Forward::Decl_strategy = st.builds(
-    idl::Interface::or::Forward::Decl,
+idl_HomeDecl_strategy = st.builds(
+    idl_HomeDecl,
+    name=
+        safe_text
 )
-idl::IDLComment_strategy = st.builds(
-    idl::IDLComment,
+idl_ExceptDecl_strategy = st.builds(
+    idl_ExceptDecl,
+    name=
+        safe_text
+)
+idl_Event_strategy = st.builds(
+    idl_Event,
+    isAbstract=
+        st.booleans(),
+    name=
+        safe_text
+)
+Interface_or_Forward_Decl_strategy = st.builds(
+    Interface_or_Forward_Decl,
+)
+idl_Forward_decl_strategy = st.builds(
+    idl_Forward_decl,
+    name=
+        safe_text
+)
+idl_Interface_decl_strategy = st.builds(
+    idl_Interface_decl,
+)
+idl_Interface_or_Forward_Decl_strategy = st.builds(
+    idl_Interface_or_Forward_Decl,
+)
+idl_IDLComment_strategy = st.builds(
+    idl_IDLComment,
     body=
         safe_text
 )
-idl::Module_strategy = st.builds(
-    idl::Module,
+idl_Module_strategy = st.builds(
+    idl_Module,
     name=
         safe_text
 )
-idl::Excluded::File::Marker_strategy = st.builds(
-    idl::Excluded::File::Marker,
+idl_Excluded_File_Marker_strategy = st.builds(
+    idl_Excluded_File_Marker,
     file=
         safe_text
 )
-idl::File::Marker_strategy = st.builds(
-    idl::File::Marker,
+idl_File_Marker_strategy = st.builds(
+    idl_File_Marker,
     file=
         safe_text
 )
-idl::Preproc::Pragma::Misc_strategy = st.builds(
-    idl::Preproc::Pragma::Misc,
+idl_Preproc_Pragma_Misc_strategy = st.builds(
+    idl_Preproc_Pragma_Misc,
 )
-idl::Preproc::Pragma::DDS4CCM::Impl_strategy = st.builds(
-    idl::Preproc::Pragma::DDS4CCM::Impl,
+idl_Preproc_Pragma_DDS4CCM_Impl_strategy = st.builds(
+    idl_Preproc_Pragma_DDS4CCM_Impl,
     value=
         safe_text
 )
-idl::Preproc::Pragma::Home_strategy = st.builds(
-    idl::Preproc::Pragma::Home,
+idl_Preproc_Pragma_Home_strategy = st.builds(
+    idl_Preproc_Pragma_Home,
     value=
         safe_text
 )
-idl::Preproc::Ifndef_strategy = st.builds(
-    idl::Preproc::Ifndef,
+idl_Preproc_Ifndef_strategy = st.builds(
+    idl_Preproc_Ifndef,
     value=
         safe_text
 )
-idl::Preproc::Ifdef_strategy = st.builds(
-    idl::Preproc::Ifdef,
+idl_Preproc_Ifdef_strategy = st.builds(
+    idl_Preproc_Ifdef,
     value=
         safe_text
 )
-idl::FileName_strategy = st.builds(
-    idl::FileName,
+idl_FileName_strategy = st.builds(
+    idl_FileName,
     name=
         safe_text
 )
 
-@given(instance=idl::FormalParameterType_strategy)
+@given(instance=idl_FormalParameterType_strategy)
 @settings(max_examples=50)
-def test_idl::formalparametertype_instantiation(instance):
-    assert isinstance(instance, idl::FormalParameterType)
+def test_idl_formalparametertype_instantiation(instance):
+    assert isinstance(instance, idl_FormalParameterType)
 
-@given(instance=idl::TemplateDefinition_strategy)
+@given(instance=idl_TemplateDefinition_strategy)
 @settings(max_examples=50)
-def test_idl::templatedefinition_instantiation(instance):
-    assert isinstance(instance, idl::TemplateDefinition)
+def test_idl_templatedefinition_instantiation(instance):
+    assert isinstance(instance, idl_TemplateDefinition)
 
-@given(instance=idl::FormalParameter_strategy)
+@given(instance=idl_FormalParameter_strategy)
 @settings(max_examples=50)
-def test_idl::formalparameter_instantiation(instance):
-    assert isinstance(instance, idl::FormalParameter)
-
-@given(instance=idl::FormalParameter_strategy)
-def test_idl::formalparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_formalparameter_instantiation(instance):
+    assert isinstance(instance, idl_FormalParameter)
 
 
-@given(instance=idl::FormalParameter_strategy)
-def test_idl::formalparameter_name_setter(instance):
+
+@given(instance=idl_FormalParameter_strategy)
+def test_idl_formalparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::ActualParameter_strategy)
+@given(instance=idl_ActualParameter_strategy)
 @settings(max_examples=50)
-def test_idl::actualparameter_instantiation(instance):
-    assert isinstance(instance, idl::ActualParameter)
+def test_idl_actualparameter_instantiation(instance):
+    assert isinstance(instance, idl_ActualParameter)
 
-@given(instance=idl::FixedDefinition_strategy)
+@given(instance=idl_FixedDefinition_strategy)
 @settings(max_examples=50)
-def test_idl::fixeddefinition_instantiation(instance):
-    assert isinstance(instance, idl::FixedDefinition)
+def test_idl_fixeddefinition_instantiation(instance):
+    assert isinstance(instance, idl_FixedDefinition)
 
-@given(instance=idl::StateMember_strategy)
+@given(instance=idl_StateMember_strategy)
 @settings(max_examples=50)
-def test_idl::statemember_instantiation(instance):
-    assert isinstance(instance, idl::StateMember)
-
-@given(instance=idl::StateMember_strategy)
-def test_idl::statemember_isPublic_type(instance):
-    assert isinstance(instance.isPublic, bool)
+def test_idl_statemember_instantiation(instance):
+    assert isinstance(instance, idl_StateMember)
 
 
-@given(instance=idl::StateMember_strategy)
-def test_idl::statemember_isPublic_setter(instance):
+
+@given(instance=idl_StateMember_strategy)
+def test_idl_statemember_isPublic_setter(instance):
     original = instance.isPublic
     instance.isPublic = original
     assert instance.isPublic == original
 
-@given(instance=idl::StateMember_strategy)
-def test_idl::statemember_names_type(instance):
-    assert isinstance(instance.names, str)
 
 
-@given(instance=idl::StateMember_strategy)
-def test_idl::statemember_names_setter(instance):
+@given(instance=idl_StateMember_strategy)
+def test_idl_statemember_names_setter(instance):
     original = instance.names
     instance.names = original
     assert instance.names == original
@@ -4514,186 +4505,159 @@ def test_idl::statemember_names_setter(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=idl::EventDcl_strategy)
+@given(instance=idl_EventDcl_strategy)
 @settings(max_examples=50)
-def test_idl::eventdcl_instantiation(instance):
-    assert isinstance(instance, idl::EventDcl)
-
-@given(instance=idl::EventDcl_strategy)
-def test_idl::eventdcl_isTruncatable_type(instance):
-    assert isinstance(instance.isTruncatable, bool)
+def test_idl_eventdcl_instantiation(instance):
+    assert isinstance(instance, idl_EventDcl)
 
 
-@given(instance=idl::EventDcl_strategy)
-def test_idl::eventdcl_isTruncatable_setter(instance):
-    original = instance.isTruncatable
-    instance.isTruncatable = original
-    assert instance.isTruncatable == original
 
-@given(instance=idl::EventDcl_strategy)
-def test_idl::eventdcl_isCustom_type(instance):
-    assert isinstance(instance.isCustom, bool)
-
-
-@given(instance=idl::EventDcl_strategy)
-def test_idl::eventdcl_isCustom_setter(instance):
+@given(instance=idl_EventDcl_strategy)
+def test_idl_eventdcl_isCustom_setter(instance):
     original = instance.isCustom
     instance.isCustom = original
     assert instance.isCustom == original
 
-@given(instance=idl::ConnectorExport_strategy)
+
+
+@given(instance=idl_EventDcl_strategy)
+def test_idl_eventdcl_isTruncatable_setter(instance):
+    original = instance.isTruncatable
+    instance.isTruncatable = original
+    assert instance.isTruncatable == original
+
+@given(instance=idl_ConnectorExport_strategy)
 @settings(max_examples=50)
-def test_idl::connectorexport_instantiation(instance):
-    assert isinstance(instance, idl::ConnectorExport)
+def test_idl_connectorexport_instantiation(instance):
+    assert isinstance(instance, idl_ConnectorExport)
 
-@given(instance=idl::ConnectorHeader_strategy)
+@given(instance=idl_ConnectorHeader_strategy)
 @settings(max_examples=50)
-def test_idl::connectorheader_instantiation(instance):
-    assert isinstance(instance, idl::ConnectorHeader)
-
-@given(instance=idl::ConnectorHeader_strategy)
-def test_idl::connectorheader_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_connectorheader_instantiation(instance):
+    assert isinstance(instance, idl_ConnectorHeader)
 
 
-@given(instance=idl::ConnectorHeader_strategy)
-def test_idl::connectorheader_name_setter(instance):
+
+@given(instance=idl_ConnectorHeader_strategy)
+def test_idl_connectorheader_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::PortExport_strategy)
+@given(instance=idl_PortExport_strategy)
 @settings(max_examples=50)
-def test_idl::portexport_instantiation(instance):
-    assert isinstance(instance, idl::PortExport)
+def test_idl_portexport_instantiation(instance):
+    assert isinstance(instance, idl_PortExport)
 
-@given(instance=idl::EventForwardDcl_strategy)
+@given(instance=idl_EventForwardDcl_strategy)
 @settings(max_examples=50)
-def test_idl::eventforwarddcl_instantiation(instance):
-    assert isinstance(instance, idl::EventForwardDcl)
+def test_idl_eventforwarddcl_instantiation(instance):
+    assert isinstance(instance, idl_EventForwardDcl)
 
-@given(instance=idl::HomeExport_strategy)
+@given(instance=idl_HomeExport_strategy)
 @settings(max_examples=50)
-def test_idl::homeexport_instantiation(instance):
-    assert isinstance(instance, idl::HomeExport)
+def test_idl_homeexport_instantiation(instance):
+    assert isinstance(instance, idl_HomeExport)
 
-@given(instance=idl::PrimaryKeySpec_strategy)
+@given(instance=idl_PrimaryKeySpec_strategy)
 @settings(max_examples=50)
-def test_idl::primarykeyspec_instantiation(instance):
-    assert isinstance(instance, idl::PrimaryKeySpec)
+def test_idl_primarykeyspec_instantiation(instance):
+    assert isinstance(instance, idl_PrimaryKeySpec)
 
-@given(instance=idl::ComponentExport_strategy)
+@given(instance=idl_ComponentExport_strategy)
 @settings(max_examples=50)
-def test_idl::componentexport_instantiation(instance):
-    assert isinstance(instance, idl::ComponentExport)
+def test_idl_componentexport_instantiation(instance):
+    assert isinstance(instance, idl_ComponentExport)
 
-@given(instance=idl::PrimaryExpr_strategy)
+@given(instance=idl_PrimaryExpr_strategy)
 @settings(max_examples=50)
-def test_idl::primaryexpr_instantiation(instance):
-    assert isinstance(instance, idl::PrimaryExpr)
+def test_idl_primaryexpr_instantiation(instance):
+    assert isinstance(instance, idl_PrimaryExpr)
 
 @given(instance=ConstParamType_strategy)
 @settings(max_examples=50)
 def test_constparamtype_instantiation(instance):
     assert isinstance(instance, ConstParamType)
 
-@given(instance=idl::ConstType_strategy)
+@given(instance=idl_ConstType_strategy)
 @settings(max_examples=50)
-def test_idl::consttype_instantiation(instance):
-    assert isinstance(instance, idl::ConstType)
+def test_idl_consttype_instantiation(instance):
+    assert isinstance(instance, idl_ConstType)
 
-@given(instance=idl::UnaryExpr_strategy)
+@given(instance=idl_UnaryExpr_strategy)
 @settings(max_examples=50)
-def test_idl::unaryexpr_instantiation(instance):
-    assert isinstance(instance, idl::UnaryExpr)
-
-@given(instance=idl::UnaryExpr_strategy)
-def test_idl::unaryexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_unaryexpr_instantiation(instance):
+    assert isinstance(instance, idl_UnaryExpr)
 
 
-@given(instance=idl::UnaryExpr_strategy)
-def test_idl::unaryexpr_op_setter(instance):
+
+@given(instance=idl_UnaryExpr_strategy)
+def test_idl_unaryexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::MultExpr_strategy)
+@given(instance=idl_MultExpr_strategy)
 @settings(max_examples=50)
-def test_idl::multexpr_instantiation(instance):
-    assert isinstance(instance, idl::MultExpr)
-
-@given(instance=idl::MultExpr_strategy)
-def test_idl::multexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_multexpr_instantiation(instance):
+    assert isinstance(instance, idl_MultExpr)
 
 
-@given(instance=idl::MultExpr_strategy)
-def test_idl::multexpr_op_setter(instance):
+
+@given(instance=idl_MultExpr_strategy)
+def test_idl_multexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::AddExpr_strategy)
+@given(instance=idl_AddExpr_strategy)
 @settings(max_examples=50)
-def test_idl::addexpr_instantiation(instance):
-    assert isinstance(instance, idl::AddExpr)
-
-@given(instance=idl::AddExpr_strategy)
-def test_idl::addexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_addexpr_instantiation(instance):
+    assert isinstance(instance, idl_AddExpr)
 
 
-@given(instance=idl::AddExpr_strategy)
-def test_idl::addexpr_op_setter(instance):
+
+@given(instance=idl_AddExpr_strategy)
+def test_idl_addexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::ShiftExpr_strategy)
+@given(instance=idl_ShiftExpr_strategy)
 @settings(max_examples=50)
-def test_idl::shiftexpr_instantiation(instance):
-    assert isinstance(instance, idl::ShiftExpr)
-
-@given(instance=idl::ShiftExpr_strategy)
-def test_idl::shiftexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_shiftexpr_instantiation(instance):
+    assert isinstance(instance, idl_ShiftExpr)
 
 
-@given(instance=idl::ShiftExpr_strategy)
-def test_idl::shiftexpr_op_setter(instance):
+
+@given(instance=idl_ShiftExpr_strategy)
+def test_idl_shiftexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::AndExpr_strategy)
+@given(instance=idl_AndExpr_strategy)
 @settings(max_examples=50)
-def test_idl::andexpr_instantiation(instance):
-    assert isinstance(instance, idl::AndExpr)
-
-@given(instance=idl::AndExpr_strategy)
-def test_idl::andexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_andexpr_instantiation(instance):
+    assert isinstance(instance, idl_AndExpr)
 
 
-@given(instance=idl::AndExpr_strategy)
-def test_idl::andexpr_op_setter(instance):
+
+@given(instance=idl_AndExpr_strategy)
+def test_idl_andexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::XOrExpr_strategy)
+@given(instance=idl_XOrExpr_strategy)
 @settings(max_examples=50)
-def test_idl::xorexpr_instantiation(instance):
-    assert isinstance(instance, idl::XOrExpr)
-
-@given(instance=idl::XOrExpr_strategy)
-def test_idl::xorexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_xorexpr_instantiation(instance):
+    assert isinstance(instance, idl_XOrExpr)
 
 
-@given(instance=idl::XOrExpr_strategy)
-def test_idl::xorexpr_op_setter(instance):
+
+@given(instance=idl_XOrExpr_strategy)
+def test_idl_xorexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -4703,184 +4667,172 @@ def test_idl::xorexpr_op_setter(instance):
 def test_constexp_instantiation(instance):
     assert isinstance(instance, ConstExp)
 
-@given(instance=idl::OrExpr_strategy)
+@given(instance=idl_OrExpr_strategy)
 @settings(max_examples=50)
-def test_idl::orexpr_instantiation(instance):
-    assert isinstance(instance, idl::OrExpr)
-
-@given(instance=idl::OrExpr_strategy)
-def test_idl::orexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_idl_orexpr_instantiation(instance):
+    assert isinstance(instance, idl_OrExpr)
 
 
-@given(instance=idl::OrExpr_strategy)
-def test_idl::orexpr_op_setter(instance):
+
+@given(instance=idl_OrExpr_strategy)
+def test_idl_orexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::ElementSpec_strategy)
+@given(instance=idl_ElementSpec_strategy)
 @settings(max_examples=50)
-def test_idl::elementspec_instantiation(instance):
-    assert isinstance(instance, idl::ElementSpec)
+def test_idl_elementspec_instantiation(instance):
+    assert isinstance(instance, idl_ElementSpec)
 
-@given(instance=idl::CaseLabel_strategy)
+@given(instance=idl_CaseLabel_strategy)
 @settings(max_examples=50)
-def test_idl::caselabel_instantiation(instance):
-    assert isinstance(instance, idl::CaseLabel)
-
-@given(instance=idl::CaseLabel_strategy)
-def test_idl::caselabel_isCase_type(instance):
-    assert isinstance(instance.isCase, bool)
+def test_idl_caselabel_instantiation(instance):
+    assert isinstance(instance, idl_CaseLabel)
 
 
-@given(instance=idl::CaseLabel_strategy)
-def test_idl::caselabel_isCase_setter(instance):
-    original = instance.isCase
-    instance.isCase = original
-    assert instance.isCase == original
 
-@given(instance=idl::CaseLabel_strategy)
-def test_idl::caselabel_isDefault_type(instance):
-    assert isinstance(instance.isDefault, bool)
-
-
-@given(instance=idl::CaseLabel_strategy)
-def test_idl::caselabel_isDefault_setter(instance):
+@given(instance=idl_CaseLabel_strategy)
+def test_idl_caselabel_isDefault_setter(instance):
     original = instance.isDefault
     instance.isDefault = original
     assert instance.isDefault == original
 
-@given(instance=idl::Case_strategy)
-@settings(max_examples=50)
-def test_idl::case_instantiation(instance):
-    assert isinstance(instance, idl::Case)
 
-@given(instance=idl::SwitchBody_strategy)
-@settings(max_examples=50)
-def test_idl::switchbody_instantiation(instance):
-    assert isinstance(instance, idl::SwitchBody)
 
-@given(instance=idl::SwitchTypeSpec_strategy)
+@given(instance=idl_CaseLabel_strategy)
+def test_idl_caselabel_isCase_setter(instance):
+    original = instance.isCase
+    instance.isCase = original
+    assert instance.isCase == original
+
+@given(instance=idl_Case_strategy)
 @settings(max_examples=50)
-def test_idl::switchtypespec_instantiation(instance):
-    assert isinstance(instance, idl::SwitchTypeSpec)
+def test_idl_case_instantiation(instance):
+    assert isinstance(instance, idl_Case)
+
+@given(instance=idl_SwitchBody_strategy)
+@settings(max_examples=50)
+def test_idl_switchbody_instantiation(instance):
+    assert isinstance(instance, idl_SwitchBody)
+
+@given(instance=idl_SwitchTypeSpec_strategy)
+@settings(max_examples=50)
+def test_idl_switchtypespec_instantiation(instance):
+    assert isinstance(instance, idl_SwitchTypeSpec)
 
 @given(instance=ConstrForwardDecl_strategy)
 @settings(max_examples=50)
 def test_constrforwarddecl_instantiation(instance):
     assert isinstance(instance, ConstrForwardDecl)
 
-@given(instance=idl::UnionForwardDecl_strategy)
+@given(instance=idl_UnionForwardDecl_strategy)
 @settings(max_examples=50)
-def test_idl::unionforwarddecl_instantiation(instance):
-    assert isinstance(instance, idl::UnionForwardDecl)
+def test_idl_unionforwarddecl_instantiation(instance):
+    assert isinstance(instance, idl_UnionForwardDecl)
 
-@given(instance=idl::StructForwardDecl_strategy)
+@given(instance=idl_StructForwardDecl_strategy)
 @settings(max_examples=50)
-def test_idl::structforwarddecl_instantiation(instance):
-    assert isinstance(instance, idl::StructForwardDecl)
+def test_idl_structforwarddecl_instantiation(instance):
+    assert isinstance(instance, idl_StructForwardDecl)
 
 @given(instance=FormalParameterType_strategy)
 @settings(max_examples=50)
 def test_formalparametertype_instantiation(instance):
     assert isinstance(instance, FormalParameterType)
 
-@given(instance=idl::ExceptionParamType_strategy)
+@given(instance=idl_TypenameParamType_strategy)
 @settings(max_examples=50)
-def test_idl::exceptionparamtype_instantiation(instance):
-    assert isinstance(instance, idl::ExceptionParamType)
+def test_idl_typenameparamtype_instantiation(instance):
+    assert isinstance(instance, idl_TypenameParamType)
 
-@given(instance=idl::EventParamType_strategy)
+@given(instance=idl_ConstParamType_strategy)
 @settings(max_examples=50)
-def test_idl::eventparamtype_instantiation(instance):
-    assert isinstance(instance, idl::EventParamType)
+def test_idl_constparamtype_instantiation(instance):
+    assert isinstance(instance, idl_ConstParamType)
 
-@given(instance=idl::ValuetypeParamType_strategy)
+@given(instance=idl_SequenceParamType_strategy)
 @settings(max_examples=50)
-def test_idl::valuetypeparamtype_instantiation(instance):
-    assert isinstance(instance, idl::ValuetypeParamType)
+def test_idl_sequenceparamtype_instantiation(instance):
+    assert isinstance(instance, idl_SequenceParamType)
 
-@given(instance=idl::InterfaceParamType_strategy)
+@given(instance=idl_EventParamType_strategy)
 @settings(max_examples=50)
-def test_idl::interfaceparamtype_instantiation(instance):
-    assert isinstance(instance, idl::InterfaceParamType)
+def test_idl_eventparamtype_instantiation(instance):
+    assert isinstance(instance, idl_EventParamType)
 
-@given(instance=idl::EnumParamType_strategy)
+@given(instance=idl_UnionParamType_strategy)
 @settings(max_examples=50)
-def test_idl::enumparamtype_instantiation(instance):
-    assert isinstance(instance, idl::EnumParamType)
+def test_idl_unionparamtype_instantiation(instance):
+    assert isinstance(instance, idl_UnionParamType)
 
-@given(instance=idl::ConstParamType_strategy)
+@given(instance=idl_StructParamType_strategy)
 @settings(max_examples=50)
-def test_idl::constparamtype_instantiation(instance):
-    assert isinstance(instance, idl::ConstParamType)
+def test_idl_structparamtype_instantiation(instance):
+    assert isinstance(instance, idl_StructParamType)
 
-@given(instance=idl::SequenceParamType_strategy)
+@given(instance=idl_InterfaceParamType_strategy)
 @settings(max_examples=50)
-def test_idl::sequenceparamtype_instantiation(instance):
-    assert isinstance(instance, idl::SequenceParamType)
+def test_idl_interfaceparamtype_instantiation(instance):
+    assert isinstance(instance, idl_InterfaceParamType)
 
-@given(instance=idl::TypenameParamType_strategy)
+@given(instance=idl_EnumParamType_strategy)
 @settings(max_examples=50)
-def test_idl::typenameparamtype_instantiation(instance):
-    assert isinstance(instance, idl::TypenameParamType)
+def test_idl_enumparamtype_instantiation(instance):
+    assert isinstance(instance, idl_EnumParamType)
 
-@given(instance=idl::UnionParamType_strategy)
+@given(instance=idl_ExceptionParamType_strategy)
 @settings(max_examples=50)
-def test_idl::unionparamtype_instantiation(instance):
-    assert isinstance(instance, idl::UnionParamType)
+def test_idl_exceptionparamtype_instantiation(instance):
+    assert isinstance(instance, idl_ExceptionParamType)
 
-@given(instance=idl::StructParamType_strategy)
+@given(instance=idl_ValuetypeParamType_strategy)
 @settings(max_examples=50)
-def test_idl::structparamtype_instantiation(instance):
-    assert isinstance(instance, idl::StructParamType)
+def test_idl_valuetypeparamtype_instantiation(instance):
+    assert isinstance(instance, idl_ValuetypeParamType)
 
-@given(instance=idl::Declarator_strategy)
+@given(instance=idl_Declarator_strategy)
 @settings(max_examples=50)
-def test_idl::declarator_instantiation(instance):
-    assert isinstance(instance, idl::Declarator)
-
-@given(instance=idl::Declarator_strategy)
-def test_idl::declarator_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_idl_declarator_instantiation(instance):
+    assert isinstance(instance, idl_Declarator)
 
 
-@given(instance=idl::Declarator_strategy)
-def test_idl::declarator_id_setter(instance):
+
+@given(instance=idl_Declarator_strategy)
+def test_idl_declarator_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=idl::Member_strategy)
+@given(instance=idl_Member_strategy)
 @settings(max_examples=50)
-def test_idl::member_instantiation(instance):
-    assert isinstance(instance, idl::Member)
+def test_idl_member_instantiation(instance):
+    assert isinstance(instance, idl_Member)
 
 @given(instance=TypeSpec_strategy)
 @settings(max_examples=50)
 def test_typespec_instantiation(instance):
     assert isinstance(instance, TypeSpec)
 
-@given(instance=idl::ConstrTypeSpec_strategy)
+@given(instance=idl_ConstrTypeSpec_strategy)
 @settings(max_examples=50)
-def test_idl::constrtypespec_instantiation(instance):
-    assert isinstance(instance, idl::ConstrTypeSpec)
+def test_idl_constrtypespec_instantiation(instance):
+    assert isinstance(instance, idl_ConstrTypeSpec)
 
-@given(instance=idl::SimpleTypeSpec_strategy)
+@given(instance=idl_SimpleTypeSpec_strategy)
 @settings(max_examples=50)
-def test_idl::simpletypespec_instantiation(instance):
-    assert isinstance(instance, idl::SimpleTypeSpec)
+def test_idl_simpletypespec_instantiation(instance):
+    assert isinstance(instance, idl_SimpleTypeSpec)
 
 @given(instance=ActualParameter_strategy)
 @settings(max_examples=50)
 def test_actualparameter_instantiation(instance):
     assert isinstance(instance, ActualParameter)
 
-@given(instance=idl::TypeSpec_strategy)
+@given(instance=idl_TypeSpec_strategy)
 @settings(max_examples=50)
-def test_idl::typespec_instantiation(instance):
-    assert isinstance(instance, idl::TypeSpec)
+def test_idl_typespec_instantiation(instance):
+    assert isinstance(instance, idl_TypeSpec)
 
 @given(instance=ConstrTypeSpec_strategy)
 @settings(max_examples=50)
@@ -4892,60 +4844,206 @@ def test_constrtypespec_instantiation(instance):
 def test_typedecl_instantiation(instance):
     assert isinstance(instance, TypeDecl)
 
-@given(instance=idl::ConstrForwardDecl_strategy)
+@given(instance=idl_TypeDeclarator_strategy)
 @settings(max_examples=50)
-def test_idl::constrforwarddecl_instantiation(instance):
-    assert isinstance(instance, idl::ConstrForwardDecl)
+def test_idl_typedeclarator_instantiation(instance):
+    assert isinstance(instance, idl_TypeDeclarator)
 
-@given(instance=idl::ConstrForwardDecl_strategy)
-def test_idl::constrforwarddecl_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=idl_UnionType_strategy)
+@settings(max_examples=50)
+def test_idl_uniontype_instantiation(instance):
+    assert isinstance(instance, idl_UnionType)
 
 
-@given(instance=idl::ConstrForwardDecl_strategy)
-def test_idl::constrforwarddecl_name_setter(instance):
+
+@given(instance=idl_UnionType_strategy)
+def test_idl_uniontype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::UnionType_strategy)
+@given(instance=idl_ConstrForwardDecl_strategy)
 @settings(max_examples=50)
-def test_idl::uniontype_instantiation(instance):
-    assert isinstance(instance, idl::UnionType)
-
-@given(instance=idl::UnionType_strategy)
-def test_idl::uniontype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_constrforwarddecl_instantiation(instance):
+    assert isinstance(instance, idl_ConstrForwardDecl)
 
 
-@given(instance=idl::UnionType_strategy)
-def test_idl::uniontype_name_setter(instance):
+
+@given(instance=idl_ConstrForwardDecl_strategy)
+def test_idl_constrforwarddecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::TypeDeclarator_strategy)
+@given(instance=ComplexDeclarator_strategy)
 @settings(max_examples=50)
-def test_idl::typedeclarator_instantiation(instance):
-    assert isinstance(instance, idl::TypeDeclarator)
+def test_complexdeclarator_instantiation(instance):
+    assert isinstance(instance, ComplexDeclarator)
+
+@given(instance=idl_ComplexDeclarator_strategy)
+@settings(max_examples=50)
+def test_idl_complexdeclarator_instantiation(instance):
+    assert isinstance(instance, idl_ComplexDeclarator)
+
+@given(instance=Declarator_strategy)
+@settings(max_examples=50)
+def test_declarator_instantiation(instance):
+    assert isinstance(instance, Declarator)
+
+@given(instance=idl_ArrayDeclarator_strategy)
+@settings(max_examples=50)
+def test_idl_arraydeclarator_instantiation(instance):
+    assert isinstance(instance, idl_ArrayDeclarator)
+
+@given(instance=idl_SimpleDeclarator_strategy)
+@settings(max_examples=50)
+def test_idl_simpledeclarator_instantiation(instance):
+    assert isinstance(instance, idl_SimpleDeclarator)
+
+@given(instance=PrimaryExpr_strategy)
+@settings(max_examples=50)
+def test_primaryexpr_instantiation(instance):
+    assert isinstance(instance, PrimaryExpr)
+
+@given(instance=idl_Literal_strategy)
+@settings(max_examples=50)
+def test_idl_literal_instantiation(instance):
+    assert isinstance(instance, idl_Literal)
+
+
+
+@given(instance=idl_Literal_strategy)
+def test_idl_literal_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=ConstType_strategy)
+@settings(max_examples=50)
+def test_consttype_instantiation(instance):
+    assert isinstance(instance, ConstType)
+
+@given(instance=idl_FixedPtConstType_strategy)
+@settings(max_examples=50)
+def test_idl_fixedptconsttype_instantiation(instance):
+    assert isinstance(instance, idl_FixedPtConstType)
+
+@given(instance=SwitchTypeSpec_strategy)
+@settings(max_examples=50)
+def test_switchtypespec_instantiation(instance):
+    assert isinstance(instance, SwitchTypeSpec)
+
+@given(instance=idl_EnumType_strategy)
+@settings(max_examples=50)
+def test_idl_enumtype_instantiation(instance):
+    assert isinstance(instance, idl_EnumType)
+
+
+
+@given(instance=idl_EnumType_strategy)
+def test_idl_enumtype_literal_setter(instance):
+    original = instance.literal
+    instance.literal = original
+    assert instance.literal == original
+
+
+
+@given(instance=idl_EnumType_strategy)
+def test_idl_enumtype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=SimpleTypeSpec_strategy)
+@settings(max_examples=50)
+def test_simpletypespec_instantiation(instance):
+    assert isinstance(instance, SimpleTypeSpec)
+
+@given(instance=idl_TemplateTypeSpec_strategy)
+@settings(max_examples=50)
+def test_idl_templatetypespec_instantiation(instance):
+    assert isinstance(instance, idl_TemplateTypeSpec)
+
+@given(instance=ParamTypeSpec_strategy)
+@settings(max_examples=50)
+def test_paramtypespec_instantiation(instance):
+    assert isinstance(instance, ParamTypeSpec)
+
+@given(instance=idl_BaseTypeSpec_strategy)
+@settings(max_examples=50)
+def test_idl_basetypespec_instantiation(instance):
+    assert isinstance(instance, idl_BaseTypeSpec)
+
+@given(instance=OpTypeDecl_strategy)
+@settings(max_examples=50)
+def test_optypedecl_instantiation(instance):
+    assert isinstance(instance, OpTypeDecl)
+
+@given(instance=idl_ParamDcl_strategy)
+@settings(max_examples=50)
+def test_idl_paramdcl_instantiation(instance):
+    assert isinstance(instance, idl_ParamDcl)
+
+
+
+@given(instance=idl_ParamDcl_strategy)
+def test_idl_paramdcl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=idl_ParamDcl_strategy)
+def test_idl_paramdcl_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=idl_PositiveIntConst_strategy)
+@settings(max_examples=50)
+def test_idl_positiveintconst_instantiation(instance):
+    assert isinstance(instance, idl_PositiveIntConst)
+
+@given(instance=TemplateTypeSpec_strategy)
+@settings(max_examples=50)
+def test_templatetypespec_instantiation(instance):
+    assert isinstance(instance, TemplateTypeSpec)
+
+@given(instance=idl_FixedPtType_strategy)
+@settings(max_examples=50)
+def test_idl_fixedpttype_instantiation(instance):
+    assert isinstance(instance, idl_FixedPtType)
+
+@given(instance=idl_WideStringType_strategy)
+@settings(max_examples=50)
+def test_idl_widestringtype_instantiation(instance):
+    assert isinstance(instance, idl_WideStringType)
+
+@given(instance=idl_SequenceType_strategy)
+@settings(max_examples=50)
+def test_idl_sequencetype_instantiation(instance):
+    assert isinstance(instance, idl_SequenceType)
+
+@given(instance=idl_StringType_strategy)
+@settings(max_examples=50)
+def test_idl_stringtype_instantiation(instance):
+    assert isinstance(instance, idl_StringType)
 
 @given(instance=Preproc_strategy)
 @settings(max_examples=50)
 def test_preproc_instantiation(instance):
     assert isinstance(instance, Preproc)
 
-@given(instance=idl::Preproc::Include_strategy)
+@given(instance=idl_Preproc_Include_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::include_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Include)
-
-@given(instance=idl::Preproc::Include_strategy)
-def test_idl::preproc::include_strValue_type(instance):
-    assert isinstance(instance.strValue, str)
+def test_idl_preproc_include_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Include)
 
 
-@given(instance=idl::Preproc::Include_strategy)
-def test_idl::preproc::include_strValue_setter(instance):
+
+@given(instance=idl_Preproc_Include_strategy)
+def test_idl_preproc_include_strValue_setter(instance):
     original = instance.strValue
     instance.strValue = original
     assert instance.strValue == original
@@ -4955,50 +5053,41 @@ def test_idl::preproc::include_strValue_setter(instance):
 def test_componentexport_instantiation(instance):
     assert isinstance(instance, ComponentExport)
 
-@given(instance=idl::ConsumesDcl_strategy)
+@given(instance=idl_PublishesDcl_strategy)
 @settings(max_examples=50)
-def test_idl::consumesdcl_instantiation(instance):
-    assert isinstance(instance, idl::ConsumesDcl)
-
-@given(instance=idl::ConsumesDcl_strategy)
-def test_idl::consumesdcl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_publishesdcl_instantiation(instance):
+    assert isinstance(instance, idl_PublishesDcl)
 
 
-@given(instance=idl::ConsumesDcl_strategy)
-def test_idl::consumesdcl_name_setter(instance):
+
+@given(instance=idl_PublishesDcl_strategy)
+def test_idl_publishesdcl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::EmitDcl_strategy)
+@given(instance=idl_EmitDcl_strategy)
 @settings(max_examples=50)
-def test_idl::emitdcl_instantiation(instance):
-    assert isinstance(instance, idl::EmitDcl)
-
-@given(instance=idl::EmitDcl_strategy)
-def test_idl::emitdcl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_emitdcl_instantiation(instance):
+    assert isinstance(instance, idl_EmitDcl)
 
 
-@given(instance=idl::EmitDcl_strategy)
-def test_idl::emitdcl_name_setter(instance):
+
+@given(instance=idl_EmitDcl_strategy)
+def test_idl_emitdcl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::PublishesDcl_strategy)
+@given(instance=idl_ConsumesDcl_strategy)
 @settings(max_examples=50)
-def test_idl::publishesdcl_instantiation(instance):
-    assert isinstance(instance, idl::PublishesDcl)
-
-@given(instance=idl::PublishesDcl_strategy)
-def test_idl::publishesdcl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_consumesdcl_instantiation(instance):
+    assert isinstance(instance, idl_ConsumesDcl)
 
 
-@given(instance=idl::PublishesDcl_strategy)
-def test_idl::publishesdcl_name_setter(instance):
+
+@given(instance=idl_ConsumesDcl_strategy)
+def test_idl_consumesdcl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -5013,646 +5102,419 @@ def test_export_instantiation(instance):
 def test_definition_instantiation(instance):
     assert isinstance(instance, Definition)
 
-@given(instance=idl::ComponentForwardDecl_strategy)
+@given(instance=idl_StructType_strategy)
 @settings(max_examples=50)
-def test_idl::componentforwarddecl_instantiation(instance):
-    assert isinstance(instance, idl::ComponentForwardDecl)
-
-@given(instance=idl::ComponentForwardDecl_strategy)
-def test_idl::componentforwarddecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_structtype_instantiation(instance):
+    assert isinstance(instance, idl_StructType)
 
 
-@given(instance=idl::ComponentForwardDecl_strategy)
-def test_idl::componentforwarddecl_name_setter(instance):
+
+@given(instance=idl_StructType_strategy)
+def test_idl_structtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::TemplateModuleInst_strategy)
+@given(instance=idl_TemplateModuleInst_strategy)
 @settings(max_examples=50)
-def test_idl::templatemoduleinst_instantiation(instance):
-    assert isinstance(instance, idl::TemplateModuleInst)
-
-@given(instance=idl::TemplateModuleInst_strategy)
-def test_idl::templatemoduleinst_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_templatemoduleinst_instantiation(instance):
+    assert isinstance(instance, idl_TemplateModuleInst)
 
 
-@given(instance=idl::TemplateModuleInst_strategy)
-def test_idl::templatemoduleinst_name_setter(instance):
+
+@given(instance=idl_TemplateModuleInst_strategy)
+def test_idl_templatemoduleinst_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::TemplateModule_strategy)
+@given(instance=idl_TemplateModule_strategy)
 @settings(max_examples=50)
-def test_idl::templatemodule_instantiation(instance):
-    assert isinstance(instance, idl::TemplateModule)
-
-@given(instance=idl::TemplateModule_strategy)
-def test_idl::templatemodule_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_templatemodule_instantiation(instance):
+    assert isinstance(instance, idl_TemplateModule)
 
 
-@given(instance=idl::TemplateModule_strategy)
-def test_idl::templatemodule_name_setter(instance):
+
+@given(instance=idl_TemplateModule_strategy)
+def test_idl_templatemodule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::StructType_strategy)
+@given(instance=idl_ComponentForwardDecl_strategy)
 @settings(max_examples=50)
-def test_idl::structtype_instantiation(instance):
-    assert isinstance(instance, idl::StructType)
-
-@given(instance=idl::StructType_strategy)
-def test_idl::structtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_componentforwarddecl_instantiation(instance):
+    assert isinstance(instance, idl_ComponentForwardDecl)
 
 
-@given(instance=idl::StructType_strategy)
-def test_idl::structtype_name_setter(instance):
+
+@given(instance=idl_ComponentForwardDecl_strategy)
+def test_idl_componentforwarddecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Preproc_strategy)
+@given(instance=idl_Preproc_strategy)
 @settings(max_examples=50)
-def test_idl::preproc_instantiation(instance):
-    assert isinstance(instance, idl::Preproc)
+def test_idl_preproc_instantiation(instance):
+    assert isinstance(instance, idl_Preproc)
 
-@given(instance=idl::Definition_strategy)
+@given(instance=idl_Definition_strategy)
 @settings(max_examples=50)
-def test_idl::definition_instantiation(instance):
-    assert isinstance(instance, idl::Definition)
+def test_idl_definition_instantiation(instance):
+    assert isinstance(instance, idl_Definition)
 
-@given(instance=idl::Import::decl_strategy)
+@given(instance=idl_Import_decl_strategy)
 @settings(max_examples=50)
-def test_idl::import::decl_instantiation(instance):
-    assert isinstance(instance, idl::Import::decl)
-
-@given(instance=idl::Import::decl_strategy)
-def test_idl::import::decl_imported_scope_type(instance):
-    assert isinstance(instance.imported_scope, str)
+def test_idl_import_decl_instantiation(instance):
+    assert isinstance(instance, idl_Import_decl)
 
 
-@given(instance=idl::Import::decl_strategy)
-def test_idl::import::decl_imported_scope_setter(instance):
+
+@given(instance=idl_Import_decl_strategy)
+def test_idl_import_decl_imported_scope_setter(instance):
     original = instance.imported_scope
     instance.imported_scope = original
     assert instance.imported_scope == original
 
-@given(instance=idl::Specification_strategy)
+@given(instance=idl_Specification_strategy)
 @settings(max_examples=50)
-def test_idl::specification_instantiation(instance):
-    assert isinstance(instance, idl::Specification)
+def test_idl_specification_instantiation(instance):
+    assert isinstance(instance, idl_Specification)
 
-@given(instance=Preproc::Pragma_strategy)
+@given(instance=Preproc_Pragma_strategy)
 @settings(max_examples=50)
-def test_preproc::pragma_instantiation(instance):
-    assert isinstance(instance, Preproc::Pragma)
+def test_preproc_pragma_instantiation(instance):
+    assert isinstance(instance, Preproc_Pragma)
 
-@given(instance=idl::Preproc::Pragma::Conn::Type_strategy)
+@given(instance=idl_Preproc_Pragma_Conn_Type_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::conn::type_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Conn::Type)
-
-@given(instance=idl::Preproc::Pragma::Conn::Type_strategy)
-def test_idl::preproc::pragma::conn::type_valuePort_type(instance):
-    assert isinstance(instance.valuePort, str)
+def test_idl_preproc_pragma_conn_type_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Conn_Type)
 
 
-@given(instance=idl::Preproc::Pragma::Conn::Type_strategy)
-def test_idl::preproc::pragma::conn::type_valuePort_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Conn_Type_strategy)
+def test_idl_preproc_pragma_conn_type_valuePort_setter(instance):
     original = instance.valuePort
     instance.valuePort = original
     assert instance.valuePort == original
 
-@given(instance=idl::Preproc::Pragma::Conn::Type_strategy)
-def test_idl::preproc::pragma::conn::type_valueConnType_type(instance):
-    assert isinstance(instance.valueConnType, str)
 
 
-@given(instance=idl::Preproc::Pragma::Conn::Type_strategy)
-def test_idl::preproc::pragma::conn::type_valueConnType_setter(instance):
+@given(instance=idl_Preproc_Pragma_Conn_Type_strategy)
+def test_idl_preproc_pragma_conn_type_valueConnType_setter(instance):
     original = instance.valueConnType
     instance.valueConnType = original
     assert instance.valueConnType == original
 
-@given(instance=idl::Preproc::Pragma::Prefix_strategy)
+@given(instance=idl_Preproc_Pragma_Prefix_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::prefix_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Prefix)
-
-@given(instance=idl::Preproc::Pragma::Prefix_strategy)
-def test_idl::preproc::pragma::prefix_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_prefix_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Prefix)
 
 
-@given(instance=idl::Preproc::Pragma::Prefix_strategy)
-def test_idl::preproc::pragma::prefix_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Prefix_strategy)
+def test_idl_preproc_pragma_prefix_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma_strategy)
+@given(instance=idl_Preproc_Pragma_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma)
+def test_idl_preproc_pragma_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma)
 
-@given(instance=idl::Preproc::Endif_strategy)
+@given(instance=idl_Preproc_Endif_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::endif_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Endif)
+def test_idl_preproc_endif_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Endif)
 
-@given(instance=idl::Preproc::Define_strategy)
+@given(instance=idl_Preproc_Define_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::define_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Define)
-
-@given(instance=idl::Preproc::Define_strategy)
-def test_idl::preproc::define_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_define_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Define)
 
 
-@given(instance=idl::Preproc::Define_strategy)
-def test_idl::preproc::define_value_setter(instance):
+
+@given(instance=idl_Preproc_Define_strategy)
+def test_idl_preproc_define_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Error_strategy)
+@given(instance=idl_Preproc_Error_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::error_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Error)
-
-@given(instance=idl::Preproc::Error_strategy)
-def test_idl::preproc::error_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_error_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Error)
 
 
-@given(instance=idl::Preproc::Error_strategy)
-def test_idl::preproc::error_value_setter(instance):
+
+@given(instance=idl_Preproc_Error_strategy)
+def test_idl_preproc_error_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Else_strategy)
+@given(instance=idl_Preproc_Else_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::else_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Else)
+def test_idl_preproc_else_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Else)
 
-@given(instance=idl::Preproc::If::Val_strategy)
+@given(instance=idl_ConstExp_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::if::val_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::If::Val)
+def test_idl_constexp_instantiation(instance):
+    assert isinstance(instance, idl_ConstExp)
 
-@given(instance=idl::Preproc::If::Compare_strategy)
+@given(instance=idl_Preproc_If_Val_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::if::compare_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::If::Compare)
+def test_idl_preproc_if_val_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_If_Val)
 
-@given(instance=idl::Preproc::If::Compare_strategy)
-def test_idl::preproc::if::compare_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=idl_Preproc_If_Compare_strategy)
+@settings(max_examples=50)
+def test_idl_preproc_if_compare_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_If_Compare)
 
 
-@given(instance=idl::Preproc::If::Compare_strategy)
-def test_idl::preproc::if::compare_op_setter(instance):
+
+@given(instance=idl_Preproc_If_Compare_strategy)
+def test_idl_preproc_if_compare_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=idl::Preproc::If_strategy)
+@given(instance=idl_Preproc_If_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::if_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::If)
-
-@given(instance=idl::Preproc::If_strategy)
-def test_idl::preproc::if_negation_type(instance):
-    assert isinstance(instance.negation, bool)
+def test_idl_preproc_if_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_If)
 
 
-@given(instance=idl::Preproc::If_strategy)
-def test_idl::preproc::if_negation_setter(instance):
+
+@given(instance=idl_Preproc_If_strategy)
+def test_idl_preproc_if_negation_setter(instance):
     original = instance.negation
     instance.negation = original
     assert instance.negation == original
 
-@given(instance=idl::Preproc::Undef_strategy)
+@given(instance=idl_Preproc_Undef_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::undef_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Undef)
-
-@given(instance=idl::Preproc::Undef_strategy)
-def test_idl::preproc::undef_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_undef_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Undef)
 
 
-@given(instance=idl::Preproc::Undef_strategy)
-def test_idl::preproc::undef_value_setter(instance):
+
+@given(instance=idl_Preproc_Undef_strategy)
+def test_idl_preproc_undef_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=ComplexDeclarator_strategy)
-@settings(max_examples=50)
-def test_complexdeclarator_instantiation(instance):
-    assert isinstance(instance, ComplexDeclarator)
-
-@given(instance=idl::ComplexDeclarator_strategy)
-@settings(max_examples=50)
-def test_idl::complexdeclarator_instantiation(instance):
-    assert isinstance(instance, idl::ComplexDeclarator)
-
-@given(instance=Declarator_strategy)
-@settings(max_examples=50)
-def test_declarator_instantiation(instance):
-    assert isinstance(instance, Declarator)
-
-@given(instance=idl::ArrayDeclarator_strategy)
-@settings(max_examples=50)
-def test_idl::arraydeclarator_instantiation(instance):
-    assert isinstance(instance, idl::ArrayDeclarator)
-
-@given(instance=idl::SimpleDeclarator_strategy)
-@settings(max_examples=50)
-def test_idl::simpledeclarator_instantiation(instance):
-    assert isinstance(instance, idl::SimpleDeclarator)
-
-@given(instance=PrimaryExpr_strategy)
-@settings(max_examples=50)
-def test_primaryexpr_instantiation(instance):
-    assert isinstance(instance, PrimaryExpr)
-
-@given(instance=idl::ConstExp_strategy)
-@settings(max_examples=50)
-def test_idl::constexp_instantiation(instance):
-    assert isinstance(instance, idl::ConstExp)
-
-@given(instance=idl::Literal_strategy)
-@settings(max_examples=50)
-def test_idl::literal_instantiation(instance):
-    assert isinstance(instance, idl::Literal)
-
-@given(instance=idl::Literal_strategy)
-def test_idl::literal_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=idl::Literal_strategy)
-def test_idl::literal_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=ConstType_strategy)
-@settings(max_examples=50)
-def test_consttype_instantiation(instance):
-    assert isinstance(instance, ConstType)
-
-@given(instance=idl::FixedPtConstType_strategy)
-@settings(max_examples=50)
-def test_idl::fixedptconsttype_instantiation(instance):
-    assert isinstance(instance, idl::FixedPtConstType)
-
-@given(instance=SwitchTypeSpec_strategy)
-@settings(max_examples=50)
-def test_switchtypespec_instantiation(instance):
-    assert isinstance(instance, SwitchTypeSpec)
-
-@given(instance=idl::EnumType_strategy)
-@settings(max_examples=50)
-def test_idl::enumtype_instantiation(instance):
-    assert isinstance(instance, idl::EnumType)
-
-@given(instance=idl::EnumType_strategy)
-def test_idl::enumtype_literal_type(instance):
-    assert isinstance(instance.literal, str)
-
-
-@given(instance=idl::EnumType_strategy)
-def test_idl::enumtype_literal_setter(instance):
-    original = instance.literal
-    instance.literal = original
-    assert instance.literal == original
-
-@given(instance=idl::EnumType_strategy)
-def test_idl::enumtype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::EnumType_strategy)
-def test_idl::enumtype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SimpleTypeSpec_strategy)
-@settings(max_examples=50)
-def test_simpletypespec_instantiation(instance):
-    assert isinstance(instance, SimpleTypeSpec)
-
-@given(instance=idl::TemplateTypeSpec_strategy)
-@settings(max_examples=50)
-def test_idl::templatetypespec_instantiation(instance):
-    assert isinstance(instance, idl::TemplateTypeSpec)
-
-@given(instance=ParamTypeSpec_strategy)
-@settings(max_examples=50)
-def test_paramtypespec_instantiation(instance):
-    assert isinstance(instance, ParamTypeSpec)
-
-@given(instance=idl::BaseTypeSpec_strategy)
-@settings(max_examples=50)
-def test_idl::basetypespec_instantiation(instance):
-    assert isinstance(instance, idl::BaseTypeSpec)
-
-@given(instance=OpTypeDecl_strategy)
-@settings(max_examples=50)
-def test_optypedecl_instantiation(instance):
-    assert isinstance(instance, OpTypeDecl)
-
-@given(instance=idl::ParamDcl_strategy)
-@settings(max_examples=50)
-def test_idl::paramdcl_instantiation(instance):
-    assert isinstance(instance, idl::ParamDcl)
-
-@given(instance=idl::ParamDcl_strategy)
-def test_idl::paramdcl_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=idl::ParamDcl_strategy)
-def test_idl::paramdcl_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=idl::ParamDcl_strategy)
-def test_idl::paramdcl_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::ParamDcl_strategy)
-def test_idl::paramdcl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=idl::PositiveIntConst_strategy)
-@settings(max_examples=50)
-def test_idl::positiveintconst_instantiation(instance):
-    assert isinstance(instance, idl::PositiveIntConst)
-
-@given(instance=TemplateTypeSpec_strategy)
-@settings(max_examples=50)
-def test_templatetypespec_instantiation(instance):
-    assert isinstance(instance, TemplateTypeSpec)
-
-@given(instance=idl::FixedPtType_strategy)
-@settings(max_examples=50)
-def test_idl::fixedpttype_instantiation(instance):
-    assert isinstance(instance, idl::FixedPtType)
-
-@given(instance=idl::SequenceType_strategy)
-@settings(max_examples=50)
-def test_idl::sequencetype_instantiation(instance):
-    assert isinstance(instance, idl::SequenceType)
-
-@given(instance=idl::WideStringType_strategy)
-@settings(max_examples=50)
-def test_idl::widestringtype_instantiation(instance):
-    assert isinstance(instance, idl::WideStringType)
-
-@given(instance=idl::StringType_strategy)
-@settings(max_examples=50)
-def test_idl::stringtype_instantiation(instance):
-    assert isinstance(instance, idl::StringType)
 
 @given(instance=UnsignedInt_strategy)
 @settings(max_examples=50)
 def test_unsignedint_instantiation(instance):
     assert isinstance(instance, UnsignedInt)
 
-@given(instance=idl::UnsignedLongLongInt_strategy)
+@given(instance=idl_UnsignedLongLongInt_strategy)
 @settings(max_examples=50)
-def test_idl::unsignedlonglongint_instantiation(instance):
-    assert isinstance(instance, idl::UnsignedLongLongInt)
+def test_idl_unsignedlonglongint_instantiation(instance):
+    assert isinstance(instance, idl_UnsignedLongLongInt)
 
-@given(instance=idl::UnsignedLongInt_strategy)
+@given(instance=idl_UnsignedLongInt_strategy)
 @settings(max_examples=50)
-def test_idl::unsignedlongint_instantiation(instance):
-    assert isinstance(instance, idl::UnsignedLongInt)
+def test_idl_unsignedlongint_instantiation(instance):
+    assert isinstance(instance, idl_UnsignedLongInt)
 
-@given(instance=idl::UnsignedShortInt_strategy)
+@given(instance=idl_UnsignedShortInt_strategy)
 @settings(max_examples=50)
-def test_idl::unsignedshortint_instantiation(instance):
-    assert isinstance(instance, idl::UnsignedShortInt)
+def test_idl_unsignedshortint_instantiation(instance):
+    assert isinstance(instance, idl_UnsignedShortInt)
 
 @given(instance=SignedInt_strategy)
 @settings(max_examples=50)
 def test_signedint_instantiation(instance):
     assert isinstance(instance, SignedInt)
 
-@given(instance=idl::SignedLongLongInt_strategy)
+@given(instance=idl_SignedLongLongInt_strategy)
 @settings(max_examples=50)
-def test_idl::signedlonglongint_instantiation(instance):
-    assert isinstance(instance, idl::SignedLongLongInt)
+def test_idl_signedlonglongint_instantiation(instance):
+    assert isinstance(instance, idl_SignedLongLongInt)
 
-@given(instance=idl::SignedLongInt_strategy)
+@given(instance=idl_SignedLongInt_strategy)
 @settings(max_examples=50)
-def test_idl::signedlongint_instantiation(instance):
-    assert isinstance(instance, idl::SignedLongInt)
+def test_idl_signedlongint_instantiation(instance):
+    assert isinstance(instance, idl_SignedLongInt)
 
-@given(instance=idl::SignedShortInt_strategy)
+@given(instance=idl_SignedShortInt_strategy)
 @settings(max_examples=50)
-def test_idl::signedshortint_instantiation(instance):
-    assert isinstance(instance, idl::SignedShortInt)
+def test_idl_signedshortint_instantiation(instance):
+    assert isinstance(instance, idl_SignedShortInt)
 
 @given(instance=IntegerType_strategy)
 @settings(max_examples=50)
 def test_integertype_instantiation(instance):
     assert isinstance(instance, IntegerType)
 
-@given(instance=idl::UnsignedInt_strategy)
+@given(instance=idl_UnsignedInt_strategy)
 @settings(max_examples=50)
-def test_idl::unsignedint_instantiation(instance):
-    assert isinstance(instance, idl::UnsignedInt)
+def test_idl_unsignedint_instantiation(instance):
+    assert isinstance(instance, idl_UnsignedInt)
 
-@given(instance=idl::SignedInt_strategy)
+@given(instance=idl_SignedInt_strategy)
 @settings(max_examples=50)
-def test_idl::signedint_instantiation(instance):
-    assert isinstance(instance, idl::SignedInt)
+def test_idl_signedint_instantiation(instance):
+    assert isinstance(instance, idl_SignedInt)
 
 @given(instance=FloatingPtType_strategy)
 @settings(max_examples=50)
 def test_floatingpttype_instantiation(instance):
     assert isinstance(instance, FloatingPtType)
 
-@given(instance=idl::LongDoubleType_strategy)
+@given(instance=idl_LongDoubleType_strategy)
 @settings(max_examples=50)
-def test_idl::longdoubletype_instantiation(instance):
-    assert isinstance(instance, idl::LongDoubleType)
+def test_idl_longdoubletype_instantiation(instance):
+    assert isinstance(instance, idl_LongDoubleType)
 
-@given(instance=idl::DoubleType_strategy)
+@given(instance=idl_DoubleType_strategy)
 @settings(max_examples=50)
-def test_idl::doubletype_instantiation(instance):
-    assert isinstance(instance, idl::DoubleType)
+def test_idl_doubletype_instantiation(instance):
+    assert isinstance(instance, idl_DoubleType)
 
-@given(instance=idl::FloatType_strategy)
+@given(instance=idl_FloatType_strategy)
 @settings(max_examples=50)
-def test_idl::floattype_instantiation(instance):
-    assert isinstance(instance, idl::FloatType)
+def test_idl_floattype_instantiation(instance):
+    assert isinstance(instance, idl_FloatType)
 
 @given(instance=BaseTypeSpec_strategy)
 @settings(max_examples=50)
 def test_basetypespec_instantiation(instance):
     assert isinstance(instance, BaseTypeSpec)
 
-@given(instance=idl::OctetType_strategy)
+@given(instance=idl_OctetType_strategy)
 @settings(max_examples=50)
-def test_idl::octettype_instantiation(instance):
-    assert isinstance(instance, idl::OctetType)
+def test_idl_octettype_instantiation(instance):
+    assert isinstance(instance, idl_OctetType)
 
-@given(instance=idl::AnyType_strategy)
+@given(instance=idl_IntegerType_strategy)
 @settings(max_examples=50)
-def test_idl::anytype_instantiation(instance):
-    assert isinstance(instance, idl::AnyType)
+def test_idl_integertype_instantiation(instance):
+    assert isinstance(instance, idl_IntegerType)
 
-@given(instance=idl::IntegerType_strategy)
+@given(instance=idl_AnyType_strategy)
 @settings(max_examples=50)
-def test_idl::integertype_instantiation(instance):
-    assert isinstance(instance, idl::IntegerType)
+def test_idl_anytype_instantiation(instance):
+    assert isinstance(instance, idl_AnyType)
 
-@given(instance=idl::ValueBaseType_strategy)
+@given(instance=idl_BooleanType_strategy)
 @settings(max_examples=50)
-def test_idl::valuebasetype_instantiation(instance):
-    assert isinstance(instance, idl::ValueBaseType)
+def test_idl_booleantype_instantiation(instance):
+    assert isinstance(instance, idl_BooleanType)
 
-@given(instance=idl::WideCharType_strategy)
+@given(instance=idl_WideCharType_strategy)
 @settings(max_examples=50)
-def test_idl::widechartype_instantiation(instance):
-    assert isinstance(instance, idl::WideCharType)
+def test_idl_widechartype_instantiation(instance):
+    assert isinstance(instance, idl_WideCharType)
 
-@given(instance=idl::CharType_strategy)
+@given(instance=idl_CharType_strategy)
 @settings(max_examples=50)
-def test_idl::chartype_instantiation(instance):
-    assert isinstance(instance, idl::CharType)
+def test_idl_chartype_instantiation(instance):
+    assert isinstance(instance, idl_CharType)
 
-@given(instance=idl::ObjectType_strategy)
+@given(instance=idl_ObjectType_strategy)
 @settings(max_examples=50)
-def test_idl::objecttype_instantiation(instance):
-    assert isinstance(instance, idl::ObjectType)
+def test_idl_objecttype_instantiation(instance):
+    assert isinstance(instance, idl_ObjectType)
 
-@given(instance=idl::BooleanType_strategy)
+@given(instance=idl_ValueBaseType_strategy)
 @settings(max_examples=50)
-def test_idl::booleantype_instantiation(instance):
-    assert isinstance(instance, idl::BooleanType)
+def test_idl_valuebasetype_instantiation(instance):
+    assert isinstance(instance, idl_ValueBaseType)
 
-@given(instance=idl::FloatingPtType_strategy)
+@given(instance=idl_FloatingPtType_strategy)
 @settings(max_examples=50)
-def test_idl::floatingpttype_instantiation(instance):
-    assert isinstance(instance, idl::FloatingPtType)
+def test_idl_floatingpttype_instantiation(instance):
+    assert isinstance(instance, idl_FloatingPtType)
 
-@given(instance=idl::ParamTypeSpec_strategy)
+@given(instance=idl_ParamTypeSpec_strategy)
 @settings(max_examples=50)
-def test_idl::paramtypespec_instantiation(instance):
-    assert isinstance(instance, idl::ParamTypeSpec)
+def test_idl_paramtypespec_instantiation(instance):
+    assert isinstance(instance, idl_ParamTypeSpec)
 
 @given(instance=ConnectorExport_strategy)
 @settings(max_examples=50)
 def test_connectorexport_instantiation(instance):
     assert isinstance(instance, ConnectorExport)
 
-@given(instance=idl::PortDecl_strategy)
+@given(instance=idl_PortDecl_strategy)
 @settings(max_examples=50)
-def test_idl::portdecl_instantiation(instance):
-    assert isinstance(instance, idl::PortDecl)
-
-@given(instance=idl::PortDecl_strategy)
-def test_idl::portdecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_portdecl_instantiation(instance):
+    assert isinstance(instance, idl_PortDecl)
 
 
-@given(instance=idl::PortDecl_strategy)
-def test_idl::portdecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=idl::PortDecl_strategy)
-def test_idl::portdecl_isMirror_type(instance):
-    assert isinstance(instance.isMirror, bool)
-
-
-@given(instance=idl::PortDecl_strategy)
-def test_idl::portdecl_isMirror_setter(instance):
+@given(instance=idl_PortDecl_strategy)
+def test_idl_portdecl_isMirror_setter(instance):
     original = instance.isMirror
     instance.isMirror = original
     assert instance.isMirror == original
+
+
+
+@given(instance=idl_PortDecl_strategy)
+def test_idl_portdecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=PortExport_strategy)
 @settings(max_examples=50)
 def test_portexport_instantiation(instance):
     assert isinstance(instance, PortExport)
 
-@given(instance=idl::UsesDcl_strategy)
+@given(instance=idl_ProvidesDcl_strategy)
 @settings(max_examples=50)
-def test_idl::usesdcl_instantiation(instance):
-    assert isinstance(instance, idl::UsesDcl)
-
-@given(instance=idl::UsesDcl_strategy)
-def test_idl::usesdcl_isMultiple_type(instance):
-    assert isinstance(instance.isMultiple, bool)
+def test_idl_providesdcl_instantiation(instance):
+    assert isinstance(instance, idl_ProvidesDcl)
 
 
-@given(instance=idl::UsesDcl_strategy)
-def test_idl::usesdcl_isMultiple_setter(instance):
+
+@given(instance=idl_ProvidesDcl_strategy)
+def test_idl_providesdcl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=idl_UsesDcl_strategy)
+@settings(max_examples=50)
+def test_idl_usesdcl_instantiation(instance):
+    assert isinstance(instance, idl_UsesDcl)
+
+
+
+@given(instance=idl_UsesDcl_strategy)
+def test_idl_usesdcl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=idl_UsesDcl_strategy)
+def test_idl_usesdcl_isMultiple_setter(instance):
     original = instance.isMultiple
     instance.isMultiple = original
     assert instance.isMultiple == original
 
-@given(instance=idl::UsesDcl_strategy)
-def test_idl::usesdcl_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::UsesDcl_strategy)
-def test_idl::usesdcl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=idl::ProvidesDcl_strategy)
+@given(instance=idl_AttrDecl_strategy)
 @settings(max_examples=50)
-def test_idl::providesdcl_instantiation(instance):
-    assert isinstance(instance, idl::ProvidesDcl)
-
-@given(instance=idl::ProvidesDcl_strategy)
-def test_idl::providesdcl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_attrdecl_instantiation(instance):
+    assert isinstance(instance, idl_AttrDecl)
 
 
-@given(instance=idl::ProvidesDcl_strategy)
-def test_idl::providesdcl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=idl::AttrDecl_strategy)
-@settings(max_examples=50)
-def test_idl::attrdecl_instantiation(instance):
-    assert isinstance(instance, idl::AttrDecl)
-
-@given(instance=idl::AttrDecl_strategy)
-def test_idl::attrdecl_names_type(instance):
-    assert isinstance(instance.names, str)
-
-
-@given(instance=idl::AttrDecl_strategy)
-def test_idl::attrdecl_names_setter(instance):
+@given(instance=idl_AttrDecl_strategy)
+def test_idl_attrdecl_names_setter(instance):
     original = instance.names
     instance.names = original
     assert instance.names == original
@@ -5662,275 +5524,230 @@ def test_idl::attrdecl_names_setter(instance):
 def test_homeexport_instantiation(instance):
     assert isinstance(instance, HomeExport)
 
-@given(instance=idl::FactoryDcl_strategy)
+@given(instance=idl_FinderDcl_strategy)
 @settings(max_examples=50)
-def test_idl::factorydcl_instantiation(instance):
-    assert isinstance(instance, idl::FactoryDcl)
-
-@given(instance=idl::FactoryDcl_strategy)
-def test_idl::factorydcl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_finderdcl_instantiation(instance):
+    assert isinstance(instance, idl_FinderDcl)
 
 
-@given(instance=idl::FactoryDcl_strategy)
-def test_idl::factorydcl_name_setter(instance):
+
+@given(instance=idl_FinderDcl_strategy)
+def test_idl_finderdcl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::FinderDcl_strategy)
+@given(instance=idl_FactoryDcl_strategy)
 @settings(max_examples=50)
-def test_idl::finderdcl_instantiation(instance):
-    assert isinstance(instance, idl::FinderDcl)
-
-@given(instance=idl::FinderDcl_strategy)
-def test_idl::finderdcl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_factorydcl_instantiation(instance):
+    assert isinstance(instance, idl_FactoryDcl)
 
 
-@given(instance=idl::FinderDcl_strategy)
-def test_idl::finderdcl_name_setter(instance):
+
+@given(instance=idl_FactoryDcl_strategy)
+def test_idl_factorydcl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Export_strategy)
+@given(instance=idl_Export_strategy)
 @settings(max_examples=50)
-def test_idl::export_instantiation(instance):
-    assert isinstance(instance, idl::Export)
+def test_idl_export_instantiation(instance):
+    assert isinstance(instance, idl_Export)
 
-@given(instance=idl::ScopedName_strategy)
+@given(instance=idl_ScopedName_strategy)
 @settings(max_examples=50)
-def test_idl::scopedname_instantiation(instance):
-    assert isinstance(instance, idl::ScopedName)
-
-@given(instance=idl::ScopedName_strategy)
-def test_idl::scopedname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_scopedname_instantiation(instance):
+    assert isinstance(instance, idl_ScopedName)
 
 
-@given(instance=idl::ScopedName_strategy)
-def test_idl::scopedname_name_setter(instance):
+
+@given(instance=idl_ScopedName_strategy)
+def test_idl_scopedname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::ContextExpr_strategy)
+@given(instance=idl_ContextExpr_strategy)
 @settings(max_examples=50)
-def test_idl::contextexpr_instantiation(instance):
-    assert isinstance(instance, idl::ContextExpr)
-
-@given(instance=idl::ContextExpr_strategy)
-def test_idl::contextexpr_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_idl_contextexpr_instantiation(instance):
+    assert isinstance(instance, idl_ContextExpr)
 
 
-@given(instance=idl::ContextExpr_strategy)
-def test_idl::contextexpr_literal_setter(instance):
+
+@given(instance=idl_ContextExpr_strategy)
+def test_idl_contextexpr_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
 
-@given(instance=idl::ParameterDecls_strategy)
+@given(instance=idl_ParameterDecls_strategy)
 @settings(max_examples=50)
-def test_idl::parameterdecls_instantiation(instance):
-    assert isinstance(instance, idl::ParameterDecls)
+def test_idl_parameterdecls_instantiation(instance):
+    assert isinstance(instance, idl_ParameterDecls)
 
-@given(instance=idl::OpTypeDecl_strategy)
+@given(instance=idl_OpTypeDecl_strategy)
 @settings(max_examples=50)
-def test_idl::optypedecl_instantiation(instance):
-    assert isinstance(instance, idl::OpTypeDecl)
+def test_idl_optypedecl_instantiation(instance):
+    assert isinstance(instance, idl_OpTypeDecl)
 
-@given(instance=idl::OpDecl_strategy)
+@given(instance=idl_OpDecl_strategy)
 @settings(max_examples=50)
-def test_idl::opdecl_instantiation(instance):
-    assert isinstance(instance, idl::OpDecl)
-
-@given(instance=idl::OpDecl_strategy)
-def test_idl::opdecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_opdecl_instantiation(instance):
+    assert isinstance(instance, idl_OpDecl)
 
 
-@given(instance=idl::OpDecl_strategy)
-def test_idl::opdecl_name_setter(instance):
+
+@given(instance=idl_OpDecl_strategy)
+def test_idl_opdecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::OpDecl_strategy)
-def test_idl::opdecl_isOneway_type(instance):
-    assert isinstance(instance.isOneway, bool)
 
 
-@given(instance=idl::OpDecl_strategy)
-def test_idl::opdecl_isOneway_setter(instance):
+@given(instance=idl_OpDecl_strategy)
+def test_idl_opdecl_isOneway_setter(instance):
     original = instance.isOneway
     instance.isOneway = original
     assert instance.isOneway == original
 
-@given(instance=idl::ExceptionList_strategy)
+@given(instance=idl_ExceptionList_strategy)
 @settings(max_examples=50)
-def test_idl::exceptionlist_instantiation(instance):
-    assert isinstance(instance, idl::ExceptionList)
+def test_idl_exceptionlist_instantiation(instance):
+    assert isinstance(instance, idl_ExceptionList)
 
-@given(instance=idl::AttrRaisesExpr_strategy)
+@given(instance=idl_AttrRaisesExpr_strategy)
 @settings(max_examples=50)
-def test_idl::attrraisesexpr_instantiation(instance):
-    assert isinstance(instance, idl::AttrRaisesExpr)
+def test_idl_attrraisesexpr_instantiation(instance):
+    assert isinstance(instance, idl_AttrRaisesExpr)
 
 @given(instance=AttrDecl_strategy)
 @settings(max_examples=50)
 def test_attrdecl_instantiation(instance):
     assert isinstance(instance, AttrDecl)
 
-@given(instance=idl::ReadOnlyAttrSpec_strategy)
+@given(instance=idl_ReadOnlyAttrSpec_strategy)
 @settings(max_examples=50)
-def test_idl::readonlyattrspec_instantiation(instance):
-    assert isinstance(instance, idl::ReadOnlyAttrSpec)
+def test_idl_readonlyattrspec_instantiation(instance):
+    assert isinstance(instance, idl_ReadOnlyAttrSpec)
 
-@given(instance=idl::AttrSpec_strategy)
+@given(instance=idl_AttrSpec_strategy)
 @settings(max_examples=50)
-def test_idl::attrspec_instantiation(instance):
-    assert isinstance(instance, idl::AttrSpec)
+def test_idl_attrspec_instantiation(instance):
+    assert isinstance(instance, idl_AttrSpec)
 
-@given(instance=idl::Preproc::Pragma::Component_strategy)
+@given(instance=idl_Preproc_Pragma_Component_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::component_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Component)
-
-@given(instance=idl::Preproc::Pragma::Component_strategy)
-def test_idl::preproc::pragma::component_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_component_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Component)
 
 
-@given(instance=idl::Preproc::Pragma::Component_strategy)
-def test_idl::preproc::pragma::component_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Component_strategy)
+def test_idl_preproc_pragma_component_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma::Ndds_strategy)
+@given(instance=idl_Preproc_Pragma_Ndds_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::ndds_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Ndds)
-
-@given(instance=idl::Preproc::Pragma::Ndds_strategy)
-def test_idl::preproc::pragma::ndds_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_ndds_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Ndds)
 
 
-@given(instance=idl::Preproc::Pragma::Ndds_strategy)
-def test_idl::preproc::pragma::ndds_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Ndds_strategy)
+def test_idl_preproc_pragma_ndds_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Idl_strategy)
+@given(instance=idl_Preproc_Pragma_Ciao_Ami4ccm_Idl_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Ciao::Ami4ccm::Idl)
-
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Idl_strategy)
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_ciao_ami4ccm_idl_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Ciao_Ami4ccm_Idl)
 
 
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Idl_strategy)
-def test_idl::preproc::pragma::ciao::ami4ccm::idl_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Ciao_Ami4ccm_Idl_strategy)
+def test_idl_preproc_pragma_ciao_ami4ccm_idl_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle_strategy)
+@given(instance=idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle)
-
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle_strategy)
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_ciao_ami4ccm_receptacle_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle)
 
 
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle_strategy)
-def test_idl::preproc::pragma::ciao::ami4ccm::receptacle_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle_strategy)
+def test_idl_preproc_pragma_ciao_ami4ccm_receptacle_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Interface_strategy)
+@given(instance=idl_Preproc_Pragma_Ciao_Ami4ccm_Interface_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Ciao::Ami4ccm::Interface)
-
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Interface_strategy)
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_ciao_ami4ccm_interface_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Ciao_Ami4ccm_Interface)
 
 
-@given(instance=idl::Preproc::Pragma::Ciao::Ami4ccm::Interface_strategy)
-def test_idl::preproc::pragma::ciao::ami4ccm::interface_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Ciao_Ami4ccm_Interface_strategy)
+def test_idl_preproc_pragma_ciao_ami4ccm_interface_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma::Ciao::Lem_strategy)
+@given(instance=idl_Preproc_Pragma_Ciao_Lem_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::ciao::lem_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Ciao::Lem)
-
-@given(instance=idl::Preproc::Pragma::Ciao::Lem_strategy)
-def test_idl::preproc::pragma::ciao::lem_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_ciao_lem_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Ciao_Lem)
 
 
-@given(instance=idl::Preproc::Pragma::Ciao::Lem_strategy)
-def test_idl::preproc::pragma::ciao::lem_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Ciao_Lem_strategy)
+def test_idl_preproc_pragma_ciao_lem_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::InterfaceBody_strategy)
+@given(instance=idl_InterfaceBody_strategy)
 @settings(max_examples=50)
-def test_idl::interfacebody_instantiation(instance):
-    assert isinstance(instance, idl::InterfaceBody)
+def test_idl_interfacebody_instantiation(instance):
+    assert isinstance(instance, idl_InterfaceBody)
 
-@given(instance=idl::Interface::header_strategy)
+@given(instance=idl_Interface_header_strategy)
 @settings(max_examples=50)
-def test_idl::interface::header_instantiation(instance):
-    assert isinstance(instance, idl::Interface::header)
-
-@given(instance=idl::Interface::header_strategy)
-def test_idl::interface::header_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_idl_interface_header_instantiation(instance):
+    assert isinstance(instance, idl_Interface_header)
 
 
-@given(instance=idl::Interface::header_strategy)
-def test_idl::interface::header_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
 
-@given(instance=idl::Interface::header_strategy)
-def test_idl::interface::header_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=idl_Interface_header_strategy)
+def test_idl_interface_header_isLocal_setter(instance):
+    original = instance.isLocal
+    instance.isLocal = original
+    assert instance.isLocal == original
 
 
-@given(instance=idl::Interface::header_strategy)
-def test_idl::interface::header_name_setter(instance):
+
+@given(instance=idl_Interface_header_strategy)
+def test_idl_interface_header_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Interface::header_strategy)
-def test_idl::interface::header_isLocal_type(instance):
-    assert isinstance(instance.isLocal, bool)
 
 
-@given(instance=idl::Interface::header_strategy)
-def test_idl::interface::header_isLocal_setter(instance):
-    original = instance.isLocal
-    instance.isLocal = original
-    assert instance.isLocal == original
+@given(instance=idl_Interface_header_strategy)
+def test_idl_interface_header_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
 
 @given(instance=FixedDefinition_strategy)
 @settings(max_examples=50)
@@ -5942,358 +5759,295 @@ def test_fixeddefinition_instantiation(instance):
 def test_templatedefinition_instantiation(instance):
     assert isinstance(instance, TemplateDefinition)
 
-@given(instance=idl::PortTypeDecl_strategy)
+@given(instance=idl_ConstDecl_strategy)
 @settings(max_examples=50)
-def test_idl::porttypedecl_instantiation(instance):
-    assert isinstance(instance, idl::PortTypeDecl)
-
-@given(instance=idl::PortTypeDecl_strategy)
-def test_idl::porttypedecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_constdecl_instantiation(instance):
+    assert isinstance(instance, idl_ConstDecl)
 
 
-@given(instance=idl::PortTypeDecl_strategy)
-def test_idl::porttypedecl_name_setter(instance):
+
+@given(instance=idl_ConstDecl_strategy)
+def test_idl_constdecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::TypeDecl_strategy)
+@given(instance=idl_NativeType_strategy)
 @settings(max_examples=50)
-def test_idl::typedecl_instantiation(instance):
-    assert isinstance(instance, idl::TypeDecl)
-
-@given(instance=idl::ExceptDecl_strategy)
-@settings(max_examples=50)
-def test_idl::exceptdecl_instantiation(instance):
-    assert isinstance(instance, idl::ExceptDecl)
-
-@given(instance=idl::ExceptDecl_strategy)
-def test_idl::exceptdecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_nativetype_instantiation(instance):
+    assert isinstance(instance, idl_NativeType)
 
 
-@given(instance=idl::ExceptDecl_strategy)
-def test_idl::exceptdecl_name_setter(instance):
+
+@given(instance=idl_NativeType_strategy)
+def test_idl_nativetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Event_strategy)
+@given(instance=idl_ComponentDecl_strategy)
 @settings(max_examples=50)
-def test_idl::event_instantiation(instance):
-    assert isinstance(instance, idl::Event)
-
-@given(instance=idl::Event_strategy)
-def test_idl::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_componentdecl_instantiation(instance):
+    assert isinstance(instance, idl_ComponentDecl)
 
 
-@given(instance=idl::Event_strategy)
-def test_idl::event_name_setter(instance):
+
+@given(instance=idl_ComponentDecl_strategy)
+def test_idl_componentdecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Event_strategy)
-def test_idl::event_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
-
-
-@given(instance=idl::Event_strategy)
-def test_idl::event_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
-
-@given(instance=idl::HomeDecl_strategy)
+@given(instance=idl_Connector_strategy)
 @settings(max_examples=50)
-def test_idl::homedecl_instantiation(instance):
-    assert isinstance(instance, idl::HomeDecl)
+def test_idl_connector_instantiation(instance):
+    assert isinstance(instance, idl_Connector)
 
-@given(instance=idl::HomeDecl_strategy)
-def test_idl::homedecl_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=idl_FixedModule_strategy)
+@settings(max_examples=50)
+def test_idl_fixedmodule_instantiation(instance):
+    assert isinstance(instance, idl_FixedModule)
 
 
-@given(instance=idl::HomeDecl_strategy)
-def test_idl::homedecl_name_setter(instance):
+
+@given(instance=idl_FixedModule_strategy)
+def test_idl_fixedmodule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::FixedModule_strategy)
+@given(instance=idl_TypeDecl_strategy)
 @settings(max_examples=50)
-def test_idl::fixedmodule_instantiation(instance):
-    assert isinstance(instance, idl::FixedModule)
+def test_idl_typedecl_instantiation(instance):
+    assert isinstance(instance, idl_TypeDecl)
 
-@given(instance=idl::FixedModule_strategy)
-def test_idl::fixedmodule_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::FixedModule_strategy)
-def test_idl::fixedmodule_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=idl::NativeType_strategy)
+@given(instance=idl_TemplateModuleRef_strategy)
 @settings(max_examples=50)
-def test_idl::nativetype_instantiation(instance):
-    assert isinstance(instance, idl::NativeType)
-
-@given(instance=idl::NativeType_strategy)
-def test_idl::nativetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_templatemoduleref_instantiation(instance):
+    assert isinstance(instance, idl_TemplateModuleRef)
 
 
-@given(instance=idl::NativeType_strategy)
-def test_idl::nativetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=idl::ComponentDecl_strategy)
-@settings(max_examples=50)
-def test_idl::componentdecl_instantiation(instance):
-    assert isinstance(instance, idl::ComponentDecl)
-
-@given(instance=idl::ComponentDecl_strategy)
-def test_idl::componentdecl_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::ComponentDecl_strategy)
-def test_idl::componentdecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=idl::ConstDecl_strategy)
-@settings(max_examples=50)
-def test_idl::constdecl_instantiation(instance):
-    assert isinstance(instance, idl::ConstDecl)
-
-@given(instance=idl::ConstDecl_strategy)
-def test_idl::constdecl_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::ConstDecl_strategy)
-def test_idl::constdecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=idl::Connector_strategy)
-@settings(max_examples=50)
-def test_idl::connector_instantiation(instance):
-    assert isinstance(instance, idl::Connector)
-
-@given(instance=idl::TemplateModuleRef_strategy)
-@settings(max_examples=50)
-def test_idl::templatemoduleref_instantiation(instance):
-    assert isinstance(instance, idl::TemplateModuleRef)
-
-@given(instance=idl::TemplateModuleRef_strategy)
-def test_idl::templatemoduleref_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=idl::TemplateModuleRef_strategy)
-def test_idl::templatemoduleref_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=idl::TemplateModuleRef_strategy)
-def test_idl::templatemoduleref_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=idl::TemplateModuleRef_strategy)
-def test_idl::templatemoduleref_id_setter(instance):
+@given(instance=idl_TemplateModuleRef_strategy)
+def test_idl_templatemoduleref_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=Interface::or::Forward::Decl_strategy)
-@settings(max_examples=50)
-def test_interface::or::forward::decl_instantiation(instance):
-    assert isinstance(instance, Interface::or::Forward::Decl)
-
-@given(instance=idl::Forward::decl_strategy)
-@settings(max_examples=50)
-def test_idl::forward::decl_instantiation(instance):
-    assert isinstance(instance, idl::Forward::decl)
-
-@given(instance=idl::Forward::decl_strategy)
-def test_idl::forward::decl_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=idl::Forward::decl_strategy)
-def test_idl::forward::decl_name_setter(instance):
+@given(instance=idl_TemplateModuleRef_strategy)
+def test_idl_templatemoduleref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Interface::decl_strategy)
+@given(instance=idl_PortTypeDecl_strategy)
 @settings(max_examples=50)
-def test_idl::interface::decl_instantiation(instance):
-    assert isinstance(instance, idl::Interface::decl)
+def test_idl_porttypedecl_instantiation(instance):
+    assert isinstance(instance, idl_PortTypeDecl)
 
-@given(instance=idl::Interface::or::Forward::Decl_strategy)
+
+
+@given(instance=idl_PortTypeDecl_strategy)
+def test_idl_porttypedecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=idl_HomeDecl_strategy)
 @settings(max_examples=50)
-def test_idl::interface::or::forward::decl_instantiation(instance):
-    assert isinstance(instance, idl::Interface::or::Forward::Decl)
+def test_idl_homedecl_instantiation(instance):
+    assert isinstance(instance, idl_HomeDecl)
 
-@given(instance=idl::IDLComment_strategy)
+
+
+@given(instance=idl_HomeDecl_strategy)
+def test_idl_homedecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=idl_ExceptDecl_strategy)
 @settings(max_examples=50)
-def test_idl::idlcomment_instantiation(instance):
-    assert isinstance(instance, idl::IDLComment)
-
-@given(instance=idl::IDLComment_strategy)
-def test_idl::idlcomment_body_type(instance):
-    assert isinstance(instance.body, str)
+def test_idl_exceptdecl_instantiation(instance):
+    assert isinstance(instance, idl_ExceptDecl)
 
 
-@given(instance=idl::IDLComment_strategy)
-def test_idl::idlcomment_body_setter(instance):
+
+@given(instance=idl_ExceptDecl_strategy)
+def test_idl_exceptdecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=idl_Event_strategy)
+@settings(max_examples=50)
+def test_idl_event_instantiation(instance):
+    assert isinstance(instance, idl_Event)
+
+
+
+@given(instance=idl_Event_strategy)
+def test_idl_event_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+
+
+@given(instance=idl_Event_strategy)
+def test_idl_event_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Interface_or_Forward_Decl_strategy)
+@settings(max_examples=50)
+def test_interface_or_forward_decl_instantiation(instance):
+    assert isinstance(instance, Interface_or_Forward_Decl)
+
+@given(instance=idl_Forward_decl_strategy)
+@settings(max_examples=50)
+def test_idl_forward_decl_instantiation(instance):
+    assert isinstance(instance, idl_Forward_decl)
+
+
+
+@given(instance=idl_Forward_decl_strategy)
+def test_idl_forward_decl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=idl_Interface_decl_strategy)
+@settings(max_examples=50)
+def test_idl_interface_decl_instantiation(instance):
+    assert isinstance(instance, idl_Interface_decl)
+
+@given(instance=idl_Interface_or_Forward_Decl_strategy)
+@settings(max_examples=50)
+def test_idl_interface_or_forward_decl_instantiation(instance):
+    assert isinstance(instance, idl_Interface_or_Forward_Decl)
+
+@given(instance=idl_IDLComment_strategy)
+@settings(max_examples=50)
+def test_idl_idlcomment_instantiation(instance):
+    assert isinstance(instance, idl_IDLComment)
+
+
+
+@given(instance=idl_IDLComment_strategy)
+def test_idl_idlcomment_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=idl::Module_strategy)
+@given(instance=idl_Module_strategy)
 @settings(max_examples=50)
-def test_idl::module_instantiation(instance):
-    assert isinstance(instance, idl::Module)
-
-@given(instance=idl::Module_strategy)
-def test_idl::module_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_module_instantiation(instance):
+    assert isinstance(instance, idl_Module)
 
 
-@given(instance=idl::Module_strategy)
-def test_idl::module_name_setter(instance):
+
+@given(instance=idl_Module_strategy)
+def test_idl_module_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idl::Excluded::File::Marker_strategy)
+@given(instance=idl_Excluded_File_Marker_strategy)
 @settings(max_examples=50)
-def test_idl::excluded::file::marker_instantiation(instance):
-    assert isinstance(instance, idl::Excluded::File::Marker)
-
-@given(instance=idl::Excluded::File::Marker_strategy)
-def test_idl::excluded::file::marker_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_idl_excluded_file_marker_instantiation(instance):
+    assert isinstance(instance, idl_Excluded_File_Marker)
 
 
-@given(instance=idl::Excluded::File::Marker_strategy)
-def test_idl::excluded::file::marker_file_setter(instance):
+
+@given(instance=idl_Excluded_File_Marker_strategy)
+def test_idl_excluded_file_marker_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=idl::File::Marker_strategy)
+@given(instance=idl_File_Marker_strategy)
 @settings(max_examples=50)
-def test_idl::file::marker_instantiation(instance):
-    assert isinstance(instance, idl::File::Marker)
-
-@given(instance=idl::File::Marker_strategy)
-def test_idl::file::marker_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_idl_file_marker_instantiation(instance):
+    assert isinstance(instance, idl_File_Marker)
 
 
-@given(instance=idl::File::Marker_strategy)
-def test_idl::file::marker_file_setter(instance):
+
+@given(instance=idl_File_Marker_strategy)
+def test_idl_file_marker_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=idl::Preproc::Pragma::Misc_strategy)
+@given(instance=idl_Preproc_Pragma_Misc_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::misc_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Misc)
+def test_idl_preproc_pragma_misc_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Misc)
 
-@given(instance=idl::Preproc::Pragma::DDS4CCM::Impl_strategy)
+@given(instance=idl_Preproc_Pragma_DDS4CCM_Impl_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::dds4ccm::impl_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::DDS4CCM::Impl)
-
-@given(instance=idl::Preproc::Pragma::DDS4CCM::Impl_strategy)
-def test_idl::preproc::pragma::dds4ccm::impl_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_dds4ccm_impl_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_DDS4CCM_Impl)
 
 
-@given(instance=idl::Preproc::Pragma::DDS4CCM::Impl_strategy)
-def test_idl::preproc::pragma::dds4ccm::impl_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_DDS4CCM_Impl_strategy)
+def test_idl_preproc_pragma_dds4ccm_impl_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Pragma::Home_strategy)
+@given(instance=idl_Preproc_Pragma_Home_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::pragma::home_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Pragma::Home)
-
-@given(instance=idl::Preproc::Pragma::Home_strategy)
-def test_idl::preproc::pragma::home_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_pragma_home_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Pragma_Home)
 
 
-@given(instance=idl::Preproc::Pragma::Home_strategy)
-def test_idl::preproc::pragma::home_value_setter(instance):
+
+@given(instance=idl_Preproc_Pragma_Home_strategy)
+def test_idl_preproc_pragma_home_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Ifndef_strategy)
+@given(instance=idl_Preproc_Ifndef_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::ifndef_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Ifndef)
-
-@given(instance=idl::Preproc::Ifndef_strategy)
-def test_idl::preproc::ifndef_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_ifndef_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Ifndef)
 
 
-@given(instance=idl::Preproc::Ifndef_strategy)
-def test_idl::preproc::ifndef_value_setter(instance):
+
+@given(instance=idl_Preproc_Ifndef_strategy)
+def test_idl_preproc_ifndef_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::Preproc::Ifdef_strategy)
+@given(instance=idl_Preproc_Ifdef_strategy)
 @settings(max_examples=50)
-def test_idl::preproc::ifdef_instantiation(instance):
-    assert isinstance(instance, idl::Preproc::Ifdef)
-
-@given(instance=idl::Preproc::Ifdef_strategy)
-def test_idl::preproc::ifdef_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_idl_preproc_ifdef_instantiation(instance):
+    assert isinstance(instance, idl_Preproc_Ifdef)
 
 
-@given(instance=idl::Preproc::Ifdef_strategy)
-def test_idl::preproc::ifdef_value_setter(instance):
+
+@given(instance=idl_Preproc_Ifdef_strategy)
+def test_idl_preproc_ifdef_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=idl::FileName_strategy)
+@given(instance=idl_FileName_strategy)
 @settings(max_examples=50)
-def test_idl::filename_instantiation(instance):
-    assert isinstance(instance, idl::FileName)
-
-@given(instance=idl::FileName_strategy)
-def test_idl::filename_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idl_filename_instantiation(instance):
+    assert isinstance(instance, idl_FileName)
 
 
-@given(instance=idl::FileName_strategy)
-def test_idl::filename_name_setter(instance):
+
+@given(instance=idl_FileName_strategy)
+def test_idl_filename_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

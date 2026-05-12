@@ -3,172 +3,730 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    AnnotationTypeMemberDeclaration,
+    UnresolvedItem,
+    Java_UnresolvedAnnotationTypeMemberDeclaration,
+    AnnotationTypeDeclaration,
+    Java_UnresolvedAnnotationDeclaration,
+    AbstractTypeQualifiedExpression,
+    Java_ThisExpression,
+    Java_SuperFieldAccess,
+    PrimitiveType,
+    Java_PrimitiveTypeChar,
+    Java_PrimitiveTypeShort,
+    Java_PrimitiveTypeDouble,
+    Java_PrimitiveTypeVoid,
+    Java_PrimitiveTypeLong,
+    Java_PrimitiveTypeByte,
+    Java_PrimitiveTypeInt,
+    Java_PrimitiveTypeFloat,
+    Java_PrimitiveTypeBoolean,
+    NamespaceAccess,
+    Java_PackageAccess,
+    Java_Model,
+    Java_ManifestEntry,
+    Java_ManifestAttribute,
+    MethodDeclaration,
+    Java_UnresolvedMethodDeclaration,
+    LabeledStatement,
+    Java_UnresolvedLabeledStatement,
+    InterfaceDeclaration,
+    Java_UnresolvedInterfaceDeclaration,
+    EnumDeclaration,
+    Java_UnresolvedEnumDeclaration,
+    VariableDeclarationFragment,
+    Java_UnresolvedVariableDeclarationFragment,
+    SingleVariableDeclaration,
+    Java_UnresolvedSingleVariableDeclaration,
+    ClassDeclaration,
+    Java_UnresolvedClassDeclaration,
     VariableDeclaration,
     AbstractVariablesContainer,
     TypeDeclaration,
-    Java::ClassDeclaration,
+    Java_InterfaceDeclaration,
+    Java_ClassDeclaration,
     AbstractMethodDeclaration,
-    MethodDeclaration,
-    LabeledStatement,
-    InterfaceDeclaration,
-    EnumDeclaration,
-    VariableDeclarationFragment,
-    SingleVariableDeclaration,
-    ClassDeclaration,
-    AnnotationTypeMemberDeclaration,
-    UnresolvedItem,
-    Java::UnresolvedAnnotationTypeMemberDeclaration,
-    Java::UnresolvedEnumDeclaration,
-    Java::UnresolvedInterfaceDeclaration,
-    Java::UnresolvedVariableDeclarationFragment,
-    Java::UnresolvedSingleVariableDeclaration,
-    Java::UnresolvedLabeledStatement,
-    Java::UnresolvedMethodDeclaration,
-    Java::UnresolvedClassDeclaration,
-    AnnotationTypeDeclaration,
-    Java::UnresolvedAnnotationDeclaration,
-    AbstractTypeQualifiedExpression,
-    Java::ThisExpression,
-    Java::SuperFieldAccess,
-    PrimitiveType,
-    Java::PrimitiveTypeShort,
-    Java::PrimitiveTypeVoid,
-    Java::PrimitiveTypeInt,
-    Java::PrimitiveTypeLong,
-    Java::PrimitiveTypeDouble,
-    Java::PrimitiveTypeFloat,
-    Java::PrimitiveTypeChar,
-    Java::PrimitiveTypeByte,
-    Java::PrimitiveTypeBoolean,
-    NamespaceAccess,
-    Java::PackageAccess,
-    Java::Model,
-    Java::MethodDeclaration,
-    Java::ManifestEntry,
-    Java::ManifestAttribute,
-    Java::InterfaceDeclaration,
-    Java::ConstructorDeclaration,
+    Java_MethodDeclaration,
+    Java_ConstructorDeclaration,
     AbstractMethodInvocation,
-    Java::SuperMethodInvocation,
+    Java_SuperMethodInvocation,
     Comment,
-    Java::LineComment,
-    Java::Javadoc,
-    Java::BlockComment,
-    Java::VariableDeclarationFragment,
+    Java_LineComment,
+    Java_Javadoc,
+    Java_BlockComment,
+    Java_VariableDeclarationFragment,
     AbstractTypeDeclaration,
-    Java::UnresolvedTypeDeclaration,
-    Java::TypeDeclaration,
-    Java::EnumDeclaration,
-    Java::AnnotationTypeDeclaration,
-    Java::ASTNode,
+    Java_UnresolvedTypeDeclaration,
+    Java_TypeDeclaration,
+    Java_EnumDeclaration,
+    Java_AnnotationTypeDeclaration,
+    Java_ASTNode,
     Statement,
-    Java::CatchClause,
-    Java::VariableDeclarationStatement,
-    Java::EnhancedForStatement,
-    Java::DoStatement,
-    Java::ForStatement,
-    Java::BreakStatement,
-    Java::EmptyStatement,
-    Java::ReturnStatement,
-    Java::TypeDeclarationStatement,
-    Java::ExpressionStatement,
-    Java::ConstructorInvocation,
-    Java::TryStatement,
-    Java::ContinueStatement,
-    Java::WhileStatement,
-    Java::IfStatement,
-    Java::SuperConstructorInvocation,
-    Java::SwitchStatement,
-    Java::ThrowStatement,
-    Java::SynchronizedStatement,
-    Java::SwitchCase,
-    Java::AssertStatement,
-    Java::Manifest,
+    Java_VariableDeclarationStatement,
+    Java_ThrowStatement,
+    Java_EnhancedForStatement,
+    Java_CatchClause,
+    Java_TypeDeclarationStatement,
+    Java_ExpressionStatement,
+    Java_SuperConstructorInvocation,
+    Java_SwitchStatement,
+    Java_SwitchCase,
+    Java_EmptyStatement,
+    Java_ReturnStatement,
+    Java_SynchronizedStatement,
+    Java_ContinueStatement,
+    Java_DoStatement,
+    Java_ConstructorInvocation,
+    Java_ForStatement,
+    Java_BreakStatement,
+    Java_WhileStatement,
+    Java_IfStatement,
+    Java_TryStatement,
+    Java_AssertStatement,
+    Java_Manifest,
     NamedElement,
-    Java::UnresolvedItem,
-    Java::VariableDeclaration,
-    Java::Type,
-    Java::LabeledStatement,
-    Java::ClassFile,
-    Java::CompilationUnit,
-    Java::Archive,
-    Java::AnnotationMemberValuePair,
-    Java::SingleVariableDeclaration,
+    Java_UnresolvedItem,
+    Java_CompilationUnit,
+    Java_ClassFile,
+    Java_Type,
+    Java_LabeledStatement,
+    Java_VariableDeclaration,
+    Java_Archive,
+    Java_AnnotationMemberValuePair,
+    Java_SingleVariableDeclaration,
     Expression,
-    Java::Assignment,
-    Java::CharacterLiteral,
-    Java::MethodInvocation,
-    Java::VariableDeclarationExpression,
-    Java::ClassInstanceCreation,
-    Java::ConditionalExpression,
-    Java::PostfixExpression,
-    Java::PrefixExpression,
-    Java::FieldAccess,
-    Java::NumberLiteral,
-    Java::BooleanLiteral,
-    Java::ParenthesizedExpression,
-    Java::TypeAccess,
-    Java::InfixExpression,
-    Java::ArrayLengthAccess,
-    Java::TypeLiteral,
-    Java::NullLiteral,
-    Java::ArrayInitializer,
-    Java::InstanceofExpression,
-    Java::Annotation,
-    Java::ArrayCreation,
-    Java::CastExpression,
-    Java::UnresolvedItemAccess,
-    Java::ArrayAccess,
-    Java::SingleVariableAccess,
-    Java::StringLiteral,
-    Java::AbstractTypeQualifiedExpression,
-    Java::Package,
-    Java::BodyDeclaration,
+    Java_CharacterLiteral,
+    Java_ClassInstanceCreation,
+    Java_VariableDeclarationExpression,
+    Java_TypeAccess,
+    Java_NumberLiteral,
+    Java_BooleanLiteral,
+    Java_ArrayLengthAccess,
+    Java_ArrayAccess,
+    Java_ArrayInitializer,
+    Java_ConditionalExpression,
+    Java_ArrayCreation,
+    Java_Annotation,
+    Java_MethodInvocation,
+    Java_Assignment,
+    Java_NullLiteral,
+    Java_InstanceofExpression,
+    Java_PostfixExpression,
+    Java_CastExpression,
+    Java_StringLiteral,
+    Java_UnresolvedItemAccess,
+    Java_SingleVariableAccess,
+    Java_InfixExpression,
+    Java_FieldAccess,
+    Java_TypeLiteral,
+    Java_PrefixExpression,
+    Java_ParenthesizedExpression,
+    Java_AbstractTypeQualifiedExpression,
+    Java_Package,
+    Java_BodyDeclaration,
     Type,
-    Java::ArrayType,
-    Java::WildCardType,
-    Java::ParameterizedType,
-    Java::TypeParameter,
-    Java::PrimitiveType,
-    Java::UnresolvedType,
+    Java_WildCardType,
+    Java_ParameterizedType,
+    Java_UnresolvedType,
+    Java_PrimitiveType,
+    Java_TypeParameter,
+    Java_ArrayType,
     ASTNode,
-    Java::MemberRef,
-    Java::TagElement,
-    Java::AnonymousClassDeclaration,
-    Java::ImportDeclaration,
-    Java::AbstractVariablesContainer,
-    Java::Statement,
-    Java::MethodRef,
-    Java::Modifier,
-    Java::NamedElement,
-    Java::MethodRefParameter,
-    Java::NamespaceAccess,
-    Java::Comment,
-    Java::TextElement,
-    Java::Expression,
-    Java::AbstractMethodInvocation,
-    Java::Block,
+    Java_NamedElement,
+    Java_ImportDeclaration,
+    Java_Comment,
+    Java_Statement,
+    Java_TagElement,
+    Java_TextElement,
+    Java_MethodRefParameter,
+    Java_MemberRef,
+    Java_Modifier,
+    Java_AnonymousClassDeclaration,
+    Java_MethodRef,
+    Java_Expression,
+    Java_AbstractVariablesContainer,
+    Java_NamespaceAccess,
+    Java_AbstractMethodInvocation,
+    Java_Block,
     BodyDeclaration,
-    Java::AnnotationTypeMemberDeclaration,
-    Java::AbstractTypeDeclaration,
-    Java::EnumConstantDeclaration,
-    Java::Initializer,
-    Java::FieldDeclaration,
-    Java::AbstractMethodDeclaration,
-    InheritanceKind,
-    AssignmentKind,
+    Java_EnumConstantDeclaration,
+    Java_AnnotationTypeMemberDeclaration,
+    Java_FieldDeclaration,
+    Java_Initializer,
+    Java_AbstractTypeDeclaration,
+    Java_AbstractMethodDeclaration,
     PrefixExpressionKind,
     VisibilityKind,
-    InfixExpressionKind,
+    InheritanceKind,
     PostfixExpressionKind,
+    InfixExpressionKind,
+    AssignmentKind,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_annotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(AnnotationTypeMemberDeclaration)
+
+
+def test_annotationtypememberdeclaration_constructor_exists():
+    assert callable(AnnotationTypeMemberDeclaration.__init__)
+
+
+def test_annotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(AnnotationTypeMemberDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unresolveditem_is_not_abstract():
+    assert not inspect.isabstract(UnresolvedItem)
+
+
+def test_unresolveditem_constructor_exists():
+    assert callable(UnresolvedItem.__init__)
+
+
+def test_unresolveditem_constructor_args():
+    sig = inspect.signature(UnresolvedItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedannotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedAnnotationTypeMemberDeclaration)
+
+
+def test_java_unresolvedannotationtypememberdeclaration_constructor_exists():
+    assert callable(Java_UnresolvedAnnotationTypeMemberDeclaration.__init__)
+
+
+def test_java_unresolvedannotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedAnnotationTypeMemberDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(AnnotationTypeDeclaration)
+
+
+def test_annotationtypedeclaration_constructor_exists():
+    assert callable(AnnotationTypeDeclaration.__init__)
+
+
+def test_annotationtypedeclaration_constructor_args():
+    sig = inspect.signature(AnnotationTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedannotationdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedAnnotationDeclaration)
+
+
+def test_java_unresolvedannotationdeclaration_constructor_exists():
+    assert callable(Java_UnresolvedAnnotationDeclaration.__init__)
+
+
+def test_java_unresolvedannotationdeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedAnnotationDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_abstracttypequalifiedexpression_is_not_abstract():
+    assert not inspect.isabstract(AbstractTypeQualifiedExpression)
+
+
+def test_abstracttypequalifiedexpression_constructor_exists():
+    assert callable(AbstractTypeQualifiedExpression.__init__)
+
+
+def test_abstracttypequalifiedexpression_constructor_args():
+    sig = inspect.signature(AbstractTypeQualifiedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_thisexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_ThisExpression)
+
+
+def test_java_thisexpression_constructor_exists():
+    assert callable(Java_ThisExpression.__init__)
+
+
+def test_java_thisexpression_constructor_args():
+    sig = inspect.signature(Java_ThisExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_superfieldaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_SuperFieldAccess)
+
+
+def test_java_superfieldaccess_constructor_exists():
+    assert callable(Java_SuperFieldAccess.__init__)
+
+
+def test_java_superfieldaccess_constructor_args():
+    sig = inspect.signature(Java_SuperFieldAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(PrimitiveType)
+
+
+def test_primitivetype_constructor_exists():
+    assert callable(PrimitiveType.__init__)
+
+
+def test_primitivetype_constructor_args():
+    sig = inspect.signature(PrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypechar_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeChar)
+
+
+def test_java_primitivetypechar_constructor_exists():
+    assert callable(Java_PrimitiveTypeChar.__init__)
+
+
+def test_java_primitivetypechar_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeChar.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypeshort_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeShort)
+
+
+def test_java_primitivetypeshort_constructor_exists():
+    assert callable(Java_PrimitiveTypeShort.__init__)
+
+
+def test_java_primitivetypeshort_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeShort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypedouble_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeDouble)
+
+
+def test_java_primitivetypedouble_constructor_exists():
+    assert callable(Java_PrimitiveTypeDouble.__init__)
+
+
+def test_java_primitivetypedouble_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeDouble.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypevoid_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeVoid)
+
+
+def test_java_primitivetypevoid_constructor_exists():
+    assert callable(Java_PrimitiveTypeVoid.__init__)
+
+
+def test_java_primitivetypevoid_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeVoid.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypelong_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeLong)
+
+
+def test_java_primitivetypelong_constructor_exists():
+    assert callable(Java_PrimitiveTypeLong.__init__)
+
+
+def test_java_primitivetypelong_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeLong.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypebyte_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeByte)
+
+
+def test_java_primitivetypebyte_constructor_exists():
+    assert callable(Java_PrimitiveTypeByte.__init__)
+
+
+def test_java_primitivetypebyte_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeByte.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypeint_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeInt)
+
+
+def test_java_primitivetypeint_constructor_exists():
+    assert callable(Java_PrimitiveTypeInt.__init__)
+
+
+def test_java_primitivetypeint_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeInt.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypefloat_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeFloat)
+
+
+def test_java_primitivetypefloat_constructor_exists():
+    assert callable(Java_PrimitiveTypeFloat.__init__)
+
+
+def test_java_primitivetypefloat_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeFloat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_primitivetypeboolean_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveTypeBoolean)
+
+
+def test_java_primitivetypeboolean_constructor_exists():
+    assert callable(Java_PrimitiveTypeBoolean.__init__)
+
+
+def test_java_primitivetypeboolean_constructor_args():
+    sig = inspect.signature(Java_PrimitiveTypeBoolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_namespaceaccess_is_not_abstract():
+    assert not inspect.isabstract(NamespaceAccess)
+
+
+def test_namespaceaccess_constructor_exists():
+    assert callable(NamespaceAccess.__init__)
+
+
+def test_namespaceaccess_constructor_args():
+    sig = inspect.signature(NamespaceAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_packageaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_PackageAccess)
+
+
+def test_java_packageaccess_constructor_exists():
+    assert callable(Java_PackageAccess.__init__)
+
+
+def test_java_packageaccess_constructor_args():
+    sig = inspect.signature(Java_PackageAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_model_is_not_abstract():
+    assert not inspect.isabstract(Java_Model)
+
+
+def test_java_model_constructor_exists():
+    assert callable(Java_Model.__init__)
+
+
+def test_java_model_constructor_args():
+    sig = inspect.signature(Java_Model.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_java_model_has_name():
+    assert hasattr(Java_Model, "name")
+    descriptor = None
+    for klass in Java_Model.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_manifestentry_is_not_abstract():
+    assert not inspect.isabstract(Java_ManifestEntry)
+
+
+def test_java_manifestentry_constructor_exists():
+    assert callable(Java_ManifestEntry.__init__)
+
+
+def test_java_manifestentry_constructor_args():
+    sig = inspect.signature(Java_ManifestEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_java_manifestentry_has_name():
+    assert hasattr(Java_ManifestEntry, "name")
+    descriptor = None
+    for klass in Java_ManifestEntry.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_manifestattribute_is_not_abstract():
+    assert not inspect.isabstract(Java_ManifestAttribute)
+
+
+def test_java_manifestattribute_constructor_exists():
+    assert callable(Java_ManifestAttribute.__init__)
+
+
+def test_java_manifestattribute_constructor_args():
+    sig = inspect.signature(Java_ManifestAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_java_manifestattribute_has_key():
+    assert hasattr(Java_ManifestAttribute, "key")
+    descriptor = None
+    for klass in Java_ManifestAttribute.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_manifestattribute_has_value():
+    assert hasattr(Java_ManifestAttribute, "value")
+    descriptor = None
+    for klass in Java_ManifestAttribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_methoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(MethodDeclaration)
+
+
+def test_methoddeclaration_constructor_exists():
+    assert callable(MethodDeclaration.__init__)
+
+
+def test_methoddeclaration_constructor_args():
+    sig = inspect.signature(MethodDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedMethodDeclaration)
+
+
+def test_java_unresolvedmethoddeclaration_constructor_exists():
+    assert callable(Java_UnresolvedMethodDeclaration.__init__)
+
+
+def test_java_unresolvedmethoddeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedMethodDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(LabeledStatement)
+
+
+def test_labeledstatement_constructor_exists():
+    assert callable(LabeledStatement.__init__)
+
+
+def test_labeledstatement_constructor_args():
+    sig = inspect.signature(LabeledStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedlabeledstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedLabeledStatement)
+
+
+def test_java_unresolvedlabeledstatement_constructor_exists():
+    assert callable(Java_UnresolvedLabeledStatement.__init__)
+
+
+def test_java_unresolvedlabeledstatement_constructor_args():
+    sig = inspect.signature(Java_UnresolvedLabeledStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(InterfaceDeclaration)
+
+
+def test_interfacedeclaration_constructor_exists():
+    assert callable(InterfaceDeclaration.__init__)
+
+
+def test_interfacedeclaration_constructor_args():
+    sig = inspect.signature(InterfaceDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedinterfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedInterfaceDeclaration)
+
+
+def test_java_unresolvedinterfacedeclaration_constructor_exists():
+    assert callable(Java_UnresolvedInterfaceDeclaration.__init__)
+
+
+def test_java_unresolvedinterfacedeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedInterfaceDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_enumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(EnumDeclaration)
+
+
+def test_enumdeclaration_constructor_exists():
+    assert callable(EnumDeclaration.__init__)
+
+
+def test_enumdeclaration_constructor_args():
+    sig = inspect.signature(EnumDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedenumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedEnumDeclaration)
+
+
+def test_java_unresolvedenumdeclaration_constructor_exists():
+    assert callable(Java_UnresolvedEnumDeclaration.__init__)
+
+
+def test_java_unresolvedenumdeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedEnumDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(VariableDeclarationFragment)
+
+
+def test_variabledeclarationfragment_constructor_exists():
+    assert callable(VariableDeclarationFragment.__init__)
+
+
+def test_variabledeclarationfragment_constructor_args():
+    sig = inspect.signature(VariableDeclarationFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedvariabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedVariableDeclarationFragment)
+
+
+def test_java_unresolvedvariabledeclarationfragment_constructor_exists():
+    assert callable(Java_UnresolvedVariableDeclarationFragment.__init__)
+
+
+def test_java_unresolvedvariabledeclarationfragment_constructor_args():
+    sig = inspect.signature(Java_UnresolvedVariableDeclarationFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_singlevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(SingleVariableDeclaration)
+
+
+def test_singlevariabledeclaration_constructor_exists():
+    assert callable(SingleVariableDeclaration.__init__)
+
+
+def test_singlevariabledeclaration_constructor_args():
+    sig = inspect.signature(SingleVariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedsinglevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedSingleVariableDeclaration)
+
+
+def test_java_unresolvedsinglevariabledeclaration_constructor_exists():
+    assert callable(Java_UnresolvedSingleVariableDeclaration.__init__)
+
+
+def test_java_unresolvedsinglevariabledeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedSingleVariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ClassDeclaration)
+
+
+def test_classdeclaration_constructor_exists():
+    assert callable(ClassDeclaration.__init__)
+
+
+def test_classdeclaration_constructor_args():
+    sig = inspect.signature(ClassDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_unresolvedclassdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedClassDeclaration)
+
+
+def test_java_unresolvedclassdeclaration_constructor_exists():
+    assert callable(Java_UnresolvedClassDeclaration.__init__)
+
+
+def test_java_unresolvedclassdeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedClassDeclaration.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -214,16 +772,30 @@ def test_typedeclaration_constructor_args():
 
 
 
-def test_java::classdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::ClassDeclaration)
+def test_java_interfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_InterfaceDeclaration)
 
 
-def test_java::classdeclaration_constructor_exists():
-    assert callable(Java::ClassDeclaration.__init__)
+def test_java_interfacedeclaration_constructor_exists():
+    assert callable(Java_InterfaceDeclaration.__init__)
 
 
-def test_java::classdeclaration_constructor_args():
-    sig = inspect.signature(Java::ClassDeclaration.__init__)
+def test_java_interfacedeclaration_constructor_args():
+    sig = inspect.signature(Java_InterfaceDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_classdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_ClassDeclaration)
+
+
+def test_java_classdeclaration_constructor_exists():
+    assert callable(Java_ClassDeclaration.__init__)
+
+
+def test_java_classdeclaration_constructor_args():
+    sig = inspect.signature(Java_ClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -242,523 +814,23 @@ def test_abstractmethoddeclaration_constructor_args():
 
 
 
-def test_methoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(MethodDeclaration)
+def test_java_methoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_MethodDeclaration)
 
 
-def test_methoddeclaration_constructor_exists():
-    assert callable(MethodDeclaration.__init__)
+def test_java_methoddeclaration_constructor_exists():
+    assert callable(Java_MethodDeclaration.__init__)
 
 
-def test_methoddeclaration_constructor_args():
-    sig = inspect.signature(MethodDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(LabeledStatement)
-
-
-def test_labeledstatement_constructor_exists():
-    assert callable(LabeledStatement.__init__)
-
-
-def test_labeledstatement_constructor_args():
-    sig = inspect.signature(LabeledStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(InterfaceDeclaration)
-
-
-def test_interfacedeclaration_constructor_exists():
-    assert callable(InterfaceDeclaration.__init__)
-
-
-def test_interfacedeclaration_constructor_args():
-    sig = inspect.signature(InterfaceDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_enumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(EnumDeclaration)
-
-
-def test_enumdeclaration_constructor_exists():
-    assert callable(EnumDeclaration.__init__)
-
-
-def test_enumdeclaration_constructor_args():
-    sig = inspect.signature(EnumDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_variabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(VariableDeclarationFragment)
-
-
-def test_variabledeclarationfragment_constructor_exists():
-    assert callable(VariableDeclarationFragment.__init__)
-
-
-def test_variabledeclarationfragment_constructor_args():
-    sig = inspect.signature(VariableDeclarationFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_singlevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(SingleVariableDeclaration)
-
-
-def test_singlevariabledeclaration_constructor_exists():
-    assert callable(SingleVariableDeclaration.__init__)
-
-
-def test_singlevariabledeclaration_constructor_args():
-    sig = inspect.signature(SingleVariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ClassDeclaration)
-
-
-def test_classdeclaration_constructor_exists():
-    assert callable(ClassDeclaration.__init__)
-
-
-def test_classdeclaration_constructor_args():
-    sig = inspect.signature(ClassDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(AnnotationTypeMemberDeclaration)
-
-
-def test_annotationtypememberdeclaration_constructor_exists():
-    assert callable(AnnotationTypeMemberDeclaration.__init__)
-
-
-def test_annotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(AnnotationTypeMemberDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unresolveditem_is_not_abstract():
-    assert not inspect.isabstract(UnresolvedItem)
-
-
-def test_unresolveditem_constructor_exists():
-    assert callable(UnresolvedItem.__init__)
-
-
-def test_unresolveditem_constructor_args():
-    sig = inspect.signature(UnresolvedItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedannotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedAnnotationTypeMemberDeclaration)
-
-
-def test_java::unresolvedannotationtypememberdeclaration_constructor_exists():
-    assert callable(Java::UnresolvedAnnotationTypeMemberDeclaration.__init__)
-
-
-def test_java::unresolvedannotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedAnnotationTypeMemberDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedenumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedEnumDeclaration)
-
-
-def test_java::unresolvedenumdeclaration_constructor_exists():
-    assert callable(Java::UnresolvedEnumDeclaration.__init__)
-
-
-def test_java::unresolvedenumdeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedEnumDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedinterfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedInterfaceDeclaration)
-
-
-def test_java::unresolvedinterfacedeclaration_constructor_exists():
-    assert callable(Java::UnresolvedInterfaceDeclaration.__init__)
-
-
-def test_java::unresolvedinterfacedeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedInterfaceDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedvariabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedVariableDeclarationFragment)
-
-
-def test_java::unresolvedvariabledeclarationfragment_constructor_exists():
-    assert callable(Java::UnresolvedVariableDeclarationFragment.__init__)
-
-
-def test_java::unresolvedvariabledeclarationfragment_constructor_args():
-    sig = inspect.signature(Java::UnresolvedVariableDeclarationFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedsinglevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedSingleVariableDeclaration)
-
-
-def test_java::unresolvedsinglevariabledeclaration_constructor_exists():
-    assert callable(Java::UnresolvedSingleVariableDeclaration.__init__)
-
-
-def test_java::unresolvedsinglevariabledeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedSingleVariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedlabeledstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedLabeledStatement)
-
-
-def test_java::unresolvedlabeledstatement_constructor_exists():
-    assert callable(Java::UnresolvedLabeledStatement.__init__)
-
-
-def test_java::unresolvedlabeledstatement_constructor_args():
-    sig = inspect.signature(Java::UnresolvedLabeledStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedMethodDeclaration)
-
-
-def test_java::unresolvedmethoddeclaration_constructor_exists():
-    assert callable(Java::UnresolvedMethodDeclaration.__init__)
-
-
-def test_java::unresolvedmethoddeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedMethodDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedclassdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedClassDeclaration)
-
-
-def test_java::unresolvedclassdeclaration_constructor_exists():
-    assert callable(Java::UnresolvedClassDeclaration.__init__)
-
-
-def test_java::unresolvedclassdeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedClassDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(AnnotationTypeDeclaration)
-
-
-def test_annotationtypedeclaration_constructor_exists():
-    assert callable(AnnotationTypeDeclaration.__init__)
-
-
-def test_annotationtypedeclaration_constructor_args():
-    sig = inspect.signature(AnnotationTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolvedannotationdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedAnnotationDeclaration)
-
-
-def test_java::unresolvedannotationdeclaration_constructor_exists():
-    assert callable(Java::UnresolvedAnnotationDeclaration.__init__)
-
-
-def test_java::unresolvedannotationdeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedAnnotationDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_abstracttypequalifiedexpression_is_not_abstract():
-    assert not inspect.isabstract(AbstractTypeQualifiedExpression)
-
-
-def test_abstracttypequalifiedexpression_constructor_exists():
-    assert callable(AbstractTypeQualifiedExpression.__init__)
-
-
-def test_abstracttypequalifiedexpression_constructor_args():
-    sig = inspect.signature(AbstractTypeQualifiedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::thisexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::ThisExpression)
-
-
-def test_java::thisexpression_constructor_exists():
-    assert callable(Java::ThisExpression.__init__)
-
-
-def test_java::thisexpression_constructor_args():
-    sig = inspect.signature(Java::ThisExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::superfieldaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::SuperFieldAccess)
-
-
-def test_java::superfieldaccess_constructor_exists():
-    assert callable(Java::SuperFieldAccess.__init__)
-
-
-def test_java::superfieldaccess_constructor_args():
-    sig = inspect.signature(Java::SuperFieldAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitivetype_is_not_abstract():
-    assert not inspect.isabstract(PrimitiveType)
-
-
-def test_primitivetype_constructor_exists():
-    assert callable(PrimitiveType.__init__)
-
-
-def test_primitivetype_constructor_args():
-    sig = inspect.signature(PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypeshort_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeShort)
-
-
-def test_java::primitivetypeshort_constructor_exists():
-    assert callable(Java::PrimitiveTypeShort.__init__)
-
-
-def test_java::primitivetypeshort_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeShort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypevoid_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeVoid)
-
-
-def test_java::primitivetypevoid_constructor_exists():
-    assert callable(Java::PrimitiveTypeVoid.__init__)
-
-
-def test_java::primitivetypevoid_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeVoid.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypeint_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeInt)
-
-
-def test_java::primitivetypeint_constructor_exists():
-    assert callable(Java::PrimitiveTypeInt.__init__)
-
-
-def test_java::primitivetypeint_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeInt.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypelong_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeLong)
-
-
-def test_java::primitivetypelong_constructor_exists():
-    assert callable(Java::PrimitiveTypeLong.__init__)
-
-
-def test_java::primitivetypelong_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeLong.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypedouble_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeDouble)
-
-
-def test_java::primitivetypedouble_constructor_exists():
-    assert callable(Java::PrimitiveTypeDouble.__init__)
-
-
-def test_java::primitivetypedouble_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeDouble.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypefloat_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeFloat)
-
-
-def test_java::primitivetypefloat_constructor_exists():
-    assert callable(Java::PrimitiveTypeFloat.__init__)
-
-
-def test_java::primitivetypefloat_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeFloat.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypechar_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeChar)
-
-
-def test_java::primitivetypechar_constructor_exists():
-    assert callable(Java::PrimitiveTypeChar.__init__)
-
-
-def test_java::primitivetypechar_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeChar.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypebyte_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeByte)
-
-
-def test_java::primitivetypebyte_constructor_exists():
-    assert callable(Java::PrimitiveTypeByte.__init__)
-
-
-def test_java::primitivetypebyte_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeByte.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::primitivetypeboolean_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveTypeBoolean)
-
-
-def test_java::primitivetypeboolean_constructor_exists():
-    assert callable(Java::PrimitiveTypeBoolean.__init__)
-
-
-def test_java::primitivetypeboolean_constructor_args():
-    sig = inspect.signature(Java::PrimitiveTypeBoolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namespaceaccess_is_not_abstract():
-    assert not inspect.isabstract(NamespaceAccess)
-
-
-def test_namespaceaccess_constructor_exists():
-    assert callable(NamespaceAccess.__init__)
-
-
-def test_namespaceaccess_constructor_args():
-    sig = inspect.signature(NamespaceAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::packageaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::PackageAccess)
-
-
-def test_java::packageaccess_constructor_exists():
-    assert callable(Java::PackageAccess.__init__)
-
-
-def test_java::packageaccess_constructor_args():
-    sig = inspect.signature(Java::PackageAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::model_is_not_abstract():
-    assert not inspect.isabstract(Java::Model)
-
-
-def test_java::model_constructor_exists():
-    assert callable(Java::Model.__init__)
-
-
-def test_java::model_constructor_args():
-    sig = inspect.signature(Java::Model.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_java::model_has_name():
-    assert hasattr(Java::Model, "name")
-    descriptor = None
-    for klass in Java::Model.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::methoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::MethodDeclaration)
-
-
-def test_java::methoddeclaration_constructor_exists():
-    assert callable(Java::MethodDeclaration.__init__)
-
-
-def test_java::methoddeclaration_constructor_args():
-    sig = inspect.signature(Java::MethodDeclaration.__init__)
+def test_java_methoddeclaration_constructor_args():
+    sig = inspect.signature(Java_MethodDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "extraArrayDimensions" in params, "Missing parameter 'extraArrayDimensions'"
 
-def test_java::methoddeclaration_has_extraArrayDimensions():
-    assert hasattr(Java::MethodDeclaration, "extraArrayDimensions")
+def test_java_methoddeclaration_has_extraArrayDimensions():
+    assert hasattr(Java_MethodDeclaration, "extraArrayDimensions")
     descriptor = None
-    for klass in Java::MethodDeclaration.__mro__:
+    for klass in Java_MethodDeclaration.__mro__:
         if "extraArrayDimensions" in klass.__dict__:
             descriptor = klass.__dict__["extraArrayDimensions"]
             break
@@ -766,88 +838,16 @@ def test_java::methoddeclaration_has_extraArrayDimensions():
 
 
 
-def test_java::manifestentry_is_not_abstract():
-    assert not inspect.isabstract(Java::ManifestEntry)
+def test_java_constructordeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_ConstructorDeclaration)
 
 
-def test_java::manifestentry_constructor_exists():
-    assert callable(Java::ManifestEntry.__init__)
+def test_java_constructordeclaration_constructor_exists():
+    assert callable(Java_ConstructorDeclaration.__init__)
 
 
-def test_java::manifestentry_constructor_args():
-    sig = inspect.signature(Java::ManifestEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_java::manifestentry_has_name():
-    assert hasattr(Java::ManifestEntry, "name")
-    descriptor = None
-    for klass in Java::ManifestEntry.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::manifestattribute_is_not_abstract():
-    assert not inspect.isabstract(Java::ManifestAttribute)
-
-
-def test_java::manifestattribute_constructor_exists():
-    assert callable(Java::ManifestAttribute.__init__)
-
-
-def test_java::manifestattribute_constructor_args():
-    sig = inspect.signature(Java::ManifestAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_java::manifestattribute_has_key():
-    assert hasattr(Java::ManifestAttribute, "key")
-    descriptor = None
-    for klass in Java::ManifestAttribute.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::manifestattribute_has_value():
-    assert hasattr(Java::ManifestAttribute, "value")
-    descriptor = None
-    for klass in Java::ManifestAttribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::interfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::InterfaceDeclaration)
-
-
-def test_java::interfacedeclaration_constructor_exists():
-    assert callable(Java::InterfaceDeclaration.__init__)
-
-
-def test_java::interfacedeclaration_constructor_args():
-    sig = inspect.signature(Java::InterfaceDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::constructordeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::ConstructorDeclaration)
-
-
-def test_java::constructordeclaration_constructor_exists():
-    assert callable(Java::ConstructorDeclaration.__init__)
-
-
-def test_java::constructordeclaration_constructor_args():
-    sig = inspect.signature(Java::ConstructorDeclaration.__init__)
+def test_java_constructordeclaration_constructor_args():
+    sig = inspect.signature(Java_ConstructorDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -866,16 +866,16 @@ def test_abstractmethodinvocation_constructor_args():
 
 
 
-def test_java::supermethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(Java::SuperMethodInvocation)
+def test_java_supermethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(Java_SuperMethodInvocation)
 
 
-def test_java::supermethodinvocation_constructor_exists():
-    assert callable(Java::SuperMethodInvocation.__init__)
+def test_java_supermethodinvocation_constructor_exists():
+    assert callable(Java_SuperMethodInvocation.__init__)
 
 
-def test_java::supermethodinvocation_constructor_args():
-    sig = inspect.signature(Java::SuperMethodInvocation.__init__)
+def test_java_supermethodinvocation_constructor_args():
+    sig = inspect.signature(Java_SuperMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -894,58 +894,58 @@ def test_comment_constructor_args():
 
 
 
-def test_java::linecomment_is_not_abstract():
-    assert not inspect.isabstract(Java::LineComment)
+def test_java_linecomment_is_not_abstract():
+    assert not inspect.isabstract(Java_LineComment)
 
 
-def test_java::linecomment_constructor_exists():
-    assert callable(Java::LineComment.__init__)
+def test_java_linecomment_constructor_exists():
+    assert callable(Java_LineComment.__init__)
 
 
-def test_java::linecomment_constructor_args():
-    sig = inspect.signature(Java::LineComment.__init__)
+def test_java_linecomment_constructor_args():
+    sig = inspect.signature(Java_LineComment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::javadoc_is_not_abstract():
-    assert not inspect.isabstract(Java::Javadoc)
+def test_java_javadoc_is_not_abstract():
+    assert not inspect.isabstract(Java_Javadoc)
 
 
-def test_java::javadoc_constructor_exists():
-    assert callable(Java::Javadoc.__init__)
+def test_java_javadoc_constructor_exists():
+    assert callable(Java_Javadoc.__init__)
 
 
-def test_java::javadoc_constructor_args():
-    sig = inspect.signature(Java::Javadoc.__init__)
+def test_java_javadoc_constructor_args():
+    sig = inspect.signature(Java_Javadoc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::blockcomment_is_not_abstract():
-    assert not inspect.isabstract(Java::BlockComment)
+def test_java_blockcomment_is_not_abstract():
+    assert not inspect.isabstract(Java_BlockComment)
 
 
-def test_java::blockcomment_constructor_exists():
-    assert callable(Java::BlockComment.__init__)
+def test_java_blockcomment_constructor_exists():
+    assert callable(Java_BlockComment.__init__)
 
 
-def test_java::blockcomment_constructor_args():
-    sig = inspect.signature(Java::BlockComment.__init__)
+def test_java_blockcomment_constructor_args():
+    sig = inspect.signature(Java_BlockComment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::variabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(Java::VariableDeclarationFragment)
+def test_java_variabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(Java_VariableDeclarationFragment)
 
 
-def test_java::variabledeclarationfragment_constructor_exists():
-    assert callable(Java::VariableDeclarationFragment.__init__)
+def test_java_variabledeclarationfragment_constructor_exists():
+    assert callable(Java_VariableDeclarationFragment.__init__)
 
 
-def test_java::variabledeclarationfragment_constructor_args():
-    sig = inspect.signature(Java::VariableDeclarationFragment.__init__)
+def test_java_variabledeclarationfragment_constructor_args():
+    sig = inspect.signature(Java_VariableDeclarationFragment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -964,72 +964,72 @@ def test_abstracttypedeclaration_constructor_args():
 
 
 
-def test_java::unresolvedtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedTypeDeclaration)
+def test_java_unresolvedtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedTypeDeclaration)
 
 
-def test_java::unresolvedtypedeclaration_constructor_exists():
-    assert callable(Java::UnresolvedTypeDeclaration.__init__)
+def test_java_unresolvedtypedeclaration_constructor_exists():
+    assert callable(Java_UnresolvedTypeDeclaration.__init__)
 
 
-def test_java::unresolvedtypedeclaration_constructor_args():
-    sig = inspect.signature(Java::UnresolvedTypeDeclaration.__init__)
+def test_java_unresolvedtypedeclaration_constructor_args():
+    sig = inspect.signature(Java_UnresolvedTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::TypeDeclaration)
+def test_java_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_TypeDeclaration)
 
 
-def test_java::typedeclaration_constructor_exists():
-    assert callable(Java::TypeDeclaration.__init__)
+def test_java_typedeclaration_constructor_exists():
+    assert callable(Java_TypeDeclaration.__init__)
 
 
-def test_java::typedeclaration_constructor_args():
-    sig = inspect.signature(Java::TypeDeclaration.__init__)
+def test_java_typedeclaration_constructor_args():
+    sig = inspect.signature(Java_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::enumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::EnumDeclaration)
+def test_java_enumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_EnumDeclaration)
 
 
-def test_java::enumdeclaration_constructor_exists():
-    assert callable(Java::EnumDeclaration.__init__)
+def test_java_enumdeclaration_constructor_exists():
+    assert callable(Java_EnumDeclaration.__init__)
 
 
-def test_java::enumdeclaration_constructor_args():
-    sig = inspect.signature(Java::EnumDeclaration.__init__)
+def test_java_enumdeclaration_constructor_args():
+    sig = inspect.signature(Java_EnumDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::annotationtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::AnnotationTypeDeclaration)
+def test_java_annotationtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_AnnotationTypeDeclaration)
 
 
-def test_java::annotationtypedeclaration_constructor_exists():
-    assert callable(Java::AnnotationTypeDeclaration.__init__)
+def test_java_annotationtypedeclaration_constructor_exists():
+    assert callable(Java_AnnotationTypeDeclaration.__init__)
 
 
-def test_java::annotationtypedeclaration_constructor_args():
-    sig = inspect.signature(Java::AnnotationTypeDeclaration.__init__)
+def test_java_annotationtypedeclaration_constructor_args():
+    sig = inspect.signature(Java_AnnotationTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::astnode_is_not_abstract():
-    assert not inspect.isabstract(Java::ASTNode)
+def test_java_astnode_is_not_abstract():
+    assert not inspect.isabstract(Java_ASTNode)
 
 
-def test_java::astnode_constructor_exists():
-    assert callable(Java::ASTNode.__init__)
+def test_java_astnode_constructor_exists():
+    assert callable(Java_ASTNode.__init__)
 
 
-def test_java::astnode_constructor_args():
-    sig = inspect.signature(Java::ASTNode.__init__)
+def test_java_astnode_constructor_args():
+    sig = inspect.signature(Java_ASTNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1048,37 +1048,23 @@ def test_statement_constructor_args():
 
 
 
-def test_java::catchclause_is_not_abstract():
-    assert not inspect.isabstract(Java::CatchClause)
+def test_java_variabledeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_VariableDeclarationStatement)
 
 
-def test_java::catchclause_constructor_exists():
-    assert callable(Java::CatchClause.__init__)
+def test_java_variabledeclarationstatement_constructor_exists():
+    assert callable(Java_VariableDeclarationStatement.__init__)
 
 
-def test_java::catchclause_constructor_args():
-    sig = inspect.signature(Java::CatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::variabledeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::VariableDeclarationStatement)
-
-
-def test_java::variabledeclarationstatement_constructor_exists():
-    assert callable(Java::VariableDeclarationStatement.__init__)
-
-
-def test_java::variabledeclarationstatement_constructor_args():
-    sig = inspect.signature(Java::VariableDeclarationStatement.__init__)
+def test_java_variabledeclarationstatement_constructor_args():
+    sig = inspect.signature(Java_VariableDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
     assert "extraArrayDimensions" in params, "Missing parameter 'extraArrayDimensions'"
 
-def test_java::variabledeclarationstatement_has_extraArrayDimensions():
-    assert hasattr(Java::VariableDeclarationStatement, "extraArrayDimensions")
+def test_java_variabledeclarationstatement_has_extraArrayDimensions():
+    assert hasattr(Java_VariableDeclarationStatement, "extraArrayDimensions")
     descriptor = None
-    for klass in Java::VariableDeclarationStatement.__mro__:
+    for klass in Java_VariableDeclarationStatement.__mro__:
         if "extraArrayDimensions" in klass.__dict__:
             descriptor = klass.__dict__["extraArrayDimensions"]
             break
@@ -1086,261 +1072,121 @@ def test_java::variabledeclarationstatement_has_extraArrayDimensions():
 
 
 
-def test_java::enhancedforstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::EnhancedForStatement)
+def test_java_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_ThrowStatement)
 
 
-def test_java::enhancedforstatement_constructor_exists():
-    assert callable(Java::EnhancedForStatement.__init__)
+def test_java_throwstatement_constructor_exists():
+    assert callable(Java_ThrowStatement.__init__)
 
 
-def test_java::enhancedforstatement_constructor_args():
-    sig = inspect.signature(Java::EnhancedForStatement.__init__)
+def test_java_throwstatement_constructor_args():
+    sig = inspect.signature(Java_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::dostatement_is_not_abstract():
-    assert not inspect.isabstract(Java::DoStatement)
+def test_java_enhancedforstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_EnhancedForStatement)
 
 
-def test_java::dostatement_constructor_exists():
-    assert callable(Java::DoStatement.__init__)
+def test_java_enhancedforstatement_constructor_exists():
+    assert callable(Java_EnhancedForStatement.__init__)
 
 
-def test_java::dostatement_constructor_args():
-    sig = inspect.signature(Java::DoStatement.__init__)
+def test_java_enhancedforstatement_constructor_args():
+    sig = inspect.signature(Java_EnhancedForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::forstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::ForStatement)
+def test_java_catchclause_is_not_abstract():
+    assert not inspect.isabstract(Java_CatchClause)
 
 
-def test_java::forstatement_constructor_exists():
-    assert callable(Java::ForStatement.__init__)
+def test_java_catchclause_constructor_exists():
+    assert callable(Java_CatchClause.__init__)
 
 
-def test_java::forstatement_constructor_args():
-    sig = inspect.signature(Java::ForStatement.__init__)
+def test_java_catchclause_constructor_args():
+    sig = inspect.signature(Java_CatchClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::BreakStatement)
+def test_java_typedeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_TypeDeclarationStatement)
 
 
-def test_java::breakstatement_constructor_exists():
-    assert callable(Java::BreakStatement.__init__)
+def test_java_typedeclarationstatement_constructor_exists():
+    assert callable(Java_TypeDeclarationStatement.__init__)
 
 
-def test_java::breakstatement_constructor_args():
-    sig = inspect.signature(Java::BreakStatement.__init__)
+def test_java_typedeclarationstatement_constructor_args():
+    sig = inspect.signature(Java_TypeDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(Java::EmptyStatement)
+def test_java_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_ExpressionStatement)
 
 
-def test_java::emptystatement_constructor_exists():
-    assert callable(Java::EmptyStatement.__init__)
+def test_java_expressionstatement_constructor_exists():
+    assert callable(Java_ExpressionStatement.__init__)
 
 
-def test_java::emptystatement_constructor_args():
-    sig = inspect.signature(Java::EmptyStatement.__init__)
+def test_java_expressionstatement_constructor_args():
+    sig = inspect.signature(Java_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::ReturnStatement)
+def test_java_superconstructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(Java_SuperConstructorInvocation)
 
 
-def test_java::returnstatement_constructor_exists():
-    assert callable(Java::ReturnStatement.__init__)
+def test_java_superconstructorinvocation_constructor_exists():
+    assert callable(Java_SuperConstructorInvocation.__init__)
 
 
-def test_java::returnstatement_constructor_args():
-    sig = inspect.signature(Java::ReturnStatement.__init__)
+def test_java_superconstructorinvocation_constructor_args():
+    sig = inspect.signature(Java_SuperConstructorInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::typedeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::TypeDeclarationStatement)
+def test_java_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_SwitchStatement)
 
 
-def test_java::typedeclarationstatement_constructor_exists():
-    assert callable(Java::TypeDeclarationStatement.__init__)
+def test_java_switchstatement_constructor_exists():
+    assert callable(Java_SwitchStatement.__init__)
 
 
-def test_java::typedeclarationstatement_constructor_args():
-    sig = inspect.signature(Java::TypeDeclarationStatement.__init__)
+def test_java_switchstatement_constructor_args():
+    sig = inspect.signature(Java_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::ExpressionStatement)
+def test_java_switchcase_is_not_abstract():
+    assert not inspect.isabstract(Java_SwitchCase)
 
 
-def test_java::expressionstatement_constructor_exists():
-    assert callable(Java::ExpressionStatement.__init__)
+def test_java_switchcase_constructor_exists():
+    assert callable(Java_SwitchCase.__init__)
 
 
-def test_java::expressionstatement_constructor_args():
-    sig = inspect.signature(Java::ExpressionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::constructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(Java::ConstructorInvocation)
-
-
-def test_java::constructorinvocation_constructor_exists():
-    assert callable(Java::ConstructorInvocation.__init__)
-
-
-def test_java::constructorinvocation_constructor_args():
-    sig = inspect.signature(Java::ConstructorInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::trystatement_is_not_abstract():
-    assert not inspect.isabstract(Java::TryStatement)
-
-
-def test_java::trystatement_constructor_exists():
-    assert callable(Java::TryStatement.__init__)
-
-
-def test_java::trystatement_constructor_args():
-    sig = inspect.signature(Java::TryStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(Java::ContinueStatement)
-
-
-def test_java::continuestatement_constructor_exists():
-    assert callable(Java::ContinueStatement.__init__)
-
-
-def test_java::continuestatement_constructor_args():
-    sig = inspect.signature(Java::ContinueStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(Java::WhileStatement)
-
-
-def test_java::whilestatement_constructor_exists():
-    assert callable(Java::WhileStatement.__init__)
-
-
-def test_java::whilestatement_constructor_args():
-    sig = inspect.signature(Java::WhileStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::IfStatement)
-
-
-def test_java::ifstatement_constructor_exists():
-    assert callable(Java::IfStatement.__init__)
-
-
-def test_java::ifstatement_constructor_args():
-    sig = inspect.signature(Java::IfStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::superconstructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(Java::SuperConstructorInvocation)
-
-
-def test_java::superconstructorinvocation_constructor_exists():
-    assert callable(Java::SuperConstructorInvocation.__init__)
-
-
-def test_java::superconstructorinvocation_constructor_args():
-    sig = inspect.signature(Java::SuperConstructorInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::SwitchStatement)
-
-
-def test_java::switchstatement_constructor_exists():
-    assert callable(Java::SwitchStatement.__init__)
-
-
-def test_java::switchstatement_constructor_args():
-    sig = inspect.signature(Java::SwitchStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::ThrowStatement)
-
-
-def test_java::throwstatement_constructor_exists():
-    assert callable(Java::ThrowStatement.__init__)
-
-
-def test_java::throwstatement_constructor_args():
-    sig = inspect.signature(Java::ThrowStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::synchronizedstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::SynchronizedStatement)
-
-
-def test_java::synchronizedstatement_constructor_exists():
-    assert callable(Java::SynchronizedStatement.__init__)
-
-
-def test_java::synchronizedstatement_constructor_args():
-    sig = inspect.signature(Java::SynchronizedStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::switchcase_is_not_abstract():
-    assert not inspect.isabstract(Java::SwitchCase)
-
-
-def test_java::switchcase_constructor_exists():
-    assert callable(Java::SwitchCase.__init__)
-
-
-def test_java::switchcase_constructor_args():
-    sig = inspect.signature(Java::SwitchCase.__init__)
+def test_java_switchcase_constructor_args():
+    sig = inspect.signature(Java_SwitchCase.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_java::switchcase_has_default():
-    assert hasattr(Java::SwitchCase, "default")
+def test_java_switchcase_has_default():
+    assert hasattr(Java_SwitchCase, "default")
     descriptor = None
-    for klass in Java::SwitchCase.__mro__:
+    for klass in Java_SwitchCase.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -1348,30 +1194,184 @@ def test_java::switchcase_has_default():
 
 
 
-def test_java::assertstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::AssertStatement)
+def test_java_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(Java_EmptyStatement)
 
 
-def test_java::assertstatement_constructor_exists():
-    assert callable(Java::AssertStatement.__init__)
+def test_java_emptystatement_constructor_exists():
+    assert callable(Java_EmptyStatement.__init__)
 
 
-def test_java::assertstatement_constructor_args():
-    sig = inspect.signature(Java::AssertStatement.__init__)
+def test_java_emptystatement_constructor_args():
+    sig = inspect.signature(Java_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::manifest_is_not_abstract():
-    assert not inspect.isabstract(Java::Manifest)
+def test_java_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_ReturnStatement)
 
 
-def test_java::manifest_constructor_exists():
-    assert callable(Java::Manifest.__init__)
+def test_java_returnstatement_constructor_exists():
+    assert callable(Java_ReturnStatement.__init__)
 
 
-def test_java::manifest_constructor_args():
-    sig = inspect.signature(Java::Manifest.__init__)
+def test_java_returnstatement_constructor_args():
+    sig = inspect.signature(Java_ReturnStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_synchronizedstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_SynchronizedStatement)
+
+
+def test_java_synchronizedstatement_constructor_exists():
+    assert callable(Java_SynchronizedStatement.__init__)
+
+
+def test_java_synchronizedstatement_constructor_args():
+    sig = inspect.signature(Java_SynchronizedStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(Java_ContinueStatement)
+
+
+def test_java_continuestatement_constructor_exists():
+    assert callable(Java_ContinueStatement.__init__)
+
+
+def test_java_continuestatement_constructor_args():
+    sig = inspect.signature(Java_ContinueStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_dostatement_is_not_abstract():
+    assert not inspect.isabstract(Java_DoStatement)
+
+
+def test_java_dostatement_constructor_exists():
+    assert callable(Java_DoStatement.__init__)
+
+
+def test_java_dostatement_constructor_args():
+    sig = inspect.signature(Java_DoStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_constructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(Java_ConstructorInvocation)
+
+
+def test_java_constructorinvocation_constructor_exists():
+    assert callable(Java_ConstructorInvocation.__init__)
+
+
+def test_java_constructorinvocation_constructor_args():
+    sig = inspect.signature(Java_ConstructorInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_forstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_ForStatement)
+
+
+def test_java_forstatement_constructor_exists():
+    assert callable(Java_ForStatement.__init__)
+
+
+def test_java_forstatement_constructor_args():
+    sig = inspect.signature(Java_ForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_BreakStatement)
+
+
+def test_java_breakstatement_constructor_exists():
+    assert callable(Java_BreakStatement.__init__)
+
+
+def test_java_breakstatement_constructor_args():
+    sig = inspect.signature(Java_BreakStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(Java_WhileStatement)
+
+
+def test_java_whilestatement_constructor_exists():
+    assert callable(Java_WhileStatement.__init__)
+
+
+def test_java_whilestatement_constructor_args():
+    sig = inspect.signature(Java_WhileStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_IfStatement)
+
+
+def test_java_ifstatement_constructor_exists():
+    assert callable(Java_IfStatement.__init__)
+
+
+def test_java_ifstatement_constructor_args():
+    sig = inspect.signature(Java_IfStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_trystatement_is_not_abstract():
+    assert not inspect.isabstract(Java_TryStatement)
+
+
+def test_java_trystatement_constructor_exists():
+    assert callable(Java_TryStatement.__init__)
+
+
+def test_java_trystatement_constructor_args():
+    sig = inspect.signature(Java_TryStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_assertstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_AssertStatement)
+
+
+def test_java_assertstatement_constructor_exists():
+    assert callable(Java_AssertStatement.__init__)
+
+
+def test_java_assertstatement_constructor_args():
+    sig = inspect.signature(Java_AssertStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_manifest_is_not_abstract():
+    assert not inspect.isabstract(Java_Manifest)
+
+
+def test_java_manifest_constructor_exists():
+    assert callable(Java_Manifest.__init__)
+
+
+def test_java_manifest_constructor_args():
+    sig = inspect.signature(Java_Manifest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1390,37 +1390,113 @@ def test_namedelement_constructor_args():
 
 
 
-def test_java::unresolveditem_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedItem)
+def test_java_unresolveditem_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedItem)
 
 
-def test_java::unresolveditem_constructor_exists():
-    assert callable(Java::UnresolvedItem.__init__)
+def test_java_unresolveditem_constructor_exists():
+    assert callable(Java_UnresolvedItem.__init__)
 
 
-def test_java::unresolveditem_constructor_args():
-    sig = inspect.signature(Java::UnresolvedItem.__init__)
+def test_java_unresolveditem_constructor_args():
+    sig = inspect.signature(Java_UnresolvedItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::VariableDeclaration)
+def test_java_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(Java_CompilationUnit)
 
 
-def test_java::variabledeclaration_constructor_exists():
-    assert callable(Java::VariableDeclaration.__init__)
+def test_java_compilationunit_constructor_exists():
+    assert callable(Java_CompilationUnit.__init__)
 
 
-def test_java::variabledeclaration_constructor_args():
-    sig = inspect.signature(Java::VariableDeclaration.__init__)
+def test_java_compilationunit_constructor_args():
+    sig = inspect.signature(Java_CompilationUnit.__init__)
+    params = list(sig.parameters.keys())
+    assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
+
+def test_java_compilationunit_has_originalFilePath():
+    assert hasattr(Java_CompilationUnit, "originalFilePath")
+    descriptor = None
+    for klass in Java_CompilationUnit.__mro__:
+        if "originalFilePath" in klass.__dict__:
+            descriptor = klass.__dict__["originalFilePath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_classfile_is_not_abstract():
+    assert not inspect.isabstract(Java_ClassFile)
+
+
+def test_java_classfile_constructor_exists():
+    assert callable(Java_ClassFile.__init__)
+
+
+def test_java_classfile_constructor_args():
+    sig = inspect.signature(Java_ClassFile.__init__)
+    params = list(sig.parameters.keys())
+    assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
+
+def test_java_classfile_has_originalFilePath():
+    assert hasattr(Java_ClassFile, "originalFilePath")
+    descriptor = None
+    for klass in Java_ClassFile.__mro__:
+        if "originalFilePath" in klass.__dict__:
+            descriptor = klass.__dict__["originalFilePath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_type_is_not_abstract():
+    assert not inspect.isabstract(Java_Type)
+
+
+def test_java_type_constructor_exists():
+    assert callable(Java_Type.__init__)
+
+
+def test_java_type_constructor_args():
+    sig = inspect.signature(Java_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(Java_LabeledStatement)
+
+
+def test_java_labeledstatement_constructor_exists():
+    assert callable(Java_LabeledStatement.__init__)
+
+
+def test_java_labeledstatement_constructor_args():
+    sig = inspect.signature(Java_LabeledStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_VariableDeclaration)
+
+
+def test_java_variabledeclaration_constructor_exists():
+    assert callable(Java_VariableDeclaration.__init__)
+
+
+def test_java_variabledeclaration_constructor_args():
+    sig = inspect.signature(Java_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "extraArrayDimensions" in params, "Missing parameter 'extraArrayDimensions'"
 
-def test_java::variabledeclaration_has_extraArrayDimensions():
-    assert hasattr(Java::VariableDeclaration, "extraArrayDimensions")
+def test_java_variabledeclaration_has_extraArrayDimensions():
+    assert hasattr(Java_VariableDeclaration, "extraArrayDimensions")
     descriptor = None
-    for klass in Java::VariableDeclaration.__mro__:
+    for klass in Java_VariableDeclaration.__mro__:
         if "extraArrayDimensions" in klass.__dict__:
             descriptor = klass.__dict__["extraArrayDimensions"]
             break
@@ -1428,51 +1504,23 @@ def test_java::variabledeclaration_has_extraArrayDimensions():
 
 
 
-def test_java::type_is_not_abstract():
-    assert not inspect.isabstract(Java::Type)
+def test_java_archive_is_not_abstract():
+    assert not inspect.isabstract(Java_Archive)
 
 
-def test_java::type_constructor_exists():
-    assert callable(Java::Type.__init__)
+def test_java_archive_constructor_exists():
+    assert callable(Java_Archive.__init__)
 
 
-def test_java::type_constructor_args():
-    sig = inspect.signature(Java::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(Java::LabeledStatement)
-
-
-def test_java::labeledstatement_constructor_exists():
-    assert callable(Java::LabeledStatement.__init__)
-
-
-def test_java::labeledstatement_constructor_args():
-    sig = inspect.signature(Java::LabeledStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::classfile_is_not_abstract():
-    assert not inspect.isabstract(Java::ClassFile)
-
-
-def test_java::classfile_constructor_exists():
-    assert callable(Java::ClassFile.__init__)
-
-
-def test_java::classfile_constructor_args():
-    sig = inspect.signature(Java::ClassFile.__init__)
+def test_java_archive_constructor_args():
+    sig = inspect.signature(Java_Archive.__init__)
     params = list(sig.parameters.keys())
     assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
 
-def test_java::classfile_has_originalFilePath():
-    assert hasattr(Java::ClassFile, "originalFilePath")
+def test_java_archive_has_originalFilePath():
+    assert hasattr(Java_Archive, "originalFilePath")
     descriptor = None
-    for klass in Java::ClassFile.__mro__:
+    for klass in Java_Archive.__mro__:
         if "originalFilePath" in klass.__dict__:
             descriptor = klass.__dict__["originalFilePath"]
             break
@@ -1480,85 +1528,37 @@ def test_java::classfile_has_originalFilePath():
 
 
 
-def test_java::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(Java::CompilationUnit)
+def test_java_annotationmembervaluepair_is_not_abstract():
+    assert not inspect.isabstract(Java_AnnotationMemberValuePair)
 
 
-def test_java::compilationunit_constructor_exists():
-    assert callable(Java::CompilationUnit.__init__)
+def test_java_annotationmembervaluepair_constructor_exists():
+    assert callable(Java_AnnotationMemberValuePair.__init__)
 
 
-def test_java::compilationunit_constructor_args():
-    sig = inspect.signature(Java::CompilationUnit.__init__)
-    params = list(sig.parameters.keys())
-    assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
-
-def test_java::compilationunit_has_originalFilePath():
-    assert hasattr(Java::CompilationUnit, "originalFilePath")
-    descriptor = None
-    for klass in Java::CompilationUnit.__mro__:
-        if "originalFilePath" in klass.__dict__:
-            descriptor = klass.__dict__["originalFilePath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::archive_is_not_abstract():
-    assert not inspect.isabstract(Java::Archive)
-
-
-def test_java::archive_constructor_exists():
-    assert callable(Java::Archive.__init__)
-
-
-def test_java::archive_constructor_args():
-    sig = inspect.signature(Java::Archive.__init__)
-    params = list(sig.parameters.keys())
-    assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
-
-def test_java::archive_has_originalFilePath():
-    assert hasattr(Java::Archive, "originalFilePath")
-    descriptor = None
-    for klass in Java::Archive.__mro__:
-        if "originalFilePath" in klass.__dict__:
-            descriptor = klass.__dict__["originalFilePath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::annotationmembervaluepair_is_not_abstract():
-    assert not inspect.isabstract(Java::AnnotationMemberValuePair)
-
-
-def test_java::annotationmembervaluepair_constructor_exists():
-    assert callable(Java::AnnotationMemberValuePair.__init__)
-
-
-def test_java::annotationmembervaluepair_constructor_args():
-    sig = inspect.signature(Java::AnnotationMemberValuePair.__init__)
+def test_java_annotationmembervaluepair_constructor_args():
+    sig = inspect.signature(Java_AnnotationMemberValuePair.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::singlevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::SingleVariableDeclaration)
+def test_java_singlevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_SingleVariableDeclaration)
 
 
-def test_java::singlevariabledeclaration_constructor_exists():
-    assert callable(Java::SingleVariableDeclaration.__init__)
+def test_java_singlevariabledeclaration_constructor_exists():
+    assert callable(Java_SingleVariableDeclaration.__init__)
 
 
-def test_java::singlevariabledeclaration_constructor_args():
-    sig = inspect.signature(Java::SingleVariableDeclaration.__init__)
+def test_java_singlevariabledeclaration_constructor_args():
+    sig = inspect.signature(Java_SingleVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "varargs" in params, "Missing parameter 'varargs'"
 
-def test_java::singlevariabledeclaration_has_varargs():
-    assert hasattr(Java::SingleVariableDeclaration, "varargs")
+def test_java_singlevariabledeclaration_has_varargs():
+    assert hasattr(Java_SingleVariableDeclaration, "varargs")
     descriptor = None
-    for klass in Java::SingleVariableDeclaration.__mro__:
+    for klass in Java_SingleVariableDeclaration.__mro__:
         if "varargs" in klass.__dict__:
             descriptor = klass.__dict__["varargs"]
             break
@@ -1580,47 +1580,23 @@ def test_expression_constructor_args():
 
 
 
-def test_java::assignment_is_not_abstract():
-    assert not inspect.isabstract(Java::Assignment)
+def test_java_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(Java_CharacterLiteral)
 
 
-def test_java::assignment_constructor_exists():
-    assert callable(Java::Assignment.__init__)
+def test_java_characterliteral_constructor_exists():
+    assert callable(Java_CharacterLiteral.__init__)
 
 
-def test_java::assignment_constructor_args():
-    sig = inspect.signature(Java::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_java::assignment_has_operator():
-    assert hasattr(Java::Assignment, "operator")
-    descriptor = None
-    for klass in Java::Assignment.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(Java::CharacterLiteral)
-
-
-def test_java::characterliteral_constructor_exists():
-    assert callable(Java::CharacterLiteral.__init__)
-
-
-def test_java::characterliteral_constructor_args():
-    sig = inspect.signature(Java::CharacterLiteral.__init__)
+def test_java_characterliteral_constructor_args():
+    sig = inspect.signature(Java_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "escapedValue" in params, "Missing parameter 'escapedValue'"
 
-def test_java::characterliteral_has_escapedValue():
-    assert hasattr(Java::CharacterLiteral, "escapedValue")
+def test_java_characterliteral_has_escapedValue():
+    assert hasattr(Java_CharacterLiteral, "escapedValue")
     descriptor = None
-    for klass in Java::CharacterLiteral.__mro__:
+    for klass in Java_CharacterLiteral.__mro__:
         if "escapedValue" in klass.__dict__:
             descriptor = klass.__dict__["escapedValue"]
             break
@@ -1628,141 +1604,65 @@ def test_java::characterliteral_has_escapedValue():
 
 
 
-def test_java::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(Java::MethodInvocation)
+def test_java_classinstancecreation_is_not_abstract():
+    assert not inspect.isabstract(Java_ClassInstanceCreation)
 
 
-def test_java::methodinvocation_constructor_exists():
-    assert callable(Java::MethodInvocation.__init__)
+def test_java_classinstancecreation_constructor_exists():
+    assert callable(Java_ClassInstanceCreation.__init__)
 
 
-def test_java::methodinvocation_constructor_args():
-    sig = inspect.signature(Java::MethodInvocation.__init__)
+def test_java_classinstancecreation_constructor_args():
+    sig = inspect.signature(Java_ClassInstanceCreation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::variabledeclarationexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::VariableDeclarationExpression)
+def test_java_variabledeclarationexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_VariableDeclarationExpression)
 
 
-def test_java::variabledeclarationexpression_constructor_exists():
-    assert callable(Java::VariableDeclarationExpression.__init__)
+def test_java_variabledeclarationexpression_constructor_exists():
+    assert callable(Java_VariableDeclarationExpression.__init__)
 
 
-def test_java::variabledeclarationexpression_constructor_args():
-    sig = inspect.signature(Java::VariableDeclarationExpression.__init__)
+def test_java_variabledeclarationexpression_constructor_args():
+    sig = inspect.signature(Java_VariableDeclarationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::classinstancecreation_is_not_abstract():
-    assert not inspect.isabstract(Java::ClassInstanceCreation)
+def test_java_typeaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_TypeAccess)
 
 
-def test_java::classinstancecreation_constructor_exists():
-    assert callable(Java::ClassInstanceCreation.__init__)
+def test_java_typeaccess_constructor_exists():
+    assert callable(Java_TypeAccess.__init__)
 
 
-def test_java::classinstancecreation_constructor_args():
-    sig = inspect.signature(Java::ClassInstanceCreation.__init__)
+def test_java_typeaccess_constructor_args():
+    sig = inspect.signature(Java_TypeAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::ConditionalExpression)
+def test_java_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(Java_NumberLiteral)
 
 
-def test_java::conditionalexpression_constructor_exists():
-    assert callable(Java::ConditionalExpression.__init__)
+def test_java_numberliteral_constructor_exists():
+    assert callable(Java_NumberLiteral.__init__)
 
 
-def test_java::conditionalexpression_constructor_args():
-    sig = inspect.signature(Java::ConditionalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::postfixexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::PostfixExpression)
-
-
-def test_java::postfixexpression_constructor_exists():
-    assert callable(Java::PostfixExpression.__init__)
-
-
-def test_java::postfixexpression_constructor_args():
-    sig = inspect.signature(Java::PostfixExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_java::postfixexpression_has_operator():
-    assert hasattr(Java::PostfixExpression, "operator")
-    descriptor = None
-    for klass in Java::PostfixExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::prefixexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::PrefixExpression)
-
-
-def test_java::prefixexpression_constructor_exists():
-    assert callable(Java::PrefixExpression.__init__)
-
-
-def test_java::prefixexpression_constructor_args():
-    sig = inspect.signature(Java::PrefixExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_java::prefixexpression_has_operator():
-    assert hasattr(Java::PrefixExpression, "operator")
-    descriptor = None
-    for klass in Java::PrefixExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::fieldaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::FieldAccess)
-
-
-def test_java::fieldaccess_constructor_exists():
-    assert callable(Java::FieldAccess.__init__)
-
-
-def test_java::fieldaccess_constructor_args():
-    sig = inspect.signature(Java::FieldAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(Java::NumberLiteral)
-
-
-def test_java::numberliteral_constructor_exists():
-    assert callable(Java::NumberLiteral.__init__)
-
-
-def test_java::numberliteral_constructor_args():
-    sig = inspect.signature(Java::NumberLiteral.__init__)
+def test_java_numberliteral_constructor_args():
+    sig = inspect.signature(Java_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "tokenValue" in params, "Missing parameter 'tokenValue'"
 
-def test_java::numberliteral_has_tokenValue():
-    assert hasattr(Java::NumberLiteral, "tokenValue")
+def test_java_numberliteral_has_tokenValue():
+    assert hasattr(Java_NumberLiteral, "tokenValue")
     descriptor = None
-    for klass in Java::NumberLiteral.__mro__:
+    for klass in Java_NumberLiteral.__mro__:
         if "tokenValue" in klass.__dict__:
             descriptor = klass.__dict__["tokenValue"]
             break
@@ -1770,23 +1670,23 @@ def test_java::numberliteral_has_tokenValue():
 
 
 
-def test_java::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(Java::BooleanLiteral)
+def test_java_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(Java_BooleanLiteral)
 
 
-def test_java::booleanliteral_constructor_exists():
-    assert callable(Java::BooleanLiteral.__init__)
+def test_java_booleanliteral_constructor_exists():
+    assert callable(Java_BooleanLiteral.__init__)
 
 
-def test_java::booleanliteral_constructor_args():
-    sig = inspect.signature(Java::BooleanLiteral.__init__)
+def test_java_booleanliteral_constructor_args():
+    sig = inspect.signature(Java_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_java::booleanliteral_has_value():
-    assert hasattr(Java::BooleanLiteral, "value")
+def test_java_booleanliteral_has_value():
+    assert hasattr(Java_BooleanLiteral, "value")
     descriptor = None
-    for klass in Java::BooleanLiteral.__mro__:
+    for klass in Java_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1794,51 +1694,121 @@ def test_java::booleanliteral_has_value():
 
 
 
-def test_java::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::ParenthesizedExpression)
+def test_java_arraylengthaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_ArrayLengthAccess)
 
 
-def test_java::parenthesizedexpression_constructor_exists():
-    assert callable(Java::ParenthesizedExpression.__init__)
+def test_java_arraylengthaccess_constructor_exists():
+    assert callable(Java_ArrayLengthAccess.__init__)
 
 
-def test_java::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(Java::ParenthesizedExpression.__init__)
+def test_java_arraylengthaccess_constructor_args():
+    sig = inspect.signature(Java_ArrayLengthAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::typeaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::TypeAccess)
+def test_java_arrayaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_ArrayAccess)
 
 
-def test_java::typeaccess_constructor_exists():
-    assert callable(Java::TypeAccess.__init__)
+def test_java_arrayaccess_constructor_exists():
+    assert callable(Java_ArrayAccess.__init__)
 
 
-def test_java::typeaccess_constructor_args():
-    sig = inspect.signature(Java::TypeAccess.__init__)
+def test_java_arrayaccess_constructor_args():
+    sig = inspect.signature(Java_ArrayAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::infixexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::InfixExpression)
+def test_java_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(Java_ArrayInitializer)
 
 
-def test_java::infixexpression_constructor_exists():
-    assert callable(Java::InfixExpression.__init__)
+def test_java_arrayinitializer_constructor_exists():
+    assert callable(Java_ArrayInitializer.__init__)
 
 
-def test_java::infixexpression_constructor_args():
-    sig = inspect.signature(Java::InfixExpression.__init__)
+def test_java_arrayinitializer_constructor_args():
+    sig = inspect.signature(Java_ArrayInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_ConditionalExpression)
+
+
+def test_java_conditionalexpression_constructor_exists():
+    assert callable(Java_ConditionalExpression.__init__)
+
+
+def test_java_conditionalexpression_constructor_args():
+    sig = inspect.signature(Java_ConditionalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_arraycreation_is_not_abstract():
+    assert not inspect.isabstract(Java_ArrayCreation)
+
+
+def test_java_arraycreation_constructor_exists():
+    assert callable(Java_ArrayCreation.__init__)
+
+
+def test_java_arraycreation_constructor_args():
+    sig = inspect.signature(Java_ArrayCreation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_annotation_is_not_abstract():
+    assert not inspect.isabstract(Java_Annotation)
+
+
+def test_java_annotation_constructor_exists():
+    assert callable(Java_Annotation.__init__)
+
+
+def test_java_annotation_constructor_args():
+    sig = inspect.signature(Java_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(Java_MethodInvocation)
+
+
+def test_java_methodinvocation_constructor_exists():
+    assert callable(Java_MethodInvocation.__init__)
+
+
+def test_java_methodinvocation_constructor_args():
+    sig = inspect.signature(Java_MethodInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_assignment_is_not_abstract():
+    assert not inspect.isabstract(Java_Assignment)
+
+
+def test_java_assignment_constructor_exists():
+    assert callable(Java_Assignment.__init__)
+
+
+def test_java_assignment_constructor_args():
+    sig = inspect.signature(Java_Assignment.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_java::infixexpression_has_operator():
-    assert hasattr(Java::InfixExpression, "operator")
+def test_java_assignment_has_operator():
+    assert hasattr(Java_Assignment, "operator")
     descriptor = None
-    for klass in Java::InfixExpression.__mro__:
+    for klass in Java_Assignment.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1846,177 +1816,89 @@ def test_java::infixexpression_has_operator():
 
 
 
-def test_java::arraylengthaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::ArrayLengthAccess)
+def test_java_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(Java_NullLiteral)
 
 
-def test_java::arraylengthaccess_constructor_exists():
-    assert callable(Java::ArrayLengthAccess.__init__)
+def test_java_nullliteral_constructor_exists():
+    assert callable(Java_NullLiteral.__init__)
 
 
-def test_java::arraylengthaccess_constructor_args():
-    sig = inspect.signature(Java::ArrayLengthAccess.__init__)
+def test_java_nullliteral_constructor_args():
+    sig = inspect.signature(Java_NullLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::typeliteral_is_not_abstract():
-    assert not inspect.isabstract(Java::TypeLiteral)
+def test_java_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_InstanceofExpression)
 
 
-def test_java::typeliteral_constructor_exists():
-    assert callable(Java::TypeLiteral.__init__)
+def test_java_instanceofexpression_constructor_exists():
+    assert callable(Java_InstanceofExpression.__init__)
 
 
-def test_java::typeliteral_constructor_args():
-    sig = inspect.signature(Java::TypeLiteral.__init__)
+def test_java_instanceofexpression_constructor_args():
+    sig = inspect.signature(Java_InstanceofExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(Java::NullLiteral)
+def test_java_postfixexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_PostfixExpression)
 
 
-def test_java::nullliteral_constructor_exists():
-    assert callable(Java::NullLiteral.__init__)
+def test_java_postfixexpression_constructor_exists():
+    assert callable(Java_PostfixExpression.__init__)
 
 
-def test_java::nullliteral_constructor_args():
-    sig = inspect.signature(Java::NullLiteral.__init__)
+def test_java_postfixexpression_constructor_args():
+    sig = inspect.signature(Java_PostfixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_java_postfixexpression_has_operator():
+    assert hasattr(Java_PostfixExpression, "operator")
+    descriptor = None
+    for klass in Java_PostfixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_castexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_CastExpression)
+
+
+def test_java_castexpression_constructor_exists():
+    assert callable(Java_CastExpression.__init__)
+
+
+def test_java_castexpression_constructor_args():
+    sig = inspect.signature(Java_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(Java::ArrayInitializer)
+def test_java_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(Java_StringLiteral)
 
 
-def test_java::arrayinitializer_constructor_exists():
-    assert callable(Java::ArrayInitializer.__init__)
+def test_java_stringliteral_constructor_exists():
+    assert callable(Java_StringLiteral.__init__)
 
 
-def test_java::arrayinitializer_constructor_args():
-    sig = inspect.signature(Java::ArrayInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::InstanceofExpression)
-
-
-def test_java::instanceofexpression_constructor_exists():
-    assert callable(Java::InstanceofExpression.__init__)
-
-
-def test_java::instanceofexpression_constructor_args():
-    sig = inspect.signature(Java::InstanceofExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::annotation_is_not_abstract():
-    assert not inspect.isabstract(Java::Annotation)
-
-
-def test_java::annotation_constructor_exists():
-    assert callable(Java::Annotation.__init__)
-
-
-def test_java::annotation_constructor_args():
-    sig = inspect.signature(Java::Annotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::arraycreation_is_not_abstract():
-    assert not inspect.isabstract(Java::ArrayCreation)
-
-
-def test_java::arraycreation_constructor_exists():
-    assert callable(Java::ArrayCreation.__init__)
-
-
-def test_java::arraycreation_constructor_args():
-    sig = inspect.signature(Java::ArrayCreation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::castexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::CastExpression)
-
-
-def test_java::castexpression_constructor_exists():
-    assert callable(Java::CastExpression.__init__)
-
-
-def test_java::castexpression_constructor_args():
-    sig = inspect.signature(Java::CastExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::unresolveditemaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedItemAccess)
-
-
-def test_java::unresolveditemaccess_constructor_exists():
-    assert callable(Java::UnresolvedItemAccess.__init__)
-
-
-def test_java::unresolveditemaccess_constructor_args():
-    sig = inspect.signature(Java::UnresolvedItemAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::arrayaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::ArrayAccess)
-
-
-def test_java::arrayaccess_constructor_exists():
-    assert callable(Java::ArrayAccess.__init__)
-
-
-def test_java::arrayaccess_constructor_args():
-    sig = inspect.signature(Java::ArrayAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::singlevariableaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::SingleVariableAccess)
-
-
-def test_java::singlevariableaccess_constructor_exists():
-    assert callable(Java::SingleVariableAccess.__init__)
-
-
-def test_java::singlevariableaccess_constructor_args():
-    sig = inspect.signature(Java::SingleVariableAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(Java::StringLiteral)
-
-
-def test_java::stringliteral_constructor_exists():
-    assert callable(Java::StringLiteral.__init__)
-
-
-def test_java::stringliteral_constructor_args():
-    sig = inspect.signature(Java::StringLiteral.__init__)
+def test_java_stringliteral_constructor_args():
+    sig = inspect.signature(Java_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "escapedValue" in params, "Missing parameter 'escapedValue'"
 
-def test_java::stringliteral_has_escapedValue():
-    assert hasattr(Java::StringLiteral, "escapedValue")
+def test_java_stringliteral_has_escapedValue():
+    assert hasattr(Java_StringLiteral, "escapedValue")
     descriptor = None
-    for klass in Java::StringLiteral.__mro__:
+    for klass in Java_StringLiteral.__mro__:
         if "escapedValue" in klass.__dict__:
             descriptor = klass.__dict__["escapedValue"]
             break
@@ -2024,44 +1906,162 @@ def test_java::stringliteral_has_escapedValue():
 
 
 
-def test_java::abstracttypequalifiedexpression_is_not_abstract():
-    assert not inspect.isabstract(Java::AbstractTypeQualifiedExpression)
+def test_java_unresolveditemaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedItemAccess)
 
 
-def test_java::abstracttypequalifiedexpression_constructor_exists():
-    assert callable(Java::AbstractTypeQualifiedExpression.__init__)
+def test_java_unresolveditemaccess_constructor_exists():
+    assert callable(Java_UnresolvedItemAccess.__init__)
 
 
-def test_java::abstracttypequalifiedexpression_constructor_args():
-    sig = inspect.signature(Java::AbstractTypeQualifiedExpression.__init__)
+def test_java_unresolveditemaccess_constructor_args():
+    sig = inspect.signature(Java_UnresolvedItemAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::package_is_not_abstract():
-    assert not inspect.isabstract(Java::Package)
+def test_java_singlevariableaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_SingleVariableAccess)
 
 
-def test_java::package_constructor_exists():
-    assert callable(Java::Package.__init__)
+def test_java_singlevariableaccess_constructor_exists():
+    assert callable(Java_SingleVariableAccess.__init__)
 
 
-def test_java::package_constructor_args():
-    sig = inspect.signature(Java::Package.__init__)
+def test_java_singlevariableaccess_constructor_args():
+    sig = inspect.signature(Java_SingleVariableAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::bodydeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::BodyDeclaration)
+def test_java_infixexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_InfixExpression)
 
 
-def test_java::bodydeclaration_constructor_exists():
-    assert callable(Java::BodyDeclaration.__init__)
+def test_java_infixexpression_constructor_exists():
+    assert callable(Java_InfixExpression.__init__)
 
 
-def test_java::bodydeclaration_constructor_args():
-    sig = inspect.signature(Java::BodyDeclaration.__init__)
+def test_java_infixexpression_constructor_args():
+    sig = inspect.signature(Java_InfixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_java_infixexpression_has_operator():
+    assert hasattr(Java_InfixExpression, "operator")
+    descriptor = None
+    for klass in Java_InfixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_fieldaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_FieldAccess)
+
+
+def test_java_fieldaccess_constructor_exists():
+    assert callable(Java_FieldAccess.__init__)
+
+
+def test_java_fieldaccess_constructor_args():
+    sig = inspect.signature(Java_FieldAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_typeliteral_is_not_abstract():
+    assert not inspect.isabstract(Java_TypeLiteral)
+
+
+def test_java_typeliteral_constructor_exists():
+    assert callable(Java_TypeLiteral.__init__)
+
+
+def test_java_typeliteral_constructor_args():
+    sig = inspect.signature(Java_TypeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_prefixexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_PrefixExpression)
+
+
+def test_java_prefixexpression_constructor_exists():
+    assert callable(Java_PrefixExpression.__init__)
+
+
+def test_java_prefixexpression_constructor_args():
+    sig = inspect.signature(Java_PrefixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_java_prefixexpression_has_operator():
+    assert hasattr(Java_PrefixExpression, "operator")
+    descriptor = None
+    for klass in Java_PrefixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_ParenthesizedExpression)
+
+
+def test_java_parenthesizedexpression_constructor_exists():
+    assert callable(Java_ParenthesizedExpression.__init__)
+
+
+def test_java_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(Java_ParenthesizedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_abstracttypequalifiedexpression_is_not_abstract():
+    assert not inspect.isabstract(Java_AbstractTypeQualifiedExpression)
+
+
+def test_java_abstracttypequalifiedexpression_constructor_exists():
+    assert callable(Java_AbstractTypeQualifiedExpression.__init__)
+
+
+def test_java_abstracttypequalifiedexpression_constructor_args():
+    sig = inspect.signature(Java_AbstractTypeQualifiedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_package_is_not_abstract():
+    assert not inspect.isabstract(Java_Package)
+
+
+def test_java_package_constructor_exists():
+    assert callable(Java_Package.__init__)
+
+
+def test_java_package_constructor_args():
+    sig = inspect.signature(Java_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_bodydeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_BodyDeclaration)
+
+
+def test_java_bodydeclaration_constructor_exists():
+    assert callable(Java_BodyDeclaration.__init__)
+
+
+def test_java_bodydeclaration_constructor_args():
+    sig = inspect.signature(Java_BodyDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2080,47 +2080,23 @@ def test_type_constructor_args():
 
 
 
-def test_java::arraytype_is_not_abstract():
-    assert not inspect.isabstract(Java::ArrayType)
+def test_java_wildcardtype_is_not_abstract():
+    assert not inspect.isabstract(Java_WildCardType)
 
 
-def test_java::arraytype_constructor_exists():
-    assert callable(Java::ArrayType.__init__)
+def test_java_wildcardtype_constructor_exists():
+    assert callable(Java_WildCardType.__init__)
 
 
-def test_java::arraytype_constructor_args():
-    sig = inspect.signature(Java::ArrayType.__init__)
-    params = list(sig.parameters.keys())
-    assert "dimensions" in params, "Missing parameter 'dimensions'"
-
-def test_java::arraytype_has_dimensions():
-    assert hasattr(Java::ArrayType, "dimensions")
-    descriptor = None
-    for klass in Java::ArrayType.__mro__:
-        if "dimensions" in klass.__dict__:
-            descriptor = klass.__dict__["dimensions"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::wildcardtype_is_not_abstract():
-    assert not inspect.isabstract(Java::WildCardType)
-
-
-def test_java::wildcardtype_constructor_exists():
-    assert callable(Java::WildCardType.__init__)
-
-
-def test_java::wildcardtype_constructor_args():
-    sig = inspect.signature(Java::WildCardType.__init__)
+def test_java_wildcardtype_constructor_args():
+    sig = inspect.signature(Java_WildCardType.__init__)
     params = list(sig.parameters.keys())
     assert "upperBound" in params, "Missing parameter 'upperBound'"
 
-def test_java::wildcardtype_has_upperBound():
-    assert hasattr(Java::WildCardType, "upperBound")
+def test_java_wildcardtype_has_upperBound():
+    assert hasattr(Java_WildCardType, "upperBound")
     descriptor = None
-    for klass in Java::WildCardType.__mro__:
+    for klass in Java_WildCardType.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
@@ -2128,59 +2104,83 @@ def test_java::wildcardtype_has_upperBound():
 
 
 
-def test_java::parameterizedtype_is_not_abstract():
-    assert not inspect.isabstract(Java::ParameterizedType)
+def test_java_parameterizedtype_is_not_abstract():
+    assert not inspect.isabstract(Java_ParameterizedType)
 
 
-def test_java::parameterizedtype_constructor_exists():
-    assert callable(Java::ParameterizedType.__init__)
+def test_java_parameterizedtype_constructor_exists():
+    assert callable(Java_ParameterizedType.__init__)
 
 
-def test_java::parameterizedtype_constructor_args():
-    sig = inspect.signature(Java::ParameterizedType.__init__)
+def test_java_parameterizedtype_constructor_args():
+    sig = inspect.signature(Java_ParameterizedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(Java::TypeParameter)
+def test_java_unresolvedtype_is_not_abstract():
+    assert not inspect.isabstract(Java_UnresolvedType)
 
 
-def test_java::typeparameter_constructor_exists():
-    assert callable(Java::TypeParameter.__init__)
+def test_java_unresolvedtype_constructor_exists():
+    assert callable(Java_UnresolvedType.__init__)
 
 
-def test_java::typeparameter_constructor_args():
-    sig = inspect.signature(Java::TypeParameter.__init__)
+def test_java_unresolvedtype_constructor_args():
+    sig = inspect.signature(Java_UnresolvedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(Java::PrimitiveType)
+def test_java_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(Java_PrimitiveType)
 
 
-def test_java::primitivetype_constructor_exists():
-    assert callable(Java::PrimitiveType.__init__)
+def test_java_primitivetype_constructor_exists():
+    assert callable(Java_PrimitiveType.__init__)
 
 
-def test_java::primitivetype_constructor_args():
-    sig = inspect.signature(Java::PrimitiveType.__init__)
+def test_java_primitivetype_constructor_args():
+    sig = inspect.signature(Java_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::unresolvedtype_is_not_abstract():
-    assert not inspect.isabstract(Java::UnresolvedType)
+def test_java_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(Java_TypeParameter)
 
 
-def test_java::unresolvedtype_constructor_exists():
-    assert callable(Java::UnresolvedType.__init__)
+def test_java_typeparameter_constructor_exists():
+    assert callable(Java_TypeParameter.__init__)
 
 
-def test_java::unresolvedtype_constructor_args():
-    sig = inspect.signature(Java::UnresolvedType.__init__)
+def test_java_typeparameter_constructor_args():
+    sig = inspect.signature(Java_TypeParameter.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_java_arraytype_is_not_abstract():
+    assert not inspect.isabstract(Java_ArrayType)
+
+
+def test_java_arraytype_constructor_exists():
+    assert callable(Java_ArrayType.__init__)
+
+
+def test_java_arraytype_constructor_args():
+    sig = inspect.signature(Java_ArrayType.__init__)
+    params = list(sig.parameters.keys())
+    assert "dimensions" in params, "Missing parameter 'dimensions'"
+
+def test_java_arraytype_has_dimensions():
+    assert hasattr(Java_ArrayType, "dimensions")
+    descriptor = None
+    for klass in Java_ArrayType.__mro__:
+        if "dimensions" in klass.__dict__:
+            descriptor = klass.__dict__["dimensions"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -2198,37 +2198,139 @@ def test_astnode_constructor_args():
 
 
 
-def test_java::memberref_is_not_abstract():
-    assert not inspect.isabstract(Java::MemberRef)
+def test_java_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Java_NamedElement)
 
 
-def test_java::memberref_constructor_exists():
-    assert callable(Java::MemberRef.__init__)
+def test_java_namedelement_constructor_exists():
+    assert callable(Java_NamedElement.__init__)
 
 
-def test_java::memberref_constructor_args():
-    sig = inspect.signature(Java::MemberRef.__init__)
+def test_java_namedelement_constructor_args():
+    sig = inspect.signature(Java_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "proxy" in params, "Missing parameter 'proxy'"
+
+def test_java_namedelement_has_name():
+    assert hasattr(Java_NamedElement, "name")
+    descriptor = None
+    for klass in Java_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_namedelement_has_proxy():
+    assert hasattr(Java_NamedElement, "proxy")
+    descriptor = None
+    for klass in Java_NamedElement.__mro__:
+        if "proxy" in klass.__dict__:
+            descriptor = klass.__dict__["proxy"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_ImportDeclaration)
+
+
+def test_java_importdeclaration_constructor_exists():
+    assert callable(Java_ImportDeclaration.__init__)
+
+
+def test_java_importdeclaration_constructor_args():
+    sig = inspect.signature(Java_ImportDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "static" in params, "Missing parameter 'static'"
+
+def test_java_importdeclaration_has_static():
+    assert hasattr(Java_ImportDeclaration, "static")
+    descriptor = None
+    for klass in Java_ImportDeclaration.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_comment_is_not_abstract():
+    assert not inspect.isabstract(Java_Comment)
+
+
+def test_java_comment_constructor_exists():
+    assert callable(Java_Comment.__init__)
+
+
+def test_java_comment_constructor_args():
+    sig = inspect.signature(Java_Comment.__init__)
+    params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
+    assert "prefixOfParent" in params, "Missing parameter 'prefixOfParent'"
+    assert "enclosedByParent" in params, "Missing parameter 'enclosedByParent'"
+
+def test_java_comment_has_content():
+    assert hasattr(Java_Comment, "content")
+    descriptor = None
+    for klass in Java_Comment.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_comment_has_prefixOfParent():
+    assert hasattr(Java_Comment, "prefixOfParent")
+    descriptor = None
+    for klass in Java_Comment.__mro__:
+        if "prefixOfParent" in klass.__dict__:
+            descriptor = klass.__dict__["prefixOfParent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_comment_has_enclosedByParent():
+    assert hasattr(Java_Comment, "enclosedByParent")
+    descriptor = None
+    for klass in Java_Comment.__mro__:
+        if "enclosedByParent" in klass.__dict__:
+            descriptor = klass.__dict__["enclosedByParent"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_statement_is_not_abstract():
+    assert not inspect.isabstract(Java_Statement)
+
+
+def test_java_statement_constructor_exists():
+    assert callable(Java_Statement.__init__)
+
+
+def test_java_statement_constructor_args():
+    sig = inspect.signature(Java_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::tagelement_is_not_abstract():
-    assert not inspect.isabstract(Java::TagElement)
+def test_java_tagelement_is_not_abstract():
+    assert not inspect.isabstract(Java_TagElement)
 
 
-def test_java::tagelement_constructor_exists():
-    assert callable(Java::TagElement.__init__)
+def test_java_tagelement_constructor_exists():
+    assert callable(Java_TagElement.__init__)
 
 
-def test_java::tagelement_constructor_args():
-    sig = inspect.signature(Java::TagElement.__init__)
+def test_java_tagelement_constructor_args():
+    sig = inspect.signature(Java_TagElement.__init__)
     params = list(sig.parameters.keys())
     assert "tagName" in params, "Missing parameter 'tagName'"
 
-def test_java::tagelement_has_tagName():
-    assert hasattr(Java::TagElement, "tagName")
+def test_java_tagelement_has_tagName():
+    assert hasattr(Java_TagElement, "tagName")
     descriptor = None
-    for klass in Java::TagElement.__mro__:
+    for klass in Java_TagElement.__mro__:
         if "tagName" in klass.__dict__:
             descriptor = klass.__dict__["tagName"]
             break
@@ -2236,323 +2338,23 @@ def test_java::tagelement_has_tagName():
 
 
 
-def test_java::anonymousclassdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::AnonymousClassDeclaration)
+def test_java_textelement_is_not_abstract():
+    assert not inspect.isabstract(Java_TextElement)
 
 
-def test_java::anonymousclassdeclaration_constructor_exists():
-    assert callable(Java::AnonymousClassDeclaration.__init__)
+def test_java_textelement_constructor_exists():
+    assert callable(Java_TextElement.__init__)
 
 
-def test_java::anonymousclassdeclaration_constructor_args():
-    sig = inspect.signature(Java::AnonymousClassDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::ImportDeclaration)
-
-
-def test_java::importdeclaration_constructor_exists():
-    assert callable(Java::ImportDeclaration.__init__)
-
-
-def test_java::importdeclaration_constructor_args():
-    sig = inspect.signature(Java::ImportDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_java::importdeclaration_has_static():
-    assert hasattr(Java::ImportDeclaration, "static")
-    descriptor = None
-    for klass in Java::ImportDeclaration.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::abstractvariablescontainer_is_not_abstract():
-    assert not inspect.isabstract(Java::AbstractVariablesContainer)
-
-
-def test_java::abstractvariablescontainer_constructor_exists():
-    assert callable(Java::AbstractVariablesContainer.__init__)
-
-
-def test_java::abstractvariablescontainer_constructor_args():
-    sig = inspect.signature(Java::AbstractVariablesContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::statement_is_not_abstract():
-    assert not inspect.isabstract(Java::Statement)
-
-
-def test_java::statement_constructor_exists():
-    assert callable(Java::Statement.__init__)
-
-
-def test_java::statement_constructor_args():
-    sig = inspect.signature(Java::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::methodref_is_not_abstract():
-    assert not inspect.isabstract(Java::MethodRef)
-
-
-def test_java::methodref_constructor_exists():
-    assert callable(Java::MethodRef.__init__)
-
-
-def test_java::methodref_constructor_args():
-    sig = inspect.signature(Java::MethodRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::modifier_is_not_abstract():
-    assert not inspect.isabstract(Java::Modifier)
-
-
-def test_java::modifier_constructor_exists():
-    assert callable(Java::Modifier.__init__)
-
-
-def test_java::modifier_constructor_args():
-    sig = inspect.signature(Java::Modifier.__init__)
-    params = list(sig.parameters.keys())
-    assert "strictfp" in params, "Missing parameter 'strictfp'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "static" in params, "Missing parameter 'static'"
-    assert "native" in params, "Missing parameter 'native'"
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "transient" in params, "Missing parameter 'transient'"
-    assert "inheritance" in params, "Missing parameter 'inheritance'"
-    assert "volatile" in params, "Missing parameter 'volatile'"
-
-def test_java::modifier_has_strictfp():
-    assert hasattr(Java::Modifier, "strictfp")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "strictfp" in klass.__dict__:
-            descriptor = klass.__dict__["strictfp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_visibility():
-    assert hasattr(Java::Modifier, "visibility")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_static():
-    assert hasattr(Java::Modifier, "static")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_native():
-    assert hasattr(Java::Modifier, "native")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "native" in klass.__dict__:
-            descriptor = klass.__dict__["native"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_synchronized():
-    assert hasattr(Java::Modifier, "synchronized")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_transient():
-    assert hasattr(Java::Modifier, "transient")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "transient" in klass.__dict__:
-            descriptor = klass.__dict__["transient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_inheritance():
-    assert hasattr(Java::Modifier, "inheritance")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "inheritance" in klass.__dict__:
-            descriptor = klass.__dict__["inheritance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::modifier_has_volatile():
-    assert hasattr(Java::Modifier, "volatile")
-    descriptor = None
-    for klass in Java::Modifier.__mro__:
-        if "volatile" in klass.__dict__:
-            descriptor = klass.__dict__["volatile"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Java::NamedElement)
-
-
-def test_java::namedelement_constructor_exists():
-    assert callable(Java::NamedElement.__init__)
-
-
-def test_java::namedelement_constructor_args():
-    sig = inspect.signature(Java::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "proxy" in params, "Missing parameter 'proxy'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_java::namedelement_has_proxy():
-    assert hasattr(Java::NamedElement, "proxy")
-    descriptor = None
-    for klass in Java::NamedElement.__mro__:
-        if "proxy" in klass.__dict__:
-            descriptor = klass.__dict__["proxy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::namedelement_has_name():
-    assert hasattr(Java::NamedElement, "name")
-    descriptor = None
-    for klass in Java::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::methodrefparameter_is_not_abstract():
-    assert not inspect.isabstract(Java::MethodRefParameter)
-
-
-def test_java::methodrefparameter_constructor_exists():
-    assert callable(Java::MethodRefParameter.__init__)
-
-
-def test_java::methodrefparameter_constructor_args():
-    sig = inspect.signature(Java::MethodRefParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "varargs" in params, "Missing parameter 'varargs'"
-
-def test_java::methodrefparameter_has_name():
-    assert hasattr(Java::MethodRefParameter, "name")
-    descriptor = None
-    for klass in Java::MethodRefParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::methodrefparameter_has_varargs():
-    assert hasattr(Java::MethodRefParameter, "varargs")
-    descriptor = None
-    for klass in Java::MethodRefParameter.__mro__:
-        if "varargs" in klass.__dict__:
-            descriptor = klass.__dict__["varargs"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::namespaceaccess_is_not_abstract():
-    assert not inspect.isabstract(Java::NamespaceAccess)
-
-
-def test_java::namespaceaccess_constructor_exists():
-    assert callable(Java::NamespaceAccess.__init__)
-
-
-def test_java::namespaceaccess_constructor_args():
-    sig = inspect.signature(Java::NamespaceAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_java::comment_is_not_abstract():
-    assert not inspect.isabstract(Java::Comment)
-
-
-def test_java::comment_constructor_exists():
-    assert callable(Java::Comment.__init__)
-
-
-def test_java::comment_constructor_args():
-    sig = inspect.signature(Java::Comment.__init__)
-    params = list(sig.parameters.keys())
-    assert "prefixOfParent" in params, "Missing parameter 'prefixOfParent'"
-    assert "enclosedByParent" in params, "Missing parameter 'enclosedByParent'"
-    assert "content" in params, "Missing parameter 'content'"
-
-def test_java::comment_has_prefixOfParent():
-    assert hasattr(Java::Comment, "prefixOfParent")
-    descriptor = None
-    for klass in Java::Comment.__mro__:
-        if "prefixOfParent" in klass.__dict__:
-            descriptor = klass.__dict__["prefixOfParent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::comment_has_enclosedByParent():
-    assert hasattr(Java::Comment, "enclosedByParent")
-    descriptor = None
-    for klass in Java::Comment.__mro__:
-        if "enclosedByParent" in klass.__dict__:
-            descriptor = klass.__dict__["enclosedByParent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_java::comment_has_content():
-    assert hasattr(Java::Comment, "content")
-    descriptor = None
-    for klass in Java::Comment.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_java::textelement_is_not_abstract():
-    assert not inspect.isabstract(Java::TextElement)
-
-
-def test_java::textelement_constructor_exists():
-    assert callable(Java::TextElement.__init__)
-
-
-def test_java::textelement_constructor_args():
-    sig = inspect.signature(Java::TextElement.__init__)
+def test_java_textelement_constructor_args():
+    sig = inspect.signature(Java_TextElement.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_java::textelement_has_text():
-    assert hasattr(Java::TextElement, "text")
+def test_java_textelement_has_text():
+    assert hasattr(Java_TextElement, "text")
     descriptor = None
-    for klass in Java::TextElement.__mro__:
+    for klass in Java_TextElement.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -2560,44 +2362,242 @@ def test_java::textelement_has_text():
 
 
 
-def test_java::expression_is_not_abstract():
-    assert not inspect.isabstract(Java::Expression)
+def test_java_methodrefparameter_is_not_abstract():
+    assert not inspect.isabstract(Java_MethodRefParameter)
 
 
-def test_java::expression_constructor_exists():
-    assert callable(Java::Expression.__init__)
+def test_java_methodrefparameter_constructor_exists():
+    assert callable(Java_MethodRefParameter.__init__)
 
 
-def test_java::expression_constructor_args():
-    sig = inspect.signature(Java::Expression.__init__)
+def test_java_methodrefparameter_constructor_args():
+    sig = inspect.signature(Java_MethodRefParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "varargs" in params, "Missing parameter 'varargs'"
+
+def test_java_methodrefparameter_has_name():
+    assert hasattr(Java_MethodRefParameter, "name")
+    descriptor = None
+    for klass in Java_MethodRefParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_methodrefparameter_has_varargs():
+    assert hasattr(Java_MethodRefParameter, "varargs")
+    descriptor = None
+    for klass in Java_MethodRefParameter.__mro__:
+        if "varargs" in klass.__dict__:
+            descriptor = klass.__dict__["varargs"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_memberref_is_not_abstract():
+    assert not inspect.isabstract(Java_MemberRef)
+
+
+def test_java_memberref_constructor_exists():
+    assert callable(Java_MemberRef.__init__)
+
+
+def test_java_memberref_constructor_args():
+    sig = inspect.signature(Java_MemberRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::abstractmethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(Java::AbstractMethodInvocation)
+def test_java_modifier_is_not_abstract():
+    assert not inspect.isabstract(Java_Modifier)
 
 
-def test_java::abstractmethodinvocation_constructor_exists():
-    assert callable(Java::AbstractMethodInvocation.__init__)
+def test_java_modifier_constructor_exists():
+    assert callable(Java_Modifier.__init__)
 
 
-def test_java::abstractmethodinvocation_constructor_args():
-    sig = inspect.signature(Java::AbstractMethodInvocation.__init__)
+def test_java_modifier_constructor_args():
+    sig = inspect.signature(Java_Modifier.__init__)
+    params = list(sig.parameters.keys())
+    assert "inheritance" in params, "Missing parameter 'inheritance'"
+    assert "strictfp" in params, "Missing parameter 'strictfp'"
+    assert "volatile" in params, "Missing parameter 'volatile'"
+    assert "transient" in params, "Missing parameter 'transient'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
+    assert "native" in params, "Missing parameter 'native'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "static" in params, "Missing parameter 'static'"
+
+def test_java_modifier_has_inheritance():
+    assert hasattr(Java_Modifier, "inheritance")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "inheritance" in klass.__dict__:
+            descriptor = klass.__dict__["inheritance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_strictfp():
+    assert hasattr(Java_Modifier, "strictfp")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "strictfp" in klass.__dict__:
+            descriptor = klass.__dict__["strictfp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_volatile():
+    assert hasattr(Java_Modifier, "volatile")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "volatile" in klass.__dict__:
+            descriptor = klass.__dict__["volatile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_transient():
+    assert hasattr(Java_Modifier, "transient")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "transient" in klass.__dict__:
+            descriptor = klass.__dict__["transient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_synchronized():
+    assert hasattr(Java_Modifier, "synchronized")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_native():
+    assert hasattr(Java_Modifier, "native")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "native" in klass.__dict__:
+            descriptor = klass.__dict__["native"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_visibility():
+    assert hasattr(Java_Modifier, "visibility")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_java_modifier_has_static():
+    assert hasattr(Java_Modifier, "static")
+    descriptor = None
+    for klass in Java_Modifier.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_java_anonymousclassdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_AnonymousClassDeclaration)
+
+
+def test_java_anonymousclassdeclaration_constructor_exists():
+    assert callable(Java_AnonymousClassDeclaration.__init__)
+
+
+def test_java_anonymousclassdeclaration_constructor_args():
+    sig = inspect.signature(Java_AnonymousClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::block_is_not_abstract():
-    assert not inspect.isabstract(Java::Block)
+def test_java_methodref_is_not_abstract():
+    assert not inspect.isabstract(Java_MethodRef)
 
 
-def test_java::block_constructor_exists():
-    assert callable(Java::Block.__init__)
+def test_java_methodref_constructor_exists():
+    assert callable(Java_MethodRef.__init__)
 
 
-def test_java::block_constructor_args():
-    sig = inspect.signature(Java::Block.__init__)
+def test_java_methodref_constructor_args():
+    sig = inspect.signature(Java_MethodRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_expression_is_not_abstract():
+    assert not inspect.isabstract(Java_Expression)
+
+
+def test_java_expression_constructor_exists():
+    assert callable(Java_Expression.__init__)
+
+
+def test_java_expression_constructor_args():
+    sig = inspect.signature(Java_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_abstractvariablescontainer_is_not_abstract():
+    assert not inspect.isabstract(Java_AbstractVariablesContainer)
+
+
+def test_java_abstractvariablescontainer_constructor_exists():
+    assert callable(Java_AbstractVariablesContainer.__init__)
+
+
+def test_java_abstractvariablescontainer_constructor_args():
+    sig = inspect.signature(Java_AbstractVariablesContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_namespaceaccess_is_not_abstract():
+    assert not inspect.isabstract(Java_NamespaceAccess)
+
+
+def test_java_namespaceaccess_constructor_exists():
+    assert callable(Java_NamespaceAccess.__init__)
+
+
+def test_java_namespaceaccess_constructor_args():
+    sig = inspect.signature(Java_NamespaceAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_abstractmethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(Java_AbstractMethodInvocation)
+
+
+def test_java_abstractmethodinvocation_constructor_exists():
+    assert callable(Java_AbstractMethodInvocation.__init__)
+
+
+def test_java_abstractmethodinvocation_constructor_args():
+    sig = inspect.signature(Java_AbstractMethodInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_java_block_is_not_abstract():
+    assert not inspect.isabstract(Java_Block)
+
+
+def test_java_block_constructor_exists():
+    assert callable(Java_Block.__init__)
+
+
+def test_java_block_constructor_args():
+    sig = inspect.signature(Java_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2616,128 +2616,87 @@ def test_bodydeclaration_constructor_args():
 
 
 
-def test_java::annotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::AnnotationTypeMemberDeclaration)
+def test_java_enumconstantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_EnumConstantDeclaration)
 
 
-def test_java::annotationtypememberdeclaration_constructor_exists():
-    assert callable(Java::AnnotationTypeMemberDeclaration.__init__)
+def test_java_enumconstantdeclaration_constructor_exists():
+    assert callable(Java_EnumConstantDeclaration.__init__)
 
 
-def test_java::annotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(Java::AnnotationTypeMemberDeclaration.__init__)
+def test_java_enumconstantdeclaration_constructor_args():
+    sig = inspect.signature(Java_EnumConstantDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::abstracttypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::AbstractTypeDeclaration)
+def test_java_annotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_AnnotationTypeMemberDeclaration)
 
 
-def test_java::abstracttypedeclaration_constructor_exists():
-    assert callable(Java::AbstractTypeDeclaration.__init__)
+def test_java_annotationtypememberdeclaration_constructor_exists():
+    assert callable(Java_AnnotationTypeMemberDeclaration.__init__)
 
 
-def test_java::abstracttypedeclaration_constructor_args():
-    sig = inspect.signature(Java::AbstractTypeDeclaration.__init__)
+def test_java_annotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(Java_AnnotationTypeMemberDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::enumconstantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::EnumConstantDeclaration)
+def test_java_fielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_FieldDeclaration)
 
 
-def test_java::enumconstantdeclaration_constructor_exists():
-    assert callable(Java::EnumConstantDeclaration.__init__)
+def test_java_fielddeclaration_constructor_exists():
+    assert callable(Java_FieldDeclaration.__init__)
 
 
-def test_java::enumconstantdeclaration_constructor_args():
-    sig = inspect.signature(Java::EnumConstantDeclaration.__init__)
+def test_java_fielddeclaration_constructor_args():
+    sig = inspect.signature(Java_FieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::initializer_is_not_abstract():
-    assert not inspect.isabstract(Java::Initializer)
+def test_java_initializer_is_not_abstract():
+    assert not inspect.isabstract(Java_Initializer)
 
 
-def test_java::initializer_constructor_exists():
-    assert callable(Java::Initializer.__init__)
+def test_java_initializer_constructor_exists():
+    assert callable(Java_Initializer.__init__)
 
 
-def test_java::initializer_constructor_args():
-    sig = inspect.signature(Java::Initializer.__init__)
+def test_java_initializer_constructor_args():
+    sig = inspect.signature(Java_Initializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::fielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::FieldDeclaration)
+def test_java_abstracttypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_AbstractTypeDeclaration)
 
 
-def test_java::fielddeclaration_constructor_exists():
-    assert callable(Java::FieldDeclaration.__init__)
+def test_java_abstracttypedeclaration_constructor_exists():
+    assert callable(Java_AbstractTypeDeclaration.__init__)
 
 
-def test_java::fielddeclaration_constructor_args():
-    sig = inspect.signature(Java::FieldDeclaration.__init__)
+def test_java_abstracttypedeclaration_constructor_args():
+    sig = inspect.signature(Java_AbstractTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_java::abstractmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(Java::AbstractMethodDeclaration)
+def test_java_abstractmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(Java_AbstractMethodDeclaration)
 
 
-def test_java::abstractmethoddeclaration_constructor_exists():
-    assert callable(Java::AbstractMethodDeclaration.__init__)
+def test_java_abstractmethoddeclaration_constructor_exists():
+    assert callable(Java_AbstractMethodDeclaration.__init__)
 
 
-def test_java::abstractmethoddeclaration_constructor_args():
-    sig = inspect.signature(Java::AbstractMethodDeclaration.__init__)
+def test_java_abstractmethoddeclaration_constructor_args():
+    sig = inspect.signature(Java_AbstractMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
-
-def test_inheritancekind_exists():
-    # Check that the Enumeration exists
-    assert InheritanceKind is not None
-
-def test_inheritancekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InheritanceKind]
-    expected_literals = [
-        "none",
-        "abstract",
-        "final",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InheritanceKind"
-
-def test_assignmentkind_exists():
-    # Check that the Enumeration exists
-    assert AssignmentKind is not None
-
-def test_assignmentkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssignmentKind]
-    expected_literals = [
-        "REMAINDER_ASSIGN",
-        "LEFT_SHIFT_ASSIGN",
-        "ASSIGN",
-        "RIGHT_SHIFT_UNSIGNED_ASSIGN",
-        "RIGHT_SHIFT_SIGNED_ASSIGN",
-        "DIVIDE_ASSIGN",
-        "MINUS_ASSIGN",
-        "TIMES_ASSIGN",
-        "BIT_XOR_ASSIGN",
-        "BIT_OR_ASSIGN",
-        "PLUS_ASSIGN",
-        "BIT_AND_ASSIGN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssignmentKind"
 
 def test_prefixexpressionkind_exists():
     # Check that the Enumeration exists
@@ -2748,11 +2707,11 @@ def test_prefixexpressionkind_has_all_literals():
     enum_literals = [lit.name for lit in PrefixExpressionKind]
     expected_literals = [
         "DECREMENT",
-        "INCREMENT",
-        "PLUS",
         "NOT",
+        "INCREMENT",
         "COMPLEMENT",
         "MINUS",
+        "PLUS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2767,45 +2726,29 @@ def test_visibilitykind_has_all_literals():
     enum_literals = [lit.name for lit in VisibilityKind]
     expected_literals = [
         "none",
-        "private",
-        "public",
         "protected",
+        "public",
+        "private",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
 
-def test_infixexpressionkind_exists():
+def test_inheritancekind_exists():
     # Check that the Enumeration exists
-    assert InfixExpressionKind is not None
+    assert InheritanceKind is not None
 
-def test_infixexpressionkind_has_all_literals():
+def test_inheritancekind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InfixExpressionKind]
+    enum_literals = [lit.name for lit in InheritanceKind]
     expected_literals = [
-        "RIGHT_SHIFT_UNSIGNED",
-        "LESS_EQUALS",
-        "LESS",
-        "TIMES",
-        "REMAINDER",
-        "LEFT_SHIFT",
-        "CONDITIONAL_AND",
-        "PLUS",
-        "XOR",
-        "DIVIDE",
-        "CONDITIONAL_OR",
-        "NOT_EQUALS",
-        "OR",
-        "GREATER_EQUALS",
-        "RIGHT_SHIFT_SIGNED",
-        "MINUS",
-        "GREATER",
-        "AND",
-        "EQUALS",
+        "none",
+        "final",
+        "abstract",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InfixExpressionKind"
+        assert lit_name in enum_literals, f"Literal '' missing in InheritanceKind"
 
 def test_postfixexpressionkind_exists():
     # Check that the Enumeration exists
@@ -2815,12 +2758,69 @@ def test_postfixexpressionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PostfixExpressionKind]
     expected_literals = [
-        "DECREMENT",
         "INCREMENT",
+        "DECREMENT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PostfixExpressionKind"
+
+def test_infixexpressionkind_exists():
+    # Check that the Enumeration exists
+    assert InfixExpressionKind is not None
+
+def test_infixexpressionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InfixExpressionKind]
+    expected_literals = [
+        "TIMES",
+        "CONDITIONAL_OR",
+        "REMAINDER",
+        "EQUALS",
+        "LEFT_SHIFT",
+        "OR",
+        "LESS",
+        "DIVIDE",
+        "GREATER",
+        "CONDITIONAL_AND",
+        "RIGHT_SHIFT_UNSIGNED",
+        "PLUS",
+        "LESS_EQUALS",
+        "MINUS",
+        "AND",
+        "RIGHT_SHIFT_SIGNED",
+        "NOT_EQUALS",
+        "GREATER_EQUALS",
+        "XOR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InfixExpressionKind"
+
+def test_assignmentkind_exists():
+    # Check that the Enumeration exists
+    assert AssignmentKind is not None
+
+def test_assignmentkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssignmentKind]
+    expected_literals = [
+        "BIT_XOR_ASSIGN",
+        "BIT_AND_ASSIGN",
+        "RIGHT_SHIFT_SIGNED_ASSIGN",
+        "TIMES_ASSIGN",
+        "PLUS_ASSIGN",
+        "RIGHT_SHIFT_UNSIGNED_ASSIGN",
+        "BIT_OR_ASSIGN",
+        "MINUS_ASSIGN",
+        "LEFT_SHIFT_ASSIGN",
+        "REMAINDER_ASSIGN",
+        "ASSIGN",
+        "DIVIDE_ASSIGN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssignmentKind"
 
 
 # =============================================================================
@@ -2834,6 +2834,125 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+AnnotationTypeMemberDeclaration_strategy = st.builds(
+    AnnotationTypeMemberDeclaration,
+)
+UnresolvedItem_strategy = st.builds(
+    UnresolvedItem,
+)
+Java_UnresolvedAnnotationTypeMemberDeclaration_strategy = st.builds(
+    Java_UnresolvedAnnotationTypeMemberDeclaration,
+)
+AnnotationTypeDeclaration_strategy = st.builds(
+    AnnotationTypeDeclaration,
+)
+Java_UnresolvedAnnotationDeclaration_strategy = st.builds(
+    Java_UnresolvedAnnotationDeclaration,
+)
+AbstractTypeQualifiedExpression_strategy = st.builds(
+    AbstractTypeQualifiedExpression,
+)
+Java_ThisExpression_strategy = st.builds(
+    Java_ThisExpression,
+)
+Java_SuperFieldAccess_strategy = st.builds(
+    Java_SuperFieldAccess,
+)
+PrimitiveType_strategy = st.builds(
+    PrimitiveType,
+)
+Java_PrimitiveTypeChar_strategy = st.builds(
+    Java_PrimitiveTypeChar,
+)
+Java_PrimitiveTypeShort_strategy = st.builds(
+    Java_PrimitiveTypeShort,
+)
+Java_PrimitiveTypeDouble_strategy = st.builds(
+    Java_PrimitiveTypeDouble,
+)
+Java_PrimitiveTypeVoid_strategy = st.builds(
+    Java_PrimitiveTypeVoid,
+)
+Java_PrimitiveTypeLong_strategy = st.builds(
+    Java_PrimitiveTypeLong,
+)
+Java_PrimitiveTypeByte_strategy = st.builds(
+    Java_PrimitiveTypeByte,
+)
+Java_PrimitiveTypeInt_strategy = st.builds(
+    Java_PrimitiveTypeInt,
+)
+Java_PrimitiveTypeFloat_strategy = st.builds(
+    Java_PrimitiveTypeFloat,
+)
+Java_PrimitiveTypeBoolean_strategy = st.builds(
+    Java_PrimitiveTypeBoolean,
+)
+NamespaceAccess_strategy = st.builds(
+    NamespaceAccess,
+)
+Java_PackageAccess_strategy = st.builds(
+    Java_PackageAccess,
+)
+Java_Model_strategy = st.builds(
+    Java_Model,
+    name=
+        safe_text
+)
+Java_ManifestEntry_strategy = st.builds(
+    Java_ManifestEntry,
+    name=
+        safe_text
+)
+Java_ManifestAttribute_strategy = st.builds(
+    Java_ManifestAttribute,
+    key=
+        safe_text,
+    value=
+        safe_text
+)
+MethodDeclaration_strategy = st.builds(
+    MethodDeclaration,
+)
+Java_UnresolvedMethodDeclaration_strategy = st.builds(
+    Java_UnresolvedMethodDeclaration,
+)
+LabeledStatement_strategy = st.builds(
+    LabeledStatement,
+)
+Java_UnresolvedLabeledStatement_strategy = st.builds(
+    Java_UnresolvedLabeledStatement,
+)
+InterfaceDeclaration_strategy = st.builds(
+    InterfaceDeclaration,
+)
+Java_UnresolvedInterfaceDeclaration_strategy = st.builds(
+    Java_UnresolvedInterfaceDeclaration,
+)
+EnumDeclaration_strategy = st.builds(
+    EnumDeclaration,
+)
+Java_UnresolvedEnumDeclaration_strategy = st.builds(
+    Java_UnresolvedEnumDeclaration,
+)
+VariableDeclarationFragment_strategy = st.builds(
+    VariableDeclarationFragment,
+)
+Java_UnresolvedVariableDeclarationFragment_strategy = st.builds(
+    Java_UnresolvedVariableDeclarationFragment,
+)
+SingleVariableDeclaration_strategy = st.builds(
+    SingleVariableDeclaration,
+)
+Java_UnresolvedSingleVariableDeclaration_strategy = st.builds(
+    Java_UnresolvedSingleVariableDeclaration,
+)
+ClassDeclaration_strategy = st.builds(
+    ClassDeclaration,
+)
+Java_UnresolvedClassDeclaration_strategy = st.builds(
+    Java_UnresolvedClassDeclaration,
+)
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
@@ -2843,533 +2962,631 @@ AbstractVariablesContainer_strategy = st.builds(
 TypeDeclaration_strategy = st.builds(
     TypeDeclaration,
 )
-Java::ClassDeclaration_strategy = st.builds(
-    Java::ClassDeclaration,
+Java_InterfaceDeclaration_strategy = st.builds(
+    Java_InterfaceDeclaration,
+)
+Java_ClassDeclaration_strategy = st.builds(
+    Java_ClassDeclaration,
 )
 AbstractMethodDeclaration_strategy = st.builds(
     AbstractMethodDeclaration,
 )
-MethodDeclaration_strategy = st.builds(
-    MethodDeclaration,
-)
-LabeledStatement_strategy = st.builds(
-    LabeledStatement,
-)
-InterfaceDeclaration_strategy = st.builds(
-    InterfaceDeclaration,
-)
-EnumDeclaration_strategy = st.builds(
-    EnumDeclaration,
-)
-VariableDeclarationFragment_strategy = st.builds(
-    VariableDeclarationFragment,
-)
-SingleVariableDeclaration_strategy = st.builds(
-    SingleVariableDeclaration,
-)
-ClassDeclaration_strategy = st.builds(
-    ClassDeclaration,
-)
-AnnotationTypeMemberDeclaration_strategy = st.builds(
-    AnnotationTypeMemberDeclaration,
-)
-UnresolvedItem_strategy = st.builds(
-    UnresolvedItem,
-)
-Java::UnresolvedAnnotationTypeMemberDeclaration_strategy = st.builds(
-    Java::UnresolvedAnnotationTypeMemberDeclaration,
-)
-Java::UnresolvedEnumDeclaration_strategy = st.builds(
-    Java::UnresolvedEnumDeclaration,
-)
-Java::UnresolvedInterfaceDeclaration_strategy = st.builds(
-    Java::UnresolvedInterfaceDeclaration,
-)
-Java::UnresolvedVariableDeclarationFragment_strategy = st.builds(
-    Java::UnresolvedVariableDeclarationFragment,
-)
-Java::UnresolvedSingleVariableDeclaration_strategy = st.builds(
-    Java::UnresolvedSingleVariableDeclaration,
-)
-Java::UnresolvedLabeledStatement_strategy = st.builds(
-    Java::UnresolvedLabeledStatement,
-)
-Java::UnresolvedMethodDeclaration_strategy = st.builds(
-    Java::UnresolvedMethodDeclaration,
-)
-Java::UnresolvedClassDeclaration_strategy = st.builds(
-    Java::UnresolvedClassDeclaration,
-)
-AnnotationTypeDeclaration_strategy = st.builds(
-    AnnotationTypeDeclaration,
-)
-Java::UnresolvedAnnotationDeclaration_strategy = st.builds(
-    Java::UnresolvedAnnotationDeclaration,
-)
-AbstractTypeQualifiedExpression_strategy = st.builds(
-    AbstractTypeQualifiedExpression,
-)
-Java::ThisExpression_strategy = st.builds(
-    Java::ThisExpression,
-)
-Java::SuperFieldAccess_strategy = st.builds(
-    Java::SuperFieldAccess,
-)
-PrimitiveType_strategy = st.builds(
-    PrimitiveType,
-)
-Java::PrimitiveTypeShort_strategy = st.builds(
-    Java::PrimitiveTypeShort,
-)
-Java::PrimitiveTypeVoid_strategy = st.builds(
-    Java::PrimitiveTypeVoid,
-)
-Java::PrimitiveTypeInt_strategy = st.builds(
-    Java::PrimitiveTypeInt,
-)
-Java::PrimitiveTypeLong_strategy = st.builds(
-    Java::PrimitiveTypeLong,
-)
-Java::PrimitiveTypeDouble_strategy = st.builds(
-    Java::PrimitiveTypeDouble,
-)
-Java::PrimitiveTypeFloat_strategy = st.builds(
-    Java::PrimitiveTypeFloat,
-)
-Java::PrimitiveTypeChar_strategy = st.builds(
-    Java::PrimitiveTypeChar,
-)
-Java::PrimitiveTypeByte_strategy = st.builds(
-    Java::PrimitiveTypeByte,
-)
-Java::PrimitiveTypeBoolean_strategy = st.builds(
-    Java::PrimitiveTypeBoolean,
-)
-NamespaceAccess_strategy = st.builds(
-    NamespaceAccess,
-)
-Java::PackageAccess_strategy = st.builds(
-    Java::PackageAccess,
-)
-Java::Model_strategy = st.builds(
-    Java::Model,
-    name=
-        safe_text
-)
-Java::MethodDeclaration_strategy = st.builds(
-    Java::MethodDeclaration,
+Java_MethodDeclaration_strategy = st.builds(
+    Java_MethodDeclaration,
     extraArrayDimensions=
         st.integers()
 )
-Java::ManifestEntry_strategy = st.builds(
-    Java::ManifestEntry,
-    name=
-        safe_text
-)
-Java::ManifestAttribute_strategy = st.builds(
-    Java::ManifestAttribute,
-    key=
-        safe_text,
-    value=
-        safe_text
-)
-Java::InterfaceDeclaration_strategy = st.builds(
-    Java::InterfaceDeclaration,
-)
-Java::ConstructorDeclaration_strategy = st.builds(
-    Java::ConstructorDeclaration,
+Java_ConstructorDeclaration_strategy = st.builds(
+    Java_ConstructorDeclaration,
 )
 AbstractMethodInvocation_strategy = st.builds(
     AbstractMethodInvocation,
 )
-Java::SuperMethodInvocation_strategy = st.builds(
-    Java::SuperMethodInvocation,
+Java_SuperMethodInvocation_strategy = st.builds(
+    Java_SuperMethodInvocation,
 )
 Comment_strategy = st.builds(
     Comment,
 )
-Java::LineComment_strategy = st.builds(
-    Java::LineComment,
+Java_LineComment_strategy = st.builds(
+    Java_LineComment,
 )
-Java::Javadoc_strategy = st.builds(
-    Java::Javadoc,
+Java_Javadoc_strategy = st.builds(
+    Java_Javadoc,
 )
-Java::BlockComment_strategy = st.builds(
-    Java::BlockComment,
+Java_BlockComment_strategy = st.builds(
+    Java_BlockComment,
 )
-Java::VariableDeclarationFragment_strategy = st.builds(
-    Java::VariableDeclarationFragment,
+Java_VariableDeclarationFragment_strategy = st.builds(
+    Java_VariableDeclarationFragment,
 )
 AbstractTypeDeclaration_strategy = st.builds(
     AbstractTypeDeclaration,
 )
-Java::UnresolvedTypeDeclaration_strategy = st.builds(
-    Java::UnresolvedTypeDeclaration,
+Java_UnresolvedTypeDeclaration_strategy = st.builds(
+    Java_UnresolvedTypeDeclaration,
 )
-Java::TypeDeclaration_strategy = st.builds(
-    Java::TypeDeclaration,
+Java_TypeDeclaration_strategy = st.builds(
+    Java_TypeDeclaration,
 )
-Java::EnumDeclaration_strategy = st.builds(
-    Java::EnumDeclaration,
+Java_EnumDeclaration_strategy = st.builds(
+    Java_EnumDeclaration,
 )
-Java::AnnotationTypeDeclaration_strategy = st.builds(
-    Java::AnnotationTypeDeclaration,
+Java_AnnotationTypeDeclaration_strategy = st.builds(
+    Java_AnnotationTypeDeclaration,
 )
-Java::ASTNode_strategy = st.builds(
-    Java::ASTNode,
+Java_ASTNode_strategy = st.builds(
+    Java_ASTNode,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-Java::CatchClause_strategy = st.builds(
-    Java::CatchClause,
-)
-Java::VariableDeclarationStatement_strategy = st.builds(
-    Java::VariableDeclarationStatement,
+Java_VariableDeclarationStatement_strategy = st.builds(
+    Java_VariableDeclarationStatement,
     extraArrayDimensions=
         st.integers()
 )
-Java::EnhancedForStatement_strategy = st.builds(
-    Java::EnhancedForStatement,
+Java_ThrowStatement_strategy = st.builds(
+    Java_ThrowStatement,
 )
-Java::DoStatement_strategy = st.builds(
-    Java::DoStatement,
+Java_EnhancedForStatement_strategy = st.builds(
+    Java_EnhancedForStatement,
 )
-Java::ForStatement_strategy = st.builds(
-    Java::ForStatement,
+Java_CatchClause_strategy = st.builds(
+    Java_CatchClause,
 )
-Java::BreakStatement_strategy = st.builds(
-    Java::BreakStatement,
+Java_TypeDeclarationStatement_strategy = st.builds(
+    Java_TypeDeclarationStatement,
 )
-Java::EmptyStatement_strategy = st.builds(
-    Java::EmptyStatement,
+Java_ExpressionStatement_strategy = st.builds(
+    Java_ExpressionStatement,
 )
-Java::ReturnStatement_strategy = st.builds(
-    Java::ReturnStatement,
+Java_SuperConstructorInvocation_strategy = st.builds(
+    Java_SuperConstructorInvocation,
 )
-Java::TypeDeclarationStatement_strategy = st.builds(
-    Java::TypeDeclarationStatement,
+Java_SwitchStatement_strategy = st.builds(
+    Java_SwitchStatement,
 )
-Java::ExpressionStatement_strategy = st.builds(
-    Java::ExpressionStatement,
-)
-Java::ConstructorInvocation_strategy = st.builds(
-    Java::ConstructorInvocation,
-)
-Java::TryStatement_strategy = st.builds(
-    Java::TryStatement,
-)
-Java::ContinueStatement_strategy = st.builds(
-    Java::ContinueStatement,
-)
-Java::WhileStatement_strategy = st.builds(
-    Java::WhileStatement,
-)
-Java::IfStatement_strategy = st.builds(
-    Java::IfStatement,
-)
-Java::SuperConstructorInvocation_strategy = st.builds(
-    Java::SuperConstructorInvocation,
-)
-Java::SwitchStatement_strategy = st.builds(
-    Java::SwitchStatement,
-)
-Java::ThrowStatement_strategy = st.builds(
-    Java::ThrowStatement,
-)
-Java::SynchronizedStatement_strategy = st.builds(
-    Java::SynchronizedStatement,
-)
-Java::SwitchCase_strategy = st.builds(
-    Java::SwitchCase,
+Java_SwitchCase_strategy = st.builds(
+    Java_SwitchCase,
     default=
         st.booleans()
 )
-Java::AssertStatement_strategy = st.builds(
-    Java::AssertStatement,
+Java_EmptyStatement_strategy = st.builds(
+    Java_EmptyStatement,
 )
-Java::Manifest_strategy = st.builds(
-    Java::Manifest,
+Java_ReturnStatement_strategy = st.builds(
+    Java_ReturnStatement,
+)
+Java_SynchronizedStatement_strategy = st.builds(
+    Java_SynchronizedStatement,
+)
+Java_ContinueStatement_strategy = st.builds(
+    Java_ContinueStatement,
+)
+Java_DoStatement_strategy = st.builds(
+    Java_DoStatement,
+)
+Java_ConstructorInvocation_strategy = st.builds(
+    Java_ConstructorInvocation,
+)
+Java_ForStatement_strategy = st.builds(
+    Java_ForStatement,
+)
+Java_BreakStatement_strategy = st.builds(
+    Java_BreakStatement,
+)
+Java_WhileStatement_strategy = st.builds(
+    Java_WhileStatement,
+)
+Java_IfStatement_strategy = st.builds(
+    Java_IfStatement,
+)
+Java_TryStatement_strategy = st.builds(
+    Java_TryStatement,
+)
+Java_AssertStatement_strategy = st.builds(
+    Java_AssertStatement,
+)
+Java_Manifest_strategy = st.builds(
+    Java_Manifest,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Java::UnresolvedItem_strategy = st.builds(
-    Java::UnresolvedItem,
+Java_UnresolvedItem_strategy = st.builds(
+    Java_UnresolvedItem,
 )
-Java::VariableDeclaration_strategy = st.builds(
-    Java::VariableDeclaration,
+Java_CompilationUnit_strategy = st.builds(
+    Java_CompilationUnit,
+    originalFilePath=
+        safe_text
+)
+Java_ClassFile_strategy = st.builds(
+    Java_ClassFile,
+    originalFilePath=
+        safe_text
+)
+Java_Type_strategy = st.builds(
+    Java_Type,
+)
+Java_LabeledStatement_strategy = st.builds(
+    Java_LabeledStatement,
+)
+Java_VariableDeclaration_strategy = st.builds(
+    Java_VariableDeclaration,
     extraArrayDimensions=
         st.integers()
 )
-Java::Type_strategy = st.builds(
-    Java::Type,
-)
-Java::LabeledStatement_strategy = st.builds(
-    Java::LabeledStatement,
-)
-Java::ClassFile_strategy = st.builds(
-    Java::ClassFile,
+Java_Archive_strategy = st.builds(
+    Java_Archive,
     originalFilePath=
         safe_text
 )
-Java::CompilationUnit_strategy = st.builds(
-    Java::CompilationUnit,
-    originalFilePath=
-        safe_text
+Java_AnnotationMemberValuePair_strategy = st.builds(
+    Java_AnnotationMemberValuePair,
 )
-Java::Archive_strategy = st.builds(
-    Java::Archive,
-    originalFilePath=
-        safe_text
-)
-Java::AnnotationMemberValuePair_strategy = st.builds(
-    Java::AnnotationMemberValuePair,
-)
-Java::SingleVariableDeclaration_strategy = st.builds(
-    Java::SingleVariableDeclaration,
+Java_SingleVariableDeclaration_strategy = st.builds(
+    Java_SingleVariableDeclaration,
     varargs=
         st.booleans()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-Java::Assignment_strategy = st.builds(
-    Java::Assignment,
-    operator=
-        safe_text
-)
-Java::CharacterLiteral_strategy = st.builds(
-    Java::CharacterLiteral,
+Java_CharacterLiteral_strategy = st.builds(
+    Java_CharacterLiteral,
     escapedValue=
         safe_text
 )
-Java::MethodInvocation_strategy = st.builds(
-    Java::MethodInvocation,
+Java_ClassInstanceCreation_strategy = st.builds(
+    Java_ClassInstanceCreation,
 )
-Java::VariableDeclarationExpression_strategy = st.builds(
-    Java::VariableDeclarationExpression,
+Java_VariableDeclarationExpression_strategy = st.builds(
+    Java_VariableDeclarationExpression,
 )
-Java::ClassInstanceCreation_strategy = st.builds(
-    Java::ClassInstanceCreation,
+Java_TypeAccess_strategy = st.builds(
+    Java_TypeAccess,
 )
-Java::ConditionalExpression_strategy = st.builds(
-    Java::ConditionalExpression,
-)
-Java::PostfixExpression_strategy = st.builds(
-    Java::PostfixExpression,
-    operator=
-        safe_text
-)
-Java::PrefixExpression_strategy = st.builds(
-    Java::PrefixExpression,
-    operator=
-        safe_text
-)
-Java::FieldAccess_strategy = st.builds(
-    Java::FieldAccess,
-)
-Java::NumberLiteral_strategy = st.builds(
-    Java::NumberLiteral,
+Java_NumberLiteral_strategy = st.builds(
+    Java_NumberLiteral,
     tokenValue=
         safe_text
 )
-Java::BooleanLiteral_strategy = st.builds(
-    Java::BooleanLiteral,
+Java_BooleanLiteral_strategy = st.builds(
+    Java_BooleanLiteral,
     value=
         st.booleans()
 )
-Java::ParenthesizedExpression_strategy = st.builds(
-    Java::ParenthesizedExpression,
+Java_ArrayLengthAccess_strategy = st.builds(
+    Java_ArrayLengthAccess,
 )
-Java::TypeAccess_strategy = st.builds(
-    Java::TypeAccess,
+Java_ArrayAccess_strategy = st.builds(
+    Java_ArrayAccess,
 )
-Java::InfixExpression_strategy = st.builds(
-    Java::InfixExpression,
+Java_ArrayInitializer_strategy = st.builds(
+    Java_ArrayInitializer,
+)
+Java_ConditionalExpression_strategy = st.builds(
+    Java_ConditionalExpression,
+)
+Java_ArrayCreation_strategy = st.builds(
+    Java_ArrayCreation,
+)
+Java_Annotation_strategy = st.builds(
+    Java_Annotation,
+)
+Java_MethodInvocation_strategy = st.builds(
+    Java_MethodInvocation,
+)
+Java_Assignment_strategy = st.builds(
+    Java_Assignment,
     operator=
         safe_text
 )
-Java::ArrayLengthAccess_strategy = st.builds(
-    Java::ArrayLengthAccess,
+Java_NullLiteral_strategy = st.builds(
+    Java_NullLiteral,
 )
-Java::TypeLiteral_strategy = st.builds(
-    Java::TypeLiteral,
+Java_InstanceofExpression_strategy = st.builds(
+    Java_InstanceofExpression,
 )
-Java::NullLiteral_strategy = st.builds(
-    Java::NullLiteral,
+Java_PostfixExpression_strategy = st.builds(
+    Java_PostfixExpression,
+    operator=
+        safe_text
 )
-Java::ArrayInitializer_strategy = st.builds(
-    Java::ArrayInitializer,
+Java_CastExpression_strategy = st.builds(
+    Java_CastExpression,
 )
-Java::InstanceofExpression_strategy = st.builds(
-    Java::InstanceofExpression,
-)
-Java::Annotation_strategy = st.builds(
-    Java::Annotation,
-)
-Java::ArrayCreation_strategy = st.builds(
-    Java::ArrayCreation,
-)
-Java::CastExpression_strategy = st.builds(
-    Java::CastExpression,
-)
-Java::UnresolvedItemAccess_strategy = st.builds(
-    Java::UnresolvedItemAccess,
-)
-Java::ArrayAccess_strategy = st.builds(
-    Java::ArrayAccess,
-)
-Java::SingleVariableAccess_strategy = st.builds(
-    Java::SingleVariableAccess,
-)
-Java::StringLiteral_strategy = st.builds(
-    Java::StringLiteral,
+Java_StringLiteral_strategy = st.builds(
+    Java_StringLiteral,
     escapedValue=
         safe_text
 )
-Java::AbstractTypeQualifiedExpression_strategy = st.builds(
-    Java::AbstractTypeQualifiedExpression,
+Java_UnresolvedItemAccess_strategy = st.builds(
+    Java_UnresolvedItemAccess,
 )
-Java::Package_strategy = st.builds(
-    Java::Package,
+Java_SingleVariableAccess_strategy = st.builds(
+    Java_SingleVariableAccess,
 )
-Java::BodyDeclaration_strategy = st.builds(
-    Java::BodyDeclaration,
+Java_InfixExpression_strategy = st.builds(
+    Java_InfixExpression,
+    operator=
+        safe_text
+)
+Java_FieldAccess_strategy = st.builds(
+    Java_FieldAccess,
+)
+Java_TypeLiteral_strategy = st.builds(
+    Java_TypeLiteral,
+)
+Java_PrefixExpression_strategy = st.builds(
+    Java_PrefixExpression,
+    operator=
+        safe_text
+)
+Java_ParenthesizedExpression_strategy = st.builds(
+    Java_ParenthesizedExpression,
+)
+Java_AbstractTypeQualifiedExpression_strategy = st.builds(
+    Java_AbstractTypeQualifiedExpression,
+)
+Java_Package_strategy = st.builds(
+    Java_Package,
+)
+Java_BodyDeclaration_strategy = st.builds(
+    Java_BodyDeclaration,
 )
 Type_strategy = st.builds(
     Type,
 )
-Java::ArrayType_strategy = st.builds(
-    Java::ArrayType,
-    dimensions=
-        st.integers()
-)
-Java::WildCardType_strategy = st.builds(
-    Java::WildCardType,
+Java_WildCardType_strategy = st.builds(
+    Java_WildCardType,
     upperBound=
         st.booleans()
 )
-Java::ParameterizedType_strategy = st.builds(
-    Java::ParameterizedType,
+Java_ParameterizedType_strategy = st.builds(
+    Java_ParameterizedType,
 )
-Java::TypeParameter_strategy = st.builds(
-    Java::TypeParameter,
+Java_UnresolvedType_strategy = st.builds(
+    Java_UnresolvedType,
 )
-Java::PrimitiveType_strategy = st.builds(
-    Java::PrimitiveType,
+Java_PrimitiveType_strategy = st.builds(
+    Java_PrimitiveType,
 )
-Java::UnresolvedType_strategy = st.builds(
-    Java::UnresolvedType,
+Java_TypeParameter_strategy = st.builds(
+    Java_TypeParameter,
+)
+Java_ArrayType_strategy = st.builds(
+    Java_ArrayType,
+    dimensions=
+        st.integers()
 )
 ASTNode_strategy = st.builds(
     ASTNode,
 )
-Java::MemberRef_strategy = st.builds(
-    Java::MemberRef,
+Java_NamedElement_strategy = st.builds(
+    Java_NamedElement,
+    name=
+        safe_text,
+    proxy=
+        st.booleans()
 )
-Java::TagElement_strategy = st.builds(
-    Java::TagElement,
+Java_ImportDeclaration_strategy = st.builds(
+    Java_ImportDeclaration,
+    static=
+        st.booleans()
+)
+Java_Comment_strategy = st.builds(
+    Java_Comment,
+    content=
+        safe_text,
+    prefixOfParent=
+        st.booleans(),
+    enclosedByParent=
+        st.booleans()
+)
+Java_Statement_strategy = st.builds(
+    Java_Statement,
+)
+Java_TagElement_strategy = st.builds(
+    Java_TagElement,
     tagName=
         safe_text
 )
-Java::AnonymousClassDeclaration_strategy = st.builds(
-    Java::AnonymousClassDeclaration,
-)
-Java::ImportDeclaration_strategy = st.builds(
-    Java::ImportDeclaration,
-    static=
-        st.booleans()
-)
-Java::AbstractVariablesContainer_strategy = st.builds(
-    Java::AbstractVariablesContainer,
-)
-Java::Statement_strategy = st.builds(
-    Java::Statement,
-)
-Java::MethodRef_strategy = st.builds(
-    Java::MethodRef,
-)
-Java::Modifier_strategy = st.builds(
-    Java::Modifier,
-    strictfp=
-        st.booleans(),
-    visibility=
-        safe_text,
-    static=
-        st.booleans(),
-    native=
-        st.booleans(),
-    synchronized=
-        st.booleans(),
-    transient=
-        st.booleans(),
-    inheritance=
-        safe_text,
-    volatile=
-        st.booleans()
-)
-Java::NamedElement_strategy = st.builds(
-    Java::NamedElement,
-    proxy=
-        st.booleans(),
-    name=
+Java_TextElement_strategy = st.builds(
+    Java_TextElement,
+    text=
         safe_text
 )
-Java::MethodRefParameter_strategy = st.builds(
-    Java::MethodRefParameter,
+Java_MethodRefParameter_strategy = st.builds(
+    Java_MethodRefParameter,
     name=
         safe_text,
     varargs=
         st.booleans()
 )
-Java::NamespaceAccess_strategy = st.builds(
-    Java::NamespaceAccess,
+Java_MemberRef_strategy = st.builds(
+    Java_MemberRef,
 )
-Java::Comment_strategy = st.builds(
-    Java::Comment,
-    prefixOfParent=
+Java_Modifier_strategy = st.builds(
+    Java_Modifier,
+    inheritance=
+        safe_text,
+    strictfp=
         st.booleans(),
-    enclosedByParent=
+    volatile=
         st.booleans(),
-    content=
-        safe_text
+    transient=
+        st.booleans(),
+    synchronized=
+        st.booleans(),
+    native=
+        st.booleans(),
+    visibility=
+        safe_text,
+    static=
+        st.booleans()
 )
-Java::TextElement_strategy = st.builds(
-    Java::TextElement,
-    text=
-        safe_text
+Java_AnonymousClassDeclaration_strategy = st.builds(
+    Java_AnonymousClassDeclaration,
 )
-Java::Expression_strategy = st.builds(
-    Java::Expression,
+Java_MethodRef_strategy = st.builds(
+    Java_MethodRef,
 )
-Java::AbstractMethodInvocation_strategy = st.builds(
-    Java::AbstractMethodInvocation,
+Java_Expression_strategy = st.builds(
+    Java_Expression,
 )
-Java::Block_strategy = st.builds(
-    Java::Block,
+Java_AbstractVariablesContainer_strategy = st.builds(
+    Java_AbstractVariablesContainer,
+)
+Java_NamespaceAccess_strategy = st.builds(
+    Java_NamespaceAccess,
+)
+Java_AbstractMethodInvocation_strategy = st.builds(
+    Java_AbstractMethodInvocation,
+)
+Java_Block_strategy = st.builds(
+    Java_Block,
 )
 BodyDeclaration_strategy = st.builds(
     BodyDeclaration,
 )
-Java::AnnotationTypeMemberDeclaration_strategy = st.builds(
-    Java::AnnotationTypeMemberDeclaration,
+Java_EnumConstantDeclaration_strategy = st.builds(
+    Java_EnumConstantDeclaration,
 )
-Java::AbstractTypeDeclaration_strategy = st.builds(
-    Java::AbstractTypeDeclaration,
+Java_AnnotationTypeMemberDeclaration_strategy = st.builds(
+    Java_AnnotationTypeMemberDeclaration,
 )
-Java::EnumConstantDeclaration_strategy = st.builds(
-    Java::EnumConstantDeclaration,
+Java_FieldDeclaration_strategy = st.builds(
+    Java_FieldDeclaration,
 )
-Java::Initializer_strategy = st.builds(
-    Java::Initializer,
+Java_Initializer_strategy = st.builds(
+    Java_Initializer,
 )
-Java::FieldDeclaration_strategy = st.builds(
-    Java::FieldDeclaration,
+Java_AbstractTypeDeclaration_strategy = st.builds(
+    Java_AbstractTypeDeclaration,
 )
-Java::AbstractMethodDeclaration_strategy = st.builds(
-    Java::AbstractMethodDeclaration,
+Java_AbstractMethodDeclaration_strategy = st.builds(
+    Java_AbstractMethodDeclaration,
 )
+
+@given(instance=AnnotationTypeMemberDeclaration_strategy)
+@settings(max_examples=50)
+def test_annotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, AnnotationTypeMemberDeclaration)
+
+@given(instance=UnresolvedItem_strategy)
+@settings(max_examples=50)
+def test_unresolveditem_instantiation(instance):
+    assert isinstance(instance, UnresolvedItem)
+
+@given(instance=Java_UnresolvedAnnotationTypeMemberDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedannotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedAnnotationTypeMemberDeclaration)
+
+@given(instance=AnnotationTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_annotationtypedeclaration_instantiation(instance):
+    assert isinstance(instance, AnnotationTypeDeclaration)
+
+@given(instance=Java_UnresolvedAnnotationDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedannotationdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedAnnotationDeclaration)
+
+@given(instance=AbstractTypeQualifiedExpression_strategy)
+@settings(max_examples=50)
+def test_abstracttypequalifiedexpression_instantiation(instance):
+    assert isinstance(instance, AbstractTypeQualifiedExpression)
+
+@given(instance=Java_ThisExpression_strategy)
+@settings(max_examples=50)
+def test_java_thisexpression_instantiation(instance):
+    assert isinstance(instance, Java_ThisExpression)
+
+@given(instance=Java_SuperFieldAccess_strategy)
+@settings(max_examples=50)
+def test_java_superfieldaccess_instantiation(instance):
+    assert isinstance(instance, Java_SuperFieldAccess)
+
+@given(instance=PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_primitivetype_instantiation(instance):
+    assert isinstance(instance, PrimitiveType)
+
+@given(instance=Java_PrimitiveTypeChar_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypechar_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeChar)
+
+@given(instance=Java_PrimitiveTypeShort_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypeshort_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeShort)
+
+@given(instance=Java_PrimitiveTypeDouble_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypedouble_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeDouble)
+
+@given(instance=Java_PrimitiveTypeVoid_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypevoid_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeVoid)
+
+@given(instance=Java_PrimitiveTypeLong_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypelong_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeLong)
+
+@given(instance=Java_PrimitiveTypeByte_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypebyte_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeByte)
+
+@given(instance=Java_PrimitiveTypeInt_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypeint_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeInt)
+
+@given(instance=Java_PrimitiveTypeFloat_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypefloat_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeFloat)
+
+@given(instance=Java_PrimitiveTypeBoolean_strategy)
+@settings(max_examples=50)
+def test_java_primitivetypeboolean_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveTypeBoolean)
+
+@given(instance=NamespaceAccess_strategy)
+@settings(max_examples=50)
+def test_namespaceaccess_instantiation(instance):
+    assert isinstance(instance, NamespaceAccess)
+
+@given(instance=Java_PackageAccess_strategy)
+@settings(max_examples=50)
+def test_java_packageaccess_instantiation(instance):
+    assert isinstance(instance, Java_PackageAccess)
+
+@given(instance=Java_Model_strategy)
+@settings(max_examples=50)
+def test_java_model_instantiation(instance):
+    assert isinstance(instance, Java_Model)
+
+
+
+@given(instance=Java_Model_strategy)
+def test_java_model_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Java_ManifestEntry_strategy)
+@settings(max_examples=50)
+def test_java_manifestentry_instantiation(instance):
+    assert isinstance(instance, Java_ManifestEntry)
+
+
+
+@given(instance=Java_ManifestEntry_strategy)
+def test_java_manifestentry_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Java_ManifestAttribute_strategy)
+@settings(max_examples=50)
+def test_java_manifestattribute_instantiation(instance):
+    assert isinstance(instance, Java_ManifestAttribute)
+
+
+
+@given(instance=Java_ManifestAttribute_strategy)
+def test_java_manifestattribute_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+
+
+@given(instance=Java_ManifestAttribute_strategy)
+def test_java_manifestattribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=MethodDeclaration_strategy)
+@settings(max_examples=50)
+def test_methoddeclaration_instantiation(instance):
+    assert isinstance(instance, MethodDeclaration)
+
+@given(instance=Java_UnresolvedMethodDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedMethodDeclaration)
+
+@given(instance=LabeledStatement_strategy)
+@settings(max_examples=50)
+def test_labeledstatement_instantiation(instance):
+    assert isinstance(instance, LabeledStatement)
+
+@given(instance=Java_UnresolvedLabeledStatement_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedlabeledstatement_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedLabeledStatement)
+
+@given(instance=InterfaceDeclaration_strategy)
+@settings(max_examples=50)
+def test_interfacedeclaration_instantiation(instance):
+    assert isinstance(instance, InterfaceDeclaration)
+
+@given(instance=Java_UnresolvedInterfaceDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedinterfacedeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedInterfaceDeclaration)
+
+@given(instance=EnumDeclaration_strategy)
+@settings(max_examples=50)
+def test_enumdeclaration_instantiation(instance):
+    assert isinstance(instance, EnumDeclaration)
+
+@given(instance=Java_UnresolvedEnumDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedenumdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedEnumDeclaration)
+
+@given(instance=VariableDeclarationFragment_strategy)
+@settings(max_examples=50)
+def test_variabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, VariableDeclarationFragment)
+
+@given(instance=Java_UnresolvedVariableDeclarationFragment_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedvariabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedVariableDeclarationFragment)
+
+@given(instance=SingleVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_singlevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, SingleVariableDeclaration)
+
+@given(instance=Java_UnresolvedSingleVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedsinglevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedSingleVariableDeclaration)
+
+@given(instance=ClassDeclaration_strategy)
+@settings(max_examples=50)
+def test_classdeclaration_instantiation(instance):
+    assert isinstance(instance, ClassDeclaration)
+
+@given(instance=Java_UnresolvedClassDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_unresolvedclassdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedClassDeclaration)
 
 @given(instance=VariableDeclaration_strategy)
 @settings(max_examples=50)
@@ -3386,574 +3603,321 @@ def test_abstractvariablescontainer_instantiation(instance):
 def test_typedeclaration_instantiation(instance):
     assert isinstance(instance, TypeDeclaration)
 
-@given(instance=Java::ClassDeclaration_strategy)
+@given(instance=Java_InterfaceDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::classdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::ClassDeclaration)
+def test_java_interfacedeclaration_instantiation(instance):
+    assert isinstance(instance, Java_InterfaceDeclaration)
+
+@given(instance=Java_ClassDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_classdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_ClassDeclaration)
 
 @given(instance=AbstractMethodDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstractmethoddeclaration_instantiation(instance):
     assert isinstance(instance, AbstractMethodDeclaration)
 
-@given(instance=MethodDeclaration_strategy)
+@given(instance=Java_MethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_methoddeclaration_instantiation(instance):
-    assert isinstance(instance, MethodDeclaration)
-
-@given(instance=LabeledStatement_strategy)
-@settings(max_examples=50)
-def test_labeledstatement_instantiation(instance):
-    assert isinstance(instance, LabeledStatement)
-
-@given(instance=InterfaceDeclaration_strategy)
-@settings(max_examples=50)
-def test_interfacedeclaration_instantiation(instance):
-    assert isinstance(instance, InterfaceDeclaration)
-
-@given(instance=EnumDeclaration_strategy)
-@settings(max_examples=50)
-def test_enumdeclaration_instantiation(instance):
-    assert isinstance(instance, EnumDeclaration)
-
-@given(instance=VariableDeclarationFragment_strategy)
-@settings(max_examples=50)
-def test_variabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, VariableDeclarationFragment)
-
-@given(instance=SingleVariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_singlevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, SingleVariableDeclaration)
-
-@given(instance=ClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_classdeclaration_instantiation(instance):
-    assert isinstance(instance, ClassDeclaration)
-
-@given(instance=AnnotationTypeMemberDeclaration_strategy)
-@settings(max_examples=50)
-def test_annotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, AnnotationTypeMemberDeclaration)
-
-@given(instance=UnresolvedItem_strategy)
-@settings(max_examples=50)
-def test_unresolveditem_instantiation(instance):
-    assert isinstance(instance, UnresolvedItem)
-
-@given(instance=Java::UnresolvedAnnotationTypeMemberDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedannotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedAnnotationTypeMemberDeclaration)
-
-@given(instance=Java::UnresolvedEnumDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedenumdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedEnumDeclaration)
-
-@given(instance=Java::UnresolvedInterfaceDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedinterfacedeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedInterfaceDeclaration)
-
-@given(instance=Java::UnresolvedVariableDeclarationFragment_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedvariabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedVariableDeclarationFragment)
-
-@given(instance=Java::UnresolvedSingleVariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedsinglevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedSingleVariableDeclaration)
-
-@given(instance=Java::UnresolvedLabeledStatement_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedlabeledstatement_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedLabeledStatement)
-
-@given(instance=Java::UnresolvedMethodDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedMethodDeclaration)
-
-@given(instance=Java::UnresolvedClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedclassdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedClassDeclaration)
-
-@given(instance=AnnotationTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_annotationtypedeclaration_instantiation(instance):
-    assert isinstance(instance, AnnotationTypeDeclaration)
-
-@given(instance=Java::UnresolvedAnnotationDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::unresolvedannotationdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedAnnotationDeclaration)
-
-@given(instance=AbstractTypeQualifiedExpression_strategy)
-@settings(max_examples=50)
-def test_abstracttypequalifiedexpression_instantiation(instance):
-    assert isinstance(instance, AbstractTypeQualifiedExpression)
-
-@given(instance=Java::ThisExpression_strategy)
-@settings(max_examples=50)
-def test_java::thisexpression_instantiation(instance):
-    assert isinstance(instance, Java::ThisExpression)
-
-@given(instance=Java::SuperFieldAccess_strategy)
-@settings(max_examples=50)
-def test_java::superfieldaccess_instantiation(instance):
-    assert isinstance(instance, Java::SuperFieldAccess)
-
-@given(instance=PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_primitivetype_instantiation(instance):
-    assert isinstance(instance, PrimitiveType)
-
-@given(instance=Java::PrimitiveTypeShort_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypeshort_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeShort)
-
-@given(instance=Java::PrimitiveTypeVoid_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypevoid_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeVoid)
-
-@given(instance=Java::PrimitiveTypeInt_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypeint_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeInt)
-
-@given(instance=Java::PrimitiveTypeLong_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypelong_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeLong)
-
-@given(instance=Java::PrimitiveTypeDouble_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypedouble_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeDouble)
-
-@given(instance=Java::PrimitiveTypeFloat_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypefloat_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeFloat)
-
-@given(instance=Java::PrimitiveTypeChar_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypechar_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeChar)
-
-@given(instance=Java::PrimitiveTypeByte_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypebyte_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeByte)
-
-@given(instance=Java::PrimitiveTypeBoolean_strategy)
-@settings(max_examples=50)
-def test_java::primitivetypeboolean_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveTypeBoolean)
-
-@given(instance=NamespaceAccess_strategy)
-@settings(max_examples=50)
-def test_namespaceaccess_instantiation(instance):
-    assert isinstance(instance, NamespaceAccess)
-
-@given(instance=Java::PackageAccess_strategy)
-@settings(max_examples=50)
-def test_java::packageaccess_instantiation(instance):
-    assert isinstance(instance, Java::PackageAccess)
-
-@given(instance=Java::Model_strategy)
-@settings(max_examples=50)
-def test_java::model_instantiation(instance):
-    assert isinstance(instance, Java::Model)
-
-@given(instance=Java::Model_strategy)
-def test_java::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_java_methoddeclaration_instantiation(instance):
+    assert isinstance(instance, Java_MethodDeclaration)
 
 
-@given(instance=Java::Model_strategy)
-def test_java::model_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=Java::MethodDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::methoddeclaration_instantiation(instance):
-    assert isinstance(instance, Java::MethodDeclaration)
-
-@given(instance=Java::MethodDeclaration_strategy)
-def test_java::methoddeclaration_extraArrayDimensions_type(instance):
-    assert isinstance(instance.extraArrayDimensions, int)
-
-
-@given(instance=Java::MethodDeclaration_strategy)
-def test_java::methoddeclaration_extraArrayDimensions_setter(instance):
+@given(instance=Java_MethodDeclaration_strategy)
+def test_java_methoddeclaration_extraArrayDimensions_setter(instance):
     original = instance.extraArrayDimensions
     instance.extraArrayDimensions = original
     assert instance.extraArrayDimensions == original
 
-@given(instance=Java::ManifestEntry_strategy)
+@given(instance=Java_ConstructorDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::manifestentry_instantiation(instance):
-    assert isinstance(instance, Java::ManifestEntry)
-
-@given(instance=Java::ManifestEntry_strategy)
-def test_java::manifestentry_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Java::ManifestEntry_strategy)
-def test_java::manifestentry_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Java::ManifestAttribute_strategy)
-@settings(max_examples=50)
-def test_java::manifestattribute_instantiation(instance):
-    assert isinstance(instance, Java::ManifestAttribute)
-
-@given(instance=Java::ManifestAttribute_strategy)
-def test_java::manifestattribute_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=Java::ManifestAttribute_strategy)
-def test_java::manifestattribute_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=Java::ManifestAttribute_strategy)
-def test_java::manifestattribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=Java::ManifestAttribute_strategy)
-def test_java::manifestattribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Java::InterfaceDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::interfacedeclaration_instantiation(instance):
-    assert isinstance(instance, Java::InterfaceDeclaration)
-
-@given(instance=Java::ConstructorDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::constructordeclaration_instantiation(instance):
-    assert isinstance(instance, Java::ConstructorDeclaration)
+def test_java_constructordeclaration_instantiation(instance):
+    assert isinstance(instance, Java_ConstructorDeclaration)
 
 @given(instance=AbstractMethodInvocation_strategy)
 @settings(max_examples=50)
 def test_abstractmethodinvocation_instantiation(instance):
     assert isinstance(instance, AbstractMethodInvocation)
 
-@given(instance=Java::SuperMethodInvocation_strategy)
+@given(instance=Java_SuperMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_java::supermethodinvocation_instantiation(instance):
-    assert isinstance(instance, Java::SuperMethodInvocation)
+def test_java_supermethodinvocation_instantiation(instance):
+    assert isinstance(instance, Java_SuperMethodInvocation)
 
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=Java::LineComment_strategy)
+@given(instance=Java_LineComment_strategy)
 @settings(max_examples=50)
-def test_java::linecomment_instantiation(instance):
-    assert isinstance(instance, Java::LineComment)
+def test_java_linecomment_instantiation(instance):
+    assert isinstance(instance, Java_LineComment)
 
-@given(instance=Java::Javadoc_strategy)
+@given(instance=Java_Javadoc_strategy)
 @settings(max_examples=50)
-def test_java::javadoc_instantiation(instance):
-    assert isinstance(instance, Java::Javadoc)
+def test_java_javadoc_instantiation(instance):
+    assert isinstance(instance, Java_Javadoc)
 
-@given(instance=Java::BlockComment_strategy)
+@given(instance=Java_BlockComment_strategy)
 @settings(max_examples=50)
-def test_java::blockcomment_instantiation(instance):
-    assert isinstance(instance, Java::BlockComment)
+def test_java_blockcomment_instantiation(instance):
+    assert isinstance(instance, Java_BlockComment)
 
-@given(instance=Java::VariableDeclarationFragment_strategy)
+@given(instance=Java_VariableDeclarationFragment_strategy)
 @settings(max_examples=50)
-def test_java::variabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, Java::VariableDeclarationFragment)
+def test_java_variabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, Java_VariableDeclarationFragment)
 
 @given(instance=AbstractTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstracttypedeclaration_instantiation(instance):
     assert isinstance(instance, AbstractTypeDeclaration)
 
-@given(instance=Java::UnresolvedTypeDeclaration_strategy)
+@given(instance=Java_UnresolvedTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::unresolvedtypedeclaration_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedTypeDeclaration)
+def test_java_unresolvedtypedeclaration_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedTypeDeclaration)
 
-@given(instance=Java::TypeDeclaration_strategy)
+@given(instance=Java_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::typedeclaration_instantiation(instance):
-    assert isinstance(instance, Java::TypeDeclaration)
+def test_java_typedeclaration_instantiation(instance):
+    assert isinstance(instance, Java_TypeDeclaration)
 
-@given(instance=Java::EnumDeclaration_strategy)
+@given(instance=Java_EnumDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::enumdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::EnumDeclaration)
+def test_java_enumdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_EnumDeclaration)
 
-@given(instance=Java::AnnotationTypeDeclaration_strategy)
+@given(instance=Java_AnnotationTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::annotationtypedeclaration_instantiation(instance):
-    assert isinstance(instance, Java::AnnotationTypeDeclaration)
+def test_java_annotationtypedeclaration_instantiation(instance):
+    assert isinstance(instance, Java_AnnotationTypeDeclaration)
 
-@given(instance=Java::ASTNode_strategy)
+@given(instance=Java_ASTNode_strategy)
 @settings(max_examples=50)
-def test_java::astnode_instantiation(instance):
-    assert isinstance(instance, Java::ASTNode)
+def test_java_astnode_instantiation(instance):
+    assert isinstance(instance, Java_ASTNode)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=Java::CatchClause_strategy)
+@given(instance=Java_VariableDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_java::catchclause_instantiation(instance):
-    assert isinstance(instance, Java::CatchClause)
-
-@given(instance=Java::VariableDeclarationStatement_strategy)
-@settings(max_examples=50)
-def test_java::variabledeclarationstatement_instantiation(instance):
-    assert isinstance(instance, Java::VariableDeclarationStatement)
-
-@given(instance=Java::VariableDeclarationStatement_strategy)
-def test_java::variabledeclarationstatement_extraArrayDimensions_type(instance):
-    assert isinstance(instance.extraArrayDimensions, int)
+def test_java_variabledeclarationstatement_instantiation(instance):
+    assert isinstance(instance, Java_VariableDeclarationStatement)
 
 
-@given(instance=Java::VariableDeclarationStatement_strategy)
-def test_java::variabledeclarationstatement_extraArrayDimensions_setter(instance):
+
+@given(instance=Java_VariableDeclarationStatement_strategy)
+def test_java_variabledeclarationstatement_extraArrayDimensions_setter(instance):
     original = instance.extraArrayDimensions
     instance.extraArrayDimensions = original
     assert instance.extraArrayDimensions == original
 
-@given(instance=Java::EnhancedForStatement_strategy)
+@given(instance=Java_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_java::enhancedforstatement_instantiation(instance):
-    assert isinstance(instance, Java::EnhancedForStatement)
+def test_java_throwstatement_instantiation(instance):
+    assert isinstance(instance, Java_ThrowStatement)
 
-@given(instance=Java::DoStatement_strategy)
+@given(instance=Java_EnhancedForStatement_strategy)
 @settings(max_examples=50)
-def test_java::dostatement_instantiation(instance):
-    assert isinstance(instance, Java::DoStatement)
+def test_java_enhancedforstatement_instantiation(instance):
+    assert isinstance(instance, Java_EnhancedForStatement)
 
-@given(instance=Java::ForStatement_strategy)
+@given(instance=Java_CatchClause_strategy)
 @settings(max_examples=50)
-def test_java::forstatement_instantiation(instance):
-    assert isinstance(instance, Java::ForStatement)
+def test_java_catchclause_instantiation(instance):
+    assert isinstance(instance, Java_CatchClause)
 
-@given(instance=Java::BreakStatement_strategy)
+@given(instance=Java_TypeDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_java::breakstatement_instantiation(instance):
-    assert isinstance(instance, Java::BreakStatement)
+def test_java_typedeclarationstatement_instantiation(instance):
+    assert isinstance(instance, Java_TypeDeclarationStatement)
 
-@given(instance=Java::EmptyStatement_strategy)
+@given(instance=Java_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_java::emptystatement_instantiation(instance):
-    assert isinstance(instance, Java::EmptyStatement)
+def test_java_expressionstatement_instantiation(instance):
+    assert isinstance(instance, Java_ExpressionStatement)
 
-@given(instance=Java::ReturnStatement_strategy)
+@given(instance=Java_SuperConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_java::returnstatement_instantiation(instance):
-    assert isinstance(instance, Java::ReturnStatement)
+def test_java_superconstructorinvocation_instantiation(instance):
+    assert isinstance(instance, Java_SuperConstructorInvocation)
 
-@given(instance=Java::TypeDeclarationStatement_strategy)
+@given(instance=Java_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_java::typedeclarationstatement_instantiation(instance):
-    assert isinstance(instance, Java::TypeDeclarationStatement)
+def test_java_switchstatement_instantiation(instance):
+    assert isinstance(instance, Java_SwitchStatement)
 
-@given(instance=Java::ExpressionStatement_strategy)
+@given(instance=Java_SwitchCase_strategy)
 @settings(max_examples=50)
-def test_java::expressionstatement_instantiation(instance):
-    assert isinstance(instance, Java::ExpressionStatement)
-
-@given(instance=Java::ConstructorInvocation_strategy)
-@settings(max_examples=50)
-def test_java::constructorinvocation_instantiation(instance):
-    assert isinstance(instance, Java::ConstructorInvocation)
-
-@given(instance=Java::TryStatement_strategy)
-@settings(max_examples=50)
-def test_java::trystatement_instantiation(instance):
-    assert isinstance(instance, Java::TryStatement)
-
-@given(instance=Java::ContinueStatement_strategy)
-@settings(max_examples=50)
-def test_java::continuestatement_instantiation(instance):
-    assert isinstance(instance, Java::ContinueStatement)
-
-@given(instance=Java::WhileStatement_strategy)
-@settings(max_examples=50)
-def test_java::whilestatement_instantiation(instance):
-    assert isinstance(instance, Java::WhileStatement)
-
-@given(instance=Java::IfStatement_strategy)
-@settings(max_examples=50)
-def test_java::ifstatement_instantiation(instance):
-    assert isinstance(instance, Java::IfStatement)
-
-@given(instance=Java::SuperConstructorInvocation_strategy)
-@settings(max_examples=50)
-def test_java::superconstructorinvocation_instantiation(instance):
-    assert isinstance(instance, Java::SuperConstructorInvocation)
-
-@given(instance=Java::SwitchStatement_strategy)
-@settings(max_examples=50)
-def test_java::switchstatement_instantiation(instance):
-    assert isinstance(instance, Java::SwitchStatement)
-
-@given(instance=Java::ThrowStatement_strategy)
-@settings(max_examples=50)
-def test_java::throwstatement_instantiation(instance):
-    assert isinstance(instance, Java::ThrowStatement)
-
-@given(instance=Java::SynchronizedStatement_strategy)
-@settings(max_examples=50)
-def test_java::synchronizedstatement_instantiation(instance):
-    assert isinstance(instance, Java::SynchronizedStatement)
-
-@given(instance=Java::SwitchCase_strategy)
-@settings(max_examples=50)
-def test_java::switchcase_instantiation(instance):
-    assert isinstance(instance, Java::SwitchCase)
-
-@given(instance=Java::SwitchCase_strategy)
-def test_java::switchcase_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_java_switchcase_instantiation(instance):
+    assert isinstance(instance, Java_SwitchCase)
 
 
-@given(instance=Java::SwitchCase_strategy)
-def test_java::switchcase_default_setter(instance):
+
+@given(instance=Java_SwitchCase_strategy)
+def test_java_switchcase_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=Java::AssertStatement_strategy)
+@given(instance=Java_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_java::assertstatement_instantiation(instance):
-    assert isinstance(instance, Java::AssertStatement)
+def test_java_emptystatement_instantiation(instance):
+    assert isinstance(instance, Java_EmptyStatement)
 
-@given(instance=Java::Manifest_strategy)
+@given(instance=Java_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_java::manifest_instantiation(instance):
-    assert isinstance(instance, Java::Manifest)
+def test_java_returnstatement_instantiation(instance):
+    assert isinstance(instance, Java_ReturnStatement)
+
+@given(instance=Java_SynchronizedStatement_strategy)
+@settings(max_examples=50)
+def test_java_synchronizedstatement_instantiation(instance):
+    assert isinstance(instance, Java_SynchronizedStatement)
+
+@given(instance=Java_ContinueStatement_strategy)
+@settings(max_examples=50)
+def test_java_continuestatement_instantiation(instance):
+    assert isinstance(instance, Java_ContinueStatement)
+
+@given(instance=Java_DoStatement_strategy)
+@settings(max_examples=50)
+def test_java_dostatement_instantiation(instance):
+    assert isinstance(instance, Java_DoStatement)
+
+@given(instance=Java_ConstructorInvocation_strategy)
+@settings(max_examples=50)
+def test_java_constructorinvocation_instantiation(instance):
+    assert isinstance(instance, Java_ConstructorInvocation)
+
+@given(instance=Java_ForStatement_strategy)
+@settings(max_examples=50)
+def test_java_forstatement_instantiation(instance):
+    assert isinstance(instance, Java_ForStatement)
+
+@given(instance=Java_BreakStatement_strategy)
+@settings(max_examples=50)
+def test_java_breakstatement_instantiation(instance):
+    assert isinstance(instance, Java_BreakStatement)
+
+@given(instance=Java_WhileStatement_strategy)
+@settings(max_examples=50)
+def test_java_whilestatement_instantiation(instance):
+    assert isinstance(instance, Java_WhileStatement)
+
+@given(instance=Java_IfStatement_strategy)
+@settings(max_examples=50)
+def test_java_ifstatement_instantiation(instance):
+    assert isinstance(instance, Java_IfStatement)
+
+@given(instance=Java_TryStatement_strategy)
+@settings(max_examples=50)
+def test_java_trystatement_instantiation(instance):
+    assert isinstance(instance, Java_TryStatement)
+
+@given(instance=Java_AssertStatement_strategy)
+@settings(max_examples=50)
+def test_java_assertstatement_instantiation(instance):
+    assert isinstance(instance, Java_AssertStatement)
+
+@given(instance=Java_Manifest_strategy)
+@settings(max_examples=50)
+def test_java_manifest_instantiation(instance):
+    assert isinstance(instance, Java_Manifest)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Java::UnresolvedItem_strategy)
+@given(instance=Java_UnresolvedItem_strategy)
 @settings(max_examples=50)
-def test_java::unresolveditem_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedItem)
+def test_java_unresolveditem_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedItem)
 
-@given(instance=Java::VariableDeclaration_strategy)
+@given(instance=Java_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_java::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, Java::VariableDeclaration)
-
-@given(instance=Java::VariableDeclaration_strategy)
-def test_java::variabledeclaration_extraArrayDimensions_type(instance):
-    assert isinstance(instance.extraArrayDimensions, int)
+def test_java_compilationunit_instantiation(instance):
+    assert isinstance(instance, Java_CompilationUnit)
 
 
-@given(instance=Java::VariableDeclaration_strategy)
-def test_java::variabledeclaration_extraArrayDimensions_setter(instance):
+
+@given(instance=Java_CompilationUnit_strategy)
+def test_java_compilationunit_originalFilePath_setter(instance):
+    original = instance.originalFilePath
+    instance.originalFilePath = original
+    assert instance.originalFilePath == original
+
+@given(instance=Java_ClassFile_strategy)
+@settings(max_examples=50)
+def test_java_classfile_instantiation(instance):
+    assert isinstance(instance, Java_ClassFile)
+
+
+
+@given(instance=Java_ClassFile_strategy)
+def test_java_classfile_originalFilePath_setter(instance):
+    original = instance.originalFilePath
+    instance.originalFilePath = original
+    assert instance.originalFilePath == original
+
+@given(instance=Java_Type_strategy)
+@settings(max_examples=50)
+def test_java_type_instantiation(instance):
+    assert isinstance(instance, Java_Type)
+
+@given(instance=Java_LabeledStatement_strategy)
+@settings(max_examples=50)
+def test_java_labeledstatement_instantiation(instance):
+    assert isinstance(instance, Java_LabeledStatement)
+
+@given(instance=Java_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, Java_VariableDeclaration)
+
+
+
+@given(instance=Java_VariableDeclaration_strategy)
+def test_java_variabledeclaration_extraArrayDimensions_setter(instance):
     original = instance.extraArrayDimensions
     instance.extraArrayDimensions = original
     assert instance.extraArrayDimensions == original
 
-@given(instance=Java::Type_strategy)
+@given(instance=Java_Archive_strategy)
 @settings(max_examples=50)
-def test_java::type_instantiation(instance):
-    assert isinstance(instance, Java::Type)
-
-@given(instance=Java::LabeledStatement_strategy)
-@settings(max_examples=50)
-def test_java::labeledstatement_instantiation(instance):
-    assert isinstance(instance, Java::LabeledStatement)
-
-@given(instance=Java::ClassFile_strategy)
-@settings(max_examples=50)
-def test_java::classfile_instantiation(instance):
-    assert isinstance(instance, Java::ClassFile)
-
-@given(instance=Java::ClassFile_strategy)
-def test_java::classfile_originalFilePath_type(instance):
-    assert isinstance(instance.originalFilePath, str)
+def test_java_archive_instantiation(instance):
+    assert isinstance(instance, Java_Archive)
 
 
-@given(instance=Java::ClassFile_strategy)
-def test_java::classfile_originalFilePath_setter(instance):
+
+@given(instance=Java_Archive_strategy)
+def test_java_archive_originalFilePath_setter(instance):
     original = instance.originalFilePath
     instance.originalFilePath = original
     assert instance.originalFilePath == original
 
-@given(instance=Java::CompilationUnit_strategy)
+@given(instance=Java_AnnotationMemberValuePair_strategy)
 @settings(max_examples=50)
-def test_java::compilationunit_instantiation(instance):
-    assert isinstance(instance, Java::CompilationUnit)
+def test_java_annotationmembervaluepair_instantiation(instance):
+    assert isinstance(instance, Java_AnnotationMemberValuePair)
 
-@given(instance=Java::CompilationUnit_strategy)
-def test_java::compilationunit_originalFilePath_type(instance):
-    assert isinstance(instance.originalFilePath, str)
-
-
-@given(instance=Java::CompilationUnit_strategy)
-def test_java::compilationunit_originalFilePath_setter(instance):
-    original = instance.originalFilePath
-    instance.originalFilePath = original
-    assert instance.originalFilePath == original
-
-@given(instance=Java::Archive_strategy)
+@given(instance=Java_SingleVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::archive_instantiation(instance):
-    assert isinstance(instance, Java::Archive)
-
-@given(instance=Java::Archive_strategy)
-def test_java::archive_originalFilePath_type(instance):
-    assert isinstance(instance.originalFilePath, str)
+def test_java_singlevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, Java_SingleVariableDeclaration)
 
 
-@given(instance=Java::Archive_strategy)
-def test_java::archive_originalFilePath_setter(instance):
-    original = instance.originalFilePath
-    instance.originalFilePath = original
-    assert instance.originalFilePath == original
 
-@given(instance=Java::AnnotationMemberValuePair_strategy)
-@settings(max_examples=50)
-def test_java::annotationmembervaluepair_instantiation(instance):
-    assert isinstance(instance, Java::AnnotationMemberValuePair)
-
-@given(instance=Java::SingleVariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::singlevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, Java::SingleVariableDeclaration)
-
-@given(instance=Java::SingleVariableDeclaration_strategy)
-def test_java::singlevariabledeclaration_varargs_type(instance):
-    assert isinstance(instance.varargs, bool)
-
-
-@given(instance=Java::SingleVariableDeclaration_strategy)
-def test_java::singlevariabledeclaration_varargs_setter(instance):
+@given(instance=Java_SingleVariableDeclaration_strategy)
+def test_java_singlevariabledeclaration_varargs_setter(instance):
     original = instance.varargs
     instance.varargs = original
     assert instance.varargs == original
@@ -3963,610 +3927,526 @@ def test_java::singlevariabledeclaration_varargs_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=Java::Assignment_strategy)
+@given(instance=Java_CharacterLiteral_strategy)
 @settings(max_examples=50)
-def test_java::assignment_instantiation(instance):
-    assert isinstance(instance, Java::Assignment)
-
-@given(instance=Java::Assignment_strategy)
-def test_java::assignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_java_characterliteral_instantiation(instance):
+    assert isinstance(instance, Java_CharacterLiteral)
 
 
-@given(instance=Java::Assignment_strategy)
-def test_java::assignment_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=Java::CharacterLiteral_strategy)
-@settings(max_examples=50)
-def test_java::characterliteral_instantiation(instance):
-    assert isinstance(instance, Java::CharacterLiteral)
-
-@given(instance=Java::CharacterLiteral_strategy)
-def test_java::characterliteral_escapedValue_type(instance):
-    assert isinstance(instance.escapedValue, str)
-
-
-@given(instance=Java::CharacterLiteral_strategy)
-def test_java::characterliteral_escapedValue_setter(instance):
+@given(instance=Java_CharacterLiteral_strategy)
+def test_java_characterliteral_escapedValue_setter(instance):
     original = instance.escapedValue
     instance.escapedValue = original
     assert instance.escapedValue == original
 
-@given(instance=Java::MethodInvocation_strategy)
+@given(instance=Java_ClassInstanceCreation_strategy)
 @settings(max_examples=50)
-def test_java::methodinvocation_instantiation(instance):
-    assert isinstance(instance, Java::MethodInvocation)
+def test_java_classinstancecreation_instantiation(instance):
+    assert isinstance(instance, Java_ClassInstanceCreation)
 
-@given(instance=Java::VariableDeclarationExpression_strategy)
+@given(instance=Java_VariableDeclarationExpression_strategy)
 @settings(max_examples=50)
-def test_java::variabledeclarationexpression_instantiation(instance):
-    assert isinstance(instance, Java::VariableDeclarationExpression)
+def test_java_variabledeclarationexpression_instantiation(instance):
+    assert isinstance(instance, Java_VariableDeclarationExpression)
 
-@given(instance=Java::ClassInstanceCreation_strategy)
+@given(instance=Java_TypeAccess_strategy)
 @settings(max_examples=50)
-def test_java::classinstancecreation_instantiation(instance):
-    assert isinstance(instance, Java::ClassInstanceCreation)
+def test_java_typeaccess_instantiation(instance):
+    assert isinstance(instance, Java_TypeAccess)
 
-@given(instance=Java::ConditionalExpression_strategy)
+@given(instance=Java_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_java::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, Java::ConditionalExpression)
-
-@given(instance=Java::PostfixExpression_strategy)
-@settings(max_examples=50)
-def test_java::postfixexpression_instantiation(instance):
-    assert isinstance(instance, Java::PostfixExpression)
-
-@given(instance=Java::PostfixExpression_strategy)
-def test_java::postfixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_java_numberliteral_instantiation(instance):
+    assert isinstance(instance, Java_NumberLiteral)
 
 
-@given(instance=Java::PostfixExpression_strategy)
-def test_java::postfixexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=Java::PrefixExpression_strategy)
-@settings(max_examples=50)
-def test_java::prefixexpression_instantiation(instance):
-    assert isinstance(instance, Java::PrefixExpression)
-
-@given(instance=Java::PrefixExpression_strategy)
-def test_java::prefixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=Java::PrefixExpression_strategy)
-def test_java::prefixexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=Java::FieldAccess_strategy)
-@settings(max_examples=50)
-def test_java::fieldaccess_instantiation(instance):
-    assert isinstance(instance, Java::FieldAccess)
-
-@given(instance=Java::NumberLiteral_strategy)
-@settings(max_examples=50)
-def test_java::numberliteral_instantiation(instance):
-    assert isinstance(instance, Java::NumberLiteral)
-
-@given(instance=Java::NumberLiteral_strategy)
-def test_java::numberliteral_tokenValue_type(instance):
-    assert isinstance(instance.tokenValue, str)
-
-
-@given(instance=Java::NumberLiteral_strategy)
-def test_java::numberliteral_tokenValue_setter(instance):
+@given(instance=Java_NumberLiteral_strategy)
+def test_java_numberliteral_tokenValue_setter(instance):
     original = instance.tokenValue
     instance.tokenValue = original
     assert instance.tokenValue == original
 
-@given(instance=Java::BooleanLiteral_strategy)
+@given(instance=Java_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_java::booleanliteral_instantiation(instance):
-    assert isinstance(instance, Java::BooleanLiteral)
-
-@given(instance=Java::BooleanLiteral_strategy)
-def test_java::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_java_booleanliteral_instantiation(instance):
+    assert isinstance(instance, Java_BooleanLiteral)
 
 
-@given(instance=Java::BooleanLiteral_strategy)
-def test_java::booleanliteral_value_setter(instance):
+
+@given(instance=Java_BooleanLiteral_strategy)
+def test_java_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Java::ParenthesizedExpression_strategy)
+@given(instance=Java_ArrayLengthAccess_strategy)
 @settings(max_examples=50)
-def test_java::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, Java::ParenthesizedExpression)
+def test_java_arraylengthaccess_instantiation(instance):
+    assert isinstance(instance, Java_ArrayLengthAccess)
 
-@given(instance=Java::TypeAccess_strategy)
+@given(instance=Java_ArrayAccess_strategy)
 @settings(max_examples=50)
-def test_java::typeaccess_instantiation(instance):
-    assert isinstance(instance, Java::TypeAccess)
+def test_java_arrayaccess_instantiation(instance):
+    assert isinstance(instance, Java_ArrayAccess)
 
-@given(instance=Java::InfixExpression_strategy)
+@given(instance=Java_ArrayInitializer_strategy)
 @settings(max_examples=50)
-def test_java::infixexpression_instantiation(instance):
-    assert isinstance(instance, Java::InfixExpression)
+def test_java_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, Java_ArrayInitializer)
 
-@given(instance=Java::InfixExpression_strategy)
-def test_java::infixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=Java_ConditionalExpression_strategy)
+@settings(max_examples=50)
+def test_java_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, Java_ConditionalExpression)
+
+@given(instance=Java_ArrayCreation_strategy)
+@settings(max_examples=50)
+def test_java_arraycreation_instantiation(instance):
+    assert isinstance(instance, Java_ArrayCreation)
+
+@given(instance=Java_Annotation_strategy)
+@settings(max_examples=50)
+def test_java_annotation_instantiation(instance):
+    assert isinstance(instance, Java_Annotation)
+
+@given(instance=Java_MethodInvocation_strategy)
+@settings(max_examples=50)
+def test_java_methodinvocation_instantiation(instance):
+    assert isinstance(instance, Java_MethodInvocation)
+
+@given(instance=Java_Assignment_strategy)
+@settings(max_examples=50)
+def test_java_assignment_instantiation(instance):
+    assert isinstance(instance, Java_Assignment)
 
 
-@given(instance=Java::InfixExpression_strategy)
-def test_java::infixexpression_operator_setter(instance):
+
+@given(instance=Java_Assignment_strategy)
+def test_java_assignment_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=Java::ArrayLengthAccess_strategy)
+@given(instance=Java_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_java::arraylengthaccess_instantiation(instance):
-    assert isinstance(instance, Java::ArrayLengthAccess)
+def test_java_nullliteral_instantiation(instance):
+    assert isinstance(instance, Java_NullLiteral)
 
-@given(instance=Java::TypeLiteral_strategy)
+@given(instance=Java_InstanceofExpression_strategy)
 @settings(max_examples=50)
-def test_java::typeliteral_instantiation(instance):
-    assert isinstance(instance, Java::TypeLiteral)
+def test_java_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, Java_InstanceofExpression)
 
-@given(instance=Java::NullLiteral_strategy)
+@given(instance=Java_PostfixExpression_strategy)
 @settings(max_examples=50)
-def test_java::nullliteral_instantiation(instance):
-    assert isinstance(instance, Java::NullLiteral)
+def test_java_postfixexpression_instantiation(instance):
+    assert isinstance(instance, Java_PostfixExpression)
 
-@given(instance=Java::ArrayInitializer_strategy)
+
+
+@given(instance=Java_PostfixExpression_strategy)
+def test_java_postfixexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=Java_CastExpression_strategy)
 @settings(max_examples=50)
-def test_java::arrayinitializer_instantiation(instance):
-    assert isinstance(instance, Java::ArrayInitializer)
+def test_java_castexpression_instantiation(instance):
+    assert isinstance(instance, Java_CastExpression)
 
-@given(instance=Java::InstanceofExpression_strategy)
+@given(instance=Java_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_java::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, Java::InstanceofExpression)
-
-@given(instance=Java::Annotation_strategy)
-@settings(max_examples=50)
-def test_java::annotation_instantiation(instance):
-    assert isinstance(instance, Java::Annotation)
-
-@given(instance=Java::ArrayCreation_strategy)
-@settings(max_examples=50)
-def test_java::arraycreation_instantiation(instance):
-    assert isinstance(instance, Java::ArrayCreation)
-
-@given(instance=Java::CastExpression_strategy)
-@settings(max_examples=50)
-def test_java::castexpression_instantiation(instance):
-    assert isinstance(instance, Java::CastExpression)
-
-@given(instance=Java::UnresolvedItemAccess_strategy)
-@settings(max_examples=50)
-def test_java::unresolveditemaccess_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedItemAccess)
-
-@given(instance=Java::ArrayAccess_strategy)
-@settings(max_examples=50)
-def test_java::arrayaccess_instantiation(instance):
-    assert isinstance(instance, Java::ArrayAccess)
-
-@given(instance=Java::SingleVariableAccess_strategy)
-@settings(max_examples=50)
-def test_java::singlevariableaccess_instantiation(instance):
-    assert isinstance(instance, Java::SingleVariableAccess)
-
-@given(instance=Java::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_java::stringliteral_instantiation(instance):
-    assert isinstance(instance, Java::StringLiteral)
-
-@given(instance=Java::StringLiteral_strategy)
-def test_java::stringliteral_escapedValue_type(instance):
-    assert isinstance(instance.escapedValue, str)
+def test_java_stringliteral_instantiation(instance):
+    assert isinstance(instance, Java_StringLiteral)
 
 
-@given(instance=Java::StringLiteral_strategy)
-def test_java::stringliteral_escapedValue_setter(instance):
+
+@given(instance=Java_StringLiteral_strategy)
+def test_java_stringliteral_escapedValue_setter(instance):
     original = instance.escapedValue
     instance.escapedValue = original
     assert instance.escapedValue == original
 
-@given(instance=Java::AbstractTypeQualifiedExpression_strategy)
+@given(instance=Java_UnresolvedItemAccess_strategy)
 @settings(max_examples=50)
-def test_java::abstracttypequalifiedexpression_instantiation(instance):
-    assert isinstance(instance, Java::AbstractTypeQualifiedExpression)
+def test_java_unresolveditemaccess_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedItemAccess)
 
-@given(instance=Java::Package_strategy)
+@given(instance=Java_SingleVariableAccess_strategy)
 @settings(max_examples=50)
-def test_java::package_instantiation(instance):
-    assert isinstance(instance, Java::Package)
+def test_java_singlevariableaccess_instantiation(instance):
+    assert isinstance(instance, Java_SingleVariableAccess)
 
-@given(instance=Java::BodyDeclaration_strategy)
+@given(instance=Java_InfixExpression_strategy)
 @settings(max_examples=50)
-def test_java::bodydeclaration_instantiation(instance):
-    assert isinstance(instance, Java::BodyDeclaration)
+def test_java_infixexpression_instantiation(instance):
+    assert isinstance(instance, Java_InfixExpression)
+
+
+
+@given(instance=Java_InfixExpression_strategy)
+def test_java_infixexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=Java_FieldAccess_strategy)
+@settings(max_examples=50)
+def test_java_fieldaccess_instantiation(instance):
+    assert isinstance(instance, Java_FieldAccess)
+
+@given(instance=Java_TypeLiteral_strategy)
+@settings(max_examples=50)
+def test_java_typeliteral_instantiation(instance):
+    assert isinstance(instance, Java_TypeLiteral)
+
+@given(instance=Java_PrefixExpression_strategy)
+@settings(max_examples=50)
+def test_java_prefixexpression_instantiation(instance):
+    assert isinstance(instance, Java_PrefixExpression)
+
+
+
+@given(instance=Java_PrefixExpression_strategy)
+def test_java_prefixexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=Java_ParenthesizedExpression_strategy)
+@settings(max_examples=50)
+def test_java_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, Java_ParenthesizedExpression)
+
+@given(instance=Java_AbstractTypeQualifiedExpression_strategy)
+@settings(max_examples=50)
+def test_java_abstracttypequalifiedexpression_instantiation(instance):
+    assert isinstance(instance, Java_AbstractTypeQualifiedExpression)
+
+@given(instance=Java_Package_strategy)
+@settings(max_examples=50)
+def test_java_package_instantiation(instance):
+    assert isinstance(instance, Java_Package)
+
+@given(instance=Java_BodyDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_bodydeclaration_instantiation(instance):
+    assert isinstance(instance, Java_BodyDeclaration)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=Java::ArrayType_strategy)
+@given(instance=Java_WildCardType_strategy)
 @settings(max_examples=50)
-def test_java::arraytype_instantiation(instance):
-    assert isinstance(instance, Java::ArrayType)
-
-@given(instance=Java::ArrayType_strategy)
-def test_java::arraytype_dimensions_type(instance):
-    assert isinstance(instance.dimensions, int)
+def test_java_wildcardtype_instantiation(instance):
+    assert isinstance(instance, Java_WildCardType)
 
 
-@given(instance=Java::ArrayType_strategy)
-def test_java::arraytype_dimensions_setter(instance):
-    original = instance.dimensions
-    instance.dimensions = original
-    assert instance.dimensions == original
 
-@given(instance=Java::WildCardType_strategy)
-@settings(max_examples=50)
-def test_java::wildcardtype_instantiation(instance):
-    assert isinstance(instance, Java::WildCardType)
-
-@given(instance=Java::WildCardType_strategy)
-def test_java::wildcardtype_upperBound_type(instance):
-    assert isinstance(instance.upperBound, bool)
-
-
-@given(instance=Java::WildCardType_strategy)
-def test_java::wildcardtype_upperBound_setter(instance):
+@given(instance=Java_WildCardType_strategy)
+def test_java_wildcardtype_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=Java::ParameterizedType_strategy)
+@given(instance=Java_ParameterizedType_strategy)
 @settings(max_examples=50)
-def test_java::parameterizedtype_instantiation(instance):
-    assert isinstance(instance, Java::ParameterizedType)
+def test_java_parameterizedtype_instantiation(instance):
+    assert isinstance(instance, Java_ParameterizedType)
 
-@given(instance=Java::TypeParameter_strategy)
+@given(instance=Java_UnresolvedType_strategy)
 @settings(max_examples=50)
-def test_java::typeparameter_instantiation(instance):
-    assert isinstance(instance, Java::TypeParameter)
+def test_java_unresolvedtype_instantiation(instance):
+    assert isinstance(instance, Java_UnresolvedType)
 
-@given(instance=Java::PrimitiveType_strategy)
+@given(instance=Java_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_java::primitivetype_instantiation(instance):
-    assert isinstance(instance, Java::PrimitiveType)
+def test_java_primitivetype_instantiation(instance):
+    assert isinstance(instance, Java_PrimitiveType)
 
-@given(instance=Java::UnresolvedType_strategy)
+@given(instance=Java_TypeParameter_strategy)
 @settings(max_examples=50)
-def test_java::unresolvedtype_instantiation(instance):
-    assert isinstance(instance, Java::UnresolvedType)
+def test_java_typeparameter_instantiation(instance):
+    assert isinstance(instance, Java_TypeParameter)
+
+@given(instance=Java_ArrayType_strategy)
+@settings(max_examples=50)
+def test_java_arraytype_instantiation(instance):
+    assert isinstance(instance, Java_ArrayType)
+
+
+
+@given(instance=Java_ArrayType_strategy)
+def test_java_arraytype_dimensions_setter(instance):
+    original = instance.dimensions
+    instance.dimensions = original
+    assert instance.dimensions == original
 
 @given(instance=ASTNode_strategy)
 @settings(max_examples=50)
 def test_astnode_instantiation(instance):
     assert isinstance(instance, ASTNode)
 
-@given(instance=Java::MemberRef_strategy)
+@given(instance=Java_NamedElement_strategy)
 @settings(max_examples=50)
-def test_java::memberref_instantiation(instance):
-    assert isinstance(instance, Java::MemberRef)
-
-@given(instance=Java::TagElement_strategy)
-@settings(max_examples=50)
-def test_java::tagelement_instantiation(instance):
-    assert isinstance(instance, Java::TagElement)
-
-@given(instance=Java::TagElement_strategy)
-def test_java::tagelement_tagName_type(instance):
-    assert isinstance(instance.tagName, str)
+def test_java_namedelement_instantiation(instance):
+    assert isinstance(instance, Java_NamedElement)
 
 
-@given(instance=Java::TagElement_strategy)
-def test_java::tagelement_tagName_setter(instance):
-    original = instance.tagName
-    instance.tagName = original
-    assert instance.tagName == original
 
-@given(instance=Java::AnonymousClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::anonymousclassdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::AnonymousClassDeclaration)
-
-@given(instance=Java::ImportDeclaration_strategy)
-@settings(max_examples=50)
-def test_java::importdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::ImportDeclaration)
-
-@given(instance=Java::ImportDeclaration_strategy)
-def test_java::importdeclaration_static_type(instance):
-    assert isinstance(instance.static, bool)
+@given(instance=Java_NamedElement_strategy)
+def test_java_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=Java::ImportDeclaration_strategy)
-def test_java::importdeclaration_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
 
-@given(instance=Java::AbstractVariablesContainer_strategy)
-@settings(max_examples=50)
-def test_java::abstractvariablescontainer_instantiation(instance):
-    assert isinstance(instance, Java::AbstractVariablesContainer)
-
-@given(instance=Java::Statement_strategy)
-@settings(max_examples=50)
-def test_java::statement_instantiation(instance):
-    assert isinstance(instance, Java::Statement)
-
-@given(instance=Java::MethodRef_strategy)
-@settings(max_examples=50)
-def test_java::methodref_instantiation(instance):
-    assert isinstance(instance, Java::MethodRef)
-
-@given(instance=Java::Modifier_strategy)
-@settings(max_examples=50)
-def test_java::modifier_instantiation(instance):
-    assert isinstance(instance, Java::Modifier)
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_strictfp_type(instance):
-    assert isinstance(instance.strictfp, bool)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_strictfp_setter(instance):
-    original = instance.strictfp
-    instance.strictfp = original
-    assert instance.strictfp == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_native_type(instance):
-    assert isinstance(instance.native, bool)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_native_setter(instance):
-    original = instance.native
-    instance.native = original
-    assert instance.native == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_synchronized_setter(instance):
-    original = instance.synchronized
-    instance.synchronized = original
-    assert instance.synchronized == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_transient_type(instance):
-    assert isinstance(instance.transient, bool)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_transient_setter(instance):
-    original = instance.transient
-    instance.transient = original
-    assert instance.transient == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_inheritance_type(instance):
-    assert isinstance(instance.inheritance, str)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_inheritance_setter(instance):
-    original = instance.inheritance
-    instance.inheritance = original
-    assert instance.inheritance == original
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_volatile_type(instance):
-    assert isinstance(instance.volatile, bool)
-
-
-@given(instance=Java::Modifier_strategy)
-def test_java::modifier_volatile_setter(instance):
-    original = instance.volatile
-    instance.volatile = original
-    assert instance.volatile == original
-
-@given(instance=Java::NamedElement_strategy)
-@settings(max_examples=50)
-def test_java::namedelement_instantiation(instance):
-    assert isinstance(instance, Java::NamedElement)
-
-@given(instance=Java::NamedElement_strategy)
-def test_java::namedelement_proxy_type(instance):
-    assert isinstance(instance.proxy, bool)
-
-
-@given(instance=Java::NamedElement_strategy)
-def test_java::namedelement_proxy_setter(instance):
+@given(instance=Java_NamedElement_strategy)
+def test_java_namedelement_proxy_setter(instance):
     original = instance.proxy
     instance.proxy = original
     assert instance.proxy == original
 
-@given(instance=Java::NamedElement_strategy)
-def test_java::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Java::NamedElement_strategy)
-def test_java::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Java::MethodRefParameter_strategy)
+@given(instance=Java_ImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::methodrefparameter_instantiation(instance):
-    assert isinstance(instance, Java::MethodRefParameter)
-
-@given(instance=Java::MethodRefParameter_strategy)
-def test_java::methodrefparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_java_importdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_ImportDeclaration)
 
 
-@given(instance=Java::MethodRefParameter_strategy)
-def test_java::methodrefparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=Java::MethodRefParameter_strategy)
-def test_java::methodrefparameter_varargs_type(instance):
-    assert isinstance(instance.varargs, bool)
+@given(instance=Java_ImportDeclaration_strategy)
+def test_java_importdeclaration_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
 
-
-@given(instance=Java::MethodRefParameter_strategy)
-def test_java::methodrefparameter_varargs_setter(instance):
-    original = instance.varargs
-    instance.varargs = original
-    assert instance.varargs == original
-
-@given(instance=Java::NamespaceAccess_strategy)
+@given(instance=Java_Comment_strategy)
 @settings(max_examples=50)
-def test_java::namespaceaccess_instantiation(instance):
-    assert isinstance(instance, Java::NamespaceAccess)
-
-@given(instance=Java::Comment_strategy)
-@settings(max_examples=50)
-def test_java::comment_instantiation(instance):
-    assert isinstance(instance, Java::Comment)
-
-@given(instance=Java::Comment_strategy)
-def test_java::comment_prefixOfParent_type(instance):
-    assert isinstance(instance.prefixOfParent, bool)
+def test_java_comment_instantiation(instance):
+    assert isinstance(instance, Java_Comment)
 
 
-@given(instance=Java::Comment_strategy)
-def test_java::comment_prefixOfParent_setter(instance):
-    original = instance.prefixOfParent
-    instance.prefixOfParent = original
-    assert instance.prefixOfParent == original
 
-@given(instance=Java::Comment_strategy)
-def test_java::comment_enclosedByParent_type(instance):
-    assert isinstance(instance.enclosedByParent, bool)
-
-
-@given(instance=Java::Comment_strategy)
-def test_java::comment_enclosedByParent_setter(instance):
-    original = instance.enclosedByParent
-    instance.enclosedByParent = original
-    assert instance.enclosedByParent == original
-
-@given(instance=Java::Comment_strategy)
-def test_java::comment_content_type(instance):
-    assert isinstance(instance.content, str)
-
-
-@given(instance=Java::Comment_strategy)
-def test_java::comment_content_setter(instance):
+@given(instance=Java_Comment_strategy)
+def test_java_comment_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=Java::TextElement_strategy)
+
+
+@given(instance=Java_Comment_strategy)
+def test_java_comment_prefixOfParent_setter(instance):
+    original = instance.prefixOfParent
+    instance.prefixOfParent = original
+    assert instance.prefixOfParent == original
+
+
+
+@given(instance=Java_Comment_strategy)
+def test_java_comment_enclosedByParent_setter(instance):
+    original = instance.enclosedByParent
+    instance.enclosedByParent = original
+    assert instance.enclosedByParent == original
+
+@given(instance=Java_Statement_strategy)
 @settings(max_examples=50)
-def test_java::textelement_instantiation(instance):
-    assert isinstance(instance, Java::TextElement)
+def test_java_statement_instantiation(instance):
+    assert isinstance(instance, Java_Statement)
 
-@given(instance=Java::TextElement_strategy)
-def test_java::textelement_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=Java_TagElement_strategy)
+@settings(max_examples=50)
+def test_java_tagelement_instantiation(instance):
+    assert isinstance(instance, Java_TagElement)
 
 
-@given(instance=Java::TextElement_strategy)
-def test_java::textelement_text_setter(instance):
+
+@given(instance=Java_TagElement_strategy)
+def test_java_tagelement_tagName_setter(instance):
+    original = instance.tagName
+    instance.tagName = original
+    assert instance.tagName == original
+
+@given(instance=Java_TextElement_strategy)
+@settings(max_examples=50)
+def test_java_textelement_instantiation(instance):
+    assert isinstance(instance, Java_TextElement)
+
+
+
+@given(instance=Java_TextElement_strategy)
+def test_java_textelement_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=Java::Expression_strategy)
+@given(instance=Java_MethodRefParameter_strategy)
 @settings(max_examples=50)
-def test_java::expression_instantiation(instance):
-    assert isinstance(instance, Java::Expression)
+def test_java_methodrefparameter_instantiation(instance):
+    assert isinstance(instance, Java_MethodRefParameter)
 
-@given(instance=Java::AbstractMethodInvocation_strategy)
-@settings(max_examples=50)
-def test_java::abstractmethodinvocation_instantiation(instance):
-    assert isinstance(instance, Java::AbstractMethodInvocation)
 
-@given(instance=Java::Block_strategy)
+
+@given(instance=Java_MethodRefParameter_strategy)
+def test_java_methodrefparameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Java_MethodRefParameter_strategy)
+def test_java_methodrefparameter_varargs_setter(instance):
+    original = instance.varargs
+    instance.varargs = original
+    assert instance.varargs == original
+
+@given(instance=Java_MemberRef_strategy)
 @settings(max_examples=50)
-def test_java::block_instantiation(instance):
-    assert isinstance(instance, Java::Block)
+def test_java_memberref_instantiation(instance):
+    assert isinstance(instance, Java_MemberRef)
+
+@given(instance=Java_Modifier_strategy)
+@settings(max_examples=50)
+def test_java_modifier_instantiation(instance):
+    assert isinstance(instance, Java_Modifier)
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_inheritance_setter(instance):
+    original = instance.inheritance
+    instance.inheritance = original
+    assert instance.inheritance == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_strictfp_setter(instance):
+    original = instance.strictfp
+    instance.strictfp = original
+    assert instance.strictfp == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_volatile_setter(instance):
+    original = instance.volatile
+    instance.volatile = original
+    assert instance.volatile == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_transient_setter(instance):
+    original = instance.transient
+    instance.transient = original
+    assert instance.transient == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_synchronized_setter(instance):
+    original = instance.synchronized
+    instance.synchronized = original
+    assert instance.synchronized == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_native_setter(instance):
+    original = instance.native
+    instance.native = original
+    assert instance.native == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+
+
+@given(instance=Java_Modifier_strategy)
+def test_java_modifier_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+@given(instance=Java_AnonymousClassDeclaration_strategy)
+@settings(max_examples=50)
+def test_java_anonymousclassdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_AnonymousClassDeclaration)
+
+@given(instance=Java_MethodRef_strategy)
+@settings(max_examples=50)
+def test_java_methodref_instantiation(instance):
+    assert isinstance(instance, Java_MethodRef)
+
+@given(instance=Java_Expression_strategy)
+@settings(max_examples=50)
+def test_java_expression_instantiation(instance):
+    assert isinstance(instance, Java_Expression)
+
+@given(instance=Java_AbstractVariablesContainer_strategy)
+@settings(max_examples=50)
+def test_java_abstractvariablescontainer_instantiation(instance):
+    assert isinstance(instance, Java_AbstractVariablesContainer)
+
+@given(instance=Java_NamespaceAccess_strategy)
+@settings(max_examples=50)
+def test_java_namespaceaccess_instantiation(instance):
+    assert isinstance(instance, Java_NamespaceAccess)
+
+@given(instance=Java_AbstractMethodInvocation_strategy)
+@settings(max_examples=50)
+def test_java_abstractmethodinvocation_instantiation(instance):
+    assert isinstance(instance, Java_AbstractMethodInvocation)
+
+@given(instance=Java_Block_strategy)
+@settings(max_examples=50)
+def test_java_block_instantiation(instance):
+    assert isinstance(instance, Java_Block)
 
 @given(instance=BodyDeclaration_strategy)
 @settings(max_examples=50)
 def test_bodydeclaration_instantiation(instance):
     assert isinstance(instance, BodyDeclaration)
 
-@given(instance=Java::AnnotationTypeMemberDeclaration_strategy)
+@given(instance=Java_EnumConstantDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::annotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::AnnotationTypeMemberDeclaration)
+def test_java_enumconstantdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_EnumConstantDeclaration)
 
-@given(instance=Java::AbstractTypeDeclaration_strategy)
+@given(instance=Java_AnnotationTypeMemberDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::abstracttypedeclaration_instantiation(instance):
-    assert isinstance(instance, Java::AbstractTypeDeclaration)
+def test_java_annotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, Java_AnnotationTypeMemberDeclaration)
 
-@given(instance=Java::EnumConstantDeclaration_strategy)
+@given(instance=Java_FieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::enumconstantdeclaration_instantiation(instance):
-    assert isinstance(instance, Java::EnumConstantDeclaration)
+def test_java_fielddeclaration_instantiation(instance):
+    assert isinstance(instance, Java_FieldDeclaration)
 
-@given(instance=Java::Initializer_strategy)
+@given(instance=Java_Initializer_strategy)
 @settings(max_examples=50)
-def test_java::initializer_instantiation(instance):
-    assert isinstance(instance, Java::Initializer)
+def test_java_initializer_instantiation(instance):
+    assert isinstance(instance, Java_Initializer)
 
-@given(instance=Java::FieldDeclaration_strategy)
+@given(instance=Java_AbstractTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::fielddeclaration_instantiation(instance):
-    assert isinstance(instance, Java::FieldDeclaration)
+def test_java_abstracttypedeclaration_instantiation(instance):
+    assert isinstance(instance, Java_AbstractTypeDeclaration)
 
-@given(instance=Java::AbstractMethodDeclaration_strategy)
+@given(instance=Java_AbstractMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_java::abstractmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, Java::AbstractMethodDeclaration)
+def test_java_abstractmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, Java_AbstractMethodDeclaration)

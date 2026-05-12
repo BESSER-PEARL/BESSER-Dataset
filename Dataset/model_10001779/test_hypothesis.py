@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class4,
@@ -228,9 +228,6 @@ def test_class_instantiation(instance):
 def test_teacher_instantiation(instance):
     assert isinstance(instance, Teacher)
 
-@given(instance=Teacher_strategy)
-def test_teacher_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Teacher_strategy)
@@ -244,9 +241,6 @@ def test_teacher_Name_setter(instance):
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Room_strategy)

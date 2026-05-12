@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    employee::Employee,
+from python_code import (
+    employee_Employee,
 )
 
 # =============================================================================
@@ -15,33 +15,33 @@ from classes import (
 
 
 
-def test_employee::employee_is_not_abstract():
-    assert not inspect.isabstract(employee::Employee)
+def test_employee_employee_is_not_abstract():
+    assert not inspect.isabstract(employee_Employee)
 
 
-def test_employee::employee_constructor_exists():
-    assert callable(employee::Employee.__init__)
+def test_employee_employee_constructor_exists():
+    assert callable(employee_Employee.__init__)
 
 
-def test_employee::employee_constructor_args():
-    sig = inspect.signature(employee::Employee.__init__)
+def test_employee_employee_constructor_args():
+    sig = inspect.signature(employee_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "accounts" in params, "Missing parameter 'accounts'"
 
-def test_employee::employee_has_name():
-    assert hasattr(employee::Employee, "name")
+def test_employee_employee_has_name():
+    assert hasattr(employee_Employee, "name")
     descriptor = None
-    for klass in employee::Employee.__mro__:
+    for klass in employee_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_employee::employee_has_accounts():
-    assert hasattr(employee::Employee, "accounts")
+def test_employee_employee_has_accounts():
+    assert hasattr(employee_Employee, "accounts")
     descriptor = None
-    for klass in employee::Employee.__mro__:
+    for klass in employee_Employee.__mro__:
         if "accounts" in klass.__dict__:
             descriptor = klass.__dict__["accounts"]
             break
@@ -59,37 +59,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-employee::Employee_strategy = st.builds(
-    employee::Employee,
+employee_Employee_strategy = st.builds(
+    employee_Employee,
     name=
         safe_text,
     accounts=
         safe_text
 )
 
-@given(instance=employee::Employee_strategy)
+@given(instance=employee_Employee_strategy)
 @settings(max_examples=50)
-def test_employee::employee_instantiation(instance):
-    assert isinstance(instance, employee::Employee)
-
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_employee_employee_instantiation(instance):
+    assert isinstance(instance, employee_Employee)
 
 
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_name_setter(instance):
+
+@given(instance=employee_Employee_strategy)
+def test_employee_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_accounts_type(instance):
-    assert isinstance(instance.accounts, str)
 
 
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_accounts_setter(instance):
+@given(instance=employee_Employee_strategy)
+def test_employee_employee_accounts_setter(instance):
     original = instance.accounts
     instance.accounts = original
     assert instance.accounts == original

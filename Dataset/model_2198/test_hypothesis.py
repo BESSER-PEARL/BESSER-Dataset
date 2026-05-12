@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Tree::Tree,
+from python_code import (
+    Tree_Tree,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_tree::tree_is_not_abstract():
-    assert not inspect.isabstract(Tree::Tree)
+def test_tree_tree_is_not_abstract():
+    assert not inspect.isabstract(Tree_Tree)
 
 
-def test_tree::tree_constructor_exists():
-    assert callable(Tree::Tree.__init__)
+def test_tree_tree_constructor_exists():
+    assert callable(Tree_Tree.__init__)
 
 
-def test_tree::tree_constructor_args():
-    sig = inspect.signature(Tree::Tree.__init__)
+def test_tree_tree_constructor_args():
+    sig = inspect.signature(Tree_Tree.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_tree::tree_has_label():
-    assert hasattr(Tree::Tree, "label")
+def test_tree_tree_has_label():
+    assert hasattr(Tree_Tree, "label")
     descriptor = None
-    for klass in Tree::Tree.__mro__:
+    for klass in Tree_Tree.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Tree::Tree_strategy = st.builds(
-    Tree::Tree,
+Tree_Tree_strategy = st.builds(
+    Tree_Tree,
     label=
         safe_text
 )
 
-@given(instance=Tree::Tree_strategy)
+@given(instance=Tree_Tree_strategy)
 @settings(max_examples=50)
-def test_tree::tree_instantiation(instance):
-    assert isinstance(instance, Tree::Tree)
-
-@given(instance=Tree::Tree_strategy)
-def test_tree::tree_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_tree_tree_instantiation(instance):
+    assert isinstance(instance, Tree_Tree)
 
 
-@given(instance=Tree::Tree_strategy)
-def test_tree::tree_label_setter(instance):
+
+@given(instance=Tree_Tree_strategy)
+def test_tree_tree_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

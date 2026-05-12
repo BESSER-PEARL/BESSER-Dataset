@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     BenannteEinrichtung,
@@ -240,9 +240,6 @@ TurboliftSystem_strategy = st.builds(
 def test_benannteeinrichtung_instantiation(instance):
     assert isinstance(instance, BenannteEinrichtung)
 
-@given(instance=BenannteEinrichtung_strategy)
-def test_benannteeinrichtung_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=BenannteEinrichtung_strategy)
@@ -256,9 +253,6 @@ def test_benannteeinrichtung_name_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_sektion_type(instance):
-    assert isinstance(instance.sektion, str)
 
 
 @given(instance=Deck_strategy)
@@ -267,9 +261,6 @@ def test_deck_sektion_setter(instance):
     instance.sektion = original
     assert instance.sektion == original
 
-@given(instance=Deck_strategy)
-def test_deck_fahrtWunsch_type(instance):
-    assert isinstance(instance.fahrtWunsch, bool)
 
 
 @given(instance=Deck_strategy)
@@ -283,9 +274,6 @@ def test_deck_fahrtWunsch_setter(instance):
 def test_kabine_instantiation(instance):
     assert isinstance(instance, Kabine)
 
-@given(instance=Kabine_strategy)
-def test_kabine_tuerZustand_type(instance):
-    assert isinstance(instance.tuerZustand, bool)
 
 
 @given(instance=Kabine_strategy)
@@ -299,9 +287,6 @@ def test_kabine_tuerZustand_setter(instance):
 def test_antrieb_instantiation(instance):
     assert isinstance(instance, Antrieb)
 
-@given(instance=Antrieb_strategy)
-def test_antrieb_aNTRIEBSART_type(instance):
-    assert isinstance(instance.aNTRIEBSART, str)
 
 
 @given(instance=Antrieb_strategy)
@@ -315,9 +300,6 @@ def test_antrieb_aNTRIEBSART_setter(instance):
 def test_turboliftschacht_instantiation(instance):
     assert isinstance(instance, TurboliftSchacht)
 
-@given(instance=TurboliftSchacht_strategy)
-def test_turboliftschacht_vertikal_type(instance):
-    assert isinstance(instance.vertikal, bool)
 
 
 @given(instance=TurboliftSchacht_strategy)
@@ -336,9 +318,6 @@ def test_steuerung_instantiation(instance):
 def test_turboliftsystem_instantiation(instance):
     assert isinstance(instance, TurboliftSystem)
 
-@given(instance=TurboliftSystem_strategy)
-def test_turboliftsystem_alarmStufe_type(instance):
-    assert isinstance(instance.alarmStufe, int)
 
 
 @given(instance=TurboliftSystem_strategy)

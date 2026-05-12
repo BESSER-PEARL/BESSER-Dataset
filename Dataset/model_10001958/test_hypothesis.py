@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Admin,
@@ -40,17 +40,8 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "mail_ID" in params, "Missing parameter 'mail_ID'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_admin_has_mail_ID():
-    assert hasattr(Admin, "mail_ID")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "mail_ID" in klass.__dict__:
-            descriptor = klass.__dict__["mail_ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "mail_ID" in params, "Missing parameter 'mail_ID'"
 
 def test_admin_has_name():
     assert hasattr(Admin, "name")
@@ -58,6 +49,15 @@ def test_admin_has_name():
     for klass in Admin.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_mail_ID():
+    assert hasattr(Admin, "mail_ID")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "mail_ID" in klass.__dict__:
+            descriptor = klass.__dict__["mail_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -74,18 +74,9 @@ def test_faculty_constructor_exists():
 def test_faculty_constructor_args():
     sig = inspect.signature(Faculty.__init__)
     params = list(sig.parameters.keys())
-    assert "emp_ID" in params, "Missing parameter 'emp_ID'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "emp_ID" in params, "Missing parameter 'emp_ID'"
     assert "mail_ID" in params, "Missing parameter 'mail_ID'"
-
-def test_faculty_has_emp_ID():
-    assert hasattr(Faculty, "emp_ID")
-    descriptor = None
-    for klass in Faculty.__mro__:
-        if "emp_ID" in klass.__dict__:
-            descriptor = klass.__dict__["emp_ID"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_faculty_has_name():
     assert hasattr(Faculty, "name")
@@ -93,6 +84,15 @@ def test_faculty_has_name():
     for klass in Faculty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_faculty_has_emp_ID():
+    assert hasattr(Faculty, "emp_ID")
+    descriptor = None
+    for klass in Faculty.__mro__:
+        if "emp_ID" in klass.__dict__:
+            descriptor = klass.__dict__["emp_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -118,18 +118,9 @@ def test_student_constructor_exists():
 def test_student_constructor_args():
     sig = inspect.signature(Student.__init__)
     params = list(sig.parameters.keys())
-    assert "mail_ID" in params, "Missing parameter 'mail_ID'"
     assert "reg_Num" in params, "Missing parameter 'reg_Num'"
+    assert "mail_ID" in params, "Missing parameter 'mail_ID'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_student_has_mail_ID():
-    assert hasattr(Student, "mail_ID")
-    descriptor = None
-    for klass in Student.__mro__:
-        if "mail_ID" in klass.__dict__:
-            descriptor = klass.__dict__["mail_ID"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_student_has_reg_Num():
     assert hasattr(Student, "reg_Num")
@@ -137,6 +128,15 @@ def test_student_has_reg_Num():
     for klass in Student.__mro__:
         if "reg_Num" in klass.__dict__:
             descriptor = klass.__dict__["reg_Num"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_student_has_mail_ID():
+    assert hasattr(Student, "mail_ID")
+    descriptor = None
+    for klass in Student.__mro__:
+        if "mail_ID" in klass.__dict__:
+            descriptor = klass.__dict__["mail_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -331,25 +331,25 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Admin_strategy = st.builds(
     Admin,
-    mail_ID=
-        safe_text,
     name=
+        safe_text,
+    mail_ID=
         safe_text
 )
 Faculty_strategy = st.builds(
     Faculty,
-    emp_ID=
-        safe_text,
     name=
+        safe_text,
+    emp_ID=
         safe_text,
     mail_ID=
         safe_text
 )
 Student_strategy = st.builds(
     Student,
-    mail_ID=
-        safe_text,
     reg_Num=
+        safe_text,
+    mail_ID=
         safe_text,
     name=
         safe_text
@@ -396,20 +396,6 @@ Student_Actor_strategy = st.builds(
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_mail_ID_type(instance):
-    assert isinstance(instance.mail_ID, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_mail_ID_setter(instance):
-    original = instance.mail_ID
-    instance.mail_ID = original
-    assert instance.mail_ID == original
-
-@given(instance=Admin_strategy)
-def test_admin_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Admin_strategy)
@@ -418,25 +404,19 @@ def test_admin_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Admin_strategy)
+def test_admin_mail_ID_setter(instance):
+    original = instance.mail_ID
+    instance.mail_ID = original
+    assert instance.mail_ID == original
+
 @given(instance=Faculty_strategy)
 @settings(max_examples=50)
 def test_faculty_instantiation(instance):
     assert isinstance(instance, Faculty)
 
-@given(instance=Faculty_strategy)
-def test_faculty_emp_ID_type(instance):
-    assert isinstance(instance.emp_ID, str)
-
-
-@given(instance=Faculty_strategy)
-def test_faculty_emp_ID_setter(instance):
-    original = instance.emp_ID
-    instance.emp_ID = original
-    assert instance.emp_ID == original
-
-@given(instance=Faculty_strategy)
-def test_faculty_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Faculty_strategy)
@@ -445,9 +425,14 @@ def test_faculty_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
 @given(instance=Faculty_strategy)
-def test_faculty_mail_ID_type(instance):
-    assert isinstance(instance.mail_ID, str)
+def test_faculty_emp_ID_setter(instance):
+    original = instance.emp_ID
+    instance.emp_ID = original
+    assert instance.emp_ID == original
+
 
 
 @given(instance=Faculty_strategy)
@@ -461,20 +446,6 @@ def test_faculty_mail_ID_setter(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_mail_ID_type(instance):
-    assert isinstance(instance.mail_ID, str)
-
-
-@given(instance=Student_strategy)
-def test_student_mail_ID_setter(instance):
-    original = instance.mail_ID
-    instance.mail_ID = original
-    assert instance.mail_ID == original
-
-@given(instance=Student_strategy)
-def test_student_reg_Num_type(instance):
-    assert isinstance(instance.reg_Num, str)
 
 
 @given(instance=Student_strategy)
@@ -483,9 +454,14 @@ def test_student_reg_Num_setter(instance):
     instance.reg_Num = original
     assert instance.reg_Num == original
 
+
+
 @given(instance=Student_strategy)
-def test_student_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_student_mail_ID_setter(instance):
+    original = instance.mail_ID
+    instance.mail_ID = original
+    assert instance.mail_ID == original
+
 
 
 @given(instance=Student_strategy)

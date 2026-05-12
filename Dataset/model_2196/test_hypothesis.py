@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Ensemble,
-    datamodel::ConcreteEnsemble,
-    datamodel::EmptyEnsemble,
-    datamodel::TreeNode,
-    datamodel::SliceRepository,
-    datamodel::Slice,
-    datamodel::Constraint,
+    datamodel_ConcreteEnsemble,
+    datamodel_EmptyEnsemble,
+    datamodel_TreeNode,
+    datamodel_SliceRepository,
+    datamodel_Slice,
+    datamodel_Constraint,
     TreeNode,
-    datamodel::EnsembleRepository,
-    datamodel::Ensemble,
+    datamodel_EnsembleRepository,
+    datamodel_Ensemble,
     ConstraintType,
 )
 
@@ -39,123 +39,123 @@ def test_ensemble_constructor_args():
 
 
 
-def test_datamodel::concreteensemble_is_not_abstract():
-    assert not inspect.isabstract(datamodel::ConcreteEnsemble)
+def test_datamodel_concreteensemble_is_not_abstract():
+    assert not inspect.isabstract(datamodel_ConcreteEnsemble)
 
 
-def test_datamodel::concreteensemble_constructor_exists():
-    assert callable(datamodel::ConcreteEnsemble.__init__)
+def test_datamodel_concreteensemble_constructor_exists():
+    assert callable(datamodel_ConcreteEnsemble.__init__)
 
 
-def test_datamodel::concreteensemble_constructor_args():
-    sig = inspect.signature(datamodel::ConcreteEnsemble.__init__)
+def test_datamodel_concreteensemble_constructor_args():
+    sig = inspect.signature(datamodel_ConcreteEnsemble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_datamodel::emptyensemble_is_not_abstract():
-    assert not inspect.isabstract(datamodel::EmptyEnsemble)
+def test_datamodel_emptyensemble_is_not_abstract():
+    assert not inspect.isabstract(datamodel_EmptyEnsemble)
 
 
-def test_datamodel::emptyensemble_constructor_exists():
-    assert callable(datamodel::EmptyEnsemble.__init__)
+def test_datamodel_emptyensemble_constructor_exists():
+    assert callable(datamodel_EmptyEnsemble.__init__)
 
 
-def test_datamodel::emptyensemble_constructor_args():
-    sig = inspect.signature(datamodel::EmptyEnsemble.__init__)
+def test_datamodel_emptyensemble_constructor_args():
+    sig = inspect.signature(datamodel_EmptyEnsemble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_datamodel::treenode_is_not_abstract():
-    assert not inspect.isabstract(datamodel::TreeNode)
+def test_datamodel_treenode_is_not_abstract():
+    assert not inspect.isabstract(datamodel_TreeNode)
 
 
-def test_datamodel::treenode_constructor_exists():
-    assert callable(datamodel::TreeNode.__init__)
+def test_datamodel_treenode_constructor_exists():
+    assert callable(datamodel_TreeNode.__init__)
 
 
-def test_datamodel::treenode_constructor_args():
-    sig = inspect.signature(datamodel::TreeNode.__init__)
+def test_datamodel_treenode_constructor_args():
+    sig = inspect.signature(datamodel_TreeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_datamodel::slicerepository_is_not_abstract():
-    assert not inspect.isabstract(datamodel::SliceRepository)
+def test_datamodel_slicerepository_is_not_abstract():
+    assert not inspect.isabstract(datamodel_SliceRepository)
 
 
-def test_datamodel::slicerepository_constructor_exists():
-    assert callable(datamodel::SliceRepository.__init__)
+def test_datamodel_slicerepository_constructor_exists():
+    assert callable(datamodel_SliceRepository.__init__)
 
 
-def test_datamodel::slicerepository_constructor_args():
-    sig = inspect.signature(datamodel::SliceRepository.__init__)
+def test_datamodel_slicerepository_constructor_args():
+    sig = inspect.signature(datamodel_SliceRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_datamodel::slice_is_not_abstract():
-    assert not inspect.isabstract(datamodel::Slice)
+def test_datamodel_slice_is_not_abstract():
+    assert not inspect.isabstract(datamodel_Slice)
 
 
-def test_datamodel::slice_constructor_exists():
-    assert callable(datamodel::Slice.__init__)
+def test_datamodel_slice_constructor_exists():
+    assert callable(datamodel_Slice.__init__)
 
 
-def test_datamodel::slice_constructor_args():
-    sig = inspect.signature(datamodel::Slice.__init__)
+def test_datamodel_slice_constructor_args():
+    sig = inspect.signature(datamodel_Slice.__init__)
     params = list(sig.parameters.keys())
-    assert "diagram" in params, "Missing parameter 'diagram'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "diagram" in params, "Missing parameter 'diagram'"
 
-def test_datamodel::slice_has_diagram():
-    assert hasattr(datamodel::Slice, "diagram")
+def test_datamodel_slice_has_name():
+    assert hasattr(datamodel_Slice, "name")
     descriptor = None
-    for klass in datamodel::Slice.__mro__:
-        if "diagram" in klass.__dict__:
-            descriptor = klass.__dict__["diagram"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datamodel::slice_has_name():
-    assert hasattr(datamodel::Slice, "name")
-    descriptor = None
-    for klass in datamodel::Slice.__mro__:
+    for klass in datamodel_Slice.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_datamodel_slice_has_diagram():
+    assert hasattr(datamodel_Slice, "diagram")
+    descriptor = None
+    for klass in datamodel_Slice.__mro__:
+        if "diagram" in klass.__dict__:
+            descriptor = klass.__dict__["diagram"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_datamodel::constraint_is_not_abstract():
-    assert not inspect.isabstract(datamodel::Constraint)
+
+def test_datamodel_constraint_is_not_abstract():
+    assert not inspect.isabstract(datamodel_Constraint)
 
 
-def test_datamodel::constraint_constructor_exists():
-    assert callable(datamodel::Constraint.__init__)
+def test_datamodel_constraint_constructor_exists():
+    assert callable(datamodel_Constraint.__init__)
 
 
-def test_datamodel::constraint_constructor_args():
-    sig = inspect.signature(datamodel::Constraint.__init__)
+def test_datamodel_constraint_constructor_args():
+    sig = inspect.signature(datamodel_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "dependencyKind" in params, "Missing parameter 'dependencyKind'"
     assert "constraintType" in params, "Missing parameter 'constraintType'"
 
-def test_datamodel::constraint_has_dependencyKind():
-    assert hasattr(datamodel::Constraint, "dependencyKind")
+def test_datamodel_constraint_has_dependencyKind():
+    assert hasattr(datamodel_Constraint, "dependencyKind")
     descriptor = None
-    for klass in datamodel::Constraint.__mro__:
+    for klass in datamodel_Constraint.__mro__:
         if "dependencyKind" in klass.__dict__:
             descriptor = klass.__dict__["dependencyKind"]
             break
     assert isinstance(descriptor, property)
 
-def test_datamodel::constraint_has_constraintType():
-    assert hasattr(datamodel::Constraint, "constraintType")
+def test_datamodel_constraint_has_constraintType():
+    assert hasattr(datamodel_Constraint, "constraintType")
     descriptor = None
-    for klass in datamodel::Constraint.__mro__:
+    for klass in datamodel_Constraint.__mro__:
         if "constraintType" in klass.__dict__:
             descriptor = klass.__dict__["constraintType"]
             break
@@ -177,69 +177,69 @@ def test_treenode_constructor_args():
 
 
 
-def test_datamodel::ensemblerepository_is_not_abstract():
-    assert not inspect.isabstract(datamodel::EnsembleRepository)
+def test_datamodel_ensemblerepository_is_not_abstract():
+    assert not inspect.isabstract(datamodel_EnsembleRepository)
 
 
-def test_datamodel::ensemblerepository_constructor_exists():
-    assert callable(datamodel::EnsembleRepository.__init__)
+def test_datamodel_ensemblerepository_constructor_exists():
+    assert callable(datamodel_EnsembleRepository.__init__)
 
 
-def test_datamodel::ensemblerepository_constructor_args():
-    sig = inspect.signature(datamodel::EnsembleRepository.__init__)
+def test_datamodel_ensemblerepository_constructor_args():
+    sig = inspect.signature(datamodel_EnsembleRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_datamodel::ensemble_is_not_abstract():
-    assert not inspect.isabstract(datamodel::Ensemble)
+def test_datamodel_ensemble_is_not_abstract():
+    assert not inspect.isabstract(datamodel_Ensemble)
 
 
-def test_datamodel::ensemble_constructor_exists():
-    assert callable(datamodel::Ensemble.__init__)
+def test_datamodel_ensemble_constructor_exists():
+    assert callable(datamodel_Ensemble.__init__)
 
 
-def test_datamodel::ensemble_constructor_args():
-    sig = inspect.signature(datamodel::Ensemble.__init__)
+def test_datamodel_ensemble_constructor_args():
+    sig = inspect.signature(datamodel_Ensemble.__init__)
     params = list(sig.parameters.keys())
-    assert "derived" in params, "Missing parameter 'derived'"
     assert "description" in params, "Missing parameter 'description'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "query" in params, "Missing parameter 'query'"
+    assert "derived" in params, "Missing parameter 'derived'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_datamodel::ensemble_has_derived():
-    assert hasattr(datamodel::Ensemble, "derived")
+def test_datamodel_ensemble_has_description():
+    assert hasattr(datamodel_Ensemble, "description")
     descriptor = None
-    for klass in datamodel::Ensemble.__mro__:
-        if "derived" in klass.__dict__:
-            descriptor = klass.__dict__["derived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datamodel::ensemble_has_description():
-    assert hasattr(datamodel::Ensemble, "description")
-    descriptor = None
-    for klass in datamodel::Ensemble.__mro__:
+    for klass in datamodel_Ensemble.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_datamodel::ensemble_has_name():
-    assert hasattr(datamodel::Ensemble, "name")
+def test_datamodel_ensemble_has_query():
+    assert hasattr(datamodel_Ensemble, "query")
     descriptor = None
-    for klass in datamodel::Ensemble.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in datamodel_Ensemble.__mro__:
+        if "query" in klass.__dict__:
+            descriptor = klass.__dict__["query"]
             break
     assert isinstance(descriptor, property)
 
-def test_datamodel::ensemble_has_query():
-    assert hasattr(datamodel::Ensemble, "query")
+def test_datamodel_ensemble_has_derived():
+    assert hasattr(datamodel_Ensemble, "derived")
     descriptor = None
-    for klass in datamodel::Ensemble.__mro__:
-        if "query" in klass.__dict__:
-            descriptor = klass.__dict__["query"]
+    for klass in datamodel_Ensemble.__mro__:
+        if "derived" in klass.__dict__:
+            descriptor = klass.__dict__["derived"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datamodel_ensemble_has_name():
+    assert hasattr(datamodel_Ensemble, "name")
+    descriptor = None
+    for klass in datamodel_Ensemble.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -251,13 +251,13 @@ def test_constrainttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ConstraintType]
     expected_literals = [
-        "Expected",
-        "Undefined",
-        "GlobalOutgoing",
-        "LocalIncoming",
-        "GlobalIncoming",
         "LocalOutgoing",
+        "GlobalIncoming",
+        "Expected",
+        "LocalIncoming",
+        "Undefined",
         "NotAllowed",
+        "GlobalOutgoing",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -278,27 +278,27 @@ safe_text = st.text(
 Ensemble_strategy = st.builds(
     Ensemble,
 )
-datamodel::ConcreteEnsemble_strategy = st.builds(
-    datamodel::ConcreteEnsemble,
+datamodel_ConcreteEnsemble_strategy = st.builds(
+    datamodel_ConcreteEnsemble,
 )
-datamodel::EmptyEnsemble_strategy = st.builds(
-    datamodel::EmptyEnsemble,
+datamodel_EmptyEnsemble_strategy = st.builds(
+    datamodel_EmptyEnsemble,
 )
-datamodel::TreeNode_strategy = st.builds(
-    datamodel::TreeNode,
+datamodel_TreeNode_strategy = st.builds(
+    datamodel_TreeNode,
 )
-datamodel::SliceRepository_strategy = st.builds(
-    datamodel::SliceRepository,
+datamodel_SliceRepository_strategy = st.builds(
+    datamodel_SliceRepository,
 )
-datamodel::Slice_strategy = st.builds(
-    datamodel::Slice,
-    diagram=
-        safe_text,
+datamodel_Slice_strategy = st.builds(
+    datamodel_Slice,
     name=
+        safe_text,
+    diagram=
         safe_text
 )
-datamodel::Constraint_strategy = st.builds(
-    datamodel::Constraint,
+datamodel_Constraint_strategy = st.builds(
+    datamodel_Constraint,
     dependencyKind=
         safe_text,
     constraintType=
@@ -307,18 +307,18 @@ datamodel::Constraint_strategy = st.builds(
 TreeNode_strategy = st.builds(
     TreeNode,
 )
-datamodel::EnsembleRepository_strategy = st.builds(
-    datamodel::EnsembleRepository,
+datamodel_EnsembleRepository_strategy = st.builds(
+    datamodel_EnsembleRepository,
 )
-datamodel::Ensemble_strategy = st.builds(
-    datamodel::Ensemble,
-    derived=
-        st.booleans(),
+datamodel_Ensemble_strategy = st.builds(
+    datamodel_Ensemble,
     description=
         safe_text,
-    name=
-        safe_text,
     query=
+        safe_text,
+    derived=
+        st.booleans(),
+    name=
         safe_text
 )
 
@@ -327,76 +327,64 @@ datamodel::Ensemble_strategy = st.builds(
 def test_ensemble_instantiation(instance):
     assert isinstance(instance, Ensemble)
 
-@given(instance=datamodel::ConcreteEnsemble_strategy)
+@given(instance=datamodel_ConcreteEnsemble_strategy)
 @settings(max_examples=50)
-def test_datamodel::concreteensemble_instantiation(instance):
-    assert isinstance(instance, datamodel::ConcreteEnsemble)
+def test_datamodel_concreteensemble_instantiation(instance):
+    assert isinstance(instance, datamodel_ConcreteEnsemble)
 
-@given(instance=datamodel::EmptyEnsemble_strategy)
+@given(instance=datamodel_EmptyEnsemble_strategy)
 @settings(max_examples=50)
-def test_datamodel::emptyensemble_instantiation(instance):
-    assert isinstance(instance, datamodel::EmptyEnsemble)
+def test_datamodel_emptyensemble_instantiation(instance):
+    assert isinstance(instance, datamodel_EmptyEnsemble)
 
-@given(instance=datamodel::TreeNode_strategy)
+@given(instance=datamodel_TreeNode_strategy)
 @settings(max_examples=50)
-def test_datamodel::treenode_instantiation(instance):
-    assert isinstance(instance, datamodel::TreeNode)
+def test_datamodel_treenode_instantiation(instance):
+    assert isinstance(instance, datamodel_TreeNode)
 
-@given(instance=datamodel::SliceRepository_strategy)
+@given(instance=datamodel_SliceRepository_strategy)
 @settings(max_examples=50)
-def test_datamodel::slicerepository_instantiation(instance):
-    assert isinstance(instance, datamodel::SliceRepository)
+def test_datamodel_slicerepository_instantiation(instance):
+    assert isinstance(instance, datamodel_SliceRepository)
 
-@given(instance=datamodel::Slice_strategy)
+@given(instance=datamodel_Slice_strategy)
 @settings(max_examples=50)
-def test_datamodel::slice_instantiation(instance):
-    assert isinstance(instance, datamodel::Slice)
-
-@given(instance=datamodel::Slice_strategy)
-def test_datamodel::slice_diagram_type(instance):
-    assert isinstance(instance.diagram, str)
+def test_datamodel_slice_instantiation(instance):
+    assert isinstance(instance, datamodel_Slice)
 
 
-@given(instance=datamodel::Slice_strategy)
-def test_datamodel::slice_diagram_setter(instance):
-    original = instance.diagram
-    instance.diagram = original
-    assert instance.diagram == original
 
-@given(instance=datamodel::Slice_strategy)
-def test_datamodel::slice_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=datamodel::Slice_strategy)
-def test_datamodel::slice_name_setter(instance):
+@given(instance=datamodel_Slice_strategy)
+def test_datamodel_slice_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=datamodel::Constraint_strategy)
+
+
+@given(instance=datamodel_Slice_strategy)
+def test_datamodel_slice_diagram_setter(instance):
+    original = instance.diagram
+    instance.diagram = original
+    assert instance.diagram == original
+
+@given(instance=datamodel_Constraint_strategy)
 @settings(max_examples=50)
-def test_datamodel::constraint_instantiation(instance):
-    assert isinstance(instance, datamodel::Constraint)
-
-@given(instance=datamodel::Constraint_strategy)
-def test_datamodel::constraint_dependencyKind_type(instance):
-    assert isinstance(instance.dependencyKind, str)
+def test_datamodel_constraint_instantiation(instance):
+    assert isinstance(instance, datamodel_Constraint)
 
 
-@given(instance=datamodel::Constraint_strategy)
-def test_datamodel::constraint_dependencyKind_setter(instance):
+
+@given(instance=datamodel_Constraint_strategy)
+def test_datamodel_constraint_dependencyKind_setter(instance):
     original = instance.dependencyKind
     instance.dependencyKind = original
     assert instance.dependencyKind == original
 
-@given(instance=datamodel::Constraint_strategy)
-def test_datamodel::constraint_constraintType_type(instance):
-    assert isinstance(instance.constraintType, str)
 
 
-@given(instance=datamodel::Constraint_strategy)
-def test_datamodel::constraint_constraintType_setter(instance):
+@given(instance=datamodel_Constraint_strategy)
+def test_datamodel_constraint_constraintType_setter(instance):
     original = instance.constraintType
     instance.constraintType = original
     assert instance.constraintType == original
@@ -406,56 +394,44 @@ def test_datamodel::constraint_constraintType_setter(instance):
 def test_treenode_instantiation(instance):
     assert isinstance(instance, TreeNode)
 
-@given(instance=datamodel::EnsembleRepository_strategy)
+@given(instance=datamodel_EnsembleRepository_strategy)
 @settings(max_examples=50)
-def test_datamodel::ensemblerepository_instantiation(instance):
-    assert isinstance(instance, datamodel::EnsembleRepository)
+def test_datamodel_ensemblerepository_instantiation(instance):
+    assert isinstance(instance, datamodel_EnsembleRepository)
 
-@given(instance=datamodel::Ensemble_strategy)
+@given(instance=datamodel_Ensemble_strategy)
 @settings(max_examples=50)
-def test_datamodel::ensemble_instantiation(instance):
-    assert isinstance(instance, datamodel::Ensemble)
-
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_derived_type(instance):
-    assert isinstance(instance.derived, bool)
+def test_datamodel_ensemble_instantiation(instance):
+    assert isinstance(instance, datamodel_Ensemble)
 
 
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_derived_setter(instance):
-    original = instance.derived
-    instance.derived = original
-    assert instance.derived == original
 
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_description_setter(instance):
+@given(instance=datamodel_Ensemble_strategy)
+def test_datamodel_ensemble_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_query_type(instance):
-    assert isinstance(instance.query, str)
-
-
-@given(instance=datamodel::Ensemble_strategy)
-def test_datamodel::ensemble_query_setter(instance):
+@given(instance=datamodel_Ensemble_strategy)
+def test_datamodel_ensemble_query_setter(instance):
     original = instance.query
     instance.query = original
     assert instance.query == original
+
+
+
+@given(instance=datamodel_Ensemble_strategy)
+def test_datamodel_ensemble_derived_setter(instance):
+    original = instance.derived
+    instance.derived = original
+    assert instance.derived == original
+
+
+
+@given(instance=datamodel_Ensemble_strategy)
+def test_datamodel_ensemble_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

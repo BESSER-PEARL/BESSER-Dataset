@@ -3,53 +3,53 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FeatureVersion,
     IFeature,
     IArithmetricFunction,
     DataBag,
     DependentAction,
-    actions::GetPropertyAction,
+    actions_GetPropertyAction,
     ITimeConsumer,
     DataElement,
     DataLeaf,
     Action,
     ILogicFunction,
-    rules::IRealTimeConsumer,
+    rules_IRealTimeConsumer,
     IContextVariable,
-    actions::PreGenerationAction,
-    core::ITopLevelElement,
-    core::AbstractModelElement,
-    actions::TimedConditionAction,
-    actions::EObject,
+    actions_PreGenerationAction,
+    core_ITopLevelElement,
+    core_AbstractModelElement,
+    actions_TimedConditionAction,
+    actions_EObject,
     IDataNodeFunction,
     IValueFunction,
-    actions::Term,
+    actions_Term,
     ReconfigurationAction,
-    actions::SetDataAction,
-    actions::RemoveBagAction,
+    actions_SetDataAction,
+    actions_RemoveBagAction,
     PostGenerationAction,
-    actions::SetPropertyAction,
-    actions::ActivateFeatureAction,
-    actions::DependentAction,
-    actions::DeactivateFeatureAction,
-    actions::PostGenerationSequence,
-    actions::PostGenerationAction,
-    actions::StandAloneAction,
+    actions_SetPropertyAction,
+    actions_DependentAction,
+    actions_ActivateFeatureAction,
+    actions_DeactivateFeatureAction,
+    actions_PostGenerationSequence,
+    actions_PostGenerationAction,
+    actions_StandAloneAction,
     PreGenerationAction,
-    actions::TimeAction,
-    actions::ThrowAction,
-    actions::GetDataAction,
-    actions::GetFeatureStateAction,
-    actions::PreGenerationSequence,
-    actions::TermAction,
-    actions::FailAction,
-    actions::GetRealTimeAction,
-    actions::ReconfigurationAction,
-    actions::ActionReference,
-    actions::Action,
+    actions_ThrowAction,
+    actions_TimeAction,
+    actions_FailAction,
+    actions_TermAction,
+    actions_PreGenerationSequence,
+    actions_GetRealTimeAction,
+    actions_GetDataAction,
+    actions_GetFeatureStateAction,
+    actions_ReconfigurationAction,
+    actions_ActionReference,
+    actions_Action,
 )
 
 # =============================================================================
@@ -128,16 +128,16 @@ def test_dependentaction_constructor_args():
 
 
 
-def test_actions::getpropertyaction_is_not_abstract():
-    assert not inspect.isabstract(actions::GetPropertyAction)
+def test_actions_getpropertyaction_is_not_abstract():
+    assert not inspect.isabstract(actions_GetPropertyAction)
 
 
-def test_actions::getpropertyaction_constructor_exists():
-    assert callable(actions::GetPropertyAction.__init__)
+def test_actions_getpropertyaction_constructor_exists():
+    assert callable(actions_GetPropertyAction.__init__)
 
 
-def test_actions::getpropertyaction_constructor_args():
-    sig = inspect.signature(actions::GetPropertyAction.__init__)
+def test_actions_getpropertyaction_constructor_args():
+    sig = inspect.signature(actions_GetPropertyAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,16 +212,16 @@ def test_ilogicfunction_constructor_args():
 
 
 
-def test_rules::irealtimeconsumer_is_not_abstract():
-    assert not inspect.isabstract(rules::IRealTimeConsumer)
+def test_rules_irealtimeconsumer_is_not_abstract():
+    assert not inspect.isabstract(rules_IRealTimeConsumer)
 
 
-def test_rules::irealtimeconsumer_constructor_exists():
-    assert callable(rules::IRealTimeConsumer.__init__)
+def test_rules_irealtimeconsumer_constructor_exists():
+    assert callable(rules_IRealTimeConsumer.__init__)
 
 
-def test_rules::irealtimeconsumer_constructor_args():
-    sig = inspect.signature(rules::IRealTimeConsumer.__init__)
+def test_rules_irealtimeconsumer_constructor_args():
+    sig = inspect.signature(rules_IRealTimeConsumer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,65 +240,65 @@ def test_icontextvariable_constructor_args():
 
 
 
-def test_actions::pregenerationaction_is_not_abstract():
-    assert not inspect.isabstract(actions::PreGenerationAction)
+def test_actions_pregenerationaction_is_not_abstract():
+    assert not inspect.isabstract(actions_PreGenerationAction)
 
 
-def test_actions::pregenerationaction_constructor_exists():
-    assert callable(actions::PreGenerationAction.__init__)
+def test_actions_pregenerationaction_constructor_exists():
+    assert callable(actions_PreGenerationAction.__init__)
 
 
-def test_actions::pregenerationaction_constructor_args():
-    sig = inspect.signature(actions::PreGenerationAction.__init__)
+def test_actions_pregenerationaction_constructor_args():
+    sig = inspect.signature(actions_PreGenerationAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::itoplevelelement_is_not_abstract():
-    assert not inspect.isabstract(core::ITopLevelElement)
+def test_core_itoplevelelement_is_not_abstract():
+    assert not inspect.isabstract(core_ITopLevelElement)
 
 
-def test_core::itoplevelelement_constructor_exists():
-    assert callable(core::ITopLevelElement.__init__)
+def test_core_itoplevelelement_constructor_exists():
+    assert callable(core_ITopLevelElement.__init__)
 
 
-def test_core::itoplevelelement_constructor_args():
-    sig = inspect.signature(core::ITopLevelElement.__init__)
+def test_core_itoplevelelement_constructor_args():
+    sig = inspect.signature(core_ITopLevelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::abstractmodelelement_is_not_abstract():
-    assert not inspect.isabstract(core::AbstractModelElement)
+def test_core_abstractmodelelement_is_not_abstract():
+    assert not inspect.isabstract(core_AbstractModelElement)
 
 
-def test_core::abstractmodelelement_constructor_exists():
-    assert callable(core::AbstractModelElement.__init__)
+def test_core_abstractmodelelement_constructor_exists():
+    assert callable(core_AbstractModelElement.__init__)
 
 
-def test_core::abstractmodelelement_constructor_args():
-    sig = inspect.signature(core::AbstractModelElement.__init__)
+def test_core_abstractmodelelement_constructor_args():
+    sig = inspect.signature(core_AbstractModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::timedconditionaction_is_not_abstract():
-    assert not inspect.isabstract(actions::TimedConditionAction)
+def test_actions_timedconditionaction_is_not_abstract():
+    assert not inspect.isabstract(actions_TimedConditionAction)
 
 
-def test_actions::timedconditionaction_constructor_exists():
-    assert callable(actions::TimedConditionAction.__init__)
+def test_actions_timedconditionaction_constructor_exists():
+    assert callable(actions_TimedConditionAction.__init__)
 
 
-def test_actions::timedconditionaction_constructor_args():
-    sig = inspect.signature(actions::TimedConditionAction.__init__)
+def test_actions_timedconditionaction_constructor_args():
+    sig = inspect.signature(actions_TimedConditionAction.__init__)
     params = list(sig.parameters.keys())
     assert "frequency" in params, "Missing parameter 'frequency'"
 
-def test_actions::timedconditionaction_has_frequency():
-    assert hasattr(actions::TimedConditionAction, "frequency")
+def test_actions_timedconditionaction_has_frequency():
+    assert hasattr(actions_TimedConditionAction, "frequency")
     descriptor = None
-    for klass in actions::TimedConditionAction.__mro__:
+    for klass in actions_TimedConditionAction.__mro__:
         if "frequency" in klass.__dict__:
             descriptor = klass.__dict__["frequency"]
             break
@@ -306,16 +306,16 @@ def test_actions::timedconditionaction_has_frequency():
 
 
 
-def test_actions::eobject_is_not_abstract():
-    assert not inspect.isabstract(actions::EObject)
+def test_actions_eobject_is_not_abstract():
+    assert not inspect.isabstract(actions_EObject)
 
 
-def test_actions::eobject_constructor_exists():
-    assert callable(actions::EObject.__init__)
+def test_actions_eobject_constructor_exists():
+    assert callable(actions_EObject.__init__)
 
 
-def test_actions::eobject_constructor_args():
-    sig = inspect.signature(actions::EObject.__init__)
+def test_actions_eobject_constructor_args():
+    sig = inspect.signature(actions_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -348,16 +348,16 @@ def test_ivaluefunction_constructor_args():
 
 
 
-def test_actions::term_is_not_abstract():
-    assert not inspect.isabstract(actions::Term)
+def test_actions_term_is_not_abstract():
+    assert not inspect.isabstract(actions_Term)
 
 
-def test_actions::term_constructor_exists():
-    assert callable(actions::Term.__init__)
+def test_actions_term_constructor_exists():
+    assert callable(actions_Term.__init__)
 
 
-def test_actions::term_constructor_args():
-    sig = inspect.signature(actions::Term.__init__)
+def test_actions_term_constructor_args():
+    sig = inspect.signature(actions_Term.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -376,30 +376,30 @@ def test_reconfigurationaction_constructor_args():
 
 
 
-def test_actions::setdataaction_is_not_abstract():
-    assert not inspect.isabstract(actions::SetDataAction)
+def test_actions_setdataaction_is_not_abstract():
+    assert not inspect.isabstract(actions_SetDataAction)
 
 
-def test_actions::setdataaction_constructor_exists():
-    assert callable(actions::SetDataAction.__init__)
+def test_actions_setdataaction_constructor_exists():
+    assert callable(actions_SetDataAction.__init__)
 
 
-def test_actions::setdataaction_constructor_args():
-    sig = inspect.signature(actions::SetDataAction.__init__)
+def test_actions_setdataaction_constructor_args():
+    sig = inspect.signature(actions_SetDataAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::removebagaction_is_not_abstract():
-    assert not inspect.isabstract(actions::RemoveBagAction)
+def test_actions_removebagaction_is_not_abstract():
+    assert not inspect.isabstract(actions_RemoveBagAction)
 
 
-def test_actions::removebagaction_constructor_exists():
-    assert callable(actions::RemoveBagAction.__init__)
+def test_actions_removebagaction_constructor_exists():
+    assert callable(actions_RemoveBagAction.__init__)
 
 
-def test_actions::removebagaction_constructor_args():
-    sig = inspect.signature(actions::RemoveBagAction.__init__)
+def test_actions_removebagaction_constructor_args():
+    sig = inspect.signature(actions_RemoveBagAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -418,100 +418,100 @@ def test_postgenerationaction_constructor_args():
 
 
 
-def test_actions::setpropertyaction_is_not_abstract():
-    assert not inspect.isabstract(actions::SetPropertyAction)
+def test_actions_setpropertyaction_is_not_abstract():
+    assert not inspect.isabstract(actions_SetPropertyAction)
 
 
-def test_actions::setpropertyaction_constructor_exists():
-    assert callable(actions::SetPropertyAction.__init__)
+def test_actions_setpropertyaction_constructor_exists():
+    assert callable(actions_SetPropertyAction.__init__)
 
 
-def test_actions::setpropertyaction_constructor_args():
-    sig = inspect.signature(actions::SetPropertyAction.__init__)
+def test_actions_setpropertyaction_constructor_args():
+    sig = inspect.signature(actions_SetPropertyAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::activatefeatureaction_is_not_abstract():
-    assert not inspect.isabstract(actions::ActivateFeatureAction)
+def test_actions_dependentaction_is_not_abstract():
+    assert not inspect.isabstract(actions_DependentAction)
 
 
-def test_actions::activatefeatureaction_constructor_exists():
-    assert callable(actions::ActivateFeatureAction.__init__)
+def test_actions_dependentaction_constructor_exists():
+    assert callable(actions_DependentAction.__init__)
 
 
-def test_actions::activatefeatureaction_constructor_args():
-    sig = inspect.signature(actions::ActivateFeatureAction.__init__)
+def test_actions_dependentaction_constructor_args():
+    sig = inspect.signature(actions_DependentAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::dependentaction_is_not_abstract():
-    assert not inspect.isabstract(actions::DependentAction)
+def test_actions_activatefeatureaction_is_not_abstract():
+    assert not inspect.isabstract(actions_ActivateFeatureAction)
 
 
-def test_actions::dependentaction_constructor_exists():
-    assert callable(actions::DependentAction.__init__)
+def test_actions_activatefeatureaction_constructor_exists():
+    assert callable(actions_ActivateFeatureAction.__init__)
 
 
-def test_actions::dependentaction_constructor_args():
-    sig = inspect.signature(actions::DependentAction.__init__)
+def test_actions_activatefeatureaction_constructor_args():
+    sig = inspect.signature(actions_ActivateFeatureAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::deactivatefeatureaction_is_not_abstract():
-    assert not inspect.isabstract(actions::DeactivateFeatureAction)
+def test_actions_deactivatefeatureaction_is_not_abstract():
+    assert not inspect.isabstract(actions_DeactivateFeatureAction)
 
 
-def test_actions::deactivatefeatureaction_constructor_exists():
-    assert callable(actions::DeactivateFeatureAction.__init__)
+def test_actions_deactivatefeatureaction_constructor_exists():
+    assert callable(actions_DeactivateFeatureAction.__init__)
 
 
-def test_actions::deactivatefeatureaction_constructor_args():
-    sig = inspect.signature(actions::DeactivateFeatureAction.__init__)
+def test_actions_deactivatefeatureaction_constructor_args():
+    sig = inspect.signature(actions_DeactivateFeatureAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::postgenerationsequence_is_not_abstract():
-    assert not inspect.isabstract(actions::PostGenerationSequence)
+def test_actions_postgenerationsequence_is_not_abstract():
+    assert not inspect.isabstract(actions_PostGenerationSequence)
 
 
-def test_actions::postgenerationsequence_constructor_exists():
-    assert callable(actions::PostGenerationSequence.__init__)
+def test_actions_postgenerationsequence_constructor_exists():
+    assert callable(actions_PostGenerationSequence.__init__)
 
 
-def test_actions::postgenerationsequence_constructor_args():
-    sig = inspect.signature(actions::PostGenerationSequence.__init__)
+def test_actions_postgenerationsequence_constructor_args():
+    sig = inspect.signature(actions_PostGenerationSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::postgenerationaction_is_not_abstract():
-    assert not inspect.isabstract(actions::PostGenerationAction)
+def test_actions_postgenerationaction_is_not_abstract():
+    assert not inspect.isabstract(actions_PostGenerationAction)
 
 
-def test_actions::postgenerationaction_constructor_exists():
-    assert callable(actions::PostGenerationAction.__init__)
+def test_actions_postgenerationaction_constructor_exists():
+    assert callable(actions_PostGenerationAction.__init__)
 
 
-def test_actions::postgenerationaction_constructor_args():
-    sig = inspect.signature(actions::PostGenerationAction.__init__)
+def test_actions_postgenerationaction_constructor_args():
+    sig = inspect.signature(actions_PostGenerationAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::standaloneaction_is_not_abstract():
-    assert not inspect.isabstract(actions::StandAloneAction)
+def test_actions_standaloneaction_is_not_abstract():
+    assert not inspect.isabstract(actions_StandAloneAction)
 
 
-def test_actions::standaloneaction_constructor_exists():
-    assert callable(actions::StandAloneAction.__init__)
+def test_actions_standaloneaction_constructor_exists():
+    assert callable(actions_StandAloneAction.__init__)
 
 
-def test_actions::standaloneaction_constructor_args():
-    sig = inspect.signature(actions::StandAloneAction.__init__)
+def test_actions_standaloneaction_constructor_args():
+    sig = inspect.signature(actions_StandAloneAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -530,47 +530,23 @@ def test_pregenerationaction_constructor_args():
 
 
 
-def test_actions::timeaction_is_not_abstract():
-    assert not inspect.isabstract(actions::TimeAction)
+def test_actions_throwaction_is_not_abstract():
+    assert not inspect.isabstract(actions_ThrowAction)
 
 
-def test_actions::timeaction_constructor_exists():
-    assert callable(actions::TimeAction.__init__)
+def test_actions_throwaction_constructor_exists():
+    assert callable(actions_ThrowAction.__init__)
 
 
-def test_actions::timeaction_constructor_args():
-    sig = inspect.signature(actions::TimeAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "time" in params, "Missing parameter 'time'"
-
-def test_actions::timeaction_has_time():
-    assert hasattr(actions::TimeAction, "time")
-    descriptor = None
-    for klass in actions::TimeAction.__mro__:
-        if "time" in klass.__dict__:
-            descriptor = klass.__dict__["time"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_actions::throwaction_is_not_abstract():
-    assert not inspect.isabstract(actions::ThrowAction)
-
-
-def test_actions::throwaction_constructor_exists():
-    assert callable(actions::ThrowAction.__init__)
-
-
-def test_actions::throwaction_constructor_args():
-    sig = inspect.signature(actions::ThrowAction.__init__)
+def test_actions_throwaction_constructor_args():
+    sig = inspect.signature(actions_ThrowAction.__init__)
     params = list(sig.parameters.keys())
     assert "eventID" in params, "Missing parameter 'eventID'"
 
-def test_actions::throwaction_has_eventID():
-    assert hasattr(actions::ThrowAction, "eventID")
+def test_actions_throwaction_has_eventID():
+    assert hasattr(actions_ThrowAction, "eventID")
     descriptor = None
-    for klass in actions::ThrowAction.__mro__:
+    for klass in actions_ThrowAction.__mro__:
         if "eventID" in klass.__dict__:
             descriptor = klass.__dict__["eventID"]
             break
@@ -578,93 +554,89 @@ def test_actions::throwaction_has_eventID():
 
 
 
-def test_actions::getdataaction_is_not_abstract():
-    assert not inspect.isabstract(actions::GetDataAction)
+def test_actions_timeaction_is_not_abstract():
+    assert not inspect.isabstract(actions_TimeAction)
 
 
-def test_actions::getdataaction_constructor_exists():
-    assert callable(actions::GetDataAction.__init__)
+def test_actions_timeaction_constructor_exists():
+    assert callable(actions_TimeAction.__init__)
 
 
-def test_actions::getdataaction_constructor_args():
-    sig = inspect.signature(actions::GetDataAction.__init__)
+def test_actions_timeaction_constructor_args():
+    sig = inspect.signature(actions_TimeAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "time" in params, "Missing parameter 'time'"
+
+def test_actions_timeaction_has_time():
+    assert hasattr(actions_TimeAction, "time")
+    descriptor = None
+    for klass in actions_TimeAction.__mro__:
+        if "time" in klass.__dict__:
+            descriptor = klass.__dict__["time"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_actions_failaction_is_not_abstract():
+    assert not inspect.isabstract(actions_FailAction)
+
+
+def test_actions_failaction_constructor_exists():
+    assert callable(actions_FailAction.__init__)
+
+
+def test_actions_failaction_constructor_args():
+    sig = inspect.signature(actions_FailAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::getfeaturestateaction_is_not_abstract():
-    assert not inspect.isabstract(actions::GetFeatureStateAction)
+def test_actions_termaction_is_not_abstract():
+    assert not inspect.isabstract(actions_TermAction)
 
 
-def test_actions::getfeaturestateaction_constructor_exists():
-    assert callable(actions::GetFeatureStateAction.__init__)
+def test_actions_termaction_constructor_exists():
+    assert callable(actions_TermAction.__init__)
 
 
-def test_actions::getfeaturestateaction_constructor_args():
-    sig = inspect.signature(actions::GetFeatureStateAction.__init__)
+def test_actions_termaction_constructor_args():
+    sig = inspect.signature(actions_TermAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::pregenerationsequence_is_not_abstract():
-    assert not inspect.isabstract(actions::PreGenerationSequence)
+def test_actions_pregenerationsequence_is_not_abstract():
+    assert not inspect.isabstract(actions_PreGenerationSequence)
 
 
-def test_actions::pregenerationsequence_constructor_exists():
-    assert callable(actions::PreGenerationSequence.__init__)
+def test_actions_pregenerationsequence_constructor_exists():
+    assert callable(actions_PreGenerationSequence.__init__)
 
 
-def test_actions::pregenerationsequence_constructor_args():
-    sig = inspect.signature(actions::PreGenerationSequence.__init__)
+def test_actions_pregenerationsequence_constructor_args():
+    sig = inspect.signature(actions_PreGenerationSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::termaction_is_not_abstract():
-    assert not inspect.isabstract(actions::TermAction)
+def test_actions_getrealtimeaction_is_not_abstract():
+    assert not inspect.isabstract(actions_GetRealTimeAction)
 
 
-def test_actions::termaction_constructor_exists():
-    assert callable(actions::TermAction.__init__)
+def test_actions_getrealtimeaction_constructor_exists():
+    assert callable(actions_GetRealTimeAction.__init__)
 
 
-def test_actions::termaction_constructor_args():
-    sig = inspect.signature(actions::TermAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actions::failaction_is_not_abstract():
-    assert not inspect.isabstract(actions::FailAction)
-
-
-def test_actions::failaction_constructor_exists():
-    assert callable(actions::FailAction.__init__)
-
-
-def test_actions::failaction_constructor_args():
-    sig = inspect.signature(actions::FailAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actions::getrealtimeaction_is_not_abstract():
-    assert not inspect.isabstract(actions::GetRealTimeAction)
-
-
-def test_actions::getrealtimeaction_constructor_exists():
-    assert callable(actions::GetRealTimeAction.__init__)
-
-
-def test_actions::getrealtimeaction_constructor_args():
-    sig = inspect.signature(actions::GetRealTimeAction.__init__)
+def test_actions_getrealtimeaction_constructor_args():
+    sig = inspect.signature(actions_GetRealTimeAction.__init__)
     params = list(sig.parameters.keys())
     assert "timeHint" in params, "Missing parameter 'timeHint'"
 
-def test_actions::getrealtimeaction_has_timeHint():
-    assert hasattr(actions::GetRealTimeAction, "timeHint")
+def test_actions_getrealtimeaction_has_timeHint():
+    assert hasattr(actions_GetRealTimeAction, "timeHint")
     descriptor = None
-    for klass in actions::GetRealTimeAction.__mro__:
+    for klass in actions_GetRealTimeAction.__mro__:
         if "timeHint" in klass.__dict__:
             descriptor = klass.__dict__["timeHint"]
             break
@@ -672,44 +644,72 @@ def test_actions::getrealtimeaction_has_timeHint():
 
 
 
-def test_actions::reconfigurationaction_is_not_abstract():
-    assert not inspect.isabstract(actions::ReconfigurationAction)
+def test_actions_getdataaction_is_not_abstract():
+    assert not inspect.isabstract(actions_GetDataAction)
 
 
-def test_actions::reconfigurationaction_constructor_exists():
-    assert callable(actions::ReconfigurationAction.__init__)
+def test_actions_getdataaction_constructor_exists():
+    assert callable(actions_GetDataAction.__init__)
 
 
-def test_actions::reconfigurationaction_constructor_args():
-    sig = inspect.signature(actions::ReconfigurationAction.__init__)
+def test_actions_getdataaction_constructor_args():
+    sig = inspect.signature(actions_GetDataAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::actionreference_is_not_abstract():
-    assert not inspect.isabstract(actions::ActionReference)
+def test_actions_getfeaturestateaction_is_not_abstract():
+    assert not inspect.isabstract(actions_GetFeatureStateAction)
 
 
-def test_actions::actionreference_constructor_exists():
-    assert callable(actions::ActionReference.__init__)
+def test_actions_getfeaturestateaction_constructor_exists():
+    assert callable(actions_GetFeatureStateAction.__init__)
 
 
-def test_actions::actionreference_constructor_args():
-    sig = inspect.signature(actions::ActionReference.__init__)
+def test_actions_getfeaturestateaction_constructor_args():
+    sig = inspect.signature(actions_GetFeatureStateAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actions::action_is_not_abstract():
-    assert not inspect.isabstract(actions::Action)
+def test_actions_reconfigurationaction_is_not_abstract():
+    assert not inspect.isabstract(actions_ReconfigurationAction)
 
 
-def test_actions::action_constructor_exists():
-    assert callable(actions::Action.__init__)
+def test_actions_reconfigurationaction_constructor_exists():
+    assert callable(actions_ReconfigurationAction.__init__)
 
 
-def test_actions::action_constructor_args():
-    sig = inspect.signature(actions::Action.__init__)
+def test_actions_reconfigurationaction_constructor_args():
+    sig = inspect.signature(actions_ReconfigurationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actions_actionreference_is_not_abstract():
+    assert not inspect.isabstract(actions_ActionReference)
+
+
+def test_actions_actionreference_constructor_exists():
+    assert callable(actions_ActionReference.__init__)
+
+
+def test_actions_actionreference_constructor_args():
+    sig = inspect.signature(actions_ActionReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actions_action_is_not_abstract():
+    assert not inspect.isabstract(actions_Action)
+
+
+def test_actions_action_constructor_exists():
+    assert callable(actions_Action.__init__)
+
+
+def test_actions_action_constructor_args():
+    sig = inspect.signature(actions_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -739,8 +739,8 @@ DataBag_strategy = st.builds(
 DependentAction_strategy = st.builds(
     DependentAction,
 )
-actions::GetPropertyAction_strategy = st.builds(
-    actions::GetPropertyAction,
+actions_GetPropertyAction_strategy = st.builds(
+    actions_GetPropertyAction,
 )
 ITimeConsumer_strategy = st.builds(
     ITimeConsumer,
@@ -757,28 +757,28 @@ Action_strategy = st.builds(
 ILogicFunction_strategy = st.builds(
     ILogicFunction,
 )
-rules::IRealTimeConsumer_strategy = st.builds(
-    rules::IRealTimeConsumer,
+rules_IRealTimeConsumer_strategy = st.builds(
+    rules_IRealTimeConsumer,
 )
 IContextVariable_strategy = st.builds(
     IContextVariable,
 )
-actions::PreGenerationAction_strategy = st.builds(
-    actions::PreGenerationAction,
+actions_PreGenerationAction_strategy = st.builds(
+    actions_PreGenerationAction,
 )
-core::ITopLevelElement_strategy = st.builds(
-    core::ITopLevelElement,
+core_ITopLevelElement_strategy = st.builds(
+    core_ITopLevelElement,
 )
-core::AbstractModelElement_strategy = st.builds(
-    core::AbstractModelElement,
+core_AbstractModelElement_strategy = st.builds(
+    core_AbstractModelElement,
 )
-actions::TimedConditionAction_strategy = st.builds(
-    actions::TimedConditionAction,
+actions_TimedConditionAction_strategy = st.builds(
+    actions_TimedConditionAction,
     frequency=
         st.integers()
 )
-actions::EObject_strategy = st.builds(
-    actions::EObject,
+actions_EObject_strategy = st.builds(
+    actions_EObject,
 )
 IDataNodeFunction_strategy = st.builds(
     IDataNodeFunction,
@@ -786,83 +786,83 @@ IDataNodeFunction_strategy = st.builds(
 IValueFunction_strategy = st.builds(
     IValueFunction,
 )
-actions::Term_strategy = st.builds(
-    actions::Term,
+actions_Term_strategy = st.builds(
+    actions_Term,
 )
 ReconfigurationAction_strategy = st.builds(
     ReconfigurationAction,
 )
-actions::SetDataAction_strategy = st.builds(
-    actions::SetDataAction,
+actions_SetDataAction_strategy = st.builds(
+    actions_SetDataAction,
 )
-actions::RemoveBagAction_strategy = st.builds(
-    actions::RemoveBagAction,
+actions_RemoveBagAction_strategy = st.builds(
+    actions_RemoveBagAction,
 )
 PostGenerationAction_strategy = st.builds(
     PostGenerationAction,
 )
-actions::SetPropertyAction_strategy = st.builds(
-    actions::SetPropertyAction,
+actions_SetPropertyAction_strategy = st.builds(
+    actions_SetPropertyAction,
 )
-actions::ActivateFeatureAction_strategy = st.builds(
-    actions::ActivateFeatureAction,
+actions_DependentAction_strategy = st.builds(
+    actions_DependentAction,
 )
-actions::DependentAction_strategy = st.builds(
-    actions::DependentAction,
+actions_ActivateFeatureAction_strategy = st.builds(
+    actions_ActivateFeatureAction,
 )
-actions::DeactivateFeatureAction_strategy = st.builds(
-    actions::DeactivateFeatureAction,
+actions_DeactivateFeatureAction_strategy = st.builds(
+    actions_DeactivateFeatureAction,
 )
-actions::PostGenerationSequence_strategy = st.builds(
-    actions::PostGenerationSequence,
+actions_PostGenerationSequence_strategy = st.builds(
+    actions_PostGenerationSequence,
 )
-actions::PostGenerationAction_strategy = st.builds(
-    actions::PostGenerationAction,
+actions_PostGenerationAction_strategy = st.builds(
+    actions_PostGenerationAction,
 )
-actions::StandAloneAction_strategy = st.builds(
-    actions::StandAloneAction,
+actions_StandAloneAction_strategy = st.builds(
+    actions_StandAloneAction,
 )
 PreGenerationAction_strategy = st.builds(
     PreGenerationAction,
 )
-actions::TimeAction_strategy = st.builds(
-    actions::TimeAction,
-    time=
-        st.integers()
-)
-actions::ThrowAction_strategy = st.builds(
-    actions::ThrowAction,
+actions_ThrowAction_strategy = st.builds(
+    actions_ThrowAction,
     eventID=
         safe_text
 )
-actions::GetDataAction_strategy = st.builds(
-    actions::GetDataAction,
+actions_TimeAction_strategy = st.builds(
+    actions_TimeAction,
+    time=
+        st.integers()
 )
-actions::GetFeatureStateAction_strategy = st.builds(
-    actions::GetFeatureStateAction,
+actions_FailAction_strategy = st.builds(
+    actions_FailAction,
 )
-actions::PreGenerationSequence_strategy = st.builds(
-    actions::PreGenerationSequence,
+actions_TermAction_strategy = st.builds(
+    actions_TermAction,
 )
-actions::TermAction_strategy = st.builds(
-    actions::TermAction,
+actions_PreGenerationSequence_strategy = st.builds(
+    actions_PreGenerationSequence,
 )
-actions::FailAction_strategy = st.builds(
-    actions::FailAction,
-)
-actions::GetRealTimeAction_strategy = st.builds(
-    actions::GetRealTimeAction,
+actions_GetRealTimeAction_strategy = st.builds(
+    actions_GetRealTimeAction,
     timeHint=
         safe_text
 )
-actions::ReconfigurationAction_strategy = st.builds(
-    actions::ReconfigurationAction,
+actions_GetDataAction_strategy = st.builds(
+    actions_GetDataAction,
 )
-actions::ActionReference_strategy = st.builds(
-    actions::ActionReference,
+actions_GetFeatureStateAction_strategy = st.builds(
+    actions_GetFeatureStateAction,
 )
-actions::Action_strategy = st.builds(
-    actions::Action,
+actions_ReconfigurationAction_strategy = st.builds(
+    actions_ReconfigurationAction,
+)
+actions_ActionReference_strategy = st.builds(
+    actions_ActionReference,
+)
+actions_Action_strategy = st.builds(
+    actions_Action,
 )
 
 @given(instance=FeatureVersion_strategy)
@@ -890,10 +890,10 @@ def test_databag_instantiation(instance):
 def test_dependentaction_instantiation(instance):
     assert isinstance(instance, DependentAction)
 
-@given(instance=actions::GetPropertyAction_strategy)
+@given(instance=actions_GetPropertyAction_strategy)
 @settings(max_examples=50)
-def test_actions::getpropertyaction_instantiation(instance):
-    assert isinstance(instance, actions::GetPropertyAction)
+def test_actions_getpropertyaction_instantiation(instance):
+    assert isinstance(instance, actions_GetPropertyAction)
 
 @given(instance=ITimeConsumer_strategy)
 @settings(max_examples=50)
@@ -920,51 +920,48 @@ def test_action_instantiation(instance):
 def test_ilogicfunction_instantiation(instance):
     assert isinstance(instance, ILogicFunction)
 
-@given(instance=rules::IRealTimeConsumer_strategy)
+@given(instance=rules_IRealTimeConsumer_strategy)
 @settings(max_examples=50)
-def test_rules::irealtimeconsumer_instantiation(instance):
-    assert isinstance(instance, rules::IRealTimeConsumer)
+def test_rules_irealtimeconsumer_instantiation(instance):
+    assert isinstance(instance, rules_IRealTimeConsumer)
 
 @given(instance=IContextVariable_strategy)
 @settings(max_examples=50)
 def test_icontextvariable_instantiation(instance):
     assert isinstance(instance, IContextVariable)
 
-@given(instance=actions::PreGenerationAction_strategy)
+@given(instance=actions_PreGenerationAction_strategy)
 @settings(max_examples=50)
-def test_actions::pregenerationaction_instantiation(instance):
-    assert isinstance(instance, actions::PreGenerationAction)
+def test_actions_pregenerationaction_instantiation(instance):
+    assert isinstance(instance, actions_PreGenerationAction)
 
-@given(instance=core::ITopLevelElement_strategy)
+@given(instance=core_ITopLevelElement_strategy)
 @settings(max_examples=50)
-def test_core::itoplevelelement_instantiation(instance):
-    assert isinstance(instance, core::ITopLevelElement)
+def test_core_itoplevelelement_instantiation(instance):
+    assert isinstance(instance, core_ITopLevelElement)
 
-@given(instance=core::AbstractModelElement_strategy)
+@given(instance=core_AbstractModelElement_strategy)
 @settings(max_examples=50)
-def test_core::abstractmodelelement_instantiation(instance):
-    assert isinstance(instance, core::AbstractModelElement)
+def test_core_abstractmodelelement_instantiation(instance):
+    assert isinstance(instance, core_AbstractModelElement)
 
-@given(instance=actions::TimedConditionAction_strategy)
+@given(instance=actions_TimedConditionAction_strategy)
 @settings(max_examples=50)
-def test_actions::timedconditionaction_instantiation(instance):
-    assert isinstance(instance, actions::TimedConditionAction)
-
-@given(instance=actions::TimedConditionAction_strategy)
-def test_actions::timedconditionaction_frequency_type(instance):
-    assert isinstance(instance.frequency, int)
+def test_actions_timedconditionaction_instantiation(instance):
+    assert isinstance(instance, actions_TimedConditionAction)
 
 
-@given(instance=actions::TimedConditionAction_strategy)
-def test_actions::timedconditionaction_frequency_setter(instance):
+
+@given(instance=actions_TimedConditionAction_strategy)
+def test_actions_timedconditionaction_frequency_setter(instance):
     original = instance.frequency
     instance.frequency = original
     assert instance.frequency == original
 
-@given(instance=actions::EObject_strategy)
+@given(instance=actions_EObject_strategy)
 @settings(max_examples=50)
-def test_actions::eobject_instantiation(instance):
-    assert isinstance(instance, actions::EObject)
+def test_actions_eobject_instantiation(instance):
+    assert isinstance(instance, actions_EObject)
 
 @given(instance=IDataNodeFunction_strategy)
 @settings(max_examples=50)
@@ -976,155 +973,146 @@ def test_idatanodefunction_instantiation(instance):
 def test_ivaluefunction_instantiation(instance):
     assert isinstance(instance, IValueFunction)
 
-@given(instance=actions::Term_strategy)
+@given(instance=actions_Term_strategy)
 @settings(max_examples=50)
-def test_actions::term_instantiation(instance):
-    assert isinstance(instance, actions::Term)
+def test_actions_term_instantiation(instance):
+    assert isinstance(instance, actions_Term)
 
 @given(instance=ReconfigurationAction_strategy)
 @settings(max_examples=50)
 def test_reconfigurationaction_instantiation(instance):
     assert isinstance(instance, ReconfigurationAction)
 
-@given(instance=actions::SetDataAction_strategy)
+@given(instance=actions_SetDataAction_strategy)
 @settings(max_examples=50)
-def test_actions::setdataaction_instantiation(instance):
-    assert isinstance(instance, actions::SetDataAction)
+def test_actions_setdataaction_instantiation(instance):
+    assert isinstance(instance, actions_SetDataAction)
 
-@given(instance=actions::RemoveBagAction_strategy)
+@given(instance=actions_RemoveBagAction_strategy)
 @settings(max_examples=50)
-def test_actions::removebagaction_instantiation(instance):
-    assert isinstance(instance, actions::RemoveBagAction)
+def test_actions_removebagaction_instantiation(instance):
+    assert isinstance(instance, actions_RemoveBagAction)
 
 @given(instance=PostGenerationAction_strategy)
 @settings(max_examples=50)
 def test_postgenerationaction_instantiation(instance):
     assert isinstance(instance, PostGenerationAction)
 
-@given(instance=actions::SetPropertyAction_strategy)
+@given(instance=actions_SetPropertyAction_strategy)
 @settings(max_examples=50)
-def test_actions::setpropertyaction_instantiation(instance):
-    assert isinstance(instance, actions::SetPropertyAction)
+def test_actions_setpropertyaction_instantiation(instance):
+    assert isinstance(instance, actions_SetPropertyAction)
 
-@given(instance=actions::ActivateFeatureAction_strategy)
+@given(instance=actions_DependentAction_strategy)
 @settings(max_examples=50)
-def test_actions::activatefeatureaction_instantiation(instance):
-    assert isinstance(instance, actions::ActivateFeatureAction)
+def test_actions_dependentaction_instantiation(instance):
+    assert isinstance(instance, actions_DependentAction)
 
-@given(instance=actions::DependentAction_strategy)
+@given(instance=actions_ActivateFeatureAction_strategy)
 @settings(max_examples=50)
-def test_actions::dependentaction_instantiation(instance):
-    assert isinstance(instance, actions::DependentAction)
+def test_actions_activatefeatureaction_instantiation(instance):
+    assert isinstance(instance, actions_ActivateFeatureAction)
 
-@given(instance=actions::DeactivateFeatureAction_strategy)
+@given(instance=actions_DeactivateFeatureAction_strategy)
 @settings(max_examples=50)
-def test_actions::deactivatefeatureaction_instantiation(instance):
-    assert isinstance(instance, actions::DeactivateFeatureAction)
+def test_actions_deactivatefeatureaction_instantiation(instance):
+    assert isinstance(instance, actions_DeactivateFeatureAction)
 
-@given(instance=actions::PostGenerationSequence_strategy)
+@given(instance=actions_PostGenerationSequence_strategy)
 @settings(max_examples=50)
-def test_actions::postgenerationsequence_instantiation(instance):
-    assert isinstance(instance, actions::PostGenerationSequence)
+def test_actions_postgenerationsequence_instantiation(instance):
+    assert isinstance(instance, actions_PostGenerationSequence)
 
-@given(instance=actions::PostGenerationAction_strategy)
+@given(instance=actions_PostGenerationAction_strategy)
 @settings(max_examples=50)
-def test_actions::postgenerationaction_instantiation(instance):
-    assert isinstance(instance, actions::PostGenerationAction)
+def test_actions_postgenerationaction_instantiation(instance):
+    assert isinstance(instance, actions_PostGenerationAction)
 
-@given(instance=actions::StandAloneAction_strategy)
+@given(instance=actions_StandAloneAction_strategy)
 @settings(max_examples=50)
-def test_actions::standaloneaction_instantiation(instance):
-    assert isinstance(instance, actions::StandAloneAction)
+def test_actions_standaloneaction_instantiation(instance):
+    assert isinstance(instance, actions_StandAloneAction)
 
 @given(instance=PreGenerationAction_strategy)
 @settings(max_examples=50)
 def test_pregenerationaction_instantiation(instance):
     assert isinstance(instance, PreGenerationAction)
 
-@given(instance=actions::TimeAction_strategy)
+@given(instance=actions_ThrowAction_strategy)
 @settings(max_examples=50)
-def test_actions::timeaction_instantiation(instance):
-    assert isinstance(instance, actions::TimeAction)
-
-@given(instance=actions::TimeAction_strategy)
-def test_actions::timeaction_time_type(instance):
-    assert isinstance(instance.time, int)
+def test_actions_throwaction_instantiation(instance):
+    assert isinstance(instance, actions_ThrowAction)
 
 
-@given(instance=actions::TimeAction_strategy)
-def test_actions::timeaction_time_setter(instance):
-    original = instance.time
-    instance.time = original
-    assert instance.time == original
 
-@given(instance=actions::ThrowAction_strategy)
-@settings(max_examples=50)
-def test_actions::throwaction_instantiation(instance):
-    assert isinstance(instance, actions::ThrowAction)
-
-@given(instance=actions::ThrowAction_strategy)
-def test_actions::throwaction_eventID_type(instance):
-    assert isinstance(instance.eventID, str)
-
-
-@given(instance=actions::ThrowAction_strategy)
-def test_actions::throwaction_eventID_setter(instance):
+@given(instance=actions_ThrowAction_strategy)
+def test_actions_throwaction_eventID_setter(instance):
     original = instance.eventID
     instance.eventID = original
     assert instance.eventID == original
 
-@given(instance=actions::GetDataAction_strategy)
+@given(instance=actions_TimeAction_strategy)
 @settings(max_examples=50)
-def test_actions::getdataaction_instantiation(instance):
-    assert isinstance(instance, actions::GetDataAction)
+def test_actions_timeaction_instantiation(instance):
+    assert isinstance(instance, actions_TimeAction)
 
-@given(instance=actions::GetFeatureStateAction_strategy)
+
+
+@given(instance=actions_TimeAction_strategy)
+def test_actions_timeaction_time_setter(instance):
+    original = instance.time
+    instance.time = original
+    assert instance.time == original
+
+@given(instance=actions_FailAction_strategy)
 @settings(max_examples=50)
-def test_actions::getfeaturestateaction_instantiation(instance):
-    assert isinstance(instance, actions::GetFeatureStateAction)
+def test_actions_failaction_instantiation(instance):
+    assert isinstance(instance, actions_FailAction)
 
-@given(instance=actions::PreGenerationSequence_strategy)
+@given(instance=actions_TermAction_strategy)
 @settings(max_examples=50)
-def test_actions::pregenerationsequence_instantiation(instance):
-    assert isinstance(instance, actions::PreGenerationSequence)
+def test_actions_termaction_instantiation(instance):
+    assert isinstance(instance, actions_TermAction)
 
-@given(instance=actions::TermAction_strategy)
+@given(instance=actions_PreGenerationSequence_strategy)
 @settings(max_examples=50)
-def test_actions::termaction_instantiation(instance):
-    assert isinstance(instance, actions::TermAction)
+def test_actions_pregenerationsequence_instantiation(instance):
+    assert isinstance(instance, actions_PreGenerationSequence)
 
-@given(instance=actions::FailAction_strategy)
+@given(instance=actions_GetRealTimeAction_strategy)
 @settings(max_examples=50)
-def test_actions::failaction_instantiation(instance):
-    assert isinstance(instance, actions::FailAction)
-
-@given(instance=actions::GetRealTimeAction_strategy)
-@settings(max_examples=50)
-def test_actions::getrealtimeaction_instantiation(instance):
-    assert isinstance(instance, actions::GetRealTimeAction)
-
-@given(instance=actions::GetRealTimeAction_strategy)
-def test_actions::getrealtimeaction_timeHint_type(instance):
-    assert isinstance(instance.timeHint, str)
+def test_actions_getrealtimeaction_instantiation(instance):
+    assert isinstance(instance, actions_GetRealTimeAction)
 
 
-@given(instance=actions::GetRealTimeAction_strategy)
-def test_actions::getrealtimeaction_timeHint_setter(instance):
+
+@given(instance=actions_GetRealTimeAction_strategy)
+def test_actions_getrealtimeaction_timeHint_setter(instance):
     original = instance.timeHint
     instance.timeHint = original
     assert instance.timeHint == original
 
-@given(instance=actions::ReconfigurationAction_strategy)
+@given(instance=actions_GetDataAction_strategy)
 @settings(max_examples=50)
-def test_actions::reconfigurationaction_instantiation(instance):
-    assert isinstance(instance, actions::ReconfigurationAction)
+def test_actions_getdataaction_instantiation(instance):
+    assert isinstance(instance, actions_GetDataAction)
 
-@given(instance=actions::ActionReference_strategy)
+@given(instance=actions_GetFeatureStateAction_strategy)
 @settings(max_examples=50)
-def test_actions::actionreference_instantiation(instance):
-    assert isinstance(instance, actions::ActionReference)
+def test_actions_getfeaturestateaction_instantiation(instance):
+    assert isinstance(instance, actions_GetFeatureStateAction)
 
-@given(instance=actions::Action_strategy)
+@given(instance=actions_ReconfigurationAction_strategy)
 @settings(max_examples=50)
-def test_actions::action_instantiation(instance):
-    assert isinstance(instance, actions::Action)
+def test_actions_reconfigurationaction_instantiation(instance):
+    assert isinstance(instance, actions_ReconfigurationAction)
+
+@given(instance=actions_ActionReference_strategy)
+@settings(max_examples=50)
+def test_actions_actionreference_instantiation(instance):
+    assert isinstance(instance, actions_ActionReference)
+
+@given(instance=actions_Action_strategy)
+@settings(max_examples=50)
+def test_actions_action_instantiation(instance):
+    assert isinstance(instance, actions_Action)

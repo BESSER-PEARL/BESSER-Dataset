@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleanySimplified::MixedBaseClass,
+from python_code import (
+    simpleanySimplified_MixedBaseClass,
     MixedData,
-    simpleanySimplified::MixedFeature,
-    simpleanySimplified::MixedText,
-    simpleanySimplified::MixedData,
-    simpleanySimplified::Library,
+    simpleanySimplified_MixedFeature,
+    simpleanySimplified_MixedText,
+    simpleanySimplified_MixedData,
+    simpleanySimplified_Library,
     MixedBaseClass,
-    simpleanySimplified::Description,
-    simpleanySimplified::Book,
+    simpleanySimplified_Description,
+    simpleanySimplified_Book,
 )
 
 # =============================================================================
@@ -23,16 +23,16 @@ from classes import (
 
 
 
-def test_simpleanysimplified::mixedbaseclass_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::MixedBaseClass)
+def test_simpleanysimplified_mixedbaseclass_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_MixedBaseClass)
 
 
-def test_simpleanysimplified::mixedbaseclass_constructor_exists():
-    assert callable(simpleanySimplified::MixedBaseClass.__init__)
+def test_simpleanysimplified_mixedbaseclass_constructor_exists():
+    assert callable(simpleanySimplified_MixedBaseClass.__init__)
 
 
-def test_simpleanysimplified::mixedbaseclass_constructor_args():
-    sig = inspect.signature(simpleanySimplified::MixedBaseClass.__init__)
+def test_simpleanysimplified_mixedbaseclass_constructor_args():
+    sig = inspect.signature(simpleanySimplified_MixedBaseClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -51,51 +51,51 @@ def test_mixeddata_constructor_args():
 
 
 
-def test_simpleanysimplified::mixedfeature_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::MixedFeature)
+def test_simpleanysimplified_mixedfeature_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_MixedFeature)
 
 
-def test_simpleanysimplified::mixedfeature_constructor_exists():
-    assert callable(simpleanySimplified::MixedFeature.__init__)
+def test_simpleanysimplified_mixedfeature_constructor_exists():
+    assert callable(simpleanySimplified_MixedFeature.__init__)
 
 
-def test_simpleanysimplified::mixedfeature_constructor_args():
-    sig = inspect.signature(simpleanySimplified::MixedFeature.__init__)
+def test_simpleanysimplified_mixedfeature_constructor_args():
+    sig = inspect.signature(simpleanySimplified_MixedFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleanysimplified::mixedtext_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::MixedText)
+def test_simpleanysimplified_mixedtext_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_MixedText)
 
 
-def test_simpleanysimplified::mixedtext_constructor_exists():
-    assert callable(simpleanySimplified::MixedText.__init__)
+def test_simpleanysimplified_mixedtext_constructor_exists():
+    assert callable(simpleanySimplified_MixedText.__init__)
 
 
-def test_simpleanysimplified::mixedtext_constructor_args():
-    sig = inspect.signature(simpleanySimplified::MixedText.__init__)
+def test_simpleanysimplified_mixedtext_constructor_args():
+    sig = inspect.signature(simpleanySimplified_MixedText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleanysimplified::mixeddata_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::MixedData)
+def test_simpleanysimplified_mixeddata_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_MixedData)
 
 
-def test_simpleanysimplified::mixeddata_constructor_exists():
-    assert callable(simpleanySimplified::MixedData.__init__)
+def test_simpleanysimplified_mixeddata_constructor_exists():
+    assert callable(simpleanySimplified_MixedData.__init__)
 
 
-def test_simpleanysimplified::mixeddata_constructor_args():
-    sig = inspect.signature(simpleanySimplified::MixedData.__init__)
+def test_simpleanysimplified_mixeddata_constructor_args():
+    sig = inspect.signature(simpleanySimplified_MixedData.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simpleanysimplified::mixeddata_has_value():
-    assert hasattr(simpleanySimplified::MixedData, "value")
+def test_simpleanysimplified_mixeddata_has_value():
+    assert hasattr(simpleanySimplified_MixedData, "value")
     descriptor = None
-    for klass in simpleanySimplified::MixedData.__mro__:
+    for klass in simpleanySimplified_MixedData.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -103,16 +103,16 @@ def test_simpleanysimplified::mixeddata_has_value():
 
 
 
-def test_simpleanysimplified::library_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::Library)
+def test_simpleanysimplified_library_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_Library)
 
 
-def test_simpleanysimplified::library_constructor_exists():
-    assert callable(simpleanySimplified::Library.__init__)
+def test_simpleanysimplified_library_constructor_exists():
+    assert callable(simpleanySimplified_Library.__init__)
 
 
-def test_simpleanysimplified::library_constructor_args():
-    sig = inspect.signature(simpleanySimplified::Library.__init__)
+def test_simpleanysimplified_library_constructor_args():
+    sig = inspect.signature(simpleanySimplified_Library.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -131,23 +131,23 @@ def test_mixedbaseclass_constructor_args():
 
 
 
-def test_simpleanysimplified::description_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::Description)
+def test_simpleanysimplified_description_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_Description)
 
 
-def test_simpleanysimplified::description_constructor_exists():
-    assert callable(simpleanySimplified::Description.__init__)
+def test_simpleanysimplified_description_constructor_exists():
+    assert callable(simpleanySimplified_Description.__init__)
 
 
-def test_simpleanysimplified::description_constructor_args():
-    sig = inspect.signature(simpleanySimplified::Description.__init__)
+def test_simpleanysimplified_description_constructor_args():
+    sig = inspect.signature(simpleanySimplified_Description.__init__)
     params = list(sig.parameters.keys())
     assert "keywords" in params, "Missing parameter 'keywords'"
 
-def test_simpleanysimplified::description_has_keywords():
-    assert hasattr(simpleanySimplified::Description, "keywords")
+def test_simpleanysimplified_description_has_keywords():
+    assert hasattr(simpleanySimplified_Description, "keywords")
     descriptor = None
-    for klass in simpleanySimplified::Description.__mro__:
+    for klass in simpleanySimplified_Description.__mro__:
         if "keywords" in klass.__dict__:
             descriptor = klass.__dict__["keywords"]
             break
@@ -155,43 +155,43 @@ def test_simpleanysimplified::description_has_keywords():
 
 
 
-def test_simpleanysimplified::book_is_not_abstract():
-    assert not inspect.isabstract(simpleanySimplified::Book)
+def test_simpleanysimplified_book_is_not_abstract():
+    assert not inspect.isabstract(simpleanySimplified_Book)
 
 
-def test_simpleanysimplified::book_constructor_exists():
-    assert callable(simpleanySimplified::Book.__init__)
+def test_simpleanysimplified_book_constructor_exists():
+    assert callable(simpleanySimplified_Book.__init__)
 
 
-def test_simpleanysimplified::book_constructor_args():
-    sig = inspect.signature(simpleanySimplified::Book.__init__)
+def test_simpleanysimplified_book_constructor_args():
+    sig = inspect.signature(simpleanySimplified_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
     assert "author" in params, "Missing parameter 'author'"
+    assert "title" in params, "Missing parameter 'title'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleanysimplified::book_has_title():
-    assert hasattr(simpleanySimplified::Book, "title")
+def test_simpleanysimplified_book_has_author():
+    assert hasattr(simpleanySimplified_Book, "author")
     descriptor = None
-    for klass in simpleanySimplified::Book.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simpleanysimplified::book_has_author():
-    assert hasattr(simpleanySimplified::Book, "author")
-    descriptor = None
-    for klass in simpleanySimplified::Book.__mro__:
+    for klass in simpleanySimplified_Book.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleanysimplified::book_has_name():
-    assert hasattr(simpleanySimplified::Book, "name")
+def test_simpleanysimplified_book_has_title():
+    assert hasattr(simpleanySimplified_Book, "title")
     descriptor = None
-    for klass in simpleanySimplified::Book.__mro__:
+    for klass in simpleanySimplified_Book.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simpleanysimplified_book_has_name():
+    assert hasattr(simpleanySimplified_Book, "name")
+    descriptor = None
+    for klass in simpleanySimplified_Book.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -209,140 +209,125 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleanySimplified::MixedBaseClass_strategy = st.builds(
-    simpleanySimplified::MixedBaseClass,
+simpleanySimplified_MixedBaseClass_strategy = st.builds(
+    simpleanySimplified_MixedBaseClass,
 )
 MixedData_strategy = st.builds(
     MixedData,
 )
-simpleanySimplified::MixedFeature_strategy = st.builds(
-    simpleanySimplified::MixedFeature,
+simpleanySimplified_MixedFeature_strategy = st.builds(
+    simpleanySimplified_MixedFeature,
 )
-simpleanySimplified::MixedText_strategy = st.builds(
-    simpleanySimplified::MixedText,
+simpleanySimplified_MixedText_strategy = st.builds(
+    simpleanySimplified_MixedText,
 )
-simpleanySimplified::MixedData_strategy = st.builds(
-    simpleanySimplified::MixedData,
+simpleanySimplified_MixedData_strategy = st.builds(
+    simpleanySimplified_MixedData,
     value=
         safe_text
 )
-simpleanySimplified::Library_strategy = st.builds(
-    simpleanySimplified::Library,
+simpleanySimplified_Library_strategy = st.builds(
+    simpleanySimplified_Library,
 )
 MixedBaseClass_strategy = st.builds(
     MixedBaseClass,
 )
-simpleanySimplified::Description_strategy = st.builds(
-    simpleanySimplified::Description,
+simpleanySimplified_Description_strategy = st.builds(
+    simpleanySimplified_Description,
     keywords=
         safe_text
 )
-simpleanySimplified::Book_strategy = st.builds(
-    simpleanySimplified::Book,
-    title=
-        safe_text,
+simpleanySimplified_Book_strategy = st.builds(
+    simpleanySimplified_Book,
     author=
+        safe_text,
+    title=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=simpleanySimplified::MixedBaseClass_strategy)
+@given(instance=simpleanySimplified_MixedBaseClass_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::mixedbaseclass_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::MixedBaseClass)
+def test_simpleanysimplified_mixedbaseclass_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_MixedBaseClass)
 
 @given(instance=MixedData_strategy)
 @settings(max_examples=50)
 def test_mixeddata_instantiation(instance):
     assert isinstance(instance, MixedData)
 
-@given(instance=simpleanySimplified::MixedFeature_strategy)
+@given(instance=simpleanySimplified_MixedFeature_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::mixedfeature_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::MixedFeature)
+def test_simpleanysimplified_mixedfeature_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_MixedFeature)
 
-@given(instance=simpleanySimplified::MixedText_strategy)
+@given(instance=simpleanySimplified_MixedText_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::mixedtext_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::MixedText)
+def test_simpleanysimplified_mixedtext_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_MixedText)
 
-@given(instance=simpleanySimplified::MixedData_strategy)
+@given(instance=simpleanySimplified_MixedData_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::mixeddata_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::MixedData)
-
-@given(instance=simpleanySimplified::MixedData_strategy)
-def test_simpleanysimplified::mixeddata_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_simpleanysimplified_mixeddata_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_MixedData)
 
 
-@given(instance=simpleanySimplified::MixedData_strategy)
-def test_simpleanysimplified::mixeddata_value_setter(instance):
+
+@given(instance=simpleanySimplified_MixedData_strategy)
+def test_simpleanysimplified_mixeddata_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=simpleanySimplified::Library_strategy)
+@given(instance=simpleanySimplified_Library_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::library_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::Library)
+def test_simpleanysimplified_library_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_Library)
 
 @given(instance=MixedBaseClass_strategy)
 @settings(max_examples=50)
 def test_mixedbaseclass_instantiation(instance):
     assert isinstance(instance, MixedBaseClass)
 
-@given(instance=simpleanySimplified::Description_strategy)
+@given(instance=simpleanySimplified_Description_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::description_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::Description)
-
-@given(instance=simpleanySimplified::Description_strategy)
-def test_simpleanysimplified::description_keywords_type(instance):
-    assert isinstance(instance.keywords, str)
+def test_simpleanysimplified_description_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_Description)
 
 
-@given(instance=simpleanySimplified::Description_strategy)
-def test_simpleanysimplified::description_keywords_setter(instance):
+
+@given(instance=simpleanySimplified_Description_strategy)
+def test_simpleanysimplified_description_keywords_setter(instance):
     original = instance.keywords
     instance.keywords = original
     assert instance.keywords == original
 
-@given(instance=simpleanySimplified::Book_strategy)
+@given(instance=simpleanySimplified_Book_strategy)
 @settings(max_examples=50)
-def test_simpleanysimplified::book_instantiation(instance):
-    assert isinstance(instance, simpleanySimplified::Book)
-
-@given(instance=simpleanySimplified::Book_strategy)
-def test_simpleanysimplified::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_simpleanysimplified_book_instantiation(instance):
+    assert isinstance(instance, simpleanySimplified_Book)
 
 
-@given(instance=simpleanySimplified::Book_strategy)
-def test_simpleanysimplified::book_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=simpleanySimplified::Book_strategy)
-def test_simpleanysimplified::book_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=simpleanySimplified::Book_strategy)
-def test_simpleanysimplified::book_author_setter(instance):
+@given(instance=simpleanySimplified_Book_strategy)
+def test_simpleanysimplified_book_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=simpleanySimplified::Book_strategy)
-def test_simpleanysimplified::book_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=simpleanySimplified::Book_strategy)
-def test_simpleanysimplified::book_name_setter(instance):
+@given(instance=simpleanySimplified_Book_strategy)
+def test_simpleanysimplified_book_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=simpleanySimplified_Book_strategy)
+def test_simpleanysimplified_book_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

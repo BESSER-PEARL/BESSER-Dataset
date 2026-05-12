@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    strictSample1::C,
+from python_code import (
+    strictSample1_C,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_strictsample1::c_is_not_abstract():
-    assert not inspect.isabstract(strictSample1::C)
+def test_strictsample1_c_is_not_abstract():
+    assert not inspect.isabstract(strictSample1_C)
 
 
-def test_strictsample1::c_constructor_exists():
-    assert callable(strictSample1::C.__init__)
+def test_strictsample1_c_constructor_exists():
+    assert callable(strictSample1_C.__init__)
 
 
-def test_strictsample1::c_constructor_args():
-    sig = inspect.signature(strictSample1::C.__init__)
+def test_strictsample1_c_constructor_args():
+    sig = inspect.signature(strictSample1_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-strictSample1::C_strategy = st.builds(
-    strictSample1::C,
+strictSample1_C_strategy = st.builds(
+    strictSample1_C,
 )
 
-@given(instance=strictSample1::C_strategy)
+@given(instance=strictSample1_C_strategy)
 @settings(max_examples=50)
-def test_strictsample1::c_instantiation(instance):
-    assert isinstance(instance, strictSample1::C)
+def test_strictsample1_c_instantiation(instance):
+    assert isinstance(instance, strictSample1_C)

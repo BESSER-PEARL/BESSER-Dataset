@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ElevensGame,
@@ -191,17 +191,8 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(card.__init__)
     params = list(sig.parameters.keys())
-    assert "has_a" in params, "Missing parameter 'has_a'"
     assert "has_a1" in params, "Missing parameter 'has_a1'"
-
-def test_card_has_has_a():
-    assert hasattr(card, "has_a")
-    descriptor = None
-    for klass in card.__mro__:
-        if "has_a" in klass.__dict__:
-            descriptor = klass.__dict__["has_a"]
-            break
-    assert isinstance(descriptor, property)
+    assert "has_a" in params, "Missing parameter 'has_a'"
 
 def test_card_has_has_a1():
     assert hasattr(card, "has_a1")
@@ -209,6 +200,15 @@ def test_card_has_has_a1():
     for klass in card.__mro__:
         if "has_a1" in klass.__dict__:
             descriptor = klass.__dict__["has_a1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_has_a():
+    assert hasattr(card, "has_a")
+    descriptor = None
+    for klass in card.__mro__:
+        if "has_a" in klass.__dict__:
+            descriptor = klass.__dict__["has_a"]
             break
     assert isinstance(descriptor, property)
 
@@ -259,9 +259,9 @@ cardFace_strategy = st.builds(
 )
 card_strategy = st.builds(
     card,
-    has_a=
-        st.none(),
     has_a1=
+        st.none(),
+    has_a=
         st.none()
 )
 
@@ -270,9 +270,6 @@ card_strategy = st.builds(
 def test_elevensgame_instantiation(instance):
     assert isinstance(instance, ElevensGame)
 
-@given(instance=ElevensGame_strategy)
-def test_elevensgame_creates_Play_and_Deck_type(instance):
-    assert isinstance(instance.creates_Play_and_Deck, deck)
 
 
 @given(instance=ElevensGame_strategy)
@@ -286,9 +283,6 @@ def test_elevensgame_creates_Play_and_Deck_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_creates_and_shuffles_type(instance):
-    assert isinstance(instance.creates_and_shuffles, card)
 
 
 @given(instance=Deck_strategy)
@@ -302,9 +296,6 @@ def test_deck_creates_and_shuffles_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_has_a_type(instance):
-    assert isinstance(instance.has_a, card)
 
 
 @given(instance=Player_strategy)
@@ -318,9 +309,6 @@ def test_player_has_a_setter(instance):
 def test_cardvalue_instantiation(instance):
     assert isinstance(instance, cardValue)
 
-@given(instance=cardValue_strategy)
-def test_cardvalue_Jack_type(instance):
-    assert isinstance(instance.Jack, cardvalue)
 
 
 @given(instance=cardValue_strategy)
@@ -329,9 +317,6 @@ def test_cardvalue_Jack_setter(instance):
     instance.Jack = original
     assert instance.Jack == original
 
-@given(instance=cardValue_strategy)
-def test_cardvalue_King_type(instance):
-    assert isinstance(instance.King, cardvalue)
 
 
 @given(instance=cardValue_strategy)
@@ -340,9 +325,6 @@ def test_cardvalue_King_setter(instance):
     instance.King = original
     assert instance.King == original
 
-@given(instance=cardValue_strategy)
-def test_cardvalue_Ace_type(instance):
-    assert isinstance(instance.Ace, cardvalue)
 
 
 @given(instance=cardValue_strategy)
@@ -351,9 +333,6 @@ def test_cardvalue_Ace_setter(instance):
     instance.Ace = original
     assert instance.Ace == original
 
-@given(instance=cardValue_strategy)
-def test_cardvalue_Queen_type(instance):
-    assert isinstance(instance.Queen, cardvalue)
 
 
 @given(instance=cardValue_strategy)
@@ -367,9 +346,6 @@ def test_cardvalue_Queen_setter(instance):
 def test_cardface_instantiation(instance):
     assert isinstance(instance, cardFace)
 
-@given(instance=cardFace_strategy)
-def test_cardface_Club_type(instance):
-    assert isinstance(instance.Club, cardface)
 
 
 @given(instance=cardFace_strategy)
@@ -378,9 +354,6 @@ def test_cardface_Club_setter(instance):
     instance.Club = original
     assert instance.Club == original
 
-@given(instance=cardFace_strategy)
-def test_cardface_has_a_type(instance):
-    assert isinstance(instance.has_a, cardvalue)
 
 
 @given(instance=cardFace_strategy)
@@ -394,20 +367,6 @@ def test_cardface_has_a_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, card)
 
-@given(instance=card_strategy)
-def test_card_has_a_type(instance):
-    assert isinstance(instance.has_a, cardface)
-
-
-@given(instance=card_strategy)
-def test_card_has_a_setter(instance):
-    original = instance.has_a
-    instance.has_a = original
-    assert instance.has_a == original
-
-@given(instance=card_strategy)
-def test_card_has_a1_type(instance):
-    assert isinstance(instance.has_a1, cardvalue)
 
 
 @given(instance=card_strategy)
@@ -415,3 +374,11 @@ def test_card_has_a1_setter(instance):
     original = instance.has_a1
     instance.has_a1 = original
     assert instance.has_a1 == original
+
+
+
+@given(instance=card_strategy)
+def test_card_has_a_setter(instance):
+    original = instance.has_a
+    instance.has_a = original
+    assert instance.has_a == original

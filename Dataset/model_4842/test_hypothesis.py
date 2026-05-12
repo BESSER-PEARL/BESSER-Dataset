@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StrategyElement,
-    archimate::Resource,
+    archimate_Resource,
     BusinessElement,
-    archimate::BusinessProcess,
+    archimate_BusinessProcess,
     Requirement,
-    archimate::Constraint,
-    archimate::ActiveStructureElement,
-    archimate::ArchimateDiagram,
+    archimate_Constraint,
+    archimate_ActiveStructureElement,
+    archimate_ArchimateDiagram,
     MotivationElement,
-    archimate::Principle,
-    archimate::Driver,
-    archimate::Outcome,
-    archimate::Goal,
-    archimate::Requirement,
-    archimate::Assessment,
-    archimate::Value,
-    archimate::Meaning,
+    archimate_Requirement,
+    archimate_Principle,
+    archimate_Outcome,
+    archimate_Goal,
+    archimate_Assessment,
+    archimate_Driver,
+    archimate_Value,
+    archimate_Meaning,
     ActiveStructureElement,
-    archimate::Stakeholder,
-    archimate::StrategyElement,
-    archimate::BusinessElement,
-    archimate::MotivationElement,
+    archimate_Stakeholder,
+    archimate_StrategyElement,
+    archimate_BusinessElement,
+    archimate_MotivationElement,
     refinement,
     relationType,
 )
@@ -52,16 +52,16 @@ def test_strategyelement_constructor_args():
 
 
 
-def test_archimate::resource_is_not_abstract():
-    assert not inspect.isabstract(archimate::Resource)
+def test_archimate_resource_is_not_abstract():
+    assert not inspect.isabstract(archimate_Resource)
 
 
-def test_archimate::resource_constructor_exists():
-    assert callable(archimate::Resource.__init__)
+def test_archimate_resource_constructor_exists():
+    assert callable(archimate_Resource.__init__)
 
 
-def test_archimate::resource_constructor_args():
-    sig = inspect.signature(archimate::Resource.__init__)
+def test_archimate_resource_constructor_args():
+    sig = inspect.signature(archimate_Resource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -80,16 +80,16 @@ def test_businesselement_constructor_args():
 
 
 
-def test_archimate::businessprocess_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessProcess)
+def test_archimate_businessprocess_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessProcess)
 
 
-def test_archimate::businessprocess_constructor_exists():
-    assert callable(archimate::BusinessProcess.__init__)
+def test_archimate_businessprocess_constructor_exists():
+    assert callable(archimate_BusinessProcess.__init__)
 
 
-def test_archimate::businessprocess_constructor_args():
-    sig = inspect.signature(archimate::BusinessProcess.__init__)
+def test_archimate_businessprocess_constructor_args():
+    sig = inspect.signature(archimate_BusinessProcess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,37 +108,37 @@ def test_requirement_constructor_args():
 
 
 
-def test_archimate::constraint_is_not_abstract():
-    assert not inspect.isabstract(archimate::Constraint)
+def test_archimate_constraint_is_not_abstract():
+    assert not inspect.isabstract(archimate_Constraint)
 
 
-def test_archimate::constraint_constructor_exists():
-    assert callable(archimate::Constraint.__init__)
+def test_archimate_constraint_constructor_exists():
+    assert callable(archimate_Constraint.__init__)
 
 
-def test_archimate::constraint_constructor_args():
-    sig = inspect.signature(archimate::Constraint.__init__)
+def test_archimate_constraint_constructor_args():
+    sig = inspect.signature(archimate_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::activestructureelement_is_not_abstract():
-    assert not inspect.isabstract(archimate::ActiveStructureElement)
+def test_archimate_activestructureelement_is_not_abstract():
+    assert not inspect.isabstract(archimate_ActiveStructureElement)
 
 
-def test_archimate::activestructureelement_constructor_exists():
-    assert callable(archimate::ActiveStructureElement.__init__)
+def test_archimate_activestructureelement_constructor_exists():
+    assert callable(archimate_ActiveStructureElement.__init__)
 
 
-def test_archimate::activestructureelement_constructor_args():
-    sig = inspect.signature(archimate::ActiveStructureElement.__init__)
+def test_archimate_activestructureelement_constructor_args():
+    sig = inspect.signature(archimate_ActiveStructureElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_archimate::activestructureelement_has_name():
-    assert hasattr(archimate::ActiveStructureElement, "name")
+def test_archimate_activestructureelement_has_name():
+    assert hasattr(archimate_ActiveStructureElement, "name")
     descriptor = None
-    for klass in archimate::ActiveStructureElement.__mro__:
+    for klass in archimate_ActiveStructureElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -146,16 +146,16 @@ def test_archimate::activestructureelement_has_name():
 
 
 
-def test_archimate::archimatediagram_is_not_abstract():
-    assert not inspect.isabstract(archimate::ArchimateDiagram)
+def test_archimate_archimatediagram_is_not_abstract():
+    assert not inspect.isabstract(archimate_ArchimateDiagram)
 
 
-def test_archimate::archimatediagram_constructor_exists():
-    assert callable(archimate::ArchimateDiagram.__init__)
+def test_archimate_archimatediagram_constructor_exists():
+    assert callable(archimate_ArchimateDiagram.__init__)
 
 
-def test_archimate::archimatediagram_constructor_args():
-    sig = inspect.signature(archimate::ArchimateDiagram.__init__)
+def test_archimate_archimatediagram_constructor_args():
+    sig = inspect.signature(archimate_ArchimateDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,114 +174,114 @@ def test_motivationelement_constructor_args():
 
 
 
-def test_archimate::principle_is_not_abstract():
-    assert not inspect.isabstract(archimate::Principle)
+def test_archimate_requirement_is_not_abstract():
+    assert not inspect.isabstract(archimate_Requirement)
 
 
-def test_archimate::principle_constructor_exists():
-    assert callable(archimate::Principle.__init__)
+def test_archimate_requirement_constructor_exists():
+    assert callable(archimate_Requirement.__init__)
 
 
-def test_archimate::principle_constructor_args():
-    sig = inspect.signature(archimate::Principle.__init__)
+def test_archimate_requirement_constructor_args():
+    sig = inspect.signature(archimate_Requirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::driver_is_not_abstract():
-    assert not inspect.isabstract(archimate::Driver)
+def test_archimate_principle_is_not_abstract():
+    assert not inspect.isabstract(archimate_Principle)
 
 
-def test_archimate::driver_constructor_exists():
-    assert callable(archimate::Driver.__init__)
+def test_archimate_principle_constructor_exists():
+    assert callable(archimate_Principle.__init__)
 
 
-def test_archimate::driver_constructor_args():
-    sig = inspect.signature(archimate::Driver.__init__)
+def test_archimate_principle_constructor_args():
+    sig = inspect.signature(archimate_Principle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::outcome_is_not_abstract():
-    assert not inspect.isabstract(archimate::Outcome)
+def test_archimate_outcome_is_not_abstract():
+    assert not inspect.isabstract(archimate_Outcome)
 
 
-def test_archimate::outcome_constructor_exists():
-    assert callable(archimate::Outcome.__init__)
+def test_archimate_outcome_constructor_exists():
+    assert callable(archimate_Outcome.__init__)
 
 
-def test_archimate::outcome_constructor_args():
-    sig = inspect.signature(archimate::Outcome.__init__)
+def test_archimate_outcome_constructor_args():
+    sig = inspect.signature(archimate_Outcome.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::goal_is_not_abstract():
-    assert not inspect.isabstract(archimate::Goal)
+def test_archimate_goal_is_not_abstract():
+    assert not inspect.isabstract(archimate_Goal)
 
 
-def test_archimate::goal_constructor_exists():
-    assert callable(archimate::Goal.__init__)
+def test_archimate_goal_constructor_exists():
+    assert callable(archimate_Goal.__init__)
 
 
-def test_archimate::goal_constructor_args():
-    sig = inspect.signature(archimate::Goal.__init__)
+def test_archimate_goal_constructor_args():
+    sig = inspect.signature(archimate_Goal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::requirement_is_not_abstract():
-    assert not inspect.isabstract(archimate::Requirement)
+def test_archimate_assessment_is_not_abstract():
+    assert not inspect.isabstract(archimate_Assessment)
 
 
-def test_archimate::requirement_constructor_exists():
-    assert callable(archimate::Requirement.__init__)
+def test_archimate_assessment_constructor_exists():
+    assert callable(archimate_Assessment.__init__)
 
 
-def test_archimate::requirement_constructor_args():
-    sig = inspect.signature(archimate::Requirement.__init__)
+def test_archimate_assessment_constructor_args():
+    sig = inspect.signature(archimate_Assessment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::assessment_is_not_abstract():
-    assert not inspect.isabstract(archimate::Assessment)
+def test_archimate_driver_is_not_abstract():
+    assert not inspect.isabstract(archimate_Driver)
 
 
-def test_archimate::assessment_constructor_exists():
-    assert callable(archimate::Assessment.__init__)
+def test_archimate_driver_constructor_exists():
+    assert callable(archimate_Driver.__init__)
 
 
-def test_archimate::assessment_constructor_args():
-    sig = inspect.signature(archimate::Assessment.__init__)
+def test_archimate_driver_constructor_args():
+    sig = inspect.signature(archimate_Driver.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::value_is_not_abstract():
-    assert not inspect.isabstract(archimate::Value)
+def test_archimate_value_is_not_abstract():
+    assert not inspect.isabstract(archimate_Value)
 
 
-def test_archimate::value_constructor_exists():
-    assert callable(archimate::Value.__init__)
+def test_archimate_value_constructor_exists():
+    assert callable(archimate_Value.__init__)
 
 
-def test_archimate::value_constructor_args():
-    sig = inspect.signature(archimate::Value.__init__)
+def test_archimate_value_constructor_args():
+    sig = inspect.signature(archimate_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::meaning_is_not_abstract():
-    assert not inspect.isabstract(archimate::Meaning)
+def test_archimate_meaning_is_not_abstract():
+    assert not inspect.isabstract(archimate_Meaning)
 
 
-def test_archimate::meaning_constructor_exists():
-    assert callable(archimate::Meaning.__init__)
+def test_archimate_meaning_constructor_exists():
+    assert callable(archimate_Meaning.__init__)
 
 
-def test_archimate::meaning_constructor_args():
-    sig = inspect.signature(archimate::Meaning.__init__)
+def test_archimate_meaning_constructor_args():
+    sig = inspect.signature(archimate_Meaning.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -300,147 +300,147 @@ def test_activestructureelement_constructor_args():
 
 
 
-def test_archimate::stakeholder_is_not_abstract():
-    assert not inspect.isabstract(archimate::Stakeholder)
+def test_archimate_stakeholder_is_not_abstract():
+    assert not inspect.isabstract(archimate_Stakeholder)
 
 
-def test_archimate::stakeholder_constructor_exists():
-    assert callable(archimate::Stakeholder.__init__)
+def test_archimate_stakeholder_constructor_exists():
+    assert callable(archimate_Stakeholder.__init__)
 
 
-def test_archimate::stakeholder_constructor_args():
-    sig = inspect.signature(archimate::Stakeholder.__init__)
+def test_archimate_stakeholder_constructor_args():
+    sig = inspect.signature(archimate_Stakeholder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::strategyelement_is_not_abstract():
-    assert not inspect.isabstract(archimate::StrategyElement)
+def test_archimate_strategyelement_is_not_abstract():
+    assert not inspect.isabstract(archimate_StrategyElement)
 
 
-def test_archimate::strategyelement_constructor_exists():
-    assert callable(archimate::StrategyElement.__init__)
+def test_archimate_strategyelement_constructor_exists():
+    assert callable(archimate_StrategyElement.__init__)
 
 
-def test_archimate::strategyelement_constructor_args():
-    sig = inspect.signature(archimate::StrategyElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "refinementType" in params, "Missing parameter 'refinementType'"
-    assert "relationType" in params, "Missing parameter 'relationType'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_archimate::strategyelement_has_refinementType():
-    assert hasattr(archimate::StrategyElement, "refinementType")
-    descriptor = None
-    for klass in archimate::StrategyElement.__mro__:
-        if "refinementType" in klass.__dict__:
-            descriptor = klass.__dict__["refinementType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimate::strategyelement_has_relationType():
-    assert hasattr(archimate::StrategyElement, "relationType")
-    descriptor = None
-    for klass in archimate::StrategyElement.__mro__:
-        if "relationType" in klass.__dict__:
-            descriptor = klass.__dict__["relationType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimate::strategyelement_has_name():
-    assert hasattr(archimate::StrategyElement, "name")
-    descriptor = None
-    for klass in archimate::StrategyElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_archimate::businesselement_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessElement)
-
-
-def test_archimate::businesselement_constructor_exists():
-    assert callable(archimate::BusinessElement.__init__)
-
-
-def test_archimate::businesselement_constructor_args():
-    sig = inspect.signature(archimate::BusinessElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "refinementType" in params, "Missing parameter 'refinementType'"
-    assert "relationType" in params, "Missing parameter 'relationType'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_archimate::businesselement_has_refinementType():
-    assert hasattr(archimate::BusinessElement, "refinementType")
-    descriptor = None
-    for klass in archimate::BusinessElement.__mro__:
-        if "refinementType" in klass.__dict__:
-            descriptor = klass.__dict__["refinementType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimate::businesselement_has_relationType():
-    assert hasattr(archimate::BusinessElement, "relationType")
-    descriptor = None
-    for klass in archimate::BusinessElement.__mro__:
-        if "relationType" in klass.__dict__:
-            descriptor = klass.__dict__["relationType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_archimate::businesselement_has_name():
-    assert hasattr(archimate::BusinessElement, "name")
-    descriptor = None
-    for klass in archimate::BusinessElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_archimate::motivationelement_is_not_abstract():
-    assert not inspect.isabstract(archimate::MotivationElement)
-
-
-def test_archimate::motivationelement_constructor_exists():
-    assert callable(archimate::MotivationElement.__init__)
-
-
-def test_archimate::motivationelement_constructor_args():
-    sig = inspect.signature(archimate::MotivationElement.__init__)
+def test_archimate_strategyelement_constructor_args():
+    sig = inspect.signature(archimate_StrategyElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "refinementType" in params, "Missing parameter 'refinementType'"
     assert "relationType" in params, "Missing parameter 'relationType'"
 
-def test_archimate::motivationelement_has_name():
-    assert hasattr(archimate::MotivationElement, "name")
+def test_archimate_strategyelement_has_name():
+    assert hasattr(archimate_StrategyElement, "name")
     descriptor = None
-    for klass in archimate::MotivationElement.__mro__:
+    for klass in archimate_StrategyElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_archimate::motivationelement_has_refinementType():
-    assert hasattr(archimate::MotivationElement, "refinementType")
+def test_archimate_strategyelement_has_refinementType():
+    assert hasattr(archimate_StrategyElement, "refinementType")
     descriptor = None
-    for klass in archimate::MotivationElement.__mro__:
+    for klass in archimate_StrategyElement.__mro__:
         if "refinementType" in klass.__dict__:
             descriptor = klass.__dict__["refinementType"]
             break
     assert isinstance(descriptor, property)
 
-def test_archimate::motivationelement_has_relationType():
-    assert hasattr(archimate::MotivationElement, "relationType")
+def test_archimate_strategyelement_has_relationType():
+    assert hasattr(archimate_StrategyElement, "relationType")
     descriptor = None
-    for klass in archimate::MotivationElement.__mro__:
+    for klass in archimate_StrategyElement.__mro__:
         if "relationType" in klass.__dict__:
             descriptor = klass.__dict__["relationType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_archimate_businesselement_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessElement)
+
+
+def test_archimate_businesselement_constructor_exists():
+    assert callable(archimate_BusinessElement.__init__)
+
+
+def test_archimate_businesselement_constructor_args():
+    sig = inspect.signature(archimate_BusinessElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "refinementType" in params, "Missing parameter 'refinementType'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "relationType" in params, "Missing parameter 'relationType'"
+
+def test_archimate_businesselement_has_refinementType():
+    assert hasattr(archimate_BusinessElement, "refinementType")
+    descriptor = None
+    for klass in archimate_BusinessElement.__mro__:
+        if "refinementType" in klass.__dict__:
+            descriptor = klass.__dict__["refinementType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_archimate_businesselement_has_name():
+    assert hasattr(archimate_BusinessElement, "name")
+    descriptor = None
+    for klass in archimate_BusinessElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_archimate_businesselement_has_relationType():
+    assert hasattr(archimate_BusinessElement, "relationType")
+    descriptor = None
+    for klass in archimate_BusinessElement.__mro__:
+        if "relationType" in klass.__dict__:
+            descriptor = klass.__dict__["relationType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_archimate_motivationelement_is_not_abstract():
+    assert not inspect.isabstract(archimate_MotivationElement)
+
+
+def test_archimate_motivationelement_constructor_exists():
+    assert callable(archimate_MotivationElement.__init__)
+
+
+def test_archimate_motivationelement_constructor_args():
+    sig = inspect.signature(archimate_MotivationElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "refinementType" in params, "Missing parameter 'refinementType'"
+    assert "relationType" in params, "Missing parameter 'relationType'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_archimate_motivationelement_has_refinementType():
+    assert hasattr(archimate_MotivationElement, "refinementType")
+    descriptor = None
+    for klass in archimate_MotivationElement.__mro__:
+        if "refinementType" in klass.__dict__:
+            descriptor = klass.__dict__["refinementType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_archimate_motivationelement_has_relationType():
+    assert hasattr(archimate_MotivationElement, "relationType")
+    descriptor = None
+    for klass in archimate_MotivationElement.__mro__:
+        if "relationType" in klass.__dict__:
+            descriptor = klass.__dict__["relationType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_archimate_motivationelement_has_name():
+    assert hasattr(archimate_MotivationElement, "name")
+    descriptor = None
+    for klass in archimate_MotivationElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -468,10 +468,10 @@ def test_relationtype_has_all_literals():
     enum_literals = [lit.name for lit in relationType]
     expected_literals = [
         "composition",
-        "trigger",
-        "realization",
-        "association",
         "influences",
+        "trigger",
+        "association",
+        "realization",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -492,87 +492,87 @@ safe_text = st.text(
 StrategyElement_strategy = st.builds(
     StrategyElement,
 )
-archimate::Resource_strategy = st.builds(
-    archimate::Resource,
+archimate_Resource_strategy = st.builds(
+    archimate_Resource,
 )
 BusinessElement_strategy = st.builds(
     BusinessElement,
 )
-archimate::BusinessProcess_strategy = st.builds(
-    archimate::BusinessProcess,
+archimate_BusinessProcess_strategy = st.builds(
+    archimate_BusinessProcess,
 )
 Requirement_strategy = st.builds(
     Requirement,
 )
-archimate::Constraint_strategy = st.builds(
-    archimate::Constraint,
+archimate_Constraint_strategy = st.builds(
+    archimate_Constraint,
 )
-archimate::ActiveStructureElement_strategy = st.builds(
-    archimate::ActiveStructureElement,
+archimate_ActiveStructureElement_strategy = st.builds(
+    archimate_ActiveStructureElement,
     name=
         safe_text
 )
-archimate::ArchimateDiagram_strategy = st.builds(
-    archimate::ArchimateDiagram,
+archimate_ArchimateDiagram_strategy = st.builds(
+    archimate_ArchimateDiagram,
 )
 MotivationElement_strategy = st.builds(
     MotivationElement,
 )
-archimate::Principle_strategy = st.builds(
-    archimate::Principle,
+archimate_Requirement_strategy = st.builds(
+    archimate_Requirement,
 )
-archimate::Driver_strategy = st.builds(
-    archimate::Driver,
+archimate_Principle_strategy = st.builds(
+    archimate_Principle,
 )
-archimate::Outcome_strategy = st.builds(
-    archimate::Outcome,
+archimate_Outcome_strategy = st.builds(
+    archimate_Outcome,
 )
-archimate::Goal_strategy = st.builds(
-    archimate::Goal,
+archimate_Goal_strategy = st.builds(
+    archimate_Goal,
 )
-archimate::Requirement_strategy = st.builds(
-    archimate::Requirement,
+archimate_Assessment_strategy = st.builds(
+    archimate_Assessment,
 )
-archimate::Assessment_strategy = st.builds(
-    archimate::Assessment,
+archimate_Driver_strategy = st.builds(
+    archimate_Driver,
 )
-archimate::Value_strategy = st.builds(
-    archimate::Value,
+archimate_Value_strategy = st.builds(
+    archimate_Value,
 )
-archimate::Meaning_strategy = st.builds(
-    archimate::Meaning,
+archimate_Meaning_strategy = st.builds(
+    archimate_Meaning,
 )
 ActiveStructureElement_strategy = st.builds(
     ActiveStructureElement,
 )
-archimate::Stakeholder_strategy = st.builds(
-    archimate::Stakeholder,
+archimate_Stakeholder_strategy = st.builds(
+    archimate_Stakeholder,
 )
-archimate::StrategyElement_strategy = st.builds(
-    archimate::StrategyElement,
+archimate_StrategyElement_strategy = st.builds(
+    archimate_StrategyElement,
+    name=
+        safe_text,
     refinementType=
         safe_text,
     relationType=
-        safe_text,
-    name=
         safe_text
 )
-archimate::BusinessElement_strategy = st.builds(
-    archimate::BusinessElement,
+archimate_BusinessElement_strategy = st.builds(
+    archimate_BusinessElement,
     refinementType=
         safe_text,
-    relationType=
-        safe_text,
     name=
+        safe_text,
+    relationType=
         safe_text
 )
-archimate::MotivationElement_strategy = st.builds(
-    archimate::MotivationElement,
-    name=
-        safe_text,
+archimate_MotivationElement_strategy = st.builds(
+    archimate_MotivationElement,
     refinementType=
         safe_text,
     relationType=
+        safe_text,
+    name=
         safe_text
 )
 
@@ -581,217 +581,187 @@ archimate::MotivationElement_strategy = st.builds(
 def test_strategyelement_instantiation(instance):
     assert isinstance(instance, StrategyElement)
 
-@given(instance=archimate::Resource_strategy)
+@given(instance=archimate_Resource_strategy)
 @settings(max_examples=50)
-def test_archimate::resource_instantiation(instance):
-    assert isinstance(instance, archimate::Resource)
+def test_archimate_resource_instantiation(instance):
+    assert isinstance(instance, archimate_Resource)
 
 @given(instance=BusinessElement_strategy)
 @settings(max_examples=50)
 def test_businesselement_instantiation(instance):
     assert isinstance(instance, BusinessElement)
 
-@given(instance=archimate::BusinessProcess_strategy)
+@given(instance=archimate_BusinessProcess_strategy)
 @settings(max_examples=50)
-def test_archimate::businessprocess_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessProcess)
+def test_archimate_businessprocess_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessProcess)
 
 @given(instance=Requirement_strategy)
 @settings(max_examples=50)
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=archimate::Constraint_strategy)
+@given(instance=archimate_Constraint_strategy)
 @settings(max_examples=50)
-def test_archimate::constraint_instantiation(instance):
-    assert isinstance(instance, archimate::Constraint)
+def test_archimate_constraint_instantiation(instance):
+    assert isinstance(instance, archimate_Constraint)
 
-@given(instance=archimate::ActiveStructureElement_strategy)
+@given(instance=archimate_ActiveStructureElement_strategy)
 @settings(max_examples=50)
-def test_archimate::activestructureelement_instantiation(instance):
-    assert isinstance(instance, archimate::ActiveStructureElement)
-
-@given(instance=archimate::ActiveStructureElement_strategy)
-def test_archimate::activestructureelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_archimate_activestructureelement_instantiation(instance):
+    assert isinstance(instance, archimate_ActiveStructureElement)
 
 
-@given(instance=archimate::ActiveStructureElement_strategy)
-def test_archimate::activestructureelement_name_setter(instance):
+
+@given(instance=archimate_ActiveStructureElement_strategy)
+def test_archimate_activestructureelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=archimate::ArchimateDiagram_strategy)
+@given(instance=archimate_ArchimateDiagram_strategy)
 @settings(max_examples=50)
-def test_archimate::archimatediagram_instantiation(instance):
-    assert isinstance(instance, archimate::ArchimateDiagram)
+def test_archimate_archimatediagram_instantiation(instance):
+    assert isinstance(instance, archimate_ArchimateDiagram)
 
 @given(instance=MotivationElement_strategy)
 @settings(max_examples=50)
 def test_motivationelement_instantiation(instance):
     assert isinstance(instance, MotivationElement)
 
-@given(instance=archimate::Principle_strategy)
+@given(instance=archimate_Requirement_strategy)
 @settings(max_examples=50)
-def test_archimate::principle_instantiation(instance):
-    assert isinstance(instance, archimate::Principle)
+def test_archimate_requirement_instantiation(instance):
+    assert isinstance(instance, archimate_Requirement)
 
-@given(instance=archimate::Driver_strategy)
+@given(instance=archimate_Principle_strategy)
 @settings(max_examples=50)
-def test_archimate::driver_instantiation(instance):
-    assert isinstance(instance, archimate::Driver)
+def test_archimate_principle_instantiation(instance):
+    assert isinstance(instance, archimate_Principle)
 
-@given(instance=archimate::Outcome_strategy)
+@given(instance=archimate_Outcome_strategy)
 @settings(max_examples=50)
-def test_archimate::outcome_instantiation(instance):
-    assert isinstance(instance, archimate::Outcome)
+def test_archimate_outcome_instantiation(instance):
+    assert isinstance(instance, archimate_Outcome)
 
-@given(instance=archimate::Goal_strategy)
+@given(instance=archimate_Goal_strategy)
 @settings(max_examples=50)
-def test_archimate::goal_instantiation(instance):
-    assert isinstance(instance, archimate::Goal)
+def test_archimate_goal_instantiation(instance):
+    assert isinstance(instance, archimate_Goal)
 
-@given(instance=archimate::Requirement_strategy)
+@given(instance=archimate_Assessment_strategy)
 @settings(max_examples=50)
-def test_archimate::requirement_instantiation(instance):
-    assert isinstance(instance, archimate::Requirement)
+def test_archimate_assessment_instantiation(instance):
+    assert isinstance(instance, archimate_Assessment)
 
-@given(instance=archimate::Assessment_strategy)
+@given(instance=archimate_Driver_strategy)
 @settings(max_examples=50)
-def test_archimate::assessment_instantiation(instance):
-    assert isinstance(instance, archimate::Assessment)
+def test_archimate_driver_instantiation(instance):
+    assert isinstance(instance, archimate_Driver)
 
-@given(instance=archimate::Value_strategy)
+@given(instance=archimate_Value_strategy)
 @settings(max_examples=50)
-def test_archimate::value_instantiation(instance):
-    assert isinstance(instance, archimate::Value)
+def test_archimate_value_instantiation(instance):
+    assert isinstance(instance, archimate_Value)
 
-@given(instance=archimate::Meaning_strategy)
+@given(instance=archimate_Meaning_strategy)
 @settings(max_examples=50)
-def test_archimate::meaning_instantiation(instance):
-    assert isinstance(instance, archimate::Meaning)
+def test_archimate_meaning_instantiation(instance):
+    assert isinstance(instance, archimate_Meaning)
 
 @given(instance=ActiveStructureElement_strategy)
 @settings(max_examples=50)
 def test_activestructureelement_instantiation(instance):
     assert isinstance(instance, ActiveStructureElement)
 
-@given(instance=archimate::Stakeholder_strategy)
+@given(instance=archimate_Stakeholder_strategy)
 @settings(max_examples=50)
-def test_archimate::stakeholder_instantiation(instance):
-    assert isinstance(instance, archimate::Stakeholder)
+def test_archimate_stakeholder_instantiation(instance):
+    assert isinstance(instance, archimate_Stakeholder)
 
-@given(instance=archimate::StrategyElement_strategy)
+@given(instance=archimate_StrategyElement_strategy)
 @settings(max_examples=50)
-def test_archimate::strategyelement_instantiation(instance):
-    assert isinstance(instance, archimate::StrategyElement)
-
-@given(instance=archimate::StrategyElement_strategy)
-def test_archimate::strategyelement_refinementType_type(instance):
-    assert isinstance(instance.refinementType, str)
+def test_archimate_strategyelement_instantiation(instance):
+    assert isinstance(instance, archimate_StrategyElement)
 
 
-@given(instance=archimate::StrategyElement_strategy)
-def test_archimate::strategyelement_refinementType_setter(instance):
-    original = instance.refinementType
-    instance.refinementType = original
-    assert instance.refinementType == original
 
-@given(instance=archimate::StrategyElement_strategy)
-def test_archimate::strategyelement_relationType_type(instance):
-    assert isinstance(instance.relationType, str)
-
-
-@given(instance=archimate::StrategyElement_strategy)
-def test_archimate::strategyelement_relationType_setter(instance):
-    original = instance.relationType
-    instance.relationType = original
-    assert instance.relationType == original
-
-@given(instance=archimate::StrategyElement_strategy)
-def test_archimate::strategyelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=archimate::StrategyElement_strategy)
-def test_archimate::strategyelement_name_setter(instance):
+@given(instance=archimate_StrategyElement_strategy)
+def test_archimate_strategyelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=archimate::BusinessElement_strategy)
-@settings(max_examples=50)
-def test_archimate::businesselement_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessElement)
-
-@given(instance=archimate::BusinessElement_strategy)
-def test_archimate::businesselement_refinementType_type(instance):
-    assert isinstance(instance.refinementType, str)
 
 
-@given(instance=archimate::BusinessElement_strategy)
-def test_archimate::businesselement_refinementType_setter(instance):
+@given(instance=archimate_StrategyElement_strategy)
+def test_archimate_strategyelement_refinementType_setter(instance):
     original = instance.refinementType
     instance.refinementType = original
     assert instance.refinementType == original
 
-@given(instance=archimate::BusinessElement_strategy)
-def test_archimate::businesselement_relationType_type(instance):
-    assert isinstance(instance.relationType, str)
 
 
-@given(instance=archimate::BusinessElement_strategy)
-def test_archimate::businesselement_relationType_setter(instance):
+@given(instance=archimate_StrategyElement_strategy)
+def test_archimate_strategyelement_relationType_setter(instance):
     original = instance.relationType
     instance.relationType = original
     assert instance.relationType == original
 
-@given(instance=archimate::BusinessElement_strategy)
-def test_archimate::businesselement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=archimate::BusinessElement_strategy)
-def test_archimate::businesselement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=archimate::MotivationElement_strategy)
+@given(instance=archimate_BusinessElement_strategy)
 @settings(max_examples=50)
-def test_archimate::motivationelement_instantiation(instance):
-    assert isinstance(instance, archimate::MotivationElement)
-
-@given(instance=archimate::MotivationElement_strategy)
-def test_archimate::motivationelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_archimate_businesselement_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessElement)
 
 
-@given(instance=archimate::MotivationElement_strategy)
-def test_archimate::motivationelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=archimate::MotivationElement_strategy)
-def test_archimate::motivationelement_refinementType_type(instance):
-    assert isinstance(instance.refinementType, str)
-
-
-@given(instance=archimate::MotivationElement_strategy)
-def test_archimate::motivationelement_refinementType_setter(instance):
+@given(instance=archimate_BusinessElement_strategy)
+def test_archimate_businesselement_refinementType_setter(instance):
     original = instance.refinementType
     instance.refinementType = original
     assert instance.refinementType == original
 
-@given(instance=archimate::MotivationElement_strategy)
-def test_archimate::motivationelement_relationType_type(instance):
-    assert isinstance(instance.relationType, str)
 
 
-@given(instance=archimate::MotivationElement_strategy)
-def test_archimate::motivationelement_relationType_setter(instance):
+@given(instance=archimate_BusinessElement_strategy)
+def test_archimate_businesselement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=archimate_BusinessElement_strategy)
+def test_archimate_businesselement_relationType_setter(instance):
     original = instance.relationType
     instance.relationType = original
     assert instance.relationType == original
+
+@given(instance=archimate_MotivationElement_strategy)
+@settings(max_examples=50)
+def test_archimate_motivationelement_instantiation(instance):
+    assert isinstance(instance, archimate_MotivationElement)
+
+
+
+@given(instance=archimate_MotivationElement_strategy)
+def test_archimate_motivationelement_refinementType_setter(instance):
+    original = instance.refinementType
+    instance.refinementType = original
+    assert instance.refinementType == original
+
+
+
+@given(instance=archimate_MotivationElement_strategy)
+def test_archimate_motivationelement_relationType_setter(instance):
+    original = instance.relationType
+    instance.relationType = original
+    assert instance.relationType == original
+
+
+
+@given(instance=archimate_MotivationElement_strategy)
+def test_archimate_motivationelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

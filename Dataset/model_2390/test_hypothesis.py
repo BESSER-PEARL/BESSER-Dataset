@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    simpleRDBMS::Key,
-    simpleRDBMS::Column,
-    simpleRDBMS::Table,
-    simpleRDBMS::ForeignKey,
-    simpleRDBMS::Schema,
-    simpleRDBMS::NamedElement,
-    simpleRDBMS::RDBMSModel,
+    simpleRDBMS_Table,
+    simpleRDBMS_Key,
+    simpleRDBMS_Column,
+    simpleRDBMS_ForeignKey,
+    simpleRDBMS_Schema,
+    simpleRDBMS_NamedElement,
+    simpleRDBMS_RDBMSModel,
 )
 
 # =============================================================================
@@ -36,93 +36,93 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simplerdbms::key_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::Key)
+def test_simplerdbms_table_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_Table)
 
 
-def test_simplerdbms::key_constructor_exists():
-    assert callable(simpleRDBMS::Key.__init__)
+def test_simplerdbms_table_constructor_exists():
+    assert callable(simpleRDBMS_Table.__init__)
 
 
-def test_simplerdbms::key_constructor_args():
-    sig = inspect.signature(simpleRDBMS::Key.__init__)
+def test_simplerdbms_table_constructor_args():
+    sig = inspect.signature(simpleRDBMS_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplerdbms::column_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::Column)
+def test_simplerdbms_key_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_Key)
 
 
-def test_simplerdbms::column_constructor_exists():
-    assert callable(simpleRDBMS::Column.__init__)
+def test_simplerdbms_key_constructor_exists():
+    assert callable(simpleRDBMS_Key.__init__)
 
 
-def test_simplerdbms::column_constructor_args():
-    sig = inspect.signature(simpleRDBMS::Column.__init__)
+def test_simplerdbms_key_constructor_args():
+    sig = inspect.signature(simpleRDBMS_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplerdbms::table_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::Table)
+def test_simplerdbms_column_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_Column)
 
 
-def test_simplerdbms::table_constructor_exists():
-    assert callable(simpleRDBMS::Table.__init__)
+def test_simplerdbms_column_constructor_exists():
+    assert callable(simpleRDBMS_Column.__init__)
 
 
-def test_simplerdbms::table_constructor_args():
-    sig = inspect.signature(simpleRDBMS::Table.__init__)
+def test_simplerdbms_column_constructor_args():
+    sig = inspect.signature(simpleRDBMS_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplerdbms::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::ForeignKey)
+def test_simplerdbms_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_ForeignKey)
 
 
-def test_simplerdbms::foreignkey_constructor_exists():
-    assert callable(simpleRDBMS::ForeignKey.__init__)
+def test_simplerdbms_foreignkey_constructor_exists():
+    assert callable(simpleRDBMS_ForeignKey.__init__)
 
 
-def test_simplerdbms::foreignkey_constructor_args():
-    sig = inspect.signature(simpleRDBMS::ForeignKey.__init__)
+def test_simplerdbms_foreignkey_constructor_args():
+    sig = inspect.signature(simpleRDBMS_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplerdbms::schema_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::Schema)
+def test_simplerdbms_schema_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_Schema)
 
 
-def test_simplerdbms::schema_constructor_exists():
-    assert callable(simpleRDBMS::Schema.__init__)
+def test_simplerdbms_schema_constructor_exists():
+    assert callable(simpleRDBMS_Schema.__init__)
 
 
-def test_simplerdbms::schema_constructor_args():
-    sig = inspect.signature(simpleRDBMS::Schema.__init__)
+def test_simplerdbms_schema_constructor_args():
+    sig = inspect.signature(simpleRDBMS_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplerdbms::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::NamedElement)
+def test_simplerdbms_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_NamedElement)
 
 
-def test_simplerdbms::namedelement_constructor_exists():
-    assert callable(simpleRDBMS::NamedElement.__init__)
+def test_simplerdbms_namedelement_constructor_exists():
+    assert callable(simpleRDBMS_NamedElement.__init__)
 
 
-def test_simplerdbms::namedelement_constructor_args():
-    sig = inspect.signature(simpleRDBMS::NamedElement.__init__)
+def test_simplerdbms_namedelement_constructor_args():
+    sig = inspect.signature(simpleRDBMS_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplerdbms::namedelement_has_name():
-    assert hasattr(simpleRDBMS::NamedElement, "name")
+def test_simplerdbms_namedelement_has_name():
+    assert hasattr(simpleRDBMS_NamedElement, "name")
     descriptor = None
-    for klass in simpleRDBMS::NamedElement.__mro__:
+    for klass in simpleRDBMS_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -130,16 +130,16 @@ def test_simplerdbms::namedelement_has_name():
 
 
 
-def test_simplerdbms::rdbmsmodel_is_not_abstract():
-    assert not inspect.isabstract(simpleRDBMS::RDBMSModel)
+def test_simplerdbms_rdbmsmodel_is_not_abstract():
+    assert not inspect.isabstract(simpleRDBMS_RDBMSModel)
 
 
-def test_simplerdbms::rdbmsmodel_constructor_exists():
-    assert callable(simpleRDBMS::RDBMSModel.__init__)
+def test_simplerdbms_rdbmsmodel_constructor_exists():
+    assert callable(simpleRDBMS_RDBMSModel.__init__)
 
 
-def test_simplerdbms::rdbmsmodel_constructor_args():
-    sig = inspect.signature(simpleRDBMS::RDBMSModel.__init__)
+def test_simplerdbms_rdbmsmodel_constructor_args():
+    sig = inspect.signature(simpleRDBMS_RDBMSModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,28 +157,28 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-simpleRDBMS::Key_strategy = st.builds(
-    simpleRDBMS::Key,
+simpleRDBMS_Table_strategy = st.builds(
+    simpleRDBMS_Table,
 )
-simpleRDBMS::Column_strategy = st.builds(
-    simpleRDBMS::Column,
+simpleRDBMS_Key_strategy = st.builds(
+    simpleRDBMS_Key,
 )
-simpleRDBMS::Table_strategy = st.builds(
-    simpleRDBMS::Table,
+simpleRDBMS_Column_strategy = st.builds(
+    simpleRDBMS_Column,
 )
-simpleRDBMS::ForeignKey_strategy = st.builds(
-    simpleRDBMS::ForeignKey,
+simpleRDBMS_ForeignKey_strategy = st.builds(
+    simpleRDBMS_ForeignKey,
 )
-simpleRDBMS::Schema_strategy = st.builds(
-    simpleRDBMS::Schema,
+simpleRDBMS_Schema_strategy = st.builds(
+    simpleRDBMS_Schema,
 )
-simpleRDBMS::NamedElement_strategy = st.builds(
-    simpleRDBMS::NamedElement,
+simpleRDBMS_NamedElement_strategy = st.builds(
+    simpleRDBMS_NamedElement,
     name=
         safe_text
 )
-simpleRDBMS::RDBMSModel_strategy = st.builds(
-    simpleRDBMS::RDBMSModel,
+simpleRDBMS_RDBMSModel_strategy = st.builds(
+    simpleRDBMS_RDBMSModel,
 )
 
 @given(instance=NamedElement_strategy)
@@ -186,48 +186,45 @@ simpleRDBMS::RDBMSModel_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simpleRDBMS::Key_strategy)
+@given(instance=simpleRDBMS_Table_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::key_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::Key)
+def test_simplerdbms_table_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_Table)
 
-@given(instance=simpleRDBMS::Column_strategy)
+@given(instance=simpleRDBMS_Key_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::column_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::Column)
+def test_simplerdbms_key_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_Key)
 
-@given(instance=simpleRDBMS::Table_strategy)
+@given(instance=simpleRDBMS_Column_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::table_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::Table)
+def test_simplerdbms_column_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_Column)
 
-@given(instance=simpleRDBMS::ForeignKey_strategy)
+@given(instance=simpleRDBMS_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::foreignkey_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::ForeignKey)
+def test_simplerdbms_foreignkey_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_ForeignKey)
 
-@given(instance=simpleRDBMS::Schema_strategy)
+@given(instance=simpleRDBMS_Schema_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::schema_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::Schema)
+def test_simplerdbms_schema_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_Schema)
 
-@given(instance=simpleRDBMS::NamedElement_strategy)
+@given(instance=simpleRDBMS_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::namedelement_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::NamedElement)
-
-@given(instance=simpleRDBMS::NamedElement_strategy)
-def test_simplerdbms::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplerdbms_namedelement_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_NamedElement)
 
 
-@given(instance=simpleRDBMS::NamedElement_strategy)
-def test_simplerdbms::namedelement_name_setter(instance):
+
+@given(instance=simpleRDBMS_NamedElement_strategy)
+def test_simplerdbms_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleRDBMS::RDBMSModel_strategy)
+@given(instance=simpleRDBMS_RDBMSModel_strategy)
 @settings(max_examples=50)
-def test_simplerdbms::rdbmsmodel_instantiation(instance):
-    assert isinstance(instance, simpleRDBMS::RDBMSModel)
+def test_simplerdbms_rdbmsmodel_instantiation(instance):
+    assert isinstance(instance, simpleRDBMS_RDBMSModel)

@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     EJavaObject,
-    device::Object,
+    device_Object,
     Fonctionnalite,
-    device::Action,
-    device::Capture,
-    device::EJavaObject,
-    device::Parametre,
-    device::Fonctionnalite,
-    device::Device,
-    device::Types,
+    device_Action,
+    device_Capture,
+    device_EJavaObject,
+    device_Parametre,
+    device_Fonctionnalite,
+    device_Device,
+    device_Types,
 )
 
 # =============================================================================
@@ -38,16 +38,16 @@ def test_ejavaobject_constructor_args():
 
 
 
-def test_device::object_is_not_abstract():
-    assert not inspect.isabstract(device::Object)
+def test_device_object_is_not_abstract():
+    assert not inspect.isabstract(device_Object)
 
 
-def test_device::object_constructor_exists():
-    assert callable(device::Object.__init__)
+def test_device_object_constructor_exists():
+    assert callable(device_Object.__init__)
 
 
-def test_device::object_constructor_args():
-    sig = inspect.signature(device::Object.__init__)
+def test_device_object_constructor_args():
+    sig = inspect.signature(device_Object.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -66,65 +66,65 @@ def test_fonctionnalite_constructor_args():
 
 
 
-def test_device::action_is_not_abstract():
-    assert not inspect.isabstract(device::Action)
+def test_device_action_is_not_abstract():
+    assert not inspect.isabstract(device_Action)
 
 
-def test_device::action_constructor_exists():
-    assert callable(device::Action.__init__)
+def test_device_action_constructor_exists():
+    assert callable(device_Action.__init__)
 
 
-def test_device::action_constructor_args():
-    sig = inspect.signature(device::Action.__init__)
+def test_device_action_constructor_args():
+    sig = inspect.signature(device_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_device::capture_is_not_abstract():
-    assert not inspect.isabstract(device::Capture)
+def test_device_capture_is_not_abstract():
+    assert not inspect.isabstract(device_Capture)
 
 
-def test_device::capture_constructor_exists():
-    assert callable(device::Capture.__init__)
+def test_device_capture_constructor_exists():
+    assert callable(device_Capture.__init__)
 
 
-def test_device::capture_constructor_args():
-    sig = inspect.signature(device::Capture.__init__)
+def test_device_capture_constructor_args():
+    sig = inspect.signature(device_Capture.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_device::ejavaobject_is_not_abstract():
-    assert not inspect.isabstract(device::EJavaObject)
+def test_device_ejavaobject_is_not_abstract():
+    assert not inspect.isabstract(device_EJavaObject)
 
 
-def test_device::ejavaobject_constructor_exists():
-    assert callable(device::EJavaObject.__init__)
+def test_device_ejavaobject_constructor_exists():
+    assert callable(device_EJavaObject.__init__)
 
 
-def test_device::ejavaobject_constructor_args():
-    sig = inspect.signature(device::EJavaObject.__init__)
+def test_device_ejavaobject_constructor_args():
+    sig = inspect.signature(device_EJavaObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_device::parametre_is_not_abstract():
-    assert not inspect.isabstract(device::Parametre)
+def test_device_parametre_is_not_abstract():
+    assert not inspect.isabstract(device_Parametre)
 
 
-def test_device::parametre_constructor_exists():
-    assert callable(device::Parametre.__init__)
+def test_device_parametre_constructor_exists():
+    assert callable(device_Parametre.__init__)
 
 
-def test_device::parametre_constructor_args():
-    sig = inspect.signature(device::Parametre.__init__)
+def test_device_parametre_constructor_args():
+    sig = inspect.signature(device_Parametre.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_device::parametre_has_name():
-    assert hasattr(device::Parametre, "name")
+def test_device_parametre_has_name():
+    assert hasattr(device_Parametre, "name")
     descriptor = None
-    for klass in device::Parametre.__mro__:
+    for klass in device_Parametre.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,23 +132,23 @@ def test_device::parametre_has_name():
 
 
 
-def test_device::fonctionnalite_is_not_abstract():
-    assert not inspect.isabstract(device::Fonctionnalite)
+def test_device_fonctionnalite_is_not_abstract():
+    assert not inspect.isabstract(device_Fonctionnalite)
 
 
-def test_device::fonctionnalite_constructor_exists():
-    assert callable(device::Fonctionnalite.__init__)
+def test_device_fonctionnalite_constructor_exists():
+    assert callable(device_Fonctionnalite.__init__)
 
 
-def test_device::fonctionnalite_constructor_args():
-    sig = inspect.signature(device::Fonctionnalite.__init__)
+def test_device_fonctionnalite_constructor_args():
+    sig = inspect.signature(device_Fonctionnalite.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_device::fonctionnalite_has_name():
-    assert hasattr(device::Fonctionnalite, "name")
+def test_device_fonctionnalite_has_name():
+    assert hasattr(device_Fonctionnalite, "name")
     descriptor = None
-    for klass in device::Fonctionnalite.__mro__:
+    for klass in device_Fonctionnalite.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -156,23 +156,23 @@ def test_device::fonctionnalite_has_name():
 
 
 
-def test_device::device_is_not_abstract():
-    assert not inspect.isabstract(device::Device)
+def test_device_device_is_not_abstract():
+    assert not inspect.isabstract(device_Device)
 
 
-def test_device::device_constructor_exists():
-    assert callable(device::Device.__init__)
+def test_device_device_constructor_exists():
+    assert callable(device_Device.__init__)
 
 
-def test_device::device_constructor_args():
-    sig = inspect.signature(device::Device.__init__)
+def test_device_device_constructor_args():
+    sig = inspect.signature(device_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_device::device_has_name():
-    assert hasattr(device::Device, "name")
+def test_device_device_has_name():
+    assert hasattr(device_Device, "name")
     descriptor = None
-    for klass in device::Device.__mro__:
+    for klass in device_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -180,16 +180,16 @@ def test_device::device_has_name():
 
 
 
-def test_device::types_is_not_abstract():
-    assert not inspect.isabstract(device::Types)
+def test_device_types_is_not_abstract():
+    assert not inspect.isabstract(device_Types)
 
 
-def test_device::types_constructor_exists():
-    assert callable(device::Types.__init__)
+def test_device_types_constructor_exists():
+    assert callable(device_Types.__init__)
 
 
-def test_device::types_constructor_args():
-    sig = inspect.signature(device::Types.__init__)
+def test_device_types_constructor_args():
+    sig = inspect.signature(device_Types.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -207,38 +207,38 @@ safe_text = st.text(
 EJavaObject_strategy = st.builds(
     EJavaObject,
 )
-device::Object_strategy = st.builds(
-    device::Object,
+device_Object_strategy = st.builds(
+    device_Object,
 )
 Fonctionnalite_strategy = st.builds(
     Fonctionnalite,
 )
-device::Action_strategy = st.builds(
-    device::Action,
+device_Action_strategy = st.builds(
+    device_Action,
 )
-device::Capture_strategy = st.builds(
-    device::Capture,
+device_Capture_strategy = st.builds(
+    device_Capture,
 )
-device::EJavaObject_strategy = st.builds(
-    device::EJavaObject,
+device_EJavaObject_strategy = st.builds(
+    device_EJavaObject,
 )
-device::Parametre_strategy = st.builds(
-    device::Parametre,
+device_Parametre_strategy = st.builds(
+    device_Parametre,
     name=
         safe_text
 )
-device::Fonctionnalite_strategy = st.builds(
-    device::Fonctionnalite,
+device_Fonctionnalite_strategy = st.builds(
+    device_Fonctionnalite,
     name=
         safe_text
 )
-device::Device_strategy = st.builds(
-    device::Device,
+device_Device_strategy = st.builds(
+    device_Device,
     name=
         safe_text
 )
-device::Types_strategy = st.builds(
-    device::Types,
+device_Types_strategy = st.builds(
+    device_Types,
 )
 
 @given(instance=EJavaObject_strategy)
@@ -246,80 +246,71 @@ device::Types_strategy = st.builds(
 def test_ejavaobject_instantiation(instance):
     assert isinstance(instance, EJavaObject)
 
-@given(instance=device::Object_strategy)
+@given(instance=device_Object_strategy)
 @settings(max_examples=50)
-def test_device::object_instantiation(instance):
-    assert isinstance(instance, device::Object)
+def test_device_object_instantiation(instance):
+    assert isinstance(instance, device_Object)
 
 @given(instance=Fonctionnalite_strategy)
 @settings(max_examples=50)
 def test_fonctionnalite_instantiation(instance):
     assert isinstance(instance, Fonctionnalite)
 
-@given(instance=device::Action_strategy)
+@given(instance=device_Action_strategy)
 @settings(max_examples=50)
-def test_device::action_instantiation(instance):
-    assert isinstance(instance, device::Action)
+def test_device_action_instantiation(instance):
+    assert isinstance(instance, device_Action)
 
-@given(instance=device::Capture_strategy)
+@given(instance=device_Capture_strategy)
 @settings(max_examples=50)
-def test_device::capture_instantiation(instance):
-    assert isinstance(instance, device::Capture)
+def test_device_capture_instantiation(instance):
+    assert isinstance(instance, device_Capture)
 
-@given(instance=device::EJavaObject_strategy)
+@given(instance=device_EJavaObject_strategy)
 @settings(max_examples=50)
-def test_device::ejavaobject_instantiation(instance):
-    assert isinstance(instance, device::EJavaObject)
+def test_device_ejavaobject_instantiation(instance):
+    assert isinstance(instance, device_EJavaObject)
 
-@given(instance=device::Parametre_strategy)
+@given(instance=device_Parametre_strategy)
 @settings(max_examples=50)
-def test_device::parametre_instantiation(instance):
-    assert isinstance(instance, device::Parametre)
-
-@given(instance=device::Parametre_strategy)
-def test_device::parametre_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_device_parametre_instantiation(instance):
+    assert isinstance(instance, device_Parametre)
 
 
-@given(instance=device::Parametre_strategy)
-def test_device::parametre_name_setter(instance):
+
+@given(instance=device_Parametre_strategy)
+def test_device_parametre_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=device::Fonctionnalite_strategy)
+@given(instance=device_Fonctionnalite_strategy)
 @settings(max_examples=50)
-def test_device::fonctionnalite_instantiation(instance):
-    assert isinstance(instance, device::Fonctionnalite)
-
-@given(instance=device::Fonctionnalite_strategy)
-def test_device::fonctionnalite_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_device_fonctionnalite_instantiation(instance):
+    assert isinstance(instance, device_Fonctionnalite)
 
 
-@given(instance=device::Fonctionnalite_strategy)
-def test_device::fonctionnalite_name_setter(instance):
+
+@given(instance=device_Fonctionnalite_strategy)
+def test_device_fonctionnalite_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=device::Device_strategy)
+@given(instance=device_Device_strategy)
 @settings(max_examples=50)
-def test_device::device_instantiation(instance):
-    assert isinstance(instance, device::Device)
-
-@given(instance=device::Device_strategy)
-def test_device::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_device_device_instantiation(instance):
+    assert isinstance(instance, device_Device)
 
 
-@given(instance=device::Device_strategy)
-def test_device::device_name_setter(instance):
+
+@given(instance=device_Device_strategy)
+def test_device_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=device::Types_strategy)
+@given(instance=device_Types_strategy)
 @settings(max_examples=50)
-def test_device::types_instantiation(instance):
-    assert isinstance(instance, device::Types)
+def test_device_types_instantiation(instance):
+    assert isinstance(instance, device_Types)

@@ -3,43 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rell::Conditions,
+from python_code import (
+    rell_Conditions,
     Expression,
-    rell::Plus,
-    rell::IntConstant,
-    rell::Equality,
-    rell::And,
-    rell::MulOrDiv,
-    rell::Comparison,
-    rell::StringConstant,
-    rell::VariableRef,
-    rell::Not,
-    rell::BoolConstant,
-    rell::Minus,
-    rell::Or,
-    rell::ClassType,
-    rell::PrimitiveType,
-    rell::TypeReference,
-    rell::ConditionElement,
+    rell_And,
+    rell_Equality,
+    rell_Comparison,
+    rell_Plus,
+    rell_Not,
+    rell_VariableRef,
+    rell_Minus,
+    rell_BoolConstant,
+    rell_StringConstant,
+    rell_IntConstant,
+    rell_MulOrDiv,
+    rell_Or,
+    rell_ClassType,
+    rell_PrimitiveType,
+    rell_TypeReference,
+    rell_ConditionElement,
     Relational,
-    rell::Create,
-    rell::Delete,
-    rell::Update,
-    rell::Expression,
-    rell::VariableDeclaration,
+    rell_Delete,
+    rell_Create,
+    rell_Update,
+    rell_Expression,
+    rell_VariableDeclaration,
     Statement,
-    rell::Relational,
-    rell::VariableInit,
-    rell::Variable,
-    rell::Statement,
-    rell::RelAttrubutesList,
-    rell::Attribute,
-    rell::Operation,
-    rell::ClassDefinition,
-    rell::Model,
+    rell_VariableInit,
+    rell_Relational,
+    rell_Variable,
+    rell_Statement,
+    rell_RelAttrubutesList,
+    rell_Attribute,
+    rell_Operation,
+    rell_ClassDefinition,
+    rell_Model,
 )
 
 # =============================================================================
@@ -48,16 +48,16 @@ from classes import (
 
 
 
-def test_rell::conditions_is_not_abstract():
-    assert not inspect.isabstract(rell::Conditions)
+def test_rell_conditions_is_not_abstract():
+    assert not inspect.isabstract(rell_Conditions)
 
 
-def test_rell::conditions_constructor_exists():
-    assert callable(rell::Conditions.__init__)
+def test_rell_conditions_constructor_exists():
+    assert callable(rell_Conditions.__init__)
 
 
-def test_rell::conditions_constructor_args():
-    sig = inspect.signature(rell::Conditions.__init__)
+def test_rell_conditions_constructor_args():
+    sig = inspect.signature(rell_Conditions.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -76,61 +76,37 @@ def test_expression_constructor_args():
 
 
 
-def test_rell::plus_is_not_abstract():
-    assert not inspect.isabstract(rell::Plus)
+def test_rell_and_is_not_abstract():
+    assert not inspect.isabstract(rell_And)
 
 
-def test_rell::plus_constructor_exists():
-    assert callable(rell::Plus.__init__)
+def test_rell_and_constructor_exists():
+    assert callable(rell_And.__init__)
 
 
-def test_rell::plus_constructor_args():
-    sig = inspect.signature(rell::Plus.__init__)
+def test_rell_and_constructor_args():
+    sig = inspect.signature(rell_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::intconstant_is_not_abstract():
-    assert not inspect.isabstract(rell::IntConstant)
+def test_rell_equality_is_not_abstract():
+    assert not inspect.isabstract(rell_Equality)
 
 
-def test_rell::intconstant_constructor_exists():
-    assert callable(rell::IntConstant.__init__)
+def test_rell_equality_constructor_exists():
+    assert callable(rell_Equality.__init__)
 
 
-def test_rell::intconstant_constructor_args():
-    sig = inspect.signature(rell::IntConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_rell::intconstant_has_value():
-    assert hasattr(rell::IntConstant, "value")
-    descriptor = None
-    for klass in rell::IntConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rell::equality_is_not_abstract():
-    assert not inspect.isabstract(rell::Equality)
-
-
-def test_rell::equality_constructor_exists():
-    assert callable(rell::Equality.__init__)
-
-
-def test_rell::equality_constructor_args():
-    sig = inspect.signature(rell::Equality.__init__)
+def test_rell_equality_constructor_args():
+    sig = inspect.signature(rell_Equality.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_rell::equality_has_op():
-    assert hasattr(rell::Equality, "op")
+def test_rell_equality_has_op():
+    assert hasattr(rell_Equality, "op")
     descriptor = None
-    for klass in rell::Equality.__mro__:
+    for klass in rell_Equality.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -138,37 +114,23 @@ def test_rell::equality_has_op():
 
 
 
-def test_rell::and_is_not_abstract():
-    assert not inspect.isabstract(rell::And)
+def test_rell_comparison_is_not_abstract():
+    assert not inspect.isabstract(rell_Comparison)
 
 
-def test_rell::and_constructor_exists():
-    assert callable(rell::And.__init__)
+def test_rell_comparison_constructor_exists():
+    assert callable(rell_Comparison.__init__)
 
 
-def test_rell::and_constructor_args():
-    sig = inspect.signature(rell::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rell::mulordiv_is_not_abstract():
-    assert not inspect.isabstract(rell::MulOrDiv)
-
-
-def test_rell::mulordiv_constructor_exists():
-    assert callable(rell::MulOrDiv.__init__)
-
-
-def test_rell::mulordiv_constructor_args():
-    sig = inspect.signature(rell::MulOrDiv.__init__)
+def test_rell_comparison_constructor_args():
+    sig = inspect.signature(rell_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_rell::mulordiv_has_op():
-    assert hasattr(rell::MulOrDiv, "op")
+def test_rell_comparison_has_op():
+    assert hasattr(rell_Comparison, "op")
     descriptor = None
-    for klass in rell::MulOrDiv.__mro__:
+    for klass in rell_Comparison.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -176,23 +138,151 @@ def test_rell::mulordiv_has_op():
 
 
 
-def test_rell::comparison_is_not_abstract():
-    assert not inspect.isabstract(rell::Comparison)
+def test_rell_plus_is_not_abstract():
+    assert not inspect.isabstract(rell_Plus)
 
 
-def test_rell::comparison_constructor_exists():
-    assert callable(rell::Comparison.__init__)
+def test_rell_plus_constructor_exists():
+    assert callable(rell_Plus.__init__)
 
 
-def test_rell::comparison_constructor_args():
-    sig = inspect.signature(rell::Comparison.__init__)
+def test_rell_plus_constructor_args():
+    sig = inspect.signature(rell_Plus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rell_not_is_not_abstract():
+    assert not inspect.isabstract(rell_Not)
+
+
+def test_rell_not_constructor_exists():
+    assert callable(rell_Not.__init__)
+
+
+def test_rell_not_constructor_args():
+    sig = inspect.signature(rell_Not.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rell_variableref_is_not_abstract():
+    assert not inspect.isabstract(rell_VariableRef)
+
+
+def test_rell_variableref_constructor_exists():
+    assert callable(rell_VariableRef.__init__)
+
+
+def test_rell_variableref_constructor_args():
+    sig = inspect.signature(rell_VariableRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rell_minus_is_not_abstract():
+    assert not inspect.isabstract(rell_Minus)
+
+
+def test_rell_minus_constructor_exists():
+    assert callable(rell_Minus.__init__)
+
+
+def test_rell_minus_constructor_args():
+    sig = inspect.signature(rell_Minus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rell_boolconstant_is_not_abstract():
+    assert not inspect.isabstract(rell_BoolConstant)
+
+
+def test_rell_boolconstant_constructor_exists():
+    assert callable(rell_BoolConstant.__init__)
+
+
+def test_rell_boolconstant_constructor_args():
+    sig = inspect.signature(rell_BoolConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_rell_boolconstant_has_value():
+    assert hasattr(rell_BoolConstant, "value")
+    descriptor = None
+    for klass in rell_BoolConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rell_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(rell_StringConstant)
+
+
+def test_rell_stringconstant_constructor_exists():
+    assert callable(rell_StringConstant.__init__)
+
+
+def test_rell_stringconstant_constructor_args():
+    sig = inspect.signature(rell_StringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_rell_stringconstant_has_value():
+    assert hasattr(rell_StringConstant, "value")
+    descriptor = None
+    for klass in rell_StringConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rell_intconstant_is_not_abstract():
+    assert not inspect.isabstract(rell_IntConstant)
+
+
+def test_rell_intconstant_constructor_exists():
+    assert callable(rell_IntConstant.__init__)
+
+
+def test_rell_intconstant_constructor_args():
+    sig = inspect.signature(rell_IntConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_rell_intconstant_has_value():
+    assert hasattr(rell_IntConstant, "value")
+    descriptor = None
+    for klass in rell_IntConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rell_mulordiv_is_not_abstract():
+    assert not inspect.isabstract(rell_MulOrDiv)
+
+
+def test_rell_mulordiv_constructor_exists():
+    assert callable(rell_MulOrDiv.__init__)
+
+
+def test_rell_mulordiv_constructor_args():
+    sig = inspect.signature(rell_MulOrDiv.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_rell::comparison_has_op():
-    assert hasattr(rell::Comparison, "op")
+def test_rell_mulordiv_has_op():
+    assert hasattr(rell_MulOrDiv, "op")
     descriptor = None
-    for klass in rell::Comparison.__mro__:
+    for klass in rell_MulOrDiv.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -200,141 +290,51 @@ def test_rell::comparison_has_op():
 
 
 
-def test_rell::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(rell::StringConstant)
+def test_rell_or_is_not_abstract():
+    assert not inspect.isabstract(rell_Or)
 
 
-def test_rell::stringconstant_constructor_exists():
-    assert callable(rell::StringConstant.__init__)
+def test_rell_or_constructor_exists():
+    assert callable(rell_Or.__init__)
 
 
-def test_rell::stringconstant_constructor_args():
-    sig = inspect.signature(rell::StringConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_rell::stringconstant_has_value():
-    assert hasattr(rell::StringConstant, "value")
-    descriptor = None
-    for klass in rell::StringConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rell::variableref_is_not_abstract():
-    assert not inspect.isabstract(rell::VariableRef)
-
-
-def test_rell::variableref_constructor_exists():
-    assert callable(rell::VariableRef.__init__)
-
-
-def test_rell::variableref_constructor_args():
-    sig = inspect.signature(rell::VariableRef.__init__)
+def test_rell_or_constructor_args():
+    sig = inspect.signature(rell_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::not_is_not_abstract():
-    assert not inspect.isabstract(rell::Not)
+def test_rell_classtype_is_not_abstract():
+    assert not inspect.isabstract(rell_ClassType)
 
 
-def test_rell::not_constructor_exists():
-    assert callable(rell::Not.__init__)
+def test_rell_classtype_constructor_exists():
+    assert callable(rell_ClassType.__init__)
 
 
-def test_rell::not_constructor_args():
-    sig = inspect.signature(rell::Not.__init__)
+def test_rell_classtype_constructor_args():
+    sig = inspect.signature(rell_ClassType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::boolconstant_is_not_abstract():
-    assert not inspect.isabstract(rell::BoolConstant)
+def test_rell_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(rell_PrimitiveType)
 
 
-def test_rell::boolconstant_constructor_exists():
-    assert callable(rell::BoolConstant.__init__)
+def test_rell_primitivetype_constructor_exists():
+    assert callable(rell_PrimitiveType.__init__)
 
 
-def test_rell::boolconstant_constructor_args():
-    sig = inspect.signature(rell::BoolConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_rell::boolconstant_has_value():
-    assert hasattr(rell::BoolConstant, "value")
-    descriptor = None
-    for klass in rell::BoolConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rell::minus_is_not_abstract():
-    assert not inspect.isabstract(rell::Minus)
-
-
-def test_rell::minus_constructor_exists():
-    assert callable(rell::Minus.__init__)
-
-
-def test_rell::minus_constructor_args():
-    sig = inspect.signature(rell::Minus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rell::or_is_not_abstract():
-    assert not inspect.isabstract(rell::Or)
-
-
-def test_rell::or_constructor_exists():
-    assert callable(rell::Or.__init__)
-
-
-def test_rell::or_constructor_args():
-    sig = inspect.signature(rell::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rell::classtype_is_not_abstract():
-    assert not inspect.isabstract(rell::ClassType)
-
-
-def test_rell::classtype_constructor_exists():
-    assert callable(rell::ClassType.__init__)
-
-
-def test_rell::classtype_constructor_args():
-    sig = inspect.signature(rell::ClassType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rell::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(rell::PrimitiveType)
-
-
-def test_rell::primitivetype_constructor_exists():
-    assert callable(rell::PrimitiveType.__init__)
-
-
-def test_rell::primitivetype_constructor_args():
-    sig = inspect.signature(rell::PrimitiveType.__init__)
+def test_rell_primitivetype_constructor_args():
+    sig = inspect.signature(rell_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_rell::primitivetype_has_primitiveType():
-    assert hasattr(rell::PrimitiveType, "primitiveType")
+def test_rell_primitivetype_has_primitiveType():
+    assert hasattr(rell_PrimitiveType, "primitiveType")
     descriptor = None
-    for klass in rell::PrimitiveType.__mro__:
+    for klass in rell_PrimitiveType.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -342,37 +342,37 @@ def test_rell::primitivetype_has_primitiveType():
 
 
 
-def test_rell::typereference_is_not_abstract():
-    assert not inspect.isabstract(rell::TypeReference)
+def test_rell_typereference_is_not_abstract():
+    assert not inspect.isabstract(rell_TypeReference)
 
 
-def test_rell::typereference_constructor_exists():
-    assert callable(rell::TypeReference.__init__)
+def test_rell_typereference_constructor_exists():
+    assert callable(rell_TypeReference.__init__)
 
 
-def test_rell::typereference_constructor_args():
-    sig = inspect.signature(rell::TypeReference.__init__)
+def test_rell_typereference_constructor_args():
+    sig = inspect.signature(rell_TypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::conditionelement_is_not_abstract():
-    assert not inspect.isabstract(rell::ConditionElement)
+def test_rell_conditionelement_is_not_abstract():
+    assert not inspect.isabstract(rell_ConditionElement)
 
 
-def test_rell::conditionelement_constructor_exists():
-    assert callable(rell::ConditionElement.__init__)
+def test_rell_conditionelement_constructor_exists():
+    assert callable(rell_ConditionElement.__init__)
 
 
-def test_rell::conditionelement_constructor_args():
-    sig = inspect.signature(rell::ConditionElement.__init__)
+def test_rell_conditionelement_constructor_args():
+    sig = inspect.signature(rell_ConditionElement.__init__)
     params = list(sig.parameters.keys())
     assert "compareName" in params, "Missing parameter 'compareName'"
 
-def test_rell::conditionelement_has_compareName():
-    assert hasattr(rell::ConditionElement, "compareName")
+def test_rell_conditionelement_has_compareName():
+    assert hasattr(rell_ConditionElement, "compareName")
     descriptor = None
-    for klass in rell::ConditionElement.__mro__:
+    for klass in rell_ConditionElement.__mro__:
         if "compareName" in klass.__dict__:
             descriptor = klass.__dict__["compareName"]
             break
@@ -394,79 +394,79 @@ def test_relational_constructor_args():
 
 
 
-def test_rell::create_is_not_abstract():
-    assert not inspect.isabstract(rell::Create)
+def test_rell_delete_is_not_abstract():
+    assert not inspect.isabstract(rell_Delete)
 
 
-def test_rell::create_constructor_exists():
-    assert callable(rell::Create.__init__)
+def test_rell_delete_constructor_exists():
+    assert callable(rell_Delete.__init__)
 
 
-def test_rell::create_constructor_args():
-    sig = inspect.signature(rell::Create.__init__)
+def test_rell_delete_constructor_args():
+    sig = inspect.signature(rell_Delete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::delete_is_not_abstract():
-    assert not inspect.isabstract(rell::Delete)
+def test_rell_create_is_not_abstract():
+    assert not inspect.isabstract(rell_Create)
 
 
-def test_rell::delete_constructor_exists():
-    assert callable(rell::Delete.__init__)
+def test_rell_create_constructor_exists():
+    assert callable(rell_Create.__init__)
 
 
-def test_rell::delete_constructor_args():
-    sig = inspect.signature(rell::Delete.__init__)
+def test_rell_create_constructor_args():
+    sig = inspect.signature(rell_Create.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::update_is_not_abstract():
-    assert not inspect.isabstract(rell::Update)
+def test_rell_update_is_not_abstract():
+    assert not inspect.isabstract(rell_Update)
 
 
-def test_rell::update_constructor_exists():
-    assert callable(rell::Update.__init__)
+def test_rell_update_constructor_exists():
+    assert callable(rell_Update.__init__)
 
 
-def test_rell::update_constructor_args():
-    sig = inspect.signature(rell::Update.__init__)
+def test_rell_update_constructor_args():
+    sig = inspect.signature(rell_Update.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::expression_is_not_abstract():
-    assert not inspect.isabstract(rell::Expression)
+def test_rell_expression_is_not_abstract():
+    assert not inspect.isabstract(rell_Expression)
 
 
-def test_rell::expression_constructor_exists():
-    assert callable(rell::Expression.__init__)
+def test_rell_expression_constructor_exists():
+    assert callable(rell_Expression.__init__)
 
 
-def test_rell::expression_constructor_args():
-    sig = inspect.signature(rell::Expression.__init__)
+def test_rell_expression_constructor_args():
+    sig = inspect.signature(rell_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(rell::VariableDeclaration)
+def test_rell_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(rell_VariableDeclaration)
 
 
-def test_rell::variabledeclaration_constructor_exists():
-    assert callable(rell::VariableDeclaration.__init__)
+def test_rell_variabledeclaration_constructor_exists():
+    assert callable(rell_VariableDeclaration.__init__)
 
 
-def test_rell::variabledeclaration_constructor_args():
-    sig = inspect.signature(rell::VariableDeclaration.__init__)
+def test_rell_variabledeclaration_constructor_args():
+    sig = inspect.signature(rell_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rell::variabledeclaration_has_name():
-    assert hasattr(rell::VariableDeclaration, "name")
+def test_rell_variabledeclaration_has_name():
+    assert hasattr(rell_VariableDeclaration, "name")
     descriptor = None
-    for klass in rell::VariableDeclaration.__mro__:
+    for klass in rell_VariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -488,23 +488,37 @@ def test_statement_constructor_args():
 
 
 
-def test_rell::relational_is_not_abstract():
-    assert not inspect.isabstract(rell::Relational)
+def test_rell_variableinit_is_not_abstract():
+    assert not inspect.isabstract(rell_VariableInit)
 
 
-def test_rell::relational_constructor_exists():
-    assert callable(rell::Relational.__init__)
+def test_rell_variableinit_constructor_exists():
+    assert callable(rell_VariableInit.__init__)
 
 
-def test_rell::relational_constructor_args():
-    sig = inspect.signature(rell::Relational.__init__)
+def test_rell_variableinit_constructor_args():
+    sig = inspect.signature(rell_VariableInit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rell_relational_is_not_abstract():
+    assert not inspect.isabstract(rell_Relational)
+
+
+def test_rell_relational_constructor_exists():
+    assert callable(rell_Relational.__init__)
+
+
+def test_rell_relational_constructor_args():
+    sig = inspect.signature(rell_Relational.__init__)
     params = list(sig.parameters.keys())
     assert "entity" in params, "Missing parameter 'entity'"
 
-def test_rell::relational_has_entity():
-    assert hasattr(rell::Relational, "entity")
+def test_rell_relational_has_entity():
+    assert hasattr(rell_Relational, "entity")
     descriptor = None
-    for klass in rell::Relational.__mro__:
+    for klass in rell_Relational.__mro__:
         if "entity" in klass.__dict__:
             descriptor = klass.__dict__["entity"]
             break
@@ -512,79 +526,65 @@ def test_rell::relational_has_entity():
 
 
 
-def test_rell::variableinit_is_not_abstract():
-    assert not inspect.isabstract(rell::VariableInit)
+def test_rell_variable_is_not_abstract():
+    assert not inspect.isabstract(rell_Variable)
 
 
-def test_rell::variableinit_constructor_exists():
-    assert callable(rell::VariableInit.__init__)
+def test_rell_variable_constructor_exists():
+    assert callable(rell_Variable.__init__)
 
 
-def test_rell::variableinit_constructor_args():
-    sig = inspect.signature(rell::VariableInit.__init__)
+def test_rell_variable_constructor_args():
+    sig = inspect.signature(rell_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::variable_is_not_abstract():
-    assert not inspect.isabstract(rell::Variable)
+def test_rell_statement_is_not_abstract():
+    assert not inspect.isabstract(rell_Statement)
 
 
-def test_rell::variable_constructor_exists():
-    assert callable(rell::Variable.__init__)
+def test_rell_statement_constructor_exists():
+    assert callable(rell_Statement.__init__)
 
 
-def test_rell::variable_constructor_args():
-    sig = inspect.signature(rell::Variable.__init__)
+def test_rell_statement_constructor_args():
+    sig = inspect.signature(rell_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::statement_is_not_abstract():
-    assert not inspect.isabstract(rell::Statement)
+def test_rell_relattrubuteslist_is_not_abstract():
+    assert not inspect.isabstract(rell_RelAttrubutesList)
 
 
-def test_rell::statement_constructor_exists():
-    assert callable(rell::Statement.__init__)
+def test_rell_relattrubuteslist_constructor_exists():
+    assert callable(rell_RelAttrubutesList.__init__)
 
 
-def test_rell::statement_constructor_args():
-    sig = inspect.signature(rell::Statement.__init__)
+def test_rell_relattrubuteslist_constructor_args():
+    sig = inspect.signature(rell_RelAttrubutesList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rell::relattrubuteslist_is_not_abstract():
-    assert not inspect.isabstract(rell::RelAttrubutesList)
+def test_rell_attribute_is_not_abstract():
+    assert not inspect.isabstract(rell_Attribute)
 
 
-def test_rell::relattrubuteslist_constructor_exists():
-    assert callable(rell::RelAttrubutesList.__init__)
+def test_rell_attribute_constructor_exists():
+    assert callable(rell_Attribute.__init__)
 
 
-def test_rell::relattrubuteslist_constructor_args():
-    sig = inspect.signature(rell::RelAttrubutesList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rell::attribute_is_not_abstract():
-    assert not inspect.isabstract(rell::Attribute)
-
-
-def test_rell::attribute_constructor_exists():
-    assert callable(rell::Attribute.__init__)
-
-
-def test_rell::attribute_constructor_args():
-    sig = inspect.signature(rell::Attribute.__init__)
+def test_rell_attribute_constructor_args():
+    sig = inspect.signature(rell_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "modificator" in params, "Missing parameter 'modificator'"
 
-def test_rell::attribute_has_modificator():
-    assert hasattr(rell::Attribute, "modificator")
+def test_rell_attribute_has_modificator():
+    assert hasattr(rell_Attribute, "modificator")
     descriptor = None
-    for klass in rell::Attribute.__mro__:
+    for klass in rell_Attribute.__mro__:
         if "modificator" in klass.__dict__:
             descriptor = klass.__dict__["modificator"]
             break
@@ -592,23 +592,23 @@ def test_rell::attribute_has_modificator():
 
 
 
-def test_rell::operation_is_not_abstract():
-    assert not inspect.isabstract(rell::Operation)
+def test_rell_operation_is_not_abstract():
+    assert not inspect.isabstract(rell_Operation)
 
 
-def test_rell::operation_constructor_exists():
-    assert callable(rell::Operation.__init__)
+def test_rell_operation_constructor_exists():
+    assert callable(rell_Operation.__init__)
 
 
-def test_rell::operation_constructor_args():
-    sig = inspect.signature(rell::Operation.__init__)
+def test_rell_operation_constructor_args():
+    sig = inspect.signature(rell_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rell::operation_has_name():
-    assert hasattr(rell::Operation, "name")
+def test_rell_operation_has_name():
+    assert hasattr(rell_Operation, "name")
     descriptor = None
-    for klass in rell::Operation.__mro__:
+    for klass in rell_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -616,23 +616,23 @@ def test_rell::operation_has_name():
 
 
 
-def test_rell::classdefinition_is_not_abstract():
-    assert not inspect.isabstract(rell::ClassDefinition)
+def test_rell_classdefinition_is_not_abstract():
+    assert not inspect.isabstract(rell_ClassDefinition)
 
 
-def test_rell::classdefinition_constructor_exists():
-    assert callable(rell::ClassDefinition.__init__)
+def test_rell_classdefinition_constructor_exists():
+    assert callable(rell_ClassDefinition.__init__)
 
 
-def test_rell::classdefinition_constructor_args():
-    sig = inspect.signature(rell::ClassDefinition.__init__)
+def test_rell_classdefinition_constructor_args():
+    sig = inspect.signature(rell_ClassDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rell::classdefinition_has_name():
-    assert hasattr(rell::ClassDefinition, "name")
+def test_rell_classdefinition_has_name():
+    assert hasattr(rell_ClassDefinition, "name")
     descriptor = None
-    for klass in rell::ClassDefinition.__mro__:
+    for klass in rell_ClassDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -640,16 +640,16 @@ def test_rell::classdefinition_has_name():
 
 
 
-def test_rell::model_is_not_abstract():
-    assert not inspect.isabstract(rell::Model)
+def test_rell_model_is_not_abstract():
+    assert not inspect.isabstract(rell_Model)
 
 
-def test_rell::model_constructor_exists():
-    assert callable(rell::Model.__init__)
+def test_rell_model_constructor_exists():
+    assert callable(rell_Model.__init__)
 
 
-def test_rell::model_constructor_args():
-    sig = inspect.signature(rell::Model.__init__)
+def test_rell_model_constructor_args():
+    sig = inspect.signature(rell_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -664,309 +664,285 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rell::Conditions_strategy = st.builds(
-    rell::Conditions,
+rell_Conditions_strategy = st.builds(
+    rell_Conditions,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-rell::Plus_strategy = st.builds(
-    rell::Plus,
+rell_And_strategy = st.builds(
+    rell_And,
 )
-rell::IntConstant_strategy = st.builds(
-    rell::IntConstant,
+rell_Equality_strategy = st.builds(
+    rell_Equality,
+    op=
+        safe_text
+)
+rell_Comparison_strategy = st.builds(
+    rell_Comparison,
+    op=
+        safe_text
+)
+rell_Plus_strategy = st.builds(
+    rell_Plus,
+)
+rell_Not_strategy = st.builds(
+    rell_Not,
+)
+rell_VariableRef_strategy = st.builds(
+    rell_VariableRef,
+)
+rell_Minus_strategy = st.builds(
+    rell_Minus,
+)
+rell_BoolConstant_strategy = st.builds(
+    rell_BoolConstant,
+    value=
+        safe_text
+)
+rell_StringConstant_strategy = st.builds(
+    rell_StringConstant,
+    value=
+        safe_text
+)
+rell_IntConstant_strategy = st.builds(
+    rell_IntConstant,
     value=
         st.integers()
 )
-rell::Equality_strategy = st.builds(
-    rell::Equality,
+rell_MulOrDiv_strategy = st.builds(
+    rell_MulOrDiv,
     op=
         safe_text
 )
-rell::And_strategy = st.builds(
-    rell::And,
+rell_Or_strategy = st.builds(
+    rell_Or,
 )
-rell::MulOrDiv_strategy = st.builds(
-    rell::MulOrDiv,
-    op=
-        safe_text
+rell_ClassType_strategy = st.builds(
+    rell_ClassType,
 )
-rell::Comparison_strategy = st.builds(
-    rell::Comparison,
-    op=
-        safe_text
-)
-rell::StringConstant_strategy = st.builds(
-    rell::StringConstant,
-    value=
-        safe_text
-)
-rell::VariableRef_strategy = st.builds(
-    rell::VariableRef,
-)
-rell::Not_strategy = st.builds(
-    rell::Not,
-)
-rell::BoolConstant_strategy = st.builds(
-    rell::BoolConstant,
-    value=
-        safe_text
-)
-rell::Minus_strategy = st.builds(
-    rell::Minus,
-)
-rell::Or_strategy = st.builds(
-    rell::Or,
-)
-rell::ClassType_strategy = st.builds(
-    rell::ClassType,
-)
-rell::PrimitiveType_strategy = st.builds(
-    rell::PrimitiveType,
+rell_PrimitiveType_strategy = st.builds(
+    rell_PrimitiveType,
     primitiveType=
         safe_text
 )
-rell::TypeReference_strategy = st.builds(
-    rell::TypeReference,
+rell_TypeReference_strategy = st.builds(
+    rell_TypeReference,
 )
-rell::ConditionElement_strategy = st.builds(
-    rell::ConditionElement,
+rell_ConditionElement_strategy = st.builds(
+    rell_ConditionElement,
     compareName=
         safe_text
 )
 Relational_strategy = st.builds(
     Relational,
 )
-rell::Create_strategy = st.builds(
-    rell::Create,
+rell_Delete_strategy = st.builds(
+    rell_Delete,
 )
-rell::Delete_strategy = st.builds(
-    rell::Delete,
+rell_Create_strategy = st.builds(
+    rell_Create,
 )
-rell::Update_strategy = st.builds(
-    rell::Update,
+rell_Update_strategy = st.builds(
+    rell_Update,
 )
-rell::Expression_strategy = st.builds(
-    rell::Expression,
+rell_Expression_strategy = st.builds(
+    rell_Expression,
 )
-rell::VariableDeclaration_strategy = st.builds(
-    rell::VariableDeclaration,
+rell_VariableDeclaration_strategy = st.builds(
+    rell_VariableDeclaration,
     name=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-rell::Relational_strategy = st.builds(
-    rell::Relational,
+rell_VariableInit_strategy = st.builds(
+    rell_VariableInit,
+)
+rell_Relational_strategy = st.builds(
+    rell_Relational,
     entity=
         safe_text
 )
-rell::VariableInit_strategy = st.builds(
-    rell::VariableInit,
+rell_Variable_strategy = st.builds(
+    rell_Variable,
 )
-rell::Variable_strategy = st.builds(
-    rell::Variable,
+rell_Statement_strategy = st.builds(
+    rell_Statement,
 )
-rell::Statement_strategy = st.builds(
-    rell::Statement,
+rell_RelAttrubutesList_strategy = st.builds(
+    rell_RelAttrubutesList,
 )
-rell::RelAttrubutesList_strategy = st.builds(
-    rell::RelAttrubutesList,
-)
-rell::Attribute_strategy = st.builds(
-    rell::Attribute,
+rell_Attribute_strategy = st.builds(
+    rell_Attribute,
     modificator=
         safe_text
 )
-rell::Operation_strategy = st.builds(
-    rell::Operation,
+rell_Operation_strategy = st.builds(
+    rell_Operation,
     name=
         safe_text
 )
-rell::ClassDefinition_strategy = st.builds(
-    rell::ClassDefinition,
+rell_ClassDefinition_strategy = st.builds(
+    rell_ClassDefinition,
     name=
         safe_text
 )
-rell::Model_strategy = st.builds(
-    rell::Model,
+rell_Model_strategy = st.builds(
+    rell_Model,
 )
 
-@given(instance=rell::Conditions_strategy)
+@given(instance=rell_Conditions_strategy)
 @settings(max_examples=50)
-def test_rell::conditions_instantiation(instance):
-    assert isinstance(instance, rell::Conditions)
+def test_rell_conditions_instantiation(instance):
+    assert isinstance(instance, rell_Conditions)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=rell::Plus_strategy)
+@given(instance=rell_And_strategy)
 @settings(max_examples=50)
-def test_rell::plus_instantiation(instance):
-    assert isinstance(instance, rell::Plus)
+def test_rell_and_instantiation(instance):
+    assert isinstance(instance, rell_And)
 
-@given(instance=rell::IntConstant_strategy)
+@given(instance=rell_Equality_strategy)
 @settings(max_examples=50)
-def test_rell::intconstant_instantiation(instance):
-    assert isinstance(instance, rell::IntConstant)
-
-@given(instance=rell::IntConstant_strategy)
-def test_rell::intconstant_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_rell_equality_instantiation(instance):
+    assert isinstance(instance, rell_Equality)
 
 
-@given(instance=rell::IntConstant_strategy)
-def test_rell::intconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=rell::Equality_strategy)
-@settings(max_examples=50)
-def test_rell::equality_instantiation(instance):
-    assert isinstance(instance, rell::Equality)
-
-@given(instance=rell::Equality_strategy)
-def test_rell::equality_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=rell::Equality_strategy)
-def test_rell::equality_op_setter(instance):
+@given(instance=rell_Equality_strategy)
+def test_rell_equality_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=rell::And_strategy)
+@given(instance=rell_Comparison_strategy)
 @settings(max_examples=50)
-def test_rell::and_instantiation(instance):
-    assert isinstance(instance, rell::And)
-
-@given(instance=rell::MulOrDiv_strategy)
-@settings(max_examples=50)
-def test_rell::mulordiv_instantiation(instance):
-    assert isinstance(instance, rell::MulOrDiv)
-
-@given(instance=rell::MulOrDiv_strategy)
-def test_rell::mulordiv_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_rell_comparison_instantiation(instance):
+    assert isinstance(instance, rell_Comparison)
 
 
-@given(instance=rell::MulOrDiv_strategy)
-def test_rell::mulordiv_op_setter(instance):
+
+@given(instance=rell_Comparison_strategy)
+def test_rell_comparison_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=rell::Comparison_strategy)
+@given(instance=rell_Plus_strategy)
 @settings(max_examples=50)
-def test_rell::comparison_instantiation(instance):
-    assert isinstance(instance, rell::Comparison)
+def test_rell_plus_instantiation(instance):
+    assert isinstance(instance, rell_Plus)
 
-@given(instance=rell::Comparison_strategy)
-def test_rell::comparison_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=rell_Not_strategy)
+@settings(max_examples=50)
+def test_rell_not_instantiation(instance):
+    assert isinstance(instance, rell_Not)
+
+@given(instance=rell_VariableRef_strategy)
+@settings(max_examples=50)
+def test_rell_variableref_instantiation(instance):
+    assert isinstance(instance, rell_VariableRef)
+
+@given(instance=rell_Minus_strategy)
+@settings(max_examples=50)
+def test_rell_minus_instantiation(instance):
+    assert isinstance(instance, rell_Minus)
+
+@given(instance=rell_BoolConstant_strategy)
+@settings(max_examples=50)
+def test_rell_boolconstant_instantiation(instance):
+    assert isinstance(instance, rell_BoolConstant)
 
 
-@given(instance=rell::Comparison_strategy)
-def test_rell::comparison_op_setter(instance):
+
+@given(instance=rell_BoolConstant_strategy)
+def test_rell_boolconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=rell_StringConstant_strategy)
+@settings(max_examples=50)
+def test_rell_stringconstant_instantiation(instance):
+    assert isinstance(instance, rell_StringConstant)
+
+
+
+@given(instance=rell_StringConstant_strategy)
+def test_rell_stringconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=rell_IntConstant_strategy)
+@settings(max_examples=50)
+def test_rell_intconstant_instantiation(instance):
+    assert isinstance(instance, rell_IntConstant)
+
+
+
+@given(instance=rell_IntConstant_strategy)
+def test_rell_intconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=rell_MulOrDiv_strategy)
+@settings(max_examples=50)
+def test_rell_mulordiv_instantiation(instance):
+    assert isinstance(instance, rell_MulOrDiv)
+
+
+
+@given(instance=rell_MulOrDiv_strategy)
+def test_rell_mulordiv_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=rell::StringConstant_strategy)
+@given(instance=rell_Or_strategy)
 @settings(max_examples=50)
-def test_rell::stringconstant_instantiation(instance):
-    assert isinstance(instance, rell::StringConstant)
+def test_rell_or_instantiation(instance):
+    assert isinstance(instance, rell_Or)
 
-@given(instance=rell::StringConstant_strategy)
-def test_rell::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=rell::StringConstant_strategy)
-def test_rell::stringconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=rell::VariableRef_strategy)
+@given(instance=rell_ClassType_strategy)
 @settings(max_examples=50)
-def test_rell::variableref_instantiation(instance):
-    assert isinstance(instance, rell::VariableRef)
+def test_rell_classtype_instantiation(instance):
+    assert isinstance(instance, rell_ClassType)
 
-@given(instance=rell::Not_strategy)
+@given(instance=rell_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_rell::not_instantiation(instance):
-    assert isinstance(instance, rell::Not)
-
-@given(instance=rell::BoolConstant_strategy)
-@settings(max_examples=50)
-def test_rell::boolconstant_instantiation(instance):
-    assert isinstance(instance, rell::BoolConstant)
-
-@given(instance=rell::BoolConstant_strategy)
-def test_rell::boolconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_rell_primitivetype_instantiation(instance):
+    assert isinstance(instance, rell_PrimitiveType)
 
 
-@given(instance=rell::BoolConstant_strategy)
-def test_rell::boolconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=rell::Minus_strategy)
-@settings(max_examples=50)
-def test_rell::minus_instantiation(instance):
-    assert isinstance(instance, rell::Minus)
-
-@given(instance=rell::Or_strategy)
-@settings(max_examples=50)
-def test_rell::or_instantiation(instance):
-    assert isinstance(instance, rell::Or)
-
-@given(instance=rell::ClassType_strategy)
-@settings(max_examples=50)
-def test_rell::classtype_instantiation(instance):
-    assert isinstance(instance, rell::ClassType)
-
-@given(instance=rell::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_rell::primitivetype_instantiation(instance):
-    assert isinstance(instance, rell::PrimitiveType)
-
-@given(instance=rell::PrimitiveType_strategy)
-def test_rell::primitivetype_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
-
-
-@given(instance=rell::PrimitiveType_strategy)
-def test_rell::primitivetype_primitiveType_setter(instance):
+@given(instance=rell_PrimitiveType_strategy)
+def test_rell_primitivetype_primitiveType_setter(instance):
     original = instance.primitiveType
     instance.primitiveType = original
     assert instance.primitiveType == original
 
-@given(instance=rell::TypeReference_strategy)
+@given(instance=rell_TypeReference_strategy)
 @settings(max_examples=50)
-def test_rell::typereference_instantiation(instance):
-    assert isinstance(instance, rell::TypeReference)
+def test_rell_typereference_instantiation(instance):
+    assert isinstance(instance, rell_TypeReference)
 
-@given(instance=rell::ConditionElement_strategy)
+@given(instance=rell_ConditionElement_strategy)
 @settings(max_examples=50)
-def test_rell::conditionelement_instantiation(instance):
-    assert isinstance(instance, rell::ConditionElement)
-
-@given(instance=rell::ConditionElement_strategy)
-def test_rell::conditionelement_compareName_type(instance):
-    assert isinstance(instance.compareName, str)
+def test_rell_conditionelement_instantiation(instance):
+    assert isinstance(instance, rell_ConditionElement)
 
 
-@given(instance=rell::ConditionElement_strategy)
-def test_rell::conditionelement_compareName_setter(instance):
+
+@given(instance=rell_ConditionElement_strategy)
+def test_rell_conditionelement_compareName_setter(instance):
     original = instance.compareName
     instance.compareName = original
     assert instance.compareName == original
@@ -976,38 +952,35 @@ def test_rell::conditionelement_compareName_setter(instance):
 def test_relational_instantiation(instance):
     assert isinstance(instance, Relational)
 
-@given(instance=rell::Create_strategy)
+@given(instance=rell_Delete_strategy)
 @settings(max_examples=50)
-def test_rell::create_instantiation(instance):
-    assert isinstance(instance, rell::Create)
+def test_rell_delete_instantiation(instance):
+    assert isinstance(instance, rell_Delete)
 
-@given(instance=rell::Delete_strategy)
+@given(instance=rell_Create_strategy)
 @settings(max_examples=50)
-def test_rell::delete_instantiation(instance):
-    assert isinstance(instance, rell::Delete)
+def test_rell_create_instantiation(instance):
+    assert isinstance(instance, rell_Create)
 
-@given(instance=rell::Update_strategy)
+@given(instance=rell_Update_strategy)
 @settings(max_examples=50)
-def test_rell::update_instantiation(instance):
-    assert isinstance(instance, rell::Update)
+def test_rell_update_instantiation(instance):
+    assert isinstance(instance, rell_Update)
 
-@given(instance=rell::Expression_strategy)
+@given(instance=rell_Expression_strategy)
 @settings(max_examples=50)
-def test_rell::expression_instantiation(instance):
-    assert isinstance(instance, rell::Expression)
+def test_rell_expression_instantiation(instance):
+    assert isinstance(instance, rell_Expression)
 
-@given(instance=rell::VariableDeclaration_strategy)
+@given(instance=rell_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_rell::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, rell::VariableDeclaration)
-
-@given(instance=rell::VariableDeclaration_strategy)
-def test_rell::variabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rell_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, rell_VariableDeclaration)
 
 
-@given(instance=rell::VariableDeclaration_strategy)
-def test_rell::variabledeclaration_name_setter(instance):
+
+@given(instance=rell_VariableDeclaration_strategy)
+def test_rell_variabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1017,91 +990,79 @@ def test_rell::variabledeclaration_name_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=rell::Relational_strategy)
+@given(instance=rell_VariableInit_strategy)
 @settings(max_examples=50)
-def test_rell::relational_instantiation(instance):
-    assert isinstance(instance, rell::Relational)
+def test_rell_variableinit_instantiation(instance):
+    assert isinstance(instance, rell_VariableInit)
 
-@given(instance=rell::Relational_strategy)
-def test_rell::relational_entity_type(instance):
-    assert isinstance(instance.entity, str)
+@given(instance=rell_Relational_strategy)
+@settings(max_examples=50)
+def test_rell_relational_instantiation(instance):
+    assert isinstance(instance, rell_Relational)
 
 
-@given(instance=rell::Relational_strategy)
-def test_rell::relational_entity_setter(instance):
+
+@given(instance=rell_Relational_strategy)
+def test_rell_relational_entity_setter(instance):
     original = instance.entity
     instance.entity = original
     assert instance.entity == original
 
-@given(instance=rell::VariableInit_strategy)
+@given(instance=rell_Variable_strategy)
 @settings(max_examples=50)
-def test_rell::variableinit_instantiation(instance):
-    assert isinstance(instance, rell::VariableInit)
+def test_rell_variable_instantiation(instance):
+    assert isinstance(instance, rell_Variable)
 
-@given(instance=rell::Variable_strategy)
+@given(instance=rell_Statement_strategy)
 @settings(max_examples=50)
-def test_rell::variable_instantiation(instance):
-    assert isinstance(instance, rell::Variable)
+def test_rell_statement_instantiation(instance):
+    assert isinstance(instance, rell_Statement)
 
-@given(instance=rell::Statement_strategy)
+@given(instance=rell_RelAttrubutesList_strategy)
 @settings(max_examples=50)
-def test_rell::statement_instantiation(instance):
-    assert isinstance(instance, rell::Statement)
+def test_rell_relattrubuteslist_instantiation(instance):
+    assert isinstance(instance, rell_RelAttrubutesList)
 
-@given(instance=rell::RelAttrubutesList_strategy)
+@given(instance=rell_Attribute_strategy)
 @settings(max_examples=50)
-def test_rell::relattrubuteslist_instantiation(instance):
-    assert isinstance(instance, rell::RelAttrubutesList)
-
-@given(instance=rell::Attribute_strategy)
-@settings(max_examples=50)
-def test_rell::attribute_instantiation(instance):
-    assert isinstance(instance, rell::Attribute)
-
-@given(instance=rell::Attribute_strategy)
-def test_rell::attribute_modificator_type(instance):
-    assert isinstance(instance.modificator, str)
+def test_rell_attribute_instantiation(instance):
+    assert isinstance(instance, rell_Attribute)
 
 
-@given(instance=rell::Attribute_strategy)
-def test_rell::attribute_modificator_setter(instance):
+
+@given(instance=rell_Attribute_strategy)
+def test_rell_attribute_modificator_setter(instance):
     original = instance.modificator
     instance.modificator = original
     assert instance.modificator == original
 
-@given(instance=rell::Operation_strategy)
+@given(instance=rell_Operation_strategy)
 @settings(max_examples=50)
-def test_rell::operation_instantiation(instance):
-    assert isinstance(instance, rell::Operation)
-
-@given(instance=rell::Operation_strategy)
-def test_rell::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rell_operation_instantiation(instance):
+    assert isinstance(instance, rell_Operation)
 
 
-@given(instance=rell::Operation_strategy)
-def test_rell::operation_name_setter(instance):
+
+@given(instance=rell_Operation_strategy)
+def test_rell_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rell::ClassDefinition_strategy)
+@given(instance=rell_ClassDefinition_strategy)
 @settings(max_examples=50)
-def test_rell::classdefinition_instantiation(instance):
-    assert isinstance(instance, rell::ClassDefinition)
-
-@given(instance=rell::ClassDefinition_strategy)
-def test_rell::classdefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rell_classdefinition_instantiation(instance):
+    assert isinstance(instance, rell_ClassDefinition)
 
 
-@given(instance=rell::ClassDefinition_strategy)
-def test_rell::classdefinition_name_setter(instance):
+
+@given(instance=rell_ClassDefinition_strategy)
+def test_rell_classdefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rell::Model_strategy)
+@given(instance=rell_Model_strategy)
 @settings(max_examples=50)
-def test_rell::model_instantiation(instance):
-    assert isinstance(instance, rell::Model)
+def test_rell_model_instantiation(instance):
+    assert isinstance(instance, rell_Model)

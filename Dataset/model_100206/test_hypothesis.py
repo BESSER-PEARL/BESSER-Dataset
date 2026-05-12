@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sqlview::Right,
-    sqlview::Left,
-    sqlview::Comparison,
-    sqlview::EclExpression,
-    sqlview::EObject,
-    sqlview::Join,
-    sqlview::Attribute,
-    sqlview::Class,
-    sqlview::Relation,
-    sqlview::JoinRight,
-    sqlview::JoinLeft,
-    sqlview::Condition,
-    sqlview::From,
-    sqlview::Select,
-    sqlview::MetamodelName,
-    sqlview::SelectAttribute,
-    sqlview::Expression,
-    sqlview::Metamodel,
-    sqlview::Model,
+from python_code import (
+    sqlview_Right,
+    sqlview_Left,
+    sqlview_Comparison,
+    sqlview_EclExpression,
+    sqlview_EObject,
+    sqlview_Join,
+    sqlview_Attribute,
+    sqlview_Class,
+    sqlview_Relation,
+    sqlview_JoinRight,
+    sqlview_JoinLeft,
+    sqlview_Condition,
+    sqlview_From,
+    sqlview_Select,
+    sqlview_MetamodelName,
+    sqlview_SelectAttribute,
+    sqlview_Expression,
+    sqlview_Metamodel,
+    sqlview_Model,
 )
 
 # =============================================================================
@@ -33,23 +33,23 @@ from classes import (
 
 
 
-def test_sqlview::right_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Right)
+def test_sqlview_right_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Right)
 
 
-def test_sqlview::right_constructor_exists():
-    assert callable(sqlview::Right.__init__)
+def test_sqlview_right_constructor_exists():
+    assert callable(sqlview_Right.__init__)
 
 
-def test_sqlview::right_constructor_args():
-    sig = inspect.signature(sqlview::Right.__init__)
+def test_sqlview_right_constructor_args():
+    sig = inspect.signature(sqlview_Right.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_sqlview::right_has_value():
-    assert hasattr(sqlview::Right, "value")
+def test_sqlview_right_has_value():
+    assert hasattr(sqlview_Right, "value")
     descriptor = None
-    for klass in sqlview::Right.__mro__:
+    for klass in sqlview_Right.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -57,51 +57,51 @@ def test_sqlview::right_has_value():
 
 
 
-def test_sqlview::left_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Left)
+def test_sqlview_left_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Left)
 
 
-def test_sqlview::left_constructor_exists():
-    assert callable(sqlview::Left.__init__)
+def test_sqlview_left_constructor_exists():
+    assert callable(sqlview_Left.__init__)
 
 
-def test_sqlview::left_constructor_args():
-    sig = inspect.signature(sqlview::Left.__init__)
+def test_sqlview_left_constructor_args():
+    sig = inspect.signature(sqlview_Left.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::comparison_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Comparison)
+def test_sqlview_comparison_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Comparison)
 
 
-def test_sqlview::comparison_constructor_exists():
-    assert callable(sqlview::Comparison.__init__)
+def test_sqlview_comparison_constructor_exists():
+    assert callable(sqlview_Comparison.__init__)
 
 
-def test_sqlview::comparison_constructor_args():
-    sig = inspect.signature(sqlview::Comparison.__init__)
+def test_sqlview_comparison_constructor_args():
+    sig = inspect.signature(sqlview_Comparison.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::eclexpression_is_not_abstract():
-    assert not inspect.isabstract(sqlview::EclExpression)
+def test_sqlview_eclexpression_is_not_abstract():
+    assert not inspect.isabstract(sqlview_EclExpression)
 
 
-def test_sqlview::eclexpression_constructor_exists():
-    assert callable(sqlview::EclExpression.__init__)
+def test_sqlview_eclexpression_constructor_exists():
+    assert callable(sqlview_EclExpression.__init__)
 
 
-def test_sqlview::eclexpression_constructor_args():
-    sig = inspect.signature(sqlview::EclExpression.__init__)
+def test_sqlview_eclexpression_constructor_args():
+    sig = inspect.signature(sqlview_EclExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_sqlview::eclexpression_has_value():
-    assert hasattr(sqlview::EclExpression, "value")
+def test_sqlview_eclexpression_has_value():
+    assert hasattr(sqlview_EclExpression, "value")
     descriptor = None
-    for klass in sqlview::EclExpression.__mro__:
+    for klass in sqlview_EclExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -109,51 +109,51 @@ def test_sqlview::eclexpression_has_value():
 
 
 
-def test_sqlview::eobject_is_not_abstract():
-    assert not inspect.isabstract(sqlview::EObject)
+def test_sqlview_eobject_is_not_abstract():
+    assert not inspect.isabstract(sqlview_EObject)
 
 
-def test_sqlview::eobject_constructor_exists():
-    assert callable(sqlview::EObject.__init__)
+def test_sqlview_eobject_constructor_exists():
+    assert callable(sqlview_EObject.__init__)
 
 
-def test_sqlview::eobject_constructor_args():
-    sig = inspect.signature(sqlview::EObject.__init__)
+def test_sqlview_eobject_constructor_args():
+    sig = inspect.signature(sqlview_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::join_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Join)
+def test_sqlview_join_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Join)
 
 
-def test_sqlview::join_constructor_exists():
-    assert callable(sqlview::Join.__init__)
+def test_sqlview_join_constructor_exists():
+    assert callable(sqlview_Join.__init__)
 
 
-def test_sqlview::join_constructor_args():
-    sig = inspect.signature(sqlview::Join.__init__)
+def test_sqlview_join_constructor_args():
+    sig = inspect.signature(sqlview_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::attribute_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Attribute)
+def test_sqlview_attribute_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Attribute)
 
 
-def test_sqlview::attribute_constructor_exists():
-    assert callable(sqlview::Attribute.__init__)
+def test_sqlview_attribute_constructor_exists():
+    assert callable(sqlview_Attribute.__init__)
 
 
-def test_sqlview::attribute_constructor_args():
-    sig = inspect.signature(sqlview::Attribute.__init__)
+def test_sqlview_attribute_constructor_args():
+    sig = inspect.signature(sqlview_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlview::attribute_has_name():
-    assert hasattr(sqlview::Attribute, "name")
+def test_sqlview_attribute_has_name():
+    assert hasattr(sqlview_Attribute, "name")
     descriptor = None
-    for klass in sqlview::Attribute.__mro__:
+    for klass in sqlview_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -161,23 +161,23 @@ def test_sqlview::attribute_has_name():
 
 
 
-def test_sqlview::class_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Class)
+def test_sqlview_class_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Class)
 
 
-def test_sqlview::class_constructor_exists():
-    assert callable(sqlview::Class.__init__)
+def test_sqlview_class_constructor_exists():
+    assert callable(sqlview_Class.__init__)
 
 
-def test_sqlview::class_constructor_args():
-    sig = inspect.signature(sqlview::Class.__init__)
+def test_sqlview_class_constructor_args():
+    sig = inspect.signature(sqlview_Class.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlview::class_has_name():
-    assert hasattr(sqlview::Class, "name")
+def test_sqlview_class_has_name():
+    assert hasattr(sqlview_Class, "name")
     descriptor = None
-    for klass in sqlview::Class.__mro__:
+    for klass in sqlview_Class.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -185,23 +185,23 @@ def test_sqlview::class_has_name():
 
 
 
-def test_sqlview::relation_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Relation)
+def test_sqlview_relation_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Relation)
 
 
-def test_sqlview::relation_constructor_exists():
-    assert callable(sqlview::Relation.__init__)
+def test_sqlview_relation_constructor_exists():
+    assert callable(sqlview_Relation.__init__)
 
 
-def test_sqlview::relation_constructor_args():
-    sig = inspect.signature(sqlview::Relation.__init__)
+def test_sqlview_relation_constructor_args():
+    sig = inspect.signature(sqlview_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlview::relation_has_name():
-    assert hasattr(sqlview::Relation, "name")
+def test_sqlview_relation_has_name():
+    assert hasattr(sqlview_Relation, "name")
     descriptor = None
-    for klass in sqlview::Relation.__mro__:
+    for klass in sqlview_Relation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -209,79 +209,79 @@ def test_sqlview::relation_has_name():
 
 
 
-def test_sqlview::joinright_is_not_abstract():
-    assert not inspect.isabstract(sqlview::JoinRight)
+def test_sqlview_joinright_is_not_abstract():
+    assert not inspect.isabstract(sqlview_JoinRight)
 
 
-def test_sqlview::joinright_constructor_exists():
-    assert callable(sqlview::JoinRight.__init__)
+def test_sqlview_joinright_constructor_exists():
+    assert callable(sqlview_JoinRight.__init__)
 
 
-def test_sqlview::joinright_constructor_args():
-    sig = inspect.signature(sqlview::JoinRight.__init__)
+def test_sqlview_joinright_constructor_args():
+    sig = inspect.signature(sqlview_JoinRight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::joinleft_is_not_abstract():
-    assert not inspect.isabstract(sqlview::JoinLeft)
+def test_sqlview_joinleft_is_not_abstract():
+    assert not inspect.isabstract(sqlview_JoinLeft)
 
 
-def test_sqlview::joinleft_constructor_exists():
-    assert callable(sqlview::JoinLeft.__init__)
+def test_sqlview_joinleft_constructor_exists():
+    assert callable(sqlview_JoinLeft.__init__)
 
 
-def test_sqlview::joinleft_constructor_args():
-    sig = inspect.signature(sqlview::JoinLeft.__init__)
+def test_sqlview_joinleft_constructor_args():
+    sig = inspect.signature(sqlview_JoinLeft.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::condition_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Condition)
+def test_sqlview_condition_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Condition)
 
 
-def test_sqlview::condition_constructor_exists():
-    assert callable(sqlview::Condition.__init__)
+def test_sqlview_condition_constructor_exists():
+    assert callable(sqlview_Condition.__init__)
 
 
-def test_sqlview::condition_constructor_args():
-    sig = inspect.signature(sqlview::Condition.__init__)
+def test_sqlview_condition_constructor_args():
+    sig = inspect.signature(sqlview_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::from_is_not_abstract():
-    assert not inspect.isabstract(sqlview::From)
+def test_sqlview_from_is_not_abstract():
+    assert not inspect.isabstract(sqlview_From)
 
 
-def test_sqlview::from_constructor_exists():
-    assert callable(sqlview::From.__init__)
+def test_sqlview_from_constructor_exists():
+    assert callable(sqlview_From.__init__)
 
 
-def test_sqlview::from_constructor_args():
-    sig = inspect.signature(sqlview::From.__init__)
+def test_sqlview_from_constructor_args():
+    sig = inspect.signature(sqlview_From.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::select_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Select)
+def test_sqlview_select_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Select)
 
 
-def test_sqlview::select_constructor_exists():
-    assert callable(sqlview::Select.__init__)
+def test_sqlview_select_constructor_exists():
+    assert callable(sqlview_Select.__init__)
 
 
-def test_sqlview::select_constructor_args():
-    sig = inspect.signature(sqlview::Select.__init__)
+def test_sqlview_select_constructor_args():
+    sig = inspect.signature(sqlview_Select.__init__)
     params = list(sig.parameters.keys())
     assert "select" in params, "Missing parameter 'select'"
 
-def test_sqlview::select_has_select():
-    assert hasattr(sqlview::Select, "select")
+def test_sqlview_select_has_select():
+    assert hasattr(sqlview_Select, "select")
     descriptor = None
-    for klass in sqlview::Select.__mro__:
+    for klass in sqlview_Select.__mro__:
         if "select" in klass.__dict__:
             descriptor = klass.__dict__["select"]
             break
@@ -289,23 +289,23 @@ def test_sqlview::select_has_select():
 
 
 
-def test_sqlview::metamodelname_is_not_abstract():
-    assert not inspect.isabstract(sqlview::MetamodelName)
+def test_sqlview_metamodelname_is_not_abstract():
+    assert not inspect.isabstract(sqlview_MetamodelName)
 
 
-def test_sqlview::metamodelname_constructor_exists():
-    assert callable(sqlview::MetamodelName.__init__)
+def test_sqlview_metamodelname_constructor_exists():
+    assert callable(sqlview_MetamodelName.__init__)
 
 
-def test_sqlview::metamodelname_constructor_args():
-    sig = inspect.signature(sqlview::MetamodelName.__init__)
+def test_sqlview_metamodelname_constructor_args():
+    sig = inspect.signature(sqlview_MetamodelName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlview::metamodelname_has_name():
-    assert hasattr(sqlview::MetamodelName, "name")
+def test_sqlview_metamodelname_has_name():
+    assert hasattr(sqlview_MetamodelName, "name")
     descriptor = None
-    for klass in sqlview::MetamodelName.__mro__:
+    for klass in sqlview_MetamodelName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -313,51 +313,51 @@ def test_sqlview::metamodelname_has_name():
 
 
 
-def test_sqlview::selectattribute_is_not_abstract():
-    assert not inspect.isabstract(sqlview::SelectAttribute)
+def test_sqlview_selectattribute_is_not_abstract():
+    assert not inspect.isabstract(sqlview_SelectAttribute)
 
 
-def test_sqlview::selectattribute_constructor_exists():
-    assert callable(sqlview::SelectAttribute.__init__)
+def test_sqlview_selectattribute_constructor_exists():
+    assert callable(sqlview_SelectAttribute.__init__)
 
 
-def test_sqlview::selectattribute_constructor_args():
-    sig = inspect.signature(sqlview::SelectAttribute.__init__)
+def test_sqlview_selectattribute_constructor_args():
+    sig = inspect.signature(sqlview_SelectAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::expression_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Expression)
+def test_sqlview_expression_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Expression)
 
 
-def test_sqlview::expression_constructor_exists():
-    assert callable(sqlview::Expression.__init__)
+def test_sqlview_expression_constructor_exists():
+    assert callable(sqlview_Expression.__init__)
 
 
-def test_sqlview::expression_constructor_args():
-    sig = inspect.signature(sqlview::Expression.__init__)
+def test_sqlview_expression_constructor_args():
+    sig = inspect.signature(sqlview_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlview::metamodel_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Metamodel)
+def test_sqlview_metamodel_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Metamodel)
 
 
-def test_sqlview::metamodel_constructor_exists():
-    assert callable(sqlview::Metamodel.__init__)
+def test_sqlview_metamodel_constructor_exists():
+    assert callable(sqlview_Metamodel.__init__)
 
 
-def test_sqlview::metamodel_constructor_args():
-    sig = inspect.signature(sqlview::Metamodel.__init__)
+def test_sqlview_metamodel_constructor_args():
+    sig = inspect.signature(sqlview_Metamodel.__init__)
     params = list(sig.parameters.keys())
     assert "metamodelURL" in params, "Missing parameter 'metamodelURL'"
 
-def test_sqlview::metamodel_has_metamodelURL():
-    assert hasattr(sqlview::Metamodel, "metamodelURL")
+def test_sqlview_metamodel_has_metamodelURL():
+    assert hasattr(sqlview_Metamodel, "metamodelURL")
     descriptor = None
-    for klass in sqlview::Metamodel.__mro__:
+    for klass in sqlview_Metamodel.__mro__:
         if "metamodelURL" in klass.__dict__:
             descriptor = klass.__dict__["metamodelURL"]
             break
@@ -365,23 +365,23 @@ def test_sqlview::metamodel_has_metamodelURL():
 
 
 
-def test_sqlview::model_is_not_abstract():
-    assert not inspect.isabstract(sqlview::Model)
+def test_sqlview_model_is_not_abstract():
+    assert not inspect.isabstract(sqlview_Model)
 
 
-def test_sqlview::model_constructor_exists():
-    assert callable(sqlview::Model.__init__)
+def test_sqlview_model_constructor_exists():
+    assert callable(sqlview_Model.__init__)
 
 
-def test_sqlview::model_constructor_args():
-    sig = inspect.signature(sqlview::Model.__init__)
+def test_sqlview_model_constructor_args():
+    sig = inspect.signature(sqlview_Model.__init__)
     params = list(sig.parameters.keys())
     assert "viewName" in params, "Missing parameter 'viewName'"
 
-def test_sqlview::model_has_viewName():
-    assert hasattr(sqlview::Model, "viewName")
+def test_sqlview_model_has_viewName():
+    assert hasattr(sqlview_Model, "viewName")
     descriptor = None
-    for klass in sqlview::Model.__mro__:
+    for klass in sqlview_Model.__mro__:
         if "viewName" in klass.__dict__:
             descriptor = klass.__dict__["viewName"]
             break
@@ -399,272 +399,245 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sqlview::Right_strategy = st.builds(
-    sqlview::Right,
+sqlview_Right_strategy = st.builds(
+    sqlview_Right,
     value=
         safe_text
 )
-sqlview::Left_strategy = st.builds(
-    sqlview::Left,
+sqlview_Left_strategy = st.builds(
+    sqlview_Left,
 )
-sqlview::Comparison_strategy = st.builds(
-    sqlview::Comparison,
+sqlview_Comparison_strategy = st.builds(
+    sqlview_Comparison,
 )
-sqlview::EclExpression_strategy = st.builds(
-    sqlview::EclExpression,
+sqlview_EclExpression_strategy = st.builds(
+    sqlview_EclExpression,
     value=
         safe_text
 )
-sqlview::EObject_strategy = st.builds(
-    sqlview::EObject,
+sqlview_EObject_strategy = st.builds(
+    sqlview_EObject,
 )
-sqlview::Join_strategy = st.builds(
-    sqlview::Join,
+sqlview_Join_strategy = st.builds(
+    sqlview_Join,
 )
-sqlview::Attribute_strategy = st.builds(
-    sqlview::Attribute,
+sqlview_Attribute_strategy = st.builds(
+    sqlview_Attribute,
     name=
         safe_text
 )
-sqlview::Class_strategy = st.builds(
-    sqlview::Class,
+sqlview_Class_strategy = st.builds(
+    sqlview_Class,
     name=
         safe_text
 )
-sqlview::Relation_strategy = st.builds(
-    sqlview::Relation,
+sqlview_Relation_strategy = st.builds(
+    sqlview_Relation,
     name=
         safe_text
 )
-sqlview::JoinRight_strategy = st.builds(
-    sqlview::JoinRight,
+sqlview_JoinRight_strategy = st.builds(
+    sqlview_JoinRight,
 )
-sqlview::JoinLeft_strategy = st.builds(
-    sqlview::JoinLeft,
+sqlview_JoinLeft_strategy = st.builds(
+    sqlview_JoinLeft,
 )
-sqlview::Condition_strategy = st.builds(
-    sqlview::Condition,
+sqlview_Condition_strategy = st.builds(
+    sqlview_Condition,
 )
-sqlview::From_strategy = st.builds(
-    sqlview::From,
+sqlview_From_strategy = st.builds(
+    sqlview_From,
 )
-sqlview::Select_strategy = st.builds(
-    sqlview::Select,
+sqlview_Select_strategy = st.builds(
+    sqlview_Select,
     select=
         safe_text
 )
-sqlview::MetamodelName_strategy = st.builds(
-    sqlview::MetamodelName,
+sqlview_MetamodelName_strategy = st.builds(
+    sqlview_MetamodelName,
     name=
         safe_text
 )
-sqlview::SelectAttribute_strategy = st.builds(
-    sqlview::SelectAttribute,
+sqlview_SelectAttribute_strategy = st.builds(
+    sqlview_SelectAttribute,
 )
-sqlview::Expression_strategy = st.builds(
-    sqlview::Expression,
+sqlview_Expression_strategy = st.builds(
+    sqlview_Expression,
 )
-sqlview::Metamodel_strategy = st.builds(
-    sqlview::Metamodel,
+sqlview_Metamodel_strategy = st.builds(
+    sqlview_Metamodel,
     metamodelURL=
         safe_text
 )
-sqlview::Model_strategy = st.builds(
-    sqlview::Model,
+sqlview_Model_strategy = st.builds(
+    sqlview_Model,
     viewName=
         safe_text
 )
 
-@given(instance=sqlview::Right_strategy)
+@given(instance=sqlview_Right_strategy)
 @settings(max_examples=50)
-def test_sqlview::right_instantiation(instance):
-    assert isinstance(instance, sqlview::Right)
-
-@given(instance=sqlview::Right_strategy)
-def test_sqlview::right_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_sqlview_right_instantiation(instance):
+    assert isinstance(instance, sqlview_Right)
 
 
-@given(instance=sqlview::Right_strategy)
-def test_sqlview::right_value_setter(instance):
+
+@given(instance=sqlview_Right_strategy)
+def test_sqlview_right_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=sqlview::Left_strategy)
+@given(instance=sqlview_Left_strategy)
 @settings(max_examples=50)
-def test_sqlview::left_instantiation(instance):
-    assert isinstance(instance, sqlview::Left)
+def test_sqlview_left_instantiation(instance):
+    assert isinstance(instance, sqlview_Left)
 
-@given(instance=sqlview::Comparison_strategy)
+@given(instance=sqlview_Comparison_strategy)
 @settings(max_examples=50)
-def test_sqlview::comparison_instantiation(instance):
-    assert isinstance(instance, sqlview::Comparison)
+def test_sqlview_comparison_instantiation(instance):
+    assert isinstance(instance, sqlview_Comparison)
 
-@given(instance=sqlview::EclExpression_strategy)
+@given(instance=sqlview_EclExpression_strategy)
 @settings(max_examples=50)
-def test_sqlview::eclexpression_instantiation(instance):
-    assert isinstance(instance, sqlview::EclExpression)
-
-@given(instance=sqlview::EclExpression_strategy)
-def test_sqlview::eclexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_sqlview_eclexpression_instantiation(instance):
+    assert isinstance(instance, sqlview_EclExpression)
 
 
-@given(instance=sqlview::EclExpression_strategy)
-def test_sqlview::eclexpression_value_setter(instance):
+
+@given(instance=sqlview_EclExpression_strategy)
+def test_sqlview_eclexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=sqlview::EObject_strategy)
+@given(instance=sqlview_EObject_strategy)
 @settings(max_examples=50)
-def test_sqlview::eobject_instantiation(instance):
-    assert isinstance(instance, sqlview::EObject)
+def test_sqlview_eobject_instantiation(instance):
+    assert isinstance(instance, sqlview_EObject)
 
-@given(instance=sqlview::Join_strategy)
+@given(instance=sqlview_Join_strategy)
 @settings(max_examples=50)
-def test_sqlview::join_instantiation(instance):
-    assert isinstance(instance, sqlview::Join)
+def test_sqlview_join_instantiation(instance):
+    assert isinstance(instance, sqlview_Join)
 
-@given(instance=sqlview::Attribute_strategy)
+@given(instance=sqlview_Attribute_strategy)
 @settings(max_examples=50)
-def test_sqlview::attribute_instantiation(instance):
-    assert isinstance(instance, sqlview::Attribute)
-
-@given(instance=sqlview::Attribute_strategy)
-def test_sqlview::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlview_attribute_instantiation(instance):
+    assert isinstance(instance, sqlview_Attribute)
 
 
-@given(instance=sqlview::Attribute_strategy)
-def test_sqlview::attribute_name_setter(instance):
+
+@given(instance=sqlview_Attribute_strategy)
+def test_sqlview_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlview::Class_strategy)
+@given(instance=sqlview_Class_strategy)
 @settings(max_examples=50)
-def test_sqlview::class_instantiation(instance):
-    assert isinstance(instance, sqlview::Class)
-
-@given(instance=sqlview::Class_strategy)
-def test_sqlview::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlview_class_instantiation(instance):
+    assert isinstance(instance, sqlview_Class)
 
 
-@given(instance=sqlview::Class_strategy)
-def test_sqlview::class_name_setter(instance):
+
+@given(instance=sqlview_Class_strategy)
+def test_sqlview_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlview::Relation_strategy)
+@given(instance=sqlview_Relation_strategy)
 @settings(max_examples=50)
-def test_sqlview::relation_instantiation(instance):
-    assert isinstance(instance, sqlview::Relation)
-
-@given(instance=sqlview::Relation_strategy)
-def test_sqlview::relation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlview_relation_instantiation(instance):
+    assert isinstance(instance, sqlview_Relation)
 
 
-@given(instance=sqlview::Relation_strategy)
-def test_sqlview::relation_name_setter(instance):
+
+@given(instance=sqlview_Relation_strategy)
+def test_sqlview_relation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlview::JoinRight_strategy)
+@given(instance=sqlview_JoinRight_strategy)
 @settings(max_examples=50)
-def test_sqlview::joinright_instantiation(instance):
-    assert isinstance(instance, sqlview::JoinRight)
+def test_sqlview_joinright_instantiation(instance):
+    assert isinstance(instance, sqlview_JoinRight)
 
-@given(instance=sqlview::JoinLeft_strategy)
+@given(instance=sqlview_JoinLeft_strategy)
 @settings(max_examples=50)
-def test_sqlview::joinleft_instantiation(instance):
-    assert isinstance(instance, sqlview::JoinLeft)
+def test_sqlview_joinleft_instantiation(instance):
+    assert isinstance(instance, sqlview_JoinLeft)
 
-@given(instance=sqlview::Condition_strategy)
+@given(instance=sqlview_Condition_strategy)
 @settings(max_examples=50)
-def test_sqlview::condition_instantiation(instance):
-    assert isinstance(instance, sqlview::Condition)
+def test_sqlview_condition_instantiation(instance):
+    assert isinstance(instance, sqlview_Condition)
 
-@given(instance=sqlview::From_strategy)
+@given(instance=sqlview_From_strategy)
 @settings(max_examples=50)
-def test_sqlview::from_instantiation(instance):
-    assert isinstance(instance, sqlview::From)
+def test_sqlview_from_instantiation(instance):
+    assert isinstance(instance, sqlview_From)
 
-@given(instance=sqlview::Select_strategy)
+@given(instance=sqlview_Select_strategy)
 @settings(max_examples=50)
-def test_sqlview::select_instantiation(instance):
-    assert isinstance(instance, sqlview::Select)
-
-@given(instance=sqlview::Select_strategy)
-def test_sqlview::select_select_type(instance):
-    assert isinstance(instance.select, str)
+def test_sqlview_select_instantiation(instance):
+    assert isinstance(instance, sqlview_Select)
 
 
-@given(instance=sqlview::Select_strategy)
-def test_sqlview::select_select_setter(instance):
+
+@given(instance=sqlview_Select_strategy)
+def test_sqlview_select_select_setter(instance):
     original = instance.select
     instance.select = original
     assert instance.select == original
 
-@given(instance=sqlview::MetamodelName_strategy)
+@given(instance=sqlview_MetamodelName_strategy)
 @settings(max_examples=50)
-def test_sqlview::metamodelname_instantiation(instance):
-    assert isinstance(instance, sqlview::MetamodelName)
-
-@given(instance=sqlview::MetamodelName_strategy)
-def test_sqlview::metamodelname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlview_metamodelname_instantiation(instance):
+    assert isinstance(instance, sqlview_MetamodelName)
 
 
-@given(instance=sqlview::MetamodelName_strategy)
-def test_sqlview::metamodelname_name_setter(instance):
+
+@given(instance=sqlview_MetamodelName_strategy)
+def test_sqlview_metamodelname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlview::SelectAttribute_strategy)
+@given(instance=sqlview_SelectAttribute_strategy)
 @settings(max_examples=50)
-def test_sqlview::selectattribute_instantiation(instance):
-    assert isinstance(instance, sqlview::SelectAttribute)
+def test_sqlview_selectattribute_instantiation(instance):
+    assert isinstance(instance, sqlview_SelectAttribute)
 
-@given(instance=sqlview::Expression_strategy)
+@given(instance=sqlview_Expression_strategy)
 @settings(max_examples=50)
-def test_sqlview::expression_instantiation(instance):
-    assert isinstance(instance, sqlview::Expression)
+def test_sqlview_expression_instantiation(instance):
+    assert isinstance(instance, sqlview_Expression)
 
-@given(instance=sqlview::Metamodel_strategy)
+@given(instance=sqlview_Metamodel_strategy)
 @settings(max_examples=50)
-def test_sqlview::metamodel_instantiation(instance):
-    assert isinstance(instance, sqlview::Metamodel)
-
-@given(instance=sqlview::Metamodel_strategy)
-def test_sqlview::metamodel_metamodelURL_type(instance):
-    assert isinstance(instance.metamodelURL, str)
+def test_sqlview_metamodel_instantiation(instance):
+    assert isinstance(instance, sqlview_Metamodel)
 
 
-@given(instance=sqlview::Metamodel_strategy)
-def test_sqlview::metamodel_metamodelURL_setter(instance):
+
+@given(instance=sqlview_Metamodel_strategy)
+def test_sqlview_metamodel_metamodelURL_setter(instance):
     original = instance.metamodelURL
     instance.metamodelURL = original
     assert instance.metamodelURL == original
 
-@given(instance=sqlview::Model_strategy)
+@given(instance=sqlview_Model_strategy)
 @settings(max_examples=50)
-def test_sqlview::model_instantiation(instance):
-    assert isinstance(instance, sqlview::Model)
-
-@given(instance=sqlview::Model_strategy)
-def test_sqlview::model_viewName_type(instance):
-    assert isinstance(instance.viewName, str)
+def test_sqlview_model_instantiation(instance):
+    assert isinstance(instance, sqlview_Model)
 
 
-@given(instance=sqlview::Model_strategy)
-def test_sqlview::model_viewName_setter(instance):
+
+@given(instance=sqlview_Model_strategy)
+def test_sqlview_model_viewName_setter(instance):
     original = instance.viewName
     instance.viewName = original
     assert instance.viewName == original

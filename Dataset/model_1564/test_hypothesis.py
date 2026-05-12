@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Vertex,
-    graph::Edge,
-    graph::GraphElement,
-    graph::Graph,
+from python_code import (
+    graph_Vertex,
+    graph_Edge,
+    graph_GraphElement,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_graph::vertex_is_not_abstract():
-    assert not inspect.isabstract(graph::Vertex)
+def test_graph_vertex_is_not_abstract():
+    assert not inspect.isabstract(graph_Vertex)
 
 
-def test_graph::vertex_constructor_exists():
-    assert callable(graph::Vertex.__init__)
+def test_graph_vertex_constructor_exists():
+    assert callable(graph_Vertex.__init__)
 
 
-def test_graph::vertex_constructor_args():
-    sig = inspect.signature(graph::Vertex.__init__)
+def test_graph_vertex_constructor_args():
+    sig = inspect.signature(graph_Vertex.__init__)
     params = list(sig.parameters.keys())
     assert "hotSpot" in params, "Missing parameter 'hotSpot'"
 
-def test_graph::vertex_has_hotSpot():
-    assert hasattr(graph::Vertex, "hotSpot")
+def test_graph_vertex_has_hotSpot():
+    assert hasattr(graph_Vertex, "hotSpot")
     descriptor = None
-    for klass in graph::Vertex.__mro__:
+    for klass in graph_Vertex.__mro__:
         if "hotSpot" in klass.__dict__:
             descriptor = klass.__dict__["hotSpot"]
             break
@@ -42,23 +42,23 @@ def test_graph::vertex_has_hotSpot():
 
 
 
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(graph::Edge)
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(graph_Edge)
 
 
-def test_graph::edge_constructor_exists():
-    assert callable(graph::Edge.__init__)
+def test_graph_edge_constructor_exists():
+    assert callable(graph_Edge.__init__)
 
 
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(graph::Edge.__init__)
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(graph_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "critical" in params, "Missing parameter 'critical'"
 
-def test_graph::edge_has_critical():
-    assert hasattr(graph::Edge, "critical")
+def test_graph_edge_has_critical():
+    assert hasattr(graph_Edge, "critical")
     descriptor = None
-    for klass in graph::Edge.__mro__:
+    for klass in graph_Edge.__mro__:
         if "critical" in klass.__dict__:
             descriptor = klass.__dict__["critical"]
             break
@@ -66,23 +66,23 @@ def test_graph::edge_has_critical():
 
 
 
-def test_graph::graphelement_is_not_abstract():
-    assert not inspect.isabstract(graph::GraphElement)
+def test_graph_graphelement_is_not_abstract():
+    assert not inspect.isabstract(graph_GraphElement)
 
 
-def test_graph::graphelement_constructor_exists():
-    assert callable(graph::GraphElement.__init__)
+def test_graph_graphelement_constructor_exists():
+    assert callable(graph_GraphElement.__init__)
 
 
-def test_graph::graphelement_constructor_args():
-    sig = inspect.signature(graph::GraphElement.__init__)
+def test_graph_graphelement_constructor_args():
+    sig = inspect.signature(graph_GraphElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::graphelement_has_name():
-    assert hasattr(graph::GraphElement, "name")
+def test_graph_graphelement_has_name():
+    assert hasattr(graph_GraphElement, "name")
     descriptor = None
-    for klass in graph::GraphElement.__mro__:
+    for klass in graph_GraphElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,33 +90,33 @@ def test_graph::graphelement_has_name():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_graph::graph_has_name():
-    assert hasattr(graph::Graph, "name")
+def test_graph_graph_has_name():
+    assert hasattr(graph_Graph, "name")
     descriptor = None
-    for klass in graph::Graph.__mro__:
+    for klass in graph_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_graph::graph_has_description():
-    assert hasattr(graph::Graph, "description")
+def test_graph_graph_has_description():
+    assert hasattr(graph_Graph, "description")
     descriptor = None
-    for klass in graph::Graph.__mro__:
+    for klass in graph_Graph.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -134,41 +134,38 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Vertex_strategy = st.builds(
-    graph::Vertex,
+graph_Vertex_strategy = st.builds(
+    graph_Vertex,
     hotSpot=
         st.booleans()
 )
-graph::Edge_strategy = st.builds(
-    graph::Edge,
+graph_Edge_strategy = st.builds(
+    graph_Edge,
     critical=
         st.booleans()
 )
-graph::GraphElement_strategy = st.builds(
-    graph::GraphElement,
+graph_GraphElement_strategy = st.builds(
+    graph_GraphElement,
     name=
         safe_text
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
     name=
         safe_text,
     description=
         safe_text
 )
 
-@given(instance=graph::Vertex_strategy)
+@given(instance=graph_Vertex_strategy)
 @settings(max_examples=50)
-def test_graph::vertex_instantiation(instance):
-    assert isinstance(instance, graph::Vertex)
-
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_hotSpot_type(instance):
-    assert isinstance(instance.hotSpot, bool)
+def test_graph_vertex_instantiation(instance):
+    assert isinstance(instance, graph_Vertex)
 
 
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_hotSpot_setter(instance):
+
+@given(instance=graph_Vertex_strategy)
+def test_graph_vertex_hotSpot_setter(instance):
     original = instance.hotSpot
     instance.hotSpot = original
     assert instance.hotSpot == original
@@ -179,40 +176,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graph::Vertex_strategy)
+@given(instance=graph_Vertex_strategy)
 @settings(max_examples=30)
-def test_graph::vertex_hasforincomingadjacent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasForIncomingAdjacent(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasForIncomingAdjacent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasForIncomingAdjacent' in graph::Vertex is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasForIncomingAdjacent' in graph::Vertex did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasForIncomingAdjacent' in graph::Vertex is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graph::Vertex_strategy)
-@settings(max_examples=30)
-def test_graph::vertex_hasforadjacent_changes_state(instance):
+def test_graph_vertex_hasforadjacent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -226,14 +192,14 @@ def test_graph::vertex_hasforadjacent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasForAdjacent' in graph::Vertex is empty"
+        assert has_statements, f"Function 'hasForAdjacent' in graph_Vertex is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasForAdjacent' in graph::Vertex did not change state; check implementation")
+            warnings.warn(f"Operation 'hasForAdjacent' in graph_Vertex did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasForAdjacent' in graph::Vertex is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasForAdjacent' in graph_Vertex is not implemented or raised an error")
 
 import warnings
 import copy
@@ -241,9 +207,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graph::Vertex_strategy)
+@given(instance=graph_Vertex_strategy)
 @settings(max_examples=30)
-def test_graph::vertex_hasforoutgoingadjacent_changes_state(instance):
+def test_graph_vertex_hasforoutgoingadjacent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -257,27 +223,55 @@ def test_graph::vertex_hasforoutgoingadjacent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasForOutgoingAdjacent' in graph::Vertex is empty"
+        assert has_statements, f"Function 'hasForOutgoingAdjacent' in graph_Vertex is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasForOutgoingAdjacent' in graph::Vertex did not change state; check implementation")
+            warnings.warn(f"Operation 'hasForOutgoingAdjacent' in graph_Vertex did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasForOutgoingAdjacent' in graph::Vertex is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasForOutgoingAdjacent' in graph_Vertex is not implemented or raised an error")
 
-@given(instance=graph::Edge_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graph_Vertex_strategy)
+@settings(max_examples=30)
+def test_graph_vertex_hasforincomingadjacent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hasForIncomingAdjacent(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hasForIncomingAdjacent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hasForIncomingAdjacent' in graph_Vertex is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hasForIncomingAdjacent' in graph_Vertex did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hasForIncomingAdjacent' in graph_Vertex is not implemented or raised an error")
+
+@given(instance=graph_Edge_strategy)
 @settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, graph::Edge)
-
-@given(instance=graph::Edge_strategy)
-def test_graph::edge_critical_type(instance):
-    assert isinstance(instance.critical, bool)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, graph_Edge)
 
 
-@given(instance=graph::Edge_strategy)
-def test_graph::edge_critical_setter(instance):
+
+@given(instance=graph_Edge_strategy)
+def test_graph_edge_critical_setter(instance):
     original = instance.critical
     instance.critical = original
     assert instance.critical == original
@@ -288,9 +282,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graph::Edge_strategy)
+@given(instance=graph_Edge_strategy)
 @settings(max_examples=30)
-def test_graph::edge_update_changes_state(instance):
+def test_graph_edge_update_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -306,54 +300,45 @@ def test_graph::edge_update_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'update' in graph::Edge is empty"
+        assert has_statements, f"Function 'update' in graph_Edge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'update' in graph::Edge did not change state; check implementation")
+            warnings.warn(f"Operation 'update' in graph_Edge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'update' in graph::Edge is not implemented or raised an error")
+        warnings.warn(f"Operation 'update' in graph_Edge is not implemented or raised an error")
 
-@given(instance=graph::GraphElement_strategy)
+@given(instance=graph_GraphElement_strategy)
 @settings(max_examples=50)
-def test_graph::graphelement_instantiation(instance):
-    assert isinstance(instance, graph::GraphElement)
-
-@given(instance=graph::GraphElement_strategy)
-def test_graph::graphelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_graphelement_instantiation(instance):
+    assert isinstance(instance, graph_GraphElement)
 
 
-@given(instance=graph::GraphElement_strategy)
-def test_graph::graphelement_name_setter(instance):
+
+@given(instance=graph_GraphElement_strategy)
+def test_graph_graphelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
-
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)
 
 
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_name_setter(instance):
+
+@given(instance=graph_Graph_strategy)
+def test_graph_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_description_setter(instance):
+@given(instance=graph_Graph_strategy)
+def test_graph_graph_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -364,9 +349,105 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=30)
-def test_graph::graph_addnamedadjacent_changes_state(instance):
+def test_graph_graph_addedge_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addEdge(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addEdge).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addEdge' in graph_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addEdge' in graph_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addEdge' in graph_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graph_Graph_strategy)
+@settings(max_examples=30)
+def test_graph_graph_addvertex_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addVertex(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addVertex).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addVertex' in graph_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addVertex' in graph_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addVertex' in graph_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graph_Graph_strategy)
+@settings(max_examples=30)
+def test_graph_graph_addadjacent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addAdjacent(
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addAdjacent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addAdjacent' in graph_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addAdjacent' in graph_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addAdjacent' in graph_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graph_Graph_strategy)
+@settings(max_examples=30)
+def test_graph_graph_addnamedadjacent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -384,107 +465,11 @@ def test_graph::graph_addnamedadjacent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addNamedAdjacent' in graph::Graph is empty"
+        assert has_statements, f"Function 'addNamedAdjacent' in graph_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addNamedAdjacent' in graph::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'addNamedAdjacent' in graph_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addNamedAdjacent' in graph::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graph::Graph_strategy)
-@settings(max_examples=30)
-def test_graph::graph_addadjacent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAdjacent(
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAdjacent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAdjacent' in graph::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAdjacent' in graph::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAdjacent' in graph::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graph::Graph_strategy)
-@settings(max_examples=30)
-def test_graph::graph_addedge_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addEdge(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addEdge).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addEdge' in graph::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addEdge' in graph::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addEdge' in graph::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graph::Graph_strategy)
-@settings(max_examples=30)
-def test_graph::graph_addvertex_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addVertex(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addVertex).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addVertex' in graph::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addVertex' in graph::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addVertex' in graph::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'addNamedAdjacent' in graph_Graph is not implemented or raised an error")

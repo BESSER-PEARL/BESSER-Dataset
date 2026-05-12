@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    metamodel::Model,
-    metamodel::Feature,
+from python_code import (
+    metamodel_Feature,
     Type,
-    metamodel::Entity,
-    metamodel::Datatype,
-    metamodel::Type,
+    metamodel_Entity,
+    metamodel_Datatype,
+    metamodel_Type,
+    metamodel_Model,
 )
 
 # =============================================================================
@@ -20,37 +20,23 @@ from classes import (
 
 
 
-def test_metamodel::model_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Model)
+def test_metamodel_feature_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Feature)
 
 
-def test_metamodel::model_constructor_exists():
-    assert callable(metamodel::Model.__init__)
+def test_metamodel_feature_constructor_exists():
+    assert callable(metamodel_Feature.__init__)
 
 
-def test_metamodel::model_constructor_args():
-    sig = inspect.signature(metamodel::Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodel::feature_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Feature)
-
-
-def test_metamodel::feature_constructor_exists():
-    assert callable(metamodel::Feature.__init__)
-
-
-def test_metamodel::feature_constructor_args():
-    sig = inspect.signature(metamodel::Feature.__init__)
+def test_metamodel_feature_constructor_args():
+    sig = inspect.signature(metamodel_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::feature_has_name():
-    assert hasattr(metamodel::Feature, "name")
+def test_metamodel_feature_has_name():
+    assert hasattr(metamodel_Feature, "name")
     descriptor = None
-    for klass in metamodel::Feature.__mro__:
+    for klass in metamodel_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -72,55 +58,69 @@ def test_type_constructor_args():
 
 
 
-def test_metamodel::entity_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Entity)
+def test_metamodel_entity_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Entity)
 
 
-def test_metamodel::entity_constructor_exists():
-    assert callable(metamodel::Entity.__init__)
+def test_metamodel_entity_constructor_exists():
+    assert callable(metamodel_Entity.__init__)
 
 
-def test_metamodel::entity_constructor_args():
-    sig = inspect.signature(metamodel::Entity.__init__)
+def test_metamodel_entity_constructor_args():
+    sig = inspect.signature(metamodel_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::datatype_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Datatype)
+def test_metamodel_datatype_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Datatype)
 
 
-def test_metamodel::datatype_constructor_exists():
-    assert callable(metamodel::Datatype.__init__)
+def test_metamodel_datatype_constructor_exists():
+    assert callable(metamodel_Datatype.__init__)
 
 
-def test_metamodel::datatype_constructor_args():
-    sig = inspect.signature(metamodel::Datatype.__init__)
+def test_metamodel_datatype_constructor_args():
+    sig = inspect.signature(metamodel_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::type_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Type)
+def test_metamodel_type_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Type)
 
 
-def test_metamodel::type_constructor_exists():
-    assert callable(metamodel::Type.__init__)
+def test_metamodel_type_constructor_exists():
+    assert callable(metamodel_Type.__init__)
 
 
-def test_metamodel::type_constructor_args():
-    sig = inspect.signature(metamodel::Type.__init__)
+def test_metamodel_type_constructor_args():
+    sig = inspect.signature(metamodel_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::type_has_name():
-    assert hasattr(metamodel::Type, "name")
+def test_metamodel_type_has_name():
+    assert hasattr(metamodel_Type, "name")
     descriptor = None
-    for klass in metamodel::Type.__mro__:
+    for klass in metamodel_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_metamodel_model_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Model)
+
+
+def test_metamodel_model_constructor_exists():
+    assert callable(metamodel_Model.__init__)
+
+
+def test_metamodel_model_constructor_args():
+    sig = inspect.signature(metamodel_Model.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -134,46 +134,38 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-metamodel::Model_strategy = st.builds(
-    metamodel::Model,
-)
-metamodel::Feature_strategy = st.builds(
-    metamodel::Feature,
+metamodel_Feature_strategy = st.builds(
+    metamodel_Feature,
     name=
         safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-metamodel::Entity_strategy = st.builds(
-    metamodel::Entity,
+metamodel_Entity_strategy = st.builds(
+    metamodel_Entity,
 )
-metamodel::Datatype_strategy = st.builds(
-    metamodel::Datatype,
+metamodel_Datatype_strategy = st.builds(
+    metamodel_Datatype,
 )
-metamodel::Type_strategy = st.builds(
-    metamodel::Type,
+metamodel_Type_strategy = st.builds(
+    metamodel_Type,
     name=
         safe_text
 )
+metamodel_Model_strategy = st.builds(
+    metamodel_Model,
+)
 
-@given(instance=metamodel::Model_strategy)
+@given(instance=metamodel_Feature_strategy)
 @settings(max_examples=50)
-def test_metamodel::model_instantiation(instance):
-    assert isinstance(instance, metamodel::Model)
-
-@given(instance=metamodel::Feature_strategy)
-@settings(max_examples=50)
-def test_metamodel::feature_instantiation(instance):
-    assert isinstance(instance, metamodel::Feature)
-
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_feature_instantiation(instance):
+    assert isinstance(instance, metamodel_Feature)
 
 
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_name_setter(instance):
+
+@given(instance=metamodel_Feature_strategy)
+def test_metamodel_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -183,28 +175,30 @@ def test_metamodel::feature_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=metamodel::Entity_strategy)
+@given(instance=metamodel_Entity_strategy)
 @settings(max_examples=50)
-def test_metamodel::entity_instantiation(instance):
-    assert isinstance(instance, metamodel::Entity)
+def test_metamodel_entity_instantiation(instance):
+    assert isinstance(instance, metamodel_Entity)
 
-@given(instance=metamodel::Datatype_strategy)
+@given(instance=metamodel_Datatype_strategy)
 @settings(max_examples=50)
-def test_metamodel::datatype_instantiation(instance):
-    assert isinstance(instance, metamodel::Datatype)
+def test_metamodel_datatype_instantiation(instance):
+    assert isinstance(instance, metamodel_Datatype)
 
-@given(instance=metamodel::Type_strategy)
+@given(instance=metamodel_Type_strategy)
 @settings(max_examples=50)
-def test_metamodel::type_instantiation(instance):
-    assert isinstance(instance, metamodel::Type)
-
-@given(instance=metamodel::Type_strategy)
-def test_metamodel::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_type_instantiation(instance):
+    assert isinstance(instance, metamodel_Type)
 
 
-@given(instance=metamodel::Type_strategy)
-def test_metamodel::type_name_setter(instance):
+
+@given(instance=metamodel_Type_strategy)
+def test_metamodel_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=metamodel_Model_strategy)
+@settings(max_examples=50)
+def test_metamodel_model_instantiation(instance):
+    assert isinstance(instance, metamodel_Model)

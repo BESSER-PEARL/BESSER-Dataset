@@ -3,56 +3,56 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    view::rdbmdl::Column,
+from python_code import (
+    view_rdbmdl_Column,
     ViewColumn,
-    rdbmdl::view::ViewExpressionColumn,
-    rdbmdl::view::ReferencedViewColumn,
-    view::rdbmdl::NamedColumnSet,
+    rdbmdl_view_ViewExpressionColumn,
+    rdbmdl_view_ReferencedViewColumn,
+    view_rdbmdl_NamedColumnSet,
     ViewAlias,
-    datatypes::PrimitiveDataType,
+    datatypes_PrimitiveDataType,
     IndexedColumn,
     ColumnRefConstraint,
-    rdbmdl::constraints::ForeignKey,
-    rdbmdl::constraints::UniqueConstraint,
-    constraints::rdbmdl::TableColumn,
+    rdbmdl_constraints_ForeignKey,
+    rdbmdl_constraints_UniqueConstraint,
+    constraints_rdbmdl_TableColumn,
     Constraint,
-    rdbmdl::constraints::ColumnRefConstraint,
-    rdbmdl::constraints::Index,
-    rdbmdl::constraints::CheckConstraint,
+    rdbmdl_constraints_ColumnRefConstraint,
+    rdbmdl_constraints_Index,
+    rdbmdl_constraints_CheckConstraint,
     DataType,
-    rdbmdl::datatypes::PrimitiveDataType,
+    rdbmdl_datatypes_PrimitiveDataType,
     CheckConstraint,
     Index,
     ForeignKey,
     UniqueConstraint,
-    rdbmdl::constraints::PrimaryKey,
+    rdbmdl_constraints_PrimaryKey,
     PrimaryKey,
     NamedColumnSet,
-    rdbmdl::view::View,
-    rdbmdl::Table,
+    rdbmdl_view_View,
+    rdbmdl_Table,
     PrimitiveDataType,
     Domain,
     Column,
-    rdbmdl::TableColumn,
-    rdbmdl::view::ViewColumn,
-    rdbmdl::Element,
+    rdbmdl_view_ViewColumn,
+    rdbmdl_TableColumn,
+    rdbmdl_Element,
     NamedElement,
-    rdbmdl::constraints::IndexedColumn,
-    rdbmdl::Schema,
-    rdbmdl::constraints::Constraint,
-    rdbmdl::SchemaElement,
-    rdbmdl::datatypes::DataType,
-    rdbmdl::Column,
-    rdbmdl::view::ViewAlias,
-    rdbmdl::Model,
+    rdbmdl_constraints_IndexedColumn,
+    rdbmdl_datatypes_DataType,
+    rdbmdl_view_ViewAlias,
+    rdbmdl_Column,
+    rdbmdl_constraints_Constraint,
+    rdbmdl_SchemaElement,
+    rdbmdl_Schema,
+    rdbmdl_Model,
     Element,
-    rdbmdl::NamedElement,
+    rdbmdl_NamedElement,
     SchemaElement,
-    rdbmdl::datatypes::Domain,
-    rdbmdl::NamedColumnSet,
+    rdbmdl_datatypes_Domain,
+    rdbmdl_NamedColumnSet,
     PrimitiveTypeCodes,
 )
 
@@ -62,16 +62,16 @@ from classes import (
 
 
 
-def test_view::rdbmdl::column_is_not_abstract():
-    assert not inspect.isabstract(view::rdbmdl::Column)
+def test_view_rdbmdl_column_is_not_abstract():
+    assert not inspect.isabstract(view_rdbmdl_Column)
 
 
-def test_view::rdbmdl::column_constructor_exists():
-    assert callable(view::rdbmdl::Column.__init__)
+def test_view_rdbmdl_column_constructor_exists():
+    assert callable(view_rdbmdl_Column.__init__)
 
 
-def test_view::rdbmdl::column_constructor_args():
-    sig = inspect.signature(view::rdbmdl::Column.__init__)
+def test_view_rdbmdl_column_constructor_args():
+    sig = inspect.signature(view_rdbmdl_Column.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,23 +90,23 @@ def test_viewcolumn_constructor_args():
 
 
 
-def test_rdbmdl::view::viewexpressioncolumn_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::view::ViewExpressionColumn)
+def test_rdbmdl_view_viewexpressioncolumn_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_view_ViewExpressionColumn)
 
 
-def test_rdbmdl::view::viewexpressioncolumn_constructor_exists():
-    assert callable(rdbmdl::view::ViewExpressionColumn.__init__)
+def test_rdbmdl_view_viewexpressioncolumn_constructor_exists():
+    assert callable(rdbmdl_view_ViewExpressionColumn.__init__)
 
 
-def test_rdbmdl::view::viewexpressioncolumn_constructor_args():
-    sig = inspect.signature(rdbmdl::view::ViewExpressionColumn.__init__)
+def test_rdbmdl_view_viewexpressioncolumn_constructor_args():
+    sig = inspect.signature(rdbmdl_view_ViewExpressionColumn.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_rdbmdl::view::viewexpressioncolumn_has_expression():
-    assert hasattr(rdbmdl::view::ViewExpressionColumn, "expression")
+def test_rdbmdl_view_viewexpressioncolumn_has_expression():
+    assert hasattr(rdbmdl_view_ViewExpressionColumn, "expression")
     descriptor = None
-    for klass in rdbmdl::view::ViewExpressionColumn.__mro__:
+    for klass in rdbmdl_view_ViewExpressionColumn.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -114,30 +114,30 @@ def test_rdbmdl::view::viewexpressioncolumn_has_expression():
 
 
 
-def test_rdbmdl::view::referencedviewcolumn_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::view::ReferencedViewColumn)
+def test_rdbmdl_view_referencedviewcolumn_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_view_ReferencedViewColumn)
 
 
-def test_rdbmdl::view::referencedviewcolumn_constructor_exists():
-    assert callable(rdbmdl::view::ReferencedViewColumn.__init__)
+def test_rdbmdl_view_referencedviewcolumn_constructor_exists():
+    assert callable(rdbmdl_view_ReferencedViewColumn.__init__)
 
 
-def test_rdbmdl::view::referencedviewcolumn_constructor_args():
-    sig = inspect.signature(rdbmdl::view::ReferencedViewColumn.__init__)
+def test_rdbmdl_view_referencedviewcolumn_constructor_args():
+    sig = inspect.signature(rdbmdl_view_ReferencedViewColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_view::rdbmdl::namedcolumnset_is_not_abstract():
-    assert not inspect.isabstract(view::rdbmdl::NamedColumnSet)
+def test_view_rdbmdl_namedcolumnset_is_not_abstract():
+    assert not inspect.isabstract(view_rdbmdl_NamedColumnSet)
 
 
-def test_view::rdbmdl::namedcolumnset_constructor_exists():
-    assert callable(view::rdbmdl::NamedColumnSet.__init__)
+def test_view_rdbmdl_namedcolumnset_constructor_exists():
+    assert callable(view_rdbmdl_NamedColumnSet.__init__)
 
 
-def test_view::rdbmdl::namedcolumnset_constructor_args():
-    sig = inspect.signature(view::rdbmdl::NamedColumnSet.__init__)
+def test_view_rdbmdl_namedcolumnset_constructor_args():
+    sig = inspect.signature(view_rdbmdl_NamedColumnSet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -156,16 +156,16 @@ def test_viewalias_constructor_args():
 
 
 
-def test_datatypes::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(datatypes::PrimitiveDataType)
+def test_datatypes_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(datatypes_PrimitiveDataType)
 
 
-def test_datatypes::primitivedatatype_constructor_exists():
-    assert callable(datatypes::PrimitiveDataType.__init__)
+def test_datatypes_primitivedatatype_constructor_exists():
+    assert callable(datatypes_PrimitiveDataType.__init__)
 
 
-def test_datatypes::primitivedatatype_constructor_args():
-    sig = inspect.signature(datatypes::PrimitiveDataType.__init__)
+def test_datatypes_primitivedatatype_constructor_args():
+    sig = inspect.signature(datatypes_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -198,44 +198,44 @@ def test_columnrefconstraint_constructor_args():
 
 
 
-def test_rdbmdl::constraints::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::ForeignKey)
+def test_rdbmdl_constraints_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_ForeignKey)
 
 
-def test_rdbmdl::constraints::foreignkey_constructor_exists():
-    assert callable(rdbmdl::constraints::ForeignKey.__init__)
+def test_rdbmdl_constraints_foreignkey_constructor_exists():
+    assert callable(rdbmdl_constraints_ForeignKey.__init__)
 
 
-def test_rdbmdl::constraints::foreignkey_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::ForeignKey.__init__)
+def test_rdbmdl_constraints_foreignkey_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmdl::constraints::uniqueconstraint_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::UniqueConstraint)
+def test_rdbmdl_constraints_uniqueconstraint_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_UniqueConstraint)
 
 
-def test_rdbmdl::constraints::uniqueconstraint_constructor_exists():
-    assert callable(rdbmdl::constraints::UniqueConstraint.__init__)
+def test_rdbmdl_constraints_uniqueconstraint_constructor_exists():
+    assert callable(rdbmdl_constraints_UniqueConstraint.__init__)
 
 
-def test_rdbmdl::constraints::uniqueconstraint_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::UniqueConstraint.__init__)
+def test_rdbmdl_constraints_uniqueconstraint_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_UniqueConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_constraints::rdbmdl::tablecolumn_is_not_abstract():
-    assert not inspect.isabstract(constraints::rdbmdl::TableColumn)
+def test_constraints_rdbmdl_tablecolumn_is_not_abstract():
+    assert not inspect.isabstract(constraints_rdbmdl_TableColumn)
 
 
-def test_constraints::rdbmdl::tablecolumn_constructor_exists():
-    assert callable(constraints::rdbmdl::TableColumn.__init__)
+def test_constraints_rdbmdl_tablecolumn_constructor_exists():
+    assert callable(constraints_rdbmdl_TableColumn.__init__)
 
 
-def test_constraints::rdbmdl::tablecolumn_constructor_args():
-    sig = inspect.signature(constraints::rdbmdl::TableColumn.__init__)
+def test_constraints_rdbmdl_tablecolumn_constructor_args():
+    sig = inspect.signature(constraints_rdbmdl_TableColumn.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -254,51 +254,51 @@ def test_constraint_constructor_args():
 
 
 
-def test_rdbmdl::constraints::columnrefconstraint_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::ColumnRefConstraint)
+def test_rdbmdl_constraints_columnrefconstraint_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_ColumnRefConstraint)
 
 
-def test_rdbmdl::constraints::columnrefconstraint_constructor_exists():
-    assert callable(rdbmdl::constraints::ColumnRefConstraint.__init__)
+def test_rdbmdl_constraints_columnrefconstraint_constructor_exists():
+    assert callable(rdbmdl_constraints_ColumnRefConstraint.__init__)
 
 
-def test_rdbmdl::constraints::columnrefconstraint_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::ColumnRefConstraint.__init__)
+def test_rdbmdl_constraints_columnrefconstraint_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_ColumnRefConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmdl::constraints::index_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::Index)
+def test_rdbmdl_constraints_index_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_Index)
 
 
-def test_rdbmdl::constraints::index_constructor_exists():
-    assert callable(rdbmdl::constraints::Index.__init__)
+def test_rdbmdl_constraints_index_constructor_exists():
+    assert callable(rdbmdl_constraints_Index.__init__)
 
 
-def test_rdbmdl::constraints::index_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::Index.__init__)
+def test_rdbmdl_constraints_index_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_Index.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmdl::constraints::checkconstraint_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::CheckConstraint)
+def test_rdbmdl_constraints_checkconstraint_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_CheckConstraint)
 
 
-def test_rdbmdl::constraints::checkconstraint_constructor_exists():
-    assert callable(rdbmdl::constraints::CheckConstraint.__init__)
+def test_rdbmdl_constraints_checkconstraint_constructor_exists():
+    assert callable(rdbmdl_constraints_CheckConstraint.__init__)
 
 
-def test_rdbmdl::constraints::checkconstraint_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::CheckConstraint.__init__)
+def test_rdbmdl_constraints_checkconstraint_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_CheckConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_rdbmdl::constraints::checkconstraint_has_expression():
-    assert hasattr(rdbmdl::constraints::CheckConstraint, "expression")
+def test_rdbmdl_constraints_checkconstraint_has_expression():
+    assert hasattr(rdbmdl_constraints_CheckConstraint, "expression")
     descriptor = None
-    for klass in rdbmdl::constraints::CheckConstraint.__mro__:
+    for klass in rdbmdl_constraints_CheckConstraint.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -320,23 +320,23 @@ def test_datatype_constructor_args():
 
 
 
-def test_rdbmdl::datatypes::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::datatypes::PrimitiveDataType)
+def test_rdbmdl_datatypes_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_datatypes_PrimitiveDataType)
 
 
-def test_rdbmdl::datatypes::primitivedatatype_constructor_exists():
-    assert callable(rdbmdl::datatypes::PrimitiveDataType.__init__)
+def test_rdbmdl_datatypes_primitivedatatype_constructor_exists():
+    assert callable(rdbmdl_datatypes_PrimitiveDataType.__init__)
 
 
-def test_rdbmdl::datatypes::primitivedatatype_constructor_args():
-    sig = inspect.signature(rdbmdl::datatypes::PrimitiveDataType.__init__)
+def test_rdbmdl_datatypes_primitivedatatype_constructor_args():
+    sig = inspect.signature(rdbmdl_datatypes_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_rdbmdl::datatypes::primitivedatatype_has_type():
-    assert hasattr(rdbmdl::datatypes::PrimitiveDataType, "type")
+def test_rdbmdl_datatypes_primitivedatatype_has_type():
+    assert hasattr(rdbmdl_datatypes_PrimitiveDataType, "type")
     descriptor = None
-    for klass in rdbmdl::datatypes::PrimitiveDataType.__mro__:
+    for klass in rdbmdl_datatypes_PrimitiveDataType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -400,16 +400,16 @@ def test_uniqueconstraint_constructor_args():
 
 
 
-def test_rdbmdl::constraints::primarykey_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::PrimaryKey)
+def test_rdbmdl_constraints_primarykey_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_PrimaryKey)
 
 
-def test_rdbmdl::constraints::primarykey_constructor_exists():
-    assert callable(rdbmdl::constraints::PrimaryKey.__init__)
+def test_rdbmdl_constraints_primarykey_constructor_exists():
+    assert callable(rdbmdl_constraints_PrimaryKey.__init__)
 
 
-def test_rdbmdl::constraints::primarykey_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::PrimaryKey.__init__)
+def test_rdbmdl_constraints_primarykey_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -442,23 +442,23 @@ def test_namedcolumnset_constructor_args():
 
 
 
-def test_rdbmdl::view::view_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::view::View)
+def test_rdbmdl_view_view_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_view_View)
 
 
-def test_rdbmdl::view::view_constructor_exists():
-    assert callable(rdbmdl::view::View.__init__)
+def test_rdbmdl_view_view_constructor_exists():
+    assert callable(rdbmdl_view_View.__init__)
 
 
-def test_rdbmdl::view::view_constructor_args():
-    sig = inspect.signature(rdbmdl::view::View.__init__)
+def test_rdbmdl_view_view_constructor_args():
+    sig = inspect.signature(rdbmdl_view_View.__init__)
     params = list(sig.parameters.keys())
     assert "ddl" in params, "Missing parameter 'ddl'"
 
-def test_rdbmdl::view::view_has_ddl():
-    assert hasattr(rdbmdl::view::View, "ddl")
+def test_rdbmdl_view_view_has_ddl():
+    assert hasattr(rdbmdl_view_View, "ddl")
     descriptor = None
-    for klass in rdbmdl::view::View.__mro__:
+    for klass in rdbmdl_view_View.__mro__:
         if "ddl" in klass.__dict__:
             descriptor = klass.__dict__["ddl"]
             break
@@ -466,16 +466,16 @@ def test_rdbmdl::view::view_has_ddl():
 
 
 
-def test_rdbmdl::table_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::Table)
+def test_rdbmdl_table_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_Table)
 
 
-def test_rdbmdl::table_constructor_exists():
-    assert callable(rdbmdl::Table.__init__)
+def test_rdbmdl_table_constructor_exists():
+    assert callable(rdbmdl_Table.__init__)
 
 
-def test_rdbmdl::table_constructor_args():
-    sig = inspect.signature(rdbmdl::Table.__init__)
+def test_rdbmdl_table_constructor_args():
+    sig = inspect.signature(rdbmdl_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -522,64 +522,64 @@ def test_column_constructor_args():
 
 
 
-def test_rdbmdl::tablecolumn_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::TableColumn)
+def test_rdbmdl_view_viewcolumn_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_view_ViewColumn)
 
 
-def test_rdbmdl::tablecolumn_constructor_exists():
-    assert callable(rdbmdl::TableColumn.__init__)
+def test_rdbmdl_view_viewcolumn_constructor_exists():
+    assert callable(rdbmdl_view_ViewColumn.__init__)
 
 
-def test_rdbmdl::tablecolumn_constructor_args():
-    sig = inspect.signature(rdbmdl::TableColumn.__init__)
+def test_rdbmdl_view_viewcolumn_constructor_args():
+    sig = inspect.signature(rdbmdl_view_ViewColumn.__init__)
     params = list(sig.parameters.keys())
-    assert "isForeignKey" in params, "Missing parameter 'isForeignKey'"
+
+
+
+def test_rdbmdl_tablecolumn_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_TableColumn)
+
+
+def test_rdbmdl_tablecolumn_constructor_exists():
+    assert callable(rdbmdl_TableColumn.__init__)
+
+
+def test_rdbmdl_tablecolumn_constructor_args():
+    sig = inspect.signature(rdbmdl_TableColumn.__init__)
+    params = list(sig.parameters.keys())
     assert "isPrimaryKey" in params, "Missing parameter 'isPrimaryKey'"
+    assert "isForeignKey" in params, "Missing parameter 'isForeignKey'"
 
-def test_rdbmdl::tablecolumn_has_isForeignKey():
-    assert hasattr(rdbmdl::TableColumn, "isForeignKey")
+def test_rdbmdl_tablecolumn_has_isPrimaryKey():
+    assert hasattr(rdbmdl_TableColumn, "isPrimaryKey")
     descriptor = None
-    for klass in rdbmdl::TableColumn.__mro__:
-        if "isForeignKey" in klass.__dict__:
-            descriptor = klass.__dict__["isForeignKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbmdl::tablecolumn_has_isPrimaryKey():
-    assert hasattr(rdbmdl::TableColumn, "isPrimaryKey")
-    descriptor = None
-    for klass in rdbmdl::TableColumn.__mro__:
+    for klass in rdbmdl_TableColumn.__mro__:
         if "isPrimaryKey" in klass.__dict__:
             descriptor = klass.__dict__["isPrimaryKey"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_rdbmdl::view::viewcolumn_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::view::ViewColumn)
-
-
-def test_rdbmdl::view::viewcolumn_constructor_exists():
-    assert callable(rdbmdl::view::ViewColumn.__init__)
-
-
-def test_rdbmdl::view::viewcolumn_constructor_args():
-    sig = inspect.signature(rdbmdl::view::ViewColumn.__init__)
-    params = list(sig.parameters.keys())
+def test_rdbmdl_tablecolumn_has_isForeignKey():
+    assert hasattr(rdbmdl_TableColumn, "isForeignKey")
+    descriptor = None
+    for klass in rdbmdl_TableColumn.__mro__:
+        if "isForeignKey" in klass.__dict__:
+            descriptor = klass.__dict__["isForeignKey"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_rdbmdl::element_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::Element)
+def test_rdbmdl_element_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_Element)
 
 
-def test_rdbmdl::element_constructor_exists():
-    assert callable(rdbmdl::Element.__init__)
+def test_rdbmdl_element_constructor_exists():
+    assert callable(rdbmdl_Element.__init__)
 
 
-def test_rdbmdl::element_constructor_args():
-    sig = inspect.signature(rdbmdl::Element.__init__)
+def test_rdbmdl_element_constructor_args():
+    sig = inspect.signature(rdbmdl_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -598,23 +598,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_rdbmdl::constraints::indexedcolumn_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::IndexedColumn)
+def test_rdbmdl_constraints_indexedcolumn_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_IndexedColumn)
 
 
-def test_rdbmdl::constraints::indexedcolumn_constructor_exists():
-    assert callable(rdbmdl::constraints::IndexedColumn.__init__)
+def test_rdbmdl_constraints_indexedcolumn_constructor_exists():
+    assert callable(rdbmdl_constraints_IndexedColumn.__init__)
 
 
-def test_rdbmdl::constraints::indexedcolumn_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::IndexedColumn.__init__)
+def test_rdbmdl_constraints_indexedcolumn_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_IndexedColumn.__init__)
     params = list(sig.parameters.keys())
     assert "ascending" in params, "Missing parameter 'ascending'"
 
-def test_rdbmdl::constraints::indexedcolumn_has_ascending():
-    assert hasattr(rdbmdl::constraints::IndexedColumn, "ascending")
+def test_rdbmdl_constraints_indexedcolumn_has_ascending():
+    assert hasattr(rdbmdl_constraints_IndexedColumn, "ascending")
     descriptor = None
-    for klass in rdbmdl::constraints::IndexedColumn.__mro__:
+    for klass in rdbmdl_constraints_IndexedColumn.__mro__:
         if "ascending" in klass.__dict__:
             descriptor = klass.__dict__["ascending"]
             break
@@ -622,125 +622,73 @@ def test_rdbmdl::constraints::indexedcolumn_has_ascending():
 
 
 
-def test_rdbmdl::schema_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::Schema)
+def test_rdbmdl_datatypes_datatype_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_datatypes_DataType)
 
 
-def test_rdbmdl::schema_constructor_exists():
-    assert callable(rdbmdl::Schema.__init__)
+def test_rdbmdl_datatypes_datatype_constructor_exists():
+    assert callable(rdbmdl_datatypes_DataType.__init__)
 
 
-def test_rdbmdl::schema_constructor_args():
-    sig = inspect.signature(rdbmdl::Schema.__init__)
+def test_rdbmdl_datatypes_datatype_constructor_args():
+    sig = inspect.signature(rdbmdl_datatypes_DataType.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_rdbmdl::constraints::constraint_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::constraints::Constraint)
-
-
-def test_rdbmdl::constraints::constraint_constructor_exists():
-    assert callable(rdbmdl::constraints::Constraint.__init__)
-
-
-def test_rdbmdl::constraints::constraint_constructor_args():
-    sig = inspect.signature(rdbmdl::constraints::Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rdbmdl::schemaelement_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::SchemaElement)
-
-
-def test_rdbmdl::schemaelement_constructor_exists():
-    assert callable(rdbmdl::SchemaElement.__init__)
-
-
-def test_rdbmdl::schemaelement_constructor_args():
-    sig = inspect.signature(rdbmdl::SchemaElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "owner" in params, "Missing parameter 'owner'"
-
-def test_rdbmdl::schemaelement_has_owner():
-    assert hasattr(rdbmdl::SchemaElement, "owner")
-    descriptor = None
-    for klass in rdbmdl::SchemaElement.__mro__:
-        if "owner" in klass.__dict__:
-            descriptor = klass.__dict__["owner"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rdbmdl::datatypes::datatype_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::datatypes::DataType)
-
-
-def test_rdbmdl::datatypes::datatype_constructor_exists():
-    assert callable(rdbmdl::datatypes::DataType.__init__)
-
-
-def test_rdbmdl::datatypes::datatype_constructor_args():
-    sig = inspect.signature(rdbmdl::datatypes::DataType.__init__)
-    params = list(sig.parameters.keys())
-    assert "check" in params, "Missing parameter 'check'"
     assert "var" in params, "Missing parameter 'var'"
-    assert "decimalDigits" in params, "Missing parameter 'decimalDigits'"
     assert "default" in params, "Missing parameter 'default'"
+    assert "check" in params, "Missing parameter 'check'"
     assert "size" in params, "Missing parameter 'size'"
+    assert "decimalDigits" in params, "Missing parameter 'decimalDigits'"
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_rdbmdl::datatypes::datatype_has_check():
-    assert hasattr(rdbmdl::datatypes::DataType, "check")
+def test_rdbmdl_datatypes_datatype_has_var():
+    assert hasattr(rdbmdl_datatypes_DataType, "var")
     descriptor = None
-    for klass in rdbmdl::datatypes::DataType.__mro__:
-        if "check" in klass.__dict__:
-            descriptor = klass.__dict__["check"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbmdl::datatypes::datatype_has_var():
-    assert hasattr(rdbmdl::datatypes::DataType, "var")
-    descriptor = None
-    for klass in rdbmdl::datatypes::DataType.__mro__:
+    for klass in rdbmdl_datatypes_DataType.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbmdl::datatypes::datatype_has_decimalDigits():
-    assert hasattr(rdbmdl::datatypes::DataType, "decimalDigits")
+def test_rdbmdl_datatypes_datatype_has_default():
+    assert hasattr(rdbmdl_datatypes_DataType, "default")
     descriptor = None
-    for klass in rdbmdl::datatypes::DataType.__mro__:
-        if "decimalDigits" in klass.__dict__:
-            descriptor = klass.__dict__["decimalDigits"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbmdl::datatypes::datatype_has_default():
-    assert hasattr(rdbmdl::datatypes::DataType, "default")
-    descriptor = None
-    for klass in rdbmdl::datatypes::DataType.__mro__:
+    for klass in rdbmdl_datatypes_DataType.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbmdl::datatypes::datatype_has_size():
-    assert hasattr(rdbmdl::datatypes::DataType, "size")
+def test_rdbmdl_datatypes_datatype_has_check():
+    assert hasattr(rdbmdl_datatypes_DataType, "check")
     descriptor = None
-    for klass in rdbmdl::datatypes::DataType.__mro__:
+    for klass in rdbmdl_datatypes_DataType.__mro__:
+        if "check" in klass.__dict__:
+            descriptor = klass.__dict__["check"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbmdl_datatypes_datatype_has_size():
+    assert hasattr(rdbmdl_datatypes_DataType, "size")
+    descriptor = None
+    for klass in rdbmdl_datatypes_DataType.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbmdl::datatypes::datatype_has_nullable():
-    assert hasattr(rdbmdl::datatypes::DataType, "nullable")
+def test_rdbmdl_datatypes_datatype_has_decimalDigits():
+    assert hasattr(rdbmdl_datatypes_DataType, "decimalDigits")
     descriptor = None
-    for klass in rdbmdl::datatypes::DataType.__mro__:
+    for klass in rdbmdl_datatypes_DataType.__mro__:
+        if "decimalDigits" in klass.__dict__:
+            descriptor = klass.__dict__["decimalDigits"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbmdl_datatypes_datatype_has_nullable():
+    assert hasattr(rdbmdl_datatypes_DataType, "nullable")
+    descriptor = None
+    for klass in rdbmdl_datatypes_DataType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -748,51 +696,103 @@ def test_rdbmdl::datatypes::datatype_has_nullable():
 
 
 
-def test_rdbmdl::column_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::Column)
+def test_rdbmdl_view_viewalias_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_view_ViewAlias)
 
 
-def test_rdbmdl::column_constructor_exists():
-    assert callable(rdbmdl::Column.__init__)
+def test_rdbmdl_view_viewalias_constructor_exists():
+    assert callable(rdbmdl_view_ViewAlias.__init__)
 
 
-def test_rdbmdl::column_constructor_args():
-    sig = inspect.signature(rdbmdl::Column.__init__)
+def test_rdbmdl_view_viewalias_constructor_args():
+    sig = inspect.signature(rdbmdl_view_ViewAlias.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmdl::view::viewalias_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::view::ViewAlias)
+def test_rdbmdl_column_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_Column)
 
 
-def test_rdbmdl::view::viewalias_constructor_exists():
-    assert callable(rdbmdl::view::ViewAlias.__init__)
+def test_rdbmdl_column_constructor_exists():
+    assert callable(rdbmdl_Column.__init__)
 
 
-def test_rdbmdl::view::viewalias_constructor_args():
-    sig = inspect.signature(rdbmdl::view::ViewAlias.__init__)
+def test_rdbmdl_column_constructor_args():
+    sig = inspect.signature(rdbmdl_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmdl::model_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::Model)
+def test_rdbmdl_constraints_constraint_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_constraints_Constraint)
 
 
-def test_rdbmdl::model_constructor_exists():
-    assert callable(rdbmdl::Model.__init__)
+def test_rdbmdl_constraints_constraint_constructor_exists():
+    assert callable(rdbmdl_constraints_Constraint.__init__)
 
 
-def test_rdbmdl::model_constructor_args():
-    sig = inspect.signature(rdbmdl::Model.__init__)
+def test_rdbmdl_constraints_constraint_constructor_args():
+    sig = inspect.signature(rdbmdl_constraints_Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rdbmdl_schemaelement_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_SchemaElement)
+
+
+def test_rdbmdl_schemaelement_constructor_exists():
+    assert callable(rdbmdl_SchemaElement.__init__)
+
+
+def test_rdbmdl_schemaelement_constructor_args():
+    sig = inspect.signature(rdbmdl_SchemaElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "owner" in params, "Missing parameter 'owner'"
+
+def test_rdbmdl_schemaelement_has_owner():
+    assert hasattr(rdbmdl_SchemaElement, "owner")
+    descriptor = None
+    for klass in rdbmdl_SchemaElement.__mro__:
+        if "owner" in klass.__dict__:
+            descriptor = klass.__dict__["owner"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rdbmdl_schema_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_Schema)
+
+
+def test_rdbmdl_schema_constructor_exists():
+    assert callable(rdbmdl_Schema.__init__)
+
+
+def test_rdbmdl_schema_constructor_args():
+    sig = inspect.signature(rdbmdl_Schema.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rdbmdl_model_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_Model)
+
+
+def test_rdbmdl_model_constructor_exists():
+    assert callable(rdbmdl_Model.__init__)
+
+
+def test_rdbmdl_model_constructor_args():
+    sig = inspect.signature(rdbmdl_Model.__init__)
     params = list(sig.parameters.keys())
     assert "server_id" in params, "Missing parameter 'server_id'"
 
-def test_rdbmdl::model_has_server_id():
-    assert hasattr(rdbmdl::Model, "server_id")
+def test_rdbmdl_model_has_server_id():
+    assert hasattr(rdbmdl_Model, "server_id")
     descriptor = None
-    for klass in rdbmdl::Model.__mro__:
+    for klass in rdbmdl_Model.__mro__:
         if "server_id" in klass.__dict__:
             descriptor = klass.__dict__["server_id"]
             break
@@ -814,35 +814,35 @@ def test_element_constructor_args():
 
 
 
-def test_rdbmdl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::NamedElement)
+def test_rdbmdl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_NamedElement)
 
 
-def test_rdbmdl::namedelement_constructor_exists():
-    assert callable(rdbmdl::NamedElement.__init__)
+def test_rdbmdl_namedelement_constructor_exists():
+    assert callable(rdbmdl_NamedElement.__init__)
 
 
-def test_rdbmdl::namedelement_constructor_args():
-    sig = inspect.signature(rdbmdl::NamedElement.__init__)
+def test_rdbmdl_namedelement_constructor_args():
+    sig = inspect.signature(rdbmdl_NamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_rdbmdl::namedelement_has_name():
-    assert hasattr(rdbmdl::NamedElement, "name")
+def test_rdbmdl_namedelement_has_uid():
+    assert hasattr(rdbmdl_NamedElement, "uid")
     descriptor = None
-    for klass in rdbmdl::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in rdbmdl_NamedElement.__mro__:
+        if "uid" in klass.__dict__:
+            descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbmdl::namedelement_has_uid():
-    assert hasattr(rdbmdl::NamedElement, "uid")
+def test_rdbmdl_namedelement_has_name():
+    assert hasattr(rdbmdl_NamedElement, "name")
     descriptor = None
-    for klass in rdbmdl::NamedElement.__mro__:
-        if "uid" in klass.__dict__:
-            descriptor = klass.__dict__["uid"]
+    for klass in rdbmdl_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -862,30 +862,30 @@ def test_schemaelement_constructor_args():
 
 
 
-def test_rdbmdl::datatypes::domain_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::datatypes::Domain)
+def test_rdbmdl_datatypes_domain_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_datatypes_Domain)
 
 
-def test_rdbmdl::datatypes::domain_constructor_exists():
-    assert callable(rdbmdl::datatypes::Domain.__init__)
+def test_rdbmdl_datatypes_domain_constructor_exists():
+    assert callable(rdbmdl_datatypes_Domain.__init__)
 
 
-def test_rdbmdl::datatypes::domain_constructor_args():
-    sig = inspect.signature(rdbmdl::datatypes::Domain.__init__)
+def test_rdbmdl_datatypes_domain_constructor_args():
+    sig = inspect.signature(rdbmdl_datatypes_Domain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmdl::namedcolumnset_is_not_abstract():
-    assert not inspect.isabstract(rdbmdl::NamedColumnSet)
+def test_rdbmdl_namedcolumnset_is_not_abstract():
+    assert not inspect.isabstract(rdbmdl_NamedColumnSet)
 
 
-def test_rdbmdl::namedcolumnset_constructor_exists():
-    assert callable(rdbmdl::NamedColumnSet.__init__)
+def test_rdbmdl_namedcolumnset_constructor_exists():
+    assert callable(rdbmdl_NamedColumnSet.__init__)
 
 
-def test_rdbmdl::namedcolumnset_constructor_args():
-    sig = inspect.signature(rdbmdl::NamedColumnSet.__init__)
+def test_rdbmdl_namedcolumnset_constructor_args():
+    sig = inspect.signature(rdbmdl_NamedColumnSet.__init__)
     params = list(sig.parameters.keys())
 
 def test_primitivetypecodes_exists():
@@ -896,42 +896,42 @@ def test_primitivetypecodes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PrimitiveTypeCodes]
     expected_literals = [
-        "TIMESTAMP",
-        "BINARY",
-        "VARBINARY",
-        "LONGVARCHAR",
-        "NVARCHAR",
-        "INTEGER",
-        "VARCHAR",
-        "BOOLEAN",
-        "DATE",
-        "BIT",
-        "FLOAT",
-        "LONGVARBINARY",
-        "OTHER",
-        "BIGINT",
-        "DISTINCT",
-        "DOUBLE",
-        "DATALINK",
-        "NCHAR",
-        "NCLOB",
-        "STRUCT",
-        "SMALLINT",
-        "JAVA_OBJECT",
-        "TIME",
-        "LONGNVARCHAR",
-        "SQLXML",
-        "BLOB",
         "TINYINT",
-        "ROWID",
-        "CHAR",
-        "REAL",
-        "CLOB",
-        "ARRAY",
-        "NULL",
+        "DATE",
         "REF",
+        "ARRAY",
+        "BINARY",
+        "TIMESTAMP",
+        "NVARCHAR",
+        "TIME",
+        "INTEGER",
+        "NULL",
+        "DATALINK",
+        "NCLOB",
+        "LONGNVARCHAR",
+        "DOUBLE",
+        "OTHER",
+        "VARBINARY",
         "DECIMAL",
+        "REAL",
+        "STRUCT",
+        "DISTINCT",
+        "SQLXML",
+        "LONGVARCHAR",
+        "ROWID",
+        "SMALLINT",
         "NUMERIC",
+        "FLOAT",
+        "NCHAR",
+        "CHAR",
+        "BLOB",
+        "LONGVARBINARY",
+        "BIT",
+        "JAVA_OBJECT",
+        "CLOB",
+        "BOOLEAN",
+        "VARCHAR",
+        "BIGINT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -949,28 +949,28 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-view::rdbmdl::Column_strategy = st.builds(
-    view::rdbmdl::Column,
+view_rdbmdl_Column_strategy = st.builds(
+    view_rdbmdl_Column,
 )
 ViewColumn_strategy = st.builds(
     ViewColumn,
 )
-rdbmdl::view::ViewExpressionColumn_strategy = st.builds(
-    rdbmdl::view::ViewExpressionColumn,
+rdbmdl_view_ViewExpressionColumn_strategy = st.builds(
+    rdbmdl_view_ViewExpressionColumn,
     expression=
         safe_text
 )
-rdbmdl::view::ReferencedViewColumn_strategy = st.builds(
-    rdbmdl::view::ReferencedViewColumn,
+rdbmdl_view_ReferencedViewColumn_strategy = st.builds(
+    rdbmdl_view_ReferencedViewColumn,
 )
-view::rdbmdl::NamedColumnSet_strategy = st.builds(
-    view::rdbmdl::NamedColumnSet,
+view_rdbmdl_NamedColumnSet_strategy = st.builds(
+    view_rdbmdl_NamedColumnSet,
 )
 ViewAlias_strategy = st.builds(
     ViewAlias,
 )
-datatypes::PrimitiveDataType_strategy = st.builds(
-    datatypes::PrimitiveDataType,
+datatypes_PrimitiveDataType_strategy = st.builds(
+    datatypes_PrimitiveDataType,
 )
 IndexedColumn_strategy = st.builds(
     IndexedColumn,
@@ -978,34 +978,34 @@ IndexedColumn_strategy = st.builds(
 ColumnRefConstraint_strategy = st.builds(
     ColumnRefConstraint,
 )
-rdbmdl::constraints::ForeignKey_strategy = st.builds(
-    rdbmdl::constraints::ForeignKey,
+rdbmdl_constraints_ForeignKey_strategy = st.builds(
+    rdbmdl_constraints_ForeignKey,
 )
-rdbmdl::constraints::UniqueConstraint_strategy = st.builds(
-    rdbmdl::constraints::UniqueConstraint,
+rdbmdl_constraints_UniqueConstraint_strategy = st.builds(
+    rdbmdl_constraints_UniqueConstraint,
 )
-constraints::rdbmdl::TableColumn_strategy = st.builds(
-    constraints::rdbmdl::TableColumn,
+constraints_rdbmdl_TableColumn_strategy = st.builds(
+    constraints_rdbmdl_TableColumn,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-rdbmdl::constraints::ColumnRefConstraint_strategy = st.builds(
-    rdbmdl::constraints::ColumnRefConstraint,
+rdbmdl_constraints_ColumnRefConstraint_strategy = st.builds(
+    rdbmdl_constraints_ColumnRefConstraint,
 )
-rdbmdl::constraints::Index_strategy = st.builds(
-    rdbmdl::constraints::Index,
+rdbmdl_constraints_Index_strategy = st.builds(
+    rdbmdl_constraints_Index,
 )
-rdbmdl::constraints::CheckConstraint_strategy = st.builds(
-    rdbmdl::constraints::CheckConstraint,
+rdbmdl_constraints_CheckConstraint_strategy = st.builds(
+    rdbmdl_constraints_CheckConstraint,
     expression=
         safe_text
 )
 DataType_strategy = st.builds(
     DataType,
 )
-rdbmdl::datatypes::PrimitiveDataType_strategy = st.builds(
-    rdbmdl::datatypes::PrimitiveDataType,
+rdbmdl_datatypes_PrimitiveDataType_strategy = st.builds(
+    rdbmdl_datatypes_PrimitiveDataType,
     type=
         safe_text
 )
@@ -1021,8 +1021,8 @@ ForeignKey_strategy = st.builds(
 UniqueConstraint_strategy = st.builds(
     UniqueConstraint,
 )
-rdbmdl::constraints::PrimaryKey_strategy = st.builds(
-    rdbmdl::constraints::PrimaryKey,
+rdbmdl_constraints_PrimaryKey_strategy = st.builds(
+    rdbmdl_constraints_PrimaryKey,
 )
 PrimaryKey_strategy = st.builds(
     PrimaryKey,
@@ -1030,13 +1030,13 @@ PrimaryKey_strategy = st.builds(
 NamedColumnSet_strategy = st.builds(
     NamedColumnSet,
 )
-rdbmdl::view::View_strategy = st.builds(
-    rdbmdl::view::View,
+rdbmdl_view_View_strategy = st.builds(
+    rdbmdl_view_View,
     ddl=
         safe_text
 )
-rdbmdl::Table_strategy = st.builds(
-    rdbmdl::Table,
+rdbmdl_Table_strategy = st.builds(
+    rdbmdl_Table,
 )
 PrimitiveDataType_strategy = st.builds(
     PrimitiveDataType,
@@ -1047,129 +1047,126 @@ Domain_strategy = st.builds(
 Column_strategy = st.builds(
     Column,
 )
-rdbmdl::TableColumn_strategy = st.builds(
-    rdbmdl::TableColumn,
-    isForeignKey=
-        safe_text,
+rdbmdl_view_ViewColumn_strategy = st.builds(
+    rdbmdl_view_ViewColumn,
+)
+rdbmdl_TableColumn_strategy = st.builds(
+    rdbmdl_TableColumn,
     isPrimaryKey=
+        safe_text,
+    isForeignKey=
         safe_text
 )
-rdbmdl::view::ViewColumn_strategy = st.builds(
-    rdbmdl::view::ViewColumn,
-)
-rdbmdl::Element_strategy = st.builds(
-    rdbmdl::Element,
+rdbmdl_Element_strategy = st.builds(
+    rdbmdl_Element,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-rdbmdl::constraints::IndexedColumn_strategy = st.builds(
-    rdbmdl::constraints::IndexedColumn,
+rdbmdl_constraints_IndexedColumn_strategy = st.builds(
+    rdbmdl_constraints_IndexedColumn,
     ascending=
         st.booleans()
 )
-rdbmdl::Schema_strategy = st.builds(
-    rdbmdl::Schema,
-)
-rdbmdl::constraints::Constraint_strategy = st.builds(
-    rdbmdl::constraints::Constraint,
-)
-rdbmdl::SchemaElement_strategy = st.builds(
-    rdbmdl::SchemaElement,
-    owner=
-        safe_text
-)
-rdbmdl::datatypes::DataType_strategy = st.builds(
-    rdbmdl::datatypes::DataType,
-    check=
-        safe_text,
+rdbmdl_datatypes_DataType_strategy = st.builds(
+    rdbmdl_datatypes_DataType,
     var=
         safe_text,
-    decimalDigits=
-        st.integers(),
     default=
         safe_text,
+    check=
+        safe_text,
     size=
+        st.integers(),
+    decimalDigits=
         st.integers(),
     nullable=
         st.booleans()
 )
-rdbmdl::Column_strategy = st.builds(
-    rdbmdl::Column,
+rdbmdl_view_ViewAlias_strategy = st.builds(
+    rdbmdl_view_ViewAlias,
 )
-rdbmdl::view::ViewAlias_strategy = st.builds(
-    rdbmdl::view::ViewAlias,
+rdbmdl_Column_strategy = st.builds(
+    rdbmdl_Column,
 )
-rdbmdl::Model_strategy = st.builds(
-    rdbmdl::Model,
+rdbmdl_constraints_Constraint_strategy = st.builds(
+    rdbmdl_constraints_Constraint,
+)
+rdbmdl_SchemaElement_strategy = st.builds(
+    rdbmdl_SchemaElement,
+    owner=
+        safe_text
+)
+rdbmdl_Schema_strategy = st.builds(
+    rdbmdl_Schema,
+)
+rdbmdl_Model_strategy = st.builds(
+    rdbmdl_Model,
     server_id=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-rdbmdl::NamedElement_strategy = st.builds(
-    rdbmdl::NamedElement,
-    name=
-        safe_text,
+rdbmdl_NamedElement_strategy = st.builds(
+    rdbmdl_NamedElement,
     uid=
+        safe_text,
+    name=
         safe_text
 )
 SchemaElement_strategy = st.builds(
     SchemaElement,
 )
-rdbmdl::datatypes::Domain_strategy = st.builds(
-    rdbmdl::datatypes::Domain,
+rdbmdl_datatypes_Domain_strategy = st.builds(
+    rdbmdl_datatypes_Domain,
 )
-rdbmdl::NamedColumnSet_strategy = st.builds(
-    rdbmdl::NamedColumnSet,
+rdbmdl_NamedColumnSet_strategy = st.builds(
+    rdbmdl_NamedColumnSet,
 )
 
-@given(instance=view::rdbmdl::Column_strategy)
+@given(instance=view_rdbmdl_Column_strategy)
 @settings(max_examples=50)
-def test_view::rdbmdl::column_instantiation(instance):
-    assert isinstance(instance, view::rdbmdl::Column)
+def test_view_rdbmdl_column_instantiation(instance):
+    assert isinstance(instance, view_rdbmdl_Column)
 
 @given(instance=ViewColumn_strategy)
 @settings(max_examples=50)
 def test_viewcolumn_instantiation(instance):
     assert isinstance(instance, ViewColumn)
 
-@given(instance=rdbmdl::view::ViewExpressionColumn_strategy)
+@given(instance=rdbmdl_view_ViewExpressionColumn_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::view::viewexpressioncolumn_instantiation(instance):
-    assert isinstance(instance, rdbmdl::view::ViewExpressionColumn)
-
-@given(instance=rdbmdl::view::ViewExpressionColumn_strategy)
-def test_rdbmdl::view::viewexpressioncolumn_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_rdbmdl_view_viewexpressioncolumn_instantiation(instance):
+    assert isinstance(instance, rdbmdl_view_ViewExpressionColumn)
 
 
-@given(instance=rdbmdl::view::ViewExpressionColumn_strategy)
-def test_rdbmdl::view::viewexpressioncolumn_expression_setter(instance):
+
+@given(instance=rdbmdl_view_ViewExpressionColumn_strategy)
+def test_rdbmdl_view_viewexpressioncolumn_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=rdbmdl::view::ReferencedViewColumn_strategy)
+@given(instance=rdbmdl_view_ReferencedViewColumn_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::view::referencedviewcolumn_instantiation(instance):
-    assert isinstance(instance, rdbmdl::view::ReferencedViewColumn)
+def test_rdbmdl_view_referencedviewcolumn_instantiation(instance):
+    assert isinstance(instance, rdbmdl_view_ReferencedViewColumn)
 
-@given(instance=view::rdbmdl::NamedColumnSet_strategy)
+@given(instance=view_rdbmdl_NamedColumnSet_strategy)
 @settings(max_examples=50)
-def test_view::rdbmdl::namedcolumnset_instantiation(instance):
-    assert isinstance(instance, view::rdbmdl::NamedColumnSet)
+def test_view_rdbmdl_namedcolumnset_instantiation(instance):
+    assert isinstance(instance, view_rdbmdl_NamedColumnSet)
 
 @given(instance=ViewAlias_strategy)
 @settings(max_examples=50)
 def test_viewalias_instantiation(instance):
     assert isinstance(instance, ViewAlias)
 
-@given(instance=datatypes::PrimitiveDataType_strategy)
+@given(instance=datatypes_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_datatypes::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, datatypes::PrimitiveDataType)
+def test_datatypes_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, datatypes_PrimitiveDataType)
 
 @given(instance=IndexedColumn_strategy)
 @settings(max_examples=50)
@@ -1181,48 +1178,45 @@ def test_indexedcolumn_instantiation(instance):
 def test_columnrefconstraint_instantiation(instance):
     assert isinstance(instance, ColumnRefConstraint)
 
-@given(instance=rdbmdl::constraints::ForeignKey_strategy)
+@given(instance=rdbmdl_constraints_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::foreignkey_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::ForeignKey)
+def test_rdbmdl_constraints_foreignkey_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_ForeignKey)
 
-@given(instance=rdbmdl::constraints::UniqueConstraint_strategy)
+@given(instance=rdbmdl_constraints_UniqueConstraint_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::uniqueconstraint_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::UniqueConstraint)
+def test_rdbmdl_constraints_uniqueconstraint_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_UniqueConstraint)
 
-@given(instance=constraints::rdbmdl::TableColumn_strategy)
+@given(instance=constraints_rdbmdl_TableColumn_strategy)
 @settings(max_examples=50)
-def test_constraints::rdbmdl::tablecolumn_instantiation(instance):
-    assert isinstance(instance, constraints::rdbmdl::TableColumn)
+def test_constraints_rdbmdl_tablecolumn_instantiation(instance):
+    assert isinstance(instance, constraints_rdbmdl_TableColumn)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=rdbmdl::constraints::ColumnRefConstraint_strategy)
+@given(instance=rdbmdl_constraints_ColumnRefConstraint_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::columnrefconstraint_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::ColumnRefConstraint)
+def test_rdbmdl_constraints_columnrefconstraint_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_ColumnRefConstraint)
 
-@given(instance=rdbmdl::constraints::Index_strategy)
+@given(instance=rdbmdl_constraints_Index_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::index_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::Index)
+def test_rdbmdl_constraints_index_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_Index)
 
-@given(instance=rdbmdl::constraints::CheckConstraint_strategy)
+@given(instance=rdbmdl_constraints_CheckConstraint_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::checkconstraint_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::CheckConstraint)
-
-@given(instance=rdbmdl::constraints::CheckConstraint_strategy)
-def test_rdbmdl::constraints::checkconstraint_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_rdbmdl_constraints_checkconstraint_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_CheckConstraint)
 
 
-@given(instance=rdbmdl::constraints::CheckConstraint_strategy)
-def test_rdbmdl::constraints::checkconstraint_expression_setter(instance):
+
+@given(instance=rdbmdl_constraints_CheckConstraint_strategy)
+def test_rdbmdl_constraints_checkconstraint_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -1232,18 +1226,15 @@ def test_rdbmdl::constraints::checkconstraint_expression_setter(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=rdbmdl::datatypes::PrimitiveDataType_strategy)
+@given(instance=rdbmdl_datatypes_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::datatypes::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, rdbmdl::datatypes::PrimitiveDataType)
-
-@given(instance=rdbmdl::datatypes::PrimitiveDataType_strategy)
-def test_rdbmdl::datatypes::primitivedatatype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_rdbmdl_datatypes_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, rdbmdl_datatypes_PrimitiveDataType)
 
 
-@given(instance=rdbmdl::datatypes::PrimitiveDataType_strategy)
-def test_rdbmdl::datatypes::primitivedatatype_type_setter(instance):
+
+@given(instance=rdbmdl_datatypes_PrimitiveDataType_strategy)
+def test_rdbmdl_datatypes_primitivedatatype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1268,10 +1259,10 @@ def test_foreignkey_instantiation(instance):
 def test_uniqueconstraint_instantiation(instance):
     assert isinstance(instance, UniqueConstraint)
 
-@given(instance=rdbmdl::constraints::PrimaryKey_strategy)
+@given(instance=rdbmdl_constraints_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::primarykey_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::PrimaryKey)
+def test_rdbmdl_constraints_primarykey_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_PrimaryKey)
 
 @given(instance=PrimaryKey_strategy)
 @settings(max_examples=50)
@@ -1283,26 +1274,23 @@ def test_primarykey_instantiation(instance):
 def test_namedcolumnset_instantiation(instance):
     assert isinstance(instance, NamedColumnSet)
 
-@given(instance=rdbmdl::view::View_strategy)
+@given(instance=rdbmdl_view_View_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::view::view_instantiation(instance):
-    assert isinstance(instance, rdbmdl::view::View)
-
-@given(instance=rdbmdl::view::View_strategy)
-def test_rdbmdl::view::view_ddl_type(instance):
-    assert isinstance(instance.ddl, str)
+def test_rdbmdl_view_view_instantiation(instance):
+    assert isinstance(instance, rdbmdl_view_View)
 
 
-@given(instance=rdbmdl::view::View_strategy)
-def test_rdbmdl::view::view_ddl_setter(instance):
+
+@given(instance=rdbmdl_view_View_strategy)
+def test_rdbmdl_view_view_ddl_setter(instance):
     original = instance.ddl
     instance.ddl = original
     assert instance.ddl == original
 
-@given(instance=rdbmdl::Table_strategy)
+@given(instance=rdbmdl_Table_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::table_instantiation(instance):
-    assert isinstance(instance, rdbmdl::Table)
+def test_rdbmdl_table_instantiation(instance):
+    assert isinstance(instance, rdbmdl_Table)
 
 @given(instance=PrimitiveDataType_strategy)
 @settings(max_examples=50)
@@ -1319,183 +1307,150 @@ def test_domain_instantiation(instance):
 def test_column_instantiation(instance):
     assert isinstance(instance, Column)
 
-@given(instance=rdbmdl::TableColumn_strategy)
+@given(instance=rdbmdl_view_ViewColumn_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::tablecolumn_instantiation(instance):
-    assert isinstance(instance, rdbmdl::TableColumn)
+def test_rdbmdl_view_viewcolumn_instantiation(instance):
+    assert isinstance(instance, rdbmdl_view_ViewColumn)
 
-@given(instance=rdbmdl::TableColumn_strategy)
-def test_rdbmdl::tablecolumn_isForeignKey_type(instance):
-    assert isinstance(instance.isForeignKey, str)
-
-
-@given(instance=rdbmdl::TableColumn_strategy)
-def test_rdbmdl::tablecolumn_isForeignKey_setter(instance):
-    original = instance.isForeignKey
-    instance.isForeignKey = original
-    assert instance.isForeignKey == original
-
-@given(instance=rdbmdl::TableColumn_strategy)
-def test_rdbmdl::tablecolumn_isPrimaryKey_type(instance):
-    assert isinstance(instance.isPrimaryKey, str)
+@given(instance=rdbmdl_TableColumn_strategy)
+@settings(max_examples=50)
+def test_rdbmdl_tablecolumn_instantiation(instance):
+    assert isinstance(instance, rdbmdl_TableColumn)
 
 
-@given(instance=rdbmdl::TableColumn_strategy)
-def test_rdbmdl::tablecolumn_isPrimaryKey_setter(instance):
+
+@given(instance=rdbmdl_TableColumn_strategy)
+def test_rdbmdl_tablecolumn_isPrimaryKey_setter(instance):
     original = instance.isPrimaryKey
     instance.isPrimaryKey = original
     assert instance.isPrimaryKey == original
 
-@given(instance=rdbmdl::view::ViewColumn_strategy)
-@settings(max_examples=50)
-def test_rdbmdl::view::viewcolumn_instantiation(instance):
-    assert isinstance(instance, rdbmdl::view::ViewColumn)
 
-@given(instance=rdbmdl::Element_strategy)
+
+@given(instance=rdbmdl_TableColumn_strategy)
+def test_rdbmdl_tablecolumn_isForeignKey_setter(instance):
+    original = instance.isForeignKey
+    instance.isForeignKey = original
+    assert instance.isForeignKey == original
+
+@given(instance=rdbmdl_Element_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::element_instantiation(instance):
-    assert isinstance(instance, rdbmdl::Element)
+def test_rdbmdl_element_instantiation(instance):
+    assert isinstance(instance, rdbmdl_Element)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=rdbmdl::constraints::IndexedColumn_strategy)
+@given(instance=rdbmdl_constraints_IndexedColumn_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::constraints::indexedcolumn_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::IndexedColumn)
-
-@given(instance=rdbmdl::constraints::IndexedColumn_strategy)
-def test_rdbmdl::constraints::indexedcolumn_ascending_type(instance):
-    assert isinstance(instance.ascending, bool)
+def test_rdbmdl_constraints_indexedcolumn_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_IndexedColumn)
 
 
-@given(instance=rdbmdl::constraints::IndexedColumn_strategy)
-def test_rdbmdl::constraints::indexedcolumn_ascending_setter(instance):
+
+@given(instance=rdbmdl_constraints_IndexedColumn_strategy)
+def test_rdbmdl_constraints_indexedcolumn_ascending_setter(instance):
     original = instance.ascending
     instance.ascending = original
     assert instance.ascending == original
 
-@given(instance=rdbmdl::Schema_strategy)
+@given(instance=rdbmdl_datatypes_DataType_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::schema_instantiation(instance):
-    assert isinstance(instance, rdbmdl::Schema)
-
-@given(instance=rdbmdl::constraints::Constraint_strategy)
-@settings(max_examples=50)
-def test_rdbmdl::constraints::constraint_instantiation(instance):
-    assert isinstance(instance, rdbmdl::constraints::Constraint)
-
-@given(instance=rdbmdl::SchemaElement_strategy)
-@settings(max_examples=50)
-def test_rdbmdl::schemaelement_instantiation(instance):
-    assert isinstance(instance, rdbmdl::SchemaElement)
-
-@given(instance=rdbmdl::SchemaElement_strategy)
-def test_rdbmdl::schemaelement_owner_type(instance):
-    assert isinstance(instance.owner, str)
+def test_rdbmdl_datatypes_datatype_instantiation(instance):
+    assert isinstance(instance, rdbmdl_datatypes_DataType)
 
 
-@given(instance=rdbmdl::SchemaElement_strategy)
-def test_rdbmdl::schemaelement_owner_setter(instance):
-    original = instance.owner
-    instance.owner = original
-    assert instance.owner == original
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-@settings(max_examples=50)
-def test_rdbmdl::datatypes::datatype_instantiation(instance):
-    assert isinstance(instance, rdbmdl::datatypes::DataType)
-
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_check_type(instance):
-    assert isinstance(instance.check, str)
-
-
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_check_setter(instance):
-    original = instance.check
-    instance.check = original
-    assert instance.check == original
-
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_var_type(instance):
-    assert isinstance(instance.var, str)
-
-
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_var_setter(instance):
+@given(instance=rdbmdl_datatypes_DataType_strategy)
+def test_rdbmdl_datatypes_datatype_var_setter(instance):
     original = instance.var
     instance.var = original
     assert instance.var == original
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_decimalDigits_type(instance):
-    assert isinstance(instance.decimalDigits, int)
 
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_decimalDigits_setter(instance):
-    original = instance.decimalDigits
-    instance.decimalDigits = original
-    assert instance.decimalDigits == original
-
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_default_setter(instance):
+@given(instance=rdbmdl_datatypes_DataType_strategy)
+def test_rdbmdl_datatypes_datatype_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_size_setter(instance):
+@given(instance=rdbmdl_datatypes_DataType_strategy)
+def test_rdbmdl_datatypes_datatype_check_setter(instance):
+    original = instance.check
+    instance.check = original
+    assert instance.check == original
+
+
+
+@given(instance=rdbmdl_datatypes_DataType_strategy)
+def test_rdbmdl_datatypes_datatype_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
 
 
-@given(instance=rdbmdl::datatypes::DataType_strategy)
-def test_rdbmdl::datatypes::datatype_nullable_setter(instance):
+@given(instance=rdbmdl_datatypes_DataType_strategy)
+def test_rdbmdl_datatypes_datatype_decimalDigits_setter(instance):
+    original = instance.decimalDigits
+    instance.decimalDigits = original
+    assert instance.decimalDigits == original
+
+
+
+@given(instance=rdbmdl_datatypes_DataType_strategy)
+def test_rdbmdl_datatypes_datatype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=rdbmdl::Column_strategy)
+@given(instance=rdbmdl_view_ViewAlias_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::column_instantiation(instance):
-    assert isinstance(instance, rdbmdl::Column)
+def test_rdbmdl_view_viewalias_instantiation(instance):
+    assert isinstance(instance, rdbmdl_view_ViewAlias)
 
-@given(instance=rdbmdl::view::ViewAlias_strategy)
+@given(instance=rdbmdl_Column_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::view::viewalias_instantiation(instance):
-    assert isinstance(instance, rdbmdl::view::ViewAlias)
+def test_rdbmdl_column_instantiation(instance):
+    assert isinstance(instance, rdbmdl_Column)
 
-@given(instance=rdbmdl::Model_strategy)
+@given(instance=rdbmdl_constraints_Constraint_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::model_instantiation(instance):
-    assert isinstance(instance, rdbmdl::Model)
+def test_rdbmdl_constraints_constraint_instantiation(instance):
+    assert isinstance(instance, rdbmdl_constraints_Constraint)
 
-@given(instance=rdbmdl::Model_strategy)
-def test_rdbmdl::model_server_id_type(instance):
-    assert isinstance(instance.server_id, str)
+@given(instance=rdbmdl_SchemaElement_strategy)
+@settings(max_examples=50)
+def test_rdbmdl_schemaelement_instantiation(instance):
+    assert isinstance(instance, rdbmdl_SchemaElement)
 
 
-@given(instance=rdbmdl::Model_strategy)
-def test_rdbmdl::model_server_id_setter(instance):
+
+@given(instance=rdbmdl_SchemaElement_strategy)
+def test_rdbmdl_schemaelement_owner_setter(instance):
+    original = instance.owner
+    instance.owner = original
+    assert instance.owner == original
+
+@given(instance=rdbmdl_Schema_strategy)
+@settings(max_examples=50)
+def test_rdbmdl_schema_instantiation(instance):
+    assert isinstance(instance, rdbmdl_Schema)
+
+@given(instance=rdbmdl_Model_strategy)
+@settings(max_examples=50)
+def test_rdbmdl_model_instantiation(instance):
+    assert isinstance(instance, rdbmdl_Model)
+
+
+
+@given(instance=rdbmdl_Model_strategy)
+def test_rdbmdl_model_server_id_setter(instance):
     original = instance.server_id
     instance.server_id = original
     assert instance.server_id == original
@@ -1505,44 +1460,38 @@ def test_rdbmdl::model_server_id_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=rdbmdl::NamedElement_strategy)
+@given(instance=rdbmdl_NamedElement_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::namedelement_instantiation(instance):
-    assert isinstance(instance, rdbmdl::NamedElement)
-
-@given(instance=rdbmdl::NamedElement_strategy)
-def test_rdbmdl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rdbmdl_namedelement_instantiation(instance):
+    assert isinstance(instance, rdbmdl_NamedElement)
 
 
-@given(instance=rdbmdl::NamedElement_strategy)
-def test_rdbmdl::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=rdbmdl::NamedElement_strategy)
-def test_rdbmdl::namedelement_uid_type(instance):
-    assert isinstance(instance.uid, str)
-
-
-@given(instance=rdbmdl::NamedElement_strategy)
-def test_rdbmdl::namedelement_uid_setter(instance):
+@given(instance=rdbmdl_NamedElement_strategy)
+def test_rdbmdl_namedelement_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
+
+
+
+@given(instance=rdbmdl_NamedElement_strategy)
+def test_rdbmdl_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=SchemaElement_strategy)
 @settings(max_examples=50)
 def test_schemaelement_instantiation(instance):
     assert isinstance(instance, SchemaElement)
 
-@given(instance=rdbmdl::datatypes::Domain_strategy)
+@given(instance=rdbmdl_datatypes_Domain_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::datatypes::domain_instantiation(instance):
-    assert isinstance(instance, rdbmdl::datatypes::Domain)
+def test_rdbmdl_datatypes_domain_instantiation(instance):
+    assert isinstance(instance, rdbmdl_datatypes_Domain)
 
-@given(instance=rdbmdl::NamedColumnSet_strategy)
+@given(instance=rdbmdl_NamedColumnSet_strategy)
 @settings(max_examples=50)
-def test_rdbmdl::namedcolumnset_instantiation(instance):
-    assert isinstance(instance, rdbmdl::NamedColumnSet)
+def test_rdbmdl_namedcolumnset_instantiation(instance):
+    assert isinstance(instance, rdbmdl_NamedColumnSet)

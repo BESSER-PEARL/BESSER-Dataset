@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Ker_t__n_tiedot_UseCase,
@@ -255,9 +255,6 @@ def test_vakuutus_instantiation(instance):
 def test_asiakas_instantiation(instance):
     assert isinstance(instance, Asiakas)
 
-@given(instance=Asiakas_strategy)
-def test_asiakas_Asiakas__id__type(instance):
-    assert isinstance(instance.Asiakas__id_, int)
 
 
 @given(instance=Asiakas_strategy)

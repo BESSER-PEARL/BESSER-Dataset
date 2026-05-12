@@ -3,157 +3,157 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleTerm,
-    sql::term::SimpleTermInteger,
-    sql::term::SimpleTermFloat,
-    sql::term::SimpleTermString,
-    value::ValueOperation,
-    term::Term,
+from python_code import (
+    value_ValueOperation,
+    term_Term,
     Value,
-    sql::value::SimpleValue,
-    sql::value::ValueOperation,
+    sql_value_SimpleValue,
+    sql_value_ValueOperation,
     ValueFrontOperation,
-    sql::value::ValueFrontOperationMinus,
-    sql::value::ValueFrontOperationPlus,
+    sql_value_ValueFrontOperationMinus,
+    sql_value_ValueFrontOperationPlus,
     ValueOperation,
-    sql::value::ValueOperationParallel,
-    sql::value::ValueOperationDivide,
-    sql::value::ValueOperationMultiply,
-    sql::value::ValueFrontOperation,
-    sql::value::Value,
-    sql::term::SimpleTermChar,
+    sql_value_ValueOperationMultiply,
+    sql_value_ValueOperationDivide,
+    sql_value_ValueOperationParallel,
+    sql_value_ValueFrontOperation,
+    sql_value_Value,
     BooleanTerm,
-    sql::term::BooleanTermFalse,
-    sql::term::BooleanTermTrue,
+    sql_term_BooleanTermFalse,
+    sql_term_BooleanTermTrue,
     Term,
-    sql::term::NullTerm,
-    sql::term::StarTerm,
-    sql::term::SimpleTerm,
-    sql::term::CountStarTerm,
-    sql::term::ColumnTerm,
-    sql::term::BooleanTerm,
-    sql::term::Term,
-    sql::value::FunctionValue,
-    sql::value::ConditionValue,
-    value::ValueFrontOperation,
-    condition::ConditionOperation,
+    sql_term_ColumnTerm,
+    sql_term_SimpleTerm,
+    sql_term_NullTerm,
+    sql_term_BooleanTerm,
+    sql_term_Term,
+    sql_value_FunctionValue,
+    sql_value_ConditionValue,
+    value_ValueFrontOperation,
+    condition_ConditionOperation,
     SimpleCondition,
-    sql::condition::IsNullCondition,
-    sql::condition::OperationCondition,
-    value::Value,
+    sql_condition_IsNullCondition,
+    sql_condition_OperationCondition,
+    value_Value,
     Condition,
-    sql::condition::SimpleCondition,
-    sql::condition::Condition,
+    sql_condition_SimpleCondition,
+    sql_condition_Condition,
     AndOrExpressionOperation,
-    sql::expression::ExpressionOperationOr,
-    sql::expression::ExpressionOperationAnd,
+    sql_expression_ExpressionOperationOr,
+    sql_expression_ExpressionOperationAnd,
     ExpressionOperation,
-    sql::expression::ExpressionOperationNot,
-    sql::expression::AndOrExpressionOperation,
+    sql_expression_ExpressionOperationNot,
+    sql_expression_AndOrExpressionOperation,
     ConditionOperation,
-    sql::condition::ConditionOperationUnEqual2,
-    sql::condition::ConditionOperationGreatEqual,
-    sql::condition::ConditionOperationLesser,
-    sql::condition::ConditionOperationUnEqual,
-    sql::condition::ConditionOperationGreater,
-    sql::condition::ConditionOperationLessEqual,
-    sql::condition::ConditionOperationEqual,
-    sql::condition::ConditionOperation,
-    sql::condition::LikeCondition,
-    sql::condition::InCondition,
-    sql::condition::BetweenCondition,
-    sql::condition::ExistsCondition,
-    parameter::SelectParameterDistinct,
+    sql_condition_ConditionOperationUnEqual2,
+    sql_condition_ConditionOperationLessEqual,
+    sql_condition_ConditionOperationLesser,
+    sql_condition_ConditionOperationGreatEqual,
+    sql_condition_ConditionOperationGreater,
+    sql_condition_ConditionOperationUnEqual,
+    sql_condition_ConditionOperationEqual,
+    sql_condition_ConditionOperation,
+    sql_condition_LikeCondition,
+    sql_condition_InCondition,
+    sql_condition_BetweenCondition,
+    sql_condition_ExistsCondition,
+    parameter_SelectParameterDistinct,
     SetOperation,
-    sql::set::SetOperationMinus,
-    sql::set::SetOperationExcept,
-    sql::set::SetOperationUnion,
-    sql::set::SetOperation,
-    set::SetOperation,
-    sql::expression::ExpressionOperation,
-    expression::ExpressionOperationNot,
-    condition::Condition,
-    expression::AndOrExpressionOperation,
+    sql_set_SetOperationMinus,
+    sql_set_SetOperationExcept,
+    sql_set_SetOperationUnion,
+    sql_set_SetOperation,
+    set_SetOperation,
+    sql_expression_ExpressionOperation,
+    expression_ExpressionOperationNot,
+    condition_Condition,
+    expression_AndOrExpressionOperation,
     Expression,
-    sql::expression::SimpleExpression,
-    sql::expression::Expression,
-    sql::limit::LimitExpression,
-    sql::set::SetOperationIntersect,
-    column::Column,
+    sql_expression_SimpleExpression,
+    sql_expression_Expression,
+    sql_limit_LimitExpression,
+    sql_set_SetOperationIntersect,
+    column_Column,
     OrderByExpression,
-    sql::orderBy::OrderByColumnExpression,
-    orderBy::OrderByParameter,
-    sql::orderBy::OrderByExpression,
-    sql::where::WhereExpression,
+    sql_orderBy_OrderByColumnExpression,
+    orderBy_OrderByParameter,
+    sql_orderBy_OrderByExpression,
+    sql_where_WhereExpression,
     JoinOperation,
-    sql::from::JoinOperationLeft,
-    sql::from::JoinOperationRight,
-    sql::from::JoinOperationOuter,
-    sql::from::JoinOperationInner,
-    sql::from::JoinOperation,
-    sql::set::SetExpression,
-    sql::having::HavingExpression,
-    sql::groupBy::GroupByExpression,
+    sql_from_JoinOperationRight,
+    sql_from_JoinOperationOuter,
+    sql_from_JoinOperationLeft,
+    sql_from_JoinOperationInner,
+    sql_from_JoinOperation,
+    sql_set_SetExpression,
+    sql_having_HavingExpression,
+    sql_groupBy_GroupByExpression,
     OrderByParameter,
-    sql::orderBy::OrderByParameterDesc,
-    sql::orderBy::OrderByParameterAsc,
-    sql::orderBy::OrderByParameter,
-    sql::orderBy::OrderBySelectExpression,
-    sql::orderBy::OrderByAliasExpression,
-    sql::from::FromExpression,
-    sql::column::Column,
+    sql_orderBy_OrderByParameterDesc,
+    sql_orderBy_OrderByParameterAsc,
+    sql_orderBy_OrderByParameter,
+    sql_orderBy_OrderBySelectExpression,
+    sql_orderBy_OrderByAliasExpression,
+    sql_from_FromExpression,
+    sql_column_Column,
     ColumnOperation,
-    sql::column::ColumnOperationAvg,
-    sql::column::ColumnOperationSome,
-    sql::column::ColumnOperationSum,
-    sql::column::ColumnOperationEvery,
-    sql::column::ColumnOperationMax,
-    sql::column::ColumnOperationMin,
-    sql::column::ColumnOperationCount,
-    sql::column::ColumnOperation,
-    column::ColumnOperation,
-    from::JoinOperation,
-    sql::from::JoinTableExpression,
-    from::JoinTableExpression,
-    from::TableExpression,
-    sql::from::TableListExpression,
-    sql::from::Table,
-    from::Table,
+    sql_column_ColumnOperationSum,
+    sql_column_ColumnOperationSome,
+    sql_column_ColumnOperationAvg,
+    sql_column_ColumnOperationMin,
+    sql_column_ColumnOperationMax,
+    sql_column_ColumnOperationEvery,
+    sql_column_ColumnOperationCount,
+    sql_column_ColumnOperation,
+    column_ColumnOperation,
+    sql_term_StarTerm,
+    sql_term_CountStarTerm,
+    SimpleTerm,
+    sql_term_SimpleTermInteger,
+    sql_term_SimpleTermChar,
+    sql_term_SimpleTermFloat,
+    sql_term_SimpleTermString,
+    from_JoinOperation,
+    sql_from_JoinTableExpression,
+    from_JoinTableExpression,
+    from_TableExpression,
+    sql_from_TableListExpression,
+    sql_from_Table,
+    from_Table,
     SelectExpression,
-    sql::from::TableExpression,
-    from::TableListExpression,
-    orderBy::OrderByExpression,
-    set::SetExpression,
-    having::HavingExpression,
-    groupBy::GroupByExpression,
-    where::WhereExpression,
-    from::FromExpression,
-    column::ColumnExpression,
-    parameter::SelectParameter,
-    sql::select::SelectExpression,
-    expression::Expression,
-    sql::column::SingleColumnExpression,
-    column::SingleColumnExpression,
-    sql::column::ColumnExpression,
+    sql_from_TableExpression,
+    from_TableListExpression,
+    orderBy_OrderByExpression,
+    set_SetExpression,
+    having_HavingExpression,
+    groupBy_GroupByExpression,
+    where_WhereExpression,
+    from_FromExpression,
+    column_ColumnExpression,
+    parameter_SelectParameter,
+    sql_select_SelectExpression,
+    expression_Expression,
+    sql_column_SingleColumnExpression,
+    column_SingleColumnExpression,
+    sql_column_ColumnExpression,
     SelectParameter,
-    sql::parameter::SelectParameterDistinct,
-    sql::parameter::SelectParameterAll,
-    sql::parameter::SelectParameter,
-    limit::LimitExpression,
+    sql_parameter_SelectParameterDistinct,
+    sql_parameter_SelectParameterAll,
+    sql_parameter_SelectParameter,
+    limit_LimitExpression,
     Date,
-    sql::sqlDataTypes::TimeStamp,
-    sql::sqlDataTypes::DataType,
+    sql_sqlDataTypes_TimeStamp,
+    sql_sqlDataTypes_DataType,
     DataType,
-    sql::sqlDataTypes::Float,
-    sql::sqlDataTypes::Double,
-    sql::sqlDataTypes::Real,
-    sql::sqlDataTypes::Integer,
-    sql::sqlDataTypes::Boolean,
-    sql::sqlDataTypes::Date,
-    sql::sqlDataTypes::String,
+    sql_sqlDataTypes_Real,
+    sql_sqlDataTypes_Integer,
+    sql_sqlDataTypes_Date,
+    sql_sqlDataTypes_Double,
+    sql_sqlDataTypes_Boolean,
+    sql_sqlDataTypes_Float,
+    sql_sqlDataTypes_String,
 )
 
 # =============================================================================
@@ -162,86 +162,30 @@ from classes import (
 
 
 
-def test_simpleterm_is_not_abstract():
-    assert not inspect.isabstract(SimpleTerm)
+def test_value_valueoperation_is_not_abstract():
+    assert not inspect.isabstract(value_ValueOperation)
 
 
-def test_simpleterm_constructor_exists():
-    assert callable(SimpleTerm.__init__)
+def test_value_valueoperation_constructor_exists():
+    assert callable(value_ValueOperation.__init__)
 
 
-def test_simpleterm_constructor_args():
-    sig = inspect.signature(SimpleTerm.__init__)
+def test_value_valueoperation_constructor_args():
+    sig = inspect.signature(value_ValueOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::term::simpleterminteger_is_not_abstract():
-    assert not inspect.isabstract(sql::term::SimpleTermInteger)
+def test_term_term_is_not_abstract():
+    assert not inspect.isabstract(term_Term)
 
 
-def test_sql::term::simpleterminteger_constructor_exists():
-    assert callable(sql::term::SimpleTermInteger.__init__)
+def test_term_term_constructor_exists():
+    assert callable(term_Term.__init__)
 
 
-def test_sql::term::simpleterminteger_constructor_args():
-    sig = inspect.signature(sql::term::SimpleTermInteger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::term::simpletermfloat_is_not_abstract():
-    assert not inspect.isabstract(sql::term::SimpleTermFloat)
-
-
-def test_sql::term::simpletermfloat_constructor_exists():
-    assert callable(sql::term::SimpleTermFloat.__init__)
-
-
-def test_sql::term::simpletermfloat_constructor_args():
-    sig = inspect.signature(sql::term::SimpleTermFloat.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::term::simpletermstring_is_not_abstract():
-    assert not inspect.isabstract(sql::term::SimpleTermString)
-
-
-def test_sql::term::simpletermstring_constructor_exists():
-    assert callable(sql::term::SimpleTermString.__init__)
-
-
-def test_sql::term::simpletermstring_constructor_args():
-    sig = inspect.signature(sql::term::SimpleTermString.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_value::valueoperation_is_not_abstract():
-    assert not inspect.isabstract(value::ValueOperation)
-
-
-def test_value::valueoperation_constructor_exists():
-    assert callable(value::ValueOperation.__init__)
-
-
-def test_value::valueoperation_constructor_args():
-    sig = inspect.signature(value::ValueOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_term::term_is_not_abstract():
-    assert not inspect.isabstract(term::Term)
-
-
-def test_term::term_constructor_exists():
-    assert callable(term::Term.__init__)
-
-
-def test_term::term_constructor_args():
-    sig = inspect.signature(term::Term.__init__)
+def test_term_term_constructor_args():
+    sig = inspect.signature(term_Term.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -260,30 +204,30 @@ def test_value_constructor_args():
 
 
 
-def test_sql::value::simplevalue_is_not_abstract():
-    assert not inspect.isabstract(sql::value::SimpleValue)
+def test_sql_value_simplevalue_is_not_abstract():
+    assert not inspect.isabstract(sql_value_SimpleValue)
 
 
-def test_sql::value::simplevalue_constructor_exists():
-    assert callable(sql::value::SimpleValue.__init__)
+def test_sql_value_simplevalue_constructor_exists():
+    assert callable(sql_value_SimpleValue.__init__)
 
 
-def test_sql::value::simplevalue_constructor_args():
-    sig = inspect.signature(sql::value::SimpleValue.__init__)
+def test_sql_value_simplevalue_constructor_args():
+    sig = inspect.signature(sql_value_SimpleValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::value::valueoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueOperation)
+def test_sql_value_valueoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueOperation)
 
 
-def test_sql::value::valueoperation_constructor_exists():
-    assert callable(sql::value::ValueOperation.__init__)
+def test_sql_value_valueoperation_constructor_exists():
+    assert callable(sql_value_ValueOperation.__init__)
 
 
-def test_sql::value::valueoperation_constructor_args():
-    sig = inspect.signature(sql::value::ValueOperation.__init__)
+def test_sql_value_valueoperation_constructor_args():
+    sig = inspect.signature(sql_value_ValueOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -302,30 +246,30 @@ def test_valuefrontoperation_constructor_args():
 
 
 
-def test_sql::value::valuefrontoperationminus_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueFrontOperationMinus)
+def test_sql_value_valuefrontoperationminus_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueFrontOperationMinus)
 
 
-def test_sql::value::valuefrontoperationminus_constructor_exists():
-    assert callable(sql::value::ValueFrontOperationMinus.__init__)
+def test_sql_value_valuefrontoperationminus_constructor_exists():
+    assert callable(sql_value_ValueFrontOperationMinus.__init__)
 
 
-def test_sql::value::valuefrontoperationminus_constructor_args():
-    sig = inspect.signature(sql::value::ValueFrontOperationMinus.__init__)
+def test_sql_value_valuefrontoperationminus_constructor_args():
+    sig = inspect.signature(sql_value_ValueFrontOperationMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::value::valuefrontoperationplus_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueFrontOperationPlus)
+def test_sql_value_valuefrontoperationplus_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueFrontOperationPlus)
 
 
-def test_sql::value::valuefrontoperationplus_constructor_exists():
-    assert callable(sql::value::ValueFrontOperationPlus.__init__)
+def test_sql_value_valuefrontoperationplus_constructor_exists():
+    assert callable(sql_value_ValueFrontOperationPlus.__init__)
 
 
-def test_sql::value::valuefrontoperationplus_constructor_args():
-    sig = inspect.signature(sql::value::ValueFrontOperationPlus.__init__)
+def test_sql_value_valuefrontoperationplus_constructor_args():
+    sig = inspect.signature(sql_value_ValueFrontOperationPlus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -344,86 +288,72 @@ def test_valueoperation_constructor_args():
 
 
 
-def test_sql::value::valueoperationparallel_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueOperationParallel)
+def test_sql_value_valueoperationmultiply_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueOperationMultiply)
 
 
-def test_sql::value::valueoperationparallel_constructor_exists():
-    assert callable(sql::value::ValueOperationParallel.__init__)
+def test_sql_value_valueoperationmultiply_constructor_exists():
+    assert callable(sql_value_ValueOperationMultiply.__init__)
 
 
-def test_sql::value::valueoperationparallel_constructor_args():
-    sig = inspect.signature(sql::value::ValueOperationParallel.__init__)
+def test_sql_value_valueoperationmultiply_constructor_args():
+    sig = inspect.signature(sql_value_ValueOperationMultiply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::value::valueoperationdivide_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueOperationDivide)
+def test_sql_value_valueoperationdivide_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueOperationDivide)
 
 
-def test_sql::value::valueoperationdivide_constructor_exists():
-    assert callable(sql::value::ValueOperationDivide.__init__)
+def test_sql_value_valueoperationdivide_constructor_exists():
+    assert callable(sql_value_ValueOperationDivide.__init__)
 
 
-def test_sql::value::valueoperationdivide_constructor_args():
-    sig = inspect.signature(sql::value::ValueOperationDivide.__init__)
+def test_sql_value_valueoperationdivide_constructor_args():
+    sig = inspect.signature(sql_value_ValueOperationDivide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::value::valueoperationmultiply_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueOperationMultiply)
+def test_sql_value_valueoperationparallel_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueOperationParallel)
 
 
-def test_sql::value::valueoperationmultiply_constructor_exists():
-    assert callable(sql::value::ValueOperationMultiply.__init__)
+def test_sql_value_valueoperationparallel_constructor_exists():
+    assert callable(sql_value_ValueOperationParallel.__init__)
 
 
-def test_sql::value::valueoperationmultiply_constructor_args():
-    sig = inspect.signature(sql::value::ValueOperationMultiply.__init__)
+def test_sql_value_valueoperationparallel_constructor_args():
+    sig = inspect.signature(sql_value_ValueOperationParallel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::value::valuefrontoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ValueFrontOperation)
+def test_sql_value_valuefrontoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ValueFrontOperation)
 
 
-def test_sql::value::valuefrontoperation_constructor_exists():
-    assert callable(sql::value::ValueFrontOperation.__init__)
+def test_sql_value_valuefrontoperation_constructor_exists():
+    assert callable(sql_value_ValueFrontOperation.__init__)
 
 
-def test_sql::value::valuefrontoperation_constructor_args():
-    sig = inspect.signature(sql::value::ValueFrontOperation.__init__)
+def test_sql_value_valuefrontoperation_constructor_args():
+    sig = inspect.signature(sql_value_ValueFrontOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::value::value_is_not_abstract():
-    assert not inspect.isabstract(sql::value::Value)
+def test_sql_value_value_is_not_abstract():
+    assert not inspect.isabstract(sql_value_Value)
 
 
-def test_sql::value::value_constructor_exists():
-    assert callable(sql::value::Value.__init__)
+def test_sql_value_value_constructor_exists():
+    assert callable(sql_value_Value.__init__)
 
 
-def test_sql::value::value_constructor_args():
-    sig = inspect.signature(sql::value::Value.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::term::simpletermchar_is_not_abstract():
-    assert not inspect.isabstract(sql::term::SimpleTermChar)
-
-
-def test_sql::term::simpletermchar_constructor_exists():
-    assert callable(sql::term::SimpleTermChar.__init__)
-
-
-def test_sql::term::simpletermchar_constructor_args():
-    sig = inspect.signature(sql::term::SimpleTermChar.__init__)
+def test_sql_value_value_constructor_args():
+    sig = inspect.signature(sql_value_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -442,30 +372,30 @@ def test_booleanterm_constructor_args():
 
 
 
-def test_sql::term::booleantermfalse_is_not_abstract():
-    assert not inspect.isabstract(sql::term::BooleanTermFalse)
+def test_sql_term_booleantermfalse_is_not_abstract():
+    assert not inspect.isabstract(sql_term_BooleanTermFalse)
 
 
-def test_sql::term::booleantermfalse_constructor_exists():
-    assert callable(sql::term::BooleanTermFalse.__init__)
+def test_sql_term_booleantermfalse_constructor_exists():
+    assert callable(sql_term_BooleanTermFalse.__init__)
 
 
-def test_sql::term::booleantermfalse_constructor_args():
-    sig = inspect.signature(sql::term::BooleanTermFalse.__init__)
+def test_sql_term_booleantermfalse_constructor_args():
+    sig = inspect.signature(sql_term_BooleanTermFalse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::term::booleantermtrue_is_not_abstract():
-    assert not inspect.isabstract(sql::term::BooleanTermTrue)
+def test_sql_term_booleantermtrue_is_not_abstract():
+    assert not inspect.isabstract(sql_term_BooleanTermTrue)
 
 
-def test_sql::term::booleantermtrue_constructor_exists():
-    assert callable(sql::term::BooleanTermTrue.__init__)
+def test_sql_term_booleantermtrue_constructor_exists():
+    assert callable(sql_term_BooleanTermTrue.__init__)
 
 
-def test_sql::term::booleantermtrue_constructor_args():
-    sig = inspect.signature(sql::term::BooleanTermTrue.__init__)
+def test_sql_term_booleantermtrue_constructor_args():
+    sig = inspect.signature(sql_term_BooleanTermTrue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,51 +414,37 @@ def test_term_constructor_args():
 
 
 
-def test_sql::term::nullterm_is_not_abstract():
-    assert not inspect.isabstract(sql::term::NullTerm)
+def test_sql_term_columnterm_is_not_abstract():
+    assert not inspect.isabstract(sql_term_ColumnTerm)
 
 
-def test_sql::term::nullterm_constructor_exists():
-    assert callable(sql::term::NullTerm.__init__)
+def test_sql_term_columnterm_constructor_exists():
+    assert callable(sql_term_ColumnTerm.__init__)
 
 
-def test_sql::term::nullterm_constructor_args():
-    sig = inspect.signature(sql::term::NullTerm.__init__)
+def test_sql_term_columnterm_constructor_args():
+    sig = inspect.signature(sql_term_ColumnTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::term::starterm_is_not_abstract():
-    assert not inspect.isabstract(sql::term::StarTerm)
+def test_sql_term_simpleterm_is_not_abstract():
+    assert not inspect.isabstract(sql_term_SimpleTerm)
 
 
-def test_sql::term::starterm_constructor_exists():
-    assert callable(sql::term::StarTerm.__init__)
+def test_sql_term_simpleterm_constructor_exists():
+    assert callable(sql_term_SimpleTerm.__init__)
 
 
-def test_sql::term::starterm_constructor_args():
-    sig = inspect.signature(sql::term::StarTerm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::term::simpleterm_is_not_abstract():
-    assert not inspect.isabstract(sql::term::SimpleTerm)
-
-
-def test_sql::term::simpleterm_constructor_exists():
-    assert callable(sql::term::SimpleTerm.__init__)
-
-
-def test_sql::term::simpleterm_constructor_args():
-    sig = inspect.signature(sql::term::SimpleTerm.__init__)
+def test_sql_term_simpleterm_constructor_args():
+    sig = inspect.signature(sql_term_SimpleTerm.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_sql::term::simpleterm_has_value():
-    assert hasattr(sql::term::SimpleTerm, "value")
+def test_sql_term_simpleterm_has_value():
+    assert hasattr(sql_term_SimpleTerm, "value")
     descriptor = None
-    for klass in sql::term::SimpleTerm.__mro__:
+    for klass in sql_term_SimpleTerm.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -536,79 +452,65 @@ def test_sql::term::simpleterm_has_value():
 
 
 
-def test_sql::term::countstarterm_is_not_abstract():
-    assert not inspect.isabstract(sql::term::CountStarTerm)
+def test_sql_term_nullterm_is_not_abstract():
+    assert not inspect.isabstract(sql_term_NullTerm)
 
 
-def test_sql::term::countstarterm_constructor_exists():
-    assert callable(sql::term::CountStarTerm.__init__)
+def test_sql_term_nullterm_constructor_exists():
+    assert callable(sql_term_NullTerm.__init__)
 
 
-def test_sql::term::countstarterm_constructor_args():
-    sig = inspect.signature(sql::term::CountStarTerm.__init__)
+def test_sql_term_nullterm_constructor_args():
+    sig = inspect.signature(sql_term_NullTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::term::columnterm_is_not_abstract():
-    assert not inspect.isabstract(sql::term::ColumnTerm)
+def test_sql_term_booleanterm_is_not_abstract():
+    assert not inspect.isabstract(sql_term_BooleanTerm)
 
 
-def test_sql::term::columnterm_constructor_exists():
-    assert callable(sql::term::ColumnTerm.__init__)
+def test_sql_term_booleanterm_constructor_exists():
+    assert callable(sql_term_BooleanTerm.__init__)
 
 
-def test_sql::term::columnterm_constructor_args():
-    sig = inspect.signature(sql::term::ColumnTerm.__init__)
+def test_sql_term_booleanterm_constructor_args():
+    sig = inspect.signature(sql_term_BooleanTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::term::booleanterm_is_not_abstract():
-    assert not inspect.isabstract(sql::term::BooleanTerm)
+def test_sql_term_term_is_not_abstract():
+    assert not inspect.isabstract(sql_term_Term)
 
 
-def test_sql::term::booleanterm_constructor_exists():
-    assert callable(sql::term::BooleanTerm.__init__)
+def test_sql_term_term_constructor_exists():
+    assert callable(sql_term_Term.__init__)
 
 
-def test_sql::term::booleanterm_constructor_args():
-    sig = inspect.signature(sql::term::BooleanTerm.__init__)
+def test_sql_term_term_constructor_args():
+    sig = inspect.signature(sql_term_Term.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::term::term_is_not_abstract():
-    assert not inspect.isabstract(sql::term::Term)
+def test_sql_value_functionvalue_is_not_abstract():
+    assert not inspect.isabstract(sql_value_FunctionValue)
 
 
-def test_sql::term::term_constructor_exists():
-    assert callable(sql::term::Term.__init__)
+def test_sql_value_functionvalue_constructor_exists():
+    assert callable(sql_value_FunctionValue.__init__)
 
 
-def test_sql::term::term_constructor_args():
-    sig = inspect.signature(sql::term::Term.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::value::functionvalue_is_not_abstract():
-    assert not inspect.isabstract(sql::value::FunctionValue)
-
-
-def test_sql::value::functionvalue_constructor_exists():
-    assert callable(sql::value::FunctionValue.__init__)
-
-
-def test_sql::value::functionvalue_constructor_args():
-    sig = inspect.signature(sql::value::FunctionValue.__init__)
+def test_sql_value_functionvalue_constructor_args():
+    sig = inspect.signature(sql_value_FunctionValue.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_sql::value::functionvalue_has_functionName():
-    assert hasattr(sql::value::FunctionValue, "functionName")
+def test_sql_value_functionvalue_has_functionName():
+    assert hasattr(sql_value_FunctionValue, "functionName")
     descriptor = None
-    for klass in sql::value::FunctionValue.__mro__:
+    for klass in sql_value_FunctionValue.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -616,44 +518,44 @@ def test_sql::value::functionvalue_has_functionName():
 
 
 
-def test_sql::value::conditionvalue_is_not_abstract():
-    assert not inspect.isabstract(sql::value::ConditionValue)
+def test_sql_value_conditionvalue_is_not_abstract():
+    assert not inspect.isabstract(sql_value_ConditionValue)
 
 
-def test_sql::value::conditionvalue_constructor_exists():
-    assert callable(sql::value::ConditionValue.__init__)
+def test_sql_value_conditionvalue_constructor_exists():
+    assert callable(sql_value_ConditionValue.__init__)
 
 
-def test_sql::value::conditionvalue_constructor_args():
-    sig = inspect.signature(sql::value::ConditionValue.__init__)
+def test_sql_value_conditionvalue_constructor_args():
+    sig = inspect.signature(sql_value_ConditionValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_value::valuefrontoperation_is_not_abstract():
-    assert not inspect.isabstract(value::ValueFrontOperation)
+def test_value_valuefrontoperation_is_not_abstract():
+    assert not inspect.isabstract(value_ValueFrontOperation)
 
 
-def test_value::valuefrontoperation_constructor_exists():
-    assert callable(value::ValueFrontOperation.__init__)
+def test_value_valuefrontoperation_constructor_exists():
+    assert callable(value_ValueFrontOperation.__init__)
 
 
-def test_value::valuefrontoperation_constructor_args():
-    sig = inspect.signature(value::ValueFrontOperation.__init__)
+def test_value_valuefrontoperation_constructor_args():
+    sig = inspect.signature(value_ValueFrontOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_condition::conditionoperation_is_not_abstract():
-    assert not inspect.isabstract(condition::ConditionOperation)
+def test_condition_conditionoperation_is_not_abstract():
+    assert not inspect.isabstract(condition_ConditionOperation)
 
 
-def test_condition::conditionoperation_constructor_exists():
-    assert callable(condition::ConditionOperation.__init__)
+def test_condition_conditionoperation_constructor_exists():
+    assert callable(condition_ConditionOperation.__init__)
 
 
-def test_condition::conditionoperation_constructor_args():
-    sig = inspect.signature(condition::ConditionOperation.__init__)
+def test_condition_conditionoperation_constructor_args():
+    sig = inspect.signature(condition_ConditionOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -672,44 +574,44 @@ def test_simplecondition_constructor_args():
 
 
 
-def test_sql::condition::isnullcondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::IsNullCondition)
+def test_sql_condition_isnullcondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_IsNullCondition)
 
 
-def test_sql::condition::isnullcondition_constructor_exists():
-    assert callable(sql::condition::IsNullCondition.__init__)
+def test_sql_condition_isnullcondition_constructor_exists():
+    assert callable(sql_condition_IsNullCondition.__init__)
 
 
-def test_sql::condition::isnullcondition_constructor_args():
-    sig = inspect.signature(sql::condition::IsNullCondition.__init__)
+def test_sql_condition_isnullcondition_constructor_args():
+    sig = inspect.signature(sql_condition_IsNullCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::operationcondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::OperationCondition)
+def test_sql_condition_operationcondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_OperationCondition)
 
 
-def test_sql::condition::operationcondition_constructor_exists():
-    assert callable(sql::condition::OperationCondition.__init__)
+def test_sql_condition_operationcondition_constructor_exists():
+    assert callable(sql_condition_OperationCondition.__init__)
 
 
-def test_sql::condition::operationcondition_constructor_args():
-    sig = inspect.signature(sql::condition::OperationCondition.__init__)
+def test_sql_condition_operationcondition_constructor_args():
+    sig = inspect.signature(sql_condition_OperationCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_value::value_is_not_abstract():
-    assert not inspect.isabstract(value::Value)
+def test_value_value_is_not_abstract():
+    assert not inspect.isabstract(value_Value)
 
 
-def test_value::value_constructor_exists():
-    assert callable(value::Value.__init__)
+def test_value_value_constructor_exists():
+    assert callable(value_Value.__init__)
 
 
-def test_value::value_constructor_args():
-    sig = inspect.signature(value::Value.__init__)
+def test_value_value_constructor_args():
+    sig = inspect.signature(value_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -728,30 +630,30 @@ def test_condition_constructor_args():
 
 
 
-def test_sql::condition::simplecondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::SimpleCondition)
+def test_sql_condition_simplecondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_SimpleCondition)
 
 
-def test_sql::condition::simplecondition_constructor_exists():
-    assert callable(sql::condition::SimpleCondition.__init__)
+def test_sql_condition_simplecondition_constructor_exists():
+    assert callable(sql_condition_SimpleCondition.__init__)
 
 
-def test_sql::condition::simplecondition_constructor_args():
-    sig = inspect.signature(sql::condition::SimpleCondition.__init__)
+def test_sql_condition_simplecondition_constructor_args():
+    sig = inspect.signature(sql_condition_SimpleCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::condition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::Condition)
+def test_sql_condition_condition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_Condition)
 
 
-def test_sql::condition::condition_constructor_exists():
-    assert callable(sql::condition::Condition.__init__)
+def test_sql_condition_condition_constructor_exists():
+    assert callable(sql_condition_Condition.__init__)
 
 
-def test_sql::condition::condition_constructor_args():
-    sig = inspect.signature(sql::condition::Condition.__init__)
+def test_sql_condition_condition_constructor_args():
+    sig = inspect.signature(sql_condition_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -770,30 +672,30 @@ def test_andorexpressionoperation_constructor_args():
 
 
 
-def test_sql::expression::expressionoperationor_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::ExpressionOperationOr)
+def test_sql_expression_expressionoperationor_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_ExpressionOperationOr)
 
 
-def test_sql::expression::expressionoperationor_constructor_exists():
-    assert callable(sql::expression::ExpressionOperationOr.__init__)
+def test_sql_expression_expressionoperationor_constructor_exists():
+    assert callable(sql_expression_ExpressionOperationOr.__init__)
 
 
-def test_sql::expression::expressionoperationor_constructor_args():
-    sig = inspect.signature(sql::expression::ExpressionOperationOr.__init__)
+def test_sql_expression_expressionoperationor_constructor_args():
+    sig = inspect.signature(sql_expression_ExpressionOperationOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::expression::expressionoperationand_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::ExpressionOperationAnd)
+def test_sql_expression_expressionoperationand_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_ExpressionOperationAnd)
 
 
-def test_sql::expression::expressionoperationand_constructor_exists():
-    assert callable(sql::expression::ExpressionOperationAnd.__init__)
+def test_sql_expression_expressionoperationand_constructor_exists():
+    assert callable(sql_expression_ExpressionOperationAnd.__init__)
 
 
-def test_sql::expression::expressionoperationand_constructor_args():
-    sig = inspect.signature(sql::expression::ExpressionOperationAnd.__init__)
+def test_sql_expression_expressionoperationand_constructor_args():
+    sig = inspect.signature(sql_expression_ExpressionOperationAnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -812,30 +714,30 @@ def test_expressionoperation_constructor_args():
 
 
 
-def test_sql::expression::expressionoperationnot_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::ExpressionOperationNot)
+def test_sql_expression_expressionoperationnot_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_ExpressionOperationNot)
 
 
-def test_sql::expression::expressionoperationnot_constructor_exists():
-    assert callable(sql::expression::ExpressionOperationNot.__init__)
+def test_sql_expression_expressionoperationnot_constructor_exists():
+    assert callable(sql_expression_ExpressionOperationNot.__init__)
 
 
-def test_sql::expression::expressionoperationnot_constructor_args():
-    sig = inspect.signature(sql::expression::ExpressionOperationNot.__init__)
+def test_sql_expression_expressionoperationnot_constructor_args():
+    sig = inspect.signature(sql_expression_ExpressionOperationNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::expression::andorexpressionoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::AndOrExpressionOperation)
+def test_sql_expression_andorexpressionoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_AndOrExpressionOperation)
 
 
-def test_sql::expression::andorexpressionoperation_constructor_exists():
-    assert callable(sql::expression::AndOrExpressionOperation.__init__)
+def test_sql_expression_andorexpressionoperation_constructor_exists():
+    assert callable(sql_expression_AndOrExpressionOperation.__init__)
 
 
-def test_sql::expression::andorexpressionoperation_constructor_args():
-    sig = inspect.signature(sql::expression::AndOrExpressionOperation.__init__)
+def test_sql_expression_andorexpressionoperation_constructor_args():
+    sig = inspect.signature(sql_expression_AndOrExpressionOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -854,184 +756,184 @@ def test_conditionoperation_constructor_args():
 
 
 
-def test_sql::condition::conditionoperationunequal2_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationUnEqual2)
+def test_sql_condition_conditionoperationunequal2_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationUnEqual2)
 
 
-def test_sql::condition::conditionoperationunequal2_constructor_exists():
-    assert callable(sql::condition::ConditionOperationUnEqual2.__init__)
+def test_sql_condition_conditionoperationunequal2_constructor_exists():
+    assert callable(sql_condition_ConditionOperationUnEqual2.__init__)
 
 
-def test_sql::condition::conditionoperationunequal2_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationUnEqual2.__init__)
+def test_sql_condition_conditionoperationunequal2_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationUnEqual2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperationgreatequal_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationGreatEqual)
+def test_sql_condition_conditionoperationlessequal_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationLessEqual)
 
 
-def test_sql::condition::conditionoperationgreatequal_constructor_exists():
-    assert callable(sql::condition::ConditionOperationGreatEqual.__init__)
+def test_sql_condition_conditionoperationlessequal_constructor_exists():
+    assert callable(sql_condition_ConditionOperationLessEqual.__init__)
 
 
-def test_sql::condition::conditionoperationgreatequal_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationGreatEqual.__init__)
+def test_sql_condition_conditionoperationlessequal_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationLessEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperationlesser_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationLesser)
+def test_sql_condition_conditionoperationlesser_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationLesser)
 
 
-def test_sql::condition::conditionoperationlesser_constructor_exists():
-    assert callable(sql::condition::ConditionOperationLesser.__init__)
+def test_sql_condition_conditionoperationlesser_constructor_exists():
+    assert callable(sql_condition_ConditionOperationLesser.__init__)
 
 
-def test_sql::condition::conditionoperationlesser_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationLesser.__init__)
+def test_sql_condition_conditionoperationlesser_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationLesser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperationunequal_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationUnEqual)
+def test_sql_condition_conditionoperationgreatequal_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationGreatEqual)
 
 
-def test_sql::condition::conditionoperationunequal_constructor_exists():
-    assert callable(sql::condition::ConditionOperationUnEqual.__init__)
+def test_sql_condition_conditionoperationgreatequal_constructor_exists():
+    assert callable(sql_condition_ConditionOperationGreatEqual.__init__)
 
 
-def test_sql::condition::conditionoperationunequal_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationUnEqual.__init__)
+def test_sql_condition_conditionoperationgreatequal_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationGreatEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperationgreater_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationGreater)
+def test_sql_condition_conditionoperationgreater_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationGreater)
 
 
-def test_sql::condition::conditionoperationgreater_constructor_exists():
-    assert callable(sql::condition::ConditionOperationGreater.__init__)
+def test_sql_condition_conditionoperationgreater_constructor_exists():
+    assert callable(sql_condition_ConditionOperationGreater.__init__)
 
 
-def test_sql::condition::conditionoperationgreater_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationGreater.__init__)
+def test_sql_condition_conditionoperationgreater_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationGreater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperationlessequal_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationLessEqual)
+def test_sql_condition_conditionoperationunequal_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationUnEqual)
 
 
-def test_sql::condition::conditionoperationlessequal_constructor_exists():
-    assert callable(sql::condition::ConditionOperationLessEqual.__init__)
+def test_sql_condition_conditionoperationunequal_constructor_exists():
+    assert callable(sql_condition_ConditionOperationUnEqual.__init__)
 
 
-def test_sql::condition::conditionoperationlessequal_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationLessEqual.__init__)
+def test_sql_condition_conditionoperationunequal_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationUnEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperationequal_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperationEqual)
+def test_sql_condition_conditionoperationequal_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperationEqual)
 
 
-def test_sql::condition::conditionoperationequal_constructor_exists():
-    assert callable(sql::condition::ConditionOperationEqual.__init__)
+def test_sql_condition_conditionoperationequal_constructor_exists():
+    assert callable(sql_condition_ConditionOperationEqual.__init__)
 
 
-def test_sql::condition::conditionoperationequal_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperationEqual.__init__)
+def test_sql_condition_conditionoperationequal_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperationEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::conditionoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ConditionOperation)
+def test_sql_condition_conditionoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ConditionOperation)
 
 
-def test_sql::condition::conditionoperation_constructor_exists():
-    assert callable(sql::condition::ConditionOperation.__init__)
+def test_sql_condition_conditionoperation_constructor_exists():
+    assert callable(sql_condition_ConditionOperation.__init__)
 
 
-def test_sql::condition::conditionoperation_constructor_args():
-    sig = inspect.signature(sql::condition::ConditionOperation.__init__)
+def test_sql_condition_conditionoperation_constructor_args():
+    sig = inspect.signature(sql_condition_ConditionOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::likecondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::LikeCondition)
+def test_sql_condition_likecondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_LikeCondition)
 
 
-def test_sql::condition::likecondition_constructor_exists():
-    assert callable(sql::condition::LikeCondition.__init__)
+def test_sql_condition_likecondition_constructor_exists():
+    assert callable(sql_condition_LikeCondition.__init__)
 
 
-def test_sql::condition::likecondition_constructor_args():
-    sig = inspect.signature(sql::condition::LikeCondition.__init__)
+def test_sql_condition_likecondition_constructor_args():
+    sig = inspect.signature(sql_condition_LikeCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::incondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::InCondition)
+def test_sql_condition_incondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_InCondition)
 
 
-def test_sql::condition::incondition_constructor_exists():
-    assert callable(sql::condition::InCondition.__init__)
+def test_sql_condition_incondition_constructor_exists():
+    assert callable(sql_condition_InCondition.__init__)
 
 
-def test_sql::condition::incondition_constructor_args():
-    sig = inspect.signature(sql::condition::InCondition.__init__)
+def test_sql_condition_incondition_constructor_args():
+    sig = inspect.signature(sql_condition_InCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::betweencondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::BetweenCondition)
+def test_sql_condition_betweencondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_BetweenCondition)
 
 
-def test_sql::condition::betweencondition_constructor_exists():
-    assert callable(sql::condition::BetweenCondition.__init__)
+def test_sql_condition_betweencondition_constructor_exists():
+    assert callable(sql_condition_BetweenCondition.__init__)
 
 
-def test_sql::condition::betweencondition_constructor_args():
-    sig = inspect.signature(sql::condition::BetweenCondition.__init__)
+def test_sql_condition_betweencondition_constructor_args():
+    sig = inspect.signature(sql_condition_BetweenCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::condition::existscondition_is_not_abstract():
-    assert not inspect.isabstract(sql::condition::ExistsCondition)
+def test_sql_condition_existscondition_is_not_abstract():
+    assert not inspect.isabstract(sql_condition_ExistsCondition)
 
 
-def test_sql::condition::existscondition_constructor_exists():
-    assert callable(sql::condition::ExistsCondition.__init__)
+def test_sql_condition_existscondition_constructor_exists():
+    assert callable(sql_condition_ExistsCondition.__init__)
 
 
-def test_sql::condition::existscondition_constructor_args():
-    sig = inspect.signature(sql::condition::ExistsCondition.__init__)
+def test_sql_condition_existscondition_constructor_args():
+    sig = inspect.signature(sql_condition_ExistsCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_parameter::selectparameterdistinct_is_not_abstract():
-    assert not inspect.isabstract(parameter::SelectParameterDistinct)
+def test_parameter_selectparameterdistinct_is_not_abstract():
+    assert not inspect.isabstract(parameter_SelectParameterDistinct)
 
 
-def test_parameter::selectparameterdistinct_constructor_exists():
-    assert callable(parameter::SelectParameterDistinct.__init__)
+def test_parameter_selectparameterdistinct_constructor_exists():
+    assert callable(parameter_SelectParameterDistinct.__init__)
 
 
-def test_parameter::selectparameterdistinct_constructor_args():
-    sig = inspect.signature(parameter::SelectParameterDistinct.__init__)
+def test_parameter_selectparameterdistinct_constructor_args():
+    sig = inspect.signature(parameter_SelectParameterDistinct.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1050,128 +952,128 @@ def test_setoperation_constructor_args():
 
 
 
-def test_sql::set::setoperationminus_is_not_abstract():
-    assert not inspect.isabstract(sql::set::SetOperationMinus)
+def test_sql_set_setoperationminus_is_not_abstract():
+    assert not inspect.isabstract(sql_set_SetOperationMinus)
 
 
-def test_sql::set::setoperationminus_constructor_exists():
-    assert callable(sql::set::SetOperationMinus.__init__)
+def test_sql_set_setoperationminus_constructor_exists():
+    assert callable(sql_set_SetOperationMinus.__init__)
 
 
-def test_sql::set::setoperationminus_constructor_args():
-    sig = inspect.signature(sql::set::SetOperationMinus.__init__)
+def test_sql_set_setoperationminus_constructor_args():
+    sig = inspect.signature(sql_set_SetOperationMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::set::setoperationexcept_is_not_abstract():
-    assert not inspect.isabstract(sql::set::SetOperationExcept)
+def test_sql_set_setoperationexcept_is_not_abstract():
+    assert not inspect.isabstract(sql_set_SetOperationExcept)
 
 
-def test_sql::set::setoperationexcept_constructor_exists():
-    assert callable(sql::set::SetOperationExcept.__init__)
+def test_sql_set_setoperationexcept_constructor_exists():
+    assert callable(sql_set_SetOperationExcept.__init__)
 
 
-def test_sql::set::setoperationexcept_constructor_args():
-    sig = inspect.signature(sql::set::SetOperationExcept.__init__)
+def test_sql_set_setoperationexcept_constructor_args():
+    sig = inspect.signature(sql_set_SetOperationExcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::set::setoperationunion_is_not_abstract():
-    assert not inspect.isabstract(sql::set::SetOperationUnion)
+def test_sql_set_setoperationunion_is_not_abstract():
+    assert not inspect.isabstract(sql_set_SetOperationUnion)
 
 
-def test_sql::set::setoperationunion_constructor_exists():
-    assert callable(sql::set::SetOperationUnion.__init__)
+def test_sql_set_setoperationunion_constructor_exists():
+    assert callable(sql_set_SetOperationUnion.__init__)
 
 
-def test_sql::set::setoperationunion_constructor_args():
-    sig = inspect.signature(sql::set::SetOperationUnion.__init__)
+def test_sql_set_setoperationunion_constructor_args():
+    sig = inspect.signature(sql_set_SetOperationUnion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::set::setoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::set::SetOperation)
+def test_sql_set_setoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_set_SetOperation)
 
 
-def test_sql::set::setoperation_constructor_exists():
-    assert callable(sql::set::SetOperation.__init__)
+def test_sql_set_setoperation_constructor_exists():
+    assert callable(sql_set_SetOperation.__init__)
 
 
-def test_sql::set::setoperation_constructor_args():
-    sig = inspect.signature(sql::set::SetOperation.__init__)
+def test_sql_set_setoperation_constructor_args():
+    sig = inspect.signature(sql_set_SetOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_set::setoperation_is_not_abstract():
-    assert not inspect.isabstract(set::SetOperation)
+def test_set_setoperation_is_not_abstract():
+    assert not inspect.isabstract(set_SetOperation)
 
 
-def test_set::setoperation_constructor_exists():
-    assert callable(set::SetOperation.__init__)
+def test_set_setoperation_constructor_exists():
+    assert callable(set_SetOperation.__init__)
 
 
-def test_set::setoperation_constructor_args():
-    sig = inspect.signature(set::SetOperation.__init__)
+def test_set_setoperation_constructor_args():
+    sig = inspect.signature(set_SetOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::expression::expressionoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::ExpressionOperation)
+def test_sql_expression_expressionoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_ExpressionOperation)
 
 
-def test_sql::expression::expressionoperation_constructor_exists():
-    assert callable(sql::expression::ExpressionOperation.__init__)
+def test_sql_expression_expressionoperation_constructor_exists():
+    assert callable(sql_expression_ExpressionOperation.__init__)
 
 
-def test_sql::expression::expressionoperation_constructor_args():
-    sig = inspect.signature(sql::expression::ExpressionOperation.__init__)
+def test_sql_expression_expressionoperation_constructor_args():
+    sig = inspect.signature(sql_expression_ExpressionOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expression::expressionoperationnot_is_not_abstract():
-    assert not inspect.isabstract(expression::ExpressionOperationNot)
+def test_expression_expressionoperationnot_is_not_abstract():
+    assert not inspect.isabstract(expression_ExpressionOperationNot)
 
 
-def test_expression::expressionoperationnot_constructor_exists():
-    assert callable(expression::ExpressionOperationNot.__init__)
+def test_expression_expressionoperationnot_constructor_exists():
+    assert callable(expression_ExpressionOperationNot.__init__)
 
 
-def test_expression::expressionoperationnot_constructor_args():
-    sig = inspect.signature(expression::ExpressionOperationNot.__init__)
+def test_expression_expressionoperationnot_constructor_args():
+    sig = inspect.signature(expression_ExpressionOperationNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_condition::condition_is_not_abstract():
-    assert not inspect.isabstract(condition::Condition)
+def test_condition_condition_is_not_abstract():
+    assert not inspect.isabstract(condition_Condition)
 
 
-def test_condition::condition_constructor_exists():
-    assert callable(condition::Condition.__init__)
+def test_condition_condition_constructor_exists():
+    assert callable(condition_Condition.__init__)
 
 
-def test_condition::condition_constructor_args():
-    sig = inspect.signature(condition::Condition.__init__)
+def test_condition_condition_constructor_args():
+    sig = inspect.signature(condition_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expression::andorexpressionoperation_is_not_abstract():
-    assert not inspect.isabstract(expression::AndOrExpressionOperation)
+def test_expression_andorexpressionoperation_is_not_abstract():
+    assert not inspect.isabstract(expression_AndOrExpressionOperation)
 
 
-def test_expression::andorexpressionoperation_constructor_exists():
-    assert callable(expression::AndOrExpressionOperation.__init__)
+def test_expression_andorexpressionoperation_constructor_exists():
+    assert callable(expression_AndOrExpressionOperation.__init__)
 
 
-def test_expression::andorexpressionoperation_constructor_args():
-    sig = inspect.signature(expression::AndOrExpressionOperation.__init__)
+def test_expression_andorexpressionoperation_constructor_args():
+    sig = inspect.signature(expression_AndOrExpressionOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1190,92 +1092,92 @@ def test_expression_constructor_args():
 
 
 
-def test_sql::expression::simpleexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::SimpleExpression)
+def test_sql_expression_simpleexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_SimpleExpression)
 
 
-def test_sql::expression::simpleexpression_constructor_exists():
-    assert callable(sql::expression::SimpleExpression.__init__)
+def test_sql_expression_simpleexpression_constructor_exists():
+    assert callable(sql_expression_SimpleExpression.__init__)
 
 
-def test_sql::expression::simpleexpression_constructor_args():
-    sig = inspect.signature(sql::expression::SimpleExpression.__init__)
+def test_sql_expression_simpleexpression_constructor_args():
+    sig = inspect.signature(sql_expression_SimpleExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::expression::expression_is_not_abstract():
-    assert not inspect.isabstract(sql::expression::Expression)
+def test_sql_expression_expression_is_not_abstract():
+    assert not inspect.isabstract(sql_expression_Expression)
 
 
-def test_sql::expression::expression_constructor_exists():
-    assert callable(sql::expression::Expression.__init__)
+def test_sql_expression_expression_constructor_exists():
+    assert callable(sql_expression_Expression.__init__)
 
 
-def test_sql::expression::expression_constructor_args():
-    sig = inspect.signature(sql::expression::Expression.__init__)
+def test_sql_expression_expression_constructor_args():
+    sig = inspect.signature(sql_expression_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::limit::limitexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::limit::LimitExpression)
+def test_sql_limit_limitexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_limit_LimitExpression)
 
 
-def test_sql::limit::limitexpression_constructor_exists():
-    assert callable(sql::limit::LimitExpression.__init__)
+def test_sql_limit_limitexpression_constructor_exists():
+    assert callable(sql_limit_LimitExpression.__init__)
 
 
-def test_sql::limit::limitexpression_constructor_args():
-    sig = inspect.signature(sql::limit::LimitExpression.__init__)
+def test_sql_limit_limitexpression_constructor_args():
+    sig = inspect.signature(sql_limit_LimitExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "offset" in params, "Missing parameter 'offset'"
     assert "limit" in params, "Missing parameter 'limit'"
+    assert "offset" in params, "Missing parameter 'offset'"
 
-def test_sql::limit::limitexpression_has_offset():
-    assert hasattr(sql::limit::LimitExpression, "offset")
+def test_sql_limit_limitexpression_has_limit():
+    assert hasattr(sql_limit_LimitExpression, "limit")
     descriptor = None
-    for klass in sql::limit::LimitExpression.__mro__:
-        if "offset" in klass.__dict__:
-            descriptor = klass.__dict__["offset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sql::limit::limitexpression_has_limit():
-    assert hasattr(sql::limit::LimitExpression, "limit")
-    descriptor = None
-    for klass in sql::limit::LimitExpression.__mro__:
+    for klass in sql_limit_LimitExpression.__mro__:
         if "limit" in klass.__dict__:
             descriptor = klass.__dict__["limit"]
             break
     assert isinstance(descriptor, property)
 
+def test_sql_limit_limitexpression_has_offset():
+    assert hasattr(sql_limit_LimitExpression, "offset")
+    descriptor = None
+    for klass in sql_limit_LimitExpression.__mro__:
+        if "offset" in klass.__dict__:
+            descriptor = klass.__dict__["offset"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sql::set::setoperationintersect_is_not_abstract():
-    assert not inspect.isabstract(sql::set::SetOperationIntersect)
+
+def test_sql_set_setoperationintersect_is_not_abstract():
+    assert not inspect.isabstract(sql_set_SetOperationIntersect)
 
 
-def test_sql::set::setoperationintersect_constructor_exists():
-    assert callable(sql::set::SetOperationIntersect.__init__)
+def test_sql_set_setoperationintersect_constructor_exists():
+    assert callable(sql_set_SetOperationIntersect.__init__)
 
 
-def test_sql::set::setoperationintersect_constructor_args():
-    sig = inspect.signature(sql::set::SetOperationIntersect.__init__)
+def test_sql_set_setoperationintersect_constructor_args():
+    sig = inspect.signature(sql_set_SetOperationIntersect.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_column::column_is_not_abstract():
-    assert not inspect.isabstract(column::Column)
+def test_column_column_is_not_abstract():
+    assert not inspect.isabstract(column_Column)
 
 
-def test_column::column_constructor_exists():
-    assert callable(column::Column.__init__)
+def test_column_column_constructor_exists():
+    assert callable(column_Column.__init__)
 
 
-def test_column::column_constructor_args():
-    sig = inspect.signature(column::Column.__init__)
+def test_column_column_constructor_args():
+    sig = inspect.signature(column_Column.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1294,58 +1196,58 @@ def test_orderbyexpression_constructor_args():
 
 
 
-def test_sql::orderby::orderbycolumnexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderByColumnExpression)
+def test_sql_orderby_orderbycolumnexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderByColumnExpression)
 
 
-def test_sql::orderby::orderbycolumnexpression_constructor_exists():
-    assert callable(sql::orderBy::OrderByColumnExpression.__init__)
+def test_sql_orderby_orderbycolumnexpression_constructor_exists():
+    assert callable(sql_orderBy_OrderByColumnExpression.__init__)
 
 
-def test_sql::orderby::orderbycolumnexpression_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderByColumnExpression.__init__)
+def test_sql_orderby_orderbycolumnexpression_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderByColumnExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_orderby::orderbyparameter_is_not_abstract():
-    assert not inspect.isabstract(orderBy::OrderByParameter)
+def test_orderby_orderbyparameter_is_not_abstract():
+    assert not inspect.isabstract(orderBy_OrderByParameter)
 
 
-def test_orderby::orderbyparameter_constructor_exists():
-    assert callable(orderBy::OrderByParameter.__init__)
+def test_orderby_orderbyparameter_constructor_exists():
+    assert callable(orderBy_OrderByParameter.__init__)
 
 
-def test_orderby::orderbyparameter_constructor_args():
-    sig = inspect.signature(orderBy::OrderByParameter.__init__)
+def test_orderby_orderbyparameter_constructor_args():
+    sig = inspect.signature(orderBy_OrderByParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::orderby::orderbyexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderByExpression)
+def test_sql_orderby_orderbyexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderByExpression)
 
 
-def test_sql::orderby::orderbyexpression_constructor_exists():
-    assert callable(sql::orderBy::OrderByExpression.__init__)
+def test_sql_orderby_orderbyexpression_constructor_exists():
+    assert callable(sql_orderBy_OrderByExpression.__init__)
 
 
-def test_sql::orderby::orderbyexpression_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderByExpression.__init__)
+def test_sql_orderby_orderbyexpression_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderByExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::where::whereexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::where::WhereExpression)
+def test_sql_where_whereexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_where_WhereExpression)
 
 
-def test_sql::where::whereexpression_constructor_exists():
-    assert callable(sql::where::WhereExpression.__init__)
+def test_sql_where_whereexpression_constructor_exists():
+    assert callable(sql_where_WhereExpression.__init__)
 
 
-def test_sql::where::whereexpression_constructor_args():
-    sig = inspect.signature(sql::where::WhereExpression.__init__)
+def test_sql_where_whereexpression_constructor_args():
+    sig = inspect.signature(sql_where_WhereExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1364,114 +1266,114 @@ def test_joinoperation_constructor_args():
 
 
 
-def test_sql::from::joinoperationleft_is_not_abstract():
-    assert not inspect.isabstract(sql::from::JoinOperationLeft)
+def test_sql_from_joinoperationright_is_not_abstract():
+    assert not inspect.isabstract(sql_from_JoinOperationRight)
 
 
-def test_sql::from::joinoperationleft_constructor_exists():
-    assert callable(sql::from::JoinOperationLeft.__init__)
+def test_sql_from_joinoperationright_constructor_exists():
+    assert callable(sql_from_JoinOperationRight.__init__)
 
 
-def test_sql::from::joinoperationleft_constructor_args():
-    sig = inspect.signature(sql::from::JoinOperationLeft.__init__)
+def test_sql_from_joinoperationright_constructor_args():
+    sig = inspect.signature(sql_from_JoinOperationRight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::joinoperationright_is_not_abstract():
-    assert not inspect.isabstract(sql::from::JoinOperationRight)
+def test_sql_from_joinoperationouter_is_not_abstract():
+    assert not inspect.isabstract(sql_from_JoinOperationOuter)
 
 
-def test_sql::from::joinoperationright_constructor_exists():
-    assert callable(sql::from::JoinOperationRight.__init__)
+def test_sql_from_joinoperationouter_constructor_exists():
+    assert callable(sql_from_JoinOperationOuter.__init__)
 
 
-def test_sql::from::joinoperationright_constructor_args():
-    sig = inspect.signature(sql::from::JoinOperationRight.__init__)
+def test_sql_from_joinoperationouter_constructor_args():
+    sig = inspect.signature(sql_from_JoinOperationOuter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::joinoperationouter_is_not_abstract():
-    assert not inspect.isabstract(sql::from::JoinOperationOuter)
+def test_sql_from_joinoperationleft_is_not_abstract():
+    assert not inspect.isabstract(sql_from_JoinOperationLeft)
 
 
-def test_sql::from::joinoperationouter_constructor_exists():
-    assert callable(sql::from::JoinOperationOuter.__init__)
+def test_sql_from_joinoperationleft_constructor_exists():
+    assert callable(sql_from_JoinOperationLeft.__init__)
 
 
-def test_sql::from::joinoperationouter_constructor_args():
-    sig = inspect.signature(sql::from::JoinOperationOuter.__init__)
+def test_sql_from_joinoperationleft_constructor_args():
+    sig = inspect.signature(sql_from_JoinOperationLeft.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::joinoperationinner_is_not_abstract():
-    assert not inspect.isabstract(sql::from::JoinOperationInner)
+def test_sql_from_joinoperationinner_is_not_abstract():
+    assert not inspect.isabstract(sql_from_JoinOperationInner)
 
 
-def test_sql::from::joinoperationinner_constructor_exists():
-    assert callable(sql::from::JoinOperationInner.__init__)
+def test_sql_from_joinoperationinner_constructor_exists():
+    assert callable(sql_from_JoinOperationInner.__init__)
 
 
-def test_sql::from::joinoperationinner_constructor_args():
-    sig = inspect.signature(sql::from::JoinOperationInner.__init__)
+def test_sql_from_joinoperationinner_constructor_args():
+    sig = inspect.signature(sql_from_JoinOperationInner.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::joinoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::from::JoinOperation)
+def test_sql_from_joinoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_from_JoinOperation)
 
 
-def test_sql::from::joinoperation_constructor_exists():
-    assert callable(sql::from::JoinOperation.__init__)
+def test_sql_from_joinoperation_constructor_exists():
+    assert callable(sql_from_JoinOperation.__init__)
 
 
-def test_sql::from::joinoperation_constructor_args():
-    sig = inspect.signature(sql::from::JoinOperation.__init__)
+def test_sql_from_joinoperation_constructor_args():
+    sig = inspect.signature(sql_from_JoinOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::set::setexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::set::SetExpression)
+def test_sql_set_setexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_set_SetExpression)
 
 
-def test_sql::set::setexpression_constructor_exists():
-    assert callable(sql::set::SetExpression.__init__)
+def test_sql_set_setexpression_constructor_exists():
+    assert callable(sql_set_SetExpression.__init__)
 
 
-def test_sql::set::setexpression_constructor_args():
-    sig = inspect.signature(sql::set::SetExpression.__init__)
+def test_sql_set_setexpression_constructor_args():
+    sig = inspect.signature(sql_set_SetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::having::havingexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::having::HavingExpression)
+def test_sql_having_havingexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_having_HavingExpression)
 
 
-def test_sql::having::havingexpression_constructor_exists():
-    assert callable(sql::having::HavingExpression.__init__)
+def test_sql_having_havingexpression_constructor_exists():
+    assert callable(sql_having_HavingExpression.__init__)
 
 
-def test_sql::having::havingexpression_constructor_args():
-    sig = inspect.signature(sql::having::HavingExpression.__init__)
+def test_sql_having_havingexpression_constructor_args():
+    sig = inspect.signature(sql_having_HavingExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::groupby::groupbyexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::groupBy::GroupByExpression)
+def test_sql_groupby_groupbyexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_groupBy_GroupByExpression)
 
 
-def test_sql::groupby::groupbyexpression_constructor_exists():
-    assert callable(sql::groupBy::GroupByExpression.__init__)
+def test_sql_groupby_groupbyexpression_constructor_exists():
+    assert callable(sql_groupBy_GroupByExpression.__init__)
 
 
-def test_sql::groupby::groupbyexpression_constructor_args():
-    sig = inspect.signature(sql::groupBy::GroupByExpression.__init__)
+def test_sql_groupby_groupbyexpression_constructor_args():
+    sig = inspect.signature(sql_groupBy_GroupByExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1490,79 +1392,79 @@ def test_orderbyparameter_constructor_args():
 
 
 
-def test_sql::orderby::orderbyparameterdesc_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderByParameterDesc)
+def test_sql_orderby_orderbyparameterdesc_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderByParameterDesc)
 
 
-def test_sql::orderby::orderbyparameterdesc_constructor_exists():
-    assert callable(sql::orderBy::OrderByParameterDesc.__init__)
+def test_sql_orderby_orderbyparameterdesc_constructor_exists():
+    assert callable(sql_orderBy_OrderByParameterDesc.__init__)
 
 
-def test_sql::orderby::orderbyparameterdesc_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderByParameterDesc.__init__)
+def test_sql_orderby_orderbyparameterdesc_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderByParameterDesc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::orderby::orderbyparameterasc_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderByParameterAsc)
+def test_sql_orderby_orderbyparameterasc_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderByParameterAsc)
 
 
-def test_sql::orderby::orderbyparameterasc_constructor_exists():
-    assert callable(sql::orderBy::OrderByParameterAsc.__init__)
+def test_sql_orderby_orderbyparameterasc_constructor_exists():
+    assert callable(sql_orderBy_OrderByParameterAsc.__init__)
 
 
-def test_sql::orderby::orderbyparameterasc_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderByParameterAsc.__init__)
+def test_sql_orderby_orderbyparameterasc_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderByParameterAsc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::orderby::orderbyparameter_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderByParameter)
+def test_sql_orderby_orderbyparameter_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderByParameter)
 
 
-def test_sql::orderby::orderbyparameter_constructor_exists():
-    assert callable(sql::orderBy::OrderByParameter.__init__)
+def test_sql_orderby_orderbyparameter_constructor_exists():
+    assert callable(sql_orderBy_OrderByParameter.__init__)
 
 
-def test_sql::orderby::orderbyparameter_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderByParameter.__init__)
+def test_sql_orderby_orderbyparameter_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderByParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::orderby::orderbyselectexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderBySelectExpression)
+def test_sql_orderby_orderbyselectexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderBySelectExpression)
 
 
-def test_sql::orderby::orderbyselectexpression_constructor_exists():
-    assert callable(sql::orderBy::OrderBySelectExpression.__init__)
+def test_sql_orderby_orderbyselectexpression_constructor_exists():
+    assert callable(sql_orderBy_OrderBySelectExpression.__init__)
 
 
-def test_sql::orderby::orderbyselectexpression_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderBySelectExpression.__init__)
+def test_sql_orderby_orderbyselectexpression_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderBySelectExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::orderby::orderbyaliasexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::orderBy::OrderByAliasExpression)
+def test_sql_orderby_orderbyaliasexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_orderBy_OrderByAliasExpression)
 
 
-def test_sql::orderby::orderbyaliasexpression_constructor_exists():
-    assert callable(sql::orderBy::OrderByAliasExpression.__init__)
+def test_sql_orderby_orderbyaliasexpression_constructor_exists():
+    assert callable(sql_orderBy_OrderByAliasExpression.__init__)
 
 
-def test_sql::orderby::orderbyaliasexpression_constructor_args():
-    sig = inspect.signature(sql::orderBy::OrderByAliasExpression.__init__)
+def test_sql_orderby_orderbyaliasexpression_constructor_args():
+    sig = inspect.signature(sql_orderBy_OrderByAliasExpression.__init__)
     params = list(sig.parameters.keys())
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_sql::orderby::orderbyaliasexpression_has_alias():
-    assert hasattr(sql::orderBy::OrderByAliasExpression, "alias")
+def test_sql_orderby_orderbyaliasexpression_has_alias():
+    assert hasattr(sql_orderBy_OrderByAliasExpression, "alias")
     descriptor = None
-    for klass in sql::orderBy::OrderByAliasExpression.__mro__:
+    for klass in sql_orderBy_OrderByAliasExpression.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -1570,37 +1472,37 @@ def test_sql::orderby::orderbyaliasexpression_has_alias():
 
 
 
-def test_sql::from::fromexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::from::FromExpression)
+def test_sql_from_fromexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_from_FromExpression)
 
 
-def test_sql::from::fromexpression_constructor_exists():
-    assert callable(sql::from::FromExpression.__init__)
+def test_sql_from_fromexpression_constructor_exists():
+    assert callable(sql_from_FromExpression.__init__)
 
 
-def test_sql::from::fromexpression_constructor_args():
-    sig = inspect.signature(sql::from::FromExpression.__init__)
+def test_sql_from_fromexpression_constructor_args():
+    sig = inspect.signature(sql_from_FromExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::column_is_not_abstract():
-    assert not inspect.isabstract(sql::column::Column)
+def test_sql_column_column_is_not_abstract():
+    assert not inspect.isabstract(sql_column_Column)
 
 
-def test_sql::column::column_constructor_exists():
-    assert callable(sql::column::Column.__init__)
+def test_sql_column_column_constructor_exists():
+    assert callable(sql_column_Column.__init__)
 
 
-def test_sql::column::column_constructor_args():
-    sig = inspect.signature(sql::column::Column.__init__)
+def test_sql_column_column_constructor_args():
+    sig = inspect.signature(sql_column_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::column::column_has_name():
-    assert hasattr(sql::column::Column, "name")
+def test_sql_column_column_has_name():
+    assert hasattr(sql_column_Column, "name")
     descriptor = None
-    for klass in sql::column::Column.__mro__:
+    for klass in sql_column_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1622,219 +1524,317 @@ def test_columnoperation_constructor_args():
 
 
 
-def test_sql::column::columnoperationavg_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationAvg)
+def test_sql_column_columnoperationsum_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationSum)
 
 
-def test_sql::column::columnoperationavg_constructor_exists():
-    assert callable(sql::column::ColumnOperationAvg.__init__)
+def test_sql_column_columnoperationsum_constructor_exists():
+    assert callable(sql_column_ColumnOperationSum.__init__)
 
 
-def test_sql::column::columnoperationavg_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationAvg.__init__)
+def test_sql_column_columnoperationsum_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationSum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperationsome_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationSome)
+def test_sql_column_columnoperationsome_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationSome)
 
 
-def test_sql::column::columnoperationsome_constructor_exists():
-    assert callable(sql::column::ColumnOperationSome.__init__)
+def test_sql_column_columnoperationsome_constructor_exists():
+    assert callable(sql_column_ColumnOperationSome.__init__)
 
 
-def test_sql::column::columnoperationsome_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationSome.__init__)
+def test_sql_column_columnoperationsome_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationSome.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperationsum_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationSum)
+def test_sql_column_columnoperationavg_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationAvg)
 
 
-def test_sql::column::columnoperationsum_constructor_exists():
-    assert callable(sql::column::ColumnOperationSum.__init__)
+def test_sql_column_columnoperationavg_constructor_exists():
+    assert callable(sql_column_ColumnOperationAvg.__init__)
 
 
-def test_sql::column::columnoperationsum_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationSum.__init__)
+def test_sql_column_columnoperationavg_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationAvg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperationevery_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationEvery)
+def test_sql_column_columnoperationmin_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationMin)
 
 
-def test_sql::column::columnoperationevery_constructor_exists():
-    assert callable(sql::column::ColumnOperationEvery.__init__)
+def test_sql_column_columnoperationmin_constructor_exists():
+    assert callable(sql_column_ColumnOperationMin.__init__)
 
 
-def test_sql::column::columnoperationevery_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationEvery.__init__)
+def test_sql_column_columnoperationmin_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationMin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperationmax_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationMax)
+def test_sql_column_columnoperationmax_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationMax)
 
 
-def test_sql::column::columnoperationmax_constructor_exists():
-    assert callable(sql::column::ColumnOperationMax.__init__)
+def test_sql_column_columnoperationmax_constructor_exists():
+    assert callable(sql_column_ColumnOperationMax.__init__)
 
 
-def test_sql::column::columnoperationmax_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationMax.__init__)
+def test_sql_column_columnoperationmax_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationMax.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperationmin_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationMin)
+def test_sql_column_columnoperationevery_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationEvery)
 
 
-def test_sql::column::columnoperationmin_constructor_exists():
-    assert callable(sql::column::ColumnOperationMin.__init__)
+def test_sql_column_columnoperationevery_constructor_exists():
+    assert callable(sql_column_ColumnOperationEvery.__init__)
 
 
-def test_sql::column::columnoperationmin_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationMin.__init__)
+def test_sql_column_columnoperationevery_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationEvery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperationcount_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperationCount)
+def test_sql_column_columnoperationcount_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperationCount)
 
 
-def test_sql::column::columnoperationcount_constructor_exists():
-    assert callable(sql::column::ColumnOperationCount.__init__)
+def test_sql_column_columnoperationcount_constructor_exists():
+    assert callable(sql_column_ColumnOperationCount.__init__)
 
 
-def test_sql::column::columnoperationcount_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperationCount.__init__)
+def test_sql_column_columnoperationcount_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperationCount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnoperation_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnOperation)
+def test_sql_column_columnoperation_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnOperation)
 
 
-def test_sql::column::columnoperation_constructor_exists():
-    assert callable(sql::column::ColumnOperation.__init__)
+def test_sql_column_columnoperation_constructor_exists():
+    assert callable(sql_column_ColumnOperation.__init__)
 
 
-def test_sql::column::columnoperation_constructor_args():
-    sig = inspect.signature(sql::column::ColumnOperation.__init__)
+def test_sql_column_columnoperation_constructor_args():
+    sig = inspect.signature(sql_column_ColumnOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_column::columnoperation_is_not_abstract():
-    assert not inspect.isabstract(column::ColumnOperation)
+def test_column_columnoperation_is_not_abstract():
+    assert not inspect.isabstract(column_ColumnOperation)
 
 
-def test_column::columnoperation_constructor_exists():
-    assert callable(column::ColumnOperation.__init__)
+def test_column_columnoperation_constructor_exists():
+    assert callable(column_ColumnOperation.__init__)
 
 
-def test_column::columnoperation_constructor_args():
-    sig = inspect.signature(column::ColumnOperation.__init__)
+def test_column_columnoperation_constructor_args():
+    sig = inspect.signature(column_ColumnOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_from::joinoperation_is_not_abstract():
-    assert not inspect.isabstract(from::JoinOperation)
+def test_sql_term_starterm_is_not_abstract():
+    assert not inspect.isabstract(sql_term_StarTerm)
 
 
-def test_from::joinoperation_constructor_exists():
-    assert callable(from::JoinOperation.__init__)
+def test_sql_term_starterm_constructor_exists():
+    assert callable(sql_term_StarTerm.__init__)
 
 
-def test_from::joinoperation_constructor_args():
-    sig = inspect.signature(from::JoinOperation.__init__)
+def test_sql_term_starterm_constructor_args():
+    sig = inspect.signature(sql_term_StarTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::jointableexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::from::JoinTableExpression)
+def test_sql_term_countstarterm_is_not_abstract():
+    assert not inspect.isabstract(sql_term_CountStarTerm)
 
 
-def test_sql::from::jointableexpression_constructor_exists():
-    assert callable(sql::from::JoinTableExpression.__init__)
+def test_sql_term_countstarterm_constructor_exists():
+    assert callable(sql_term_CountStarTerm.__init__)
 
 
-def test_sql::from::jointableexpression_constructor_args():
-    sig = inspect.signature(sql::from::JoinTableExpression.__init__)
+def test_sql_term_countstarterm_constructor_args():
+    sig = inspect.signature(sql_term_CountStarTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_from::jointableexpression_is_not_abstract():
-    assert not inspect.isabstract(from::JoinTableExpression)
+def test_simpleterm_is_not_abstract():
+    assert not inspect.isabstract(SimpleTerm)
 
 
-def test_from::jointableexpression_constructor_exists():
-    assert callable(from::JoinTableExpression.__init__)
+def test_simpleterm_constructor_exists():
+    assert callable(SimpleTerm.__init__)
 
 
-def test_from::jointableexpression_constructor_args():
-    sig = inspect.signature(from::JoinTableExpression.__init__)
+def test_simpleterm_constructor_args():
+    sig = inspect.signature(SimpleTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_from::tableexpression_is_not_abstract():
-    assert not inspect.isabstract(from::TableExpression)
+def test_sql_term_simpleterminteger_is_not_abstract():
+    assert not inspect.isabstract(sql_term_SimpleTermInteger)
 
 
-def test_from::tableexpression_constructor_exists():
-    assert callable(from::TableExpression.__init__)
+def test_sql_term_simpleterminteger_constructor_exists():
+    assert callable(sql_term_SimpleTermInteger.__init__)
 
 
-def test_from::tableexpression_constructor_args():
-    sig = inspect.signature(from::TableExpression.__init__)
+def test_sql_term_simpleterminteger_constructor_args():
+    sig = inspect.signature(sql_term_SimpleTermInteger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::tablelistexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::from::TableListExpression)
+def test_sql_term_simpletermchar_is_not_abstract():
+    assert not inspect.isabstract(sql_term_SimpleTermChar)
 
 
-def test_sql::from::tablelistexpression_constructor_exists():
-    assert callable(sql::from::TableListExpression.__init__)
+def test_sql_term_simpletermchar_constructor_exists():
+    assert callable(sql_term_SimpleTermChar.__init__)
 
 
-def test_sql::from::tablelistexpression_constructor_args():
-    sig = inspect.signature(sql::from::TableListExpression.__init__)
+def test_sql_term_simpletermchar_constructor_args():
+    sig = inspect.signature(sql_term_SimpleTermChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::from::table_is_not_abstract():
-    assert not inspect.isabstract(sql::from::Table)
+def test_sql_term_simpletermfloat_is_not_abstract():
+    assert not inspect.isabstract(sql_term_SimpleTermFloat)
 
 
-def test_sql::from::table_constructor_exists():
-    assert callable(sql::from::Table.__init__)
+def test_sql_term_simpletermfloat_constructor_exists():
+    assert callable(sql_term_SimpleTermFloat.__init__)
 
 
-def test_sql::from::table_constructor_args():
-    sig = inspect.signature(sql::from::Table.__init__)
+def test_sql_term_simpletermfloat_constructor_args():
+    sig = inspect.signature(sql_term_SimpleTermFloat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sql_term_simpletermstring_is_not_abstract():
+    assert not inspect.isabstract(sql_term_SimpleTermString)
+
+
+def test_sql_term_simpletermstring_constructor_exists():
+    assert callable(sql_term_SimpleTermString.__init__)
+
+
+def test_sql_term_simpletermstring_constructor_args():
+    sig = inspect.signature(sql_term_SimpleTermString.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_from_joinoperation_is_not_abstract():
+    assert not inspect.isabstract(from_JoinOperation)
+
+
+def test_from_joinoperation_constructor_exists():
+    assert callable(from_JoinOperation.__init__)
+
+
+def test_from_joinoperation_constructor_args():
+    sig = inspect.signature(from_JoinOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sql_from_jointableexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_from_JoinTableExpression)
+
+
+def test_sql_from_jointableexpression_constructor_exists():
+    assert callable(sql_from_JoinTableExpression.__init__)
+
+
+def test_sql_from_jointableexpression_constructor_args():
+    sig = inspect.signature(sql_from_JoinTableExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_from_jointableexpression_is_not_abstract():
+    assert not inspect.isabstract(from_JoinTableExpression)
+
+
+def test_from_jointableexpression_constructor_exists():
+    assert callable(from_JoinTableExpression.__init__)
+
+
+def test_from_jointableexpression_constructor_args():
+    sig = inspect.signature(from_JoinTableExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_from_tableexpression_is_not_abstract():
+    assert not inspect.isabstract(from_TableExpression)
+
+
+def test_from_tableexpression_constructor_exists():
+    assert callable(from_TableExpression.__init__)
+
+
+def test_from_tableexpression_constructor_args():
+    sig = inspect.signature(from_TableExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sql_from_tablelistexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_from_TableListExpression)
+
+
+def test_sql_from_tablelistexpression_constructor_exists():
+    assert callable(sql_from_TableListExpression.__init__)
+
+
+def test_sql_from_tablelistexpression_constructor_args():
+    sig = inspect.signature(sql_from_TableListExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sql_from_table_is_not_abstract():
+    assert not inspect.isabstract(sql_from_Table)
+
+
+def test_sql_from_table_constructor_exists():
+    assert callable(sql_from_Table.__init__)
+
+
+def test_sql_from_table_constructor_args():
+    sig = inspect.signature(sql_from_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::from::table_has_name():
-    assert hasattr(sql::from::Table, "name")
+def test_sql_from_table_has_name():
+    assert hasattr(sql_from_Table, "name")
     descriptor = None
-    for klass in sql::from::Table.__mro__:
+    for klass in sql_from_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1842,16 +1842,16 @@ def test_sql::from::table_has_name():
 
 
 
-def test_from::table_is_not_abstract():
-    assert not inspect.isabstract(from::Table)
+def test_from_table_is_not_abstract():
+    assert not inspect.isabstract(from_Table)
 
 
-def test_from::table_constructor_exists():
-    assert callable(from::Table.__init__)
+def test_from_table_constructor_exists():
+    assert callable(from_Table.__init__)
 
 
-def test_from::table_constructor_args():
-    sig = inspect.signature(from::Table.__init__)
+def test_from_table_constructor_args():
+    sig = inspect.signature(from_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1870,23 +1870,23 @@ def test_selectexpression_constructor_args():
 
 
 
-def test_sql::from::tableexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::from::TableExpression)
+def test_sql_from_tableexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_from_TableExpression)
 
 
-def test_sql::from::tableexpression_constructor_exists():
-    assert callable(sql::from::TableExpression.__init__)
+def test_sql_from_tableexpression_constructor_exists():
+    assert callable(sql_from_TableExpression.__init__)
 
 
-def test_sql::from::tableexpression_constructor_args():
-    sig = inspect.signature(sql::from::TableExpression.__init__)
+def test_sql_from_tableexpression_constructor_args():
+    sig = inspect.signature(sql_from_TableExpression.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_sql::from::tableexpression_has_label():
-    assert hasattr(sql::from::TableExpression, "label")
+def test_sql_from_tableexpression_has_label():
+    assert hasattr(sql_from_TableExpression, "label")
     descriptor = None
-    for klass in sql::from::TableExpression.__mro__:
+    for klass in sql_from_TableExpression.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -1894,177 +1894,177 @@ def test_sql::from::tableexpression_has_label():
 
 
 
-def test_from::tablelistexpression_is_not_abstract():
-    assert not inspect.isabstract(from::TableListExpression)
+def test_from_tablelistexpression_is_not_abstract():
+    assert not inspect.isabstract(from_TableListExpression)
 
 
-def test_from::tablelistexpression_constructor_exists():
-    assert callable(from::TableListExpression.__init__)
+def test_from_tablelistexpression_constructor_exists():
+    assert callable(from_TableListExpression.__init__)
 
 
-def test_from::tablelistexpression_constructor_args():
-    sig = inspect.signature(from::TableListExpression.__init__)
+def test_from_tablelistexpression_constructor_args():
+    sig = inspect.signature(from_TableListExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_orderby::orderbyexpression_is_not_abstract():
-    assert not inspect.isabstract(orderBy::OrderByExpression)
+def test_orderby_orderbyexpression_is_not_abstract():
+    assert not inspect.isabstract(orderBy_OrderByExpression)
 
 
-def test_orderby::orderbyexpression_constructor_exists():
-    assert callable(orderBy::OrderByExpression.__init__)
+def test_orderby_orderbyexpression_constructor_exists():
+    assert callable(orderBy_OrderByExpression.__init__)
 
 
-def test_orderby::orderbyexpression_constructor_args():
-    sig = inspect.signature(orderBy::OrderByExpression.__init__)
+def test_orderby_orderbyexpression_constructor_args():
+    sig = inspect.signature(orderBy_OrderByExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_set::setexpression_is_not_abstract():
-    assert not inspect.isabstract(set::SetExpression)
+def test_set_setexpression_is_not_abstract():
+    assert not inspect.isabstract(set_SetExpression)
 
 
-def test_set::setexpression_constructor_exists():
-    assert callable(set::SetExpression.__init__)
+def test_set_setexpression_constructor_exists():
+    assert callable(set_SetExpression.__init__)
 
 
-def test_set::setexpression_constructor_args():
-    sig = inspect.signature(set::SetExpression.__init__)
+def test_set_setexpression_constructor_args():
+    sig = inspect.signature(set_SetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_having::havingexpression_is_not_abstract():
-    assert not inspect.isabstract(having::HavingExpression)
+def test_having_havingexpression_is_not_abstract():
+    assert not inspect.isabstract(having_HavingExpression)
 
 
-def test_having::havingexpression_constructor_exists():
-    assert callable(having::HavingExpression.__init__)
+def test_having_havingexpression_constructor_exists():
+    assert callable(having_HavingExpression.__init__)
 
 
-def test_having::havingexpression_constructor_args():
-    sig = inspect.signature(having::HavingExpression.__init__)
+def test_having_havingexpression_constructor_args():
+    sig = inspect.signature(having_HavingExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_groupby::groupbyexpression_is_not_abstract():
-    assert not inspect.isabstract(groupBy::GroupByExpression)
+def test_groupby_groupbyexpression_is_not_abstract():
+    assert not inspect.isabstract(groupBy_GroupByExpression)
 
 
-def test_groupby::groupbyexpression_constructor_exists():
-    assert callable(groupBy::GroupByExpression.__init__)
+def test_groupby_groupbyexpression_constructor_exists():
+    assert callable(groupBy_GroupByExpression.__init__)
 
 
-def test_groupby::groupbyexpression_constructor_args():
-    sig = inspect.signature(groupBy::GroupByExpression.__init__)
+def test_groupby_groupbyexpression_constructor_args():
+    sig = inspect.signature(groupBy_GroupByExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_where::whereexpression_is_not_abstract():
-    assert not inspect.isabstract(where::WhereExpression)
+def test_where_whereexpression_is_not_abstract():
+    assert not inspect.isabstract(where_WhereExpression)
 
 
-def test_where::whereexpression_constructor_exists():
-    assert callable(where::WhereExpression.__init__)
+def test_where_whereexpression_constructor_exists():
+    assert callable(where_WhereExpression.__init__)
 
 
-def test_where::whereexpression_constructor_args():
-    sig = inspect.signature(where::WhereExpression.__init__)
+def test_where_whereexpression_constructor_args():
+    sig = inspect.signature(where_WhereExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_from::fromexpression_is_not_abstract():
-    assert not inspect.isabstract(from::FromExpression)
+def test_from_fromexpression_is_not_abstract():
+    assert not inspect.isabstract(from_FromExpression)
 
 
-def test_from::fromexpression_constructor_exists():
-    assert callable(from::FromExpression.__init__)
+def test_from_fromexpression_constructor_exists():
+    assert callable(from_FromExpression.__init__)
 
 
-def test_from::fromexpression_constructor_args():
-    sig = inspect.signature(from::FromExpression.__init__)
+def test_from_fromexpression_constructor_args():
+    sig = inspect.signature(from_FromExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_column::columnexpression_is_not_abstract():
-    assert not inspect.isabstract(column::ColumnExpression)
+def test_column_columnexpression_is_not_abstract():
+    assert not inspect.isabstract(column_ColumnExpression)
 
 
-def test_column::columnexpression_constructor_exists():
-    assert callable(column::ColumnExpression.__init__)
+def test_column_columnexpression_constructor_exists():
+    assert callable(column_ColumnExpression.__init__)
 
 
-def test_column::columnexpression_constructor_args():
-    sig = inspect.signature(column::ColumnExpression.__init__)
+def test_column_columnexpression_constructor_args():
+    sig = inspect.signature(column_ColumnExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_parameter::selectparameter_is_not_abstract():
-    assert not inspect.isabstract(parameter::SelectParameter)
+def test_parameter_selectparameter_is_not_abstract():
+    assert not inspect.isabstract(parameter_SelectParameter)
 
 
-def test_parameter::selectparameter_constructor_exists():
-    assert callable(parameter::SelectParameter.__init__)
+def test_parameter_selectparameter_constructor_exists():
+    assert callable(parameter_SelectParameter.__init__)
 
 
-def test_parameter::selectparameter_constructor_args():
-    sig = inspect.signature(parameter::SelectParameter.__init__)
+def test_parameter_selectparameter_constructor_args():
+    sig = inspect.signature(parameter_SelectParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::select::selectexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::select::SelectExpression)
+def test_sql_select_selectexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_select_SelectExpression)
 
 
-def test_sql::select::selectexpression_constructor_exists():
-    assert callable(sql::select::SelectExpression.__init__)
+def test_sql_select_selectexpression_constructor_exists():
+    assert callable(sql_select_SelectExpression.__init__)
 
 
-def test_sql::select::selectexpression_constructor_args():
-    sig = inspect.signature(sql::select::SelectExpression.__init__)
+def test_sql_select_selectexpression_constructor_args():
+    sig = inspect.signature(sql_select_SelectExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expression::expression_is_not_abstract():
-    assert not inspect.isabstract(expression::Expression)
+def test_expression_expression_is_not_abstract():
+    assert not inspect.isabstract(expression_Expression)
 
 
-def test_expression::expression_constructor_exists():
-    assert callable(expression::Expression.__init__)
+def test_expression_expression_constructor_exists():
+    assert callable(expression_Expression.__init__)
 
 
-def test_expression::expression_constructor_args():
-    sig = inspect.signature(expression::Expression.__init__)
+def test_expression_expression_constructor_args():
+    sig = inspect.signature(expression_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::singlecolumnexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::column::SingleColumnExpression)
+def test_sql_column_singlecolumnexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_column_SingleColumnExpression)
 
 
-def test_sql::column::singlecolumnexpression_constructor_exists():
-    assert callable(sql::column::SingleColumnExpression.__init__)
+def test_sql_column_singlecolumnexpression_constructor_exists():
+    assert callable(sql_column_SingleColumnExpression.__init__)
 
 
-def test_sql::column::singlecolumnexpression_constructor_args():
-    sig = inspect.signature(sql::column::SingleColumnExpression.__init__)
+def test_sql_column_singlecolumnexpression_constructor_args():
+    sig = inspect.signature(sql_column_SingleColumnExpression.__init__)
     params = list(sig.parameters.keys())
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_sql::column::singlecolumnexpression_has_alias():
-    assert hasattr(sql::column::SingleColumnExpression, "alias")
+def test_sql_column_singlecolumnexpression_has_alias():
+    assert hasattr(sql_column_SingleColumnExpression, "alias")
     descriptor = None
-    for klass in sql::column::SingleColumnExpression.__mro__:
+    for klass in sql_column_SingleColumnExpression.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -2072,30 +2072,30 @@ def test_sql::column::singlecolumnexpression_has_alias():
 
 
 
-def test_column::singlecolumnexpression_is_not_abstract():
-    assert not inspect.isabstract(column::SingleColumnExpression)
+def test_column_singlecolumnexpression_is_not_abstract():
+    assert not inspect.isabstract(column_SingleColumnExpression)
 
 
-def test_column::singlecolumnexpression_constructor_exists():
-    assert callable(column::SingleColumnExpression.__init__)
+def test_column_singlecolumnexpression_constructor_exists():
+    assert callable(column_SingleColumnExpression.__init__)
 
 
-def test_column::singlecolumnexpression_constructor_args():
-    sig = inspect.signature(column::SingleColumnExpression.__init__)
+def test_column_singlecolumnexpression_constructor_args():
+    sig = inspect.signature(column_SingleColumnExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::column::columnexpression_is_not_abstract():
-    assert not inspect.isabstract(sql::column::ColumnExpression)
+def test_sql_column_columnexpression_is_not_abstract():
+    assert not inspect.isabstract(sql_column_ColumnExpression)
 
 
-def test_sql::column::columnexpression_constructor_exists():
-    assert callable(sql::column::ColumnExpression.__init__)
+def test_sql_column_columnexpression_constructor_exists():
+    assert callable(sql_column_ColumnExpression.__init__)
 
 
-def test_sql::column::columnexpression_constructor_args():
-    sig = inspect.signature(sql::column::ColumnExpression.__init__)
+def test_sql_column_columnexpression_constructor_args():
+    sig = inspect.signature(sql_column_ColumnExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2114,58 +2114,58 @@ def test_selectparameter_constructor_args():
 
 
 
-def test_sql::parameter::selectparameterdistinct_is_not_abstract():
-    assert not inspect.isabstract(sql::parameter::SelectParameterDistinct)
+def test_sql_parameter_selectparameterdistinct_is_not_abstract():
+    assert not inspect.isabstract(sql_parameter_SelectParameterDistinct)
 
 
-def test_sql::parameter::selectparameterdistinct_constructor_exists():
-    assert callable(sql::parameter::SelectParameterDistinct.__init__)
+def test_sql_parameter_selectparameterdistinct_constructor_exists():
+    assert callable(sql_parameter_SelectParameterDistinct.__init__)
 
 
-def test_sql::parameter::selectparameterdistinct_constructor_args():
-    sig = inspect.signature(sql::parameter::SelectParameterDistinct.__init__)
+def test_sql_parameter_selectparameterdistinct_constructor_args():
+    sig = inspect.signature(sql_parameter_SelectParameterDistinct.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::parameter::selectparameterall_is_not_abstract():
-    assert not inspect.isabstract(sql::parameter::SelectParameterAll)
+def test_sql_parameter_selectparameterall_is_not_abstract():
+    assert not inspect.isabstract(sql_parameter_SelectParameterAll)
 
 
-def test_sql::parameter::selectparameterall_constructor_exists():
-    assert callable(sql::parameter::SelectParameterAll.__init__)
+def test_sql_parameter_selectparameterall_constructor_exists():
+    assert callable(sql_parameter_SelectParameterAll.__init__)
 
 
-def test_sql::parameter::selectparameterall_constructor_args():
-    sig = inspect.signature(sql::parameter::SelectParameterAll.__init__)
+def test_sql_parameter_selectparameterall_constructor_args():
+    sig = inspect.signature(sql_parameter_SelectParameterAll.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::parameter::selectparameter_is_not_abstract():
-    assert not inspect.isabstract(sql::parameter::SelectParameter)
+def test_sql_parameter_selectparameter_is_not_abstract():
+    assert not inspect.isabstract(sql_parameter_SelectParameter)
 
 
-def test_sql::parameter::selectparameter_constructor_exists():
-    assert callable(sql::parameter::SelectParameter.__init__)
+def test_sql_parameter_selectparameter_constructor_exists():
+    assert callable(sql_parameter_SelectParameter.__init__)
 
 
-def test_sql::parameter::selectparameter_constructor_args():
-    sig = inspect.signature(sql::parameter::SelectParameter.__init__)
+def test_sql_parameter_selectparameter_constructor_args():
+    sig = inspect.signature(sql_parameter_SelectParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_limit::limitexpression_is_not_abstract():
-    assert not inspect.isabstract(limit::LimitExpression)
+def test_limit_limitexpression_is_not_abstract():
+    assert not inspect.isabstract(limit_LimitExpression)
 
 
-def test_limit::limitexpression_constructor_exists():
-    assert callable(limit::LimitExpression.__init__)
+def test_limit_limitexpression_constructor_exists():
+    assert callable(limit_LimitExpression.__init__)
 
 
-def test_limit::limitexpression_constructor_args():
-    sig = inspect.signature(limit::LimitExpression.__init__)
+def test_limit_limitexpression_constructor_args():
+    sig = inspect.signature(limit_LimitExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2184,30 +2184,30 @@ def test_date_constructor_args():
 
 
 
-def test_sql::sqldatatypes::timestamp_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::TimeStamp)
+def test_sql_sqldatatypes_timestamp_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_TimeStamp)
 
 
-def test_sql::sqldatatypes::timestamp_constructor_exists():
-    assert callable(sql::sqlDataTypes::TimeStamp.__init__)
+def test_sql_sqldatatypes_timestamp_constructor_exists():
+    assert callable(sql_sqlDataTypes_TimeStamp.__init__)
 
 
-def test_sql::sqldatatypes::timestamp_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::TimeStamp.__init__)
+def test_sql_sqldatatypes_timestamp_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_TimeStamp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::datatype_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::DataType)
+def test_sql_sqldatatypes_datatype_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_DataType)
 
 
-def test_sql::sqldatatypes::datatype_constructor_exists():
-    assert callable(sql::sqlDataTypes::DataType.__init__)
+def test_sql_sqldatatypes_datatype_constructor_exists():
+    assert callable(sql_sqlDataTypes_DataType.__init__)
 
 
-def test_sql::sqldatatypes::datatype_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::DataType.__init__)
+def test_sql_sqldatatypes_datatype_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2226,100 +2226,100 @@ def test_datatype_constructor_args():
 
 
 
-def test_sql::sqldatatypes::float_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::Float)
+def test_sql_sqldatatypes_real_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_Real)
 
 
-def test_sql::sqldatatypes::float_constructor_exists():
-    assert callable(sql::sqlDataTypes::Float.__init__)
+def test_sql_sqldatatypes_real_constructor_exists():
+    assert callable(sql_sqlDataTypes_Real.__init__)
 
 
-def test_sql::sqldatatypes::float_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::Float.__init__)
+def test_sql_sqldatatypes_real_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_Real.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::double_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::Double)
+def test_sql_sqldatatypes_integer_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_Integer)
 
 
-def test_sql::sqldatatypes::double_constructor_exists():
-    assert callable(sql::sqlDataTypes::Double.__init__)
+def test_sql_sqldatatypes_integer_constructor_exists():
+    assert callable(sql_sqlDataTypes_Integer.__init__)
 
 
-def test_sql::sqldatatypes::double_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::Double.__init__)
+def test_sql_sqldatatypes_integer_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_Integer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::real_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::Real)
+def test_sql_sqldatatypes_date_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_Date)
 
 
-def test_sql::sqldatatypes::real_constructor_exists():
-    assert callable(sql::sqlDataTypes::Real.__init__)
+def test_sql_sqldatatypes_date_constructor_exists():
+    assert callable(sql_sqlDataTypes_Date.__init__)
 
 
-def test_sql::sqldatatypes::real_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::Real.__init__)
+def test_sql_sqldatatypes_date_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_Date.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::integer_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::Integer)
+def test_sql_sqldatatypes_double_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_Double)
 
 
-def test_sql::sqldatatypes::integer_constructor_exists():
-    assert callable(sql::sqlDataTypes::Integer.__init__)
+def test_sql_sqldatatypes_double_constructor_exists():
+    assert callable(sql_sqlDataTypes_Double.__init__)
 
 
-def test_sql::sqldatatypes::integer_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::Integer.__init__)
+def test_sql_sqldatatypes_double_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_Double.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::boolean_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::Boolean)
+def test_sql_sqldatatypes_boolean_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_Boolean)
 
 
-def test_sql::sqldatatypes::boolean_constructor_exists():
-    assert callable(sql::sqlDataTypes::Boolean.__init__)
+def test_sql_sqldatatypes_boolean_constructor_exists():
+    assert callable(sql_sqlDataTypes_Boolean.__init__)
 
 
-def test_sql::sqldatatypes::boolean_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::Boolean.__init__)
+def test_sql_sqldatatypes_boolean_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_Boolean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::date_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::Date)
+def test_sql_sqldatatypes_float_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_Float)
 
 
-def test_sql::sqldatatypes::date_constructor_exists():
-    assert callable(sql::sqlDataTypes::Date.__init__)
+def test_sql_sqldatatypes_float_constructor_exists():
+    assert callable(sql_sqlDataTypes_Float.__init__)
 
 
-def test_sql::sqldatatypes::date_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::Date.__init__)
+def test_sql_sqldatatypes_float_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_Float.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::sqldatatypes::string_is_not_abstract():
-    assert not inspect.isabstract(sql::sqlDataTypes::String)
+def test_sql_sqldatatypes_string_is_not_abstract():
+    assert not inspect.isabstract(sql_sqlDataTypes_String)
 
 
-def test_sql::sqldatatypes::string_constructor_exists():
-    assert callable(sql::sqlDataTypes::String.__init__)
+def test_sql_sqldatatypes_string_constructor_exists():
+    assert callable(sql_sqlDataTypes_String.__init__)
 
 
-def test_sql::sqldatatypes::string_constructor_args():
-    sig = inspect.signature(sql::sqlDataTypes::String.__init__)
+def test_sql_sqldatatypes_string_constructor_args():
+    sig = inspect.signature(sql_sqlDataTypes_String.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2334,1026 +2334,973 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleTerm_strategy = st.builds(
-    SimpleTerm,
+value_ValueOperation_strategy = st.builds(
+    value_ValueOperation,
 )
-sql::term::SimpleTermInteger_strategy = st.builds(
-    sql::term::SimpleTermInteger,
-)
-sql::term::SimpleTermFloat_strategy = st.builds(
-    sql::term::SimpleTermFloat,
-)
-sql::term::SimpleTermString_strategy = st.builds(
-    sql::term::SimpleTermString,
-)
-value::ValueOperation_strategy = st.builds(
-    value::ValueOperation,
-)
-term::Term_strategy = st.builds(
-    term::Term,
+term_Term_strategy = st.builds(
+    term_Term,
 )
 Value_strategy = st.builds(
     Value,
 )
-sql::value::SimpleValue_strategy = st.builds(
-    sql::value::SimpleValue,
+sql_value_SimpleValue_strategy = st.builds(
+    sql_value_SimpleValue,
 )
-sql::value::ValueOperation_strategy = st.builds(
-    sql::value::ValueOperation,
+sql_value_ValueOperation_strategy = st.builds(
+    sql_value_ValueOperation,
 )
 ValueFrontOperation_strategy = st.builds(
     ValueFrontOperation,
 )
-sql::value::ValueFrontOperationMinus_strategy = st.builds(
-    sql::value::ValueFrontOperationMinus,
+sql_value_ValueFrontOperationMinus_strategy = st.builds(
+    sql_value_ValueFrontOperationMinus,
 )
-sql::value::ValueFrontOperationPlus_strategy = st.builds(
-    sql::value::ValueFrontOperationPlus,
+sql_value_ValueFrontOperationPlus_strategy = st.builds(
+    sql_value_ValueFrontOperationPlus,
 )
 ValueOperation_strategy = st.builds(
     ValueOperation,
 )
-sql::value::ValueOperationParallel_strategy = st.builds(
-    sql::value::ValueOperationParallel,
+sql_value_ValueOperationMultiply_strategy = st.builds(
+    sql_value_ValueOperationMultiply,
 )
-sql::value::ValueOperationDivide_strategy = st.builds(
-    sql::value::ValueOperationDivide,
+sql_value_ValueOperationDivide_strategy = st.builds(
+    sql_value_ValueOperationDivide,
 )
-sql::value::ValueOperationMultiply_strategy = st.builds(
-    sql::value::ValueOperationMultiply,
+sql_value_ValueOperationParallel_strategy = st.builds(
+    sql_value_ValueOperationParallel,
 )
-sql::value::ValueFrontOperation_strategy = st.builds(
-    sql::value::ValueFrontOperation,
+sql_value_ValueFrontOperation_strategy = st.builds(
+    sql_value_ValueFrontOperation,
 )
-sql::value::Value_strategy = st.builds(
-    sql::value::Value,
-)
-sql::term::SimpleTermChar_strategy = st.builds(
-    sql::term::SimpleTermChar,
+sql_value_Value_strategy = st.builds(
+    sql_value_Value,
 )
 BooleanTerm_strategy = st.builds(
     BooleanTerm,
 )
-sql::term::BooleanTermFalse_strategy = st.builds(
-    sql::term::BooleanTermFalse,
+sql_term_BooleanTermFalse_strategy = st.builds(
+    sql_term_BooleanTermFalse,
 )
-sql::term::BooleanTermTrue_strategy = st.builds(
-    sql::term::BooleanTermTrue,
+sql_term_BooleanTermTrue_strategy = st.builds(
+    sql_term_BooleanTermTrue,
 )
 Term_strategy = st.builds(
     Term,
 )
-sql::term::NullTerm_strategy = st.builds(
-    sql::term::NullTerm,
+sql_term_ColumnTerm_strategy = st.builds(
+    sql_term_ColumnTerm,
 )
-sql::term::StarTerm_strategy = st.builds(
-    sql::term::StarTerm,
-)
-sql::term::SimpleTerm_strategy = st.builds(
-    sql::term::SimpleTerm,
+sql_term_SimpleTerm_strategy = st.builds(
+    sql_term_SimpleTerm,
     value=
         safe_text
 )
-sql::term::CountStarTerm_strategy = st.builds(
-    sql::term::CountStarTerm,
+sql_term_NullTerm_strategy = st.builds(
+    sql_term_NullTerm,
 )
-sql::term::ColumnTerm_strategy = st.builds(
-    sql::term::ColumnTerm,
+sql_term_BooleanTerm_strategy = st.builds(
+    sql_term_BooleanTerm,
 )
-sql::term::BooleanTerm_strategy = st.builds(
-    sql::term::BooleanTerm,
+sql_term_Term_strategy = st.builds(
+    sql_term_Term,
 )
-sql::term::Term_strategy = st.builds(
-    sql::term::Term,
-)
-sql::value::FunctionValue_strategy = st.builds(
-    sql::value::FunctionValue,
+sql_value_FunctionValue_strategy = st.builds(
+    sql_value_FunctionValue,
     functionName=
         safe_text
 )
-sql::value::ConditionValue_strategy = st.builds(
-    sql::value::ConditionValue,
+sql_value_ConditionValue_strategy = st.builds(
+    sql_value_ConditionValue,
 )
-value::ValueFrontOperation_strategy = st.builds(
-    value::ValueFrontOperation,
+value_ValueFrontOperation_strategy = st.builds(
+    value_ValueFrontOperation,
 )
-condition::ConditionOperation_strategy = st.builds(
-    condition::ConditionOperation,
+condition_ConditionOperation_strategy = st.builds(
+    condition_ConditionOperation,
 )
 SimpleCondition_strategy = st.builds(
     SimpleCondition,
 )
-sql::condition::IsNullCondition_strategy = st.builds(
-    sql::condition::IsNullCondition,
+sql_condition_IsNullCondition_strategy = st.builds(
+    sql_condition_IsNullCondition,
 )
-sql::condition::OperationCondition_strategy = st.builds(
-    sql::condition::OperationCondition,
+sql_condition_OperationCondition_strategy = st.builds(
+    sql_condition_OperationCondition,
 )
-value::Value_strategy = st.builds(
-    value::Value,
+value_Value_strategy = st.builds(
+    value_Value,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-sql::condition::SimpleCondition_strategy = st.builds(
-    sql::condition::SimpleCondition,
+sql_condition_SimpleCondition_strategy = st.builds(
+    sql_condition_SimpleCondition,
 )
-sql::condition::Condition_strategy = st.builds(
-    sql::condition::Condition,
+sql_condition_Condition_strategy = st.builds(
+    sql_condition_Condition,
 )
 AndOrExpressionOperation_strategy = st.builds(
     AndOrExpressionOperation,
 )
-sql::expression::ExpressionOperationOr_strategy = st.builds(
-    sql::expression::ExpressionOperationOr,
+sql_expression_ExpressionOperationOr_strategy = st.builds(
+    sql_expression_ExpressionOperationOr,
 )
-sql::expression::ExpressionOperationAnd_strategy = st.builds(
-    sql::expression::ExpressionOperationAnd,
+sql_expression_ExpressionOperationAnd_strategy = st.builds(
+    sql_expression_ExpressionOperationAnd,
 )
 ExpressionOperation_strategy = st.builds(
     ExpressionOperation,
 )
-sql::expression::ExpressionOperationNot_strategy = st.builds(
-    sql::expression::ExpressionOperationNot,
+sql_expression_ExpressionOperationNot_strategy = st.builds(
+    sql_expression_ExpressionOperationNot,
 )
-sql::expression::AndOrExpressionOperation_strategy = st.builds(
-    sql::expression::AndOrExpressionOperation,
+sql_expression_AndOrExpressionOperation_strategy = st.builds(
+    sql_expression_AndOrExpressionOperation,
 )
 ConditionOperation_strategy = st.builds(
     ConditionOperation,
 )
-sql::condition::ConditionOperationUnEqual2_strategy = st.builds(
-    sql::condition::ConditionOperationUnEqual2,
+sql_condition_ConditionOperationUnEqual2_strategy = st.builds(
+    sql_condition_ConditionOperationUnEqual2,
 )
-sql::condition::ConditionOperationGreatEqual_strategy = st.builds(
-    sql::condition::ConditionOperationGreatEqual,
+sql_condition_ConditionOperationLessEqual_strategy = st.builds(
+    sql_condition_ConditionOperationLessEqual,
 )
-sql::condition::ConditionOperationLesser_strategy = st.builds(
-    sql::condition::ConditionOperationLesser,
+sql_condition_ConditionOperationLesser_strategy = st.builds(
+    sql_condition_ConditionOperationLesser,
 )
-sql::condition::ConditionOperationUnEqual_strategy = st.builds(
-    sql::condition::ConditionOperationUnEqual,
+sql_condition_ConditionOperationGreatEqual_strategy = st.builds(
+    sql_condition_ConditionOperationGreatEqual,
 )
-sql::condition::ConditionOperationGreater_strategy = st.builds(
-    sql::condition::ConditionOperationGreater,
+sql_condition_ConditionOperationGreater_strategy = st.builds(
+    sql_condition_ConditionOperationGreater,
 )
-sql::condition::ConditionOperationLessEqual_strategy = st.builds(
-    sql::condition::ConditionOperationLessEqual,
+sql_condition_ConditionOperationUnEqual_strategy = st.builds(
+    sql_condition_ConditionOperationUnEqual,
 )
-sql::condition::ConditionOperationEqual_strategy = st.builds(
-    sql::condition::ConditionOperationEqual,
+sql_condition_ConditionOperationEqual_strategy = st.builds(
+    sql_condition_ConditionOperationEqual,
 )
-sql::condition::ConditionOperation_strategy = st.builds(
-    sql::condition::ConditionOperation,
+sql_condition_ConditionOperation_strategy = st.builds(
+    sql_condition_ConditionOperation,
 )
-sql::condition::LikeCondition_strategy = st.builds(
-    sql::condition::LikeCondition,
+sql_condition_LikeCondition_strategy = st.builds(
+    sql_condition_LikeCondition,
 )
-sql::condition::InCondition_strategy = st.builds(
-    sql::condition::InCondition,
+sql_condition_InCondition_strategy = st.builds(
+    sql_condition_InCondition,
 )
-sql::condition::BetweenCondition_strategy = st.builds(
-    sql::condition::BetweenCondition,
+sql_condition_BetweenCondition_strategy = st.builds(
+    sql_condition_BetweenCondition,
 )
-sql::condition::ExistsCondition_strategy = st.builds(
-    sql::condition::ExistsCondition,
+sql_condition_ExistsCondition_strategy = st.builds(
+    sql_condition_ExistsCondition,
 )
-parameter::SelectParameterDistinct_strategy = st.builds(
-    parameter::SelectParameterDistinct,
+parameter_SelectParameterDistinct_strategy = st.builds(
+    parameter_SelectParameterDistinct,
 )
 SetOperation_strategy = st.builds(
     SetOperation,
 )
-sql::set::SetOperationMinus_strategy = st.builds(
-    sql::set::SetOperationMinus,
+sql_set_SetOperationMinus_strategy = st.builds(
+    sql_set_SetOperationMinus,
 )
-sql::set::SetOperationExcept_strategy = st.builds(
-    sql::set::SetOperationExcept,
+sql_set_SetOperationExcept_strategy = st.builds(
+    sql_set_SetOperationExcept,
 )
-sql::set::SetOperationUnion_strategy = st.builds(
-    sql::set::SetOperationUnion,
+sql_set_SetOperationUnion_strategy = st.builds(
+    sql_set_SetOperationUnion,
 )
-sql::set::SetOperation_strategy = st.builds(
-    sql::set::SetOperation,
+sql_set_SetOperation_strategy = st.builds(
+    sql_set_SetOperation,
 )
-set::SetOperation_strategy = st.builds(
-    set::SetOperation,
+set_SetOperation_strategy = st.builds(
+    set_SetOperation,
 )
-sql::expression::ExpressionOperation_strategy = st.builds(
-    sql::expression::ExpressionOperation,
+sql_expression_ExpressionOperation_strategy = st.builds(
+    sql_expression_ExpressionOperation,
 )
-expression::ExpressionOperationNot_strategy = st.builds(
-    expression::ExpressionOperationNot,
+expression_ExpressionOperationNot_strategy = st.builds(
+    expression_ExpressionOperationNot,
 )
-condition::Condition_strategy = st.builds(
-    condition::Condition,
+condition_Condition_strategy = st.builds(
+    condition_Condition,
 )
-expression::AndOrExpressionOperation_strategy = st.builds(
-    expression::AndOrExpressionOperation,
+expression_AndOrExpressionOperation_strategy = st.builds(
+    expression_AndOrExpressionOperation,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-sql::expression::SimpleExpression_strategy = st.builds(
-    sql::expression::SimpleExpression,
+sql_expression_SimpleExpression_strategy = st.builds(
+    sql_expression_SimpleExpression,
 )
-sql::expression::Expression_strategy = st.builds(
-    sql::expression::Expression,
+sql_expression_Expression_strategy = st.builds(
+    sql_expression_Expression,
 )
-sql::limit::LimitExpression_strategy = st.builds(
-    sql::limit::LimitExpression,
-    offset=
-        safe_text,
+sql_limit_LimitExpression_strategy = st.builds(
+    sql_limit_LimitExpression,
     limit=
+        safe_text,
+    offset=
         safe_text
 )
-sql::set::SetOperationIntersect_strategy = st.builds(
-    sql::set::SetOperationIntersect,
+sql_set_SetOperationIntersect_strategy = st.builds(
+    sql_set_SetOperationIntersect,
 )
-column::Column_strategy = st.builds(
-    column::Column,
+column_Column_strategy = st.builds(
+    column_Column,
 )
 OrderByExpression_strategy = st.builds(
     OrderByExpression,
 )
-sql::orderBy::OrderByColumnExpression_strategy = st.builds(
-    sql::orderBy::OrderByColumnExpression,
+sql_orderBy_OrderByColumnExpression_strategy = st.builds(
+    sql_orderBy_OrderByColumnExpression,
 )
-orderBy::OrderByParameter_strategy = st.builds(
-    orderBy::OrderByParameter,
+orderBy_OrderByParameter_strategy = st.builds(
+    orderBy_OrderByParameter,
 )
-sql::orderBy::OrderByExpression_strategy = st.builds(
-    sql::orderBy::OrderByExpression,
+sql_orderBy_OrderByExpression_strategy = st.builds(
+    sql_orderBy_OrderByExpression,
 )
-sql::where::WhereExpression_strategy = st.builds(
-    sql::where::WhereExpression,
+sql_where_WhereExpression_strategy = st.builds(
+    sql_where_WhereExpression,
 )
 JoinOperation_strategy = st.builds(
     JoinOperation,
 )
-sql::from::JoinOperationLeft_strategy = st.builds(
-    sql::from::JoinOperationLeft,
+sql_from_JoinOperationRight_strategy = st.builds(
+    sql_from_JoinOperationRight,
 )
-sql::from::JoinOperationRight_strategy = st.builds(
-    sql::from::JoinOperationRight,
+sql_from_JoinOperationOuter_strategy = st.builds(
+    sql_from_JoinOperationOuter,
 )
-sql::from::JoinOperationOuter_strategy = st.builds(
-    sql::from::JoinOperationOuter,
+sql_from_JoinOperationLeft_strategy = st.builds(
+    sql_from_JoinOperationLeft,
 )
-sql::from::JoinOperationInner_strategy = st.builds(
-    sql::from::JoinOperationInner,
+sql_from_JoinOperationInner_strategy = st.builds(
+    sql_from_JoinOperationInner,
 )
-sql::from::JoinOperation_strategy = st.builds(
-    sql::from::JoinOperation,
+sql_from_JoinOperation_strategy = st.builds(
+    sql_from_JoinOperation,
 )
-sql::set::SetExpression_strategy = st.builds(
-    sql::set::SetExpression,
+sql_set_SetExpression_strategy = st.builds(
+    sql_set_SetExpression,
 )
-sql::having::HavingExpression_strategy = st.builds(
-    sql::having::HavingExpression,
+sql_having_HavingExpression_strategy = st.builds(
+    sql_having_HavingExpression,
 )
-sql::groupBy::GroupByExpression_strategy = st.builds(
-    sql::groupBy::GroupByExpression,
+sql_groupBy_GroupByExpression_strategy = st.builds(
+    sql_groupBy_GroupByExpression,
 )
 OrderByParameter_strategy = st.builds(
     OrderByParameter,
 )
-sql::orderBy::OrderByParameterDesc_strategy = st.builds(
-    sql::orderBy::OrderByParameterDesc,
+sql_orderBy_OrderByParameterDesc_strategy = st.builds(
+    sql_orderBy_OrderByParameterDesc,
 )
-sql::orderBy::OrderByParameterAsc_strategy = st.builds(
-    sql::orderBy::OrderByParameterAsc,
+sql_orderBy_OrderByParameterAsc_strategy = st.builds(
+    sql_orderBy_OrderByParameterAsc,
 )
-sql::orderBy::OrderByParameter_strategy = st.builds(
-    sql::orderBy::OrderByParameter,
+sql_orderBy_OrderByParameter_strategy = st.builds(
+    sql_orderBy_OrderByParameter,
 )
-sql::orderBy::OrderBySelectExpression_strategy = st.builds(
-    sql::orderBy::OrderBySelectExpression,
+sql_orderBy_OrderBySelectExpression_strategy = st.builds(
+    sql_orderBy_OrderBySelectExpression,
 )
-sql::orderBy::OrderByAliasExpression_strategy = st.builds(
-    sql::orderBy::OrderByAliasExpression,
+sql_orderBy_OrderByAliasExpression_strategy = st.builds(
+    sql_orderBy_OrderByAliasExpression,
     alias=
         safe_text
 )
-sql::from::FromExpression_strategy = st.builds(
-    sql::from::FromExpression,
+sql_from_FromExpression_strategy = st.builds(
+    sql_from_FromExpression,
 )
-sql::column::Column_strategy = st.builds(
-    sql::column::Column,
+sql_column_Column_strategy = st.builds(
+    sql_column_Column,
     name=
         safe_text
 )
 ColumnOperation_strategy = st.builds(
     ColumnOperation,
 )
-sql::column::ColumnOperationAvg_strategy = st.builds(
-    sql::column::ColumnOperationAvg,
+sql_column_ColumnOperationSum_strategy = st.builds(
+    sql_column_ColumnOperationSum,
 )
-sql::column::ColumnOperationSome_strategy = st.builds(
-    sql::column::ColumnOperationSome,
+sql_column_ColumnOperationSome_strategy = st.builds(
+    sql_column_ColumnOperationSome,
 )
-sql::column::ColumnOperationSum_strategy = st.builds(
-    sql::column::ColumnOperationSum,
+sql_column_ColumnOperationAvg_strategy = st.builds(
+    sql_column_ColumnOperationAvg,
 )
-sql::column::ColumnOperationEvery_strategy = st.builds(
-    sql::column::ColumnOperationEvery,
+sql_column_ColumnOperationMin_strategy = st.builds(
+    sql_column_ColumnOperationMin,
 )
-sql::column::ColumnOperationMax_strategy = st.builds(
-    sql::column::ColumnOperationMax,
+sql_column_ColumnOperationMax_strategy = st.builds(
+    sql_column_ColumnOperationMax,
 )
-sql::column::ColumnOperationMin_strategy = st.builds(
-    sql::column::ColumnOperationMin,
+sql_column_ColumnOperationEvery_strategy = st.builds(
+    sql_column_ColumnOperationEvery,
 )
-sql::column::ColumnOperationCount_strategy = st.builds(
-    sql::column::ColumnOperationCount,
+sql_column_ColumnOperationCount_strategy = st.builds(
+    sql_column_ColumnOperationCount,
 )
-sql::column::ColumnOperation_strategy = st.builds(
-    sql::column::ColumnOperation,
+sql_column_ColumnOperation_strategy = st.builds(
+    sql_column_ColumnOperation,
 )
-column::ColumnOperation_strategy = st.builds(
-    column::ColumnOperation,
+column_ColumnOperation_strategy = st.builds(
+    column_ColumnOperation,
 )
-from::JoinOperation_strategy = st.builds(
-    from::JoinOperation,
+sql_term_StarTerm_strategy = st.builds(
+    sql_term_StarTerm,
 )
-sql::from::JoinTableExpression_strategy = st.builds(
-    sql::from::JoinTableExpression,
+sql_term_CountStarTerm_strategy = st.builds(
+    sql_term_CountStarTerm,
 )
-from::JoinTableExpression_strategy = st.builds(
-    from::JoinTableExpression,
+SimpleTerm_strategy = st.builds(
+    SimpleTerm,
 )
-from::TableExpression_strategy = st.builds(
-    from::TableExpression,
+sql_term_SimpleTermInteger_strategy = st.builds(
+    sql_term_SimpleTermInteger,
 )
-sql::from::TableListExpression_strategy = st.builds(
-    sql::from::TableListExpression,
+sql_term_SimpleTermChar_strategy = st.builds(
+    sql_term_SimpleTermChar,
 )
-sql::from::Table_strategy = st.builds(
-    sql::from::Table,
+sql_term_SimpleTermFloat_strategy = st.builds(
+    sql_term_SimpleTermFloat,
+)
+sql_term_SimpleTermString_strategy = st.builds(
+    sql_term_SimpleTermString,
+)
+from_JoinOperation_strategy = st.builds(
+    from_JoinOperation,
+)
+sql_from_JoinTableExpression_strategy = st.builds(
+    sql_from_JoinTableExpression,
+)
+from_JoinTableExpression_strategy = st.builds(
+    from_JoinTableExpression,
+)
+from_TableExpression_strategy = st.builds(
+    from_TableExpression,
+)
+sql_from_TableListExpression_strategy = st.builds(
+    sql_from_TableListExpression,
+)
+sql_from_Table_strategy = st.builds(
+    sql_from_Table,
     name=
         safe_text
 )
-from::Table_strategy = st.builds(
-    from::Table,
+from_Table_strategy = st.builds(
+    from_Table,
 )
 SelectExpression_strategy = st.builds(
     SelectExpression,
 )
-sql::from::TableExpression_strategy = st.builds(
-    sql::from::TableExpression,
+sql_from_TableExpression_strategy = st.builds(
+    sql_from_TableExpression,
     label=
         safe_text
 )
-from::TableListExpression_strategy = st.builds(
-    from::TableListExpression,
+from_TableListExpression_strategy = st.builds(
+    from_TableListExpression,
 )
-orderBy::OrderByExpression_strategy = st.builds(
-    orderBy::OrderByExpression,
+orderBy_OrderByExpression_strategy = st.builds(
+    orderBy_OrderByExpression,
 )
-set::SetExpression_strategy = st.builds(
-    set::SetExpression,
+set_SetExpression_strategy = st.builds(
+    set_SetExpression,
 )
-having::HavingExpression_strategy = st.builds(
-    having::HavingExpression,
+having_HavingExpression_strategy = st.builds(
+    having_HavingExpression,
 )
-groupBy::GroupByExpression_strategy = st.builds(
-    groupBy::GroupByExpression,
+groupBy_GroupByExpression_strategy = st.builds(
+    groupBy_GroupByExpression,
 )
-where::WhereExpression_strategy = st.builds(
-    where::WhereExpression,
+where_WhereExpression_strategy = st.builds(
+    where_WhereExpression,
 )
-from::FromExpression_strategy = st.builds(
-    from::FromExpression,
+from_FromExpression_strategy = st.builds(
+    from_FromExpression,
 )
-column::ColumnExpression_strategy = st.builds(
-    column::ColumnExpression,
+column_ColumnExpression_strategy = st.builds(
+    column_ColumnExpression,
 )
-parameter::SelectParameter_strategy = st.builds(
-    parameter::SelectParameter,
+parameter_SelectParameter_strategy = st.builds(
+    parameter_SelectParameter,
 )
-sql::select::SelectExpression_strategy = st.builds(
-    sql::select::SelectExpression,
+sql_select_SelectExpression_strategy = st.builds(
+    sql_select_SelectExpression,
 )
-expression::Expression_strategy = st.builds(
-    expression::Expression,
+expression_Expression_strategy = st.builds(
+    expression_Expression,
 )
-sql::column::SingleColumnExpression_strategy = st.builds(
-    sql::column::SingleColumnExpression,
+sql_column_SingleColumnExpression_strategy = st.builds(
+    sql_column_SingleColumnExpression,
     alias=
         safe_text
 )
-column::SingleColumnExpression_strategy = st.builds(
-    column::SingleColumnExpression,
+column_SingleColumnExpression_strategy = st.builds(
+    column_SingleColumnExpression,
 )
-sql::column::ColumnExpression_strategy = st.builds(
-    sql::column::ColumnExpression,
+sql_column_ColumnExpression_strategy = st.builds(
+    sql_column_ColumnExpression,
 )
 SelectParameter_strategy = st.builds(
     SelectParameter,
 )
-sql::parameter::SelectParameterDistinct_strategy = st.builds(
-    sql::parameter::SelectParameterDistinct,
+sql_parameter_SelectParameterDistinct_strategy = st.builds(
+    sql_parameter_SelectParameterDistinct,
 )
-sql::parameter::SelectParameterAll_strategy = st.builds(
-    sql::parameter::SelectParameterAll,
+sql_parameter_SelectParameterAll_strategy = st.builds(
+    sql_parameter_SelectParameterAll,
 )
-sql::parameter::SelectParameter_strategy = st.builds(
-    sql::parameter::SelectParameter,
+sql_parameter_SelectParameter_strategy = st.builds(
+    sql_parameter_SelectParameter,
 )
-limit::LimitExpression_strategy = st.builds(
-    limit::LimitExpression,
+limit_LimitExpression_strategy = st.builds(
+    limit_LimitExpression,
 )
 Date_strategy = st.builds(
     Date,
 )
-sql::sqlDataTypes::TimeStamp_strategy = st.builds(
-    sql::sqlDataTypes::TimeStamp,
+sql_sqlDataTypes_TimeStamp_strategy = st.builds(
+    sql_sqlDataTypes_TimeStamp,
 )
-sql::sqlDataTypes::DataType_strategy = st.builds(
-    sql::sqlDataTypes::DataType,
+sql_sqlDataTypes_DataType_strategy = st.builds(
+    sql_sqlDataTypes_DataType,
 )
 DataType_strategy = st.builds(
     DataType,
 )
-sql::sqlDataTypes::Float_strategy = st.builds(
-    sql::sqlDataTypes::Float,
+sql_sqlDataTypes_Real_strategy = st.builds(
+    sql_sqlDataTypes_Real,
 )
-sql::sqlDataTypes::Double_strategy = st.builds(
-    sql::sqlDataTypes::Double,
+sql_sqlDataTypes_Integer_strategy = st.builds(
+    sql_sqlDataTypes_Integer,
 )
-sql::sqlDataTypes::Real_strategy = st.builds(
-    sql::sqlDataTypes::Real,
+sql_sqlDataTypes_Date_strategy = st.builds(
+    sql_sqlDataTypes_Date,
 )
-sql::sqlDataTypes::Integer_strategy = st.builds(
-    sql::sqlDataTypes::Integer,
+sql_sqlDataTypes_Double_strategy = st.builds(
+    sql_sqlDataTypes_Double,
 )
-sql::sqlDataTypes::Boolean_strategy = st.builds(
-    sql::sqlDataTypes::Boolean,
+sql_sqlDataTypes_Boolean_strategy = st.builds(
+    sql_sqlDataTypes_Boolean,
 )
-sql::sqlDataTypes::Date_strategy = st.builds(
-    sql::sqlDataTypes::Date,
+sql_sqlDataTypes_Float_strategy = st.builds(
+    sql_sqlDataTypes_Float,
 )
-sql::sqlDataTypes::String_strategy = st.builds(
-    sql::sqlDataTypes::String,
+sql_sqlDataTypes_String_strategy = st.builds(
+    sql_sqlDataTypes_String,
 )
 
-@given(instance=SimpleTerm_strategy)
+@given(instance=value_ValueOperation_strategy)
 @settings(max_examples=50)
-def test_simpleterm_instantiation(instance):
-    assert isinstance(instance, SimpleTerm)
+def test_value_valueoperation_instantiation(instance):
+    assert isinstance(instance, value_ValueOperation)
 
-@given(instance=sql::term::SimpleTermInteger_strategy)
+@given(instance=term_Term_strategy)
 @settings(max_examples=50)
-def test_sql::term::simpleterminteger_instantiation(instance):
-    assert isinstance(instance, sql::term::SimpleTermInteger)
-
-@given(instance=sql::term::SimpleTermFloat_strategy)
-@settings(max_examples=50)
-def test_sql::term::simpletermfloat_instantiation(instance):
-    assert isinstance(instance, sql::term::SimpleTermFloat)
-
-@given(instance=sql::term::SimpleTermString_strategy)
-@settings(max_examples=50)
-def test_sql::term::simpletermstring_instantiation(instance):
-    assert isinstance(instance, sql::term::SimpleTermString)
-
-@given(instance=value::ValueOperation_strategy)
-@settings(max_examples=50)
-def test_value::valueoperation_instantiation(instance):
-    assert isinstance(instance, value::ValueOperation)
-
-@given(instance=term::Term_strategy)
-@settings(max_examples=50)
-def test_term::term_instantiation(instance):
-    assert isinstance(instance, term::Term)
+def test_term_term_instantiation(instance):
+    assert isinstance(instance, term_Term)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=sql::value::SimpleValue_strategy)
+@given(instance=sql_value_SimpleValue_strategy)
 @settings(max_examples=50)
-def test_sql::value::simplevalue_instantiation(instance):
-    assert isinstance(instance, sql::value::SimpleValue)
+def test_sql_value_simplevalue_instantiation(instance):
+    assert isinstance(instance, sql_value_SimpleValue)
 
-@given(instance=sql::value::ValueOperation_strategy)
+@given(instance=sql_value_ValueOperation_strategy)
 @settings(max_examples=50)
-def test_sql::value::valueoperation_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueOperation)
+def test_sql_value_valueoperation_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueOperation)
 
 @given(instance=ValueFrontOperation_strategy)
 @settings(max_examples=50)
 def test_valuefrontoperation_instantiation(instance):
     assert isinstance(instance, ValueFrontOperation)
 
-@given(instance=sql::value::ValueFrontOperationMinus_strategy)
+@given(instance=sql_value_ValueFrontOperationMinus_strategy)
 @settings(max_examples=50)
-def test_sql::value::valuefrontoperationminus_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueFrontOperationMinus)
+def test_sql_value_valuefrontoperationminus_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueFrontOperationMinus)
 
-@given(instance=sql::value::ValueFrontOperationPlus_strategy)
+@given(instance=sql_value_ValueFrontOperationPlus_strategy)
 @settings(max_examples=50)
-def test_sql::value::valuefrontoperationplus_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueFrontOperationPlus)
+def test_sql_value_valuefrontoperationplus_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueFrontOperationPlus)
 
 @given(instance=ValueOperation_strategy)
 @settings(max_examples=50)
 def test_valueoperation_instantiation(instance):
     assert isinstance(instance, ValueOperation)
 
-@given(instance=sql::value::ValueOperationParallel_strategy)
+@given(instance=sql_value_ValueOperationMultiply_strategy)
 @settings(max_examples=50)
-def test_sql::value::valueoperationparallel_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueOperationParallel)
+def test_sql_value_valueoperationmultiply_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueOperationMultiply)
 
-@given(instance=sql::value::ValueOperationDivide_strategy)
+@given(instance=sql_value_ValueOperationDivide_strategy)
 @settings(max_examples=50)
-def test_sql::value::valueoperationdivide_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueOperationDivide)
+def test_sql_value_valueoperationdivide_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueOperationDivide)
 
-@given(instance=sql::value::ValueOperationMultiply_strategy)
+@given(instance=sql_value_ValueOperationParallel_strategy)
 @settings(max_examples=50)
-def test_sql::value::valueoperationmultiply_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueOperationMultiply)
+def test_sql_value_valueoperationparallel_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueOperationParallel)
 
-@given(instance=sql::value::ValueFrontOperation_strategy)
+@given(instance=sql_value_ValueFrontOperation_strategy)
 @settings(max_examples=50)
-def test_sql::value::valuefrontoperation_instantiation(instance):
-    assert isinstance(instance, sql::value::ValueFrontOperation)
+def test_sql_value_valuefrontoperation_instantiation(instance):
+    assert isinstance(instance, sql_value_ValueFrontOperation)
 
-@given(instance=sql::value::Value_strategy)
+@given(instance=sql_value_Value_strategy)
 @settings(max_examples=50)
-def test_sql::value::value_instantiation(instance):
-    assert isinstance(instance, sql::value::Value)
-
-@given(instance=sql::term::SimpleTermChar_strategy)
-@settings(max_examples=50)
-def test_sql::term::simpletermchar_instantiation(instance):
-    assert isinstance(instance, sql::term::SimpleTermChar)
+def test_sql_value_value_instantiation(instance):
+    assert isinstance(instance, sql_value_Value)
 
 @given(instance=BooleanTerm_strategy)
 @settings(max_examples=50)
 def test_booleanterm_instantiation(instance):
     assert isinstance(instance, BooleanTerm)
 
-@given(instance=sql::term::BooleanTermFalse_strategy)
+@given(instance=sql_term_BooleanTermFalse_strategy)
 @settings(max_examples=50)
-def test_sql::term::booleantermfalse_instantiation(instance):
-    assert isinstance(instance, sql::term::BooleanTermFalse)
+def test_sql_term_booleantermfalse_instantiation(instance):
+    assert isinstance(instance, sql_term_BooleanTermFalse)
 
-@given(instance=sql::term::BooleanTermTrue_strategy)
+@given(instance=sql_term_BooleanTermTrue_strategy)
 @settings(max_examples=50)
-def test_sql::term::booleantermtrue_instantiation(instance):
-    assert isinstance(instance, sql::term::BooleanTermTrue)
+def test_sql_term_booleantermtrue_instantiation(instance):
+    assert isinstance(instance, sql_term_BooleanTermTrue)
 
 @given(instance=Term_strategy)
 @settings(max_examples=50)
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=sql::term::NullTerm_strategy)
+@given(instance=sql_term_ColumnTerm_strategy)
 @settings(max_examples=50)
-def test_sql::term::nullterm_instantiation(instance):
-    assert isinstance(instance, sql::term::NullTerm)
+def test_sql_term_columnterm_instantiation(instance):
+    assert isinstance(instance, sql_term_ColumnTerm)
 
-@given(instance=sql::term::StarTerm_strategy)
+@given(instance=sql_term_SimpleTerm_strategy)
 @settings(max_examples=50)
-def test_sql::term::starterm_instantiation(instance):
-    assert isinstance(instance, sql::term::StarTerm)
-
-@given(instance=sql::term::SimpleTerm_strategy)
-@settings(max_examples=50)
-def test_sql::term::simpleterm_instantiation(instance):
-    assert isinstance(instance, sql::term::SimpleTerm)
-
-@given(instance=sql::term::SimpleTerm_strategy)
-def test_sql::term::simpleterm_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_sql_term_simpleterm_instantiation(instance):
+    assert isinstance(instance, sql_term_SimpleTerm)
 
 
-@given(instance=sql::term::SimpleTerm_strategy)
-def test_sql::term::simpleterm_value_setter(instance):
+
+@given(instance=sql_term_SimpleTerm_strategy)
+def test_sql_term_simpleterm_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=sql::term::CountStarTerm_strategy)
+@given(instance=sql_term_NullTerm_strategy)
 @settings(max_examples=50)
-def test_sql::term::countstarterm_instantiation(instance):
-    assert isinstance(instance, sql::term::CountStarTerm)
+def test_sql_term_nullterm_instantiation(instance):
+    assert isinstance(instance, sql_term_NullTerm)
 
-@given(instance=sql::term::ColumnTerm_strategy)
+@given(instance=sql_term_BooleanTerm_strategy)
 @settings(max_examples=50)
-def test_sql::term::columnterm_instantiation(instance):
-    assert isinstance(instance, sql::term::ColumnTerm)
+def test_sql_term_booleanterm_instantiation(instance):
+    assert isinstance(instance, sql_term_BooleanTerm)
 
-@given(instance=sql::term::BooleanTerm_strategy)
+@given(instance=sql_term_Term_strategy)
 @settings(max_examples=50)
-def test_sql::term::booleanterm_instantiation(instance):
-    assert isinstance(instance, sql::term::BooleanTerm)
+def test_sql_term_term_instantiation(instance):
+    assert isinstance(instance, sql_term_Term)
 
-@given(instance=sql::term::Term_strategy)
+@given(instance=sql_value_FunctionValue_strategy)
 @settings(max_examples=50)
-def test_sql::term::term_instantiation(instance):
-    assert isinstance(instance, sql::term::Term)
-
-@given(instance=sql::value::FunctionValue_strategy)
-@settings(max_examples=50)
-def test_sql::value::functionvalue_instantiation(instance):
-    assert isinstance(instance, sql::value::FunctionValue)
-
-@given(instance=sql::value::FunctionValue_strategy)
-def test_sql::value::functionvalue_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_sql_value_functionvalue_instantiation(instance):
+    assert isinstance(instance, sql_value_FunctionValue)
 
 
-@given(instance=sql::value::FunctionValue_strategy)
-def test_sql::value::functionvalue_functionName_setter(instance):
+
+@given(instance=sql_value_FunctionValue_strategy)
+def test_sql_value_functionvalue_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=sql::value::ConditionValue_strategy)
+@given(instance=sql_value_ConditionValue_strategy)
 @settings(max_examples=50)
-def test_sql::value::conditionvalue_instantiation(instance):
-    assert isinstance(instance, sql::value::ConditionValue)
+def test_sql_value_conditionvalue_instantiation(instance):
+    assert isinstance(instance, sql_value_ConditionValue)
 
-@given(instance=value::ValueFrontOperation_strategy)
+@given(instance=value_ValueFrontOperation_strategy)
 @settings(max_examples=50)
-def test_value::valuefrontoperation_instantiation(instance):
-    assert isinstance(instance, value::ValueFrontOperation)
+def test_value_valuefrontoperation_instantiation(instance):
+    assert isinstance(instance, value_ValueFrontOperation)
 
-@given(instance=condition::ConditionOperation_strategy)
+@given(instance=condition_ConditionOperation_strategy)
 @settings(max_examples=50)
-def test_condition::conditionoperation_instantiation(instance):
-    assert isinstance(instance, condition::ConditionOperation)
+def test_condition_conditionoperation_instantiation(instance):
+    assert isinstance(instance, condition_ConditionOperation)
 
 @given(instance=SimpleCondition_strategy)
 @settings(max_examples=50)
 def test_simplecondition_instantiation(instance):
     assert isinstance(instance, SimpleCondition)
 
-@given(instance=sql::condition::IsNullCondition_strategy)
+@given(instance=sql_condition_IsNullCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::isnullcondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::IsNullCondition)
+def test_sql_condition_isnullcondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_IsNullCondition)
 
-@given(instance=sql::condition::OperationCondition_strategy)
+@given(instance=sql_condition_OperationCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::operationcondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::OperationCondition)
+def test_sql_condition_operationcondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_OperationCondition)
 
-@given(instance=value::Value_strategy)
+@given(instance=value_Value_strategy)
 @settings(max_examples=50)
-def test_value::value_instantiation(instance):
-    assert isinstance(instance, value::Value)
+def test_value_value_instantiation(instance):
+    assert isinstance(instance, value_Value)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=sql::condition::SimpleCondition_strategy)
+@given(instance=sql_condition_SimpleCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::simplecondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::SimpleCondition)
+def test_sql_condition_simplecondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_SimpleCondition)
 
-@given(instance=sql::condition::Condition_strategy)
+@given(instance=sql_condition_Condition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::condition_instantiation(instance):
-    assert isinstance(instance, sql::condition::Condition)
+def test_sql_condition_condition_instantiation(instance):
+    assert isinstance(instance, sql_condition_Condition)
 
 @given(instance=AndOrExpressionOperation_strategy)
 @settings(max_examples=50)
 def test_andorexpressionoperation_instantiation(instance):
     assert isinstance(instance, AndOrExpressionOperation)
 
-@given(instance=sql::expression::ExpressionOperationOr_strategy)
+@given(instance=sql_expression_ExpressionOperationOr_strategy)
 @settings(max_examples=50)
-def test_sql::expression::expressionoperationor_instantiation(instance):
-    assert isinstance(instance, sql::expression::ExpressionOperationOr)
+def test_sql_expression_expressionoperationor_instantiation(instance):
+    assert isinstance(instance, sql_expression_ExpressionOperationOr)
 
-@given(instance=sql::expression::ExpressionOperationAnd_strategy)
+@given(instance=sql_expression_ExpressionOperationAnd_strategy)
 @settings(max_examples=50)
-def test_sql::expression::expressionoperationand_instantiation(instance):
-    assert isinstance(instance, sql::expression::ExpressionOperationAnd)
+def test_sql_expression_expressionoperationand_instantiation(instance):
+    assert isinstance(instance, sql_expression_ExpressionOperationAnd)
 
 @given(instance=ExpressionOperation_strategy)
 @settings(max_examples=50)
 def test_expressionoperation_instantiation(instance):
     assert isinstance(instance, ExpressionOperation)
 
-@given(instance=sql::expression::ExpressionOperationNot_strategy)
+@given(instance=sql_expression_ExpressionOperationNot_strategy)
 @settings(max_examples=50)
-def test_sql::expression::expressionoperationnot_instantiation(instance):
-    assert isinstance(instance, sql::expression::ExpressionOperationNot)
+def test_sql_expression_expressionoperationnot_instantiation(instance):
+    assert isinstance(instance, sql_expression_ExpressionOperationNot)
 
-@given(instance=sql::expression::AndOrExpressionOperation_strategy)
+@given(instance=sql_expression_AndOrExpressionOperation_strategy)
 @settings(max_examples=50)
-def test_sql::expression::andorexpressionoperation_instantiation(instance):
-    assert isinstance(instance, sql::expression::AndOrExpressionOperation)
+def test_sql_expression_andorexpressionoperation_instantiation(instance):
+    assert isinstance(instance, sql_expression_AndOrExpressionOperation)
 
 @given(instance=ConditionOperation_strategy)
 @settings(max_examples=50)
 def test_conditionoperation_instantiation(instance):
     assert isinstance(instance, ConditionOperation)
 
-@given(instance=sql::condition::ConditionOperationUnEqual2_strategy)
+@given(instance=sql_condition_ConditionOperationUnEqual2_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationunequal2_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationUnEqual2)
+def test_sql_condition_conditionoperationunequal2_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationUnEqual2)
 
-@given(instance=sql::condition::ConditionOperationGreatEqual_strategy)
+@given(instance=sql_condition_ConditionOperationLessEqual_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationgreatequal_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationGreatEqual)
+def test_sql_condition_conditionoperationlessequal_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationLessEqual)
 
-@given(instance=sql::condition::ConditionOperationLesser_strategy)
+@given(instance=sql_condition_ConditionOperationLesser_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationlesser_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationLesser)
+def test_sql_condition_conditionoperationlesser_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationLesser)
 
-@given(instance=sql::condition::ConditionOperationUnEqual_strategy)
+@given(instance=sql_condition_ConditionOperationGreatEqual_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationunequal_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationUnEqual)
+def test_sql_condition_conditionoperationgreatequal_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationGreatEqual)
 
-@given(instance=sql::condition::ConditionOperationGreater_strategy)
+@given(instance=sql_condition_ConditionOperationGreater_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationgreater_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationGreater)
+def test_sql_condition_conditionoperationgreater_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationGreater)
 
-@given(instance=sql::condition::ConditionOperationLessEqual_strategy)
+@given(instance=sql_condition_ConditionOperationUnEqual_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationlessequal_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationLessEqual)
+def test_sql_condition_conditionoperationunequal_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationUnEqual)
 
-@given(instance=sql::condition::ConditionOperationEqual_strategy)
+@given(instance=sql_condition_ConditionOperationEqual_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperationequal_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperationEqual)
+def test_sql_condition_conditionoperationequal_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperationEqual)
 
-@given(instance=sql::condition::ConditionOperation_strategy)
+@given(instance=sql_condition_ConditionOperation_strategy)
 @settings(max_examples=50)
-def test_sql::condition::conditionoperation_instantiation(instance):
-    assert isinstance(instance, sql::condition::ConditionOperation)
+def test_sql_condition_conditionoperation_instantiation(instance):
+    assert isinstance(instance, sql_condition_ConditionOperation)
 
-@given(instance=sql::condition::LikeCondition_strategy)
+@given(instance=sql_condition_LikeCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::likecondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::LikeCondition)
+def test_sql_condition_likecondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_LikeCondition)
 
-@given(instance=sql::condition::InCondition_strategy)
+@given(instance=sql_condition_InCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::incondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::InCondition)
+def test_sql_condition_incondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_InCondition)
 
-@given(instance=sql::condition::BetweenCondition_strategy)
+@given(instance=sql_condition_BetweenCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::betweencondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::BetweenCondition)
+def test_sql_condition_betweencondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_BetweenCondition)
 
-@given(instance=sql::condition::ExistsCondition_strategy)
+@given(instance=sql_condition_ExistsCondition_strategy)
 @settings(max_examples=50)
-def test_sql::condition::existscondition_instantiation(instance):
-    assert isinstance(instance, sql::condition::ExistsCondition)
+def test_sql_condition_existscondition_instantiation(instance):
+    assert isinstance(instance, sql_condition_ExistsCondition)
 
-@given(instance=parameter::SelectParameterDistinct_strategy)
+@given(instance=parameter_SelectParameterDistinct_strategy)
 @settings(max_examples=50)
-def test_parameter::selectparameterdistinct_instantiation(instance):
-    assert isinstance(instance, parameter::SelectParameterDistinct)
+def test_parameter_selectparameterdistinct_instantiation(instance):
+    assert isinstance(instance, parameter_SelectParameterDistinct)
 
 @given(instance=SetOperation_strategy)
 @settings(max_examples=50)
 def test_setoperation_instantiation(instance):
     assert isinstance(instance, SetOperation)
 
-@given(instance=sql::set::SetOperationMinus_strategy)
+@given(instance=sql_set_SetOperationMinus_strategy)
 @settings(max_examples=50)
-def test_sql::set::setoperationminus_instantiation(instance):
-    assert isinstance(instance, sql::set::SetOperationMinus)
+def test_sql_set_setoperationminus_instantiation(instance):
+    assert isinstance(instance, sql_set_SetOperationMinus)
 
-@given(instance=sql::set::SetOperationExcept_strategy)
+@given(instance=sql_set_SetOperationExcept_strategy)
 @settings(max_examples=50)
-def test_sql::set::setoperationexcept_instantiation(instance):
-    assert isinstance(instance, sql::set::SetOperationExcept)
+def test_sql_set_setoperationexcept_instantiation(instance):
+    assert isinstance(instance, sql_set_SetOperationExcept)
 
-@given(instance=sql::set::SetOperationUnion_strategy)
+@given(instance=sql_set_SetOperationUnion_strategy)
 @settings(max_examples=50)
-def test_sql::set::setoperationunion_instantiation(instance):
-    assert isinstance(instance, sql::set::SetOperationUnion)
+def test_sql_set_setoperationunion_instantiation(instance):
+    assert isinstance(instance, sql_set_SetOperationUnion)
 
-@given(instance=sql::set::SetOperation_strategy)
+@given(instance=sql_set_SetOperation_strategy)
 @settings(max_examples=50)
-def test_sql::set::setoperation_instantiation(instance):
-    assert isinstance(instance, sql::set::SetOperation)
+def test_sql_set_setoperation_instantiation(instance):
+    assert isinstance(instance, sql_set_SetOperation)
 
-@given(instance=set::SetOperation_strategy)
+@given(instance=set_SetOperation_strategy)
 @settings(max_examples=50)
-def test_set::setoperation_instantiation(instance):
-    assert isinstance(instance, set::SetOperation)
+def test_set_setoperation_instantiation(instance):
+    assert isinstance(instance, set_SetOperation)
 
-@given(instance=sql::expression::ExpressionOperation_strategy)
+@given(instance=sql_expression_ExpressionOperation_strategy)
 @settings(max_examples=50)
-def test_sql::expression::expressionoperation_instantiation(instance):
-    assert isinstance(instance, sql::expression::ExpressionOperation)
+def test_sql_expression_expressionoperation_instantiation(instance):
+    assert isinstance(instance, sql_expression_ExpressionOperation)
 
-@given(instance=expression::ExpressionOperationNot_strategy)
+@given(instance=expression_ExpressionOperationNot_strategy)
 @settings(max_examples=50)
-def test_expression::expressionoperationnot_instantiation(instance):
-    assert isinstance(instance, expression::ExpressionOperationNot)
+def test_expression_expressionoperationnot_instantiation(instance):
+    assert isinstance(instance, expression_ExpressionOperationNot)
 
-@given(instance=condition::Condition_strategy)
+@given(instance=condition_Condition_strategy)
 @settings(max_examples=50)
-def test_condition::condition_instantiation(instance):
-    assert isinstance(instance, condition::Condition)
+def test_condition_condition_instantiation(instance):
+    assert isinstance(instance, condition_Condition)
 
-@given(instance=expression::AndOrExpressionOperation_strategy)
+@given(instance=expression_AndOrExpressionOperation_strategy)
 @settings(max_examples=50)
-def test_expression::andorexpressionoperation_instantiation(instance):
-    assert isinstance(instance, expression::AndOrExpressionOperation)
+def test_expression_andorexpressionoperation_instantiation(instance):
+    assert isinstance(instance, expression_AndOrExpressionOperation)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=sql::expression::SimpleExpression_strategy)
+@given(instance=sql_expression_SimpleExpression_strategy)
 @settings(max_examples=50)
-def test_sql::expression::simpleexpression_instantiation(instance):
-    assert isinstance(instance, sql::expression::SimpleExpression)
+def test_sql_expression_simpleexpression_instantiation(instance):
+    assert isinstance(instance, sql_expression_SimpleExpression)
 
-@given(instance=sql::expression::Expression_strategy)
+@given(instance=sql_expression_Expression_strategy)
 @settings(max_examples=50)
-def test_sql::expression::expression_instantiation(instance):
-    assert isinstance(instance, sql::expression::Expression)
+def test_sql_expression_expression_instantiation(instance):
+    assert isinstance(instance, sql_expression_Expression)
 
-@given(instance=sql::limit::LimitExpression_strategy)
+@given(instance=sql_limit_LimitExpression_strategy)
 @settings(max_examples=50)
-def test_sql::limit::limitexpression_instantiation(instance):
-    assert isinstance(instance, sql::limit::LimitExpression)
-
-@given(instance=sql::limit::LimitExpression_strategy)
-def test_sql::limit::limitexpression_offset_type(instance):
-    assert isinstance(instance.offset, str)
+def test_sql_limit_limitexpression_instantiation(instance):
+    assert isinstance(instance, sql_limit_LimitExpression)
 
 
-@given(instance=sql::limit::LimitExpression_strategy)
-def test_sql::limit::limitexpression_offset_setter(instance):
-    original = instance.offset
-    instance.offset = original
-    assert instance.offset == original
 
-@given(instance=sql::limit::LimitExpression_strategy)
-def test_sql::limit::limitexpression_limit_type(instance):
-    assert isinstance(instance.limit, str)
-
-
-@given(instance=sql::limit::LimitExpression_strategy)
-def test_sql::limit::limitexpression_limit_setter(instance):
+@given(instance=sql_limit_LimitExpression_strategy)
+def test_sql_limit_limitexpression_limit_setter(instance):
     original = instance.limit
     instance.limit = original
     assert instance.limit == original
 
-@given(instance=sql::set::SetOperationIntersect_strategy)
-@settings(max_examples=50)
-def test_sql::set::setoperationintersect_instantiation(instance):
-    assert isinstance(instance, sql::set::SetOperationIntersect)
 
-@given(instance=column::Column_strategy)
+
+@given(instance=sql_limit_LimitExpression_strategy)
+def test_sql_limit_limitexpression_offset_setter(instance):
+    original = instance.offset
+    instance.offset = original
+    assert instance.offset == original
+
+@given(instance=sql_set_SetOperationIntersect_strategy)
 @settings(max_examples=50)
-def test_column::column_instantiation(instance):
-    assert isinstance(instance, column::Column)
+def test_sql_set_setoperationintersect_instantiation(instance):
+    assert isinstance(instance, sql_set_SetOperationIntersect)
+
+@given(instance=column_Column_strategy)
+@settings(max_examples=50)
+def test_column_column_instantiation(instance):
+    assert isinstance(instance, column_Column)
 
 @given(instance=OrderByExpression_strategy)
 @settings(max_examples=50)
 def test_orderbyexpression_instantiation(instance):
     assert isinstance(instance, OrderByExpression)
 
-@given(instance=sql::orderBy::OrderByColumnExpression_strategy)
+@given(instance=sql_orderBy_OrderByColumnExpression_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbycolumnexpression_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderByColumnExpression)
+def test_sql_orderby_orderbycolumnexpression_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderByColumnExpression)
 
-@given(instance=orderBy::OrderByParameter_strategy)
+@given(instance=orderBy_OrderByParameter_strategy)
 @settings(max_examples=50)
-def test_orderby::orderbyparameter_instantiation(instance):
-    assert isinstance(instance, orderBy::OrderByParameter)
+def test_orderby_orderbyparameter_instantiation(instance):
+    assert isinstance(instance, orderBy_OrderByParameter)
 
-@given(instance=sql::orderBy::OrderByExpression_strategy)
+@given(instance=sql_orderBy_OrderByExpression_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbyexpression_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderByExpression)
+def test_sql_orderby_orderbyexpression_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderByExpression)
 
-@given(instance=sql::where::WhereExpression_strategy)
+@given(instance=sql_where_WhereExpression_strategy)
 @settings(max_examples=50)
-def test_sql::where::whereexpression_instantiation(instance):
-    assert isinstance(instance, sql::where::WhereExpression)
+def test_sql_where_whereexpression_instantiation(instance):
+    assert isinstance(instance, sql_where_WhereExpression)
 
 @given(instance=JoinOperation_strategy)
 @settings(max_examples=50)
 def test_joinoperation_instantiation(instance):
     assert isinstance(instance, JoinOperation)
 
-@given(instance=sql::from::JoinOperationLeft_strategy)
+@given(instance=sql_from_JoinOperationRight_strategy)
 @settings(max_examples=50)
-def test_sql::from::joinoperationleft_instantiation(instance):
-    assert isinstance(instance, sql::from::JoinOperationLeft)
+def test_sql_from_joinoperationright_instantiation(instance):
+    assert isinstance(instance, sql_from_JoinOperationRight)
 
-@given(instance=sql::from::JoinOperationRight_strategy)
+@given(instance=sql_from_JoinOperationOuter_strategy)
 @settings(max_examples=50)
-def test_sql::from::joinoperationright_instantiation(instance):
-    assert isinstance(instance, sql::from::JoinOperationRight)
+def test_sql_from_joinoperationouter_instantiation(instance):
+    assert isinstance(instance, sql_from_JoinOperationOuter)
 
-@given(instance=sql::from::JoinOperationOuter_strategy)
+@given(instance=sql_from_JoinOperationLeft_strategy)
 @settings(max_examples=50)
-def test_sql::from::joinoperationouter_instantiation(instance):
-    assert isinstance(instance, sql::from::JoinOperationOuter)
+def test_sql_from_joinoperationleft_instantiation(instance):
+    assert isinstance(instance, sql_from_JoinOperationLeft)
 
-@given(instance=sql::from::JoinOperationInner_strategy)
+@given(instance=sql_from_JoinOperationInner_strategy)
 @settings(max_examples=50)
-def test_sql::from::joinoperationinner_instantiation(instance):
-    assert isinstance(instance, sql::from::JoinOperationInner)
+def test_sql_from_joinoperationinner_instantiation(instance):
+    assert isinstance(instance, sql_from_JoinOperationInner)
 
-@given(instance=sql::from::JoinOperation_strategy)
+@given(instance=sql_from_JoinOperation_strategy)
 @settings(max_examples=50)
-def test_sql::from::joinoperation_instantiation(instance):
-    assert isinstance(instance, sql::from::JoinOperation)
+def test_sql_from_joinoperation_instantiation(instance):
+    assert isinstance(instance, sql_from_JoinOperation)
 
-@given(instance=sql::set::SetExpression_strategy)
+@given(instance=sql_set_SetExpression_strategy)
 @settings(max_examples=50)
-def test_sql::set::setexpression_instantiation(instance):
-    assert isinstance(instance, sql::set::SetExpression)
+def test_sql_set_setexpression_instantiation(instance):
+    assert isinstance(instance, sql_set_SetExpression)
 
-@given(instance=sql::having::HavingExpression_strategy)
+@given(instance=sql_having_HavingExpression_strategy)
 @settings(max_examples=50)
-def test_sql::having::havingexpression_instantiation(instance):
-    assert isinstance(instance, sql::having::HavingExpression)
+def test_sql_having_havingexpression_instantiation(instance):
+    assert isinstance(instance, sql_having_HavingExpression)
 
-@given(instance=sql::groupBy::GroupByExpression_strategy)
+@given(instance=sql_groupBy_GroupByExpression_strategy)
 @settings(max_examples=50)
-def test_sql::groupby::groupbyexpression_instantiation(instance):
-    assert isinstance(instance, sql::groupBy::GroupByExpression)
+def test_sql_groupby_groupbyexpression_instantiation(instance):
+    assert isinstance(instance, sql_groupBy_GroupByExpression)
 
 @given(instance=OrderByParameter_strategy)
 @settings(max_examples=50)
 def test_orderbyparameter_instantiation(instance):
     assert isinstance(instance, OrderByParameter)
 
-@given(instance=sql::orderBy::OrderByParameterDesc_strategy)
+@given(instance=sql_orderBy_OrderByParameterDesc_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbyparameterdesc_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderByParameterDesc)
+def test_sql_orderby_orderbyparameterdesc_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderByParameterDesc)
 
-@given(instance=sql::orderBy::OrderByParameterAsc_strategy)
+@given(instance=sql_orderBy_OrderByParameterAsc_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbyparameterasc_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderByParameterAsc)
+def test_sql_orderby_orderbyparameterasc_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderByParameterAsc)
 
-@given(instance=sql::orderBy::OrderByParameter_strategy)
+@given(instance=sql_orderBy_OrderByParameter_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbyparameter_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderByParameter)
+def test_sql_orderby_orderbyparameter_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderByParameter)
 
-@given(instance=sql::orderBy::OrderBySelectExpression_strategy)
+@given(instance=sql_orderBy_OrderBySelectExpression_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbyselectexpression_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderBySelectExpression)
+def test_sql_orderby_orderbyselectexpression_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderBySelectExpression)
 
-@given(instance=sql::orderBy::OrderByAliasExpression_strategy)
+@given(instance=sql_orderBy_OrderByAliasExpression_strategy)
 @settings(max_examples=50)
-def test_sql::orderby::orderbyaliasexpression_instantiation(instance):
-    assert isinstance(instance, sql::orderBy::OrderByAliasExpression)
-
-@given(instance=sql::orderBy::OrderByAliasExpression_strategy)
-def test_sql::orderby::orderbyaliasexpression_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_sql_orderby_orderbyaliasexpression_instantiation(instance):
+    assert isinstance(instance, sql_orderBy_OrderByAliasExpression)
 
 
-@given(instance=sql::orderBy::OrderByAliasExpression_strategy)
-def test_sql::orderby::orderbyaliasexpression_alias_setter(instance):
+
+@given(instance=sql_orderBy_OrderByAliasExpression_strategy)
+def test_sql_orderby_orderbyaliasexpression_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
 
-@given(instance=sql::from::FromExpression_strategy)
+@given(instance=sql_from_FromExpression_strategy)
 @settings(max_examples=50)
-def test_sql::from::fromexpression_instantiation(instance):
-    assert isinstance(instance, sql::from::FromExpression)
+def test_sql_from_fromexpression_instantiation(instance):
+    assert isinstance(instance, sql_from_FromExpression)
 
-@given(instance=sql::column::Column_strategy)
+@given(instance=sql_column_Column_strategy)
 @settings(max_examples=50)
-def test_sql::column::column_instantiation(instance):
-    assert isinstance(instance, sql::column::Column)
-
-@given(instance=sql::column::Column_strategy)
-def test_sql::column::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_column_column_instantiation(instance):
+    assert isinstance(instance, sql_column_Column)
 
 
-@given(instance=sql::column::Column_strategy)
-def test_sql::column::column_name_setter(instance):
+
+@given(instance=sql_column_Column_strategy)
+def test_sql_column_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3363,275 +3310,301 @@ def test_sql::column::column_name_setter(instance):
 def test_columnoperation_instantiation(instance):
     assert isinstance(instance, ColumnOperation)
 
-@given(instance=sql::column::ColumnOperationAvg_strategy)
+@given(instance=sql_column_ColumnOperationSum_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationavg_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationAvg)
+def test_sql_column_columnoperationsum_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationSum)
 
-@given(instance=sql::column::ColumnOperationSome_strategy)
+@given(instance=sql_column_ColumnOperationSome_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationsome_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationSome)
+def test_sql_column_columnoperationsome_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationSome)
 
-@given(instance=sql::column::ColumnOperationSum_strategy)
+@given(instance=sql_column_ColumnOperationAvg_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationsum_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationSum)
+def test_sql_column_columnoperationavg_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationAvg)
 
-@given(instance=sql::column::ColumnOperationEvery_strategy)
+@given(instance=sql_column_ColumnOperationMin_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationevery_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationEvery)
+def test_sql_column_columnoperationmin_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationMin)
 
-@given(instance=sql::column::ColumnOperationMax_strategy)
+@given(instance=sql_column_ColumnOperationMax_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationmax_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationMax)
+def test_sql_column_columnoperationmax_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationMax)
 
-@given(instance=sql::column::ColumnOperationMin_strategy)
+@given(instance=sql_column_ColumnOperationEvery_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationmin_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationMin)
+def test_sql_column_columnoperationevery_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationEvery)
 
-@given(instance=sql::column::ColumnOperationCount_strategy)
+@given(instance=sql_column_ColumnOperationCount_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperationcount_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperationCount)
+def test_sql_column_columnoperationcount_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperationCount)
 
-@given(instance=sql::column::ColumnOperation_strategy)
+@given(instance=sql_column_ColumnOperation_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnoperation_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnOperation)
+def test_sql_column_columnoperation_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnOperation)
 
-@given(instance=column::ColumnOperation_strategy)
+@given(instance=column_ColumnOperation_strategy)
 @settings(max_examples=50)
-def test_column::columnoperation_instantiation(instance):
-    assert isinstance(instance, column::ColumnOperation)
+def test_column_columnoperation_instantiation(instance):
+    assert isinstance(instance, column_ColumnOperation)
 
-@given(instance=from::JoinOperation_strategy)
+@given(instance=sql_term_StarTerm_strategy)
 @settings(max_examples=50)
-def test_from::joinoperation_instantiation(instance):
-    assert isinstance(instance, from::JoinOperation)
+def test_sql_term_starterm_instantiation(instance):
+    assert isinstance(instance, sql_term_StarTerm)
 
-@given(instance=sql::from::JoinTableExpression_strategy)
+@given(instance=sql_term_CountStarTerm_strategy)
 @settings(max_examples=50)
-def test_sql::from::jointableexpression_instantiation(instance):
-    assert isinstance(instance, sql::from::JoinTableExpression)
+def test_sql_term_countstarterm_instantiation(instance):
+    assert isinstance(instance, sql_term_CountStarTerm)
 
-@given(instance=from::JoinTableExpression_strategy)
+@given(instance=SimpleTerm_strategy)
 @settings(max_examples=50)
-def test_from::jointableexpression_instantiation(instance):
-    assert isinstance(instance, from::JoinTableExpression)
+def test_simpleterm_instantiation(instance):
+    assert isinstance(instance, SimpleTerm)
 
-@given(instance=from::TableExpression_strategy)
+@given(instance=sql_term_SimpleTermInteger_strategy)
 @settings(max_examples=50)
-def test_from::tableexpression_instantiation(instance):
-    assert isinstance(instance, from::TableExpression)
+def test_sql_term_simpleterminteger_instantiation(instance):
+    assert isinstance(instance, sql_term_SimpleTermInteger)
 
-@given(instance=sql::from::TableListExpression_strategy)
+@given(instance=sql_term_SimpleTermChar_strategy)
 @settings(max_examples=50)
-def test_sql::from::tablelistexpression_instantiation(instance):
-    assert isinstance(instance, sql::from::TableListExpression)
+def test_sql_term_simpletermchar_instantiation(instance):
+    assert isinstance(instance, sql_term_SimpleTermChar)
 
-@given(instance=sql::from::Table_strategy)
+@given(instance=sql_term_SimpleTermFloat_strategy)
 @settings(max_examples=50)
-def test_sql::from::table_instantiation(instance):
-    assert isinstance(instance, sql::from::Table)
+def test_sql_term_simpletermfloat_instantiation(instance):
+    assert isinstance(instance, sql_term_SimpleTermFloat)
 
-@given(instance=sql::from::Table_strategy)
-def test_sql::from::table_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=sql_term_SimpleTermString_strategy)
+@settings(max_examples=50)
+def test_sql_term_simpletermstring_instantiation(instance):
+    assert isinstance(instance, sql_term_SimpleTermString)
+
+@given(instance=from_JoinOperation_strategy)
+@settings(max_examples=50)
+def test_from_joinoperation_instantiation(instance):
+    assert isinstance(instance, from_JoinOperation)
+
+@given(instance=sql_from_JoinTableExpression_strategy)
+@settings(max_examples=50)
+def test_sql_from_jointableexpression_instantiation(instance):
+    assert isinstance(instance, sql_from_JoinTableExpression)
+
+@given(instance=from_JoinTableExpression_strategy)
+@settings(max_examples=50)
+def test_from_jointableexpression_instantiation(instance):
+    assert isinstance(instance, from_JoinTableExpression)
+
+@given(instance=from_TableExpression_strategy)
+@settings(max_examples=50)
+def test_from_tableexpression_instantiation(instance):
+    assert isinstance(instance, from_TableExpression)
+
+@given(instance=sql_from_TableListExpression_strategy)
+@settings(max_examples=50)
+def test_sql_from_tablelistexpression_instantiation(instance):
+    assert isinstance(instance, sql_from_TableListExpression)
+
+@given(instance=sql_from_Table_strategy)
+@settings(max_examples=50)
+def test_sql_from_table_instantiation(instance):
+    assert isinstance(instance, sql_from_Table)
 
 
-@given(instance=sql::from::Table_strategy)
-def test_sql::from::table_name_setter(instance):
+
+@given(instance=sql_from_Table_strategy)
+def test_sql_from_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=from::Table_strategy)
+@given(instance=from_Table_strategy)
 @settings(max_examples=50)
-def test_from::table_instantiation(instance):
-    assert isinstance(instance, from::Table)
+def test_from_table_instantiation(instance):
+    assert isinstance(instance, from_Table)
 
 @given(instance=SelectExpression_strategy)
 @settings(max_examples=50)
 def test_selectexpression_instantiation(instance):
     assert isinstance(instance, SelectExpression)
 
-@given(instance=sql::from::TableExpression_strategy)
+@given(instance=sql_from_TableExpression_strategy)
 @settings(max_examples=50)
-def test_sql::from::tableexpression_instantiation(instance):
-    assert isinstance(instance, sql::from::TableExpression)
-
-@given(instance=sql::from::TableExpression_strategy)
-def test_sql::from::tableexpression_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_sql_from_tableexpression_instantiation(instance):
+    assert isinstance(instance, sql_from_TableExpression)
 
 
-@given(instance=sql::from::TableExpression_strategy)
-def test_sql::from::tableexpression_label_setter(instance):
+
+@given(instance=sql_from_TableExpression_strategy)
+def test_sql_from_tableexpression_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=from::TableListExpression_strategy)
+@given(instance=from_TableListExpression_strategy)
 @settings(max_examples=50)
-def test_from::tablelistexpression_instantiation(instance):
-    assert isinstance(instance, from::TableListExpression)
+def test_from_tablelistexpression_instantiation(instance):
+    assert isinstance(instance, from_TableListExpression)
 
-@given(instance=orderBy::OrderByExpression_strategy)
+@given(instance=orderBy_OrderByExpression_strategy)
 @settings(max_examples=50)
-def test_orderby::orderbyexpression_instantiation(instance):
-    assert isinstance(instance, orderBy::OrderByExpression)
+def test_orderby_orderbyexpression_instantiation(instance):
+    assert isinstance(instance, orderBy_OrderByExpression)
 
-@given(instance=set::SetExpression_strategy)
+@given(instance=set_SetExpression_strategy)
 @settings(max_examples=50)
-def test_set::setexpression_instantiation(instance):
-    assert isinstance(instance, set::SetExpression)
+def test_set_setexpression_instantiation(instance):
+    assert isinstance(instance, set_SetExpression)
 
-@given(instance=having::HavingExpression_strategy)
+@given(instance=having_HavingExpression_strategy)
 @settings(max_examples=50)
-def test_having::havingexpression_instantiation(instance):
-    assert isinstance(instance, having::HavingExpression)
+def test_having_havingexpression_instantiation(instance):
+    assert isinstance(instance, having_HavingExpression)
 
-@given(instance=groupBy::GroupByExpression_strategy)
+@given(instance=groupBy_GroupByExpression_strategy)
 @settings(max_examples=50)
-def test_groupby::groupbyexpression_instantiation(instance):
-    assert isinstance(instance, groupBy::GroupByExpression)
+def test_groupby_groupbyexpression_instantiation(instance):
+    assert isinstance(instance, groupBy_GroupByExpression)
 
-@given(instance=where::WhereExpression_strategy)
+@given(instance=where_WhereExpression_strategy)
 @settings(max_examples=50)
-def test_where::whereexpression_instantiation(instance):
-    assert isinstance(instance, where::WhereExpression)
+def test_where_whereexpression_instantiation(instance):
+    assert isinstance(instance, where_WhereExpression)
 
-@given(instance=from::FromExpression_strategy)
+@given(instance=from_FromExpression_strategy)
 @settings(max_examples=50)
-def test_from::fromexpression_instantiation(instance):
-    assert isinstance(instance, from::FromExpression)
+def test_from_fromexpression_instantiation(instance):
+    assert isinstance(instance, from_FromExpression)
 
-@given(instance=column::ColumnExpression_strategy)
+@given(instance=column_ColumnExpression_strategy)
 @settings(max_examples=50)
-def test_column::columnexpression_instantiation(instance):
-    assert isinstance(instance, column::ColumnExpression)
+def test_column_columnexpression_instantiation(instance):
+    assert isinstance(instance, column_ColumnExpression)
 
-@given(instance=parameter::SelectParameter_strategy)
+@given(instance=parameter_SelectParameter_strategy)
 @settings(max_examples=50)
-def test_parameter::selectparameter_instantiation(instance):
-    assert isinstance(instance, parameter::SelectParameter)
+def test_parameter_selectparameter_instantiation(instance):
+    assert isinstance(instance, parameter_SelectParameter)
 
-@given(instance=sql::select::SelectExpression_strategy)
+@given(instance=sql_select_SelectExpression_strategy)
 @settings(max_examples=50)
-def test_sql::select::selectexpression_instantiation(instance):
-    assert isinstance(instance, sql::select::SelectExpression)
+def test_sql_select_selectexpression_instantiation(instance):
+    assert isinstance(instance, sql_select_SelectExpression)
 
-@given(instance=expression::Expression_strategy)
+@given(instance=expression_Expression_strategy)
 @settings(max_examples=50)
-def test_expression::expression_instantiation(instance):
-    assert isinstance(instance, expression::Expression)
+def test_expression_expression_instantiation(instance):
+    assert isinstance(instance, expression_Expression)
 
-@given(instance=sql::column::SingleColumnExpression_strategy)
+@given(instance=sql_column_SingleColumnExpression_strategy)
 @settings(max_examples=50)
-def test_sql::column::singlecolumnexpression_instantiation(instance):
-    assert isinstance(instance, sql::column::SingleColumnExpression)
-
-@given(instance=sql::column::SingleColumnExpression_strategy)
-def test_sql::column::singlecolumnexpression_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_sql_column_singlecolumnexpression_instantiation(instance):
+    assert isinstance(instance, sql_column_SingleColumnExpression)
 
 
-@given(instance=sql::column::SingleColumnExpression_strategy)
-def test_sql::column::singlecolumnexpression_alias_setter(instance):
+
+@given(instance=sql_column_SingleColumnExpression_strategy)
+def test_sql_column_singlecolumnexpression_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
 
-@given(instance=column::SingleColumnExpression_strategy)
+@given(instance=column_SingleColumnExpression_strategy)
 @settings(max_examples=50)
-def test_column::singlecolumnexpression_instantiation(instance):
-    assert isinstance(instance, column::SingleColumnExpression)
+def test_column_singlecolumnexpression_instantiation(instance):
+    assert isinstance(instance, column_SingleColumnExpression)
 
-@given(instance=sql::column::ColumnExpression_strategy)
+@given(instance=sql_column_ColumnExpression_strategy)
 @settings(max_examples=50)
-def test_sql::column::columnexpression_instantiation(instance):
-    assert isinstance(instance, sql::column::ColumnExpression)
+def test_sql_column_columnexpression_instantiation(instance):
+    assert isinstance(instance, sql_column_ColumnExpression)
 
 @given(instance=SelectParameter_strategy)
 @settings(max_examples=50)
 def test_selectparameter_instantiation(instance):
     assert isinstance(instance, SelectParameter)
 
-@given(instance=sql::parameter::SelectParameterDistinct_strategy)
+@given(instance=sql_parameter_SelectParameterDistinct_strategy)
 @settings(max_examples=50)
-def test_sql::parameter::selectparameterdistinct_instantiation(instance):
-    assert isinstance(instance, sql::parameter::SelectParameterDistinct)
+def test_sql_parameter_selectparameterdistinct_instantiation(instance):
+    assert isinstance(instance, sql_parameter_SelectParameterDistinct)
 
-@given(instance=sql::parameter::SelectParameterAll_strategy)
+@given(instance=sql_parameter_SelectParameterAll_strategy)
 @settings(max_examples=50)
-def test_sql::parameter::selectparameterall_instantiation(instance):
-    assert isinstance(instance, sql::parameter::SelectParameterAll)
+def test_sql_parameter_selectparameterall_instantiation(instance):
+    assert isinstance(instance, sql_parameter_SelectParameterAll)
 
-@given(instance=sql::parameter::SelectParameter_strategy)
+@given(instance=sql_parameter_SelectParameter_strategy)
 @settings(max_examples=50)
-def test_sql::parameter::selectparameter_instantiation(instance):
-    assert isinstance(instance, sql::parameter::SelectParameter)
+def test_sql_parameter_selectparameter_instantiation(instance):
+    assert isinstance(instance, sql_parameter_SelectParameter)
 
-@given(instance=limit::LimitExpression_strategy)
+@given(instance=limit_LimitExpression_strategy)
 @settings(max_examples=50)
-def test_limit::limitexpression_instantiation(instance):
-    assert isinstance(instance, limit::LimitExpression)
+def test_limit_limitexpression_instantiation(instance):
+    assert isinstance(instance, limit_LimitExpression)
 
 @given(instance=Date_strategy)
 @settings(max_examples=50)
 def test_date_instantiation(instance):
     assert isinstance(instance, Date)
 
-@given(instance=sql::sqlDataTypes::TimeStamp_strategy)
+@given(instance=sql_sqlDataTypes_TimeStamp_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::timestamp_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::TimeStamp)
+def test_sql_sqldatatypes_timestamp_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_TimeStamp)
 
-@given(instance=sql::sqlDataTypes::DataType_strategy)
+@given(instance=sql_sqlDataTypes_DataType_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::datatype_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::DataType)
+def test_sql_sqldatatypes_datatype_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_DataType)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=sql::sqlDataTypes::Float_strategy)
+@given(instance=sql_sqlDataTypes_Real_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::float_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::Float)
+def test_sql_sqldatatypes_real_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_Real)
 
-@given(instance=sql::sqlDataTypes::Double_strategy)
+@given(instance=sql_sqlDataTypes_Integer_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::double_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::Double)
+def test_sql_sqldatatypes_integer_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_Integer)
 
-@given(instance=sql::sqlDataTypes::Real_strategy)
+@given(instance=sql_sqlDataTypes_Date_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::real_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::Real)
+def test_sql_sqldatatypes_date_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_Date)
 
-@given(instance=sql::sqlDataTypes::Integer_strategy)
+@given(instance=sql_sqlDataTypes_Double_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::integer_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::Integer)
+def test_sql_sqldatatypes_double_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_Double)
 
-@given(instance=sql::sqlDataTypes::Boolean_strategy)
+@given(instance=sql_sqlDataTypes_Boolean_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::boolean_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::Boolean)
+def test_sql_sqldatatypes_boolean_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_Boolean)
 
-@given(instance=sql::sqlDataTypes::Date_strategy)
+@given(instance=sql_sqlDataTypes_Float_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::date_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::Date)
+def test_sql_sqldatatypes_float_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_Float)
 
-@given(instance=sql::sqlDataTypes::String_strategy)
+@given(instance=sql_sqlDataTypes_String_strategy)
 @settings(max_examples=50)
-def test_sql::sqldatatypes::string_instantiation(instance):
-    assert isinstance(instance, sql::sqlDataTypes::String)
+def test_sql_sqldatatypes_string_instantiation(instance):
+    assert isinstance(instance, sql_sqlDataTypes_String)

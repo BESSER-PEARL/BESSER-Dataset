@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    controlflow::Branch,
-    controlflow::Command,
-    controlflow::Graph,
-    controlflow::Node,
+    controlflow_Branch,
+    controlflow_Command,
+    controlflow_Graph,
+    controlflow_Node,
 )
 
 # =============================================================================
@@ -33,58 +33,58 @@ def test_node_constructor_args():
 
 
 
-def test_controlflow::branch_is_not_abstract():
-    assert not inspect.isabstract(controlflow::Branch)
+def test_controlflow_branch_is_not_abstract():
+    assert not inspect.isabstract(controlflow_Branch)
 
 
-def test_controlflow::branch_constructor_exists():
-    assert callable(controlflow::Branch.__init__)
+def test_controlflow_branch_constructor_exists():
+    assert callable(controlflow_Branch.__init__)
 
 
-def test_controlflow::branch_constructor_args():
-    sig = inspect.signature(controlflow::Branch.__init__)
+def test_controlflow_branch_constructor_args():
+    sig = inspect.signature(controlflow_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlflow::command_is_not_abstract():
-    assert not inspect.isabstract(controlflow::Command)
+def test_controlflow_command_is_not_abstract():
+    assert not inspect.isabstract(controlflow_Command)
 
 
-def test_controlflow::command_constructor_exists():
-    assert callable(controlflow::Command.__init__)
+def test_controlflow_command_constructor_exists():
+    assert callable(controlflow_Command.__init__)
 
 
-def test_controlflow::command_constructor_args():
-    sig = inspect.signature(controlflow::Command.__init__)
+def test_controlflow_command_constructor_args():
+    sig = inspect.signature(controlflow_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlflow::graph_is_not_abstract():
-    assert not inspect.isabstract(controlflow::Graph)
+def test_controlflow_graph_is_not_abstract():
+    assert not inspect.isabstract(controlflow_Graph)
 
 
-def test_controlflow::graph_constructor_exists():
-    assert callable(controlflow::Graph.__init__)
+def test_controlflow_graph_constructor_exists():
+    assert callable(controlflow_Graph.__init__)
 
 
-def test_controlflow::graph_constructor_args():
-    sig = inspect.signature(controlflow::Graph.__init__)
+def test_controlflow_graph_constructor_args():
+    sig = inspect.signature(controlflow_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlflow::node_is_not_abstract():
-    assert not inspect.isabstract(controlflow::Node)
+def test_controlflow_node_is_not_abstract():
+    assert not inspect.isabstract(controlflow_Node)
 
 
-def test_controlflow::node_constructor_exists():
-    assert callable(controlflow::Node.__init__)
+def test_controlflow_node_constructor_exists():
+    assert callable(controlflow_Node.__init__)
 
 
-def test_controlflow::node_constructor_args():
-    sig = inspect.signature(controlflow::Node.__init__)
+def test_controlflow_node_constructor_args():
+    sig = inspect.signature(controlflow_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -102,17 +102,17 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-controlflow::Branch_strategy = st.builds(
-    controlflow::Branch,
+controlflow_Branch_strategy = st.builds(
+    controlflow_Branch,
 )
-controlflow::Command_strategy = st.builds(
-    controlflow::Command,
+controlflow_Command_strategy = st.builds(
+    controlflow_Command,
 )
-controlflow::Graph_strategy = st.builds(
-    controlflow::Graph,
+controlflow_Graph_strategy = st.builds(
+    controlflow_Graph,
 )
-controlflow::Node_strategy = st.builds(
-    controlflow::Node,
+controlflow_Node_strategy = st.builds(
+    controlflow_Node,
 )
 
 @given(instance=Node_strategy)
@@ -120,22 +120,22 @@ controlflow::Node_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=controlflow::Branch_strategy)
+@given(instance=controlflow_Branch_strategy)
 @settings(max_examples=50)
-def test_controlflow::branch_instantiation(instance):
-    assert isinstance(instance, controlflow::Branch)
+def test_controlflow_branch_instantiation(instance):
+    assert isinstance(instance, controlflow_Branch)
 
-@given(instance=controlflow::Command_strategy)
+@given(instance=controlflow_Command_strategy)
 @settings(max_examples=50)
-def test_controlflow::command_instantiation(instance):
-    assert isinstance(instance, controlflow::Command)
+def test_controlflow_command_instantiation(instance):
+    assert isinstance(instance, controlflow_Command)
 
-@given(instance=controlflow::Graph_strategy)
+@given(instance=controlflow_Graph_strategy)
 @settings(max_examples=50)
-def test_controlflow::graph_instantiation(instance):
-    assert isinstance(instance, controlflow::Graph)
+def test_controlflow_graph_instantiation(instance):
+    assert isinstance(instance, controlflow_Graph)
 
-@given(instance=controlflow::Node_strategy)
+@given(instance=controlflow_Node_strategy)
 @settings(max_examples=50)
-def test_controlflow::node_instantiation(instance):
-    assert isinstance(instance, controlflow::Node)
+def test_controlflow_node_instantiation(instance):
+    assert isinstance(instance, controlflow_Node)

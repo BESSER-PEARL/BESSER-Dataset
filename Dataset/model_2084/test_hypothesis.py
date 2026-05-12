@@ -3,49 +3,49 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ws::bundle::Process,
+from python_code import (
+    ws_bundle_Process,
     BasicNode,
-    ws::tree::Coordinator,
-    ws::tree::Simulator,
+    ws_tree_Coordinator,
+    ws_tree_Simulator,
     Node,
-    ws::tree::Root,
+    ws_tree_Root,
     Skeleton,
-    ws::bundle::Bundle,
+    ws_bundle_Bundle,
     Tree,
-    ws::skeleton::Skeleton,
-    ws::tree::Node,
-    ws::tree::BasicNode,
-    ws::middleware::Processor,
+    ws_skeleton_Skeleton,
+    ws_tree_Node,
+    ws_tree_BasicNode,
+    ws_middleware_Processor,
     Processor,
-    ws::middleware::VM,
+    ws_middleware_VM,
     Repository,
     Stub,
     Middleware,
-    ws::middleware::WebService,
+    ws_middleware_WebService,
     Process,
     Simulator,
-    ws::tree::CDEVSSimulator,
-    ws::tree::PDEVSSimulator,
-    ws::tree::P::Simulator,
+    ws_tree_CDEVSSimulator,
+    ws_tree_PDEVSSimulator,
+    ws_tree_P_Simulator,
     Coordinator,
-    ws::tree::FlatCoordinator,
-    ws::tree::CDEVSCoordinator,
-    ws::tree::NodeCoordinator,
-    ws::tree::PDEVSCoordinator,
-    ws::tree::P::Coordinator,
+    ws_tree_NodeCoordinator,
+    ws_tree_PDEVSCoordinator,
+    ws_tree_P_Coordinator,
+    ws_tree_FlatCoordinator,
+    ws_tree_CDEVSCoordinator,
     Root,
-    ws::tree::Tree,
-    ws::middleware::ServiceDescription,
-    ws::middleware::Repository,
+    ws_tree_Tree,
+    ws_middleware_ServiceDescription,
+    ws_middleware_Repository,
     ServiceImpl,
-    ws::middleware::Stub,
+    ws_middleware_Stub,
     ServiceDescription,
-    ws::middleware::ServiceImpl,
+    ws_middleware_ServiceImpl,
     VM,
-    ws::middleware::Middleware,
+    ws_middleware_Middleware,
 )
 
 # =============================================================================
@@ -54,23 +54,23 @@ from classes import (
 
 
 
-def test_ws::bundle::process_is_not_abstract():
-    assert not inspect.isabstract(ws::bundle::Process)
+def test_ws_bundle_process_is_not_abstract():
+    assert not inspect.isabstract(ws_bundle_Process)
 
 
-def test_ws::bundle::process_constructor_exists():
-    assert callable(ws::bundle::Process.__init__)
+def test_ws_bundle_process_constructor_exists():
+    assert callable(ws_bundle_Process.__init__)
 
 
-def test_ws::bundle::process_constructor_args():
-    sig = inspect.signature(ws::bundle::Process.__init__)
+def test_ws_bundle_process_constructor_args():
+    sig = inspect.signature(ws_bundle_Process.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_ws::bundle::process_has_ID():
-    assert hasattr(ws::bundle::Process, "ID")
+def test_ws_bundle_process_has_ID():
+    assert hasattr(ws_bundle_Process, "ID")
     descriptor = None
-    for klass in ws::bundle::Process.__mro__:
+    for klass in ws_bundle_Process.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -92,30 +92,30 @@ def test_basicnode_constructor_args():
 
 
 
-def test_ws::tree::coordinator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::Coordinator)
+def test_ws_tree_coordinator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_Coordinator)
 
 
-def test_ws::tree::coordinator_constructor_exists():
-    assert callable(ws::tree::Coordinator.__init__)
+def test_ws_tree_coordinator_constructor_exists():
+    assert callable(ws_tree_Coordinator.__init__)
 
 
-def test_ws::tree::coordinator_constructor_args():
-    sig = inspect.signature(ws::tree::Coordinator.__init__)
+def test_ws_tree_coordinator_constructor_args():
+    sig = inspect.signature(ws_tree_Coordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::simulator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::Simulator)
+def test_ws_tree_simulator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_Simulator)
 
 
-def test_ws::tree::simulator_constructor_exists():
-    assert callable(ws::tree::Simulator.__init__)
+def test_ws_tree_simulator_constructor_exists():
+    assert callable(ws_tree_Simulator.__init__)
 
 
-def test_ws::tree::simulator_constructor_args():
-    sig = inspect.signature(ws::tree::Simulator.__init__)
+def test_ws_tree_simulator_constructor_args():
+    sig = inspect.signature(ws_tree_Simulator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,16 +134,16 @@ def test_node_constructor_args():
 
 
 
-def test_ws::tree::root_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::Root)
+def test_ws_tree_root_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_Root)
 
 
-def test_ws::tree::root_constructor_exists():
-    assert callable(ws::tree::Root.__init__)
+def test_ws_tree_root_constructor_exists():
+    assert callable(ws_tree_Root.__init__)
 
 
-def test_ws::tree::root_constructor_args():
-    sig = inspect.signature(ws::tree::Root.__init__)
+def test_ws_tree_root_constructor_args():
+    sig = inspect.signature(ws_tree_Root.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,23 +162,23 @@ def test_skeleton_constructor_args():
 
 
 
-def test_ws::bundle::bundle_is_not_abstract():
-    assert not inspect.isabstract(ws::bundle::Bundle)
+def test_ws_bundle_bundle_is_not_abstract():
+    assert not inspect.isabstract(ws_bundle_Bundle)
 
 
-def test_ws::bundle::bundle_constructor_exists():
-    assert callable(ws::bundle::Bundle.__init__)
+def test_ws_bundle_bundle_constructor_exists():
+    assert callable(ws_bundle_Bundle.__init__)
 
 
-def test_ws::bundle::bundle_constructor_args():
-    sig = inspect.signature(ws::bundle::Bundle.__init__)
+def test_ws_bundle_bundle_constructor_args():
+    sig = inspect.signature(ws_bundle_Bundle.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_ws::bundle::bundle_has_ID():
-    assert hasattr(ws::bundle::Bundle, "ID")
+def test_ws_bundle_bundle_has_ID():
+    assert hasattr(ws_bundle_Bundle, "ID")
     descriptor = None
-    for klass in ws::bundle::Bundle.__mro__:
+    for klass in ws_bundle_Bundle.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -200,23 +200,23 @@ def test_tree_constructor_args():
 
 
 
-def test_ws::skeleton::skeleton_is_not_abstract():
-    assert not inspect.isabstract(ws::skeleton::Skeleton)
+def test_ws_skeleton_skeleton_is_not_abstract():
+    assert not inspect.isabstract(ws_skeleton_Skeleton)
 
 
-def test_ws::skeleton::skeleton_constructor_exists():
-    assert callable(ws::skeleton::Skeleton.__init__)
+def test_ws_skeleton_skeleton_constructor_exists():
+    assert callable(ws_skeleton_Skeleton.__init__)
 
 
-def test_ws::skeleton::skeleton_constructor_args():
-    sig = inspect.signature(ws::skeleton::Skeleton.__init__)
+def test_ws_skeleton_skeleton_constructor_args():
+    sig = inspect.signature(ws_skeleton_Skeleton.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_ws::skeleton::skeleton_has_ID():
-    assert hasattr(ws::skeleton::Skeleton, "ID")
+def test_ws_skeleton_skeleton_has_ID():
+    assert hasattr(ws_skeleton_Skeleton, "ID")
     descriptor = None
-    for klass in ws::skeleton::Skeleton.__mro__:
+    for klass in ws_skeleton_Skeleton.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -224,23 +224,23 @@ def test_ws::skeleton::skeleton_has_ID():
 
 
 
-def test_ws::tree::node_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::Node)
+def test_ws_tree_node_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_Node)
 
 
-def test_ws::tree::node_constructor_exists():
-    assert callable(ws::tree::Node.__init__)
+def test_ws_tree_node_constructor_exists():
+    assert callable(ws_tree_Node.__init__)
 
 
-def test_ws::tree::node_constructor_args():
-    sig = inspect.signature(ws::tree::Node.__init__)
+def test_ws_tree_node_constructor_args():
+    sig = inspect.signature(ws_tree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_ws::tree::node_has_ID():
-    assert hasattr(ws::tree::Node, "ID")
+def test_ws_tree_node_has_ID():
+    assert hasattr(ws_tree_Node, "ID")
     descriptor = None
-    for klass in ws::tree::Node.__mro__:
+    for klass in ws_tree_Node.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -248,23 +248,23 @@ def test_ws::tree::node_has_ID():
 
 
 
-def test_ws::tree::basicnode_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::BasicNode)
+def test_ws_tree_basicnode_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_BasicNode)
 
 
-def test_ws::tree::basicnode_constructor_exists():
-    assert callable(ws::tree::BasicNode.__init__)
+def test_ws_tree_basicnode_constructor_exists():
+    assert callable(ws_tree_BasicNode.__init__)
 
 
-def test_ws::tree::basicnode_constructor_args():
-    sig = inspect.signature(ws::tree::BasicNode.__init__)
+def test_ws_tree_basicnode_constructor_args():
+    sig = inspect.signature(ws_tree_BasicNode.__init__)
     params = list(sig.parameters.keys())
     assert "modelName" in params, "Missing parameter 'modelName'"
 
-def test_ws::tree::basicnode_has_modelName():
-    assert hasattr(ws::tree::BasicNode, "modelName")
+def test_ws_tree_basicnode_has_modelName():
+    assert hasattr(ws_tree_BasicNode, "modelName")
     descriptor = None
-    for klass in ws::tree::BasicNode.__mro__:
+    for klass in ws_tree_BasicNode.__mro__:
         if "modelName" in klass.__dict__:
             descriptor = klass.__dict__["modelName"]
             break
@@ -272,35 +272,35 @@ def test_ws::tree::basicnode_has_modelName():
 
 
 
-def test_ws::middleware::processor_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::Processor)
+def test_ws_middleware_processor_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_Processor)
 
 
-def test_ws::middleware::processor_constructor_exists():
-    assert callable(ws::middleware::Processor.__init__)
+def test_ws_middleware_processor_constructor_exists():
+    assert callable(ws_middleware_Processor.__init__)
 
 
-def test_ws::middleware::processor_constructor_args():
-    sig = inspect.signature(ws::middleware::Processor.__init__)
+def test_ws_middleware_processor_constructor_args():
+    sig = inspect.signature(ws_middleware_Processor.__init__)
     params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "IP" in params, "Missing parameter 'IP'"
+    assert "ID" in params, "Missing parameter 'ID'"
 
-def test_ws::middleware::processor_has_ID():
-    assert hasattr(ws::middleware::Processor, "ID")
+def test_ws_middleware_processor_has_IP():
+    assert hasattr(ws_middleware_Processor, "IP")
     descriptor = None
-    for klass in ws::middleware::Processor.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+    for klass in ws_middleware_Processor.__mro__:
+        if "IP" in klass.__dict__:
+            descriptor = klass.__dict__["IP"]
             break
     assert isinstance(descriptor, property)
 
-def test_ws::middleware::processor_has_IP():
-    assert hasattr(ws::middleware::Processor, "IP")
+def test_ws_middleware_processor_has_ID():
+    assert hasattr(ws_middleware_Processor, "ID")
     descriptor = None
-    for klass in ws::middleware::Processor.__mro__:
-        if "IP" in klass.__dict__:
-            descriptor = klass.__dict__["IP"]
+    for klass in ws_middleware_Processor.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -320,33 +320,33 @@ def test_processor_constructor_args():
 
 
 
-def test_ws::middleware::vm_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::VM)
+def test_ws_middleware_vm_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_VM)
 
 
-def test_ws::middleware::vm_constructor_exists():
-    assert callable(ws::middleware::VM.__init__)
+def test_ws_middleware_vm_constructor_exists():
+    assert callable(ws_middleware_VM.__init__)
 
 
-def test_ws::middleware::vm_constructor_args():
-    sig = inspect.signature(ws::middleware::VM.__init__)
+def test_ws_middleware_vm_constructor_args():
+    sig = inspect.signature(ws_middleware_VM.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
     assert "protocol" in params, "Missing parameter 'protocol'"
 
-def test_ws::middleware::vm_has_ID():
-    assert hasattr(ws::middleware::VM, "ID")
+def test_ws_middleware_vm_has_ID():
+    assert hasattr(ws_middleware_VM, "ID")
     descriptor = None
-    for klass in ws::middleware::VM.__mro__:
+    for klass in ws_middleware_VM.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
-def test_ws::middleware::vm_has_protocol():
-    assert hasattr(ws::middleware::VM, "protocol")
+def test_ws_middleware_vm_has_protocol():
+    assert hasattr(ws_middleware_VM, "protocol")
     descriptor = None
-    for klass in ws::middleware::VM.__mro__:
+    for klass in ws_middleware_VM.__mro__:
         if "protocol" in klass.__dict__:
             descriptor = klass.__dict__["protocol"]
             break
@@ -396,16 +396,16 @@ def test_middleware_constructor_args():
 
 
 
-def test_ws::middleware::webservice_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::WebService)
+def test_ws_middleware_webservice_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_WebService)
 
 
-def test_ws::middleware::webservice_constructor_exists():
-    assert callable(ws::middleware::WebService.__init__)
+def test_ws_middleware_webservice_constructor_exists():
+    assert callable(ws_middleware_WebService.__init__)
 
 
-def test_ws::middleware::webservice_constructor_args():
-    sig = inspect.signature(ws::middleware::WebService.__init__)
+def test_ws_middleware_webservice_constructor_args():
+    sig = inspect.signature(ws_middleware_WebService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -438,44 +438,44 @@ def test_simulator_constructor_args():
 
 
 
-def test_ws::tree::cdevssimulator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::CDEVSSimulator)
+def test_ws_tree_cdevssimulator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_CDEVSSimulator)
 
 
-def test_ws::tree::cdevssimulator_constructor_exists():
-    assert callable(ws::tree::CDEVSSimulator.__init__)
+def test_ws_tree_cdevssimulator_constructor_exists():
+    assert callable(ws_tree_CDEVSSimulator.__init__)
 
 
-def test_ws::tree::cdevssimulator_constructor_args():
-    sig = inspect.signature(ws::tree::CDEVSSimulator.__init__)
+def test_ws_tree_cdevssimulator_constructor_args():
+    sig = inspect.signature(ws_tree_CDEVSSimulator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::pdevssimulator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::PDEVSSimulator)
+def test_ws_tree_pdevssimulator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_PDEVSSimulator)
 
 
-def test_ws::tree::pdevssimulator_constructor_exists():
-    assert callable(ws::tree::PDEVSSimulator.__init__)
+def test_ws_tree_pdevssimulator_constructor_exists():
+    assert callable(ws_tree_PDEVSSimulator.__init__)
 
 
-def test_ws::tree::pdevssimulator_constructor_args():
-    sig = inspect.signature(ws::tree::PDEVSSimulator.__init__)
+def test_ws_tree_pdevssimulator_constructor_args():
+    sig = inspect.signature(ws_tree_PDEVSSimulator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::p::simulator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::P::Simulator)
+def test_ws_tree_p_simulator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_P_Simulator)
 
 
-def test_ws::tree::p::simulator_constructor_exists():
-    assert callable(ws::tree::P::Simulator.__init__)
+def test_ws_tree_p_simulator_constructor_exists():
+    assert callable(ws_tree_P_Simulator.__init__)
 
 
-def test_ws::tree::p::simulator_constructor_args():
-    sig = inspect.signature(ws::tree::P::Simulator.__init__)
+def test_ws_tree_p_simulator_constructor_args():
+    sig = inspect.signature(ws_tree_P_Simulator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -494,72 +494,72 @@ def test_coordinator_constructor_args():
 
 
 
-def test_ws::tree::flatcoordinator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::FlatCoordinator)
+def test_ws_tree_nodecoordinator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_NodeCoordinator)
 
 
-def test_ws::tree::flatcoordinator_constructor_exists():
-    assert callable(ws::tree::FlatCoordinator.__init__)
+def test_ws_tree_nodecoordinator_constructor_exists():
+    assert callable(ws_tree_NodeCoordinator.__init__)
 
 
-def test_ws::tree::flatcoordinator_constructor_args():
-    sig = inspect.signature(ws::tree::FlatCoordinator.__init__)
+def test_ws_tree_nodecoordinator_constructor_args():
+    sig = inspect.signature(ws_tree_NodeCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::cdevscoordinator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::CDEVSCoordinator)
+def test_ws_tree_pdevscoordinator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_PDEVSCoordinator)
 
 
-def test_ws::tree::cdevscoordinator_constructor_exists():
-    assert callable(ws::tree::CDEVSCoordinator.__init__)
+def test_ws_tree_pdevscoordinator_constructor_exists():
+    assert callable(ws_tree_PDEVSCoordinator.__init__)
 
 
-def test_ws::tree::cdevscoordinator_constructor_args():
-    sig = inspect.signature(ws::tree::CDEVSCoordinator.__init__)
+def test_ws_tree_pdevscoordinator_constructor_args():
+    sig = inspect.signature(ws_tree_PDEVSCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::nodecoordinator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::NodeCoordinator)
+def test_ws_tree_p_coordinator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_P_Coordinator)
 
 
-def test_ws::tree::nodecoordinator_constructor_exists():
-    assert callable(ws::tree::NodeCoordinator.__init__)
+def test_ws_tree_p_coordinator_constructor_exists():
+    assert callable(ws_tree_P_Coordinator.__init__)
 
 
-def test_ws::tree::nodecoordinator_constructor_args():
-    sig = inspect.signature(ws::tree::NodeCoordinator.__init__)
+def test_ws_tree_p_coordinator_constructor_args():
+    sig = inspect.signature(ws_tree_P_Coordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::pdevscoordinator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::PDEVSCoordinator)
+def test_ws_tree_flatcoordinator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_FlatCoordinator)
 
 
-def test_ws::tree::pdevscoordinator_constructor_exists():
-    assert callable(ws::tree::PDEVSCoordinator.__init__)
+def test_ws_tree_flatcoordinator_constructor_exists():
+    assert callable(ws_tree_FlatCoordinator.__init__)
 
 
-def test_ws::tree::pdevscoordinator_constructor_args():
-    sig = inspect.signature(ws::tree::PDEVSCoordinator.__init__)
+def test_ws_tree_flatcoordinator_constructor_args():
+    sig = inspect.signature(ws_tree_FlatCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::tree::p::coordinator_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::P::Coordinator)
+def test_ws_tree_cdevscoordinator_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_CDEVSCoordinator)
 
 
-def test_ws::tree::p::coordinator_constructor_exists():
-    assert callable(ws::tree::P::Coordinator.__init__)
+def test_ws_tree_cdevscoordinator_constructor_exists():
+    assert callable(ws_tree_CDEVSCoordinator.__init__)
 
 
-def test_ws::tree::p::coordinator_constructor_args():
-    sig = inspect.signature(ws::tree::P::Coordinator.__init__)
+def test_ws_tree_cdevscoordinator_constructor_args():
+    sig = inspect.signature(ws_tree_CDEVSCoordinator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -578,23 +578,23 @@ def test_root_constructor_args():
 
 
 
-def test_ws::tree::tree_is_not_abstract():
-    assert not inspect.isabstract(ws::tree::Tree)
+def test_ws_tree_tree_is_not_abstract():
+    assert not inspect.isabstract(ws_tree_Tree)
 
 
-def test_ws::tree::tree_constructor_exists():
-    assert callable(ws::tree::Tree.__init__)
+def test_ws_tree_tree_constructor_exists():
+    assert callable(ws_tree_Tree.__init__)
 
 
-def test_ws::tree::tree_constructor_args():
-    sig = inspect.signature(ws::tree::Tree.__init__)
+def test_ws_tree_tree_constructor_args():
+    sig = inspect.signature(ws_tree_Tree.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_ws::tree::tree_has_ID():
-    assert hasattr(ws::tree::Tree, "ID")
+def test_ws_tree_tree_has_ID():
+    assert hasattr(ws_tree_Tree, "ID")
     descriptor = None
-    for klass in ws::tree::Tree.__mro__:
+    for klass in ws_tree_Tree.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -602,30 +602,30 @@ def test_ws::tree::tree_has_ID():
 
 
 
-def test_ws::middleware::servicedescription_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::ServiceDescription)
+def test_ws_middleware_servicedescription_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_ServiceDescription)
 
 
-def test_ws::middleware::servicedescription_constructor_exists():
-    assert callable(ws::middleware::ServiceDescription.__init__)
+def test_ws_middleware_servicedescription_constructor_exists():
+    assert callable(ws_middleware_ServiceDescription.__init__)
 
 
-def test_ws::middleware::servicedescription_constructor_args():
-    sig = inspect.signature(ws::middleware::ServiceDescription.__init__)
+def test_ws_middleware_servicedescription_constructor_args():
+    sig = inspect.signature(ws_middleware_ServiceDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ws::middleware::repository_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::Repository)
+def test_ws_middleware_repository_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_Repository)
 
 
-def test_ws::middleware::repository_constructor_exists():
-    assert callable(ws::middleware::Repository.__init__)
+def test_ws_middleware_repository_constructor_exists():
+    assert callable(ws_middleware_Repository.__init__)
 
 
-def test_ws::middleware::repository_constructor_args():
-    sig = inspect.signature(ws::middleware::Repository.__init__)
+def test_ws_middleware_repository_constructor_args():
+    sig = inspect.signature(ws_middleware_Repository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -644,16 +644,16 @@ def test_serviceimpl_constructor_args():
 
 
 
-def test_ws::middleware::stub_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::Stub)
+def test_ws_middleware_stub_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_Stub)
 
 
-def test_ws::middleware::stub_constructor_exists():
-    assert callable(ws::middleware::Stub.__init__)
+def test_ws_middleware_stub_constructor_exists():
+    assert callable(ws_middleware_Stub.__init__)
 
 
-def test_ws::middleware::stub_constructor_args():
-    sig = inspect.signature(ws::middleware::Stub.__init__)
+def test_ws_middleware_stub_constructor_args():
+    sig = inspect.signature(ws_middleware_Stub.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -672,16 +672,16 @@ def test_servicedescription_constructor_args():
 
 
 
-def test_ws::middleware::serviceimpl_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::ServiceImpl)
+def test_ws_middleware_serviceimpl_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_ServiceImpl)
 
 
-def test_ws::middleware::serviceimpl_constructor_exists():
-    assert callable(ws::middleware::ServiceImpl.__init__)
+def test_ws_middleware_serviceimpl_constructor_exists():
+    assert callable(ws_middleware_ServiceImpl.__init__)
 
 
-def test_ws::middleware::serviceimpl_constructor_args():
-    sig = inspect.signature(ws::middleware::ServiceImpl.__init__)
+def test_ws_middleware_serviceimpl_constructor_args():
+    sig = inspect.signature(ws_middleware_ServiceImpl.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -700,16 +700,16 @@ def test_vm_constructor_args():
 
 
 
-def test_ws::middleware::middleware_is_not_abstract():
-    assert not inspect.isabstract(ws::middleware::Middleware)
+def test_ws_middleware_middleware_is_not_abstract():
+    assert not inspect.isabstract(ws_middleware_Middleware)
 
 
-def test_ws::middleware::middleware_constructor_exists():
-    assert callable(ws::middleware::Middleware.__init__)
+def test_ws_middleware_middleware_constructor_exists():
+    assert callable(ws_middleware_Middleware.__init__)
 
 
-def test_ws::middleware::middleware_constructor_args():
-    sig = inspect.signature(ws::middleware::Middleware.__init__)
+def test_ws_middleware_middleware_constructor_args():
+    sig = inspect.signature(ws_middleware_Middleware.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -724,64 +724,64 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ws::bundle::Process_strategy = st.builds(
-    ws::bundle::Process,
+ws_bundle_Process_strategy = st.builds(
+    ws_bundle_Process,
     ID=
         safe_text
 )
 BasicNode_strategy = st.builds(
     BasicNode,
 )
-ws::tree::Coordinator_strategy = st.builds(
-    ws::tree::Coordinator,
+ws_tree_Coordinator_strategy = st.builds(
+    ws_tree_Coordinator,
 )
-ws::tree::Simulator_strategy = st.builds(
-    ws::tree::Simulator,
+ws_tree_Simulator_strategy = st.builds(
+    ws_tree_Simulator,
 )
 Node_strategy = st.builds(
     Node,
 )
-ws::tree::Root_strategy = st.builds(
-    ws::tree::Root,
+ws_tree_Root_strategy = st.builds(
+    ws_tree_Root,
 )
 Skeleton_strategy = st.builds(
     Skeleton,
 )
-ws::bundle::Bundle_strategy = st.builds(
-    ws::bundle::Bundle,
+ws_bundle_Bundle_strategy = st.builds(
+    ws_bundle_Bundle,
     ID=
         safe_text
 )
 Tree_strategy = st.builds(
     Tree,
 )
-ws::skeleton::Skeleton_strategy = st.builds(
-    ws::skeleton::Skeleton,
+ws_skeleton_Skeleton_strategy = st.builds(
+    ws_skeleton_Skeleton,
     ID=
         safe_text
 )
-ws::tree::Node_strategy = st.builds(
-    ws::tree::Node,
+ws_tree_Node_strategy = st.builds(
+    ws_tree_Node,
     ID=
         safe_text
 )
-ws::tree::BasicNode_strategy = st.builds(
-    ws::tree::BasicNode,
+ws_tree_BasicNode_strategy = st.builds(
+    ws_tree_BasicNode,
     modelName=
         safe_text
 )
-ws::middleware::Processor_strategy = st.builds(
-    ws::middleware::Processor,
-    ID=
-        safe_text,
+ws_middleware_Processor_strategy = st.builds(
+    ws_middleware_Processor,
     IP=
+        safe_text,
+    ID=
         safe_text
 )
 Processor_strategy = st.builds(
     Processor,
 )
-ws::middleware::VM_strategy = st.builds(
-    ws::middleware::VM,
+ws_middleware_VM_strategy = st.builds(
+    ws_middleware_VM,
     ID=
         safe_text,
     protocol=
@@ -796,8 +796,8 @@ Stub_strategy = st.builds(
 Middleware_strategy = st.builds(
     Middleware,
 )
-ws::middleware::WebService_strategy = st.builds(
-    ws::middleware::WebService,
+ws_middleware_WebService_strategy = st.builds(
+    ws_middleware_WebService,
 )
 Process_strategy = st.builds(
     Process,
@@ -805,78 +805,75 @@ Process_strategy = st.builds(
 Simulator_strategy = st.builds(
     Simulator,
 )
-ws::tree::CDEVSSimulator_strategy = st.builds(
-    ws::tree::CDEVSSimulator,
+ws_tree_CDEVSSimulator_strategy = st.builds(
+    ws_tree_CDEVSSimulator,
 )
-ws::tree::PDEVSSimulator_strategy = st.builds(
-    ws::tree::PDEVSSimulator,
+ws_tree_PDEVSSimulator_strategy = st.builds(
+    ws_tree_PDEVSSimulator,
 )
-ws::tree::P::Simulator_strategy = st.builds(
-    ws::tree::P::Simulator,
+ws_tree_P_Simulator_strategy = st.builds(
+    ws_tree_P_Simulator,
 )
 Coordinator_strategy = st.builds(
     Coordinator,
 )
-ws::tree::FlatCoordinator_strategy = st.builds(
-    ws::tree::FlatCoordinator,
+ws_tree_NodeCoordinator_strategy = st.builds(
+    ws_tree_NodeCoordinator,
 )
-ws::tree::CDEVSCoordinator_strategy = st.builds(
-    ws::tree::CDEVSCoordinator,
+ws_tree_PDEVSCoordinator_strategy = st.builds(
+    ws_tree_PDEVSCoordinator,
 )
-ws::tree::NodeCoordinator_strategy = st.builds(
-    ws::tree::NodeCoordinator,
+ws_tree_P_Coordinator_strategy = st.builds(
+    ws_tree_P_Coordinator,
 )
-ws::tree::PDEVSCoordinator_strategy = st.builds(
-    ws::tree::PDEVSCoordinator,
+ws_tree_FlatCoordinator_strategy = st.builds(
+    ws_tree_FlatCoordinator,
 )
-ws::tree::P::Coordinator_strategy = st.builds(
-    ws::tree::P::Coordinator,
+ws_tree_CDEVSCoordinator_strategy = st.builds(
+    ws_tree_CDEVSCoordinator,
 )
 Root_strategy = st.builds(
     Root,
 )
-ws::tree::Tree_strategy = st.builds(
-    ws::tree::Tree,
+ws_tree_Tree_strategy = st.builds(
+    ws_tree_Tree,
     ID=
         safe_text
 )
-ws::middleware::ServiceDescription_strategy = st.builds(
-    ws::middleware::ServiceDescription,
+ws_middleware_ServiceDescription_strategy = st.builds(
+    ws_middleware_ServiceDescription,
 )
-ws::middleware::Repository_strategy = st.builds(
-    ws::middleware::Repository,
+ws_middleware_Repository_strategy = st.builds(
+    ws_middleware_Repository,
 )
 ServiceImpl_strategy = st.builds(
     ServiceImpl,
 )
-ws::middleware::Stub_strategy = st.builds(
-    ws::middleware::Stub,
+ws_middleware_Stub_strategy = st.builds(
+    ws_middleware_Stub,
 )
 ServiceDescription_strategy = st.builds(
     ServiceDescription,
 )
-ws::middleware::ServiceImpl_strategy = st.builds(
-    ws::middleware::ServiceImpl,
+ws_middleware_ServiceImpl_strategy = st.builds(
+    ws_middleware_ServiceImpl,
 )
 VM_strategy = st.builds(
     VM,
 )
-ws::middleware::Middleware_strategy = st.builds(
-    ws::middleware::Middleware,
+ws_middleware_Middleware_strategy = st.builds(
+    ws_middleware_Middleware,
 )
 
-@given(instance=ws::bundle::Process_strategy)
+@given(instance=ws_bundle_Process_strategy)
 @settings(max_examples=50)
-def test_ws::bundle::process_instantiation(instance):
-    assert isinstance(instance, ws::bundle::Process)
-
-@given(instance=ws::bundle::Process_strategy)
-def test_ws::bundle::process_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_bundle_process_instantiation(instance):
+    assert isinstance(instance, ws_bundle_Process)
 
 
-@given(instance=ws::bundle::Process_strategy)
-def test_ws::bundle::process_ID_setter(instance):
+
+@given(instance=ws_bundle_Process_strategy)
+def test_ws_bundle_process_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -887,9 +884,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::bundle::Process_strategy)
+@given(instance=ws_bundle_Process_strategy)
 @settings(max_examples=30)
-def test_ws::bundle::process_receive_changes_state(instance):
+def test_ws_bundle_process_receive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -901,57 +898,54 @@ def test_ws::bundle::process_receive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'receive' in ws::bundle::Process is empty"
+        assert has_statements, f"Function 'receive' in ws_bundle_Process is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'receive' in ws::bundle::Process did not change state; check implementation")
+            warnings.warn(f"Operation 'receive' in ws_bundle_Process did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'receive' in ws::bundle::Process is not implemented or raised an error")
+        warnings.warn(f"Operation 'receive' in ws_bundle_Process is not implemented or raised an error")
 
 @given(instance=BasicNode_strategy)
 @settings(max_examples=50)
 def test_basicnode_instantiation(instance):
     assert isinstance(instance, BasicNode)
 
-@given(instance=ws::tree::Coordinator_strategy)
+@given(instance=ws_tree_Coordinator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::coordinator_instantiation(instance):
-    assert isinstance(instance, ws::tree::Coordinator)
+def test_ws_tree_coordinator_instantiation(instance):
+    assert isinstance(instance, ws_tree_Coordinator)
 
-@given(instance=ws::tree::Simulator_strategy)
+@given(instance=ws_tree_Simulator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::simulator_instantiation(instance):
-    assert isinstance(instance, ws::tree::Simulator)
+def test_ws_tree_simulator_instantiation(instance):
+    assert isinstance(instance, ws_tree_Simulator)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=ws::tree::Root_strategy)
+@given(instance=ws_tree_Root_strategy)
 @settings(max_examples=50)
-def test_ws::tree::root_instantiation(instance):
-    assert isinstance(instance, ws::tree::Root)
+def test_ws_tree_root_instantiation(instance):
+    assert isinstance(instance, ws_tree_Root)
 
 @given(instance=Skeleton_strategy)
 @settings(max_examples=50)
 def test_skeleton_instantiation(instance):
     assert isinstance(instance, Skeleton)
 
-@given(instance=ws::bundle::Bundle_strategy)
+@given(instance=ws_bundle_Bundle_strategy)
 @settings(max_examples=50)
-def test_ws::bundle::bundle_instantiation(instance):
-    assert isinstance(instance, ws::bundle::Bundle)
-
-@given(instance=ws::bundle::Bundle_strategy)
-def test_ws::bundle::bundle_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_bundle_bundle_instantiation(instance):
+    assert isinstance(instance, ws_bundle_Bundle)
 
 
-@given(instance=ws::bundle::Bundle_strategy)
-def test_ws::bundle::bundle_ID_setter(instance):
+
+@given(instance=ws_bundle_Bundle_strategy)
+def test_ws_bundle_bundle_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -961,80 +955,65 @@ def test_ws::bundle::bundle_ID_setter(instance):
 def test_tree_instantiation(instance):
     assert isinstance(instance, Tree)
 
-@given(instance=ws::skeleton::Skeleton_strategy)
+@given(instance=ws_skeleton_Skeleton_strategy)
 @settings(max_examples=50)
-def test_ws::skeleton::skeleton_instantiation(instance):
-    assert isinstance(instance, ws::skeleton::Skeleton)
-
-@given(instance=ws::skeleton::Skeleton_strategy)
-def test_ws::skeleton::skeleton_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_skeleton_skeleton_instantiation(instance):
+    assert isinstance(instance, ws_skeleton_Skeleton)
 
 
-@given(instance=ws::skeleton::Skeleton_strategy)
-def test_ws::skeleton::skeleton_ID_setter(instance):
+
+@given(instance=ws_skeleton_Skeleton_strategy)
+def test_ws_skeleton_skeleton_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=ws::tree::Node_strategy)
+@given(instance=ws_tree_Node_strategy)
 @settings(max_examples=50)
-def test_ws::tree::node_instantiation(instance):
-    assert isinstance(instance, ws::tree::Node)
-
-@given(instance=ws::tree::Node_strategy)
-def test_ws::tree::node_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_tree_node_instantiation(instance):
+    assert isinstance(instance, ws_tree_Node)
 
 
-@given(instance=ws::tree::Node_strategy)
-def test_ws::tree::node_ID_setter(instance):
+
+@given(instance=ws_tree_Node_strategy)
+def test_ws_tree_node_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=ws::tree::BasicNode_strategy)
+@given(instance=ws_tree_BasicNode_strategy)
 @settings(max_examples=50)
-def test_ws::tree::basicnode_instantiation(instance):
-    assert isinstance(instance, ws::tree::BasicNode)
-
-@given(instance=ws::tree::BasicNode_strategy)
-def test_ws::tree::basicnode_modelName_type(instance):
-    assert isinstance(instance.modelName, str)
+def test_ws_tree_basicnode_instantiation(instance):
+    assert isinstance(instance, ws_tree_BasicNode)
 
 
-@given(instance=ws::tree::BasicNode_strategy)
-def test_ws::tree::basicnode_modelName_setter(instance):
+
+@given(instance=ws_tree_BasicNode_strategy)
+def test_ws_tree_basicnode_modelName_setter(instance):
     original = instance.modelName
     instance.modelName = original
     assert instance.modelName == original
 
-@given(instance=ws::middleware::Processor_strategy)
+@given(instance=ws_middleware_Processor_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::processor_instantiation(instance):
-    assert isinstance(instance, ws::middleware::Processor)
-
-@given(instance=ws::middleware::Processor_strategy)
-def test_ws::middleware::processor_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_middleware_processor_instantiation(instance):
+    assert isinstance(instance, ws_middleware_Processor)
 
 
-@given(instance=ws::middleware::Processor_strategy)
-def test_ws::middleware::processor_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
 
-@given(instance=ws::middleware::Processor_strategy)
-def test_ws::middleware::processor_IP_type(instance):
-    assert isinstance(instance.IP, str)
-
-
-@given(instance=ws::middleware::Processor_strategy)
-def test_ws::middleware::processor_IP_setter(instance):
+@given(instance=ws_middleware_Processor_strategy)
+def test_ws_middleware_processor_IP_setter(instance):
     original = instance.IP
     instance.IP = original
     assert instance.IP == original
+
+
+
+@given(instance=ws_middleware_Processor_strategy)
+def test_ws_middleware_processor_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
 
 import warnings
 import copy
@@ -1042,9 +1021,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::Processor_strategy)
+@given(instance=ws_middleware_Processor_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::processor_receive_changes_state(instance):
+def test_ws_middleware_processor_receive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1056,43 +1035,37 @@ def test_ws::middleware::processor_receive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'receive' in ws::middleware::Processor is empty"
+        assert has_statements, f"Function 'receive' in ws_middleware_Processor is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'receive' in ws::middleware::Processor did not change state; check implementation")
+            warnings.warn(f"Operation 'receive' in ws_middleware_Processor did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'receive' in ws::middleware::Processor is not implemented or raised an error")
+        warnings.warn(f"Operation 'receive' in ws_middleware_Processor is not implemented or raised an error")
 
 @given(instance=Processor_strategy)
 @settings(max_examples=50)
 def test_processor_instantiation(instance):
     assert isinstance(instance, Processor)
 
-@given(instance=ws::middleware::VM_strategy)
+@given(instance=ws_middleware_VM_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::vm_instantiation(instance):
-    assert isinstance(instance, ws::middleware::VM)
-
-@given(instance=ws::middleware::VM_strategy)
-def test_ws::middleware::vm_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_middleware_vm_instantiation(instance):
+    assert isinstance(instance, ws_middleware_VM)
 
 
-@given(instance=ws::middleware::VM_strategy)
-def test_ws::middleware::vm_ID_setter(instance):
+
+@given(instance=ws_middleware_VM_strategy)
+def test_ws_middleware_vm_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=ws::middleware::VM_strategy)
-def test_ws::middleware::vm_protocol_type(instance):
-    assert isinstance(instance.protocol, str)
 
 
-@given(instance=ws::middleware::VM_strategy)
-def test_ws::middleware::vm_protocol_setter(instance):
+@given(instance=ws_middleware_VM_strategy)
+def test_ws_middleware_vm_protocol_setter(instance):
     original = instance.protocol
     instance.protocol = original
     assert instance.protocol == original
@@ -1112,10 +1085,10 @@ def test_stub_instantiation(instance):
 def test_middleware_instantiation(instance):
     assert isinstance(instance, Middleware)
 
-@given(instance=ws::middleware::WebService_strategy)
+@given(instance=ws_middleware_WebService_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::webservice_instantiation(instance):
-    assert isinstance(instance, ws::middleware::WebService)
+def test_ws_middleware_webservice_instantiation(instance):
+    assert isinstance(instance, ws_middleware_WebService)
 
 @given(instance=Process_strategy)
 @settings(max_examples=50)
@@ -1127,81 +1100,78 @@ def test_process_instantiation(instance):
 def test_simulator_instantiation(instance):
     assert isinstance(instance, Simulator)
 
-@given(instance=ws::tree::CDEVSSimulator_strategy)
+@given(instance=ws_tree_CDEVSSimulator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::cdevssimulator_instantiation(instance):
-    assert isinstance(instance, ws::tree::CDEVSSimulator)
+def test_ws_tree_cdevssimulator_instantiation(instance):
+    assert isinstance(instance, ws_tree_CDEVSSimulator)
 
-@given(instance=ws::tree::PDEVSSimulator_strategy)
+@given(instance=ws_tree_PDEVSSimulator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::pdevssimulator_instantiation(instance):
-    assert isinstance(instance, ws::tree::PDEVSSimulator)
+def test_ws_tree_pdevssimulator_instantiation(instance):
+    assert isinstance(instance, ws_tree_PDEVSSimulator)
 
-@given(instance=ws::tree::P::Simulator_strategy)
+@given(instance=ws_tree_P_Simulator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::p::simulator_instantiation(instance):
-    assert isinstance(instance, ws::tree::P::Simulator)
+def test_ws_tree_p_simulator_instantiation(instance):
+    assert isinstance(instance, ws_tree_P_Simulator)
 
 @given(instance=Coordinator_strategy)
 @settings(max_examples=50)
 def test_coordinator_instantiation(instance):
     assert isinstance(instance, Coordinator)
 
-@given(instance=ws::tree::FlatCoordinator_strategy)
+@given(instance=ws_tree_NodeCoordinator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::flatcoordinator_instantiation(instance):
-    assert isinstance(instance, ws::tree::FlatCoordinator)
+def test_ws_tree_nodecoordinator_instantiation(instance):
+    assert isinstance(instance, ws_tree_NodeCoordinator)
 
-@given(instance=ws::tree::CDEVSCoordinator_strategy)
+@given(instance=ws_tree_PDEVSCoordinator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::cdevscoordinator_instantiation(instance):
-    assert isinstance(instance, ws::tree::CDEVSCoordinator)
+def test_ws_tree_pdevscoordinator_instantiation(instance):
+    assert isinstance(instance, ws_tree_PDEVSCoordinator)
 
-@given(instance=ws::tree::NodeCoordinator_strategy)
+@given(instance=ws_tree_P_Coordinator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::nodecoordinator_instantiation(instance):
-    assert isinstance(instance, ws::tree::NodeCoordinator)
+def test_ws_tree_p_coordinator_instantiation(instance):
+    assert isinstance(instance, ws_tree_P_Coordinator)
 
-@given(instance=ws::tree::PDEVSCoordinator_strategy)
+@given(instance=ws_tree_FlatCoordinator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::pdevscoordinator_instantiation(instance):
-    assert isinstance(instance, ws::tree::PDEVSCoordinator)
+def test_ws_tree_flatcoordinator_instantiation(instance):
+    assert isinstance(instance, ws_tree_FlatCoordinator)
 
-@given(instance=ws::tree::P::Coordinator_strategy)
+@given(instance=ws_tree_CDEVSCoordinator_strategy)
 @settings(max_examples=50)
-def test_ws::tree::p::coordinator_instantiation(instance):
-    assert isinstance(instance, ws::tree::P::Coordinator)
+def test_ws_tree_cdevscoordinator_instantiation(instance):
+    assert isinstance(instance, ws_tree_CDEVSCoordinator)
 
 @given(instance=Root_strategy)
 @settings(max_examples=50)
 def test_root_instantiation(instance):
     assert isinstance(instance, Root)
 
-@given(instance=ws::tree::Tree_strategy)
+@given(instance=ws_tree_Tree_strategy)
 @settings(max_examples=50)
-def test_ws::tree::tree_instantiation(instance):
-    assert isinstance(instance, ws::tree::Tree)
-
-@given(instance=ws::tree::Tree_strategy)
-def test_ws::tree::tree_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_ws_tree_tree_instantiation(instance):
+    assert isinstance(instance, ws_tree_Tree)
 
 
-@given(instance=ws::tree::Tree_strategy)
-def test_ws::tree::tree_ID_setter(instance):
+
+@given(instance=ws_tree_Tree_strategy)
+def test_ws_tree_tree_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=ws::middleware::ServiceDescription_strategy)
+@given(instance=ws_middleware_ServiceDescription_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::servicedescription_instantiation(instance):
-    assert isinstance(instance, ws::middleware::ServiceDescription)
+def test_ws_middleware_servicedescription_instantiation(instance):
+    assert isinstance(instance, ws_middleware_ServiceDescription)
 
-@given(instance=ws::middleware::Repository_strategy)
+@given(instance=ws_middleware_Repository_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::repository_instantiation(instance):
-    assert isinstance(instance, ws::middleware::Repository)
+def test_ws_middleware_repository_instantiation(instance):
+    assert isinstance(instance, ws_middleware_Repository)
 
 import warnings
 import copy
@@ -1209,38 +1179,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::Repository_strategy)
+@given(instance=ws_middleware_Repository_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::repository_lookup_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.lookup()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.lookup).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'lookup' in ws::middleware::Repository is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'lookup' in ws::middleware::Repository did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'lookup' in ws::middleware::Repository is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ws::middleware::Repository_strategy)
-@settings(max_examples=30)
-def test_ws::middleware::repository_rebind_changes_state(instance):
+def test_ws_middleware_repository_rebind_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1252,24 +1193,53 @@ def test_ws::middleware::repository_rebind_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'rebind' in ws::middleware::Repository is empty"
+        assert has_statements, f"Function 'rebind' in ws_middleware_Repository is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'rebind' in ws::middleware::Repository did not change state; check implementation")
+            warnings.warn(f"Operation 'rebind' in ws_middleware_Repository did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'rebind' in ws::middleware::Repository is not implemented or raised an error")
+        warnings.warn(f"Operation 'rebind' in ws_middleware_Repository is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ws_middleware_Repository_strategy)
+@settings(max_examples=30)
+def test_ws_middleware_repository_lookup_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.lookup()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.lookup).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'lookup' in ws_middleware_Repository is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'lookup' in ws_middleware_Repository did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'lookup' in ws_middleware_Repository is not implemented or raised an error")
 
 @given(instance=ServiceImpl_strategy)
 @settings(max_examples=50)
 def test_serviceimpl_instantiation(instance):
     assert isinstance(instance, ServiceImpl)
 
-@given(instance=ws::middleware::Stub_strategy)
+@given(instance=ws_middleware_Stub_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::stub_instantiation(instance):
-    assert isinstance(instance, ws::middleware::Stub)
+def test_ws_middleware_stub_instantiation(instance):
+    assert isinstance(instance, ws_middleware_Stub)
 
 import warnings
 import copy
@@ -1277,9 +1247,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::Stub_strategy)
+@given(instance=ws_middleware_Stub_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::stub_receive_changes_state(instance):
+def test_ws_middleware_stub_receive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1291,24 +1261,24 @@ def test_ws::middleware::stub_receive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'receive' in ws::middleware::Stub is empty"
+        assert has_statements, f"Function 'receive' in ws_middleware_Stub is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'receive' in ws::middleware::Stub did not change state; check implementation")
+            warnings.warn(f"Operation 'receive' in ws_middleware_Stub did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'receive' in ws::middleware::Stub is not implemented or raised an error")
+        warnings.warn(f"Operation 'receive' in ws_middleware_Stub is not implemented or raised an error")
 
 @given(instance=ServiceDescription_strategy)
 @settings(max_examples=50)
 def test_servicedescription_instantiation(instance):
     assert isinstance(instance, ServiceDescription)
 
-@given(instance=ws::middleware::ServiceImpl_strategy)
+@given(instance=ws_middleware_ServiceImpl_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::serviceimpl_instantiation(instance):
-    assert isinstance(instance, ws::middleware::ServiceImpl)
+def test_ws_middleware_serviceimpl_instantiation(instance):
+    assert isinstance(instance, ws_middleware_ServiceImpl)
 
 import warnings
 import copy
@@ -1316,9 +1286,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::ServiceImpl_strategy)
+@given(instance=ws_middleware_ServiceImpl_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::serviceimpl_receive_changes_state(instance):
+def test_ws_middleware_serviceimpl_receive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1330,24 +1300,24 @@ def test_ws::middleware::serviceimpl_receive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'receive' in ws::middleware::ServiceImpl is empty"
+        assert has_statements, f"Function 'receive' in ws_middleware_ServiceImpl is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'receive' in ws::middleware::ServiceImpl did not change state; check implementation")
+            warnings.warn(f"Operation 'receive' in ws_middleware_ServiceImpl did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'receive' in ws::middleware::ServiceImpl is not implemented or raised an error")
+        warnings.warn(f"Operation 'receive' in ws_middleware_ServiceImpl is not implemented or raised an error")
 
 @given(instance=VM_strategy)
 @settings(max_examples=50)
 def test_vm_instantiation(instance):
     assert isinstance(instance, VM)
 
-@given(instance=ws::middleware::Middleware_strategy)
+@given(instance=ws_middleware_Middleware_strategy)
 @settings(max_examples=50)
-def test_ws::middleware::middleware_instantiation(instance):
-    assert isinstance(instance, ws::middleware::Middleware)
+def test_ws_middleware_middleware_instantiation(instance):
+    assert isinstance(instance, ws_middleware_Middleware)
 
 import warnings
 import copy
@@ -1355,9 +1325,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::Middleware_strategy)
+@given(instance=ws_middleware_Middleware_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::middleware_establish_changes_state(instance):
+def test_ws_middleware_middleware_establish_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1369,14 +1339,14 @@ def test_ws::middleware::middleware_establish_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'establish' in ws::middleware::Middleware is empty"
+        assert has_statements, f"Function 'establish' in ws_middleware_Middleware is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'establish' in ws::middleware::Middleware did not change state; check implementation")
+            warnings.warn(f"Operation 'establish' in ws_middleware_Middleware did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'establish' in ws::middleware::Middleware is not implemented or raised an error")
+        warnings.warn(f"Operation 'establish' in ws_middleware_Middleware is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1384,9 +1354,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::Middleware_strategy)
+@given(instance=ws_middleware_Middleware_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::middleware_bind_changes_state(instance):
+def test_ws_middleware_middleware_bind_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1398,14 +1368,14 @@ def test_ws::middleware::middleware_bind_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bind' in ws::middleware::Middleware is empty"
+        assert has_statements, f"Function 'bind' in ws_middleware_Middleware is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bind' in ws::middleware::Middleware did not change state; check implementation")
+            warnings.warn(f"Operation 'bind' in ws_middleware_Middleware did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bind' in ws::middleware::Middleware is not implemented or raised an error")
+        warnings.warn(f"Operation 'bind' in ws_middleware_Middleware is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1413,9 +1383,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ws::middleware::Middleware_strategy)
+@given(instance=ws_middleware_Middleware_strategy)
 @settings(max_examples=30)
-def test_ws::middleware::middleware_send_changes_state(instance):
+def test_ws_middleware_middleware_send_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1427,11 +1397,11 @@ def test_ws::middleware::middleware_send_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'send' in ws::middleware::Middleware is empty"
+        assert has_statements, f"Function 'send' in ws_middleware_Middleware is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'send' in ws::middleware::Middleware did not change state; check implementation")
+            warnings.warn(f"Operation 'send' in ws_middleware_Middleware did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'send' in ws::middleware::Middleware is not implemented or raised an error")
+        warnings.warn(f"Operation 'send' in ws_middleware_Middleware is not implemented or raised an error")

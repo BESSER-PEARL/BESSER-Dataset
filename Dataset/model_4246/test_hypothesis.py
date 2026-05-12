@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    properties::Employee,
-    properties::Department,
+from python_code import (
+    properties_Department,
+    properties_Employee,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_properties::employee_is_not_abstract():
-    assert not inspect.isabstract(properties::Employee)
+def test_properties_department_is_not_abstract():
+    assert not inspect.isabstract(properties_Department)
 
 
-def test_properties::employee_constructor_exists():
-    assert callable(properties::Employee.__init__)
+def test_properties_department_constructor_exists():
+    assert callable(properties_Department.__init__)
 
 
-def test_properties::employee_constructor_args():
-    sig = inspect.signature(properties::Employee.__init__)
+def test_properties_department_constructor_args():
+    sig = inspect.signature(properties_Department.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_properties::department_is_not_abstract():
-    assert not inspect.isabstract(properties::Department)
+def test_properties_employee_is_not_abstract():
+    assert not inspect.isabstract(properties_Employee)
 
 
-def test_properties::department_constructor_exists():
-    assert callable(properties::Department.__init__)
+def test_properties_employee_constructor_exists():
+    assert callable(properties_Employee.__init__)
 
 
-def test_properties::department_constructor_args():
-    sig = inspect.signature(properties::Department.__init__)
+def test_properties_employee_constructor_args():
+    sig = inspect.signature(properties_Employee.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-properties::Employee_strategy = st.builds(
-    properties::Employee,
+properties_Department_strategy = st.builds(
+    properties_Department,
 )
-properties::Department_strategy = st.builds(
-    properties::Department,
+properties_Employee_strategy = st.builds(
+    properties_Employee,
 )
 
-@given(instance=properties::Employee_strategy)
+@given(instance=properties_Department_strategy)
 @settings(max_examples=50)
-def test_properties::employee_instantiation(instance):
-    assert isinstance(instance, properties::Employee)
+def test_properties_department_instantiation(instance):
+    assert isinstance(instance, properties_Department)
 
-@given(instance=properties::Department_strategy)
+@given(instance=properties_Employee_strategy)
 @settings(max_examples=50)
-def test_properties::department_instantiation(instance):
-    assert isinstance(instance, properties::Department)
+def test_properties_employee_instantiation(instance):
+    assert isinstance(instance, properties_Employee)

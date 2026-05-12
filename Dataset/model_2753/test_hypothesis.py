@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::A,
-    test::B,
-    test::Compo,
+from python_code import (
+    test_A,
+    test_B,
+    test_Compo,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_test::a_is_not_abstract():
-    assert not inspect.isabstract(test::A)
+def test_test_a_is_not_abstract():
+    assert not inspect.isabstract(test_A)
 
 
-def test_test::a_constructor_exists():
-    assert callable(test::A.__init__)
+def test_test_a_constructor_exists():
+    assert callable(test_A.__init__)
 
 
-def test_test::a_constructor_args():
-    sig = inspect.signature(test::A.__init__)
+def test_test_a_constructor_args():
+    sig = inspect.signature(test_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::b_is_not_abstract():
-    assert not inspect.isabstract(test::B)
+def test_test_b_is_not_abstract():
+    assert not inspect.isabstract(test_B)
 
 
-def test_test::b_constructor_exists():
-    assert callable(test::B.__init__)
+def test_test_b_constructor_exists():
+    assert callable(test_B.__init__)
 
 
-def test_test::b_constructor_args():
-    sig = inspect.signature(test::B.__init__)
+def test_test_b_constructor_args():
+    sig = inspect.signature(test_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::compo_is_not_abstract():
-    assert not inspect.isabstract(test::Compo)
+def test_test_compo_is_not_abstract():
+    assert not inspect.isabstract(test_Compo)
 
 
-def test_test::compo_constructor_exists():
-    assert callable(test::Compo.__init__)
+def test_test_compo_constructor_exists():
+    assert callable(test_Compo.__init__)
 
 
-def test_test::compo_constructor_args():
-    sig = inspect.signature(test::Compo.__init__)
+def test_test_compo_constructor_args():
+    sig = inspect.signature(test_Compo.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::A_strategy = st.builds(
-    test::A,
+test_A_strategy = st.builds(
+    test_A,
 )
-test::B_strategy = st.builds(
-    test::B,
+test_B_strategy = st.builds(
+    test_B,
 )
-test::Compo_strategy = st.builds(
-    test::Compo,
+test_Compo_strategy = st.builds(
+    test_Compo,
 )
 
-@given(instance=test::A_strategy)
+@given(instance=test_A_strategy)
 @settings(max_examples=50)
-def test_test::a_instantiation(instance):
-    assert isinstance(instance, test::A)
+def test_test_a_instantiation(instance):
+    assert isinstance(instance, test_A)
 
-@given(instance=test::B_strategy)
+@given(instance=test_B_strategy)
 @settings(max_examples=50)
-def test_test::b_instantiation(instance):
-    assert isinstance(instance, test::B)
+def test_test_b_instantiation(instance):
+    assert isinstance(instance, test_B)
 
-@given(instance=test::Compo_strategy)
+@given(instance=test_Compo_strategy)
 @settings(max_examples=50)
-def test_test::compo_instantiation(instance):
-    assert isinstance(instance, test::Compo)
+def test_test_compo_instantiation(instance):
+    assert isinstance(instance, test_Compo)

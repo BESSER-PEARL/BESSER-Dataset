@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Login1,
@@ -42,17 +42,8 @@ def test_login1_constructor_exists():
 def test_login1_constructor_args():
     sig = inspect.signature(Login1.__init__)
     params = list(sig.parameters.keys())
-    assert "Password" in params, "Missing parameter 'Password'"
     assert "Username" in params, "Missing parameter 'Username'"
-
-def test_login1_has_Password():
-    assert hasattr(Login1, "Password")
-    descriptor = None
-    for klass in Login1.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Password" in params, "Missing parameter 'Password'"
 
 def test_login1_has_Username():
     assert hasattr(Login1, "Username")
@@ -60,6 +51,15 @@ def test_login1_has_Username():
     for klass in Login1.__mro__:
         if "Username" in klass.__dict__:
             descriptor = klass.__dict__["Username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login1_has_Password():
+    assert hasattr(Login1, "Password")
+    descriptor = None
+    for klass in Login1.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
             break
     assert isinstance(descriptor, property)
 
@@ -170,17 +170,8 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
-    assert "username" in params, "Missing parameter 'username'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_login_has_username():
-    assert hasattr(Login, "username")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
+    assert "username" in params, "Missing parameter 'username'"
 
 def test_login_has_password():
     assert hasattr(Login, "password")
@@ -188,6 +179,15 @@ def test_login_has_password():
     for klass in Login.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_username():
+    assert hasattr(Login, "username")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
@@ -331,9 +331,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Login1_strategy = st.builds(
     Login1,
-    Password=
-        safe_text,
     Username=
+        safe_text,
+    Password=
         safe_text
 )
 Pencarian_strategy = st.builds(
@@ -358,9 +358,9 @@ Class_strategy = st.builds(
 )
 Login_strategy = st.builds(
     Login,
-    username=
-        safe_text,
     password=
+        safe_text,
+    username=
         safe_text
 )
 Melakukan_Penerjemahan_Buku_Bacaan_UseCase_strategy = st.builds(
@@ -396,20 +396,6 @@ User_Actor_strategy = st.builds(
 def test_login1_instantiation(instance):
     assert isinstance(instance, Login1)
 
-@given(instance=Login1_strategy)
-def test_login1_Password_type(instance):
-    assert isinstance(instance.Password, str)
-
-
-@given(instance=Login1_strategy)
-def test_login1_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
-
-@given(instance=Login1_strategy)
-def test_login1_Username_type(instance):
-    assert isinstance(instance.Username, str)
 
 
 @given(instance=Login1_strategy)
@@ -417,6 +403,14 @@ def test_login1_Username_setter(instance):
     original = instance.Username
     instance.Username = original
     assert instance.Username == original
+
+
+
+@given(instance=Login1_strategy)
+def test_login1_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
 
 @given(instance=Pencarian_strategy)
 @settings(max_examples=50)
@@ -428,9 +422,6 @@ def test_pencarian_instantiation(instance):
 def test_keluar_instantiation(instance):
     assert isinstance(instance, Keluar)
 
-@given(instance=Keluar_strategy)
-def test_keluar_Keluar_type(instance):
-    assert isinstance(instance.Keluar, str)
 
 
 @given(instance=Keluar_strategy)
@@ -464,20 +455,6 @@ def test_class_instantiation(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Login_strategy)
-def test_login_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Login_strategy)
@@ -485,6 +462,14 @@ def test_login_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
+
+
+
+@given(instance=Login_strategy)
+def test_login_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
 
 @given(instance=Melakukan_Penerjemahan_Buku_Bacaan_UseCase_strategy)
 @settings(max_examples=50)

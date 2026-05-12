@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Manage_Expense_currency_external,
@@ -51,9 +51,9 @@ from python_code import (
     Manager_Actor,
     Collaborator_Actor,
     My_Expenses_general_use_case_diagram_Component,
-    PaymentMethod,
-    Currency,
     ExpenseStatus,
+    Currency,
+    PaymentMethod,
 )
 
 # =============================================================================
@@ -200,8 +200,8 @@ def test_expensetype_constructor_args():
     sig = inspect.signature(ExpenseType.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "price" in params, "Missing parameter 'price'"
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_expensetype_has_id():
     assert hasattr(ExpenseType, "id")
@@ -212,21 +212,21 @@ def test_expensetype_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_expensetype_has_name():
-    assert hasattr(ExpenseType, "name")
-    descriptor = None
-    for klass in ExpenseType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_expensetype_has_price():
     assert hasattr(ExpenseType, "price")
     descriptor = None
     for klass in ExpenseType.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_expensetype_has_name():
+    assert hasattr(ExpenseType, "name")
+    descriptor = None
+    for klass in ExpenseType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -243,9 +243,18 @@ def test_currency1_constructor_exists():
 def test_currency1_constructor_args():
     sig = inspect.signature(Currency1.__init__)
     params = list(sig.parameters.keys())
+    assert "abr" in params, "Missing parameter 'abr'"
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "abr" in params, "Missing parameter 'abr'"
+
+def test_currency1_has_abr():
+    assert hasattr(Currency1, "abr")
+    descriptor = None
+    for klass in Currency1.__mro__:
+        if "abr" in klass.__dict__:
+            descriptor = klass.__dict__["abr"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_currency1_has_name():
     assert hasattr(Currency1, "name")
@@ -265,15 +274,6 @@ def test_currency1_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_currency1_has_abr():
-    assert hasattr(Currency1, "abr")
-    descriptor = None
-    for klass in Currency1.__mro__:
-        if "abr" in klass.__dict__:
-            descriptor = klass.__dict__["abr"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_comment_is_not_abstract():
@@ -287,9 +287,18 @@ def test_comment_constructor_exists():
 def test_comment_constructor_args():
     sig = inspect.signature(Comment.__init__)
     params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
     assert "user_id" in params, "Missing parameter 'user_id'"
     assert "text" in params, "Missing parameter 'text'"
-    assert "id" in params, "Missing parameter 'id'"
+
+def test_comment_has_id():
+    assert hasattr(Comment, "id")
+    descriptor = None
+    for klass in Comment.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_comment_has_user_id():
     assert hasattr(Comment, "user_id")
@@ -309,15 +318,6 @@ def test_comment_has_text():
             break
     assert isinstance(descriptor, property)
 
-def test_comment_has_id():
-    assert hasattr(Comment, "id")
-    descriptor = None
-    for klass in Comment.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_bill_is_not_abstract():
@@ -332,12 +332,12 @@ def test_bill_constructor_args():
     sig = inspect.signature(Bill.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
-    assert "attachment_id" in params, "Missing parameter 'attachment_id'"
-    assert "payment_method" in params, "Missing parameter 'payment_method'"
-    assert "distance" in params, "Missing parameter 'distance'"
     assert "sum" in params, "Missing parameter 'sum'"
-    assert "status" in params, "Missing parameter 'status'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "attachment_id" in params, "Missing parameter 'attachment_id'"
+    assert "distance" in params, "Missing parameter 'distance'"
+    assert "payment_method" in params, "Missing parameter 'payment_method'"
+    assert "status" in params, "Missing parameter 'status'"
 
 def test_bill_has_date():
     assert hasattr(Bill, "date")
@@ -345,33 +345,6 @@ def test_bill_has_date():
     for klass in Bill.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bill_has_attachment_id():
-    assert hasattr(Bill, "attachment_id")
-    descriptor = None
-    for klass in Bill.__mro__:
-        if "attachment_id" in klass.__dict__:
-            descriptor = klass.__dict__["attachment_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bill_has_payment_method():
-    assert hasattr(Bill, "payment_method")
-    descriptor = None
-    for klass in Bill.__mro__:
-        if "payment_method" in klass.__dict__:
-            descriptor = klass.__dict__["payment_method"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bill_has_distance():
-    assert hasattr(Bill, "distance")
-    descriptor = None
-    for klass in Bill.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
             break
     assert isinstance(descriptor, property)
 
@@ -384,21 +357,48 @@ def test_bill_has_sum():
             break
     assert isinstance(descriptor, property)
 
-def test_bill_has_status():
-    assert hasattr(Bill, "status")
-    descriptor = None
-    for klass in Bill.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_bill_has_id():
     assert hasattr(Bill, "id")
     descriptor = None
     for klass in Bill.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bill_has_attachment_id():
+    assert hasattr(Bill, "attachment_id")
+    descriptor = None
+    for klass in Bill.__mro__:
+        if "attachment_id" in klass.__dict__:
+            descriptor = klass.__dict__["attachment_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bill_has_distance():
+    assert hasattr(Bill, "distance")
+    descriptor = None
+    for klass in Bill.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bill_has_payment_method():
+    assert hasattr(Bill, "payment_method")
+    descriptor = None
+    for klass in Bill.__mro__:
+        if "payment_method" in klass.__dict__:
+            descriptor = klass.__dict__["payment_method"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bill_has_status():
+    assert hasattr(Bill, "status")
+    descriptor = None
+    for klass in Bill.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -417,9 +417,9 @@ def test_expense_constructor_args():
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "project_id" in params, "Missing parameter 'project_id'"
-    assert "user_id" in params, "Missing parameter 'user_id'"
     assert "manager_id" in params, "Missing parameter 'manager_id'"
     assert "mission_id" in params, "Missing parameter 'mission_id'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
 
 def test_expense_has_id():
     assert hasattr(Expense, "id")
@@ -439,15 +439,6 @@ def test_expense_has_project_id():
             break
     assert isinstance(descriptor, property)
 
-def test_expense_has_user_id():
-    assert hasattr(Expense, "user_id")
-    descriptor = None
-    for klass in Expense.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_expense_has_manager_id():
     assert hasattr(Expense, "manager_id")
     descriptor = None
@@ -463,6 +454,15 @@ def test_expense_has_mission_id():
     for klass in Expense.__mro__:
         if "mission_id" in klass.__dict__:
             descriptor = klass.__dict__["mission_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_expense_has_user_id():
+    assert hasattr(Expense, "user_id")
+    descriptor = None
+    for klass in Expense.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -900,18 +900,18 @@ def test_my_expenses_general_use_case_diagram_component_constructor_args():
     sig = inspect.signature(My_Expenses_general_use_case_diagram_Component.__init__)
     params = list(sig.parameters.keys())
 
-def test_paymentmethod_exists():
+def test_expensestatus_exists():
     # Check that the Enumeration exists
-    assert PaymentMethod is not None
+    assert ExpenseStatus is not None
 
-def test_paymentmethod_has_all_literals():
+def test_expensestatus_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PaymentMethod]
+    enum_literals = [lit.name for lit in ExpenseStatus]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PaymentMethod"
+        assert lit_name in enum_literals, f"Literal '' missing in ExpenseStatus"
 
 def test_currency_exists():
     # Check that the Enumeration exists
@@ -926,18 +926,18 @@ def test_currency_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Currency"
 
-def test_expensestatus_exists():
+def test_paymentmethod_exists():
     # Check that the Enumeration exists
-    assert ExpenseStatus is not None
+    assert PaymentMethod is not None
 
-def test_expensestatus_has_all_literals():
+def test_paymentmethod_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExpenseStatus]
+    enum_literals = [lit.name for lit in PaymentMethod]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExpenseStatus"
+        assert lit_name in enum_literals, f"Literal '' missing in PaymentMethod"
 
 
 # =============================================================================
@@ -982,45 +982,45 @@ ExpenseType_strategy = st.builds(
     ExpenseType,
     id=
         safe_text,
-    name=
-        safe_text,
     price=
+        safe_text,
+    name=
         safe_text
 )
 Currency1_strategy = st.builds(
     Currency1,
+    abr=
+        safe_text,
     name=
         safe_text,
     id=
-        safe_text,
-    abr=
         safe_text
 )
 Comment_strategy = st.builds(
     Comment,
+    id=
+        safe_text,
     user_id=
         safe_text,
     text=
-        safe_text,
-    id=
         safe_text
 )
 Bill_strategy = st.builds(
     Bill,
     date=
         safe_text,
+    sum=
+        safe_text,
+    id=
+        safe_text,
     attachment_id=
+        safe_text,
+    distance=
         safe_text,
     payment_method=
         st.none(),
-    distance=
-        safe_text,
-    sum=
-        safe_text,
     status=
-        st.none(),
-    id=
-        safe_text
+        st.none()
 )
 Expense_strategy = st.builds(
     Expense,
@@ -1028,11 +1028,11 @@ Expense_strategy = st.builds(
         safe_text,
     project_id=
         safe_text,
-    user_id=
-        safe_text,
     manager_id=
         safe_text,
     mission_id=
+        safe_text,
+    user_id=
         safe_text
 )
 Manage_Expenses__settings_Component_strategy = st.builds(
@@ -1179,9 +1179,6 @@ def test_send_an_expense_to_verification_external_instantiation(instance):
 def test_expensetype_instantiation(instance):
     assert isinstance(instance, ExpenseType)
 
-@given(instance=ExpenseType_strategy)
-def test_expensetype_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=ExpenseType_strategy)
@@ -1190,20 +1187,6 @@ def test_expensetype_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=ExpenseType_strategy)
-def test_expensetype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ExpenseType_strategy)
-def test_expensetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ExpenseType_strategy)
-def test_expensetype_price_type(instance):
-    assert isinstance(instance.price, str)
 
 
 @given(instance=ExpenseType_strategy)
@@ -1212,36 +1195,19 @@ def test_expensetype_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
-@given(instance=Currency1_strategy)
-@settings(max_examples=50)
-def test_currency1_instantiation(instance):
-    assert isinstance(instance, Currency1)
-
-@given(instance=Currency1_strategy)
-def test_currency1_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Currency1_strategy)
-def test_currency1_name_setter(instance):
+@given(instance=ExpenseType_strategy)
+def test_expensetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
 @given(instance=Currency1_strategy)
-def test_currency1_id_type(instance):
-    assert isinstance(instance.id, str)
+@settings(max_examples=50)
+def test_currency1_instantiation(instance):
+    assert isinstance(instance, Currency1)
 
-
-@given(instance=Currency1_strategy)
-def test_currency1_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Currency1_strategy)
-def test_currency1_abr_type(instance):
-    assert isinstance(instance.abr, str)
 
 
 @given(instance=Currency1_strategy)
@@ -1250,36 +1216,27 @@ def test_currency1_abr_setter(instance):
     instance.abr = original
     assert instance.abr == original
 
+
+
+@given(instance=Currency1_strategy)
+def test_currency1_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Currency1_strategy)
+def test_currency1_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=Comment_strategy)
-def test_comment_user_id_type(instance):
-    assert isinstance(instance.user_id, str)
-
-
-@given(instance=Comment_strategy)
-def test_comment_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=Comment_strategy)
-def test_comment_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=Comment_strategy)
-def test_comment_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=Comment_strategy)
-def test_comment_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Comment_strategy)
@@ -1288,14 +1245,27 @@ def test_comment_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Comment_strategy)
+def test_comment_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
+
+
+@given(instance=Comment_strategy)
+def test_comment_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
 @given(instance=Bill_strategy)
 @settings(max_examples=50)
 def test_bill_instantiation(instance):
     assert isinstance(instance, Bill)
 
-@given(instance=Bill_strategy)
-def test_bill_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
 @given(instance=Bill_strategy)
@@ -1304,42 +1274,6 @@ def test_bill_date_setter(instance):
     instance.date = original
     assert instance.date == original
 
-@given(instance=Bill_strategy)
-def test_bill_attachment_id_type(instance):
-    assert isinstance(instance.attachment_id, str)
-
-
-@given(instance=Bill_strategy)
-def test_bill_attachment_id_setter(instance):
-    original = instance.attachment_id
-    instance.attachment_id = original
-    assert instance.attachment_id == original
-
-@given(instance=Bill_strategy)
-def test_bill_payment_method_type(instance):
-    assert isinstance(instance.payment_method, paymentmethod)
-
-
-@given(instance=Bill_strategy)
-def test_bill_payment_method_setter(instance):
-    original = instance.payment_method
-    instance.payment_method = original
-    assert instance.payment_method == original
-
-@given(instance=Bill_strategy)
-def test_bill_distance_type(instance):
-    assert isinstance(instance.distance, str)
-
-
-@given(instance=Bill_strategy)
-def test_bill_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
-
-@given(instance=Bill_strategy)
-def test_bill_sum_type(instance):
-    assert isinstance(instance.sum, str)
 
 
 @given(instance=Bill_strategy)
@@ -1348,20 +1282,6 @@ def test_bill_sum_setter(instance):
     instance.sum = original
     assert instance.sum == original
 
-@given(instance=Bill_strategy)
-def test_bill_status_type(instance):
-    assert isinstance(instance.status, expensestatus)
-
-
-@given(instance=Bill_strategy)
-def test_bill_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=Bill_strategy)
-def test_bill_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Bill_strategy)
@@ -1370,14 +1290,43 @@ def test_bill_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Bill_strategy)
+def test_bill_attachment_id_setter(instance):
+    original = instance.attachment_id
+    instance.attachment_id = original
+    assert instance.attachment_id == original
+
+
+
+@given(instance=Bill_strategy)
+def test_bill_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+
+
+@given(instance=Bill_strategy)
+def test_bill_payment_method_setter(instance):
+    original = instance.payment_method
+    instance.payment_method = original
+    assert instance.payment_method == original
+
+
+
+@given(instance=Bill_strategy)
+def test_bill_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
 @given(instance=Expense_strategy)
 @settings(max_examples=50)
 def test_expense_instantiation(instance):
     assert isinstance(instance, Expense)
 
-@given(instance=Expense_strategy)
-def test_expense_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Expense_strategy)
@@ -1386,9 +1335,6 @@ def test_expense_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Expense_strategy)
-def test_expense_project_id_type(instance):
-    assert isinstance(instance.project_id, str)
 
 
 @given(instance=Expense_strategy)
@@ -1397,20 +1343,6 @@ def test_expense_project_id_setter(instance):
     instance.project_id = original
     assert instance.project_id == original
 
-@given(instance=Expense_strategy)
-def test_expense_user_id_type(instance):
-    assert isinstance(instance.user_id, str)
-
-
-@given(instance=Expense_strategy)
-def test_expense_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=Expense_strategy)
-def test_expense_manager_id_type(instance):
-    assert isinstance(instance.manager_id, str)
 
 
 @given(instance=Expense_strategy)
@@ -1419,9 +1351,6 @@ def test_expense_manager_id_setter(instance):
     instance.manager_id = original
     assert instance.manager_id == original
 
-@given(instance=Expense_strategy)
-def test_expense_mission_id_type(instance):
-    assert isinstance(instance.mission_id, str)
 
 
 @given(instance=Expense_strategy)
@@ -1429,6 +1358,14 @@ def test_expense_mission_id_setter(instance):
     original = instance.mission_id
     instance.mission_id = original
     assert instance.mission_id == original
+
+
+
+@given(instance=Expense_strategy)
+def test_expense_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
 
 @given(instance=Manage_Expenses__settings_Component_strategy)
 @settings(max_examples=50)

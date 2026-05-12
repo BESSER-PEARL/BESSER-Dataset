@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Key,
-    columnFamilyDataModel::Key,
-    columnFamilyDataModel::Type,
-    columnFamilyDataModel::ClusteringKey,
-    columnFamilyDataModel::PartitionKey,
-    columnFamilyDataModel::Column,
-    columnFamilyDataModel::ColumnFamily,
-    columnFamilyDataModel::Field,
+    columnFamilyDataModel_Key,
+    columnFamilyDataModel_Type,
+    columnFamilyDataModel_ClusteringKey,
+    columnFamilyDataModel_PartitionKey,
+    columnFamilyDataModel_Column,
+    columnFamilyDataModel_ColumnFamily,
+    columnFamilyDataModel_Field,
     Collection,
-    columnFamilyDataModel::Map,
-    columnFamilyDataModel::Set,
-    columnFamilyDataModel::List,
+    columnFamilyDataModel_Set,
+    columnFamilyDataModel_Map,
+    columnFamilyDataModel_List,
     Type,
-    columnFamilyDataModel::UserDefinedType,
-    columnFamilyDataModel::Collection,
-    columnFamilyDataModel::Tuple,
-    columnFamilyDataModel::SimpleType,
-    columnFamilyDataModel::Table,
-    columnFamilyDataModel::ColumnFamilyDataModel,
+    columnFamilyDataModel_Collection,
+    columnFamilyDataModel_Tuple,
+    columnFamilyDataModel_UserDefinedType,
+    columnFamilyDataModel_SimpleType,
+    columnFamilyDataModel_Table,
+    columnFamilyDataModel_ColumnFamilyDataModel,
     PrimitiveType,
 )
 
@@ -48,79 +48,79 @@ def test_key_constructor_args():
 
 
 
-def test_columnfamilydatamodel::key_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Key)
+def test_columnfamilydatamodel_key_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Key)
 
 
-def test_columnfamilydatamodel::key_constructor_exists():
-    assert callable(columnFamilyDataModel::Key.__init__)
+def test_columnfamilydatamodel_key_constructor_exists():
+    assert callable(columnFamilyDataModel_Key.__init__)
 
 
-def test_columnfamilydatamodel::key_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Key.__init__)
+def test_columnfamilydatamodel_key_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_columnfamilydatamodel::type_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Type)
+def test_columnfamilydatamodel_type_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Type)
 
 
-def test_columnfamilydatamodel::type_constructor_exists():
-    assert callable(columnFamilyDataModel::Type.__init__)
+def test_columnfamilydatamodel_type_constructor_exists():
+    assert callable(columnFamilyDataModel_Type.__init__)
 
 
-def test_columnfamilydatamodel::type_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Type.__init__)
+def test_columnfamilydatamodel_type_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_columnfamilydatamodel::clusteringkey_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::ClusteringKey)
+def test_columnfamilydatamodel_clusteringkey_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_ClusteringKey)
 
 
-def test_columnfamilydatamodel::clusteringkey_constructor_exists():
-    assert callable(columnFamilyDataModel::ClusteringKey.__init__)
+def test_columnfamilydatamodel_clusteringkey_constructor_exists():
+    assert callable(columnFamilyDataModel_ClusteringKey.__init__)
 
 
-def test_columnfamilydatamodel::clusteringkey_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::ClusteringKey.__init__)
+def test_columnfamilydatamodel_clusteringkey_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_ClusteringKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_columnfamilydatamodel::partitionkey_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::PartitionKey)
+def test_columnfamilydatamodel_partitionkey_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_PartitionKey)
 
 
-def test_columnfamilydatamodel::partitionkey_constructor_exists():
-    assert callable(columnFamilyDataModel::PartitionKey.__init__)
+def test_columnfamilydatamodel_partitionkey_constructor_exists():
+    assert callable(columnFamilyDataModel_PartitionKey.__init__)
 
 
-def test_columnfamilydatamodel::partitionkey_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::PartitionKey.__init__)
+def test_columnfamilydatamodel_partitionkey_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_PartitionKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_columnfamilydatamodel::column_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Column)
+def test_columnfamilydatamodel_column_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Column)
 
 
-def test_columnfamilydatamodel::column_constructor_exists():
-    assert callable(columnFamilyDataModel::Column.__init__)
+def test_columnfamilydatamodel_column_constructor_exists():
+    assert callable(columnFamilyDataModel_Column.__init__)
 
 
-def test_columnfamilydatamodel::column_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Column.__init__)
+def test_columnfamilydatamodel_column_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_columnfamilydatamodel::column_has_name():
-    assert hasattr(columnFamilyDataModel::Column, "name")
+def test_columnfamilydatamodel_column_has_name():
+    assert hasattr(columnFamilyDataModel_Column, "name")
     descriptor = None
-    for klass in columnFamilyDataModel::Column.__mro__:
+    for klass in columnFamilyDataModel_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -128,23 +128,23 @@ def test_columnfamilydatamodel::column_has_name():
 
 
 
-def test_columnfamilydatamodel::columnfamily_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::ColumnFamily)
+def test_columnfamilydatamodel_columnfamily_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_ColumnFamily)
 
 
-def test_columnfamilydatamodel::columnfamily_constructor_exists():
-    assert callable(columnFamilyDataModel::ColumnFamily.__init__)
+def test_columnfamilydatamodel_columnfamily_constructor_exists():
+    assert callable(columnFamilyDataModel_ColumnFamily.__init__)
 
 
-def test_columnfamilydatamodel::columnfamily_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::ColumnFamily.__init__)
+def test_columnfamilydatamodel_columnfamily_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_ColumnFamily.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_columnfamilydatamodel::columnfamily_has_name():
-    assert hasattr(columnFamilyDataModel::ColumnFamily, "name")
+def test_columnfamilydatamodel_columnfamily_has_name():
+    assert hasattr(columnFamilyDataModel_ColumnFamily, "name")
     descriptor = None
-    for klass in columnFamilyDataModel::ColumnFamily.__mro__:
+    for klass in columnFamilyDataModel_ColumnFamily.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -152,23 +152,23 @@ def test_columnfamilydatamodel::columnfamily_has_name():
 
 
 
-def test_columnfamilydatamodel::field_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Field)
+def test_columnfamilydatamodel_field_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Field)
 
 
-def test_columnfamilydatamodel::field_constructor_exists():
-    assert callable(columnFamilyDataModel::Field.__init__)
+def test_columnfamilydatamodel_field_constructor_exists():
+    assert callable(columnFamilyDataModel_Field.__init__)
 
 
-def test_columnfamilydatamodel::field_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Field.__init__)
+def test_columnfamilydatamodel_field_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Field.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_columnfamilydatamodel::field_has_name():
-    assert hasattr(columnFamilyDataModel::Field, "name")
+def test_columnfamilydatamodel_field_has_name():
+    assert hasattr(columnFamilyDataModel_Field, "name")
     descriptor = None
-    for klass in columnFamilyDataModel::Field.__mro__:
+    for klass in columnFamilyDataModel_Field.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -190,23 +190,37 @@ def test_collection_constructor_args():
 
 
 
-def test_columnfamilydatamodel::map_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Map)
+def test_columnfamilydatamodel_set_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Set)
 
 
-def test_columnfamilydatamodel::map_constructor_exists():
-    assert callable(columnFamilyDataModel::Map.__init__)
+def test_columnfamilydatamodel_set_constructor_exists():
+    assert callable(columnFamilyDataModel_Set.__init__)
 
 
-def test_columnfamilydatamodel::map_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Map.__init__)
+def test_columnfamilydatamodel_set_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Set.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_columnfamilydatamodel_map_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Map)
+
+
+def test_columnfamilydatamodel_map_constructor_exists():
+    assert callable(columnFamilyDataModel_Map.__init__)
+
+
+def test_columnfamilydatamodel_map_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Map.__init__)
     params = list(sig.parameters.keys())
     assert "keyType" in params, "Missing parameter 'keyType'"
 
-def test_columnfamilydatamodel::map_has_keyType():
-    assert hasattr(columnFamilyDataModel::Map, "keyType")
+def test_columnfamilydatamodel_map_has_keyType():
+    assert hasattr(columnFamilyDataModel_Map, "keyType")
     descriptor = None
-    for klass in columnFamilyDataModel::Map.__mro__:
+    for klass in columnFamilyDataModel_Map.__mro__:
         if "keyType" in klass.__dict__:
             descriptor = klass.__dict__["keyType"]
             break
@@ -214,30 +228,16 @@ def test_columnfamilydatamodel::map_has_keyType():
 
 
 
-def test_columnfamilydatamodel::set_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Set)
+def test_columnfamilydatamodel_list_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_List)
 
 
-def test_columnfamilydatamodel::set_constructor_exists():
-    assert callable(columnFamilyDataModel::Set.__init__)
+def test_columnfamilydatamodel_list_constructor_exists():
+    assert callable(columnFamilyDataModel_List.__init__)
 
 
-def test_columnfamilydatamodel::set_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Set.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_columnfamilydatamodel::list_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::List)
-
-
-def test_columnfamilydatamodel::list_constructor_exists():
-    assert callable(columnFamilyDataModel::List.__init__)
-
-
-def test_columnfamilydatamodel::list_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::List.__init__)
+def test_columnfamilydatamodel_list_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_List.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -256,47 +256,23 @@ def test_type_constructor_args():
 
 
 
-def test_columnfamilydatamodel::userdefinedtype_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::UserDefinedType)
+def test_columnfamilydatamodel_collection_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Collection)
 
 
-def test_columnfamilydatamodel::userdefinedtype_constructor_exists():
-    assert callable(columnFamilyDataModel::UserDefinedType.__init__)
+def test_columnfamilydatamodel_collection_constructor_exists():
+    assert callable(columnFamilyDataModel_Collection.__init__)
 
 
-def test_columnfamilydatamodel::userdefinedtype_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::UserDefinedType.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_columnfamilydatamodel::userdefinedtype_has_name():
-    assert hasattr(columnFamilyDataModel::UserDefinedType, "name")
-    descriptor = None
-    for klass in columnFamilyDataModel::UserDefinedType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_columnfamilydatamodel::collection_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Collection)
-
-
-def test_columnfamilydatamodel::collection_constructor_exists():
-    assert callable(columnFamilyDataModel::Collection.__init__)
-
-
-def test_columnfamilydatamodel::collection_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Collection.__init__)
+def test_columnfamilydatamodel_collection_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Collection.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_columnfamilydatamodel::collection_has_type():
-    assert hasattr(columnFamilyDataModel::Collection, "type")
+def test_columnfamilydatamodel_collection_has_type():
+    assert hasattr(columnFamilyDataModel_Collection, "type")
     descriptor = None
-    for klass in columnFamilyDataModel::Collection.__mro__:
+    for klass in columnFamilyDataModel_Collection.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -304,23 +280,23 @@ def test_columnfamilydatamodel::collection_has_type():
 
 
 
-def test_columnfamilydatamodel::tuple_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Tuple)
+def test_columnfamilydatamodel_tuple_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Tuple)
 
 
-def test_columnfamilydatamodel::tuple_constructor_exists():
-    assert callable(columnFamilyDataModel::Tuple.__init__)
+def test_columnfamilydatamodel_tuple_constructor_exists():
+    assert callable(columnFamilyDataModel_Tuple.__init__)
 
 
-def test_columnfamilydatamodel::tuple_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Tuple.__init__)
+def test_columnfamilydatamodel_tuple_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Tuple.__init__)
     params = list(sig.parameters.keys())
     assert "types" in params, "Missing parameter 'types'"
 
-def test_columnfamilydatamodel::tuple_has_types():
-    assert hasattr(columnFamilyDataModel::Tuple, "types")
+def test_columnfamilydatamodel_tuple_has_types():
+    assert hasattr(columnFamilyDataModel_Tuple, "types")
     descriptor = None
-    for klass in columnFamilyDataModel::Tuple.__mro__:
+    for klass in columnFamilyDataModel_Tuple.__mro__:
         if "types" in klass.__dict__:
             descriptor = klass.__dict__["types"]
             break
@@ -328,47 +304,23 @@ def test_columnfamilydatamodel::tuple_has_types():
 
 
 
-def test_columnfamilydatamodel::simpletype_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::SimpleType)
+def test_columnfamilydatamodel_userdefinedtype_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_UserDefinedType)
 
 
-def test_columnfamilydatamodel::simpletype_constructor_exists():
-    assert callable(columnFamilyDataModel::SimpleType.__init__)
+def test_columnfamilydatamodel_userdefinedtype_constructor_exists():
+    assert callable(columnFamilyDataModel_UserDefinedType.__init__)
 
 
-def test_columnfamilydatamodel::simpletype_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::SimpleType.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_columnfamilydatamodel::simpletype_has_type():
-    assert hasattr(columnFamilyDataModel::SimpleType, "type")
-    descriptor = None
-    for klass in columnFamilyDataModel::SimpleType.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_columnfamilydatamodel::table_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::Table)
-
-
-def test_columnfamilydatamodel::table_constructor_exists():
-    assert callable(columnFamilyDataModel::Table.__init__)
-
-
-def test_columnfamilydatamodel::table_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::Table.__init__)
+def test_columnfamilydatamodel_userdefinedtype_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_UserDefinedType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_columnfamilydatamodel::table_has_name():
-    assert hasattr(columnFamilyDataModel::Table, "name")
+def test_columnfamilydatamodel_userdefinedtype_has_name():
+    assert hasattr(columnFamilyDataModel_UserDefinedType, "name")
     descriptor = None
-    for klass in columnFamilyDataModel::Table.__mro__:
+    for klass in columnFamilyDataModel_UserDefinedType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -376,16 +328,64 @@ def test_columnfamilydatamodel::table_has_name():
 
 
 
-def test_columnfamilydatamodel::columnfamilydatamodel_is_not_abstract():
-    assert not inspect.isabstract(columnFamilyDataModel::ColumnFamilyDataModel)
+def test_columnfamilydatamodel_simpletype_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_SimpleType)
 
 
-def test_columnfamilydatamodel::columnfamilydatamodel_constructor_exists():
-    assert callable(columnFamilyDataModel::ColumnFamilyDataModel.__init__)
+def test_columnfamilydatamodel_simpletype_constructor_exists():
+    assert callable(columnFamilyDataModel_SimpleType.__init__)
 
 
-def test_columnfamilydatamodel::columnfamilydatamodel_constructor_args():
-    sig = inspect.signature(columnFamilyDataModel::ColumnFamilyDataModel.__init__)
+def test_columnfamilydatamodel_simpletype_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_SimpleType.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_columnfamilydatamodel_simpletype_has_type():
+    assert hasattr(columnFamilyDataModel_SimpleType, "type")
+    descriptor = None
+    for klass in columnFamilyDataModel_SimpleType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_columnfamilydatamodel_table_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_Table)
+
+
+def test_columnfamilydatamodel_table_constructor_exists():
+    assert callable(columnFamilyDataModel_Table.__init__)
+
+
+def test_columnfamilydatamodel_table_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_Table.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_columnfamilydatamodel_table_has_name():
+    assert hasattr(columnFamilyDataModel_Table, "name")
+    descriptor = None
+    for klass in columnFamilyDataModel_Table.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_columnfamilydatamodel_columnfamilydatamodel_is_not_abstract():
+    assert not inspect.isabstract(columnFamilyDataModel_ColumnFamilyDataModel)
+
+
+def test_columnfamilydatamodel_columnfamilydatamodel_constructor_exists():
+    assert callable(columnFamilyDataModel_ColumnFamilyDataModel.__init__)
+
+
+def test_columnfamilydatamodel_columnfamilydatamodel_constructor_args():
+    sig = inspect.signature(columnFamilyDataModel_ColumnFamilyDataModel.__init__)
     params = list(sig.parameters.keys())
 
 def test_primitivetype_exists():
@@ -396,13 +396,13 @@ def test_primitivetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PrimitiveType]
     expected_literals = [
-        "DATE",
+        "TEXT",
         "TIMESTAMP",
+        "DATE",
         "BOOLEAN",
-        "INT",
         "FLOAT",
         "ID",
-        "TEXT",
+        "INT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -423,77 +423,77 @@ safe_text = st.text(
 Key_strategy = st.builds(
     Key,
 )
-columnFamilyDataModel::Key_strategy = st.builds(
-    columnFamilyDataModel::Key,
+columnFamilyDataModel_Key_strategy = st.builds(
+    columnFamilyDataModel_Key,
 )
-columnFamilyDataModel::Type_strategy = st.builds(
-    columnFamilyDataModel::Type,
+columnFamilyDataModel_Type_strategy = st.builds(
+    columnFamilyDataModel_Type,
 )
-columnFamilyDataModel::ClusteringKey_strategy = st.builds(
-    columnFamilyDataModel::ClusteringKey,
+columnFamilyDataModel_ClusteringKey_strategy = st.builds(
+    columnFamilyDataModel_ClusteringKey,
 )
-columnFamilyDataModel::PartitionKey_strategy = st.builds(
-    columnFamilyDataModel::PartitionKey,
+columnFamilyDataModel_PartitionKey_strategy = st.builds(
+    columnFamilyDataModel_PartitionKey,
 )
-columnFamilyDataModel::Column_strategy = st.builds(
-    columnFamilyDataModel::Column,
+columnFamilyDataModel_Column_strategy = st.builds(
+    columnFamilyDataModel_Column,
     name=
         safe_text
 )
-columnFamilyDataModel::ColumnFamily_strategy = st.builds(
-    columnFamilyDataModel::ColumnFamily,
+columnFamilyDataModel_ColumnFamily_strategy = st.builds(
+    columnFamilyDataModel_ColumnFamily,
     name=
         safe_text
 )
-columnFamilyDataModel::Field_strategy = st.builds(
-    columnFamilyDataModel::Field,
+columnFamilyDataModel_Field_strategy = st.builds(
+    columnFamilyDataModel_Field,
     name=
         safe_text
 )
 Collection_strategy = st.builds(
     Collection,
 )
-columnFamilyDataModel::Map_strategy = st.builds(
-    columnFamilyDataModel::Map,
+columnFamilyDataModel_Set_strategy = st.builds(
+    columnFamilyDataModel_Set,
+)
+columnFamilyDataModel_Map_strategy = st.builds(
+    columnFamilyDataModel_Map,
     keyType=
         safe_text
 )
-columnFamilyDataModel::Set_strategy = st.builds(
-    columnFamilyDataModel::Set,
-)
-columnFamilyDataModel::List_strategy = st.builds(
-    columnFamilyDataModel::List,
+columnFamilyDataModel_List_strategy = st.builds(
+    columnFamilyDataModel_List,
 )
 Type_strategy = st.builds(
     Type,
 )
-columnFamilyDataModel::UserDefinedType_strategy = st.builds(
-    columnFamilyDataModel::UserDefinedType,
-    name=
-        safe_text
-)
-columnFamilyDataModel::Collection_strategy = st.builds(
-    columnFamilyDataModel::Collection,
+columnFamilyDataModel_Collection_strategy = st.builds(
+    columnFamilyDataModel_Collection,
     type=
         safe_text
 )
-columnFamilyDataModel::Tuple_strategy = st.builds(
-    columnFamilyDataModel::Tuple,
+columnFamilyDataModel_Tuple_strategy = st.builds(
+    columnFamilyDataModel_Tuple,
     types=
         safe_text
 )
-columnFamilyDataModel::SimpleType_strategy = st.builds(
-    columnFamilyDataModel::SimpleType,
-    type=
-        safe_text
-)
-columnFamilyDataModel::Table_strategy = st.builds(
-    columnFamilyDataModel::Table,
+columnFamilyDataModel_UserDefinedType_strategy = st.builds(
+    columnFamilyDataModel_UserDefinedType,
     name=
         safe_text
 )
-columnFamilyDataModel::ColumnFamilyDataModel_strategy = st.builds(
-    columnFamilyDataModel::ColumnFamilyDataModel,
+columnFamilyDataModel_SimpleType_strategy = st.builds(
+    columnFamilyDataModel_SimpleType,
+    type=
+        safe_text
+)
+columnFamilyDataModel_Table_strategy = st.builds(
+    columnFamilyDataModel_Table,
+    name=
+        safe_text
+)
+columnFamilyDataModel_ColumnFamilyDataModel_strategy = st.builds(
+    columnFamilyDataModel_ColumnFamilyDataModel,
 )
 
 @given(instance=Key_strategy)
@@ -501,70 +501,61 @@ columnFamilyDataModel::ColumnFamilyDataModel_strategy = st.builds(
 def test_key_instantiation(instance):
     assert isinstance(instance, Key)
 
-@given(instance=columnFamilyDataModel::Key_strategy)
+@given(instance=columnFamilyDataModel_Key_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::key_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Key)
+def test_columnfamilydatamodel_key_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Key)
 
-@given(instance=columnFamilyDataModel::Type_strategy)
+@given(instance=columnFamilyDataModel_Type_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::type_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Type)
+def test_columnfamilydatamodel_type_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Type)
 
-@given(instance=columnFamilyDataModel::ClusteringKey_strategy)
+@given(instance=columnFamilyDataModel_ClusteringKey_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::clusteringkey_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::ClusteringKey)
+def test_columnfamilydatamodel_clusteringkey_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_ClusteringKey)
 
-@given(instance=columnFamilyDataModel::PartitionKey_strategy)
+@given(instance=columnFamilyDataModel_PartitionKey_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::partitionkey_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::PartitionKey)
+def test_columnfamilydatamodel_partitionkey_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_PartitionKey)
 
-@given(instance=columnFamilyDataModel::Column_strategy)
+@given(instance=columnFamilyDataModel_Column_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::column_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Column)
-
-@given(instance=columnFamilyDataModel::Column_strategy)
-def test_columnfamilydatamodel::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_columnfamilydatamodel_column_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Column)
 
 
-@given(instance=columnFamilyDataModel::Column_strategy)
-def test_columnfamilydatamodel::column_name_setter(instance):
+
+@given(instance=columnFamilyDataModel_Column_strategy)
+def test_columnfamilydatamodel_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=columnFamilyDataModel::ColumnFamily_strategy)
+@given(instance=columnFamilyDataModel_ColumnFamily_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::columnfamily_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::ColumnFamily)
-
-@given(instance=columnFamilyDataModel::ColumnFamily_strategy)
-def test_columnfamilydatamodel::columnfamily_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_columnfamilydatamodel_columnfamily_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_ColumnFamily)
 
 
-@given(instance=columnFamilyDataModel::ColumnFamily_strategy)
-def test_columnfamilydatamodel::columnfamily_name_setter(instance):
+
+@given(instance=columnFamilyDataModel_ColumnFamily_strategy)
+def test_columnfamilydatamodel_columnfamily_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=columnFamilyDataModel::Field_strategy)
+@given(instance=columnFamilyDataModel_Field_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::field_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Field)
-
-@given(instance=columnFamilyDataModel::Field_strategy)
-def test_columnfamilydatamodel::field_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_columnfamilydatamodel_field_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Field)
 
 
-@given(instance=columnFamilyDataModel::Field_strategy)
-def test_columnfamilydatamodel::field_name_setter(instance):
+
+@given(instance=columnFamilyDataModel_Field_strategy)
+def test_columnfamilydatamodel_field_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -574,118 +565,100 @@ def test_columnfamilydatamodel::field_name_setter(instance):
 def test_collection_instantiation(instance):
     assert isinstance(instance, Collection)
 
-@given(instance=columnFamilyDataModel::Map_strategy)
+@given(instance=columnFamilyDataModel_Set_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::map_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Map)
+def test_columnfamilydatamodel_set_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Set)
 
-@given(instance=columnFamilyDataModel::Map_strategy)
-def test_columnfamilydatamodel::map_keyType_type(instance):
-    assert isinstance(instance.keyType, str)
+@given(instance=columnFamilyDataModel_Map_strategy)
+@settings(max_examples=50)
+def test_columnfamilydatamodel_map_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Map)
 
 
-@given(instance=columnFamilyDataModel::Map_strategy)
-def test_columnfamilydatamodel::map_keyType_setter(instance):
+
+@given(instance=columnFamilyDataModel_Map_strategy)
+def test_columnfamilydatamodel_map_keyType_setter(instance):
     original = instance.keyType
     instance.keyType = original
     assert instance.keyType == original
 
-@given(instance=columnFamilyDataModel::Set_strategy)
+@given(instance=columnFamilyDataModel_List_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::set_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Set)
-
-@given(instance=columnFamilyDataModel::List_strategy)
-@settings(max_examples=50)
-def test_columnfamilydatamodel::list_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::List)
+def test_columnfamilydatamodel_list_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_List)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=columnFamilyDataModel::UserDefinedType_strategy)
+@given(instance=columnFamilyDataModel_Collection_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::userdefinedtype_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::UserDefinedType)
-
-@given(instance=columnFamilyDataModel::UserDefinedType_strategy)
-def test_columnfamilydatamodel::userdefinedtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_columnfamilydatamodel_collection_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Collection)
 
 
-@given(instance=columnFamilyDataModel::UserDefinedType_strategy)
-def test_columnfamilydatamodel::userdefinedtype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=columnFamilyDataModel::Collection_strategy)
-@settings(max_examples=50)
-def test_columnfamilydatamodel::collection_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Collection)
-
-@given(instance=columnFamilyDataModel::Collection_strategy)
-def test_columnfamilydatamodel::collection_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=columnFamilyDataModel::Collection_strategy)
-def test_columnfamilydatamodel::collection_type_setter(instance):
+@given(instance=columnFamilyDataModel_Collection_strategy)
+def test_columnfamilydatamodel_collection_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=columnFamilyDataModel::Tuple_strategy)
+@given(instance=columnFamilyDataModel_Tuple_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::tuple_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Tuple)
-
-@given(instance=columnFamilyDataModel::Tuple_strategy)
-def test_columnfamilydatamodel::tuple_types_type(instance):
-    assert isinstance(instance.types, str)
+def test_columnfamilydatamodel_tuple_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Tuple)
 
 
-@given(instance=columnFamilyDataModel::Tuple_strategy)
-def test_columnfamilydatamodel::tuple_types_setter(instance):
+
+@given(instance=columnFamilyDataModel_Tuple_strategy)
+def test_columnfamilydatamodel_tuple_types_setter(instance):
     original = instance.types
     instance.types = original
     assert instance.types == original
 
-@given(instance=columnFamilyDataModel::SimpleType_strategy)
+@given(instance=columnFamilyDataModel_UserDefinedType_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::simpletype_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::SimpleType)
-
-@given(instance=columnFamilyDataModel::SimpleType_strategy)
-def test_columnfamilydatamodel::simpletype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_columnfamilydatamodel_userdefinedtype_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_UserDefinedType)
 
 
-@given(instance=columnFamilyDataModel::SimpleType_strategy)
-def test_columnfamilydatamodel::simpletype_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=columnFamilyDataModel::Table_strategy)
-@settings(max_examples=50)
-def test_columnfamilydatamodel::table_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::Table)
-
-@given(instance=columnFamilyDataModel::Table_strategy)
-def test_columnfamilydatamodel::table_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=columnFamilyDataModel::Table_strategy)
-def test_columnfamilydatamodel::table_name_setter(instance):
+@given(instance=columnFamilyDataModel_UserDefinedType_strategy)
+def test_columnfamilydatamodel_userdefinedtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=columnFamilyDataModel::ColumnFamilyDataModel_strategy)
+@given(instance=columnFamilyDataModel_SimpleType_strategy)
 @settings(max_examples=50)
-def test_columnfamilydatamodel::columnfamilydatamodel_instantiation(instance):
-    assert isinstance(instance, columnFamilyDataModel::ColumnFamilyDataModel)
+def test_columnfamilydatamodel_simpletype_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_SimpleType)
+
+
+
+@given(instance=columnFamilyDataModel_SimpleType_strategy)
+def test_columnfamilydatamodel_simpletype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=columnFamilyDataModel_Table_strategy)
+@settings(max_examples=50)
+def test_columnfamilydatamodel_table_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_Table)
+
+
+
+@given(instance=columnFamilyDataModel_Table_strategy)
+def test_columnfamilydatamodel_table_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=columnFamilyDataModel_ColumnFamilyDataModel_strategy)
+@settings(max_examples=50)
+def test_columnfamilydatamodel_columnfamilydatamodel_instantiation(instance):
+    assert isinstance(instance, columnFamilyDataModel_ColumnFamilyDataModel)

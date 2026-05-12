@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    docbook::ImageData,
-    docbook::ImageObject,
-    docbook::XMLElement,
-    docbook::MediaObject,
+from python_code import (
+    docbook_ImageData,
+    docbook_ImageObject,
+    docbook_XMLElement,
+    docbook_MediaObject,
     ParaMixedContent,
-    docbook::SimpleText,
+    docbook_SimpleText,
     Para,
-    docbook::Tip,
-    docbook::ProgramListing,
-    docbook::Link,
-    docbook::Ulink,
-    docbook::Emphasis,
+    docbook_Warning,
+    docbook_Tip,
+    docbook_ProgramListing,
+    docbook_Link,
+    docbook_Ulink,
+    docbook_Emphasis,
     XMLElement,
-    docbook::Bookinfo,
+    docbook_Bookinfo,
     SectionMixedContent,
-    docbook::Para,
-    docbook::ParaMixedContent,
-    docbook::TitledElement,
-    docbook::Title,
-    docbook::SectionMixedContent,
+    docbook_Para,
+    docbook_ParaMixedContent,
+    docbook_TitledElement,
+    docbook_Title,
+    docbook_SectionMixedContent,
     TitledElement,
-    docbook::Figure,
-    docbook::Chapter,
-    docbook::Section,
-    docbook::Author,
-    docbook::Subtitle,
-    docbook::Book,
-    docbook::Warning,
+    docbook_Chapter,
+    docbook_Figure,
+    docbook_Section,
+    docbook_Author,
+    docbook_Subtitle,
+    docbook_Book,
 )
 
 # =============================================================================
@@ -42,43 +42,43 @@ from classes import (
 
 
 
-def test_docbook::imagedata_is_not_abstract():
-    assert not inspect.isabstract(docbook::ImageData)
+def test_docbook_imagedata_is_not_abstract():
+    assert not inspect.isabstract(docbook_ImageData)
 
 
-def test_docbook::imagedata_constructor_exists():
-    assert callable(docbook::ImageData.__init__)
+def test_docbook_imagedata_constructor_exists():
+    assert callable(docbook_ImageData.__init__)
 
 
-def test_docbook::imagedata_constructor_args():
-    sig = inspect.signature(docbook::ImageData.__init__)
+def test_docbook_imagedata_constructor_args():
+    sig = inspect.signature(docbook_ImageData.__init__)
     params = list(sig.parameters.keys())
     assert "depth" in params, "Missing parameter 'depth'"
     assert "width" in params, "Missing parameter 'width'"
     assert "fileref" in params, "Missing parameter 'fileref'"
 
-def test_docbook::imagedata_has_depth():
-    assert hasattr(docbook::ImageData, "depth")
+def test_docbook_imagedata_has_depth():
+    assert hasattr(docbook_ImageData, "depth")
     descriptor = None
-    for klass in docbook::ImageData.__mro__:
+    for klass in docbook_ImageData.__mro__:
         if "depth" in klass.__dict__:
             descriptor = klass.__dict__["depth"]
             break
     assert isinstance(descriptor, property)
 
-def test_docbook::imagedata_has_width():
-    assert hasattr(docbook::ImageData, "width")
+def test_docbook_imagedata_has_width():
+    assert hasattr(docbook_ImageData, "width")
     descriptor = None
-    for klass in docbook::ImageData.__mro__:
+    for klass in docbook_ImageData.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_docbook::imagedata_has_fileref():
-    assert hasattr(docbook::ImageData, "fileref")
+def test_docbook_imagedata_has_fileref():
+    assert hasattr(docbook_ImageData, "fileref")
     descriptor = None
-    for klass in docbook::ImageData.__mro__:
+    for klass in docbook_ImageData.__mro__:
         if "fileref" in klass.__dict__:
             descriptor = klass.__dict__["fileref"]
             break
@@ -86,37 +86,37 @@ def test_docbook::imagedata_has_fileref():
 
 
 
-def test_docbook::imageobject_is_not_abstract():
-    assert not inspect.isabstract(docbook::ImageObject)
+def test_docbook_imageobject_is_not_abstract():
+    assert not inspect.isabstract(docbook_ImageObject)
 
 
-def test_docbook::imageobject_constructor_exists():
-    assert callable(docbook::ImageObject.__init__)
+def test_docbook_imageobject_constructor_exists():
+    assert callable(docbook_ImageObject.__init__)
 
 
-def test_docbook::imageobject_constructor_args():
-    sig = inspect.signature(docbook::ImageObject.__init__)
+def test_docbook_imageobject_constructor_args():
+    sig = inspect.signature(docbook_ImageObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::xmlelement_is_not_abstract():
-    assert not inspect.isabstract(docbook::XMLElement)
+def test_docbook_xmlelement_is_not_abstract():
+    assert not inspect.isabstract(docbook_XMLElement)
 
 
-def test_docbook::xmlelement_constructor_exists():
-    assert callable(docbook::XMLElement.__init__)
+def test_docbook_xmlelement_constructor_exists():
+    assert callable(docbook_XMLElement.__init__)
 
 
-def test_docbook::xmlelement_constructor_args():
-    sig = inspect.signature(docbook::XMLElement.__init__)
+def test_docbook_xmlelement_constructor_args():
+    sig = inspect.signature(docbook_XMLElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_docbook::xmlelement_has_id():
-    assert hasattr(docbook::XMLElement, "id")
+def test_docbook_xmlelement_has_id():
+    assert hasattr(docbook_XMLElement, "id")
     descriptor = None
-    for klass in docbook::XMLElement.__mro__:
+    for klass in docbook_XMLElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -124,16 +124,16 @@ def test_docbook::xmlelement_has_id():
 
 
 
-def test_docbook::mediaobject_is_not_abstract():
-    assert not inspect.isabstract(docbook::MediaObject)
+def test_docbook_mediaobject_is_not_abstract():
+    assert not inspect.isabstract(docbook_MediaObject)
 
 
-def test_docbook::mediaobject_constructor_exists():
-    assert callable(docbook::MediaObject.__init__)
+def test_docbook_mediaobject_constructor_exists():
+    assert callable(docbook_MediaObject.__init__)
 
 
-def test_docbook::mediaobject_constructor_args():
-    sig = inspect.signature(docbook::MediaObject.__init__)
+def test_docbook_mediaobject_constructor_args():
+    sig = inspect.signature(docbook_MediaObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -152,23 +152,23 @@ def test_paramixedcontent_constructor_args():
 
 
 
-def test_docbook::simpletext_is_not_abstract():
-    assert not inspect.isabstract(docbook::SimpleText)
+def test_docbook_simpletext_is_not_abstract():
+    assert not inspect.isabstract(docbook_SimpleText)
 
 
-def test_docbook::simpletext_constructor_exists():
-    assert callable(docbook::SimpleText.__init__)
+def test_docbook_simpletext_constructor_exists():
+    assert callable(docbook_SimpleText.__init__)
 
 
-def test_docbook::simpletext_constructor_args():
-    sig = inspect.signature(docbook::SimpleText.__init__)
+def test_docbook_simpletext_constructor_args():
+    sig = inspect.signature(docbook_SimpleText.__init__)
     params = list(sig.parameters.keys())
     assert "data" in params, "Missing parameter 'data'"
 
-def test_docbook::simpletext_has_data():
-    assert hasattr(docbook::SimpleText, "data")
+def test_docbook_simpletext_has_data():
+    assert hasattr(docbook_SimpleText, "data")
     descriptor = None
-    for klass in docbook::SimpleText.__mro__:
+    for klass in docbook_SimpleText.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -190,72 +190,86 @@ def test_para_constructor_args():
 
 
 
-def test_docbook::tip_is_not_abstract():
-    assert not inspect.isabstract(docbook::Tip)
+def test_docbook_warning_is_not_abstract():
+    assert not inspect.isabstract(docbook_Warning)
 
 
-def test_docbook::tip_constructor_exists():
-    assert callable(docbook::Tip.__init__)
+def test_docbook_warning_constructor_exists():
+    assert callable(docbook_Warning.__init__)
 
 
-def test_docbook::tip_constructor_args():
-    sig = inspect.signature(docbook::Tip.__init__)
+def test_docbook_warning_constructor_args():
+    sig = inspect.signature(docbook_Warning.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::programlisting_is_not_abstract():
-    assert not inspect.isabstract(docbook::ProgramListing)
+def test_docbook_tip_is_not_abstract():
+    assert not inspect.isabstract(docbook_Tip)
 
 
-def test_docbook::programlisting_constructor_exists():
-    assert callable(docbook::ProgramListing.__init__)
+def test_docbook_tip_constructor_exists():
+    assert callable(docbook_Tip.__init__)
 
 
-def test_docbook::programlisting_constructor_args():
-    sig = inspect.signature(docbook::ProgramListing.__init__)
+def test_docbook_tip_constructor_args():
+    sig = inspect.signature(docbook_Tip.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::link_is_not_abstract():
-    assert not inspect.isabstract(docbook::Link)
+def test_docbook_programlisting_is_not_abstract():
+    assert not inspect.isabstract(docbook_ProgramListing)
 
 
-def test_docbook::link_constructor_exists():
-    assert callable(docbook::Link.__init__)
+def test_docbook_programlisting_constructor_exists():
+    assert callable(docbook_ProgramListing.__init__)
 
 
-def test_docbook::link_constructor_args():
-    sig = inspect.signature(docbook::Link.__init__)
+def test_docbook_programlisting_constructor_args():
+    sig = inspect.signature(docbook_ProgramListing.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::ulink_is_not_abstract():
-    assert not inspect.isabstract(docbook::Ulink)
+def test_docbook_link_is_not_abstract():
+    assert not inspect.isabstract(docbook_Link)
 
 
-def test_docbook::ulink_constructor_exists():
-    assert callable(docbook::Ulink.__init__)
+def test_docbook_link_constructor_exists():
+    assert callable(docbook_Link.__init__)
 
 
-def test_docbook::ulink_constructor_args():
-    sig = inspect.signature(docbook::Ulink.__init__)
+def test_docbook_link_constructor_args():
+    sig = inspect.signature(docbook_Link.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::emphasis_is_not_abstract():
-    assert not inspect.isabstract(docbook::Emphasis)
+def test_docbook_ulink_is_not_abstract():
+    assert not inspect.isabstract(docbook_Ulink)
 
 
-def test_docbook::emphasis_constructor_exists():
-    assert callable(docbook::Emphasis.__init__)
+def test_docbook_ulink_constructor_exists():
+    assert callable(docbook_Ulink.__init__)
 
 
-def test_docbook::emphasis_constructor_args():
-    sig = inspect.signature(docbook::Emphasis.__init__)
+def test_docbook_ulink_constructor_args():
+    sig = inspect.signature(docbook_Ulink.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_docbook_emphasis_is_not_abstract():
+    assert not inspect.isabstract(docbook_Emphasis)
+
+
+def test_docbook_emphasis_constructor_exists():
+    assert callable(docbook_Emphasis.__init__)
+
+
+def test_docbook_emphasis_constructor_args():
+    sig = inspect.signature(docbook_Emphasis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -274,33 +288,33 @@ def test_xmlelement_constructor_args():
 
 
 
-def test_docbook::bookinfo_is_not_abstract():
-    assert not inspect.isabstract(docbook::Bookinfo)
+def test_docbook_bookinfo_is_not_abstract():
+    assert not inspect.isabstract(docbook_Bookinfo)
 
 
-def test_docbook::bookinfo_constructor_exists():
-    assert callable(docbook::Bookinfo.__init__)
+def test_docbook_bookinfo_constructor_exists():
+    assert callable(docbook_Bookinfo.__init__)
 
 
-def test_docbook::bookinfo_constructor_args():
-    sig = inspect.signature(docbook::Bookinfo.__init__)
+def test_docbook_bookinfo_constructor_args():
+    sig = inspect.signature(docbook_Bookinfo.__init__)
     params = list(sig.parameters.keys())
     assert "pubdate" in params, "Missing parameter 'pubdate'"
     assert "date" in params, "Missing parameter 'date'"
 
-def test_docbook::bookinfo_has_pubdate():
-    assert hasattr(docbook::Bookinfo, "pubdate")
+def test_docbook_bookinfo_has_pubdate():
+    assert hasattr(docbook_Bookinfo, "pubdate")
     descriptor = None
-    for klass in docbook::Bookinfo.__mro__:
+    for klass in docbook_Bookinfo.__mro__:
         if "pubdate" in klass.__dict__:
             descriptor = klass.__dict__["pubdate"]
             break
     assert isinstance(descriptor, property)
 
-def test_docbook::bookinfo_has_date():
-    assert hasattr(docbook::Bookinfo, "date")
+def test_docbook_bookinfo_has_date():
+    assert hasattr(docbook_Bookinfo, "date")
     descriptor = None
-    for klass in docbook::Bookinfo.__mro__:
+    for klass in docbook_Bookinfo.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -322,72 +336,72 @@ def test_sectionmixedcontent_constructor_args():
 
 
 
-def test_docbook::para_is_not_abstract():
-    assert not inspect.isabstract(docbook::Para)
+def test_docbook_para_is_not_abstract():
+    assert not inspect.isabstract(docbook_Para)
 
 
-def test_docbook::para_constructor_exists():
-    assert callable(docbook::Para.__init__)
+def test_docbook_para_constructor_exists():
+    assert callable(docbook_Para.__init__)
 
 
-def test_docbook::para_constructor_args():
-    sig = inspect.signature(docbook::Para.__init__)
+def test_docbook_para_constructor_args():
+    sig = inspect.signature(docbook_Para.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::paramixedcontent_is_not_abstract():
-    assert not inspect.isabstract(docbook::ParaMixedContent)
+def test_docbook_paramixedcontent_is_not_abstract():
+    assert not inspect.isabstract(docbook_ParaMixedContent)
 
 
-def test_docbook::paramixedcontent_constructor_exists():
-    assert callable(docbook::ParaMixedContent.__init__)
+def test_docbook_paramixedcontent_constructor_exists():
+    assert callable(docbook_ParaMixedContent.__init__)
 
 
-def test_docbook::paramixedcontent_constructor_args():
-    sig = inspect.signature(docbook::ParaMixedContent.__init__)
+def test_docbook_paramixedcontent_constructor_args():
+    sig = inspect.signature(docbook_ParaMixedContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::titledelement_is_not_abstract():
-    assert not inspect.isabstract(docbook::TitledElement)
+def test_docbook_titledelement_is_not_abstract():
+    assert not inspect.isabstract(docbook_TitledElement)
 
 
-def test_docbook::titledelement_constructor_exists():
-    assert callable(docbook::TitledElement.__init__)
+def test_docbook_titledelement_constructor_exists():
+    assert callable(docbook_TitledElement.__init__)
 
 
-def test_docbook::titledelement_constructor_args():
-    sig = inspect.signature(docbook::TitledElement.__init__)
+def test_docbook_titledelement_constructor_args():
+    sig = inspect.signature(docbook_TitledElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::title_is_not_abstract():
-    assert not inspect.isabstract(docbook::Title)
+def test_docbook_title_is_not_abstract():
+    assert not inspect.isabstract(docbook_Title)
 
 
-def test_docbook::title_constructor_exists():
-    assert callable(docbook::Title.__init__)
+def test_docbook_title_constructor_exists():
+    assert callable(docbook_Title.__init__)
 
 
-def test_docbook::title_constructor_args():
-    sig = inspect.signature(docbook::Title.__init__)
+def test_docbook_title_constructor_args():
+    sig = inspect.signature(docbook_Title.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::sectionmixedcontent_is_not_abstract():
-    assert not inspect.isabstract(docbook::SectionMixedContent)
+def test_docbook_sectionmixedcontent_is_not_abstract():
+    assert not inspect.isabstract(docbook_SectionMixedContent)
 
 
-def test_docbook::sectionmixedcontent_constructor_exists():
-    assert callable(docbook::SectionMixedContent.__init__)
+def test_docbook_sectionmixedcontent_constructor_exists():
+    assert callable(docbook_SectionMixedContent.__init__)
 
 
-def test_docbook::sectionmixedcontent_constructor_args():
-    sig = inspect.signature(docbook::SectionMixedContent.__init__)
+def test_docbook_sectionmixedcontent_constructor_args():
+    sig = inspect.signature(docbook_SectionMixedContent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -406,95 +420,95 @@ def test_titledelement_constructor_args():
 
 
 
-def test_docbook::figure_is_not_abstract():
-    assert not inspect.isabstract(docbook::Figure)
+def test_docbook_chapter_is_not_abstract():
+    assert not inspect.isabstract(docbook_Chapter)
 
 
-def test_docbook::figure_constructor_exists():
-    assert callable(docbook::Figure.__init__)
+def test_docbook_chapter_constructor_exists():
+    assert callable(docbook_Chapter.__init__)
 
 
-def test_docbook::figure_constructor_args():
-    sig = inspect.signature(docbook::Figure.__init__)
+def test_docbook_chapter_constructor_args():
+    sig = inspect.signature(docbook_Chapter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::chapter_is_not_abstract():
-    assert not inspect.isabstract(docbook::Chapter)
+def test_docbook_figure_is_not_abstract():
+    assert not inspect.isabstract(docbook_Figure)
 
 
-def test_docbook::chapter_constructor_exists():
-    assert callable(docbook::Chapter.__init__)
+def test_docbook_figure_constructor_exists():
+    assert callable(docbook_Figure.__init__)
 
 
-def test_docbook::chapter_constructor_args():
-    sig = inspect.signature(docbook::Chapter.__init__)
+def test_docbook_figure_constructor_args():
+    sig = inspect.signature(docbook_Figure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::section_is_not_abstract():
-    assert not inspect.isabstract(docbook::Section)
+def test_docbook_section_is_not_abstract():
+    assert not inspect.isabstract(docbook_Section)
 
 
-def test_docbook::section_constructor_exists():
-    assert callable(docbook::Section.__init__)
+def test_docbook_section_constructor_exists():
+    assert callable(docbook_Section.__init__)
 
 
-def test_docbook::section_constructor_args():
-    sig = inspect.signature(docbook::Section.__init__)
+def test_docbook_section_constructor_args():
+    sig = inspect.signature(docbook_Section.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::author_is_not_abstract():
-    assert not inspect.isabstract(docbook::Author)
+def test_docbook_author_is_not_abstract():
+    assert not inspect.isabstract(docbook_Author)
 
 
-def test_docbook::author_constructor_exists():
-    assert callable(docbook::Author.__init__)
+def test_docbook_author_constructor_exists():
+    assert callable(docbook_Author.__init__)
 
 
-def test_docbook::author_constructor_args():
-    sig = inspect.signature(docbook::Author.__init__)
+def test_docbook_author_constructor_args():
+    sig = inspect.signature(docbook_Author.__init__)
     params = list(sig.parameters.keys())
     assert "authorblug" in params, "Missing parameter 'authorblug'"
-    assert "honorific" in params, "Missing parameter 'honorific'"
     assert "surname" in params, "Missing parameter 'surname'"
+    assert "honorific" in params, "Missing parameter 'honorific'"
     assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_docbook::author_has_authorblug():
-    assert hasattr(docbook::Author, "authorblug")
+def test_docbook_author_has_authorblug():
+    assert hasattr(docbook_Author, "authorblug")
     descriptor = None
-    for klass in docbook::Author.__mro__:
+    for klass in docbook_Author.__mro__:
         if "authorblug" in klass.__dict__:
             descriptor = klass.__dict__["authorblug"]
             break
     assert isinstance(descriptor, property)
 
-def test_docbook::author_has_honorific():
-    assert hasattr(docbook::Author, "honorific")
+def test_docbook_author_has_surname():
+    assert hasattr(docbook_Author, "surname")
     descriptor = None
-    for klass in docbook::Author.__mro__:
-        if "honorific" in klass.__dict__:
-            descriptor = klass.__dict__["honorific"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_docbook::author_has_surname():
-    assert hasattr(docbook::Author, "surname")
-    descriptor = None
-    for klass in docbook::Author.__mro__:
+    for klass in docbook_Author.__mro__:
         if "surname" in klass.__dict__:
             descriptor = klass.__dict__["surname"]
             break
     assert isinstance(descriptor, property)
 
-def test_docbook::author_has_firstname():
-    assert hasattr(docbook::Author, "firstname")
+def test_docbook_author_has_honorific():
+    assert hasattr(docbook_Author, "honorific")
     descriptor = None
-    for klass in docbook::Author.__mro__:
+    for klass in docbook_Author.__mro__:
+        if "honorific" in klass.__dict__:
+            descriptor = klass.__dict__["honorific"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_docbook_author_has_firstname():
+    assert hasattr(docbook_Author, "firstname")
+    descriptor = None
+    for klass in docbook_Author.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
             break
@@ -502,44 +516,30 @@ def test_docbook::author_has_firstname():
 
 
 
-def test_docbook::subtitle_is_not_abstract():
-    assert not inspect.isabstract(docbook::Subtitle)
+def test_docbook_subtitle_is_not_abstract():
+    assert not inspect.isabstract(docbook_Subtitle)
 
 
-def test_docbook::subtitle_constructor_exists():
-    assert callable(docbook::Subtitle.__init__)
+def test_docbook_subtitle_constructor_exists():
+    assert callable(docbook_Subtitle.__init__)
 
 
-def test_docbook::subtitle_constructor_args():
-    sig = inspect.signature(docbook::Subtitle.__init__)
+def test_docbook_subtitle_constructor_args():
+    sig = inspect.signature(docbook_Subtitle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::book_is_not_abstract():
-    assert not inspect.isabstract(docbook::Book)
+def test_docbook_book_is_not_abstract():
+    assert not inspect.isabstract(docbook_Book)
 
 
-def test_docbook::book_constructor_exists():
-    assert callable(docbook::Book.__init__)
+def test_docbook_book_constructor_exists():
+    assert callable(docbook_Book.__init__)
 
 
-def test_docbook::book_constructor_args():
-    sig = inspect.signature(docbook::Book.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_docbook::warning_is_not_abstract():
-    assert not inspect.isabstract(docbook::Warning)
-
-
-def test_docbook::warning_constructor_exists():
-    assert callable(docbook::Warning.__init__)
-
-
-def test_docbook::warning_constructor_args():
-    sig = inspect.signature(docbook::Warning.__init__)
+def test_docbook_book_constructor_args():
+    sig = inspect.signature(docbook_Book.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -554,8 +554,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-docbook::ImageData_strategy = st.builds(
-    docbook::ImageData,
+docbook_ImageData_strategy = st.builds(
+    docbook_ImageData,
     depth=
         safe_text,
     width=
@@ -563,48 +563,51 @@ docbook::ImageData_strategy = st.builds(
     fileref=
         safe_text
 )
-docbook::ImageObject_strategy = st.builds(
-    docbook::ImageObject,
+docbook_ImageObject_strategy = st.builds(
+    docbook_ImageObject,
 )
-docbook::XMLElement_strategy = st.builds(
-    docbook::XMLElement,
+docbook_XMLElement_strategy = st.builds(
+    docbook_XMLElement,
     id=
         safe_text
 )
-docbook::MediaObject_strategy = st.builds(
-    docbook::MediaObject,
+docbook_MediaObject_strategy = st.builds(
+    docbook_MediaObject,
 )
 ParaMixedContent_strategy = st.builds(
     ParaMixedContent,
 )
-docbook::SimpleText_strategy = st.builds(
-    docbook::SimpleText,
+docbook_SimpleText_strategy = st.builds(
+    docbook_SimpleText,
     data=
         safe_text
 )
 Para_strategy = st.builds(
     Para,
 )
-docbook::Tip_strategy = st.builds(
-    docbook::Tip,
+docbook_Warning_strategy = st.builds(
+    docbook_Warning,
 )
-docbook::ProgramListing_strategy = st.builds(
-    docbook::ProgramListing,
+docbook_Tip_strategy = st.builds(
+    docbook_Tip,
 )
-docbook::Link_strategy = st.builds(
-    docbook::Link,
+docbook_ProgramListing_strategy = st.builds(
+    docbook_ProgramListing,
 )
-docbook::Ulink_strategy = st.builds(
-    docbook::Ulink,
+docbook_Link_strategy = st.builds(
+    docbook_Link,
 )
-docbook::Emphasis_strategy = st.builds(
-    docbook::Emphasis,
+docbook_Ulink_strategy = st.builds(
+    docbook_Ulink,
+)
+docbook_Emphasis_strategy = st.builds(
+    docbook_Emphasis,
 )
 XMLElement_strategy = st.builds(
     XMLElement,
 )
-docbook::Bookinfo_strategy = st.builds(
-    docbook::Bookinfo,
+docbook_Bookinfo_strategy = st.builds(
+    docbook_Bookinfo,
     pubdate=
         safe_text,
     date=
@@ -613,135 +616,117 @@ docbook::Bookinfo_strategy = st.builds(
 SectionMixedContent_strategy = st.builds(
     SectionMixedContent,
 )
-docbook::Para_strategy = st.builds(
-    docbook::Para,
+docbook_Para_strategy = st.builds(
+    docbook_Para,
 )
-docbook::ParaMixedContent_strategy = st.builds(
-    docbook::ParaMixedContent,
+docbook_ParaMixedContent_strategy = st.builds(
+    docbook_ParaMixedContent,
 )
-docbook::TitledElement_strategy = st.builds(
-    docbook::TitledElement,
+docbook_TitledElement_strategy = st.builds(
+    docbook_TitledElement,
 )
-docbook::Title_strategy = st.builds(
-    docbook::Title,
+docbook_Title_strategy = st.builds(
+    docbook_Title,
 )
-docbook::SectionMixedContent_strategy = st.builds(
-    docbook::SectionMixedContent,
+docbook_SectionMixedContent_strategy = st.builds(
+    docbook_SectionMixedContent,
 )
 TitledElement_strategy = st.builds(
     TitledElement,
 )
-docbook::Figure_strategy = st.builds(
-    docbook::Figure,
+docbook_Chapter_strategy = st.builds(
+    docbook_Chapter,
 )
-docbook::Chapter_strategy = st.builds(
-    docbook::Chapter,
+docbook_Figure_strategy = st.builds(
+    docbook_Figure,
 )
-docbook::Section_strategy = st.builds(
-    docbook::Section,
+docbook_Section_strategy = st.builds(
+    docbook_Section,
 )
-docbook::Author_strategy = st.builds(
-    docbook::Author,
+docbook_Author_strategy = st.builds(
+    docbook_Author,
     authorblug=
         safe_text,
-    honorific=
-        safe_text,
     surname=
+        safe_text,
+    honorific=
         safe_text,
     firstname=
         safe_text
 )
-docbook::Subtitle_strategy = st.builds(
-    docbook::Subtitle,
+docbook_Subtitle_strategy = st.builds(
+    docbook_Subtitle,
 )
-docbook::Book_strategy = st.builds(
-    docbook::Book,
-)
-docbook::Warning_strategy = st.builds(
-    docbook::Warning,
+docbook_Book_strategy = st.builds(
+    docbook_Book,
 )
 
-@given(instance=docbook::ImageData_strategy)
+@given(instance=docbook_ImageData_strategy)
 @settings(max_examples=50)
-def test_docbook::imagedata_instantiation(instance):
-    assert isinstance(instance, docbook::ImageData)
-
-@given(instance=docbook::ImageData_strategy)
-def test_docbook::imagedata_depth_type(instance):
-    assert isinstance(instance.depth, str)
+def test_docbook_imagedata_instantiation(instance):
+    assert isinstance(instance, docbook_ImageData)
 
 
-@given(instance=docbook::ImageData_strategy)
-def test_docbook::imagedata_depth_setter(instance):
+
+@given(instance=docbook_ImageData_strategy)
+def test_docbook_imagedata_depth_setter(instance):
     original = instance.depth
     instance.depth = original
     assert instance.depth == original
 
-@given(instance=docbook::ImageData_strategy)
-def test_docbook::imagedata_width_type(instance):
-    assert isinstance(instance.width, str)
 
 
-@given(instance=docbook::ImageData_strategy)
-def test_docbook::imagedata_width_setter(instance):
+@given(instance=docbook_ImageData_strategy)
+def test_docbook_imagedata_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=docbook::ImageData_strategy)
-def test_docbook::imagedata_fileref_type(instance):
-    assert isinstance(instance.fileref, str)
 
 
-@given(instance=docbook::ImageData_strategy)
-def test_docbook::imagedata_fileref_setter(instance):
+@given(instance=docbook_ImageData_strategy)
+def test_docbook_imagedata_fileref_setter(instance):
     original = instance.fileref
     instance.fileref = original
     assert instance.fileref == original
 
-@given(instance=docbook::ImageObject_strategy)
+@given(instance=docbook_ImageObject_strategy)
 @settings(max_examples=50)
-def test_docbook::imageobject_instantiation(instance):
-    assert isinstance(instance, docbook::ImageObject)
+def test_docbook_imageobject_instantiation(instance):
+    assert isinstance(instance, docbook_ImageObject)
 
-@given(instance=docbook::XMLElement_strategy)
+@given(instance=docbook_XMLElement_strategy)
 @settings(max_examples=50)
-def test_docbook::xmlelement_instantiation(instance):
-    assert isinstance(instance, docbook::XMLElement)
-
-@given(instance=docbook::XMLElement_strategy)
-def test_docbook::xmlelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_docbook_xmlelement_instantiation(instance):
+    assert isinstance(instance, docbook_XMLElement)
 
 
-@given(instance=docbook::XMLElement_strategy)
-def test_docbook::xmlelement_id_setter(instance):
+
+@given(instance=docbook_XMLElement_strategy)
+def test_docbook_xmlelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=docbook::MediaObject_strategy)
+@given(instance=docbook_MediaObject_strategy)
 @settings(max_examples=50)
-def test_docbook::mediaobject_instantiation(instance):
-    assert isinstance(instance, docbook::MediaObject)
+def test_docbook_mediaobject_instantiation(instance):
+    assert isinstance(instance, docbook_MediaObject)
 
 @given(instance=ParaMixedContent_strategy)
 @settings(max_examples=50)
 def test_paramixedcontent_instantiation(instance):
     assert isinstance(instance, ParaMixedContent)
 
-@given(instance=docbook::SimpleText_strategy)
+@given(instance=docbook_SimpleText_strategy)
 @settings(max_examples=50)
-def test_docbook::simpletext_instantiation(instance):
-    assert isinstance(instance, docbook::SimpleText)
-
-@given(instance=docbook::SimpleText_strategy)
-def test_docbook::simpletext_data_type(instance):
-    assert isinstance(instance.data, str)
+def test_docbook_simpletext_instantiation(instance):
+    assert isinstance(instance, docbook_SimpleText)
 
 
-@given(instance=docbook::SimpleText_strategy)
-def test_docbook::simpletext_data_setter(instance):
+
+@given(instance=docbook_SimpleText_strategy)
+def test_docbook_simpletext_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
@@ -751,59 +736,58 @@ def test_docbook::simpletext_data_setter(instance):
 def test_para_instantiation(instance):
     assert isinstance(instance, Para)
 
-@given(instance=docbook::Tip_strategy)
+@given(instance=docbook_Warning_strategy)
 @settings(max_examples=50)
-def test_docbook::tip_instantiation(instance):
-    assert isinstance(instance, docbook::Tip)
+def test_docbook_warning_instantiation(instance):
+    assert isinstance(instance, docbook_Warning)
 
-@given(instance=docbook::ProgramListing_strategy)
+@given(instance=docbook_Tip_strategy)
 @settings(max_examples=50)
-def test_docbook::programlisting_instantiation(instance):
-    assert isinstance(instance, docbook::ProgramListing)
+def test_docbook_tip_instantiation(instance):
+    assert isinstance(instance, docbook_Tip)
 
-@given(instance=docbook::Link_strategy)
+@given(instance=docbook_ProgramListing_strategy)
 @settings(max_examples=50)
-def test_docbook::link_instantiation(instance):
-    assert isinstance(instance, docbook::Link)
+def test_docbook_programlisting_instantiation(instance):
+    assert isinstance(instance, docbook_ProgramListing)
 
-@given(instance=docbook::Ulink_strategy)
+@given(instance=docbook_Link_strategy)
 @settings(max_examples=50)
-def test_docbook::ulink_instantiation(instance):
-    assert isinstance(instance, docbook::Ulink)
+def test_docbook_link_instantiation(instance):
+    assert isinstance(instance, docbook_Link)
 
-@given(instance=docbook::Emphasis_strategy)
+@given(instance=docbook_Ulink_strategy)
 @settings(max_examples=50)
-def test_docbook::emphasis_instantiation(instance):
-    assert isinstance(instance, docbook::Emphasis)
+def test_docbook_ulink_instantiation(instance):
+    assert isinstance(instance, docbook_Ulink)
+
+@given(instance=docbook_Emphasis_strategy)
+@settings(max_examples=50)
+def test_docbook_emphasis_instantiation(instance):
+    assert isinstance(instance, docbook_Emphasis)
 
 @given(instance=XMLElement_strategy)
 @settings(max_examples=50)
 def test_xmlelement_instantiation(instance):
     assert isinstance(instance, XMLElement)
 
-@given(instance=docbook::Bookinfo_strategy)
+@given(instance=docbook_Bookinfo_strategy)
 @settings(max_examples=50)
-def test_docbook::bookinfo_instantiation(instance):
-    assert isinstance(instance, docbook::Bookinfo)
-
-@given(instance=docbook::Bookinfo_strategy)
-def test_docbook::bookinfo_pubdate_type(instance):
-    assert isinstance(instance.pubdate, str)
+def test_docbook_bookinfo_instantiation(instance):
+    assert isinstance(instance, docbook_Bookinfo)
 
 
-@given(instance=docbook::Bookinfo_strategy)
-def test_docbook::bookinfo_pubdate_setter(instance):
+
+@given(instance=docbook_Bookinfo_strategy)
+def test_docbook_bookinfo_pubdate_setter(instance):
     original = instance.pubdate
     instance.pubdate = original
     assert instance.pubdate == original
 
-@given(instance=docbook::Bookinfo_strategy)
-def test_docbook::bookinfo_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
-@given(instance=docbook::Bookinfo_strategy)
-def test_docbook::bookinfo_date_setter(instance):
+@given(instance=docbook_Bookinfo_strategy)
+def test_docbook_bookinfo_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
@@ -813,111 +797,94 @@ def test_docbook::bookinfo_date_setter(instance):
 def test_sectionmixedcontent_instantiation(instance):
     assert isinstance(instance, SectionMixedContent)
 
-@given(instance=docbook::Para_strategy)
+@given(instance=docbook_Para_strategy)
 @settings(max_examples=50)
-def test_docbook::para_instantiation(instance):
-    assert isinstance(instance, docbook::Para)
+def test_docbook_para_instantiation(instance):
+    assert isinstance(instance, docbook_Para)
 
-@given(instance=docbook::ParaMixedContent_strategy)
+@given(instance=docbook_ParaMixedContent_strategy)
 @settings(max_examples=50)
-def test_docbook::paramixedcontent_instantiation(instance):
-    assert isinstance(instance, docbook::ParaMixedContent)
+def test_docbook_paramixedcontent_instantiation(instance):
+    assert isinstance(instance, docbook_ParaMixedContent)
 
-@given(instance=docbook::TitledElement_strategy)
+@given(instance=docbook_TitledElement_strategy)
 @settings(max_examples=50)
-def test_docbook::titledelement_instantiation(instance):
-    assert isinstance(instance, docbook::TitledElement)
+def test_docbook_titledelement_instantiation(instance):
+    assert isinstance(instance, docbook_TitledElement)
 
-@given(instance=docbook::Title_strategy)
+@given(instance=docbook_Title_strategy)
 @settings(max_examples=50)
-def test_docbook::title_instantiation(instance):
-    assert isinstance(instance, docbook::Title)
+def test_docbook_title_instantiation(instance):
+    assert isinstance(instance, docbook_Title)
 
-@given(instance=docbook::SectionMixedContent_strategy)
+@given(instance=docbook_SectionMixedContent_strategy)
 @settings(max_examples=50)
-def test_docbook::sectionmixedcontent_instantiation(instance):
-    assert isinstance(instance, docbook::SectionMixedContent)
+def test_docbook_sectionmixedcontent_instantiation(instance):
+    assert isinstance(instance, docbook_SectionMixedContent)
 
 @given(instance=TitledElement_strategy)
 @settings(max_examples=50)
 def test_titledelement_instantiation(instance):
     assert isinstance(instance, TitledElement)
 
-@given(instance=docbook::Figure_strategy)
+@given(instance=docbook_Chapter_strategy)
 @settings(max_examples=50)
-def test_docbook::figure_instantiation(instance):
-    assert isinstance(instance, docbook::Figure)
+def test_docbook_chapter_instantiation(instance):
+    assert isinstance(instance, docbook_Chapter)
 
-@given(instance=docbook::Chapter_strategy)
+@given(instance=docbook_Figure_strategy)
 @settings(max_examples=50)
-def test_docbook::chapter_instantiation(instance):
-    assert isinstance(instance, docbook::Chapter)
+def test_docbook_figure_instantiation(instance):
+    assert isinstance(instance, docbook_Figure)
 
-@given(instance=docbook::Section_strategy)
+@given(instance=docbook_Section_strategy)
 @settings(max_examples=50)
-def test_docbook::section_instantiation(instance):
-    assert isinstance(instance, docbook::Section)
+def test_docbook_section_instantiation(instance):
+    assert isinstance(instance, docbook_Section)
 
-@given(instance=docbook::Author_strategy)
+@given(instance=docbook_Author_strategy)
 @settings(max_examples=50)
-def test_docbook::author_instantiation(instance):
-    assert isinstance(instance, docbook::Author)
-
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_authorblug_type(instance):
-    assert isinstance(instance.authorblug, str)
+def test_docbook_author_instantiation(instance):
+    assert isinstance(instance, docbook_Author)
 
 
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_authorblug_setter(instance):
+
+@given(instance=docbook_Author_strategy)
+def test_docbook_author_authorblug_setter(instance):
     original = instance.authorblug
     instance.authorblug = original
     assert instance.authorblug == original
 
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_honorific_type(instance):
-    assert isinstance(instance.honorific, str)
 
 
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_honorific_setter(instance):
-    original = instance.honorific
-    instance.honorific = original
-    assert instance.honorific == original
-
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_surname_type(instance):
-    assert isinstance(instance.surname, str)
-
-
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_surname_setter(instance):
+@given(instance=docbook_Author_strategy)
+def test_docbook_author_surname_setter(instance):
     original = instance.surname
     instance.surname = original
     assert instance.surname == original
 
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
 
 
-@given(instance=docbook::Author_strategy)
-def test_docbook::author_firstname_setter(instance):
+@given(instance=docbook_Author_strategy)
+def test_docbook_author_honorific_setter(instance):
+    original = instance.honorific
+    instance.honorific = original
+    assert instance.honorific == original
+
+
+
+@given(instance=docbook_Author_strategy)
+def test_docbook_author_firstname_setter(instance):
     original = instance.firstname
     instance.firstname = original
     assert instance.firstname == original
 
-@given(instance=docbook::Subtitle_strategy)
+@given(instance=docbook_Subtitle_strategy)
 @settings(max_examples=50)
-def test_docbook::subtitle_instantiation(instance):
-    assert isinstance(instance, docbook::Subtitle)
+def test_docbook_subtitle_instantiation(instance):
+    assert isinstance(instance, docbook_Subtitle)
 
-@given(instance=docbook::Book_strategy)
+@given(instance=docbook_Book_strategy)
 @settings(max_examples=50)
-def test_docbook::book_instantiation(instance):
-    assert isinstance(instance, docbook::Book)
-
-@given(instance=docbook::Warning_strategy)
-@settings(max_examples=50)
-def test_docbook::warning_instantiation(instance):
-    assert isinstance(instance, docbook::Warning)
+def test_docbook_book_instantiation(instance):
+    assert isinstance(instance, docbook_Book)

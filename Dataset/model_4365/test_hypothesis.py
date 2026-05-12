@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Relation,
-    design::Composition,
-    design::Generalization,
-    design::Dependency,
-    design::Association,
-    design::Relation,
-    design::Classifier,
-    design::Design,
-    design::Operation,
-    design::Attribute,
+    design_Generalization,
+    design_Dependency,
+    design_Composition,
+    design_Association,
+    design_Relation,
+    design_Classifier,
+    design_Design,
+    design_Operation,
+    design_Attribute,
     Classifier,
-    design::Interface,
-    design::Class,
-    design::Realization,
-    design::Aggregation,
+    design_Interface,
+    design_Class,
+    design_Realization,
+    design_Aggregation,
     Types,
-    Languages,
     AccessModifiers,
+    Languages,
 )
 
 # =============================================================================
@@ -46,127 +46,127 @@ def test_relation_constructor_args():
 
 
 
-def test_design::composition_is_not_abstract():
-    assert not inspect.isabstract(design::Composition)
+def test_design_generalization_is_not_abstract():
+    assert not inspect.isabstract(design_Generalization)
 
 
-def test_design::composition_constructor_exists():
-    assert callable(design::Composition.__init__)
+def test_design_generalization_constructor_exists():
+    assert callable(design_Generalization.__init__)
 
 
-def test_design::composition_constructor_args():
-    sig = inspect.signature(design::Composition.__init__)
+def test_design_generalization_constructor_args():
+    sig = inspect.signature(design_Generalization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::generalization_is_not_abstract():
-    assert not inspect.isabstract(design::Generalization)
+def test_design_dependency_is_not_abstract():
+    assert not inspect.isabstract(design_Dependency)
 
 
-def test_design::generalization_constructor_exists():
-    assert callable(design::Generalization.__init__)
+def test_design_dependency_constructor_exists():
+    assert callable(design_Dependency.__init__)
 
 
-def test_design::generalization_constructor_args():
-    sig = inspect.signature(design::Generalization.__init__)
+def test_design_dependency_constructor_args():
+    sig = inspect.signature(design_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::dependency_is_not_abstract():
-    assert not inspect.isabstract(design::Dependency)
+def test_design_composition_is_not_abstract():
+    assert not inspect.isabstract(design_Composition)
 
 
-def test_design::dependency_constructor_exists():
-    assert callable(design::Dependency.__init__)
+def test_design_composition_constructor_exists():
+    assert callable(design_Composition.__init__)
 
 
-def test_design::dependency_constructor_args():
-    sig = inspect.signature(design::Dependency.__init__)
+def test_design_composition_constructor_args():
+    sig = inspect.signature(design_Composition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::association_is_not_abstract():
-    assert not inspect.isabstract(design::Association)
+def test_design_association_is_not_abstract():
+    assert not inspect.isabstract(design_Association)
 
 
-def test_design::association_constructor_exists():
-    assert callable(design::Association.__init__)
+def test_design_association_constructor_exists():
+    assert callable(design_Association.__init__)
 
 
-def test_design::association_constructor_args():
-    sig = inspect.signature(design::Association.__init__)
+def test_design_association_constructor_args():
+    sig = inspect.signature(design_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::relation_is_not_abstract():
-    assert not inspect.isabstract(design::Relation)
+def test_design_relation_is_not_abstract():
+    assert not inspect.isabstract(design_Relation)
 
 
-def test_design::relation_constructor_exists():
-    assert callable(design::Relation.__init__)
+def test_design_relation_constructor_exists():
+    assert callable(design_Relation.__init__)
 
 
-def test_design::relation_constructor_args():
-    sig = inspect.signature(design::Relation.__init__)
+def test_design_relation_constructor_args():
+    sig = inspect.signature(design_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::classifier_is_not_abstract():
-    assert not inspect.isabstract(design::Classifier)
+def test_design_classifier_is_not_abstract():
+    assert not inspect.isabstract(design_Classifier)
 
 
-def test_design::classifier_constructor_exists():
-    assert callable(design::Classifier.__init__)
+def test_design_classifier_constructor_exists():
+    assert callable(design_Classifier.__init__)
 
 
-def test_design::classifier_constructor_args():
-    sig = inspect.signature(design::Classifier.__init__)
+def test_design_classifier_constructor_args():
+    sig = inspect.signature(design_Classifier.__init__)
     params = list(sig.parameters.keys())
-    assert "accessModifier" in params, "Missing parameter 'accessModifier'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "accessModifier" in params, "Missing parameter 'accessModifier'"
 
-def test_design::classifier_has_accessModifier():
-    assert hasattr(design::Classifier, "accessModifier")
+def test_design_classifier_has_name():
+    assert hasattr(design_Classifier, "name")
     descriptor = None
-    for klass in design::Classifier.__mro__:
-        if "accessModifier" in klass.__dict__:
-            descriptor = klass.__dict__["accessModifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_design::classifier_has_name():
-    assert hasattr(design::Classifier, "name")
-    descriptor = None
-    for klass in design::Classifier.__mro__:
+    for klass in design_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_design_classifier_has_accessModifier():
+    assert hasattr(design_Classifier, "accessModifier")
+    descriptor = None
+    for klass in design_Classifier.__mro__:
+        if "accessModifier" in klass.__dict__:
+            descriptor = klass.__dict__["accessModifier"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_design::design_is_not_abstract():
-    assert not inspect.isabstract(design::Design)
+
+def test_design_design_is_not_abstract():
+    assert not inspect.isabstract(design_Design)
 
 
-def test_design::design_constructor_exists():
-    assert callable(design::Design.__init__)
+def test_design_design_constructor_exists():
+    assert callable(design_Design.__init__)
 
 
-def test_design::design_constructor_args():
-    sig = inspect.signature(design::Design.__init__)
+def test_design_design_constructor_args():
+    sig = inspect.signature(design_Design.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
 
-def test_design::design_has_language():
-    assert hasattr(design::Design, "language")
+def test_design_design_has_language():
+    assert hasattr(design_Design, "language")
     descriptor = None
-    for klass in design::Design.__mro__:
+    for klass in design_Design.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
@@ -174,69 +174,69 @@ def test_design::design_has_language():
 
 
 
-def test_design::operation_is_not_abstract():
-    assert not inspect.isabstract(design::Operation)
+def test_design_operation_is_not_abstract():
+    assert not inspect.isabstract(design_Operation)
 
 
-def test_design::operation_constructor_exists():
-    assert callable(design::Operation.__init__)
+def test_design_operation_constructor_exists():
+    assert callable(design_Operation.__init__)
 
 
-def test_design::operation_constructor_args():
-    sig = inspect.signature(design::Operation.__init__)
+def test_design_operation_constructor_args():
+    sig = inspect.signature(design_Operation.__init__)
     params = list(sig.parameters.keys())
-    assert "returnType" in params, "Missing parameter 'returnType'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "returnType" in params, "Missing parameter 'returnType'"
 
-def test_design::operation_has_returnType():
-    assert hasattr(design::Operation, "returnType")
+def test_design_operation_has_name():
+    assert hasattr(design_Operation, "name")
     descriptor = None
-    for klass in design::Operation.__mro__:
+    for klass in design_Operation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_design_operation_has_returnType():
+    assert hasattr(design_Operation, "returnType")
+    descriptor = None
+    for klass in design_Operation.__mro__:
         if "returnType" in klass.__dict__:
             descriptor = klass.__dict__["returnType"]
             break
     assert isinstance(descriptor, property)
 
-def test_design::operation_has_name():
-    assert hasattr(design::Operation, "name")
+
+
+def test_design_attribute_is_not_abstract():
+    assert not inspect.isabstract(design_Attribute)
+
+
+def test_design_attribute_constructor_exists():
+    assert callable(design_Attribute.__init__)
+
+
+def test_design_attribute_constructor_args():
+    sig = inspect.signature(design_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_design_attribute_has_name():
+    assert hasattr(design_Attribute, "name")
     descriptor = None
-    for klass in design::Operation.__mro__:
+    for klass in design_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_design::attribute_is_not_abstract():
-    assert not inspect.isabstract(design::Attribute)
-
-
-def test_design::attribute_constructor_exists():
-    assert callable(design::Attribute.__init__)
-
-
-def test_design::attribute_constructor_args():
-    sig = inspect.signature(design::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_design::attribute_has_type():
-    assert hasattr(design::Attribute, "type")
+def test_design_attribute_has_type():
+    assert hasattr(design_Attribute, "type")
     descriptor = None
-    for klass in design::Attribute.__mro__:
+    for klass in design_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_design::attribute_has_name():
-    assert hasattr(design::Attribute, "name")
-    descriptor = None
-    for klass in design::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,58 +256,58 @@ def test_classifier_constructor_args():
 
 
 
-def test_design::interface_is_not_abstract():
-    assert not inspect.isabstract(design::Interface)
+def test_design_interface_is_not_abstract():
+    assert not inspect.isabstract(design_Interface)
 
 
-def test_design::interface_constructor_exists():
-    assert callable(design::Interface.__init__)
+def test_design_interface_constructor_exists():
+    assert callable(design_Interface.__init__)
 
 
-def test_design::interface_constructor_args():
-    sig = inspect.signature(design::Interface.__init__)
+def test_design_interface_constructor_args():
+    sig = inspect.signature(design_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::class_is_not_abstract():
-    assert not inspect.isabstract(design::Class)
+def test_design_class_is_not_abstract():
+    assert not inspect.isabstract(design_Class)
 
 
-def test_design::class_constructor_exists():
-    assert callable(design::Class.__init__)
+def test_design_class_constructor_exists():
+    assert callable(design_Class.__init__)
 
 
-def test_design::class_constructor_args():
-    sig = inspect.signature(design::Class.__init__)
+def test_design_class_constructor_args():
+    sig = inspect.signature(design_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::realization_is_not_abstract():
-    assert not inspect.isabstract(design::Realization)
+def test_design_realization_is_not_abstract():
+    assert not inspect.isabstract(design_Realization)
 
 
-def test_design::realization_constructor_exists():
-    assert callable(design::Realization.__init__)
+def test_design_realization_constructor_exists():
+    assert callable(design_Realization.__init__)
 
 
-def test_design::realization_constructor_args():
-    sig = inspect.signature(design::Realization.__init__)
+def test_design_realization_constructor_args():
+    sig = inspect.signature(design_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_design::aggregation_is_not_abstract():
-    assert not inspect.isabstract(design::Aggregation)
+def test_design_aggregation_is_not_abstract():
+    assert not inspect.isabstract(design_Aggregation)
 
 
-def test_design::aggregation_constructor_exists():
-    assert callable(design::Aggregation.__init__)
+def test_design_aggregation_constructor_exists():
+    assert callable(design_Aggregation.__init__)
 
 
-def test_design::aggregation_constructor_args():
-    sig = inspect.signature(design::Aggregation.__init__)
+def test_design_aggregation_constructor_args():
+    sig = inspect.signature(design_Aggregation.__init__)
     params = list(sig.parameters.keys())
 
 def test_types_exists():
@@ -318,34 +318,17 @@ def test_types_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Types]
     expected_literals = [
+        "boolean",
         "float",
-        "void",
-        "string",
+        "int",
         "double",
         "long",
-        "boolean",
-        "int",
+        "string",
+        "void",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Types"
-
-def test_languages_exists():
-    # Check that the Enumeration exists
-    assert Languages is not None
-
-def test_languages_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Languages]
-    expected_literals = [
-        "CS",
-        "CPP",
-        "Python",
-        "Java",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Languages"
 
 def test_accessmodifiers_exists():
     # Check that the Enumeration exists
@@ -355,13 +338,30 @@ def test_accessmodifiers_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AccessModifiers]
     expected_literals = [
-        "public",
         "protected",
         "private",
+        "public",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AccessModifiers"
+
+def test_languages_exists():
+    # Check that the Enumeration exists
+    assert Languages is not None
+
+def test_languages_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Languages]
+    expected_literals = [
+        "Python",
+        "CS",
+        "CPP",
+        "Java",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Languages"
 
 
 # =============================================================================
@@ -378,61 +378,61 @@ safe_text = st.text(
 Relation_strategy = st.builds(
     Relation,
 )
-design::Composition_strategy = st.builds(
-    design::Composition,
+design_Generalization_strategy = st.builds(
+    design_Generalization,
 )
-design::Generalization_strategy = st.builds(
-    design::Generalization,
+design_Dependency_strategy = st.builds(
+    design_Dependency,
 )
-design::Dependency_strategy = st.builds(
-    design::Dependency,
+design_Composition_strategy = st.builds(
+    design_Composition,
 )
-design::Association_strategy = st.builds(
-    design::Association,
+design_Association_strategy = st.builds(
+    design_Association,
 )
-design::Relation_strategy = st.builds(
-    design::Relation,
+design_Relation_strategy = st.builds(
+    design_Relation,
 )
-design::Classifier_strategy = st.builds(
-    design::Classifier,
-    accessModifier=
-        safe_text,
+design_Classifier_strategy = st.builds(
+    design_Classifier,
     name=
+        safe_text,
+    accessModifier=
         safe_text
 )
-design::Design_strategy = st.builds(
-    design::Design,
+design_Design_strategy = st.builds(
+    design_Design,
     language=
         safe_text
 )
-design::Operation_strategy = st.builds(
-    design::Operation,
-    returnType=
-        safe_text,
+design_Operation_strategy = st.builds(
+    design_Operation,
     name=
+        safe_text,
+    returnType=
         safe_text
 )
-design::Attribute_strategy = st.builds(
-    design::Attribute,
-    type=
-        safe_text,
+design_Attribute_strategy = st.builds(
+    design_Attribute,
     name=
+        safe_text,
+    type=
         safe_text
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-design::Interface_strategy = st.builds(
-    design::Interface,
+design_Interface_strategy = st.builds(
+    design_Interface,
 )
-design::Class_strategy = st.builds(
-    design::Class,
+design_Class_strategy = st.builds(
+    design_Class,
 )
-design::Realization_strategy = st.builds(
-    design::Realization,
+design_Realization_strategy = st.builds(
+    design_Realization,
 )
-design::Aggregation_strategy = st.builds(
-    design::Aggregation,
+design_Aggregation_strategy = st.builds(
+    design_Aggregation,
 )
 
 @given(instance=Relation_strategy)
@@ -440,149 +440,128 @@ design::Aggregation_strategy = st.builds(
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=design::Composition_strategy)
+@given(instance=design_Generalization_strategy)
 @settings(max_examples=50)
-def test_design::composition_instantiation(instance):
-    assert isinstance(instance, design::Composition)
+def test_design_generalization_instantiation(instance):
+    assert isinstance(instance, design_Generalization)
 
-@given(instance=design::Generalization_strategy)
+@given(instance=design_Dependency_strategy)
 @settings(max_examples=50)
-def test_design::generalization_instantiation(instance):
-    assert isinstance(instance, design::Generalization)
+def test_design_dependency_instantiation(instance):
+    assert isinstance(instance, design_Dependency)
 
-@given(instance=design::Dependency_strategy)
+@given(instance=design_Composition_strategy)
 @settings(max_examples=50)
-def test_design::dependency_instantiation(instance):
-    assert isinstance(instance, design::Dependency)
+def test_design_composition_instantiation(instance):
+    assert isinstance(instance, design_Composition)
 
-@given(instance=design::Association_strategy)
+@given(instance=design_Association_strategy)
 @settings(max_examples=50)
-def test_design::association_instantiation(instance):
-    assert isinstance(instance, design::Association)
+def test_design_association_instantiation(instance):
+    assert isinstance(instance, design_Association)
 
-@given(instance=design::Relation_strategy)
+@given(instance=design_Relation_strategy)
 @settings(max_examples=50)
-def test_design::relation_instantiation(instance):
-    assert isinstance(instance, design::Relation)
+def test_design_relation_instantiation(instance):
+    assert isinstance(instance, design_Relation)
 
-@given(instance=design::Classifier_strategy)
+@given(instance=design_Classifier_strategy)
 @settings(max_examples=50)
-def test_design::classifier_instantiation(instance):
-    assert isinstance(instance, design::Classifier)
-
-@given(instance=design::Classifier_strategy)
-def test_design::classifier_accessModifier_type(instance):
-    assert isinstance(instance.accessModifier, str)
+def test_design_classifier_instantiation(instance):
+    assert isinstance(instance, design_Classifier)
 
 
-@given(instance=design::Classifier_strategy)
-def test_design::classifier_accessModifier_setter(instance):
+
+@given(instance=design_Classifier_strategy)
+def test_design_classifier_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=design_Classifier_strategy)
+def test_design_classifier_accessModifier_setter(instance):
     original = instance.accessModifier
     instance.accessModifier = original
     assert instance.accessModifier == original
 
-@given(instance=design::Classifier_strategy)
-def test_design::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=design::Classifier_strategy)
-def test_design::classifier_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=design::Design_strategy)
+@given(instance=design_Design_strategy)
 @settings(max_examples=50)
-def test_design::design_instantiation(instance):
-    assert isinstance(instance, design::Design)
-
-@given(instance=design::Design_strategy)
-def test_design::design_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_design_design_instantiation(instance):
+    assert isinstance(instance, design_Design)
 
 
-@given(instance=design::Design_strategy)
-def test_design::design_language_setter(instance):
+
+@given(instance=design_Design_strategy)
+def test_design_design_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=design::Operation_strategy)
+@given(instance=design_Operation_strategy)
 @settings(max_examples=50)
-def test_design::operation_instantiation(instance):
-    assert isinstance(instance, design::Operation)
-
-@given(instance=design::Operation_strategy)
-def test_design::operation_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
+def test_design_operation_instantiation(instance):
+    assert isinstance(instance, design_Operation)
 
 
-@given(instance=design::Operation_strategy)
-def test_design::operation_returnType_setter(instance):
+
+@given(instance=design_Operation_strategy)
+def test_design_operation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=design_Operation_strategy)
+def test_design_operation_returnType_setter(instance):
     original = instance.returnType
     instance.returnType = original
     assert instance.returnType == original
 
-@given(instance=design::Operation_strategy)
-def test_design::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=design_Attribute_strategy)
+@settings(max_examples=50)
+def test_design_attribute_instantiation(instance):
+    assert isinstance(instance, design_Attribute)
 
 
-@given(instance=design::Operation_strategy)
-def test_design::operation_name_setter(instance):
+
+@given(instance=design_Attribute_strategy)
+def test_design_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=design::Attribute_strategy)
-@settings(max_examples=50)
-def test_design::attribute_instantiation(instance):
-    assert isinstance(instance, design::Attribute)
-
-@given(instance=design::Attribute_strategy)
-def test_design::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=design::Attribute_strategy)
-def test_design::attribute_type_setter(instance):
+@given(instance=design_Attribute_strategy)
+def test_design_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
-
-@given(instance=design::Attribute_strategy)
-def test_design::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=design::Attribute_strategy)
-def test_design::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=design::Interface_strategy)
+@given(instance=design_Interface_strategy)
 @settings(max_examples=50)
-def test_design::interface_instantiation(instance):
-    assert isinstance(instance, design::Interface)
+def test_design_interface_instantiation(instance):
+    assert isinstance(instance, design_Interface)
 
-@given(instance=design::Class_strategy)
+@given(instance=design_Class_strategy)
 @settings(max_examples=50)
-def test_design::class_instantiation(instance):
-    assert isinstance(instance, design::Class)
+def test_design_class_instantiation(instance):
+    assert isinstance(instance, design_Class)
 
-@given(instance=design::Realization_strategy)
+@given(instance=design_Realization_strategy)
 @settings(max_examples=50)
-def test_design::realization_instantiation(instance):
-    assert isinstance(instance, design::Realization)
+def test_design_realization_instantiation(instance):
+    assert isinstance(instance, design_Realization)
 
-@given(instance=design::Aggregation_strategy)
+@given(instance=design_Aggregation_strategy)
 @settings(max_examples=50)
-def test_design::aggregation_instantiation(instance):
-    assert isinstance(instance, design::Aggregation)
+def test_design_aggregation_instantiation(instance):
+    assert isinstance(instance, design_Aggregation)

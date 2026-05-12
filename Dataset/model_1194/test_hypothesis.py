@@ -3,66 +3,66 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    EssentialOCL::TupleType,
+from python_code import (
+    EssentialOCL_TupleType,
     TupleLiteralExp,
-    EssentialOCL::VoidType,
+    EssentialOCL_VoidType,
     LetExp,
-    EssentialOCL::Variable,
-    EssentialOCL::OclExpression,
+    EssentialOCL_Variable,
+    EssentialOCL_OclExpression,
     FeatureCallExp,
-    EssentialOCL::NavigationCallExp,
-    EssentialOCL::TupleLiteralPart,
+    EssentialOCL_NavigationCallExp,
+    EssentialOCL_TupleLiteralPart,
     TupleLiteralPart,
-    EssentialOCL::TemplateParameterType,
+    EssentialOCL_TemplateParameterType,
     NavigationCallExp,
-    EssentialOCL::PropertyCallExp,
-    EssentialOCL::OperationCallExp,
+    EssentialOCL_PropertyCallExp,
+    EssentialOCL_OperationCallExp,
     LoopExp,
-    EssentialOCL::IteratorExp,
-    EssentialOCL::IterateExp,
-    EssentialOCL::InvalidType,
+    EssentialOCL_IteratorExp,
+    EssentialOCL_IterateExp,
+    EssentialOCL_InvalidType,
     NumericLiteralExp,
-    EssentialOCL::RealLiteralExp,
-    EssentialOCL::UnlimitedNaturalExp,
-    EssentialOCL::IntegerLiteralExp,
-    EssentialOCL::CollectionLiteralPart,
+    EssentialOCL_UnlimitedNaturalExp,
+    EssentialOCL_RealLiteralExp,
+    EssentialOCL_IntegerLiteralExp,
+    EssentialOCL_CollectionLiteralPart,
     LiteralExp,
-    EssentialOCL::PrimitiveLiteralExp,
-    EssentialOCL::TupleLiteralExp,
-    EssentialOCL::InvalidLiteralExp,
-    EssentialOCL::NullLiteralExp,
-    EssentialOCL::CollectionLiteralExp,
+    EssentialOCL_NullLiteralExp,
+    EssentialOCL_PrimitiveLiteralExp,
+    EssentialOCL_InvalidLiteralExp,
+    EssentialOCL_TupleLiteralExp,
+    EssentialOCL_CollectionLiteralExp,
     CallExp,
-    EssentialOCL::FeatureCallExp,
+    EssentialOCL_FeatureCallExp,
     Variable,
-    EssentialOCL::ExpressionInOcl,
-    EssentialOCL::EnumLiteralExp,
-    EssentialOCL::CollectionType,
+    EssentialOCL_ExpressionInOcl,
+    EssentialOCL_EnumLiteralExp,
+    EssentialOCL_CollectionType,
     CollectionLiteralExp,
     CollectionLiteralPart,
-    EssentialOCL::CollectionRange,
-    EssentialOCL::CollectionItem,
+    EssentialOCL_CollectionRange,
+    EssentialOCL_CollectionItem,
     OclExpression,
-    EssentialOCL::LoopExp,
-    EssentialOCL::LetExp,
-    EssentialOCL::TypeExp,
-    EssentialOCL::VariableExp,
-    EssentialOCL::LiteralExp,
-    EssentialOCL::IfExp,
-    EssentialOCL::CallExp,
+    EssentialOCL_VariableExp,
+    EssentialOCL_LiteralExp,
+    EssentialOCL_TypeExp,
+    EssentialOCL_LoopExp,
+    EssentialOCL_LetExp,
+    EssentialOCL_IfExp,
+    EssentialOCL_CallExp,
     PrimitiveLiteralExp,
-    EssentialOCL::StringLiteralExp,
-    EssentialOCL::NumericLiteralExp,
-    EssentialOCL::BooleanLiteralExp,
+    EssentialOCL_StringLiteralExp,
+    EssentialOCL_NumericLiteralExp,
+    EssentialOCL_BooleanLiteralExp,
     CollectionType,
-    EssentialOCL::SequenceType,
-    EssentialOCL::OrderedSetType,
-    EssentialOCL::SetType,
-    EssentialOCL::BagType,
-    EssentialOCL::AnyType,
+    EssentialOCL_OrderedSetType,
+    EssentialOCL_SetType,
+    EssentialOCL_SequenceType,
+    EssentialOCL_BagType,
+    EssentialOCL_AnyType,
     CollectionKind,
 )
 
@@ -72,16 +72,16 @@ from classes import (
 
 
 
-def test_essentialocl::tupletype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TupleType)
+def test_essentialocl_tupletype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TupleType)
 
 
-def test_essentialocl::tupletype_constructor_exists():
-    assert callable(EssentialOCL::TupleType.__init__)
+def test_essentialocl_tupletype_constructor_exists():
+    assert callable(EssentialOCL_TupleType.__init__)
 
 
-def test_essentialocl::tupletype_constructor_args():
-    sig = inspect.signature(EssentialOCL::TupleType.__init__)
+def test_essentialocl_tupletype_constructor_args():
+    sig = inspect.signature(EssentialOCL_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,16 +100,16 @@ def test_tupleliteralexp_constructor_args():
 
 
 
-def test_essentialocl::voidtype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::VoidType)
+def test_essentialocl_voidtype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_VoidType)
 
 
-def test_essentialocl::voidtype_constructor_exists():
-    assert callable(EssentialOCL::VoidType.__init__)
+def test_essentialocl_voidtype_constructor_exists():
+    assert callable(EssentialOCL_VoidType.__init__)
 
 
-def test_essentialocl::voidtype_constructor_args():
-    sig = inspect.signature(EssentialOCL::VoidType.__init__)
+def test_essentialocl_voidtype_constructor_args():
+    sig = inspect.signature(EssentialOCL_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,30 +128,30 @@ def test_letexp_constructor_args():
 
 
 
-def test_essentialocl::variable_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::Variable)
+def test_essentialocl_variable_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_Variable)
 
 
-def test_essentialocl::variable_constructor_exists():
-    assert callable(EssentialOCL::Variable.__init__)
+def test_essentialocl_variable_constructor_exists():
+    assert callable(EssentialOCL_Variable.__init__)
 
 
-def test_essentialocl::variable_constructor_args():
-    sig = inspect.signature(EssentialOCL::Variable.__init__)
+def test_essentialocl_variable_constructor_args():
+    sig = inspect.signature(EssentialOCL_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::OclExpression)
+def test_essentialocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_OclExpression)
 
 
-def test_essentialocl::oclexpression_constructor_exists():
-    assert callable(EssentialOCL::OclExpression.__init__)
+def test_essentialocl_oclexpression_constructor_exists():
+    assert callable(EssentialOCL_OclExpression.__init__)
 
 
-def test_essentialocl::oclexpression_constructor_args():
-    sig = inspect.signature(EssentialOCL::OclExpression.__init__)
+def test_essentialocl_oclexpression_constructor_args():
+    sig = inspect.signature(EssentialOCL_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -170,30 +170,30 @@ def test_featurecallexp_constructor_args():
 
 
 
-def test_essentialocl::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::NavigationCallExp)
+def test_essentialocl_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_NavigationCallExp)
 
 
-def test_essentialocl::navigationcallexp_constructor_exists():
-    assert callable(EssentialOCL::NavigationCallExp.__init__)
+def test_essentialocl_navigationcallexp_constructor_exists():
+    assert callable(EssentialOCL_NavigationCallExp.__init__)
 
 
-def test_essentialocl::navigationcallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::NavigationCallExp.__init__)
+def test_essentialocl_navigationcallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_NavigationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TupleLiteralPart)
+def test_essentialocl_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TupleLiteralPart)
 
 
-def test_essentialocl::tupleliteralpart_constructor_exists():
-    assert callable(EssentialOCL::TupleLiteralPart.__init__)
+def test_essentialocl_tupleliteralpart_constructor_exists():
+    assert callable(EssentialOCL_TupleLiteralPart.__init__)
 
 
-def test_essentialocl::tupleliteralpart_constructor_args():
-    sig = inspect.signature(EssentialOCL::TupleLiteralPart.__init__)
+def test_essentialocl_tupleliteralpart_constructor_args():
+    sig = inspect.signature(EssentialOCL_TupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,23 +212,23 @@ def test_tupleliteralpart_constructor_args():
 
 
 
-def test_essentialocl::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TemplateParameterType)
+def test_essentialocl_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TemplateParameterType)
 
 
-def test_essentialocl::templateparametertype_constructor_exists():
-    assert callable(EssentialOCL::TemplateParameterType.__init__)
+def test_essentialocl_templateparametertype_constructor_exists():
+    assert callable(EssentialOCL_TemplateParameterType.__init__)
 
 
-def test_essentialocl::templateparametertype_constructor_args():
-    sig = inspect.signature(EssentialOCL::TemplateParameterType.__init__)
+def test_essentialocl_templateparametertype_constructor_args():
+    sig = inspect.signature(EssentialOCL_TemplateParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "specification" in params, "Missing parameter 'specification'"
 
-def test_essentialocl::templateparametertype_has_specification():
-    assert hasattr(EssentialOCL::TemplateParameterType, "specification")
+def test_essentialocl_templateparametertype_has_specification():
+    assert hasattr(EssentialOCL_TemplateParameterType, "specification")
     descriptor = None
-    for klass in EssentialOCL::TemplateParameterType.__mro__:
+    for klass in EssentialOCL_TemplateParameterType.__mro__:
         if "specification" in klass.__dict__:
             descriptor = klass.__dict__["specification"]
             break
@@ -250,30 +250,30 @@ def test_navigationcallexp_constructor_args():
 
 
 
-def test_essentialocl::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::PropertyCallExp)
+def test_essentialocl_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_PropertyCallExp)
 
 
-def test_essentialocl::propertycallexp_constructor_exists():
-    assert callable(EssentialOCL::PropertyCallExp.__init__)
+def test_essentialocl_propertycallexp_constructor_exists():
+    assert callable(EssentialOCL_PropertyCallExp.__init__)
 
 
-def test_essentialocl::propertycallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::PropertyCallExp.__init__)
+def test_essentialocl_propertycallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::OperationCallExp)
+def test_essentialocl_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_OperationCallExp)
 
 
-def test_essentialocl::operationcallexp_constructor_exists():
-    assert callable(EssentialOCL::OperationCallExp.__init__)
+def test_essentialocl_operationcallexp_constructor_exists():
+    assert callable(EssentialOCL_OperationCallExp.__init__)
 
 
-def test_essentialocl::operationcallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::OperationCallExp.__init__)
+def test_essentialocl_operationcallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,44 +292,44 @@ def test_loopexp_constructor_args():
 
 
 
-def test_essentialocl::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IteratorExp)
+def test_essentialocl_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IteratorExp)
 
 
-def test_essentialocl::iteratorexp_constructor_exists():
-    assert callable(EssentialOCL::IteratorExp.__init__)
+def test_essentialocl_iteratorexp_constructor_exists():
+    assert callable(EssentialOCL_IteratorExp.__init__)
 
 
-def test_essentialocl::iteratorexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IteratorExp.__init__)
+def test_essentialocl_iteratorexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IteratorExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IterateExp)
+def test_essentialocl_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IterateExp)
 
 
-def test_essentialocl::iterateexp_constructor_exists():
-    assert callable(EssentialOCL::IterateExp.__init__)
+def test_essentialocl_iterateexp_constructor_exists():
+    assert callable(EssentialOCL_IterateExp.__init__)
 
 
-def test_essentialocl::iterateexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IterateExp.__init__)
+def test_essentialocl_iterateexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::InvalidType)
+def test_essentialocl_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_InvalidType)
 
 
-def test_essentialocl::invalidtype_constructor_exists():
-    assert callable(EssentialOCL::InvalidType.__init__)
+def test_essentialocl_invalidtype_constructor_exists():
+    assert callable(EssentialOCL_InvalidType.__init__)
 
 
-def test_essentialocl::invalidtype_constructor_args():
-    sig = inspect.signature(EssentialOCL::InvalidType.__init__)
+def test_essentialocl_invalidtype_constructor_args():
+    sig = inspect.signature(EssentialOCL_InvalidType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -348,47 +348,23 @@ def test_numericliteralexp_constructor_args():
 
 
 
-def test_essentialocl::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::RealLiteralExp)
+def test_essentialocl_unlimitednaturalexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_UnlimitedNaturalExp)
 
 
-def test_essentialocl::realliteralexp_constructor_exists():
-    assert callable(EssentialOCL::RealLiteralExp.__init__)
+def test_essentialocl_unlimitednaturalexp_constructor_exists():
+    assert callable(EssentialOCL_UnlimitedNaturalExp.__init__)
 
 
-def test_essentialocl::realliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::RealLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
-
-def test_essentialocl::realliteralexp_has_realSymbol():
-    assert hasattr(EssentialOCL::RealLiteralExp, "realSymbol")
-    descriptor = None
-    for klass in EssentialOCL::RealLiteralExp.__mro__:
-        if "realSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["realSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_essentialocl::unlimitednaturalexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::UnlimitedNaturalExp)
-
-
-def test_essentialocl::unlimitednaturalexp_constructor_exists():
-    assert callable(EssentialOCL::UnlimitedNaturalExp.__init__)
-
-
-def test_essentialocl::unlimitednaturalexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::UnlimitedNaturalExp.__init__)
+def test_essentialocl_unlimitednaturalexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_UnlimitedNaturalExp.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_essentialocl::unlimitednaturalexp_has_symbol():
-    assert hasattr(EssentialOCL::UnlimitedNaturalExp, "symbol")
+def test_essentialocl_unlimitednaturalexp_has_symbol():
+    assert hasattr(EssentialOCL_UnlimitedNaturalExp, "symbol")
     descriptor = None
-    for klass in EssentialOCL::UnlimitedNaturalExp.__mro__:
+    for klass in EssentialOCL_UnlimitedNaturalExp.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -396,23 +372,47 @@ def test_essentialocl::unlimitednaturalexp_has_symbol():
 
 
 
-def test_essentialocl::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IntegerLiteralExp)
+def test_essentialocl_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_RealLiteralExp)
 
 
-def test_essentialocl::integerliteralexp_constructor_exists():
-    assert callable(EssentialOCL::IntegerLiteralExp.__init__)
+def test_essentialocl_realliteralexp_constructor_exists():
+    assert callable(EssentialOCL_RealLiteralExp.__init__)
 
 
-def test_essentialocl::integerliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IntegerLiteralExp.__init__)
+def test_essentialocl_realliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_RealLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
+
+def test_essentialocl_realliteralexp_has_realSymbol():
+    assert hasattr(EssentialOCL_RealLiteralExp, "realSymbol")
+    descriptor = None
+    for klass in EssentialOCL_RealLiteralExp.__mro__:
+        if "realSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["realSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_essentialocl_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IntegerLiteralExp)
+
+
+def test_essentialocl_integerliteralexp_constructor_exists():
+    assert callable(EssentialOCL_IntegerLiteralExp.__init__)
+
+
+def test_essentialocl_integerliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IntegerLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_essentialocl::integerliteralexp_has_integerSymbol():
-    assert hasattr(EssentialOCL::IntegerLiteralExp, "integerSymbol")
+def test_essentialocl_integerliteralexp_has_integerSymbol():
+    assert hasattr(EssentialOCL_IntegerLiteralExp, "integerSymbol")
     descriptor = None
-    for klass in EssentialOCL::IntegerLiteralExp.__mro__:
+    for klass in EssentialOCL_IntegerLiteralExp.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -420,16 +420,16 @@ def test_essentialocl::integerliteralexp_has_integerSymbol():
 
 
 
-def test_essentialocl::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionLiteralPart)
+def test_essentialocl_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionLiteralPart)
 
 
-def test_essentialocl::collectionliteralpart_constructor_exists():
-    assert callable(EssentialOCL::CollectionLiteralPart.__init__)
+def test_essentialocl_collectionliteralpart_constructor_exists():
+    assert callable(EssentialOCL_CollectionLiteralPart.__init__)
 
 
-def test_essentialocl::collectionliteralpart_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionLiteralPart.__init__)
+def test_essentialocl_collectionliteralpart_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -448,79 +448,79 @@ def test_literalexp_constructor_args():
 
 
 
-def test_essentialocl::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::PrimitiveLiteralExp)
+def test_essentialocl_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_NullLiteralExp)
 
 
-def test_essentialocl::primitiveliteralexp_constructor_exists():
-    assert callable(EssentialOCL::PrimitiveLiteralExp.__init__)
+def test_essentialocl_nullliteralexp_constructor_exists():
+    assert callable(EssentialOCL_NullLiteralExp.__init__)
 
 
-def test_essentialocl::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::PrimitiveLiteralExp.__init__)
+def test_essentialocl_nullliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_NullLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TupleLiteralExp)
+def test_essentialocl_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_PrimitiveLiteralExp)
 
 
-def test_essentialocl::tupleliteralexp_constructor_exists():
-    assert callable(EssentialOCL::TupleLiteralExp.__init__)
+def test_essentialocl_primitiveliteralexp_constructor_exists():
+    assert callable(EssentialOCL_PrimitiveLiteralExp.__init__)
 
 
-def test_essentialocl::tupleliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::TupleLiteralExp.__init__)
+def test_essentialocl_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_PrimitiveLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::InvalidLiteralExp)
+def test_essentialocl_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_InvalidLiteralExp)
 
 
-def test_essentialocl::invalidliteralexp_constructor_exists():
-    assert callable(EssentialOCL::InvalidLiteralExp.__init__)
+def test_essentialocl_invalidliteralexp_constructor_exists():
+    assert callable(EssentialOCL_InvalidLiteralExp.__init__)
 
 
-def test_essentialocl::invalidliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::InvalidLiteralExp.__init__)
+def test_essentialocl_invalidliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_InvalidLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::NullLiteralExp)
+def test_essentialocl_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TupleLiteralExp)
 
 
-def test_essentialocl::nullliteralexp_constructor_exists():
-    assert callable(EssentialOCL::NullLiteralExp.__init__)
+def test_essentialocl_tupleliteralexp_constructor_exists():
+    assert callable(EssentialOCL_TupleLiteralExp.__init__)
 
 
-def test_essentialocl::nullliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::NullLiteralExp.__init__)
+def test_essentialocl_tupleliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionLiteralExp)
+def test_essentialocl_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionLiteralExp)
 
 
-def test_essentialocl::collectionliteralexp_constructor_exists():
-    assert callable(EssentialOCL::CollectionLiteralExp.__init__)
+def test_essentialocl_collectionliteralexp_constructor_exists():
+    assert callable(EssentialOCL_CollectionLiteralExp.__init__)
 
 
-def test_essentialocl::collectionliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionLiteralExp.__init__)
+def test_essentialocl_collectionliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_essentialocl::collectionliteralexp_has_kind():
-    assert hasattr(EssentialOCL::CollectionLiteralExp, "kind")
+def test_essentialocl_collectionliteralexp_has_kind():
+    assert hasattr(EssentialOCL_CollectionLiteralExp, "kind")
     descriptor = None
-    for klass in EssentialOCL::CollectionLiteralExp.__mro__:
+    for klass in EssentialOCL_CollectionLiteralExp.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -542,16 +542,16 @@ def test_callexp_constructor_args():
 
 
 
-def test_essentialocl::featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::FeatureCallExp)
+def test_essentialocl_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_FeatureCallExp)
 
 
-def test_essentialocl::featurecallexp_constructor_exists():
-    assert callable(EssentialOCL::FeatureCallExp.__init__)
+def test_essentialocl_featurecallexp_constructor_exists():
+    assert callable(EssentialOCL_FeatureCallExp.__init__)
 
 
-def test_essentialocl::featurecallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::FeatureCallExp.__init__)
+def test_essentialocl_featurecallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_FeatureCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -570,44 +570,44 @@ def test_variable_constructor_args():
 
 
 
-def test_essentialocl::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::ExpressionInOcl)
+def test_essentialocl_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_ExpressionInOcl)
 
 
-def test_essentialocl::expressioninocl_constructor_exists():
-    assert callable(EssentialOCL::ExpressionInOcl.__init__)
+def test_essentialocl_expressioninocl_constructor_exists():
+    assert callable(EssentialOCL_ExpressionInOcl.__init__)
 
 
-def test_essentialocl::expressioninocl_constructor_args():
-    sig = inspect.signature(EssentialOCL::ExpressionInOcl.__init__)
+def test_essentialocl_expressioninocl_constructor_args():
+    sig = inspect.signature(EssentialOCL_ExpressionInOcl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::EnumLiteralExp)
+def test_essentialocl_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_EnumLiteralExp)
 
 
-def test_essentialocl::enumliteralexp_constructor_exists():
-    assert callable(EssentialOCL::EnumLiteralExp.__init__)
+def test_essentialocl_enumliteralexp_constructor_exists():
+    assert callable(EssentialOCL_EnumLiteralExp.__init__)
 
 
-def test_essentialocl::enumliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::EnumLiteralExp.__init__)
+def test_essentialocl_enumliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionType)
+def test_essentialocl_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionType)
 
 
-def test_essentialocl::collectiontype_constructor_exists():
-    assert callable(EssentialOCL::CollectionType.__init__)
+def test_essentialocl_collectiontype_constructor_exists():
+    assert callable(EssentialOCL_CollectionType.__init__)
 
 
-def test_essentialocl::collectiontype_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionType.__init__)
+def test_essentialocl_collectiontype_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -640,30 +640,30 @@ def test_collectionliteralpart_constructor_args():
 
 
 
-def test_essentialocl::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionRange)
+def test_essentialocl_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionRange)
 
 
-def test_essentialocl::collectionrange_constructor_exists():
-    assert callable(EssentialOCL::CollectionRange.__init__)
+def test_essentialocl_collectionrange_constructor_exists():
+    assert callable(EssentialOCL_CollectionRange.__init__)
 
 
-def test_essentialocl::collectionrange_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionRange.__init__)
+def test_essentialocl_collectionrange_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionItem)
+def test_essentialocl_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionItem)
 
 
-def test_essentialocl::collectionitem_constructor_exists():
-    assert callable(EssentialOCL::CollectionItem.__init__)
+def test_essentialocl_collectionitem_constructor_exists():
+    assert callable(EssentialOCL_CollectionItem.__init__)
 
 
-def test_essentialocl::collectionitem_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionItem.__init__)
+def test_essentialocl_collectionitem_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionItem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -682,100 +682,100 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_essentialocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::LoopExp)
+def test_essentialocl_variableexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_VariableExp)
 
 
-def test_essentialocl::loopexp_constructor_exists():
-    assert callable(EssentialOCL::LoopExp.__init__)
+def test_essentialocl_variableexp_constructor_exists():
+    assert callable(EssentialOCL_VariableExp.__init__)
 
 
-def test_essentialocl::loopexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::LoopExp.__init__)
+def test_essentialocl_variableexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::letexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::LetExp)
+def test_essentialocl_literalexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_LiteralExp)
 
 
-def test_essentialocl::letexp_constructor_exists():
-    assert callable(EssentialOCL::LetExp.__init__)
+def test_essentialocl_literalexp_constructor_exists():
+    assert callable(EssentialOCL_LiteralExp.__init__)
 
 
-def test_essentialocl::letexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::LetExp.__init__)
+def test_essentialocl_literalexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_LiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::typeexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TypeExp)
+def test_essentialocl_typeexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TypeExp)
 
 
-def test_essentialocl::typeexp_constructor_exists():
-    assert callable(EssentialOCL::TypeExp.__init__)
+def test_essentialocl_typeexp_constructor_exists():
+    assert callable(EssentialOCL_TypeExp.__init__)
 
 
-def test_essentialocl::typeexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::TypeExp.__init__)
+def test_essentialocl_typeexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_TypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::variableexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::VariableExp)
+def test_essentialocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_LoopExp)
 
 
-def test_essentialocl::variableexp_constructor_exists():
-    assert callable(EssentialOCL::VariableExp.__init__)
+def test_essentialocl_loopexp_constructor_exists():
+    assert callable(EssentialOCL_LoopExp.__init__)
 
 
-def test_essentialocl::variableexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::VariableExp.__init__)
+def test_essentialocl_loopexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::literalexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::LiteralExp)
+def test_essentialocl_letexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_LetExp)
 
 
-def test_essentialocl::literalexp_constructor_exists():
-    assert callable(EssentialOCL::LiteralExp.__init__)
+def test_essentialocl_letexp_constructor_exists():
+    assert callable(EssentialOCL_LetExp.__init__)
 
 
-def test_essentialocl::literalexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::LiteralExp.__init__)
+def test_essentialocl_letexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::ifexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IfExp)
+def test_essentialocl_ifexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IfExp)
 
 
-def test_essentialocl::ifexp_constructor_exists():
-    assert callable(EssentialOCL::IfExp.__init__)
+def test_essentialocl_ifexp_constructor_exists():
+    assert callable(EssentialOCL_IfExp.__init__)
 
 
-def test_essentialocl::ifexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IfExp.__init__)
+def test_essentialocl_ifexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::callexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CallExp)
+def test_essentialocl_callexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CallExp)
 
 
-def test_essentialocl::callexp_constructor_exists():
-    assert callable(EssentialOCL::CallExp.__init__)
+def test_essentialocl_callexp_constructor_exists():
+    assert callable(EssentialOCL_CallExp.__init__)
 
 
-def test_essentialocl::callexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::CallExp.__init__)
+def test_essentialocl_callexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_CallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -794,23 +794,23 @@ def test_primitiveliteralexp_constructor_args():
 
 
 
-def test_essentialocl::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::StringLiteralExp)
+def test_essentialocl_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_StringLiteralExp)
 
 
-def test_essentialocl::stringliteralexp_constructor_exists():
-    assert callable(EssentialOCL::StringLiteralExp.__init__)
+def test_essentialocl_stringliteralexp_constructor_exists():
+    assert callable(EssentialOCL_StringLiteralExp.__init__)
 
 
-def test_essentialocl::stringliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::StringLiteralExp.__init__)
+def test_essentialocl_stringliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_StringLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_essentialocl::stringliteralexp_has_stringSymbol():
-    assert hasattr(EssentialOCL::StringLiteralExp, "stringSymbol")
+def test_essentialocl_stringliteralexp_has_stringSymbol():
+    assert hasattr(EssentialOCL_StringLiteralExp, "stringSymbol")
     descriptor = None
-    for klass in EssentialOCL::StringLiteralExp.__mro__:
+    for klass in EssentialOCL_StringLiteralExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -818,37 +818,37 @@ def test_essentialocl::stringliteralexp_has_stringSymbol():
 
 
 
-def test_essentialocl::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::NumericLiteralExp)
+def test_essentialocl_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_NumericLiteralExp)
 
 
-def test_essentialocl::numericliteralexp_constructor_exists():
-    assert callable(EssentialOCL::NumericLiteralExp.__init__)
+def test_essentialocl_numericliteralexp_constructor_exists():
+    assert callable(EssentialOCL_NumericLiteralExp.__init__)
 
 
-def test_essentialocl::numericliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::NumericLiteralExp.__init__)
+def test_essentialocl_numericliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_NumericLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::BooleanLiteralExp)
+def test_essentialocl_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_BooleanLiteralExp)
 
 
-def test_essentialocl::booleanliteralexp_constructor_exists():
-    assert callable(EssentialOCL::BooleanLiteralExp.__init__)
+def test_essentialocl_booleanliteralexp_constructor_exists():
+    assert callable(EssentialOCL_BooleanLiteralExp.__init__)
 
 
-def test_essentialocl::booleanliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::BooleanLiteralExp.__init__)
+def test_essentialocl_booleanliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_BooleanLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_essentialocl::booleanliteralexp_has_booleanSymbol():
-    assert hasattr(EssentialOCL::BooleanLiteralExp, "booleanSymbol")
+def test_essentialocl_booleanliteralexp_has_booleanSymbol():
+    assert hasattr(EssentialOCL_BooleanLiteralExp, "booleanSymbol")
     descriptor = None
-    for klass in EssentialOCL::BooleanLiteralExp.__mro__:
+    for klass in EssentialOCL_BooleanLiteralExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -870,72 +870,72 @@ def test_collectiontype_constructor_args():
 
 
 
-def test_essentialocl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::SequenceType)
+def test_essentialocl_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_OrderedSetType)
 
 
-def test_essentialocl::sequencetype_constructor_exists():
-    assert callable(EssentialOCL::SequenceType.__init__)
+def test_essentialocl_orderedsettype_constructor_exists():
+    assert callable(EssentialOCL_OrderedSetType.__init__)
 
 
-def test_essentialocl::sequencetype_constructor_args():
-    sig = inspect.signature(EssentialOCL::SequenceType.__init__)
+def test_essentialocl_orderedsettype_constructor_args():
+    sig = inspect.signature(EssentialOCL_OrderedSetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::OrderedSetType)
+def test_essentialocl_settype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_SetType)
 
 
-def test_essentialocl::orderedsettype_constructor_exists():
-    assert callable(EssentialOCL::OrderedSetType.__init__)
+def test_essentialocl_settype_constructor_exists():
+    assert callable(EssentialOCL_SetType.__init__)
 
 
-def test_essentialocl::orderedsettype_constructor_args():
-    sig = inspect.signature(EssentialOCL::OrderedSetType.__init__)
+def test_essentialocl_settype_constructor_args():
+    sig = inspect.signature(EssentialOCL_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::settype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::SetType)
+def test_essentialocl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_SequenceType)
 
 
-def test_essentialocl::settype_constructor_exists():
-    assert callable(EssentialOCL::SetType.__init__)
+def test_essentialocl_sequencetype_constructor_exists():
+    assert callable(EssentialOCL_SequenceType.__init__)
 
 
-def test_essentialocl::settype_constructor_args():
-    sig = inspect.signature(EssentialOCL::SetType.__init__)
+def test_essentialocl_sequencetype_constructor_args():
+    sig = inspect.signature(EssentialOCL_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::bagtype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::BagType)
+def test_essentialocl_bagtype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_BagType)
 
 
-def test_essentialocl::bagtype_constructor_exists():
-    assert callable(EssentialOCL::BagType.__init__)
+def test_essentialocl_bagtype_constructor_exists():
+    assert callable(EssentialOCL_BagType.__init__)
 
 
-def test_essentialocl::bagtype_constructor_args():
-    sig = inspect.signature(EssentialOCL::BagType.__init__)
+def test_essentialocl_bagtype_constructor_args():
+    sig = inspect.signature(EssentialOCL_BagType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::anytype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::AnyType)
+def test_essentialocl_anytype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_AnyType)
 
 
-def test_essentialocl::anytype_constructor_exists():
-    assert callable(EssentialOCL::AnyType.__init__)
+def test_essentialocl_anytype_constructor_exists():
+    assert callable(EssentialOCL_AnyType.__init__)
 
 
-def test_essentialocl::anytype_constructor_args():
-    sig = inspect.signature(EssentialOCL::AnyType.__init__)
+def test_essentialocl_anytype_constructor_args():
+    sig = inspect.signature(EssentialOCL_AnyType.__init__)
     params = list(sig.parameters.keys())
 
 def test_collectionkind_exists():
@@ -946,11 +946,11 @@ def test_collectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CollectionKind]
     expected_literals = [
-        "Collection",
-        "Sequence",
-        "Set",
-        "OrderedSet",
         "Bag",
+        "Set",
+        "Sequence",
+        "OrderedSet",
+        "Collection",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -968,120 +968,120 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-EssentialOCL::TupleType_strategy = st.builds(
-    EssentialOCL::TupleType,
+EssentialOCL_TupleType_strategy = st.builds(
+    EssentialOCL_TupleType,
 )
 TupleLiteralExp_strategy = st.builds(
     TupleLiteralExp,
 )
-EssentialOCL::VoidType_strategy = st.builds(
-    EssentialOCL::VoidType,
+EssentialOCL_VoidType_strategy = st.builds(
+    EssentialOCL_VoidType,
 )
 LetExp_strategy = st.builds(
     LetExp,
 )
-EssentialOCL::Variable_strategy = st.builds(
-    EssentialOCL::Variable,
+EssentialOCL_Variable_strategy = st.builds(
+    EssentialOCL_Variable,
 )
-EssentialOCL::OclExpression_strategy = st.builds(
-    EssentialOCL::OclExpression,
+EssentialOCL_OclExpression_strategy = st.builds(
+    EssentialOCL_OclExpression,
 )
 FeatureCallExp_strategy = st.builds(
     FeatureCallExp,
 )
-EssentialOCL::NavigationCallExp_strategy = st.builds(
-    EssentialOCL::NavigationCallExp,
+EssentialOCL_NavigationCallExp_strategy = st.builds(
+    EssentialOCL_NavigationCallExp,
 )
-EssentialOCL::TupleLiteralPart_strategy = st.builds(
-    EssentialOCL::TupleLiteralPart,
+EssentialOCL_TupleLiteralPart_strategy = st.builds(
+    EssentialOCL_TupleLiteralPart,
 )
 TupleLiteralPart_strategy = st.builds(
     TupleLiteralPart,
 )
-EssentialOCL::TemplateParameterType_strategy = st.builds(
-    EssentialOCL::TemplateParameterType,
+EssentialOCL_TemplateParameterType_strategy = st.builds(
+    EssentialOCL_TemplateParameterType,
     specification=
         safe_text
 )
 NavigationCallExp_strategy = st.builds(
     NavigationCallExp,
 )
-EssentialOCL::PropertyCallExp_strategy = st.builds(
-    EssentialOCL::PropertyCallExp,
+EssentialOCL_PropertyCallExp_strategy = st.builds(
+    EssentialOCL_PropertyCallExp,
 )
-EssentialOCL::OperationCallExp_strategy = st.builds(
-    EssentialOCL::OperationCallExp,
+EssentialOCL_OperationCallExp_strategy = st.builds(
+    EssentialOCL_OperationCallExp,
 )
 LoopExp_strategy = st.builds(
     LoopExp,
 )
-EssentialOCL::IteratorExp_strategy = st.builds(
-    EssentialOCL::IteratorExp,
+EssentialOCL_IteratorExp_strategy = st.builds(
+    EssentialOCL_IteratorExp,
 )
-EssentialOCL::IterateExp_strategy = st.builds(
-    EssentialOCL::IterateExp,
+EssentialOCL_IterateExp_strategy = st.builds(
+    EssentialOCL_IterateExp,
 )
-EssentialOCL::InvalidType_strategy = st.builds(
-    EssentialOCL::InvalidType,
+EssentialOCL_InvalidType_strategy = st.builds(
+    EssentialOCL_InvalidType,
 )
 NumericLiteralExp_strategy = st.builds(
     NumericLiteralExp,
 )
-EssentialOCL::RealLiteralExp_strategy = st.builds(
-    EssentialOCL::RealLiteralExp,
-    realSymbol=
-        safe_text
-)
-EssentialOCL::UnlimitedNaturalExp_strategy = st.builds(
-    EssentialOCL::UnlimitedNaturalExp,
+EssentialOCL_UnlimitedNaturalExp_strategy = st.builds(
+    EssentialOCL_UnlimitedNaturalExp,
     symbol=
         safe_text
 )
-EssentialOCL::IntegerLiteralExp_strategy = st.builds(
-    EssentialOCL::IntegerLiteralExp,
+EssentialOCL_RealLiteralExp_strategy = st.builds(
+    EssentialOCL_RealLiteralExp,
+    realSymbol=
+        safe_text
+)
+EssentialOCL_IntegerLiteralExp_strategy = st.builds(
+    EssentialOCL_IntegerLiteralExp,
     integerSymbol=
         safe_text
 )
-EssentialOCL::CollectionLiteralPart_strategy = st.builds(
-    EssentialOCL::CollectionLiteralPart,
+EssentialOCL_CollectionLiteralPart_strategy = st.builds(
+    EssentialOCL_CollectionLiteralPart,
 )
 LiteralExp_strategy = st.builds(
     LiteralExp,
 )
-EssentialOCL::PrimitiveLiteralExp_strategy = st.builds(
-    EssentialOCL::PrimitiveLiteralExp,
+EssentialOCL_NullLiteralExp_strategy = st.builds(
+    EssentialOCL_NullLiteralExp,
 )
-EssentialOCL::TupleLiteralExp_strategy = st.builds(
-    EssentialOCL::TupleLiteralExp,
+EssentialOCL_PrimitiveLiteralExp_strategy = st.builds(
+    EssentialOCL_PrimitiveLiteralExp,
 )
-EssentialOCL::InvalidLiteralExp_strategy = st.builds(
-    EssentialOCL::InvalidLiteralExp,
+EssentialOCL_InvalidLiteralExp_strategy = st.builds(
+    EssentialOCL_InvalidLiteralExp,
 )
-EssentialOCL::NullLiteralExp_strategy = st.builds(
-    EssentialOCL::NullLiteralExp,
+EssentialOCL_TupleLiteralExp_strategy = st.builds(
+    EssentialOCL_TupleLiteralExp,
 )
-EssentialOCL::CollectionLiteralExp_strategy = st.builds(
-    EssentialOCL::CollectionLiteralExp,
+EssentialOCL_CollectionLiteralExp_strategy = st.builds(
+    EssentialOCL_CollectionLiteralExp,
     kind=
         safe_text
 )
 CallExp_strategy = st.builds(
     CallExp,
 )
-EssentialOCL::FeatureCallExp_strategy = st.builds(
-    EssentialOCL::FeatureCallExp,
+EssentialOCL_FeatureCallExp_strategy = st.builds(
+    EssentialOCL_FeatureCallExp,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-EssentialOCL::ExpressionInOcl_strategy = st.builds(
-    EssentialOCL::ExpressionInOcl,
+EssentialOCL_ExpressionInOcl_strategy = st.builds(
+    EssentialOCL_ExpressionInOcl,
 )
-EssentialOCL::EnumLiteralExp_strategy = st.builds(
-    EssentialOCL::EnumLiteralExp,
+EssentialOCL_EnumLiteralExp_strategy = st.builds(
+    EssentialOCL_EnumLiteralExp,
 )
-EssentialOCL::CollectionType_strategy = st.builds(
-    EssentialOCL::CollectionType,
+EssentialOCL_CollectionType_strategy = st.builds(
+    EssentialOCL_CollectionType,
 )
 CollectionLiteralExp_strategy = st.builds(
     CollectionLiteralExp,
@@ -1089,133 +1089,130 @@ CollectionLiteralExp_strategy = st.builds(
 CollectionLiteralPart_strategy = st.builds(
     CollectionLiteralPart,
 )
-EssentialOCL::CollectionRange_strategy = st.builds(
-    EssentialOCL::CollectionRange,
+EssentialOCL_CollectionRange_strategy = st.builds(
+    EssentialOCL_CollectionRange,
 )
-EssentialOCL::CollectionItem_strategy = st.builds(
-    EssentialOCL::CollectionItem,
+EssentialOCL_CollectionItem_strategy = st.builds(
+    EssentialOCL_CollectionItem,
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-EssentialOCL::LoopExp_strategy = st.builds(
-    EssentialOCL::LoopExp,
+EssentialOCL_VariableExp_strategy = st.builds(
+    EssentialOCL_VariableExp,
 )
-EssentialOCL::LetExp_strategy = st.builds(
-    EssentialOCL::LetExp,
+EssentialOCL_LiteralExp_strategy = st.builds(
+    EssentialOCL_LiteralExp,
 )
-EssentialOCL::TypeExp_strategy = st.builds(
-    EssentialOCL::TypeExp,
+EssentialOCL_TypeExp_strategy = st.builds(
+    EssentialOCL_TypeExp,
 )
-EssentialOCL::VariableExp_strategy = st.builds(
-    EssentialOCL::VariableExp,
+EssentialOCL_LoopExp_strategy = st.builds(
+    EssentialOCL_LoopExp,
 )
-EssentialOCL::LiteralExp_strategy = st.builds(
-    EssentialOCL::LiteralExp,
+EssentialOCL_LetExp_strategy = st.builds(
+    EssentialOCL_LetExp,
 )
-EssentialOCL::IfExp_strategy = st.builds(
-    EssentialOCL::IfExp,
+EssentialOCL_IfExp_strategy = st.builds(
+    EssentialOCL_IfExp,
 )
-EssentialOCL::CallExp_strategy = st.builds(
-    EssentialOCL::CallExp,
+EssentialOCL_CallExp_strategy = st.builds(
+    EssentialOCL_CallExp,
 )
 PrimitiveLiteralExp_strategy = st.builds(
     PrimitiveLiteralExp,
 )
-EssentialOCL::StringLiteralExp_strategy = st.builds(
-    EssentialOCL::StringLiteralExp,
+EssentialOCL_StringLiteralExp_strategy = st.builds(
+    EssentialOCL_StringLiteralExp,
     stringSymbol=
         safe_text
 )
-EssentialOCL::NumericLiteralExp_strategy = st.builds(
-    EssentialOCL::NumericLiteralExp,
+EssentialOCL_NumericLiteralExp_strategy = st.builds(
+    EssentialOCL_NumericLiteralExp,
 )
-EssentialOCL::BooleanLiteralExp_strategy = st.builds(
-    EssentialOCL::BooleanLiteralExp,
+EssentialOCL_BooleanLiteralExp_strategy = st.builds(
+    EssentialOCL_BooleanLiteralExp,
     booleanSymbol=
         safe_text
 )
 CollectionType_strategy = st.builds(
     CollectionType,
 )
-EssentialOCL::SequenceType_strategy = st.builds(
-    EssentialOCL::SequenceType,
+EssentialOCL_OrderedSetType_strategy = st.builds(
+    EssentialOCL_OrderedSetType,
 )
-EssentialOCL::OrderedSetType_strategy = st.builds(
-    EssentialOCL::OrderedSetType,
+EssentialOCL_SetType_strategy = st.builds(
+    EssentialOCL_SetType,
 )
-EssentialOCL::SetType_strategy = st.builds(
-    EssentialOCL::SetType,
+EssentialOCL_SequenceType_strategy = st.builds(
+    EssentialOCL_SequenceType,
 )
-EssentialOCL::BagType_strategy = st.builds(
-    EssentialOCL::BagType,
+EssentialOCL_BagType_strategy = st.builds(
+    EssentialOCL_BagType,
 )
-EssentialOCL::AnyType_strategy = st.builds(
-    EssentialOCL::AnyType,
+EssentialOCL_AnyType_strategy = st.builds(
+    EssentialOCL_AnyType,
 )
 
-@given(instance=EssentialOCL::TupleType_strategy)
+@given(instance=EssentialOCL_TupleType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::tupletype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TupleType)
+def test_essentialocl_tupletype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TupleType)
 
 @given(instance=TupleLiteralExp_strategy)
 @settings(max_examples=50)
 def test_tupleliteralexp_instantiation(instance):
     assert isinstance(instance, TupleLiteralExp)
 
-@given(instance=EssentialOCL::VoidType_strategy)
+@given(instance=EssentialOCL_VoidType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::voidtype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::VoidType)
+def test_essentialocl_voidtype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_VoidType)
 
 @given(instance=LetExp_strategy)
 @settings(max_examples=50)
 def test_letexp_instantiation(instance):
     assert isinstance(instance, LetExp)
 
-@given(instance=EssentialOCL::Variable_strategy)
+@given(instance=EssentialOCL_Variable_strategy)
 @settings(max_examples=50)
-def test_essentialocl::variable_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::Variable)
+def test_essentialocl_variable_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_Variable)
 
-@given(instance=EssentialOCL::OclExpression_strategy)
+@given(instance=EssentialOCL_OclExpression_strategy)
 @settings(max_examples=50)
-def test_essentialocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::OclExpression)
+def test_essentialocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_OclExpression)
 
 @given(instance=FeatureCallExp_strategy)
 @settings(max_examples=50)
 def test_featurecallexp_instantiation(instance):
     assert isinstance(instance, FeatureCallExp)
 
-@given(instance=EssentialOCL::NavigationCallExp_strategy)
+@given(instance=EssentialOCL_NavigationCallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::NavigationCallExp)
+def test_essentialocl_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_NavigationCallExp)
 
-@given(instance=EssentialOCL::TupleLiteralPart_strategy)
+@given(instance=EssentialOCL_TupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_essentialocl::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TupleLiteralPart)
+def test_essentialocl_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TupleLiteralPart)
 
 @given(instance=TupleLiteralPart_strategy)
 @settings(max_examples=50)
 def test_tupleliteralpart_instantiation(instance):
     assert isinstance(instance, TupleLiteralPart)
 
-@given(instance=EssentialOCL::TemplateParameterType_strategy)
+@given(instance=EssentialOCL_TemplateParameterType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::templateparametertype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TemplateParameterType)
-
-@given(instance=EssentialOCL::TemplateParameterType_strategy)
-def test_essentialocl::templateparametertype_specification_type(instance):
-    assert isinstance(instance.specification, str)
+def test_essentialocl_templateparametertype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TemplateParameterType)
 
 
-@given(instance=EssentialOCL::TemplateParameterType_strategy)
-def test_essentialocl::templateparametertype_specification_setter(instance):
+
+@given(instance=EssentialOCL_TemplateParameterType_strategy)
+def test_essentialocl_templateparametertype_specification_setter(instance):
     original = instance.specification
     instance.specification = original
     assert instance.specification == original
@@ -1225,131 +1222,119 @@ def test_essentialocl::templateparametertype_specification_setter(instance):
 def test_navigationcallexp_instantiation(instance):
     assert isinstance(instance, NavigationCallExp)
 
-@given(instance=EssentialOCL::PropertyCallExp_strategy)
+@given(instance=EssentialOCL_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::propertycallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::PropertyCallExp)
+def test_essentialocl_propertycallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_PropertyCallExp)
 
-@given(instance=EssentialOCL::OperationCallExp_strategy)
+@given(instance=EssentialOCL_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::operationcallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::OperationCallExp)
+def test_essentialocl_operationcallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_OperationCallExp)
 
 @given(instance=LoopExp_strategy)
 @settings(max_examples=50)
 def test_loopexp_instantiation(instance):
     assert isinstance(instance, LoopExp)
 
-@given(instance=EssentialOCL::IteratorExp_strategy)
+@given(instance=EssentialOCL_IteratorExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::iteratorexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IteratorExp)
+def test_essentialocl_iteratorexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IteratorExp)
 
-@given(instance=EssentialOCL::IterateExp_strategy)
+@given(instance=EssentialOCL_IterateExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::iterateexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IterateExp)
+def test_essentialocl_iterateexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IterateExp)
 
-@given(instance=EssentialOCL::InvalidType_strategy)
+@given(instance=EssentialOCL_InvalidType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::invalidtype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::InvalidType)
+def test_essentialocl_invalidtype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_InvalidType)
 
 @given(instance=NumericLiteralExp_strategy)
 @settings(max_examples=50)
 def test_numericliteralexp_instantiation(instance):
     assert isinstance(instance, NumericLiteralExp)
 
-@given(instance=EssentialOCL::RealLiteralExp_strategy)
+@given(instance=EssentialOCL_UnlimitedNaturalExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::realliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::RealLiteralExp)
-
-@given(instance=EssentialOCL::RealLiteralExp_strategy)
-def test_essentialocl::realliteralexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
+def test_essentialocl_unlimitednaturalexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_UnlimitedNaturalExp)
 
 
-@given(instance=EssentialOCL::RealLiteralExp_strategy)
-def test_essentialocl::realliteralexp_realSymbol_setter(instance):
-    original = instance.realSymbol
-    instance.realSymbol = original
-    assert instance.realSymbol == original
 
-@given(instance=EssentialOCL::UnlimitedNaturalExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::unlimitednaturalexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::UnlimitedNaturalExp)
-
-@given(instance=EssentialOCL::UnlimitedNaturalExp_strategy)
-def test_essentialocl::unlimitednaturalexp_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
-
-
-@given(instance=EssentialOCL::UnlimitedNaturalExp_strategy)
-def test_essentialocl::unlimitednaturalexp_symbol_setter(instance):
+@given(instance=EssentialOCL_UnlimitedNaturalExp_strategy)
+def test_essentialocl_unlimitednaturalexp_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=EssentialOCL::IntegerLiteralExp_strategy)
+@given(instance=EssentialOCL_RealLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IntegerLiteralExp)
-
-@given(instance=EssentialOCL::IntegerLiteralExp_strategy)
-def test_essentialocl::integerliteralexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_essentialocl_realliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_RealLiteralExp)
 
 
-@given(instance=EssentialOCL::IntegerLiteralExp_strategy)
-def test_essentialocl::integerliteralexp_integerSymbol_setter(instance):
+
+@given(instance=EssentialOCL_RealLiteralExp_strategy)
+def test_essentialocl_realliteralexp_realSymbol_setter(instance):
+    original = instance.realSymbol
+    instance.realSymbol = original
+    assert instance.realSymbol == original
+
+@given(instance=EssentialOCL_IntegerLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IntegerLiteralExp)
+
+
+
+@given(instance=EssentialOCL_IntegerLiteralExp_strategy)
+def test_essentialocl_integerliteralexp_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
 
-@given(instance=EssentialOCL::CollectionLiteralPart_strategy)
+@given(instance=EssentialOCL_CollectionLiteralPart_strategy)
 @settings(max_examples=50)
-def test_essentialocl::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionLiteralPart)
+def test_essentialocl_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionLiteralPart)
 
 @given(instance=LiteralExp_strategy)
 @settings(max_examples=50)
 def test_literalexp_instantiation(instance):
     assert isinstance(instance, LiteralExp)
 
-@given(instance=EssentialOCL::PrimitiveLiteralExp_strategy)
+@given(instance=EssentialOCL_NullLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::PrimitiveLiteralExp)
+def test_essentialocl_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_NullLiteralExp)
 
-@given(instance=EssentialOCL::TupleLiteralExp_strategy)
+@given(instance=EssentialOCL_PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TupleLiteralExp)
+def test_essentialocl_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_PrimitiveLiteralExp)
 
-@given(instance=EssentialOCL::InvalidLiteralExp_strategy)
+@given(instance=EssentialOCL_InvalidLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::InvalidLiteralExp)
+def test_essentialocl_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_InvalidLiteralExp)
 
-@given(instance=EssentialOCL::NullLiteralExp_strategy)
+@given(instance=EssentialOCL_TupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::NullLiteralExp)
+def test_essentialocl_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TupleLiteralExp)
 
-@given(instance=EssentialOCL::CollectionLiteralExp_strategy)
+@given(instance=EssentialOCL_CollectionLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionLiteralExp)
-
-@given(instance=EssentialOCL::CollectionLiteralExp_strategy)
-def test_essentialocl::collectionliteralexp_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_essentialocl_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionLiteralExp)
 
 
-@given(instance=EssentialOCL::CollectionLiteralExp_strategy)
-def test_essentialocl::collectionliteralexp_kind_setter(instance):
+
+@given(instance=EssentialOCL_CollectionLiteralExp_strategy)
+def test_essentialocl_collectionliteralexp_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -1359,30 +1344,30 @@ def test_essentialocl::collectionliteralexp_kind_setter(instance):
 def test_callexp_instantiation(instance):
     assert isinstance(instance, CallExp)
 
-@given(instance=EssentialOCL::FeatureCallExp_strategy)
+@given(instance=EssentialOCL_FeatureCallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::featurecallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::FeatureCallExp)
+def test_essentialocl_featurecallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_FeatureCallExp)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=EssentialOCL::ExpressionInOcl_strategy)
+@given(instance=EssentialOCL_ExpressionInOcl_strategy)
 @settings(max_examples=50)
-def test_essentialocl::expressioninocl_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::ExpressionInOcl)
+def test_essentialocl_expressioninocl_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_ExpressionInOcl)
 
-@given(instance=EssentialOCL::EnumLiteralExp_strategy)
+@given(instance=EssentialOCL_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::EnumLiteralExp)
+def test_essentialocl_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_EnumLiteralExp)
 
-@given(instance=EssentialOCL::CollectionType_strategy)
+@given(instance=EssentialOCL_CollectionType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::collectiontype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionType)
+def test_essentialocl_collectiontype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionType)
 
 @given(instance=CollectionLiteralExp_strategy)
 @settings(max_examples=50)
@@ -1394,94 +1379,88 @@ def test_collectionliteralexp_instantiation(instance):
 def test_collectionliteralpart_instantiation(instance):
     assert isinstance(instance, CollectionLiteralPart)
 
-@given(instance=EssentialOCL::CollectionRange_strategy)
+@given(instance=EssentialOCL_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_essentialocl::collectionrange_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionRange)
+def test_essentialocl_collectionrange_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionRange)
 
-@given(instance=EssentialOCL::CollectionItem_strategy)
+@given(instance=EssentialOCL_CollectionItem_strategy)
 @settings(max_examples=50)
-def test_essentialocl::collectionitem_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionItem)
+def test_essentialocl_collectionitem_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionItem)
 
 @given(instance=OclExpression_strategy)
 @settings(max_examples=50)
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=EssentialOCL::LoopExp_strategy)
+@given(instance=EssentialOCL_VariableExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::loopexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::LoopExp)
+def test_essentialocl_variableexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_VariableExp)
 
-@given(instance=EssentialOCL::LetExp_strategy)
+@given(instance=EssentialOCL_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::letexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::LetExp)
+def test_essentialocl_literalexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_LiteralExp)
 
-@given(instance=EssentialOCL::TypeExp_strategy)
+@given(instance=EssentialOCL_TypeExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::typeexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TypeExp)
+def test_essentialocl_typeexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TypeExp)
 
-@given(instance=EssentialOCL::VariableExp_strategy)
+@given(instance=EssentialOCL_LoopExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::variableexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::VariableExp)
+def test_essentialocl_loopexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_LoopExp)
 
-@given(instance=EssentialOCL::LiteralExp_strategy)
+@given(instance=EssentialOCL_LetExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::literalexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::LiteralExp)
+def test_essentialocl_letexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_LetExp)
 
-@given(instance=EssentialOCL::IfExp_strategy)
+@given(instance=EssentialOCL_IfExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::ifexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IfExp)
+def test_essentialocl_ifexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IfExp)
 
-@given(instance=EssentialOCL::CallExp_strategy)
+@given(instance=EssentialOCL_CallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::callexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CallExp)
+def test_essentialocl_callexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CallExp)
 
 @given(instance=PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
 def test_primitiveliteralexp_instantiation(instance):
     assert isinstance(instance, PrimitiveLiteralExp)
 
-@given(instance=EssentialOCL::StringLiteralExp_strategy)
+@given(instance=EssentialOCL_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::StringLiteralExp)
-
-@given(instance=EssentialOCL::StringLiteralExp_strategy)
-def test_essentialocl::stringliteralexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_essentialocl_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_StringLiteralExp)
 
 
-@given(instance=EssentialOCL::StringLiteralExp_strategy)
-def test_essentialocl::stringliteralexp_stringSymbol_setter(instance):
+
+@given(instance=EssentialOCL_StringLiteralExp_strategy)
+def test_essentialocl_stringliteralexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
 
-@given(instance=EssentialOCL::NumericLiteralExp_strategy)
+@given(instance=EssentialOCL_NumericLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::NumericLiteralExp)
+def test_essentialocl_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_NumericLiteralExp)
 
-@given(instance=EssentialOCL::BooleanLiteralExp_strategy)
+@given(instance=EssentialOCL_BooleanLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::BooleanLiteralExp)
-
-@given(instance=EssentialOCL::BooleanLiteralExp_strategy)
-def test_essentialocl::booleanliteralexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
+def test_essentialocl_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_BooleanLiteralExp)
 
 
-@given(instance=EssentialOCL::BooleanLiteralExp_strategy)
-def test_essentialocl::booleanliteralexp_booleanSymbol_setter(instance):
+
+@given(instance=EssentialOCL_BooleanLiteralExp_strategy)
+def test_essentialocl_booleanliteralexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
@@ -1491,27 +1470,27 @@ def test_essentialocl::booleanliteralexp_booleanSymbol_setter(instance):
 def test_collectiontype_instantiation(instance):
     assert isinstance(instance, CollectionType)
 
-@given(instance=EssentialOCL::SequenceType_strategy)
+@given(instance=EssentialOCL_OrderedSetType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::sequencetype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::SequenceType)
+def test_essentialocl_orderedsettype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_OrderedSetType)
 
-@given(instance=EssentialOCL::OrderedSetType_strategy)
+@given(instance=EssentialOCL_SetType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::orderedsettype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::OrderedSetType)
+def test_essentialocl_settype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_SetType)
 
-@given(instance=EssentialOCL::SetType_strategy)
+@given(instance=EssentialOCL_SequenceType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::settype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::SetType)
+def test_essentialocl_sequencetype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_SequenceType)
 
-@given(instance=EssentialOCL::BagType_strategy)
+@given(instance=EssentialOCL_BagType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::bagtype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::BagType)
+def test_essentialocl_bagtype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_BagType)
 
-@given(instance=EssentialOCL::AnyType_strategy)
+@given(instance=EssentialOCL_AnyType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::anytype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::AnyType)
+def test_essentialocl_anytype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_AnyType)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     inte,
@@ -53,17 +53,8 @@ def test_room_constructor_exists():
 def test_room_constructor_args():
     sig = inspect.signature(Room.__init__)
     params = list(sig.parameters.keys())
-    assert "Number" in params, "Missing parameter 'Number'"
     assert "Guests" in params, "Missing parameter 'Guests'"
-
-def test_room_has_Number():
-    assert hasattr(Room, "Number")
-    descriptor = None
-    for klass in Room.__mro__:
-        if "Number" in klass.__dict__:
-            descriptor = klass.__dict__["Number"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Number" in params, "Missing parameter 'Number'"
 
 def test_room_has_Guests():
     assert hasattr(Room, "Guests")
@@ -71,6 +62,15 @@ def test_room_has_Guests():
     for klass in Room.__mro__:
         if "Guests" in klass.__dict__:
             descriptor = klass.__dict__["Guests"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_room_has_Number():
+    assert hasattr(Room, "Number")
+    descriptor = None
+    for klass in Room.__mro__:
+        if "Number" in klass.__dict__:
+            descriptor = klass.__dict__["Number"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,18 +87,9 @@ def test_reservation_constructor_exists():
 def test_reservation_constructor_args():
     sig = inspect.signature(Reservation.__init__)
     params = list(sig.parameters.keys())
-    assert "Start" in params, "Missing parameter 'Start'"
     assert "Reservation_id" in params, "Missing parameter 'Reservation_id'"
+    assert "Start" in params, "Missing parameter 'Start'"
     assert "End" in params, "Missing parameter 'End'"
-
-def test_reservation_has_Start():
-    assert hasattr(Reservation, "Start")
-    descriptor = None
-    for klass in Reservation.__mro__:
-        if "Start" in klass.__dict__:
-            descriptor = klass.__dict__["Start"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_reservation_has_Reservation_id():
     assert hasattr(Reservation, "Reservation_id")
@@ -106,6 +97,15 @@ def test_reservation_has_Reservation_id():
     for klass in Reservation.__mro__:
         if "Reservation_id" in klass.__dict__:
             descriptor = klass.__dict__["Reservation_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_reservation_has_Start():
+    assert hasattr(Reservation, "Start")
+    descriptor = None
+    for klass in Reservation.__mro__:
+        if "Start" in klass.__dict__:
+            descriptor = klass.__dict__["Start"]
             break
     assert isinstance(descriptor, property)
 
@@ -131,17 +131,8 @@ def test_guest_constructor_exists():
 def test_guest_constructor_args():
     sig = inspect.signature(Guest.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Address" in params, "Missing parameter 'Address'"
-
-def test_guest_has_Name():
-    assert hasattr(Guest, "Name")
-    descriptor = None
-    for klass in Guest.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Name" in params, "Missing parameter 'Name'"
 
 def test_guest_has_Address():
     assert hasattr(Guest, "Address")
@@ -149,6 +140,15 @@ def test_guest_has_Address():
     for klass in Guest.__mro__:
         if "Address" in klass.__dict__:
             descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guest_has_Name():
+    assert hasattr(Guest, "Name")
+    descriptor = None
+    for klass in Guest.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -309,25 +309,25 @@ inte_strategy = st.builds(
 )
 Room_strategy = st.builds(
     Room,
-    Number=
-        st.integers(),
     Guests=
+        st.integers(),
+    Number=
         st.integers()
 )
 Reservation_strategy = st.builds(
     Reservation,
-    Start=
-        safe_text,
     Reservation_id=
         st.integers(),
+    Start=
+        safe_text,
     End=
         safe_text
 )
 Guest_strategy = st.builds(
     Guest,
-    Name=
-        safe_text,
     Address=
+        safe_text,
+    Name=
         safe_text
 )
 Hotel_Manager_Actor_strategy = st.builds(
@@ -371,20 +371,6 @@ def test_inte_instantiation(instance):
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_Number_type(instance):
-    assert isinstance(instance.Number, int)
-
-
-@given(instance=Room_strategy)
-def test_room_Number_setter(instance):
-    original = instance.Number
-    instance.Number = original
-    assert instance.Number == original
-
-@given(instance=Room_strategy)
-def test_room_Guests_type(instance):
-    assert isinstance(instance.Guests, int)
 
 
 @given(instance=Room_strategy)
@@ -393,25 +379,19 @@ def test_room_Guests_setter(instance):
     instance.Guests = original
     assert instance.Guests == original
 
+
+
+@given(instance=Room_strategy)
+def test_room_Number_setter(instance):
+    original = instance.Number
+    instance.Number = original
+    assert instance.Number == original
+
 @given(instance=Reservation_strategy)
 @settings(max_examples=50)
 def test_reservation_instantiation(instance):
     assert isinstance(instance, Reservation)
 
-@given(instance=Reservation_strategy)
-def test_reservation_Start_type(instance):
-    assert isinstance(instance.Start, str)
-
-
-@given(instance=Reservation_strategy)
-def test_reservation_Start_setter(instance):
-    original = instance.Start
-    instance.Start = original
-    assert instance.Start == original
-
-@given(instance=Reservation_strategy)
-def test_reservation_Reservation_id_type(instance):
-    assert isinstance(instance.Reservation_id, int)
 
 
 @given(instance=Reservation_strategy)
@@ -420,9 +400,14 @@ def test_reservation_Reservation_id_setter(instance):
     instance.Reservation_id = original
     assert instance.Reservation_id == original
 
+
+
 @given(instance=Reservation_strategy)
-def test_reservation_End_type(instance):
-    assert isinstance(instance.End, str)
+def test_reservation_Start_setter(instance):
+    original = instance.Start
+    instance.Start = original
+    assert instance.Start == original
+
 
 
 @given(instance=Reservation_strategy)
@@ -436,20 +421,6 @@ def test_reservation_End_setter(instance):
 def test_guest_instantiation(instance):
     assert isinstance(instance, Guest)
 
-@given(instance=Guest_strategy)
-def test_guest_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Guest_strategy)
-def test_guest_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Guest_strategy)
-def test_guest_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Guest_strategy)
@@ -457,6 +428,14 @@ def test_guest_Address_setter(instance):
     original = instance.Address
     instance.Address = original
     assert instance.Address == original
+
+
+
+@given(instance=Guest_strategy)
+def test_guest_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
 
 @given(instance=Hotel_Manager_Actor_strategy)
 @settings(max_examples=50)

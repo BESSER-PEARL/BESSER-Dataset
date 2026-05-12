@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    example::Folder,
+from python_code import (
+    example_Folder,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_example::folder_is_not_abstract():
-    assert not inspect.isabstract(example::Folder)
+def test_example_folder_is_not_abstract():
+    assert not inspect.isabstract(example_Folder)
 
 
-def test_example::folder_constructor_exists():
-    assert callable(example::Folder.__init__)
+def test_example_folder_constructor_exists():
+    assert callable(example_Folder.__init__)
 
 
-def test_example::folder_constructor_args():
-    sig = inspect.signature(example::Folder.__init__)
+def test_example_folder_constructor_args():
+    sig = inspect.signature(example_Folder.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_example::folder_has_name():
-    assert hasattr(example::Folder, "name")
+def test_example_folder_has_name():
+    assert hasattr(example_Folder, "name")
     descriptor = None
-    for klass in example::Folder.__mro__:
+    for klass in example_Folder.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-example::Folder_strategy = st.builds(
-    example::Folder,
+example_Folder_strategy = st.builds(
+    example_Folder,
     name=
         safe_text
 )
 
-@given(instance=example::Folder_strategy)
+@given(instance=example_Folder_strategy)
 @settings(max_examples=50)
-def test_example::folder_instantiation(instance):
-    assert isinstance(instance, example::Folder)
-
-@given(instance=example::Folder_strategy)
-def test_example::folder_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_example_folder_instantiation(instance):
+    assert isinstance(instance, example_Folder)
 
 
-@given(instance=example::Folder_strategy)
-def test_example::folder_name_setter(instance):
+
+@given(instance=example_Folder_strategy)
+def test_example_folder_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

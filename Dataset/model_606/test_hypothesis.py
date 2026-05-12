@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SMVC::Attribute,
-    SMVC::SMVCApplication,
-    SMVC::SupportedOperation,
+from python_code import (
+    SMVC_SupportedOperation,
     EntityComponent,
-    SMVC::Form,
-    SMVC::List,
+    SMVC_Form,
+    SMVC_List,
     Component,
-    SMVC::EntityComponent,
-    SMVC::Component,
+    SMVC_EntityComponent,
+    SMVC_Component,
     Controller,
-    SMVC::EntityController,
-    SMVC::Page,
-    SMVC::Entity,
-    SMVC::DataAccessObject,
-    SMVC::Controller,
-    SMVC::View,
-    SMVC::Link,
+    SMVC_EntityController,
+    SMVC_Page,
+    SMVC_Entity,
+    SMVC_DataAccessObject,
+    SMVC_Controller,
+    SMVC_View,
+    SMVC_Link,
+    SMVC_Attribute,
+    SMVC_SMVCApplication,
     AttributeType,
     Operation,
 )
@@ -33,111 +33,33 @@ from classes import (
 
 
 
-def test_smvc::attribute_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Attribute)
+def test_smvc_supportedoperation_is_not_abstract():
+    assert not inspect.isabstract(SMVC_SupportedOperation)
 
 
-def test_smvc::attribute_constructor_exists():
-    assert callable(SMVC::Attribute.__init__)
+def test_smvc_supportedoperation_constructor_exists():
+    assert callable(SMVC_SupportedOperation.__init__)
 
 
-def test_smvc::attribute_constructor_args():
-    sig = inspect.signature(SMVC::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "label" in params, "Missing parameter 'label'"
-    assert "multiValued" in params, "Missing parameter 'multiValued'"
-
-def test_smvc::attribute_has_type():
-    assert hasattr(SMVC::Attribute, "type")
-    descriptor = None
-    for klass in SMVC::Attribute.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smvc::attribute_has_name():
-    assert hasattr(SMVC::Attribute, "name")
-    descriptor = None
-    for klass in SMVC::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smvc::attribute_has_label():
-    assert hasattr(SMVC::Attribute, "label")
-    descriptor = None
-    for klass in SMVC::Attribute.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smvc::attribute_has_multiValued():
-    assert hasattr(SMVC::Attribute, "multiValued")
-    descriptor = None
-    for klass in SMVC::Attribute.__mro__:
-        if "multiValued" in klass.__dict__:
-            descriptor = klass.__dict__["multiValued"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smvc::smvcapplication_is_not_abstract():
-    assert not inspect.isabstract(SMVC::SMVCApplication)
-
-
-def test_smvc::smvcapplication_constructor_exists():
-    assert callable(SMVC::SMVCApplication.__init__)
-
-
-def test_smvc::smvcapplication_constructor_args():
-    sig = inspect.signature(SMVC::SMVCApplication.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_smvc::smvcapplication_has_name():
-    assert hasattr(SMVC::SMVCApplication, "name")
-    descriptor = None
-    for klass in SMVC::SMVCApplication.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smvc::supportedoperation_is_not_abstract():
-    assert not inspect.isabstract(SMVC::SupportedOperation)
-
-
-def test_smvc::supportedoperation_constructor_exists():
-    assert callable(SMVC::SupportedOperation.__init__)
-
-
-def test_smvc::supportedoperation_constructor_args():
-    sig = inspect.signature(SMVC::SupportedOperation.__init__)
+def test_smvc_supportedoperation_constructor_args():
+    sig = inspect.signature(SMVC_SupportedOperation.__init__)
     params = list(sig.parameters.keys())
     assert "operationKind" in params, "Missing parameter 'operationKind'"
     assert "url" in params, "Missing parameter 'url'"
 
-def test_smvc::supportedoperation_has_operationKind():
-    assert hasattr(SMVC::SupportedOperation, "operationKind")
+def test_smvc_supportedoperation_has_operationKind():
+    assert hasattr(SMVC_SupportedOperation, "operationKind")
     descriptor = None
-    for klass in SMVC::SupportedOperation.__mro__:
+    for klass in SMVC_SupportedOperation.__mro__:
         if "operationKind" in klass.__dict__:
             descriptor = klass.__dict__["operationKind"]
             break
     assert isinstance(descriptor, property)
 
-def test_smvc::supportedoperation_has_url():
-    assert hasattr(SMVC::SupportedOperation, "url")
+def test_smvc_supportedoperation_has_url():
+    assert hasattr(SMVC_SupportedOperation, "url")
     descriptor = None
-    for klass in SMVC::SupportedOperation.__mro__:
+    for klass in SMVC_SupportedOperation.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -159,30 +81,30 @@ def test_entitycomponent_constructor_args():
 
 
 
-def test_smvc::form_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Form)
+def test_smvc_form_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Form)
 
 
-def test_smvc::form_constructor_exists():
-    assert callable(SMVC::Form.__init__)
+def test_smvc_form_constructor_exists():
+    assert callable(SMVC_Form.__init__)
 
 
-def test_smvc::form_constructor_args():
-    sig = inspect.signature(SMVC::Form.__init__)
+def test_smvc_form_constructor_args():
+    sig = inspect.signature(SMVC_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smvc::list_is_not_abstract():
-    assert not inspect.isabstract(SMVC::List)
+def test_smvc_list_is_not_abstract():
+    assert not inspect.isabstract(SMVC_List)
 
 
-def test_smvc::list_constructor_exists():
-    assert callable(SMVC::List.__init__)
+def test_smvc_list_constructor_exists():
+    assert callable(SMVC_List.__init__)
 
 
-def test_smvc::list_constructor_args():
-    sig = inspect.signature(SMVC::List.__init__)
+def test_smvc_list_constructor_args():
+    sig = inspect.signature(SMVC_List.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -201,30 +123,30 @@ def test_component_constructor_args():
 
 
 
-def test_smvc::entitycomponent_is_not_abstract():
-    assert not inspect.isabstract(SMVC::EntityComponent)
+def test_smvc_entitycomponent_is_not_abstract():
+    assert not inspect.isabstract(SMVC_EntityComponent)
 
 
-def test_smvc::entitycomponent_constructor_exists():
-    assert callable(SMVC::EntityComponent.__init__)
+def test_smvc_entitycomponent_constructor_exists():
+    assert callable(SMVC_EntityComponent.__init__)
 
 
-def test_smvc::entitycomponent_constructor_args():
-    sig = inspect.signature(SMVC::EntityComponent.__init__)
+def test_smvc_entitycomponent_constructor_args():
+    sig = inspect.signature(SMVC_EntityComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smvc::component_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Component)
+def test_smvc_component_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Component)
 
 
-def test_smvc::component_constructor_exists():
-    assert callable(SMVC::Component.__init__)
+def test_smvc_component_constructor_exists():
+    assert callable(SMVC_Component.__init__)
 
 
-def test_smvc::component_constructor_args():
-    sig = inspect.signature(SMVC::Component.__init__)
+def test_smvc_component_constructor_args():
+    sig = inspect.signature(SMVC_Component.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -243,33 +165,33 @@ def test_controller_constructor_args():
 
 
 
-def test_smvc::entitycontroller_is_not_abstract():
-    assert not inspect.isabstract(SMVC::EntityController)
+def test_smvc_entitycontroller_is_not_abstract():
+    assert not inspect.isabstract(SMVC_EntityController)
 
 
-def test_smvc::entitycontroller_constructor_exists():
-    assert callable(SMVC::EntityController.__init__)
+def test_smvc_entitycontroller_constructor_exists():
+    assert callable(SMVC_EntityController.__init__)
 
 
-def test_smvc::entitycontroller_constructor_args():
-    sig = inspect.signature(SMVC::EntityController.__init__)
+def test_smvc_entitycontroller_constructor_args():
+    sig = inspect.signature(SMVC_EntityController.__init__)
     params = list(sig.parameters.keys())
     assert "returnOKURL" in params, "Missing parameter 'returnOKURL'"
     assert "returnKOURL" in params, "Missing parameter 'returnKOURL'"
 
-def test_smvc::entitycontroller_has_returnOKURL():
-    assert hasattr(SMVC::EntityController, "returnOKURL")
+def test_smvc_entitycontroller_has_returnOKURL():
+    assert hasattr(SMVC_EntityController, "returnOKURL")
     descriptor = None
-    for klass in SMVC::EntityController.__mro__:
+    for klass in SMVC_EntityController.__mro__:
         if "returnOKURL" in klass.__dict__:
             descriptor = klass.__dict__["returnOKURL"]
             break
     assert isinstance(descriptor, property)
 
-def test_smvc::entitycontroller_has_returnKOURL():
-    assert hasattr(SMVC::EntityController, "returnKOURL")
+def test_smvc_entitycontroller_has_returnKOURL():
+    assert hasattr(SMVC_EntityController, "returnKOURL")
     descriptor = None
-    for klass in SMVC::EntityController.__mro__:
+    for klass in SMVC_EntityController.__mro__:
         if "returnKOURL" in klass.__dict__:
             descriptor = klass.__dict__["returnKOURL"]
             break
@@ -277,23 +199,23 @@ def test_smvc::entitycontroller_has_returnKOURL():
 
 
 
-def test_smvc::page_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Page)
+def test_smvc_page_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Page)
 
 
-def test_smvc::page_constructor_exists():
-    assert callable(SMVC::Page.__init__)
+def test_smvc_page_constructor_exists():
+    assert callable(SMVC_Page.__init__)
 
 
-def test_smvc::page_constructor_args():
-    sig = inspect.signature(SMVC::Page.__init__)
+def test_smvc_page_constructor_args():
+    sig = inspect.signature(SMVC_Page.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_smvc::page_has_title():
-    assert hasattr(SMVC::Page, "title")
+def test_smvc_page_has_title():
+    assert hasattr(SMVC_Page, "title")
     descriptor = None
-    for klass in SMVC::Page.__mro__:
+    for klass in SMVC_Page.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -301,23 +223,23 @@ def test_smvc::page_has_title():
 
 
 
-def test_smvc::entity_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Entity)
+def test_smvc_entity_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Entity)
 
 
-def test_smvc::entity_constructor_exists():
-    assert callable(SMVC::Entity.__init__)
+def test_smvc_entity_constructor_exists():
+    assert callable(SMVC_Entity.__init__)
 
 
-def test_smvc::entity_constructor_args():
-    sig = inspect.signature(SMVC::Entity.__init__)
+def test_smvc_entity_constructor_args():
+    sig = inspect.signature(SMVC_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_smvc::entity_has_name():
-    assert hasattr(SMVC::Entity, "name")
+def test_smvc_entity_has_name():
+    assert hasattr(SMVC_Entity, "name")
     descriptor = None
-    for klass in SMVC::Entity.__mro__:
+    for klass in SMVC_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -325,33 +247,33 @@ def test_smvc::entity_has_name():
 
 
 
-def test_smvc::dataaccessobject_is_not_abstract():
-    assert not inspect.isabstract(SMVC::DataAccessObject)
+def test_smvc_dataaccessobject_is_not_abstract():
+    assert not inspect.isabstract(SMVC_DataAccessObject)
 
 
-def test_smvc::dataaccessobject_constructor_exists():
-    assert callable(SMVC::DataAccessObject.__init__)
+def test_smvc_dataaccessobject_constructor_exists():
+    assert callable(SMVC_DataAccessObject.__init__)
 
 
-def test_smvc::dataaccessobject_constructor_args():
-    sig = inspect.signature(SMVC::DataAccessObject.__init__)
+def test_smvc_dataaccessobject_constructor_args():
+    sig = inspect.signature(SMVC_DataAccessObject.__init__)
     params = list(sig.parameters.keys())
     assert "showDirectInstancesOnly" in params, "Missing parameter 'showDirectInstancesOnly'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_smvc::dataaccessobject_has_showDirectInstancesOnly():
-    assert hasattr(SMVC::DataAccessObject, "showDirectInstancesOnly")
+def test_smvc_dataaccessobject_has_showDirectInstancesOnly():
+    assert hasattr(SMVC_DataAccessObject, "showDirectInstancesOnly")
     descriptor = None
-    for klass in SMVC::DataAccessObject.__mro__:
+    for klass in SMVC_DataAccessObject.__mro__:
         if "showDirectInstancesOnly" in klass.__dict__:
             descriptor = klass.__dict__["showDirectInstancesOnly"]
             break
     assert isinstance(descriptor, property)
 
-def test_smvc::dataaccessobject_has_name():
-    assert hasattr(SMVC::DataAccessObject, "name")
+def test_smvc_dataaccessobject_has_name():
+    assert hasattr(SMVC_DataAccessObject, "name")
     descriptor = None
-    for klass in SMVC::DataAccessObject.__mro__:
+    for klass in SMVC_DataAccessObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -359,33 +281,33 @@ def test_smvc::dataaccessobject_has_name():
 
 
 
-def test_smvc::controller_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Controller)
+def test_smvc_controller_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Controller)
 
 
-def test_smvc::controller_constructor_exists():
-    assert callable(SMVC::Controller.__init__)
+def test_smvc_controller_constructor_exists():
+    assert callable(SMVC_Controller.__init__)
 
 
-def test_smvc::controller_constructor_args():
-    sig = inspect.signature(SMVC::Controller.__init__)
+def test_smvc_controller_constructor_args():
+    sig = inspect.signature(SMVC_Controller.__init__)
     params = list(sig.parameters.keys())
     assert "operation" in params, "Missing parameter 'operation'"
     assert "url" in params, "Missing parameter 'url'"
 
-def test_smvc::controller_has_operation():
-    assert hasattr(SMVC::Controller, "operation")
+def test_smvc_controller_has_operation():
+    assert hasattr(SMVC_Controller, "operation")
     descriptor = None
-    for klass in SMVC::Controller.__mro__:
+    for klass in SMVC_Controller.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
             break
     assert isinstance(descriptor, property)
 
-def test_smvc::controller_has_url():
-    assert hasattr(SMVC::Controller, "url")
+def test_smvc_controller_has_url():
+    assert hasattr(SMVC_Controller, "url")
     descriptor = None
-    for klass in SMVC::Controller.__mro__:
+    for klass in SMVC_Controller.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -393,23 +315,23 @@ def test_smvc::controller_has_url():
 
 
 
-def test_smvc::view_is_not_abstract():
-    assert not inspect.isabstract(SMVC::View)
+def test_smvc_view_is_not_abstract():
+    assert not inspect.isabstract(SMVC_View)
 
 
-def test_smvc::view_constructor_exists():
-    assert callable(SMVC::View.__init__)
+def test_smvc_view_constructor_exists():
+    assert callable(SMVC_View.__init__)
 
 
-def test_smvc::view_constructor_args():
-    sig = inspect.signature(SMVC::View.__init__)
+def test_smvc_view_constructor_args():
+    sig = inspect.signature(SMVC_View.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_smvc::view_has_text():
-    assert hasattr(SMVC::View, "text")
+def test_smvc_view_has_text():
+    assert hasattr(SMVC_View, "text")
     descriptor = None
-    for klass in SMVC::View.__mro__:
+    for klass in SMVC_View.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -417,25 +339,103 @@ def test_smvc::view_has_text():
 
 
 
-def test_smvc::link_is_not_abstract():
-    assert not inspect.isabstract(SMVC::Link)
+def test_smvc_link_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Link)
 
 
-def test_smvc::link_constructor_exists():
-    assert callable(SMVC::Link.__init__)
+def test_smvc_link_constructor_exists():
+    assert callable(SMVC_Link.__init__)
 
 
-def test_smvc::link_constructor_args():
-    sig = inspect.signature(SMVC::Link.__init__)
+def test_smvc_link_constructor_args():
+    sig = inspect.signature(SMVC_Link.__init__)
     params = list(sig.parameters.keys())
     assert "url" in params, "Missing parameter 'url'"
 
-def test_smvc::link_has_url():
-    assert hasattr(SMVC::Link, "url")
+def test_smvc_link_has_url():
+    assert hasattr(SMVC_Link, "url")
     descriptor = None
-    for klass in SMVC::Link.__mro__:
+    for klass in SMVC_Link.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smvc_attribute_is_not_abstract():
+    assert not inspect.isabstract(SMVC_Attribute)
+
+
+def test_smvc_attribute_constructor_exists():
+    assert callable(SMVC_Attribute.__init__)
+
+
+def test_smvc_attribute_constructor_args():
+    sig = inspect.signature(SMVC_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "multiValued" in params, "Missing parameter 'multiValued'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_smvc_attribute_has_label():
+    assert hasattr(SMVC_Attribute, "label")
+    descriptor = None
+    for klass in SMVC_Attribute.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smvc_attribute_has_type():
+    assert hasattr(SMVC_Attribute, "type")
+    descriptor = None
+    for klass in SMVC_Attribute.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smvc_attribute_has_multiValued():
+    assert hasattr(SMVC_Attribute, "multiValued")
+    descriptor = None
+    for klass in SMVC_Attribute.__mro__:
+        if "multiValued" in klass.__dict__:
+            descriptor = klass.__dict__["multiValued"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smvc_attribute_has_name():
+    assert hasattr(SMVC_Attribute, "name")
+    descriptor = None
+    for klass in SMVC_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smvc_smvcapplication_is_not_abstract():
+    assert not inspect.isabstract(SMVC_SMVCApplication)
+
+
+def test_smvc_smvcapplication_constructor_exists():
+    assert callable(SMVC_SMVCApplication.__init__)
+
+
+def test_smvc_smvcapplication_constructor_args():
+    sig = inspect.signature(SMVC_SMVCApplication.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_smvc_smvcapplication_has_name():
+    assert hasattr(SMVC_SMVCApplication, "name")
+    descriptor = None
+    for klass in SMVC_SMVCApplication.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -447,11 +447,11 @@ def test_attributetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AttributeType]
     expected_literals = [
-        "VARCHAR",
-        "BIGINTEGER",
-        "DOUBLE",
         "VOID",
+        "DOUBLE",
+        "VARCHAR",
         "OID",
+        "BIGINTEGER",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -466,12 +466,12 @@ def test_operation_has_all_literals():
     enum_literals = [lit.name for lit in Operation]
     expected_literals = [
         "readONE",
-        "read",
-        "readALL",
         "delete",
+        "read",
         "forward",
-        "_create",
+        "readALL",
         "update",
+        "_create",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -489,24 +489,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SMVC::Attribute_strategy = st.builds(
-    SMVC::Attribute,
-    type=
-        safe_text,
-    name=
-        safe_text,
-    label=
-        st.booleans(),
-    multiValued=
-        st.booleans()
-)
-SMVC::SMVCApplication_strategy = st.builds(
-    SMVC::SMVCApplication,
-    name=
-        safe_text
-)
-SMVC::SupportedOperation_strategy = st.builds(
-    SMVC::SupportedOperation,
+SMVC_SupportedOperation_strategy = st.builds(
+    SMVC_SupportedOperation,
     operationKind=
         safe_text,
     url=
@@ -515,154 +499,99 @@ SMVC::SupportedOperation_strategy = st.builds(
 EntityComponent_strategy = st.builds(
     EntityComponent,
 )
-SMVC::Form_strategy = st.builds(
-    SMVC::Form,
+SMVC_Form_strategy = st.builds(
+    SMVC_Form,
 )
-SMVC::List_strategy = st.builds(
-    SMVC::List,
+SMVC_List_strategy = st.builds(
+    SMVC_List,
 )
 Component_strategy = st.builds(
     Component,
 )
-SMVC::EntityComponent_strategy = st.builds(
-    SMVC::EntityComponent,
+SMVC_EntityComponent_strategy = st.builds(
+    SMVC_EntityComponent,
 )
-SMVC::Component_strategy = st.builds(
-    SMVC::Component,
+SMVC_Component_strategy = st.builds(
+    SMVC_Component,
 )
 Controller_strategy = st.builds(
     Controller,
 )
-SMVC::EntityController_strategy = st.builds(
-    SMVC::EntityController,
+SMVC_EntityController_strategy = st.builds(
+    SMVC_EntityController,
     returnOKURL=
         safe_text,
     returnKOURL=
         safe_text
 )
-SMVC::Page_strategy = st.builds(
-    SMVC::Page,
+SMVC_Page_strategy = st.builds(
+    SMVC_Page,
     title=
         safe_text
 )
-SMVC::Entity_strategy = st.builds(
-    SMVC::Entity,
+SMVC_Entity_strategy = st.builds(
+    SMVC_Entity,
     name=
         safe_text
 )
-SMVC::DataAccessObject_strategy = st.builds(
-    SMVC::DataAccessObject,
+SMVC_DataAccessObject_strategy = st.builds(
+    SMVC_DataAccessObject,
     showDirectInstancesOnly=
         st.booleans(),
     name=
         safe_text
 )
-SMVC::Controller_strategy = st.builds(
-    SMVC::Controller,
+SMVC_Controller_strategy = st.builds(
+    SMVC_Controller,
     operation=
         safe_text,
     url=
         safe_text
 )
-SMVC::View_strategy = st.builds(
-    SMVC::View,
+SMVC_View_strategy = st.builds(
+    SMVC_View,
     text=
         safe_text
 )
-SMVC::Link_strategy = st.builds(
-    SMVC::Link,
+SMVC_Link_strategy = st.builds(
+    SMVC_Link,
     url=
         safe_text
 )
+SMVC_Attribute_strategy = st.builds(
+    SMVC_Attribute,
+    label=
+        st.booleans(),
+    type=
+        safe_text,
+    multiValued=
+        st.booleans(),
+    name=
+        safe_text
+)
+SMVC_SMVCApplication_strategy = st.builds(
+    SMVC_SMVCApplication,
+    name=
+        safe_text
+)
 
-@given(instance=SMVC::Attribute_strategy)
+@given(instance=SMVC_SupportedOperation_strategy)
 @settings(max_examples=50)
-def test_smvc::attribute_instantiation(instance):
-    assert isinstance(instance, SMVC::Attribute)
-
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_smvc_supportedoperation_instantiation(instance):
+    assert isinstance(instance, SMVC_SupportedOperation)
 
 
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_label_type(instance):
-    assert isinstance(instance.label, bool)
-
-
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_multiValued_type(instance):
-    assert isinstance(instance.multiValued, bool)
-
-
-@given(instance=SMVC::Attribute_strategy)
-def test_smvc::attribute_multiValued_setter(instance):
-    original = instance.multiValued
-    instance.multiValued = original
-    assert instance.multiValued == original
-
-@given(instance=SMVC::SMVCApplication_strategy)
-@settings(max_examples=50)
-def test_smvc::smvcapplication_instantiation(instance):
-    assert isinstance(instance, SMVC::SMVCApplication)
-
-@given(instance=SMVC::SMVCApplication_strategy)
-def test_smvc::smvcapplication_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SMVC::SMVCApplication_strategy)
-def test_smvc::smvcapplication_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SMVC::SupportedOperation_strategy)
-@settings(max_examples=50)
-def test_smvc::supportedoperation_instantiation(instance):
-    assert isinstance(instance, SMVC::SupportedOperation)
-
-@given(instance=SMVC::SupportedOperation_strategy)
-def test_smvc::supportedoperation_operationKind_type(instance):
-    assert isinstance(instance.operationKind, str)
-
-
-@given(instance=SMVC::SupportedOperation_strategy)
-def test_smvc::supportedoperation_operationKind_setter(instance):
+@given(instance=SMVC_SupportedOperation_strategy)
+def test_smvc_supportedoperation_operationKind_setter(instance):
     original = instance.operationKind
     instance.operationKind = original
     assert instance.operationKind == original
 
-@given(instance=SMVC::SupportedOperation_strategy)
-def test_smvc::supportedoperation_url_type(instance):
-    assert isinstance(instance.url, str)
 
 
-@given(instance=SMVC::SupportedOperation_strategy)
-def test_smvc::supportedoperation_url_setter(instance):
+@given(instance=SMVC_SupportedOperation_strategy)
+def test_smvc_supportedoperation_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
@@ -672,177 +601,197 @@ def test_smvc::supportedoperation_url_setter(instance):
 def test_entitycomponent_instantiation(instance):
     assert isinstance(instance, EntityComponent)
 
-@given(instance=SMVC::Form_strategy)
+@given(instance=SMVC_Form_strategy)
 @settings(max_examples=50)
-def test_smvc::form_instantiation(instance):
-    assert isinstance(instance, SMVC::Form)
+def test_smvc_form_instantiation(instance):
+    assert isinstance(instance, SMVC_Form)
 
-@given(instance=SMVC::List_strategy)
+@given(instance=SMVC_List_strategy)
 @settings(max_examples=50)
-def test_smvc::list_instantiation(instance):
-    assert isinstance(instance, SMVC::List)
+def test_smvc_list_instantiation(instance):
+    assert isinstance(instance, SMVC_List)
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=SMVC::EntityComponent_strategy)
+@given(instance=SMVC_EntityComponent_strategy)
 @settings(max_examples=50)
-def test_smvc::entitycomponent_instantiation(instance):
-    assert isinstance(instance, SMVC::EntityComponent)
+def test_smvc_entitycomponent_instantiation(instance):
+    assert isinstance(instance, SMVC_EntityComponent)
 
-@given(instance=SMVC::Component_strategy)
+@given(instance=SMVC_Component_strategy)
 @settings(max_examples=50)
-def test_smvc::component_instantiation(instance):
-    assert isinstance(instance, SMVC::Component)
+def test_smvc_component_instantiation(instance):
+    assert isinstance(instance, SMVC_Component)
 
 @given(instance=Controller_strategy)
 @settings(max_examples=50)
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=SMVC::EntityController_strategy)
+@given(instance=SMVC_EntityController_strategy)
 @settings(max_examples=50)
-def test_smvc::entitycontroller_instantiation(instance):
-    assert isinstance(instance, SMVC::EntityController)
-
-@given(instance=SMVC::EntityController_strategy)
-def test_smvc::entitycontroller_returnOKURL_type(instance):
-    assert isinstance(instance.returnOKURL, str)
+def test_smvc_entitycontroller_instantiation(instance):
+    assert isinstance(instance, SMVC_EntityController)
 
 
-@given(instance=SMVC::EntityController_strategy)
-def test_smvc::entitycontroller_returnOKURL_setter(instance):
+
+@given(instance=SMVC_EntityController_strategy)
+def test_smvc_entitycontroller_returnOKURL_setter(instance):
     original = instance.returnOKURL
     instance.returnOKURL = original
     assert instance.returnOKURL == original
 
-@given(instance=SMVC::EntityController_strategy)
-def test_smvc::entitycontroller_returnKOURL_type(instance):
-    assert isinstance(instance.returnKOURL, str)
 
 
-@given(instance=SMVC::EntityController_strategy)
-def test_smvc::entitycontroller_returnKOURL_setter(instance):
+@given(instance=SMVC_EntityController_strategy)
+def test_smvc_entitycontroller_returnKOURL_setter(instance):
     original = instance.returnKOURL
     instance.returnKOURL = original
     assert instance.returnKOURL == original
 
-@given(instance=SMVC::Page_strategy)
+@given(instance=SMVC_Page_strategy)
 @settings(max_examples=50)
-def test_smvc::page_instantiation(instance):
-    assert isinstance(instance, SMVC::Page)
-
-@given(instance=SMVC::Page_strategy)
-def test_smvc::page_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_smvc_page_instantiation(instance):
+    assert isinstance(instance, SMVC_Page)
 
 
-@given(instance=SMVC::Page_strategy)
-def test_smvc::page_title_setter(instance):
+
+@given(instance=SMVC_Page_strategy)
+def test_smvc_page_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=SMVC::Entity_strategy)
+@given(instance=SMVC_Entity_strategy)
 @settings(max_examples=50)
-def test_smvc::entity_instantiation(instance):
-    assert isinstance(instance, SMVC::Entity)
-
-@given(instance=SMVC::Entity_strategy)
-def test_smvc::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_smvc_entity_instantiation(instance):
+    assert isinstance(instance, SMVC_Entity)
 
 
-@given(instance=SMVC::Entity_strategy)
-def test_smvc::entity_name_setter(instance):
+
+@given(instance=SMVC_Entity_strategy)
+def test_smvc_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SMVC::DataAccessObject_strategy)
+@given(instance=SMVC_DataAccessObject_strategy)
 @settings(max_examples=50)
-def test_smvc::dataaccessobject_instantiation(instance):
-    assert isinstance(instance, SMVC::DataAccessObject)
-
-@given(instance=SMVC::DataAccessObject_strategy)
-def test_smvc::dataaccessobject_showDirectInstancesOnly_type(instance):
-    assert isinstance(instance.showDirectInstancesOnly, bool)
+def test_smvc_dataaccessobject_instantiation(instance):
+    assert isinstance(instance, SMVC_DataAccessObject)
 
 
-@given(instance=SMVC::DataAccessObject_strategy)
-def test_smvc::dataaccessobject_showDirectInstancesOnly_setter(instance):
+
+@given(instance=SMVC_DataAccessObject_strategy)
+def test_smvc_dataaccessobject_showDirectInstancesOnly_setter(instance):
     original = instance.showDirectInstancesOnly
     instance.showDirectInstancesOnly = original
     assert instance.showDirectInstancesOnly == original
 
-@given(instance=SMVC::DataAccessObject_strategy)
-def test_smvc::dataaccessobject_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=SMVC::DataAccessObject_strategy)
-def test_smvc::dataaccessobject_name_setter(instance):
+@given(instance=SMVC_DataAccessObject_strategy)
+def test_smvc_dataaccessobject_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SMVC::Controller_strategy)
+@given(instance=SMVC_Controller_strategy)
 @settings(max_examples=50)
-def test_smvc::controller_instantiation(instance):
-    assert isinstance(instance, SMVC::Controller)
-
-@given(instance=SMVC::Controller_strategy)
-def test_smvc::controller_operation_type(instance):
-    assert isinstance(instance.operation, str)
+def test_smvc_controller_instantiation(instance):
+    assert isinstance(instance, SMVC_Controller)
 
 
-@given(instance=SMVC::Controller_strategy)
-def test_smvc::controller_operation_setter(instance):
+
+@given(instance=SMVC_Controller_strategy)
+def test_smvc_controller_operation_setter(instance):
     original = instance.operation
     instance.operation = original
     assert instance.operation == original
 
-@given(instance=SMVC::Controller_strategy)
-def test_smvc::controller_url_type(instance):
-    assert isinstance(instance.url, str)
 
 
-@given(instance=SMVC::Controller_strategy)
-def test_smvc::controller_url_setter(instance):
+@given(instance=SMVC_Controller_strategy)
+def test_smvc_controller_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=SMVC::View_strategy)
+@given(instance=SMVC_View_strategy)
 @settings(max_examples=50)
-def test_smvc::view_instantiation(instance):
-    assert isinstance(instance, SMVC::View)
-
-@given(instance=SMVC::View_strategy)
-def test_smvc::view_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_smvc_view_instantiation(instance):
+    assert isinstance(instance, SMVC_View)
 
 
-@given(instance=SMVC::View_strategy)
-def test_smvc::view_text_setter(instance):
+
+@given(instance=SMVC_View_strategy)
+def test_smvc_view_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=SMVC::Link_strategy)
+@given(instance=SMVC_Link_strategy)
 @settings(max_examples=50)
-def test_smvc::link_instantiation(instance):
-    assert isinstance(instance, SMVC::Link)
-
-@given(instance=SMVC::Link_strategy)
-def test_smvc::link_url_type(instance):
-    assert isinstance(instance.url, str)
+def test_smvc_link_instantiation(instance):
+    assert isinstance(instance, SMVC_Link)
 
 
-@given(instance=SMVC::Link_strategy)
-def test_smvc::link_url_setter(instance):
+
+@given(instance=SMVC_Link_strategy)
+def test_smvc_link_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
+
+@given(instance=SMVC_Attribute_strategy)
+@settings(max_examples=50)
+def test_smvc_attribute_instantiation(instance):
+    assert isinstance(instance, SMVC_Attribute)
+
+
+
+@given(instance=SMVC_Attribute_strategy)
+def test_smvc_attribute_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=SMVC_Attribute_strategy)
+def test_smvc_attribute_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=SMVC_Attribute_strategy)
+def test_smvc_attribute_multiValued_setter(instance):
+    original = instance.multiValued
+    instance.multiValued = original
+    assert instance.multiValued == original
+
+
+
+@given(instance=SMVC_Attribute_strategy)
+def test_smvc_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=SMVC_SMVCApplication_strategy)
+@settings(max_examples=50)
+def test_smvc_smvcapplication_instantiation(instance):
+    assert isinstance(instance, SMVC_SMVCApplication)
+
+
+
+@given(instance=SMVC_SMVCApplication_strategy)
+def test_smvc_smvcapplication_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

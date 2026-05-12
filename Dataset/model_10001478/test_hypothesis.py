@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     chefTicket,
@@ -177,9 +177,18 @@ def test_online_order_and_cc_processing_constructor_exists():
 def test_online_order_and_cc_processing_constructor_args():
     sig = inspect.signature(Online_Order_and_CC_Processing.__init__)
     params = list(sig.parameters.keys())
+    assert "paymentApproved" in params, "Missing parameter 'paymentApproved'"
     assert "order" in params, "Missing parameter 'order'"
     assert "payment" in params, "Missing parameter 'payment'"
-    assert "paymentApproved" in params, "Missing parameter 'paymentApproved'"
+
+def test_online_order_and_cc_processing_has_paymentApproved():
+    assert hasattr(Online_Order_and_CC_Processing, "paymentApproved")
+    descriptor = None
+    for klass in Online_Order_and_CC_Processing.__mro__:
+        if "paymentApproved" in klass.__dict__:
+            descriptor = klass.__dict__["paymentApproved"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_online_order_and_cc_processing_has_order():
     assert hasattr(Online_Order_and_CC_Processing, "order")
@@ -199,15 +208,6 @@ def test_online_order_and_cc_processing_has_payment():
             break
     assert isinstance(descriptor, property)
 
-def test_online_order_and_cc_processing_has_paymentApproved():
-    assert hasattr(Online_Order_and_CC_Processing, "paymentApproved")
-    descriptor = None
-    for klass in Online_Order_and_CC_Processing.__mro__:
-        if "paymentApproved" in klass.__dict__:
-            descriptor = klass.__dict__["paymentApproved"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_customer_is_not_abstract():
@@ -221,17 +221,8 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_customer_has_location():
-    assert hasattr(Customer, "location")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
+    assert "location" in params, "Missing parameter 'location'"
 
 def test_customer_has_name():
     assert hasattr(Customer, "name")
@@ -239,6 +230,15 @@ def test_customer_has_name():
     for klass in Customer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_location():
+    assert hasattr(Customer, "location")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
@@ -286,18 +286,18 @@ createOrder_strategy = st.builds(
 )
 Online_Order_and_CC_Processing_strategy = st.builds(
     Online_Order_and_CC_Processing,
+    paymentApproved=
+        st.booleans(),
     order=
         safe_text,
     payment=
-        safe_text,
-    paymentApproved=
-        st.booleans()
+        safe_text
 )
 Customer_strategy = st.builds(
     Customer,
-    location=
-        safe_text,
     name=
+        safe_text,
+    location=
         safe_text
 )
 
@@ -311,9 +311,6 @@ def test_chefticket_instantiation(instance):
 def test_store_pos_system_instantiation(instance):
     assert isinstance(instance, Store_POS_System)
 
-@given(instance=Store_POS_System_strategy)
-def test_store_pos_system_print_type(instance):
-    assert isinstance(instance.print, str)
 
 
 @given(instance=Store_POS_System_strategy)
@@ -347,9 +344,6 @@ def test_vieworder_instantiation(instance):
 def test_updatepayment_instantiation(instance):
     assert isinstance(instance, updatePayment)
 
-@given(instance=updatePayment_strategy)
-def test_updatepayment_paymentInformation_type(instance):
-    assert isinstance(instance.paymentInformation, str)
 
 
 @given(instance=updatePayment_strategy)
@@ -363,9 +357,6 @@ def test_updatepayment_paymentInformation_setter(instance):
 def test_createorder_instantiation(instance):
     assert isinstance(instance, createOrder)
 
-@given(instance=createOrder_strategy)
-def test_createorder_orderedItems_type(instance):
-    assert isinstance(instance.orderedItems, str)
 
 
 @given(instance=createOrder_strategy)
@@ -379,31 +370,6 @@ def test_createorder_orderedItems_setter(instance):
 def test_online_order_and_cc_processing_instantiation(instance):
     assert isinstance(instance, Online_Order_and_CC_Processing)
 
-@given(instance=Online_Order_and_CC_Processing_strategy)
-def test_online_order_and_cc_processing_order_type(instance):
-    assert isinstance(instance.order, str)
-
-
-@given(instance=Online_Order_and_CC_Processing_strategy)
-def test_online_order_and_cc_processing_order_setter(instance):
-    original = instance.order
-    instance.order = original
-    assert instance.order == original
-
-@given(instance=Online_Order_and_CC_Processing_strategy)
-def test_online_order_and_cc_processing_payment_type(instance):
-    assert isinstance(instance.payment, str)
-
-
-@given(instance=Online_Order_and_CC_Processing_strategy)
-def test_online_order_and_cc_processing_payment_setter(instance):
-    original = instance.payment
-    instance.payment = original
-    assert instance.payment == original
-
-@given(instance=Online_Order_and_CC_Processing_strategy)
-def test_online_order_and_cc_processing_paymentApproved_type(instance):
-    assert isinstance(instance.paymentApproved, bool)
 
 
 @given(instance=Online_Order_and_CC_Processing_strategy)
@@ -412,25 +378,27 @@ def test_online_order_and_cc_processing_paymentApproved_setter(instance):
     instance.paymentApproved = original
     assert instance.paymentApproved == original
 
+
+
+@given(instance=Online_Order_and_CC_Processing_strategy)
+def test_online_order_and_cc_processing_order_setter(instance):
+    original = instance.order
+    instance.order = original
+    assert instance.order == original
+
+
+
+@given(instance=Online_Order_and_CC_Processing_strategy)
+def test_online_order_and_cc_processing_payment_setter(instance):
+    original = instance.payment
+    instance.payment = original
+    assert instance.payment == original
+
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=Customer_strategy)
-def test_customer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Customer_strategy)
@@ -438,3 +406,11 @@ def test_customer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original

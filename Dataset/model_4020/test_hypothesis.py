@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Data::Modele,
-    Data::DeclarationType,
-    Data::Attribut,
+from python_code import (
+    Data_Modele,
+    Data_DeclarationType,
+    Data_Attribut,
     DeclarationType,
-    Data::Classe,
+    Data_Classe,
 )
 
 # =============================================================================
@@ -19,37 +19,37 @@ from classes import (
 
 
 
-def test_data::modele_is_not_abstract():
-    assert not inspect.isabstract(Data::Modele)
+def test_data_modele_is_not_abstract():
+    assert not inspect.isabstract(Data_Modele)
 
 
-def test_data::modele_constructor_exists():
-    assert callable(Data::Modele.__init__)
+def test_data_modele_constructor_exists():
+    assert callable(Data_Modele.__init__)
 
 
-def test_data::modele_constructor_args():
-    sig = inspect.signature(Data::Modele.__init__)
+def test_data_modele_constructor_args():
+    sig = inspect.signature(Data_Modele.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::declarationtype_is_not_abstract():
-    assert not inspect.isabstract(Data::DeclarationType)
+def test_data_declarationtype_is_not_abstract():
+    assert not inspect.isabstract(Data_DeclarationType)
 
 
-def test_data::declarationtype_constructor_exists():
-    assert callable(Data::DeclarationType.__init__)
+def test_data_declarationtype_constructor_exists():
+    assert callable(Data_DeclarationType.__init__)
 
 
-def test_data::declarationtype_constructor_args():
-    sig = inspect.signature(Data::DeclarationType.__init__)
+def test_data_declarationtype_constructor_args():
+    sig = inspect.signature(Data_DeclarationType.__init__)
     params = list(sig.parameters.keys())
     assert "nom" in params, "Missing parameter 'nom'"
 
-def test_data::declarationtype_has_nom():
-    assert hasattr(Data::DeclarationType, "nom")
+def test_data_declarationtype_has_nom():
+    assert hasattr(Data_DeclarationType, "nom")
     descriptor = None
-    for klass in Data::DeclarationType.__mro__:
+    for klass in Data_DeclarationType.__mro__:
         if "nom" in klass.__dict__:
             descriptor = klass.__dict__["nom"]
             break
@@ -57,45 +57,45 @@ def test_data::declarationtype_has_nom():
 
 
 
-def test_data::attribut_is_not_abstract():
-    assert not inspect.isabstract(Data::Attribut)
+def test_data_attribut_is_not_abstract():
+    assert not inspect.isabstract(Data_Attribut)
 
 
-def test_data::attribut_constructor_exists():
-    assert callable(Data::Attribut.__init__)
+def test_data_attribut_constructor_exists():
+    assert callable(Data_Attribut.__init__)
 
 
-def test_data::attribut_constructor_args():
-    sig = inspect.signature(Data::Attribut.__init__)
+def test_data_attribut_constructor_args():
+    sig = inspect.signature(Data_Attribut.__init__)
     params = list(sig.parameters.keys())
     assert "estTableau" in params, "Missing parameter 'estTableau'"
-    assert "nom" in params, "Missing parameter 'nom'"
     assert "typeStr" in params, "Missing parameter 'typeStr'"
+    assert "nom" in params, "Missing parameter 'nom'"
 
-def test_data::attribut_has_estTableau():
-    assert hasattr(Data::Attribut, "estTableau")
+def test_data_attribut_has_estTableau():
+    assert hasattr(Data_Attribut, "estTableau")
     descriptor = None
-    for klass in Data::Attribut.__mro__:
+    for klass in Data_Attribut.__mro__:
         if "estTableau" in klass.__dict__:
             descriptor = klass.__dict__["estTableau"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::attribut_has_nom():
-    assert hasattr(Data::Attribut, "nom")
+def test_data_attribut_has_typeStr():
+    assert hasattr(Data_Attribut, "typeStr")
     descriptor = None
-    for klass in Data::Attribut.__mro__:
-        if "nom" in klass.__dict__:
-            descriptor = klass.__dict__["nom"]
+    for klass in Data_Attribut.__mro__:
+        if "typeStr" in klass.__dict__:
+            descriptor = klass.__dict__["typeStr"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::attribut_has_typeStr():
-    assert hasattr(Data::Attribut, "typeStr")
+def test_data_attribut_has_nom():
+    assert hasattr(Data_Attribut, "nom")
     descriptor = None
-    for klass in Data::Attribut.__mro__:
-        if "typeStr" in klass.__dict__:
-            descriptor = klass.__dict__["typeStr"]
+    for klass in Data_Attribut.__mro__:
+        if "nom" in klass.__dict__:
+            descriptor = klass.__dict__["nom"]
             break
     assert isinstance(descriptor, property)
 
@@ -115,16 +115,16 @@ def test_declarationtype_constructor_args():
 
 
 
-def test_data::classe_is_not_abstract():
-    assert not inspect.isabstract(Data::Classe)
+def test_data_classe_is_not_abstract():
+    assert not inspect.isabstract(Data_Classe)
 
 
-def test_data::classe_constructor_exists():
-    assert callable(Data::Classe.__init__)
+def test_data_classe_constructor_exists():
+    assert callable(Data_Classe.__init__)
 
 
-def test_data::classe_constructor_args():
-    sig = inspect.signature(Data::Classe.__init__)
+def test_data_classe_constructor_args():
+    sig = inspect.signature(Data_Classe.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,95 +139,83 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Data::Modele_strategy = st.builds(
-    Data::Modele,
+Data_Modele_strategy = st.builds(
+    Data_Modele,
 )
-Data::DeclarationType_strategy = st.builds(
-    Data::DeclarationType,
+Data_DeclarationType_strategy = st.builds(
+    Data_DeclarationType,
     nom=
         safe_text
 )
-Data::Attribut_strategy = st.builds(
-    Data::Attribut,
+Data_Attribut_strategy = st.builds(
+    Data_Attribut,
     estTableau=
         st.booleans(),
-    nom=
-        safe_text,
     typeStr=
+        safe_text,
+    nom=
         safe_text
 )
 DeclarationType_strategy = st.builds(
     DeclarationType,
 )
-Data::Classe_strategy = st.builds(
-    Data::Classe,
+Data_Classe_strategy = st.builds(
+    Data_Classe,
 )
 
-@given(instance=Data::Modele_strategy)
+@given(instance=Data_Modele_strategy)
 @settings(max_examples=50)
-def test_data::modele_instantiation(instance):
-    assert isinstance(instance, Data::Modele)
+def test_data_modele_instantiation(instance):
+    assert isinstance(instance, Data_Modele)
 
-@given(instance=Data::DeclarationType_strategy)
+@given(instance=Data_DeclarationType_strategy)
 @settings(max_examples=50)
-def test_data::declarationtype_instantiation(instance):
-    assert isinstance(instance, Data::DeclarationType)
-
-@given(instance=Data::DeclarationType_strategy)
-def test_data::declarationtype_nom_type(instance):
-    assert isinstance(instance.nom, str)
+def test_data_declarationtype_instantiation(instance):
+    assert isinstance(instance, Data_DeclarationType)
 
 
-@given(instance=Data::DeclarationType_strategy)
-def test_data::declarationtype_nom_setter(instance):
+
+@given(instance=Data_DeclarationType_strategy)
+def test_data_declarationtype_nom_setter(instance):
     original = instance.nom
     instance.nom = original
     assert instance.nom == original
 
-@given(instance=Data::Attribut_strategy)
+@given(instance=Data_Attribut_strategy)
 @settings(max_examples=50)
-def test_data::attribut_instantiation(instance):
-    assert isinstance(instance, Data::Attribut)
-
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_estTableau_type(instance):
-    assert isinstance(instance.estTableau, bool)
+def test_data_attribut_instantiation(instance):
+    assert isinstance(instance, Data_Attribut)
 
 
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_estTableau_setter(instance):
+
+@given(instance=Data_Attribut_strategy)
+def test_data_attribut_estTableau_setter(instance):
     original = instance.estTableau
     instance.estTableau = original
     assert instance.estTableau == original
 
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_nom_type(instance):
-    assert isinstance(instance.nom, str)
 
 
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_nom_setter(instance):
-    original = instance.nom
-    instance.nom = original
-    assert instance.nom == original
-
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_typeStr_type(instance):
-    assert isinstance(instance.typeStr, str)
-
-
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_typeStr_setter(instance):
+@given(instance=Data_Attribut_strategy)
+def test_data_attribut_typeStr_setter(instance):
     original = instance.typeStr
     instance.typeStr = original
     assert instance.typeStr == original
+
+
+
+@given(instance=Data_Attribut_strategy)
+def test_data_attribut_nom_setter(instance):
+    original = instance.nom
+    instance.nom = original
+    assert instance.nom == original
 
 @given(instance=DeclarationType_strategy)
 @settings(max_examples=50)
 def test_declarationtype_instantiation(instance):
     assert isinstance(instance, DeclarationType)
 
-@given(instance=Data::Classe_strategy)
+@given(instance=Data_Classe_strategy)
 @settings(max_examples=50)
-def test_data::classe_instantiation(instance):
-    assert isinstance(instance, Data::Classe)
+def test_data_classe_instantiation(instance):
+    assert isinstance(instance, Data_Classe)

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    database::ForeignKey,
-    database::Column,
-    database::Table,
-    database::Schema,
+from python_code import (
+    database_ForeignKey,
+    database_Column,
+    database_Table,
+    database_Schema,
 )
 
 # =============================================================================
@@ -18,47 +18,47 @@ from classes import (
 
 
 
-def test_database::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(database::ForeignKey)
+def test_database_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(database_ForeignKey)
 
 
-def test_database::foreignkey_constructor_exists():
-    assert callable(database::ForeignKey.__init__)
+def test_database_foreignkey_constructor_exists():
+    assert callable(database_ForeignKey.__init__)
 
 
-def test_database::foreignkey_constructor_args():
-    sig = inspect.signature(database::ForeignKey.__init__)
+def test_database_foreignkey_constructor_args():
+    sig = inspect.signature(database_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_database::column_is_not_abstract():
-    assert not inspect.isabstract(database::Column)
+def test_database_column_is_not_abstract():
+    assert not inspect.isabstract(database_Column)
 
 
-def test_database::column_constructor_exists():
-    assert callable(database::Column.__init__)
+def test_database_column_constructor_exists():
+    assert callable(database_Column.__init__)
 
 
-def test_database::column_constructor_args():
-    sig = inspect.signature(database::Column.__init__)
+def test_database_column_constructor_args():
+    sig = inspect.signature(database_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_database::column_has_type():
-    assert hasattr(database::Column, "type")
+def test_database_column_has_type():
+    assert hasattr(database_Column, "type")
     descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_name():
-    assert hasattr(database::Column, "name")
+def test_database_column_has_name():
+    assert hasattr(database_Column, "name")
     descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,57 +66,57 @@ def test_database::column_has_name():
 
 
 
-def test_database::table_is_not_abstract():
-    assert not inspect.isabstract(database::Table)
+def test_database_table_is_not_abstract():
+    assert not inspect.isabstract(database_Table)
 
 
-def test_database::table_constructor_exists():
-    assert callable(database::Table.__init__)
+def test_database_table_constructor_exists():
+    assert callable(database_Table.__init__)
 
 
-def test_database::table_constructor_args():
-    sig = inspect.signature(database::Table.__init__)
+def test_database_table_constructor_args():
+    sig = inspect.signature(database_Table.__init__)
     params = list(sig.parameters.keys())
-    assert "is_local" in params, "Missing parameter 'is_local'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "is_local" in params, "Missing parameter 'is_local'"
 
-def test_database::table_has_is_local():
-    assert hasattr(database::Table, "is_local")
+def test_database_table_has_name():
+    assert hasattr(database_Table, "name")
     descriptor = None
-    for klass in database::Table.__mro__:
+    for klass in database_Table.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_table_has_is_local():
+    assert hasattr(database_Table, "is_local")
+    descriptor = None
+    for klass in database_Table.__mro__:
         if "is_local" in klass.__dict__:
             descriptor = klass.__dict__["is_local"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::table_has_name():
-    assert hasattr(database::Table, "name")
-    descriptor = None
-    for klass in database::Table.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_database::schema_is_not_abstract():
-    assert not inspect.isabstract(database::Schema)
-
-
-def test_database::schema_constructor_exists():
-    assert callable(database::Schema.__init__)
+def test_database_schema_is_not_abstract():
+    assert not inspect.isabstract(database_Schema)
 
 
-def test_database::schema_constructor_args():
-    sig = inspect.signature(database::Schema.__init__)
+def test_database_schema_constructor_exists():
+    assert callable(database_Schema.__init__)
+
+
+def test_database_schema_constructor_args():
+    sig = inspect.signature(database_Schema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_database::schema_has_name():
-    assert hasattr(database::Schema, "name")
+def test_database_schema_has_name():
+    assert hasattr(database_Schema, "name")
     descriptor = None
-    for klass in database::Schema.__mro__:
+    for klass in database_Schema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-database::ForeignKey_strategy = st.builds(
-    database::ForeignKey,
+database_ForeignKey_strategy = st.builds(
+    database_ForeignKey,
 )
-database::Column_strategy = st.builds(
-    database::Column,
+database_Column_strategy = st.builds(
+    database_Column,
     type=
         safe_text,
     name=
         safe_text
 )
-database::Table_strategy = st.builds(
-    database::Table,
+database_Table_strategy = st.builds(
+    database_Table,
+    name=
+        safe_text,
     is_local=
-        st.booleans(),
+        st.booleans()
+)
+database_Schema_strategy = st.builds(
+    database_Schema,
     name=
         safe_text
 )
-database::Schema_strategy = st.builds(
-    database::Schema,
-    name=
-        safe_text
-)
 
-@given(instance=database::ForeignKey_strategy)
+@given(instance=database_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_database::foreignkey_instantiation(instance):
-    assert isinstance(instance, database::ForeignKey)
+def test_database_foreignkey_instantiation(instance):
+    assert isinstance(instance, database_ForeignKey)
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=50)
-def test_database::column_instantiation(instance):
-    assert isinstance(instance, database::Column)
-
-@given(instance=database::Column_strategy)
-def test_database::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_database_column_instantiation(instance):
+    assert isinstance(instance, database_Column)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_type_setter(instance):
+
+@given(instance=database_Column_strategy)
+def test_database_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_name_setter(instance):
+@given(instance=database_Column_strategy)
+def test_database_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=database::Table_strategy)
+@given(instance=database_Table_strategy)
 @settings(max_examples=50)
-def test_database::table_instantiation(instance):
-    assert isinstance(instance, database::Table)
-
-@given(instance=database::Table_strategy)
-def test_database::table_is_local_type(instance):
-    assert isinstance(instance.is_local, bool)
+def test_database_table_instantiation(instance):
+    assert isinstance(instance, database_Table)
 
 
-@given(instance=database::Table_strategy)
-def test_database::table_is_local_setter(instance):
+
+@given(instance=database_Table_strategy)
+def test_database_table_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=database_Table_strategy)
+def test_database_table_is_local_setter(instance):
     original = instance.is_local
     instance.is_local = original
     assert instance.is_local == original
 
-@given(instance=database::Table_strategy)
-def test_database::table_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=database::Table_strategy)
-def test_database::table_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=database::Schema_strategy)
+@given(instance=database_Schema_strategy)
 @settings(max_examples=50)
-def test_database::schema_instantiation(instance):
-    assert isinstance(instance, database::Schema)
-
-@given(instance=database::Schema_strategy)
-def test_database::schema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_database_schema_instantiation(instance):
+    assert isinstance(instance, database_Schema)
 
 
-@given(instance=database::Schema_strategy)
-def test_database::schema_name_setter(instance):
+
+@given(instance=database_Schema_strategy)
+def test_database_schema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

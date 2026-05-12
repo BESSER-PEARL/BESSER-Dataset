@@ -3,68 +3,68 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TypedPortValue,
-    ftp::FloatValue,
-    ftp::ElectricalValue,
-    ftp::VisualValue,
-    ftp::HydraulicValue,
-    ftp::SignalValue,
-    ftp::FaultTreeContext,
+    ftp_VisualValue,
+    ftp_FloatValue,
+    ftp_ElectricalValue,
+    ftp_HydraulicValue,
+    ftp_SignalValue,
+    ftp_FaultTreeContext,
     Port,
-    ftp::MechanicalPort,
-    ftp::HydraulicPort,
-    ftp::VisualPort,
-    ftp::CompositionElement,
+    ftp_HydraulicPort,
+    ftp_MechanicalPort,
+    ftp_VisualPort,
+    ftp_CompositionElement,
     Component,
-    ftp::ComposedComponent,
-    ftp::PrimitiveComponent,
+    ftp_ComposedComponent,
+    ftp_PrimitiveComponent,
     AnalogConnection,
-    ftp::MechanicalConnection,
-    ftp::HydraulicConnection,
-    ftp::ElectricalConnection,
+    ftp_HydraulicConnection,
+    ftp_MechanicalConnection,
+    ftp_ElectricalConnection,
     DigintalConnection,
-    ftp::SignalConnection,
-    ftp::SignalPort,
-    ftp::ElectricalPort,
+    ftp_SignalConnection,
+    ftp_SignalPort,
+    ftp_ElectricalPort,
     PrimitiveComponent,
-    ftp::And,
-    ftp::Xor,
-    ftp::PTransistor,
-    ftp::AnalogBattery,
-    ftp::DigitalSwitch,
-    ftp::AnalogSwitch,
-    ftp::DFlipFlop,
-    ftp::SignalConstant,
-    ftp::DigitalBattery,
-    ftp::Not,
-    ftp::Capacitor,
-    ftp::NTransistor,
-    ftp::DigitalLamp,
-    ftp::AnalogLamp,
-    ftp::Resistor,
-    ftp::TypedPortValue,
-    ftp::FTNode,
-    ftp::FaultTree,
+    ftp_AnalogLamp,
+    ftp_DigitalLamp,
+    ftp_DigitalSwitch,
+    ftp_Not,
+    ftp_AnalogSwitch,
+    ftp_SignalConstant,
+    ftp_Capacitor,
+    ftp_AnalogBattery,
+    ftp_DFlipFlop,
+    ftp_Xor,
+    ftp_PTransistor,
+    ftp_NTransistor,
+    ftp_DigitalBattery,
+    ftp_And,
+    ftp_Resistor,
+    ftp_TypedPortValue,
+    ftp_FTNode,
+    ftp_FaultTree,
     Connection,
-    ftp::AnalogConnection,
-    ftp::VisualConnection,
-    ftp::DigintalConnection,
-    ftp::Port,
+    ftp_VisualConnection,
+    ftp_AnalogConnection,
+    ftp_DigintalConnection,
+    ftp_Port,
     CompositionElement,
-    ftp::Connection,
-    ftp::PortValue,
-    ftp::Component,
-    ftp::Observation,
+    ftp_Connection,
+    ftp_PortValue,
+    ftp_Component,
+    ftp_Observation,
     FTNode,
-    ftp::Fault,
-    ftp::RootEvent,
-    ftp::AndGate,
-    ftp::OrGate,
-    VisualValues,
+    ftp_RootEvent,
+    ftp_AndGate,
+    ftp_Fault,
+    ftp_OrGate,
     SignalValues,
+    VisualValues,
 )
 
 # =============================================================================
@@ -87,101 +87,23 @@ def test_typedportvalue_constructor_args():
 
 
 
-def test_ftp::floatvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::FloatValue)
+def test_ftp_visualvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_VisualValue)
 
 
-def test_ftp::floatvalue_constructor_exists():
-    assert callable(ftp::FloatValue.__init__)
+def test_ftp_visualvalue_constructor_exists():
+    assert callable(ftp_VisualValue.__init__)
 
 
-def test_ftp::floatvalue_constructor_args():
-    sig = inspect.signature(ftp::FloatValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_ftp::floatvalue_has_value():
-    assert hasattr(ftp::FloatValue, "value")
-    descriptor = None
-    for klass in ftp::FloatValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ftp::electricalvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::ElectricalValue)
-
-
-def test_ftp::electricalvalue_constructor_exists():
-    assert callable(ftp::ElectricalValue.__init__)
-
-
-def test_ftp::electricalvalue_constructor_args():
-    sig = inspect.signature(ftp::ElectricalValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "current" in params, "Missing parameter 'current'"
-    assert "voltage" in params, "Missing parameter 'voltage'"
-    assert "anyCurrent" in params, "Missing parameter 'anyCurrent'"
-    assert "anyVoltage" in params, "Missing parameter 'anyVoltage'"
-
-def test_ftp::electricalvalue_has_current():
-    assert hasattr(ftp::ElectricalValue, "current")
-    descriptor = None
-    for klass in ftp::ElectricalValue.__mro__:
-        if "current" in klass.__dict__:
-            descriptor = klass.__dict__["current"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::electricalvalue_has_voltage():
-    assert hasattr(ftp::ElectricalValue, "voltage")
-    descriptor = None
-    for klass in ftp::ElectricalValue.__mro__:
-        if "voltage" in klass.__dict__:
-            descriptor = klass.__dict__["voltage"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::electricalvalue_has_anyCurrent():
-    assert hasattr(ftp::ElectricalValue, "anyCurrent")
-    descriptor = None
-    for klass in ftp::ElectricalValue.__mro__:
-        if "anyCurrent" in klass.__dict__:
-            descriptor = klass.__dict__["anyCurrent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::electricalvalue_has_anyVoltage():
-    assert hasattr(ftp::ElectricalValue, "anyVoltage")
-    descriptor = None
-    for klass in ftp::ElectricalValue.__mro__:
-        if "anyVoltage" in klass.__dict__:
-            descriptor = klass.__dict__["anyVoltage"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ftp::visualvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::VisualValue)
-
-
-def test_ftp::visualvalue_constructor_exists():
-    assert callable(ftp::VisualValue.__init__)
-
-
-def test_ftp::visualvalue_constructor_args():
-    sig = inspect.signature(ftp::VisualValue.__init__)
+def test_ftp_visualvalue_constructor_args():
+    sig = inspect.signature(ftp_VisualValue.__init__)
     params = list(sig.parameters.keys())
     assert "bulb" in params, "Missing parameter 'bulb'"
 
-def test_ftp::visualvalue_has_bulb():
-    assert hasattr(ftp::VisualValue, "bulb")
+def test_ftp_visualvalue_has_bulb():
+    assert hasattr(ftp_VisualValue, "bulb")
     descriptor = None
-    for klass in ftp::VisualValue.__mro__:
+    for klass in ftp_VisualValue.__mro__:
         if "bulb" in klass.__dict__:
             descriptor = klass.__dict__["bulb"]
             break
@@ -189,77 +111,155 @@ def test_ftp::visualvalue_has_bulb():
 
 
 
-def test_ftp::hydraulicvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::HydraulicValue)
+def test_ftp_floatvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_FloatValue)
 
 
-def test_ftp::hydraulicvalue_constructor_exists():
-    assert callable(ftp::HydraulicValue.__init__)
+def test_ftp_floatvalue_constructor_exists():
+    assert callable(ftp_FloatValue.__init__)
 
 
-def test_ftp::hydraulicvalue_constructor_args():
-    sig = inspect.signature(ftp::HydraulicValue.__init__)
+def test_ftp_floatvalue_constructor_args():
+    sig = inspect.signature(ftp_FloatValue.__init__)
     params = list(sig.parameters.keys())
-    assert "anyPressure" in params, "Missing parameter 'anyPressure'"
-    assert "pressure" in params, "Missing parameter 'pressure'"
-    assert "flow" in params, "Missing parameter 'flow'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_ftp_floatvalue_has_value():
+    assert hasattr(ftp_FloatValue, "value")
+    descriptor = None
+    for klass in ftp_FloatValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ftp_electricalvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_ElectricalValue)
+
+
+def test_ftp_electricalvalue_constructor_exists():
+    assert callable(ftp_ElectricalValue.__init__)
+
+
+def test_ftp_electricalvalue_constructor_args():
+    sig = inspect.signature(ftp_ElectricalValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "anyCurrent" in params, "Missing parameter 'anyCurrent'"
+    assert "anyVoltage" in params, "Missing parameter 'anyVoltage'"
+    assert "voltage" in params, "Missing parameter 'voltage'"
+    assert "current" in params, "Missing parameter 'current'"
+
+def test_ftp_electricalvalue_has_anyCurrent():
+    assert hasattr(ftp_ElectricalValue, "anyCurrent")
+    descriptor = None
+    for klass in ftp_ElectricalValue.__mro__:
+        if "anyCurrent" in klass.__dict__:
+            descriptor = klass.__dict__["anyCurrent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ftp_electricalvalue_has_anyVoltage():
+    assert hasattr(ftp_ElectricalValue, "anyVoltage")
+    descriptor = None
+    for klass in ftp_ElectricalValue.__mro__:
+        if "anyVoltage" in klass.__dict__:
+            descriptor = klass.__dict__["anyVoltage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ftp_electricalvalue_has_voltage():
+    assert hasattr(ftp_ElectricalValue, "voltage")
+    descriptor = None
+    for klass in ftp_ElectricalValue.__mro__:
+        if "voltage" in klass.__dict__:
+            descriptor = klass.__dict__["voltage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ftp_electricalvalue_has_current():
+    assert hasattr(ftp_ElectricalValue, "current")
+    descriptor = None
+    for klass in ftp_ElectricalValue.__mro__:
+        if "current" in klass.__dict__:
+            descriptor = klass.__dict__["current"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ftp_hydraulicvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_HydraulicValue)
+
+
+def test_ftp_hydraulicvalue_constructor_exists():
+    assert callable(ftp_HydraulicValue.__init__)
+
+
+def test_ftp_hydraulicvalue_constructor_args():
+    sig = inspect.signature(ftp_HydraulicValue.__init__)
+    params = list(sig.parameters.keys())
     assert "anyFlow" in params, "Missing parameter 'anyFlow'"
+    assert "pressure" in params, "Missing parameter 'pressure'"
+    assert "anyPressure" in params, "Missing parameter 'anyPressure'"
+    assert "flow" in params, "Missing parameter 'flow'"
 
-def test_ftp::hydraulicvalue_has_anyPressure():
-    assert hasattr(ftp::HydraulicValue, "anyPressure")
+def test_ftp_hydraulicvalue_has_anyFlow():
+    assert hasattr(ftp_HydraulicValue, "anyFlow")
     descriptor = None
-    for klass in ftp::HydraulicValue.__mro__:
-        if "anyPressure" in klass.__dict__:
-            descriptor = klass.__dict__["anyPressure"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::hydraulicvalue_has_pressure():
-    assert hasattr(ftp::HydraulicValue, "pressure")
-    descriptor = None
-    for klass in ftp::HydraulicValue.__mro__:
-        if "pressure" in klass.__dict__:
-            descriptor = klass.__dict__["pressure"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::hydraulicvalue_has_flow():
-    assert hasattr(ftp::HydraulicValue, "flow")
-    descriptor = None
-    for klass in ftp::HydraulicValue.__mro__:
-        if "flow" in klass.__dict__:
-            descriptor = klass.__dict__["flow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::hydraulicvalue_has_anyFlow():
-    assert hasattr(ftp::HydraulicValue, "anyFlow")
-    descriptor = None
-    for klass in ftp::HydraulicValue.__mro__:
+    for klass in ftp_HydraulicValue.__mro__:
         if "anyFlow" in klass.__dict__:
             descriptor = klass.__dict__["anyFlow"]
             break
     assert isinstance(descriptor, property)
 
+def test_ftp_hydraulicvalue_has_pressure():
+    assert hasattr(ftp_HydraulicValue, "pressure")
+    descriptor = None
+    for klass in ftp_HydraulicValue.__mro__:
+        if "pressure" in klass.__dict__:
+            descriptor = klass.__dict__["pressure"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ftp_hydraulicvalue_has_anyPressure():
+    assert hasattr(ftp_HydraulicValue, "anyPressure")
+    descriptor = None
+    for klass in ftp_HydraulicValue.__mro__:
+        if "anyPressure" in klass.__dict__:
+            descriptor = klass.__dict__["anyPressure"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ftp_hydraulicvalue_has_flow():
+    assert hasattr(ftp_HydraulicValue, "flow")
+    descriptor = None
+    for klass in ftp_HydraulicValue.__mro__:
+        if "flow" in klass.__dict__:
+            descriptor = klass.__dict__["flow"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ftp::signalvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::SignalValue)
+
+def test_ftp_signalvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_SignalValue)
 
 
-def test_ftp::signalvalue_constructor_exists():
-    assert callable(ftp::SignalValue.__init__)
+def test_ftp_signalvalue_constructor_exists():
+    assert callable(ftp_SignalValue.__init__)
 
 
-def test_ftp::signalvalue_constructor_args():
-    sig = inspect.signature(ftp::SignalValue.__init__)
+def test_ftp_signalvalue_constructor_args():
+    sig = inspect.signature(ftp_SignalValue.__init__)
     params = list(sig.parameters.keys())
     assert "signal" in params, "Missing parameter 'signal'"
 
-def test_ftp::signalvalue_has_signal():
-    assert hasattr(ftp::SignalValue, "signal")
+def test_ftp_signalvalue_has_signal():
+    assert hasattr(ftp_SignalValue, "signal")
     descriptor = None
-    for klass in ftp::SignalValue.__mro__:
+    for klass in ftp_SignalValue.__mro__:
         if "signal" in klass.__dict__:
             descriptor = klass.__dict__["signal"]
             break
@@ -267,16 +267,16 @@ def test_ftp::signalvalue_has_signal():
 
 
 
-def test_ftp::faulttreecontext_is_not_abstract():
-    assert not inspect.isabstract(ftp::FaultTreeContext)
+def test_ftp_faulttreecontext_is_not_abstract():
+    assert not inspect.isabstract(ftp_FaultTreeContext)
 
 
-def test_ftp::faulttreecontext_constructor_exists():
-    assert callable(ftp::FaultTreeContext.__init__)
+def test_ftp_faulttreecontext_constructor_exists():
+    assert callable(ftp_FaultTreeContext.__init__)
 
 
-def test_ftp::faulttreecontext_constructor_args():
-    sig = inspect.signature(ftp::FaultTreeContext.__init__)
+def test_ftp_faulttreecontext_constructor_args():
+    sig = inspect.signature(ftp_FaultTreeContext.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -295,58 +295,58 @@ def test_port_constructor_args():
 
 
 
-def test_ftp::mechanicalport_is_not_abstract():
-    assert not inspect.isabstract(ftp::MechanicalPort)
+def test_ftp_hydraulicport_is_not_abstract():
+    assert not inspect.isabstract(ftp_HydraulicPort)
 
 
-def test_ftp::mechanicalport_constructor_exists():
-    assert callable(ftp::MechanicalPort.__init__)
+def test_ftp_hydraulicport_constructor_exists():
+    assert callable(ftp_HydraulicPort.__init__)
 
 
-def test_ftp::mechanicalport_constructor_args():
-    sig = inspect.signature(ftp::MechanicalPort.__init__)
+def test_ftp_hydraulicport_constructor_args():
+    sig = inspect.signature(ftp_HydraulicPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::hydraulicport_is_not_abstract():
-    assert not inspect.isabstract(ftp::HydraulicPort)
+def test_ftp_mechanicalport_is_not_abstract():
+    assert not inspect.isabstract(ftp_MechanicalPort)
 
 
-def test_ftp::hydraulicport_constructor_exists():
-    assert callable(ftp::HydraulicPort.__init__)
+def test_ftp_mechanicalport_constructor_exists():
+    assert callable(ftp_MechanicalPort.__init__)
 
 
-def test_ftp::hydraulicport_constructor_args():
-    sig = inspect.signature(ftp::HydraulicPort.__init__)
+def test_ftp_mechanicalport_constructor_args():
+    sig = inspect.signature(ftp_MechanicalPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::visualport_is_not_abstract():
-    assert not inspect.isabstract(ftp::VisualPort)
+def test_ftp_visualport_is_not_abstract():
+    assert not inspect.isabstract(ftp_VisualPort)
 
 
-def test_ftp::visualport_constructor_exists():
-    assert callable(ftp::VisualPort.__init__)
+def test_ftp_visualport_constructor_exists():
+    assert callable(ftp_VisualPort.__init__)
 
 
-def test_ftp::visualport_constructor_args():
-    sig = inspect.signature(ftp::VisualPort.__init__)
+def test_ftp_visualport_constructor_args():
+    sig = inspect.signature(ftp_VisualPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::compositionelement_is_not_abstract():
-    assert not inspect.isabstract(ftp::CompositionElement)
+def test_ftp_compositionelement_is_not_abstract():
+    assert not inspect.isabstract(ftp_CompositionElement)
 
 
-def test_ftp::compositionelement_constructor_exists():
-    assert callable(ftp::CompositionElement.__init__)
+def test_ftp_compositionelement_constructor_exists():
+    assert callable(ftp_CompositionElement.__init__)
 
 
-def test_ftp::compositionelement_constructor_args():
-    sig = inspect.signature(ftp::CompositionElement.__init__)
+def test_ftp_compositionelement_constructor_args():
+    sig = inspect.signature(ftp_CompositionElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -365,30 +365,30 @@ def test_component_constructor_args():
 
 
 
-def test_ftp::composedcomponent_is_not_abstract():
-    assert not inspect.isabstract(ftp::ComposedComponent)
+def test_ftp_composedcomponent_is_not_abstract():
+    assert not inspect.isabstract(ftp_ComposedComponent)
 
 
-def test_ftp::composedcomponent_constructor_exists():
-    assert callable(ftp::ComposedComponent.__init__)
+def test_ftp_composedcomponent_constructor_exists():
+    assert callable(ftp_ComposedComponent.__init__)
 
 
-def test_ftp::composedcomponent_constructor_args():
-    sig = inspect.signature(ftp::ComposedComponent.__init__)
+def test_ftp_composedcomponent_constructor_args():
+    sig = inspect.signature(ftp_ComposedComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::primitivecomponent_is_not_abstract():
-    assert not inspect.isabstract(ftp::PrimitiveComponent)
+def test_ftp_primitivecomponent_is_not_abstract():
+    assert not inspect.isabstract(ftp_PrimitiveComponent)
 
 
-def test_ftp::primitivecomponent_constructor_exists():
-    assert callable(ftp::PrimitiveComponent.__init__)
+def test_ftp_primitivecomponent_constructor_exists():
+    assert callable(ftp_PrimitiveComponent.__init__)
 
 
-def test_ftp::primitivecomponent_constructor_args():
-    sig = inspect.signature(ftp::PrimitiveComponent.__init__)
+def test_ftp_primitivecomponent_constructor_args():
+    sig = inspect.signature(ftp_PrimitiveComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -407,44 +407,44 @@ def test_analogconnection_constructor_args():
 
 
 
-def test_ftp::mechanicalconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::MechanicalConnection)
+def test_ftp_hydraulicconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_HydraulicConnection)
 
 
-def test_ftp::mechanicalconnection_constructor_exists():
-    assert callable(ftp::MechanicalConnection.__init__)
+def test_ftp_hydraulicconnection_constructor_exists():
+    assert callable(ftp_HydraulicConnection.__init__)
 
 
-def test_ftp::mechanicalconnection_constructor_args():
-    sig = inspect.signature(ftp::MechanicalConnection.__init__)
+def test_ftp_hydraulicconnection_constructor_args():
+    sig = inspect.signature(ftp_HydraulicConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::hydraulicconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::HydraulicConnection)
+def test_ftp_mechanicalconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_MechanicalConnection)
 
 
-def test_ftp::hydraulicconnection_constructor_exists():
-    assert callable(ftp::HydraulicConnection.__init__)
+def test_ftp_mechanicalconnection_constructor_exists():
+    assert callable(ftp_MechanicalConnection.__init__)
 
 
-def test_ftp::hydraulicconnection_constructor_args():
-    sig = inspect.signature(ftp::HydraulicConnection.__init__)
+def test_ftp_mechanicalconnection_constructor_args():
+    sig = inspect.signature(ftp_MechanicalConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::electricalconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::ElectricalConnection)
+def test_ftp_electricalconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_ElectricalConnection)
 
 
-def test_ftp::electricalconnection_constructor_exists():
-    assert callable(ftp::ElectricalConnection.__init__)
+def test_ftp_electricalconnection_constructor_exists():
+    assert callable(ftp_ElectricalConnection.__init__)
 
 
-def test_ftp::electricalconnection_constructor_args():
-    sig = inspect.signature(ftp::ElectricalConnection.__init__)
+def test_ftp_electricalconnection_constructor_args():
+    sig = inspect.signature(ftp_ElectricalConnection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -463,44 +463,44 @@ def test_digintalconnection_constructor_args():
 
 
 
-def test_ftp::signalconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::SignalConnection)
+def test_ftp_signalconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_SignalConnection)
 
 
-def test_ftp::signalconnection_constructor_exists():
-    assert callable(ftp::SignalConnection.__init__)
+def test_ftp_signalconnection_constructor_exists():
+    assert callable(ftp_SignalConnection.__init__)
 
 
-def test_ftp::signalconnection_constructor_args():
-    sig = inspect.signature(ftp::SignalConnection.__init__)
+def test_ftp_signalconnection_constructor_args():
+    sig = inspect.signature(ftp_SignalConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::signalport_is_not_abstract():
-    assert not inspect.isabstract(ftp::SignalPort)
+def test_ftp_signalport_is_not_abstract():
+    assert not inspect.isabstract(ftp_SignalPort)
 
 
-def test_ftp::signalport_constructor_exists():
-    assert callable(ftp::SignalPort.__init__)
+def test_ftp_signalport_constructor_exists():
+    assert callable(ftp_SignalPort.__init__)
 
 
-def test_ftp::signalport_constructor_args():
-    sig = inspect.signature(ftp::SignalPort.__init__)
+def test_ftp_signalport_constructor_args():
+    sig = inspect.signature(ftp_SignalPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::electricalport_is_not_abstract():
-    assert not inspect.isabstract(ftp::ElectricalPort)
+def test_ftp_electricalport_is_not_abstract():
+    assert not inspect.isabstract(ftp_ElectricalPort)
 
 
-def test_ftp::electricalport_constructor_exists():
-    assert callable(ftp::ElectricalPort.__init__)
+def test_ftp_electricalport_constructor_exists():
+    assert callable(ftp_ElectricalPort.__init__)
 
 
-def test_ftp::electricalport_constructor_args():
-    sig = inspect.signature(ftp::ElectricalPort.__init__)
+def test_ftp_electricalport_constructor_args():
+    sig = inspect.signature(ftp_ElectricalPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -519,131 +519,93 @@ def test_primitivecomponent_constructor_args():
 
 
 
-def test_ftp::and_is_not_abstract():
-    assert not inspect.isabstract(ftp::And)
+def test_ftp_analoglamp_is_not_abstract():
+    assert not inspect.isabstract(ftp_AnalogLamp)
 
 
-def test_ftp::and_constructor_exists():
-    assert callable(ftp::And.__init__)
+def test_ftp_analoglamp_constructor_exists():
+    assert callable(ftp_AnalogLamp.__init__)
 
 
-def test_ftp::and_constructor_args():
-    sig = inspect.signature(ftp::And.__init__)
+def test_ftp_analoglamp_constructor_args():
+    sig = inspect.signature(ftp_AnalogLamp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::xor_is_not_abstract():
-    assert not inspect.isabstract(ftp::Xor)
+def test_ftp_digitallamp_is_not_abstract():
+    assert not inspect.isabstract(ftp_DigitalLamp)
 
 
-def test_ftp::xor_constructor_exists():
-    assert callable(ftp::Xor.__init__)
+def test_ftp_digitallamp_constructor_exists():
+    assert callable(ftp_DigitalLamp.__init__)
 
 
-def test_ftp::xor_constructor_args():
-    sig = inspect.signature(ftp::Xor.__init__)
+def test_ftp_digitallamp_constructor_args():
+    sig = inspect.signature(ftp_DigitalLamp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::ptransistor_is_not_abstract():
-    assert not inspect.isabstract(ftp::PTransistor)
+def test_ftp_digitalswitch_is_not_abstract():
+    assert not inspect.isabstract(ftp_DigitalSwitch)
 
 
-def test_ftp::ptransistor_constructor_exists():
-    assert callable(ftp::PTransistor.__init__)
+def test_ftp_digitalswitch_constructor_exists():
+    assert callable(ftp_DigitalSwitch.__init__)
 
 
-def test_ftp::ptransistor_constructor_args():
-    sig = inspect.signature(ftp::PTransistor.__init__)
+def test_ftp_digitalswitch_constructor_args():
+    sig = inspect.signature(ftp_DigitalSwitch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::analogbattery_is_not_abstract():
-    assert not inspect.isabstract(ftp::AnalogBattery)
+def test_ftp_not_is_not_abstract():
+    assert not inspect.isabstract(ftp_Not)
 
 
-def test_ftp::analogbattery_constructor_exists():
-    assert callable(ftp::AnalogBattery.__init__)
+def test_ftp_not_constructor_exists():
+    assert callable(ftp_Not.__init__)
 
 
-def test_ftp::analogbattery_constructor_args():
-    sig = inspect.signature(ftp::AnalogBattery.__init__)
-    params = list(sig.parameters.keys())
-    assert "voltage" in params, "Missing parameter 'voltage'"
-
-def test_ftp::analogbattery_has_voltage():
-    assert hasattr(ftp::AnalogBattery, "voltage")
-    descriptor = None
-    for klass in ftp::AnalogBattery.__mro__:
-        if "voltage" in klass.__dict__:
-            descriptor = klass.__dict__["voltage"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ftp::digitalswitch_is_not_abstract():
-    assert not inspect.isabstract(ftp::DigitalSwitch)
-
-
-def test_ftp::digitalswitch_constructor_exists():
-    assert callable(ftp::DigitalSwitch.__init__)
-
-
-def test_ftp::digitalswitch_constructor_args():
-    sig = inspect.signature(ftp::DigitalSwitch.__init__)
+def test_ftp_not_constructor_args():
+    sig = inspect.signature(ftp_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::analogswitch_is_not_abstract():
-    assert not inspect.isabstract(ftp::AnalogSwitch)
+def test_ftp_analogswitch_is_not_abstract():
+    assert not inspect.isabstract(ftp_AnalogSwitch)
 
 
-def test_ftp::analogswitch_constructor_exists():
-    assert callable(ftp::AnalogSwitch.__init__)
+def test_ftp_analogswitch_constructor_exists():
+    assert callable(ftp_AnalogSwitch.__init__)
 
 
-def test_ftp::analogswitch_constructor_args():
-    sig = inspect.signature(ftp::AnalogSwitch.__init__)
+def test_ftp_analogswitch_constructor_args():
+    sig = inspect.signature(ftp_AnalogSwitch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::dflipflop_is_not_abstract():
-    assert not inspect.isabstract(ftp::DFlipFlop)
+def test_ftp_signalconstant_is_not_abstract():
+    assert not inspect.isabstract(ftp_SignalConstant)
 
 
-def test_ftp::dflipflop_constructor_exists():
-    assert callable(ftp::DFlipFlop.__init__)
+def test_ftp_signalconstant_constructor_exists():
+    assert callable(ftp_SignalConstant.__init__)
 
 
-def test_ftp::dflipflop_constructor_args():
-    sig = inspect.signature(ftp::DFlipFlop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ftp::signalconstant_is_not_abstract():
-    assert not inspect.isabstract(ftp::SignalConstant)
-
-
-def test_ftp::signalconstant_constructor_exists():
-    assert callable(ftp::SignalConstant.__init__)
-
-
-def test_ftp::signalconstant_constructor_args():
-    sig = inspect.signature(ftp::SignalConstant.__init__)
+def test_ftp_signalconstant_constructor_args():
+    sig = inspect.signature(ftp_SignalConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ftp::signalconstant_has_value():
-    assert hasattr(ftp::SignalConstant, "value")
+def test_ftp_signalconstant_has_value():
+    assert hasattr(ftp_SignalConstant, "value")
     descriptor = None
-    for klass in ftp::SignalConstant.__mro__:
+    for klass in ftp_SignalConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -651,107 +613,145 @@ def test_ftp::signalconstant_has_value():
 
 
 
-def test_ftp::digitalbattery_is_not_abstract():
-    assert not inspect.isabstract(ftp::DigitalBattery)
+def test_ftp_capacitor_is_not_abstract():
+    assert not inspect.isabstract(ftp_Capacitor)
 
 
-def test_ftp::digitalbattery_constructor_exists():
-    assert callable(ftp::DigitalBattery.__init__)
+def test_ftp_capacitor_constructor_exists():
+    assert callable(ftp_Capacitor.__init__)
 
 
-def test_ftp::digitalbattery_constructor_args():
-    sig = inspect.signature(ftp::DigitalBattery.__init__)
+def test_ftp_capacitor_constructor_args():
+    sig = inspect.signature(ftp_Capacitor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::not_is_not_abstract():
-    assert not inspect.isabstract(ftp::Not)
+def test_ftp_analogbattery_is_not_abstract():
+    assert not inspect.isabstract(ftp_AnalogBattery)
 
 
-def test_ftp::not_constructor_exists():
-    assert callable(ftp::Not.__init__)
+def test_ftp_analogbattery_constructor_exists():
+    assert callable(ftp_AnalogBattery.__init__)
 
 
-def test_ftp::not_constructor_args():
-    sig = inspect.signature(ftp::Not.__init__)
+def test_ftp_analogbattery_constructor_args():
+    sig = inspect.signature(ftp_AnalogBattery.__init__)
+    params = list(sig.parameters.keys())
+    assert "voltage" in params, "Missing parameter 'voltage'"
+
+def test_ftp_analogbattery_has_voltage():
+    assert hasattr(ftp_AnalogBattery, "voltage")
+    descriptor = None
+    for klass in ftp_AnalogBattery.__mro__:
+        if "voltage" in klass.__dict__:
+            descriptor = klass.__dict__["voltage"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ftp_dflipflop_is_not_abstract():
+    assert not inspect.isabstract(ftp_DFlipFlop)
+
+
+def test_ftp_dflipflop_constructor_exists():
+    assert callable(ftp_DFlipFlop.__init__)
+
+
+def test_ftp_dflipflop_constructor_args():
+    sig = inspect.signature(ftp_DFlipFlop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::capacitor_is_not_abstract():
-    assert not inspect.isabstract(ftp::Capacitor)
+def test_ftp_xor_is_not_abstract():
+    assert not inspect.isabstract(ftp_Xor)
 
 
-def test_ftp::capacitor_constructor_exists():
-    assert callable(ftp::Capacitor.__init__)
+def test_ftp_xor_constructor_exists():
+    assert callable(ftp_Xor.__init__)
 
 
-def test_ftp::capacitor_constructor_args():
-    sig = inspect.signature(ftp::Capacitor.__init__)
+def test_ftp_xor_constructor_args():
+    sig = inspect.signature(ftp_Xor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::ntransistor_is_not_abstract():
-    assert not inspect.isabstract(ftp::NTransistor)
+def test_ftp_ptransistor_is_not_abstract():
+    assert not inspect.isabstract(ftp_PTransistor)
 
 
-def test_ftp::ntransistor_constructor_exists():
-    assert callable(ftp::NTransistor.__init__)
+def test_ftp_ptransistor_constructor_exists():
+    assert callable(ftp_PTransistor.__init__)
 
 
-def test_ftp::ntransistor_constructor_args():
-    sig = inspect.signature(ftp::NTransistor.__init__)
+def test_ftp_ptransistor_constructor_args():
+    sig = inspect.signature(ftp_PTransistor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::digitallamp_is_not_abstract():
-    assert not inspect.isabstract(ftp::DigitalLamp)
+def test_ftp_ntransistor_is_not_abstract():
+    assert not inspect.isabstract(ftp_NTransistor)
 
 
-def test_ftp::digitallamp_constructor_exists():
-    assert callable(ftp::DigitalLamp.__init__)
+def test_ftp_ntransistor_constructor_exists():
+    assert callable(ftp_NTransistor.__init__)
 
 
-def test_ftp::digitallamp_constructor_args():
-    sig = inspect.signature(ftp::DigitalLamp.__init__)
+def test_ftp_ntransistor_constructor_args():
+    sig = inspect.signature(ftp_NTransistor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::analoglamp_is_not_abstract():
-    assert not inspect.isabstract(ftp::AnalogLamp)
+def test_ftp_digitalbattery_is_not_abstract():
+    assert not inspect.isabstract(ftp_DigitalBattery)
 
 
-def test_ftp::analoglamp_constructor_exists():
-    assert callable(ftp::AnalogLamp.__init__)
+def test_ftp_digitalbattery_constructor_exists():
+    assert callable(ftp_DigitalBattery.__init__)
 
 
-def test_ftp::analoglamp_constructor_args():
-    sig = inspect.signature(ftp::AnalogLamp.__init__)
+def test_ftp_digitalbattery_constructor_args():
+    sig = inspect.signature(ftp_DigitalBattery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::resistor_is_not_abstract():
-    assert not inspect.isabstract(ftp::Resistor)
+def test_ftp_and_is_not_abstract():
+    assert not inspect.isabstract(ftp_And)
 
 
-def test_ftp::resistor_constructor_exists():
-    assert callable(ftp::Resistor.__init__)
+def test_ftp_and_constructor_exists():
+    assert callable(ftp_And.__init__)
 
 
-def test_ftp::resistor_constructor_args():
-    sig = inspect.signature(ftp::Resistor.__init__)
+def test_ftp_and_constructor_args():
+    sig = inspect.signature(ftp_And.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ftp_resistor_is_not_abstract():
+    assert not inspect.isabstract(ftp_Resistor)
+
+
+def test_ftp_resistor_constructor_exists():
+    assert callable(ftp_Resistor.__init__)
+
+
+def test_ftp_resistor_constructor_args():
+    sig = inspect.signature(ftp_Resistor.__init__)
     params = list(sig.parameters.keys())
     assert "resistance" in params, "Missing parameter 'resistance'"
 
-def test_ftp::resistor_has_resistance():
-    assert hasattr(ftp::Resistor, "resistance")
+def test_ftp_resistor_has_resistance():
+    assert hasattr(ftp_Resistor, "resistance")
     descriptor = None
-    for klass in ftp::Resistor.__mro__:
+    for klass in ftp_Resistor.__mro__:
         if "resistance" in klass.__dict__:
             descriptor = klass.__dict__["resistance"]
             break
@@ -759,44 +759,44 @@ def test_ftp::resistor_has_resistance():
 
 
 
-def test_ftp::typedportvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::TypedPortValue)
+def test_ftp_typedportvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_TypedPortValue)
 
 
-def test_ftp::typedportvalue_constructor_exists():
-    assert callable(ftp::TypedPortValue.__init__)
+def test_ftp_typedportvalue_constructor_exists():
+    assert callable(ftp_TypedPortValue.__init__)
 
 
-def test_ftp::typedportvalue_constructor_args():
-    sig = inspect.signature(ftp::TypedPortValue.__init__)
+def test_ftp_typedportvalue_constructor_args():
+    sig = inspect.signature(ftp_TypedPortValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::ftnode_is_not_abstract():
-    assert not inspect.isabstract(ftp::FTNode)
+def test_ftp_ftnode_is_not_abstract():
+    assert not inspect.isabstract(ftp_FTNode)
 
 
-def test_ftp::ftnode_constructor_exists():
-    assert callable(ftp::FTNode.__init__)
+def test_ftp_ftnode_constructor_exists():
+    assert callable(ftp_FTNode.__init__)
 
 
-def test_ftp::ftnode_constructor_args():
-    sig = inspect.signature(ftp::FTNode.__init__)
+def test_ftp_ftnode_constructor_args():
+    sig = inspect.signature(ftp_FTNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::faulttree_is_not_abstract():
-    assert not inspect.isabstract(ftp::FaultTree)
+def test_ftp_faulttree_is_not_abstract():
+    assert not inspect.isabstract(ftp_FaultTree)
 
 
-def test_ftp::faulttree_constructor_exists():
-    assert callable(ftp::FaultTree.__init__)
+def test_ftp_faulttree_constructor_exists():
+    assert callable(ftp_FaultTree.__init__)
 
 
-def test_ftp::faulttree_constructor_args():
-    sig = inspect.signature(ftp::FaultTree.__init__)
+def test_ftp_faulttree_constructor_args():
+    sig = inspect.signature(ftp_FaultTree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -815,77 +815,77 @@ def test_connection_constructor_args():
 
 
 
-def test_ftp::analogconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::AnalogConnection)
+def test_ftp_visualconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_VisualConnection)
 
 
-def test_ftp::analogconnection_constructor_exists():
-    assert callable(ftp::AnalogConnection.__init__)
+def test_ftp_visualconnection_constructor_exists():
+    assert callable(ftp_VisualConnection.__init__)
 
 
-def test_ftp::analogconnection_constructor_args():
-    sig = inspect.signature(ftp::AnalogConnection.__init__)
+def test_ftp_visualconnection_constructor_args():
+    sig = inspect.signature(ftp_VisualConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::visualconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::VisualConnection)
+def test_ftp_analogconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_AnalogConnection)
 
 
-def test_ftp::visualconnection_constructor_exists():
-    assert callable(ftp::VisualConnection.__init__)
+def test_ftp_analogconnection_constructor_exists():
+    assert callable(ftp_AnalogConnection.__init__)
 
 
-def test_ftp::visualconnection_constructor_args():
-    sig = inspect.signature(ftp::VisualConnection.__init__)
+def test_ftp_analogconnection_constructor_args():
+    sig = inspect.signature(ftp_AnalogConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::digintalconnection_is_not_abstract():
-    assert not inspect.isabstract(ftp::DigintalConnection)
+def test_ftp_digintalconnection_is_not_abstract():
+    assert not inspect.isabstract(ftp_DigintalConnection)
 
 
-def test_ftp::digintalconnection_constructor_exists():
-    assert callable(ftp::DigintalConnection.__init__)
+def test_ftp_digintalconnection_constructor_exists():
+    assert callable(ftp_DigintalConnection.__init__)
 
 
-def test_ftp::digintalconnection_constructor_args():
-    sig = inspect.signature(ftp::DigintalConnection.__init__)
+def test_ftp_digintalconnection_constructor_args():
+    sig = inspect.signature(ftp_DigintalConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::port_is_not_abstract():
-    assert not inspect.isabstract(ftp::Port)
+def test_ftp_port_is_not_abstract():
+    assert not inspect.isabstract(ftp_Port)
 
 
-def test_ftp::port_constructor_exists():
-    assert callable(ftp::Port.__init__)
+def test_ftp_port_constructor_exists():
+    assert callable(ftp_Port.__init__)
 
 
-def test_ftp::port_constructor_args():
-    sig = inspect.signature(ftp::Port.__init__)
+def test_ftp_port_constructor_args():
+    sig = inspect.signature(ftp_Port.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_ftp::port_has_type():
-    assert hasattr(ftp::Port, "type")
+def test_ftp_port_has_name():
+    assert hasattr(ftp_Port, "name")
     descriptor = None
-    for klass in ftp::Port.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in ftp_Port.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ftp::port_has_name():
-    assert hasattr(ftp::Port, "name")
+def test_ftp_port_has_type():
+    assert hasattr(ftp_Port, "type")
     descriptor = None
-    for klass in ftp::Port.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in ftp_Port.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -905,95 +905,95 @@ def test_compositionelement_constructor_args():
 
 
 
-def test_ftp::connection_is_not_abstract():
-    assert not inspect.isabstract(ftp::Connection)
+def test_ftp_connection_is_not_abstract():
+    assert not inspect.isabstract(ftp_Connection)
 
 
-def test_ftp::connection_constructor_exists():
-    assert callable(ftp::Connection.__init__)
+def test_ftp_connection_constructor_exists():
+    assert callable(ftp_Connection.__init__)
 
 
-def test_ftp::connection_constructor_args():
-    sig = inspect.signature(ftp::Connection.__init__)
+def test_ftp_connection_constructor_args():
+    sig = inspect.signature(ftp_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::portvalue_is_not_abstract():
-    assert not inspect.isabstract(ftp::PortValue)
+def test_ftp_portvalue_is_not_abstract():
+    assert not inspect.isabstract(ftp_PortValue)
 
 
-def test_ftp::portvalue_constructor_exists():
-    assert callable(ftp::PortValue.__init__)
+def test_ftp_portvalue_constructor_exists():
+    assert callable(ftp_PortValue.__init__)
 
 
-def test_ftp::portvalue_constructor_args():
-    sig = inspect.signature(ftp::PortValue.__init__)
+def test_ftp_portvalue_constructor_args():
+    sig = inspect.signature(ftp_PortValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::component_is_not_abstract():
-    assert not inspect.isabstract(ftp::Component)
+def test_ftp_component_is_not_abstract():
+    assert not inspect.isabstract(ftp_Component)
 
 
-def test_ftp::component_constructor_exists():
-    assert callable(ftp::Component.__init__)
+def test_ftp_component_constructor_exists():
+    assert callable(ftp_Component.__init__)
 
 
-def test_ftp::component_constructor_args():
-    sig = inspect.signature(ftp::Component.__init__)
+def test_ftp_component_constructor_args():
+    sig = inspect.signature(ftp_Component.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_ftp::component_has_name():
-    assert hasattr(ftp::Component, "name")
+def test_ftp_component_has_type():
+    assert hasattr(ftp_Component, "type")
     descriptor = None
-    for klass in ftp::Component.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ftp::component_has_type():
-    assert hasattr(ftp::Component, "type")
-    descriptor = None
-    for klass in ftp::Component.__mro__:
+    for klass in ftp_Component.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ftp::observation_is_not_abstract():
-    assert not inspect.isabstract(ftp::Observation)
-
-
-def test_ftp::observation_constructor_exists():
-    assert callable(ftp::Observation.__init__)
-
-
-def test_ftp::observation_constructor_args():
-    sig = inspect.signature(ftp::Observation.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "faultLimit" in params, "Missing parameter 'faultLimit'"
-
-def test_ftp::observation_has_name():
-    assert hasattr(ftp::Observation, "name")
+def test_ftp_component_has_name():
+    assert hasattr(ftp_Component, "name")
     descriptor = None
-    for klass in ftp::Observation.__mro__:
+    for klass in ftp_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ftp::observation_has_faultLimit():
-    assert hasattr(ftp::Observation, "faultLimit")
+
+
+def test_ftp_observation_is_not_abstract():
+    assert not inspect.isabstract(ftp_Observation)
+
+
+def test_ftp_observation_constructor_exists():
+    assert callable(ftp_Observation.__init__)
+
+
+def test_ftp_observation_constructor_args():
+    sig = inspect.signature(ftp_Observation.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "faultLimit" in params, "Missing parameter 'faultLimit'"
+
+def test_ftp_observation_has_name():
+    assert hasattr(ftp_Observation, "name")
     descriptor = None
-    for klass in ftp::Observation.__mro__:
+    for klass in ftp_Observation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ftp_observation_has_faultLimit():
+    assert hasattr(ftp_Observation, "faultLimit")
+    descriptor = None
+    for klass in ftp_Observation.__mro__:
         if "faultLimit" in klass.__dict__:
             descriptor = klass.__dict__["faultLimit"]
             break
@@ -1015,47 +1015,23 @@ def test_ftnode_constructor_args():
 
 
 
-def test_ftp::fault_is_not_abstract():
-    assert not inspect.isabstract(ftp::Fault)
+def test_ftp_rootevent_is_not_abstract():
+    assert not inspect.isabstract(ftp_RootEvent)
 
 
-def test_ftp::fault_constructor_exists():
-    assert callable(ftp::Fault.__init__)
+def test_ftp_rootevent_constructor_exists():
+    assert callable(ftp_RootEvent.__init__)
 
 
-def test_ftp::fault_constructor_args():
-    sig = inspect.signature(ftp::Fault.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_ftp::fault_has_description():
-    assert hasattr(ftp::Fault, "description")
-    descriptor = None
-    for klass in ftp::Fault.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ftp::rootevent_is_not_abstract():
-    assert not inspect.isabstract(ftp::RootEvent)
-
-
-def test_ftp::rootevent_constructor_exists():
-    assert callable(ftp::RootEvent.__init__)
-
-
-def test_ftp::rootevent_constructor_args():
-    sig = inspect.signature(ftp::RootEvent.__init__)
+def test_ftp_rootevent_constructor_args():
+    sig = inspect.signature(ftp_RootEvent.__init__)
     params = list(sig.parameters.keys())
     assert "observation" in params, "Missing parameter 'observation'"
 
-def test_ftp::rootevent_has_observation():
-    assert hasattr(ftp::RootEvent, "observation")
+def test_ftp_rootevent_has_observation():
+    assert hasattr(ftp_RootEvent, "observation")
     descriptor = None
-    for klass in ftp::RootEvent.__mro__:
+    for klass in ftp_RootEvent.__mro__:
         if "observation" in klass.__dict__:
             descriptor = klass.__dict__["observation"]
             break
@@ -1063,31 +1039,71 @@ def test_ftp::rootevent_has_observation():
 
 
 
-def test_ftp::andgate_is_not_abstract():
-    assert not inspect.isabstract(ftp::AndGate)
+def test_ftp_andgate_is_not_abstract():
+    assert not inspect.isabstract(ftp_AndGate)
 
 
-def test_ftp::andgate_constructor_exists():
-    assert callable(ftp::AndGate.__init__)
+def test_ftp_andgate_constructor_exists():
+    assert callable(ftp_AndGate.__init__)
 
 
-def test_ftp::andgate_constructor_args():
-    sig = inspect.signature(ftp::AndGate.__init__)
+def test_ftp_andgate_constructor_args():
+    sig = inspect.signature(ftp_AndGate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ftp::orgate_is_not_abstract():
-    assert not inspect.isabstract(ftp::OrGate)
+def test_ftp_fault_is_not_abstract():
+    assert not inspect.isabstract(ftp_Fault)
 
 
-def test_ftp::orgate_constructor_exists():
-    assert callable(ftp::OrGate.__init__)
+def test_ftp_fault_constructor_exists():
+    assert callable(ftp_Fault.__init__)
 
 
-def test_ftp::orgate_constructor_args():
-    sig = inspect.signature(ftp::OrGate.__init__)
+def test_ftp_fault_constructor_args():
+    sig = inspect.signature(ftp_Fault.__init__)
     params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_ftp_fault_has_description():
+    assert hasattr(ftp_Fault, "description")
+    descriptor = None
+    for klass in ftp_Fault.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ftp_orgate_is_not_abstract():
+    assert not inspect.isabstract(ftp_OrGate)
+
+
+def test_ftp_orgate_constructor_exists():
+    assert callable(ftp_OrGate.__init__)
+
+
+def test_ftp_orgate_constructor_args():
+    sig = inspect.signature(ftp_OrGate.__init__)
+    params = list(sig.parameters.keys())
+
+def test_signalvalues_exists():
+    # Check that the Enumeration exists
+    assert SignalValues is not None
+
+def test_signalvalues_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SignalValues]
+    expected_literals = [
+        "any",
+        "on",
+        "off",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SignalValues"
 
 def test_visualvalues_exists():
     # Check that the Enumeration exists
@@ -1105,22 +1121,6 @@ def test_visualvalues_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VisualValues"
 
-def test_signalvalues_exists():
-    # Check that the Enumeration exists
-    assert SignalValues is not None
-
-def test_signalvalues_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SignalValues]
-    expected_literals = [
-        "on",
-        "off",
-        "any",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SignalValues"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1136,194 +1136,194 @@ safe_text = st.text(
 TypedPortValue_strategy = st.builds(
     TypedPortValue,
 )
-ftp::FloatValue_strategy = st.builds(
-    ftp::FloatValue,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-ftp::ElectricalValue_strategy = st.builds(
-    ftp::ElectricalValue,
-    current=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    voltage=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    anyCurrent=
-        st.booleans(),
-    anyVoltage=
-        st.booleans()
-)
-ftp::VisualValue_strategy = st.builds(
-    ftp::VisualValue,
+ftp_VisualValue_strategy = st.builds(
+    ftp_VisualValue,
     bulb=
         safe_text
 )
-ftp::HydraulicValue_strategy = st.builds(
-    ftp::HydraulicValue,
-    anyPressure=
+ftp_FloatValue_strategy = st.builds(
+    ftp_FloatValue,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+ftp_ElectricalValue_strategy = st.builds(
+    ftp_ElectricalValue,
+    anyCurrent=
+        st.booleans(),
+    anyVoltage=
+        st.booleans(),
+    voltage=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    current=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+ftp_HydraulicValue_strategy = st.builds(
+    ftp_HydraulicValue,
+    anyFlow=
         st.booleans(),
     pressure=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    anyPressure=
+        st.booleans(),
     flow=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    anyFlow=
-        st.booleans()
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ftp::SignalValue_strategy = st.builds(
-    ftp::SignalValue,
+ftp_SignalValue_strategy = st.builds(
+    ftp_SignalValue,
     signal=
         safe_text
 )
-ftp::FaultTreeContext_strategy = st.builds(
-    ftp::FaultTreeContext,
+ftp_FaultTreeContext_strategy = st.builds(
+    ftp_FaultTreeContext,
 )
 Port_strategy = st.builds(
     Port,
 )
-ftp::MechanicalPort_strategy = st.builds(
-    ftp::MechanicalPort,
+ftp_HydraulicPort_strategy = st.builds(
+    ftp_HydraulicPort,
 )
-ftp::HydraulicPort_strategy = st.builds(
-    ftp::HydraulicPort,
+ftp_MechanicalPort_strategy = st.builds(
+    ftp_MechanicalPort,
 )
-ftp::VisualPort_strategy = st.builds(
-    ftp::VisualPort,
+ftp_VisualPort_strategy = st.builds(
+    ftp_VisualPort,
 )
-ftp::CompositionElement_strategy = st.builds(
-    ftp::CompositionElement,
+ftp_CompositionElement_strategy = st.builds(
+    ftp_CompositionElement,
 )
 Component_strategy = st.builds(
     Component,
 )
-ftp::ComposedComponent_strategy = st.builds(
-    ftp::ComposedComponent,
+ftp_ComposedComponent_strategy = st.builds(
+    ftp_ComposedComponent,
 )
-ftp::PrimitiveComponent_strategy = st.builds(
-    ftp::PrimitiveComponent,
+ftp_PrimitiveComponent_strategy = st.builds(
+    ftp_PrimitiveComponent,
 )
 AnalogConnection_strategy = st.builds(
     AnalogConnection,
 )
-ftp::MechanicalConnection_strategy = st.builds(
-    ftp::MechanicalConnection,
+ftp_HydraulicConnection_strategy = st.builds(
+    ftp_HydraulicConnection,
 )
-ftp::HydraulicConnection_strategy = st.builds(
-    ftp::HydraulicConnection,
+ftp_MechanicalConnection_strategy = st.builds(
+    ftp_MechanicalConnection,
 )
-ftp::ElectricalConnection_strategy = st.builds(
-    ftp::ElectricalConnection,
+ftp_ElectricalConnection_strategy = st.builds(
+    ftp_ElectricalConnection,
 )
 DigintalConnection_strategy = st.builds(
     DigintalConnection,
 )
-ftp::SignalConnection_strategy = st.builds(
-    ftp::SignalConnection,
+ftp_SignalConnection_strategy = st.builds(
+    ftp_SignalConnection,
 )
-ftp::SignalPort_strategy = st.builds(
-    ftp::SignalPort,
+ftp_SignalPort_strategy = st.builds(
+    ftp_SignalPort,
 )
-ftp::ElectricalPort_strategy = st.builds(
-    ftp::ElectricalPort,
+ftp_ElectricalPort_strategy = st.builds(
+    ftp_ElectricalPort,
 )
 PrimitiveComponent_strategy = st.builds(
     PrimitiveComponent,
 )
-ftp::And_strategy = st.builds(
-    ftp::And,
+ftp_AnalogLamp_strategy = st.builds(
+    ftp_AnalogLamp,
 )
-ftp::Xor_strategy = st.builds(
-    ftp::Xor,
+ftp_DigitalLamp_strategy = st.builds(
+    ftp_DigitalLamp,
 )
-ftp::PTransistor_strategy = st.builds(
-    ftp::PTransistor,
+ftp_DigitalSwitch_strategy = st.builds(
+    ftp_DigitalSwitch,
 )
-ftp::AnalogBattery_strategy = st.builds(
-    ftp::AnalogBattery,
-    voltage=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+ftp_Not_strategy = st.builds(
+    ftp_Not,
 )
-ftp::DigitalSwitch_strategy = st.builds(
-    ftp::DigitalSwitch,
+ftp_AnalogSwitch_strategy = st.builds(
+    ftp_AnalogSwitch,
 )
-ftp::AnalogSwitch_strategy = st.builds(
-    ftp::AnalogSwitch,
-)
-ftp::DFlipFlop_strategy = st.builds(
-    ftp::DFlipFlop,
-)
-ftp::SignalConstant_strategy = st.builds(
-    ftp::SignalConstant,
+ftp_SignalConstant_strategy = st.builds(
+    ftp_SignalConstant,
     value=
         safe_text
 )
-ftp::DigitalBattery_strategy = st.builds(
-    ftp::DigitalBattery,
+ftp_Capacitor_strategy = st.builds(
+    ftp_Capacitor,
 )
-ftp::Not_strategy = st.builds(
-    ftp::Not,
+ftp_AnalogBattery_strategy = st.builds(
+    ftp_AnalogBattery,
+    voltage=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ftp::Capacitor_strategy = st.builds(
-    ftp::Capacitor,
+ftp_DFlipFlop_strategy = st.builds(
+    ftp_DFlipFlop,
 )
-ftp::NTransistor_strategy = st.builds(
-    ftp::NTransistor,
+ftp_Xor_strategy = st.builds(
+    ftp_Xor,
 )
-ftp::DigitalLamp_strategy = st.builds(
-    ftp::DigitalLamp,
+ftp_PTransistor_strategy = st.builds(
+    ftp_PTransistor,
 )
-ftp::AnalogLamp_strategy = st.builds(
-    ftp::AnalogLamp,
+ftp_NTransistor_strategy = st.builds(
+    ftp_NTransistor,
 )
-ftp::Resistor_strategy = st.builds(
-    ftp::Resistor,
+ftp_DigitalBattery_strategy = st.builds(
+    ftp_DigitalBattery,
+)
+ftp_And_strategy = st.builds(
+    ftp_And,
+)
+ftp_Resistor_strategy = st.builds(
+    ftp_Resistor,
     resistance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ftp::TypedPortValue_strategy = st.builds(
-    ftp::TypedPortValue,
+ftp_TypedPortValue_strategy = st.builds(
+    ftp_TypedPortValue,
 )
-ftp::FTNode_strategy = st.builds(
-    ftp::FTNode,
+ftp_FTNode_strategy = st.builds(
+    ftp_FTNode,
 )
-ftp::FaultTree_strategy = st.builds(
-    ftp::FaultTree,
+ftp_FaultTree_strategy = st.builds(
+    ftp_FaultTree,
 )
 Connection_strategy = st.builds(
     Connection,
 )
-ftp::AnalogConnection_strategy = st.builds(
-    ftp::AnalogConnection,
+ftp_VisualConnection_strategy = st.builds(
+    ftp_VisualConnection,
 )
-ftp::VisualConnection_strategy = st.builds(
-    ftp::VisualConnection,
+ftp_AnalogConnection_strategy = st.builds(
+    ftp_AnalogConnection,
 )
-ftp::DigintalConnection_strategy = st.builds(
-    ftp::DigintalConnection,
+ftp_DigintalConnection_strategy = st.builds(
+    ftp_DigintalConnection,
 )
-ftp::Port_strategy = st.builds(
-    ftp::Port,
-    type=
-        safe_text,
+ftp_Port_strategy = st.builds(
+    ftp_Port,
     name=
+        safe_text,
+    type=
         safe_text
 )
 CompositionElement_strategy = st.builds(
     CompositionElement,
 )
-ftp::Connection_strategy = st.builds(
-    ftp::Connection,
+ftp_Connection_strategy = st.builds(
+    ftp_Connection,
 )
-ftp::PortValue_strategy = st.builds(
-    ftp::PortValue,
+ftp_PortValue_strategy = st.builds(
+    ftp_PortValue,
 )
-ftp::Component_strategy = st.builds(
-    ftp::Component,
-    name=
-        safe_text,
+ftp_Component_strategy = st.builds(
+    ftp_Component,
     type=
+        safe_text,
+    name=
         safe_text
 )
-ftp::Observation_strategy = st.builds(
-    ftp::Observation,
+ftp_Observation_strategy = st.builds(
+    ftp_Observation,
     name=
         safe_text,
     faultLimit=
@@ -1332,21 +1332,21 @@ ftp::Observation_strategy = st.builds(
 FTNode_strategy = st.builds(
     FTNode,
 )
-ftp::Fault_strategy = st.builds(
-    ftp::Fault,
-    description=
-        safe_text
-)
-ftp::RootEvent_strategy = st.builds(
-    ftp::RootEvent,
+ftp_RootEvent_strategy = st.builds(
+    ftp_RootEvent,
     observation=
         safe_text
 )
-ftp::AndGate_strategy = st.builds(
-    ftp::AndGate,
+ftp_AndGate_strategy = st.builds(
+    ftp_AndGate,
 )
-ftp::OrGate_strategy = st.builds(
-    ftp::OrGate,
+ftp_Fault_strategy = st.builds(
+    ftp_Fault,
+    description=
+        safe_text
+)
+ftp_OrGate_strategy = st.builds(
+    ftp_OrGate,
 )
 
 @given(instance=TypedPortValue_strategy)
@@ -1354,411 +1354,363 @@ ftp::OrGate_strategy = st.builds(
 def test_typedportvalue_instantiation(instance):
     assert isinstance(instance, TypedPortValue)
 
-@given(instance=ftp::FloatValue_strategy)
+@given(instance=ftp_VisualValue_strategy)
 @settings(max_examples=50)
-def test_ftp::floatvalue_instantiation(instance):
-    assert isinstance(instance, ftp::FloatValue)
-
-@given(instance=ftp::FloatValue_strategy)
-def test_ftp::floatvalue_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_ftp_visualvalue_instantiation(instance):
+    assert isinstance(instance, ftp_VisualValue)
 
 
-@given(instance=ftp::FloatValue_strategy)
-def test_ftp::floatvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=ftp::ElectricalValue_strategy)
-@settings(max_examples=50)
-def test_ftp::electricalvalue_instantiation(instance):
-    assert isinstance(instance, ftp::ElectricalValue)
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_current_type(instance):
-    assert isinstance(instance.current, float)
-
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_current_setter(instance):
-    original = instance.current
-    instance.current = original
-    assert instance.current == original
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_voltage_type(instance):
-    assert isinstance(instance.voltage, float)
-
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_voltage_setter(instance):
-    original = instance.voltage
-    instance.voltage = original
-    assert instance.voltage == original
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_anyCurrent_type(instance):
-    assert isinstance(instance.anyCurrent, bool)
-
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_anyCurrent_setter(instance):
-    original = instance.anyCurrent
-    instance.anyCurrent = original
-    assert instance.anyCurrent == original
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_anyVoltage_type(instance):
-    assert isinstance(instance.anyVoltage, bool)
-
-
-@given(instance=ftp::ElectricalValue_strategy)
-def test_ftp::electricalvalue_anyVoltage_setter(instance):
-    original = instance.anyVoltage
-    instance.anyVoltage = original
-    assert instance.anyVoltage == original
-
-@given(instance=ftp::VisualValue_strategy)
-@settings(max_examples=50)
-def test_ftp::visualvalue_instantiation(instance):
-    assert isinstance(instance, ftp::VisualValue)
-
-@given(instance=ftp::VisualValue_strategy)
-def test_ftp::visualvalue_bulb_type(instance):
-    assert isinstance(instance.bulb, str)
-
-
-@given(instance=ftp::VisualValue_strategy)
-def test_ftp::visualvalue_bulb_setter(instance):
+@given(instance=ftp_VisualValue_strategy)
+def test_ftp_visualvalue_bulb_setter(instance):
     original = instance.bulb
     instance.bulb = original
     assert instance.bulb == original
 
-@given(instance=ftp::HydraulicValue_strategy)
+@given(instance=ftp_FloatValue_strategy)
 @settings(max_examples=50)
-def test_ftp::hydraulicvalue_instantiation(instance):
-    assert isinstance(instance, ftp::HydraulicValue)
-
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_anyPressure_type(instance):
-    assert isinstance(instance.anyPressure, bool)
+def test_ftp_floatvalue_instantiation(instance):
+    assert isinstance(instance, ftp_FloatValue)
 
 
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_anyPressure_setter(instance):
-    original = instance.anyPressure
-    instance.anyPressure = original
-    assert instance.anyPressure == original
 
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_pressure_type(instance):
-    assert isinstance(instance.pressure, float)
+@given(instance=ftp_FloatValue_strategy)
+def test_ftp_floatvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
-
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_pressure_setter(instance):
-    original = instance.pressure
-    instance.pressure = original
-    assert instance.pressure == original
-
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_flow_type(instance):
-    assert isinstance(instance.flow, float)
+@given(instance=ftp_ElectricalValue_strategy)
+@settings(max_examples=50)
+def test_ftp_electricalvalue_instantiation(instance):
+    assert isinstance(instance, ftp_ElectricalValue)
 
 
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_flow_setter(instance):
-    original = instance.flow
-    instance.flow = original
-    assert instance.flow == original
 
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_anyFlow_type(instance):
-    assert isinstance(instance.anyFlow, bool)
+@given(instance=ftp_ElectricalValue_strategy)
+def test_ftp_electricalvalue_anyCurrent_setter(instance):
+    original = instance.anyCurrent
+    instance.anyCurrent = original
+    assert instance.anyCurrent == original
 
 
-@given(instance=ftp::HydraulicValue_strategy)
-def test_ftp::hydraulicvalue_anyFlow_setter(instance):
+
+@given(instance=ftp_ElectricalValue_strategy)
+def test_ftp_electricalvalue_anyVoltage_setter(instance):
+    original = instance.anyVoltage
+    instance.anyVoltage = original
+    assert instance.anyVoltage == original
+
+
+
+@given(instance=ftp_ElectricalValue_strategy)
+def test_ftp_electricalvalue_voltage_setter(instance):
+    original = instance.voltage
+    instance.voltage = original
+    assert instance.voltage == original
+
+
+
+@given(instance=ftp_ElectricalValue_strategy)
+def test_ftp_electricalvalue_current_setter(instance):
+    original = instance.current
+    instance.current = original
+    assert instance.current == original
+
+@given(instance=ftp_HydraulicValue_strategy)
+@settings(max_examples=50)
+def test_ftp_hydraulicvalue_instantiation(instance):
+    assert isinstance(instance, ftp_HydraulicValue)
+
+
+
+@given(instance=ftp_HydraulicValue_strategy)
+def test_ftp_hydraulicvalue_anyFlow_setter(instance):
     original = instance.anyFlow
     instance.anyFlow = original
     assert instance.anyFlow == original
 
-@given(instance=ftp::SignalValue_strategy)
+
+
+@given(instance=ftp_HydraulicValue_strategy)
+def test_ftp_hydraulicvalue_pressure_setter(instance):
+    original = instance.pressure
+    instance.pressure = original
+    assert instance.pressure == original
+
+
+
+@given(instance=ftp_HydraulicValue_strategy)
+def test_ftp_hydraulicvalue_anyPressure_setter(instance):
+    original = instance.anyPressure
+    instance.anyPressure = original
+    assert instance.anyPressure == original
+
+
+
+@given(instance=ftp_HydraulicValue_strategy)
+def test_ftp_hydraulicvalue_flow_setter(instance):
+    original = instance.flow
+    instance.flow = original
+    assert instance.flow == original
+
+@given(instance=ftp_SignalValue_strategy)
 @settings(max_examples=50)
-def test_ftp::signalvalue_instantiation(instance):
-    assert isinstance(instance, ftp::SignalValue)
-
-@given(instance=ftp::SignalValue_strategy)
-def test_ftp::signalvalue_signal_type(instance):
-    assert isinstance(instance.signal, str)
+def test_ftp_signalvalue_instantiation(instance):
+    assert isinstance(instance, ftp_SignalValue)
 
 
-@given(instance=ftp::SignalValue_strategy)
-def test_ftp::signalvalue_signal_setter(instance):
+
+@given(instance=ftp_SignalValue_strategy)
+def test_ftp_signalvalue_signal_setter(instance):
     original = instance.signal
     instance.signal = original
     assert instance.signal == original
 
-@given(instance=ftp::FaultTreeContext_strategy)
+@given(instance=ftp_FaultTreeContext_strategy)
 @settings(max_examples=50)
-def test_ftp::faulttreecontext_instantiation(instance):
-    assert isinstance(instance, ftp::FaultTreeContext)
+def test_ftp_faulttreecontext_instantiation(instance):
+    assert isinstance(instance, ftp_FaultTreeContext)
 
 @given(instance=Port_strategy)
 @settings(max_examples=50)
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=ftp::MechanicalPort_strategy)
+@given(instance=ftp_HydraulicPort_strategy)
 @settings(max_examples=50)
-def test_ftp::mechanicalport_instantiation(instance):
-    assert isinstance(instance, ftp::MechanicalPort)
+def test_ftp_hydraulicport_instantiation(instance):
+    assert isinstance(instance, ftp_HydraulicPort)
 
-@given(instance=ftp::HydraulicPort_strategy)
+@given(instance=ftp_MechanicalPort_strategy)
 @settings(max_examples=50)
-def test_ftp::hydraulicport_instantiation(instance):
-    assert isinstance(instance, ftp::HydraulicPort)
+def test_ftp_mechanicalport_instantiation(instance):
+    assert isinstance(instance, ftp_MechanicalPort)
 
-@given(instance=ftp::VisualPort_strategy)
+@given(instance=ftp_VisualPort_strategy)
 @settings(max_examples=50)
-def test_ftp::visualport_instantiation(instance):
-    assert isinstance(instance, ftp::VisualPort)
+def test_ftp_visualport_instantiation(instance):
+    assert isinstance(instance, ftp_VisualPort)
 
-@given(instance=ftp::CompositionElement_strategy)
+@given(instance=ftp_CompositionElement_strategy)
 @settings(max_examples=50)
-def test_ftp::compositionelement_instantiation(instance):
-    assert isinstance(instance, ftp::CompositionElement)
+def test_ftp_compositionelement_instantiation(instance):
+    assert isinstance(instance, ftp_CompositionElement)
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=ftp::ComposedComponent_strategy)
+@given(instance=ftp_ComposedComponent_strategy)
 @settings(max_examples=50)
-def test_ftp::composedcomponent_instantiation(instance):
-    assert isinstance(instance, ftp::ComposedComponent)
+def test_ftp_composedcomponent_instantiation(instance):
+    assert isinstance(instance, ftp_ComposedComponent)
 
-@given(instance=ftp::PrimitiveComponent_strategy)
+@given(instance=ftp_PrimitiveComponent_strategy)
 @settings(max_examples=50)
-def test_ftp::primitivecomponent_instantiation(instance):
-    assert isinstance(instance, ftp::PrimitiveComponent)
+def test_ftp_primitivecomponent_instantiation(instance):
+    assert isinstance(instance, ftp_PrimitiveComponent)
 
 @given(instance=AnalogConnection_strategy)
 @settings(max_examples=50)
 def test_analogconnection_instantiation(instance):
     assert isinstance(instance, AnalogConnection)
 
-@given(instance=ftp::MechanicalConnection_strategy)
+@given(instance=ftp_HydraulicConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::mechanicalconnection_instantiation(instance):
-    assert isinstance(instance, ftp::MechanicalConnection)
+def test_ftp_hydraulicconnection_instantiation(instance):
+    assert isinstance(instance, ftp_HydraulicConnection)
 
-@given(instance=ftp::HydraulicConnection_strategy)
+@given(instance=ftp_MechanicalConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::hydraulicconnection_instantiation(instance):
-    assert isinstance(instance, ftp::HydraulicConnection)
+def test_ftp_mechanicalconnection_instantiation(instance):
+    assert isinstance(instance, ftp_MechanicalConnection)
 
-@given(instance=ftp::ElectricalConnection_strategy)
+@given(instance=ftp_ElectricalConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::electricalconnection_instantiation(instance):
-    assert isinstance(instance, ftp::ElectricalConnection)
+def test_ftp_electricalconnection_instantiation(instance):
+    assert isinstance(instance, ftp_ElectricalConnection)
 
 @given(instance=DigintalConnection_strategy)
 @settings(max_examples=50)
 def test_digintalconnection_instantiation(instance):
     assert isinstance(instance, DigintalConnection)
 
-@given(instance=ftp::SignalConnection_strategy)
+@given(instance=ftp_SignalConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::signalconnection_instantiation(instance):
-    assert isinstance(instance, ftp::SignalConnection)
+def test_ftp_signalconnection_instantiation(instance):
+    assert isinstance(instance, ftp_SignalConnection)
 
-@given(instance=ftp::SignalPort_strategy)
+@given(instance=ftp_SignalPort_strategy)
 @settings(max_examples=50)
-def test_ftp::signalport_instantiation(instance):
-    assert isinstance(instance, ftp::SignalPort)
+def test_ftp_signalport_instantiation(instance):
+    assert isinstance(instance, ftp_SignalPort)
 
-@given(instance=ftp::ElectricalPort_strategy)
+@given(instance=ftp_ElectricalPort_strategy)
 @settings(max_examples=50)
-def test_ftp::electricalport_instantiation(instance):
-    assert isinstance(instance, ftp::ElectricalPort)
+def test_ftp_electricalport_instantiation(instance):
+    assert isinstance(instance, ftp_ElectricalPort)
 
 @given(instance=PrimitiveComponent_strategy)
 @settings(max_examples=50)
 def test_primitivecomponent_instantiation(instance):
     assert isinstance(instance, PrimitiveComponent)
 
-@given(instance=ftp::And_strategy)
+@given(instance=ftp_AnalogLamp_strategy)
 @settings(max_examples=50)
-def test_ftp::and_instantiation(instance):
-    assert isinstance(instance, ftp::And)
+def test_ftp_analoglamp_instantiation(instance):
+    assert isinstance(instance, ftp_AnalogLamp)
 
-@given(instance=ftp::Xor_strategy)
+@given(instance=ftp_DigitalLamp_strategy)
 @settings(max_examples=50)
-def test_ftp::xor_instantiation(instance):
-    assert isinstance(instance, ftp::Xor)
+def test_ftp_digitallamp_instantiation(instance):
+    assert isinstance(instance, ftp_DigitalLamp)
 
-@given(instance=ftp::PTransistor_strategy)
+@given(instance=ftp_DigitalSwitch_strategy)
 @settings(max_examples=50)
-def test_ftp::ptransistor_instantiation(instance):
-    assert isinstance(instance, ftp::PTransistor)
+def test_ftp_digitalswitch_instantiation(instance):
+    assert isinstance(instance, ftp_DigitalSwitch)
 
-@given(instance=ftp::AnalogBattery_strategy)
+@given(instance=ftp_Not_strategy)
 @settings(max_examples=50)
-def test_ftp::analogbattery_instantiation(instance):
-    assert isinstance(instance, ftp::AnalogBattery)
+def test_ftp_not_instantiation(instance):
+    assert isinstance(instance, ftp_Not)
 
-@given(instance=ftp::AnalogBattery_strategy)
-def test_ftp::analogbattery_voltage_type(instance):
-    assert isinstance(instance.voltage, float)
-
-
-@given(instance=ftp::AnalogBattery_strategy)
-def test_ftp::analogbattery_voltage_setter(instance):
-    original = instance.voltage
-    instance.voltage = original
-    assert instance.voltage == original
-
-@given(instance=ftp::DigitalSwitch_strategy)
+@given(instance=ftp_AnalogSwitch_strategy)
 @settings(max_examples=50)
-def test_ftp::digitalswitch_instantiation(instance):
-    assert isinstance(instance, ftp::DigitalSwitch)
+def test_ftp_analogswitch_instantiation(instance):
+    assert isinstance(instance, ftp_AnalogSwitch)
 
-@given(instance=ftp::AnalogSwitch_strategy)
+@given(instance=ftp_SignalConstant_strategy)
 @settings(max_examples=50)
-def test_ftp::analogswitch_instantiation(instance):
-    assert isinstance(instance, ftp::AnalogSwitch)
-
-@given(instance=ftp::DFlipFlop_strategy)
-@settings(max_examples=50)
-def test_ftp::dflipflop_instantiation(instance):
-    assert isinstance(instance, ftp::DFlipFlop)
-
-@given(instance=ftp::SignalConstant_strategy)
-@settings(max_examples=50)
-def test_ftp::signalconstant_instantiation(instance):
-    assert isinstance(instance, ftp::SignalConstant)
-
-@given(instance=ftp::SignalConstant_strategy)
-def test_ftp::signalconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ftp_signalconstant_instantiation(instance):
+    assert isinstance(instance, ftp_SignalConstant)
 
 
-@given(instance=ftp::SignalConstant_strategy)
-def test_ftp::signalconstant_value_setter(instance):
+
+@given(instance=ftp_SignalConstant_strategy)
+def test_ftp_signalconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ftp::DigitalBattery_strategy)
+@given(instance=ftp_Capacitor_strategy)
 @settings(max_examples=50)
-def test_ftp::digitalbattery_instantiation(instance):
-    assert isinstance(instance, ftp::DigitalBattery)
+def test_ftp_capacitor_instantiation(instance):
+    assert isinstance(instance, ftp_Capacitor)
 
-@given(instance=ftp::Not_strategy)
+@given(instance=ftp_AnalogBattery_strategy)
 @settings(max_examples=50)
-def test_ftp::not_instantiation(instance):
-    assert isinstance(instance, ftp::Not)
+def test_ftp_analogbattery_instantiation(instance):
+    assert isinstance(instance, ftp_AnalogBattery)
 
-@given(instance=ftp::Capacitor_strategy)
+
+
+@given(instance=ftp_AnalogBattery_strategy)
+def test_ftp_analogbattery_voltage_setter(instance):
+    original = instance.voltage
+    instance.voltage = original
+    assert instance.voltage == original
+
+@given(instance=ftp_DFlipFlop_strategy)
 @settings(max_examples=50)
-def test_ftp::capacitor_instantiation(instance):
-    assert isinstance(instance, ftp::Capacitor)
+def test_ftp_dflipflop_instantiation(instance):
+    assert isinstance(instance, ftp_DFlipFlop)
 
-@given(instance=ftp::NTransistor_strategy)
+@given(instance=ftp_Xor_strategy)
 @settings(max_examples=50)
-def test_ftp::ntransistor_instantiation(instance):
-    assert isinstance(instance, ftp::NTransistor)
+def test_ftp_xor_instantiation(instance):
+    assert isinstance(instance, ftp_Xor)
 
-@given(instance=ftp::DigitalLamp_strategy)
+@given(instance=ftp_PTransistor_strategy)
 @settings(max_examples=50)
-def test_ftp::digitallamp_instantiation(instance):
-    assert isinstance(instance, ftp::DigitalLamp)
+def test_ftp_ptransistor_instantiation(instance):
+    assert isinstance(instance, ftp_PTransistor)
 
-@given(instance=ftp::AnalogLamp_strategy)
+@given(instance=ftp_NTransistor_strategy)
 @settings(max_examples=50)
-def test_ftp::analoglamp_instantiation(instance):
-    assert isinstance(instance, ftp::AnalogLamp)
+def test_ftp_ntransistor_instantiation(instance):
+    assert isinstance(instance, ftp_NTransistor)
 
-@given(instance=ftp::Resistor_strategy)
+@given(instance=ftp_DigitalBattery_strategy)
 @settings(max_examples=50)
-def test_ftp::resistor_instantiation(instance):
-    assert isinstance(instance, ftp::Resistor)
+def test_ftp_digitalbattery_instantiation(instance):
+    assert isinstance(instance, ftp_DigitalBattery)
 
-@given(instance=ftp::Resistor_strategy)
-def test_ftp::resistor_resistance_type(instance):
-    assert isinstance(instance.resistance, float)
+@given(instance=ftp_And_strategy)
+@settings(max_examples=50)
+def test_ftp_and_instantiation(instance):
+    assert isinstance(instance, ftp_And)
+
+@given(instance=ftp_Resistor_strategy)
+@settings(max_examples=50)
+def test_ftp_resistor_instantiation(instance):
+    assert isinstance(instance, ftp_Resistor)
 
 
-@given(instance=ftp::Resistor_strategy)
-def test_ftp::resistor_resistance_setter(instance):
+
+@given(instance=ftp_Resistor_strategy)
+def test_ftp_resistor_resistance_setter(instance):
     original = instance.resistance
     instance.resistance = original
     assert instance.resistance == original
 
-@given(instance=ftp::TypedPortValue_strategy)
+@given(instance=ftp_TypedPortValue_strategy)
 @settings(max_examples=50)
-def test_ftp::typedportvalue_instantiation(instance):
-    assert isinstance(instance, ftp::TypedPortValue)
+def test_ftp_typedportvalue_instantiation(instance):
+    assert isinstance(instance, ftp_TypedPortValue)
 
-@given(instance=ftp::FTNode_strategy)
+@given(instance=ftp_FTNode_strategy)
 @settings(max_examples=50)
-def test_ftp::ftnode_instantiation(instance):
-    assert isinstance(instance, ftp::FTNode)
+def test_ftp_ftnode_instantiation(instance):
+    assert isinstance(instance, ftp_FTNode)
 
-@given(instance=ftp::FaultTree_strategy)
+@given(instance=ftp_FaultTree_strategy)
 @settings(max_examples=50)
-def test_ftp::faulttree_instantiation(instance):
-    assert isinstance(instance, ftp::FaultTree)
+def test_ftp_faulttree_instantiation(instance):
+    assert isinstance(instance, ftp_FaultTree)
 
 @given(instance=Connection_strategy)
 @settings(max_examples=50)
 def test_connection_instantiation(instance):
     assert isinstance(instance, Connection)
 
-@given(instance=ftp::AnalogConnection_strategy)
+@given(instance=ftp_VisualConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::analogconnection_instantiation(instance):
-    assert isinstance(instance, ftp::AnalogConnection)
+def test_ftp_visualconnection_instantiation(instance):
+    assert isinstance(instance, ftp_VisualConnection)
 
-@given(instance=ftp::VisualConnection_strategy)
+@given(instance=ftp_AnalogConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::visualconnection_instantiation(instance):
-    assert isinstance(instance, ftp::VisualConnection)
+def test_ftp_analogconnection_instantiation(instance):
+    assert isinstance(instance, ftp_AnalogConnection)
 
-@given(instance=ftp::DigintalConnection_strategy)
+@given(instance=ftp_DigintalConnection_strategy)
 @settings(max_examples=50)
-def test_ftp::digintalconnection_instantiation(instance):
-    assert isinstance(instance, ftp::DigintalConnection)
+def test_ftp_digintalconnection_instantiation(instance):
+    assert isinstance(instance, ftp_DigintalConnection)
 
-@given(instance=ftp::Port_strategy)
+@given(instance=ftp_Port_strategy)
 @settings(max_examples=50)
-def test_ftp::port_instantiation(instance):
-    assert isinstance(instance, ftp::Port)
-
-@given(instance=ftp::Port_strategy)
-def test_ftp::port_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_ftp_port_instantiation(instance):
+    assert isinstance(instance, ftp_Port)
 
 
-@given(instance=ftp::Port_strategy)
-def test_ftp::port_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=ftp::Port_strategy)
-def test_ftp::port_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ftp::Port_strategy)
-def test_ftp::port_name_setter(instance):
+@given(instance=ftp_Port_strategy)
+def test_ftp_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=ftp_Port_strategy)
+def test_ftp_port_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 import warnings
 import copy
@@ -1766,9 +1718,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ftp::Port_strategy)
+@given(instance=ftp_Port_strategy)
 @settings(max_examples=30)
-def test_ftp::port_newportvalue_changes_state(instance):
+def test_ftp_port_newportvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1780,80 +1732,68 @@ def test_ftp::port_newportvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'newPortValue' in ftp::Port is empty"
+        assert has_statements, f"Function 'newPortValue' in ftp_Port is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'newPortValue' in ftp::Port did not change state; check implementation")
+            warnings.warn(f"Operation 'newPortValue' in ftp_Port did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'newPortValue' in ftp::Port is not implemented or raised an error")
+        warnings.warn(f"Operation 'newPortValue' in ftp_Port is not implemented or raised an error")
 
 @given(instance=CompositionElement_strategy)
 @settings(max_examples=50)
 def test_compositionelement_instantiation(instance):
     assert isinstance(instance, CompositionElement)
 
-@given(instance=ftp::Connection_strategy)
+@given(instance=ftp_Connection_strategy)
 @settings(max_examples=50)
-def test_ftp::connection_instantiation(instance):
-    assert isinstance(instance, ftp::Connection)
+def test_ftp_connection_instantiation(instance):
+    assert isinstance(instance, ftp_Connection)
 
-@given(instance=ftp::PortValue_strategy)
+@given(instance=ftp_PortValue_strategy)
 @settings(max_examples=50)
-def test_ftp::portvalue_instantiation(instance):
-    assert isinstance(instance, ftp::PortValue)
+def test_ftp_portvalue_instantiation(instance):
+    assert isinstance(instance, ftp_PortValue)
 
-@given(instance=ftp::Component_strategy)
+@given(instance=ftp_Component_strategy)
 @settings(max_examples=50)
-def test_ftp::component_instantiation(instance):
-    assert isinstance(instance, ftp::Component)
-
-@given(instance=ftp::Component_strategy)
-def test_ftp::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ftp_component_instantiation(instance):
+    assert isinstance(instance, ftp_Component)
 
 
-@given(instance=ftp::Component_strategy)
-def test_ftp::component_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ftp::Component_strategy)
-def test_ftp::component_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=ftp::Component_strategy)
-def test_ftp::component_type_setter(instance):
+@given(instance=ftp_Component_strategy)
+def test_ftp_component_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ftp::Observation_strategy)
-@settings(max_examples=50)
-def test_ftp::observation_instantiation(instance):
-    assert isinstance(instance, ftp::Observation)
-
-@given(instance=ftp::Observation_strategy)
-def test_ftp::observation_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ftp::Observation_strategy)
-def test_ftp::observation_name_setter(instance):
+@given(instance=ftp_Component_strategy)
+def test_ftp_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ftp::Observation_strategy)
-def test_ftp::observation_faultLimit_type(instance):
-    assert isinstance(instance.faultLimit, int)
+@given(instance=ftp_Observation_strategy)
+@settings(max_examples=50)
+def test_ftp_observation_instantiation(instance):
+    assert isinstance(instance, ftp_Observation)
 
 
-@given(instance=ftp::Observation_strategy)
-def test_ftp::observation_faultLimit_setter(instance):
+
+@given(instance=ftp_Observation_strategy)
+def test_ftp_observation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ftp_Observation_strategy)
+def test_ftp_observation_faultLimit_setter(instance):
     original = instance.faultLimit
     instance.faultLimit = original
     assert instance.faultLimit == original
@@ -1864,9 +1804,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ftp::Observation_strategy)
+@given(instance=ftp_Observation_strategy)
 @settings(max_examples=30)
-def test_ftp::observation_buildfaulttree_changes_state(instance):
+def test_ftp_observation_buildfaulttree_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1878,58 +1818,52 @@ def test_ftp::observation_buildfaulttree_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'buildFaultTree' in ftp::Observation is empty"
+        assert has_statements, f"Function 'buildFaultTree' in ftp_Observation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'buildFaultTree' in ftp::Observation did not change state; check implementation")
+            warnings.warn(f"Operation 'buildFaultTree' in ftp_Observation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'buildFaultTree' in ftp::Observation is not implemented or raised an error")
+        warnings.warn(f"Operation 'buildFaultTree' in ftp_Observation is not implemented or raised an error")
 
 @given(instance=FTNode_strategy)
 @settings(max_examples=50)
 def test_ftnode_instantiation(instance):
     assert isinstance(instance, FTNode)
 
-@given(instance=ftp::Fault_strategy)
+@given(instance=ftp_RootEvent_strategy)
 @settings(max_examples=50)
-def test_ftp::fault_instantiation(instance):
-    assert isinstance(instance, ftp::Fault)
-
-@given(instance=ftp::Fault_strategy)
-def test_ftp::fault_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_ftp_rootevent_instantiation(instance):
+    assert isinstance(instance, ftp_RootEvent)
 
 
-@given(instance=ftp::Fault_strategy)
-def test_ftp::fault_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=ftp::RootEvent_strategy)
-@settings(max_examples=50)
-def test_ftp::rootevent_instantiation(instance):
-    assert isinstance(instance, ftp::RootEvent)
-
-@given(instance=ftp::RootEvent_strategy)
-def test_ftp::rootevent_observation_type(instance):
-    assert isinstance(instance.observation, str)
-
-
-@given(instance=ftp::RootEvent_strategy)
-def test_ftp::rootevent_observation_setter(instance):
+@given(instance=ftp_RootEvent_strategy)
+def test_ftp_rootevent_observation_setter(instance):
     original = instance.observation
     instance.observation = original
     assert instance.observation == original
 
-@given(instance=ftp::AndGate_strategy)
+@given(instance=ftp_AndGate_strategy)
 @settings(max_examples=50)
-def test_ftp::andgate_instantiation(instance):
-    assert isinstance(instance, ftp::AndGate)
+def test_ftp_andgate_instantiation(instance):
+    assert isinstance(instance, ftp_AndGate)
 
-@given(instance=ftp::OrGate_strategy)
+@given(instance=ftp_Fault_strategy)
 @settings(max_examples=50)
-def test_ftp::orgate_instantiation(instance):
-    assert isinstance(instance, ftp::OrGate)
+def test_ftp_fault_instantiation(instance):
+    assert isinstance(instance, ftp_Fault)
+
+
+
+@given(instance=ftp_Fault_strategy)
+def test_ftp_fault_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=ftp_OrGate_strategy)
+@settings(max_examples=50)
+def test_ftp_orgate_instantiation(instance):
+    assert isinstance(instance, ftp_OrGate)

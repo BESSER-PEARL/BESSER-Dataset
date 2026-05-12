@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    mytest::C,
-    mytest::MyRoot,
-    mytest::B,
-    mytest::A,
+    mytest_C,
+    mytest_MyRoot,
+    mytest_B,
+    mytest_A,
     MyEnum,
 )
 
@@ -34,51 +34,51 @@ def test_b_constructor_args():
 
 
 
-def test_mytest::c_is_not_abstract():
-    assert not inspect.isabstract(mytest::C)
+def test_mytest_c_is_not_abstract():
+    assert not inspect.isabstract(mytest_C)
 
 
-def test_mytest::c_constructor_exists():
-    assert callable(mytest::C.__init__)
+def test_mytest_c_constructor_exists():
+    assert callable(mytest_C.__init__)
 
 
-def test_mytest::c_constructor_args():
-    sig = inspect.signature(mytest::C.__init__)
+def test_mytest_c_constructor_args():
+    sig = inspect.signature(mytest_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mytest::myroot_is_not_abstract():
-    assert not inspect.isabstract(mytest::MyRoot)
+def test_mytest_myroot_is_not_abstract():
+    assert not inspect.isabstract(mytest_MyRoot)
 
 
-def test_mytest::myroot_constructor_exists():
-    assert callable(mytest::MyRoot.__init__)
+def test_mytest_myroot_constructor_exists():
+    assert callable(mytest_MyRoot.__init__)
 
 
-def test_mytest::myroot_constructor_args():
-    sig = inspect.signature(mytest::MyRoot.__init__)
+def test_mytest_myroot_constructor_args():
+    sig = inspect.signature(mytest_MyRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mytest::b_is_not_abstract():
-    assert not inspect.isabstract(mytest::B)
+def test_mytest_b_is_not_abstract():
+    assert not inspect.isabstract(mytest_B)
 
 
-def test_mytest::b_constructor_exists():
-    assert callable(mytest::B.__init__)
+def test_mytest_b_constructor_exists():
+    assert callable(mytest_B.__init__)
 
 
-def test_mytest::b_constructor_args():
-    sig = inspect.signature(mytest::B.__init__)
+def test_mytest_b_constructor_args():
+    sig = inspect.signature(mytest_B.__init__)
     params = list(sig.parameters.keys())
     assert "enumatt" in params, "Missing parameter 'enumatt'"
 
-def test_mytest::b_has_enumatt():
-    assert hasattr(mytest::B, "enumatt")
+def test_mytest_b_has_enumatt():
+    assert hasattr(mytest_B, "enumatt")
     descriptor = None
-    for klass in mytest::B.__mro__:
+    for klass in mytest_B.__mro__:
         if "enumatt" in klass.__dict__:
             descriptor = klass.__dict__["enumatt"]
             break
@@ -86,23 +86,23 @@ def test_mytest::b_has_enumatt():
 
 
 
-def test_mytest::a_is_not_abstract():
-    assert not inspect.isabstract(mytest::A)
+def test_mytest_a_is_not_abstract():
+    assert not inspect.isabstract(mytest_A)
 
 
-def test_mytest::a_constructor_exists():
-    assert callable(mytest::A.__init__)
+def test_mytest_a_constructor_exists():
+    assert callable(mytest_A.__init__)
 
 
-def test_mytest::a_constructor_args():
-    sig = inspect.signature(mytest::A.__init__)
+def test_mytest_a_constructor_args():
+    sig = inspect.signature(mytest_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mytest::a_has_name():
-    assert hasattr(mytest::A, "name")
+def test_mytest_a_has_name():
+    assert hasattr(mytest_A, "name")
     descriptor = None
-    for klass in mytest::A.__mro__:
+    for klass in mytest_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -138,19 +138,19 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-mytest::C_strategy = st.builds(
-    mytest::C,
+mytest_C_strategy = st.builds(
+    mytest_C,
 )
-mytest::MyRoot_strategy = st.builds(
-    mytest::MyRoot,
+mytest_MyRoot_strategy = st.builds(
+    mytest_MyRoot,
 )
-mytest::B_strategy = st.builds(
-    mytest::B,
+mytest_B_strategy = st.builds(
+    mytest_B,
     enumatt=
         safe_text
 )
-mytest::A_strategy = st.builds(
-    mytest::A,
+mytest_A_strategy = st.builds(
+    mytest_A,
     name=
         safe_text
 )
@@ -160,44 +160,38 @@ mytest::A_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=mytest::C_strategy)
+@given(instance=mytest_C_strategy)
 @settings(max_examples=50)
-def test_mytest::c_instantiation(instance):
-    assert isinstance(instance, mytest::C)
+def test_mytest_c_instantiation(instance):
+    assert isinstance(instance, mytest_C)
 
-@given(instance=mytest::MyRoot_strategy)
+@given(instance=mytest_MyRoot_strategy)
 @settings(max_examples=50)
-def test_mytest::myroot_instantiation(instance):
-    assert isinstance(instance, mytest::MyRoot)
+def test_mytest_myroot_instantiation(instance):
+    assert isinstance(instance, mytest_MyRoot)
 
-@given(instance=mytest::B_strategy)
+@given(instance=mytest_B_strategy)
 @settings(max_examples=50)
-def test_mytest::b_instantiation(instance):
-    assert isinstance(instance, mytest::B)
-
-@given(instance=mytest::B_strategy)
-def test_mytest::b_enumatt_type(instance):
-    assert isinstance(instance.enumatt, str)
+def test_mytest_b_instantiation(instance):
+    assert isinstance(instance, mytest_B)
 
 
-@given(instance=mytest::B_strategy)
-def test_mytest::b_enumatt_setter(instance):
+
+@given(instance=mytest_B_strategy)
+def test_mytest_b_enumatt_setter(instance):
     original = instance.enumatt
     instance.enumatt = original
     assert instance.enumatt == original
 
-@given(instance=mytest::A_strategy)
+@given(instance=mytest_A_strategy)
 @settings(max_examples=50)
-def test_mytest::a_instantiation(instance):
-    assert isinstance(instance, mytest::A)
-
-@given(instance=mytest::A_strategy)
-def test_mytest::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mytest_a_instantiation(instance):
+    assert isinstance(instance, mytest_A)
 
 
-@given(instance=mytest::A_strategy)
-def test_mytest::a_name_setter(instance):
+
+@given(instance=mytest_A_strategy)
+def test_mytest_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

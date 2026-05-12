@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ShoppingCartExample_Account,
@@ -185,17 +185,8 @@ def test_jlgcurrentuserrestresource_constructor_exists():
 def test_jlgcurrentuserrestresource_constructor_args():
     sig = inspect.signature(JLGCurrentUserRestResource.__init__)
     params = list(sig.parameters.keys())
-    assert "formURL" in params, "Missing parameter 'formURL'"
     assert "visitorId" in params, "Missing parameter 'visitorId'"
-
-def test_jlgcurrentuserrestresource_has_formURL():
-    assert hasattr(JLGCurrentUserRestResource, "formURL")
-    descriptor = None
-    for klass in JLGCurrentUserRestResource.__mro__:
-        if "formURL" in klass.__dict__:
-            descriptor = klass.__dict__["formURL"]
-            break
-    assert isinstance(descriptor, property)
+    assert "formURL" in params, "Missing parameter 'formURL'"
 
 def test_jlgcurrentuserrestresource_has_visitorId():
     assert hasattr(JLGCurrentUserRestResource, "visitorId")
@@ -203,6 +194,15 @@ def test_jlgcurrentuserrestresource_has_visitorId():
     for klass in JLGCurrentUserRestResource.__mro__:
         if "visitorId" in klass.__dict__:
             descriptor = klass.__dict__["visitorId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jlgcurrentuserrestresource_has_formURL():
+    assert hasattr(JLGCurrentUserRestResource, "formURL")
+    descriptor = None
+    for klass in JLGCurrentUserRestResource.__mro__:
+        if "formURL" in klass.__dict__:
+            descriptor = klass.__dict__["formURL"]
             break
     assert isinstance(descriptor, property)
 
@@ -307,9 +307,9 @@ JLGProfileFormHandler_strategy = st.builds(
 )
 JLGCurrentUserRestResource_strategy = st.builds(
     JLGCurrentUserRestResource,
-    formURL=
-        safe_text,
     visitorId=
+        safe_text,
+    formURL=
         safe_text
 )
 Class_strategy = st.builds(
@@ -330,9 +330,6 @@ ShoppingCartExample_Customer_strategy = st.builds(
 def test_shoppingcartexample_account_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_Account)
 
-@given(instance=ShoppingCartExample_Account_strategy)
-def test_shoppingcartexample_account_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=ShoppingCartExample_Account_strategy)
@@ -346,9 +343,6 @@ def test_shoppingcartexample_account_id_setter(instance):
 def test_shoppingcartexample_lineitem_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_LineItem)
 
-@given(instance=ShoppingCartExample_LineItem_strategy)
-def test_shoppingcartexample_lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=ShoppingCartExample_LineItem_strategy)
@@ -357,9 +351,6 @@ def test_shoppingcartexample_lineitem_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=ShoppingCartExample_LineItem_strategy)
-def test_shoppingcartexample_lineitem_price_type(instance):
-    assert isinstance(instance.price, int)
 
 
 @given(instance=ShoppingCartExample_LineItem_strategy)
@@ -373,9 +364,6 @@ def test_shoppingcartexample_lineitem_price_setter(instance):
 def test_shoppingcartexample_order_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_Order)
 
-@given(instance=ShoppingCartExample_Order_strategy)
-def test_shoppingcartexample_order_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=ShoppingCartExample_Order_strategy)
@@ -389,9 +377,6 @@ def test_shoppingcartexample_order_id_setter(instance):
 def test_shoppingcartexample_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_ShoppingCart)
 
-@given(instance=ShoppingCartExample_ShoppingCart_strategy)
-def test_shoppingcartexample_shoppingcart_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=ShoppingCartExample_ShoppingCart_strategy)
@@ -420,20 +405,6 @@ def test_jlgprofileformhandler_instantiation(instance):
 def test_jlgcurrentuserrestresource_instantiation(instance):
     assert isinstance(instance, JLGCurrentUserRestResource)
 
-@given(instance=JLGCurrentUserRestResource_strategy)
-def test_jlgcurrentuserrestresource_formURL_type(instance):
-    assert isinstance(instance.formURL, str)
-
-
-@given(instance=JLGCurrentUserRestResource_strategy)
-def test_jlgcurrentuserrestresource_formURL_setter(instance):
-    original = instance.formURL
-    instance.formURL = original
-    assert instance.formURL == original
-
-@given(instance=JLGCurrentUserRestResource_strategy)
-def test_jlgcurrentuserrestresource_visitorId_type(instance):
-    assert isinstance(instance.visitorId, str)
 
 
 @given(instance=JLGCurrentUserRestResource_strategy)
@@ -441,6 +412,14 @@ def test_jlgcurrentuserrestresource_visitorId_setter(instance):
     original = instance.visitorId
     instance.visitorId = original
     assert instance.visitorId == original
+
+
+
+@given(instance=JLGCurrentUserRestResource_strategy)
+def test_jlgcurrentuserrestresource_formURL_setter(instance):
+    original = instance.formURL
+    instance.formURL = original
+    assert instance.formURL == original
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)

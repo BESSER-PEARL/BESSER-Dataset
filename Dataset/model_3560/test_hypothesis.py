@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    simpleimperative::VarRef,
+    simpleimperative_VarRef,
     ConsoleOutput,
-    simpleimperative::Print,
-    simpleimperative::Println,
-    simpleimperative::Expression,
+    simpleimperative_Print,
+    simpleimperative_Println,
+    simpleimperative_Expression,
     Statement,
-    simpleimperative::ConsoleOutput,
-    simpleimperative::VarDecl,
-    simpleimperative::Loop,
-    simpleimperative::Wait,
-    simpleimperative::Assignation,
-    simpleimperative::Conditional,
-    simpleimperative::Statement,
-    simpleimperative::Program,
+    simpleimperative_ConsoleOutput,
+    simpleimperative_VarDecl,
+    simpleimperative_Wait,
+    simpleimperative_Loop,
+    simpleimperative_Assignation,
+    simpleimperative_Conditional,
+    simpleimperative_Statement,
+    simpleimperative_Program,
 )
 
 # =============================================================================
@@ -43,23 +43,23 @@ def test_expression_constructor_args():
 
 
 
-def test_simpleimperative::varref_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::VarRef)
+def test_simpleimperative_varref_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_VarRef)
 
 
-def test_simpleimperative::varref_constructor_exists():
-    assert callable(simpleimperative::VarRef.__init__)
+def test_simpleimperative_varref_constructor_exists():
+    assert callable(simpleimperative_VarRef.__init__)
 
 
-def test_simpleimperative::varref_constructor_args():
-    sig = inspect.signature(simpleimperative::VarRef.__init__)
+def test_simpleimperative_varref_constructor_args():
+    sig = inspect.signature(simpleimperative_VarRef.__init__)
     params = list(sig.parameters.keys())
     assert "varRef" in params, "Missing parameter 'varRef'"
 
-def test_simpleimperative::varref_has_varRef():
-    assert hasattr(simpleimperative::VarRef, "varRef")
+def test_simpleimperative_varref_has_varRef():
+    assert hasattr(simpleimperative_VarRef, "varRef")
     descriptor = None
-    for klass in simpleimperative::VarRef.__mro__:
+    for klass in simpleimperative_VarRef.__mro__:
         if "varRef" in klass.__dict__:
             descriptor = klass.__dict__["varRef"]
             break
@@ -81,44 +81,44 @@ def test_consoleoutput_constructor_args():
 
 
 
-def test_simpleimperative::print_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Print)
+def test_simpleimperative_print_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Print)
 
 
-def test_simpleimperative::print_constructor_exists():
-    assert callable(simpleimperative::Print.__init__)
+def test_simpleimperative_print_constructor_exists():
+    assert callable(simpleimperative_Print.__init__)
 
 
-def test_simpleimperative::print_constructor_args():
-    sig = inspect.signature(simpleimperative::Print.__init__)
+def test_simpleimperative_print_constructor_args():
+    sig = inspect.signature(simpleimperative_Print.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleimperative::println_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Println)
+def test_simpleimperative_println_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Println)
 
 
-def test_simpleimperative::println_constructor_exists():
-    assert callable(simpleimperative::Println.__init__)
+def test_simpleimperative_println_constructor_exists():
+    assert callable(simpleimperative_Println.__init__)
 
 
-def test_simpleimperative::println_constructor_args():
-    sig = inspect.signature(simpleimperative::Println.__init__)
+def test_simpleimperative_println_constructor_args():
+    sig = inspect.signature(simpleimperative_Println.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleimperative::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Expression)
+def test_simpleimperative_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Expression)
 
 
-def test_simpleimperative::expression_constructor_exists():
-    assert callable(simpleimperative::Expression.__init__)
+def test_simpleimperative_expression_constructor_exists():
+    assert callable(simpleimperative_Expression.__init__)
 
 
-def test_simpleimperative::expression_constructor_args():
-    sig = inspect.signature(simpleimperative::Expression.__init__)
+def test_simpleimperative_expression_constructor_args():
+    sig = inspect.signature(simpleimperative_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,23 +137,23 @@ def test_statement_constructor_args():
 
 
 
-def test_simpleimperative::consoleoutput_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::ConsoleOutput)
+def test_simpleimperative_consoleoutput_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_ConsoleOutput)
 
 
-def test_simpleimperative::consoleoutput_constructor_exists():
-    assert callable(simpleimperative::ConsoleOutput.__init__)
+def test_simpleimperative_consoleoutput_constructor_exists():
+    assert callable(simpleimperative_ConsoleOutput.__init__)
 
 
-def test_simpleimperative::consoleoutput_constructor_args():
-    sig = inspect.signature(simpleimperative::ConsoleOutput.__init__)
+def test_simpleimperative_consoleoutput_constructor_args():
+    sig = inspect.signature(simpleimperative_ConsoleOutput.__init__)
     params = list(sig.parameters.keys())
     assert "input" in params, "Missing parameter 'input'"
 
-def test_simpleimperative::consoleoutput_has_input():
-    assert hasattr(simpleimperative::ConsoleOutput, "input")
+def test_simpleimperative_consoleoutput_has_input():
+    assert hasattr(simpleimperative_ConsoleOutput, "input")
     descriptor = None
-    for klass in simpleimperative::ConsoleOutput.__mro__:
+    for klass in simpleimperative_ConsoleOutput.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
@@ -161,23 +161,23 @@ def test_simpleimperative::consoleoutput_has_input():
 
 
 
-def test_simpleimperative::vardecl_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::VarDecl)
+def test_simpleimperative_vardecl_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_VarDecl)
 
 
-def test_simpleimperative::vardecl_constructor_exists():
-    assert callable(simpleimperative::VarDecl.__init__)
+def test_simpleimperative_vardecl_constructor_exists():
+    assert callable(simpleimperative_VarDecl.__init__)
 
 
-def test_simpleimperative::vardecl_constructor_args():
-    sig = inspect.signature(simpleimperative::VarDecl.__init__)
+def test_simpleimperative_vardecl_constructor_args():
+    sig = inspect.signature(simpleimperative_VarDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleimperative::vardecl_has_name():
-    assert hasattr(simpleimperative::VarDecl, "name")
+def test_simpleimperative_vardecl_has_name():
+    assert hasattr(simpleimperative_VarDecl, "name")
     descriptor = None
-    for klass in simpleimperative::VarDecl.__mro__:
+    for klass in simpleimperative_VarDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -185,37 +185,23 @@ def test_simpleimperative::vardecl_has_name():
 
 
 
-def test_simpleimperative::loop_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Loop)
+def test_simpleimperative_wait_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Wait)
 
 
-def test_simpleimperative::loop_constructor_exists():
-    assert callable(simpleimperative::Loop.__init__)
+def test_simpleimperative_wait_constructor_exists():
+    assert callable(simpleimperative_Wait.__init__)
 
 
-def test_simpleimperative::loop_constructor_args():
-    sig = inspect.signature(simpleimperative::Loop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleimperative::wait_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Wait)
-
-
-def test_simpleimperative::wait_constructor_exists():
-    assert callable(simpleimperative::Wait.__init__)
-
-
-def test_simpleimperative::wait_constructor_args():
-    sig = inspect.signature(simpleimperative::Wait.__init__)
+def test_simpleimperative_wait_constructor_args():
+    sig = inspect.signature(simpleimperative_Wait.__init__)
     params = list(sig.parameters.keys())
     assert "miliseconds" in params, "Missing parameter 'miliseconds'"
 
-def test_simpleimperative::wait_has_miliseconds():
-    assert hasattr(simpleimperative::Wait, "miliseconds")
+def test_simpleimperative_wait_has_miliseconds():
+    assert hasattr(simpleimperative_Wait, "miliseconds")
     descriptor = None
-    for klass in simpleimperative::Wait.__mro__:
+    for klass in simpleimperative_Wait.__mro__:
         if "miliseconds" in klass.__dict__:
             descriptor = klass.__dict__["miliseconds"]
             break
@@ -223,58 +209,72 @@ def test_simpleimperative::wait_has_miliseconds():
 
 
 
-def test_simpleimperative::assignation_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Assignation)
+def test_simpleimperative_loop_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Loop)
 
 
-def test_simpleimperative::assignation_constructor_exists():
-    assert callable(simpleimperative::Assignation.__init__)
+def test_simpleimperative_loop_constructor_exists():
+    assert callable(simpleimperative_Loop.__init__)
 
 
-def test_simpleimperative::assignation_constructor_args():
-    sig = inspect.signature(simpleimperative::Assignation.__init__)
+def test_simpleimperative_loop_constructor_args():
+    sig = inspect.signature(simpleimperative_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleimperative::conditional_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Conditional)
+def test_simpleimperative_assignation_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Assignation)
 
 
-def test_simpleimperative::conditional_constructor_exists():
-    assert callable(simpleimperative::Conditional.__init__)
+def test_simpleimperative_assignation_constructor_exists():
+    assert callable(simpleimperative_Assignation.__init__)
 
 
-def test_simpleimperative::conditional_constructor_args():
-    sig = inspect.signature(simpleimperative::Conditional.__init__)
+def test_simpleimperative_assignation_constructor_args():
+    sig = inspect.signature(simpleimperative_Assignation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleimperative::statement_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Statement)
+def test_simpleimperative_conditional_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Conditional)
 
 
-def test_simpleimperative::statement_constructor_exists():
-    assert callable(simpleimperative::Statement.__init__)
+def test_simpleimperative_conditional_constructor_exists():
+    assert callable(simpleimperative_Conditional.__init__)
 
 
-def test_simpleimperative::statement_constructor_args():
-    sig = inspect.signature(simpleimperative::Statement.__init__)
+def test_simpleimperative_conditional_constructor_args():
+    sig = inspect.signature(simpleimperative_Conditional.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleimperative::program_is_not_abstract():
-    assert not inspect.isabstract(simpleimperative::Program)
+def test_simpleimperative_statement_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Statement)
 
 
-def test_simpleimperative::program_constructor_exists():
-    assert callable(simpleimperative::Program.__init__)
+def test_simpleimperative_statement_constructor_exists():
+    assert callable(simpleimperative_Statement.__init__)
 
 
-def test_simpleimperative::program_constructor_args():
-    sig = inspect.signature(simpleimperative::Program.__init__)
+def test_simpleimperative_statement_constructor_args():
+    sig = inspect.signature(simpleimperative_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleimperative_program_is_not_abstract():
+    assert not inspect.isabstract(simpleimperative_Program)
+
+
+def test_simpleimperative_program_constructor_exists():
+    assert callable(simpleimperative_Program.__init__)
+
+
+def test_simpleimperative_program_constructor_args():
+    sig = inspect.signature(simpleimperative_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,55 +292,55 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-simpleimperative::VarRef_strategy = st.builds(
-    simpleimperative::VarRef,
+simpleimperative_VarRef_strategy = st.builds(
+    simpleimperative_VarRef,
     varRef=
         safe_text
 )
 ConsoleOutput_strategy = st.builds(
     ConsoleOutput,
 )
-simpleimperative::Print_strategy = st.builds(
-    simpleimperative::Print,
+simpleimperative_Print_strategy = st.builds(
+    simpleimperative_Print,
 )
-simpleimperative::Println_strategy = st.builds(
-    simpleimperative::Println,
+simpleimperative_Println_strategy = st.builds(
+    simpleimperative_Println,
 )
-simpleimperative::Expression_strategy = st.builds(
-    simpleimperative::Expression,
+simpleimperative_Expression_strategy = st.builds(
+    simpleimperative_Expression,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-simpleimperative::ConsoleOutput_strategy = st.builds(
-    simpleimperative::ConsoleOutput,
+simpleimperative_ConsoleOutput_strategy = st.builds(
+    simpleimperative_ConsoleOutput,
     input=
         safe_text
 )
-simpleimperative::VarDecl_strategy = st.builds(
-    simpleimperative::VarDecl,
+simpleimperative_VarDecl_strategy = st.builds(
+    simpleimperative_VarDecl,
     name=
         safe_text
 )
-simpleimperative::Loop_strategy = st.builds(
-    simpleimperative::Loop,
-)
-simpleimperative::Wait_strategy = st.builds(
-    simpleimperative::Wait,
+simpleimperative_Wait_strategy = st.builds(
+    simpleimperative_Wait,
     miliseconds=
         safe_text
 )
-simpleimperative::Assignation_strategy = st.builds(
-    simpleimperative::Assignation,
+simpleimperative_Loop_strategy = st.builds(
+    simpleimperative_Loop,
 )
-simpleimperative::Conditional_strategy = st.builds(
-    simpleimperative::Conditional,
+simpleimperative_Assignation_strategy = st.builds(
+    simpleimperative_Assignation,
 )
-simpleimperative::Statement_strategy = st.builds(
-    simpleimperative::Statement,
+simpleimperative_Conditional_strategy = st.builds(
+    simpleimperative_Conditional,
 )
-simpleimperative::Program_strategy = st.builds(
-    simpleimperative::Program,
+simpleimperative_Statement_strategy = st.builds(
+    simpleimperative_Statement,
+)
+simpleimperative_Program_strategy = st.builds(
+    simpleimperative_Program,
 )
 
 @given(instance=Expression_strategy)
@@ -348,18 +348,15 @@ simpleimperative::Program_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=simpleimperative::VarRef_strategy)
+@given(instance=simpleimperative_VarRef_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::varref_instantiation(instance):
-    assert isinstance(instance, simpleimperative::VarRef)
-
-@given(instance=simpleimperative::VarRef_strategy)
-def test_simpleimperative::varref_varRef_type(instance):
-    assert isinstance(instance.varRef, str)
+def test_simpleimperative_varref_instantiation(instance):
+    assert isinstance(instance, simpleimperative_VarRef)
 
 
-@given(instance=simpleimperative::VarRef_strategy)
-def test_simpleimperative::varref_varRef_setter(instance):
+
+@given(instance=simpleimperative_VarRef_strategy)
+def test_simpleimperative_varref_varRef_setter(instance):
     original = instance.varRef
     instance.varRef = original
     assert instance.varRef == original
@@ -369,20 +366,20 @@ def test_simpleimperative::varref_varRef_setter(instance):
 def test_consoleoutput_instantiation(instance):
     assert isinstance(instance, ConsoleOutput)
 
-@given(instance=simpleimperative::Print_strategy)
+@given(instance=simpleimperative_Print_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::print_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Print)
+def test_simpleimperative_print_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Print)
 
-@given(instance=simpleimperative::Println_strategy)
+@given(instance=simpleimperative_Println_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::println_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Println)
+def test_simpleimperative_println_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Println)
 
-@given(instance=simpleimperative::Expression_strategy)
+@given(instance=simpleimperative_Expression_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::expression_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Expression)
+def test_simpleimperative_expression_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Expression)
 
 import warnings
 import copy
@@ -390,9 +387,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simpleimperative::Expression_strategy)
+@given(instance=simpleimperative_Expression_strategy)
 @settings(max_examples=30)
-def test_simpleimperative::expression_eval_changes_state(instance):
+def test_simpleimperative_expression_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -406,89 +403,80 @@ def test_simpleimperative::expression_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in simpleimperative::Expression is empty"
+        assert has_statements, f"Function 'eval' in simpleimperative_Expression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in simpleimperative::Expression did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in simpleimperative_Expression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in simpleimperative::Expression is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in simpleimperative_Expression is not implemented or raised an error")
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=simpleimperative::ConsoleOutput_strategy)
+@given(instance=simpleimperative_ConsoleOutput_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::consoleoutput_instantiation(instance):
-    assert isinstance(instance, simpleimperative::ConsoleOutput)
-
-@given(instance=simpleimperative::ConsoleOutput_strategy)
-def test_simpleimperative::consoleoutput_input_type(instance):
-    assert isinstance(instance.input, str)
+def test_simpleimperative_consoleoutput_instantiation(instance):
+    assert isinstance(instance, simpleimperative_ConsoleOutput)
 
 
-@given(instance=simpleimperative::ConsoleOutput_strategy)
-def test_simpleimperative::consoleoutput_input_setter(instance):
+
+@given(instance=simpleimperative_ConsoleOutput_strategy)
+def test_simpleimperative_consoleoutput_input_setter(instance):
     original = instance.input
     instance.input = original
     assert instance.input == original
 
-@given(instance=simpleimperative::VarDecl_strategy)
+@given(instance=simpleimperative_VarDecl_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::vardecl_instantiation(instance):
-    assert isinstance(instance, simpleimperative::VarDecl)
-
-@given(instance=simpleimperative::VarDecl_strategy)
-def test_simpleimperative::vardecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleimperative_vardecl_instantiation(instance):
+    assert isinstance(instance, simpleimperative_VarDecl)
 
 
-@given(instance=simpleimperative::VarDecl_strategy)
-def test_simpleimperative::vardecl_name_setter(instance):
+
+@given(instance=simpleimperative_VarDecl_strategy)
+def test_simpleimperative_vardecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleimperative::Loop_strategy)
+@given(instance=simpleimperative_Wait_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::loop_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Loop)
-
-@given(instance=simpleimperative::Wait_strategy)
-@settings(max_examples=50)
-def test_simpleimperative::wait_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Wait)
-
-@given(instance=simpleimperative::Wait_strategy)
-def test_simpleimperative::wait_miliseconds_type(instance):
-    assert isinstance(instance.miliseconds, str)
+def test_simpleimperative_wait_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Wait)
 
 
-@given(instance=simpleimperative::Wait_strategy)
-def test_simpleimperative::wait_miliseconds_setter(instance):
+
+@given(instance=simpleimperative_Wait_strategy)
+def test_simpleimperative_wait_miliseconds_setter(instance):
     original = instance.miliseconds
     instance.miliseconds = original
     assert instance.miliseconds == original
 
-@given(instance=simpleimperative::Assignation_strategy)
+@given(instance=simpleimperative_Loop_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::assignation_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Assignation)
+def test_simpleimperative_loop_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Loop)
 
-@given(instance=simpleimperative::Conditional_strategy)
+@given(instance=simpleimperative_Assignation_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::conditional_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Conditional)
+def test_simpleimperative_assignation_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Assignation)
 
-@given(instance=simpleimperative::Statement_strategy)
+@given(instance=simpleimperative_Conditional_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::statement_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Statement)
+def test_simpleimperative_conditional_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Conditional)
 
-@given(instance=simpleimperative::Program_strategy)
+@given(instance=simpleimperative_Statement_strategy)
 @settings(max_examples=50)
-def test_simpleimperative::program_instantiation(instance):
-    assert isinstance(instance, simpleimperative::Program)
+def test_simpleimperative_statement_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Statement)
+
+@given(instance=simpleimperative_Program_strategy)
+@settings(max_examples=50)
+def test_simpleimperative_program_instantiation(instance):
+    assert isinstance(instance, simpleimperative_Program)

@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cbpmn::EObject,
-    cbpmn::FlowNodeInstance,
+from python_code import (
+    cbpmn_EObject,
+    cbpmn_FlowNodeInstance,
     EObject,
-    cbpmn::DataObject,
-    cbpmn::ProcessInstance,
-    cbpmn::EClass,
+    cbpmn_DataObject,
+    cbpmn_ProcessInstance,
+    cbpmn_EClass,
     FlowNode,
-    cbpmn::Event,
-    cbpmn::SplitGateway,
-    cbpmn::Activity,
-    cbpmn::OCLConstraint,
+    cbpmn_Event,
+    cbpmn_SplitGateway,
+    cbpmn_Activity,
+    cbpmn_OCLConstraint,
     OCLConstraint,
     SplitGateway,
-    cbpmn::ParallelGateway,
-    cbpmn::DecisionGateway,
-    cbpmn::FlowNode,
-    cbpmn::DecisionCondition,
-    cbpmn::DataObjectReference,
-    cbpmn::Branch,
-    cbpmn::ProcessModel,
-    DataObjectType,
+    cbpmn_ParallelGateway,
+    cbpmn_DecisionGateway,
+    cbpmn_FlowNode,
+    cbpmn_DecisionCondition,
+    cbpmn_DataObjectReference,
+    cbpmn_Branch,
+    cbpmn_ProcessModel,
+    GatewayType,
     FlowNodeInstanceStatus,
+    DecisionType,
     ActivityType,
     EventType,
-    DecisionType,
-    GatewayType,
+    DataObjectType,
 )
 
 # =============================================================================
@@ -40,37 +40,37 @@ from classes import (
 
 
 
-def test_cbpmn::eobject_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::EObject)
+def test_cbpmn_eobject_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_EObject)
 
 
-def test_cbpmn::eobject_constructor_exists():
-    assert callable(cbpmn::EObject.__init__)
+def test_cbpmn_eobject_constructor_exists():
+    assert callable(cbpmn_EObject.__init__)
 
 
-def test_cbpmn::eobject_constructor_args():
-    sig = inspect.signature(cbpmn::EObject.__init__)
+def test_cbpmn_eobject_constructor_args():
+    sig = inspect.signature(cbpmn_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmn::flownodeinstance_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::FlowNodeInstance)
+def test_cbpmn_flownodeinstance_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_FlowNodeInstance)
 
 
-def test_cbpmn::flownodeinstance_constructor_exists():
-    assert callable(cbpmn::FlowNodeInstance.__init__)
+def test_cbpmn_flownodeinstance_constructor_exists():
+    assert callable(cbpmn_FlowNodeInstance.__init__)
 
 
-def test_cbpmn::flownodeinstance_constructor_args():
-    sig = inspect.signature(cbpmn::FlowNodeInstance.__init__)
+def test_cbpmn_flownodeinstance_constructor_args():
+    sig = inspect.signature(cbpmn_FlowNodeInstance.__init__)
     params = list(sig.parameters.keys())
     assert "status" in params, "Missing parameter 'status'"
 
-def test_cbpmn::flownodeinstance_has_status():
-    assert hasattr(cbpmn::FlowNodeInstance, "status")
+def test_cbpmn_flownodeinstance_has_status():
+    assert hasattr(cbpmn_FlowNodeInstance, "status")
     descriptor = None
-    for klass in cbpmn::FlowNodeInstance.__mro__:
+    for klass in cbpmn_FlowNodeInstance.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
@@ -92,37 +92,37 @@ def test_eobject_constructor_args():
 
 
 
-def test_cbpmn::dataobject_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::DataObject)
+def test_cbpmn_dataobject_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_DataObject)
 
 
-def test_cbpmn::dataobject_constructor_exists():
-    assert callable(cbpmn::DataObject.__init__)
+def test_cbpmn_dataobject_constructor_exists():
+    assert callable(cbpmn_DataObject.__init__)
 
 
-def test_cbpmn::dataobject_constructor_args():
-    sig = inspect.signature(cbpmn::DataObject.__init__)
+def test_cbpmn_dataobject_constructor_args():
+    sig = inspect.signature(cbpmn_DataObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmn::processinstance_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::ProcessInstance)
+def test_cbpmn_processinstance_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_ProcessInstance)
 
 
-def test_cbpmn::processinstance_constructor_exists():
-    assert callable(cbpmn::ProcessInstance.__init__)
+def test_cbpmn_processinstance_constructor_exists():
+    assert callable(cbpmn_ProcessInstance.__init__)
 
 
-def test_cbpmn::processinstance_constructor_args():
-    sig = inspect.signature(cbpmn::ProcessInstance.__init__)
+def test_cbpmn_processinstance_constructor_args():
+    sig = inspect.signature(cbpmn_ProcessInstance.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_cbpmn::processinstance_has_id():
-    assert hasattr(cbpmn::ProcessInstance, "id")
+def test_cbpmn_processinstance_has_id():
+    assert hasattr(cbpmn_ProcessInstance, "id")
     descriptor = None
-    for klass in cbpmn::ProcessInstance.__mro__:
+    for klass in cbpmn_ProcessInstance.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -130,16 +130,16 @@ def test_cbpmn::processinstance_has_id():
 
 
 
-def test_cbpmn::eclass_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::EClass)
+def test_cbpmn_eclass_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_EClass)
 
 
-def test_cbpmn::eclass_constructor_exists():
-    assert callable(cbpmn::EClass.__init__)
+def test_cbpmn_eclass_constructor_exists():
+    assert callable(cbpmn_EClass.__init__)
 
 
-def test_cbpmn::eclass_constructor_args():
-    sig = inspect.signature(cbpmn::EClass.__init__)
+def test_cbpmn_eclass_constructor_args():
+    sig = inspect.signature(cbpmn_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -158,51 +158,51 @@ def test_flownode_constructor_args():
 
 
 
-def test_cbpmn::event_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::Event)
+def test_cbpmn_event_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_Event)
 
 
-def test_cbpmn::event_constructor_exists():
-    assert callable(cbpmn::Event.__init__)
+def test_cbpmn_event_constructor_exists():
+    assert callable(cbpmn_Event.__init__)
 
 
-def test_cbpmn::event_constructor_args():
-    sig = inspect.signature(cbpmn::Event.__init__)
+def test_cbpmn_event_constructor_args():
+    sig = inspect.signature(cbpmn_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmn::splitgateway_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::SplitGateway)
+def test_cbpmn_splitgateway_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_SplitGateway)
 
 
-def test_cbpmn::splitgateway_constructor_exists():
-    assert callable(cbpmn::SplitGateway.__init__)
+def test_cbpmn_splitgateway_constructor_exists():
+    assert callable(cbpmn_SplitGateway.__init__)
 
 
-def test_cbpmn::splitgateway_constructor_args():
-    sig = inspect.signature(cbpmn::SplitGateway.__init__)
+def test_cbpmn_splitgateway_constructor_args():
+    sig = inspect.signature(cbpmn_SplitGateway.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmn::activity_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::Activity)
+def test_cbpmn_activity_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_Activity)
 
 
-def test_cbpmn::activity_constructor_exists():
-    assert callable(cbpmn::Activity.__init__)
+def test_cbpmn_activity_constructor_exists():
+    assert callable(cbpmn_Activity.__init__)
 
 
-def test_cbpmn::activity_constructor_args():
-    sig = inspect.signature(cbpmn::Activity.__init__)
+def test_cbpmn_activity_constructor_args():
+    sig = inspect.signature(cbpmn_Activity.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_cbpmn::activity_has_type():
-    assert hasattr(cbpmn::Activity, "type")
+def test_cbpmn_activity_has_type():
+    assert hasattr(cbpmn_Activity, "type")
     descriptor = None
-    for klass in cbpmn::Activity.__mro__:
+    for klass in cbpmn_Activity.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -210,33 +210,33 @@ def test_cbpmn::activity_has_type():
 
 
 
-def test_cbpmn::oclconstraint_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::OCLConstraint)
+def test_cbpmn_oclconstraint_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_OCLConstraint)
 
 
-def test_cbpmn::oclconstraint_constructor_exists():
-    assert callable(cbpmn::OCLConstraint.__init__)
+def test_cbpmn_oclconstraint_constructor_exists():
+    assert callable(cbpmn_OCLConstraint.__init__)
 
 
-def test_cbpmn::oclconstraint_constructor_args():
-    sig = inspect.signature(cbpmn::OCLConstraint.__init__)
+def test_cbpmn_oclconstraint_constructor_args():
+    sig = inspect.signature(cbpmn_OCLConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "constraintStr" in params, "Missing parameter 'constraintStr'"
     assert "constraintName" in params, "Missing parameter 'constraintName'"
 
-def test_cbpmn::oclconstraint_has_constraintStr():
-    assert hasattr(cbpmn::OCLConstraint, "constraintStr")
+def test_cbpmn_oclconstraint_has_constraintStr():
+    assert hasattr(cbpmn_OCLConstraint, "constraintStr")
     descriptor = None
-    for klass in cbpmn::OCLConstraint.__mro__:
+    for klass in cbpmn_OCLConstraint.__mro__:
         if "constraintStr" in klass.__dict__:
             descriptor = klass.__dict__["constraintStr"]
             break
     assert isinstance(descriptor, property)
 
-def test_cbpmn::oclconstraint_has_constraintName():
-    assert hasattr(cbpmn::OCLConstraint, "constraintName")
+def test_cbpmn_oclconstraint_has_constraintName():
+    assert hasattr(cbpmn_OCLConstraint, "constraintName")
     descriptor = None
-    for klass in cbpmn::OCLConstraint.__mro__:
+    for klass in cbpmn_OCLConstraint.__mro__:
         if "constraintName" in klass.__dict__:
             descriptor = klass.__dict__["constraintName"]
             break
@@ -272,37 +272,37 @@ def test_splitgateway_constructor_args():
 
 
 
-def test_cbpmn::parallelgateway_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::ParallelGateway)
+def test_cbpmn_parallelgateway_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_ParallelGateway)
 
 
-def test_cbpmn::parallelgateway_constructor_exists():
-    assert callable(cbpmn::ParallelGateway.__init__)
+def test_cbpmn_parallelgateway_constructor_exists():
+    assert callable(cbpmn_ParallelGateway.__init__)
 
 
-def test_cbpmn::parallelgateway_constructor_args():
-    sig = inspect.signature(cbpmn::ParallelGateway.__init__)
+def test_cbpmn_parallelgateway_constructor_args():
+    sig = inspect.signature(cbpmn_ParallelGateway.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmn::decisiongateway_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::DecisionGateway)
+def test_cbpmn_decisiongateway_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_DecisionGateway)
 
 
-def test_cbpmn::decisiongateway_constructor_exists():
-    assert callable(cbpmn::DecisionGateway.__init__)
+def test_cbpmn_decisiongateway_constructor_exists():
+    assert callable(cbpmn_DecisionGateway.__init__)
 
 
-def test_cbpmn::decisiongateway_constructor_args():
-    sig = inspect.signature(cbpmn::DecisionGateway.__init__)
+def test_cbpmn_decisiongateway_constructor_args():
+    sig = inspect.signature(cbpmn_DecisionGateway.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_cbpmn::decisiongateway_has_type():
-    assert hasattr(cbpmn::DecisionGateway, "type")
+def test_cbpmn_decisiongateway_has_type():
+    assert hasattr(cbpmn_DecisionGateway, "type")
     descriptor = None
-    for klass in cbpmn::DecisionGateway.__mro__:
+    for klass in cbpmn_DecisionGateway.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -310,23 +310,23 @@ def test_cbpmn::decisiongateway_has_type():
 
 
 
-def test_cbpmn::flownode_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::FlowNode)
+def test_cbpmn_flownode_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_FlowNode)
 
 
-def test_cbpmn::flownode_constructor_exists():
-    assert callable(cbpmn::FlowNode.__init__)
+def test_cbpmn_flownode_constructor_exists():
+    assert callable(cbpmn_FlowNode.__init__)
 
 
-def test_cbpmn::flownode_constructor_args():
-    sig = inspect.signature(cbpmn::FlowNode.__init__)
+def test_cbpmn_flownode_constructor_args():
+    sig = inspect.signature(cbpmn_FlowNode.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cbpmn::flownode_has_name():
-    assert hasattr(cbpmn::FlowNode, "name")
+def test_cbpmn_flownode_has_name():
+    assert hasattr(cbpmn_FlowNode, "name")
     descriptor = None
-    for klass in cbpmn::FlowNode.__mro__:
+    for klass in cbpmn_FlowNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -334,23 +334,23 @@ def test_cbpmn::flownode_has_name():
 
 
 
-def test_cbpmn::decisioncondition_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::DecisionCondition)
+def test_cbpmn_decisioncondition_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_DecisionCondition)
 
 
-def test_cbpmn::decisioncondition_constructor_exists():
-    assert callable(cbpmn::DecisionCondition.__init__)
+def test_cbpmn_decisioncondition_constructor_exists():
+    assert callable(cbpmn_DecisionCondition.__init__)
 
 
-def test_cbpmn::decisioncondition_constructor_args():
-    sig = inspect.signature(cbpmn::DecisionCondition.__init__)
+def test_cbpmn_decisioncondition_constructor_args():
+    sig = inspect.signature(cbpmn_DecisionCondition.__init__)
     params = list(sig.parameters.keys())
     assert "isDefault" in params, "Missing parameter 'isDefault'"
 
-def test_cbpmn::decisioncondition_has_isDefault():
-    assert hasattr(cbpmn::DecisionCondition, "isDefault")
+def test_cbpmn_decisioncondition_has_isDefault():
+    assert hasattr(cbpmn_DecisionCondition, "isDefault")
     descriptor = None
-    for klass in cbpmn::DecisionCondition.__mro__:
+    for klass in cbpmn_DecisionCondition.__mro__:
         if "isDefault" in klass.__dict__:
             descriptor = klass.__dict__["isDefault"]
             break
@@ -358,100 +358,100 @@ def test_cbpmn::decisioncondition_has_isDefault():
 
 
 
-def test_cbpmn::dataobjectreference_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::DataObjectReference)
+def test_cbpmn_dataobjectreference_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_DataObjectReference)
 
 
-def test_cbpmn::dataobjectreference_constructor_exists():
-    assert callable(cbpmn::DataObjectReference.__init__)
+def test_cbpmn_dataobjectreference_constructor_exists():
+    assert callable(cbpmn_DataObjectReference.__init__)
 
 
-def test_cbpmn::dataobjectreference_constructor_args():
-    sig = inspect.signature(cbpmn::DataObjectReference.__init__)
+def test_cbpmn_dataobjectreference_constructor_args():
+    sig = inspect.signature(cbpmn_DataObjectReference.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "higherBound" in params, "Missing parameter 'higherBound'"
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_cbpmn::dataobjectreference_has_higherBound():
-    assert hasattr(cbpmn::DataObjectReference, "higherBound")
+def test_cbpmn_dataobjectreference_has_name():
+    assert hasattr(cbpmn_DataObjectReference, "name")
     descriptor = None
-    for klass in cbpmn::DataObjectReference.__mro__:
+    for klass in cbpmn_DataObjectReference.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cbpmn_dataobjectreference_has_higherBound():
+    assert hasattr(cbpmn_DataObjectReference, "higherBound")
+    descriptor = None
+    for klass in cbpmn_DataObjectReference.__mro__:
         if "higherBound" in klass.__dict__:
             descriptor = klass.__dict__["higherBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_cbpmn::dataobjectreference_has_lowerBound():
-    assert hasattr(cbpmn::DataObjectReference, "lowerBound")
+def test_cbpmn_dataobjectreference_has_lowerBound():
+    assert hasattr(cbpmn_DataObjectReference, "lowerBound")
     descriptor = None
-    for klass in cbpmn::DataObjectReference.__mro__:
+    for klass in cbpmn_DataObjectReference.__mro__:
         if "lowerBound" in klass.__dict__:
             descriptor = klass.__dict__["lowerBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_cbpmn::dataobjectreference_has_name():
-    assert hasattr(cbpmn::DataObjectReference, "name")
-    descriptor = None
-    for klass in cbpmn::DataObjectReference.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cbpmn::branch_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::Branch)
-
-
-def test_cbpmn::branch_constructor_exists():
-    assert callable(cbpmn::Branch.__init__)
+def test_cbpmn_branch_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_Branch)
 
 
-def test_cbpmn::branch_constructor_args():
-    sig = inspect.signature(cbpmn::Branch.__init__)
+def test_cbpmn_branch_constructor_exists():
+    assert callable(cbpmn_Branch.__init__)
+
+
+def test_cbpmn_branch_constructor_args():
+    sig = inspect.signature(cbpmn_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmn::processmodel_is_not_abstract():
-    assert not inspect.isabstract(cbpmn::ProcessModel)
+def test_cbpmn_processmodel_is_not_abstract():
+    assert not inspect.isabstract(cbpmn_ProcessModel)
 
 
-def test_cbpmn::processmodel_constructor_exists():
-    assert callable(cbpmn::ProcessModel.__init__)
+def test_cbpmn_processmodel_constructor_exists():
+    assert callable(cbpmn_ProcessModel.__init__)
 
 
-def test_cbpmn::processmodel_constructor_args():
-    sig = inspect.signature(cbpmn::ProcessModel.__init__)
+def test_cbpmn_processmodel_constructor_args():
+    sig = inspect.signature(cbpmn_ProcessModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cbpmn::processmodel_has_name():
-    assert hasattr(cbpmn::ProcessModel, "name")
+def test_cbpmn_processmodel_has_name():
+    assert hasattr(cbpmn_ProcessModel, "name")
     descriptor = None
-    for klass in cbpmn::ProcessModel.__mro__:
+    for klass in cbpmn_ProcessModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_dataobjecttype_exists():
+def test_gatewaytype_exists():
     # Check that the Enumeration exists
-    assert DataObjectType is not None
+    assert GatewayType is not None
 
-def test_dataobjecttype_has_all_literals():
+def test_gatewaytype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DataObjectType]
+    enum_literals = [lit.name for lit in GatewayType]
     expected_literals = [
-        "INFORMATIONAL",
-        "PHYSICAL",
+        "JOIN",
+        "SPLIT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DataObjectType"
+        assert lit_name in enum_literals, f"Literal '' missing in GatewayType"
 
 def test_flownodeinstancestatus_exists():
     # Check that the Enumeration exists
@@ -462,14 +462,29 @@ def test_flownodeinstancestatus_has_all_literals():
     enum_literals = [lit.name for lit in FlowNodeInstanceStatus]
     expected_literals = [
         "STARTED",
-        "INTERRUPTED",
         "SUCCESS",
         "INIT",
+        "INTERRUPTED",
         "FAILED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FlowNodeInstanceStatus"
+
+def test_decisiontype_exists():
+    # Check that the Enumeration exists
+    assert DecisionType is not None
+
+def test_decisiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DecisionType]
+    expected_literals = [
+        "EXCLUSIVE",
+        "INCLUSIVE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DecisionType"
 
 def test_activitytype_exists():
     # Check that the Enumeration exists
@@ -479,12 +494,12 @@ def test_activitytype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ActivityType]
     expected_literals = [
-        "MANUAL",
-        "SEND",
-        "SERVICE",
-        "BUSINESSRULE",
-        "RECEIVE",
         "USER",
+        "BUSINESSRULE",
+        "SERVICE",
+        "MANUAL",
+        "RECEIVE",
+        "SEND",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -504,35 +519,20 @@ def test_eventtype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EventType"
 
-def test_decisiontype_exists():
+def test_dataobjecttype_exists():
     # Check that the Enumeration exists
-    assert DecisionType is not None
+    assert DataObjectType is not None
 
-def test_decisiontype_has_all_literals():
+def test_dataobjecttype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DecisionType]
+    enum_literals = [lit.name for lit in DataObjectType]
     expected_literals = [
-        "EXCLUSIVE",
-        "INCLUSIVE",
+        "PHYSICAL",
+        "INFORMATIONAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DecisionType"
-
-def test_gatewaytype_exists():
-    # Check that the Enumeration exists
-    assert GatewayType is not None
-
-def test_gatewaytype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in GatewayType]
-    expected_literals = [
-        "SPLIT",
-        "JOIN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in GatewayType"
+        assert lit_name in enum_literals, f"Literal '' missing in DataObjectType"
 
 
 # =============================================================================
@@ -546,44 +546,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cbpmn::EObject_strategy = st.builds(
-    cbpmn::EObject,
+cbpmn_EObject_strategy = st.builds(
+    cbpmn_EObject,
 )
-cbpmn::FlowNodeInstance_strategy = st.builds(
-    cbpmn::FlowNodeInstance,
+cbpmn_FlowNodeInstance_strategy = st.builds(
+    cbpmn_FlowNodeInstance,
     status=
         safe_text
 )
 EObject_strategy = st.builds(
     EObject,
 )
-cbpmn::DataObject_strategy = st.builds(
-    cbpmn::DataObject,
+cbpmn_DataObject_strategy = st.builds(
+    cbpmn_DataObject,
 )
-cbpmn::ProcessInstance_strategy = st.builds(
-    cbpmn::ProcessInstance,
+cbpmn_ProcessInstance_strategy = st.builds(
+    cbpmn_ProcessInstance,
     id=
         safe_text
 )
-cbpmn::EClass_strategy = st.builds(
-    cbpmn::EClass,
+cbpmn_EClass_strategy = st.builds(
+    cbpmn_EClass,
 )
 FlowNode_strategy = st.builds(
     FlowNode,
 )
-cbpmn::Event_strategy = st.builds(
-    cbpmn::Event,
+cbpmn_Event_strategy = st.builds(
+    cbpmn_Event,
 )
-cbpmn::SplitGateway_strategy = st.builds(
-    cbpmn::SplitGateway,
+cbpmn_SplitGateway_strategy = st.builds(
+    cbpmn_SplitGateway,
 )
-cbpmn::Activity_strategy = st.builds(
-    cbpmn::Activity,
+cbpmn_Activity_strategy = st.builds(
+    cbpmn_Activity,
     type=
         safe_text
 )
-cbpmn::OCLConstraint_strategy = st.builds(
-    cbpmn::OCLConstraint,
+cbpmn_OCLConstraint_strategy = st.builds(
+    cbpmn_OCLConstraint,
     constraintStr=
         safe_text,
     constraintName=
@@ -595,59 +595,56 @@ OCLConstraint_strategy = st.builds(
 SplitGateway_strategy = st.builds(
     SplitGateway,
 )
-cbpmn::ParallelGateway_strategy = st.builds(
-    cbpmn::ParallelGateway,
+cbpmn_ParallelGateway_strategy = st.builds(
+    cbpmn_ParallelGateway,
 )
-cbpmn::DecisionGateway_strategy = st.builds(
-    cbpmn::DecisionGateway,
+cbpmn_DecisionGateway_strategy = st.builds(
+    cbpmn_DecisionGateway,
     type=
         safe_text
 )
-cbpmn::FlowNode_strategy = st.builds(
-    cbpmn::FlowNode,
+cbpmn_FlowNode_strategy = st.builds(
+    cbpmn_FlowNode,
     name=
         safe_text
 )
-cbpmn::DecisionCondition_strategy = st.builds(
-    cbpmn::DecisionCondition,
+cbpmn_DecisionCondition_strategy = st.builds(
+    cbpmn_DecisionCondition,
     isDefault=
         st.booleans()
 )
-cbpmn::DataObjectReference_strategy = st.builds(
-    cbpmn::DataObjectReference,
+cbpmn_DataObjectReference_strategy = st.builds(
+    cbpmn_DataObjectReference,
+    name=
+        safe_text,
     higherBound=
         st.integers(),
     lowerBound=
-        st.integers(),
+        st.integers()
+)
+cbpmn_Branch_strategy = st.builds(
+    cbpmn_Branch,
+)
+cbpmn_ProcessModel_strategy = st.builds(
+    cbpmn_ProcessModel,
     name=
         safe_text
 )
-cbpmn::Branch_strategy = st.builds(
-    cbpmn::Branch,
-)
-cbpmn::ProcessModel_strategy = st.builds(
-    cbpmn::ProcessModel,
-    name=
-        safe_text
-)
 
-@given(instance=cbpmn::EObject_strategy)
+@given(instance=cbpmn_EObject_strategy)
 @settings(max_examples=50)
-def test_cbpmn::eobject_instantiation(instance):
-    assert isinstance(instance, cbpmn::EObject)
+def test_cbpmn_eobject_instantiation(instance):
+    assert isinstance(instance, cbpmn_EObject)
 
-@given(instance=cbpmn::FlowNodeInstance_strategy)
+@given(instance=cbpmn_FlowNodeInstance_strategy)
 @settings(max_examples=50)
-def test_cbpmn::flownodeinstance_instantiation(instance):
-    assert isinstance(instance, cbpmn::FlowNodeInstance)
-
-@given(instance=cbpmn::FlowNodeInstance_strategy)
-def test_cbpmn::flownodeinstance_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_cbpmn_flownodeinstance_instantiation(instance):
+    assert isinstance(instance, cbpmn_FlowNodeInstance)
 
 
-@given(instance=cbpmn::FlowNodeInstance_strategy)
-def test_cbpmn::flownodeinstance_status_setter(instance):
+
+@given(instance=cbpmn_FlowNodeInstance_strategy)
+def test_cbpmn_flownodeinstance_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
@@ -657,86 +654,74 @@ def test_cbpmn::flownodeinstance_status_setter(instance):
 def test_eobject_instantiation(instance):
     assert isinstance(instance, EObject)
 
-@given(instance=cbpmn::DataObject_strategy)
+@given(instance=cbpmn_DataObject_strategy)
 @settings(max_examples=50)
-def test_cbpmn::dataobject_instantiation(instance):
-    assert isinstance(instance, cbpmn::DataObject)
+def test_cbpmn_dataobject_instantiation(instance):
+    assert isinstance(instance, cbpmn_DataObject)
 
-@given(instance=cbpmn::ProcessInstance_strategy)
+@given(instance=cbpmn_ProcessInstance_strategy)
 @settings(max_examples=50)
-def test_cbpmn::processinstance_instantiation(instance):
-    assert isinstance(instance, cbpmn::ProcessInstance)
-
-@given(instance=cbpmn::ProcessInstance_strategy)
-def test_cbpmn::processinstance_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_cbpmn_processinstance_instantiation(instance):
+    assert isinstance(instance, cbpmn_ProcessInstance)
 
 
-@given(instance=cbpmn::ProcessInstance_strategy)
-def test_cbpmn::processinstance_id_setter(instance):
+
+@given(instance=cbpmn_ProcessInstance_strategy)
+def test_cbpmn_processinstance_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=cbpmn::EClass_strategy)
+@given(instance=cbpmn_EClass_strategy)
 @settings(max_examples=50)
-def test_cbpmn::eclass_instantiation(instance):
-    assert isinstance(instance, cbpmn::EClass)
+def test_cbpmn_eclass_instantiation(instance):
+    assert isinstance(instance, cbpmn_EClass)
 
 @given(instance=FlowNode_strategy)
 @settings(max_examples=50)
 def test_flownode_instantiation(instance):
     assert isinstance(instance, FlowNode)
 
-@given(instance=cbpmn::Event_strategy)
+@given(instance=cbpmn_Event_strategy)
 @settings(max_examples=50)
-def test_cbpmn::event_instantiation(instance):
-    assert isinstance(instance, cbpmn::Event)
+def test_cbpmn_event_instantiation(instance):
+    assert isinstance(instance, cbpmn_Event)
 
-@given(instance=cbpmn::SplitGateway_strategy)
+@given(instance=cbpmn_SplitGateway_strategy)
 @settings(max_examples=50)
-def test_cbpmn::splitgateway_instantiation(instance):
-    assert isinstance(instance, cbpmn::SplitGateway)
+def test_cbpmn_splitgateway_instantiation(instance):
+    assert isinstance(instance, cbpmn_SplitGateway)
 
-@given(instance=cbpmn::Activity_strategy)
+@given(instance=cbpmn_Activity_strategy)
 @settings(max_examples=50)
-def test_cbpmn::activity_instantiation(instance):
-    assert isinstance(instance, cbpmn::Activity)
-
-@given(instance=cbpmn::Activity_strategy)
-def test_cbpmn::activity_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_cbpmn_activity_instantiation(instance):
+    assert isinstance(instance, cbpmn_Activity)
 
 
-@given(instance=cbpmn::Activity_strategy)
-def test_cbpmn::activity_type_setter(instance):
+
+@given(instance=cbpmn_Activity_strategy)
+def test_cbpmn_activity_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=cbpmn::OCLConstraint_strategy)
+@given(instance=cbpmn_OCLConstraint_strategy)
 @settings(max_examples=50)
-def test_cbpmn::oclconstraint_instantiation(instance):
-    assert isinstance(instance, cbpmn::OCLConstraint)
-
-@given(instance=cbpmn::OCLConstraint_strategy)
-def test_cbpmn::oclconstraint_constraintStr_type(instance):
-    assert isinstance(instance.constraintStr, str)
+def test_cbpmn_oclconstraint_instantiation(instance):
+    assert isinstance(instance, cbpmn_OCLConstraint)
 
 
-@given(instance=cbpmn::OCLConstraint_strategy)
-def test_cbpmn::oclconstraint_constraintStr_setter(instance):
+
+@given(instance=cbpmn_OCLConstraint_strategy)
+def test_cbpmn_oclconstraint_constraintStr_setter(instance):
     original = instance.constraintStr
     instance.constraintStr = original
     assert instance.constraintStr == original
 
-@given(instance=cbpmn::OCLConstraint_strategy)
-def test_cbpmn::oclconstraint_constraintName_type(instance):
-    assert isinstance(instance.constraintName, str)
 
 
-@given(instance=cbpmn::OCLConstraint_strategy)
-def test_cbpmn::oclconstraint_constraintName_setter(instance):
+@given(instance=cbpmn_OCLConstraint_strategy)
+def test_cbpmn_oclconstraint_constraintName_setter(instance):
     original = instance.constraintName
     instance.constraintName = original
     assert instance.constraintName == original
@@ -751,23 +736,20 @@ def test_oclconstraint_instantiation(instance):
 def test_splitgateway_instantiation(instance):
     assert isinstance(instance, SplitGateway)
 
-@given(instance=cbpmn::ParallelGateway_strategy)
+@given(instance=cbpmn_ParallelGateway_strategy)
 @settings(max_examples=50)
-def test_cbpmn::parallelgateway_instantiation(instance):
-    assert isinstance(instance, cbpmn::ParallelGateway)
+def test_cbpmn_parallelgateway_instantiation(instance):
+    assert isinstance(instance, cbpmn_ParallelGateway)
 
-@given(instance=cbpmn::DecisionGateway_strategy)
+@given(instance=cbpmn_DecisionGateway_strategy)
 @settings(max_examples=50)
-def test_cbpmn::decisiongateway_instantiation(instance):
-    assert isinstance(instance, cbpmn::DecisionGateway)
-
-@given(instance=cbpmn::DecisionGateway_strategy)
-def test_cbpmn::decisiongateway_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_cbpmn_decisiongateway_instantiation(instance):
+    assert isinstance(instance, cbpmn_DecisionGateway)
 
 
-@given(instance=cbpmn::DecisionGateway_strategy)
-def test_cbpmn::decisiongateway_type_setter(instance):
+
+@given(instance=cbpmn_DecisionGateway_strategy)
+def test_cbpmn_decisiongateway_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -778,9 +760,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=cbpmn::DecisionGateway_strategy)
+@given(instance=cbpmn_DecisionGateway_strategy)
 @settings(max_examples=30)
-def test_cbpmn::decisiongateway_addbranchwithcondition_changes_state(instance):
+def test_cbpmn_decisiongateway_addbranchwithcondition_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -796,102 +778,84 @@ def test_cbpmn::decisiongateway_addbranchwithcondition_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addBranchWithCondition' in cbpmn::DecisionGateway is empty"
+        assert has_statements, f"Function 'addBranchWithCondition' in cbpmn_DecisionGateway is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addBranchWithCondition' in cbpmn::DecisionGateway did not change state; check implementation")
+            warnings.warn(f"Operation 'addBranchWithCondition' in cbpmn_DecisionGateway did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addBranchWithCondition' in cbpmn::DecisionGateway is not implemented or raised an error")
+        warnings.warn(f"Operation 'addBranchWithCondition' in cbpmn_DecisionGateway is not implemented or raised an error")
 
-@given(instance=cbpmn::FlowNode_strategy)
+@given(instance=cbpmn_FlowNode_strategy)
 @settings(max_examples=50)
-def test_cbpmn::flownode_instantiation(instance):
-    assert isinstance(instance, cbpmn::FlowNode)
-
-@given(instance=cbpmn::FlowNode_strategy)
-def test_cbpmn::flownode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cbpmn_flownode_instantiation(instance):
+    assert isinstance(instance, cbpmn_FlowNode)
 
 
-@given(instance=cbpmn::FlowNode_strategy)
-def test_cbpmn::flownode_name_setter(instance):
+
+@given(instance=cbpmn_FlowNode_strategy)
+def test_cbpmn_flownode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cbpmn::DecisionCondition_strategy)
+@given(instance=cbpmn_DecisionCondition_strategy)
 @settings(max_examples=50)
-def test_cbpmn::decisioncondition_instantiation(instance):
-    assert isinstance(instance, cbpmn::DecisionCondition)
-
-@given(instance=cbpmn::DecisionCondition_strategy)
-def test_cbpmn::decisioncondition_isDefault_type(instance):
-    assert isinstance(instance.isDefault, bool)
+def test_cbpmn_decisioncondition_instantiation(instance):
+    assert isinstance(instance, cbpmn_DecisionCondition)
 
 
-@given(instance=cbpmn::DecisionCondition_strategy)
-def test_cbpmn::decisioncondition_isDefault_setter(instance):
+
+@given(instance=cbpmn_DecisionCondition_strategy)
+def test_cbpmn_decisioncondition_isDefault_setter(instance):
     original = instance.isDefault
     instance.isDefault = original
     assert instance.isDefault == original
 
-@given(instance=cbpmn::DataObjectReference_strategy)
+@given(instance=cbpmn_DataObjectReference_strategy)
 @settings(max_examples=50)
-def test_cbpmn::dataobjectreference_instantiation(instance):
-    assert isinstance(instance, cbpmn::DataObjectReference)
-
-@given(instance=cbpmn::DataObjectReference_strategy)
-def test_cbpmn::dataobjectreference_higherBound_type(instance):
-    assert isinstance(instance.higherBound, int)
+def test_cbpmn_dataobjectreference_instantiation(instance):
+    assert isinstance(instance, cbpmn_DataObjectReference)
 
 
-@given(instance=cbpmn::DataObjectReference_strategy)
-def test_cbpmn::dataobjectreference_higherBound_setter(instance):
-    original = instance.higherBound
-    instance.higherBound = original
-    assert instance.higherBound == original
 
-@given(instance=cbpmn::DataObjectReference_strategy)
-def test_cbpmn::dataobjectreference_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
-
-
-@given(instance=cbpmn::DataObjectReference_strategy)
-def test_cbpmn::dataobjectreference_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=cbpmn::DataObjectReference_strategy)
-def test_cbpmn::dataobjectreference_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cbpmn::DataObjectReference_strategy)
-def test_cbpmn::dataobjectreference_name_setter(instance):
+@given(instance=cbpmn_DataObjectReference_strategy)
+def test_cbpmn_dataobjectreference_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cbpmn::Branch_strategy)
+
+
+@given(instance=cbpmn_DataObjectReference_strategy)
+def test_cbpmn_dataobjectreference_higherBound_setter(instance):
+    original = instance.higherBound
+    instance.higherBound = original
+    assert instance.higherBound == original
+
+
+
+@given(instance=cbpmn_DataObjectReference_strategy)
+def test_cbpmn_dataobjectreference_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+@given(instance=cbpmn_Branch_strategy)
 @settings(max_examples=50)
-def test_cbpmn::branch_instantiation(instance):
-    assert isinstance(instance, cbpmn::Branch)
+def test_cbpmn_branch_instantiation(instance):
+    assert isinstance(instance, cbpmn_Branch)
 
-@given(instance=cbpmn::ProcessModel_strategy)
+@given(instance=cbpmn_ProcessModel_strategy)
 @settings(max_examples=50)
-def test_cbpmn::processmodel_instantiation(instance):
-    assert isinstance(instance, cbpmn::ProcessModel)
-
-@given(instance=cbpmn::ProcessModel_strategy)
-def test_cbpmn::processmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cbpmn_processmodel_instantiation(instance):
+    assert isinstance(instance, cbpmn_ProcessModel)
 
 
-@given(instance=cbpmn::ProcessModel_strategy)
-def test_cbpmn::processmodel_name_setter(instance):
+
+@given(instance=cbpmn_ProcessModel_strategy)
+def test_cbpmn_processmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

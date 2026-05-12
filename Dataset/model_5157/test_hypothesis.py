@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    minimalref::B,
-    minimalref::A,
+from python_code import (
+    minimalref_B,
+    minimalref_A,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_minimalref::b_is_not_abstract():
-    assert not inspect.isabstract(minimalref::B)
+def test_minimalref_b_is_not_abstract():
+    assert not inspect.isabstract(minimalref_B)
 
 
-def test_minimalref::b_constructor_exists():
-    assert callable(minimalref::B.__init__)
+def test_minimalref_b_constructor_exists():
+    assert callable(minimalref_B.__init__)
 
 
-def test_minimalref::b_constructor_args():
-    sig = inspect.signature(minimalref::B.__init__)
+def test_minimalref_b_constructor_args():
+    sig = inspect.signature(minimalref_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_minimalref::a_is_not_abstract():
-    assert not inspect.isabstract(minimalref::A)
+def test_minimalref_a_is_not_abstract():
+    assert not inspect.isabstract(minimalref_A)
 
 
-def test_minimalref::a_constructor_exists():
-    assert callable(minimalref::A.__init__)
+def test_minimalref_a_constructor_exists():
+    assert callable(minimalref_A.__init__)
 
 
-def test_minimalref::a_constructor_args():
-    sig = inspect.signature(minimalref::A.__init__)
+def test_minimalref_a_constructor_args():
+    sig = inspect.signature(minimalref_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-minimalref::B_strategy = st.builds(
-    minimalref::B,
+minimalref_B_strategy = st.builds(
+    minimalref_B,
 )
-minimalref::A_strategy = st.builds(
-    minimalref::A,
+minimalref_A_strategy = st.builds(
+    minimalref_A,
 )
 
-@given(instance=minimalref::B_strategy)
+@given(instance=minimalref_B_strategy)
 @settings(max_examples=50)
-def test_minimalref::b_instantiation(instance):
-    assert isinstance(instance, minimalref::B)
+def test_minimalref_b_instantiation(instance):
+    assert isinstance(instance, minimalref_B)
 
-@given(instance=minimalref::A_strategy)
+@given(instance=minimalref_A_strategy)
 @settings(max_examples=50)
-def test_minimalref::a_instantiation(instance):
-    assert isinstance(instance, minimalref::A)
+def test_minimalref_a_instantiation(instance):
+    assert isinstance(instance, minimalref_A)

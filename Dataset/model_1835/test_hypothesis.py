@@ -3,44 +3,44 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dcps::Topic,
-    dcps::LifespanQosPolicy,
-    dcps::WriterDataLifecycleQosPolicy,
-    dcps::TransportPriorityQosPolicy,
-    dcps::OwnershipStrengthQosPolicy,
-    dcps::DurabilityServiceQosPolicy,
-    dcps::TopicDescription,
-    dcps::TimeBasedFilterQosPolicy,
-    dcps::ReaderDataLifecycleQosPolicy,
+from python_code import (
+    dcps_Topic,
+    dcps_LifespanQosPolicy,
+    dcps_WriterDataLifecycleQosPolicy,
+    dcps_TransportPriorityQosPolicy,
+    dcps_OwnershipStrengthQosPolicy,
+    dcps_DurabilityServiceQosPolicy,
+    dcps_TopicDescription,
+    dcps_TimeBasedFilterQosPolicy,
+    dcps_ReaderDataLifecycleQosPolicy,
     DataReaderWriter,
-    dcps::DeadlineQosPolicy,
-    dcps::DataWriter,
-    dcps::DataReader,
+    dcps_DeadlineQosPolicy,
+    dcps_DataWriter,
+    dcps_DataReader,
     PublisherSubscriber,
-    dcps::PartitionQosPolicy,
-    dcps::PresentationQosPolicy,
-    dcps::GroupDataQosPolicy,
-    dcps::UserDataQosPolicy,
-    dcps::ResourceLimitsQosPolicy,
-    dcps::ReliabilityQosPolicy,
-    dcps::OwnershipQosPolicy,
-    dcps::LivelinessQosPolicy,
-    dcps::LatencyBudgetQosPolicy,
-    dcps::HistoryQosPolicy,
-    dcps::DurabilityQosPolicy,
-    dcps::DestinationOrderQosPolicy,
+    dcps_PartitionQosPolicy,
+    dcps_PresentationQosPolicy,
+    dcps_GroupDataQosPolicy,
+    dcps_UserDataQosPolicy,
+    dcps_ResourceLimitsQosPolicy,
+    dcps_ReliabilityQosPolicy,
+    dcps_OwnershipQosPolicy,
+    dcps_LivelinessQosPolicy,
+    dcps_LatencyBudgetQosPolicy,
+    dcps_HistoryQosPolicy,
+    dcps_DurabilityQosPolicy,
+    dcps_DestinationOrderQosPolicy,
     Entity,
-    dcps::Domain,
-    dcps::EntityFactoryQosPolicy,
-    dcps::Subscriber,
-    dcps::Publisher,
+    dcps_Domain,
+    dcps_EntityFactoryQosPolicy,
+    dcps_Subscriber,
+    dcps_Publisher,
     DomainEntity,
-    dcps::DataReaderWriter,
-    dcps::PublisherSubscriber,
-    dcps::DomainParticipant,
+    dcps_PublisherSubscriber,
+    dcps_DataReaderWriter,
+    dcps_DomainParticipant,
 )
 
 # =============================================================================
@@ -49,128 +49,128 @@ from classes import (
 
 
 
-def test_dcps::topic_is_not_abstract():
-    assert not inspect.isabstract(dcps::Topic)
+def test_dcps_topic_is_not_abstract():
+    assert not inspect.isabstract(dcps_Topic)
 
 
-def test_dcps::topic_constructor_exists():
-    assert callable(dcps::Topic.__init__)
+def test_dcps_topic_constructor_exists():
+    assert callable(dcps_Topic.__init__)
 
 
-def test_dcps::topic_constructor_args():
-    sig = inspect.signature(dcps::Topic.__init__)
+def test_dcps_topic_constructor_args():
+    sig = inspect.signature(dcps_Topic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::lifespanqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::LifespanQosPolicy)
+def test_dcps_lifespanqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_LifespanQosPolicy)
 
 
-def test_dcps::lifespanqospolicy_constructor_exists():
-    assert callable(dcps::LifespanQosPolicy.__init__)
+def test_dcps_lifespanqospolicy_constructor_exists():
+    assert callable(dcps_LifespanQosPolicy.__init__)
 
 
-def test_dcps::lifespanqospolicy_constructor_args():
-    sig = inspect.signature(dcps::LifespanQosPolicy.__init__)
+def test_dcps_lifespanqospolicy_constructor_args():
+    sig = inspect.signature(dcps_LifespanQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::writerdatalifecycleqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::WriterDataLifecycleQosPolicy)
+def test_dcps_writerdatalifecycleqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_WriterDataLifecycleQosPolicy)
 
 
-def test_dcps::writerdatalifecycleqospolicy_constructor_exists():
-    assert callable(dcps::WriterDataLifecycleQosPolicy.__init__)
+def test_dcps_writerdatalifecycleqospolicy_constructor_exists():
+    assert callable(dcps_WriterDataLifecycleQosPolicy.__init__)
 
 
-def test_dcps::writerdatalifecycleqospolicy_constructor_args():
-    sig = inspect.signature(dcps::WriterDataLifecycleQosPolicy.__init__)
+def test_dcps_writerdatalifecycleqospolicy_constructor_args():
+    sig = inspect.signature(dcps_WriterDataLifecycleQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::transportpriorityqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::TransportPriorityQosPolicy)
+def test_dcps_transportpriorityqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_TransportPriorityQosPolicy)
 
 
-def test_dcps::transportpriorityqospolicy_constructor_exists():
-    assert callable(dcps::TransportPriorityQosPolicy.__init__)
+def test_dcps_transportpriorityqospolicy_constructor_exists():
+    assert callable(dcps_TransportPriorityQosPolicy.__init__)
 
 
-def test_dcps::transportpriorityqospolicy_constructor_args():
-    sig = inspect.signature(dcps::TransportPriorityQosPolicy.__init__)
+def test_dcps_transportpriorityqospolicy_constructor_args():
+    sig = inspect.signature(dcps_TransportPriorityQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::ownershipstrengthqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::OwnershipStrengthQosPolicy)
+def test_dcps_ownershipstrengthqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_OwnershipStrengthQosPolicy)
 
 
-def test_dcps::ownershipstrengthqospolicy_constructor_exists():
-    assert callable(dcps::OwnershipStrengthQosPolicy.__init__)
+def test_dcps_ownershipstrengthqospolicy_constructor_exists():
+    assert callable(dcps_OwnershipStrengthQosPolicy.__init__)
 
 
-def test_dcps::ownershipstrengthqospolicy_constructor_args():
-    sig = inspect.signature(dcps::OwnershipStrengthQosPolicy.__init__)
+def test_dcps_ownershipstrengthqospolicy_constructor_args():
+    sig = inspect.signature(dcps_OwnershipStrengthQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::durabilityserviceqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::DurabilityServiceQosPolicy)
+def test_dcps_durabilityserviceqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_DurabilityServiceQosPolicy)
 
 
-def test_dcps::durabilityserviceqospolicy_constructor_exists():
-    assert callable(dcps::DurabilityServiceQosPolicy.__init__)
+def test_dcps_durabilityserviceqospolicy_constructor_exists():
+    assert callable(dcps_DurabilityServiceQosPolicy.__init__)
 
 
-def test_dcps::durabilityserviceqospolicy_constructor_args():
-    sig = inspect.signature(dcps::DurabilityServiceQosPolicy.__init__)
+def test_dcps_durabilityserviceqospolicy_constructor_args():
+    sig = inspect.signature(dcps_DurabilityServiceQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::topicdescription_is_not_abstract():
-    assert not inspect.isabstract(dcps::TopicDescription)
+def test_dcps_topicdescription_is_not_abstract():
+    assert not inspect.isabstract(dcps_TopicDescription)
 
 
-def test_dcps::topicdescription_constructor_exists():
-    assert callable(dcps::TopicDescription.__init__)
+def test_dcps_topicdescription_constructor_exists():
+    assert callable(dcps_TopicDescription.__init__)
 
 
-def test_dcps::topicdescription_constructor_args():
-    sig = inspect.signature(dcps::TopicDescription.__init__)
+def test_dcps_topicdescription_constructor_args():
+    sig = inspect.signature(dcps_TopicDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::timebasedfilterqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::TimeBasedFilterQosPolicy)
+def test_dcps_timebasedfilterqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_TimeBasedFilterQosPolicy)
 
 
-def test_dcps::timebasedfilterqospolicy_constructor_exists():
-    assert callable(dcps::TimeBasedFilterQosPolicy.__init__)
+def test_dcps_timebasedfilterqospolicy_constructor_exists():
+    assert callable(dcps_TimeBasedFilterQosPolicy.__init__)
 
 
-def test_dcps::timebasedfilterqospolicy_constructor_args():
-    sig = inspect.signature(dcps::TimeBasedFilterQosPolicy.__init__)
+def test_dcps_timebasedfilterqospolicy_constructor_args():
+    sig = inspect.signature(dcps_TimeBasedFilterQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::readerdatalifecycleqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::ReaderDataLifecycleQosPolicy)
+def test_dcps_readerdatalifecycleqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_ReaderDataLifecycleQosPolicy)
 
 
-def test_dcps::readerdatalifecycleqospolicy_constructor_exists():
-    assert callable(dcps::ReaderDataLifecycleQosPolicy.__init__)
+def test_dcps_readerdatalifecycleqospolicy_constructor_exists():
+    assert callable(dcps_ReaderDataLifecycleQosPolicy.__init__)
 
 
-def test_dcps::readerdatalifecycleqospolicy_constructor_args():
-    sig = inspect.signature(dcps::ReaderDataLifecycleQosPolicy.__init__)
+def test_dcps_readerdatalifecycleqospolicy_constructor_args():
+    sig = inspect.signature(dcps_ReaderDataLifecycleQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,44 +189,44 @@ def test_datareaderwriter_constructor_args():
 
 
 
-def test_dcps::deadlineqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::DeadlineQosPolicy)
+def test_dcps_deadlineqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_DeadlineQosPolicy)
 
 
-def test_dcps::deadlineqospolicy_constructor_exists():
-    assert callable(dcps::DeadlineQosPolicy.__init__)
+def test_dcps_deadlineqospolicy_constructor_exists():
+    assert callable(dcps_DeadlineQosPolicy.__init__)
 
 
-def test_dcps::deadlineqospolicy_constructor_args():
-    sig = inspect.signature(dcps::DeadlineQosPolicy.__init__)
+def test_dcps_deadlineqospolicy_constructor_args():
+    sig = inspect.signature(dcps_DeadlineQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::datawriter_is_not_abstract():
-    assert not inspect.isabstract(dcps::DataWriter)
+def test_dcps_datawriter_is_not_abstract():
+    assert not inspect.isabstract(dcps_DataWriter)
 
 
-def test_dcps::datawriter_constructor_exists():
-    assert callable(dcps::DataWriter.__init__)
+def test_dcps_datawriter_constructor_exists():
+    assert callable(dcps_DataWriter.__init__)
 
 
-def test_dcps::datawriter_constructor_args():
-    sig = inspect.signature(dcps::DataWriter.__init__)
+def test_dcps_datawriter_constructor_args():
+    sig = inspect.signature(dcps_DataWriter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::datareader_is_not_abstract():
-    assert not inspect.isabstract(dcps::DataReader)
+def test_dcps_datareader_is_not_abstract():
+    assert not inspect.isabstract(dcps_DataReader)
 
 
-def test_dcps::datareader_constructor_exists():
-    assert callable(dcps::DataReader.__init__)
+def test_dcps_datareader_constructor_exists():
+    assert callable(dcps_DataReader.__init__)
 
 
-def test_dcps::datareader_constructor_args():
-    sig = inspect.signature(dcps::DataReader.__init__)
+def test_dcps_datareader_constructor_args():
+    sig = inspect.signature(dcps_DataReader.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -245,170 +245,170 @@ def test_publishersubscriber_constructor_args():
 
 
 
-def test_dcps::partitionqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::PartitionQosPolicy)
+def test_dcps_partitionqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_PartitionQosPolicy)
 
 
-def test_dcps::partitionqospolicy_constructor_exists():
-    assert callable(dcps::PartitionQosPolicy.__init__)
+def test_dcps_partitionqospolicy_constructor_exists():
+    assert callable(dcps_PartitionQosPolicy.__init__)
 
 
-def test_dcps::partitionqospolicy_constructor_args():
-    sig = inspect.signature(dcps::PartitionQosPolicy.__init__)
+def test_dcps_partitionqospolicy_constructor_args():
+    sig = inspect.signature(dcps_PartitionQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::presentationqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::PresentationQosPolicy)
+def test_dcps_presentationqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_PresentationQosPolicy)
 
 
-def test_dcps::presentationqospolicy_constructor_exists():
-    assert callable(dcps::PresentationQosPolicy.__init__)
+def test_dcps_presentationqospolicy_constructor_exists():
+    assert callable(dcps_PresentationQosPolicy.__init__)
 
 
-def test_dcps::presentationqospolicy_constructor_args():
-    sig = inspect.signature(dcps::PresentationQosPolicy.__init__)
+def test_dcps_presentationqospolicy_constructor_args():
+    sig = inspect.signature(dcps_PresentationQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::groupdataqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::GroupDataQosPolicy)
+def test_dcps_groupdataqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_GroupDataQosPolicy)
 
 
-def test_dcps::groupdataqospolicy_constructor_exists():
-    assert callable(dcps::GroupDataQosPolicy.__init__)
+def test_dcps_groupdataqospolicy_constructor_exists():
+    assert callable(dcps_GroupDataQosPolicy.__init__)
 
 
-def test_dcps::groupdataqospolicy_constructor_args():
-    sig = inspect.signature(dcps::GroupDataQosPolicy.__init__)
+def test_dcps_groupdataqospolicy_constructor_args():
+    sig = inspect.signature(dcps_GroupDataQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::userdataqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::UserDataQosPolicy)
+def test_dcps_userdataqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_UserDataQosPolicy)
 
 
-def test_dcps::userdataqospolicy_constructor_exists():
-    assert callable(dcps::UserDataQosPolicy.__init__)
+def test_dcps_userdataqospolicy_constructor_exists():
+    assert callable(dcps_UserDataQosPolicy.__init__)
 
 
-def test_dcps::userdataqospolicy_constructor_args():
-    sig = inspect.signature(dcps::UserDataQosPolicy.__init__)
+def test_dcps_userdataqospolicy_constructor_args():
+    sig = inspect.signature(dcps_UserDataQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::resourcelimitsqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::ResourceLimitsQosPolicy)
+def test_dcps_resourcelimitsqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_ResourceLimitsQosPolicy)
 
 
-def test_dcps::resourcelimitsqospolicy_constructor_exists():
-    assert callable(dcps::ResourceLimitsQosPolicy.__init__)
+def test_dcps_resourcelimitsqospolicy_constructor_exists():
+    assert callable(dcps_ResourceLimitsQosPolicy.__init__)
 
 
-def test_dcps::resourcelimitsqospolicy_constructor_args():
-    sig = inspect.signature(dcps::ResourceLimitsQosPolicy.__init__)
+def test_dcps_resourcelimitsqospolicy_constructor_args():
+    sig = inspect.signature(dcps_ResourceLimitsQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::reliabilityqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::ReliabilityQosPolicy)
+def test_dcps_reliabilityqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_ReliabilityQosPolicy)
 
 
-def test_dcps::reliabilityqospolicy_constructor_exists():
-    assert callable(dcps::ReliabilityQosPolicy.__init__)
+def test_dcps_reliabilityqospolicy_constructor_exists():
+    assert callable(dcps_ReliabilityQosPolicy.__init__)
 
 
-def test_dcps::reliabilityqospolicy_constructor_args():
-    sig = inspect.signature(dcps::ReliabilityQosPolicy.__init__)
+def test_dcps_reliabilityqospolicy_constructor_args():
+    sig = inspect.signature(dcps_ReliabilityQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::ownershipqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::OwnershipQosPolicy)
+def test_dcps_ownershipqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_OwnershipQosPolicy)
 
 
-def test_dcps::ownershipqospolicy_constructor_exists():
-    assert callable(dcps::OwnershipQosPolicy.__init__)
+def test_dcps_ownershipqospolicy_constructor_exists():
+    assert callable(dcps_OwnershipQosPolicy.__init__)
 
 
-def test_dcps::ownershipqospolicy_constructor_args():
-    sig = inspect.signature(dcps::OwnershipQosPolicy.__init__)
+def test_dcps_ownershipqospolicy_constructor_args():
+    sig = inspect.signature(dcps_OwnershipQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::livelinessqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::LivelinessQosPolicy)
+def test_dcps_livelinessqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_LivelinessQosPolicy)
 
 
-def test_dcps::livelinessqospolicy_constructor_exists():
-    assert callable(dcps::LivelinessQosPolicy.__init__)
+def test_dcps_livelinessqospolicy_constructor_exists():
+    assert callable(dcps_LivelinessQosPolicy.__init__)
 
 
-def test_dcps::livelinessqospolicy_constructor_args():
-    sig = inspect.signature(dcps::LivelinessQosPolicy.__init__)
+def test_dcps_livelinessqospolicy_constructor_args():
+    sig = inspect.signature(dcps_LivelinessQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::latencybudgetqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::LatencyBudgetQosPolicy)
+def test_dcps_latencybudgetqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_LatencyBudgetQosPolicy)
 
 
-def test_dcps::latencybudgetqospolicy_constructor_exists():
-    assert callable(dcps::LatencyBudgetQosPolicy.__init__)
+def test_dcps_latencybudgetqospolicy_constructor_exists():
+    assert callable(dcps_LatencyBudgetQosPolicy.__init__)
 
 
-def test_dcps::latencybudgetqospolicy_constructor_args():
-    sig = inspect.signature(dcps::LatencyBudgetQosPolicy.__init__)
+def test_dcps_latencybudgetqospolicy_constructor_args():
+    sig = inspect.signature(dcps_LatencyBudgetQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::historyqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::HistoryQosPolicy)
+def test_dcps_historyqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_HistoryQosPolicy)
 
 
-def test_dcps::historyqospolicy_constructor_exists():
-    assert callable(dcps::HistoryQosPolicy.__init__)
+def test_dcps_historyqospolicy_constructor_exists():
+    assert callable(dcps_HistoryQosPolicy.__init__)
 
 
-def test_dcps::historyqospolicy_constructor_args():
-    sig = inspect.signature(dcps::HistoryQosPolicy.__init__)
+def test_dcps_historyqospolicy_constructor_args():
+    sig = inspect.signature(dcps_HistoryQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::durabilityqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::DurabilityQosPolicy)
+def test_dcps_durabilityqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_DurabilityQosPolicy)
 
 
-def test_dcps::durabilityqospolicy_constructor_exists():
-    assert callable(dcps::DurabilityQosPolicy.__init__)
+def test_dcps_durabilityqospolicy_constructor_exists():
+    assert callable(dcps_DurabilityQosPolicy.__init__)
 
 
-def test_dcps::durabilityqospolicy_constructor_args():
-    sig = inspect.signature(dcps::DurabilityQosPolicy.__init__)
+def test_dcps_durabilityqospolicy_constructor_args():
+    sig = inspect.signature(dcps_DurabilityQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::destinationorderqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::DestinationOrderQosPolicy)
+def test_dcps_destinationorderqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_DestinationOrderQosPolicy)
 
 
-def test_dcps::destinationorderqospolicy_constructor_exists():
-    assert callable(dcps::DestinationOrderQosPolicy.__init__)
+def test_dcps_destinationorderqospolicy_constructor_exists():
+    assert callable(dcps_DestinationOrderQosPolicy.__init__)
 
 
-def test_dcps::destinationorderqospolicy_constructor_args():
-    sig = inspect.signature(dcps::DestinationOrderQosPolicy.__init__)
+def test_dcps_destinationorderqospolicy_constructor_args():
+    sig = inspect.signature(dcps_DestinationOrderQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -427,23 +427,23 @@ def test_entity_constructor_args():
 
 
 
-def test_dcps::domain_is_not_abstract():
-    assert not inspect.isabstract(dcps::Domain)
+def test_dcps_domain_is_not_abstract():
+    assert not inspect.isabstract(dcps_Domain)
 
 
-def test_dcps::domain_constructor_exists():
-    assert callable(dcps::Domain.__init__)
+def test_dcps_domain_constructor_exists():
+    assert callable(dcps_Domain.__init__)
 
 
-def test_dcps::domain_constructor_args():
-    sig = inspect.signature(dcps::Domain.__init__)
+def test_dcps_domain_constructor_args():
+    sig = inspect.signature(dcps_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "domainId" in params, "Missing parameter 'domainId'"
 
-def test_dcps::domain_has_domainId():
-    assert hasattr(dcps::Domain, "domainId")
+def test_dcps_domain_has_domainId():
+    assert hasattr(dcps_Domain, "domainId")
     descriptor = None
-    for klass in dcps::Domain.__mro__:
+    for klass in dcps_Domain.__mro__:
         if "domainId" in klass.__dict__:
             descriptor = klass.__dict__["domainId"]
             break
@@ -451,44 +451,44 @@ def test_dcps::domain_has_domainId():
 
 
 
-def test_dcps::entityfactoryqospolicy_is_not_abstract():
-    assert not inspect.isabstract(dcps::EntityFactoryQosPolicy)
+def test_dcps_entityfactoryqospolicy_is_not_abstract():
+    assert not inspect.isabstract(dcps_EntityFactoryQosPolicy)
 
 
-def test_dcps::entityfactoryqospolicy_constructor_exists():
-    assert callable(dcps::EntityFactoryQosPolicy.__init__)
+def test_dcps_entityfactoryqospolicy_constructor_exists():
+    assert callable(dcps_EntityFactoryQosPolicy.__init__)
 
 
-def test_dcps::entityfactoryqospolicy_constructor_args():
-    sig = inspect.signature(dcps::EntityFactoryQosPolicy.__init__)
+def test_dcps_entityfactoryqospolicy_constructor_args():
+    sig = inspect.signature(dcps_EntityFactoryQosPolicy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::subscriber_is_not_abstract():
-    assert not inspect.isabstract(dcps::Subscriber)
+def test_dcps_subscriber_is_not_abstract():
+    assert not inspect.isabstract(dcps_Subscriber)
 
 
-def test_dcps::subscriber_constructor_exists():
-    assert callable(dcps::Subscriber.__init__)
+def test_dcps_subscriber_constructor_exists():
+    assert callable(dcps_Subscriber.__init__)
 
 
-def test_dcps::subscriber_constructor_args():
-    sig = inspect.signature(dcps::Subscriber.__init__)
+def test_dcps_subscriber_constructor_args():
+    sig = inspect.signature(dcps_Subscriber.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcps::publisher_is_not_abstract():
-    assert not inspect.isabstract(dcps::Publisher)
+def test_dcps_publisher_is_not_abstract():
+    assert not inspect.isabstract(dcps_Publisher)
 
 
-def test_dcps::publisher_constructor_exists():
-    assert callable(dcps::Publisher.__init__)
+def test_dcps_publisher_constructor_exists():
+    assert callable(dcps_Publisher.__init__)
 
 
-def test_dcps::publisher_constructor_args():
-    sig = inspect.signature(dcps::Publisher.__init__)
+def test_dcps_publisher_constructor_args():
+    sig = inspect.signature(dcps_Publisher.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -507,47 +507,23 @@ def test_domainentity_constructor_args():
 
 
 
-def test_dcps::datareaderwriter_is_not_abstract():
-    assert not inspect.isabstract(dcps::DataReaderWriter)
+def test_dcps_publishersubscriber_is_not_abstract():
+    assert not inspect.isabstract(dcps_PublisherSubscriber)
 
 
-def test_dcps::datareaderwriter_constructor_exists():
-    assert callable(dcps::DataReaderWriter.__init__)
+def test_dcps_publishersubscriber_constructor_exists():
+    assert callable(dcps_PublisherSubscriber.__init__)
 
 
-def test_dcps::datareaderwriter_constructor_args():
-    sig = inspect.signature(dcps::DataReaderWriter.__init__)
-    params = list(sig.parameters.keys())
-    assert "copyFromTopicQos" in params, "Missing parameter 'copyFromTopicQos'"
-
-def test_dcps::datareaderwriter_has_copyFromTopicQos():
-    assert hasattr(dcps::DataReaderWriter, "copyFromTopicQos")
-    descriptor = None
-    for klass in dcps::DataReaderWriter.__mro__:
-        if "copyFromTopicQos" in klass.__dict__:
-            descriptor = klass.__dict__["copyFromTopicQos"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dcps::publishersubscriber_is_not_abstract():
-    assert not inspect.isabstract(dcps::PublisherSubscriber)
-
-
-def test_dcps::publishersubscriber_constructor_exists():
-    assert callable(dcps::PublisherSubscriber.__init__)
-
-
-def test_dcps::publishersubscriber_constructor_args():
-    sig = inspect.signature(dcps::PublisherSubscriber.__init__)
+def test_dcps_publishersubscriber_constructor_args():
+    sig = inspect.signature(dcps_PublisherSubscriber.__init__)
     params = list(sig.parameters.keys())
     assert "transportId" in params, "Missing parameter 'transportId'"
 
-def test_dcps::publishersubscriber_has_transportId():
-    assert hasattr(dcps::PublisherSubscriber, "transportId")
+def test_dcps_publishersubscriber_has_transportId():
+    assert hasattr(dcps_PublisherSubscriber, "transportId")
     descriptor = None
-    for klass in dcps::PublisherSubscriber.__mro__:
+    for klass in dcps_PublisherSubscriber.__mro__:
         if "transportId" in klass.__dict__:
             descriptor = klass.__dict__["transportId"]
             break
@@ -555,16 +531,40 @@ def test_dcps::publishersubscriber_has_transportId():
 
 
 
-def test_dcps::domainparticipant_is_not_abstract():
-    assert not inspect.isabstract(dcps::DomainParticipant)
+def test_dcps_datareaderwriter_is_not_abstract():
+    assert not inspect.isabstract(dcps_DataReaderWriter)
 
 
-def test_dcps::domainparticipant_constructor_exists():
-    assert callable(dcps::DomainParticipant.__init__)
+def test_dcps_datareaderwriter_constructor_exists():
+    assert callable(dcps_DataReaderWriter.__init__)
 
 
-def test_dcps::domainparticipant_constructor_args():
-    sig = inspect.signature(dcps::DomainParticipant.__init__)
+def test_dcps_datareaderwriter_constructor_args():
+    sig = inspect.signature(dcps_DataReaderWriter.__init__)
+    params = list(sig.parameters.keys())
+    assert "copyFromTopicQos" in params, "Missing parameter 'copyFromTopicQos'"
+
+def test_dcps_datareaderwriter_has_copyFromTopicQos():
+    assert hasattr(dcps_DataReaderWriter, "copyFromTopicQos")
+    descriptor = None
+    for klass in dcps_DataReaderWriter.__mro__:
+        if "copyFromTopicQos" in klass.__dict__:
+            descriptor = klass.__dict__["copyFromTopicQos"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dcps_domainparticipant_is_not_abstract():
+    assert not inspect.isabstract(dcps_DomainParticipant)
+
+
+def test_dcps_domainparticipant_constructor_exists():
+    assert callable(dcps_DomainParticipant.__init__)
+
+
+def test_dcps_domainparticipant_constructor_args():
+    sig = inspect.signature(dcps_DomainParticipant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -579,322 +579,313 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dcps::Topic_strategy = st.builds(
-    dcps::Topic,
+dcps_Topic_strategy = st.builds(
+    dcps_Topic,
 )
-dcps::LifespanQosPolicy_strategy = st.builds(
-    dcps::LifespanQosPolicy,
+dcps_LifespanQosPolicy_strategy = st.builds(
+    dcps_LifespanQosPolicy,
 )
-dcps::WriterDataLifecycleQosPolicy_strategy = st.builds(
-    dcps::WriterDataLifecycleQosPolicy,
+dcps_WriterDataLifecycleQosPolicy_strategy = st.builds(
+    dcps_WriterDataLifecycleQosPolicy,
 )
-dcps::TransportPriorityQosPolicy_strategy = st.builds(
-    dcps::TransportPriorityQosPolicy,
+dcps_TransportPriorityQosPolicy_strategy = st.builds(
+    dcps_TransportPriorityQosPolicy,
 )
-dcps::OwnershipStrengthQosPolicy_strategy = st.builds(
-    dcps::OwnershipStrengthQosPolicy,
+dcps_OwnershipStrengthQosPolicy_strategy = st.builds(
+    dcps_OwnershipStrengthQosPolicy,
 )
-dcps::DurabilityServiceQosPolicy_strategy = st.builds(
-    dcps::DurabilityServiceQosPolicy,
+dcps_DurabilityServiceQosPolicy_strategy = st.builds(
+    dcps_DurabilityServiceQosPolicy,
 )
-dcps::TopicDescription_strategy = st.builds(
-    dcps::TopicDescription,
+dcps_TopicDescription_strategy = st.builds(
+    dcps_TopicDescription,
 )
-dcps::TimeBasedFilterQosPolicy_strategy = st.builds(
-    dcps::TimeBasedFilterQosPolicy,
+dcps_TimeBasedFilterQosPolicy_strategy = st.builds(
+    dcps_TimeBasedFilterQosPolicy,
 )
-dcps::ReaderDataLifecycleQosPolicy_strategy = st.builds(
-    dcps::ReaderDataLifecycleQosPolicy,
+dcps_ReaderDataLifecycleQosPolicy_strategy = st.builds(
+    dcps_ReaderDataLifecycleQosPolicy,
 )
 DataReaderWriter_strategy = st.builds(
     DataReaderWriter,
 )
-dcps::DeadlineQosPolicy_strategy = st.builds(
-    dcps::DeadlineQosPolicy,
+dcps_DeadlineQosPolicy_strategy = st.builds(
+    dcps_DeadlineQosPolicy,
 )
-dcps::DataWriter_strategy = st.builds(
-    dcps::DataWriter,
+dcps_DataWriter_strategy = st.builds(
+    dcps_DataWriter,
 )
-dcps::DataReader_strategy = st.builds(
-    dcps::DataReader,
+dcps_DataReader_strategy = st.builds(
+    dcps_DataReader,
 )
 PublisherSubscriber_strategy = st.builds(
     PublisherSubscriber,
 )
-dcps::PartitionQosPolicy_strategy = st.builds(
-    dcps::PartitionQosPolicy,
+dcps_PartitionQosPolicy_strategy = st.builds(
+    dcps_PartitionQosPolicy,
 )
-dcps::PresentationQosPolicy_strategy = st.builds(
-    dcps::PresentationQosPolicy,
+dcps_PresentationQosPolicy_strategy = st.builds(
+    dcps_PresentationQosPolicy,
 )
-dcps::GroupDataQosPolicy_strategy = st.builds(
-    dcps::GroupDataQosPolicy,
+dcps_GroupDataQosPolicy_strategy = st.builds(
+    dcps_GroupDataQosPolicy,
 )
-dcps::UserDataQosPolicy_strategy = st.builds(
-    dcps::UserDataQosPolicy,
+dcps_UserDataQosPolicy_strategy = st.builds(
+    dcps_UserDataQosPolicy,
 )
-dcps::ResourceLimitsQosPolicy_strategy = st.builds(
-    dcps::ResourceLimitsQosPolicy,
+dcps_ResourceLimitsQosPolicy_strategy = st.builds(
+    dcps_ResourceLimitsQosPolicy,
 )
-dcps::ReliabilityQosPolicy_strategy = st.builds(
-    dcps::ReliabilityQosPolicy,
+dcps_ReliabilityQosPolicy_strategy = st.builds(
+    dcps_ReliabilityQosPolicy,
 )
-dcps::OwnershipQosPolicy_strategy = st.builds(
-    dcps::OwnershipQosPolicy,
+dcps_OwnershipQosPolicy_strategy = st.builds(
+    dcps_OwnershipQosPolicy,
 )
-dcps::LivelinessQosPolicy_strategy = st.builds(
-    dcps::LivelinessQosPolicy,
+dcps_LivelinessQosPolicy_strategy = st.builds(
+    dcps_LivelinessQosPolicy,
 )
-dcps::LatencyBudgetQosPolicy_strategy = st.builds(
-    dcps::LatencyBudgetQosPolicy,
+dcps_LatencyBudgetQosPolicy_strategy = st.builds(
+    dcps_LatencyBudgetQosPolicy,
 )
-dcps::HistoryQosPolicy_strategy = st.builds(
-    dcps::HistoryQosPolicy,
+dcps_HistoryQosPolicy_strategy = st.builds(
+    dcps_HistoryQosPolicy,
 )
-dcps::DurabilityQosPolicy_strategy = st.builds(
-    dcps::DurabilityQosPolicy,
+dcps_DurabilityQosPolicy_strategy = st.builds(
+    dcps_DurabilityQosPolicy,
 )
-dcps::DestinationOrderQosPolicy_strategy = st.builds(
-    dcps::DestinationOrderQosPolicy,
+dcps_DestinationOrderQosPolicy_strategy = st.builds(
+    dcps_DestinationOrderQosPolicy,
 )
 Entity_strategy = st.builds(
     Entity,
 )
-dcps::Domain_strategy = st.builds(
-    dcps::Domain,
+dcps_Domain_strategy = st.builds(
+    dcps_Domain,
     domainId=
         safe_text
 )
-dcps::EntityFactoryQosPolicy_strategy = st.builds(
-    dcps::EntityFactoryQosPolicy,
+dcps_EntityFactoryQosPolicy_strategy = st.builds(
+    dcps_EntityFactoryQosPolicy,
 )
-dcps::Subscriber_strategy = st.builds(
-    dcps::Subscriber,
+dcps_Subscriber_strategy = st.builds(
+    dcps_Subscriber,
 )
-dcps::Publisher_strategy = st.builds(
-    dcps::Publisher,
+dcps_Publisher_strategy = st.builds(
+    dcps_Publisher,
 )
 DomainEntity_strategy = st.builds(
     DomainEntity,
 )
-dcps::DataReaderWriter_strategy = st.builds(
-    dcps::DataReaderWriter,
-    copyFromTopicQos=
-        st.booleans()
-)
-dcps::PublisherSubscriber_strategy = st.builds(
-    dcps::PublisherSubscriber,
+dcps_PublisherSubscriber_strategy = st.builds(
+    dcps_PublisherSubscriber,
     transportId=
         st.integers()
 )
-dcps::DomainParticipant_strategy = st.builds(
-    dcps::DomainParticipant,
+dcps_DataReaderWriter_strategy = st.builds(
+    dcps_DataReaderWriter,
+    copyFromTopicQos=
+        st.booleans()
+)
+dcps_DomainParticipant_strategy = st.builds(
+    dcps_DomainParticipant,
 )
 
-@given(instance=dcps::Topic_strategy)
+@given(instance=dcps_Topic_strategy)
 @settings(max_examples=50)
-def test_dcps::topic_instantiation(instance):
-    assert isinstance(instance, dcps::Topic)
+def test_dcps_topic_instantiation(instance):
+    assert isinstance(instance, dcps_Topic)
 
-@given(instance=dcps::LifespanQosPolicy_strategy)
+@given(instance=dcps_LifespanQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::lifespanqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::LifespanQosPolicy)
+def test_dcps_lifespanqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_LifespanQosPolicy)
 
-@given(instance=dcps::WriterDataLifecycleQosPolicy_strategy)
+@given(instance=dcps_WriterDataLifecycleQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::writerdatalifecycleqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::WriterDataLifecycleQosPolicy)
+def test_dcps_writerdatalifecycleqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_WriterDataLifecycleQosPolicy)
 
-@given(instance=dcps::TransportPriorityQosPolicy_strategy)
+@given(instance=dcps_TransportPriorityQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::transportpriorityqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::TransportPriorityQosPolicy)
+def test_dcps_transportpriorityqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_TransportPriorityQosPolicy)
 
-@given(instance=dcps::OwnershipStrengthQosPolicy_strategy)
+@given(instance=dcps_OwnershipStrengthQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::ownershipstrengthqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::OwnershipStrengthQosPolicy)
+def test_dcps_ownershipstrengthqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_OwnershipStrengthQosPolicy)
 
-@given(instance=dcps::DurabilityServiceQosPolicy_strategy)
+@given(instance=dcps_DurabilityServiceQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::durabilityserviceqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::DurabilityServiceQosPolicy)
+def test_dcps_durabilityserviceqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_DurabilityServiceQosPolicy)
 
-@given(instance=dcps::TopicDescription_strategy)
+@given(instance=dcps_TopicDescription_strategy)
 @settings(max_examples=50)
-def test_dcps::topicdescription_instantiation(instance):
-    assert isinstance(instance, dcps::TopicDescription)
+def test_dcps_topicdescription_instantiation(instance):
+    assert isinstance(instance, dcps_TopicDescription)
 
-@given(instance=dcps::TimeBasedFilterQosPolicy_strategy)
+@given(instance=dcps_TimeBasedFilterQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::timebasedfilterqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::TimeBasedFilterQosPolicy)
+def test_dcps_timebasedfilterqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_TimeBasedFilterQosPolicy)
 
-@given(instance=dcps::ReaderDataLifecycleQosPolicy_strategy)
+@given(instance=dcps_ReaderDataLifecycleQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::readerdatalifecycleqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::ReaderDataLifecycleQosPolicy)
+def test_dcps_readerdatalifecycleqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_ReaderDataLifecycleQosPolicy)
 
 @given(instance=DataReaderWriter_strategy)
 @settings(max_examples=50)
 def test_datareaderwriter_instantiation(instance):
     assert isinstance(instance, DataReaderWriter)
 
-@given(instance=dcps::DeadlineQosPolicy_strategy)
+@given(instance=dcps_DeadlineQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::deadlineqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::DeadlineQosPolicy)
+def test_dcps_deadlineqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_DeadlineQosPolicy)
 
-@given(instance=dcps::DataWriter_strategy)
+@given(instance=dcps_DataWriter_strategy)
 @settings(max_examples=50)
-def test_dcps::datawriter_instantiation(instance):
-    assert isinstance(instance, dcps::DataWriter)
+def test_dcps_datawriter_instantiation(instance):
+    assert isinstance(instance, dcps_DataWriter)
 
-@given(instance=dcps::DataReader_strategy)
+@given(instance=dcps_DataReader_strategy)
 @settings(max_examples=50)
-def test_dcps::datareader_instantiation(instance):
-    assert isinstance(instance, dcps::DataReader)
+def test_dcps_datareader_instantiation(instance):
+    assert isinstance(instance, dcps_DataReader)
 
 @given(instance=PublisherSubscriber_strategy)
 @settings(max_examples=50)
 def test_publishersubscriber_instantiation(instance):
     assert isinstance(instance, PublisherSubscriber)
 
-@given(instance=dcps::PartitionQosPolicy_strategy)
+@given(instance=dcps_PartitionQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::partitionqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::PartitionQosPolicy)
+def test_dcps_partitionqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_PartitionQosPolicy)
 
-@given(instance=dcps::PresentationQosPolicy_strategy)
+@given(instance=dcps_PresentationQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::presentationqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::PresentationQosPolicy)
+def test_dcps_presentationqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_PresentationQosPolicy)
 
-@given(instance=dcps::GroupDataQosPolicy_strategy)
+@given(instance=dcps_GroupDataQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::groupdataqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::GroupDataQosPolicy)
+def test_dcps_groupdataqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_GroupDataQosPolicy)
 
-@given(instance=dcps::UserDataQosPolicy_strategy)
+@given(instance=dcps_UserDataQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::userdataqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::UserDataQosPolicy)
+def test_dcps_userdataqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_UserDataQosPolicy)
 
-@given(instance=dcps::ResourceLimitsQosPolicy_strategy)
+@given(instance=dcps_ResourceLimitsQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::resourcelimitsqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::ResourceLimitsQosPolicy)
+def test_dcps_resourcelimitsqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_ResourceLimitsQosPolicy)
 
-@given(instance=dcps::ReliabilityQosPolicy_strategy)
+@given(instance=dcps_ReliabilityQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::reliabilityqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::ReliabilityQosPolicy)
+def test_dcps_reliabilityqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_ReliabilityQosPolicy)
 
-@given(instance=dcps::OwnershipQosPolicy_strategy)
+@given(instance=dcps_OwnershipQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::ownershipqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::OwnershipQosPolicy)
+def test_dcps_ownershipqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_OwnershipQosPolicy)
 
-@given(instance=dcps::LivelinessQosPolicy_strategy)
+@given(instance=dcps_LivelinessQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::livelinessqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::LivelinessQosPolicy)
+def test_dcps_livelinessqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_LivelinessQosPolicy)
 
-@given(instance=dcps::LatencyBudgetQosPolicy_strategy)
+@given(instance=dcps_LatencyBudgetQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::latencybudgetqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::LatencyBudgetQosPolicy)
+def test_dcps_latencybudgetqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_LatencyBudgetQosPolicy)
 
-@given(instance=dcps::HistoryQosPolicy_strategy)
+@given(instance=dcps_HistoryQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::historyqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::HistoryQosPolicy)
+def test_dcps_historyqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_HistoryQosPolicy)
 
-@given(instance=dcps::DurabilityQosPolicy_strategy)
+@given(instance=dcps_DurabilityQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::durabilityqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::DurabilityQosPolicy)
+def test_dcps_durabilityqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_DurabilityQosPolicy)
 
-@given(instance=dcps::DestinationOrderQosPolicy_strategy)
+@given(instance=dcps_DestinationOrderQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::destinationorderqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::DestinationOrderQosPolicy)
+def test_dcps_destinationorderqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_DestinationOrderQosPolicy)
 
 @given(instance=Entity_strategy)
 @settings(max_examples=50)
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=dcps::Domain_strategy)
+@given(instance=dcps_Domain_strategy)
 @settings(max_examples=50)
-def test_dcps::domain_instantiation(instance):
-    assert isinstance(instance, dcps::Domain)
-
-@given(instance=dcps::Domain_strategy)
-def test_dcps::domain_domainId_type(instance):
-    assert isinstance(instance.domainId, str)
+def test_dcps_domain_instantiation(instance):
+    assert isinstance(instance, dcps_Domain)
 
 
-@given(instance=dcps::Domain_strategy)
-def test_dcps::domain_domainId_setter(instance):
+
+@given(instance=dcps_Domain_strategy)
+def test_dcps_domain_domainId_setter(instance):
     original = instance.domainId
     instance.domainId = original
     assert instance.domainId == original
 
-@given(instance=dcps::EntityFactoryQosPolicy_strategy)
+@given(instance=dcps_EntityFactoryQosPolicy_strategy)
 @settings(max_examples=50)
-def test_dcps::entityfactoryqospolicy_instantiation(instance):
-    assert isinstance(instance, dcps::EntityFactoryQosPolicy)
+def test_dcps_entityfactoryqospolicy_instantiation(instance):
+    assert isinstance(instance, dcps_EntityFactoryQosPolicy)
 
-@given(instance=dcps::Subscriber_strategy)
+@given(instance=dcps_Subscriber_strategy)
 @settings(max_examples=50)
-def test_dcps::subscriber_instantiation(instance):
-    assert isinstance(instance, dcps::Subscriber)
+def test_dcps_subscriber_instantiation(instance):
+    assert isinstance(instance, dcps_Subscriber)
 
-@given(instance=dcps::Publisher_strategy)
+@given(instance=dcps_Publisher_strategy)
 @settings(max_examples=50)
-def test_dcps::publisher_instantiation(instance):
-    assert isinstance(instance, dcps::Publisher)
+def test_dcps_publisher_instantiation(instance):
+    assert isinstance(instance, dcps_Publisher)
 
 @given(instance=DomainEntity_strategy)
 @settings(max_examples=50)
 def test_domainentity_instantiation(instance):
     assert isinstance(instance, DomainEntity)
 
-@given(instance=dcps::DataReaderWriter_strategy)
+@given(instance=dcps_PublisherSubscriber_strategy)
 @settings(max_examples=50)
-def test_dcps::datareaderwriter_instantiation(instance):
-    assert isinstance(instance, dcps::DataReaderWriter)
-
-@given(instance=dcps::DataReaderWriter_strategy)
-def test_dcps::datareaderwriter_copyFromTopicQos_type(instance):
-    assert isinstance(instance.copyFromTopicQos, bool)
+def test_dcps_publishersubscriber_instantiation(instance):
+    assert isinstance(instance, dcps_PublisherSubscriber)
 
 
-@given(instance=dcps::DataReaderWriter_strategy)
-def test_dcps::datareaderwriter_copyFromTopicQos_setter(instance):
-    original = instance.copyFromTopicQos
-    instance.copyFromTopicQos = original
-    assert instance.copyFromTopicQos == original
 
-@given(instance=dcps::PublisherSubscriber_strategy)
-@settings(max_examples=50)
-def test_dcps::publishersubscriber_instantiation(instance):
-    assert isinstance(instance, dcps::PublisherSubscriber)
-
-@given(instance=dcps::PublisherSubscriber_strategy)
-def test_dcps::publishersubscriber_transportId_type(instance):
-    assert isinstance(instance.transportId, int)
-
-
-@given(instance=dcps::PublisherSubscriber_strategy)
-def test_dcps::publishersubscriber_transportId_setter(instance):
+@given(instance=dcps_PublisherSubscriber_strategy)
+def test_dcps_publishersubscriber_transportId_setter(instance):
     original = instance.transportId
     instance.transportId = original
     assert instance.transportId == original
 
-@given(instance=dcps::DomainParticipant_strategy)
+@given(instance=dcps_DataReaderWriter_strategy)
 @settings(max_examples=50)
-def test_dcps::domainparticipant_instantiation(instance):
-    assert isinstance(instance, dcps::DomainParticipant)
+def test_dcps_datareaderwriter_instantiation(instance):
+    assert isinstance(instance, dcps_DataReaderWriter)
+
+
+
+@given(instance=dcps_DataReaderWriter_strategy)
+def test_dcps_datareaderwriter_copyFromTopicQos_setter(instance):
+    original = instance.copyFromTopicQos
+    instance.copyFromTopicQos = original
+    assert instance.copyFromTopicQos == original
+
+@given(instance=dcps_DomainParticipant_strategy)
+@settings(max_examples=50)
+def test_dcps_domainparticipant_instantiation(instance):
+    assert isinstance(instance, dcps_DomainParticipant)

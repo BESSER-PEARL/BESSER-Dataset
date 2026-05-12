@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    type::EStringToStringMapEntry,
-    type::EDataType,
+from python_code import (
+    type_EStringToStringMapEntry,
+    type_EDataType,
     AnyType,
-    type::SimpleAnyType,
-    type::XMLTypeDocumentRoot,
-    type::ProcessingInstruction,
-    type::AnyType,
+    type_SimpleAnyType,
+    type_XMLTypeDocumentRoot,
+    type_ProcessingInstruction,
+    type_AnyType,
 )
 
 # =============================================================================
@@ -21,30 +21,30 @@ from classes import (
 
 
 
-def test_type::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(type::EStringToStringMapEntry)
+def test_type_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(type_EStringToStringMapEntry)
 
 
-def test_type::estringtostringmapentry_constructor_exists():
-    assert callable(type::EStringToStringMapEntry.__init__)
+def test_type_estringtostringmapentry_constructor_exists():
+    assert callable(type_EStringToStringMapEntry.__init__)
 
 
-def test_type::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(type::EStringToStringMapEntry.__init__)
+def test_type_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(type_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_type::edatatype_is_not_abstract():
-    assert not inspect.isabstract(type::EDataType)
+def test_type_edatatype_is_not_abstract():
+    assert not inspect.isabstract(type_EDataType)
 
 
-def test_type::edatatype_constructor_exists():
-    assert callable(type::EDataType.__init__)
+def test_type_edatatype_constructor_exists():
+    assert callable(type_EDataType.__init__)
 
 
-def test_type::edatatype_constructor_args():
-    sig = inspect.signature(type::EDataType.__init__)
+def test_type_edatatype_constructor_args():
+    sig = inspect.signature(type_EDataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -63,121 +63,121 @@ def test_anytype_constructor_args():
 
 
 
-def test_type::simpleanytype_is_not_abstract():
-    assert not inspect.isabstract(type::SimpleAnyType)
+def test_type_simpleanytype_is_not_abstract():
+    assert not inspect.isabstract(type_SimpleAnyType)
 
 
-def test_type::simpleanytype_constructor_exists():
-    assert callable(type::SimpleAnyType.__init__)
+def test_type_simpleanytype_constructor_exists():
+    assert callable(type_SimpleAnyType.__init__)
 
 
-def test_type::simpleanytype_constructor_args():
-    sig = inspect.signature(type::SimpleAnyType.__init__)
+def test_type_simpleanytype_constructor_args():
+    sig = inspect.signature(type_SimpleAnyType.__init__)
     params = list(sig.parameters.keys())
-    assert "rawValue" in params, "Missing parameter 'rawValue'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "rawValue" in params, "Missing parameter 'rawValue'"
 
-def test_type::simpleanytype_has_rawValue():
-    assert hasattr(type::SimpleAnyType, "rawValue")
+def test_type_simpleanytype_has_value():
+    assert hasattr(type_SimpleAnyType, "value")
     descriptor = None
-    for klass in type::SimpleAnyType.__mro__:
-        if "rawValue" in klass.__dict__:
-            descriptor = klass.__dict__["rawValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_type::simpleanytype_has_value():
-    assert hasattr(type::SimpleAnyType, "value")
-    descriptor = None
-    for klass in type::SimpleAnyType.__mro__:
+    for klass in type_SimpleAnyType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_type_simpleanytype_has_rawValue():
+    assert hasattr(type_SimpleAnyType, "rawValue")
+    descriptor = None
+    for klass in type_SimpleAnyType.__mro__:
+        if "rawValue" in klass.__dict__:
+            descriptor = klass.__dict__["rawValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_type::xmltypedocumentroot_is_not_abstract():
-    assert not inspect.isabstract(type::XMLTypeDocumentRoot)
+
+def test_type_xmltypedocumentroot_is_not_abstract():
+    assert not inspect.isabstract(type_XMLTypeDocumentRoot)
 
 
-def test_type::xmltypedocumentroot_constructor_exists():
-    assert callable(type::XMLTypeDocumentRoot.__init__)
+def test_type_xmltypedocumentroot_constructor_exists():
+    assert callable(type_XMLTypeDocumentRoot.__init__)
 
 
-def test_type::xmltypedocumentroot_constructor_args():
-    sig = inspect.signature(type::XMLTypeDocumentRoot.__init__)
+def test_type_xmltypedocumentroot_constructor_args():
+    sig = inspect.signature(type_XMLTypeDocumentRoot.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "cDATA" in params, "Missing parameter 'cDATA'"
     assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "cDATA" in params, "Missing parameter 'cDATA'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_type::xmltypedocumentroot_has_comment():
-    assert hasattr(type::XMLTypeDocumentRoot, "comment")
+def test_type_xmltypedocumentroot_has_mixed():
+    assert hasattr(type_XMLTypeDocumentRoot, "mixed")
     descriptor = None
-    for klass in type::XMLTypeDocumentRoot.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_type::xmltypedocumentroot_has_cDATA():
-    assert hasattr(type::XMLTypeDocumentRoot, "cDATA")
-    descriptor = None
-    for klass in type::XMLTypeDocumentRoot.__mro__:
-        if "cDATA" in klass.__dict__:
-            descriptor = klass.__dict__["cDATA"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_type::xmltypedocumentroot_has_mixed():
-    assert hasattr(type::XMLTypeDocumentRoot, "mixed")
-    descriptor = None
-    for klass in type::XMLTypeDocumentRoot.__mro__:
+    for klass in type_XMLTypeDocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
     assert isinstance(descriptor, property)
 
-def test_type::xmltypedocumentroot_has_text():
-    assert hasattr(type::XMLTypeDocumentRoot, "text")
+def test_type_xmltypedocumentroot_has_cDATA():
+    assert hasattr(type_XMLTypeDocumentRoot, "cDATA")
     descriptor = None
-    for klass in type::XMLTypeDocumentRoot.__mro__:
+    for klass in type_XMLTypeDocumentRoot.__mro__:
+        if "cDATA" in klass.__dict__:
+            descriptor = klass.__dict__["cDATA"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_type_xmltypedocumentroot_has_text():
+    assert hasattr(type_XMLTypeDocumentRoot, "text")
+    descriptor = None
+    for klass in type_XMLTypeDocumentRoot.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
+def test_type_xmltypedocumentroot_has_comment():
+    assert hasattr(type_XMLTypeDocumentRoot, "comment")
+    descriptor = None
+    for klass in type_XMLTypeDocumentRoot.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_type::processinginstruction_is_not_abstract():
-    assert not inspect.isabstract(type::ProcessingInstruction)
+
+def test_type_processinginstruction_is_not_abstract():
+    assert not inspect.isabstract(type_ProcessingInstruction)
 
 
-def test_type::processinginstruction_constructor_exists():
-    assert callable(type::ProcessingInstruction.__init__)
+def test_type_processinginstruction_constructor_exists():
+    assert callable(type_ProcessingInstruction.__init__)
 
 
-def test_type::processinginstruction_constructor_args():
-    sig = inspect.signature(type::ProcessingInstruction.__init__)
+def test_type_processinginstruction_constructor_args():
+    sig = inspect.signature(type_ProcessingInstruction.__init__)
     params = list(sig.parameters.keys())
     assert "target" in params, "Missing parameter 'target'"
     assert "data" in params, "Missing parameter 'data'"
 
-def test_type::processinginstruction_has_target():
-    assert hasattr(type::ProcessingInstruction, "target")
+def test_type_processinginstruction_has_target():
+    assert hasattr(type_ProcessingInstruction, "target")
     descriptor = None
-    for klass in type::ProcessingInstruction.__mro__:
+    for klass in type_ProcessingInstruction.__mro__:
         if "target" in klass.__dict__:
             descriptor = klass.__dict__["target"]
             break
     assert isinstance(descriptor, property)
 
-def test_type::processinginstruction_has_data():
-    assert hasattr(type::ProcessingInstruction, "data")
+def test_type_processinginstruction_has_data():
+    assert hasattr(type_ProcessingInstruction, "data")
     descriptor = None
-    for klass in type::ProcessingInstruction.__mro__:
+    for klass in type_ProcessingInstruction.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -185,43 +185,43 @@ def test_type::processinginstruction_has_data():
 
 
 
-def test_type::anytype_is_not_abstract():
-    assert not inspect.isabstract(type::AnyType)
+def test_type_anytype_is_not_abstract():
+    assert not inspect.isabstract(type_AnyType)
 
 
-def test_type::anytype_constructor_exists():
-    assert callable(type::AnyType.__init__)
+def test_type_anytype_constructor_exists():
+    assert callable(type_AnyType.__init__)
 
 
-def test_type::anytype_constructor_args():
-    sig = inspect.signature(type::AnyType.__init__)
+def test_type_anytype_constructor_args():
+    sig = inspect.signature(type_AnyType.__init__)
     params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
     assert "any" in params, "Missing parameter 'any'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
     assert "anyAttribute" in params, "Missing parameter 'anyAttribute'"
 
-def test_type::anytype_has_mixed():
-    assert hasattr(type::AnyType, "mixed")
+def test_type_anytype_has_any():
+    assert hasattr(type_AnyType, "any")
     descriptor = None
-    for klass in type::AnyType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_type::anytype_has_any():
-    assert hasattr(type::AnyType, "any")
-    descriptor = None
-    for klass in type::AnyType.__mro__:
+    for klass in type_AnyType.__mro__:
         if "any" in klass.__dict__:
             descriptor = klass.__dict__["any"]
             break
     assert isinstance(descriptor, property)
 
-def test_type::anytype_has_anyAttribute():
-    assert hasattr(type::AnyType, "anyAttribute")
+def test_type_anytype_has_mixed():
+    assert hasattr(type_AnyType, "mixed")
     descriptor = None
-    for klass in type::AnyType.__mro__:
+    for klass in type_AnyType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_type_anytype_has_anyAttribute():
+    assert hasattr(type_AnyType, "anyAttribute")
+    descriptor = None
+    for klass in type_AnyType.__mro__:
         if "anyAttribute" in klass.__dict__:
             descriptor = klass.__dict__["anyAttribute"]
             break
@@ -239,202 +239,169 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-type::EStringToStringMapEntry_strategy = st.builds(
-    type::EStringToStringMapEntry,
+type_EStringToStringMapEntry_strategy = st.builds(
+    type_EStringToStringMapEntry,
 )
-type::EDataType_strategy = st.builds(
-    type::EDataType,
+type_EDataType_strategy = st.builds(
+    type_EDataType,
 )
 AnyType_strategy = st.builds(
     AnyType,
 )
-type::SimpleAnyType_strategy = st.builds(
-    type::SimpleAnyType,
-    rawValue=
-        safe_text,
+type_SimpleAnyType_strategy = st.builds(
+    type_SimpleAnyType,
     value=
+        safe_text,
+    rawValue=
         safe_text
 )
-type::XMLTypeDocumentRoot_strategy = st.builds(
-    type::XMLTypeDocumentRoot,
-    comment=
+type_XMLTypeDocumentRoot_strategy = st.builds(
+    type_XMLTypeDocumentRoot,
+    mixed=
         safe_text,
     cDATA=
         safe_text,
-    mixed=
-        safe_text,
     text=
+        safe_text,
+    comment=
         safe_text
 )
-type::ProcessingInstruction_strategy = st.builds(
-    type::ProcessingInstruction,
+type_ProcessingInstruction_strategy = st.builds(
+    type_ProcessingInstruction,
     target=
         safe_text,
     data=
         safe_text
 )
-type::AnyType_strategy = st.builds(
-    type::AnyType,
-    mixed=
-        safe_text,
+type_AnyType_strategy = st.builds(
+    type_AnyType,
     any=
+        safe_text,
+    mixed=
         safe_text,
     anyAttribute=
         safe_text
 )
 
-@given(instance=type::EStringToStringMapEntry_strategy)
+@given(instance=type_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_type::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, type::EStringToStringMapEntry)
+def test_type_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, type_EStringToStringMapEntry)
 
-@given(instance=type::EDataType_strategy)
+@given(instance=type_EDataType_strategy)
 @settings(max_examples=50)
-def test_type::edatatype_instantiation(instance):
-    assert isinstance(instance, type::EDataType)
+def test_type_edatatype_instantiation(instance):
+    assert isinstance(instance, type_EDataType)
 
 @given(instance=AnyType_strategy)
 @settings(max_examples=50)
 def test_anytype_instantiation(instance):
     assert isinstance(instance, AnyType)
 
-@given(instance=type::SimpleAnyType_strategy)
+@given(instance=type_SimpleAnyType_strategy)
 @settings(max_examples=50)
-def test_type::simpleanytype_instantiation(instance):
-    assert isinstance(instance, type::SimpleAnyType)
-
-@given(instance=type::SimpleAnyType_strategy)
-def test_type::simpleanytype_rawValue_type(instance):
-    assert isinstance(instance.rawValue, str)
+def test_type_simpleanytype_instantiation(instance):
+    assert isinstance(instance, type_SimpleAnyType)
 
 
-@given(instance=type::SimpleAnyType_strategy)
-def test_type::simpleanytype_rawValue_setter(instance):
-    original = instance.rawValue
-    instance.rawValue = original
-    assert instance.rawValue == original
 
-@given(instance=type::SimpleAnyType_strategy)
-def test_type::simpleanytype_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=type::SimpleAnyType_strategy)
-def test_type::simpleanytype_value_setter(instance):
+@given(instance=type_SimpleAnyType_strategy)
+def test_type_simpleanytype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=type::XMLTypeDocumentRoot_strategy)
+
+
+@given(instance=type_SimpleAnyType_strategy)
+def test_type_simpleanytype_rawValue_setter(instance):
+    original = instance.rawValue
+    instance.rawValue = original
+    assert instance.rawValue == original
+
+@given(instance=type_XMLTypeDocumentRoot_strategy)
 @settings(max_examples=50)
-def test_type::xmltypedocumentroot_instantiation(instance):
-    assert isinstance(instance, type::XMLTypeDocumentRoot)
-
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_type_xmltypedocumentroot_instantiation(instance):
+    assert isinstance(instance, type_XMLTypeDocumentRoot)
 
 
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
 
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_cDATA_type(instance):
-    assert isinstance(instance.cDATA, str)
+@given(instance=type_XMLTypeDocumentRoot_strategy)
+def test_type_xmltypedocumentroot_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
 
 
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_cDATA_setter(instance):
+
+@given(instance=type_XMLTypeDocumentRoot_strategy)
+def test_type_xmltypedocumentroot_cDATA_setter(instance):
     original = instance.cDATA
     instance.cDATA = original
     assert instance.cDATA == original
 
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
 
 
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=type::XMLTypeDocumentRoot_strategy)
-def test_type::xmltypedocumentroot_text_setter(instance):
+@given(instance=type_XMLTypeDocumentRoot_strategy)
+def test_type_xmltypedocumentroot_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=type::ProcessingInstruction_strategy)
+
+
+@given(instance=type_XMLTypeDocumentRoot_strategy)
+def test_type_xmltypedocumentroot_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=type_ProcessingInstruction_strategy)
 @settings(max_examples=50)
-def test_type::processinginstruction_instantiation(instance):
-    assert isinstance(instance, type::ProcessingInstruction)
-
-@given(instance=type::ProcessingInstruction_strategy)
-def test_type::processinginstruction_target_type(instance):
-    assert isinstance(instance.target, str)
+def test_type_processinginstruction_instantiation(instance):
+    assert isinstance(instance, type_ProcessingInstruction)
 
 
-@given(instance=type::ProcessingInstruction_strategy)
-def test_type::processinginstruction_target_setter(instance):
+
+@given(instance=type_ProcessingInstruction_strategy)
+def test_type_processinginstruction_target_setter(instance):
     original = instance.target
     instance.target = original
     assert instance.target == original
 
-@given(instance=type::ProcessingInstruction_strategy)
-def test_type::processinginstruction_data_type(instance):
-    assert isinstance(instance.data, str)
 
 
-@given(instance=type::ProcessingInstruction_strategy)
-def test_type::processinginstruction_data_setter(instance):
+@given(instance=type_ProcessingInstruction_strategy)
+def test_type_processinginstruction_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
 
-@given(instance=type::AnyType_strategy)
+@given(instance=type_AnyType_strategy)
 @settings(max_examples=50)
-def test_type::anytype_instantiation(instance):
-    assert isinstance(instance, type::AnyType)
-
-@given(instance=type::AnyType_strategy)
-def test_type::anytype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_type_anytype_instantiation(instance):
+    assert isinstance(instance, type_AnyType)
 
 
-@given(instance=type::AnyType_strategy)
-def test_type::anytype_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
 
-@given(instance=type::AnyType_strategy)
-def test_type::anytype_any_type(instance):
-    assert isinstance(instance.any, str)
-
-
-@given(instance=type::AnyType_strategy)
-def test_type::anytype_any_setter(instance):
+@given(instance=type_AnyType_strategy)
+def test_type_anytype_any_setter(instance):
     original = instance.any
     instance.any = original
     assert instance.any == original
 
-@given(instance=type::AnyType_strategy)
-def test_type::anytype_anyAttribute_type(instance):
-    assert isinstance(instance.anyAttribute, str)
 
 
-@given(instance=type::AnyType_strategy)
-def test_type::anytype_anyAttribute_setter(instance):
+@given(instance=type_AnyType_strategy)
+def test_type_anytype_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=type_AnyType_strategy)
+def test_type_anytype_anyAttribute_setter(instance):
     original = instance.anyAttribute
     instance.anyAttribute = original
     assert instance.anyAttribute == original

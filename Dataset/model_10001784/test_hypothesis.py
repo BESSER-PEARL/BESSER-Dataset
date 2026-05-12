@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     genmymodelreverse_javax_swing_JMenuItem,
@@ -131,20 +131,11 @@ def test_mines_constructor_exists():
 def test_mines_constructor_args():
     sig = inspect.signature(Mines.__init__)
     params = list(sig.parameters.keys())
-    assert "FRAME_WIDTH" in params, "Missing parameter 'FRAME_WIDTH'"
     assert "FRAME_HEIGHT" in params, "Missing parameter 'FRAME_HEIGHT'"
-    assert "statusbar" in params, "Missing parameter 'statusbar'"
     assert "hexCell" in params, "Missing parameter 'hexCell'"
+    assert "statusbar" in params, "Missing parameter 'statusbar'"
+    assert "FRAME_WIDTH" in params, "Missing parameter 'FRAME_WIDTH'"
     assert "timeBar" in params, "Missing parameter 'timeBar'"
-
-def test_mines_has_FRAME_WIDTH():
-    assert hasattr(Mines, "FRAME_WIDTH")
-    descriptor = None
-    for klass in Mines.__mro__:
-        if "FRAME_WIDTH" in klass.__dict__:
-            descriptor = klass.__dict__["FRAME_WIDTH"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_mines_has_FRAME_HEIGHT():
     assert hasattr(Mines, "FRAME_HEIGHT")
@@ -152,6 +143,15 @@ def test_mines_has_FRAME_HEIGHT():
     for klass in Mines.__mro__:
         if "FRAME_HEIGHT" in klass.__dict__:
             descriptor = klass.__dict__["FRAME_HEIGHT"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mines_has_hexCell():
+    assert hasattr(Mines, "hexCell")
+    descriptor = None
+    for klass in Mines.__mro__:
+        if "hexCell" in klass.__dict__:
+            descriptor = klass.__dict__["hexCell"]
             break
     assert isinstance(descriptor, property)
 
@@ -164,12 +164,12 @@ def test_mines_has_statusbar():
             break
     assert isinstance(descriptor, property)
 
-def test_mines_has_hexCell():
-    assert hasattr(Mines, "hexCell")
+def test_mines_has_FRAME_WIDTH():
+    assert hasattr(Mines, "FRAME_WIDTH")
     descriptor = None
     for klass in Mines.__mro__:
-        if "hexCell" in klass.__dict__:
-            descriptor = klass.__dict__["hexCell"]
+        if "FRAME_WIDTH" in klass.__dict__:
+            descriptor = klass.__dict__["FRAME_WIDTH"]
             break
     assert isinstance(descriptor, property)
 
@@ -217,14 +217,14 @@ genmymodelreverse_java_awt_Graphics_strategy = st.builds(
 )
 Mines_strategy = st.builds(
     Mines,
-    FRAME_WIDTH=
-        st.integers(),
     FRAME_HEIGHT=
         st.integers(),
-    statusbar=
-        st.none(),
     hexCell=
         st.none(),
+    statusbar=
+        st.none(),
+    FRAME_WIDTH=
+        st.integers(),
     timeBar=
         st.none()
 )
@@ -269,20 +269,6 @@ def test_genmymodelreverse_java_awt_graphics_instantiation(instance):
 def test_mines_instantiation(instance):
     assert isinstance(instance, Mines)
 
-@given(instance=Mines_strategy)
-def test_mines_FRAME_WIDTH_type(instance):
-    assert isinstance(instance.FRAME_WIDTH, int)
-
-
-@given(instance=Mines_strategy)
-def test_mines_FRAME_WIDTH_setter(instance):
-    original = instance.FRAME_WIDTH
-    instance.FRAME_WIDTH = original
-    assert instance.FRAME_WIDTH == original
-
-@given(instance=Mines_strategy)
-def test_mines_FRAME_HEIGHT_type(instance):
-    assert isinstance(instance.FRAME_HEIGHT, int)
 
 
 @given(instance=Mines_strategy)
@@ -291,20 +277,6 @@ def test_mines_FRAME_HEIGHT_setter(instance):
     instance.FRAME_HEIGHT = original
     assert instance.FRAME_HEIGHT == original
 
-@given(instance=Mines_strategy)
-def test_mines_statusbar_type(instance):
-    assert isinstance(instance.statusbar, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=Mines_strategy)
-def test_mines_statusbar_setter(instance):
-    original = instance.statusbar
-    instance.statusbar = original
-    assert instance.statusbar == original
-
-@given(instance=Mines_strategy)
-def test_mines_hexCell_type(instance):
-    assert isinstance(instance.hexCell, genmymodelreverse_javax_swing_jmenuitem)
 
 
 @given(instance=Mines_strategy)
@@ -313,9 +285,22 @@ def test_mines_hexCell_setter(instance):
     instance.hexCell = original
     assert instance.hexCell == original
 
+
+
 @given(instance=Mines_strategy)
-def test_mines_timeBar_type(instance):
-    assert isinstance(instance.timeBar, genmymodelreverse_javax_swing_jlabel)
+def test_mines_statusbar_setter(instance):
+    original = instance.statusbar
+    instance.statusbar = original
+    assert instance.statusbar == original
+
+
+
+@given(instance=Mines_strategy)
+def test_mines_FRAME_WIDTH_setter(instance):
+    original = instance.FRAME_WIDTH
+    instance.FRAME_WIDTH = original
+    assert instance.FRAME_WIDTH == original
+
 
 
 @given(instance=Mines_strategy)

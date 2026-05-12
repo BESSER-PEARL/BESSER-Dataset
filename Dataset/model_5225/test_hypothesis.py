@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    root::sub::D,
-    root::sub::C,
-    root::B,
-    root::A,
-    root::sub2::E,
-    root::subsub::F,
-    root::subsub::E,
+from python_code import (
+    root_sub_D,
+    root_sub_C,
+    root_B,
+    root_A,
+    root_sub2_E,
+    root_subsub_F,
+    root_subsub_E,
 )
 
 # =============================================================================
@@ -21,100 +21,100 @@ from classes import (
 
 
 
-def test_root::sub::d_is_not_abstract():
-    assert not inspect.isabstract(root::sub::D)
+def test_root_sub_d_is_not_abstract():
+    assert not inspect.isabstract(root_sub_D)
 
 
-def test_root::sub::d_constructor_exists():
-    assert callable(root::sub::D.__init__)
+def test_root_sub_d_constructor_exists():
+    assert callable(root_sub_D.__init__)
 
 
-def test_root::sub::d_constructor_args():
-    sig = inspect.signature(root::sub::D.__init__)
+def test_root_sub_d_constructor_args():
+    sig = inspect.signature(root_sub_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::sub::c_is_not_abstract():
-    assert not inspect.isabstract(root::sub::C)
+def test_root_sub_c_is_not_abstract():
+    assert not inspect.isabstract(root_sub_C)
 
 
-def test_root::sub::c_constructor_exists():
-    assert callable(root::sub::C.__init__)
+def test_root_sub_c_constructor_exists():
+    assert callable(root_sub_C.__init__)
 
 
-def test_root::sub::c_constructor_args():
-    sig = inspect.signature(root::sub::C.__init__)
+def test_root_sub_c_constructor_args():
+    sig = inspect.signature(root_sub_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::b_is_not_abstract():
-    assert not inspect.isabstract(root::B)
+def test_root_b_is_not_abstract():
+    assert not inspect.isabstract(root_B)
 
 
-def test_root::b_constructor_exists():
-    assert callable(root::B.__init__)
+def test_root_b_constructor_exists():
+    assert callable(root_B.__init__)
 
 
-def test_root::b_constructor_args():
-    sig = inspect.signature(root::B.__init__)
+def test_root_b_constructor_args():
+    sig = inspect.signature(root_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::a_is_not_abstract():
-    assert not inspect.isabstract(root::A)
+def test_root_a_is_not_abstract():
+    assert not inspect.isabstract(root_A)
 
 
-def test_root::a_constructor_exists():
-    assert callable(root::A.__init__)
+def test_root_a_constructor_exists():
+    assert callable(root_A.__init__)
 
 
-def test_root::a_constructor_args():
-    sig = inspect.signature(root::A.__init__)
+def test_root_a_constructor_args():
+    sig = inspect.signature(root_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::sub2::e_is_not_abstract():
-    assert not inspect.isabstract(root::sub2::E)
+def test_root_sub2_e_is_not_abstract():
+    assert not inspect.isabstract(root_sub2_E)
 
 
-def test_root::sub2::e_constructor_exists():
-    assert callable(root::sub2::E.__init__)
+def test_root_sub2_e_constructor_exists():
+    assert callable(root_sub2_E.__init__)
 
 
-def test_root::sub2::e_constructor_args():
-    sig = inspect.signature(root::sub2::E.__init__)
+def test_root_sub2_e_constructor_args():
+    sig = inspect.signature(root_sub2_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::subsub::f_is_not_abstract():
-    assert not inspect.isabstract(root::subsub::F)
+def test_root_subsub_f_is_not_abstract():
+    assert not inspect.isabstract(root_subsub_F)
 
 
-def test_root::subsub::f_constructor_exists():
-    assert callable(root::subsub::F.__init__)
+def test_root_subsub_f_constructor_exists():
+    assert callable(root_subsub_F.__init__)
 
 
-def test_root::subsub::f_constructor_args():
-    sig = inspect.signature(root::subsub::F.__init__)
+def test_root_subsub_f_constructor_args():
+    sig = inspect.signature(root_subsub_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::subsub::e_is_not_abstract():
-    assert not inspect.isabstract(root::subsub::E)
+def test_root_subsub_e_is_not_abstract():
+    assert not inspect.isabstract(root_subsub_E)
 
 
-def test_root::subsub::e_constructor_exists():
-    assert callable(root::subsub::E.__init__)
+def test_root_subsub_e_constructor_exists():
+    assert callable(root_subsub_E.__init__)
 
 
-def test_root::subsub::e_constructor_args():
-    sig = inspect.signature(root::subsub::E.__init__)
+def test_root_subsub_e_constructor_args():
+    sig = inspect.signature(root_subsub_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,59 +129,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-root::sub::D_strategy = st.builds(
-    root::sub::D,
+root_sub_D_strategy = st.builds(
+    root_sub_D,
 )
-root::sub::C_strategy = st.builds(
-    root::sub::C,
+root_sub_C_strategy = st.builds(
+    root_sub_C,
 )
-root::B_strategy = st.builds(
-    root::B,
+root_B_strategy = st.builds(
+    root_B,
 )
-root::A_strategy = st.builds(
-    root::A,
+root_A_strategy = st.builds(
+    root_A,
 )
-root::sub2::E_strategy = st.builds(
-    root::sub2::E,
+root_sub2_E_strategy = st.builds(
+    root_sub2_E,
 )
-root::subsub::F_strategy = st.builds(
-    root::subsub::F,
+root_subsub_F_strategy = st.builds(
+    root_subsub_F,
 )
-root::subsub::E_strategy = st.builds(
-    root::subsub::E,
+root_subsub_E_strategy = st.builds(
+    root_subsub_E,
 )
 
-@given(instance=root::sub::D_strategy)
+@given(instance=root_sub_D_strategy)
 @settings(max_examples=50)
-def test_root::sub::d_instantiation(instance):
-    assert isinstance(instance, root::sub::D)
+def test_root_sub_d_instantiation(instance):
+    assert isinstance(instance, root_sub_D)
 
-@given(instance=root::sub::C_strategy)
+@given(instance=root_sub_C_strategy)
 @settings(max_examples=50)
-def test_root::sub::c_instantiation(instance):
-    assert isinstance(instance, root::sub::C)
+def test_root_sub_c_instantiation(instance):
+    assert isinstance(instance, root_sub_C)
 
-@given(instance=root::B_strategy)
+@given(instance=root_B_strategy)
 @settings(max_examples=50)
-def test_root::b_instantiation(instance):
-    assert isinstance(instance, root::B)
+def test_root_b_instantiation(instance):
+    assert isinstance(instance, root_B)
 
-@given(instance=root::A_strategy)
+@given(instance=root_A_strategy)
 @settings(max_examples=50)
-def test_root::a_instantiation(instance):
-    assert isinstance(instance, root::A)
+def test_root_a_instantiation(instance):
+    assert isinstance(instance, root_A)
 
-@given(instance=root::sub2::E_strategy)
+@given(instance=root_sub2_E_strategy)
 @settings(max_examples=50)
-def test_root::sub2::e_instantiation(instance):
-    assert isinstance(instance, root::sub2::E)
+def test_root_sub2_e_instantiation(instance):
+    assert isinstance(instance, root_sub2_E)
 
-@given(instance=root::subsub::F_strategy)
+@given(instance=root_subsub_F_strategy)
 @settings(max_examples=50)
-def test_root::subsub::f_instantiation(instance):
-    assert isinstance(instance, root::subsub::F)
+def test_root_subsub_f_instantiation(instance):
+    assert isinstance(instance, root_subsub_F)
 
-@given(instance=root::subsub::E_strategy)
+@given(instance=root_subsub_E_strategy)
 @settings(max_examples=50)
-def test_root::subsub::e_instantiation(instance):
-    assert isinstance(instance, root::subsub::E)
+def test_root_subsub_e_instantiation(instance):
+    assert isinstance(instance, root_subsub_E)

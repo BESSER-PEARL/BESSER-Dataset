@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsmProv::StateMachine,
-    fsmProv::Trigger,
-    fsmProv::Transition,
-    fsmProv::State,
-    fsmProv::AbstractState,
-    fsmProv::Region,
+from python_code import (
+    fsmProv_Trigger,
+    fsmProv_Transition,
+    fsmProv_State,
+    fsmProv_AbstractState,
+    fsmProv_Region,
+    fsmProv_StateMachine,
 )
 
 # =============================================================================
@@ -20,37 +20,23 @@ from classes import (
 
 
 
-def test_fsmprov::statemachine_is_not_abstract():
-    assert not inspect.isabstract(fsmProv::StateMachine)
+def test_fsmprov_trigger_is_not_abstract():
+    assert not inspect.isabstract(fsmProv_Trigger)
 
 
-def test_fsmprov::statemachine_constructor_exists():
-    assert callable(fsmProv::StateMachine.__init__)
+def test_fsmprov_trigger_constructor_exists():
+    assert callable(fsmProv_Trigger.__init__)
 
 
-def test_fsmprov::statemachine_constructor_args():
-    sig = inspect.signature(fsmProv::StateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fsmprov::trigger_is_not_abstract():
-    assert not inspect.isabstract(fsmProv::Trigger)
-
-
-def test_fsmprov::trigger_constructor_exists():
-    assert callable(fsmProv::Trigger.__init__)
-
-
-def test_fsmprov::trigger_constructor_args():
-    sig = inspect.signature(fsmProv::Trigger.__init__)
+def test_fsmprov_trigger_constructor_args():
+    sig = inspect.signature(fsmProv_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_fsmprov::trigger_has_expression():
-    assert hasattr(fsmProv::Trigger, "expression")
+def test_fsmprov_trigger_has_expression():
+    assert hasattr(fsmProv_Trigger, "expression")
     descriptor = None
-    for klass in fsmProv::Trigger.__mro__:
+    for klass in fsmProv_Trigger.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -58,58 +44,72 @@ def test_fsmprov::trigger_has_expression():
 
 
 
-def test_fsmprov::transition_is_not_abstract():
-    assert not inspect.isabstract(fsmProv::Transition)
+def test_fsmprov_transition_is_not_abstract():
+    assert not inspect.isabstract(fsmProv_Transition)
 
 
-def test_fsmprov::transition_constructor_exists():
-    assert callable(fsmProv::Transition.__init__)
+def test_fsmprov_transition_constructor_exists():
+    assert callable(fsmProv_Transition.__init__)
 
 
-def test_fsmprov::transition_constructor_args():
-    sig = inspect.signature(fsmProv::Transition.__init__)
+def test_fsmprov_transition_constructor_args():
+    sig = inspect.signature(fsmProv_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmprov::state_is_not_abstract():
-    assert not inspect.isabstract(fsmProv::State)
+def test_fsmprov_state_is_not_abstract():
+    assert not inspect.isabstract(fsmProv_State)
 
 
-def test_fsmprov::state_constructor_exists():
-    assert callable(fsmProv::State.__init__)
+def test_fsmprov_state_constructor_exists():
+    assert callable(fsmProv_State.__init__)
 
 
-def test_fsmprov::state_constructor_args():
-    sig = inspect.signature(fsmProv::State.__init__)
+def test_fsmprov_state_constructor_args():
+    sig = inspect.signature(fsmProv_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmprov::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(fsmProv::AbstractState)
+def test_fsmprov_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(fsmProv_AbstractState)
 
 
-def test_fsmprov::abstractstate_constructor_exists():
-    assert callable(fsmProv::AbstractState.__init__)
+def test_fsmprov_abstractstate_constructor_exists():
+    assert callable(fsmProv_AbstractState.__init__)
 
 
-def test_fsmprov::abstractstate_constructor_args():
-    sig = inspect.signature(fsmProv::AbstractState.__init__)
+def test_fsmprov_abstractstate_constructor_args():
+    sig = inspect.signature(fsmProv_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmprov::region_is_not_abstract():
-    assert not inspect.isabstract(fsmProv::Region)
+def test_fsmprov_region_is_not_abstract():
+    assert not inspect.isabstract(fsmProv_Region)
 
 
-def test_fsmprov::region_constructor_exists():
-    assert callable(fsmProv::Region.__init__)
+def test_fsmprov_region_constructor_exists():
+    assert callable(fsmProv_Region.__init__)
 
 
-def test_fsmprov::region_constructor_args():
-    sig = inspect.signature(fsmProv::Region.__init__)
+def test_fsmprov_region_constructor_args():
+    sig = inspect.signature(fsmProv_Region.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fsmprov_statemachine_is_not_abstract():
+    assert not inspect.isabstract(fsmProv_StateMachine)
+
+
+def test_fsmprov_statemachine_constructor_exists():
+    assert callable(fsmProv_StateMachine.__init__)
+
+
+def test_fsmprov_statemachine_constructor_args():
+    sig = inspect.signature(fsmProv_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,44 +124,36 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsmProv::StateMachine_strategy = st.builds(
-    fsmProv::StateMachine,
-)
-fsmProv::Trigger_strategy = st.builds(
-    fsmProv::Trigger,
+fsmProv_Trigger_strategy = st.builds(
+    fsmProv_Trigger,
     expression=
         safe_text
 )
-fsmProv::Transition_strategy = st.builds(
-    fsmProv::Transition,
+fsmProv_Transition_strategy = st.builds(
+    fsmProv_Transition,
 )
-fsmProv::State_strategy = st.builds(
-    fsmProv::State,
+fsmProv_State_strategy = st.builds(
+    fsmProv_State,
 )
-fsmProv::AbstractState_strategy = st.builds(
-    fsmProv::AbstractState,
+fsmProv_AbstractState_strategy = st.builds(
+    fsmProv_AbstractState,
 )
-fsmProv::Region_strategy = st.builds(
-    fsmProv::Region,
+fsmProv_Region_strategy = st.builds(
+    fsmProv_Region,
+)
+fsmProv_StateMachine_strategy = st.builds(
+    fsmProv_StateMachine,
 )
 
-@given(instance=fsmProv::StateMachine_strategy)
+@given(instance=fsmProv_Trigger_strategy)
 @settings(max_examples=50)
-def test_fsmprov::statemachine_instantiation(instance):
-    assert isinstance(instance, fsmProv::StateMachine)
-
-@given(instance=fsmProv::Trigger_strategy)
-@settings(max_examples=50)
-def test_fsmprov::trigger_instantiation(instance):
-    assert isinstance(instance, fsmProv::Trigger)
-
-@given(instance=fsmProv::Trigger_strategy)
-def test_fsmprov::trigger_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_fsmprov_trigger_instantiation(instance):
+    assert isinstance(instance, fsmProv_Trigger)
 
 
-@given(instance=fsmProv::Trigger_strategy)
-def test_fsmprov::trigger_expression_setter(instance):
+
+@given(instance=fsmProv_Trigger_strategy)
+def test_fsmprov_trigger_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -172,9 +164,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsmProv::Trigger_strategy)
+@given(instance=fsmProv_Trigger_strategy)
 @settings(max_examples=30)
-def test_fsmprov::trigger_evaltrigger_changes_state(instance):
+def test_fsmprov_trigger_evaltrigger_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -188,31 +180,36 @@ def test_fsmprov::trigger_evaltrigger_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evalTrigger' in fsmProv::Trigger is empty"
+        assert has_statements, f"Function 'evalTrigger' in fsmProv_Trigger is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evalTrigger' in fsmProv::Trigger did not change state; check implementation")
+            warnings.warn(f"Operation 'evalTrigger' in fsmProv_Trigger did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evalTrigger' in fsmProv::Trigger is not implemented or raised an error")
+        warnings.warn(f"Operation 'evalTrigger' in fsmProv_Trigger is not implemented or raised an error")
 
-@given(instance=fsmProv::Transition_strategy)
+@given(instance=fsmProv_Transition_strategy)
 @settings(max_examples=50)
-def test_fsmprov::transition_instantiation(instance):
-    assert isinstance(instance, fsmProv::Transition)
+def test_fsmprov_transition_instantiation(instance):
+    assert isinstance(instance, fsmProv_Transition)
 
-@given(instance=fsmProv::State_strategy)
+@given(instance=fsmProv_State_strategy)
 @settings(max_examples=50)
-def test_fsmprov::state_instantiation(instance):
-    assert isinstance(instance, fsmProv::State)
+def test_fsmprov_state_instantiation(instance):
+    assert isinstance(instance, fsmProv_State)
 
-@given(instance=fsmProv::AbstractState_strategy)
+@given(instance=fsmProv_AbstractState_strategy)
 @settings(max_examples=50)
-def test_fsmprov::abstractstate_instantiation(instance):
-    assert isinstance(instance, fsmProv::AbstractState)
+def test_fsmprov_abstractstate_instantiation(instance):
+    assert isinstance(instance, fsmProv_AbstractState)
 
-@given(instance=fsmProv::Region_strategy)
+@given(instance=fsmProv_Region_strategy)
 @settings(max_examples=50)
-def test_fsmprov::region_instantiation(instance):
-    assert isinstance(instance, fsmProv::Region)
+def test_fsmprov_region_instantiation(instance):
+    assert isinstance(instance, fsmProv_Region)
+
+@given(instance=fsmProv_StateMachine_strategy)
+@settings(max_examples=50)
+def test_fsmprov_statemachine_instantiation(instance):
+    assert isinstance(instance, fsmProv_StateMachine)

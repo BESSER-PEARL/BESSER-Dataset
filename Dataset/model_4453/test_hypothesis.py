@@ -3,55 +3,55 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TriggeredTransition,
-    rover::DistanceSensorTrigger,
+    rover_DistanceSensorTrigger,
     Transition,
-    rover::NormalTransition,
-    rover::TriggeredTransition,
+    rover_NormalTransition,
+    rover_TriggeredTransition,
     SingleQuantity,
     Quantity,
-    rover::SingleQuantity,
-    rover::GPSTrigger,
-    rover::CompassTrigger,
-    rover::Velocity,
-    rover::Length,
-    rover::Time,
+    rover_SingleQuantity,
+    rover_GPSTrigger,
+    rover_CompassTrigger,
+    rover_Velocity,
+    rover_Length,
+    rover_Time,
     Command,
-    rover::Wait,
-    rover::Terminate,
-    rover::Move,
-    rover::Rotate,
-    rover::SetLightColor,
-    rover::Repeat,
-    rover::Transition,
-    rover::Command,
-    rover::Program,
-    rover::Angle,
-    rover::Rover,
-    rover::Position,
+    rover_Terminate,
+    rover_Wait,
+    rover_Move,
+    rover_Rotate,
+    rover_SetLightColor,
+    rover_Repeat,
+    rover_Transition,
+    rover_Command,
+    rover_Program,
+    rover_Angle,
+    rover_Rover,
+    rover_Position,
     Sensor,
-    rover::Distance,
-    rover::Compass,
-    rover::GPS,
+    rover_Distance,
+    rover_Compass,
+    rover_GPS,
     Actuator,
-    rover::Light,
-    rover::Motor,
+    rover_Light,
+    rover_Motor,
     Component,
-    rover::Sensor,
-    rover::Actuator,
-    rover::Quantity,
-    rover::Block,
-    rover::Component,
-    rover::System,
+    rover_Sensor,
+    rover_Actuator,
+    rover_Quantity,
+    rover_Block,
+    rover_Component,
+    rover_System,
     ColorKind,
     LengthUnit,
-    TimeUnit,
-    Operator,
-    AngleUnit,
     VelocityUnit,
+    AngleUnit,
+    Operator,
+    TimeUnit,
 )
 
 # =============================================================================
@@ -74,16 +74,16 @@ def test_triggeredtransition_constructor_args():
 
 
 
-def test_rover::distancesensortrigger_is_not_abstract():
-    assert not inspect.isabstract(rover::DistanceSensorTrigger)
+def test_rover_distancesensortrigger_is_not_abstract():
+    assert not inspect.isabstract(rover_DistanceSensorTrigger)
 
 
-def test_rover::distancesensortrigger_constructor_exists():
-    assert callable(rover::DistanceSensorTrigger.__init__)
+def test_rover_distancesensortrigger_constructor_exists():
+    assert callable(rover_DistanceSensorTrigger.__init__)
 
 
-def test_rover::distancesensortrigger_constructor_args():
-    sig = inspect.signature(rover::DistanceSensorTrigger.__init__)
+def test_rover_distancesensortrigger_constructor_args():
+    sig = inspect.signature(rover_DistanceSensorTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -102,37 +102,37 @@ def test_transition_constructor_args():
 
 
 
-def test_rover::normaltransition_is_not_abstract():
-    assert not inspect.isabstract(rover::NormalTransition)
+def test_rover_normaltransition_is_not_abstract():
+    assert not inspect.isabstract(rover_NormalTransition)
 
 
-def test_rover::normaltransition_constructor_exists():
-    assert callable(rover::NormalTransition.__init__)
+def test_rover_normaltransition_constructor_exists():
+    assert callable(rover_NormalTransition.__init__)
 
 
-def test_rover::normaltransition_constructor_args():
-    sig = inspect.signature(rover::NormalTransition.__init__)
+def test_rover_normaltransition_constructor_args():
+    sig = inspect.signature(rover_NormalTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::triggeredtransition_is_not_abstract():
-    assert not inspect.isabstract(rover::TriggeredTransition)
+def test_rover_triggeredtransition_is_not_abstract():
+    assert not inspect.isabstract(rover_TriggeredTransition)
 
 
-def test_rover::triggeredtransition_constructor_exists():
-    assert callable(rover::TriggeredTransition.__init__)
+def test_rover_triggeredtransition_constructor_exists():
+    assert callable(rover_TriggeredTransition.__init__)
 
 
-def test_rover::triggeredtransition_constructor_args():
-    sig = inspect.signature(rover::TriggeredTransition.__init__)
+def test_rover_triggeredtransition_constructor_args():
+    sig = inspect.signature(rover_TriggeredTransition.__init__)
     params = list(sig.parameters.keys())
     assert "Operator" in params, "Missing parameter 'Operator'"
 
-def test_rover::triggeredtransition_has_Operator():
-    assert hasattr(rover::TriggeredTransition, "Operator")
+def test_rover_triggeredtransition_has_Operator():
+    assert hasattr(rover_TriggeredTransition, "Operator")
     descriptor = None
-    for klass in rover::TriggeredTransition.__mro__:
+    for klass in rover_TriggeredTransition.__mro__:
         if "Operator" in klass.__dict__:
             descriptor = klass.__dict__["Operator"]
             break
@@ -168,23 +168,23 @@ def test_quantity_constructor_args():
 
 
 
-def test_rover::singlequantity_is_not_abstract():
-    assert not inspect.isabstract(rover::SingleQuantity)
+def test_rover_singlequantity_is_not_abstract():
+    assert not inspect.isabstract(rover_SingleQuantity)
 
 
-def test_rover::singlequantity_constructor_exists():
-    assert callable(rover::SingleQuantity.__init__)
+def test_rover_singlequantity_constructor_exists():
+    assert callable(rover_SingleQuantity.__init__)
 
 
-def test_rover::singlequantity_constructor_args():
-    sig = inspect.signature(rover::SingleQuantity.__init__)
+def test_rover_singlequantity_constructor_args():
+    sig = inspect.signature(rover_SingleQuantity.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_rover::singlequantity_has_value():
-    assert hasattr(rover::SingleQuantity, "value")
+def test_rover_singlequantity_has_value():
+    assert hasattr(rover_SingleQuantity, "value")
     descriptor = None
-    for klass in rover::SingleQuantity.__mro__:
+    for klass in rover_SingleQuantity.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -192,51 +192,51 @@ def test_rover::singlequantity_has_value():
 
 
 
-def test_rover::gpstrigger_is_not_abstract():
-    assert not inspect.isabstract(rover::GPSTrigger)
+def test_rover_gpstrigger_is_not_abstract():
+    assert not inspect.isabstract(rover_GPSTrigger)
 
 
-def test_rover::gpstrigger_constructor_exists():
-    assert callable(rover::GPSTrigger.__init__)
+def test_rover_gpstrigger_constructor_exists():
+    assert callable(rover_GPSTrigger.__init__)
 
 
-def test_rover::gpstrigger_constructor_args():
-    sig = inspect.signature(rover::GPSTrigger.__init__)
+def test_rover_gpstrigger_constructor_args():
+    sig = inspect.signature(rover_GPSTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::compasstrigger_is_not_abstract():
-    assert not inspect.isabstract(rover::CompassTrigger)
+def test_rover_compasstrigger_is_not_abstract():
+    assert not inspect.isabstract(rover_CompassTrigger)
 
 
-def test_rover::compasstrigger_constructor_exists():
-    assert callable(rover::CompassTrigger.__init__)
+def test_rover_compasstrigger_constructor_exists():
+    assert callable(rover_CompassTrigger.__init__)
 
 
-def test_rover::compasstrigger_constructor_args():
-    sig = inspect.signature(rover::CompassTrigger.__init__)
+def test_rover_compasstrigger_constructor_args():
+    sig = inspect.signature(rover_CompassTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::velocity_is_not_abstract():
-    assert not inspect.isabstract(rover::Velocity)
+def test_rover_velocity_is_not_abstract():
+    assert not inspect.isabstract(rover_Velocity)
 
 
-def test_rover::velocity_constructor_exists():
-    assert callable(rover::Velocity.__init__)
+def test_rover_velocity_constructor_exists():
+    assert callable(rover_Velocity.__init__)
 
 
-def test_rover::velocity_constructor_args():
-    sig = inspect.signature(rover::Velocity.__init__)
+def test_rover_velocity_constructor_args():
+    sig = inspect.signature(rover_Velocity.__init__)
     params = list(sig.parameters.keys())
     assert "velocityUnit" in params, "Missing parameter 'velocityUnit'"
 
-def test_rover::velocity_has_velocityUnit():
-    assert hasattr(rover::Velocity, "velocityUnit")
+def test_rover_velocity_has_velocityUnit():
+    assert hasattr(rover_Velocity, "velocityUnit")
     descriptor = None
-    for klass in rover::Velocity.__mro__:
+    for klass in rover_Velocity.__mro__:
         if "velocityUnit" in klass.__dict__:
             descriptor = klass.__dict__["velocityUnit"]
             break
@@ -244,23 +244,23 @@ def test_rover::velocity_has_velocityUnit():
 
 
 
-def test_rover::length_is_not_abstract():
-    assert not inspect.isabstract(rover::Length)
+def test_rover_length_is_not_abstract():
+    assert not inspect.isabstract(rover_Length)
 
 
-def test_rover::length_constructor_exists():
-    assert callable(rover::Length.__init__)
+def test_rover_length_constructor_exists():
+    assert callable(rover_Length.__init__)
 
 
-def test_rover::length_constructor_args():
-    sig = inspect.signature(rover::Length.__init__)
+def test_rover_length_constructor_args():
+    sig = inspect.signature(rover_Length.__init__)
     params = list(sig.parameters.keys())
     assert "lengthUnit" in params, "Missing parameter 'lengthUnit'"
 
-def test_rover::length_has_lengthUnit():
-    assert hasattr(rover::Length, "lengthUnit")
+def test_rover_length_has_lengthUnit():
+    assert hasattr(rover_Length, "lengthUnit")
     descriptor = None
-    for klass in rover::Length.__mro__:
+    for klass in rover_Length.__mro__:
         if "lengthUnit" in klass.__dict__:
             descriptor = klass.__dict__["lengthUnit"]
             break
@@ -268,23 +268,23 @@ def test_rover::length_has_lengthUnit():
 
 
 
-def test_rover::time_is_not_abstract():
-    assert not inspect.isabstract(rover::Time)
+def test_rover_time_is_not_abstract():
+    assert not inspect.isabstract(rover_Time)
 
 
-def test_rover::time_constructor_exists():
-    assert callable(rover::Time.__init__)
+def test_rover_time_constructor_exists():
+    assert callable(rover_Time.__init__)
 
 
-def test_rover::time_constructor_args():
-    sig = inspect.signature(rover::Time.__init__)
+def test_rover_time_constructor_args():
+    sig = inspect.signature(rover_Time.__init__)
     params = list(sig.parameters.keys())
     assert "timeUnit" in params, "Missing parameter 'timeUnit'"
 
-def test_rover::time_has_timeUnit():
-    assert hasattr(rover::Time, "timeUnit")
+def test_rover_time_has_timeUnit():
+    assert hasattr(rover_Time, "timeUnit")
     descriptor = None
-    for klass in rover::Time.__mro__:
+    for klass in rover_Time.__mro__:
         if "timeUnit" in klass.__dict__:
             descriptor = klass.__dict__["timeUnit"]
             break
@@ -306,79 +306,79 @@ def test_command_constructor_args():
 
 
 
-def test_rover::wait_is_not_abstract():
-    assert not inspect.isabstract(rover::Wait)
+def test_rover_terminate_is_not_abstract():
+    assert not inspect.isabstract(rover_Terminate)
 
 
-def test_rover::wait_constructor_exists():
-    assert callable(rover::Wait.__init__)
+def test_rover_terminate_constructor_exists():
+    assert callable(rover_Terminate.__init__)
 
 
-def test_rover::wait_constructor_args():
-    sig = inspect.signature(rover::Wait.__init__)
+def test_rover_terminate_constructor_args():
+    sig = inspect.signature(rover_Terminate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::terminate_is_not_abstract():
-    assert not inspect.isabstract(rover::Terminate)
+def test_rover_wait_is_not_abstract():
+    assert not inspect.isabstract(rover_Wait)
 
 
-def test_rover::terminate_constructor_exists():
-    assert callable(rover::Terminate.__init__)
+def test_rover_wait_constructor_exists():
+    assert callable(rover_Wait.__init__)
 
 
-def test_rover::terminate_constructor_args():
-    sig = inspect.signature(rover::Terminate.__init__)
+def test_rover_wait_constructor_args():
+    sig = inspect.signature(rover_Wait.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::move_is_not_abstract():
-    assert not inspect.isabstract(rover::Move)
+def test_rover_move_is_not_abstract():
+    assert not inspect.isabstract(rover_Move)
 
 
-def test_rover::move_constructor_exists():
-    assert callable(rover::Move.__init__)
+def test_rover_move_constructor_exists():
+    assert callable(rover_Move.__init__)
 
 
-def test_rover::move_constructor_args():
-    sig = inspect.signature(rover::Move.__init__)
+def test_rover_move_constructor_args():
+    sig = inspect.signature(rover_Move.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::rotate_is_not_abstract():
-    assert not inspect.isabstract(rover::Rotate)
+def test_rover_rotate_is_not_abstract():
+    assert not inspect.isabstract(rover_Rotate)
 
 
-def test_rover::rotate_constructor_exists():
-    assert callable(rover::Rotate.__init__)
+def test_rover_rotate_constructor_exists():
+    assert callable(rover_Rotate.__init__)
 
 
-def test_rover::rotate_constructor_args():
-    sig = inspect.signature(rover::Rotate.__init__)
+def test_rover_rotate_constructor_args():
+    sig = inspect.signature(rover_Rotate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::setlightcolor_is_not_abstract():
-    assert not inspect.isabstract(rover::SetLightColor)
+def test_rover_setlightcolor_is_not_abstract():
+    assert not inspect.isabstract(rover_SetLightColor)
 
 
-def test_rover::setlightcolor_constructor_exists():
-    assert callable(rover::SetLightColor.__init__)
+def test_rover_setlightcolor_constructor_exists():
+    assert callable(rover_SetLightColor.__init__)
 
 
-def test_rover::setlightcolor_constructor_args():
-    sig = inspect.signature(rover::SetLightColor.__init__)
+def test_rover_setlightcolor_constructor_args():
+    sig = inspect.signature(rover_SetLightColor.__init__)
     params = list(sig.parameters.keys())
     assert "lightColor" in params, "Missing parameter 'lightColor'"
 
-def test_rover::setlightcolor_has_lightColor():
-    assert hasattr(rover::SetLightColor, "lightColor")
+def test_rover_setlightcolor_has_lightColor():
+    assert hasattr(rover_SetLightColor, "lightColor")
     descriptor = None
-    for klass in rover::SetLightColor.__mro__:
+    for klass in rover_SetLightColor.__mro__:
         if "lightColor" in klass.__dict__:
             descriptor = klass.__dict__["lightColor"]
             break
@@ -386,23 +386,23 @@ def test_rover::setlightcolor_has_lightColor():
 
 
 
-def test_rover::repeat_is_not_abstract():
-    assert not inspect.isabstract(rover::Repeat)
+def test_rover_repeat_is_not_abstract():
+    assert not inspect.isabstract(rover_Repeat)
 
 
-def test_rover::repeat_constructor_exists():
-    assert callable(rover::Repeat.__init__)
+def test_rover_repeat_constructor_exists():
+    assert callable(rover_Repeat.__init__)
 
 
-def test_rover::repeat_constructor_args():
-    sig = inspect.signature(rover::Repeat.__init__)
+def test_rover_repeat_constructor_args():
+    sig = inspect.signature(rover_Repeat.__init__)
     params = list(sig.parameters.keys())
     assert "count" in params, "Missing parameter 'count'"
 
-def test_rover::repeat_has_count():
-    assert hasattr(rover::Repeat, "count")
+def test_rover_repeat_has_count():
+    assert hasattr(rover_Repeat, "count")
     descriptor = None
-    for klass in rover::Repeat.__mro__:
+    for klass in rover_Repeat.__mro__:
         if "count" in klass.__dict__:
             descriptor = klass.__dict__["count"]
             break
@@ -410,51 +410,51 @@ def test_rover::repeat_has_count():
 
 
 
-def test_rover::transition_is_not_abstract():
-    assert not inspect.isabstract(rover::Transition)
+def test_rover_transition_is_not_abstract():
+    assert not inspect.isabstract(rover_Transition)
 
 
-def test_rover::transition_constructor_exists():
-    assert callable(rover::Transition.__init__)
+def test_rover_transition_constructor_exists():
+    assert callable(rover_Transition.__init__)
 
 
-def test_rover::transition_constructor_args():
-    sig = inspect.signature(rover::Transition.__init__)
+def test_rover_transition_constructor_args():
+    sig = inspect.signature(rover_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::command_is_not_abstract():
-    assert not inspect.isabstract(rover::Command)
+def test_rover_command_is_not_abstract():
+    assert not inspect.isabstract(rover_Command)
 
 
-def test_rover::command_constructor_exists():
-    assert callable(rover::Command.__init__)
+def test_rover_command_constructor_exists():
+    assert callable(rover_Command.__init__)
 
 
-def test_rover::command_constructor_args():
-    sig = inspect.signature(rover::Command.__init__)
+def test_rover_command_constructor_args():
+    sig = inspect.signature(rover_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::program_is_not_abstract():
-    assert not inspect.isabstract(rover::Program)
+def test_rover_program_is_not_abstract():
+    assert not inspect.isabstract(rover_Program)
 
 
-def test_rover::program_constructor_exists():
-    assert callable(rover::Program.__init__)
+def test_rover_program_constructor_exists():
+    assert callable(rover_Program.__init__)
 
 
-def test_rover::program_constructor_args():
-    sig = inspect.signature(rover::Program.__init__)
+def test_rover_program_constructor_args():
+    sig = inspect.signature(rover_Program.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rover::program_has_name():
-    assert hasattr(rover::Program, "name")
+def test_rover_program_has_name():
+    assert hasattr(rover_Program, "name")
     descriptor = None
-    for klass in rover::Program.__mro__:
+    for klass in rover_Program.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -462,23 +462,23 @@ def test_rover::program_has_name():
 
 
 
-def test_rover::angle_is_not_abstract():
-    assert not inspect.isabstract(rover::Angle)
+def test_rover_angle_is_not_abstract():
+    assert not inspect.isabstract(rover_Angle)
 
 
-def test_rover::angle_constructor_exists():
-    assert callable(rover::Angle.__init__)
+def test_rover_angle_constructor_exists():
+    assert callable(rover_Angle.__init__)
 
 
-def test_rover::angle_constructor_args():
-    sig = inspect.signature(rover::Angle.__init__)
+def test_rover_angle_constructor_args():
+    sig = inspect.signature(rover_Angle.__init__)
     params = list(sig.parameters.keys())
     assert "angleUnit" in params, "Missing parameter 'angleUnit'"
 
-def test_rover::angle_has_angleUnit():
-    assert hasattr(rover::Angle, "angleUnit")
+def test_rover_angle_has_angleUnit():
+    assert hasattr(rover_Angle, "angleUnit")
     descriptor = None
-    for klass in rover::Angle.__mro__:
+    for klass in rover_Angle.__mro__:
         if "angleUnit" in klass.__dict__:
             descriptor = klass.__dict__["angleUnit"]
             break
@@ -486,23 +486,23 @@ def test_rover::angle_has_angleUnit():
 
 
 
-def test_rover::rover_is_not_abstract():
-    assert not inspect.isabstract(rover::Rover)
+def test_rover_rover_is_not_abstract():
+    assert not inspect.isabstract(rover_Rover)
 
 
-def test_rover::rover_constructor_exists():
-    assert callable(rover::Rover.__init__)
+def test_rover_rover_constructor_exists():
+    assert callable(rover_Rover.__init__)
 
 
-def test_rover::rover_constructor_args():
-    sig = inspect.signature(rover::Rover.__init__)
+def test_rover_rover_constructor_args():
+    sig = inspect.signature(rover_Rover.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rover::rover_has_name():
-    assert hasattr(rover::Rover, "name")
+def test_rover_rover_has_name():
+    assert hasattr(rover_Rover, "name")
     descriptor = None
-    for klass in rover::Rover.__mro__:
+    for klass in rover_Rover.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -510,16 +510,16 @@ def test_rover::rover_has_name():
 
 
 
-def test_rover::position_is_not_abstract():
-    assert not inspect.isabstract(rover::Position)
+def test_rover_position_is_not_abstract():
+    assert not inspect.isabstract(rover_Position)
 
 
-def test_rover::position_constructor_exists():
-    assert callable(rover::Position.__init__)
+def test_rover_position_constructor_exists():
+    assert callable(rover_Position.__init__)
 
 
-def test_rover::position_constructor_args():
-    sig = inspect.signature(rover::Position.__init__)
+def test_rover_position_constructor_args():
+    sig = inspect.signature(rover_Position.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -538,44 +538,44 @@ def test_sensor_constructor_args():
 
 
 
-def test_rover::distance_is_not_abstract():
-    assert not inspect.isabstract(rover::Distance)
+def test_rover_distance_is_not_abstract():
+    assert not inspect.isabstract(rover_Distance)
 
 
-def test_rover::distance_constructor_exists():
-    assert callable(rover::Distance.__init__)
+def test_rover_distance_constructor_exists():
+    assert callable(rover_Distance.__init__)
 
 
-def test_rover::distance_constructor_args():
-    sig = inspect.signature(rover::Distance.__init__)
+def test_rover_distance_constructor_args():
+    sig = inspect.signature(rover_Distance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::compass_is_not_abstract():
-    assert not inspect.isabstract(rover::Compass)
+def test_rover_compass_is_not_abstract():
+    assert not inspect.isabstract(rover_Compass)
 
 
-def test_rover::compass_constructor_exists():
-    assert callable(rover::Compass.__init__)
+def test_rover_compass_constructor_exists():
+    assert callable(rover_Compass.__init__)
 
 
-def test_rover::compass_constructor_args():
-    sig = inspect.signature(rover::Compass.__init__)
+def test_rover_compass_constructor_args():
+    sig = inspect.signature(rover_Compass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::gps_is_not_abstract():
-    assert not inspect.isabstract(rover::GPS)
+def test_rover_gps_is_not_abstract():
+    assert not inspect.isabstract(rover_GPS)
 
 
-def test_rover::gps_constructor_exists():
-    assert callable(rover::GPS.__init__)
+def test_rover_gps_constructor_exists():
+    assert callable(rover_GPS.__init__)
 
 
-def test_rover::gps_constructor_args():
-    sig = inspect.signature(rover::GPS.__init__)
+def test_rover_gps_constructor_args():
+    sig = inspect.signature(rover_GPS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -594,23 +594,23 @@ def test_actuator_constructor_args():
 
 
 
-def test_rover::light_is_not_abstract():
-    assert not inspect.isabstract(rover::Light)
+def test_rover_light_is_not_abstract():
+    assert not inspect.isabstract(rover_Light)
 
 
-def test_rover::light_constructor_exists():
-    assert callable(rover::Light.__init__)
+def test_rover_light_constructor_exists():
+    assert callable(rover_Light.__init__)
 
 
-def test_rover::light_constructor_args():
-    sig = inspect.signature(rover::Light.__init__)
+def test_rover_light_constructor_args():
+    sig = inspect.signature(rover_Light.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_rover::light_has_color():
-    assert hasattr(rover::Light, "color")
+def test_rover_light_has_color():
+    assert hasattr(rover_Light, "color")
     descriptor = None
-    for klass in rover::Light.__mro__:
+    for klass in rover_Light.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -618,16 +618,16 @@ def test_rover::light_has_color():
 
 
 
-def test_rover::motor_is_not_abstract():
-    assert not inspect.isabstract(rover::Motor)
+def test_rover_motor_is_not_abstract():
+    assert not inspect.isabstract(rover_Motor)
 
 
-def test_rover::motor_constructor_exists():
-    assert callable(rover::Motor.__init__)
+def test_rover_motor_constructor_exists():
+    assert callable(rover_Motor.__init__)
 
 
-def test_rover::motor_constructor_args():
-    sig = inspect.signature(rover::Motor.__init__)
+def test_rover_motor_constructor_args():
+    sig = inspect.signature(rover_Motor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -646,79 +646,79 @@ def test_component_constructor_args():
 
 
 
-def test_rover::sensor_is_not_abstract():
-    assert not inspect.isabstract(rover::Sensor)
+def test_rover_sensor_is_not_abstract():
+    assert not inspect.isabstract(rover_Sensor)
 
 
-def test_rover::sensor_constructor_exists():
-    assert callable(rover::Sensor.__init__)
+def test_rover_sensor_constructor_exists():
+    assert callable(rover_Sensor.__init__)
 
 
-def test_rover::sensor_constructor_args():
-    sig = inspect.signature(rover::Sensor.__init__)
+def test_rover_sensor_constructor_args():
+    sig = inspect.signature(rover_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::actuator_is_not_abstract():
-    assert not inspect.isabstract(rover::Actuator)
+def test_rover_actuator_is_not_abstract():
+    assert not inspect.isabstract(rover_Actuator)
 
 
-def test_rover::actuator_constructor_exists():
-    assert callable(rover::Actuator.__init__)
+def test_rover_actuator_constructor_exists():
+    assert callable(rover_Actuator.__init__)
 
 
-def test_rover::actuator_constructor_args():
-    sig = inspect.signature(rover::Actuator.__init__)
+def test_rover_actuator_constructor_args():
+    sig = inspect.signature(rover_Actuator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::quantity_is_not_abstract():
-    assert not inspect.isabstract(rover::Quantity)
+def test_rover_quantity_is_not_abstract():
+    assert not inspect.isabstract(rover_Quantity)
 
 
-def test_rover::quantity_constructor_exists():
-    assert callable(rover::Quantity.__init__)
+def test_rover_quantity_constructor_exists():
+    assert callable(rover_Quantity.__init__)
 
 
-def test_rover::quantity_constructor_args():
-    sig = inspect.signature(rover::Quantity.__init__)
+def test_rover_quantity_constructor_args():
+    sig = inspect.signature(rover_Quantity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::block_is_not_abstract():
-    assert not inspect.isabstract(rover::Block)
+def test_rover_block_is_not_abstract():
+    assert not inspect.isabstract(rover_Block)
 
 
-def test_rover::block_constructor_exists():
-    assert callable(rover::Block.__init__)
+def test_rover_block_constructor_exists():
+    assert callable(rover_Block.__init__)
 
 
-def test_rover::block_constructor_args():
-    sig = inspect.signature(rover::Block.__init__)
+def test_rover_block_constructor_args():
+    sig = inspect.signature(rover_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rover::component_is_not_abstract():
-    assert not inspect.isabstract(rover::Component)
+def test_rover_component_is_not_abstract():
+    assert not inspect.isabstract(rover_Component)
 
 
-def test_rover::component_constructor_exists():
-    assert callable(rover::Component.__init__)
+def test_rover_component_constructor_exists():
+    assert callable(rover_Component.__init__)
 
 
-def test_rover::component_constructor_args():
-    sig = inspect.signature(rover::Component.__init__)
+def test_rover_component_constructor_args():
+    sig = inspect.signature(rover_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rover::component_has_name():
-    assert hasattr(rover::Component, "name")
+def test_rover_component_has_name():
+    assert hasattr(rover_Component, "name")
     descriptor = None
-    for klass in rover::Component.__mro__:
+    for klass in rover_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -726,16 +726,16 @@ def test_rover::component_has_name():
 
 
 
-def test_rover::system_is_not_abstract():
-    assert not inspect.isabstract(rover::System)
+def test_rover_system_is_not_abstract():
+    assert not inspect.isabstract(rover_System)
 
 
-def test_rover::system_constructor_exists():
-    assert callable(rover::System.__init__)
+def test_rover_system_constructor_exists():
+    assert callable(rover_System.__init__)
 
 
-def test_rover::system_constructor_args():
-    sig = inspect.signature(rover::System.__init__)
+def test_rover_system_constructor_args():
+    sig = inspect.signature(rover_System.__init__)
     params = list(sig.parameters.keys())
 
 def test_colorkind_exists():
@@ -746,11 +746,11 @@ def test_colorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ColorKind]
     expected_literals = [
-        "Red",
-        "None_",
-        "Blue",
-        "Yellow",
         "Green",
+        "Red",
+        "Yellow",
+        "Blue",
+        "None_",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -765,62 +765,12 @@ def test_lengthunit_has_all_literals():
     enum_literals = [lit.name for lit in LengthUnit]
     expected_literals = [
         "millimeters",
-        "meters",
         "centimeters",
+        "meters",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LengthUnit"
-
-def test_timeunit_exists():
-    # Check that the Enumeration exists
-    assert TimeUnit is not None
-
-def test_timeunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimeUnit]
-    expected_literals = [
-        "minutes",
-        "milliseconds",
-        "hours",
-        "nanoseconds",
-        "seconds",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
-
-def test_operator_exists():
-    # Check that the Enumeration exists
-    assert Operator is not None
-
-def test_operator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Operator]
-    expected_literals = [
-        "greater",
-        "equal",
-        "smaller",
-        "unequal",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Operator"
-
-def test_angleunit_exists():
-    # Check that the Enumeration exists
-    assert AngleUnit is not None
-
-def test_angleunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AngleUnit]
-    expected_literals = [
-        "radians",
-        "degrees",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AngleUnit"
 
 def test_velocityunit_exists():
     # Check that the Enumeration exists
@@ -837,6 +787,56 @@ def test_velocityunit_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VelocityUnit"
 
+def test_angleunit_exists():
+    # Check that the Enumeration exists
+    assert AngleUnit is not None
+
+def test_angleunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AngleUnit]
+    expected_literals = [
+        "radians",
+        "degrees",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AngleUnit"
+
+def test_operator_exists():
+    # Check that the Enumeration exists
+    assert Operator is not None
+
+def test_operator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Operator]
+    expected_literals = [
+        "smaller",
+        "unequal",
+        "equal",
+        "greater",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Operator"
+
+def test_timeunit_exists():
+    # Check that the Enumeration exists
+    assert TimeUnit is not None
+
+def test_timeunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TimeUnit]
+    expected_literals = [
+        "seconds",
+        "minutes",
+        "milliseconds",
+        "nanoseconds",
+        "hours",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -852,17 +852,17 @@ safe_text = st.text(
 TriggeredTransition_strategy = st.builds(
     TriggeredTransition,
 )
-rover::DistanceSensorTrigger_strategy = st.builds(
-    rover::DistanceSensorTrigger,
+rover_DistanceSensorTrigger_strategy = st.builds(
+    rover_DistanceSensorTrigger,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-rover::NormalTransition_strategy = st.builds(
-    rover::NormalTransition,
+rover_NormalTransition_strategy = st.builds(
+    rover_NormalTransition,
 )
-rover::TriggeredTransition_strategy = st.builds(
-    rover::TriggeredTransition,
+rover_TriggeredTransition_strategy = st.builds(
+    rover_TriggeredTransition,
     Operator=
         safe_text
 )
@@ -872,126 +872,126 @@ SingleQuantity_strategy = st.builds(
 Quantity_strategy = st.builds(
     Quantity,
 )
-rover::SingleQuantity_strategy = st.builds(
-    rover::SingleQuantity,
+rover_SingleQuantity_strategy = st.builds(
+    rover_SingleQuantity,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-rover::GPSTrigger_strategy = st.builds(
-    rover::GPSTrigger,
+rover_GPSTrigger_strategy = st.builds(
+    rover_GPSTrigger,
 )
-rover::CompassTrigger_strategy = st.builds(
-    rover::CompassTrigger,
+rover_CompassTrigger_strategy = st.builds(
+    rover_CompassTrigger,
 )
-rover::Velocity_strategy = st.builds(
-    rover::Velocity,
+rover_Velocity_strategy = st.builds(
+    rover_Velocity,
     velocityUnit=
         safe_text
 )
-rover::Length_strategy = st.builds(
-    rover::Length,
+rover_Length_strategy = st.builds(
+    rover_Length,
     lengthUnit=
         safe_text
 )
-rover::Time_strategy = st.builds(
-    rover::Time,
+rover_Time_strategy = st.builds(
+    rover_Time,
     timeUnit=
         safe_text
 )
 Command_strategy = st.builds(
     Command,
 )
-rover::Wait_strategy = st.builds(
-    rover::Wait,
+rover_Terminate_strategy = st.builds(
+    rover_Terminate,
 )
-rover::Terminate_strategy = st.builds(
-    rover::Terminate,
+rover_Wait_strategy = st.builds(
+    rover_Wait,
 )
-rover::Move_strategy = st.builds(
-    rover::Move,
+rover_Move_strategy = st.builds(
+    rover_Move,
 )
-rover::Rotate_strategy = st.builds(
-    rover::Rotate,
+rover_Rotate_strategy = st.builds(
+    rover_Rotate,
 )
-rover::SetLightColor_strategy = st.builds(
-    rover::SetLightColor,
+rover_SetLightColor_strategy = st.builds(
+    rover_SetLightColor,
     lightColor=
         safe_text
 )
-rover::Repeat_strategy = st.builds(
-    rover::Repeat,
+rover_Repeat_strategy = st.builds(
+    rover_Repeat,
     count=
         st.integers()
 )
-rover::Transition_strategy = st.builds(
-    rover::Transition,
+rover_Transition_strategy = st.builds(
+    rover_Transition,
 )
-rover::Command_strategy = st.builds(
-    rover::Command,
+rover_Command_strategy = st.builds(
+    rover_Command,
 )
-rover::Program_strategy = st.builds(
-    rover::Program,
+rover_Program_strategy = st.builds(
+    rover_Program,
     name=
         safe_text
 )
-rover::Angle_strategy = st.builds(
-    rover::Angle,
+rover_Angle_strategy = st.builds(
+    rover_Angle,
     angleUnit=
         safe_text
 )
-rover::Rover_strategy = st.builds(
-    rover::Rover,
+rover_Rover_strategy = st.builds(
+    rover_Rover,
     name=
         safe_text
 )
-rover::Position_strategy = st.builds(
-    rover::Position,
+rover_Position_strategy = st.builds(
+    rover_Position,
 )
 Sensor_strategy = st.builds(
     Sensor,
 )
-rover::Distance_strategy = st.builds(
-    rover::Distance,
+rover_Distance_strategy = st.builds(
+    rover_Distance,
 )
-rover::Compass_strategy = st.builds(
-    rover::Compass,
+rover_Compass_strategy = st.builds(
+    rover_Compass,
 )
-rover::GPS_strategy = st.builds(
-    rover::GPS,
+rover_GPS_strategy = st.builds(
+    rover_GPS,
 )
 Actuator_strategy = st.builds(
     Actuator,
 )
-rover::Light_strategy = st.builds(
-    rover::Light,
+rover_Light_strategy = st.builds(
+    rover_Light,
     color=
         safe_text
 )
-rover::Motor_strategy = st.builds(
-    rover::Motor,
+rover_Motor_strategy = st.builds(
+    rover_Motor,
 )
 Component_strategy = st.builds(
     Component,
 )
-rover::Sensor_strategy = st.builds(
-    rover::Sensor,
+rover_Sensor_strategy = st.builds(
+    rover_Sensor,
 )
-rover::Actuator_strategy = st.builds(
-    rover::Actuator,
+rover_Actuator_strategy = st.builds(
+    rover_Actuator,
 )
-rover::Quantity_strategy = st.builds(
-    rover::Quantity,
+rover_Quantity_strategy = st.builds(
+    rover_Quantity,
 )
-rover::Block_strategy = st.builds(
-    rover::Block,
+rover_Block_strategy = st.builds(
+    rover_Block,
 )
-rover::Component_strategy = st.builds(
-    rover::Component,
+rover_Component_strategy = st.builds(
+    rover_Component,
     name=
         safe_text
 )
-rover::System_strategy = st.builds(
-    rover::System,
+rover_System_strategy = st.builds(
+    rover_System,
 )
 
 @given(instance=TriggeredTransition_strategy)
@@ -999,33 +999,30 @@ rover::System_strategy = st.builds(
 def test_triggeredtransition_instantiation(instance):
     assert isinstance(instance, TriggeredTransition)
 
-@given(instance=rover::DistanceSensorTrigger_strategy)
+@given(instance=rover_DistanceSensorTrigger_strategy)
 @settings(max_examples=50)
-def test_rover::distancesensortrigger_instantiation(instance):
-    assert isinstance(instance, rover::DistanceSensorTrigger)
+def test_rover_distancesensortrigger_instantiation(instance):
+    assert isinstance(instance, rover_DistanceSensorTrigger)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=rover::NormalTransition_strategy)
+@given(instance=rover_NormalTransition_strategy)
 @settings(max_examples=50)
-def test_rover::normaltransition_instantiation(instance):
-    assert isinstance(instance, rover::NormalTransition)
+def test_rover_normaltransition_instantiation(instance):
+    assert isinstance(instance, rover_NormalTransition)
 
-@given(instance=rover::TriggeredTransition_strategy)
+@given(instance=rover_TriggeredTransition_strategy)
 @settings(max_examples=50)
-def test_rover::triggeredtransition_instantiation(instance):
-    assert isinstance(instance, rover::TriggeredTransition)
-
-@given(instance=rover::TriggeredTransition_strategy)
-def test_rover::triggeredtransition_Operator_type(instance):
-    assert isinstance(instance.Operator, str)
+def test_rover_triggeredtransition_instantiation(instance):
+    assert isinstance(instance, rover_TriggeredTransition)
 
 
-@given(instance=rover::TriggeredTransition_strategy)
-def test_rover::triggeredtransition_Operator_setter(instance):
+
+@given(instance=rover_TriggeredTransition_strategy)
+def test_rover_triggeredtransition_Operator_setter(instance):
     original = instance.Operator
     instance.Operator = original
     assert instance.Operator == original
@@ -1040,76 +1037,64 @@ def test_singlequantity_instantiation(instance):
 def test_quantity_instantiation(instance):
     assert isinstance(instance, Quantity)
 
-@given(instance=rover::SingleQuantity_strategy)
+@given(instance=rover_SingleQuantity_strategy)
 @settings(max_examples=50)
-def test_rover::singlequantity_instantiation(instance):
-    assert isinstance(instance, rover::SingleQuantity)
-
-@given(instance=rover::SingleQuantity_strategy)
-def test_rover::singlequantity_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_rover_singlequantity_instantiation(instance):
+    assert isinstance(instance, rover_SingleQuantity)
 
 
-@given(instance=rover::SingleQuantity_strategy)
-def test_rover::singlequantity_value_setter(instance):
+
+@given(instance=rover_SingleQuantity_strategy)
+def test_rover_singlequantity_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=rover::GPSTrigger_strategy)
+@given(instance=rover_GPSTrigger_strategy)
 @settings(max_examples=50)
-def test_rover::gpstrigger_instantiation(instance):
-    assert isinstance(instance, rover::GPSTrigger)
+def test_rover_gpstrigger_instantiation(instance):
+    assert isinstance(instance, rover_GPSTrigger)
 
-@given(instance=rover::CompassTrigger_strategy)
+@given(instance=rover_CompassTrigger_strategy)
 @settings(max_examples=50)
-def test_rover::compasstrigger_instantiation(instance):
-    assert isinstance(instance, rover::CompassTrigger)
+def test_rover_compasstrigger_instantiation(instance):
+    assert isinstance(instance, rover_CompassTrigger)
 
-@given(instance=rover::Velocity_strategy)
+@given(instance=rover_Velocity_strategy)
 @settings(max_examples=50)
-def test_rover::velocity_instantiation(instance):
-    assert isinstance(instance, rover::Velocity)
-
-@given(instance=rover::Velocity_strategy)
-def test_rover::velocity_velocityUnit_type(instance):
-    assert isinstance(instance.velocityUnit, str)
+def test_rover_velocity_instantiation(instance):
+    assert isinstance(instance, rover_Velocity)
 
 
-@given(instance=rover::Velocity_strategy)
-def test_rover::velocity_velocityUnit_setter(instance):
+
+@given(instance=rover_Velocity_strategy)
+def test_rover_velocity_velocityUnit_setter(instance):
     original = instance.velocityUnit
     instance.velocityUnit = original
     assert instance.velocityUnit == original
 
-@given(instance=rover::Length_strategy)
+@given(instance=rover_Length_strategy)
 @settings(max_examples=50)
-def test_rover::length_instantiation(instance):
-    assert isinstance(instance, rover::Length)
-
-@given(instance=rover::Length_strategy)
-def test_rover::length_lengthUnit_type(instance):
-    assert isinstance(instance.lengthUnit, str)
+def test_rover_length_instantiation(instance):
+    assert isinstance(instance, rover_Length)
 
 
-@given(instance=rover::Length_strategy)
-def test_rover::length_lengthUnit_setter(instance):
+
+@given(instance=rover_Length_strategy)
+def test_rover_length_lengthUnit_setter(instance):
     original = instance.lengthUnit
     instance.lengthUnit = original
     assert instance.lengthUnit == original
 
-@given(instance=rover::Time_strategy)
+@given(instance=rover_Time_strategy)
 @settings(max_examples=50)
-def test_rover::time_instantiation(instance):
-    assert isinstance(instance, rover::Time)
-
-@given(instance=rover::Time_strategy)
-def test_rover::time_timeUnit_type(instance):
-    assert isinstance(instance.timeUnit, str)
+def test_rover_time_instantiation(instance):
+    assert isinstance(instance, rover_Time)
 
 
-@given(instance=rover::Time_strategy)
-def test_rover::time_timeUnit_setter(instance):
+
+@given(instance=rover_Time_strategy)
+def test_rover_time_timeUnit_setter(instance):
     original = instance.timeUnit
     instance.timeUnit = original
     assert instance.timeUnit == original
@@ -1119,209 +1104,188 @@ def test_rover::time_timeUnit_setter(instance):
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=rover::Wait_strategy)
+@given(instance=rover_Terminate_strategy)
 @settings(max_examples=50)
-def test_rover::wait_instantiation(instance):
-    assert isinstance(instance, rover::Wait)
+def test_rover_terminate_instantiation(instance):
+    assert isinstance(instance, rover_Terminate)
 
-@given(instance=rover::Terminate_strategy)
+@given(instance=rover_Wait_strategy)
 @settings(max_examples=50)
-def test_rover::terminate_instantiation(instance):
-    assert isinstance(instance, rover::Terminate)
+def test_rover_wait_instantiation(instance):
+    assert isinstance(instance, rover_Wait)
 
-@given(instance=rover::Move_strategy)
+@given(instance=rover_Move_strategy)
 @settings(max_examples=50)
-def test_rover::move_instantiation(instance):
-    assert isinstance(instance, rover::Move)
+def test_rover_move_instantiation(instance):
+    assert isinstance(instance, rover_Move)
 
-@given(instance=rover::Rotate_strategy)
+@given(instance=rover_Rotate_strategy)
 @settings(max_examples=50)
-def test_rover::rotate_instantiation(instance):
-    assert isinstance(instance, rover::Rotate)
+def test_rover_rotate_instantiation(instance):
+    assert isinstance(instance, rover_Rotate)
 
-@given(instance=rover::SetLightColor_strategy)
+@given(instance=rover_SetLightColor_strategy)
 @settings(max_examples=50)
-def test_rover::setlightcolor_instantiation(instance):
-    assert isinstance(instance, rover::SetLightColor)
-
-@given(instance=rover::SetLightColor_strategy)
-def test_rover::setlightcolor_lightColor_type(instance):
-    assert isinstance(instance.lightColor, str)
+def test_rover_setlightcolor_instantiation(instance):
+    assert isinstance(instance, rover_SetLightColor)
 
 
-@given(instance=rover::SetLightColor_strategy)
-def test_rover::setlightcolor_lightColor_setter(instance):
+
+@given(instance=rover_SetLightColor_strategy)
+def test_rover_setlightcolor_lightColor_setter(instance):
     original = instance.lightColor
     instance.lightColor = original
     assert instance.lightColor == original
 
-@given(instance=rover::Repeat_strategy)
+@given(instance=rover_Repeat_strategy)
 @settings(max_examples=50)
-def test_rover::repeat_instantiation(instance):
-    assert isinstance(instance, rover::Repeat)
-
-@given(instance=rover::Repeat_strategy)
-def test_rover::repeat_count_type(instance):
-    assert isinstance(instance.count, int)
+def test_rover_repeat_instantiation(instance):
+    assert isinstance(instance, rover_Repeat)
 
 
-@given(instance=rover::Repeat_strategy)
-def test_rover::repeat_count_setter(instance):
+
+@given(instance=rover_Repeat_strategy)
+def test_rover_repeat_count_setter(instance):
     original = instance.count
     instance.count = original
     assert instance.count == original
 
-@given(instance=rover::Transition_strategy)
+@given(instance=rover_Transition_strategy)
 @settings(max_examples=50)
-def test_rover::transition_instantiation(instance):
-    assert isinstance(instance, rover::Transition)
+def test_rover_transition_instantiation(instance):
+    assert isinstance(instance, rover_Transition)
 
-@given(instance=rover::Command_strategy)
+@given(instance=rover_Command_strategy)
 @settings(max_examples=50)
-def test_rover::command_instantiation(instance):
-    assert isinstance(instance, rover::Command)
+def test_rover_command_instantiation(instance):
+    assert isinstance(instance, rover_Command)
 
-@given(instance=rover::Program_strategy)
+@given(instance=rover_Program_strategy)
 @settings(max_examples=50)
-def test_rover::program_instantiation(instance):
-    assert isinstance(instance, rover::Program)
-
-@given(instance=rover::Program_strategy)
-def test_rover::program_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rover_program_instantiation(instance):
+    assert isinstance(instance, rover_Program)
 
 
-@given(instance=rover::Program_strategy)
-def test_rover::program_name_setter(instance):
+
+@given(instance=rover_Program_strategy)
+def test_rover_program_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rover::Angle_strategy)
+@given(instance=rover_Angle_strategy)
 @settings(max_examples=50)
-def test_rover::angle_instantiation(instance):
-    assert isinstance(instance, rover::Angle)
-
-@given(instance=rover::Angle_strategy)
-def test_rover::angle_angleUnit_type(instance):
-    assert isinstance(instance.angleUnit, str)
+def test_rover_angle_instantiation(instance):
+    assert isinstance(instance, rover_Angle)
 
 
-@given(instance=rover::Angle_strategy)
-def test_rover::angle_angleUnit_setter(instance):
+
+@given(instance=rover_Angle_strategy)
+def test_rover_angle_angleUnit_setter(instance):
     original = instance.angleUnit
     instance.angleUnit = original
     assert instance.angleUnit == original
 
-@given(instance=rover::Rover_strategy)
+@given(instance=rover_Rover_strategy)
 @settings(max_examples=50)
-def test_rover::rover_instantiation(instance):
-    assert isinstance(instance, rover::Rover)
-
-@given(instance=rover::Rover_strategy)
-def test_rover::rover_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rover_rover_instantiation(instance):
+    assert isinstance(instance, rover_Rover)
 
 
-@given(instance=rover::Rover_strategy)
-def test_rover::rover_name_setter(instance):
+
+@given(instance=rover_Rover_strategy)
+def test_rover_rover_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rover::Position_strategy)
+@given(instance=rover_Position_strategy)
 @settings(max_examples=50)
-def test_rover::position_instantiation(instance):
-    assert isinstance(instance, rover::Position)
+def test_rover_position_instantiation(instance):
+    assert isinstance(instance, rover_Position)
 
 @given(instance=Sensor_strategy)
 @settings(max_examples=50)
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=rover::Distance_strategy)
+@given(instance=rover_Distance_strategy)
 @settings(max_examples=50)
-def test_rover::distance_instantiation(instance):
-    assert isinstance(instance, rover::Distance)
+def test_rover_distance_instantiation(instance):
+    assert isinstance(instance, rover_Distance)
 
-@given(instance=rover::Compass_strategy)
+@given(instance=rover_Compass_strategy)
 @settings(max_examples=50)
-def test_rover::compass_instantiation(instance):
-    assert isinstance(instance, rover::Compass)
+def test_rover_compass_instantiation(instance):
+    assert isinstance(instance, rover_Compass)
 
-@given(instance=rover::GPS_strategy)
+@given(instance=rover_GPS_strategy)
 @settings(max_examples=50)
-def test_rover::gps_instantiation(instance):
-    assert isinstance(instance, rover::GPS)
+def test_rover_gps_instantiation(instance):
+    assert isinstance(instance, rover_GPS)
 
 @given(instance=Actuator_strategy)
 @settings(max_examples=50)
 def test_actuator_instantiation(instance):
     assert isinstance(instance, Actuator)
 
-@given(instance=rover::Light_strategy)
+@given(instance=rover_Light_strategy)
 @settings(max_examples=50)
-def test_rover::light_instantiation(instance):
-    assert isinstance(instance, rover::Light)
-
-@given(instance=rover::Light_strategy)
-def test_rover::light_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_rover_light_instantiation(instance):
+    assert isinstance(instance, rover_Light)
 
 
-@given(instance=rover::Light_strategy)
-def test_rover::light_color_setter(instance):
+
+@given(instance=rover_Light_strategy)
+def test_rover_light_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=rover::Motor_strategy)
+@given(instance=rover_Motor_strategy)
 @settings(max_examples=50)
-def test_rover::motor_instantiation(instance):
-    assert isinstance(instance, rover::Motor)
+def test_rover_motor_instantiation(instance):
+    assert isinstance(instance, rover_Motor)
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=rover::Sensor_strategy)
+@given(instance=rover_Sensor_strategy)
 @settings(max_examples=50)
-def test_rover::sensor_instantiation(instance):
-    assert isinstance(instance, rover::Sensor)
+def test_rover_sensor_instantiation(instance):
+    assert isinstance(instance, rover_Sensor)
 
-@given(instance=rover::Actuator_strategy)
+@given(instance=rover_Actuator_strategy)
 @settings(max_examples=50)
-def test_rover::actuator_instantiation(instance):
-    assert isinstance(instance, rover::Actuator)
+def test_rover_actuator_instantiation(instance):
+    assert isinstance(instance, rover_Actuator)
 
-@given(instance=rover::Quantity_strategy)
+@given(instance=rover_Quantity_strategy)
 @settings(max_examples=50)
-def test_rover::quantity_instantiation(instance):
-    assert isinstance(instance, rover::Quantity)
+def test_rover_quantity_instantiation(instance):
+    assert isinstance(instance, rover_Quantity)
 
-@given(instance=rover::Block_strategy)
+@given(instance=rover_Block_strategy)
 @settings(max_examples=50)
-def test_rover::block_instantiation(instance):
-    assert isinstance(instance, rover::Block)
+def test_rover_block_instantiation(instance):
+    assert isinstance(instance, rover_Block)
 
-@given(instance=rover::Component_strategy)
+@given(instance=rover_Component_strategy)
 @settings(max_examples=50)
-def test_rover::component_instantiation(instance):
-    assert isinstance(instance, rover::Component)
-
-@given(instance=rover::Component_strategy)
-def test_rover::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rover_component_instantiation(instance):
+    assert isinstance(instance, rover_Component)
 
 
-@given(instance=rover::Component_strategy)
-def test_rover::component_name_setter(instance):
+
+@given(instance=rover_Component_strategy)
+def test_rover_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rover::System_strategy)
+@given(instance=rover_System_strategy)
 @settings(max_examples=50)
-def test_rover::system_instantiation(instance):
-    assert isinstance(instance, rover::System)
+def test_rover_system_instantiation(instance):
+    assert isinstance(instance, rover_System)

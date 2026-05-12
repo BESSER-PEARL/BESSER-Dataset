@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Gato,
@@ -84,9 +84,6 @@ Gato_strategy = st.builds(
 def test_gato_instantiation(instance):
     assert isinstance(instance, Gato)
 
-@given(instance=Gato_strategy)
-def test_gato_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
 @given(instance=Gato_strategy)
@@ -95,9 +92,6 @@ def test_gato_nombre_setter(instance):
     instance.nombre = original
     assert instance.nombre == original
 
-@given(instance=Gato_strategy)
-def test_gato_raza_type(instance):
-    assert isinstance(instance.raza, str)
 
 
 @given(instance=Gato_strategy)
@@ -106,9 +100,6 @@ def test_gato_raza_setter(instance):
     instance.raza = original
     assert instance.raza == original
 
-@given(instance=Gato_strategy)
-def test_gato_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
 @given(instance=Gato_strategy)

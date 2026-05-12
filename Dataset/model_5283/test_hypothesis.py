@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    astransast::BAS,
-    astransast::AAS,
+from python_code import (
+    astransast_AAS,
+    astransast_BAS,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_astransast::bas_is_not_abstract():
-    assert not inspect.isabstract(astransast::BAS)
+def test_astransast_aas_is_not_abstract():
+    assert not inspect.isabstract(astransast_AAS)
 
 
-def test_astransast::bas_constructor_exists():
-    assert callable(astransast::BAS.__init__)
+def test_astransast_aas_constructor_exists():
+    assert callable(astransast_AAS.__init__)
 
 
-def test_astransast::bas_constructor_args():
-    sig = inspect.signature(astransast::BAS.__init__)
+def test_astransast_aas_constructor_args():
+    sig = inspect.signature(astransast_AAS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_astransast::aas_is_not_abstract():
-    assert not inspect.isabstract(astransast::AAS)
+def test_astransast_bas_is_not_abstract():
+    assert not inspect.isabstract(astransast_BAS)
 
 
-def test_astransast::aas_constructor_exists():
-    assert callable(astransast::AAS.__init__)
+def test_astransast_bas_constructor_exists():
+    assert callable(astransast_BAS.__init__)
 
 
-def test_astransast::aas_constructor_args():
-    sig = inspect.signature(astransast::AAS.__init__)
+def test_astransast_bas_constructor_args():
+    sig = inspect.signature(astransast_BAS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-astransast::BAS_strategy = st.builds(
-    astransast::BAS,
+astransast_AAS_strategy = st.builds(
+    astransast_AAS,
 )
-astransast::AAS_strategy = st.builds(
-    astransast::AAS,
+astransast_BAS_strategy = st.builds(
+    astransast_BAS,
 )
 
-@given(instance=astransast::BAS_strategy)
+@given(instance=astransast_AAS_strategy)
 @settings(max_examples=50)
-def test_astransast::bas_instantiation(instance):
-    assert isinstance(instance, astransast::BAS)
+def test_astransast_aas_instantiation(instance):
+    assert isinstance(instance, astransast_AAS)
 
-@given(instance=astransast::AAS_strategy)
+@given(instance=astransast_BAS_strategy)
 @settings(max_examples=50)
-def test_astransast::aas_instantiation(instance):
-    assert isinstance(instance, astransast::AAS)
+def test_astransast_bas_instantiation(instance):
+    assert isinstance(instance, astransast_BAS)

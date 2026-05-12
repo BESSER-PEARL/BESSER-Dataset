@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    Tree::Tree,
-    Tree::Node,
+    Tree_Tree,
+    Tree_Node,
 )
 
 # =============================================================================
@@ -31,37 +31,37 @@ def test_node_constructor_args():
 
 
 
-def test_tree::tree_is_not_abstract():
-    assert not inspect.isabstract(Tree::Tree)
+def test_tree_tree_is_not_abstract():
+    assert not inspect.isabstract(Tree_Tree)
 
 
-def test_tree::tree_constructor_exists():
-    assert callable(Tree::Tree.__init__)
+def test_tree_tree_constructor_exists():
+    assert callable(Tree_Tree.__init__)
 
 
-def test_tree::tree_constructor_args():
-    sig = inspect.signature(Tree::Tree.__init__)
+def test_tree_tree_constructor_args():
+    sig = inspect.signature(Tree_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tree::node_is_not_abstract():
-    assert not inspect.isabstract(Tree::Node)
+def test_tree_node_is_not_abstract():
+    assert not inspect.isabstract(Tree_Node)
 
 
-def test_tree::node_constructor_exists():
-    assert callable(Tree::Node.__init__)
+def test_tree_node_constructor_exists():
+    assert callable(Tree_Node.__init__)
 
 
-def test_tree::node_constructor_args():
-    sig = inspect.signature(Tree::Node.__init__)
+def test_tree_node_constructor_args():
+    sig = inspect.signature(Tree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_tree::node_has_id():
-    assert hasattr(Tree::Node, "id")
+def test_tree_node_has_id():
+    assert hasattr(Tree_Node, "id")
     descriptor = None
-    for klass in Tree::Node.__mro__:
+    for klass in Tree_Node.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -82,11 +82,11 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-Tree::Tree_strategy = st.builds(
-    Tree::Tree,
+Tree_Tree_strategy = st.builds(
+    Tree_Tree,
 )
-Tree::Node_strategy = st.builds(
-    Tree::Node,
+Tree_Node_strategy = st.builds(
+    Tree_Node,
     id=
         safe_text
 )
@@ -96,23 +96,20 @@ Tree::Node_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=Tree::Tree_strategy)
+@given(instance=Tree_Tree_strategy)
 @settings(max_examples=50)
-def test_tree::tree_instantiation(instance):
-    assert isinstance(instance, Tree::Tree)
+def test_tree_tree_instantiation(instance):
+    assert isinstance(instance, Tree_Tree)
 
-@given(instance=Tree::Node_strategy)
+@given(instance=Tree_Node_strategy)
 @settings(max_examples=50)
-def test_tree::node_instantiation(instance):
-    assert isinstance(instance, Tree::Node)
-
-@given(instance=Tree::Node_strategy)
-def test_tree::node_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_tree_node_instantiation(instance):
+    assert isinstance(instance, Tree_Node)
 
 
-@given(instance=Tree::Node_strategy)
-def test_tree::node_id_setter(instance):
+
+@given(instance=Tree_Node_strategy)
+def test_tree_node_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

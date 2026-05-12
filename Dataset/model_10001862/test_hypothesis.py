@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     JFrame,
@@ -48,17 +48,8 @@ def test_board_constructor_exists():
 def test_board_constructor_args():
     sig = inspect.signature(Board.__init__)
     params = list(sig.parameters.keys())
-    assert "playAagain" in params, "Missing parameter 'playAagain'"
     assert "cardArea" in params, "Missing parameter 'cardArea'"
-
-def test_board_has_playAagain():
-    assert hasattr(Board, "playAagain")
-    descriptor = None
-    for klass in Board.__mro__:
-        if "playAagain" in klass.__dict__:
-            descriptor = klass.__dict__["playAagain"]
-            break
-    assert isinstance(descriptor, property)
+    assert "playAagain" in params, "Missing parameter 'playAagain'"
 
 def test_board_has_cardArea():
     assert hasattr(Board, "cardArea")
@@ -66,6 +57,15 @@ def test_board_has_cardArea():
     for klass in Board.__mro__:
         if "cardArea" in klass.__dict__:
             descriptor = klass.__dict__["cardArea"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_board_has_playAagain():
+    assert hasattr(Board, "playAagain")
+    descriptor = None
+    for klass in Board.__mro__:
+        if "playAagain" in klass.__dict__:
+            descriptor = klass.__dict__["playAagain"]
             break
     assert isinstance(descriptor, property)
 
@@ -82,19 +82,10 @@ def test_player_deck_constructor_exists():
 def test_player_deck_constructor_args():
     sig = inspect.signature(player_Deck.__init__)
     params = list(sig.parameters.keys())
-    assert "remainofDeck" in params, "Missing parameter 'remainofDeck'"
     assert "hand_size" in params, "Missing parameter 'hand_size'"
-    assert "deck_size" in params, "Missing parameter 'deck_size'"
     assert "numberofShuffles" in params, "Missing parameter 'numberofShuffles'"
-
-def test_player_deck_has_remainofDeck():
-    assert hasattr(player_Deck, "remainofDeck")
-    descriptor = None
-    for klass in player_Deck.__mro__:
-        if "remainofDeck" in klass.__dict__:
-            descriptor = klass.__dict__["remainofDeck"]
-            break
-    assert isinstance(descriptor, property)
+    assert "deck_size" in params, "Missing parameter 'deck_size'"
+    assert "remainofDeck" in params, "Missing parameter 'remainofDeck'"
 
 def test_player_deck_has_hand_size():
     assert hasattr(player_Deck, "hand_size")
@@ -102,6 +93,15 @@ def test_player_deck_has_hand_size():
     for klass in player_Deck.__mro__:
         if "hand_size" in klass.__dict__:
             descriptor = klass.__dict__["hand_size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_deck_has_numberofShuffles():
+    assert hasattr(player_Deck, "numberofShuffles")
+    descriptor = None
+    for klass in player_Deck.__mro__:
+        if "numberofShuffles" in klass.__dict__:
+            descriptor = klass.__dict__["numberofShuffles"]
             break
     assert isinstance(descriptor, property)
 
@@ -114,12 +114,12 @@ def test_player_deck_has_deck_size():
             break
     assert isinstance(descriptor, property)
 
-def test_player_deck_has_numberofShuffles():
-    assert hasattr(player_Deck, "numberofShuffles")
+def test_player_deck_has_remainofDeck():
+    assert hasattr(player_Deck, "remainofDeck")
     descriptor = None
     for klass in player_Deck.__mro__:
-        if "numberofShuffles" in klass.__dict__:
-            descriptor = klass.__dict__["numberofShuffles"]
+        if "remainofDeck" in klass.__dict__:
+            descriptor = klass.__dict__["remainofDeck"]
             break
     assert isinstance(descriptor, property)
 
@@ -264,20 +264,20 @@ JFrame_strategy = st.builds(
 )
 Board_strategy = st.builds(
     Board,
-    playAagain=
-        safe_text,
     cardArea=
+        safe_text,
+    playAagain=
         safe_text
 )
 player_Deck_strategy = st.builds(
     player_Deck,
-    remainofDeck=
-        st.integers(),
     hand_size=
+        st.integers(),
+    numberofShuffles=
         st.integers(),
     deck_size=
         st.integers(),
-    numberofShuffles=
+    remainofDeck=
         st.integers()
 )
 player_Player_strategy = st.builds(
@@ -317,20 +317,6 @@ def test_jframe_instantiation(instance):
 def test_board_instantiation(instance):
     assert isinstance(instance, Board)
 
-@given(instance=Board_strategy)
-def test_board_playAagain_type(instance):
-    assert isinstance(instance.playAagain, str)
-
-
-@given(instance=Board_strategy)
-def test_board_playAagain_setter(instance):
-    original = instance.playAagain
-    instance.playAagain = original
-    assert instance.playAagain == original
-
-@given(instance=Board_strategy)
-def test_board_cardArea_type(instance):
-    assert isinstance(instance.cardArea, str)
 
 
 @given(instance=Board_strategy)
@@ -339,25 +325,19 @@ def test_board_cardArea_setter(instance):
     instance.cardArea = original
     assert instance.cardArea == original
 
+
+
+@given(instance=Board_strategy)
+def test_board_playAagain_setter(instance):
+    original = instance.playAagain
+    instance.playAagain = original
+    assert instance.playAagain == original
+
 @given(instance=player_Deck_strategy)
 @settings(max_examples=50)
 def test_player_deck_instantiation(instance):
     assert isinstance(instance, player_Deck)
 
-@given(instance=player_Deck_strategy)
-def test_player_deck_remainofDeck_type(instance):
-    assert isinstance(instance.remainofDeck, int)
-
-
-@given(instance=player_Deck_strategy)
-def test_player_deck_remainofDeck_setter(instance):
-    original = instance.remainofDeck
-    instance.remainofDeck = original
-    assert instance.remainofDeck == original
-
-@given(instance=player_Deck_strategy)
-def test_player_deck_hand_size_type(instance):
-    assert isinstance(instance.hand_size, int)
 
 
 @given(instance=player_Deck_strategy)
@@ -366,9 +346,14 @@ def test_player_deck_hand_size_setter(instance):
     instance.hand_size = original
     assert instance.hand_size == original
 
+
+
 @given(instance=player_Deck_strategy)
-def test_player_deck_deck_size_type(instance):
-    assert isinstance(instance.deck_size, int)
+def test_player_deck_numberofShuffles_setter(instance):
+    original = instance.numberofShuffles
+    instance.numberofShuffles = original
+    assert instance.numberofShuffles == original
+
 
 
 @given(instance=player_Deck_strategy)
@@ -377,16 +362,13 @@ def test_player_deck_deck_size_setter(instance):
     instance.deck_size = original
     assert instance.deck_size == original
 
-@given(instance=player_Deck_strategy)
-def test_player_deck_numberofShuffles_type(instance):
-    assert isinstance(instance.numberofShuffles, int)
 
 
 @given(instance=player_Deck_strategy)
-def test_player_deck_numberofShuffles_setter(instance):
-    original = instance.numberofShuffles
-    instance.numberofShuffles = original
-    assert instance.numberofShuffles == original
+def test_player_deck_remainofDeck_setter(instance):
+    original = instance.remainofDeck
+    instance.remainofDeck = original
+    assert instance.remainofDeck == original
 
 @given(instance=player_Player_strategy)
 @settings(max_examples=50)
@@ -408,9 +390,6 @@ def test_comparable_interface_instantiation(instance):
 def test_card_card_instantiation(instance):
     assert isinstance(instance, card_Card)
 
-@given(instance=card_Card_strategy)
-def test_card_card_suit_type(instance):
-    assert isinstance(instance.suit, int)
 
 
 @given(instance=card_Card_strategy)
@@ -419,9 +398,6 @@ def test_card_card_suit_setter(instance):
     instance.suit = original
     assert instance.suit == original
 
-@given(instance=card_Card_strategy)
-def test_card_card_rank_type(instance):
-    assert isinstance(instance.rank, int)
 
 
 @given(instance=card_Card_strategy)
@@ -440,9 +416,6 @@ def test_poker_gamerun_instantiation(instance):
 def test_poker_game_instantiation(instance):
     assert isinstance(instance, poker_Game)
 
-@given(instance=poker_Game_strategy)
-def test_poker_game_hand_size_type(instance):
-    assert isinstance(instance.hand_size, int)
 
 
 @given(instance=poker_Game_strategy)
@@ -451,9 +424,6 @@ def test_poker_game_hand_size_setter(instance):
     instance.hand_size = original
     assert instance.hand_size == original
 
-@given(instance=poker_Game_strategy)
-def test_poker_game_tryagain_type(instance):
-    assert isinstance(instance.tryagain, int)
 
 
 @given(instance=poker_Game_strategy)

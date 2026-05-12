@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    atl::types::EClass,
-    atl::types::EObject,
+from python_code import (
+    atl_types_EClass,
+    atl_types_EObject,
     RefType,
-    atl::types::Metaclass,
-    atl::types::Unknown,
-    annotations::atl::types::Type,
-    annotations::atl::types::EObject,
+    atl_types_Metaclass,
+    atl_types_Unknown,
+    annotations_atl_types_Type,
+    annotations_atl_types_EObject,
     AtlAnnotation,
-    atl::types::annotations::ExpressionAnnotation,
-    atl::types::annotations::BindingAnnotation,
-    atl::types::annotations::HelperAnnotation,
-    atl::types::annotations::AtlAnnotation,
+    atl_types_annotations_BindingAnnotation,
+    atl_types_annotations_ExpressionAnnotation,
+    atl_types_annotations_HelperAnnotation,
+    atl_types_annotations_AtlAnnotation,
     ReflectiveType,
-    atl::types::ReflectiveClass,
-    atl::types::Type,
-    atl::types::TupleAttribute,
+    atl_types_ReflectiveClass,
+    atl_types_Type,
+    atl_types_TupleAttribute,
     PrimitiveType,
-    atl::types::FloatType,
-    atl::types::IntegerType,
-    atl::types::StringType,
-    atl::types::BooleanType,
+    atl_types_StringType,
+    atl_types_FloatType,
+    atl_types_IntegerType,
+    atl_types_BooleanType,
     Type,
-    atl::types::MapType,
-    atl::types::RefType,
-    atl::types::EnumType,
-    atl::types::ReflectiveType,
-    atl::types::UnionType,
-    atl::types::TupleType,
-    atl::types::EmptyCollection,
-    atl::types::ThisModuleType,
-    atl::types::PrimitiveType,
+    atl_types_UnionType,
+    atl_types_TupleType,
+    atl_types_ReflectiveType,
+    atl_types_EnumType,
+    atl_types_EmptyCollection,
+    atl_types_MapType,
+    atl_types_ThisModuleType,
+    atl_types_RefType,
+    atl_types_PrimitiveType,
 )
 
 # =============================================================================
@@ -45,30 +45,30 @@ from classes import (
 
 
 
-def test_atl::types::eclass_is_not_abstract():
-    assert not inspect.isabstract(atl::types::EClass)
+def test_atl_types_eclass_is_not_abstract():
+    assert not inspect.isabstract(atl_types_EClass)
 
 
-def test_atl::types::eclass_constructor_exists():
-    assert callable(atl::types::EClass.__init__)
+def test_atl_types_eclass_constructor_exists():
+    assert callable(atl_types_EClass.__init__)
 
 
-def test_atl::types::eclass_constructor_args():
-    sig = inspect.signature(atl::types::EClass.__init__)
+def test_atl_types_eclass_constructor_args():
+    sig = inspect.signature(atl_types_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::eobject_is_not_abstract():
-    assert not inspect.isabstract(atl::types::EObject)
+def test_atl_types_eobject_is_not_abstract():
+    assert not inspect.isabstract(atl_types_EObject)
 
 
-def test_atl::types::eobject_constructor_exists():
-    assert callable(atl::types::EObject.__init__)
+def test_atl_types_eobject_constructor_exists():
+    assert callable(atl_types_EObject.__init__)
 
 
-def test_atl::types::eobject_constructor_args():
-    sig = inspect.signature(atl::types::EObject.__init__)
+def test_atl_types_eobject_constructor_args():
+    sig = inspect.signature(atl_types_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,23 +87,23 @@ def test_reftype_constructor_args():
 
 
 
-def test_atl::types::metaclass_is_not_abstract():
-    assert not inspect.isabstract(atl::types::Metaclass)
+def test_atl_types_metaclass_is_not_abstract():
+    assert not inspect.isabstract(atl_types_Metaclass)
 
 
-def test_atl::types::metaclass_constructor_exists():
-    assert callable(atl::types::Metaclass.__init__)
+def test_atl_types_metaclass_constructor_exists():
+    assert callable(atl_types_Metaclass.__init__)
 
 
-def test_atl::types::metaclass_constructor_args():
-    sig = inspect.signature(atl::types::Metaclass.__init__)
+def test_atl_types_metaclass_constructor_args():
+    sig = inspect.signature(atl_types_Metaclass.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::types::metaclass_has_name():
-    assert hasattr(atl::types::Metaclass, "name")
+def test_atl_types_metaclass_has_name():
+    assert hasattr(atl_types_Metaclass, "name")
     descriptor = None
-    for klass in atl::types::Metaclass.__mro__:
+    for klass in atl_types_Metaclass.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -111,44 +111,44 @@ def test_atl::types::metaclass_has_name():
 
 
 
-def test_atl::types::unknown_is_not_abstract():
-    assert not inspect.isabstract(atl::types::Unknown)
+def test_atl_types_unknown_is_not_abstract():
+    assert not inspect.isabstract(atl_types_Unknown)
 
 
-def test_atl::types::unknown_constructor_exists():
-    assert callable(atl::types::Unknown.__init__)
+def test_atl_types_unknown_constructor_exists():
+    assert callable(atl_types_Unknown.__init__)
 
 
-def test_atl::types::unknown_constructor_args():
-    sig = inspect.signature(atl::types::Unknown.__init__)
+def test_atl_types_unknown_constructor_args():
+    sig = inspect.signature(atl_types_Unknown.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_annotations::atl::types::type_is_not_abstract():
-    assert not inspect.isabstract(annotations::atl::types::Type)
+def test_annotations_atl_types_type_is_not_abstract():
+    assert not inspect.isabstract(annotations_atl_types_Type)
 
 
-def test_annotations::atl::types::type_constructor_exists():
-    assert callable(annotations::atl::types::Type.__init__)
+def test_annotations_atl_types_type_constructor_exists():
+    assert callable(annotations_atl_types_Type.__init__)
 
 
-def test_annotations::atl::types::type_constructor_args():
-    sig = inspect.signature(annotations::atl::types::Type.__init__)
+def test_annotations_atl_types_type_constructor_args():
+    sig = inspect.signature(annotations_atl_types_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_annotations::atl::types::eobject_is_not_abstract():
-    assert not inspect.isabstract(annotations::atl::types::EObject)
+def test_annotations_atl_types_eobject_is_not_abstract():
+    assert not inspect.isabstract(annotations_atl_types_EObject)
 
 
-def test_annotations::atl::types::eobject_constructor_exists():
-    assert callable(annotations::atl::types::EObject.__init__)
+def test_annotations_atl_types_eobject_constructor_exists():
+    assert callable(annotations_atl_types_EObject.__init__)
 
 
-def test_annotations::atl::types::eobject_constructor_args():
-    sig = inspect.signature(annotations::atl::types::EObject.__init__)
+def test_annotations_atl_types_eobject_constructor_args():
+    sig = inspect.signature(annotations_atl_types_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -167,37 +167,23 @@ def test_atlannotation_constructor_args():
 
 
 
-def test_atl::types::annotations::expressionannotation_is_not_abstract():
-    assert not inspect.isabstract(atl::types::annotations::ExpressionAnnotation)
+def test_atl_types_annotations_bindingannotation_is_not_abstract():
+    assert not inspect.isabstract(atl_types_annotations_BindingAnnotation)
 
 
-def test_atl::types::annotations::expressionannotation_constructor_exists():
-    assert callable(atl::types::annotations::ExpressionAnnotation.__init__)
+def test_atl_types_annotations_bindingannotation_constructor_exists():
+    assert callable(atl_types_annotations_BindingAnnotation.__init__)
 
 
-def test_atl::types::annotations::expressionannotation_constructor_args():
-    sig = inspect.signature(atl::types::annotations::ExpressionAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::types::annotations::bindingannotation_is_not_abstract():
-    assert not inspect.isabstract(atl::types::annotations::BindingAnnotation)
-
-
-def test_atl::types::annotations::bindingannotation_constructor_exists():
-    assert callable(atl::types::annotations::BindingAnnotation.__init__)
-
-
-def test_atl::types::annotations::bindingannotation_constructor_args():
-    sig = inspect.signature(atl::types::annotations::BindingAnnotation.__init__)
+def test_atl_types_annotations_bindingannotation_constructor_args():
+    sig = inspect.signature(atl_types_annotations_BindingAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::types::annotations::bindingannotation_has_name():
-    assert hasattr(atl::types::annotations::BindingAnnotation, "name")
+def test_atl_types_annotations_bindingannotation_has_name():
+    assert hasattr(atl_types_annotations_BindingAnnotation, "name")
     descriptor = None
-    for klass in atl::types::annotations::BindingAnnotation.__mro__:
+    for klass in atl_types_annotations_BindingAnnotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -205,23 +191,37 @@ def test_atl::types::annotations::bindingannotation_has_name():
 
 
 
-def test_atl::types::annotations::helperannotation_is_not_abstract():
-    assert not inspect.isabstract(atl::types::annotations::HelperAnnotation)
+def test_atl_types_annotations_expressionannotation_is_not_abstract():
+    assert not inspect.isabstract(atl_types_annotations_ExpressionAnnotation)
 
 
-def test_atl::types::annotations::helperannotation_constructor_exists():
-    assert callable(atl::types::annotations::HelperAnnotation.__init__)
+def test_atl_types_annotations_expressionannotation_constructor_exists():
+    assert callable(atl_types_annotations_ExpressionAnnotation.__init__)
 
 
-def test_atl::types::annotations::helperannotation_constructor_args():
-    sig = inspect.signature(atl::types::annotations::HelperAnnotation.__init__)
+def test_atl_types_annotations_expressionannotation_constructor_args():
+    sig = inspect.signature(atl_types_annotations_ExpressionAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_types_annotations_helperannotation_is_not_abstract():
+    assert not inspect.isabstract(atl_types_annotations_HelperAnnotation)
+
+
+def test_atl_types_annotations_helperannotation_constructor_exists():
+    assert callable(atl_types_annotations_HelperAnnotation.__init__)
+
+
+def test_atl_types_annotations_helperannotation_constructor_args():
+    sig = inspect.signature(atl_types_annotations_HelperAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::types::annotations::helperannotation_has_name():
-    assert hasattr(atl::types::annotations::HelperAnnotation, "name")
+def test_atl_types_annotations_helperannotation_has_name():
+    assert hasattr(atl_types_annotations_HelperAnnotation, "name")
     descriptor = None
-    for klass in atl::types::annotations::HelperAnnotation.__mro__:
+    for klass in atl_types_annotations_HelperAnnotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -229,16 +229,16 @@ def test_atl::types::annotations::helperannotation_has_name():
 
 
 
-def test_atl::types::annotations::atlannotation_is_not_abstract():
-    assert not inspect.isabstract(atl::types::annotations::AtlAnnotation)
+def test_atl_types_annotations_atlannotation_is_not_abstract():
+    assert not inspect.isabstract(atl_types_annotations_AtlAnnotation)
 
 
-def test_atl::types::annotations::atlannotation_constructor_exists():
-    assert callable(atl::types::annotations::AtlAnnotation.__init__)
+def test_atl_types_annotations_atlannotation_constructor_exists():
+    assert callable(atl_types_annotations_AtlAnnotation.__init__)
 
 
-def test_atl::types::annotations::atlannotation_constructor_args():
-    sig = inspect.signature(atl::types::annotations::AtlAnnotation.__init__)
+def test_atl_types_annotations_atlannotation_constructor_args():
+    sig = inspect.signature(atl_types_annotations_AtlAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,37 +257,37 @@ def test_reflectivetype_constructor_args():
 
 
 
-def test_atl::types::reflectiveclass_is_not_abstract():
-    assert not inspect.isabstract(atl::types::ReflectiveClass)
+def test_atl_types_reflectiveclass_is_not_abstract():
+    assert not inspect.isabstract(atl_types_ReflectiveClass)
 
 
-def test_atl::types::reflectiveclass_constructor_exists():
-    assert callable(atl::types::ReflectiveClass.__init__)
+def test_atl_types_reflectiveclass_constructor_exists():
+    assert callable(atl_types_ReflectiveClass.__init__)
 
 
-def test_atl::types::reflectiveclass_constructor_args():
-    sig = inspect.signature(atl::types::ReflectiveClass.__init__)
+def test_atl_types_reflectiveclass_constructor_args():
+    sig = inspect.signature(atl_types_ReflectiveClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::type_is_not_abstract():
-    assert not inspect.isabstract(atl::types::Type)
+def test_atl_types_type_is_not_abstract():
+    assert not inspect.isabstract(atl_types_Type)
 
 
-def test_atl::types::type_constructor_exists():
-    assert callable(atl::types::Type.__init__)
+def test_atl_types_type_constructor_exists():
+    assert callable(atl_types_Type.__init__)
 
 
-def test_atl::types::type_constructor_args():
-    sig = inspect.signature(atl::types::Type.__init__)
+def test_atl_types_type_constructor_args():
+    sig = inspect.signature(atl_types_Type.__init__)
     params = list(sig.parameters.keys())
     assert "multivalued" in params, "Missing parameter 'multivalued'"
 
-def test_atl::types::type_has_multivalued():
-    assert hasattr(atl::types::Type, "multivalued")
+def test_atl_types_type_has_multivalued():
+    assert hasattr(atl_types_Type, "multivalued")
     descriptor = None
-    for klass in atl::types::Type.__mro__:
+    for klass in atl_types_Type.__mro__:
         if "multivalued" in klass.__dict__:
             descriptor = klass.__dict__["multivalued"]
             break
@@ -295,23 +295,23 @@ def test_atl::types::type_has_multivalued():
 
 
 
-def test_atl::types::tupleattribute_is_not_abstract():
-    assert not inspect.isabstract(atl::types::TupleAttribute)
+def test_atl_types_tupleattribute_is_not_abstract():
+    assert not inspect.isabstract(atl_types_TupleAttribute)
 
 
-def test_atl::types::tupleattribute_constructor_exists():
-    assert callable(atl::types::TupleAttribute.__init__)
+def test_atl_types_tupleattribute_constructor_exists():
+    assert callable(atl_types_TupleAttribute.__init__)
 
 
-def test_atl::types::tupleattribute_constructor_args():
-    sig = inspect.signature(atl::types::TupleAttribute.__init__)
+def test_atl_types_tupleattribute_constructor_args():
+    sig = inspect.signature(atl_types_TupleAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::types::tupleattribute_has_name():
-    assert hasattr(atl::types::TupleAttribute, "name")
+def test_atl_types_tupleattribute_has_name():
+    assert hasattr(atl_types_TupleAttribute, "name")
     descriptor = None
-    for klass in atl::types::TupleAttribute.__mro__:
+    for klass in atl_types_TupleAttribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -333,58 +333,58 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_atl::types::floattype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::FloatType)
+def test_atl_types_stringtype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_StringType)
 
 
-def test_atl::types::floattype_constructor_exists():
-    assert callable(atl::types::FloatType.__init__)
+def test_atl_types_stringtype_constructor_exists():
+    assert callable(atl_types_StringType.__init__)
 
 
-def test_atl::types::floattype_constructor_args():
-    sig = inspect.signature(atl::types::FloatType.__init__)
+def test_atl_types_stringtype_constructor_args():
+    sig = inspect.signature(atl_types_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::integertype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::IntegerType)
+def test_atl_types_floattype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_FloatType)
 
 
-def test_atl::types::integertype_constructor_exists():
-    assert callable(atl::types::IntegerType.__init__)
+def test_atl_types_floattype_constructor_exists():
+    assert callable(atl_types_FloatType.__init__)
 
 
-def test_atl::types::integertype_constructor_args():
-    sig = inspect.signature(atl::types::IntegerType.__init__)
+def test_atl_types_floattype_constructor_args():
+    sig = inspect.signature(atl_types_FloatType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::stringtype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::StringType)
+def test_atl_types_integertype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_IntegerType)
 
 
-def test_atl::types::stringtype_constructor_exists():
-    assert callable(atl::types::StringType.__init__)
+def test_atl_types_integertype_constructor_exists():
+    assert callable(atl_types_IntegerType.__init__)
 
 
-def test_atl::types::stringtype_constructor_args():
-    sig = inspect.signature(atl::types::StringType.__init__)
+def test_atl_types_integertype_constructor_args():
+    sig = inspect.signature(atl_types_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::booleantype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::BooleanType)
+def test_atl_types_booleantype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_BooleanType)
 
 
-def test_atl::types::booleantype_constructor_exists():
-    assert callable(atl::types::BooleanType.__init__)
+def test_atl_types_booleantype_constructor_exists():
+    assert callable(atl_types_BooleanType.__init__)
 
 
-def test_atl::types::booleantype_constructor_args():
-    sig = inspect.signature(atl::types::BooleanType.__init__)
+def test_atl_types_booleantype_constructor_args():
+    sig = inspect.signature(atl_types_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -403,51 +403,65 @@ def test_type_constructor_args():
 
 
 
-def test_atl::types::maptype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::MapType)
+def test_atl_types_uniontype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_UnionType)
 
 
-def test_atl::types::maptype_constructor_exists():
-    assert callable(atl::types::MapType.__init__)
+def test_atl_types_uniontype_constructor_exists():
+    assert callable(atl_types_UnionType.__init__)
 
 
-def test_atl::types::maptype_constructor_args():
-    sig = inspect.signature(atl::types::MapType.__init__)
+def test_atl_types_uniontype_constructor_args():
+    sig = inspect.signature(atl_types_UnionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::reftype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::RefType)
+def test_atl_types_tupletype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_TupleType)
 
 
-def test_atl::types::reftype_constructor_exists():
-    assert callable(atl::types::RefType.__init__)
+def test_atl_types_tupletype_constructor_exists():
+    assert callable(atl_types_TupleType.__init__)
 
 
-def test_atl::types::reftype_constructor_args():
-    sig = inspect.signature(atl::types::RefType.__init__)
+def test_atl_types_tupletype_constructor_args():
+    sig = inspect.signature(atl_types_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::enumtype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::EnumType)
+def test_atl_types_reflectivetype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_ReflectiveType)
 
 
-def test_atl::types::enumtype_constructor_exists():
-    assert callable(atl::types::EnumType.__init__)
+def test_atl_types_reflectivetype_constructor_exists():
+    assert callable(atl_types_ReflectiveType.__init__)
 
 
-def test_atl::types::enumtype_constructor_args():
-    sig = inspect.signature(atl::types::EnumType.__init__)
+def test_atl_types_reflectivetype_constructor_args():
+    sig = inspect.signature(atl_types_ReflectiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_types_enumtype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_EnumType)
+
+
+def test_atl_types_enumtype_constructor_exists():
+    assert callable(atl_types_EnumType.__init__)
+
+
+def test_atl_types_enumtype_constructor_args():
+    sig = inspect.signature(atl_types_EnumType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::types::enumtype_has_name():
-    assert hasattr(atl::types::EnumType, "name")
+def test_atl_types_enumtype_has_name():
+    assert hasattr(atl_types_EnumType, "name")
     descriptor = None
-    for klass in atl::types::EnumType.__mro__:
+    for klass in atl_types_EnumType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -455,86 +469,72 @@ def test_atl::types::enumtype_has_name():
 
 
 
-def test_atl::types::reflectivetype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::ReflectiveType)
+def test_atl_types_emptycollection_is_not_abstract():
+    assert not inspect.isabstract(atl_types_EmptyCollection)
 
 
-def test_atl::types::reflectivetype_constructor_exists():
-    assert callable(atl::types::ReflectiveType.__init__)
+def test_atl_types_emptycollection_constructor_exists():
+    assert callable(atl_types_EmptyCollection.__init__)
 
 
-def test_atl::types::reflectivetype_constructor_args():
-    sig = inspect.signature(atl::types::ReflectiveType.__init__)
+def test_atl_types_emptycollection_constructor_args():
+    sig = inspect.signature(atl_types_EmptyCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::uniontype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::UnionType)
+def test_atl_types_maptype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_MapType)
 
 
-def test_atl::types::uniontype_constructor_exists():
-    assert callable(atl::types::UnionType.__init__)
+def test_atl_types_maptype_constructor_exists():
+    assert callable(atl_types_MapType.__init__)
 
 
-def test_atl::types::uniontype_constructor_args():
-    sig = inspect.signature(atl::types::UnionType.__init__)
+def test_atl_types_maptype_constructor_args():
+    sig = inspect.signature(atl_types_MapType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::tupletype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::TupleType)
+def test_atl_types_thismoduletype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_ThisModuleType)
 
 
-def test_atl::types::tupletype_constructor_exists():
-    assert callable(atl::types::TupleType.__init__)
+def test_atl_types_thismoduletype_constructor_exists():
+    assert callable(atl_types_ThisModuleType.__init__)
 
 
-def test_atl::types::tupletype_constructor_args():
-    sig = inspect.signature(atl::types::TupleType.__init__)
+def test_atl_types_thismoduletype_constructor_args():
+    sig = inspect.signature(atl_types_ThisModuleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::emptycollection_is_not_abstract():
-    assert not inspect.isabstract(atl::types::EmptyCollection)
+def test_atl_types_reftype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_RefType)
 
 
-def test_atl::types::emptycollection_constructor_exists():
-    assert callable(atl::types::EmptyCollection.__init__)
+def test_atl_types_reftype_constructor_exists():
+    assert callable(atl_types_RefType.__init__)
 
 
-def test_atl::types::emptycollection_constructor_args():
-    sig = inspect.signature(atl::types::EmptyCollection.__init__)
+def test_atl_types_reftype_constructor_args():
+    sig = inspect.signature(atl_types_RefType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::types::thismoduletype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::ThisModuleType)
+def test_atl_types_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(atl_types_PrimitiveType)
 
 
-def test_atl::types::thismoduletype_constructor_exists():
-    assert callable(atl::types::ThisModuleType.__init__)
+def test_atl_types_primitivetype_constructor_exists():
+    assert callable(atl_types_PrimitiveType.__init__)
 
 
-def test_atl::types::thismoduletype_constructor_args():
-    sig = inspect.signature(atl::types::ThisModuleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::types::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(atl::types::PrimitiveType)
-
-
-def test_atl::types::primitivetype_constructor_exists():
-    assert callable(atl::types::PrimitiveType.__init__)
-
-
-def test_atl::types::primitivetype_constructor_args():
-    sig = inspect.signature(atl::types::PrimitiveType.__init__)
+def test_atl_types_primitivetype_constructor_args():
+    sig = inspect.signature(atl_types_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -549,243 +549,228 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-atl::types::EClass_strategy = st.builds(
-    atl::types::EClass,
+atl_types_EClass_strategy = st.builds(
+    atl_types_EClass,
 )
-atl::types::EObject_strategy = st.builds(
-    atl::types::EObject,
+atl_types_EObject_strategy = st.builds(
+    atl_types_EObject,
 )
 RefType_strategy = st.builds(
     RefType,
 )
-atl::types::Metaclass_strategy = st.builds(
-    atl::types::Metaclass,
+atl_types_Metaclass_strategy = st.builds(
+    atl_types_Metaclass,
     name=
         safe_text
 )
-atl::types::Unknown_strategy = st.builds(
-    atl::types::Unknown,
+atl_types_Unknown_strategy = st.builds(
+    atl_types_Unknown,
 )
-annotations::atl::types::Type_strategy = st.builds(
-    annotations::atl::types::Type,
+annotations_atl_types_Type_strategy = st.builds(
+    annotations_atl_types_Type,
 )
-annotations::atl::types::EObject_strategy = st.builds(
-    annotations::atl::types::EObject,
+annotations_atl_types_EObject_strategy = st.builds(
+    annotations_atl_types_EObject,
 )
 AtlAnnotation_strategy = st.builds(
     AtlAnnotation,
 )
-atl::types::annotations::ExpressionAnnotation_strategy = st.builds(
-    atl::types::annotations::ExpressionAnnotation,
-)
-atl::types::annotations::BindingAnnotation_strategy = st.builds(
-    atl::types::annotations::BindingAnnotation,
+atl_types_annotations_BindingAnnotation_strategy = st.builds(
+    atl_types_annotations_BindingAnnotation,
     name=
         safe_text
 )
-atl::types::annotations::HelperAnnotation_strategy = st.builds(
-    atl::types::annotations::HelperAnnotation,
+atl_types_annotations_ExpressionAnnotation_strategy = st.builds(
+    atl_types_annotations_ExpressionAnnotation,
+)
+atl_types_annotations_HelperAnnotation_strategy = st.builds(
+    atl_types_annotations_HelperAnnotation,
     name=
         safe_text
 )
-atl::types::annotations::AtlAnnotation_strategy = st.builds(
-    atl::types::annotations::AtlAnnotation,
+atl_types_annotations_AtlAnnotation_strategy = st.builds(
+    atl_types_annotations_AtlAnnotation,
 )
 ReflectiveType_strategy = st.builds(
     ReflectiveType,
 )
-atl::types::ReflectiveClass_strategy = st.builds(
-    atl::types::ReflectiveClass,
+atl_types_ReflectiveClass_strategy = st.builds(
+    atl_types_ReflectiveClass,
 )
-atl::types::Type_strategy = st.builds(
-    atl::types::Type,
+atl_types_Type_strategy = st.builds(
+    atl_types_Type,
     multivalued=
         st.booleans()
 )
-atl::types::TupleAttribute_strategy = st.builds(
-    atl::types::TupleAttribute,
+atl_types_TupleAttribute_strategy = st.builds(
+    atl_types_TupleAttribute,
     name=
         safe_text
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-atl::types::FloatType_strategy = st.builds(
-    atl::types::FloatType,
+atl_types_StringType_strategy = st.builds(
+    atl_types_StringType,
 )
-atl::types::IntegerType_strategy = st.builds(
-    atl::types::IntegerType,
+atl_types_FloatType_strategy = st.builds(
+    atl_types_FloatType,
 )
-atl::types::StringType_strategy = st.builds(
-    atl::types::StringType,
+atl_types_IntegerType_strategy = st.builds(
+    atl_types_IntegerType,
 )
-atl::types::BooleanType_strategy = st.builds(
-    atl::types::BooleanType,
+atl_types_BooleanType_strategy = st.builds(
+    atl_types_BooleanType,
 )
 Type_strategy = st.builds(
     Type,
 )
-atl::types::MapType_strategy = st.builds(
-    atl::types::MapType,
+atl_types_UnionType_strategy = st.builds(
+    atl_types_UnionType,
 )
-atl::types::RefType_strategy = st.builds(
-    atl::types::RefType,
+atl_types_TupleType_strategy = st.builds(
+    atl_types_TupleType,
 )
-atl::types::EnumType_strategy = st.builds(
-    atl::types::EnumType,
+atl_types_ReflectiveType_strategy = st.builds(
+    atl_types_ReflectiveType,
+)
+atl_types_EnumType_strategy = st.builds(
+    atl_types_EnumType,
     name=
         safe_text
 )
-atl::types::ReflectiveType_strategy = st.builds(
-    atl::types::ReflectiveType,
+atl_types_EmptyCollection_strategy = st.builds(
+    atl_types_EmptyCollection,
 )
-atl::types::UnionType_strategy = st.builds(
-    atl::types::UnionType,
+atl_types_MapType_strategy = st.builds(
+    atl_types_MapType,
 )
-atl::types::TupleType_strategy = st.builds(
-    atl::types::TupleType,
+atl_types_ThisModuleType_strategy = st.builds(
+    atl_types_ThisModuleType,
 )
-atl::types::EmptyCollection_strategy = st.builds(
-    atl::types::EmptyCollection,
+atl_types_RefType_strategy = st.builds(
+    atl_types_RefType,
 )
-atl::types::ThisModuleType_strategy = st.builds(
-    atl::types::ThisModuleType,
-)
-atl::types::PrimitiveType_strategy = st.builds(
-    atl::types::PrimitiveType,
+atl_types_PrimitiveType_strategy = st.builds(
+    atl_types_PrimitiveType,
 )
 
-@given(instance=atl::types::EClass_strategy)
+@given(instance=atl_types_EClass_strategy)
 @settings(max_examples=50)
-def test_atl::types::eclass_instantiation(instance):
-    assert isinstance(instance, atl::types::EClass)
+def test_atl_types_eclass_instantiation(instance):
+    assert isinstance(instance, atl_types_EClass)
 
-@given(instance=atl::types::EObject_strategy)
+@given(instance=atl_types_EObject_strategy)
 @settings(max_examples=50)
-def test_atl::types::eobject_instantiation(instance):
-    assert isinstance(instance, atl::types::EObject)
+def test_atl_types_eobject_instantiation(instance):
+    assert isinstance(instance, atl_types_EObject)
 
 @given(instance=RefType_strategy)
 @settings(max_examples=50)
 def test_reftype_instantiation(instance):
     assert isinstance(instance, RefType)
 
-@given(instance=atl::types::Metaclass_strategy)
+@given(instance=atl_types_Metaclass_strategy)
 @settings(max_examples=50)
-def test_atl::types::metaclass_instantiation(instance):
-    assert isinstance(instance, atl::types::Metaclass)
-
-@given(instance=atl::types::Metaclass_strategy)
-def test_atl::types::metaclass_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_atl_types_metaclass_instantiation(instance):
+    assert isinstance(instance, atl_types_Metaclass)
 
 
-@given(instance=atl::types::Metaclass_strategy)
-def test_atl::types::metaclass_name_setter(instance):
+
+@given(instance=atl_types_Metaclass_strategy)
+def test_atl_types_metaclass_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=atl::types::Unknown_strategy)
+@given(instance=atl_types_Unknown_strategy)
 @settings(max_examples=50)
-def test_atl::types::unknown_instantiation(instance):
-    assert isinstance(instance, atl::types::Unknown)
+def test_atl_types_unknown_instantiation(instance):
+    assert isinstance(instance, atl_types_Unknown)
 
-@given(instance=annotations::atl::types::Type_strategy)
+@given(instance=annotations_atl_types_Type_strategy)
 @settings(max_examples=50)
-def test_annotations::atl::types::type_instantiation(instance):
-    assert isinstance(instance, annotations::atl::types::Type)
+def test_annotations_atl_types_type_instantiation(instance):
+    assert isinstance(instance, annotations_atl_types_Type)
 
-@given(instance=annotations::atl::types::EObject_strategy)
+@given(instance=annotations_atl_types_EObject_strategy)
 @settings(max_examples=50)
-def test_annotations::atl::types::eobject_instantiation(instance):
-    assert isinstance(instance, annotations::atl::types::EObject)
+def test_annotations_atl_types_eobject_instantiation(instance):
+    assert isinstance(instance, annotations_atl_types_EObject)
 
 @given(instance=AtlAnnotation_strategy)
 @settings(max_examples=50)
 def test_atlannotation_instantiation(instance):
     assert isinstance(instance, AtlAnnotation)
 
-@given(instance=atl::types::annotations::ExpressionAnnotation_strategy)
+@given(instance=atl_types_annotations_BindingAnnotation_strategy)
 @settings(max_examples=50)
-def test_atl::types::annotations::expressionannotation_instantiation(instance):
-    assert isinstance(instance, atl::types::annotations::ExpressionAnnotation)
-
-@given(instance=atl::types::annotations::BindingAnnotation_strategy)
-@settings(max_examples=50)
-def test_atl::types::annotations::bindingannotation_instantiation(instance):
-    assert isinstance(instance, atl::types::annotations::BindingAnnotation)
-
-@given(instance=atl::types::annotations::BindingAnnotation_strategy)
-def test_atl::types::annotations::bindingannotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_atl_types_annotations_bindingannotation_instantiation(instance):
+    assert isinstance(instance, atl_types_annotations_BindingAnnotation)
 
 
-@given(instance=atl::types::annotations::BindingAnnotation_strategy)
-def test_atl::types::annotations::bindingannotation_name_setter(instance):
+
+@given(instance=atl_types_annotations_BindingAnnotation_strategy)
+def test_atl_types_annotations_bindingannotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=atl::types::annotations::HelperAnnotation_strategy)
+@given(instance=atl_types_annotations_ExpressionAnnotation_strategy)
 @settings(max_examples=50)
-def test_atl::types::annotations::helperannotation_instantiation(instance):
-    assert isinstance(instance, atl::types::annotations::HelperAnnotation)
+def test_atl_types_annotations_expressionannotation_instantiation(instance):
+    assert isinstance(instance, atl_types_annotations_ExpressionAnnotation)
 
-@given(instance=atl::types::annotations::HelperAnnotation_strategy)
-def test_atl::types::annotations::helperannotation_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=atl_types_annotations_HelperAnnotation_strategy)
+@settings(max_examples=50)
+def test_atl_types_annotations_helperannotation_instantiation(instance):
+    assert isinstance(instance, atl_types_annotations_HelperAnnotation)
 
 
-@given(instance=atl::types::annotations::HelperAnnotation_strategy)
-def test_atl::types::annotations::helperannotation_name_setter(instance):
+
+@given(instance=atl_types_annotations_HelperAnnotation_strategy)
+def test_atl_types_annotations_helperannotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=atl::types::annotations::AtlAnnotation_strategy)
+@given(instance=atl_types_annotations_AtlAnnotation_strategy)
 @settings(max_examples=50)
-def test_atl::types::annotations::atlannotation_instantiation(instance):
-    assert isinstance(instance, atl::types::annotations::AtlAnnotation)
+def test_atl_types_annotations_atlannotation_instantiation(instance):
+    assert isinstance(instance, atl_types_annotations_AtlAnnotation)
 
 @given(instance=ReflectiveType_strategy)
 @settings(max_examples=50)
 def test_reflectivetype_instantiation(instance):
     assert isinstance(instance, ReflectiveType)
 
-@given(instance=atl::types::ReflectiveClass_strategy)
+@given(instance=atl_types_ReflectiveClass_strategy)
 @settings(max_examples=50)
-def test_atl::types::reflectiveclass_instantiation(instance):
-    assert isinstance(instance, atl::types::ReflectiveClass)
+def test_atl_types_reflectiveclass_instantiation(instance):
+    assert isinstance(instance, atl_types_ReflectiveClass)
 
-@given(instance=atl::types::Type_strategy)
+@given(instance=atl_types_Type_strategy)
 @settings(max_examples=50)
-def test_atl::types::type_instantiation(instance):
-    assert isinstance(instance, atl::types::Type)
-
-@given(instance=atl::types::Type_strategy)
-def test_atl::types::type_multivalued_type(instance):
-    assert isinstance(instance.multivalued, bool)
+def test_atl_types_type_instantiation(instance):
+    assert isinstance(instance, atl_types_Type)
 
 
-@given(instance=atl::types::Type_strategy)
-def test_atl::types::type_multivalued_setter(instance):
+
+@given(instance=atl_types_Type_strategy)
+def test_atl_types_type_multivalued_setter(instance):
     original = instance.multivalued
     instance.multivalued = original
     assert instance.multivalued == original
 
-@given(instance=atl::types::TupleAttribute_strategy)
+@given(instance=atl_types_TupleAttribute_strategy)
 @settings(max_examples=50)
-def test_atl::types::tupleattribute_instantiation(instance):
-    assert isinstance(instance, atl::types::TupleAttribute)
-
-@given(instance=atl::types::TupleAttribute_strategy)
-def test_atl::types::tupleattribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_atl_types_tupleattribute_instantiation(instance):
+    assert isinstance(instance, atl_types_TupleAttribute)
 
 
-@given(instance=atl::types::TupleAttribute_strategy)
-def test_atl::types::tupleattribute_name_setter(instance):
+
+@given(instance=atl_types_TupleAttribute_strategy)
+def test_atl_types_tupleattribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -795,83 +780,80 @@ def test_atl::types::tupleattribute_name_setter(instance):
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=atl::types::FloatType_strategy)
+@given(instance=atl_types_StringType_strategy)
 @settings(max_examples=50)
-def test_atl::types::floattype_instantiation(instance):
-    assert isinstance(instance, atl::types::FloatType)
+def test_atl_types_stringtype_instantiation(instance):
+    assert isinstance(instance, atl_types_StringType)
 
-@given(instance=atl::types::IntegerType_strategy)
+@given(instance=atl_types_FloatType_strategy)
 @settings(max_examples=50)
-def test_atl::types::integertype_instantiation(instance):
-    assert isinstance(instance, atl::types::IntegerType)
+def test_atl_types_floattype_instantiation(instance):
+    assert isinstance(instance, atl_types_FloatType)
 
-@given(instance=atl::types::StringType_strategy)
+@given(instance=atl_types_IntegerType_strategy)
 @settings(max_examples=50)
-def test_atl::types::stringtype_instantiation(instance):
-    assert isinstance(instance, atl::types::StringType)
+def test_atl_types_integertype_instantiation(instance):
+    assert isinstance(instance, atl_types_IntegerType)
 
-@given(instance=atl::types::BooleanType_strategy)
+@given(instance=atl_types_BooleanType_strategy)
 @settings(max_examples=50)
-def test_atl::types::booleantype_instantiation(instance):
-    assert isinstance(instance, atl::types::BooleanType)
+def test_atl_types_booleantype_instantiation(instance):
+    assert isinstance(instance, atl_types_BooleanType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=atl::types::MapType_strategy)
+@given(instance=atl_types_UnionType_strategy)
 @settings(max_examples=50)
-def test_atl::types::maptype_instantiation(instance):
-    assert isinstance(instance, atl::types::MapType)
+def test_atl_types_uniontype_instantiation(instance):
+    assert isinstance(instance, atl_types_UnionType)
 
-@given(instance=atl::types::RefType_strategy)
+@given(instance=atl_types_TupleType_strategy)
 @settings(max_examples=50)
-def test_atl::types::reftype_instantiation(instance):
-    assert isinstance(instance, atl::types::RefType)
+def test_atl_types_tupletype_instantiation(instance):
+    assert isinstance(instance, atl_types_TupleType)
 
-@given(instance=atl::types::EnumType_strategy)
+@given(instance=atl_types_ReflectiveType_strategy)
 @settings(max_examples=50)
-def test_atl::types::enumtype_instantiation(instance):
-    assert isinstance(instance, atl::types::EnumType)
+def test_atl_types_reflectivetype_instantiation(instance):
+    assert isinstance(instance, atl_types_ReflectiveType)
 
-@given(instance=atl::types::EnumType_strategy)
-def test_atl::types::enumtype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=atl_types_EnumType_strategy)
+@settings(max_examples=50)
+def test_atl_types_enumtype_instantiation(instance):
+    assert isinstance(instance, atl_types_EnumType)
 
 
-@given(instance=atl::types::EnumType_strategy)
-def test_atl::types::enumtype_name_setter(instance):
+
+@given(instance=atl_types_EnumType_strategy)
+def test_atl_types_enumtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=atl::types::ReflectiveType_strategy)
+@given(instance=atl_types_EmptyCollection_strategy)
 @settings(max_examples=50)
-def test_atl::types::reflectivetype_instantiation(instance):
-    assert isinstance(instance, atl::types::ReflectiveType)
+def test_atl_types_emptycollection_instantiation(instance):
+    assert isinstance(instance, atl_types_EmptyCollection)
 
-@given(instance=atl::types::UnionType_strategy)
+@given(instance=atl_types_MapType_strategy)
 @settings(max_examples=50)
-def test_atl::types::uniontype_instantiation(instance):
-    assert isinstance(instance, atl::types::UnionType)
+def test_atl_types_maptype_instantiation(instance):
+    assert isinstance(instance, atl_types_MapType)
 
-@given(instance=atl::types::TupleType_strategy)
+@given(instance=atl_types_ThisModuleType_strategy)
 @settings(max_examples=50)
-def test_atl::types::tupletype_instantiation(instance):
-    assert isinstance(instance, atl::types::TupleType)
+def test_atl_types_thismoduletype_instantiation(instance):
+    assert isinstance(instance, atl_types_ThisModuleType)
 
-@given(instance=atl::types::EmptyCollection_strategy)
+@given(instance=atl_types_RefType_strategy)
 @settings(max_examples=50)
-def test_atl::types::emptycollection_instantiation(instance):
-    assert isinstance(instance, atl::types::EmptyCollection)
+def test_atl_types_reftype_instantiation(instance):
+    assert isinstance(instance, atl_types_RefType)
 
-@given(instance=atl::types::ThisModuleType_strategy)
+@given(instance=atl_types_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_atl::types::thismoduletype_instantiation(instance):
-    assert isinstance(instance, atl::types::ThisModuleType)
-
-@given(instance=atl::types::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_atl::types::primitivetype_instantiation(instance):
-    assert isinstance(instance, atl::types::PrimitiveType)
+def test_atl_types_primitivetype_instantiation(instance):
+    assert isinstance(instance, atl_types_PrimitiveType)

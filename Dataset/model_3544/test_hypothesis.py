@@ -3,23 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    multipleinheritence_NewEClass2,
     NewEClass3,
     NewEClass2,
-    multipleinheritence::NewEClass1,
-    multipleinheritence::NewEClass5,
-    multipleinheritence::NewEClass4,
+    multipleinheritence_NewEClass1,
+    multipleinheritence_NewEClass5,
+    multipleinheritence_NewEClass4,
     NewEClass5,
     NewEClass4,
-    multipleinheritence::NewEClass3,
-    multipleinheritence::NewEClass2,
+    multipleinheritence_NewEClass3,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_multipleinheritence_neweclass2_is_not_abstract():
+    assert not inspect.isabstract(multipleinheritence_NewEClass2)
+
+
+def test_multipleinheritence_neweclass2_constructor_exists():
+    assert callable(multipleinheritence_NewEClass2.__init__)
+
+
+def test_multipleinheritence_neweclass2_constructor_args():
+    sig = inspect.signature(multipleinheritence_NewEClass2.__init__)
+    params = list(sig.parameters.keys())
+    assert "f2" in params, "Missing parameter 'f2'"
+
+def test_multipleinheritence_neweclass2_has_f2():
+    assert hasattr(multipleinheritence_NewEClass2, "f2")
+    descriptor = None
+    for klass in multipleinheritence_NewEClass2.__mro__:
+        if "f2" in klass.__dict__:
+            descriptor = klass.__dict__["f2"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -51,23 +75,23 @@ def test_neweclass2_constructor_args():
 
 
 
-def test_multipleinheritence::neweclass1_is_not_abstract():
-    assert not inspect.isabstract(multipleinheritence::NewEClass1)
+def test_multipleinheritence_neweclass1_is_not_abstract():
+    assert not inspect.isabstract(multipleinheritence_NewEClass1)
 
 
-def test_multipleinheritence::neweclass1_constructor_exists():
-    assert callable(multipleinheritence::NewEClass1.__init__)
+def test_multipleinheritence_neweclass1_constructor_exists():
+    assert callable(multipleinheritence_NewEClass1.__init__)
 
 
-def test_multipleinheritence::neweclass1_constructor_args():
-    sig = inspect.signature(multipleinheritence::NewEClass1.__init__)
+def test_multipleinheritence_neweclass1_constructor_args():
+    sig = inspect.signature(multipleinheritence_NewEClass1.__init__)
     params = list(sig.parameters.keys())
     assert "f1" in params, "Missing parameter 'f1'"
 
-def test_multipleinheritence::neweclass1_has_f1():
-    assert hasattr(multipleinheritence::NewEClass1, "f1")
+def test_multipleinheritence_neweclass1_has_f1():
+    assert hasattr(multipleinheritence_NewEClass1, "f1")
     descriptor = None
-    for klass in multipleinheritence::NewEClass1.__mro__:
+    for klass in multipleinheritence_NewEClass1.__mro__:
         if "f1" in klass.__dict__:
             descriptor = klass.__dict__["f1"]
             break
@@ -75,23 +99,23 @@ def test_multipleinheritence::neweclass1_has_f1():
 
 
 
-def test_multipleinheritence::neweclass5_is_not_abstract():
-    assert not inspect.isabstract(multipleinheritence::NewEClass5)
+def test_multipleinheritence_neweclass5_is_not_abstract():
+    assert not inspect.isabstract(multipleinheritence_NewEClass5)
 
 
-def test_multipleinheritence::neweclass5_constructor_exists():
-    assert callable(multipleinheritence::NewEClass5.__init__)
+def test_multipleinheritence_neweclass5_constructor_exists():
+    assert callable(multipleinheritence_NewEClass5.__init__)
 
 
-def test_multipleinheritence::neweclass5_constructor_args():
-    sig = inspect.signature(multipleinheritence::NewEClass5.__init__)
+def test_multipleinheritence_neweclass5_constructor_args():
+    sig = inspect.signature(multipleinheritence_NewEClass5.__init__)
     params = list(sig.parameters.keys())
     assert "f5" in params, "Missing parameter 'f5'"
 
-def test_multipleinheritence::neweclass5_has_f5():
-    assert hasattr(multipleinheritence::NewEClass5, "f5")
+def test_multipleinheritence_neweclass5_has_f5():
+    assert hasattr(multipleinheritence_NewEClass5, "f5")
     descriptor = None
-    for klass in multipleinheritence::NewEClass5.__mro__:
+    for klass in multipleinheritence_NewEClass5.__mro__:
         if "f5" in klass.__dict__:
             descriptor = klass.__dict__["f5"]
             break
@@ -99,23 +123,23 @@ def test_multipleinheritence::neweclass5_has_f5():
 
 
 
-def test_multipleinheritence::neweclass4_is_not_abstract():
-    assert not inspect.isabstract(multipleinheritence::NewEClass4)
+def test_multipleinheritence_neweclass4_is_not_abstract():
+    assert not inspect.isabstract(multipleinheritence_NewEClass4)
 
 
-def test_multipleinheritence::neweclass4_constructor_exists():
-    assert callable(multipleinheritence::NewEClass4.__init__)
+def test_multipleinheritence_neweclass4_constructor_exists():
+    assert callable(multipleinheritence_NewEClass4.__init__)
 
 
-def test_multipleinheritence::neweclass4_constructor_args():
-    sig = inspect.signature(multipleinheritence::NewEClass4.__init__)
+def test_multipleinheritence_neweclass4_constructor_args():
+    sig = inspect.signature(multipleinheritence_NewEClass4.__init__)
     params = list(sig.parameters.keys())
     assert "f4" in params, "Missing parameter 'f4'"
 
-def test_multipleinheritence::neweclass4_has_f4():
-    assert hasattr(multipleinheritence::NewEClass4, "f4")
+def test_multipleinheritence_neweclass4_has_f4():
+    assert hasattr(multipleinheritence_NewEClass4, "f4")
     descriptor = None
-    for klass in multipleinheritence::NewEClass4.__mro__:
+    for klass in multipleinheritence_NewEClass4.__mro__:
         if "f4" in klass.__dict__:
             descriptor = klass.__dict__["f4"]
             break
@@ -151,49 +175,25 @@ def test_neweclass4_constructor_args():
 
 
 
-def test_multipleinheritence::neweclass3_is_not_abstract():
-    assert not inspect.isabstract(multipleinheritence::NewEClass3)
+def test_multipleinheritence_neweclass3_is_not_abstract():
+    assert not inspect.isabstract(multipleinheritence_NewEClass3)
 
 
-def test_multipleinheritence::neweclass3_constructor_exists():
-    assert callable(multipleinheritence::NewEClass3.__init__)
+def test_multipleinheritence_neweclass3_constructor_exists():
+    assert callable(multipleinheritence_NewEClass3.__init__)
 
 
-def test_multipleinheritence::neweclass3_constructor_args():
-    sig = inspect.signature(multipleinheritence::NewEClass3.__init__)
+def test_multipleinheritence_neweclass3_constructor_args():
+    sig = inspect.signature(multipleinheritence_NewEClass3.__init__)
     params = list(sig.parameters.keys())
     assert "f3" in params, "Missing parameter 'f3'"
 
-def test_multipleinheritence::neweclass3_has_f3():
-    assert hasattr(multipleinheritence::NewEClass3, "f3")
+def test_multipleinheritence_neweclass3_has_f3():
+    assert hasattr(multipleinheritence_NewEClass3, "f3")
     descriptor = None
-    for klass in multipleinheritence::NewEClass3.__mro__:
+    for klass in multipleinheritence_NewEClass3.__mro__:
         if "f3" in klass.__dict__:
             descriptor = klass.__dict__["f3"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_multipleinheritence::neweclass2_is_not_abstract():
-    assert not inspect.isabstract(multipleinheritence::NewEClass2)
-
-
-def test_multipleinheritence::neweclass2_constructor_exists():
-    assert callable(multipleinheritence::NewEClass2.__init__)
-
-
-def test_multipleinheritence::neweclass2_constructor_args():
-    sig = inspect.signature(multipleinheritence::NewEClass2.__init__)
-    params = list(sig.parameters.keys())
-    assert "f2" in params, "Missing parameter 'f2'"
-
-def test_multipleinheritence::neweclass2_has_f2():
-    assert hasattr(multipleinheritence::NewEClass2, "f2")
-    descriptor = None
-    for klass in multipleinheritence::NewEClass2.__mro__:
-        if "f2" in klass.__dict__:
-            descriptor = klass.__dict__["f2"]
             break
     assert isinstance(descriptor, property)
 
@@ -209,24 +209,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+multipleinheritence_NewEClass2_strategy = st.builds(
+    multipleinheritence_NewEClass2,
+    f2=
+        st.integers()
+)
 NewEClass3_strategy = st.builds(
     NewEClass3,
 )
 NewEClass2_strategy = st.builds(
     NewEClass2,
 )
-multipleinheritence::NewEClass1_strategy = st.builds(
-    multipleinheritence::NewEClass1,
+multipleinheritence_NewEClass1_strategy = st.builds(
+    multipleinheritence_NewEClass1,
     f1=
         st.integers()
 )
-multipleinheritence::NewEClass5_strategy = st.builds(
-    multipleinheritence::NewEClass5,
+multipleinheritence_NewEClass5_strategy = st.builds(
+    multipleinheritence_NewEClass5,
     f5=
         st.integers()
 )
-multipleinheritence::NewEClass4_strategy = st.builds(
-    multipleinheritence::NewEClass4,
+multipleinheritence_NewEClass4_strategy = st.builds(
+    multipleinheritence_NewEClass4,
     f4=
         st.integers()
 )
@@ -236,16 +241,24 @@ NewEClass5_strategy = st.builds(
 NewEClass4_strategy = st.builds(
     NewEClass4,
 )
-multipleinheritence::NewEClass3_strategy = st.builds(
-    multipleinheritence::NewEClass3,
+multipleinheritence_NewEClass3_strategy = st.builds(
+    multipleinheritence_NewEClass3,
     f3=
         st.integers()
 )
-multipleinheritence::NewEClass2_strategy = st.builds(
-    multipleinheritence::NewEClass2,
-    f2=
-        st.integers()
-)
+
+@given(instance=multipleinheritence_NewEClass2_strategy)
+@settings(max_examples=50)
+def test_multipleinheritence_neweclass2_instantiation(instance):
+    assert isinstance(instance, multipleinheritence_NewEClass2)
+
+
+
+@given(instance=multipleinheritence_NewEClass2_strategy)
+def test_multipleinheritence_neweclass2_f2_setter(instance):
+    original = instance.f2
+    instance.f2 = original
+    assert instance.f2 == original
 
 @given(instance=NewEClass3_strategy)
 @settings(max_examples=50)
@@ -257,50 +270,41 @@ def test_neweclass3_instantiation(instance):
 def test_neweclass2_instantiation(instance):
     assert isinstance(instance, NewEClass2)
 
-@given(instance=multipleinheritence::NewEClass1_strategy)
+@given(instance=multipleinheritence_NewEClass1_strategy)
 @settings(max_examples=50)
-def test_multipleinheritence::neweclass1_instantiation(instance):
-    assert isinstance(instance, multipleinheritence::NewEClass1)
-
-@given(instance=multipleinheritence::NewEClass1_strategy)
-def test_multipleinheritence::neweclass1_f1_type(instance):
-    assert isinstance(instance.f1, int)
+def test_multipleinheritence_neweclass1_instantiation(instance):
+    assert isinstance(instance, multipleinheritence_NewEClass1)
 
 
-@given(instance=multipleinheritence::NewEClass1_strategy)
-def test_multipleinheritence::neweclass1_f1_setter(instance):
+
+@given(instance=multipleinheritence_NewEClass1_strategy)
+def test_multipleinheritence_neweclass1_f1_setter(instance):
     original = instance.f1
     instance.f1 = original
     assert instance.f1 == original
 
-@given(instance=multipleinheritence::NewEClass5_strategy)
+@given(instance=multipleinheritence_NewEClass5_strategy)
 @settings(max_examples=50)
-def test_multipleinheritence::neweclass5_instantiation(instance):
-    assert isinstance(instance, multipleinheritence::NewEClass5)
-
-@given(instance=multipleinheritence::NewEClass5_strategy)
-def test_multipleinheritence::neweclass5_f5_type(instance):
-    assert isinstance(instance.f5, int)
+def test_multipleinheritence_neweclass5_instantiation(instance):
+    assert isinstance(instance, multipleinheritence_NewEClass5)
 
 
-@given(instance=multipleinheritence::NewEClass5_strategy)
-def test_multipleinheritence::neweclass5_f5_setter(instance):
+
+@given(instance=multipleinheritence_NewEClass5_strategy)
+def test_multipleinheritence_neweclass5_f5_setter(instance):
     original = instance.f5
     instance.f5 = original
     assert instance.f5 == original
 
-@given(instance=multipleinheritence::NewEClass4_strategy)
+@given(instance=multipleinheritence_NewEClass4_strategy)
 @settings(max_examples=50)
-def test_multipleinheritence::neweclass4_instantiation(instance):
-    assert isinstance(instance, multipleinheritence::NewEClass4)
-
-@given(instance=multipleinheritence::NewEClass4_strategy)
-def test_multipleinheritence::neweclass4_f4_type(instance):
-    assert isinstance(instance.f4, int)
+def test_multipleinheritence_neweclass4_instantiation(instance):
+    assert isinstance(instance, multipleinheritence_NewEClass4)
 
 
-@given(instance=multipleinheritence::NewEClass4_strategy)
-def test_multipleinheritence::neweclass4_f4_setter(instance):
+
+@given(instance=multipleinheritence_NewEClass4_strategy)
+def test_multipleinheritence_neweclass4_f4_setter(instance):
     original = instance.f4
     instance.f4 = original
     assert instance.f4 == original
@@ -315,34 +319,15 @@ def test_neweclass5_instantiation(instance):
 def test_neweclass4_instantiation(instance):
     assert isinstance(instance, NewEClass4)
 
-@given(instance=multipleinheritence::NewEClass3_strategy)
+@given(instance=multipleinheritence_NewEClass3_strategy)
 @settings(max_examples=50)
-def test_multipleinheritence::neweclass3_instantiation(instance):
-    assert isinstance(instance, multipleinheritence::NewEClass3)
-
-@given(instance=multipleinheritence::NewEClass3_strategy)
-def test_multipleinheritence::neweclass3_f3_type(instance):
-    assert isinstance(instance.f3, int)
+def test_multipleinheritence_neweclass3_instantiation(instance):
+    assert isinstance(instance, multipleinheritence_NewEClass3)
 
 
-@given(instance=multipleinheritence::NewEClass3_strategy)
-def test_multipleinheritence::neweclass3_f3_setter(instance):
+
+@given(instance=multipleinheritence_NewEClass3_strategy)
+def test_multipleinheritence_neweclass3_f3_setter(instance):
     original = instance.f3
     instance.f3 = original
     assert instance.f3 == original
-
-@given(instance=multipleinheritence::NewEClass2_strategy)
-@settings(max_examples=50)
-def test_multipleinheritence::neweclass2_instantiation(instance):
-    assert isinstance(instance, multipleinheritence::NewEClass2)
-
-@given(instance=multipleinheritence::NewEClass2_strategy)
-def test_multipleinheritence::neweclass2_f2_type(instance):
-    assert isinstance(instance.f2, int)
-
-
-@given(instance=multipleinheritence::NewEClass2_strategy)
-def test_multipleinheritence::neweclass2_f2_setter(instance):
-    original = instance.f2
-    instance.f2 = original
-    assert instance.f2 == original

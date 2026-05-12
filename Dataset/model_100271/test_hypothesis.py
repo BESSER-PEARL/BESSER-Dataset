@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Transition,
     Step,
     StepToTransition,
     TransitionToStep,
     Connection,
-    Grafcet::StepToTransition,
-    Grafcet::TransitionToStep,
+    Grafcet_StepToTransition,
+    Grafcet_TransitionToStep,
     Grafcet,
     LocatedElement,
-    Grafcet::NamedElement,
-    Grafcet::LocatedElement,
+    Grafcet_NamedElement,
+    Grafcet_LocatedElement,
     Element,
-    Grafcet::Transition,
-    Grafcet::Step,
+    Grafcet_Step,
+    Grafcet_Transition,
     NamedElement,
-    Grafcet::Element,
-    Grafcet::Connection,
-    Grafcet::Grafcet,
+    Grafcet_Connection,
+    Grafcet_Element,
+    Grafcet_Grafcet,
 )
 
 # =============================================================================
@@ -102,30 +102,30 @@ def test_connection_constructor_args():
 
 
 
-def test_grafcet::steptotransition_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::StepToTransition)
+def test_grafcet_steptotransition_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_StepToTransition)
 
 
-def test_grafcet::steptotransition_constructor_exists():
-    assert callable(Grafcet::StepToTransition.__init__)
+def test_grafcet_steptotransition_constructor_exists():
+    assert callable(Grafcet_StepToTransition.__init__)
 
 
-def test_grafcet::steptotransition_constructor_args():
-    sig = inspect.signature(Grafcet::StepToTransition.__init__)
+def test_grafcet_steptotransition_constructor_args():
+    sig = inspect.signature(Grafcet_StepToTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grafcet::transitiontostep_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::TransitionToStep)
+def test_grafcet_transitiontostep_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_TransitionToStep)
 
 
-def test_grafcet::transitiontostep_constructor_exists():
-    assert callable(Grafcet::TransitionToStep.__init__)
+def test_grafcet_transitiontostep_constructor_exists():
+    assert callable(Grafcet_TransitionToStep.__init__)
 
 
-def test_grafcet::transitiontostep_constructor_args():
-    sig = inspect.signature(Grafcet::TransitionToStep.__init__)
+def test_grafcet_transitiontostep_constructor_args():
+    sig = inspect.signature(Grafcet_TransitionToStep.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -158,23 +158,23 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_grafcet::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::NamedElement)
+def test_grafcet_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_NamedElement)
 
 
-def test_grafcet::namedelement_constructor_exists():
-    assert callable(Grafcet::NamedElement.__init__)
+def test_grafcet_namedelement_constructor_exists():
+    assert callable(Grafcet_NamedElement.__init__)
 
 
-def test_grafcet::namedelement_constructor_args():
-    sig = inspect.signature(Grafcet::NamedElement.__init__)
+def test_grafcet_namedelement_constructor_args():
+    sig = inspect.signature(Grafcet_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_grafcet::namedelement_has_name():
-    assert hasattr(Grafcet::NamedElement, "name")
+def test_grafcet_namedelement_has_name():
+    assert hasattr(Grafcet_NamedElement, "name")
     descriptor = None
-    for klass in Grafcet::NamedElement.__mro__:
+    for klass in Grafcet_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -182,23 +182,23 @@ def test_grafcet::namedelement_has_name():
 
 
 
-def test_grafcet::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::LocatedElement)
+def test_grafcet_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_LocatedElement)
 
 
-def test_grafcet::locatedelement_constructor_exists():
-    assert callable(Grafcet::LocatedElement.__init__)
+def test_grafcet_locatedelement_constructor_exists():
+    assert callable(Grafcet_LocatedElement.__init__)
 
 
-def test_grafcet::locatedelement_constructor_args():
-    sig = inspect.signature(Grafcet::LocatedElement.__init__)
+def test_grafcet_locatedelement_constructor_args():
+    sig = inspect.signature(Grafcet_LocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_grafcet::locatedelement_has_location():
-    assert hasattr(Grafcet::LocatedElement, "location")
+def test_grafcet_locatedelement_has_location():
+    assert hasattr(Grafcet_LocatedElement, "location")
     descriptor = None
-    for klass in Grafcet::LocatedElement.__mro__:
+    for klass in Grafcet_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -220,69 +220,69 @@ def test_element_constructor_args():
 
 
 
-def test_grafcet::transition_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::Transition)
+def test_grafcet_step_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_Step)
 
 
-def test_grafcet::transition_constructor_exists():
-    assert callable(Grafcet::Transition.__init__)
+def test_grafcet_step_constructor_exists():
+    assert callable(Grafcet_Step.__init__)
 
 
-def test_grafcet::transition_constructor_args():
-    sig = inspect.signature(Grafcet::Transition.__init__)
-    params = list(sig.parameters.keys())
-    assert "condition" in params, "Missing parameter 'condition'"
-
-def test_grafcet::transition_has_condition():
-    assert hasattr(Grafcet::Transition, "condition")
-    descriptor = None
-    for klass in Grafcet::Transition.__mro__:
-        if "condition" in klass.__dict__:
-            descriptor = klass.__dict__["condition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_grafcet::step_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::Step)
-
-
-def test_grafcet::step_constructor_exists():
-    assert callable(Grafcet::Step.__init__)
-
-
-def test_grafcet::step_constructor_args():
-    sig = inspect.signature(Grafcet::Step.__init__)
+def test_grafcet_step_constructor_args():
+    sig = inspect.signature(Grafcet_Step.__init__)
     params = list(sig.parameters.keys())
     assert "isActive" in params, "Missing parameter 'isActive'"
-    assert "action" in params, "Missing parameter 'action'"
     assert "isInitial" in params, "Missing parameter 'isInitial'"
+    assert "action" in params, "Missing parameter 'action'"
 
-def test_grafcet::step_has_isActive():
-    assert hasattr(Grafcet::Step, "isActive")
+def test_grafcet_step_has_isActive():
+    assert hasattr(Grafcet_Step, "isActive")
     descriptor = None
-    for klass in Grafcet::Step.__mro__:
+    for klass in Grafcet_Step.__mro__:
         if "isActive" in klass.__dict__:
             descriptor = klass.__dict__["isActive"]
             break
     assert isinstance(descriptor, property)
 
-def test_grafcet::step_has_action():
-    assert hasattr(Grafcet::Step, "action")
+def test_grafcet_step_has_isInitial():
+    assert hasattr(Grafcet_Step, "isInitial")
     descriptor = None
-    for klass in Grafcet::Step.__mro__:
+    for klass in Grafcet_Step.__mro__:
+        if "isInitial" in klass.__dict__:
+            descriptor = klass.__dict__["isInitial"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_grafcet_step_has_action():
+    assert hasattr(Grafcet_Step, "action")
+    descriptor = None
+    for klass in Grafcet_Step.__mro__:
         if "action" in klass.__dict__:
             descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
-def test_grafcet::step_has_isInitial():
-    assert hasattr(Grafcet::Step, "isInitial")
+
+
+def test_grafcet_transition_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_Transition)
+
+
+def test_grafcet_transition_constructor_exists():
+    assert callable(Grafcet_Transition.__init__)
+
+
+def test_grafcet_transition_constructor_args():
+    sig = inspect.signature(Grafcet_Transition.__init__)
+    params = list(sig.parameters.keys())
+    assert "condition" in params, "Missing parameter 'condition'"
+
+def test_grafcet_transition_has_condition():
+    assert hasattr(Grafcet_Transition, "condition")
     descriptor = None
-    for klass in Grafcet::Step.__mro__:
-        if "isInitial" in klass.__dict__:
-            descriptor = klass.__dict__["isInitial"]
+    for klass in Grafcet_Transition.__mro__:
+        if "condition" in klass.__dict__:
+            descriptor = klass.__dict__["condition"]
             break
     assert isinstance(descriptor, property)
 
@@ -302,44 +302,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_grafcet::element_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::Element)
+def test_grafcet_connection_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_Connection)
 
 
-def test_grafcet::element_constructor_exists():
-    assert callable(Grafcet::Element.__init__)
+def test_grafcet_connection_constructor_exists():
+    assert callable(Grafcet_Connection.__init__)
 
 
-def test_grafcet::element_constructor_args():
-    sig = inspect.signature(Grafcet::Element.__init__)
+def test_grafcet_connection_constructor_args():
+    sig = inspect.signature(Grafcet_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grafcet::connection_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::Connection)
+def test_grafcet_element_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_Element)
 
 
-def test_grafcet::connection_constructor_exists():
-    assert callable(Grafcet::Connection.__init__)
+def test_grafcet_element_constructor_exists():
+    assert callable(Grafcet_Element.__init__)
 
 
-def test_grafcet::connection_constructor_args():
-    sig = inspect.signature(Grafcet::Connection.__init__)
+def test_grafcet_element_constructor_args():
+    sig = inspect.signature(Grafcet_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grafcet::grafcet_is_not_abstract():
-    assert not inspect.isabstract(Grafcet::Grafcet)
+def test_grafcet_grafcet_is_not_abstract():
+    assert not inspect.isabstract(Grafcet_Grafcet)
 
 
-def test_grafcet::grafcet_constructor_exists():
-    assert callable(Grafcet::Grafcet.__init__)
+def test_grafcet_grafcet_constructor_exists():
+    assert callable(Grafcet_Grafcet.__init__)
 
 
-def test_grafcet::grafcet_constructor_args():
-    sig = inspect.signature(Grafcet::Grafcet.__init__)
+def test_grafcet_grafcet_constructor_args():
+    sig = inspect.signature(Grafcet_Grafcet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -369,11 +369,11 @@ TransitionToStep_strategy = st.builds(
 Connection_strategy = st.builds(
     Connection,
 )
-Grafcet::StepToTransition_strategy = st.builds(
-    Grafcet::StepToTransition,
+Grafcet_StepToTransition_strategy = st.builds(
+    Grafcet_StepToTransition,
 )
-Grafcet::TransitionToStep_strategy = st.builds(
-    Grafcet::TransitionToStep,
+Grafcet_TransitionToStep_strategy = st.builds(
+    Grafcet_TransitionToStep,
 )
 Grafcet_strategy = st.builds(
     Grafcet,
@@ -381,44 +381,44 @@ Grafcet_strategy = st.builds(
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-Grafcet::NamedElement_strategy = st.builds(
-    Grafcet::NamedElement,
+Grafcet_NamedElement_strategy = st.builds(
+    Grafcet_NamedElement,
     name=
         safe_text
 )
-Grafcet::LocatedElement_strategy = st.builds(
-    Grafcet::LocatedElement,
+Grafcet_LocatedElement_strategy = st.builds(
+    Grafcet_LocatedElement,
     location=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-Grafcet::Transition_strategy = st.builds(
-    Grafcet::Transition,
-    condition=
-        safe_text
-)
-Grafcet::Step_strategy = st.builds(
-    Grafcet::Step,
+Grafcet_Step_strategy = st.builds(
+    Grafcet_Step,
     isActive=
         safe_text,
-    action=
-        safe_text,
     isInitial=
+        safe_text,
+    action=
+        safe_text
+)
+Grafcet_Transition_strategy = st.builds(
+    Grafcet_Transition,
+    condition=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Grafcet::Element_strategy = st.builds(
-    Grafcet::Element,
+Grafcet_Connection_strategy = st.builds(
+    Grafcet_Connection,
 )
-Grafcet::Connection_strategy = st.builds(
-    Grafcet::Connection,
+Grafcet_Element_strategy = st.builds(
+    Grafcet_Element,
 )
-Grafcet::Grafcet_strategy = st.builds(
-    Grafcet::Grafcet,
+Grafcet_Grafcet_strategy = st.builds(
+    Grafcet_Grafcet,
 )
 
 @given(instance=Transition_strategy)
@@ -446,15 +446,15 @@ def test_transitiontostep_instantiation(instance):
 def test_connection_instantiation(instance):
     assert isinstance(instance, Connection)
 
-@given(instance=Grafcet::StepToTransition_strategy)
+@given(instance=Grafcet_StepToTransition_strategy)
 @settings(max_examples=50)
-def test_grafcet::steptotransition_instantiation(instance):
-    assert isinstance(instance, Grafcet::StepToTransition)
+def test_grafcet_steptotransition_instantiation(instance):
+    assert isinstance(instance, Grafcet_StepToTransition)
 
-@given(instance=Grafcet::TransitionToStep_strategy)
+@given(instance=Grafcet_TransitionToStep_strategy)
 @settings(max_examples=50)
-def test_grafcet::transitiontostep_instantiation(instance):
-    assert isinstance(instance, Grafcet::TransitionToStep)
+def test_grafcet_transitiontostep_instantiation(instance):
+    assert isinstance(instance, Grafcet_TransitionToStep)
 
 @given(instance=Grafcet_strategy)
 @settings(max_examples=50)
@@ -466,34 +466,28 @@ def test_grafcet_instantiation(instance):
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=Grafcet::NamedElement_strategy)
+@given(instance=Grafcet_NamedElement_strategy)
 @settings(max_examples=50)
-def test_grafcet::namedelement_instantiation(instance):
-    assert isinstance(instance, Grafcet::NamedElement)
-
-@given(instance=Grafcet::NamedElement_strategy)
-def test_grafcet::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_grafcet_namedelement_instantiation(instance):
+    assert isinstance(instance, Grafcet_NamedElement)
 
 
-@given(instance=Grafcet::NamedElement_strategy)
-def test_grafcet::namedelement_name_setter(instance):
+
+@given(instance=Grafcet_NamedElement_strategy)
+def test_grafcet_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Grafcet::LocatedElement_strategy)
+@given(instance=Grafcet_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_grafcet::locatedelement_instantiation(instance):
-    assert isinstance(instance, Grafcet::LocatedElement)
-
-@given(instance=Grafcet::LocatedElement_strategy)
-def test_grafcet::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_grafcet_locatedelement_instantiation(instance):
+    assert isinstance(instance, Grafcet_LocatedElement)
 
 
-@given(instance=Grafcet::LocatedElement_strategy)
-def test_grafcet::locatedelement_location_setter(instance):
+
+@given(instance=Grafcet_LocatedElement_strategy)
+def test_grafcet_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
@@ -503,76 +497,64 @@ def test_grafcet::locatedelement_location_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=Grafcet::Transition_strategy)
+@given(instance=Grafcet_Step_strategy)
 @settings(max_examples=50)
-def test_grafcet::transition_instantiation(instance):
-    assert isinstance(instance, Grafcet::Transition)
-
-@given(instance=Grafcet::Transition_strategy)
-def test_grafcet::transition_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_grafcet_step_instantiation(instance):
+    assert isinstance(instance, Grafcet_Step)
 
 
-@given(instance=Grafcet::Transition_strategy)
-def test_grafcet::transition_condition_setter(instance):
-    original = instance.condition
-    instance.condition = original
-    assert instance.condition == original
 
-@given(instance=Grafcet::Step_strategy)
-@settings(max_examples=50)
-def test_grafcet::step_instantiation(instance):
-    assert isinstance(instance, Grafcet::Step)
-
-@given(instance=Grafcet::Step_strategy)
-def test_grafcet::step_isActive_type(instance):
-    assert isinstance(instance.isActive, str)
-
-
-@given(instance=Grafcet::Step_strategy)
-def test_grafcet::step_isActive_setter(instance):
+@given(instance=Grafcet_Step_strategy)
+def test_grafcet_step_isActive_setter(instance):
     original = instance.isActive
     instance.isActive = original
     assert instance.isActive == original
 
-@given(instance=Grafcet::Step_strategy)
-def test_grafcet::step_action_type(instance):
-    assert isinstance(instance.action, str)
 
 
-@given(instance=Grafcet::Step_strategy)
-def test_grafcet::step_action_setter(instance):
+@given(instance=Grafcet_Step_strategy)
+def test_grafcet_step_isInitial_setter(instance):
+    original = instance.isInitial
+    instance.isInitial = original
+    assert instance.isInitial == original
+
+
+
+@given(instance=Grafcet_Step_strategy)
+def test_grafcet_step_action_setter(instance):
     original = instance.action
     instance.action = original
     assert instance.action == original
 
-@given(instance=Grafcet::Step_strategy)
-def test_grafcet::step_isInitial_type(instance):
-    assert isinstance(instance.isInitial, str)
+@given(instance=Grafcet_Transition_strategy)
+@settings(max_examples=50)
+def test_grafcet_transition_instantiation(instance):
+    assert isinstance(instance, Grafcet_Transition)
 
 
-@given(instance=Grafcet::Step_strategy)
-def test_grafcet::step_isInitial_setter(instance):
-    original = instance.isInitial
-    instance.isInitial = original
-    assert instance.isInitial == original
+
+@given(instance=Grafcet_Transition_strategy)
+def test_grafcet_transition_condition_setter(instance):
+    original = instance.condition
+    instance.condition = original
+    assert instance.condition == original
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Grafcet::Element_strategy)
+@given(instance=Grafcet_Connection_strategy)
 @settings(max_examples=50)
-def test_grafcet::element_instantiation(instance):
-    assert isinstance(instance, Grafcet::Element)
+def test_grafcet_connection_instantiation(instance):
+    assert isinstance(instance, Grafcet_Connection)
 
-@given(instance=Grafcet::Connection_strategy)
+@given(instance=Grafcet_Element_strategy)
 @settings(max_examples=50)
-def test_grafcet::connection_instantiation(instance):
-    assert isinstance(instance, Grafcet::Connection)
+def test_grafcet_element_instantiation(instance):
+    assert isinstance(instance, Grafcet_Element)
 
-@given(instance=Grafcet::Grafcet_strategy)
+@given(instance=Grafcet_Grafcet_strategy)
 @settings(max_examples=50)
-def test_grafcet::grafcet_instantiation(instance):
-    assert isinstance(instance, Grafcet::Grafcet)
+def test_grafcet_grafcet_instantiation(instance):
+    assert isinstance(instance, Grafcet_Grafcet)

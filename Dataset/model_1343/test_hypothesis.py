@@ -3,62 +3,62 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    oclinEcoreCST::ReferenceRef,
-    oclinEcoreCST::ImportCS,
-    oclinEcoreCST::DocumentCS,
+from python_code import (
+    oclinEcoreCST_ReferenceRef,
+    oclinEcoreCST_ImportCS,
+    oclinEcoreCST_DocumentCS,
     DataTypeRef,
-    oclinEcoreCST::DataTypeCSRef,
+    oclinEcoreCST_DataTypeCSRef,
     DataTypeOrEnumCS,
-    oclinEcoreCST::DataTypeCS,
-    oclinEcoreCST::OclExpressionCS,
+    oclinEcoreCST_DataTypeCS,
+    oclinEcoreCST_OclExpressionCS,
     TypedElementCS,
-    oclinEcoreCST::ParameterCS,
-    oclinEcoreCST::ModelElementCS,
-    oclinEcoreCST::EnumCS,
-    oclinEcoreCST::EReference,
+    oclinEcoreCST_ParameterCS,
+    oclinEcoreCST_ModelElementCS,
+    oclinEcoreCST_EnumCS,
+    oclinEcoreCST_EReference,
     ReferenceRef,
-    oclinEcoreCST::ReferenceCSRef,
-    oclinEcoreCST::EReferenceRef,
-    oclinEcoreCST::EDataType,
-    oclinEcoreCST::EDataTypeRef,
-    oclinEcoreCST::EClassifier,
-    oclinEcoreCST::EClass,
-    oclinEcoreCST::EAttribute,
-    oclinEcoreCST::AttributeRef,
+    oclinEcoreCST_ReferenceCSRef,
+    oclinEcoreCST_EReferenceRef,
+    oclinEcoreCST_EDataType,
+    oclinEcoreCST_EDataTypeRef,
+    oclinEcoreCST_EClassifier,
+    oclinEcoreCST_EClass,
+    oclinEcoreCST_EAttribute,
+    oclinEcoreCST_AttributeRef,
     AttributeRef,
-    oclinEcoreCST::EAttributeRef,
-    oclinEcoreCST::AttributeCSRef,
+    oclinEcoreCST_EAttributeRef,
+    oclinEcoreCST_AttributeCSRef,
     StructuralFeatureCS,
-    oclinEcoreCST::ReferenceCS,
-    oclinEcoreCST::AttributeCS,
-    oclinEcoreCST::DetailCS,
+    oclinEcoreCST_ReferenceCS,
+    oclinEcoreCST_AttributeCS,
+    oclinEcoreCST_DetailCS,
     ModelElementCS,
-    oclinEcoreCST::NamedElementCS,
-    oclinEcoreCST::AnnotationCS,
-    oclinEcoreCST::ClassifierRef,
+    oclinEcoreCST_NamedElementCS,
+    oclinEcoreCST_AnnotationCS,
+    oclinEcoreCST_ClassifierRef,
     NamedElementCS,
-    oclinEcoreCST::TypedElementCS,
-    oclinEcoreCST::PackageCS,
-    oclinEcoreCST::ConstraintCS,
-    oclinEcoreCST::EnumLiteralCS,
-    oclinEcoreCST::TypeParameterCS,
-    oclinEcoreCST::ClassifierCS,
+    oclinEcoreCST_EnumLiteralCS,
+    oclinEcoreCST_PackageCS,
+    oclinEcoreCST_TypedElementCS,
+    oclinEcoreCST_TypeParameterCS,
+    oclinEcoreCST_ConstraintCS,
+    oclinEcoreCST_ClassifierCS,
     ClassifierRef,
-    oclinEcoreCST::ClassifierCSRef,
-    oclinEcoreCST::EClassifierRef,
-    oclinEcoreCST::DataTypeRef,
+    oclinEcoreCST_EClassifierRef,
+    oclinEcoreCST_DataTypeRef,
+    oclinEcoreCST_ClassifierCSRef,
     ClassRef,
-    oclinEcoreCST::EClassRef,
-    oclinEcoreCST::ClassCSRef,
-    oclinEcoreCST::StructuralFeatureCS,
-    oclinEcoreCST::OperationCS,
-    oclinEcoreCST::ClassRef,
+    oclinEcoreCST_EClassRef,
+    oclinEcoreCST_ClassCSRef,
+    oclinEcoreCST_StructuralFeatureCS,
+    oclinEcoreCST_OperationCS,
+    oclinEcoreCST_ClassRef,
     ClassifierCS,
-    oclinEcoreCST::DataTypeOrEnumCS,
-    oclinEcoreCST::ClassCS,
+    oclinEcoreCST_DataTypeOrEnumCS,
+    oclinEcoreCST_ClassCS,
 )
 
 # =============================================================================
@@ -67,37 +67,37 @@ from classes import (
 
 
 
-def test_oclinecorecst::referenceref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ReferenceRef)
+def test_oclinecorecst_referenceref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ReferenceRef)
 
 
-def test_oclinecorecst::referenceref_constructor_exists():
-    assert callable(oclinEcoreCST::ReferenceRef.__init__)
+def test_oclinecorecst_referenceref_constructor_exists():
+    assert callable(oclinEcoreCST_ReferenceRef.__init__)
 
 
-def test_oclinecorecst::referenceref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ReferenceRef.__init__)
+def test_oclinecorecst_referenceref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ReferenceRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::importcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ImportCS)
+def test_oclinecorecst_importcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ImportCS)
 
 
-def test_oclinecorecst::importcs_constructor_exists():
-    assert callable(oclinEcoreCST::ImportCS.__init__)
+def test_oclinecorecst_importcs_constructor_exists():
+    assert callable(oclinEcoreCST_ImportCS.__init__)
 
 
-def test_oclinecorecst::importcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ImportCS.__init__)
+def test_oclinecorecst_importcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ImportCS.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_oclinecorecst::importcs_has_importedNamespace():
-    assert hasattr(oclinEcoreCST::ImportCS, "importedNamespace")
+def test_oclinecorecst_importcs_has_importedNamespace():
+    assert hasattr(oclinEcoreCST_ImportCS, "importedNamespace")
     descriptor = None
-    for klass in oclinEcoreCST::ImportCS.__mro__:
+    for klass in oclinEcoreCST_ImportCS.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -105,16 +105,16 @@ def test_oclinecorecst::importcs_has_importedNamespace():
 
 
 
-def test_oclinecorecst::documentcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::DocumentCS)
+def test_oclinecorecst_documentcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_DocumentCS)
 
 
-def test_oclinecorecst::documentcs_constructor_exists():
-    assert callable(oclinEcoreCST::DocumentCS.__init__)
+def test_oclinecorecst_documentcs_constructor_exists():
+    assert callable(oclinEcoreCST_DocumentCS.__init__)
 
 
-def test_oclinecorecst::documentcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::DocumentCS.__init__)
+def test_oclinecorecst_documentcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_DocumentCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -133,16 +133,16 @@ def test_datatyperef_constructor_args():
 
 
 
-def test_oclinecorecst::datatypecsref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::DataTypeCSRef)
+def test_oclinecorecst_datatypecsref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_DataTypeCSRef)
 
 
-def test_oclinecorecst::datatypecsref_constructor_exists():
-    assert callable(oclinEcoreCST::DataTypeCSRef.__init__)
+def test_oclinecorecst_datatypecsref_constructor_exists():
+    assert callable(oclinEcoreCST_DataTypeCSRef.__init__)
 
 
-def test_oclinecorecst::datatypecsref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::DataTypeCSRef.__init__)
+def test_oclinecorecst_datatypecsref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_DataTypeCSRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -161,30 +161,30 @@ def test_datatypeorenumcs_constructor_args():
 
 
 
-def test_oclinecorecst::datatypecs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::DataTypeCS)
+def test_oclinecorecst_datatypecs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_DataTypeCS)
 
 
-def test_oclinecorecst::datatypecs_constructor_exists():
-    assert callable(oclinEcoreCST::DataTypeCS.__init__)
+def test_oclinecorecst_datatypecs_constructor_exists():
+    assert callable(oclinEcoreCST_DataTypeCS.__init__)
 
 
-def test_oclinecorecst::datatypecs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::DataTypeCS.__init__)
+def test_oclinecorecst_datatypecs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_DataTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::oclexpressioncs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::OclExpressionCS)
+def test_oclinecorecst_oclexpressioncs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_OclExpressionCS)
 
 
-def test_oclinecorecst::oclexpressioncs_constructor_exists():
-    assert callable(oclinEcoreCST::OclExpressionCS.__init__)
+def test_oclinecorecst_oclexpressioncs_constructor_exists():
+    assert callable(oclinEcoreCST_OclExpressionCS.__init__)
 
 
-def test_oclinecorecst::oclexpressioncs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::OclExpressionCS.__init__)
+def test_oclinecorecst_oclexpressioncs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_OclExpressionCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -203,58 +203,58 @@ def test_typedelementcs_constructor_args():
 
 
 
-def test_oclinecorecst::parametercs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ParameterCS)
+def test_oclinecorecst_parametercs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ParameterCS)
 
 
-def test_oclinecorecst::parametercs_constructor_exists():
-    assert callable(oclinEcoreCST::ParameterCS.__init__)
+def test_oclinecorecst_parametercs_constructor_exists():
+    assert callable(oclinEcoreCST_ParameterCS.__init__)
 
 
-def test_oclinecorecst::parametercs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ParameterCS.__init__)
+def test_oclinecorecst_parametercs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ParameterCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::modelelementcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ModelElementCS)
+def test_oclinecorecst_modelelementcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ModelElementCS)
 
 
-def test_oclinecorecst::modelelementcs_constructor_exists():
-    assert callable(oclinEcoreCST::ModelElementCS.__init__)
+def test_oclinecorecst_modelelementcs_constructor_exists():
+    assert callable(oclinEcoreCST_ModelElementCS.__init__)
 
 
-def test_oclinecorecst::modelelementcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ModelElementCS.__init__)
+def test_oclinecorecst_modelelementcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ModelElementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::enumcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EnumCS)
+def test_oclinecorecst_enumcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EnumCS)
 
 
-def test_oclinecorecst::enumcs_constructor_exists():
-    assert callable(oclinEcoreCST::EnumCS.__init__)
+def test_oclinecorecst_enumcs_constructor_exists():
+    assert callable(oclinEcoreCST_EnumCS.__init__)
 
 
-def test_oclinecorecst::enumcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EnumCS.__init__)
+def test_oclinecorecst_enumcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EnumCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::ereference_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EReference)
+def test_oclinecorecst_ereference_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EReference)
 
 
-def test_oclinecorecst::ereference_constructor_exists():
-    assert callable(oclinEcoreCST::EReference.__init__)
+def test_oclinecorecst_ereference_constructor_exists():
+    assert callable(oclinEcoreCST_EReference.__init__)
 
 
-def test_oclinecorecst::ereference_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EReference.__init__)
+def test_oclinecorecst_ereference_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -273,114 +273,114 @@ def test_referenceref_constructor_args():
 
 
 
-def test_oclinecorecst::referencecsref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ReferenceCSRef)
+def test_oclinecorecst_referencecsref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ReferenceCSRef)
 
 
-def test_oclinecorecst::referencecsref_constructor_exists():
-    assert callable(oclinEcoreCST::ReferenceCSRef.__init__)
+def test_oclinecorecst_referencecsref_constructor_exists():
+    assert callable(oclinEcoreCST_ReferenceCSRef.__init__)
 
 
-def test_oclinecorecst::referencecsref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ReferenceCSRef.__init__)
+def test_oclinecorecst_referencecsref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ReferenceCSRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::ereferenceref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EReferenceRef)
+def test_oclinecorecst_ereferenceref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EReferenceRef)
 
 
-def test_oclinecorecst::ereferenceref_constructor_exists():
-    assert callable(oclinEcoreCST::EReferenceRef.__init__)
+def test_oclinecorecst_ereferenceref_constructor_exists():
+    assert callable(oclinEcoreCST_EReferenceRef.__init__)
 
 
-def test_oclinecorecst::ereferenceref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EReferenceRef.__init__)
+def test_oclinecorecst_ereferenceref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EReferenceRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::edatatype_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EDataType)
+def test_oclinecorecst_edatatype_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EDataType)
 
 
-def test_oclinecorecst::edatatype_constructor_exists():
-    assert callable(oclinEcoreCST::EDataType.__init__)
+def test_oclinecorecst_edatatype_constructor_exists():
+    assert callable(oclinEcoreCST_EDataType.__init__)
 
 
-def test_oclinecorecst::edatatype_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EDataType.__init__)
+def test_oclinecorecst_edatatype_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::edatatyperef_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EDataTypeRef)
+def test_oclinecorecst_edatatyperef_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EDataTypeRef)
 
 
-def test_oclinecorecst::edatatyperef_constructor_exists():
-    assert callable(oclinEcoreCST::EDataTypeRef.__init__)
+def test_oclinecorecst_edatatyperef_constructor_exists():
+    assert callable(oclinEcoreCST_EDataTypeRef.__init__)
 
 
-def test_oclinecorecst::edatatyperef_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EDataTypeRef.__init__)
+def test_oclinecorecst_edatatyperef_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EDataTypeRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EClassifier)
+def test_oclinecorecst_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EClassifier)
 
 
-def test_oclinecorecst::eclassifier_constructor_exists():
-    assert callable(oclinEcoreCST::EClassifier.__init__)
+def test_oclinecorecst_eclassifier_constructor_exists():
+    assert callable(oclinEcoreCST_EClassifier.__init__)
 
 
-def test_oclinecorecst::eclassifier_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EClassifier.__init__)
+def test_oclinecorecst_eclassifier_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::eclass_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EClass)
+def test_oclinecorecst_eclass_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EClass)
 
 
-def test_oclinecorecst::eclass_constructor_exists():
-    assert callable(oclinEcoreCST::EClass.__init__)
+def test_oclinecorecst_eclass_constructor_exists():
+    assert callable(oclinEcoreCST_EClass.__init__)
 
 
-def test_oclinecorecst::eclass_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EClass.__init__)
+def test_oclinecorecst_eclass_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::eattribute_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EAttribute)
+def test_oclinecorecst_eattribute_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EAttribute)
 
 
-def test_oclinecorecst::eattribute_constructor_exists():
-    assert callable(oclinEcoreCST::EAttribute.__init__)
+def test_oclinecorecst_eattribute_constructor_exists():
+    assert callable(oclinEcoreCST_EAttribute.__init__)
 
 
-def test_oclinecorecst::eattribute_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EAttribute.__init__)
+def test_oclinecorecst_eattribute_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::attributeref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::AttributeRef)
+def test_oclinecorecst_attributeref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_AttributeRef)
 
 
-def test_oclinecorecst::attributeref_constructor_exists():
-    assert callable(oclinEcoreCST::AttributeRef.__init__)
+def test_oclinecorecst_attributeref_constructor_exists():
+    assert callable(oclinEcoreCST_AttributeRef.__init__)
 
 
-def test_oclinecorecst::attributeref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::AttributeRef.__init__)
+def test_oclinecorecst_attributeref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_AttributeRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -399,30 +399,30 @@ def test_attributeref_constructor_args():
 
 
 
-def test_oclinecorecst::eattributeref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EAttributeRef)
+def test_oclinecorecst_eattributeref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EAttributeRef)
 
 
-def test_oclinecorecst::eattributeref_constructor_exists():
-    assert callable(oclinEcoreCST::EAttributeRef.__init__)
+def test_oclinecorecst_eattributeref_constructor_exists():
+    assert callable(oclinEcoreCST_EAttributeRef.__init__)
 
 
-def test_oclinecorecst::eattributeref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EAttributeRef.__init__)
+def test_oclinecorecst_eattributeref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EAttributeRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::attributecsref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::AttributeCSRef)
+def test_oclinecorecst_attributecsref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_AttributeCSRef)
 
 
-def test_oclinecorecst::attributecsref_constructor_exists():
-    assert callable(oclinEcoreCST::AttributeCSRef.__init__)
+def test_oclinecorecst_attributecsref_constructor_exists():
+    assert callable(oclinEcoreCST_AttributeCSRef.__init__)
 
 
-def test_oclinecorecst::attributecsref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::AttributeCSRef.__init__)
+def test_oclinecorecst_attributecsref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_AttributeCSRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -441,23 +441,23 @@ def test_structuralfeaturecs_constructor_args():
 
 
 
-def test_oclinecorecst::referencecs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ReferenceCS)
+def test_oclinecorecst_referencecs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ReferenceCS)
 
 
-def test_oclinecorecst::referencecs_constructor_exists():
-    assert callable(oclinEcoreCST::ReferenceCS.__init__)
+def test_oclinecorecst_referencecs_constructor_exists():
+    assert callable(oclinEcoreCST_ReferenceCS.__init__)
 
 
-def test_oclinecorecst::referencecs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ReferenceCS.__init__)
+def test_oclinecorecst_referencecs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ReferenceCS.__init__)
     params = list(sig.parameters.keys())
     assert "containment" in params, "Missing parameter 'containment'"
 
-def test_oclinecorecst::referencecs_has_containment():
-    assert hasattr(oclinEcoreCST::ReferenceCS, "containment")
+def test_oclinecorecst_referencecs_has_containment():
+    assert hasattr(oclinEcoreCST_ReferenceCS, "containment")
     descriptor = None
-    for klass in oclinEcoreCST::ReferenceCS.__mro__:
+    for klass in oclinEcoreCST_ReferenceCS.__mro__:
         if "containment" in klass.__dict__:
             descriptor = klass.__dict__["containment"]
             break
@@ -465,59 +465,59 @@ def test_oclinecorecst::referencecs_has_containment():
 
 
 
-def test_oclinecorecst::attributecs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::AttributeCS)
+def test_oclinecorecst_attributecs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_AttributeCS)
 
 
-def test_oclinecorecst::attributecs_constructor_exists():
-    assert callable(oclinEcoreCST::AttributeCS.__init__)
+def test_oclinecorecst_attributecs_constructor_exists():
+    assert callable(oclinEcoreCST_AttributeCS.__init__)
 
 
-def test_oclinecorecst::attributecs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::AttributeCS.__init__)
+def test_oclinecorecst_attributecs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_AttributeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::detailcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::DetailCS)
+def test_oclinecorecst_detailcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_DetailCS)
 
 
-def test_oclinecorecst::detailcs_constructor_exists():
-    assert callable(oclinEcoreCST::DetailCS.__init__)
+def test_oclinecorecst_detailcs_constructor_exists():
+    assert callable(oclinEcoreCST_DetailCS.__init__)
 
 
-def test_oclinecorecst::detailcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::DetailCS.__init__)
+def test_oclinecorecst_detailcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_DetailCS.__init__)
     params = list(sig.parameters.keys())
+    assert "stringName" in params, "Missing parameter 'stringName'"
     assert "value" in params, "Missing parameter 'value'"
     assert "idName" in params, "Missing parameter 'idName'"
-    assert "stringName" in params, "Missing parameter 'stringName'"
 
-def test_oclinecorecst::detailcs_has_value():
-    assert hasattr(oclinEcoreCST::DetailCS, "value")
+def test_oclinecorecst_detailcs_has_stringName():
+    assert hasattr(oclinEcoreCST_DetailCS, "stringName")
     descriptor = None
-    for klass in oclinEcoreCST::DetailCS.__mro__:
+    for klass in oclinEcoreCST_DetailCS.__mro__:
+        if "stringName" in klass.__dict__:
+            descriptor = klass.__dict__["stringName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_oclinecorecst_detailcs_has_value():
+    assert hasattr(oclinEcoreCST_DetailCS, "value")
+    descriptor = None
+    for klass in oclinEcoreCST_DetailCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_oclinecorecst::detailcs_has_idName():
-    assert hasattr(oclinEcoreCST::DetailCS, "idName")
+def test_oclinecorecst_detailcs_has_idName():
+    assert hasattr(oclinEcoreCST_DetailCS, "idName")
     descriptor = None
-    for klass in oclinEcoreCST::DetailCS.__mro__:
+    for klass in oclinEcoreCST_DetailCS.__mro__:
         if "idName" in klass.__dict__:
             descriptor = klass.__dict__["idName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oclinecorecst::detailcs_has_stringName():
-    assert hasattr(oclinEcoreCST::DetailCS, "stringName")
-    descriptor = None
-    for klass in oclinEcoreCST::DetailCS.__mro__:
-        if "stringName" in klass.__dict__:
-            descriptor = klass.__dict__["stringName"]
             break
     assert isinstance(descriptor, property)
 
@@ -537,23 +537,23 @@ def test_modelelementcs_constructor_args():
 
 
 
-def test_oclinecorecst::namedelementcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::NamedElementCS)
+def test_oclinecorecst_namedelementcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_NamedElementCS)
 
 
-def test_oclinecorecst::namedelementcs_constructor_exists():
-    assert callable(oclinEcoreCST::NamedElementCS.__init__)
+def test_oclinecorecst_namedelementcs_constructor_exists():
+    assert callable(oclinEcoreCST_NamedElementCS.__init__)
 
 
-def test_oclinecorecst::namedelementcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::NamedElementCS.__init__)
+def test_oclinecorecst_namedelementcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_NamedElementCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_oclinecorecst::namedelementcs_has_name():
-    assert hasattr(oclinEcoreCST::NamedElementCS, "name")
+def test_oclinecorecst_namedelementcs_has_name():
+    assert hasattr(oclinEcoreCST_NamedElementCS, "name")
     descriptor = None
-    for klass in oclinEcoreCST::NamedElementCS.__mro__:
+    for klass in oclinEcoreCST_NamedElementCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -561,33 +561,33 @@ def test_oclinecorecst::namedelementcs_has_name():
 
 
 
-def test_oclinecorecst::annotationcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::AnnotationCS)
+def test_oclinecorecst_annotationcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_AnnotationCS)
 
 
-def test_oclinecorecst::annotationcs_constructor_exists():
-    assert callable(oclinEcoreCST::AnnotationCS.__init__)
+def test_oclinecorecst_annotationcs_constructor_exists():
+    assert callable(oclinEcoreCST_AnnotationCS.__init__)
 
 
-def test_oclinecorecst::annotationcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::AnnotationCS.__init__)
+def test_oclinecorecst_annotationcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_AnnotationCS.__init__)
     params = list(sig.parameters.keys())
     assert "stringSource" in params, "Missing parameter 'stringSource'"
     assert "idSource" in params, "Missing parameter 'idSource'"
 
-def test_oclinecorecst::annotationcs_has_stringSource():
-    assert hasattr(oclinEcoreCST::AnnotationCS, "stringSource")
+def test_oclinecorecst_annotationcs_has_stringSource():
+    assert hasattr(oclinEcoreCST_AnnotationCS, "stringSource")
     descriptor = None
-    for klass in oclinEcoreCST::AnnotationCS.__mro__:
+    for klass in oclinEcoreCST_AnnotationCS.__mro__:
         if "stringSource" in klass.__dict__:
             descriptor = klass.__dict__["stringSource"]
             break
     assert isinstance(descriptor, property)
 
-def test_oclinecorecst::annotationcs_has_idSource():
-    assert hasattr(oclinEcoreCST::AnnotationCS, "idSource")
+def test_oclinecorecst_annotationcs_has_idSource():
+    assert hasattr(oclinEcoreCST_AnnotationCS, "idSource")
     descriptor = None
-    for klass in oclinEcoreCST::AnnotationCS.__mro__:
+    for klass in oclinEcoreCST_AnnotationCS.__mro__:
         if "idSource" in klass.__dict__:
             descriptor = klass.__dict__["idSource"]
             break
@@ -595,16 +595,16 @@ def test_oclinecorecst::annotationcs_has_idSource():
 
 
 
-def test_oclinecorecst::classifierref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ClassifierRef)
+def test_oclinecorecst_classifierref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ClassifierRef)
 
 
-def test_oclinecorecst::classifierref_constructor_exists():
-    assert callable(oclinEcoreCST::ClassifierRef.__init__)
+def test_oclinecorecst_classifierref_constructor_exists():
+    assert callable(oclinEcoreCST_ClassifierRef.__init__)
 
 
-def test_oclinecorecst::classifierref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ClassifierRef.__init__)
+def test_oclinecorecst_classifierref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ClassifierRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -623,115 +623,23 @@ def test_namedelementcs_constructor_args():
 
 
 
-def test_oclinecorecst::typedelementcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::TypedElementCS)
+def test_oclinecorecst_enumliteralcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EnumLiteralCS)
 
 
-def test_oclinecorecst::typedelementcs_constructor_exists():
-    assert callable(oclinEcoreCST::TypedElementCS.__init__)
+def test_oclinecorecst_enumliteralcs_constructor_exists():
+    assert callable(oclinEcoreCST_EnumLiteralCS.__init__)
 
 
-def test_oclinecorecst::typedelementcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::TypedElementCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "multiplicity" in params, "Missing parameter 'multiplicity'"
-    assert "upper" in params, "Missing parameter 'upper'"
-    assert "qualifiers" in params, "Missing parameter 'qualifiers'"
-    assert "lower" in params, "Missing parameter 'lower'"
-
-def test_oclinecorecst::typedelementcs_has_multiplicity():
-    assert hasattr(oclinEcoreCST::TypedElementCS, "multiplicity")
-    descriptor = None
-    for klass in oclinEcoreCST::TypedElementCS.__mro__:
-        if "multiplicity" in klass.__dict__:
-            descriptor = klass.__dict__["multiplicity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oclinecorecst::typedelementcs_has_upper():
-    assert hasattr(oclinEcoreCST::TypedElementCS, "upper")
-    descriptor = None
-    for klass in oclinEcoreCST::TypedElementCS.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oclinecorecst::typedelementcs_has_qualifiers():
-    assert hasattr(oclinEcoreCST::TypedElementCS, "qualifiers")
-    descriptor = None
-    for klass in oclinEcoreCST::TypedElementCS.__mro__:
-        if "qualifiers" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oclinecorecst::typedelementcs_has_lower():
-    assert hasattr(oclinEcoreCST::TypedElementCS, "lower")
-    descriptor = None
-    for klass in oclinEcoreCST::TypedElementCS.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_oclinecorecst::packagecs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::PackageCS)
-
-
-def test_oclinecorecst::packagecs_constructor_exists():
-    assert callable(oclinEcoreCST::PackageCS.__init__)
-
-
-def test_oclinecorecst::packagecs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::PackageCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclinecorecst::constraintcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ConstraintCS)
-
-
-def test_oclinecorecst::constraintcs_constructor_exists():
-    assert callable(oclinEcoreCST::ConstraintCS.__init__)
-
-
-def test_oclinecorecst::constraintcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ConstraintCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "stereotype" in params, "Missing parameter 'stereotype'"
-
-def test_oclinecorecst::constraintcs_has_stereotype():
-    assert hasattr(oclinEcoreCST::ConstraintCS, "stereotype")
-    descriptor = None
-    for klass in oclinEcoreCST::ConstraintCS.__mro__:
-        if "stereotype" in klass.__dict__:
-            descriptor = klass.__dict__["stereotype"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_oclinecorecst::enumliteralcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EnumLiteralCS)
-
-
-def test_oclinecorecst::enumliteralcs_constructor_exists():
-    assert callable(oclinEcoreCST::EnumLiteralCS.__init__)
-
-
-def test_oclinecorecst::enumliteralcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EnumLiteralCS.__init__)
+def test_oclinecorecst_enumliteralcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EnumLiteralCS.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_oclinecorecst::enumliteralcs_has_value():
-    assert hasattr(oclinEcoreCST::EnumLiteralCS, "value")
+def test_oclinecorecst_enumliteralcs_has_value():
+    assert hasattr(oclinEcoreCST_EnumLiteralCS, "value")
     descriptor = None
-    for klass in oclinEcoreCST::EnumLiteralCS.__mro__:
+    for klass in oclinEcoreCST_EnumLiteralCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -739,47 +647,139 @@ def test_oclinecorecst::enumliteralcs_has_value():
 
 
 
-def test_oclinecorecst::typeparametercs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::TypeParameterCS)
+def test_oclinecorecst_packagecs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_PackageCS)
 
 
-def test_oclinecorecst::typeparametercs_constructor_exists():
-    assert callable(oclinEcoreCST::TypeParameterCS.__init__)
+def test_oclinecorecst_packagecs_constructor_exists():
+    assert callable(oclinEcoreCST_PackageCS.__init__)
 
 
-def test_oclinecorecst::typeparametercs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::TypeParameterCS.__init__)
+def test_oclinecorecst_packagecs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_PackageCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::classifiercs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ClassifierCS)
+def test_oclinecorecst_typedelementcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_TypedElementCS)
 
 
-def test_oclinecorecst::classifiercs_constructor_exists():
-    assert callable(oclinEcoreCST::ClassifierCS.__init__)
+def test_oclinecorecst_typedelementcs_constructor_exists():
+    assert callable(oclinEcoreCST_TypedElementCS.__init__)
 
 
-def test_oclinecorecst::classifiercs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ClassifierCS.__init__)
+def test_oclinecorecst_typedelementcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_TypedElementCS.__init__)
     params = list(sig.parameters.keys())
+    assert "upper" in params, "Missing parameter 'upper'"
+    assert "multiplicity" in params, "Missing parameter 'multiplicity'"
     assert "qualifiers" in params, "Missing parameter 'qualifiers'"
-    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
+    assert "lower" in params, "Missing parameter 'lower'"
 
-def test_oclinecorecst::classifiercs_has_qualifiers():
-    assert hasattr(oclinEcoreCST::ClassifierCS, "qualifiers")
+def test_oclinecorecst_typedelementcs_has_upper():
+    assert hasattr(oclinEcoreCST_TypedElementCS, "upper")
     descriptor = None
-    for klass in oclinEcoreCST::ClassifierCS.__mro__:
+    for klass in oclinEcoreCST_TypedElementCS.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_oclinecorecst_typedelementcs_has_multiplicity():
+    assert hasattr(oclinEcoreCST_TypedElementCS, "multiplicity")
+    descriptor = None
+    for klass in oclinEcoreCST_TypedElementCS.__mro__:
+        if "multiplicity" in klass.__dict__:
+            descriptor = klass.__dict__["multiplicity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_oclinecorecst_typedelementcs_has_qualifiers():
+    assert hasattr(oclinEcoreCST_TypedElementCS, "qualifiers")
+    descriptor = None
+    for klass in oclinEcoreCST_TypedElementCS.__mro__:
         if "qualifiers" in klass.__dict__:
             descriptor = klass.__dict__["qualifiers"]
             break
     assert isinstance(descriptor, property)
 
-def test_oclinecorecst::classifiercs_has_instanceClassName():
-    assert hasattr(oclinEcoreCST::ClassifierCS, "instanceClassName")
+def test_oclinecorecst_typedelementcs_has_lower():
+    assert hasattr(oclinEcoreCST_TypedElementCS, "lower")
     descriptor = None
-    for klass in oclinEcoreCST::ClassifierCS.__mro__:
+    for klass in oclinEcoreCST_TypedElementCS.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_oclinecorecst_typeparametercs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_TypeParameterCS)
+
+
+def test_oclinecorecst_typeparametercs_constructor_exists():
+    assert callable(oclinEcoreCST_TypeParameterCS.__init__)
+
+
+def test_oclinecorecst_typeparametercs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_TypeParameterCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclinecorecst_constraintcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ConstraintCS)
+
+
+def test_oclinecorecst_constraintcs_constructor_exists():
+    assert callable(oclinEcoreCST_ConstraintCS.__init__)
+
+
+def test_oclinecorecst_constraintcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ConstraintCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "stereotype" in params, "Missing parameter 'stereotype'"
+
+def test_oclinecorecst_constraintcs_has_stereotype():
+    assert hasattr(oclinEcoreCST_ConstraintCS, "stereotype")
+    descriptor = None
+    for klass in oclinEcoreCST_ConstraintCS.__mro__:
+        if "stereotype" in klass.__dict__:
+            descriptor = klass.__dict__["stereotype"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_oclinecorecst_classifiercs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ClassifierCS)
+
+
+def test_oclinecorecst_classifiercs_constructor_exists():
+    assert callable(oclinEcoreCST_ClassifierCS.__init__)
+
+
+def test_oclinecorecst_classifiercs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ClassifierCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "qualifiers" in params, "Missing parameter 'qualifiers'"
+    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
+
+def test_oclinecorecst_classifiercs_has_qualifiers():
+    assert hasattr(oclinEcoreCST_ClassifierCS, "qualifiers")
+    descriptor = None
+    for klass in oclinEcoreCST_ClassifierCS.__mro__:
+        if "qualifiers" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiers"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_oclinecorecst_classifiercs_has_instanceClassName():
+    assert hasattr(oclinEcoreCST_ClassifierCS, "instanceClassName")
+    descriptor = None
+    for klass in oclinEcoreCST_ClassifierCS.__mro__:
         if "instanceClassName" in klass.__dict__:
             descriptor = klass.__dict__["instanceClassName"]
             break
@@ -801,44 +801,44 @@ def test_classifierref_constructor_args():
 
 
 
-def test_oclinecorecst::classifiercsref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ClassifierCSRef)
+def test_oclinecorecst_eclassifierref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EClassifierRef)
 
 
-def test_oclinecorecst::classifiercsref_constructor_exists():
-    assert callable(oclinEcoreCST::ClassifierCSRef.__init__)
+def test_oclinecorecst_eclassifierref_constructor_exists():
+    assert callable(oclinEcoreCST_EClassifierRef.__init__)
 
 
-def test_oclinecorecst::classifiercsref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ClassifierCSRef.__init__)
+def test_oclinecorecst_eclassifierref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EClassifierRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::eclassifierref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EClassifierRef)
+def test_oclinecorecst_datatyperef_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_DataTypeRef)
 
 
-def test_oclinecorecst::eclassifierref_constructor_exists():
-    assert callable(oclinEcoreCST::EClassifierRef.__init__)
+def test_oclinecorecst_datatyperef_constructor_exists():
+    assert callable(oclinEcoreCST_DataTypeRef.__init__)
 
 
-def test_oclinecorecst::eclassifierref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EClassifierRef.__init__)
+def test_oclinecorecst_datatyperef_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_DataTypeRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::datatyperef_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::DataTypeRef)
+def test_oclinecorecst_classifiercsref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ClassifierCSRef)
 
 
-def test_oclinecorecst::datatyperef_constructor_exists():
-    assert callable(oclinEcoreCST::DataTypeRef.__init__)
+def test_oclinecorecst_classifiercsref_constructor_exists():
+    assert callable(oclinEcoreCST_ClassifierCSRef.__init__)
 
 
-def test_oclinecorecst::datatyperef_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::DataTypeRef.__init__)
+def test_oclinecorecst_classifiercsref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ClassifierCSRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -857,72 +857,72 @@ def test_classref_constructor_args():
 
 
 
-def test_oclinecorecst::eclassref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::EClassRef)
+def test_oclinecorecst_eclassref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_EClassRef)
 
 
-def test_oclinecorecst::eclassref_constructor_exists():
-    assert callable(oclinEcoreCST::EClassRef.__init__)
+def test_oclinecorecst_eclassref_constructor_exists():
+    assert callable(oclinEcoreCST_EClassRef.__init__)
 
 
-def test_oclinecorecst::eclassref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::EClassRef.__init__)
+def test_oclinecorecst_eclassref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_EClassRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::classcsref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ClassCSRef)
+def test_oclinecorecst_classcsref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ClassCSRef)
 
 
-def test_oclinecorecst::classcsref_constructor_exists():
-    assert callable(oclinEcoreCST::ClassCSRef.__init__)
+def test_oclinecorecst_classcsref_constructor_exists():
+    assert callable(oclinEcoreCST_ClassCSRef.__init__)
 
 
-def test_oclinecorecst::classcsref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ClassCSRef.__init__)
+def test_oclinecorecst_classcsref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ClassCSRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::structuralfeaturecs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::StructuralFeatureCS)
+def test_oclinecorecst_structuralfeaturecs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_StructuralFeatureCS)
 
 
-def test_oclinecorecst::structuralfeaturecs_constructor_exists():
-    assert callable(oclinEcoreCST::StructuralFeatureCS.__init__)
+def test_oclinecorecst_structuralfeaturecs_constructor_exists():
+    assert callable(oclinEcoreCST_StructuralFeatureCS.__init__)
 
 
-def test_oclinecorecst::structuralfeaturecs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::StructuralFeatureCS.__init__)
+def test_oclinecorecst_structuralfeaturecs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_StructuralFeatureCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::operationcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::OperationCS)
+def test_oclinecorecst_operationcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_OperationCS)
 
 
-def test_oclinecorecst::operationcs_constructor_exists():
-    assert callable(oclinEcoreCST::OperationCS.__init__)
+def test_oclinecorecst_operationcs_constructor_exists():
+    assert callable(oclinEcoreCST_OperationCS.__init__)
 
 
-def test_oclinecorecst::operationcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::OperationCS.__init__)
+def test_oclinecorecst_operationcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_OperationCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::classref_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ClassRef)
+def test_oclinecorecst_classref_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ClassRef)
 
 
-def test_oclinecorecst::classref_constructor_exists():
-    assert callable(oclinEcoreCST::ClassRef.__init__)
+def test_oclinecorecst_classref_constructor_exists():
+    assert callable(oclinEcoreCST_ClassRef.__init__)
 
 
-def test_oclinecorecst::classref_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ClassRef.__init__)
+def test_oclinecorecst_classref_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ClassRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -941,30 +941,30 @@ def test_classifiercs_constructor_args():
 
 
 
-def test_oclinecorecst::datatypeorenumcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::DataTypeOrEnumCS)
+def test_oclinecorecst_datatypeorenumcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_DataTypeOrEnumCS)
 
 
-def test_oclinecorecst::datatypeorenumcs_constructor_exists():
-    assert callable(oclinEcoreCST::DataTypeOrEnumCS.__init__)
+def test_oclinecorecst_datatypeorenumcs_constructor_exists():
+    assert callable(oclinEcoreCST_DataTypeOrEnumCS.__init__)
 
 
-def test_oclinecorecst::datatypeorenumcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::DataTypeOrEnumCS.__init__)
+def test_oclinecorecst_datatypeorenumcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_DataTypeOrEnumCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclinecorecst::classcs_is_not_abstract():
-    assert not inspect.isabstract(oclinEcoreCST::ClassCS)
+def test_oclinecorecst_classcs_is_not_abstract():
+    assert not inspect.isabstract(oclinEcoreCST_ClassCS)
 
 
-def test_oclinecorecst::classcs_constructor_exists():
-    assert callable(oclinEcoreCST::ClassCS.__init__)
+def test_oclinecorecst_classcs_constructor_exists():
+    assert callable(oclinEcoreCST_ClassCS.__init__)
 
 
-def test_oclinecorecst::classcs_constructor_args():
-    sig = inspect.signature(oclinEcoreCST::ClassCS.__init__)
+def test_oclinecorecst_classcs_constructor_args():
+    sig = inspect.signature(oclinEcoreCST_ClassCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -979,153 +979,153 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-oclinEcoreCST::ReferenceRef_strategy = st.builds(
-    oclinEcoreCST::ReferenceRef,
+oclinEcoreCST_ReferenceRef_strategy = st.builds(
+    oclinEcoreCST_ReferenceRef,
 )
-oclinEcoreCST::ImportCS_strategy = st.builds(
-    oclinEcoreCST::ImportCS,
+oclinEcoreCST_ImportCS_strategy = st.builds(
+    oclinEcoreCST_ImportCS,
     importedNamespace=
         safe_text
 )
-oclinEcoreCST::DocumentCS_strategy = st.builds(
-    oclinEcoreCST::DocumentCS,
+oclinEcoreCST_DocumentCS_strategy = st.builds(
+    oclinEcoreCST_DocumentCS,
 )
 DataTypeRef_strategy = st.builds(
     DataTypeRef,
 )
-oclinEcoreCST::DataTypeCSRef_strategy = st.builds(
-    oclinEcoreCST::DataTypeCSRef,
+oclinEcoreCST_DataTypeCSRef_strategy = st.builds(
+    oclinEcoreCST_DataTypeCSRef,
 )
 DataTypeOrEnumCS_strategy = st.builds(
     DataTypeOrEnumCS,
 )
-oclinEcoreCST::DataTypeCS_strategy = st.builds(
-    oclinEcoreCST::DataTypeCS,
+oclinEcoreCST_DataTypeCS_strategy = st.builds(
+    oclinEcoreCST_DataTypeCS,
 )
-oclinEcoreCST::OclExpressionCS_strategy = st.builds(
-    oclinEcoreCST::OclExpressionCS,
+oclinEcoreCST_OclExpressionCS_strategy = st.builds(
+    oclinEcoreCST_OclExpressionCS,
 )
 TypedElementCS_strategy = st.builds(
     TypedElementCS,
 )
-oclinEcoreCST::ParameterCS_strategy = st.builds(
-    oclinEcoreCST::ParameterCS,
+oclinEcoreCST_ParameterCS_strategy = st.builds(
+    oclinEcoreCST_ParameterCS,
 )
-oclinEcoreCST::ModelElementCS_strategy = st.builds(
-    oclinEcoreCST::ModelElementCS,
+oclinEcoreCST_ModelElementCS_strategy = st.builds(
+    oclinEcoreCST_ModelElementCS,
 )
-oclinEcoreCST::EnumCS_strategy = st.builds(
-    oclinEcoreCST::EnumCS,
+oclinEcoreCST_EnumCS_strategy = st.builds(
+    oclinEcoreCST_EnumCS,
 )
-oclinEcoreCST::EReference_strategy = st.builds(
-    oclinEcoreCST::EReference,
+oclinEcoreCST_EReference_strategy = st.builds(
+    oclinEcoreCST_EReference,
 )
 ReferenceRef_strategy = st.builds(
     ReferenceRef,
 )
-oclinEcoreCST::ReferenceCSRef_strategy = st.builds(
-    oclinEcoreCST::ReferenceCSRef,
+oclinEcoreCST_ReferenceCSRef_strategy = st.builds(
+    oclinEcoreCST_ReferenceCSRef,
 )
-oclinEcoreCST::EReferenceRef_strategy = st.builds(
-    oclinEcoreCST::EReferenceRef,
+oclinEcoreCST_EReferenceRef_strategy = st.builds(
+    oclinEcoreCST_EReferenceRef,
 )
-oclinEcoreCST::EDataType_strategy = st.builds(
-    oclinEcoreCST::EDataType,
+oclinEcoreCST_EDataType_strategy = st.builds(
+    oclinEcoreCST_EDataType,
 )
-oclinEcoreCST::EDataTypeRef_strategy = st.builds(
-    oclinEcoreCST::EDataTypeRef,
+oclinEcoreCST_EDataTypeRef_strategy = st.builds(
+    oclinEcoreCST_EDataTypeRef,
 )
-oclinEcoreCST::EClassifier_strategy = st.builds(
-    oclinEcoreCST::EClassifier,
+oclinEcoreCST_EClassifier_strategy = st.builds(
+    oclinEcoreCST_EClassifier,
 )
-oclinEcoreCST::EClass_strategy = st.builds(
-    oclinEcoreCST::EClass,
+oclinEcoreCST_EClass_strategy = st.builds(
+    oclinEcoreCST_EClass,
 )
-oclinEcoreCST::EAttribute_strategy = st.builds(
-    oclinEcoreCST::EAttribute,
+oclinEcoreCST_EAttribute_strategy = st.builds(
+    oclinEcoreCST_EAttribute,
 )
-oclinEcoreCST::AttributeRef_strategy = st.builds(
-    oclinEcoreCST::AttributeRef,
+oclinEcoreCST_AttributeRef_strategy = st.builds(
+    oclinEcoreCST_AttributeRef,
 )
 AttributeRef_strategy = st.builds(
     AttributeRef,
 )
-oclinEcoreCST::EAttributeRef_strategy = st.builds(
-    oclinEcoreCST::EAttributeRef,
+oclinEcoreCST_EAttributeRef_strategy = st.builds(
+    oclinEcoreCST_EAttributeRef,
 )
-oclinEcoreCST::AttributeCSRef_strategy = st.builds(
-    oclinEcoreCST::AttributeCSRef,
+oclinEcoreCST_AttributeCSRef_strategy = st.builds(
+    oclinEcoreCST_AttributeCSRef,
 )
 StructuralFeatureCS_strategy = st.builds(
     StructuralFeatureCS,
 )
-oclinEcoreCST::ReferenceCS_strategy = st.builds(
-    oclinEcoreCST::ReferenceCS,
+oclinEcoreCST_ReferenceCS_strategy = st.builds(
+    oclinEcoreCST_ReferenceCS,
     containment=
         st.booleans()
 )
-oclinEcoreCST::AttributeCS_strategy = st.builds(
-    oclinEcoreCST::AttributeCS,
+oclinEcoreCST_AttributeCS_strategy = st.builds(
+    oclinEcoreCST_AttributeCS,
 )
-oclinEcoreCST::DetailCS_strategy = st.builds(
-    oclinEcoreCST::DetailCS,
+oclinEcoreCST_DetailCS_strategy = st.builds(
+    oclinEcoreCST_DetailCS,
+    stringName=
+        safe_text,
     value=
         safe_text,
     idName=
-        safe_text,
-    stringName=
         safe_text
 )
 ModelElementCS_strategy = st.builds(
     ModelElementCS,
 )
-oclinEcoreCST::NamedElementCS_strategy = st.builds(
-    oclinEcoreCST::NamedElementCS,
+oclinEcoreCST_NamedElementCS_strategy = st.builds(
+    oclinEcoreCST_NamedElementCS,
     name=
         safe_text
 )
-oclinEcoreCST::AnnotationCS_strategy = st.builds(
-    oclinEcoreCST::AnnotationCS,
+oclinEcoreCST_AnnotationCS_strategy = st.builds(
+    oclinEcoreCST_AnnotationCS,
     stringSource=
         safe_text,
     idSource=
         safe_text
 )
-oclinEcoreCST::ClassifierRef_strategy = st.builds(
-    oclinEcoreCST::ClassifierRef,
+oclinEcoreCST_ClassifierRef_strategy = st.builds(
+    oclinEcoreCST_ClassifierRef,
 )
 NamedElementCS_strategy = st.builds(
     NamedElementCS,
 )
-oclinEcoreCST::TypedElementCS_strategy = st.builds(
-    oclinEcoreCST::TypedElementCS,
-    multiplicity=
-        safe_text,
+oclinEcoreCST_EnumLiteralCS_strategy = st.builds(
+    oclinEcoreCST_EnumLiteralCS,
+    value=
+        st.integers()
+)
+oclinEcoreCST_PackageCS_strategy = st.builds(
+    oclinEcoreCST_PackageCS,
+)
+oclinEcoreCST_TypedElementCS_strategy = st.builds(
+    oclinEcoreCST_TypedElementCS,
     upper=
         st.integers(),
+    multiplicity=
+        safe_text,
     qualifiers=
         safe_text,
     lower=
         st.integers()
 )
-oclinEcoreCST::PackageCS_strategy = st.builds(
-    oclinEcoreCST::PackageCS,
+oclinEcoreCST_TypeParameterCS_strategy = st.builds(
+    oclinEcoreCST_TypeParameterCS,
 )
-oclinEcoreCST::ConstraintCS_strategy = st.builds(
-    oclinEcoreCST::ConstraintCS,
+oclinEcoreCST_ConstraintCS_strategy = st.builds(
+    oclinEcoreCST_ConstraintCS,
     stereotype=
         safe_text
 )
-oclinEcoreCST::EnumLiteralCS_strategy = st.builds(
-    oclinEcoreCST::EnumLiteralCS,
-    value=
-        st.integers()
-)
-oclinEcoreCST::TypeParameterCS_strategy = st.builds(
-    oclinEcoreCST::TypeParameterCS,
-)
-oclinEcoreCST::ClassifierCS_strategy = st.builds(
-    oclinEcoreCST::ClassifierCS,
+oclinEcoreCST_ClassifierCS_strategy = st.builds(
+    oclinEcoreCST_ClassifierCS,
     qualifiers=
         safe_text,
     instanceClassName=
@@ -1134,415 +1134,367 @@ oclinEcoreCST::ClassifierCS_strategy = st.builds(
 ClassifierRef_strategy = st.builds(
     ClassifierRef,
 )
-oclinEcoreCST::ClassifierCSRef_strategy = st.builds(
-    oclinEcoreCST::ClassifierCSRef,
+oclinEcoreCST_EClassifierRef_strategy = st.builds(
+    oclinEcoreCST_EClassifierRef,
 )
-oclinEcoreCST::EClassifierRef_strategy = st.builds(
-    oclinEcoreCST::EClassifierRef,
+oclinEcoreCST_DataTypeRef_strategy = st.builds(
+    oclinEcoreCST_DataTypeRef,
 )
-oclinEcoreCST::DataTypeRef_strategy = st.builds(
-    oclinEcoreCST::DataTypeRef,
+oclinEcoreCST_ClassifierCSRef_strategy = st.builds(
+    oclinEcoreCST_ClassifierCSRef,
 )
 ClassRef_strategy = st.builds(
     ClassRef,
 )
-oclinEcoreCST::EClassRef_strategy = st.builds(
-    oclinEcoreCST::EClassRef,
+oclinEcoreCST_EClassRef_strategy = st.builds(
+    oclinEcoreCST_EClassRef,
 )
-oclinEcoreCST::ClassCSRef_strategy = st.builds(
-    oclinEcoreCST::ClassCSRef,
+oclinEcoreCST_ClassCSRef_strategy = st.builds(
+    oclinEcoreCST_ClassCSRef,
 )
-oclinEcoreCST::StructuralFeatureCS_strategy = st.builds(
-    oclinEcoreCST::StructuralFeatureCS,
+oclinEcoreCST_StructuralFeatureCS_strategy = st.builds(
+    oclinEcoreCST_StructuralFeatureCS,
 )
-oclinEcoreCST::OperationCS_strategy = st.builds(
-    oclinEcoreCST::OperationCS,
+oclinEcoreCST_OperationCS_strategy = st.builds(
+    oclinEcoreCST_OperationCS,
 )
-oclinEcoreCST::ClassRef_strategy = st.builds(
-    oclinEcoreCST::ClassRef,
+oclinEcoreCST_ClassRef_strategy = st.builds(
+    oclinEcoreCST_ClassRef,
 )
 ClassifierCS_strategy = st.builds(
     ClassifierCS,
 )
-oclinEcoreCST::DataTypeOrEnumCS_strategy = st.builds(
-    oclinEcoreCST::DataTypeOrEnumCS,
+oclinEcoreCST_DataTypeOrEnumCS_strategy = st.builds(
+    oclinEcoreCST_DataTypeOrEnumCS,
 )
-oclinEcoreCST::ClassCS_strategy = st.builds(
-    oclinEcoreCST::ClassCS,
+oclinEcoreCST_ClassCS_strategy = st.builds(
+    oclinEcoreCST_ClassCS,
 )
 
-@given(instance=oclinEcoreCST::ReferenceRef_strategy)
+@given(instance=oclinEcoreCST_ReferenceRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::referenceref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ReferenceRef)
+def test_oclinecorecst_referenceref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ReferenceRef)
 
-@given(instance=oclinEcoreCST::ImportCS_strategy)
+@given(instance=oclinEcoreCST_ImportCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::importcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ImportCS)
-
-@given(instance=oclinEcoreCST::ImportCS_strategy)
-def test_oclinecorecst::importcs_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_oclinecorecst_importcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ImportCS)
 
 
-@given(instance=oclinEcoreCST::ImportCS_strategy)
-def test_oclinecorecst::importcs_importedNamespace_setter(instance):
+
+@given(instance=oclinEcoreCST_ImportCS_strategy)
+def test_oclinecorecst_importcs_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=oclinEcoreCST::DocumentCS_strategy)
+@given(instance=oclinEcoreCST_DocumentCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::documentcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::DocumentCS)
+def test_oclinecorecst_documentcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_DocumentCS)
 
 @given(instance=DataTypeRef_strategy)
 @settings(max_examples=50)
 def test_datatyperef_instantiation(instance):
     assert isinstance(instance, DataTypeRef)
 
-@given(instance=oclinEcoreCST::DataTypeCSRef_strategy)
+@given(instance=oclinEcoreCST_DataTypeCSRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::datatypecsref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::DataTypeCSRef)
+def test_oclinecorecst_datatypecsref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_DataTypeCSRef)
 
 @given(instance=DataTypeOrEnumCS_strategy)
 @settings(max_examples=50)
 def test_datatypeorenumcs_instantiation(instance):
     assert isinstance(instance, DataTypeOrEnumCS)
 
-@given(instance=oclinEcoreCST::DataTypeCS_strategy)
+@given(instance=oclinEcoreCST_DataTypeCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::datatypecs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::DataTypeCS)
+def test_oclinecorecst_datatypecs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_DataTypeCS)
 
-@given(instance=oclinEcoreCST::OclExpressionCS_strategy)
+@given(instance=oclinEcoreCST_OclExpressionCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::oclexpressioncs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::OclExpressionCS)
+def test_oclinecorecst_oclexpressioncs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_OclExpressionCS)
 
 @given(instance=TypedElementCS_strategy)
 @settings(max_examples=50)
 def test_typedelementcs_instantiation(instance):
     assert isinstance(instance, TypedElementCS)
 
-@given(instance=oclinEcoreCST::ParameterCS_strategy)
+@given(instance=oclinEcoreCST_ParameterCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::parametercs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ParameterCS)
+def test_oclinecorecst_parametercs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ParameterCS)
 
-@given(instance=oclinEcoreCST::ModelElementCS_strategy)
+@given(instance=oclinEcoreCST_ModelElementCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::modelelementcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ModelElementCS)
+def test_oclinecorecst_modelelementcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ModelElementCS)
 
-@given(instance=oclinEcoreCST::EnumCS_strategy)
+@given(instance=oclinEcoreCST_EnumCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::enumcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EnumCS)
+def test_oclinecorecst_enumcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EnumCS)
 
-@given(instance=oclinEcoreCST::EReference_strategy)
+@given(instance=oclinEcoreCST_EReference_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::ereference_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EReference)
+def test_oclinecorecst_ereference_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EReference)
 
 @given(instance=ReferenceRef_strategy)
 @settings(max_examples=50)
 def test_referenceref_instantiation(instance):
     assert isinstance(instance, ReferenceRef)
 
-@given(instance=oclinEcoreCST::ReferenceCSRef_strategy)
+@given(instance=oclinEcoreCST_ReferenceCSRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::referencecsref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ReferenceCSRef)
+def test_oclinecorecst_referencecsref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ReferenceCSRef)
 
-@given(instance=oclinEcoreCST::EReferenceRef_strategy)
+@given(instance=oclinEcoreCST_EReferenceRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::ereferenceref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EReferenceRef)
+def test_oclinecorecst_ereferenceref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EReferenceRef)
 
-@given(instance=oclinEcoreCST::EDataType_strategy)
+@given(instance=oclinEcoreCST_EDataType_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::edatatype_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EDataType)
+def test_oclinecorecst_edatatype_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EDataType)
 
-@given(instance=oclinEcoreCST::EDataTypeRef_strategy)
+@given(instance=oclinEcoreCST_EDataTypeRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::edatatyperef_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EDataTypeRef)
+def test_oclinecorecst_edatatyperef_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EDataTypeRef)
 
-@given(instance=oclinEcoreCST::EClassifier_strategy)
+@given(instance=oclinEcoreCST_EClassifier_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::eclassifier_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EClassifier)
+def test_oclinecorecst_eclassifier_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EClassifier)
 
-@given(instance=oclinEcoreCST::EClass_strategy)
+@given(instance=oclinEcoreCST_EClass_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::eclass_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EClass)
+def test_oclinecorecst_eclass_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EClass)
 
-@given(instance=oclinEcoreCST::EAttribute_strategy)
+@given(instance=oclinEcoreCST_EAttribute_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::eattribute_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EAttribute)
+def test_oclinecorecst_eattribute_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EAttribute)
 
-@given(instance=oclinEcoreCST::AttributeRef_strategy)
+@given(instance=oclinEcoreCST_AttributeRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::attributeref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::AttributeRef)
+def test_oclinecorecst_attributeref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_AttributeRef)
 
 @given(instance=AttributeRef_strategy)
 @settings(max_examples=50)
 def test_attributeref_instantiation(instance):
     assert isinstance(instance, AttributeRef)
 
-@given(instance=oclinEcoreCST::EAttributeRef_strategy)
+@given(instance=oclinEcoreCST_EAttributeRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::eattributeref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EAttributeRef)
+def test_oclinecorecst_eattributeref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EAttributeRef)
 
-@given(instance=oclinEcoreCST::AttributeCSRef_strategy)
+@given(instance=oclinEcoreCST_AttributeCSRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::attributecsref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::AttributeCSRef)
+def test_oclinecorecst_attributecsref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_AttributeCSRef)
 
 @given(instance=StructuralFeatureCS_strategy)
 @settings(max_examples=50)
 def test_structuralfeaturecs_instantiation(instance):
     assert isinstance(instance, StructuralFeatureCS)
 
-@given(instance=oclinEcoreCST::ReferenceCS_strategy)
+@given(instance=oclinEcoreCST_ReferenceCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::referencecs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ReferenceCS)
-
-@given(instance=oclinEcoreCST::ReferenceCS_strategy)
-def test_oclinecorecst::referencecs_containment_type(instance):
-    assert isinstance(instance.containment, bool)
+def test_oclinecorecst_referencecs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ReferenceCS)
 
 
-@given(instance=oclinEcoreCST::ReferenceCS_strategy)
-def test_oclinecorecst::referencecs_containment_setter(instance):
+
+@given(instance=oclinEcoreCST_ReferenceCS_strategy)
+def test_oclinecorecst_referencecs_containment_setter(instance):
     original = instance.containment
     instance.containment = original
     assert instance.containment == original
 
-@given(instance=oclinEcoreCST::AttributeCS_strategy)
+@given(instance=oclinEcoreCST_AttributeCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::attributecs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::AttributeCS)
+def test_oclinecorecst_attributecs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_AttributeCS)
 
-@given(instance=oclinEcoreCST::DetailCS_strategy)
+@given(instance=oclinEcoreCST_DetailCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::detailcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::DetailCS)
-
-@given(instance=oclinEcoreCST::DetailCS_strategy)
-def test_oclinecorecst::detailcs_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_oclinecorecst_detailcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_DetailCS)
 
 
-@given(instance=oclinEcoreCST::DetailCS_strategy)
-def test_oclinecorecst::detailcs_value_setter(instance):
+
+@given(instance=oclinEcoreCST_DetailCS_strategy)
+def test_oclinecorecst_detailcs_stringName_setter(instance):
+    original = instance.stringName
+    instance.stringName = original
+    assert instance.stringName == original
+
+
+
+@given(instance=oclinEcoreCST_DetailCS_strategy)
+def test_oclinecorecst_detailcs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=oclinEcoreCST::DetailCS_strategy)
-def test_oclinecorecst::detailcs_idName_type(instance):
-    assert isinstance(instance.idName, str)
 
 
-@given(instance=oclinEcoreCST::DetailCS_strategy)
-def test_oclinecorecst::detailcs_idName_setter(instance):
+@given(instance=oclinEcoreCST_DetailCS_strategy)
+def test_oclinecorecst_detailcs_idName_setter(instance):
     original = instance.idName
     instance.idName = original
     assert instance.idName == original
-
-@given(instance=oclinEcoreCST::DetailCS_strategy)
-def test_oclinecorecst::detailcs_stringName_type(instance):
-    assert isinstance(instance.stringName, str)
-
-
-@given(instance=oclinEcoreCST::DetailCS_strategy)
-def test_oclinecorecst::detailcs_stringName_setter(instance):
-    original = instance.stringName
-    instance.stringName = original
-    assert instance.stringName == original
 
 @given(instance=ModelElementCS_strategy)
 @settings(max_examples=50)
 def test_modelelementcs_instantiation(instance):
     assert isinstance(instance, ModelElementCS)
 
-@given(instance=oclinEcoreCST::NamedElementCS_strategy)
+@given(instance=oclinEcoreCST_NamedElementCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::namedelementcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::NamedElementCS)
-
-@given(instance=oclinEcoreCST::NamedElementCS_strategy)
-def test_oclinecorecst::namedelementcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_oclinecorecst_namedelementcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_NamedElementCS)
 
 
-@given(instance=oclinEcoreCST::NamedElementCS_strategy)
-def test_oclinecorecst::namedelementcs_name_setter(instance):
+
+@given(instance=oclinEcoreCST_NamedElementCS_strategy)
+def test_oclinecorecst_namedelementcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=oclinEcoreCST::AnnotationCS_strategy)
+@given(instance=oclinEcoreCST_AnnotationCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::annotationcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::AnnotationCS)
-
-@given(instance=oclinEcoreCST::AnnotationCS_strategy)
-def test_oclinecorecst::annotationcs_stringSource_type(instance):
-    assert isinstance(instance.stringSource, str)
+def test_oclinecorecst_annotationcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_AnnotationCS)
 
 
-@given(instance=oclinEcoreCST::AnnotationCS_strategy)
-def test_oclinecorecst::annotationcs_stringSource_setter(instance):
+
+@given(instance=oclinEcoreCST_AnnotationCS_strategy)
+def test_oclinecorecst_annotationcs_stringSource_setter(instance):
     original = instance.stringSource
     instance.stringSource = original
     assert instance.stringSource == original
 
-@given(instance=oclinEcoreCST::AnnotationCS_strategy)
-def test_oclinecorecst::annotationcs_idSource_type(instance):
-    assert isinstance(instance.idSource, str)
 
 
-@given(instance=oclinEcoreCST::AnnotationCS_strategy)
-def test_oclinecorecst::annotationcs_idSource_setter(instance):
+@given(instance=oclinEcoreCST_AnnotationCS_strategy)
+def test_oclinecorecst_annotationcs_idSource_setter(instance):
     original = instance.idSource
     instance.idSource = original
     assert instance.idSource == original
 
-@given(instance=oclinEcoreCST::ClassifierRef_strategy)
+@given(instance=oclinEcoreCST_ClassifierRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::classifierref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ClassifierRef)
+def test_oclinecorecst_classifierref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ClassifierRef)
 
 @given(instance=NamedElementCS_strategy)
 @settings(max_examples=50)
 def test_namedelementcs_instantiation(instance):
     assert isinstance(instance, NamedElementCS)
 
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
+@given(instance=oclinEcoreCST_EnumLiteralCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::typedelementcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::TypedElementCS)
-
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_multiplicity_type(instance):
-    assert isinstance(instance.multiplicity, str)
+def test_oclinecorecst_enumliteralcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EnumLiteralCS)
 
 
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_multiplicity_setter(instance):
-    original = instance.multiplicity
-    instance.multiplicity = original
-    assert instance.multiplicity == original
 
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_upper_type(instance):
-    assert isinstance(instance.upper, int)
-
-
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_qualifiers_type(instance):
-    assert isinstance(instance.qualifiers, str)
-
-
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_qualifiers_setter(instance):
-    original = instance.qualifiers
-    instance.qualifiers = original
-    assert instance.qualifiers == original
-
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_lower_type(instance):
-    assert isinstance(instance.lower, int)
-
-
-@given(instance=oclinEcoreCST::TypedElementCS_strategy)
-def test_oclinecorecst::typedelementcs_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=oclinEcoreCST::PackageCS_strategy)
-@settings(max_examples=50)
-def test_oclinecorecst::packagecs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::PackageCS)
-
-@given(instance=oclinEcoreCST::ConstraintCS_strategy)
-@settings(max_examples=50)
-def test_oclinecorecst::constraintcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ConstraintCS)
-
-@given(instance=oclinEcoreCST::ConstraintCS_strategy)
-def test_oclinecorecst::constraintcs_stereotype_type(instance):
-    assert isinstance(instance.stereotype, str)
-
-
-@given(instance=oclinEcoreCST::ConstraintCS_strategy)
-def test_oclinecorecst::constraintcs_stereotype_setter(instance):
-    original = instance.stereotype
-    instance.stereotype = original
-    assert instance.stereotype == original
-
-@given(instance=oclinEcoreCST::EnumLiteralCS_strategy)
-@settings(max_examples=50)
-def test_oclinecorecst::enumliteralcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EnumLiteralCS)
-
-@given(instance=oclinEcoreCST::EnumLiteralCS_strategy)
-def test_oclinecorecst::enumliteralcs_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=oclinEcoreCST::EnumLiteralCS_strategy)
-def test_oclinecorecst::enumliteralcs_value_setter(instance):
+@given(instance=oclinEcoreCST_EnumLiteralCS_strategy)
+def test_oclinecorecst_enumliteralcs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=oclinEcoreCST::TypeParameterCS_strategy)
+@given(instance=oclinEcoreCST_PackageCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::typeparametercs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::TypeParameterCS)
+def test_oclinecorecst_packagecs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_PackageCS)
 
-@given(instance=oclinEcoreCST::ClassifierCS_strategy)
+@given(instance=oclinEcoreCST_TypedElementCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::classifiercs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ClassifierCS)
-
-@given(instance=oclinEcoreCST::ClassifierCS_strategy)
-def test_oclinecorecst::classifiercs_qualifiers_type(instance):
-    assert isinstance(instance.qualifiers, str)
+def test_oclinecorecst_typedelementcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_TypedElementCS)
 
 
-@given(instance=oclinEcoreCST::ClassifierCS_strategy)
-def test_oclinecorecst::classifiercs_qualifiers_setter(instance):
+
+@given(instance=oclinEcoreCST_TypedElementCS_strategy)
+def test_oclinecorecst_typedelementcs_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+
+
+@given(instance=oclinEcoreCST_TypedElementCS_strategy)
+def test_oclinecorecst_typedelementcs_multiplicity_setter(instance):
+    original = instance.multiplicity
+    instance.multiplicity = original
+    assert instance.multiplicity == original
+
+
+
+@given(instance=oclinEcoreCST_TypedElementCS_strategy)
+def test_oclinecorecst_typedelementcs_qualifiers_setter(instance):
     original = instance.qualifiers
     instance.qualifiers = original
     assert instance.qualifiers == original
 
-@given(instance=oclinEcoreCST::ClassifierCS_strategy)
-def test_oclinecorecst::classifiercs_instanceClassName_type(instance):
-    assert isinstance(instance.instanceClassName, str)
 
 
-@given(instance=oclinEcoreCST::ClassifierCS_strategy)
-def test_oclinecorecst::classifiercs_instanceClassName_setter(instance):
+@given(instance=oclinEcoreCST_TypedElementCS_strategy)
+def test_oclinecorecst_typedelementcs_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+@given(instance=oclinEcoreCST_TypeParameterCS_strategy)
+@settings(max_examples=50)
+def test_oclinecorecst_typeparametercs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_TypeParameterCS)
+
+@given(instance=oclinEcoreCST_ConstraintCS_strategy)
+@settings(max_examples=50)
+def test_oclinecorecst_constraintcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ConstraintCS)
+
+
+
+@given(instance=oclinEcoreCST_ConstraintCS_strategy)
+def test_oclinecorecst_constraintcs_stereotype_setter(instance):
+    original = instance.stereotype
+    instance.stereotype = original
+    assert instance.stereotype == original
+
+@given(instance=oclinEcoreCST_ClassifierCS_strategy)
+@settings(max_examples=50)
+def test_oclinecorecst_classifiercs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ClassifierCS)
+
+
+
+@given(instance=oclinEcoreCST_ClassifierCS_strategy)
+def test_oclinecorecst_classifiercs_qualifiers_setter(instance):
+    original = instance.qualifiers
+    instance.qualifiers = original
+    assert instance.qualifiers == original
+
+
+
+@given(instance=oclinEcoreCST_ClassifierCS_strategy)
+def test_oclinecorecst_classifiercs_instanceClassName_setter(instance):
     original = instance.instanceClassName
     instance.instanceClassName = original
     assert instance.instanceClassName == original
@@ -1552,62 +1504,62 @@ def test_oclinecorecst::classifiercs_instanceClassName_setter(instance):
 def test_classifierref_instantiation(instance):
     assert isinstance(instance, ClassifierRef)
 
-@given(instance=oclinEcoreCST::ClassifierCSRef_strategy)
+@given(instance=oclinEcoreCST_EClassifierRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::classifiercsref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ClassifierCSRef)
+def test_oclinecorecst_eclassifierref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EClassifierRef)
 
-@given(instance=oclinEcoreCST::EClassifierRef_strategy)
+@given(instance=oclinEcoreCST_DataTypeRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::eclassifierref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EClassifierRef)
+def test_oclinecorecst_datatyperef_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_DataTypeRef)
 
-@given(instance=oclinEcoreCST::DataTypeRef_strategy)
+@given(instance=oclinEcoreCST_ClassifierCSRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::datatyperef_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::DataTypeRef)
+def test_oclinecorecst_classifiercsref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ClassifierCSRef)
 
 @given(instance=ClassRef_strategy)
 @settings(max_examples=50)
 def test_classref_instantiation(instance):
     assert isinstance(instance, ClassRef)
 
-@given(instance=oclinEcoreCST::EClassRef_strategy)
+@given(instance=oclinEcoreCST_EClassRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::eclassref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::EClassRef)
+def test_oclinecorecst_eclassref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_EClassRef)
 
-@given(instance=oclinEcoreCST::ClassCSRef_strategy)
+@given(instance=oclinEcoreCST_ClassCSRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::classcsref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ClassCSRef)
+def test_oclinecorecst_classcsref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ClassCSRef)
 
-@given(instance=oclinEcoreCST::StructuralFeatureCS_strategy)
+@given(instance=oclinEcoreCST_StructuralFeatureCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::structuralfeaturecs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::StructuralFeatureCS)
+def test_oclinecorecst_structuralfeaturecs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_StructuralFeatureCS)
 
-@given(instance=oclinEcoreCST::OperationCS_strategy)
+@given(instance=oclinEcoreCST_OperationCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::operationcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::OperationCS)
+def test_oclinecorecst_operationcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_OperationCS)
 
-@given(instance=oclinEcoreCST::ClassRef_strategy)
+@given(instance=oclinEcoreCST_ClassRef_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::classref_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ClassRef)
+def test_oclinecorecst_classref_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ClassRef)
 
 @given(instance=ClassifierCS_strategy)
 @settings(max_examples=50)
 def test_classifiercs_instantiation(instance):
     assert isinstance(instance, ClassifierCS)
 
-@given(instance=oclinEcoreCST::DataTypeOrEnumCS_strategy)
+@given(instance=oclinEcoreCST_DataTypeOrEnumCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::datatypeorenumcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::DataTypeOrEnumCS)
+def test_oclinecorecst_datatypeorenumcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_DataTypeOrEnumCS)
 
-@given(instance=oclinEcoreCST::ClassCS_strategy)
+@given(instance=oclinEcoreCST_ClassCS_strategy)
 @settings(max_examples=50)
-def test_oclinecorecst::classcs_instantiation(instance):
-    assert isinstance(instance, oclinEcoreCST::ClassCS)
+def test_oclinecorecst_classcs_instantiation(instance):
+    assert isinstance(instance, oclinEcoreCST_ClassCS)

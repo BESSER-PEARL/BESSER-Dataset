@@ -3,41 +3,41 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Inheritance,
-    crom::l1::NaturalInheritance,
-    crom::l1::Part,
-    crom::l1::NamedElement,
-    crom::l1::Player,
-    crom::l1::AbstractRole,
+    crom_l1_NaturalInheritance,
+    crom_l1_Part,
+    crom_l1_NamedElement,
+    crom_l1_Player,
+    crom_l1_AbstractRole,
     Relation,
-    crom::l1::Inheritance,
-    crom::l1::Fulfillment,
+    crom_l1_Inheritance,
+    crom_l1_Fulfillment,
     AbstractRole,
     Player,
     RigidType,
-    crom::l1::NaturalType,
+    crom_l1_NaturalType,
     RelationTarget,
-    crom::l1::RoleType,
-    crom::l1::Type,
+    crom_l1_RoleType,
+    crom_l1_Type,
     TypedElement,
-    crom::l1::Operation,
-    crom::l1::Attribute,
-    crom::l1::Parameter,
+    crom_l1_Attribute,
+    crom_l1_Operation,
+    crom_l1_Parameter,
     Model,
     ModelElement,
-    crom::l1::CompartmentType,
-    crom::l1::Group,
+    crom_l1_Group,
+    crom_l1_CompartmentType,
     Type,
-    crom::l1::RigidType,
-    crom::l1::Model,
-    crom::l1::Relation,
+    crom_l1_RigidType,
+    crom_l1_Model,
+    crom_l1_Relation,
     NamedElement,
-    crom::l1::TypedElement,
-    crom::l1::RelationTarget,
-    crom::l1::ModelElement,
+    crom_l1_TypedElement,
+    crom_l1_RelationTarget,
+    crom_l1_ModelElement,
 )
 
 # =============================================================================
@@ -60,51 +60,51 @@ def test_inheritance_constructor_args():
 
 
 
-def test_crom::l1::naturalinheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::NaturalInheritance)
+def test_crom_l1_naturalinheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_NaturalInheritance)
 
 
-def test_crom::l1::naturalinheritance_constructor_exists():
-    assert callable(crom::l1::NaturalInheritance.__init__)
+def test_crom_l1_naturalinheritance_constructor_exists():
+    assert callable(crom_l1_NaturalInheritance.__init__)
 
 
-def test_crom::l1::naturalinheritance_constructor_args():
-    sig = inspect.signature(crom::l1::NaturalInheritance.__init__)
+def test_crom_l1_naturalinheritance_constructor_args():
+    sig = inspect.signature(crom_l1_NaturalInheritance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::part_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Part)
+def test_crom_l1_part_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Part)
 
 
-def test_crom::l1::part_constructor_exists():
-    assert callable(crom::l1::Part.__init__)
+def test_crom_l1_part_constructor_exists():
+    assert callable(crom_l1_Part.__init__)
 
 
-def test_crom::l1::part_constructor_args():
-    sig = inspect.signature(crom::l1::Part.__init__)
+def test_crom_l1_part_constructor_args():
+    sig = inspect.signature(crom_l1_Part.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::namedelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::NamedElement)
+def test_crom_l1_namedelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_NamedElement)
 
 
-def test_crom::l1::namedelement_constructor_exists():
-    assert callable(crom::l1::NamedElement.__init__)
+def test_crom_l1_namedelement_constructor_exists():
+    assert callable(crom_l1_NamedElement.__init__)
 
 
-def test_crom::l1::namedelement_constructor_args():
-    sig = inspect.signature(crom::l1::NamedElement.__init__)
+def test_crom_l1_namedelement_constructor_args():
+    sig = inspect.signature(crom_l1_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_crom::l1::namedelement_has_name():
-    assert hasattr(crom::l1::NamedElement, "name")
+def test_crom_l1_namedelement_has_name():
+    assert hasattr(crom_l1_NamedElement, "name")
     descriptor = None
-    for klass in crom::l1::NamedElement.__mro__:
+    for klass in crom_l1_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -112,30 +112,30 @@ def test_crom::l1::namedelement_has_name():
 
 
 
-def test_crom::l1::player_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Player)
+def test_crom_l1_player_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Player)
 
 
-def test_crom::l1::player_constructor_exists():
-    assert callable(crom::l1::Player.__init__)
+def test_crom_l1_player_constructor_exists():
+    assert callable(crom_l1_Player.__init__)
 
 
-def test_crom::l1::player_constructor_args():
-    sig = inspect.signature(crom::l1::Player.__init__)
+def test_crom_l1_player_constructor_args():
+    sig = inspect.signature(crom_l1_Player.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::abstractrole_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::AbstractRole)
+def test_crom_l1_abstractrole_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_AbstractRole)
 
 
-def test_crom::l1::abstractrole_constructor_exists():
-    assert callable(crom::l1::AbstractRole.__init__)
+def test_crom_l1_abstractrole_constructor_exists():
+    assert callable(crom_l1_AbstractRole.__init__)
 
 
-def test_crom::l1::abstractrole_constructor_args():
-    sig = inspect.signature(crom::l1::AbstractRole.__init__)
+def test_crom_l1_abstractrole_constructor_args():
+    sig = inspect.signature(crom_l1_AbstractRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,30 +154,30 @@ def test_relation_constructor_args():
 
 
 
-def test_crom::l1::inheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Inheritance)
+def test_crom_l1_inheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Inheritance)
 
 
-def test_crom::l1::inheritance_constructor_exists():
-    assert callable(crom::l1::Inheritance.__init__)
+def test_crom_l1_inheritance_constructor_exists():
+    assert callable(crom_l1_Inheritance.__init__)
 
 
-def test_crom::l1::inheritance_constructor_args():
-    sig = inspect.signature(crom::l1::Inheritance.__init__)
+def test_crom_l1_inheritance_constructor_args():
+    sig = inspect.signature(crom_l1_Inheritance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::fulfillment_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Fulfillment)
+def test_crom_l1_fulfillment_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Fulfillment)
 
 
-def test_crom::l1::fulfillment_constructor_exists():
-    assert callable(crom::l1::Fulfillment.__init__)
+def test_crom_l1_fulfillment_constructor_exists():
+    assert callable(crom_l1_Fulfillment.__init__)
 
 
-def test_crom::l1::fulfillment_constructor_args():
-    sig = inspect.signature(crom::l1::Fulfillment.__init__)
+def test_crom_l1_fulfillment_constructor_args():
+    sig = inspect.signature(crom_l1_Fulfillment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,16 +224,16 @@ def test_rigidtype_constructor_args():
 
 
 
-def test_crom::l1::naturaltype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::NaturalType)
+def test_crom_l1_naturaltype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_NaturalType)
 
 
-def test_crom::l1::naturaltype_constructor_exists():
-    assert callable(crom::l1::NaturalType.__init__)
+def test_crom_l1_naturaltype_constructor_exists():
+    assert callable(crom_l1_NaturalType.__init__)
 
 
-def test_crom::l1::naturaltype_constructor_args():
-    sig = inspect.signature(crom::l1::NaturalType.__init__)
+def test_crom_l1_naturaltype_constructor_args():
+    sig = inspect.signature(crom_l1_NaturalType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,30 +252,30 @@ def test_relationtarget_constructor_args():
 
 
 
-def test_crom::l1::roletype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::RoleType)
+def test_crom_l1_roletype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_RoleType)
 
 
-def test_crom::l1::roletype_constructor_exists():
-    assert callable(crom::l1::RoleType.__init__)
+def test_crom_l1_roletype_constructor_exists():
+    assert callable(crom_l1_RoleType.__init__)
 
 
-def test_crom::l1::roletype_constructor_args():
-    sig = inspect.signature(crom::l1::RoleType.__init__)
+def test_crom_l1_roletype_constructor_args():
+    sig = inspect.signature(crom_l1_RoleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::type_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Type)
+def test_crom_l1_type_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Type)
 
 
-def test_crom::l1::type_constructor_exists():
-    assert callable(crom::l1::Type.__init__)
+def test_crom_l1_type_constructor_exists():
+    assert callable(crom_l1_Type.__init__)
 
 
-def test_crom::l1::type_constructor_args():
-    sig = inspect.signature(crom::l1::Type.__init__)
+def test_crom_l1_type_constructor_args():
+    sig = inspect.signature(crom_l1_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -294,23 +294,37 @@ def test_typedelement_constructor_args():
 
 
 
-def test_crom::l1::operation_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Operation)
+def test_crom_l1_attribute_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Attribute)
 
 
-def test_crom::l1::operation_constructor_exists():
-    assert callable(crom::l1::Operation.__init__)
+def test_crom_l1_attribute_constructor_exists():
+    assert callable(crom_l1_Attribute.__init__)
 
 
-def test_crom::l1::operation_constructor_args():
-    sig = inspect.signature(crom::l1::Operation.__init__)
+def test_crom_l1_attribute_constructor_args():
+    sig = inspect.signature(crom_l1_Attribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_crom_l1_operation_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Operation)
+
+
+def test_crom_l1_operation_constructor_exists():
+    assert callable(crom_l1_Operation.__init__)
+
+
+def test_crom_l1_operation_constructor_args():
+    sig = inspect.signature(crom_l1_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "operation" in params, "Missing parameter 'operation'"
 
-def test_crom::l1::operation_has_operation():
-    assert hasattr(crom::l1::Operation, "operation")
+def test_crom_l1_operation_has_operation():
+    assert hasattr(crom_l1_Operation, "operation")
     descriptor = None
-    for klass in crom::l1::Operation.__mro__:
+    for klass in crom_l1_Operation.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
             break
@@ -318,30 +332,16 @@ def test_crom::l1::operation_has_operation():
 
 
 
-def test_crom::l1::attribute_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Attribute)
+def test_crom_l1_parameter_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Parameter)
 
 
-def test_crom::l1::attribute_constructor_exists():
-    assert callable(crom::l1::Attribute.__init__)
+def test_crom_l1_parameter_constructor_exists():
+    assert callable(crom_l1_Parameter.__init__)
 
 
-def test_crom::l1::attribute_constructor_args():
-    sig = inspect.signature(crom::l1::Attribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_crom::l1::parameter_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Parameter)
-
-
-def test_crom::l1::parameter_constructor_exists():
-    assert callable(crom::l1::Parameter.__init__)
-
-
-def test_crom::l1::parameter_constructor_args():
-    sig = inspect.signature(crom::l1::Parameter.__init__)
+def test_crom_l1_parameter_constructor_args():
+    sig = inspect.signature(crom_l1_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -374,30 +374,30 @@ def test_modelelement_constructor_args():
 
 
 
-def test_crom::l1::compartmenttype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::CompartmentType)
+def test_crom_l1_group_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Group)
 
 
-def test_crom::l1::compartmenttype_constructor_exists():
-    assert callable(crom::l1::CompartmentType.__init__)
+def test_crom_l1_group_constructor_exists():
+    assert callable(crom_l1_Group.__init__)
 
 
-def test_crom::l1::compartmenttype_constructor_args():
-    sig = inspect.signature(crom::l1::CompartmentType.__init__)
+def test_crom_l1_group_constructor_args():
+    sig = inspect.signature(crom_l1_Group.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::group_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Group)
+def test_crom_l1_compartmenttype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_CompartmentType)
 
 
-def test_crom::l1::group_constructor_exists():
-    assert callable(crom::l1::Group.__init__)
+def test_crom_l1_compartmenttype_constructor_exists():
+    assert callable(crom_l1_CompartmentType.__init__)
 
 
-def test_crom::l1::group_constructor_args():
-    sig = inspect.signature(crom::l1::Group.__init__)
+def test_crom_l1_compartmenttype_constructor_args():
+    sig = inspect.signature(crom_l1_CompartmentType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -416,44 +416,44 @@ def test_type_constructor_args():
 
 
 
-def test_crom::l1::rigidtype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::RigidType)
+def test_crom_l1_rigidtype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_RigidType)
 
 
-def test_crom::l1::rigidtype_constructor_exists():
-    assert callable(crom::l1::RigidType.__init__)
+def test_crom_l1_rigidtype_constructor_exists():
+    assert callable(crom_l1_RigidType.__init__)
 
 
-def test_crom::l1::rigidtype_constructor_args():
-    sig = inspect.signature(crom::l1::RigidType.__init__)
+def test_crom_l1_rigidtype_constructor_args():
+    sig = inspect.signature(crom_l1_RigidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::model_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Model)
+def test_crom_l1_model_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Model)
 
 
-def test_crom::l1::model_constructor_exists():
-    assert callable(crom::l1::Model.__init__)
+def test_crom_l1_model_constructor_exists():
+    assert callable(crom_l1_Model.__init__)
 
 
-def test_crom::l1::model_constructor_args():
-    sig = inspect.signature(crom::l1::Model.__init__)
+def test_crom_l1_model_constructor_args():
+    sig = inspect.signature(crom_l1_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::relation_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::Relation)
+def test_crom_l1_relation_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_Relation)
 
 
-def test_crom::l1::relation_constructor_exists():
-    assert callable(crom::l1::Relation.__init__)
+def test_crom_l1_relation_constructor_exists():
+    assert callable(crom_l1_Relation.__init__)
 
 
-def test_crom::l1::relation_constructor_args():
-    sig = inspect.signature(crom::l1::Relation.__init__)
+def test_crom_l1_relation_constructor_args():
+    sig = inspect.signature(crom_l1_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -472,44 +472,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_crom::l1::typedelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::TypedElement)
+def test_crom_l1_typedelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_TypedElement)
 
 
-def test_crom::l1::typedelement_constructor_exists():
-    assert callable(crom::l1::TypedElement.__init__)
+def test_crom_l1_typedelement_constructor_exists():
+    assert callable(crom_l1_TypedElement.__init__)
 
 
-def test_crom::l1::typedelement_constructor_args():
-    sig = inspect.signature(crom::l1::TypedElement.__init__)
+def test_crom_l1_typedelement_constructor_args():
+    sig = inspect.signature(crom_l1_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::relationtarget_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::RelationTarget)
+def test_crom_l1_relationtarget_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_RelationTarget)
 
 
-def test_crom::l1::relationtarget_constructor_exists():
-    assert callable(crom::l1::RelationTarget.__init__)
+def test_crom_l1_relationtarget_constructor_exists():
+    assert callable(crom_l1_RelationTarget.__init__)
 
 
-def test_crom::l1::relationtarget_constructor_args():
-    sig = inspect.signature(crom::l1::RelationTarget.__init__)
+def test_crom_l1_relationtarget_constructor_args():
+    sig = inspect.signature(crom_l1_RelationTarget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::modelelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::ModelElement)
+def test_crom_l1_modelelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_ModelElement)
 
 
-def test_crom::l1::modelelement_constructor_exists():
-    assert callable(crom::l1::ModelElement.__init__)
+def test_crom_l1_modelelement_constructor_exists():
+    assert callable(crom_l1_ModelElement.__init__)
 
 
-def test_crom::l1::modelelement_constructor_args():
-    sig = inspect.signature(crom::l1::ModelElement.__init__)
+def test_crom_l1_modelelement_constructor_args():
+    sig = inspect.signature(crom_l1_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -527,31 +527,31 @@ safe_text = st.text(
 Inheritance_strategy = st.builds(
     Inheritance,
 )
-crom::l1::NaturalInheritance_strategy = st.builds(
-    crom::l1::NaturalInheritance,
+crom_l1_NaturalInheritance_strategy = st.builds(
+    crom_l1_NaturalInheritance,
 )
-crom::l1::Part_strategy = st.builds(
-    crom::l1::Part,
+crom_l1_Part_strategy = st.builds(
+    crom_l1_Part,
 )
-crom::l1::NamedElement_strategy = st.builds(
-    crom::l1::NamedElement,
+crom_l1_NamedElement_strategy = st.builds(
+    crom_l1_NamedElement,
     name=
         safe_text
 )
-crom::l1::Player_strategy = st.builds(
-    crom::l1::Player,
+crom_l1_Player_strategy = st.builds(
+    crom_l1_Player,
 )
-crom::l1::AbstractRole_strategy = st.builds(
-    crom::l1::AbstractRole,
+crom_l1_AbstractRole_strategy = st.builds(
+    crom_l1_AbstractRole,
 )
 Relation_strategy = st.builds(
     Relation,
 )
-crom::l1::Inheritance_strategy = st.builds(
-    crom::l1::Inheritance,
+crom_l1_Inheritance_strategy = st.builds(
+    crom_l1_Inheritance,
 )
-crom::l1::Fulfillment_strategy = st.builds(
-    crom::l1::Fulfillment,
+crom_l1_Fulfillment_strategy = st.builds(
+    crom_l1_Fulfillment,
 )
 AbstractRole_strategy = st.builds(
     AbstractRole,
@@ -562,31 +562,31 @@ Player_strategy = st.builds(
 RigidType_strategy = st.builds(
     RigidType,
 )
-crom::l1::NaturalType_strategy = st.builds(
-    crom::l1::NaturalType,
+crom_l1_NaturalType_strategy = st.builds(
+    crom_l1_NaturalType,
 )
 RelationTarget_strategy = st.builds(
     RelationTarget,
 )
-crom::l1::RoleType_strategy = st.builds(
-    crom::l1::RoleType,
+crom_l1_RoleType_strategy = st.builds(
+    crom_l1_RoleType,
 )
-crom::l1::Type_strategy = st.builds(
-    crom::l1::Type,
+crom_l1_Type_strategy = st.builds(
+    crom_l1_Type,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-crom::l1::Operation_strategy = st.builds(
-    crom::l1::Operation,
+crom_l1_Attribute_strategy = st.builds(
+    crom_l1_Attribute,
+)
+crom_l1_Operation_strategy = st.builds(
+    crom_l1_Operation,
     operation=
         safe_text
 )
-crom::l1::Attribute_strategy = st.builds(
-    crom::l1::Attribute,
-)
-crom::l1::Parameter_strategy = st.builds(
-    crom::l1::Parameter,
+crom_l1_Parameter_strategy = st.builds(
+    crom_l1_Parameter,
 )
 Model_strategy = st.builds(
     Model,
@@ -594,35 +594,35 @@ Model_strategy = st.builds(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-crom::l1::CompartmentType_strategy = st.builds(
-    crom::l1::CompartmentType,
+crom_l1_Group_strategy = st.builds(
+    crom_l1_Group,
 )
-crom::l1::Group_strategy = st.builds(
-    crom::l1::Group,
+crom_l1_CompartmentType_strategy = st.builds(
+    crom_l1_CompartmentType,
 )
 Type_strategy = st.builds(
     Type,
 )
-crom::l1::RigidType_strategy = st.builds(
-    crom::l1::RigidType,
+crom_l1_RigidType_strategy = st.builds(
+    crom_l1_RigidType,
 )
-crom::l1::Model_strategy = st.builds(
-    crom::l1::Model,
+crom_l1_Model_strategy = st.builds(
+    crom_l1_Model,
 )
-crom::l1::Relation_strategy = st.builds(
-    crom::l1::Relation,
+crom_l1_Relation_strategy = st.builds(
+    crom_l1_Relation,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-crom::l1::TypedElement_strategy = st.builds(
-    crom::l1::TypedElement,
+crom_l1_TypedElement_strategy = st.builds(
+    crom_l1_TypedElement,
 )
-crom::l1::RelationTarget_strategy = st.builds(
-    crom::l1::RelationTarget,
+crom_l1_RelationTarget_strategy = st.builds(
+    crom_l1_RelationTarget,
 )
-crom::l1::ModelElement_strategy = st.builds(
-    crom::l1::ModelElement,
+crom_l1_ModelElement_strategy = st.builds(
+    crom_l1_ModelElement,
 )
 
 @given(instance=Inheritance_strategy)
@@ -630,56 +630,53 @@ crom::l1::ModelElement_strategy = st.builds(
 def test_inheritance_instantiation(instance):
     assert isinstance(instance, Inheritance)
 
-@given(instance=crom::l1::NaturalInheritance_strategy)
+@given(instance=crom_l1_NaturalInheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::naturalinheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::NaturalInheritance)
+def test_crom_l1_naturalinheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_NaturalInheritance)
 
-@given(instance=crom::l1::Part_strategy)
+@given(instance=crom_l1_Part_strategy)
 @settings(max_examples=50)
-def test_crom::l1::part_instantiation(instance):
-    assert isinstance(instance, crom::l1::Part)
+def test_crom_l1_part_instantiation(instance):
+    assert isinstance(instance, crom_l1_Part)
 
-@given(instance=crom::l1::NamedElement_strategy)
+@given(instance=crom_l1_NamedElement_strategy)
 @settings(max_examples=50)
-def test_crom::l1::namedelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::NamedElement)
-
-@given(instance=crom::l1::NamedElement_strategy)
-def test_crom::l1::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_crom_l1_namedelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_NamedElement)
 
 
-@given(instance=crom::l1::NamedElement_strategy)
-def test_crom::l1::namedelement_name_setter(instance):
+
+@given(instance=crom_l1_NamedElement_strategy)
+def test_crom_l1_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=crom::l1::Player_strategy)
+@given(instance=crom_l1_Player_strategy)
 @settings(max_examples=50)
-def test_crom::l1::player_instantiation(instance):
-    assert isinstance(instance, crom::l1::Player)
+def test_crom_l1_player_instantiation(instance):
+    assert isinstance(instance, crom_l1_Player)
 
-@given(instance=crom::l1::AbstractRole_strategy)
+@given(instance=crom_l1_AbstractRole_strategy)
 @settings(max_examples=50)
-def test_crom::l1::abstractrole_instantiation(instance):
-    assert isinstance(instance, crom::l1::AbstractRole)
+def test_crom_l1_abstractrole_instantiation(instance):
+    assert isinstance(instance, crom_l1_AbstractRole)
 
 @given(instance=Relation_strategy)
 @settings(max_examples=50)
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=crom::l1::Inheritance_strategy)
+@given(instance=crom_l1_Inheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::inheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::Inheritance)
+def test_crom_l1_inheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_Inheritance)
 
-@given(instance=crom::l1::Fulfillment_strategy)
+@given(instance=crom_l1_Fulfillment_strategy)
 @settings(max_examples=50)
-def test_crom::l1::fulfillment_instantiation(instance):
-    assert isinstance(instance, crom::l1::Fulfillment)
+def test_crom_l1_fulfillment_instantiation(instance):
+    assert isinstance(instance, crom_l1_Fulfillment)
 
 @given(instance=AbstractRole_strategy)
 @settings(max_examples=50)
@@ -696,56 +693,53 @@ def test_player_instantiation(instance):
 def test_rigidtype_instantiation(instance):
     assert isinstance(instance, RigidType)
 
-@given(instance=crom::l1::NaturalType_strategy)
+@given(instance=crom_l1_NaturalType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::naturaltype_instantiation(instance):
-    assert isinstance(instance, crom::l1::NaturalType)
+def test_crom_l1_naturaltype_instantiation(instance):
+    assert isinstance(instance, crom_l1_NaturalType)
 
 @given(instance=RelationTarget_strategy)
 @settings(max_examples=50)
 def test_relationtarget_instantiation(instance):
     assert isinstance(instance, RelationTarget)
 
-@given(instance=crom::l1::RoleType_strategy)
+@given(instance=crom_l1_RoleType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::roletype_instantiation(instance):
-    assert isinstance(instance, crom::l1::RoleType)
+def test_crom_l1_roletype_instantiation(instance):
+    assert isinstance(instance, crom_l1_RoleType)
 
-@given(instance=crom::l1::Type_strategy)
+@given(instance=crom_l1_Type_strategy)
 @settings(max_examples=50)
-def test_crom::l1::type_instantiation(instance):
-    assert isinstance(instance, crom::l1::Type)
+def test_crom_l1_type_instantiation(instance):
+    assert isinstance(instance, crom_l1_Type)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=crom::l1::Operation_strategy)
+@given(instance=crom_l1_Attribute_strategy)
 @settings(max_examples=50)
-def test_crom::l1::operation_instantiation(instance):
-    assert isinstance(instance, crom::l1::Operation)
+def test_crom_l1_attribute_instantiation(instance):
+    assert isinstance(instance, crom_l1_Attribute)
 
-@given(instance=crom::l1::Operation_strategy)
-def test_crom::l1::operation_operation_type(instance):
-    assert isinstance(instance.operation, str)
+@given(instance=crom_l1_Operation_strategy)
+@settings(max_examples=50)
+def test_crom_l1_operation_instantiation(instance):
+    assert isinstance(instance, crom_l1_Operation)
 
 
-@given(instance=crom::l1::Operation_strategy)
-def test_crom::l1::operation_operation_setter(instance):
+
+@given(instance=crom_l1_Operation_strategy)
+def test_crom_l1_operation_operation_setter(instance):
     original = instance.operation
     instance.operation = original
     assert instance.operation == original
 
-@given(instance=crom::l1::Attribute_strategy)
+@given(instance=crom_l1_Parameter_strategy)
 @settings(max_examples=50)
-def test_crom::l1::attribute_instantiation(instance):
-    assert isinstance(instance, crom::l1::Attribute)
-
-@given(instance=crom::l1::Parameter_strategy)
-@settings(max_examples=50)
-def test_crom::l1::parameter_instantiation(instance):
-    assert isinstance(instance, crom::l1::Parameter)
+def test_crom_l1_parameter_instantiation(instance):
+    assert isinstance(instance, crom_l1_Parameter)
 
 @given(instance=Model_strategy)
 @settings(max_examples=50)
@@ -757,52 +751,52 @@ def test_model_instantiation(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=crom::l1::CompartmentType_strategy)
+@given(instance=crom_l1_Group_strategy)
 @settings(max_examples=50)
-def test_crom::l1::compartmenttype_instantiation(instance):
-    assert isinstance(instance, crom::l1::CompartmentType)
+def test_crom_l1_group_instantiation(instance):
+    assert isinstance(instance, crom_l1_Group)
 
-@given(instance=crom::l1::Group_strategy)
+@given(instance=crom_l1_CompartmentType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::group_instantiation(instance):
-    assert isinstance(instance, crom::l1::Group)
+def test_crom_l1_compartmenttype_instantiation(instance):
+    assert isinstance(instance, crom_l1_CompartmentType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=crom::l1::RigidType_strategy)
+@given(instance=crom_l1_RigidType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::rigidtype_instantiation(instance):
-    assert isinstance(instance, crom::l1::RigidType)
+def test_crom_l1_rigidtype_instantiation(instance):
+    assert isinstance(instance, crom_l1_RigidType)
 
-@given(instance=crom::l1::Model_strategy)
+@given(instance=crom_l1_Model_strategy)
 @settings(max_examples=50)
-def test_crom::l1::model_instantiation(instance):
-    assert isinstance(instance, crom::l1::Model)
+def test_crom_l1_model_instantiation(instance):
+    assert isinstance(instance, crom_l1_Model)
 
-@given(instance=crom::l1::Relation_strategy)
+@given(instance=crom_l1_Relation_strategy)
 @settings(max_examples=50)
-def test_crom::l1::relation_instantiation(instance):
-    assert isinstance(instance, crom::l1::Relation)
+def test_crom_l1_relation_instantiation(instance):
+    assert isinstance(instance, crom_l1_Relation)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=crom::l1::TypedElement_strategy)
+@given(instance=crom_l1_TypedElement_strategy)
 @settings(max_examples=50)
-def test_crom::l1::typedelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::TypedElement)
+def test_crom_l1_typedelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_TypedElement)
 
-@given(instance=crom::l1::RelationTarget_strategy)
+@given(instance=crom_l1_RelationTarget_strategy)
 @settings(max_examples=50)
-def test_crom::l1::relationtarget_instantiation(instance):
-    assert isinstance(instance, crom::l1::RelationTarget)
+def test_crom_l1_relationtarget_instantiation(instance):
+    assert isinstance(instance, crom_l1_RelationTarget)
 
-@given(instance=crom::l1::ModelElement_strategy)
+@given(instance=crom_l1_ModelElement_strategy)
 @settings(max_examples=50)
-def test_crom::l1::modelelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::ModelElement)
+def test_crom_l1_modelelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_ModelElement)

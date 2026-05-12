@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Interface,
     AbstractComponent,
-    adlold::Component,
-    adlold::Binding,
-    adlold::Interface,
-    adlold::Provided,
-    adlold::Required,
-    adlold::Content,
-    adlold::AbstractComponent,
+    adlold_Component,
+    adlold_Binding,
+    adlold_Interface,
+    adlold_Provided,
+    adlold_Required,
+    adlold_Content,
+    adlold_AbstractComponent,
 )
 
 # =============================================================================
@@ -51,61 +51,61 @@ def test_abstractcomponent_constructor_args():
 
 
 
-def test_adlold::component_is_not_abstract():
-    assert not inspect.isabstract(adlold::Component)
+def test_adlold_component_is_not_abstract():
+    assert not inspect.isabstract(adlold_Component)
 
 
-def test_adlold::component_constructor_exists():
-    assert callable(adlold::Component.__init__)
+def test_adlold_component_constructor_exists():
+    assert callable(adlold_Component.__init__)
 
 
-def test_adlold::component_constructor_args():
-    sig = inspect.signature(adlold::Component.__init__)
+def test_adlold_component_constructor_args():
+    sig = inspect.signature(adlold_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adlold::binding_is_not_abstract():
-    assert not inspect.isabstract(adlold::Binding)
+def test_adlold_binding_is_not_abstract():
+    assert not inspect.isabstract(adlold_Binding)
 
 
-def test_adlold::binding_constructor_exists():
-    assert callable(adlold::Binding.__init__)
+def test_adlold_binding_constructor_exists():
+    assert callable(adlold_Binding.__init__)
 
 
-def test_adlold::binding_constructor_args():
-    sig = inspect.signature(adlold::Binding.__init__)
+def test_adlold_binding_constructor_args():
+    sig = inspect.signature(adlold_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adlold::interface_is_not_abstract():
-    assert not inspect.isabstract(adlold::Interface)
+def test_adlold_interface_is_not_abstract():
+    assert not inspect.isabstract(adlold_Interface)
 
 
-def test_adlold::interface_constructor_exists():
-    assert callable(adlold::Interface.__init__)
+def test_adlold_interface_constructor_exists():
+    assert callable(adlold_Interface.__init__)
 
 
-def test_adlold::interface_constructor_args():
-    sig = inspect.signature(adlold::Interface.__init__)
+def test_adlold_interface_constructor_args():
+    sig = inspect.signature(adlold_Interface.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "signature" in params, "Missing parameter 'signature'"
 
-def test_adlold::interface_has_name():
-    assert hasattr(adlold::Interface, "name")
+def test_adlold_interface_has_name():
+    assert hasattr(adlold_Interface, "name")
     descriptor = None
-    for klass in adlold::Interface.__mro__:
+    for klass in adlold_Interface.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_adlold::interface_has_signature():
-    assert hasattr(adlold::Interface, "signature")
+def test_adlold_interface_has_signature():
+    assert hasattr(adlold_Interface, "signature")
     descriptor = None
-    for klass in adlold::Interface.__mro__:
+    for klass in adlold_Interface.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
@@ -113,85 +113,85 @@ def test_adlold::interface_has_signature():
 
 
 
-def test_adlold::provided_is_not_abstract():
-    assert not inspect.isabstract(adlold::Provided)
+def test_adlold_provided_is_not_abstract():
+    assert not inspect.isabstract(adlold_Provided)
 
 
-def test_adlold::provided_constructor_exists():
-    assert callable(adlold::Provided.__init__)
+def test_adlold_provided_constructor_exists():
+    assert callable(adlold_Provided.__init__)
 
 
-def test_adlold::provided_constructor_args():
-    sig = inspect.signature(adlold::Provided.__init__)
+def test_adlold_provided_constructor_args():
+    sig = inspect.signature(adlold_Provided.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adlold::required_is_not_abstract():
-    assert not inspect.isabstract(adlold::Required)
+def test_adlold_required_is_not_abstract():
+    assert not inspect.isabstract(adlold_Required)
 
 
-def test_adlold::required_constructor_exists():
-    assert callable(adlold::Required.__init__)
+def test_adlold_required_constructor_exists():
+    assert callable(adlold_Required.__init__)
 
 
-def test_adlold::required_constructor_args():
-    sig = inspect.signature(adlold::Required.__init__)
+def test_adlold_required_constructor_args():
+    sig = inspect.signature(adlold_Required.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adlold::content_is_not_abstract():
-    assert not inspect.isabstract(adlold::Content)
+def test_adlold_content_is_not_abstract():
+    assert not inspect.isabstract(adlold_Content)
 
 
-def test_adlold::content_constructor_exists():
-    assert callable(adlold::Content.__init__)
+def test_adlold_content_constructor_exists():
+    assert callable(adlold_Content.__init__)
 
 
-def test_adlold::content_constructor_args():
-    sig = inspect.signature(adlold::Content.__init__)
+def test_adlold_content_constructor_args():
+    sig = inspect.signature(adlold_Content.__init__)
     params = list(sig.parameters.keys())
-    assert "language" in params, "Missing parameter 'language'"
     assert "expression" in params, "Missing parameter 'expression'"
+    assert "language" in params, "Missing parameter 'language'"
 
-def test_adlold::content_has_language():
-    assert hasattr(adlold::Content, "language")
+def test_adlold_content_has_expression():
+    assert hasattr(adlold_Content, "expression")
     descriptor = None
-    for klass in adlold::Content.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adlold::content_has_expression():
-    assert hasattr(adlold::Content, "expression")
-    descriptor = None
-    for klass in adlold::Content.__mro__:
+    for klass in adlold_Content.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
     assert isinstance(descriptor, property)
 
+def test_adlold_content_has_language():
+    assert hasattr(adlold_Content, "language")
+    descriptor = None
+    for klass in adlold_Content.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_adlold::abstractcomponent_is_not_abstract():
-    assert not inspect.isabstract(adlold::AbstractComponent)
+
+def test_adlold_abstractcomponent_is_not_abstract():
+    assert not inspect.isabstract(adlold_AbstractComponent)
 
 
-def test_adlold::abstractcomponent_constructor_exists():
-    assert callable(adlold::AbstractComponent.__init__)
+def test_adlold_abstractcomponent_constructor_exists():
+    assert callable(adlold_AbstractComponent.__init__)
 
 
-def test_adlold::abstractcomponent_constructor_args():
-    sig = inspect.signature(adlold::AbstractComponent.__init__)
+def test_adlold_abstractcomponent_constructor_args():
+    sig = inspect.signature(adlold_AbstractComponent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adlold::abstractcomponent_has_name():
-    assert hasattr(adlold::AbstractComponent, "name")
+def test_adlold_abstractcomponent_has_name():
+    assert hasattr(adlold_AbstractComponent, "name")
     descriptor = None
-    for klass in adlold::AbstractComponent.__mro__:
+    for klass in adlold_AbstractComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -215,34 +215,34 @@ Interface_strategy = st.builds(
 AbstractComponent_strategy = st.builds(
     AbstractComponent,
 )
-adlold::Component_strategy = st.builds(
-    adlold::Component,
+adlold_Component_strategy = st.builds(
+    adlold_Component,
 )
-adlold::Binding_strategy = st.builds(
-    adlold::Binding,
+adlold_Binding_strategy = st.builds(
+    adlold_Binding,
 )
-adlold::Interface_strategy = st.builds(
-    adlold::Interface,
+adlold_Interface_strategy = st.builds(
+    adlold_Interface,
     name=
         safe_text,
     signature=
         safe_text
 )
-adlold::Provided_strategy = st.builds(
-    adlold::Provided,
+adlold_Provided_strategy = st.builds(
+    adlold_Provided,
 )
-adlold::Required_strategy = st.builds(
-    adlold::Required,
+adlold_Required_strategy = st.builds(
+    adlold_Required,
 )
-adlold::Content_strategy = st.builds(
-    adlold::Content,
-    language=
-        safe_text,
+adlold_Content_strategy = st.builds(
+    adlold_Content,
     expression=
+        safe_text,
+    language=
         safe_text
 )
-adlold::AbstractComponent_strategy = st.builds(
-    adlold::AbstractComponent,
+adlold_AbstractComponent_strategy = st.builds(
+    adlold_AbstractComponent,
     name=
         safe_text
 )
@@ -257,92 +257,77 @@ def test_interface_instantiation(instance):
 def test_abstractcomponent_instantiation(instance):
     assert isinstance(instance, AbstractComponent)
 
-@given(instance=adlold::Component_strategy)
+@given(instance=adlold_Component_strategy)
 @settings(max_examples=50)
-def test_adlold::component_instantiation(instance):
-    assert isinstance(instance, adlold::Component)
+def test_adlold_component_instantiation(instance):
+    assert isinstance(instance, adlold_Component)
 
-@given(instance=adlold::Binding_strategy)
+@given(instance=adlold_Binding_strategy)
 @settings(max_examples=50)
-def test_adlold::binding_instantiation(instance):
-    assert isinstance(instance, adlold::Binding)
+def test_adlold_binding_instantiation(instance):
+    assert isinstance(instance, adlold_Binding)
 
-@given(instance=adlold::Interface_strategy)
+@given(instance=adlold_Interface_strategy)
 @settings(max_examples=50)
-def test_adlold::interface_instantiation(instance):
-    assert isinstance(instance, adlold::Interface)
-
-@given(instance=adlold::Interface_strategy)
-def test_adlold::interface_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adlold_interface_instantiation(instance):
+    assert isinstance(instance, adlold_Interface)
 
 
-@given(instance=adlold::Interface_strategy)
-def test_adlold::interface_name_setter(instance):
+
+@given(instance=adlold_Interface_strategy)
+def test_adlold_interface_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adlold::Interface_strategy)
-def test_adlold::interface_signature_type(instance):
-    assert isinstance(instance.signature, str)
 
 
-@given(instance=adlold::Interface_strategy)
-def test_adlold::interface_signature_setter(instance):
+@given(instance=adlold_Interface_strategy)
+def test_adlold_interface_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=adlold::Provided_strategy)
+@given(instance=adlold_Provided_strategy)
 @settings(max_examples=50)
-def test_adlold::provided_instantiation(instance):
-    assert isinstance(instance, adlold::Provided)
+def test_adlold_provided_instantiation(instance):
+    assert isinstance(instance, adlold_Provided)
 
-@given(instance=adlold::Required_strategy)
+@given(instance=adlold_Required_strategy)
 @settings(max_examples=50)
-def test_adlold::required_instantiation(instance):
-    assert isinstance(instance, adlold::Required)
+def test_adlold_required_instantiation(instance):
+    assert isinstance(instance, adlold_Required)
 
-@given(instance=adlold::Content_strategy)
+@given(instance=adlold_Content_strategy)
 @settings(max_examples=50)
-def test_adlold::content_instantiation(instance):
-    assert isinstance(instance, adlold::Content)
-
-@given(instance=adlold::Content_strategy)
-def test_adlold::content_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_adlold_content_instantiation(instance):
+    assert isinstance(instance, adlold_Content)
 
 
-@given(instance=adlold::Content_strategy)
-def test_adlold::content_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
 
-@given(instance=adlold::Content_strategy)
-def test_adlold::content_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=adlold::Content_strategy)
-def test_adlold::content_expression_setter(instance):
+@given(instance=adlold_Content_strategy)
+def test_adlold_content_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=adlold::AbstractComponent_strategy)
+
+
+@given(instance=adlold_Content_strategy)
+def test_adlold_content_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+@given(instance=adlold_AbstractComponent_strategy)
 @settings(max_examples=50)
-def test_adlold::abstractcomponent_instantiation(instance):
-    assert isinstance(instance, adlold::AbstractComponent)
-
-@given(instance=adlold::AbstractComponent_strategy)
-def test_adlold::abstractcomponent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adlold_abstractcomponent_instantiation(instance):
+    assert isinstance(instance, adlold_AbstractComponent)
 
 
-@given(instance=adlold::AbstractComponent_strategy)
-def test_adlold::abstractcomponent_name_setter(instance):
+
+@given(instance=adlold_AbstractComponent_strategy)
+def test_adlold_abstractcomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

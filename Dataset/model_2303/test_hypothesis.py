@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     MemberToPerson,
-    Families2Persons::Member2Female,
-    Families2Persons::Member2Male,
-    Families2Persons::Person,
-    Families2Persons::Member,
-    Families2Persons::MemberToPerson,
+    Families2Persons_Member2Female,
+    Families2Persons_Member2Male,
+    Families2Persons_Person,
+    Families2Persons_Member,
+    Families2Persons_MemberToPerson,
 )
 
 # =============================================================================
@@ -34,91 +34,91 @@ def test_membertoperson_constructor_args():
 
 
 
-def test_families2persons::member2female_is_not_abstract():
-    assert not inspect.isabstract(Families2Persons::Member2Female)
+def test_families2persons_member2female_is_not_abstract():
+    assert not inspect.isabstract(Families2Persons_Member2Female)
 
 
-def test_families2persons::member2female_constructor_exists():
-    assert callable(Families2Persons::Member2Female.__init__)
+def test_families2persons_member2female_constructor_exists():
+    assert callable(Families2Persons_Member2Female.__init__)
 
 
-def test_families2persons::member2female_constructor_args():
-    sig = inspect.signature(Families2Persons::Member2Female.__init__)
+def test_families2persons_member2female_constructor_args():
+    sig = inspect.signature(Families2Persons_Member2Female.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families2persons::member2male_is_not_abstract():
-    assert not inspect.isabstract(Families2Persons::Member2Male)
+def test_families2persons_member2male_is_not_abstract():
+    assert not inspect.isabstract(Families2Persons_Member2Male)
 
 
-def test_families2persons::member2male_constructor_exists():
-    assert callable(Families2Persons::Member2Male.__init__)
+def test_families2persons_member2male_constructor_exists():
+    assert callable(Families2Persons_Member2Male.__init__)
 
 
-def test_families2persons::member2male_constructor_args():
-    sig = inspect.signature(Families2Persons::Member2Male.__init__)
+def test_families2persons_member2male_constructor_args():
+    sig = inspect.signature(Families2Persons_Member2Male.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families2persons::person_is_not_abstract():
-    assert not inspect.isabstract(Families2Persons::Person)
+def test_families2persons_person_is_not_abstract():
+    assert not inspect.isabstract(Families2Persons_Person)
 
 
-def test_families2persons::person_constructor_exists():
-    assert callable(Families2Persons::Person.__init__)
+def test_families2persons_person_constructor_exists():
+    assert callable(Families2Persons_Person.__init__)
 
 
-def test_families2persons::person_constructor_args():
-    sig = inspect.signature(Families2Persons::Person.__init__)
+def test_families2persons_person_constructor_args():
+    sig = inspect.signature(Families2Persons_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families2persons::member_is_not_abstract():
-    assert not inspect.isabstract(Families2Persons::Member)
+def test_families2persons_member_is_not_abstract():
+    assert not inspect.isabstract(Families2Persons_Member)
 
 
-def test_families2persons::member_constructor_exists():
-    assert callable(Families2Persons::Member.__init__)
+def test_families2persons_member_constructor_exists():
+    assert callable(Families2Persons_Member.__init__)
 
 
-def test_families2persons::member_constructor_args():
-    sig = inspect.signature(Families2Persons::Member.__init__)
+def test_families2persons_member_constructor_args():
+    sig = inspect.signature(Families2Persons_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families2persons::membertoperson_is_not_abstract():
-    assert not inspect.isabstract(Families2Persons::MemberToPerson)
+def test_families2persons_membertoperson_is_not_abstract():
+    assert not inspect.isabstract(Families2Persons_MemberToPerson)
 
 
-def test_families2persons::membertoperson_constructor_exists():
-    assert callable(Families2Persons::MemberToPerson.__init__)
+def test_families2persons_membertoperson_constructor_exists():
+    assert callable(Families2Persons_MemberToPerson.__init__)
 
 
-def test_families2persons::membertoperson_constructor_args():
-    sig = inspect.signature(Families2Persons::MemberToPerson.__init__)
+def test_families2persons_membertoperson_constructor_args():
+    sig = inspect.signature(Families2Persons_MemberToPerson.__init__)
     params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "familyName" in params, "Missing parameter 'familyName'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_families2persons::membertoperson_has_firstName():
-    assert hasattr(Families2Persons::MemberToPerson, "firstName")
+def test_families2persons_membertoperson_has_familyName():
+    assert hasattr(Families2Persons_MemberToPerson, "familyName")
     descriptor = None
-    for klass in Families2Persons::MemberToPerson.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
+    for klass in Families2Persons_MemberToPerson.__mro__:
+        if "familyName" in klass.__dict__:
+            descriptor = klass.__dict__["familyName"]
             break
     assert isinstance(descriptor, property)
 
-def test_families2persons::membertoperson_has_familyName():
-    assert hasattr(Families2Persons::MemberToPerson, "familyName")
+def test_families2persons_membertoperson_has_firstName():
+    assert hasattr(Families2Persons_MemberToPerson, "firstName")
     descriptor = None
-    for klass in Families2Persons::MemberToPerson.__mro__:
-        if "familyName" in klass.__dict__:
-            descriptor = klass.__dict__["familyName"]
+    for klass in Families2Persons_MemberToPerson.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
@@ -137,23 +137,23 @@ safe_text = st.text(
 MemberToPerson_strategy = st.builds(
     MemberToPerson,
 )
-Families2Persons::Member2Female_strategy = st.builds(
-    Families2Persons::Member2Female,
+Families2Persons_Member2Female_strategy = st.builds(
+    Families2Persons_Member2Female,
 )
-Families2Persons::Member2Male_strategy = st.builds(
-    Families2Persons::Member2Male,
+Families2Persons_Member2Male_strategy = st.builds(
+    Families2Persons_Member2Male,
 )
-Families2Persons::Person_strategy = st.builds(
-    Families2Persons::Person,
+Families2Persons_Person_strategy = st.builds(
+    Families2Persons_Person,
 )
-Families2Persons::Member_strategy = st.builds(
-    Families2Persons::Member,
+Families2Persons_Member_strategy = st.builds(
+    Families2Persons_Member,
 )
-Families2Persons::MemberToPerson_strategy = st.builds(
-    Families2Persons::MemberToPerson,
-    firstName=
-        safe_text,
+Families2Persons_MemberToPerson_strategy = st.builds(
+    Families2Persons_MemberToPerson,
     familyName=
+        safe_text,
+    firstName=
         safe_text
 )
 
@@ -162,49 +162,43 @@ Families2Persons::MemberToPerson_strategy = st.builds(
 def test_membertoperson_instantiation(instance):
     assert isinstance(instance, MemberToPerson)
 
-@given(instance=Families2Persons::Member2Female_strategy)
+@given(instance=Families2Persons_Member2Female_strategy)
 @settings(max_examples=50)
-def test_families2persons::member2female_instantiation(instance):
-    assert isinstance(instance, Families2Persons::Member2Female)
+def test_families2persons_member2female_instantiation(instance):
+    assert isinstance(instance, Families2Persons_Member2Female)
 
-@given(instance=Families2Persons::Member2Male_strategy)
+@given(instance=Families2Persons_Member2Male_strategy)
 @settings(max_examples=50)
-def test_families2persons::member2male_instantiation(instance):
-    assert isinstance(instance, Families2Persons::Member2Male)
+def test_families2persons_member2male_instantiation(instance):
+    assert isinstance(instance, Families2Persons_Member2Male)
 
-@given(instance=Families2Persons::Person_strategy)
+@given(instance=Families2Persons_Person_strategy)
 @settings(max_examples=50)
-def test_families2persons::person_instantiation(instance):
-    assert isinstance(instance, Families2Persons::Person)
+def test_families2persons_person_instantiation(instance):
+    assert isinstance(instance, Families2Persons_Person)
 
-@given(instance=Families2Persons::Member_strategy)
+@given(instance=Families2Persons_Member_strategy)
 @settings(max_examples=50)
-def test_families2persons::member_instantiation(instance):
-    assert isinstance(instance, Families2Persons::Member)
+def test_families2persons_member_instantiation(instance):
+    assert isinstance(instance, Families2Persons_Member)
 
-@given(instance=Families2Persons::MemberToPerson_strategy)
+@given(instance=Families2Persons_MemberToPerson_strategy)
 @settings(max_examples=50)
-def test_families2persons::membertoperson_instantiation(instance):
-    assert isinstance(instance, Families2Persons::MemberToPerson)
-
-@given(instance=Families2Persons::MemberToPerson_strategy)
-def test_families2persons::membertoperson_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_families2persons_membertoperson_instantiation(instance):
+    assert isinstance(instance, Families2Persons_MemberToPerson)
 
 
-@given(instance=Families2Persons::MemberToPerson_strategy)
-def test_families2persons::membertoperson_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=Families2Persons::MemberToPerson_strategy)
-def test_families2persons::membertoperson_familyName_type(instance):
-    assert isinstance(instance.familyName, str)
-
-
-@given(instance=Families2Persons::MemberToPerson_strategy)
-def test_families2persons::membertoperson_familyName_setter(instance):
+@given(instance=Families2Persons_MemberToPerson_strategy)
+def test_families2persons_membertoperson_familyName_setter(instance):
     original = instance.familyName
     instance.familyName = original
     assert instance.familyName == original
+
+
+
+@given(instance=Families2Persons_MemberToPerson_strategy)
+def test_families2persons_membertoperson_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original

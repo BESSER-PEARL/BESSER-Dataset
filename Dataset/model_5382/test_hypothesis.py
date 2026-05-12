@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    p::B,
+from python_code import (
+    p_B,
     B,
-    p::A,
+    p_A,
 )
 
 # =============================================================================
@@ -17,16 +17,16 @@ from classes import (
 
 
 
-def test_p::b_is_not_abstract():
-    assert not inspect.isabstract(p::B)
+def test_p_b_is_not_abstract():
+    assert not inspect.isabstract(p_B)
 
 
-def test_p::b_constructor_exists():
-    assert callable(p::B.__init__)
+def test_p_b_constructor_exists():
+    assert callable(p_B.__init__)
 
 
-def test_p::b_constructor_args():
-    sig = inspect.signature(p::B.__init__)
+def test_p_b_constructor_args():
+    sig = inspect.signature(p_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -45,16 +45,16 @@ def test_b_constructor_args():
 
 
 
-def test_p::a_is_not_abstract():
-    assert not inspect.isabstract(p::A)
+def test_p_a_is_not_abstract():
+    assert not inspect.isabstract(p_A)
 
 
-def test_p::a_constructor_exists():
-    assert callable(p::A.__init__)
+def test_p_a_constructor_exists():
+    assert callable(p_A.__init__)
 
 
-def test_p::a_constructor_args():
-    sig = inspect.signature(p::A.__init__)
+def test_p_a_constructor_args():
+    sig = inspect.signature(p_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-p::B_strategy = st.builds(
-    p::B,
+p_B_strategy = st.builds(
+    p_B,
 )
 B_strategy = st.builds(
     B,
 )
-p::A_strategy = st.builds(
-    p::A,
+p_A_strategy = st.builds(
+    p_A,
 )
 
-@given(instance=p::B_strategy)
+@given(instance=p_B_strategy)
 @settings(max_examples=50)
-def test_p::b_instantiation(instance):
-    assert isinstance(instance, p::B)
+def test_p_b_instantiation(instance):
+    assert isinstance(instance, p_B)
 
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=p::A_strategy)
+@given(instance=p_A_strategy)
 @settings(max_examples=50)
-def test_p::a_instantiation(instance):
-    assert isinstance(instance, p::A)
+def test_p_a_instantiation(instance):
+    assert isinstance(instance, p_A)

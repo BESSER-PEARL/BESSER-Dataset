@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sihuhu::NamedElement,
+from python_code import (
+    sihuhu_NamedElement,
     Rail,
-    sihuhu::SwitchConnection,
+    sihuhu_SwitchConnection,
     TrackElement,
-    sihuhu::Switch,
-    sihuhu::Rail,
+    sihuhu_Switch,
+    sihuhu_Rail,
     NamedElement,
-    sihuhu::TrackElement,
-    sihuhu::Train,
-    sihuhu::Signal,
-    sihuhu::Track,
-    sihuhu::World,
+    sihuhu_Signal,
+    sihuhu_Train,
+    sihuhu_Track,
+    sihuhu_TrackElement,
+    sihuhu_World,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_sihuhu::namedelement_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::NamedElement)
+def test_sihuhu_namedelement_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_NamedElement)
 
 
-def test_sihuhu::namedelement_constructor_exists():
-    assert callable(sihuhu::NamedElement.__init__)
+def test_sihuhu_namedelement_constructor_exists():
+    assert callable(sihuhu_NamedElement.__init__)
 
 
-def test_sihuhu::namedelement_constructor_args():
-    sig = inspect.signature(sihuhu::NamedElement.__init__)
+def test_sihuhu_namedelement_constructor_args():
+    sig = inspect.signature(sihuhu_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sihuhu::namedelement_has_name():
-    assert hasattr(sihuhu::NamedElement, "name")
+def test_sihuhu_namedelement_has_name():
+    assert hasattr(sihuhu_NamedElement, "name")
     descriptor = None
-    for klass in sihuhu::NamedElement.__mro__:
+    for klass in sihuhu_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,16 +64,16 @@ def test_rail_constructor_args():
 
 
 
-def test_sihuhu::switchconnection_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::SwitchConnection)
+def test_sihuhu_switchconnection_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_SwitchConnection)
 
 
-def test_sihuhu::switchconnection_constructor_exists():
-    assert callable(sihuhu::SwitchConnection.__init__)
+def test_sihuhu_switchconnection_constructor_exists():
+    assert callable(sihuhu_SwitchConnection.__init__)
 
 
-def test_sihuhu::switchconnection_constructor_args():
-    sig = inspect.signature(sihuhu::SwitchConnection.__init__)
+def test_sihuhu_switchconnection_constructor_args():
+    sig = inspect.signature(sihuhu_SwitchConnection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -92,30 +92,30 @@ def test_trackelement_constructor_args():
 
 
 
-def test_sihuhu::switch_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::Switch)
+def test_sihuhu_switch_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_Switch)
 
 
-def test_sihuhu::switch_constructor_exists():
-    assert callable(sihuhu::Switch.__init__)
+def test_sihuhu_switch_constructor_exists():
+    assert callable(sihuhu_Switch.__init__)
 
 
-def test_sihuhu::switch_constructor_args():
-    sig = inspect.signature(sihuhu::Switch.__init__)
+def test_sihuhu_switch_constructor_args():
+    sig = inspect.signature(sihuhu_Switch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sihuhu::rail_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::Rail)
+def test_sihuhu_rail_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_Rail)
 
 
-def test_sihuhu::rail_constructor_exists():
-    assert callable(sihuhu::Rail.__init__)
+def test_sihuhu_rail_constructor_exists():
+    assert callable(sihuhu_Rail.__init__)
 
 
-def test_sihuhu::rail_constructor_args():
-    sig = inspect.signature(sihuhu::Rail.__init__)
+def test_sihuhu_rail_constructor_args():
+    sig = inspect.signature(sihuhu_Rail.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,51 +134,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_sihuhu::trackelement_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::TrackElement)
+def test_sihuhu_signal_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_Signal)
 
 
-def test_sihuhu::trackelement_constructor_exists():
-    assert callable(sihuhu::TrackElement.__init__)
+def test_sihuhu_signal_constructor_exists():
+    assert callable(sihuhu_Signal.__init__)
 
 
-def test_sihuhu::trackelement_constructor_args():
-    sig = inspect.signature(sihuhu::TrackElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sihuhu::train_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::Train)
-
-
-def test_sihuhu::train_constructor_exists():
-    assert callable(sihuhu::Train.__init__)
-
-
-def test_sihuhu::train_constructor_args():
-    sig = inspect.signature(sihuhu::Train.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sihuhu::signal_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::Signal)
-
-
-def test_sihuhu::signal_constructor_exists():
-    assert callable(sihuhu::Signal.__init__)
-
-
-def test_sihuhu::signal_constructor_args():
-    sig = inspect.signature(sihuhu::Signal.__init__)
+def test_sihuhu_signal_constructor_args():
+    sig = inspect.signature(sihuhu_Signal.__init__)
     params = list(sig.parameters.keys())
     assert "enabled" in params, "Missing parameter 'enabled'"
 
-def test_sihuhu::signal_has_enabled():
-    assert hasattr(sihuhu::Signal, "enabled")
+def test_sihuhu_signal_has_enabled():
+    assert hasattr(sihuhu_Signal, "enabled")
     descriptor = None
-    for klass in sihuhu::Signal.__mro__:
+    for klass in sihuhu_Signal.__mro__:
         if "enabled" in klass.__dict__:
             descriptor = klass.__dict__["enabled"]
             break
@@ -186,30 +158,58 @@ def test_sihuhu::signal_has_enabled():
 
 
 
-def test_sihuhu::track_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::Track)
+def test_sihuhu_train_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_Train)
 
 
-def test_sihuhu::track_constructor_exists():
-    assert callable(sihuhu::Track.__init__)
+def test_sihuhu_train_constructor_exists():
+    assert callable(sihuhu_Train.__init__)
 
 
-def test_sihuhu::track_constructor_args():
-    sig = inspect.signature(sihuhu::Track.__init__)
+def test_sihuhu_train_constructor_args():
+    sig = inspect.signature(sihuhu_Train.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sihuhu::world_is_not_abstract():
-    assert not inspect.isabstract(sihuhu::World)
+def test_sihuhu_track_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_Track)
 
 
-def test_sihuhu::world_constructor_exists():
-    assert callable(sihuhu::World.__init__)
+def test_sihuhu_track_constructor_exists():
+    assert callable(sihuhu_Track.__init__)
 
 
-def test_sihuhu::world_constructor_args():
-    sig = inspect.signature(sihuhu::World.__init__)
+def test_sihuhu_track_constructor_args():
+    sig = inspect.signature(sihuhu_Track.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sihuhu_trackelement_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_TrackElement)
+
+
+def test_sihuhu_trackelement_constructor_exists():
+    assert callable(sihuhu_TrackElement.__init__)
+
+
+def test_sihuhu_trackelement_constructor_args():
+    sig = inspect.signature(sihuhu_TrackElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sihuhu_world_is_not_abstract():
+    assert not inspect.isabstract(sihuhu_World)
+
+
+def test_sihuhu_world_constructor_exists():
+    assert callable(sihuhu_World.__init__)
+
+
+def test_sihuhu_world_constructor_args():
+    sig = inspect.signature(sihuhu_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,59 +224,56 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sihuhu::NamedElement_strategy = st.builds(
-    sihuhu::NamedElement,
+sihuhu_NamedElement_strategy = st.builds(
+    sihuhu_NamedElement,
     name=
         safe_text
 )
 Rail_strategy = st.builds(
     Rail,
 )
-sihuhu::SwitchConnection_strategy = st.builds(
-    sihuhu::SwitchConnection,
+sihuhu_SwitchConnection_strategy = st.builds(
+    sihuhu_SwitchConnection,
 )
 TrackElement_strategy = st.builds(
     TrackElement,
 )
-sihuhu::Switch_strategy = st.builds(
-    sihuhu::Switch,
+sihuhu_Switch_strategy = st.builds(
+    sihuhu_Switch,
 )
-sihuhu::Rail_strategy = st.builds(
-    sihuhu::Rail,
+sihuhu_Rail_strategy = st.builds(
+    sihuhu_Rail,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-sihuhu::TrackElement_strategy = st.builds(
-    sihuhu::TrackElement,
-)
-sihuhu::Train_strategy = st.builds(
-    sihuhu::Train,
-)
-sihuhu::Signal_strategy = st.builds(
-    sihuhu::Signal,
+sihuhu_Signal_strategy = st.builds(
+    sihuhu_Signal,
     enabled=
         st.booleans()
 )
-sihuhu::Track_strategy = st.builds(
-    sihuhu::Track,
+sihuhu_Train_strategy = st.builds(
+    sihuhu_Train,
 )
-sihuhu::World_strategy = st.builds(
-    sihuhu::World,
+sihuhu_Track_strategy = st.builds(
+    sihuhu_Track,
+)
+sihuhu_TrackElement_strategy = st.builds(
+    sihuhu_TrackElement,
+)
+sihuhu_World_strategy = st.builds(
+    sihuhu_World,
 )
 
-@given(instance=sihuhu::NamedElement_strategy)
+@given(instance=sihuhu_NamedElement_strategy)
 @settings(max_examples=50)
-def test_sihuhu::namedelement_instantiation(instance):
-    assert isinstance(instance, sihuhu::NamedElement)
-
-@given(instance=sihuhu::NamedElement_strategy)
-def test_sihuhu::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sihuhu_namedelement_instantiation(instance):
+    assert isinstance(instance, sihuhu_NamedElement)
 
 
-@given(instance=sihuhu::NamedElement_strategy)
-def test_sihuhu::namedelement_name_setter(instance):
+
+@given(instance=sihuhu_NamedElement_strategy)
+def test_sihuhu_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -286,63 +283,60 @@ def test_sihuhu::namedelement_name_setter(instance):
 def test_rail_instantiation(instance):
     assert isinstance(instance, Rail)
 
-@given(instance=sihuhu::SwitchConnection_strategy)
+@given(instance=sihuhu_SwitchConnection_strategy)
 @settings(max_examples=50)
-def test_sihuhu::switchconnection_instantiation(instance):
-    assert isinstance(instance, sihuhu::SwitchConnection)
+def test_sihuhu_switchconnection_instantiation(instance):
+    assert isinstance(instance, sihuhu_SwitchConnection)
 
 @given(instance=TrackElement_strategy)
 @settings(max_examples=50)
 def test_trackelement_instantiation(instance):
     assert isinstance(instance, TrackElement)
 
-@given(instance=sihuhu::Switch_strategy)
+@given(instance=sihuhu_Switch_strategy)
 @settings(max_examples=50)
-def test_sihuhu::switch_instantiation(instance):
-    assert isinstance(instance, sihuhu::Switch)
+def test_sihuhu_switch_instantiation(instance):
+    assert isinstance(instance, sihuhu_Switch)
 
-@given(instance=sihuhu::Rail_strategy)
+@given(instance=sihuhu_Rail_strategy)
 @settings(max_examples=50)
-def test_sihuhu::rail_instantiation(instance):
-    assert isinstance(instance, sihuhu::Rail)
+def test_sihuhu_rail_instantiation(instance):
+    assert isinstance(instance, sihuhu_Rail)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=sihuhu::TrackElement_strategy)
+@given(instance=sihuhu_Signal_strategy)
 @settings(max_examples=50)
-def test_sihuhu::trackelement_instantiation(instance):
-    assert isinstance(instance, sihuhu::TrackElement)
-
-@given(instance=sihuhu::Train_strategy)
-@settings(max_examples=50)
-def test_sihuhu::train_instantiation(instance):
-    assert isinstance(instance, sihuhu::Train)
-
-@given(instance=sihuhu::Signal_strategy)
-@settings(max_examples=50)
-def test_sihuhu::signal_instantiation(instance):
-    assert isinstance(instance, sihuhu::Signal)
-
-@given(instance=sihuhu::Signal_strategy)
-def test_sihuhu::signal_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
+def test_sihuhu_signal_instantiation(instance):
+    assert isinstance(instance, sihuhu_Signal)
 
 
-@given(instance=sihuhu::Signal_strategy)
-def test_sihuhu::signal_enabled_setter(instance):
+
+@given(instance=sihuhu_Signal_strategy)
+def test_sihuhu_signal_enabled_setter(instance):
     original = instance.enabled
     instance.enabled = original
     assert instance.enabled == original
 
-@given(instance=sihuhu::Track_strategy)
+@given(instance=sihuhu_Train_strategy)
 @settings(max_examples=50)
-def test_sihuhu::track_instantiation(instance):
-    assert isinstance(instance, sihuhu::Track)
+def test_sihuhu_train_instantiation(instance):
+    assert isinstance(instance, sihuhu_Train)
 
-@given(instance=sihuhu::World_strategy)
+@given(instance=sihuhu_Track_strategy)
 @settings(max_examples=50)
-def test_sihuhu::world_instantiation(instance):
-    assert isinstance(instance, sihuhu::World)
+def test_sihuhu_track_instantiation(instance):
+    assert isinstance(instance, sihuhu_Track)
+
+@given(instance=sihuhu_TrackElement_strategy)
+@settings(max_examples=50)
+def test_sihuhu_trackelement_instantiation(instance):
+    assert isinstance(instance, sihuhu_TrackElement)
+
+@given(instance=sihuhu_World_strategy)
+@settings(max_examples=50)
+def test_sihuhu_world_instantiation(instance):
+    assert isinstance(instance, sihuhu_World)

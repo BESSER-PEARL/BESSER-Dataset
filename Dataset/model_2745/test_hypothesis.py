@@ -3,98 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    A,
-    ModelElement,
-    systemmodel::A,
+from python_code import (
     Sum,
-    systemmodel::Sum2,
-    systemmodel::Sum1,
+    systemmodel_Sum1,
     Block,
-    systemmodel::SrcBlock,
-    systemmodel::Sum,
-    systemmodel::Test,
-    systemmodel::UnitDelay,
-    systemmodel::C,
-    systemmodel::B,
+    systemmodel_SrcBlock,
+    systemmodel_Sum,
+    systemmodel_UnitDelay,
     SMElement,
-    systemmodel::ModelElement,
-    systemmodel::Signal,
-    systemmodel::Outport,
-    systemmodel::Inport,
-    systemmodel::Root,
-    systemmodel::SystemModel,
-    systemmodel::SMElement,
-    systemmodel::Block,
+    systemmodel_Signal,
+    systemmodel_Outport,
+    systemmodel_Inport,
+    systemmodel_SystemModel,
+    systemmodel_SMElement,
+    systemmodel_Block,
+    systemmodel_ModelElement,
+    systemmodel_Root,
+    A,
+    systemmodel_B,
+    ModelElement,
+    systemmodel_C,
+    systemmodel_A,
+    systemmodel_Test,
+    systemmodel_Sum2,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_a_is_not_abstract():
-    assert not inspect.isabstract(A)
-
-
-def test_a_constructor_exists():
-    assert callable(A.__init__)
-
-
-def test_a_constructor_args():
-    sig = inspect.signature(A.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modelelement_is_not_abstract():
-    assert not inspect.isabstract(ModelElement)
-
-
-def test_modelelement_constructor_exists():
-    assert callable(ModelElement.__init__)
-
-
-def test_modelelement_constructor_args():
-    sig = inspect.signature(ModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemmodel::a_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::A)
-
-
-def test_systemmodel::a_constructor_exists():
-    assert callable(systemmodel::A.__init__)
-
-
-def test_systemmodel::a_constructor_args():
-    sig = inspect.signature(systemmodel::A.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "multiValAtt" in params, "Missing parameter 'multiValAtt'"
-
-def test_systemmodel::a_has_name():
-    assert hasattr(systemmodel::A, "name")
-    descriptor = None
-    for klass in systemmodel::A.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_systemmodel::a_has_multiValAtt():
-    assert hasattr(systemmodel::A, "multiValAtt")
-    descriptor = None
-    for klass in systemmodel::A.__mro__:
-        if "multiValAtt" in klass.__dict__:
-            descriptor = klass.__dict__["multiValAtt"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -112,30 +50,16 @@ def test_sum_constructor_args():
 
 
 
-def test_systemmodel::sum2_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Sum2)
+def test_systemmodel_sum1_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Sum1)
 
 
-def test_systemmodel::sum2_constructor_exists():
-    assert callable(systemmodel::Sum2.__init__)
+def test_systemmodel_sum1_constructor_exists():
+    assert callable(systemmodel_Sum1.__init__)
 
 
-def test_systemmodel::sum2_constructor_args():
-    sig = inspect.signature(systemmodel::Sum2.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemmodel::sum1_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Sum1)
-
-
-def test_systemmodel::sum1_constructor_exists():
-    assert callable(systemmodel::Sum1.__init__)
-
-
-def test_systemmodel::sum1_constructor_args():
-    sig = inspect.signature(systemmodel::Sum1.__init__)
+def test_systemmodel_sum1_constructor_args():
+    sig = inspect.signature(systemmodel_Sum1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,96 +78,44 @@ def test_block_constructor_args():
 
 
 
-def test_systemmodel::srcblock_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::SrcBlock)
+def test_systemmodel_srcblock_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_SrcBlock)
 
 
-def test_systemmodel::srcblock_constructor_exists():
-    assert callable(systemmodel::SrcBlock.__init__)
+def test_systemmodel_srcblock_constructor_exists():
+    assert callable(systemmodel_SrcBlock.__init__)
 
 
-def test_systemmodel::srcblock_constructor_args():
-    sig = inspect.signature(systemmodel::SrcBlock.__init__)
+def test_systemmodel_srcblock_constructor_args():
+    sig = inspect.signature(systemmodel_SrcBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::sum_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Sum)
+def test_systemmodel_sum_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Sum)
 
 
-def test_systemmodel::sum_constructor_exists():
-    assert callable(systemmodel::Sum.__init__)
+def test_systemmodel_sum_constructor_exists():
+    assert callable(systemmodel_Sum.__init__)
 
 
-def test_systemmodel::sum_constructor_args():
-    sig = inspect.signature(systemmodel::Sum.__init__)
+def test_systemmodel_sum_constructor_args():
+    sig = inspect.signature(systemmodel_Sum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::test_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Test)
+def test_systemmodel_unitdelay_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_UnitDelay)
 
 
-def test_systemmodel::test_constructor_exists():
-    assert callable(systemmodel::Test.__init__)
+def test_systemmodel_unitdelay_constructor_exists():
+    assert callable(systemmodel_UnitDelay.__init__)
 
 
-def test_systemmodel::test_constructor_args():
-    sig = inspect.signature(systemmodel::Test.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemmodel::unitdelay_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::UnitDelay)
-
-
-def test_systemmodel::unitdelay_constructor_exists():
-    assert callable(systemmodel::UnitDelay.__init__)
-
-
-def test_systemmodel::unitdelay_constructor_args():
-    sig = inspect.signature(systemmodel::UnitDelay.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemmodel::c_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::C)
-
-
-def test_systemmodel::c_constructor_exists():
-    assert callable(systemmodel::C.__init__)
-
-
-def test_systemmodel::c_constructor_args():
-    sig = inspect.signature(systemmodel::C.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_systemmodel::c_has_name():
-    assert hasattr(systemmodel::C, "name")
-    descriptor = None
-    for klass in systemmodel::C.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_systemmodel::b_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::B)
-
-
-def test_systemmodel::b_constructor_exists():
-    assert callable(systemmodel::B.__init__)
-
-
-def test_systemmodel::b_constructor_args():
-    sig = inspect.signature(systemmodel::B.__init__)
+def test_systemmodel_unitdelay_constructor_args():
+    sig = inspect.signature(systemmodel_UnitDelay.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -262,114 +134,242 @@ def test_smelement_constructor_args():
 
 
 
-def test_systemmodel::modelelement_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::ModelElement)
+def test_systemmodel_signal_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Signal)
 
 
-def test_systemmodel::modelelement_constructor_exists():
-    assert callable(systemmodel::ModelElement.__init__)
+def test_systemmodel_signal_constructor_exists():
+    assert callable(systemmodel_Signal.__init__)
 
 
-def test_systemmodel::modelelement_constructor_args():
-    sig = inspect.signature(systemmodel::ModelElement.__init__)
+def test_systemmodel_signal_constructor_args():
+    sig = inspect.signature(systemmodel_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::signal_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Signal)
+def test_systemmodel_outport_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Outport)
 
 
-def test_systemmodel::signal_constructor_exists():
-    assert callable(systemmodel::Signal.__init__)
+def test_systemmodel_outport_constructor_exists():
+    assert callable(systemmodel_Outport.__init__)
 
 
-def test_systemmodel::signal_constructor_args():
-    sig = inspect.signature(systemmodel::Signal.__init__)
+def test_systemmodel_outport_constructor_args():
+    sig = inspect.signature(systemmodel_Outport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::outport_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Outport)
+def test_systemmodel_inport_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Inport)
 
 
-def test_systemmodel::outport_constructor_exists():
-    assert callable(systemmodel::Outport.__init__)
+def test_systemmodel_inport_constructor_exists():
+    assert callable(systemmodel_Inport.__init__)
 
 
-def test_systemmodel::outport_constructor_args():
-    sig = inspect.signature(systemmodel::Outport.__init__)
+def test_systemmodel_inport_constructor_args():
+    sig = inspect.signature(systemmodel_Inport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::inport_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Inport)
+def test_systemmodel_systemmodel_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_SystemModel)
 
 
-def test_systemmodel::inport_constructor_exists():
-    assert callable(systemmodel::Inport.__init__)
+def test_systemmodel_systemmodel_constructor_exists():
+    assert callable(systemmodel_SystemModel.__init__)
 
 
-def test_systemmodel::inport_constructor_args():
-    sig = inspect.signature(systemmodel::Inport.__init__)
+def test_systemmodel_systemmodel_constructor_args():
+    sig = inspect.signature(systemmodel_SystemModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::root_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Root)
+def test_systemmodel_smelement_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_SMElement)
 
 
-def test_systemmodel::root_constructor_exists():
-    assert callable(systemmodel::Root.__init__)
+def test_systemmodel_smelement_constructor_exists():
+    assert callable(systemmodel_SMElement.__init__)
 
 
-def test_systemmodel::root_constructor_args():
-    sig = inspect.signature(systemmodel::Root.__init__)
+def test_systemmodel_smelement_constructor_args():
+    sig = inspect.signature(systemmodel_SMElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::systemmodel_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::SystemModel)
+def test_systemmodel_block_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Block)
 
 
-def test_systemmodel::systemmodel_constructor_exists():
-    assert callable(systemmodel::SystemModel.__init__)
+def test_systemmodel_block_constructor_exists():
+    assert callable(systemmodel_Block.__init__)
 
 
-def test_systemmodel::systemmodel_constructor_args():
-    sig = inspect.signature(systemmodel::SystemModel.__init__)
+def test_systemmodel_block_constructor_args():
+    sig = inspect.signature(systemmodel_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::smelement_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::SMElement)
+def test_systemmodel_modelelement_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_ModelElement)
 
 
-def test_systemmodel::smelement_constructor_exists():
-    assert callable(systemmodel::SMElement.__init__)
+def test_systemmodel_modelelement_constructor_exists():
+    assert callable(systemmodel_ModelElement.__init__)
 
 
-def test_systemmodel::smelement_constructor_args():
-    sig = inspect.signature(systemmodel::SMElement.__init__)
+def test_systemmodel_modelelement_constructor_args():
+    sig = inspect.signature(systemmodel_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_systemmodel::block_is_not_abstract():
-    assert not inspect.isabstract(systemmodel::Block)
+def test_systemmodel_root_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Root)
 
 
-def test_systemmodel::block_constructor_exists():
-    assert callable(systemmodel::Block.__init__)
+def test_systemmodel_root_constructor_exists():
+    assert callable(systemmodel_Root.__init__)
 
 
-def test_systemmodel::block_constructor_args():
-    sig = inspect.signature(systemmodel::Block.__init__)
+def test_systemmodel_root_constructor_args():
+    sig = inspect.signature(systemmodel_Root.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_a_is_not_abstract():
+    assert not inspect.isabstract(A)
+
+
+def test_a_constructor_exists():
+    assert callable(A.__init__)
+
+
+def test_a_constructor_args():
+    sig = inspect.signature(A.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemmodel_b_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_B)
+
+
+def test_systemmodel_b_constructor_exists():
+    assert callable(systemmodel_B.__init__)
+
+
+def test_systemmodel_b_constructor_args():
+    sig = inspect.signature(systemmodel_B.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modelelement_is_not_abstract():
+    assert not inspect.isabstract(ModelElement)
+
+
+def test_modelelement_constructor_exists():
+    assert callable(ModelElement.__init__)
+
+
+def test_modelelement_constructor_args():
+    sig = inspect.signature(ModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemmodel_c_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_C)
+
+
+def test_systemmodel_c_constructor_exists():
+    assert callable(systemmodel_C.__init__)
+
+
+def test_systemmodel_c_constructor_args():
+    sig = inspect.signature(systemmodel_C.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_systemmodel_c_has_name():
+    assert hasattr(systemmodel_C, "name")
+    descriptor = None
+    for klass in systemmodel_C.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_systemmodel_a_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_A)
+
+
+def test_systemmodel_a_constructor_exists():
+    assert callable(systemmodel_A.__init__)
+
+
+def test_systemmodel_a_constructor_args():
+    sig = inspect.signature(systemmodel_A.__init__)
+    params = list(sig.parameters.keys())
+    assert "multiValAtt" in params, "Missing parameter 'multiValAtt'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_systemmodel_a_has_multiValAtt():
+    assert hasattr(systemmodel_A, "multiValAtt")
+    descriptor = None
+    for klass in systemmodel_A.__mro__:
+        if "multiValAtt" in klass.__dict__:
+            descriptor = klass.__dict__["multiValAtt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_systemmodel_a_has_name():
+    assert hasattr(systemmodel_A, "name")
+    descriptor = None
+    for klass in systemmodel_A.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_systemmodel_test_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Test)
+
+
+def test_systemmodel_test_constructor_exists():
+    assert callable(systemmodel_Test.__init__)
+
+
+def test_systemmodel_test_constructor_args():
+    sig = inspect.signature(systemmodel_Test.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemmodel_sum2_is_not_abstract():
+    assert not inspect.isabstract(systemmodel_Sum2)
+
+
+def test_systemmodel_sum2_constructor_exists():
+    assert callable(systemmodel_Sum2.__init__)
+
+
+def test_systemmodel_sum2_constructor_args():
+    sig = inspect.signature(systemmodel_Sum2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -384,218 +384,209 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-A_strategy = st.builds(
-    A,
-)
-ModelElement_strategy = st.builds(
-    ModelElement,
-)
-systemmodel::A_strategy = st.builds(
-    systemmodel::A,
-    name=
-        safe_text,
-    multiValAtt=
-        safe_text
-)
 Sum_strategy = st.builds(
     Sum,
 )
-systemmodel::Sum2_strategy = st.builds(
-    systemmodel::Sum2,
-)
-systemmodel::Sum1_strategy = st.builds(
-    systemmodel::Sum1,
+systemmodel_Sum1_strategy = st.builds(
+    systemmodel_Sum1,
 )
 Block_strategy = st.builds(
     Block,
 )
-systemmodel::SrcBlock_strategy = st.builds(
-    systemmodel::SrcBlock,
+systemmodel_SrcBlock_strategy = st.builds(
+    systemmodel_SrcBlock,
 )
-systemmodel::Sum_strategy = st.builds(
-    systemmodel::Sum,
+systemmodel_Sum_strategy = st.builds(
+    systemmodel_Sum,
 )
-systemmodel::Test_strategy = st.builds(
-    systemmodel::Test,
-)
-systemmodel::UnitDelay_strategy = st.builds(
-    systemmodel::UnitDelay,
-)
-systemmodel::C_strategy = st.builds(
-    systemmodel::C,
-    name=
-        safe_text
-)
-systemmodel::B_strategy = st.builds(
-    systemmodel::B,
+systemmodel_UnitDelay_strategy = st.builds(
+    systemmodel_UnitDelay,
 )
 SMElement_strategy = st.builds(
     SMElement,
 )
-systemmodel::ModelElement_strategy = st.builds(
-    systemmodel::ModelElement,
+systemmodel_Signal_strategy = st.builds(
+    systemmodel_Signal,
 )
-systemmodel::Signal_strategy = st.builds(
-    systemmodel::Signal,
+systemmodel_Outport_strategy = st.builds(
+    systemmodel_Outport,
 )
-systemmodel::Outport_strategy = st.builds(
-    systemmodel::Outport,
+systemmodel_Inport_strategy = st.builds(
+    systemmodel_Inport,
 )
-systemmodel::Inport_strategy = st.builds(
-    systemmodel::Inport,
+systemmodel_SystemModel_strategy = st.builds(
+    systemmodel_SystemModel,
 )
-systemmodel::Root_strategy = st.builds(
-    systemmodel::Root,
+systemmodel_SMElement_strategy = st.builds(
+    systemmodel_SMElement,
 )
-systemmodel::SystemModel_strategy = st.builds(
-    systemmodel::SystemModel,
+systemmodel_Block_strategy = st.builds(
+    systemmodel_Block,
 )
-systemmodel::SMElement_strategy = st.builds(
-    systemmodel::SMElement,
+systemmodel_ModelElement_strategy = st.builds(
+    systemmodel_ModelElement,
 )
-systemmodel::Block_strategy = st.builds(
-    systemmodel::Block,
+systemmodel_Root_strategy = st.builds(
+    systemmodel_Root,
 )
-
-@given(instance=A_strategy)
-@settings(max_examples=50)
-def test_a_instantiation(instance):
-    assert isinstance(instance, A)
-
-@given(instance=ModelElement_strategy)
-@settings(max_examples=50)
-def test_modelelement_instantiation(instance):
-    assert isinstance(instance, ModelElement)
-
-@given(instance=systemmodel::A_strategy)
-@settings(max_examples=50)
-def test_systemmodel::a_instantiation(instance):
-    assert isinstance(instance, systemmodel::A)
-
-@given(instance=systemmodel::A_strategy)
-def test_systemmodel::a_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=systemmodel::A_strategy)
-def test_systemmodel::a_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=systemmodel::A_strategy)
-def test_systemmodel::a_multiValAtt_type(instance):
-    assert isinstance(instance.multiValAtt, str)
-
-
-@given(instance=systemmodel::A_strategy)
-def test_systemmodel::a_multiValAtt_setter(instance):
-    original = instance.multiValAtt
-    instance.multiValAtt = original
-    assert instance.multiValAtt == original
+A_strategy = st.builds(
+    A,
+)
+systemmodel_B_strategy = st.builds(
+    systemmodel_B,
+)
+ModelElement_strategy = st.builds(
+    ModelElement,
+)
+systemmodel_C_strategy = st.builds(
+    systemmodel_C,
+    name=
+        safe_text
+)
+systemmodel_A_strategy = st.builds(
+    systemmodel_A,
+    multiValAtt=
+        safe_text,
+    name=
+        safe_text
+)
+systemmodel_Test_strategy = st.builds(
+    systemmodel_Test,
+)
+systemmodel_Sum2_strategy = st.builds(
+    systemmodel_Sum2,
+)
 
 @given(instance=Sum_strategy)
 @settings(max_examples=50)
 def test_sum_instantiation(instance):
     assert isinstance(instance, Sum)
 
-@given(instance=systemmodel::Sum2_strategy)
+@given(instance=systemmodel_Sum1_strategy)
 @settings(max_examples=50)
-def test_systemmodel::sum2_instantiation(instance):
-    assert isinstance(instance, systemmodel::Sum2)
-
-@given(instance=systemmodel::Sum1_strategy)
-@settings(max_examples=50)
-def test_systemmodel::sum1_instantiation(instance):
-    assert isinstance(instance, systemmodel::Sum1)
+def test_systemmodel_sum1_instantiation(instance):
+    assert isinstance(instance, systemmodel_Sum1)
 
 @given(instance=Block_strategy)
 @settings(max_examples=50)
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=systemmodel::SrcBlock_strategy)
+@given(instance=systemmodel_SrcBlock_strategy)
 @settings(max_examples=50)
-def test_systemmodel::srcblock_instantiation(instance):
-    assert isinstance(instance, systemmodel::SrcBlock)
+def test_systemmodel_srcblock_instantiation(instance):
+    assert isinstance(instance, systemmodel_SrcBlock)
 
-@given(instance=systemmodel::Sum_strategy)
+@given(instance=systemmodel_Sum_strategy)
 @settings(max_examples=50)
-def test_systemmodel::sum_instantiation(instance):
-    assert isinstance(instance, systemmodel::Sum)
+def test_systemmodel_sum_instantiation(instance):
+    assert isinstance(instance, systemmodel_Sum)
 
-@given(instance=systemmodel::Test_strategy)
+@given(instance=systemmodel_UnitDelay_strategy)
 @settings(max_examples=50)
-def test_systemmodel::test_instantiation(instance):
-    assert isinstance(instance, systemmodel::Test)
-
-@given(instance=systemmodel::UnitDelay_strategy)
-@settings(max_examples=50)
-def test_systemmodel::unitdelay_instantiation(instance):
-    assert isinstance(instance, systemmodel::UnitDelay)
-
-@given(instance=systemmodel::C_strategy)
-@settings(max_examples=50)
-def test_systemmodel::c_instantiation(instance):
-    assert isinstance(instance, systemmodel::C)
-
-@given(instance=systemmodel::C_strategy)
-def test_systemmodel::c_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=systemmodel::C_strategy)
-def test_systemmodel::c_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=systemmodel::B_strategy)
-@settings(max_examples=50)
-def test_systemmodel::b_instantiation(instance):
-    assert isinstance(instance, systemmodel::B)
+def test_systemmodel_unitdelay_instantiation(instance):
+    assert isinstance(instance, systemmodel_UnitDelay)
 
 @given(instance=SMElement_strategy)
 @settings(max_examples=50)
 def test_smelement_instantiation(instance):
     assert isinstance(instance, SMElement)
 
-@given(instance=systemmodel::ModelElement_strategy)
+@given(instance=systemmodel_Signal_strategy)
 @settings(max_examples=50)
-def test_systemmodel::modelelement_instantiation(instance):
-    assert isinstance(instance, systemmodel::ModelElement)
+def test_systemmodel_signal_instantiation(instance):
+    assert isinstance(instance, systemmodel_Signal)
 
-@given(instance=systemmodel::Signal_strategy)
+@given(instance=systemmodel_Outport_strategy)
 @settings(max_examples=50)
-def test_systemmodel::signal_instantiation(instance):
-    assert isinstance(instance, systemmodel::Signal)
+def test_systemmodel_outport_instantiation(instance):
+    assert isinstance(instance, systemmodel_Outport)
 
-@given(instance=systemmodel::Outport_strategy)
+@given(instance=systemmodel_Inport_strategy)
 @settings(max_examples=50)
-def test_systemmodel::outport_instantiation(instance):
-    assert isinstance(instance, systemmodel::Outport)
+def test_systemmodel_inport_instantiation(instance):
+    assert isinstance(instance, systemmodel_Inport)
 
-@given(instance=systemmodel::Inport_strategy)
+@given(instance=systemmodel_SystemModel_strategy)
 @settings(max_examples=50)
-def test_systemmodel::inport_instantiation(instance):
-    assert isinstance(instance, systemmodel::Inport)
+def test_systemmodel_systemmodel_instantiation(instance):
+    assert isinstance(instance, systemmodel_SystemModel)
 
-@given(instance=systemmodel::Root_strategy)
+@given(instance=systemmodel_SMElement_strategy)
 @settings(max_examples=50)
-def test_systemmodel::root_instantiation(instance):
-    assert isinstance(instance, systemmodel::Root)
+def test_systemmodel_smelement_instantiation(instance):
+    assert isinstance(instance, systemmodel_SMElement)
 
-@given(instance=systemmodel::SystemModel_strategy)
+@given(instance=systemmodel_Block_strategy)
 @settings(max_examples=50)
-def test_systemmodel::systemmodel_instantiation(instance):
-    assert isinstance(instance, systemmodel::SystemModel)
+def test_systemmodel_block_instantiation(instance):
+    assert isinstance(instance, systemmodel_Block)
 
-@given(instance=systemmodel::SMElement_strategy)
+@given(instance=systemmodel_ModelElement_strategy)
 @settings(max_examples=50)
-def test_systemmodel::smelement_instantiation(instance):
-    assert isinstance(instance, systemmodel::SMElement)
+def test_systemmodel_modelelement_instantiation(instance):
+    assert isinstance(instance, systemmodel_ModelElement)
 
-@given(instance=systemmodel::Block_strategy)
+@given(instance=systemmodel_Root_strategy)
 @settings(max_examples=50)
-def test_systemmodel::block_instantiation(instance):
-    assert isinstance(instance, systemmodel::Block)
+def test_systemmodel_root_instantiation(instance):
+    assert isinstance(instance, systemmodel_Root)
+
+@given(instance=A_strategy)
+@settings(max_examples=50)
+def test_a_instantiation(instance):
+    assert isinstance(instance, A)
+
+@given(instance=systemmodel_B_strategy)
+@settings(max_examples=50)
+def test_systemmodel_b_instantiation(instance):
+    assert isinstance(instance, systemmodel_B)
+
+@given(instance=ModelElement_strategy)
+@settings(max_examples=50)
+def test_modelelement_instantiation(instance):
+    assert isinstance(instance, ModelElement)
+
+@given(instance=systemmodel_C_strategy)
+@settings(max_examples=50)
+def test_systemmodel_c_instantiation(instance):
+    assert isinstance(instance, systemmodel_C)
+
+
+
+@given(instance=systemmodel_C_strategy)
+def test_systemmodel_c_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=systemmodel_A_strategy)
+@settings(max_examples=50)
+def test_systemmodel_a_instantiation(instance):
+    assert isinstance(instance, systemmodel_A)
+
+
+
+@given(instance=systemmodel_A_strategy)
+def test_systemmodel_a_multiValAtt_setter(instance):
+    original = instance.multiValAtt
+    instance.multiValAtt = original
+    assert instance.multiValAtt == original
+
+
+
+@given(instance=systemmodel_A_strategy)
+def test_systemmodel_a_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=systemmodel_Test_strategy)
+@settings(max_examples=50)
+def test_systemmodel_test_instantiation(instance):
+    assert isinstance(instance, systemmodel_Test)
+
+@given(instance=systemmodel_Sum2_strategy)
+@settings(max_examples=50)
+def test_systemmodel_sum2_instantiation(instance):
+    assert isinstance(instance, systemmodel_Sum2)

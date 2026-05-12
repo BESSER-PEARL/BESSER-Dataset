@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     RootOut,
-    out::E,
-    out::D,
-    out::RootOut,
+    out_E,
+    out_D,
+    out_RootOut,
 )
 
 # =============================================================================
@@ -32,23 +32,23 @@ def test_rootout_constructor_args():
 
 
 
-def test_out::e_is_not_abstract():
-    assert not inspect.isabstract(out::E)
+def test_out_e_is_not_abstract():
+    assert not inspect.isabstract(out_E)
 
 
-def test_out::e_constructor_exists():
-    assert callable(out::E.__init__)
+def test_out_e_constructor_exists():
+    assert callable(out_E.__init__)
 
 
-def test_out::e_constructor_args():
-    sig = inspect.signature(out::E.__init__)
+def test_out_e_constructor_args():
+    sig = inspect.signature(out_E.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_out::e_has_name():
-    assert hasattr(out::E, "name")
+def test_out_e_has_name():
+    assert hasattr(out_E, "name")
     descriptor = None
-    for klass in out::E.__mro__:
+    for klass in out_E.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -56,23 +56,23 @@ def test_out::e_has_name():
 
 
 
-def test_out::d_is_not_abstract():
-    assert not inspect.isabstract(out::D)
+def test_out_d_is_not_abstract():
+    assert not inspect.isabstract(out_D)
 
 
-def test_out::d_constructor_exists():
-    assert callable(out::D.__init__)
+def test_out_d_constructor_exists():
+    assert callable(out_D.__init__)
 
 
-def test_out::d_constructor_args():
-    sig = inspect.signature(out::D.__init__)
+def test_out_d_constructor_args():
+    sig = inspect.signature(out_D.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_out::d_has_name():
-    assert hasattr(out::D, "name")
+def test_out_d_has_name():
+    assert hasattr(out_D, "name")
     descriptor = None
-    for klass in out::D.__mro__:
+    for klass in out_D.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,16 +80,16 @@ def test_out::d_has_name():
 
 
 
-def test_out::rootout_is_not_abstract():
-    assert not inspect.isabstract(out::RootOut)
+def test_out_rootout_is_not_abstract():
+    assert not inspect.isabstract(out_RootOut)
 
 
-def test_out::rootout_constructor_exists():
-    assert callable(out::RootOut.__init__)
+def test_out_rootout_constructor_exists():
+    assert callable(out_RootOut.__init__)
 
 
-def test_out::rootout_constructor_args():
-    sig = inspect.signature(out::RootOut.__init__)
+def test_out_rootout_constructor_args():
+    sig = inspect.signature(out_RootOut.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -107,18 +107,18 @@ safe_text = st.text(
 RootOut_strategy = st.builds(
     RootOut,
 )
-out::E_strategy = st.builds(
-    out::E,
+out_E_strategy = st.builds(
+    out_E,
     name=
         safe_text
 )
-out::D_strategy = st.builds(
-    out::D,
+out_D_strategy = st.builds(
+    out_D,
     name=
         safe_text
 )
-out::RootOut_strategy = st.builds(
-    out::RootOut,
+out_RootOut_strategy = st.builds(
+    out_RootOut,
 )
 
 @given(instance=RootOut_strategy)
@@ -126,39 +126,33 @@ out::RootOut_strategy = st.builds(
 def test_rootout_instantiation(instance):
     assert isinstance(instance, RootOut)
 
-@given(instance=out::E_strategy)
+@given(instance=out_E_strategy)
 @settings(max_examples=50)
-def test_out::e_instantiation(instance):
-    assert isinstance(instance, out::E)
-
-@given(instance=out::E_strategy)
-def test_out::e_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_out_e_instantiation(instance):
+    assert isinstance(instance, out_E)
 
 
-@given(instance=out::E_strategy)
-def test_out::e_name_setter(instance):
+
+@given(instance=out_E_strategy)
+def test_out_e_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=out::D_strategy)
+@given(instance=out_D_strategy)
 @settings(max_examples=50)
-def test_out::d_instantiation(instance):
-    assert isinstance(instance, out::D)
-
-@given(instance=out::D_strategy)
-def test_out::d_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_out_d_instantiation(instance):
+    assert isinstance(instance, out_D)
 
 
-@given(instance=out::D_strategy)
-def test_out::d_name_setter(instance):
+
+@given(instance=out_D_strategy)
+def test_out_d_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=out::RootOut_strategy)
+@given(instance=out_RootOut_strategy)
 @settings(max_examples=50)
-def test_out::rootout_instantiation(instance):
-    assert isinstance(instance, out::RootOut)
+def test_out_rootout_instantiation(instance):
+    assert isinstance(instance, out_RootOut)

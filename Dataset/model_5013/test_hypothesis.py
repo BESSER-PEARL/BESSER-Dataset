@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    epo::Supplier,
-    epo::GlobalLocation,
+from python_code import (
+    epo_Supplier,
+    epo_GlobalLocation,
     GlobalLocation,
-    epo::PurchaseOrder,
-    epo::Item,
-    epo::Customer,
-    epo::Address,
+    epo_PurchaseOrder,
+    epo_Item,
+    epo_Customer,
+    epo_Address,
     Address,
-    epo::CanadianAddress,
-    epo::GlobalAddress,
-    epo::USAddress,
+    epo_GlobalAddress,
+    epo_CanadianAddress,
+    epo_USAddress,
     OrderStatus,
 )
 
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_epo::supplier_is_not_abstract():
-    assert not inspect.isabstract(epo::Supplier)
+def test_epo_supplier_is_not_abstract():
+    assert not inspect.isabstract(epo_Supplier)
 
 
-def test_epo::supplier_constructor_exists():
-    assert callable(epo::Supplier.__init__)
+def test_epo_supplier_constructor_exists():
+    assert callable(epo_Supplier.__init__)
 
 
-def test_epo::supplier_constructor_args():
-    sig = inspect.signature(epo::Supplier.__init__)
+def test_epo_supplier_constructor_args():
+    sig = inspect.signature(epo_Supplier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_epo::supplier_has_name():
-    assert hasattr(epo::Supplier, "name")
+def test_epo_supplier_has_name():
+    assert hasattr(epo_Supplier, "name")
     descriptor = None
-    for klass in epo::Supplier.__mro__:
+    for klass in epo_Supplier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -50,23 +50,23 @@ def test_epo::supplier_has_name():
 
 
 
-def test_epo::globallocation_is_not_abstract():
-    assert not inspect.isabstract(epo::GlobalLocation)
+def test_epo_globallocation_is_not_abstract():
+    assert not inspect.isabstract(epo_GlobalLocation)
 
 
-def test_epo::globallocation_constructor_exists():
-    assert callable(epo::GlobalLocation.__init__)
+def test_epo_globallocation_constructor_exists():
+    assert callable(epo_GlobalLocation.__init__)
 
 
-def test_epo::globallocation_constructor_args():
-    sig = inspect.signature(epo::GlobalLocation.__init__)
+def test_epo_globallocation_constructor_args():
+    sig = inspect.signature(epo_GlobalLocation.__init__)
     params = list(sig.parameters.keys())
     assert "countryCode" in params, "Missing parameter 'countryCode'"
 
-def test_epo::globallocation_has_countryCode():
-    assert hasattr(epo::GlobalLocation, "countryCode")
+def test_epo_globallocation_has_countryCode():
+    assert hasattr(epo_GlobalLocation, "countryCode")
     descriptor = None
-    for klass in epo::GlobalLocation.__mro__:
+    for klass in epo_GlobalLocation.__mro__:
         if "countryCode" in klass.__dict__:
             descriptor = klass.__dict__["countryCode"]
             break
@@ -88,127 +88,127 @@ def test_globallocation_constructor_args():
 
 
 
-def test_epo::purchaseorder_is_not_abstract():
-    assert not inspect.isabstract(epo::PurchaseOrder)
+def test_epo_purchaseorder_is_not_abstract():
+    assert not inspect.isabstract(epo_PurchaseOrder)
 
 
-def test_epo::purchaseorder_constructor_exists():
-    assert callable(epo::PurchaseOrder.__init__)
+def test_epo_purchaseorder_constructor_exists():
+    assert callable(epo_PurchaseOrder.__init__)
 
 
-def test_epo::purchaseorder_constructor_args():
-    sig = inspect.signature(epo::PurchaseOrder.__init__)
+def test_epo_purchaseorder_constructor_args():
+    sig = inspect.signature(epo_PurchaseOrder.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "status" in params, "Missing parameter 'status'"
-    assert "totalAmount" in params, "Missing parameter 'totalAmount'"
     assert "orderDate" in params, "Missing parameter 'orderDate'"
+    assert "totalAmount" in params, "Missing parameter 'totalAmount'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
-def test_epo::purchaseorder_has_comment():
-    assert hasattr(epo::PurchaseOrder, "comment")
+def test_epo_purchaseorder_has_status():
+    assert hasattr(epo_PurchaseOrder, "status")
     descriptor = None
-    for klass in epo::PurchaseOrder.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::purchaseorder_has_status():
-    assert hasattr(epo::PurchaseOrder, "status")
-    descriptor = None
-    for klass in epo::PurchaseOrder.__mro__:
+    for klass in epo_PurchaseOrder.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::purchaseorder_has_totalAmount():
-    assert hasattr(epo::PurchaseOrder, "totalAmount")
+def test_epo_purchaseorder_has_orderDate():
+    assert hasattr(epo_PurchaseOrder, "orderDate")
     descriptor = None
-    for klass in epo::PurchaseOrder.__mro__:
-        if "totalAmount" in klass.__dict__:
-            descriptor = klass.__dict__["totalAmount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::purchaseorder_has_orderDate():
-    assert hasattr(epo::PurchaseOrder, "orderDate")
-    descriptor = None
-    for klass in epo::PurchaseOrder.__mro__:
+    for klass in epo_PurchaseOrder.__mro__:
         if "orderDate" in klass.__dict__:
             descriptor = klass.__dict__["orderDate"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_epo::item_is_not_abstract():
-    assert not inspect.isabstract(epo::Item)
-
-
-def test_epo::item_constructor_exists():
-    assert callable(epo::Item.__init__)
-
-
-def test_epo::item_constructor_args():
-    sig = inspect.signature(epo::Item.__init__)
-    params = list(sig.parameters.keys())
-    assert "quantity" in params, "Missing parameter 'quantity'"
-    assert "USPrice" in params, "Missing parameter 'USPrice'"
-    assert "shipDate" in params, "Missing parameter 'shipDate'"
-    assert "productName" in params, "Missing parameter 'productName'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "partNum" in params, "Missing parameter 'partNum'"
-
-def test_epo::item_has_quantity():
-    assert hasattr(epo::Item, "quantity")
+def test_epo_purchaseorder_has_totalAmount():
+    assert hasattr(epo_PurchaseOrder, "totalAmount")
     descriptor = None
-    for klass in epo::Item.__mro__:
-        if "quantity" in klass.__dict__:
-            descriptor = klass.__dict__["quantity"]
+    for klass in epo_PurchaseOrder.__mro__:
+        if "totalAmount" in klass.__dict__:
+            descriptor = klass.__dict__["totalAmount"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::item_has_USPrice():
-    assert hasattr(epo::Item, "USPrice")
+def test_epo_purchaseorder_has_comment():
+    assert hasattr(epo_PurchaseOrder, "comment")
     descriptor = None
-    for klass in epo::Item.__mro__:
-        if "USPrice" in klass.__dict__:
-            descriptor = klass.__dict__["USPrice"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::item_has_shipDate():
-    assert hasattr(epo::Item, "shipDate")
-    descriptor = None
-    for klass in epo::Item.__mro__:
-        if "shipDate" in klass.__dict__:
-            descriptor = klass.__dict__["shipDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::item_has_productName():
-    assert hasattr(epo::Item, "productName")
-    descriptor = None
-    for klass in epo::Item.__mro__:
-        if "productName" in klass.__dict__:
-            descriptor = klass.__dict__["productName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::item_has_comment():
-    assert hasattr(epo::Item, "comment")
-    descriptor = None
-    for klass in epo::Item.__mro__:
+    for klass in epo_PurchaseOrder.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::item_has_partNum():
-    assert hasattr(epo::Item, "partNum")
+
+
+def test_epo_item_is_not_abstract():
+    assert not inspect.isabstract(epo_Item)
+
+
+def test_epo_item_constructor_exists():
+    assert callable(epo_Item.__init__)
+
+
+def test_epo_item_constructor_args():
+    sig = inspect.signature(epo_Item.__init__)
+    params = list(sig.parameters.keys())
+    assert "shipDate" in params, "Missing parameter 'shipDate'"
+    assert "productName" in params, "Missing parameter 'productName'"
+    assert "quantity" in params, "Missing parameter 'quantity'"
+    assert "USPrice" in params, "Missing parameter 'USPrice'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "partNum" in params, "Missing parameter 'partNum'"
+
+def test_epo_item_has_shipDate():
+    assert hasattr(epo_Item, "shipDate")
     descriptor = None
-    for klass in epo::Item.__mro__:
+    for klass in epo_Item.__mro__:
+        if "shipDate" in klass.__dict__:
+            descriptor = klass.__dict__["shipDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_item_has_productName():
+    assert hasattr(epo_Item, "productName")
+    descriptor = None
+    for klass in epo_Item.__mro__:
+        if "productName" in klass.__dict__:
+            descriptor = klass.__dict__["productName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_item_has_quantity():
+    assert hasattr(epo_Item, "quantity")
+    descriptor = None
+    for klass in epo_Item.__mro__:
+        if "quantity" in klass.__dict__:
+            descriptor = klass.__dict__["quantity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_item_has_USPrice():
+    assert hasattr(epo_Item, "USPrice")
+    descriptor = None
+    for klass in epo_Item.__mro__:
+        if "USPrice" in klass.__dict__:
+            descriptor = klass.__dict__["USPrice"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_item_has_comment():
+    assert hasattr(epo_Item, "comment")
+    descriptor = None
+    for klass in epo_Item.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_item_has_partNum():
+    assert hasattr(epo_Item, "partNum")
+    descriptor = None
+    for klass in epo_Item.__mro__:
         if "partNum" in klass.__dict__:
             descriptor = klass.__dict__["partNum"]
             break
@@ -216,23 +216,23 @@ def test_epo::item_has_partNum():
 
 
 
-def test_epo::customer_is_not_abstract():
-    assert not inspect.isabstract(epo::Customer)
+def test_epo_customer_is_not_abstract():
+    assert not inspect.isabstract(epo_Customer)
 
 
-def test_epo::customer_constructor_exists():
-    assert callable(epo::Customer.__init__)
+def test_epo_customer_constructor_exists():
+    assert callable(epo_Customer.__init__)
 
 
-def test_epo::customer_constructor_args():
-    sig = inspect.signature(epo::Customer.__init__)
+def test_epo_customer_constructor_args():
+    sig = inspect.signature(epo_Customer.__init__)
     params = list(sig.parameters.keys())
     assert "customerID" in params, "Missing parameter 'customerID'"
 
-def test_epo::customer_has_customerID():
-    assert hasattr(epo::Customer, "customerID")
+def test_epo_customer_has_customerID():
+    assert hasattr(epo_Customer, "customerID")
     descriptor = None
-    for klass in epo::Customer.__mro__:
+    for klass in epo_Customer.__mro__:
         if "customerID" in klass.__dict__:
             descriptor = klass.__dict__["customerID"]
             break
@@ -240,35 +240,35 @@ def test_epo::customer_has_customerID():
 
 
 
-def test_epo::address_is_not_abstract():
-    assert not inspect.isabstract(epo::Address)
+def test_epo_address_is_not_abstract():
+    assert not inspect.isabstract(epo_Address)
 
 
-def test_epo::address_constructor_exists():
-    assert callable(epo::Address.__init__)
+def test_epo_address_constructor_exists():
+    assert callable(epo_Address.__init__)
 
 
-def test_epo::address_constructor_args():
-    sig = inspect.signature(epo::Address.__init__)
+def test_epo_address_constructor_args():
+    sig = inspect.signature(epo_Address.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "country" in params, "Missing parameter 'country'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_epo::address_has_name():
-    assert hasattr(epo::Address, "name")
+def test_epo_address_has_country():
+    assert hasattr(epo_Address, "country")
     descriptor = None
-    for klass in epo::Address.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in epo_Address.__mro__:
+        if "country" in klass.__dict__:
+            descriptor = klass.__dict__["country"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::address_has_country():
-    assert hasattr(epo::Address, "country")
+def test_epo_address_has_name():
+    assert hasattr(epo_Address, "name")
     descriptor = None
-    for klass in epo::Address.__mro__:
-        if "country" in klass.__dict__:
-            descriptor = klass.__dict__["country"]
+    for klass in epo_Address.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -288,77 +288,23 @@ def test_address_constructor_args():
 
 
 
-def test_epo::canadianaddress_is_not_abstract():
-    assert not inspect.isabstract(epo::CanadianAddress)
+def test_epo_globaladdress_is_not_abstract():
+    assert not inspect.isabstract(epo_GlobalAddress)
 
 
-def test_epo::canadianaddress_constructor_exists():
-    assert callable(epo::CanadianAddress.__init__)
+def test_epo_globaladdress_constructor_exists():
+    assert callable(epo_GlobalAddress.__init__)
 
 
-def test_epo::canadianaddress_constructor_args():
-    sig = inspect.signature(epo::CanadianAddress.__init__)
-    params = list(sig.parameters.keys())
-    assert "city" in params, "Missing parameter 'city'"
-    assert "street" in params, "Missing parameter 'street'"
-    assert "province" in params, "Missing parameter 'province'"
-    assert "postalCode" in params, "Missing parameter 'postalCode'"
-
-def test_epo::canadianaddress_has_city():
-    assert hasattr(epo::CanadianAddress, "city")
-    descriptor = None
-    for klass in epo::CanadianAddress.__mro__:
-        if "city" in klass.__dict__:
-            descriptor = klass.__dict__["city"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::canadianaddress_has_street():
-    assert hasattr(epo::CanadianAddress, "street")
-    descriptor = None
-    for klass in epo::CanadianAddress.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::canadianaddress_has_province():
-    assert hasattr(epo::CanadianAddress, "province")
-    descriptor = None
-    for klass in epo::CanadianAddress.__mro__:
-        if "province" in klass.__dict__:
-            descriptor = klass.__dict__["province"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_epo::canadianaddress_has_postalCode():
-    assert hasattr(epo::CanadianAddress, "postalCode")
-    descriptor = None
-    for klass in epo::CanadianAddress.__mro__:
-        if "postalCode" in klass.__dict__:
-            descriptor = klass.__dict__["postalCode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_epo::globaladdress_is_not_abstract():
-    assert not inspect.isabstract(epo::GlobalAddress)
-
-
-def test_epo::globaladdress_constructor_exists():
-    assert callable(epo::GlobalAddress.__init__)
-
-
-def test_epo::globaladdress_constructor_args():
-    sig = inspect.signature(epo::GlobalAddress.__init__)
+def test_epo_globaladdress_constructor_args():
+    sig = inspect.signature(epo_GlobalAddress.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_epo::globaladdress_has_location():
-    assert hasattr(epo::GlobalAddress, "location")
+def test_epo_globaladdress_has_location():
+    assert hasattr(epo_GlobalAddress, "location")
     descriptor = None
-    for klass in epo::GlobalAddress.__mro__:
+    for klass in epo_GlobalAddress.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -366,55 +312,109 @@ def test_epo::globaladdress_has_location():
 
 
 
-def test_epo::usaddress_is_not_abstract():
-    assert not inspect.isabstract(epo::USAddress)
+def test_epo_canadianaddress_is_not_abstract():
+    assert not inspect.isabstract(epo_CanadianAddress)
 
 
-def test_epo::usaddress_constructor_exists():
-    assert callable(epo::USAddress.__init__)
+def test_epo_canadianaddress_constructor_exists():
+    assert callable(epo_CanadianAddress.__init__)
 
 
-def test_epo::usaddress_constructor_args():
-    sig = inspect.signature(epo::USAddress.__init__)
+def test_epo_canadianaddress_constructor_args():
+    sig = inspect.signature(epo_CanadianAddress.__init__)
     params = list(sig.parameters.keys())
-    assert "zip" in params, "Missing parameter 'zip'"
-    assert "street" in params, "Missing parameter 'street'"
+    assert "province" in params, "Missing parameter 'province'"
+    assert "postalCode" in params, "Missing parameter 'postalCode'"
     assert "city" in params, "Missing parameter 'city'"
-    assert "state" in params, "Missing parameter 'state'"
+    assert "street" in params, "Missing parameter 'street'"
 
-def test_epo::usaddress_has_zip():
-    assert hasattr(epo::USAddress, "zip")
+def test_epo_canadianaddress_has_province():
+    assert hasattr(epo_CanadianAddress, "province")
     descriptor = None
-    for klass in epo::USAddress.__mro__:
-        if "zip" in klass.__dict__:
-            descriptor = klass.__dict__["zip"]
+    for klass in epo_CanadianAddress.__mro__:
+        if "province" in klass.__dict__:
+            descriptor = klass.__dict__["province"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::usaddress_has_street():
-    assert hasattr(epo::USAddress, "street")
+def test_epo_canadianaddress_has_postalCode():
+    assert hasattr(epo_CanadianAddress, "postalCode")
     descriptor = None
-    for klass in epo::USAddress.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
+    for klass in epo_CanadianAddress.__mro__:
+        if "postalCode" in klass.__dict__:
+            descriptor = klass.__dict__["postalCode"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::usaddress_has_city():
-    assert hasattr(epo::USAddress, "city")
+def test_epo_canadianaddress_has_city():
+    assert hasattr(epo_CanadianAddress, "city")
     descriptor = None
-    for klass in epo::USAddress.__mro__:
+    for klass in epo_CanadianAddress.__mro__:
         if "city" in klass.__dict__:
             descriptor = klass.__dict__["city"]
             break
     assert isinstance(descriptor, property)
 
-def test_epo::usaddress_has_state():
-    assert hasattr(epo::USAddress, "state")
+def test_epo_canadianaddress_has_street():
+    assert hasattr(epo_CanadianAddress, "street")
     descriptor = None
-    for klass in epo::USAddress.__mro__:
+    for klass in epo_CanadianAddress.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_epo_usaddress_is_not_abstract():
+    assert not inspect.isabstract(epo_USAddress)
+
+
+def test_epo_usaddress_constructor_exists():
+    assert callable(epo_USAddress.__init__)
+
+
+def test_epo_usaddress_constructor_args():
+    sig = inspect.signature(epo_USAddress.__init__)
+    params = list(sig.parameters.keys())
+    assert "state" in params, "Missing parameter 'state'"
+    assert "zip" in params, "Missing parameter 'zip'"
+    assert "street" in params, "Missing parameter 'street'"
+    assert "city" in params, "Missing parameter 'city'"
+
+def test_epo_usaddress_has_state():
+    assert hasattr(epo_USAddress, "state")
+    descriptor = None
+    for klass in epo_USAddress.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_usaddress_has_zip():
+    assert hasattr(epo_USAddress, "zip")
+    descriptor = None
+    for klass in epo_USAddress.__mro__:
+        if "zip" in klass.__dict__:
+            descriptor = klass.__dict__["zip"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_usaddress_has_street():
+    assert hasattr(epo_USAddress, "street")
+    descriptor = None
+    for klass in epo_USAddress.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_epo_usaddress_has_city():
+    assert hasattr(epo_USAddress, "city")
+    descriptor = None
+    for klass in epo_USAddress.__mro__:
+        if "city" in klass.__dict__:
+            descriptor = klass.__dict__["city"]
             break
     assert isinstance(descriptor, property)
 
@@ -426,8 +426,8 @@ def test_orderstatus_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OrderStatus]
     expected_literals = [
-        "Complete",
         "Pending",
+        "Complete",
         "BackOrder",
     ]
     # Check that all expected literals exist
@@ -446,116 +446,110 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-epo::Supplier_strategy = st.builds(
-    epo::Supplier,
+epo_Supplier_strategy = st.builds(
+    epo_Supplier,
     name=
         safe_text
 )
-epo::GlobalLocation_strategy = st.builds(
-    epo::GlobalLocation,
+epo_GlobalLocation_strategy = st.builds(
+    epo_GlobalLocation,
     countryCode=
         st.integers()
 )
 GlobalLocation_strategy = st.builds(
     GlobalLocation,
 )
-epo::PurchaseOrder_strategy = st.builds(
-    epo::PurchaseOrder,
-    comment=
-        safe_text,
+epo_PurchaseOrder_strategy = st.builds(
+    epo_PurchaseOrder,
     status=
+        safe_text,
+    orderDate=
         safe_text,
     totalAmount=
         st.integers(),
-    orderDate=
+    comment=
         safe_text
 )
-epo::Item_strategy = st.builds(
-    epo::Item,
-    quantity=
-        st.integers(),
-    USPrice=
-        st.integers(),
+epo_Item_strategy = st.builds(
+    epo_Item,
     shipDate=
         safe_text,
     productName=
         safe_text,
+    quantity=
+        st.integers(),
+    USPrice=
+        st.integers(),
     comment=
         safe_text,
     partNum=
         safe_text
 )
-epo::Customer_strategy = st.builds(
-    epo::Customer,
+epo_Customer_strategy = st.builds(
+    epo_Customer,
     customerID=
         st.integers()
 )
-epo::Address_strategy = st.builds(
-    epo::Address,
-    name=
-        safe_text,
+epo_Address_strategy = st.builds(
+    epo_Address,
     country=
+        safe_text,
+    name=
         safe_text
 )
 Address_strategy = st.builds(
     Address,
 )
-epo::CanadianAddress_strategy = st.builds(
-    epo::CanadianAddress,
-    city=
-        safe_text,
-    street=
-        safe_text,
-    province=
-        safe_text,
-    postalCode=
-        safe_text
-)
-epo::GlobalAddress_strategy = st.builds(
-    epo::GlobalAddress,
+epo_GlobalAddress_strategy = st.builds(
+    epo_GlobalAddress,
     location=
         safe_text
 )
-epo::USAddress_strategy = st.builds(
-    epo::USAddress,
+epo_CanadianAddress_strategy = st.builds(
+    epo_CanadianAddress,
+    province=
+        safe_text,
+    postalCode=
+        safe_text,
+    city=
+        safe_text,
+    street=
+        safe_text
+)
+epo_USAddress_strategy = st.builds(
+    epo_USAddress,
+    state=
+        safe_text,
     zip=
         st.integers(),
     street=
         safe_text,
     city=
-        safe_text,
-    state=
         safe_text
 )
 
-@given(instance=epo::Supplier_strategy)
+@given(instance=epo_Supplier_strategy)
 @settings(max_examples=50)
-def test_epo::supplier_instantiation(instance):
-    assert isinstance(instance, epo::Supplier)
-
-@given(instance=epo::Supplier_strategy)
-def test_epo::supplier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_epo_supplier_instantiation(instance):
+    assert isinstance(instance, epo_Supplier)
 
 
-@given(instance=epo::Supplier_strategy)
-def test_epo::supplier_name_setter(instance):
+
+@given(instance=epo_Supplier_strategy)
+def test_epo_supplier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=epo::GlobalLocation_strategy)
+@given(instance=epo_GlobalLocation_strategy)
 @settings(max_examples=50)
-def test_epo::globallocation_instantiation(instance):
-    assert isinstance(instance, epo::GlobalLocation)
-
-@given(instance=epo::GlobalLocation_strategy)
-def test_epo::globallocation_countryCode_type(instance):
-    assert isinstance(instance.countryCode, int)
+def test_epo_globallocation_instantiation(instance):
+    assert isinstance(instance, epo_GlobalLocation)
 
 
-@given(instance=epo::GlobalLocation_strategy)
-def test_epo::globallocation_countryCode_setter(instance):
+
+@given(instance=epo_GlobalLocation_strategy)
+def test_epo_globallocation_countryCode_setter(instance):
     original = instance.countryCode
     instance.countryCode = original
     assert instance.countryCode == original
@@ -565,284 +559,218 @@ def test_epo::globallocation_countryCode_setter(instance):
 def test_globallocation_instantiation(instance):
     assert isinstance(instance, GlobalLocation)
 
-@given(instance=epo::PurchaseOrder_strategy)
+@given(instance=epo_PurchaseOrder_strategy)
 @settings(max_examples=50)
-def test_epo::purchaseorder_instantiation(instance):
-    assert isinstance(instance, epo::PurchaseOrder)
-
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_epo_purchaseorder_instantiation(instance):
+    assert isinstance(instance, epo_PurchaseOrder)
 
 
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
 
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_status_setter(instance):
+@given(instance=epo_PurchaseOrder_strategy)
+def test_epo_purchaseorder_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_totalAmount_type(instance):
-    assert isinstance(instance.totalAmount, int)
 
 
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_totalAmount_setter(instance):
-    original = instance.totalAmount
-    instance.totalAmount = original
-    assert instance.totalAmount == original
-
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_orderDate_type(instance):
-    assert isinstance(instance.orderDate, str)
-
-
-@given(instance=epo::PurchaseOrder_strategy)
-def test_epo::purchaseorder_orderDate_setter(instance):
+@given(instance=epo_PurchaseOrder_strategy)
+def test_epo_purchaseorder_orderDate_setter(instance):
     original = instance.orderDate
     instance.orderDate = original
     assert instance.orderDate == original
 
-@given(instance=epo::Item_strategy)
-@settings(max_examples=50)
-def test_epo::item_instantiation(instance):
-    assert isinstance(instance, epo::Item)
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
-@given(instance=epo::Item_strategy)
-def test_epo::item_quantity_setter(instance):
-    original = instance.quantity
-    instance.quantity = original
-    assert instance.quantity == original
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_USPrice_type(instance):
-    assert isinstance(instance.USPrice, int)
+@given(instance=epo_PurchaseOrder_strategy)
+def test_epo_purchaseorder_totalAmount_setter(instance):
+    original = instance.totalAmount
+    instance.totalAmount = original
+    assert instance.totalAmount == original
 
 
-@given(instance=epo::Item_strategy)
-def test_epo::item_USPrice_setter(instance):
-    original = instance.USPrice
-    instance.USPrice = original
-    assert instance.USPrice == original
 
-@given(instance=epo::Item_strategy)
-def test_epo::item_shipDate_type(instance):
-    assert isinstance(instance.shipDate, str)
-
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_shipDate_setter(instance):
-    original = instance.shipDate
-    instance.shipDate = original
-    assert instance.shipDate == original
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_productName_type(instance):
-    assert isinstance(instance.productName, str)
-
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_productName_setter(instance):
-    original = instance.productName
-    instance.productName = original
-    assert instance.productName == original
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=epo::Item_strategy)
-def test_epo::item_comment_setter(instance):
+@given(instance=epo_PurchaseOrder_strategy)
+def test_epo_purchaseorder_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=epo::Item_strategy)
-def test_epo::item_partNum_type(instance):
-    assert isinstance(instance.partNum, str)
+@given(instance=epo_Item_strategy)
+@settings(max_examples=50)
+def test_epo_item_instantiation(instance):
+    assert isinstance(instance, epo_Item)
 
 
-@given(instance=epo::Item_strategy)
-def test_epo::item_partNum_setter(instance):
+
+@given(instance=epo_Item_strategy)
+def test_epo_item_shipDate_setter(instance):
+    original = instance.shipDate
+    instance.shipDate = original
+    assert instance.shipDate == original
+
+
+
+@given(instance=epo_Item_strategy)
+def test_epo_item_productName_setter(instance):
+    original = instance.productName
+    instance.productName = original
+    assert instance.productName == original
+
+
+
+@given(instance=epo_Item_strategy)
+def test_epo_item_quantity_setter(instance):
+    original = instance.quantity
+    instance.quantity = original
+    assert instance.quantity == original
+
+
+
+@given(instance=epo_Item_strategy)
+def test_epo_item_USPrice_setter(instance):
+    original = instance.USPrice
+    instance.USPrice = original
+    assert instance.USPrice == original
+
+
+
+@given(instance=epo_Item_strategy)
+def test_epo_item_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=epo_Item_strategy)
+def test_epo_item_partNum_setter(instance):
     original = instance.partNum
     instance.partNum = original
     assert instance.partNum == original
 
-@given(instance=epo::Customer_strategy)
+@given(instance=epo_Customer_strategy)
 @settings(max_examples=50)
-def test_epo::customer_instantiation(instance):
-    assert isinstance(instance, epo::Customer)
-
-@given(instance=epo::Customer_strategy)
-def test_epo::customer_customerID_type(instance):
-    assert isinstance(instance.customerID, int)
+def test_epo_customer_instantiation(instance):
+    assert isinstance(instance, epo_Customer)
 
 
-@given(instance=epo::Customer_strategy)
-def test_epo::customer_customerID_setter(instance):
+
+@given(instance=epo_Customer_strategy)
+def test_epo_customer_customerID_setter(instance):
     original = instance.customerID
     instance.customerID = original
     assert instance.customerID == original
 
-@given(instance=epo::Address_strategy)
+@given(instance=epo_Address_strategy)
 @settings(max_examples=50)
-def test_epo::address_instantiation(instance):
-    assert isinstance(instance, epo::Address)
-
-@given(instance=epo::Address_strategy)
-def test_epo::address_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_epo_address_instantiation(instance):
+    assert isinstance(instance, epo_Address)
 
 
-@given(instance=epo::Address_strategy)
-def test_epo::address_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=epo::Address_strategy)
-def test_epo::address_country_type(instance):
-    assert isinstance(instance.country, str)
-
-
-@given(instance=epo::Address_strategy)
-def test_epo::address_country_setter(instance):
+@given(instance=epo_Address_strategy)
+def test_epo_address_country_setter(instance):
     original = instance.country
     instance.country = original
     assert instance.country == original
+
+
+
+@given(instance=epo_Address_strategy)
+def test_epo_address_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Address_strategy)
 @settings(max_examples=50)
 def test_address_instantiation(instance):
     assert isinstance(instance, Address)
 
-@given(instance=epo::CanadianAddress_strategy)
+@given(instance=epo_GlobalAddress_strategy)
 @settings(max_examples=50)
-def test_epo::canadianaddress_instantiation(instance):
-    assert isinstance(instance, epo::CanadianAddress)
-
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_city_type(instance):
-    assert isinstance(instance.city, str)
+def test_epo_globaladdress_instantiation(instance):
+    assert isinstance(instance, epo_GlobalAddress)
 
 
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_city_setter(instance):
-    original = instance.city
-    instance.city = original
-    assert instance.city == original
 
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_street_type(instance):
-    assert isinstance(instance.street, str)
-
-
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
-
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_province_type(instance):
-    assert isinstance(instance.province, str)
-
-
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_province_setter(instance):
-    original = instance.province
-    instance.province = original
-    assert instance.province == original
-
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_postalCode_type(instance):
-    assert isinstance(instance.postalCode, str)
-
-
-@given(instance=epo::CanadianAddress_strategy)
-def test_epo::canadianaddress_postalCode_setter(instance):
-    original = instance.postalCode
-    instance.postalCode = original
-    assert instance.postalCode == original
-
-@given(instance=epo::GlobalAddress_strategy)
-@settings(max_examples=50)
-def test_epo::globaladdress_instantiation(instance):
-    assert isinstance(instance, epo::GlobalAddress)
-
-@given(instance=epo::GlobalAddress_strategy)
-def test_epo::globaladdress_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=epo::GlobalAddress_strategy)
-def test_epo::globaladdress_location_setter(instance):
+@given(instance=epo_GlobalAddress_strategy)
+def test_epo_globaladdress_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=epo::USAddress_strategy)
+@given(instance=epo_CanadianAddress_strategy)
 @settings(max_examples=50)
-def test_epo::usaddress_instantiation(instance):
-    assert isinstance(instance, epo::USAddress)
-
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_zip_type(instance):
-    assert isinstance(instance.zip, int)
+def test_epo_canadianaddress_instantiation(instance):
+    assert isinstance(instance, epo_CanadianAddress)
 
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_zip_setter(instance):
-    original = instance.zip
-    instance.zip = original
-    assert instance.zip == original
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_street_type(instance):
-    assert isinstance(instance.street, str)
+@given(instance=epo_CanadianAddress_strategy)
+def test_epo_canadianaddress_province_setter(instance):
+    original = instance.province
+    instance.province = original
+    assert instance.province == original
 
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_city_type(instance):
-    assert isinstance(instance.city, str)
+@given(instance=epo_CanadianAddress_strategy)
+def test_epo_canadianaddress_postalCode_setter(instance):
+    original = instance.postalCode
+    instance.postalCode = original
+    assert instance.postalCode == original
 
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_city_setter(instance):
+
+@given(instance=epo_CanadianAddress_strategy)
+def test_epo_canadianaddress_city_setter(instance):
     original = instance.city
     instance.city = original
     assert instance.city == original
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_state_type(instance):
-    assert isinstance(instance.state, str)
 
 
-@given(instance=epo::USAddress_strategy)
-def test_epo::usaddress_state_setter(instance):
+@given(instance=epo_CanadianAddress_strategy)
+def test_epo_canadianaddress_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+@given(instance=epo_USAddress_strategy)
+@settings(max_examples=50)
+def test_epo_usaddress_instantiation(instance):
+    assert isinstance(instance, epo_USAddress)
+
+
+
+@given(instance=epo_USAddress_strategy)
+def test_epo_usaddress_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
+
+
+
+@given(instance=epo_USAddress_strategy)
+def test_epo_usaddress_zip_setter(instance):
+    original = instance.zip
+    instance.zip = original
+    assert instance.zip == original
+
+
+
+@given(instance=epo_USAddress_strategy)
+def test_epo_usaddress_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+
+
+@given(instance=epo_USAddress_strategy)
+def test_epo_usaddress_city_setter(instance):
+    original = instance.city
+    instance.city = original
+    assert instance.city == original

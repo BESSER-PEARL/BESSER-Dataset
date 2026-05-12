@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sm::StateMachine,
-    sm::Variable,
-    sm::State,
+from python_code import (
+    sm_StateMachine,
+    sm_Variable,
+    sm_State,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_sm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(sm::StateMachine)
+def test_sm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(sm_StateMachine)
 
 
-def test_sm::statemachine_constructor_exists():
-    assert callable(sm::StateMachine.__init__)
+def test_sm_statemachine_constructor_exists():
+    assert callable(sm_StateMachine.__init__)
 
 
-def test_sm::statemachine_constructor_args():
-    sig = inspect.signature(sm::StateMachine.__init__)
+def test_sm_statemachine_constructor_args():
+    sig = inspect.signature(sm_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sm::variable_is_not_abstract():
-    assert not inspect.isabstract(sm::Variable)
+def test_sm_variable_is_not_abstract():
+    assert not inspect.isabstract(sm_Variable)
 
 
-def test_sm::variable_constructor_exists():
-    assert callable(sm::Variable.__init__)
+def test_sm_variable_constructor_exists():
+    assert callable(sm_Variable.__init__)
 
 
-def test_sm::variable_constructor_args():
-    sig = inspect.signature(sm::Variable.__init__)
+def test_sm_variable_constructor_args():
+    sig = inspect.signature(sm_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sm::state_is_not_abstract():
-    assert not inspect.isabstract(sm::State)
+def test_sm_state_is_not_abstract():
+    assert not inspect.isabstract(sm_State)
 
 
-def test_sm::state_constructor_exists():
-    assert callable(sm::State.__init__)
+def test_sm_state_constructor_exists():
+    assert callable(sm_State.__init__)
 
 
-def test_sm::state_constructor_args():
-    sig = inspect.signature(sm::State.__init__)
+def test_sm_state_constructor_args():
+    sig = inspect.signature(sm_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sm::StateMachine_strategy = st.builds(
-    sm::StateMachine,
+sm_StateMachine_strategy = st.builds(
+    sm_StateMachine,
 )
-sm::Variable_strategy = st.builds(
-    sm::Variable,
+sm_Variable_strategy = st.builds(
+    sm_Variable,
 )
-sm::State_strategy = st.builds(
-    sm::State,
+sm_State_strategy = st.builds(
+    sm_State,
 )
 
-@given(instance=sm::StateMachine_strategy)
+@given(instance=sm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_sm::statemachine_instantiation(instance):
-    assert isinstance(instance, sm::StateMachine)
+def test_sm_statemachine_instantiation(instance):
+    assert isinstance(instance, sm_StateMachine)
 
-@given(instance=sm::Variable_strategy)
+@given(instance=sm_Variable_strategy)
 @settings(max_examples=50)
-def test_sm::variable_instantiation(instance):
-    assert isinstance(instance, sm::Variable)
+def test_sm_variable_instantiation(instance):
+    assert isinstance(instance, sm_Variable)
 
-@given(instance=sm::State_strategy)
+@given(instance=sm_State_strategy)
 @settings(max_examples=50)
-def test_sm::state_instantiation(instance):
-    assert isinstance(instance, sm::State)
+def test_sm_state_instantiation(instance):
+    assert isinstance(instance, sm_State)

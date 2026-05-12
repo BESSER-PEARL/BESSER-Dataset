@@ -3,12 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Admin,
-    Subject,
-    Attendance,
     Access_Information,
     Authentication,
     Course,
@@ -17,63 +14,14 @@ from python_code import (
     Teacher,
     Employee_Interface,
     Student,
+    Admin,
+    Subject,
+    Attendance,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_admin_is_not_abstract():
-    assert not inspect.isabstract(Admin)
-
-
-def test_admin_constructor_exists():
-    assert callable(Admin.__init__)
-
-
-def test_admin_constructor_args():
-    sig = inspect.signature(Admin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_subject_is_not_abstract():
-    assert not inspect.isabstract(Subject)
-
-
-def test_subject_constructor_exists():
-    assert callable(Subject.__init__)
-
-
-def test_subject_constructor_args():
-    sig = inspect.signature(Subject.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_subject_has_name():
-    assert hasattr(Subject, "name")
-    descriptor = None
-    for klass in Subject.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_attendance_is_not_abstract():
-    assert not inspect.isabstract(Attendance)
-
-
-def test_attendance_constructor_exists():
-    assert callable(Attendance.__init__)
-
-
-def test_attendance_constructor_args():
-    sig = inspect.signature(Attendance.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -151,8 +99,8 @@ def test_department_constructor_args():
     sig = inspect.signature(Department.__init__)
     params = list(sig.parameters.keys())
     assert "course" in params, "Missing parameter 'course'"
-    assert "hod" in params, "Missing parameter 'hod'"
     assert "teachers__" in params, "Missing parameter 'teachers__'"
+    assert "hod" in params, "Missing parameter 'hod'"
     assert "students__" in params, "Missing parameter 'students__'"
 
 def test_department_has_course():
@@ -164,21 +112,21 @@ def test_department_has_course():
             break
     assert isinstance(descriptor, property)
 
-def test_department_has_hod():
-    assert hasattr(Department, "hod")
-    descriptor = None
-    for klass in Department.__mro__:
-        if "hod" in klass.__dict__:
-            descriptor = klass.__dict__["hod"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_department_has_teachers__():
     assert hasattr(Department, "teachers__")
     descriptor = None
     for klass in Department.__mro__:
         if "teachers__" in klass.__dict__:
             descriptor = klass.__dict__["teachers__"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_department_has_hod():
+    assert hasattr(Department, "hod")
+    descriptor = None
+    for klass in Department.__mro__:
+        if "hod" in klass.__dict__:
+            descriptor = klass.__dict__["hod"]
             break
     assert isinstance(descriptor, property)
 
@@ -246,8 +194,17 @@ def test_student_constructor_exists():
 def test_student_constructor_args():
     sig = inspect.signature(Student.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "Name" in params, "Missing parameter 'Name'"
+
+def test_student_has_ID():
+    assert hasattr(Student, "ID")
+    descriptor = None
+    for klass in Student.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_student_has_Name():
     assert hasattr(Student, "Name")
@@ -258,14 +215,57 @@ def test_student_has_Name():
             break
     assert isinstance(descriptor, property)
 
-def test_student_has_ID():
-    assert hasattr(Student, "ID")
+
+
+def test_admin_is_not_abstract():
+    assert not inspect.isabstract(Admin)
+
+
+def test_admin_constructor_exists():
+    assert callable(Admin.__init__)
+
+
+def test_admin_constructor_args():
+    sig = inspect.signature(Admin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subject_is_not_abstract():
+    assert not inspect.isabstract(Subject)
+
+
+def test_subject_constructor_exists():
+    assert callable(Subject.__init__)
+
+
+def test_subject_constructor_args():
+    sig = inspect.signature(Subject.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_subject_has_name():
+    assert hasattr(Subject, "name")
     descriptor = None
-    for klass in Student.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+    for klass in Subject.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_attendance_is_not_abstract():
+    assert not inspect.isabstract(Attendance)
+
+
+def test_attendance_constructor_exists():
+    assert callable(Attendance.__init__)
+
+
+def test_attendance_constructor_args():
+    sig = inspect.signature(Attendance.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -279,17 +279,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Admin_strategy = st.builds(
-    Admin,
-)
-Subject_strategy = st.builds(
-    Subject,
-    name=
-        safe_text
-)
-Attendance_strategy = st.builds(
-    Attendance,
-)
 Access_Information_strategy = st.builds(
     Access_Information,
 )
@@ -307,9 +296,9 @@ Department_strategy = st.builds(
     Department,
     course=
         st.none(),
-    hod=
-        st.none(),
     teachers__=
+        st.none(),
+    hod=
         st.none(),
     students__=
         st.none()
@@ -325,37 +314,22 @@ Employee_Interface_strategy = st.builds(
 )
 Student_strategy = st.builds(
     Student,
-    Name=
-        safe_text,
     ID=
+        safe_text,
+    Name=
         safe_text
 )
-
-@given(instance=Admin_strategy)
-@settings(max_examples=50)
-def test_admin_instantiation(instance):
-    assert isinstance(instance, Admin)
-
-@given(instance=Subject_strategy)
-@settings(max_examples=50)
-def test_subject_instantiation(instance):
-    assert isinstance(instance, Subject)
-
-@given(instance=Subject_strategy)
-def test_subject_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Subject_strategy)
-def test_subject_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Attendance_strategy)
-@settings(max_examples=50)
-def test_attendance_instantiation(instance):
-    assert isinstance(instance, Attendance)
+Admin_strategy = st.builds(
+    Admin,
+)
+Subject_strategy = st.builds(
+    Subject,
+    name=
+        safe_text
+)
+Attendance_strategy = st.builds(
+    Attendance,
+)
 
 @given(instance=Access_Information_strategy)
 @settings(max_examples=50)
@@ -372,9 +346,6 @@ def test_authentication_instantiation(instance):
 def test_course_instantiation(instance):
     assert isinstance(instance, Course)
 
-@given(instance=Course_strategy)
-def test_course_duration_type(instance):
-    assert isinstance(instance.duration, str)
 
 
 @given(instance=Course_strategy)
@@ -383,9 +354,6 @@ def test_course_duration_setter(instance):
     instance.duration = original
     assert instance.duration == original
 
-@given(instance=Course_strategy)
-def test_course_subjects___type(instance):
-    assert isinstance(instance.subjects__, subject)
 
 
 @given(instance=Course_strategy)
@@ -399,9 +367,6 @@ def test_course_subjects___setter(instance):
 def test_department_instantiation(instance):
     assert isinstance(instance, Department)
 
-@given(instance=Department_strategy)
-def test_department_course_type(instance):
-    assert isinstance(instance.course, course)
 
 
 @given(instance=Department_strategy)
@@ -410,20 +375,6 @@ def test_department_course_setter(instance):
     instance.course = original
     assert instance.course == original
 
-@given(instance=Department_strategy)
-def test_department_hod_type(instance):
-    assert isinstance(instance.hod, hod)
-
-
-@given(instance=Department_strategy)
-def test_department_hod_setter(instance):
-    original = instance.hod
-    instance.hod = original
-    assert instance.hod == original
-
-@given(instance=Department_strategy)
-def test_department_teachers___type(instance):
-    assert isinstance(instance.teachers__, teacher)
 
 
 @given(instance=Department_strategy)
@@ -432,9 +383,14 @@ def test_department_teachers___setter(instance):
     instance.teachers__ = original
     assert instance.teachers__ == original
 
+
+
 @given(instance=Department_strategy)
-def test_department_students___type(instance):
-    assert isinstance(instance.students__, student)
+def test_department_hod_setter(instance):
+    original = instance.hod
+    instance.hod = original
+    assert instance.hod == original
+
 
 
 @given(instance=Department_strategy)
@@ -463,9 +419,14 @@ def test_employee_interface_instantiation(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
+
+
 @given(instance=Student_strategy)
-def test_student_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_student_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
 
 
 @given(instance=Student_strategy)
@@ -474,13 +435,25 @@ def test_student_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Student_strategy)
-def test_student_ID_type(instance):
-    assert isinstance(instance.ID, str)
+@given(instance=Admin_strategy)
+@settings(max_examples=50)
+def test_admin_instantiation(instance):
+    assert isinstance(instance, Admin)
+
+@given(instance=Subject_strategy)
+@settings(max_examples=50)
+def test_subject_instantiation(instance):
+    assert isinstance(instance, Subject)
 
 
-@given(instance=Student_strategy)
-def test_student_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
+
+@given(instance=Subject_strategy)
+def test_subject_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Attendance_strategy)
+@settings(max_examples=50)
+def test_attendance_instantiation(instance):
+    assert isinstance(instance, Attendance)

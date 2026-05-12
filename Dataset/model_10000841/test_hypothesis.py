@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     SolarPanel,
@@ -341,17 +341,8 @@ def test_iot_based_smart_resort_system_constructor_exists():
 def test_iot_based_smart_resort_system_constructor_args():
     sig = inspect.signature(IoT_based_Smart_Resort_System.__init__)
     params = list(sig.parameters.keys())
-    assert "Status" in params, "Missing parameter 'Status'"
     assert "Update" in params, "Missing parameter 'Update'"
-
-def test_iot_based_smart_resort_system_has_Status():
-    assert hasattr(IoT_based_Smart_Resort_System, "Status")
-    descriptor = None
-    for klass in IoT_based_Smart_Resort_System.__mro__:
-        if "Status" in klass.__dict__:
-            descriptor = klass.__dict__["Status"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Status" in params, "Missing parameter 'Status'"
 
 def test_iot_based_smart_resort_system_has_Update():
     assert hasattr(IoT_based_Smart_Resort_System, "Update")
@@ -359,6 +350,15 @@ def test_iot_based_smart_resort_system_has_Update():
     for klass in IoT_based_Smart_Resort_System.__mro__:
         if "Update" in klass.__dict__:
             descriptor = klass.__dict__["Update"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot_based_smart_resort_system_has_Status():
+    assert hasattr(IoT_based_Smart_Resort_System, "Status")
+    descriptor = None
+    for klass in IoT_based_Smart_Resort_System.__mro__:
+        if "Status" in klass.__dict__:
+            descriptor = klass.__dict__["Status"]
             break
     assert isinstance(descriptor, property)
 
@@ -439,10 +439,10 @@ Sensor_strategy = st.builds(
 )
 IoT_based_Smart_Resort_System_strategy = st.builds(
     IoT_based_Smart_Resort_System,
-    Status=
-        st.booleans(),
     Update=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    Status=
+        st.booleans()
 )
 
 @given(instance=SolarPanel_strategy)
@@ -450,9 +450,6 @@ IoT_based_Smart_Resort_System_strategy = st.builds(
 def test_solarpanel_instantiation(instance):
     assert isinstance(instance, SolarPanel)
 
-@given(instance=SolarPanel_strategy)
-def test_solarpanel_SPID_type(instance):
-    assert isinstance(instance.SPID, int)
 
 
 @given(instance=SolarPanel_strategy)
@@ -466,9 +463,6 @@ def test_solarpanel_SPID_setter(instance):
 def test_security_guard_police_instantiation(instance):
     assert isinstance(instance, Security_Guard_Police)
 
-@given(instance=Security_Guard_Police_strategy)
-def test_security_guard_police_sgpID_type(instance):
-    assert isinstance(instance.sgpID, int)
 
 
 @given(instance=Security_Guard_Police_strategy)
@@ -482,9 +476,6 @@ def test_security_guard_police_sgpID_setter(instance):
 def test_user_home_owner_instantiation(instance):
     assert isinstance(instance, User_Home_Owner)
 
-@given(instance=User_Home_Owner_strategy)
-def test_user_home_owner_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=User_Home_Owner_strategy)
@@ -498,9 +489,6 @@ def test_user_home_owner_UserID_setter(instance):
 def test_homeappliances_instantiation(instance):
     assert isinstance(instance, HomeAppliances)
 
-@given(instance=HomeAppliances_strategy)
-def test_homeappliances_HAID_type(instance):
-    assert isinstance(instance.HAID, int)
 
 
 @given(instance=HomeAppliances_strategy)
@@ -514,9 +502,6 @@ def test_homeappliances_HAID_setter(instance):
 def test_light_instantiation(instance):
     assert isinstance(instance, Light)
 
-@given(instance=Light_strategy)
-def test_light_LightID_type(instance):
-    assert isinstance(instance.LightID, str)
 
 
 @given(instance=Light_strategy)
@@ -530,9 +515,6 @@ def test_light_LightID_setter(instance):
 def test_gardening_instantiation(instance):
     assert isinstance(instance, Gardening)
 
-@given(instance=Gardening_strategy)
-def test_gardening_GID_type(instance):
-    assert isinstance(instance.GID, int)
 
 
 @given(instance=Gardening_strategy)
@@ -546,9 +528,6 @@ def test_gardening_GID_setter(instance):
 def test_fans_instantiation(instance):
     assert isinstance(instance, Fans)
 
-@given(instance=Fans_strategy)
-def test_fans_FANID_type(instance):
-    assert isinstance(instance.FANID, int)
 
 
 @given(instance=Fans_strategy)
@@ -562,9 +541,6 @@ def test_fans_FANID_setter(instance):
 def test_door_instantiation(instance):
     assert isinstance(instance, Door)
 
-@given(instance=Door_strategy)
-def test_door_DoorID_type(instance):
-    assert isinstance(instance.DoorID, int)
 
 
 @given(instance=Door_strategy)
@@ -578,9 +554,6 @@ def test_door_DoorID_setter(instance):
 def test_alert_instantiation(instance):
     assert isinstance(instance, Alert)
 
-@given(instance=Alert_strategy)
-def test_alert_AlertID_type(instance):
-    assert isinstance(instance.AlertID, int)
 
 
 @given(instance=Alert_strategy)
@@ -594,9 +567,6 @@ def test_alert_AlertID_setter(instance):
 def test_home_security_system_instantiation(instance):
     assert isinstance(instance, Home_Security_System)
 
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=Home_Security_System_strategy)
@@ -620,9 +590,6 @@ def test_motion_sensor_instantiation(instance):
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
 
 
 @given(instance=Sensor_strategy)
@@ -631,9 +598,6 @@ def test_sensor_SensorID_setter(instance):
     instance.SensorID = original
     assert instance.SensorID == original
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
 
 
 @given(instance=Sensor_strategy)
@@ -647,20 +611,6 @@ def test_sensor_SensorType_setter(instance):
 def test_iot_based_smart_resort_system_instantiation(instance):
     assert isinstance(instance, IoT_based_Smart_Resort_System)
 
-@given(instance=IoT_based_Smart_Resort_System_strategy)
-def test_iot_based_smart_resort_system_Status_type(instance):
-    assert isinstance(instance.Status, bool)
-
-
-@given(instance=IoT_based_Smart_Resort_System_strategy)
-def test_iot_based_smart_resort_system_Status_setter(instance):
-    original = instance.Status
-    instance.Status = original
-    assert instance.Status == original
-
-@given(instance=IoT_based_Smart_Resort_System_strategy)
-def test_iot_based_smart_resort_system_Update_type(instance):
-    assert isinstance(instance.Update, float)
 
 
 @given(instance=IoT_based_Smart_Resort_System_strategy)
@@ -668,3 +618,11 @@ def test_iot_based_smart_resort_system_Update_setter(instance):
     original = instance.Update
     instance.Update = original
     assert instance.Update == original
+
+
+
+@given(instance=IoT_based_Smart_Resort_System_strategy)
+def test_iot_based_smart_resort_system_Status_setter(instance):
+    original = instance.Status
+    instance.Status = original
+    assert instance.Status == original

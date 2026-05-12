@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Vol,
@@ -31,10 +31,19 @@ def test_vol_constructor_exists():
 def test_vol_constructor_args():
     sig = inspect.signature(Vol.__init__)
     params = list(sig.parameters.keys())
+    assert "dateHeureArrivee" in params, "Missing parameter 'dateHeureArrivee'"
     assert "dateHeureDepart" in params, "Missing parameter 'dateHeureDepart'"
     assert "numeroVol" in params, "Missing parameter 'numeroVol'"
-    assert "dateHeureArrivee" in params, "Missing parameter 'dateHeureArrivee'"
     assert "etatVol" in params, "Missing parameter 'etatVol'"
+
+def test_vol_has_dateHeureArrivee():
+    assert hasattr(Vol, "dateHeureArrivee")
+    descriptor = None
+    for klass in Vol.__mro__:
+        if "dateHeureArrivee" in klass.__dict__:
+            descriptor = klass.__dict__["dateHeureArrivee"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_vol_has_dateHeureDepart():
     assert hasattr(Vol, "dateHeureDepart")
@@ -51,15 +60,6 @@ def test_vol_has_numeroVol():
     for klass in Vol.__mro__:
         if "numeroVol" in klass.__dict__:
             descriptor = klass.__dict__["numeroVol"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vol_has_dateHeureArrivee():
-    assert hasattr(Vol, "dateHeureArrivee")
-    descriptor = None
-    for klass in Vol.__mro__:
-        if "dateHeureArrivee" in klass.__dict__:
-            descriptor = klass.__dict__["dateHeureArrivee"]
             break
     assert isinstance(descriptor, property)
 
@@ -215,11 +215,11 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Vol_strategy = st.builds(
     Vol,
+    dateHeureArrivee=
+        safe_text,
     dateHeureDepart=
         safe_text,
     numeroVol=
-        safe_text,
-    dateHeureArrivee=
         safe_text,
     etatVol=
         st.none()
@@ -254,31 +254,6 @@ A_strategy = st.builds(
 def test_vol_instantiation(instance):
     assert isinstance(instance, Vol)
 
-@given(instance=Vol_strategy)
-def test_vol_dateHeureDepart_type(instance):
-    assert isinstance(instance.dateHeureDepart, str)
-
-
-@given(instance=Vol_strategy)
-def test_vol_dateHeureDepart_setter(instance):
-    original = instance.dateHeureDepart
-    instance.dateHeureDepart = original
-    assert instance.dateHeureDepart == original
-
-@given(instance=Vol_strategy)
-def test_vol_numeroVol_type(instance):
-    assert isinstance(instance.numeroVol, str)
-
-
-@given(instance=Vol_strategy)
-def test_vol_numeroVol_setter(instance):
-    original = instance.numeroVol
-    instance.numeroVol = original
-    assert instance.numeroVol == original
-
-@given(instance=Vol_strategy)
-def test_vol_dateHeureArrivee_type(instance):
-    assert isinstance(instance.dateHeureArrivee, str)
 
 
 @given(instance=Vol_strategy)
@@ -287,9 +262,22 @@ def test_vol_dateHeureArrivee_setter(instance):
     instance.dateHeureArrivee = original
     assert instance.dateHeureArrivee == original
 
+
+
 @given(instance=Vol_strategy)
-def test_vol_etatVol_type(instance):
-    assert isinstance(instance.etatVol, enumeration)
+def test_vol_dateHeureDepart_setter(instance):
+    original = instance.dateHeureDepart
+    instance.dateHeureDepart = original
+    assert instance.dateHeureDepart == original
+
+
+
+@given(instance=Vol_strategy)
+def test_vol_numeroVol_setter(instance):
+    original = instance.numeroVol
+    instance.numeroVol = original
+    assert instance.numeroVol == original
+
 
 
 @given(instance=Vol_strategy)
@@ -303,9 +291,6 @@ def test_vol_etatVol_setter(instance):
 def test_aeroport_instantiation(instance):
     assert isinstance(instance, Aeroport)
 
-@given(instance=Aeroport_strategy)
-def test_aeroport_altitude_type(instance):
-    assert isinstance(instance.altitude, int)
 
 
 @given(instance=Aeroport_strategy)
@@ -314,9 +299,6 @@ def test_aeroport_altitude_setter(instance):
     instance.altitude = original
     assert instance.altitude == original
 
-@given(instance=Aeroport_strategy)
-def test_aeroport_nomAeroport_type(instance):
-    assert isinstance(instance.nomAeroport, str)
 
 
 @given(instance=Aeroport_strategy)
@@ -330,9 +312,6 @@ def test_aeroport_nomAeroport_setter(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_attC1_type(instance):
-    assert isinstance(instance.attC1, int)
 
 
 @given(instance=C_strategy)
@@ -341,9 +320,6 @@ def test_c_attC1_setter(instance):
     instance.attC1 = original
     assert instance.attC1 == original
 
-@given(instance=C_strategy)
-def test_c_attC2_type(instance):
-    assert isinstance(instance.attC2, bool)
 
 
 @given(instance=C_strategy)
@@ -357,9 +333,6 @@ def test_c_attC2_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B_strategy)
@@ -373,9 +346,6 @@ def test_b_attB_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A_strategy)

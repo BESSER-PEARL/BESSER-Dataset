@@ -3,21 +3,63 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    Post,
+    Profile,
+    User,
     Login,
     Friend,
     Message,
     Group,
-    Post,
-    Profile,
-    User,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_post_is_not_abstract():
+    assert not inspect.isabstract(Post)
+
+
+def test_post_constructor_exists():
+    assert callable(Post.__init__)
+
+
+def test_post_constructor_args():
+    sig = inspect.signature(Post.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_profile_is_not_abstract():
+    assert not inspect.isabstract(Profile)
+
+
+def test_profile_constructor_exists():
+    assert callable(Profile.__init__)
+
+
+def test_profile_constructor_args():
+    sig = inspect.signature(Profile.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_user_is_not_abstract():
+    assert not inspect.isabstract(User)
+
+
+def test_user_constructor_exists():
+    assert callable(User.__init__)
+
+
+def test_user_constructor_args():
+    sig = inspect.signature(User.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -76,48 +118,6 @@ def test_group_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_post_is_not_abstract():
-    assert not inspect.isabstract(Post)
-
-
-def test_post_constructor_exists():
-    assert callable(Post.__init__)
-
-
-def test_post_constructor_args():
-    sig = inspect.signature(Post.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_profile_is_not_abstract():
-    assert not inspect.isabstract(Profile)
-
-
-def test_profile_constructor_exists():
-    assert callable(Profile.__init__)
-
-
-def test_profile_constructor_args():
-    sig = inspect.signature(Profile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_user_is_not_abstract():
-    assert not inspect.isabstract(User)
-
-
-def test_user_constructor_exists():
-    assert callable(User.__init__)
-
-
-def test_user_constructor_args():
-    sig = inspect.signature(User.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -129,6 +129,15 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Post_strategy = st.builds(
+    Post,
+)
+Profile_strategy = st.builds(
+    Profile,
+)
+User_strategy = st.builds(
+    User,
+)
 Login_strategy = st.builds(
     Login,
 )
@@ -141,15 +150,21 @@ Message_strategy = st.builds(
 Group_strategy = st.builds(
     Group,
 )
-Post_strategy = st.builds(
-    Post,
-)
-Profile_strategy = st.builds(
-    Profile,
-)
-User_strategy = st.builds(
-    User,
-)
+
+@given(instance=Post_strategy)
+@settings(max_examples=50)
+def test_post_instantiation(instance):
+    assert isinstance(instance, Post)
+
+@given(instance=Profile_strategy)
+@settings(max_examples=50)
+def test_profile_instantiation(instance):
+    assert isinstance(instance, Profile)
+
+@given(instance=User_strategy)
+@settings(max_examples=50)
+def test_user_instantiation(instance):
+    assert isinstance(instance, User)
 
 @given(instance=Login_strategy)
 @settings(max_examples=50)
@@ -170,18 +185,3 @@ def test_message_instantiation(instance):
 @settings(max_examples=50)
 def test_group_instantiation(instance):
     assert isinstance(instance, Group)
-
-@given(instance=Post_strategy)
-@settings(max_examples=50)
-def test_post_instantiation(instance):
-    assert isinstance(instance, Post)
-
-@given(instance=Profile_strategy)
-@settings(max_examples=50)
-def test_profile_instantiation(instance):
-    assert isinstance(instance, Profile)
-
-@given(instance=User_strategy)
-@settings(max_examples=50)
-def test_user_instantiation(instance):
-    assert isinstance(instance, User)

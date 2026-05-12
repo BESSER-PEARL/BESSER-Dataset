@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pn::NamedElement,
+from python_code import (
+    pn_NamedElement,
     NetElement,
-    pn::Transition,
+    pn_Transition,
     NamedElement,
-    pn::NetElement,
-    pn::Place,
-    pn::Net,
+    pn_Place,
+    pn_NetElement,
+    pn_Net,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_pn::namedelement_is_not_abstract():
-    assert not inspect.isabstract(pn::NamedElement)
+def test_pn_namedelement_is_not_abstract():
+    assert not inspect.isabstract(pn_NamedElement)
 
 
-def test_pn::namedelement_constructor_exists():
-    assert callable(pn::NamedElement.__init__)
+def test_pn_namedelement_constructor_exists():
+    assert callable(pn_NamedElement.__init__)
 
 
-def test_pn::namedelement_constructor_args():
-    sig = inspect.signature(pn::NamedElement.__init__)
+def test_pn_namedelement_constructor_args():
+    sig = inspect.signature(pn_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pn::namedelement_has_name():
-    assert hasattr(pn::NamedElement, "name")
+def test_pn_namedelement_has_name():
+    assert hasattr(pn_NamedElement, "name")
     descriptor = None
-    for klass in pn::NamedElement.__mro__:
+    for klass in pn_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,16 +59,16 @@ def test_netelement_constructor_args():
 
 
 
-def test_pn::transition_is_not_abstract():
-    assert not inspect.isabstract(pn::Transition)
+def test_pn_transition_is_not_abstract():
+    assert not inspect.isabstract(pn_Transition)
 
 
-def test_pn::transition_constructor_exists():
-    assert callable(pn::Transition.__init__)
+def test_pn_transition_constructor_exists():
+    assert callable(pn_Transition.__init__)
 
 
-def test_pn::transition_constructor_args():
-    sig = inspect.signature(pn::Transition.__init__)
+def test_pn_transition_constructor_args():
+    sig = inspect.signature(pn_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,37 +87,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_pn::netelement_is_not_abstract():
-    assert not inspect.isabstract(pn::NetElement)
+def test_pn_place_is_not_abstract():
+    assert not inspect.isabstract(pn_Place)
 
 
-def test_pn::netelement_constructor_exists():
-    assert callable(pn::NetElement.__init__)
+def test_pn_place_constructor_exists():
+    assert callable(pn_Place.__init__)
 
 
-def test_pn::netelement_constructor_args():
-    sig = inspect.signature(pn::NetElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pn::place_is_not_abstract():
-    assert not inspect.isabstract(pn::Place)
-
-
-def test_pn::place_constructor_exists():
-    assert callable(pn::Place.__init__)
-
-
-def test_pn::place_constructor_args():
-    sig = inspect.signature(pn::Place.__init__)
+def test_pn_place_constructor_args():
+    sig = inspect.signature(pn_Place.__init__)
     params = list(sig.parameters.keys())
     assert "noOfTokens" in params, "Missing parameter 'noOfTokens'"
 
-def test_pn::place_has_noOfTokens():
-    assert hasattr(pn::Place, "noOfTokens")
+def test_pn_place_has_noOfTokens():
+    assert hasattr(pn_Place, "noOfTokens")
     descriptor = None
-    for klass in pn::Place.__mro__:
+    for klass in pn_Place.__mro__:
         if "noOfTokens" in klass.__dict__:
             descriptor = klass.__dict__["noOfTokens"]
             break
@@ -125,23 +111,37 @@ def test_pn::place_has_noOfTokens():
 
 
 
-def test_pn::net_is_not_abstract():
-    assert not inspect.isabstract(pn::Net)
+def test_pn_netelement_is_not_abstract():
+    assert not inspect.isabstract(pn_NetElement)
 
 
-def test_pn::net_constructor_exists():
-    assert callable(pn::Net.__init__)
+def test_pn_netelement_constructor_exists():
+    assert callable(pn_NetElement.__init__)
 
 
-def test_pn::net_constructor_args():
-    sig = inspect.signature(pn::Net.__init__)
+def test_pn_netelement_constructor_args():
+    sig = inspect.signature(pn_NetElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pn_net_is_not_abstract():
+    assert not inspect.isabstract(pn_Net)
+
+
+def test_pn_net_constructor_exists():
+    assert callable(pn_Net.__init__)
+
+
+def test_pn_net_constructor_args():
+    sig = inspect.signature(pn_Net.__init__)
     params = list(sig.parameters.keys())
     assert "incrementalID" in params, "Missing parameter 'incrementalID'"
 
-def test_pn::net_has_incrementalID():
-    assert hasattr(pn::Net, "incrementalID")
+def test_pn_net_has_incrementalID():
+    assert hasattr(pn_Net, "incrementalID")
     descriptor = None
-    for klass in pn::Net.__mro__:
+    for klass in pn_Net.__mro__:
         if "incrementalID" in klass.__dict__:
             descriptor = klass.__dict__["incrementalID"]
             break
@@ -159,46 +159,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pn::NamedElement_strategy = st.builds(
-    pn::NamedElement,
+pn_NamedElement_strategy = st.builds(
+    pn_NamedElement,
     name=
         safe_text
 )
 NetElement_strategy = st.builds(
     NetElement,
 )
-pn::Transition_strategy = st.builds(
-    pn::Transition,
+pn_Transition_strategy = st.builds(
+    pn_Transition,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-pn::NetElement_strategy = st.builds(
-    pn::NetElement,
-)
-pn::Place_strategy = st.builds(
-    pn::Place,
+pn_Place_strategy = st.builds(
+    pn_Place,
     noOfTokens=
         st.integers()
 )
-pn::Net_strategy = st.builds(
-    pn::Net,
+pn_NetElement_strategy = st.builds(
+    pn_NetElement,
+)
+pn_Net_strategy = st.builds(
+    pn_Net,
     incrementalID=
         safe_text
 )
 
-@given(instance=pn::NamedElement_strategy)
+@given(instance=pn_NamedElement_strategy)
 @settings(max_examples=50)
-def test_pn::namedelement_instantiation(instance):
-    assert isinstance(instance, pn::NamedElement)
-
-@given(instance=pn::NamedElement_strategy)
-def test_pn::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pn_namedelement_instantiation(instance):
+    assert isinstance(instance, pn_NamedElement)
 
 
-@given(instance=pn::NamedElement_strategy)
-def test_pn::namedelement_name_setter(instance):
+
+@given(instance=pn_NamedElement_strategy)
+def test_pn_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -208,49 +205,43 @@ def test_pn::namedelement_name_setter(instance):
 def test_netelement_instantiation(instance):
     assert isinstance(instance, NetElement)
 
-@given(instance=pn::Transition_strategy)
+@given(instance=pn_Transition_strategy)
 @settings(max_examples=50)
-def test_pn::transition_instantiation(instance):
-    assert isinstance(instance, pn::Transition)
+def test_pn_transition_instantiation(instance):
+    assert isinstance(instance, pn_Transition)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=pn::NetElement_strategy)
+@given(instance=pn_Place_strategy)
 @settings(max_examples=50)
-def test_pn::netelement_instantiation(instance):
-    assert isinstance(instance, pn::NetElement)
-
-@given(instance=pn::Place_strategy)
-@settings(max_examples=50)
-def test_pn::place_instantiation(instance):
-    assert isinstance(instance, pn::Place)
-
-@given(instance=pn::Place_strategy)
-def test_pn::place_noOfTokens_type(instance):
-    assert isinstance(instance.noOfTokens, int)
+def test_pn_place_instantiation(instance):
+    assert isinstance(instance, pn_Place)
 
 
-@given(instance=pn::Place_strategy)
-def test_pn::place_noOfTokens_setter(instance):
+
+@given(instance=pn_Place_strategy)
+def test_pn_place_noOfTokens_setter(instance):
     original = instance.noOfTokens
     instance.noOfTokens = original
     assert instance.noOfTokens == original
 
-@given(instance=pn::Net_strategy)
+@given(instance=pn_NetElement_strategy)
 @settings(max_examples=50)
-def test_pn::net_instantiation(instance):
-    assert isinstance(instance, pn::Net)
+def test_pn_netelement_instantiation(instance):
+    assert isinstance(instance, pn_NetElement)
 
-@given(instance=pn::Net_strategy)
-def test_pn::net_incrementalID_type(instance):
-    assert isinstance(instance.incrementalID, str)
+@given(instance=pn_Net_strategy)
+@settings(max_examples=50)
+def test_pn_net_instantiation(instance):
+    assert isinstance(instance, pn_Net)
 
 
-@given(instance=pn::Net_strategy)
-def test_pn::net_incrementalID_setter(instance):
+
+@given(instance=pn_Net_strategy)
+def test_pn_net_incrementalID_setter(instance):
     original = instance.incrementalID
     instance.incrementalID = original
     assert instance.incrementalID == original

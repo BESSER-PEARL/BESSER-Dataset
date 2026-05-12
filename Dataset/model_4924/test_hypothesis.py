@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    web::SocialInformation,
-    web::Release,
-    web::Image,
-    web::FooterEntry,
+from python_code import (
+    web_SocialInformation,
+    web_Release,
+    web_Image,
+    web_FooterEntry,
     Page,
-    web::NewsFeedPage,
-    web::Container,
+    web_NewsFeedPage,
+    web_Container,
     Container,
-    web::NewsEntry,
-    web::ContentPage,
+    web_ContentPage,
+    web_NewsEntry,
     Content,
-    web::ReleaseSection,
-    web::GalleryContent,
-    web::SocialBar,
-    web::HtmlContent,
-    web::Content,
-    web::Gallery,
-    web::Version,
-    web::Link,
-    web::Author,
-    web::Page,
-    web::Site,
-    ReleaseType,
+    web_GalleryContent,
+    web_SocialBar,
+    web_ReleaseSection,
+    web_HtmlContent,
+    web_Content,
+    web_Gallery,
+    web_Version,
+    web_Link,
+    web_Author,
+    web_Page,
+    web_Site,
     VersionState,
+    ReleaseType,
 )
 
 # =============================================================================
@@ -38,181 +38,181 @@ from classes import (
 
 
 
-def test_web::socialinformation_is_not_abstract():
-    assert not inspect.isabstract(web::SocialInformation)
+def test_web_socialinformation_is_not_abstract():
+    assert not inspect.isabstract(web_SocialInformation)
 
 
-def test_web::socialinformation_constructor_exists():
-    assert callable(web::SocialInformation.__init__)
+def test_web_socialinformation_constructor_exists():
+    assert callable(web_SocialInformation.__init__)
 
 
-def test_web::socialinformation_constructor_args():
-    sig = inspect.signature(web::SocialInformation.__init__)
+def test_web_socialinformation_constructor_args():
+    sig = inspect.signature(web_SocialInformation.__init__)
     params = list(sig.parameters.keys())
     assert "twitterUrl" in params, "Missing parameter 'twitterUrl'"
+    assert "url" in params, "Missing parameter 'url'"
     assert "plusUrl" in params, "Missing parameter 'plusUrl'"
     assert "facebookUrl" in params, "Missing parameter 'facebookUrl'"
-    assert "url" in params, "Missing parameter 'url'"
 
-def test_web::socialinformation_has_twitterUrl():
-    assert hasattr(web::SocialInformation, "twitterUrl")
+def test_web_socialinformation_has_twitterUrl():
+    assert hasattr(web_SocialInformation, "twitterUrl")
     descriptor = None
-    for klass in web::SocialInformation.__mro__:
+    for klass in web_SocialInformation.__mro__:
         if "twitterUrl" in klass.__dict__:
             descriptor = klass.__dict__["twitterUrl"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::socialinformation_has_plusUrl():
-    assert hasattr(web::SocialInformation, "plusUrl")
+def test_web_socialinformation_has_url():
+    assert hasattr(web_SocialInformation, "url")
     descriptor = None
-    for klass in web::SocialInformation.__mro__:
-        if "plusUrl" in klass.__dict__:
-            descriptor = klass.__dict__["plusUrl"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::socialinformation_has_facebookUrl():
-    assert hasattr(web::SocialInformation, "facebookUrl")
-    descriptor = None
-    for klass in web::SocialInformation.__mro__:
-        if "facebookUrl" in klass.__dict__:
-            descriptor = klass.__dict__["facebookUrl"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::socialinformation_has_url():
-    assert hasattr(web::SocialInformation, "url")
-    descriptor = None
-    for klass in web::SocialInformation.__mro__:
+    for klass in web_SocialInformation.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_web::release_is_not_abstract():
-    assert not inspect.isabstract(web::Release)
-
-
-def test_web::release_constructor_exists():
-    assert callable(web::Release.__init__)
-
-
-def test_web::release_constructor_args():
-    sig = inspect.signature(web::Release.__init__)
-    params = list(sig.parameters.keys())
-    assert "alternateMsiName" in params, "Missing parameter 'alternateMsiName'"
-    assert "date" in params, "Missing parameter 'date'"
-    assert "buildId" in params, "Missing parameter 'buildId'"
-    assert "javadoc" in params, "Missing parameter 'javadoc'"
-    assert "unqualifiedName" in params, "Missing parameter 'unqualifiedName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "releaseNotesLink" in params, "Missing parameter 'releaseNotesLink'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_web::release_has_alternateMsiName():
-    assert hasattr(web::Release, "alternateMsiName")
+def test_web_socialinformation_has_plusUrl():
+    assert hasattr(web_SocialInformation, "plusUrl")
     descriptor = None
-    for klass in web::Release.__mro__:
-        if "alternateMsiName" in klass.__dict__:
-            descriptor = klass.__dict__["alternateMsiName"]
+    for klass in web_SocialInformation.__mro__:
+        if "plusUrl" in klass.__dict__:
+            descriptor = klass.__dict__["plusUrl"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::release_has_date():
-    assert hasattr(web::Release, "date")
+def test_web_socialinformation_has_facebookUrl():
+    assert hasattr(web_SocialInformation, "facebookUrl")
     descriptor = None
-    for klass in web::Release.__mro__:
+    for klass in web_SocialInformation.__mro__:
+        if "facebookUrl" in klass.__dict__:
+            descriptor = klass.__dict__["facebookUrl"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_web_release_is_not_abstract():
+    assert not inspect.isabstract(web_Release)
+
+
+def test_web_release_constructor_exists():
+    assert callable(web_Release.__init__)
+
+
+def test_web_release_constructor_args():
+    sig = inspect.signature(web_Release.__init__)
+    params = list(sig.parameters.keys())
+    assert "date" in params, "Missing parameter 'date'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "releaseNotesLink" in params, "Missing parameter 'releaseNotesLink'"
+    assert "buildId" in params, "Missing parameter 'buildId'"
+    assert "unqualifiedName" in params, "Missing parameter 'unqualifiedName'"
+    assert "javadoc" in params, "Missing parameter 'javadoc'"
+    assert "alternateMsiName" in params, "Missing parameter 'alternateMsiName'"
+
+def test_web_release_has_date():
+    assert hasattr(web_Release, "date")
+    descriptor = None
+    for klass in web_Release.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::release_has_buildId():
-    assert hasattr(web::Release, "buildId")
+def test_web_release_has_name():
+    assert hasattr(web_Release, "name")
     descriptor = None
-    for klass in web::Release.__mro__:
-        if "buildId" in klass.__dict__:
-            descriptor = klass.__dict__["buildId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::release_has_javadoc():
-    assert hasattr(web::Release, "javadoc")
-    descriptor = None
-    for klass in web::Release.__mro__:
-        if "javadoc" in klass.__dict__:
-            descriptor = klass.__dict__["javadoc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::release_has_unqualifiedName():
-    assert hasattr(web::Release, "unqualifiedName")
-    descriptor = None
-    for klass in web::Release.__mro__:
-        if "unqualifiedName" in klass.__dict__:
-            descriptor = klass.__dict__["unqualifiedName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::release_has_name():
-    assert hasattr(web::Release, "name")
-    descriptor = None
-    for klass in web::Release.__mro__:
+    for klass in web_Release.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::release_has_releaseNotesLink():
-    assert hasattr(web::Release, "releaseNotesLink")
+def test_web_release_has_type():
+    assert hasattr(web_Release, "type")
     descriptor = None
-    for klass in web::Release.__mro__:
-        if "releaseNotesLink" in klass.__dict__:
-            descriptor = klass.__dict__["releaseNotesLink"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::release_has_type():
-    assert hasattr(web::Release, "type")
-    descriptor = None
-    for klass in web::Release.__mro__:
+    for klass in web_Release.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_web_release_has_releaseNotesLink():
+    assert hasattr(web_Release, "releaseNotesLink")
+    descriptor = None
+    for klass in web_Release.__mro__:
+        if "releaseNotesLink" in klass.__dict__:
+            descriptor = klass.__dict__["releaseNotesLink"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_web_release_has_buildId():
+    assert hasattr(web_Release, "buildId")
+    descriptor = None
+    for klass in web_Release.__mro__:
+        if "buildId" in klass.__dict__:
+            descriptor = klass.__dict__["buildId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_web_release_has_unqualifiedName():
+    assert hasattr(web_Release, "unqualifiedName")
+    descriptor = None
+    for klass in web_Release.__mro__:
+        if "unqualifiedName" in klass.__dict__:
+            descriptor = klass.__dict__["unqualifiedName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_web_release_has_javadoc():
+    assert hasattr(web_Release, "javadoc")
+    descriptor = None
+    for klass in web_Release.__mro__:
+        if "javadoc" in klass.__dict__:
+            descriptor = klass.__dict__["javadoc"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_web_release_has_alternateMsiName():
+    assert hasattr(web_Release, "alternateMsiName")
+    descriptor = None
+    for klass in web_Release.__mro__:
+        if "alternateMsiName" in klass.__dict__:
+            descriptor = klass.__dict__["alternateMsiName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_web::image_is_not_abstract():
-    assert not inspect.isabstract(web::Image)
+
+def test_web_image_is_not_abstract():
+    assert not inspect.isabstract(web_Image)
 
 
-def test_web::image_constructor_exists():
-    assert callable(web::Image.__init__)
+def test_web_image_constructor_exists():
+    assert callable(web_Image.__init__)
 
 
-def test_web::image_constructor_args():
-    sig = inspect.signature(web::Image.__init__)
+def test_web_image_constructor_args():
+    sig = inspect.signature(web_Image.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
     assert "src" in params, "Missing parameter 'src'"
 
-def test_web::image_has_label():
-    assert hasattr(web::Image, "label")
+def test_web_image_has_label():
+    assert hasattr(web_Image, "label")
     descriptor = None
-    for klass in web::Image.__mro__:
+    for klass in web_Image.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::image_has_src():
-    assert hasattr(web::Image, "src")
+def test_web_image_has_src():
+    assert hasattr(web_Image, "src")
     descriptor = None
-    for klass in web::Image.__mro__:
+    for klass in web_Image.__mro__:
         if "src" in klass.__dict__:
             descriptor = klass.__dict__["src"]
             break
@@ -220,35 +220,35 @@ def test_web::image_has_src():
 
 
 
-def test_web::footerentry_is_not_abstract():
-    assert not inspect.isabstract(web::FooterEntry)
+def test_web_footerentry_is_not_abstract():
+    assert not inspect.isabstract(web_FooterEntry)
 
 
-def test_web::footerentry_constructor_exists():
-    assert callable(web::FooterEntry.__init__)
+def test_web_footerentry_constructor_exists():
+    assert callable(web_FooterEntry.__init__)
 
 
-def test_web::footerentry_constructor_args():
-    sig = inspect.signature(web::FooterEntry.__init__)
+def test_web_footerentry_constructor_args():
+    sig = inspect.signature(web_FooterEntry.__init__)
     params = list(sig.parameters.keys())
-    assert "link" in params, "Missing parameter 'link'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "link" in params, "Missing parameter 'link'"
 
-def test_web::footerentry_has_link():
-    assert hasattr(web::FooterEntry, "link")
+def test_web_footerentry_has_name():
+    assert hasattr(web_FooterEntry, "name")
     descriptor = None
-    for klass in web::FooterEntry.__mro__:
-        if "link" in klass.__dict__:
-            descriptor = klass.__dict__["link"]
+    for klass in web_FooterEntry.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::footerentry_has_name():
-    assert hasattr(web::FooterEntry, "name")
+def test_web_footerentry_has_link():
+    assert hasattr(web_FooterEntry, "link")
     descriptor = None
-    for klass in web::FooterEntry.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in web_FooterEntry.__mro__:
+        if "link" in klass.__dict__:
+            descriptor = klass.__dict__["link"]
             break
     assert isinstance(descriptor, property)
 
@@ -268,30 +268,30 @@ def test_page_constructor_args():
 
 
 
-def test_web::newsfeedpage_is_not_abstract():
-    assert not inspect.isabstract(web::NewsFeedPage)
+def test_web_newsfeedpage_is_not_abstract():
+    assert not inspect.isabstract(web_NewsFeedPage)
 
 
-def test_web::newsfeedpage_constructor_exists():
-    assert callable(web::NewsFeedPage.__init__)
+def test_web_newsfeedpage_constructor_exists():
+    assert callable(web_NewsFeedPage.__init__)
 
 
-def test_web::newsfeedpage_constructor_args():
-    sig = inspect.signature(web::NewsFeedPage.__init__)
+def test_web_newsfeedpage_constructor_args():
+    sig = inspect.signature(web_NewsFeedPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_web::container_is_not_abstract():
-    assert not inspect.isabstract(web::Container)
+def test_web_container_is_not_abstract():
+    assert not inspect.isabstract(web_Container)
 
 
-def test_web::container_constructor_exists():
-    assert callable(web::Container.__init__)
+def test_web_container_constructor_exists():
+    assert callable(web_Container.__init__)
 
 
-def test_web::container_constructor_args():
-    sig = inspect.signature(web::Container.__init__)
+def test_web_container_constructor_args():
+    sig = inspect.signature(web_Container.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -310,61 +310,61 @@ def test_container_constructor_args():
 
 
 
-def test_web::newsentry_is_not_abstract():
-    assert not inspect.isabstract(web::NewsEntry)
+def test_web_contentpage_is_not_abstract():
+    assert not inspect.isabstract(web_ContentPage)
 
 
-def test_web::newsentry_constructor_exists():
-    assert callable(web::NewsEntry.__init__)
+def test_web_contentpage_constructor_exists():
+    assert callable(web_ContentPage.__init__)
 
 
-def test_web::newsentry_constructor_args():
-    sig = inspect.signature(web::NewsEntry.__init__)
+def test_web_contentpage_constructor_args():
+    sig = inspect.signature(web_ContentPage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_web_newsentry_is_not_abstract():
+    assert not inspect.isabstract(web_NewsEntry)
+
+
+def test_web_newsentry_constructor_exists():
+    assert callable(web_NewsEntry.__init__)
+
+
+def test_web_newsentry_constructor_args():
+    sig = inspect.signature(web_NewsEntry.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "date" in params, "Missing parameter 'date'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_web::newsentry_has_title():
-    assert hasattr(web::NewsEntry, "title")
+def test_web_newsentry_has_title():
+    assert hasattr(web_NewsEntry, "title")
     descriptor = None
-    for klass in web::NewsEntry.__mro__:
+    for klass in web_NewsEntry.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::newsentry_has_description():
-    assert hasattr(web::NewsEntry, "description")
+def test_web_newsentry_has_date():
+    assert hasattr(web_NewsEntry, "date")
     descriptor = None
-    for klass in web::NewsEntry.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::newsentry_has_date():
-    assert hasattr(web::NewsEntry, "date")
-    descriptor = None
-    for klass in web::NewsEntry.__mro__:
+    for klass in web_NewsEntry.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_web::contentpage_is_not_abstract():
-    assert not inspect.isabstract(web::ContentPage)
-
-
-def test_web::contentpage_constructor_exists():
-    assert callable(web::ContentPage.__init__)
-
-
-def test_web::contentpage_constructor_args():
-    sig = inspect.signature(web::ContentPage.__init__)
-    params = list(sig.parameters.keys())
+def test_web_newsentry_has_description():
+    assert hasattr(web_NewsEntry, "description")
+    descriptor = None
+    for klass in web_NewsEntry.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -382,65 +382,65 @@ def test_content_constructor_args():
 
 
 
-def test_web::releasesection_is_not_abstract():
-    assert not inspect.isabstract(web::ReleaseSection)
+def test_web_gallerycontent_is_not_abstract():
+    assert not inspect.isabstract(web_GalleryContent)
 
 
-def test_web::releasesection_constructor_exists():
-    assert callable(web::ReleaseSection.__init__)
+def test_web_gallerycontent_constructor_exists():
+    assert callable(web_GalleryContent.__init__)
 
 
-def test_web::releasesection_constructor_args():
-    sig = inspect.signature(web::ReleaseSection.__init__)
+def test_web_gallerycontent_constructor_args():
+    sig = inspect.signature(web_GalleryContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_web::gallerycontent_is_not_abstract():
-    assert not inspect.isabstract(web::GalleryContent)
+def test_web_socialbar_is_not_abstract():
+    assert not inspect.isabstract(web_SocialBar)
 
 
-def test_web::gallerycontent_constructor_exists():
-    assert callable(web::GalleryContent.__init__)
+def test_web_socialbar_constructor_exists():
+    assert callable(web_SocialBar.__init__)
 
 
-def test_web::gallerycontent_constructor_args():
-    sig = inspect.signature(web::GalleryContent.__init__)
+def test_web_socialbar_constructor_args():
+    sig = inspect.signature(web_SocialBar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_web::socialbar_is_not_abstract():
-    assert not inspect.isabstract(web::SocialBar)
+def test_web_releasesection_is_not_abstract():
+    assert not inspect.isabstract(web_ReleaseSection)
 
 
-def test_web::socialbar_constructor_exists():
-    assert callable(web::SocialBar.__init__)
+def test_web_releasesection_constructor_exists():
+    assert callable(web_ReleaseSection.__init__)
 
 
-def test_web::socialbar_constructor_args():
-    sig = inspect.signature(web::SocialBar.__init__)
+def test_web_releasesection_constructor_args():
+    sig = inspect.signature(web_ReleaseSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_web::htmlcontent_is_not_abstract():
-    assert not inspect.isabstract(web::HtmlContent)
+def test_web_htmlcontent_is_not_abstract():
+    assert not inspect.isabstract(web_HtmlContent)
 
 
-def test_web::htmlcontent_constructor_exists():
-    assert callable(web::HtmlContent.__init__)
+def test_web_htmlcontent_constructor_exists():
+    assert callable(web_HtmlContent.__init__)
 
 
-def test_web::htmlcontent_constructor_args():
-    sig = inspect.signature(web::HtmlContent.__init__)
+def test_web_htmlcontent_constructor_args():
+    sig = inspect.signature(web_HtmlContent.__init__)
     params = list(sig.parameters.keys())
     assert "data" in params, "Missing parameter 'data'"
 
-def test_web::htmlcontent_has_data():
-    assert hasattr(web::HtmlContent, "data")
+def test_web_htmlcontent_has_data():
+    assert hasattr(web_HtmlContent, "data")
     descriptor = None
-    for klass in web::HtmlContent.__mro__:
+    for klass in web_HtmlContent.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -448,37 +448,37 @@ def test_web::htmlcontent_has_data():
 
 
 
-def test_web::content_is_not_abstract():
-    assert not inspect.isabstract(web::Content)
+def test_web_content_is_not_abstract():
+    assert not inspect.isabstract(web_Content)
 
 
-def test_web::content_constructor_exists():
-    assert callable(web::Content.__init__)
+def test_web_content_constructor_exists():
+    assert callable(web_Content.__init__)
 
 
-def test_web::content_constructor_args():
-    sig = inspect.signature(web::Content.__init__)
+def test_web_content_constructor_args():
+    sig = inspect.signature(web_Content.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_web::gallery_is_not_abstract():
-    assert not inspect.isabstract(web::Gallery)
+def test_web_gallery_is_not_abstract():
+    assert not inspect.isabstract(web_Gallery)
 
 
-def test_web::gallery_constructor_exists():
-    assert callable(web::Gallery.__init__)
+def test_web_gallery_constructor_exists():
+    assert callable(web_Gallery.__init__)
 
 
-def test_web::gallery_constructor_args():
-    sig = inspect.signature(web::Gallery.__init__)
+def test_web_gallery_constructor_args():
+    sig = inspect.signature(web_Gallery.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_web::gallery_has_label():
-    assert hasattr(web::Gallery, "label")
+def test_web_gallery_has_label():
+    assert hasattr(web_Gallery, "label")
     descriptor = None
-    for klass in web::Gallery.__mro__:
+    for klass in web_Gallery.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -486,33 +486,33 @@ def test_web::gallery_has_label():
 
 
 
-def test_web::version_is_not_abstract():
-    assert not inspect.isabstract(web::Version)
+def test_web_version_is_not_abstract():
+    assert not inspect.isabstract(web_Version)
 
 
-def test_web::version_constructor_exists():
-    assert callable(web::Version.__init__)
+def test_web_version_constructor_exists():
+    assert callable(web_Version.__init__)
 
 
-def test_web::version_constructor_args():
-    sig = inspect.signature(web::Version.__init__)
+def test_web_version_constructor_args():
+    sig = inspect.signature(web_Version.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "state" in params, "Missing parameter 'state'"
 
-def test_web::version_has_name():
-    assert hasattr(web::Version, "name")
+def test_web_version_has_name():
+    assert hasattr(web_Version, "name")
     descriptor = None
-    for klass in web::Version.__mro__:
+    for klass in web_Version.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::version_has_state():
-    assert hasattr(web::Version, "state")
+def test_web_version_has_state():
+    assert hasattr(web_Version, "state")
     descriptor = None
-    for klass in web::Version.__mro__:
+    for klass in web_Version.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
@@ -520,77 +520,77 @@ def test_web::version_has_state():
 
 
 
-def test_web::link_is_not_abstract():
-    assert not inspect.isabstract(web::Link)
+def test_web_link_is_not_abstract():
+    assert not inspect.isabstract(web_Link)
 
 
-def test_web::link_constructor_exists():
-    assert callable(web::Link.__init__)
+def test_web_link_constructor_exists():
+    assert callable(web_Link.__init__)
 
 
-def test_web::link_constructor_args():
-    sig = inspect.signature(web::Link.__init__)
+def test_web_link_constructor_args():
+    sig = inspect.signature(web_Link.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "target" in params, "Missing parameter 'target'"
+    assert "label" in params, "Missing parameter 'label'"
 
-def test_web::link_has_label():
-    assert hasattr(web::Link, "label")
+def test_web_link_has_target():
+    assert hasattr(web_Link, "target")
     descriptor = None
-    for klass in web::Link.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_web::link_has_target():
-    assert hasattr(web::Link, "target")
-    descriptor = None
-    for klass in web::Link.__mro__:
+    for klass in web_Link.__mro__:
         if "target" in klass.__dict__:
             descriptor = klass.__dict__["target"]
             break
     assert isinstance(descriptor, property)
 
+def test_web_link_has_label():
+    assert hasattr(web_Link, "label")
+    descriptor = None
+    for klass in web_Link.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_web::author_is_not_abstract():
-    assert not inspect.isabstract(web::Author)
+
+def test_web_author_is_not_abstract():
+    assert not inspect.isabstract(web_Author)
 
 
-def test_web::author_constructor_exists():
-    assert callable(web::Author.__init__)
+def test_web_author_constructor_exists():
+    assert callable(web_Author.__init__)
 
 
-def test_web::author_constructor_args():
-    sig = inspect.signature(web::Author.__init__)
+def test_web_author_constructor_args():
+    sig = inspect.signature(web_Author.__init__)
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
     assert "plusLink" in params, "Missing parameter 'plusLink'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_web::author_has_email():
-    assert hasattr(web::Author, "email")
+def test_web_author_has_email():
+    assert hasattr(web_Author, "email")
     descriptor = None
-    for klass in web::Author.__mro__:
+    for klass in web_Author.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::author_has_plusLink():
-    assert hasattr(web::Author, "plusLink")
+def test_web_author_has_plusLink():
+    assert hasattr(web_Author, "plusLink")
     descriptor = None
-    for klass in web::Author.__mro__:
+    for klass in web_Author.__mro__:
         if "plusLink" in klass.__dict__:
             descriptor = klass.__dict__["plusLink"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::author_has_name():
-    assert hasattr(web::Author, "name")
+def test_web_author_has_name():
+    assert hasattr(web_Author, "name")
     descriptor = None
-    for klass in web::Author.__mro__:
+    for klass in web_Author.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -598,33 +598,33 @@ def test_web::author_has_name():
 
 
 
-def test_web::page_is_not_abstract():
-    assert not inspect.isabstract(web::Page)
+def test_web_page_is_not_abstract():
+    assert not inspect.isabstract(web_Page)
 
 
-def test_web::page_constructor_exists():
-    assert callable(web::Page.__init__)
+def test_web_page_constructor_exists():
+    assert callable(web_Page.__init__)
 
 
-def test_web::page_constructor_args():
-    sig = inspect.signature(web::Page.__init__)
+def test_web_page_constructor_args():
+    sig = inspect.signature(web_Page.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_web::page_has_id():
-    assert hasattr(web::Page, "id")
+def test_web_page_has_id():
+    assert hasattr(web_Page, "id")
     descriptor = None
-    for klass in web::Page.__mro__:
+    for klass in web_Page.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::page_has_name():
-    assert hasattr(web::Page, "name")
+def test_web_page_has_name():
+    assert hasattr(web_Page, "name")
     descriptor = None
-    for klass in web::Page.__mro__:
+    for klass in web_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -632,53 +632,37 @@ def test_web::page_has_name():
 
 
 
-def test_web::site_is_not_abstract():
-    assert not inspect.isabstract(web::Site)
+def test_web_site_is_not_abstract():
+    assert not inspect.isabstract(web_Site)
 
 
-def test_web::site_constructor_exists():
-    assert callable(web::Site.__init__)
+def test_web_site_constructor_exists():
+    assert callable(web_Site.__init__)
 
 
-def test_web::site_constructor_args():
-    sig = inspect.signature(web::Site.__init__)
+def test_web_site_constructor_args():
+    sig = inspect.signature(web_Site.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_web::site_has_description():
-    assert hasattr(web::Site, "description")
+def test_web_site_has_description():
+    assert hasattr(web_Site, "description")
     descriptor = None
-    for klass in web::Site.__mro__:
+    for klass in web_Site.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_web::site_has_name():
-    assert hasattr(web::Site, "name")
+def test_web_site_has_name():
+    assert hasattr(web_Site, "name")
     descriptor = None
-    for klass in web::Site.__mro__:
+    for klass in web_Site.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_releasetype_exists():
-    # Check that the Enumeration exists
-    assert ReleaseType is not None
-
-def test_releasetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ReleaseType]
-    expected_literals = [
-        "milestone",
-        "nightly",
-        "release",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ReleaseType"
 
 def test_versionstate_exists():
     # Check that the Enumeration exists
@@ -689,12 +673,28 @@ def test_versionstate_has_all_literals():
     enum_literals = [lit.name for lit in VersionState]
     expected_literals = [
         "PLANNED",
-        "RELEASED",
         "IN_DEVELOPMENT",
+        "RELEASED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VersionState"
+
+def test_releasetype_exists():
+    # Check that the Enumeration exists
+    assert ReleaseType is not None
+
+def test_releasetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ReleaseType]
+    expected_literals = [
+        "nightly",
+        "milestone",
+        "release",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ReleaseType"
 
 
 # =============================================================================
@@ -708,115 +708,115 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-web::SocialInformation_strategy = st.builds(
-    web::SocialInformation,
+web_SocialInformation_strategy = st.builds(
+    web_SocialInformation,
     twitterUrl=
+        safe_text,
+    url=
         safe_text,
     plusUrl=
         safe_text,
     facebookUrl=
-        safe_text,
-    url=
         safe_text
 )
-web::Release_strategy = st.builds(
-    web::Release,
-    alternateMsiName=
-        safe_text,
+web_Release_strategy = st.builds(
+    web_Release,
     date=
         st.dates(),
-    buildId=
-        safe_text,
-    javadoc=
-        st.booleans(),
-    unqualifiedName=
-        safe_text,
     name=
+        safe_text,
+    type=
         safe_text,
     releaseNotesLink=
         safe_text,
-    type=
+    buildId=
+        safe_text,
+    unqualifiedName=
+        safe_text,
+    javadoc=
+        st.booleans(),
+    alternateMsiName=
         safe_text
 )
-web::Image_strategy = st.builds(
-    web::Image,
+web_Image_strategy = st.builds(
+    web_Image,
     label=
         safe_text,
     src=
         safe_text
 )
-web::FooterEntry_strategy = st.builds(
-    web::FooterEntry,
-    link=
-        safe_text,
+web_FooterEntry_strategy = st.builds(
+    web_FooterEntry,
     name=
+        safe_text,
+    link=
         safe_text
 )
 Page_strategy = st.builds(
     Page,
 )
-web::NewsFeedPage_strategy = st.builds(
-    web::NewsFeedPage,
+web_NewsFeedPage_strategy = st.builds(
+    web_NewsFeedPage,
 )
-web::Container_strategy = st.builds(
-    web::Container,
+web_Container_strategy = st.builds(
+    web_Container,
 )
 Container_strategy = st.builds(
     Container,
 )
-web::NewsEntry_strategy = st.builds(
-    web::NewsEntry,
+web_ContentPage_strategy = st.builds(
+    web_ContentPage,
+)
+web_NewsEntry_strategy = st.builds(
+    web_NewsEntry,
     title=
         safe_text,
-    description=
-        safe_text,
     date=
-        st.dates()
-)
-web::ContentPage_strategy = st.builds(
-    web::ContentPage,
+        st.dates(),
+    description=
+        safe_text
 )
 Content_strategy = st.builds(
     Content,
 )
-web::ReleaseSection_strategy = st.builds(
-    web::ReleaseSection,
+web_GalleryContent_strategy = st.builds(
+    web_GalleryContent,
 )
-web::GalleryContent_strategy = st.builds(
-    web::GalleryContent,
+web_SocialBar_strategy = st.builds(
+    web_SocialBar,
 )
-web::SocialBar_strategy = st.builds(
-    web::SocialBar,
+web_ReleaseSection_strategy = st.builds(
+    web_ReleaseSection,
 )
-web::HtmlContent_strategy = st.builds(
-    web::HtmlContent,
+web_HtmlContent_strategy = st.builds(
+    web_HtmlContent,
     data=
         safe_text
 )
-web::Content_strategy = st.builds(
-    web::Content,
+web_Content_strategy = st.builds(
+    web_Content,
 )
-web::Gallery_strategy = st.builds(
-    web::Gallery,
+web_Gallery_strategy = st.builds(
+    web_Gallery,
     label=
         safe_text
 )
-web::Version_strategy = st.builds(
-    web::Version,
+web_Version_strategy = st.builds(
+    web_Version,
     name=
         safe_text,
     state=
         safe_text
 )
-web::Link_strategy = st.builds(
-    web::Link,
-    label=
-        safe_text,
+web_Link_strategy = st.builds(
+    web_Link,
     target=
+        safe_text,
+    label=
         safe_text
 )
-web::Author_strategy = st.builds(
-    web::Author,
+web_Author_strategy = st.builds(
+    web_Author,
     email=
         safe_text,
     plusLink=
@@ -824,479 +824,383 @@ web::Author_strategy = st.builds(
     name=
         safe_text
 )
-web::Page_strategy = st.builds(
-    web::Page,
+web_Page_strategy = st.builds(
+    web_Page,
     id=
         safe_text,
     name=
         safe_text
 )
-web::Site_strategy = st.builds(
-    web::Site,
+web_Site_strategy = st.builds(
+    web_Site,
     description=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=web::SocialInformation_strategy)
+@given(instance=web_SocialInformation_strategy)
 @settings(max_examples=50)
-def test_web::socialinformation_instantiation(instance):
-    assert isinstance(instance, web::SocialInformation)
-
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_twitterUrl_type(instance):
-    assert isinstance(instance.twitterUrl, str)
+def test_web_socialinformation_instantiation(instance):
+    assert isinstance(instance, web_SocialInformation)
 
 
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_twitterUrl_setter(instance):
+
+@given(instance=web_SocialInformation_strategy)
+def test_web_socialinformation_twitterUrl_setter(instance):
     original = instance.twitterUrl
     instance.twitterUrl = original
     assert instance.twitterUrl == original
 
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_plusUrl_type(instance):
-    assert isinstance(instance.plusUrl, str)
 
 
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_plusUrl_setter(instance):
-    original = instance.plusUrl
-    instance.plusUrl = original
-    assert instance.plusUrl == original
-
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_facebookUrl_type(instance):
-    assert isinstance(instance.facebookUrl, str)
-
-
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_facebookUrl_setter(instance):
-    original = instance.facebookUrl
-    instance.facebookUrl = original
-    assert instance.facebookUrl == original
-
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_url_type(instance):
-    assert isinstance(instance.url, str)
-
-
-@given(instance=web::SocialInformation_strategy)
-def test_web::socialinformation_url_setter(instance):
+@given(instance=web_SocialInformation_strategy)
+def test_web_socialinformation_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=web::Release_strategy)
+
+
+@given(instance=web_SocialInformation_strategy)
+def test_web_socialinformation_plusUrl_setter(instance):
+    original = instance.plusUrl
+    instance.plusUrl = original
+    assert instance.plusUrl == original
+
+
+
+@given(instance=web_SocialInformation_strategy)
+def test_web_socialinformation_facebookUrl_setter(instance):
+    original = instance.facebookUrl
+    instance.facebookUrl = original
+    assert instance.facebookUrl == original
+
+@given(instance=web_Release_strategy)
 @settings(max_examples=50)
-def test_web::release_instantiation(instance):
-    assert isinstance(instance, web::Release)
-
-@given(instance=web::Release_strategy)
-def test_web::release_alternateMsiName_type(instance):
-    assert isinstance(instance.alternateMsiName, str)
+def test_web_release_instantiation(instance):
+    assert isinstance(instance, web_Release)
 
 
-@given(instance=web::Release_strategy)
-def test_web::release_alternateMsiName_setter(instance):
-    original = instance.alternateMsiName
-    instance.alternateMsiName = original
-    assert instance.alternateMsiName == original
 
-@given(instance=web::Release_strategy)
-def test_web::release_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=web::Release_strategy)
-def test_web::release_date_setter(instance):
+@given(instance=web_Release_strategy)
+def test_web_release_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=web::Release_strategy)
-def test_web::release_buildId_type(instance):
-    assert isinstance(instance.buildId, str)
 
 
-@given(instance=web::Release_strategy)
-def test_web::release_buildId_setter(instance):
-    original = instance.buildId
-    instance.buildId = original
-    assert instance.buildId == original
-
-@given(instance=web::Release_strategy)
-def test_web::release_javadoc_type(instance):
-    assert isinstance(instance.javadoc, bool)
-
-
-@given(instance=web::Release_strategy)
-def test_web::release_javadoc_setter(instance):
-    original = instance.javadoc
-    instance.javadoc = original
-    assert instance.javadoc == original
-
-@given(instance=web::Release_strategy)
-def test_web::release_unqualifiedName_type(instance):
-    assert isinstance(instance.unqualifiedName, str)
-
-
-@given(instance=web::Release_strategy)
-def test_web::release_unqualifiedName_setter(instance):
-    original = instance.unqualifiedName
-    instance.unqualifiedName = original
-    assert instance.unqualifiedName == original
-
-@given(instance=web::Release_strategy)
-def test_web::release_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=web::Release_strategy)
-def test_web::release_name_setter(instance):
+@given(instance=web_Release_strategy)
+def test_web_release_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=web::Release_strategy)
-def test_web::release_releaseNotesLink_type(instance):
-    assert isinstance(instance.releaseNotesLink, str)
 
 
-@given(instance=web::Release_strategy)
-def test_web::release_releaseNotesLink_setter(instance):
-    original = instance.releaseNotesLink
-    instance.releaseNotesLink = original
-    assert instance.releaseNotesLink == original
-
-@given(instance=web::Release_strategy)
-def test_web::release_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=web::Release_strategy)
-def test_web::release_type_setter(instance):
+@given(instance=web_Release_strategy)
+def test_web_release_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=web::Image_strategy)
+
+
+@given(instance=web_Release_strategy)
+def test_web_release_releaseNotesLink_setter(instance):
+    original = instance.releaseNotesLink
+    instance.releaseNotesLink = original
+    assert instance.releaseNotesLink == original
+
+
+
+@given(instance=web_Release_strategy)
+def test_web_release_buildId_setter(instance):
+    original = instance.buildId
+    instance.buildId = original
+    assert instance.buildId == original
+
+
+
+@given(instance=web_Release_strategy)
+def test_web_release_unqualifiedName_setter(instance):
+    original = instance.unqualifiedName
+    instance.unqualifiedName = original
+    assert instance.unqualifiedName == original
+
+
+
+@given(instance=web_Release_strategy)
+def test_web_release_javadoc_setter(instance):
+    original = instance.javadoc
+    instance.javadoc = original
+    assert instance.javadoc == original
+
+
+
+@given(instance=web_Release_strategy)
+def test_web_release_alternateMsiName_setter(instance):
+    original = instance.alternateMsiName
+    instance.alternateMsiName = original
+    assert instance.alternateMsiName == original
+
+@given(instance=web_Image_strategy)
 @settings(max_examples=50)
-def test_web::image_instantiation(instance):
-    assert isinstance(instance, web::Image)
-
-@given(instance=web::Image_strategy)
-def test_web::image_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_web_image_instantiation(instance):
+    assert isinstance(instance, web_Image)
 
 
-@given(instance=web::Image_strategy)
-def test_web::image_label_setter(instance):
+
+@given(instance=web_Image_strategy)
+def test_web_image_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=web::Image_strategy)
-def test_web::image_src_type(instance):
-    assert isinstance(instance.src, str)
 
 
-@given(instance=web::Image_strategy)
-def test_web::image_src_setter(instance):
+@given(instance=web_Image_strategy)
+def test_web_image_src_setter(instance):
     original = instance.src
     instance.src = original
     assert instance.src == original
 
-@given(instance=web::FooterEntry_strategy)
+@given(instance=web_FooterEntry_strategy)
 @settings(max_examples=50)
-def test_web::footerentry_instantiation(instance):
-    assert isinstance(instance, web::FooterEntry)
-
-@given(instance=web::FooterEntry_strategy)
-def test_web::footerentry_link_type(instance):
-    assert isinstance(instance.link, str)
+def test_web_footerentry_instantiation(instance):
+    assert isinstance(instance, web_FooterEntry)
 
 
-@given(instance=web::FooterEntry_strategy)
-def test_web::footerentry_link_setter(instance):
-    original = instance.link
-    instance.link = original
-    assert instance.link == original
 
-@given(instance=web::FooterEntry_strategy)
-def test_web::footerentry_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=web::FooterEntry_strategy)
-def test_web::footerentry_name_setter(instance):
+@given(instance=web_FooterEntry_strategy)
+def test_web_footerentry_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=web_FooterEntry_strategy)
+def test_web_footerentry_link_setter(instance):
+    original = instance.link
+    instance.link = original
+    assert instance.link == original
 
 @given(instance=Page_strategy)
 @settings(max_examples=50)
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=web::NewsFeedPage_strategy)
+@given(instance=web_NewsFeedPage_strategy)
 @settings(max_examples=50)
-def test_web::newsfeedpage_instantiation(instance):
-    assert isinstance(instance, web::NewsFeedPage)
+def test_web_newsfeedpage_instantiation(instance):
+    assert isinstance(instance, web_NewsFeedPage)
 
-@given(instance=web::Container_strategy)
+@given(instance=web_Container_strategy)
 @settings(max_examples=50)
-def test_web::container_instantiation(instance):
-    assert isinstance(instance, web::Container)
+def test_web_container_instantiation(instance):
+    assert isinstance(instance, web_Container)
 
 @given(instance=Container_strategy)
 @settings(max_examples=50)
 def test_container_instantiation(instance):
     assert isinstance(instance, Container)
 
-@given(instance=web::NewsEntry_strategy)
+@given(instance=web_ContentPage_strategy)
 @settings(max_examples=50)
-def test_web::newsentry_instantiation(instance):
-    assert isinstance(instance, web::NewsEntry)
+def test_web_contentpage_instantiation(instance):
+    assert isinstance(instance, web_ContentPage)
 
-@given(instance=web::NewsEntry_strategy)
-def test_web::newsentry_title_type(instance):
-    assert isinstance(instance.title, str)
+@given(instance=web_NewsEntry_strategy)
+@settings(max_examples=50)
+def test_web_newsentry_instantiation(instance):
+    assert isinstance(instance, web_NewsEntry)
 
 
-@given(instance=web::NewsEntry_strategy)
-def test_web::newsentry_title_setter(instance):
+
+@given(instance=web_NewsEntry_strategy)
+def test_web_newsentry_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=web::NewsEntry_strategy)
-def test_web::newsentry_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=web::NewsEntry_strategy)
-def test_web::newsentry_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=web::NewsEntry_strategy)
-def test_web::newsentry_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=web::NewsEntry_strategy)
-def test_web::newsentry_date_setter(instance):
+@given(instance=web_NewsEntry_strategy)
+def test_web_newsentry_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=web::ContentPage_strategy)
-@settings(max_examples=50)
-def test_web::contentpage_instantiation(instance):
-    assert isinstance(instance, web::ContentPage)
+
+
+@given(instance=web_NewsEntry_strategy)
+def test_web_newsentry_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 @given(instance=Content_strategy)
 @settings(max_examples=50)
 def test_content_instantiation(instance):
     assert isinstance(instance, Content)
 
-@given(instance=web::ReleaseSection_strategy)
+@given(instance=web_GalleryContent_strategy)
 @settings(max_examples=50)
-def test_web::releasesection_instantiation(instance):
-    assert isinstance(instance, web::ReleaseSection)
+def test_web_gallerycontent_instantiation(instance):
+    assert isinstance(instance, web_GalleryContent)
 
-@given(instance=web::GalleryContent_strategy)
+@given(instance=web_SocialBar_strategy)
 @settings(max_examples=50)
-def test_web::gallerycontent_instantiation(instance):
-    assert isinstance(instance, web::GalleryContent)
+def test_web_socialbar_instantiation(instance):
+    assert isinstance(instance, web_SocialBar)
 
-@given(instance=web::SocialBar_strategy)
+@given(instance=web_ReleaseSection_strategy)
 @settings(max_examples=50)
-def test_web::socialbar_instantiation(instance):
-    assert isinstance(instance, web::SocialBar)
+def test_web_releasesection_instantiation(instance):
+    assert isinstance(instance, web_ReleaseSection)
 
-@given(instance=web::HtmlContent_strategy)
+@given(instance=web_HtmlContent_strategy)
 @settings(max_examples=50)
-def test_web::htmlcontent_instantiation(instance):
-    assert isinstance(instance, web::HtmlContent)
-
-@given(instance=web::HtmlContent_strategy)
-def test_web::htmlcontent_data_type(instance):
-    assert isinstance(instance.data, str)
+def test_web_htmlcontent_instantiation(instance):
+    assert isinstance(instance, web_HtmlContent)
 
 
-@given(instance=web::HtmlContent_strategy)
-def test_web::htmlcontent_data_setter(instance):
+
+@given(instance=web_HtmlContent_strategy)
+def test_web_htmlcontent_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
 
-@given(instance=web::Content_strategy)
+@given(instance=web_Content_strategy)
 @settings(max_examples=50)
-def test_web::content_instantiation(instance):
-    assert isinstance(instance, web::Content)
+def test_web_content_instantiation(instance):
+    assert isinstance(instance, web_Content)
 
-@given(instance=web::Gallery_strategy)
+@given(instance=web_Gallery_strategy)
 @settings(max_examples=50)
-def test_web::gallery_instantiation(instance):
-    assert isinstance(instance, web::Gallery)
-
-@given(instance=web::Gallery_strategy)
-def test_web::gallery_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_web_gallery_instantiation(instance):
+    assert isinstance(instance, web_Gallery)
 
 
-@given(instance=web::Gallery_strategy)
-def test_web::gallery_label_setter(instance):
+
+@given(instance=web_Gallery_strategy)
+def test_web_gallery_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=web::Version_strategy)
+@given(instance=web_Version_strategy)
 @settings(max_examples=50)
-def test_web::version_instantiation(instance):
-    assert isinstance(instance, web::Version)
-
-@given(instance=web::Version_strategy)
-def test_web::version_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_web_version_instantiation(instance):
+    assert isinstance(instance, web_Version)
 
 
-@given(instance=web::Version_strategy)
-def test_web::version_name_setter(instance):
+
+@given(instance=web_Version_strategy)
+def test_web_version_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=web::Version_strategy)
-def test_web::version_state_type(instance):
-    assert isinstance(instance.state, str)
 
 
-@given(instance=web::Version_strategy)
-def test_web::version_state_setter(instance):
+@given(instance=web_Version_strategy)
+def test_web_version_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
 
-@given(instance=web::Link_strategy)
+@given(instance=web_Link_strategy)
 @settings(max_examples=50)
-def test_web::link_instantiation(instance):
-    assert isinstance(instance, web::Link)
-
-@given(instance=web::Link_strategy)
-def test_web::link_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_web_link_instantiation(instance):
+    assert isinstance(instance, web_Link)
 
 
-@given(instance=web::Link_strategy)
-def test_web::link_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=web::Link_strategy)
-def test_web::link_target_type(instance):
-    assert isinstance(instance.target, str)
-
-
-@given(instance=web::Link_strategy)
-def test_web::link_target_setter(instance):
+@given(instance=web_Link_strategy)
+def test_web_link_target_setter(instance):
     original = instance.target
     instance.target = original
     assert instance.target == original
 
-@given(instance=web::Author_strategy)
+
+
+@given(instance=web_Link_strategy)
+def test_web_link_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+@given(instance=web_Author_strategy)
 @settings(max_examples=50)
-def test_web::author_instantiation(instance):
-    assert isinstance(instance, web::Author)
-
-@given(instance=web::Author_strategy)
-def test_web::author_email_type(instance):
-    assert isinstance(instance.email, str)
+def test_web_author_instantiation(instance):
+    assert isinstance(instance, web_Author)
 
 
-@given(instance=web::Author_strategy)
-def test_web::author_email_setter(instance):
+
+@given(instance=web_Author_strategy)
+def test_web_author_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
 
-@given(instance=web::Author_strategy)
-def test_web::author_plusLink_type(instance):
-    assert isinstance(instance.plusLink, str)
 
 
-@given(instance=web::Author_strategy)
-def test_web::author_plusLink_setter(instance):
+@given(instance=web_Author_strategy)
+def test_web_author_plusLink_setter(instance):
     original = instance.plusLink
     instance.plusLink = original
     assert instance.plusLink == original
 
-@given(instance=web::Author_strategy)
-def test_web::author_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=web::Author_strategy)
-def test_web::author_name_setter(instance):
+@given(instance=web_Author_strategy)
+def test_web_author_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=web::Page_strategy)
+@given(instance=web_Page_strategy)
 @settings(max_examples=50)
-def test_web::page_instantiation(instance):
-    assert isinstance(instance, web::Page)
-
-@given(instance=web::Page_strategy)
-def test_web::page_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_web_page_instantiation(instance):
+    assert isinstance(instance, web_Page)
 
 
-@given(instance=web::Page_strategy)
-def test_web::page_id_setter(instance):
+
+@given(instance=web_Page_strategy)
+def test_web_page_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=web::Page_strategy)
-def test_web::page_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=web::Page_strategy)
-def test_web::page_name_setter(instance):
+@given(instance=web_Page_strategy)
+def test_web_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=web::Site_strategy)
+@given(instance=web_Site_strategy)
 @settings(max_examples=50)
-def test_web::site_instantiation(instance):
-    assert isinstance(instance, web::Site)
-
-@given(instance=web::Site_strategy)
-def test_web::site_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_web_site_instantiation(instance):
+    assert isinstance(instance, web_Site)
 
 
-@given(instance=web::Site_strategy)
-def test_web::site_description_setter(instance):
+
+@given(instance=web_Site_strategy)
+def test_web_site_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=web::Site_strategy)
-def test_web::site_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=web::Site_strategy)
-def test_web::site_name_setter(instance):
+@given(instance=web_Site_strategy)
+def test_web_site_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

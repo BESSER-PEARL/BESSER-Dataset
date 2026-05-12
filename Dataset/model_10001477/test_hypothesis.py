@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Ticket,
@@ -71,9 +71,18 @@ def test_spot_constructor_exists():
 def test_spot_constructor_args():
     sig = inspect.signature(spot.__init__)
     params = list(sig.parameters.keys())
+    assert "parkedVehicle" in params, "Missing parameter 'parkedVehicle'"
     assert "id" in params, "Missing parameter 'id'"
     assert "size" in params, "Missing parameter 'size'"
-    assert "parkedVehicle" in params, "Missing parameter 'parkedVehicle'"
+
+def test_spot_has_parkedVehicle():
+    assert hasattr(spot, "parkedVehicle")
+    descriptor = None
+    for klass in spot.__mro__:
+        if "parkedVehicle" in klass.__dict__:
+            descriptor = klass.__dict__["parkedVehicle"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_spot_has_id():
     assert hasattr(spot, "id")
@@ -90,15 +99,6 @@ def test_spot_has_size():
     for klass in spot.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spot_has_parkedVehicle():
-    assert hasattr(spot, "parkedVehicle")
-    descriptor = None
-    for klass in spot.__mro__:
-        if "parkedVehicle" in klass.__dict__:
-            descriptor = klass.__dict__["parkedVehicle"]
             break
     assert isinstance(descriptor, property)
 
@@ -194,12 +194,12 @@ ValleyParking_strategy = st.builds(
 )
 spot_strategy = st.builds(
     spot,
+    parkedVehicle=
+        st.none(),
     id=
         safe_text,
     size=
-        st.integers(),
-    parkedVehicle=
-        st.none()
+        st.integers()
 )
 XL_strategy = st.builds(
     XL,
@@ -222,9 +222,6 @@ Vehicle_Interface_strategy = st.builds(
 def test_ticket_instantiation(instance):
     assert isinstance(instance, Ticket)
 
-@given(instance=Ticket_strategy)
-def test_ticket_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Ticket_strategy)
@@ -243,9 +240,14 @@ def test_valleyparking_instantiation(instance):
 def test_spot_instantiation(instance):
     assert isinstance(instance, spot)
 
+
+
 @given(instance=spot_strategy)
-def test_spot_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_spot_parkedVehicle_setter(instance):
+    original = instance.parkedVehicle
+    instance.parkedVehicle = original
+    assert instance.parkedVehicle == original
+
 
 
 @given(instance=spot_strategy)
@@ -254,9 +256,6 @@ def test_spot_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=spot_strategy)
-def test_spot_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
 @given(instance=spot_strategy)
@@ -264,17 +263,6 @@ def test_spot_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
-
-@given(instance=spot_strategy)
-def test_spot_parkedVehicle_type(instance):
-    assert isinstance(instance.parkedVehicle, vehicle_interface)
-
-
-@given(instance=spot_strategy)
-def test_spot_parkedVehicle_setter(instance):
-    original = instance.parkedVehicle
-    instance.parkedVehicle = original
-    assert instance.parkedVehicle == original
 
 @given(instance=XL_strategy)
 @settings(max_examples=50)

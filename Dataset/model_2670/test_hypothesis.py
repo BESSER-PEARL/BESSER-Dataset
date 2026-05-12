@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    conts::Named,
+    conts_Named,
     Named,
-    conts::H,
-    conts::B,
-    conts::F,
-    conts::G,
-    conts::E,
-    conts::C,
-    conts::A,
+    conts_C,
+    conts_E,
+    conts_B,
+    conts_G,
+    conts_F,
+    conts_H,
+    conts_A,
 )
 
 # =============================================================================
@@ -38,23 +38,23 @@ def test_b_constructor_args():
 
 
 
-def test_conts::named_is_not_abstract():
-    assert not inspect.isabstract(conts::Named)
+def test_conts_named_is_not_abstract():
+    assert not inspect.isabstract(conts_Named)
 
 
-def test_conts::named_constructor_exists():
-    assert callable(conts::Named.__init__)
+def test_conts_named_constructor_exists():
+    assert callable(conts_Named.__init__)
 
 
-def test_conts::named_constructor_args():
-    sig = inspect.signature(conts::Named.__init__)
+def test_conts_named_constructor_args():
+    sig = inspect.signature(conts_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_conts::named_has_name():
-    assert hasattr(conts::Named, "name")
+def test_conts_named_has_name():
+    assert hasattr(conts_Named, "name")
     descriptor = None
-    for klass in conts::Named.__mro__:
+    for klass in conts_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -76,100 +76,100 @@ def test_named_constructor_args():
 
 
 
-def test_conts::h_is_not_abstract():
-    assert not inspect.isabstract(conts::H)
+def test_conts_c_is_not_abstract():
+    assert not inspect.isabstract(conts_C)
 
 
-def test_conts::h_constructor_exists():
-    assert callable(conts::H.__init__)
+def test_conts_c_constructor_exists():
+    assert callable(conts_C.__init__)
 
 
-def test_conts::h_constructor_args():
-    sig = inspect.signature(conts::H.__init__)
+def test_conts_c_constructor_args():
+    sig = inspect.signature(conts_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conts::b_is_not_abstract():
-    assert not inspect.isabstract(conts::B)
+def test_conts_e_is_not_abstract():
+    assert not inspect.isabstract(conts_E)
 
 
-def test_conts::b_constructor_exists():
-    assert callable(conts::B.__init__)
+def test_conts_e_constructor_exists():
+    assert callable(conts_E.__init__)
 
 
-def test_conts::b_constructor_args():
-    sig = inspect.signature(conts::B.__init__)
+def test_conts_e_constructor_args():
+    sig = inspect.signature(conts_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conts::f_is_not_abstract():
-    assert not inspect.isabstract(conts::F)
+def test_conts_b_is_not_abstract():
+    assert not inspect.isabstract(conts_B)
 
 
-def test_conts::f_constructor_exists():
-    assert callable(conts::F.__init__)
+def test_conts_b_constructor_exists():
+    assert callable(conts_B.__init__)
 
 
-def test_conts::f_constructor_args():
-    sig = inspect.signature(conts::F.__init__)
+def test_conts_b_constructor_args():
+    sig = inspect.signature(conts_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conts::g_is_not_abstract():
-    assert not inspect.isabstract(conts::G)
+def test_conts_g_is_not_abstract():
+    assert not inspect.isabstract(conts_G)
 
 
-def test_conts::g_constructor_exists():
-    assert callable(conts::G.__init__)
+def test_conts_g_constructor_exists():
+    assert callable(conts_G.__init__)
 
 
-def test_conts::g_constructor_args():
-    sig = inspect.signature(conts::G.__init__)
+def test_conts_g_constructor_args():
+    sig = inspect.signature(conts_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conts::e_is_not_abstract():
-    assert not inspect.isabstract(conts::E)
+def test_conts_f_is_not_abstract():
+    assert not inspect.isabstract(conts_F)
 
 
-def test_conts::e_constructor_exists():
-    assert callable(conts::E.__init__)
+def test_conts_f_constructor_exists():
+    assert callable(conts_F.__init__)
 
 
-def test_conts::e_constructor_args():
-    sig = inspect.signature(conts::E.__init__)
+def test_conts_f_constructor_args():
+    sig = inspect.signature(conts_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conts::c_is_not_abstract():
-    assert not inspect.isabstract(conts::C)
+def test_conts_h_is_not_abstract():
+    assert not inspect.isabstract(conts_H)
 
 
-def test_conts::c_constructor_exists():
-    assert callable(conts::C.__init__)
+def test_conts_h_constructor_exists():
+    assert callable(conts_H.__init__)
 
 
-def test_conts::c_constructor_args():
-    sig = inspect.signature(conts::C.__init__)
+def test_conts_h_constructor_args():
+    sig = inspect.signature(conts_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conts::a_is_not_abstract():
-    assert not inspect.isabstract(conts::A)
+def test_conts_a_is_not_abstract():
+    assert not inspect.isabstract(conts_A)
 
 
-def test_conts::a_constructor_exists():
-    assert callable(conts::A.__init__)
+def test_conts_a_constructor_exists():
+    assert callable(conts_A.__init__)
 
 
-def test_conts::a_constructor_args():
-    sig = inspect.signature(conts::A.__init__)
+def test_conts_a_constructor_args():
+    sig = inspect.signature(conts_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,34 +187,34 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-conts::Named_strategy = st.builds(
-    conts::Named,
+conts_Named_strategy = st.builds(
+    conts_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-conts::H_strategy = st.builds(
-    conts::H,
+conts_C_strategy = st.builds(
+    conts_C,
 )
-conts::B_strategy = st.builds(
-    conts::B,
+conts_E_strategy = st.builds(
+    conts_E,
 )
-conts::F_strategy = st.builds(
-    conts::F,
+conts_B_strategy = st.builds(
+    conts_B,
 )
-conts::G_strategy = st.builds(
-    conts::G,
+conts_G_strategy = st.builds(
+    conts_G,
 )
-conts::E_strategy = st.builds(
-    conts::E,
+conts_F_strategy = st.builds(
+    conts_F,
 )
-conts::C_strategy = st.builds(
-    conts::C,
+conts_H_strategy = st.builds(
+    conts_H,
 )
-conts::A_strategy = st.builds(
-    conts::A,
+conts_A_strategy = st.builds(
+    conts_A,
 )
 
 @given(instance=B_strategy)
@@ -222,18 +222,15 @@ conts::A_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=conts::Named_strategy)
+@given(instance=conts_Named_strategy)
 @settings(max_examples=50)
-def test_conts::named_instantiation(instance):
-    assert isinstance(instance, conts::Named)
-
-@given(instance=conts::Named_strategy)
-def test_conts::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_conts_named_instantiation(instance):
+    assert isinstance(instance, conts_Named)
 
 
-@given(instance=conts::Named_strategy)
-def test_conts::named_name_setter(instance):
+
+@given(instance=conts_Named_strategy)
+def test_conts_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -243,37 +240,37 @@ def test_conts::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=conts::H_strategy)
+@given(instance=conts_C_strategy)
 @settings(max_examples=50)
-def test_conts::h_instantiation(instance):
-    assert isinstance(instance, conts::H)
+def test_conts_c_instantiation(instance):
+    assert isinstance(instance, conts_C)
 
-@given(instance=conts::B_strategy)
+@given(instance=conts_E_strategy)
 @settings(max_examples=50)
-def test_conts::b_instantiation(instance):
-    assert isinstance(instance, conts::B)
+def test_conts_e_instantiation(instance):
+    assert isinstance(instance, conts_E)
 
-@given(instance=conts::F_strategy)
+@given(instance=conts_B_strategy)
 @settings(max_examples=50)
-def test_conts::f_instantiation(instance):
-    assert isinstance(instance, conts::F)
+def test_conts_b_instantiation(instance):
+    assert isinstance(instance, conts_B)
 
-@given(instance=conts::G_strategy)
+@given(instance=conts_G_strategy)
 @settings(max_examples=50)
-def test_conts::g_instantiation(instance):
-    assert isinstance(instance, conts::G)
+def test_conts_g_instantiation(instance):
+    assert isinstance(instance, conts_G)
 
-@given(instance=conts::E_strategy)
+@given(instance=conts_F_strategy)
 @settings(max_examples=50)
-def test_conts::e_instantiation(instance):
-    assert isinstance(instance, conts::E)
+def test_conts_f_instantiation(instance):
+    assert isinstance(instance, conts_F)
 
-@given(instance=conts::C_strategy)
+@given(instance=conts_H_strategy)
 @settings(max_examples=50)
-def test_conts::c_instantiation(instance):
-    assert isinstance(instance, conts::C)
+def test_conts_h_instantiation(instance):
+    assert isinstance(instance, conts_H)
 
-@given(instance=conts::A_strategy)
+@given(instance=conts_A_strategy)
 @settings(max_examples=50)
-def test_conts::a_instantiation(instance):
-    assert isinstance(instance, conts::A)
+def test_conts_a_instantiation(instance):
+    assert isinstance(instance, conts_A)

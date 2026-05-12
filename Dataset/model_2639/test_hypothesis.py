@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TestPackage::SubPackage::SubTestInterface,
-    TestPackage::SubPackage::SubTestClass,
-    TestPackage::UberClass,
-    TestPackage::SuperClass,
+from python_code import (
+    TestPackage_SubPackage_SubTestInterface,
+    TestPackage_SubPackage_SubTestClass,
+    TestPackage_UberClass,
+    TestPackage_SuperClass,
     SubTestClass,
     UberClass,
     SuperClass,
-    TestPackage::TestInterface,
-    TestPackage::TestClass,
-    TestEnum,
+    TestPackage_TestInterface,
+    TestPackage_TestClass,
     SubTestEnum,
+    TestEnum,
 )
 
 # =============================================================================
@@ -25,58 +25,58 @@ from classes import (
 
 
 
-def test_testpackage::subpackage::subtestinterface_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SubPackage::SubTestInterface)
+def test_testpackage_subpackage_subtestinterface_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SubPackage_SubTestInterface)
 
 
-def test_testpackage::subpackage::subtestinterface_constructor_exists():
-    assert callable(TestPackage::SubPackage::SubTestInterface.__init__)
+def test_testpackage_subpackage_subtestinterface_constructor_exists():
+    assert callable(TestPackage_SubPackage_SubTestInterface.__init__)
 
 
-def test_testpackage::subpackage::subtestinterface_constructor_args():
-    sig = inspect.signature(TestPackage::SubPackage::SubTestInterface.__init__)
+def test_testpackage_subpackage_subtestinterface_constructor_args():
+    sig = inspect.signature(TestPackage_SubPackage_SubTestInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::subpackage::subtestclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SubPackage::SubTestClass)
+def test_testpackage_subpackage_subtestclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SubPackage_SubTestClass)
 
 
-def test_testpackage::subpackage::subtestclass_constructor_exists():
-    assert callable(TestPackage::SubPackage::SubTestClass.__init__)
+def test_testpackage_subpackage_subtestclass_constructor_exists():
+    assert callable(TestPackage_SubPackage_SubTestClass.__init__)
 
 
-def test_testpackage::subpackage::subtestclass_constructor_args():
-    sig = inspect.signature(TestPackage::SubPackage::SubTestClass.__init__)
+def test_testpackage_subpackage_subtestclass_constructor_args():
+    sig = inspect.signature(TestPackage_SubPackage_SubTestClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::uberclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::UberClass)
+def test_testpackage_uberclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_UberClass)
 
 
-def test_testpackage::uberclass_constructor_exists():
-    assert callable(TestPackage::UberClass.__init__)
+def test_testpackage_uberclass_constructor_exists():
+    assert callable(TestPackage_UberClass.__init__)
 
 
-def test_testpackage::uberclass_constructor_args():
-    sig = inspect.signature(TestPackage::UberClass.__init__)
+def test_testpackage_uberclass_constructor_args():
+    sig = inspect.signature(TestPackage_UberClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::superclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SuperClass)
+def test_testpackage_superclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SuperClass)
 
 
-def test_testpackage::superclass_constructor_exists():
-    assert callable(TestPackage::SuperClass.__init__)
+def test_testpackage_superclass_constructor_exists():
+    assert callable(TestPackage_SuperClass.__init__)
 
 
-def test_testpackage::superclass_constructor_args():
-    sig = inspect.signature(TestPackage::SuperClass.__init__)
+def test_testpackage_superclass_constructor_args():
+    sig = inspect.signature(TestPackage_SuperClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,23 +123,23 @@ def test_superclass_constructor_args():
 
 
 
-def test_testpackage::testinterface_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestInterface)
+def test_testpackage_testinterface_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestInterface)
 
 
-def test_testpackage::testinterface_constructor_exists():
-    assert callable(TestPackage::TestInterface.__init__)
+def test_testpackage_testinterface_constructor_exists():
+    assert callable(TestPackage_TestInterface.__init__)
 
 
-def test_testpackage::testinterface_constructor_args():
-    sig = inspect.signature(TestPackage::TestInterface.__init__)
+def test_testpackage_testinterface_constructor_args():
+    sig = inspect.signature(TestPackage_TestInterface.__init__)
     params = list(sig.parameters.keys())
     assert "testAttr" in params, "Missing parameter 'testAttr'"
 
-def test_testpackage::testinterface_has_testAttr():
-    assert hasattr(TestPackage::TestInterface, "testAttr")
+def test_testpackage_testinterface_has_testAttr():
+    assert hasattr(TestPackage_TestInterface, "testAttr")
     descriptor = None
-    for klass in TestPackage::TestInterface.__mro__:
+    for klass in TestPackage_TestInterface.__mro__:
         if "testAttr" in klass.__dict__:
             descriptor = klass.__dict__["testAttr"]
             break
@@ -147,30 +147,17 @@ def test_testpackage::testinterface_has_testAttr():
 
 
 
-def test_testpackage::testclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestClass)
+def test_testpackage_testclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestClass)
 
 
-def test_testpackage::testclass_constructor_exists():
-    assert callable(TestPackage::TestClass.__init__)
+def test_testpackage_testclass_constructor_exists():
+    assert callable(TestPackage_TestClass.__init__)
 
 
-def test_testpackage::testclass_constructor_args():
-    sig = inspect.signature(TestPackage::TestClass.__init__)
+def test_testpackage_testclass_constructor_args():
+    sig = inspect.signature(TestPackage_TestClass.__init__)
     params = list(sig.parameters.keys())
-
-def test_testenum_exists():
-    # Check that the Enumeration exists
-    assert TestEnum is not None
-
-def test_testenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TestEnum]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TestEnum"
 
 def test_subtestenum_exists():
     # Check that the Enumeration exists
@@ -185,6 +172,19 @@ def test_subtestenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SubTestEnum"
 
+def test_testenum_exists():
+    # Check that the Enumeration exists
+    assert TestEnum is not None
+
+def test_testenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TestEnum]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TestEnum"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -197,17 +197,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TestPackage::SubPackage::SubTestInterface_strategy = st.builds(
-    TestPackage::SubPackage::SubTestInterface,
+TestPackage_SubPackage_SubTestInterface_strategy = st.builds(
+    TestPackage_SubPackage_SubTestInterface,
 )
-TestPackage::SubPackage::SubTestClass_strategy = st.builds(
-    TestPackage::SubPackage::SubTestClass,
+TestPackage_SubPackage_SubTestClass_strategy = st.builds(
+    TestPackage_SubPackage_SubTestClass,
 )
-TestPackage::UberClass_strategy = st.builds(
-    TestPackage::UberClass,
+TestPackage_UberClass_strategy = st.builds(
+    TestPackage_UberClass,
 )
-TestPackage::SuperClass_strategy = st.builds(
-    TestPackage::SuperClass,
+TestPackage_SuperClass_strategy = st.builds(
+    TestPackage_SuperClass,
 )
 SubTestClass_strategy = st.builds(
     SubTestClass,
@@ -218,34 +218,34 @@ UberClass_strategy = st.builds(
 SuperClass_strategy = st.builds(
     SuperClass,
 )
-TestPackage::TestInterface_strategy = st.builds(
-    TestPackage::TestInterface,
+TestPackage_TestInterface_strategy = st.builds(
+    TestPackage_TestInterface,
     testAttr=
         safe_text
 )
-TestPackage::TestClass_strategy = st.builds(
-    TestPackage::TestClass,
+TestPackage_TestClass_strategy = st.builds(
+    TestPackage_TestClass,
 )
 
-@given(instance=TestPackage::SubPackage::SubTestInterface_strategy)
+@given(instance=TestPackage_SubPackage_SubTestInterface_strategy)
 @settings(max_examples=50)
-def test_testpackage::subpackage::subtestinterface_instantiation(instance):
-    assert isinstance(instance, TestPackage::SubPackage::SubTestInterface)
+def test_testpackage_subpackage_subtestinterface_instantiation(instance):
+    assert isinstance(instance, TestPackage_SubPackage_SubTestInterface)
 
-@given(instance=TestPackage::SubPackage::SubTestClass_strategy)
+@given(instance=TestPackage_SubPackage_SubTestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::subpackage::subtestclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::SubPackage::SubTestClass)
+def test_testpackage_subpackage_subtestclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_SubPackage_SubTestClass)
 
-@given(instance=TestPackage::UberClass_strategy)
+@given(instance=TestPackage_UberClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::uberclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::UberClass)
+def test_testpackage_uberclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_UberClass)
 
-@given(instance=TestPackage::SuperClass_strategy)
+@given(instance=TestPackage_SuperClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::superclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::SuperClass)
+def test_testpackage_superclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_SuperClass)
 
 @given(instance=SubTestClass_strategy)
 @settings(max_examples=50)
@@ -262,23 +262,20 @@ def test_uberclass_instantiation(instance):
 def test_superclass_instantiation(instance):
     assert isinstance(instance, SuperClass)
 
-@given(instance=TestPackage::TestInterface_strategy)
+@given(instance=TestPackage_TestInterface_strategy)
 @settings(max_examples=50)
-def test_testpackage::testinterface_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestInterface)
-
-@given(instance=TestPackage::TestInterface_strategy)
-def test_testpackage::testinterface_testAttr_type(instance):
-    assert isinstance(instance.testAttr, str)
+def test_testpackage_testinterface_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestInterface)
 
 
-@given(instance=TestPackage::TestInterface_strategy)
-def test_testpackage::testinterface_testAttr_setter(instance):
+
+@given(instance=TestPackage_TestInterface_strategy)
+def test_testpackage_testinterface_testAttr_setter(instance):
     original = instance.testAttr
     instance.testAttr = original
     assert instance.testAttr == original
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::testclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestClass)
+def test_testpackage_testclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestClass)

@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    iotdsl::IfBlock,
+from python_code import (
+    iotdsl_IfBlock,
     Expression,
-    iotdsl::IntConstant,
-    iotdsl::VariableRef,
-    iotdsl::BoolConstant,
-    iotdsl::Or,
-    iotdsl::And,
-    iotdsl::StringConstant,
-    iotdsl::Not,
-    iotdsl::MulOrDiv,
-    iotdsl::Minus,
-    iotdsl::Plus,
-    iotdsl::Comparison,
-    iotdsl::Equality,
-    iotdsl::Device,
-    iotdsl::Iot,
-    iotdsl::IfStatement,
+    iotdsl_Or,
+    iotdsl_StringConstant,
+    iotdsl_IntConstant,
+    iotdsl_And,
+    iotdsl_BoolConstant,
+    iotdsl_VariableRef,
+    iotdsl_Not,
+    iotdsl_MulOrDiv,
+    iotdsl_Minus,
+    iotdsl_Plus,
+    iotdsl_Comparison,
+    iotdsl_Equality,
+    iotdsl_Device,
+    iotdsl_Iot,
+    iotdsl_IfStatement,
     Action,
-    iotdsl::Expression,
-    iotdsl::Variable,
-    iotdsl::Action,
-    iotdsl::Transition,
-    iotdsl::Event,
-    iotdsl::State,
-    iotdsl::Attribute,
+    iotdsl_Expression,
+    iotdsl_Variable,
+    iotdsl_Action,
+    iotdsl_Transition,
+    iotdsl_Event,
+    iotdsl_State,
+    iotdsl_Attribute,
 )
 
 # =============================================================================
@@ -39,16 +39,16 @@ from classes import (
 
 
 
-def test_iotdsl::ifblock_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::IfBlock)
+def test_iotdsl_ifblock_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_IfBlock)
 
 
-def test_iotdsl::ifblock_constructor_exists():
-    assert callable(iotdsl::IfBlock.__init__)
+def test_iotdsl_ifblock_constructor_exists():
+    assert callable(iotdsl_IfBlock.__init__)
 
 
-def test_iotdsl::ifblock_constructor_args():
-    sig = inspect.signature(iotdsl::IfBlock.__init__)
+def test_iotdsl_ifblock_constructor_args():
+    sig = inspect.signature(iotdsl_IfBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -67,23 +67,37 @@ def test_expression_constructor_args():
 
 
 
-def test_iotdsl::intconstant_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::IntConstant)
+def test_iotdsl_or_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Or)
 
 
-def test_iotdsl::intconstant_constructor_exists():
-    assert callable(iotdsl::IntConstant.__init__)
+def test_iotdsl_or_constructor_exists():
+    assert callable(iotdsl_Or.__init__)
 
 
-def test_iotdsl::intconstant_constructor_args():
-    sig = inspect.signature(iotdsl::IntConstant.__init__)
+def test_iotdsl_or_constructor_args():
+    sig = inspect.signature(iotdsl_Or.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iotdsl_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_StringConstant)
+
+
+def test_iotdsl_stringconstant_constructor_exists():
+    assert callable(iotdsl_StringConstant.__init__)
+
+
+def test_iotdsl_stringconstant_constructor_args():
+    sig = inspect.signature(iotdsl_StringConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_iotdsl::intconstant_has_value():
-    assert hasattr(iotdsl::IntConstant, "value")
+def test_iotdsl_stringconstant_has_value():
+    assert hasattr(iotdsl_StringConstant, "value")
     descriptor = None
-    for klass in iotdsl::IntConstant.__mro__:
+    for klass in iotdsl_StringConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -91,37 +105,23 @@ def test_iotdsl::intconstant_has_value():
 
 
 
-def test_iotdsl::variableref_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::VariableRef)
+def test_iotdsl_intconstant_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_IntConstant)
 
 
-def test_iotdsl::variableref_constructor_exists():
-    assert callable(iotdsl::VariableRef.__init__)
+def test_iotdsl_intconstant_constructor_exists():
+    assert callable(iotdsl_IntConstant.__init__)
 
 
-def test_iotdsl::variableref_constructor_args():
-    sig = inspect.signature(iotdsl::VariableRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iotdsl::boolconstant_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::BoolConstant)
-
-
-def test_iotdsl::boolconstant_constructor_exists():
-    assert callable(iotdsl::BoolConstant.__init__)
-
-
-def test_iotdsl::boolconstant_constructor_args():
-    sig = inspect.signature(iotdsl::BoolConstant.__init__)
+def test_iotdsl_intconstant_constructor_args():
+    sig = inspect.signature(iotdsl_IntConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_iotdsl::boolconstant_has_value():
-    assert hasattr(iotdsl::BoolConstant, "value")
+def test_iotdsl_intconstant_has_value():
+    assert hasattr(iotdsl_IntConstant, "value")
     descriptor = None
-    for klass in iotdsl::BoolConstant.__mro__:
+    for klass in iotdsl_IntConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -129,51 +129,37 @@ def test_iotdsl::boolconstant_has_value():
 
 
 
-def test_iotdsl::or_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Or)
+def test_iotdsl_and_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_And)
 
 
-def test_iotdsl::or_constructor_exists():
-    assert callable(iotdsl::Or.__init__)
+def test_iotdsl_and_constructor_exists():
+    assert callable(iotdsl_And.__init__)
 
 
-def test_iotdsl::or_constructor_args():
-    sig = inspect.signature(iotdsl::Or.__init__)
+def test_iotdsl_and_constructor_args():
+    sig = inspect.signature(iotdsl_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::and_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::And)
+def test_iotdsl_boolconstant_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_BoolConstant)
 
 
-def test_iotdsl::and_constructor_exists():
-    assert callable(iotdsl::And.__init__)
+def test_iotdsl_boolconstant_constructor_exists():
+    assert callable(iotdsl_BoolConstant.__init__)
 
 
-def test_iotdsl::and_constructor_args():
-    sig = inspect.signature(iotdsl::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iotdsl::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::StringConstant)
-
-
-def test_iotdsl::stringconstant_constructor_exists():
-    assert callable(iotdsl::StringConstant.__init__)
-
-
-def test_iotdsl::stringconstant_constructor_args():
-    sig = inspect.signature(iotdsl::StringConstant.__init__)
+def test_iotdsl_boolconstant_constructor_args():
+    sig = inspect.signature(iotdsl_BoolConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_iotdsl::stringconstant_has_value():
-    assert hasattr(iotdsl::StringConstant, "value")
+def test_iotdsl_boolconstant_has_value():
+    assert hasattr(iotdsl_BoolConstant, "value")
     descriptor = None
-    for klass in iotdsl::StringConstant.__mro__:
+    for klass in iotdsl_BoolConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -181,37 +167,51 @@ def test_iotdsl::stringconstant_has_value():
 
 
 
-def test_iotdsl::not_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Not)
+def test_iotdsl_variableref_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_VariableRef)
 
 
-def test_iotdsl::not_constructor_exists():
-    assert callable(iotdsl::Not.__init__)
+def test_iotdsl_variableref_constructor_exists():
+    assert callable(iotdsl_VariableRef.__init__)
 
 
-def test_iotdsl::not_constructor_args():
-    sig = inspect.signature(iotdsl::Not.__init__)
+def test_iotdsl_variableref_constructor_args():
+    sig = inspect.signature(iotdsl_VariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::mulordiv_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::MulOrDiv)
+def test_iotdsl_not_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Not)
 
 
-def test_iotdsl::mulordiv_constructor_exists():
-    assert callable(iotdsl::MulOrDiv.__init__)
+def test_iotdsl_not_constructor_exists():
+    assert callable(iotdsl_Not.__init__)
 
 
-def test_iotdsl::mulordiv_constructor_args():
-    sig = inspect.signature(iotdsl::MulOrDiv.__init__)
+def test_iotdsl_not_constructor_args():
+    sig = inspect.signature(iotdsl_Not.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iotdsl_mulordiv_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_MulOrDiv)
+
+
+def test_iotdsl_mulordiv_constructor_exists():
+    assert callable(iotdsl_MulOrDiv.__init__)
+
+
+def test_iotdsl_mulordiv_constructor_args():
+    sig = inspect.signature(iotdsl_MulOrDiv.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_iotdsl::mulordiv_has_op():
-    assert hasattr(iotdsl::MulOrDiv, "op")
+def test_iotdsl_mulordiv_has_op():
+    assert hasattr(iotdsl_MulOrDiv, "op")
     descriptor = None
-    for klass in iotdsl::MulOrDiv.__mro__:
+    for klass in iotdsl_MulOrDiv.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -219,51 +219,51 @@ def test_iotdsl::mulordiv_has_op():
 
 
 
-def test_iotdsl::minus_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Minus)
+def test_iotdsl_minus_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Minus)
 
 
-def test_iotdsl::minus_constructor_exists():
-    assert callable(iotdsl::Minus.__init__)
+def test_iotdsl_minus_constructor_exists():
+    assert callable(iotdsl_Minus.__init__)
 
 
-def test_iotdsl::minus_constructor_args():
-    sig = inspect.signature(iotdsl::Minus.__init__)
+def test_iotdsl_minus_constructor_args():
+    sig = inspect.signature(iotdsl_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::plus_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Plus)
+def test_iotdsl_plus_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Plus)
 
 
-def test_iotdsl::plus_constructor_exists():
-    assert callable(iotdsl::Plus.__init__)
+def test_iotdsl_plus_constructor_exists():
+    assert callable(iotdsl_Plus.__init__)
 
 
-def test_iotdsl::plus_constructor_args():
-    sig = inspect.signature(iotdsl::Plus.__init__)
+def test_iotdsl_plus_constructor_args():
+    sig = inspect.signature(iotdsl_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::comparison_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Comparison)
+def test_iotdsl_comparison_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Comparison)
 
 
-def test_iotdsl::comparison_constructor_exists():
-    assert callable(iotdsl::Comparison.__init__)
+def test_iotdsl_comparison_constructor_exists():
+    assert callable(iotdsl_Comparison.__init__)
 
 
-def test_iotdsl::comparison_constructor_args():
-    sig = inspect.signature(iotdsl::Comparison.__init__)
+def test_iotdsl_comparison_constructor_args():
+    sig = inspect.signature(iotdsl_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_iotdsl::comparison_has_op():
-    assert hasattr(iotdsl::Comparison, "op")
+def test_iotdsl_comparison_has_op():
+    assert hasattr(iotdsl_Comparison, "op")
     descriptor = None
-    for klass in iotdsl::Comparison.__mro__:
+    for klass in iotdsl_Comparison.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -271,23 +271,23 @@ def test_iotdsl::comparison_has_op():
 
 
 
-def test_iotdsl::equality_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Equality)
+def test_iotdsl_equality_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Equality)
 
 
-def test_iotdsl::equality_constructor_exists():
-    assert callable(iotdsl::Equality.__init__)
+def test_iotdsl_equality_constructor_exists():
+    assert callable(iotdsl_Equality.__init__)
 
 
-def test_iotdsl::equality_constructor_args():
-    sig = inspect.signature(iotdsl::Equality.__init__)
+def test_iotdsl_equality_constructor_args():
+    sig = inspect.signature(iotdsl_Equality.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_iotdsl::equality_has_op():
-    assert hasattr(iotdsl::Equality, "op")
+def test_iotdsl_equality_has_op():
+    assert hasattr(iotdsl_Equality, "op")
     descriptor = None
-    for klass in iotdsl::Equality.__mro__:
+    for klass in iotdsl_Equality.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -295,23 +295,23 @@ def test_iotdsl::equality_has_op():
 
 
 
-def test_iotdsl::device_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Device)
+def test_iotdsl_device_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Device)
 
 
-def test_iotdsl::device_constructor_exists():
-    assert callable(iotdsl::Device.__init__)
+def test_iotdsl_device_constructor_exists():
+    assert callable(iotdsl_Device.__init__)
 
 
-def test_iotdsl::device_constructor_args():
-    sig = inspect.signature(iotdsl::Device.__init__)
+def test_iotdsl_device_constructor_args():
+    sig = inspect.signature(iotdsl_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotdsl::device_has_name():
-    assert hasattr(iotdsl::Device, "name")
+def test_iotdsl_device_has_name():
+    assert hasattr(iotdsl_Device, "name")
     descriptor = None
-    for klass in iotdsl::Device.__mro__:
+    for klass in iotdsl_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -319,30 +319,30 @@ def test_iotdsl::device_has_name():
 
 
 
-def test_iotdsl::iot_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Iot)
+def test_iotdsl_iot_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Iot)
 
 
-def test_iotdsl::iot_constructor_exists():
-    assert callable(iotdsl::Iot.__init__)
+def test_iotdsl_iot_constructor_exists():
+    assert callable(iotdsl_Iot.__init__)
 
 
-def test_iotdsl::iot_constructor_args():
-    sig = inspect.signature(iotdsl::Iot.__init__)
+def test_iotdsl_iot_constructor_args():
+    sig = inspect.signature(iotdsl_Iot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::IfStatement)
+def test_iotdsl_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_IfStatement)
 
 
-def test_iotdsl::ifstatement_constructor_exists():
-    assert callable(iotdsl::IfStatement.__init__)
+def test_iotdsl_ifstatement_constructor_exists():
+    assert callable(iotdsl_IfStatement.__init__)
 
 
-def test_iotdsl::ifstatement_constructor_args():
-    sig = inspect.signature(iotdsl::IfStatement.__init__)
+def test_iotdsl_ifstatement_constructor_args():
+    sig = inspect.signature(iotdsl_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -361,37 +361,37 @@ def test_action_constructor_args():
 
 
 
-def test_iotdsl::expression_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Expression)
+def test_iotdsl_expression_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Expression)
 
 
-def test_iotdsl::expression_constructor_exists():
-    assert callable(iotdsl::Expression.__init__)
+def test_iotdsl_expression_constructor_exists():
+    assert callable(iotdsl_Expression.__init__)
 
 
-def test_iotdsl::expression_constructor_args():
-    sig = inspect.signature(iotdsl::Expression.__init__)
+def test_iotdsl_expression_constructor_args():
+    sig = inspect.signature(iotdsl_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::variable_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Variable)
+def test_iotdsl_variable_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Variable)
 
 
-def test_iotdsl::variable_constructor_exists():
-    assert callable(iotdsl::Variable.__init__)
+def test_iotdsl_variable_constructor_exists():
+    assert callable(iotdsl_Variable.__init__)
 
 
-def test_iotdsl::variable_constructor_args():
-    sig = inspect.signature(iotdsl::Variable.__init__)
+def test_iotdsl_variable_constructor_args():
+    sig = inspect.signature(iotdsl_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotdsl::variable_has_name():
-    assert hasattr(iotdsl::Variable, "name")
+def test_iotdsl_variable_has_name():
+    assert hasattr(iotdsl_Variable, "name")
     descriptor = None
-    for klass in iotdsl::Variable.__mro__:
+    for klass in iotdsl_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -399,37 +399,37 @@ def test_iotdsl::variable_has_name():
 
 
 
-def test_iotdsl::action_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Action)
+def test_iotdsl_action_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Action)
 
 
-def test_iotdsl::action_constructor_exists():
-    assert callable(iotdsl::Action.__init__)
+def test_iotdsl_action_constructor_exists():
+    assert callable(iotdsl_Action.__init__)
 
 
-def test_iotdsl::action_constructor_args():
-    sig = inspect.signature(iotdsl::Action.__init__)
+def test_iotdsl_action_constructor_args():
+    sig = inspect.signature(iotdsl_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotdsl::transition_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Transition)
+def test_iotdsl_transition_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Transition)
 
 
-def test_iotdsl::transition_constructor_exists():
-    assert callable(iotdsl::Transition.__init__)
+def test_iotdsl_transition_constructor_exists():
+    assert callable(iotdsl_Transition.__init__)
 
 
-def test_iotdsl::transition_constructor_args():
-    sig = inspect.signature(iotdsl::Transition.__init__)
+def test_iotdsl_transition_constructor_args():
+    sig = inspect.signature(iotdsl_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotdsl::transition_has_name():
-    assert hasattr(iotdsl::Transition, "name")
+def test_iotdsl_transition_has_name():
+    assert hasattr(iotdsl_Transition, "name")
     descriptor = None
-    for klass in iotdsl::Transition.__mro__:
+    for klass in iotdsl_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -437,23 +437,23 @@ def test_iotdsl::transition_has_name():
 
 
 
-def test_iotdsl::event_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Event)
+def test_iotdsl_event_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Event)
 
 
-def test_iotdsl::event_constructor_exists():
-    assert callable(iotdsl::Event.__init__)
+def test_iotdsl_event_constructor_exists():
+    assert callable(iotdsl_Event.__init__)
 
 
-def test_iotdsl::event_constructor_args():
-    sig = inspect.signature(iotdsl::Event.__init__)
+def test_iotdsl_event_constructor_args():
+    sig = inspect.signature(iotdsl_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotdsl::event_has_name():
-    assert hasattr(iotdsl::Event, "name")
+def test_iotdsl_event_has_name():
+    assert hasattr(iotdsl_Event, "name")
     descriptor = None
-    for klass in iotdsl::Event.__mro__:
+    for klass in iotdsl_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -461,23 +461,23 @@ def test_iotdsl::event_has_name():
 
 
 
-def test_iotdsl::state_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::State)
+def test_iotdsl_state_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_State)
 
 
-def test_iotdsl::state_constructor_exists():
-    assert callable(iotdsl::State.__init__)
+def test_iotdsl_state_constructor_exists():
+    assert callable(iotdsl_State.__init__)
 
 
-def test_iotdsl::state_constructor_args():
-    sig = inspect.signature(iotdsl::State.__init__)
+def test_iotdsl_state_constructor_args():
+    sig = inspect.signature(iotdsl_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotdsl::state_has_name():
-    assert hasattr(iotdsl::State, "name")
+def test_iotdsl_state_has_name():
+    assert hasattr(iotdsl_State, "name")
     descriptor = None
-    for klass in iotdsl::State.__mro__:
+    for klass in iotdsl_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -485,43 +485,43 @@ def test_iotdsl::state_has_name():
 
 
 
-def test_iotdsl::attribute_is_not_abstract():
-    assert not inspect.isabstract(iotdsl::Attribute)
+def test_iotdsl_attribute_is_not_abstract():
+    assert not inspect.isabstract(iotdsl_Attribute)
 
 
-def test_iotdsl::attribute_constructor_exists():
-    assert callable(iotdsl::Attribute.__init__)
+def test_iotdsl_attribute_constructor_exists():
+    assert callable(iotdsl_Attribute.__init__)
 
 
-def test_iotdsl::attribute_constructor_args():
-    sig = inspect.signature(iotdsl::Attribute.__init__)
+def test_iotdsl_attribute_constructor_args():
+    sig = inspect.signature(iotdsl_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "typeName" in params, "Missing parameter 'typeName'"
     assert "tag" in params, "Missing parameter 'tag'"
 
-def test_iotdsl::attribute_has_value():
-    assert hasattr(iotdsl::Attribute, "value")
+def test_iotdsl_attribute_has_value():
+    assert hasattr(iotdsl_Attribute, "value")
     descriptor = None
-    for klass in iotdsl::Attribute.__mro__:
+    for klass in iotdsl_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotdsl::attribute_has_typeName():
-    assert hasattr(iotdsl::Attribute, "typeName")
+def test_iotdsl_attribute_has_typeName():
+    assert hasattr(iotdsl_Attribute, "typeName")
     descriptor = None
-    for klass in iotdsl::Attribute.__mro__:
+    for klass in iotdsl_Attribute.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotdsl::attribute_has_tag():
-    assert hasattr(iotdsl::Attribute, "tag")
+def test_iotdsl_attribute_has_tag():
+    assert hasattr(iotdsl_Attribute, "tag")
     descriptor = None
-    for klass in iotdsl::Attribute.__mro__:
+    for klass in iotdsl_Attribute.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
@@ -539,102 +539,102 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-iotdsl::IfBlock_strategy = st.builds(
-    iotdsl::IfBlock,
+iotdsl_IfBlock_strategy = st.builds(
+    iotdsl_IfBlock,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-iotdsl::IntConstant_strategy = st.builds(
-    iotdsl::IntConstant,
+iotdsl_Or_strategy = st.builds(
+    iotdsl_Or,
+)
+iotdsl_StringConstant_strategy = st.builds(
+    iotdsl_StringConstant,
+    value=
+        safe_text
+)
+iotdsl_IntConstant_strategy = st.builds(
+    iotdsl_IntConstant,
     value=
         st.integers()
 )
-iotdsl::VariableRef_strategy = st.builds(
-    iotdsl::VariableRef,
+iotdsl_And_strategy = st.builds(
+    iotdsl_And,
 )
-iotdsl::BoolConstant_strategy = st.builds(
-    iotdsl::BoolConstant,
+iotdsl_BoolConstant_strategy = st.builds(
+    iotdsl_BoolConstant,
     value=
         safe_text
 )
-iotdsl::Or_strategy = st.builds(
-    iotdsl::Or,
+iotdsl_VariableRef_strategy = st.builds(
+    iotdsl_VariableRef,
 )
-iotdsl::And_strategy = st.builds(
-    iotdsl::And,
+iotdsl_Not_strategy = st.builds(
+    iotdsl_Not,
 )
-iotdsl::StringConstant_strategy = st.builds(
-    iotdsl::StringConstant,
-    value=
-        safe_text
-)
-iotdsl::Not_strategy = st.builds(
-    iotdsl::Not,
-)
-iotdsl::MulOrDiv_strategy = st.builds(
-    iotdsl::MulOrDiv,
+iotdsl_MulOrDiv_strategy = st.builds(
+    iotdsl_MulOrDiv,
     op=
         safe_text
 )
-iotdsl::Minus_strategy = st.builds(
-    iotdsl::Minus,
+iotdsl_Minus_strategy = st.builds(
+    iotdsl_Minus,
 )
-iotdsl::Plus_strategy = st.builds(
-    iotdsl::Plus,
+iotdsl_Plus_strategy = st.builds(
+    iotdsl_Plus,
 )
-iotdsl::Comparison_strategy = st.builds(
-    iotdsl::Comparison,
+iotdsl_Comparison_strategy = st.builds(
+    iotdsl_Comparison,
     op=
         safe_text
 )
-iotdsl::Equality_strategy = st.builds(
-    iotdsl::Equality,
+iotdsl_Equality_strategy = st.builds(
+    iotdsl_Equality,
     op=
         safe_text
 )
-iotdsl::Device_strategy = st.builds(
-    iotdsl::Device,
+iotdsl_Device_strategy = st.builds(
+    iotdsl_Device,
     name=
         safe_text
 )
-iotdsl::Iot_strategy = st.builds(
-    iotdsl::Iot,
+iotdsl_Iot_strategy = st.builds(
+    iotdsl_Iot,
 )
-iotdsl::IfStatement_strategy = st.builds(
-    iotdsl::IfStatement,
+iotdsl_IfStatement_strategy = st.builds(
+    iotdsl_IfStatement,
 )
 Action_strategy = st.builds(
     Action,
 )
-iotdsl::Expression_strategy = st.builds(
-    iotdsl::Expression,
+iotdsl_Expression_strategy = st.builds(
+    iotdsl_Expression,
 )
-iotdsl::Variable_strategy = st.builds(
-    iotdsl::Variable,
+iotdsl_Variable_strategy = st.builds(
+    iotdsl_Variable,
     name=
         safe_text
 )
-iotdsl::Action_strategy = st.builds(
-    iotdsl::Action,
+iotdsl_Action_strategy = st.builds(
+    iotdsl_Action,
 )
-iotdsl::Transition_strategy = st.builds(
-    iotdsl::Transition,
+iotdsl_Transition_strategy = st.builds(
+    iotdsl_Transition,
     name=
         safe_text
 )
-iotdsl::Event_strategy = st.builds(
-    iotdsl::Event,
+iotdsl_Event_strategy = st.builds(
+    iotdsl_Event,
     name=
         safe_text
 )
-iotdsl::State_strategy = st.builds(
-    iotdsl::State,
+iotdsl_State_strategy = st.builds(
+    iotdsl_State,
     name=
         safe_text
 )
-iotdsl::Attribute_strategy = st.builds(
-    iotdsl::Attribute,
+iotdsl_Attribute_strategy = st.builds(
+    iotdsl_Attribute,
     value=
         safe_text,
     typeName=
@@ -643,281 +643,239 @@ iotdsl::Attribute_strategy = st.builds(
         safe_text
 )
 
-@given(instance=iotdsl::IfBlock_strategy)
+@given(instance=iotdsl_IfBlock_strategy)
 @settings(max_examples=50)
-def test_iotdsl::ifblock_instantiation(instance):
-    assert isinstance(instance, iotdsl::IfBlock)
+def test_iotdsl_ifblock_instantiation(instance):
+    assert isinstance(instance, iotdsl_IfBlock)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=iotdsl::IntConstant_strategy)
+@given(instance=iotdsl_Or_strategy)
 @settings(max_examples=50)
-def test_iotdsl::intconstant_instantiation(instance):
-    assert isinstance(instance, iotdsl::IntConstant)
+def test_iotdsl_or_instantiation(instance):
+    assert isinstance(instance, iotdsl_Or)
 
-@given(instance=iotdsl::IntConstant_strategy)
-def test_iotdsl::intconstant_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=iotdsl_StringConstant_strategy)
+@settings(max_examples=50)
+def test_iotdsl_stringconstant_instantiation(instance):
+    assert isinstance(instance, iotdsl_StringConstant)
 
 
-@given(instance=iotdsl::IntConstant_strategy)
-def test_iotdsl::intconstant_value_setter(instance):
+
+@given(instance=iotdsl_StringConstant_strategy)
+def test_iotdsl_stringconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=iotdsl::VariableRef_strategy)
+@given(instance=iotdsl_IntConstant_strategy)
 @settings(max_examples=50)
-def test_iotdsl::variableref_instantiation(instance):
-    assert isinstance(instance, iotdsl::VariableRef)
-
-@given(instance=iotdsl::BoolConstant_strategy)
-@settings(max_examples=50)
-def test_iotdsl::boolconstant_instantiation(instance):
-    assert isinstance(instance, iotdsl::BoolConstant)
-
-@given(instance=iotdsl::BoolConstant_strategy)
-def test_iotdsl::boolconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_iotdsl_intconstant_instantiation(instance):
+    assert isinstance(instance, iotdsl_IntConstant)
 
 
-@given(instance=iotdsl::BoolConstant_strategy)
-def test_iotdsl::boolconstant_value_setter(instance):
+
+@given(instance=iotdsl_IntConstant_strategy)
+def test_iotdsl_intconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=iotdsl::Or_strategy)
+@given(instance=iotdsl_And_strategy)
 @settings(max_examples=50)
-def test_iotdsl::or_instantiation(instance):
-    assert isinstance(instance, iotdsl::Or)
+def test_iotdsl_and_instantiation(instance):
+    assert isinstance(instance, iotdsl_And)
 
-@given(instance=iotdsl::And_strategy)
+@given(instance=iotdsl_BoolConstant_strategy)
 @settings(max_examples=50)
-def test_iotdsl::and_instantiation(instance):
-    assert isinstance(instance, iotdsl::And)
-
-@given(instance=iotdsl::StringConstant_strategy)
-@settings(max_examples=50)
-def test_iotdsl::stringconstant_instantiation(instance):
-    assert isinstance(instance, iotdsl::StringConstant)
-
-@given(instance=iotdsl::StringConstant_strategy)
-def test_iotdsl::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_iotdsl_boolconstant_instantiation(instance):
+    assert isinstance(instance, iotdsl_BoolConstant)
 
 
-@given(instance=iotdsl::StringConstant_strategy)
-def test_iotdsl::stringconstant_value_setter(instance):
+
+@given(instance=iotdsl_BoolConstant_strategy)
+def test_iotdsl_boolconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=iotdsl::Not_strategy)
+@given(instance=iotdsl_VariableRef_strategy)
 @settings(max_examples=50)
-def test_iotdsl::not_instantiation(instance):
-    assert isinstance(instance, iotdsl::Not)
+def test_iotdsl_variableref_instantiation(instance):
+    assert isinstance(instance, iotdsl_VariableRef)
 
-@given(instance=iotdsl::MulOrDiv_strategy)
+@given(instance=iotdsl_Not_strategy)
 @settings(max_examples=50)
-def test_iotdsl::mulordiv_instantiation(instance):
-    assert isinstance(instance, iotdsl::MulOrDiv)
+def test_iotdsl_not_instantiation(instance):
+    assert isinstance(instance, iotdsl_Not)
 
-@given(instance=iotdsl::MulOrDiv_strategy)
-def test_iotdsl::mulordiv_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=iotdsl_MulOrDiv_strategy)
+@settings(max_examples=50)
+def test_iotdsl_mulordiv_instantiation(instance):
+    assert isinstance(instance, iotdsl_MulOrDiv)
 
 
-@given(instance=iotdsl::MulOrDiv_strategy)
-def test_iotdsl::mulordiv_op_setter(instance):
+
+@given(instance=iotdsl_MulOrDiv_strategy)
+def test_iotdsl_mulordiv_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=iotdsl::Minus_strategy)
+@given(instance=iotdsl_Minus_strategy)
 @settings(max_examples=50)
-def test_iotdsl::minus_instantiation(instance):
-    assert isinstance(instance, iotdsl::Minus)
+def test_iotdsl_minus_instantiation(instance):
+    assert isinstance(instance, iotdsl_Minus)
 
-@given(instance=iotdsl::Plus_strategy)
+@given(instance=iotdsl_Plus_strategy)
 @settings(max_examples=50)
-def test_iotdsl::plus_instantiation(instance):
-    assert isinstance(instance, iotdsl::Plus)
+def test_iotdsl_plus_instantiation(instance):
+    assert isinstance(instance, iotdsl_Plus)
 
-@given(instance=iotdsl::Comparison_strategy)
+@given(instance=iotdsl_Comparison_strategy)
 @settings(max_examples=50)
-def test_iotdsl::comparison_instantiation(instance):
-    assert isinstance(instance, iotdsl::Comparison)
-
-@given(instance=iotdsl::Comparison_strategy)
-def test_iotdsl::comparison_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_iotdsl_comparison_instantiation(instance):
+    assert isinstance(instance, iotdsl_Comparison)
 
 
-@given(instance=iotdsl::Comparison_strategy)
-def test_iotdsl::comparison_op_setter(instance):
+
+@given(instance=iotdsl_Comparison_strategy)
+def test_iotdsl_comparison_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=iotdsl::Equality_strategy)
+@given(instance=iotdsl_Equality_strategy)
 @settings(max_examples=50)
-def test_iotdsl::equality_instantiation(instance):
-    assert isinstance(instance, iotdsl::Equality)
-
-@given(instance=iotdsl::Equality_strategy)
-def test_iotdsl::equality_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_iotdsl_equality_instantiation(instance):
+    assert isinstance(instance, iotdsl_Equality)
 
 
-@given(instance=iotdsl::Equality_strategy)
-def test_iotdsl::equality_op_setter(instance):
+
+@given(instance=iotdsl_Equality_strategy)
+def test_iotdsl_equality_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=iotdsl::Device_strategy)
+@given(instance=iotdsl_Device_strategy)
 @settings(max_examples=50)
-def test_iotdsl::device_instantiation(instance):
-    assert isinstance(instance, iotdsl::Device)
-
-@given(instance=iotdsl::Device_strategy)
-def test_iotdsl::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotdsl_device_instantiation(instance):
+    assert isinstance(instance, iotdsl_Device)
 
 
-@given(instance=iotdsl::Device_strategy)
-def test_iotdsl::device_name_setter(instance):
+
+@given(instance=iotdsl_Device_strategy)
+def test_iotdsl_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iotdsl::Iot_strategy)
+@given(instance=iotdsl_Iot_strategy)
 @settings(max_examples=50)
-def test_iotdsl::iot_instantiation(instance):
-    assert isinstance(instance, iotdsl::Iot)
+def test_iotdsl_iot_instantiation(instance):
+    assert isinstance(instance, iotdsl_Iot)
 
-@given(instance=iotdsl::IfStatement_strategy)
+@given(instance=iotdsl_IfStatement_strategy)
 @settings(max_examples=50)
-def test_iotdsl::ifstatement_instantiation(instance):
-    assert isinstance(instance, iotdsl::IfStatement)
+def test_iotdsl_ifstatement_instantiation(instance):
+    assert isinstance(instance, iotdsl_IfStatement)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=iotdsl::Expression_strategy)
+@given(instance=iotdsl_Expression_strategy)
 @settings(max_examples=50)
-def test_iotdsl::expression_instantiation(instance):
-    assert isinstance(instance, iotdsl::Expression)
+def test_iotdsl_expression_instantiation(instance):
+    assert isinstance(instance, iotdsl_Expression)
 
-@given(instance=iotdsl::Variable_strategy)
+@given(instance=iotdsl_Variable_strategy)
 @settings(max_examples=50)
-def test_iotdsl::variable_instantiation(instance):
-    assert isinstance(instance, iotdsl::Variable)
-
-@given(instance=iotdsl::Variable_strategy)
-def test_iotdsl::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotdsl_variable_instantiation(instance):
+    assert isinstance(instance, iotdsl_Variable)
 
 
-@given(instance=iotdsl::Variable_strategy)
-def test_iotdsl::variable_name_setter(instance):
+
+@given(instance=iotdsl_Variable_strategy)
+def test_iotdsl_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iotdsl::Action_strategy)
+@given(instance=iotdsl_Action_strategy)
 @settings(max_examples=50)
-def test_iotdsl::action_instantiation(instance):
-    assert isinstance(instance, iotdsl::Action)
+def test_iotdsl_action_instantiation(instance):
+    assert isinstance(instance, iotdsl_Action)
 
-@given(instance=iotdsl::Transition_strategy)
+@given(instance=iotdsl_Transition_strategy)
 @settings(max_examples=50)
-def test_iotdsl::transition_instantiation(instance):
-    assert isinstance(instance, iotdsl::Transition)
-
-@given(instance=iotdsl::Transition_strategy)
-def test_iotdsl::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotdsl_transition_instantiation(instance):
+    assert isinstance(instance, iotdsl_Transition)
 
 
-@given(instance=iotdsl::Transition_strategy)
-def test_iotdsl::transition_name_setter(instance):
+
+@given(instance=iotdsl_Transition_strategy)
+def test_iotdsl_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iotdsl::Event_strategy)
+@given(instance=iotdsl_Event_strategy)
 @settings(max_examples=50)
-def test_iotdsl::event_instantiation(instance):
-    assert isinstance(instance, iotdsl::Event)
-
-@given(instance=iotdsl::Event_strategy)
-def test_iotdsl::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotdsl_event_instantiation(instance):
+    assert isinstance(instance, iotdsl_Event)
 
 
-@given(instance=iotdsl::Event_strategy)
-def test_iotdsl::event_name_setter(instance):
+
+@given(instance=iotdsl_Event_strategy)
+def test_iotdsl_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iotdsl::State_strategy)
+@given(instance=iotdsl_State_strategy)
 @settings(max_examples=50)
-def test_iotdsl::state_instantiation(instance):
-    assert isinstance(instance, iotdsl::State)
-
-@given(instance=iotdsl::State_strategy)
-def test_iotdsl::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotdsl_state_instantiation(instance):
+    assert isinstance(instance, iotdsl_State)
 
 
-@given(instance=iotdsl::State_strategy)
-def test_iotdsl::state_name_setter(instance):
+
+@given(instance=iotdsl_State_strategy)
+def test_iotdsl_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iotdsl::Attribute_strategy)
+@given(instance=iotdsl_Attribute_strategy)
 @settings(max_examples=50)
-def test_iotdsl::attribute_instantiation(instance):
-    assert isinstance(instance, iotdsl::Attribute)
-
-@given(instance=iotdsl::Attribute_strategy)
-def test_iotdsl::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_iotdsl_attribute_instantiation(instance):
+    assert isinstance(instance, iotdsl_Attribute)
 
 
-@given(instance=iotdsl::Attribute_strategy)
-def test_iotdsl::attribute_value_setter(instance):
+
+@given(instance=iotdsl_Attribute_strategy)
+def test_iotdsl_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=iotdsl::Attribute_strategy)
-def test_iotdsl::attribute_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
 
 
-@given(instance=iotdsl::Attribute_strategy)
-def test_iotdsl::attribute_typeName_setter(instance):
+@given(instance=iotdsl_Attribute_strategy)
+def test_iotdsl_attribute_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=iotdsl::Attribute_strategy)
-def test_iotdsl::attribute_tag_type(instance):
-    assert isinstance(instance.tag, str)
 
 
-@given(instance=iotdsl::Attribute_strategy)
-def test_iotdsl::attribute_tag_setter(instance):
+@given(instance=iotdsl_Attribute_strategy)
+def test_iotdsl_attribute_tag_setter(instance):
     original = instance.tag
     instance.tag = original
     assert instance.tag == original

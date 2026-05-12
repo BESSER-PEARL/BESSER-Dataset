@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    main::subsub::SSC,
-    subsub::SSC,
-    main::M,
+from python_code import (
+    main_subsub_SSC,
+    subsub_SSC,
+    main_M,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_main::subsub::ssc_is_not_abstract():
-    assert not inspect.isabstract(main::subsub::SSC)
+def test_main_subsub_ssc_is_not_abstract():
+    assert not inspect.isabstract(main_subsub_SSC)
 
 
-def test_main::subsub::ssc_constructor_exists():
-    assert callable(main::subsub::SSC.__init__)
+def test_main_subsub_ssc_constructor_exists():
+    assert callable(main_subsub_SSC.__init__)
 
 
-def test_main::subsub::ssc_constructor_args():
-    sig = inspect.signature(main::subsub::SSC.__init__)
+def test_main_subsub_ssc_constructor_args():
+    sig = inspect.signature(main_subsub_SSC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subsub::ssc_is_not_abstract():
-    assert not inspect.isabstract(subsub::SSC)
+def test_subsub_ssc_is_not_abstract():
+    assert not inspect.isabstract(subsub_SSC)
 
 
-def test_subsub::ssc_constructor_exists():
-    assert callable(subsub::SSC.__init__)
+def test_subsub_ssc_constructor_exists():
+    assert callable(subsub_SSC.__init__)
 
 
-def test_subsub::ssc_constructor_args():
-    sig = inspect.signature(subsub::SSC.__init__)
+def test_subsub_ssc_constructor_args():
+    sig = inspect.signature(subsub_SSC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_main::m_is_not_abstract():
-    assert not inspect.isabstract(main::M)
+def test_main_m_is_not_abstract():
+    assert not inspect.isabstract(main_M)
 
 
-def test_main::m_constructor_exists():
-    assert callable(main::M.__init__)
+def test_main_m_constructor_exists():
+    assert callable(main_M.__init__)
 
 
-def test_main::m_constructor_args():
-    sig = inspect.signature(main::M.__init__)
+def test_main_m_constructor_args():
+    sig = inspect.signature(main_M.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-main::subsub::SSC_strategy = st.builds(
-    main::subsub::SSC,
+main_subsub_SSC_strategy = st.builds(
+    main_subsub_SSC,
 )
-subsub::SSC_strategy = st.builds(
-    subsub::SSC,
+subsub_SSC_strategy = st.builds(
+    subsub_SSC,
 )
-main::M_strategy = st.builds(
-    main::M,
+main_M_strategy = st.builds(
+    main_M,
 )
 
-@given(instance=main::subsub::SSC_strategy)
+@given(instance=main_subsub_SSC_strategy)
 @settings(max_examples=50)
-def test_main::subsub::ssc_instantiation(instance):
-    assert isinstance(instance, main::subsub::SSC)
+def test_main_subsub_ssc_instantiation(instance):
+    assert isinstance(instance, main_subsub_SSC)
 
-@given(instance=subsub::SSC_strategy)
+@given(instance=subsub_SSC_strategy)
 @settings(max_examples=50)
-def test_subsub::ssc_instantiation(instance):
-    assert isinstance(instance, subsub::SSC)
+def test_subsub_ssc_instantiation(instance):
+    assert isinstance(instance, subsub_SSC)
 
-@given(instance=main::M_strategy)
+@given(instance=main_M_strategy)
 @settings(max_examples=50)
-def test_main::m_instantiation(instance):
-    assert isinstance(instance, main::M)
+def test_main_m_instantiation(instance):
+    assert isinstance(instance, main_M)

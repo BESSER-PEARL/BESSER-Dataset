@@ -3,100 +3,100 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    langc::LinkableArtifact,
-    langc::System,
+from python_code import (
+    langc_LinkableArtifact,
+    langc_System,
     SwitchClause,
-    langc::LabeledClause,
+    langc_LabeledClause,
     CodeBlock,
-    langc::CodeBlob,
-    langc::ConditionalStatement,
-    langc::SwitchClause,
+    langc_ConditionalStatement,
+    langc_CodeBlob,
+    langc_SwitchClause,
     FileName,
-    langc::SystemFileName,
-    langc::BindableValue,
+    langc_SystemFileName,
+    langc_BindableValue,
     Sizeof,
-    langc::SizeofExpr,
-    langc::SizeofType,
-    langc::Dependency,
+    langc_SizeofExpr,
+    langc_SizeofType,
+    langc_Dependency,
     Directive,
-    langc::WhileStatement,
-    langc::SubSystem,
+    langc_WhileStatement,
+    langc_SubSystem,
     ElementAccess,
-    langc::MemberAccess,
+    langc_MemberAccess,
     Name,
-    langc::FolderName,
+    langc_FolderName,
     FileDependency,
-    langc::UserInclude,
-    langc::SystemInclude,
+    langc_UserInclude,
+    langc_SystemInclude,
     Dependency,
-    langc::DependencyBlob,
-    langc::FileDependency,
+    langc_DependencyBlob,
+    langc_FileDependency,
     ExpressionStatement,
-    langc::ReturnStatement,
+    langc_ReturnStatement,
     Statement,
-    langc::SwitchStatement,
-    langc::BreakStatement,
-    langc::VariableDeclarationStatement,
-    langc::CodeBlock,
-    langc::ExpressionStatement,
-    langc::Statement,
+    langc_SwitchStatement,
+    langc_VariableDeclarationStatement,
+    langc_BreakStatement,
+    langc_CodeBlock,
+    langc_ExpressionStatement,
+    langc_Statement,
     Literal,
-    langc::FloatingLiteral,
-    langc::CharacterLiteral,
-    langc::IntegralLiteral,
+    langc_CharacterLiteral,
+    langc_FloatingLiteral,
+    langc_IntegralLiteral,
     Expression,
-    langc::LogicalComparison,
-    langc::CastExpr,
-    langc::ElementAccess,
-    langc::Sizeof,
-    langc::Literal,
-    langc::ExpressionBlob,
-    langc::FunctionAddress,
-    langc::IndexExpr,
-    langc::BinaryOperation,
-    langc::StringLiteral,
-    langc::DereferenceExpr,
-    langc::BlockInitializer,
-    langc::AddressOfExpr,
-    langc::FunctionCall,
-    langc::Expression,
-    langc::Element,
-    langc::NamedReference,
+    langc_FunctionAddress,
+    langc_ExpressionBlob,
+    langc_Literal,
+    langc_Sizeof,
+    langc_ElementAccess,
+    langc_LogicalComparison,
+    langc_IndexExpr,
+    langc_CastExpr,
+    langc_StringLiteral,
+    langc_BinaryOperation,
+    langc_BlockInitializer,
+    langc_AddressOfExpr,
+    langc_DereferenceExpr,
+    langc_FunctionCall,
+    langc_Expression,
+    langc_Element,
+    langc_NamedReference,
     NamedElement,
-    langc::Enum,
-    langc::VariableDeclaration,
-    langc::Typedef,
-    langc::Structure,
-    langc::Function,
+    langc_Enum,
+    langc_Structure,
+    langc_VariableDeclaration,
+    langc_Typedef,
+    langc_Function,
     Structure,
-    langc::Union,
-    langc::Struct,
-    langc::Directive,
-    langc::DependencyList,
-    langc::FileName,
+    langc_Union,
+    langc_Struct,
+    langc_Directive,
+    langc_DependencyList,
+    langc_FileName,
     Element,
-    langc::BuiltInType,
-    langc::UserElement,
-    langc::ElementList,
-    langc::Name,
+    langc_BuiltInType,
+    langc_UserElement,
+    langc_ElementList,
+    langc_Name,
     BindableValue,
-    langc::ElementReference,
-    langc::Enumerator,
-    langc::Macro,
+    langc_ElementReference,
+    langc_Enumerator,
+    langc_Macro,
     UserElement,
-    langc::FunctionPointer,
-    langc::FunctionImplementation,
-    langc::NamedElement,
-    Pointer,
-    CVQualifier,
-    LinkageSpec,
-    BooleanOperator,
+    langc_FunctionImplementation,
+    langc_FunctionPointer,
+    langc_NamedElement,
     Operator,
-    ElementKind,
     PrimitiveType,
+    LinkageSpec,
+    ElementKind,
+    CVQualifier,
+    BooleanOperator,
+    Pointer,
 )
 
 # =============================================================================
@@ -105,23 +105,23 @@ from classes import (
 
 
 
-def test_langc::linkableartifact_is_not_abstract():
-    assert not inspect.isabstract(langc::LinkableArtifact)
+def test_langc_linkableartifact_is_not_abstract():
+    assert not inspect.isabstract(langc_LinkableArtifact)
 
 
-def test_langc::linkableartifact_constructor_exists():
-    assert callable(langc::LinkableArtifact.__init__)
+def test_langc_linkableartifact_constructor_exists():
+    assert callable(langc_LinkableArtifact.__init__)
 
 
-def test_langc::linkableartifact_constructor_args():
-    sig = inspect.signature(langc::LinkableArtifact.__init__)
+def test_langc_linkableartifact_constructor_args():
+    sig = inspect.signature(langc_LinkableArtifact.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_langc::linkableartifact_has_name():
-    assert hasattr(langc::LinkableArtifact, "name")
+def test_langc_linkableartifact_has_name():
+    assert hasattr(langc_LinkableArtifact, "name")
     descriptor = None
-    for klass in langc::LinkableArtifact.__mro__:
+    for klass in langc_LinkableArtifact.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -129,16 +129,16 @@ def test_langc::linkableartifact_has_name():
 
 
 
-def test_langc::system_is_not_abstract():
-    assert not inspect.isabstract(langc::System)
+def test_langc_system_is_not_abstract():
+    assert not inspect.isabstract(langc_System)
 
 
-def test_langc::system_constructor_exists():
-    assert callable(langc::System.__init__)
+def test_langc_system_constructor_exists():
+    assert callable(langc_System.__init__)
 
 
-def test_langc::system_constructor_args():
-    sig = inspect.signature(langc::System.__init__)
+def test_langc_system_constructor_args():
+    sig = inspect.signature(langc_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,16 +157,16 @@ def test_switchclause_constructor_args():
 
 
 
-def test_langc::labeledclause_is_not_abstract():
-    assert not inspect.isabstract(langc::LabeledClause)
+def test_langc_labeledclause_is_not_abstract():
+    assert not inspect.isabstract(langc_LabeledClause)
 
 
-def test_langc::labeledclause_constructor_exists():
-    assert callable(langc::LabeledClause.__init__)
+def test_langc_labeledclause_constructor_exists():
+    assert callable(langc_LabeledClause.__init__)
 
 
-def test_langc::labeledclause_constructor_args():
-    sig = inspect.signature(langc::LabeledClause.__init__)
+def test_langc_labeledclause_constructor_args():
+    sig = inspect.signature(langc_LabeledClause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -185,33 +185,47 @@ def test_codeblock_constructor_args():
 
 
 
-def test_langc::codeblob_is_not_abstract():
-    assert not inspect.isabstract(langc::CodeBlob)
+def test_langc_conditionalstatement_is_not_abstract():
+    assert not inspect.isabstract(langc_ConditionalStatement)
 
 
-def test_langc::codeblob_constructor_exists():
-    assert callable(langc::CodeBlob.__init__)
+def test_langc_conditionalstatement_constructor_exists():
+    assert callable(langc_ConditionalStatement.__init__)
 
 
-def test_langc::codeblob_constructor_args():
-    sig = inspect.signature(langc::CodeBlob.__init__)
+def test_langc_conditionalstatement_constructor_args():
+    sig = inspect.signature(langc_ConditionalStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_langc_codeblob_is_not_abstract():
+    assert not inspect.isabstract(langc_CodeBlob)
+
+
+def test_langc_codeblob_constructor_exists():
+    assert callable(langc_CodeBlob.__init__)
+
+
+def test_langc_codeblob_constructor_args():
+    sig = inspect.signature(langc_CodeBlob.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
     assert "markerComment" in params, "Missing parameter 'markerComment'"
 
-def test_langc::codeblob_has_text():
-    assert hasattr(langc::CodeBlob, "text")
+def test_langc_codeblob_has_text():
+    assert hasattr(langc_CodeBlob, "text")
     descriptor = None
-    for klass in langc::CodeBlob.__mro__:
+    for klass in langc_CodeBlob.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_langc::codeblob_has_markerComment():
-    assert hasattr(langc::CodeBlob, "markerComment")
+def test_langc_codeblob_has_markerComment():
+    assert hasattr(langc_CodeBlob, "markerComment")
     descriptor = None
-    for klass in langc::CodeBlob.__mro__:
+    for klass in langc_CodeBlob.__mro__:
         if "markerComment" in klass.__dict__:
             descriptor = klass.__dict__["markerComment"]
             break
@@ -219,37 +233,23 @@ def test_langc::codeblob_has_markerComment():
 
 
 
-def test_langc::conditionalstatement_is_not_abstract():
-    assert not inspect.isabstract(langc::ConditionalStatement)
+def test_langc_switchclause_is_not_abstract():
+    assert not inspect.isabstract(langc_SwitchClause)
 
 
-def test_langc::conditionalstatement_constructor_exists():
-    assert callable(langc::ConditionalStatement.__init__)
+def test_langc_switchclause_constructor_exists():
+    assert callable(langc_SwitchClause.__init__)
 
 
-def test_langc::conditionalstatement_constructor_args():
-    sig = inspect.signature(langc::ConditionalStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_langc::switchclause_is_not_abstract():
-    assert not inspect.isabstract(langc::SwitchClause)
-
-
-def test_langc::switchclause_constructor_exists():
-    assert callable(langc::SwitchClause.__init__)
-
-
-def test_langc::switchclause_constructor_args():
-    sig = inspect.signature(langc::SwitchClause.__init__)
+def test_langc_switchclause_constructor_args():
+    sig = inspect.signature(langc_SwitchClause.__init__)
     params = list(sig.parameters.keys())
     assert "fallthrough" in params, "Missing parameter 'fallthrough'"
 
-def test_langc::switchclause_has_fallthrough():
-    assert hasattr(langc::SwitchClause, "fallthrough")
+def test_langc_switchclause_has_fallthrough():
+    assert hasattr(langc_SwitchClause, "fallthrough")
     descriptor = None
-    for klass in langc::SwitchClause.__mro__:
+    for klass in langc_SwitchClause.__mro__:
         if "fallthrough" in klass.__dict__:
             descriptor = klass.__dict__["fallthrough"]
             break
@@ -271,30 +271,30 @@ def test_filename_constructor_args():
 
 
 
-def test_langc::systemfilename_is_not_abstract():
-    assert not inspect.isabstract(langc::SystemFileName)
+def test_langc_systemfilename_is_not_abstract():
+    assert not inspect.isabstract(langc_SystemFileName)
 
 
-def test_langc::systemfilename_constructor_exists():
-    assert callable(langc::SystemFileName.__init__)
+def test_langc_systemfilename_constructor_exists():
+    assert callable(langc_SystemFileName.__init__)
 
 
-def test_langc::systemfilename_constructor_args():
-    sig = inspect.signature(langc::SystemFileName.__init__)
+def test_langc_systemfilename_constructor_args():
+    sig = inspect.signature(langc_SystemFileName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::bindablevalue_is_not_abstract():
-    assert not inspect.isabstract(langc::BindableValue)
+def test_langc_bindablevalue_is_not_abstract():
+    assert not inspect.isabstract(langc_BindableValue)
 
 
-def test_langc::bindablevalue_constructor_exists():
-    assert callable(langc::BindableValue.__init__)
+def test_langc_bindablevalue_constructor_exists():
+    assert callable(langc_BindableValue.__init__)
 
 
-def test_langc::bindablevalue_constructor_args():
-    sig = inspect.signature(langc::BindableValue.__init__)
+def test_langc_bindablevalue_constructor_args():
+    sig = inspect.signature(langc_BindableValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -313,44 +313,44 @@ def test_sizeof_constructor_args():
 
 
 
-def test_langc::sizeofexpr_is_not_abstract():
-    assert not inspect.isabstract(langc::SizeofExpr)
+def test_langc_sizeofexpr_is_not_abstract():
+    assert not inspect.isabstract(langc_SizeofExpr)
 
 
-def test_langc::sizeofexpr_constructor_exists():
-    assert callable(langc::SizeofExpr.__init__)
+def test_langc_sizeofexpr_constructor_exists():
+    assert callable(langc_SizeofExpr.__init__)
 
 
-def test_langc::sizeofexpr_constructor_args():
-    sig = inspect.signature(langc::SizeofExpr.__init__)
+def test_langc_sizeofexpr_constructor_args():
+    sig = inspect.signature(langc_SizeofExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::sizeoftype_is_not_abstract():
-    assert not inspect.isabstract(langc::SizeofType)
+def test_langc_sizeoftype_is_not_abstract():
+    assert not inspect.isabstract(langc_SizeofType)
 
 
-def test_langc::sizeoftype_constructor_exists():
-    assert callable(langc::SizeofType.__init__)
+def test_langc_sizeoftype_constructor_exists():
+    assert callable(langc_SizeofType.__init__)
 
 
-def test_langc::sizeoftype_constructor_args():
-    sig = inspect.signature(langc::SizeofType.__init__)
+def test_langc_sizeoftype_constructor_args():
+    sig = inspect.signature(langc_SizeofType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::dependency_is_not_abstract():
-    assert not inspect.isabstract(langc::Dependency)
+def test_langc_dependency_is_not_abstract():
+    assert not inspect.isabstract(langc_Dependency)
 
 
-def test_langc::dependency_constructor_exists():
-    assert callable(langc::Dependency.__init__)
+def test_langc_dependency_constructor_exists():
+    assert callable(langc_Dependency.__init__)
 
 
-def test_langc::dependency_constructor_args():
-    sig = inspect.signature(langc::Dependency.__init__)
+def test_langc_dependency_constructor_args():
+    sig = inspect.signature(langc_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -369,37 +369,37 @@ def test_directive_constructor_args():
 
 
 
-def test_langc::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(langc::WhileStatement)
+def test_langc_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(langc_WhileStatement)
 
 
-def test_langc::whilestatement_constructor_exists():
-    assert callable(langc::WhileStatement.__init__)
+def test_langc_whilestatement_constructor_exists():
+    assert callable(langc_WhileStatement.__init__)
 
 
-def test_langc::whilestatement_constructor_args():
-    sig = inspect.signature(langc::WhileStatement.__init__)
+def test_langc_whilestatement_constructor_args():
+    sig = inspect.signature(langc_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::subsystem_is_not_abstract():
-    assert not inspect.isabstract(langc::SubSystem)
+def test_langc_subsystem_is_not_abstract():
+    assert not inspect.isabstract(langc_SubSystem)
 
 
-def test_langc::subsystem_constructor_exists():
-    assert callable(langc::SubSystem.__init__)
+def test_langc_subsystem_constructor_exists():
+    assert callable(langc_SubSystem.__init__)
 
 
-def test_langc::subsystem_constructor_args():
-    sig = inspect.signature(langc::SubSystem.__init__)
+def test_langc_subsystem_constructor_args():
+    sig = inspect.signature(langc_SubSystem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_langc::subsystem_has_name():
-    assert hasattr(langc::SubSystem, "name")
+def test_langc_subsystem_has_name():
+    assert hasattr(langc_SubSystem, "name")
     descriptor = None
-    for klass in langc::SubSystem.__mro__:
+    for klass in langc_SubSystem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -421,16 +421,16 @@ def test_elementaccess_constructor_args():
 
 
 
-def test_langc::memberaccess_is_not_abstract():
-    assert not inspect.isabstract(langc::MemberAccess)
+def test_langc_memberaccess_is_not_abstract():
+    assert not inspect.isabstract(langc_MemberAccess)
 
 
-def test_langc::memberaccess_constructor_exists():
-    assert callable(langc::MemberAccess.__init__)
+def test_langc_memberaccess_constructor_exists():
+    assert callable(langc_MemberAccess.__init__)
 
 
-def test_langc::memberaccess_constructor_args():
-    sig = inspect.signature(langc::MemberAccess.__init__)
+def test_langc_memberaccess_constructor_args():
+    sig = inspect.signature(langc_MemberAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -449,23 +449,23 @@ def test_name_constructor_args():
 
 
 
-def test_langc::foldername_is_not_abstract():
-    assert not inspect.isabstract(langc::FolderName)
+def test_langc_foldername_is_not_abstract():
+    assert not inspect.isabstract(langc_FolderName)
 
 
-def test_langc::foldername_constructor_exists():
-    assert callable(langc::FolderName.__init__)
+def test_langc_foldername_constructor_exists():
+    assert callable(langc_FolderName.__init__)
 
 
-def test_langc::foldername_constructor_args():
-    sig = inspect.signature(langc::FolderName.__init__)
+def test_langc_foldername_constructor_args():
+    sig = inspect.signature(langc_FolderName.__init__)
     params = list(sig.parameters.keys())
     assert "api" in params, "Missing parameter 'api'"
 
-def test_langc::foldername_has_api():
-    assert hasattr(langc::FolderName, "api")
+def test_langc_foldername_has_api():
+    assert hasattr(langc_FolderName, "api")
     descriptor = None
-    for klass in langc::FolderName.__mro__:
+    for klass in langc_FolderName.__mro__:
         if "api" in klass.__dict__:
             descriptor = klass.__dict__["api"]
             break
@@ -487,30 +487,30 @@ def test_filedependency_constructor_args():
 
 
 
-def test_langc::userinclude_is_not_abstract():
-    assert not inspect.isabstract(langc::UserInclude)
+def test_langc_userinclude_is_not_abstract():
+    assert not inspect.isabstract(langc_UserInclude)
 
 
-def test_langc::userinclude_constructor_exists():
-    assert callable(langc::UserInclude.__init__)
+def test_langc_userinclude_constructor_exists():
+    assert callable(langc_UserInclude.__init__)
 
 
-def test_langc::userinclude_constructor_args():
-    sig = inspect.signature(langc::UserInclude.__init__)
+def test_langc_userinclude_constructor_args():
+    sig = inspect.signature(langc_UserInclude.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::systeminclude_is_not_abstract():
-    assert not inspect.isabstract(langc::SystemInclude)
+def test_langc_systeminclude_is_not_abstract():
+    assert not inspect.isabstract(langc_SystemInclude)
 
 
-def test_langc::systeminclude_constructor_exists():
-    assert callable(langc::SystemInclude.__init__)
+def test_langc_systeminclude_constructor_exists():
+    assert callable(langc_SystemInclude.__init__)
 
 
-def test_langc::systeminclude_constructor_args():
-    sig = inspect.signature(langc::SystemInclude.__init__)
+def test_langc_systeminclude_constructor_args():
+    sig = inspect.signature(langc_SystemInclude.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -529,33 +529,33 @@ def test_dependency_constructor_args():
 
 
 
-def test_langc::dependencyblob_is_not_abstract():
-    assert not inspect.isabstract(langc::DependencyBlob)
+def test_langc_dependencyblob_is_not_abstract():
+    assert not inspect.isabstract(langc_DependencyBlob)
 
 
-def test_langc::dependencyblob_constructor_exists():
-    assert callable(langc::DependencyBlob.__init__)
+def test_langc_dependencyblob_constructor_exists():
+    assert callable(langc_DependencyBlob.__init__)
 
 
-def test_langc::dependencyblob_constructor_args():
-    sig = inspect.signature(langc::DependencyBlob.__init__)
+def test_langc_dependencyblob_constructor_args():
+    sig = inspect.signature(langc_DependencyBlob.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
     assert "markerComment" in params, "Missing parameter 'markerComment'"
 
-def test_langc::dependencyblob_has_text():
-    assert hasattr(langc::DependencyBlob, "text")
+def test_langc_dependencyblob_has_text():
+    assert hasattr(langc_DependencyBlob, "text")
     descriptor = None
-    for klass in langc::DependencyBlob.__mro__:
+    for klass in langc_DependencyBlob.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_langc::dependencyblob_has_markerComment():
-    assert hasattr(langc::DependencyBlob, "markerComment")
+def test_langc_dependencyblob_has_markerComment():
+    assert hasattr(langc_DependencyBlob, "markerComment")
     descriptor = None
-    for klass in langc::DependencyBlob.__mro__:
+    for klass in langc_DependencyBlob.__mro__:
         if "markerComment" in klass.__dict__:
             descriptor = klass.__dict__["markerComment"]
             break
@@ -563,16 +563,16 @@ def test_langc::dependencyblob_has_markerComment():
 
 
 
-def test_langc::filedependency_is_not_abstract():
-    assert not inspect.isabstract(langc::FileDependency)
+def test_langc_filedependency_is_not_abstract():
+    assert not inspect.isabstract(langc_FileDependency)
 
 
-def test_langc::filedependency_constructor_exists():
-    assert callable(langc::FileDependency.__init__)
+def test_langc_filedependency_constructor_exists():
+    assert callable(langc_FileDependency.__init__)
 
 
-def test_langc::filedependency_constructor_args():
-    sig = inspect.signature(langc::FileDependency.__init__)
+def test_langc_filedependency_constructor_args():
+    sig = inspect.signature(langc_FileDependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -591,16 +591,16 @@ def test_expressionstatement_constructor_args():
 
 
 
-def test_langc::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(langc::ReturnStatement)
+def test_langc_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(langc_ReturnStatement)
 
 
-def test_langc::returnstatement_constructor_exists():
-    assert callable(langc::ReturnStatement.__init__)
+def test_langc_returnstatement_constructor_exists():
+    assert callable(langc_ReturnStatement.__init__)
 
 
-def test_langc::returnstatement_constructor_args():
-    sig = inspect.signature(langc::ReturnStatement.__init__)
+def test_langc_returnstatement_constructor_args():
+    sig = inspect.signature(langc_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -619,65 +619,65 @@ def test_statement_constructor_args():
 
 
 
-def test_langc::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(langc::SwitchStatement)
+def test_langc_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(langc_SwitchStatement)
 
 
-def test_langc::switchstatement_constructor_exists():
-    assert callable(langc::SwitchStatement.__init__)
+def test_langc_switchstatement_constructor_exists():
+    assert callable(langc_SwitchStatement.__init__)
 
 
-def test_langc::switchstatement_constructor_args():
-    sig = inspect.signature(langc::SwitchStatement.__init__)
+def test_langc_switchstatement_constructor_args():
+    sig = inspect.signature(langc_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(langc::BreakStatement)
+def test_langc_variabledeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(langc_VariableDeclarationStatement)
 
 
-def test_langc::breakstatement_constructor_exists():
-    assert callable(langc::BreakStatement.__init__)
+def test_langc_variabledeclarationstatement_constructor_exists():
+    assert callable(langc_VariableDeclarationStatement.__init__)
 
 
-def test_langc::breakstatement_constructor_args():
-    sig = inspect.signature(langc::BreakStatement.__init__)
+def test_langc_variabledeclarationstatement_constructor_args():
+    sig = inspect.signature(langc_VariableDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::variabledeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(langc::VariableDeclarationStatement)
+def test_langc_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(langc_BreakStatement)
 
 
-def test_langc::variabledeclarationstatement_constructor_exists():
-    assert callable(langc::VariableDeclarationStatement.__init__)
+def test_langc_breakstatement_constructor_exists():
+    assert callable(langc_BreakStatement.__init__)
 
 
-def test_langc::variabledeclarationstatement_constructor_args():
-    sig = inspect.signature(langc::VariableDeclarationStatement.__init__)
+def test_langc_breakstatement_constructor_args():
+    sig = inspect.signature(langc_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::codeblock_is_not_abstract():
-    assert not inspect.isabstract(langc::CodeBlock)
+def test_langc_codeblock_is_not_abstract():
+    assert not inspect.isabstract(langc_CodeBlock)
 
 
-def test_langc::codeblock_constructor_exists():
-    assert callable(langc::CodeBlock.__init__)
+def test_langc_codeblock_constructor_exists():
+    assert callable(langc_CodeBlock.__init__)
 
 
-def test_langc::codeblock_constructor_args():
-    sig = inspect.signature(langc::CodeBlock.__init__)
+def test_langc_codeblock_constructor_args():
+    sig = inspect.signature(langc_CodeBlock.__init__)
     params = list(sig.parameters.keys())
     assert "forceBraces" in params, "Missing parameter 'forceBraces'"
 
-def test_langc::codeblock_has_forceBraces():
-    assert hasattr(langc::CodeBlock, "forceBraces")
+def test_langc_codeblock_has_forceBraces():
+    assert hasattr(langc_CodeBlock, "forceBraces")
     descriptor = None
-    for klass in langc::CodeBlock.__mro__:
+    for klass in langc_CodeBlock.__mro__:
         if "forceBraces" in klass.__dict__:
             descriptor = klass.__dict__["forceBraces"]
             break
@@ -685,30 +685,30 @@ def test_langc::codeblock_has_forceBraces():
 
 
 
-def test_langc::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(langc::ExpressionStatement)
+def test_langc_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(langc_ExpressionStatement)
 
 
-def test_langc::expressionstatement_constructor_exists():
-    assert callable(langc::ExpressionStatement.__init__)
+def test_langc_expressionstatement_constructor_exists():
+    assert callable(langc_ExpressionStatement.__init__)
 
 
-def test_langc::expressionstatement_constructor_args():
-    sig = inspect.signature(langc::ExpressionStatement.__init__)
+def test_langc_expressionstatement_constructor_args():
+    sig = inspect.signature(langc_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::statement_is_not_abstract():
-    assert not inspect.isabstract(langc::Statement)
+def test_langc_statement_is_not_abstract():
+    assert not inspect.isabstract(langc_Statement)
 
 
-def test_langc::statement_constructor_exists():
-    assert callable(langc::Statement.__init__)
+def test_langc_statement_constructor_exists():
+    assert callable(langc_Statement.__init__)
 
 
-def test_langc::statement_constructor_args():
-    sig = inspect.signature(langc::Statement.__init__)
+def test_langc_statement_constructor_args():
+    sig = inspect.signature(langc_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -727,23 +727,23 @@ def test_literal_constructor_args():
 
 
 
-def test_langc::floatingliteral_is_not_abstract():
-    assert not inspect.isabstract(langc::FloatingLiteral)
+def test_langc_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(langc_CharacterLiteral)
 
 
-def test_langc::floatingliteral_constructor_exists():
-    assert callable(langc::FloatingLiteral.__init__)
+def test_langc_characterliteral_constructor_exists():
+    assert callable(langc_CharacterLiteral.__init__)
 
 
-def test_langc::floatingliteral_constructor_args():
-    sig = inspect.signature(langc::FloatingLiteral.__init__)
+def test_langc_characterliteral_constructor_args():
+    sig = inspect.signature(langc_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_langc::floatingliteral_has_value():
-    assert hasattr(langc::FloatingLiteral, "value")
+def test_langc_characterliteral_has_value():
+    assert hasattr(langc_CharacterLiteral, "value")
     descriptor = None
-    for klass in langc::FloatingLiteral.__mro__:
+    for klass in langc_CharacterLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -751,23 +751,23 @@ def test_langc::floatingliteral_has_value():
 
 
 
-def test_langc::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(langc::CharacterLiteral)
+def test_langc_floatingliteral_is_not_abstract():
+    assert not inspect.isabstract(langc_FloatingLiteral)
 
 
-def test_langc::characterliteral_constructor_exists():
-    assert callable(langc::CharacterLiteral.__init__)
+def test_langc_floatingliteral_constructor_exists():
+    assert callable(langc_FloatingLiteral.__init__)
 
 
-def test_langc::characterliteral_constructor_args():
-    sig = inspect.signature(langc::CharacterLiteral.__init__)
+def test_langc_floatingliteral_constructor_args():
+    sig = inspect.signature(langc_FloatingLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_langc::characterliteral_has_value():
-    assert hasattr(langc::CharacterLiteral, "value")
+def test_langc_floatingliteral_has_value():
+    assert hasattr(langc_FloatingLiteral, "value")
     descriptor = None
-    for klass in langc::CharacterLiteral.__mro__:
+    for klass in langc_FloatingLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -775,45 +775,45 @@ def test_langc::characterliteral_has_value():
 
 
 
-def test_langc::integralliteral_is_not_abstract():
-    assert not inspect.isabstract(langc::IntegralLiteral)
+def test_langc_integralliteral_is_not_abstract():
+    assert not inspect.isabstract(langc_IntegralLiteral)
 
 
-def test_langc::integralliteral_constructor_exists():
-    assert callable(langc::IntegralLiteral.__init__)
+def test_langc_integralliteral_constructor_exists():
+    assert callable(langc_IntegralLiteral.__init__)
 
 
-def test_langc::integralliteral_constructor_args():
-    sig = inspect.signature(langc::IntegralLiteral.__init__)
+def test_langc_integralliteral_constructor_args():
+    sig = inspect.signature(langc_IntegralLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "bytes" in params, "Missing parameter 'bytes'"
-    assert "signed" in params, "Missing parameter 'signed'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "signed" in params, "Missing parameter 'signed'"
 
-def test_langc::integralliteral_has_bytes():
-    assert hasattr(langc::IntegralLiteral, "bytes")
+def test_langc_integralliteral_has_bytes():
+    assert hasattr(langc_IntegralLiteral, "bytes")
     descriptor = None
-    for klass in langc::IntegralLiteral.__mro__:
+    for klass in langc_IntegralLiteral.__mro__:
         if "bytes" in klass.__dict__:
             descriptor = klass.__dict__["bytes"]
             break
     assert isinstance(descriptor, property)
 
-def test_langc::integralliteral_has_signed():
-    assert hasattr(langc::IntegralLiteral, "signed")
+def test_langc_integralliteral_has_value():
+    assert hasattr(langc_IntegralLiteral, "value")
     descriptor = None
-    for klass in langc::IntegralLiteral.__mro__:
-        if "signed" in klass.__dict__:
-            descriptor = klass.__dict__["signed"]
+    for klass in langc_IntegralLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_langc::integralliteral_has_value():
-    assert hasattr(langc::IntegralLiteral, "value")
+def test_langc_integralliteral_has_signed():
+    assert hasattr(langc_IntegralLiteral, "signed")
     descriptor = None
-    for klass in langc::IntegralLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in langc_IntegralLiteral.__mro__:
+        if "signed" in klass.__dict__:
+            descriptor = klass.__dict__["signed"]
             break
     assert isinstance(descriptor, property)
 
@@ -833,113 +833,37 @@ def test_expression_constructor_args():
 
 
 
-def test_langc::logicalcomparison_is_not_abstract():
-    assert not inspect.isabstract(langc::LogicalComparison)
+def test_langc_functionaddress_is_not_abstract():
+    assert not inspect.isabstract(langc_FunctionAddress)
 
 
-def test_langc::logicalcomparison_constructor_exists():
-    assert callable(langc::LogicalComparison.__init__)
+def test_langc_functionaddress_constructor_exists():
+    assert callable(langc_FunctionAddress.__init__)
 
 
-def test_langc::logicalcomparison_constructor_args():
-    sig = inspect.signature(langc::LogicalComparison.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_langc::logicalcomparison_has_operator():
-    assert hasattr(langc::LogicalComparison, "operator")
-    descriptor = None
-    for klass in langc::LogicalComparison.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_langc::castexpr_is_not_abstract():
-    assert not inspect.isabstract(langc::CastExpr)
-
-
-def test_langc::castexpr_constructor_exists():
-    assert callable(langc::CastExpr.__init__)
-
-
-def test_langc::castexpr_constructor_args():
-    sig = inspect.signature(langc::CastExpr.__init__)
+def test_langc_functionaddress_constructor_args():
+    sig = inspect.signature(langc_FunctionAddress.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::elementaccess_is_not_abstract():
-    assert not inspect.isabstract(langc::ElementAccess)
+def test_langc_expressionblob_is_not_abstract():
+    assert not inspect.isabstract(langc_ExpressionBlob)
 
 
-def test_langc::elementaccess_constructor_exists():
-    assert callable(langc::ElementAccess.__init__)
+def test_langc_expressionblob_constructor_exists():
+    assert callable(langc_ExpressionBlob.__init__)
 
 
-def test_langc::elementaccess_constructor_args():
-    sig = inspect.signature(langc::ElementAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_langc::sizeof_is_not_abstract():
-    assert not inspect.isabstract(langc::Sizeof)
-
-
-def test_langc::sizeof_constructor_exists():
-    assert callable(langc::Sizeof.__init__)
-
-
-def test_langc::sizeof_constructor_args():
-    sig = inspect.signature(langc::Sizeof.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_langc::literal_is_not_abstract():
-    assert not inspect.isabstract(langc::Literal)
-
-
-def test_langc::literal_constructor_exists():
-    assert callable(langc::Literal.__init__)
-
-
-def test_langc::literal_constructor_args():
-    sig = inspect.signature(langc::Literal.__init__)
-    params = list(sig.parameters.keys())
-    assert "primitiveType" in params, "Missing parameter 'primitiveType'"
-
-def test_langc::literal_has_primitiveType():
-    assert hasattr(langc::Literal, "primitiveType")
-    descriptor = None
-    for klass in langc::Literal.__mro__:
-        if "primitiveType" in klass.__dict__:
-            descriptor = klass.__dict__["primitiveType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_langc::expressionblob_is_not_abstract():
-    assert not inspect.isabstract(langc::ExpressionBlob)
-
-
-def test_langc::expressionblob_constructor_exists():
-    assert callable(langc::ExpressionBlob.__init__)
-
-
-def test_langc::expressionblob_constructor_args():
-    sig = inspect.signature(langc::ExpressionBlob.__init__)
+def test_langc_expressionblob_constructor_args():
+    sig = inspect.signature(langc_ExpressionBlob.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_langc::expressionblob_has_text():
-    assert hasattr(langc::ExpressionBlob, "text")
+def test_langc_expressionblob_has_text():
+    assert hasattr(langc_ExpressionBlob, "text")
     descriptor = None
-    for klass in langc::ExpressionBlob.__mro__:
+    for klass in langc_ExpressionBlob.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -947,51 +871,75 @@ def test_langc::expressionblob_has_text():
 
 
 
-def test_langc::functionaddress_is_not_abstract():
-    assert not inspect.isabstract(langc::FunctionAddress)
+def test_langc_literal_is_not_abstract():
+    assert not inspect.isabstract(langc_Literal)
 
 
-def test_langc::functionaddress_constructor_exists():
-    assert callable(langc::FunctionAddress.__init__)
+def test_langc_literal_constructor_exists():
+    assert callable(langc_Literal.__init__)
 
 
-def test_langc::functionaddress_constructor_args():
-    sig = inspect.signature(langc::FunctionAddress.__init__)
+def test_langc_literal_constructor_args():
+    sig = inspect.signature(langc_Literal.__init__)
+    params = list(sig.parameters.keys())
+    assert "primitiveType" in params, "Missing parameter 'primitiveType'"
+
+def test_langc_literal_has_primitiveType():
+    assert hasattr(langc_Literal, "primitiveType")
+    descriptor = None
+    for klass in langc_Literal.__mro__:
+        if "primitiveType" in klass.__dict__:
+            descriptor = klass.__dict__["primitiveType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_langc_sizeof_is_not_abstract():
+    assert not inspect.isabstract(langc_Sizeof)
+
+
+def test_langc_sizeof_constructor_exists():
+    assert callable(langc_Sizeof.__init__)
+
+
+def test_langc_sizeof_constructor_args():
+    sig = inspect.signature(langc_Sizeof.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::indexexpr_is_not_abstract():
-    assert not inspect.isabstract(langc::IndexExpr)
+def test_langc_elementaccess_is_not_abstract():
+    assert not inspect.isabstract(langc_ElementAccess)
 
 
-def test_langc::indexexpr_constructor_exists():
-    assert callable(langc::IndexExpr.__init__)
+def test_langc_elementaccess_constructor_exists():
+    assert callable(langc_ElementAccess.__init__)
 
 
-def test_langc::indexexpr_constructor_args():
-    sig = inspect.signature(langc::IndexExpr.__init__)
+def test_langc_elementaccess_constructor_args():
+    sig = inspect.signature(langc_ElementAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::binaryoperation_is_not_abstract():
-    assert not inspect.isabstract(langc::BinaryOperation)
+def test_langc_logicalcomparison_is_not_abstract():
+    assert not inspect.isabstract(langc_LogicalComparison)
 
 
-def test_langc::binaryoperation_constructor_exists():
-    assert callable(langc::BinaryOperation.__init__)
+def test_langc_logicalcomparison_constructor_exists():
+    assert callable(langc_LogicalComparison.__init__)
 
 
-def test_langc::binaryoperation_constructor_args():
-    sig = inspect.signature(langc::BinaryOperation.__init__)
+def test_langc_logicalcomparison_constructor_args():
+    sig = inspect.signature(langc_LogicalComparison.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_langc::binaryoperation_has_operator():
-    assert hasattr(langc::BinaryOperation, "operator")
+def test_langc_logicalcomparison_has_operator():
+    assert hasattr(langc_LogicalComparison, "operator")
     descriptor = None
-    for klass in langc::BinaryOperation.__mro__:
+    for klass in langc_LogicalComparison.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -999,23 +947,51 @@ def test_langc::binaryoperation_has_operator():
 
 
 
-def test_langc::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(langc::StringLiteral)
+def test_langc_indexexpr_is_not_abstract():
+    assert not inspect.isabstract(langc_IndexExpr)
 
 
-def test_langc::stringliteral_constructor_exists():
-    assert callable(langc::StringLiteral.__init__)
+def test_langc_indexexpr_constructor_exists():
+    assert callable(langc_IndexExpr.__init__)
 
 
-def test_langc::stringliteral_constructor_args():
-    sig = inspect.signature(langc::StringLiteral.__init__)
+def test_langc_indexexpr_constructor_args():
+    sig = inspect.signature(langc_IndexExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_langc_castexpr_is_not_abstract():
+    assert not inspect.isabstract(langc_CastExpr)
+
+
+def test_langc_castexpr_constructor_exists():
+    assert callable(langc_CastExpr.__init__)
+
+
+def test_langc_castexpr_constructor_args():
+    sig = inspect.signature(langc_CastExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_langc_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(langc_StringLiteral)
+
+
+def test_langc_stringliteral_constructor_exists():
+    assert callable(langc_StringLiteral.__init__)
+
+
+def test_langc_stringliteral_constructor_args():
+    sig = inspect.signature(langc_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_langc::stringliteral_has_value():
-    assert hasattr(langc::StringLiteral, "value")
+def test_langc_stringliteral_has_value():
+    assert hasattr(langc_StringLiteral, "value")
     descriptor = None
-    for klass in langc::StringLiteral.__mro__:
+    for klass in langc_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1023,79 +999,103 @@ def test_langc::stringliteral_has_value():
 
 
 
-def test_langc::dereferenceexpr_is_not_abstract():
-    assert not inspect.isabstract(langc::DereferenceExpr)
+def test_langc_binaryoperation_is_not_abstract():
+    assert not inspect.isabstract(langc_BinaryOperation)
 
 
-def test_langc::dereferenceexpr_constructor_exists():
-    assert callable(langc::DereferenceExpr.__init__)
+def test_langc_binaryoperation_constructor_exists():
+    assert callable(langc_BinaryOperation.__init__)
 
 
-def test_langc::dereferenceexpr_constructor_args():
-    sig = inspect.signature(langc::DereferenceExpr.__init__)
+def test_langc_binaryoperation_constructor_args():
+    sig = inspect.signature(langc_BinaryOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_langc_binaryoperation_has_operator():
+    assert hasattr(langc_BinaryOperation, "operator")
+    descriptor = None
+    for klass in langc_BinaryOperation.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_langc_blockinitializer_is_not_abstract():
+    assert not inspect.isabstract(langc_BlockInitializer)
+
+
+def test_langc_blockinitializer_constructor_exists():
+    assert callable(langc_BlockInitializer.__init__)
+
+
+def test_langc_blockinitializer_constructor_args():
+    sig = inspect.signature(langc_BlockInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::blockinitializer_is_not_abstract():
-    assert not inspect.isabstract(langc::BlockInitializer)
+def test_langc_addressofexpr_is_not_abstract():
+    assert not inspect.isabstract(langc_AddressOfExpr)
 
 
-def test_langc::blockinitializer_constructor_exists():
-    assert callable(langc::BlockInitializer.__init__)
+def test_langc_addressofexpr_constructor_exists():
+    assert callable(langc_AddressOfExpr.__init__)
 
 
-def test_langc::blockinitializer_constructor_args():
-    sig = inspect.signature(langc::BlockInitializer.__init__)
+def test_langc_addressofexpr_constructor_args():
+    sig = inspect.signature(langc_AddressOfExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::addressofexpr_is_not_abstract():
-    assert not inspect.isabstract(langc::AddressOfExpr)
+def test_langc_dereferenceexpr_is_not_abstract():
+    assert not inspect.isabstract(langc_DereferenceExpr)
 
 
-def test_langc::addressofexpr_constructor_exists():
-    assert callable(langc::AddressOfExpr.__init__)
+def test_langc_dereferenceexpr_constructor_exists():
+    assert callable(langc_DereferenceExpr.__init__)
 
 
-def test_langc::addressofexpr_constructor_args():
-    sig = inspect.signature(langc::AddressOfExpr.__init__)
+def test_langc_dereferenceexpr_constructor_args():
+    sig = inspect.signature(langc_DereferenceExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::functioncall_is_not_abstract():
-    assert not inspect.isabstract(langc::FunctionCall)
+def test_langc_functioncall_is_not_abstract():
+    assert not inspect.isabstract(langc_FunctionCall)
 
 
-def test_langc::functioncall_constructor_exists():
-    assert callable(langc::FunctionCall.__init__)
+def test_langc_functioncall_constructor_exists():
+    assert callable(langc_FunctionCall.__init__)
 
 
-def test_langc::functioncall_constructor_args():
-    sig = inspect.signature(langc::FunctionCall.__init__)
+def test_langc_functioncall_constructor_args():
+    sig = inspect.signature(langc_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::expression_is_not_abstract():
-    assert not inspect.isabstract(langc::Expression)
+def test_langc_expression_is_not_abstract():
+    assert not inspect.isabstract(langc_Expression)
 
 
-def test_langc::expression_constructor_exists():
-    assert callable(langc::Expression.__init__)
+def test_langc_expression_constructor_exists():
+    assert callable(langc_Expression.__init__)
 
 
-def test_langc::expression_constructor_args():
-    sig = inspect.signature(langc::Expression.__init__)
+def test_langc_expression_constructor_args():
+    sig = inspect.signature(langc_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "precendence" in params, "Missing parameter 'precendence'"
 
-def test_langc::expression_has_precendence():
-    assert hasattr(langc::Expression, "precendence")
+def test_langc_expression_has_precendence():
+    assert hasattr(langc_Expression, "precendence")
     descriptor = None
-    for klass in langc::Expression.__mro__:
+    for klass in langc_Expression.__mro__:
         if "precendence" in klass.__dict__:
             descriptor = klass.__dict__["precendence"]
             break
@@ -1103,30 +1103,30 @@ def test_langc::expression_has_precendence():
 
 
 
-def test_langc::element_is_not_abstract():
-    assert not inspect.isabstract(langc::Element)
+def test_langc_element_is_not_abstract():
+    assert not inspect.isabstract(langc_Element)
 
 
-def test_langc::element_constructor_exists():
-    assert callable(langc::Element.__init__)
+def test_langc_element_constructor_exists():
+    assert callable(langc_Element.__init__)
 
 
-def test_langc::element_constructor_args():
-    sig = inspect.signature(langc::Element.__init__)
+def test_langc_element_constructor_args():
+    sig = inspect.signature(langc_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::namedreference_is_not_abstract():
-    assert not inspect.isabstract(langc::NamedReference)
+def test_langc_namedreference_is_not_abstract():
+    assert not inspect.isabstract(langc_NamedReference)
 
 
-def test_langc::namedreference_constructor_exists():
-    assert callable(langc::NamedReference.__init__)
+def test_langc_namedreference_constructor_exists():
+    assert callable(langc_NamedReference.__init__)
 
 
-def test_langc::namedreference_constructor_args():
-    sig = inspect.signature(langc::NamedReference.__init__)
+def test_langc_namedreference_constructor_args():
+    sig = inspect.signature(langc_NamedReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1145,37 +1145,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_langc::enum_is_not_abstract():
-    assert not inspect.isabstract(langc::Enum)
+def test_langc_enum_is_not_abstract():
+    assert not inspect.isabstract(langc_Enum)
 
 
-def test_langc::enum_constructor_exists():
-    assert callable(langc::Enum.__init__)
+def test_langc_enum_constructor_exists():
+    assert callable(langc_Enum.__init__)
 
 
-def test_langc::enum_constructor_args():
-    sig = inspect.signature(langc::Enum.__init__)
+def test_langc_enum_constructor_args():
+    sig = inspect.signature(langc_Enum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(langc::VariableDeclaration)
+def test_langc_structure_is_not_abstract():
+    assert not inspect.isabstract(langc_Structure)
 
 
-def test_langc::variabledeclaration_constructor_exists():
-    assert callable(langc::VariableDeclaration.__init__)
+def test_langc_structure_constructor_exists():
+    assert callable(langc_Structure.__init__)
 
 
-def test_langc::variabledeclaration_constructor_args():
-    sig = inspect.signature(langc::VariableDeclaration.__init__)
+def test_langc_structure_constructor_args():
+    sig = inspect.signature(langc_Structure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_langc_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(langc_VariableDeclaration)
+
+
+def test_langc_variabledeclaration_constructor_exists():
+    assert callable(langc_VariableDeclaration.__init__)
+
+
+def test_langc_variabledeclaration_constructor_args():
+    sig = inspect.signature(langc_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "linkage" in params, "Missing parameter 'linkage'"
 
-def test_langc::variabledeclaration_has_linkage():
-    assert hasattr(langc::VariableDeclaration, "linkage")
+def test_langc_variabledeclaration_has_linkage():
+    assert hasattr(langc_VariableDeclaration, "linkage")
     descriptor = None
-    for klass in langc::VariableDeclaration.__mro__:
+    for klass in langc_VariableDeclaration.__mro__:
         if "linkage" in klass.__dict__:
             descriptor = klass.__dict__["linkage"]
             break
@@ -1183,51 +1197,37 @@ def test_langc::variabledeclaration_has_linkage():
 
 
 
-def test_langc::typedef_is_not_abstract():
-    assert not inspect.isabstract(langc::Typedef)
+def test_langc_typedef_is_not_abstract():
+    assert not inspect.isabstract(langc_Typedef)
 
 
-def test_langc::typedef_constructor_exists():
-    assert callable(langc::Typedef.__init__)
+def test_langc_typedef_constructor_exists():
+    assert callable(langc_Typedef.__init__)
 
 
-def test_langc::typedef_constructor_args():
-    sig = inspect.signature(langc::Typedef.__init__)
+def test_langc_typedef_constructor_args():
+    sig = inspect.signature(langc_Typedef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::structure_is_not_abstract():
-    assert not inspect.isabstract(langc::Structure)
+def test_langc_function_is_not_abstract():
+    assert not inspect.isabstract(langc_Function)
 
 
-def test_langc::structure_constructor_exists():
-    assert callable(langc::Structure.__init__)
+def test_langc_function_constructor_exists():
+    assert callable(langc_Function.__init__)
 
 
-def test_langc::structure_constructor_args():
-    sig = inspect.signature(langc::Structure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_langc::function_is_not_abstract():
-    assert not inspect.isabstract(langc::Function)
-
-
-def test_langc::function_constructor_exists():
-    assert callable(langc::Function.__init__)
-
-
-def test_langc::function_constructor_args():
-    sig = inspect.signature(langc::Function.__init__)
+def test_langc_function_constructor_args():
+    sig = inspect.signature(langc_Function.__init__)
     params = list(sig.parameters.keys())
     assert "linkage" in params, "Missing parameter 'linkage'"
 
-def test_langc::function_has_linkage():
-    assert hasattr(langc::Function, "linkage")
+def test_langc_function_has_linkage():
+    assert hasattr(langc_Function, "linkage")
     descriptor = None
-    for klass in langc::Function.__mro__:
+    for klass in langc_Function.__mro__:
         if "linkage" in klass.__dict__:
             descriptor = klass.__dict__["linkage"]
             break
@@ -1249,79 +1249,79 @@ def test_structure_constructor_args():
 
 
 
-def test_langc::union_is_not_abstract():
-    assert not inspect.isabstract(langc::Union)
+def test_langc_union_is_not_abstract():
+    assert not inspect.isabstract(langc_Union)
 
 
-def test_langc::union_constructor_exists():
-    assert callable(langc::Union.__init__)
+def test_langc_union_constructor_exists():
+    assert callable(langc_Union.__init__)
 
 
-def test_langc::union_constructor_args():
-    sig = inspect.signature(langc::Union.__init__)
+def test_langc_union_constructor_args():
+    sig = inspect.signature(langc_Union.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::struct_is_not_abstract():
-    assert not inspect.isabstract(langc::Struct)
+def test_langc_struct_is_not_abstract():
+    assert not inspect.isabstract(langc_Struct)
 
 
-def test_langc::struct_constructor_exists():
-    assert callable(langc::Struct.__init__)
+def test_langc_struct_constructor_exists():
+    assert callable(langc_Struct.__init__)
 
 
-def test_langc::struct_constructor_args():
-    sig = inspect.signature(langc::Struct.__init__)
+def test_langc_struct_constructor_args():
+    sig = inspect.signature(langc_Struct.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::directive_is_not_abstract():
-    assert not inspect.isabstract(langc::Directive)
+def test_langc_directive_is_not_abstract():
+    assert not inspect.isabstract(langc_Directive)
 
 
-def test_langc::directive_constructor_exists():
-    assert callable(langc::Directive.__init__)
+def test_langc_directive_constructor_exists():
+    assert callable(langc_Directive.__init__)
 
 
-def test_langc::directive_constructor_args():
-    sig = inspect.signature(langc::Directive.__init__)
+def test_langc_directive_constructor_args():
+    sig = inspect.signature(langc_Directive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::dependencylist_is_not_abstract():
-    assert not inspect.isabstract(langc::DependencyList)
+def test_langc_dependencylist_is_not_abstract():
+    assert not inspect.isabstract(langc_DependencyList)
 
 
-def test_langc::dependencylist_constructor_exists():
-    assert callable(langc::DependencyList.__init__)
+def test_langc_dependencylist_constructor_exists():
+    assert callable(langc_DependencyList.__init__)
 
 
-def test_langc::dependencylist_constructor_args():
-    sig = inspect.signature(langc::DependencyList.__init__)
+def test_langc_dependencylist_constructor_args():
+    sig = inspect.signature(langc_DependencyList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::filename_is_not_abstract():
-    assert not inspect.isabstract(langc::FileName)
+def test_langc_filename_is_not_abstract():
+    assert not inspect.isabstract(langc_FileName)
 
 
-def test_langc::filename_constructor_exists():
-    assert callable(langc::FileName.__init__)
+def test_langc_filename_constructor_exists():
+    assert callable(langc_FileName.__init__)
 
 
-def test_langc::filename_constructor_args():
-    sig = inspect.signature(langc::FileName.__init__)
+def test_langc_filename_constructor_args():
+    sig = inspect.signature(langc_FileName.__init__)
     params = list(sig.parameters.keys())
     assert "hasObjectCode" in params, "Missing parameter 'hasObjectCode'"
 
-def test_langc::filename_has_hasObjectCode():
-    assert hasattr(langc::FileName, "hasObjectCode")
+def test_langc_filename_has_hasObjectCode():
+    assert hasattr(langc_FileName, "hasObjectCode")
     descriptor = None
-    for klass in langc::FileName.__mro__:
+    for klass in langc_FileName.__mro__:
         if "hasObjectCode" in klass.__dict__:
             descriptor = klass.__dict__["hasObjectCode"]
             break
@@ -1343,23 +1343,23 @@ def test_element_constructor_args():
 
 
 
-def test_langc::builtintype_is_not_abstract():
-    assert not inspect.isabstract(langc::BuiltInType)
+def test_langc_builtintype_is_not_abstract():
+    assert not inspect.isabstract(langc_BuiltInType)
 
 
-def test_langc::builtintype_constructor_exists():
-    assert callable(langc::BuiltInType.__init__)
+def test_langc_builtintype_constructor_exists():
+    assert callable(langc_BuiltInType.__init__)
 
 
-def test_langc::builtintype_constructor_args():
-    sig = inspect.signature(langc::BuiltInType.__init__)
+def test_langc_builtintype_constructor_args():
+    sig = inspect.signature(langc_BuiltInType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_langc::builtintype_has_type():
-    assert hasattr(langc::BuiltInType, "type")
+def test_langc_builtintype_has_type():
+    assert hasattr(langc_BuiltInType, "type")
     descriptor = None
-    for klass in langc::BuiltInType.__mro__:
+    for klass in langc_BuiltInType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1367,23 +1367,23 @@ def test_langc::builtintype_has_type():
 
 
 
-def test_langc::userelement_is_not_abstract():
-    assert not inspect.isabstract(langc::UserElement)
+def test_langc_userelement_is_not_abstract():
+    assert not inspect.isabstract(langc_UserElement)
 
 
-def test_langc::userelement_constructor_exists():
-    assert callable(langc::UserElement.__init__)
+def test_langc_userelement_constructor_exists():
+    assert callable(langc_UserElement.__init__)
 
 
-def test_langc::userelement_constructor_args():
-    sig = inspect.signature(langc::UserElement.__init__)
+def test_langc_userelement_constructor_args():
+    sig = inspect.signature(langc_UserElement.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_langc::userelement_has_kind():
-    assert hasattr(langc::UserElement, "kind")
+def test_langc_userelement_has_kind():
+    assert hasattr(langc_UserElement, "kind")
     descriptor = None
-    for klass in langc::UserElement.__mro__:
+    for klass in langc_UserElement.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1391,37 +1391,37 @@ def test_langc::userelement_has_kind():
 
 
 
-def test_langc::elementlist_is_not_abstract():
-    assert not inspect.isabstract(langc::ElementList)
+def test_langc_elementlist_is_not_abstract():
+    assert not inspect.isabstract(langc_ElementList)
 
 
-def test_langc::elementlist_constructor_exists():
-    assert callable(langc::ElementList.__init__)
+def test_langc_elementlist_constructor_exists():
+    assert callable(langc_ElementList.__init__)
 
 
-def test_langc::elementlist_constructor_args():
-    sig = inspect.signature(langc::ElementList.__init__)
+def test_langc_elementlist_constructor_args():
+    sig = inspect.signature(langc_ElementList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::name_is_not_abstract():
-    assert not inspect.isabstract(langc::Name)
+def test_langc_name_is_not_abstract():
+    assert not inspect.isabstract(langc_Name)
 
 
-def test_langc::name_constructor_exists():
-    assert callable(langc::Name.__init__)
+def test_langc_name_constructor_exists():
+    assert callable(langc_Name.__init__)
 
 
-def test_langc::name_constructor_args():
-    sig = inspect.signature(langc::Name.__init__)
+def test_langc_name_constructor_args():
+    sig = inspect.signature(langc_Name.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_langc::name_has_name():
-    assert hasattr(langc::Name, "name")
+def test_langc_name_has_name():
+    assert hasattr(langc_Name, "name")
     descriptor = None
-    for klass in langc::Name.__mro__:
+    for klass in langc_Name.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1443,33 +1443,33 @@ def test_bindablevalue_constructor_args():
 
 
 
-def test_langc::elementreference_is_not_abstract():
-    assert not inspect.isabstract(langc::ElementReference)
+def test_langc_elementreference_is_not_abstract():
+    assert not inspect.isabstract(langc_ElementReference)
 
 
-def test_langc::elementreference_constructor_exists():
-    assert callable(langc::ElementReference.__init__)
+def test_langc_elementreference_constructor_exists():
+    assert callable(langc_ElementReference.__init__)
 
 
-def test_langc::elementreference_constructor_args():
-    sig = inspect.signature(langc::ElementReference.__init__)
+def test_langc_elementreference_constructor_args():
+    sig = inspect.signature(langc_ElementReference.__init__)
     params = list(sig.parameters.keys())
     assert "cvQualifier" in params, "Missing parameter 'cvQualifier'"
     assert "pointerSpec" in params, "Missing parameter 'pointerSpec'"
 
-def test_langc::elementreference_has_cvQualifier():
-    assert hasattr(langc::ElementReference, "cvQualifier")
+def test_langc_elementreference_has_cvQualifier():
+    assert hasattr(langc_ElementReference, "cvQualifier")
     descriptor = None
-    for klass in langc::ElementReference.__mro__:
+    for klass in langc_ElementReference.__mro__:
         if "cvQualifier" in klass.__dict__:
             descriptor = klass.__dict__["cvQualifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_langc::elementreference_has_pointerSpec():
-    assert hasattr(langc::ElementReference, "pointerSpec")
+def test_langc_elementreference_has_pointerSpec():
+    assert hasattr(langc_ElementReference, "pointerSpec")
     descriptor = None
-    for klass in langc::ElementReference.__mro__:
+    for klass in langc_ElementReference.__mro__:
         if "pointerSpec" in klass.__dict__:
             descriptor = klass.__dict__["pointerSpec"]
             break
@@ -1477,30 +1477,30 @@ def test_langc::elementreference_has_pointerSpec():
 
 
 
-def test_langc::enumerator_is_not_abstract():
-    assert not inspect.isabstract(langc::Enumerator)
+def test_langc_enumerator_is_not_abstract():
+    assert not inspect.isabstract(langc_Enumerator)
 
 
-def test_langc::enumerator_constructor_exists():
-    assert callable(langc::Enumerator.__init__)
+def test_langc_enumerator_constructor_exists():
+    assert callable(langc_Enumerator.__init__)
 
 
-def test_langc::enumerator_constructor_args():
-    sig = inspect.signature(langc::Enumerator.__init__)
+def test_langc_enumerator_constructor_args():
+    sig = inspect.signature(langc_Enumerator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::macro_is_not_abstract():
-    assert not inspect.isabstract(langc::Macro)
+def test_langc_macro_is_not_abstract():
+    assert not inspect.isabstract(langc_Macro)
 
 
-def test_langc::macro_constructor_exists():
-    assert callable(langc::Macro.__init__)
+def test_langc_macro_constructor_exists():
+    assert callable(langc_Macro.__init__)
 
 
-def test_langc::macro_constructor_args():
-    sig = inspect.signature(langc::Macro.__init__)
+def test_langc_macro_constructor_args():
+    sig = inspect.signature(langc_Macro.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1519,79 +1519,88 @@ def test_userelement_constructor_args():
 
 
 
-def test_langc::functionpointer_is_not_abstract():
-    assert not inspect.isabstract(langc::FunctionPointer)
+def test_langc_functionimplementation_is_not_abstract():
+    assert not inspect.isabstract(langc_FunctionImplementation)
 
 
-def test_langc::functionpointer_constructor_exists():
-    assert callable(langc::FunctionPointer.__init__)
+def test_langc_functionimplementation_constructor_exists():
+    assert callable(langc_FunctionImplementation.__init__)
 
 
-def test_langc::functionpointer_constructor_args():
-    sig = inspect.signature(langc::FunctionPointer.__init__)
+def test_langc_functionimplementation_constructor_args():
+    sig = inspect.signature(langc_FunctionImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::functionimplementation_is_not_abstract():
-    assert not inspect.isabstract(langc::FunctionImplementation)
+def test_langc_functionpointer_is_not_abstract():
+    assert not inspect.isabstract(langc_FunctionPointer)
 
 
-def test_langc::functionimplementation_constructor_exists():
-    assert callable(langc::FunctionImplementation.__init__)
+def test_langc_functionpointer_constructor_exists():
+    assert callable(langc_FunctionPointer.__init__)
 
 
-def test_langc::functionimplementation_constructor_args():
-    sig = inspect.signature(langc::FunctionImplementation.__init__)
+def test_langc_functionpointer_constructor_args():
+    sig = inspect.signature(langc_FunctionPointer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_langc::namedelement_is_not_abstract():
-    assert not inspect.isabstract(langc::NamedElement)
+def test_langc_namedelement_is_not_abstract():
+    assert not inspect.isabstract(langc_NamedElement)
 
 
-def test_langc::namedelement_constructor_exists():
-    assert callable(langc::NamedElement.__init__)
+def test_langc_namedelement_constructor_exists():
+    assert callable(langc_NamedElement.__init__)
 
 
-def test_langc::namedelement_constructor_args():
-    sig = inspect.signature(langc::NamedElement.__init__)
+def test_langc_namedelement_constructor_args():
+    sig = inspect.signature(langc_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
-def test_pointer_exists():
+def test_operator_exists():
     # Check that the Enumeration exists
-    assert Pointer is not None
+    assert Operator is not None
 
-def test_pointer_has_all_literals():
+def test_operator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Pointer]
+    enum_literals = [lit.name for lit in Operator]
     expected_literals = [
-        "const_volatile_pointer",
-        "invalid",
-        "pointer",
-        "volatile_pointer",
-        "const_pointer",
+        "assign",
+        "bitwise_or",
+        "assign_add",
+        "subtract",
+        "add",
+        "bitwise_and",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Pointer"
+        assert lit_name in enum_literals, f"Literal '' missing in Operator"
 
-def test_cvqualifier_exists():
+def test_primitivetype_exists():
     # Check that the Enumeration exists
-    assert CVQualifier is not None
+    assert PrimitiveType is not None
 
-def test_cvqualifier_has_all_literals():
+def test_primitivetype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CVQualifier]
+    enum_literals = [lit.name for lit in PrimitiveType]
     expected_literals = [
-        "volatile",
-        "unqualified",
-        "const",
+        "char",
+        "float",
+        "uint16",
+        "void",
+        "double",
+        "long",
+        "int8",
+        "uint8",
+        "uint32",
+        "int32",
+        "int16",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CVQualifier"
+        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveType"
 
 def test_linkagespec_exists():
     # Check that the Enumeration exists
@@ -1602,52 +1611,12 @@ def test_linkagespec_has_all_literals():
     enum_literals = [lit.name for lit in LinkageSpec]
     expected_literals = [
         "unspecified",
-        "extern",
         "static",
+        "extern",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LinkageSpec"
-
-def test_booleanoperator_exists():
-    # Check that the Enumeration exists
-    assert BooleanOperator is not None
-
-def test_booleanoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanOperator]
-    expected_literals = [
-        "or_",
-        "and_",
-        "less_than",
-        "equivalent",
-        "greater_than",
-        "less_than_equal",
-        "not_equivalent",
-        "greater_than_equal",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
-
-def test_operator_exists():
-    # Check that the Enumeration exists
-    assert Operator is not None
-
-def test_operator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Operator]
-    expected_literals = [
-        "bitwise_and",
-        "assign",
-        "add",
-        "subtract",
-        "bitwise_or",
-        "assign_add",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Operator"
 
 def test_elementkind_exists():
     # Check that the Enumeration exists
@@ -1657,37 +1626,68 @@ def test_elementkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ElementKind]
     expected_literals = [
+        "default",
         "headerOnly",
         "implOnly",
-        "default",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ElementKind"
 
-def test_primitivetype_exists():
+def test_cvqualifier_exists():
     # Check that the Enumeration exists
-    assert PrimitiveType is not None
+    assert CVQualifier is not None
 
-def test_primitivetype_has_all_literals():
+def test_cvqualifier_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrimitiveType]
+    enum_literals = [lit.name for lit in CVQualifier]
     expected_literals = [
-        "int8",
-        "char",
-        "long",
-        "int32",
-        "void",
-        "uint32",
-        "uint16",
-        "uint8",
-        "int16",
-        "float",
-        "double",
+        "const",
+        "volatile",
+        "unqualified",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveType"
+        assert lit_name in enum_literals, f"Literal '' missing in CVQualifier"
+
+def test_booleanoperator_exists():
+    # Check that the Enumeration exists
+    assert BooleanOperator is not None
+
+def test_booleanoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BooleanOperator]
+    expected_literals = [
+        "less_than",
+        "greater_than_equal",
+        "not_equivalent",
+        "or_",
+        "equivalent",
+        "and_",
+        "less_than_equal",
+        "greater_than",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
+
+def test_pointer_exists():
+    # Check that the Enumeration exists
+    assert Pointer is not None
+
+def test_pointer_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Pointer]
+    expected_literals = [
+        "const_pointer",
+        "invalid",
+        "pointer",
+        "volatile_pointer",
+        "const_volatile_pointer",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Pointer"
 
 
 # =============================================================================
@@ -1701,395 +1701,383 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-langc::LinkableArtifact_strategy = st.builds(
-    langc::LinkableArtifact,
+langc_LinkableArtifact_strategy = st.builds(
+    langc_LinkableArtifact,
     name=
         safe_text
 )
-langc::System_strategy = st.builds(
-    langc::System,
+langc_System_strategy = st.builds(
+    langc_System,
 )
 SwitchClause_strategy = st.builds(
     SwitchClause,
 )
-langc::LabeledClause_strategy = st.builds(
-    langc::LabeledClause,
+langc_LabeledClause_strategy = st.builds(
+    langc_LabeledClause,
 )
 CodeBlock_strategy = st.builds(
     CodeBlock,
 )
-langc::CodeBlob_strategy = st.builds(
-    langc::CodeBlob,
+langc_ConditionalStatement_strategy = st.builds(
+    langc_ConditionalStatement,
+)
+langc_CodeBlob_strategy = st.builds(
+    langc_CodeBlob,
     text=
         safe_text,
     markerComment=
         safe_text
 )
-langc::ConditionalStatement_strategy = st.builds(
-    langc::ConditionalStatement,
-)
-langc::SwitchClause_strategy = st.builds(
-    langc::SwitchClause,
+langc_SwitchClause_strategy = st.builds(
+    langc_SwitchClause,
     fallthrough=
         st.booleans()
 )
 FileName_strategy = st.builds(
     FileName,
 )
-langc::SystemFileName_strategy = st.builds(
-    langc::SystemFileName,
+langc_SystemFileName_strategy = st.builds(
+    langc_SystemFileName,
 )
-langc::BindableValue_strategy = st.builds(
-    langc::BindableValue,
+langc_BindableValue_strategy = st.builds(
+    langc_BindableValue,
 )
 Sizeof_strategy = st.builds(
     Sizeof,
 )
-langc::SizeofExpr_strategy = st.builds(
-    langc::SizeofExpr,
+langc_SizeofExpr_strategy = st.builds(
+    langc_SizeofExpr,
 )
-langc::SizeofType_strategy = st.builds(
-    langc::SizeofType,
+langc_SizeofType_strategy = st.builds(
+    langc_SizeofType,
 )
-langc::Dependency_strategy = st.builds(
-    langc::Dependency,
+langc_Dependency_strategy = st.builds(
+    langc_Dependency,
 )
 Directive_strategy = st.builds(
     Directive,
 )
-langc::WhileStatement_strategy = st.builds(
-    langc::WhileStatement,
+langc_WhileStatement_strategy = st.builds(
+    langc_WhileStatement,
 )
-langc::SubSystem_strategy = st.builds(
-    langc::SubSystem,
+langc_SubSystem_strategy = st.builds(
+    langc_SubSystem,
     name=
         safe_text
 )
 ElementAccess_strategy = st.builds(
     ElementAccess,
 )
-langc::MemberAccess_strategy = st.builds(
-    langc::MemberAccess,
+langc_MemberAccess_strategy = st.builds(
+    langc_MemberAccess,
 )
 Name_strategy = st.builds(
     Name,
 )
-langc::FolderName_strategy = st.builds(
-    langc::FolderName,
+langc_FolderName_strategy = st.builds(
+    langc_FolderName,
     api=
         st.booleans()
 )
 FileDependency_strategy = st.builds(
     FileDependency,
 )
-langc::UserInclude_strategy = st.builds(
-    langc::UserInclude,
+langc_UserInclude_strategy = st.builds(
+    langc_UserInclude,
 )
-langc::SystemInclude_strategy = st.builds(
-    langc::SystemInclude,
+langc_SystemInclude_strategy = st.builds(
+    langc_SystemInclude,
 )
 Dependency_strategy = st.builds(
     Dependency,
 )
-langc::DependencyBlob_strategy = st.builds(
-    langc::DependencyBlob,
+langc_DependencyBlob_strategy = st.builds(
+    langc_DependencyBlob,
     text=
         safe_text,
     markerComment=
         safe_text
 )
-langc::FileDependency_strategy = st.builds(
-    langc::FileDependency,
+langc_FileDependency_strategy = st.builds(
+    langc_FileDependency,
 )
 ExpressionStatement_strategy = st.builds(
     ExpressionStatement,
 )
-langc::ReturnStatement_strategy = st.builds(
-    langc::ReturnStatement,
+langc_ReturnStatement_strategy = st.builds(
+    langc_ReturnStatement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-langc::SwitchStatement_strategy = st.builds(
-    langc::SwitchStatement,
+langc_SwitchStatement_strategy = st.builds(
+    langc_SwitchStatement,
 )
-langc::BreakStatement_strategy = st.builds(
-    langc::BreakStatement,
+langc_VariableDeclarationStatement_strategy = st.builds(
+    langc_VariableDeclarationStatement,
 )
-langc::VariableDeclarationStatement_strategy = st.builds(
-    langc::VariableDeclarationStatement,
+langc_BreakStatement_strategy = st.builds(
+    langc_BreakStatement,
 )
-langc::CodeBlock_strategy = st.builds(
-    langc::CodeBlock,
+langc_CodeBlock_strategy = st.builds(
+    langc_CodeBlock,
     forceBraces=
         st.booleans()
 )
-langc::ExpressionStatement_strategy = st.builds(
-    langc::ExpressionStatement,
+langc_ExpressionStatement_strategy = st.builds(
+    langc_ExpressionStatement,
 )
-langc::Statement_strategy = st.builds(
-    langc::Statement,
+langc_Statement_strategy = st.builds(
+    langc_Statement,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-langc::FloatingLiteral_strategy = st.builds(
-    langc::FloatingLiteral,
+langc_CharacterLiteral_strategy = st.builds(
+    langc_CharacterLiteral,
+    value=
+        safe_text
+)
+langc_FloatingLiteral_strategy = st.builds(
+    langc_FloatingLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-langc::CharacterLiteral_strategy = st.builds(
-    langc::CharacterLiteral,
-    value=
-        safe_text
-)
-langc::IntegralLiteral_strategy = st.builds(
-    langc::IntegralLiteral,
+langc_IntegralLiteral_strategy = st.builds(
+    langc_IntegralLiteral,
     bytes=
         safe_text,
-    signed=
-        st.booleans(),
     value=
-        safe_text
+        safe_text,
+    signed=
+        st.booleans()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-langc::LogicalComparison_strategy = st.builds(
-    langc::LogicalComparison,
-    operator=
-        safe_text
+langc_FunctionAddress_strategy = st.builds(
+    langc_FunctionAddress,
 )
-langc::CastExpr_strategy = st.builds(
-    langc::CastExpr,
-)
-langc::ElementAccess_strategy = st.builds(
-    langc::ElementAccess,
-)
-langc::Sizeof_strategy = st.builds(
-    langc::Sizeof,
-)
-langc::Literal_strategy = st.builds(
-    langc::Literal,
-    primitiveType=
-        safe_text
-)
-langc::ExpressionBlob_strategy = st.builds(
-    langc::ExpressionBlob,
+langc_ExpressionBlob_strategy = st.builds(
+    langc_ExpressionBlob,
     text=
         safe_text
 )
-langc::FunctionAddress_strategy = st.builds(
-    langc::FunctionAddress,
+langc_Literal_strategy = st.builds(
+    langc_Literal,
+    primitiveType=
+        safe_text
 )
-langc::IndexExpr_strategy = st.builds(
-    langc::IndexExpr,
+langc_Sizeof_strategy = st.builds(
+    langc_Sizeof,
 )
-langc::BinaryOperation_strategy = st.builds(
-    langc::BinaryOperation,
+langc_ElementAccess_strategy = st.builds(
+    langc_ElementAccess,
+)
+langc_LogicalComparison_strategy = st.builds(
+    langc_LogicalComparison,
     operator=
         safe_text
 )
-langc::StringLiteral_strategy = st.builds(
-    langc::StringLiteral,
+langc_IndexExpr_strategy = st.builds(
+    langc_IndexExpr,
+)
+langc_CastExpr_strategy = st.builds(
+    langc_CastExpr,
+)
+langc_StringLiteral_strategy = st.builds(
+    langc_StringLiteral,
     value=
         safe_text
 )
-langc::DereferenceExpr_strategy = st.builds(
-    langc::DereferenceExpr,
+langc_BinaryOperation_strategy = st.builds(
+    langc_BinaryOperation,
+    operator=
+        safe_text
 )
-langc::BlockInitializer_strategy = st.builds(
-    langc::BlockInitializer,
+langc_BlockInitializer_strategy = st.builds(
+    langc_BlockInitializer,
 )
-langc::AddressOfExpr_strategy = st.builds(
-    langc::AddressOfExpr,
+langc_AddressOfExpr_strategy = st.builds(
+    langc_AddressOfExpr,
 )
-langc::FunctionCall_strategy = st.builds(
-    langc::FunctionCall,
+langc_DereferenceExpr_strategy = st.builds(
+    langc_DereferenceExpr,
 )
-langc::Expression_strategy = st.builds(
-    langc::Expression,
+langc_FunctionCall_strategy = st.builds(
+    langc_FunctionCall,
+)
+langc_Expression_strategy = st.builds(
+    langc_Expression,
     precendence=
         st.integers()
 )
-langc::Element_strategy = st.builds(
-    langc::Element,
+langc_Element_strategy = st.builds(
+    langc_Element,
 )
-langc::NamedReference_strategy = st.builds(
-    langc::NamedReference,
+langc_NamedReference_strategy = st.builds(
+    langc_NamedReference,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-langc::Enum_strategy = st.builds(
-    langc::Enum,
+langc_Enum_strategy = st.builds(
+    langc_Enum,
 )
-langc::VariableDeclaration_strategy = st.builds(
-    langc::VariableDeclaration,
+langc_Structure_strategy = st.builds(
+    langc_Structure,
+)
+langc_VariableDeclaration_strategy = st.builds(
+    langc_VariableDeclaration,
     linkage=
         safe_text
 )
-langc::Typedef_strategy = st.builds(
-    langc::Typedef,
+langc_Typedef_strategy = st.builds(
+    langc_Typedef,
 )
-langc::Structure_strategy = st.builds(
-    langc::Structure,
-)
-langc::Function_strategy = st.builds(
-    langc::Function,
+langc_Function_strategy = st.builds(
+    langc_Function,
     linkage=
         safe_text
 )
 Structure_strategy = st.builds(
     Structure,
 )
-langc::Union_strategy = st.builds(
-    langc::Union,
+langc_Union_strategy = st.builds(
+    langc_Union,
 )
-langc::Struct_strategy = st.builds(
-    langc::Struct,
+langc_Struct_strategy = st.builds(
+    langc_Struct,
 )
-langc::Directive_strategy = st.builds(
-    langc::Directive,
+langc_Directive_strategy = st.builds(
+    langc_Directive,
 )
-langc::DependencyList_strategy = st.builds(
-    langc::DependencyList,
+langc_DependencyList_strategy = st.builds(
+    langc_DependencyList,
 )
-langc::FileName_strategy = st.builds(
-    langc::FileName,
+langc_FileName_strategy = st.builds(
+    langc_FileName,
     hasObjectCode=
         st.booleans()
 )
 Element_strategy = st.builds(
     Element,
 )
-langc::BuiltInType_strategy = st.builds(
-    langc::BuiltInType,
+langc_BuiltInType_strategy = st.builds(
+    langc_BuiltInType,
     type=
         safe_text
 )
-langc::UserElement_strategy = st.builds(
-    langc::UserElement,
+langc_UserElement_strategy = st.builds(
+    langc_UserElement,
     kind=
         safe_text
 )
-langc::ElementList_strategy = st.builds(
-    langc::ElementList,
+langc_ElementList_strategy = st.builds(
+    langc_ElementList,
 )
-langc::Name_strategy = st.builds(
-    langc::Name,
+langc_Name_strategy = st.builds(
+    langc_Name,
     name=
         safe_text
 )
 BindableValue_strategy = st.builds(
     BindableValue,
 )
-langc::ElementReference_strategy = st.builds(
-    langc::ElementReference,
+langc_ElementReference_strategy = st.builds(
+    langc_ElementReference,
     cvQualifier=
         safe_text,
     pointerSpec=
         safe_text
 )
-langc::Enumerator_strategy = st.builds(
-    langc::Enumerator,
+langc_Enumerator_strategy = st.builds(
+    langc_Enumerator,
 )
-langc::Macro_strategy = st.builds(
-    langc::Macro,
+langc_Macro_strategy = st.builds(
+    langc_Macro,
 )
 UserElement_strategy = st.builds(
     UserElement,
 )
-langc::FunctionPointer_strategy = st.builds(
-    langc::FunctionPointer,
+langc_FunctionImplementation_strategy = st.builds(
+    langc_FunctionImplementation,
 )
-langc::FunctionImplementation_strategy = st.builds(
-    langc::FunctionImplementation,
+langc_FunctionPointer_strategy = st.builds(
+    langc_FunctionPointer,
 )
-langc::NamedElement_strategy = st.builds(
-    langc::NamedElement,
+langc_NamedElement_strategy = st.builds(
+    langc_NamedElement,
 )
 
-@given(instance=langc::LinkableArtifact_strategy)
+@given(instance=langc_LinkableArtifact_strategy)
 @settings(max_examples=50)
-def test_langc::linkableartifact_instantiation(instance):
-    assert isinstance(instance, langc::LinkableArtifact)
-
-@given(instance=langc::LinkableArtifact_strategy)
-def test_langc::linkableartifact_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_langc_linkableartifact_instantiation(instance):
+    assert isinstance(instance, langc_LinkableArtifact)
 
 
-@given(instance=langc::LinkableArtifact_strategy)
-def test_langc::linkableartifact_name_setter(instance):
+
+@given(instance=langc_LinkableArtifact_strategy)
+def test_langc_linkableartifact_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=langc::System_strategy)
+@given(instance=langc_System_strategy)
 @settings(max_examples=50)
-def test_langc::system_instantiation(instance):
-    assert isinstance(instance, langc::System)
+def test_langc_system_instantiation(instance):
+    assert isinstance(instance, langc_System)
 
 @given(instance=SwitchClause_strategy)
 @settings(max_examples=50)
 def test_switchclause_instantiation(instance):
     assert isinstance(instance, SwitchClause)
 
-@given(instance=langc::LabeledClause_strategy)
+@given(instance=langc_LabeledClause_strategy)
 @settings(max_examples=50)
-def test_langc::labeledclause_instantiation(instance):
-    assert isinstance(instance, langc::LabeledClause)
+def test_langc_labeledclause_instantiation(instance):
+    assert isinstance(instance, langc_LabeledClause)
 
 @given(instance=CodeBlock_strategy)
 @settings(max_examples=50)
 def test_codeblock_instantiation(instance):
     assert isinstance(instance, CodeBlock)
 
-@given(instance=langc::CodeBlob_strategy)
+@given(instance=langc_ConditionalStatement_strategy)
 @settings(max_examples=50)
-def test_langc::codeblob_instantiation(instance):
-    assert isinstance(instance, langc::CodeBlob)
+def test_langc_conditionalstatement_instantiation(instance):
+    assert isinstance(instance, langc_ConditionalStatement)
 
-@given(instance=langc::CodeBlob_strategy)
-def test_langc::codeblob_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=langc_CodeBlob_strategy)
+@settings(max_examples=50)
+def test_langc_codeblob_instantiation(instance):
+    assert isinstance(instance, langc_CodeBlob)
 
 
-@given(instance=langc::CodeBlob_strategy)
-def test_langc::codeblob_text_setter(instance):
+
+@given(instance=langc_CodeBlob_strategy)
+def test_langc_codeblob_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=langc::CodeBlob_strategy)
-def test_langc::codeblob_markerComment_type(instance):
-    assert isinstance(instance.markerComment, str)
 
 
-@given(instance=langc::CodeBlob_strategy)
-def test_langc::codeblob_markerComment_setter(instance):
+@given(instance=langc_CodeBlob_strategy)
+def test_langc_codeblob_markerComment_setter(instance):
     original = instance.markerComment
     instance.markerComment = original
     assert instance.markerComment == original
 
-@given(instance=langc::ConditionalStatement_strategy)
+@given(instance=langc_SwitchClause_strategy)
 @settings(max_examples=50)
-def test_langc::conditionalstatement_instantiation(instance):
-    assert isinstance(instance, langc::ConditionalStatement)
-
-@given(instance=langc::SwitchClause_strategy)
-@settings(max_examples=50)
-def test_langc::switchclause_instantiation(instance):
-    assert isinstance(instance, langc::SwitchClause)
-
-@given(instance=langc::SwitchClause_strategy)
-def test_langc::switchclause_fallthrough_type(instance):
-    assert isinstance(instance.fallthrough, bool)
+def test_langc_switchclause_instantiation(instance):
+    assert isinstance(instance, langc_SwitchClause)
 
 
-@given(instance=langc::SwitchClause_strategy)
-def test_langc::switchclause_fallthrough_setter(instance):
+
+@given(instance=langc_SwitchClause_strategy)
+def test_langc_switchclause_fallthrough_setter(instance):
     original = instance.fallthrough
     instance.fallthrough = original
     assert instance.fallthrough == original
@@ -2099,58 +2087,55 @@ def test_langc::switchclause_fallthrough_setter(instance):
 def test_filename_instantiation(instance):
     assert isinstance(instance, FileName)
 
-@given(instance=langc::SystemFileName_strategy)
+@given(instance=langc_SystemFileName_strategy)
 @settings(max_examples=50)
-def test_langc::systemfilename_instantiation(instance):
-    assert isinstance(instance, langc::SystemFileName)
+def test_langc_systemfilename_instantiation(instance):
+    assert isinstance(instance, langc_SystemFileName)
 
-@given(instance=langc::BindableValue_strategy)
+@given(instance=langc_BindableValue_strategy)
 @settings(max_examples=50)
-def test_langc::bindablevalue_instantiation(instance):
-    assert isinstance(instance, langc::BindableValue)
+def test_langc_bindablevalue_instantiation(instance):
+    assert isinstance(instance, langc_BindableValue)
 
 @given(instance=Sizeof_strategy)
 @settings(max_examples=50)
 def test_sizeof_instantiation(instance):
     assert isinstance(instance, Sizeof)
 
-@given(instance=langc::SizeofExpr_strategy)
+@given(instance=langc_SizeofExpr_strategy)
 @settings(max_examples=50)
-def test_langc::sizeofexpr_instantiation(instance):
-    assert isinstance(instance, langc::SizeofExpr)
+def test_langc_sizeofexpr_instantiation(instance):
+    assert isinstance(instance, langc_SizeofExpr)
 
-@given(instance=langc::SizeofType_strategy)
+@given(instance=langc_SizeofType_strategy)
 @settings(max_examples=50)
-def test_langc::sizeoftype_instantiation(instance):
-    assert isinstance(instance, langc::SizeofType)
+def test_langc_sizeoftype_instantiation(instance):
+    assert isinstance(instance, langc_SizeofType)
 
-@given(instance=langc::Dependency_strategy)
+@given(instance=langc_Dependency_strategy)
 @settings(max_examples=50)
-def test_langc::dependency_instantiation(instance):
-    assert isinstance(instance, langc::Dependency)
+def test_langc_dependency_instantiation(instance):
+    assert isinstance(instance, langc_Dependency)
 
 @given(instance=Directive_strategy)
 @settings(max_examples=50)
 def test_directive_instantiation(instance):
     assert isinstance(instance, Directive)
 
-@given(instance=langc::WhileStatement_strategy)
+@given(instance=langc_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_langc::whilestatement_instantiation(instance):
-    assert isinstance(instance, langc::WhileStatement)
+def test_langc_whilestatement_instantiation(instance):
+    assert isinstance(instance, langc_WhileStatement)
 
-@given(instance=langc::SubSystem_strategy)
+@given(instance=langc_SubSystem_strategy)
 @settings(max_examples=50)
-def test_langc::subsystem_instantiation(instance):
-    assert isinstance(instance, langc::SubSystem)
-
-@given(instance=langc::SubSystem_strategy)
-def test_langc::subsystem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_langc_subsystem_instantiation(instance):
+    assert isinstance(instance, langc_SubSystem)
 
 
-@given(instance=langc::SubSystem_strategy)
-def test_langc::subsystem_name_setter(instance):
+
+@given(instance=langc_SubSystem_strategy)
+def test_langc_subsystem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2160,28 +2145,25 @@ def test_langc::subsystem_name_setter(instance):
 def test_elementaccess_instantiation(instance):
     assert isinstance(instance, ElementAccess)
 
-@given(instance=langc::MemberAccess_strategy)
+@given(instance=langc_MemberAccess_strategy)
 @settings(max_examples=50)
-def test_langc::memberaccess_instantiation(instance):
-    assert isinstance(instance, langc::MemberAccess)
+def test_langc_memberaccess_instantiation(instance):
+    assert isinstance(instance, langc_MemberAccess)
 
 @given(instance=Name_strategy)
 @settings(max_examples=50)
 def test_name_instantiation(instance):
     assert isinstance(instance, Name)
 
-@given(instance=langc::FolderName_strategy)
+@given(instance=langc_FolderName_strategy)
 @settings(max_examples=50)
-def test_langc::foldername_instantiation(instance):
-    assert isinstance(instance, langc::FolderName)
-
-@given(instance=langc::FolderName_strategy)
-def test_langc::foldername_api_type(instance):
-    assert isinstance(instance.api, bool)
+def test_langc_foldername_instantiation(instance):
+    assert isinstance(instance, langc_FolderName)
 
 
-@given(instance=langc::FolderName_strategy)
-def test_langc::foldername_api_setter(instance):
+
+@given(instance=langc_FolderName_strategy)
+def test_langc_foldername_api_setter(instance):
     original = instance.api
     instance.api = original
     assert instance.api == original
@@ -2191,388 +2173,340 @@ def test_langc::foldername_api_setter(instance):
 def test_filedependency_instantiation(instance):
     assert isinstance(instance, FileDependency)
 
-@given(instance=langc::UserInclude_strategy)
+@given(instance=langc_UserInclude_strategy)
 @settings(max_examples=50)
-def test_langc::userinclude_instantiation(instance):
-    assert isinstance(instance, langc::UserInclude)
+def test_langc_userinclude_instantiation(instance):
+    assert isinstance(instance, langc_UserInclude)
 
-@given(instance=langc::SystemInclude_strategy)
+@given(instance=langc_SystemInclude_strategy)
 @settings(max_examples=50)
-def test_langc::systeminclude_instantiation(instance):
-    assert isinstance(instance, langc::SystemInclude)
+def test_langc_systeminclude_instantiation(instance):
+    assert isinstance(instance, langc_SystemInclude)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=langc::DependencyBlob_strategy)
+@given(instance=langc_DependencyBlob_strategy)
 @settings(max_examples=50)
-def test_langc::dependencyblob_instantiation(instance):
-    assert isinstance(instance, langc::DependencyBlob)
-
-@given(instance=langc::DependencyBlob_strategy)
-def test_langc::dependencyblob_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_langc_dependencyblob_instantiation(instance):
+    assert isinstance(instance, langc_DependencyBlob)
 
 
-@given(instance=langc::DependencyBlob_strategy)
-def test_langc::dependencyblob_text_setter(instance):
+
+@given(instance=langc_DependencyBlob_strategy)
+def test_langc_dependencyblob_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=langc::DependencyBlob_strategy)
-def test_langc::dependencyblob_markerComment_type(instance):
-    assert isinstance(instance.markerComment, str)
 
 
-@given(instance=langc::DependencyBlob_strategy)
-def test_langc::dependencyblob_markerComment_setter(instance):
+@given(instance=langc_DependencyBlob_strategy)
+def test_langc_dependencyblob_markerComment_setter(instance):
     original = instance.markerComment
     instance.markerComment = original
     assert instance.markerComment == original
 
-@given(instance=langc::FileDependency_strategy)
+@given(instance=langc_FileDependency_strategy)
 @settings(max_examples=50)
-def test_langc::filedependency_instantiation(instance):
-    assert isinstance(instance, langc::FileDependency)
+def test_langc_filedependency_instantiation(instance):
+    assert isinstance(instance, langc_FileDependency)
 
 @given(instance=ExpressionStatement_strategy)
 @settings(max_examples=50)
 def test_expressionstatement_instantiation(instance):
     assert isinstance(instance, ExpressionStatement)
 
-@given(instance=langc::ReturnStatement_strategy)
+@given(instance=langc_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_langc::returnstatement_instantiation(instance):
-    assert isinstance(instance, langc::ReturnStatement)
+def test_langc_returnstatement_instantiation(instance):
+    assert isinstance(instance, langc_ReturnStatement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=langc::SwitchStatement_strategy)
+@given(instance=langc_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_langc::switchstatement_instantiation(instance):
-    assert isinstance(instance, langc::SwitchStatement)
+def test_langc_switchstatement_instantiation(instance):
+    assert isinstance(instance, langc_SwitchStatement)
 
-@given(instance=langc::BreakStatement_strategy)
+@given(instance=langc_VariableDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_langc::breakstatement_instantiation(instance):
-    assert isinstance(instance, langc::BreakStatement)
+def test_langc_variabledeclarationstatement_instantiation(instance):
+    assert isinstance(instance, langc_VariableDeclarationStatement)
 
-@given(instance=langc::VariableDeclarationStatement_strategy)
+@given(instance=langc_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_langc::variabledeclarationstatement_instantiation(instance):
-    assert isinstance(instance, langc::VariableDeclarationStatement)
+def test_langc_breakstatement_instantiation(instance):
+    assert isinstance(instance, langc_BreakStatement)
 
-@given(instance=langc::CodeBlock_strategy)
+@given(instance=langc_CodeBlock_strategy)
 @settings(max_examples=50)
-def test_langc::codeblock_instantiation(instance):
-    assert isinstance(instance, langc::CodeBlock)
-
-@given(instance=langc::CodeBlock_strategy)
-def test_langc::codeblock_forceBraces_type(instance):
-    assert isinstance(instance.forceBraces, bool)
+def test_langc_codeblock_instantiation(instance):
+    assert isinstance(instance, langc_CodeBlock)
 
 
-@given(instance=langc::CodeBlock_strategy)
-def test_langc::codeblock_forceBraces_setter(instance):
+
+@given(instance=langc_CodeBlock_strategy)
+def test_langc_codeblock_forceBraces_setter(instance):
     original = instance.forceBraces
     instance.forceBraces = original
     assert instance.forceBraces == original
 
-@given(instance=langc::ExpressionStatement_strategy)
+@given(instance=langc_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_langc::expressionstatement_instantiation(instance):
-    assert isinstance(instance, langc::ExpressionStatement)
+def test_langc_expressionstatement_instantiation(instance):
+    assert isinstance(instance, langc_ExpressionStatement)
 
-@given(instance=langc::Statement_strategy)
+@given(instance=langc_Statement_strategy)
 @settings(max_examples=50)
-def test_langc::statement_instantiation(instance):
-    assert isinstance(instance, langc::Statement)
+def test_langc_statement_instantiation(instance):
+    assert isinstance(instance, langc_Statement)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=langc::FloatingLiteral_strategy)
+@given(instance=langc_CharacterLiteral_strategy)
 @settings(max_examples=50)
-def test_langc::floatingliteral_instantiation(instance):
-    assert isinstance(instance, langc::FloatingLiteral)
-
-@given(instance=langc::FloatingLiteral_strategy)
-def test_langc::floatingliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_langc_characterliteral_instantiation(instance):
+    assert isinstance(instance, langc_CharacterLiteral)
 
 
-@given(instance=langc::FloatingLiteral_strategy)
-def test_langc::floatingliteral_value_setter(instance):
+
+@given(instance=langc_CharacterLiteral_strategy)
+def test_langc_characterliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=langc::CharacterLiteral_strategy)
+@given(instance=langc_FloatingLiteral_strategy)
 @settings(max_examples=50)
-def test_langc::characterliteral_instantiation(instance):
-    assert isinstance(instance, langc::CharacterLiteral)
-
-@given(instance=langc::CharacterLiteral_strategy)
-def test_langc::characterliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_langc_floatingliteral_instantiation(instance):
+    assert isinstance(instance, langc_FloatingLiteral)
 
 
-@given(instance=langc::CharacterLiteral_strategy)
-def test_langc::characterliteral_value_setter(instance):
+
+@given(instance=langc_FloatingLiteral_strategy)
+def test_langc_floatingliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=langc::IntegralLiteral_strategy)
+@given(instance=langc_IntegralLiteral_strategy)
 @settings(max_examples=50)
-def test_langc::integralliteral_instantiation(instance):
-    assert isinstance(instance, langc::IntegralLiteral)
-
-@given(instance=langc::IntegralLiteral_strategy)
-def test_langc::integralliteral_bytes_type(instance):
-    assert isinstance(instance.bytes, str)
+def test_langc_integralliteral_instantiation(instance):
+    assert isinstance(instance, langc_IntegralLiteral)
 
 
-@given(instance=langc::IntegralLiteral_strategy)
-def test_langc::integralliteral_bytes_setter(instance):
+
+@given(instance=langc_IntegralLiteral_strategy)
+def test_langc_integralliteral_bytes_setter(instance):
     original = instance.bytes
     instance.bytes = original
     assert instance.bytes == original
 
-@given(instance=langc::IntegralLiteral_strategy)
-def test_langc::integralliteral_signed_type(instance):
-    assert isinstance(instance.signed, bool)
 
 
-@given(instance=langc::IntegralLiteral_strategy)
-def test_langc::integralliteral_signed_setter(instance):
-    original = instance.signed
-    instance.signed = original
-    assert instance.signed == original
-
-@given(instance=langc::IntegralLiteral_strategy)
-def test_langc::integralliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=langc::IntegralLiteral_strategy)
-def test_langc::integralliteral_value_setter(instance):
+@given(instance=langc_IntegralLiteral_strategy)
+def test_langc_integralliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+
+
+@given(instance=langc_IntegralLiteral_strategy)
+def test_langc_integralliteral_signed_setter(instance):
+    original = instance.signed
+    instance.signed = original
+    assert instance.signed == original
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=langc::LogicalComparison_strategy)
+@given(instance=langc_FunctionAddress_strategy)
 @settings(max_examples=50)
-def test_langc::logicalcomparison_instantiation(instance):
-    assert isinstance(instance, langc::LogicalComparison)
+def test_langc_functionaddress_instantiation(instance):
+    assert isinstance(instance, langc_FunctionAddress)
 
-@given(instance=langc::LogicalComparison_strategy)
-def test_langc::logicalcomparison_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=langc::LogicalComparison_strategy)
-def test_langc::logicalcomparison_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=langc::CastExpr_strategy)
+@given(instance=langc_ExpressionBlob_strategy)
 @settings(max_examples=50)
-def test_langc::castexpr_instantiation(instance):
-    assert isinstance(instance, langc::CastExpr)
-
-@given(instance=langc::ElementAccess_strategy)
-@settings(max_examples=50)
-def test_langc::elementaccess_instantiation(instance):
-    assert isinstance(instance, langc::ElementAccess)
-
-@given(instance=langc::Sizeof_strategy)
-@settings(max_examples=50)
-def test_langc::sizeof_instantiation(instance):
-    assert isinstance(instance, langc::Sizeof)
-
-@given(instance=langc::Literal_strategy)
-@settings(max_examples=50)
-def test_langc::literal_instantiation(instance):
-    assert isinstance(instance, langc::Literal)
-
-@given(instance=langc::Literal_strategy)
-def test_langc::literal_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
+def test_langc_expressionblob_instantiation(instance):
+    assert isinstance(instance, langc_ExpressionBlob)
 
 
-@given(instance=langc::Literal_strategy)
-def test_langc::literal_primitiveType_setter(instance):
-    original = instance.primitiveType
-    instance.primitiveType = original
-    assert instance.primitiveType == original
 
-@given(instance=langc::ExpressionBlob_strategy)
-@settings(max_examples=50)
-def test_langc::expressionblob_instantiation(instance):
-    assert isinstance(instance, langc::ExpressionBlob)
-
-@given(instance=langc::ExpressionBlob_strategy)
-def test_langc::expressionblob_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=langc::ExpressionBlob_strategy)
-def test_langc::expressionblob_text_setter(instance):
+@given(instance=langc_ExpressionBlob_strategy)
+def test_langc_expressionblob_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=langc::FunctionAddress_strategy)
+@given(instance=langc_Literal_strategy)
 @settings(max_examples=50)
-def test_langc::functionaddress_instantiation(instance):
-    assert isinstance(instance, langc::FunctionAddress)
+def test_langc_literal_instantiation(instance):
+    assert isinstance(instance, langc_Literal)
 
-@given(instance=langc::IndexExpr_strategy)
+
+
+@given(instance=langc_Literal_strategy)
+def test_langc_literal_primitiveType_setter(instance):
+    original = instance.primitiveType
+    instance.primitiveType = original
+    assert instance.primitiveType == original
+
+@given(instance=langc_Sizeof_strategy)
 @settings(max_examples=50)
-def test_langc::indexexpr_instantiation(instance):
-    assert isinstance(instance, langc::IndexExpr)
+def test_langc_sizeof_instantiation(instance):
+    assert isinstance(instance, langc_Sizeof)
 
-@given(instance=langc::BinaryOperation_strategy)
+@given(instance=langc_ElementAccess_strategy)
 @settings(max_examples=50)
-def test_langc::binaryoperation_instantiation(instance):
-    assert isinstance(instance, langc::BinaryOperation)
+def test_langc_elementaccess_instantiation(instance):
+    assert isinstance(instance, langc_ElementAccess)
 
-@given(instance=langc::BinaryOperation_strategy)
-def test_langc::binaryoperation_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=langc_LogicalComparison_strategy)
+@settings(max_examples=50)
+def test_langc_logicalcomparison_instantiation(instance):
+    assert isinstance(instance, langc_LogicalComparison)
 
 
-@given(instance=langc::BinaryOperation_strategy)
-def test_langc::binaryoperation_operator_setter(instance):
+
+@given(instance=langc_LogicalComparison_strategy)
+def test_langc_logicalcomparison_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=langc::StringLiteral_strategy)
+@given(instance=langc_IndexExpr_strategy)
 @settings(max_examples=50)
-def test_langc::stringliteral_instantiation(instance):
-    assert isinstance(instance, langc::StringLiteral)
+def test_langc_indexexpr_instantiation(instance):
+    assert isinstance(instance, langc_IndexExpr)
 
-@given(instance=langc::StringLiteral_strategy)
-def test_langc::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=langc_CastExpr_strategy)
+@settings(max_examples=50)
+def test_langc_castexpr_instantiation(instance):
+    assert isinstance(instance, langc_CastExpr)
+
+@given(instance=langc_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_langc_stringliteral_instantiation(instance):
+    assert isinstance(instance, langc_StringLiteral)
 
 
-@given(instance=langc::StringLiteral_strategy)
-def test_langc::stringliteral_value_setter(instance):
+
+@given(instance=langc_StringLiteral_strategy)
+def test_langc_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=langc::DereferenceExpr_strategy)
+@given(instance=langc_BinaryOperation_strategy)
 @settings(max_examples=50)
-def test_langc::dereferenceexpr_instantiation(instance):
-    assert isinstance(instance, langc::DereferenceExpr)
+def test_langc_binaryoperation_instantiation(instance):
+    assert isinstance(instance, langc_BinaryOperation)
 
-@given(instance=langc::BlockInitializer_strategy)
+
+
+@given(instance=langc_BinaryOperation_strategy)
+def test_langc_binaryoperation_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=langc_BlockInitializer_strategy)
 @settings(max_examples=50)
-def test_langc::blockinitializer_instantiation(instance):
-    assert isinstance(instance, langc::BlockInitializer)
+def test_langc_blockinitializer_instantiation(instance):
+    assert isinstance(instance, langc_BlockInitializer)
 
-@given(instance=langc::AddressOfExpr_strategy)
+@given(instance=langc_AddressOfExpr_strategy)
 @settings(max_examples=50)
-def test_langc::addressofexpr_instantiation(instance):
-    assert isinstance(instance, langc::AddressOfExpr)
+def test_langc_addressofexpr_instantiation(instance):
+    assert isinstance(instance, langc_AddressOfExpr)
 
-@given(instance=langc::FunctionCall_strategy)
+@given(instance=langc_DereferenceExpr_strategy)
 @settings(max_examples=50)
-def test_langc::functioncall_instantiation(instance):
-    assert isinstance(instance, langc::FunctionCall)
+def test_langc_dereferenceexpr_instantiation(instance):
+    assert isinstance(instance, langc_DereferenceExpr)
 
-@given(instance=langc::Expression_strategy)
+@given(instance=langc_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_langc::expression_instantiation(instance):
-    assert isinstance(instance, langc::Expression)
+def test_langc_functioncall_instantiation(instance):
+    assert isinstance(instance, langc_FunctionCall)
 
-@given(instance=langc::Expression_strategy)
-def test_langc::expression_precendence_type(instance):
-    assert isinstance(instance.precendence, int)
+@given(instance=langc_Expression_strategy)
+@settings(max_examples=50)
+def test_langc_expression_instantiation(instance):
+    assert isinstance(instance, langc_Expression)
 
 
-@given(instance=langc::Expression_strategy)
-def test_langc::expression_precendence_setter(instance):
+
+@given(instance=langc_Expression_strategy)
+def test_langc_expression_precendence_setter(instance):
     original = instance.precendence
     instance.precendence = original
     assert instance.precendence == original
 
-@given(instance=langc::Element_strategy)
+@given(instance=langc_Element_strategy)
 @settings(max_examples=50)
-def test_langc::element_instantiation(instance):
-    assert isinstance(instance, langc::Element)
+def test_langc_element_instantiation(instance):
+    assert isinstance(instance, langc_Element)
 
-@given(instance=langc::NamedReference_strategy)
+@given(instance=langc_NamedReference_strategy)
 @settings(max_examples=50)
-def test_langc::namedreference_instantiation(instance):
-    assert isinstance(instance, langc::NamedReference)
+def test_langc_namedreference_instantiation(instance):
+    assert isinstance(instance, langc_NamedReference)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=langc::Enum_strategy)
+@given(instance=langc_Enum_strategy)
 @settings(max_examples=50)
-def test_langc::enum_instantiation(instance):
-    assert isinstance(instance, langc::Enum)
+def test_langc_enum_instantiation(instance):
+    assert isinstance(instance, langc_Enum)
 
-@given(instance=langc::VariableDeclaration_strategy)
+@given(instance=langc_Structure_strategy)
 @settings(max_examples=50)
-def test_langc::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, langc::VariableDeclaration)
+def test_langc_structure_instantiation(instance):
+    assert isinstance(instance, langc_Structure)
 
-@given(instance=langc::VariableDeclaration_strategy)
-def test_langc::variabledeclaration_linkage_type(instance):
-    assert isinstance(instance.linkage, str)
+@given(instance=langc_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_langc_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, langc_VariableDeclaration)
 
 
-@given(instance=langc::VariableDeclaration_strategy)
-def test_langc::variabledeclaration_linkage_setter(instance):
+
+@given(instance=langc_VariableDeclaration_strategy)
+def test_langc_variabledeclaration_linkage_setter(instance):
     original = instance.linkage
     instance.linkage = original
     assert instance.linkage == original
 
-@given(instance=langc::Typedef_strategy)
+@given(instance=langc_Typedef_strategy)
 @settings(max_examples=50)
-def test_langc::typedef_instantiation(instance):
-    assert isinstance(instance, langc::Typedef)
+def test_langc_typedef_instantiation(instance):
+    assert isinstance(instance, langc_Typedef)
 
-@given(instance=langc::Structure_strategy)
+@given(instance=langc_Function_strategy)
 @settings(max_examples=50)
-def test_langc::structure_instantiation(instance):
-    assert isinstance(instance, langc::Structure)
-
-@given(instance=langc::Function_strategy)
-@settings(max_examples=50)
-def test_langc::function_instantiation(instance):
-    assert isinstance(instance, langc::Function)
-
-@given(instance=langc::Function_strategy)
-def test_langc::function_linkage_type(instance):
-    assert isinstance(instance.linkage, str)
+def test_langc_function_instantiation(instance):
+    assert isinstance(instance, langc_Function)
 
 
-@given(instance=langc::Function_strategy)
-def test_langc::function_linkage_setter(instance):
+
+@given(instance=langc_Function_strategy)
+def test_langc_function_linkage_setter(instance):
     original = instance.linkage
     instance.linkage = original
     assert instance.linkage == original
@@ -2582,38 +2516,35 @@ def test_langc::function_linkage_setter(instance):
 def test_structure_instantiation(instance):
     assert isinstance(instance, Structure)
 
-@given(instance=langc::Union_strategy)
+@given(instance=langc_Union_strategy)
 @settings(max_examples=50)
-def test_langc::union_instantiation(instance):
-    assert isinstance(instance, langc::Union)
+def test_langc_union_instantiation(instance):
+    assert isinstance(instance, langc_Union)
 
-@given(instance=langc::Struct_strategy)
+@given(instance=langc_Struct_strategy)
 @settings(max_examples=50)
-def test_langc::struct_instantiation(instance):
-    assert isinstance(instance, langc::Struct)
+def test_langc_struct_instantiation(instance):
+    assert isinstance(instance, langc_Struct)
 
-@given(instance=langc::Directive_strategy)
+@given(instance=langc_Directive_strategy)
 @settings(max_examples=50)
-def test_langc::directive_instantiation(instance):
-    assert isinstance(instance, langc::Directive)
+def test_langc_directive_instantiation(instance):
+    assert isinstance(instance, langc_Directive)
 
-@given(instance=langc::DependencyList_strategy)
+@given(instance=langc_DependencyList_strategy)
 @settings(max_examples=50)
-def test_langc::dependencylist_instantiation(instance):
-    assert isinstance(instance, langc::DependencyList)
+def test_langc_dependencylist_instantiation(instance):
+    assert isinstance(instance, langc_DependencyList)
 
-@given(instance=langc::FileName_strategy)
+@given(instance=langc_FileName_strategy)
 @settings(max_examples=50)
-def test_langc::filename_instantiation(instance):
-    assert isinstance(instance, langc::FileName)
-
-@given(instance=langc::FileName_strategy)
-def test_langc::filename_hasObjectCode_type(instance):
-    assert isinstance(instance.hasObjectCode, bool)
+def test_langc_filename_instantiation(instance):
+    assert isinstance(instance, langc_FileName)
 
 
-@given(instance=langc::FileName_strategy)
-def test_langc::filename_hasObjectCode_setter(instance):
+
+@given(instance=langc_FileName_strategy)
+def test_langc_filename_hasObjectCode_setter(instance):
     original = instance.hasObjectCode
     instance.hasObjectCode = original
     assert instance.hasObjectCode == original
@@ -2623,55 +2554,46 @@ def test_langc::filename_hasObjectCode_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=langc::BuiltInType_strategy)
+@given(instance=langc_BuiltInType_strategy)
 @settings(max_examples=50)
-def test_langc::builtintype_instantiation(instance):
-    assert isinstance(instance, langc::BuiltInType)
-
-@given(instance=langc::BuiltInType_strategy)
-def test_langc::builtintype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_langc_builtintype_instantiation(instance):
+    assert isinstance(instance, langc_BuiltInType)
 
 
-@given(instance=langc::BuiltInType_strategy)
-def test_langc::builtintype_type_setter(instance):
+
+@given(instance=langc_BuiltInType_strategy)
+def test_langc_builtintype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=langc::UserElement_strategy)
+@given(instance=langc_UserElement_strategy)
 @settings(max_examples=50)
-def test_langc::userelement_instantiation(instance):
-    assert isinstance(instance, langc::UserElement)
-
-@given(instance=langc::UserElement_strategy)
-def test_langc::userelement_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_langc_userelement_instantiation(instance):
+    assert isinstance(instance, langc_UserElement)
 
 
-@given(instance=langc::UserElement_strategy)
-def test_langc::userelement_kind_setter(instance):
+
+@given(instance=langc_UserElement_strategy)
+def test_langc_userelement_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=langc::ElementList_strategy)
+@given(instance=langc_ElementList_strategy)
 @settings(max_examples=50)
-def test_langc::elementlist_instantiation(instance):
-    assert isinstance(instance, langc::ElementList)
+def test_langc_elementlist_instantiation(instance):
+    assert isinstance(instance, langc_ElementList)
 
-@given(instance=langc::Name_strategy)
+@given(instance=langc_Name_strategy)
 @settings(max_examples=50)
-def test_langc::name_instantiation(instance):
-    assert isinstance(instance, langc::Name)
-
-@given(instance=langc::Name_strategy)
-def test_langc::name_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_langc_name_instantiation(instance):
+    assert isinstance(instance, langc_Name)
 
 
-@given(instance=langc::Name_strategy)
-def test_langc::name_name_setter(instance):
+
+@given(instance=langc_Name_strategy)
+def test_langc_name_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2681,59 +2603,53 @@ def test_langc::name_name_setter(instance):
 def test_bindablevalue_instantiation(instance):
     assert isinstance(instance, BindableValue)
 
-@given(instance=langc::ElementReference_strategy)
+@given(instance=langc_ElementReference_strategy)
 @settings(max_examples=50)
-def test_langc::elementreference_instantiation(instance):
-    assert isinstance(instance, langc::ElementReference)
-
-@given(instance=langc::ElementReference_strategy)
-def test_langc::elementreference_cvQualifier_type(instance):
-    assert isinstance(instance.cvQualifier, str)
+def test_langc_elementreference_instantiation(instance):
+    assert isinstance(instance, langc_ElementReference)
 
 
-@given(instance=langc::ElementReference_strategy)
-def test_langc::elementreference_cvQualifier_setter(instance):
+
+@given(instance=langc_ElementReference_strategy)
+def test_langc_elementreference_cvQualifier_setter(instance):
     original = instance.cvQualifier
     instance.cvQualifier = original
     assert instance.cvQualifier == original
 
-@given(instance=langc::ElementReference_strategy)
-def test_langc::elementreference_pointerSpec_type(instance):
-    assert isinstance(instance.pointerSpec, str)
 
 
-@given(instance=langc::ElementReference_strategy)
-def test_langc::elementreference_pointerSpec_setter(instance):
+@given(instance=langc_ElementReference_strategy)
+def test_langc_elementreference_pointerSpec_setter(instance):
     original = instance.pointerSpec
     instance.pointerSpec = original
     assert instance.pointerSpec == original
 
-@given(instance=langc::Enumerator_strategy)
+@given(instance=langc_Enumerator_strategy)
 @settings(max_examples=50)
-def test_langc::enumerator_instantiation(instance):
-    assert isinstance(instance, langc::Enumerator)
+def test_langc_enumerator_instantiation(instance):
+    assert isinstance(instance, langc_Enumerator)
 
-@given(instance=langc::Macro_strategy)
+@given(instance=langc_Macro_strategy)
 @settings(max_examples=50)
-def test_langc::macro_instantiation(instance):
-    assert isinstance(instance, langc::Macro)
+def test_langc_macro_instantiation(instance):
+    assert isinstance(instance, langc_Macro)
 
 @given(instance=UserElement_strategy)
 @settings(max_examples=50)
 def test_userelement_instantiation(instance):
     assert isinstance(instance, UserElement)
 
-@given(instance=langc::FunctionPointer_strategy)
+@given(instance=langc_FunctionImplementation_strategy)
 @settings(max_examples=50)
-def test_langc::functionpointer_instantiation(instance):
-    assert isinstance(instance, langc::FunctionPointer)
+def test_langc_functionimplementation_instantiation(instance):
+    assert isinstance(instance, langc_FunctionImplementation)
 
-@given(instance=langc::FunctionImplementation_strategy)
+@given(instance=langc_FunctionPointer_strategy)
 @settings(max_examples=50)
-def test_langc::functionimplementation_instantiation(instance):
-    assert isinstance(instance, langc::FunctionImplementation)
+def test_langc_functionpointer_instantiation(instance):
+    assert isinstance(instance, langc_FunctionPointer)
 
-@given(instance=langc::NamedElement_strategy)
+@given(instance=langc_NamedElement_strategy)
 @settings(max_examples=50)
-def test_langc::namedelement_instantiation(instance):
-    assert isinstance(instance, langc::NamedElement)
+def test_langc_namedelement_instantiation(instance):
+    assert isinstance(instance, langc_NamedElement)

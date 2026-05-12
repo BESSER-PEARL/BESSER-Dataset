@@ -3,107 +3,107 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ecdarText::EObject,
+from python_code import (
+    ecdarText_EObject,
     ETExpression,
-    ecdarText::ETBitAndExpression,
-    ecdarText::ETAdditionAssignmentExpression,
-    ecdarText::ETConditionalExpression,
-    ecdarText::ETAssignmentExpression,
-    ecdarText::ETModuloAssignmentExpression,
-    ecdarText::ETGreaterEqualExpression,
-    ecdarText::ETAddExpression,
-    ecdarText::ETPreDecrementExpression,
-    ecdarText::ETBitRightExpression,
-    ecdarText::ETBitOrAssignmentExpression,
-    ecdarText::ETLogicAndExpression,
-    ecdarText::ETBooleanLiteral,
-    ecdarText::ETExistsExpression,
-    ecdarText::ETBitXORExpression,
-    ecdarText::ETBitOrExpression,
-    ecdarText::ETLogicNotExpression,
-    ecdarText::ETMultiplicationAssignmentExpression,
-    ecdarText::ETNumberLiteral,
-    ecdarText::ETMinExpression,
-    ecdarText::ETSubtractExpression,
-    ecdarText::ETImplyExpression,
-    ecdarText::ETPreIncrementExpression,
-    ecdarText::ETPostDecrementExpression,
-    ecdarText::ETMultiplyExpression,
-    ecdarText::ETMinusExpression,
-    ecdarText::ETBitLeftAssignmentExpression,
-    ecdarText::ETModuloExpression,
-    ecdarText::ETBitLeftExpression,
-    ecdarText::ETMaxExpression,
-    ecdarText::ETStructExpression,
-    ecdarText::ETBitXORAssignmentExpression,
-    ecdarText::ETLogicOrExpression,
-    ecdarText::ETLessEqualExpression,
-    ecdarText::ETArrayExpression,
-    ecdarText::ETEqualExpression,
-    ecdarText::ETDivideExpression,
-    ecdarText::ETLessExpression,
-    ecdarText::ETBitRightAssignmentExpression,
-    ecdarText::ETBitAndAssignmentExpression,
-    ecdarText::ETGreaterExpression,
-    ecdarText::ETReference,
-    ecdarText::ETUnequalExpression,
-    ecdarText::ETPostIncrementExpression,
-    ecdarText::ETDivisionAssignmentExpression,
-    ecdarText::ETForallExpression,
-    ecdarText::ETSubtractionAssignmentExpression,
+    ecdarText_ETExistsExpression,
+    ecdarText_ETDivisionAssignmentExpression,
+    ecdarText_ETImplyExpression,
+    ecdarText_ETLogicAndExpression,
+    ecdarText_ETBitLeftExpression,
+    ecdarText_ETReference,
+    ecdarText_ETBitRightExpression,
+    ecdarText_ETArrayExpression,
+    ecdarText_ETMultiplyExpression,
+    ecdarText_ETUnequalExpression,
+    ecdarText_ETLessExpression,
+    ecdarText_ETSubtractExpression,
+    ecdarText_ETMaxExpression,
+    ecdarText_ETAdditionAssignmentExpression,
+    ecdarText_ETBitLeftAssignmentExpression,
+    ecdarText_ETGreaterEqualExpression,
+    ecdarText_ETLessEqualExpression,
+    ecdarText_ETNumberLiteral,
+    ecdarText_ETMinExpression,
+    ecdarText_ETBitRightAssignmentExpression,
+    ecdarText_ETModuloAssignmentExpression,
+    ecdarText_ETPreDecrementExpression,
+    ecdarText_ETPostIncrementExpression,
+    ecdarText_ETLogicNotExpression,
+    ecdarText_ETBitXORExpression,
+    ecdarText_ETBooleanLiteral,
+    ecdarText_ETBitAndExpression,
+    ecdarText_ETConditionalExpression,
+    ecdarText_ETEqualExpression,
+    ecdarText_ETBitOrExpression,
+    ecdarText_ETBitAndAssignmentExpression,
+    ecdarText_ETPreIncrementExpression,
+    ecdarText_ETBitXORAssignmentExpression,
+    ecdarText_ETPostDecrementExpression,
+    ecdarText_ETAddExpression,
+    ecdarText_ETStructExpression,
+    ecdarText_ETAssignmentExpression,
+    ecdarText_ETLogicOrExpression,
+    ecdarText_ETGreaterExpression,
+    ecdarText_ETMultiplicationAssignmentExpression,
+    ecdarText_ETMinusExpression,
+    ecdarText_ETBitOrAssignmentExpression,
+    ecdarText_ETDivideExpression,
+    ecdarText_ETModuloExpression,
+    ecdarText_ETForallExpression,
+    ecdarText_ETSubtractionAssignmentExpression,
     ETSpecificationExpression,
-    ecdarText::ETSpecificationInstantiation,
-    ecdarText::ETSpecificationReference,
-    ecdarText::ETSpecificationConjunctionExpression,
-    ecdarText::ETSpecificationDisjunctionExpression,
-    ecdarText::ETIO,
-    ecdarText::ETSelect,
-    ecdarText::ETEdge,
-    ecdarText::ETSpecificationCompositionExpression,
-    ecdarText::ETLocation,
-    ecdarText::ETParameter,
+    ecdarText_ETSpecificationInstantiation,
+    ecdarText_ETSpecificationReference,
+    ecdarText_ETSpecificationConjunctionExpression,
+    ecdarText_ETSpecificationDisjunctionExpression,
+    ecdarText_ETIO,
+    ecdarText_ETSelect,
+    ecdarText_ETEdge,
+    ecdarText_ETSpecificationCompositionExpression,
+    ecdarText_ETLocation,
+    ecdarText_ETParameter,
     ETSpecificationDefinition,
-    ecdarText::ETSpecificationTemplate,
-    ecdarText::ETSpecificationBody,
+    ecdarText_ETSpecificationTemplate,
+    ecdarText_ETSpecificationBody,
     ETSpecification,
-    ecdarText::ETSpecificationDefinition,
-    ecdarText::ETSpecificationBinding,
-    ecdarText::ETSpecificationExpression,
-    ecdarText::ETFieldID,
-    ecdarText::ETFieldDeclaration,
+    ecdarText_ETSpecificationDefinition,
+    ecdarText_ETSpecificationBinding,
+    ecdarText_ETSpecificationExpression,
+    ecdarText_ETFieldID,
+    ecdarText_ETFieldDeclaration,
     ETActionType,
-    ecdarText::ETOutputType,
-    ecdarText::ETInputType,
+    ecdarText_ETOutputType,
+    ecdarText_ETInputType,
     ETTypeIdentifier,
-    ecdarText::ETActionType,
-    ecdarText::ETBooleanType,
-    ecdarText::ETStructType,
-    ecdarText::ETScalarType,
-    ecdarText::ETTypeReference,
-    ecdarText::ETClockType,
-    ecdarText::ETIntegerType,
+    ecdarText_ETClockType,
+    ecdarText_ETBooleanType,
+    ecdarText_ETTypeReference,
+    ecdarText_ETStructType,
+    ecdarText_ETActionType,
+    ecdarText_ETScalarType,
+    ecdarText_ETIntegerType,
     ETInitialiser,
-    ecdarText::ETMultiInitialiser,
-    ecdarText::ETSingleInitialiser,
-    ecdarText::ETInitialiser,
-    ecdarText::ETVariableID,
+    ecdarText_ETMultiInitialiser,
+    ecdarText_ETSingleInitialiser,
+    ecdarText_ETInitialiser,
+    ecdarText_ETVariableID,
     ETDeclaration,
-    ecdarText::ETVariableDeclaration,
-    ecdarText::ETTypeIdentifier,
-    ecdarText::ETTypeModifiers,
-    ecdarText::ETType,
-    ecdarText::ETDeclaration,
-    ecdarText::ETExpression,
-    ecdarText::ETArrayDeclaration,
-    ecdarText::ETTypeID,
-    ecdarText::ETTypeDeclaration,
-    ecdarText::ETImport,
-    ecdarText::ETFile,
-    ecdarText::ETSpecification,
-    ecdarText::ETDeclarations,
+    ecdarText_ETVariableDeclaration,
+    ecdarText_ETTypeIdentifier,
+    ecdarText_ETTypeModifiers,
+    ecdarText_ETType,
+    ecdarText_ETDeclaration,
+    ecdarText_ETExpression,
+    ecdarText_ETArrayDeclaration,
+    ecdarText_ETTypeID,
+    ecdarText_ETTypeDeclaration,
+    ecdarText_ETImport,
+    ecdarText_ETFile,
+    ecdarText_ETSpecification,
+    ecdarText_ETDeclarations,
     ETIOType,
 )
 
@@ -113,16 +113,16 @@ from classes import (
 
 
 
-def test_ecdartext::eobject_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::EObject)
+def test_ecdartext_eobject_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_EObject)
 
 
-def test_ecdartext::eobject_constructor_exists():
-    assert callable(ecdarText::EObject.__init__)
+def test_ecdartext_eobject_constructor_exists():
+    assert callable(ecdarText_EObject.__init__)
 
 
-def test_ecdartext::eobject_constructor_args():
-    sig = inspect.signature(ecdarText::EObject.__init__)
+def test_ecdartext_eobject_constructor_args():
+    sig = inspect.signature(ecdarText_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -141,201 +141,23 @@ def test_etexpression_constructor_args():
 
 
 
-def test_ecdartext::etbitandexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitAndExpression)
+def test_ecdartext_etexistsexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETExistsExpression)
 
 
-def test_ecdartext::etbitandexpression_constructor_exists():
-    assert callable(ecdarText::ETBitAndExpression.__init__)
+def test_ecdartext_etexistsexpression_constructor_exists():
+    assert callable(ecdarText_ETExistsExpression.__init__)
 
 
-def test_ecdartext::etbitandexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etadditionassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETAdditionAssignmentExpression)
-
-
-def test_ecdartext::etadditionassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETAdditionAssignmentExpression.__init__)
-
-
-def test_ecdartext::etadditionassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETAdditionAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etconditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETConditionalExpression)
-
-
-def test_ecdartext::etconditionalexpression_constructor_exists():
-    assert callable(ecdarText::ETConditionalExpression.__init__)
-
-
-def test_ecdartext::etconditionalexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETConditionalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETAssignmentExpression)
-
-
-def test_ecdartext::etassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETAssignmentExpression.__init__)
-
-
-def test_ecdartext::etassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etmoduloassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETModuloAssignmentExpression)
-
-
-def test_ecdartext::etmoduloassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETModuloAssignmentExpression.__init__)
-
-
-def test_ecdartext::etmoduloassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETModuloAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etgreaterequalexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETGreaterEqualExpression)
-
-
-def test_ecdartext::etgreaterequalexpression_constructor_exists():
-    assert callable(ecdarText::ETGreaterEqualExpression.__init__)
-
-
-def test_ecdartext::etgreaterequalexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETGreaterEqualExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etaddexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETAddExpression)
-
-
-def test_ecdartext::etaddexpression_constructor_exists():
-    assert callable(ecdarText::ETAddExpression.__init__)
-
-
-def test_ecdartext::etaddexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETAddExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etpredecrementexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETPreDecrementExpression)
-
-
-def test_ecdartext::etpredecrementexpression_constructor_exists():
-    assert callable(ecdarText::ETPreDecrementExpression.__init__)
-
-
-def test_ecdartext::etpredecrementexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETPreDecrementExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etbitrightexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitRightExpression)
-
-
-def test_ecdartext::etbitrightexpression_constructor_exists():
-    assert callable(ecdarText::ETBitRightExpression.__init__)
-
-
-def test_ecdartext::etbitrightexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitRightExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etbitorassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitOrAssignmentExpression)
-
-
-def test_ecdartext::etbitorassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETBitOrAssignmentExpression.__init__)
-
-
-def test_ecdartext::etbitorassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitOrAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etlogicandexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETLogicAndExpression)
-
-
-def test_ecdartext::etlogicandexpression_constructor_exists():
-    assert callable(ecdarText::ETLogicAndExpression.__init__)
-
-
-def test_ecdartext::etlogicandexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETLogicAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etbooleanliteral_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBooleanLiteral)
-
-
-def test_ecdartext::etbooleanliteral_constructor_exists():
-    assert callable(ecdarText::ETBooleanLiteral.__init__)
-
-
-def test_ecdartext::etbooleanliteral_constructor_args():
-    sig = inspect.signature(ecdarText::ETBooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_ecdartext::etbooleanliteral_has_value():
-    assert hasattr(ecdarText::ETBooleanLiteral, "value")
-    descriptor = None
-    for klass in ecdarText::ETBooleanLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ecdartext::etexistsexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETExistsExpression)
-
-
-def test_ecdartext::etexistsexpression_constructor_exists():
-    assert callable(ecdarText::ETExistsExpression.__init__)
-
-
-def test_ecdartext::etexistsexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETExistsExpression.__init__)
+def test_ecdartext_etexistsexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETExistsExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecdartext::etexistsexpression_has_name():
-    assert hasattr(ecdarText::ETExistsExpression, "name")
+def test_ecdartext_etexistsexpression_has_name():
+    assert hasattr(ecdarText_ETExistsExpression, "name")
     descriptor = None
-    for klass in ecdarText::ETExistsExpression.__mro__:
+    for klass in ecdarText_ETExistsExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -343,79 +165,247 @@ def test_ecdartext::etexistsexpression_has_name():
 
 
 
-def test_ecdartext::etbitxorexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitXORExpression)
+def test_ecdartext_etdivisionassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETDivisionAssignmentExpression)
 
 
-def test_ecdartext::etbitxorexpression_constructor_exists():
-    assert callable(ecdarText::ETBitXORExpression.__init__)
+def test_ecdartext_etdivisionassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETDivisionAssignmentExpression.__init__)
 
 
-def test_ecdartext::etbitxorexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitXORExpression.__init__)
+def test_ecdartext_etdivisionassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETDivisionAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etbitorexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitOrExpression)
+def test_ecdartext_etimplyexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETImplyExpression)
 
 
-def test_ecdartext::etbitorexpression_constructor_exists():
-    assert callable(ecdarText::ETBitOrExpression.__init__)
+def test_ecdartext_etimplyexpression_constructor_exists():
+    assert callable(ecdarText_ETImplyExpression.__init__)
 
 
-def test_ecdartext::etbitorexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitOrExpression.__init__)
+def test_ecdartext_etimplyexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETImplyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etlogicnotexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETLogicNotExpression)
+def test_ecdartext_etlogicandexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETLogicAndExpression)
 
 
-def test_ecdartext::etlogicnotexpression_constructor_exists():
-    assert callable(ecdarText::ETLogicNotExpression.__init__)
+def test_ecdartext_etlogicandexpression_constructor_exists():
+    assert callable(ecdarText_ETLogicAndExpression.__init__)
 
 
-def test_ecdartext::etlogicnotexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETLogicNotExpression.__init__)
+def test_ecdartext_etlogicandexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETLogicAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etmultiplicationassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETMultiplicationAssignmentExpression)
+def test_ecdartext_etbitleftexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitLeftExpression)
 
 
-def test_ecdartext::etmultiplicationassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETMultiplicationAssignmentExpression.__init__)
+def test_ecdartext_etbitleftexpression_constructor_exists():
+    assert callable(ecdarText_ETBitLeftExpression.__init__)
 
 
-def test_ecdartext::etmultiplicationassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETMultiplicationAssignmentExpression.__init__)
+def test_ecdartext_etbitleftexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitLeftExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etnumberliteral_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETNumberLiteral)
+def test_ecdartext_etreference_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETReference)
 
 
-def test_ecdartext::etnumberliteral_constructor_exists():
-    assert callable(ecdarText::ETNumberLiteral.__init__)
+def test_ecdartext_etreference_constructor_exists():
+    assert callable(ecdarText_ETReference.__init__)
 
 
-def test_ecdartext::etnumberliteral_constructor_args():
-    sig = inspect.signature(ecdarText::ETNumberLiteral.__init__)
+def test_ecdartext_etreference_constructor_args():
+    sig = inspect.signature(ecdarText_ETReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etbitrightexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitRightExpression)
+
+
+def test_ecdartext_etbitrightexpression_constructor_exists():
+    assert callable(ecdarText_ETBitRightExpression.__init__)
+
+
+def test_ecdartext_etbitrightexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitRightExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etarrayexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETArrayExpression)
+
+
+def test_ecdartext_etarrayexpression_constructor_exists():
+    assert callable(ecdarText_ETArrayExpression.__init__)
+
+
+def test_ecdartext_etarrayexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETArrayExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etmultiplyexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETMultiplyExpression)
+
+
+def test_ecdartext_etmultiplyexpression_constructor_exists():
+    assert callable(ecdarText_ETMultiplyExpression.__init__)
+
+
+def test_ecdartext_etmultiplyexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETMultiplyExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etunequalexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETUnequalExpression)
+
+
+def test_ecdartext_etunequalexpression_constructor_exists():
+    assert callable(ecdarText_ETUnequalExpression.__init__)
+
+
+def test_ecdartext_etunequalexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETUnequalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etlessexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETLessExpression)
+
+
+def test_ecdartext_etlessexpression_constructor_exists():
+    assert callable(ecdarText_ETLessExpression.__init__)
+
+
+def test_ecdartext_etlessexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETLessExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etsubtractexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSubtractExpression)
+
+
+def test_ecdartext_etsubtractexpression_constructor_exists():
+    assert callable(ecdarText_ETSubtractExpression.__init__)
+
+
+def test_ecdartext_etsubtractexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETSubtractExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etmaxexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETMaxExpression)
+
+
+def test_ecdartext_etmaxexpression_constructor_exists():
+    assert callable(ecdarText_ETMaxExpression.__init__)
+
+
+def test_ecdartext_etmaxexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETMaxExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etadditionassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETAdditionAssignmentExpression)
+
+
+def test_ecdartext_etadditionassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETAdditionAssignmentExpression.__init__)
+
+
+def test_ecdartext_etadditionassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETAdditionAssignmentExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etbitleftassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitLeftAssignmentExpression)
+
+
+def test_ecdartext_etbitleftassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETBitLeftAssignmentExpression.__init__)
+
+
+def test_ecdartext_etbitleftassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitLeftAssignmentExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etgreaterequalexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETGreaterEqualExpression)
+
+
+def test_ecdartext_etgreaterequalexpression_constructor_exists():
+    assert callable(ecdarText_ETGreaterEqualExpression.__init__)
+
+
+def test_ecdartext_etgreaterequalexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETGreaterEqualExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etlessequalexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETLessEqualExpression)
+
+
+def test_ecdartext_etlessequalexpression_constructor_exists():
+    assert callable(ecdarText_ETLessEqualExpression.__init__)
+
+
+def test_ecdartext_etlessequalexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETLessEqualExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etnumberliteral_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETNumberLiteral)
+
+
+def test_ecdartext_etnumberliteral_constructor_exists():
+    assert callable(ecdarText_ETNumberLiteral.__init__)
+
+
+def test_ecdartext_etnumberliteral_constructor_args():
+    sig = inspect.signature(ecdarText_ETNumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ecdartext::etnumberliteral_has_value():
-    assert hasattr(ecdarText::ETNumberLiteral, "value")
+def test_ecdartext_etnumberliteral_has_value():
+    assert hasattr(ecdarText_ETNumberLiteral, "value")
     descriptor = None
-    for klass in ecdarText::ETNumberLiteral.__mro__:
+    for klass in ecdarText_ETNumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -423,177 +413,271 @@ def test_ecdartext::etnumberliteral_has_value():
 
 
 
-def test_ecdartext::etminexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETMinExpression)
+def test_ecdartext_etminexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETMinExpression)
 
 
-def test_ecdartext::etminexpression_constructor_exists():
-    assert callable(ecdarText::ETMinExpression.__init__)
+def test_ecdartext_etminexpression_constructor_exists():
+    assert callable(ecdarText_ETMinExpression.__init__)
 
 
-def test_ecdartext::etminexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETMinExpression.__init__)
+def test_ecdartext_etminexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETMinExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etsubtractexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSubtractExpression)
+def test_ecdartext_etbitrightassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitRightAssignmentExpression)
 
 
-def test_ecdartext::etsubtractexpression_constructor_exists():
-    assert callable(ecdarText::ETSubtractExpression.__init__)
+def test_ecdartext_etbitrightassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETBitRightAssignmentExpression.__init__)
 
 
-def test_ecdartext::etsubtractexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETSubtractExpression.__init__)
+def test_ecdartext_etbitrightassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitRightAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etimplyexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETImplyExpression)
+def test_ecdartext_etmoduloassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETModuloAssignmentExpression)
 
 
-def test_ecdartext::etimplyexpression_constructor_exists():
-    assert callable(ecdarText::ETImplyExpression.__init__)
+def test_ecdartext_etmoduloassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETModuloAssignmentExpression.__init__)
 
 
-def test_ecdartext::etimplyexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETImplyExpression.__init__)
+def test_ecdartext_etmoduloassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETModuloAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etpreincrementexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETPreIncrementExpression)
+def test_ecdartext_etpredecrementexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETPreDecrementExpression)
 
 
-def test_ecdartext::etpreincrementexpression_constructor_exists():
-    assert callable(ecdarText::ETPreIncrementExpression.__init__)
+def test_ecdartext_etpredecrementexpression_constructor_exists():
+    assert callable(ecdarText_ETPreDecrementExpression.__init__)
 
 
-def test_ecdartext::etpreincrementexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETPreIncrementExpression.__init__)
+def test_ecdartext_etpredecrementexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETPreDecrementExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etpostdecrementexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETPostDecrementExpression)
+def test_ecdartext_etpostincrementexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETPostIncrementExpression)
 
 
-def test_ecdartext::etpostdecrementexpression_constructor_exists():
-    assert callable(ecdarText::ETPostDecrementExpression.__init__)
+def test_ecdartext_etpostincrementexpression_constructor_exists():
+    assert callable(ecdarText_ETPostIncrementExpression.__init__)
 
 
-def test_ecdartext::etpostdecrementexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETPostDecrementExpression.__init__)
+def test_ecdartext_etpostincrementexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETPostIncrementExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etmultiplyexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETMultiplyExpression)
+def test_ecdartext_etlogicnotexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETLogicNotExpression)
 
 
-def test_ecdartext::etmultiplyexpression_constructor_exists():
-    assert callable(ecdarText::ETMultiplyExpression.__init__)
+def test_ecdartext_etlogicnotexpression_constructor_exists():
+    assert callable(ecdarText_ETLogicNotExpression.__init__)
 
 
-def test_ecdartext::etmultiplyexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETMultiplyExpression.__init__)
+def test_ecdartext_etlogicnotexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETLogicNotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etminusexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETMinusExpression)
+def test_ecdartext_etbitxorexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitXORExpression)
 
 
-def test_ecdartext::etminusexpression_constructor_exists():
-    assert callable(ecdarText::ETMinusExpression.__init__)
+def test_ecdartext_etbitxorexpression_constructor_exists():
+    assert callable(ecdarText_ETBitXORExpression.__init__)
 
 
-def test_ecdartext::etminusexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETMinusExpression.__init__)
+def test_ecdartext_etbitxorexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitXORExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etbitleftassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitLeftAssignmentExpression)
+def test_ecdartext_etbooleanliteral_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBooleanLiteral)
 
 
-def test_ecdartext::etbitleftassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETBitLeftAssignmentExpression.__init__)
+def test_ecdartext_etbooleanliteral_constructor_exists():
+    assert callable(ecdarText_ETBooleanLiteral.__init__)
 
 
-def test_ecdartext::etbitleftassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitLeftAssignmentExpression.__init__)
+def test_ecdartext_etbooleanliteral_constructor_args():
+    sig = inspect.signature(ecdarText_ETBooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_ecdartext_etbooleanliteral_has_value():
+    assert hasattr(ecdarText_ETBooleanLiteral, "value")
+    descriptor = None
+    for klass in ecdarText_ETBooleanLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ecdartext_etbitandexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitAndExpression)
+
+
+def test_ecdartext_etbitandexpression_constructor_exists():
+    assert callable(ecdarText_ETBitAndExpression.__init__)
+
+
+def test_ecdartext_etbitandexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etmoduloexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETModuloExpression)
+def test_ecdartext_etconditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETConditionalExpression)
 
 
-def test_ecdartext::etmoduloexpression_constructor_exists():
-    assert callable(ecdarText::ETModuloExpression.__init__)
+def test_ecdartext_etconditionalexpression_constructor_exists():
+    assert callable(ecdarText_ETConditionalExpression.__init__)
 
 
-def test_ecdartext::etmoduloexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETModuloExpression.__init__)
+def test_ecdartext_etconditionalexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etbitleftexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitLeftExpression)
+def test_ecdartext_etequalexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETEqualExpression)
 
 
-def test_ecdartext::etbitleftexpression_constructor_exists():
-    assert callable(ecdarText::ETBitLeftExpression.__init__)
+def test_ecdartext_etequalexpression_constructor_exists():
+    assert callable(ecdarText_ETEqualExpression.__init__)
 
 
-def test_ecdartext::etbitleftexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitLeftExpression.__init__)
+def test_ecdartext_etequalexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETEqualExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etmaxexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETMaxExpression)
+def test_ecdartext_etbitorexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitOrExpression)
 
 
-def test_ecdartext::etmaxexpression_constructor_exists():
-    assert callable(ecdarText::ETMaxExpression.__init__)
+def test_ecdartext_etbitorexpression_constructor_exists():
+    assert callable(ecdarText_ETBitOrExpression.__init__)
 
 
-def test_ecdartext::etmaxexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETMaxExpression.__init__)
+def test_ecdartext_etbitorexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etstructexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETStructExpression)
+def test_ecdartext_etbitandassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitAndAssignmentExpression)
 
 
-def test_ecdartext::etstructexpression_constructor_exists():
-    assert callable(ecdarText::ETStructExpression.__init__)
+def test_ecdartext_etbitandassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETBitAndAssignmentExpression.__init__)
 
 
-def test_ecdartext::etstructexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETStructExpression.__init__)
+def test_ecdartext_etbitandassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitAndAssignmentExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etpreincrementexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETPreIncrementExpression)
+
+
+def test_ecdartext_etpreincrementexpression_constructor_exists():
+    assert callable(ecdarText_ETPreIncrementExpression.__init__)
+
+
+def test_ecdartext_etpreincrementexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETPreIncrementExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etbitxorassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitXORAssignmentExpression)
+
+
+def test_ecdartext_etbitxorassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETBitXORAssignmentExpression.__init__)
+
+
+def test_ecdartext_etbitxorassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitXORAssignmentExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etpostdecrementexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETPostDecrementExpression)
+
+
+def test_ecdartext_etpostdecrementexpression_constructor_exists():
+    assert callable(ecdarText_ETPostDecrementExpression.__init__)
+
+
+def test_ecdartext_etpostdecrementexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETPostDecrementExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etaddexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETAddExpression)
+
+
+def test_ecdartext_etaddexpression_constructor_exists():
+    assert callable(ecdarText_ETAddExpression.__init__)
+
+
+def test_ecdartext_etaddexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETAddExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecdartext_etstructexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETStructExpression)
+
+
+def test_ecdartext_etstructexpression_constructor_exists():
+    assert callable(ecdarText_ETStructExpression.__init__)
+
+
+def test_ecdartext_etstructexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETStructExpression.__init__)
     params = list(sig.parameters.keys())
     assert "right" in params, "Missing parameter 'right'"
 
-def test_ecdartext::etstructexpression_has_right():
-    assert hasattr(ecdarText::ETStructExpression, "right")
+def test_ecdartext_etstructexpression_has_right():
+    assert hasattr(ecdarText_ETStructExpression, "right")
     descriptor = None
-    for klass in ecdarText::ETStructExpression.__mro__:
+    for klass in ecdarText_ETStructExpression.__mro__:
         if "right" in klass.__dict__:
             descriptor = klass.__dict__["right"]
             break
@@ -601,219 +685,135 @@ def test_ecdartext::etstructexpression_has_right():
 
 
 
-def test_ecdartext::etbitxorassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitXORAssignmentExpression)
+def test_ecdartext_etassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETAssignmentExpression)
 
 
-def test_ecdartext::etbitxorassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETBitXORAssignmentExpression.__init__)
+def test_ecdartext_etassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETAssignmentExpression.__init__)
 
 
-def test_ecdartext::etbitxorassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitXORAssignmentExpression.__init__)
+def test_ecdartext_etassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etlogicorexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETLogicOrExpression)
+def test_ecdartext_etlogicorexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETLogicOrExpression)
 
 
-def test_ecdartext::etlogicorexpression_constructor_exists():
-    assert callable(ecdarText::ETLogicOrExpression.__init__)
+def test_ecdartext_etlogicorexpression_constructor_exists():
+    assert callable(ecdarText_ETLogicOrExpression.__init__)
 
 
-def test_ecdartext::etlogicorexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETLogicOrExpression.__init__)
+def test_ecdartext_etlogicorexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETLogicOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etlessequalexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETLessEqualExpression)
+def test_ecdartext_etgreaterexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETGreaterExpression)
 
 
-def test_ecdartext::etlessequalexpression_constructor_exists():
-    assert callable(ecdarText::ETLessEqualExpression.__init__)
+def test_ecdartext_etgreaterexpression_constructor_exists():
+    assert callable(ecdarText_ETGreaterExpression.__init__)
 
 
-def test_ecdartext::etlessequalexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETLessEqualExpression.__init__)
+def test_ecdartext_etgreaterexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETGreaterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etarrayexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETArrayExpression)
+def test_ecdartext_etmultiplicationassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETMultiplicationAssignmentExpression)
 
 
-def test_ecdartext::etarrayexpression_constructor_exists():
-    assert callable(ecdarText::ETArrayExpression.__init__)
+def test_ecdartext_etmultiplicationassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETMultiplicationAssignmentExpression.__init__)
 
 
-def test_ecdartext::etarrayexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETArrayExpression.__init__)
+def test_ecdartext_etmultiplicationassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETMultiplicationAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etequalexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETEqualExpression)
+def test_ecdartext_etminusexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETMinusExpression)
 
 
-def test_ecdartext::etequalexpression_constructor_exists():
-    assert callable(ecdarText::ETEqualExpression.__init__)
+def test_ecdartext_etminusexpression_constructor_exists():
+    assert callable(ecdarText_ETMinusExpression.__init__)
 
 
-def test_ecdartext::etequalexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETEqualExpression.__init__)
+def test_ecdartext_etminusexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETMinusExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etdivideexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETDivideExpression)
+def test_ecdartext_etbitorassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBitOrAssignmentExpression)
 
 
-def test_ecdartext::etdivideexpression_constructor_exists():
-    assert callable(ecdarText::ETDivideExpression.__init__)
+def test_ecdartext_etbitorassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETBitOrAssignmentExpression.__init__)
 
 
-def test_ecdartext::etdivideexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETDivideExpression.__init__)
+def test_ecdartext_etbitorassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETBitOrAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etlessexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETLessExpression)
+def test_ecdartext_etdivideexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETDivideExpression)
 
 
-def test_ecdartext::etlessexpression_constructor_exists():
-    assert callable(ecdarText::ETLessExpression.__init__)
+def test_ecdartext_etdivideexpression_constructor_exists():
+    assert callable(ecdarText_ETDivideExpression.__init__)
 
 
-def test_ecdartext::etlessexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETLessExpression.__init__)
+def test_ecdartext_etdivideexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETDivideExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etbitrightassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitRightAssignmentExpression)
+def test_ecdartext_etmoduloexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETModuloExpression)
 
 
-def test_ecdartext::etbitrightassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETBitRightAssignmentExpression.__init__)
+def test_ecdartext_etmoduloexpression_constructor_exists():
+    assert callable(ecdarText_ETModuloExpression.__init__)
 
 
-def test_ecdartext::etbitrightassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitRightAssignmentExpression.__init__)
+def test_ecdartext_etmoduloexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETModuloExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etbitandassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBitAndAssignmentExpression)
+def test_ecdartext_etforallexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETForallExpression)
 
 
-def test_ecdartext::etbitandassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETBitAndAssignmentExpression.__init__)
+def test_ecdartext_etforallexpression_constructor_exists():
+    assert callable(ecdarText_ETForallExpression.__init__)
 
 
-def test_ecdartext::etbitandassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETBitAndAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etgreaterexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETGreaterExpression)
-
-
-def test_ecdartext::etgreaterexpression_constructor_exists():
-    assert callable(ecdarText::ETGreaterExpression.__init__)
-
-
-def test_ecdartext::etgreaterexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETGreaterExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etreference_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETReference)
-
-
-def test_ecdartext::etreference_constructor_exists():
-    assert callable(ecdarText::ETReference.__init__)
-
-
-def test_ecdartext::etreference_constructor_args():
-    sig = inspect.signature(ecdarText::ETReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etunequalexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETUnequalExpression)
-
-
-def test_ecdartext::etunequalexpression_constructor_exists():
-    assert callable(ecdarText::ETUnequalExpression.__init__)
-
-
-def test_ecdartext::etunequalexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETUnequalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etpostincrementexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETPostIncrementExpression)
-
-
-def test_ecdartext::etpostincrementexpression_constructor_exists():
-    assert callable(ecdarText::ETPostIncrementExpression.__init__)
-
-
-def test_ecdartext::etpostincrementexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETPostIncrementExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etdivisionassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETDivisionAssignmentExpression)
-
-
-def test_ecdartext::etdivisionassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETDivisionAssignmentExpression.__init__)
-
-
-def test_ecdartext::etdivisionassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETDivisionAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecdartext::etforallexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETForallExpression)
-
-
-def test_ecdartext::etforallexpression_constructor_exists():
-    assert callable(ecdarText::ETForallExpression.__init__)
-
-
-def test_ecdartext::etforallexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETForallExpression.__init__)
+def test_ecdartext_etforallexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETForallExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecdartext::etforallexpression_has_name():
-    assert hasattr(ecdarText::ETForallExpression, "name")
+def test_ecdartext_etforallexpression_has_name():
+    assert hasattr(ecdarText_ETForallExpression, "name")
     descriptor = None
-    for klass in ecdarText::ETForallExpression.__mro__:
+    for klass in ecdarText_ETForallExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -821,16 +821,16 @@ def test_ecdartext::etforallexpression_has_name():
 
 
 
-def test_ecdartext::etsubtractionassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSubtractionAssignmentExpression)
+def test_ecdartext_etsubtractionassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSubtractionAssignmentExpression)
 
 
-def test_ecdartext::etsubtractionassignmentexpression_constructor_exists():
-    assert callable(ecdarText::ETSubtractionAssignmentExpression.__init__)
+def test_ecdartext_etsubtractionassignmentexpression_constructor_exists():
+    assert callable(ecdarText_ETSubtractionAssignmentExpression.__init__)
 
 
-def test_ecdartext::etsubtractionassignmentexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETSubtractionAssignmentExpression.__init__)
+def test_ecdartext_etsubtractionassignmentexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETSubtractionAssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -849,79 +849,79 @@ def test_etspecificationexpression_constructor_args():
 
 
 
-def test_ecdartext::etspecificationinstantiation_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationInstantiation)
+def test_ecdartext_etspecificationinstantiation_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationInstantiation)
 
 
-def test_ecdartext::etspecificationinstantiation_constructor_exists():
-    assert callable(ecdarText::ETSpecificationInstantiation.__init__)
+def test_ecdartext_etspecificationinstantiation_constructor_exists():
+    assert callable(ecdarText_ETSpecificationInstantiation.__init__)
 
 
-def test_ecdartext::etspecificationinstantiation_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationInstantiation.__init__)
+def test_ecdartext_etspecificationinstantiation_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationInstantiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecificationreference_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationReference)
+def test_ecdartext_etspecificationreference_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationReference)
 
 
-def test_ecdartext::etspecificationreference_constructor_exists():
-    assert callable(ecdarText::ETSpecificationReference.__init__)
+def test_ecdartext_etspecificationreference_constructor_exists():
+    assert callable(ecdarText_ETSpecificationReference.__init__)
 
 
-def test_ecdartext::etspecificationreference_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationReference.__init__)
+def test_ecdartext_etspecificationreference_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecificationconjunctionexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationConjunctionExpression)
+def test_ecdartext_etspecificationconjunctionexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationConjunctionExpression)
 
 
-def test_ecdartext::etspecificationconjunctionexpression_constructor_exists():
-    assert callable(ecdarText::ETSpecificationConjunctionExpression.__init__)
+def test_ecdartext_etspecificationconjunctionexpression_constructor_exists():
+    assert callable(ecdarText_ETSpecificationConjunctionExpression.__init__)
 
 
-def test_ecdartext::etspecificationconjunctionexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationConjunctionExpression.__init__)
+def test_ecdartext_etspecificationconjunctionexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationConjunctionExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecificationdisjunctionexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationDisjunctionExpression)
+def test_ecdartext_etspecificationdisjunctionexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationDisjunctionExpression)
 
 
-def test_ecdartext::etspecificationdisjunctionexpression_constructor_exists():
-    assert callable(ecdarText::ETSpecificationDisjunctionExpression.__init__)
+def test_ecdartext_etspecificationdisjunctionexpression_constructor_exists():
+    assert callable(ecdarText_ETSpecificationDisjunctionExpression.__init__)
 
 
-def test_ecdartext::etspecificationdisjunctionexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationDisjunctionExpression.__init__)
+def test_ecdartext_etspecificationdisjunctionexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationDisjunctionExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etio_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETIO)
+def test_ecdartext_etio_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETIO)
 
 
-def test_ecdartext::etio_constructor_exists():
-    assert callable(ecdarText::ETIO.__init__)
+def test_ecdartext_etio_constructor_exists():
+    assert callable(ecdarText_ETIO.__init__)
 
 
-def test_ecdartext::etio_constructor_args():
-    sig = inspect.signature(ecdarText::ETIO.__init__)
+def test_ecdartext_etio_constructor_args():
+    sig = inspect.signature(ecdarText_ETIO.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_ecdartext::etio_has_type():
-    assert hasattr(ecdarText::ETIO, "type")
+def test_ecdartext_etio_has_type():
+    assert hasattr(ecdarText_ETIO, "type")
     descriptor = None
-    for klass in ecdarText::ETIO.__mro__:
+    for klass in ecdarText_ETIO.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -929,23 +929,23 @@ def test_ecdartext::etio_has_type():
 
 
 
-def test_ecdartext::etselect_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSelect)
+def test_ecdartext_etselect_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSelect)
 
 
-def test_ecdartext::etselect_constructor_exists():
-    assert callable(ecdarText::ETSelect.__init__)
+def test_ecdartext_etselect_constructor_exists():
+    assert callable(ecdarText_ETSelect.__init__)
 
 
-def test_ecdartext::etselect_constructor_args():
-    sig = inspect.signature(ecdarText::ETSelect.__init__)
+def test_ecdartext_etselect_constructor_args():
+    sig = inspect.signature(ecdarText_ETSelect.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecdartext::etselect_has_name():
-    assert hasattr(ecdarText::ETSelect, "name")
+def test_ecdartext_etselect_has_name():
+    assert hasattr(ecdarText_ETSelect, "name")
     descriptor = None
-    for klass in ecdarText::ETSelect.__mro__:
+    for klass in ecdarText_ETSelect.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -953,23 +953,23 @@ def test_ecdartext::etselect_has_name():
 
 
 
-def test_ecdartext::etedge_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETEdge)
+def test_ecdartext_etedge_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETEdge)
 
 
-def test_ecdartext::etedge_constructor_exists():
-    assert callable(ecdarText::ETEdge.__init__)
+def test_ecdartext_etedge_constructor_exists():
+    assert callable(ecdarText_ETEdge.__init__)
 
 
-def test_ecdartext::etedge_constructor_args():
-    sig = inspect.signature(ecdarText::ETEdge.__init__)
+def test_ecdartext_etedge_constructor_args():
+    sig = inspect.signature(ecdarText_ETEdge.__init__)
     params = list(sig.parameters.keys())
     assert "controllable" in params, "Missing parameter 'controllable'"
 
-def test_ecdartext::etedge_has_controllable():
-    assert hasattr(ecdarText::ETEdge, "controllable")
+def test_ecdartext_etedge_has_controllable():
+    assert hasattr(ecdarText_ETEdge, "controllable")
     descriptor = None
-    for klass in ecdarText::ETEdge.__mro__:
+    for klass in ecdarText_ETEdge.__mro__:
         if "controllable" in klass.__dict__:
             descriptor = klass.__dict__["controllable"]
             break
@@ -977,57 +977,57 @@ def test_ecdartext::etedge_has_controllable():
 
 
 
-def test_ecdartext::etspecificationcompositionexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationCompositionExpression)
+def test_ecdartext_etspecificationcompositionexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationCompositionExpression)
 
 
-def test_ecdartext::etspecificationcompositionexpression_constructor_exists():
-    assert callable(ecdarText::ETSpecificationCompositionExpression.__init__)
+def test_ecdartext_etspecificationcompositionexpression_constructor_exists():
+    assert callable(ecdarText_ETSpecificationCompositionExpression.__init__)
 
 
-def test_ecdartext::etspecificationcompositionexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationCompositionExpression.__init__)
+def test_ecdartext_etspecificationcompositionexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationCompositionExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etlocation_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETLocation)
+def test_ecdartext_etlocation_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETLocation)
 
 
-def test_ecdartext::etlocation_constructor_exists():
-    assert callable(ecdarText::ETLocation.__init__)
+def test_ecdartext_etlocation_constructor_exists():
+    assert callable(ecdarText_ETLocation.__init__)
 
 
-def test_ecdartext::etlocation_constructor_args():
-    sig = inspect.signature(ecdarText::ETLocation.__init__)
+def test_ecdartext_etlocation_constructor_args():
+    sig = inspect.signature(ecdarText_ETLocation.__init__)
     params = list(sig.parameters.keys())
     assert "universal" in params, "Missing parameter 'universal'"
     assert "urgent" in params, "Missing parameter 'urgent'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecdartext::etlocation_has_universal():
-    assert hasattr(ecdarText::ETLocation, "universal")
+def test_ecdartext_etlocation_has_universal():
+    assert hasattr(ecdarText_ETLocation, "universal")
     descriptor = None
-    for klass in ecdarText::ETLocation.__mro__:
+    for klass in ecdarText_ETLocation.__mro__:
         if "universal" in klass.__dict__:
             descriptor = klass.__dict__["universal"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecdartext::etlocation_has_urgent():
-    assert hasattr(ecdarText::ETLocation, "urgent")
+def test_ecdartext_etlocation_has_urgent():
+    assert hasattr(ecdarText_ETLocation, "urgent")
     descriptor = None
-    for klass in ecdarText::ETLocation.__mro__:
+    for klass in ecdarText_ETLocation.__mro__:
         if "urgent" in klass.__dict__:
             descriptor = klass.__dict__["urgent"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecdartext::etlocation_has_name():
-    assert hasattr(ecdarText::ETLocation, "name")
+def test_ecdartext_etlocation_has_name():
+    assert hasattr(ecdarText_ETLocation, "name")
     descriptor = None
-    for klass in ecdarText::ETLocation.__mro__:
+    for klass in ecdarText_ETLocation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1035,33 +1035,33 @@ def test_ecdartext::etlocation_has_name():
 
 
 
-def test_ecdartext::etparameter_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETParameter)
+def test_ecdartext_etparameter_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETParameter)
 
 
-def test_ecdartext::etparameter_constructor_exists():
-    assert callable(ecdarText::ETParameter.__init__)
+def test_ecdartext_etparameter_constructor_exists():
+    assert callable(ecdarText_ETParameter.__init__)
 
 
-def test_ecdartext::etparameter_constructor_args():
-    sig = inspect.signature(ecdarText::ETParameter.__init__)
+def test_ecdartext_etparameter_constructor_args():
+    sig = inspect.signature(ecdarText_ETParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "ioType" in params, "Missing parameter 'ioType'"
 
-def test_ecdartext::etparameter_has_name():
-    assert hasattr(ecdarText::ETParameter, "name")
+def test_ecdartext_etparameter_has_name():
+    assert hasattr(ecdarText_ETParameter, "name")
     descriptor = None
-    for klass in ecdarText::ETParameter.__mro__:
+    for klass in ecdarText_ETParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecdartext::etparameter_has_ioType():
-    assert hasattr(ecdarText::ETParameter, "ioType")
+def test_ecdartext_etparameter_has_ioType():
+    assert hasattr(ecdarText_ETParameter, "ioType")
     descriptor = None
-    for klass in ecdarText::ETParameter.__mro__:
+    for klass in ecdarText_ETParameter.__mro__:
         if "ioType" in klass.__dict__:
             descriptor = klass.__dict__["ioType"]
             break
@@ -1083,30 +1083,30 @@ def test_etspecificationdefinition_constructor_args():
 
 
 
-def test_ecdartext::etspecificationtemplate_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationTemplate)
+def test_ecdartext_etspecificationtemplate_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationTemplate)
 
 
-def test_ecdartext::etspecificationtemplate_constructor_exists():
-    assert callable(ecdarText::ETSpecificationTemplate.__init__)
+def test_ecdartext_etspecificationtemplate_constructor_exists():
+    assert callable(ecdarText_ETSpecificationTemplate.__init__)
 
 
-def test_ecdartext::etspecificationtemplate_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationTemplate.__init__)
+def test_ecdartext_etspecificationtemplate_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationTemplate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecificationbody_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationBody)
+def test_ecdartext_etspecificationbody_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationBody)
 
 
-def test_ecdartext::etspecificationbody_constructor_exists():
-    assert callable(ecdarText::ETSpecificationBody.__init__)
+def test_ecdartext_etspecificationbody_constructor_exists():
+    assert callable(ecdarText_ETSpecificationBody.__init__)
 
 
-def test_ecdartext::etspecificationbody_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationBody.__init__)
+def test_ecdartext_etspecificationbody_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationBody.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1125,75 +1125,75 @@ def test_etspecification_constructor_args():
 
 
 
-def test_ecdartext::etspecificationdefinition_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationDefinition)
+def test_ecdartext_etspecificationdefinition_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationDefinition)
 
 
-def test_ecdartext::etspecificationdefinition_constructor_exists():
-    assert callable(ecdarText::ETSpecificationDefinition.__init__)
+def test_ecdartext_etspecificationdefinition_constructor_exists():
+    assert callable(ecdarText_ETSpecificationDefinition.__init__)
 
 
-def test_ecdartext::etspecificationdefinition_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationDefinition.__init__)
+def test_ecdartext_etspecificationdefinition_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecificationbinding_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationBinding)
+def test_ecdartext_etspecificationbinding_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationBinding)
 
 
-def test_ecdartext::etspecificationbinding_constructor_exists():
-    assert callable(ecdarText::ETSpecificationBinding.__init__)
+def test_ecdartext_etspecificationbinding_constructor_exists():
+    assert callable(ecdarText_ETSpecificationBinding.__init__)
 
 
-def test_ecdartext::etspecificationbinding_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationBinding.__init__)
+def test_ecdartext_etspecificationbinding_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecificationexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecificationExpression)
+def test_ecdartext_etspecificationexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecificationExpression)
 
 
-def test_ecdartext::etspecificationexpression_constructor_exists():
-    assert callable(ecdarText::ETSpecificationExpression.__init__)
+def test_ecdartext_etspecificationexpression_constructor_exists():
+    assert callable(ecdarText_ETSpecificationExpression.__init__)
 
 
-def test_ecdartext::etspecificationexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecificationExpression.__init__)
+def test_ecdartext_etspecificationexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecificationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etfieldid_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETFieldID)
+def test_ecdartext_etfieldid_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETFieldID)
 
 
-def test_ecdartext::etfieldid_constructor_exists():
-    assert callable(ecdarText::ETFieldID.__init__)
+def test_ecdartext_etfieldid_constructor_exists():
+    assert callable(ecdarText_ETFieldID.__init__)
 
 
-def test_ecdartext::etfieldid_constructor_args():
-    sig = inspect.signature(ecdarText::ETFieldID.__init__)
+def test_ecdartext_etfieldid_constructor_args():
+    sig = inspect.signature(ecdarText_ETFieldID.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "ioType" in params, "Missing parameter 'ioType'"
 
-def test_ecdartext::etfieldid_has_name():
-    assert hasattr(ecdarText::ETFieldID, "name")
+def test_ecdartext_etfieldid_has_name():
+    assert hasattr(ecdarText_ETFieldID, "name")
     descriptor = None
-    for klass in ecdarText::ETFieldID.__mro__:
+    for klass in ecdarText_ETFieldID.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecdartext::etfieldid_has_ioType():
-    assert hasattr(ecdarText::ETFieldID, "ioType")
+def test_ecdartext_etfieldid_has_ioType():
+    assert hasattr(ecdarText_ETFieldID, "ioType")
     descriptor = None
-    for klass in ecdarText::ETFieldID.__mro__:
+    for klass in ecdarText_ETFieldID.__mro__:
         if "ioType" in klass.__dict__:
             descriptor = klass.__dict__["ioType"]
             break
@@ -1201,16 +1201,16 @@ def test_ecdartext::etfieldid_has_ioType():
 
 
 
-def test_ecdartext::etfielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETFieldDeclaration)
+def test_ecdartext_etfielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETFieldDeclaration)
 
 
-def test_ecdartext::etfielddeclaration_constructor_exists():
-    assert callable(ecdarText::ETFieldDeclaration.__init__)
+def test_ecdartext_etfielddeclaration_constructor_exists():
+    assert callable(ecdarText_ETFieldDeclaration.__init__)
 
 
-def test_ecdartext::etfielddeclaration_constructor_args():
-    sig = inspect.signature(ecdarText::ETFieldDeclaration.__init__)
+def test_ecdartext_etfielddeclaration_constructor_args():
+    sig = inspect.signature(ecdarText_ETFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1229,30 +1229,30 @@ def test_etactiontype_constructor_args():
 
 
 
-def test_ecdartext::etoutputtype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETOutputType)
+def test_ecdartext_etoutputtype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETOutputType)
 
 
-def test_ecdartext::etoutputtype_constructor_exists():
-    assert callable(ecdarText::ETOutputType.__init__)
+def test_ecdartext_etoutputtype_constructor_exists():
+    assert callable(ecdarText_ETOutputType.__init__)
 
 
-def test_ecdartext::etoutputtype_constructor_args():
-    sig = inspect.signature(ecdarText::ETOutputType.__init__)
+def test_ecdartext_etoutputtype_constructor_args():
+    sig = inspect.signature(ecdarText_ETOutputType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etinputtype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETInputType)
+def test_ecdartext_etinputtype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETInputType)
 
 
-def test_ecdartext::etinputtype_constructor_exists():
-    assert callable(ecdarText::ETInputType.__init__)
+def test_ecdartext_etinputtype_constructor_exists():
+    assert callable(ecdarText_ETInputType.__init__)
 
 
-def test_ecdartext::etinputtype_constructor_args():
-    sig = inspect.signature(ecdarText::ETInputType.__init__)
+def test_ecdartext_etinputtype_constructor_args():
+    sig = inspect.signature(ecdarText_ETInputType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1271,100 +1271,100 @@ def test_ettypeidentifier_constructor_args():
 
 
 
-def test_ecdartext::etactiontype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETActionType)
+def test_ecdartext_etclocktype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETClockType)
 
 
-def test_ecdartext::etactiontype_constructor_exists():
-    assert callable(ecdarText::ETActionType.__init__)
+def test_ecdartext_etclocktype_constructor_exists():
+    assert callable(ecdarText_ETClockType.__init__)
 
 
-def test_ecdartext::etactiontype_constructor_args():
-    sig = inspect.signature(ecdarText::ETActionType.__init__)
+def test_ecdartext_etclocktype_constructor_args():
+    sig = inspect.signature(ecdarText_ETClockType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etbooleantype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETBooleanType)
+def test_ecdartext_etbooleantype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETBooleanType)
 
 
-def test_ecdartext::etbooleantype_constructor_exists():
-    assert callable(ecdarText::ETBooleanType.__init__)
+def test_ecdartext_etbooleantype_constructor_exists():
+    assert callable(ecdarText_ETBooleanType.__init__)
 
 
-def test_ecdartext::etbooleantype_constructor_args():
-    sig = inspect.signature(ecdarText::ETBooleanType.__init__)
+def test_ecdartext_etbooleantype_constructor_args():
+    sig = inspect.signature(ecdarText_ETBooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etstructtype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETStructType)
+def test_ecdartext_ettypereference_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETTypeReference)
 
 
-def test_ecdartext::etstructtype_constructor_exists():
-    assert callable(ecdarText::ETStructType.__init__)
+def test_ecdartext_ettypereference_constructor_exists():
+    assert callable(ecdarText_ETTypeReference.__init__)
 
 
-def test_ecdartext::etstructtype_constructor_args():
-    sig = inspect.signature(ecdarText::ETStructType.__init__)
+def test_ecdartext_ettypereference_constructor_args():
+    sig = inspect.signature(ecdarText_ETTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etscalartype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETScalarType)
+def test_ecdartext_etstructtype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETStructType)
 
 
-def test_ecdartext::etscalartype_constructor_exists():
-    assert callable(ecdarText::ETScalarType.__init__)
+def test_ecdartext_etstructtype_constructor_exists():
+    assert callable(ecdarText_ETStructType.__init__)
 
 
-def test_ecdartext::etscalartype_constructor_args():
-    sig = inspect.signature(ecdarText::ETScalarType.__init__)
+def test_ecdartext_etstructtype_constructor_args():
+    sig = inspect.signature(ecdarText_ETStructType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::ettypereference_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETTypeReference)
+def test_ecdartext_etactiontype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETActionType)
 
 
-def test_ecdartext::ettypereference_constructor_exists():
-    assert callable(ecdarText::ETTypeReference.__init__)
+def test_ecdartext_etactiontype_constructor_exists():
+    assert callable(ecdarText_ETActionType.__init__)
 
 
-def test_ecdartext::ettypereference_constructor_args():
-    sig = inspect.signature(ecdarText::ETTypeReference.__init__)
+def test_ecdartext_etactiontype_constructor_args():
+    sig = inspect.signature(ecdarText_ETActionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etclocktype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETClockType)
+def test_ecdartext_etscalartype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETScalarType)
 
 
-def test_ecdartext::etclocktype_constructor_exists():
-    assert callable(ecdarText::ETClockType.__init__)
+def test_ecdartext_etscalartype_constructor_exists():
+    assert callable(ecdarText_ETScalarType.__init__)
 
 
-def test_ecdartext::etclocktype_constructor_args():
-    sig = inspect.signature(ecdarText::ETClockType.__init__)
+def test_ecdartext_etscalartype_constructor_args():
+    sig = inspect.signature(ecdarText_ETScalarType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etintegertype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETIntegerType)
+def test_ecdartext_etintegertype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETIntegerType)
 
 
-def test_ecdartext::etintegertype_constructor_exists():
-    assert callable(ecdarText::ETIntegerType.__init__)
+def test_ecdartext_etintegertype_constructor_exists():
+    assert callable(ecdarText_ETIntegerType.__init__)
 
 
-def test_ecdartext::etintegertype_constructor_args():
-    sig = inspect.signature(ecdarText::ETIntegerType.__init__)
+def test_ecdartext_etintegertype_constructor_args():
+    sig = inspect.signature(ecdarText_ETIntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1383,75 +1383,75 @@ def test_etinitialiser_constructor_args():
 
 
 
-def test_ecdartext::etmultiinitialiser_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETMultiInitialiser)
+def test_ecdartext_etmultiinitialiser_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETMultiInitialiser)
 
 
-def test_ecdartext::etmultiinitialiser_constructor_exists():
-    assert callable(ecdarText::ETMultiInitialiser.__init__)
+def test_ecdartext_etmultiinitialiser_constructor_exists():
+    assert callable(ecdarText_ETMultiInitialiser.__init__)
 
 
-def test_ecdartext::etmultiinitialiser_constructor_args():
-    sig = inspect.signature(ecdarText::ETMultiInitialiser.__init__)
+def test_ecdartext_etmultiinitialiser_constructor_args():
+    sig = inspect.signature(ecdarText_ETMultiInitialiser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etsingleinitialiser_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSingleInitialiser)
+def test_ecdartext_etsingleinitialiser_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSingleInitialiser)
 
 
-def test_ecdartext::etsingleinitialiser_constructor_exists():
-    assert callable(ecdarText::ETSingleInitialiser.__init__)
+def test_ecdartext_etsingleinitialiser_constructor_exists():
+    assert callable(ecdarText_ETSingleInitialiser.__init__)
 
 
-def test_ecdartext::etsingleinitialiser_constructor_args():
-    sig = inspect.signature(ecdarText::ETSingleInitialiser.__init__)
+def test_ecdartext_etsingleinitialiser_constructor_args():
+    sig = inspect.signature(ecdarText_ETSingleInitialiser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etinitialiser_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETInitialiser)
+def test_ecdartext_etinitialiser_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETInitialiser)
 
 
-def test_ecdartext::etinitialiser_constructor_exists():
-    assert callable(ecdarText::ETInitialiser.__init__)
+def test_ecdartext_etinitialiser_constructor_exists():
+    assert callable(ecdarText_ETInitialiser.__init__)
 
 
-def test_ecdartext::etinitialiser_constructor_args():
-    sig = inspect.signature(ecdarText::ETInitialiser.__init__)
+def test_ecdartext_etinitialiser_constructor_args():
+    sig = inspect.signature(ecdarText_ETInitialiser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etvariableid_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETVariableID)
+def test_ecdartext_etvariableid_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETVariableID)
 
 
-def test_ecdartext::etvariableid_constructor_exists():
-    assert callable(ecdarText::ETVariableID.__init__)
+def test_ecdartext_etvariableid_constructor_exists():
+    assert callable(ecdarText_ETVariableID.__init__)
 
 
-def test_ecdartext::etvariableid_constructor_args():
-    sig = inspect.signature(ecdarText::ETVariableID.__init__)
+def test_ecdartext_etvariableid_constructor_args():
+    sig = inspect.signature(ecdarText_ETVariableID.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "ioType" in params, "Missing parameter 'ioType'"
 
-def test_ecdartext::etvariableid_has_name():
-    assert hasattr(ecdarText::ETVariableID, "name")
+def test_ecdartext_etvariableid_has_name():
+    assert hasattr(ecdarText_ETVariableID, "name")
     descriptor = None
-    for klass in ecdarText::ETVariableID.__mro__:
+    for klass in ecdarText_ETVariableID.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecdartext::etvariableid_has_ioType():
-    assert hasattr(ecdarText::ETVariableID, "ioType")
+def test_ecdartext_etvariableid_has_ioType():
+    assert hasattr(ecdarText_ETVariableID, "ioType")
     descriptor = None
-    for klass in ecdarText::ETVariableID.__mro__:
+    for klass in ecdarText_ETVariableID.__mro__:
         if "ioType" in klass.__dict__:
             descriptor = klass.__dict__["ioType"]
             break
@@ -1473,151 +1473,151 @@ def test_etdeclaration_constructor_args():
 
 
 
-def test_ecdartext::etvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETVariableDeclaration)
+def test_ecdartext_etvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETVariableDeclaration)
 
 
-def test_ecdartext::etvariabledeclaration_constructor_exists():
-    assert callable(ecdarText::ETVariableDeclaration.__init__)
+def test_ecdartext_etvariabledeclaration_constructor_exists():
+    assert callable(ecdarText_ETVariableDeclaration.__init__)
 
 
-def test_ecdartext::etvariabledeclaration_constructor_args():
-    sig = inspect.signature(ecdarText::ETVariableDeclaration.__init__)
+def test_ecdartext_etvariabledeclaration_constructor_args():
+    sig = inspect.signature(ecdarText_ETVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::ettypeidentifier_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETTypeIdentifier)
+def test_ecdartext_ettypeidentifier_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETTypeIdentifier)
 
 
-def test_ecdartext::ettypeidentifier_constructor_exists():
-    assert callable(ecdarText::ETTypeIdentifier.__init__)
+def test_ecdartext_ettypeidentifier_constructor_exists():
+    assert callable(ecdarText_ETTypeIdentifier.__init__)
 
 
-def test_ecdartext::ettypeidentifier_constructor_args():
-    sig = inspect.signature(ecdarText::ETTypeIdentifier.__init__)
+def test_ecdartext_ettypeidentifier_constructor_args():
+    sig = inspect.signature(ecdarText_ETTypeIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::ettypemodifiers_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETTypeModifiers)
+def test_ecdartext_ettypemodifiers_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETTypeModifiers)
 
 
-def test_ecdartext::ettypemodifiers_constructor_exists():
-    assert callable(ecdarText::ETTypeModifiers.__init__)
+def test_ecdartext_ettypemodifiers_constructor_exists():
+    assert callable(ecdarText_ETTypeModifiers.__init__)
 
 
-def test_ecdartext::ettypemodifiers_constructor_args():
-    sig = inspect.signature(ecdarText::ETTypeModifiers.__init__)
+def test_ecdartext_ettypemodifiers_constructor_args():
+    sig = inspect.signature(ecdarText_ETTypeModifiers.__init__)
     params = list(sig.parameters.keys())
     assert "const" in params, "Missing parameter 'const'"
-    assert "meta" in params, "Missing parameter 'meta'"
     assert "urgent" in params, "Missing parameter 'urgent'"
+    assert "meta" in params, "Missing parameter 'meta'"
 
-def test_ecdartext::ettypemodifiers_has_const():
-    assert hasattr(ecdarText::ETTypeModifiers, "const")
+def test_ecdartext_ettypemodifiers_has_const():
+    assert hasattr(ecdarText_ETTypeModifiers, "const")
     descriptor = None
-    for klass in ecdarText::ETTypeModifiers.__mro__:
+    for klass in ecdarText_ETTypeModifiers.__mro__:
         if "const" in klass.__dict__:
             descriptor = klass.__dict__["const"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecdartext::ettypemodifiers_has_meta():
-    assert hasattr(ecdarText::ETTypeModifiers, "meta")
+def test_ecdartext_ettypemodifiers_has_urgent():
+    assert hasattr(ecdarText_ETTypeModifiers, "urgent")
     descriptor = None
-    for klass in ecdarText::ETTypeModifiers.__mro__:
-        if "meta" in klass.__dict__:
-            descriptor = klass.__dict__["meta"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ecdartext::ettypemodifiers_has_urgent():
-    assert hasattr(ecdarText::ETTypeModifiers, "urgent")
-    descriptor = None
-    for klass in ecdarText::ETTypeModifiers.__mro__:
+    for klass in ecdarText_ETTypeModifiers.__mro__:
         if "urgent" in klass.__dict__:
             descriptor = klass.__dict__["urgent"]
             break
     assert isinstance(descriptor, property)
 
+def test_ecdartext_ettypemodifiers_has_meta():
+    assert hasattr(ecdarText_ETTypeModifiers, "meta")
+    descriptor = None
+    for klass in ecdarText_ETTypeModifiers.__mro__:
+        if "meta" in klass.__dict__:
+            descriptor = klass.__dict__["meta"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ecdartext::ettype_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETType)
+
+def test_ecdartext_ettype_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETType)
 
 
-def test_ecdartext::ettype_constructor_exists():
-    assert callable(ecdarText::ETType.__init__)
+def test_ecdartext_ettype_constructor_exists():
+    assert callable(ecdarText_ETType.__init__)
 
 
-def test_ecdartext::ettype_constructor_args():
-    sig = inspect.signature(ecdarText::ETType.__init__)
+def test_ecdartext_ettype_constructor_args():
+    sig = inspect.signature(ecdarText_ETType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETDeclaration)
+def test_ecdartext_etdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETDeclaration)
 
 
-def test_ecdartext::etdeclaration_constructor_exists():
-    assert callable(ecdarText::ETDeclaration.__init__)
+def test_ecdartext_etdeclaration_constructor_exists():
+    assert callable(ecdarText_ETDeclaration.__init__)
 
 
-def test_ecdartext::etdeclaration_constructor_args():
-    sig = inspect.signature(ecdarText::ETDeclaration.__init__)
+def test_ecdartext_etdeclaration_constructor_args():
+    sig = inspect.signature(ecdarText_ETDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etexpression_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETExpression)
+def test_ecdartext_etexpression_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETExpression)
 
 
-def test_ecdartext::etexpression_constructor_exists():
-    assert callable(ecdarText::ETExpression.__init__)
+def test_ecdartext_etexpression_constructor_exists():
+    assert callable(ecdarText_ETExpression.__init__)
 
 
-def test_ecdartext::etexpression_constructor_args():
-    sig = inspect.signature(ecdarText::ETExpression.__init__)
+def test_ecdartext_etexpression_constructor_args():
+    sig = inspect.signature(ecdarText_ETExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etarraydeclaration_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETArrayDeclaration)
+def test_ecdartext_etarraydeclaration_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETArrayDeclaration)
 
 
-def test_ecdartext::etarraydeclaration_constructor_exists():
-    assert callable(ecdarText::ETArrayDeclaration.__init__)
+def test_ecdartext_etarraydeclaration_constructor_exists():
+    assert callable(ecdarText_ETArrayDeclaration.__init__)
 
 
-def test_ecdartext::etarraydeclaration_constructor_args():
-    sig = inspect.signature(ecdarText::ETArrayDeclaration.__init__)
+def test_ecdartext_etarraydeclaration_constructor_args():
+    sig = inspect.signature(ecdarText_ETArrayDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::ettypeid_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETTypeID)
+def test_ecdartext_ettypeid_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETTypeID)
 
 
-def test_ecdartext::ettypeid_constructor_exists():
-    assert callable(ecdarText::ETTypeID.__init__)
+def test_ecdartext_ettypeid_constructor_exists():
+    assert callable(ecdarText_ETTypeID.__init__)
 
 
-def test_ecdartext::ettypeid_constructor_args():
-    sig = inspect.signature(ecdarText::ETTypeID.__init__)
+def test_ecdartext_ettypeid_constructor_args():
+    sig = inspect.signature(ecdarText_ETTypeID.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecdartext::ettypeid_has_name():
-    assert hasattr(ecdarText::ETTypeID, "name")
+def test_ecdartext_ettypeid_has_name():
+    assert hasattr(ecdarText_ETTypeID, "name")
     descriptor = None
-    for klass in ecdarText::ETTypeID.__mro__:
+    for klass in ecdarText_ETTypeID.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1625,37 +1625,37 @@ def test_ecdartext::ettypeid_has_name():
 
 
 
-def test_ecdartext::ettypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETTypeDeclaration)
+def test_ecdartext_ettypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETTypeDeclaration)
 
 
-def test_ecdartext::ettypedeclaration_constructor_exists():
-    assert callable(ecdarText::ETTypeDeclaration.__init__)
+def test_ecdartext_ettypedeclaration_constructor_exists():
+    assert callable(ecdarText_ETTypeDeclaration.__init__)
 
 
-def test_ecdartext::ettypedeclaration_constructor_args():
-    sig = inspect.signature(ecdarText::ETTypeDeclaration.__init__)
+def test_ecdartext_ettypedeclaration_constructor_args():
+    sig = inspect.signature(ecdarText_ETTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etimport_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETImport)
+def test_ecdartext_etimport_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETImport)
 
 
-def test_ecdartext::etimport_constructor_exists():
-    assert callable(ecdarText::ETImport.__init__)
+def test_ecdartext_etimport_constructor_exists():
+    assert callable(ecdarText_ETImport.__init__)
 
 
-def test_ecdartext::etimport_constructor_args():
-    sig = inspect.signature(ecdarText::ETImport.__init__)
+def test_ecdartext_etimport_constructor_args():
+    sig = inspect.signature(ecdarText_ETImport.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_ecdartext::etimport_has_importedNamespace():
-    assert hasattr(ecdarText::ETImport, "importedNamespace")
+def test_ecdartext_etimport_has_importedNamespace():
+    assert hasattr(ecdarText_ETImport, "importedNamespace")
     descriptor = None
-    for klass in ecdarText::ETImport.__mro__:
+    for klass in ecdarText_ETImport.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -1663,37 +1663,37 @@ def test_ecdartext::etimport_has_importedNamespace():
 
 
 
-def test_ecdartext::etfile_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETFile)
+def test_ecdartext_etfile_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETFile)
 
 
-def test_ecdartext::etfile_constructor_exists():
-    assert callable(ecdarText::ETFile.__init__)
+def test_ecdartext_etfile_constructor_exists():
+    assert callable(ecdarText_ETFile.__init__)
 
 
-def test_ecdartext::etfile_constructor_args():
-    sig = inspect.signature(ecdarText::ETFile.__init__)
+def test_ecdartext_etfile_constructor_args():
+    sig = inspect.signature(ecdarText_ETFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecdartext::etspecification_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETSpecification)
+def test_ecdartext_etspecification_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETSpecification)
 
 
-def test_ecdartext::etspecification_constructor_exists():
-    assert callable(ecdarText::ETSpecification.__init__)
+def test_ecdartext_etspecification_constructor_exists():
+    assert callable(ecdarText_ETSpecification.__init__)
 
 
-def test_ecdartext::etspecification_constructor_args():
-    sig = inspect.signature(ecdarText::ETSpecification.__init__)
+def test_ecdartext_etspecification_constructor_args():
+    sig = inspect.signature(ecdarText_ETSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecdartext::etspecification_has_name():
-    assert hasattr(ecdarText::ETSpecification, "name")
+def test_ecdartext_etspecification_has_name():
+    assert hasattr(ecdarText_ETSpecification, "name")
     descriptor = None
-    for klass in ecdarText::ETSpecification.__mro__:
+    for klass in ecdarText_ETSpecification.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1701,16 +1701,16 @@ def test_ecdartext::etspecification_has_name():
 
 
 
-def test_ecdartext::etdeclarations_is_not_abstract():
-    assert not inspect.isabstract(ecdarText::ETDeclarations)
+def test_ecdartext_etdeclarations_is_not_abstract():
+    assert not inspect.isabstract(ecdarText_ETDeclarations)
 
 
-def test_ecdartext::etdeclarations_constructor_exists():
-    assert callable(ecdarText::ETDeclarations.__init__)
+def test_ecdartext_etdeclarations_constructor_exists():
+    assert callable(ecdarText_ETDeclarations.__init__)
 
 
-def test_ecdartext::etdeclarations_constructor_args():
-    sig = inspect.signature(ecdarText::ETDeclarations.__init__)
+def test_ecdartext_etdeclarations_constructor_args():
+    sig = inspect.signature(ecdarText_ETDeclarations.__init__)
     params = list(sig.parameters.keys())
 
 def test_etiotype_exists():
@@ -1740,195 +1740,195 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ecdarText::EObject_strategy = st.builds(
-    ecdarText::EObject,
+ecdarText_EObject_strategy = st.builds(
+    ecdarText_EObject,
 )
 ETExpression_strategy = st.builds(
     ETExpression,
 )
-ecdarText::ETBitAndExpression_strategy = st.builds(
-    ecdarText::ETBitAndExpression,
-)
-ecdarText::ETAdditionAssignmentExpression_strategy = st.builds(
-    ecdarText::ETAdditionAssignmentExpression,
-)
-ecdarText::ETConditionalExpression_strategy = st.builds(
-    ecdarText::ETConditionalExpression,
-)
-ecdarText::ETAssignmentExpression_strategy = st.builds(
-    ecdarText::ETAssignmentExpression,
-)
-ecdarText::ETModuloAssignmentExpression_strategy = st.builds(
-    ecdarText::ETModuloAssignmentExpression,
-)
-ecdarText::ETGreaterEqualExpression_strategy = st.builds(
-    ecdarText::ETGreaterEqualExpression,
-)
-ecdarText::ETAddExpression_strategy = st.builds(
-    ecdarText::ETAddExpression,
-)
-ecdarText::ETPreDecrementExpression_strategy = st.builds(
-    ecdarText::ETPreDecrementExpression,
-)
-ecdarText::ETBitRightExpression_strategy = st.builds(
-    ecdarText::ETBitRightExpression,
-)
-ecdarText::ETBitOrAssignmentExpression_strategy = st.builds(
-    ecdarText::ETBitOrAssignmentExpression,
-)
-ecdarText::ETLogicAndExpression_strategy = st.builds(
-    ecdarText::ETLogicAndExpression,
-)
-ecdarText::ETBooleanLiteral_strategy = st.builds(
-    ecdarText::ETBooleanLiteral,
-    value=
-        safe_text
-)
-ecdarText::ETExistsExpression_strategy = st.builds(
-    ecdarText::ETExistsExpression,
+ecdarText_ETExistsExpression_strategy = st.builds(
+    ecdarText_ETExistsExpression,
     name=
         safe_text
 )
-ecdarText::ETBitXORExpression_strategy = st.builds(
-    ecdarText::ETBitXORExpression,
+ecdarText_ETDivisionAssignmentExpression_strategy = st.builds(
+    ecdarText_ETDivisionAssignmentExpression,
 )
-ecdarText::ETBitOrExpression_strategy = st.builds(
-    ecdarText::ETBitOrExpression,
+ecdarText_ETImplyExpression_strategy = st.builds(
+    ecdarText_ETImplyExpression,
 )
-ecdarText::ETLogicNotExpression_strategy = st.builds(
-    ecdarText::ETLogicNotExpression,
+ecdarText_ETLogicAndExpression_strategy = st.builds(
+    ecdarText_ETLogicAndExpression,
 )
-ecdarText::ETMultiplicationAssignmentExpression_strategy = st.builds(
-    ecdarText::ETMultiplicationAssignmentExpression,
+ecdarText_ETBitLeftExpression_strategy = st.builds(
+    ecdarText_ETBitLeftExpression,
 )
-ecdarText::ETNumberLiteral_strategy = st.builds(
-    ecdarText::ETNumberLiteral,
+ecdarText_ETReference_strategy = st.builds(
+    ecdarText_ETReference,
+)
+ecdarText_ETBitRightExpression_strategy = st.builds(
+    ecdarText_ETBitRightExpression,
+)
+ecdarText_ETArrayExpression_strategy = st.builds(
+    ecdarText_ETArrayExpression,
+)
+ecdarText_ETMultiplyExpression_strategy = st.builds(
+    ecdarText_ETMultiplyExpression,
+)
+ecdarText_ETUnequalExpression_strategy = st.builds(
+    ecdarText_ETUnequalExpression,
+)
+ecdarText_ETLessExpression_strategy = st.builds(
+    ecdarText_ETLessExpression,
+)
+ecdarText_ETSubtractExpression_strategy = st.builds(
+    ecdarText_ETSubtractExpression,
+)
+ecdarText_ETMaxExpression_strategy = st.builds(
+    ecdarText_ETMaxExpression,
+)
+ecdarText_ETAdditionAssignmentExpression_strategy = st.builds(
+    ecdarText_ETAdditionAssignmentExpression,
+)
+ecdarText_ETBitLeftAssignmentExpression_strategy = st.builds(
+    ecdarText_ETBitLeftAssignmentExpression,
+)
+ecdarText_ETGreaterEqualExpression_strategy = st.builds(
+    ecdarText_ETGreaterEqualExpression,
+)
+ecdarText_ETLessEqualExpression_strategy = st.builds(
+    ecdarText_ETLessEqualExpression,
+)
+ecdarText_ETNumberLiteral_strategy = st.builds(
+    ecdarText_ETNumberLiteral,
     value=
         st.integers()
 )
-ecdarText::ETMinExpression_strategy = st.builds(
-    ecdarText::ETMinExpression,
+ecdarText_ETMinExpression_strategy = st.builds(
+    ecdarText_ETMinExpression,
 )
-ecdarText::ETSubtractExpression_strategy = st.builds(
-    ecdarText::ETSubtractExpression,
+ecdarText_ETBitRightAssignmentExpression_strategy = st.builds(
+    ecdarText_ETBitRightAssignmentExpression,
 )
-ecdarText::ETImplyExpression_strategy = st.builds(
-    ecdarText::ETImplyExpression,
+ecdarText_ETModuloAssignmentExpression_strategy = st.builds(
+    ecdarText_ETModuloAssignmentExpression,
 )
-ecdarText::ETPreIncrementExpression_strategy = st.builds(
-    ecdarText::ETPreIncrementExpression,
+ecdarText_ETPreDecrementExpression_strategy = st.builds(
+    ecdarText_ETPreDecrementExpression,
 )
-ecdarText::ETPostDecrementExpression_strategy = st.builds(
-    ecdarText::ETPostDecrementExpression,
+ecdarText_ETPostIncrementExpression_strategy = st.builds(
+    ecdarText_ETPostIncrementExpression,
 )
-ecdarText::ETMultiplyExpression_strategy = st.builds(
-    ecdarText::ETMultiplyExpression,
+ecdarText_ETLogicNotExpression_strategy = st.builds(
+    ecdarText_ETLogicNotExpression,
 )
-ecdarText::ETMinusExpression_strategy = st.builds(
-    ecdarText::ETMinusExpression,
+ecdarText_ETBitXORExpression_strategy = st.builds(
+    ecdarText_ETBitXORExpression,
 )
-ecdarText::ETBitLeftAssignmentExpression_strategy = st.builds(
-    ecdarText::ETBitLeftAssignmentExpression,
+ecdarText_ETBooleanLiteral_strategy = st.builds(
+    ecdarText_ETBooleanLiteral,
+    value=
+        safe_text
 )
-ecdarText::ETModuloExpression_strategy = st.builds(
-    ecdarText::ETModuloExpression,
+ecdarText_ETBitAndExpression_strategy = st.builds(
+    ecdarText_ETBitAndExpression,
 )
-ecdarText::ETBitLeftExpression_strategy = st.builds(
-    ecdarText::ETBitLeftExpression,
+ecdarText_ETConditionalExpression_strategy = st.builds(
+    ecdarText_ETConditionalExpression,
 )
-ecdarText::ETMaxExpression_strategy = st.builds(
-    ecdarText::ETMaxExpression,
+ecdarText_ETEqualExpression_strategy = st.builds(
+    ecdarText_ETEqualExpression,
 )
-ecdarText::ETStructExpression_strategy = st.builds(
-    ecdarText::ETStructExpression,
+ecdarText_ETBitOrExpression_strategy = st.builds(
+    ecdarText_ETBitOrExpression,
+)
+ecdarText_ETBitAndAssignmentExpression_strategy = st.builds(
+    ecdarText_ETBitAndAssignmentExpression,
+)
+ecdarText_ETPreIncrementExpression_strategy = st.builds(
+    ecdarText_ETPreIncrementExpression,
+)
+ecdarText_ETBitXORAssignmentExpression_strategy = st.builds(
+    ecdarText_ETBitXORAssignmentExpression,
+)
+ecdarText_ETPostDecrementExpression_strategy = st.builds(
+    ecdarText_ETPostDecrementExpression,
+)
+ecdarText_ETAddExpression_strategy = st.builds(
+    ecdarText_ETAddExpression,
+)
+ecdarText_ETStructExpression_strategy = st.builds(
+    ecdarText_ETStructExpression,
     right=
         safe_text
 )
-ecdarText::ETBitXORAssignmentExpression_strategy = st.builds(
-    ecdarText::ETBitXORAssignmentExpression,
+ecdarText_ETAssignmentExpression_strategy = st.builds(
+    ecdarText_ETAssignmentExpression,
 )
-ecdarText::ETLogicOrExpression_strategy = st.builds(
-    ecdarText::ETLogicOrExpression,
+ecdarText_ETLogicOrExpression_strategy = st.builds(
+    ecdarText_ETLogicOrExpression,
 )
-ecdarText::ETLessEqualExpression_strategy = st.builds(
-    ecdarText::ETLessEqualExpression,
+ecdarText_ETGreaterExpression_strategy = st.builds(
+    ecdarText_ETGreaterExpression,
 )
-ecdarText::ETArrayExpression_strategy = st.builds(
-    ecdarText::ETArrayExpression,
+ecdarText_ETMultiplicationAssignmentExpression_strategy = st.builds(
+    ecdarText_ETMultiplicationAssignmentExpression,
 )
-ecdarText::ETEqualExpression_strategy = st.builds(
-    ecdarText::ETEqualExpression,
+ecdarText_ETMinusExpression_strategy = st.builds(
+    ecdarText_ETMinusExpression,
 )
-ecdarText::ETDivideExpression_strategy = st.builds(
-    ecdarText::ETDivideExpression,
+ecdarText_ETBitOrAssignmentExpression_strategy = st.builds(
+    ecdarText_ETBitOrAssignmentExpression,
 )
-ecdarText::ETLessExpression_strategy = st.builds(
-    ecdarText::ETLessExpression,
+ecdarText_ETDivideExpression_strategy = st.builds(
+    ecdarText_ETDivideExpression,
 )
-ecdarText::ETBitRightAssignmentExpression_strategy = st.builds(
-    ecdarText::ETBitRightAssignmentExpression,
+ecdarText_ETModuloExpression_strategy = st.builds(
+    ecdarText_ETModuloExpression,
 )
-ecdarText::ETBitAndAssignmentExpression_strategy = st.builds(
-    ecdarText::ETBitAndAssignmentExpression,
-)
-ecdarText::ETGreaterExpression_strategy = st.builds(
-    ecdarText::ETGreaterExpression,
-)
-ecdarText::ETReference_strategy = st.builds(
-    ecdarText::ETReference,
-)
-ecdarText::ETUnequalExpression_strategy = st.builds(
-    ecdarText::ETUnequalExpression,
-)
-ecdarText::ETPostIncrementExpression_strategy = st.builds(
-    ecdarText::ETPostIncrementExpression,
-)
-ecdarText::ETDivisionAssignmentExpression_strategy = st.builds(
-    ecdarText::ETDivisionAssignmentExpression,
-)
-ecdarText::ETForallExpression_strategy = st.builds(
-    ecdarText::ETForallExpression,
+ecdarText_ETForallExpression_strategy = st.builds(
+    ecdarText_ETForallExpression,
     name=
         safe_text
 )
-ecdarText::ETSubtractionAssignmentExpression_strategy = st.builds(
-    ecdarText::ETSubtractionAssignmentExpression,
+ecdarText_ETSubtractionAssignmentExpression_strategy = st.builds(
+    ecdarText_ETSubtractionAssignmentExpression,
 )
 ETSpecificationExpression_strategy = st.builds(
     ETSpecificationExpression,
 )
-ecdarText::ETSpecificationInstantiation_strategy = st.builds(
-    ecdarText::ETSpecificationInstantiation,
+ecdarText_ETSpecificationInstantiation_strategy = st.builds(
+    ecdarText_ETSpecificationInstantiation,
 )
-ecdarText::ETSpecificationReference_strategy = st.builds(
-    ecdarText::ETSpecificationReference,
+ecdarText_ETSpecificationReference_strategy = st.builds(
+    ecdarText_ETSpecificationReference,
 )
-ecdarText::ETSpecificationConjunctionExpression_strategy = st.builds(
-    ecdarText::ETSpecificationConjunctionExpression,
+ecdarText_ETSpecificationConjunctionExpression_strategy = st.builds(
+    ecdarText_ETSpecificationConjunctionExpression,
 )
-ecdarText::ETSpecificationDisjunctionExpression_strategy = st.builds(
-    ecdarText::ETSpecificationDisjunctionExpression,
+ecdarText_ETSpecificationDisjunctionExpression_strategy = st.builds(
+    ecdarText_ETSpecificationDisjunctionExpression,
 )
-ecdarText::ETIO_strategy = st.builds(
-    ecdarText::ETIO,
+ecdarText_ETIO_strategy = st.builds(
+    ecdarText_ETIO,
     type=
         safe_text
 )
-ecdarText::ETSelect_strategy = st.builds(
-    ecdarText::ETSelect,
+ecdarText_ETSelect_strategy = st.builds(
+    ecdarText_ETSelect,
     name=
         safe_text
 )
-ecdarText::ETEdge_strategy = st.builds(
-    ecdarText::ETEdge,
+ecdarText_ETEdge_strategy = st.builds(
+    ecdarText_ETEdge,
     controllable=
         st.booleans()
 )
-ecdarText::ETSpecificationCompositionExpression_strategy = st.builds(
-    ecdarText::ETSpecificationCompositionExpression,
+ecdarText_ETSpecificationCompositionExpression_strategy = st.builds(
+    ecdarText_ETSpecificationCompositionExpression,
 )
-ecdarText::ETLocation_strategy = st.builds(
-    ecdarText::ETLocation,
+ecdarText_ETLocation_strategy = st.builds(
+    ecdarText_ETLocation,
     universal=
         st.booleans(),
     urgent=
@@ -1936,8 +1936,8 @@ ecdarText::ETLocation_strategy = st.builds(
     name=
         safe_text
 )
-ecdarText::ETParameter_strategy = st.builds(
-    ecdarText::ETParameter,
+ecdarText_ETParameter_strategy = st.builds(
+    ecdarText_ETParameter,
     name=
         safe_text,
     ioType=
@@ -1946,81 +1946,81 @@ ecdarText::ETParameter_strategy = st.builds(
 ETSpecificationDefinition_strategy = st.builds(
     ETSpecificationDefinition,
 )
-ecdarText::ETSpecificationTemplate_strategy = st.builds(
-    ecdarText::ETSpecificationTemplate,
+ecdarText_ETSpecificationTemplate_strategy = st.builds(
+    ecdarText_ETSpecificationTemplate,
 )
-ecdarText::ETSpecificationBody_strategy = st.builds(
-    ecdarText::ETSpecificationBody,
+ecdarText_ETSpecificationBody_strategy = st.builds(
+    ecdarText_ETSpecificationBody,
 )
 ETSpecification_strategy = st.builds(
     ETSpecification,
 )
-ecdarText::ETSpecificationDefinition_strategy = st.builds(
-    ecdarText::ETSpecificationDefinition,
+ecdarText_ETSpecificationDefinition_strategy = st.builds(
+    ecdarText_ETSpecificationDefinition,
 )
-ecdarText::ETSpecificationBinding_strategy = st.builds(
-    ecdarText::ETSpecificationBinding,
+ecdarText_ETSpecificationBinding_strategy = st.builds(
+    ecdarText_ETSpecificationBinding,
 )
-ecdarText::ETSpecificationExpression_strategy = st.builds(
-    ecdarText::ETSpecificationExpression,
+ecdarText_ETSpecificationExpression_strategy = st.builds(
+    ecdarText_ETSpecificationExpression,
 )
-ecdarText::ETFieldID_strategy = st.builds(
-    ecdarText::ETFieldID,
+ecdarText_ETFieldID_strategy = st.builds(
+    ecdarText_ETFieldID,
     name=
         safe_text,
     ioType=
         safe_text
 )
-ecdarText::ETFieldDeclaration_strategy = st.builds(
-    ecdarText::ETFieldDeclaration,
+ecdarText_ETFieldDeclaration_strategy = st.builds(
+    ecdarText_ETFieldDeclaration,
 )
 ETActionType_strategy = st.builds(
     ETActionType,
 )
-ecdarText::ETOutputType_strategy = st.builds(
-    ecdarText::ETOutputType,
+ecdarText_ETOutputType_strategy = st.builds(
+    ecdarText_ETOutputType,
 )
-ecdarText::ETInputType_strategy = st.builds(
-    ecdarText::ETInputType,
+ecdarText_ETInputType_strategy = st.builds(
+    ecdarText_ETInputType,
 )
 ETTypeIdentifier_strategy = st.builds(
     ETTypeIdentifier,
 )
-ecdarText::ETActionType_strategy = st.builds(
-    ecdarText::ETActionType,
+ecdarText_ETClockType_strategy = st.builds(
+    ecdarText_ETClockType,
 )
-ecdarText::ETBooleanType_strategy = st.builds(
-    ecdarText::ETBooleanType,
+ecdarText_ETBooleanType_strategy = st.builds(
+    ecdarText_ETBooleanType,
 )
-ecdarText::ETStructType_strategy = st.builds(
-    ecdarText::ETStructType,
+ecdarText_ETTypeReference_strategy = st.builds(
+    ecdarText_ETTypeReference,
 )
-ecdarText::ETScalarType_strategy = st.builds(
-    ecdarText::ETScalarType,
+ecdarText_ETStructType_strategy = st.builds(
+    ecdarText_ETStructType,
 )
-ecdarText::ETTypeReference_strategy = st.builds(
-    ecdarText::ETTypeReference,
+ecdarText_ETActionType_strategy = st.builds(
+    ecdarText_ETActionType,
 )
-ecdarText::ETClockType_strategy = st.builds(
-    ecdarText::ETClockType,
+ecdarText_ETScalarType_strategy = st.builds(
+    ecdarText_ETScalarType,
 )
-ecdarText::ETIntegerType_strategy = st.builds(
-    ecdarText::ETIntegerType,
+ecdarText_ETIntegerType_strategy = st.builds(
+    ecdarText_ETIntegerType,
 )
 ETInitialiser_strategy = st.builds(
     ETInitialiser,
 )
-ecdarText::ETMultiInitialiser_strategy = st.builds(
-    ecdarText::ETMultiInitialiser,
+ecdarText_ETMultiInitialiser_strategy = st.builds(
+    ecdarText_ETMultiInitialiser,
 )
-ecdarText::ETSingleInitialiser_strategy = st.builds(
-    ecdarText::ETSingleInitialiser,
+ecdarText_ETSingleInitialiser_strategy = st.builds(
+    ecdarText_ETSingleInitialiser,
 )
-ecdarText::ETInitialiser_strategy = st.builds(
-    ecdarText::ETInitialiser,
+ecdarText_ETInitialiser_strategy = st.builds(
+    ecdarText_ETInitialiser,
 )
-ecdarText::ETVariableID_strategy = st.builds(
-    ecdarText::ETVariableID,
+ecdarText_ETVariableID_strategy = st.builds(
+    ecdarText_ETVariableID,
     name=
         safe_text,
     ioType=
@@ -2029,492 +2029,453 @@ ecdarText::ETVariableID_strategy = st.builds(
 ETDeclaration_strategy = st.builds(
     ETDeclaration,
 )
-ecdarText::ETVariableDeclaration_strategy = st.builds(
-    ecdarText::ETVariableDeclaration,
+ecdarText_ETVariableDeclaration_strategy = st.builds(
+    ecdarText_ETVariableDeclaration,
 )
-ecdarText::ETTypeIdentifier_strategy = st.builds(
-    ecdarText::ETTypeIdentifier,
+ecdarText_ETTypeIdentifier_strategy = st.builds(
+    ecdarText_ETTypeIdentifier,
 )
-ecdarText::ETTypeModifiers_strategy = st.builds(
-    ecdarText::ETTypeModifiers,
+ecdarText_ETTypeModifiers_strategy = st.builds(
+    ecdarText_ETTypeModifiers,
     const=
         st.booleans(),
-    meta=
-        st.booleans(),
     urgent=
+        st.booleans(),
+    meta=
         st.booleans()
 )
-ecdarText::ETType_strategy = st.builds(
-    ecdarText::ETType,
+ecdarText_ETType_strategy = st.builds(
+    ecdarText_ETType,
 )
-ecdarText::ETDeclaration_strategy = st.builds(
-    ecdarText::ETDeclaration,
+ecdarText_ETDeclaration_strategy = st.builds(
+    ecdarText_ETDeclaration,
 )
-ecdarText::ETExpression_strategy = st.builds(
-    ecdarText::ETExpression,
+ecdarText_ETExpression_strategy = st.builds(
+    ecdarText_ETExpression,
 )
-ecdarText::ETArrayDeclaration_strategy = st.builds(
-    ecdarText::ETArrayDeclaration,
+ecdarText_ETArrayDeclaration_strategy = st.builds(
+    ecdarText_ETArrayDeclaration,
 )
-ecdarText::ETTypeID_strategy = st.builds(
-    ecdarText::ETTypeID,
+ecdarText_ETTypeID_strategy = st.builds(
+    ecdarText_ETTypeID,
     name=
         safe_text
 )
-ecdarText::ETTypeDeclaration_strategy = st.builds(
-    ecdarText::ETTypeDeclaration,
+ecdarText_ETTypeDeclaration_strategy = st.builds(
+    ecdarText_ETTypeDeclaration,
 )
-ecdarText::ETImport_strategy = st.builds(
-    ecdarText::ETImport,
+ecdarText_ETImport_strategy = st.builds(
+    ecdarText_ETImport,
     importedNamespace=
         safe_text
 )
-ecdarText::ETFile_strategy = st.builds(
-    ecdarText::ETFile,
+ecdarText_ETFile_strategy = st.builds(
+    ecdarText_ETFile,
 )
-ecdarText::ETSpecification_strategy = st.builds(
-    ecdarText::ETSpecification,
+ecdarText_ETSpecification_strategy = st.builds(
+    ecdarText_ETSpecification,
     name=
         safe_text
 )
-ecdarText::ETDeclarations_strategy = st.builds(
-    ecdarText::ETDeclarations,
+ecdarText_ETDeclarations_strategy = st.builds(
+    ecdarText_ETDeclarations,
 )
 
-@given(instance=ecdarText::EObject_strategy)
+@given(instance=ecdarText_EObject_strategy)
 @settings(max_examples=50)
-def test_ecdartext::eobject_instantiation(instance):
-    assert isinstance(instance, ecdarText::EObject)
+def test_ecdartext_eobject_instantiation(instance):
+    assert isinstance(instance, ecdarText_EObject)
 
 @given(instance=ETExpression_strategy)
 @settings(max_examples=50)
 def test_etexpression_instantiation(instance):
     assert isinstance(instance, ETExpression)
 
-@given(instance=ecdarText::ETBitAndExpression_strategy)
+@given(instance=ecdarText_ETExistsExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitandexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitAndExpression)
-
-@given(instance=ecdarText::ETAdditionAssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etadditionassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETAdditionAssignmentExpression)
-
-@given(instance=ecdarText::ETConditionalExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etconditionalexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETConditionalExpression)
-
-@given(instance=ecdarText::ETAssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETAssignmentExpression)
-
-@given(instance=ecdarText::ETModuloAssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etmoduloassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETModuloAssignmentExpression)
-
-@given(instance=ecdarText::ETGreaterEqualExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etgreaterequalexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETGreaterEqualExpression)
-
-@given(instance=ecdarText::ETAddExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etaddexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETAddExpression)
-
-@given(instance=ecdarText::ETPreDecrementExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etpredecrementexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETPreDecrementExpression)
-
-@given(instance=ecdarText::ETBitRightExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etbitrightexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitRightExpression)
-
-@given(instance=ecdarText::ETBitOrAssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etbitorassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitOrAssignmentExpression)
-
-@given(instance=ecdarText::ETLogicAndExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etlogicandexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETLogicAndExpression)
-
-@given(instance=ecdarText::ETBooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etbooleanliteral_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBooleanLiteral)
-
-@given(instance=ecdarText::ETBooleanLiteral_strategy)
-def test_ecdartext::etbooleanliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ecdartext_etexistsexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETExistsExpression)
 
 
-@given(instance=ecdarText::ETBooleanLiteral_strategy)
-def test_ecdartext::etbooleanliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=ecdarText::ETExistsExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etexistsexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETExistsExpression)
-
-@given(instance=ecdarText::ETExistsExpression_strategy)
-def test_ecdartext::etexistsexpression_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ecdarText::ETExistsExpression_strategy)
-def test_ecdartext::etexistsexpression_name_setter(instance):
+@given(instance=ecdarText_ETExistsExpression_strategy)
+def test_ecdartext_etexistsexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETBitXORExpression_strategy)
+@given(instance=ecdarText_ETDivisionAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitxorexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitXORExpression)
+def test_ecdartext_etdivisionassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETDivisionAssignmentExpression)
 
-@given(instance=ecdarText::ETBitOrExpression_strategy)
+@given(instance=ecdarText_ETImplyExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitorexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitOrExpression)
+def test_ecdartext_etimplyexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETImplyExpression)
 
-@given(instance=ecdarText::ETLogicNotExpression_strategy)
+@given(instance=ecdarText_ETLogicAndExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etlogicnotexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETLogicNotExpression)
+def test_ecdartext_etlogicandexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETLogicAndExpression)
 
-@given(instance=ecdarText::ETMultiplicationAssignmentExpression_strategy)
+@given(instance=ecdarText_ETBitLeftExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etmultiplicationassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETMultiplicationAssignmentExpression)
+def test_ecdartext_etbitleftexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitLeftExpression)
 
-@given(instance=ecdarText::ETNumberLiteral_strategy)
+@given(instance=ecdarText_ETReference_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etnumberliteral_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETNumberLiteral)
+def test_ecdartext_etreference_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETReference)
 
-@given(instance=ecdarText::ETNumberLiteral_strategy)
-def test_ecdartext::etnumberliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=ecdarText_ETBitRightExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etbitrightexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitRightExpression)
+
+@given(instance=ecdarText_ETArrayExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etarrayexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETArrayExpression)
+
+@given(instance=ecdarText_ETMultiplyExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etmultiplyexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETMultiplyExpression)
+
+@given(instance=ecdarText_ETUnequalExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etunequalexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETUnequalExpression)
+
+@given(instance=ecdarText_ETLessExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etlessexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETLessExpression)
+
+@given(instance=ecdarText_ETSubtractExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etsubtractexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSubtractExpression)
+
+@given(instance=ecdarText_ETMaxExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etmaxexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETMaxExpression)
+
+@given(instance=ecdarText_ETAdditionAssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etadditionassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETAdditionAssignmentExpression)
+
+@given(instance=ecdarText_ETBitLeftAssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etbitleftassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitLeftAssignmentExpression)
+
+@given(instance=ecdarText_ETGreaterEqualExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etgreaterequalexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETGreaterEqualExpression)
+
+@given(instance=ecdarText_ETLessEqualExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etlessequalexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETLessEqualExpression)
+
+@given(instance=ecdarText_ETNumberLiteral_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etnumberliteral_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETNumberLiteral)
 
 
-@given(instance=ecdarText::ETNumberLiteral_strategy)
-def test_ecdartext::etnumberliteral_value_setter(instance):
+
+@given(instance=ecdarText_ETNumberLiteral_strategy)
+def test_ecdartext_etnumberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ecdarText::ETMinExpression_strategy)
+@given(instance=ecdarText_ETMinExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etminexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETMinExpression)
+def test_ecdartext_etminexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETMinExpression)
 
-@given(instance=ecdarText::ETSubtractExpression_strategy)
+@given(instance=ecdarText_ETBitRightAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etsubtractexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSubtractExpression)
+def test_ecdartext_etbitrightassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitRightAssignmentExpression)
 
-@given(instance=ecdarText::ETImplyExpression_strategy)
+@given(instance=ecdarText_ETModuloAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etimplyexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETImplyExpression)
+def test_ecdartext_etmoduloassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETModuloAssignmentExpression)
 
-@given(instance=ecdarText::ETPreIncrementExpression_strategy)
+@given(instance=ecdarText_ETPreDecrementExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etpreincrementexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETPreIncrementExpression)
+def test_ecdartext_etpredecrementexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETPreDecrementExpression)
 
-@given(instance=ecdarText::ETPostDecrementExpression_strategy)
+@given(instance=ecdarText_ETPostIncrementExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etpostdecrementexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETPostDecrementExpression)
+def test_ecdartext_etpostincrementexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETPostIncrementExpression)
 
-@given(instance=ecdarText::ETMultiplyExpression_strategy)
+@given(instance=ecdarText_ETLogicNotExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etmultiplyexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETMultiplyExpression)
+def test_ecdartext_etlogicnotexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETLogicNotExpression)
 
-@given(instance=ecdarText::ETMinusExpression_strategy)
+@given(instance=ecdarText_ETBitXORExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etminusexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETMinusExpression)
+def test_ecdartext_etbitxorexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitXORExpression)
 
-@given(instance=ecdarText::ETBitLeftAssignmentExpression_strategy)
+@given(instance=ecdarText_ETBooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitleftassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitLeftAssignmentExpression)
+def test_ecdartext_etbooleanliteral_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBooleanLiteral)
 
-@given(instance=ecdarText::ETModuloExpression_strategy)
+
+
+@given(instance=ecdarText_ETBooleanLiteral_strategy)
+def test_ecdartext_etbooleanliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=ecdarText_ETBitAndExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etmoduloexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETModuloExpression)
+def test_ecdartext_etbitandexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitAndExpression)
 
-@given(instance=ecdarText::ETBitLeftExpression_strategy)
+@given(instance=ecdarText_ETConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitleftexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitLeftExpression)
+def test_ecdartext_etconditionalexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETConditionalExpression)
 
-@given(instance=ecdarText::ETMaxExpression_strategy)
+@given(instance=ecdarText_ETEqualExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etmaxexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETMaxExpression)
+def test_ecdartext_etequalexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETEqualExpression)
 
-@given(instance=ecdarText::ETStructExpression_strategy)
+@given(instance=ecdarText_ETBitOrExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etstructexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETStructExpression)
+def test_ecdartext_etbitorexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitOrExpression)
 
-@given(instance=ecdarText::ETStructExpression_strategy)
-def test_ecdartext::etstructexpression_right_type(instance):
-    assert isinstance(instance.right, str)
+@given(instance=ecdarText_ETBitAndAssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etbitandassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitAndAssignmentExpression)
+
+@given(instance=ecdarText_ETPreIncrementExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etpreincrementexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETPreIncrementExpression)
+
+@given(instance=ecdarText_ETBitXORAssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etbitxorassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitXORAssignmentExpression)
+
+@given(instance=ecdarText_ETPostDecrementExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etpostdecrementexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETPostDecrementExpression)
+
+@given(instance=ecdarText_ETAddExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etaddexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETAddExpression)
+
+@given(instance=ecdarText_ETStructExpression_strategy)
+@settings(max_examples=50)
+def test_ecdartext_etstructexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETStructExpression)
 
 
-@given(instance=ecdarText::ETStructExpression_strategy)
-def test_ecdartext::etstructexpression_right_setter(instance):
+
+@given(instance=ecdarText_ETStructExpression_strategy)
+def test_ecdartext_etstructexpression_right_setter(instance):
     original = instance.right
     instance.right = original
     assert instance.right == original
 
-@given(instance=ecdarText::ETBitXORAssignmentExpression_strategy)
+@given(instance=ecdarText_ETAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitxorassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitXORAssignmentExpression)
+def test_ecdartext_etassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETAssignmentExpression)
 
-@given(instance=ecdarText::ETLogicOrExpression_strategy)
+@given(instance=ecdarText_ETLogicOrExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etlogicorexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETLogicOrExpression)
+def test_ecdartext_etlogicorexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETLogicOrExpression)
 
-@given(instance=ecdarText::ETLessEqualExpression_strategy)
+@given(instance=ecdarText_ETGreaterExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etlessequalexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETLessEqualExpression)
+def test_ecdartext_etgreaterexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETGreaterExpression)
 
-@given(instance=ecdarText::ETArrayExpression_strategy)
+@given(instance=ecdarText_ETMultiplicationAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etarrayexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETArrayExpression)
+def test_ecdartext_etmultiplicationassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETMultiplicationAssignmentExpression)
 
-@given(instance=ecdarText::ETEqualExpression_strategy)
+@given(instance=ecdarText_ETMinusExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etequalexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETEqualExpression)
+def test_ecdartext_etminusexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETMinusExpression)
 
-@given(instance=ecdarText::ETDivideExpression_strategy)
+@given(instance=ecdarText_ETBitOrAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etdivideexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETDivideExpression)
+def test_ecdartext_etbitorassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBitOrAssignmentExpression)
 
-@given(instance=ecdarText::ETLessExpression_strategy)
+@given(instance=ecdarText_ETDivideExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etlessexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETLessExpression)
+def test_ecdartext_etdivideexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETDivideExpression)
 
-@given(instance=ecdarText::ETBitRightAssignmentExpression_strategy)
+@given(instance=ecdarText_ETModuloExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitrightassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitRightAssignmentExpression)
+def test_ecdartext_etmoduloexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETModuloExpression)
 
-@given(instance=ecdarText::ETBitAndAssignmentExpression_strategy)
+@given(instance=ecdarText_ETForallExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbitandassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBitAndAssignmentExpression)
-
-@given(instance=ecdarText::ETGreaterExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etgreaterexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETGreaterExpression)
-
-@given(instance=ecdarText::ETReference_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etreference_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETReference)
-
-@given(instance=ecdarText::ETUnequalExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etunequalexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETUnequalExpression)
-
-@given(instance=ecdarText::ETPostIncrementExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etpostincrementexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETPostIncrementExpression)
-
-@given(instance=ecdarText::ETDivisionAssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etdivisionassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETDivisionAssignmentExpression)
-
-@given(instance=ecdarText::ETForallExpression_strategy)
-@settings(max_examples=50)
-def test_ecdartext::etforallexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETForallExpression)
-
-@given(instance=ecdarText::ETForallExpression_strategy)
-def test_ecdartext::etforallexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_etforallexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETForallExpression)
 
 
-@given(instance=ecdarText::ETForallExpression_strategy)
-def test_ecdartext::etforallexpression_name_setter(instance):
+
+@given(instance=ecdarText_ETForallExpression_strategy)
+def test_ecdartext_etforallexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETSubtractionAssignmentExpression_strategy)
+@given(instance=ecdarText_ETSubtractionAssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etsubtractionassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSubtractionAssignmentExpression)
+def test_ecdartext_etsubtractionassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSubtractionAssignmentExpression)
 
 @given(instance=ETSpecificationExpression_strategy)
 @settings(max_examples=50)
 def test_etspecificationexpression_instantiation(instance):
     assert isinstance(instance, ETSpecificationExpression)
 
-@given(instance=ecdarText::ETSpecificationInstantiation_strategy)
+@given(instance=ecdarText_ETSpecificationInstantiation_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationinstantiation_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationInstantiation)
+def test_ecdartext_etspecificationinstantiation_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationInstantiation)
 
-@given(instance=ecdarText::ETSpecificationReference_strategy)
+@given(instance=ecdarText_ETSpecificationReference_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationreference_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationReference)
+def test_ecdartext_etspecificationreference_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationReference)
 
-@given(instance=ecdarText::ETSpecificationConjunctionExpression_strategy)
+@given(instance=ecdarText_ETSpecificationConjunctionExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationconjunctionexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationConjunctionExpression)
+def test_ecdartext_etspecificationconjunctionexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationConjunctionExpression)
 
-@given(instance=ecdarText::ETSpecificationDisjunctionExpression_strategy)
+@given(instance=ecdarText_ETSpecificationDisjunctionExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationdisjunctionexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationDisjunctionExpression)
+def test_ecdartext_etspecificationdisjunctionexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationDisjunctionExpression)
 
-@given(instance=ecdarText::ETIO_strategy)
+@given(instance=ecdarText_ETIO_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etio_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETIO)
-
-@given(instance=ecdarText::ETIO_strategy)
-def test_ecdartext::etio_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_ecdartext_etio_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETIO)
 
 
-@given(instance=ecdarText::ETIO_strategy)
-def test_ecdartext::etio_type_setter(instance):
+
+@given(instance=ecdarText_ETIO_strategy)
+def test_ecdartext_etio_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ecdarText::ETSelect_strategy)
+@given(instance=ecdarText_ETSelect_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etselect_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSelect)
-
-@given(instance=ecdarText::ETSelect_strategy)
-def test_ecdartext::etselect_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_etselect_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSelect)
 
 
-@given(instance=ecdarText::ETSelect_strategy)
-def test_ecdartext::etselect_name_setter(instance):
+
+@given(instance=ecdarText_ETSelect_strategy)
+def test_ecdartext_etselect_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETEdge_strategy)
+@given(instance=ecdarText_ETEdge_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etedge_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETEdge)
-
-@given(instance=ecdarText::ETEdge_strategy)
-def test_ecdartext::etedge_controllable_type(instance):
-    assert isinstance(instance.controllable, bool)
+def test_ecdartext_etedge_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETEdge)
 
 
-@given(instance=ecdarText::ETEdge_strategy)
-def test_ecdartext::etedge_controllable_setter(instance):
+
+@given(instance=ecdarText_ETEdge_strategy)
+def test_ecdartext_etedge_controllable_setter(instance):
     original = instance.controllable
     instance.controllable = original
     assert instance.controllable == original
 
-@given(instance=ecdarText::ETSpecificationCompositionExpression_strategy)
+@given(instance=ecdarText_ETSpecificationCompositionExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationcompositionexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationCompositionExpression)
+def test_ecdartext_etspecificationcompositionexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationCompositionExpression)
 
-@given(instance=ecdarText::ETLocation_strategy)
+@given(instance=ecdarText_ETLocation_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etlocation_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETLocation)
-
-@given(instance=ecdarText::ETLocation_strategy)
-def test_ecdartext::etlocation_universal_type(instance):
-    assert isinstance(instance.universal, bool)
+def test_ecdartext_etlocation_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETLocation)
 
 
-@given(instance=ecdarText::ETLocation_strategy)
-def test_ecdartext::etlocation_universal_setter(instance):
+
+@given(instance=ecdarText_ETLocation_strategy)
+def test_ecdartext_etlocation_universal_setter(instance):
     original = instance.universal
     instance.universal = original
     assert instance.universal == original
 
-@given(instance=ecdarText::ETLocation_strategy)
-def test_ecdartext::etlocation_urgent_type(instance):
-    assert isinstance(instance.urgent, bool)
 
 
-@given(instance=ecdarText::ETLocation_strategy)
-def test_ecdartext::etlocation_urgent_setter(instance):
+@given(instance=ecdarText_ETLocation_strategy)
+def test_ecdartext_etlocation_urgent_setter(instance):
     original = instance.urgent
     instance.urgent = original
     assert instance.urgent == original
 
-@given(instance=ecdarText::ETLocation_strategy)
-def test_ecdartext::etlocation_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ecdarText::ETLocation_strategy)
-def test_ecdartext::etlocation_name_setter(instance):
+@given(instance=ecdarText_ETLocation_strategy)
+def test_ecdartext_etlocation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETParameter_strategy)
+@given(instance=ecdarText_ETParameter_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etparameter_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETParameter)
-
-@given(instance=ecdarText::ETParameter_strategy)
-def test_ecdartext::etparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_etparameter_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETParameter)
 
 
-@given(instance=ecdarText::ETParameter_strategy)
-def test_ecdartext::etparameter_name_setter(instance):
+
+@given(instance=ecdarText_ETParameter_strategy)
+def test_ecdartext_etparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETParameter_strategy)
-def test_ecdartext::etparameter_ioType_type(instance):
-    assert isinstance(instance.ioType, str)
 
 
-@given(instance=ecdarText::ETParameter_strategy)
-def test_ecdartext::etparameter_ioType_setter(instance):
+@given(instance=ecdarText_ETParameter_strategy)
+def test_ecdartext_etparameter_ioType_setter(instance):
     original = instance.ioType
     instance.ioType = original
     assert instance.ioType == original
@@ -2524,166 +2485,154 @@ def test_ecdartext::etparameter_ioType_setter(instance):
 def test_etspecificationdefinition_instantiation(instance):
     assert isinstance(instance, ETSpecificationDefinition)
 
-@given(instance=ecdarText::ETSpecificationTemplate_strategy)
+@given(instance=ecdarText_ETSpecificationTemplate_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationtemplate_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationTemplate)
+def test_ecdartext_etspecificationtemplate_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationTemplate)
 
-@given(instance=ecdarText::ETSpecificationBody_strategy)
+@given(instance=ecdarText_ETSpecificationBody_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationbody_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationBody)
+def test_ecdartext_etspecificationbody_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationBody)
 
 @given(instance=ETSpecification_strategy)
 @settings(max_examples=50)
 def test_etspecification_instantiation(instance):
     assert isinstance(instance, ETSpecification)
 
-@given(instance=ecdarText::ETSpecificationDefinition_strategy)
+@given(instance=ecdarText_ETSpecificationDefinition_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationdefinition_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationDefinition)
+def test_ecdartext_etspecificationdefinition_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationDefinition)
 
-@given(instance=ecdarText::ETSpecificationBinding_strategy)
+@given(instance=ecdarText_ETSpecificationBinding_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationbinding_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationBinding)
+def test_ecdartext_etspecificationbinding_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationBinding)
 
-@given(instance=ecdarText::ETSpecificationExpression_strategy)
+@given(instance=ecdarText_ETSpecificationExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecificationexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecificationExpression)
+def test_ecdartext_etspecificationexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecificationExpression)
 
-@given(instance=ecdarText::ETFieldID_strategy)
+@given(instance=ecdarText_ETFieldID_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etfieldid_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETFieldID)
-
-@given(instance=ecdarText::ETFieldID_strategy)
-def test_ecdartext::etfieldid_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_etfieldid_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETFieldID)
 
 
-@given(instance=ecdarText::ETFieldID_strategy)
-def test_ecdartext::etfieldid_name_setter(instance):
+
+@given(instance=ecdarText_ETFieldID_strategy)
+def test_ecdartext_etfieldid_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETFieldID_strategy)
-def test_ecdartext::etfieldid_ioType_type(instance):
-    assert isinstance(instance.ioType, str)
 
 
-@given(instance=ecdarText::ETFieldID_strategy)
-def test_ecdartext::etfieldid_ioType_setter(instance):
+@given(instance=ecdarText_ETFieldID_strategy)
+def test_ecdartext_etfieldid_ioType_setter(instance):
     original = instance.ioType
     instance.ioType = original
     assert instance.ioType == original
 
-@given(instance=ecdarText::ETFieldDeclaration_strategy)
+@given(instance=ecdarText_ETFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etfielddeclaration_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETFieldDeclaration)
+def test_ecdartext_etfielddeclaration_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETFieldDeclaration)
 
 @given(instance=ETActionType_strategy)
 @settings(max_examples=50)
 def test_etactiontype_instantiation(instance):
     assert isinstance(instance, ETActionType)
 
-@given(instance=ecdarText::ETOutputType_strategy)
+@given(instance=ecdarText_ETOutputType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etoutputtype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETOutputType)
+def test_ecdartext_etoutputtype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETOutputType)
 
-@given(instance=ecdarText::ETInputType_strategy)
+@given(instance=ecdarText_ETInputType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etinputtype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETInputType)
+def test_ecdartext_etinputtype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETInputType)
 
 @given(instance=ETTypeIdentifier_strategy)
 @settings(max_examples=50)
 def test_ettypeidentifier_instantiation(instance):
     assert isinstance(instance, ETTypeIdentifier)
 
-@given(instance=ecdarText::ETActionType_strategy)
+@given(instance=ecdarText_ETClockType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etactiontype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETActionType)
+def test_ecdartext_etclocktype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETClockType)
 
-@given(instance=ecdarText::ETBooleanType_strategy)
+@given(instance=ecdarText_ETBooleanType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etbooleantype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETBooleanType)
+def test_ecdartext_etbooleantype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETBooleanType)
 
-@given(instance=ecdarText::ETStructType_strategy)
+@given(instance=ecdarText_ETTypeReference_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etstructtype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETStructType)
+def test_ecdartext_ettypereference_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETTypeReference)
 
-@given(instance=ecdarText::ETScalarType_strategy)
+@given(instance=ecdarText_ETStructType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etscalartype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETScalarType)
+def test_ecdartext_etstructtype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETStructType)
 
-@given(instance=ecdarText::ETTypeReference_strategy)
+@given(instance=ecdarText_ETActionType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::ettypereference_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETTypeReference)
+def test_ecdartext_etactiontype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETActionType)
 
-@given(instance=ecdarText::ETClockType_strategy)
+@given(instance=ecdarText_ETScalarType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etclocktype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETClockType)
+def test_ecdartext_etscalartype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETScalarType)
 
-@given(instance=ecdarText::ETIntegerType_strategy)
+@given(instance=ecdarText_ETIntegerType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etintegertype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETIntegerType)
+def test_ecdartext_etintegertype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETIntegerType)
 
 @given(instance=ETInitialiser_strategy)
 @settings(max_examples=50)
 def test_etinitialiser_instantiation(instance):
     assert isinstance(instance, ETInitialiser)
 
-@given(instance=ecdarText::ETMultiInitialiser_strategy)
+@given(instance=ecdarText_ETMultiInitialiser_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etmultiinitialiser_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETMultiInitialiser)
+def test_ecdartext_etmultiinitialiser_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETMultiInitialiser)
 
-@given(instance=ecdarText::ETSingleInitialiser_strategy)
+@given(instance=ecdarText_ETSingleInitialiser_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etsingleinitialiser_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSingleInitialiser)
+def test_ecdartext_etsingleinitialiser_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSingleInitialiser)
 
-@given(instance=ecdarText::ETInitialiser_strategy)
+@given(instance=ecdarText_ETInitialiser_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etinitialiser_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETInitialiser)
+def test_ecdartext_etinitialiser_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETInitialiser)
 
-@given(instance=ecdarText::ETVariableID_strategy)
+@given(instance=ecdarText_ETVariableID_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etvariableid_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETVariableID)
-
-@given(instance=ecdarText::ETVariableID_strategy)
-def test_ecdartext::etvariableid_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_etvariableid_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETVariableID)
 
 
-@given(instance=ecdarText::ETVariableID_strategy)
-def test_ecdartext::etvariableid_name_setter(instance):
+
+@given(instance=ecdarText_ETVariableID_strategy)
+def test_ecdartext_etvariableid_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETVariableID_strategy)
-def test_ecdartext::etvariableid_ioType_type(instance):
-    assert isinstance(instance.ioType, str)
 
 
-@given(instance=ecdarText::ETVariableID_strategy)
-def test_ecdartext::etvariableid_ioType_setter(instance):
+@given(instance=ecdarText_ETVariableID_strategy)
+def test_ecdartext_etvariableid_ioType_setter(instance):
     original = instance.ioType
     instance.ioType = original
     assert instance.ioType == original
@@ -2693,133 +2642,115 @@ def test_ecdartext::etvariableid_ioType_setter(instance):
 def test_etdeclaration_instantiation(instance):
     assert isinstance(instance, ETDeclaration)
 
-@given(instance=ecdarText::ETVariableDeclaration_strategy)
+@given(instance=ecdarText_ETVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETVariableDeclaration)
+def test_ecdartext_etvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETVariableDeclaration)
 
-@given(instance=ecdarText::ETTypeIdentifier_strategy)
+@given(instance=ecdarText_ETTypeIdentifier_strategy)
 @settings(max_examples=50)
-def test_ecdartext::ettypeidentifier_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETTypeIdentifier)
+def test_ecdartext_ettypeidentifier_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETTypeIdentifier)
 
-@given(instance=ecdarText::ETTypeModifiers_strategy)
+@given(instance=ecdarText_ETTypeModifiers_strategy)
 @settings(max_examples=50)
-def test_ecdartext::ettypemodifiers_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETTypeModifiers)
-
-@given(instance=ecdarText::ETTypeModifiers_strategy)
-def test_ecdartext::ettypemodifiers_const_type(instance):
-    assert isinstance(instance.const, bool)
+def test_ecdartext_ettypemodifiers_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETTypeModifiers)
 
 
-@given(instance=ecdarText::ETTypeModifiers_strategy)
-def test_ecdartext::ettypemodifiers_const_setter(instance):
+
+@given(instance=ecdarText_ETTypeModifiers_strategy)
+def test_ecdartext_ettypemodifiers_const_setter(instance):
     original = instance.const
     instance.const = original
     assert instance.const == original
 
-@given(instance=ecdarText::ETTypeModifiers_strategy)
-def test_ecdartext::ettypemodifiers_meta_type(instance):
-    assert isinstance(instance.meta, bool)
 
 
-@given(instance=ecdarText::ETTypeModifiers_strategy)
-def test_ecdartext::ettypemodifiers_meta_setter(instance):
-    original = instance.meta
-    instance.meta = original
-    assert instance.meta == original
-
-@given(instance=ecdarText::ETTypeModifiers_strategy)
-def test_ecdartext::ettypemodifiers_urgent_type(instance):
-    assert isinstance(instance.urgent, bool)
-
-
-@given(instance=ecdarText::ETTypeModifiers_strategy)
-def test_ecdartext::ettypemodifiers_urgent_setter(instance):
+@given(instance=ecdarText_ETTypeModifiers_strategy)
+def test_ecdartext_ettypemodifiers_urgent_setter(instance):
     original = instance.urgent
     instance.urgent = original
     assert instance.urgent == original
 
-@given(instance=ecdarText::ETType_strategy)
+
+
+@given(instance=ecdarText_ETTypeModifiers_strategy)
+def test_ecdartext_ettypemodifiers_meta_setter(instance):
+    original = instance.meta
+    instance.meta = original
+    assert instance.meta == original
+
+@given(instance=ecdarText_ETType_strategy)
 @settings(max_examples=50)
-def test_ecdartext::ettype_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETType)
+def test_ecdartext_ettype_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETType)
 
-@given(instance=ecdarText::ETDeclaration_strategy)
+@given(instance=ecdarText_ETDeclaration_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etdeclaration_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETDeclaration)
+def test_ecdartext_etdeclaration_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETDeclaration)
 
-@given(instance=ecdarText::ETExpression_strategy)
+@given(instance=ecdarText_ETExpression_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etexpression_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETExpression)
+def test_ecdartext_etexpression_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETExpression)
 
-@given(instance=ecdarText::ETArrayDeclaration_strategy)
+@given(instance=ecdarText_ETArrayDeclaration_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etarraydeclaration_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETArrayDeclaration)
+def test_ecdartext_etarraydeclaration_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETArrayDeclaration)
 
-@given(instance=ecdarText::ETTypeID_strategy)
+@given(instance=ecdarText_ETTypeID_strategy)
 @settings(max_examples=50)
-def test_ecdartext::ettypeid_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETTypeID)
-
-@given(instance=ecdarText::ETTypeID_strategy)
-def test_ecdartext::ettypeid_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_ettypeid_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETTypeID)
 
 
-@given(instance=ecdarText::ETTypeID_strategy)
-def test_ecdartext::ettypeid_name_setter(instance):
+
+@given(instance=ecdarText_ETTypeID_strategy)
+def test_ecdartext_ettypeid_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETTypeDeclaration_strategy)
+@given(instance=ecdarText_ETTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_ecdartext::ettypedeclaration_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETTypeDeclaration)
+def test_ecdartext_ettypedeclaration_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETTypeDeclaration)
 
-@given(instance=ecdarText::ETImport_strategy)
+@given(instance=ecdarText_ETImport_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etimport_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETImport)
-
-@given(instance=ecdarText::ETImport_strategy)
-def test_ecdartext::etimport_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_ecdartext_etimport_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETImport)
 
 
-@given(instance=ecdarText::ETImport_strategy)
-def test_ecdartext::etimport_importedNamespace_setter(instance):
+
+@given(instance=ecdarText_ETImport_strategy)
+def test_ecdartext_etimport_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=ecdarText::ETFile_strategy)
+@given(instance=ecdarText_ETFile_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etfile_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETFile)
+def test_ecdartext_etfile_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETFile)
 
-@given(instance=ecdarText::ETSpecification_strategy)
+@given(instance=ecdarText_ETSpecification_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etspecification_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETSpecification)
-
-@given(instance=ecdarText::ETSpecification_strategy)
-def test_ecdartext::etspecification_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecdartext_etspecification_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETSpecification)
 
 
-@given(instance=ecdarText::ETSpecification_strategy)
-def test_ecdartext::etspecification_name_setter(instance):
+
+@given(instance=ecdarText_ETSpecification_strategy)
+def test_ecdartext_etspecification_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecdarText::ETDeclarations_strategy)
+@given(instance=ecdarText_ETDeclarations_strategy)
 @settings(max_examples=50)
-def test_ecdartext::etdeclarations_instantiation(instance):
-    assert isinstance(instance, ecdarText::ETDeclarations)
+def test_ecdartext_etdeclarations_instantiation(instance):
+    assert isinstance(instance, ecdarText_ETDeclarations)

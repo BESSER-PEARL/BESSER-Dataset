@@ -3,60 +3,60 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    xs::SwitchCase,
-    xs::Statement,
-    xs::Type,
-    Statement,
-    xs::SwitchStatement,
-    VarDeclaration,
-    xs::ParameterDeclaration,
-    xs::ForVarDeclaration,
-    xs::LocalVarDeclaration,
-    xs::Expression,
-    xs::VarDeclaration,
-    Declaration,
-    xs::GlobalVarDeclaration,
-    xs::FunctionDeclaration,
-    xs::IncludeDeclaration,
-    xs::Declaration,
-    xs::Program,
-    xs::RuleDeclaration,
-    xs::Block,
+from python_code import (
     Type,
-    xs::VectorType,
-    xs::StringType,
-    xs::FloatType,
-    xs::VoidType,
-    xs::BoolType,
-    xs::IntType,
+    xs_StringType,
+    xs_BoolType,
+    xs_FloatType,
+    xs_VectorType,
+    xs_VoidType,
+    xs_IntType,
     Literal,
-    xs::VectorLiteral,
-    xs::LiteralBool,
-    xs::LiteralFloat,
-    xs::LiteralInt,
-    xs::LiteralString,
-    xs::BreakStatement,
-    xs::ContinueStatement,
-    xs::ReturnStatement,
-    xs::ForStatement,
-    xs::WhileStatement,
-    xs::IfElseStatement,
-    xs::PostfixStatement,
+    xs_LiteralFloat,
+    xs_LiteralBool,
+    xs_VectorLiteral,
+    xs_LiteralInt,
+    xs_LiteralString,
     Expression,
-    xs::OrExpression,
-    xs::Factor,
-    xs::EqualsExpression,
-    xs::Call,
-    xs::Assign,
-    xs::Term,
-    xs::AndExpression,
-    xs::Literal,
-    xs::ComparisonExpression,
-    xs::Var,
-    xs::SwitchDefault,
+    xs_Call,
+    xs_Assign,
+    xs_OrExpression,
+    xs_Term,
+    xs_Literal,
+    xs_EqualsExpression,
+    xs_AndExpression,
+    xs_Factor,
+    xs_ComparisonExpression,
+    xs_Var,
+    xs_SwitchDefault,
+    xs_SwitchCase,
+    xs_Statement,
+    xs_Type,
+    Statement,
+    xs_SwitchStatement,
+    xs_ReturnStatement,
+    xs_ForStatement,
+    xs_ContinueStatement,
+    xs_PostfixStatement,
+    xs_BreakStatement,
+    xs_IfElseStatement,
+    xs_WhileStatement,
+    VarDeclaration,
+    xs_ParameterDeclaration,
+    xs_ForVarDeclaration,
+    xs_LocalVarDeclaration,
+    xs_Expression,
+    xs_VarDeclaration,
+    Declaration,
+    xs_FunctionDeclaration,
+    xs_GlobalVarDeclaration,
+    xs_IncludeDeclaration,
+    xs_Declaration,
+    xs_Program,
+    xs_RuleDeclaration,
+    xs_Block,
 )
 
 # =============================================================================
@@ -65,44 +65,494 @@ from classes import (
 
 
 
-def test_xs::switchcase_is_not_abstract():
-    assert not inspect.isabstract(xs::SwitchCase)
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(Type)
 
 
-def test_xs::switchcase_constructor_exists():
-    assert callable(xs::SwitchCase.__init__)
+def test_type_constructor_exists():
+    assert callable(Type.__init__)
 
 
-def test_xs::switchcase_constructor_args():
-    sig = inspect.signature(xs::SwitchCase.__init__)
+def test_type_constructor_args():
+    sig = inspect.signature(Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::statement_is_not_abstract():
-    assert not inspect.isabstract(xs::Statement)
+def test_xs_stringtype_is_not_abstract():
+    assert not inspect.isabstract(xs_StringType)
 
 
-def test_xs::statement_constructor_exists():
-    assert callable(xs::Statement.__init__)
+def test_xs_stringtype_constructor_exists():
+    assert callable(xs_StringType.__init__)
 
 
-def test_xs::statement_constructor_args():
-    sig = inspect.signature(xs::Statement.__init__)
+def test_xs_stringtype_constructor_args():
+    sig = inspect.signature(xs_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::type_is_not_abstract():
-    assert not inspect.isabstract(xs::Type)
+def test_xs_booltype_is_not_abstract():
+    assert not inspect.isabstract(xs_BoolType)
 
 
-def test_xs::type_constructor_exists():
-    assert callable(xs::Type.__init__)
+def test_xs_booltype_constructor_exists():
+    assert callable(xs_BoolType.__init__)
 
 
-def test_xs::type_constructor_args():
-    sig = inspect.signature(xs::Type.__init__)
+def test_xs_booltype_constructor_args():
+    sig = inspect.signature(xs_BoolType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_floattype_is_not_abstract():
+    assert not inspect.isabstract(xs_FloatType)
+
+
+def test_xs_floattype_constructor_exists():
+    assert callable(xs_FloatType.__init__)
+
+
+def test_xs_floattype_constructor_args():
+    sig = inspect.signature(xs_FloatType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_vectortype_is_not_abstract():
+    assert not inspect.isabstract(xs_VectorType)
+
+
+def test_xs_vectortype_constructor_exists():
+    assert callable(xs_VectorType.__init__)
+
+
+def test_xs_vectortype_constructor_args():
+    sig = inspect.signature(xs_VectorType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_voidtype_is_not_abstract():
+    assert not inspect.isabstract(xs_VoidType)
+
+
+def test_xs_voidtype_constructor_exists():
+    assert callable(xs_VoidType.__init__)
+
+
+def test_xs_voidtype_constructor_args():
+    sig = inspect.signature(xs_VoidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_inttype_is_not_abstract():
+    assert not inspect.isabstract(xs_IntType)
+
+
+def test_xs_inttype_constructor_exists():
+    assert callable(xs_IntType.__init__)
+
+
+def test_xs_inttype_constructor_args():
+    sig = inspect.signature(xs_IntType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literal_is_not_abstract():
+    assert not inspect.isabstract(Literal)
+
+
+def test_literal_constructor_exists():
+    assert callable(Literal.__init__)
+
+
+def test_literal_constructor_args():
+    sig = inspect.signature(Literal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_literalfloat_is_not_abstract():
+    assert not inspect.isabstract(xs_LiteralFloat)
+
+
+def test_xs_literalfloat_constructor_exists():
+    assert callable(xs_LiteralFloat.__init__)
+
+
+def test_xs_literalfloat_constructor_args():
+    sig = inspect.signature(xs_LiteralFloat.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_xs_literalfloat_has_value():
+    assert hasattr(xs_LiteralFloat, "value")
+    descriptor = None
+    for klass in xs_LiteralFloat.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_literalbool_is_not_abstract():
+    assert not inspect.isabstract(xs_LiteralBool)
+
+
+def test_xs_literalbool_constructor_exists():
+    assert callable(xs_LiteralBool.__init__)
+
+
+def test_xs_literalbool_constructor_args():
+    sig = inspect.signature(xs_LiteralBool.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_xs_literalbool_has_value():
+    assert hasattr(xs_LiteralBool, "value")
+    descriptor = None
+    for klass in xs_LiteralBool.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_vectorliteral_is_not_abstract():
+    assert not inspect.isabstract(xs_VectorLiteral)
+
+
+def test_xs_vectorliteral_constructor_exists():
+    assert callable(xs_VectorLiteral.__init__)
+
+
+def test_xs_vectorliteral_constructor_args():
+    sig = inspect.signature(xs_VectorLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_literalint_is_not_abstract():
+    assert not inspect.isabstract(xs_LiteralInt)
+
+
+def test_xs_literalint_constructor_exists():
+    assert callable(xs_LiteralInt.__init__)
+
+
+def test_xs_literalint_constructor_args():
+    sig = inspect.signature(xs_LiteralInt.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_xs_literalint_has_value():
+    assert hasattr(xs_LiteralInt, "value")
+    descriptor = None
+    for klass in xs_LiteralInt.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_literalstring_is_not_abstract():
+    assert not inspect.isabstract(xs_LiteralString)
+
+
+def test_xs_literalstring_constructor_exists():
+    assert callable(xs_LiteralString.__init__)
+
+
+def test_xs_literalstring_constructor_args():
+    sig = inspect.signature(xs_LiteralString.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_xs_literalstring_has_value():
+    assert hasattr(xs_LiteralString, "value")
+    descriptor = None
+    for klass in xs_LiteralString.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_expression_is_not_abstract():
+    assert not inspect.isabstract(Expression)
+
+
+def test_expression_constructor_exists():
+    assert callable(Expression.__init__)
+
+
+def test_expression_constructor_args():
+    sig = inspect.signature(Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_call_is_not_abstract():
+    assert not inspect.isabstract(xs_Call)
+
+
+def test_xs_call_constructor_exists():
+    assert callable(xs_Call.__init__)
+
+
+def test_xs_call_constructor_args():
+    sig = inspect.signature(xs_Call.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_assign_is_not_abstract():
+    assert not inspect.isabstract(xs_Assign)
+
+
+def test_xs_assign_constructor_exists():
+    assert callable(xs_Assign.__init__)
+
+
+def test_xs_assign_constructor_args():
+    sig = inspect.signature(xs_Assign.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_orexpression_is_not_abstract():
+    assert not inspect.isabstract(xs_OrExpression)
+
+
+def test_xs_orexpression_constructor_exists():
+    assert callable(xs_OrExpression.__init__)
+
+
+def test_xs_orexpression_constructor_args():
+    sig = inspect.signature(xs_OrExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_orexpression_has_op():
+    assert hasattr(xs_OrExpression, "op")
+    descriptor = None
+    for klass in xs_OrExpression.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_term_is_not_abstract():
+    assert not inspect.isabstract(xs_Term)
+
+
+def test_xs_term_constructor_exists():
+    assert callable(xs_Term.__init__)
+
+
+def test_xs_term_constructor_args():
+    sig = inspect.signature(xs_Term.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_term_has_op():
+    assert hasattr(xs_Term, "op")
+    descriptor = None
+    for klass in xs_Term.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_literal_is_not_abstract():
+    assert not inspect.isabstract(xs_Literal)
+
+
+def test_xs_literal_constructor_exists():
+    assert callable(xs_Literal.__init__)
+
+
+def test_xs_literal_constructor_args():
+    sig = inspect.signature(xs_Literal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_equalsexpression_is_not_abstract():
+    assert not inspect.isabstract(xs_EqualsExpression)
+
+
+def test_xs_equalsexpression_constructor_exists():
+    assert callable(xs_EqualsExpression.__init__)
+
+
+def test_xs_equalsexpression_constructor_args():
+    sig = inspect.signature(xs_EqualsExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_equalsexpression_has_op():
+    assert hasattr(xs_EqualsExpression, "op")
+    descriptor = None
+    for klass in xs_EqualsExpression.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_andexpression_is_not_abstract():
+    assert not inspect.isabstract(xs_AndExpression)
+
+
+def test_xs_andexpression_constructor_exists():
+    assert callable(xs_AndExpression.__init__)
+
+
+def test_xs_andexpression_constructor_args():
+    sig = inspect.signature(xs_AndExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_andexpression_has_op():
+    assert hasattr(xs_AndExpression, "op")
+    descriptor = None
+    for klass in xs_AndExpression.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_factor_is_not_abstract():
+    assert not inspect.isabstract(xs_Factor)
+
+
+def test_xs_factor_constructor_exists():
+    assert callable(xs_Factor.__init__)
+
+
+def test_xs_factor_constructor_args():
+    sig = inspect.signature(xs_Factor.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_factor_has_op():
+    assert hasattr(xs_Factor, "op")
+    descriptor = None
+    for klass in xs_Factor.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_comparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(xs_ComparisonExpression)
+
+
+def test_xs_comparisonexpression_constructor_exists():
+    assert callable(xs_ComparisonExpression.__init__)
+
+
+def test_xs_comparisonexpression_constructor_args():
+    sig = inspect.signature(xs_ComparisonExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_comparisonexpression_has_op():
+    assert hasattr(xs_ComparisonExpression, "op")
+    descriptor = None
+    for klass in xs_ComparisonExpression.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_var_is_not_abstract():
+    assert not inspect.isabstract(xs_Var)
+
+
+def test_xs_var_constructor_exists():
+    assert callable(xs_Var.__init__)
+
+
+def test_xs_var_constructor_args():
+    sig = inspect.signature(xs_Var.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_switchdefault_is_not_abstract():
+    assert not inspect.isabstract(xs_SwitchDefault)
+
+
+def test_xs_switchdefault_constructor_exists():
+    assert callable(xs_SwitchDefault.__init__)
+
+
+def test_xs_switchdefault_constructor_args():
+    sig = inspect.signature(xs_SwitchDefault.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_switchcase_is_not_abstract():
+    assert not inspect.isabstract(xs_SwitchCase)
+
+
+def test_xs_switchcase_constructor_exists():
+    assert callable(xs_SwitchCase.__init__)
+
+
+def test_xs_switchcase_constructor_args():
+    sig = inspect.signature(xs_SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_statement_is_not_abstract():
+    assert not inspect.isabstract(xs_Statement)
+
+
+def test_xs_statement_constructor_exists():
+    assert callable(xs_Statement.__init__)
+
+
+def test_xs_statement_constructor_args():
+    sig = inspect.signature(xs_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_type_is_not_abstract():
+    assert not inspect.isabstract(xs_Type)
+
+
+def test_xs_type_constructor_exists():
+    assert callable(xs_Type.__init__)
+
+
+def test_xs_type_constructor_args():
+    sig = inspect.signature(xs_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -121,16 +571,134 @@ def test_statement_constructor_args():
 
 
 
-def test_xs::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(xs::SwitchStatement)
+def test_xs_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(xs_SwitchStatement)
 
 
-def test_xs::switchstatement_constructor_exists():
-    assert callable(xs::SwitchStatement.__init__)
+def test_xs_switchstatement_constructor_exists():
+    assert callable(xs_SwitchStatement.__init__)
 
 
-def test_xs::switchstatement_constructor_args():
-    sig = inspect.signature(xs::SwitchStatement.__init__)
+def test_xs_switchstatement_constructor_args():
+    sig = inspect.signature(xs_SwitchStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(xs_ReturnStatement)
+
+
+def test_xs_returnstatement_constructor_exists():
+    assert callable(xs_ReturnStatement.__init__)
+
+
+def test_xs_returnstatement_constructor_args():
+    sig = inspect.signature(xs_ReturnStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_forstatement_is_not_abstract():
+    assert not inspect.isabstract(xs_ForStatement)
+
+
+def test_xs_forstatement_constructor_exists():
+    assert callable(xs_ForStatement.__init__)
+
+
+def test_xs_forstatement_constructor_args():
+    sig = inspect.signature(xs_ForStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_forstatement_has_op():
+    assert hasattr(xs_ForStatement, "op")
+    descriptor = None
+    for klass in xs_ForStatement.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(xs_ContinueStatement)
+
+
+def test_xs_continuestatement_constructor_exists():
+    assert callable(xs_ContinueStatement.__init__)
+
+
+def test_xs_continuestatement_constructor_args():
+    sig = inspect.signature(xs_ContinueStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_postfixstatement_is_not_abstract():
+    assert not inspect.isabstract(xs_PostfixStatement)
+
+
+def test_xs_postfixstatement_constructor_exists():
+    assert callable(xs_PostfixStatement.__init__)
+
+
+def test_xs_postfixstatement_constructor_args():
+    sig = inspect.signature(xs_PostfixStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_xs_postfixstatement_has_op():
+    assert hasattr(xs_PostfixStatement, "op")
+    descriptor = None
+    for klass in xs_PostfixStatement.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(xs_BreakStatement)
+
+
+def test_xs_breakstatement_constructor_exists():
+    assert callable(xs_BreakStatement.__init__)
+
+
+def test_xs_breakstatement_constructor_args():
+    sig = inspect.signature(xs_BreakStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_ifelsestatement_is_not_abstract():
+    assert not inspect.isabstract(xs_IfElseStatement)
+
+
+def test_xs_ifelsestatement_constructor_exists():
+    assert callable(xs_IfElseStatement.__init__)
+
+
+def test_xs_ifelsestatement_constructor_args():
+    sig = inspect.signature(xs_IfElseStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xs_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(xs_WhileStatement)
+
+
+def test_xs_whilestatement_constructor_exists():
+    assert callable(xs_WhileStatement.__init__)
+
+
+def test_xs_whilestatement_constructor_args():
+    sig = inspect.signature(xs_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,79 +717,79 @@ def test_vardeclaration_constructor_args():
 
 
 
-def test_xs::parameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::ParameterDeclaration)
+def test_xs_parameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_ParameterDeclaration)
 
 
-def test_xs::parameterdeclaration_constructor_exists():
-    assert callable(xs::ParameterDeclaration.__init__)
+def test_xs_parameterdeclaration_constructor_exists():
+    assert callable(xs_ParameterDeclaration.__init__)
 
 
-def test_xs::parameterdeclaration_constructor_args():
-    sig = inspect.signature(xs::ParameterDeclaration.__init__)
+def test_xs_parameterdeclaration_constructor_args():
+    sig = inspect.signature(xs_ParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::forvardeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::ForVarDeclaration)
+def test_xs_forvardeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_ForVarDeclaration)
 
 
-def test_xs::forvardeclaration_constructor_exists():
-    assert callable(xs::ForVarDeclaration.__init__)
+def test_xs_forvardeclaration_constructor_exists():
+    assert callable(xs_ForVarDeclaration.__init__)
 
 
-def test_xs::forvardeclaration_constructor_args():
-    sig = inspect.signature(xs::ForVarDeclaration.__init__)
+def test_xs_forvardeclaration_constructor_args():
+    sig = inspect.signature(xs_ForVarDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::localvardeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::LocalVarDeclaration)
+def test_xs_localvardeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_LocalVarDeclaration)
 
 
-def test_xs::localvardeclaration_constructor_exists():
-    assert callable(xs::LocalVarDeclaration.__init__)
+def test_xs_localvardeclaration_constructor_exists():
+    assert callable(xs_LocalVarDeclaration.__init__)
 
 
-def test_xs::localvardeclaration_constructor_args():
-    sig = inspect.signature(xs::LocalVarDeclaration.__init__)
+def test_xs_localvardeclaration_constructor_args():
+    sig = inspect.signature(xs_LocalVarDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::expression_is_not_abstract():
-    assert not inspect.isabstract(xs::Expression)
+def test_xs_expression_is_not_abstract():
+    assert not inspect.isabstract(xs_Expression)
 
 
-def test_xs::expression_constructor_exists():
-    assert callable(xs::Expression.__init__)
+def test_xs_expression_constructor_exists():
+    assert callable(xs_Expression.__init__)
 
 
-def test_xs::expression_constructor_args():
-    sig = inspect.signature(xs::Expression.__init__)
+def test_xs_expression_constructor_args():
+    sig = inspect.signature(xs_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::vardeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::VarDeclaration)
+def test_xs_vardeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_VarDeclaration)
 
 
-def test_xs::vardeclaration_constructor_exists():
-    assert callable(xs::VarDeclaration.__init__)
+def test_xs_vardeclaration_constructor_exists():
+    assert callable(xs_VarDeclaration.__init__)
 
 
-def test_xs::vardeclaration_constructor_args():
-    sig = inspect.signature(xs::VarDeclaration.__init__)
+def test_xs_vardeclaration_constructor_args():
+    sig = inspect.signature(xs_VarDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_xs::vardeclaration_has_name():
-    assert hasattr(xs::VarDeclaration, "name")
+def test_xs_vardeclaration_has_name():
+    assert hasattr(xs_VarDeclaration, "name")
     descriptor = None
-    for klass in xs::VarDeclaration.__mro__:
+    for klass in xs_VarDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -243,33 +811,67 @@ def test_declaration_constructor_args():
 
 
 
-def test_xs::globalvardeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::GlobalVarDeclaration)
+def test_xs_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_FunctionDeclaration)
 
 
-def test_xs::globalvardeclaration_constructor_exists():
-    assert callable(xs::GlobalVarDeclaration.__init__)
+def test_xs_functiondeclaration_constructor_exists():
+    assert callable(xs_FunctionDeclaration.__init__)
 
 
-def test_xs::globalvardeclaration_constructor_args():
-    sig = inspect.signature(xs::GlobalVarDeclaration.__init__)
+def test_xs_functiondeclaration_constructor_args():
+    sig = inspect.signature(xs_FunctionDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "mutable" in params, "Missing parameter 'mutable'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_xs_functiondeclaration_has_mutable():
+    assert hasattr(xs_FunctionDeclaration, "mutable")
+    descriptor = None
+    for klass in xs_FunctionDeclaration.__mro__:
+        if "mutable" in klass.__dict__:
+            descriptor = klass.__dict__["mutable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_functiondeclaration_has_name():
+    assert hasattr(xs_FunctionDeclaration, "name")
+    descriptor = None
+    for klass in xs_FunctionDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xs_globalvardeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_GlobalVarDeclaration)
+
+
+def test_xs_globalvardeclaration_constructor_exists():
+    assert callable(xs_GlobalVarDeclaration.__init__)
+
+
+def test_xs_globalvardeclaration_constructor_args():
+    sig = inspect.signature(xs_GlobalVarDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "extern" in params, "Missing parameter 'extern'"
     assert "const" in params, "Missing parameter 'const'"
 
-def test_xs::globalvardeclaration_has_extern():
-    assert hasattr(xs::GlobalVarDeclaration, "extern")
+def test_xs_globalvardeclaration_has_extern():
+    assert hasattr(xs_GlobalVarDeclaration, "extern")
     descriptor = None
-    for klass in xs::GlobalVarDeclaration.__mro__:
+    for klass in xs_GlobalVarDeclaration.__mro__:
         if "extern" in klass.__dict__:
             descriptor = klass.__dict__["extern"]
             break
     assert isinstance(descriptor, property)
 
-def test_xs::globalvardeclaration_has_const():
-    assert hasattr(xs::GlobalVarDeclaration, "const")
+def test_xs_globalvardeclaration_has_const():
+    assert hasattr(xs_GlobalVarDeclaration, "const")
     descriptor = None
-    for klass in xs::GlobalVarDeclaration.__mro__:
+    for klass in xs_GlobalVarDeclaration.__mro__:
         if "const" in klass.__dict__:
             descriptor = klass.__dict__["const"]
             break
@@ -277,57 +879,23 @@ def test_xs::globalvardeclaration_has_const():
 
 
 
-def test_xs::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::FunctionDeclaration)
+def test_xs_includedeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_IncludeDeclaration)
 
 
-def test_xs::functiondeclaration_constructor_exists():
-    assert callable(xs::FunctionDeclaration.__init__)
+def test_xs_includedeclaration_constructor_exists():
+    assert callable(xs_IncludeDeclaration.__init__)
 
 
-def test_xs::functiondeclaration_constructor_args():
-    sig = inspect.signature(xs::FunctionDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "mutable" in params, "Missing parameter 'mutable'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_xs::functiondeclaration_has_mutable():
-    assert hasattr(xs::FunctionDeclaration, "mutable")
-    descriptor = None
-    for klass in xs::FunctionDeclaration.__mro__:
-        if "mutable" in klass.__dict__:
-            descriptor = klass.__dict__["mutable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::functiondeclaration_has_name():
-    assert hasattr(xs::FunctionDeclaration, "name")
-    descriptor = None
-    for klass in xs::FunctionDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::includedeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::IncludeDeclaration)
-
-
-def test_xs::includedeclaration_constructor_exists():
-    assert callable(xs::IncludeDeclaration.__init__)
-
-
-def test_xs::includedeclaration_constructor_args():
-    sig = inspect.signature(xs::IncludeDeclaration.__init__)
+def test_xs_includedeclaration_constructor_args():
+    sig = inspect.signature(xs_IncludeDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "filePath" in params, "Missing parameter 'filePath'"
 
-def test_xs::includedeclaration_has_filePath():
-    assert hasattr(xs::IncludeDeclaration, "filePath")
+def test_xs_includedeclaration_has_filePath():
+    assert hasattr(xs_IncludeDeclaration, "filePath")
     descriptor = None
-    for klass in xs::IncludeDeclaration.__mro__:
+    for klass in xs_IncludeDeclaration.__mro__:
         if "filePath" in klass.__dict__:
             descriptor = klass.__dict__["filePath"]
             break
@@ -335,706 +903,138 @@ def test_xs::includedeclaration_has_filePath():
 
 
 
-def test_xs::declaration_is_not_abstract():
-    assert not inspect.isabstract(xs::Declaration)
+def test_xs_declaration_is_not_abstract():
+    assert not inspect.isabstract(xs_Declaration)
 
 
-def test_xs::declaration_constructor_exists():
-    assert callable(xs::Declaration.__init__)
+def test_xs_declaration_constructor_exists():
+    assert callable(xs_Declaration.__init__)
 
 
-def test_xs::declaration_constructor_args():
-    sig = inspect.signature(xs::Declaration.__init__)
+def test_xs_declaration_constructor_args():
+    sig = inspect.signature(xs_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::program_is_not_abstract():
-    assert not inspect.isabstract(xs::Program)
+def test_xs_program_is_not_abstract():
+    assert not inspect.isabstract(xs_Program)
 
 
-def test_xs::program_constructor_exists():
-    assert callable(xs::Program.__init__)
+def test_xs_program_constructor_exists():
+    assert callable(xs_Program.__init__)
 
 
-def test_xs::program_constructor_args():
-    sig = inspect.signature(xs::Program.__init__)
+def test_xs_program_constructor_args():
+    sig = inspect.signature(xs_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xs::ruledeclaration_is_not_abstract():
-    assert not inspect.isabstract(xs::RuleDeclaration)
+def test_xs_ruledeclaration_is_not_abstract():
+    assert not inspect.isabstract(xs_RuleDeclaration)
 
 
-def test_xs::ruledeclaration_constructor_exists():
-    assert callable(xs::RuleDeclaration.__init__)
+def test_xs_ruledeclaration_constructor_exists():
+    assert callable(xs_RuleDeclaration.__init__)
 
 
-def test_xs::ruledeclaration_constructor_args():
-    sig = inspect.signature(xs::RuleDeclaration.__init__)
+def test_xs_ruledeclaration_constructor_args():
+    sig = inspect.signature(xs_RuleDeclaration.__init__)
     params = list(sig.parameters.keys())
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "minInterval" in params, "Missing parameter 'minInterval'"
-    assert "maxInterval" in params, "Missing parameter 'maxInterval'"
-    assert "highFrequency" in params, "Missing parameter 'highFrequency'"
-    assert "active" in params, "Missing parameter 'active'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "group" in params, "Missing parameter 'group'"
     assert "runImmediately" in params, "Missing parameter 'runImmediately'"
+    assert "group" in params, "Missing parameter 'group'"
+    assert "active" in params, "Missing parameter 'active'"
+    assert "highFrequency" in params, "Missing parameter 'highFrequency'"
+    assert "maxInterval" in params, "Missing parameter 'maxInterval'"
+    assert "minInterval" in params, "Missing parameter 'minInterval'"
+    assert "priority" in params, "Missing parameter 'priority'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_xs::ruledeclaration_has_priority():
-    assert hasattr(xs::RuleDeclaration, "priority")
+def test_xs_ruledeclaration_has_runImmediately():
+    assert hasattr(xs_RuleDeclaration, "runImmediately")
     descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_minInterval():
-    assert hasattr(xs::RuleDeclaration, "minInterval")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "minInterval" in klass.__dict__:
-            descriptor = klass.__dict__["minInterval"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_maxInterval():
-    assert hasattr(xs::RuleDeclaration, "maxInterval")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "maxInterval" in klass.__dict__:
-            descriptor = klass.__dict__["maxInterval"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_highFrequency():
-    assert hasattr(xs::RuleDeclaration, "highFrequency")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "highFrequency" in klass.__dict__:
-            descriptor = klass.__dict__["highFrequency"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_active():
-    assert hasattr(xs::RuleDeclaration, "active")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "active" in klass.__dict__:
-            descriptor = klass.__dict__["active"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_name():
-    assert hasattr(xs::RuleDeclaration, "name")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_group():
-    assert hasattr(xs::RuleDeclaration, "group")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xs::ruledeclaration_has_runImmediately():
-    assert hasattr(xs::RuleDeclaration, "runImmediately")
-    descriptor = None
-    for klass in xs::RuleDeclaration.__mro__:
+    for klass in xs_RuleDeclaration.__mro__:
         if "runImmediately" in klass.__dict__:
             descriptor = klass.__dict__["runImmediately"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_xs::block_is_not_abstract():
-    assert not inspect.isabstract(xs::Block)
-
-
-def test_xs::block_constructor_exists():
-    assert callable(xs::Block.__init__)
-
-
-def test_xs::block_constructor_args():
-    sig = inspect.signature(xs::Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(Type)
-
-
-def test_type_constructor_exists():
-    assert callable(Type.__init__)
-
-
-def test_type_constructor_args():
-    sig = inspect.signature(Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::vectortype_is_not_abstract():
-    assert not inspect.isabstract(xs::VectorType)
-
-
-def test_xs::vectortype_constructor_exists():
-    assert callable(xs::VectorType.__init__)
-
-
-def test_xs::vectortype_constructor_args():
-    sig = inspect.signature(xs::VectorType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::stringtype_is_not_abstract():
-    assert not inspect.isabstract(xs::StringType)
-
-
-def test_xs::stringtype_constructor_exists():
-    assert callable(xs::StringType.__init__)
-
-
-def test_xs::stringtype_constructor_args():
-    sig = inspect.signature(xs::StringType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::floattype_is_not_abstract():
-    assert not inspect.isabstract(xs::FloatType)
-
-
-def test_xs::floattype_constructor_exists():
-    assert callable(xs::FloatType.__init__)
-
-
-def test_xs::floattype_constructor_args():
-    sig = inspect.signature(xs::FloatType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::voidtype_is_not_abstract():
-    assert not inspect.isabstract(xs::VoidType)
-
-
-def test_xs::voidtype_constructor_exists():
-    assert callable(xs::VoidType.__init__)
-
-
-def test_xs::voidtype_constructor_args():
-    sig = inspect.signature(xs::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::booltype_is_not_abstract():
-    assert not inspect.isabstract(xs::BoolType)
-
-
-def test_xs::booltype_constructor_exists():
-    assert callable(xs::BoolType.__init__)
-
-
-def test_xs::booltype_constructor_args():
-    sig = inspect.signature(xs::BoolType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::inttype_is_not_abstract():
-    assert not inspect.isabstract(xs::IntType)
-
-
-def test_xs::inttype_constructor_exists():
-    assert callable(xs::IntType.__init__)
-
-
-def test_xs::inttype_constructor_args():
-    sig = inspect.signature(xs::IntType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literal_is_not_abstract():
-    assert not inspect.isabstract(Literal)
-
-
-def test_literal_constructor_exists():
-    assert callable(Literal.__init__)
-
-
-def test_literal_constructor_args():
-    sig = inspect.signature(Literal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::vectorliteral_is_not_abstract():
-    assert not inspect.isabstract(xs::VectorLiteral)
-
-
-def test_xs::vectorliteral_constructor_exists():
-    assert callable(xs::VectorLiteral.__init__)
-
-
-def test_xs::vectorliteral_constructor_args():
-    sig = inspect.signature(xs::VectorLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::literalbool_is_not_abstract():
-    assert not inspect.isabstract(xs::LiteralBool)
-
-
-def test_xs::literalbool_constructor_exists():
-    assert callable(xs::LiteralBool.__init__)
-
-
-def test_xs::literalbool_constructor_args():
-    sig = inspect.signature(xs::LiteralBool.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_xs::literalbool_has_value():
-    assert hasattr(xs::LiteralBool, "value")
+def test_xs_ruledeclaration_has_group():
+    assert hasattr(xs_RuleDeclaration, "group")
     descriptor = None
-    for klass in xs::LiteralBool.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in xs_RuleDeclaration.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_ruledeclaration_has_active():
+    assert hasattr(xs_RuleDeclaration, "active")
+    descriptor = None
+    for klass in xs_RuleDeclaration.__mro__:
+        if "active" in klass.__dict__:
+            descriptor = klass.__dict__["active"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_ruledeclaration_has_highFrequency():
+    assert hasattr(xs_RuleDeclaration, "highFrequency")
+    descriptor = None
+    for klass in xs_RuleDeclaration.__mro__:
+        if "highFrequency" in klass.__dict__:
+            descriptor = klass.__dict__["highFrequency"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_ruledeclaration_has_maxInterval():
+    assert hasattr(xs_RuleDeclaration, "maxInterval")
+    descriptor = None
+    for klass in xs_RuleDeclaration.__mro__:
+        if "maxInterval" in klass.__dict__:
+            descriptor = klass.__dict__["maxInterval"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_ruledeclaration_has_minInterval():
+    assert hasattr(xs_RuleDeclaration, "minInterval")
+    descriptor = None
+    for klass in xs_RuleDeclaration.__mro__:
+        if "minInterval" in klass.__dict__:
+            descriptor = klass.__dict__["minInterval"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_ruledeclaration_has_priority():
+    assert hasattr(xs_RuleDeclaration, "priority")
+    descriptor = None
+    for klass in xs_RuleDeclaration.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xs_ruledeclaration_has_name():
+    assert hasattr(xs_RuleDeclaration, "name")
+    descriptor = None
+    for klass in xs_RuleDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_xs::literalfloat_is_not_abstract():
-    assert not inspect.isabstract(xs::LiteralFloat)
+def test_xs_block_is_not_abstract():
+    assert not inspect.isabstract(xs_Block)
 
 
-def test_xs::literalfloat_constructor_exists():
-    assert callable(xs::LiteralFloat.__init__)
+def test_xs_block_constructor_exists():
+    assert callable(xs_Block.__init__)
 
 
-def test_xs::literalfloat_constructor_args():
-    sig = inspect.signature(xs::LiteralFloat.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_xs::literalfloat_has_value():
-    assert hasattr(xs::LiteralFloat, "value")
-    descriptor = None
-    for klass in xs::LiteralFloat.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::literalint_is_not_abstract():
-    assert not inspect.isabstract(xs::LiteralInt)
-
-
-def test_xs::literalint_constructor_exists():
-    assert callable(xs::LiteralInt.__init__)
-
-
-def test_xs::literalint_constructor_args():
-    sig = inspect.signature(xs::LiteralInt.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_xs::literalint_has_value():
-    assert hasattr(xs::LiteralInt, "value")
-    descriptor = None
-    for klass in xs::LiteralInt.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::literalstring_is_not_abstract():
-    assert not inspect.isabstract(xs::LiteralString)
-
-
-def test_xs::literalstring_constructor_exists():
-    assert callable(xs::LiteralString.__init__)
-
-
-def test_xs::literalstring_constructor_args():
-    sig = inspect.signature(xs::LiteralString.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_xs::literalstring_has_value():
-    assert hasattr(xs::LiteralString, "value")
-    descriptor = None
-    for klass in xs::LiteralString.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(xs::BreakStatement)
-
-
-def test_xs::breakstatement_constructor_exists():
-    assert callable(xs::BreakStatement.__init__)
-
-
-def test_xs::breakstatement_constructor_args():
-    sig = inspect.signature(xs::BreakStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(xs::ContinueStatement)
-
-
-def test_xs::continuestatement_constructor_exists():
-    assert callable(xs::ContinueStatement.__init__)
-
-
-def test_xs::continuestatement_constructor_args():
-    sig = inspect.signature(xs::ContinueStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(xs::ReturnStatement)
-
-
-def test_xs::returnstatement_constructor_exists():
-    assert callable(xs::ReturnStatement.__init__)
-
-
-def test_xs::returnstatement_constructor_args():
-    sig = inspect.signature(xs::ReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::forstatement_is_not_abstract():
-    assert not inspect.isabstract(xs::ForStatement)
-
-
-def test_xs::forstatement_constructor_exists():
-    assert callable(xs::ForStatement.__init__)
-
-
-def test_xs::forstatement_constructor_args():
-    sig = inspect.signature(xs::ForStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::forstatement_has_op():
-    assert hasattr(xs::ForStatement, "op")
-    descriptor = None
-    for klass in xs::ForStatement.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(xs::WhileStatement)
-
-
-def test_xs::whilestatement_constructor_exists():
-    assert callable(xs::WhileStatement.__init__)
-
-
-def test_xs::whilestatement_constructor_args():
-    sig = inspect.signature(xs::WhileStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::ifelsestatement_is_not_abstract():
-    assert not inspect.isabstract(xs::IfElseStatement)
-
-
-def test_xs::ifelsestatement_constructor_exists():
-    assert callable(xs::IfElseStatement.__init__)
-
-
-def test_xs::ifelsestatement_constructor_args():
-    sig = inspect.signature(xs::IfElseStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::postfixstatement_is_not_abstract():
-    assert not inspect.isabstract(xs::PostfixStatement)
-
-
-def test_xs::postfixstatement_constructor_exists():
-    assert callable(xs::PostfixStatement.__init__)
-
-
-def test_xs::postfixstatement_constructor_args():
-    sig = inspect.signature(xs::PostfixStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::postfixstatement_has_op():
-    assert hasattr(xs::PostfixStatement, "op")
-    descriptor = None
-    for klass in xs::PostfixStatement.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expression_is_not_abstract():
-    assert not inspect.isabstract(Expression)
-
-
-def test_expression_constructor_exists():
-    assert callable(Expression.__init__)
-
-
-def test_expression_constructor_args():
-    sig = inspect.signature(Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::orexpression_is_not_abstract():
-    assert not inspect.isabstract(xs::OrExpression)
-
-
-def test_xs::orexpression_constructor_exists():
-    assert callable(xs::OrExpression.__init__)
-
-
-def test_xs::orexpression_constructor_args():
-    sig = inspect.signature(xs::OrExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::orexpression_has_op():
-    assert hasattr(xs::OrExpression, "op")
-    descriptor = None
-    for klass in xs::OrExpression.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::factor_is_not_abstract():
-    assert not inspect.isabstract(xs::Factor)
-
-
-def test_xs::factor_constructor_exists():
-    assert callable(xs::Factor.__init__)
-
-
-def test_xs::factor_constructor_args():
-    sig = inspect.signature(xs::Factor.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::factor_has_op():
-    assert hasattr(xs::Factor, "op")
-    descriptor = None
-    for klass in xs::Factor.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::equalsexpression_is_not_abstract():
-    assert not inspect.isabstract(xs::EqualsExpression)
-
-
-def test_xs::equalsexpression_constructor_exists():
-    assert callable(xs::EqualsExpression.__init__)
-
-
-def test_xs::equalsexpression_constructor_args():
-    sig = inspect.signature(xs::EqualsExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::equalsexpression_has_op():
-    assert hasattr(xs::EqualsExpression, "op")
-    descriptor = None
-    for klass in xs::EqualsExpression.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::call_is_not_abstract():
-    assert not inspect.isabstract(xs::Call)
-
-
-def test_xs::call_constructor_exists():
-    assert callable(xs::Call.__init__)
-
-
-def test_xs::call_constructor_args():
-    sig = inspect.signature(xs::Call.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::assign_is_not_abstract():
-    assert not inspect.isabstract(xs::Assign)
-
-
-def test_xs::assign_constructor_exists():
-    assert callable(xs::Assign.__init__)
-
-
-def test_xs::assign_constructor_args():
-    sig = inspect.signature(xs::Assign.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::term_is_not_abstract():
-    assert not inspect.isabstract(xs::Term)
-
-
-def test_xs::term_constructor_exists():
-    assert callable(xs::Term.__init__)
-
-
-def test_xs::term_constructor_args():
-    sig = inspect.signature(xs::Term.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::term_has_op():
-    assert hasattr(xs::Term, "op")
-    descriptor = None
-    for klass in xs::Term.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::andexpression_is_not_abstract():
-    assert not inspect.isabstract(xs::AndExpression)
-
-
-def test_xs::andexpression_constructor_exists():
-    assert callable(xs::AndExpression.__init__)
-
-
-def test_xs::andexpression_constructor_args():
-    sig = inspect.signature(xs::AndExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::andexpression_has_op():
-    assert hasattr(xs::AndExpression, "op")
-    descriptor = None
-    for klass in xs::AndExpression.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::literal_is_not_abstract():
-    assert not inspect.isabstract(xs::Literal)
-
-
-def test_xs::literal_constructor_exists():
-    assert callable(xs::Literal.__init__)
-
-
-def test_xs::literal_constructor_args():
-    sig = inspect.signature(xs::Literal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::comparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(xs::ComparisonExpression)
-
-
-def test_xs::comparisonexpression_constructor_exists():
-    assert callable(xs::ComparisonExpression.__init__)
-
-
-def test_xs::comparisonexpression_constructor_args():
-    sig = inspect.signature(xs::ComparisonExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_xs::comparisonexpression_has_op():
-    assert hasattr(xs::ComparisonExpression, "op")
-    descriptor = None
-    for klass in xs::ComparisonExpression.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xs::var_is_not_abstract():
-    assert not inspect.isabstract(xs::Var)
-
-
-def test_xs::var_constructor_exists():
-    assert callable(xs::Var.__init__)
-
-
-def test_xs::var_constructor_args():
-    sig = inspect.signature(xs::Var.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xs::switchdefault_is_not_abstract():
-    assert not inspect.isabstract(xs::SwitchDefault)
-
-
-def test_xs::switchdefault_constructor_exists():
-    assert callable(xs::SwitchDefault.__init__)
-
-
-def test_xs::switchdefault_constructor_args():
-    sig = inspect.signature(xs::SwitchDefault.__init__)
+def test_xs_block_constructor_args():
+    sig = inspect.signature(xs_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1049,274 +1049,527 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-xs::SwitchCase_strategy = st.builds(
-    xs::SwitchCase,
+Type_strategy = st.builds(
+    Type,
 )
-xs::Statement_strategy = st.builds(
-    xs::Statement,
+xs_StringType_strategy = st.builds(
+    xs_StringType,
 )
-xs::Type_strategy = st.builds(
-    xs::Type,
+xs_BoolType_strategy = st.builds(
+    xs_BoolType,
+)
+xs_FloatType_strategy = st.builds(
+    xs_FloatType,
+)
+xs_VectorType_strategy = st.builds(
+    xs_VectorType,
+)
+xs_VoidType_strategy = st.builds(
+    xs_VoidType,
+)
+xs_IntType_strategy = st.builds(
+    xs_IntType,
+)
+Literal_strategy = st.builds(
+    Literal,
+)
+xs_LiteralFloat_strategy = st.builds(
+    xs_LiteralFloat,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+xs_LiteralBool_strategy = st.builds(
+    xs_LiteralBool,
+    value=
+        st.booleans()
+)
+xs_VectorLiteral_strategy = st.builds(
+    xs_VectorLiteral,
+)
+xs_LiteralInt_strategy = st.builds(
+    xs_LiteralInt,
+    value=
+        st.integers()
+)
+xs_LiteralString_strategy = st.builds(
+    xs_LiteralString,
+    value=
+        safe_text
+)
+Expression_strategy = st.builds(
+    Expression,
+)
+xs_Call_strategy = st.builds(
+    xs_Call,
+)
+xs_Assign_strategy = st.builds(
+    xs_Assign,
+)
+xs_OrExpression_strategy = st.builds(
+    xs_OrExpression,
+    op=
+        safe_text
+)
+xs_Term_strategy = st.builds(
+    xs_Term,
+    op=
+        safe_text
+)
+xs_Literal_strategy = st.builds(
+    xs_Literal,
+)
+xs_EqualsExpression_strategy = st.builds(
+    xs_EqualsExpression,
+    op=
+        safe_text
+)
+xs_AndExpression_strategy = st.builds(
+    xs_AndExpression,
+    op=
+        safe_text
+)
+xs_Factor_strategy = st.builds(
+    xs_Factor,
+    op=
+        safe_text
+)
+xs_ComparisonExpression_strategy = st.builds(
+    xs_ComparisonExpression,
+    op=
+        safe_text
+)
+xs_Var_strategy = st.builds(
+    xs_Var,
+)
+xs_SwitchDefault_strategy = st.builds(
+    xs_SwitchDefault,
+)
+xs_SwitchCase_strategy = st.builds(
+    xs_SwitchCase,
+)
+xs_Statement_strategy = st.builds(
+    xs_Statement,
+)
+xs_Type_strategy = st.builds(
+    xs_Type,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-xs::SwitchStatement_strategy = st.builds(
-    xs::SwitchStatement,
+xs_SwitchStatement_strategy = st.builds(
+    xs_SwitchStatement,
+)
+xs_ReturnStatement_strategy = st.builds(
+    xs_ReturnStatement,
+)
+xs_ForStatement_strategy = st.builds(
+    xs_ForStatement,
+    op=
+        safe_text
+)
+xs_ContinueStatement_strategy = st.builds(
+    xs_ContinueStatement,
+)
+xs_PostfixStatement_strategy = st.builds(
+    xs_PostfixStatement,
+    op=
+        safe_text
+)
+xs_BreakStatement_strategy = st.builds(
+    xs_BreakStatement,
+)
+xs_IfElseStatement_strategy = st.builds(
+    xs_IfElseStatement,
+)
+xs_WhileStatement_strategy = st.builds(
+    xs_WhileStatement,
 )
 VarDeclaration_strategy = st.builds(
     VarDeclaration,
 )
-xs::ParameterDeclaration_strategy = st.builds(
-    xs::ParameterDeclaration,
+xs_ParameterDeclaration_strategy = st.builds(
+    xs_ParameterDeclaration,
 )
-xs::ForVarDeclaration_strategy = st.builds(
-    xs::ForVarDeclaration,
+xs_ForVarDeclaration_strategy = st.builds(
+    xs_ForVarDeclaration,
 )
-xs::LocalVarDeclaration_strategy = st.builds(
-    xs::LocalVarDeclaration,
+xs_LocalVarDeclaration_strategy = st.builds(
+    xs_LocalVarDeclaration,
 )
-xs::Expression_strategy = st.builds(
-    xs::Expression,
+xs_Expression_strategy = st.builds(
+    xs_Expression,
 )
-xs::VarDeclaration_strategy = st.builds(
-    xs::VarDeclaration,
+xs_VarDeclaration_strategy = st.builds(
+    xs_VarDeclaration,
     name=
         safe_text
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-xs::GlobalVarDeclaration_strategy = st.builds(
-    xs::GlobalVarDeclaration,
-    extern=
-        st.booleans(),
-    const=
-        st.booleans()
-)
-xs::FunctionDeclaration_strategy = st.builds(
-    xs::FunctionDeclaration,
+xs_FunctionDeclaration_strategy = st.builds(
+    xs_FunctionDeclaration,
     mutable=
         st.booleans(),
     name=
         safe_text
 )
-xs::IncludeDeclaration_strategy = st.builds(
-    xs::IncludeDeclaration,
+xs_GlobalVarDeclaration_strategy = st.builds(
+    xs_GlobalVarDeclaration,
+    extern=
+        st.booleans(),
+    const=
+        st.booleans()
+)
+xs_IncludeDeclaration_strategy = st.builds(
+    xs_IncludeDeclaration,
     filePath=
         safe_text
 )
-xs::Declaration_strategy = st.builds(
-    xs::Declaration,
+xs_Declaration_strategy = st.builds(
+    xs_Declaration,
 )
-xs::Program_strategy = st.builds(
-    xs::Program,
+xs_Program_strategy = st.builds(
+    xs_Program,
 )
-xs::RuleDeclaration_strategy = st.builds(
-    xs::RuleDeclaration,
-    priority=
+xs_RuleDeclaration_strategy = st.builds(
+    xs_RuleDeclaration,
+    runImmediately=
+        st.booleans(),
+    group=
+        safe_text,
+    active=
+        st.booleans(),
+    highFrequency=
+        st.booleans(),
+    maxInterval=
         st.integers(),
     minInterval=
         st.integers(),
-    maxInterval=
+    priority=
         st.integers(),
-    highFrequency=
-        st.booleans(),
-    active=
-        st.booleans(),
     name=
-        safe_text,
-    group=
-        safe_text,
-    runImmediately=
-        st.booleans()
-)
-xs::Block_strategy = st.builds(
-    xs::Block,
-)
-Type_strategy = st.builds(
-    Type,
-)
-xs::VectorType_strategy = st.builds(
-    xs::VectorType,
-)
-xs::StringType_strategy = st.builds(
-    xs::StringType,
-)
-xs::FloatType_strategy = st.builds(
-    xs::FloatType,
-)
-xs::VoidType_strategy = st.builds(
-    xs::VoidType,
-)
-xs::BoolType_strategy = st.builds(
-    xs::BoolType,
-)
-xs::IntType_strategy = st.builds(
-    xs::IntType,
-)
-Literal_strategy = st.builds(
-    Literal,
-)
-xs::VectorLiteral_strategy = st.builds(
-    xs::VectorLiteral,
-)
-xs::LiteralBool_strategy = st.builds(
-    xs::LiteralBool,
-    value=
-        st.booleans()
-)
-xs::LiteralFloat_strategy = st.builds(
-    xs::LiteralFloat,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-xs::LiteralInt_strategy = st.builds(
-    xs::LiteralInt,
-    value=
-        st.integers()
-)
-xs::LiteralString_strategy = st.builds(
-    xs::LiteralString,
-    value=
         safe_text
 )
-xs::BreakStatement_strategy = st.builds(
-    xs::BreakStatement,
-)
-xs::ContinueStatement_strategy = st.builds(
-    xs::ContinueStatement,
-)
-xs::ReturnStatement_strategy = st.builds(
-    xs::ReturnStatement,
-)
-xs::ForStatement_strategy = st.builds(
-    xs::ForStatement,
-    op=
-        safe_text
-)
-xs::WhileStatement_strategy = st.builds(
-    xs::WhileStatement,
-)
-xs::IfElseStatement_strategy = st.builds(
-    xs::IfElseStatement,
-)
-xs::PostfixStatement_strategy = st.builds(
-    xs::PostfixStatement,
-    op=
-        safe_text
-)
-Expression_strategy = st.builds(
-    Expression,
-)
-xs::OrExpression_strategy = st.builds(
-    xs::OrExpression,
-    op=
-        safe_text
-)
-xs::Factor_strategy = st.builds(
-    xs::Factor,
-    op=
-        safe_text
-)
-xs::EqualsExpression_strategy = st.builds(
-    xs::EqualsExpression,
-    op=
-        safe_text
-)
-xs::Call_strategy = st.builds(
-    xs::Call,
-)
-xs::Assign_strategy = st.builds(
-    xs::Assign,
-)
-xs::Term_strategy = st.builds(
-    xs::Term,
-    op=
-        safe_text
-)
-xs::AndExpression_strategy = st.builds(
-    xs::AndExpression,
-    op=
-        safe_text
-)
-xs::Literal_strategy = st.builds(
-    xs::Literal,
-)
-xs::ComparisonExpression_strategy = st.builds(
-    xs::ComparisonExpression,
-    op=
-        safe_text
-)
-xs::Var_strategy = st.builds(
-    xs::Var,
-)
-xs::SwitchDefault_strategy = st.builds(
-    xs::SwitchDefault,
+xs_Block_strategy = st.builds(
+    xs_Block,
 )
 
-@given(instance=xs::SwitchCase_strategy)
+@given(instance=Type_strategy)
 @settings(max_examples=50)
-def test_xs::switchcase_instantiation(instance):
-    assert isinstance(instance, xs::SwitchCase)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
 
-@given(instance=xs::Statement_strategy)
+@given(instance=xs_StringType_strategy)
 @settings(max_examples=50)
-def test_xs::statement_instantiation(instance):
-    assert isinstance(instance, xs::Statement)
+def test_xs_stringtype_instantiation(instance):
+    assert isinstance(instance, xs_StringType)
 
-@given(instance=xs::Type_strategy)
+@given(instance=xs_BoolType_strategy)
 @settings(max_examples=50)
-def test_xs::type_instantiation(instance):
-    assert isinstance(instance, xs::Type)
+def test_xs_booltype_instantiation(instance):
+    assert isinstance(instance, xs_BoolType)
+
+@given(instance=xs_FloatType_strategy)
+@settings(max_examples=50)
+def test_xs_floattype_instantiation(instance):
+    assert isinstance(instance, xs_FloatType)
+
+@given(instance=xs_VectorType_strategy)
+@settings(max_examples=50)
+def test_xs_vectortype_instantiation(instance):
+    assert isinstance(instance, xs_VectorType)
+
+@given(instance=xs_VoidType_strategy)
+@settings(max_examples=50)
+def test_xs_voidtype_instantiation(instance):
+    assert isinstance(instance, xs_VoidType)
+
+@given(instance=xs_IntType_strategy)
+@settings(max_examples=50)
+def test_xs_inttype_instantiation(instance):
+    assert isinstance(instance, xs_IntType)
+
+@given(instance=Literal_strategy)
+@settings(max_examples=50)
+def test_literal_instantiation(instance):
+    assert isinstance(instance, Literal)
+
+@given(instance=xs_LiteralFloat_strategy)
+@settings(max_examples=50)
+def test_xs_literalfloat_instantiation(instance):
+    assert isinstance(instance, xs_LiteralFloat)
+
+
+
+@given(instance=xs_LiteralFloat_strategy)
+def test_xs_literalfloat_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=xs_LiteralBool_strategy)
+@settings(max_examples=50)
+def test_xs_literalbool_instantiation(instance):
+    assert isinstance(instance, xs_LiteralBool)
+
+
+
+@given(instance=xs_LiteralBool_strategy)
+def test_xs_literalbool_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=xs_VectorLiteral_strategy)
+@settings(max_examples=50)
+def test_xs_vectorliteral_instantiation(instance):
+    assert isinstance(instance, xs_VectorLiteral)
+
+@given(instance=xs_LiteralInt_strategy)
+@settings(max_examples=50)
+def test_xs_literalint_instantiation(instance):
+    assert isinstance(instance, xs_LiteralInt)
+
+
+
+@given(instance=xs_LiteralInt_strategy)
+def test_xs_literalint_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=xs_LiteralString_strategy)
+@settings(max_examples=50)
+def test_xs_literalstring_instantiation(instance):
+    assert isinstance(instance, xs_LiteralString)
+
+
+
+@given(instance=xs_LiteralString_strategy)
+def test_xs_literalstring_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=Expression_strategy)
+@settings(max_examples=50)
+def test_expression_instantiation(instance):
+    assert isinstance(instance, Expression)
+
+@given(instance=xs_Call_strategy)
+@settings(max_examples=50)
+def test_xs_call_instantiation(instance):
+    assert isinstance(instance, xs_Call)
+
+@given(instance=xs_Assign_strategy)
+@settings(max_examples=50)
+def test_xs_assign_instantiation(instance):
+    assert isinstance(instance, xs_Assign)
+
+@given(instance=xs_OrExpression_strategy)
+@settings(max_examples=50)
+def test_xs_orexpression_instantiation(instance):
+    assert isinstance(instance, xs_OrExpression)
+
+
+
+@given(instance=xs_OrExpression_strategy)
+def test_xs_orexpression_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_Term_strategy)
+@settings(max_examples=50)
+def test_xs_term_instantiation(instance):
+    assert isinstance(instance, xs_Term)
+
+
+
+@given(instance=xs_Term_strategy)
+def test_xs_term_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_Literal_strategy)
+@settings(max_examples=50)
+def test_xs_literal_instantiation(instance):
+    assert isinstance(instance, xs_Literal)
+
+@given(instance=xs_EqualsExpression_strategy)
+@settings(max_examples=50)
+def test_xs_equalsexpression_instantiation(instance):
+    assert isinstance(instance, xs_EqualsExpression)
+
+
+
+@given(instance=xs_EqualsExpression_strategy)
+def test_xs_equalsexpression_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_AndExpression_strategy)
+@settings(max_examples=50)
+def test_xs_andexpression_instantiation(instance):
+    assert isinstance(instance, xs_AndExpression)
+
+
+
+@given(instance=xs_AndExpression_strategy)
+def test_xs_andexpression_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_Factor_strategy)
+@settings(max_examples=50)
+def test_xs_factor_instantiation(instance):
+    assert isinstance(instance, xs_Factor)
+
+
+
+@given(instance=xs_Factor_strategy)
+def test_xs_factor_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_ComparisonExpression_strategy)
+@settings(max_examples=50)
+def test_xs_comparisonexpression_instantiation(instance):
+    assert isinstance(instance, xs_ComparisonExpression)
+
+
+
+@given(instance=xs_ComparisonExpression_strategy)
+def test_xs_comparisonexpression_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_Var_strategy)
+@settings(max_examples=50)
+def test_xs_var_instantiation(instance):
+    assert isinstance(instance, xs_Var)
+
+@given(instance=xs_SwitchDefault_strategy)
+@settings(max_examples=50)
+def test_xs_switchdefault_instantiation(instance):
+    assert isinstance(instance, xs_SwitchDefault)
+
+@given(instance=xs_SwitchCase_strategy)
+@settings(max_examples=50)
+def test_xs_switchcase_instantiation(instance):
+    assert isinstance(instance, xs_SwitchCase)
+
+@given(instance=xs_Statement_strategy)
+@settings(max_examples=50)
+def test_xs_statement_instantiation(instance):
+    assert isinstance(instance, xs_Statement)
+
+@given(instance=xs_Type_strategy)
+@settings(max_examples=50)
+def test_xs_type_instantiation(instance):
+    assert isinstance(instance, xs_Type)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=xs::SwitchStatement_strategy)
+@given(instance=xs_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_xs::switchstatement_instantiation(instance):
-    assert isinstance(instance, xs::SwitchStatement)
+def test_xs_switchstatement_instantiation(instance):
+    assert isinstance(instance, xs_SwitchStatement)
+
+@given(instance=xs_ReturnStatement_strategy)
+@settings(max_examples=50)
+def test_xs_returnstatement_instantiation(instance):
+    assert isinstance(instance, xs_ReturnStatement)
+
+@given(instance=xs_ForStatement_strategy)
+@settings(max_examples=50)
+def test_xs_forstatement_instantiation(instance):
+    assert isinstance(instance, xs_ForStatement)
+
+
+
+@given(instance=xs_ForStatement_strategy)
+def test_xs_forstatement_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_ContinueStatement_strategy)
+@settings(max_examples=50)
+def test_xs_continuestatement_instantiation(instance):
+    assert isinstance(instance, xs_ContinueStatement)
+
+@given(instance=xs_PostfixStatement_strategy)
+@settings(max_examples=50)
+def test_xs_postfixstatement_instantiation(instance):
+    assert isinstance(instance, xs_PostfixStatement)
+
+
+
+@given(instance=xs_PostfixStatement_strategy)
+def test_xs_postfixstatement_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=xs_BreakStatement_strategy)
+@settings(max_examples=50)
+def test_xs_breakstatement_instantiation(instance):
+    assert isinstance(instance, xs_BreakStatement)
+
+@given(instance=xs_IfElseStatement_strategy)
+@settings(max_examples=50)
+def test_xs_ifelsestatement_instantiation(instance):
+    assert isinstance(instance, xs_IfElseStatement)
+
+@given(instance=xs_WhileStatement_strategy)
+@settings(max_examples=50)
+def test_xs_whilestatement_instantiation(instance):
+    assert isinstance(instance, xs_WhileStatement)
 
 @given(instance=VarDeclaration_strategy)
 @settings(max_examples=50)
 def test_vardeclaration_instantiation(instance):
     assert isinstance(instance, VarDeclaration)
 
-@given(instance=xs::ParameterDeclaration_strategy)
+@given(instance=xs_ParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::parameterdeclaration_instantiation(instance):
-    assert isinstance(instance, xs::ParameterDeclaration)
+def test_xs_parameterdeclaration_instantiation(instance):
+    assert isinstance(instance, xs_ParameterDeclaration)
 
-@given(instance=xs::ForVarDeclaration_strategy)
+@given(instance=xs_ForVarDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::forvardeclaration_instantiation(instance):
-    assert isinstance(instance, xs::ForVarDeclaration)
+def test_xs_forvardeclaration_instantiation(instance):
+    assert isinstance(instance, xs_ForVarDeclaration)
 
-@given(instance=xs::LocalVarDeclaration_strategy)
+@given(instance=xs_LocalVarDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::localvardeclaration_instantiation(instance):
-    assert isinstance(instance, xs::LocalVarDeclaration)
+def test_xs_localvardeclaration_instantiation(instance):
+    assert isinstance(instance, xs_LocalVarDeclaration)
 
-@given(instance=xs::Expression_strategy)
+@given(instance=xs_Expression_strategy)
 @settings(max_examples=50)
-def test_xs::expression_instantiation(instance):
-    assert isinstance(instance, xs::Expression)
+def test_xs_expression_instantiation(instance):
+    assert isinstance(instance, xs_Expression)
 
-@given(instance=xs::VarDeclaration_strategy)
+@given(instance=xs_VarDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::vardeclaration_instantiation(instance):
-    assert isinstance(instance, xs::VarDeclaration)
-
-@given(instance=xs::VarDeclaration_strategy)
-def test_xs::vardeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_xs_vardeclaration_instantiation(instance):
+    assert isinstance(instance, xs_VarDeclaration)
 
 
-@given(instance=xs::VarDeclaration_strategy)
-def test_xs::vardeclaration_name_setter(instance):
+
+@given(instance=xs_VarDeclaration_strategy)
+def test_xs_vardeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1326,472 +1579,141 @@ def test_xs::vardeclaration_name_setter(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=xs::GlobalVarDeclaration_strategy)
+@given(instance=xs_FunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::globalvardeclaration_instantiation(instance):
-    assert isinstance(instance, xs::GlobalVarDeclaration)
-
-@given(instance=xs::GlobalVarDeclaration_strategy)
-def test_xs::globalvardeclaration_extern_type(instance):
-    assert isinstance(instance.extern, bool)
+def test_xs_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, xs_FunctionDeclaration)
 
 
-@given(instance=xs::GlobalVarDeclaration_strategy)
-def test_xs::globalvardeclaration_extern_setter(instance):
-    original = instance.extern
-    instance.extern = original
-    assert instance.extern == original
 
-@given(instance=xs::GlobalVarDeclaration_strategy)
-def test_xs::globalvardeclaration_const_type(instance):
-    assert isinstance(instance.const, bool)
-
-
-@given(instance=xs::GlobalVarDeclaration_strategy)
-def test_xs::globalvardeclaration_const_setter(instance):
-    original = instance.const
-    instance.const = original
-    assert instance.const == original
-
-@given(instance=xs::FunctionDeclaration_strategy)
-@settings(max_examples=50)
-def test_xs::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, xs::FunctionDeclaration)
-
-@given(instance=xs::FunctionDeclaration_strategy)
-def test_xs::functiondeclaration_mutable_type(instance):
-    assert isinstance(instance.mutable, bool)
-
-
-@given(instance=xs::FunctionDeclaration_strategy)
-def test_xs::functiondeclaration_mutable_setter(instance):
+@given(instance=xs_FunctionDeclaration_strategy)
+def test_xs_functiondeclaration_mutable_setter(instance):
     original = instance.mutable
     instance.mutable = original
     assert instance.mutable == original
 
-@given(instance=xs::FunctionDeclaration_strategy)
-def test_xs::functiondeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=xs::FunctionDeclaration_strategy)
-def test_xs::functiondeclaration_name_setter(instance):
+@given(instance=xs_FunctionDeclaration_strategy)
+def test_xs_functiondeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=xs::IncludeDeclaration_strategy)
+@given(instance=xs_GlobalVarDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::includedeclaration_instantiation(instance):
-    assert isinstance(instance, xs::IncludeDeclaration)
-
-@given(instance=xs::IncludeDeclaration_strategy)
-def test_xs::includedeclaration_filePath_type(instance):
-    assert isinstance(instance.filePath, str)
+def test_xs_globalvardeclaration_instantiation(instance):
+    assert isinstance(instance, xs_GlobalVarDeclaration)
 
 
-@given(instance=xs::IncludeDeclaration_strategy)
-def test_xs::includedeclaration_filePath_setter(instance):
+
+@given(instance=xs_GlobalVarDeclaration_strategy)
+def test_xs_globalvardeclaration_extern_setter(instance):
+    original = instance.extern
+    instance.extern = original
+    assert instance.extern == original
+
+
+
+@given(instance=xs_GlobalVarDeclaration_strategy)
+def test_xs_globalvardeclaration_const_setter(instance):
+    original = instance.const
+    instance.const = original
+    assert instance.const == original
+
+@given(instance=xs_IncludeDeclaration_strategy)
+@settings(max_examples=50)
+def test_xs_includedeclaration_instantiation(instance):
+    assert isinstance(instance, xs_IncludeDeclaration)
+
+
+
+@given(instance=xs_IncludeDeclaration_strategy)
+def test_xs_includedeclaration_filePath_setter(instance):
     original = instance.filePath
     instance.filePath = original
     assert instance.filePath == original
 
-@given(instance=xs::Declaration_strategy)
+@given(instance=xs_Declaration_strategy)
 @settings(max_examples=50)
-def test_xs::declaration_instantiation(instance):
-    assert isinstance(instance, xs::Declaration)
+def test_xs_declaration_instantiation(instance):
+    assert isinstance(instance, xs_Declaration)
 
-@given(instance=xs::Program_strategy)
+@given(instance=xs_Program_strategy)
 @settings(max_examples=50)
-def test_xs::program_instantiation(instance):
-    assert isinstance(instance, xs::Program)
+def test_xs_program_instantiation(instance):
+    assert isinstance(instance, xs_Program)
 
-@given(instance=xs::RuleDeclaration_strategy)
+@given(instance=xs_RuleDeclaration_strategy)
 @settings(max_examples=50)
-def test_xs::ruledeclaration_instantiation(instance):
-    assert isinstance(instance, xs::RuleDeclaration)
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_priority_type(instance):
-    assert isinstance(instance.priority, int)
+def test_xs_ruledeclaration_instantiation(instance):
+    assert isinstance(instance, xs_RuleDeclaration)
 
 
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
 
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_minInterval_type(instance):
-    assert isinstance(instance.minInterval, int)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_minInterval_setter(instance):
-    original = instance.minInterval
-    instance.minInterval = original
-    assert instance.minInterval == original
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_maxInterval_type(instance):
-    assert isinstance(instance.maxInterval, int)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_maxInterval_setter(instance):
-    original = instance.maxInterval
-    instance.maxInterval = original
-    assert instance.maxInterval == original
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_highFrequency_type(instance):
-    assert isinstance(instance.highFrequency, bool)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_highFrequency_setter(instance):
-    original = instance.highFrequency
-    instance.highFrequency = original
-    assert instance.highFrequency == original
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_active_type(instance):
-    assert isinstance(instance.active, bool)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_active_setter(instance):
-    original = instance.active
-    instance.active = original
-    assert instance.active == original
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_runImmediately_type(instance):
-    assert isinstance(instance.runImmediately, bool)
-
-
-@given(instance=xs::RuleDeclaration_strategy)
-def test_xs::ruledeclaration_runImmediately_setter(instance):
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_runImmediately_setter(instance):
     original = instance.runImmediately
     instance.runImmediately = original
     assert instance.runImmediately == original
 
-@given(instance=xs::Block_strategy)
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_active_setter(instance):
+    original = instance.active
+    instance.active = original
+    assert instance.active == original
+
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_highFrequency_setter(instance):
+    original = instance.highFrequency
+    instance.highFrequency = original
+    assert instance.highFrequency == original
+
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_maxInterval_setter(instance):
+    original = instance.maxInterval
+    instance.maxInterval = original
+    assert instance.maxInterval == original
+
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_minInterval_setter(instance):
+    original = instance.minInterval
+    instance.minInterval = original
+    assert instance.minInterval == original
+
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+
+
+@given(instance=xs_RuleDeclaration_strategy)
+def test_xs_ruledeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=xs_Block_strategy)
 @settings(max_examples=50)
-def test_xs::block_instantiation(instance):
-    assert isinstance(instance, xs::Block)
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=xs::VectorType_strategy)
-@settings(max_examples=50)
-def test_xs::vectortype_instantiation(instance):
-    assert isinstance(instance, xs::VectorType)
-
-@given(instance=xs::StringType_strategy)
-@settings(max_examples=50)
-def test_xs::stringtype_instantiation(instance):
-    assert isinstance(instance, xs::StringType)
-
-@given(instance=xs::FloatType_strategy)
-@settings(max_examples=50)
-def test_xs::floattype_instantiation(instance):
-    assert isinstance(instance, xs::FloatType)
-
-@given(instance=xs::VoidType_strategy)
-@settings(max_examples=50)
-def test_xs::voidtype_instantiation(instance):
-    assert isinstance(instance, xs::VoidType)
-
-@given(instance=xs::BoolType_strategy)
-@settings(max_examples=50)
-def test_xs::booltype_instantiation(instance):
-    assert isinstance(instance, xs::BoolType)
-
-@given(instance=xs::IntType_strategy)
-@settings(max_examples=50)
-def test_xs::inttype_instantiation(instance):
-    assert isinstance(instance, xs::IntType)
-
-@given(instance=Literal_strategy)
-@settings(max_examples=50)
-def test_literal_instantiation(instance):
-    assert isinstance(instance, Literal)
-
-@given(instance=xs::VectorLiteral_strategy)
-@settings(max_examples=50)
-def test_xs::vectorliteral_instantiation(instance):
-    assert isinstance(instance, xs::VectorLiteral)
-
-@given(instance=xs::LiteralBool_strategy)
-@settings(max_examples=50)
-def test_xs::literalbool_instantiation(instance):
-    assert isinstance(instance, xs::LiteralBool)
-
-@given(instance=xs::LiteralBool_strategy)
-def test_xs::literalbool_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=xs::LiteralBool_strategy)
-def test_xs::literalbool_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=xs::LiteralFloat_strategy)
-@settings(max_examples=50)
-def test_xs::literalfloat_instantiation(instance):
-    assert isinstance(instance, xs::LiteralFloat)
-
-@given(instance=xs::LiteralFloat_strategy)
-def test_xs::literalfloat_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=xs::LiteralFloat_strategy)
-def test_xs::literalfloat_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=xs::LiteralInt_strategy)
-@settings(max_examples=50)
-def test_xs::literalint_instantiation(instance):
-    assert isinstance(instance, xs::LiteralInt)
-
-@given(instance=xs::LiteralInt_strategy)
-def test_xs::literalint_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=xs::LiteralInt_strategy)
-def test_xs::literalint_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=xs::LiteralString_strategy)
-@settings(max_examples=50)
-def test_xs::literalstring_instantiation(instance):
-    assert isinstance(instance, xs::LiteralString)
-
-@given(instance=xs::LiteralString_strategy)
-def test_xs::literalstring_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=xs::LiteralString_strategy)
-def test_xs::literalstring_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=xs::BreakStatement_strategy)
-@settings(max_examples=50)
-def test_xs::breakstatement_instantiation(instance):
-    assert isinstance(instance, xs::BreakStatement)
-
-@given(instance=xs::ContinueStatement_strategy)
-@settings(max_examples=50)
-def test_xs::continuestatement_instantiation(instance):
-    assert isinstance(instance, xs::ContinueStatement)
-
-@given(instance=xs::ReturnStatement_strategy)
-@settings(max_examples=50)
-def test_xs::returnstatement_instantiation(instance):
-    assert isinstance(instance, xs::ReturnStatement)
-
-@given(instance=xs::ForStatement_strategy)
-@settings(max_examples=50)
-def test_xs::forstatement_instantiation(instance):
-    assert isinstance(instance, xs::ForStatement)
-
-@given(instance=xs::ForStatement_strategy)
-def test_xs::forstatement_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::ForStatement_strategy)
-def test_xs::forstatement_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::WhileStatement_strategy)
-@settings(max_examples=50)
-def test_xs::whilestatement_instantiation(instance):
-    assert isinstance(instance, xs::WhileStatement)
-
-@given(instance=xs::IfElseStatement_strategy)
-@settings(max_examples=50)
-def test_xs::ifelsestatement_instantiation(instance):
-    assert isinstance(instance, xs::IfElseStatement)
-
-@given(instance=xs::PostfixStatement_strategy)
-@settings(max_examples=50)
-def test_xs::postfixstatement_instantiation(instance):
-    assert isinstance(instance, xs::PostfixStatement)
-
-@given(instance=xs::PostfixStatement_strategy)
-def test_xs::postfixstatement_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::PostfixStatement_strategy)
-def test_xs::postfixstatement_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=Expression_strategy)
-@settings(max_examples=50)
-def test_expression_instantiation(instance):
-    assert isinstance(instance, Expression)
-
-@given(instance=xs::OrExpression_strategy)
-@settings(max_examples=50)
-def test_xs::orexpression_instantiation(instance):
-    assert isinstance(instance, xs::OrExpression)
-
-@given(instance=xs::OrExpression_strategy)
-def test_xs::orexpression_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::OrExpression_strategy)
-def test_xs::orexpression_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::Factor_strategy)
-@settings(max_examples=50)
-def test_xs::factor_instantiation(instance):
-    assert isinstance(instance, xs::Factor)
-
-@given(instance=xs::Factor_strategy)
-def test_xs::factor_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::Factor_strategy)
-def test_xs::factor_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::EqualsExpression_strategy)
-@settings(max_examples=50)
-def test_xs::equalsexpression_instantiation(instance):
-    assert isinstance(instance, xs::EqualsExpression)
-
-@given(instance=xs::EqualsExpression_strategy)
-def test_xs::equalsexpression_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::EqualsExpression_strategy)
-def test_xs::equalsexpression_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::Call_strategy)
-@settings(max_examples=50)
-def test_xs::call_instantiation(instance):
-    assert isinstance(instance, xs::Call)
-
-@given(instance=xs::Assign_strategy)
-@settings(max_examples=50)
-def test_xs::assign_instantiation(instance):
-    assert isinstance(instance, xs::Assign)
-
-@given(instance=xs::Term_strategy)
-@settings(max_examples=50)
-def test_xs::term_instantiation(instance):
-    assert isinstance(instance, xs::Term)
-
-@given(instance=xs::Term_strategy)
-def test_xs::term_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::Term_strategy)
-def test_xs::term_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::AndExpression_strategy)
-@settings(max_examples=50)
-def test_xs::andexpression_instantiation(instance):
-    assert isinstance(instance, xs::AndExpression)
-
-@given(instance=xs::AndExpression_strategy)
-def test_xs::andexpression_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::AndExpression_strategy)
-def test_xs::andexpression_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::Literal_strategy)
-@settings(max_examples=50)
-def test_xs::literal_instantiation(instance):
-    assert isinstance(instance, xs::Literal)
-
-@given(instance=xs::ComparisonExpression_strategy)
-@settings(max_examples=50)
-def test_xs::comparisonexpression_instantiation(instance):
-    assert isinstance(instance, xs::ComparisonExpression)
-
-@given(instance=xs::ComparisonExpression_strategy)
-def test_xs::comparisonexpression_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=xs::ComparisonExpression_strategy)
-def test_xs::comparisonexpression_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=xs::Var_strategy)
-@settings(max_examples=50)
-def test_xs::var_instantiation(instance):
-    assert isinstance(instance, xs::Var)
-
-@given(instance=xs::SwitchDefault_strategy)
-@settings(max_examples=50)
-def test_xs::switchdefault_instantiation(instance):
-    assert isinstance(instance, xs::SwitchDefault)
+def test_xs_block_instantiation(instance):
+    assert isinstance(instance, xs_Block)

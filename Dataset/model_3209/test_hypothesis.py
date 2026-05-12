@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    llp::Block,
+from python_code import (
+    llp_Block,
     ControlFlowInstruction,
-    llp::RepetitionInstruction,
-    llp::SkipInstruction,
-    llp::ParenthesisInstruction,
-    llp::ControlFlowBranchingInstruction,
+    llp_SkipInstruction,
+    llp_RepetitionInstruction,
+    llp_ParenthesisInstruction,
+    llp_ControlFlowBranchingInstruction,
     SynchronisationInstruction,
-    llp::UnlockInstruction,
-    llp::LockInstruction,
+    llp_UnlockInstruction,
+    llp_LockInstruction,
     CacheInstruction,
-    llp::CommitInstruction,
-    llp::MemoryReference,
+    llp_CommitInstruction,
+    llp_MemoryReference,
     DataAccessPattern,
-    llp::CacheInstruction,
-    llp::SynchronisationInstruction,
-    llp::SpawnInstruction,
-    llp::ControlFlowInstruction,
-    llp::IOInstruction,
+    llp_CacheInstruction,
+    llp_SpawnInstruction,
+    llp_ControlFlowInstruction,
+    llp_SynchronisationInstruction,
+    llp_IOInstruction,
     IOInstruction,
-    llp::WriteInstruction,
-    llp::ReadInstruction,
-    llp::DataAccessPattern,
-    llp::Task,
-    llp::LowLevelProgram,
+    llp_WriteInstruction,
+    llp_ReadInstruction,
+    llp_DataAccessPattern,
+    llp_Task,
+    llp_LowLevelProgram,
 )
 
 # =============================================================================
@@ -38,16 +38,16 @@ from classes import (
 
 
 
-def test_llp::block_is_not_abstract():
-    assert not inspect.isabstract(llp::Block)
+def test_llp_block_is_not_abstract():
+    assert not inspect.isabstract(llp_Block)
 
 
-def test_llp::block_constructor_exists():
-    assert callable(llp::Block.__init__)
+def test_llp_block_constructor_exists():
+    assert callable(llp_Block.__init__)
 
 
-def test_llp::block_constructor_args():
-    sig = inspect.signature(llp::Block.__init__)
+def test_llp_block_constructor_args():
+    sig = inspect.signature(llp_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -66,23 +66,37 @@ def test_controlflowinstruction_constructor_args():
 
 
 
-def test_llp::repetitioninstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::RepetitionInstruction)
+def test_llp_skipinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_SkipInstruction)
 
 
-def test_llp::repetitioninstruction_constructor_exists():
-    assert callable(llp::RepetitionInstruction.__init__)
+def test_llp_skipinstruction_constructor_exists():
+    assert callable(llp_SkipInstruction.__init__)
 
 
-def test_llp::repetitioninstruction_constructor_args():
-    sig = inspect.signature(llp::RepetitionInstruction.__init__)
+def test_llp_skipinstruction_constructor_args():
+    sig = inspect.signature(llp_SkipInstruction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_llp_repetitioninstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_RepetitionInstruction)
+
+
+def test_llp_repetitioninstruction_constructor_exists():
+    assert callable(llp_RepetitionInstruction.__init__)
+
+
+def test_llp_repetitioninstruction_constructor_args():
+    sig = inspect.signature(llp_RepetitionInstruction.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfRepetitions" in params, "Missing parameter 'numberOfRepetitions'"
 
-def test_llp::repetitioninstruction_has_numberOfRepetitions():
-    assert hasattr(llp::RepetitionInstruction, "numberOfRepetitions")
+def test_llp_repetitioninstruction_has_numberOfRepetitions():
+    assert hasattr(llp_RepetitionInstruction, "numberOfRepetitions")
     descriptor = None
-    for klass in llp::RepetitionInstruction.__mro__:
+    for klass in llp_RepetitionInstruction.__mro__:
         if "numberOfRepetitions" in klass.__dict__:
             descriptor = klass.__dict__["numberOfRepetitions"]
             break
@@ -90,44 +104,30 @@ def test_llp::repetitioninstruction_has_numberOfRepetitions():
 
 
 
-def test_llp::skipinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::SkipInstruction)
+def test_llp_parenthesisinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_ParenthesisInstruction)
 
 
-def test_llp::skipinstruction_constructor_exists():
-    assert callable(llp::SkipInstruction.__init__)
+def test_llp_parenthesisinstruction_constructor_exists():
+    assert callable(llp_ParenthesisInstruction.__init__)
 
 
-def test_llp::skipinstruction_constructor_args():
-    sig = inspect.signature(llp::SkipInstruction.__init__)
+def test_llp_parenthesisinstruction_constructor_args():
+    sig = inspect.signature(llp_ParenthesisInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::parenthesisinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::ParenthesisInstruction)
+def test_llp_controlflowbranchinginstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_ControlFlowBranchingInstruction)
 
 
-def test_llp::parenthesisinstruction_constructor_exists():
-    assert callable(llp::ParenthesisInstruction.__init__)
+def test_llp_controlflowbranchinginstruction_constructor_exists():
+    assert callable(llp_ControlFlowBranchingInstruction.__init__)
 
 
-def test_llp::parenthesisinstruction_constructor_args():
-    sig = inspect.signature(llp::ParenthesisInstruction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_llp::controlflowbranchinginstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::ControlFlowBranchingInstruction)
-
-
-def test_llp::controlflowbranchinginstruction_constructor_exists():
-    assert callable(llp::ControlFlowBranchingInstruction.__init__)
-
-
-def test_llp::controlflowbranchinginstruction_constructor_args():
-    sig = inspect.signature(llp::ControlFlowBranchingInstruction.__init__)
+def test_llp_controlflowbranchinginstruction_constructor_args():
+    sig = inspect.signature(llp_ControlFlowBranchingInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -146,30 +146,30 @@ def test_synchronisationinstruction_constructor_args():
 
 
 
-def test_llp::unlockinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::UnlockInstruction)
+def test_llp_unlockinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_UnlockInstruction)
 
 
-def test_llp::unlockinstruction_constructor_exists():
-    assert callable(llp::UnlockInstruction.__init__)
+def test_llp_unlockinstruction_constructor_exists():
+    assert callable(llp_UnlockInstruction.__init__)
 
 
-def test_llp::unlockinstruction_constructor_args():
-    sig = inspect.signature(llp::UnlockInstruction.__init__)
+def test_llp_unlockinstruction_constructor_args():
+    sig = inspect.signature(llp_UnlockInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::lockinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::LockInstruction)
+def test_llp_lockinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_LockInstruction)
 
 
-def test_llp::lockinstruction_constructor_exists():
-    assert callable(llp::LockInstruction.__init__)
+def test_llp_lockinstruction_constructor_exists():
+    assert callable(llp_LockInstruction.__init__)
 
 
-def test_llp::lockinstruction_constructor_args():
-    sig = inspect.signature(llp::LockInstruction.__init__)
+def test_llp_lockinstruction_constructor_args():
+    sig = inspect.signature(llp_LockInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -188,37 +188,37 @@ def test_cacheinstruction_constructor_args():
 
 
 
-def test_llp::commitinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::CommitInstruction)
+def test_llp_commitinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_CommitInstruction)
 
 
-def test_llp::commitinstruction_constructor_exists():
-    assert callable(llp::CommitInstruction.__init__)
+def test_llp_commitinstruction_constructor_exists():
+    assert callable(llp_CommitInstruction.__init__)
 
 
-def test_llp::commitinstruction_constructor_args():
-    sig = inspect.signature(llp::CommitInstruction.__init__)
+def test_llp_commitinstruction_constructor_args():
+    sig = inspect.signature(llp_CommitInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::memoryreference_is_not_abstract():
-    assert not inspect.isabstract(llp::MemoryReference)
+def test_llp_memoryreference_is_not_abstract():
+    assert not inspect.isabstract(llp_MemoryReference)
 
 
-def test_llp::memoryreference_constructor_exists():
-    assert callable(llp::MemoryReference.__init__)
+def test_llp_memoryreference_constructor_exists():
+    assert callable(llp_MemoryReference.__init__)
 
 
-def test_llp::memoryreference_constructor_args():
-    sig = inspect.signature(llp::MemoryReference.__init__)
+def test_llp_memoryreference_constructor_args():
+    sig = inspect.signature(llp_MemoryReference.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_llp::memoryreference_has_address():
-    assert hasattr(llp::MemoryReference, "address")
+def test_llp_memoryreference_has_address():
+    assert hasattr(llp_MemoryReference, "address")
     descriptor = None
-    for klass in llp::MemoryReference.__mro__:
+    for klass in llp_MemoryReference.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -240,72 +240,72 @@ def test_dataaccesspattern_constructor_args():
 
 
 
-def test_llp::cacheinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::CacheInstruction)
+def test_llp_cacheinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_CacheInstruction)
 
 
-def test_llp::cacheinstruction_constructor_exists():
-    assert callable(llp::CacheInstruction.__init__)
+def test_llp_cacheinstruction_constructor_exists():
+    assert callable(llp_CacheInstruction.__init__)
 
 
-def test_llp::cacheinstruction_constructor_args():
-    sig = inspect.signature(llp::CacheInstruction.__init__)
+def test_llp_cacheinstruction_constructor_args():
+    sig = inspect.signature(llp_CacheInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::synchronisationinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::SynchronisationInstruction)
+def test_llp_spawninstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_SpawnInstruction)
 
 
-def test_llp::synchronisationinstruction_constructor_exists():
-    assert callable(llp::SynchronisationInstruction.__init__)
+def test_llp_spawninstruction_constructor_exists():
+    assert callable(llp_SpawnInstruction.__init__)
 
 
-def test_llp::synchronisationinstruction_constructor_args():
-    sig = inspect.signature(llp::SynchronisationInstruction.__init__)
+def test_llp_spawninstruction_constructor_args():
+    sig = inspect.signature(llp_SpawnInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::spawninstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::SpawnInstruction)
+def test_llp_controlflowinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_ControlFlowInstruction)
 
 
-def test_llp::spawninstruction_constructor_exists():
-    assert callable(llp::SpawnInstruction.__init__)
+def test_llp_controlflowinstruction_constructor_exists():
+    assert callable(llp_ControlFlowInstruction.__init__)
 
 
-def test_llp::spawninstruction_constructor_args():
-    sig = inspect.signature(llp::SpawnInstruction.__init__)
+def test_llp_controlflowinstruction_constructor_args():
+    sig = inspect.signature(llp_ControlFlowInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::controlflowinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::ControlFlowInstruction)
+def test_llp_synchronisationinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_SynchronisationInstruction)
 
 
-def test_llp::controlflowinstruction_constructor_exists():
-    assert callable(llp::ControlFlowInstruction.__init__)
+def test_llp_synchronisationinstruction_constructor_exists():
+    assert callable(llp_SynchronisationInstruction.__init__)
 
 
-def test_llp::controlflowinstruction_constructor_args():
-    sig = inspect.signature(llp::ControlFlowInstruction.__init__)
+def test_llp_synchronisationinstruction_constructor_args():
+    sig = inspect.signature(llp_SynchronisationInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::ioinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::IOInstruction)
+def test_llp_ioinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_IOInstruction)
 
 
-def test_llp::ioinstruction_constructor_exists():
-    assert callable(llp::IOInstruction.__init__)
+def test_llp_ioinstruction_constructor_exists():
+    assert callable(llp_IOInstruction.__init__)
 
 
-def test_llp::ioinstruction_constructor_args():
-    sig = inspect.signature(llp::IOInstruction.__init__)
+def test_llp_ioinstruction_constructor_args():
+    sig = inspect.signature(llp_IOInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -324,65 +324,65 @@ def test_ioinstruction_constructor_args():
 
 
 
-def test_llp::writeinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::WriteInstruction)
+def test_llp_writeinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_WriteInstruction)
 
 
-def test_llp::writeinstruction_constructor_exists():
-    assert callable(llp::WriteInstruction.__init__)
+def test_llp_writeinstruction_constructor_exists():
+    assert callable(llp_WriteInstruction.__init__)
 
 
-def test_llp::writeinstruction_constructor_args():
-    sig = inspect.signature(llp::WriteInstruction.__init__)
+def test_llp_writeinstruction_constructor_args():
+    sig = inspect.signature(llp_WriteInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::readinstruction_is_not_abstract():
-    assert not inspect.isabstract(llp::ReadInstruction)
+def test_llp_readinstruction_is_not_abstract():
+    assert not inspect.isabstract(llp_ReadInstruction)
 
 
-def test_llp::readinstruction_constructor_exists():
-    assert callable(llp::ReadInstruction.__init__)
+def test_llp_readinstruction_constructor_exists():
+    assert callable(llp_ReadInstruction.__init__)
 
 
-def test_llp::readinstruction_constructor_args():
-    sig = inspect.signature(llp::ReadInstruction.__init__)
+def test_llp_readinstruction_constructor_args():
+    sig = inspect.signature(llp_ReadInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::dataaccesspattern_is_not_abstract():
-    assert not inspect.isabstract(llp::DataAccessPattern)
+def test_llp_dataaccesspattern_is_not_abstract():
+    assert not inspect.isabstract(llp_DataAccessPattern)
 
 
-def test_llp::dataaccesspattern_constructor_exists():
-    assert callable(llp::DataAccessPattern.__init__)
+def test_llp_dataaccesspattern_constructor_exists():
+    assert callable(llp_DataAccessPattern.__init__)
 
 
-def test_llp::dataaccesspattern_constructor_args():
-    sig = inspect.signature(llp::DataAccessPattern.__init__)
+def test_llp_dataaccesspattern_constructor_args():
+    sig = inspect.signature(llp_DataAccessPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_llp::task_is_not_abstract():
-    assert not inspect.isabstract(llp::Task)
+def test_llp_task_is_not_abstract():
+    assert not inspect.isabstract(llp_Task)
 
 
-def test_llp::task_constructor_exists():
-    assert callable(llp::Task.__init__)
+def test_llp_task_constructor_exists():
+    assert callable(llp_Task.__init__)
 
 
-def test_llp::task_constructor_args():
-    sig = inspect.signature(llp::Task.__init__)
+def test_llp_task_constructor_args():
+    sig = inspect.signature(llp_Task.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_llp::task_has_name():
-    assert hasattr(llp::Task, "name")
+def test_llp_task_has_name():
+    assert hasattr(llp_Task, "name")
     descriptor = None
-    for klass in llp::Task.__mro__:
+    for klass in llp_Task.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -390,16 +390,16 @@ def test_llp::task_has_name():
 
 
 
-def test_llp::lowlevelprogram_is_not_abstract():
-    assert not inspect.isabstract(llp::LowLevelProgram)
+def test_llp_lowlevelprogram_is_not_abstract():
+    assert not inspect.isabstract(llp_LowLevelProgram)
 
 
-def test_llp::lowlevelprogram_constructor_exists():
-    assert callable(llp::LowLevelProgram.__init__)
+def test_llp_lowlevelprogram_constructor_exists():
+    assert callable(llp_LowLevelProgram.__init__)
 
 
-def test_llp::lowlevelprogram_constructor_args():
-    sig = inspect.signature(llp::LowLevelProgram.__init__)
+def test_llp_lowlevelprogram_constructor_args():
+    sig = inspect.signature(llp_LowLevelProgram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -414,163 +414,157 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-llp::Block_strategy = st.builds(
-    llp::Block,
+llp_Block_strategy = st.builds(
+    llp_Block,
 )
 ControlFlowInstruction_strategy = st.builds(
     ControlFlowInstruction,
 )
-llp::RepetitionInstruction_strategy = st.builds(
-    llp::RepetitionInstruction,
+llp_SkipInstruction_strategy = st.builds(
+    llp_SkipInstruction,
+)
+llp_RepetitionInstruction_strategy = st.builds(
+    llp_RepetitionInstruction,
     numberOfRepetitions=
         st.integers()
 )
-llp::SkipInstruction_strategy = st.builds(
-    llp::SkipInstruction,
+llp_ParenthesisInstruction_strategy = st.builds(
+    llp_ParenthesisInstruction,
 )
-llp::ParenthesisInstruction_strategy = st.builds(
-    llp::ParenthesisInstruction,
-)
-llp::ControlFlowBranchingInstruction_strategy = st.builds(
-    llp::ControlFlowBranchingInstruction,
+llp_ControlFlowBranchingInstruction_strategy = st.builds(
+    llp_ControlFlowBranchingInstruction,
 )
 SynchronisationInstruction_strategy = st.builds(
     SynchronisationInstruction,
 )
-llp::UnlockInstruction_strategy = st.builds(
-    llp::UnlockInstruction,
+llp_UnlockInstruction_strategy = st.builds(
+    llp_UnlockInstruction,
 )
-llp::LockInstruction_strategy = st.builds(
-    llp::LockInstruction,
+llp_LockInstruction_strategy = st.builds(
+    llp_LockInstruction,
 )
 CacheInstruction_strategy = st.builds(
     CacheInstruction,
 )
-llp::CommitInstruction_strategy = st.builds(
-    llp::CommitInstruction,
+llp_CommitInstruction_strategy = st.builds(
+    llp_CommitInstruction,
 )
-llp::MemoryReference_strategy = st.builds(
-    llp::MemoryReference,
+llp_MemoryReference_strategy = st.builds(
+    llp_MemoryReference,
     address=
         safe_text
 )
 DataAccessPattern_strategy = st.builds(
     DataAccessPattern,
 )
-llp::CacheInstruction_strategy = st.builds(
-    llp::CacheInstruction,
+llp_CacheInstruction_strategy = st.builds(
+    llp_CacheInstruction,
 )
-llp::SynchronisationInstruction_strategy = st.builds(
-    llp::SynchronisationInstruction,
+llp_SpawnInstruction_strategy = st.builds(
+    llp_SpawnInstruction,
 )
-llp::SpawnInstruction_strategy = st.builds(
-    llp::SpawnInstruction,
+llp_ControlFlowInstruction_strategy = st.builds(
+    llp_ControlFlowInstruction,
 )
-llp::ControlFlowInstruction_strategy = st.builds(
-    llp::ControlFlowInstruction,
+llp_SynchronisationInstruction_strategy = st.builds(
+    llp_SynchronisationInstruction,
 )
-llp::IOInstruction_strategy = st.builds(
-    llp::IOInstruction,
+llp_IOInstruction_strategy = st.builds(
+    llp_IOInstruction,
 )
 IOInstruction_strategy = st.builds(
     IOInstruction,
 )
-llp::WriteInstruction_strategy = st.builds(
-    llp::WriteInstruction,
+llp_WriteInstruction_strategy = st.builds(
+    llp_WriteInstruction,
 )
-llp::ReadInstruction_strategy = st.builds(
-    llp::ReadInstruction,
+llp_ReadInstruction_strategy = st.builds(
+    llp_ReadInstruction,
 )
-llp::DataAccessPattern_strategy = st.builds(
-    llp::DataAccessPattern,
+llp_DataAccessPattern_strategy = st.builds(
+    llp_DataAccessPattern,
 )
-llp::Task_strategy = st.builds(
-    llp::Task,
+llp_Task_strategy = st.builds(
+    llp_Task,
     name=
         safe_text
 )
-llp::LowLevelProgram_strategy = st.builds(
-    llp::LowLevelProgram,
+llp_LowLevelProgram_strategy = st.builds(
+    llp_LowLevelProgram,
 )
 
-@given(instance=llp::Block_strategy)
+@given(instance=llp_Block_strategy)
 @settings(max_examples=50)
-def test_llp::block_instantiation(instance):
-    assert isinstance(instance, llp::Block)
+def test_llp_block_instantiation(instance):
+    assert isinstance(instance, llp_Block)
 
 @given(instance=ControlFlowInstruction_strategy)
 @settings(max_examples=50)
 def test_controlflowinstruction_instantiation(instance):
     assert isinstance(instance, ControlFlowInstruction)
 
-@given(instance=llp::RepetitionInstruction_strategy)
+@given(instance=llp_SkipInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::repetitioninstruction_instantiation(instance):
-    assert isinstance(instance, llp::RepetitionInstruction)
+def test_llp_skipinstruction_instantiation(instance):
+    assert isinstance(instance, llp_SkipInstruction)
 
-@given(instance=llp::RepetitionInstruction_strategy)
-def test_llp::repetitioninstruction_numberOfRepetitions_type(instance):
-    assert isinstance(instance.numberOfRepetitions, int)
+@given(instance=llp_RepetitionInstruction_strategy)
+@settings(max_examples=50)
+def test_llp_repetitioninstruction_instantiation(instance):
+    assert isinstance(instance, llp_RepetitionInstruction)
 
 
-@given(instance=llp::RepetitionInstruction_strategy)
-def test_llp::repetitioninstruction_numberOfRepetitions_setter(instance):
+
+@given(instance=llp_RepetitionInstruction_strategy)
+def test_llp_repetitioninstruction_numberOfRepetitions_setter(instance):
     original = instance.numberOfRepetitions
     instance.numberOfRepetitions = original
     assert instance.numberOfRepetitions == original
 
-@given(instance=llp::SkipInstruction_strategy)
+@given(instance=llp_ParenthesisInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::skipinstruction_instantiation(instance):
-    assert isinstance(instance, llp::SkipInstruction)
+def test_llp_parenthesisinstruction_instantiation(instance):
+    assert isinstance(instance, llp_ParenthesisInstruction)
 
-@given(instance=llp::ParenthesisInstruction_strategy)
+@given(instance=llp_ControlFlowBranchingInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::parenthesisinstruction_instantiation(instance):
-    assert isinstance(instance, llp::ParenthesisInstruction)
-
-@given(instance=llp::ControlFlowBranchingInstruction_strategy)
-@settings(max_examples=50)
-def test_llp::controlflowbranchinginstruction_instantiation(instance):
-    assert isinstance(instance, llp::ControlFlowBranchingInstruction)
+def test_llp_controlflowbranchinginstruction_instantiation(instance):
+    assert isinstance(instance, llp_ControlFlowBranchingInstruction)
 
 @given(instance=SynchronisationInstruction_strategy)
 @settings(max_examples=50)
 def test_synchronisationinstruction_instantiation(instance):
     assert isinstance(instance, SynchronisationInstruction)
 
-@given(instance=llp::UnlockInstruction_strategy)
+@given(instance=llp_UnlockInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::unlockinstruction_instantiation(instance):
-    assert isinstance(instance, llp::UnlockInstruction)
+def test_llp_unlockinstruction_instantiation(instance):
+    assert isinstance(instance, llp_UnlockInstruction)
 
-@given(instance=llp::LockInstruction_strategy)
+@given(instance=llp_LockInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::lockinstruction_instantiation(instance):
-    assert isinstance(instance, llp::LockInstruction)
+def test_llp_lockinstruction_instantiation(instance):
+    assert isinstance(instance, llp_LockInstruction)
 
 @given(instance=CacheInstruction_strategy)
 @settings(max_examples=50)
 def test_cacheinstruction_instantiation(instance):
     assert isinstance(instance, CacheInstruction)
 
-@given(instance=llp::CommitInstruction_strategy)
+@given(instance=llp_CommitInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::commitinstruction_instantiation(instance):
-    assert isinstance(instance, llp::CommitInstruction)
+def test_llp_commitinstruction_instantiation(instance):
+    assert isinstance(instance, llp_CommitInstruction)
 
-@given(instance=llp::MemoryReference_strategy)
+@given(instance=llp_MemoryReference_strategy)
 @settings(max_examples=50)
-def test_llp::memoryreference_instantiation(instance):
-    assert isinstance(instance, llp::MemoryReference)
-
-@given(instance=llp::MemoryReference_strategy)
-def test_llp::memoryreference_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_llp_memoryreference_instantiation(instance):
+    assert isinstance(instance, llp_MemoryReference)
 
 
-@given(instance=llp::MemoryReference_strategy)
-def test_llp::memoryreference_address_setter(instance):
+
+@given(instance=llp_MemoryReference_strategy)
+def test_llp_memoryreference_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
@@ -580,68 +574,65 @@ def test_llp::memoryreference_address_setter(instance):
 def test_dataaccesspattern_instantiation(instance):
     assert isinstance(instance, DataAccessPattern)
 
-@given(instance=llp::CacheInstruction_strategy)
+@given(instance=llp_CacheInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::cacheinstruction_instantiation(instance):
-    assert isinstance(instance, llp::CacheInstruction)
+def test_llp_cacheinstruction_instantiation(instance):
+    assert isinstance(instance, llp_CacheInstruction)
 
-@given(instance=llp::SynchronisationInstruction_strategy)
+@given(instance=llp_SpawnInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::synchronisationinstruction_instantiation(instance):
-    assert isinstance(instance, llp::SynchronisationInstruction)
+def test_llp_spawninstruction_instantiation(instance):
+    assert isinstance(instance, llp_SpawnInstruction)
 
-@given(instance=llp::SpawnInstruction_strategy)
+@given(instance=llp_ControlFlowInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::spawninstruction_instantiation(instance):
-    assert isinstance(instance, llp::SpawnInstruction)
+def test_llp_controlflowinstruction_instantiation(instance):
+    assert isinstance(instance, llp_ControlFlowInstruction)
 
-@given(instance=llp::ControlFlowInstruction_strategy)
+@given(instance=llp_SynchronisationInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::controlflowinstruction_instantiation(instance):
-    assert isinstance(instance, llp::ControlFlowInstruction)
+def test_llp_synchronisationinstruction_instantiation(instance):
+    assert isinstance(instance, llp_SynchronisationInstruction)
 
-@given(instance=llp::IOInstruction_strategy)
+@given(instance=llp_IOInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::ioinstruction_instantiation(instance):
-    assert isinstance(instance, llp::IOInstruction)
+def test_llp_ioinstruction_instantiation(instance):
+    assert isinstance(instance, llp_IOInstruction)
 
 @given(instance=IOInstruction_strategy)
 @settings(max_examples=50)
 def test_ioinstruction_instantiation(instance):
     assert isinstance(instance, IOInstruction)
 
-@given(instance=llp::WriteInstruction_strategy)
+@given(instance=llp_WriteInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::writeinstruction_instantiation(instance):
-    assert isinstance(instance, llp::WriteInstruction)
+def test_llp_writeinstruction_instantiation(instance):
+    assert isinstance(instance, llp_WriteInstruction)
 
-@given(instance=llp::ReadInstruction_strategy)
+@given(instance=llp_ReadInstruction_strategy)
 @settings(max_examples=50)
-def test_llp::readinstruction_instantiation(instance):
-    assert isinstance(instance, llp::ReadInstruction)
+def test_llp_readinstruction_instantiation(instance):
+    assert isinstance(instance, llp_ReadInstruction)
 
-@given(instance=llp::DataAccessPattern_strategy)
+@given(instance=llp_DataAccessPattern_strategy)
 @settings(max_examples=50)
-def test_llp::dataaccesspattern_instantiation(instance):
-    assert isinstance(instance, llp::DataAccessPattern)
+def test_llp_dataaccesspattern_instantiation(instance):
+    assert isinstance(instance, llp_DataAccessPattern)
 
-@given(instance=llp::Task_strategy)
+@given(instance=llp_Task_strategy)
 @settings(max_examples=50)
-def test_llp::task_instantiation(instance):
-    assert isinstance(instance, llp::Task)
-
-@given(instance=llp::Task_strategy)
-def test_llp::task_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_llp_task_instantiation(instance):
+    assert isinstance(instance, llp_Task)
 
 
-@given(instance=llp::Task_strategy)
-def test_llp::task_name_setter(instance):
+
+@given(instance=llp_Task_strategy)
+def test_llp_task_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=llp::LowLevelProgram_strategy)
+@given(instance=llp_LowLevelProgram_strategy)
 @settings(max_examples=50)
-def test_llp::lowlevelprogram_instantiation(instance):
-    assert isinstance(instance, llp::LowLevelProgram)
+def test_llp_lowlevelprogram_instantiation(instance):
+    assert isinstance(instance, llp_LowLevelProgram)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Univerity::University,
-    Univerity::Person,
-    Univerity::Courses,
+from python_code import (
+    Univerity_University,
+    Univerity_Person,
+    Univerity_Courses,
 )
 
 # =============================================================================
@@ -17,93 +17,93 @@ from classes import (
 
 
 
-def test_univerity::university_is_not_abstract():
-    assert not inspect.isabstract(Univerity::University)
+def test_univerity_university_is_not_abstract():
+    assert not inspect.isabstract(Univerity_University)
 
 
-def test_univerity::university_constructor_exists():
-    assert callable(Univerity::University.__init__)
+def test_univerity_university_constructor_exists():
+    assert callable(Univerity_University.__init__)
 
 
-def test_univerity::university_constructor_args():
-    sig = inspect.signature(Univerity::University.__init__)
+def test_univerity_university_constructor_args():
+    sig = inspect.signature(Univerity_University.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_univerity::person_is_not_abstract():
-    assert not inspect.isabstract(Univerity::Person)
+def test_univerity_person_is_not_abstract():
+    assert not inspect.isabstract(Univerity_Person)
 
 
-def test_univerity::person_constructor_exists():
-    assert callable(Univerity::Person.__init__)
+def test_univerity_person_constructor_exists():
+    assert callable(Univerity_Person.__init__)
 
 
-def test_univerity::person_constructor_args():
-    sig = inspect.signature(Univerity::Person.__init__)
+def test_univerity_person_constructor_args():
+    sig = inspect.signature(Univerity_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Email" in params, "Missing parameter 'Email'"
+    assert "Name" in params, "Missing parameter 'Name'"
 
-def test_univerity::person_has_Name():
-    assert hasattr(Univerity::Person, "Name")
+def test_univerity_person_has_Email():
+    assert hasattr(Univerity_Person, "Email")
     descriptor = None
-    for klass in Univerity::Person.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_univerity::person_has_Email():
-    assert hasattr(Univerity::Person, "Email")
-    descriptor = None
-    for klass in Univerity::Person.__mro__:
+    for klass in Univerity_Person.__mro__:
         if "Email" in klass.__dict__:
             descriptor = klass.__dict__["Email"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_univerity::courses_is_not_abstract():
-    assert not inspect.isabstract(Univerity::Courses)
-
-
-def test_univerity::courses_constructor_exists():
-    assert callable(Univerity::Courses.__init__)
-
-
-def test_univerity::courses_constructor_args():
-    sig = inspect.signature(Univerity::Courses.__init__)
-    params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "CFU" in params, "Missing parameter 'CFU'"
-    assert "Semester" in params, "Missing parameter 'Semester'"
-
-def test_univerity::courses_has_Name():
-    assert hasattr(Univerity::Courses, "Name")
+def test_univerity_person_has_Name():
+    assert hasattr(Univerity_Person, "Name")
     descriptor = None
-    for klass in Univerity::Courses.__mro__:
+    for klass in Univerity_Person.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_univerity::courses_has_CFU():
-    assert hasattr(Univerity::Courses, "CFU")
+
+
+def test_univerity_courses_is_not_abstract():
+    assert not inspect.isabstract(Univerity_Courses)
+
+
+def test_univerity_courses_constructor_exists():
+    assert callable(Univerity_Courses.__init__)
+
+
+def test_univerity_courses_constructor_args():
+    sig = inspect.signature(Univerity_Courses.__init__)
+    params = list(sig.parameters.keys())
+    assert "Semester" in params, "Missing parameter 'Semester'"
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "CFU" in params, "Missing parameter 'CFU'"
+
+def test_univerity_courses_has_Semester():
+    assert hasattr(Univerity_Courses, "Semester")
     descriptor = None
-    for klass in Univerity::Courses.__mro__:
-        if "CFU" in klass.__dict__:
-            descriptor = klass.__dict__["CFU"]
+    for klass in Univerity_Courses.__mro__:
+        if "Semester" in klass.__dict__:
+            descriptor = klass.__dict__["Semester"]
             break
     assert isinstance(descriptor, property)
 
-def test_univerity::courses_has_Semester():
-    assert hasattr(Univerity::Courses, "Semester")
+def test_univerity_courses_has_Name():
+    assert hasattr(Univerity_Courses, "Name")
     descriptor = None
-    for klass in Univerity::Courses.__mro__:
-        if "Semester" in klass.__dict__:
-            descriptor = klass.__dict__["Semester"]
+    for klass in Univerity_Courses.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_univerity_courses_has_CFU():
+    assert hasattr(Univerity_Courses, "CFU")
+    descriptor = None
+    for klass in Univerity_Courses.__mro__:
+        if "CFU" in klass.__dict__:
+            descriptor = klass.__dict__["CFU"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,92 +119,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Univerity::University_strategy = st.builds(
-    Univerity::University,
+Univerity_University_strategy = st.builds(
+    Univerity_University,
 )
-Univerity::Person_strategy = st.builds(
-    Univerity::Person,
-    Name=
-        safe_text,
+Univerity_Person_strategy = st.builds(
+    Univerity_Person,
     Email=
+        safe_text,
+    Name=
         safe_text
 )
-Univerity::Courses_strategy = st.builds(
-    Univerity::Courses,
+Univerity_Courses_strategy = st.builds(
+    Univerity_Courses,
+    Semester=
+        safe_text,
     Name=
         safe_text,
     CFU=
-        st.integers(),
-    Semester=
-        safe_text
+        st.integers()
 )
 
-@given(instance=Univerity::University_strategy)
+@given(instance=Univerity_University_strategy)
 @settings(max_examples=50)
-def test_univerity::university_instantiation(instance):
-    assert isinstance(instance, Univerity::University)
+def test_univerity_university_instantiation(instance):
+    assert isinstance(instance, Univerity_University)
 
-@given(instance=Univerity::Person_strategy)
+@given(instance=Univerity_Person_strategy)
 @settings(max_examples=50)
-def test_univerity::person_instantiation(instance):
-    assert isinstance(instance, Univerity::Person)
-
-@given(instance=Univerity::Person_strategy)
-def test_univerity::person_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_univerity_person_instantiation(instance):
+    assert isinstance(instance, Univerity_Person)
 
 
-@given(instance=Univerity::Person_strategy)
-def test_univerity::person_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
 
-@given(instance=Univerity::Person_strategy)
-def test_univerity::person_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=Univerity::Person_strategy)
-def test_univerity::person_Email_setter(instance):
+@given(instance=Univerity_Person_strategy)
+def test_univerity_person_Email_setter(instance):
     original = instance.Email
     instance.Email = original
     assert instance.Email == original
 
-@given(instance=Univerity::Courses_strategy)
-@settings(max_examples=50)
-def test_univerity::courses_instantiation(instance):
-    assert isinstance(instance, Univerity::Courses)
-
-@given(instance=Univerity::Courses_strategy)
-def test_univerity::courses_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
-@given(instance=Univerity::Courses_strategy)
-def test_univerity::courses_Name_setter(instance):
+@given(instance=Univerity_Person_strategy)
+def test_univerity_person_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Univerity::Courses_strategy)
-def test_univerity::courses_CFU_type(instance):
-    assert isinstance(instance.CFU, int)
+@given(instance=Univerity_Courses_strategy)
+@settings(max_examples=50)
+def test_univerity_courses_instantiation(instance):
+    assert isinstance(instance, Univerity_Courses)
 
 
-@given(instance=Univerity::Courses_strategy)
-def test_univerity::courses_CFU_setter(instance):
-    original = instance.CFU
-    instance.CFU = original
-    assert instance.CFU == original
 
-@given(instance=Univerity::Courses_strategy)
-def test_univerity::courses_Semester_type(instance):
-    assert isinstance(instance.Semester, str)
-
-
-@given(instance=Univerity::Courses_strategy)
-def test_univerity::courses_Semester_setter(instance):
+@given(instance=Univerity_Courses_strategy)
+def test_univerity_courses_Semester_setter(instance):
     original = instance.Semester
     instance.Semester = original
     assert instance.Semester == original
+
+
+
+@given(instance=Univerity_Courses_strategy)
+def test_univerity_courses_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=Univerity_Courses_strategy)
+def test_univerity_courses_CFU_setter(instance):
+    original = instance.CFU
+    instance.CFU = original
+    assert instance.CFU == original

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ale2::RB,
-    ale2::B,
+from python_code import (
+    ale2_RB,
+    ale2_B,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_ale2::rb_is_not_abstract():
-    assert not inspect.isabstract(ale2::RB)
+def test_ale2_rb_is_not_abstract():
+    assert not inspect.isabstract(ale2_RB)
 
 
-def test_ale2::rb_constructor_exists():
-    assert callable(ale2::RB.__init__)
+def test_ale2_rb_constructor_exists():
+    assert callable(ale2_RB.__init__)
 
 
-def test_ale2::rb_constructor_args():
-    sig = inspect.signature(ale2::RB.__init__)
+def test_ale2_rb_constructor_args():
+    sig = inspect.signature(ale2_RB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ale2::b_is_not_abstract():
-    assert not inspect.isabstract(ale2::B)
+def test_ale2_b_is_not_abstract():
+    assert not inspect.isabstract(ale2_B)
 
 
-def test_ale2::b_constructor_exists():
-    assert callable(ale2::B.__init__)
+def test_ale2_b_constructor_exists():
+    assert callable(ale2_B.__init__)
 
 
-def test_ale2::b_constructor_args():
-    sig = inspect.signature(ale2::B.__init__)
+def test_ale2_b_constructor_args():
+    sig = inspect.signature(ale2_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ale2::RB_strategy = st.builds(
-    ale2::RB,
+ale2_RB_strategy = st.builds(
+    ale2_RB,
 )
-ale2::B_strategy = st.builds(
-    ale2::B,
+ale2_B_strategy = st.builds(
+    ale2_B,
 )
 
-@given(instance=ale2::RB_strategy)
+@given(instance=ale2_RB_strategy)
 @settings(max_examples=50)
-def test_ale2::rb_instantiation(instance):
-    assert isinstance(instance, ale2::RB)
+def test_ale2_rb_instantiation(instance):
+    assert isinstance(instance, ale2_RB)
 
-@given(instance=ale2::B_strategy)
+@given(instance=ale2_B_strategy)
 @settings(max_examples=50)
-def test_ale2::b_instantiation(instance):
-    assert isinstance(instance, ale2::B)
+def test_ale2_b_instantiation(instance):
+    assert isinstance(instance, ale2_B)

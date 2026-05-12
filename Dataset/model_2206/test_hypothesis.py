@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tree::BigTree,
+from python_code import (
+    tree_BigTree,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_tree::bigtree_is_not_abstract():
-    assert not inspect.isabstract(tree::BigTree)
+def test_tree_bigtree_is_not_abstract():
+    assert not inspect.isabstract(tree_BigTree)
 
 
-def test_tree::bigtree_constructor_exists():
-    assert callable(tree::BigTree.__init__)
+def test_tree_bigtree_constructor_exists():
+    assert callable(tree_BigTree.__init__)
 
 
-def test_tree::bigtree_constructor_args():
-    sig = inspect.signature(tree::BigTree.__init__)
+def test_tree_bigtree_constructor_args():
+    sig = inspect.signature(tree_BigTree.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tree::bigtree_has_name():
-    assert hasattr(tree::BigTree, "name")
+def test_tree_bigtree_has_name():
+    assert hasattr(tree_BigTree, "name")
     descriptor = None
-    for klass in tree::BigTree.__mro__:
+    for klass in tree_BigTree.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tree::BigTree_strategy = st.builds(
-    tree::BigTree,
+tree_BigTree_strategy = st.builds(
+    tree_BigTree,
     name=
         safe_text
 )
 
-@given(instance=tree::BigTree_strategy)
+@given(instance=tree_BigTree_strategy)
 @settings(max_examples=50)
-def test_tree::bigtree_instantiation(instance):
-    assert isinstance(instance, tree::BigTree)
-
-@given(instance=tree::BigTree_strategy)
-def test_tree::bigtree_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tree_bigtree_instantiation(instance):
+    assert isinstance(instance, tree_BigTree)
 
 
-@given(instance=tree::BigTree_strategy)
-def test_tree::bigtree_name_setter(instance):
+
+@given(instance=tree_BigTree_strategy)
+def test_tree_bigtree_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sqlCrudGenerator::DataType,
-    sqlCrudGenerator::ForeignKey,
-    sqlCrudGenerator::PrimaryKey,
-    sqlCrudGenerator::Column,
-    sqlCrudGenerator::Table,
-    sqlCrudGenerator::Schema,
+from python_code import (
+    sqlCrudGenerator_DataType,
+    sqlCrudGenerator_ForeignKey,
+    sqlCrudGenerator_PrimaryKey,
+    sqlCrudGenerator_Column,
+    sqlCrudGenerator_Table,
+    sqlCrudGenerator_Schema,
     ENUM_DATA_TYPE,
 )
 
@@ -21,33 +21,33 @@ from classes import (
 
 
 
-def test_sqlcrudgenerator::datatype_is_not_abstract():
-    assert not inspect.isabstract(sqlCrudGenerator::DataType)
+def test_sqlcrudgenerator_datatype_is_not_abstract():
+    assert not inspect.isabstract(sqlCrudGenerator_DataType)
 
 
-def test_sqlcrudgenerator::datatype_constructor_exists():
-    assert callable(sqlCrudGenerator::DataType.__init__)
+def test_sqlcrudgenerator_datatype_constructor_exists():
+    assert callable(sqlCrudGenerator_DataType.__init__)
 
 
-def test_sqlcrudgenerator::datatype_constructor_args():
-    sig = inspect.signature(sqlCrudGenerator::DataType.__init__)
+def test_sqlcrudgenerator_datatype_constructor_args():
+    sig = inspect.signature(sqlCrudGenerator_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "precision" in params, "Missing parameter 'precision'"
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_sqlcrudgenerator::datatype_has_precision():
-    assert hasattr(sqlCrudGenerator::DataType, "precision")
+def test_sqlcrudgenerator_datatype_has_precision():
+    assert hasattr(sqlCrudGenerator_DataType, "precision")
     descriptor = None
-    for klass in sqlCrudGenerator::DataType.__mro__:
+    for klass in sqlCrudGenerator_DataType.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqlcrudgenerator::datatype_has_dataType():
-    assert hasattr(sqlCrudGenerator::DataType, "dataType")
+def test_sqlcrudgenerator_datatype_has_dataType():
+    assert hasattr(sqlCrudGenerator_DataType, "dataType")
     descriptor = None
-    for klass in sqlCrudGenerator::DataType.__mro__:
+    for klass in sqlCrudGenerator_DataType.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -55,51 +55,51 @@ def test_sqlcrudgenerator::datatype_has_dataType():
 
 
 
-def test_sqlcrudgenerator::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(sqlCrudGenerator::ForeignKey)
+def test_sqlcrudgenerator_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(sqlCrudGenerator_ForeignKey)
 
 
-def test_sqlcrudgenerator::foreignkey_constructor_exists():
-    assert callable(sqlCrudGenerator::ForeignKey.__init__)
+def test_sqlcrudgenerator_foreignkey_constructor_exists():
+    assert callable(sqlCrudGenerator_ForeignKey.__init__)
 
 
-def test_sqlcrudgenerator::foreignkey_constructor_args():
-    sig = inspect.signature(sqlCrudGenerator::ForeignKey.__init__)
+def test_sqlcrudgenerator_foreignkey_constructor_args():
+    sig = inspect.signature(sqlCrudGenerator_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlcrudgenerator::primarykey_is_not_abstract():
-    assert not inspect.isabstract(sqlCrudGenerator::PrimaryKey)
+def test_sqlcrudgenerator_primarykey_is_not_abstract():
+    assert not inspect.isabstract(sqlCrudGenerator_PrimaryKey)
 
 
-def test_sqlcrudgenerator::primarykey_constructor_exists():
-    assert callable(sqlCrudGenerator::PrimaryKey.__init__)
+def test_sqlcrudgenerator_primarykey_constructor_exists():
+    assert callable(sqlCrudGenerator_PrimaryKey.__init__)
 
 
-def test_sqlcrudgenerator::primarykey_constructor_args():
-    sig = inspect.signature(sqlCrudGenerator::PrimaryKey.__init__)
+def test_sqlcrudgenerator_primarykey_constructor_args():
+    sig = inspect.signature(sqlCrudGenerator_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqlcrudgenerator::column_is_not_abstract():
-    assert not inspect.isabstract(sqlCrudGenerator::Column)
+def test_sqlcrudgenerator_column_is_not_abstract():
+    assert not inspect.isabstract(sqlCrudGenerator_Column)
 
 
-def test_sqlcrudgenerator::column_constructor_exists():
-    assert callable(sqlCrudGenerator::Column.__init__)
+def test_sqlcrudgenerator_column_constructor_exists():
+    assert callable(sqlCrudGenerator_Column.__init__)
 
 
-def test_sqlcrudgenerator::column_constructor_args():
-    sig = inspect.signature(sqlCrudGenerator::Column.__init__)
+def test_sqlcrudgenerator_column_constructor_args():
+    sig = inspect.signature(sqlCrudGenerator_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlcrudgenerator::column_has_name():
-    assert hasattr(sqlCrudGenerator::Column, "name")
+def test_sqlcrudgenerator_column_has_name():
+    assert hasattr(sqlCrudGenerator_Column, "name")
     descriptor = None
-    for klass in sqlCrudGenerator::Column.__mro__:
+    for klass in sqlCrudGenerator_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,23 +107,23 @@ def test_sqlcrudgenerator::column_has_name():
 
 
 
-def test_sqlcrudgenerator::table_is_not_abstract():
-    assert not inspect.isabstract(sqlCrudGenerator::Table)
+def test_sqlcrudgenerator_table_is_not_abstract():
+    assert not inspect.isabstract(sqlCrudGenerator_Table)
 
 
-def test_sqlcrudgenerator::table_constructor_exists():
-    assert callable(sqlCrudGenerator::Table.__init__)
+def test_sqlcrudgenerator_table_constructor_exists():
+    assert callable(sqlCrudGenerator_Table.__init__)
 
 
-def test_sqlcrudgenerator::table_constructor_args():
-    sig = inspect.signature(sqlCrudGenerator::Table.__init__)
+def test_sqlcrudgenerator_table_constructor_args():
+    sig = inspect.signature(sqlCrudGenerator_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlcrudgenerator::table_has_name():
-    assert hasattr(sqlCrudGenerator::Table, "name")
+def test_sqlcrudgenerator_table_has_name():
+    assert hasattr(sqlCrudGenerator_Table, "name")
     descriptor = None
-    for klass in sqlCrudGenerator::Table.__mro__:
+    for klass in sqlCrudGenerator_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -131,23 +131,23 @@ def test_sqlcrudgenerator::table_has_name():
 
 
 
-def test_sqlcrudgenerator::schema_is_not_abstract():
-    assert not inspect.isabstract(sqlCrudGenerator::Schema)
+def test_sqlcrudgenerator_schema_is_not_abstract():
+    assert not inspect.isabstract(sqlCrudGenerator_Schema)
 
 
-def test_sqlcrudgenerator::schema_constructor_exists():
-    assert callable(sqlCrudGenerator::Schema.__init__)
+def test_sqlcrudgenerator_schema_constructor_exists():
+    assert callable(sqlCrudGenerator_Schema.__init__)
 
 
-def test_sqlcrudgenerator::schema_constructor_args():
-    sig = inspect.signature(sqlCrudGenerator::Schema.__init__)
+def test_sqlcrudgenerator_schema_constructor_args():
+    sig = inspect.signature(sqlCrudGenerator_Schema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqlcrudgenerator::schema_has_name():
-    assert hasattr(sqlCrudGenerator::Schema, "name")
+def test_sqlcrudgenerator_schema_has_name():
+    assert hasattr(sqlCrudGenerator_Schema, "name")
     descriptor = None
-    for klass in sqlCrudGenerator::Schema.__mro__:
+    for klass in sqlCrudGenerator_Schema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -161,48 +161,48 @@ def test_enum_data_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ENUM_DATA_TYPE]
     expected_literals = [
-        "BOOLEAN",
-        "TIMESTAMP_M",
-        "VARYING",
-        "NUMERIC_M",
-        "DECIMAL",
-        "INT",
-        "ARRAY",
-        "BIGINT_M",
-        "SMALLINT_M",
-        "ARRAY_M",
-        "VARYING_M",
-        "INTEGER",
         "DATE",
-        "XML_M",
-        "INTEGER_M",
-        "CHARACTER_M",
-        "DATE_M",
-        "TIMESTAMP",
-        "VARBINARY_M",
-        "REAL_M",
-        "INTERVAL",
-        "MULTISET",
-        "BINARY",
-        "VARCHAR_M",
-        "TIME",
-        "TIME_M",
-        "INTERVAL_M",
-        "NUMERIC",
-        "CHARACTER",
-        "XML",
-        "FLOAT",
-        "MULTISET_M",
-        "VARBINARY",
-        "INT_M",
-        "VARCHAR",
-        "SMALLINT",
-        "BINARY_M",
-        "FLOAT_M",
+        "BIGINT_M",
+        "ARRAY",
         "REAL",
-        "BIGINT",
-        "BOOLEAN_M",
+        "TIMESTAMP",
+        "VARYING",
+        "SMALLINT",
+        "DECIMAL",
+        "VARBINARY",
+        "ARRAY_M",
+        "BOOLEAN",
+        "NUMERIC",
+        "VARCHAR_M",
+        "DATE_M",
+        "CHARACTER_M",
+        "INTEGER",
+        "BINARY",
+        "TIME",
+        "VARBINARY_M",
         "DECIMAL_M",
+        "TIME_M",
+        "XML",
+        "VARYING_M",
+        "FLOAT",
+        "BINARY_M",
+        "XML_M",
+        "NUMERIC_M",
+        "MULTISET_M",
+        "TIMESTAMP_M",
+        "CHARACTER",
+        "FLOAT_M",
+        "BOOLEAN_M",
+        "INTERVAL",
+        "INTERVAL_M",
+        "REAL_M",
+        "INT",
+        "BIGINT",
+        "INTEGER_M",
+        "INT_M",
+        "MULTISET",
+        "VARCHAR",
+        "SMALLINT_M",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -220,116 +220,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sqlCrudGenerator::DataType_strategy = st.builds(
-    sqlCrudGenerator::DataType,
+sqlCrudGenerator_DataType_strategy = st.builds(
+    sqlCrudGenerator_DataType,
     precision=
         st.integers(),
     dataType=
         safe_text
 )
-sqlCrudGenerator::ForeignKey_strategy = st.builds(
-    sqlCrudGenerator::ForeignKey,
+sqlCrudGenerator_ForeignKey_strategy = st.builds(
+    sqlCrudGenerator_ForeignKey,
 )
-sqlCrudGenerator::PrimaryKey_strategy = st.builds(
-    sqlCrudGenerator::PrimaryKey,
+sqlCrudGenerator_PrimaryKey_strategy = st.builds(
+    sqlCrudGenerator_PrimaryKey,
 )
-sqlCrudGenerator::Column_strategy = st.builds(
-    sqlCrudGenerator::Column,
+sqlCrudGenerator_Column_strategy = st.builds(
+    sqlCrudGenerator_Column,
     name=
         safe_text
 )
-sqlCrudGenerator::Table_strategy = st.builds(
-    sqlCrudGenerator::Table,
+sqlCrudGenerator_Table_strategy = st.builds(
+    sqlCrudGenerator_Table,
     name=
         safe_text
 )
-sqlCrudGenerator::Schema_strategy = st.builds(
-    sqlCrudGenerator::Schema,
+sqlCrudGenerator_Schema_strategy = st.builds(
+    sqlCrudGenerator_Schema,
     name=
         safe_text
 )
 
-@given(instance=sqlCrudGenerator::DataType_strategy)
+@given(instance=sqlCrudGenerator_DataType_strategy)
 @settings(max_examples=50)
-def test_sqlcrudgenerator::datatype_instantiation(instance):
-    assert isinstance(instance, sqlCrudGenerator::DataType)
-
-@given(instance=sqlCrudGenerator::DataType_strategy)
-def test_sqlcrudgenerator::datatype_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_sqlcrudgenerator_datatype_instantiation(instance):
+    assert isinstance(instance, sqlCrudGenerator_DataType)
 
 
-@given(instance=sqlCrudGenerator::DataType_strategy)
-def test_sqlcrudgenerator::datatype_precision_setter(instance):
+
+@given(instance=sqlCrudGenerator_DataType_strategy)
+def test_sqlcrudgenerator_datatype_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=sqlCrudGenerator::DataType_strategy)
-def test_sqlcrudgenerator::datatype_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
 
 
-@given(instance=sqlCrudGenerator::DataType_strategy)
-def test_sqlcrudgenerator::datatype_dataType_setter(instance):
+@given(instance=sqlCrudGenerator_DataType_strategy)
+def test_sqlcrudgenerator_datatype_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=sqlCrudGenerator::ForeignKey_strategy)
+@given(instance=sqlCrudGenerator_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_sqlcrudgenerator::foreignkey_instantiation(instance):
-    assert isinstance(instance, sqlCrudGenerator::ForeignKey)
+def test_sqlcrudgenerator_foreignkey_instantiation(instance):
+    assert isinstance(instance, sqlCrudGenerator_ForeignKey)
 
-@given(instance=sqlCrudGenerator::PrimaryKey_strategy)
+@given(instance=sqlCrudGenerator_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_sqlcrudgenerator::primarykey_instantiation(instance):
-    assert isinstance(instance, sqlCrudGenerator::PrimaryKey)
+def test_sqlcrudgenerator_primarykey_instantiation(instance):
+    assert isinstance(instance, sqlCrudGenerator_PrimaryKey)
 
-@given(instance=sqlCrudGenerator::Column_strategy)
+@given(instance=sqlCrudGenerator_Column_strategy)
 @settings(max_examples=50)
-def test_sqlcrudgenerator::column_instantiation(instance):
-    assert isinstance(instance, sqlCrudGenerator::Column)
-
-@given(instance=sqlCrudGenerator::Column_strategy)
-def test_sqlcrudgenerator::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlcrudgenerator_column_instantiation(instance):
+    assert isinstance(instance, sqlCrudGenerator_Column)
 
 
-@given(instance=sqlCrudGenerator::Column_strategy)
-def test_sqlcrudgenerator::column_name_setter(instance):
+
+@given(instance=sqlCrudGenerator_Column_strategy)
+def test_sqlcrudgenerator_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlCrudGenerator::Table_strategy)
+@given(instance=sqlCrudGenerator_Table_strategy)
 @settings(max_examples=50)
-def test_sqlcrudgenerator::table_instantiation(instance):
-    assert isinstance(instance, sqlCrudGenerator::Table)
-
-@given(instance=sqlCrudGenerator::Table_strategy)
-def test_sqlcrudgenerator::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlcrudgenerator_table_instantiation(instance):
+    assert isinstance(instance, sqlCrudGenerator_Table)
 
 
-@given(instance=sqlCrudGenerator::Table_strategy)
-def test_sqlcrudgenerator::table_name_setter(instance):
+
+@given(instance=sqlCrudGenerator_Table_strategy)
+def test_sqlcrudgenerator_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlCrudGenerator::Schema_strategy)
+@given(instance=sqlCrudGenerator_Schema_strategy)
 @settings(max_examples=50)
-def test_sqlcrudgenerator::schema_instantiation(instance):
-    assert isinstance(instance, sqlCrudGenerator::Schema)
-
-@given(instance=sqlCrudGenerator::Schema_strategy)
-def test_sqlcrudgenerator::schema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqlcrudgenerator_schema_instantiation(instance):
+    assert isinstance(instance, sqlCrudGenerator_Schema)
 
 
-@given(instance=sqlCrudGenerator::Schema_strategy)
-def test_sqlcrudgenerator::schema_name_setter(instance):
+
+@given(instance=sqlCrudGenerator_Schema_strategy)
+def test_sqlcrudgenerator_schema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
